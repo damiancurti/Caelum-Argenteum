@@ -1,0 +1,92 @@
+{
+  "issue": 410,
+  "scope": "Fixed domestic bathroom fixtures in the existing 160 house interiors; hygiene sessions remain issue502",
+  "authority": "Author delegated furniture dimensions/calculations on2026-10-25; household water200L/+1L world-minute explicitly approved",
+  "references": [
+    {
+      "url": "https://api.vam.ac.uk/v2/museumobject/O8362",
+      "title": "Burges Washstand, English1880",
+      "use": "Period combination of wood and inset washbasin; original reinterpretation, no copied museum image",
+      "museum_dimensions_cm": {
+        "width": 79.5,
+        "depth": 56.7,
+        "maximum_height": 160.5
+      },
+      "note": "Our simpler fixture uses0.8m width/0.57m depth and1m overall height; it is not a replica or a claim about universal historical sizes."
+    }
+  ],
+  "map_units_per_meter": 32,
+  "interior_basis": "assets/map06_port/INTERIORS.json: bathroom[64,896,384,1152], doorway[128,832,256,896]; offsets are relative to CaelumCityData.HouseOrigin",
+  "reserve_liters": 200,
+  "refill_liters_per_world_minute": 1,
+  "fixtures": {
+    "sink": {
+      "id": 0,
+      "class": "CaelumDomesticSink",
+      "sprite": "CDSK",
+      "source": "sink-source-v1.png",
+      "dimensions_m": [
+        0.8,
+        0.57,
+        1.0
+      ],
+      "offset_mu": [
+        104,
+        1080,
+        0
+      ],
+      "facing": 90,
+      "materials": "wood cabinet, ivory basin/top, brass tap"
+    },
+    "bathtub": {
+      "id": 1,
+      "class": "CaelumDomesticBathtub",
+      "sprite": "CDBT",
+      "source": "bathtub-source-v2.png",
+      "dimensions_m": [
+        1.8,
+        0.8,
+        0.75
+      ],
+      "offset_mu": [
+        316,
+        1088,
+        0
+      ],
+      "facing": 90,
+      "materials": "cast-iron shell and feet, ivory enamel, brass taps"
+    },
+    "toilet": {
+      "id": 2,
+      "class": "CaelumDomesticToilet",
+      "sprite": "CDWC",
+      "source": "toilet-source-v1.png",
+      "dimensions_m": [
+        0.55,
+        0.7,
+        1.9
+      ],
+      "offset_mu": [
+        324,
+        948,
+        0
+      ],
+      "facing": 90,
+      "materials": "ceramic bowl, wooden seat, iron high cistern and pipe, brass pull"
+    }
+  },
+  "registration": {
+    "canvas": [
+      128,
+      128
+    ],
+    "fit": [
+      116,
+      116
+    ],
+    "bottom": 122,
+    "world_scale": "Uniform scale fits declared width/depth and height envelope; inventory PNG remains128px"
+  },
+  "collision": "Fixed actor square footprint uses half the maximum horizontal dimension; full modeled height. Placement checks actual collision and floor before retaining each fixture.",
+  "mass_and_crafting": "Not introduced by this fixed-installation stage; retain broader410 catalogue/fabrication work as pending. Domestic reserve is shared state, not the visible cistern's geometric volume."
+}

@@ -1,6 +1,37 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.9** — 2026-10-24.
+Documentation version: **5.8.11** — 2026-10-25.
+
+## 5.8.11 - Domestic bathroom artwork (#410)
+
+Original image_gen sources and complete prompts: assets/art_source/bathrooms.
+The selected bathtub is v2; v1 remains as provenance. Sink/toilet are v1.
+The enamel source is a separate opaque tile. Transparent sprites are registered
+as128x128 inventory/world images; alpha is preserved. World fallback scale fits
+the declared physical envelope without modifying the original painted aspect.
+The deterministic generator creates three original OBJ meshes and mechanically
+registers the images; it does not synthesize their painted shapes in Python.
+
+| Fixture | Width x depth x height (m) | Materials |
+| --- | --- | --- |
+| Washstand/sink |0.80 x0.57 x1.00|wood cabinet, ivory enamel basin, brass tap|
+| Bathtub |1.80 x0.80 x0.75|iron body/feet, ivory enamel, brass taps|
+| High-cistern toilet |0.55 x0.70 x1.90|ceramic bowl, wood seat, iron cistern/pipe, brass pull|
+
+Dimensions are the author's delegated design calculations, not historical
+universal sizes. The V&A1880 Burges washstand O8362 documents a wood/inset-basin
+combination and79.5x56.7cm footprint; this simpler washstand reinterprets it.
+The tub/toilet are original period-inspired designs, not museum replicas.
+DATA.json records the reference, physical dimensions,32MU/m conversion and
+positions inside the already-existing bathroom. No external museum bitmap is
+copied. Model materials reuse owned stash wood/metal/brass and the new enamel.
+The visible toilet cistern is not the abstract200-L household reserve.
+Mass/recipes and portable versions remain the broader#410 catalogue work.
+
+MANIFEST.json records input/output hashes, mesh bounds, sprite registration and
+Pillow version. Retained prompts and src/licenses/DOMESTIC_BATHROOMS_410.txt
+record provenance; no extra public redistribution license is inferred.
+The world models and target panel were captured natively in validation_5811/captures. The basin cabinet is hollow around its inset bowl; owned station-paper shading separates inner walls from the enamel rim/floor. Inventory PNGs were inspected directly. The attempted runtime r_models toggle retained models in its capture, so it is not claimed as native sprite-fallback validation. Author visual acceptance passed as CA410-BATH-01 on 2026-10-25 without qualifications.
 
 ## 5.8.9 - Hygiene item artwork (#502, in progress)
 

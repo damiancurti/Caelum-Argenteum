@@ -1,0 +1,35 @@
+{
+  "tool": "Built-in image_gen.imagegen",
+  "issue": 410,
+  "author": "Damián Curti / Caelum Argenteum",
+  "generated": "2026-10-25",
+  "sources": [
+    {
+      "file": "bathtub-source-v1.png",
+      "prompt": "Use case: historical-scene. Asset type: a single original painted game sprite for Caelum Argenteum, a dark-fantasy RPG set in late nineteenth-century Argentina. Subject: one modest late-1800s freestanding oval cast-iron bathtub with four small dark iron claw feet, an aged ivory enamel interior, charcoal-gray exterior, a thick rolled rim, visible deep empty bowl, and a short pair of tarnished brass taps at the narrow rear end. No plumbing wall, no floor, no person, no extra props. Full object isolated on a genuinely transparent background. Three-quarter view from slightly above, showing the opening and both the front and side. Entire tub including feet and taps fits comfortably inside the image. Painted, pixel-oriented game artwork: deliberate opaque color clusters, restrained warm earth and gray palette, soft consistent upper-left lighting, clearly drawn silhouette and material shading, recognizable after reduction to a 128px inventory/world sprite. It must look like a hand-painted sprite, not a photoreal photograph, not a glossy 3D render, not vector icons. No comic outlines, text, symbols, labels or cast shadow outside the object. This is an original reconstruction of an ordinary late-Victorian sanitary fixture, not a replica of a specific museum object.",
+      "selected": false
+    },
+    {
+      "file": "bathtub-source-v2.png",
+      "prompt": "Edit target: the supplied bathtub sprite. Preserve the exact oval bathtub silhouette, four iron claw feet, two brass taps, ivory enamel inside and dark iron outside, and its three-quarter camera angle. Remove ALL background, halo, glow and outside shadow completely: every pixel outside the object must be transparent, including all spaces beneath and between the feet. The bathtub itself must be fully opaque. Repaint the object as a compact hand-painted pixel-art inventory sprite, with deliberate large stepped color clusters, simplified readable shading, a restrained 16-color earthy palette, and minimal texture noise. Aim for the visual density of a 128-pixel-wide late-1990s painted RPG sprite, enlarged with crisp edges; no photographic texture or glossy 3D-render finish. Do not add floor, wall, border, text, extra objects or cast shadow. Keep generous transparent margin around the entire object and do not crop any foot or tap.",
+      "edit_target": "bathtub-source-v1.png",
+      "selected": true
+    },
+    {
+      "file": "toilet-source-v1.png",
+      "prompt": "Use case: historical-scene. Create ONE original game inventory/world sprite for Caelum Argenteum, a dark fantasy RPG in late nineteenth-century Argentina: a modest antique flush toilet with a round ivory ceramic bowl, dark polished wooden oval seat with open central hole, and a high small dark iron cistern supported above it by a narrow vertical iron flushing pipe. Add a simple short brass pull-chain at the right of the cistern. The cistern and bowl form ONE compact self-contained silhouette. No wall, floor or plumbing scene. Three-quarter view slightly from above; full toilet, cistern and feet in frame with generous empty margin. Hand-painted pixel-oriented game art with simplified stepped color clusters readable at128px high, earthy ivory/brown/dark iron palette, subtle upper-left lighting, low texture noise. No photorealism, glossy3D-render finish, cartoon outline, text, labels or extra objects. Entire object opaque; surrounding background genuinely transparent, including open gaps around the pipe and between bowl and cistern. Absolutely no halo, backdrop, vignette, floor or cast shadow. Original reconstruction, not a replica of a specific museum object.",
+      "selected": true
+    },
+    {
+      "file": "sink-source-v1.png",
+      "prompt": "Use case: historical-scene. Create ONE original painted pixel-oriented game sprite for Caelum Argenteum, a dark-fantasy RPG set in late nineteenth-century Argentina. A modest domestic washstand/sink: dark walnut wooden cabinet with four short legs, two plain paneled doors and small brass knobs, an aged ivory rectangular stone top with one deep oval ceramic basin, a low upright wooden splashback, and one small tarnished-brass tap centered behind the bowl. Ordinary sturdy Victorian utility furniture, not a modern kitchen unit. Three-quarter view from slightly above, showing the basin opening and front and right side. Entire object centered, no cropping, generous transparent margin. Earthy brown/ivory/gray palette, soft upper-left lighting, deliberate stepped color clusters and restrained texture; readable at128px high like a painted classic RPG inventory sprite. Avoid photorealism, glossy3D renders, vector or comic outlines. No room, floor, wall, person, extra basin, text or labels. Object fully opaque, outside and all gaps under the cabinet genuinely transparent. No backdrop, halo, vignette or cast shadow. This is an original period-inspired reconstruction, not a copy of a specific museum object.",
+      "selected": true
+    },
+    {
+      "file": "enamel-source-v1.png",
+      "prompt": "Create one original seamless material texture for Caelum Argenteum, a painted dark-fantasy game inspired by late nineteenth-century Argentina. Asset: flat aged ivory porcelain/enamel material for the interior of a cast-iron bathtub and a ceramic toilet. Square full-frame opaque tile, no object silhouette. Warm near-white ivory base, extremely subtle hand-painted mineral speckling, a few restrained pale gray-beige enamel variations, no obvious stains or cracks. Consistent flat diffuse light; no cast shadows, no directional highlights, no borders, no text. Edges tile seamlessly. Readable at64x64 pixels. Matte painted pixel-oriented game material, broad controlled color clusters, not photorealistic, not glossy rendered plastic. This is only a material swatch, not a bathroom, bathtub or icon.",
+      "selected": true
+    }
+  ],
+  "review": "Generated raster sources inspected. Tool previews display RGB behind transparent pixels; sampled bathtub halo pixels have alpha0. Preserve original alpha; do not repaint accepted art during registration."
+}

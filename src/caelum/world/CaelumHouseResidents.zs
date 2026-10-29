@@ -101,6 +101,7 @@ class CaelumHouseResident : Object play
 // Sólo recorre sus residentes conocidos durante una transición, nunca actores globales.
 class CaelumHouseResidents : Inventory
 {
+    Array<CaelumDomesticWaterState> HouseWater;
     Array<CaelumPropertyRecord> Properties;
     int PropertyRevision;
     bool PropertyChestScanned;

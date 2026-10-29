@@ -4879,6 +4879,7 @@ Model CaelumFermentationStation
 #include "caelum/data/chemistry_resources.modeldef"
 
 #include "caelum/data/mate.modeldef"
+#include "caelum/data/domestic_bathrooms.modeldef"
 
 Model CaelumDeployedTent { Path "models/caelum/world/camp" Model 0 "tent_legacy.obj" Scale 1 1 1 AngleOffset 90 CorrectPixelStretch DontCullBackFaces FrameIndex CPTN A 0 0 }
 Model CaelumDeployedTent { Path "models/caelum/world/camp" Model 0 "tent.obj" Scale 1 1 1 AngleOffset 90 CorrectPixelStretch DontCullBackFaces FrameIndex CPTN B 0 0 }
