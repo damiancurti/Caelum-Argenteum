@@ -33,27 +33,6 @@ Expected: chronological resources/ownership and saved progress survive. A city-d
 may require about 77 seconds of paused preparation on the recorded machine; this
 is a known limitation, not claimed rendering-FPS acceptance. #417 bandits separate.
 
-ID: CA502-LIMBO-HISTORY-01
-Origin: 5.8.23 / issue #502
-Prerequisites: final23 package and assets/validation_5823 fixtures; close other GZDoom sessions.
-1. Run assets/validation_5823/author_terminal.ps1. It loads normal controls and an existing bedroom sink in a private mansion campaign.
-2. Observe the initial CA502H MANUAL reading at zero, the private half-hour absence, and the return reading at the recorded ambient value.
-3. The final console and game remain open. Confirm there is no VM error, duplicate object or repeated catch-up when continuing.
-Expected: the same sink gains the approved constant Limbo exposure while absent. Returning/reading again does not charge the same interval twice. No exterior-history claim.
-
-CA502-WEATHER-HISTORY-01 | Origin: 5.8.28 | Issue: #502
-Prerequisites: final5.8.28+ package, disposable regional-weather campaign and
-prepared #502 weather-history fixture. Deferred until allV5.8 implementation
-is ready; do not infer author acceptance from agent-run native assertions.
-1. Inspect exposed outdoor furniture/equipment before leaving the region and
-   after returning across a rainy interval. Historical weather changes dirt;
-   covered objects do not receive outdoor rain washing.
-2. Repeat across a save/load. Inspect twice: no duplicate elapsed exposure.
-3. Clean an object on return. Earlier exposure is settled first and cannot
-   undo that cleaning on the next inspection. Ordinary new exposure can recur.
-4. Continue an original pre5.8.28 save: existing concentration is retained;
-   missing exterior history starts at migration, without retroactive dirt.
-
 [CA410-LUXURY-01] 5.8.30 / #410 - Luxury furniture catalogue
 Prerequisite: final grouped V5.8 handoff, including the preserved luxury gallery
 from assets/validation_5830/run_native.ps1 (-Runtime final30c -Checks -Interactive
@@ -98,71 +77,6 @@ Deliver together with the remaining V5.8 checks, not before implementation is co
    the two ordinary recipes start unknown until learned.
 Expected: all checks pass. Author corroboration is pending.
 
-CA502-SEAL-HISTORY-01 | Origin: 5.8.37 | Issue: #502
-Prerequisites: grouped final V5.8 build; disposable scene with physical objects,
-Fire/Water seals, a normal regional climate and a nearby map transition.
-1. Channel near a physical object, then stop. Its exposure responds to the
-   changed heat/humidity while active and returns to natural climate afterward.
-2. Place a solid obstacle between the seal and the object; the climate effect
-   must not pass through it. The object's own surface must receive an unobstructed seal.
-3. Save/load while channeling and compare the saved contamination; loading must
-   not reset dirt or charge elapsed exposure twice.
-4. Leave while channeling, wait elsewhere and return. Contamination follows the
-   original region's natural weather and rain while absent, without retaining
-   the departed seal. Repeat return/load to check idempotence.
-
-CA502-NPC-ILLNESS-01 | 5.8.38 | #502
-Prerequisites: grouped V5.8 handoff build; native NPC illness scenario; existing
-NPC exposure acceptance is retained. Do not hand off before full implementation.
-1. Observe a living NPC at50/60/90 contamination: no illness at50, progressive
-   Life loss above50, doubled rate from90. Toughness100 grants immunity.
-2. Observe an idle contaminated NPC with full Life: contamination decreases from
-   natural potential recovery. A busy NPC retains its existing recovery gate.
-3. Save during fractional damage and reload, then leave and return through the
-   diagnostic hub: Life, contamination and fractional damage retain their values;
-   the next active tic resumes once. No offline physiology is claimed by this test.
-Expected: shared illness rules, no physical armor wear, no duplicate body record.
-
-CA502-HOME-STORAGE-01 | Origin: 5.8.41 | Issue: #502
-Prerequisites: grouped final V5.8 author build; a visited house with its original
-coffer, domestic funds/supplies and a partially cleaned surface; preserve an old
-save. Automated persistence fixtures: assets/validation_5841, not author acceptance.
-Steps: note household supplies/water/food and progress; leave for another city
-interior, then the Limbo; save/load; return twice to the original home.
-Expected: one original coffer, no duplicated money or supplies, no access to it
-while away, retained daily quota/partial progress; food ages and water cools in
-the home's climate. Automatic absent cleaning remains a separate pending feature.
-
-CA502-HOME-FURNISHINGS-01 | Origin: 5.8.42 | Issue: #502
-Prerequisites: grouped final V5.8 author build; a visited domestic interior with
-contaminated fixed furniture and partial cleaning progress; retain an old save.
-1. Note dirt on the table, its chairs, bed and bathroom fixtures. Leave for
-   another house, return, then repeat through the Limbo with a save/load while away.
-2. Furniture keeps its dirt and applicable source-home exposure; partial work
-   remains attached to the correct installation. Funds and daily work do not reset.
-3. Clean a returned piece, save/load and re-enter. No stale snapshot restores its
-   former dirt; subsequent natural exposure remains normal. Older saves retain
-   current values and begin this persistence at their first updated departure.
-Expected: no free cleaning, duplicate exposure or reassignment between furniture.
-This check does not claim automatic unloaded household work or author acceptance.
-
-CA502-HOME-AWAY-01 | Origin: 5.8.43 | Issue: #502
-Prerequisites: final integrated V5.8 build, GZDoom4.14.2, disposable household
-fixture with real residents/coffer, potable domestic water and a visited
-Provisions merchant. Keep original saves before updating. Group with final handoff.
-1. Inspect a dirty visited household and its water/soap/money. Leave for another
-   exterior map and let two world hours pass. Return: reachable surfaces were
-   cleaned within one shared hour; water/soap and household money reflect real
-   consumption and purchases. The player's money is untouched.
-2. Save while away, load and return again. No duplicate work, spending, stock,
-   or reset of partial cleaning; inaccessible targets remain inaccessible.
-3. Repeat after removing the home's cloth and money, or while its residents
-   are unavailable: no unsupported work or use of the player's supplies.
-4. Spend an hour inside the Limbo, then return. Exterior household cleaning,
-   refill and food aging count only exterior time, not that Limbo hour.
-5. Visit a second household and repeat across a civil midnight. Each home has
-   its own single-hour quota, but both use the same actual Provisions stock.
-Expected: persistent results, no duplicate resources or purchases, no new crash.
 ID: CA410-DECOR-01
 Origin: 5.8.44 / #410
 Status: Awaiting author; hold for grouped final V5.8 handoff.
@@ -180,80 +94,6 @@ Steps:
    then travel away and back while carrying it.
 Expected: Correct painted icons and original world objects, native permission
 and weight checks, no door obstruction, duplicates, new bonuses or lost dirt.
-
-ID: CA502-DINING-CONTACT-01
-Origin: 5.8.45 / #502
-Prerequisites: completed V5.8 grouped handoff, disposable save with a portable
-normal dining set; existing contamination diagnostic resources. Do not replace
-or overwrite the player's campaign save. Agent evidence: assets/validation_5845.
-Steps:
-1. Place a dining set and give its table a known contamination value through the
-   final diagnostic controls. Touch different edges and stand on the tabletop.
-2. Check that contact reaches the player's exposed skin or covering equipment;
-   moving across collision cells must not multiply the rate.
-3. Pack the set, save/load, travel and replace it. Inspect the same contamination.
-4. Clean the table through the household diagnostic, then save/load again.
-Expected: body, packed item and collision cells share one value; chairs remain
-separate; packing/returning never cleans it, and old cell values never undo a
-later cleaning. Corroborate only at the final grouped V5.8 handoff.
-
-CA502-NPC-ABSENCE-01 | Origin:5.8.46 | Issue:#502
-Prerequisites: grouped final V5.8 terminal with the native NPC absence scenario;
-original author saves kept separately. Do not run before the requested grouped
-handoff is ready.
-Steps: observe a contaminated NPC's Life/equipment; leave for an exterior wait
-and return; repeat with time spent in the Limbo; save/reload while away. Observe
-an infected household worker that dies while absent and return to its house.
-Expected: exterior elapsed time advances exposure/disease and potential natural
-recovery using20:1; Limbo does not advance exterior time; health/equipment and
-fractional progress persist without replay. A dead worker cannot clean/deploy;
-its native corpse and original loot appear once in its restored map.
-
-CA502-ABSTRACT-STACKS-01 | Origin:5.8.47 | Issue:#502
-Prerequisites: final grouped V5.8 terminal; abstract-stack scenario, with two
-same-type essence lots at different contamination. Keep original saves separate.
-Steps: inspect the inventory's oldest concentration/lot count; merge the lots,
-deposit part in a chest, withdraw part, drop/pick up, save/load and travel back.
-Compare an exposed pile with a fragment and with a Box/closed-chest sample.
-Expected: quantity, individual concentrations and oldest-first ordering persist;
-splitting never changes per-unit exposure, and protected storage stays shielded.
-This entry is reserved for the grouped handoff, not an immediate test request.
-
-CA502-VESSELS-01 | Origin: 5.8.48 | Issue: #502
-Prerequisites: final grouped V5.8 package/terminal, GZDoom4.14.2, disposable
-campaign, bottles/canteens/mates/pot, actual Magic Box, loaded dining set.
-1. Expose carried vessels, then inspect exterior contamination; their fill,
-   water quality, temperature and mate uses retain their own existing rules.
-2. Box/unbox the loaded set. Closed storage prevents new exterior exposure
-   without resetting existing dirt; food ageing continues separately.
-3. Mount/retrieve the same pot, then save/load and travel with the loaded set.
-   Expect no crash, lost objects, duplicated doses or reset contamination.
-Expected: existing artwork/contents and persistent exterior dirt remain correct.
-Author handoff is deferred until all V5.8 implementation is complete.
-
-CA502-PHYSICAL-STACKS-01 | Origin: 5.8.49 | Issue: #502
-Prerequisites: final grouped V5.8 build and prepared physical-contact fixture;
-GZDoom4.14.2, separate native food/material lots and the actual Magic Box.
-1. Expose food and physical materials; split, drop, collect and store them.
-   Expect retained quantities and distinct contamination, with no freshening.
-2. Compare exposed food with boxed food after waiting: both age, while only
-   exposed food receives new environmental contact. Inspect before eating.
-3. Save/load and travel/return with food and materials; expect retained identity,
-   contamination and quantities. Rejected journey previews must not consume food.
-4. Let an NPC carry exposed and shielded food while absent, then return.
-   Both age using that region; protected stock avoids new contact exposure.
-Expected: all native quantity, contact and persistence checks pass. Report
-specific failures; this remains part of the final grouped handoff.
-
-CA502-ADAPTERS-01 | 5.8.50 | #502
-Prerequisites: final grouped V5.8 package; accessible cloth/coins, furniture,
-carpa/sleeping bag and contaminated ground/NPC diagnostic scene.
-Steps: split/rejoin physical items, inspect separate dirt; expose carried
-furniture, deploy/pack tent and sleeping bag; observe NPC outer footwear touching
-contaminated ground; save/reload and revisit. Clean equipment with stacked cloths.
-Expected: native quantities/dirt survive; only the used cloth is rinsed; deployed
-states retain their concentration; protected storage stays protected; NPC and
-unlinked physical contacts work without duplicate pair dosing.
 
 CA410-REVIEW-01 | Origin: 5.8.54 | Issue: #410
 Prerequisites: final review-corrections terminal and disposable scenarios.
