@@ -1,0 +1,173 @@
+{
+  "issue": 412,
+  "version": "5.8.15",
+  "runtime_sha256": "078d33640c90864e875400160570c1abe65814d70657add60b7256d6b686d0f4",
+  "source_matching_members": 16917,
+  "native_passes": 80,
+  "native_failures": 0,
+  "runs": [
+    {
+      "label": "final-core",
+      "executed_passes": 16,
+      "runtime_sha256": "078d33640c90864e875400160570c1abe65814d70657add60b7256d6b686d0f4"
+    },
+    {
+      "label": "final-fast",
+      "executed_passes": 14,
+      "runtime_sha256": "078d33640c90864e875400160570c1abe65814d70657add60b7256d6b686d0f4"
+    },
+    {
+      "label": "final-guard",
+      "executed_passes": 18,
+      "runtime_sha256": "078d33640c90864e875400160570c1abe65814d70657add60b7256d6b686d0f4"
+    },
+    {
+      "label": "final-seed",
+      "executed_passes": 6,
+      "runtime_sha256": "078d33640c90864e875400160570c1abe65814d70657add60b7256d6b686d0f4"
+    },
+    {
+      "label": "final-load",
+      "executed_passes": 5,
+      "runtime_sha256": "078d33640c90864e875400160570c1abe65814d70657add60b7256d6b686d0f4"
+    },
+    {
+      "label": "old-seed",
+      "executed_passes": 2,
+      "runtime_sha256": "327a6ea1ee243c23dedefd3ea591224d31e6509ccd8a111d72c58c0cf4df51fb"
+    },
+    {
+      "label": "final-upgrade",
+      "executed_passes": 5,
+      "runtime_sha256": "078d33640c90864e875400160570c1abe65814d70657add60b7256d6b686d0f4"
+    },
+    {
+      "label": "original-rollback",
+      "executed_passes": 5,
+      "runtime_sha256": "327a6ea1ee243c23dedefd3ea591224d31e6509ccd8a111d72c58c0cf4df51fb"
+    },
+    {
+      "label": "final-capture",
+      "executed_passes": 7,
+      "runtime_sha256": "078d33640c90864e875400160570c1abe65814d70657add60b7256d6b686d0f4"
+    },
+    {
+      "label": "original-repro",
+      "executed_passes": 1,
+      "runtime_sha256": "327a6ea1ee243c23dedefd3ea591224d31e6509ccd8a111d72c58c0cf4df51fb"
+    },
+    {
+      "label": "final-repro",
+      "executed_passes": 1,
+      "runtime_sha256": "078d33640c90864e875400160570c1abe65814d70657add60b7256d6b686d0f4"
+    }
+  ],
+  "performance": [
+    {
+      "label": "perf-old",
+      "runtime_sha256": "327a6ea1ee243c23dedefd3ea591224d31e6509ccd8a111d72c58c0cf4df51fb",
+      "addon_sha256": "11c64aa2b9c2ee172a6790470151be764b24b48119c466793c5941561ae8d2cc",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "arguments": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue412-coop-work\\build\\issue412-bags\\baseline\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue412-coop-work\\build\\issue412-bags\\perf-old.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue412-coop-work\\build\\issue412-bags\\perf-old.ini",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "412",
+        "-nomouse",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue412-coop-work\\build\\issue412-bags\\perf-old.txt",
+        "+con_notifytime",
+        "0",
+        "+map",
+        "MAP01",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue412-coop-work\\build\\issue412-bags\\perf-old.cfg"
+      ],
+      "config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\ncl_capfps=false\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nvid_defwidth=1280\nvid_defheight=720\n",
+      "simulation_tics": 700,
+      "phase_elapsed_ms": 20041.233099997044,
+      "phase_bound_uncertainty_ms": 100,
+      "frames": 1199,
+      "mean_callback_ms": 16.666666305254378,
+      "p95_callback_ms": 16.9281,
+      "p99_callback_ms": 17.2775,
+      "worst_callback_ms": 17.6299,
+      "queries_per_tic": 1,
+      "tent": true,
+      "note": "1280x720 Vulkan, 60 FPS cap, one player. One bag clearance query per native tic in identical selected scene before/after; no added actor population. Callback intervals are a rendering-cadence proxy, not GPU/display presentation. This small fixture does not establish mansion, sewer or army performance."
+    },
+    {
+      "label": "perf-final",
+      "runtime_sha256": "078d33640c90864e875400160570c1abe65814d70657add60b7256d6b686d0f4",
+      "addon_sha256": "11c64aa2b9c2ee172a6790470151be764b24b48119c466793c5941561ae8d2cc",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "arguments": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue412-coop-work\\build\\issue412-bags\\final02\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue412-coop-work\\build\\issue412-bags\\perf-final.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue412-coop-work\\build\\issue412-bags\\perf-final.ini",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "412",
+        "-nomouse",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue412-coop-work\\build\\issue412-bags\\perf-final.txt",
+        "+con_notifytime",
+        "0",
+        "+map",
+        "MAP01",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue412-coop-work\\build\\issue412-bags\\perf-final.cfg"
+      ],
+      "config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\ncl_capfps=false\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nvid_defwidth=1280\nvid_defheight=720\n",
+      "simulation_tics": 700,
+      "phase_elapsed_ms": 20036.944899940863,
+      "phase_bound_uncertainty_ms": 100,
+      "frames": 1199,
+      "mean_callback_ms": 16.666890742285236,
+      "p95_callback_ms": 16.9625,
+      "p99_callback_ms": 17.2718,
+      "worst_callback_ms": 17.8331,
+      "queries_per_tic": 1,
+      "tent": true,
+      "note": "1280x720 Vulkan, 60 FPS cap, one player. One bag clearance query per native tic in identical selected scene before/after; no added actor population. Callback intervals are a rendering-cadence proxy, not GPU/display presentation. This small fixture does not establish mansion, sewer or army performance."
+    }
+  ],
+  "model_obj_bounds": [
+    [
+      -20.0,
+      20.4
+    ],
+    [
+      0.0,
+      8.0
+    ],
+    [
+      -44.0,
+      44.0
+    ]
+  ],
+  "author_acceptance": "pending CA412-BAG-01",
+  "cooperative_admission_and_clock": "not implemented"
+}

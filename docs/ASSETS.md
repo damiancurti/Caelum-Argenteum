@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.14** - 2026-10-26.
+Documentation version: **5.8.15** - 2026-10-26.
 
 ## 5.8.14 - Ration lot presentation (#410)
 

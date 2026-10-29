@@ -95,6 +95,12 @@ class CaelumSleepingBagProbe : Actor
 class CaelumRestBag : CaelumRestFurniture
 {
     CaelumSleepingBag Bag;
+    // Cero conserva el comportamiento de los sacos de partidas anteriores.
+    int TentEntryRevision,EntryCrouchToggle;
+    CaelumDeployedTent Tent;
+    vector3 TentEntry;
+    String TentEntryMap;
+    double EntryCrouch;
     override int RestMode() { return CaelumRestRules.MODE_SLEEP; }
     override int ComfortFactor() { return 3; }
     override vector3 PoseOffset() { return (0, 0, 2); }
@@ -104,43 +110,85 @@ class CaelumRestBag : CaelumRestFurniture
     { return Occupant == user && Bag != null && Bag.AvailableTo(user); }
     override bool Used(Actor activator) { return false; }
 
+    static bool OverlapsBag(vector3 point,double facing,CaelumRestBag other)
+    {
+        if(other==null || Abs(point.Z-other.Pos.Z)>=CaelumAppearanceRegistry.BagHeight())return false;
+        double l=CaelumAppearanceRegistry.BagHalfLength(),w=CaelumAppearanceRegistry.BagHalfWidth();
+        // Ejes separadores de ambos rectángulos, sin volver a una circunferencia.
+        for(int i=0;i<4;i++)
+        {
+            double a=(i<2?facing:other.Angle)+(i%2)*90;
+            vector3 delta=point-other.Pos;
+            double distance=Abs(delta.X*Cos(a)+delta.Y*Sin(a));
+            double extent=l*(Abs(Cos(facing-a))+Abs(Cos(other.Angle-a)))
+                +w*(Abs(Sin(facing-a))+Abs(Sin(other.Angle-a)));
+            if(distance>=extent)return false;
+        }
+        return true;
+    }
+
+    static CaelumRestBag ReservedBag(CaelumPlayer user)
+    {
+        if(user==null)return null;
+        let rest=CaelumRestState.Get(user);
+        if(rest!=null && rest.Status==CaelumRestRules.STATUS_ACTIVE && rest.OriginMap==level.MapName)
+            return CaelumRestBag(rest.Furniture);
+        let cleaning=CaelumCleaningTask.Find(user);
+        if(cleaning!=null && CaelumCleaningTask.KeepsBed(user,cleaning.Bed))return CaelumRestBag(cleaning.Bed);
+        let skip=CaelumTimeSkipState.Get(user);
+        if(skip!=null && skip.Active && skip.OriginMap==level.MapName)return CaelumRestBag(skip.Furniture);
+        return null;
+    }
+
     static bool HasRoom(CaelumPlayer user)
     {
-        // El volumen de prueba ignora al ocupante; los demás sólidos se
-        // verifican abajo. No modifica radio, altura ni flags del jugador.
-        let probe = Actor.Spawn("CaelumSleepingBagProbe", user.Pos, NO_REPLACE);
-        if (probe == null) return false;
-        probe.A_SetSize(46, Max(8.0, user.Height), false);
-        bool fits = probe.TestMobjLocation() && Abs(probe.FloorZ-user.Pos.Z) <= 1;
-        probe.Destroy();
-        if (!fits) return false;
-        // Las muestras del perímetro evitan desplegarla sobre bordes/peldaños.
-        for (int i = 0; i < 8; i++)
+        if(user==null)return false;
+        double l=CaelumAppearanceRegistry.BagHalfLength(),w=CaelumAppearanceRegistry.BagHalfWidth();
+        double h=CaelumAppearanceRegistry.BagHeight();
+        // La cápsula real del personaje sigue siendo obligatoria. No se reduce
+        // ni el cuerpo ni el saco para admitirlos bajo el techo de una carpa.
+        let probe=Actor.Spawn('CaelumSleepingBagProbe',user.Pos,NO_REPLACE);
+        if(probe==null)return false;
+        probe.A_SetSize(user.Radius,Max(h,user.Height),false);
+        bool fits=probe.TestMobjLocation() && Abs(probe.FloorZ-user.Pos.Z)<=1;
+        if(!fits){probe.Destroy();return false;}
+        // Celdas que cubren el rectángulo completo: cada círculo circunscribe
+        // su celda. La pequeña sobrecobertura es conservadora en los bordes.
+        int along=11,across=5;
+        double dx=l/along,dy=w/across,radius=Sqrt(dx*dx+dy*dy);
+        probe.A_SetSize(radius,h,false);
+        for(int x=0;x<along && fits;x++)for(int y=0;y<across && fits;y++)
         {
-            double a = i*45;
-            vector3 point = user.Pos + (Cos(a)*44, Sin(a)*44, 0);
-            probe = Actor.Spawn("CaelumSleepingBagProbe", point, NO_REPLACE);
-            if (probe == null) return false;
-            probe.A_SetSize(1, 8, false);
-            fits = probe.TestMobjLocation() && Abs(probe.FloorZ-user.Pos.Z) <= 1;
-            probe.Destroy();
-            if (!fits) return false;
+            double a=-l+(x+0.5)*dx*2,b=-w+(y+0.5)*dy*2;
+            probe.SetOrigin(user.Pos+(a*Cos(user.Angle)-b*Sin(user.Angle),
+                a*Sin(user.Angle)+b*Cos(user.Angle),0),false);
+            fits=probe.TestMobjLocation() && Abs(probe.FloorZ-user.Pos.Z)<=1;
         }
-        let it = BlockThingsIterator.Create(user,46);
-        while (it.Next())
+        probe.Destroy();if(!fits)return false;
+        let it=BlockThingsIterator.Create(user,Sqrt(l*l+w*w));
+        while(it.Next())
         {
             let other=it.thing;
-            if (other == user || !other.bSolid || other.bNoBlockmap) continue;
-            if (other.Pos.Z < user.Pos.Z+Max(8.0,user.Height)
-                && other.Pos.Z+other.Height > user.Pos.Z
-                && user.Distance2D(other) < 46+other.Radius) return false;
+            if(other==user || !other.bSolid || other.bNoBlockmap || other.Pos.Z+other.Height<=user.Pos.Z)continue;
+            if(other.Pos.Z<user.Pos.Z+user.Height && user.Distance2D(other)<user.Radius+other.Radius)return false;
+            if(other.Pos.Z>=user.Pos.Z+h)continue;
+            vector3 delta=other.Pos-user.Pos;
+            double a=delta.X*Cos(user.Angle)+delta.Y*Sin(user.Angle);
+            double b=-delta.X*Sin(user.Angle)+delta.Y*Cos(user.Angle);
+            double da=Max(0,Abs(a)-l),db=Max(0,Abs(b)-w);
+            if(da*da+db*db<other.Radius*other.Radius)return false;
         }
+        // Los modelos desplegados no están en el blockmap. Sus dueños sí
+        // están en la tabla acotada de jugadores, incluso durante la limpieza.
+        for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i] && players[i].mo!=user
+            && OverlapsBag(user.Pos,user.Angle,ReservedBag(CaelumPlayer(players[i].mo))))return false;
         return true;
     }
 
     override void Release(CaelumPlayer user, vector3 entry)
     {
         if (Occupant != user) return;
+        CaelumTentRest.Leave(self,user);
         Occupant = null;
         Destroy();
     }
@@ -149,7 +197,8 @@ class CaelumRestBag : CaelumRestFurniture
     {
         Super.Tick();
         // Incluye restos de un hub previo: la referencia de sesión manda.
-        if (Occupant == null && !CaelumCleaningTask.KeepsBed(Bag==null?null:CaelumPlayer(Bag.Owner),self)) Destroy();
+        if (Occupant == null && !CaelumCleaningTask.KeepsBed(Bag==null?null:CaelumPlayer(Bag.Owner),self))
+        {CaelumTentRest.Leave(self,Bag==null?null:CaelumPlayer(Bag.Owner));Destroy();}
     }
 
     Default { Radius 46; Height 8; -SOLID +NOBLOCKMAP Tag "$CA_SLEEPING_BAG_NAME"; }

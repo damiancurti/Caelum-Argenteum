@@ -6,8 +6,27 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.14.** Obtain and update the complete repository, validate
+**Current release: 5.8.15.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+## 5.8.15 - Usable sleeping bag inside the tent (#412, in progress)
+
+Using the owned deployed tent from outside opens Rest / Pack actions. Rest
+uses the existing duration menu and places the character's original unboxed
+sleeping bag in a clear berth. Native crouching fits the approved roof; body
+radius, full height, tent art and recovery rules are unchanged. Waking returns
+to the recorded entrance, with native collision checks and safe fallbacks.
+Pre-sleep cleaning reserves the same berth and cannot be bypassed by packing.
+
+The corrected flow passes 73 executed assertions in 11 native runs, including
+actual Use/menu reply routing, normal and solo accelerated rest, Limbo untimed
+rest, cancellation, blocked exit, exact cleaning costs and old/new save loads.
+Static checks and the package/source comparison pass. Evidence and limits:
+assets/validation_5815/RESULTS.md. CA412-BAG-01 passed author review on2026-10-26, including the outside
+interaction correction. The retained launcher starts outside the tent.
+The existing cooperative admission/shared-clock implementation and author test
+are deferred to V5.12. Remaining #410 furniture integration is still open.
+
 
 ## 5.8.14 - Native ration lots (#410, in progress)
 
@@ -253,6 +272,25 @@ CA410-BATH-01 passed author review on 2026-10-25 without qualifications. The toi
 metabolic action, soap bathing and resident cleaning remain#502. Mansion kitchen,
 remaining furniture/crafting and food integration remain unfinished#410 work.
 V5.8 is not complete.
+
+## 5.8.10 - Protect resting tent occupants (#412, in progress)
+
+Tent packing now rejects a resting occupant and rechecks occupancy throughout
+packing and at completion. A late rest pauses work without losing progress or
+the deployed inventory item; packing can resume once the rest ends. The check
+uses bounded player slots and preserves existing recovery, shelter and clock
+restrictions. 30 native assertions cover the guard and old-save/rollback
+continuity; see assets/validation_5810/RESULTS.md. Full sleeping-bag/two-occupant
+rest integration and #410 furniture remain pending. No author acceptance is claimed.
+
+
+Approved on 2026-10-25: the two occupants are two players, each with their
+own sleeping bag. Normal rest may run while another player remains active.
+World-time acceleration requires every living player to rest and accept the
+same duration; waking, cancellation or loss of safety stops acceleration for
+everyone. Costs/recovery remain individual. This cooperative policy is pending
+implementation; the packing guard does not provide two-player admission.
+
 
 ## 5.8.9 - Severe contamination (#502, in progress)
 

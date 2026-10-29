@@ -1,6 +1,54 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.14** - 2026-10-26.
+Documentation version: **5.8.15** - 2026-10-26.
+
+## 5.8.15 - Bag footprint and tent clearance (#412)
+
+The existing open-bag model is 88 units long and 40.4 units wide including its
+zipper, with an 8-unit high envelope. Clearance uses the conservative symmetric
+half-width 20.4 and the model's facing, rather than a radius-46 upright cylinder.
+`CaelumAppearanceRegistry` stores these art-derived dimensions; no balance or
+model scale changes. The native player capsule is checked independently and is
+never assigned a new full height or radius. Tent interaction applies native
+crouching before checking the berth, then restores the prior crouch on exit.
+
+A 11-by-5 cover of circumscribed probe circles checks the entire floor footprint;
+its small conservative edge overhang can reject very tight gaps. Local blockmap
+solids use rectangle/circle overlap plus the actual body volume. Other players'
+normal-rest, active-calendar and pending pre-sleep-cleaning bag models are checked
+through MAXPLAYERS slots with separating axes. No routine global actor scan or
+per-tic full-world search is introduced. The existing 5.8.10 packing guard is retained.
+
+The query runs on placement and existing calendar-support/forecast refreshes,
+not on every actor. Native evidence includes a worst-frequency one-query-per-tic
+peaceful comparison; frame callbacks are a cadence proxy, not GPU presentation.
+Tests establish two model footprints and two crouched collision bodies, plus
+real single-player normal/accelerated sleep. They do not establish two connected
+players or shared accelerated time. The approved cooperative rule remains pending;
+the existing solo gate and world-clock ownership are unchanged in this stage.
+
+Author decision, 2026-10-26: defer author verification of multiplayer rest to
+V5.12 (cooperative/PvP foundation). The previously approved cooperative rules
+remain recorded, but no two-client author check gates V5.8. This decision is
+not acceptance of the separate individual bag-clearance check. Shared-clock
+implementation remains subject to that dedicated multiplayer authority scope.
+
+Interactive tent correction, 2026-10-26:
+- Use from outside opens Rest / Pack; Rest requires the owner's original,
+  accessible sleeping bag and follows existing safety and duration checks.
+- Placement checks two berths along the roof axis. Native crouching uses the
+  engine's crouch factor; its deferred Height update is projected immediately
+  for the placement probe. No FullHeight/radius/model adjustment is made.
+- Bag entry revision1 saves the tent, original entrance/map and crouch posture.
+  Old bag actors default to revision0 and retain their original behavior.
+  Loading is idempotent; no item is recreated or duplicated.
+- Wake-up and pre-sleep cleaning cancellation return to a clear saved entrance
+  or a native-checked local fallback. A newly blocked exit is never telefragged;
+  external displacement is not undone. If all exits are blocked, retain the
+  current safe position and let native crouch clearance prevent standing.
+- The same bag remains reserved through automatic equipment cleaning. Packing
+  is refused while the berth is reserved; resources follow the accepted #502
+  cleaning flow. Limbo uses the existing untimed furniture rest rule.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
@@ -350,6 +398,29 @@ are delivered by the continuations above; remaining #502 scope stays in TASKS. V
 ## 5.8.11 - Household bathroom installation (#410)
 
 Approved domestic infrastructure: each of the160 existing house interiors receives a sink, bathtub and toilet. Each house owns one potable200-L reserve shared by sink and bathtub, refilling1L/world-minute. Preserve fractional volume, save identity and elapsed absence. The installation does not alter map geometry. Runtime integration is implemented in5.8.11. Source amounts are generated from assets/art_source/bathrooms/DATA.json. Each house lazily owns a revision1 water object in the travelling household registry. Installation retains map-local fixture references; a transient load guard revisits already-prepared legacy houses. Use reads available volume; selected water containers collect while facing and reaching an accessible fixture. Partial fill uses available volume and respects existing inventory/thermal/contamination guards. The source temperature follows the existing ambient container-fill rule. A nonpositive/full/blocked request cannot spend water. Native save/hub/rollback and220checks are recorded in validation_5811; CA410-BATH-01 passed author review on 2026-10-25 without qualifications. Toilet metabolic use, soap bathing and resident cleaning remain #502.
+
+## 5.8.10 - Tent rest integration (#412)
+
+Author approval, 2026-10-25: each of two occupants uses their own sleeping bag.
+The tent supplies its already-approved shelter without beds or extra recovery
+bonuses. A tent may not be packed while anyone rests inside.
+
+Implemented first stage: packing checks living local player occupants in normal
+or accelerated rest, both at start and during/at the end of the attended work.
+Stale sessions belonging to another map do not reserve it. Late occupancy pauses
+remaining work; the original deployed tent/item stay intact until safe completion.
+This introduces no saved fields, map geometry, extra comfort or world-clock rules.
+The existing solo-rest restriction and sleeping-bag room check remain unchanged;
+two-person admission and actual bag fit are not delivered by this guard alone.
+
+
+Approved on 2026-10-25: the two occupants are two players, each with their
+own sleeping bag. Normal rest may run while another player remains active.
+World-time acceleration requires every living player to rest and accept the
+same duration; waking, cancellation or loss of safety stops acceleration for
+everyone. Costs/recovery remain individual. This cooperative policy is pending
+implementation; the packing guard does not provide two-player admission.
+
 
 ## 5.8.9 - Contamination and hygiene contract (#502)
 

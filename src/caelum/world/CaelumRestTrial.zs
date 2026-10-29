@@ -2,14 +2,14 @@
 // Las ayudas de reservas requieren una elección explícita del autor/jugador.
 class CaelumRestTrial : Object play
 {
-    static bool Open(CaelumPlayer user, CaelumRestFurniture furniture = null, CaelumSleepingBag bag = null)
+    static bool Open(CaelumPlayer user, CaelumRestFurniture furniture = null, CaelumSleepingBag bag = null, CaelumDeployedTent tent = null)
     {
         if (CaelumRestState.IsActive(user)) return false;
         if (bag != null && (furniture != null || !bag.AvailableTo(user))) return false;
         if (furniture != null && !furniture.CanReach(user)) return false;
         if(furniture!=null && furniture.RestMode()==CaelumRestRules.MODE_SLEEP)
             CaelumPoiKnowledge.RecordUse(user,furniture,CaelumPoiData.BED);
-        String reason = CaelumRestState.BlockReason(user,furniture!=null && CaelumWorldCatalogue.IsLimboMap(level.MapName));
+        String reason = CaelumRestState.BlockReason(user,(furniture!=null || tent!=null) && CaelumWorldCatalogue.IsLimboMap(level.MapName));
         if (reason.Length() != 0 && reason != "CA_REST_NEEDS")
         {
             if (user != null) user.A_Print(StringTable.Localize(reason, false));
@@ -26,10 +26,13 @@ class CaelumRestTrial : Object play
         guide.Furniture = furniture;
         guide.UsesFurniture = furniture != null;
         guide.Bag = bag;
+        guide.Tent = tent;
+        guide.UsesTent = tent!=null;
         guide.UsesBag = bag != null;
         int conversation = furniture == null ? 43510
             : furniture.RestMode() == CaelumRestRules.MODE_SLEEP ? 43512 : 43511;
         if (bag != null) conversation = 43513;
+        if(tent!=null && CaelumWorldCatalogue.IsLimboMap(level.MapName))conversation=43516;
         if (furniture!=null && CaelumWorldCatalogue.IsLimboMap(level.MapName))
             conversation=furniture.RestMode()==CaelumRestRules.MODE_SLEEP?43516:43515;
         if (CaelumFactionCondition.OpenDialogue(user, guide, conversation, null, SF_IGNOREVISIBILITY))
@@ -76,6 +79,8 @@ class CaelumRestGuide : Actor
     CaelumRestFurniture Furniture;
     bool UsesFurniture;
     CaelumSleepingBag Bag;
+    CaelumDeployedTent Tent;
+    bool UsesTent;
     bool UsesBag;
 
     override void Tick()
@@ -98,6 +103,7 @@ class CaelumRestGuide : Actor
             {
                 if (Bag == null || !Bag.AvailableTo(Subject))
                     Subject.A_Print(StringTable.Localize("CA_SLEEPING_BAG_UNAVAILABLE", false));
+                else if(UsesTent)CaelumTentRest.Begin(Subject,Tent,Bag,minutes);
                 else Bag.BeginRest(Subject, minutes);
             }
             else if (UsesFurniture && (Furniture == null || !Furniture.CanReach(Subject)))
@@ -139,7 +145,7 @@ class CaelumRestAction : CaelumPalomoDialogueAction abstract
         {
             if ((mode != CaelumRestRules.MODE_SLEEP && mode != CaelumRestRules.MODE_WAIT)
                 || (CaelumRestRules.DurationTics(minutes) == 0
-                    && !(minutes==0 && guide.Furniture!=null && CaelumWorldCatalogue.IsLimboMap(level.MapName)))) return false;
+                    && !(minutes==0 && (guide.Furniture!=null || guide.Tent!=null) && CaelumWorldCatalogue.IsLimboMap(level.MapName)))) return false;
             if (guide.UsesFurniture && (guide.Furniture == null || guide.Furniture.RestMode() != mode)) return false;
             if (guide.UsesBag && (guide.Bag == null || mode != CaelumRestRules.MODE_SLEEP)) return false;
             guide.QueuedMode = mode;

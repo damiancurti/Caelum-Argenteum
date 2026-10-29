@@ -1,6 +1,39 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.14** - 2026-10-26.
+Documentation version: **5.8.15** - 2026-10-26.
+
+## 5.8.15 - Sleeping-bag clearance and tent interaction (#412), 2026-10-26
+
+Final author acceptance, 2026-10-26: CA412-BAG-01 (origin5.8.15/#412)
+passed including ordinary outside Use, original sleeping bag placement, rest
+and safe exit. The author confirmed both return-terminal corrections passed
+without qualifications. The pending entry is retired; no new native run is
+claimed for this acceptance-only update. Multiplayer remains deferred to V5.12.
+
+The author accepted the supplied tests except the pot and tent, then reported
+that the tent could not be entered and Use did nothing. CA412-BAG-01 remains
+pending with that specific correction; no full acceptance is inferred. The
+multiplayer test/authority work is deferred to V5.12 by explicit author decision.
+
+The initial patch retained the original #412 packing-guard ancestry and fixed
+oriented bag clearance without resizing the accepted assets. Its 80 native
+checks remain historical evidence. The first author launcher was corrected to
+load canonical bindings and verify readiness after an inactive-key report.
+
+The follow-up now exposes Rest / Pack on actual Use from outside. Rest uses the
+native duration dialogue, original bag and native crouch. Revision1 entry data
+returns the sleeper to the clear original entrance or a checked fallback;
+revision0 preserves legacy bags. Pre-sleep equipment washing retains the same
+reservation, costs and packing guard. No art, recovery or map geometry changed.
+
+Follow-up evidence: 73 executed PASS/0 FAIL in 11 selected native runs, including
+native menu replies, Limbo, solo acceleration, blocked berths/exits, pre-sleep
+cleaning/cancellation, new-save return, old-save load and original-save rollback.
+The package matches all16,918 source members. Static validation passes; exact
+commands/digests and unchanged-roof captures are in assets/validation_5815.
+Only this individual interaction correction awaits author corroboration. The
+terminal is prepared but was not opened while the author was away. Remaining
+#410 furniture integration and V5.12 shared-clock work are not completed here.
 
 ## 5.8.14 - Native ration lots (#410), 2026-10-26
 
@@ -482,6 +515,27 @@ preserve assigned identity. Old saves also restore Prepared=true, so the added
 transient BathroomReady flag revalidates the additive installation after loading.
 Failed probes and their corrected evidence remain in validation_5811. The old
 save loads with the original package for rollback. No FPS claim is made.
+
+## 5.8.10 - Tent packing occupancy guard (#412), 2026-10-25
+
+Implemented the approved prohibition on dismantling an occupied resting tent.
+Normal and accelerated rest are checked through bounded player slots. Packing
+rejects atomically, pauses for late occupancy and rechecks before returning the
+original item. No saved state, geometry, mass, comfort or clock policy changes.
+30 native assertions pass in assets/validation_5810, including a retained
+enlarged-tent save and rollback with the original package. The race fixture
+injects native rest records; it is not proof of two-player rest admission.
+Static validation and README review accompany the patch. The author is away;
+full bag/furniture/rest integration and eventual author acceptance remain pending.
+
+
+Approved on 2026-10-25: the two occupants are two players, each with their
+own sleeping bag. Normal rest may run while another player remains active.
+World-time acceleration requires every living player to rest and accept the
+same duration; waking, cancellation or loss of safety stops acceleration for
+everyone. Costs/recovery remain individual. This cooperative policy is pending
+implementation; the packing guard does not provide two-player admission.
+
 
 ## 5.8.9 - Severe contamination (#502, in progress), 2026-10-24
 

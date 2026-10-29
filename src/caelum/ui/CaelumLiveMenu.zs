@@ -1,7 +1,7 @@
 // Un único propietario nativo para las vistas que mantienen viva la simulación.
 class CaelumLiveMenu : ListMenu
 {
-    enum ContextType { CTX_SKIP=100, CTX_JOURNEY, CTX_REST, CTX_MERCHANT, CTX_CALENDAR, CTX_EQUIPMENT, CTX_CHEST, CTX_CREATION, CTX_RECIPES, CTX_MATE, CTX_PROPERTY, CTX_BATH, CTX_CLEAN, CTX_CAMP_FIRE };
+    enum ContextType { CTX_SKIP=100, CTX_JOURNEY, CTX_REST, CTX_MERCHANT, CTX_CALENDAR, CTX_EQUIPMENT, CTX_CHEST, CTX_CREATION, CTX_RECIPES, CTX_MATE, CTX_PROPERTY, CTX_BATH, CTX_CLEAN, CTX_CAMP_FIRE, CTX_CAMP_TENT };
     CaelumPlayer Subject;
     String OriginMap;
     int Context;
@@ -35,6 +35,7 @@ class CaelumLiveMenu : ListMenu
         let cleaning=CaelumCleaningSession.Find(user);if(cleaning!=null && cleaning.Open)return CTX_CLEAN;
         let bath=CaelumBathSession.Find(user);if(bath!=null && bath.Open)return CTX_BATH;
         let fire=CaelumCampFireSession.Find(user);if(fire!=null && fire.Open)return CTX_CAMP_FIRE;
+        let tent=CaelumTentSession.Find(user);if(tent!=null && tent.Open)return CTX_CAMP_TENT;
         if(CaelumMateSession.Active(user))return CTX_MATE;
         let recipes=CaelumRecipeSession(user.FindInventory("CaelumRecipeSession"));
         if(recipes!=null && recipes.Open)return CaelumJournalInput.SkipOpen(user)?CTX_SKIP:CTX_RECIPES;
@@ -119,6 +120,7 @@ class CaelumLiveMenu : ListMenu
         else if(Context==CTX_CLEAN)CaelumCleaningUI.Draw(Journal(),Subject);
         else if(Context==CTX_BATH)CaelumBathUI.Draw(Journal(),Subject);
         else if(Context==CTX_CAMP_FIRE)CaelumCampFireUI.Draw(Journal(),Subject);
+        else if(Context==CTX_CAMP_TENT)CaelumTentUI.Draw(Journal(),Subject);
         else if(Context==CTX_CHEST)CaelumChestPreview.Draw();
         else if(Context==CTX_RECIPES)CaelumRecipeEvents.Draw(Subject);
         else if(Context==CTX_MATE)CaelumMateUI.Draw(Journal(),Subject);
@@ -153,6 +155,7 @@ class CaelumLiveMenu : ListMenu
         if(Context==CTX_CLEAN)return CaelumCleaningUI.Key(type,scan,keyString);
         if(Context==CTX_BATH)return CaelumBathUI.Key(Subject,type,scan,keyString);
         if(Context==CTX_CAMP_FIRE)return CaelumCampFireUI.Key(type,scan,keyString);
+        if(Context==CTX_CAMP_TENT)return CaelumTentUI.Key(type,scan,keyString);
         if(Context==CTX_CHEST)
             return CaelumChestPreview.PanelKey(Subject,type,scan,keyString);
         if(Context==CTX_RECIPES)return CaelumRecipeEvents.Key(Subject,type,scan,keyString);

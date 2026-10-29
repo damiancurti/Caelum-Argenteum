@@ -6695,3 +6695,19 @@ CA_CAMP_FIRE_POT_STATUS = "Olla: %.3f L | %.1f C | %s";
 CA_FOOD_LOTS_DETAIL = "Contamination: %.2f\nLots: %d; oldest first.";
 [es]
 CA_FOOD_LOTS_DETAIL = "Contaminación: %.2f\nLotes: %d; más antiguo primero.";
+
+[enu default]
+CA_CAMP_REST_OCCUPIED = "Someone is resting inside this tent. Wait until they finish before packing it.";
+[es]
+CA_CAMP_REST_OCCUPIED = "Hay alguien descansando dentro de la carpa. Esperá a que termine antes de desmontarla.";
+
+[enu default]
+CA_TENT_USE_HINT = "{bind:+use}: Rest in tent / pack";
+CA_TENT_REST = "Rest with my sleeping bag";
+CA_TENT_PACK = "Pack tent";
+CA_TENT_REST_TERMS = "Rest places your own sleeping bag inside. You return to a clear exit when you wake. Packing is unavailable while anyone rests inside.";
+[es]
+CA_TENT_USE_HINT = "{bind:+use}: Descansar en la carpa / desmontar";
+CA_TENT_REST = "Descansar con mi bolsa";
+CA_TENT_PACK = "Desmontar carpa";
+CA_TENT_REST_TERMS = "Al descansar se coloca tu propia bolsa dentro. Al despertar volvés a una salida libre. No se puede desmontar mientras haya alguien descansando dentro.";

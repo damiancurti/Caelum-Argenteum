@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `03d0e41cf69f9c08a13233233e4a471fa05583cad2fc5e4f8a281944338b977e`. Locations include every definition; the last one per language wins.
+SHA-256: `6b2684a7c93080aa3128530ed54307142a164e703b9b6e7e7ab314d8d7c81a3e`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -33,7 +33,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_BULL | 1 | CA_BULL_NAME | CA_BULL_NAME |
 | CA_CAELLA | 5 | CA_CAELLA_NAME | CA_CAELLA_NECKLACE_TEACH |
 | CA_CALENDAR | 8 | CA_CALENDAR_AUTUMN | CA_CALENDAR_WINTER |
-| CA_CAMP | 29 | CA_CAMP_FIRE | CA_CAMP_TENT |
+| CA_CAMP | 30 | CA_CAMP_FIRE | CA_CAMP_TENT |
 | CA_CARAVAN | 18 | CA_CARAVAN_BACK | CA_CARAVAN_WORLD_HELP |
 | CA_CAST | 4 | CA_CAST_STATE_COMPLETED | CA_CAST_STATE_PREPARING |
 | CA_CHARACTER | 10 | CA_CHARACTER_EVASION | CA_CHARACTER_THERMAL |
@@ -171,6 +171,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_TC | 79 | CA_TC_ABANDONED | CA_TC_YOUR_HAND |
 | CA_TELEKINESIS | 1 | CA_TELEKINESIS_TARGET | CA_TELEKINESIS_TARGET |
 | CA_TELEPORT | 1 | CA_TELEPORT_TRAP | CA_TELEPORT_TRAP |
+| CA_TENT | 4 | CA_TENT_PACK | CA_TENT_USE_HINT |
 | CA_THERMAL | 16 | CA_THERMAL_ATTACK | CA_THERMAL_WET |
 | CA_THIRST | 2 | CA_THIRST_STATE_CRITICAL | CA_THIRST_STATE_LOW |
 | CA_TOILET | 8 | CA_TOILET_CANCEL_HINT | CA_TOILET_UNAVAILABLE |

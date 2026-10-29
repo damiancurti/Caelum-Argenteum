@@ -1,0 +1,64 @@
+{
+  "runtime": "entry03",
+  "sha256": "ee9fb082ac2259d80c770f6b4995099801f86985dab5bd4a04eb231538e17407",
+  "source_matching_members": 16918,
+  "runs": [
+    {
+      "label": "entry-core-05",
+      "executed_pass": 11,
+      "executed_fail": 0
+    },
+    {
+      "label": "entry-save-01",
+      "executed_pass": 3,
+      "executed_fail": 0
+    },
+    {
+      "label": "entry-load-01",
+      "executed_pass": 3,
+      "executed_fail": 0
+    },
+    {
+      "label": "entry-old-save-01",
+      "executed_pass": 5,
+      "executed_fail": 0
+    },
+    {
+      "label": "entry-clean-02",
+      "executed_pass": 11,
+      "executed_fail": 0
+    },
+    {
+      "label": "entry-exit-02",
+      "executed_pass": 5,
+      "executed_fail": 0
+    },
+    {
+      "label": "entry-ui-01",
+      "executed_pass": 8,
+      "executed_fail": 0
+    },
+    {
+      "label": "entry-native-limbo-01",
+      "executed_pass": 8,
+      "executed_fail": 0
+    },
+    {
+      "label": "entry-native-capture-01",
+      "executed_pass": 11,
+      "executed_fail": 0
+    },
+    {
+      "label": "entry-controls-01",
+      "executed_pass": 3,
+      "executed_fail": 0
+    },
+    {
+      "label": "entry-rollback-02",
+      "executed_pass": 5,
+      "executed_fail": 0
+    }
+  ],
+  "executed_pass": 73,
+  "executed_fail": 0
+}
