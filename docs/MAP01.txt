@@ -1,6 +1,6 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.8.26** - 2026-10-27.
+Documentation version: **5.8.27** - 2026-10-27.
 
 ## 5.8.26 - Existing library and adjacent reading desk (#410)
 

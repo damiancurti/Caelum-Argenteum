@@ -1,6 +1,22 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.26** - 2026-10-27.
+Documentation version: **5.8.27** - 2026-10-27.
+
+## 5.8.27 - Indoor furniture placement (#411)
+
+Movable storage furniture can now be rearranged inside the mansion, under the
+approved land permission. Wardrobes and ordinary carried chests use the same
+land checks; city streets and expired/unacquired property do not grant placement.
+Campfire/tent permissions remain separate. All placements still require the
+complete dry, stable, clear footprint, preserving doors, stairs and passages.
+Moving a filled object preserves its native contents, title and physical mass;
+existing fixed kitchen/water installations remain fixed. No new saved fields,
+map geometry, artwork, recipe or economic values are introduced.
+
+Validation in assets/validation_5827 records96 executed native PASS,
+zero failures/static errors, and16,980 source-matching package members. CA411-INTERIOR-01
+awaits author corroboration; all earlier outstanding checks remain pending.
+This permission patch does not finish the wider furniture catalogue or V5.8.
 
 ## 5.8.26 - Bookcase storage and desk reading (#410)
 

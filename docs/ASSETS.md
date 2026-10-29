@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.26** - 2026-10-27.
+Documentation version: **5.8.27** - 2026-10-27.
 
 ## 5.8.26 - Reused owned reading furniture (#410)
 

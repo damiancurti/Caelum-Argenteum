@@ -1,8 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.8.26** - 2026-10-27.
+Documentation version: **5.8.27** - 2026-10-27.
 
-**5.8.26/#410:** actual bookcase/desk reading; validation_5826; author-pending.
+**5.8.26-27/#410/#411:** stored books/indoor placement; validation_5826-27; author-pending.
 
 **5.8.24-25/#410:** wardrobe/fountain/cistern; validation_5824-25; author-pending.
 
