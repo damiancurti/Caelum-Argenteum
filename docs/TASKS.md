@@ -1,6 +1,26 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.7.14** — 2026-10-23.
+Documentation version: **5.8.0** — 2026-10-23.
+
+## #414 / 5.8.0 - Native connected-water feasibility
+
+Implemented the required bounded private engine prototype. Native tests cover
+conservation, gate collision/open/close, untouched water, immersion, thermal
+sampling, rest rejection, save/load and hub return. See validation_580/RESULTS.md.
+CA414-PROTOTYPE-01 is pending author review; this is not issue completion.
+
+Remaining #414: control-volume quality lookup, implementation of the approved
+contamination-union mixing rule,
+placement of the approved two 32,000 L deposits beside the mansion pool,
+barrier interaction, the approved fill/drain calibration in SYSTEMS and
+production migration/catch-up. Keep the issue open.
+
+V5.8 dependencies remain separate: #410 catalogue -> #411 property/camp -> #412
+rest integration; #413 altitude; #415 unloaded outcomes -> #416 routes/schedules
+-> #417 travel incidents. Questions already sent cover reading adjacency,
+bathroom interactions, altitude calibration, placement restrictions, eligible
+properties, route destinations, mixing, campaign water location and off-map
+siege resolution. No unanswered choice is treated as approval.
 
 ## #472 / 5.7.14 - Reusable mates
 

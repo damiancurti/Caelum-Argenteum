@@ -1,8 +1,11 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.7.14** — 2026-10-23.
+Documentation version: **5.8.0** — 2026-10-23.
 
-**5.7.14/#472:** mates;163+21nativePASS;CA472-01 fully accepted2026-10-23;validation_5714. Approved V5.7 author queue empty; next V5.8.
+**5.8.0/#414:** water prototype;100 PASS;validation_580;CA414-PROTOTYPE-01 pending.
+Integration pending; approved calibration: SYSTEMS.
+
+**5.7.14/#472:**163+21PASS;accepted2026-10-23;validation_5714. V5.7 complete.
 **5.7.12/#487:** barrel/3402L;93+1PASS;validation_5712;CA487-01accepted2026-10-23.#471 batches pending.
 **5.7.11/#486:** Chemistry; CA486-01 accepted2026-10-23.
 **5.7.13/#471:**22recipes/batches/imports/renewal;267finalnativePASS;validation_5713;CA471-BATCH-01accepted2026-10-23.

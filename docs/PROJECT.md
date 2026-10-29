@@ -1,6 +1,27 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.7.14** — 2026-10-23.
+Documentation version: **5.8.0** — 2026-10-23.
+
+## 5.8.0 - Connected-water feasibility (#414)
+
+The first V5.8 patch implements the issue's required private native prototype.
+Moving two swimmable 3D-floor control ceilings changes native immersion and
+thermal sampling, conserves the pair's volume and leaves an isolated third
+volume unchanged. Gates stop/resume transfer; map-local state and native planes
+survive save/load and hub return. No campaign map or gameplay rule changes; two diagnostic release labels are synchronized.
+
+This establishes feasibility for the tested horizontal, equal-area, closed
+pair only. It does not establish arbitrary terrain, realistic flow rates,
+concentration mixing, unattended calendar evolution or campaign completeness.
+The existing source-quality reader does not read the control-sector metadata
+in this fixture; that integration remains explicit #414 work. Authored geometry
+is approved beside the mansion pool. The author approved two 32,000 L deposits,
+a 20 cm connecting opening with discharge coefficient 0.62, potable left inflow
+at 1 L/s to 1.75 m and right drainage at 1 L/s down to 0.25 m, including absence
+at Limbo's 1:1 game-clock rate. Placement, controller and save-safe geometry
+integration remain unimplemented. The author approved the existing container rule:
+mixtures retain every contaminant present, without dilution-based purification. CA414-PROTOTYPE-01 awaits
+author acceptance. Evidence: assets/validation_580/RESULTS.md.
 
 ## 5.7.14 - Reusable mates (#472)
 

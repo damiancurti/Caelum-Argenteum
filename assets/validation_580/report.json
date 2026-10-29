@@ -1,0 +1,74 @@
+{
+  "issue": 414,
+  "version": "5.8.0",
+  "scope": "private feasibility prototype; production changes only synchronize two diagnostic release labels",
+  "native_runs": [
+    {
+      "label": "feasibility-02",
+      "pass": 23,
+      "exit_code": 0,
+      "package_sha256": "40F372ADEB819E66E6D20E4EBEA80DC7C8E4D2DF5E1FBA89E9E2CDE754FDD02F",
+      "addon_sha256": "DCFCEDE5AC067E01AC3911241F5F5998EB395117CEED0B708E866F0252D5DA3D"
+    },
+    {
+      "label": "save-01",
+      "pass": 3,
+      "exit_code": 0,
+      "package_sha256": "40F372ADEB819E66E6D20E4EBEA80DC7C8E4D2DF5E1FBA89E9E2CDE754FDD02F",
+      "addon_sha256": "DCFCEDE5AC067E01AC3911241F5F5998EB395117CEED0B708E866F0252D5DA3D"
+    },
+    {
+      "label": "load-01",
+      "pass": 11,
+      "exit_code": 0,
+      "package_sha256": "40F372ADEB819E66E6D20E4EBEA80DC7C8E4D2DF5E1FBA89E9E2CDE754FDD02F",
+      "addon_sha256": "DCFCEDE5AC067E01AC3911241F5F5998EB395117CEED0B708E866F0252D5DA3D"
+    },
+    {
+      "label": "hub-01",
+      "pass": 17,
+      "exit_code": 0,
+      "package_sha256": "40F372ADEB819E66E6D20E4EBEA80DC7C8E4D2DF5E1FBA89E9E2CDE754FDD02F",
+      "addon_sha256": "DCFCEDE5AC067E01AC3911241F5F5998EB395117CEED0B708E866F0252D5DA3D"
+    },
+    {
+      "label": "flow-save-02",
+      "pass": 3,
+      "exit_code": 0,
+      "package_sha256": "40F372ADEB819E66E6D20E4EBEA80DC7C8E4D2DF5E1FBA89E9E2CDE754FDD02F",
+      "addon_sha256": "0A8401B90ED082A8F630FEDD7D210631FF3CD24765DF2C37B3B944B7C0CE1BD2"
+    },
+    {
+      "label": "flow-load-01",
+      "pass": 8,
+      "exit_code": 0,
+      "package_sha256": "40F372ADEB819E66E6D20E4EBEA80DC7C8E4D2DF5E1FBA89E9E2CDE754FDD02F",
+      "addon_sha256": "0A8401B90ED082A8F630FEDD7D210631FF3CD24765DF2C37B3B944B7C0CE1BD2"
+    },
+    {
+      "label": "visual-02",
+      "pass": 12,
+      "exit_code": 0,
+      "package_sha256": "40F372ADEB819E66E6D20E4EBEA80DC7C8E4D2DF5E1FBA89E9E2CDE754FDD02F",
+      "addon_sha256": "0A8401B90ED082A8F630FEDD7D210631FF3CD24765DF2C37B3B944B7C0CE1BD2"
+    },
+    {
+      "label": "final-suite-01",
+      "pass": 23,
+      "exit_code": 0,
+      "package_sha256": "3101161A5FC47EB1B7F65061081FFBCE723AA47D938EF7097A1CCA841F10C75B",
+      "addon_sha256": "0A8401B90ED082A8F630FEDD7D210631FF3CD24765DF2C37B3B944B7C0CE1BD2"
+    }
+  ],
+  "pass": 100,
+  "fail": 0,
+  "quality_limitation": "existing reader returns -1; control-sector quality is 2; no mixing assertion",
+  "superseded_attempts": {
+    "feasibility-01": "last queued check needed a wait before quit",
+    "visual-01": "camera framing improved",
+    "flow-save-01": "runner rejected missing RESULT marker; corrected command script"
+  },
+  "author_acceptance": "pending CA414-PROTOTYPE-01",
+  "deterministic_fixture_sha256": "0a8401b90ed082a8f630fedd7d210631ff3cd24765df2c37b3b944b7c0ce1bd2",
+  "final_package_entries_match_src": 16806
+}

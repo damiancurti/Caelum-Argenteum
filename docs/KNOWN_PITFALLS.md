@@ -4,6 +4,25 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-157 - Moving swimmable planes and resolving source identity are separate
+
+Status/evidence: ENGINE-VERIFIED geometry; OPEN quality integration. #414,
+2026-10-23, GZDoom 4.14.2 / Windows 11. Evidence: validation_580/RESULTS.md.
+
+Use native `Sector.MoveCeiling` on a swimmable 3D-floor control sector and convert
+the desired height with `ceilingplane.PointToDist`; the destination is a plane
+distance, not an assumed unsigned world height. In the bounded horizontal-pair
+fixture, attached surfaces, native WaterLevel and thermal sampling follow the
+move. Native sector references/planes and map-local EventHandler fields survive
+save/load and hub return. An unrelated control sector remains unchanged.
+
+Do not infer source identity from the player's containing sector alone: the
+swimmable volume can use a separate control sector. The existing #408 reader
+returns unidentified in this case, even though native immersion is correct.
+Check quality, conservation, boundaries and persistence independently. This
+proof does not establish concentration chemistry, arbitrary connected terrain,
+calendar catch-up, production flow rates or rendering performance at scale.
+
 ## CA-KP-156 - HUBPOWER alone loses pending recovery outside a hub
 
 Status/evidence: ENGINE-VERIFIED; #472, 2026-10-23, GZDoom 4.14.2 / Windows 11.
