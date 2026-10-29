@@ -47,10 +47,12 @@ pack(WORK / ('flightperformance.pk3' if args.flights else 'performance.pk3'), {
     'ZSCRIPT': b'version "4.14.2"\n#include "checks.zs"\n#include "performance.zs"\n',
     'checks.zs': (HOME / 'checks.zs').read_bytes(),
     'performance.zs': (HOME / ('flightperformance.zs' if args.flights else 'performance.zs')).read_bytes(),
+    'MENUDEF': b'ListMenu "CA415PerformanceMenu" {Class "CA415PerformanceMenu"}\n' if not args.flights else b'',
     'maps/CABS415P.wad': bytes(wad),
     'MAPINFO': b'GameInfo {AddEventHandlers="CA415Performance"}\nmap CABS415P "Absent combat performance" {cluster=8551 sky1="SKY1"}\n',
 })
 (WORK / 'perf.cfg').write_text('wait 200; quit\n', encoding='ascii')
+(WORK / 'perfstaged.cfg').write_text('wait 1; netevent ca415perf_staged\n', encoding='ascii')
 if args.baseline:
     changed = subprocess.check_output(['git', 'diff', args.baseline,
         '--name-only', '--', 'src'], cwd=ROOT, text=True).splitlines()

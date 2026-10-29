@@ -546,6 +546,7 @@ class CaelumAbsentBattle : Object play
     bool TargetCacheReady;
     bool ScheduleWaiting;
     double ScheduledCivil,DeploymentTicFraction;
+    CaelumAbsentWork Work;
 
     void RefreshFirstTargets()
     {
@@ -655,31 +656,9 @@ class CaelumAbsentBattle : Object play
 
     void Round(double worldSeconds=1)
     {
-        double seconds=ActiveScale*worldSeconds;
-        for(int i=0;i<Rows.Size();i++)Rows[i].ClearPending();
-        for(int i=0;i<Rows.Size();i++)if(Rows[i].Alive())Rows[i].Recover(seconds);
-        for(int i=0;i<Rows.Size();i++)Rows[i].BeginRound();
-        for(int i=0;i<Rows.Size();i++)if(Rows[i].Alive())Rows[i].Act(seconds);
-        for(int i=0;i<Flights.Size();i++)Flights[i].Resolve();
-        for(int i=0;i<Machines.Size();i++)Machines[i].Advance(seconds);
-        // Ninguna baja ni desgaste modifica las acciones de la misma ronda.
-        for(int i=0;i<Rows.Size();i++)Rows[i].Commit();
-        for(int i=0;i<Flights.Size();i++)Flights[i].CommitWear();
-        Flights.Clear();
-        for(int i=0;i<StructureHits.Size();i++)StructureHits[i].Commit();
-        StructureHits.Clear();
-        for(int i=0;i<Rows.Size();i++)Rows[i].FinishRound();
-        for(int i=0;i<Machines.Size();i++)Machines[i].Observe();
-        bool won=Encounter!=null && Encounter.Victory;
-        if(Encounter!=null)Encounter.ResolveVictory(true);
-        let port=CaelumPortSiege(Encounter);
-        if(port!=null && port.Victory && !won && SourceMap=="MAP03")port.Calendar(Observer,SimulationTime);
-        // La victoria puede ordenar retiradas despues de resolver las bajas.
-        // Se conservan los cuerpos y su equipo sin otra ronda ofensiva.
-        for(int i=0;i<Rows.Size();i++)Rows[i].FinishRound();
-        if(port!=null && !port.Victory)port.RefillCrews();
-        let corpses=CaelumCorpseArchive.Get(true);if(corpses!=null)corpses.Tick();
-        Rounds++;
+        if(Work==null)Work=new('CaelumAbsentWork');
+        Work.Begin(self,SimulationTime,worldSeconds,false);
+        while(!Work.Advance(2147483647)){}
     }
 
     void AddMachine(CaelumHostileMachine machine)
@@ -728,24 +707,9 @@ class CaelumAbsentBattle : Object play
 
     void Interval(double end,double worldSeconds)
     {
-        SimulationTime=end;
-        double seconds=ActiveScale*worldSeconds;
-        DeployResidents(seconds);
-        Reinforce(seconds);
-        Engaged=Opposed();
-        for(int i=0;i<Rows.Size();i++)Rows[i].Physiology(end,seconds);
-        if(Opposed() || MachineWork())Round(worldSeconds);
-        else
-        {
-            for(int i=0;i<Rows.Size();i++)if(Rows[i].Alive())
-            {
-                // Opposed ya confirmo que no queda un rival. No repetir una
-                // busqueda de toda la fuerza por cada superviviente y segundo.
-                Rows[i].Opponent=null;Rows[i].Recover(seconds);Rows[i].FinishRound();
-                Rows[i].Body.target=null;
-                if(Rows[i].Body.ContaminationAbsence!=null)Rows[i].Body.ContaminationAbsence.Idle=true;
-            }
-        }
+        if(Work==null)Work=new('CaelumAbsentWork');
+        Work.Begin(self,end,worldSeconds,true);
+        while(!Work.Advance(2147483647)){}
     }
 
     void SyncTo(double end)
@@ -881,20 +845,31 @@ class CaelumAbsentBattle : Object play
 
     void Restore(CaelumPlayer user)
     {
-        if(!Away || user==null || SourceMap!=level.MapName)return;
+        if(!Away || Busy || user==null || SourceMap!=level.MapName)return;
         double end=CaelumContaminationAbsence.Clock(user,SourceMap);if(end<0)return;
         if(!RebindResidents())return;
         SyncTo(end);
         // El resto final pertenece a esta ausencia. Se resuelve una sola vez
         // antes de reanudar los tics nativos; no se arrastra al proximo viaje.
         if(Fraction>0){Busy=true;Interval(end,Fraction);Fraction=0;Busy=false;}
+        FinishRestore();
+    }
+
+    void FinishRestore()
+    {
         Away=false;
+        Busy=false;
         let port=CaelumPortSiege(Encounter);
         if(port!=null && port.Reinforcements!=null)
             port.Reinforcements.NextOpportunity=level.time+int(Ceil(Max(0,ReinforcementDelay)*TICRATE));
         for(int i=0;i<Rows.Size();i++)
         {
             let row=Rows[i];let resident=CaelumPortDefender(row.Body);
+            if(row.Body!=null && row.Body.ThermalState!=null)
+            {
+                row.Body.ThermalState.RuntimeReady=false;row.Body.ThermalState.SourceMap="";
+                row.Body.ThermalState.PendingActivityJoules=0;row.Body.ThermalState.PropelledVelocity=(0,0);
+            }
             if(row.TravelingResident && resident!=null && resident.Residence!=null && resident.Residence.Suspended)
             {
                 resident.bShootable=false;row.NativeResumePending=row.Alive();

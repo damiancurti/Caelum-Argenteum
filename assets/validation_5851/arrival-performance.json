@@ -1,0 +1,100 @@
+{
+  "issue": 415,
+  "status": "Unreleased bounded-work checkpoint, not complete performance acceptance",
+  "population": {
+    "attackers": 1000,
+    "defenders": 600
+  },
+  "engine": "GZDoom 4.14.2",
+  "render_backend": "Vulkan",
+  "exact_recorded_outcome_parity": true,
+  "runs": {
+    "arrival-perf-sync01": {
+      "runtime_sha256": "F0BB38982E23131E2980CB8DC87D8136A91F463210C0658CB4CC995EA6588446",
+      "addon_sha256": "15D9135E6E2BCB5B3F0FC3EF597C07A893A4CF16945A7E03502980C975CE6542",
+      "render_callback_intervals": {
+        "n": 94,
+        "mean_ms": 106.48672659574468,
+        "p95_ms": 34.3493,
+        "p99_ms": 6005.366,
+        "max_ms": 6005.366
+      },
+      "pulse_execution": null,
+      "timing": [
+        "capture_ms=22.245800 rows=1600",
+        "world_seconds=1 active_scale=0.050000 elapsed_ms=16.381900 alive=1600 rounds=1",
+        "world_seconds=60 active_scale=0.050000 elapsed_ms=2337.142500 alive=1593 rounds=61",
+        "quiet_world_seconds=3600 elapsed_ms=5951.152100"
+      ],
+      "outcomes": {
+        "first": "life=1415600.000000000 anima=1964223.521366185 air=1756096.000000018 dirt=0.000000000 heat=0.000000000 shots=0",
+        "combat": "life=1407578.000000000 anima=1635713.737022836 air=1733470.863212381 dirt=0.000000000 heat=10.606209381 shots=11774",
+        "quiet": "life=1407578.000000000 anima=1635713.737022836 air=1755946.659999651 dirt=0.000000000 heat=10.606209381 shots=11774"
+      }
+    },
+    "arrival-perf-staged01": {
+      "runtime_sha256": "F0BB38982E23131E2980CB8DC87D8136A91F463210C0658CB4CC995EA6588446",
+      "addon_sha256": "15D9135E6E2BCB5B3F0FC3EF597C07A893A4CF16945A7E03502980C975CE6542",
+      "render_callback_intervals": {
+        "n": 2483,
+        "mean_ms": 27.822135038260168,
+        "p95_ms": 37.3617,
+        "p99_ms": 38.0553,
+        "max_ms": 95.5283
+      },
+      "pulse_execution": {
+        "n": 1165,
+        "mean_ms": 8.146577167381974,
+        "p95_ms": 8.7645,
+        "p99_ms": 9.3446,
+        "max_ms": 12.1001
+      },
+      "timing": [
+        "capture_ms=21.085200 rows=1600",
+        "staged_seconds=1 elapsed_ms=160.274800 pulses=3",
+        "staged_seconds=60 elapsed_ms=17569.289000 pulses=307",
+        "staged_seconds=3600 elapsed_ms=48857.475700 pulses=855"
+      ],
+      "outcomes": {
+        "first": "life=1415600.000000000 anima=1964223.521366185 air=1756096.000000018 dirt=0.000000000 heat=0.000000000 shots=0",
+        "combat": "life=1407578.000000000 anima=1635713.737022836 air=1733470.863212381 dirt=0.000000000 heat=10.606209381 shots=11774",
+        "quiet": "life=1407578.000000000 anima=1635713.737022836 air=1755946.659999651 dirt=0.000000000 heat=10.606209381 shots=11774"
+      }
+    },
+    "arrival-perf-staged02": {
+      "runtime_sha256": "851FFFF29286A31AC779F443387321CF912CBCAE5E870BFB96413EF925A96397",
+      "addon_sha256": "43FC24C816DFB4016B6806AD2D3D42349DA52728A4CA12C59BB501FB987867E9",
+      "render_callback_intervals": {
+        "n": 2577,
+        "mean_ms": 27.86682786185487,
+        "p95_ms": 37.321,
+        "p99_ms": 37.9711,
+        "max_ms": 96.0001
+      },
+      "pulse_execution": {
+        "n": 1213,
+        "mean_ms": 8.133074443528441,
+        "p95_ms": 8.7658,
+        "p99_ms": 9.4382,
+        "max_ms": 11.9753
+      },
+      "timing": [
+        "capture_ms=21.284500 rows=1600",
+        "staged_seconds=1 elapsed_ms=171.424000 pulses=3",
+        "staged_seconds=60 elapsed_ms=17572.861200 pulses=307",
+        "staged_seconds=3600 elapsed_ms=51591.040000 pulses=903"
+      ],
+      "outcomes": {
+        "first": "life=1415600.000000000 anima=1964223.521366185 air=1756096.000000018 dirt=0.000000000 heat=0.000000000 shots=0",
+        "combat": "life=1407578.000000000 anima=1635713.737022836 air=1733470.863212381 dirt=0.000000000 heat=10.606209381 shots=11774",
+        "quiet": "life=1407578.000000000 anima=1635713.737022836 air=1755946.659999651 dirt=0.000000000 heat=10.606209381 shots=11774"
+      }
+    }
+  },
+  "limits": [
+    "Renderer callback intervals are not ETW/presentation FPS.",
+    "Per-pulse budget is checked between slices; individual native work may exceed it.",
+    "Menu pause keeps simulation clocks fixed; total quiet/live processing latency remains excessive.",
+    "First staged run used explicit UI acknowledgement gating; second uses serial/pulse rejection. Both retain identical combat outcomes."
+  ]
+}

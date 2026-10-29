@@ -161,10 +161,10 @@ class CaelumContaminationAbsence : Object play
         if(row==null || !row.Away)return true;
         row.SyncTo(npc,civil);return row.Life>0;
     }
-    static void Restore(CaelumCombatActor npc,CaelumPlayer user)
+    static void Restore(CaelumCombatActor npc,CaelumPlayer user,double at=-1)
     {
         let row=npc.ContaminationAbsence;if(row==null || !row.Away)return;
-        double now=Clock(user,row.Map);if(now<0)return;
+        double now=at>=0?at:Clock(user,row.Map);if(now<0)return;
         row.SyncTo(npc,now);row.Away=false;
         if(npc.health<=0)return;
         npc.health=row.Life;

@@ -4,6 +4,33 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-189 - Pause resumed-world work before native actors can run
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, unreleased #415,
+2026-10-29; GZDoom 4.14.2, Windows/Vulkan. Evidence: validation_5851,
+arrival-calendar03, arrival-save01/load01 and arrival-performance.json.
+No author acceptance or presentation-FPS claim.
+
+Level.setFrozen stops actor simulation but still advances native level clocks.
+A ListMenu with menuactive=Menu.On pauses those clocks while NetworkProcess
+can mutate saved work state. Set the native freeze at WorldLoaded as a bridge:
+the current loading tic can finish before the menu pause is active. Inventory
+controllers that place residents must also defer their Tick. Snapshot the
+arrival date in WorldLoaded, not at the first later work pulse. Otherwise
+residents can occupy their own deployment probes before absent admission.
+Restore the prior freeze flag when complete, and reopen the work menu when a
+save contains an unfinished job. Keep phase, cursor and pending damage in play
+state; reject stale/duplicate network pulses. Never finalize a busy encounter
+through a second restore call. A soft slice budget bounds callbacks, not total
+processing duration or every indivisible native operation.
+
+Console wait commands continue during menu pause. Native fixtures must wait
+for the actual job and subsequent placement tics before asserting results;
+a fixed console wait can inspect an incomplete simultaneous round. The runner
+may tear down only its isolated test process after an explicit terminal record.
+The 1,000/600 diagnostic preserves all recorded outcomes but still needs faster
+long-absence processing. Callback intervals do not establish presented FPS.
+
 ## CA-KP-188 - Frozen poses and absolute attack clocks are different state
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, unreleased #415,

@@ -7,6 +7,47 @@ class CA415Performance : EventHandler
     ui Array<double> Frames;
     ui double Previous;
     ui bool Reported;
+    bool Staged,Running,WorkPending;
+    double Deadline,Started,Duration;
+    int Pulses,Serial;
+    void Stage(double seconds)
+    {
+        Deadline=Encounter.AbsentBattle.Stamp+seconds;Duration=seconds;Started=MSTimeF();
+        Running=true;WorkPending=false;Pulses=0;Serial++;Menu.SetMenu('CA415PerformanceMenu');
+    }
+    override void NetworkProcess(ConsoleEvent e)
+    {
+        if(e.Name=="ca415perf_staged"){Staged=true;return;}
+        if(e.Name!="ca415perf_step" || !Running || e.Args[0]!=Serial || e.Args[1]!=Pulses)return;
+        let battle=Encounter.AbsentBattle;double pulse=MSTimeF();Pulses++;
+        do
+        {
+            if(WorkPending)
+            {
+                if(battle.Work.Advance(CaelumAbsentArrival.ROW_SLICE))
+                {battle.Stamp=battle.Work.End;WorkPending=false;}
+            }
+            else if(battle.Stamp<Deadline && !battle.Terminal())
+            {
+                if(battle.Work==null)battle.Work=new('CaelumAbsentWork');
+                battle.Work.Begin(battle,battle.Stamp+1,1,true);WorkPending=true;
+            }
+            else {battle.Stamp=Deadline;battle.SimulationTime=Deadline;Running=false;break;}
+        }while(MSTimeF()-pulse<CaelumAbsentArrival.PULSE_BUDGET_MS);
+        Console.Printf("CA415P PULSE %.6f",MSTimeF()-pulse);
+        if(!Running)
+        {
+            Console.Printf("CA415P TIMING staged_seconds=%.0f elapsed_ms=%.6f pulses=%d",Duration,MSTimeF()-Started,Pulses);
+            Outcome(Duration==1?"first":Duration==60?"combat":"quiet");
+        }
+        EventHandler.SendInterfaceEvent(0,"ca415perf_ack");
+    }
+    override void InterfaceProcess(ConsoleEvent e)
+    {
+        if(e.Name!="ca415perf_ack")return;
+        let menu=CA415PerformanceMenu(Menu.GetCurrentMenu());
+        if(menu!=null && !Running)menu.Close();
+    }
     void Outcome(String stage)
     {
         let battle=Encounter.AbsentBattle;
@@ -62,6 +103,7 @@ class CA415Performance : EventHandler
         {
             let battle=Encounter.AbsentBattle;
             double seconds=level.maptime==106?1:60;
+            if(Staged){Stage(seconds);return;}
             double begin=MSTimeF();battle.SyncTo(battle.Stamp+seconds);
             int alive=0;for(int i=0;i<battle.Rows.Size();i++)if(battle.Rows[i].Alive())alive++;
             Console.Printf("CA415P TIMING world_seconds=%.0f active_scale=%.6f elapsed_ms=%.6f alive=%d rounds=%d",seconds,battle.ActiveScale,MSTimeF()-begin,alive,battle.Rounds);
@@ -73,10 +115,25 @@ class CA415Performance : EventHandler
             // Diagnostic terminal state: retain only the surviving defending
             // cohort in this calculation; do not destroy or reset any body.
             for(int i=0;i<battle.Rows.Size();i++)if(!battle.Rows[i].Friendly)battle.Rows[i].Participating=false;
+            if(Staged){Stage(3600);return;}
             double begin=MSTimeF();battle.SyncTo(battle.Stamp+3600);
             Console.Printf("CA415P TIMING quiet_world_seconds=3600 elapsed_ms=%.6f",MSTimeF()-begin);
             Outcome("quiet");
         }
         if(level.maptime==190)Console.Printf("CA415P RESULT isolated catch-up timing complete");
     }
+}
+
+class CA415PerformanceMenu : ListMenu
+{
+    override void Init(Menu parent,ListMenuDescriptor desc)
+    {Super.Init(parent,desc);mParentMenu=null;menuactive=Menu.On;}
+    override void Ticker()
+    {
+        menuactive=Menu.On;
+        let test=CA415Performance(EventHandler.Find('CA415Performance'));
+        if(test!=null && test.Running)EventHandler.SendNetworkEvent("ca415perf_step",test.Serial,test.Pulses);
+    }
+    override void Drawer(){}
+    override bool MenuEvent(int key,bool controller){return true;}
 }

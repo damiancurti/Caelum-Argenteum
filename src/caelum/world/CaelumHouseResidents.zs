@@ -348,6 +348,7 @@ class CaelumHouseResidents : Inventory
 
     override void Tick()
     {
+        if(CaelumAbsentArrivalEvents.Active())return;
         Super.Tick();
         if(PropertyRevision<CaelumPropertyData.REVISION){EnsureRecords();Ready=false;}
         if(PlacementPending.Size()>0)

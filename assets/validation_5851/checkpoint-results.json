@@ -1,8 +1,8 @@
 {
   "issue": 415,
-  "status": "Unreleased sixth integration checkpoint; #415 NOT complete",
+  "status": "Unreleased seventh integration checkpoint; #415 NOT complete",
   "planned_version": "5.8.51",
-  "native_distinct_assertions": 228,
+  "native_distinct_assertions": 246,
   "cases": {
     "math": 29,
     "rounds": 10,
@@ -30,25 +30,32 @@
     "wakeload": 2,
     "calendar": 12,
     "calendarload": 5,
-    "calendarhub": 8
+    "calendarhub": 8,
+    "worksave": 4,
+    "workload": 5,
+    "arrivalsave": 2,
+    "arrivalload": 6,
+    "arrival": 1
   },
-  "runtime_sha256": "44365b42908e1673091b995cfc68033b97e4416b04f70b9741430097e040f651",
-  "source_overlay_members_verified": 24,
+  "runtime_sha256": "851ffff29286a31ac779f443387321cf912cbcae5e870bfb96413ef925a96397",
+  "source_overlay_members_verified": 32,
   "fixtures": [
     "checks.zs",
     "flights.zs",
     "calendar.zs",
+    "work.zs",
+    "arrival.zs",
     "prepare.py",
     "run_native.ps1"
   ],
-  "batch": "integrated09",
+  "batch": "integrated10",
   "static_errors": 0,
   "remaining": [
     "First-arrival and legacy-save siege scheduling",
-    "Bounded combat and quiet/live catch-up processing",
+    "Efficient long combat/quiet catch-up; bounded callbacks now retain clocks and exact outcomes but total latency remains excessive",
     "Theft and access integration",
     "Original-save regressions and completed canonical delivery; draft PR545 tracks ongoing work"
   ],
   "author": "Deferred until all V5.8 implementation is complete",
-  "performance": "performance-comparison.json retains prior exact outcome parity; flight-performance.json records departure census and terminal-year measurement; remaining synchronous stalls pending"
+  "performance": "arrival-performance.json: exact outcome parity and bounded renderer callbacks, separate total-latency limitation; prior comparisons retained"
 }

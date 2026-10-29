@@ -6,7 +6,7 @@ Documentation version: **5.8.50** - 2026-10-28.
 
 The focused `feat/issue415-absent-rounds` worktree contains an intermediate
 checkpoint, not a completed delivery. Private `validation_5851` fixtures pass
-228 native assertions across scenarios, excluding repeated setup: damage/dispersion, simultaneous casualties,
+246 native assertions across scenarios, excluding repeated setup: damage/dispersion, simultaneous casualties,
 actual magazines/Anima, statuses, healing consumables, structural/cannon
 impacts, finite reserve admission, save identity and native load/unload hooks.
 The hub check resolves ten rounds, thirteen shots and one reload without
@@ -55,7 +55,22 @@ records the actual summary-round date independently of discovery on return.
 The native MAP03 checks cover the exact boundary, retained residents, save/load,
 actual hub departure/return, placement and repeated reconciliation.
 
-Still required before delivery: bounded combat/quiet processing, first-arrival
+Round execution is now shared by synchronous checks and a saved phase/cursor
+worker. Production map reopening queues that worker behind a native paused
+menu, preserving the arrival timestamp and completing pending simultaneous
+commits before native actors resume. A short native freeze bridges the load
+callback to the menu pause; resident inventory ticks also wait for completion.
+Save/load reopens the same job and does not replay attacks or pay resources
+twice. Noncombat physiology uses its existing integration boundaries in the
+same queue. No population is removed from gameplay.
+
+The authorized 1,000/600 comparison retains exact recorded outcomes after one
+world second, a combat minute and a quiet hour. Bounded pulses remove the
+multi-second renderer callback stalls, but quiet-hour wall time is still about
+52 seconds in this diagnostic. This is not completed performance acceptance;
+`arrival-performance.json` records both callback tails and total duration.
+
+Still required before delivery: efficient long combat/quiet processing, first-arrival
 and legacy-save scheduling, theft/access with real inventory transfers,
 performance and original-save regressions, and final canonical rules/version.
 Draft PR545 tracks this branch. The calendar tests do not establish safe long

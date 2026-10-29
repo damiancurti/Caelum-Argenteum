@@ -106,6 +106,9 @@ class CA415CalendarChecks : EventHandler
     {
         Port=CaelumPortSiege.Get();Battle=Port!=null?Port.AbsentBattle:null;
         let roster=CaelumHouseResidents.Get();let resident=roster.Residents[0].Body;
+        Console.Printf("CA415C ARRIVAL emitted=%d suspended=%d same=%d life=%d ready=%d placement=%d rows=%d rounds=%d unresolved=%d cursor=%d",
+            roster.Residents[0].Emitted,roster.Residents[0].Suspended,Port.Defenders[0]==resident,resident!=null?resident.health:-1,
+            roster.Ready,roster.PlacementPending.Size(),Battle.Rows.Size(),Battle.Rounds,roster.Unresolved,roster.PendingCursor);
         Check(Port!=null && Port.SiegeStarted && Battle!=null && !Battle.Away && Battle.Rounds>0,"native reopen crosses the scheduled date and resolves actual absent rounds");
         Check(Battle!=null && Battle.Encounter==Port && Port.Boss!=null,"reopened encounter remains the authoritative owner of its new boss and summary");
         Check(resident!=null && roster.Residents[0].Emitted && Port.Defenders[0]==resident,"return deploys the original traveling household resident instead of a hub copy");

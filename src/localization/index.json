@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "201d7abd843617aea9f0092329459648af8d1e12dbdce8048de1994fc55f0c0d",
+  "sha256": "674a0f8e92626e6e0109ddc2c7394496dd2580934aff3e4191d922dff1d66810",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[483,483]],"default":[[483,483]],"es":[[1178,1178]]},
     "CA_ADRENALINE_EVENT_ALLY_DEATH": {"enu":[[1033,1033]],"default":[[1033,1033]],"es":[[1728,1728]]},
@@ -2263,6 +2263,7 @@
     "CA_RECIPE_SHELF": {"enu":[[6080,6080]],"default":[[6080,6080]],"es":[[6099,6099]]},
     "CA_RECIPE_UNREAD": {"enu":[[6073,6073]],"default":[[6073,6073]],"es":[[6092,6092]]},
     "CA_REDEMPTION_CAST": {"enu":[[6023,6023]],"default":[[6023,6023]],"es":[[6030,6030]]},
+    "CA_REGION_PREPARING": {"enu":[[6899,6899]],"default":[[6899,6899]],"es":[[6901,6901]]},
     "CA_REPUTATION_FOUNDATION_NOTE": {"enu":[[1977,1977]],"default":[[1977,1977]],"es":[[2047,2047]]},
     "CA_REPUTATION_VALUE_LABEL": {"enu":[[1967,1967]],"default":[[1967,1967]],"es":[[2037,2037]]},
     "CA_REP_NEEDS_MEMBER": {"default":[[3662,3662]],"es":[[3691,3691]]},

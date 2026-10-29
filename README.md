@@ -18,6 +18,10 @@ ground-slam falloff are checked separately. Sleep, restraint and frozen attack
 preparations also retain their native clocks and saved identity. Revisited cities
 start the siege at its authored calendar boundary and admit real residents;
 first-arrival/legacy scheduling and theft remain unfinished.
+Reopening a region now uses saved, bounded round phases behind a paused loading
+menu. Partial save/load preserves pending simultaneous damage and resources;
+native clocks remain paused until the work finishes. This prevents long single
+callbacks, but total processing latency for long absences still needs reduction.
 The catch-up performance diagnostic and its remaining stalls are documented in
 the same evidence directory; this checkpoint is not a playability claim.
 

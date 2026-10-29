@@ -104,6 +104,7 @@ class CaelumThermalWorld : StaticEventHandler
             CaelumPlayer user;
             for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i] && players[i].mo!=null)
             {user=CaelumPlayer(players[i].mo);break;}
+            if(CaelumAbsentArrival.Begin(user))return;
             CaelumAbsentBattles.Restore(user);
             let actors=ThinkerIterator.Create("CaelumCombatActor");CaelumCombatActor body;
             while((body=CaelumCombatActor(actors.Next()))!=null)
