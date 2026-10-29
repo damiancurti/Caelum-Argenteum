@@ -13,7 +13,7 @@ Model CaelumTransportSignVisual
     Path "models/caelum/vehicles"
     Model 0 "ca_transport_sign.obj"
     Scale 1 1 1
-    AngleOffset 90
+    AngleOffset 0
     CorrectPixelStretch
     DontCullBackFaces
     FrameIndex CSSG A 0 0
@@ -23,7 +23,7 @@ Model CaelumTransportAccess
     Path "models/caelum/vehicles"
     Model 0 "ca_transport_sign.obj"
     Scale 1 1 1
-    AngleOffset 90
+    AngleOffset 0
     CorrectPixelStretch
     DontCullBackFaces
     FrameIndex CSSG A 0 0
