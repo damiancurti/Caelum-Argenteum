@@ -233,3 +233,21 @@ Deliver together with the remaining V5.8 checks, not before implementation is co
 5. Update a preceding save: learned luxury recipes and sold stock remain unchanged;
    the two ordinary recipes start unknown until learned.
 Expected: all checks pass. Author corroboration is pending.
+
+CA410-SOFA-ACQUISITION-01 | Origin: 5.8.35 | Issue: #410
+Prerequisites: final5.8.35 or later, disposable normal-controls furniture fixture,
+sufficient carrying space/money and learned sofa recipes/materials. Present only
+with the final grouped V5.8 manual handoff.
+1. Inspect both sofa inventory/crafting/shop sprites. Expect painted two/three
+   seat designs consistent with the deployed models, without rectangular backgrounds.
+2. Buy/craft a sofa. Expect actual material cost/weight, three initial shop units
+   and ten copies of each recipe; repeated visits do not refill sold stock.
+3. Place on permitted clear ground; use each seat to rest, then stand. An occupied
+   sofa cannot be carried. Crouch+Use picks up the complete owned empty sofa.
+4. Walk through its old position: no invisible seat should remain. Place it at
+   a different orientation and use every seat again. Failed placements retain it.
+5. Store/retrieve through the Box and save/load/travel carrying it. Expect the same
+   object, title, dirt, seat count and functional rest; no duplicates or orphan seats.
+6. Upgrade a preceding save. Existing furniture knowledge and shop stock remain;
+   new sofa recipes must be learned normally.
+Expected: all checks pass. Author corroboration remains pending.

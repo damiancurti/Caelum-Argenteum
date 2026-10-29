@@ -1,6 +1,22 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.34** - 2026-10-27.
+Documentation version: **5.8.35** - 2026-10-27.
+
+## 5.8.35 - Sofa acquisition (#410, 2026-10-27)
+
+The approved two-/three-seat sofa construction gains learned recipes215/216,
+normal supply/restock and owned painted inventory sprites. Recipe revision21
+and merchant revision3 append without resetting earlier learning or sold stock.
+Transport retains the complete native assembly, inventories, TIDs, title and
+dirt; occupied seats block carrying and parked seats have no world collision.
+Validation:357 executed native PASS plus17 original-runtime checks, zero failures
+and zero static errors; assets/validation_5835. All17,005 packaged members match
+source. Previous map/art content is preserved (four OBJ files differ only in
+line endings); generated outputs reproduce byte-for-byte. Agent visual review
+confirms both painted inventory icons in the native menu. Actual revision20
+save/rollback, unchanged prior stock/learning and current assembly save/hub
+travel pass. CA410-SOFA-ACQUISITION-01 remains pending for the grouped handoff.
+No complete V5.8 claim or multiplayer validation is inferred.
 
 ## 5.8.34 - Ordinary rest furniture acquisition (#410, 2026-10-27)
 

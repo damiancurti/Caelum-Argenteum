@@ -75,6 +75,8 @@ def generate():
     for method,key,scale in [('Width','width_m',U),('Depth','depth_m',U),('Height','height_m',U),('Weight','empty_kg',1)]:
         lines.append(f'    static clearscope double {method}(int kind){{return kind==1?{rows[1][key]*scale:.9f}:{rows[0][key]*scale:.9f};}}')
     positions=[','.join(str(v) for v in r['mansion_position']) for r in rows]
+    for method,key in [('Wood','wood'),('Iron','iron'),('Cloth','cotton_cloth')]:
+        lines.append(f"    static clearscope int {method}(int kind){{return kind==1?{rows[1]['recipe_grams'][key]}:{rows[0]['recipe_grams'][key]};}}")
     lines += [f"    static clearscope double VisualStride(int kind){{return (Width(kind)-{2*DATA['arm_width_m']*U:.9f})/(kind==1?3:2);}}",
               '    static clearscope int Seats(int kind){return kind==1?3:2;}',
               f'    static clearscope vector3 Position(int kind){{return kind==1?({positions[1]}):({positions[0]});}}',

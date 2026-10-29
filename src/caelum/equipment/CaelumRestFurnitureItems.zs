@@ -7,20 +7,21 @@ class CaelumRestFurnitureItem : CaelumStorageFurnitureItem abstract
     Array<int> ContentTravelTIDs;
     override int GetSpecialType(){return CaelumRestFurnitureData.FIRST_KEY+Variant();}
     override double GetUnitWeight(){return CaelumRestFurnitureData.Mass(Variant());}
-    override Inventory CreateTossable(int count){return Body!=null?null:Super.CreateTossable(count);}
-    void Park()
+    virtual bool HasBody(){return Body!=null;}
+    override Inventory CreateTossable(int count){return HasBody()?null:Super.CreateTossable(count);}
+    virtual void Park()
     {
         if(Body==null)return;
         Body.bInvisible=true;Body.bSolid=false;Body.A_ChangeLinkFlags(1,1);
         Body.ChangeStatNum(CaelumRestFurnitureData.PARKED_STAT);
     }
-    bool CanCarry(CaelumPlayer user)
+    virtual bool CanCarry(CaelumPlayer user)
     {
         return CaelumPlayerAuthority.CanMutate(user) && Body!=null && Owner==Body && Body.Occupant==null
             && Body.CanReach(user) && Body.DiningTable==null
             && CaelumLockRules.SameTitle(LawfulOwner,CaelumLockRules.Character(user));
     }
-    bool Carry(CaelumPlayer user)
+    virtual bool Carry(CaelumPlayer user)
     {
         if(!CanCarry(user))return false;
         user.RefreshCarriedInventorySummary();if(!user.CanAddWeightToPersonalInventory(GetUnitWeight()))return false;

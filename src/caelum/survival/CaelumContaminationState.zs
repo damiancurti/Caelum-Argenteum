@@ -54,6 +54,8 @@ class CaelumContaminationStorage : Object play
         }
         let rest=CaelumRestFurniture(body);
         if(rest!=null && rest.PackedItem!=null)return Get(rest.PackedItem,create);
+        let sofa=CaelumSofa(body);
+        if(sofa!=null && sofa.PackedItem!=null)return Get(sofa.PackedItem,create);
         let seat=CaelumSofaSeat(body);
         if(seat!=null)return seat.Sofa==null || seat.Sofa.bDestroyed?null:Get(seat.Sofa,create);
         let equipment=CaelumEquipmentItem(body);

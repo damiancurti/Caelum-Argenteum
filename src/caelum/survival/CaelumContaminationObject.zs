@@ -21,6 +21,8 @@ class CaelumContaminationObject : Thinker
         if(body==null || body.bDestroyed || body is 'CaelumPlayer' || body is 'CaelumCombatActor' || body.bMissile)return false;
         let rest=CaelumRestFurniture(body);
         if(rest!=null && rest.PackedItem!=null && rest.PackedItem.Owner!=body)return false;
+        let sofa=CaelumSofa(body);
+        if(sofa!=null && sofa.PackedItem!=null && sofa.PackedItem.Owner!=body)return false;
         if(body is 'CaelumSofaSeat')return false;
         let vendor=CaelumCityMerchant(body);if(vendor!=null && vendor.DomesticMarketParked)return false;
         let item=Inventory(body);

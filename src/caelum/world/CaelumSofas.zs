@@ -3,6 +3,7 @@
 class CaelumSofa : CaelumPhysicalScenery abstract
 {
     CaelumSofaSeat Seats[3];
+    CaelumSofaItem PackedItem;
     bool SeatsReady;
     virtual int Kind(){return 0;}
     vector3 Lateral(double distance){return (-Sin(Angle)*distance,Cos(Angle)*distance,0);}
@@ -44,6 +45,7 @@ class CaelumSofa : CaelumPhysicalScenery abstract
         let user=CaelumPlayer(activator);
         if(user==null || user.player==null || (user.player.cmd.buttons&BT_USE)==0
             || !CaelumUseGeometry.AimedAt(user,self) || !user.CheckSight(self))return false;
+        if(PackedItem!=null && (user.player.cmd.buttons&BT_CROUCH)!=0)return PackedItem.Carry(user);
         let seat=AvailableSeat(user);
         return seat!=null && CaelumRestTrial.Open(user,seat);
     }

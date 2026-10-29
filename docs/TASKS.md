@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.34** - 2026-10-27.
+Documentation version: **5.8.35** - 2026-10-27.
+
+## 5.8.35 / #410 - Sofa acquisition
+
+Implemented approved supply, material-derived recipes and full native assembly
+transport for both sofa kinds. Native checks cover occupancy, collision,
+stock/knowledge migration, Box, identity, title/dirt and all seats through
+save/hub travel:357 current PASS plus17 original-runtime checks; zero failures
+and zero static errors. Both native inventory views pass agent visual review.
+Keep CA410-SOFA-ACQUISITION-01 for the final grouped V5.8 handoff. Next furniture
+work: tables and study furniture acquisition; other issue scopes stay separate.
 
 ## 5.8.34 / #410 - Ordinary rest furniture acquisition
 

@@ -1,0 +1,9 @@
+{
+  "three_identical_snapshots": true,
+  "sha256": {
+    "src/caelum/data/CaelumSofaData.zs": "67c240b12b4e2fc80abf8c1081796b7b57cf47d3c1d4c75b895d46ca3dbcbe5e",
+    "assets/art_source/sofas/GENERATED.json": "e574578d3b4c699bb46a7fdff5fb18e495701075a89376894640f595cadcab52",
+    "src/models/caelum/props/sofas/ca_sofa_2.obj": "044ad5b37b4f1d6e96f32dbdc2a6e49d84b7d15f1482f60ed60bd4c433aefdec",
+    "src/models/caelum/props/sofas/ca_sofa_3.obj": "3104e05111ae53cd00f256274ae3c45b4dfd86dc7badfce11b7ccaa4e5f361d1"
+  }
+}

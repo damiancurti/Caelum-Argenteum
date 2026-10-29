@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.34** - 2026-10-27.
+Documentation version: **5.8.35** - 2026-10-27.
+
+## 5.8.35 / #410 - Sofa supply and transport
+
+Both existing sofa designs gain learned fabrication, normal merchandise and
+painted item views. Their complete physical seat assemblies travel together;
+no new rest bonus or multiplayer policy is introduced. Evidence:
+assets/validation_5835;357 current native PASS plus17 original-runtime checks,
+zero failures/static errors. Table/study acquisition and #415-417/#502 remain
+unfinished. CA410-SOFA-ACQUISITION-01 stays in the grouped author queue.
 
 ## 5.8.34 / #410 - Ordinary rest furniture acquisition
 
