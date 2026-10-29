@@ -99,8 +99,21 @@ class CaelumTransportBooking : Inventory
 {
     int Revision, Sequence;
     CaelumTransportTicket Ticket;
+    bool Onboard, TransferPending, ArrivalPending;
+    String TransferMap, StopMap;
+    int BoardedDays, BoardedTics;
     static clearscope CaelumTransportBooking Find(CaelumPlayer user)
     {return user==null?null:CaelumTransportBooking(user.FindInventory('CaelumTransportBooking'));}
+    void Ensure(CaelumPlayer user)
+    {
+        if(Revision>=2)return;
+        // El prototipo guardaba solo el contrato. Conservar pago/progreso y
+        // dejarlo interrumpido en el lugar guardado, sin inventar un traslado.
+        Onboard=false;TransferPending=false;ArrivalPending=false;TransferMap="";
+        StopMap=level.MapName;
+        if(Ticket!=null && Ticket.Active()){Ticket.Status=CaelumTransportTicket.STOPPED;Ticket.Stamp=Max(Ticket.Stamp,Now(user));}
+        Revision=2;
+    }
     static double Now(CaelumPlayer user)
     {
         let clock=CaelumWorldClock.Get(user);let calendar=CaelumCalendarState.Get(user);
@@ -129,8 +142,18 @@ class CaelumTransportBooking : Inventory
         let booking=previous;
         if(booking==null)booking=CaelumTransportBooking(user.GiveInventoryType('CaelumTransportBooking'));
         if(booking==null || !CaelumPropertyRules.Pay(user,ticket.Fare))return false;
-        booking.Revision=1;booking.Sequence=Min(booking.Sequence,2147483646)+1;booking.Ticket=ticket;
+        booking.Revision=2;booking.Sequence=Min(booking.Sequence,2147483646)+1;booking.Ticket=ticket;
         user.PersistCharacterState();return true;
+    }
+    override void Tick()
+    {Super.Tick();let user=CaelumPlayer(Owner);if(user!=null){Ensure(user);CaelumTransportTrip.Loaded(user);CaelumTransportTrip.Step(user);CaelumTransportTrip.Flush(user);}}
+    override void PreTravelled()
+    {
+        // Un traslado ajeno (por ejemplo el retorno magico) no debe acreditar
+        // horas a bordo mientras el pasajero permanece en otro mapa.
+        if(Onboard && !ArrivalPending && Ticket!=null)
+        {Ticket.Observe(Now(CaelumPlayer(Owner)));Ticket.Status=CaelumTransportTicket.STOPPED;Onboard=false;StopMap=level.MapName;}
+        Super.PreTravelled();
     }
     Default {Inventory.MaxAmount 1;Inventory.InterHubAmount 1;+INVENTORY.UNDROPPABLE +INVENTORY.UNCLEARABLE -INVENTORY.INVBAR}
     States {Spawn:TNT1 A -1;Stop;}

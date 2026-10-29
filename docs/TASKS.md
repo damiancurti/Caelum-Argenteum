@@ -2,41 +2,21 @@
 
 Documentation version: **5.8.50** - 2026-10-28.
 
-## Unreleased #416 transport catalogue - 2026-10-29
+## Unreleased #416 transport integration - 2026-10-29
 
-The approved #416 catalogue now separates historical references from authorized
-geographic/operating estimates; SYSTEMS and assets/transport/network.json hold
-the values and source limits. Thirty-four native catalogue checks pass. Continue
-with boarding, ticket payment/progress, six-block Buenos Aires and interrupted
-travel before delivery; #417 incidents stay separate. No author handoff yet.
+The historical/estimated route catalogue, six-block Buenos Aires with native
+services, four vehicle types, actual booking/payment, scheduled departure and
+live journey clock are connected. Cart/horse stops use fixed rural hub areas;
+train disembarkation first stops the vehicle, and ships wait for an accessible
+port. Stops retain paid progress; abandonment gives no refund. Ground belongings
+remain in their actual geographic hub. Real physiological/calendar steps retain
+food, water, weather, contamination and sleep costs, with bounded wait work.
 
-
-The new CABAIRES map has six connected blocks, nine accessible buildings and
-a quay/pier, generated deterministically from owned city textures and profiles.
-Twenty-seven native cylinder/door/street checks pass; geometry screenshots and
-hashes are retained in assets/validation_5852/city-geometry-results.json. No old
-map geometry changes. This is a geometry checkpoint; services, vehicle content
-and author visual acceptance remain pending.
-
-
-Buenos Aires services now reuse eight merchant categories with identities beyond
-Barracas, fourteen connected crafting stations and four homes with separate
-200-L domestic water reserves. The saved installation cursor never recreates
-moved/destroyed furnishings or refills shop stock. City weather and urban
-contamination reuse the approved coastal/urban rules; streets grant no camping
-permission. Thirty-eight native assertions include save/reload of actual vendor
-money and household water. Evidence: validation_5852/city-services-results.json.
-Vehicles, paid progress and safe interruption remain pending.
-
-
-The unreleased ticket ledger snapshots the paid route, fare, pace, timetable and
-rest/dwell durations. Interrupted time ashore does not advance it; resume never
-calls payment again. Ship exits wait for the next port boundary, train exits
-require a stopped vehicle and safe footing, and abandonment retains the spent
-fare. Twenty-six native assertions cover clock boundaries, actual coin ownership,
-duplicate confirmation and saved resume. Only the new booking path opts into
-new routes; the previous travel entry points are unchanged until boarding is
-integrated. Evidence: validation_5852/ticket-results.json. No author handoff yet.
+Native catalogue, geometry, services, tickets, arrival, interruption, save/resume,
+remaining-fare reacquisition and ground-pile persistence checks are retained in
+`assets/validation_5852`. Grouped author checks are deferred by request. #417
+incidents and #415 regional survivor/theft work remain independent issues;
+existing-map geometry is unchanged. This is not whole-version acceptance.
 
 ## Unreleased #415 integration work
 

@@ -2,6 +2,12 @@
 
 Documentation version: **5.8.50** - 2026-10-28.
 
+The separate unreleased #416 branch now connects the four approved transports,
+Buenos Aires services, scheduled paid trips, persistent stops and real personal
+resource costs. Native evidence is in validation_5852; historical estimates and
+limits are documented in SYSTEMS. Author checks remain grouped; #415 regional
+survivor/theft integration and #417 incidents continue separately.
+
 ## 5.8.50 / #502 - Contact completion pass
 
 Implementation now covers remaining common inventory, carried furniture,

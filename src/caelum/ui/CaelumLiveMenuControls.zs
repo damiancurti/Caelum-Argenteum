@@ -243,6 +243,16 @@ class CaelumLiveMenuControls : Object ui
                 Row(318);Button("CA_CAMP_FIRE_POT",0,112,"p",180);Button("CA_CAMP_FIRE_NEXT_POT",0,110,"n",180);Button("CA_UI_BACK",InputEvent.Key_Tab,0,"",180);
             }
         }
+        else if(context==host.CTX_TRANSPORT)
+        {
+            let booking=CaelumTransportBooking.Find(user);
+            bool active=booking!=null && booking.Ticket!=null && booking.Ticket.Active();
+            let session=CaelumTransportSession.Find(user);
+            bool abandoned=booking!=null && booking.Ticket!=null && booking.Ticket.Status==CaelumTransportTicket.ABANDONED && booking.StopMap==level.MapName && session.Source==null;
+            Row(238);Button(active?(booking.Onboard?"CA_TRANSPORT_WAIT":"CA_TRANSPORT_RESUME"):abandoned?"CA_TRANSPORT_REBOOK":"CA_TRANSPORT_BUY",InputEvent.Key_Enter,0,"",560);
+            Row(278);Button(active?(booking.Onboard?"CA_TRANSPORT_EXIT":"CA_TRANSPORT_ABANDON"):"CA_TRANSPORT_DESTINATION",active?0:InputEvent.Key_RightArrow,active?(booking.Onboard?100:120):0,active?(booking.Onboard?"d":"x"):"",560,!abandoned);
+            Row(318);Button("CA_UI_BACK",InputEvent.Key_Tab,0,"",560);
+        }
         else if(context==host.CTX_CAMP_TENT)
         {
             Row(246);Button("CA_TENT_REST",InputEvent.Key_Enter,0,"",276);Button("CA_TENT_PACK",0,100,"d",276);

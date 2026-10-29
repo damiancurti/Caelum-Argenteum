@@ -1,7 +1,7 @@
 // Un único propietario nativo para las vistas que mantienen viva la simulación.
 class CaelumLiveMenu : ListMenu
 {
-    enum ContextType { CTX_SKIP=100, CTX_JOURNEY, CTX_REST, CTX_MERCHANT, CTX_CALENDAR, CTX_EQUIPMENT, CTX_CHEST, CTX_CREATION, CTX_RECIPES, CTX_MATE, CTX_PROPERTY, CTX_BATH, CTX_CLEAN, CTX_CAMP_FIRE, CTX_CAMP_TENT };
+    enum ContextType { CTX_SKIP=100, CTX_JOURNEY, CTX_REST, CTX_MERCHANT, CTX_CALENDAR, CTX_EQUIPMENT, CTX_CHEST, CTX_CREATION, CTX_RECIPES, CTX_MATE, CTX_PROPERTY, CTX_BATH, CTX_CLEAN, CTX_CAMP_FIRE, CTX_CAMP_TENT, CTX_TRANSPORT };
     CaelumPlayer Subject;
     String OriginMap;
     int Context;
@@ -36,6 +36,7 @@ class CaelumLiveMenu : ListMenu
         let bath=CaelumBathSession.Find(user);if(bath!=null && bath.Open)return CTX_BATH;
         let fire=CaelumCampFireSession.Find(user);if(fire!=null && fire.Open)return CTX_CAMP_FIRE;
         let tent=CaelumTentSession.Find(user);if(tent!=null && tent.Open)return CTX_CAMP_TENT;
+        let transport=CaelumTransportSession.Find(user);if(transport!=null && transport.Open)return CTX_TRANSPORT;
         if(CaelumMateSession.Active(user))return CTX_MATE;
         let recipes=CaelumRecipeSession(user.FindInventory("CaelumRecipeSession"));
         if(recipes!=null && recipes.Open)return CaelumJournalInput.SkipOpen(user)?CTX_SKIP:CTX_RECIPES;
@@ -88,6 +89,12 @@ class CaelumLiveMenu : ListMenu
         // Identidad seleccionada, no los valores de supervivencia que cambian cada tic.
         let view=Journal();
         int result=Context*100000;
+        if(Context==CTX_TRANSPORT)
+        {
+            let session=CaelumTransportSession.Find(Subject);let booking=CaelumTransportBooking.Find(Subject);
+            if(session!=null)result+=session.SelectedRoute*31;
+            if(booking!=null && booking.Ticket!=null)result+=booking.Sequence*97+booking.Ticket.Status*7;
+        }
         if(Context==CTX_REST)
         {let rest=CaelumRestState(Subject.FindInventory("CaelumRestState"));if(rest!=null)result+=rest.Mode*4+(CaelumDiningSession.HasMealSupport(Subject)?1:0)+(CaelumExhaustion.Locked(Subject)?2:0);}
         if(Context==1 || Context==CTX_EQUIPMENT)result+=Subject.EquipmentSelectionItemId*31+Subject.EquipmentSelectionKind*7+Subject.EquipmentSelectionTier
@@ -121,6 +128,7 @@ class CaelumLiveMenu : ListMenu
         else if(Context==CTX_BATH)CaelumBathUI.Draw(Journal(),Subject);
         else if(Context==CTX_CAMP_FIRE)CaelumCampFireUI.Draw(Journal(),Subject);
         else if(Context==CTX_CAMP_TENT)CaelumTentUI.Draw(Journal(),Subject);
+        else if(Context==CTX_TRANSPORT)CaelumTransportUI.Draw(Journal(),Subject);
         else if(Context==CTX_CHEST)CaelumChestPreview.Draw();
         else if(Context==CTX_RECIPES)CaelumRecipeEvents.Draw(Subject);
         else if(Context==CTX_MATE)CaelumMateUI.Draw(Journal(),Subject);
@@ -156,6 +164,7 @@ class CaelumLiveMenu : ListMenu
         if(Context==CTX_BATH)return CaelumBathUI.Key(Subject,type,scan,keyString);
         if(Context==CTX_CAMP_FIRE)return CaelumCampFireUI.Key(type,scan,keyString);
         if(Context==CTX_CAMP_TENT)return CaelumTentUI.Key(type,scan,keyString);
+        if(Context==CTX_TRANSPORT)return CaelumTransportUI.Key(type,scan,keyString);
         if(Context==CTX_CHEST)
             return CaelumChestPreview.PanelKey(Subject,type,scan,keyString);
         if(Context==CTX_RECIPES)return CaelumRecipeEvents.Key(Subject,type,scan,keyString);

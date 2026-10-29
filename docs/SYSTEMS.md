@@ -33,9 +33,9 @@ train; round the total party ticket upward. Saved past travel is not recalculate
 
 Thirty-four native catalogue assertions pass; source bytes and deterministic
 regeneration match. Evidence: `assets/validation_5852/catalogue-results.json`.
-Runtime boarding/payment/progress, six-block Buenos Aires, interruption placement
-and #417 encounters remain unfinished. Current release stays 5.8.50; this is a
-focused unreleased #416 checkpoint, not a completed version or manual acceptance.
+Runtime boarding, payment, progress and interruption now use this catalogue.
+Current release stays 5.8.50 while the separate V5.8 issues finish; native
+implementation is distinct from author acceptance. #417 incidents are separate.
 
 
 Buenos Aires services now reuse eight merchant categories with identities beyond
@@ -45,7 +45,7 @@ moved/destroyed furnishings or refills shop stock. City weather and urban
 contamination reuse the approved coastal/urban rules; streets grant no camping
 permission. Thirty-eight native assertions include save/reload of actual vendor
 money and household water. Evidence: validation_5852/city-services-results.json.
-Vehicles, paid progress and safe interruption remain pending.
+All four services are available in each of the three destinations.
 
 
 The unreleased ticket ledger snapshots the paid route, fare, pace, timetable and
@@ -53,9 +53,38 @@ rest/dwell durations. Interrupted time ashore does not advance it; resume never
 calls payment again. Ship exits wait for the next port boundary, train exits
 require a stopped vehicle and safe footing, and abandonment retains the spent
 fare. Twenty-six native assertions cover clock boundaries, actual coin ownership,
-duplicate confirmation and saved resume. Only the new booking path opts into
-new routes; the previous travel entry points are unchanged until boarding is
-integrated. Evidence: validation_5852/ticket-results.json. No author handoff yet.
+duplicate confirmation and saved resume. Native vehicle interaction now opens
+the destination/ticket panel; Enter buys, waits or resumes, arrows change the
+destination, D requests disembarkation and X abandons an interrupted contract.
+Evidence: validation_5852/ticket-results.json and trip-results.json. No author
+handoff yet.
+
+Actual travel runs through the shared personal/calendar clock, including weather,
+Hunger, Thirst, contamination, automatic eating/drinking and sleep. As in the
+existing travel policy, automatic supplies aboard must be carried outside the
+Box. Accelerated waiting yields after an 8-ms technical work budget without
+skipping personal steps. Arrival terminates acceleration before changing maps
+and records the actual route/departure/arrival in the journal. A separate magical
+transfer stops the ticket rather than crediting distance while elsewhere.
+
+Owned transit maps are compressed playable carriage/coach/deck/riding scenes,
+not continuous geographical motion. Their stopped rural maps represent fixed
+10-km corridor intervals, shared by opposite journeys. Terrain, dropped objects
+and camp ownership stay in the same native hub when the traveler resumes.
+The road and arrival/access footprint are protected from camp placement;
+unowned dry grass uses the approved countryside permission. Train stopping is
+abstract: no unapproved braking duration is invented. Ship requests made at
+sea retain the passenger until the next actual port boundary.
+
+Resumption does not pay again. Abandoning retains spent money and ends that
+contract. At a rural stop, purchasing the remaining service charges its remaining
+kilometres at the approved per-mode rate, rounded upward, and preserves the
+physical route position. This is a new payment, not a free revived ticket.
+Booking revision two migrates an older ledger to an inactive, interrupted
+contract at its saved map, preserving its fare and elapsed progress exactly
+once. Games with no booking create none; no existing WAD geometry changes. New geometry/placement inputs live in assets/transport/scenes.json and
+vehicles.json. The inherited coast retains its save identity TCOAST but now uses
+the author's destination name Mar del Plata.
 
 ## Unreleased #415 integration
 

@@ -4,6 +4,24 @@ Documentation version: **5.8.50** - 2026-10-28.
 
 ## Unreleased #416 transport catalogue - 2026-10-29
 
+Runtime integration now connects the four actual services and supersedes the
+pending boarding/vehicle notes in the earlier checkpoints below. Native trips
+spend real personal resources, reach the named campaign maps, preserve interrupted
+paid progress and retain ground belongings in fixed rural hubs. Fresh stop/save,
+resume, remaining-fare reacquisition, all-mode arrivals and intermediate ship
+ports were exercised in GZDoom 4.14.2. A stale private fixture from before the
+unreleased sign-class split was regenerated; no accepted save used that class.
+Original 5.8.50 compatibility remains a separate check. The author is away;
+manual acceptance is deferred, and no pending author entry was removed.
+
+The complete twelve-hour railway route to Mar del Plata also passes with real
+carried-food/water debit and exposure; its isolated observer records about
+10.6 seconds of accelerated travel processing. This is not frame-presentation
+performance. The fixture allocates Toughness 100 to isolate the journey from
+approved illness lethality: unprotected controls died after about 6.2 world
+hours. Survival rules were not weakened. Native phase checks wait until the
+queued arrival is finalized and account for meals replenishing Hunger.
+
 Added original painted horse rotations and owned steam-train/service-sign
 models, with deterministic registration and source provenance in ASSETS.
 Native rendering captures are retained in validation_5852; author acceptance

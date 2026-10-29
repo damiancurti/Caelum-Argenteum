@@ -50,6 +50,7 @@ class CaelumContaminationData : Object
     }
     static clearscope int MapClass(String map)
     {
+        if(CaelumTransportSceneData.IsStage(map) || CaelumTransportSceneData.IsRural(map))return ENV_NATURAL;
         int location=CaelumWorldCatalogue.LocationForMap(map);
         if(location==CaelumWorldCatalogue.LOCATION_MANSION || location==CaelumWorldCatalogue.LOCATION_PORT
             || location==CaelumWorldCatalogue.LOCATION_BUENOS_AIRES)return ENV_URBAN;

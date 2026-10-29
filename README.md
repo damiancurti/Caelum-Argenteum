@@ -9,14 +9,15 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 **Current release: 5.8.50.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-Unreleased #416 route calibration is now reproducible from `assets/transport/network.json`.
-Its 34 native catalogue checks and 27 new-map access checks pass. The six-block
-Buenos Aires layout preserves previous map geometry. Its shops, connected workshop
-and independent domestic water pass 38 native/save checks. Tickets and interruption
-integration remain pending. A saved ticket ledger passes 26 native payment/progress
-checks; boarding and moving journeys are not yet connected. Historical references and explicit estimates are distinguished in SYSTEMS.
-Original horse sprites and steam-train/service-sign models are prepared with
-native rendering evidence; see ASSETS for source provenance and regeneration.
+Unreleased #416 now connects cart, ship, horse and train services to Buenos Aires,
+Barracas al Sud and Mar del Plata. Actual boarding, paid tickets, live resource
+costs, scheduled departure, safe interruption and saved resumption are implemented.
+Buenos Aires has six playable blocks with shops, workshops and domestic water.
+Historical references and estimates are distinguished in SYSTEMS; native evidence
+is retained in `assets/validation_5852`. Original horse sprites and steam-train
+models retain their provenance in ASSETS. Author checks remain deferred until
+all V5.8 implementation is ready; #415 regional work and #417 incidents continue
+separately. This branch is still an unreleased integration checkpoint.
 
 Original 5.8.50 save/upgrade/reload/rollback checks pass; see
 `assets/validation_5851/legacy-results.json` for the preservation boundary.
