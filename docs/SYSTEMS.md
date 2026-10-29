@@ -1,6 +1,211 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.8** — 2026-10-24.
+Documentation version: **5.8.9** — 2026-10-24.
+
+## 5.8.9 - Contamination and hygiene contract (#502)
+
+Implemented severe disease: C>=90 multiplies the existing Life loss by 2 and
+shows Sick, including an explicit immune qualifier at Toughness>=100. Below
+90 the multiplier is removed immediately. The C50 threshold, potential natural
+regeneration depuration, body-mass intake scaling, food ageing and immunity
+without healing remain unchanged. Existing contamination stays authoritative.
+
+Medkits and hot, active-yerba mate now remove one contamination degree per
+10% maximum Life of potential healing, including at full Life. The reduction
+follows recovery pulses and preserves fractional doses; washed/cold mate and
+Anima/energy items do not cleanse. Natural regeneration retains its own rate.
+Modern medkits and mate use the unrounded Life ratio. Legacy medkit effects
+without a stored dose retain their historical rounded Life pulse and cleanse
+proportionally to that pulse. NPC medkits affect their own stored contamination.
+No retrospective credit or new saved fields are added. Active treatment powers
+retain existing travel/forecast guards; an exact date is not fabricated.
+
+The ambient rain reduction is integrated into actual player/equipment exposure,
+the World journal and independent waiting forecasts. It subtracts the approved
+0/10/20 points at0/2/10mm per hour after temperature/humidity, only on uncovered
+urban ground, clamped at zero. Roofs/tents, natural and industrial references
+retain their prior rules. Current waiting schema12 invalidates earlier cached projections.
+This does not yet implement persistent floor washing or resident cleaning.
+
+Approved 2026-10-25, remaining surface/domestic integration:
+- Uncovered urban streets: ambient rain reduction interpolates (0 mm/h,0),
+  (2 mm/h,10), (10 mm/h,20), capped at20. Exposed floor/surface washing takes
+  30 world minutes, retains completed cleaning when rain stops, and permits
+  later recontamination. Roofs and interiors are excluded.
+- Resident NPCs: one world hour of cleaning per day while home and out of
+  combat, accessible floors/furniture, existing water/soap/time per m2 and
+  reusable cloth. Share household supplies; do not spend player property
+  without permission. Each household buys one reusable cloth and up to300g soap
+  using its own funds and actual Provisions stock/prices; lack of money or stock
+  prevents cleaning. Each dwelling receives its own200L potable domestic reserve,
+  shared sink/bathtub, replenishing1L/world minute (#410).
+- Wind/ventilation are proposals only. Existing temperature/humidity already
+  account for cold/dry conditions; no second multiplier is approved.
+
+Actor/equipment state revision 1 is additive and initialized only when needed.
+The existing player illness record remains the body's source of truth. Native
+equipment copy/pickup/storage preserves concentration; copies have independent
+state. Box and closed-chest contents reject explicit contact without resetting
+their value. These storage routes and player/carried-equipment environmental
+exposure are implemented and tested. NPC/furniture environmental exposure,
+surface/combat callers, soap bathing and equipment cleaning remain pending. Player/equipment immersion
+is integrated through the same thermal update and known water-quality metadata.
+
+Shared calculations, used by environmental exposure; other contact/hygiene pending:
+transfer 0.1 degree per second per m², multiplied by source/max(recipient,1).
+Only the lower concentration increases, never above the source; equal values
+do not exchange. The source retains its concentration. Continuous integration
+updates the ratio as the recipient rises, so a batch equals subdivided contact.
+Body dose scales 80 kg/body mass. Feet use 0.04 m²; body brushing 0.10 m²;
+bites, scratches and weapon impacts use 0.01 m² for ten contact seconds.
+Immersion uses submerged body area. On 2026-10-25 the author approved using
+the character's submerged fraction times the approved equipment area for weapons,
+shields and loose equipment carried outside the Box. Worn clothing/armor use
+their actual submerged body zones; the Box/closed chests remain protected. Biological/chemical water maps to C100,
+clean or salt-only water to C0 for this contact disease; bathing needs potable
+water. Transmission uses world seconds, including waits and journeys; disease
+damage retains its existing real-second clock.
+
+Environmental reference at 20 C/50% humidity: nature/gardens 5, city 15,
+industry 40, sewers 60; multiply by 2^((T-20)/10)*(0.5+humidity/100), clamp
+to 0..100. Clothes/armor receive covered outer exposure first; bare skin receives
+it directly, and equipment/body contact can transfer it. Reuse thermal coverage.
+Box and closed chests shield new contact/environmental exposure, retain prior
+contamination and do not suspend food ageing. New untracked actors, surfaces
+and equipment begin at zero on update, with no retrospective exposure.
+The approved initial classification is gardens/countryside as natural, urban
+streets/homes as urban, industrial workshops as industrial and sewers as sewer.
+Future maps declare their category. Generic furniture/actors use their collision
+cylinder's exterior area when no dedicated physical surface exists.
+
+Current environmental integration samples the player's thermal environment in
+world time. Outer armor, then clothing, then skin receive covered contact; bare
+areas integrate their sources jointly, stopping each source when reached. A
+dirty body can contaminate the inner garment without cleansing itself. Carried
+unworn equipment outside the Box receives its fixed-area exposure. The World
+journal displays local ambient concentration separately from the body HUD.
+Wait/travel forecasts own independent body/equipment concentrations; confirming
+travel commits the fresh projection once. Wait schema 10 invalidates prior caches, including pre-rain projections.
+Wait forecasts evaluate future weather at the stored location/shelter; changing
+heat/humidity seals use the existing unsupported-effect forecast notice. Journeys
+use the natural route reference with their regional thermal forecast.
+
+Immersion samples the actual height-transfer or swimmable 3D-floor volume in
+the existing sixteen anatomical rows. Dirty rows contribute C100; submerged
+area is excluded from airborne contact. Worn outer pieces receive their actual
+submerged zone area; loose items use their fixed area times the submerged body
+area fraction. Air/water integrate jointly with each source stopping at its own
+concentration. Clean water never removes existing contamination. Saved water
+coverage is derived/transient and rebuilt; abstract journeys clear origin water.
+Stationary forecasts reuse an independent fixed immersion snapshot. Connected
+reservoirs can change level/quality during waiting, so an exact date prediction
+is explicitly unavailable there until a reservoir projection is implemented.
+Native/manual waiting retains real exposure and water calendar progression.
+
+Approved 2026-10-25, still pending: floor/wall contamination uses persistent
+localized 1 m2 zones receiving ambient/contact exposure; feet retain 0.04 m2
+contact rather than contaminating the entire room. Mansion bathtubs share the
+kitchen domestic potable 200 L reserve replenished at 1 L/world minute. Bathing
+and filling spend the same reserve; fountains/cisterns retain separate reserves.
+
+Sector `user_ca_contamination_class` declares 1 nature, 2 city, 3 industry or
+4 sewer. Current gardens/countryside reuse existing land metadata; city/mansion
+interiors, sewers and coast use their corresponding map classes. Unknown maps
+without a declaration do not invent a concentration. Forge, sawmill and Chemistry
+station sectors are industrial. A single typed station census rebuilds that
+sector-indexed cache on load; spawn events maintain it. Runtime lookup is O(1),
+and only the player's inventory is cached for carried equipment. No periodic
+whole-map actor scan is introduced. The category belongs to the room, so removing
+a station does not cleanse its environment.
+
+Approved M-size weapon areas (m²): dagger .04; hatchet .10; machete .12;
+sword .16; axe/flail/javelin .18; greatsword .24; spear .25; war axe .28;
+halberd .35; gauntlets pair .50; carbine/shotgun .25; bow .20; crossbow .30;
+staves .30; pickaxe .20; bolas .08; scepter/bell/support book/censer .20;
+orb .15; support statuette/effigy .25. Shield areas at M count both faces:
+magic .32, buckler .25, kite .54, tower 1.44 m². Scale area by the existing
+size mass multiplier to the power 2/3 (geometric similarity), excluding tier:
+XS/S/M/L/XL approximately .630/.825/1/1.160/1.310. These game references
+do not implement #315 or change shield defense/models.
+
+Approved clothing/armor cleaning and detached-area reference: M uses the existing
+thermal body at 80 kg/1.75 m. Head .366 m², body .732, hands/arms .183, feet/legs
+.671 (rounded; runtime retains the thermal calculation's precision). Apply the
+same geometric size factors as weapons, without tier. Stored, sold and dropped
+pieces keep their fixed surface; wearing them uses the actual body's area for
+contact. Transfer to another character therefore does not change cleaning cost.
+
+Equipment washing needs no station: 1 L potable water/m², 5 g soap/L, reusable
+cloth; a full pass removes all contamination in 60 world seconds/m²/object,
+without Dexterity. Costs and cleaning progress together; cancellation keeps
+completed cleaning and consumed resources. Repair cleans the repaired piece;
+sleep first cleans selected weapon and then equipped clothing/armor in the
+usual slot order. Missing resources skip that piece with notice, never block
+repair/sleep. Other inventory equipment is cleaned manually.
+
+Clean-water immersion now removes one body-contamination degree per world
+minute per submerged square metre, multiplied by80kg/body mass. The existing
+anatomical water samples distinguish potable, salty, biological, chemical and
+unknown water. Only potable rows cleanse; leaving the water stops cleansing.
+Gear retains its contamination and can transmit it again; this does not replace
+the separate approved soap bath or equipment-cleaning actions. Independent
+waiting forecasts include the same washing; journey departure clears origin
+water coverage. Waiting schema11 invalidates earlier cached projections.
+Sixty native assertions pass across rules, real geometry, mass/partial contact,
+native waiting parity, water-exposure regression, saves, hub return and a prior
+save. All16,869 wash01 members match src. Evidence:
+assets/validation_589/immersion_wash. CA502-WASH-01 passed author acceptance on2026-10-25, without qualifications.
+
+Metabolic capacity now accrues from actual Hunger/Hydration restored by
+rations, water, mate and direct potable-source drinking:20 restored percentage
+points earn1 degree, fractional contributions combine, stored capacity caps at20.
+Full bars earn no excess credit. Save migration initializes capacity at0 without
+changing existing contamination or pending damage. Forecasts copy capacity and
+journeys commit their independent result; current waiting schema12 invalidates
+earlier projections. Native waiting now includes the existing direct potable-water
+hydration, so its recovered needs and metabolic credit match actual immersion.
+Thirty-six native assertions pass, including full bars, overflow, copies, native
+pulses, prediction parity, save/hub and prior-save migration. All16,870 metabolism01
+members match src; evidence: assets/validation_589/metabolism. The toilet action,
+its60-second session and10-L domestic withdrawal still need furniture integration.
+No new author test is queued for an unfinished toilet interaction.
+
+Approved toilet interaction; session/furniture integration pending: actual Hunger
+and Hydration recovered through food/drink add together, with fractions retained.
+Every20 restored percentage points earns1 cleansing degree; stored capacity
+caps at20. Each effective use lasts60world seconds and spends10L domestic
+water, no soap or cloth. Remove at most20 body-contamination degrees, bounded
+by contamination and earned capacity; spend only the capacity actually used.
+A clean body or zero capacity cannot consume water. Old saves earn no retroactive
+capacity. This can remove contamination from any source, not only ingested food.
+
+Bathing uses the same body contamination resource, including food/bites:
+0.5 L potable water per removed degree at 80 kg, proportional to body mass,
+plus 5 g soap/L. Ten world seconds/degree, no cloth, at a bathtub or accessible
+potable source. Choose an affordable amount; consume progressively, keeping
+completed cleaning/spent resources on cancellation. At 80 kg, C90 to C0 costs
+45 L and 225 g soap. These are game calibrations, not medical disinfection rates.
+
+Approved soap recipe: 1,000 g animal fat + 135 g caustic soda + 300 mL potable
+water -> 1,000 g finished soap, abstract losses/drying included. Chemistry,
+two attended world hours, no Dexterity reduction; 2 kW useful, 25% efficiency,
+2,058 g mineral coal. Provisions fat maximum 10 kg at 4 copper/100 g, soda
+1 kg at 5 copper/100 g; normal 0.1%-maximum/day import replenishment. Soap
+maximum 3 kg, ingredients/fuel plus 25%, recipe replenishment; ten recipe copies
+in the library. Cloth: 100 g cotton fabric -> reusable 100 g cloth, Workbench
+and normal crafting; Provisions twenty, library ten recipes, cost plus 25%.
+Its rinse is included in washing water, leaving the reusable cloth clean.
+
+Acquisition/fabrication are now implemented (2026-10-25). Stable appended material
+IDs 105/106/107 identify fat/soda/soap in grams; recipes 203/204 identify soap/cloth,
+and key-item type 13 is the 100 g cloth. Chemistry dispatch is explicit: its old
+contiguous material/recipe ranges remain unchanged across the intervening mate
+and camp IDs. Soap keeps whole batches and its fixed world-time duration; cloth
+uses normal fabrication waste/time and cotton fabric tier 2. Both can be bought,
+stored and learned through existing interfaces. Additive catalogue revision 1
+preserves prior stock/deadlines, and recipe-book revision 16 preserves old recipes
+while locking the new ones. Native acquisition evidence lives in
+assets/validation_589/supplies; the actual washing/bathing action remains pending.
 
 ## Central property contracts (#411, 5.8.6 in progress)
 

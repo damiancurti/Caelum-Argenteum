@@ -1,6 +1,177 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.8** — 2026-10-24.
+Documentation version: **5.8.9** — 2026-10-24.
+
+## 5.8.9 - Severe contamination (#502, in progress), 2026-10-24
+
+Author confirmation,2026-10-25: CA502-WASH-01 (origin5.8.9/#502) passed
+all checks in the most recent immersion-washing terminal, without qualifications.
+The confirmed entry was removed from pending_test.txt. Treatment acceptance
+remains pending; this does not approve soap baths or toilets.
+
+The author requested environmental/contact/equipment contamination and hygiene,
+and approved the staged numeric contract recorded in SYSTEMS and issue #502.
+This first slice doubles disease damage from C90, adds Sick/Sick immune labels,
+and reuses that damage in travel/wait forecasts. Provision revision 7 invalidates
+old cached forecasts while body illness revision 1 remains unchanged. Native
+tests preserve old contamination/fractional damage, load current saves, return
+through a hub and restore the original save with its original package.
+Static and native evidence is in assets/validation_589; author acceptance is
+pending as CA502-SEVERE-01. Contact integration and hygiene remain unfinished.
+README reviewed. No art, campaign geometry or existing accepted camp behavior
+is changed by #502.
+
+Artwork continuation: generated four original painted alpha sources for fat,
+soda, soap and reusable cloth; retained full prompts/provenance under
+assets/art_source/hygiene. Mechanically exported and inspected their 128-pixel
+previews, with identical repeated hashes. This prepares artwork only: runtime
+registration and author inventory review remain pending. No accepted artwork
+was replaced. The first severe-illness test package remains unchanged.
+
+State continuation: additive revision-1 actor/equipment records retain existing
+body contamination and start previously untracked objects clean. Equipment copy,
+pickup, closed/Box storage, withdrawal, save/load, hub return and original-save
+rollback pass 30 individual native assertions in seven selected runs. Sources and
+all 16,860 tested package members are byte-equivalent. Weapon/shield surfaces use
+the approved table and mass-size multiplier^(2/3), without changing defense or
+models. This exposes an explicit contact API; automatic environmental/combat
+callers and real hygiene remain pending. Failed probe logs are retained with
+diagnoses in validation_589/RESULTS.md. README reviewed; same patch version.
+
+Environmental continuation: player and carried equipment outside the Box now
+receive local world-time exposure through the thermal update. Armor/clothing
+layers and bare body sources use the approved surfaces and mass scaling. The
+author approved fixed detached clothing/armor areas from the 80 kg/1.75 m thermal
+reference. The World journal shows ambient contamination. Independent wait and
+travel models preserve their own equipment concentrations; wait schema 8 discards
+old caches. Sixty-six additional native assertions cover rules, actual waiting
+with/without clothing, travel commit, current saves/hub return, old-save migration
+and severe-disease regression. The final 16,862 package members match src.
+One typed load census maps industrial station sectors; no routine global scan.
+Measured microcosts and their limits are recorded in validation_589/RESULTS.md;
+these are not frame-presentation/FPS measurements. Native journal capture was
+inspected after correcting overlap and a shell-encoding artifact. Failed probes
+remain with diagnoses. CA502-EXPOSURE-01 awaits the author's return; no manual
+acceptance is inferred. NPC/furniture exposure, surface/combat contact, immersion
+and hygiene remain pending. README reviewed; same issue and patch version.
+
+Author acceptance, 2026-10-25: CA502-SEVERE-01 and CA502-EXPOSURE-01
+(both origin 5.8.9/#502) passed all supplied terminal checks without qualifications.
+The author reported only a separate #411 tent-model overlay defect; that does
+not qualify either #502 result. Remove these two accepted entries from the
+single pending queue. Runtime/source and prior evidence are unchanged at
+2d312262; no new native regression run is needed for this documentation update.
+The same reply approved immersion area for carried loose equipment as its
+approved surface multiplied by the character's submerged fraction; worn pieces
+use actual submerged zones. Immersion and the remaining hygiene/contact scope
+are still not implemented. README reviewed; same patch version.
+
+Immersion continuation, 2026-10-25: player skin, worn layers and carried loose
+equipment now receive contact using actual submerged body zones and approved
+fixed-area fractions. Known biological/chemical water is C100; clean/salt-only
+water is C0 and does not wash existing contamination. The Box remains protected.
+Wait schema 9 uses independent immersion state and the same current geometric
+shelter as native execution; it explicitly declines exact connected-reservoir
+forecasts. Actual waiting remains supported. Abstract travel clears origin water.
+71 selected native assertions pass, including save/hub and old-save rollback;
+evidence and failed-probe diagnoses: assets/validation_589/immersion. The author
+is away; CA502-IMMERSION-01 remains pending. README reviewed. No new balance,
+maps, artwork, NPC contact or completed hygiene is implied by this continuation.
+The author also approved local 1 m2 floor/wall zones and a shared 200 L mansion
+bathing/kitchen reserve, recorded as pending contracts in SYSTEMS.
+
+Hygiene acquisition continuation, 2026-10-25: Provisions now sells animal fat,
+caustic soda, soap and reusable cotton cloth; the library sells both recipes.
+Soap uses the approved attended two-world-hour Chemistry process and reserves
+300 mL potable water without consuming its container. Cloth uses normal Workbench
+fabrication, cotton tier 2 and existing waste/time rules. Prices and replenishment
+derive from the approved inputs. Recipe-book migration 16 appends locked IDs
+203/204 while preserving existing knowledge; catalogue revision 1 adds only
+missing supplies without refilling depleted stock or resetting existing deadlines.
+92 executed native assertions cover fabrication, cancellation, trading, Box/chest,
+current saves/hub, an unfinished soap task, prior saves/rollback and immersion
+smoke checks. See assets/validation_589/supplies/RESULTS.md. Manual
+CA502-SUPPLIES-01 and CA502-IMMERSION-01 await author acceptance. Washing/bathing,
+NPC/furniture exposure and solid/combat contact remain unfinished.
+
+
+Author acceptance, 2026-10-25: CA502-SUPPLIES-01 and CA502-IMMERSION-01
+(both origin 5.8.9/#502) passed all checks in the supplied terminal, without
+qualifications. This includes the hygiene sprites and acquisition, and the
+immersion comparison. Both entries are removed from pending_test.txt. Existing
+native evidence and runtime 01083ec1 remain unchanged; no repeated engine test
+is required for this acceptance-only update. Washing/bathing and remaining
+contact/NPC scope are still unfinished. README reviewed; same patch version.
+
+Treatment continuation, 2026-10-25: Medkits and hot, active-yerba mate now remove one contamination degree per
+10% maximum Life of potential healing, including at full Life. The reduction
+follows recovery pulses and preserves fractional doses; washed/cold mate and
+Anima/energy items do not cleanse. Natural regeneration retains its own rate.
+Native GZDoom4.14.2: 31 executed assertions pass, including full/wounded
+Life, all medkit sizes, overlapping/washed mate, native expiration, NPC state,
+legacy pulses, mid-treatment save/load, hub continuity and prior-save loading.
+No saved schema or existing dosage changes;16,869 treatment01 members match src.
+The two failed probes were fixture-only: a nonexistent NPC class, then an
+expected value held in a map-local handler rather than a travelling proof item.
+Logs and repairs are retained in assets/validation_589/treatment. Existing
+forecast guards for active powers remain. CA502-TREATMENT-01 is newly pending.
+The same request approved rain and resident-cleaning contracts, which remain
+separate pending integration. README reviewed; same patch version.
+
+Ambient-rain continuation, 2026-10-25: The ambient rain reduction is integrated into actual player/equipment exposure,
+the World journal and independent waiting forecasts. It subtracts the approved
+0/10/20 points at0/2/10mm per hour after temperature/humidity, only on uncovered
+urban ground, clamped at zero. Roofs/tents, natural and industrial references
+retain their prior rules. Waiting schema10 invalidates old cached projections.
+This does not yet implement persistent floor washing or resident cleaning.
+22 native assertions pass: rain boundaries/interpolation, coverage/category
+exclusions, real player exposure, no automatic body washing, journal agreement,
+independent rainy-weather prediction/native parity and prior-save continuity.
+All16,869 rain01 members match src. The retained failed first probe called a
+missing fixture result helper; corrected without a production-code change.
+Static/native evidence: assets/validation_589/rain. No surface-washing, resident
+cleaning, manual acceptance or FPS claim is implied. README reviewed; same patch.
+
+
+Immersion-washing continuation,2026-10-25: Clean-water immersion now removes one body-contamination degree per world
+minute per submerged square metre, multiplied by80kg/body mass. The existing
+anatomical water samples distinguish potable, salty, biological, chemical and
+unknown water. Only potable rows cleanse; leaving the water stops cleansing.
+Gear retains its contamination and can transmit it again; this does not replace
+the separate approved soap bath or equipment-cleaning actions. Independent
+waiting forecasts include the same washing; journey departure clears origin
+water coverage. Waiting schema11 invalidates earlier cached projections.
+Sixty native assertions pass across rules, real geometry, mass/partial contact,
+native waiting parity, water-exposure regression, saves, hub return and a prior
+save. All16,869 wash01 members match src. Evidence:
+assets/validation_589/immersion_wash. CA502-WASH-01 passed author acceptance on2026-10-25, without qualifications.
+
+Two retained hub probes incorrectly asserted valid cached water geometry on a
+fixture map without a climate reference. The production unavailable-climate guard
+already prevents exposure/washing there. The corrected fixture checks that guard
+and samples actual geometry directly; no production fix or claim of a runtime
+failure is implied. README reviewed; same patch version. The author also approved
+household supply purchases and metabolic toilet limits/time/water, recorded in
+SYSTEMS; those interactions remain pending.
+
+Metabolic-capacity continuation,2026-10-25: Metabolic capacity now accrues from actual Hunger/Hydration restored by
+rations, water, mate and direct potable-source drinking:20 restored percentage
+points earn1 degree, fractional contributions combine, stored capacity caps at20.
+Full bars earn no excess credit. Save migration initializes capacity at0 without
+changing existing contamination or pending damage. Forecasts copy capacity and
+journeys commit their independent result; current waiting schema12 invalidates
+earlier projections. Native waiting now includes the existing direct potable-water
+hydration, so its recovered needs and metabolic credit match actual immersion.
+Thirty-six native assertions pass, including full bars, overflow, copies, native
+pulses, prediction parity, save/hub and prior-save migration. All16,870 metabolism01
+members match src; evidence: assets/validation_589/metabolism. The toilet action,
+its60-second session and10-L domestic withdrawal still need furniture integration.
+No new author test is queued for an unfinished toilet interaction.
+
+The retained failed legacy probe used an addon basename different from the one
+required by the saved game. The repaired fixture preserves checks.pk3 in its own
+legacy directory; production code did not change. The original save remains
+untouched and usable with the prior package. README reviewed; same patch.
 
 ## 5.8.8 - Carried-chest placement geometry (#411), 2026-10-24
 

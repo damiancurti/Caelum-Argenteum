@@ -1,0 +1,26 @@
+[
+  {
+    "source": "assets/art_source/hygiene/soap-source-v1.png",
+    "source_sha256": "95dceae6c067a1337badfb60dc24623e241424e206b9b361b6046989ec28989e",
+    "preview": "assets/art_source/hygiene/icons/soap.png",
+    "preview_sha256": "495b354bd5f4d1eed79460c80567defaad82de20b08bfc052cc5f45681c22ec7"
+  },
+  {
+    "source": "assets/art_source/hygiene/cloth-source-v1.png",
+    "source_sha256": "51ca4a43301bb6b2d73c41de29a707de3013dd1d07c33e22cdf14bb007867003",
+    "preview": "assets/art_source/hygiene/icons/cloth.png",
+    "preview_sha256": "450287d2ab991f2724ffacd249ebb9ab4d7aa677c9add258aea8bd104d502923"
+  },
+  {
+    "source": "assets/art_source/hygiene/fat-source-v1.png",
+    "source_sha256": "73b80641ef7efae239a87f7f6c089fae2bd6a25d7f2ed17f1fb1e82e6cd16d6b",
+    "preview": "assets/art_source/hygiene/icons/fat.png",
+    "preview_sha256": "470a454f8142082bb9ce240fa5df4b85f203987436d6160eaeb9631c9d1f275f"
+  },
+  {
+    "source": "assets/art_source/hygiene/soda-source-v1.png",
+    "source_sha256": "1e5846e5295775e6b917af44952a342654f9d319ab23830cf632697eed68ebc4",
+    "preview": "assets/art_source/hygiene/icons/soda.png",
+    "preview_sha256": "645f8bbfee93dd5386b481c94765517a4f8ec71d854c2cc34aa5cc02b4ee8e65"
+  }
+]

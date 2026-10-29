@@ -25,8 +25,9 @@ class CaelumSkipTableStock : Object play
 
 class CaelumTimeSkipModel : CaelumJourneyModel
 {
-    const PROVISION_REVISION = 6;
+    const PROVISION_REVISION = 12;
     int ProvisionRevision;
+    bool PotableImmersed;
     Array<CaelumSkipSupply> Supplies;
     Array<CaelumSkipTableStock> Tables;
     bool Done, Sleeping, Limbo;
@@ -39,12 +40,19 @@ class CaelumTimeSkipModel : CaelumJourneyModel
     bool HasChair;
     int FoodSeatedSubTics, WaterSeatedSubTics;
     double AdrenalineBeforeStep;
+    CaelumContaminationWaitWeather ContaminationWeather;
 
     override void Step(bool sleeping)
     {
         // El jugador calcula rendimiento al comienzo del tic, antes de curar
         // salud y decaer adrenalina. Respetar ese orden evita adelantar umbrales.
         Sleeping=sleeping;
+        if(ContaminationWeather!=null && Contamination!=null)
+        {
+            int nextTick=EndTics+int(SubTics+1>=Divisor),nextDay=EndDay;
+            if(nextTick>=CaelumWorldClock.TicsPerDay()){nextTick=0;nextDay++;}
+            Contamination.Advance(FoodIllness,ContaminationWeather.Sample(nextDay,nextTick),AltitudeSecondsPerTic);
+        }
         HealthBeforeStep=Health;AdrenalineBeforeStep=Adrenaline;Super.Step(sleeping);
         if(Health>0)ServeSupplies();
     }
@@ -62,6 +70,10 @@ class CaelumTimeSkipModel : CaelumJourneyModel
     {
         ProvisionRevision=PROVISION_REVISION;
         Capture(user,false);
+        PotableImmersed=user.IsSubmergedInPotableWater();
+        ContaminationWeather=new('CaelumContaminationWaitWeather');ContaminationWeather.Capture(user);
+        if(ContaminationWeather.DynamicClimate || (Contamination!=null && Contamination.DynamicWater))
+        {Reason="CA_SKIP_FORECAST_EFFECT";Done=true;}
         Scale=CaelumWorldClock.MapTimeScale(level.MapName);
         AltitudeSecondsPerTic*=Scale;
         HungerLoss*=Scale;ThirstLoss*=Scale;SleepLoss*=Scale;
@@ -175,6 +187,7 @@ class CaelumTimeSkipModel : CaelumJourneyModel
                     FoodPulseTics-=TICRATE;
                     double gained=Min(FoodPulse,100-Hunger);
                     Hunger+=gained;Sleep=Max(0,Sleep-gained/4);
+                    if(FoodIllness!=null)FoodIllness.Satiation(gained);
                 }
                 FoodEffectTics--;
             }
@@ -187,10 +200,20 @@ class CaelumTimeSkipModel : CaelumJourneyModel
                 if(seated)WaterSeatedSubTics=0;
                 WaterPulseTics++;
                 if(WaterPulseTics>=TICRATE)
-                {WaterPulseTics-=TICRATE;Thirst=Min(100,Thirst+WaterPulse);}
+                {
+                    WaterPulseTics-=TICRATE;double before=Thirst;Thirst=Min(100,Thirst+WaterPulse);
+                    if(FoodIllness!=null)FoodIllness.Satiation(Thirst-before);
+                }
                 WaterEffectTics--;
             }
         }
+    }
+    override void ThirstStep(double comfort)
+    {
+        if(!PotableImmersed){Super.ThirstStep(comfort);return;}
+        double gained=Max(0.0,Min(CaelumConstants.SURVIVAL_MAXIMUM-Thirst,
+            CaelumConstants.SURVIVAL_MAXIMUM*CaelumConstants.POTABLE_WATER_THIRST_RECOVERY_RATIO_PER_SECOND/TICRATE));
+        Thirst+=gained;if(FoodIllness!=null)FoodIllness.Satiation(gained);
     }
     override double Comfort(bool sleeping)
     {return Hunger<=CaelumTimeSkipRules.SleepAt() || Thirst<=CaelumTimeSkipRules.SleepAt()?1:sleeping?BedFactor:HasChair?ChairFactor:1;}

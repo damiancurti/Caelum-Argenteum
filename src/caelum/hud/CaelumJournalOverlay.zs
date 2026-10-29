@@ -1258,6 +1258,8 @@ class CaelumJournalOverlay : EventHandler
                 || (kind == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE && localPlayer.FormalInventoryRowType[row]==CaelumCampData.POT_CONSUMABLE))
                 DrawTexture(CaelumCampData.Icon(kind == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE?1:0),
                     30.0,165.0+row*21.0,20.0,20.0);
+            else if(kind==CaelumConstants.EQUIPMENT_KIND_KEY_ITEM && localPlayer.FormalInventoryRowType[row]==CaelumHygieneData.CLOTH_KEY)
+                DrawTexture("graphics/caelum/icons/hygiene/cloth.png",30.0,165.0+row*21.0,20.0,20.0);
             else if (kind == CaelumConstants.EQUIPMENT_KIND_CLOTHING)
                 DrawTexture(CaelumClothingData.Icon(localPlayer.FormalInventoryRowType[row]),
                     30.0, 165.0 + row * 21.0, 20.0, 20.0);
@@ -2057,6 +2059,9 @@ class CaelumJournalOverlay : EventHandler
         DrawTextLine(SmallFont, Font.CR_CYAN, 48, 188,
             String.Format(StringTable.Localize("CA_WEATHER_WIND_RAIN", false), wind, sample.PrecipitationMmPerHour,
                 StringTable.Localize(CaelumWeatherRules.ShelterKey(weather.Shelter), false)));
+        DrawTextLine(SmallFont, Font.CR_CYAN, 48, 200,weather.ContaminationAvailable
+            ? String.Format(StringTable.Localize("CA_CONTAMINATION_ENVIRONMENT",false),weather.Contamination)
+            : StringTable.Localize("CA_CONTAMINATION_ENVIRONMENT_UNKNOWN",false));
     }
 
     ui void DrawThermalPage(CaelumPlayer localPlayer)
@@ -2113,22 +2118,22 @@ class CaelumJournalOverlay : EventHandler
             calendarText = StringTable.Localize("CA_CALENDAR_OUT_OF_RANGE", false);
         DrawTextLine(SmallFont, Font.CR_CYAN, 48, 160, calendarText);
         DrawWeather(localPlayer, calendar != null && calendar.TrialDate);
-        DrawTextLine(SmallFont, Font.CR_GOLD, 48, 206, StringTable.Localize("CA_WORLD_VISITED", false));
+        DrawTextLine(SmallFont, Font.CR_GOLD, 48, 210, StringTable.Localize("CA_WORLD_VISITED", false));
         int visits = 0;
         if(record!=null)for(int id=1;id<CaelumWorldCatalogue.LOCATION_DEFINED_COUNT;id++)
             if(record.WorldLocationVisited[id])visits++;
-        int rowStep=visits>5?9:12;
+        int rowStep=visits>5?7:12;
         int row = 0;
         for (int id = 1; id < CaelumWorldCatalogue.LOCATION_DEFINED_COUNT; id++)
         {
             if (record == null || !record.WorldLocationVisited[id]) continue;
-            DrawTextLine(SmallFont, id == locationId ? Font.CR_GOLD : Font.CR_WHITE, 56, 220+row*rowStep,
+            DrawTextLine(SmallFont, id == locationId ? Font.CR_GOLD : Font.CR_WHITE, 56, 224+row*rowStep,
                 StringTable.Localize(CaelumWorldCatalogue.LocationNameKey(id), false));
             row++;
         }
-        if (row == 0) DrawTextLine(SmallFont, Font.CR_GRAY, 56, 220,
+        if (row == 0) DrawTextLine(SmallFont, Font.CR_GRAY, 56, 224,
             StringTable.Localize("CA_WORLD_NO_VISITS", false));
-        DrawTextLine(SmallFont, Font.CR_GOLD, 310, 206,
+        DrawTextLine(SmallFont, Font.CR_GOLD, 310, 210,
             StringTable.Localize("CA_WORLD_LOCAL_CONNECTIONS", false));
         row = 0;
         for (int id = 1; id < CaelumWorldCatalogue.CONNECTION_DEFINED_COUNT; id++)
@@ -2136,17 +2141,17 @@ class CaelumJournalOverlay : EventHandler
             if (record == null || !record.WorldConnectionKnown[id]
                 || (id != CaelumWorldCatalogue.CONNECTION_RETURN && !CaelumWorldCatalogue.IsSewerConnection(id))
                 || CaelumWorldCatalogue.ConnectionOrigin(id) != locationId) continue;
-            DrawTextLine(SmallFont, Font.CR_WHITE, 318, 220+row*22,
+            DrawTextLine(SmallFont, Font.CR_WHITE, 318, 224+row*22,
                 StringTable.Localize(CaelumWorldCatalogue.ConnectionNameKey(id), false));
-            DrawTextLine(SmallFont, Font.CR_GRAY, 318, 230+row*22,
+            DrawTextLine(SmallFont, Font.CR_GRAY, 318, 234+row*22,
                 StringTable.Localize(record.WorldConnectionTraversed[id]
                     ? "CA_WORLD_TRAVERSED" : "CA_WORLD_KNOWN", false));
             row++;
         }
-        if (row == 0) DrawTextLine(SmallFont, Font.CR_GRAY, 318, 220,
+        if (row == 0) DrawTextLine(SmallFont, Font.CR_GRAY, 318, 224,
             StringTable.Localize("CA_WORLD_NO_LOCAL_CONNECTIONS", false));
         if (locationId == CaelumWorldCatalogue.LOCATION_MANSION && row > 0)
-            DrawTextLine(SmallFont, Font.CR_GRAY, 318, 246,
+            DrawTextLine(SmallFont, Font.CR_GRAY, 318, 250,
                 String.Format(StringTable.Localize("CA_WORLD_DESTINATION", false),
                     StringTable.Localize(record.WorldLocationVisited[2]
                         ? "CA_MAP02_SEWER_NAME" : "CA_WORLD_UNDISCOVERED", false)));

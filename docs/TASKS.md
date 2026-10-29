@@ -1,6 +1,81 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.8** — 2026-10-24.
+Documentation version: **5.8.9** — 2026-10-24.
+
+## 5.8.9 - Contamination expansion (#502, in progress)
+
+Metabolic capacity now accrues from actual Hunger/Hydration restored by
+rations, water, mate and direct potable-source drinking:20 restored percentage
+points earn1 degree, fractional contributions combine, stored capacity caps at20.
+Full bars earn no excess credit. Save migration initializes capacity at0 without
+changing existing contamination or pending damage. Forecasts copy capacity and
+journeys commit their independent result; current waiting schema12 invalidates
+earlier projections. Native waiting now includes the existing direct potable-water
+hydration, so its recovered needs and metabolic credit match actual immersion.
+Thirty-six native assertions pass, including full bars, overflow, copies, native
+pulses, prediction parity, save/hub and prior-save migration. All16,870 metabolism01
+members match src; evidence: assets/validation_589/metabolism. The toilet action,
+its60-second session and10-L domestic withdrawal still need furniture integration.
+No new author test is queued for an unfinished toilet interaction.
+
+Clean-water immersion now removes one body-contamination degree per world
+minute per submerged square metre, multiplied by80kg/body mass. The existing
+anatomical water samples distinguish potable, salty, biological, chemical and
+unknown water. Only potable rows cleanse; leaving the water stops cleansing.
+Gear retains its contamination and can transmit it again; this does not replace
+the separate approved soap bath or equipment-cleaning actions. Independent
+waiting forecasts include the same washing; journey departure clears origin
+water coverage. Waiting schema11 invalidates earlier cached projections.
+Sixty native assertions pass across rules, real geometry, mass/partial contact,
+native waiting parity, water-exposure regression, saves, hub return and a prior
+save. All16,869 wash01 members match src. Evidence:
+assets/validation_589/immersion_wash. CA502-WASH-01 passed author acceptance on2026-10-25, without qualifications.
+
+Severe threshold/HUD and forecast invalidation are implemented.
+CA502-SEVERE-01 was accepted on 2026-10-25. Actor/equipment state and
+explicit contact API pass 30 native checks. Player/carried-equipment environmental
+exposure and independent wait/travel projections pass 66 further native checks.
+CA502-EXPOSURE-01 was accepted on 2026-10-25. Next: NPC/furniture exposure,
+surface state, local/combat contacts;
+progressive equipment washing/bathing and repair/sleep integration. Do not present
+contact/quote helpers as integrated hygiene. Use approved surfaces, world time
+and classes; preserve #410 food scope/#411 camps.
+
+Immersion implemented: 71 native assertions, independent forecasts and save/hub
+continuity. CA502-IMMERSION-01 passed author acceptance on 2026-10-25. Connected reservoirs
+retain an explicit exact-wait forecast limitation; no completed bath is claimed.
+
+Hygiene acquisition continuation, 2026-10-25: Provisions now sells animal fat,
+caustic soda, soap and reusable cotton cloth; the library sells both recipes.
+Soap uses the approved attended two-world-hour Chemistry process and reserves
+300 mL potable water without consuming its container. Cloth uses normal Workbench
+fabrication, cotton tier 2 and existing waste/time rules. Prices and replenishment
+derive from the approved inputs. Recipe-book migration 16 appends locked IDs
+203/204 while preserving existing knowledge; catalogue revision 1 adds only
+missing supplies without refilling depleted stock or resetting existing deadlines.
+92 executed native assertions cover fabrication, cancellation, trading, Box/chest,
+current saves/hub, an unfinished soap task, prior saves/rollback and immersion
+smoke checks. See assets/validation_589/supplies/RESULTS.md. Manual
+CA502-SUPPLIES-01 and CA502-IMMERSION-01 passed author acceptance on 2026-10-25. Washing/bathing,
+NPC/furniture exposure and solid/combat contact remain unfinished.
+
+Medkits and hot, active-yerba mate now remove one contamination degree per
+10% maximum Life of potential healing, including at full Life. The reduction
+follows recovery pulses and preserves fractional doses; washed/cold mate and
+Anima/energy items do not cleanse. Natural regeneration retains its own rate.
+Native treatment checks: 31 executed PASS; save/hub and prior-save
+coverage in assets/validation_589/treatment. CA502-TREATMENT-01 awaits author
+acceptance.
+
+The ambient rain reduction is integrated into actual player/equipment exposure,
+the World journal and independent waiting forecasts. It subtracts the approved
+0/10/20 points at0/2/10mm per hour after temperature/humidity, only on uncovered
+urban ground, clamped at zero. Roofs/tents, natural and industrial references
+retain their prior rules. Waiting schema10 invalidates old cached projections.
+This does not yet implement persistent floor washing or resident cleaning.
+Native evidence:22 assertions in assets/validation_589/rain, including an
+actual rainy-hour wait and prior-save loading. Author acceptance is not implied.
+
 
 ## 5.8.8 / #411 - Placement and persistent tents
 

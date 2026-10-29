@@ -6,8 +6,99 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.8.** Obtain and update the complete repository, validate
+**Current release: 5.8.9.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+## 5.8.9 - Severe contamination (#502, in progress)
+
+Metabolic capacity now accrues from actual Hunger/Hydration restored by
+rations, water, mate and direct potable-source drinking:20 restored percentage
+points earn1 degree, fractional contributions combine, stored capacity caps at20.
+Full bars earn no excess credit. Save migration initializes capacity at0 without
+changing existing contamination or pending damage. Forecasts copy capacity and
+journeys commit their independent result; current waiting schema12 invalidates
+earlier projections. Native waiting now includes the existing direct potable-water
+hydration, so its recovered needs and metabolic credit match actual immersion.
+Thirty-six native assertions pass, including full bars, overflow, copies, native
+pulses, prediction parity, save/hub and prior-save migration. All16,870 metabolism01
+members match src; evidence: assets/validation_589/metabolism. The toilet action,
+its60-second session and10-L domestic withdrawal still need furniture integration.
+No new author test is queued for an unfinished toilet interaction.
+
+Clean-water immersion now removes one body-contamination degree per world
+minute per submerged square metre, multiplied by80kg/body mass. The existing
+anatomical water samples distinguish potable, salty, biological, chemical and
+unknown water. Only potable rows cleanse; leaving the water stops cleansing.
+Gear retains its contamination and can transmit it again; this does not replace
+the separate approved soap bath or equipment-cleaning actions. Independent
+waiting forecasts include the same washing; journey departure clears origin
+water coverage. Waiting schema11 invalidates earlier cached projections.
+Sixty native assertions pass across rules, real geometry, mass/partial contact,
+native waiting parity, water-exposure regression, saves, hub return and a prior
+save. All16,869 wash01 members match src. Evidence:
+assets/validation_589/immersion_wash. CA502-WASH-01 passed author acceptance on2026-10-25, without qualifications.
+
+At contamination 90 or above, the existing disease damage doubles and the
+survival HUD reports Sick. Toughness immunity still prevents damage without
+turning it into healing; natural depuration below 90 removes the multiplier.
+Travel/wait forecasts share the same rule. Existing saved body contamination
+and fractional damage survive updating; wait forecast schema12 invalidates old
+cached models after adding immersion washing.
+
+Native checks cover exact boundaries, actual Life loss versus prediction,
+depuration, immunity, saves, hub return and original-package rollback. See
+assets/validation_589/RESULTS.md. CA502-SEVERE-01 was accepted on 2026-10-25.
+Actor and equipment contamination now persists through pickup, storage, saves
+and hub return. Thirty further native checks cover that state, protected storage,
+explicit contact and old-save migration/rollback. Weapon/shield areas use the
+approved size conversion. The player and equipment carried outside the Box now
+accumulate environmental contamination; clothes and armor receive covered
+exposure first. The World journal shows the local index. Sixty-six further native
+assertions cover independent forecasts, actual waiting, travel commit and save/hub
+continuity; see `assets/validation_589/exposure`. CA502-EXPOSURE-01 was accepted on 2026-10-25.
+NPC/furniture exposure, surface/combat contact and washing/bathing remain pending. The expanded issue and V5.8 remain open.
+Four painted hygiene item sources/previews are prepared in
+`assets/art_source/hygiene`; runtime registration and author review are pending.
+
+Immersion now exposes the player's submerged skin, outer garments and carried
+equipment according to known water quality. The Box remains protected; clean or
+salt-only water does not cause this contact disease or wash existing contamination.
+71 further native assertions cover real water, wait parity, travel, save/hub and
+legacy rollback (assets/validation_589/immersion). CA502-IMMERSION-01 passed author
+acceptance on 2026-10-25. Dynamic reservoir levels retain an explicit exact-wait
+forecast limitation; manual/native waiting remains available.
+
+Hygiene acquisition continuation, 2026-10-25: Provisions now sells animal fat,
+caustic soda, soap and reusable cotton cloth; the library sells both recipes.
+Soap uses the approved attended two-world-hour Chemistry process and reserves
+300 mL potable water without consuming its container. Cloth uses normal Workbench
+fabrication, cotton tier 2 and existing waste/time rules. Prices and replenishment
+derive from the approved inputs. Recipe-book migration 16 appends locked IDs
+203/204 while preserving existing knowledge; catalogue revision 1 adds only
+missing supplies without refilling depleted stock or resetting existing deadlines.
+92 executed native assertions cover fabrication, cancellation, trading, Box/chest,
+current saves/hub, an unfinished soap task, prior saves/rollback and immersion
+smoke checks. See assets/validation_589/supplies/RESULTS.md. Manual
+CA502-SUPPLIES-01 and CA502-IMMERSION-01 passed author acceptance on 2026-10-25. Washing/bathing,
+NPC/furniture exposure and solid/combat contact remain unfinished.
+
+Medkits and hot, active-yerba mate now remove one contamination degree per
+10% maximum Life of potential healing, including at full Life. The reduction
+follows recovery pulses and preserves fractional doses; washed/cold mate and
+Anima/energy items do not cleanse. Natural regeneration retains its own rate.
+Native treatment checks: 31 executed PASS; save/hub and prior-save
+coverage in assets/validation_589/treatment. CA502-TREATMENT-01 awaits author
+acceptance.
+
+The ambient rain reduction is integrated into actual player/equipment exposure,
+the World journal and independent waiting forecasts. It subtracts the approved
+0/10/20 points at0/2/10mm per hour after temperature/humidity, only on uncovered
+urban ground, clamped at zero. Roofs/tents, natural and industrial references
+retain their prior rules. Waiting schema10 invalidates old cached projections.
+This does not yet implement persistent floor washing or resident cleaning.
+Native evidence:22 assertions in assets/validation_589/rain, including an
+actual rainy-hour wait and prior-save loading. Author acceptance is not implied.
+
 
 ## 5.8.8 - Safe placement and persistent tents (#411, in progress)
 

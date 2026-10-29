@@ -241,6 +241,8 @@ class CaelumWeatherState : Inventory
     CaelumDeployedTent CampShelter;
     int MarkerCheckedTic;
     bool WindSheltered;
+    double Contamination;
+    bool ContaminationAvailable;
     String SourceMap;
     CaelumWeatherSample Current,Outside;
     static CaelumWeatherState Get(CaelumPlayer user,bool create=false)
@@ -302,6 +304,11 @@ class CaelumWeatherState : Inventory
         if(weather.CampShelter!=null && weather.CampShelter.Covers(user))
         {weather.Current.PrecipitationMmPerHour=0;weather.Current.WindSpeedKmh*=CaelumCampData.TENT_WIND_FACTOR;}
         CaelumSealClimate.ApplyWeather(user,weather.Current);
+        double contaminationReference=CaelumContaminationEnvironment.ReferenceAt(user);
+        weather.ContaminationAvailable=contaminationReference>=0 && weather.Current.Available;
+        weather.Contamination=weather.ContaminationAvailable ? CaelumContaminationRules.Ambient(
+            contaminationReference,weather.Current.AirTemperatureC,weather.Current.RelativeHumidityPercent,
+            weather.Current.PrecipitationMmPerHour,weather.Shelter==CaelumWeatherRules.OPEN) : 0;
         weather.SourceMap=level.MapName;weather.LocationId=location;weather.Profile=profile;weather.Region=region;
         weather.SampleDate=serial;weather.SampleMinute=minute;weather.Revision=CaelumWeatherRules.REVISION;
     }

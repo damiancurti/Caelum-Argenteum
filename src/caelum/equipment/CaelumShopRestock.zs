@@ -56,6 +56,7 @@ class CaelumShopProduct : Object play
         {for(int r=CaelumLockRules.FIRST_RECIPE;r<CaelumLockRules.FIRST_RECIPE+CaelumLockRules.RECIPE_COUNT;r++)if(CaelumLockRules.RecipeItem(r)==ItemType)return r;return -1;}
         if(Kind==SIMPLE)
         {
+            if(NativeClass=='CaelumCleaningCloth')return CaelumHygieneData.CLOTH_RECIPE;
             if(NativeClass=='CaelumArrowAmmo')return CaelumConstants.CRAFTING_ARROW_RECIPE;
             if(NativeClass=='CaelumBoltAmmo')return CaelumConstants.CRAFTING_BOLT_RECIPE;
             if(NativeClass=='CaelumCarbineAmmo')return CaelumConstants.CRAFTING_CARBINE_CARTRIDGE_RECIPE;

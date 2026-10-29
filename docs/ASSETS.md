@@ -1,6 +1,24 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.8** — 2026-10-24.
+Documentation version: **5.8.9** — 2026-10-24.
+
+## 5.8.9 - Hygiene item artwork (#502, in progress)
+
+Four original painted alpha sources were generated with built-in image_gen:
+animal fat, a plain stoneware alkali jar, handmade soap and a reusable cotton
+rag. The brief follows SPRITE_ART_DIRECTION's restrained nineteenth-century
+materials and painted inventory style. Full prompts, generated provenance and
+saved source paths are in assets/art_source/hygiene/PROMPTS.json. No external
+art or existing accepted sprite was replaced.
+
+export_hygiene_icons.py performs only alpha-bound cropping and proportional
+128-pixel export. All four previews were inspected at actual inventory size;
+repeated exports produced identical source/output hashes in EXPORT.json.
+The four unchanged previews are now copied byte-for-byte into
+src/graphics/caelum/icons/hygiene; RUNTIME.json records their source/runtime
+hashes. Inventory/crafting use these painted icons; dropped supplies use sprite
+billboards, with no replacement model. Native Spanish inventory and shop captures
+are in assets/validation_589/supplies. The author accepted these sprites under CA502-SUPPLIES-01 on 2026-10-25.
 
 ## 5.8.8 - Deployed tent artwork (#411, in progress)
 

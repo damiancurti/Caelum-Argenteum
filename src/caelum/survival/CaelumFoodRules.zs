@@ -28,7 +28,8 @@ class CaelumFoodRules : Object
     static clearscope double DamagePerSecond(double contamination,double maximumLife,double toughness)
     {
         return Max(0.0,contamination-CaelumFoodData.ILLNESS_THRESHOLD)*Max(0.0,maximumLife)
-            *CaelumFoodData.DAMAGE_MAX_LIFE_PER_DEGREE_SECOND*Max(0.0,CaelumToughnessRules.StatusResponse(toughness));
+            *CaelumFoodData.DAMAGE_MAX_LIFE_PER_DEGREE_SECOND*Max(0.0,CaelumToughnessRules.StatusResponse(toughness))
+            *CaelumContaminationRules.DamageFactor(contamination);
     }
 }
 
@@ -37,18 +38,43 @@ class CaelumFoodIllness : Object play
 {
     int Revision;
     double Contamination,DamageFraction;
+    int MetabolismRevision;
+    double ToiletCapacity;
 
     void Ensure()
     {
-        if(Revision>=CaelumFoodData.REVISION)return;
-        Contamination=0;DamageFraction=0;Revision=CaelumFoodData.REVISION;
+        if(Revision<CaelumFoodData.REVISION)
+        {Contamination=0;DamageFraction=0;Revision=CaelumFoodData.REVISION;}
+        // No reconstruye comidas anteriores ni altera la enfermedad guardada.
+        if(MetabolismRevision<CaelumMetabolismData.REVISION)
+        {ToiletCapacity=0;MetabolismRevision=CaelumMetabolismData.REVISION;}
     }
     CaelumFoodIllness Copy()
     {
         let copy=new('CaelumFoodIllness');copy.Ensure();
         if(Revision==CaelumFoodData.REVISION)
         {copy.Contamination=Contamination;copy.DamageFraction=DamageFraction;}
+        if(MetabolismRevision==CaelumMetabolismData.REVISION)copy.ToiletCapacity=ToiletCapacity;
         return copy;
+    }
+    void Satiation(double recovered)
+    {
+        Ensure();
+        ToiletCapacity=Min(CaelumMetabolismData.CAPACITY,ToiletCapacity
+            +Max(0.0,recovered)/CaelumMetabolismData.SATIATION_PER_DEGREE);
+    }
+    clearscope double ToiletAmount()
+    {return Min(CaelumMetabolismData.TOILET_MAX_DEGREES,Min(Max(0.0,Contamination),Max(0.0,ToiletCapacity)));}
+    double ToiletDepurate()
+    {
+        Ensure();double removed=ToiletAmount();
+        Contamination-=removed;ToiletCapacity-=removed;
+        return removed;
+    }
+    static void Satiate(CaelumPlayer user,double recovered)
+    {
+        if(!CaelumPlayerAuthority.CanMutate(user) || user.health<=0 || recovered<=0)return;
+        let illness=Get(user);if(illness!=null)illness.Satiation(recovered);
     }
     // La previsión usa su propia copia; el personaje conserva la fracción
     // original hasta confirmar el viaje. Esperar usa la misma aritmética.

@@ -7,11 +7,12 @@ class CaelumChemistryData : Object
     const FIRST_RECIPE=176;
     const RECIPE_COUNT=22;
     static clearscope bool IsRecipe(int id)
-    {return id>=FIRST_RECIPE && id<FIRST_RECIPE+RECIPE_COUNT;}
+    {return CaelumHygieneData.IsChemistryRecipe(id) || (id>=FIRST_RECIPE && id<FIRST_RECIPE+RECIPE_COUNT);}
     static clearscope bool IsMaterial(int id)
-    {return id>=FIRST_MATERIAL && id<FIRST_MATERIAL+MATERIAL_COUNT;}
+    {return CaelumHygieneData.IsMaterial(id) || (id>=FIRST_MATERIAL && id<FIRST_MATERIAL+MATERIAL_COUNT);}
     static clearscope String MaterialKey(int id)
     {
+        if(CaelumHygieneData.IsMaterial(id))return CaelumHygieneData.MaterialKey(id);
         switch(id)
         {
             case 92: return "CA_MATERIAL_SALTPETER";
@@ -31,6 +32,7 @@ class CaelumChemistryData : Object
     }
     static clearscope String MaterialIcon(int id)
     {
+        if(CaelumHygieneData.IsMaterial(id))return CaelumHygieneData.MaterialIcon(id);
         switch(id)
         {
             case 92: return "graphics/caelum/icons/materials/ca_material_saltpeter.png";
@@ -50,6 +52,7 @@ class CaelumChemistryData : Object
     }
     static clearscope double UnitWeight(int id)
     {
+        if(CaelumHygieneData.IsMaterial(id))return CaelumHygieneData.UnitWeight(id);
         switch(id)
         {
             case 92: return 0.001;
@@ -69,6 +72,7 @@ class CaelumChemistryData : Object
     }
     static clearscope String RecipeKey(int id)
     {
+        if(CaelumHygieneData.IsChemistryRecipe(id))return CaelumHygieneData.RecipeKey(id);
         switch(id)
         {
             case 176: return "CA_CHEMISTRY_FERMENTATION";
@@ -98,6 +102,7 @@ class CaelumChemistryData : Object
     }
     static clearscope double Price(int id)
     {
+        if(CaelumHygieneData.IsMaterial(id))return CaelumHygieneData.Price(id);
         switch(id)
         {
             case 92: return 5;
@@ -112,6 +117,7 @@ class CaelumChemistryData : Object
     }
     static clearscope int ImportStock(int id)
     {
+        if(CaelumHygieneData.IsMaterial(id))return CaelumHygieneData.ImportStock(id);
         switch(id)
         {
             case 92: return 1000;
@@ -126,6 +132,7 @@ class CaelumChemistryData : Object
     }
     static clearscope bool IsFermentation(int id)
     {
+        if(CaelumHygieneData.IsChemistryRecipe(id))return CaelumHygieneData.IsFermentation(id);
         switch(id)
         {
             case 176: return true;
@@ -155,6 +162,7 @@ class CaelumChemistryData : Object
     }
     static clearscope bool UsesDexterity(int id)
     {
+        if(CaelumHygieneData.IsChemistryRecipe(id))return CaelumHygieneData.UsesDexterity(id);
         switch(id)
         {
             case 176: return false;
@@ -184,6 +192,7 @@ class CaelumChemistryData : Object
     }
     static clearscope int RecipeForMaterial(int id)
     {
+        if(CaelumHygieneData.IsMaterial(id))return CaelumHygieneData.RecipeForMaterial(id);
         switch(id)
         {
             case 96: return 176;
@@ -198,6 +207,7 @@ class CaelumChemistryData : Object
     }
     static clearscope int OutputMaterial(int id)
     {
+        if(CaelumHygieneData.IsChemistryRecipe(id))return CaelumHygieneData.OutputMaterial(id);
         switch(id)
         {
             case 176: return 96;
@@ -227,6 +237,7 @@ class CaelumChemistryData : Object
     }
     static clearscope int OutputConsumable(int id)
     {
+        if(CaelumHygieneData.IsChemistryRecipe(id))return CaelumHygieneData.OutputConsumable(id);
         switch(id)
         {
             case 176: return -1;
@@ -256,6 +267,7 @@ class CaelumChemistryData : Object
     }
     static clearscope int OutputUnits(int id)
     {
+        if(CaelumHygieneData.IsChemistryRecipe(id))return CaelumHygieneData.OutputUnits(id);
         switch(id)
         {
             case 176: return 1000;
@@ -285,6 +297,7 @@ class CaelumChemistryData : Object
     }
     static clearscope double WaterLiters(int id)
     {
+        if(CaelumHygieneData.IsChemistryRecipe(id))return CaelumHygieneData.WaterLiters(id);
         switch(id)
         {
             case 176: return 0.8;
@@ -314,6 +327,7 @@ class CaelumChemistryData : Object
     }
     static clearscope double WorkingLiters(int id)
     {
+        if(CaelumHygieneData.IsChemistryRecipe(id))return CaelumHygieneData.WorkingLiters(id);
         switch(id)
         {
             case 176: return 1.0;
@@ -343,6 +357,7 @@ class CaelumChemistryData : Object
     }
     static clearscope double Seconds(int id)
     {
+        if(CaelumHygieneData.IsChemistryRecipe(id))return CaelumHygieneData.Seconds(id);
         switch(id)
         {
             case 176: return 259200;
@@ -372,6 +387,7 @@ class CaelumChemistryData : Object
     }
     static clearscope int InputMaterial(int id,int slot)
     {
+        if(CaelumHygieneData.IsChemistryRecipe(id))return CaelumHygieneData.InputMaterial(id,slot);
         if(id==176 && slot==0)return 95;
         if(id==176 && slot==1)return 98;
         if(id==177 && slot==0)return 42;
@@ -415,6 +431,7 @@ class CaelumChemistryData : Object
     }
     static clearscope int InputUnits(int id,int slot)
     {
+        if(CaelumHygieneData.IsChemistryRecipe(id))return CaelumHygieneData.InputUnits(id,slot);
         if(id==176 && slot==0)return 250;
         if(id==176 && slot==1)return 5;
         if(id==177 && slot==0)return 1000;

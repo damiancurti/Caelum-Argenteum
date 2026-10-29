@@ -2779,6 +2779,7 @@ class CaelumInventoryService : Object play
     static void RefreshEquipmentSelectionPreview(CaelumPlayer user)
     {
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
+        user.ContaminationExposure=null;
         CaelumEquipmentItem identifiedItem =
             user.FindNativeEquipmentItemById(user.EquipmentSelectionItemId);
         if (user.EquipmentSelectionItemId > 0 && identifiedItem == null)
@@ -4554,6 +4555,7 @@ class CaelumInventoryService : Object play
         if (specialCategory == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
         {
             if (specialType == CaelumConstants.KEY_ITEM_TAROT_DECK) return 'CaelumTarotDeck';
+            if(specialType==CaelumHygieneData.CLOTH_KEY)return 'CaelumCleaningCloth';
             if(specialType==CaelumCampData.TENT_KEY)return CaelumCampData.ItemClass(0);
             if (specialType == CaelumConstants.KEY_ITEM_SLEEPING_BAG) return 'CaelumSleepingBag';
             if (specialType == CaelumConstants.KEY_ITEM_PROCESSING_MANUAL)

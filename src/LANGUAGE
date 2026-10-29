@@ -3,6 +3,8 @@ CA_HUD_CONTAMINATION = "Contamination";
 CA_FOOD_CLEAN = "Clean";
 CA_FOOD_CONTAMINATED = "Contaminated";
 CA_FOOD_ILLNESS = "Illness";
+CA_CONTAMINATION_SICK = "Sick";
+CA_CONTAMINATION_SICK_IMMUNE = "Sick (immune to damage)";
 CA_FOOD_IMMUNE = "Immune";
 CA_LOCK_ITEM_0 = "Small padlock";
 CA_LOCK_ITEM_1 = "Medium padlock";
@@ -22,6 +24,8 @@ CA_HUD_CONTAMINATION = "Contaminación";
 CA_FOOD_CLEAN = "Limpio";
 CA_FOOD_CONTAMINATED = "Contaminado";
 CA_FOOD_ILLNESS = "Enfermedad";
+CA_CONTAMINATION_SICK = "Enfermo";
+CA_CONTAMINATION_SICK_IMMUNE = "Enfermo (inmune al daño)";
 CA_FOOD_IMMUNE = "Inmune";
 CA_LOCK_ITEM_0 = "Candado pequeño";
 CA_LOCK_ITEM_1 = "Candado mediano";
@@ -6505,3 +6509,26 @@ CA_CAMP_PACKED = "Carpa desmontada; el objeto original está en tu inventario.";
 CA_CAMP_PACK_ACTION = "{bind:+use}: Pack tent / cancel packing";
 [esn]
 CA_CAMP_PACK_ACTION = "{bind:+use}: Desmontar carpa / cancelar desmontaje";
+
+// #502: concentración del ambiente, separada de la barra corporal.
+[enu default]
+CA_CONTAMINATION_ENVIRONMENT = "Ambient contamination: %.1f / 100";
+CA_CONTAMINATION_ENVIRONMENT_UNKNOWN = "Ambient contamination: no defined profile.";
+[es]
+CA_CONTAMINATION_ENVIRONMENT = "Contaminación ambiental: %.1f / 100";
+CA_CONTAMINATION_ENVIRONMENT_UNKNOWN = "Contaminación ambiental: sin perfil definido.";
+
+// BEGIN HYGIENE SUPPLIES
+[enu default]
+CA_HYGIENE_FAT = "Animal fat";
+CA_HYGIENE_SODA = "Caustic soda";
+CA_HYGIENE_SOAP = "Soap";
+CA_HYGIENE_CLOTH = "Cleaning cloth";
+CA_HYGIENE_MAKE_SOAP = "Make soap";
+[es]
+CA_HYGIENE_FAT = "Grasa animal";
+CA_HYGIENE_SODA = "Sosa cáustica";
+CA_HYGIENE_SOAP = "Jabón";
+CA_HYGIENE_CLOTH = "Trapo de limpieza";
+CA_HYGIENE_MAKE_SOAP = "Elaborar jabón";
+// END HYGIENE SUPPLIES

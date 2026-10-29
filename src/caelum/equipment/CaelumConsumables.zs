@@ -211,7 +211,9 @@ class CaelumRegenerationPower : Powerup
             if (GetRegenerationType() == CaelumConstants.CONSUMABLE_WATER_RATION)
             {
                 double recovery = WaterRecoveryPerPulse > 0 ? WaterRecoveryPerPulse : 1.0;
+                double before=caelumPlayer.CurrentThirst;
                 caelumPlayer.CurrentThirst = Min(100.0, caelumPlayer.CurrentThirst + recovery);
+                CaelumFoodIllness.Satiate(caelumPlayer,caelumPlayer.CurrentThirst-before);
                 if(caelumPlayer.CurrentThirst>=100)CaelumDiningSession.Sated(caelumPlayer,true);
                 caelumPlayer.UpdateSurvivalStates();
                 return;
@@ -249,6 +251,7 @@ class CaelumRegenerationPower : Powerup
             int healing=int(PotionHealingFraction);
             PotionHealingFraction-=healing;
             Owner.health=Min(maximum,Owner.health+healing);
+            if(maximum>0)CaelumContaminationStorage.Treatment(Owner,ratio);
             if(user!=null){user.player.health=user.health;user.UpdateHealthStateEffects();}
             else npc.UpdateCombatHealthEffects();
         }

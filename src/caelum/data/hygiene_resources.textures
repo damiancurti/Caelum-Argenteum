@@ -1,0 +1,4 @@
+Sprite "M105A0", 128, 128 { Offset 64, 128 Patch "graphics/caelum/icons/hygiene/fat.png", 0, 0 }
+Sprite "M106A0", 128, 128 { Offset 64, 128 Patch "graphics/caelum/icons/hygiene/soda.png", 0, 0 }
+Sprite "M107A0", 128, 128 { Offset 64, 128 Patch "graphics/caelum/icons/hygiene/soap.png", 0, 0 }
+Sprite "HYCLA0", 128, 128 { Offset 64, 128 Patch "graphics/caelum/icons/hygiene/cloth.png", 0, 0 }

@@ -6,6 +6,7 @@
 class CaelumPlayer : DoomPlayer
 {
     transient CaelumTargetSubscriptions TargetSubscribers;
+    transient CaelumContaminationExposure ContaminationExposure;
     override Weapon PickWeapon(int slot, bool checkammo)
     {
         // El dispatcher nativo ya resolvió teclas, aliases y doble clic.
@@ -3530,6 +3531,7 @@ class CaelumPlayer : DoomPlayer
 
     String ResolveCraftingPreviewIconPath()
     {
+        if(CraftingSelectionRecipe==CaelumHygieneData.CLOTH_RECIPE)return "graphics/caelum/icons/hygiene/cloth.png";
         if(CaelumCampData.IsRecipe(CraftingSelectionRecipe))return CaelumCampData.Icon(CraftingSelectionRecipe-CaelumCampData.FIRST_RECIPE);
         if(CaelumMateData.IsRecipe(CraftingSelectionRecipe))return CaelumMateCrafting.Icon(CraftingSelectionRecipe-CaelumMateData.FIRST_RECIPE);
         int potion=CaelumChemistryData.OutputConsumable(CraftingSelectionRecipe);

@@ -127,6 +127,7 @@ class CaelumJourneyModel : Object play
     double AltitudeSecondsPerTic;
     CaelumFoodIllness FoodIllness;
     double FoodToughness;
+    CaelumContaminationExposure Contamination;
 
     void Capture(CaelumPlayer user, bool useUnlimitedSupplies)
     {
@@ -135,6 +136,9 @@ class CaelumJourneyModel : Object play
         FoodIllness=foodRecord!=null && foodRecord.FoodIllness!=null
             ? foodRecord.FoodIllness.Copy() : new('CaelumFoodIllness');
         FoodIllness.Ensure();FoodToughness=user.Attributes.Toughness;
+        let contactThermal=CaelumThermalService.CaptureForecast(user);
+        if(contactThermal!=null)
+        {Contamination=new('CaelumContaminationExposure');Contamination.Capture(user,contactThermal);}
         let observedAltitude=CaelumAltitudeService.Update(user);
         Altitude=observedAltitude!=null ? observedAltitude.Copy() : null;
         AltitudeSecondsPerTic=3600.0/CaelumWorldClock.TicsPerHour();
@@ -204,6 +208,7 @@ class CaelumJourneyModel : Object play
                 FoodPulseTics = 0;
                 double gained = Min(FoodPulse, 100.0 - Hunger);
                 Hunger += gained; Sleep = Max(0.0, Sleep - gained / 4.0);
+                if(FoodIllness!=null)FoodIllness.Satiation(gained);
             }
             FoodEffectTics--;
         }
@@ -211,7 +216,10 @@ class CaelumJourneyModel : Object play
         {
             WaterPulseTics++;
             if (WaterPulseTics >= TICRATE)
-            { WaterPulseTics = 0; Thirst = Min(100.0, Thirst + WaterPulse); }
+            {
+                WaterPulseTics = 0; double before=Thirst;Thirst = Min(100.0, Thirst + WaterPulse);
+                if(FoodIllness!=null)FoodIllness.Satiation(Thirst-before);
+            }
             WaterEffectTics--;
         }
     }
@@ -223,6 +231,8 @@ class CaelumJourneyModel : Object play
     virtual double AnimaComfort(bool sleeping) { return 1.0; }
     virtual int AirHealth() { return Health; }
     virtual double AirAdrenaline() { return Adrenaline; }
+    virtual void ThirstStep(double comfort)
+    {Thirst=Max(0.0,Thirst-ThirstLoss/comfort);}
 
     virtual void Step(bool sleeping)
     {
@@ -233,7 +243,7 @@ class CaelumJourneyModel : Object play
         // camas ni suministros: sin bolsa se duerme en el suelo (factor 1).
         double comfort = Comfort(sleeping);
         Hunger = Max(0.0, Hunger - HungerLoss / comfort);
-        Thirst = Max(0.0, Thirst - ThirstLoss / comfort);
+        ThirstStep(comfort);
         Sleep = sleeping ? CaelumRestRules.RecoverSleep(Sleep, SleepRecoveryScale())
             : Max(0.0, Sleep - SleepLoss);
         Stun = Max(0.0, Stun - 1.0 / TICRATE);
@@ -452,6 +462,8 @@ class CaelumJourneyPlan : Inventory
         // referenciado por la interfaz o por un guardado de ese menú.
         let foodRecord=user.GetPersistentCharacterState(false);
         if(foodRecord!=null && model.FoodIllness!=null)foodRecord.FoodIllness=model.FoodIllness.Copy();
+        if(model.Contamination!=null)model.Contamination.Commit(user);
+        user.ContaminationExposure=null;
         if(ThermalForecast!=null)CaelumThermalService.CommitForecast(user,ThermalForecast.Result);
         double seconds = double(model.ElapsedTics) / TICRATE;
         user.IlluminationRemaining = Max(0.0, user.IlluminationRemaining - seconds);

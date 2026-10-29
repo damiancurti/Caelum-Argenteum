@@ -45,6 +45,9 @@ class CaelumThermalJourney : Object play
         int moving=CaelumJourneyRules.MovingTics(elapsedTics,mode);
         Result.Roof=sheltered;Result.WindSheltered=sheltered;Result.Available=true;
         for(int i=0;i<4;i++)Result.SubmergedCoverage[i]=0;
+        Result.DirtyWaterRowMask=0;Result.CleanWaterRowMask=0;Result.DynamicContactWater=false;Result.WaterRowMask=0;
+        for(int i=0;i<4;i++){Result.DirtyWaterCoverage[i]=0;Result.CleanWaterCoverage[i]=0;}
+        if(supplies!=null && supplies.Contamination!=null)supplies.Contamination.ClearImmersion();
         int elapsed=0;
         while(elapsed<elapsedTics)
         {
@@ -89,7 +92,11 @@ class CaelumThermalJourney : Object play
                     // luego provisiones y recuperación. Nunca cobrar dos veces.
                     supplies.Thirst=Result.Hydration;supplies.ThermalExposure=Result.Exposure;
                     supplies.Hunger=Result.ShiveringHunger;
-                    supplies.ThermalToughness=Result.Toughness;supplies.Step(sleeping);
+                    supplies.ThermalToughness=Result.Toughness;
+                    if(supplies.Contamination!=null)
+                        supplies.Contamination.Advance(supplies.FoodIllness,CaelumContaminationRules.Environment(
+                            CaelumContaminationData.NATURAL_REFERENCE,Result.AirC,Result.Humidity),seconds/substeps);
+                    supplies.Step(sleeping);
                     supplies.WalkTics+=int(!sleeping || mode==CaelumJourneyState.MODE_SHIP);
                     supplies.SleepTics+=int(sleeping);Result.Hydration=supplies.Thirst;Result.ShiveringHunger=supplies.Hunger;
                     if(supplies.Health<=0)return true;
