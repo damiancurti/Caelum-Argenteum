@@ -2,6 +2,9 @@
 
 Documentation version: **5.8.56** - 2026-10-29.
 
+Author review 2026-10-29 / #417: all remaining grouped scenarios passed without an issue-specific exception. Their stable IDs and original releases are recorded in HISTORY; only those accepted entries were removed from pending_test.txt. No runtime change or release increment.
+
+
 Author review 2026-10-29 / #502: all remaining grouped scenarios passed without an issue-specific exception. Their stable IDs and original releases are recorded in HISTORY; only those accepted entries were removed from pending_test.txt. No runtime change or release increment.
 
 
