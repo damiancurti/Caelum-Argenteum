@@ -6,8 +6,17 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.41.** Obtain and update the complete repository, validate
+**Current release: 5.8.42.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+## 5.8.42 - Persistent household furnishing contamination (#502)
+
+Visited-home tables, chairs, beds and bathroom fixtures keep their contamination
+and natural exposure history across Limbo travel and save/load. Restoring a home
+does not undo later cleaning. Validation: 335 current native assertions and
+18 original-runtime checks, zero failures/static errors (assets/validation_5842);
+manual corroboration remains grouped with the unfinished V5.8 implementation.
+Automatic unloaded housekeeping and the other remaining issues are still pending.
 
 ## 5.8.41 - Persistent household coffers (#502)
 

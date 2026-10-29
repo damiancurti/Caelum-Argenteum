@@ -1,7 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.8.41** - 2026-10-28.
+Documentation version: **5.8.42** - 2026-10-28.
 
+**5.8.42/#502:**furnishing dirt/history persistence;validation_5842;unloaded-work-pending.
 **5.8.41/#502:**home-coffer persistence;validation_5841;unloaded-work-pending.
 
 **5.8.40/#410:**dining/cargo;validation_5840;author-pending.

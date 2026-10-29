@@ -47,6 +47,36 @@ class CaelumHouseStorageEntry : Object play
     int WorkDay;
     String ActiveKey;
     bool WorkReady;
+    int FurnishingRevision;
+    bool FurnishingsPending;
+    Array<CaelumHouseStoredFurnishing> Furnishings;
+
+    void CaptureFurnishings(CaelumHousekeepingWork work,CaelumPlayer user)
+    {
+        if(work==null || !work.Initialized || user==null)return;
+        Furnishings.Clear();FurnishingRevision=1;FurnishingsPending=true;
+        double now=CaelumThermalRuntime.Stamp(CaelumWorldClock.Get(user));
+        for(int i=0;i<work.Targets.Size();i++)
+        {
+            let t=work.Targets[i];let body=t.Furniture;
+            if(body==null || body.bDestroyed || body==Chest)continue;
+            String key=TargetKey(t);if(key=="")continue;
+            let row=new('CaelumHouseStoredFurnishing');row.Capture(body,key,now);Furnishings.Push(row);
+        }
+    }
+    void RestoreFurnishings(CaelumHousekeepingWork work,CaelumPlayer user)
+    {
+        if(FurnishingRevision!=1 || !FurnishingsPending || work==null || !work.Initialized || user==null)return;
+        double now=CaelumThermalRuntime.Stamp(CaelumWorldClock.Get(user));
+        for(int i=0;i<work.Targets.Size();i++)
+        {
+            let t=work.Targets[i];if(t.Furniture==null || t.Furniture.bDestroyed || t.Furniture==Chest)continue;
+            String key=TargetKey(t);
+            for(int j=0;j<Furnishings.Size();j++)if(Furnishings[j].Key==key)
+            {Furnishings[j].Restore(t.Furniture,now);break;}
+        }
+        FurnishingsPending=false;
+    }
 
     String TargetKey(CaelumDomesticCleanTarget target)
     {

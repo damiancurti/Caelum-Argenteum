@@ -314,3 +314,16 @@ interior, then the Limbo; save/load; return twice to the original home.
 Expected: one original coffer, no duplicated money or supplies, no access to it
 while away, retained daily quota/partial progress; food ages and water cools in
 the home's climate. Automatic absent cleaning remains a separate pending feature.
+
+CA502-HOME-FURNISHINGS-01 | Origin: 5.8.42 | Issue: #502
+Prerequisites: grouped final V5.8 author build; a visited domestic interior with
+contaminated fixed furniture and partial cleaning progress; retain an old save.
+1. Note dirt on the table, its chairs, bed and bathroom fixtures. Leave for
+   another house, return, then repeat through the Limbo with a save/load while away.
+2. Furniture keeps its dirt and applicable source-home exposure; partial work
+   remains attached to the correct installation. Funds and daily work do not reset.
+3. Clean a returned piece, save/load and re-enter. No stale snapshot restores its
+   former dirt; subsequent natural exposure remains normal. Older saves retain
+   current values and begin this persistence at their first updated departure.
+Expected: no free cleaning, duplicate exposure or reassignment between furniture.
+This check does not claim automatic unloaded household work or author acceptance.

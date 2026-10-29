@@ -468,6 +468,18 @@ The inherited skipped-time fixture failed on the unchanged prior runtime too:
 its visible floor target was blocked by a native actor. Verify a collision-safe
 route before asserting movement/cleaning; sight alone does not establish access.
 
+Extension, #502/5.8.42 (2026-10-28), assets/validation_5842: scalar partial work
+does not preserve a recreated furnishing's contamination. Capture its settled
+concentration and natural exposure descriptor at departure, match the declared
+installation key and native class on return, and consume that restoration once.
+Reuse the shared weather replay/cache instead of retaining cross-map Thinkers
+or starting a new climate integration. Missing historical samples retain their
+saved concentration without retrospective exposure. Non-solid housekeeping
+targets may legitimately lack an exposure node under the current eligibility
+rules; preserving their value is distinct from adding new exposure coverage.
+335 current native PASS plus18 prior-runtime checks include actual Limbo/hub
+returns, later cleaning/save/load, legacy adoption and original-save rollback.
+
 ## CA-KP-168 - World-object exposure must follow native inventory ownership
 
 Status/evidence: ENGINE-VERIFIED, #502/PR506, 2026-10-25, baseline d801ae4c.

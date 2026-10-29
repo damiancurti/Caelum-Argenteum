@@ -150,7 +150,8 @@ class CaelumHousekeepingWork : Object play
             target.Tile=Sheet.Find(0,sector.Index(),0,x,y,true);Configure(user,target.Tile);Targets.Push(target);
         }
         Initialized=true;Active=-1;Day=-1;
-        if(Chest.DomesticStorage!=null)Chest.DomesticStorage.RestoreProgress(self);
+        if(Chest.DomesticStorage!=null)
+        {Chest.DomesticStorage.RestoreProgress(self);Chest.DomesticStorage.RestoreFurnishings(self,user);}
         return true;
     }
     void SelectWorker()

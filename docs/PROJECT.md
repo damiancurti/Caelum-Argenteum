@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.41** - 2026-10-28.
+Documentation version: **5.8.42** - 2026-10-28.
+
+## 5.8.42 / #502 - Furnishing history across map absence
+
+Visited household furniture retains contamination and natural exposure history
+when fixed installations are recreated after Limbo travel. Additive migration
+keeps old-save values; restoration is idempotent. Evidence: assets/validation_5842.
+CA502-HOME-FURNISHINGS-01 remains pending the grouped V5.8 handoff. Automatic
+absent-home work, remaining #502 adapters and the other unfinished V5.8 issues
+are not completed by this persistence patch.
 
 ## 5.8.41 / #502 - Household storage across map absence
 

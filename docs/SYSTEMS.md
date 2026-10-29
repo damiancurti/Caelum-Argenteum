@@ -1,6 +1,32 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.41** - 2026-10-28.
+Documentation version: **5.8.42** - 2026-10-28.
+
+## 5.8.42 - Household furnishing contamination across absence (#502)
+
+The visited-house registry now captures each existing housekeeping furniture
+target's concentration and natural exposure history at map departure. Records
+contain scalar values and installation identity, not cross-map actor/Thinker
+references. They exclude floor tiles and the coffer, whose existing persistence
+remains authoritative. Fixed tables, their chairs, beds and bathroom fixtures
+therefore retain dirt when recreated after a Limbo crossing. Other target
+objects are matched only by their existing unique identity and native class;
+an unrelated replacement never inherits a missing object's state.
+
+Returning restores each matching record once and reuses the shared historical
+weather integrator/cache before sampling the current location. Temporary climate
+seals end at departure; elapsed exposure before departure remains included.
+Subsequent contact or cleaning is not overwritten by repeated initialization or
+save/load. Targets without an existing exposure sample keep their concentration
+without inventing retrospective exposure. This does not add exposure to objects
+outside the current eligibility rules, or persist other furnishing properties.
+
+Additive furnishing schema revision1 starts at the first departure after
+updating; older saves retain their current concentrations, objects and partial
+work. Snapshot/restore uses only the existing local housekeeping target array
+at map boundaries, with no recurring global scan. No balance, geometry, art,
+purchase or household work rules change. Automatic unloaded cleaning/purchases,
+unloaded NPC physiology and remaining non-solid/contact adapters stay pending.
 
 ## 5.8.41 - Household storage persistence (#502)
 

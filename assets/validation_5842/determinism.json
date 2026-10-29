@@ -1,0 +1,8 @@
+{
+  "equal": true,
+  "sha256": {
+    "checks.pk3": "d5e72e5856a0b9e5bf19d4b11c3f76f9843015a7ed5c8808e00459e59754ec0b",
+    "legacy-checks.pk3": "95bea5e83171f7175a9439ffdc34bfafda5ca188cdb1f53348a9861aa49755fd",
+    "regression-checks.pk3": "eece27d8720ec11d1355ea560923a9f1ddc4c9d8d9f9807782b76ee9f6c77d67"
+  }
+}
