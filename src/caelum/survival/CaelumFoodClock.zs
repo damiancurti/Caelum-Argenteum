@@ -139,7 +139,7 @@ class CaelumFoodWorld : StaticEventHandler
 {
     int NextPhase;
     override void WorldThingSpawned(WorldEvent e)
-    {CaelumFoodClock.Get(Inventory(e.Thing));}
+    {CaelumFoodClock.Get(Inventory(e.Thing));CaelumContaminationStack.Clock(Inventory(e.Thing));}
     override void WorldLoaded(WorldEvent e)
     {
         NextPhase=0;
@@ -147,8 +147,8 @@ class CaelumFoodWorld : StaticEventHandler
         // inventarios guardados. Las altas posteriores usan el evento nativo.
         CaelumConsumableItem food;
         let ground=ThinkerIterator.Create('CaelumConsumableItem');
-        while((food=CaelumConsumableItem(ground.Next()))!=null)CaelumFoodClock.Get(food);
+        while((food=CaelumConsumableItem(ground.Next()))!=null){CaelumFoodClock.Get(food);CaelumContaminationStack.Clock(food);}
         let ingredients=ThinkerIterator.Create('CaelumMaterialPickup');Inventory material;
-        while((material=Inventory(ingredients.Next()))!=null)CaelumFoodClock.Get(material);
+        while((material=Inventory(ingredients.Next()))!=null){CaelumFoodClock.Get(material);CaelumContaminationStack.Clock(material);}
     }
 }

@@ -1,6 +1,48 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.46** - 2026-10-28.
+Documentation version: **5.8.47** - 2026-10-28.
+
+## 5.8.47 - Abstract stack surfaces and exposure (#502)
+
+On 2026-10-28 the author approved a reference density of 1,000 kg/m^3 for magical
+essences and abstract prepared materials. Each native unit is represented by
+an equivalent sphere: r=(3m/(4*pi*rho))^(1/3), A=4*pi*r^2. A 1 g unit has
+0.000483597586 m^2 (4.835975862 cm^2). This is a game convention, not a measured
+material density. Add A per unit; never construct one sphere from a pile's mass.
+The authoritative existing unit masses remain unchanged, including the 10 g
+charges, 390/440 g sealed components, 40/45 g kits and existing prepared doses.
+
+This implementation covers the five essences, the two ammunition kits, four
+abstract chemical preparations (catalogue IDs 100-103), and nine medkit/Anima/
+energy doses. Real-density materials, food exterior contamination, water-vessel
+exteriors and additional non-native contact discovery remain separate adapters.
+No new ingestion dose or crafting-output inheritance rule is introduced here.
+
+Revision-1 per-item lot books describe the real native Amount. Differently
+contaminated lots remain separate; transfers and consumption use oldest first.
+A mean is only a scalar inspection result, never a merged replacement lot.
+The normal inventory displays oldest concentration and the number of lots.
+Old untracked units start clean; any previously saved generic contact record is
+adopted once. Existing contamination, quantities and identity are preserved.
+
+Exposed units integrate independently at their own area. The computation loops
+over distinct lots, not grams. Splitting/rejoining cannot speed up exposure.
+For contact with another pile/body, the touched area is distributed across the
+native units, capped by available total area; both sides use the same initial
+snapshot and shared higher-to-lower contact law. No concentration is averaged
+away. The contact source keeps its concentration as previously approved.
+
+Ground and accessible stored stacks reuse the saved regional weather/rain
+history. Box/closed-chest storage shields new exposure. Carried stacks use the
+owner's thermal exposure, immersion and independent wait/journey copies; NPC
+absence uses the same captured native inventory. Forecast provision revision25
+invalidates stale cached previews. No second owner clock or per-unit actor is
+created. Existing food ageing and food trade rules remain authoritative.
+
+The retained Provisions merchant follows the original exterior civil calendar
+and climate even when its native body is parked on another map. Time in Limbo
+does not age those exterior lots. Returning household coffers rebase both the
+stack exposure boundary and its civil offset, preserving the elapsed interval.
 
 ## 5.8.46 - NPC physiology during map absence (#502)
 

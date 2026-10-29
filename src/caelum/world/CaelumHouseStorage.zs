@@ -73,6 +73,7 @@ class CaelumHouseStorageEntry : Object play
         for(Inventory item=Chest.Inv;item!=null;item=item.Inv)
         {
             let food=CaelumFoodClock.Get(item);if(food!=null && food.Ready)food.Stamp+=shift;
+            CaelumContaminationStack.Rebase(item,shift);
             let water=CaelumWaterContainer(item);if(water!=null && water.TemperatureClockReady)water.TemperatureStamp+=shift;
         }
         for(int i=0;i<Foods.Size();i++)if(Foods[i].Ready)Foods[i].Stamp+=shift;

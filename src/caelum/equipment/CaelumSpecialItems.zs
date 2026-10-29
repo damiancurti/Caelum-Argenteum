@@ -136,6 +136,7 @@ class CaelumSpecialInventoryItem : Inventory
 // su tipo y tier en args. HandlePickup solo combina pilas identicas.
 class CaelumMaterialPickup : CaelumSpecialInventoryItem
 {
+    CaelumContaminationState ContaminationState;
     CaelumFoodLots FoodLots;
     CaelumFoodClock FoodClock;
     int FoodSchemaRevision;
@@ -144,6 +145,7 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
     {
         CaelumFoodInventory.Reconcile(self);
         let copy=CaelumMaterialPickup(Super.CreateCopy(other));
+        if(copy==self)CaelumContaminationStack.KeepOldest(self);
         if(copy==self && FoodLots!=null && Amount<FoodLots.Units())FoodLots=FoodLots.CopyOldest(Amount);
         if(copy!=null && copy!=self)CaelumFoodInventory.Transfer(self,copy,copy.Amount,true);
         return copy;
@@ -370,6 +372,7 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
 
     void UpdateMaterialVisuals()
     {
+        if(ContaminationState==null && CaelumStackSurfaceData.AbstractMaterial(GetSpecialType()))CaelumContaminationStack.Clock(self);
         if(FoodClock==null && CaelumKitchenData.FoodKind(GetSpecialType())>=0)CaelumFoodClock.Get(self);
         Icon = TexMan.CheckForTexture(GetMaterialIconPath(), TexMan.Type_MiscPatch);
         if (Owner == null)
@@ -398,7 +401,7 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
         {
             return false;
         }
-        bool food=CaelumFoodInventory.IsFood(self);int before=Amount;
+        bool food=CaelumFoodInventory.IsFood(self) || CaelumContaminationStack.Eligible(self);int before=Amount;
         if(food){CaelumFoodInventory.Reconcile(self);CaelumFoodInventory.Reconcile(material);}
         if (Amount < MaxAmount
             || (sv_unlimited_pickup && !incoming.ShouldStay()))

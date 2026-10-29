@@ -390,3 +390,13 @@ Expected: exterior elapsed time advances exposure/disease and potential natural
 recovery using20:1; Limbo does not advance exterior time; health/equipment and
 fractional progress persist without replay. A dead worker cannot clean/deploy;
 its native corpse and original loot appear once in its restored map.
+
+CA502-ABSTRACT-STACKS-01 | Origin:5.8.47 | Issue:#502
+Prerequisites: final grouped V5.8 terminal; abstract-stack scenario, with two
+same-type essence lots at different contamination. Keep original saves separate.
+Steps: inspect the inventory's oldest concentration/lot count; merge the lots,
+deposit part in a chest, withdraw part, drop/pick up, save/load and travel back.
+Compare an exposed pile with a fragment and with a Box/closed-chest sample.
+Expected: quantity, individual concentrations and oldest-first ordering persist;
+splitting never changes per-unit exposure, and protected storage stays shielded.
+This entry is reserved for the grouped handoff, not an immediate test request.

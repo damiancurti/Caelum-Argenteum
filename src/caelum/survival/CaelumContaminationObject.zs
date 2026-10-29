@@ -148,7 +148,7 @@ class CaelumContaminationObject : Thinker
         }
         return value;
     }
-    void SettleNow()
+    virtual void SettleNow()
     {
         if(!Eligible(Body))return;
         if(!Ready){if(HistoryReady)Advance();return;}
@@ -199,7 +199,7 @@ class CaelumContaminationObject : Thinker
         HistoryTemporaryClimate=SampleTemporaryClimate;
         HistoryNaturalAmbient=NaturalAmbient;HistoryNaturalVariable=SampleNaturalVariable;
     }
-    void Depart()
+    virtual void Depart()
     {
         if(!HistoryTemporaryClimate || !Eligible(Body))return;
         let world=CaelumThermalWorld.Get();if(world==null || world.ReferenceClock==null)return;

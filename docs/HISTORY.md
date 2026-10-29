@@ -1,6 +1,39 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.46** - 2026-10-28.
+Documentation version: **5.8.47** - 2026-10-28.
+
+## 5.8.47 - Abstract stack contamination (#502, 2026-10-28)
+
+The author approved equivalent spheres per native unit at a reference density
+of 1,000 kg/m^3, with existing masses and additive surface across split/merge.
+Implemented distinct persistent FIFO lot books for magical essences, abstract
+ammunition preparations and prepared doses. Native inventory operations retain
+quantity/identity; exposure and independent forecasts operate per distinct lot.
+The ordinary inventory exposes oldest contamination and lot count. Ground
+weather/rain, Box/coffer protection, NPC inventory and previous generic scalar
+contamination are integrated. No art, maps, prices, recipes or ingestion doses
+change. Evidence is retained in assets/validation_5847.
+
+Final47b passes 168 current native assertions and two original-runtime checks,
+with zero failures/static errors. All 17,037 packaged members equal source;
+14,064 previous art/map members remain byte-identical. SHA256:
+e8eb74a6ea4725f53f94720942db96c5d818b1889a14139adebd301e10b67d4d.
+Current save/hub, actual 5.8.46 migration/rollback, carried NPC exposure, prior
+food transfers/pickups/commerce and absent physiology regressions pass.
+Additional checks retain the Provisions source calendar during Limbo parking
+and rebase household-coffer stack history without replaying exposure.
+
+A matched 1,000-pile scene (one million units each) exposes all current piles.
+Renderer callback baseline/current p95:17.100/17.199 ms; p99:17.423/17.462 ms;
+maximum:18.090/18.269 ms. Each sample has 1,199 intervals over 700 active tics.
+PresentMon ETW access was denied, so these are not displayed-frame FPS results.
+One billion units in one homogeneous lot took 0.078 ms for 1,000 exposure steps;
+this is a subsystem benchmark, not a campaign frame-rate claim.
+
+CA502-ABSTRACT-STACKS-01 is unconfirmed, reserved for the final grouped V5.8
+handoff. No earlier author check is removed. Physical materials, food/vessel
+exteriors and remaining contact discovery still need their own adapters;
+#415/#416/#417 remain independent unfinished issues.
 
 ## 5.8.46 - Native NPC absence physiology (#502, 2026-10-28)
 

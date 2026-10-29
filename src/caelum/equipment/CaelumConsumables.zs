@@ -2,13 +2,14 @@
 // consumir una unidad y de crear o refrescar el efecto temporal asociado.
 class CaelumConsumableItem : PowerupGiver
 {
+    CaelumContaminationState ContaminationState;
     bool InMagicBox;
     CaelumFoodLots FoodLots;
     CaelumFoodClock FoodClock;
 
     override bool HandlePickup(Inventory item)
     {
-        bool food=CaelumFoodInventory.IsFood(self) && item.GetClass()==GetClass();
+        bool food=(CaelumFoodInventory.IsFood(self) || CaelumContaminationStack.Eligible(self)) && item.GetClass()==GetClass();
         int before=Amount;
         if(food){CaelumFoodInventory.Reconcile(self);CaelumFoodInventory.Reconcile(item);}
         bool result=Super.HandlePickup(item);
@@ -144,6 +145,7 @@ class CaelumConsumableItem : PowerupGiver
         // intentar consumir desde la Caja no llega a este observador.
         if (used)
         {
+            CaelumContaminationStack.Remove(self,1);
             CaelumFoodInventory.Ingest(self);
             CaelumMainM00RonnieTrial.RecordNeedsUse(CaelumPlayer(Owner), GetConsumableType());
         }
@@ -176,6 +178,7 @@ class CaelumConsumableItem : PowerupGiver
     {
         CaelumFoodInventory.Reconcile(self);
         CaelumConsumableItem copy = CaelumConsumableItem(Super.CreateCopy(other));
+        if(copy==self)CaelumContaminationStack.KeepOldest(self);
         if(copy==self && FoodLots!=null && Amount<FoodLots.Units())
             FoodLots=FoodLots.CopyOldest(Amount);
         if (copy != null && copy != self)

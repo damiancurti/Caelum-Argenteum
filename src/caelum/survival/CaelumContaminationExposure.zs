@@ -11,6 +11,7 @@ class CaelumContaminationEquipment : Object play
 class CaelumContaminationExposure : Object play
 {
     Array<CaelumContaminationEquipment> Items;
+    Array<CaelumStackExposureRow> Stacks;
     double BodyArea[4];
     double ContactSource[4];
     double WetArea[4],DirtyArea[4],CleanArea[4],ExcludedBodyArea[4],WaterBodyArea[4];
@@ -19,8 +20,30 @@ class CaelumContaminationExposure : Object play
     double BodyKg;
     int Armor[4],Clothes[4];
 
+    void CaptureStacks(Actor owner)
+    {
+        Stacks.Clear();
+        for(Inventory item=owner.Inv;item!=null;item=item.Inv)
+        {
+            if(!CaelumContaminationStack.Eligible(item) || item.Amount<=0 || CaelumContaminationStorage.IsShielded(item))continue;
+            CaelumContaminationStack.Reconcile(item);let row=new('CaelumStackExposureRow');
+            row.Item=item;row.Area=CaelumStackSurfaceData.UnitArea(item);
+            row.Lots=CaelumContaminationStack.Prepare(item).Copy();Stacks.Push(row);
+        }
+    }
+    void CommitStacks(Actor owner)
+    {
+        for(int i=0;i<Stacks.Size();i++)
+        {
+            let row=Stacks[i];let item=row.Item;
+            if(item==null || item.bDestroyed || item.Owner!=owner || CaelumContaminationStorage.IsShielded(item))continue;
+            CaelumContaminationStack.Record(item).StackLots=row.Lots.Copy();
+        }
+    }
+
     void Capture(CaelumPlayer user,CaelumThermalState thermal)
     {
+        CaptureStacks(user);
         Items.Clear();BodyKg=thermal.BodyMassKg;
         for(int slot=0;slot<4;slot++)
         {Armor[slot]=-1;Clothes[slot]=-1;BodyArea[slot]=thermal.SurfaceArea*thermal.Coverage[slot];}
@@ -79,11 +102,19 @@ class CaelumContaminationExposure : Object play
 
     void ReadLive()
     {
+        for(int i=0;i<Stacks.Size();i++)
+        {
+            let item=Stacks[i].Item;if(item==null || item.bDestroyed)continue;
+            CaelumContaminationStack.Reconcile(item);Stacks[i].Lots=CaelumContaminationStack.Prepare(item).Copy();
+        }
         for(int i=0;i<Items.Size();i++)Items[i].Concentration=Items[i].Endpoint!=null
             ? Items[i].Endpoint.Value() : CaelumContaminationStorage.Value(Items[i].Item);
     }
     bool Valid(CaelumPlayer user,CaelumThermalState thermal)
     {
+        for(int i=0;i<Stacks.Size();i++)
+            if(Stacks[i].Item==null || Stacks[i].Item.bDestroyed || Stacks[i].Item.Owner!=user
+                || CaelumContaminationStorage.IsShielded(Stacks[i].Item))return false;
         if(BodyKg!=thermal.BodyMassKg)return false;
         for(int slot=0;slot<4;slot++)if(BodyArea[slot]!=thermal.SurfaceArea*thermal.Coverage[slot])return false;
         for(int i=0;i<Items.Size();i++)
@@ -97,6 +128,7 @@ class CaelumContaminationExposure : Object play
     }
     void Commit(CaelumPlayer user)
     {
+        CommitStacks(user);
         for(int i=0;i<Items.Size();i++)
         {
             let row=Items[i];
@@ -120,6 +152,8 @@ class CaelumContaminationExposure : Object play
     void Advance(CaelumFoodIllness illness,double ambient,double seconds)
     {
         if(illness==null || seconds<=0)return;
+        for(int i=0;i<Stacks.Size();i++)
+        {let row=Stacks[i];CaelumContaminationStack.Expose(row.Lots,ambient,row.Area,row.Area*WetFraction,row.Area*DirtyFraction,seconds);}
         double body=illness.Contamination;
         for(int i=0;i<Items.Size();i++)if(!Items[i].Worn)
             Exterior(i,ambient,Items[i].Area,Items[i].Area*WetFraction,Items[i].Area*DirtyFraction,seconds);

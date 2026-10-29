@@ -132,7 +132,11 @@ class CaelumChemistryCrafting : Object play
         {if(detached!=null)detached.Destroy();return false;}
         for(int i=0;i<brew.Containers.Size();i++)
             brew.Containers[i].WaterLiters=Max(0,brew.Containers[i].WaterLiters-brew.WaterLiters[i]);
-        if(existing!=null)existing.Amount+=brew.OutputUnits;
+        if(existing!=null)
+        {
+            CaelumContaminationStack.Reconcile(existing);existing.Amount+=brew.OutputUnits;
+            CaelumContaminationStack.Reconcile(existing);
+        }
         else {detached.AttachToOwner(user);existing=detached;}
         CaelumNotifications.Acquired(user,existing,brew.OutputUnits);
         user.LastCraftingAction=CaelumConstants.CRAFTING_ACTION_PROCESSED;
