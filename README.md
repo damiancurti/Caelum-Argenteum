@@ -6,8 +6,16 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.48.** Obtain and update the complete repository, validate
+**Current release: 5.8.49.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+## 5.8.49 - Physical inventory contamination (#502)
+
+Physical materials and food use documented additive surfaces. Food exposure,
+age, contact, consumption and forecasts share their existing FIFO lots.
+Native ground contact, independent legacy records and absent NPC food clocks
+are integrated. Native verification passes1190 current assertions plus2 original-runtime checks; evidence is in assets/validation_5849;
+author checks remain grouped until the remaining V5.8 implementation is complete.
 
 ## 5.8.48 - Vessel exterior contamination (#502)
 

@@ -160,6 +160,7 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
     }
     override bool TryPickup(in out Actor toucher)
     {
+        CaelumContaminationContacts.PickupContact(self,toucher);
         UpdateMaterialVisuals();
         let user = CaelumPlayer(toucher);
         int material = GetSpecialType();
@@ -372,7 +373,7 @@ class CaelumMaterialPickup : CaelumSpecialInventoryItem
 
     void UpdateMaterialVisuals()
     {
-        if(ContaminationState==null && CaelumStackSurfaceData.AbstractMaterial(GetSpecialType()))CaelumContaminationStack.Clock(self);
+        if(ContaminationState==null && CaelumContaminationStack.Eligible(self))CaelumContaminationStack.Clock(self);
         if(FoodClock==null && CaelumKitchenData.FoodKind(GetSpecialType())>=0)CaelumFoodClock.Get(self);
         Icon = TexMan.CheckForTexture(GetMaterialIconPath(), TexMan.Type_MiscPatch);
         if (Owner == null)

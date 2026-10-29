@@ -1,6 +1,6 @@
-// #502: el registro pertenece al cuerpo nativo. No retiene sectores, líneas,
+// #502: el registro pertenece al cuerpo nativo. No retiene sectores, lÃ­neas,
 // objetivos ni otros actores del mapa ausente. Los objetos del inventario
-// siguen siendo los originales, también en el protocolo viajero doméstico.
+// siguen siendo los originales, tambiÃ©n en el protocolo viajero domÃ©stico.
 class CaelumContaminationAbsence : Object play
 {
     int Revision,Life;
@@ -9,6 +9,7 @@ class CaelumContaminationAbsence : Object play
     double Stamp,Civil,Reference,ActiveFraction,RecoveryRate;
     CaelumFoodClimate Climate;
     CaelumContaminationNPC Exposure;
+    CaelumJourneyFood Foods;
     transient CaelumContaminationWeatherDay WeatherDay;
 
     static double Clock(CaelumPlayer user,String map)
@@ -26,8 +27,8 @@ class CaelumContaminationAbsence : Object play
         if(npc.ContaminationAbsence!=null && npc.ContaminationAbsence.Away)return;
         CaelumThermalRuntime.NPCStep(npc,true);
         let thermal=CaelumThermalBody.Get(npc);
-        // Un actor recién inicializado puede salir antes de su primer turno
-        // térmico. Tomar la muestra nativa, sin inventar cuerpo ni ambiente.
+        // Un actor reciÃ©n inicializado puede salir antes de su primer turno
+        // tÃ©rmico. Tomar la muestra nativa, sin inventar cuerpo ni ambiente.
         if(thermal==null || !thermal.Available)
             thermal=CaelumThermalService.CaptureForecast(npc);
         if(npc.health<=0)return;
@@ -45,11 +46,13 @@ class CaelumContaminationAbsence : Object play
         row.Exposure=null;row.WeatherDay=null;
         if(thermal!=null && thermal.Available)
         {row.Exposure=new('CaelumContaminationNPC');row.Exposure.Capture(npc,thermal);}
+        row.Foods=new('CaelumJourneyFood');row.Foods.Capture(npc);
+        if(row.Exposure!=null)row.Exposure.Frame.BindFood(row.Foods);
         row.Away=true;
     }
     void NativePolicy(CaelumCombatActor npc)
     {
-        // Equivale a la entrada nativa de daño sostenido sin inflictor. Capturar
+        // Equivale a la entrada nativa de daÃ±o sostenido sin inflictor. Capturar
         // antes de que Suspend quite SHOOTABLE para aparcar al residente.
         Immune=npc.bInvulnerable || npc.bNoDamage || npc.bSpectral || (!npc.bShootable && !npc.bVulnerable)
             || !CaelumRedemption.AllowsDamage(null,npc,'CaelumDiseaseDOT');
@@ -60,7 +63,7 @@ class CaelumContaminationAbsence : Object play
     }
 
     // Salta tics sin cambios enteros de Vida. Conserva exactamente el orden
-    // enfermedad -> recuperación y sus residuos; no itera cada tic de días.
+    // enfermedad -> recuperaciÃ³n y sus residuos; no itera cada tic de dÃ­as.
     void Physiology(CaelumCombatActor npc,double seconds)
     {
         if(Life<=0 || seconds<=0)return;
@@ -106,13 +109,15 @@ class CaelumContaminationAbsence : Object play
         if(!Away || Revision!=CaelumContaminationData.NPC_ABSENCE_REVISION || npc==null || end<=Stamp)return;
         double scale=CaelumWorldClock.SecondsPerGameHour(Map)/3600.0;
         let body=CaelumContaminationStorage.Get(npc,true);body.EnsurePhysiology();
-        if(Exposure!=null){Exposure.Frame.ReadLive();Exposure.Body.Contamination=body.Concentration;}
+        if(Foods==null){Foods=new('CaelumJourneyFood');Foods.Capture(npc);}else Foods.Refresh(npc);
+        if(Exposure!=null){Exposure.Frame.ReadLive();Exposure.Frame.BindFood(Foods);Exposure.Body.Contamination=body.Concentration;}
         while(Stamp<end && Life>0)
         {
-            // La misma resolución ambiental de un segundo activo del servicio
-            // térmico; cortar también en el minuto del clima de origen.
+            // La misma resoluciÃ³n ambiental de un segundo activo del servicio
+            // tÃ©rmico; cortar tambiÃ©n en el minuto del clima de origen.
             double step=Min(end-Stamp,Min(1/scale,(Floor(Civil/60)+1)*60-Civil));
             if(step<=0)break;
+            Foods.AdvanceClimate(step);
             if(Exposure!=null)
             {
                 double ambient=-1;
@@ -145,7 +150,8 @@ class CaelumContaminationAbsence : Object play
             Stamp+=step;Civil+=step;
         }
         if(Exposure!=null)Exposure.CommitCaptured(npc);
-        // Un fallecido no recibe exposición ni recuperación retroactiva.
+        Foods.Commit(npc);
+        // Un fallecido no recibe exposiciÃ³n ni recuperaciÃ³n retroactiva.
         if(Stamp<end){Civil+=end-Stamp;Stamp=end;}
     }
     static bool Alive(CaelumCombatActor npc,double civil)
@@ -164,11 +170,11 @@ class CaelumContaminationAbsence : Object play
         npc.health=row.Life;
         if(row.Life<=0)
         {
-            // La muerte nativa y el botín ocurren una sola vez, en su mapa.
+            // La muerte nativa y el botÃ­n ocurren una sola vez, en su mapa.
             // Nunca invocar Die con los sectores del destino del viajero.
             npc.Die(null,null,DMG_NO_ARMOR,'CaelumDiseaseDOT');
         }
         else npc.UpdateCombatHealthEffects();
-        row.Exposure=null;
+        row.Exposure=null;row.Foods=null;
     }
 }

@@ -4,6 +4,24 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-186 - Inventory-owned records need an explicit owner guard
+
+- **Status/evidence:** native reproduction and migration verification, 5.8.49/#502;
+  assets/validation_5849, original48-seed03 and ready49-upgrade/contact.
+- **Symptom:** a generic contamination carrier lookup from an Inventory actor
+  reached a carrier belonging to another item in the owner's inventory chain.
+  Seeding a food item changed an adjacent material's saved concentration.
+- **Cause:** Inventory.Inv participates in the native inventory chain; it cannot
+  be treated as a private child-record collection without checking Owner.
+- **Rule:** keep item state in its dedicated field. Adopt a legacy carrier only
+  when carrier.Owner equals that item. When migrating previously aliased state,
+  copy the scalar/lot state per item and retain a scheduler only if its Body is
+  the same item. Do not destroy neighbouring inventory to repair the alias.
+- **Verification:** the original runtime saves independently owned material and
+  food records; upgrade/rollback retain their distinct values. Current native
+  checks deliberately alias two records and prove subsequent writes separate.
+  Save/restore and FIFO food/quantity regressions pass independently.
+
 ## CA-KP-185 - Mean aim must preserve the joint dispersion distribution
 Status/evidence: RESOLVED-VERIFIED (194 current native assertions;16 original checks)
 First recorded / last checked: 2026-10-27 / 2026-10-27

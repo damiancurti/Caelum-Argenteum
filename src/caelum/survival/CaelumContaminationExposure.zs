@@ -45,8 +45,16 @@ class CaelumContaminationExposure : Object play
         {
             let row=Stacks[i];let item=row.Item;
             if(item==null || item.bDestroyed || CaelumContaminationStack.Carrier(item)!=owner || CaelumContaminationStorage.IsShielded(item))continue;
-            CaelumContaminationStack.Record(item).StackLots=row.Lots.Copy();
+            CaelumContaminationStack.SetLots(item,row.Lots.Copy());
         }
+    }
+
+    void BindFood(CaelumJourneyFood food)
+    {
+        if(food==null)return;
+        for(int i=0;i<Stacks.Size();i++)
+            for(int j=0;j<food.Stacks.Size();j++)
+                if(Stacks[i].Item==food.Stacks[j].Item){Stacks[i].Lots=food.Stacks[j].Lots;break;}
     }
 
     void Capture(CaelumPlayer user,CaelumThermalState thermal)

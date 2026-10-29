@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.48** - 2026-10-28.
+Documentation version: **5.8.49** - 2026-10-28.
+
+## 5.8.49 / #502 - Physical stacks and food
+
+Implemented documented surface data, native FIFO food/exposure integration,
+independent journey/wait copies, protected-but-ageing food and absent NPC source
+clocks. Native non-solid contact, original5.8.48 migration/rollback, current
+save/hub and kitchen regressions pass1190 current plus2 original assertions.
+Evidence and the scoped performance comparison are in assets/validation_5849; author corroboration
+stays in the final grouped queue. Continue generic-item/contact audit, #415,
+#416 and #417 separately; no whole-version completion is claimed.
 
 ## 5.8.48 / #502 - Vessel exposure and test lifecycle
 

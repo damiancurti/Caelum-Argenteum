@@ -13,16 +13,48 @@ class CaelumContaminationContacts : Object play
             return user.ContaminationContacts;
         }
         let npc=CaelumCombatActor(body);
-        if(npc==null)return null;
+        if(npc==null)
+        {
+            if(body==null)return null;
+            let record=CaelumContaminationStorage.Get(body,create);if(record==null)return null;
+            if(record.Contacts==null && create)record.Contacts=new('CaelumContaminationContacts');
+            return record.Contacts;
+        }
         if(npc.ContaminationContacts==null && create)npc.ContaminationContacts=new('CaelumContaminationContacts');
         return npc.ContaminationContacts;
     }
     static bool Eligible(Actor body)
     {
-        if(body==null || !body.bSolid || body.bNoClip || body.bMissile || body.Radius<=0 || body.Height<=0)return false;
+        if(body==null || body.bDestroyed || body.bNoClip || body.bMissile || body.Radius<=0 || body.Height<=0)return false;
+        if(!body.bSolid && !CaelumContaminationStack.Eligible(Inventory(body)))return false;
         let user=CaelumPlayer(body);if(user!=null && !CaelumPlayerAuthority.CanMutate(user))return false;
         let item=Inventory(body);
         return item==null || (item.Owner==null && !CaelumContaminationStorage.IsShielded(item));
+    }
+    static bool Overlap(Actor a,Actor b)
+    {
+        if(a==null || b==null)return false;
+        double reach=a.Radius+b.Radius;
+        return Abs(a.Pos.X-b.Pos.X)<=reach+.001 && Abs(a.Pos.Y-b.Pos.Y)<=reach+.001
+            && a.Pos.Z<=b.Pos.Z+b.Height+.001 && b.Pos.Z<=a.Pos.Z+a.Height+.001;
+    }
+    static void PickupContact(Inventory item,Actor toucher)
+    {
+        // Las transferencias remotas (cofres/comercio) no son contacto corporal.
+        if(item!=null && item.Owner==null && Overlap(item,toucher))Collision(toucher,item);
+    }
+    static void Observe(Inventory item)
+    {
+        if(item==null || item.Owner!=null || !Eligible(item))return;
+        // Consulta local escalonada una vez por segundo activo por pila en suelo.
+        // Las parejas reales contin?an por eventos/enlaces; no hay censo global.
+        let nearby=BlockThingsIterator.Create(item,item.Radius);
+        while(nearby.Next())
+        {
+            let other=nearby.thing;
+            if(other==item || !Eligible(other) || !Overlap(item,other) || !item.CheckSight(other))continue;
+            Collision(other,item);
+        }
     }
     static void Collision(Actor body,Actor other)
     {
@@ -49,6 +81,16 @@ class CaelumContaminationContacts : Object play
     {
         let links=Get(body);if(links==null)return;
         for(int i=links.Pairs.Size()-1;i>=0;i--)if(links.Pairs[i]==pair || links.Pairs[i]==null)links.Pairs.Delete(i);
+    }
+    static void Detach(Actor body)
+    {
+        let links=Get(body);if(links==null)return;
+        while(links.Pairs.Size()>0)
+        {
+            let pair=links.Pairs[links.Pairs.Size()-1];links.Pairs.Delete(links.Pairs.Size()-1);
+            if(pair==null)continue;
+            Remove(pair.First,pair);Remove(pair.Second,pair);pair.Destroy();
+        }
     }
     static bool Active(Actor body)
     {

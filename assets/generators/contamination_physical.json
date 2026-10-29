@@ -1,0 +1,376 @@
+{
+  "schema_revision": 1,
+  "issue": 502,
+  "geometry": "Equivalent sphere per native inventory unit, additive across units. This is a contact-area convention, not a microscopic grain/pore measurement. Existing physical vessel/equipment dimensions take precedence.",
+  "authorization": "Author authorized documented calculations for physical stackables; abstract preparations retain the explicitly approved 1000 kg/m3 convention.",
+  "sources": {
+    "fao-solids": "https://www.fao.org/4/ah827e/AH827E03.htm",
+    "uct": "https://uchi.vscht.cz/e-tables/density-solids?jazyk=en&lang=en",
+    "fao-food": "https://www.fao.org/4/ap815e/ap815e.pdf",
+    "fao-fish": "https://www.fao.org/4/v3630e/v3630e20.htm",
+    "fao-silk": "https://www.fao.org/4/x2099e/x2099e03.htm",
+    "gia": "https://www.gia.edu/gem-encyclopedia",
+    "cdc-soda": "https://www.cdc.gov/niosh/npg/npgd0565.html",
+    "nitrate": "https://www.ncbi.nlm.nih.gov/books/NBK592481/table/ch4.tab4/?report=objectonly",
+    "fao-honey": "https://www.fao.org/4/W0076e/w0076e04.htm",
+    "aip": "https://web.mit.edu/8.13/8.13c/references-fall/aip/aip-handbook-section2b.pdf",
+    "approved": "docs/SYSTEMS.md",
+    "cdc-iodine": "https://www.cdc.gov/niosh/npg/npgd0342.html",
+    "fao-fat": "https://www.fao.org/4/y2774e/y2774e05.htm",
+    "soap": "https://www.scbt.com/p/sodium-stearate-822-16-2"
+  },
+  "materials": [
+    {
+      "material_ids": [
+        0
+      ],
+      "density_kg_m3": 7870,
+      "source": "approved",
+      "basis": "Approved iron reference; also used by iron components."
+    },
+    {
+      "material_ids": [
+        18,
+        72
+      ],
+      "density_kg_m3": 1540,
+      "source": "fao-solids",
+      "basis": "Cotton fibre density; fabric uses the same solid-fibre equivalent, not a packed roll."
+    },
+    {
+      "material_ids": [
+        19,
+        76,
+        77,
+        78
+      ],
+      "density_kg_m3": 860,
+      "source": "aip",
+      "basis": "Dry-leather reference; generic animal and fictional monster hides use this explicitly declared proxy."
+    },
+    {
+      "material_ids": [
+        42,
+        90,
+        91
+      ],
+      "density_kg_m3": 760,
+      "source": "approved",
+      "basis": "Existing algarrobo reference used as the proxy for unspecified wood species."
+    },
+    {
+      "material_ids": [
+        54,
+        55
+      ],
+      "density_kg_m3": 4000,
+      "source": "uct",
+      "basis": "Corundum reference for ruby and sapphire."
+    },
+    {
+      "material_ids": [
+        56
+      ],
+      "density_kg_m3": 2720,
+      "source": "gia",
+      "basis": "Emerald specific gravity 2.72."
+    },
+    {
+      "material_ids": [
+        57
+      ],
+      "density_kg_m3": 3530,
+      "source": "gia",
+      "basis": "Topaz specific gravity 3.53."
+    },
+    {
+      "material_ids": [
+        58
+      ],
+      "density_kg_m3": 2150,
+      "source": "gia",
+      "basis": "Opal specific gravity 2.15."
+    },
+    {
+      "material_ids": [
+        59
+      ],
+      "density_kg_m3": 8920,
+      "source": "uct",
+      "basis": "Copper density at the reference temperature."
+    },
+    {
+      "material_ids": [
+        60
+      ],
+      "density_kg_m3": 7200,
+      "source": "fao-solids",
+      "basis": "Tin reference."
+    },
+    {
+      "material_ids": [
+        61
+      ],
+      "density_kg_m3": 1350,
+      "source": "uct",
+      "basis": "Midpoint of the documented coal interval 1200-1500."
+    },
+    {
+      "material_ids": [
+        62,
+        63,
+        64,
+        65,
+        66
+      ],
+      "density_kg_m3": 2500,
+      "source": "fao-solids",
+      "basis": "Generic stone proxy for unspecified ore/gangue; not the density of pure metal or a new mineral composition."
+    },
+    {
+      "material_ids": [
+        67,
+        89
+      ],
+      "density_kg_m3": 8150,
+      "source": "fao-solids",
+      "basis": "Midpoint of bronze reference interval 7400-8900; fixed proxy, no alloy recipe change."
+    },
+    {
+      "material_ids": [
+        68
+      ],
+      "density_kg_m3": 7800,
+      "source": "fao-solids",
+      "basis": "Steel reference."
+    },
+    {
+      "material_ids": [
+        69
+      ],
+      "density_kg_m3": 10490,
+      "source": "approved",
+      "basis": "Existing silver reference retained."
+    },
+    {
+      "material_ids": [
+        70
+      ],
+      "density_kg_m3": 19300,
+      "source": "approved",
+      "basis": "Existing gold reference retained."
+    },
+    {
+      "material_ids": [
+        71
+      ],
+      "density_kg_m3": 1350,
+      "source": "fao-silk",
+      "basis": "Midpoint of wool 1.30-1.40 g/cm3."
+    },
+    {
+      "material_ids": [
+        73
+      ],
+      "density_kg_m3": 1360,
+      "source": "fao-silk",
+      "basis": "Midpoint of raw-silk bave 1.32-1.40 g/cm3."
+    },
+    {
+      "material_ids": [
+        74,
+        75
+      ],
+      "density_kg_m3": 1480,
+      "source": "fao-solids",
+      "basis": "Hemp fibre proxy for unspecified vegetable fibre and rope."
+    },
+    {
+      "material_ids": [
+        81
+      ],
+      "density_kg_m3": 480,
+      "source": "fao-food",
+      "basis": "Tea-leaf apparent density proxy for dried yerba; no claim about an individual leaf."
+    },
+    {
+      "material_ids": [
+        82,
+        83,
+        84,
+        87
+      ],
+      "density_kg_m3": 230,
+      "source": "fao-food",
+      "basis": "Herb-leaf apparent-density proxy for herbs, flowers and dried kelp."
+    },
+    {
+      "material_ids": [
+        85
+      ],
+      "density_kg_m3": 760,
+      "source": "approved",
+      "basis": "Existing woody-plant reference used for unspecified cane stalk geometry."
+    },
+    {
+      "material_ids": [
+        86,
+        95
+      ],
+      "density_kg_m3": 1400,
+      "source": "fao-food",
+      "basis": "Light corn-syrup apparent-density proxy for the unspecified honey/molasses concentrations."
+    },
+    {
+      "material_ids": [
+        88
+      ],
+      "density_kg_m3": 4930,
+      "source": "cdc-iodine",
+      "basis": "Solid iodine reference; no vapour exposure chemistry added."
+    },
+    {
+      "material_ids": [
+        92
+      ],
+      "density_kg_m3": 2110,
+      "source": "nitrate",
+      "basis": "Potassium nitrate solid reference."
+    },
+    {
+      "material_ids": [
+        93
+      ],
+      "density_kg_m3": 2015,
+      "source": "uct",
+      "basis": "Midpoint of sulfur reference interval 1960-2070."
+    },
+    {
+      "material_ids": [
+        94
+      ],
+      "density_kg_m3": 1950,
+      "source": "uct",
+      "basis": "Midpoint of amorphous carbon 1800-2100; skeletal-volume proxy, no pore surface or bulk-pile packing."
+    },
+    {
+      "material_ids": [
+        96
+      ],
+      "density_kg_m3": 1000,
+      "source": "approved",
+      "basis": "Approved fermentation output 1 kg per litre."
+    },
+    {
+      "material_ids": [
+        97
+      ],
+      "density_kg_m3": 789,
+      "source": "fao-food",
+      "basis": "Ethyl alcohol reference; the medicinal ingredient remains abstract and is not a new alcohol-strength specification."
+    },
+    {
+      "material_ids": [
+        98
+      ],
+      "density_kg_m3": 950,
+      "source": "fao-food",
+      "basis": "Yeast apparent-density reference."
+    },
+    {
+      "material_ids": [
+        99
+      ],
+      "density_kg_m3": 1590,
+      "source": "uct",
+      "basis": "Solid sugar density."
+    },
+    {
+      "material_ids": [
+        104
+      ],
+      "density_kg_m3": 124,
+      "source": "approved",
+      "basis": "Approved dry-gourd reference."
+    },
+    {
+      "material_ids": [
+        105
+      ],
+      "density_kg_m3": 898.5,
+      "source": "fao-fat",
+      "basis": "Midpoint of the FAO rendered-animal-fat reference 0.893-0.904 relative to water; fixed geometry proxy, not a phase/temperature model."
+    },
+    {
+      "material_ids": [
+        106
+      ],
+      "density_kg_m3": 2130,
+      "source": "cdc-soda",
+      "basis": "Sodium hydroxide specific gravity 2.13."
+    },
+    {
+      "material_ids": [
+        108
+      ],
+      "density_kg_m3": 550,
+      "source": "fao-food",
+      "basis": "Wholemeal wheat flour apparent-density reference."
+    },
+    {
+      "material_ids": [
+        109
+      ],
+      "density_kg_m3": 960,
+      "source": "fao-food",
+      "basis": "Lean raw cow meat without bone apparent-density reference."
+    },
+    {
+      "material_ids": [
+        110
+      ],
+      "density_kg_m3": 1054,
+      "source": "fao-fish",
+      "basis": "White-fish muscle at 0 C; fixed geometry reference, not a temperature-dependent mass change."
+    },
+    {
+      "material_ids": [
+        111,
+        113
+      ],
+      "density_kg_m3": 1000,
+      "source": "approved",
+      "basis": "Unspecified vegetable mixture and prepared dough use the approved abstract-preparation reference; composition/gas volume is not invented."
+    },
+    {
+      "material_ids": [
+        112
+      ],
+      "density_kg_m3": 2160,
+      "source": "uct",
+      "basis": "Solid sodium chloride reference."
+    },
+    {
+      "material_ids": [
+        107
+      ],
+      "density_kg_m3": 1020,
+      "source": "soap",
+      "basis": "Manufacturer sodium-stearate density; soap constituent used as an explicit geometry proxy, not a new formulation."
+    }
+  ],
+  "food_density_kg_m3": [
+    1054,
+    960,
+    1054,
+    960,
+    1050,
+    420,
+    1000,
+    1000,
+    550,
+    1000
+  ],
+  "food_basis": "Raw/cooked fish share FAO white-fish reference; raw/roast beef share FAO raw-meat proxy. Puchero uses FAO canned beef stew 1050; bread uses FAO white bread 420. Generic ration, mixture and dough retain the abstract-preparation convention. Cooking does not change mass or nutrition here.",
+  "author_generic_approval": "Approved in this session: generic ore 2500, animal/monster hides 860, vegetable mixture/ration/dough 1000 kg/m3."
+}

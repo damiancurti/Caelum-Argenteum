@@ -1,6 +1,16 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.48** - 2026-10-28.
+Documentation version: **5.8.49** - 2026-10-28.
+
+## 5.8.49 - Physical contact geometry references (#502)
+
+No raster, model, audio or map assets change. The density reference manifest
+assets/generators/contamination_physical.json records source URLs, units and
+explicit proxies; generate_contamination_physical.py deterministically emits
+the runtime table. It preserves existing inventory masses and physical vessel
+geometry. Native fixtures, original-runtime migration and renderer-cadence
+comparison are retained under assets/validation_5849. They are private QA,
+not distributed IWAD/engine content or author visual acceptance.
 
 ## 5.8.48 - Vessel geometry and crash reproduction evidence (#502)
 

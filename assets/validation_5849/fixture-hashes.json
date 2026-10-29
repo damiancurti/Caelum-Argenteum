@@ -1,0 +1,8 @@
+{
+  "deterministic_generator": true,
+  "files": {
+    "assets/generators/contamination_physical.json": "886a56266a089f9de1ce63bd9ebd7f064e9b955d52ae49e230c14e555b9d276d",
+    "assets/generators/generate_contamination_physical.py": "71edae0b8686da6d587b42e2f1a39d0a0dfc3b776f174fef420879d74cf4a726",
+    "src/caelum/data/CaelumPhysicalSurfaceData.zs": "549de53a6414150b3759e9e25b0ded9f1ad4dbd9da979caff7c5376c50047130"
+  }
+}

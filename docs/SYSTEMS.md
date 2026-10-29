@@ -1,6 +1,45 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.48** - 2026-10-28.
+Documentation version: **5.8.49** - 2026-10-28.
+
+## 5.8.49 - Physical inventory surfaces and shared food lots (#502)
+
+The author delegated documented physical surface calculations and explicitly
+approved generic ore=2,500 kg/m^3, dry animal/monster hide=860, and vegetable
+mixture/ration/dough=1,000. The density catalogue and primary references are in
+assets/generators/contamination_physical.json; its deterministic generator owns
+CaelumPhysicalSurfaceData. Material components follow their existing recipe
+base material and tier. Defined vessels/equipment retain their existing areas.
+Other native units use the additive equivalent-sphere convention: never resize
+a sphere around a whole pile. Powder/leaf bulk-density proxies are identified
+as such; these are game contact areas, not microscopic or measured pore areas.
+No masses, recipes, nutrients, prices, artwork or transmission rates change.
+
+All 114 material kinds, existing prepared food and the legacy water serving
+now participate in the ledger. Food has one authoritative FoodLots ledger:
+age and environmental/contact exposure update its distinct lots; ingestion,
+cooking, native split/merge and oldest-first removal read that same ledger.
+Rain does not erase intrinsic food deterioration. Commercial food stays fresh;
+contaminated food remains rejected on resale. Box/closed-coffer storage blocks
+new contact while food continues ageing. Journey/wait copies share their food
+lot objects internally and remain independent of live inventory. Provision
+revision27 rebuilds older cached forecasts. Absent NPC food uses its captured
+source climate, including shielded food, without querying the destination map.
+
+A typed stack node observes nearby native actors once per active second while
+on the ground. Actual overlapping physical pairs use persistent contact links;
+failed/remote inventory transfers do not fabricate body contact. Ground support
+uses the existing floor/3D-floor tile, with cylinder footprint capped by total
+available stack area. Distinct source/receiver lots remain separate. No per-unit
+actors or recurring global actor census are added. Sampled contacts retain the
+existing collision/area approximation; they are not microscopic contact meshes.
+
+Revision2 stack records declare their native owner. A legacy generic carrier
+is adopted only when it actually belongs to that item: Inventory.Inv can also
+lead through neighbouring items. Previously shared record pointers are copied
+per item while preserving concentrations and lots; changing one object cannot
+change its former alias. Food adopts the higher of its own saved deterioration
+and its own legacy surface concentration once. Untracked data starts clean.
 
 ## 5.8.48 - Vessel exterior surfaces (#502)
 
