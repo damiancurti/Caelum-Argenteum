@@ -5588,6 +5588,20 @@ Author acceptance: CA304-01 passed on 2026-10-16 without reported exceptions
 (origin 5.4.25 / #304), separately from the native assertions.
 Limitations: dormant corpses retain memory; this is not actor destruction.
 
+## CA-KP-190 - Typed thinker lookup still scales with the world population
+Status/evidence: RESOLVED-VERIFIED (engine callbacks); AUTHOR CONFIRMATION PENDING
+First recorded / last checked: 2026-10-29 / 2026-10-29
+Issue: #415; baseline e7c748087, focused dirty Rally candidate.
+Environment and evidence: assets/validation_5855/RESULTS.md and report.json.
+Scope: CaelumRally.Strongest/Pulse; per-damage illness queries in the city.
+Symptom: after defenders appear, callbacks stall for about a second.
+Cause: a typed ThinkerIterator for rare inventory effects is not a bounded index;
+executing it for every damaged NPC multiplies the entire thinker traversal.
+Fix: query the bounded active casters; use spatial recipients and the existing
+unlinked registry for pulses. Do not remove offscreen illness or alter the census.
+Regression: run the same visible arrival/walk sequence and native effect/save checks.
+Limitations: callback tails are not display presentation; ETW was access-denied.
+
 ## Copyable entry template
 
 ```text

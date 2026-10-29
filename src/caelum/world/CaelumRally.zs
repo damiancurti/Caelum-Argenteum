@@ -52,10 +52,14 @@ class CaelumRally : Object play
     static CaelumRallyEffect Strongest(Actor body)
     {
         if(body==null || body.health<=0)return null;
-        let it=ThinkerIterator.Create("CaelumRallyEffect");CaelumRallyEffect effect,best;
-        while((effect=CaelumRallyEffect(it.Next()))!=null)
+        // Sólo los jugadores pueden lanzar Arenga: consultar su inventario
+        // evita recorrer todos los thinkers por cada daño de cada actor.
+        CaelumRallyEffect best;
+        for(int playerIndex=0;playerIndex<MAXPLAYERS;playerIndex++)
         {
-            if(!Eligible(effect,body))continue;
+            if(!playeringame[playerIndex])continue;
+            let effect=Status(CaelumPlayer(players[playerIndex].mo));
+            if(effect==null || !Eligible(effect,body))continue;
             if(best==null || effect.Power>best.Power || (effect.Power==best.Power
                 && effect.Owner.PlayerNumber()<best.Owner.PlayerNumber()))best=effect;
         }
@@ -105,12 +109,9 @@ class CaelumRally : Object play
         return Max(0,int(actualLoss*double(user.RallyPayloadBaseDamage)/user.RallyResolvedDamage+0.5));
     }
 
-    static void Pulse(CaelumRallyEffect effect)
+    static void PulseBody(CaelumRallyEffect effect,Actor body)
     {
-        let it=ThinkerIterator.Create("Actor");Actor body;
-        while((body=Actor(it.Next()))!=null)
-        {
-            if(!Eligible(effect,body) || Strongest(body)!=effect)continue;
+            if(body==null || !Eligible(effect,body) || Strongest(body)!=effect)return;
             double ratio=BASE_RECOVERY_RATIO*effect.Power;
             let user=CaelumPlayer(body);
             if(user!=null && user.DerivedStats!=null)
@@ -121,7 +122,24 @@ class CaelumRally : Object play
                 if(npc!=null)npc.CurrentCombatAdrenaline=Clamp(npc.CurrentCombatAdrenaline
                     +npc.MaximumCombatAdrenaline*ratio,0.0,npc.MaximumCombatAdrenaline);
             }
+    }
+
+    static void Pulse(CaelumRallyEffect effect)
+    {
+        let caster=CaelumPlayer(effect.Owner);if(caster==null)return;
+        let nearby=BlockThingsIterator.Create(caster,effect.Range);
+        while(nearby.Next())PulseBody(effect,nearby.thing);
+        // Los guardias excluidos de la blockmap ya tienen un registro compartido.
+        // Conservar sus efectos fuera de cámara sin otro recorrido global.
+        let population=CaelumPopulationState.Get();
+        if(population!=null)for(int i=0;i<population.UnlinkedGuards.Size();i++)
+        {
+            let entry=population.UnlinkedGuards[i];let body=entry!=null?entry.Body:null;
+            if(body!=null && body.bNoBlockmap)PulseBody(effect,body);
         }
+        for(int p=0;p<MAXPLAYERS;p++)
+            if(playeringame[p] && players[p].mo!=null && players[p].mo.bNoBlockmap)
+                PulseBody(effect,players[p].mo);
     }
 
     static bool Release(CaelumPlayer user)
