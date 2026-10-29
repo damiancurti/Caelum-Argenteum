@@ -1,6 +1,37 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.42** - 2026-10-28.
+Documentation version: **5.8.43** - 2026-10-28.
+
+## 5.8.43 - Unloaded household cleaning (#502, 2026-10-28)
+
+Author decision: summarized off-map cleaning uses actual physical access captured
+at departure, rather than simulating every walking step. Implemented native
+access snapshots, shared civil-day work quotas and progressive cleaning through
+real home inventories/reserves. Purchases share real Provisions stock in date
+order and cannot use future restock. The source home's exterior clock is frozen
+while the player stays in the Limbo, including food/water/coffer histories.
+
+Additive away schema1 starts on the next departure; earlier values and original
+saves remain preserved. assets/validation_5843 contains current native fixtures,
+prior-runtime migration/rollback, exact build hashes and timing. Early private
+compile/fixture failures were corrected before the final validation; they are
+not acceptance evidence. No maps, artwork, recipes or balance values change.
+
+Final evidence: 78 current native PASS plus 11 original-runtime checks, zero
+failures/static errors. All 17,024 package members match source; 14,056 earlier
+map/art members are byte-identical. Package SHA256:
+`f0d9aab75d729fef7ea66e9c94586f296acf4e628da4a1e57cb15a551b2bfcfb`.
+Capture of 856 targets: mean 3.1903 ms, p95 3.3262, maximum 3.3832 (20 runs).
+Two-home 24-hour reconciliation: 66.0738 ms. In the matched city scene, renderer
+callback mean/p95/p99/max was 16.988/17.988/18.676/124.734 ms before and
+17.022/17.827/21.421/128.936 ms after. These are not displayed FPS: PresentMon
+could not start its ETW session (access denied). No full rendering acceptance.
+The frame fixture now uses a static handler because native old saves omit a
+new map-local handler; the first empty measurement is retained but excluded.
+
+CA502-HOME-AWAY-01 (origin 5.8.43/#502) remains unconfirmed. No author acceptance
+was received for this patch; all earlier pending entries are carried forward.
+The remaining V5.8 work is recorded in TASKS; multiplayer rest stays in V5.12.
 
 ## 5.8.42 - Household furnishing contamination persistence (#502, 2026-10-28)
 

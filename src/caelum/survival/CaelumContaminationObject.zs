@@ -212,20 +212,24 @@ class CaelumContaminationWeatherCache : Object play
     Array<CaelumContaminationWeatherDay> Days;
     double Sequence;
     CaelumContaminationWeatherDay GetDay(CaelumContaminationObject n,int date)
+    {return FindDay(n.HistoryProfile,n.HistoryRegion,n.HistorySeed,n.HistoryShelter,n.HistoryReference,n.HistoryCovered,date);}
+    CaelumContaminationWeatherDay GetTileDay(CaelumContaminationTile tile,int date)
+    {return FindDay(tile.Profile,tile.Region,tile.Seed,tile.Shelter,tile.Reference,tile.Covered,date);}
+    CaelumContaminationWeatherDay FindDay(int profile,int region,int seed,int shelter,double reference,bool covered,int date)
     {
         int oldest=0;
         for(int i=0;i<Days.Size();i++)
         {
             let d=Days[i];
-            if(d.Day==date && d.Profile==n.HistoryProfile && d.Region==n.HistoryRegion
-                && d.Seed==n.HistorySeed && d.Shelter==n.HistoryShelter
-                && d.Reference==n.HistoryReference && d.Covered==n.HistoryCovered)
+            if(d.Day==date && d.Profile==profile && d.Region==region
+                && d.Seed==seed && d.Shelter==shelter
+                && d.Reference==reference && d.Covered==covered)
             {d.Used=++Sequence;return d;}
             if(d.Used<Days[oldest].Used)oldest=i;
         }
         let d=new('CaelumContaminationWeatherDay');
-        d.Day=date;d.Profile=n.HistoryProfile;d.Region=n.HistoryRegion;d.Seed=n.HistorySeed;
-        d.Shelter=n.HistoryShelter;d.Reference=n.HistoryReference;d.Covered=n.HistoryCovered;
+        d.Day=date;d.Profile=profile;d.Region=region;d.Seed=seed;
+        d.Shelter=shelter;d.Reference=reference;d.Covered=covered;
         d.Used=++Sequence;d.Outside=new('CaelumWeatherSample');d.Local=new('CaelumWeatherSample');
         if(Days.Size()<MAX_DAYS)Days.Push(d);else Days[oldest]=d;
         return d;

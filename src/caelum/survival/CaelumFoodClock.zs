@@ -112,12 +112,15 @@ class CaelumFoodClock : Thinker
         let weather=user!=null?CaelumWeatherState.Get(user):world!=null?world.ReferenceWeather:null;
         if(clock==null)return;
         double now=CaelumThermalRuntime.Stamp(clock);let lots=CaelumFoodInventory.Prepare(Item);
+        let remote=CaelumHouseStorageEntry.Remote(body);
+        if(remote!=null)
+        {let store=CaelumHouseStorage.Get();if(store!=null)now=remote.SourceNow(CaelumPlayer(store.Owner));}
         if(Climate==null)Climate=new('CaelumFoodClimate');
         bool commercial=Item.Owner is 'CaelumCityMerchant';
         if(Ready && now>Stamp && !commercial)Climate.Advance(lots,now-Stamp);
         Stamp=now;Ready=true;
         // No inicializar con datos climáticos inventados cuando no hay muestra.
-        if(CaelumHouseStorageEntry.Remote(body)==null)Climate.Capture(body,clock,calendar,weather);
+        if(remote==null)Climate.Capture(body,clock,calendar,weather);
         NextUpdate=level.maptime+TICRATE;
     }
     override void Tick()

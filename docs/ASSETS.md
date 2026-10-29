@@ -1,6 +1,14 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.42** - 2026-10-28.
+Documentation version: **5.8.43** - 2026-10-28.
+
+## 5.8.43 - Household absence evidence (#502)
+
+assets/validation_5843 contains deterministic private fixture sources, native
+logs and environment/package hashes for chronological household cleaning,
+resource shortages, Limbo clock separation, save/load and prior-runtime recovery.
+No packaged art, music, maps, sprites or models change in this runtime patch.
+Development PK3s, engine binaries and IWADs remain outside the tracked delivery.
 
 ## 5.8.40 - Dining set artwork (#410)
 

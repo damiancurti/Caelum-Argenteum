@@ -1,6 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.42** - 2026-10-28.
+Documentation version: **5.8.43** - 2026-10-28.
+
+## 5.8.43 / #502 - Unloaded household work
+
+Implemented captured native access and chronological household purchases/cleaning,
+including real shared stock, civil-calendar source clocks, save migration and
+original-save rollback. Evidence: assets/validation_5843; 78 current and 11 prior
+native PASS, zero failures/static errors. Retain all outstanding
+author checks, including CA502-HOME-AWAY-01, for the final grouped V5.8 handoff.
+Next: unloaded NPC physiology and remaining object/contact coverage under #502;
+#410 landscapes/ornamental statues (motifs approved 2026-10-28); #415 actual
+unloaded combat/theft; #416 documented transport and six-block Buenos Aires;
+#417 approved encounters. Do not claim the whole version is complete.
 
 ## 5.8.42 / #502 - Furnishing contamination persistence
 

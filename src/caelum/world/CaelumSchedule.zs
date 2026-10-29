@@ -297,6 +297,7 @@ class CaelumScheduleState : Inventory
     }
     static void Sync(CaelumPlayer user)
     {
+        CaelumHouseAway.Sync(user);
         let agenda = Get(user); if (agenda == null) return;
         agenda.EnsureKnowledge();
         double now = Now(user);

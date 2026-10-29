@@ -150,7 +150,12 @@ class CaelumShopRestock : Object play
     static void Sync(CaelumCityMerchant vendor,CaelumPlayer user,bool changed=false)
     {
         if(vendor==null || !CaelumPlayerAuthority.CanMutate(user) || vendor.EnumeratingStock)return;
-        double now=CaelumScheduleState.Now(user);if(now<0)return;
+        if(!vendor.HistoricalStockClock)CaelumHouseAway.Sync(user);
+        SyncAt(vendor,user,vendor.HistoricalStockClock?vendor.HistoricalStockStamp:CaelumScheduleState.Now(user),changed);
+    }
+    static void SyncAt(CaelumCityMerchant vendor,CaelumPlayer user,double now,bool changed=false)
+    {
+        if(vendor==null || !CaelumPlayerAuthority.CanMutate(user) || vendor.EnumeratingStock || now<0)return;
         if(vendor.RestockRevision<CaelumShopCatalogue.RESTOCK_REVISION){Ensure(vendor,user,now);changed=true;}
         if(!changed && (vendor.RestockNextDue<0 || now<vendor.RestockNextDue))return;
         double earliest=-1;
