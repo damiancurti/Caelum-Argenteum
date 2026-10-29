@@ -5,13 +5,3 @@ Prerequisites: final correction terminal, Buenos Aires scenario (CABAIRES).
 Listen for the original Ciudad theme, selected automatically on entry and looping
 normally. Campo de Buenos Aires remains assigned to countryside, as requested.
 Expected: the intended original city music is audible; no travel retest required.
-
-CA415-ABSENT-WORLD-01 | Origin: 5.8.51 | Issue: #415
-Author confirmation 2026-10-29: previous grouped checks passed except the reported
-city slowdown.
-Prerequisites: final 5.8.56 correction terminal, disposable scenario.
-Remaining check:
-Walk in the prepared MAP03 city for at least one minute after arrival.
-Observe the populated defenders: the reported collapse to roughly one frame per
-second must not recur. 5.8.55 removes repeated global Rally scans; the recorded
-engine callback mean is 28.34ms, not a claim of 60 displayed FPS.

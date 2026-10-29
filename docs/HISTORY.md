@@ -70,6 +70,8 @@ are separate; multiplayer remains deferred to V5.12 as requested.
 
 ## 5.8.51 - Unloaded-world implementation (#415) - 2026-10-29
 
+Final author acceptance, 2026-10-29: **CA415-ABSENT-WORLD-01** (origin 5.8.51 / #415) passed. The author confirmed all remaining correction-terminal checks and requested merge and closure. This supersedes the earlier qualified acceptance; only this confirmed entry is removed from pending_test.txt.
+
 Partial author acceptance 2026-10-29: **CA415-ABSENT-WORLD-01**, originating 5.8.51 / #415. Grouped checks passed with the reported city performance exception. Retain the stable ID for the qualified correction check only; no repeated acceptance of unrelated steps is requested.
 
 Completed the previously recorded calendar/combat/theft infrastructure without

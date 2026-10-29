@@ -2,6 +2,8 @@
 
 Documentation version: **5.8.56** - 2026-10-29.
 
+Author acceptance 2026-10-29 / #415: all remaining correction checks passed; stable IDs and original releases are recorded in HISTORY. Merge and issue closure are authorized.
+
 Author acceptance 2026-10-29 / #410: all remaining correction checks passed; stable IDs and original releases are recorded in HISTORY. Merge and issue closure are authorized.
 
 ## 5.8.56 / #416 - Original Ciudad theme for Buenos Aires
@@ -11,7 +13,7 @@ The author selected the original **Ciudad**, retained since the first music coll
 
 ## 5.8.55 / #415 - Remove repeated global Rally lookups
 
-Rally damage queries now inspect active player inventories; recovery pulses use local blockmap recipients and the existing unlinked-guard registry. Combat/illness rules and the shared population census are unchanged. Native effect/save tests passed; city render callbacks improved from 1125.93ms to 28.34ms mean in the final comparison window. ETW capture was denied; 60 FPS and author acceptance are not claimed. Evidence: `assets/validation_5855/RESULTS.md`.
+Rally damage queries now inspect active player inventories; recovery pulses use local blockmap recipients and the existing unlinked-guard registry. Combat/illness rules and the shared population census are unchanged. Native effect/save tests passed; city render callbacks improved from 1125.93ms to 28.34ms mean in the final comparison window. ETW capture was denied; 60 displayed FPS is not claimed. Author corroboration passed on 2026-10-29. Evidence: `assets/validation_5855/RESULTS.md`.
 
 
 Current review: author passed the grouped5.8.53 checks except bed appearance, the missing statue in the decoration fixture, city rendering fluency and Buenos Aires music; requested water-use shortcut and large paintings. #410 corrections are5.8.54; #415/#416 follow separately. Multiplayer rest remains deferred to5.12.
