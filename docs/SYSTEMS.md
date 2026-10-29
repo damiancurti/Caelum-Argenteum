@@ -1,6 +1,49 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.20** - 2026-10-26.
+Documentation version: **5.8.21** - 2026-10-26.
+
+## 5.8.21 - Attended camp cooking and fuel interruption (#411)
+
+Use an owned accessible campfire, choose Cook, then the learned meal recipe.
+Each batch has the same food ingredients, ten 100-g portions, contamination and
+60/30/90 world-minute duration already approved for beef/fish/puchero. No mineral
+coal is reserved or consumed: the existing 1.92 kg/hour fire consumes real wood.
+Nominal continuously attended fuel is therefore 1.92/0.96/2.88 kg respectively;
+extra idle or unattended burning still spends wood. Bread still requires an oven.
+Dexterity cannot shorten thermal cooking. Existing attended acceleration and
+calendar waiting use the same world clock and safety checks.
+
+The author approved these additional rules on 2026-10-26: cancellation keeps
+native ingredients and accumulated age, while already burned wood remains spent;
+puchero requires a mounted empty pot and takes its 500 mL from carried potable
+containers; beef/fish need no pot; the useful 2 kW cannot heat additional water
+while assigned to cooking. During food preparation, water already in a mounted
+pot only cools by the accepted environment model. The pot cannot be removed and
+the fire cannot be dismantled while the batch owns it. Cancellation or completion
+releases that ownership and restores ordinary water heating.
+
+Fuel interruption preserves the exact remaining cooking time. The owner may
+reopen the fire controls, add wood and resume through the approved one-minute
+ignition action. That minute does not advance the food; neither does an unlit
+fire or unattended burning. Existing ingredients continue ageing during pauses.
+Progress and ignition phase survive save/load. Going out of reach pauses work;
+map departure cancels the attended reservation under the existing travel rule,
+preserving food and extinguishing the fire with its remaining wood. The latest
+progress-preservation approval concerns fuel interruption, not off-map cooking.
+
+The cooking state adds a revision-1 camp discriminator, fire reference, map,
+credited burning seconds and relight phase. Older stove/oven tasks default to
+non-camp and keep the original revision and reservations. No map bytes, item
+identities, recipe knowledge or economy change. Keep the original save for
+rollback to its original package; no backward loading of newly saved camp tasks
+is promised. Native original-save forward loading and original-package rollback
+are part of the selected evidence.
+
+Heat is credited from the existing typed fire registry and shared fire stamp,
+not from a second fuel clock or global actor scan. Labels are refreshed at most
+once per visible second while their personal menu is open. Functional checks do
+not establish a new frame-presentation benchmark. This supersedes earlier notes
+that the camp-cooking adapter remained unimplemented.
 
 ## 5.8.20 - Mansion kitchen sink and wall cupboard (#410)
 

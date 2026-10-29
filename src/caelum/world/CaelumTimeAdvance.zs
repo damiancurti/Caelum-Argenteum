@@ -41,7 +41,7 @@ class CaelumTimeAdvanceState : Inventory
         bool proofing=skipping && CaelumProofingUI.Active(user) && counter.Batch!=null && counter.Batch.Occupied
             && CaelumProofing.Reachable(user,counter);
         bool crafting=user!=null && user.CraftingTaskActive
-            && ((user.CraftingMenuOpen && user.ActiveCraftingStationActor!=null) || CaelumCampTask.Attended(user) || CaelumHygieneTask.Attended(user) || CaelumBathTask.Attended(user) || CaelumCleaningTask.Attended(user));
+            && ((user.CraftingMenuOpen && user.ActiveCraftingStationActor!=null) || CaelumCampCooking.Attended(user) || CaelumCampTask.Attended(user) || CaelumHygieneTask.Attended(user) || CaelumBathTask.Attended(user) || CaelumCleaningTask.Attended(user));
         crafting=crafting || proofing;
         bool reading=CaelumRecipeSession.Working(user);
         String reason=CaelumRestSafety.BlockReason(user,CaelumCleaningTask.Timeless(user),crafting || reading,scanWorld);

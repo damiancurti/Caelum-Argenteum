@@ -6,8 +6,24 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.20.** Obtain and update the complete repository, validate
+**Current release: 5.8.21.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+## 5.8.21 - Attended camp cooking and fuel interruption (#411)
+
+Campfires now cook the learned roast beef, roast fish and puchero recipes.
+Food receives only actual attended burning time; the fire spends wood, not coal.
+Fuel exhaustion preserves progress. Refuel and relight for one world minute to
+resume the same batch. Cancellation keeps ingredients and their accumulated age,
+but does not refund burned wood. Puchero requires the empty mounted pot and
+500 mL potable water from carried containers. Additional pot water is not heated
+while the useful power is assigned to food.
+
+Focused native checks and live menu review are in assets/validation_5821.
+CA411-COOKING-01 and the earlier two #410 checks await author corroboration.
+This patch does not complete #411 or V5.8. Remaining furniture/placement,
+off-map simulation, transport, encounters and contamination work stay separate;
+#412 multiplayer corroboration remains deferred to V5.12.
 
 ## 5.8.20 - Mansion kitchen sink and wall cupboard (#410)
 

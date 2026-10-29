@@ -1,0 +1,120 @@
+{
+  "issue": 411,
+  "version": "5.8.21",
+  "runtime": "final21b",
+  "runtime_sha256": "e9eff993597a0e54de22ff52109b204356321305af7c73ba292de4f130212f17",
+  "source_matching_members": 16960,
+  "native_passes": 160,
+  "native_failures": 0,
+  "earlier_probe_differences": {
+    "camp01": [
+      "LANGUAGE",
+      "localization/index.json",
+      "localization/INDEX.md",
+      "caelum/crafting/CaelumCampCooking.zs",
+      "caelum/world/CaelumCampTent.zs",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "camp03": [
+      "LANGUAGE",
+      "localization/index.json",
+      "localization/INDEX.md",
+      "caelum/crafting/CaelumCampCooking.zs",
+      "caelum/world/CaelumCampTent.zs",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "final21": [
+      "LANGUAGE",
+      "localization/index.json",
+      "localization/INDEX.md",
+      "caelum/crafting/CaelumCampCooking.zs",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ]
+  },
+  "line_ending_only_differences": {
+    "camp01": [
+      "caelum/crafting/CaelumCampCooking.zs"
+    ],
+    "camp03": [
+      "caelum/crafting/CaelumCampCooking.zs"
+    ],
+    "final21": [
+      "caelum/crafting/CaelumCampCooking.zs",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ]
+  },
+  "runs": [
+    {
+      "label": "camp-final-core",
+      "executed_passes": 43,
+      "runtime_sha256": "f1b732d59d9a2b2aa842a016402a1e9af3bb12d4ffec9cd02d9ee2796cb60415"
+    },
+    {
+      "label": "camp-final-hub",
+      "executed_passes": 4,
+      "runtime_sha256": "f1b732d59d9a2b2aa842a016402a1e9af3bb12d4ffec9cd02d9ee2796cb60415"
+    },
+    {
+      "label": "camp-final-seed",
+      "executed_passes": 7,
+      "runtime_sha256": "f1b732d59d9a2b2aa842a016402a1e9af3bb12d4ffec9cd02d9ee2796cb60415"
+    },
+    {
+      "label": "camp-final-resume",
+      "executed_passes": 4,
+      "runtime_sha256": "f1b732d59d9a2b2aa842a016402a1e9af3bb12d4ffec9cd02d9ee2796cb60415"
+    },
+    {
+      "label": "camp-interrupt01",
+      "executed_passes": 9,
+      "runtime_sha256": "645f80ef2b8e82b764f11f3232c673afb53a658355cc6561791027b29690fdaa"
+    },
+    {
+      "label": "camp-guards01",
+      "executed_passes": 15,
+      "runtime_sha256": "645f80ef2b8e82b764f11f3232c673afb53a658355cc6561791027b29690fdaa"
+    },
+    {
+      "label": "camp-fast01",
+      "executed_passes": 7,
+      "runtime_sha256": "645f80ef2b8e82b764f11f3232c673afb53a658355cc6561791027b29690fdaa"
+    },
+    {
+      "label": "camp-input04",
+      "executed_passes": 3,
+      "runtime_sha256": "d353169cbdfb105cd65a755d52dbabbf07f4566707a2cb3aa2327ef26d38ad0b"
+    },
+    {
+      "label": "camp-stove-seed20",
+      "executed_passes": 1,
+      "runtime_sha256": "08bd68e573b5384b3225e005f7c08f6a063386482db1d41443d7420ae5999ea4"
+    },
+    {
+      "label": "camp-stove-old03",
+      "executed_passes": 4,
+      "runtime_sha256": "d353169cbdfb105cd65a755d52dbabbf07f4566707a2cb3aa2327ef26d38ad0b"
+    },
+    {
+      "label": "camp-stove-rollback20",
+      "executed_passes": 4,
+      "runtime_sha256": "08bd68e573b5384b3225e005f7c08f6a063386482db1d41443d7420ae5999ea4"
+    },
+    {
+      "label": "camp-stove-core03",
+      "executed_passes": 55,
+      "runtime_sha256": "d353169cbdfb105cd65a755d52dbabbf07f4566707a2cb3aa2327ef26d38ad0b"
+    },
+    {
+      "label": "camp-finalb-hub",
+      "executed_passes": 4,
+      "runtime_sha256": "e9eff993597a0e54de22ff52109b204356321305af7c73ba292de4f130212f17"
+    }
+  ],
+  "author_check": "CA411-COOKING-01",
+  "author_acceptance": "pending",
+  "static_errors": []
+}

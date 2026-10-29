@@ -222,11 +222,24 @@ class CaelumLiveMenuControls : Object ui
         }
         else if(context==host.CTX_CAMP_FIRE)
         {
-            Row(206);Button("CA_CAMP_FIRE_MINUS",InputEvent.Key_LeftArrow,0,"",138);Button("CA_CAMP_FIRE_PLUS",InputEvent.Key_RightArrow,0,"",138);
-            Button("CA_CAMP_FIRE_MINUS_KG",InputEvent.Key_PgDn,0,"",138);Button("CA_CAMP_FIRE_PLUS_KG",InputEvent.Key_PgUp,0,"",138);
-            Row(246);Button("CA_CAMP_FIRE_MAX",0,109,"m",180);Button("CA_CAMP_FIRE_LOAD",0,114,"r",180);Button("CA_CAMP_FIRE_RECOVER",0,118,"v",180);
-            Row(286);Button("CA_CAMP_FIRE_TOGGLE",InputEvent.Key_Enter,0,"",276);Button("CA_CAMP_FIRE_REMOVE",0,100,"d",276);
-            Row(326);Button("CA_CAMP_FIRE_POT",0,112,"p",180);Button("CA_CAMP_FIRE_NEXT_POT",0,110,"n",180);Button("CA_UI_BACK",InputEvent.Key_Tab,0,"",180);
+            let camp=CaelumCampFireSession.Find(user);
+            if(camp!=null && camp.CookingPage)
+            {
+                if(CaelumCampCooking.Active(user))
+                {Row(286);Button("CA_CAMP_COOK_RESUME",InputEvent.Key_Enter,0,"",560);Row(326);Button("CA_CAMP_COOK_CANCEL",0,120,"x",276);Button("CA_CAMP_COOK_FIRE",0,98,"b",276);}
+                else
+                {Row(112);Button("CA_MEAL_ROAST_BEEF",0,49,"1",560);Row(166);Button("CA_MEAL_ROAST_FISH",0,50,"2",560);
+                    Row(220);Button("CA_MEAL_PUCHERO",0,51,"3",560);Row(326);Button("CA_CAMP_COOK_FIRE",0,98,"b",560);}
+            }
+            else
+            {
+                Row(190);Button("CA_CAMP_FIRE_MINUS",InputEvent.Key_LeftArrow,0,"",138);Button("CA_CAMP_FIRE_PLUS",InputEvent.Key_RightArrow,0,"",138);
+                Button("CA_CAMP_FIRE_MINUS_KG",InputEvent.Key_PgDn,0,"",138);Button("CA_CAMP_FIRE_PLUS_KG",InputEvent.Key_PgUp,0,"",138);
+                Row(222);Button("CA_CAMP_FIRE_MAX",0,109,"m",180);Button("CA_CAMP_FIRE_LOAD",0,114,"r",180);Button("CA_CAMP_FIRE_RECOVER",0,118,"v",180);
+                Row(254);Button("CA_CAMP_FIRE_TOGGLE",InputEvent.Key_Enter,0,"",276);Button("CA_CAMP_FIRE_REMOVE",0,100,"d",276);
+                Row(286);Button("CA_CAMP_COOK_MENU",0,99,"c",560,camp!=null && camp.Fire!=null);
+                Row(318);Button("CA_CAMP_FIRE_POT",0,112,"p",180);Button("CA_CAMP_FIRE_NEXT_POT",0,110,"n",180);Button("CA_UI_BACK",InputEvent.Key_Tab,0,"",180);
+            }
         }
         else if(context==host.CTX_CAMP_TENT)
         {

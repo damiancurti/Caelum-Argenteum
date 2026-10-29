@@ -4,6 +4,30 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-177 - Release map-owned reservations before the hub snapshot
+Status/evidence: RESOLVED-VERIFIED (native engine)
+First recorded / last checked: 2026-10-26 / 2026-10-26
+Issue / PR: #411; camp-cooking delivery
+Affected baseline: 7b41e3fc plus5.8.21 working tree; validation_5821
+Environment: GZDoom4.14.2, Windows11, private two-map hub
+Scope: CaelumCampWorld.WorldUnloaded and CaelumCampCooking fire reservation
+
+The player cancelled an attended camp recipe after arriving in another map,
+but the original hub snapshot still retained Fire.Busy. On return, the fire
+was correctly extinguished and fuel preserved, yet its reservation blocked use.
+The native failed probe printed busy=1,lit=0,fuel=9968,expected=9968.
+
+Cancel matching camp cooking while the departing map's typed fire registry is
+still available in WorldUnloaded, before its snapshot is retained. Then apply
+the existing extinguish rule. The later player-side map guard remains defensive,
+but cannot replace releasing a reference owned by the departing map.
+
+Regression: camp-hub06 and final hub checks retain unburned wood, free the fire,
+keep original ingredients and create no unattended meals. No global actor scan
+is added. The earlier private camp-hub04/05 logs preserve the failure.
+Limitations: this lesson covers camp recipe ownership, not all cross-map tasks;
+author CA411-COOKING-01 remains pending.
+
 ## CA-KP-176 - Elevated storage needs vertical collision and usable reach
 Status/evidence: RESOLVED-VERIFIED (native engine)
 First recorded / last checked: 2026-10-26 / 2026-10-26

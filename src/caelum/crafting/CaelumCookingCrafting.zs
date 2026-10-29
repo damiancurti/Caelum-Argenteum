@@ -2,6 +2,12 @@
 // nativo hasta terminar, de modo que cancelar no los recrea ni rejuvenece.
 class CaelumCookingTaskState : CaelumChemistryTaskState
 {
+    // Campos aditivos: las tareas anteriores siguen usando horno/cocina.
+    int CampRevision;
+    bool Camp;
+    CaelumCampFire Fire;
+    String OriginMap;
+    double HeatSeconds,IgnitionSeconds;
     static clearscope CaelumCookingTaskState FindCooking(CaelumPlayer user)
     {return user==null?null:CaelumCookingTaskState(user.FindInventory('CaelumCookingTaskState'));}
 }
@@ -21,6 +27,7 @@ class CaelumCookingCrafting : Object play
     static void Clear(CaelumPlayer user)
     {
         let task=CaelumCookingTaskState.FindCooking(user);if(task==null)return;
+        CaelumCampCooking.Clear(user,task);
         task.Containers.Clear();task.WaterLiters.Clear();task.Recipe=-1;task.Batches=0;task.OutputUnits=0;
     }
     static CaelumConsumableItem Existing(CaelumPlayer user,int recipe)
@@ -34,6 +41,7 @@ class CaelumCookingCrafting : Object play
         for(int slot=0;CaelumCookingData.InputMaterial(task.Recipe,slot)>=0;slot++)
         {
             int id=CaelumCookingData.InputMaterial(task.Recipe,slot);
+            if(task.Camp && id==CaelumConstants.MATERIAL_COAL)continue;
             let input=user.FindNativeSpecialItem(CaelumConstants.EQUIPMENT_KIND_MATERIAL,id,1);
             if(input==null)return false;
             double used=CaelumMaterialRules.UnitWeight(id)*CaelumCookingData.InputGrams(task.Recipe,slot);
@@ -53,23 +61,33 @@ class CaelumCookingCrafting : Object play
             || user.Distance3D(station)>CaelumConstants.CRAFTING_ACTIVE_STATION_DISTANCE)return false;
         station.CollectCraftingNetwork(user,user.BeginCraftingNetworkScan());
         if(CaelumCookingData.MissingStation(user.CraftingNetworkCapabilities,recipe)!=CaelumConstants.CRAFTING_STATION_NONE)return false;
-        user.ClearCraftingTaskData();
-        let task=CaelumCookingTaskState.FindCooking(user);
-        if(task==null)task=CaelumCookingTaskState(user.GiveInventoryType('CaelumCookingTaskState'));
+        let task=Reserve(user,recipe);
         if(task==null)return false;
-        task.Revision=CaelumCookingData.REVISION;task.Recipe=recipe;task.Batches=1;
-        task.OutputUnits=CaelumMealData.BATCH_PORTIONS;
-        bool valid=true;
-        for(int slot=0;CaelumCookingData.InputMaterial(recipe,slot)>=0;slot++)
-            if(!user.AddCraftingTaskReservation(CaelumCookingData.InputMaterial(recipe,slot),1,
-                CaelumCookingData.InputGrams(recipe,slot)))valid=false;
-        if(!valid || !CaelumChemistryCrafting.CaptureWater(user,task,CaelumCookingData.WaterLiters(recipe))
-            || !user.ValidateCraftingTaskReservations() || !Capacity(user,task,Existing(user,recipe)))
-        {user.ClearCraftingTaskData();return false;}
         user.StartPreparedCraftingTask(CaelumConstants.CRAFTING_TASK_COOKING,CaelumCookingData.Seconds(recipe));
         // Sólo la instalación necesaria, no toda la red que estaba conectada.
         user.CraftingTaskNetworkCapabilities=CaelumCraftingRules.GetStationCapabilityBit(CaelumCookingData.Station(recipe));
         user.PersistCharacterState();return true;
+    }
+    static CaelumCookingTaskState Reserve(CaelumPlayer user,int recipe,CaelumCampFire fire=null)
+    {
+        user.ClearCraftingTaskData();
+        let task=CaelumCookingTaskState.FindCooking(user);
+        if(task==null)task=CaelumCookingTaskState(user.GiveInventoryType('CaelumCookingTaskState'));
+        if(task==null)return null;
+        task.Revision=CaelumCookingData.REVISION;task.Recipe=recipe;task.Batches=1;
+        task.OutputUnits=CaelumMealData.BATCH_PORTIONS;
+        task.Camp=fire!=null;task.Fire=fire;task.CampRevision=CaelumCampCooking.REVISION;task.OriginMap=level.MapName;
+        bool valid=true;
+        for(int slot=0;CaelumCookingData.InputMaterial(recipe,slot)>=0;slot++)
+        {
+            if(task.Camp && CaelumCookingData.InputMaterial(recipe,slot)==CaelumConstants.MATERIAL_COAL)continue;
+            if(!user.AddCraftingTaskReservation(CaelumCookingData.InputMaterial(recipe,slot),1,
+                CaelumCookingData.InputGrams(recipe,slot)))valid=false;
+        }
+        if(!valid || !CaelumChemistryCrafting.CaptureWater(user,task,CaelumCookingData.WaterLiters(recipe))
+            || !user.ValidateCraftingTaskReservations() || !Capacity(user,task,Existing(user,recipe)))
+        {user.ClearCraftingTaskData();return null;}
+        return task;
     }
     static bool FoodContamination(CaelumPlayer user,int recipe,out double contamination)
     {
@@ -101,6 +119,8 @@ class CaelumCookingCrafting : Object play
         if(!Active(user) || task==null || task.Revision!=CaelumCookingData.REVISION
             || task.Recipe!=user.CraftingTaskRecipeIndex || !CaelumMealData.IsRecipe(task.Recipe)
             || task.OutputUnits!=CaelumMealData.BATCH_PORTIONS || !user.ValidateCraftingTaskReservations())return false;
+        if(task.Camp && (!CaelumCampCooking.Attended(user,false) || task.IgnitionSeconds>0
+            || user.CraftingTaskRemainingSeconds>0.0000001))return false;
         for(int i=0;i<task.Containers.Size();i++)
         {
             let water=task.Containers[i];

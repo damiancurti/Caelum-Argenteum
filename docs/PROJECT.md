@@ -1,6 +1,22 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.20** - 2026-10-26.
+Documentation version: **5.8.21** - 2026-10-26.
+
+## 5.8.21 - Attended camp cooking and fuel interruption (#411)
+
+Campfires now cook the learned roast beef, roast fish and puchero recipes.
+Food receives only actual attended burning time; the fire spends wood, not coal.
+Fuel exhaustion preserves progress. Refuel and relight for one world minute to
+resume the same batch. Cancellation keeps ingredients and their accumulated age,
+but does not refund burned wood. Puchero requires the empty mounted pot and
+500 mL potable water from carried containers. Additional pot water is not heated
+while the useful power is assigned to food.
+
+Focused native checks and live menu review are in assets/validation_5821.
+CA411-COOKING-01 and the earlier two #410 checks await author corroboration.
+This patch does not complete #411 or V5.8. Remaining furniture/placement,
+off-map simulation, transport, encounters and contamination work stay separate;
+#412 multiplayer corroboration remains deferred to V5.12.
 
 ## 5.8.20 - Mansion kitchen sink and wall cupboard (#410)
 

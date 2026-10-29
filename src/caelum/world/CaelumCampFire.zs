@@ -50,7 +50,10 @@ class CaelumCampFire : CaelumThermalFireSource
         double elapsed=ClockReady?Max(0.0,now-Stamp):0;Stamp=now;ClockReady=true;
         if(Fuel==null)return;
         double burning=Fuel.Advance(elapsed);
-        AdvancePot(burning,elapsed-burning);RefreshVisual();
+        if(CaelumCampCooking.HoldsHeat(self))
+        {CaelumCampCooking.CreditHeat(self,burning);AdvancePot(0,elapsed);}
+        else AdvancePot(burning,elapsed-burning);
+        RefreshVisual();
     }
     void AdvancePot(double burning,double cooling)
     {
@@ -105,7 +108,7 @@ class CaelumCampFire : CaelumThermalFireSource
     }
     bool LoadWood(CaelumPlayer user,int requested)
     {
-        if(!CanManage(user) || Busy!=null || requested<=0)return false;
+        if(!CanManage(user) || (Busy!=null && !CaelumCampCooking.Owns(user,self)) || requested<=0)return false;
         Advance();double room=Max(0.0,CaelumCampData.FIRE_CAPACITY_G-Fuel.FuelGrams);
         let credit=CaelumCampFuelCredit.Get(user);double fraction=credit==null?0:Min(room,credit.Grams);
         int whole=Min(requested,Min(int(Floor(room-fraction)),user.CountCraftingMaterial(CaelumConstants.MATERIAL_WOOD,1)));
