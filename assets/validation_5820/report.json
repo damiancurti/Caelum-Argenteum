@@ -1,0 +1,63 @@
+{
+  "issue": 410,
+  "version": "5.8.20",
+  "runtime_sha256": "8dd6262960f04f9d87612b8b2f4b7dd896be3a144b9f159c4f386e523c8c68e6",
+  "source_matching_members": 16959,
+  "native_passes": 129,
+  "native_failures": 0,
+  "runs": [
+    {
+      "label": "fixtures-final-core",
+      "executed_passes": 36,
+      "runtime_sha256": "08bd68e573b5384b3225e005f7c08f6a063386482db1d41443d7420ae5999ea4"
+    },
+    {
+      "label": "fixtures-final-mansion-c",
+      "executed_passes": 8,
+      "runtime_sha256": "08bd68e573b5384b3225e005f7c08f6a063386482db1d41443d7420ae5999ea4"
+    },
+    {
+      "label": "fixtures-resume05",
+      "executed_passes": 5,
+      "runtime_sha256": "f8714d05b158d6eee26c5ceeee47118e8d25e3cc57948ac2d96394b192224d05"
+    },
+    {
+      "label": "fixtures-hub05",
+      "executed_passes": 41,
+      "runtime_sha256": "f8714d05b158d6eee26c5ceeee47118e8d25e3cc57948ac2d96394b192224d05"
+    },
+    {
+      "label": "fixtures-house05",
+      "executed_passes": 23,
+      "runtime_sha256": "f8714d05b158d6eee26c5ceeee47118e8d25e3cc57948ac2d96394b192224d05"
+    },
+    {
+      "label": "fixtures-oldsave05",
+      "executed_passes": 7,
+      "runtime_sha256": "f8714d05b158d6eee26c5ceeee47118e8d25e3cc57948ac2d96394b192224d05"
+    },
+    {
+      "label": "fixtures-original19",
+      "executed_passes": 7,
+      "runtime_sha256": "ec91cf0029723430ab93e68d349808e5252646663e53d565aab50f184d4d9b77"
+    },
+    {
+      "label": "fixtures-locale20b",
+      "executed_passes": 2,
+      "runtime_sha256": "8dd6262960f04f9d87612b8b2f4b7dd896be3a144b9f159c4f386e523c8c68e6"
+    }
+  ],
+  "earlier_probe_differences": [
+    "LANGUAGE",
+    "localization/index.json",
+    "localization/INDEX.md",
+    "caelum/data/CaelumKitchenFixtureData.zs",
+    "caelum/data/kitchen_fixtures.textures",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs",
+    "models/caelum/props/kitchen_fixtures/locked.obj"
+  ],
+  "author_check": "CA410-FIXTURES-01",
+  "author_acceptance": "pending",
+  "static_errors": []
+}

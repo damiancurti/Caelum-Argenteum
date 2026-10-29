@@ -6,7 +6,7 @@ class CaelumInventoryService : Object play
     static bool CarryStorageChest(CaelumPlayer user,CaelumStashChest chest)
     {
         if(!CaelumPlayerAuthority.CanMutate(user) || chest==null
-            || !chest.CanReachStorage(user) || chest.Cargo!=null)return false;
+            || !chest.CanReachStorage(user) || chest.Cargo!=null || !chest.CanCarryAsStorage())return false;
         chest.EnsureStorage();user.RefreshCarriedInventorySummary();
         let maze=CaelumMazeChest(chest);
         if(maze!=null)maze.UsesMaterialStoragePolicy();

@@ -4,6 +4,30 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-176 - Elevated storage needs vertical collision and usable reach
+Status/evidence: RESOLVED-VERIFIED (native engine)
+First recorded / last checked: 2026-10-26 / 2026-10-26
+Issue / PR: #410; kitchen-fixture delivery
+Affected baseline: b68f93ae plus5.8.20 working tree; validation_5820
+Environment: GZDoom4.14.2, Windows11, Vulkan1280x720, unchanged mansion geometry
+Scope: CaelumKitchenCupboard; native storage reach and installation
+
+An overhead cupboard inherited the ground chest's collision flags and foot-origin
+distance check. Native placement rejected the counter below despite separate
+vertical extents. CANPASS fixed that placement, but the ordinary3D distance still
+left almost no usable approach in front of the counter. Only the elevated
+subclass now measures existing reach from the user's eye to the cupboard centre,
+preserving line of sight, authority and native lock checks. Ground chests keep
+their original behavior. Do not remove collision or enlarge global UseRange.
+
+Regression: validation_5820 mansion scenario tests both fixtures in real geometry,
+clear standing positions, inventory source lookup and overhead native storage
+access. Core checks cover limits, locks and ordinary chest carrying; save/hub
+checks preserve contents. Earlier failed probes remain in the private build
+directory. Author appearance/function check CA410-FIXTURES-01 is pending.
+Limitations: this is not a general rotated furniture collision solver or a
+rendering performance benchmark.
+
 ## CA-KP-175 - A carried Inventory sprite is not its visible Spawn artwork
 Status/evidence: RESOLVED-VERIFIED (native engine and visual capture)
 First recorded / last checked: 2026-10-26 / 2026-10-26

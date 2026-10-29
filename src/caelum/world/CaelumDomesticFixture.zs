@@ -15,7 +15,7 @@ class CaelumDomesticFixture : Actor abstract
     {
         return Installed && CaelumPlayerAuthority.CanMutate(user) && user.health>0 && !user.isFrozen()
             && (Occupant==null || Occupant==user)
-            && House>=0 && House==CaelumHouseHubData.HouseForMap(level.MapName)
+            && CaelumDomesticWater.InCurrentMap(House)
             && user.Distance3D(self)<=user.UseRange+Radius && user.CheckSight(self)
             && CaelumPropertyRules.ResidenceAllowed(user);
     }

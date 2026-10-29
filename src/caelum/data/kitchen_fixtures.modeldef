@@ -1,0 +1,4 @@
+Model CaelumKitchenCupboardClosedVisual { Path "models/caelum/props/kitchen_fixtures" Model 0 "closed.obj" Scale 1 1 1 AngleOffset -90 CorrectPixelStretch DontCullBackFaces FrameIndex CKCB A 0 0 }
+Model CaelumKitchenCupboardOpenVisual { Path "models/caelum/props/kitchen_fixtures" Model 0 "open.obj" Scale 1 1 1 AngleOffset -90 CorrectPixelStretch DontCullBackFaces FrameIndex CKCB B 0 0 }
+Model CaelumKitchenCupboardLockedVisual { Path "models/caelum/props/kitchen_fixtures" Model 0 "locked.obj" Scale 1 1 1 AngleOffset -90 CorrectPixelStretch DontCullBackFaces FrameIndex CKCB C 0 0 }
+Model CaelumKitchenSink { Path "models/caelum/props/bathrooms" Model 0 "sink.obj" Scale 1 1 1 AngleOffset -90 CorrectPixelStretch DontCullBackFaces FrameIndex CDSK A 0 0 }

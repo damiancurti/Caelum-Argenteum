@@ -1,6 +1,34 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.19** - 2026-10-26.
+Documentation version: **5.8.20** - 2026-10-26.
+
+## 5.8.20 - Mansion kitchen sink and wall cupboard (#410)
+
+An original painted cupboard source was generated with built-in imagegen
+under SPRITE_ART_DIRECTION; exact prompt, full source, museum references and
+delegated construction assumptions are in assets/art_source/kitchen_fixtures.
+The deterministic generator supplies closed/open/locked original OBJ meshes,
+an alpha-cut painted 128px inventory/fallback sprite, physical fallback scale,
+registrations and placement data. It reuses owned wood/hardware textures.
+The sink reuses the accepted owned domestic sink model and painted fallback.
+
+[Szczecin hanging food cupboard MNS/E/4432,1880-1910](https://inmuseums.pl/all-objects/5mQHgw43t52ec7lBBT0v_hanging-cupboard-)
+supports period wall-hung wooden food storage; our two solid doors, geometry
+and dimensions are an original interpretation, not a replica or a claimed
+exact1889 museum object. The accepted sink retains the
+[Burges washstand,1880](https://api.vam.ac.uk/v2/museumobject/O8362)
+construction reference. No museum image pixels are copied.
+
+Cupboard stock calculation: 20mm boards, 12mm back, 18mm shelf, algarrobo at
+760 kg/m3, plus 0.3kg nominal hinge/knob/plate hardware. Sum of generated stock
+box volumes gives 62.333kg wood plus hardware =62.633kg. Small trim overlaps
+remain nominal stock allowances. An installed padlock keeps its own item mass;
+the locked mesh's extra padlock is only its visible representation. Recipes
+and portable acquisition are separate unfinished furniture scope.
+
+Seven repeated generated outputs match byte-for-byte; all176 existing map and
+bathroom files checked remain unchanged. Native captures and hashes are in
+assets/validation_5820. Technical review is separate from pending author acceptance.
 
 ## 5.8.19 - Kitchen process artwork (#410, author review pending)
 

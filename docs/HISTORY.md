@@ -1,6 +1,38 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.19** - 2026-10-26.
+Documentation version: **5.8.20** - 2026-10-26.
+
+## 5.8.20 - Mansion kitchen sink and wall cupboard (#410)
+
+Delivery correction: the two fixture names now use the established `es` language
+section. Native Spanish lookup is checked separately; gameplay and models are
+unchanged. This is the same unaccepted5.8.20 patch, not a new release.
+
+Implemented the approved fixed kitchen sink and overhead storage in a focused
+#410 branch, with art and runtime commits kept separate. The finite mansion
+source persists independently from numbered city households. Cupboard storage,
+food lots, padlocks and keys reuse native authoritative items. Delegated physical
+calculations and source provenance are documented; no WAD geometry changes.
+
+Selected evidence: assets/validation_5820/RESULTS.md and report.json. The native
+checks cover exact/partial filling, source quality, elapsed refill, ten stacks,
+100kg, real food transfers, locking, fixed/portable distinction, save/hub state,
+actual mansion approaches, existing city bathroom behavior, and original-save
+migration/rollback. Static validation and repeat exports pass. Native runs are
+unpaused at5% audio; these are functional checks, not a frame-presentation benchmark.
+
+Resolved development findings: the initial fixture assumed a2-L large canteen
+instead of its actual5-L capacity; an ordinary chest needed initialization
+before inspecting its tier; the100kg capacity-test payload had to be removed
+before testing normal character carry limits. The first mansion probe lacked
+a null guard. Production required CANPASS for the elevated cupboard above the
+counter and eye-based interaction reach. Native UI compilation required the
+read-only carry capability to be clearscope in its base declaration, inherited
+by the override. Earlier failed logs remain private evidence, not accepted runs.
+
+CA410-FIXTURES-01(origin5.8.20/#410) and inherited CA410-COOKING-01 remain pending.
+The author has returned; no acceptance, issue closure or merge is inferred.
+Other V5.8 work remains open; #412 multiplayer corroboration is deferred toV5.12.
 
 ## 5.8.19 - Attended cooking and shared bread proofing (#410)
 

@@ -34,13 +34,20 @@ class CaelumDomesticWaterState : Object play
 
 class CaelumDomesticWater : Object play
 {
+    static bool InCurrentMap(int house)
+    {return house==CaelumDomesticWaterData.MANSION?level.MapName=="MAP01":house>=0 && house==CaelumHouseHubData.HouseForMap(level.MapName);}
     static CaelumDomesticWaterState Get(int house)
     {
-        if(house<0 || house>=CaelumCityData.HOUSE_COUNT)return null;
+        if(house!=CaelumDomesticWaterData.MANSION && (house<0 || house>=CaelumCityData.HOUSE_COUNT))return null;
         let roster=CaelumHouseResidents.Get(true);if(roster==null)return null;
         let user=CaelumPlayer(roster.Owner);
         if(!CaelumPlayerAuthority.CanMutate(user))return null;
         let clock=CaelumWorldClock.Get(user,true);if(clock==null)return null;
+        if(house==CaelumDomesticWaterData.MANSION)
+        {
+            if(roster.MansionWater==null)roster.MansionWater=new('CaelumDomesticWaterState');
+            roster.MansionWater.Sync(CaelumConnectedWaterMap.ClockStamp(clock));return roster.MansionWater;
+        }
         while(roster.HouseWater.Size()<=house)roster.HouseWater.Push(null);
         if(roster.HouseWater[house]==null)roster.HouseWater[house]=new('CaelumDomesticWaterState');
         let reserve=roster.HouseWater[house];

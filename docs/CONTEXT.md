@@ -1,12 +1,12 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.8.19** - 2026-10-26.
+Documentation version: **5.8.20** - 2026-10-26.
 
-**5.8.19/#410:**cooking/proofing/dough/mansion;validation_5819;CA410-COOKING-01pending;furniture-WIP. **5.8.18:**CA410-MEALS-01accepted2026-10-26;validation_5818.
+**5.8.20/#410:**sink/cupboard;validation_5820;CA410-FIXTURES-01pending. **5.8.19:**cooking/proofing;validation_5819;CA410-COOKING-01pending. **5.8.18:**CA410-MEALS-01accepted2026-10-26;furniture-WIP.
 
-**5.8.17/#410:**5ingredients/grams/raw-eating;174PASS;validation_5817;CA410-INGREDIENTS-01accepted2026-10-26. Cooking/dishes/furniture-WIP.
+**5.8.17/#410:**ingredients;174PASS;validation_5817;CA410-INGREDIENTS-01accepted2026-10-26.
 
-**5.8.16/#502:**232PASS;CA502-SCENERY-01accepted2026-10-26;validation_5816.
+**5.8.16/#502:**232PASS;CA502-SCENERY-01accepted2026-10-26.
 
 **5.8.15/#412:**outside-Use/rest/exit;73PASS;validation_5815;accepted2026-10-26. Co-op:V5.12. #410lots/#411trivet/#502checks:accepted;PR508/507/506.
 
