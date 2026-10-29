@@ -14,6 +14,15 @@ or author acceptance; scheduled starts, theft and remaining combat/performance
 coverage are still tracked in TASKS. The author is away; manual checks remain
 grouped for the completed V5.8 handoff, and none were removed.
 
+The second checkpoint extends the same work to 116 distinct native assertions
+on the integrated03 source package. It adds native racial-breath parity,
+fractional return boundaries, explicit withdrawal, and traveling resident
+identity/death. The restored controller is explicitly assigned through
+`self.Encounter`; a case-insensitive parameter previously left that field null
+despite passing isolated arithmetic cases. Tests now assert actual controller
+ownership and use the household registry for traveling bodies. The original
+87-check checkpoint remains historical evidence, not additional unique tests.
+
 Fixture corrections preserved in the private logs: cannon parity must use a
 projectile after its native PostBeginPlay sets its calibre; a manual Life edit
 after capturing absence must also update that saved Life, exactly as the

@@ -454,6 +454,16 @@ Use distinct candidate/civil-date identifiers and test the actual scheduler,
 not only direct arithmetic calls. Household targets are initialized after the
 spawned fixtures receive their native initialization/linking.
 
+Unreleased #415 checkpoint (2026-10-29), `assets/validation_5851`: a parameter
+`encounter` likewise shadowed `Encounter`, leaving the actual controller null
+while isolated damage arithmetic still passed. Qualify `self.Encounter` and
+assert controller/roster identity in native save and travel tests. Capture
+deployed household combatants before PreTravelled suspends them; detach their
+map-local combat reference during travel and rebind the same body through its
+household ID on return. Reapply native attack timing only after Resume has
+finished its clock adjustment and collision placement. A dead traveling body
+must retain its post-death collision flags, never the saved living flags.
+
 Parked traveling merchants are not found by the normal actor iterator. Restore
 the explicit saved registry after Travelled, then perform one typed legacy
 adoption census on MAP03. Preserve the actual body, inventory, identity and

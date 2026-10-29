@@ -39,7 +39,7 @@ pack(W / 'checks.pk3', {
     'maps/MAP01.wad': arena,
     'maps/CABS415B.wad': arena,
 })
-for case in ['math', 'rounds', 'physiology', 'potions']:
+for case in ['math', 'rounds', 'physiology', 'potions', 'boundaries', 'breath']:
     (W / (case + '.cfg')).write_text(f'wait 105; netevent ca415r_prepare; wait 3; netevent ca415r_{case}; wait 10; quit\n')
 print('Prepared private fixtures')
 (W/'machines.cfg').write_text('wait 105; netevent ca415r_machineprepare; wait 3; netevent ca415r_machines; wait 10; quit\n')
@@ -49,3 +49,5 @@ print('Prepared private fixtures')
 (W/'saved.cfg').write_text('wait 70; netevent ca415r_saved; wait 5; quit\n')
 
 (W/'hub.cfg').write_text('wait 105; netevent ca415r_prepare; wait 3; netevent ca415r_persistence; netevent ca415r_away; wait 35; netevent ca415r_home; wait 35; netevent ca415r_hub; wait 5; quit\n')
+(W/'resident.cfg').write_text('wait 105; netevent ca415r_prepare; wait 3; netevent ca415r_residentsetup; netevent ca415r_away; wait 35; netevent ca415r_home; wait 35; netevent ca415r_residenthome; wait 5; quit\n')
+(W/'residentdeath.cfg').write_text('wait 105; netevent ca415r_prepare; wait 3; netevent ca415r_residentweak; netevent ca415r_away; wait 35; netevent ca415r_home; wait 35; netevent ca415r_residentdeath; wait 5; quit\n')

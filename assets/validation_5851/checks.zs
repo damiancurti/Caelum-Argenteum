@@ -98,7 +98,7 @@ class CA415RoundChecks : EventHandler
         Check(battle.Rounds==1,"one explicit round accounted once");
         Console.Printf("CA415R DETAIL firstShots=%d secondShots=%d life=%d/%d",first.Shots,second.Shots,soldier.health,target.health);
         soldier.health=soldier.CombatMaximumHealth=1;target.health=target.CombatMaximumHealth=1;
-        first.Remaining=second.Remaining=0;first.Preparing=second.Preparing=false;
+        first.Remaining=second.Remaining=0;first.Preparing=second.Preparing=true;
         first.Recovering=second.Recovering=false;
         soldier.CurrentCombatAir=soldier.MaximumCombatAir;target.CurrentCombatAnima=target.MaximumCombatAnima;
         soldier.CombatLucidityPhysicalStunRemaining=target.CombatLucidityPhysicalStunRemaining=0;
@@ -282,6 +282,7 @@ class CA415RoundChecks : EventHandler
         int rounds=battle.Rounds,shots=soldier.Carbine.ShotCount,life=target.health;
         battle.SyncTo(start+1);Check(battle.Rounds==rounds && soldier.Carbine.ShotCount==shots && target.health==life,"repeated timestamp is idempotent");
         Check(battle.Rows.Size()==2 && soldier.AbsentCombatant.Battle==battle && target.AbsentCombatant.Battle==battle,"actual roster owns one persistent row per body");
+        Check(battle.Encounter==encounter,"capture binds the actual encounter controller");
         target.SetStateLabel('Missile');
         let row=target.AbsentCombatant;row.Capture();
         Check(row.Preparing && row.Attack.Kind==CaelumAbsentAttack.MAGIC,"capture retains native spell preparation");
@@ -290,6 +291,82 @@ class CA415RoundChecks : EventHandler
         Check(target.CurState==target.FindState('AbsentMagicPrepare') && target.tics==ticks,"restore does not restart or repeat spell preparation");
         encounter.ChangeTid(915051);soldier.ChangeTid(915052);target.ChangeTid(915053);
         Console.Printf("CA415R SAVE rounds=%d shots=%d life=%d",battle.Rounds,soldier.Carbine.ShotCount,target.health);
+    }
+    void BreathChecks(CaelumPlayer user)
+    {
+        soldier.SetOrigin((208,128,0),false);target.SetOrigin((128,128,0),false);
+        soldier.health=soldier.CombatMaximumHealth=target.health=target.CombatMaximumHealth=1000000;
+        soldier.bFriendly=true;target.bFriendly=false;target.Angle=0;target.target=soldier;
+        target.CaelumDiagnosticPassiveAI=false;target.CaelumMassAIScheduleActive=false;
+        target.RecoveryPhase=0;target.CurrentCombatAnima=target.MaximumCombatAnima=10000;
+        let encounter=CA415RoundEncounter(Actor.Spawn('CA415RoundEncounter',(512,512,0),NO_REPLACE));
+        encounter.SiegeStarted=true;encounter.SetupRevision=1;
+        encounter.Defenders.Push(soldier);encounter.RegisterAttacker(target);
+        let battle=new('CaelumAbsentBattle');encounter.AbsentBattle=battle;battle.Capture(encounter,user);
+        let source=target.AbsentCombatant;let recipient=soldier.AbsentCombatant;
+        source.Opponent=recipient;source.Preparing=false;source.Remaining=0;
+        target.ElementalStatus=new('CaelumElementalStatus');soldier.ElementalStatus=new('CaelumElementalStatus');
+        double before=target.CurrentCombatAnima;
+        double cost=target.GetMagicAnimaCost(CaelumDemonBreathRules.ANIMA_PER_SECOND);
+        Check(CaelumAbsentBreath.Advance(source,0.2),"eligible demon selects its native racial breath");
+        Check(Near(before-target.CurrentCombatAnima,0.2*cost) && Near(target.DemonBreath.TotalPaidSeconds,0.2),"absent breath spends proportional native Anima exactly once");
+        Check(recipient.BreathSources.Size()==1 && soldier.ElementalStatus.BurnRemaining==0,"breath contact queues without changing same-round control or damage");
+        recipient.Commit();
+        double watts=soldier.ElementalStatus.BurnHeatWatts;
+        int damage=soldier.ElementalStatus.BurnDamagePerSecond;
+        Check(watts>0 && damage>0,"committed contact retains burn and thermal absorption");
+        soldier.ElementalStatus=new('CaelumElementalStatus');
+        target.DemonBreath.PaidTick();
+        Check(Near(watts,soldier.ElementalStatus.BurnHeatWatts) && damage==soldier.ElementalStatus.BurnDamagePerSecond,"absent breath matches native contact burn and absorbed watts");
+        soldier.A_ChangeLinkFlags(1,-1);recipient.ClearPending();
+        CaelumAbsentBreath.Advance(source,0.2);
+        Check(recipient.BreathSources.Size()==1,"local absent index retains a participant without native blockmap membership");
+        soldier.A_ChangeLinkFlags(0,-1);
+        source.ResumeNative();Check(target.CurState==target.FindState('RacialBreath'),"return resumes breath pose without another emission charge");
+        CaelumDemonService.StopBreath(target,true,false);
+        source.Preparing=true;source.Remaining=1;
+        Check(!CaelumAbsentBreath.Advance(source,0.2) && target.DemonBreath==null,"new breath cannot interrupt an already prepared attack");
+        source.Preparing=false;source.Remaining=0;source.PainRemaining=1;
+        Check(!CaelumAbsentBreath.Advance(source,0.2),"native pain blocks absent breath");
+        source.PainRemaining=0;target.CurrentCombatAnima=0;
+        Check(!CaelumAbsentBreath.Advance(source,0.2) && target.DemonBreath==null,"empty Anima cannot emit unpaid breath");
+        target.CurrentCombatAnima=10000;source.Opponent=null;
+        let thermal=CaelumThermalBody.Get(target,true);thermal.Exposure=-1;thermal.Severity=1;
+        Check(CaelumAbsentBreath.Needed(source) && CaelumAbsentBreath.Advance(source,0.2),"unopposed cold retains existing racial use");
+        thermal.Exposure=thermal.Severity=0;
+        Check(!CaelumAbsentBreath.Advance(source,0.2) && target.DemonBreath==null,"breath stops when all native reasons cease");
+    }
+    void Boundaries(CaelumPlayer user)
+    {
+        soldier.health=soldier.CombatMaximumHealth=target.health=target.CombatMaximumHealth=1000000;
+        soldier.Carbine=new('CaelumCityCarbine');soldier.Carbine.Initialize(soldier);
+        soldier.bFriendly=true;target.bFriendly=false;
+        let encounter=CA415RoundEncounter(Actor.Spawn('CA415RoundEncounter',(512,512,0),NO_REPLACE));
+        encounter.SiegeStarted=true;encounter.SetupRevision=1;
+        encounter.Defenders.Push(soldier);encounter.RegisterAttacker(target);
+        let battle=new('CaelumAbsentBattle');encounter.AbsentBattle=battle;battle.Capture(encounter,user);
+        let row=target.AbsentCombatant;
+        row.Attack.Configure(target,true);row.Preparing=true;row.Remaining=10;
+        battle.Stamp-=0.4;
+        battle.Restore(user);
+        Check(Near(row.Remaining,9.6) && battle.Fraction==0,"return resolves the final fractional attack time exactly once");
+        int rounds=battle.Rounds;
+        double remaining=row.Remaining;
+        battle.Restore(user);
+        Check(battle.Rounds==rounds && row.Remaining==remaining,"second return cannot replay the fractional boundary");
+        battle.Capture(encounter,user);
+        Check(battle.Fraction==0,"next absence cannot inherit time already resumed natively");
+        let gun=soldier.Carbine;gun.Magazine=0;gun.ReloadRemaining=0;
+        let thermal=CaelumThermalBody.Get(soldier,true);thermal.ReloadHeatBudget=1;
+        let armed=soldier.AbsentCombatant;armed.Preparing=false;armed.Remaining=0;armed.Opponent=row;
+        armed.Act(0.1);
+        Check(gun.ReloadRemaining>0 && Near(thermal.ReloadHeatBudget,CaelumThermalEffects.FirearmActionHeat(soldier,true)),"new reload refreshes its current thermal budget");
+        let potion=CaelumDemonService.Potion(target,0);int stock=potion.Amount;
+        target.SiegeCombatant.Withdrawing=true;row.Capture();row.FinishRound();
+        Check(row.Retreated && target.SiegeCombatant.Exited && !target.SiegeCombatant.ConfirmedDead,"ordered withdrawal exits without a false casualty");
+        Check(!target.bDestroyed && potion.Owner==target && potion.Amount==stock,"retreat preserves the original body and real inventory");
+        Check(!target.bSolid && !target.bShootable && target.bDormant && target.bInvisible,"departed survivor cannot block or fight on return");
+        row.ResumeNative();Check(target.target==null && !row.Alive(),"native resume cannot restart a completed withdrawal");
     }
     void Saved()
     {
@@ -304,10 +381,11 @@ class CA415RoundChecks : EventHandler
         double now=battle.Stamp;int shots=savedSoldier.Carbine.ShotCount,life=savedTarget.health;
         battle.SyncTo(now);Check(shots==savedSoldier.Carbine.ShotCount && life==savedTarget.health,"loaded synchronization does not replay prior shots");
     }
-    void Hub(CaelumPlayer user)
+    void Hub(CaelumPlayer user,bool resident=false)
     {
         let encounter=CA415RoundEncounter(ActorIterator.Create(915051).Next());
         let savedSoldier=CA415RoundSoldier(ActorIterator.Create(915052).Next());
+        if(resident)savedSoldier=CA415RoundSoldier(CaelumHouseResidents.Get().Residents[0].Body);
         let savedTarget=CA415RoundDemon(ActorIterator.Create(915053).Next());
         Check(encounter!=null && savedSoldier!=null && savedTarget!=null,"hub keeps actual encounter and bodies");
         if(encounter==null || savedSoldier==null || savedTarget==null)return;
@@ -321,6 +399,47 @@ class CA415RoundChecks : EventHandler
         Check(shots==savedSoldier.Carbine.ShotCount && life==savedTarget.health && rounds==battle.Rounds,"second production synchronization cannot repeat combat");
         Console.Printf("CA415R HUB rounds=%d shots=%d reloads=%d life=%d",battle.Rounds,shots,savedSoldier.Carbine.ReloadCount,life);
     }
+    void ResidentSetup(CaelumPlayer user)
+    {
+        Persistence(user);
+        let roster=CaelumHouseResidents.Get(true);roster.EnsureRecords();
+        let entry=roster.Residents[0];entry.Body=soldier;entry.Created=true;entry.Emitted=true;
+        entry.ResidentMap=level.MapName;entry.Position=soldier.Pos;entry.AssignmentInitialized=true;
+        entry.GunIndex=-1;entry.GunSlot=-1;
+        soldier.Residence=entry;soldier.HomeIdentity=0;soldier.HomeRevision=CaelumCityData.PERSISTENCE_REVISION;
+    }
+    void ResidentHome(CaelumPlayer user)
+    {
+        Hub(user,true);
+        let roster=CaelumHouseResidents.Get();let entry=roster!=null?roster.Residents[0]:null;
+        let encounter=CA415RoundEncounter(ActorIterator.Create(915051).Next());
+        let body=entry!=null?entry.Body:null;
+        if(encounter!=null && body!=null)
+        {
+            let battle=encounter.AbsentBattle;
+            Console.Printf("CA415R RESIDENT away=%d rows=%d rounds=%d tid=%d map=%s resident=%s sameDefender=%d",battle.Away,battle.Rows.Size(),battle.Rounds,body.tid,battle.SourceMap,entry.ResidentMap,encounter.Defenders[0]==body);
+            Console.Printf("CA415R RESIDENT encounter=%d port=%d residence=%d nullDefender=%d destroyed=%d solid=%d shootable=%d",battle.Encounter==encounter,body.Port==encounter,body.Residence==entry,encounter.Defenders[0]==null,body.bDestroyed,body.bSolid,body.bShootable);
+            for(int i=0;i<battle.Rows.Size();i++)Console.Printf("CA415R RESIDENT row=%d traveling=%d id=%d sameBody=%d participating=%d",i,battle.Rows[i].TravelingResident,battle.Rows[i].ResidentIdentity,battle.Rows[i].Body==body,battle.Rows[i].Participating);
+            let all=ThinkerIterator.Create('CaelumSiegeEncounter');CaelumSiegeEncounter found;
+            while((found=CaelumSiegeEncounter(all.Next()))!=null)Console.Printf("CA415R ANCHOR tid=%d sameEncounter=%d sameBattle=%d targetEncounter=%d",found.tid,found==encounter,found.AbsentBattle==battle,battle.Encounter==found);
+        }
+        Check(body!=null && encounter!=null && body.AbsentCombatant!=null,"traveling resident rejoins its persistent combat row");
+        if(body==null || encounter==null || body.AbsentCombatant==null)return;
+        Check(encounter.Defenders[0]==body && body.AbsentCombatant.Body==body,"encounter uses original resident rather than hub copy");
+        Check(!entry.Suspended && !body.AbsentCombatant.NativeResumePending,"resident resumes attack only after native collision placement");
+        Check((body.Pos-entry.Position).Length()<0.001,"summary restores registered source-map position");
+        int count=0;let search=ThinkerIterator.Create('CA415RoundSoldier');
+        while(search.Next()!=null)count++;
+        Check(count==1,"return does not duplicate a traveling combatant");
+    }
+    void ResidentDeath(CaelumPlayer user)
+    {
+        let entry=CaelumHouseResidents.Get().Residents[0];let body=entry.Body;
+        Check(body!=null && body.health<=0 && body.bCorpse,"absent combat death applies to the original traveling resident");
+        Check(body!=null && !body.bShootable && !entry.Shootable,"resuming a dead resident cannot restore living collision flags");
+        let encounter=CA415RoundEncounter(ActorIterator.Create(915051).Next());
+        Check(encounter!=null && encounter.Defenders[0]==body,"dead original remains registered without a replacement defender");
+    }
     override void NetworkProcess(ConsoleEvent e)
     {
         let user=CaelumPlayer(players[e.Player].mo);if(user==null)return;
@@ -330,6 +449,12 @@ class CA415RoundChecks : EventHandler
         if(e.Name=="ca415r_reserve"){ReserveChecks(user);Console.Printf("CA415R RESULT passed=%d failed=%d",Passed,Failed);return;}
         if(e.Name=="ca415r_reserveafter"){ReserveAfter();Console.Printf("CA415R RESULT passed=%d failed=%d",Passed,Failed);return;}
         if(e.Name=="ca415r_potions"){PotionChecks(user);Console.Printf("CA415R RESULT passed=%d failed=%d",Passed,Failed);return;}
+        if(e.Name=="ca415r_boundaries"){Boundaries(user);Console.Printf("CA415R RESULT passed=%d failed=%d",Passed,Failed);return;}
+        if(e.Name=="ca415r_breath"){BreathChecks(user);Console.Printf("CA415R RESULT passed=%d failed=%d",Passed,Failed);return;}
+        if(e.Name=="ca415r_residentsetup"){ResidentSetup(user);return;}
+        if(e.Name=="ca415r_residenthome"){ResidentHome(user);Console.Printf("CA415R RESULT passed=%d failed=%d",Passed,Failed);return;}
+        if(e.Name=="ca415r_residentweak"){ResidentSetup(user);soldier.health=1;return;}
+        if(e.Name=="ca415r_residentdeath"){ResidentDeath(user);Console.Printf("CA415R RESULT passed=%d failed=%d",Passed,Failed);return;}
         if(e.Name=="ca415r_away")
         {
             let encounter=CA415RoundEncounter(ActorIterator.Create(915051).Next());

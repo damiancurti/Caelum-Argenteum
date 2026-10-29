@@ -1,8 +1,8 @@
 {
   "issue": 415,
-  "status": "Unreleased partial integration checkpoint; NOT complete or author accepted",
+  "status": "Unreleased second integration checkpoint; NOT complete or author accepted",
   "planned_version": "5.8.51",
-  "native_distinct_assertions": 87,
+  "native_distinct_assertions": 116,
   "cases": {
     "math": 29,
     "rounds": 10,
@@ -10,15 +10,28 @@
     "machines": 10,
     "reserve": 8,
     "potions": 6,
-    "persistence": 6,
+    "persistence": 7,
     "saved": 4,
-    "hub": 6
+    "hub": 6,
+    "boundaries": 8,
+    "breath": 12,
+    "resident": 5,
+    "residentdeath": 3
   },
-  "runtime_sha256": "8757048040a830dae64be7e017d9a8f60ad438c3c15986c5c28021405fbeafb1",
+  "runtime_sha256": "e39fb52386ad8cb4bb9fa8e05dbc1df24c672322de5b07095f0266b38d5b70de",
+  "source_overlay_members_verified": 17,
   "fixtures": [
     "checks.zs",
     "prepare.py",
     "run_native.ps1"
+  ],
+  "batch": "integrated03",
+  "static_errors": 0,
+  "remaining": [
+    "Scheduled starts and not-yet-deployed residents",
+    "Pending projectiles, remaining controls and bounded catch-up performance",
+    "Theft and access integration",
+    "Original-save regressions, completed canonical delivery and PR"
   ],
   "author": "Deferred until all V5.8 implementation is complete"
 }

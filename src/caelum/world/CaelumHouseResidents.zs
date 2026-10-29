@@ -102,7 +102,9 @@ class CaelumHouseResident : Object play
             for(Inventory item=Binding.Inv;item!=null;item=item.Inv)
                 item.ChangeStatNum(Thinker.STAT_INVENTORY);
         }
-        Suspended=false;CaelumContaminationAbsence.Restore(Body,user);return true;
+        Suspended=false;CaelumContaminationAbsence.Restore(Body,user);
+        if(Body.AbsentCombatant!=null && Body.AbsentCombatant.NativeResumePending)Body.AbsentCombatant.ResumeNative();
+        return true;
     }
 }
 
@@ -393,6 +395,10 @@ class CaelumHouseResidents : Inventory
 
     override void PreTravelled()
     {
+        // Capturar el encuentro antes de suspender sus residentes reales.
+        // El snapshot local conserva identidad y estado de ataque; el cuerpo
+        // viajero no arrastra referencias a enemigos ni geometria del mapa.
+        CaelumAbsentBattles.Capture(CaelumPlayer(Owner));
         TravelPropertyChest(false);
         for(int i=0;i<Residents.Size();i++)
         {
@@ -415,6 +421,7 @@ class CaelumHouseResidents : Inventory
                 }
             }
             entry.Suspend();
+            body.AbsentCombatant=null;
             body.Port=null;body.Gun=null;body.HomeDoor=null;body.target=null;body.LastEnemy=null;
             if(body.NavigationTarget!=null){body.NavigationTarget.Destroy();body.NavigationTarget=null;}
             if(body.RecoveryGoal!=null){body.RecoveryGoal.Destroy();body.RecoveryGoal=null;}

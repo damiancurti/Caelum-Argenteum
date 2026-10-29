@@ -6,19 +6,25 @@ Documentation version: **5.8.50** - 2026-10-28.
 
 The focused `feat/issue415-absent-rounds` worktree contains an intermediate
 checkpoint, not a completed delivery. Private `validation_5851` fixtures pass
-87 distinct native assertions: damage/dispersion, simultaneous casualties,
+116 distinct native assertions: damage/dispersion, simultaneous casualties,
 actual magazines/Anima, statuses, healing consumables, structural/cannon
 impacts, finite reserve admission, save identity and native load/unload hooks.
-The hub check resolves nine rounds, thirteen shots and one reload without
+The hub check resolves ten rounds, thirteen shots and one reload without
 repeating effects on a second synchronization. State aliases preserve existing
 indices. Existing preparation, artillery work and recovery are retained.
+Racial breath now retains native contact/heat and Anima, with deferred contacts
+and a per-encounter local spatial index that includes unlinked participants.
+Final fractional absence time resolves once before native resume; victory
+withdrawals retain parked bodies and real gear. Traveling deployed residents
+are captured before suspension and rebound through their household identity
+after return, including native death and collision flags.
 
-Still required before delivery: complete racial/pending projectile coverage,
-terminal/quiet and fractional clock review, scheduled starts/deployment while
+Still required before delivery: pending projectile and remaining control coverage,
+terminal/quiet performance review, scheduled starts/deployment while
 absent, theft/access with real inventory transfers, performance and original-save
 regressions, final canonical rules/version and linked PR. In particular, the
-current capture intentionally excludes parked house residents: a loaded body
-must not be treated as a safe cross-map collision object. Do not claim the
+current capture intentionally excludes residents not yet deployed: a parked
+body must not be treated as a safe cross-map collision object. Do not claim the
 scheduled start or full absent deployment complete before that is integrated.
 No author handoff or released 5.8.51 is claimed for this checkpoint.
 Continue this issue to completion; #502 patch50 is already delivered in PR544.
