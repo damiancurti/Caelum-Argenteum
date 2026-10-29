@@ -96,7 +96,7 @@ class CaelumHousekeepingWork : Object play
         chest.DomesticSoapRemainderG=Max(0.0,chest.DomesticSoapRemainderG+whole-grams);return true;
     }
     static bool Furniture(Actor body)
-    {return body is 'CaelumRestFurniture' || body is 'CaelumDiningTable' || body is 'CaelumDomesticFixture' || body is 'CaelumStashChest';}
+    {return body is 'CaelumDecorBody' || body is 'CaelumRestFurniture' || body is 'CaelumDiningTable' || body is 'CaelumDomesticFixture' || body is 'CaelumStashChest';}
     void Configure(CaelumPlayer user,CaelumContaminationTile tile)
     {
         let weather=CaelumWeatherState.Get(user);if(weather==null)return;

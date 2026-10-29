@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.43** - 2026-10-28.
+Documentation version: **5.8.44** - 2026-10-28.
+
+## 5.8.44 / #410 - Decorative catalogue completion
+
+Original wall landscapes and freestanding botanical wood sculpture complete
+the requested furniture types, with painted inventory sprites, learned
+manufacture, approved commerce and real-body movement/persistence. Evidence:
+assets/validation_5844. Final author checks remain grouped for the completeV5.8
+handoff; this does not mark the version accepted or close remaining issues.
+#502 unloaded NPC physiology/contact adapters, #415 combat/theft, #416 routes
+and Buenos Aires, and #417 travel encounters remain in implementation.
 
 ## 5.8.43 / #502 - Household cleaning during absence
 

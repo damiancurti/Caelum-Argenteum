@@ -1,0 +1,7 @@
+{
+  "issue": 410,
+  "tool": "Built-in image_gen",
+  "date": "2026-10-28",
+  "prompt": "Create a single square opaque 512x512-style painted texture map for the wooden botanical statue in the reference image. This is a GAME MODEL UV TEXTURE, NOT an object render or sprite. Fill the entire square with warm dark walnut/algarrobo wood grain, painted broad pixel-oriented clusters consistent with the reference. Vertical grain, subtle long irregular streaks, no knots larger than5% width. Bake gentle broad cylindrical tonal modeling into the wood: leftmost and rightmost15% dark brown, middle-left30% softly lit warm brown, middle-right25% medium brown. Gentle left upper soft illumination, muted highlights, clearly distinguishable light and shade. Top to bottom consistent so it can map to turned wooden stems and carved leaves. No transparent areas, no object silhouette, no border, no text, no checkerboard, no modern gloss, not a photograph, not photorealistic. Original hand-painted texture for nineteenth-century dark fantasy furniture.",
+  "reference": "statue_sprite_source.png"
+}

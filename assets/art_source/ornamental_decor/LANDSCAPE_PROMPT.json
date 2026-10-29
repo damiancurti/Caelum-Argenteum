@@ -1,0 +1,8 @@
+{
+  "issue": 410,
+  "author_approval": "River Plate landscapes and ornamental statues; 2026-10-28",
+  "tool": "built-in image_gen",
+  "generated": "2026-10-28",
+  "asset": "river_landscape_source.png",
+  "prompt": "Use case: historical-scene. Asset type: original painting texture for a framed landscape inside Caelum Argenteum, an independent dark fantasy game inspired by Argentina in the nineteenth century. Create ONE landscape painting, straight-on flat rectangular canvas, landscape aspect ratio 3:2. Subject: an uninhabited Rio de la Plata riverbank in the nineteenth century, broad silvery brown water, low flat horizon, reeds, one dark native willow near the left riverbank, distant low shore, a muted overcast sky with a pale warm opening in the clouds. No people, no buildings, no ships, no narrative or historical characters. Medium: an original hand-painted landscape with restrained nineteenth-century oil-painting character adapted to painted pixel-oriented game artwork. Broad readable shapes, deliberate crisp small brush clusters, visible but restrained paint texture. Muted ochre, umber, gray green, slate blue, ivory highlights; soft coherent light. It must remain recognizable as a river landscape at small game texture size. The painted image fills the complete rectangle edge to edge: no frame, no matting, no surrounding wall or studio, no perspective distortion. Avoid glossy 3D-render appearance, photographic surface, anime/comic outlines, text, signature, watermark. This is the painted image itself, not a mockup or a picture of a painting."
+}

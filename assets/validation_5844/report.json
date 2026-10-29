@@ -1,0 +1,118 @@
+{
+  "version": "5.8.44",
+  "issue": 410,
+  "base": "47acf3e376379e074c15504594be0380ac5757de",
+  "runtime_sha256": "cbb3757ff2c1dd0291ee08a2bce2752da33a04bf63759e9dffe4497444a3d46a",
+  "source_matching_package_members": 17034,
+  "unchanged_map_art_members": 14056,
+  "native_passes": 186,
+  "original_runtime_passes": 30,
+  "native_failures": 0,
+  "runs": [
+    {
+      "label": "release-catalogue",
+      "executed_passes": 39,
+      "package_sha256": "cbb3757ff2c1dd0291ee08a2bce2752da33a04bf63759e9dffe4497444a3d46a",
+      "addon_sha256": "2cad286387862c840c39695464f83d70d04a2909b54092d8cd702cee21f57ba1"
+    },
+    {
+      "label": "release2-craft",
+      "executed_passes": 18,
+      "package_sha256": "cbb3757ff2c1dd0291ee08a2bce2752da33a04bf63759e9dffe4497444a3d46a",
+      "addon_sha256": "3e2544a571398ba645980407023fa4c5832fe7d45e9165fa9b8f3db731558ca7"
+    },
+    {
+      "label": "release2-trade",
+      "executed_passes": 13,
+      "package_sha256": "cbb3757ff2c1dd0291ee08a2bce2752da33a04bf63759e9dffe4497444a3d46a",
+      "addon_sha256": "3e2544a571398ba645980407023fa4c5832fe7d45e9165fa9b8f3db731558ca7"
+    },
+    {
+      "label": "release2-items",
+      "executed_passes": 14,
+      "package_sha256": "cbb3757ff2c1dd0291ee08a2bce2752da33a04bf63759e9dffe4497444a3d46a",
+      "addon_sha256": "3e2544a571398ba645980407023fa4c5832fe7d45e9165fa9b8f3db731558ca7"
+    },
+    {
+      "label": "release2-reject",
+      "executed_passes": 5,
+      "package_sha256": "cbb3757ff2c1dd0291ee08a2bce2752da33a04bf63759e9dffe4497444a3d46a",
+      "addon_sha256": "3e2544a571398ba645980407023fa4c5832fe7d45e9165fa9b8f3db731558ca7"
+    },
+    {
+      "label": "release2-seed",
+      "executed_passes": 24,
+      "package_sha256": "cbb3757ff2c1dd0291ee08a2bce2752da33a04bf63759e9dffe4497444a3d46a",
+      "addon_sha256": "3e2544a571398ba645980407023fa4c5832fe7d45e9165fa9b8f3db731558ca7"
+    },
+    {
+      "label": "release2-hub",
+      "executed_passes": 35,
+      "package_sha256": "cbb3757ff2c1dd0291ee08a2bce2752da33a04bf63759e9dffe4497444a3d46a",
+      "addon_sha256": "3e2544a571398ba645980407023fa4c5832fe7d45e9165fa9b8f3db731558ca7"
+    },
+    {
+      "label": "release2-input",
+      "executed_passes": 2,
+      "package_sha256": "cbb3757ff2c1dd0291ee08a2bce2752da33a04bf63759e9dffe4497444a3d46a",
+      "addon_sha256": "3e2544a571398ba645980407023fa4c5832fe7d45e9165fa9b8f3db731558ca7"
+    },
+    {
+      "label": "release2-view0",
+      "executed_passes": 2,
+      "package_sha256": "cbb3757ff2c1dd0291ee08a2bce2752da33a04bf63759e9dffe4497444a3d46a",
+      "addon_sha256": "3e2544a571398ba645980407023fa4c5832fe7d45e9165fa9b8f3db731558ca7"
+    },
+    {
+      "label": "release2-view1",
+      "executed_passes": 2,
+      "package_sha256": "cbb3757ff2c1dd0291ee08a2bce2752da33a04bf63759e9dffe4497444a3d46a",
+      "addon_sha256": "3e2544a571398ba645980407023fa4c5832fe7d45e9165fa9b8f3db731558ca7"
+    },
+    {
+      "label": "release2-icon0",
+      "executed_passes": 1,
+      "package_sha256": "cbb3757ff2c1dd0291ee08a2bce2752da33a04bf63759e9dffe4497444a3d46a",
+      "addon_sha256": "3e2544a571398ba645980407023fa4c5832fe7d45e9165fa9b8f3db731558ca7"
+    },
+    {
+      "label": "release2-icon1",
+      "executed_passes": 1,
+      "package_sha256": "cbb3757ff2c1dd0291ee08a2bce2752da33a04bf63759e9dffe4497444a3d46a",
+      "addon_sha256": "3e2544a571398ba645980407023fa4c5832fe7d45e9165fa9b8f3db731558ca7"
+    },
+    {
+      "label": "release2-resume",
+      "executed_passes": 11,
+      "package_sha256": "cbb3757ff2c1dd0291ee08a2bce2752da33a04bf63759e9dffe4497444a3d46a",
+      "addon_sha256": "3e2544a571398ba645980407023fa4c5832fe7d45e9165fa9b8f3db731558ca7"
+    },
+    {
+      "label": "release2-upgrade",
+      "executed_passes": 19,
+      "package_sha256": "cbb3757ff2c1dd0291ee08a2bce2752da33a04bf63759e9dffe4497444a3d46a",
+      "addon_sha256": "f2ba9a18f8c6cbfc33fc3c7489ff9d668458925b6dba3fb434c9b00d91ccdb0d"
+    }
+  ],
+  "original_runs": [
+    {
+      "label": "original43-seed",
+      "executed_passes": 13,
+      "package_sha256": "f0d9aab75d729fef7ea66e9c94586f296acf4e628da4a1e57cb15a551b2bfcfb",
+      "addon_sha256": "f2ba9a18f8c6cbfc33fc3c7489ff9d668458925b6dba3fb434c9b00d91ccdb0d"
+    },
+    {
+      "label": "release2-rollback",
+      "executed_passes": 17,
+      "package_sha256": "f0d9aab75d729fef7ea66e9c94586f296acf4e628da4a1e57cb15a551b2bfcfb",
+      "addon_sha256": "f2ba9a18f8c6cbfc33fc3c7489ff9d668458925b6dba3fb434c9b00d91ccdb0d"
+    }
+  ],
+  "prior_save_sha256": "33a66a0ee6331f3d21f651fa5ee54ce4f3e8685cf9edecf3803d3df5ff28d95c",
+  "art_generation_repeat": "Byte-identical manifest and all generated output hashes.",
+  "scope": "Two approved decorative types, real crafting/materials/pricing/trade, learned catalogue migration, actual wall/floor placement, collisions/permissions/title/weight, Box, native crouch/use, source identity/dirt, save/hub and genuine5.8.43 migration/rollback. Existing art/maps unchanged.",
+  "probe_findings": "Early out-vector JIT rejected; result object substituted. An inventory UI fixture field corrected. Native changemap intermission did not complete the first hub probe; CHANGELEVEL_NOINTERMISSION and a required final-map marker now verify the real return. Craft fixture narrowed to the two newly learned recipes instead of querying unlearned old recipes. The mirrored painting and flat carved texture were corrected before final visual checks. Failed private probes remain available but are excluded.",
+  "reuse": "The passing release-catalogue final-runtime run is reused; the later fixture change affects only the crafting station assertions. All other accepted cases use release2 fixtures against the same final44b package.",
+  "performance_limits": "No routine scans added; placement uses local native queries only on activation. No displayed-FPS acceptance inferred; the same-session PresentMon ETW denial is recorded under validation_5843.",
+  "author_acceptance": "CA410-DECOR-01 remains pending the requested grouped final V5.8 handoff; earlier entries retained."
+}

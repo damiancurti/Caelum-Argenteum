@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.43** - 2026-10-28.
+Documentation version: **5.8.44** - 2026-10-28.
+
+## 5.8.44 / #410 - Landscapes and ornamental statues
+
+Complete original art, delegated construction bills, two learned recipes,
+three-item/ten-book supply, wall/ground placement and actual body/save/hub
+transport. Native evidence: assets/validation_5844, 186 current and 30 original
+runtime PASS, zero failures/static errors. CA410-DECOR-01 remains
+author-pending alongside earlier furniture checks for the groupedV5.8 handoff.
+Do not claim the broader version complete: #502, #415, #416 and #417 still
+require their own implementation/integration and tests.
 
 ## 5.8.43 / #502 - Unloaded household work
 

@@ -1,6 +1,33 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.43** - 2026-10-28.
+Documentation version: **5.8.44** - 2026-10-28.
+
+## 5.8.44 - Landscapes and botanical sculpture (#410, 2026-10-28)
+
+The author approved the same movable-furniture acquisition for paintings and
+statues: three each in Provisions, ten recipe books, materials+25% and normal
+manufacturing restock. Motifs remain River Plate landscapes/ornamental carving,
+without historical people or new story references. Delegated physical data,
+original sources/prompts and deterministic world models accompany two painted
+inventory sprites. Wall pictures and grounded statues retain actual ownership,
+body, contamination, Box/native save/hub state; no new bonuses.
+
+Evidence and original-version recovery: assets/validation_5844. The first
+private compile attempt exposed the already documented unsupported out-vector
+JIT path; an explicit short-lived result object replaces that API. Failed
+private probes are retained and excluded from final native results.
+CA410-DECOR-01 (origin5.8.44/#410) is outstanding; no author acceptance has been
+received for this delivery. All previous pending entries remain carried forward.
+OtherV5.8 issues stay open, with manual tests reserved for the final handoff.
+
+Final verification: 186 current native PASS and 30 original-runtime PASS, zero
+failures/static errors. All 17,034 packaged files match source; 14,056 prior
+map/art files remain byte-identical. Package SHA256:
+`cbb3757ff2c1dd0291ee08a2bce2752da33a04bf63759e9dffe4497444a3d46a`.
+The original art generator repeats byte-for-byte. Native wall/statue and both
+inventory captures were reviewed. Earlier mirrored painting/flat wood texture
+and fixture-only errors were corrected before these final runs. The hub check
+requires return-map completion; an intermission-only run is not counted.
 
 ## 5.8.43 - Unloaded household cleaning (#502, 2026-10-28)
 

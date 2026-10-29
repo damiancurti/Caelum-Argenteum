@@ -345,3 +345,20 @@ Provisions merchant. Keep original saves before updating. Group with final hando
 5. Visit a second household and repeat across a civil midnight. Each home has
    its own single-hour quota, but both use the same actual Provisions stock.
 Expected: persistent results, no duplicate resources or purchases, no new crash.
+ID: CA410-DECOR-01
+Origin: 5.8.44 / #410
+Status: Awaiting author; hold for grouped final V5.8 handoff.
+Prerequisites: Full current build, a character with sufficient carrying capacity
+and permission to furnish the mansion or an owned/currently rented property.
+Steps:
+1. Inspect the landscape painting and botanical statue in Provisions and their
+   recipe books in the library. Verify the painted inventory appearance.
+2. Learn/craft each, or buy it. Place the statue on clear dry ground; aim at a
+   plain wall within Use range and activate the painting in the inventory.
+3. Inspect both world models, the complete painting/frame, size and sculpture
+   detail. Aim and Crouch+Use to carry them; place them again.
+4. Try an obstructed wall, floor, doorway and overlapping decoration. A failed
+   placement must preserve the item. Try moving it through the Box and a save,
+   then travel away and back while carrying it.
+Expected: Correct painted icons and original world objects, native permission
+and weight checks, no door obstruction, duplicates, new bonuses or lost dirt.

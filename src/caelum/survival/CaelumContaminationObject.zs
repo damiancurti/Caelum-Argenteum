@@ -28,6 +28,8 @@ class CaelumContaminationObject : Thinker
         let block=CaelumDiningBlock(body);if(block!=null)table=CaelumPortableDiningTable(block.Table);
         let diningSeat=CaelumRestChair(body);if(diningSeat!=null)table=CaelumPortableDiningTable(diningSeat.DiningTable);
         if(table!=null && table.Packed())return false;
+        let decor=CaelumDecorBody(body);
+        if(decor!=null && decor.PackedItem!=null && decor.PackedItem.Owner!=body)return false;
         let desk=CaelumPortableReadingDesk(body);
         if(desk!=null && desk.PackedItem!=null && desk.PackedItem.Owner!=body)return false;
         let shelf=CaelumPortableReadingShelf(body);

@@ -5032,3 +5032,24 @@ Model CaelumPortableLuxuryTable
     DontCullBackFaces
     FrameIndex CAHC A 0 0
 }
+
+Model CaelumLandscapePainting
+{
+    Path "models/caelum/props/ornamental"
+    Model 0 "ca_river_painting.obj"
+    Scale 1 1 1
+    AngleOffset 90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex COAP A 0 0
+}
+Model CaelumOrnamentalStatue
+{
+    Path "models/caelum/props/ornamental"
+    Model 0 "ca_botanical_statue.obj"
+    Scale 1 1 1
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex COAS A 0 0
+}
