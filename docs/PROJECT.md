@@ -1,6 +1,11 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.54** - 2026-10-29.
+Documentation version: **5.8.55** - 2026-10-29.
+
+## 5.8.55 / #415 - Remove repeated global Rally lookups
+
+Rally damage queries now inspect active player inventories; recovery pulses use local blockmap recipients and the existing unlinked-guard registry. Combat/illness rules and the shared population census are unchanged. Native effect/save tests passed; city render callbacks improved from 1125.93ms to 28.34ms mean in the final comparison window. ETW capture was denied; 60 FPS and author acceptance are not claimed. Evidence: `assets/validation_5855/RESULTS.md`.
+
 
 Current review: author passed the grouped5.8.53 checks except bed appearance, the missing statue in the decoration fixture, city rendering fluency and Buenos Aires music; requested water-use shortcut and large paintings. #410 corrections are5.8.54; #415/#416 follow separately. Multiplayer rest remains deferred to5.12.
 

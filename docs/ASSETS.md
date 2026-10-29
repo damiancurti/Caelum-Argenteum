@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.54** - 2026-10-29.
+Documentation version: **5.8.55** - 2026-10-29.
 
 ## 5.8.54 furniture corrections (#410)
 
