@@ -54,6 +54,8 @@ performance limitation; individual simulation and resources are preserved.
 
 ## 5.8.52 / #416 - Network implementation ready - 2026-10-29
 
+Final author acceptance, 2026-10-29: **CA416-NETWORK-01** (origin 5.8.52 / #416) passed. The author confirmed all remaining correction-terminal checks and requested merge and closure. This supersedes the earlier qualified acceptance; only this confirmed entry is removed from pending_test.txt.
+
 Final native visual review found the actual interaction subclass falling back to
 the inherited shop sprite instead of the owned transport-sign model. Registering
 CaelumTransportAccess explicitly in MODELDEF corrects that binding; the model,
