@@ -1374,6 +1374,10 @@ class CaelumJournalOverlay : EventHandler
                         ]));
             }
             let mate=CaelumMateSession.Selected(localPlayer);
+            if(localPlayer.FormalInventoryRowFoodContamination[selectedRow]>=0)
+                CaelumCraftingUI.Paragraph(self,String.Format(StringTable.Localize("CA_FOOD_LOTS_DETAIL",false),
+                    localPlayer.FormalInventoryRowFoodContamination[selectedRow],localPlayer.FormalInventoryRowFoodLots[selectedRow]),
+                    414,270,192,2,"ca_journal_inventory_scroll");
             if(mate!=null)CaelumCraftingUI.Paragraph(self,CaelumMateUI.Contents(mate),414,278,192,3,"ca_journal_inventory_scroll");
             if (localPlayer.FormalInventoryRowWaterLiters[selectedRow] > 0)
                 DrawTextLine(InventoryFont,Font.CR_WHITE,414,246,

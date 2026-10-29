@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.13** - 2026-10-26.
+Documentation version: **5.8.14** - 2026-10-26.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
@@ -739,9 +739,9 @@ The author also approved an unloaded siege abstraction: one world-second rounds 
 
 ## Food contamination and cooking contract (#410, 5.8.3 in progress)
 
-Approved 2026-10-23/24. The current slice implements the character contamination
-state, shared numeric rules, natural regeneration integration and HUD. Food
-lots, sources/consumption, recipes, trade and furniture integration remain pending.
+Approved 2026-10-23/24. As of 5.8.14, existing native rations implement lots,
+storage ageing, consumption, trade and forecast integration. New food items,
+recipes, cooking and the remaining furniture are still pending.
 
 Food contamination is biological, from 0 to 100. At 20 C / 50% humidity,
 fresh food reaches 100 after: raw fish 6 h; raw beef and roast fish 12 h;
@@ -757,8 +757,8 @@ Reheating never resets freshness.
 Separate internal food lots retain their own age/contamination and are consumed
 oldest first, even if the UI groups them. Fresh additions do not rejuvenate old
 food. Previously unaged food migrates as fresh when updating, with quantities
-and locations intact; no invented retroactive spoilage. This food-lot migration
-is approved but not yet implemented in the current slice.
+and locations intact; no invented retroactive spoilage. This migration is
+implemented for the existing native ration in 5.8.14.
 
 The subsequent metadata model, CaelumFoodLots, stores revisioned lots in native
 serializable Objects. Each lot keeps its creation stamp, units and contamination;
@@ -767,9 +767,18 @@ count. Transfer snapshots contamination into the destination's exposure history,
 never shares mutable lot objects, and preserves oldest-first order. Only pieces
 with the same creation stamp and contamination coalesce. Portion contamination
 is mass-weighted across the actually removed units. Invalid identity/capacity/
-overdraw operations leave both sides intact. This model is engine-tested but
-not yet attached to gameplay food inventories or their environmental clock;
-therefore the in-game ageing/migration work above remains open.
+overdraw operations leave both sides intact. The 5.8.14 adapter attaches this model to native ration inventories and their
+saved climate clock. A typed load census/event hook registers each ration stack;
+there are no periodic global actor scans. Staggered one-second updates integrate
+calendar exposure at civil-minute boundaries using the saved region/profile,
+seed, shelter and local climate modifiers. Storage retains its location during
+map absence. Unloaded local magical modifiers currently retain their last
+observed delta; replaying their full activation/expiration history remains
+an unloaded-world integration gap, not an approved new climate rule.
+The constant Limbo climate integrates directly; fully spoiled
+stacks skip remaining exposure. Amount remains the quantity authority. Native
+external additions become separate fresh lots; native removals consume oldest
+first. Physical transfers never infer freshness from a new actor identity.
 
 Each 100 g adds its food contamination value at the 80 kg body reference:
 dose = foodC * grams/100 * 80/bodyMassKg; cap character contamination at 100.
@@ -786,9 +795,13 @@ As of 5.8.7, journey and task-wait forecasts copy this state, share its damage
 arithmetic and include potential depuration with the same resource gates/costs.
 Forecasting does not mutate the live illness. Confirmed travel installs an
 independent resulting state; the native wait still executes the normal player
-path. Wait-preview schema 6 rebuilds older cached previews. Food inventory and
-meal ingestion adapters remain pending; this closes the pre-existing illness
-forecast gap, not the food pipeline.
+path. Wait-preview schema 6 rebuilds older cached previews. In 5.8.14 native ration ingestion and ageing are included as well. Journey
+forecasts age all carried ration lots, including the Box, with route climate;
+only accessible unboxed rations are eaten. Confirmed travel installs independent
+remaining lots once. Wait-preview schema 22 uses independent per-location food
+clocks and applies doses when its copied provisions are consumed. Ordinary
+waiting still executes native consumption. Full Life, nutrition overflow or
+transferring between inventories cannot erase an ingested contamination dose.
 
 
 Use complete 100 g portions even when Hunger needs less; discard excess
@@ -823,7 +836,10 @@ Transfer the ready batch to the oven for attended baking; other cooking is
 attended too. Cancelling returns reserved ingredients and fuel, retaining the
 food deterioration accumulated while time elapsed. Commercial food stocks
 remain fresh by explicit author choice; purchased food starts ageing when it
-leaves commercial stock. No automatic age discount is added.
+leaves commercial stock. Shops reject any ration stack containing contamination
+above zero, checked again before currency transfer. This implements the author
+choice of 2026-10-25 and prevents freshness laundering. No automatic age discount
+is added. Inventory details show the oldest next portion and internal lot count.
 
 Furniture decisions remain part of #410: reading desk reach 96 MU with line
 of sight to accessible books actually stored in a shelf; bathroom fixtures

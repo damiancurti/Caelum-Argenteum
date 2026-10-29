@@ -1,6 +1,12 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.13** - 2026-10-26.
+Documentation version: **5.8.14** - 2026-10-26.
+
+## 5.8.14 - Ration lot presentation (#410)
+
+Existing ration world/inventory sprites are retained. Added bilingual numeric
+lot/next-portion details only; no raster, model, provenance or map art changes.
+Native UI capture and author terminal: assets/validation_5814.
 
 ## 5.8.13 - Campfire world artwork (#411)
 

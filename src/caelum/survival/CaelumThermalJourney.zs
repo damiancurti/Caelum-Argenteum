@@ -93,6 +93,7 @@ class CaelumThermalJourney : Object play
                     supplies.Thirst=Result.Hydration;supplies.ThermalExposure=Result.Exposure;
                     supplies.Hunger=Result.ShiveringHunger;
                     supplies.ThermalToughness=Result.Toughness;
+                    if(supplies.FoodInventory!=null)supplies.FoodInventory.Advance(seconds/substeps,Result.AirC,Result.Humidity);
                     if(supplies.Contamination!=null)
                         supplies.Contamination.Advance(supplies.FoodIllness,CaelumContaminationRules.Environment(
                             CaelumContaminationData.NATURAL_REFERENCE,Result.AirC,Result.Humidity),seconds/substeps);

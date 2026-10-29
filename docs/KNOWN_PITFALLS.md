@@ -4,6 +4,31 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-171 - Native food quantities, copies and forecast isolation
+
+Status/evidence: ENGINE-VERIFIED, #410, 2026-10-26; assets/validation_5814.
+Native Inventory.CreateCopy can return self while clamping Amount. A lot ledger
+must retain the oldest clamped quantity, not assume that only a newly allocated
+copy changes counts. Successful Use consumes metadata once; the native caller
+(or dining adapter) still decrements Amount. A failed/boxed Use must consume
+neither. Native merges, partial tosses and coffer/merchant transfers require
+explicit lot transfer rather than interpreting a new actor as fresh food.
+
+Keep forecasts independent of live lot/illness objects and rebase the clock
+after committing a travelled inventory. Otherwise the same elapsed journey
+ages the remaining food twice. Capture storage climate before the dining
+adapter temporarily changes Owner, and restore the table context afterward.
+Old native saves verify fresh migration; old-package rollback uses the original
+save, never an overwritten upgraded save. Fixtures must grant the persistent
+Box ownership flag; a temporary live boolean is normalized away on load.
+
+Food registration uses spawn events and a typed census only on world load,
+including older owned/ground ration stacks. Each native stack owns one saved
+clock; no per-tic global actor/inventory scan is added. One-second updates are
+staggered, climate samples cache the civil minute, and constant Limbo exposure
+integrates directly. The 500-stack peaceful callback comparison is recorded;
+it establishes neither an unbounded stack limit nor city/siege performance.
+
 ## CA-KP-173 - Verify manual fixture startup, not only automated checks
 
 Status/evidence: ENGINE-VERIFIED; #411 / PR507; 2026-10-26.

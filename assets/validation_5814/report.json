@@ -1,0 +1,156 @@
+{
+  "issue": 410,
+  "version": "5.8.14",
+  "runtime_sha256": "327a6ea1ee243c23dedefd3ea591224d31e6509ccd8a111d72c58c0cf4df51fb",
+  "source_matching_members": 16917,
+  "native_passes": 57,
+  "native_failures": 0,
+  "runs": [
+    {
+      "label": "final-core",
+      "executed_passes": 17,
+      "package_sha256": "327a6ea1ee243c23dedefd3ea591224d31e6509ccd8a111d72c58c0cf4df51fb"
+    },
+    {
+      "label": "final-clock",
+      "executed_passes": 8,
+      "package_sha256": "327a6ea1ee243c23dedefd3ea591224d31e6509ccd8a111d72c58c0cf4df51fb"
+    },
+    {
+      "label": "final-travel-commit",
+      "executed_passes": 11,
+      "package_sha256": "327a6ea1ee243c23dedefd3ea591224d31e6509ccd8a111d72c58c0cf4df51fb"
+    },
+    {
+      "label": "final-hub",
+      "executed_passes": 12,
+      "package_sha256": "327a6ea1ee243c23dedefd3ea591224d31e6509ccd8a111d72c58c0cf4df51fb"
+    },
+    {
+      "label": "final-seed",
+      "executed_passes": 1,
+      "package_sha256": "327a6ea1ee243c23dedefd3ea591224d31e6509ccd8a111d72c58c0cf4df51fb"
+    },
+    {
+      "label": "final-load",
+      "executed_passes": 2,
+      "package_sha256": "327a6ea1ee243c23dedefd3ea591224d31e6509ccd8a111d72c58c0cf4df51fb"
+    },
+    {
+      "label": "final-upgrade",
+      "executed_passes": 2,
+      "package_sha256": "327a6ea1ee243c23dedefd3ea591224d31e6509ccd8a111d72c58c0cf4df51fb"
+    },
+    {
+      "label": "oldseed06b",
+      "executed_passes": 1,
+      "package_sha256": "dfb026a61fcb90af1a5446f764584eaf032495ba77c3140797336dec9dbbc8ce"
+    },
+    {
+      "label": "rollback06b",
+      "executed_passes": 1,
+      "package_sha256": "dfb026a61fcb90af1a5446f764584eaf032495ba77c3140797336dec9dbbc8ce"
+    },
+    {
+      "label": "final-capture-es2",
+      "executed_passes": 1,
+      "package_sha256": "327a6ea1ee243c23dedefd3ea591224d31e6509ccd8a111d72c58c0cf4df51fb"
+    },
+    {
+      "label": "final-capture-en",
+      "executed_passes": 1,
+      "package_sha256": "327a6ea1ee243c23dedefd3ea591224d31e6509ccd8a111d72c58c0cf4df51fb"
+    }
+  ],
+  "performance": [
+    {
+      "label": "perf-old500",
+      "runtime_sha256": "dfb026a61fcb90af1a5446f764584eaf032495ba77c3140797336dec9dbbc8ce",
+      "addon_sha256": "4c493587c9366d980e25c64e02a61be38e3cd0881d02c57eceacdd2b093fe739",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "arguments": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue411-fire-work\\build\\issue411-fire\\final05\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-lots-work\\build\\issue410-lots\\perf-old500.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-lots-work\\build\\issue410-lots\\perf-old500.ini",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "410",
+        "-nomouse",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-lots-work\\build\\issue410-lots\\perf-old500.txt",
+        "+con_notifytime",
+        "0",
+        "+map",
+        "MAP01",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-lots-work\\build\\issue410-lots\\perf-old500.cfg"
+      ],
+      "config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\ncl_capfps=false\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nvid_defwidth=1280\nvid_defheight=720\n",
+      "simulation_tics": 700,
+      "phase_elapsed_ms": 19943.08130000718,
+      "phase_bound_uncertainty_ms": 100,
+      "frames": 1199,
+      "mean_callback_ms": 16.666448206839032,
+      "p95_callback_ms": 16.9479,
+      "p99_callback_ms": 17.2368,
+      "worst_callback_ms": 17.9859,
+      "stacks": 500,
+      "note": "1280x720 Vulkan, 60 FPS cap, one player. Same food stack population before/after; invisible actors isolate food scheduling from sprite overdraw. Callback intervals are a rendering-cadence proxy, not GPU/display presentation. This small fixture does not establish mansion, sewer or army performance."
+    },
+    {
+      "label": "perf-final500",
+      "runtime_sha256": "327a6ea1ee243c23dedefd3ea591224d31e6509ccd8a111d72c58c0cf4df51fb",
+      "addon_sha256": "4c493587c9366d980e25c64e02a61be38e3cd0881d02c57eceacdd2b093fe739",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "arguments": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-lots-work\\build\\issue410-lots\\final01\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-lots-work\\build\\issue410-lots\\perf-final500.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-lots-work\\build\\issue410-lots\\perf-final500.ini",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "410",
+        "-nomouse",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-lots-work\\build\\issue410-lots\\perf-final500.txt",
+        "+con_notifytime",
+        "0",
+        "+map",
+        "MAP01",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue410-lots-work\\build\\issue410-lots\\perf-final500.cfg"
+      ],
+      "config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\ncl_capfps=false\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nvid_defwidth=1280\nvid_defheight=720\n",
+      "simulation_tics": 700,
+      "phase_elapsed_ms": 20054.74250006955,
+      "phase_bound_uncertainty_ms": 100,
+      "frames": 1199,
+      "mean_callback_ms": 16.665780316930775,
+      "p95_callback_ms": 17.007,
+      "p99_callback_ms": 17.2587,
+      "worst_callback_ms": 17.7563,
+      "stacks": 500,
+      "note": "1280x720 Vulkan, 60 FPS cap, one player. Same food stack population before/after; invisible actors isolate food scheduling from sprite overdraw. Callback intervals are a rendering-cadence proxy, not GPU/display presentation. This small fixture does not establish mansion, sewer or army performance."
+    }
+  ],
+  "author_acceptance": "pending CA410-FOOD-01"
+}

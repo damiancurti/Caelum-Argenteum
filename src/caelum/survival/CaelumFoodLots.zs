@@ -102,6 +102,12 @@ class CaelumFoodLots : Object play
         return copy;
     }
 
+    CaelumFoodLots Copy()
+    {
+        if(Units()>0)return CopyOldest(Units());
+        let copy=new('CaelumFoodLots');copy.Ensure(Kind,0,0);return copy;
+    }
+
     bool TransferTo(CaelumFoodLots destination,int units)
     {
         if(destination==null || destination==self || Revision!=CaelumFoodData.REVISION

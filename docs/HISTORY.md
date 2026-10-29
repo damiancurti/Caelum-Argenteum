@@ -1,6 +1,50 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.13** - 2026-10-26.
+Documentation version: **5.8.14** - 2026-10-26.
+
+## 5.8.14 - Native ration lots (#410), 2026-10-26
+
+Author acceptance, 2026-10-26: CA410-FOOD-01 (origin 5.8.14/#410) passed
+all supplied ration-lot checks. The only exceptions named by the author were
+the #411 pot support and #412 tent interaction. This confirmed entry is retired;
+new dishes, cooking and remaining furniture are still implementation work.
+
+The author reported inactive test keys on return. The manual launcher now
+inlines canonical controls before delayed setup, avoiding its nested exec,
+and checks readiness before handoff. Native queries verify F1-F4 and Tab/T;
+the same script seeds six rations, consumes the oldest and advances food age.
+Remote key injection did not reach GZDoom; CA410-FOOD-01 still needs the author's
+physical-key check. This correction changes no gameplay package or save format.
+
+Connected the accepted lot model to native ration quantities, pickup/toss/copy,
+container transactions, table meals, commercial transactions, journey commits
+and wait forecasts. Old quantities and Box placement migrate fresh without
+retroactive ageing; already-aged new saves preserve their exact lots.
+Source environment is captured before transfers; destination exposure resumes
+without sharing mutable lot objects. GZDoom's self-returning capped CreateCopy
+requires retaining only the oldest native quantity, found by a native check.
+
+The actor event/typed-load census creates one saved clock per food stack.
+Clocks stagger one-second updates and integrate the approved climate rate at
+civil-minute boundaries. Saved region/profile/seed/shelter retain storage
+location through map absence. Limbo integration is constant-time; saturation
+skips the rest once all lots are at 100. Existing local climate modifiers are
+sampled with the stored context. Closing the application adds no calendar time.
+No new catalogue IDs, art, balance values or recipes were introduced.
+
+Food-related disease now applies on native ingestion and copied forecasts.
+Fresh commercial stock is exempt from ageing; any contaminated resale is
+rejected, including the final transaction preflight. Existing regeneration,
+meal nutrition and full 200 g ration consumption remain intact.
+
+Static validation clean; 57 native PASS across 11 runs, no failures. Persistence
+and frame-callback evidence: assets/validation_5814. The 500-stack comparison
+records p95/p99/worst 17.007/17.2587/17.7563 ms versus prior
+16.9479/17.2368/17.9859 ms. These callback measurements are not GPU/display
+presentation or full-map performance acceptance.
+CA410-FOOD-01 is pending, with no author acceptance inferred. Questions and
+manual tests were deferred while the author was away, as instructed.
+Remaining #410: new food catalogue, recipes/proofing/cooking and furniture.
 
 ## 5.8.13 - Campfire and mounted pot (#411), 2026-10-26
 
