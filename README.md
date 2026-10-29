@@ -9,6 +9,8 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 **Current release: 5.8.50.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
+Original 5.8.50 save/upgrade/reload/rollback checks pass; see
+`assets/validation_5851/legacy-results.json` for the preservation boundary.
 This focused branch also contains an **unreleased #415 checkpoint**, planned
 for 5.8.51. Its partial combat integration is not a completed release; see
 `docs/TASKS.md` for remaining work and `assets/validation_5851` for evidence.

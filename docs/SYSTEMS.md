@@ -4,6 +4,13 @@ Documentation version: **5.8.50** - 2026-10-28.
 
 ## Unreleased #415 integration
 
+Existing saves without an absent-encounter snapshot retain their actual bodies,
+Life, contamination and inventories. The first departure records its actual
+calendar time. Missing historical combat is not fabricated; an already overdue
+existing event is due at that tracking boundary. The one-time unvisited-city
+flag defaults false for these saves. The original file remains a reversible
+input; a new file stores the upgraded state.
+
 The pending round implementation follows the approved one-world-second,
 simultaneous mean-damage model and converts active durations through the source
 map clock. An already-launched native carbine or elemental projectile joins the

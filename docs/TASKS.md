@@ -77,12 +77,15 @@ authoritative. A saved one-time flag is set only for a newly loaded map and
 consumed during setup; old saves default false. Native checks cover first
 arrival, peaceful arrival, repeated reconciliation and loading the prior
 checkpoint's save. A previously observed household is never reset to fabricate
-an unrecorded past. Missing legacy history still requires an explicit migration
-policy; this guard preserves current bodies while that decision is pending.
+an unrecorded past. Original 5.8.50 save, upgrade, reload and original-save rollback
+now pass 21 scenario assertions (including repeated identity invariants).
+Under the existing preservation contract, the first departure starts tracking
+at its actual date; no missing past combat is invented. An overdue existing
+event remains due at that boundary. See `legacy-results.json`.
 
 Still required before delivery: efficient long combat/quiet processing,
-legacy history without an earlier snapshot, theft/access with real inventory transfers,
-performance and original-save regressions, and final canonical rules/version.
+theft/access with real inventory transfers, performance regressions and final
+canonical rules/version.
 Draft PR545 tracks this branch. The calendar tests do not establish safe long
 catch-up latency or complete the remaining world/event adapters.
 No author handoff or released 5.8.51 is claimed for this checkpoint.

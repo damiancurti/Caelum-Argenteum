@@ -4,6 +4,16 @@ Documentation version: **5.8.50** - 2026-10-28.
 
 ## Unreleased #415 checkpoint - 2026-10-29
 
+Original 5.8.50 compatibility was checked with a city save created by its exact
+released package. Upgrade, current reload and rollback of the untouched input
+pass 21 scenario assertions, including repeated identity checks. Existing Life,
+contamination, household identity and the actual inventory object survive; the
+new tracking boundary is the first actual departure, without invented prior
+combat. This verifies the preservation contract and changes no production
+runtime. Evidence: `assets/validation_5851/legacy-results.json`. The author has
+returned; temporary keep-awake was released. Manual checks remain grouped for
+the completed version, and no acceptance entry was removed.
+
 Continued the planned 5.8.51 implementation on its focused branch. Mean combat
 now owns actual encounter rows, simultaneous casualties, preparation/recovery,
 magazines, Anima, statuses, healing doses, artillery/ram work and finite reserve
