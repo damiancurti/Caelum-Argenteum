@@ -238,6 +238,7 @@ class CaelumWeatherState : Inventory
     int Region,Shelter,GeometryCheckedTic;
     vector3 SamplePosition;
     CaelumClimateRegion RegionMarker;
+    CaelumDeployedTent CampShelter;
     int MarkerCheckedTic;
     bool WindSheltered;
     String SourceMap;
@@ -293,10 +294,13 @@ class CaelumWeatherState : Inventory
         {
             weather.Shelter=CaelumWeatherShelter.Resolve(user,profile);
             weather.WindSheltered=CaelumThermalShelter.WindBlocked(user);
+            weather.CampShelter=CaelumCampShelter.Find(user);
             weather.SamplePosition=user.Pos;weather.GeometryCheckedTic=level.maptime;
         }
         weather.Current.ApplyShelter(weather.Outside,weather.Shelter,profile);
         if(weather.WindSheltered){weather.Current.WindSpeedKmh=0;weather.Current.WindFromDegrees=0;}
+        if(weather.CampShelter!=null && weather.CampShelter.Covers(user))
+        {weather.Current.PrecipitationMmPerHour=0;weather.Current.WindSpeedKmh*=CaelumCampData.TENT_WIND_FACTOR;}
         CaelumSealClimate.ApplyWeather(user,weather.Current);
         weather.SourceMap=level.MapName;weather.LocationId=location;weather.Profile=profile;weather.Region=region;
         weather.SampleDate=serial;weather.SampleMinute=minute;weather.Revision=CaelumWeatherRules.REVISION;

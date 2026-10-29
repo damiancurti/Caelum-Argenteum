@@ -6,3 +6,10 @@ or Doom assets were used. Prompts and unchanged generated sources are retained
 in assets/art_source/camp_equipment. Runtime RGBA exports are deterministically
 cropped/resized by export_camp_icons.py; see EXPORT.json and VALIDATION.json.
 No additional public redistribution license is inferred.
+
+Deployed tent model: original deterministic mesh authored for this project,
+2026-10-24, using the approved two-metre A-frame dimensions. Generator and
+visual configuration: assets/generators/generate_camp_tent.py and camp_tent_art.json.
+It references existing project-owned cloth, stash wood, station iron and leather
+textures without modification; material paths and hashes are recorded in
+assets/art_source/camp_equipment/TENT_MODEL.json. No external mesh was used.

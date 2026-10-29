@@ -1,0 +1,33 @@
+{
+  "issue": 411,
+  "purpose": "Original matte environment model; painted inventory artwork remains unchanged",
+  "physical_source": "src/caelum/data/CaelumCampData.zs",
+  "units_source": "src/caelum/core/CaelumPhysicsUnits.zs",
+  "visual_only": {
+    "pixel_stretch_compensation": 1.2,
+    "canvas_sag_m": 0.012,
+    "groundsheet_offset_m": 0.002,
+    "pole_radius_m": 0.012,
+    "seam_radius_m": 0.003,
+    "rope_radius_m": 0.003,
+    "stake_radius_m": 0.006,
+    "stake_height_m": 0.06,
+    "roof_panels": 8,
+    "flap_fold_fraction": 0.14
+  },
+  "materials": {
+    "canvas": "models/caelum/world/alchemy_ingredients/cloth.png",
+    "canvas_dark": "models/caelum/world/alchemy_ingredients/cloth_shade2.png",
+    "wood": "models/caelum/props/stash/ca_stash_wood.png",
+    "iron": "models/caelum/props/stations/ca_station_iron.png",
+    "rope": "models/caelum/props/stations/ca_station_leather.png"
+  },
+  "notes": [
+    "The revised 4 x 3 x 1.8 m A-frame uses approximately 35.34 square metres of canvas, including floor and triangular ends.",
+    "Inclined wooden end frames leave the central entrance open; no central post blocks the native crouched body.",
+    "Guy ropes and stakes remain within the approved 4 x 3 m plan; no additional land footprint is introduced.",
+    "The original two-metre mesh is retained as tent_legacy.obj for already-deployed structures and unfinished old assembly tasks.",
+    "Visual seam, pole and stake dimensions do not alter approved inventory mass or thermal calibration.",
+    "Only existing owned textures are referenced; no bitmap is generated or edited."
+  ]
+}

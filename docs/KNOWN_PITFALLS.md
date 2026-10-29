@@ -4,6 +4,55 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-160 - Do not retain live actor references into an unloaded hub
+
+**Evidence:** native isolated test, 5.8.8/#411;
+`assets/validation_588/deploy`, failed deployhub01 and passing deployhub04.
+
+A carried test record's pointers to a deployed tent and its inventory become
+null while that map is unloaded. The map's own saved tent, original item and
+collision parts still survive. Do not interpret the absent cross-map pointer
+as lost property or recreate a replacement item. Verify the loaded structure
+locally after returning, using its saved identity data and original quantity.
+Transient typed registries must rebuild once on map/save/hub load and track
+subsequent creation/destruction; they must not own or manufacture the objects.
+The camp registry skips local block queries entirely on maps with no tents.
+
+**Scope/performance:** one typed tent census per load, no periodic global scan.
+The actor population is the loaded map; the output is bounded by actual deployed
+tents, not an invented gameplay cap. The isolated 20-tent/1,600-part diagnostic
+repeats the census 100 times: mean 0.008428 ms, maximum 0.037800 ms on the recorded
+Ryzen 9 5950X/GZDoom 4.14.2 run measure02. This is a load-census cost, not a frame
+presentation or rendering-acceptance claim. Normal shelter sampling uses the
+local blockmap only when that registry is nonempty.
+
+## CA-KP-159 - Finish a local line iterator before nested collision queries
+
+Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED
+First recorded / last checked: 2026-10-24 / 2026-10-24
+Issue: #411. Baseline: bf9cb340 plus the placement worktree changes; probe02
+fails and probe03 fixes the traversal. GZDoom 4.14.2 / Windows 11 / Vulkan.
+Scope: CaelumPlacementGeometry.Fits and native BlockLinesIterator.
+
+A four-MU liquid strip inside an otherwise dry footprint passed validation
+when TestMobjLocation ran during an active line iteration. The fixture could
+independently enumerate both strip boundaries and reject an individual liquid
+sample, yet the combined pass skipped those boundaries. Adding a point-sector
+terrain guard alone did not fix it. Snapshotting the local Line references
+before support/collision queries fixes the same reproduction. This establishes
+iterator invalidation by nested native collision traversal; the internal engine
+counter mechanism is not inferred as source-verified from this experiment.
+
+Finish the bounded spatial query before invoking another native collision query
+inside its processing. This snapshot is local to one explicit placement action;
+it is not authorization for routine global scans. Keep the snapshot transient,
+with no simulation yield while its map references are used.
+
+Evidence: assets/validation_588/native/core01, core02, strip03 and core04 logs;
+core05 retains the narrow-strip regression alongside 3D water and dry elevated
+support. Run the core script against probe02/probe03 to compare. Author manual
+acceptance remains pending as CA411-PLACEMENT-01. No FPS claim is made.
+
 ## CA-KP-158 - Saved readiness is not a migration gate; hub identity is not a raw pointer
 
 Status/evidence: ENGINE-VERIFIED; #411 / 5.8.6, 2026-10-24, GZDoom 4.14.2.
@@ -4438,6 +4487,13 @@ contains the before screenshot, all final native views and the reproducible
 QA addon. Native TryMove checks cross each open preview without noclip.
 The failed intermediate north-wall placement is recorded separately; a clear
 mesh does not imply clear map geometry behind it.
+
+Follow-up #411, 5.8.8, 2026-10-25: the same multi-slot mistake rendered the
+legacy 2x2 m tent inside its enlarged replacement. An isolated gallery subclass
+with its own MODELDEF passed but could not exercise the production binding.
+Use the actual deployed class and both saved geometry states for visual QA.
+Separate single-slot blocks resolve the overlay; before/after native evidence is
+in assets/validation_588/binding. Final author confirmation is still pending.
 
 Regression: `python assets/validation_43614a/check_siege.py` checks exclusive
 state bindings, valid OBJ/material references and two byte-identical generator

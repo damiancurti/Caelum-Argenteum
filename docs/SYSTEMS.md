@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.7** — 2026-10-24.
+Documentation version: **5.8.8** — 2026-10-24.
 
 ## Central property contracts (#411, 5.8.6 in progress)
 
@@ -45,7 +45,7 @@ remain pending, not inferred from the purchase interface. No random theft or
 real-world offline progression is introduced.
 
 Approved camp scope (2026-10-24): a portable, collapsible canvas tent for two,
-2 x 2 m floor and 1.8 m ridge; a portable 20 L iron pot retaining water volume,
+4 x 3 m floor and 1.8 m ridge; a portable 20 L iron pot retaining water volume,
 temperature and contamination without automatic refill; and a wood campfire.
 The fire boils water, cooks meat/fish/puchero and emits heat through the existing
 thermal system. Bread requires an oven. The author additionally approved an 8 kW
@@ -57,17 +57,20 @@ and handles, approximately 5.5 kg empty. Iron density is 7,870 kg/m3, specific
 heat 450 J/(kg K), conductivity 80 W/(m K). These are approved design references.
 Tent and pot use both purchase and fabrication with learned recipes; the fire
 is assembled on suitable ground with wood. The author then approved approximately
-10 kg for the tent: 6 kg cotton canvas (about 15.8 m2 at 380 g/m2, floor included),
-3 kg wooden poles, 600 g iron stakes and 400 g plant-fibre ropes. Its interior
+18.8 kg for the resized tent: 13.5 kg cotton canvas (35.34 m2 at 380 g/m2
+rounded up from 13.43 kg, floor and ends included), 4.1 kg wooden frames,
+600 g iron stakes and 600 g plant-fibre ropes. The author rejected the original
+2 x 2 m appearance and approved 4 x 3 x 1.8 m on 2026-10-24. Its interior
 blocks direct rain and reduces exterior wind by 90%, retaining exterior air
 temperature with no self-heating or new rest bonus. The fire extinguishes when
 leaving its map and retains the unspent loaded wood; off-map burning was rejected.
-Approved recipes at 100% efficiency: tent uses 6,000 g cotton fabric (T2),
-3,000 g wood, 600 g iron ingot (T2) and 400 g rope; pot uses 5,500 g iron ingot
+Approved recipes at 100% efficiency: tent uses 13,500 g cotton fabric (T2),
+4,100 g wood, 600 g iron ingot (T2) and 600 g rope; pot uses 5,500 g iron ingot
 (T2). Tent needs Workbench + Sewing machine + Fine tools; pot needs Forge +
 Anvil. Existing fabrication duration, Dexterity and waste apply at normal
 complexity. Base prices are ingredient costs plus the existing 25% manufacturing
-margin (53,437.5 / 60,156.25 copper before rounding and store margins). Provisions
+margin (tent repriced from its enlarged recipe; pot remains 60,156.25 copper
+before rounding and store margins). Provisions
 stock three of each; libraries stock ten recipe books each. Replenishment follows
 recipe work time, without resetting existing stock on upgrade. Setup/packing
 takes 10/5 game minutes for the tent; preparing/igniting the fire takes one game
@@ -87,6 +90,50 @@ stock. Pot cooling uses the approved iron cylinder wall and heat capacity, plus
 convection/radiation at its open top, through the existing water clock. Existing
 glass/leather containers keep their original formulas. Fire fuel/heat helpers
 have isolated numerical evidence; no deployed fire runtime is claimed yet.
+
+The 5.8.8 geometry slice integrates dry/stable support and complete native
+collision-volume checks into existing carried-chest placement. The 1 MU support
+tolerance matches the existing sleeping-bag check. Door/transition clearances
+use the player's radius, and local sliding-door checks preserve the retracted
+leaf's closed position. Narrow liquid sectors and 3D water reject placement;
+a dry solid 3D floor over a liquid basement remains valid. All checks precede
+mutation of the actual carried chest.
+
+Tent deployment now uses the approved ten/five game minutes, including native
+waiting and accelerated attended work. It preserves the original inventory
+instance across mounting, packing, save/load and hub return. Complete footprint
+checks require mansion garden ground, a held current home contract or the
+authored countryside rectangles; unknown land grants no permission. Existing
+chest placement keeps its separately tested geometry policy. The entrance faces
+the nearest cardinal direction towards the placing character, preserving the
+approved square footprint. Local solid roof/back pieces leave crouched access.
+
+Rain is excluded and ambient wind is multiplied by 0.1 inside; existing air
+temperature and humidity are retained. An event-maintained shelter registry
+skips blockmap queries when no tents exist. Its only typed census runs on
+map/save/hub load; normal updates use spawn/destruction bookkeeping and local
+queries. This adds no rest recovery bonus or two-occupant sleeping arrangement.
+Fire deployment, cooking and the remaining furniture work are still pending.
+CA411-TENT-01 passed behavior except the rejected narrow shape; author review
+of the enlarged 4 x 3 m model remains pending. Geometry revision 2 uses a
+rectangular footprint and 224 local solid roof/back pieces. Existing revision-1
+deployed tents and unfinished old assembly tasks retain their original 2 x 2 m
+geometry/model until packed, avoiding expansion into occupied terrain. New
+assembly uses the enlarged design. Catalogue revision 2 reprices existing
+tent/book listings without resetting stock or an in-progress delivery deadline.
+
+Tent assembly reserves the owned unboxed item. Combat, conversation, another
+inventory/trade interface or leaving interaction range pauses attended work.
+Cancelling returns no fabricated copy: assembly keeps the carried item, packing
+keeps the deployed structure. Travelling to another map cancels unfinished
+attended assembly without consuming it. Completion rechecks land/geometry or
+packing capacity and title; expiry does not prevent the holder from retrieving
+the tent. The additive task/structure schema starts at revision 1; older saves
+contain no deployed camps, and original saves remain available for rollback.
+Explicit permissions for other lands and new sleeping arrangements are not
+inferred from a tent or from a grass texture outside the approved mansion map.
+
+
 
 ## Regional event discovery (#415, 5.8.5 in progress)
 

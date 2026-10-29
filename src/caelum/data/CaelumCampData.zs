@@ -2,13 +2,18 @@
 class CaelumCampData : Object
 {
     const REVISION=1;
+    const CATALOGUE_REVISION=2;
     const FIRST_RECIPE=201;
     const COUNT=2;
     const TENT_KEY=12;
     const POT_CONSUMABLE=20;
-    const TENT_KG=10.0;
-    const TENT_WIDTH_M=2.0;
-    const TENT_LENGTH_M=2.0;
+    const TENT_KG=18.8;
+    const TENT_WIDTH_M=4.0;
+    const TENT_LENGTH_M=3.0;
+    const TENT_GEOMETRY_REVISION=2;
+    const TENT_LEGACY_WIDTH_M=2.0;
+    const TENT_LEGACY_LENGTH_M=2.0;
+    const TENT_COLLISION_CELL_M=0.25;
     const TENT_HEIGHT_M=1.8;
     const TENT_WIND_FACTOR=0.1;
     const SETUP_SECONDS=600.0;
@@ -52,7 +57,7 @@ class CaelumCampData : Object
     static clearscope int Grams(int variant,int slot)
     {
         if(variant==1)return slot==0?5500:0;
-        switch(slot){case 0:return 6000;case 1:return 3000;case 2:return 600;case 3:return 400;}
+        switch(slot){case 0:return 13500;case 1:return 4100;case 2:return 600;case 3:return 600;}
         return 0;
     }
     static clearscope double PotDepth()

@@ -1,10 +1,12 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.8.7** — 2026-10-24.
+Documentation version: **5.8.8** — 2026-10-24.
+
+**5.8.8/#411:** chest geometry 46PASS; tents 112PASS + enlarged 125PASS: permissions, work, shelter, persistence. Evidence: validation_588/deploy. CA411-TENT-01 fully accepted2026-10-25, including 4x3m size/model overlay fix; fire/cooking/two-occupant rest pending.
 
 **5.8.7/#410:** illness in journey/wait forecasts;68 native PASS;independent commit/save/hub/legacy rollback;food/cooking/furniture-WIP;validation_587. Author away: retain questions/checks until return.
 
-**5.8.6/#411:** central-house contracts/relocation;142PASS;CA411-PROPERTY-01accepted2026-10-24;camp-acquisition72PASS/author-deferred;deployment/cooking-WIP;validation_586/camp.
+**5.8.6/#411:** central-house contracts/relocation;142PASS;CA411-PROPERTY-01accepted2026-10-24;camp-acquisition72PASS/CA411-EQUIPMENT-01accepted2026-10-24;deployment/cooking-WIP;validation_586/camp.
 **5.8.5/#415:**discovery accepted2026-10-24;unloaded-battles-WIP.
 
 **5.8.4/#496:**19 author/Suno map tracks; WAVs retained; filenames define reserved destinations; no current-map rebind. validation_584; CA496-MUSIC-01accepted2026-10-24. Gameplay #410-417 continues separately.
@@ -12,7 +14,7 @@ Documentation version: **5.8.7** — 2026-10-24.
 **5.8.3/#410:** core/HUD+isolated-lot-model;inventory/cooking/furniture-WIP. SYSTEMS/validation_583;40+38PASS;CA410-CORE-01accepted2026-10-24.
 **5.8.2/#414:** mansion water/gate/calendar/finite collection;LegacyMap01;validation_582;CA414-01 accepted2026-10-24.
 **5.8.1/#413:** altitude/adaptation;67PASS;validation_581;CA413-01 accepted2026-10-23.
-**5.8.0/#414:** prototype100PASS;CA414-PROTOTYPE-01 pending;production integration5.8.2;calibration:SYSTEMS.
+**5.8.0/#414:** prototype100PASS;CA414-PROTOTYPE-01accepted2026-10-24;production integration5.8.2;calibration:SYSTEMS.
 
 **5.7.14/#472:**163+21PASS;accepted2026-10-23;validation_5714;V5.7-complete.
 **5.7.12/#487:** barrel/3402L;93+1PASS;validation_5712;CA487-01accepted2026-10-23.#471 batches pending.

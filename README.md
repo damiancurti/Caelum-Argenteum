@@ -6,8 +6,50 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.7.** Obtain and update the complete repository, validate
+**Current release: 5.8.8.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+## 5.8.8 - Safe placement and persistent tents (#411, in progress)
+
+Carried chests now require dry, stable support and a free complete collision
+volume. Placement preserves door/transition access and rejects narrow liquid
+strips, with atomic failure that keeps the actual chest and contents carried.
+46 native assertions cover geometry, real storage, save/hub and original-save
+rollback; see [validation_588](assets/validation_588/RESULTS.md).
+Tent deployment now uses the approved ten/five game minutes, including native
+waiting and accelerated attended work. It preserves the original inventory
+instance across mounting, packing, save/load and hub return. Complete footprint
+checks require mansion garden ground, a held current home contract or the
+authored countryside rectangles; unknown land grants no permission. Existing
+chest placement keeps its separately tested geometry policy. The entrance faces
+the nearest cardinal direction towards the placing character, preserving the
+approved rectangular footprint. Local solid roof/back pieces leave crouched access.
+
+Rain is excluded and ambient wind is multiplied by 0.1 inside; existing air
+temperature and humidity are retained. An event-maintained shelter registry
+skips blockmap queries when no tents exist. Its only typed census runs on
+map/save/hub load; normal updates use spawn/destruction bookkeeping and local
+queries. This adds no rest recovery bonus or two-occupant sleeping arrangement.
+Fire deployment, cooking and the remaining furniture work are still pending.
+The original tent stage passed 112 native assertions; the enlarged correction
+passes 125 assertions across 13 selected runs;
+see assets/validation_588/deploy/RESULTS.md. CA411-TENT-01 passed behavior except the original narrow shape. The author
+approved an enlarged 4 x 3 x 1.8 m tent, 18.8 kg and revised materials;
+CA411-TENT-01 is fully accepted as of 2026-10-25, including the final model binding correction.
+
+CA411-PLACEMENT-01 was accepted by the author on 2026-10-24.
+The deployed tent model has a deterministic source and four inspected native
+views. Gameplay registration is active; final author visual review passed on 2026-10-25.
+
+
+Author follow-up, 2026-10-25: the enlarged dimensions and other terminal checks
+passed; a miniature old tent rendered inside the new one. This was the known
+CA-KP-009 MODELDEF multi-slot overlay, not a second deployed actor. Separate
+single-slot blocks now bind legacy frame A and enlarged frame B. Meshes, size,
+collision, costs and saved state are unchanged. Native before/after captures use
+the production actor and its actual MODELDEF, including the legacy state; the
+earlier substitute gallery did not exercise that binding. Evidence is in
+assets/validation_588/binding. The author accepted the corrected visual on 2026-10-25.
 
 ## 5.8.7 - Food illness in travel and waiting forecasts (#410, in progress)
 
@@ -52,7 +94,7 @@ previous mansion, use `run_dev.bat --legacy-map01` (or `build_dev.ps1 -LegacyMap
 to retain its exact geometry with current code; this is compatibility, not a
 conversion to the new mansion. Keep original saves and their original package.
 CA414-01 passed all author checks on 2026-10-24. The earlier isolated
-CA414-PROTOTYPE-01 remains pending independently.
+CA414-PROTOTYPE-01 was separately accepted on 2026-10-24.
 Evidence and the interactive terminal: [validation_582](assets/validation_582/RESULTS.md).
 
 5.8.1 implements altitude and persistent acclimatization (#413). Relative
@@ -69,7 +111,7 @@ levels across save/load and hub return. Production changes only synchronize two 
 This is the required technical gate, not completed campaign water simulation;
 its original quality limitation and fixture boundary remain recorded. Production integration is delivered separately in 5.8.2.
 The approved deposit dimensions and fill/drain calibration are recorded in SYSTEMS.
-Author review CA414-PROTOTYPE-01 is pending. See
+Author review CA414-PROTOTYPE-01 passed on 2026-10-24. See
 [evidence and reproduction](assets/validation_580/RESULTS.md).
 
 5.7.14 implements reusable gourd, silver-clad and gold-clad mates (#472), with

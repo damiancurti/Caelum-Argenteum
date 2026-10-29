@@ -1,0 +1,26 @@
+{
+  "issue": 411,
+  "generator": "assets/generators/generate_camp_tent.py",
+  "configuration": "assets/generators/camp_tent_art.json",
+  "physical_source": "src/caelum/data/CaelumCampData.zs",
+  "units_source": "src/caelum/core/CaelumPhysicsUnits.zs",
+  "dimensions_m": {
+    "width": 4.0,
+    "length": 3.0,
+    "ridge_height": 1.8
+  },
+  "canvas_area_m2_closed": 35.34434885648845,
+  "vertices": 1705,
+  "faces": 518,
+  "materials": {
+    "models/caelum/props/stash/ca_stash_wood.png": "c7ae22352f207d99e59ddfaa4dbbb5628dd40ad66eb06638f984b16f27ffda36",
+    "models/caelum/props/stations/ca_station_iron.png": "02312891cf9b5fcd5be597cbf77877f919f5a86a478a6d45efad751a3e75325f",
+    "models/caelum/props/stations/ca_station_leather.png": "caf6005df986fe383efd88c62910e7cab5d3b231eb707900abc727ae49787b1e",
+    "models/caelum/world/alchemy_ingredients/cloth.png": "53ed47e3aef37f40a396034102781852b12ce36e76baaf7194f202fcbbead201",
+    "models/caelum/world/alchemy_ingredients/cloth_shade2.png": "cbf8bc8280bd28de0b8443bb3dfa37869fe3e67f3e81f619658bfb7d251c4ae7"
+  },
+  "model": "src/models/caelum/world/camp/tent.obj",
+  "model_sha256": "6ff87979ce79892485714f51ad8c9b18d4895fda594c39771131aa904e4bf708",
+  "native_registration": "CaelumDeployedTent in src/MODELDEF; private gallery retains independent visual evidence.",
+  "author_visual_acceptance": "Pending; author away."
+}

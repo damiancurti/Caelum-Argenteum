@@ -1,6 +1,21 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.7** — 2026-10-24.
+Documentation version: **5.8.8** — 2026-10-24.
+
+## 5.8.8 - Deployed tent artwork (#411, in progress)
+
+The deterministic `generate_camp_tent.py` builds an original A-frame OBJ from
+the revised approved 4 x 3 m plan and 1.8 m ridge, using only existing owned canvas,
+wood, iron and leather textures. The closed canvas area is approximately
+35.34 square metres. The entrance remains open between inclined end frames.
+The painted inventory sprite remains unchanged. Sources, material hashes and
+provenance are in `assets/art_source/camp_equipment/TENT_MODEL.json`; native
+four-view inspection and repeat-generation evidence are in
+`assets/validation_588/tent`. Native registration/deployment is implemented; the author rejected the original narrow silhouette and approved the enlarged
+dimensions/materials. The enlarged shape and corrected MODELDEF overlay are fully accepted (2026-10-25). Separate single-slot frame bindings prevent the
+legacy and enlarged meshes rendering together; see validation_588/binding.
+The original model is preserved as tent_legacy.obj for old deployed structures;
+its hash remains bbfdef6195c44540d7223cac33ee4fae15747c10051fc8dac0c67c50a97fa9e8. No new bitmap or external artwork was introduced.
 
 ## 5.8.6 - Central property access (#411)
 

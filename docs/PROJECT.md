@@ -1,6 +1,46 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.7** — 2026-10-24.
+Documentation version: **5.8.8** — 2026-10-24.
+
+## 5.8.8 - Safe placement and persistent tents (#411, in progress)
+
+Carried chests now require dry, stable support and a free complete collision
+volume. Placement preserves door/transition access and rejects narrow liquid
+strips, with atomic failure that keeps the actual chest and contents carried.
+46 native assertions cover geometry, real storage, save/hub and original-save
+rollback; see [validation_588](../assets/validation_588/RESULTS.md).
+Tent deployment now uses the approved ten/five game minutes, including native
+waiting and accelerated attended work. It preserves the original inventory
+instance across mounting, packing, save/load and hub return. Complete footprint
+checks require mansion garden ground, a held current home contract or the
+authored countryside rectangles; unknown land grants no permission. Existing
+chest placement keeps its separately tested geometry policy. The entrance faces
+the nearest cardinal direction towards the placing character, preserving the
+approved rectangular footprint. Local solid roof/back pieces leave crouched access.
+
+Rain is excluded and ambient wind is multiplied by 0.1 inside; existing air
+temperature and humidity are retained. An event-maintained shelter registry
+skips blockmap queries when no tents exist. Its only typed census runs on
+map/save/hub load; normal updates use spawn/destruction bookkeeping and local
+queries. This adds no rest recovery bonus or two-occupant sleeping arrangement.
+Fire deployment, cooking and the remaining furniture work are still pending.
+The original tent stage passed 112 native assertions; the enlarged correction
+passes 125 assertions across 13 selected runs;
+see assets/validation_588/deploy/RESULTS.md. CA411-TENT-01 passed behavior except the original narrow shape. The author
+approved an enlarged 4 x 3 x 1.8 m tent, 18.8 kg and revised materials;
+CA411-TENT-01 is fully accepted as of 2026-10-25, including the final model binding correction.
+
+CA411-PLACEMENT-01 was accepted by the author on 2026-10-24.
+
+
+Author follow-up, 2026-10-25: the enlarged dimensions and other terminal checks
+passed; a miniature old tent rendered inside the new one. This was the known
+CA-KP-009 MODELDEF multi-slot overlay, not a second deployed actor. Separate
+single-slot blocks now bind legacy frame A and enlarged frame B. Meshes, size,
+collision, costs and saved state are unchanged. Native before/after captures use
+the production actor and its actual MODELDEF, including the legacy state; the
+earlier substitute gallery did not exercise that binding. Evidence is in
+assets/validation_588/binding. The author accepted the corrected visual on 2026-10-25.
 
 ## 5.8.7 - Food illness in travel and waiting forecasts (#410, in progress)
 
@@ -49,7 +89,7 @@ pool geometry and behavior remain unchanged. Explicit `-LegacyMap01` retains
 the byte-identical 5.8.1 mansion for visited-map saves; new geometry is for new
 campaigns. Static/native evidence and limits: assets/validation_582/RESULTS.md.
 CA414-01 passed all author checks on 2026-10-24. The earlier isolated
-CA414-PROTOTYPE-01 remains pending; no merge or completed V5.8 is claimed.
+CA414-PROTOTYPE-01 was accepted on 2026-10-24; no merge or completed V5.8 is claimed.
 #413 remains accepted. Other issues keep their independent scope.
 
 ## 5.8.1 - Altitude and acclimatization (#413)
@@ -80,7 +120,7 @@ a 20 cm connecting opening with discharge coefficient 0.62, potable left inflow
 at 1 L/s to 1.75 m and right drainage at 1 L/s down to 0.25 m, including absence
 at Limbo's 1:1 game-clock rate. Placement, controller and save-safe geometry
 integration remain unimplemented. The author approved the existing container rule:
-mixtures retain every contaminant present, without dilution-based purification. CA414-PROTOTYPE-01 awaits
+mixtures retain every contaminant present, without dilution-based purification. CA414-PROTOTYPE-01 passed on 2026-10-24; the earlier stage awaited
 author acceptance. Evidence: assets/validation_580/RESULTS.md.
 
 ## 5.7.14 - Reusable mates (#472)

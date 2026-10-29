@@ -1,6 +1,6 @@
 # Caelum Argenteum - Sprite art direction
 
-Documentation version: **5.8.7** — 2026-10-24.
+Documentation version: **5.8.8** — 2026-10-24.
 
 This is the artistic brief for generating and reviewing sprite artwork. Damián
 Curti requested this dedicated canonical document during issue

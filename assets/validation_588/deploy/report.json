@@ -1,0 +1,118 @@
+{
+  "issue": 411,
+  "version": "5.8.8",
+  "pass_assertions": 112,
+  "runs": [
+    {
+      "label": "deploycore06",
+      "pass_assertions": 40,
+      "runtime_sha256": "7926B9F5E21A78CF81E70D7B1ECEB6399D37353C6FF550D588FD536007320A1F",
+      "addon_sha256": "ECC90A6BCB080A09F5D2C3EE7C10364D58B64DD6558A7081A7BB98FFD4AE821D"
+    },
+    {
+      "label": "deploywait09",
+      "pass_assertions": 6,
+      "runtime_sha256": "7926B9F5E21A78CF81E70D7B1ECEB6399D37353C6FF550D588FD536007320A1F",
+      "addon_sha256": "ECC90A6BCB080A09F5D2C3EE7C10364D58B64DD6558A7081A7BB98FFD4AE821D"
+    },
+    {
+      "label": "handoff04",
+      "pass_assertions": 9,
+      "runtime_sha256": "7926B9F5E21A78CF81E70D7B1ECEB6399D37353C6FF550D588FD536007320A1F",
+      "addon_sha256": "ECC90A6BCB080A09F5D2C3EE7C10364D58B64DD6558A7081A7BB98FFD4AE821D"
+    },
+    {
+      "label": "climate03",
+      "pass_assertions": 9,
+      "runtime_sha256": "7926B9F5E21A78CF81E70D7B1ECEB6399D37353C6FF550D588FD536007320A1F",
+      "addon_sha256": "ECC90A6BCB080A09F5D2C3EE7C10364D58B64DD6558A7081A7BB98FFD4AE821D"
+    },
+    {
+      "label": "land02",
+      "pass_assertions": 4,
+      "runtime_sha256": "7926B9F5E21A78CF81E70D7B1ECEB6399D37353C6FF550D588FD536007320A1F",
+      "addon_sha256": "ECC90A6BCB080A09F5D2C3EE7C10364D58B64DD6558A7081A7BB98FFD4AE821D"
+    },
+    {
+      "label": "measure02",
+      "pass_assertions": 2,
+      "runtime_sha256": "7926B9F5E21A78CF81E70D7B1ECEB6399D37353C6FF550D588FD536007320A1F",
+      "addon_sha256": "ECC90A6BCB080A09F5D2C3EE7C10364D58B64DD6558A7081A7BB98FFD4AE821D"
+    },
+    {
+      "label": "deploysave03",
+      "pass_assertions": 2,
+      "runtime_sha256": "7926B9F5E21A78CF81E70D7B1ECEB6399D37353C6FF550D588FD536007320A1F",
+      "addon_sha256": "ECC90A6BCB080A09F5D2C3EE7C10364D58B64DD6558A7081A7BB98FFD4AE821D"
+    },
+    {
+      "label": "deployload04",
+      "pass_assertions": 6,
+      "runtime_sha256": "7926B9F5E21A78CF81E70D7B1ECEB6399D37353C6FF550D588FD536007320A1F",
+      "addon_sha256": "ECC90A6BCB080A09F5D2C3EE7C10364D58B64DD6558A7081A7BB98FFD4AE821D"
+    },
+    {
+      "label": "deployhub04",
+      "pass_assertions": 14,
+      "runtime_sha256": "7926B9F5E21A78CF81E70D7B1ECEB6399D37353C6FF550D588FD536007320A1F",
+      "addon_sha256": "ECC90A6BCB080A09F5D2C3EE7C10364D58B64DD6558A7081A7BB98FFD4AE821D"
+    },
+    {
+      "label": "tasksave02",
+      "pass_assertions": 1,
+      "runtime_sha256": "7926B9F5E21A78CF81E70D7B1ECEB6399D37353C6FF550D588FD536007320A1F",
+      "addon_sha256": "ECC90A6BCB080A09F5D2C3EE7C10364D58B64DD6558A7081A7BB98FFD4AE821D"
+    },
+    {
+      "label": "taskload03",
+      "pass_assertions": 4,
+      "runtime_sha256": "7926B9F5E21A78CF81E70D7B1ECEB6399D37353C6FF550D588FD536007320A1F",
+      "addon_sha256": "ECC90A6BCB080A09F5D2C3EE7C10364D58B64DD6558A7081A7BB98FFD4AE821D"
+    },
+    {
+      "label": "taskhub03",
+      "pass_assertions": 6,
+      "runtime_sha256": "7926B9F5E21A78CF81E70D7B1ECEB6399D37353C6FF550D588FD536007320A1F",
+      "addon_sha256": "ECC90A6BCB080A09F5D2C3EE7C10364D58B64DD6558A7081A7BB98FFD4AE821D"
+    },
+    {
+      "label": "campoldload04",
+      "pass_assertions": 1,
+      "runtime_sha256": "280CBBF77CA294F66025F31F3D334E2C575E1BE99169AAB2C59B848C0066E3FE",
+      "addon_sha256": "8085E19EC39AD25206DC94AECA8212553F4615EAAECDA73E29D839D49F0DB9BC"
+    },
+    {
+      "label": "campoldrollback04",
+      "pass_assertions": 1,
+      "runtime_sha256": "D7CF59FB96F88BA714B88221405BF790B142CDA44D29B6545E0E9E0214549A7F",
+      "addon_sha256": "EF3ACD42C96B4BB5C5C7ECFAF955E0A97327087A6A61C82664764B4EA00108D2"
+    },
+    {
+      "label": "campstorage04",
+      "pass_assertions": 7,
+      "runtime_sha256": "280CBBF77CA294F66025F31F3D334E2C575E1BE99169AAB2C59B848C0066E3FE",
+      "addon_sha256": "F9AB68B120307EEC6867157C4AA95470C5E35E6FF81DACE3A7DCC1D04EF04F3D"
+    }
+  ],
+  "runtime_members": 16855,
+  "package_sha256": "280cbbf77ca294f66025f31f3d334e2c575e1be99169aab2c59b848c0066e3fe",
+  "probe_sha256": "7926b9f5e21a78cf81e70d7b1eceb6399d37353c6ff550d588fd536007320a1f",
+  "complete_source_and_tested_bytes_equal": true,
+  "legacy_original_sha256": "c507d98fac35cc2a200febb43eacedad5bd2d01bed8c7ac4148d9af585a3bd7e",
+  "schema": "Additive revision 1 for deployed structure/task; original pre-camp save remains reversible.",
+  "author_acceptance": "Pending CA411-TENT-01; terminal prepared, not launched during absence.",
+  "performance": "Event-maintained registry; one typed census per load. Twenty tents / 1600 parts, 100 rebuilds: mean 0.008428 ms, max 0.037800 ms. No rendering/FPS acceptance claim.",
+  "failed_probes": {
+    "campcompile01": "cross is a reserved identifier; renamed across.",
+    "deployhub01": "Private proof incorrectly dereferenced an actor in an unloaded map; now verifies original saved marker/quantity on return.",
+    "deploywait01": "Camp work was missing from existing wait/accelerated-work eligibility; added the narrow attended-camp case.",
+    "deploywait02-04": "Private MAP01 introduction conversation still active; close its test conversation before waiting.",
+    "deploywait05-06": "Exact forecast preserves existing nonzero thermal-exposure guard. Isolated exact forecast resets fixture exposure; actual accelerated-work test retains normal evolving physiology."
+  },
+  "limitations": [
+    "No author acceptance yet.",
+    "No fire/cooking or new two-occupant sleeping arrangement.",
+    "Unknown land has no implicit camp permission.",
+    "Native exact-wait forecast retains its existing effect/thermal guard; manual wait and accelerated work remain supported."
+  ]
+}

@@ -15,6 +15,7 @@ class CaelumTargetInfo : Object play
     {
         if(object is 'CaelumSlidingDoorBlocker' || object is 'CaelumGateBlocker')return object.master;
         let block=CaelumDiningBlock(object);if(block!=null)return block.Table;
+        let campPart=CaelumCampTentPart(object);if(campPart!=null)return campPart.Structure;
         let part=CaelumVehiclePart(object);if(part!=null)return part.Vehicle;
         return object;
     }
@@ -110,6 +111,8 @@ class CaelumTargetInfo : Object play
         if(station!=null)Title=L(CaelumCartographyServiceData.StationName(station.GetCraftingStationType()));
         if(Subject is 'CaelumFermentationStation')
             Title=String.Format(L("CA_FERMENTATION_TITLE"),Title,double(CaelumFermentationData.WORKING_CAPACITY_LITERS));
+        if(Subject is 'CaelumDeployedTent')
+        {Actions=L(reachable?"CA_CAMP_PACK_ACTION":"CA_TARGET_APPROACH");return;}
         if(chest!=null)
         {
             if(reachable && chest.CanReachStorage(user))

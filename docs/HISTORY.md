@@ -1,6 +1,77 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.7** — 2026-10-24.
+Documentation version: **5.8.8** — 2026-10-24.
+
+## 5.8.8 - Carried-chest placement geometry (#411), 2026-10-24
+
+Final author acceptance, 2026-10-25: CA411-TENT-01 (origin 5.8.8/#411)
+passed in full: "Ahora si la carpa quedo bien". This confirms the corrected
+single-model visual in addition to previously accepted behavior and size. Its
+pending entry is removed. Earlier pending/partial notes below record the sequence
+of review, not current status. No runtime changes or repeated native tests are
+needed for this acceptance-only update; README reviewed. Fire and cooking remain
+separate outstanding scope.
+
+Added local full-volume/support/access validation to actual chest placement,
+including liquid terrain and 3D water. Rejection preserves the original carried
+object and contents. Reused sleeping-bag support tolerance and native player
+clearance, without new balance or ownership policy. A narrow-water failure
+established the nested BlockLinesIterator/collision-query constraint documented
+as CA-KP-159; failed probes are retained. Final evidence: 46 native PASS in
+assets/validation_588, original-save load/rollback and native hub return.
+CA411-PLACEMENT-01 (origin 5.8.8/#411) was fully accepted on 2026-10-24
+when the author confirmed every terminal check except the tent silhouette.
+At that geometry stage, tent/fire/land/cooking remained open. README reviewed.
+
+Artwork continuation: generated the original deployed A-frame tent OBJ from
+approved dimensions, reusing owned environment materials. Repeat generation is
+byte-identical; one native gallery assertion and four visually inspected views
+pass. The private fixture helper/wait-chain failures are retained separately.
+Inventory artwork remains unchanged; deployment and author review are pending.
+
+Tent runtime continuation: preserved the original inventory actor inside a
+persistent deployed structure and implemented approved land permissions,
+ten/five-minute attended assembly/packing, native wait and acceleration,
+cardinal entry orientation, save/hub recovery and rain/wind protection without
+ambient-temperature or recovery bonuses. Original saves remain unchanged and
+load in both the new package and their original package. Departure cancels an
+unfinished attended assembly without consuming the item; deployed structures
+persist. Native identity, geometry, timing, climate, menu actions and registry
+evidence totals 112 PASS across 15 selected runs, recorded separately in
+assets/validation_588/deploy. The exact final
+package is byte-checked against all current source members and tested probe13.
+The original private hub probe incorrectly expected live references into an
+unloaded map; the corrected test verifies the saved original item marker and
+quantity on return. The exact-wait fixture also exposed the existing thermal
+forecast guard: nonzero exposure rejects an exact prediction, while native
+manual waiting/acceleration still runs. That existing guard was preserved.
+CA411-TENT-01 (origin 5.8.8/#411): the author accepted behavior on 2026-10-24
+but rejected the narrow silhouette. The author approved 4 x 3 x 1.8 m,
+18.8 kg, 13.5 kg canvas/4.1 kg wood/600 g iron/600 g rope, recipe-based
+repricing, and retained 10/5-minute assembly/packing. Enlarged visual/fit
+acceptance remains pending; the entry stays in pending_test.txt.
+The enlarged correction passes 125 native assertions in 13 selected runs,
+including side-by-side crouched occupants, rectangular clearances, stock-preserving
+repricing, old deployed/unfinished tent load, native hub/save and original-package
+rollback. All 16,857 final package members match src byte-for-byte.
+One failed rollback probe used the wrong fixture basename; restoring deploy.pk3
+resolved the loader rejection. Evidence: validation_588/deploy/wide-report.json.
+No fire, cooking or new two-occupant sleeping implementation is claimed.
+
+
+Author follow-up, 2026-10-25: the enlarged dimensions and other terminal checks
+passed; a miniature old tent rendered inside the new one. This was the known
+CA-KP-009 MODELDEF multi-slot overlay, not a second deployed actor. Separate
+single-slot blocks now bind legacy frame A and enlarged frame B. Meshes, size,
+collision, costs and saved state are unchanged. Native before/after captures use
+the production actor and its actual MODELDEF, including the legacy state; the
+earlier substitute gallery did not exercise that binding. Evidence is in
+assets/validation_588/binding. Only the corrected visual is pending author review.
+
+CA411-TENT-01 (origin 5.8.8/#411) remains PARTIAL only for the reported model
+overlay; earlier functional/size acceptance is retained. Native verification
+uses the actual production class instead of the earlier substitute gallery.
+README reviewed; this is a continuation of the same patch, not a new balance.
 
 ## 5.8.7 - Food illness in forecasts (#410, in progress), 2026-10-24
 
@@ -23,7 +94,7 @@ Camp artwork continuation: generated and retained two painted alpha sources,
 exported inventory/world sprite registrations deterministically, and inspected
 the 128-pixel results. Author visual review is deferred until return.
 
-Camp acquisition continuation adds individually owned canvas tents and 20 L iron pots, learned fabrication recipes, Provisions/library catalogues, recipe-based replenishment, painted inventory icons and pot-specific cooling. Recipe schema 15 appends IDs 201/202; prior knowledge and stock migrate idempotently. Pot volume, contamination and temperature survive pickup, trade, Box/chest transfers, native saves and hub travel. Validation: 72 native PASS in 12 selected runs, 16,850 final package members verified byte-for-byte, original-save migration and rollback, clean static checks, and a native Spanish inventory capture. Housing remains accepted. Camp deployment, fire/cooking integration and author equipment/art acceptance remain pending; questions and manual tests are held until the author returns.
+Camp acquisition continuation adds individually owned canvas tents and 20 L iron pots, learned fabrication recipes, Provisions/library catalogues, recipe-based replenishment, painted inventory icons and pot-specific cooling. Recipe schema 15 appends IDs 201/202; prior knowledge and stock migrate idempotently. Pot volume, contamination and temperature survive pickup, trade, Box/chest transfers, native saves and hub travel. Validation: 72 native PASS in 12 selected runs, 16,850 final package members verified byte-for-byte, original-save migration and rollback, clean static checks, and a native Spanish inventory capture. Housing remains accepted. CA411-EQUIPMENT-01 (origin 5.8.6/#411) was accepted on 2026-10-24 with no qualifications for that acquisition package. The later rejected deployed tent silhouette belongs to CA411-TENT-01, not these accepted painted inventory icons. Fire/cooking remain pending.
 
 ## 5.8.5 - Regional event discovery (#415, in progress), 2026-10-24
 
@@ -127,7 +198,9 @@ a 20 cm opening with Cd 0.62, left potable inflow 1 L/s to 1.75 m and right drai
 1 L/s down to 0.25 m. The calendar includes map absence at Limbo's 1:1 rate,
 without offline real-time progression. The pool itself must remain unchanged.
 This records the approved contract, not completed production implementation.
-CA414-PROTOTYPE-01 is outstanding; no author acceptance or completed V5.8 claim.
+CA414-PROTOTYPE-01 (origin 5.8.0/#414) was accepted on 2026-10-24 when
+the author confirmed all terminal checks except the separate tent silhouette.
+This confirms the isolated prototype only; V5.8 remains incomplete.
 
 ## 5.7.14 - Reusable mates (#472), 2026-10-23
 
@@ -203,7 +276,7 @@ abstract prepared reagent/charge/sealed-kit recipes, derived prices and import/l
 stock. Identical consumables use the cheapest recipe before the 25% markup.
 Production code adds a dedicated barrel panel, shared ledger references, atomic
 withdrawals, fixed-vessel water reservations and additive recipe/material migrations.
-The 21 attended recipes pass 114 native assertions; transaction, catalogue and
+The 21 attended recipes pass 112 native assertions; transaction, catalogue and
 saved-barrel checks pass 30, 21 and 1+6 respectively. Further integration/presentation
 checks remain in progress; these are agent checks, not author acceptance.
 

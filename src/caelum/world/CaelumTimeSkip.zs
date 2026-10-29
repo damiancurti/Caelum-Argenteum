@@ -109,12 +109,13 @@ class CaelumTimeSkipState : Inventory
     static bool TaskActive(CaelumPlayer user)
     {return user!=null && (user.CraftingTaskActive || CaelumRecipeSession.Working(user));}
     static Actor TaskAnchor(CaelumPlayer user)
-    {let reading=CaelumRecipeSession.Get(user);return user.CraftingTaskActive?user.ActiveCraftingStationActor:reading!=null?reading.Anchor:null;}
+    {let camp=CaelumCampTask.Find(user);if(CaelumCampTask.Active(user) && camp!=null)return camp.Anchor;
+        let reading=CaelumRecipeSession.Get(user);return user.CraftingTaskActive?user.ActiveCraftingStationActor:reading!=null?reading.Anchor:null;}
     static double TaskSeconds(CaelumPlayer user)
     {
         let reading=CaelumRecipeSession.Get(user);
         if(user.CraftingTaskActive)return user.CraftingTaskRemainingSeconds
-            /(user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_BOIL || user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_CHEMISTRY?CaelumThermalRuntime.WorldTicSeconds()*TICRATE:1);
+            /(user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_BOIL || user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_CHEMISTRY || user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_CAMP?CaelumThermalRuntime.WorldTicSeconds()*TICRATE:1);
         return reading!=null?reading.RemainingSeconds:0;
     }
     static bool IsActive(CaelumPlayer user) {let s=Get(user);return s!=null && s.Active;}

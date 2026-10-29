@@ -209,6 +209,11 @@ class CaelumThermalEnvironment : Object play
         thermal.SealClimateRevision=CaelumSealClimateData.REVISION;
         thermal.AmbientAirC=local.AirTemperatureC;thermal.AmbientHumidity=local.RelativeHumidityPercent;
         thermal.AmbientWindKmh=thermal.WindSheltered ? 0 : local.WindSpeedKmh;
+        if(CaelumCampShelter.Find(body)!=null)
+        {
+            thermal.Roof=true;thermal.RainMmHour=0;
+            thermal.AmbientWindKmh*=CaelumCampData.TENT_WIND_FACTOR;
+        }
         double exterior=thermal.AmbientWindKmh/3.6;
         // Suma cuadrática de magnitudes: aproximación local sin rumbo corporal.
         thermal.WindMps=Sqrt(exterior*exterior+localMotionMps*localMotionMps);

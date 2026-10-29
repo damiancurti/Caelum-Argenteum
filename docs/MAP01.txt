@@ -1,6 +1,14 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.8.7** — 2026-10-24.
+Documentation version: **5.8.8** — 2026-10-24.
+
+5.8.8 - Portable tents in mansion gardens (#411)
+
+Owned tents can be assembled on dry, stable CMGR01A garden ground with the
+complete approved footprint clear. They retain their original inventory item,
+save/hub state and existing ambient temperature while blocking rain and
+reducing wind. No mansion geometry or fixed furnishing is replaced. Campfires,
+cooking and new two-person rest arrangements remain separate pending work.
 
 ## 5.8.6 boundary ? Central property (#411)
 

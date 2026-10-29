@@ -1,0 +1,26 @@
+{
+  "issue": 411,
+  "version": "5.8.8",
+  "changed_package_members": [
+    "MODELDEF"
+  ],
+  "members": 16857,
+  "runs": [
+    {
+      "label": "binding-before01",
+      "native_initialization_pass": 2,
+      "runtime_sha256": "27CC2FEF357CFE621D534FC717D1CCACB4C0F372CEAFA84501E59007854B2D7C",
+      "addon_sha256": "08FF98154E7F5D6E9B96ADAFF575B8B82365D7335E5E9F7C718D78D1B9941831"
+    },
+    {
+      "label": "binding-after01",
+      "native_initialization_pass": 2,
+      "runtime_sha256": "105A75FD7A86A74D73EE5B2D9A14522F105450AD05CC89C351779E3744EA51BE",
+      "addon_sha256": "08FF98154E7F5D6E9B96ADAFF575B8B82365D7335E5E9F7C718D78D1B9941831"
+    }
+  ],
+  "source_equivalence": true,
+  "visual_review": "Actual production legacy/enlarged front and side captures inspected; overlay removed",
+  "author_acceptance": "Size and behavior accepted 2026-10-25; corrected overlay pending only",
+  "limits": "No new frame-time measurements; existing functional/save checks reused for unchanged gameplay"
+}
