@@ -1097,6 +1097,9 @@ migration; ration/raw/dish consumption; four recipes and market integration.
 Then finish the furniture catalogue, desk access and kitchen/sink placement
 without blocking the mansion secret route. Approved values are in SYSTEMS.
 The original 5.8.3 slice had no ingestion adapter; native rations now call it in 5.8.14.
+Cupboard/wardrobe capacities and fountain/cistern water rules were approved
+on 2026-10-24; dimensions, recipes and placement were defined by the later
+furniture deliveries above.
 CaelumFoodLots now implements/tested separate ages, exposure, atomic transfers,
 oldest-first consumption and serializable ownership (38 native assertions).
 Wire it into native inventory mutations and environmental time before claiming

@@ -954,6 +954,8 @@ in [validation_583](assets/validation_583/RESULTS.md). CA410-CORE-01 passed all
 author checks on 2026-10-24.
 The saved food-lot metadata model now also passes 38 isolated native checks;
 its pickup/storage/cooking adapters and environmental clock remain to be wired.
+The author has also approved cupboard/wardrobe capacities and fountain/cistern
+water rules; SYSTEMS records these pending implementation values.
 
 5.8.2 integrates connected water into the mansion (#414): two nominal 32,000 L
 deposits east of the pool, a usable gate, service steps, conservative transfer,

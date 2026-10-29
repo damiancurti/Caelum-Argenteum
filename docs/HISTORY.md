@@ -1964,6 +1964,12 @@ The author supplied nineteen destination-named tracks and confirmed authorship w
 
 ## 5.8.3 - Food contamination foundation (#410, in progress), 2026-10-24
 
+Further author decisions: cupboards 10 stacks/100 kg; wardrobes 25 stacks/
+1,000 kg with existing lock/permission rules; potable fountains 200 L replenished
+at 1 L/game minute; cisterns 1,000 L with manual filling and preserved water
+quality, no automatic replenishment. This records design approval only;
+furniture implementation and acceptance remain pending.
+
 Recorded the author's food deterioration, mass-relative dose, illness, nutrition,
 recipe, fuel/time and economy decisions in SYSTEMS. Implemented the persistent
 revision-1 illness resource, Toughness-clamped damage and natural-regeneration
