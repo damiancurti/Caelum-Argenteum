@@ -1,0 +1,77 @@
+{
+  "version": "5.8.39",
+  "issue": 415,
+  "base": "47fa8dc30455ed6053553ffe716d76706623351b",
+  "runtime_sha256": "e75114a2b6ac15027488a4e208e47bc9d8f5f64414bf62ca04af6f973b595f4e",
+  "native_passes": 194,
+  "original_runtime_passes": 16,
+  "native_failures": 0,
+  "runs": [
+    {
+      "label": "releasea-math",
+      "executed_passes": 66,
+      "package_sha256": "e75114a2b6ac15027488a4e208e47bc9d8f5f64414bf62ca04af6f973b595f4e",
+      "addon_sha256": "1b5f9ed6247036d7635a0f07e68a1e96a1e1c31c8c7da552f8f22fb0b7076e8f"
+    },
+    {
+      "label": "releasea-native",
+      "executed_passes": 14,
+      "package_sha256": "e75114a2b6ac15027488a4e208e47bc9d8f5f64414bf62ca04af6f973b595f4e",
+      "addon_sha256": "1b5f9ed6247036d7635a0f07e68a1e96a1e1c31c8c7da552f8f22fb0b7076e8f"
+    },
+    {
+      "label": "releasea-seed",
+      "executed_passes": 14,
+      "package_sha256": "e75114a2b6ac15027488a4e208e47bc9d8f5f64414bf62ca04af6f973b595f4e",
+      "addon_sha256": "1b5f9ed6247036d7635a0f07e68a1e96a1e1c31c8c7da552f8f22fb0b7076e8f"
+    },
+    {
+      "label": "releasea-load",
+      "executed_passes": 2,
+      "package_sha256": "e75114a2b6ac15027488a4e208e47bc9d8f5f64414bf62ca04af6f973b595f4e",
+      "addon_sha256": "1b5f9ed6247036d7635a0f07e68a1e96a1e1c31c8c7da552f8f22fb0b7076e8f"
+    },
+    {
+      "label": "releasea-hub",
+      "executed_passes": 16,
+      "package_sha256": "e75114a2b6ac15027488a4e208e47bc9d8f5f64414bf62ca04af6f973b595f4e",
+      "addon_sha256": "1b5f9ed6247036d7635a0f07e68a1e96a1e1c31c8c7da552f8f22fb0b7076e8f"
+    },
+    {
+      "label": "releasea-legacy",
+      "executed_passes": 2,
+      "package_sha256": "e75114a2b6ac15027488a4e208e47bc9d8f5f64414bf62ca04af6f973b595f4e",
+      "addon_sha256": "1b5f9ed6247036d7635a0f07e68a1e96a1e1c31c8c7da552f8f22fb0b7076e8f"
+    },
+    {
+      "label": "releasea-mixed",
+      "executed_passes": 80,
+      "package_sha256": "e75114a2b6ac15027488a4e208e47bc9d8f5f64414bf62ca04af6f973b595f4e",
+      "addon_sha256": "1b5f9ed6247036d7635a0f07e68a1e96a1e1c31c8c7da552f8f22fb0b7076e8f"
+    }
+  ],
+  "original_runs": [
+    {
+      "label": "priorb-oldseed",
+      "executed_passes": 14,
+      "package_sha256": "2b04ba41e122b8199ae21a932a5ec2253d75c4cc2c38e0438aa3d757f96b3539",
+      "addon_sha256": "5e540c2f34fa2f89a06916ddabea85cfd027b46afd3cffddca7088599e1b1b2d"
+    },
+    {
+      "label": "priorb-rollback",
+      "executed_passes": 2,
+      "package_sha256": "2b04ba41e122b8199ae21a932a5ec2253d75c4cc2c38e0438aa3d757f96b3539",
+      "addon_sha256": "5e540c2f34fa2f89a06916ddabea85cfd027b46afd3cffddca7088599e1b1b2d"
+    }
+  ],
+  "source_matching_package_members": 17012,
+  "unchanged_map_art_members": 14049,
+  "identical_original_shot_samples": 36,
+  "quadrature_cases": 50,
+  "quadrature_absolute_tolerance": 2e-06,
+  "estimates_1600_ms": 0.7377,
+  "prior_save_sha256": "7d8e586cf0393440d70d535c1b200b183c349ee7b0d7ca4064af8fa916e0564b",
+  "scope": "Shared active carbine/spell parameters and stateless analytic angular hit estimates. Native shots across tiers and lucidity preserve exact logged critical flags, damage, velocities, spread, Air and magazine. Calling estimates first preserves the same samples. Current save/load, real hub return and original save reopening/rollback pass.",
+  "limitations": "Continuous angular-envelope estimate of discrete sampling, not trajectories/LOS/anatomy or final damage. No unloaded round/resource/death simulation is enabled yet. Timing is an isolated pure-calculation callback, not frame presentation or FPS.",
+  "author_acceptance": "No new author-only check for this stateless prerequisite; prior pending checks preserved. Full V5.8 author handoff remains pending."
+}

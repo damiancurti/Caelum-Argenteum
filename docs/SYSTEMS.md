@@ -1,6 +1,33 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.38** - 2026-10-27.
+Documentation version: **5.8.39** - 2026-10-27.
+
+## 5.8.39 - Shared aim and mean-hit estimates (#415)
+
+The author approved preserving dispersion in summarized combat, estimating
+hits against the target's last recorded body position. Active attacks retain
+their random streams, probabilities, critical chances and resource behavior.
+Carbines choose one uniform spread half-width, then independent yaw/pitch offsets
+within that width. Both axes share the same width: their marginal averages must
+not be multiplied. WeaponAimOffset instead chooses independent signed offsets
+whose absolute values range from minimum to maximum; its central gap remains.
+Existing Mandinga/Zupay dispersion opt-outs remain effective.
+
+CaelumCombatAim supplies current accuracy, catalogue spreads and carbine critical
+chance to active attacks and future summary consumers. CaelumMeanAim integrates
+the continuous forms analytically over an angular rectangle. This estimates the
+native discrete random grids; it does not replace them in active gameplay. The
+body helper uses an expanded collision-cylinder angular envelope aimed at the
+recorded body centre, including target elevation and supplied projectile radius.
+It deliberately does not model trajectories, obstacles, falloff or hit regions;
+those are not inferred to be absent from final combat damage. Crits, armor,
+resistances, resources and rounds still require their summary integration.
+The helper is stateless: no save revision, random draw or actor scan is added.
+
+Approved for the subsequent round integration: convert native active durations
+through the source map clock. Exterior20:1 makes a5-active-second reload occupy
+100world seconds; Limbo retains1:1. Summary rounds remain one world second.
+
 
 ## 5.8.38 - Loaded NPC illness and natural depuration (#502)
 

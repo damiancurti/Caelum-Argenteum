@@ -1,6 +1,20 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.38** - 2026-10-27.
+Documentation version: **5.8.39** - 2026-10-27.
+
+## 5.8.39 / #415 - Shared aim and mean-hit calculation
+
+Implemented and verified the author-approved preservation of dispersion using
+shared current attack parameters and two distinct probability distributions.
+Evidence:194 current native PASS,16 original-runtime PASS,36 identical original
+shot samples,50 independent quadrature cases; assets/validation_5839.
+This patch is the calculation prerequisite, not the unloaded-combat delivery.
+Next: simultaneous world-second rounds, real resources/armor/casualties,
+reinforcements, artillery and return reconciliation; then actual theft adapters.
+The author approved converting attack/reload/recovery cadence through the source
+map world clock (exterior20:1, Limbo1:1). Keep unlimited defender/cannon reserves.
+No new author-only test is needed for this stateless calculation; existing
+outstanding manual checks remain unchanged until the full V5.8 handoff.
 
 ## 5.8.38 / #502 - Loaded NPC physiology
 

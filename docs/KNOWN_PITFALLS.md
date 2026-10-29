@@ -4,6 +4,26 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-185 - Mean aim must preserve the joint dispersion distribution
+Status/evidence: RESOLVED-VERIFIED (194 current native assertions;16 original checks)
+First recorded / last checked: 2026-10-27 / 2026-10-27
+Issue / PR: #415; shared aim prerequisite5.8.39
+Affected baseline:47fa8dc3 native carbine and WeaponAimOffset
+Environment: GZDoom4.14.2, Windows11, Vulkan1280x720/60cap
+Scope: angular probability estimates; not final damage or trajectories
+
+Carbines share one randomly chosen spread width between their two offsets.
+Multiplying separately averaged axis probabilities loses this correlation.
+WeaponAimOffset instead uses independent signed offsets with a central gap.
+Integrate each actual law separately; preserve existing dispersion opt-outs.
+Do not replace loaded random calls with the estimator. Reuse native parameter
+calculations and compare fixed-seed original/current shots after refactoring.
+Evidence:50 independent midpoint-quadrature cases;36 exact original/current shot
+samples across tiers/lucidity, including a run that queried estimates first;
+native save/hub/rollback. The1600-estimate callback was0.738ms; this is not a
+rendered-frame or FPS measurement. See assets/validation_5839/report.json.
+Remaining boundary: unloaded rounds, damage regions, defenses and casualties.
+
 ## CA-KP-184 - Full-resource shortcuts must include potential depuration
 Status/evidence: RESOLVED-VERIFIED (71 current native assertions plus two original-runtime checks)
 First recorded / last checked: 2026-10-27 / 2026-10-27

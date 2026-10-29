@@ -191,21 +191,16 @@ class CaelumCityCarbine : Object play
         owner.AttackResourceResume=owner.SeeState;
         if(!owner.HasAttackResource()){owner.WaitForAttackResource();return true;}
         owner.UpdateCombatHealthEffects();owner.UpdateActorOffensiveStatistics();
-        double accuracy=Max(1.0,owner.CombatPhysicalAccuracyPercent
-            *(owner.ElementalStatus==null ? 1.0 : owner.ElementalStatus.GetAccuracyMultiplier())
-            *CaelumConstants.CROUCH_ACCURACY_MULTIPLIER*CaelumConstants.RANGED_AIM_ACCURACY_MULTIPLIER);
-        double minimum=CaelumWeaponCatalogue.GetMinimumSpread(CaelumConstants.CATALOGUE_WEAPON_CARBINE,Weapon.Tier,owner.CurrentCombatLucidity)*100/accuracy;
-        double maximum=CaelumWeaponCatalogue.GetMaximumSpread(CaelumConstants.CATALOGUE_WEAPON_CARBINE,Weapon.Tier,owner.CurrentCombatLucidity)*100/accuracy;
+        double accuracy=CaelumCombatAim.Accuracy(owner,false,true);
+        double minimum=CaelumCombatAim.CarbineMinimum(owner,Weapon.Tier,accuracy);
+        double maximum=CaelumCombatAim.CarbineMaximum(owner,Weapon.Tier,accuracy);
         double spread=minimum+(maximum-minimum)*Random[CaelumCarbineSpread](0,100000)/100000.0;
         double yawOffset=Random[CaelumCarbineYaw](-100000,100000)/100000.0*spread;
         double yaw=owner.Angle+yawOffset;
         vector3 aim=victim.Pos+(0,0,victim.Height/2)-(owner.Pos+(0,0,CaelumRangedRules.LaunchHeight(owner,Weapon.WeaponType)));
         double pitchOffset=Random[CaelumCarbinePitch](-100000,100000)/100000.0*spread;
         double pitch=-VectorAngle(aim.XY.Length(),aim.Z)+pitchOffset;
-        double chance=Clamp((CaelumWeaponCatalogue.GetCriticalChancePercent(CaelumConstants.CATALOGUE_WEAPON_CARBINE)
-            *CaelumRangedRules.TierCriticalMultiplier(Weapon.Tier)
-            +Max(0.0,owner.CombatPhysicalCriticalChancePercent-CaelumConstants.BASE_CRITICAL_CHANCE_PERCENT))
-            *CaelumConstants.CROUCH_CRITICAL_CHANCE_MULTIPLIER,0.0,100.0);
+        double chance=CaelumCombatAim.CarbineCritical(owner,Weapon.Tier);
         LastAccuracyPercent=accuracy;LastCriticalChance=chance;
         LastMinimumSpread=minimum;LastMaximumSpread=maximum;
         bool critical=Random[CaelumCarbineCritical](0,999999)/10000.0<chance;

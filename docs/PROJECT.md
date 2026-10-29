@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.38** - 2026-10-27.
+Documentation version: **5.8.39** - 2026-10-27.
+
+## 5.8.39 / #415 - Mean-hit prerequisite
+
+Shared current aim parameters and a stateless angular hit-probability estimator
+are implemented;194 current native assertions plus16 original-runtime checks pass
+(assets/validation_5839), with zero failures/static errors.
+This does not yet advance unloaded battles. Round/resource/death integration,
+#415 theft, #416 routes, #417 events and outstanding furniture/contamination
+adapters remain open. All author checks stay grouped for the final V5.8 handoff.
 
 ## 5.8.38 / #502 - Loaded NPC illness
 

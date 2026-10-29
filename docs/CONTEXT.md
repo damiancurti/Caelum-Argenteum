@@ -1,7 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.8.38** - 2026-10-27.
+Documentation version: **5.8.39** - 2026-10-27.
 
+**5.8.39/#415:** shared aim/analytic estimates;194+16PASS;validation_5839;unloaded rounds pending.
 **5.8.37-38/#502:** seals53+4PASS; NPC illness71+2PASS; validation_5837-38.
 **5.8.30-36:** furniture acquisition/scale;validation_5830-36;36:468+19PASS;author-pending.
 **5.8.26-29:** stored books/interior placement/weather history/sofa seating; validation_5826-29; author-pending.
@@ -32,7 +33,7 @@ Documentation version: **5.8.38** - 2026-10-27.
 **5.8.1/#413:** altitude/adaptation;67PASS;validation_581;CA413-01 accepted2026-10-23.
 **5.8.0/#414:** prototype100PASS;CA414-PROTOTYPE-01accepted2026-10-24;production integration5.8.2;calibration:SYSTEMS.
 
-**V5.7:** complete; issue-specific approvals and validation remain in HISTORY.
+**V5.7:** complete; approvals/evidence:HISTORY.
 
 **5.7.0/#408:**water-quality;validation_570;CA408-01:accepted2026-10-21.
 
