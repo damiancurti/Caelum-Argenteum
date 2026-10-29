@@ -1,0 +1,73 @@
+{
+  "issue": 411,
+  "version": "5.8.6",
+  "scope": "Camp acquisition/inventory and pot cooling; placement/fire runtime/cooking remain pending",
+  "native_passes": 72,
+  "runs": [
+    {
+      "label": "physics03",
+      "passes": 11,
+      "package_sha256": "36e598e4622246bed903c0d76ebe005139ff397a3c9cbf536f0c1e2ce64b99c9"
+    },
+    {
+      "label": "items03",
+      "passes": 11,
+      "package_sha256": "36e598e4622246bed903c0d76ebe005139ff397a3c9cbf536f0c1e2ce64b99c9"
+    },
+    {
+      "label": "craft05",
+      "passes": 20,
+      "package_sha256": "36e598e4622246bed903c0d76ebe005139ff397a3c9cbf536f0c1e2ce64b99c9"
+    },
+    {
+      "label": "shop05",
+      "passes": 6,
+      "package_sha256": "36e598e4622246bed903c0d76ebe005139ff397a3c9cbf536f0c1e2ce64b99c9"
+    },
+    {
+      "label": "save05",
+      "passes": 1,
+      "package_sha256": "36e598e4622246bed903c0d76ebe005139ff397a3c9cbf536f0c1e2ce64b99c9"
+    },
+    {
+      "label": "load05",
+      "passes": 3,
+      "package_sha256": "36e598e4622246bed903c0d76ebe005139ff397a3c9cbf536f0c1e2ce64b99c9"
+    },
+    {
+      "label": "hub05",
+      "passes": 9,
+      "package_sha256": "36e598e4622246bed903c0d76ebe005139ff397a3c9cbf536f0c1e2ce64b99c9"
+    },
+    {
+      "label": "legacy-seed06",
+      "passes": 0,
+      "package_sha256": "9fafbde3aaec234bec1b824d7f2d4b410551fa4ce4cebbae7226f71f7ee700e0"
+    },
+    {
+      "label": "legacy-load06",
+      "passes": 1,
+      "package_sha256": "36e598e4622246bed903c0d76ebe005139ff397a3c9cbf536f0c1e2ce64b99c9"
+    },
+    {
+      "label": "legacy-rollback06",
+      "passes": 1,
+      "package_sha256": "9fafbde3aaec234bec1b824d7f2d4b410551fa4ce4cebbae7226f71f7ee700e0"
+    },
+    {
+      "label": "transfer07",
+      "passes": 8,
+      "package_sha256": "83741418bc7ef2f18c6bfc709020aa284103033bb8ed78cb423cca5b2006589f"
+    },
+    {
+      "label": "preview08",
+      "passes": 1,
+      "package_sha256": "83741418bc7ef2f18c6bfc709020aa284103033bb8ed78cb423cca5b2006589f"
+    }
+  ],
+  "source_entries_verified": 16850,
+  "package_sha256": "83741418bc7ef2f18c6bfc709020aa284103033bb8ed78cb423cca5b2006589f",
+  "original_save_sha256": "59cf8e21808486247a62eb4284f0e9377f9aa2a0ecd96ca3e54b4626ac5adf78",
+  "reuse": "Probe02 matches every final member byte-for-byte; final adds only artwork license notice. Final trade and UI fixture tested again.",
+  "limitations": "Physics/fire burn helpers are isolated evidence, not deployed camp acceptance. No frame-presentation/performance claim. Author away; manual checks deferred."
+}

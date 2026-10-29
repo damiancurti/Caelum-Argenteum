@@ -21,6 +21,7 @@ class CaelumShopProduct : Object play
     }
     bool Matches(Inventory item)
     {
+        if(item is 'CaelumCampPot' && CaelumCampPot(item).WaterLiters>0)return false;
         let mate=CaelumMateItem(item);
         if(mate!=null && (mate.YerbaLoaded || mate.WaterLiters>0 || mate.UsesRemaining>0))return false;
         if(Kind==SIMPLE)return item.GetClassName()==NativeClass;
@@ -59,6 +60,8 @@ class CaelumShopProduct : Object play
             if(NativeClass=='CaelumBoltAmmo')return CaelumConstants.CRAFTING_BOLT_RECIPE;
             if(NativeClass=='CaelumCarbineAmmo')return CaelumConstants.CRAFTING_CARBINE_CARTRIDGE_RECIPE;
             if(NativeClass=='CaelumShotgunAmmo')return CaelumConstants.CRAFTING_SHOTGUN_CARTRIDGE_RECIPE;
+            for(int camp=0;camp<CaelumCampData.COUNT;camp++)
+                if(NativeClass==CaelumCampData.ItemClass(camp))return CaelumCampData.FIRST_RECIPE+camp;
             for(int variant=0;variant<CaelumMateData.COUNT;variant++)
                 if(NativeClass==CaelumMateData.ItemClass(variant))return CaelumMateData.FIRST_RECIPE+variant;
             return CaelumChemistryEconomy.ConsumableRecipe(NativeClass);

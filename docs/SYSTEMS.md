@@ -1,6 +1,92 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.5** — 2026-10-24.
+Documentation version: **5.8.6** — 2026-10-24.
+
+## Central property contracts (#411, 5.8.6 in progress)
+
+The author approved buying for 100,000 copper or renting for 1,000 copper per
+30 game-calendar days, paid in advance. Furnishings are included; buying during
+rental does not refund rent. Renewal extends the current paid interval, or starts
+from the current calendar time after expiry. Synchronization never charges rent,
+creates arrears or confiscates belongings. A purchased title does not expire.
+Payment uses existing denominations, change, inventory-capacity checks and lawful
+character identity; a rejected transaction changes neither funds nor title.
+
+The first offered dwelling is existing CAH069 (MAP03 origin -14208,1024), near the
+central commercial strip. CAH070 next door receives its residents 69/229/389/549
+and their original chest. The author approved relocating residents, keys and all
+belongings together on 2026-10-24. No defenders are deleted or recreated; combat
+assignments, health, inventory and finite census remain authoritative. New visits
+create those residents in CAH070. Existing records migrate once. An existing
+owned chest is relocated when its original map loads, preserving native inventory
+and lock identity. A chest already carried away or retitled is not seized; an
+already missing/destroyed chest is not replenished. The former household's chest
+and contents are excluded from the property sale; table, chairs and bed stay.
+
+Relocation positions use the existing CAH070 living room: (528/656/784,544) and
+(528,672), with chest at (864,1056), relative to its original origin. Collision
+checks defer occupied placements without losing actors or issuing duplicate loot.
+Four deployment routes are regenerated from the existing authored city geometry,
+keeping each defender's original combat destination. No map geometry changes.
+
+Use the house doorway to inspect terms and enter. Contracts are confirmed from
+the inside doorway, after the original contents are reconciled. Entry and exit
+remain available, including after expiry. Without a current title/lease, the
+shared rest/accelerated-time safety gate rejects residential use and containers
+reject new deposits; withdrawal still follows existing reach/lock permissions.
+No new rest, shelter or luxury multiplier is added. Stored contents are not
+confiscated, reset or reassigned on expiry. A former tenant retains their title
+for retrieval; transferring a tenancy to another character is not implemented.
+
+Revision-1 property state is additive to the persistent resident registry. The
+contract array has no artificial ownership cap; this delivery authors one offer.
+Camps, placement/crafting recipes, further offers and explicit theft behavior
+remain pending, not inferred from the purchase interface. No random theft or
+real-world offline progression is introduced.
+
+Approved camp scope (2026-10-24): a portable, collapsible canvas tent for two,
+2 x 2 m floor and 1.8 m ridge; a portable 20 L iron pot retaining water volume,
+temperature and contamination without automatic refill; and a wood campfire.
+The fire boils water, cooks meat/fish/puchero and emits heat through the existing
+thermal system. Bread requires an oven. The author additionally approved an 8 kW
+fire with 2 kW useful cooking heat (25% efficiency), wood at 15 MJ/kg and 1.92 kg
+fuel per game hour; flame diameter 0.60 m and height 0.50 m. Existing approved
+meat/fish/puchero durations stay unchanged. The pot is an open cylinder with
+0.36 m inside diameter, approximately 0.196 m depth, 2 mm iron side/base walls
+and handles, approximately 5.5 kg empty. Iron density is 7,870 kg/m3, specific
+heat 450 J/(kg K), conductivity 80 W/(m K). These are approved design references.
+Tent and pot use both purchase and fabrication with learned recipes; the fire
+is assembled on suitable ground with wood. The author then approved approximately
+10 kg for the tent: 6 kg cotton canvas (about 15.8 m2 at 380 g/m2, floor included),
+3 kg wooden poles, 600 g iron stakes and 400 g plant-fibre ropes. Its interior
+blocks direct rain and reduces exterior wind by 90%, retaining exterior air
+temperature with no self-heating or new rest bonus. The fire extinguishes when
+leaving its map and retains the unspent loaded wood; off-map burning was rejected.
+Approved recipes at 100% efficiency: tent uses 6,000 g cotton fabric (T2),
+3,000 g wood, 600 g iron ingot (T2) and 400 g rope; pot uses 5,500 g iron ingot
+(T2). Tent needs Workbench + Sewing machine + Fine tools; pot needs Forge +
+Anvil. Existing fabrication duration, Dexterity and waste apply at normal
+complexity. Base prices are ingredient costs plus the existing 25% manufacturing
+margin (53,437.5 / 60,156.25 copper before rounding and store margins). Provisions
+stock three of each; libraries stock ten recipe books each. Replenishment follows
+recipe work time, without resetting existing stock on upgrade. Setup/packing
+takes 10/5 game minutes for the tent; preparing/igniting the fire takes one game
+minute, with abstract manual ignition and no extra tinderbox consumable. The pot
+is placed/removed by interaction. Placement permissions include mansion gardens,
+owned/currently leased land and unowned open countryside. Streets, plazas, docks
+and others' land require express permission. Dry stable soil, complete free
+collision volume and clear doors/stairs/access remain mandatory. Expired rental
+disallows new placement but preserves retrieval. These are approvals for ongoing
+camp implementation; deployment and cooking are not completed by the property stage.
+
+The acquisition stage now implements these two recipes and catalogues, preserving
+independent pot/tent instances in inventory, trade, Box and containers. Recipe
+schema 15 appends recipes 201/202 without unlocking them or changing earlier
+knowledge; camp catalogue revision 1 appends missing entries without resetting
+stock. Pot cooling uses the approved iron cylinder wall and heat capacity, plus
+convection/radiation at its open top, through the existing water clock. Existing
+glass/leather containers keep their original formulas. Fire fuel/heat helpers
+have isolated numerical evidence; no deployed fire runtime is claimed yet.
 
 ## Regional event discovery (#415, 5.8.5 in progress)
 

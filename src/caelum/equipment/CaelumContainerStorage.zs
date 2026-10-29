@@ -65,13 +65,14 @@ class CaelumContainerRules : Object play
         if(item==null || item.Amount<=0 || CaelumWaterBoiling.Locked(item) || item is "CaelumChestCargo"
             || item is "CaelumMagicBox" || item is "CaelumTarotDeck"
             || user.GetFormalInventoryEntryKind(item)<0)return false;
+        if(depositing && !CaelumPropertyRules.ResidenceAllowed(user))return false;
         let equipment=CaelumEquipmentItem(item);
         if(depositing && equipment!=null
             && (equipment.Equipped || equipment.IsLimboTemporary() || equipment.IsLimboFirstWeapon()
                 || user.IsEquipmentItemCraftingLocked(equipment.ItemId)))return false;
         let special=CaelumSpecialInventoryItem(item);
         if(depositing && special!=null && special.LimboQuestUnits>0)return false;
-        if(!depositing && equipment==null && !(item is "CaelumLockItem") && item.MaxAmount<=1
+        if(!depositing && equipment==null && !CaelumCampData.IsItem(item) && !(item is "CaelumLockItem") && item.MaxAmount<=1
             && user.FindInventory(item.GetClassName())!=null)return false;
         if(depositing && special!=null && special.GetSpecialCategory()==CaelumConstants.EQUIPMENT_KIND_MATERIAL
             && user.GetReservedCraftingMaterialUnits(special.GetSpecialType(),special.GetSpecialTier())>0)return false;

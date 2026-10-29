@@ -345,8 +345,7 @@ class CaelumCraftingCoordinator : Object play
             user.CraftingSilverRequired
         );
         user.ExpandCraftingBlueprintMaterial(
-            CaelumConstants.MATERIAL_GOLD_INGOT,
-            1,
+            CaelumClothing.FourthMaterial(user), CaelumClothing.FourthTier(user),
             user.CraftingGoldRequired
         );
 
@@ -430,8 +429,7 @@ class CaelumCraftingCoordinator : Object play
                 user.CraftingSilverRequired
             )
             || !user.AddCraftingTaskReservation(
-                CaelumConstants.MATERIAL_GOLD_INGOT,
-                1,
+                CaelumClothing.FourthMaterial(user), CaelumClothing.FourthTier(user),
                 user.CraftingGoldRequired
             ))
         {
@@ -760,8 +758,7 @@ class CaelumCraftingCoordinator : Object play
                 user.CraftingSilverRequired
             )
             && user.RequireDirectCraftingMaterial(
-                CaelumConstants.MATERIAL_GOLD_INGOT,
-                1,
+                CaelumClothing.FourthMaterial(user), CaelumClothing.FourthTier(user),
                 user.CraftingGoldRequired
             );
         user.CraftingDirectPlanAvailable = valid;
@@ -866,6 +863,7 @@ class CaelumCraftingCoordinator : Object play
         if (!user.CanStartCraftingTask()) { return; }
         if (CaelumUtilityCrafting.IsRecipe(user.CraftingSelectionRecipe)
             && !CaelumLockRules.IsRecipe(user.CraftingSelectionRecipe)
+            && !CaelumCampData.IsRecipe(user.CraftingSelectionRecipe)
             && user.FindInventory(CaelumUtilityCrafting.ItemClass(user.CraftingSelectionRecipe)) != null)
         { user.LastCraftingAction = CaelumConstants.CRAFTING_ACTION_FAILED_DUPLICATE; return; }
         if (!user.CraftingSelectedRecipeKnown)
@@ -1471,6 +1469,7 @@ class CaelumCraftingCoordinator : Object play
 
             if(CaelumClothingData.IsRecipe(user.CraftingSelectionRecipe))CaelumClothing.Preview(user);
             if(CaelumMateData.IsRecipe(user.CraftingSelectionRecipe))CaelumMateCrafting.Preview(user);
+            if(CaelumCampData.IsRecipe(user.CraftingSelectionRecipe))CaelumCampCrafting.Preview(user);
 
             // El montaje y la reparación producen un objeto indivisible. Una
             // eficiencia menor conserva el resultado completo y aumenta cada
@@ -1506,7 +1505,7 @@ class CaelumCraftingCoordinator : Object play
             ) : 0;
         user.CraftingGoldOwned = user.CraftingGoldRequired > 0
             ? user.CountCraftingMaterial(
-                CaelumConstants.MATERIAL_GOLD_INGOT, 1
+                CaelumClothing.FourthMaterial(user), CaelumClothing.FourthTier(user)
             ) : 0;
 
         user.CraftingSelectedInfrastructureAvailable =

@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `653669e7978e2f7e198f065f2217c1471d48f3f3a83b8c3d507e449d1835ee24`. Locations include every definition; the last one per language wins.
+SHA-256: `f2d45620297209b85395c36c2a5fe2568bc13df611d7c87c61a048a94720a374`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -31,6 +31,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_BULL | 1 | CA_BULL_NAME | CA_BULL_NAME |
 | CA_CAELLA | 5 | CA_CAELLA_NAME | CA_CAELLA_NECKLACE_TEACH |
 | CA_CALENDAR | 8 | CA_CALENDAR_AUTUMN | CA_CALENDAR_WINTER |
+| CA_CAMP | 2 | CA_CAMP_POT | CA_CAMP_TENT |
 | CA_CARAVAN | 18 | CA_CARAVAN_BACK | CA_CARAVAN_WORLD_HELP |
 | CA_CAST | 4 | CA_CAST_STATE_COMPLETED | CA_CAST_STATE_PREPARING |
 | CA_CHARACTER | 10 | CA_CHARACTER_EVASION | CA_CHARACTER_THERMAL |
@@ -128,6 +129,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_PRISONER | 30 | CA_PRISONER_BESTIA_NAME | CA_PRISONER_UNITARIO_NAME |
 | CA_PROFESSION | 6 | CA_PROFESSION_ARCANIST | CA_PROFESSION_PILGRIM |
 | CA_PROFILE | 4 | CA_PROFILE_HEIGHT | CA_PROFILE_SEX |
+| CA_PROPERTY | 15 | CA_PROPERTY_BUY | CA_PROPERTY_TITLE |
 | CA_Q | 97 | CA_Q_DETAIL_ABOUT | CA_Q_SIDE_WAIT_TITLE |
 | CA_QUEST | 12 | CA_QUEST_FOUNDATION_NOTE | CA_QUEST_STATUS_OFFERED |
 | CA_QUICK | 7 | CA_QUICK_EMPTY | CA_QUICK_WATER |

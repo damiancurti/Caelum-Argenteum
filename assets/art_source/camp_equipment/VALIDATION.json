@@ -1,0 +1,12 @@
+{
+  "deterministic_export": true,
+  "tool": "Pillow 13.0.0",
+  "review": "Both 128-pixel RGBA exports inspected on 2026-10-24; readable painted silhouettes, transparent background, no text. Author visual acceptance pending.",
+  "outputs": {
+    "src\\graphics\\caelum\\icons\\camp\\tent.png": "37aba5e902fd2cb6e3131d660951455a76bbe10e71486b396628af011f357c50",
+    "src\\graphics\\caelum\\icons\\camp\\iron_pot.png": "0860a89a491ea155298e0e098d5e157b872935fb612b2e6f64bdbabc9f42b3a3",
+    "src\\sprites\\CPTNA0.png": "37aba5e902fd2cb6e3131d660951455a76bbe10e71486b396628af011f357c50",
+    "src\\sprites\\CPPTA0.png": "0860a89a491ea155298e0e098d5e157b872935fb612b2e6f64bdbabc9f42b3a3",
+    "assets\\art_source\\camp_equipment\\EXPORT.json": "8af86eddb83655e60000bb6829cbb36603604c64cc03ef8ac94f9d2b660054ec"
+  }
+}

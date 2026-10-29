@@ -1,0 +1,10 @@
+{
+  "test_id": "CA411-PROPERTY-01",
+  "origin_version": "5.8.6",
+  "issue": 411,
+  "date": "2026-10-24",
+  "result": "CA411-PROPERTY-01 fully accepted 2026-10-24, without qualifications; camps and player placement remain pending.",
+  "qualifications": [],
+  "confirmation": "La prueba dio correcta. Todas las de la terminal.",
+  "scope": "All checks of the property terminal; no acceptance of unimplemented camps."
+}
