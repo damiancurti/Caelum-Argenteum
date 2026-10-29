@@ -114,6 +114,6 @@ $record.finished_utc = [DateTime]::UtcNow.ToString('o')
 $record | ConvertTo-Json -Depth 6 | Set-Content -Encoding utf8 -LiteralPath "$work\$Label-run.json"
 if (($record.exit_code -ne 0 -and !$record.stopped_on_result) -or $record.timed_out) { throw "Native run failed: $Label" }
 $log = Get-Content -LiteralPath "$work\$Label.txt"
-$log | Select-String 'CA[A-Z0-9]* (FAIL|RESULT)|CA[A-Z0-9]* TIMING|Script error|Error|Warning|VM execution aborted|Trying to serialize out-of-bounds'
-if ($log | Select-String 'CA[A-Z0-9]* FAIL|Script error|VM execution aborted|failures=[1-9]|failed=[1-9]|DIED WITH FATAL ERROR|This savegame needs|Cannot find savegame|Not in a saveable game|Trying to serialize out-of-bounds') { throw "Native assertions, VM or save loading failed: $Label" }
-if ($Checks -and !($log | Select-String 'CA[A-Z0-9]* RESULT|CA[A-Z0-9]* TIMING')) { throw "Expected native checks did not execute: $Label" }
+$log | Select-String '^CA[A-Z0-9]* (FAIL|RESULT|TIMING)|^Script error|^Error|^Warning|VM execution aborted|Trying to serialize out-of-bounds'
+if ($log | Select-String '^CA[A-Z0-9]* FAIL|Script error|VM execution aborted|failures=[1-9]|failed=[1-9]|DIED WITH FATAL ERROR|This savegame needs|Cannot find savegame|Not in a saveable game|Trying to serialize out-of-bounds') { throw "Native assertions, VM or save loading failed: $Label" }
+if ($Checks -and !($log | Select-String '^CA[A-Z0-9]* (RESULT|TIMING)')) { throw "Expected native checks did not execute: $Label" }

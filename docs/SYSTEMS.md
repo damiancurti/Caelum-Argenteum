@@ -11,6 +11,20 @@ existing event is due at that tracking boundary. The one-time unvisited-city
 flag defaults false for these saves. The original file remains a reversible
 input; a new file stores the upgraded state.
 
+The theft transaction retains actual whole inventory instances, including food
+lots, liquid volume/temperature/quality, equipment identity and wear. It selects
+the highest positive commercial stack value that fits the thief's existing
+Strength/mass carrying limit among access-validated containers. It rechecks
+native keys and paired padlocks before transfer; installed locks, quest stock,
+reserved temporary supplies and carried containers are excluded. Keys are not
+consumed. Equal-value ties keep stable container/inventory order.
+The saved explicit theft plan tracks one opportunity per absent world hour,
+retaining partial progress across returns without counting observed map time.
+Receipts retain the actual source region, victim, item and timestamp. Discovery
+is per victim on regional return, independent of any later thief travel. No
+existing resident is marked as a thief. Route capture, chronological dispatch
+and the approved #417 survivors still need integration before this is gameplay.
+
 The pending round implementation follows the approved one-world-second,
 simultaneous mean-damage model and converts active durations through the source
 map clock. An already-launched native carbine or elemental projectile joins the

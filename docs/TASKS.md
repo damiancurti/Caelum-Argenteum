@@ -91,6 +91,14 @@ catch-up latency or complete the remaining world/event adapters.
 No author handoff or released 5.8.51 is claimed for this checkpoint.
 Continue this issue to completion; #502 patch50 is already delivered in PR544.
 
+The theft transfer and saved-clock foundation now passes 37 native assertions:
+highest-value fitting whole stacks, actual owner transfer, native/paired keys,
+failed/replayed transfers, retained food lots/liquids/equipment, hourly deadlines,
+partial progress, death and regional victim discovery. No current NPC is marked
+as a thief. Still connect validated physical access, chronological encounter/
+physiology dispatch and #417 survivors; these helper checks do not complete the
+theft feature. Evidence: `assets/validation_5851/theft-results.json`.
+
 The latest catch-up checkpoint reduces the synthetic quiet hour from 5.951 s
 CPU / 51.591 s staged wall time to 0.317 s CPU / 1.454 s staged wall time. It
 uses the existing one-active-second NPC boundary only when no transient combat

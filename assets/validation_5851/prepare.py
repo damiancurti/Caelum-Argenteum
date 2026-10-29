@@ -33,14 +33,15 @@ if args.probe:
     print(f'Probe: {len(changed)} current source members')
 arena = (R / 'assets/validation_5826/away.wad').read_bytes()
 pack(W / 'checks.pk3', {
-    'ZSCRIPT': b'version "4.14"\n#include "checks.zs"\n#include "flights.zs"\n#include "calendar.zs"\n#include "work.zs"\n#include "arrival.zs"\n#include "quiet.zs"\n',
+    'ZSCRIPT': b'version "4.14"\n#include "checks.zs"\n#include "flights.zs"\n#include "calendar.zs"\n#include "work.zs"\n#include "arrival.zs"\n#include "quiet.zs"\n#include "theft.zs"\n',
     'checks.zs': (H / 'checks.zs').read_bytes(),
     'flights.zs': (H / 'flights.zs').read_bytes(),
     'calendar.zs': (H / 'calendar.zs').read_bytes(),
     'work.zs': (H / 'work.zs').read_bytes(),
     'arrival.zs': (H / 'arrival.zs').read_bytes(),
     'quiet.zs': (H / 'quiet.zs').read_bytes(),
-    'MAPINFO': b'GameInfo {AddEventHandlers="CA415RoundChecks","CA415FlightChecks","CA415CalendarChecks","CA415WorkChecks","CA415ArrivalHarness","CA415QuietChecks"}\ncluster 8551 {hub}\nmap MAP01 "Absent combat" {cluster=8551}\nmap MAP03 "Scheduled city" {cluster=8551}\nmap CABS415B "Away" {cluster=8551}\n',
+    'theft.zs': (H / 'theft.zs').read_bytes(),
+    'MAPINFO': b'GameInfo {AddEventHandlers="CA415RoundChecks","CA415FlightChecks","CA415CalendarChecks","CA415WorkChecks","CA415ArrivalHarness","CA415QuietChecks","CA415TheftChecks"}\ncluster 8551 {hub}\nmap MAP01 "Absent combat" {cluster=8551}\nmap MAP03 "Scheduled city" {cluster=8551}\nmap CABS415B "Away" {cluster=8551}\n',
     'maps/MAP01.wad': arena,
     'maps/CABS415B.wad': arena,
 })
@@ -83,3 +84,7 @@ for case in ["quiet", "quietsave", "weather"]:
     suffix="save quiet-partial; " if case=="quietsave" else ""
     (W/(case+".cfg")).write_text(f"wait 105; netevent ca415r_prepare; wait 3; netevent ca415r_{case}; {suffix}wait 10; quit\n")
 (W/"quietload.cfg").write_text("wait 1; netevent ca415r_quietload; wait 10; quit\n")
+(W/"theft.cfg").write_text("wait 105; netevent ca415t_prepare; wait 3; netevent ca415t_transfer; save theft-items; wait 10; quit\n")
+(W/"theftload.cfg").write_text("wait 1; netevent ca415t_load; wait 1; quit\n")
+(W/"theftplan.cfg").write_text("wait 105; netevent ca415t_prepare; wait 3; netevent ca415t_plan; save theft-plan; wait 10; quit\n")
+(W/"theftplanload.cfg").write_text("wait 1; netevent ca415t_planload; wait 1; quit\n")

@@ -14,6 +14,16 @@ runtime. Evidence: `assets/validation_5851/legacy-results.json`. The author has
 returned; temporary keep-awake was released. Manual checks remain grouped for
 the completed version, and no acceptance entry was removed.
 
+Added actual whole-stack theft transactions and a saved explicit hourly plan;
+37 native assertions cover commercial selection/capacity, native and paired
+locks, ownership, food/water/equipment state, saved deadlines and victim-only
+regional discovery. Routes and chronological dispatch remain unfinished; no
+resident was made a thief. Evidence: `assets/validation_5851/theft-results.json`.
+The runner now anchors CA diagnostic prefixes: its previous case-insensitive
+substring search misread "capacity failure" inside a PASS label. The original
+log is retained; final selected runs pass the corrected check. No manual check
+was removed or claimed accepted.
+
 Continued the planned 5.8.51 implementation on its focused branch. Mean combat
 now owns actual encounter rows, simultaneous casualties, preparation/recovery,
 magazines, Anima, statuses, healing doses, artillery/ram work and finite reserve
