@@ -11,6 +11,32 @@ ordinary campaign incident chances stay unchanged. Keep original saves separate.
 Expected: visible readable enemies/vehicles/UI, retained ticket/encounter state,
 safe exit rules and no crash. The deterministic fixture forces private events
 only; it is not a change to the approved production probabilities.
+CA416-NETWORK-01 | Origin: 5.8.52 | Issue: #416
+Prerequisites: grouped final V5.8 review build, disposable character with fare,
+food and potable water. Existing author saves remain untouched.
+1. Inspect all four services in Barracas, Buenos Aires and Mar del Plata; walk
+   the six Buenos Aires blocks and enter its market/workshops and residence.
+2. Buy a ticket and board; check destination, fare, timetable and real resource
+   use. Inspect horse/cart/train/ship appearance and ordinary boarding controls.
+3. Stop and leave safely: rural ground for horse/cart, stopped train, reachable
+   port for ship. Save/load, resume the same ticket and confirm no second charge.
+4. Leave a recognizable item at a rural stop and revisit it. Finish a journey:
+   correct destination, exactly one arrival and preserved belongings.
+Expected: usable scenery, truthful schedules, retained paid progress and actual
+survival costs. Abandoning a ticket gives no refund. Incident checks are #417.
+CA415-ABSENT-WORLD-01 | Origin: 5.8.51 | Issue: #415
+Prerequisites: grouped final V5.8 review; disposable campaign/native arrival
+fixture. Keep original campaign saves separate. No retired stress scenarios.
+1. Leave an active encounter, advance the exterior calendar and return. Observe
+   the paused preparation screen, then actual surviving bodies, casualties and
+   resources. Loading a saved partial preparation must finish without replay.
+2. Leave a reachable owned camp container near an explicitly registered thief,
+   return after an exterior hour, and inspect the missing real stack and receipt.
+   Locked/inaccessible containers must not become free loot; the thief retains it.
+3. Return again without advancing time: no duplicate rounds, theft or news.
+Expected: chronological resources/ownership and saved progress survive. A city-day
+may require about 77 seconds of paused preparation on the recorded machine; this
+is a known limitation, not claimed rendering-FPS acceptance. #417 bandits separate.
 
 CA410-COOKING-01 | Origin: 5.8.19 | Issue: #410
 Prerequisites: final 5.8.19 package; GZDoom 4.14.2; a disposable campaign or
