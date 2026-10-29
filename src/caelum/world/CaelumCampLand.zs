@@ -9,6 +9,8 @@ class CaelumCampLand : Object play
     static bool Point(CaelumPlayer user,vector3 point,Sector ground,bool interiorFurniture=false)
     {
         if(user==null || ground==null)return false;
+        if(CaelumTransportSceneData.IsRural(level.MapName))
+            return TexMan.GetName(ground.GetTexture(Sector.floor))==CaelumTransportSceneData.GroundFlat();
         if(interiorFurniture && CaelumCampLandData.FurnitureInterior(level.MapName))return true;
         int house=CaelumHouseHubData.HouseForMap(level.MapName);
         if(house>=0)return OwnedHouse(user,house);
@@ -25,6 +27,7 @@ class CaelumCampLand : Object play
     static bool Allows(CaelumPlayer user,vector3 point,double radius,bool interiorFurniture=false)
     {
         if(user==null)return false;
+        if(CaelumTransportSceneData.IsRural(level.MapName) && CaelumTransportSceneData.BlocksRuralAccess(point,radius))return false;
         let probe=CaelumPlacementProbe(Actor.Spawn('CaelumPlacementProbe',point,NO_REPLACE));
         if(probe==null)return false;
         bool allowed=true;

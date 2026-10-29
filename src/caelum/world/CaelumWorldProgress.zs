@@ -51,7 +51,7 @@ class CaelumWorldProgress : Object play
                 // el intento. Guardar en origen no lo cuenta como recorrido.
                 if (locationId == CaelumWorldCatalogue.ConnectionDestination(pending)
                     && (pending == CaelumWorldCatalogue.CONNECTION_RETURN
-                        ? HasReturnEvidence(record) : CaelumWorldCatalogue.IsSewerConnection(pending)))
+                        ? HasReturnEvidence(record) : CaelumWorldCatalogue.IsTravelConnection(pending)))
                 {
                     record.WorldConnectionKnown[pending] = true;
                     record.WorldConnectionTraversed[pending] = true;

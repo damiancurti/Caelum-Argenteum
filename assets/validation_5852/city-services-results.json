@@ -1,0 +1,7 @@
+{
+  "issue": 416,
+  "date": "2026-10-29",
+  "runtime_sha256": "4806F8AE3D580C42686B1E4C66F82BCDEA6F8FC8A4293510A74557C63ED589FC",
+  "native_assertions": 38,
+  "qualification": "19 new-map service checks and 19 repeated save/reload checks. Actual catalogue owners, station network, separate reservoirs and persisted wallet/withdrawal. Agent evidence only; travel integration and author acceptance remain pending."
+}

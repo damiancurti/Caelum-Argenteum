@@ -1,0 +1,312 @@
+{
+  "issue": 416,
+  "revision": 1,
+  "map": "CABAIRES",
+  "scope": "Six playable blocks authorized on 2026-10-24. Original schematic nineteenth-century city, not a claim to reconstruct historical Buenos Aires street geometry. No authored story characters or quests.",
+  "scale_source": "assets/map06_port/CITY.json: grid step 1536 x 1728 MU, 256 MU streets, house/shop dimensions and 160 MU interior headroom.",
+  "step": [
+    1536,
+    1728
+  ],
+  "columns": 3,
+  "rows": 2,
+  "street": 256,
+  "bounds": [
+    -256,
+    -256,
+    6400,
+    3712
+  ],
+  "ground": [
+    -256,
+    -256,
+    4608,
+    3712
+  ],
+  "water": [
+    4608,
+    -256,
+    6400,
+    3712
+  ],
+  "water_floor": -128,
+  "water_surface": -24,
+  "sky": "CABASKY",
+  "ground_flat": "CMST02",
+  "lot_flat": "CMGR03",
+  "water_flat": "CVPL06",
+  "pier_flat": "CVPO01",
+  "boundary_wall": "CMST01",
+  "water_tag": 100,
+  "control_origin": [
+    -4096,
+    -4096
+  ],
+  "control_columns": 8,
+  "spawn": [
+    1216,
+    768,
+    180
+  ],
+  "controller_editor_id": 32516,
+  "blocks": [
+    {
+      "role": "station",
+      "column": 0,
+      "row": 0,
+      "key": "CA_BA_STATION"
+    },
+    {
+      "role": "plaza",
+      "column": 1,
+      "row": 0,
+      "key": "CA_BA_PLAZA"
+    },
+    {
+      "role": "embarkation",
+      "column": 2,
+      "row": 0,
+      "key": "CA_BA_DOCK"
+    },
+    {
+      "role": "market",
+      "column": 0,
+      "row": 1,
+      "key": "CA_BA_MARKET"
+    },
+    {
+      "role": "residences",
+      "column": 1,
+      "row": 1,
+      "key": "CA_BA_HOMES"
+    },
+    {
+      "role": "workshops",
+      "column": 2,
+      "row": 1,
+      "key": "CA_BA_WORKSHOPS"
+    }
+  ],
+  "buildings": [
+    {
+      "role": "station",
+      "bounds": [
+        128,
+        128,
+        896,
+        768
+      ],
+      "door_y": 384,
+      "profile": "shop",
+      "tag": 201
+    },
+    {
+      "role": "dock_office",
+      "bounds": [
+        3200,
+        128,
+        3968,
+        768
+      ],
+      "door_y": 384,
+      "profile": "shop",
+      "tag": 211
+    },
+    {
+      "role": "provisions_tools",
+      "bounds": [
+        128,
+        1856,
+        896,
+        2496
+      ],
+      "door_y": 2112,
+      "profile": "shop",
+      "tag": 221
+    },
+    {
+      "role": "library_outfitter",
+      "bounds": [
+        128,
+        2624,
+        896,
+        3264
+      ],
+      "door_y": 2880,
+      "profile": "shop",
+      "tag": 231
+    },
+    {
+      "role": "house0",
+      "bounds": [
+        1664,
+        1856,
+        2176,
+        2496
+      ],
+      "door_y": 2112,
+      "profile": "house",
+      "tag": 241
+    },
+    {
+      "role": "house1",
+      "bounds": [
+        2304,
+        1856,
+        2816,
+        2496
+      ],
+      "door_y": 2112,
+      "profile": "house",
+      "tag": 251
+    },
+    {
+      "role": "house2",
+      "bounds": [
+        1664,
+        2624,
+        2176,
+        3264
+      ],
+      "door_y": 2880,
+      "profile": "house",
+      "tag": 261
+    },
+    {
+      "role": "house3",
+      "bounds": [
+        2304,
+        2624,
+        2816,
+        3264
+      ],
+      "door_y": 2880,
+      "profile": "house",
+      "tag": 271
+    },
+    {
+      "role": "workshops",
+      "bounds": [
+        3072,
+        1856,
+        4352,
+        3264
+      ],
+      "door_y": 2368,
+      "profile": "factory",
+      "tag": 281
+    }
+  ],
+  "platform": [
+    0,
+    896,
+    1280,
+    1152
+  ],
+  "track": [
+    0,
+    1152,
+    1280,
+    1280
+  ],
+  "rail_lines": [
+    [
+      0,
+      1152,
+      1280,
+      1216
+    ],
+    [
+      0,
+      1216,
+      1280,
+      1280
+    ]
+  ],
+  "pier": [
+    4096,
+    896,
+    5888,
+    1152
+  ],
+  "quay": [
+    4352,
+    -256,
+    4608,
+    3712
+  ],
+  "plaza": [
+    1664,
+    128,
+    2816,
+    1472
+  ],
+  "plaza_paths": [
+    [
+      1664,
+      704,
+      2816,
+      832
+    ],
+    [
+      2176,
+      128,
+      2304,
+      1472
+    ]
+  ],
+  "service_approaches": [
+    [
+      896,
+      384,
+      1536,
+      640
+    ],
+    [
+      3968,
+      384,
+      4608,
+      640
+    ],
+    [
+      896,
+      2112,
+      1536,
+      2368
+    ],
+    [
+      896,
+      2880,
+      1536,
+      3136
+    ],
+    [
+      4352,
+      2368,
+      4608,
+      2624
+    ]
+  ],
+  "boundary_height": 184,
+  "boundary_rectangles": [
+    [
+      -256,
+      -256,
+      4352,
+      -192
+    ],
+    [
+      -256,
+      3648,
+      4352,
+      3712
+    ],
+    [
+      -256,
+      -192,
+      -192,
+      3648
+    ]
+  ],
+  "provenance": "Geometry is generated here from existing owned city profiles/textures. Existing map geometry is not rewritten; new WAD identity preserves old hub saves. Field positions and service fixtures are introduced separately from this geometry checkpoint."
+}

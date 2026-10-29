@@ -5053,3 +5053,5 @@ Model CaelumOrnamentalStatue
     DontCullBackFaces
     FrameIndex COAS A 0 0
 }
+// #416 uses owned vehicle materials; the riding horse remains a sprite.
+#include "caelum/data/transport_vehicles.modeldef"

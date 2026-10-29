@@ -1,0 +1,105 @@
+{
+  "issue": 416,
+  "date": "2026-10-29",
+  "runs": [
+    {
+      "run": "trip-stop04",
+      "purpose": "Final full package: actual boarding, physiological clock, fixed safe stop and saved progress",
+      "executed_assertions": 17,
+      "package_sha256": "9AD0C767F6F14ECA3C5558510F9A61AA697A20774501DE6C43BD115ABC2A7ED3",
+      "log_sha256": "69a19c3fc0e6bf290a88e52fab5f18f0c2521b7df2cdb8032bae471db65b86df"
+    },
+    {
+      "run": "trip-resume03",
+      "purpose": "Final full package: saved resumption and arrival without duplicate payment",
+      "executed_assertions": 22,
+      "package_sha256": "9AD0C767F6F14ECA3C5558510F9A61AA697A20774501DE6C43BD115ABC2A7ED3",
+      "log_sha256": "b6243bdd7b7b86b6c261d32d8cf7041b6af4f257dd29062403009c3730c41913"
+    },
+    {
+      "run": "trip-cycle02",
+      "purpose": "Saved interruption, paid reacquisition, reverse route and exact ground-pile persistence",
+      "executed_assertions": 22,
+      "package_sha256": "EAF5CFDF3F2D6042F45AE2FBFC26DB477D8986584C191184A2AA27A493407F3D",
+      "log_sha256": "483983eddc9f3446a482f8277019a37ddc3eba7578ff7067edcd841414e4cfdd"
+    },
+    {
+      "run": "vehicles-ba03",
+      "purpose": "Native four-service footing and access in Buenos Aires",
+      "executed_assertions": 12,
+      "package_sha256": "EAF5CFDF3F2D6042F45AE2FBFC26DB477D8986584C191184A2AA27A493407F3D",
+      "log_sha256": "dcc6aaec122a7b2852658856d25c33a6f68f9095e50dcf7a9f21c24ffcd137b5"
+    },
+    {
+      "run": "vehicles-coast05",
+      "purpose": "Native four-service footing and access in Mar del Plata",
+      "executed_assertions": 12,
+      "package_sha256": "EAF5CFDF3F2D6042F45AE2FBFC26DB477D8986584C191184A2AA27A493407F3D",
+      "log_sha256": "87d28396ec16db98947355f09d00c9145b9ca41d83beba17640e9ca3dfd8f87b"
+    },
+    {
+      "run": "service-ship01",
+      "purpose": "Native ship timetable and arrival; earlier focused runtime checkpoint",
+      "executed_assertions": 12,
+      "package_sha256": "6941906FF45E8581D186114B988848BDAB390CF158E219A6EC2594E7C9EB4462",
+      "log_sha256": "6ce96910e2df0c9dc2a9a24f5c7afc811c84a9b0956f09fdb7263ac690946eba"
+    },
+    {
+      "run": "service-horse01",
+      "purpose": "Native horse arrival; earlier focused runtime checkpoint",
+      "executed_assertions": 11,
+      "package_sha256": "6941906FF45E8581D186114B988848BDAB390CF158E219A6EC2594E7C9EB4462",
+      "log_sha256": "d149ca409ec1948296af7ad9682ade588bcec7096fc777c18415bea4540bd935"
+    },
+    {
+      "run": "service-train01",
+      "purpose": "Native train timetable and arrival; earlier focused runtime checkpoint",
+      "executed_assertions": 12,
+      "package_sha256": "A7CE301DFC8F2C48DBD43C534001CD2AB9AE0546A3039DB5026723F14DE78724",
+      "log_sha256": "18723d65a12d0f7c1b21a2dfc58bcb387b9b47569b0955c6441cbcd019bdf175"
+    },
+    {
+      "run": "portstop01",
+      "purpose": "Actual ship exit at the intermediate Barracas port; earlier focused runtime checkpoint",
+      "executed_assertions": 10,
+      "package_sha256": "828140A11ACF23DF8700E81AB71CA6AE60FAD644E3BA92EAA69BF3E4EF622194",
+      "log_sha256": "923d3ba13677fdd7719e73d7d6b61fe833de1aeee4a1661a9891c4fa10aeb4c7"
+    },
+    {
+      "run": "legacy-upgrade01",
+      "purpose": "Untouched 5.8.50 city save opens with new services and no old-map geometry change",
+      "executed_assertions": 9,
+      "package_sha256": "EAF5CFDF3F2D6042F45AE2FBFC26DB477D8986584C191184A2AA27A493407F3D",
+      "log_sha256": "fd4bda5af55db58fa3f9c45ae69206809477708d544e67e4ada01b5108d37784"
+    },
+    {
+      "run": "legacy-resume01",
+      "purpose": "Updated native city save reloads without repeated migration",
+      "executed_assertions": 6,
+      "package_sha256": "EAF5CFDF3F2D6042F45AE2FBFC26DB477D8986584C191184A2AA27A493407F3D",
+      "log_sha256": "a40fae176d1497cd006f9b26008627da147c6558ab6f3c4bf194948c95810d86"
+    },
+    {
+      "run": "ticket-migration01",
+      "purpose": "Old paid ledger migrates idempotently to inactive revision two and resumes without payment",
+      "executed_assertions": 8,
+      "package_sha256": "05C48DD207208E30F3837004A2BB9E1FDD8DDFBE116C21F94A78B7A8EAD46FBA",
+      "log_sha256": "d15fd34098b06bff5b702931afcfe35af5c6dea0d62e315624ff4e90845c2da1"
+    },
+    {
+      "run": "long-train06",
+      "purpose": "Full twelve-hour railway journey with real provisions and retained survival",
+      "executed_assertions": 15,
+      "package_sha256": "EAF5CFDF3F2D6042F45AE2FBFC26DB477D8986584C191184A2AA27A493407F3D",
+      "log_sha256": "9d0eb4e3ca43fbd3547fca8d215a475fdb031e09320c687d2a64bca4e943966f"
+    }
+  ],
+  "qualification": "Native scenario assertions, including repeated setup; each run retains its own tested package hash. Earlier focused runs are identified, not relabeled as the final build. No author acceptance or presentation-FPS claim.",
+  "long_trip": "The twelve-hour clock/provision fixture uses an allocated Toughness 100 character to isolate travel from the separately approved illness lethality. Unprotected controls died from retained disease after about 6.2 world hours; survival is not frozen. Its total elapsed test time is not rendering/FPS evidence.",
+  "private_fixture_corrections": [
+    "trip-cycle01 used a private save predating the unreleased service-sign class split; trip-stop03 regenerated it without changing any accepted save.",
+    "long-train03 changed only live Toughness, which is rebuilt from saved character allocation on travel; the fixture now allocates the actual attribute.",
+    "long-train04 inspected the final calendar tic before its queued native map transfer; the observer now waits for arrival finalization.",
+    "long-train05 assumed final Hunger must fall despite automatic meals; the assertion now checks the actual food debit when a meal replenishes it."
+  ]
+}

@@ -1,6 +1,13 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.51** - 2026-10-29.
+Documentation version: **5.8.52** - 2026-10-29.
+
+## 5.8.52 transport delivery status (#416)
+
+The route/vehicle/ticket rules in this chapter are now connected to campaign
+boarding, actual calendar travel, six-block Buenos Aires and persistent safe
+stops. #415's bounded return processing is integrated. Incident probabilities
+and content are owned by #417; author corroboration remains pending.
 
 ## 5.8.51 - Final absent-dispatch contract (#415)
 
@@ -22,6 +29,90 @@ exposure/shot totals. Loading takes 77.45 s versus 124.07 s previously; callback
 is 50.80 versus 29.35 ms. This is a paused-loading tradeoff, not a gameplay-FPS claim.
 Native evidence: assets/validation_5851/loading-results.json. Earlier integration
 checkpoints below retain their original evidence and implementation chronology.
+
+## Unreleased #416 transport catalogue - 2026-10-29
+
+The author authorized geographic calculations and period-transport approximations
+for missing distances, speeds and schedules, with source/estimate distinctions.
+The authoritative inputs are `assets/transport/network.json`; its deterministic
+generator produces `CaelumTransportData.zs` and `assets/transport/derived.json`.
+
+| Corridor | Road estimate | Sea estimate | Railway reference |
+| --- | ---: | ---: | ---: |
+| Buenos Aires - Barracas al Sud | 4.005979 km | 4.521879 km | 3.6 km |
+| Barracas al Sud - Mar del Plata | 390.560257 km | 451.444750 km | 398.736 km |
+
+Road and sea lengths sum great-circle segments through documented approximate
+reference positions; they are not surveys or disembarkation permission. Railway
+length follows Mulhall (1892), 250 miles / 402.336 km end-to-end, with the 3.6-km
+Barracas station segment from a secondary history. Mulhall's twelve-hour night
+journey is retained: estimated fifteen-minute Barracas stop plus derived running
+pace 34.241361702 km/h. Symmetric daily 20:30 terminal departures are estimates;
+the secondary newspaper transcription has an unresolved date/weekday conflict.
+Ship pace retains nominal five knots (9.26 km/h), with estimated terminal services
+at 08:00 every third civil day and a one-hour Barracas stop. Intermediate departures
+follow each originating terminal's arrival and stop, including midnight crossings.
+
+Cart/horse movement is estimated at 3/8 km/h for eight hours per day, with eight
+hours of sleep and eight other rest hours. The cart's 24-km day is near the cited
+earlier colonial fifteen-mile reference; the horse estimate is not a relay record.
+Approved rates remain 2/1/3/2 copper per kilometre and traveler for cart/ship/horse/
+train; round the total party ticket upward. Saved past travel is not recalculated.
+
+Thirty-four native catalogue assertions pass; source bytes and deterministic
+regeneration match. Evidence: `assets/validation_5852/catalogue-results.json`.
+Runtime boarding, payment, progress and interruption now use this catalogue.
+Current release stays 5.8.50 while the separate V5.8 issues finish; native
+implementation is distinct from author acceptance. #417 incidents are separate.
+
+
+Buenos Aires services now reuse eight merchant categories with identities beyond
+Barracas, fourteen connected crafting stations and four homes with separate
+200-L domestic water reserves. The saved installation cursor never recreates
+moved/destroyed furnishings or refills shop stock. City weather and urban
+contamination reuse the approved coastal/urban rules; streets grant no camping
+permission. Thirty-eight native assertions include save/reload of actual vendor
+money and household water. Evidence: validation_5852/city-services-results.json.
+All four services are available in each of the three destinations.
+
+
+The unreleased ticket ledger snapshots the paid route, fare, pace, timetable and
+rest/dwell durations. Interrupted time ashore does not advance it; resume never
+calls payment again. Ship exits wait for the next port boundary, train exits
+require a stopped vehicle and safe footing, and abandonment retains the spent
+fare. Twenty-six native assertions cover clock boundaries, actual coin ownership,
+duplicate confirmation and saved resume. Native vehicle interaction now opens
+the destination/ticket panel; Enter buys, waits or resumes, arrows change the
+destination, D requests disembarkation and X abandons an interrupted contract.
+Evidence: validation_5852/ticket-results.json and trip-results.json. No author
+handoff yet.
+
+Actual travel runs through the shared personal/calendar clock, including weather,
+Hunger, Thirst, contamination, automatic eating/drinking and sleep. As in the
+existing travel policy, automatic supplies aboard must be carried outside the
+Box. Accelerated waiting yields after an 8-ms technical work budget without
+skipping personal steps. Arrival terminates acceleration before changing maps
+and records the actual route/departure/arrival in the journal. A separate magical
+transfer stops the ticket rather than crediting distance while elsewhere.
+
+Owned transit maps are compressed playable carriage/coach/deck/riding scenes,
+not continuous geographical motion. Their stopped rural maps represent fixed
+10-km corridor intervals, shared by opposite journeys. Terrain, dropped objects
+and camp ownership stay in the same native hub when the traveler resumes.
+The road and arrival/access footprint are protected from camp placement;
+unowned dry grass uses the approved countryside permission. Train stopping is
+abstract: no unapproved braking duration is invented. Ship requests made at
+sea retain the passenger until the next actual port boundary.
+
+Resumption does not pay again. Abandoning retains spent money and ends that
+contract. At a rural stop, purchasing the remaining service charges its remaining
+kilometres at the approved per-mode rate, rounded upward, and preserves the
+physical route position. This is a new payment, not a free revived ticket.
+Booking revision two migrates an older ledger to an inactive, interrupted
+contract at its saved map, preserving its fare and elapsed progress exactly
+once. Games with no booking create none; no existing WAD geometry changes. New geometry/placement inputs live in assets/transport/scenes.json and
+vehicles.json. The inherited coast retains its save identity TCOAST but now uses
+the author's destination name Mar del Plata.
 
 ## Unreleased #415 integration
 

@@ -21,7 +21,8 @@ class CaelumWeatherRules : Object
         if(location==2 || location==4)return PROFILE_SEWERS;
         if(location==3)return PROFILE_RESERVOIR;
         if(location==5)return PROFILE_MAINTENANCE;
-        if(location==CaelumWorldCatalogue.LOCATION_PORT || location==CaelumWorldCatalogue.LOCATION_COAST)
+        if(location==CaelumWorldCatalogue.LOCATION_PORT || location==CaelumWorldCatalogue.LOCATION_COAST
+            || location==CaelumWorldCatalogue.LOCATION_BUENOS_AIRES)
             return PROFILE_TEMPERATE_TRIAL;
         return PROFILE_NONE;
     }

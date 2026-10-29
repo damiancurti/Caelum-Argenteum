@@ -122,6 +122,7 @@ class CaelumTimeAdvanceState : Inventory
         {CaelumRestSafety.Interrupt(user,"CA_REST_UNAVAILABLE");return;}
         user.HUDAbilitySuccessRemaining=Max(0.0,user.HUDAbilitySuccessRemaining-1.0/TICRATE);
         CaelumRestState.Advance(user);
+        CaelumTransportTrip.Step(user);
     }
 
     Default

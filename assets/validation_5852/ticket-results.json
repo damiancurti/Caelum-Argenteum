@@ -1,0 +1,30 @@
+{
+  "issue": 416,
+  "date": "2026-10-29",
+  "runtime_sha256": "85BF672700610AC76BB6020D5208FE0B55B47F2E1C3E100944B81DE5EA1AF6AE",
+  "native_assertions": 26,
+  "source_members": [
+    "LANGUAGE",
+    "MAPINFO",
+    "ZSCRIPT",
+    "caelum/data/CaelumBuenosAiresData.zs",
+    "caelum/data/CaelumContaminationData.zs",
+    "caelum/data/CaelumTransportData.zs",
+    "caelum/data/transport.mapinfo",
+    "caelum/hud/CaelumJournalOverlay.zs",
+    "caelum/world/CaelumAuthoredCartography.zs",
+    "caelum/world/CaelumBuenosAires.zs",
+    "caelum/world/CaelumDomesticWater.zs",
+    "caelum/world/CaelumJourney.zs",
+    "caelum/world/CaelumTransportRules.zs",
+    "caelum/world/CaelumTransportTicket.zs",
+    "caelum/world/CaelumTravelVehicles.zs",
+    "caelum/world/CaelumWeather.zs",
+    "caelum/world/CaelumWorldCatalogue.zs",
+    "caelum/world/CaelumWorldProgress.zs",
+    "localization/INDEX.md",
+    "localization/index.json",
+    "maps/CABAIRES.wad"
+  ],
+  "qualification": "21 ticket/actual native-payment assertions plus five saved-progress/resume checks. Production boarding UI and moving journey integration remain pending; no author acceptance."
+}

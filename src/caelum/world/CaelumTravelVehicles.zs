@@ -23,19 +23,24 @@ class CaelumTravelVehicle : Actor
     clearscope int Connection(){return level.MapName=="MAP03"?10:level.MapName=="TCOAST"?11:0;}
     bool CanBoard(CaelumPlayer user)
     {
-        return Ready && Connection()!=0 && user!=null && user.player!=null && user.health>0
+        return Ready && CaelumTransportRules.NodeForMap(level.MapName)>=0 && user!=null && user.player!=null && user.health>0
             && (user.Pos-BoardingPoint).Length()<=user.UseRange+48
-            && user.CheckSight(self,SF_IGNOREVISIBILITY);
+            && BoardingSight(user);
+    }
+    bool BoardingSight(CaelumPlayer user)
+    {
+        if(user.CheckSight(self,SF_IGNOREVISIBILITY))return true;
+        // Usar una pieza visible del casco/coche tambien es acceso real;
+        // su centro puede quedar oculto por un techo o por el propio muelle.
+        // Consulta solo al interactuar: hasta 32 piezas propias, sin censo.
+        for(int i=0;i<32;i++)if(Parts[i]!=null && user.CheckSight(Parts[i],SF_IGNOREVISIBILITY))return true;
+        return false;
     }
     bool Board(CaelumPlayer user)
     {
         if(!CanBoard(user))return false;
         CaelumPoiKnowledge.RecordUse(user,self,CaelumPoiData.TRANSPORT);
-        if(!CaelumTravelService.Begin(user,Connection(),TravelMode()))return false;
-        let plan=CaelumJourneyPlan.Get(user);
-        if(plan==null || !plan.Open)return false;
-        plan.SourceVehicle=self;
-        return true;
+        return CaelumTransportSession.Show(user,self);
     }
     override bool Used(Actor activator)
     {return CaelumUseGeometry.AimedAt(CaelumPlayer(activator),self) && Board(CaelumPlayer(activator));}
@@ -147,6 +152,34 @@ class CaelumVehicleWorld : StaticEventHandler
     {let it=ThinkerIterator.Create(kind);return Actor(it.Next());}
     static bool Prepare()
     {
+        if(CaelumTransportSceneData.IsStage(level.MapName) || CaelumTransportSceneData.IsRural(level.MapName))
+        {
+            let sign=Find('CaelumTransportAccess');
+            if(sign==null)
+            {
+                Actor.Spawn('CaelumTransportAccess',CaelumTransportSceneData.AccessPosition(),NO_REPLACE);
+                if(CaelumTransportSceneData.IsRural(level.MapName))
+                    for(int i=0;i<CaelumTransportSceneData.TreeCount();i++)Actor.Spawn('CaelumTreeCityJacaranda',CaelumTransportSceneData.Tree(i),NO_REPLACE);
+            }
+            return true;
+        }
+        int node=CaelumTransportRules.NodeForMap(level.MapName);
+        if(node>=0)
+        {
+            let horse=CaelumRidingHorse(Find('CaelumRidingHorse'));
+            if(horse==null)horse=CaelumRidingHorse(Actor.Spawn('CaelumRidingHorse',CaelumTransportVehicleData.Position(level.MapName,5),NO_REPLACE));
+            let train=CaelumSteamTrain(Find('CaelumSteamTrain'));
+            if(train==null)train=CaelumSteamTrain(Actor.Spawn('CaelumSteamTrain',CaelumTransportVehicleData.Position(level.MapName,6),NO_REPLACE));
+            if(horse==null || !horse.Prepare() || train==null || !train.Prepare())return false;
+        }
+        if(CaelumBuenosAiresData.IsMap(level.MapName))
+        {
+            let cart=CaelumCoveredCart(Find('CaelumCoveredCart'));
+            if(cart==null)cart=CaelumCoveredCart(Actor.Spawn('CaelumCoveredCart',CaelumTransportVehicleData.Position(level.MapName,3),NO_REPLACE));
+            let ship=CaelumMerchantShip(Find('CaelumMerchantShip'));
+            if(ship==null)ship=CaelumMerchantShip(Actor.Spawn('CaelumMerchantShip',CaelumTransportVehicleData.Position(level.MapName,4),NO_REPLACE));
+            return CaelumBuenosAiresContent.Prepare() && cart!=null && cart.Prepare() && ship!=null && ship.Prepare();
+        }
         if(level.MapName!="MAP03" && level.MapName!="TCOAST")return true;
         bool port=level.MapName=="MAP03";
         vector3 ranchPos=port?(-640,192,0):(-512,384,0);

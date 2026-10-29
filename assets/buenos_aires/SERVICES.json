@@ -1,0 +1,633 @@
+{
+  "issue": 416,
+  "revision": 1,
+  "house_first": 160,
+  "house_count": 4,
+  "map": "CABAIRES",
+  "controller_position": [
+    1216,
+    768,
+    0
+  ],
+  "provenance": "Original service placement within the approved six-block schematic city. Existing merchants/catalogues, fourteen stations, furniture, water capacities and tree assets are reused. Merchant IDs append after Barracas; houses append four independent domestic water records. No story characters, free shop stock or household property rights are introduced. The public workshop uses existing 128-MU proximity links.",
+  "actors": [
+    {
+      "actor": "CaelumCityMerchant",
+      "position": [
+        224,
+        2016,
+        0
+      ],
+      "angle": 0,
+      "merchant": 64,
+      "category": 0
+    },
+    {
+      "actor": "CaelumShopSign",
+      "position": [
+        334,
+        2016,
+        80
+      ],
+      "angle": 0,
+      "category": 0
+    },
+    {
+      "actor": "CaelumCityMerchant",
+      "position": [
+        224,
+        2144,
+        0
+      ],
+      "angle": 0,
+      "merchant": 65,
+      "category": 1
+    },
+    {
+      "actor": "CaelumShopSign",
+      "position": [
+        334,
+        2144,
+        80
+      ],
+      "angle": 0,
+      "category": 1
+    },
+    {
+      "actor": "CaelumCityMerchant",
+      "position": [
+        224,
+        2272,
+        0
+      ],
+      "angle": 0,
+      "merchant": 66,
+      "category": 2
+    },
+    {
+      "actor": "CaelumShopSign",
+      "position": [
+        334,
+        2272,
+        80
+      ],
+      "angle": 0,
+      "category": 2
+    },
+    {
+      "actor": "CaelumCityMerchant",
+      "position": [
+        224,
+        2400,
+        0
+      ],
+      "angle": 0,
+      "merchant": 67,
+      "category": 3
+    },
+    {
+      "actor": "CaelumShopSign",
+      "position": [
+        334,
+        2400,
+        80
+      ],
+      "angle": 0,
+      "category": 3
+    },
+    {
+      "actor": "CaelumCityMerchant",
+      "position": [
+        224,
+        2784,
+        0
+      ],
+      "angle": 0,
+      "merchant": 68,
+      "category": 4
+    },
+    {
+      "actor": "CaelumShopSign",
+      "position": [
+        334,
+        2784,
+        80
+      ],
+      "angle": 0,
+      "category": 4
+    },
+    {
+      "actor": "CaelumCityMerchant",
+      "position": [
+        224,
+        2912,
+        0
+      ],
+      "angle": 0,
+      "merchant": 69,
+      "category": 5
+    },
+    {
+      "actor": "CaelumShopSign",
+      "position": [
+        334,
+        2912,
+        80
+      ],
+      "angle": 0,
+      "category": 5
+    },
+    {
+      "actor": "CaelumCityMerchant",
+      "position": [
+        224,
+        3040,
+        0
+      ],
+      "angle": 0,
+      "merchant": 70,
+      "category": 6
+    },
+    {
+      "actor": "CaelumShopSign",
+      "position": [
+        334,
+        3040,
+        80
+      ],
+      "angle": 0,
+      "category": 6
+    },
+    {
+      "actor": "CaelumCityMerchant",
+      "position": [
+        224,
+        3168,
+        0
+      ],
+      "angle": 0,
+      "merchant": 71,
+      "category": 7
+    },
+    {
+      "actor": "CaelumShopSign",
+      "position": [
+        334,
+        3168,
+        80
+      ],
+      "angle": 0,
+      "category": 7
+    },
+    {
+      "actor": "CaelumForgeStation",
+      "position": [
+        3240,
+        2048,
+        0
+      ],
+      "angle": 270,
+      "network": 1
+    },
+    {
+      "actor": "CaelumAnvilStation",
+      "position": [
+        3336,
+        2048,
+        0
+      ],
+      "angle": 270,
+      "network": 1
+    },
+    {
+      "actor": "CaelumSawmillStation",
+      "position": [
+        3432,
+        2048,
+        0
+      ],
+      "angle": 270,
+      "network": 1
+    },
+    {
+      "actor": "CaelumWorkbenchStation",
+      "position": [
+        3528,
+        2048,
+        0
+      ],
+      "angle": 270,
+      "network": 1
+    },
+    {
+      "actor": "CaelumArmorWorkshopStation",
+      "position": [
+        3624,
+        2048,
+        0
+      ],
+      "angle": 270,
+      "network": 1
+    },
+    {
+      "actor": "CaelumRangedWorkshopStation",
+      "position": [
+        3720,
+        2048,
+        0
+      ],
+      "angle": 270,
+      "network": 1
+    },
+    {
+      "actor": "CaelumSewingMachineStation",
+      "position": [
+        3816,
+        2048,
+        0
+      ],
+      "angle": 270,
+      "network": 1
+    },
+    {
+      "actor": "CaelumGlobeStation",
+      "position": [
+        3240,
+        2144,
+        0
+      ],
+      "angle": 270,
+      "network": 1
+    },
+    {
+      "actor": "CaelumJewelerBenchStation",
+      "position": [
+        3336,
+        2144,
+        0
+      ],
+      "angle": 270,
+      "network": 1
+    },
+    {
+      "actor": "CaelumFineToolsBenchStation",
+      "position": [
+        3432,
+        2144,
+        0
+      ],
+      "angle": 270,
+      "network": 1
+    },
+    {
+      "actor": "CaelumMasterBenchStation",
+      "position": [
+        3528,
+        2144,
+        0
+      ],
+      "angle": 270,
+      "network": 1
+    },
+    {
+      "actor": "CaelumEssenceAltarStation",
+      "position": [
+        3624,
+        2144,
+        0
+      ],
+      "angle": 270,
+      "network": 1
+    },
+    {
+      "actor": "CaelumAlchemyStation",
+      "position": [
+        3720,
+        2144,
+        0
+      ],
+      "angle": 270,
+      "network": 1
+    },
+    {
+      "actor": "CaelumFermentationStation",
+      "position": [
+        3816,
+        2144,
+        0
+      ],
+      "angle": 270,
+      "network": 1
+    },
+    {
+      "actor": "CaelumRestBed",
+      "position": [
+        1824,
+        2016,
+        0
+      ],
+      "angle": 0
+    },
+    {
+      "actor": "CaelumRestChair",
+      "position": [
+        2016,
+        2048,
+        0
+      ],
+      "angle": 180
+    },
+    {
+      "actor": "CaelumDomesticSink",
+      "position": [
+        1776,
+        2368,
+        0
+      ],
+      "angle": 90,
+      "house": 160
+    },
+    {
+      "actor": "CaelumDomesticBathtub",
+      "position": [
+        1936,
+        2368,
+        0
+      ],
+      "angle": 90,
+      "house": 160
+    },
+    {
+      "actor": "CaelumDomesticToilet",
+      "position": [
+        2064,
+        2368,
+        0
+      ],
+      "angle": 90,
+      "house": 160
+    },
+    {
+      "actor": "CaelumRestBed",
+      "position": [
+        2464,
+        2016,
+        0
+      ],
+      "angle": 0
+    },
+    {
+      "actor": "CaelumRestChair",
+      "position": [
+        2656,
+        2048,
+        0
+      ],
+      "angle": 180
+    },
+    {
+      "actor": "CaelumDomesticSink",
+      "position": [
+        2416,
+        2368,
+        0
+      ],
+      "angle": 90,
+      "house": 161
+    },
+    {
+      "actor": "CaelumDomesticBathtub",
+      "position": [
+        2576,
+        2368,
+        0
+      ],
+      "angle": 90,
+      "house": 161
+    },
+    {
+      "actor": "CaelumDomesticToilet",
+      "position": [
+        2704,
+        2368,
+        0
+      ],
+      "angle": 90,
+      "house": 161
+    },
+    {
+      "actor": "CaelumRestBed",
+      "position": [
+        1824,
+        2784,
+        0
+      ],
+      "angle": 0
+    },
+    {
+      "actor": "CaelumRestChair",
+      "position": [
+        2016,
+        2816,
+        0
+      ],
+      "angle": 180
+    },
+    {
+      "actor": "CaelumDomesticSink",
+      "position": [
+        1776,
+        3136,
+        0
+      ],
+      "angle": 90,
+      "house": 162
+    },
+    {
+      "actor": "CaelumDomesticBathtub",
+      "position": [
+        1936,
+        3136,
+        0
+      ],
+      "angle": 90,
+      "house": 162
+    },
+    {
+      "actor": "CaelumDomesticToilet",
+      "position": [
+        2064,
+        3136,
+        0
+      ],
+      "angle": 90,
+      "house": 162
+    },
+    {
+      "actor": "CaelumRestBed",
+      "position": [
+        2464,
+        2784,
+        0
+      ],
+      "angle": 0
+    },
+    {
+      "actor": "CaelumRestChair",
+      "position": [
+        2656,
+        2816,
+        0
+      ],
+      "angle": 180
+    },
+    {
+      "actor": "CaelumDomesticSink",
+      "position": [
+        2416,
+        3136,
+        0
+      ],
+      "angle": 90,
+      "house": 163
+    },
+    {
+      "actor": "CaelumDomesticBathtub",
+      "position": [
+        2576,
+        3136,
+        0
+      ],
+      "angle": 90,
+      "house": 163
+    },
+    {
+      "actor": "CaelumDomesticToilet",
+      "position": [
+        2704,
+        3136,
+        0
+      ],
+      "angle": 90,
+      "house": 163
+    },
+    {
+      "actor": "CaelumTreeCityJacaranda",
+      "position": [
+        1920,
+        384,
+        0
+      ],
+      "angle": 0
+    },
+    {
+      "actor": "CaelumTreeCityJacaranda",
+      "position": [
+        2560,
+        384,
+        0
+      ],
+      "angle": 0
+    },
+    {
+      "actor": "CaelumTreeCityJacaranda",
+      "position": [
+        1920,
+        1184,
+        0
+      ],
+      "angle": 0
+    },
+    {
+      "actor": "CaelumTreeCityJacaranda",
+      "position": [
+        2560,
+        1184,
+        0
+      ],
+      "angle": 0
+    },
+    {
+      "actor": "CaelumFountain",
+      "position": [
+        2240,
+        768,
+        0
+      ],
+      "angle": 0,
+      "installed": true
+    },
+    {
+      "actor": "CaelumRestChair",
+      "position": [
+        2016,
+        640,
+        0
+      ],
+      "angle": 0
+    },
+    {
+      "actor": "CaelumRestChair",
+      "position": [
+        2464,
+        640,
+        0
+      ],
+      "angle": 180
+    },
+    {
+      "actor": "CaelumRestChair",
+      "position": [
+        2016,
+        960,
+        0
+      ],
+      "angle": 0
+    },
+    {
+      "actor": "CaelumRestChair",
+      "position": [
+        2464,
+        960,
+        0
+      ],
+      "angle": 180
+    },
+    {
+      "actor": "CaelumRestChair",
+      "position": [
+        512,
+        256,
+        0
+      ],
+      "angle": 90
+    },
+    {
+      "actor": "CaelumRestChair",
+      "position": [
+        512,
+        640,
+        0
+      ],
+      "angle": 90
+    },
+    {
+      "actor": "CaelumRestChair",
+      "position": [
+        3584,
+        256,
+        0
+      ],
+      "angle": 90
+    },
+    {
+      "actor": "CaelumRestChair",
+      "position": [
+        3584,
+        640,
+        0
+      ],
+      "angle": 90
+    }
+  ]
+}

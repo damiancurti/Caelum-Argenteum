@@ -1,0 +1,21 @@
+{
+  "issue": 416,
+  "revision": 1,
+  "qualification": "Compressed playable transport interiors and persistent rural stopping areas, not a continuous geographic reconstruction. Each rural area owns a fixed 10-km corridor interval; its actors and belongings never move with the passenger. Native hub state preserves revisits. Stops do not change charged distance or exact ticket progress.",
+  "rural_interval_km": 10,
+  "rural_count": 41,
+  "rural_bounds": [-1024, -1024, 1024, 1024],
+  "rural_road": [-1024, -128, 1024, 128],
+  "rural_spawn": [0, 256, 270],
+  "stages": {"3": {"bounds": [-64, -64, 64, 64], "roof": 96}, "4": {"bounds": [-192, -64, 192, 64], "roof": 0}, "5": {"bounds": [-64, -64, 64, 64], "roof": 0}, "6": {"bounds": [-192, -64, 192, 64], "roof": 128}},
+  "stage_spawn": [0, 0, 0],
+  "ground_flat": "CMGR02",
+  "access_position": [0, 48, 0],
+  "rural_access_bounds": [-96, 128, 96, 384],
+  "trees": [[-768, -640], [-640, 704], [704, -704], [768, 640]],
+  "road_flat": "CMST02",
+  "deck_flat": "CVPO01",
+  "wall": "CVPO06",
+  "boundary_height": 64,
+  "cluster": 434
+}

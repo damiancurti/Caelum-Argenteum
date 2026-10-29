@@ -2,15 +2,382 @@
   "issue": 327,
   "revision": 1,
   "maps": {
-    "mansion": {"lump": "MAP01", "previous": "MAP01", "kind": "campaign"},
-    "sewers": {"lump": "MAP02", "previous": "MAP02", "kind": "campaign"},
-    "reservoir": {"lump": "TRESERV", "previous": "MAP03", "kind": "test"},
-    "tarot": {"lump": "TTAROT", "previous": "MAP04", "kind": "test"},
-    "maintenance": {"lump": "TMAINT", "previous": "MAP05", "kind": "test"},
-    "port": {"lump": "MAP03", "previous": "MAP06", "kind": "campaign"},
-    "coast": {"lump": "TCOAST", "previous": "MAP07", "kind": "test"},
-    "hazards": {"lump": "THAZARD", "previous": "MAP08", "kind": "test"},
-    "actors": {"lump": "TACTORS", "previous": "CADEV02", "kind": "test"}
+    "mansion": {
+      "lump": "MAP01",
+      "previous": "MAP01",
+      "kind": "campaign"
+    },
+    "sewers": {
+      "lump": "MAP02",
+      "previous": "MAP02",
+      "kind": "campaign"
+    },
+    "reservoir": {
+      "lump": "TRESERV",
+      "previous": "MAP03",
+      "kind": "test"
+    },
+    "tarot": {
+      "lump": "TTAROT",
+      "previous": "MAP04",
+      "kind": "test"
+    },
+    "maintenance": {
+      "lump": "TMAINT",
+      "previous": "MAP05",
+      "kind": "test"
+    },
+    "port": {
+      "lump": "MAP03",
+      "previous": "MAP06",
+      "kind": "campaign"
+    },
+    "coast": {
+      "lump": "TCOAST",
+      "previous": "MAP07",
+      "kind": "campaign"
+    },
+    "hazards": {
+      "lump": "THAZARD",
+      "previous": "MAP08",
+      "kind": "test"
+    },
+    "actors": {
+      "lump": "TACTORS",
+      "previous": "CADEV02",
+      "kind": "test"
+    },
+    "buenos_aires": {
+      "lump": "CABAIRES",
+      "previous": null,
+      "kind": "campaign",
+      "issue": 416
+    },
+    "transport_road_00": {
+      "lump": "CAR00",
+      "previous": "CAR00",
+      "kind": "campaign"
+    },
+    "transport_road_01": {
+      "lump": "CAR01",
+      "previous": "CAR01",
+      "kind": "campaign"
+    },
+    "transport_road_02": {
+      "lump": "CAR02",
+      "previous": "CAR02",
+      "kind": "campaign"
+    },
+    "transport_road_03": {
+      "lump": "CAR03",
+      "previous": "CAR03",
+      "kind": "campaign"
+    },
+    "transport_road_04": {
+      "lump": "CAR04",
+      "previous": "CAR04",
+      "kind": "campaign"
+    },
+    "transport_road_05": {
+      "lump": "CAR05",
+      "previous": "CAR05",
+      "kind": "campaign"
+    },
+    "transport_road_06": {
+      "lump": "CAR06",
+      "previous": "CAR06",
+      "kind": "campaign"
+    },
+    "transport_road_07": {
+      "lump": "CAR07",
+      "previous": "CAR07",
+      "kind": "campaign"
+    },
+    "transport_road_08": {
+      "lump": "CAR08",
+      "previous": "CAR08",
+      "kind": "campaign"
+    },
+    "transport_road_09": {
+      "lump": "CAR09",
+      "previous": "CAR09",
+      "kind": "campaign"
+    },
+    "transport_road_10": {
+      "lump": "CAR10",
+      "previous": "CAR10",
+      "kind": "campaign"
+    },
+    "transport_road_11": {
+      "lump": "CAR11",
+      "previous": "CAR11",
+      "kind": "campaign"
+    },
+    "transport_road_12": {
+      "lump": "CAR12",
+      "previous": "CAR12",
+      "kind": "campaign"
+    },
+    "transport_road_13": {
+      "lump": "CAR13",
+      "previous": "CAR13",
+      "kind": "campaign"
+    },
+    "transport_road_14": {
+      "lump": "CAR14",
+      "previous": "CAR14",
+      "kind": "campaign"
+    },
+    "transport_road_15": {
+      "lump": "CAR15",
+      "previous": "CAR15",
+      "kind": "campaign"
+    },
+    "transport_road_16": {
+      "lump": "CAR16",
+      "previous": "CAR16",
+      "kind": "campaign"
+    },
+    "transport_road_17": {
+      "lump": "CAR17",
+      "previous": "CAR17",
+      "kind": "campaign"
+    },
+    "transport_road_18": {
+      "lump": "CAR18",
+      "previous": "CAR18",
+      "kind": "campaign"
+    },
+    "transport_road_19": {
+      "lump": "CAR19",
+      "previous": "CAR19",
+      "kind": "campaign"
+    },
+    "transport_road_20": {
+      "lump": "CAR20",
+      "previous": "CAR20",
+      "kind": "campaign"
+    },
+    "transport_road_21": {
+      "lump": "CAR21",
+      "previous": "CAR21",
+      "kind": "campaign"
+    },
+    "transport_road_22": {
+      "lump": "CAR22",
+      "previous": "CAR22",
+      "kind": "campaign"
+    },
+    "transport_road_23": {
+      "lump": "CAR23",
+      "previous": "CAR23",
+      "kind": "campaign"
+    },
+    "transport_road_24": {
+      "lump": "CAR24",
+      "previous": "CAR24",
+      "kind": "campaign"
+    },
+    "transport_road_25": {
+      "lump": "CAR25",
+      "previous": "CAR25",
+      "kind": "campaign"
+    },
+    "transport_road_26": {
+      "lump": "CAR26",
+      "previous": "CAR26",
+      "kind": "campaign"
+    },
+    "transport_road_27": {
+      "lump": "CAR27",
+      "previous": "CAR27",
+      "kind": "campaign"
+    },
+    "transport_road_28": {
+      "lump": "CAR28",
+      "previous": "CAR28",
+      "kind": "campaign"
+    },
+    "transport_road_29": {
+      "lump": "CAR29",
+      "previous": "CAR29",
+      "kind": "campaign"
+    },
+    "transport_road_30": {
+      "lump": "CAR30",
+      "previous": "CAR30",
+      "kind": "campaign"
+    },
+    "transport_road_31": {
+      "lump": "CAR31",
+      "previous": "CAR31",
+      "kind": "campaign"
+    },
+    "transport_road_32": {
+      "lump": "CAR32",
+      "previous": "CAR32",
+      "kind": "campaign"
+    },
+    "transport_road_33": {
+      "lump": "CAR33",
+      "previous": "CAR33",
+      "kind": "campaign"
+    },
+    "transport_road_34": {
+      "lump": "CAR34",
+      "previous": "CAR34",
+      "kind": "campaign"
+    },
+    "transport_road_35": {
+      "lump": "CAR35",
+      "previous": "CAR35",
+      "kind": "campaign"
+    },
+    "transport_road_36": {
+      "lump": "CAR36",
+      "previous": "CAR36",
+      "kind": "campaign"
+    },
+    "transport_road_37": {
+      "lump": "CAR37",
+      "previous": "CAR37",
+      "kind": "campaign"
+    },
+    "transport_road_38": {
+      "lump": "CAR38",
+      "previous": "CAR38",
+      "kind": "campaign"
+    },
+    "transport_road_39": {
+      "lump": "CAR39",
+      "previous": "CAR39",
+      "kind": "campaign"
+    },
+    "transport_road_40": {
+      "lump": "CAR40",
+      "previous": "CAR40",
+      "kind": "campaign"
+    },
+    "transport_stage_3_10": {
+      "lump": "CAT310",
+      "previous": "CAT310",
+      "kind": "campaign"
+    },
+    "transport_stage_4_10": {
+      "lump": "CAT410",
+      "previous": "CAT410",
+      "kind": "campaign"
+    },
+    "transport_stage_5_10": {
+      "lump": "CAT510",
+      "previous": "CAT510",
+      "kind": "campaign"
+    },
+    "transport_stage_6_10": {
+      "lump": "CAT610",
+      "previous": "CAT610",
+      "kind": "campaign"
+    },
+    "transport_stage_3_11": {
+      "lump": "CAT311",
+      "previous": "CAT311",
+      "kind": "campaign"
+    },
+    "transport_stage_4_11": {
+      "lump": "CAT411",
+      "previous": "CAT411",
+      "kind": "campaign"
+    },
+    "transport_stage_5_11": {
+      "lump": "CAT511",
+      "previous": "CAT511",
+      "kind": "campaign"
+    },
+    "transport_stage_6_11": {
+      "lump": "CAT611",
+      "previous": "CAT611",
+      "kind": "campaign"
+    },
+    "transport_stage_3_17": {
+      "lump": "CAT317",
+      "previous": "CAT317",
+      "kind": "campaign"
+    },
+    "transport_stage_4_17": {
+      "lump": "CAT417",
+      "previous": "CAT417",
+      "kind": "campaign"
+    },
+    "transport_stage_5_17": {
+      "lump": "CAT517",
+      "previous": "CAT517",
+      "kind": "campaign"
+    },
+    "transport_stage_6_17": {
+      "lump": "CAT617",
+      "previous": "CAT617",
+      "kind": "campaign"
+    },
+    "transport_stage_3_18": {
+      "lump": "CAT318",
+      "previous": "CAT318",
+      "kind": "campaign"
+    },
+    "transport_stage_4_18": {
+      "lump": "CAT418",
+      "previous": "CAT418",
+      "kind": "campaign"
+    },
+    "transport_stage_5_18": {
+      "lump": "CAT518",
+      "previous": "CAT518",
+      "kind": "campaign"
+    },
+    "transport_stage_6_18": {
+      "lump": "CAT618",
+      "previous": "CAT618",
+      "kind": "campaign"
+    },
+    "transport_stage_3_19": {
+      "lump": "CAT319",
+      "previous": "CAT319",
+      "kind": "campaign"
+    },
+    "transport_stage_4_19": {
+      "lump": "CAT419",
+      "previous": "CAT419",
+      "kind": "campaign"
+    },
+    "transport_stage_5_19": {
+      "lump": "CAT519",
+      "previous": "CAT519",
+      "kind": "campaign"
+    },
+    "transport_stage_6_19": {
+      "lump": "CAT619",
+      "previous": "CAT619",
+      "kind": "campaign"
+    },
+    "transport_stage_3_20": {
+      "lump": "CAT320",
+      "previous": "CAT320",
+      "kind": "campaign"
+    },
+    "transport_stage_4_20": {
+      "lump": "CAT420",
+      "previous": "CAT420",
+      "kind": "campaign"
+    },
+    "transport_stage_5_20": {
+      "lump": "CAT520",
+      "previous": "CAT520",
+      "kind": "campaign"
+    },
+    "transport_stage_6_20": {
+      "lump": "CAT620",
+      "previous": "CAT620",
+      "kind": "campaign"
+    }
   },
   "private_interiors": "CAH000 through CAH159 retain their identities and link to port",
   "recovery": "The complete previous runtime is git commit b9fd71ce2cb5acb9bdf09fabc2b4b9be443ea057; original renamed WADs are preserved in legacy_5428/maps. Do not combine old hub saves with the new catalogue."

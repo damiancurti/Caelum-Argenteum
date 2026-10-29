@@ -1,10 +1,11 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.8.51** - 2026-10-29.
+Documentation version: **5.8.52** - 2026-10-29.
 
-**5.8.50/#502:**contact-adapters;136+2PASS;validation_5850;415-WIP335checks/416-417-pending.
+**5.8.50/#502:**contact-adapters;136+2PASS;validation_5850.
 
-**5.8.51/#415:**calendar/combat/theft-ready;PR545;city-day77.45s;loading-results;author-deferred;416/417-separate.
+**5.8.51/#415:**ready;PR545;city-day77.45s;author-pending.
+**5.8.52/#416:**four-mode-network/BA;PR546;validation_5852;author-pending.
 
 **5.8.47-49/#502:** stack/vessel/physical-food exposure;validation_5847-49;49:1190+2PASS;generic-adapters/#415-417-pending.
 
@@ -376,6 +377,6 @@ Layout/reading: AGENTS.md.
 
 ## Critical premises
 
-Follow AGENTS/PROJECT. Outstanding checks:
+Checks:
 [pending_test.txt](../pending_test.txt); remove only after explicit acceptance, recording ID/origin/date/qualifications in [HISTORY.md](HISTORY.md).
 Unconfirmed/failed checks remain.

@@ -4186,7 +4186,7 @@ CA_CLIMATE_INDOOR = "interior";
 [default]
 CA_MAP06_NAME = "Barracas al Sud — fortified port";
 CA_CARAVAN_CONFIRM_16 = "Destination: Barracas al Sud. Review provisions and travel time for the existing 10 km port journey before confirming departure.";
-CA_MAP07_NAME = "La Plata river shore";
+CA_MAP07_NAME = "Mar del Plata";
 CA_CARAVAN_CONFIRM_8 = "Confirm travel to Riverside port.";
 CA_CARAVAN_CONFIRM_9 = "Confirm travel to Sewers: reservoir.";
 CA_CARAVAN_CONFIRM_10 = "Confirm travel to La Plata river shore.";
@@ -4195,7 +4195,7 @@ CA_CARAVAN_CONFIRM_11 = "Confirm travel to Riverside port.";
 [es]
 CA_MAP06_NAME = "Barracas al Sud — puerto fortificado";
 CA_CARAVAN_CONFIRM_16 = "Destino: Barracas al Sud. Revisa las provisiones y el tiempo del recorrido de 10 km al puerto antes de confirmar la salida.";
-CA_MAP07_NAME = "Costa del Plata";
+CA_MAP07_NAME = "Mar del Plata";
 CA_CARAVAN_CONFIRM_8 = "Confirmar traslado a Puerto ribereño.";
 CA_CARAVAN_CONFIRM_9 = "Confirmar traslado a Alcantarillas: depósito.";
 CA_CARAVAN_CONFIRM_10 = "Confirmar traslado a Costa del Plata.";
@@ -6904,3 +6904,78 @@ CA_REGION_PREPARING = "Preparando la región...";
 CA_ABSENT_THEFT_FOUND = "On returning, you discover %d missing inventory stacks from your storage.";
 [es]
 CA_ABSENT_THEFT_FOUND = "Al regresar, descubres que faltan %d pilas de objetos de tus contenedores.";
+
+[enu default]
+CA_BUENOS_AIRES_NAME = "Buenos Aires";
+CA_MAR_DEL_PLATA_NAME = "Mar del Plata";
+CA_BA_STATION = "Railway station";
+CA_BA_PLAZA = "Public square";
+CA_BA_DOCK = "Embarkation quay";
+CA_BA_MARKET = "Market";
+CA_BA_HOMES = "Residential block";
+CA_BA_WORKSHOPS = "Workshops";
+[es]
+CA_BUENOS_AIRES_NAME = "Buenos Aires";
+CA_MAR_DEL_PLATA_NAME = "Mar del Plata";
+CA_BA_STATION = "Estacion de ferrocarril";
+CA_BA_PLAZA = "Plaza";
+CA_BA_DOCK = "Embarcadero";
+CA_BA_MARKET = "Mercado";
+CA_BA_HOMES = "Manzana residencial";
+CA_BA_WORKSHOPS = "Talleres";
+
+[enu default]
+CA_TRANSPORT_TITLE = "Transport";
+CA_TRANSPORT_COUNTRY = "Rural road";
+CA_TRANSPORT_ONBOARD = "On board";
+CA_TRANSPORT_UNAVAILABLE = "Cannot board: check access, current activities, and ticket funds.";
+CA_TRANSPORT_PROGRESS = "%.2f / %.2f km | Paid: %d copper";
+CA_TRANSPORT_PRICE = "%.2f km | %d copper | %.2f hours travelling (departure wait excluded)";
+CA_TRANSPORT_STOPPED = "Stopped. Your paid progress is retained.";
+CA_TRANSPORT_WAITING = "Waiting for the scheduled departure.";
+CA_TRANSPORT_NEXT_PORT = "Disembarkation requested: the vessel must reach the next port.";
+CA_TRANSPORT_WAIT = "Wait towards arrival";
+CA_TRANSPORT_RESUME = "Resume paid journey";
+CA_TRANSPORT_BUY = "Buy ticket and board";
+CA_TRANSPORT_EXIT = "Stop and disembark";
+CA_TRANSPORT_DESTINATION = "Change destination";
+
+[es]
+CA_TRANSPORT_TITLE = "Transporte";
+CA_TRANSPORT_COUNTRY = "Camino rural";
+CA_TRANSPORT_ONBOARD = "A bordo";
+CA_TRANSPORT_UNAVAILABLE = "No se puede embarcar: revisá acceso, actividades y dinero para el billete.";
+CA_TRANSPORT_PROGRESS = "%.2f / %.2f km | Pagado: %d cobres";
+CA_TRANSPORT_PRICE = "%.2f km | %d cobres | %.2f horas de viaje (sin espera de salida)";
+CA_TRANSPORT_STOPPED = "Detenido. Se conserva el trayecto pagado.";
+CA_TRANSPORT_WAITING = "Esperando la salida programada.";
+CA_TRANSPORT_NEXT_PORT = "Desembarco solicitado: el barco debe llegar al próximo puerto.";
+CA_TRANSPORT_WAIT = "Esperar hasta la llegada";
+CA_TRANSPORT_RESUME = "Reanudar el viaje pagado";
+CA_TRANSPORT_BUY = "Comprar billete y embarcar";
+CA_TRANSPORT_EXIT = "Detenerse y bajar";
+CA_TRANSPORT_DESTINATION = "Cambiar destino";
+[enu default]
+CA_TRANSPORT_HORSE = "riding horse";
+CA_TRANSPORT_TRAIN = "steam train";
+[es]
+CA_TRANSPORT_HORSE = "caballo de viaje";
+CA_TRANSPORT_TRAIN = "tren a vapor";
+[enu default]
+CA_TRANSPORT_ABANDON = "Abandon ticket (no refund)";
+CA_TRANSPORT_ABANDONED = "Ticket abandoned. No refund or free resumption.";
+CA_TRANSPORT_REBOOK = "Buy remaining journey";
+CA_TRANSPORT_REBOOK_PRICE = "New ticket for the remaining distance: %d copper.";
+[es]
+CA_TRANSPORT_ABANDON = "Abandonar billete (sin devolución)";
+CA_TRANSPORT_ABANDONED = "Billete abandonado. Sin devolución ni reanudación gratuita.";
+CA_TRANSPORT_REBOOK = "Comprar el tramo restante";
+CA_TRANSPORT_REBOOK_PRICE = "Billete nuevo por la distancia restante: %d cobres.";
+[enu default]
+CA_TRANSPORT_REMAINING = "Departure in %.2f h | Remaining journey: %.2f h";
+[es]
+CA_TRANSPORT_REMAINING = "Salida en %.2f h | Trayecto restante: %.2f h";
+[enu default]
+CA_TRANSPORT_SUPPLIES = "Automatic provisions use carried supplies outside the Box.";
+[es]
+CA_TRANSPORT_SUPPLIES = "Las provisiones automáticas usan lo que llevás fuera de la Caja.";

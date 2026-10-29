@@ -24,6 +24,8 @@ class CaelumJourneyState : Inventory
     int FoodConsumed;
     int WaterConsumed;
     double ContainerLitersConsumed;
+    bool LiveTransport;
+    double LiveWorldSeconds;
     bool HasDepartureTime;
     int DepartureDays;
     int DepartureDayTics;
@@ -59,7 +61,7 @@ class CaelumJourneyState : Inventory
         if (record == null) return;
         int id = journey.ConnectionId;
         int here = CaelumWorldCatalogue.LocationForMap(level.MapName);
-        bool valid = CaelumWorldCatalogue.IsSewerConnection(id);
+        bool valid = CaelumWorldCatalogue.IsTravelConnection(id);
         if (valid && here == CaelumWorldCatalogue.ConnectionOrigin(id)
             && record.WorldPendingConnection == id && !loaded) return;
         // Resolver antes de WorldProgress: sólo acredita el destino esperado
@@ -103,7 +105,8 @@ class CaelumJourneyState : Inventory
         Console.Printf("Secuencia=%d conexión=%d modo=%d estado=%d llegadas=%d interrupciones=%d",
             journey.Sequence, journey.ConnectionId, journey.TravelMode, journey.Status,
             journey.Arrivals, journey.Interruptions);
-        Console.Printf("Distancia=%.3f km marcha=%.6f km/h movimiento=%d dormir=%d tics comida=%d agua=%d recipientes=%.3f L",
+        if(journey.LiveTransport)Console.Printf("Viaje vivo: distancia=%.3f km duracion=%.3f s del mundo; provisiones consumidas por el inventario nativo.",journey.DistanceKm,journey.LiveWorldSeconds);
+        else Console.Printf("Distancia=%.3f km marcha=%.6f km/h movimiento=%d dormir=%d tics comida=%d agua=%d recipientes=%.3f L",
             journey.DistanceKm, journey.WalkingKmh, journey.WalkTics, journey.SleepTics,
             journey.FoodConsumed, journey.WaterConsumed, journey.ContainerLitersConsumed);
         if (journey.HasDepartureTime)
@@ -125,11 +128,12 @@ class CaelumJourneyState : Inventory
 
 class CaelumTravelService : Object play
 {
-    static bool CanDepart(CaelumPlayer user, int id)
+    static bool CanDepart(CaelumPlayer user, int id,bool transport=false)
     {
         if (user == null || user.player == null || !user.CharacterCreationComplete
             || user.CreationWizardOpen || user.health <= 0 || user.player.playerstate != PST_LIVE
-            || (user.player.cheats & CF_PREDICTING) || !CaelumWorldCatalogue.IsSewerConnection(id)
+            || (user.player.cheats & CF_PREDICTING)
+            || !(transport?CaelumWorldCatalogue.IsTravelConnection(id):CaelumWorldCatalogue.IsSewerConnection(id))
             || CaelumWorldCatalogue.ConnectionOrigin(id) != CaelumWorldCatalogue.LocationForMap(level.MapName)) return false;
         if (!CaelumSewerMaze.CanLeave(user)) return false;
         if (user.HasActiveConversation() || user.PalomoMerchantMenuOpen || user.CraftingMenuOpen
@@ -176,6 +180,7 @@ class CaelumTravelService : Object play
         journey.ConnectionId = id; journey.TravelMode = travelMode;
         journey.Status = CaelumJourneyState.STATUS_DEPARTED;
         journey.RecordDepartureTime(user);
+        journey.LiveTransport=false;journey.LiveWorldSeconds=0;
         journey.DistanceKm = CaelumJourneyRules.DistanceKm(id);
         journey.WalkingKmh = plan == null ? 0 : plan.SpeedKmh;
         journey.WalkTics = plan == null ? 0 : plan.Available.WalkTics;

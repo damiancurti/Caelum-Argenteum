@@ -1,3 +1,5 @@
+include "caelum/data/transport.mapinfo"
+include "caelum/data/transport_scenes.mapinfo"
 include "caelum/data/cartography.mapinfo"
 include "caelum/data/house_hubs.mapinfo"
 

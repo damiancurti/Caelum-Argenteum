@@ -67,7 +67,7 @@ class CaelumAuthoredCartography : Object play
         let travel=CaelumSewerTravelGate(subject);
         if(category==CaelumPoiData.EXIT && travel!=null && travel.Placed
             && (level.MapName=="MAP02" || level.MapName=="MAP03")
-            && CaelumWorldCatalogue.IsSewerConnection(travel.ConnectionId))
+            && CaelumWorldCatalogue.IsTravelConnection(travel.ConnectionId))
         {id=String.Format("travel-%d",travel.ConnectionId);nameKey=CaelumWorldCatalogue.ConnectionNameKey(travel.ConnectionId);}
         if(id.Length()>0)CaelumPoiRegistration.Bind(subject,id,category,nameKey);
     }

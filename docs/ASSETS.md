@@ -1,6 +1,24 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.51** - 2026-10-29.
+Documentation version: **5.8.52** - 2026-10-29.
+
+Unreleased #416: `assets/buenos_aires/CITY.json` and
+`assets/generators/generate_buenos_aires.py` generate the original schematic
+six-block CABAIRES map from owned city profiles/textures. It is not a historical
+street reconstruction. Native access/visual evidence: `assets/validation_5852`.
+Destination music is unassigned; the author's field track is not reused as city music.
+
+The new horse uses eight painted sprite directions, from an original OpenAI
+imagegen atlas made on 2026-10-29 under the author's art direction. The unchanged
+RGBA source, prompt, crop bounds and scale are retained in
+`assets/art_source/transport/horse-eight-views.png` and
+`assets/transport/vehicles.json`. No external horse photograph is incorporated.
+`generate_transport_vehicles.py` deterministically crops/registers these sprites
+and builds the owned wood/iron/brass steam locomotive, coach and service sign.
+The train is a period-informed representation, not a named historical replica.
+Existing carriage and ship art remains intact. Native captures in
+`assets/validation_5852` establish rendering only; author visual acceptance is
+reserved for the grouped V5.8 check.
 
 ## 5.8.50 - Contact adapter evidence (#502)
 

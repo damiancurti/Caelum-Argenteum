@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `b704e5a0c2e907c7a89d57e223be0fe61793ea9152f260093e3dc91a8acdd292`. Locations include every definition; the last one per language wins.
+SHA-256: `298053434b74bcdc69a6f17fe16d64e6eba16dd352a1276afea0e1990d6c0225`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -28,10 +28,12 @@ including shared UI/system keys and dynamically selected text.
 | CA_ARMOR | 13 | CA_ARMOR_BASE_NOTHING | CA_ARMOR_TYPE_MEDIUM |
 | CA_ATTACK | 4 | CA_ATTACK_HIT | CA_ATTACK_NO_ANIMA |
 | CA_ATTRIBUTE | 12 | CA_ATTRIBUTE_AGILITY | CA_ATTRIBUTE_TOUGHNESS |
+| CA_BA | 6 | CA_BA_DOCK | CA_BA_WORKSHOPS |
 | CA_BASIC | 2 | CA_BASIC_BED | CA_BASIC_CHAIR |
 | CA_BATH | 15 | CA_BATH_CANCELLED | CA_BATH_TITLE |
 | CA_BATHTUB | 2 | CA_BATHTUB_POSE_HINT | CA_BATHTUB_POSE_STARTED |
 | CA_BATTLE | 2 | CA_BATTLE_CRY_BLOCKED | CA_BATTLE_CRY_CAST |
+| CA_BUENOS | 1 | CA_BUENOS_AIRES_NAME | CA_BUENOS_AIRES_NAME |
 | CA_BULL | 1 | CA_BULL_NAME | CA_BULL_NAME |
 | CA_CAELLA | 5 | CA_CAELLA_NAME | CA_CAELLA_NECKLACE_TEACH |
 | CA_CALENDAR | 8 | CA_CALENDAR_AUTUMN | CA_CALENDAR_WINTER |
@@ -122,6 +124,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_MAP06 | 1 | CA_MAP06_NAME | CA_MAP06_NAME |
 | CA_MAP07 | 1 | CA_MAP07_NAME | CA_MAP07_NAME |
 | CA_MAP08 | 1 | CA_MAP08_NAME | CA_MAP08_NAME |
+| CA_MAR | 1 | CA_MAR_DEL_PLATA_NAME | CA_MAR_DEL_PLATA_NAME |
 | CA_MATE | 20 | CA_MATE_CONFIRM_DISCARD | CA_MATE_WASHED |
 | CA_MATERIAL | 126 | CA_MATERIAL_ALCOHOL | CA_MATERIAL_YERBA_MATE |
 | CA_MAZE | 26 | CA_MAZE_CARD_GUARD | CA_MAZE_ZUPAY_GUARD |
@@ -193,6 +196,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_THIRST | 2 | CA_THIRST_STATE_CRITICAL | CA_THIRST_STATE_LOW |
 | CA_TOILET | 8 | CA_TOILET_CANCEL_HINT | CA_TOILET_UNAVAILABLE |
 | CA_TRACK | 10 | CA_TRACK_FINISHED | CA_TRACK_STOP |
+| CA_TRANSPORT | 22 | CA_TRANSPORT_ABANDON | CA_TRANSPORT_WAITING |
 | CA_TRAP | 1 | CA_TRAP_TELEPORTED | CA_TRAP_TELEPORTED |
 | CA_TRAPS | 4 | CA_TRAPS_RESET_DONE | CA_TRAPS_RESET_OCCUPIED |
 | CA_TREE | 47 | CA_TREE_CITY_JACARANDA | CA_TREE_TUNDRA_NIRE_YOUNG |

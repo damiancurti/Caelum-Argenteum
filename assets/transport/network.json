@@ -1,0 +1,86 @@
+{
+  "issue": 416,
+  "revision": 1,
+  "authorization": "2026-10-29: the author authorized geographic calculations and period-transport approximations for missing values, with explicit source/estimate distinctions. Approved fares and travel rules remain unchanged.",
+  "sources": [
+    {
+      "id": "mulhall1892",
+      "url": "https://archive.org/details/handbookofriverp00mulhuoft",
+      "pages": "Printed 86-87; PDF 104-105",
+      "observed": "Buenos Ayres to Mar del Plata: 250 miles, 12 hours, usually a night train.",
+      "limits": "Rounded guidebook mileage, three years after the campaign. Not an exact 1889 railway survey or timetable."
+    },
+    {
+      "id": "barracas_secondary",
+      "url": "https://noticiasconenfoque.com.ar/nota/4778/trenes-que-cuentan-su-historia",
+      "observed": "Secondary historical account lists Barracas al Sud/Avellaneda at railway kilometre 3.60 from Constitucion.",
+      "limits": "Secondary reference, not a verified original station table."
+    },
+    {
+      "id": "cart_secondary",
+      "url": "https://historicaltextarchive.org/sections/article/315-latin-american-colonial-transportation-revised",
+      "observed": "Donald J. Mabry's colonial transport overview gives Argentine ox carts about 15 miles per day.",
+      "limits": "Earlier colonial reference, not an 1889 operating schedule. Used only to check the scale of the estimated 24-km cart day."
+    },
+    {
+      "id": "night_service_secondary",
+      "url": "https://www.ub.edu/geocrit/sn-11.htm",
+      "observed": "Historical study transcribes a 20:30 departure notice.",
+      "limits": "The quoted newspaper date and weekday conflict. The runtime 20:30 clock is explicitly an estimate, not a verified historical timetable."
+    },
+    {
+      "id": "daily_rail_secondary",
+      "url": "https://www.rieles.com/front/locomotora-no-46/",
+      "observed": "Reports one daily train per direction from October 1886.",
+      "limits": "Secondary history; it does not establish the exact 1889 departure clock."
+    }
+  ],
+  "geographic_model": {
+    "earth_radius_km": 6371.0088,
+    "method": "Sum great-circle distances between approximate geographic reference points. These are corridor estimates, not a road survey, navigational chart, historical coastline reconstruction or safe-disembarkation permission.",
+    "road_buenos_aires_barracas": [[-34.628,-58.381],[-34.656,-58.371],[-34.662,-58.367]],
+    "road_barracas_mar_del_plata": [[-34.662,-58.367],[-34.72,-58.25],[-35.57,-58.01],[-36.31,-57.68],[-36.86,-57.88],[-38.00,-57.56]],
+    "sea_buenos_aires_barracas": [[-34.60,-58.36],[-34.639,-58.346]],
+    "sea_barracas_mar_del_plata": [[-34.639,-58.346],[-34.85,-57.86],[-35.27,-57.23],[-36.30,-56.70],[-38.00,-57.54]],
+    "point_qualification": "Rounded reference positions for Constitucion, the old Barracas bridge/city, Quilmes, Chascomus, Dolores, Maipu, Buenos Aires waterfront, the Riachuelo mouth, La Plata coast, Punta Indio, Cabo San Antonio and Mar del Plata. Chosen as geographic design approximations under the author's authorization."
+  },
+  "rail": {
+    "buenos_aires_mar_del_plata_miles": 250,
+    "km_per_mile": 1.609344,
+    "buenos_aires_barracas_km": 3.6,
+    "end_to_end_hours": 12,
+    "barracas_stop_minutes": 15,
+    "departure_minute": 1230,
+    "period_days": 1,
+    "qualification": "Distance and total duration follow the cited references. The 15-minute stop and symmetric daily 20:30 terminal departures are operating estimates. Running speed is derived after subtracting the stop, so it is not counted twice."
+  },
+  "ship": {
+    "knots": 5,
+    "km_per_nautical_mile": 1.852,
+    "barracas_stop_minutes": 60,
+    "departure_minute": 480,
+    "period_days": 3,
+    "qualification": "Retains the existing nominal 5-knot service speed as an estimate. Terminal services depart at 08:00 every third civil day from the campaign date; a one-hour Barracas stop is estimated. This represents a service, not an authored fleet or historical advertised timetable."
+  },
+  "land": {
+    "cart_kmh": 3,
+    "horse_kmh": 8,
+    "moving_hours_per_day": 8,
+    "sleep_hours_per_day": 8,
+    "qualification": "Eight moving hours per 24 hours; the remaining time allows eight hours of sleep and eight hours of other rest. Cart movement gives 24 km/day, near the cited earlier 15-mile scale. Horse pace gives 64 km/day; this is a conservative mixed-gait design estimate, not a relay or unloaded-horse record."
+  },
+  "fares_copper_per_km_per_traveler": {"cart": 2, "ship": 1, "horse": 3, "train": 2},
+  "nodes": [
+    {"id": 0, "location_id": 9, "map": "CABAIRES", "key": "CA_BUENOS_AIRES_NAME"},
+    {"id": 1, "location_id": 6, "map": "MAP03", "key": "CA_MAP06_NAME"},
+    {"id": 2, "location_id": 7, "map": "TCOAST", "key": "CA_MAR_DEL_PLATA_NAME"}
+  ],
+  "routes": [
+    {"id": 10, "origin": 1, "destination": 2},
+    {"id": 11, "origin": 2, "destination": 1},
+    {"id": 17, "origin": 1, "destination": 0},
+    {"id": 18, "origin": 0, "destination": 1},
+    {"id": 19, "origin": 0, "destination": 2},
+    {"id": 20, "origin": 2, "destination": 0}
+  ]
+}

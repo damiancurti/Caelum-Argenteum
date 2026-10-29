@@ -6,8 +6,17 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.51.** Obtain and update the complete repository, validate
+**Current release: 5.8.52.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+5.8.52 completes the four-mode transport network (#416): Buenos Aires,
+Barracas al Sud and Mar del Plata, with six playable Buenos Aires blocks,
+shops, workshops and domestic water. Paid tickets retain progress through
+scheduled departures, interruption and save/resume. Real travel time consumes
+personal resources. Historical references and authorized estimates are explicit
+in SYSTEMS; native evidence is in `assets/validation_5852`. Original horse and
+steam-train artwork retains provenance in ASSETS. #417 incidents are separate;
+author corroboration remains grouped for the complete V5.8 handoff.
 
 5.8.51 completes the #415 calendar/combat/theft infrastructure. Unloaded sieges
 retain actual combatants, resources, casualties, prepared attacks and loot.
@@ -18,7 +27,7 @@ Original 5.8.50 saves remain reversible inputs; native upgrade/reload checks and
 paused partial-work saves are retained in `assets/validation_5851`. Tests distinguish
 335 combat assertions, 21 original-save checks, ownership/access/dispatch evidence
 and the final loading comparison. Author checks remain grouped for the final V5.8
-handoff; #416/#417 continue on their own branches.
+handoff; #417 continues on its own branch.
 
 One actual city-day catch-up takes 77.45 seconds versus 124.07 seconds in the
 preceding checkpoint, with identical recorded Life, Anima, Air, contamination,

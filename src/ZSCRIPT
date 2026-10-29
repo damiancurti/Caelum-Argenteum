@@ -503,3 +503,15 @@ version "4.14"
 #include "caelum/ui/CaelumPropertyUI.zs"
 
 #include "caelum/data/CaelumPropertyRoutes.zs"
+
+#include "caelum/data/CaelumTransportData.zs"
+#include "caelum/world/CaelumTransportRules.zs"
+
+#include "caelum/data/CaelumBuenosAiresData.zs"
+#include "caelum/world/CaelumBuenosAires.zs"
+
+#include "caelum/world/CaelumTransportTicket.zs"
+#include "caelum/data/CaelumTransportSceneData.zs"
+#include "caelum/world/CaelumTransportTrip.zs"
+#include "caelum/data/CaelumTransportVehicleData.zs"
+#include "caelum/world/CaelumTransportVehicles.zs"

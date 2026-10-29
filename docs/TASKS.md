@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.51** - 2026-10-29.
+Documentation version: **5.8.52** - 2026-10-29.
+
+## 5.8.52 / #416 - Network implementation ready - 2026-10-29
+
+The four vehicle types, documented/estimated route catalogue, six-block Buenos
+Aires, native services, paid travel and persistent stops are complete. Earlier
+checkpoint notes below are historical and superseded. Existing map geometry
+remains compatible; newly added destinations have their own maps. The final #415
+bounded arrival work is integrated without modifying #416 route or fare data.
+Native trip, resource, service, arrival and save evidence remains under
+assets/validation_5852. #417 incidents and final grouped author corroboration
+are separate; multiplayer remains deferred to V5.12 as requested.
 
 ## 5.8.51 / #415 - Implementation ready for grouped corroboration
 
@@ -19,6 +30,22 @@ an engineering limitation, not a dropped individual-world rule.
 
 Author checks remain deferred to the complete V5.8 handoff. Continue #416/#417
 in separate focused branches, with final integration and save tests before handoff.
+
+## Unreleased #416 transport integration - 2026-10-29
+
+The historical/estimated route catalogue, six-block Buenos Aires with native
+services, four vehicle types, actual booking/payment, scheduled departure and
+live journey clock are connected. Cart/horse stops use fixed rural hub areas;
+train disembarkation first stops the vehicle, and ships wait for an accessible
+port. Stops retain paid progress; abandonment gives no refund. Ground belongings
+remain in their actual geographic hub. Real physiological/calendar steps retain
+food, water, weather, contamination and sleep costs, with bounded wait work.
+
+Native catalogue, geometry, services, tickets, arrival, interruption, save/resume,
+remaining-fare reacquisition and ground-pile persistence checks are retained in
+`assets/validation_5852`. Grouped author checks are deferred by request. #417
+incidents and #415 regional survivor/theft work remain independent issues;
+existing-map geometry is unchanged. This is not whole-version acceptance.
 
 ## Unreleased #415 integration work
 

@@ -1,6 +1,22 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.51** - 2026-10-29.
+Documentation version: **5.8.52** - 2026-10-29.
+
+## 5.8.52 / #416 - Network implementation ready - 2026-10-29
+
+Final native visual review found the actual interaction subclass falling back to
+the inherited shop sprite instead of the owned transport-sign model. Registering
+CaelumTransportAccess explicitly in MODELDEF corrects that binding; the model,
+collision, map geometry, resources and saved fields remain unchanged.
+
+The four vehicle types, documented/estimated route catalogue, six-block Buenos
+Aires, native services, paid travel and persistent stops are complete. Earlier
+checkpoint notes below are historical and superseded. Existing map geometry
+remains compatible; newly added destinations have their own maps. The final #415
+bounded arrival work is integrated without modifying #416 route or fare data.
+Native trip, resource, service, arrival and save evidence remains under
+assets/validation_5852. #417 incidents and final grouped author corroboration
+are separate; multiplayer remains deferred to V5.12 as requested.
 
 ## 5.8.51 - Unloaded-world implementation (#415) - 2026-10-29
 
@@ -22,6 +38,66 @@ production complexity. It is preserved solely in the isolated validation assets.
 Evidence: assets/validation_5851/loading-results.json. The author remains away;
 no manual entry was removed. #417 owns the surviving bandits and their live camp
 integration; #416/#417 delivery and final grouped author corroboration remain.
+
+## Unreleased #416 transport catalogue - 2026-10-29
+
+Runtime integration now connects the four actual services and supersedes the
+pending boarding/vehicle notes in the earlier checkpoints below. Native trips
+spend real personal resources, reach the named campaign maps, preserve interrupted
+paid progress and retain ground belongings in fixed rural hubs. Fresh stop/save,
+resume, remaining-fare reacquisition, all-mode arrivals and intermediate ship
+ports were exercised in GZDoom 4.14.2. A stale private fixture from before the
+unreleased sign-class split was regenerated; no accepted save used that class.
+Original 5.8.50 compatibility remains a separate check. The author is away;
+manual acceptance is deferred, and no pending author entry was removed.
+
+The complete twelve-hour railway route to Mar del Plata also passes with real
+carried-food/water debit and exposure; its isolated observer records about
+10.6 seconds of accelerated travel processing. This is not frame-presentation
+performance. The fixture allocates Toughness 100 to isolate the journey from
+approved illness lethality: unprotected controls died after about 6.2 world
+hours. Survival rules were not weakened. Native phase checks wait until the
+queued arrival is finalized and account for meals replenishing Hunger.
+
+Added original painted horse rotations and owned steam-train/service-sign
+models, with deterministic registration and source provenance in ASSETS.
+Native rendering captures are retained in validation_5852; author acceptance
+remains pending. This art checkpoint is separate from runtime travel integration.
+
+The author authorized calculations and period-transport approximations for
+missing route/speed/timetable data on 2026-10-29. Added a deterministic catalogue
+with explicit source/estimate distinctions, approved fares and 34 passing native
+checks. SYSTEMS and assets/transport/network.json retain the calculations.
+This is unreleased #416 groundwork, not destination/ticket integration or author
+acceptance. No manual check was removed.
+
+
+The new CABAIRES map has six connected blocks, nine accessible buildings and
+a quay/pier, generated deterministically from owned city textures and profiles.
+Twenty-seven native cylinder/door/street checks pass; geometry screenshots and
+hashes are retained in assets/validation_5852/city-geometry-results.json. No old
+map geometry changes. This is a geometry checkpoint; services, vehicle content
+and author visual acceptance remain pending.
+
+
+Buenos Aires services now reuse eight merchant categories with identities beyond
+Barracas, fourteen connected crafting stations and four homes with separate
+200-L domestic water reserves. The saved installation cursor never recreates
+moved/destroyed furnishings or refills shop stock. City weather and urban
+contamination reuse the approved coastal/urban rules; streets grant no camping
+permission. Thirty-eight native assertions include save/reload of actual vendor
+money and household water. Evidence: validation_5852/city-services-results.json.
+Vehicles, paid progress and safe interruption remain pending.
+
+
+The unreleased ticket ledger snapshots the paid route, fare, pace, timetable and
+rest/dwell durations. Interrupted time ashore does not advance it; resume never
+calls payment again. Ship exits wait for the next port boundary, train exits
+require a stopped vehicle and safe footing, and abandonment retains the spent
+fare. Twenty-six native assertions cover clock boundaries, actual coin ownership,
+duplicate confirmation and saved resume. Only the new booking path opts into
+new routes; the previous travel entry points are unchanged until boarding is
+integrated. Evidence: validation_5852/ticket-results.json. No author handoff yet.
 
 ## Unreleased #415 checkpoint - 2026-10-29
 

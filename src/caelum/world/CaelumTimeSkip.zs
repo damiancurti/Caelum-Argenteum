@@ -67,7 +67,7 @@ class CaelumTimeSkipRules : Object play
     }
 
     static bool OwnedAvailable(CaelumPlayer user,CaelumConsumableItem item)
-    { return item!=null && item.Owner==user && item.Amount>0 && (!item.InMagicBox || user.MagicBoxOwned); }
+    { return item!=null && item.Owner==user && item.Amount>0 && (!item.InMagicBox || (user.MagicBoxOwned && !CaelumTransportTrip.Aboard(user))); }
 
     static String BlockReason(CaelumPlayer user,bool scan=true)
     {
@@ -362,11 +362,15 @@ class CaelumTimeSkipState : Inventory
         // El trabajo doméstico mueve un cuerpo con colisión nativa. Repartir
         // esos pasos entre fotogramas evita una ráfaga larga sin presentar UI.
         int batch=CaelumHousekeepingWork.Pending() || CaelumCampWorld.Burning()?TICRATE:CaelumTimeSkipRules.BATCH_TICS;
+        double travelStarted=MSTimeF();bool transport=CaelumTransportTrip.Aboard(user);
         for(int i=0;i<batch && s.Active;i++)
         {
             PrepareStep(user);if(!s.Active)break;
             CaelumTimeAdvanceState.SimulatePersonalTic(user);
             AfterStep(user);
+            // Limite tecnico: devolver control a la imagen durante viajes
+            // largos sin cambiar el numero ni el orden de los tics pagados.
+            if(transport && MSTimeF()-travelStarted>=8)break;
         }
         s.Pumping=false;
     }

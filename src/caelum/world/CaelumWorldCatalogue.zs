@@ -13,7 +13,8 @@ class CaelumWorldCatalogue : Object
     const LOCATION_PORT = 6;
     const LOCATION_COAST = 7;
     const LOCATION_HAZARD_GALLERY = 8;
-    const LOCATION_DEFINED_COUNT = 9;
+    const LOCATION_BUENOS_AIRES = 9;
+    const LOCATION_DEFINED_COUNT = 10;
     const CONNECTION_NONE = 0;
     const CONNECTION_RETURN = 1;
     // Cada sentido tiene su identidad: recorrer la ida no inventa la vuelta.
@@ -33,7 +34,11 @@ class CaelumWorldCatalogue : Object
     const CONNECTION_COAST_TO_MAZE = 15;
     // Ruta directa de campaña; los IDs anteriores conservan su historial.
     const CONNECTION_MAZE_TO_PORT = 16;
-    const CONNECTION_DEFINED_COUNT = 17;
+    const CONNECTION_TO_BUENOS_AIRES = 17;
+    const CONNECTION_BUENOS_AIRES_TO_PORT = 18;
+    const CONNECTION_BUENOS_AIRES_TO_COAST = 19;
+    const CONNECTION_COAST_TO_BUENOS_AIRES = 20;
+    const CONNECTION_DEFINED_COUNT = 21;
     const CAMPAIGN_ROUTE_REVISION = 4;
 
     static clearscope bool IsLocation(int id)
@@ -56,6 +61,7 @@ class CaelumWorldCatalogue : Object
         if (mapName ~== "MAP03") return LOCATION_PORT;
         if (CaelumHouseHubData.HouseForMap(mapName)>=0) return LOCATION_PORT;
         if (mapName ~== "TCOAST") return LOCATION_COAST;
+        if (CaelumBuenosAiresData.IsMap(mapName)) return LOCATION_BUENOS_AIRES;
         if (mapName ~== "THAZARD") return LOCATION_HAZARD_GALLERY;
         return LOCATION_UNKNOWN;
     }
@@ -70,6 +76,7 @@ class CaelumWorldCatalogue : Object
         if (id == LOCATION_PORT) return "MAP03";
         if (id == LOCATION_COAST) return "TCOAST";
         if (id == LOCATION_HAZARD_GALLERY) return "THAZARD";
+        if (id == LOCATION_BUENOS_AIRES) return "CABAIRES";
         return "";
     }
 
@@ -90,11 +97,13 @@ class CaelumWorldCatalogue : Object
         if (id == LOCATION_PORT) return "CA_MAP06_NAME";
         if (id == LOCATION_COAST) return "CA_MAP07_NAME";
         if (id == LOCATION_HAZARD_GALLERY) return "CA_MAP08_NAME";
+        if (id == LOCATION_BUENOS_AIRES) return "CA_BUENOS_AIRES_NAME";
         return "CA_WORLD_UNREGISTERED";
     }
 
     static clearscope int ConnectionOrigin(int id)
     {
+        if(CaelumTransportRules.Route(id))return CaelumTransportData.Location(CaelumTransportData.Origin(id));
         if (id == CONNECTION_MAZE_TO_PORT) return LOCATION_SEWERS;
         if (id == CONNECTION_MAZE_TO_COAST) return LOCATION_SEWERS;
         if (id == CONNECTION_COAST_TO_MAZE) return LOCATION_COAST;
@@ -114,6 +123,7 @@ class CaelumWorldCatalogue : Object
 
     static clearscope int ConnectionDestination(int id)
     {
+        if(CaelumTransportRules.Route(id))return CaelumTransportData.Location(CaelumTransportData.Destination(id));
         if (id == CONNECTION_MAZE_TO_PORT) return LOCATION_PORT;
         if (id == CONNECTION_MAZE_TO_COAST) return LOCATION_COAST;
         if (id == CONNECTION_COAST_TO_MAZE) return LOCATION_SEWERS;
@@ -134,13 +144,16 @@ class CaelumWorldCatalogue : Object
     static clearscope String ConnectionNameKey(int id)
     {
         if (id == CONNECTION_RETURN) return "CA_WORLD_RETURN";
-        if (IsSewerConnection(id)) return LocationNameKey(ConnectionDestination(id));
+        if (IsTravelConnection(id)) return LocationNameKey(ConnectionDestination(id));
         return "CA_WORLD_UNKNOWN_CONNECTION";
     }
 
+    static clearscope bool IsTravelConnection(int id)
+    {return IsSewerConnection(id) || CaelumTransportRules.Route(id);}
+
     static clearscope bool IsSewerConnection(int id)
     {
-        return id >= CONNECTION_TO_RESERVOIR && id < CONNECTION_DEFINED_COUNT
+        return id >= CONNECTION_TO_RESERVOIR && id <= CONNECTION_MAZE_TO_PORT
             && id != CONNECTION_TO_RESERVOIR && id != CONNECTION_FROM_RESERVOIR && id != CONNECTION_TO_TAROT
             && id != CONNECTION_TO_MAINTENANCE && id != CONNECTION_MAZE_TO_COAST
             && id != CONNECTION_TO_COAST && id != CONNECTION_FROM_PORT;
