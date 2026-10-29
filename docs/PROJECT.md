@@ -1,6 +1,8 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.53** - 2026-10-29.
+Documentation version: **5.8.54** - 2026-10-29.
+
+Current review: author passed the grouped5.8.53 checks except bed appearance, the missing statue in the decoration fixture, city rendering fluency and Buenos Aires music; requested water-use shortcut and large paintings. #410 corrections are5.8.54; #415/#416 follow separately. Multiplayer rest remains deferred to5.12.
 
 ## 5.8.53 / #417 - Final V5.8 implementation handoff - 2026-10-29
 

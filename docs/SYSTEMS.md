@@ -1,6 +1,12 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.53** - 2026-10-29.
+Documentation version: **5.8.54** - 2026-10-29.
+
+## 5.8.54 furniture review corrections (#410)
+
+Using the selected water container at an aimed reachable source fills it through the existing finite reserve, quality, capacity and carrying-weight transaction. Full/blocked sources do not fall back to drinking. Away from water, Use drinks as before. Inventory R remains available. Mates retain their preparation action.
+
+Both beds have sewn cotton mattresses and pillows; the luxury bed also has a canopy. Existing sleeping planes, collision envelopes and recovery remain unchanged. Revised textile/wood bills and prices derive from the documented models. Reference filling density30 kg/m3 is a delegated design approximation. The museum-size River Plate painting is2.16 by1.56 m, using the owned landscape and a thicker frame. It appends one learned recipe and three-unit merchandise/ten books using existing acquisition and wall placement. Merchant and recipe migrations preserve old knowledge and sold stock.
 
 ## 5.8.53 incident delivery status (#417)
 

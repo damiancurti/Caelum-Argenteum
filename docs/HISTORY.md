@@ -1,6 +1,12 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.53** - 2026-10-29.
+Documentation version: **5.8.54** - 2026-10-29.
+
+## 5.8.54 - Furniture review corrections (#410, 2026-10-29)
+
+Validation: 53 native assertions passed; visible captures inspected. See `assets/validation_5854/RESULTS.md`. Corrections still require author corroboration.
+
+Author requested direct use of selected water containers at sources while retaining R; canopy, visible mattresses/pillows, large museum-like paintings and a visible statue in410/16. Original410/16 called only the single-picture view; the corrected review presents all three decorations. Source and model bills are updated; native evidence and author corroboration are recorded separately. Other issues remain isolated.
 
 ## 5.8.53 / #417 - Final V5.8 implementation handoff - 2026-10-29
 
@@ -554,6 +560,8 @@ housework, remaining #502 adapters and full V5.8 completion are not claimed.
 
 ## 5.8.40 - Portable dining sets (#410, 2026-10-28)
 
+Author confirmation2026-10-29: **CA410-DINING-SETS-01**, originating5.8.40 / #410, passed all checks; the new convenience/visual requests are tracked separately in5.8.54.
+
 Implemented the author's complete-set and real-content transport decisions.
 Four sets reuse accepted chairs/luxury geometry, add three documented table
 envelopes and painted inventory sprites, and enter normal crafting/trade.
@@ -613,6 +621,8 @@ for the grouped V5.8 handoff; no issue completion is inferred.
 
 ## 5.8.36 - Study furniture acquisition (#410, 2026-10-27)
 
+Author confirmation2026-10-29: **CA410-STUDY-ACQUISITION-01**, originating5.8.36 / #410, passed all checks. Requested changes and reported exceptions remain separately pending.
+
 Implemented approved learned fabrication and supply for an original portable
 writing desk and empty bookcase. Explicit delegated construction calculations
 and museum dimension references determine recipe inputs/empty mass. Native
@@ -632,6 +642,8 @@ remains in the final suite. CA410-STUDY-ACQUISITION-01 remains pending; no autho
 acceptance or complete V5.8 claim is inferred.
 
 ## 5.8.35 - Sofa acquisition (#410, 2026-10-27)
+
+Author confirmation2026-10-29: **CA410-SOFA-ACQUISITION-01**, originating5.8.35 / #410, passed all checks; the new convenience/visual requests are tracked separately in5.8.54.
 
 The approved two-/three-seat sofa construction gains learned recipes215/216,
 normal supply/restock and owned painted inventory sprites. Recipe revision21
@@ -697,6 +709,8 @@ remains pending.
 
 ## 5.8.31 - Storage furniture acquisition (#410, 2026-10-27)
 
+Author confirmation2026-10-29: **CA410-STORAGE-ACQUISITION-01**, originating 5.8.31 / #410, passed the grouped review. Requested changes and exceptions remain separately pending.
+
 The author's three-per-type/ten-recipe-copy approval is applied to wardrobes and
 movable cupboards using their delegated existing construction bills. Normal
 manufacturing, efficiency, price margins, stock and native inventory/cargo are
@@ -736,6 +750,8 @@ acceptance is inferred; exact hashes and line-ending qualifications are recorded
 in assets/validation_5830/RESULTS.md and report.json.
 
 ## 5.8.29 - Period sofa seating (#410, 2026-10-27)
+
+Author confirmation2026-10-29: **CA410-SOFAS-01**, originating5.8.29 / #410, passed all checks; the new convenience/visual requests are tracked separately in5.8.54.
 
 Added two original sofas to the mansion reading room, with five native seats and
 shared furniture contamination. Reused ordinary chair rest, unchanged player
@@ -802,6 +818,8 @@ This permission patch does not finish the wider furniture catalogue or V5.8.
 
 ## 5.8.26 - Bookcase storage and desk reading (#410)
 
+Author confirmation2026-10-29: **CA410-READING-01**, originating5.8.26 / #410, passed all checks; the new convenience/visual requests are tracked separately in5.8.54.
+
 2026-10-27: the author approved25 stacks/100kg and separately allowed movable
 furniture indoors under existing placement checks. This patch implements only
 stored-book reading. Native inventory ownership, existing learning, real locks,
@@ -824,6 +842,8 @@ manual test delivery are deferred at the author's request while away.
 
 ## 5.8.25 - Finite garden water furniture (#410)
 
+Author confirmation2026-10-29: **CA410-WATER-FURNITURE-01**, originating5.8.25 / #410, passed all checks. Requested changes and reported exceptions remain separately pending.
+
 The author delegated physical furniture calculations and had approved fountain
 200 L/+1 L per world minute, and an initially empty1000-L manually filled cistern.
 Implemented independent native reserves, container transfer controls, preserved
@@ -840,6 +860,8 @@ CA410-WATER-FURNITURE-01 remains outstanding: no author acceptance was supplied
 while the author was away. Existing pending author tests are carried forward.
 
 ## 5.8.24 - Wardrobe storage (#410)
+
+Author confirmation2026-10-29: **CA410-WARDROBE-01**, originating5.8.24 / #410, passed all checks. Requested changes and reported exceptions remain separately pending.
 
 2026-10-27: implemented one original period wardrobe in the northwest mansion
 bedroom, using native contents, food lots, locks, ownership and cargo. Applied
@@ -880,6 +902,8 @@ The fixture now waits for registration and explicitly settles before comparison;
 failed logs remain evidence. No author acceptance is inferred.
 
 ## 5.8.22 - Shared-water mansion bathroom fixtures (#410)
+
+Author confirmation2026-10-29: **CA410-MANSION-BATH-01**, originating5.8.22 / #410, passed all checks; the new convenience/visual requests are tracked separately in5.8.54.
 
 Added the mansion's twelve domestic fixtures using accepted art and #502
 interactions, sharing the finite kitchen water reserve. The initial native
@@ -923,6 +947,8 @@ No author acceptance, issue closure or merge is inferred.
 
 ## 5.8.20 - Mansion kitchen sink and wall cupboard (#410)
 
+Author confirmation2026-10-29: **CA410-FIXTURES-01**, originating5.8.20 / #410, passed all checks; the new convenience/visual requests are tracked separately in5.8.54.
+
 Delivery correction: the two fixture names now use the established `es` language
 section. Native Spanish lookup is checked separately; gameplay and models are
 unchanged. This is the same unaccepted5.8.20 patch, not a new release.
@@ -954,6 +980,8 @@ The author has returned; no acceptance, issue closure or merge is inferred.
 Other V5.8 work remains open; #412 multiplayer corroboration is deferred toV5.12.
 
 ## 5.8.19 - Attended cooking and shared bread proofing (#410)
+
+Author confirmation2026-10-29: **CA410-COOKING-01**, originating5.8.19 / #410, passed all checks; the new convenience/visual requests are tracked separately in5.8.54.
 
 Implemented the author-approved attended cooking and shared unattended
 proofing workflow. Follow-up approvals cover shared counter access, transportable

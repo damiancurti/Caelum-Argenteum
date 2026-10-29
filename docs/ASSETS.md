@@ -1,6 +1,12 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.53** - 2026-10-29.
+Documentation version: **5.8.54** - 2026-10-29.
+
+## 5.8.54 furniture corrections (#410)
+
+`furniture_bedding.py` adds deterministic bevelled mattresses/pillows using the owned cotton texture. Original bed models gain visible bedding and the luxury model receives a canopy over its existing posts. `basic_rest_furniture` and `luxury_furniture` DATA/GENERATED records retain construction calculations and explicit textile-filling approximation. The sleeping surface remains unchanged. No external pixels are introduced.
+
+`generate_ornamental_decor.py` preserves the accepted small picture and statue, and adds a2.16x1.56m landscape using the same owned art: planar3x, depth1.5x; masses follow that construction. The former grouped review invoked only `view0`, so it spawned only the picture. The corrected gallery displays both paintings and the original statue together; this fixture issue is not missing production sculpture geometry.
 
 Unreleased #416: `assets/buenos_aires/CITY.json` and
 `assets/generators/generate_buenos_aires.py` generate the original schematic
