@@ -1,26 +1,19 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.8.56** - 2026-10-29.
+Documentation version: **5.9.0** - 2026-10-29.
 
-**V5.8 complete at5.8.56 (2026-10-29):** author accepted all corrections;
-#410-417/#496/#502 integrated into main. pending_test.txt is empty;
-acceptance IDs/origins/dates remain in HISTORY. Older pending checkpoints are
-historical.
+**V5.9 in progress, 5.9.0/#418:** shared composite quest requirements,
+compared transitions and port encounter registry. Existing save arrays/owners
+remain; native checks: assets/validation_590. #418-424 remain open. Complete new
+quest/reward integration and the six companion issues before the grouped author
+terminal. Separate branches/PRs/evidence; GitHub issues retain current approvals.
 
-Final corrections: #410 Use refill plus R, bedding/canopy, large landscape/statue;
-#415 bounded Rally queries; #416 Ciudad on CABAIRES. Evidence:validation_5854-56.
-
-Scope: furniture/food/cooking#410, property/camp#411, solo-rest#412, altitude#413,
-connected-water#414, absent-world#415, transport/Buenos-Aires#416, incidents#417,
-music#496, hygiene#502. Evidence:assets/validation_580 through validation_5856.
-
-Multiplayer authority/shared-clock work and verification: deferred toV5.12
-(#435-437). Long-absence loading remains expensive; city render-callback
-mean1125.93→28.34ms. ETW denied; no60-displayed-FPS claim. Preserve local queries
-and typed registries; no routine global scans.
-
-Next: existing V5.9 roadmap. Main is consolidated; auxiliary worktrees retained
-detached, local files preserved.
+**V5.8 accepted/integrated:** #410-417/#496/#502, 5.8.56, 2026-10-29.
+Acceptance IDs/dates: HISTORY. No outstanding author checks at that closure.
+Final corrections/evidence: validation_5854-56. Multiplayer rest authority and
+verification stay deferred to V5.12 (#435-437). Long-absence loading remains
+expensive; render callbacks improved 1125.93 to28.34ms, not a60FPS claim.
+No routine global scans; preserve local queries and shared typed registries.
 
 **V5.7:**complete;HISTORY.
 

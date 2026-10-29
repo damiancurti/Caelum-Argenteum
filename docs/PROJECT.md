@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.56** - 2026-10-29.
+Documentation version: **5.9.0** - 2026-10-29.
+
+## V5.9 in progress - 5.9.0 (#418)
+
+The first focused implementation extends quest coordination over the existing
+character record, Journal and world facts: composite requirements, idempotent
+observations and an encounter lifecycle registry. Native old-save, current-save
+and hub verification are recorded in assets/validation_590. No new story reward
+or faction balance is activated by this patch. Issues #418-424 remain open;
+author acceptance and the grouped manual launcher wait for the full version.
+V5.8 remains the accepted baseline described below.
 
 ## V5.8 completion - 2026-10-29 (#403)
 

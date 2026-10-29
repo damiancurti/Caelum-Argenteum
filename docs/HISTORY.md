@@ -1,6 +1,22 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.56** - 2026-10-29.
+Documentation version: **5.9.0** - 2026-10-29.
+
+## 5.9.0 - Quest coordination checkpoint (#418, 2026-10-29)
+
+Added composite read-only requirements and compared state/objective transitions
+over existing authoritative records. Integrated the side-trial prerequisite and
+port narrative observer without new rewards or story facts. Replaced the
+per-player/per-tic encounter thinker search with a saved, revisioned lifecycle
+registry. Save-array capacities and existing IDs are unchanged.
+
+Native evidence is recorded in assets/validation_590/RESULTS.md: requirements,
+failure/abandonment, unique rewards, hidden objectives, old-save migration and
+hub round trip. The first probe incorrectly expected Spawn/Destroy callbacks
+inside the same console event; corrected checks allow the native lifecycle tic.
+One initial compile found a missing play annotation; a launcher failure exposed
+the need to pass a save basename with -savedir. Failed diagnostics remain local.
+Author acceptance is pending the complete V5.9 suite; #418 and V5.9 are not closed.
 
 ## V5.8 completion - 2026-10-29 (#403)
 

@@ -69,7 +69,10 @@ class CaelumPortSiege : CaelumSiegeEncounter
     bool CandidatesValid;
 
     static CaelumPortSiege Get()
-    { return CaelumPortSiege(ThinkerIterator.Create("CaelumPortSiege").Next()); }
+    {
+        let registry = CaelumSiegeEvents(EventHandler.Find("CaelumSiegeEvents"));
+        return registry != null ? registry.PortEncounter() : null;
+    }
 
     CaelumSiegeCombatant AddDemon(vector3 position, int lane)
     {

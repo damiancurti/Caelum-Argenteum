@@ -6,22 +6,19 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.56.** Obtain and update the complete repository, validate
+**Current release: 5.9.0.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-**V5.8 is complete and author-accepted (2026-10-29).** Issues #410-417,
-#496 and #502 are integrated into main. All outstanding manual checks passed;
-their stable IDs and dates are recorded in [HISTORY](docs/HISTORY.md), and
-`pending_test.txt` is empty. Multiplayer rest authority and verification remain
-deferred to V5.12 by request.
+**V5.9 is in progress.** This #418 checkpoint adds shared quest requirements,
+idempotent narrative observations and an encounter registry over the existing
+character/world state. Native evidence: `assets/validation_590/RESULTS.md`.
+Issues #418-424 remain open; new story content, faction integration and the
+grouped author review are still pending. This is not a completed V5.9 release.
 
-The final corrections provide selected-container Use refilling alongside R,
-visible bedding and luxury canopy, small/large paintings and the original statue,
-the city Rally scan fix, and the original **Ciudad** theme in Buenos Aires.
-Native evidence remains in `assets/validation_5854` through `validation_5856`.
-The runtime is unchanged from the author-approved final package. Long-absence
-loading remains expensive; ETW presentation measurements were unavailable, so
-the recorded callback improvement does not establish 60 displayed FPS.
+**V5.8 remains complete and author-accepted (2026-10-29).** Its issues #410-417,
+#496 and #502 are integrated into main; acceptance records remain in HISTORY.
+Multiplayer rest authority/verification remain deferred to V5.12. Long-absence
+loading remains expensive; no new displayed-FPS guarantee is made here.
 
 ### Historical delivery checkpoints
 
