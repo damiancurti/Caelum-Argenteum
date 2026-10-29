@@ -1,6 +1,22 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.31** - 2026-10-27.
+Documentation version: **5.8.32** - 2026-10-27.
+
+## 5.8.32 - Luxury rest furniture acquisition (#410, 2026-10-27)
+
+The approved three-per-type/ten-recipe-copy supply is extended to the luxury chair
+and bed using their existing delegated construction bills. Workbench, fine tools
+and sewing machine make their wooden frame, iron hardware and thin fabric cover;
+normal fabrication, efficiency and price rules apply. New original painted item
+sprites follow SPRITE_ART_DIRECTION and preserve the existing world designs.
+
+Transport keeps the actual body, excludes occupied furniture, preserves title and
+contamination, and uses the existing full-footprint land/access validation. It
+adds no routine global actor scan or new comfort bonus. Static validation and 107 executed native assertions passed across twelve runs
+on one final32a package, including original-save migration and native crouch +
+Use. Both Spanish inventory captures were visually reviewed. Exact evidence and
+fixture corrections are retained in assets/validation_5832; author corroboration
+remains pending.
 
 ## 5.8.31 - Storage furniture acquisition (#410, 2026-10-27)
 

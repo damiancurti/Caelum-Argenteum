@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `3cc730c617d00f36570cdceeaa63eec5fa1af87294ebe1e94f7548a67c821cce`. Locations include every definition; the last one per language wins.
+SHA-256: `d3d4a1c2df9612e03d5a5c115065fcd1e42860c9989823f9d69ed7b6ae0a140f`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -81,7 +81,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_FOOD | 5 | CA_FOOD_CLEAN | CA_FOOD_LOTS_DETAIL |
 | CA_FORMATION | 1 | CA_FORMATION_BREAKER_CAST | CA_FORMATION_BREAKER_CAST |
 | CA_FOUNTAIN | 1 | CA_FOUNTAIN_HINT | CA_FOUNTAIN_HINT |
-| CA_FURNITURE | 3 | CA_FURNITURE_CISTERN | CA_FURNITURE_WARDROBE |
+| CA_FURNITURE | 4 | CA_FURNITURE_CISTERN | CA_FURNITURE_WARDROBE |
 | CA_GATHERING | 1 | CA_GATHERING_EXTRACTED | CA_GATHERING_EXTRACTED |
 | CA_GIANT | 1 | CA_GIANT_RAT_NAME | CA_GIANT_RAT_NAME |
 | CA_GUARD | 5 | CA_GUARD_CAPTAIN_ANSWER | CA_GUARD_CAPTAIN_REPEAT_RESPONSE |

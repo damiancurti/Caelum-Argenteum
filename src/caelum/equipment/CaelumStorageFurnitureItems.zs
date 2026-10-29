@@ -23,7 +23,7 @@ class CaelumStorageFurnitureItem : CaelumSpecialInventoryItem abstract
         if(copy!=null && copy!=self)CaelumContaminationStorage.Set(copy,dirt);
         return copy;
     }
-    bool Place(CaelumPlayer user)
+    virtual bool Place(CaelumPlayer user)
     {
         if(!CaelumPlayerAuthority.CanMutate(user) || Owner!=user || InMagicBox || Amount!=1)return false;
         let body=CaelumStashChest(Actor.Spawn(CaelumStorageFurnitureData.BodyClass(Variant()),user.Pos,NO_REPLACE));

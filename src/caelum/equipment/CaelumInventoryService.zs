@@ -2807,6 +2807,8 @@ class CaelumInventoryService : Object play
         if (entry == null) { return; }
         let lockItem=CaelumLockItem(entry);
         if(lockItem!=null){lockItem.DropInstance(user);return;}
+        let restItem=CaelumRestFurnitureItem(entry);
+        if(restItem!=null && restItem.Body!=null){restItem.Place(user);return;}
         if(CaelumStorageFurnitureData.IsItem(entry)){CaelumStorageFurnitureInventory.Drop(user,entry);return;}
         if(CaelumCampData.IsItem(entry)){CaelumCampInventory.Drop(user,entry);return;}
         let cargo=CaelumChestCargo(entry);
@@ -4601,6 +4603,7 @@ class CaelumInventoryService : Object play
         if (specialCategory == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
         {
             if (specialType == CaelumConstants.KEY_ITEM_TAROT_DECK) return 'CaelumTarotDeck';
+            if(CaelumRestFurnitureData.IsKey(specialType))return CaelumRestFurnitureData.ItemClass(specialType-CaelumRestFurnitureData.FIRST_KEY);
             if(CaelumStorageFurnitureData.IsKey(specialType))return CaelumStorageFurnitureData.ItemClass(specialType-CaelumStorageFurnitureData.FIRST_KEY);
             if(specialType==CaelumHygieneData.CLOTH_KEY)return 'CaelumCleaningCloth';
             if(specialType==CaelumCampData.TENT_KEY)return CaelumCampData.ItemClass(0);

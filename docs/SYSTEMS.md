@@ -1,6 +1,33 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.31** - 2026-10-27.
+Documentation version: **5.8.32** - 2026-10-27.
+
+## 5.8.32 / #410 - Luxury rest furniture acquisition
+
+The author's 2026-10-27 supply approval applies to three luxury chairs and three
+luxury beds in Provisions, with ten recipe copies each in the library. Recipes
+append after storage furniture and use recipe-book revision 19. Existing knowledge
+and sold stock are retained by idempotent migration.
+
+| Piece | Empty mass | Wood | Iron ingot | Cotton fabric |
+| --- | ---: | ---: | ---: | ---: |
+| Luxury chair | 29.00264714 kg | 28,477 g | 309 g | 218 g |
+| Luxury bed | 135.091394 kg | 132,887 g | 1,143 g | 1,063 g |
+
+These are the existing historical construction calculations from 5.8.30, not new
+balance estimates. Both use Workbench + Fine tools + Sewing machine, normal
+complexity/waste and Dexterity. Prices are actual materials plus the approved
+25% manufacturing margin; existing merchant margins and recipe restock apply.
+
+Activate an unboxed item to place it on permitted, stable, dry, clear ground.
+A failed placement retains the item. Use opens ordinary rest; crouch + Use carries
+an unoccupied owned piece, subject to carrying capacity. Retrieval remains possible
+if a lease expires; permission is checked again when placing the piece.
+The inventory token keeps the same physical actor while packed and across travel;
+placing it again never generates a second body or resets its contamination.
+The packed body has no collision or separate environmental thinker. Existing
+fixed/authored furniture and dining-table seats are not silently made portable.
+These luxury items add no recovery bonus beyond their existing rest class.
 
 ## Storage furniture supply - 5.8.31 (#410)
 

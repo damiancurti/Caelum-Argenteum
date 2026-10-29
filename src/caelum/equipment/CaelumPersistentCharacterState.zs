@@ -1527,7 +1527,8 @@ class CaelumPersistentCharacterState : Inventory
         // recetas de procesamiento (v3) y las cincuenta de componentes (v4)
         // se anexan bloqueadas; se aprenderán con sus Arcanos Menores.
         int addedRecipeStart;
-        if(RecipeBookVersion>=17){addedRecipeStart=CaelumStorageFurnitureData.FIRST_RECIPE;}
+        if(RecipeBookVersion>=18){addedRecipeStart=CaelumRestFurnitureData.FIRST_RECIPE;}
+        else if(RecipeBookVersion>=17){addedRecipeStart=CaelumStorageFurnitureData.FIRST_RECIPE;}
         else if(RecipeBookVersion>=16){addedRecipeStart=CaelumMealData.FIRST_RECIPE;}
         else if(RecipeBookVersion>=15){addedRecipeStart=CaelumHygieneData.SOAP_RECIPE;}
         else if(RecipeBookVersion>=14){addedRecipeStart=CaelumCampData.FIRST_RECIPE;}

@@ -200,3 +200,13 @@ Prerequisites: final grouped V5.8 handoff; keep original saves for rollback.
 4. Save/load and leave/return with a carried piece. Contents, lock, title and dirt
    must persist. The existing fixed kitchen cupboard must remain fixed.
 Expected: no duplicated items, free stock resets, lost contents or changed limits.
+
+CA410-REST-ACQUISITION-01 | 5.8.32 | #410
+Prerequisites: final grouped V5.8 build, learned luxury chair/bed recipes and
+Workbench + Fine tools + Sewing machine, resources or Provisions funds; permitted
+clear ground. Author handoff is deferred until all V5.8 implementation is ready.
+Steps: buy/craft both pieces; inspect their painted inventory icons. Activate to
+place, Use to rest, then stand and crouch + Use to carry. Retry blocked placement.
+Store the carried item in the Box, save/load, travel, retrieve and place again.
+Expected: one real piece; no occupied pickup, duplication, lost title/contamination
+or extra comfort bonus. Materials, stock, weight and prices match SYSTEMS.

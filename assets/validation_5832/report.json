@@ -1,0 +1,132 @@
+{
+  "version": "5.8.32",
+  "issue": 410,
+  "runtime_sha256": "40371480915de50e04c164635a222c785c18faf66ea25521b1fc49dcadd4fbf9",
+  "runs": [
+    {
+      "label": "release-catalogue",
+      "executed_passes": 12,
+      "runtime_sha256": "40371480915de50e04c164635a222c785c18faf66ea25521b1fc49dcadd4fbf9",
+      "addon_sha256": "836fc310d4955fd1b960865182d22de39d12f9bcc96afa06b3de6b3df397e92a"
+    },
+    {
+      "label": "release-craft",
+      "executed_passes": 16,
+      "runtime_sha256": "40371480915de50e04c164635a222c785c18faf66ea25521b1fc49dcadd4fbf9",
+      "addon_sha256": "836fc310d4955fd1b960865182d22de39d12f9bcc96afa06b3de6b3df397e92a"
+    },
+    {
+      "label": "release-trade",
+      "executed_passes": 13,
+      "runtime_sha256": "40371480915de50e04c164635a222c785c18faf66ea25521b1fc49dcadd4fbf9",
+      "addon_sha256": "836fc310d4955fd1b960865182d22de39d12f9bcc96afa06b3de6b3df397e92a"
+    },
+    {
+      "label": "release-items",
+      "executed_passes": 14,
+      "runtime_sha256": "40371480915de50e04c164635a222c785c18faf66ea25521b1fc49dcadd4fbf9",
+      "addon_sha256": "836fc310d4955fd1b960865182d22de39d12f9bcc96afa06b3de6b3df397e92a"
+    },
+    {
+      "label": "release-placement",
+      "executed_passes": 26,
+      "runtime_sha256": "40371480915de50e04c164635a222c785c18faf66ea25521b1fc49dcadd4fbf9",
+      "addon_sha256": "836fc310d4955fd1b960865182d22de39d12f9bcc96afa06b3de6b3df397e92a"
+    },
+    {
+      "label": "release-seed",
+      "executed_passes": 2,
+      "runtime_sha256": "40371480915de50e04c164635a222c785c18faf66ea25521b1fc49dcadd4fbf9",
+      "addon_sha256": "836fc310d4955fd1b960865182d22de39d12f9bcc96afa06b3de6b3df397e92a"
+    },
+    {
+      "label": "release-resume",
+      "executed_passes": 6,
+      "runtime_sha256": "40371480915de50e04c164635a222c785c18faf66ea25521b1fc49dcadd4fbf9",
+      "addon_sha256": "836fc310d4955fd1b960865182d22de39d12f9bcc96afa06b3de6b3df397e92a"
+    },
+    {
+      "label": "release-hub",
+      "executed_passes": 8,
+      "runtime_sha256": "40371480915de50e04c164635a222c785c18faf66ea25521b1fc49dcadd4fbf9",
+      "addon_sha256": "836fc310d4955fd1b960865182d22de39d12f9bcc96afa06b3de6b3df397e92a"
+    },
+    {
+      "label": "release-legacy",
+      "executed_passes": 2,
+      "runtime_sha256": "40371480915de50e04c164635a222c785c18faf66ea25521b1fc49dcadd4fbf9",
+      "addon_sha256": "836fc310d4955fd1b960865182d22de39d12f9bcc96afa06b3de6b3df397e92a"
+    },
+    {
+      "label": "release-view0",
+      "executed_passes": 2,
+      "runtime_sha256": "40371480915de50e04c164635a222c785c18faf66ea25521b1fc49dcadd4fbf9",
+      "addon_sha256": "836fc310d4955fd1b960865182d22de39d12f9bcc96afa06b3de6b3df397e92a"
+    },
+    {
+      "label": "release-view1",
+      "executed_passes": 2,
+      "runtime_sha256": "40371480915de50e04c164635a222c785c18faf66ea25521b1fc49dcadd4fbf9",
+      "addon_sha256": "836fc310d4955fd1b960865182d22de39d12f9bcc96afa06b3de6b3df397e92a"
+    },
+    {
+      "label": "release-use",
+      "executed_passes": 4,
+      "runtime_sha256": "40371480915de50e04c164635a222c785c18faf66ea25521b1fc49dcadd4fbf9",
+      "addon_sha256": "8573912a2b10b537c75931be2ca8cb490569a5be589d3bcce89821e3afda7b55"
+    }
+  ],
+  "native_passes": 107,
+  "native_failures": 0,
+  "source_matching_package_members": 16999,
+  "preserved_map_art_members": 14039,
+  "prior_obj_line_endings_only": [],
+  "original_save_sha256": "896a1a3434e795651ff7bf6f4373c194361532ea527f75def66e793575239d30",
+  "artwork": {
+    "issue": 410,
+    "version": "5.8.32",
+    "tool": "built-in image_gen",
+    "purpose": "Original painted inventory sprites; existing world models unchanged",
+    "references": {
+      "physical_identity": [
+        "assets/validation_5830/luxury-0.png",
+        "assets/validation_5830/luxury-1.png"
+      ],
+      "style": "src/graphics/caelum/icons/furniture/wardrobe.png"
+    },
+    "shared_prompt": "Single standalone full furniture sprite, transparent alpha, painted pixel-oriented dark-fantasy RPG style inspired by nineteenth-century Argentina, warm restrained browns, soft upper-left light, no background, floor, cast shadow, HUD, labels, photographic or glossy rendering. Preserve reference physical design and legibility at about 100 pixels tall.",
+    "specific_prompts": {
+      "chair": "Medium brown narrow wooden frame, rectangular upright back, two arms, four legs with modest turned collars, thin dark-brown textile seat and back; three-quarter view slightly from above. No plush cushions.",
+      "bed": "Rectangular wooden frame, four tall slender turned corner posts with finials, medium headboard and low footboard, thin dark-brown textile over slats, open above with no canopy or overhead frame; three-quarter view from above foot. No pillows or plush mattress."
+    },
+    "sources": {
+      "luxury-chair-source.png": {
+        "sha256": "c4315085a295661397a414588ee4a1ffa978dee93ee771e9aedb61ab2bd0d8b3",
+        "runtime": "src/sprites/caelum/rest_furniture/CLICA0.png",
+        "processing": "Byte-for-byte copy; no image modification.",
+        "pixel_size": [
+          1254,
+          1254
+        ]
+      },
+      "luxury-bed-source.png": {
+        "sha256": "ed1a3df4904b2fc074fe69fc03670de209f08663d1921fa18c9b87193451a990",
+        "runtime": "src/sprites/caelum/rest_furniture/CLIBA0.png",
+        "processing": "Byte-for-byte copy; no image modification.",
+        "pixel_size": [
+          1337,
+          1176
+        ]
+      }
+    },
+    "generation_date": "2026-10-27",
+    "transparent_background": true,
+    "rights": "Original project-directed generation; only owned screenshots and owned sprite style reference. No museum image or Doom resource used.",
+    "reference_roles": "Physical silhouette/design only from native furniture captures; painted pixel-oriented shading/style only from wardrobe icon."
+  },
+  "evidence_reuse": "All selected native assertions execute on final32a. The last run adds only the native crouch/Use diagnostic to the addon. Original-runtime rollback of the identical untouched legacy save is reused from validation_5826/5829, not counted as new execution.",
+  "migration": "Recipe revision19 appends two unknown recipes. Actual carried body, title, contamination, learning and native use persist across save/load and hub. Original5.8.26 stored-book progress and original book remain unchanged.",
+  "performance_scope": "Only bounded interaction/merchant/inventory loops; parked physical body does not tick or receive duplicate world exposure. No new recurring global scan. No display-FPS or multiplayer claim.",
+  "remaining": "Ordinary furniture, sofa, table and study furniture acquisition and broader V5.8 remain open.",
+  "author_acceptance": "CA410-REST-ACQUISITION-01 pending; grouped handoff after all V5.8 implementation."
+}
