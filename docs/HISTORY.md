@@ -1,6 +1,36 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.2** — 2026-10-24.
+Documentation version: **5.8.3** — 2026-10-24.
+
+## 5.8.3 - Food contamination foundation (#410, in progress), 2026-10-24
+
+Recorded the author's food deterioration, mass-relative dose, illness, nutrition,
+recipe, fuel/time and economy decisions in SYSTEMS. Implemented the persistent
+revision-1 illness resource, Toughness-clamped damage and natural-regeneration
+depuration, including potential recovery at full Life with existing costs.
+The first native trial caught a binary-rounding delay of one Life; the final
+accumulator uses the existing status-pulse tolerance. Core and save/load checks
+pass: 40 assertions across nine core/live/save/hub/migration/rollback runs;
+validation_583 retains failures and evidence. Added a generated silver
+skull/withered-leaf icon and survival bar, following SPRITE_ART_DIRECTION.
+CA410-CORE-01 (origin 5.8.3 / #410) passed author acceptance on 2026-10-24.
+The author confirmed every check from the supplied terminal without qualifications:
+HUD/icon, progressive damage, Toughness immunity, full-Life depuration/costs and
+save/load. Removed only CA410-CORE-01 from the author queue; no runtime change.
+Food-lot ageing, actual ingestion,
+cooking, acquisition and furniture remain unimplemented; this is an ongoing
+issue branch, not completion of #410 or V5.8.
+
+Subsequent model work: CaelumFoodLots preserves individual creation stamps and
+contamination through oldest-first consumption, copying, splitting/transfer and
+return of aged reservations. Schema initialization is idempotent and rejects a
+different food kind. Twenty-five model assertions plus thirteen save/hub checks
+pass; lots-report.json retains evidence separately from the accepted core build.
+The first run exposed a case-insensitive parameter shadowing Kind; foodKind fixes
+the assignment and a nine-kind regression now covers it. No new author check is
+requested for this isolated metadata model. Native food adapters/environmental
+clock integration are still outstanding; author acceptance above covers only
+the original contamination/HUD stage.
 
 ## 5.8.2 - Mansion connected water (#414), 2026-10-24
 

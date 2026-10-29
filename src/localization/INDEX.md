@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `634887c6c7703308dc9261f4fdc560bbc54fa6491e78db74eea51ae3798e1182`. Locations include every definition; the last one per language wins.
+SHA-256: `5c4f249461ee864e9ac23c9b78e7993ac78e82ccf4fb9ff0946718c452dc9ff8`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -70,6 +70,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_FAST | 10 | CA_FAST_ACTIVITY | CA_FAST_ZONE |
 | CA_FERMENT | 17 | CA_FERMENT_ACTION_OK | CA_FERMENT_WITHDRAW_UNITS |
 | CA_FERMENTATION | 2 | CA_FERMENTATION_MISSING_CHEMISTRY | CA_FERMENTATION_TITLE |
+| CA_FOOD | 4 | CA_FOOD_CLEAN | CA_FOOD_IMMUNE |
 | CA_FORMATION | 1 | CA_FORMATION_BREAKER_CAST | CA_FORMATION_BREAKER_CAST |
 | CA_GATHERING | 1 | CA_GATHERING_EXTRACTED | CA_GATHERING_EXTRACTED |
 | CA_GIANT | 1 | CA_GIANT_RAT_NAME | CA_GIANT_RAT_NAME |
@@ -79,7 +80,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_HEIGHT | 3 | CA_HEIGHT_NORMAL | CA_HEIGHT_TALL |
 | CA_HINT | 18 | CA_HINT_ANY | CA_HINT_UP |
 | CA_HIT | 5 | CA_HIT_LOCATION_ARMS | CA_HIT_LOCATION_TORSO |
-| CA_HUD | 29 | CA_HUD_ACTIVE_WEAPON | CA_HUD_UNARMED |
+| CA_HUD | 30 | CA_HUD_ACTIVE_WEAPON | CA_HUD_UNARMED |
 | CA_HUNGER | 2 | CA_HUNGER_STATE_CRITICAL | CA_HUNGER_STATE_LOW |
 | CA_IDENTITY | 2 | CA_IDENTITY_CREATOR_OWNER | CA_IDENTITY_NETWORK_NAME |
 | CA_INTRO | 9 | CA_INTRO_AWAKENING | CA_INTRO_WELCOME |

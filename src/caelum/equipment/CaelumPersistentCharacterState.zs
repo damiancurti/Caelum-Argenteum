@@ -376,6 +376,8 @@ class CaelumPersistentCharacterState : Inventory
     double StoredHunger;
     double StoredThirst;
     double StoredSleep;
+    // #410: estado propio; curaciones consumibles no lo depuran.
+    CaelumFoodIllness FoodIllness;
 
     int WeaponDurabilityRevision;
     int ShotgunRevision;

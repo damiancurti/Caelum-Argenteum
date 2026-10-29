@@ -7425,6 +7425,8 @@ class CaelumPlayer : DoomPlayer
         UpdateSurvivalResources();
         ApplyCriticalSurvivalDamage();
         if(health<=0)return;
+        CaelumFoodIllness.Advance(self);
+        if(health<=0)return;
         ApplyNaturalHealthRegeneration();
 
         UpdateCombatBlockMode();

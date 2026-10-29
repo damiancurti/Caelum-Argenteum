@@ -10,8 +10,18 @@ class CaelumSurvivalView : Object
     static clearscope String Icon(int resource)
     {
         return "graphics/caelum/ui/hud/icons/ca_hud_icon_" ..
-            (resource == 0 ? "hunger" : resource == 1 ? "thirst" : resource == 2 ? "sleep" : "thermal") .. ".png";
+            (resource == 0 ? "hunger" : resource == 1 ? "thirst" : resource == 2 ? "sleep" : resource == 3 ? "thermal" : "contamination") .. ".png";
     }
+    static clearscope String ContaminationStateKey(CaelumPlayer user)
+    {
+        double value=CaelumFoodIllness.Value(user);
+        if(value<=0)return "CA_FOOD_CLEAN";
+        if(value<=CaelumFoodData.ILLNESS_THRESHOLD)return "CA_FOOD_CONTAMINATED";
+        return user.Attributes!=null && CaelumToughnessRules.StatusResponse(user.Attributes.Toughness)<=0
+            ? "CA_FOOD_IMMUNE" : "CA_FOOD_ILLNESS";
+    }
+    static clearscope int ContaminationColor(CaelumPlayer user)
+    {return CaelumFoodIllness.Value(user)>CaelumFoodData.ILLNESS_THRESHOLD ? Font.CR_RED : Font.CR_GREEN;}
     static clearscope int BaseColor(int resource)
     { return resource == 0 ? 0x75A84A : resource == 1 ? 0x3F9FD2 : 0x8074C8; }
     static clearscope String StateKey(int resourceType, int state)

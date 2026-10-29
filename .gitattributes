@@ -335,3 +335,10 @@
 /src/caelum/data/CaelumConnectedWaterData.zs text eol=lf
 /src/caelum/world/CaelumConnectedWaterState.zs text eol=lf
 /src/caelum/world/CaelumConnectedWaterWorld.zs text eol=lf
+
+# Preserve #410 diagnostic evidence and source fingerprints.
+/assets/validation_583/** -text whitespace=cr-at-eol
+/assets/validation_583/native/* whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/src/caelum/data/CaelumFoodData.zs text eol=lf
+/src/caelum/survival/CaelumFoodRules.zs text eol=lf
+/src/caelum/survival/CaelumFoodLots.zs text eol=lf
