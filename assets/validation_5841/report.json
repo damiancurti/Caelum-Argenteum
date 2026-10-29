@@ -1,0 +1,122 @@
+{
+  "version": "5.8.41",
+  "issue": 502,
+  "base": "4b9b70d329b325a654f7a0540691b32941e1e427",
+  "runtime_sha256": "5dc3c709dbe95024510a40a5f864a0610817b2447f2c369608a8e6aba8189325",
+  "source_matching_package_members": 17022,
+  "unchanged_map_art_members": 14053,
+  "checkout_newline_only_obj_members": [
+    "models/caelum/props/dining_sets/ca_dining_large.obj",
+    "models/caelum/props/dining_sets/ca_dining_normal.obj",
+    "models/caelum/props/dining_sets/ca_dining_small.obj"
+  ],
+  "native_passes": 164,
+  "original_runtime_passes": 40,
+  "native_failures": 0,
+  "runs": [
+    {
+      "label": "releaseb-seed",
+      "executed_passes": 21,
+      "package_sha256": "5dc3c709dbe95024510a40a5f864a0610817b2447f2c369608a8e6aba8189325",
+      "addon_sha256": "c532a1cb1ae90165a8aa6c604d20085a1721ec495740fe18781cf49eea6ba32a"
+    },
+    {
+      "label": "releaseb-load",
+      "executed_passes": 8,
+      "package_sha256": "5dc3c709dbe95024510a40a5f864a0610817b2447f2c369608a8e6aba8189325",
+      "addon_sha256": "c532a1cb1ae90165a8aa6c604d20085a1721ec495740fe18781cf49eea6ba32a"
+    },
+    {
+      "label": "releaseb-back",
+      "executed_passes": 30,
+      "package_sha256": "5dc3c709dbe95024510a40a5f864a0610817b2447f2c369608a8e6aba8189325",
+      "addon_sha256": "c532a1cb1ae90165a8aa6c604d20085a1721ec495740fe18781cf49eea6ba32a"
+    },
+    {
+      "label": "releaseb-samehub",
+      "executed_passes": 30,
+      "package_sha256": "5dc3c709dbe95024510a40a5f864a0610817b2447f2c369608a8e6aba8189325",
+      "addon_sha256": "c532a1cb1ae90165a8aa6c604d20085a1721ec495740fe18781cf49eea6ba32a"
+    },
+    {
+      "label": "releaseb-perf",
+      "executed_passes": 3,
+      "package_sha256": "5dc3c709dbe95024510a40a5f864a0610817b2447f2c369608a8e6aba8189325",
+      "addon_sha256": "c532a1cb1ae90165a8aa6c604d20085a1721ec495740fe18781cf49eea6ba32a"
+    },
+    {
+      "label": "releaseb-migration",
+      "executed_passes": 10,
+      "package_sha256": "5dc3c709dbe95024510a40a5f864a0610817b2447f2c369608a8e6aba8189325",
+      "addon_sha256": "ebf0fe29479f2547336a3bf34c61004c9ed0fd39ebed32ee5e703416021d5dc5"
+    },
+    {
+      "label": "releaseb-domestic-core",
+      "executed_passes": 32,
+      "package_sha256": "5dc3c709dbe95024510a40a5f864a0610817b2447f2c369608a8e6aba8189325",
+      "addon_sha256": "eece27d8720ec11d1355ea560923a9f1ddc4c9d8d9f9807782b76ee9f6c77d67"
+    },
+    {
+      "label": "releaseb-domestic-load",
+      "executed_passes": 3,
+      "package_sha256": "5dc3c709dbe95024510a40a5f864a0610817b2447f2c369608a8e6aba8189325",
+      "addon_sha256": "eece27d8720ec11d1355ea560923a9f1ddc4c9d8d9f9807782b76ee9f6c77d67"
+    },
+    {
+      "label": "releaseb-domestic-hub",
+      "executed_passes": 6,
+      "package_sha256": "5dc3c709dbe95024510a40a5f864a0610817b2447f2c369608a8e6aba8189325",
+      "addon_sha256": "eece27d8720ec11d1355ea560923a9f1ddc4c9d8d9f9807782b76ee9f6c77d67"
+    },
+    {
+      "label": "releaseb-domestic-shortages",
+      "executed_passes": 11,
+      "package_sha256": "5dc3c709dbe95024510a40a5f864a0610817b2447f2c369608a8e6aba8189325",
+      "addon_sha256": "eece27d8720ec11d1355ea560923a9f1ddc4c9d8d9f9807782b76ee9f6c77d67"
+    },
+    {
+      "label": "releaseb-domestic-clock",
+      "executed_passes": 5,
+      "package_sha256": "5dc3c709dbe95024510a40a5f864a0610817b2447f2c369608a8e6aba8189325",
+      "addon_sha256": "eece27d8720ec11d1355ea560923a9f1ddc4c9d8d9f9807782b76ee9f6c77d67"
+    },
+    {
+      "label": "releaseb-domestic-skipped",
+      "executed_passes": 5,
+      "package_sha256": "5dc3c709dbe95024510a40a5f864a0610817b2447f2c369608a8e6aba8189325",
+      "addon_sha256": "eece27d8720ec11d1355ea560923a9f1ddc4c9d8d9f9807782b76ee9f6c77d67"
+    }
+  ],
+  "original_runs": [
+    {
+      "label": "prior01-seed",
+      "executed_passes": 32,
+      "package_sha256": "aeabab6d06ed945a602b57e72e6fdd76673818924682e433da5e1593840c1595",
+      "addon_sha256": "f71b6bd52fcfa7afb576b5bc458c92919c69391d3bd68650fdf7a966866f0d49"
+    },
+    {
+      "label": "prior01-rollback",
+      "executed_passes": 3,
+      "package_sha256": "aeabab6d06ed945a602b57e72e6fdd76673818924682e433da5e1593840c1595",
+      "addon_sha256": "eece27d8720ec11d1355ea560923a9f1ddc4c9d8d9f9807782b76ee9f6c77d67"
+    },
+    {
+      "label": "prior05-skipped",
+      "executed_passes": 5,
+      "package_sha256": "aeabab6d06ed945a602b57e72e6fdd76673818924682e433da5e1593840c1595",
+      "addon_sha256": "eece27d8720ec11d1355ea560923a9f1ddc4c9d8d9f9807782b76ee9f6c77d67"
+    }
+  ],
+  "prior_save_sha256": "735d7e0b9dae991d10461ef4132e84b77aba3656157e9e76f59fdbbb0737809b",
+  "timing": {
+    "target_count": 856,
+    "snapshot_restore_mean_ms": 1.06763,
+    "p95_ms": 1.0926,
+    "max_ms": 1.4201,
+    "scope": "20 synchronous production snapshot/restore callbacks, one real household. Not displayed-frame or FPS evidence."
+  },
+  "scope": "Actual domestic coffer/inventory persistence, source-home food ageing/water cooling/coffer exposure, exact remote purchase transaction, scalar partial work keys, current save/load, same-hub and real cross-hub Limbo return, actual5.8.40 save adoption and original-runtime rollback. Existing loaded-house resources, shortages and calendar-skip checks reused.",
+  "known_limits": "No automatic unloaded household scheduler or purchases, unloaded NPC physiology or general furnishing-state migration. No map/art geometry or balance rates changed. Three existing OBJ texts acquired CRLF on worktree checkout; exact newline-normalized content matches the prior package and git records no asset edit. RESULT counters restored from saves are cumulative; only literal executed PASS lines are counted.",
+  "probe_findings": "Food Item/item field shadow fixed with self qualification. Native MAP01 is outside hub434: fixed installations need declared keys rather than temporary actor identities. Earlier failing probes retained in build, excluded from final evidence. The inherited accelerated-clock fixture chose a visible but physically blocked route on both current and original runtimes (done=1, progress=0, native blocking actor present). Its scoped adapter now verifies a native collision path before exercising the real accelerated clock; original and current checks pass.",
+  "author_acceptance": "Pending CA502-HOME-STORAGE-01, held for grouped final V5.8 handoff. All prior pending checks retained."
+}

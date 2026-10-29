@@ -6,8 +6,18 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.40.** Obtain and update the complete repository, validate
+**Current release: 5.8.41.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+## 5.8.41 - Persistent household coffers (#502)
+
+Visited households retain their actual coffer and supplies across map and Limbo
+travel. Stored food/water keep the home's climate; partial cleaning progress
+survives returning to recreated installations. Validation: 164 current native
+assertions plus 40 original-runtime checks; zero final failures/static errors
+(assets/validation_5841).
+This prepares unloaded household work; its automatic scheduler remains pending.
+Manual checks remain grouped with the unfinished V5.8 implementation.
 
 ## 5.8.40 - Complete portable dining sets (#410)
 

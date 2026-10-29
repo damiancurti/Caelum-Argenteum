@@ -1,6 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.40** - 2026-10-28.
+Documentation version: **5.8.41** - 2026-10-28.
+
+## 5.8.41 / #502 - Household persistence prerequisite
+
+Implement and verify real coffer/inventory travel, home-climate contents,
+additive old-save adoption and stable partial cleaning progress. Evidence:
+assets/validation_5841: 164 current native PASS and 40 original-runtime checks,
+zero final failures/static errors. Keep CA502-HOME-STORAGE-01 for the grouped handoff.
+Next: chronological absent-home work with real shop replenishment, source-home
+access/worker availability and remaining furnishing-state adapters. Do not
+replace this with final-time stock purchases or claim an unloaded scheduler.
+Unloaded NPC physiology, remaining contact adapters, #415 combat/theft,
+#416 documented transport and #417 travel events also remain open.
 
 ## 5.8.40 / #410 - Dining set acquisition and transport
 

@@ -70,6 +70,7 @@ class CaelumStashChest : Actor
     CaelumLockItem InstalledPadlock;
     bool PadlockReleased;
     double DomesticSoapRemainderG;
+    CaelumHouseStorageEntry DomesticStorage;
     virtual clearscope bool CanCarryAsStorage(){return true;}
     virtual clearscope int StorageDisplayType(){return StorageTier;}
     virtual clearscope int StorageSlotLimit(){return CaelumContainerRules.Slots(StorageTier);}
@@ -185,6 +186,7 @@ class CaelumStashChest : Actor
     }
     virtual bool CanReachStorage(CaelumPlayer user)
     {
+        if(CaelumHouseStorageEntry.Remote(self)!=null)return false;
         if(!CaelumPlayerAuthority.CanMutate(user) || user.health<=0 || user.CreationWizardOpen)return false;
         if(Cargo!=null)return Cargo.Owner==user;
         return user.Distance3D(self)<=user.UseRange+Radius && user.CheckSight(self);

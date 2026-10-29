@@ -304,3 +304,13 @@ capacity/materials/money and learned dining-set recipes. Do not hand off early.
    their fixed tables, learned furniture recipes and sold stock; new recipes
    start unknown. Inspect ownership and contamination after redeployment.
 Expected: all checks pass. Pending author corroboration.
+
+CA502-HOME-STORAGE-01 | Origin: 5.8.41 | Issue: #502
+Prerequisites: grouped final V5.8 author build; a visited house with its original
+coffer, domestic funds/supplies and a partially cleaned surface; preserve an old
+save. Automated persistence fixtures: assets/validation_5841, not author acceptance.
+Steps: note household supplies/water/food and progress; leave for another city
+interior, then the Limbo; save/load; return twice to the original home.
+Expected: one original coffer, no duplicated money or supplies, no access to it
+while away, retained daily quota/partial progress; food ages and water cools in
+the home's climate. Automatic absent cleaning remains a separate pending feature.

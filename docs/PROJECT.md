@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.40** - 2026-10-28.
+Documentation version: **5.8.41** - 2026-10-28.
+
+## 5.8.41 / #502 - Household storage across map absence
+
+The actual visited-house coffer now travels as hidden, inaccessible household
+state rather than a copy of its stock or player cargo. Supplies, funds, food
+lots, water and partial cleaning effort survive native hub and Limbo crossings.
+A prior-runtime save is retained for additive migration and original-runtime
+rollback checks. Evidence: assets/validation_5841; 164 current native assertions
+plus 40 original-runtime checks, zero final failures/static errors. This prepares
+unloaded household work, not its automatic scheduling or full V5.8 completion.
+Author corroboration remains grouped with the final version handoff.
 
 ## 5.8.40 / #410 - Complete dining sets
 
