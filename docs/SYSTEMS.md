@@ -1,6 +1,42 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.50** - 2026-10-28.
+Documentation version: **5.8.53** - 2026-10-29.
+
+## 5.8.53 incident delivery status (#417)
+
+The approved incident rules below are connected to actual paid journeys and
+native rural hub encounters. Bandits retain real finite ammunition and loot;
+existing defenders keep unlimited resupply. An ambush's saved map identity only
+permits fleeing that encounter, not bypassing safety at unrelated later stops.
+Incident checks do not invent theft access through unproved map transitions.
+
+## 5.8.52 transport delivery status (#416)
+
+The route/vehicle/ticket rules in this chapter are now connected to campaign
+boarding, actual calendar travel, six-block Buenos Aires and persistent safe
+stops. #415's bounded return processing is integrated. Incident probabilities
+and content are owned by #417; author corroboration remains pending.
+
+## 5.8.51 - Final absent-dispatch contract (#415)
+
+The paused arrival dispatcher may queue at most three validated 8-ms work pulses
+per UI tic. Serial/cursor checks reject duplicate requests; native/world clocks
+remain frozen until chronological work completes. This is a technical loading
+budget, not a changed combat, recovery, weather or theft interval.
+
+Standalone absent bodies retain their own food/exposure working frame between
+pulses and serialize that ownership. They commit it before the next theft boundary
+or native restoration. Old saved jobs default to an unprepared frame; they continue
+from their recorded stamp without replay. Combat retains its existing per-round
+commits. Physical access is proved in the source geometry; an unproved path or
+unloaded interior does not grant access. #417 explicitly registers its surviving
+bandits for accessible camps/properties; it does not turn other residents into thieves.
+
+The recorded city-day comparison has identical Life/Anima/Air/contamination/thermal
+exposure/shot totals. Loading takes 77.45 s versus 124.07 s previously; callback p95
+is 50.80 versus 29.35 ms. This is a paused-loading tradeoff, not a gameplay-FPS claim.
+Native evidence: assets/validation_5851/loading-results.json. Earlier integration
+checkpoints below retain their original evidence and implementation chronology.
 
 ## Unreleased #417 travel incidents - 2026-10-29
 

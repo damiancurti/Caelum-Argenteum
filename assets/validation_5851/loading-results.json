@@ -1,0 +1,170 @@
+{
+  "version": "5.8.51",
+  "issue": 415,
+  "runs": [
+    {
+      "label": "load-day-baseline01",
+      "runtime_sha256": "91276CA82B51F518F5F223595DCB74C927D0DC00AE3B1676A7D369B028BF93C8",
+      "addon_sha256": "33DDDDDF311E249A6F4CA676E6541DF9D18A53575533BF0C9128824F5F8BA88C",
+      "results": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "5",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ]
+      ],
+      "outcomes": [
+        "life=699836.000000000 anima=941466.638519002 air=817275.110210643 dirt=15213.408213639 heat=-183.607488507 shots=1540"
+      ],
+      "loading_ms": 124073.1929,
+      "renderer_callback_intervals": {
+        "count": 4314,
+        "p95_ms": 29.3467,
+        "p99_ms": 30.1753,
+        "maximum_ms": 148.9798
+      }
+    },
+    {
+      "label": "load-day-current01",
+      "runtime_sha256": "F3F050AEAEF03B2A9B974145AAE85A6D0AC035FE6597D59A41388C2CA819C073",
+      "addon_sha256": "33DDDDDF311E249A6F4CA676E6541DF9D18A53575533BF0C9128824F5F8BA88C",
+      "results": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "5",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ]
+      ],
+      "outcomes": [
+        "life=699836.000000000 anima=941466.638519002 air=817275.110210643 dirt=15213.408213639 heat=-183.607488507 shots=1540"
+      ],
+      "loading_ms": 77450.4465,
+      "renderer_callback_intervals": {
+        "count": 2681,
+        "p95_ms": 50.8045,
+        "p99_ms": 51.8278,
+        "maximum_ms": 146.6789
+      }
+    },
+    {
+      "label": "retained-save01",
+      "runtime_sha256": "F3F050AEAEF03B2A9B974145AAE85A6D0AC035FE6597D59A41388C2CA819C073",
+      "addon_sha256": "37ADF7343915609101E9BD36AFBFA602DBD8FED721EEAD90EC459ADA1D860EA0",
+      "results": [
+        [
+          "1",
+          "0"
+        ]
+      ],
+      "outcomes": []
+    },
+    {
+      "label": "retained-load01",
+      "runtime_sha256": "F3F050AEAEF03B2A9B974145AAE85A6D0AC035FE6597D59A41388C2CA819C073",
+      "addon_sha256": "37ADF7343915609101E9BD36AFBFA602DBD8FED721EEAD90EC459ADA1D860EA0",
+      "results": [
+        [
+          "17",
+          "0"
+        ]
+      ],
+      "outcomes": []
+    },
+    {
+      "label": "retained-prior-arrival01",
+      "runtime_sha256": "F3F050AEAEF03B2A9B974145AAE85A6D0AC035FE6597D59A41388C2CA819C073",
+      "addon_sha256": "37ADF7343915609101E9BD36AFBFA602DBD8FED721EEAD90EC459ADA1D860EA0",
+      "results": [
+        [
+          "12",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ]
+      ],
+      "outcomes": [
+        "life=0.000000000 anima=2394.009863685 air=2224.081986237 dirt=0.000000000 heat=0.494801753 shots=11"
+      ],
+      "loading_ms": 1168.399,
+      "renderer_callback_intervals": {
+        "count": 1,
+        "p95_ms": 1089.3957,
+        "p99_ms": 1089.3957,
+        "maximum_ms": 1089.3957
+      }
+    },
+    {
+      "label": "retained-prior-theft01",
+      "runtime_sha256": "F3F050AEAEF03B2A9B974145AAE85A6D0AC035FE6597D59A41388C2CA819C073",
+      "addon_sha256": "37ADF7343915609101E9BD36AFBFA602DBD8FED721EEAD90EC459ADA1D860EA0",
+      "results": [
+        [
+          "5",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ]
+      ],
+      "outcomes": [
+        "life=0.000000000 anima=0.000000000 air=0.000000000 dirt=0.000000000 heat=0.000000000 shots=0"
+      ]
+    }
+  ],
+  "loading_reduction_percent": 37.57680874512257,
+  "verified_package_members": 17053,
+  "runtime_sha256": "f3f050aeaef03b2a9b974145aae85a6d0ac035fe6597d59a41388c2ca819c073",
+  "source_checkout_line_ending_only": [
+    "caelum/data/CaelumPhysicalSurfaceData.zs",
+    "caelum/data/CaelumStackSurfaceData.zs",
+    "caelum/equipment/CaelumCombatAim.zs",
+    "caelum/equipment/CaelumEconomy.zs",
+    "caelum/equipment/CaelumEquipmentCleaning.zs",
+    "caelum/equipment/CaelumSpecialItems.zs",
+    "caelum/equipment/CaelumStorageFurnitureItems.zs",
+    "caelum/survival/CaelumContaminationContact.zs",
+    "caelum/survival/CaelumContaminationEnvironment.zs",
+    "caelum/survival/CaelumContaminationExposure.zs",
+    "caelum/survival/CaelumContaminationGrid.zs",
+    "caelum/survival/CaelumContaminationNPC.zs",
+    "caelum/survival/CaelumContaminationObject.zs",
+    "caelum/survival/CaelumContaminationStack.zs",
+    "caelum/survival/CaelumContaminationState.zs",
+    "caelum/survival/CaelumContaminationSurface.zs",
+    "caelum/survival/CaelumFoodClock.zs",
+    "caelum/survival/CaelumFoodInventory.zs",
+    "caelum/survival/CaelumFoodJourney.zs",
+    "caelum/world/CaelumCampTent.zs",
+    "caelum/world/CaelumHousekeeping.zs",
+    "caelum/world/CaelumJourneyPlan.zs",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs",
+    "caelum/world/CaelumSleepingBag.zs",
+    "caelum/world/CaelumTimeSkipModel.zs"
+  ],
+  "post_test_diagnostic_release_label_only": [
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "performance_scope": "Paused actual city-day preparation. Individual outcomes unchanged; longer loading-screen callback tails. No presented-frame/FPS claim or new active-gameplay policy.",
+  "preservation": "Native partial prepared-frame save/reload; preceding combat/theft partial-save fixtures. Prior 21 original 5.8.50 checks remain applicable to unchanged geometry/state aliases.",
+  "prototype": "thermal_cache_prototype.zs is validation-only. 60 equivalence assertions; actual hour had 7614 hits / 194649 misses, insufficient benefit for production integration.",
+  "author_acceptance": "Deferred to complete V5.8 grouped handoff. No pending author entry removed."
+}

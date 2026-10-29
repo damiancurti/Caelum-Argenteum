@@ -1,11 +1,11 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.8.50** - 2026-10-28.
+Documentation version: **5.8.53** - 2026-10-29.
 
 **5.8.50/#502:**contact-adapters;136+2PASS;validation_5850.
 
-**#415:**WIP;335combat/21legacy/37theft-checks;regional-theft/performance-pending;PR545.
-**#416/417:**travel/BA/PR546;incidents/ammo/loot;validation_5852-53;author-pending.
+**5.8.51/#415:**ready;PR545;city-day77.45s;author-pending.
+**5.8.52-53/#416-417:**network/BA/incidents;validation_5852-53;author-pending.
 
 **5.8.47-49/#502:** stack/vessel/physical-food exposure;validation_5847-49;49:1190+2PASS;generic-adapters/#415-417-pending.
 

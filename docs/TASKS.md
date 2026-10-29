@@ -1,6 +1,51 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.50** - 2026-10-28.
+Documentation version: **5.8.53** - 2026-10-29.
+
+## 5.8.53 / #417 - Final V5.8 implementation handoff - 2026-10-29
+
+Saved interval rolls, actual-weather holds and two-hour crew repairs are connected
+to paid travel. Rural ambushes preserve three real human combatants, their T1 gear,
+twenty actual carbine rounds, wear, contamination and remaining loot. Flee/revisit
+does not reroll or duplicate them. Surviving thieves can access actual rural camp
+containers through #415; native away/return tests preserve the stolen stack,
+discover the loss and recover it from the dead thief.
+
+Earlier checkpoint pending notes below are superseded by this delivery and the
+5.8.51/52 entries. Implementation of #410-417 and #502 is ready for the grouped
+author checks retained in pending_test.txt. Accepted checks are not reopened;
+multiplayer rest verification stays in V5.12. No issue is closed or PR merged on
+the basis of agent-only tests. Long-absence loading remains the documented
+performance limitation; individual simulation and resources are preserved.
+
+## 5.8.52 / #416 - Network implementation ready - 2026-10-29
+
+The four vehicle types, documented/estimated route catalogue, six-block Buenos
+Aires, native services, paid travel and persistent stops are complete. Earlier
+checkpoint notes below are historical and superseded. Existing map geometry
+remains compatible; newly added destinations have their own maps. The final #415
+bounded arrival work is integrated without modifying #416 route or fare data.
+Native trip, resource, service, arrival and save evidence remains under
+assets/validation_5852. #417 incidents and final grouped author corroboration
+are separate; multiplayer remains deferred to V5.12 as requested.
+
+## 5.8.51 / #415 - Implementation ready for grouped corroboration
+
+Calendar-ordered siege/theft integration is complete for the approved authored
+actors, attacks, physical access and event rules. Earlier pending checkpoint
+statements below are superseded. #417 separately registers actual surviving
+bandits and tests their accessible rural camps; no cross-map NPC travel route
+or unproved private-interior access is invented by this infrastructure.
+
+Final checks preserve a partially prepared inventory frame through native save,
+reload earlier combat/theft jobs, and compare actual city-day outcomes. Loading
+falls from 124.07 to 77.45 s with identical recorded results; p95 rendering callback
+interval rises from 29.35 to 50.80 ms in the paused loading menu. The bounded
+three-request pipeline does not alter the active simulation. Long absences remain
+an engineering limitation, not a dropped individual-world rule.
+
+Author checks remain deferred to the complete V5.8 handoff. Continue #416/#417
+in separate focused branches, with final integration and save tests before handoff.
 
 ## Unreleased #417 incidents - 2026-10-29
 
