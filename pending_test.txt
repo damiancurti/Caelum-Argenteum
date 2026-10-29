@@ -16,67 +16,51 @@ Observe the populated defenders: the reported collapse to roughly one frame per
 second must not recur. 5.8.55 removes repeated global Rally scans; the recorded
 engine callback mean is 28.34ms, not a claim of 60 displayed FPS.
 
-[CA410-LUXURY-01] 5.8.30 / #410 - Luxury furniture catalogue
-Prerequisite: final grouped V5.8 handoff, including the preserved luxury gallery
-from assets/validation_5830/run_native.ps1 (-Runtime final30c -Checks -Interactive
--Script interactive). This gallery alone does not establish campaign acquisition.
-1. Inspect the armchair, four-post bed and six-seat dining table in native views.
-2. Use the armchair and bed, choose rest, stand/cancel, and check alignment/access.
-3. Deposit and withdraw food/water on the table; verify matching chairs and objects.
-Expected: original period furniture, ordinary rest bonuses, no duplicated items,
-no overlapping seated bodies or missing serving/canteen visuals. Repeat after save.
-Outstanding; author corroboration is deferred until all V5.8 implementation is ready.
+CA410-LUXURY-01 | Origin: 5.8.30 | Issue: #410
+Author confirmation 2026-10-29: previous grouped checks passed except the reported
+bed appearance.
+Prerequisites: final 5.8.56 correction terminal, disposable scenario.
+Remaining check:
+Inspect the corrected bed in the furniture gallery: visible mattress and
+pillow(s), plus canopy for the luxury bed. Use it and verify posture/exit.
+Other furniture and acquisition steps were accepted and need no repeat.
 
-CA410-REST-ACQUISITION-01 | 5.8.32 | #410
-Prerequisites: final grouped V5.8 build, learned luxury chair/bed recipes and
-Workbench + Fine tools + Sewing machine, resources or Provisions funds; permitted
-clear ground. Author handoff is deferred until all V5.8 implementation is ready.
-Steps: buy/craft both pieces; inspect their painted inventory icons. Activate to
-place, Use to rest, then stand and crouch + Use to carry. Retry blocked placement.
-Store the carried item in the Box, save/load, travel, retrieve and place again.
-Expected: one real piece; no occupied pickup, duplication, lost title/contamination
-or extra comfort bonus. Materials, stock, weight and prices match SYSTEMS.
+CA410-REST-ACQUISITION-01 | Origin: 5.8.32 | Issue: #410
+Author confirmation 2026-10-29: previous grouped checks passed except the reported
+bed appearance.
+Prerequisites: final 5.8.56 correction terminal, disposable scenario.
+Remaining check:
+Inspect the corrected bed in the furniture gallery: visible mattress and
+pillow(s), plus canopy for the luxury bed. Use it and verify posture/exit.
+Other furniture and acquisition steps were accepted and need no repeat.
 
-CA410-BASIC-REST-01 | originating version5.8.33 | issue#410 | pending
-Prerequisites: final5.8.33 package and validation_5833 diagnostics; include in the grouped V5.8 handoff, not an immediate separate terminal.
-1. View ordinary chair, cot and sleeping bag beside the character. Expect a human-scale chair/cot, four visible cot legs, cot sleeping surface at chair-seat height, bag on floor.
-2. Sit, lie down, cancel and inspect from both sides. Expect alignment with the support, no trapped exit and unchanged comfort/resources.
-3. Load the retained occupied5.8.32 cot save in the new runtime; exit normally. Expect the same cot, occupant, contents and contamination, adjusted pose. Keep the original save for rollback.
-4. Check mansion dining chairs and luxury/sofa furniture. Expect ordinary chairs resized and functional; luxury/sofas unchanged.
+CA410-BASIC-REST-01 | Origin: 5.8.33 | Issue: #410
+Author confirmation 2026-10-29: previous grouped checks passed except the reported
+bed appearance.
+Prerequisites: final 5.8.56 correction terminal, disposable scenario.
+Remaining check:
+Inspect the corrected bed in the furniture gallery: visible mattress and
+pillow(s), plus canopy for the luxury bed. Use it and verify posture/exit.
+Other furniture and acquisition steps were accepted and need no repeat.
 
 CA410-BASIC-ACQUISITION-01 | Origin: 5.8.34 | Issue: #410
-Prerequisites: final5.8.34 runtime or later; normal-controls disposable furniture
-fixture, learned chair/cot recipes, materials, money and sufficient carrying space.
-Deliver together with the remaining V5.8 checks, not before implementation is complete.
-1. Inspect the ordinary chair/cot in inventory, crafting and Provisions. Expect
-   painted sprites matching the wooden chair and four-legged raised cot.
-2. Buy/craft one of each. Expect three initial shop units, ten recipe books each,
-   actual construction mass and recipe inputs. The wooden chair requires no sewing.
-3. Place on permitted clear ground; sit/sleep; end rest and crouch+Use to carry.
-   Expect unchanged dimensions/support, no pickup while occupied and no duplicates.
-4. Store in the Box, retrieve, save/load and travel with the item; place again.
-   Expect the same contamination/title and usable furniture. Failed placement keeps it.
-5. Update a preceding save: learned luxury recipes and sold stock remain unchanged;
-   the two ordinary recipes start unknown until learned.
-Expected: all checks pass. Author corroboration is pending.
+Author confirmation 2026-10-29: previous grouped checks passed except the reported
+bed appearance.
+Prerequisites: final 5.8.56 correction terminal, disposable scenario.
+Remaining check:
+Inspect the corrected bed in the furniture gallery: visible mattress and
+pillow(s), plus canopy for the luxury bed. Use it and verify posture/exit.
+Other furniture and acquisition steps were accepted and need no repeat.
 
-ID: CA410-DECOR-01
-Origin: 5.8.44 / #410
-Status: Awaiting author; hold for grouped final V5.8 handoff.
-Prerequisites: Full current build, a character with sufficient carrying capacity
-and permission to furnish the mansion or an owned/currently rented property.
-Steps:
-1. Inspect the landscape painting and botanical statue in Provisions and their
-   recipe books in the library. Verify the painted inventory appearance.
-2. Learn/craft each, or buy it. Place the statue on clear dry ground; aim at a
-   plain wall within Use range and activate the painting in the inventory.
-3. Inspect both world models, the complete painting/frame, size and sculpture
-   detail. Aim and Crouch+Use to carry them; place them again.
-4. Try an obstructed wall, floor, doorway and overlapping decoration. A failed
-   placement must preserve the item. Try moving it through the Box and a save,
-   then travel away and back while carrying it.
-Expected: Correct painted icons and original world objects, native permission
-and weight checks, no door obstruction, duplicates, new bonuses or lost dirt.
+CA410-DECOR-01 | Origin: 5.8.44 | Issue: #410
+Author confirmation 2026-10-29: previous grouped checks passed except the reported
+missing statue in its fixture.
+Prerequisites: final 5.8.56 correction terminal, disposable scenario.
+Remaining check:
+Inspect the original statue together with the accepted small landscape and new
+museum-size landscape in the corrected gallery. The previous scenario invoked
+only the small-picture view. Check the large painting in the mansion as described
+in CA410-REVIEW-01.
 
 CA410-REVIEW-01 | Origin: 5.8.54 | Issue: #410
 Prerequisites: final review-corrections terminal and disposable scenarios.

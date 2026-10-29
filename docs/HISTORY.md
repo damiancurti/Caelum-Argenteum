@@ -481,6 +481,8 @@ excluded from final counts. CA502-DINING-CONTACT-01 remains author-pending.
 
 ## 5.8.44 - Landscapes and botanical sculpture (#410, 2026-10-28)
 
+Partial author acceptance 2026-10-29: **CA410-DECOR-01**, originating 5.8.44 / #410. Grouped checks passed with the reported decoration fixture exception. Retain the stable ID for the qualified correction check only; no repeated acceptance of unrelated steps is requested.
+
 The author approved the same movable-furniture acquisition for paintings and
 statues: three each in Provisions, ten recipe books, materials+25% and normal
 manufacturing restock. Motifs remain River Plate landscapes/ornamental carving,
@@ -699,6 +701,8 @@ No complete V5.8 claim or multiplayer validation is inferred.
 
 ## 5.8.34 - Ordinary rest furniture acquisition (#410, 2026-10-27)
 
+Partial author acceptance 2026-10-29: **CA410-BASIC-ACQUISITION-01**, originating 5.8.34 / #410. Grouped checks passed with the reported bed appearance exception. Retain the stable ID for the qualified correction check only; no repeated acceptance of unrelated steps is requested.
+
 The author's approved supply rules are extended to the corrected wooden chair
 and raised cot using their existing calculated construction bills. The wooden
 chair needs no sewing machine, fabric or iron; the cot retains its real textile
@@ -715,6 +719,8 @@ CA410-BASIC-ACQUISITION-01 remains pending; no complete V5.8 claim.
 
 ## 5.8.33 - Ordinary chair and raised cot (#410, 2026-10-27)
 
+Partial author acceptance 2026-10-29: **CA410-BASIC-REST-01**, originating 5.8.33 / #410. Grouped checks passed with the reported bed appearance exception. Retain the stable ID for the qualified correction check only; no repeated acceptance of unrelated steps is requested.
+
 The author approved correcting the old oversized ordinary chair/cot and specified
 legs supporting the cot at chair-seat height, while sleeping bags stay on the floor.
 The correction uses documented nineteenth-century dimensions, owned construction
@@ -730,6 +736,8 @@ inspected, including the corrected seat center/headboard direction. Evidence:
 assets/validation_5833. No author acceptance or display-FPS result is inferred. CA410-BASIC-REST-01 is pending the grouped V5.8 handoff.
 
 ## 5.8.32 - Luxury rest furniture acquisition (#410, 2026-10-27)
+
+Partial author acceptance 2026-10-29: **CA410-REST-ACQUISITION-01**, originating 5.8.32 / #410. Grouped checks passed with the reported bed appearance exception. Retain the stable ID for the qualified correction check only; no repeated acceptance of unrelated steps is requested.
 
 The approved three-per-type/ten-recipe-copy supply is extended to the luxury chair
 and bed using their existing delegated construction bills. Workbench, fine tools
@@ -764,6 +772,8 @@ Manual corroboration remains
 pending CA410-STORAGE-ACQUISITION-01, grouped for the full V5.8 handoff.
 
 ## 5.8.30 - Luxury furniture catalogue (#410, 2026-10-27)
+
+Partial author acceptance 2026-10-29: **CA410-LUXURY-01**, originating 5.8.30 / #410. Grouped checks passed with the reported bed appearance exception. Retain the stable ID for the qualified correction check only; no repeated acceptance of unrelated steps is requested.
 
 Original armchair, four-post bed and table models were added without replacing
 accepted furniture or map geometry. Museum dimensional references and delegated
