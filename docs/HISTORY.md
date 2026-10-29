@@ -21,6 +21,8 @@ superseded by this completion record and the per-test confirmations in HISTORY.
 Next implementation follows the existing V5.9 roadmap; no new scope is opened
 by this release consolidation.
 
+Fresh-checkout verification, 2026-10-29: the pinned LF documentation checkout exposed stale hashes previously generated from CRLF working files. Sources were normalized to their existing .gitattributes policy and DOCUMENT_INDEX regenerated from those exact bytes. Text, line ranges and runtime remain unchanged. On Windows, document writers must use explicit LF before generating the exact-byte index.
+
 Closure validation: the static project validator passes, documentation indexes
 are fresh, and the final source runtime is identical to the author-approved
 5.8.56 correction package. This acceptance/integration change adds no gameplay
