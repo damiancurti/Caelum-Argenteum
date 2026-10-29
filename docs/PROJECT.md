@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.49** - 2026-10-28.
+Documentation version: **5.8.50** - 2026-10-28.
+
+## 5.8.50 / #502 - Contact completion pass
+
+Implementation now covers remaining common inventory, carried furniture,
+deployment boundaries, NPC map surfaces and unlinked local contact candidates.
+Native validation passes 136 current checks and 2 original-runtime checks, with
+clean static validation and all 17,040 package members matching source. Evidence:
+assets/validation_5850. No new art or balance calibration. Manual corroboration
+stays grouped until all V5.8 work is ready; #415-417 remain unfinished.
 
 ## 5.8.49 / #502 - Physical materials and food integration
 

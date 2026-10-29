@@ -21,6 +21,7 @@ class CaelumStorageFurnitureItem : CaelumSpecialInventoryItem abstract
         double dirt=CaelumContaminationStorage.Value(self);
         let copy=Super.CreateTossable(count);
         if(copy!=null && copy!=self)CaelumContaminationStorage.Set(copy,dirt);
+        if(copy!=null)CaelumContaminationObject.Register(copy);
         return copy;
     }
     virtual bool Place(CaelumPlayer user)

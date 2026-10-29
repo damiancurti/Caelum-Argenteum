@@ -20,6 +20,8 @@ class CaelumCleaningSupplies : Object play
         if(!SpendWater(user,liters) || !CaelumSoapSupply.Spend(user,CaelumContaminationRules.SoapGrams(liters)))return -1;
         double value=CaelumContaminationStorage.Value(item);
         CaelumContaminationStorage.Set(item,Max(0.0,value*(1-step/remaining)));
+        let cloth=user.FindNativeSpecialItem(CaelumConstants.EQUIPMENT_KIND_KEY_ITEM,CaelumHygieneData.CLOTH_KEY,0);
+        if(cloth!=null)RinseCloth(cloth);
         user.RefreshCarriedInventorySummary();return step;
     }
     static double Area(CaelumEquipmentItem item)
@@ -30,6 +32,16 @@ class CaelumCleaningSupplies : Object play
         if(item.EquipmentKind==CaelumConstants.EQUIPMENT_KIND_ARMOR || item.EquipmentKind==CaelumConstants.EQUIPMENT_KIND_CLOTHING)
             return CaelumContaminationRules.GarmentArea(Clamp(item.ArmorSlot,0,3),item.EquipmentSize);
         return 0;
+    }
+    static void RinseCloth(Inventory cloth)
+    {
+        if(cloth==null)return;CaelumContaminationStack.Reconcile(cloth);
+        let lots=CaelumContaminationStack.Prepare(cloth);if(lots==null || lots.Lots.Size()==0)return;
+        int selected=0;for(int i=1;i<lots.Lots.Size();i++)if(lots.Contamination(i)<lots.Contamination(selected))selected=i;
+        if(lots.Contamination(selected)==0)return;
+        double stamp=lots.Lots[selected].CreatedStamp;lots.Lots[selected].Units--;
+        if(lots.Lots[selected].Units==0)lots.Lots.Delete(selected);
+        lots.Add(1,0,stamp);
     }
     static bool Cloth(CaelumPlayer user)
     {let cloth=user==null?null:user.FindNativeSpecialItem(CaelumConstants.EQUIPMENT_KIND_KEY_ITEM,CaelumHygieneData.CLOTH_KEY,0);return cloth!=null && cloth.Amount>0;}

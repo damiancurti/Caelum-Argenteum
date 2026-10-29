@@ -1,6 +1,26 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.49** - 2026-10-28.
+Documentation version: **5.8.50** - 2026-10-28.
+
+## 5.8.50 - Remaining physical contact adapters (#502)
+
+The author requested completion without further small partial handoffs. Added
+common inventory/coin FIFO adapters, single-unit cloth rinsing, carried furniture
+exposure, sleeping-bag/tent state boundaries, NPC floor/wall contact and an
+unlinked-actor local index. Final native validation: 136 current PASS plus
+2 original-runtime checks; current save/hub, actual 5.8.49 upgrade/rollback,
+food/forecast/support and tent/rest-cleaning regressions. Static validation is
+clean; 17,040 package entries match source and 14,064 prior art/map files are
+unchanged. Evidence: assets/validation_5850. The inherited timed rest test must
+launch in CDEP411 (its original map), not timeless MAP01; the wrong launch fails
+in both packages and the corrected one passes without a production change.
+Peaceful 1,000 unlinked inventory piles: callback p99 17.442 to 18.009 ms, worst
+19.085 to 21.439 ms; mean 16.667 ms in both, 700 tics in about 20.06 seconds.
+One-time census: 0.190 to 0.964 ms. All 1,000 current piles receive exposure.
+These renderer callbacks are a cadence proxy; PresentMon access is unavailable.
+The first grid fixture asserted before native spawn initialization and before
+the next tic could remove a separated pair; deferred native phases pass.
+Author checks remain grouped. No complete V5.8 or displayed-FPS claim.
 
 ## 5.8.49 - Physical material and food contact (#502)
 

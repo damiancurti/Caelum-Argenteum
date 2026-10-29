@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.49** - 2026-10-28.
+Documentation version: **5.8.50** - 2026-10-28.
+
+## 5.8.50 / #502 - Contact adapters verified
+
+Generic quantities, cloth/coin ownership, furniture/table forecasts, deployment,
+NPC surfaces and unlinked contacts are implemented. Final 136 current plus 2
+original-runtime checks pass; current save/hub, 5.8.49 migration/rollback and
+affected regressions are recorded in assets/validation_5850. Static/package
+identity and the matched peaceful performance comparison pass. Continue
+#415 unloaded encounters/theft and #416/#417 documented transport/incidents,
+without another partial author handoff.
 
 ## 5.8.49 / #502 - Physical stacks and food
 

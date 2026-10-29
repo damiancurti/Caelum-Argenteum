@@ -34,6 +34,7 @@ class CaelumMagicBox : Inventory
 // en la clase y la ubicacion en la instancia, igual que el resto del sistema.
 class CaelumSpecialInventoryItem : Inventory
 {
+    CaelumContaminationState GenericContamination;
     bool InMagicBox;
     // Cantidades temporales dentro de una pila normal: no se pierde el stock
     // previo al retirarlas al salir del Limbo. Supply identifica lo devolvible.
@@ -76,6 +77,7 @@ class CaelumSpecialInventoryItem : Inventory
 
     override bool TryPickup(in out Actor toucher)
     {
+        if(CaelumContaminationStack.Generic(self))CaelumContaminationContacts.PickupContact(self,toucher);
         CaelumPlayer caelumPlayer = CaelumPlayer(toucher);
         if (caelumPlayer == null
             || !caelumPlayer.PrepareNativeSpecialPickup(self))
@@ -96,6 +98,8 @@ class CaelumSpecialInventoryItem : Inventory
 
     override Inventory CreateCopy(Actor other)
     {
+        bool physical=CaelumContaminationStack.Generic(self);
+        if(physical)CaelumContaminationStack.Reconcile(self);
         CaelumSpecialInventoryItem copy = CaelumSpecialInventoryItem(
             Super.CreateCopy(other)
         );
@@ -109,12 +113,19 @@ class CaelumSpecialInventoryItem : Inventory
             copy.args[0] = args[0];
             copy.args[1] = args[1];
         }
+        if(physical)
+        {
+            if(copy==self)CaelumContaminationStack.KeepOldest(self);
+            else if(copy!=null)CaelumContaminationStack.Transfer(self,copy,copy.Amount,true);
+        }
         return copy;
     }
 
     override Inventory CreateTossable(int tossAmount)
     {
         if (LimboQuestUnits > 0) return null;
+        bool physical=CaelumContaminationStack.Generic(self);
+        if(physical)CaelumContaminationStack.Reconcile(self);
         CaelumSpecialInventoryItem copy = CaelumSpecialInventoryItem(
             Super.CreateTossable(tossAmount)
         );
@@ -128,7 +139,20 @@ class CaelumSpecialInventoryItem : Inventory
             copy.args[0] = args[0];
             copy.args[1] = args[1];
         }
+        if(physical && copy!=null)
+        {
+            if(copy!=self)CaelumContaminationStack.Transfer(self,copy,copy.Amount,true);
+            CaelumContaminationStack.Relocate(copy);
+        }
         return copy;
+    }
+    override bool HandlePickup(Inventory incoming)
+    {
+        if(!CaelumContaminationStack.Generic(self) || incoming.GetClass()!=GetClass())return Super.HandlePickup(incoming);
+        CaelumContaminationStack.Reconcile(self);CaelumContaminationStack.Reconcile(incoming);
+        int before=Amount;bool handled=Super.HandlePickup(incoming);
+        if(Amount>before)CaelumContaminationStack.Transfer(incoming,self,Amount-before,false);
+        return handled;
     }
 }
 

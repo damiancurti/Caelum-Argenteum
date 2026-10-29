@@ -160,6 +160,9 @@ class CaelumContaminationStorage : Object play
         let item=Inventory(body);
         if(item==null)return false;
         if(CaelumContainerRules.Boxed(item))return true;
+        if(item is 'CaelumCampTent' && item.Owner is 'CaelumDeployedTent')return true;
+        if(item is 'CaelumSleepingBag')
+        {let mat=CaelumRestBag.ReservedBag(CaelumPlayer(item.Owner));if(mat!=null && mat.Bag==item)return true;}
         let table=CaelumPortableDiningTable(item.Owner);
         if(table!=null && table.Packed())return IsShielded(table.PackedItem);
         let chest=CaelumStashChest(item.Owner);

@@ -1,6 +1,13 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.49** - 2026-10-28.
+Documentation version: **5.8.50** - 2026-10-28.
+
+## 5.8.50 - Contact adapter evidence (#502)
+
+No art/audio/map source changes. Existing collision cylinders supply generic
+physical-object approximations; dedicated approved geometries remain authoritative.
+assets/validation_5850 contains private native fixtures, migration and performance
+evidence. Do not distribute its generated engine/IWAD/save fixtures.
 
 ## 5.8.49 - Physical contact geometry references (#502)
 

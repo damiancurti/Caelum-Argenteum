@@ -1,6 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.8.49** - 2026-10-28.
+Documentation version: **5.8.50** - 2026-10-28.
+
+**5.8.50/#502:**contact-adapters;136+2PASS;validation_5850;415-417-pending.
 
 **5.8.47-49/#502:** stack/vessel/physical-food exposure;validation_5847-49;49:1190+2PASS;generic-adapters/#415-417-pending.
 
@@ -41,7 +43,7 @@ Documentation version: **5.8.49** - 2026-10-28.
 **5.8.1/#413:** altitude/adaptation;67PASS;validation_581;CA413-01 accepted2026-10-23.
 **5.8.0/#414:** prototype100PASS;CA414-PROTOTYPE-01accepted2026-10-24;production integration5.8.2;calibration:SYSTEMS.
 
-**V5.7:** complete; approvals/evidence:HISTORY.
+**V5.7:**complete;HISTORY.
 
 **5.7.0/#408:**water-quality;validation_570;CA408-01:accepted2026-10-21.
 

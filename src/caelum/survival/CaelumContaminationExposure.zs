@@ -1,7 +1,7 @@
 // #502: copia independiente para pronósticos y caché de equipo propio.
 class CaelumContaminationEquipment : Object play
 {
-    CaelumEquipmentItem Item;
+    Inventory Item;
     CaelumContaminationContactPoint Endpoint;
     double Concentration,Area;
     int Slot,Kind;
@@ -67,6 +67,12 @@ class CaelumContaminationExposure : Object play
         // Sólo inventario del personaje, una vez por cambio/captura; nunca actores del mapa.
         for(Inventory cursor=user.Inv;cursor!=null;cursor=cursor.Inv)
         {
+            if(cursor is 'CaelumStorageFurnitureItem' && cursor.Owner==user && cursor.Amount>0 && !CaelumContaminationStorage.IsShielded(cursor))
+            {
+                let physical=new('CaelumContaminationEquipment');physical.Item=cursor;physical.Kind=-1;
+                physical.Area=CaelumContaminationObject.Area(cursor);physical.Concentration=CaelumContaminationStorage.Value(cursor);
+                Items.Push(physical);continue;
+            }
             let item=CaelumEquipmentItem(cursor);
             if(item==null || item.InMagicBox || item.Amount<=0)continue;
             int kind=item.EquipmentKind;
@@ -136,9 +142,9 @@ class CaelumContaminationExposure : Object play
         for(int i=0;i<Items.Size();i++)
         {
             let row=Items[i];
-            if(row.Item==null || row.Item.Owner!=user || row.Item.InMagicBox || row.Item.Amount<=0)return false;
+            if(row.Item==null || row.Item.Owner!=user || CaelumContaminationStorage.IsShielded(row.Item) || row.Item.Amount<=0)return false;
             if((row.Kind==CaelumConstants.EQUIPMENT_KIND_ARMOR || row.Kind==CaelumConstants.EQUIPMENT_KIND_CLOTHING)
-                && row.Worn!=row.Item.Equipped)return false;
+                && row.Worn!=CaelumEquipmentItem(row.Item).Equipped)return false;
         }
         return true;
     }
@@ -148,7 +154,7 @@ class CaelumContaminationExposure : Object play
         for(int i=0;i<Items.Size();i++)
         {
             let row=Items[i];
-            if(row.Item!=null && row.Item.Owner==user && !row.Item.InMagicBox
+            if(row.Item!=null && row.Item.Owner==user && !CaelumContaminationStorage.IsShielded(row.Item)
                 && row.Concentration!=CaelumContaminationStorage.Value(row.Item))
                 CaelumContaminationStorage.Set(row.Item,row.Concentration);
         }
@@ -242,5 +248,6 @@ class CaelumContaminationRuntime : Object play
             reference,thermal.AirC,thermal.Humidity,thermal.RainMmHour,!thermal.Roof) : -1,seconds);
         exposure.Commit(user);
         CaelumContaminationSurfaceContact.Step(user,thermal,seconds);
+        CaelumContaminationContacts.Observe(user);
     }
 }

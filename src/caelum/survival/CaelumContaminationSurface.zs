@@ -253,7 +253,7 @@ class CaelumContaminationSurfaceContact : Object play
             -point.X*uphill.Y+point.Y*uphill.X);
     }
     static bool Grounded(Actor user)
-    {return user!=null && user.CurSector!=null && !user.bNoClip && !user.bNoGravity
+    {return user!=null && user.CurSector!=null && !user.bNoClip
         && user.Vel.Z<=0 && Abs(user.Pos.Z-user.FloorZ)<0.01;}
     static CaelumContaminationTile FloorTile(Actor user,CaelumContaminationMap sheet,bool create)
     {
@@ -312,19 +312,46 @@ class CaelumContaminationSurfaceContact : Object play
         tile.Reference=reference;tile.Profile=weather.Profile;tile.Region=weather.Region;
         tile.Seed=weather.Seed;tile.Covered=roof;tile.Shelter=shelter;
     }
-    static void StackSupport(Inventory item,double seconds)
+    static void StackSupport(Inventory item,double seconds){ObjectSupport(item,seconds);}
+    static void ObjectSupport(Actor item,double seconds)
     {
-        if(item==null || item.Owner!=null || item.bDestroyed || seconds<=0
-            || !CaelumContaminationStack.Eligible(item) || CaelumContaminationStorage.IsShielded(item))return;
+        let inventory=Inventory(item);
+        if(item==null || (inventory!=null && inventory.Owner!=null) || item.bDestroyed || seconds<=0
+            || CaelumContaminationStorage.IsShielded(item))return;
         let world=CaelumThermalWorld.Get();if(world==null || world.ReferenceClock==null)return;
         let user=CaelumPlayer(world.ReferenceClock.Owner);if(user==null)return;
         let sheet=CaelumContaminationSurfaces.CurrentMap(user);if(sheet==null)return;
-        let tile=FloorTile(item,sheet,true);if(tile==null)return;
         double now=CaelumContaminationSurfaces.Now(user);
-        if(tile.Profile==0)ConfigureObject(item,tile);sheet.Sync(tile,now);ConfigureObject(item,tile);
         double r=CaelumPhysicsUnits.Meters(item.Radius);
-        double area=Min(CaelumStackSurfaceData.PI*r*r,CaelumStackSurfaceData.UnitArea(item)*item.Amount);
-        tile.Contact(item,area,seconds);
+        double total=CaelumContaminationStack.Eligible(inventory)?CaelumStackSurfaceData.UnitArea(inventory)*inventory.Amount:CaelumContaminationObject.Area(item);
+        for(int pass=0;pass<2;pass++)
+        {
+            let tile=pass==0?FloorTile(item,sheet,true):WallTile(item,sheet,true);if(tile==null)continue;
+            if(tile.Profile==0)ConfigureObject(item,tile);sheet.Sync(tile,now);ConfigureObject(item,tile);
+            // La base usa su huella; el roce lateral conserva el parche aprobado.
+            double area=Min(total,pass==0?CaelumStackSurfaceData.PI*r*r:CaelumContaminationData.BODY_CONTACT_M2);
+            tile.Contact(item,area,seconds);
+        }
+    }
+    static void NPCContact(CaelumCombatActor npc,CaelumThermalState thermal,double seconds)
+    {
+        let world=CaelumThermalWorld.Get();if(world==null || world.ReferenceClock==null)return;
+        let user=CaelumPlayer(world.ReferenceClock.Owner);if(user==null)return;
+        let sheet=CaelumContaminationSurfaces.CurrentMap(user);if(sheet==null)return;
+        double now=CaelumContaminationSurfaces.Now(user);
+        double reference=CaelumContaminationEnvironment.ReferenceAt(npc);
+        double rain=thermal.Roof?0:thermal.RainMmHour;
+        double ambient=reference>=0?CaelumContaminationRules.Ambient(reference,thermal.AirC,thermal.Humidity,rain,!thermal.Roof):-1;
+        for(int pass=0;pass<2;pass++)
+        {
+            let tile=pass==0?FloorTile(npc,sheet,true):WallTile(npc,sheet,true);if(tile==null)continue;
+            if(tile.Profile==0)ConfigureObject(npc,tile);sheet.SyncContact(tile,now,seconds,ambient,rain);ConfigureObject(npc,tile);
+            let point=CaelumContaminationCombat.Exterior(npc,pass==0?CaelumConstants.ARMOR_SLOT_FEET:CaelumConstants.ARMOR_SLOT_BODY);
+            let source=new('CaelumContaminationState');source.Ensure();source.Concentration=tile.Concentration;
+            CaelumContaminationCombat.Transfer(point,CaelumContaminationCombat.ModelPoint(source),
+                pass==0?CaelumContaminationData.FOOT_CONTACT_M2:CaelumContaminationData.BODY_CONTACT_M2,seconds);
+            tile.Concentration=source.Concentration;
+        }
     }
     static Actor Outer(CaelumPlayer user,int slot)
     {

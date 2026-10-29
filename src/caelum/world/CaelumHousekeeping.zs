@@ -93,7 +93,10 @@ class CaelumHousekeepingWork : Object play
             {int take=Min(remaining,Max(0,item.Amount));remaining-=take;item.Amount-=take;if(item.Amount==0)item.Destroy();}
             item=next;
         }
-        chest.DomesticSoapRemainderG=Max(0.0,chest.DomesticSoapRemainderG+whole-grams);return true;
+        chest.DomesticSoapRemainderG=Max(0.0,chest.DomesticSoapRemainderG+whole-grams);
+        if(grams>0)for(Inventory cloth=chest.Inv;cloth!=null;cloth=cloth.Inv)
+            if(CaelumHousePurchase.Supply(cloth)==1){CaelumCleaningSupplies.RinseCloth(cloth);break;}
+        return true;
     }
     static bool Furniture(Actor body)
     {return body is 'CaelumDecorBody' || body is 'CaelumRestFurniture' || body is 'CaelumDiningTable' || body is 'CaelumDomesticFixture' || body is 'CaelumStashChest';}
