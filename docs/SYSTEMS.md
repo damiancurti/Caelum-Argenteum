@@ -1,6 +1,14 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.52** - 2026-10-29.
+Documentation version: **5.8.53** - 2026-10-29.
+
+## 5.8.53 incident delivery status (#417)
+
+The approved incident rules below are connected to actual paid journeys and
+native rural hub encounters. Bandits retain real finite ammunition and loot;
+existing defenders keep unlimited resupply. An ambush's saved map identity only
+permits fleeing that encounter, not bypassing safety at unrelated later stops.
+Incident checks do not invent theft access through unproved map transitions.
 
 ## 5.8.52 transport delivery status (#416)
 
@@ -29,6 +37,31 @@ exposure/shot totals. Loading takes 77.45 s versus 124.07 s previously; callback
 is 50.80 versus 29.35 ms. This is a paused-loading tradeoff, not a gameplay-FPS claim.
 Native evidence: assets/validation_5851/loading-results.json. Earlier integration
 checkpoints below retain their original evidence and implementation chronology.
+
+## Unreleased #417 travel incidents - 2026-10-29
+
+Horse/cart journeys roll once per completed 10 km, with a 1% rural ambush chance.
+The encounter has three humans using the existing human combat profile and T1
+gear: two machetes and one carbine with twenty actual cartridges. They are the
+explicitly approved thieves; ordinary residents are unchanged. Their native hub
+bodies, remaining ammunition and real equipment persist after flight or return.
+Weapon wear and contamination follow the owned weapon into its death drop.
+
+Cart/train/ship journeys roll once per completed 100 km, with a 2% breakdown
+chance. Crew repair takes 7,200 world seconds without extra fare. Repair continues
+while ashore. The existing vehicle-specific safe exit rules remain authoritative.
+Weather suspends movement at wind >=60 km/h or rain >=20 mm/h; both must fall
+below their thresholds to resume. The sample is exterior weather even inside a
+covered vehicle. Waiting retains actual survival costs and extends the arrival
+target when a hold delays it; there is no extra random damage or inventory loss.
+
+The paid ticket owns schema revision 1 incident counters, consumed distance
+indices, encounter identity and repair deadline. Save/load, exit and rebooking
+never repeat consumed rolls. Old tickets initialize after already covered
+distance, without retrospective incidents. Neither storms nor repairs credit
+distance. An ambush stops at its exact interval and permits fleeing aboard the
+same paid service despite nearby enemies, preserving other safety restrictions.
+Native checks: `assets/validation_5853`; author acceptance remains separate.
 
 ## Unreleased #416 transport catalogue - 2026-10-29
 

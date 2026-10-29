@@ -1,6 +1,22 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.52** - 2026-10-29.
+Documentation version: **5.8.53** - 2026-10-29.
+
+## 5.8.53 / #417 - Final V5.8 implementation handoff - 2026-10-29
+
+Saved interval rolls, actual-weather holds and two-hour crew repairs are connected
+to paid travel. Rural ambushes preserve three real human combatants, their T1 gear,
+twenty actual carbine rounds, wear, contamination and remaining loot. Flee/revisit
+does not reroll or duplicate them. Surviving thieves can access actual rural camp
+containers through #415; native away/return tests preserve the stolen stack,
+discover the loss and recover it from the dead thief.
+
+Earlier checkpoint pending notes below are superseded by this delivery and the
+5.8.51/52 entries. Implementation of #410-417 and #502 is ready for the grouped
+author checks retained in pending_test.txt. Accepted checks are not reopened;
+multiplayer rest verification stays in V5.12. No issue is closed or PR merged on
+the basis of agent-only tests. Long-absence loading remains the documented
+performance limitation; individual simulation and resources are preserved.
 
 ## 5.8.52 / #416 - Network implementation ready - 2026-10-29
 
@@ -30,6 +46,20 @@ an engineering limitation, not a dropped individual-world rule.
 
 Author checks remain deferred to the complete V5.8 handoff. Continue #416/#417
 in separate focused branches, with final integration and save tests before handoff.
+
+## Unreleased #417 incidents - 2026-10-29
+
+Ticket-owned interval rolls, actual-weather holds and two-hour crew repairs are
+connected. Rural ambushes create two native T1 machete owners and a T1 carbine
+owner with twenty real rounds. Death drops only owned gear and remaining rounds;
+saved wear, contamination and consumed rolls survive native reload and hub return.
+Existing defenders retain their approved unlimited supply. Bounded placement
+retries preserve encounter identity instead of spawning duplicate rewards.
+
+Native evidence is in `assets/validation_5853`. Surviving bandits explicitly
+register for the #415 access/ownership-based theft mechanism. Regional discovery
+and long-absence completion remain tracked under #415; grouped author checks
+remain deferred. This checkpoint does not claim whole-version acceptance.
 
 ## Unreleased #416 transport integration - 2026-10-29
 

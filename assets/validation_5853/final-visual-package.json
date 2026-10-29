@@ -1,0 +1,11 @@
+{
+  "version": "5.8.53",
+  "issue": 417,
+  "base_package": "71e977e718624921dc28299a8afe8e5b185f680d517582bf8afe1f62bb6a7adc",
+  "final_package": "ce4c2ccc5ac58e707e855c50ff436afdca3efa2d5c440befb2b3a2576d89b7ec",
+  "source_matched_members": 17144,
+  "only_changed_member": [
+    "caelum/data/transport_vehicles.modeldef"
+  ],
+  "qualification": "#416 interaction actor model binding only; native game logic, maps and saved state unchanged. The 112-assertion report remains applicable to unchanged code."
+}

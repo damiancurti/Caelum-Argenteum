@@ -1,6 +1,34 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.52** - 2026-10-29.
+Documentation version: **5.8.53** - 2026-10-29.
+
+## 5.8.53 / #417 - Final V5.8 implementation handoff - 2026-10-29
+
+Final incident evidence:112 executed native assertions across seven runs, with
+zero failures. The final review53c package has17,144 source-identical members;
+its only difference from the112-check package is #416's existing-sign MODELDEF
+binding/orientation, verified separately in a native roadside screenshot.
+Evidence:assets/validation_5853/final-results.json and final-visual-package.json.
+The local grouped author terminal prepares34 separate issue scenes; their
+initialization was checked against the same runtime code. Historical fixture
+adaptations preserve current history revision4, the actual MAP03 market startup,
+and a spent daily quota to isolate furnishing persistence from later automatic
+housekeeping. The dedicated housekeeping scene separately passes real work/costs.
+These preparations are agent evidence, not author acceptance.
+
+Saved interval rolls, actual-weather holds and two-hour crew repairs are connected
+to paid travel. Rural ambushes preserve three real human combatants, their T1 gear,
+twenty actual carbine rounds, wear, contamination and remaining loot. Flee/revisit
+does not reroll or duplicate them. Surviving thieves can access actual rural camp
+containers through #415; native away/return tests preserve the stolen stack,
+discover the loss and recover it from the dead thief.
+
+Earlier checkpoint pending notes below are superseded by this delivery and the
+5.8.51/52 entries. Implementation of #410-417 and #502 is ready for the grouped
+author checks retained in pending_test.txt. Accepted checks are not reopened;
+multiplayer rest verification stays in V5.12. No issue is closed or PR merged on
+the basis of agent-only tests. Long-absence loading remains the documented
+performance limitation; individual simulation and resources are preserved.
 
 ## 5.8.52 / #416 - Network implementation ready - 2026-10-29
 
@@ -38,6 +66,23 @@ production complexity. It is preserved solely in the isolated validation assets.
 Evidence: assets/validation_5851/loading-results.json. The author remains away;
 no manual entry was removed. #417 owns the surviving bandits and their live camp
 integration; #416/#417 delivery and final grouped author corroboration remain.
+
+## Unreleased #417 incidents checkpoint - 2026-10-29
+
+Connected the approved rural ambush, storm and breakdown rules to #416's actual
+ticket and clock. New bandits reuse the existing human profile and art. Their
+weapons and twenty-cartridge reserve are owned inventory, with finite native and
+absent firing; existing defenders remain unlimited. Native death retains wear,
+contamination and exact remaining rounds without duplicating loot. The same
+sidearm's combat-model and inventory views share one exposure authority.
+
+GZDoom checks cover boundary/deadline persistence, native projectiles/reloads,
+actual roadside placement, saved ambushes, fleeing and hub return. Initial test
+failures exposed fixture timing (PostBeginPlay is deferred), depleted native Ammo
+objects retained at amount zero, and continued paid distance during the journey
+back to a stop. Those fixture assumptions were corrected without changing the
+approved rules. Logs and reproducible fixtures are retained in validation_5853.
+The author is away; no manual acceptance or issue closure is claimed.
 
 ## Unreleased #416 transport catalogue - 2026-10-29
 

@@ -99,6 +99,7 @@ class CaelumTransportBooking : Inventory
 {
     int Revision, Sequence;
     CaelumTransportTicket Ticket;
+    CaelumTravelIncidents Incidents;
     bool Onboard, TransferPending, ArrivalPending;
     String TransferMap, StopMap;
     int BoardedDays, BoardedTics;
@@ -143,6 +144,7 @@ class CaelumTransportBooking : Inventory
         if(booking==null)booking=CaelumTransportBooking(user.GiveInventoryType('CaelumTransportBooking'));
         if(booking==null || !CaelumPropertyRules.Pay(user,ticket.Fare))return false;
         booking.Revision=2;booking.Sequence=Min(booking.Sequence,2147483646)+1;booking.Ticket=ticket;
+        booking.Incidents=new('CaelumTravelIncidents');booking.Incidents.Initialize(ticket);
         user.PersistCharacterState();return true;
     }
     override void Tick()
@@ -152,7 +154,7 @@ class CaelumTransportBooking : Inventory
         // Un traslado ajeno (por ejemplo el retorno magico) no debe acreditar
         // horas a bordo mientras el pasajero permanece en otro mapa.
         if(Onboard && !ArrivalPending && Ticket!=null)
-        {Ticket.Observe(Now(CaelumPlayer(Owner)));Ticket.Status=CaelumTransportTicket.STOPPED;Onboard=false;StopMap=level.MapName;}
+        {CaelumTravelIncidents.Observe(CaelumPlayer(Owner),self,Now(CaelumPlayer(Owner)));Ticket.Status=CaelumTransportTicket.STOPPED;Onboard=false;StopMap=level.MapName;}
         Super.PreTravelled();
     }
     Default {Inventory.MaxAmount 1;Inventory.InterHubAmount 1;+INVENTORY.UNDROPPABLE +INVENTORY.UNCLEARABLE -INVENTORY.INVBAR}

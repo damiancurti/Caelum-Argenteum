@@ -16,6 +16,7 @@ class CaelumPortDefender : CaelumFolkloreCombatActor
     CaelumWeaponModel Sword;
     override CaelumWeaponModel GetPossessedSidearm(){return Sword;}
     CaelumCityCarbine Carbine;
+    virtual bool CarbineTarget(Actor victim){return victim!=null && !victim.bFriendly;}
     override double GetPhysiologicalHeight()
     { return Carbine!=null && Carbine.StandingHeight>0 ? Carbine.StandingHeight : Height; }
     int HomeRevision, HomeIdentity, DeploymentStep;

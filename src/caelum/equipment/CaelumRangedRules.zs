@@ -97,7 +97,8 @@ class CaelumCarbineWorld : Object play
     }
 }
 
-// Una carabina concreta por soldado: reserva infinita sin pilas físicas.
+// Los defensores conservan su reserva infinita; otros portadores pueden
+// contar sus cartuchos reales, incluidos los que referencia el cargador.
 // Cargador, recarga, desgaste y último disparo se serializan con el actor.
 class CaelumCityCarbine : Object play
 {
@@ -110,6 +111,19 @@ class CaelumCityCarbine : Object play
     CaelumPortDefender Holder;
     vector3 PreviousPosition;
     CaelumWeaponModel Weapon;
+    bool FiniteReserve;
+
+    int Reserve()
+    {let ammo=Holder==null?null:Holder.FindInventory('CaelumCarbineAmmo');return ammo==null?0:Max(0,ammo.Amount);}
+    int LoadCount()
+    {int capacity=Weapon==null?0:CaelumRangedRules.MagazineCapacity(Weapon.WeaponType);return FiniteReserve?Min(capacity,Reserve()):capacity;}
+    bool HasAmmunition(){return !FiniteReserve || Reserve()>0;}
+    void CommitRound()
+    {
+        Magazine=Max(0,Magazine-1);ShotCount++;
+        if(FiniteReserve && Holder!=null)
+        {Holder.TakeInventory('CaelumCarbineAmmo',1);CaelumActorMaintenance.InventoryChanged(Holder);}
+    }
 
     void Initialize(CaelumPortDefender owner)
     {
@@ -157,14 +171,14 @@ class CaelumCityCarbine : Object play
             CaelumThermalEffects.RecordReloadProgress(owner,Min(ReloadRemaining,progress/TICRATE),ReloadTotal);
             ReloadRemaining=Max(0.0,ReloadRemaining-progress/TICRATE);
             owner.Speed*=CaelumConstants.RELOAD_MOVEMENT_AND_PROGRESS_MULTIPLIER;
-            if(ReloadRemaining<=0){Magazine=CaelumRangedRules.MagazineCapacity(Weapon.WeaponType);ReloadCount++;}
+            if(ReloadRemaining<=0){Magazine=LoadCount();ReloadCount++;}
         }
         PreviousPosition=owner.Pos;
         CaelumCarbineWorld.Apply(owner,Held,moving,ShotCount>0 && level.time<NextShotTic,ReloadRemaining,ReloadTotal);
     }
     bool InRange(CaelumPortDefender owner,Actor victim)
     {
-        if(Weapon==null || Weapon.Durability<=0 || victim==null || victim.health<=0 || !victim.bShootable || victim.bFriendly)return false;
+        if(Weapon==null || Weapon.Durability<=0 || victim==null || victim.health<=0 || !victim.bShootable || !owner.CarbineTarget(victim) || !HasAmmunition())return false;
         vector3 origin=owner.Pos+(0,0,CaelumRangedRules.LaunchHeight(owner,Weapon.WeaponType));
         return (victim.Pos+(0,0,victim.Height/2)-origin).Length()<=Weapon.GetRangedRangeFor(Weapon.WeaponType) && owner.CheckSight(victim);
     }
@@ -212,7 +226,7 @@ class CaelumCityCarbine : Object play
         if(!owner.TrySpendCombatAir(cost)){projectile.Destroy();owner.WaitForAttackResource();return true;}
         owner.MarkActorCombatActivity();
         CaelumThermalEffects.RecordFirearmShot(owner);
-        Magazine--;ShotCount++;NextShotTic=level.time+int(Ceil(owner.GetProfileWeaponDuration(Weapon.WeaponType)));
+        CommitRound();NextShotTic=level.time+int(Ceil(owner.GetProfileWeaponDuration(Weapon.WeaponType)));
         owner.tics=Max(owner.tics,NextShotTic-level.time);
         owner.A_StartSound("caelum/weapons/carabine_fire",CHAN_WEAPON);return true;
     }

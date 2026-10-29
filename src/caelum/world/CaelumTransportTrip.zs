@@ -39,7 +39,7 @@ class CaelumTransportTrip : Object play
         let b=CaelumTransportBooking.Find(user);
         if(b==null || b.Ticket==null || b.TransferPending || !Aboard(user))return;
         if(user.health<=0){b.Ticket.RequestStop(CaelumTransportBooking.Now(user),true,true,false);return;}
-        b.Ticket.Observe(CaelumTransportBooking.Now(user));
+        CaelumTravelIncidents.Observe(user,b,CaelumTransportBooking.Now(user));
         if(b.Ticket.Status!=CaelumTransportTicket.COMPLETE && b.Ticket.Status!=CaelumTransportTicket.STOPPED)return;
         int node=-1;
         if(b.Ticket.Status==CaelumTransportTicket.COMPLETE)node=CaelumTransportData.Destination(b.Ticket.Route);
@@ -66,6 +66,7 @@ class CaelumTransportTrip : Object play
         let b=CaelumTransportBooking.Find(user);if(b==null || b.Ticket==null || !b.ArrivalPending || level.MapName!=b.TransferMap)return;
         b.ArrivalPending=false;b.Ticket.Stamp=CaelumTransportBooking.Now(user);
         if(b.Onboard){CaelumTransportSession.Show(user,null);return;}
+        CaelumTravelAmbush.Enter(user,b);
         if(b.Ticket.Status==CaelumTransportTicket.COMPLETE)
         {
             let journey=CaelumJourneyState.Get(user,true);let clock=CaelumWorldClock.Get(user);
@@ -86,7 +87,7 @@ class CaelumTransportTrip : Object play
     {
         let b=CaelumTransportBooking.Find(user);
         if(b==null || b.Ticket==null || b.Onboard || b.TransferPending || b.ArrivalPending
-            || level.MapName!=b.StopMap || CaelumRestSafety.BlockReason(user).Length()!=0
+            || level.MapName!=b.StopMap || !CaelumTravelIncidents.MayResume(user,b)
             || !b.Ticket.Resume(CaelumTransportBooking.Now(user)))return false;
         b.Onboard=true;b.TransferMap=CaelumTransportSceneData.Stage(b.Ticket.Route,b.Ticket.Mode);b.TransferPending=true;
         CloseActivities(user);Flush(user);return true;
@@ -96,7 +97,7 @@ class CaelumTransportTrip : Object play
         let b=CaelumTransportBooking.Find(user);
         if(b==null || b.Ticket==null || b.Onboard || b.TransferPending || b.ArrivalPending
             || b.Ticket.Status!=CaelumTransportTicket.ABANDONED || b.StopMap!=level.MapName
-            || CaelumRestSafety.BlockReason(user).Length()!=0)return false;
+            || !CaelumTravelIncidents.MayResume(user,b))return false;
         int fare=int(Ceil(Max(0,b.Ticket.DistanceKm-b.Ticket.CoveredKm())*CaelumTransportData.FareRate(b.Ticket.Mode)));
         if(fare<=0 || !CaelumPropertyRules.Pay(user,fare))return false;
         b.Ticket.Fare=fare;b.Ticket.Status=CaelumTransportTicket.STOPPED;
@@ -110,7 +111,8 @@ class CaelumTransportTrip : Object play
         let b=CaelumTransportBooking.Find(user);if(!Aboard(user) || b.TransferPending)return;
         // El tren frena antes de desembarcar. No se inventa una duracion de
         // frenado; el destino es un area de servicio con geometria comprobada.
-        b.Ticket.RequestStop(CaelumTransportBooking.Now(user),true,true,b.Ticket.AtPort());
+        CaelumTravelIncidents.Observe(user,b,CaelumTransportBooking.Now(user));
+        b.Ticket.RequestStop(b.Ticket.Stamp,true,true,b.Ticket.AtPort());
         Step(user);Flush(user);
     }
     static void Wait(CaelumPlayer user)
@@ -121,10 +123,12 @@ class CaelumTransportTrip : Object play
         let skip=CaelumTimeSkipState.Get(user);
         double seconds=Max(0,b.Ticket.Departure-CaelumTransportBooking.Now(user))
             +Max(0,b.Ticket.DurationSeconds-b.Ticket.Elapsed);
+        let incidents=CaelumTravelIncidents.Get(b);
+        seconds+=Max(0,incidents.RepairUntil-CaelumTransportBooking.Now(user));
         skip.TargetDay=CaelumTimeSkipState.NowDay(user);
         skip.TargetTics=CaelumTimeSkipState.NowTics(user)+int(Ceil(seconds*CaelumWorldClock.TicsPerHour()/3600));
         skip.TargetDay+=skip.TargetTics/CaelumWorldClock.TicsPerDay();skip.TargetTics%=CaelumWorldClock.TicsPerDay();
-        skip.UseTaskDefault=false;
+        skip.UseTaskDefault=false;skip.TravelDestination=true;
     }
 }
 
@@ -220,11 +224,20 @@ class CaelumTransportUI : Object ui
         if(active)
         {
             String status=t.Status==CaelumTransportTicket.ABANDONED?"CA_TRANSPORT_ABANDONED":t.Status==CaelumTransportTicket.STOPPED?"CA_TRANSPORT_STOPPED":t.Status==CaelumTransportTicket.WAITING?"CA_TRANSPORT_WAITING":"CA_TRANSPORT_ONBOARD";
+            let incident=b.Incidents;
+            if(incident!=null && b.Onboard)
+            {
+                if(incident.RepairUntil>t.Stamp)status="CA_TRAVEL_BREAKDOWN";
+                if(incident.Storm)status="CA_TRAVEL_STORM";
+            }
+            else if(incident!=null && incident.AmbushActive && incident.AmbushMap==level.MapName && t.Status==CaelumTransportTicket.STOPPED)status="CA_TRAVEL_AMBUSH";
             view.DrawParagraph(view.TextFont,Font.CR_GOLD,40,156,560,StringTable.Localize(status,false));
-            if(t.ExitRequested)view.DrawParagraph(view.TextFont,Font.CR_WHITE,40,182,560,StringTable.Localize("CA_TRANSPORT_NEXT_PORT",false));
+            if(incident!=null && b.Onboard && incident.RepairUntil>t.Stamp)
+                view.DrawParagraph(view.TextFont,Font.CR_WHITE,40,182,560,String.Format(StringTable.Localize("CA_TRAVEL_REPAIR_TIME",false),(incident.RepairUntil-t.Stamp)/3600));
+            else if(t.ExitRequested)view.DrawParagraph(view.TextFont,Font.CR_WHITE,40,182,560,StringTable.Localize("CA_TRANSPORT_NEXT_PORT",false));
             if(t.Status==CaelumTransportTicket.ABANDONED)view.DrawParagraph(view.TextFont,Font.CR_WHITE,40,182,560,
                 String.Format(StringTable.Localize("CA_TRANSPORT_REBOOK_PRICE",false),int(Ceil(Max(0,t.DistanceKm-t.CoveredKm())*CaelumTransportData.FareRate(t.Mode)))));
-            else if(!t.ExitRequested)view.DrawParagraph(view.TextFont,Font.CR_WHITE,40,182,560,
+            else if(!t.ExitRequested && !(incident!=null && b.Onboard && incident.RepairUntil>t.Stamp))view.DrawParagraph(view.TextFont,Font.CR_WHITE,40,182,560,
                 String.Format(StringTable.Localize("CA_TRANSPORT_REMAINING",false),Max(0,t.Departure-t.Stamp)/3600,Max(0,t.DurationSeconds-t.Elapsed)/3600));
         }
     }

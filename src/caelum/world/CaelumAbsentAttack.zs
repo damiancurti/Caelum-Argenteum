@@ -15,8 +15,8 @@ class CaelumAbsentAttack : Object play
         let soldier=CaelumPortDefender(body);
         if(soldier!=null)
         {
-            if(ranged && soldier.Carbine!=null && soldier.Carbine.Weapon!=null
-                && soldier.Carbine.Weapon.Durability>0)
+            if((ranged || soldier.Sword==null) && soldier.Carbine!=null && soldier.Carbine.Weapon!=null
+                && soldier.Carbine.Weapon.Durability>0 && soldier.Carbine.HasAmmunition())
             {
                 Kind=CARBINE;Weapon=CaelumConstants.WEAPON_TYPE_CARBINE;
                 Tier=soldier.Carbine.Weapon.Tier;
@@ -24,9 +24,10 @@ class CaelumAbsentAttack : Object play
             }
             else if(soldier.Sword!=null && soldier.Sword.Durability>0)
             {
-                Kind=MELEE;Weapon=CaelumConstants.WEAPON_TYPE_SWORD;Tier=soldier.Sword.Tier;
-                BaseDamage=CaelumWeaponCatalogue.GetPrimaryDamage(CaelumConstants.CATALOGUE_WEAPON_SWORD);
-                Air=CaelumWeaponCatalogue.GetPrimaryAirCost(CaelumConstants.CATALOGUE_WEAPON_SWORD);
+                Kind=MELEE;Weapon=soldier.Sword.WeaponType;Tier=soldier.Sword.Tier;
+                int catalogue=CaelumCraftingRules.GetCatalogueWeaponForPlayableType(Weapon);
+                BaseDamage=CaelumWeaponCatalogue.GetPrimaryDamage(catalogue);
+                Air=CaelumWeaponCatalogue.GetPrimaryAirCost(catalogue);
             }
         }
         else if(body is 'CaelumMandinga')

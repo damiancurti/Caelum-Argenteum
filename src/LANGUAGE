@@ -6961,6 +6961,19 @@ CA_TRANSPORT_TRAIN = "steam train";
 [es]
 CA_TRANSPORT_HORSE = "caballo de viaje";
 CA_TRANSPORT_TRAIN = "tren a vapor";
+
+[default]
+CA_TRAVEL_STORM = "Travel paused by the storm. Normal survival costs continue.";
+CA_TRAVEL_BREAKDOWN = "Breakdown. The crew is repairing the vehicle at no extra charge.";
+CA_TRAVEL_REPAIR_TIME = "Repair remaining: %.2f world hours.";
+CA_TRAVEL_AMBUSH = "Ambush! Fight, or return to the service sign to flee.";
+CA_TRAVEL_BANDIT = "road bandit";
+[es]
+CA_TRAVEL_STORM = "Viaje detenido por la tormenta. La supervivencia sigue consumiendo recursos.";
+CA_TRAVEL_BREAKDOWN = "Avería. La tripulación repara el vehículo sin cobrar un suplemento.";
+CA_TRAVEL_REPAIR_TIME = "Reparación pendiente: %.2f horas del mundo.";
+CA_TRAVEL_AMBUSH = "¡Emboscada! Combate o vuelve al cartel del transporte para huir.";
+CA_TRAVEL_BANDIT = "bandido del camino";
 [enu default]
 CA_TRANSPORT_ABANDON = "Abandon ticket (no refund)";
 CA_TRANSPORT_ABANDONED = "Ticket abandoned. No refund or free resumption.";

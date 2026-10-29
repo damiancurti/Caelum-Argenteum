@@ -156,7 +156,7 @@ class CaelumAbsentCombatant : Object play
             CaelumThermalEffects.RecordReloadProgress(Body,Min(gun.ReloadRemaining,seconds),gun.ReloadTotal);
             gun.ReloadRemaining=Max(0,gun.ReloadRemaining-seconds);
             if(gun.ReloadRemaining<=0)
-            {gun.Magazine=CaelumRangedRules.MagazineCapacity(gun.Weapon.WeaponType);gun.ReloadCount++;}
+            {gun.Magazine=gun.LoadCount();gun.ReloadCount++;}
         }
     }
 
@@ -354,6 +354,7 @@ class CaelumAbsentCombatant : Object play
                     if(ranged)
                     {
                         let gun=soldier.Carbine;
+                        if(!gun.HasAmmunition())return;
                         if(gun.ReloadRemaining>0)return;
                         if(gun.Magazine<=0)
                         {
@@ -391,7 +392,7 @@ class CaelumAbsentCombatant : Object play
         else if(Attack.Kind==CaelumAbsentAttack.MELEE || Attack.Kind==CaelumAbsentAttack.SLAM)
         {
             double work=Attack.Kind==CaelumAbsentAttack.SLAM?CaelumThermalData.GROUND_SLAM_WORK_JOULES
-                :Body is 'CaelumPortDefender'?CaelumThermalData.WeaponWork(CaelumConstants.WEAPON_TYPE_SWORD):CaelumThermalData.NATURAL_ATTACK_WORK_JOULES;
+                :Body is 'CaelumPortDefender'?CaelumThermalData.WeaponWork(Attack.Weapon):CaelumThermalData.NATURAL_ATTACK_WORK_JOULES;
             PendingActionHeat+=CaelumThermalRules.PositiveWorkHeat(work,CaelumThermalBody.Efficiency(Body));
         }
         let direct=Attack.Direct(Body,Opponent.Body,Opponent.Blocking(Body));Opponent.Queue(self,direct);
@@ -413,7 +414,7 @@ class CaelumAbsentCombatant : Object play
         }
         let soldier=CaelumPortDefender(Body);
         if(Attack.Kind==CaelumAbsentAttack.CARBINE && soldier!=null && soldier.Carbine!=null)
-        {soldier.Carbine.Magazine--;soldier.Carbine.ShotCount++;}
+        {soldier.Carbine.CommitRound();}
     }
 
     void Commit()

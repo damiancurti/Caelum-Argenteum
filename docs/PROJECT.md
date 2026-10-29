@@ -1,6 +1,22 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.52** - 2026-10-29.
+Documentation version: **5.8.53** - 2026-10-29.
+
+## 5.8.53 / #417 - Final V5.8 implementation handoff - 2026-10-29
+
+Saved interval rolls, actual-weather holds and two-hour crew repairs are connected
+to paid travel. Rural ambushes preserve three real human combatants, their T1 gear,
+twenty actual carbine rounds, wear, contamination and remaining loot. Flee/revisit
+does not reroll or duplicate them. Surviving thieves can access actual rural camp
+containers through #415; native away/return tests preserve the stolen stack,
+discover the loss and recover it from the dead thief.
+
+Earlier checkpoint pending notes below are superseded by this delivery and the
+5.8.51/52 entries. Implementation of #410-417 and #502 is ready for the grouped
+author checks retained in pending_test.txt. Accepted checks are not reopened;
+multiplayer rest verification stays in V5.12. No issue is closed or PR merged on
+the basis of agent-only tests. Long-absence loading remains the documented
+performance limitation; individual simulation and resources are preserved.
 
 ## 5.8.52 / #416 - Network implementation ready - 2026-10-29
 

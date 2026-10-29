@@ -1,6 +1,6 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.8.52** - 2026-10-29.
+Documentation version: **5.8.53** - 2026-10-29.
 
 ## 5.8.29 - Reading-room sofas (#410)
 
