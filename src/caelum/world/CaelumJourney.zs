@@ -59,7 +59,7 @@ class CaelumJourneyState : Inventory
         if (record == null) return;
         int id = journey.ConnectionId;
         int here = CaelumWorldCatalogue.LocationForMap(level.MapName);
-        bool valid = CaelumWorldCatalogue.IsSewerConnection(id);
+        bool valid = CaelumWorldCatalogue.IsTravelConnection(id);
         if (valid && here == CaelumWorldCatalogue.ConnectionOrigin(id)
             && record.WorldPendingConnection == id && !loaded) return;
         // Resolver antes de WorldProgress: sólo acredita el destino esperado
@@ -125,11 +125,12 @@ class CaelumJourneyState : Inventory
 
 class CaelumTravelService : Object play
 {
-    static bool CanDepart(CaelumPlayer user, int id)
+    static bool CanDepart(CaelumPlayer user, int id,bool transport=false)
     {
         if (user == null || user.player == null || !user.CharacterCreationComplete
             || user.CreationWizardOpen || user.health <= 0 || user.player.playerstate != PST_LIVE
-            || (user.player.cheats & CF_PREDICTING) || !CaelumWorldCatalogue.IsSewerConnection(id)
+            || (user.player.cheats & CF_PREDICTING)
+            || !(transport?CaelumWorldCatalogue.IsTravelConnection(id):CaelumWorldCatalogue.IsSewerConnection(id))
             || CaelumWorldCatalogue.ConnectionOrigin(id) != CaelumWorldCatalogue.LocationForMap(level.MapName)) return false;
         if (!CaelumSewerMaze.CanLeave(user)) return false;
         if (user.HasActiveConversation() || user.PalomoMerchantMenuOpen || user.CraftingMenuOpen

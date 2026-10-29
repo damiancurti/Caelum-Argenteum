@@ -3,6 +3,7 @@
 class CaelumTransportData : Object
 {
     const REVISION = 1;
+    const NODE_COUNT = 3;
     const MODE_HORSE = 5;
     const MODE_TRAIN = 6;
     const LAND_MOVING_HOURS = 8;

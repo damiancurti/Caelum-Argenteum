@@ -39,3 +39,6 @@ print(f"Prepared #416 overlay: {len(changed)} source members")
 
 (W/"services.cfg").write_text("wait 105; netevent ca416_services; wait 10; save city-services; wait 10; quit\n",encoding="utf-8")
 (W/"services-load.cfg").write_text("wait 10; netevent ca416_services 1; wait 10; quit\n",encoding="utf-8")
+
+(W/"tickets.cfg").write_text("wait 105; netevent ca416_tickets; wait 10; save city-ticket; wait 10; quit\n",encoding="utf-8")
+(W/"tickets-load.cfg").write_text("wait 10; netevent ca416_tickets 1; wait 10; quit\n",encoding="utf-8")

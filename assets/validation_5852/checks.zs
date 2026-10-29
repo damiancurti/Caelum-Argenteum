@@ -63,6 +63,64 @@ class CA416Checks : EventHandler
          Check(probe.CheckPosition(probe.Pos.XY,false,fit) && fit.floorz==0,"connecting street or pier retains dry, unobstructed player footing");}
         probe.Destroy();
     }
+    int Money(CaelumPlayer user)
+    {
+        int total=0;for(Inventory item=user.Inv;item!=null;item=item.Inv)
+        {let coin=CaelumCurrencyItem(item);if(coin!=null)total+=coin.Amount*int(CaelumEconomyRules.GetCurrencyFaceValue(coin.GetCurrencyType()));}
+        return total;
+    }
+    void Tickets(CaelumPlayer user,bool reload=false)
+    {
+        if(reload)
+        {
+            let booking=CaelumTransportBooking.Find(user);
+            Check(booking!=null && booking.Ticket!=null,"native save restores the actual paid booking");if(booking==null || booking.Ticket==null)return;
+            let ticket=booking.Ticket;
+            Check(ticket.Route==18 && ticket.Mode==3 && ticket.Fare==9 && booking.Sequence==1,"contracted route mode fare and transaction sequence persist");
+            Check(ticket.Status==ticket.STOPPED && Near(ticket.Elapsed,600) && Near(ticket.CoveredKm(),.5),"saved interrupted progress is retained");
+            int money=Money(user);double now=ticket.Stamp+86400;
+            Check(ticket.Resume(now),"saved ticket resumes after time spent ashore");ticket.Observe(now+600);
+            Check(Near(ticket.Elapsed,1200) && Near(ticket.CoveredKm(),1) && Money(user)==money,"resume neither charges again nor credits the ashore day");
+            return;
+        }
+        let ship=CaelumTransportTicket.Create(19,4,1,0,0);double sail=ship.Departure;
+        ship.Observe(sail-1);Check(ship.Status==ship.WAITING && ship.Elapsed==0,"scheduled service does not move before departure");
+        ship.Observe(sail+300);Check(ship.Status==ship.TRAVELLING && Near(ship.Elapsed,300),"departure charges only elapsed travel time");
+        double firstPort=ship.StopAtSeconds;Check(!ship.RequestStop(sail+300,true,true,false) && ship.ExitRequested,"mid-sea request waits for an accessible port");
+        ship.Observe(sail+firstPort+100);Check(ship.Status==ship.STOPPED && Near(ship.Elapsed,firstPort),"pending ship exit stops at Barracas without moving beyond the port");
+        double progress=ship.CoveredKm();ship.Observe(sail+firstPort+86400);
+        Check(Near(ship.CoveredKm(),progress) && ship.Resume(sail+firstPort+86400),"interruption preserves distance throughout a day ashore");
+        ship.Observe(ship.Stamp+ship.StopSeconds);Check(Near(ship.CoveredKm(),progress),"intermediate dwell consumes time without distance");
+        Check(!ship.RequestStop(ship.Stamp+1,true,true,false),"port geometry remains required for disembarkation");
+        let train=CaelumTransportTicket.Create(19,6,1,0,0);train.Observe(train.Departure+300);
+        Check(!train.RequestStop(train.Stamp,true,false,true),"moving train cannot be disembarked");
+        Check(train.RequestStop(train.Stamp,true,true,false),"a stopped train with safe footing permits interruption");
+        let horse=CaelumTransportTicket.Create(19,5,1,0,0);horse.Observe(9*3600);
+        Check(Near(horse.CoveredKm(),64),"horse day retains eight moving hours and rest");
+        Check(!horse.RequestStop(horse.Stamp,false,true,false),"land exit requires safe ground");
+        Check(horse.RequestStop(horse.Stamp,true,true,false) && horse.Abandon(horse.Stamp),"safe land abandonment closes the contract");
+        Check(!horse.Resume(horse.Stamp+1),"abandoned contract cannot be resumed");
+        let ended=CaelumTransportTicket.Create(18,6,1,0,0);ended.Observe(ended.Departure+ended.DurationSeconds+100);
+        Check(ended.Status==ended.COMPLETE && Near(ended.CoveredKm(),ended.DistanceKm),"arrival clamps progress to the actual destination");
+        double stamp=ended.Stamp;ended.Observe(stamp-100);Check(ended.Stamp==stamp,"backward clock observation cannot replay progress");
+        Check(CaelumTransportTicket.Create(0,6,1,0,0)==null,"invalid route cannot create a ticket");
+        Check(!CaelumWorldCatalogue.IsSewerConnection(17) && CaelumWorldCatalogue.IsTravelConnection(17),"new routes do not create sewer gates");
+        user.CharacterCreationComplete=true;user.CreationWizardOpen=false;user.MagicBoxOwned=true;
+        let record=user.GetPersistentCharacterState(true);record.ProfileCommitted=true;
+        user.SetOrigin((1216,768,0),false);user.Vel=(0,0,0);
+        let cart=CaelumCoveredCart(Actor.Spawn('CaelumCoveredCart',user.Pos+(0,128,0),NO_REPLACE));
+        cart.Ready=true;cart.BoardingPoint=user.Pos;
+        let coin=CaelumCurrencyItem(Actor.Spawn('CaelumCopperCoin',user.Pos,NO_REPLACE));coin.Amount=1000;coin.AttachToOwner(user);user.OnNativeInventoryChanged();
+        int before=Money(user);
+        Check(CaelumTransportBooking.Buy(user,cart,18),"production booking pays from actual native coin ownership");
+        let booking=CaelumTransportBooking.Find(user);
+        if(booking==null || booking.Ticket==null){cart.Destroy();return;}
+        Check(Money(user)==before-9,"approved complete ticket is debited exactly once");
+        Check(!CaelumTransportBooking.Buy(user,cart,18) && Money(user)==before-9,"duplicate confirmation does not charge a second fare");
+        let paid=booking.Ticket;paid.Observe(paid.Departure+600);
+        Check(paid.RequestStop(paid.Stamp,true,true,false),"paid native booking retains an interrupted journey for save");
+        cart.Destroy();
+    }
     void Services(CaelumPlayer user,bool reload=false)
     {
         let content=CaelumBuenosAiresContent.Find();
@@ -125,6 +183,6 @@ class CA416Checks : EventHandler
         let user=CaelumPlayer(players[consoleplayer].mo);
         if(e.Name=="ca416_camera"){Camera(user,e.Args[0]);return;}
         Passed=Failed=0;
-        if(e.Name=="ca416_catalogue")Catalogue();else if(e.Name=="ca416_city")City(user);else if(e.Name=="ca416_services")Services(user,e.Args[0]!=0);else return;Console.Printf("CA416 RESULT passed=%d failed=%d",Passed,Failed);
+        if(e.Name=="ca416_catalogue")Catalogue();else if(e.Name=="ca416_city")City(user);else if(e.Name=="ca416_services")Services(user,e.Args[0]!=0);else if(e.Name=="ca416_tickets")Tickets(user,e.Args[0]!=0);else return;Console.Printf("CA416 RESULT passed=%d failed=%d",Passed,Failed);
     }
 }

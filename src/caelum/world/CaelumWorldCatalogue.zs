@@ -34,7 +34,11 @@ class CaelumWorldCatalogue : Object
     const CONNECTION_COAST_TO_MAZE = 15;
     // Ruta directa de campaña; los IDs anteriores conservan su historial.
     const CONNECTION_MAZE_TO_PORT = 16;
-    const CONNECTION_DEFINED_COUNT = 17;
+    const CONNECTION_TO_BUENOS_AIRES = 17;
+    const CONNECTION_BUENOS_AIRES_TO_PORT = 18;
+    const CONNECTION_BUENOS_AIRES_TO_COAST = 19;
+    const CONNECTION_COAST_TO_BUENOS_AIRES = 20;
+    const CONNECTION_DEFINED_COUNT = 21;
     const CAMPAIGN_ROUTE_REVISION = 4;
 
     static clearscope bool IsLocation(int id)
@@ -99,6 +103,7 @@ class CaelumWorldCatalogue : Object
 
     static clearscope int ConnectionOrigin(int id)
     {
+        if(CaelumTransportRules.Route(id))return CaelumTransportData.Location(CaelumTransportData.Origin(id));
         if (id == CONNECTION_MAZE_TO_PORT) return LOCATION_SEWERS;
         if (id == CONNECTION_MAZE_TO_COAST) return LOCATION_SEWERS;
         if (id == CONNECTION_COAST_TO_MAZE) return LOCATION_COAST;
@@ -118,6 +123,7 @@ class CaelumWorldCatalogue : Object
 
     static clearscope int ConnectionDestination(int id)
     {
+        if(CaelumTransportRules.Route(id))return CaelumTransportData.Location(CaelumTransportData.Destination(id));
         if (id == CONNECTION_MAZE_TO_PORT) return LOCATION_PORT;
         if (id == CONNECTION_MAZE_TO_COAST) return LOCATION_COAST;
         if (id == CONNECTION_COAST_TO_MAZE) return LOCATION_SEWERS;
@@ -138,13 +144,16 @@ class CaelumWorldCatalogue : Object
     static clearscope String ConnectionNameKey(int id)
     {
         if (id == CONNECTION_RETURN) return "CA_WORLD_RETURN";
-        if (IsSewerConnection(id)) return LocationNameKey(ConnectionDestination(id));
+        if (IsTravelConnection(id)) return LocationNameKey(ConnectionDestination(id));
         return "CA_WORLD_UNKNOWN_CONNECTION";
     }
 
+    static clearscope bool IsTravelConnection(int id)
+    {return IsSewerConnection(id) || CaelumTransportRules.Route(id);}
+
     static clearscope bool IsSewerConnection(int id)
     {
-        return id >= CONNECTION_TO_RESERVOIR && id < CONNECTION_DEFINED_COUNT
+        return id >= CONNECTION_TO_RESERVOIR && id <= CONNECTION_MAZE_TO_PORT
             && id != CONNECTION_TO_RESERVOIR && id != CONNECTION_FROM_RESERVOIR && id != CONNECTION_TO_TAROT
             && id != CONNECTION_TO_MAINTENANCE && id != CONNECTION_MAZE_TO_COAST
             && id != CONNECTION_TO_COAST && id != CONNECTION_FROM_PORT;

@@ -1,6 +1,8 @@
 // Catalogo puro. El calendario y el pago se aplican en la transaccion de viaje.
 class CaelumTransportRules : Object
 {
+    static clearscope int NodeForMap(String map)
+    {for(int i=0;i<CaelumTransportData.NODE_COUNT;i++)if(CaelumTransportData.Map(i)==map)return i;return -1;}
     static clearscope bool Route(int id)
     {return CaelumTransportData.Origin(id)>=0 && CaelumTransportData.Destination(id)>=0;}
     static clearscope bool Mode(int mode)

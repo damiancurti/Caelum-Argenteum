@@ -38,7 +38,7 @@ def render(data, derived):
     lines = ["// Generado desde assets/transport/network.json; no editar a mano.",
              "// Fuentes, limites y estimaciones estan registrados en el manifiesto.",
              "class CaelumTransportData : Object", "{",
-             "    const REVISION = 1;", "    const MODE_HORSE = 5;", "    const MODE_TRAIN = 6;",
+             "    const REVISION = 1;", f"    const NODE_COUNT = {len(data['nodes'])};", "    const MODE_HORSE = 5;", "    const MODE_TRAIN = 6;",
              f"    const LAND_MOVING_HOURS = {data['land']['moving_hours_per_day']};",
              f"    const LAND_SLEEP_HOURS = {data['land']['sleep_hours_per_day']};"]
     for method, member in [("Origin", "origin"), ("Destination", "destination")]:

@@ -13,7 +13,8 @@ Unreleased #416 route calibration is now reproducible from `assets/transport/net
 Its 34 native catalogue checks and 27 new-map access checks pass. The six-block
 Buenos Aires layout preserves previous map geometry. Its shops, connected workshop
 and independent domestic water pass 38 native/save checks. Tickets and interruption
-integration remain pending. Historical references and explicit estimates are distinguished in SYSTEMS.
+integration remain pending. A saved ticket ledger passes 26 native payment/progress
+checks; boarding and moving journeys are not yet connected. Historical references and explicit estimates are distinguished in SYSTEMS.
 
 Original 5.8.50 save/upgrade/reload/rollback checks pass; see
 `assets/validation_5851/legacy-results.json` for the preservation boundary.

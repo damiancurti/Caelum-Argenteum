@@ -47,6 +47,16 @@ permission. Thirty-eight native assertions include save/reload of actual vendor
 money and household water. Evidence: validation_5852/city-services-results.json.
 Vehicles, paid progress and safe interruption remain pending.
 
+
+The unreleased ticket ledger snapshots the paid route, fare, pace, timetable and
+rest/dwell durations. Interrupted time ashore does not advance it; resume never
+calls payment again. Ship exits wait for the next port boundary, train exits
+require a stopped vehicle and safe footing, and abandonment retains the spent
+fare. Twenty-six native assertions cover clock boundaries, actual coin ownership,
+duplicate confirmation and saved resume. Only the new booking path opts into
+new routes; the previous travel entry points are unchanged until boarding is
+integrated. Evidence: validation_5852/ticket-results.json. No author handoff yet.
+
 ## Unreleased #415 integration
 
 Existing saves without an absent-encounter snapshot retain their actual bodies,

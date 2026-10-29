@@ -23,7 +23,7 @@ class CaelumTravelVehicle : Actor
     clearscope int Connection(){return level.MapName=="MAP03"?10:level.MapName=="TCOAST"?11:0;}
     bool CanBoard(CaelumPlayer user)
     {
-        return Ready && Connection()!=0 && user!=null && user.player!=null && user.health>0
+        return Ready && CaelumTransportRules.NodeForMap(level.MapName)>=0 && user!=null && user.player!=null && user.health>0
             && (user.Pos-BoardingPoint).Length()<=user.UseRange+48
             && user.CheckSight(self,SF_IGNOREVISIBILITY);
     }
