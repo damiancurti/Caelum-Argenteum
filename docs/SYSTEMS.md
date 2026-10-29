@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.55** - 2026-10-29.
+Documentation version: **5.8.56** - 2026-10-29.
 
 ## 5.8.55 / #415 - Remove repeated global Rally lookups
 

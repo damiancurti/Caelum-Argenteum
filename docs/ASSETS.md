@@ -1,6 +1,11 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.55** - 2026-10-29.
+Documentation version: **5.8.56** - 2026-10-29.
+
+## 5.8.56 / #416 - Original Ciudad theme for Buenos Aires
+
+The author selected the original **Ciudad**, retained since the first music collection, for CABAIRES. The complete 188.8-second stereo master is encoded as `music/CA_MUS_CIUDAD.ogg` with Vorbis quality 6, no filters, trimming or normalization. Two encodes produced identical bytes and full decode preserved duration. Credits retain Damián Curti/Suno and the original embedded ID. `Campo de Buenos Aires` retains its countryside assignment. See `assets/validation_5856/PROVENANCE.json`; native playback and author listening are tracked separately.
+
 
 ## 5.8.54 furniture corrections (#410)
 
@@ -4193,11 +4198,11 @@ third party is not rewritten when reorganizing documents.
 
 ## Physical audio inventory
 
-The fully audited project contains 130 runtime files: 119 OGG, 2 MP3 and 9 WAV, including the
+The fully audited project contains 131 runtime files: 120 OGG, 2 MP3 and 9 WAV, including the
 issue #31 pain cues, dialogue-opening cue and three new map-music tracks. `assets/audio_stock`
 preserves 26 source/backup files outside `src`: 10 pack-05 backups and 16 issue-#31
 music/sound masters. Issue #89 preserves four more audio originals under
-assets/issue89_pickaxe/reference_package. The earlier scoped runtime/source tally was 137 files; it is not a current project-wide source count. The nineteen new #496 WAV masters live separately in `assets/source/audio/map_music_496/masters/`, and their nineteen runtime OGGs are included in the current 130-file runtime count above.
+assets/issue89_pickaxe/reference_package. The earlier scoped runtime/source tally was 137 files; it is not a current project-wide source count. The nineteen new #496 WAV masters live separately in `assets/source/audio/map_music_496/masters/`, and their nineteen runtime OGGs are included in the current 131-file runtime count above, together with the original Ciudad track assigned in #416.
 A copy by another name does not imply
 another recording: menu_move and menu_select continue to share content. 14 native
 interface/interruptors aliases also do not add files.

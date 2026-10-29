@@ -1,7 +1,7 @@
 map CABAIRES "$CA_BUENOS_AIRES_NAME"
 {
     UnFreezeSinglePlayerConversations
-    music = ""
+    music = "music/CA_MUS_CIUDAD.ogg"
     sky1 = "CABASKY", 0
     nointermission
     cluster = 434
