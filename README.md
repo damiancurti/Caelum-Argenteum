@@ -14,7 +14,9 @@ for 5.8.51. Its partial combat integration is not a completed release; see
 `docs/TASKS.md` for remaining work and `assets/validation_5851` for evidence.
 Its native checks include returning household combatants, fractional clock
 boundaries, racial breath and saved in-flight attacks. Native explosion and
-ground-slam falloff are checked separately; scheduled deployment and theft remain unfinished.
+ground-slam falloff are checked separately. Sleep, restraint and frozen attack
+preparations also retain their native clocks and saved identity; scheduled
+deployment and theft remain unfinished.
 The catch-up performance diagnostic and its remaining stalls are documented in
 the same evidence directory; this checkpoint is not a playability claim.
 

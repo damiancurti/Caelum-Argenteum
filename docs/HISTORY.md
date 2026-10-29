@@ -58,6 +58,20 @@ after capturing absence must also update that saved Life, exactly as the
 production round commit does. These failures did not require a new gameplay
 rule. Intermediate data/version markers remain at the last completed release.
 
+The fifth checkpoint retains native sleep/bolas progression, the saved mean-hit
+wake remainder and attacks frozen by sleep. The shared active helpers preserve
+Lucidity, restraint expiry/cutting and the actual item returned at death.
+Capturing only CurState lost the prepared attack behind a lying pose; capture
+now reads the saved pose/tics and separately advances its absolute cycle clock.
+Tests cover full/partial sleep, early wake, exact wind-frame return, pain-pose
+restoration, native wake-count parity, zero-damage immunity and saved fractions.
+The integrated08 regression batch passes 203 distinct scenario assertions on one
+22-member source overlay. Raw fixture failures are retained: a nonexistent
+damage type applied ordinary armor instead of the intended disease path, and
+floating-point residue initially delayed an exact-tic release. Neither required
+a new balance rule. Draft PR545 remains incomplete, with scheduling, theft and
+bounded catch-up tracked above; author checks are still deferred.
+
 ## 5.8.50 - Remaining physical contact adapters (#502)
 
 The author requested completion without further small partial handoffs. Added

@@ -4,6 +4,7 @@ class CaelumAbsentDamage : Object play
 {
     double Life,ArmorWear[4],ShieldWear,WeaponWear,HitProbability,Lucidity;
     double FireDose,ThermalJoules;
+    double DamagingHitProbability;
 
     static double Wear(double absorbed)
     {
@@ -61,6 +62,7 @@ class CaelumAbsentDamage : Object play
         int whole=Max(0,int(after*CaelumSealResistance.ForEssence(victim,essence)+0.5));
         int loss=NativeDamage(victim,source,whole,magic?Name('CaelumMagicTest'):Name('Melee'));
         Life+=loss*probability;
+        if(loss>0)DamagingHitProbability+=probability;
         WeaponWear+=Wear(Min(loss,victim.health))*probability;
         HitProbability+=probability;
         ArmorWear[slot]+=Wear(incoming*Equipped(victim,slot,magic,weapon,tier,penetration)
@@ -116,6 +118,7 @@ class CaelumAbsentDamage : Object play
         for(int i=0;i<4;i++)ArmorWear[i]=Wear(wearBySlot[i]);
         if(after>0)Lucidity=Min(victim.CurrentCombatLucidity,head);
         HitProbability=1;
+        DamagingHitProbability=Life>0?1:0;
     }
 
     void Area(CaelumCombatActor source,CaelumCombatActor victim,vector3 origin,double radius,
@@ -147,6 +150,7 @@ class CaelumAbsentDamage : Object play
         int whole=Max(0,int(after*CaelumSealResistance.ForEssence(victim,essence)+0.5));
         int loss=NativeDamage(victim,source,whole,magic?Name('CaelumMagicTest'):Name('Melee'));
         Life+=loss*probability;HitProbability+=probability;
+        if(loss>0)DamagingHitProbability+=probability;
         if(loss>0)Lucidity+=headLoss*probability;
     }
 }

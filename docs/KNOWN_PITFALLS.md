@@ -4,6 +4,21 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-188 - Frozen poses and absolute attack clocks are different state
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, unreleased #415,
+2026-10-29; GZDoom 4.14.2, Windows/Vulkan. Evidence: validation_5851,
+preparedsleep03 and integrated08 native scenarios. Author review pending.
+
+Spell sleep replaces CurState with a lying pose and saves the interrupted pose
+and its remaining tics. It does not shift WeaponCycleStartTic. Capturing only
+CurState loses a prepared attack; subtracting elapsed cycle time alone releases
+it too early. Preserve the frozen frame and absolute deadline separately.
+Later Zupay wind frames can immediately skip expired boundaries; recovery can
+also already be over. Restore poses with no entry action replay, and test early
+wake, partial intervals and return before the next wind boundary. Native
+telekinesis already deactivates on player travel; do not invent an absent timer.
+
 ## CA-KP-187 - Native explosion distance depends on its flags
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, unreleased #415,

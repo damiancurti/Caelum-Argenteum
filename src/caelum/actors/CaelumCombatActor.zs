@@ -4073,10 +4073,7 @@ class CaelumCombatActor : Actor
         if(bolasFreeze && CurState==bolasSavedState)tics=bolasSavedTics;
         if (sleeping)
         {
-            CurrentCombatLucidity = CaelumSleepRules.Drain(CurrentCombatLucidity);
-            UpdateActorLucidityState();
-            ForcedSleepTics--;
-            if (ForcedSleepTics <= 0)CaelumSleepRules.Wake(self);
+            CaelumSleepRules.AdvanceNPCSleep(self,1);
         }
         UpdateCaelumRecognitionSound();
         CaelumThermalMotion.Physics(self,thermalBefore,prePhysicsVelocity,thermalGrounded,thermalPropulsion,thermalSector,thermalSupport,thermalSupportHeight);

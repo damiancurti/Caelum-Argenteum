@@ -1,8 +1,8 @@
 {
   "issue": 415,
-  "status": "Unreleased fourth integration checkpoint; #415 NOT complete",
+  "status": "Unreleased fifth integration checkpoint; #415 NOT complete",
   "planned_version": "5.8.51",
-  "native_distinct_assertions": 163,
+  "native_distinct_assertions": 203,
   "cases": {
     "math": 29,
     "rounds": 10,
@@ -21,23 +21,29 @@
     "area": 16,
     "flightload": 5,
     "flighttravel": 4,
-    "terminal": 5
+    "terminal": 5,
+    "sleep": 7,
+    "preparedsleep": 9,
+    "restraint": 11,
+    "wake": 10,
+    "wakesave": 1,
+    "wakeload": 2
   },
-  "runtime_sha256": "d802bad3b07c6f836bb20630417b3b5252d532b776e95e3194034c5e051cc1d8",
-  "source_overlay_members_verified": 20,
+  "runtime_sha256": "9a4681782de1fea3f1330653e1c4458478709da0f968f8bc7ba97f75f48ca613",
+  "source_overlay_members_verified": 22,
   "fixtures": [
     "checks.zs",
     "flights.zs",
     "prepare.py",
     "run_native.ps1"
   ],
-  "batch": "integrated07",
+  "batch": "integrated08",
   "static_errors": 0,
   "remaining": [
     "Scheduled starts and not-yet-deployed residents",
-    "Remaining controls, quiet/live catch-up latency and bounded processing",
+    "Bounded combat and quiet/live catch-up processing",
     "Theft and access integration",
-    "Original-save regressions, completed canonical delivery and PR"
+    "Original-save regressions and completed canonical delivery; draft PR545 tracks ongoing work"
   ],
   "author": "Deferred until all V5.8 implementation is complete",
   "performance": "performance-comparison.json retains prior exact outcome parity; flight-performance.json records departure census and terminal-year measurement; remaining synchronous stalls pending"

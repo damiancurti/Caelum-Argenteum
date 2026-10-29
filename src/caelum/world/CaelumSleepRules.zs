@@ -98,6 +98,17 @@ class CaelumSleepRules : Object play
     static double Drain(double value)
     { return Max(0.0, value - LUCIDITY_PER_SECOND / TICRATE); }
 
+    static int AdvanceNPCSleep(CaelumCombatActor npc,int ticks)
+    {
+        if(npc==null)return 0;
+        int asleep=Min(Max(0,ticks),npc.ForcedSleepTics);
+        if(asleep<=0)return 0;
+        npc.CurrentCombatLucidity=Max(0.0,npc.CurrentCombatLucidity-LUCIDITY_PER_SECOND/TICRATE*asleep);
+        npc.ForcedSleepTics-=asleep;npc.UpdateActorLucidityState();
+        if(npc.ForcedSleepTics<=0)Wake(npc);
+        return asleep;
+    }
+
     static void AdvancePlayer(CaelumPlayer user)
     {
         if (!user.LucidityResourceInitialized || user.health <= 0) return;

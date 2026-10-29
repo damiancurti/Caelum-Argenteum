@@ -6,7 +6,7 @@ Documentation version: **5.8.50** - 2026-10-28.
 
 The focused `feat/issue415-absent-rounds` worktree contains an intermediate
 checkpoint, not a completed delivery. Private `validation_5851` fixtures pass
-163 native assertions across scenarios, excluding repeated setup: damage/dispersion, simultaneous casualties,
+203 native assertions across scenarios, excluding repeated setup: damage/dispersion, simultaneous casualties,
 actual magazines/Anima, statuses, healing consumables, structural/cannon
 impacts, finite reserve admission, save identity and native load/unload hooks.
 The hub check resolves ten rounds, thirteen shots and one reload without
@@ -37,10 +37,18 @@ reserves, pending flights or machine work skip empty time: one absent year
 takes 0.011 ms in the isolated terminal fixture. This does not accelerate quiet
 survivors or active combat, which still need bounded catch-up.
 
-Still required before delivery: remaining control coverage,
-terminal/quiet performance review, scheduled starts/deployment while
+Sleep and bolas use the same native progression helpers while absent: Lucidity,
+expiry, cutting, the existing one-time break roll, death and returned item are
+retained. Probabilistic damaging hits accumulate toward the existing sleep wake
+threshold without new random rolls. Save/load preserves the fractional wake
+budget. Capturing a sleeping attacker reads its saved prepared pose and tics;
+absolute wind/recovery deadlines continue, as in native play. Early wake and
+return between wind frames neither replay preparation nor charge twice.
+
+Still required before delivery: bounded combat/quiet processing,
+scheduled starts/deployment while
 absent, theft/access with real inventory transfers, performance and original-save
-regressions, final canonical rules/version and linked PR. In particular, the
+regressions and final canonical rules/version. Draft PR545 tracks this branch. In particular, the
 current capture intentionally excludes residents not yet deployed: a parked
 body must not be treated as a safe cross-map collision object. Do not claim the
 scheduled start or full absent deployment complete before that is integrated.

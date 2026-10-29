@@ -26,6 +26,14 @@ ground slam requests circular distance between actor origins. Both retain native
 radius-damage factors and immunity. Active gameplay formulas are unchanged.
 An encounter with no active bodies, available reserves, pending flights or
 machine work can advance empty time directly; quiet living bodies still progress.
+Sleep and bolas retain their current active-time expiry and cutting rules.
+Sleep drains Lucidity only while asleep; the awake remainder uses normal
+recovery. Mean damaging-hit probabilities accumulate toward the existing wake
+threshold, preserving the fraction through saves; immune branches add nothing.
+Death releases the actual unbroken bolas item through its native lifecycle.
+A frozen attack keeps its saved pose and remaining tics separately from the
+absolute cycle clock, whose later wind/recovery boundaries continue to age.
+Returning does not replay that pose's entry action or spend preparation twice.
 This is unreleased work, not completion of scheduled siege starts, theft or V5.8.
 
 ## 5.8.50 - Physical contact coverage (#502)

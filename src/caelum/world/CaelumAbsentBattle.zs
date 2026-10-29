@@ -17,6 +17,11 @@ class CaelumAbsentCombatant : Object play
     double PendingHeat,PendingActionHeat;
     CaelumCombatActor FireSource;
     double PainRemaining;
+    double PendingWakeHits,SleepHitFraction;
+    CaelumSpellSleepState SleepHitState;
+    State CapturedPose;
+    bool CapturedPreparation;
+    double CapturedFrame,CapturedReleaseClock,CapturedCycleClock,ActionHold;
     bool PendingSelfFire;
     Array<CaelumCombatActor> BreathSources;
     Array<double> BreathWatts;
@@ -37,13 +42,16 @@ class CaelumAbsentCombatant : Object play
         let entry=Body.SiegeCombatant;
         if(entry!=null && entry.Encounter==Battle.Encounter){RosterKind=1;RosterIndex=entry.StableIdentity;}
         Retreated=entry!=null && entry.Exited;
-        PainRemaining=Body.FindState('Pain')!=null && Body.InStateSequence(Body.CurState,Body.FindState('Pain'))
-            ?Max(0,Body.tics)/double(TICRATE):0;
-        bool melee=Body.MeleeState!=null && Body.InStateSequence(Body.CurState,Body.MeleeState);
-        bool ranged=Body.MissileState!=null && Body.InStateSequence(Body.CurState,Body.MissileState);
+        State pose=Body.CurState;int poseTics=Body.tics;
+        let sleep=CaelumSleepRules.Status(Body);
+        if(sleep!=null && sleep.SavedState!=null){pose=sleep.SavedState;poseTics=sleep.SavedTics;}
+        PainRemaining=Body.FindState('Pain')!=null && Body.InStateSequence(pose,Body.FindState('Pain'))
+            ?Max(0,poseTics)/double(TICRATE):0;
+        bool melee=Body.MeleeState!=null && Body.InStateSequence(pose,Body.MeleeState);
+        bool ranged=Body.MissileState!=null && Body.InStateSequence(pose,Body.MissileState);
         if(Attack==null)Attack=new('CaelumAbsentAttack');
         Thermal=CaelumThermalService.CaptureForecast(Body);
-        Preparing=false;Remaining=0;
+        Preparing=false;Remaining=0;CapturedPreparation=false;ActionHold=0;
         let soldier=CaelumPortDefender(Body);
         TravelingResident=soldier!=null && soldier.Residence!=null && !soldier.Residence.Delegated;
         ResidentIdentity=TravelingResident?soldier.HomeIdentity:-1;
@@ -53,21 +61,31 @@ class CaelumAbsentCombatant : Object play
         {
             State recovery=(ranged?Body.FindState('AbsentMagicRecovery'):Body.FindState('AbsentMeleeRecovery'));
             if(Attack.Kind==CaelumAbsentAttack.SLAM)
-            {Preparing=Body.CurState!=recovery;Remaining=Max(0,Body.tics)/double(TICRATE);ClearPending();return;}
+            {Preparing=pose!=recovery;Remaining=Max(0,poseTics)/double(TICRATE);ClearPending();return;}
             int elapsed=Max(0,level.time-Body.WeaponCycleStartTic);
-            Preparing=Body.CurState!=recovery;
+            Preparing=pose!=recovery;
             double fraction=Attack.Kind==CaelumAbsentAttack.EXPLOSIVE?CaelumAttackRules.ZUPAY_MAGIC_RELEASE
                 :Attack.Kind==CaelumAbsentAttack.MAGIC?CaelumAttackRules.MANDINGA_MAGIC_RELEASE
                 :Body is 'CaelumMandinga'?CaelumAttackRules.MANDINGA_MELEE_RELEASE:CaelumAttackRules.SWING_IMPACT;
             Attack.NativeCycleTics=Body.WeaponCycleTics;Attack.Cycle=Ceil(Body.WeaponCycleTics)/TICRATE;
             Attack.Preparation=Ceil(Body.WeaponCycleTics*fraction)/TICRATE;
-            Remaining=Preparing?Max(0,Attack.Preparation-double(elapsed)/TICRATE):Max(0,Body.tics)/double(TICRATE);
+            Remaining=Max(0,poseTics)/double(TICRATE);
+            if(Preparing)
+            {
+                // El sueño y las cuerdas congelan la pose, no el reloj de sus
+                // límites posteriores. Conserva ambos sin repetir la entrada.
+                CapturedPreparation=true;CapturedPose=pose;CapturedFrame=Remaining;
+                CapturedReleaseClock=Attack.Preparation-double(elapsed)/TICRATE;
+                CapturedCycleClock=Attack.Cycle-double(elapsed)/TICRATE;
+                if(Attack.Kind==CaelumAbsentAttack.EXPLOSIVE)Remaining=Max(Remaining,CapturedReleaseClock);
+            }
         }
         ClearPending();
     }
 
     void ClearPending()
     {
+        PendingWakeHits=0;
         PendingLife=PendingShield=PendingSword=PendingGun=PendingLucidity=PendingFire=PendingFirePower=0;
         Killer=null;FireSource=null;PendingHeat=PendingActionHeat=0;
         PendingSelfFire=false;BreathSources.Clear();BreathWatts.Clear();
@@ -100,6 +118,7 @@ class CaelumAbsentCombatant : Object play
     {
         if(result==null)return;
         PendingLife+=result.Life;PendingShield+=result.ShieldWear;PendingLucidity+=result.Lucidity;
+        PendingWakeHits+=result.DamagingHitProbability;
         PendingHeat+=result.ThermalJoules;
         for(int i=0;i<4;i++)PendingArmor[i]+=result.ArmorWear[i];
         if(source!=null)
@@ -127,9 +146,6 @@ class CaelumAbsentCombatant : Object play
         if(!Body.CombatAirSpending)
             Body.CurrentCombatAir=Min(Body.MaximumCombatAir,Body.CurrentCombatAir+Body.CombatAirRegenerationPerSecond*factor
                 *CaelumBreathing.ActorFactor(Body)*CaelumAltitudeService.Recovery(Body)*seconds);
-        if(Body.ForcedSleepTics<=0)
-            Body.CurrentCombatLucidity=Min(CaelumConstants.MAXIMUM_LUCIDITY,Body.CurrentCombatLucidity
-                +CaelumConstants.MAXIMUM_LUCIDITY/CaelumConstants.LUCIDITY_FULL_RECOVERY_SECONDS*seconds);
         Body.UpdateActorLucidityState();
         if(Recovering && Body.CurrentCombatAir>=Body.MaximumCombatAir && Body.CurrentCombatAnima>=Body.MaximumCombatAnima)
         {Recovering=false;Body.EndResourceRecovery();}
@@ -173,8 +189,22 @@ class CaelumAbsentCombatant : Object play
             Body.CurrentCombatAdrenaline=Max(0,Body.CurrentCombatAdrenaline-CaelumConstants.ADRENALINE_DECAY_PER_SECOND*activeSeconds);
         ActiveTicFraction+=activeSeconds*TICRATE;
         int ticks=int(ActiveTicFraction+0.000000001);ActiveTicFraction=Max(0,ActiveTicFraction-ticks);
-        Body.ForcedSleepTics=Max(0,Body.ForcedSleepTics-ticks);
-        PainRemaining=Max(0,PainRemaining-activeSeconds);
+        int asleep=CaelumSleepRules.AdvanceNPCSleep(Body,ticks);
+        ActionHold=Min(activeSeconds,asleep/double(TICRATE)+PainRemaining);
+        if(CapturedPreparation){CapturedReleaseClock-=activeSeconds;CapturedCycleClock-=activeSeconds;}
+        Body.CurrentCombatLucidity=Min(CaelumConstants.MAXIMUM_LUCIDITY,Body.CurrentCombatLucidity
+            +CaelumConstants.MAXIMUM_LUCIDITY/CaelumConstants.LUCIDITY_FULL_RECOVERY_SECONDS/TICRATE*(ticks-asleep));
+        Body.UpdateActorLucidityState();
+        PainRemaining=Max(0,PainRemaining-Max(0,activeSeconds-asleep/double(TICRATE)));
+        let binding=CaelumBolas.Binding(Body);
+        if(binding!=null && binding.Phase==1)
+        {
+            binding.Victim=Body;
+            bool interrupted=PainRemaining>0 || Body.CombatLucidityPhysicalStunRemaining>0
+                || CaelumTelekinesisRules.Held(Body) || (Body.ElementalStatus!=null && Body.ElementalStatus.IsLightningStunned());
+            for(int i=0;i<ticks && binding!=null && !binding.bDestroyed && binding.Phase==1;i++)
+                binding.AdvanceRestraint(interrupted || i<asleep);
+        }
         let cry=CaelumBattleCry.Status(Body);
         if(cry!=null){cry.RemainingTics=Max(0,cry.RemainingTics-ticks);if(cry.RemainingTics<=0)cry.Destroy();}
         // Recorre solamente el inventario propio; las dosis y sus tres
@@ -224,6 +254,16 @@ class CaelumAbsentCombatant : Object play
         NativeResumePending=false;
         if(!Alive())return;
         Choose();Body.target=Opponent!=null?Opponent.Body:null;
+        if(CapturedPreparation)
+        {
+            Body.WeaponCycleTics=Attack.NativeCycleTics;
+            Body.WeaponCycleStartTic=level.time-int(Floor((Attack.Cycle-CapturedCycleClock)*TICRATE+0.5));
+            if(Body.ForcedSleepTics<=0)
+            {Body.SetState(CapturedPose,true);Body.tics=Max(1,int(Ceil(CapturedFrame*TICRATE)));return;}
+        }
+        if(Body.ForcedSleepTics>0){CaelumSleepRules.MaintainPose(Body);return;}
+        if(PainRemaining>0 && Body.FindState('Pain')!=null)
+        {Body.SetState(Body.FindState('Pain'),true);Body.tics=Max(1,int(Ceil(PainRemaining*TICRATE)));return;}
         if(Body.DemonBreath!=null){Body.SetState(Body.FindState('RacialBreath'),true);return;}
         if(Recovering)
         {Body.SetState(Body.RecoveryPhase==2?Body.SpawnState:Body.FindState('ResourceRetreat'),true);return;}
@@ -272,11 +312,34 @@ class CaelumAbsentCombatant : Object play
         if(CaelumAbsentBreath.Advance(self,seconds))return;
         if(Opponent==null)return;
         if(Recovering || Incapacitated())return;
-        double budget=seconds;
+        double budget=Max(0,seconds-ActionHold);
         while(budget>0 && Enemy(Opponent))
         {
-            if(Remaining>budget){Remaining-=budget;return;}
-            budget-=Remaining;Remaining=0;
+            bool captured=CapturedPreparation;
+            double capturedRecovery=0;
+            if(captured)
+            {
+                double delay=Max(CapturedFrame,Attack.Kind==CaelumAbsentAttack.EXPLOSIVE?CapturedReleaseClock+budget:0);
+                if(delay>budget+0.000000001)
+                {
+                    CapturedFrame=Max(0,CapturedFrame-budget);
+                    Remaining=Max(CapturedFrame,Attack.Kind==CaelumAbsentAttack.EXPLOSIVE?CapturedReleaseClock:0);
+                    while(CapturedFrame<=0 && Attack.Kind==CaelumAbsentAttack.EXPLOSIVE && Body.WeaponCycleWindFrame<5)
+                    {
+                        CapturedPose=CapturedPose.NextState;Body.WeaponCycleWindFrame++;
+                        CapturedFrame=Max(0,Ceil(Attack.NativeCycleTics*Body.WeaponCycleWindFrame
+                            *CaelumAttackRules.ZUPAY_MAGIC_WIND_STEP)/TICRATE-Attack.Cycle+CapturedCycleClock);
+                    }
+                    return;
+                }
+                budget=Max(0,budget-delay);CapturedPreparation=false;
+                capturedRecovery=Max(0,CapturedCycleClock+budget);Remaining=0;
+            }
+            else
+            {
+                if(Remaining>budget){Remaining-=budget;return;}
+                budget-=Remaining;Remaining=0;
+            }
             if(!Preparing)
             {
                 bool distant=(Body.Pos.XY-Opponent.Body.Pos.XY).Length()>Body.MeleeRange+Opponent.Body.Radius
@@ -310,13 +373,13 @@ class CaelumAbsentCombatant : Object play
             Attack.Refresh(Body);
             if(!Attack.Pay(Body)){StartRecovery();return;}
             Release();Shots++;Preparing=false;
-            Remaining=Max(1.0/TICRATE,Attack.Cycle-Attack.Preparation);
+            Remaining=captured?capturedRecovery:Max(1.0/TICRATE,Attack.Cycle-Attack.Preparation);
         }
     }
 
     void StartRecovery()
     {
-        Preparing=false;Recovering=true;Body.AttackResourceWaiting=true;
+        Preparing=false;CapturedPreparation=false;Recovering=true;Body.AttackResourceWaiting=true;
         Body.AttackResourceWeapon=Attack.Weapon;Body.AttackResourceMagical=Attack.Kind==CaelumAbsentAttack.MAGIC || Attack.Kind==CaelumAbsentAttack.EXPLOSIVE;
         Body.AttackResourceBaseCost=Attack.Air;Body.RecoveryThreat=Opponent!=null?Opponent.Body:null;
         Body.RecoveryPhase=1;Body.CombatAirSpending=false;
@@ -359,6 +422,7 @@ class CaelumAbsentCombatant : Object play
         LifeFraction+=PendingLife;
         int loss=int(LifeFraction+0.000000001);LifeFraction=Max(0,LifeFraction-loss);
         int old=Body.health;Body.health=Max(Body.bBuddha?1:0,Body.health-loss);
+        CommitSleep(old);
         bool armorBroken=false;
         if(Body.CombatArmor!=null)for(int i=0;i<4;i++)
         {
@@ -400,12 +464,31 @@ class CaelumAbsentCombatant : Object play
         if(Body.health>0){Body.UpdateCombatHealthEffects();Body.UpdateActorLucidityState();}
     }
 
+    void CommitSleep(int before)
+    {
+        if(SleepHitState!=Body.SpellSleep)
+        {SleepHitState=Body.SpellSleep;SleepHitFraction=0;}
+        if(Body.ForcedSleepTics<=0){SleepHitFraction=0;return;}
+        SleepHitFraction+=PendingWakeHits;
+        if(Body.health>=before)return;
+        if(Body.health<=0)
+        {CaelumSleepRules.HealthLost(Body,before);SleepHitFraction=0;return;}
+        // Cada impacto aporta su probabilidad de dano, no un golpe seguro por
+        // tener dano medio positivo. El umbral sigue siendo el del hechizo.
+        int hits=int(SleepHitFraction+0.000000001);
+        SleepHitFraction=Max(0,SleepHitFraction-hits);
+        for(int i=0;i<hits && Body.ForcedSleepTics>0;i++)CaelumSleepRules.HealthLost(Body,before);
+        if(Body.ForcedSleepTics<=0){SleepHitState=null;SleepHitFraction=0;}
+    }
+
     void FinishRound()
     {
         if(!Participating || Body==null || Body.bDestroyed || Retreated)return;
         if(Body.health<=0)
         {
             if(!Body.bCorpse)Body.Die(null,Killer,DMG_NO_ARMOR,'CaelumRangedTest');
+            let binding=CaelumBolas.Binding(Body);
+            if(binding!=null && binding.Phase==1){binding.Victim=Body;binding.Resolve(false);}
             let resident=CaelumPortDefender(Body);
             if(TravelingResident && resident!=null && resident.Residence!=null && resident.Residence.Suspended)
             {
