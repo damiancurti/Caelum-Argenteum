@@ -83,6 +83,7 @@ class CaelumTimeSkipRules : Object play
 class CaelumTimeSkipState : Inventory
 {
     bool Open, Active, Sleeping, Pumping, Completed;
+    bool TravelDestination;
     int HygieneRevision;
     CaelumCalendarCleaning SleepCleaning;
     bool HadTask, TaskDone, UseTaskDefault, ConfirmPending, BagSupport;
@@ -221,6 +222,7 @@ class CaelumTimeSkipState : Inventory
     }
     void Shift(CaelumPlayer user,int minutes)
     {
+        TravelDestination=false;
         int day=TargetDay,tics=TargetTics+minutes*(CaelumWorldClock.TicsPerHour()/60);
         while(tics<0){day--;tics+=CaelumWorldClock.TicsPerDay();}
         while(tics>=CaelumWorldClock.TicsPerDay()){day++;tics-=CaelumWorldClock.TicsPerDay();}
@@ -309,7 +311,17 @@ class CaelumTimeSkipState : Inventory
         if(s.SleepCleaning!=null)s.SleepCleaning.Advance(user,CaelumThermalRuntime.WorldTicSeconds());
         if(s.HadTask && !TaskActive(user))s.TaskDone=true;
         int day=NowDay(user),tics=NowTics(user);
-        if(day>s.TargetDay || (day==s.TargetDay && tics>=s.TargetTics))FinishSkip(user,"CA_SKIP_COMPLETE");
+        if(day>s.TargetDay || (day==s.TargetDay && tics>=s.TargetTics))
+        {
+            // Esperar al destino incluye paradas no previstas. Editar una
+            // duracion concreta desactiva esta extension antes de arrancar.
+            if(s.TravelDestination && CaelumTransportTrip.Aboard(user))
+            {
+                s.TargetDay=day;s.TargetTics=tics+CaelumWorldClock.TicsPerHour()/60;
+                if(s.TargetTics>=CaelumWorldClock.TicsPerDay()){s.TargetDay++;s.TargetTics-=CaelumWorldClock.TicsPerDay();}
+            }
+            else FinishSkip(user,"CA_SKIP_COMPLETE");
+        }
     }
     static void Pump(CaelumPlayer user)
     {

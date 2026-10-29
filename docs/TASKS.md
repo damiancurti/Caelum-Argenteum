@@ -2,6 +2,20 @@
 
 Documentation version: **5.8.50** - 2026-10-28.
 
+## Unreleased #417 incidents - 2026-10-29
+
+Ticket-owned interval rolls, actual-weather holds and two-hour crew repairs are
+connected. Rural ambushes create two native T1 machete owners and a T1 carbine
+owner with twenty real rounds. Death drops only owned gear and remaining rounds;
+saved wear, contamination and consumed rolls survive native reload and hub return.
+Existing defenders retain their approved unlimited supply. Bounded placement
+retries preserve encounter identity instead of spawning duplicate rewards.
+
+Native evidence is in `assets/validation_5853`. Surviving bandits explicitly
+register for the #415 access/ownership-based theft mechanism. Regional discovery
+and long-absence completion remain tracked under #415; grouped author checks
+remain deferred. This checkpoint does not claim whole-version acceptance.
+
 ## Unreleased #416 transport integration - 2026-10-29
 
 The historical/estimated route catalogue, six-block Buenos Aires with native

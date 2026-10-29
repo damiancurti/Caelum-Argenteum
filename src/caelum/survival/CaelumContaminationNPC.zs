@@ -107,7 +107,14 @@ class CaelumContaminationNPC : Object play
             else if(kind==CaelumConstants.EQUIPMENT_KIND_ARMOR || kind==CaelumConstants.EQUIPMENT_KIND_CLOTHING)
                 area=CaelumContaminationRules.GarmentArea(item.ArmorSlot,item.EquipmentSize);
             else continue;
-            let row=Row();row.Item=item;row.Endpoint.Body=item;row.Area=area;row.Kind=kind;
+            // Un arma nativa puede ser tambien el modelo de combate. Si
+            // comparten autoridad, reemplazar su vista en vez de exponerla dos veces.
+            CaelumContaminationEquipment row=null;
+            if(item.ContaminationState!=null)
+                for(int i=0;i<Count;i++)
+                    if(Frame.Items[i].Endpoint.Record==item.ContaminationState){row=Frame.Items[i];break;}
+            if(row==null)row=Row();
+            row.Item=item;row.Endpoint.Body=item;row.Endpoint.Record=null;row.Area=area;row.Kind=kind;
         }
         Frame.Items.Resize(Count);Frame.Immersion(thermal);Frame.ReadLive();
         Body.Contamination=CaelumContaminationStorage.Value(npc);

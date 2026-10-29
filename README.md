@@ -9,6 +9,11 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 **Current release: 5.8.50.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
+Unreleased #417 adds saved rural ambushes, weather holds and crew repairs to the
+paid services. Native checks cover real ammunition/loot and fleeing, saving and
+revisiting the same encounter. Evidence is in `assets/validation_5853`; author
+acceptance remains deferred. Separate #415 regional/theft work continues.
+
 Unreleased #416 now connects cart, ship, horse and train services to Buenos Aires,
 Barracas al Sud and Mar del Plata. Actual boarding, paid tickets, live resource
 costs, scheduled departure, safe interruption and saved resumption are implemented.
@@ -16,8 +21,7 @@ Buenos Aires has six playable blocks with shops, workshops and domestic water.
 Historical references and estimates are distinguished in SYSTEMS; native evidence
 is retained in `assets/validation_5852`. Original horse sprites and steam-train
 models retain their provenance in ASSETS. Author checks remain deferred until
-all V5.8 implementation is ready; #415 regional work and #417 incidents continue
-separately. This branch is still an unreleased integration checkpoint.
+all V5.8 implementation is ready. This branch is an unreleased integration checkpoint.
 
 Original 5.8.50 save/upgrade/reload/rollback checks pass; see
 `assets/validation_5851/legacy-results.json` for the preservation boundary.

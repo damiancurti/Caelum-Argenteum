@@ -2,6 +2,23 @@
 
 Documentation version: **5.8.50** - 2026-10-28.
 
+## Unreleased #417 incidents checkpoint - 2026-10-29
+
+Connected the approved rural ambush, storm and breakdown rules to #416's actual
+ticket and clock. New bandits reuse the existing human profile and art. Their
+weapons and twenty-cartridge reserve are owned inventory, with finite native and
+absent firing; existing defenders remain unlimited. Native death retains wear,
+contamination and exact remaining rounds without duplicating loot. The same
+sidearm's combat-model and inventory views share one exposure authority.
+
+GZDoom checks cover boundary/deadline persistence, native projectiles/reloads,
+actual roadside placement, saved ambushes, fleeing and hub return. Initial test
+failures exposed fixture timing (PostBeginPlay is deferred), depleted native Ammo
+objects retained at amount zero, and continued paid distance during the journey
+back to a stop. Those fixture assumptions were corrected without changing the
+approved rules. Logs and reproducible fixtures are retained in validation_5853.
+The author is away; no manual acceptance or issue closure is claimed.
+
 ## Unreleased #416 transport catalogue - 2026-10-29
 
 Runtime integration now connects the four actual services and supersedes the
