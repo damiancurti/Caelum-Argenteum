@@ -4,7 +4,25 @@ class CA415ArrivalHarness : EventHandler
 {
     int Pending,VerifyAfter,StartNative,StartWorld;
     bool SawRunning,RetainedClocks;
+    bool OutcomeReported;
     ui bool Sent;
+    ui double FirstFrame,LastFrame;
+    ui Array<double> Frames;
+    ui bool FrameReport;
+    override void RenderOverlay(RenderEvent e)
+    {
+        let events=CaelumAbsentArrivalEvents(StaticEventHandler.Find('CaelumAbsentArrivalEvents'));
+        if(events!=null && events.Job!=null && events.Job.Running && events.Job.Battles.Size()>0)
+        {
+            double now=MSTimeF();if(FirstFrame==0)FirstFrame=now;
+            if(LastFrame>0)Frames.Push(now-LastFrame);LastFrame=now;
+        }
+        else if(FirstFrame>0 && !FrameReport)
+        {
+            FrameReport=true;Console.Printf("CA415A LOAD wall_ms=%.6f",MSTimeF()-FirstFrame);
+            for(int i=0;i<Frames.Size();i++)Console.Printf("CA415A FRAME %.6f",Frames[i]);
+        }
+    }
     override void NetworkProcess(ConsoleEvent e)
     {
         if(e.Name=="ca415_await")
@@ -30,6 +48,18 @@ class CA415ArrivalHarness : EventHandler
             if(job!=null && job.Running)
                 RetainedClocks=RetainedClocks && level.time==StartNative && CaelumWorldClock.Get(user).DayTics==StartWorld;
             if(job!=null && (job.Pulses%100==0 || !job.Running))Console.Printf("CA415A PROGRESS pulse=%d battle=%d/%d body=%d/%d running=%d",job.Pulses,job.BattleCursor,job.Battles.Size(),job.BodyCursor,job.Bodies.Size(),job.Running);
+            if(job!=null && !job.Running && !OutcomeReported)
+            {
+                OutcomeReported=true;double life=0,anima=0,air=0,dirt=0,heat=0;int shots=0;
+                for(int i=0;i<job.Battles.Size();i++)for(int j=0;j<job.Battles[i].Rows.Size();j++)
+                {
+                    let row=job.Battles[i].Rows[j];let body=row.Body;if(body==null)continue;
+                    life+=body.health;anima+=body.CurrentCombatAnima;air+=body.CurrentCombatAir;
+                    dirt+=CaelumContaminationStorage.Value(body);shots+=row.Shots;
+                    if(body.ThermalState!=null)heat+=body.ThermalState.Exposure;
+                }
+                Console.Printf("CA415A OUTCOME life=%.9f anima=%.9f air=%.9f dirt=%.9f heat=%.9f shots=%d",life,anima,air,dirt,heat,shots);
+            }
         }
     }
     override void UiTick()

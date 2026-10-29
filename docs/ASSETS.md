@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.50** - 2026-10-28.
+Documentation version: **5.8.51** - 2026-10-29.
 
 ## 5.8.50 - Contact adapter evidence (#502)
 

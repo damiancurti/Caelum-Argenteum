@@ -1,6 +1,27 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.50** - 2026-10-28.
+Documentation version: **5.8.51** - 2026-10-29.
+
+## 5.8.51 - Unloaded-world implementation (#415) - 2026-10-29
+
+Completed the previously recorded calendar/combat/theft infrastructure without
+changing authored balance, quantities or native ownership. Standalone arrival
+bodies retain their prepared food/exposure frame until a chronological boundary;
+native save/reload preserves partially advanced work. Earlier pending combat and
+theft snapshots still resume. Three validated 8-ms requests per UI tic shorten
+paused loading while leaving the world clock and each actor's calculation intact.
+
+An actual city-day takes 77.45 s versus 124.07 s in the preceding pushed checkpoint,
+with identical recorded Life, Anima, Air, contamination, exposure and shot totals.
+Renderer callback p95 changes from 29.35 to 50.80 ms; p99 from 30.18 to 51.83 ms.
+This trades loading-screen smoothness for lower total latency and is not presented
+FPS acceptance. A thermal memoization prototype passed 60 equivalence assertions
+but reused only 7,614 of 202,263 computations; its small gain did not justify
+production complexity. It is preserved solely in the isolated validation assets.
+
+Evidence: assets/validation_5851/loading-results.json. The author remains away;
+no manual entry was removed. #417 owns the surviving bandits and their live camp
+integration; #416/#417 delivery and final grouped author corroboration remain.
 
 ## Unreleased #415 checkpoint - 2026-10-29
 

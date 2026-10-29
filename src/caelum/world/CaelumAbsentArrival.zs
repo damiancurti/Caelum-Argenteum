@@ -112,8 +112,9 @@ class CaelumAbsentArrival : Actor
                     // el trabajo no cambia su integracion de clima/fisiologia.
                     double scale=CaelumWorldClock.SecondsPerGameHour(absent.Map)/3600.0;
                     double step=Min(1/scale,(Floor(absent.Civil/60)+1)*60-absent.Civil);
-                    absent.SyncTo(body,Min(end,absent.Stamp+step));return false;
+                    absent.SyncTo(body,Min(end,absent.Stamp+step),true);return false;
                 }
+                absent.CommitSync(body);
                 if(FinalBoundary)CaelumContaminationAbsence.Restore(body,Observer,end);
             }
         }
@@ -210,8 +211,9 @@ class CaelumAbsentArrivalMenu : ListMenu
         NextPulse=Max(NextPulse,job.Pulses);
         // UI puede correr antes de que play procese el mensaje previo. Un
         // contador propio evita reenviar ese mismo pulso cada segundo tic.
-        // Como maximo quedan dos peticiones en vuelo; play sigue validandolas.
-        if(NextPulse<=job.Pulses+1)
+        // Hasta tres pulsos de 8 ms por tic de UI: carga pausada, sin cambiar
+        // la cadencia ni los recursos. Play valida cada serial antes de actuar.
+        while(NextPulse<=job.Pulses+2)
         {EventHandler.SendNetworkEvent("ca_absent_arrival",job.Serial,NextPulse);NextPulse++;}
     }
     override void Drawer()

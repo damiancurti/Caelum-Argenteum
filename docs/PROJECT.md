@@ -1,6 +1,21 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.50** - 2026-10-28.
+Documentation version: **5.8.51** - 2026-10-29.
+
+## 5.8.51 / #415 - Unloaded calendar resolution
+
+The approved absent siege and explicit-theft infrastructure is implemented:
+simultaneous mean-damage rounds, native resources/ownership, scheduled admission,
+physical access proofs, chronological theft and return discovery. Existing
+unlimited defender/cannon ammunition remains unchanged. #417 supplies the
+explicit surviving bandits; no ordinary resident acquires theft behavior.
+
+Final loading verification preserves previous results and partial saves. A
+city-day resolves in 77.45 s versus 124.07 s in the preceding checkpoint. The
+paused loading screen has longer callback tails; active gameplay is unchanged.
+Evidence: assets/validation_5851/loading-results.json. This completes the #415
+implementation scope, not author acceptance or all V5.8: #416/#417 and the final
+grouped handoff continue separately. Older checkpoint notes below are historical.
 
 ## 5.8.50 / #502 - Contact completion pass
 
