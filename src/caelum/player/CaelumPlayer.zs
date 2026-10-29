@@ -7,6 +7,7 @@ class CaelumPlayer : DoomPlayer
 {
     transient CaelumTargetSubscriptions TargetSubscribers;
     transient CaelumContaminationExposure ContaminationExposure;
+    CaelumContaminationContacts ContaminationContacts;
     override Weapon PickWeapon(int slot, bool checkammo)
     {
         // El dispatcher nativo ya resolvió teclas, aliases y doble clic.
@@ -5670,6 +5671,7 @@ class CaelumPlayer : DoomPlayer
     override void CollidedWith(Actor other, bool passive)
     {
         Super.CollidedWith(other, passive);
+        CaelumContaminationContacts.Collision(self,other);
 
         // Las caras que sólo se tocan verticalmente pertenecen al aterrizaje.
         if (other!=null && (Pos.Z>=other.Pos.Z+other.Height-0.001
@@ -5942,6 +5944,7 @@ class CaelumPlayer : DoomPlayer
         RallyDamageFactor=previousRallyFactor;
         RallyPayloadBaseDamage=previousRallyBase;RallyResolvedDamage=previousRallyResolved;
         if(shot!=null)shot.CaelumDefenseReceiver=previousReceiver;
+        if(health<before && mod!='CaelumDiseaseDOT')CaelumHygienePose.Cancel(self);
         CaelumDamageFeedback.Record(self,inflictor,mod,Max(0,Max(0,before)-Max(0,health)));
         return result;
     }
@@ -5956,7 +5959,7 @@ class CaelumPlayer : DoomPlayer
     )
     {
         if (CaelumMainM00RuloTrial.IsPartyMember(source, self)) return 0;
-        bool periodic=mod=='CaelumElementalDOT' || mod=='CaelumQuintessenceDOT';
+        bool periodic=CaelumToughnessRules.IsSustained(mod);
 
         // El mundo no puede dañar al personaje antes de confirmar su creación.
         if (CreationWizardOpen && !CharacterCreationComplete)
@@ -6114,6 +6117,8 @@ class CaelumPlayer : DoomPlayer
             );
         }
 
+        // Los ataques nativos None no pasan por la defensa dirigida actual.
+        CaelumContaminationCombat.Hit(self,inflictor,source,mod,flags,ResolveIncomingArmorSlot(inflictor,source));
         int healthBeforeDamage = health;
         double adrenalineRatioBeforeDamage = 0.0;
         if (DerivedStats != null && DerivedStats.MaximumAdrenaline > 0.0)
@@ -6503,6 +6508,7 @@ class CaelumPlayer : DoomPlayer
             source
         );
         LastIncomingArmorSlot = ResolveIncomingArmorSlot(inflictor, source);
+        CaelumContaminationCombat.PlayerHit(self,inflictor,source,mod,flags);
         double thermalShield=LastShieldBlockedAttack
             ? 1-Clamp(GetActiveBlockDefense(CaelumConstants.SHIELD_DAMAGE_MAGICAL)/100.0,0.0,1.0) : 1;
         CaelumThermalMagic.Impact(self,inflictor,thermalShield*CaelumThermalMagic.ArmorRetention(self,LastIncomingArmorSlot));
@@ -7117,6 +7123,8 @@ class CaelumPlayer : DoomPlayer
         {player.cmd.yaw=0;player.cmd.pitch=0;player.cmd.roll=0;}
         CaelumRacialAbilityRules.ObserveInput(self);
         CaelumRestState.HandleInput(self);
+        CaelumHygienePose.HandleInput(self);
+        if(CaelumCleaningTask.Active(self) && player!=null && (player.cmd.buttons&(BT_ATTACK|BT_ALTATTACK))!=0)CaelumCleaningTask.Cancel(self);
         if (player != null && (player.cmd.buttons & BT_USER4) == 0) ClassSleepInputLatched = false;
         CaelumClassAbilityRules.FilterInput(self);
         if(CaelumBattleCry.Active(self) && player!=null)
@@ -7136,7 +7144,7 @@ class CaelumPlayer : DoomPlayer
         }
         if ((readingMenu || CreationWizardOpen || EquipmentMenuOpen || CraftingMenuOpen
                 || choosingJourney || CaelumTimeSkipState.IsOpen(self) || PalomoMerchantMenuOpen
-                || CombatChannelModeActive || CaelumRestState.IsActive(self) || ForcedSleepTics > 0
+                || CombatChannelModeActive || CaelumRestState.IsActive(self) || CaelumHygienePose.Active(self) || ForcedSleepTics > 0
                 || CaelumTelekinesisRules.Held(self))
             && player != null)
         {
@@ -7163,6 +7171,7 @@ class CaelumPlayer : DoomPlayer
 
         Super.PlayerThink();
         CaelumRestState.UpdateViewInput(self);
+        CaelumHygienePose.UpdateViewInput(self);
     }
 
     // Tick runs once per game tic. GZDoom uses 35 tics per second, so dividing
@@ -7171,6 +7180,9 @@ class CaelumPlayer : DoomPlayer
     override bool UseInventory(Inventory item)
     {
         // La bolsa abre su interacción existente sin consumir el Inventory.
+        let soap=CaelumMaterialPickup(item);
+        if(soap!=null && soap.Owner==self && soap.GetSpecialType()==CaelumHygieneData.SOAP)
+            return CaelumBathSession.Show(self);
         let bag=CaelumSleepingBag(item);
         if(bag!=null)
             return CaelumPlayerAuthority.CanMutate(self)
@@ -7487,6 +7499,7 @@ class CaelumPlayer : DoomPlayer
         // otra vez. En ataques/dolor se vuelve a la compresión nativa normal.
         crouchsprite = 0;
         if (player == null || player.playerstate != PST_LIVE || health <= 0) return;
+        if(CaelumHygienePose.Active(self)){CaelumHygienePose.Find(self).ApplyState(self);return;}
         if(CaelumArcaneCloud.Active(self))
         {
             // Sólo postura mundial: el arma y el bloqueo siguen usando sus estados.

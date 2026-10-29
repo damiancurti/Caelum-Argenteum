@@ -10,6 +10,9 @@ class CaelumContaminationData : Object
     const RAIN_HEAVY_MM_HOUR = 10.0;
     const RAIN_LIGHT_REDUCTION = 10.0;
     const RAIN_HEAVY_REDUCTION = 20.0;
+    const SURFACE_REVISION = 1;
+    const SURFACE_ZONE_METERS = 1.0;
+    const RAIN_WASH_SECONDS = 1800.0;
     const CONTACT_DEGREES_M2_SECOND = 0.1;
     const CONTACT_RATIO_FLOOR = 1.0;
     const IMPACT_CONTACT_SECONDS = 10.0;
@@ -17,8 +20,10 @@ class CaelumContaminationData : Object
     const BODY_CONTACT_M2 = 0.10;
     const IMPACT_CONTACT_M2 = 0.01;
     const EQUIPMENT_WATER_L_M2 = 1.0;
+    const EQUIPMENT_SECONDS_M2 = 60.0;
     const SOAP_G_L = 5.0;
     const BATH_WATER_L_DEGREE = 0.5;
+    const BATH_SECONDS_DEGREE = 10.0;
     const NATURAL_REFERENCE = 5.0;
     const URBAN_REFERENCE = 15.0;
     const INDUSTRIAL_REFERENCE = 40.0;

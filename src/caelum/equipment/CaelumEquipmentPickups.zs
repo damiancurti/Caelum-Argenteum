@@ -436,6 +436,7 @@ class CaelumEquipmentItem : Inventory
 
     override Inventory CreateCopy(Actor other)
     {
+        CaelumContaminationObject.LeavingWorld(self);
         CaelumEquipmentItem copy = CaelumEquipmentItem(Super.CreateCopy(other));
         if (copy != null && copy != self)
         {
@@ -498,7 +499,14 @@ class CaelumEquipmentItem : Inventory
             TransferProjectileWearIdentity(copy);
         }
         CaelumActorMaintenance.InventoryChanged(previousOwner);
+        CaelumContaminationObject.Register(copy);
         return copy;
+    }
+
+    override void AttachToOwner(Actor other)
+    {
+        CaelumContaminationObject.LeavingWorld(self);
+        Super.AttachToOwner(other);
     }
 
     // Actualiza el sprite visible solo cuando la instancia está en el mundo.
@@ -530,7 +538,11 @@ class CaelumEquipmentItem : Inventory
         Super.Tick();
         if(!MigrateSupportImplement())return;
         MigrateWeaponDurability();
-        if (Owner == null) { UpdateWorldSprite(); }
+        if (Owner == null)
+        {
+            UpdateWorldSprite();
+            if(ContaminationState==null || ContaminationState.Exposure==null)CaelumContaminationObject.Register(self);
+        }
     }
 
     protected bool TryCaelumPickup(in out Actor toucher)

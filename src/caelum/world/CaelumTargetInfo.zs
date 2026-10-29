@@ -106,6 +106,14 @@ class CaelumTargetInfo : Object play
         let station=CaelumCraftingStation(Subject);
         let gate=CaelumSewerTravelGate(Subject);
         let domestic=CaelumDomesticFixture(Subject);
+        if(domestic is 'CaelumDomesticToilet')
+        {
+            Actions=L(!reachable || !domestic.CanReach(user)?"CA_TARGET_APPROACH":CaelumHygieneTask.Active(user)?"CA_TOILET_CANCEL_HINT":"CA_TOILET_HINT");
+            if(CaelumHygieneTask.Active(user))Actions=String.Format(L("CA_TOILET_PROGRESS"),user.CraftingTaskRemainingSeconds).."  |  "..Actions;
+            return;
+        }
+        if(domestic is 'CaelumDomesticBathtub')
+        {Actions=L(reachable && domestic.CanReach(user)?"CA_BATHTUB_POSE_HINT":"CA_TARGET_APPROACH");return;}
         if(domestic!=null && domestic.SuppliesWater())
         {Actions=L(reachable && domestic.CanReach(user)?"CA_DOMESTIC_WATER_HINT":"CA_TARGET_APPROACH");return;}
         if(door!=null || house!=null)Title=L(house!=null?"CA_TARGET_TRANSITION":"CA_TARGET_DOOR");

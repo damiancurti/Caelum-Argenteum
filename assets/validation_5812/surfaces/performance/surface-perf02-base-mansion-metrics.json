@@ -1,0 +1,13 @@
+{
+  "label": "surface-perf02-base-mansion",
+  "map": "MAP01",
+  "pitch": 0,
+  "runtime": "clean-final06",
+  "frames": 593,
+  "mean_ms": 16.834428161888702,
+  "p95_ms": 19.1948,
+  "p99_ms": 20.5504,
+  "max_ms": 22.6426,
+  "simulation_tics_s": 35.00825354585597,
+  "scope": "RenderOverlay callback intervals, not application presents or display refresh. PresentMon access denied; no elevated trace requested."
+}

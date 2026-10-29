@@ -1,0 +1,66 @@
+﻿{
+    "label":  "domestic-regression-accelerated",
+    "runtime":  "domestic-final02",
+    "started_utc":  "2026-10-26T02:22:46.3478309Z",
+    "engine":  "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "engine_sha256":  "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+    "iwad_sha256":  "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+    "package_sha256":  "41DB7950E5E4CAB2D7BA6A56829E939E0602A5A2A47C77BA679AADB3D1943991",
+    "addon_sha256":  "EEF5BAE9867B048A2CDFBEF3511B6CB2B0E81AF38FD955BAB9D64B8C7473A998",
+    "initial_config":  "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+    "arguments":  [
+                      "-noautoload",
+                      "-iwad",
+                      "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+                      "-file",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-hygiene-work\\build\\issue502-hygiene\\domestic-final02\\caelum_argenteum_dev.pk3\"",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-hygiene-work\\build\\issue502-hygiene\\calendar-checks.pk3\"",
+                      "-config",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-hygiene-work\\build\\issue502-hygiene\\domestic-regression-accelerated.ini\"",
+                      "-savedir",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-hygiene-work\\build\\issue502-hygiene\"",
+                      "-width",
+                      "1280",
+                      "-height",
+                      "720",
+                      "-window",
+                      "-rngseed",
+                      "502",
+                      "-skill",
+                      "2",
+                      "+logfile",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-hygiene-work\\build\\issue502-hygiene\\domestic-regression-accelerated.txt\"",
+                      "+con_notifytime",
+                      "0",
+                      "-nomouse",
+                      "+map",
+                      "CAH000",
+                      "+exec",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-hygiene-work\\build\\issue502-hygiene\\calendar-accelerated.cfg\""
+                  ],
+    "command_script":  "wait 70; netevent ca502c_accelerated; wait 350; netevent ca502c_accelerated_end; wait 5; quit\n",
+    "cpu":  [
+                {
+                    "Name":  "AMD Ryzen 9 5950X 16-Core Processor            ",
+                    "NumberOfCores":  16,
+                    "NumberOfLogicalProcessors":  32
+                }
+            ],
+    "gpu":  [
+                {
+                    "Name":  "Parsec Virtual Display Adapter",
+                    "DriverVersion":  "0.45.0.0"
+                },
+                {
+                    "Name":  "NVIDIA GeForce RTX 3070 Ti",
+                    "DriverVersion":  "32.0.15.7688"
+                }
+            ],
+    "os":  {
+               "Caption":  "Microsoft Windows 11 Pro",
+               "Version":  "10.0.26200"
+           },
+    "pid":  15528,
+    "exit_code":  0,
+    "finished_utc":  "2026-10-26T02:23:06.4405139Z"
+}

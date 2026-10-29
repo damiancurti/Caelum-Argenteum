@@ -3,6 +3,7 @@ class CaelumContaminationState : Object play
 {
     int Revision;
     double Concentration;
+    CaelumContaminationObject Exposure;
 
     void Ensure()
     {
@@ -23,6 +24,14 @@ class CaelumContaminationState : Object play
 class CaelumContaminationCarrier : Inventory
 {
     CaelumContaminationState State;
+    int AttachmentRevision;
+    void EnsureAttachment()
+    {
+        if(AttachmentRevision>=1 || Owner==null)return;
+        // Los registros anteriores usaban AddInventory sin BecomeItem. Reparar
+        // sus enlaces nativos una vez, conservando dueño y concentración.
+        BecomeItem();AttachmentRevision=1;
+    }
     override Inventory CreateTossable(int amount){return null;}
     Default
     {
@@ -48,9 +57,10 @@ class CaelumContaminationStorage : Object play
         if(carrier==null && create)
         {
             carrier=CaelumContaminationCarrier(Actor.Spawn('CaelumContaminationCarrier',body.Pos,NO_REPLACE));
-            if(carrier!=null)body.AddInventory(carrier);
+            if(carrier!=null){carrier.AttachToOwner(body);carrier.AttachmentRevision=1;}
         }
         if(carrier==null)return null;
+        carrier.EnsureAttachment();
         if(carrier.State==null && create)carrier.State=new('CaelumContaminationState');
         if(carrier.State!=null && create)carrier.State.Ensure();
         return carrier.State;

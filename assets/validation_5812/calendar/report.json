@@ -1,0 +1,199 @@
+{
+  "issue": 502,
+  "version": "5.8.12",
+  "package_sha256": "2d5337795cec9f1d35c43a4bc29f337dace8219a09501d08e6f76b8ee689c8b4",
+  "baseline_sha256": "5805e49874ba5f1af82de9d674963f4c867dee59ccfabc2af4b9746479b1dbb5",
+  "source_members": 16893,
+  "unchanged_maps": 169,
+  "unchanged_art_members": 13826,
+  "production_changes": [
+    "caelum/crafting/CaelumCraftingCoordinator.zs",
+    "caelum/crafting/CaelumRecipeSession.zs",
+    "caelum/equipment/CaelumEquipmentCleaning.zs",
+    "caelum/equipment/CaelumInventoryService.zs",
+    "caelum/hud/CaelumTimeSkipPanel.zs",
+    "caelum/player/CaelumPlayerResources.zs",
+    "caelum/world/CaelumTimeSkip.zs",
+    "caelum/world/CaelumTimeSkipModel.zs",
+    "LANGUAGE",
+    "localization/index.json",
+    "localization/INDEX.md"
+  ],
+  "passes": 160,
+  "runs": [
+    {
+      "label": "calendar-suite-calendar-core-01",
+      "passes": 31,
+      "runtime": "calendar-final01",
+      "package_sha256": "2d5337795cec9f1d35c43a4bc29f337dace8219a09501d08e6f76b8ee689c8b4",
+      "addon_sha256": "9f9225d31b26151a3474f2470cbc3a3c424b856e266ef982c06686d66267c678"
+    },
+    {
+      "label": "calendar-suite-calendar-edges-01",
+      "passes": 13,
+      "runtime": "calendar-final01",
+      "package_sha256": "2d5337795cec9f1d35c43a4bc29f337dace8219a09501d08e6f76b8ee689c8b4",
+      "addon_sha256": "9f9225d31b26151a3474f2470cbc3a3c424b856e266ef982c06686d66267c678"
+    },
+    {
+      "label": "calendar-suite-calendar-forecast-01",
+      "passes": 2,
+      "runtime": "calendar-final01",
+      "package_sha256": "2d5337795cec9f1d35c43a4bc29f337dace8219a09501d08e6f76b8ee689c8b4",
+      "addon_sha256": "9f9225d31b26151a3474f2470cbc3a3c424b856e266ef982c06686d66267c678"
+    },
+    {
+      "label": "calendar-suite-calendar-save-01",
+      "passes": 3,
+      "runtime": "calendar-final01",
+      "package_sha256": "2d5337795cec9f1d35c43a4bc29f337dace8219a09501d08e6f76b8ee689c8b4",
+      "addon_sha256": "9f9225d31b26151a3474f2470cbc3a3c424b856e266ef982c06686d66267c678"
+    },
+    {
+      "label": "calendar-suite-calendar-load-01",
+      "passes": 5,
+      "runtime": "calendar-final01",
+      "package_sha256": "2d5337795cec9f1d35c43a4bc29f337dace8219a09501d08e6f76b8ee689c8b4",
+      "addon_sha256": "9f9225d31b26151a3474f2470cbc3a3c424b856e266ef982c06686d66267c678"
+    },
+    {
+      "label": "calendar-suite-calendar-hub-01",
+      "passes": 2,
+      "runtime": "calendar-final01",
+      "package_sha256": "2d5337795cec9f1d35c43a4bc29f337dace8219a09501d08e6f76b8ee689c8b4",
+      "addon_sha256": "9f9225d31b26151a3474f2470cbc3a3c424b856e266ef982c06686d66267c678"
+    },
+    {
+      "label": "calendar-suite-calendar-live-01",
+      "passes": 6,
+      "runtime": "calendar-final01",
+      "package_sha256": "2d5337795cec9f1d35c43a4bc29f337dace8219a09501d08e6f76b8ee689c8b4",
+      "addon_sha256": "9f9225d31b26151a3474f2470cbc3a3c424b856e266ef982c06686d66267c678"
+    },
+    {
+      "label": "calendar-suite-calendar-accelerated-01",
+      "passes": 4,
+      "runtime": "calendar-final01",
+      "package_sha256": "2d5337795cec9f1d35c43a4bc29f337dace8219a09501d08e6f76b8ee689c8b4",
+      "addon_sha256": "9f9225d31b26151a3474f2470cbc3a3c424b856e266ef982c06686d66267c678"
+    },
+    {
+      "label": "calendar-suite-calendar-legacy-load-01",
+      "passes": 3,
+      "runtime": "calendar-final01",
+      "package_sha256": "2d5337795cec9f1d35c43a4bc29f337dace8219a09501d08e6f76b8ee689c8b4",
+      "addon_sha256": "9f9225d31b26151a3474f2470cbc3a3c424b856e266ef982c06686d66267c678"
+    },
+    {
+      "label": "calendar-suite-clean-core-01",
+      "passes": 33,
+      "runtime": "calendar-final01",
+      "package_sha256": "2d5337795cec9f1d35c43a4bc29f337dace8219a09501d08e6f76b8ee689c8b4",
+      "addon_sha256": "9f9225d31b26151a3474f2470cbc3a3c424b856e266ef982c06686d66267c678"
+    },
+    {
+      "label": "calendar-suite-clean-sleep-01",
+      "passes": 13,
+      "runtime": "calendar-final01",
+      "package_sha256": "2d5337795cec9f1d35c43a4bc29f337dace8219a09501d08e6f76b8ee689c8b4",
+      "addon_sha256": "9f9225d31b26151a3474f2470cbc3a3c424b856e266ef982c06686d66267c678"
+    },
+    {
+      "label": "calendar-suite-clean-repair-01",
+      "passes": 3,
+      "runtime": "calendar-final01",
+      "package_sha256": "2d5337795cec9f1d35c43a4bc29f337dace8219a09501d08e6f76b8ee689c8b4",
+      "addon_sha256": "9f9225d31b26151a3474f2470cbc3a3c424b856e266ef982c06686d66267c678"
+    },
+    {
+      "label": "calendar-suite-clean-bag-01",
+      "passes": 4,
+      "runtime": "calendar-final01",
+      "package_sha256": "2d5337795cec9f1d35c43a4bc29f337dace8219a09501d08e6f76b8ee689c8b4",
+      "addon_sha256": "9f9225d31b26151a3474f2470cbc3a3c424b856e266ef982c06686d66267c678"
+    },
+    {
+      "label": "calendar-suite-clean-live-01",
+      "passes": 3,
+      "runtime": "calendar-final01",
+      "package_sha256": "2d5337795cec9f1d35c43a4bc29f337dace8219a09501d08e6f76b8ee689c8b4",
+      "addon_sha256": "9f9225d31b26151a3474f2470cbc3a3c424b856e266ef982c06686d66267c678"
+    },
+    {
+      "label": "calendar-suite-wake-core-01",
+      "passes": 16,
+      "runtime": "calendar-final01",
+      "package_sha256": "2d5337795cec9f1d35c43a4bc29f337dace8219a09501d08e6f76b8ee689c8b4",
+      "addon_sha256": "9f9225d31b26151a3474f2470cbc3a3c424b856e266ef982c06686d66267c678"
+    },
+    {
+      "label": "calendar-suite-wake-load-01",
+      "passes": 6,
+      "runtime": "calendar-final01",
+      "package_sha256": "2d5337795cec9f1d35c43a4bc29f337dace8219a09501d08e6f76b8ee689c8b4",
+      "addon_sha256": "9f9225d31b26151a3474f2470cbc3a3c424b856e266ef982c06686d66267c678"
+    },
+    {
+      "label": "calendar-suite-wake-hub-01",
+      "passes": 2,
+      "runtime": "calendar-final01",
+      "package_sha256": "2d5337795cec9f1d35c43a4bc29f337dace8219a09501d08e6f76b8ee689c8b4",
+      "addon_sha256": "9f9225d31b26151a3474f2470cbc3a3c424b856e266ef982c06686d66267c678"
+    },
+    {
+      "label": "calendar-legacy-save01",
+      "passes": 2,
+      "runtime": "wake-final01",
+      "package_sha256": "5805e49874ba5f1af82de9d674963f4c867dee59ccfabc2af4b9746479b1dbb5",
+      "addon_sha256": "5ed0d4bb47ae64c56b7e87c55d2cc0922f342a0c65d99eb0d62c42cf538499c8"
+    },
+    {
+      "label": "calendar-legacy-rollback01",
+      "passes": 1,
+      "runtime": "wake-final01",
+      "package_sha256": "5805e49874ba5f1af82de9d674963f4c867dee59ccfabc2af4b9746479b1dbb5",
+      "addon_sha256": "5ed0d4bb47ae64c56b7e87c55d2cc0922f342a0c65d99eb0d62c42cf538499c8"
+    },
+    {
+      "label": "calendar-suite-calendar-existing-save-01",
+      "passes": 2,
+      "runtime": "calendar-final01",
+      "package_sha256": "2d5337795cec9f1d35c43a4bc29f337dace8219a09501d08e6f76b8ee689c8b4",
+      "addon_sha256": "02cd9ed4bd586096b483de230ccbc900cfc3372bdf4b9bee9ded41bca1009feb"
+    },
+    {
+      "label": "calendar-suite-calendar-existing-load-01",
+      "passes": 4,
+      "runtime": "calendar-final01",
+      "package_sha256": "2d5337795cec9f1d35c43a4bc29f337dace8219a09501d08e6f76b8ee689c8b4",
+      "addon_sha256": "02cd9ed4bd586096b483de230ccbc900cfc3372bdf4b9bee9ded41bca1009feb"
+    },
+    {
+      "label": "calendar-suite-calendar-capture-02",
+      "passes": 2,
+      "runtime": "calendar-final01",
+      "package_sha256": "2d5337795cec9f1d35c43a4bc29f337dace8219a09501d08e6f76b8ee689c8b4",
+      "addon_sha256": "02cd9ed4bd586096b483de230ccbc900cfc3372bdf4b9bee9ded41bca1009feb"
+    }
+  ],
+  "author_test": "CA502-CALENDAR-01 pending",
+  "save_sha256": {
+    "ca502c-calendar.zds": "f35027e26bbfd52837d86c456811fcd812c0ecf0b2c2b383687759a1d0cac3cd",
+    "ca502c-legacy.zds": "fc8e12fb61e87d482e3589ead2661bc63d6cc5f69a7ac890a860e6cdaadc8740",
+    "ca502c-existing.zds": "4130e58800086f33f26de0b35bcfa5205e57f5f19f2f1a1ac7dbbda7987b1736",
+    "ca502w-cleaning.zds": "a7797cca94b5a80f397268443adf5e980b09be9081d39dcd5f7638c67ab251ff"
+  },
+  "limits": [
+    "Seeded actual crafting/reading tasks exercise pause, identity, reservations and resumption; not full recipe acquisition UI.",
+    "Ordinary-clock fixture holds acceleration for observability; accelerated destination is independently exercised.",
+    "Unsupported exact-date forecasts stop explicitly instead of advertising an inaccurate completion time.",
+    "Functional native checks and inspected captures do not establish multiplayer or campaign-wide presentation performance acceptance.",
+    "Production package bytes are identical to calendar-probe02; all final gameplay tests use calendar-final01."
+  ],
+  "resolved_probes": [
+    "Live01/02/04/05 exposed fatigue health loss cancelling pre-sleep cleaning. Production now accounts this existing loss as periodic during preparation only; damage still occurs. Live06 and final suite pass.",
+    "Live03 diagnostic printed incompatible name/string ternary; corrected fixture types.",
+    "Edges01 used the DetachFromOwner callback as removal. The final fixture uses native RemoveInventory and checks foreign ownership.",
+    "Accelerated01 checked craft work after waiting additional real seconds beyond calendar completion. Final fixture observes the exact completion boundary; subsequent real-time work correctly resumes."
+  ]
+}

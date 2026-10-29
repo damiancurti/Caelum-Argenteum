@@ -1,6 +1,35 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.11** — 2026-10-25.
+Documentation version: **5.8.12** — 2026-10-25.
+
+Solid-contact continuation (#502): no production art or map changes. The
+unshipped contact laboratory reuses existing rat sprites and local development
+IWAD texture references; its map/PK3 are generated under build, never distributed.
+
+Surface-contamination continuation (#502): no production art/map changes. The
+two-room diagnostic map is generated only in build; it references the local
+development IWAD and is excluded from runtime packaging. No new sprite is needed.
+
+Equipment-cleaning continuation (#502): reuse the existing inventory/live-menu
+artwork. No sprite, model or map edits; inspected native captures are retained in
+assets/validation_5812/cleaning/captures. CA502-CLEAN-01 passed author review on2026-10-25.
+
+Soap-bathing continuation (#502): existing painted soap icon, bathroom artwork,
+RestLying sprites and live-menu controls are reused. No art or map assets change.
+Native UI captures: assets/validation_5812/bathing/captures.
+
+## 5.8.12 - Toilet interaction (#502)
+
+The posture continuation reuses existing RSDO seated/lying artwork, with no image,
+model or map edits. Toilet support derives from the existing wooden seat's0.52m
+height; tub support from its0.22m inner bottom (32MU/m). Center the seated sprite
+on the toilet and align the lying sprite to the tub's long axis. The accepted
+rest-camera distances/angles are reused. Native captures are in assets/validation_5812/postures.
+CA502-POSE-01 passed author review on2026-10-25 without qualifications.
+
+Reuse the accepted #410 domestic toilet model/sprite and household placement.
+No artwork or map geometry changes. New interaction text and progress are EN/ES;
+author review CA502-TOILET-01 covers behavior, not replacement art.
 
 ## 5.8.11 - Domestic bathroom artwork (#410)
 

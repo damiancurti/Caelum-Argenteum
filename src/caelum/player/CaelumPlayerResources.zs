@@ -534,6 +534,12 @@ class CaelumPlayerResources : Object play
         wholeDamage = CaelumTutorialSafety.HealthLoss(user, wholeDamage);
         user.health -= wholeDamage;
         user.player.health = user.health;
+        // El cansancio sigue dañando al limpiar antes del sueño automático,
+        // pero no se interpreta como un golpe que cancele esa preparación.
+        if(CaelumTimeSkipState.IsPreparingSleep(user)
+            && user.HungerState!=CaelumConstants.SURVIVAL_STATE_CRITICAL
+            && user.ThirstState!=CaelumConstants.SURVIVAL_STATE_CRITICAL)
+            CaelumRestSafety.PeriodicLoss(user,wholeDamage);
         CaelumRestState.Interrupt(user, "CA_REST_NEEDS");
 
         // Direct health loss deliberately bypasses armor and this class's

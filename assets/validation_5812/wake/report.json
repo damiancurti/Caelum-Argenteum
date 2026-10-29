@@ -1,0 +1,140 @@
+{
+  "issue": 502,
+  "version": "5.8.12",
+  "package_sha256": "5805e49874ba5f1af82de9d674963f4c867dee59ccfabc2af4b9746479b1dbb5",
+  "baseline_sha256": "2e7d8c6b0c65f17be568533c6c5b7383905f5c33612dbbe6d624168930614c7b",
+  "source_members": 16893,
+  "unchanged_maps": 169,
+  "unchanged_art_members": 13826,
+  "production_changes": [
+    "caelum/equipment/CaelumEquipmentCleaning.zs",
+    "caelum/world/CaelumRest.zs",
+    "caelum/world/CaelumTimeSkipModel.zs"
+  ],
+  "passes": 97,
+  "runs": [
+    {
+      "label": "wake-core-final02",
+      "passes": 16,
+      "runtime": "wake-final01",
+      "package_sha256": "5805e49874ba5f1af82de9d674963f4c867dee59ccfabc2af4b9746479b1dbb5",
+      "addon_sha256": "83078c682c0540e4e6cf1a39f460fc1fa99459422086d5b33b5ea119ff579656"
+    },
+    {
+      "label": "wake-final-wake-save01",
+      "passes": 1,
+      "runtime": "wake-final01",
+      "package_sha256": "5805e49874ba5f1af82de9d674963f4c867dee59ccfabc2af4b9746479b1dbb5",
+      "addon_sha256": "071a6a8a3704b813089b16c97aab72f1a3f2a7ac380e863bfee4faa7a4226b32"
+    },
+    {
+      "label": "wake-load-final02",
+      "passes": 6,
+      "runtime": "wake-final01",
+      "package_sha256": "5805e49874ba5f1af82de9d674963f4c867dee59ccfabc2af4b9746479b1dbb5",
+      "addon_sha256": "83078c682c0540e4e6cf1a39f460fc1fa99459422086d5b33b5ea119ff579656"
+    },
+    {
+      "label": "wake-hub-final02",
+      "passes": 2,
+      "runtime": "wake-final01",
+      "package_sha256": "5805e49874ba5f1af82de9d674963f4c867dee59ccfabc2af4b9746479b1dbb5",
+      "addon_sha256": "83078c682c0540e4e6cf1a39f460fc1fa99459422086d5b33b5ea119ff579656"
+    },
+    {
+      "label": "wake-legacy-load-final02",
+      "passes": 2,
+      "runtime": "wake-final01",
+      "package_sha256": "5805e49874ba5f1af82de9d674963f4c867dee59ccfabc2af4b9746479b1dbb5",
+      "addon_sha256": "83078c682c0540e4e6cf1a39f460fc1fa99459422086d5b33b5ea119ff579656"
+    },
+    {
+      "label": "wake-rev1-load-final02",
+      "passes": 6,
+      "runtime": "wake-final01",
+      "package_sha256": "5805e49874ba5f1af82de9d674963f4c867dee59ccfabc2af4b9746479b1dbb5",
+      "addon_sha256": "83078c682c0540e4e6cf1a39f460fc1fa99459422086d5b33b5ea119ff579656"
+    },
+    {
+      "label": "wake-live-final03",
+      "passes": 3,
+      "runtime": "wake-final01",
+      "package_sha256": "5805e49874ba5f1af82de9d674963f4c867dee59ccfabc2af4b9746479b1dbb5",
+      "addon_sha256": "707cd8a838b4e0cd3405e46e707d54f86b30806ff33dd7a5ccade359eb4a2188"
+    },
+    {
+      "label": "wake-capture-final03",
+      "passes": 2,
+      "runtime": "wake-final01",
+      "package_sha256": "5805e49874ba5f1af82de9d674963f4c867dee59ccfabc2af4b9746479b1dbb5",
+      "addon_sha256": "707cd8a838b4e0cd3405e46e707d54f86b30806ff33dd7a5ccade359eb4a2188"
+    },
+    {
+      "label": "clean-core-final03",
+      "passes": 33,
+      "runtime": "wake-final01",
+      "package_sha256": "5805e49874ba5f1af82de9d674963f4c867dee59ccfabc2af4b9746479b1dbb5",
+      "addon_sha256": "707cd8a838b4e0cd3405e46e707d54f86b30806ff33dd7a5ccade359eb4a2188"
+    },
+    {
+      "label": "clean-sleep-final03",
+      "passes": 13,
+      "runtime": "wake-final01",
+      "package_sha256": "5805e49874ba5f1af82de9d674963f4c867dee59ccfabc2af4b9746479b1dbb5",
+      "addon_sha256": "707cd8a838b4e0cd3405e46e707d54f86b30806ff33dd7a5ccade359eb4a2188"
+    },
+    {
+      "label": "clean-repair-final03",
+      "passes": 3,
+      "runtime": "wake-final01",
+      "package_sha256": "5805e49874ba5f1af82de9d674963f4c867dee59ccfabc2af4b9746479b1dbb5",
+      "addon_sha256": "707cd8a838b4e0cd3405e46e707d54f86b30806ff33dd7a5ccade359eb4a2188"
+    },
+    {
+      "label": "clean-bag-final03",
+      "passes": 4,
+      "runtime": "wake-final01",
+      "package_sha256": "5805e49874ba5f1af82de9d674963f4c867dee59ccfabc2af4b9746479b1dbb5",
+      "addon_sha256": "707cd8a838b4e0cd3405e46e707d54f86b30806ff33dd7a5ccade359eb4a2188"
+    },
+    {
+      "label": "clean-live-final03",
+      "passes": 3,
+      "runtime": "wake-final01",
+      "package_sha256": "5805e49874ba5f1af82de9d674963f4c867dee59ccfabc2af4b9746479b1dbb5",
+      "addon_sha256": "707cd8a838b4e0cd3405e46e707d54f86b30806ff33dd7a5ccade359eb4a2188"
+    },
+    {
+      "label": "wake-legacy-seed01",
+      "passes": 1,
+      "runtime": "surface-final05",
+      "package_sha256": "2e7d8c6b0c65f17be568533c6c5b7383905f5c33612dbbe6d624168930614c7b",
+      "addon_sha256": "b0501951182081bad1b380b7e14083dea6b46ae6831759641d2911af796136fc"
+    },
+    {
+      "label": "wake-legacy-rollback01",
+      "passes": 2,
+      "runtime": "surface-final05",
+      "package_sha256": "2e7d8c6b0c65f17be568533c6c5b7383905f5c33612dbbe6d624168930614c7b",
+      "addon_sha256": "b0501951182081bad1b380b7e14083dea6b46ae6831759641d2911af796136fc"
+    }
+  ],
+  "author_test": "CA502-WAKE-01 pending",
+  "save_sha256": {
+    "ca502w-cleaning.zds": "a7797cca94b5a80f397268443adf5e980b09be9081d39dcd5f7638c67ab251ff",
+    "ca502w-exhausted.zds": "fdd2768f409fca769f0f466f7bce3e530744c22a07d8807f1a56fee6440f3cd1",
+    "ca502h-clean.zds": "3bdabab30325c6808541564a95903b55002206aa2162fc6bed0d00360067fdb7"
+  },
+  "limits": [
+    "Exhaustion wake hook only; calendar-triggered sleep cleaning remains unfinished.",
+    "Immediate collapse and the existing wake lock are retained.",
+    "Exact-date forecasts explicitly reject multi-piece wake/sleep queues; ordinary world time remains supported.",
+    "Native functional checks and console captures, not multiplayer or campaign-wide presentation performance acceptance.",
+    "Earlier passing runs use the same final production bytes; the diagnostic addon gained the live helper and corrected assertions during the suite."
+  ],
+  "resolved_fixture_failures": [
+    "Probe core01-03: synthetic armor identity did not match ArmorModel; native profile reconciliation removed the invalid reference. Corrected fixture metadata, not gameplay.",
+    "Final load01: one Advance call completes one piece, not the full queue. Later clothing had real ambient exposure. Check every queued piece and exact remaining budgets.",
+    "Final live02: inherited reset supplies 100g soap, not 10g. Corrected the test threshold and manual instructions."
+  ]
+}

@@ -2,6 +2,7 @@
 class CaelumMetabolismData : Object
 {
     const REVISION=1;
+    const SESSION_REVISION=1;
     const SATIATION_PER_DEGREE=20.0;
     const CAPACITY=20.0;
     const TOILET_MAX_DEGREES=20.0;

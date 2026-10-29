@@ -2231,6 +2231,9 @@ class CaelumInventoryService : Object play
             carriedItemWeight += keyWeight;
         }
 
+        double soapCreditWeight=CaelumSoapSupply.Credit(user)*CaelumConstants.MATERIAL_UNIT_WEIGHT;
+        personalInventoryWeight+=soapCreditWeight;carriedItemWeight+=soapCreditWeight;
+
         // Los cofres cargados no reciben la compresión de la Caja Mágica.
         for(Inventory cursor=user.Inv;cursor!=null;cursor=cursor.Inv)
         {
@@ -3416,8 +3419,9 @@ class CaelumInventoryService : Object play
     static bool IsEquipmentItemCraftingLocked(CaelumPlayer user, int itemId)
     {
         if (!CaelumPlayerAuthority.CanRead(user)) return false;
-        return user.CraftingTaskActive && user.CraftingTaskTargetItemId > 0
-            && user.CraftingTaskTargetItemId == itemId;
+        return CaelumTimeSkipState.CleaningLocked(user,itemId)
+            || (user.CraftingTaskActive && user.CraftingTaskTargetItemId > 0
+                && user.CraftingTaskTargetItemId == itemId);
     }
 
     static bool IsSelectedMaterialCraftingLocked(CaelumPlayer user)
@@ -3436,7 +3440,7 @@ class CaelumInventoryService : Object play
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
         let recipeRecord=user.GetPersistentCharacterState(false);
         if(recipeRecord!=null){recipeRecord.RecipeClaimSlots.Clear();recipeRecord.RecipeClaimAmounts.Clear();}
-        CaelumWaterBoiling.Clear(user);CaelumChemistryCrafting.Clear(user);CaelumCampTask.Clear(user);
+        CaelumWaterBoiling.Clear(user);CaelumChemistryCrafting.Clear(user);CaelumCampTask.Clear(user);CaelumHygieneTask.Clear(user);CaelumBathTask.Clear(user);CaelumCleaningTask.Clear(user);
         user.CraftingTaskActive = false;
         user.CartridgeStationRevision = CaelumConstants.CARTRIDGE_STATION_REVISION;
         user.CraftingTaskLegacyRanged = false;
@@ -4732,6 +4736,8 @@ class CaelumInventoryService : Object play
         }
         if (user.IsSpecialInventoryKind(user.EquipmentSelectionKind))
         {
+            if(user.EquipmentSelectionKind==CaelumConstants.EQUIPMENT_KIND_MATERIAL
+                && user.EquipmentSelectionSpecialType==CaelumHygieneData.SOAP)CaelumBathSession.Show(user);
             return;
         }
         if (!user.EquipmentSelectionSizeCompatible)
@@ -6208,17 +6214,37 @@ class CaelumInventoryService : Object play
         user.EnsureCartridgeStationTask();
         if(user.CraftingTaskKind!=CaelumConstants.CRAFTING_TASK_BOIL
             && user.CraftingTaskKind!=CaelumConstants.CRAFTING_TASK_CAMP
+            && user.CraftingTaskKind!=CaelumConstants.CRAFTING_TASK_HYGIENE
+            && user.CraftingTaskKind!=CaelumConstants.CRAFTING_TASK_CLEAN
+            && user.CraftingTaskKind!=CaelumConstants.CRAFTING_TASK_BATH
             && user.CraftingTaskKind!=CaelumConstants.CRAFTING_TASK_REPAIR
             && user.CraftingTaskKind!=CaelumConstants.CRAFTING_TASK_DISMANTLE
             && CaelumSupportImplementData.RetiredRecipe(user.CraftingTaskRecipeIndex))
         {user.CancelCraftingTask();return;}
         int completedKind = user.CraftingTaskKind;
+        let repairedTarget=completedKind==CaelumConstants.CRAFTING_TASK_REPAIR?user.FindNativeEquipmentItemById(user.CraftingTaskTargetItemId):null;
         user.LastCraftingAction = CaelumConstants.CRAFTING_ACTION_NONE;
         int oldStation = user.ActiveCraftingStationType;
         int oldCapabilities = user.CraftingNetworkCapabilities;
         bool menuWasOpen = user.CraftingMenuOpen;
 
-        if(completedKind==CaelumConstants.CRAFTING_TASK_CAMP)
+        if(completedKind==CaelumConstants.CRAFTING_TASK_CLEAN)
+        {user.LastCraftingAction=CaelumCleaningTask.Complete(user)?CaelumConstants.CRAFTING_ACTION_PROCESSED:CaelumConstants.CRAFTING_ACTION_FAILED_TARGET;}
+        else if(completedKind==CaelumConstants.CRAFTING_TASK_BATH)
+        {
+            let bath=CaelumBathTask.Find(user);
+            bool done=CaelumBathTask.Attended(user) && bath!=null
+                && (bath.RemainingDegrees<0.000000001 || CaelumFoodIllness.Value(user)<=0);
+            user.LastCraftingAction=done?CaelumConstants.CRAFTING_ACTION_PROCESSED:CaelumConstants.CRAFTING_ACTION_FAILED_TARGET;
+            if(done)CaelumNotifications.Notify(user,String.Format(StringTable.Localize("CA_BATH_DONE",false),bath.RemovedDegrees,bath.SpentWater,bath.SpentSoap));
+        }
+        else if(completedKind==CaelumConstants.CRAFTING_TASK_HYGIENE)
+        {
+            user.CraftingTaskCompleting=true;
+            if(!CaelumHygieneTask.Complete(user))user.LastCraftingAction=CaelumConstants.CRAFTING_ACTION_FAILED_TARGET;
+            user.CraftingTaskCompleting=false;
+        }
+        else if(completedKind==CaelumConstants.CRAFTING_TASK_CAMP)
         {
             user.CraftingTaskCompleting=true;
             if(!CaelumCampTask.Complete(user))user.LastCraftingAction=CaelumConstants.CRAFTING_ACTION_FAILED_TARGET;
@@ -6266,7 +6292,7 @@ class CaelumInventoryService : Object play
             user.CraftingTaskCompleting = false;
         }
 
-        if(completedKind!=CaelumConstants.CRAFTING_TASK_BOIL && completedKind!=CaelumConstants.CRAFTING_TASK_CAMP
+        if(completedKind!=CaelumConstants.CRAFTING_TASK_CLEAN && completedKind!=CaelumConstants.CRAFTING_TASK_BATH && completedKind!=CaelumConstants.CRAFTING_TASK_HYGIENE && completedKind!=CaelumConstants.CRAFTING_TASK_BOIL && completedKind!=CaelumConstants.CRAFTING_TASK_CAMP
             && (user.LastCraftingAction==CaelumConstants.CRAFTING_ACTION_CREATED
             || user.LastCraftingAction==CaelumConstants.CRAFTING_ACTION_PROCESSED))
             CaelumRecipeLearning.CommitPractice(user);
@@ -6278,6 +6304,9 @@ class CaelumInventoryService : Object play
         user.RefreshEquipmentSelectionPreview();
         user.RefreshFormalInventorySnapshot();
         if (user.CraftingMenuOpen) { user.RefreshCraftingPreview(); }
+        if(completedKind==CaelumConstants.CRAFTING_TASK_CLEAN)CaelumCleaningTask.AfterComplete(user);
+        else if(completedKind==CaelumConstants.CRAFTING_TASK_REPAIR && user.LastCraftingAction==CaelumConstants.CRAFTING_ACTION_REPAIRED)
+            CaelumCleaningTask.Begin(user,repairedTarget,true);
     }
 
     static void BreakSelectedNativeEquipment(CaelumPlayer user)

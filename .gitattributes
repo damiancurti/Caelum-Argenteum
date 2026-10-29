@@ -371,3 +371,16 @@
 /src/models/caelum/props/bathrooms/*.obj text eol=lf
 /src/licenses/DOMESTIC_BATHROOMS_410.txt text eol=lf
 /assets/validation_5811/native/* -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+
+# Preserve issue502 hygiene native evidence.
+/assets/validation_5812/native/* -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/assets/validation_5812/calendar/native/* -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+
+/assets/validation_5812/combat/native/* -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+
+/assets/validation_5812/npc/native/* -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/assets/validation_5812/contact/native/* -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/assets/validation_5812/contact/development-failures/* -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+
+/assets/validation_5812/objects/native/* -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/assets/validation_5812/objects/development-failures/* -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol

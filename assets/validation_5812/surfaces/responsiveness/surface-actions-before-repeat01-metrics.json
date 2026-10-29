@@ -1,0 +1,45 @@
+{
+  "label": "surface-actions-before-repeat01",
+  "bounded": false,
+  "fixture": "surface-actions-before01.pk3",
+  "repeats": 6,
+  "scope": "Native render-callback intervals, not presentation or GPU timing.",
+  "repeated_f4_ms": [
+    1.3173,
+    0.3554,
+    0.8401,
+    0.4398,
+    0.4697,
+    0.8868
+  ],
+  "actions_ms": {
+    "F4": 0.2553,
+    "F5": 55.2053
+  },
+  "windows": {
+    "dry": {
+      "frames": 599,
+      "mean_ms": 16.66598631051753,
+      "p95_ms": 16.9718,
+      "p99_ms": 17.1822,
+      "max_ms": 17.7179,
+      "simulation_tics_s": 35.00113403674279
+    },
+    "rain": {
+      "frames": 948,
+      "mean_ms": 16.87960358649789,
+      "p95_ms": 17.0458,
+      "p99_ms": 17.6479,
+      "max_ms": 103.0969,
+      "simulation_tics_s": 34.99693558082821
+    },
+    "wait": {
+      "frames": 597,
+      "mean_ms": 16.733331155778895,
+      "p95_ms": 16.9526,
+      "p99_ms": 17.1837,
+      "max_ms": 71.9026,
+      "simulation_tics_s": 35.22927458504872
+    }
+  }
+}

@@ -106,7 +106,7 @@ class CaelumCraftingUI : Object
     static ui String Status(CaelumJournalOverlay view, CaelumPlayer user, CaelumCraftingBrowser browser)
     {
         if (user.CraftingTaskActive)
-            return String.Format("%s: %.1f/%.1f s · %s", L(user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_BOIL?"CA_WATER_BOIL":"CA_CRAFTING_TASK_ACTIVE"),
+            return String.Format("%s: %.1f/%.1f s · %s", L(user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_CLEAN?"CA_CLEAN_TITLE":user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_BATH?"CA_BATH_TITLE":user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_HYGIENE?"CA_DOMESTIC_TOILET":user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_BOIL?"CA_WATER_BOIL":"CA_CRAFTING_TASK_ACTIVE"),
                 user.CraftingTaskRemainingSeconds,user.CraftingTaskTotalSeconds,
                 L(user.CraftingTaskProgressing ? "CA_JOURNAL_CRAFTING_RUNNING" : "CA_JOURNAL_CRAFTING_PAUSED"));
         if (user.LastCraftingAction != CaelumConstants.CRAFTING_ACTION_NONE) return L(view.GetCraftingActionKey(user.LastCraftingAction));

@@ -86,6 +86,8 @@ class CaelumTimeSkipRules : Object play
 class CaelumTimeSkipState : Inventory
 {
     bool Open, Active, Sleeping, Pumping, Completed;
+    int HygieneRevision;
+    CaelumCalendarCleaning SleepCleaning;
     bool HadTask, TaskDone, UseTaskDefault, ConfirmPending, BagSupport;
     int TargetDay, TargetTics, Field, LastPumpTic, ElapsedTics, WorkTics, SleepTics;
     int LastHealth;
@@ -102,7 +104,20 @@ class CaelumTimeSkipState : Inventory
         if(user==null)return null;
         let skip=CaelumTimeSkipState(user.FindInventory("CaelumTimeSkipState"));
         if(skip==null && create)skip=CaelumTimeSkipState(user.GiveInventoryType("CaelumTimeSkipState"));
+        if(skip!=null && skip.HygieneRevision<1){skip.SleepCleaning=null;skip.HygieneRevision=1;}
         return skip;
+    }
+    static bool IsPreparingSleep(CaelumPlayer user)
+    {let s=Get(user);return s!=null && s.Active && s.SleepCleaning!=null;}
+    static bool PausesWork(CaelumPlayer user)
+    {let s=Get(user);return IsPreparingSleep(user) && !(s.SleepCleaning.WaitingExisting && CaelumCleaningTask.Active(user));}
+    static bool CleaningLocked(CaelumPlayer user,int itemId)
+    {let s=Get(user);return IsPreparingSleep(user) && s.SleepCleaning.Target!=null && s.SleepCleaning.Target.ItemId==itemId;}
+    static void RecordCleaned(CaelumPlayer user,CaelumEquipmentItem item)
+    {
+        let s=Get(user);
+        if(IsPreparingSleep(user) && s.SleepCleaning.WaitingExisting && item!=null && !s.SleepCleaning.WasCleaned(item))
+            s.SleepCleaning.AlreadyCleaned.Push(item);
     }
     static bool IsOpen(CaelumPlayer user) {let s=Get(user);return s!=null && s.Open;}
     // Fabricacion y lectura comparten el avance personal y su prevision.
@@ -115,7 +130,7 @@ class CaelumTimeSkipState : Inventory
     {
         let reading=CaelumRecipeSession.Get(user);
         if(user.CraftingTaskActive)return user.CraftingTaskRemainingSeconds
-            /(user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_BOIL || user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_CHEMISTRY || user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_CAMP?CaelumThermalRuntime.WorldTicSeconds()*TICRATE:1);
+            /(user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_BOIL || user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_CHEMISTRY || user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_CAMP || user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_HYGIENE || user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_BATH || user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_CLEAN?CaelumThermalRuntime.WorldTicSeconds()*TICRATE:1);
         return reading!=null?reading.RemainingSeconds:0;
     }
     static bool IsActive(CaelumPlayer user) {let s=Get(user);return s!=null && s.Active;}
@@ -248,12 +263,14 @@ class CaelumTimeSkipState : Inventory
         s.ElapsedTics=0;s.WorkTics=0;s.SleepTics=0;s.LastHealth=user.health;
         s.HadTask=TaskActive(user);s.TaskDone=false;s.Station=TaskAnchor(user);
         s.RefreshSupports(user);
+        if(s.Sleeping && CaelumCleaningTask.Active(user))
+        {s.Sleeping=false;s.SleepCleaning=new('CaelumCalendarCleaning');s.SleepCleaning.Capture(user);}
         PrepareStep(user);return s.Active;
     }
     static void FinishSkip(CaelumPlayer user,String reason="CA_SKIP_CANCELLED",bool close=false)
     {
         let s=Get(user);if(s==null)return;
-        s.Active=false;s.ConfirmPending=false;s.ReleaseFurniture(user);s.LastReason=reason;s.Completed=true;
+        s.Active=false;s.ConfirmPending=false;s.SleepCleaning=null;s.ReleaseFurniture(user);s.LastReason=reason;s.Completed=true;
         if(close){s.Open=false;s.Forecast=null;s.AnchorFurniture=null;}
         user.PersistCharacterState();
     }
@@ -262,14 +279,21 @@ class CaelumTimeSkipState : Inventory
     static void PrepareStep(CaelumPlayer user)
     {
         let s=Get(user);if(s==null || !s.Active)return;
-        s.Sleeping=CaelumTimeSkipRules.SleepingNext(s.Sleeping,user.CurrentSleep);
         String reason=CaelumTimeSkipRules.BlockReason(user,false);
         if(s.OriginMap!=level.MapName || (user.Pos-s.OriginPosition).Length()>4)reason="CA_REST_MOVED";
         if(user.health<s.LastHealth)reason="CA_REST_DAMAGE";
         if(s.HadTask && !s.TaskDone && (!TaskActive(user)
             || TaskAnchor(user)!=s.Station))reason="CA_SKIP_TASK_CHANGED";
         if(reason.Length()!=0){FinishSkip(user,reason);return;}
-        let support=s.Sleeping?s.Bed:TaskActive(user)?null:s.Chair;
+        bool sleeping=CaelumTimeSkipRules.SleepingNext(s.Sleeping,user.CurrentSleep);
+        if(!s.Sleeping && (sleeping || s.SleepCleaning!=null))
+        {
+            if(s.SleepCleaning==null){s.SleepCleaning=new('CaelumCalendarCleaning');s.SleepCleaning.Capture(user);}
+            s.SleepCleaning.Prepare(user);sleeping=s.SleepCleaning.Done;
+            if(sleeping)s.SleepCleaning=null;
+        }
+        s.Sleeping=sleeping;
+        let support=s.Sleeping?s.Bed:(TaskActive(user) || s.SleepCleaning!=null)?null:s.Chair;
         if(support!=null && support.Occupant!=null && support.Occupant!=user)support=null;
         if(s.Furniture!=support)
         {s.ReleaseFurniture(user);s.Furniture=support;if(support!=null)support.Occupant=user;}
@@ -283,6 +307,7 @@ class CaelumTimeSkipState : Inventory
         if(user.health<s.LastHealth){FinishSkip(user,"CA_REST_DAMAGE");return;}
         s.LastHealth=user.health;
         if(CaelumScheduleState.SiegeActive(user,level.MapName)){FinishSkip(user,"CA_EVENT_SIEGE_INTERRUPT");return;}
+        if(s.SleepCleaning!=null)s.SleepCleaning.Advance(user,CaelumThermalRuntime.WorldTicSeconds());
         if(s.HadTask && !TaskActive(user))s.TaskDone=true;
         int day=NowDay(user),tics=NowTics(user);
         if(day>s.TargetDay || (day==s.TargetDay && tics>=s.TargetTics))FinishSkip(user,"CA_SKIP_COMPLETE");
@@ -335,7 +360,10 @@ class CaelumTimeSkipState : Inventory
         if(reason.Length()!=0){FinishSkip(user,reason);return;}
         s.RefreshSupports(user);
         s.Pumping=true;
-        for(int i=0;i<CaelumTimeSkipRules.BATCH_TICS && s.Active;i++)
+        // El trabajo doméstico mueve un cuerpo con colisión nativa. Repartir
+        // esos pasos entre fotogramas evita una ráfaga larga sin presentar UI.
+        int batch=CaelumHousekeepingWork.Pending()?TICRATE:CaelumTimeSkipRules.BATCH_TICS;
+        for(int i=0;i<batch && s.Active;i++)
         {
             PrepareStep(user);if(!s.Active)break;
             CaelumTimeAdvanceState.SimulatePersonalTic(user);

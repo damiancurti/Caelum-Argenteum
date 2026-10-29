@@ -6546,3 +6546,98 @@ CA_DOMESTIC_BATHTUB = "Bañera";
 CA_DOMESTIC_TOILET = "Inodoro";
 CA_DOMESTIC_WATER_HINT = "Usar: consultar agua | Inventario: recoger en un recipiente";
 CA_DOMESTIC_WATER_AVAILABLE = "Reserva potable de la vivienda: %.2f L. Seleccioná un recipiente en el inventario y recogé agua mirando este sanitario.";
+
+[enu default]
+CA_TOILET_HINT = "{bind:+use}: Use toilet (1 world minute, 10 L)";
+CA_TOILET_CANCEL_HINT = "{bind:+use}: Cancel";
+CA_TOILET_PROGRESS = "Toilet: %.1f world seconds remaining";
+CA_TOILET_STARTED = "Using toilet. Stay nearby; use again to cancel. Water and cleansing are applied on completion.";
+CA_TOILET_NO_CAPACITY = "No contamination or metabolic cleansing capacity available.";
+CA_TOILET_NO_WATER = "The household reserve needs 10 L of potable water.";
+CA_TOILET_UNAVAILABLE = "Toilet use ended without spending water: no cleansing or water available.";
+CA_TOILET_DONE = "Contamination reduced by %.2f. Used 10 L of household water.";
+CA_HYGIENE_CANCELLED = "Hygiene action cancelled.";
+[es]
+CA_TOILET_HINT = "{bind:+use}: Usar inodoro (1 minuto del mundo, 10 L)";
+CA_TOILET_CANCEL_HINT = "{bind:+use}: Cancelar";
+CA_TOILET_PROGRESS = "Inodoro: quedan %.1f segundos del mundo";
+CA_TOILET_STARTED = "Usando el inodoro. Permanecé cerca; usá otra vez para cancelar. El agua y la limpieza se aplican al terminar.";
+CA_TOILET_NO_CAPACITY = "No hay contaminación o capacidad metabólica disponible para limpiar.";
+CA_TOILET_NO_WATER = "La reserva doméstica necesita 10 L de agua potable.";
+CA_TOILET_UNAVAILABLE = "Uso terminado sin gastar agua: ya no hay contaminación, capacidad o agua disponible.";
+CA_TOILET_DONE = "Contaminación reducida en %.2f. Se usaron 10 L de agua doméstica.";
+CA_HYGIENE_CANCELLED = "Acción de higiene cancelada.";
+
+[enu default]
+CA_BATHTUB_POSE_HINT = "{bind:+use}: Lie in bathtub | Use or move to stand up";
+[es]
+CA_BATHTUB_POSE_HINT = "{bind:+use}: Acostarse en la bañera | Usar o moverse para levantarse";
+
+[enu default]
+CA_BATHTUB_POSE_STARTED = "Lying in the bathtub. Use again or move to stand up.";
+[es]
+CA_BATHTUB_POSE_STARTED = "Acostado en la bañera. Usa de nuevo o muévete para levantarte.";
+
+[enu default]
+CA_BATH_TITLE = "Bathing";
+CA_BATH_TERMS = "Choose how much contamination to remove. Water and soap are consumed progressively; cancelling keeps the cleaning already done.";
+CA_BATH_SELECTED = "Cleanse %.2f points (available: %.2f)";
+CA_BATH_COST = "Water: %.3f L | Soap: %.3f g | Time: %.1f world s";
+CA_BATH_STOCK = "Soap available: %.3f g (opened remainder: %.3f g)";
+CA_BATH_MINUS = "-1 point";
+CA_BATH_PLUS = "+1 point";
+CA_BATH_MINUS10 = "-10 points";
+CA_BATH_PLUS10 = "+10 points";
+CA_BATH_MAX = "Maximum";
+CA_BATH_START = "Bathe";
+CA_BATH_NEED_SOURCE = "Use soap while lying in a bathtub, facing an accessible water fixture, or immersed in potable water.";
+CA_BATH_STARTED = "Bathing. Use soap again, leave the water or stand up to cancel.";
+CA_BATH_CANCELLED = "Bath cancelled. Cleaning and resources already spent are retained.";
+CA_BATH_DONE = "Bath complete: %.2f contamination removed; %.3f L water and %.3f g soap used.";
+
+[es]
+CA_BATH_TITLE = "Baño";
+CA_BATH_TERMS = "Elegí cuánta contaminación quitar. El agua y el jabón se gastan progresivamente; cancelar conserva lo ya limpiado.";
+CA_BATH_SELECTED = "Limpiar %.2f puntos (disponible: %.2f)";
+CA_BATH_COST = "Agua: %.3f L | Jabón: %.3f g | Tiempo: %.1f s del mundo";
+CA_BATH_STOCK = "Jabón disponible: %.3f g (sobrante abierto: %.3f g)";
+CA_BATH_MINUS = "-1 punto";
+CA_BATH_PLUS = "+1 punto";
+CA_BATH_MINUS10 = "-10 puntos";
+CA_BATH_PLUS10 = "+10 puntos";
+CA_BATH_MAX = "Máximo";
+CA_BATH_START = "Bañarse";
+CA_BATH_NEED_SOURCE = "Usá el jabón acostado en una bañera, mirando una fuente accesible o sumergido en agua potable.";
+CA_BATH_STARTED = "Bañándose. Usá el jabón otra vez, salí del agua o levantate para cancelar.";
+CA_BATH_CANCELLED = "Baño cancelado. Se conserva lo ya limpiado y gastado.";
+CA_BATH_DONE = "Baño terminado: %.2f de contaminación eliminada; %.3f L de agua y %.3f g de jabón usados.";
+
+[enu default]
+CA_CLEAN_TITLE = "Equipment cleaning";
+CA_CLEAN_START = "Clean";
+CA_CLEAN_AREA = "Contamination: %.2f | Surface: %.3f m²";
+CA_CLEAN_SUPPLIES = "Potable water carried: %.3f L | Soap available: %.3f g";
+CA_CLEAN_CLOTH_READY = "Reusable cloth available.";
+CA_CLEAN_CLOTH_MISSING = "A reusable cloth is required.";
+CA_CLEAN_TERMS = "Water and soap are spent progressively. Cancel from the inventory with J; cleaning already done is retained.";
+CA_CLEAN_SELECT = "Select a weapon, shield, garment or armor piece to clean.";
+CA_CLEAN_CALENDAR = "Cleaning equipment before sleep.";
+CA_CLEAN_STARTED = "Cleaning equipment. Open the inventory and press J to cancel.";
+CA_CLEAN_CANCELLED = "Cleaning cancelled. Progress and resources already spent are retained.";
+CA_CLEAN_SKIPPED = "Equipment cleaning skipped: insufficient potable water, soap or cloth.";
+CA_CLEAN_DONE = "Equipment cleaning complete.";
+
+[es]
+CA_CLEAN_TITLE = "Limpieza del equipo";
+CA_CLEAN_START = "Limpiar";
+CA_CLEAN_AREA = "Contaminación: %.2f | Superficie: %.3f m²";
+CA_CLEAN_SUPPLIES = "Agua potable llevada: %.3f L | Jabón disponible: %.3f g";
+CA_CLEAN_CLOTH_READY = "Trapo reutilizable disponible.";
+CA_CLEAN_CLOTH_MISSING = "Se necesita un trapo reutilizable.";
+CA_CLEAN_TERMS = "El agua y el jabón se gastan progresivamente. Cancelá desde el inventario con J; se conserva lo ya limpiado.";
+CA_CLEAN_SELECT = "Seleccioná un arma, escudo, prenda o pieza de armadura para limpiar.";
+CA_CLEAN_CALENDAR = "Limpiando el equipo antes de dormir.";
+CA_CLEAN_STARTED = "Limpiando equipo. Abrí el inventario y pulsá J para cancelar.";
+CA_CLEAN_CANCELLED = "Limpieza cancelada. Se conserva lo ya limpiado y gastado.";
+CA_CLEAN_SKIPPED = "Limpieza omitida: falta agua potable, jabón o trapo.";
+CA_CLEAN_DONE = "Limpieza del equipo terminada.";

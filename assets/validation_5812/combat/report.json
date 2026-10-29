@@ -1,0 +1,111 @@
+{
+  "issue": 502,
+  "version": "5.8.12",
+  "production_sha256": "337013c42d15dffe45bd626f434463966e8561e0c6fc7f635c6e3548c3aa20ec",
+  "source_identical_members": 16894,
+  "unchanged_maps": 169,
+  "unchanged_art_members": 13826,
+  "native_pass": 87,
+  "native_fail": 0,
+  "runs": [
+    {
+      "label": "combat-final-core02",
+      "executed_pass": 19,
+      "runtime_sha256": "337013c42d15dffe45bd626f434463966e8561e0c6fc7f635c6e3548c3aa20ec",
+      "addon_sha256": "5bc5dfcc064211ba0863b656767398c33c0098d86dcee553b62b7ec829b173fe"
+    },
+    {
+      "label": "combat-final-live02",
+      "executed_pass": 5,
+      "runtime_sha256": "337013c42d15dffe45bd626f434463966e8561e0c6fc7f635c6e3548c3aa20ec",
+      "addon_sha256": "5bc5dfcc064211ba0863b656767398c33c0098d86dcee553b62b7ec829b173fe"
+    },
+    {
+      "label": "combat-final-trace01",
+      "executed_pass": 3,
+      "runtime_sha256": "337013c42d15dffe45bd626f434463966e8561e0c6fc7f635c6e3548c3aa20ec",
+      "addon_sha256": "5bc5dfcc064211ba0863b656767398c33c0098d86dcee553b62b7ec829b173fe"
+    },
+    {
+      "label": "combat-final-save01",
+      "executed_pass": 5,
+      "runtime_sha256": "337013c42d15dffe45bd626f434463966e8561e0c6fc7f635c6e3548c3aa20ec",
+      "addon_sha256": "5bc5dfcc064211ba0863b656767398c33c0098d86dcee553b62b7ec829b173fe"
+    },
+    {
+      "label": "combat-final-load01",
+      "executed_pass": 6,
+      "runtime_sha256": "337013c42d15dffe45bd626f434463966e8561e0c6fc7f635c6e3548c3aa20ec",
+      "addon_sha256": "5bc5dfcc064211ba0863b656767398c33c0098d86dcee553b62b7ec829b173fe"
+    },
+    {
+      "label": "combat-final-hub01",
+      "executed_pass": 6,
+      "runtime_sha256": "337013c42d15dffe45bd626f434463966e8561e0c6fc7f635c6e3548c3aa20ec",
+      "addon_sha256": "5bc5dfcc064211ba0863b656767398c33c0098d86dcee553b62b7ec829b173fe"
+    },
+    {
+      "label": "combat-old-save02",
+      "executed_pass": 1,
+      "runtime_sha256": "2d5337795cec9f1d35c43a4bc29f337dace8219a09501d08e6f76b8ee689c8b4",
+      "addon_sha256": "23e782af703b7a940f2027442675ac71d003b6440239c8dbe763a5102a1bf801"
+    },
+    {
+      "label": "combat-final-legacy01",
+      "executed_pass": 5,
+      "runtime_sha256": "337013c42d15dffe45bd626f434463966e8561e0c6fc7f635c6e3548c3aa20ec",
+      "addon_sha256": "5bc5dfcc064211ba0863b656767398c33c0098d86dcee553b62b7ec829b173fe"
+    },
+    {
+      "label": "combat-rollback02",
+      "executed_pass": 3,
+      "runtime_sha256": "2d5337795cec9f1d35c43a4bc29f337dace8219a09501d08e6f76b8ee689c8b4",
+      "addon_sha256": "23e782af703b7a940f2027442675ac71d003b6440239c8dbe763a5102a1bf801"
+    },
+    {
+      "label": "combat-final-calendar01",
+      "executed_pass": 31,
+      "runtime_sha256": "337013c42d15dffe45bd626f434463966e8561e0c6fc7f635c6e3548c3aa20ec",
+      "addon_sha256": "eef5bae9867b048a2cdfbef3511b6cb2b0e81af38fd955bab9d64b8c7473a998"
+    },
+    {
+      "label": "combat-final-clean01",
+      "executed_pass": 3,
+      "runtime_sha256": "337013c42d15dffe45bd626f434463966e8561e0c6fc7f635c6e3548c3aa20ec",
+      "addon_sha256": "08ce444ce571994520080480543fb86559d649401b2d2bb95ca3986d3425c69f"
+    }
+  ],
+  "performance": [
+    {
+      "label": "combat-perf-baseline03",
+      "runtime_sha256": "2d5337795cec9f1d35c43a4bc29f337dace8219a09501d08e6f76b8ee689c8b4",
+      "frames": 1199,
+      "mean_callback_ms": 16.666173894912426,
+      "p95_callback_ms": 16.979,
+      "p99_callback_ms": 17.1904,
+      "worst_callback_ms": 17.5378,
+      "phase_elapsed_ms": 20053.271700024605,
+      "presentmon_available": false
+    },
+    {
+      "label": "combat-perf-final01",
+      "runtime_sha256": "337013c42d15dffe45bd626f434463966e8561e0c6fc7f635c6e3548c3aa20ec",
+      "frames": 1199,
+      "mean_callback_ms": 16.666069474562136,
+      "p95_callback_ms": 16.9805,
+      "p99_callback_ms": 17.1832,
+      "worst_callback_ms": 17.522,
+      "phase_elapsed_ms": 20045.596599936485,
+      "presentmon_available": false
+    }
+  ],
+  "author_acceptance": "CA502-COMBAT-01 pending; CA502-CALENDAR-01 accepted2026-10-25",
+  "limitations": [
+    "Render callbacks are a cadence proxy; PresentMon permission denied. No campaign-wide FPS acceptance.",
+    "Ambient and continuous actor contact plus NPC housekeeping remain pending.",
+    "Native None damage retains existing defense routing."
+  ],
+  "final_diagnostic_sha256": "183eda5f3358c3d46cf8be54b89fe350687194335c127756bdcfc6f84aa581a5",
+  "generator_deterministic": true,
+  "agent_visual_review": "Native overlay: sword80, target0.8, wearer0, no shield. Five scenarios separately native-tested. Author acceptance pending."
+}

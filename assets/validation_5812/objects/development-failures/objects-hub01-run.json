@@ -1,0 +1,67 @@
+﻿{
+    "label":  "objects-hub01",
+    "runtime":  "objects-dev03",
+    "started_utc":  "2026-10-26T00:41:19.3661167Z",
+    "engine":  "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "engine_sha256":  "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+    "iwad_sha256":  "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+    "package_sha256":  "8D48BF400DCA64587A782083BCCB9E8A042756992EA11FB80FF7DFDE486D1740",
+    "addon_sha256":  "22032499C254678E02263443DC5096D432AEFC08B4B0D618959ED7FE15BF303B",
+    "initial_config":  "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\ncl_capfps=false\nvid_fullscreen=false\nvid_defwidth=1280\nvid_defheight=720\nwin_w=1296\nwin_h=759\nwin_maximized=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu",
+    "arguments":  [
+                      "-noautoload",
+                      "-iwad",
+                      "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+                      "-file",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-hygiene-work\\build\\issue502-hygiene\\objects-dev03\\caelum_argenteum_dev.pk3\"",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-hygiene-work\\build\\issue502-hygiene\\object-checks.pk3\"",
+                      "-config",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-hygiene-work\\build\\issue502-hygiene\\objects-hub01.ini\"",
+                      "-savedir",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-hygiene-work\\build\\issue502-hygiene\"",
+                      "-width",
+                      "1280",
+                      "-height",
+                      "720",
+                      "-window",
+                      "-rngseed",
+                      "502",
+                      "-skill",
+                      "2",
+                      "+logfile",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-hygiene-work\\build\\issue502-hygiene\\objects-hub01.txt\"",
+                      "+con_notifytime",
+                      "0",
+                      "-nomouse",
+                      "-loadgame",
+                      "\"ca502o-current.zds\"",
+                      "+exec",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-hygiene-work\\build\\issue502-hygiene\\object-hub.cfg\""
+                  ],
+    "command_script":  "wait 1; changemap CAH001; wait 70; changemap CAO502; wait 1; netevent ca502o_load; wait 3; quit\n",
+    "cpu":  [
+                {
+                    "Name":  "AMD Ryzen 9 5950X 16-Core Processor            ",
+                    "NumberOfCores":  16,
+                    "NumberOfLogicalProcessors":  32
+                }
+            ],
+    "gpu":  [
+                {
+                    "Name":  "Parsec Virtual Display Adapter",
+                    "DriverVersion":  "0.45.0.0"
+                },
+                {
+                    "Name":  "NVIDIA GeForce RTX 3070 Ti",
+                    "DriverVersion":  "32.0.15.7688"
+                }
+            ],
+    "os":  {
+               "Caption":  "Microsoft Windows 11 Pro",
+               "Version":  "10.0.26200"
+           },
+    "pid":  31980,
+    "startup_error":  true,
+    "exit_code":  -1,
+    "finished_utc":  "2026-10-26T00:41:30.4956461Z"
+}

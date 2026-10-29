@@ -149,7 +149,7 @@ class CaelumRestBag : CaelumRestFurniture
     {
         Super.Tick();
         // Incluye restos de un hub previo: la referencia de sesión manda.
-        if (Occupant == null) Destroy();
+        if (Occupant == null && !CaelumCleaningTask.KeepsBed(Bag==null?null:CaelumPlayer(Bag.Owner),self)) Destroy();
     }
 
     Default { Radius 46; Height 8; -SOLID +NOBLOCKMAP Tag "$CA_SLEEPING_BAG_NAME"; }

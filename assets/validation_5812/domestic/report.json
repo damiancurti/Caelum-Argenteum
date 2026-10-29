@@ -1,0 +1,216 @@
+{
+  "runtime": "domestic-final02",
+  "runtime_sha256": "41db7950e5e4cab2d7ba6a56829e939e0602a5a2a47c77ba679aadb3d1943991",
+  "source_identical_members": 16901,
+  "maps_and_art_unchanged": 13995,
+  "executed_passes": 193,
+  "failures": 0,
+  "runs": [
+    {
+      "label": "domestic-old-save01",
+      "passed": 1,
+      "runtime_sha256": "8616456f726ec0de5d2df7e7bd510150c951061e6ae2c6dc4f5582f9b4b3008d",
+      "fixture_sha256": "b0d2ffaf1e3be0ac776d45f3f7521e691f7745ec27777b2fd35caeb2a34aed88",
+      "log_sha256": "9f0610a4d61df8e90ebfebecdba982a6717ffa28ab39a669c0ef03e4267d616a"
+    },
+    {
+      "label": "domestic-delivery-rollback",
+      "passed": 1,
+      "runtime_sha256": "8616456f726ec0de5d2df7e7bd510150c951061e6ae2c6dc4f5582f9b4b3008d",
+      "fixture_sha256": "41ae2b90be1970421c9be6bc303851dae4f40c8ce5fb4e3e9943f2455de3e556",
+      "log_sha256": "869833665b381765b6988ae9e7ecbab78196922867ff6b29dc4e8b8623d1f2df"
+    },
+    {
+      "label": "domestic-delivery-core",
+      "passed": 32,
+      "runtime_sha256": "41db7950e5e4cab2d7ba6a56829e939e0602a5a2a47c77ba679aadb3d1943991",
+      "fixture_sha256": "146e811fcd726230e024fbbd9a15f6b8aa1ad8176f398c55997266f7ec5145c8",
+      "log_sha256": "266a1ddb5cd4ecfede29a76fa6ae277e5d50634c9a54fd2f29b6d06c344742c7"
+    },
+    {
+      "label": "domestic-delivery-load",
+      "passed": 3,
+      "runtime_sha256": "41db7950e5e4cab2d7ba6a56829e939e0602a5a2a47c77ba679aadb3d1943991",
+      "fixture_sha256": "146e811fcd726230e024fbbd9a15f6b8aa1ad8176f398c55997266f7ec5145c8",
+      "log_sha256": "82deb9c6b9bc1288e1759ec7474108ae28f8bcdeaf6846639e3ffca2608571c4"
+    },
+    {
+      "label": "domestic-delivery-hub",
+      "passed": 6,
+      "runtime_sha256": "41db7950e5e4cab2d7ba6a56829e939e0602a5a2a47c77ba679aadb3d1943991",
+      "fixture_sha256": "146e811fcd726230e024fbbd9a15f6b8aa1ad8176f398c55997266f7ec5145c8",
+      "log_sha256": "ad4cbacec2d98f158b06e4f4889cc2daf89fd5ed5842ef9e24a2f9afb03eec6a"
+    },
+    {
+      "label": "domestic-delivery-shortages",
+      "passed": 11,
+      "runtime_sha256": "41db7950e5e4cab2d7ba6a56829e939e0602a5a2a47c77ba679aadb3d1943991",
+      "fixture_sha256": "146e811fcd726230e024fbbd9a15f6b8aa1ad8176f398c55997266f7ec5145c8",
+      "log_sha256": "2af4c10b05a85af1a5d245792188579e5bed54d66cfcfeb75329e71e97be229b"
+    },
+    {
+      "label": "domestic-delivery-clock",
+      "passed": 5,
+      "runtime_sha256": "41db7950e5e4cab2d7ba6a56829e939e0602a5a2a47c77ba679aadb3d1943991",
+      "fixture_sha256": "146e811fcd726230e024fbbd9a15f6b8aa1ad8176f398c55997266f7ec5145c8",
+      "log_sha256": "599bcaf0b63f2f1c7cd1d53d088adf8202cef56dc87da094c9d3b9398b6d2410"
+    },
+    {
+      "label": "domestic-delivery-skipped",
+      "passed": 5,
+      "runtime_sha256": "41db7950e5e4cab2d7ba6a56829e939e0602a5a2a47c77ba679aadb3d1943991",
+      "fixture_sha256": "146e811fcd726230e024fbbd9a15f6b8aa1ad8176f398c55997266f7ec5145c8",
+      "log_sha256": "642e6fdb45d5e845bddefc4829bf8acbdbc9c9e5dae9036d72fd7798a3e5b004"
+    },
+    {
+      "label": "domestic-delivery-economy",
+      "passed": 5,
+      "runtime_sha256": "41db7950e5e4cab2d7ba6a56829e939e0602a5a2a47c77ba679aadb3d1943991",
+      "fixture_sha256": "146e811fcd726230e024fbbd9a15f6b8aa1ad8176f398c55997266f7ec5145c8",
+      "log_sha256": "a7afe8c7657924712bb3490cc2240d023c634660bd5ea851098bdc98aa664c65"
+    },
+    {
+      "label": "domestic-delivery-controls",
+      "passed": 1,
+      "runtime_sha256": "41db7950e5e4cab2d7ba6a56829e939e0602a5a2a47c77ba679aadb3d1943991",
+      "fixture_sha256": "146e811fcd726230e024fbbd9a15f6b8aa1ad8176f398c55997266f7ec5145c8",
+      "log_sha256": "f60d443bcf90508d53aee9fb912ad237d5be2977467710df2bfe1474f413e31b"
+    },
+    {
+      "label": "domestic-delivery-legacy",
+      "passed": 2,
+      "runtime_sha256": "41db7950e5e4cab2d7ba6a56829e939e0602a5a2a47c77ba679aadb3d1943991",
+      "fixture_sha256": "146e811fcd726230e024fbbd9a15f6b8aa1ad8176f398c55997266f7ec5145c8",
+      "log_sha256": "587efa78e245e7be7f8e80f2dd9daf22862dbcdd2bbe3163a533c003ff3ebb8b"
+    },
+    {
+      "label": "domestic-regression-object",
+      "passed": 42,
+      "runtime_sha256": "116641ef32cb2c6200c6eb1ec7af5a9143b514b94b892699f894e96aa1204b30",
+      "fixture_sha256": "d410a3b21fdb7f56d73d43e6f43f9502f59ff6bffe7dc7ef80aeffa944047e84",
+      "log_sha256": "150b9905db89b758cc36384d7ed238e3dc6e43b2b18aac26ac60b5687ac1f0f5"
+    },
+    {
+      "label": "domestic-regression-npc",
+      "passed": 20,
+      "runtime_sha256": "116641ef32cb2c6200c6eb1ec7af5a9143b514b94b892699f894e96aa1204b30",
+      "fixture_sha256": "274c1d9aaa13a2572d8d5d87427f682dcae9076839802d9ea64a63101970c522",
+      "log_sha256": "c267bad32d3865e9ac3f6efd10bb045245b412014f84ad8ff584aaa781e4c0b3"
+    },
+    {
+      "label": "domestic-regression-contact",
+      "passed": 24,
+      "runtime_sha256": "116641ef32cb2c6200c6eb1ec7af5a9143b514b94b892699f894e96aa1204b30",
+      "fixture_sha256": "072fb9c73dfa162d9da03be50858618ca93093562725c3b623c2cbc1f827158e",
+      "log_sha256": "5510e8d1e63df33f7368fa05bd774bd887cba67cb3657d63eb6886384b9fd02d"
+    },
+    {
+      "label": "domestic-regression-calendar",
+      "passed": 31,
+      "runtime_sha256": "116641ef32cb2c6200c6eb1ec7af5a9143b514b94b892699f894e96aa1204b30",
+      "fixture_sha256": "eef5bae9867b048a2cdfbef3511b6cb2b0e81af38fd955bab9d64b8c7473a998",
+      "log_sha256": "05ebb5b84538f0f1d31909ccc849770b6cb68b177824bb6f826135fabadcd05e"
+    },
+    {
+      "label": "domestic-regression-accelerated",
+      "passed": 4,
+      "runtime_sha256": "41db7950e5e4cab2d7ba6a56829e939e0602a5a2a47c77ba679aadb3d1943991",
+      "fixture_sha256": "eef5bae9867b048a2cdfbef3511b6cb2b0e81af38fd955bab9d64b8c7473a998",
+      "log_sha256": "e389a2b2cbdf56c091c62a0ea4315244c2a5f248c1914b720301fe1838b169d6"
+    }
+  ],
+  "performance": [
+    {
+      "label": "domestic-perf-before01",
+      "utc": "2026-10-26T02:11:19.444226+00:00",
+      "runtime_sha256": "8616456f726ec0de5d2df7e7bd510150c951061e6ae2c6dc4f5582f9b4b3008d",
+      "fixture_sha256": "d6eed8a45a26d1bd25b10ff2b8242d91f3f64bd0b5ceb4a126b9fc27f00febf7",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "arguments": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-hygiene-work\\build\\issue502-hygiene\\objects-final03\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-hygiene-work\\build\\issue502-hygiene\\domestic-perf.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-hygiene-work\\build\\issue502-hygiene\\domestic-perf-before01.ini",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "502",
+        "-nomouse",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-hygiene-work\\build\\issue502-hygiene\\domestic-perf-before01.txt",
+        "+con_notifytime",
+        "0",
+        "+map",
+        "CAH000",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-hygiene-work\\build\\issue502-hygiene\\domestic-perf-before01.cfg"
+      ],
+      "config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\ncl_capfps=false\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nvid_defwidth=1280\nvid_defheight=720\n",
+      "simulation_tics": 700,
+      "phase_elapsed_ms": 20066.4003000129,
+      "phase_bound_uncertainty_ms": 100,
+      "frames": 1199,
+      "mean_callback_ms": 16.666103753127608,
+      "p95_callback_ms": 16.9792,
+      "p99_callback_ms": 17.1818,
+      "worst_callback_ms": 18.6078,
+      "soap_remaining_whole_grams": 300,
+      "note": "Native CAH000 with its four residents and normal AI/collision. Identical real coffer supplies and camera, no diagnostic actor population. RenderOverlay intervals are a rendering cadence proxy, not displayed frames or GPU time. PresentMon unavailable in this environment (objects evidence)."
+    },
+    {
+      "label": "domestic-perf-delivery02",
+      "utc": "2026-10-26T02:22:13.851638+00:00",
+      "runtime_sha256": "41db7950e5e4cab2d7ba6a56829e939e0602a5a2a47c77ba679aadb3d1943991",
+      "fixture_sha256": "d6eed8a45a26d1bd25b10ff2b8242d91f3f64bd0b5ceb4a126b9fc27f00febf7",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "arguments": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-hygiene-work\\build\\issue502-hygiene\\domestic-final02\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-hygiene-work\\build\\issue502-hygiene\\domestic-perf.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-hygiene-work\\build\\issue502-hygiene\\domestic-perf-delivery02.ini",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "502",
+        "-nomouse",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-hygiene-work\\build\\issue502-hygiene\\domestic-perf-delivery02.txt",
+        "+con_notifytime",
+        "0",
+        "+map",
+        "CAH000",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-hygiene-work\\build\\issue502-hygiene\\domestic-perf-delivery02.cfg"
+      ],
+      "config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\ncl_capfps=false\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nvid_defwidth=1280\nvid_defheight=720\n",
+      "simulation_tics": 700,
+      "phase_elapsed_ms": 19936.95929995738,
+      "phase_bound_uncertainty_ms": 100,
+      "frames": 1200,
+      "mean_callback_ms": 16.666472083333332,
+      "p95_callback_ms": 16.9299,
+      "p99_callback_ms": 17.1043,
+      "worst_callback_ms": 17.7865,
+      "soap_remaining_whole_grams": 273,
+      "note": "Native CAH000 with its four residents and normal AI/collision. Identical real coffer supplies and camera, no diagnostic actor population. RenderOverlay intervals are a rendering cadence proxy, not displayed frames or GPU time. PresentMon unavailable in this environment (objects evidence)."
+    }
+  ],
+  "reuse": "Object/NPC/contact/calendar core regressions ran on final01. The only subsequent runtime difference is coffer metadata exclusion, covered by final02 economy, controls, saves/hub and calendar acceleration. Their package hashes remain explicit.",
+  "author_acceptance": "CA502-HOUSEKEEPING-01 accepted 2026-10-25 without reported qualifications; separate treatment/toilet checks unchanged."
+}

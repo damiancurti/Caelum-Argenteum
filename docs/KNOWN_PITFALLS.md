@@ -4,6 +4,184 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-169 - Household work must preserve native stock and hidden metadata
+
+Status/evidence: ENGINE-VERIFIED, #502/PR506,2026-10-25; baseline eedb1b87.
+Environment: GZDoom4.14.2/Windows11/Vulkan1280x720; evidence:
+assets/validation_5812/domestic. Author check CA502-HOUSEKEEPING-01 passed2026-10-25.
+
+ZScript names are case-insensitive: local `chest`/`day` shadowed saved `Chest`/
+`Day`, silently losing the selected coffer and repeatedly zeroing elapsed work.
+Use distinct candidate/civil-date identifiers and test the actual scheduler,
+not only direct arithmetic calls. Household targets are initialized after the
+spawned fixtures receive their native initialization/linking.
+
+Parked traveling merchants are not found by the normal actor iterator. Restore
+the explicit saved registry after Travelled, then perform one typed legacy
+adoption census on MAP03. Preserve the actual body, inventory, identity and
+wallet; test return to the original map for duplicates and reset stock. This
+one load/travel census is bounded by the city's64 authored shops, not a routine
+per-tic scan. Household membership uses existing resident records (4, or8 after
+the approved relocation); targets use one map-local spatial query/static grid.
+
+Hidden contamination-carrier Inventory is metadata, not stored merchandise.
+Exclude it from coffer slots and cargo weight. Otherwise a legitimate exact
+payment can fail because its change and soap require the slot occupied by an
+invisible record. Keep capacity rejection atomic and test ordinary repurchase,
+fractional soap, wallet/stock conservation and the original save rollback.
+
+Accelerated personal time must also drive the loaded household's native steps;
+merely updating its WorldTick omits waiting/rest. Bound collision batches between
+rendered frames and reject an exact-date forecast that cannot model shared water
+mutations. This does not implement history for unloaded households.
+
+## CA-KP-168 - World-object exposure must follow native inventory ownership
+
+Status/evidence: ENGINE-VERIFIED, #502/PR506, 2026-10-25, baseline d801ae4c.
+Environment: GZDoom 4.14.2/Windows 11/Vulkan, 1280x720; evidence:
+assets/validation_5812/objects. CA502-OBJECTS-01 accepted on 2026-10-25.
+
+A map-local exposure node must close elapsed time before CreateCopy or
+AttachToOwner, leave owned/Box storage, and re-register on native tossing.
+Copy concentration without copying its scheduler. Guard bDestroyed before
+inventory lookup during teardown. A seated chair temporarily loses collision,
+so its current solid flag alone cannot define physical exposure eligibility;
+use its native class default as well. Test these native transitions rather
+than only calling the mathematical model or assigning Owner in fixtures.
+
+Spawn events and a shared weather service maintain staggered local nodes.
+One CaelumContaminationWorld census at WorldLoaded repairs legacy/map actors;
+its correctness need is attaching previously unregistered physical objects.
+The bound is the loaded native actor population, not each visible subset.
+Measured initial registration: 1,019 actors/1,000 nodes, 0.9535 ms; idempotent
+MAP03 census: 3,738 actors/1,518 nodes, 0.7785 ms. This exception does not
+authorize recurrent per-tic/per-recipient scans or imply a universal cost bound.
+
+The matched peaceful 1,000-object renderer comparison recorded baseline/final
+p95 17.157/17.385 ms, p99 17.443/17.892 ms, worst 17.747/18.883 ms; both samples
+contain 1,199 callbacks and 700 tics. PresentMon trace access was denied.
+Do not infer displayed-frame or whole-campaign performance from those callbacks.
+Elapsed clocks rebase on load/hub return: preserving concentration does not
+implement historical exposure in unloaded maps. Keep that limitation explicit.
+
+## CA-KP-167 - Continuous native contacts need shared ownership and elapsed clocks
+
+Status/evidence: ENGINE-VERIFIED, #502/PR506,2026-10-25, baseline c6508075.
+Environment: GZDoom4.14.2/Windows11/Vulkan,1280x720; evidence:
+assets/validation_5812/contact. Author check CA502-CONTACT-01 accepted2026-10-25.
+
+Active/passive native collision callbacks can report the same pair repeatedly.
+Create one shared saved link and update it once from elapsed world time; a brief
+blocked movement still needs its first world-tic dose even if native collision
+leaves a gap. End contact on separation/invalid ownership rather than preserving
+an old collision forever. Rebase transient time after hub/load so map absence
+cannot become retroactive physical contact. Rebind cached outer equipment
+endpoints without per-tic allocation. Native TryMove, stationary clock, brief
+contact, separation, current/old saves, hub and rollback tests cover these paths.
+
+A peaceful1,000-body/500-pair native comparison retained similar callback cadence:
+mean16.667/16.668ms, p9517.366/17.391, p9918.103/18.082, worst22.949/19.611.
+Both ran700tics with1,000 survivors; only the final500 receivers gained exposure.
+No global actor scan is introduced: registration searches only local pair lists,
+and only active pairs tick. No population cutoff or offscreen suspension exists.
+AI/thermal/movement were equally disabled for this isolated cost comparison.
+PresentMon access failed; callback timing is not displayed-frame or campaign
+performance acceptance. Follow CA-KP-110/115 rather than claiming FPS from35Hz.
+
+## CA-KP-166 - Hidden inventory carriers must leave world links before attachment
+
+Status/evidence: ENGINE-VERIFIED, #502, GZDoom4.14.2,2026-10-25.
+Evidence: assets/validation_5812/npc; the author's local CrashReport.zip is
+preserved in ignored build/issue502-hygiene/npc-hub02-author-crash.zip.
+
+Spawning a hidden inventory actor then calling owner.AddInventory alone omits
+Inventory.BecomeItem. The item retains sector/blockmap/thinker-world participation.
+Under repeated NPC contamination, two native hub tests crashed in CAH001 with
+C0000005, write to0xbeefcafe. AttachToOwner invokes BecomeItem before AddInventory;
+using it removes the reproduced crash. Native source reference:
+https://github.com/ZDoom/gzdoom/blob/g4.14.2/wadsrc/static/zscript/actors/inventory/inventory.zs
+
+Use the complete native attachment path for created hidden inventory. Existing
+owned contamination carriers use lazy attachment revision1: BecomeItem once,
+preserving owner and all stored values. Never reset contamination as migration.
+DetachFromOwner is an empty notification by default; removing an inventory item
+requires the owner's removal/drop path. Test fixtures must reacquire hub-owned
+NPC inventory from its owner rather than retaining cross-map player references.
+
+Regression: current save/load and hub return, previous-runtime saves and hub
+return, idempotent migration, original-runtime rollback, real-clock NPC exposure
+and previously accepted melee/calendar behavior. The author accepted CA502-NPC-01 on2026-10-25; this is separate from those
+engine checks.
+
+## CA-KP-165 - Native melee defaults to None; test the delivery path
+
+Status/evidence: ENGINE-VERIFIED; #502,5.8.12,2026-10-25; author review pending.
+Environment: GZDoom4.14.2/Windows11/Vulkan. Evidence: assets/validation_5812/combat.
+
+The engine declaration of A_CustomMeleeAttack defaults its damage type to None.
+Direct diagnostic DamageMobj(...,'Melee') calls therefore do not establish that
+an authored attack follows the same route. Three production NPC call sites omit
+that argument. Existing player None damage bypasses directed defenses; changing
+the argument would also change shield/evasion/armor behavior and needs its own
+review. The contamination adapter instead marks the synchronous native delivery,
+restores its previous mark afterward and rejects unrelated None damage.
+
+Regressions cover a native sword LineAttack, A_CustomMeleeAttack with its original
+None type, explicitly directed shield contact, evasion and unmarked generic damage.
+A friendly diagnostic attacker can fail native melee-range checks against the
+player despite a manually assigned target: use a hostile fixture with autonomous
+AI disabled, rather than replacing the actual attack with direct damage. Wait for
+native PostBeginPlay before testing modeled NPC loadouts (CA-KP-160).
+
+## CA-KP-164 - Interactive diagnostics must yield and isolate scenario state
+
+Status/evidence: ENGINE-VERIFIED diagnostic correction; author acceptance pending.
+First recorded / last checked: 2026-10-25 / 2026-10-25.
+Issue: #502,5.8.12. GZDoom4.14.2/Windows11/Vulkan,1280x720,60FPS cap,
+5% audio, unpaused background. Evidence: assets/validation_5812/surfaces/responsiveness.
+
+The surface laboratory advanced30 world minutes in one network event. Native
+timing measured53-55ms inside that command and70-72ms worst render-callback
+intervals. Repeated rain setup also jumped days without resetting the synthetic
+surface epoch, producing a103ms interval while replaying pending exposure.
+Old equipped dirt survived the body reset, making rain seem to contaminate the
+character even though the exterior comparison was being washed.
+
+Interactive F5 now schedules at most16 shared personal steps or2ms per native
+tic, preserving all steps and counting normal clock progress toward the target.
+Duplicate presses cannot queue additional work; scenario resets cancel it.
+The CAS502-only fixture clears body/equipment and sparse surface history after
+its artificial date jump. Production persistence and contamination are unchanged.
+Matched repeated-action maxima are17.86ms for rain setup and17.53ms for wait;
+the dry control retains its22.50ms maximum. These are native callback intervals,
+not application presents or GPU/display timing; prior PresentMon trace access
+was denied. Short diagnostic windows do not establish campaign-wide60FPS.
+
+Keep a diagnostic's untouched controls separate from the player's exposure.
+Label whether a reading measures body, outer equipment, ambient source or
+comparison surface. Test the author-facing action as well as its underlying
+arithmetic, including repeated setup, cancellation and contaminated prior state.
+
+## CA-KP-163 - Explicit local actor occupancy for sanitary seating
+
+Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED
+First recorded / last checked: 2026-10-25 / 2026-10-25
+Issue: #502,5.8.12 posture continuation. GZDoom4.14.2/Windows11/Vulkan.
+Evidence: assets/validation_5812/postures; pose-core-c fails, pose-core-d and
+pose-final-core pass. The production toilet and player remain solid; noclip is off.
+
+In the isolated fixture, SetOrigin plus TestMobjLocation accepted the toilet center
+while a solid CaelumRestChair occupied that same point. Therefore that test alone
+was insufficient for this entry path. Sanitary entry/exit and collision restoration
+now additionally inspect overlapping solid actors with a local BlockThingsIterator,
+using their horizontal extents and vertical overlap. Do not infer an engine-wide
+cause from this reproduction. Keep the native geometry/floor check as well.
+
+The query runs on explicit entry/exit and while one of the three local fixtures
+awaits clearance after release. It does not enumerate the world or run per NPC.
+The blocked-exit fixture verifies no telefrag, no forced movement and delayed
+solid restoration. No new frame-time or campaign-wide performance claim is made.
+
 ## CA-KP-162 - Forecast exposure with the same local shelter as execution
 
 Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED
@@ -914,6 +1092,17 @@ current/old saves and cleanup paths. A cleared cloud does not imply immediate
 ground contact: native flight takeoff can still be falling. Threat scans belong
 once per physical batch through local queries, never a whole-Actor census for
 every accelerated personal step. These findings do not establish siege FPS gains.
+
+Continuation, ENGINE-VERIFIED, #502/5.8.12,2026-10-25:
+pre-sleep calendar cleaning keeps the player awake briefly below the Sleep
+threshold. Existing fatigue damage writes health directly, bypassing the native
+damage event; isolated queue calls therefore missed a real-clock interruption.
+Account that loss through PeriodicLoss only during the approved preparation and
+when neither Hunger nor Thirst is critical. Do not suppress the damage or broaden
+the exception to attacks. Native ordinary/accelerated clock and critical-Hunger
+checks pass; assets/validation_5812/calendar retains the reproduced failure and
+final evidence. Observe paused-work progress at the exact calendar completion
+boundary: later real-time ticks legitimately resume the original task.
 
 ## CA-KP-126 - Native no-wipe does not clear a custom travel overlay
 

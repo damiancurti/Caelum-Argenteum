@@ -1,0 +1,13 @@
+{
+  "label": "surface-perf02-base-sewer",
+  "map": "MAP02",
+  "pitch": 0,
+  "runtime": "clean-final06",
+  "frames": 598,
+  "mean_ms": 16.689894983277593,
+  "p95_ms": 17.3725,
+  "p99_ms": 17.7234,
+  "max_ms": 34.7693,
+  "simulation_tics_s": 35.01231242978906,
+  "scope": "RenderOverlay callback intervals, not application presents or display refresh. PresentMon access denied; no elevated trace requested."
+}

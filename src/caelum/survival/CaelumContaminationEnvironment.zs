@@ -19,8 +19,13 @@ class CaelumContaminationWorld : StaticEventHandler
         // Censo tipado único al cargar: reconstruye sectores de talleres ya existentes.
         let stations=ThinkerIterator.Create('CaelumCraftingStation');Actor station;
         while((station=Actor(stations.Next()))!=null)Observe(station);
+        // Reconstrucción única al cargar para mapas/partidas anteriores. El
+        // conjunto está acotado a actores nativos del mapa cargado; sólo los
+        // objetos físicos elegibles reciben un nodo, nunca jugadores ni NPC.
+        let objects=ThinkerIterator.Create('Actor');Actor object;
+        while((object=Actor(objects.Next()))!=null)CaelumContaminationObject.Register(object);
     }
-    override void WorldThingSpawned(WorldEvent e){Observe(e.Thing);}
+    override void WorldThingSpawned(WorldEvent e){Observe(e.Thing);CaelumContaminationObject.Register(e.Thing);}
     static CaelumContaminationWorld Get()
     {return CaelumContaminationWorld(StaticEventHandler.Find('CaelumContaminationWorld'));}
 }

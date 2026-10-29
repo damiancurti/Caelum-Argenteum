@@ -1,6 +1,360 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.11** — 2026-10-25.
+Documentation version: **5.8.12** — 2026-10-25.
+
+## 5.8.12 - Metabolic toilet sessions (#502, in progress)
+
+Author acceptance, 2026-10-26: CA502-TOILET-01 (origin 5.8.12/#502)
+passed every supplied author-terminal check, without qualifications. The author
+confirmed all #502 checks passed. The entry is retired; the tested runtime is
+unchanged. Remaining unloaded-world and object/contact integrations stay open.
+
+Author acceptance,2026-10-25: CA502-HOUSEKEEPING-01 (origin5.8.12/#502,
+domestic-final02) passed without reported qualifications: "La prueba dio correcta,
+sigue con el resto." Only that entry is retired. Native evidence records193
+executed PASS/zero FAIL; static validation and source/package equality pass.
+Treatment/toilet author checks remain pending.
+
+Domestic-cleaning continuation (2026-10-25, #502): available residents clean
+accessible floors and furniture in the loaded home, sharing one world hour per
+household/day. Household coffers buy a reusable cloth and up to300g soap from
+real Provisions stock with their own coins; player supplies are not used.
+Cleaning spends the approved water/soap per area and preserves partial soap,
+daily quota and actual merchant stock through saves and hub travel. Native
+walking and calendar acceleration are integrated. Evidence:
+assets/validation_5812/domestic; CA502-HOUSEKEEPING-01 passed author review on2026-10-25.
+Unloaded-house history and the remaining #502 adapters are still unfinished.
+
+Author decisions,2026-10-25: one total cleaning hour per household/day,
+shared between residents, and automatic purchases from the household coffer
+without a staged shopping walk. This continues5.8.12/#502 without a new version.
+No author acceptance is inferred from native checks. Earlier object/contact/NPC
+acceptances remain unchanged; treatment/toilet checks remain separately pending.
+Current/prior saves, hub return, original-runtime rollback, real/accelerated
+clocks, shortages, actual payment and representative rendering measurements are
+recorded in assets/validation_5812/domestic/RESULTS.md. The new routine also
+exposed and fixed hidden contamination metadata consuming a coffer slot.
+
+Author acceptance, 2026-10-25: CA502-OBJECTS-01 (origin 5.8.12/#502,
+objects-final02, SHA256 01cf3d99bd62b2ba27906448d092b168707ce382e0f0c04a55f572d64328e2bf)
+passed without reported qualifications. The author confirmed "La prueba dio
+correcto, sigue con el resto." Only this check is retired; treatment/toilet
+remain separately pending. The later objects-final03 repairs Spanish comment
+encoding only; executable text and all other package members match the accepted
+build, and its separate native startup passes. No version increment is required
+for this continuation/acceptance of the same patch.
+
+Object verification: 165 executed PASS/0 FAIL across 15 selected native runs,
+including current/prior saves, hub return, rollback and contact/NPC/melee/calendar
+regressions. All 16,897 delivered members match source, with maps/art unchanged.
+The peaceful 1,000-object comparison and MAP03 census are documented with their
+measurement limits in assets/validation_5812/objects/RESULTS.md and CA-KP-168.
+Renderer callbacks do not establish displayed-frame or campaign FPS acceptance.
+
+Object-exposure continuation (2026-10-25, #502): physical scenery and loose
+native equipment now receive ambient contamination and repeating rain washing.
+Objects retain their concentration through pickup, storage, saves and hub travel;
+occupied chairs remain exposed when temporarily lending their collision. Spawn
+registration and staggered per-object clocks replace any routine world scan.
+Evidence: assets/validation_5812/objects; CA502-OBJECTS-01 passed author review on2026-10-25.
+Unloaded-map history, non-solid/stackable object coverage and resident housekeeping
+remain unfinished; this continuation does not complete #502 or V5.8.
+
+Author acceptance,2026-10-25: CA502-CONTACT-01 (origin5.8.12/#502,
+contact-final01, commit14924f65) passed without reported qualifications. The
+author confirmed "La prueba dio correcto, sigue con el resto." Retire only
+this check; treatment/toilet remain separate. Continue generic actor exposure.
+
+Solid-contact continuation (2026-10-25, #502): native player/NPC collisions
+now create one shared, saved contact per touching pair. Brushing exposes the
+outer garment/armor or bare body, using the approved contact areas and world
+clock. Separation stops transfer; repeated active/passive callbacks cannot
+charge twice. Generic solid objects retain received contamination. Evidence:
+assets/validation_5812/contact; CA502-CONTACT-01 passed author review on2026-10-25.
+Generic ambient exposure, unloaded-map history and resident housekeeping remain
+unfinished; this is not completion of #502 or V5.8.
+
+Native contact verification:124 executed PASS/0FAIL across12 runs, including
+previous-runtime save/rollback; current save/hub, native clock and NPC/melee/
+calendar regressions. Package47cac19a6c1604633ff6e20ab8b81041836d657617d6ba65320343d5d7bc4bb9
+matches16,896 source members; maps/art unchanged. The500-pair performance
+comparison retained similar renderer callback cadence; display/GPU timing was
+unavailable. Results and development failures are preserved in validation_5812/contact.
+CA502-CONTACT-01 passed author review on2026-10-25; native verification remains separate.
+
+Author acceptance,2026-10-25: CA502-NPC-01 (origin5.8.12/#502,
+npc-final02, SHA25638651311bd4d89888a378cedbfd204a48d2d9b2edc7fd73f95327fccc351b29b)
+passed the supplied live test without qualifications. The author confirmed
+"La prueba dio correcto, sigue con el resto." Retire only this ID; prior
+combat/calendar acceptance stands, while toilet/treatment checks remain separate.
+
+NPC-exposure continuation (2026-10-25, #502): living NPCs supported by the
+thermal system now share the player's environmental/equipment/immersion balance.
+The existing staggered thermal clock drives exposure, including accelerated
+world time, without global actor scans. Modeled armor, sidearms, shields and
+native carried equipment retain their existing identities; boxed gear is protected.
+Native-backed resident weapons are counted once. Evidence: assets/validation_5812/npc.
+CA502-NPC-01 passed author review on2026-10-25. Generic furniture/loose-object exposure,
+continuous actor contact, unloaded-map exposure and resident housekeeping remain
+unfinished; this continuation does not complete #502 or V5.8.
+
+NPC exposure uses the accepted thermal body area, anatomical coverage and actual
+submerged rows. Outer armor receives ambient/water exposure before its contact
+with skin; body dose scales by80/bodyKg. Bare animals use their existing thermal
+body geometry. Potable immersion cleans the submerged body; contaminated water
+exposes it. The same shared balance and constants serve the player and NPCs.
+The cache reuses rows, reads current concentrations on each scheduled interval,
+and visits only the owner's inventory; no new Tick, registry or map census exists.
+Unsupported, dead or unavailable-climate actors do not enter this living-thermal
+adapter. This does not implement NPC illness damage or household cleaning.
+
+Only authoritative body/item/model concentrations serialize. The transient adapter
+rebuilds without resetting them after load/hub return. Current thermal scheduling
+pauses NPC physiology outside the loaded map; historical off-map contamination
+still requires separate integration. This limitation is not acceptance of the
+unfinished off-map behavior. No map, art, recipe or balance value changes.
+
+The native hub crash reported by the author was reproduced twice: contamination
+carriers used AddInventory without BecomeItem, leaving world links active.
+Creation now uses AttachToOwner; attachment revision1 idempotently normalizes
+older owned carriers without altering concentration, state revision1 or ownership.
+The exact prior-save rollback remains available. CA-KP-166 records this lesson.
+
+Combat-contact continuation (2026-10-25, #502): successful native physical melee
+uses the approved0.01m2 impact patch and10 world seconds of contact. The shared
+concentration integration recalculates the ratio throughout that duration;
+the dirtier side remains unchanged and the receiving body scales by80/bodyKg.
+Transfer happens after evasion, before equipment wear, even when defense prevents
+Life loss. A blocking shield/gauntlet receives the contact; otherwise the actual
+struck armor or clothing does, falling back to skin. Player punches use the hands;
+natural NPC melee uses the attacker body; carried NPC weapons retain their native
+item identity. Bullets, missiles, magical damage, explosions, illness, misses and
+successful evasions do not create this melee contact.
+
+Native-delivery detail: GZDoom4.14.2 defaults A_CustomMeleeAttack to None.
+The three authored call sites now mark only their synchronous delivery; receiver
+hooks recognize that mark without changing damage type, costs or existing defense
+routing. Unmarked None damage cannot contaminate. The pre-existing player None
+route does not use directed shield/evasion/armor handling; this patch preserves
+that behavior rather than silently changing combat balance. The shield laboratory
+case explicitly uses directed Melee, while the bite uses the native None route.
+
+Combatants with modeled equipment retain optional contamination states in their
+weapon, shield and four armor slots. These use shared state revision1: absent
+states begin at0 on first use; Ensure is idempotent and preserves recorded values.
+Native items keep their existing authoritative state/copy behavior. No Tick,
+world scan, new damage coefficient, map or art change is introduced. Exact native
+receiver checks, actual sword/natural-attack paths, current saves/hub travel,
+previous-runtime saves/rollback and hygiene regressions are recorded under
+assets/validation_5812/combat. CA502-COMBAT-01 passed author review on2026-10-25.
+This completes this combat slice only: generic actor ambient exposure, continuous
+actor brushing and resident housekeeping remain separate implementation work.
+
+
+Author acceptance,2026-10-25: CA502-COMBAT-01 (origin5.8.12/#502,
+combat-final01, SHA256337013c42d15dffe45bd626f434463966e8561e0c6fc7f635c6e3548c3aa20ec)
+passed all supplied terminal checks. The author confirmed the results after
+clarification that F2 resets concentrations for each impact and the bite changes
+the receiving body. Retire only this ID; toilet/treatment and unfinished actor
+exposure/household work remain separate.
+
+
+Author acceptance,2026-10-25: CA502-CALENDAR-01 (origin5.8.12/#502, runtime
+0467d34a and live-control correction56d93bbf) passed without qualifications.
+After the agent-operated demonstration, the author confirmed "La prueba dio
+correcto, sigue con lo dem?s." Retire only this ID from pending_test.txt.
+Toilet/treatment author checks and actor/combat/NPC work remain separate.
+
+Calendar laboratory correction (2026-10-25): the production live menu consumed
+the diagnostic F-key bindings. A test-only menu subclass now dispatches the
+laboratory commands and displays actual phase, work, water, soap and weapon
+contamination. Production code, maps, balance and package bytes are unchanged.
+31 native rechecks pass. In the agent-operated visible demonstration, fabrication
+and reading remained at600 seconds through preparation/sleep, then progressed
+after diagnostic F3 awakening; the existing-wash case retained the same soap
+balance as ordinary preparation, and no-soap sleep preserved weapon contamination80.
+The overlay refreshes five times per second, only in this isolated laboratory.
+Evidence: assets/validation_5812/calendar/controls-report.json. This is agent
+verification, not author acceptance; CA502-CALENDAR-01 remains pending.
+
+Calendar-sleep continuation (2026-10-25, #502): the author approved pausing
+crafting/reading, cleaning equipment before automatic calendar sleep, then
+resuming the original work after waking. An existing cleaning action finishes
+first; pieces it completes are not charged again. The bounded nine-piece plan
+preserves the original station/book, recipe, reserved materials and progress.
+The accepted progressive water/soap costs, missing-supply skips and cancellation
+apply. Fatigue damage continues during preparation and is accounted as periodic
+loss, so it cannot cancel its own sleep sequence; external damage and critical
+Hunger/Thirst retain their interruption rules.
+
+Calendar hygiene revision1 saves the preparation queue independently of work.
+Old sleeping saves continue without retroactive washing; their next sleep cycle
+uses the new preparation. Forecast revision18 invalidates stale caches and
+explicitly refuses an exact completion date when pre-sleep cleaning is required;
+manual calendar destinations and ordinary clock progression remain available.
+Evidence: assets/validation_5812/calendar. 160 native assertions across22 serial runs pass, including save migration/rollback
+and previous cleaning regressions; static validation passes.
+CA502-CALENDAR-01 awaits author review;
+CA502-WAKE-01 is accepted. Actor/combat contact and resident housekeeping remain
+unfinished; this continuation does not complete #502 or V5.8.
+
+Author acceptance,2026-10-25: CA502-WAKE-01 (origin5.8.12/#502, runtime7c7db211
+and corrected laboratory6ff63398) passed without qualifications. The author
+confirmed "Las pruebas dieron correcto, sigue con el resto." Remove only this ID
+from pending_test.txt; toilet/treatment checks remain independently pending.
+
+Wake-laboratory water correction,2026-10-25 (#502): the author reported no water
+when testing awakening. Their recorded manual session reaches0L without cleaning;
+a matched native30-second delay reproduces automatic drinking from5 to4.25L.
+The manual fixture now uses the existing food/drink rest toggles to pause top-up
+to100, preserving the ordinary50 threshold. The same delay retains5L, then native
+wake cleanup completes and the missing-soap case remains awake. Seven focused
+assertions pass; console capture inspected and static validation passes. Evidence:
+assets/validation_5812/wake/water. No production code/package change. CA502-WAKE-01
+remains pending; the reported shortage is not acceptance of this test.
+
+Exhaustion-wake continuation,2026-10-25 (#502): the author explicitly chose
+"Limpiar al despertar". Preserve immediate exhaustion collapse and the existing
+wake lock; after eligible awakening, run the shared ordered equipment cleanup
+without returning to sleep. Missing supplies and external-damage/combat awakening
+cannot hold the player asleep or clean for free. Revision2 migrates prior cleaning
+state idempotently; forecast revision17 rejects unsupported multi-piece dates.
+97 native assertions and static validation pass, including actual
+world-clock progression, current and genuine prior-runtime saves, rollback,
+travel cancellation and voluntary-sleep/repair/bag regressions. Captures and raw
+logs: assets/validation_5812/wake. Test-fixture corrections and evidence limits
+are recorded there. No production art/maps or approved balance changed.
+CA502-WAKE-01 is pending; earlier accepted checks remain accepted. Calendar
+sleep, actor/combat contact and NPC housekeeping remain separate follow-up.
+
+Author acceptance, 2026-10-25: CA502-SURFACE-01 (origin5.8.12/#502, surface-final05
+with diagnostic correction0c9cb53a) passed without qualifications. The author
+confirmed that the tests passed and requested continuation. This accepts the
+floor/wall/rain checks and corrected F2/F4/F5 interaction; it does not establish
+campaign-wide FPS acceptance. Removed only this ID from pending_test.txt;
+CA502-TOILET-01 and CA502-TREATMENT-01 remain separate outstanding checks.
+
+Laboratory responsiveness/clarity correction, 2026-10-25 (#502): the author
+reported frame drops mainly on F4/F5 and apparent contamination from rain.
+The diagnostic F5 simulated a whole half hour synchronously; repeated F4
+advanced days while retaining old surface epochs and dirty equipment. Manual
+F5 now yields after at most16 personal steps or2ms, counting normal world time
+toward its30-minute target. Duplicate presses do not queue another advance;
+F1/F3/F4 cancel and start independent laboratory scenarios with clean body/equipment
+and fresh surface epochs. Rain still washes exterior surfaces, not the body;
+ambient/contact exposure remains active. The production package is unchanged.
+Focused native checks and matched action timing are recorded under
+assets/validation_5812/surfaces/responsiveness. CA502-SURFACE-01 remains pending;
+the author's performance/clarity report is not a passed test.
+
+Surface-laboratory visibility correction, 2026-10-25 (#502): the author reported
+that F2 did not show body contamination. The saved session log confirms the
+reading executed, but the console remained hidden and notifications were disabled.
+F2 now prints "Tu contaminacion", waits two command tics for dispatch and opens
+the in-game console. The terminal distinguishes that console from PowerShell.
+The same command sequence passed a native run and visual capture; physical-key
+automation was unavailable because the Computer Use native pipe could not connect.
+Only the unshipped diagnostic fixture/instructions changed. Production package
+and the 157-assertion gameplay evidence remain unchanged; CA502-SURFACE-01 stays
+pending, with no new author acceptance implied.
+
+Surface continuation,2026-10-25 (#502): the author clarified that rain removes
+its10/20 degrees every30 world minutes for as long as it continues. Implemented
+sparse persistent1m2 floor/wall records, player/outer-equipment exchange, slope
+coordinates, exposed rain washing and lazy regional catch-up across absence.
+Active local microclimate and independent waiting copies are preserved. Old
+saves retain existing contamination and start new zone tracking without backlog.
+157 native assertions and static validation pass. Native evidence,
+source hashes and matched fixed-camera timing samples are retained in
+assets/validation_5812/surfaces. PresentMon denied trace access; render callbacks
+and simulation throughput are reported separately, without display/FPS acceptance.
+All169 production maps and13,826 art members are unchanged. CA502-SURFACE-01
+remains author-pending. Other#502/V5.8 work is not declared complete.
+
+Author acceptance,2026-10-25: CA502-CLEAN-01 (origin5.8.12/#502,
+clean-final06, implementation a81ce7f6) passed without qualifications. The author
+confirmed "La prueba dio correcto, sigue con el resto." Only this equipment
+cleaning check is removed from pending_test.txt; toilet/treatment checks remain
+separate. Runtime and version are unchanged by this acceptance.
+
+Equipment-cleaning continuation,2026-10-25: implemented the approved progressive
+inventory action, repair-completion hook and voluntary pre-sleep queue. Charges use
+existing approved item surfaces,60 world seconds/m2,1L/m2 and5g/L; the cloth is
+reusable and soap credit is preserved. Missing supplies skip automatic cleaning
+without blocking repair/sleep. Save/hub/cancellation preserve completed spending;
+sleeping bags retain their original identity. Independent single-piece forecasts
+match accelerated execution; the sleep queue retains an explicit exact-date guard.
+Calendar/exhaustion automatic sleep scheduling remains follow-up. The inventory H conflict was corrected: selected water retains boiling, while
+other selections retain bathing; native H/J dispatch passes. No maps or art
+were changed.134 native assertions and static validation pass; selected raw logs,
+source hashes and UI captures are in assets/validation_5812/cleaning. Author test
+CA502-CLEAN-01 is accepted; prior bath/posture acceptance is preserved. Other#502
+systems and the remaining V5.8 issues are not declared complete.
+
+Author acceptance,2026-10-25: CA502-BATH-01 (origin5.8.12/#502) passed
+all checks in the latest soap-bath terminal without qualifications. The author
+confirmed "Las pruebas dieron todas bien, sigue con el resto" after c880b2ee,
+using bath-final05. This accepts the bath, progressive costs, fractional soap,
+posture and supplied persistence checks. Only CA502-BATH-01 is removed from
+pending_test.txt; toilet/treatment checks remain separate. Runtime and version
+are unchanged by this acceptance.
+
+Soap-bathing continuation,2026-10-25: implemented the already approved progressive
+body bath, shared domestic and finite connected-water withdrawal, source/access
+revalidation, native inventory menu, reclining pose reuse and cancellation. An opened
+gram's fractional remainder retains mass/save identity and is spent before opening
+another gram. Independent wait projection includes the same progressive costs.
+No new balance or artwork; maps retain their accepted bytes. Existing saves lazily
+start with no bath and no soap remainder; existing contamination is preserved.
+121 native assertions and static validation pass; evidence is retained in
+assets/validation_5812/bathing. Author check
+CA502-BATH-01 is pending, independently of earlier posture/toilet/treatment checks.
+Equipment cleaning and the other #502 integrations remain unfinished.
+
+Author acceptance,2026-10-25: CA502-POSE-01 (origin5.8.12 / #502) passed
+all checks in the latest sanitary-posture terminal without qualifications.
+The author confirmed "Las pruebas dieron correcto" after delivery05c4cb33,
+using pose-final03. This accepts sitting/reclining, camera, safe release and
+the checks supplied with that terminal. CA502-TOILET-01 and
+CA502-TREATMENT-01 remain separate pending checks; soap bathing remains pending.
+Only CA502-POSE-01 is removed from pending_test.txt. Runtime/artwork are unchanged.
+
+Author-requested posture continuation (2026-10-25): using a toilet seats the
+character; using a bathtub reclines them. Reuse the existing RestSeated/RestLying
+artwork and clipped orbit-camera pattern without starting a rest or sleep session.
+Use/movement/external damage releases the pose; disease damage continues. Toilet
+completion stands up automatically. Safe entry/exit retains the player's actual
+collision volume; blocked exits leave the fixture nonblocking until clear.
+Save/load preserves occupancy and camera; a pre-pose toilet save adopts the seat
+without restarting its timer. Bathtub reclining alone does not wash, charge water
+or consume soap. Progressive soap bathing remains pending.
+Evidence and separate author check: assets/validation_5812/postures, CA502-POSE-01.
+74 native checks pass; static validation passes. CA502-POSE-01 was accepted by the author on2026-10-25 without qualifications.
+
+Author decisions2026-10-25: charge and cleanse only on completion. Cancelling,
+moving away or taking external damage before completion spends nothing. The
+periodic damage from contamination continues but does not interrupt the action.
+The player damage receiver previously omitted DiseaseDOT from its local periodic
+list despite the shared sustained-damage rule including it; it now uses that
+shared classification. This preserves ongoing damage and avoids a hygiene/rest
+interruption caused by the illness being treated.
+
+Household toilets now perform the approved one-world-minute hygiene action.
+Completion removes up to20 contamination, bounded by current contamination and
+metabolic capacity, and spends10L from that house's shared potable reserve.
+Starting spends nothing. Use again, leave reach/map, or take external damage to
+cancel without spending or cleansing. Recheck access, water and capacity at
+completion; insufficient or no-longer-needed cleansing spends nothing.
+Disease damage continues without cancelling the action, as approved2026-10-25.
+
+The action uses ordinary world time and the existing accelerated/wait controls.
+Save/load retains partial progress; map departure cancels it. Independent wait
+forecasts include completion and same-tic nutrition credit without changing live
+resources. Existing unsupported-effect forecast guards remain in force.
+Static validation and55 native checks pass;16,885 package members match src.
+Evidence: assets/validation_5812. CA502-TOILET-01 is pending author review.
+Soap baths, equipment washing, surface/combat contacts, rain surface washing
+and NPC domestic cleaning remain unfinished#502 work. V5.8 remains incomplete.
 
 ## 5.8.11 - Domestic bathrooms (#410, in progress), 2026-10-25
 
@@ -43,6 +397,10 @@ Failed probes and their corrected evidence remain in validation_5811. The old
 save loads with the original package for rollback. No FPS claim is made.
 
 ## 5.8.9 - Severe contamination (#502, in progress), 2026-10-24
+
+Author acceptance, 2026-10-26: CA502-TREATMENT-01 (origin 5.8.9/#502)
+passed all supplied medkit/mate checks, including cleansing at full Life. No
+qualifications were reported. The entry is retired; treatment01 is unchanged.
 
 Author confirmation,2026-10-25: CA502-WASH-01 (origin5.8.9/#502) passed
 all checks in the most recent immersion-washing terminal, without qualifications.
