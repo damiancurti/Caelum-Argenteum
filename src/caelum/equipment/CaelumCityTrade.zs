@@ -7,6 +7,7 @@ class CaelumCityMerchant : Actor
     int LandImportRevision,LandImportCursor;
     int MarineCatalogueRevision;
     int SupportCatalogueRevision;
+    int StorageFurnitureRevision;
     int ChemistryCatalogueRevision,MateCatalogueRevision,CampCatalogueRevision,HygieneCatalogueRevision;
     int KitchenCatalogueRevision,KitchenRecipesRevision;
     bool StockInitialized;
@@ -95,7 +96,7 @@ class CaelumCityMerchant : Actor
             return Category==3 && (kind==CaelumConstants.EQUIPMENT_KIND_AMULET || kind==CaelumConstants.EQUIPMENT_KIND_SEAL);
         }
         let consumable=CaelumConsumableItem(item);
-        if(CaelumCampData.IsItem(item) || item is 'CaelumMateItem' || item is 'CaelumCleaningCloth')return Category==0;
+        if(CaelumStorageFurnitureData.IsItem(item) || CaelumCampData.IsItem(item) || item is 'CaelumMateItem' || item is 'CaelumCleaningCloth')return Category==0;
         if(consumable!=null)return Category==0 && CaelumPotionRules.Family(consumable.GetConsumableType())<=CaelumConstants.CONSUMABLE_WATER_RATION;
         let ammo=CaelumCarbineAmmo(item);
         if(item is "CaelumArrowAmmo" || item is "CaelumBoltAmmo")return Category==2;
@@ -194,6 +195,7 @@ class CaelumCityMerchant : Actor
         CaelumChemistryCatalogue.Ensure(self,user);
         CaelumMateCatalogue.Ensure(self,user);
         CaelumCampCatalogue.Ensure(self,user);
+        CaelumStorageFurnitureCatalogue.Ensure(self,user);
         CaelumHygieneCatalogue.Ensure(self,user);
         CaelumKitchenCatalogue.Ensure(self,user);CaelumKitchenCatalogue.EnsureRecipes(self,user);
     }
@@ -349,7 +351,7 @@ class CaelumCityTradeSession : Object play
     }
     static Inventory Stack(Actor owner,Inventory item)
     {
-        if(CaelumCampData.IsItem(item))return null;
+        if(CaelumStorageFurnitureData.IsItem(item) || CaelumCampData.IsItem(item))return null;
         if(item is 'CaelumMateItem' && !(owner is 'CaelumPlayer'))return null;
         if(item is "CaelumEquipmentItem" || item is "CaelumLockItem" || item is "CaelumRecipeOffer")return null;
         for(Inventory current=owner.Inv;current!=null;current=current.Inv)
@@ -376,7 +378,7 @@ class CaelumCityTradeSession : Object play
     static double Value(Inventory item)
     {let key=Companion(item);return CaelumEconomyRules.GetInventoryUnitBaseValue(item)+(key==null?0:CaelumEconomyRules.GetInventoryUnitBaseValue(key));}
     static bool Single(Inventory item)
-    {return CaelumCampData.IsItem(item) || item is "CaelumEquipmentItem" || item is "CaelumLockItem" || item is "CaelumRecipeOffer" || item is 'CaelumMateItem';}
+    {return CaelumStorageFurnitureData.IsItem(item) || CaelumCampData.IsItem(item) || item is "CaelumEquipmentItem" || item is "CaelumLockItem" || item is "CaelumRecipeOffer" || item is 'CaelumMateItem';}
     void Refresh(CaelumPlayer user)
     {
         CaelumMerchantCoordinator.RefreshCityTrade(self, user);

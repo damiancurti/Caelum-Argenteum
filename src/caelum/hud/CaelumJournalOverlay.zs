@@ -1254,7 +1254,11 @@ class CaelumJournalOverlay : EventHandler
                     localPlayer.FormalInventoryRowReservedUnits[row]
                 );
             }
-            if(kind==CaelumConstants.EQUIPMENT_KIND_CONTAINER && localPlayer.FormalInventoryRowType[row]==CaelumWardrobeData.DISPLAY_TYPE)
+            if(kind==CaelumConstants.EQUIPMENT_KIND_KEY_ITEM && CaelumStorageFurnitureData.IsKey(localPlayer.FormalInventoryRowType[row]))
+                DrawTexture(CaelumStorageFurnitureData.Icon(localPlayer.FormalInventoryRowType[row]-CaelumStorageFurnitureData.FIRST_KEY),30.0,165.0+row*21.0,20.0,20.0);
+            else if(kind==CaelumConstants.EQUIPMENT_KIND_CONTAINER && localPlayer.FormalInventoryRowType[row]==CaelumStorageFurnitureData.CUPBOARD_DISPLAY)
+                DrawTexture(CaelumStorageFurnitureData.Icon(1),30.0,165.0+row*21.0,20.0,20.0);
+            else if(kind==CaelumConstants.EQUIPMENT_KIND_CONTAINER && localPlayer.FormalInventoryRowType[row]==CaelumWardrobeData.DISPLAY_TYPE)
                 DrawTexture("graphics/caelum/icons/furniture/wardrobe.png",30.0,165.0+row*21.0,20.0,20.0);
             else if ((kind == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM && localPlayer.FormalInventoryRowType[row]==CaelumCampData.TENT_KEY)
                 || (kind == CaelumConstants.EQUIPMENT_KIND_CONSUMABLE && localPlayer.FormalInventoryRowType[row]==CaelumCampData.POT_CONSUMABLE))

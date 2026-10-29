@@ -1,0 +1,92 @@
+{
+  "version": "5.8.31",
+  "issue": 410,
+  "runtime_sha256": "b2e388d5145cbb626e1e0fd11c0bfbe922fa9c50f1528b41a8af877cb1c1b6dd",
+  "runs": [
+    {
+      "label": "release-catalogue",
+      "executed_passes": 12,
+      "runtime_sha256": "cecfa75c155969fe39e9aa76696f0b7f8d06fb3edcf9578ebb40e9d7efd64cab",
+      "addon_sha256": "6f57893832a3e2f1d6cdc88a66b369946904b39fed2529f3f14195da7c35000b"
+    },
+    {
+      "label": "release-craft",
+      "executed_passes": 17,
+      "runtime_sha256": "cecfa75c155969fe39e9aa76696f0b7f8d06fb3edcf9578ebb40e9d7efd64cab",
+      "addon_sha256": "6f57893832a3e2f1d6cdc88a66b369946904b39fed2529f3f14195da7c35000b"
+    },
+    {
+      "label": "release-trade",
+      "executed_passes": 13,
+      "runtime_sha256": "cecfa75c155969fe39e9aa76696f0b7f8d06fb3edcf9578ebb40e9d7efd64cab",
+      "addon_sha256": "6f57893832a3e2f1d6cdc88a66b369946904b39fed2529f3f14195da7c35000b"
+    },
+    {
+      "label": "release-items",
+      "executed_passes": 14,
+      "runtime_sha256": "cecfa75c155969fe39e9aa76696f0b7f8d06fb3edcf9578ebb40e9d7efd64cab",
+      "addon_sha256": "6f57893832a3e2f1d6cdc88a66b369946904b39fed2529f3f14195da7c35000b"
+    },
+    {
+      "label": "release-placement",
+      "executed_passes": 19,
+      "runtime_sha256": "cecfa75c155969fe39e9aa76696f0b7f8d06fb3edcf9578ebb40e9d7efd64cab",
+      "addon_sha256": "6f57893832a3e2f1d6cdc88a66b369946904b39fed2529f3f14195da7c35000b"
+    },
+    {
+      "label": "release-seed",
+      "executed_passes": 6,
+      "runtime_sha256": "cecfa75c155969fe39e9aa76696f0b7f8d06fb3edcf9578ebb40e9d7efd64cab",
+      "addon_sha256": "6f57893832a3e2f1d6cdc88a66b369946904b39fed2529f3f14195da7c35000b"
+    },
+    {
+      "label": "release-resume",
+      "executed_passes": 5,
+      "runtime_sha256": "cecfa75c155969fe39e9aa76696f0b7f8d06fb3edcf9578ebb40e9d7efd64cab",
+      "addon_sha256": "6f57893832a3e2f1d6cdc88a66b369946904b39fed2529f3f14195da7c35000b"
+    },
+    {
+      "label": "release-hub",
+      "executed_passes": 11,
+      "runtime_sha256": "cecfa75c155969fe39e9aa76696f0b7f8d06fb3edcf9578ebb40e9d7efd64cab",
+      "addon_sha256": "6f57893832a3e2f1d6cdc88a66b369946904b39fed2529f3f14195da7c35000b"
+    },
+    {
+      "label": "release-legacy",
+      "executed_passes": 2,
+      "runtime_sha256": "cecfa75c155969fe39e9aa76696f0b7f8d06fb3edcf9578ebb40e9d7efd64cab",
+      "addon_sha256": "6f57893832a3e2f1d6cdc88a66b369946904b39fed2529f3f14195da7c35000b"
+    },
+    {
+      "label": "final-inventory",
+      "executed_passes": 6,
+      "runtime_sha256": "b2e388d5145cbb626e1e0fd11c0bfbe922fa9c50f1528b41a8af877cb1c1b6dd",
+      "addon_sha256": "6e3a548b46986db542a772cea2ae1f848b4e8d94038528024ba763cc5bf36f40"
+    },
+    {
+      "label": "release-shop",
+      "executed_passes": 2,
+      "runtime_sha256": "cecfa75c155969fe39e9aa76696f0b7f8d06fb3edcf9578ebb40e9d7efd64cab",
+      "addon_sha256": "6f57893832a3e2f1d6cdc88a66b369946904b39fed2529f3f14195da7c35000b"
+    }
+  ],
+  "native_passes": 107,
+  "native_failures": 0,
+  "source_matching_package_members": 16993,
+  "preserved_map_art_members": 14036,
+  "prior_obj_line_endings_only": [
+    "models/caelum/props/luxury/ca_luxury_bed.obj",
+    "models/caelum/props/luxury/ca_luxury_chair.obj",
+    "models/caelum/props/luxury/ca_luxury_table.obj"
+  ],
+  "original_save_sha256": "896a1a3434e795651ff7bf6f4373c194361532ea527f75def66e793575239d30",
+  "migration": "Recipe-book revision18 appends two unknown recipes, keeps earlier learning and the original5.8.26 partial-reading session. Current saves and hub retain actual cupboard/cargo/contents/title and independent furniture item dirt.",
+  "presentation_only_changes_after_functional_checks": [
+    "caelum/debug/CaelumDebugOverlay.zs",
+    "caelum/player/CaelumPlayer.zs"
+  ],
+  "evidence_reuse": "Functional native assertions use final31a. Final31b changes only selection/crafting icon resolution; the native Spanish inventory/preview check was rerun and both item captures reviewed. All other source bytes match. Original-runtime rollback of the identical untouched legacy save is reused from validation_5826/5829, not counted as new execution.",
+  "performance_scope": "Transactions use existing bounded merchant/product/inventory loops and native placement; no new recurring actor scan or thinker. No frame-presentation/FPS or multiplayer claim.",
+  "remaining": "Other movable furniture purchase/fabrication/placement and V5.8 issues remain open. Existing art is reused, not new visual acceptance.",
+  "author_acceptance": "Pending CA410-STORAGE-ACQUISITION-01; grouped handoff only after all V5.8 implementation."
+}

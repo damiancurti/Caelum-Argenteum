@@ -1,6 +1,15 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.30** - 2026-10-27.
+Documentation version: **5.8.31** - 2026-10-27.
+
+## 5.8.31 storage furniture acquisition
+
+The movable wardrobe/cupboard reuse their accepted source geometry and painted
+inventory icons, including the existing CWRD/CKCB sprite definitions. No image,
+mesh, map or third-party resource was added or replaced. Acquisition artwork is
+not a new rendering of a3D model; provenance remains under wardrobe and
+kitchen_fixtures/kitchen_stations sources. Native inventory captures and author
+corroboration are tracked in assets/validation_5831 and pending_test.txt.
 
 ## 5.8.30 - Original luxury furniture models (#410)
 

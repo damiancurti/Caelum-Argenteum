@@ -280,6 +280,7 @@ class CaelumInventoryService : Object play
             if(item is "CaelumMaterialPickup")for(int i=0;i<5;i++)split.args[i]=item.args[i];
             let mate=CaelumMateItem(item);
             if(mate!=null)mate.CopyContents(CaelumMateItem(split));
+            if(CaelumStorageFurnitureData.IsItem(item))CaelumContaminationStorage.Set(split,CaelumContaminationStorage.Value(item));
         }
         Array<CaelumCurrencyItem> coins;
         if (!PrepareMerchantCurrencyObjects(user, coins))
@@ -1580,7 +1581,7 @@ class CaelumInventoryService : Object play
             specialItem.GetSpecialTier()
         );
         // Las llaves emparejadas no son duplicados de una pila ya pesada.
-        if(specialItem is "CaelumLockItem" || CaelumCampData.IsItem(specialItem))existing=null;
+        if(specialItem is "CaelumLockItem" || CaelumCampData.IsItem(specialItem) || CaelumStorageFurnitureData.IsItem(specialItem))existing=null;
         if (existing != null)
         {
             if (specialItem.GetSpecialCategory()
@@ -2727,6 +2728,9 @@ class CaelumInventoryService : Object play
         if(book!=null){CaelumRecipeSession.OpenBook(user,book);return;}
         let lockItem=CaelumLockItem(entry);
         if(lockItem!=null){lockItem.ToggleBox(user);return;}
+        let furniture=CaelumStorageFurnitureItem(entry);
+        if(furniture!=null)
+        {if(furniture.InMagicBox)CaelumStorageFurnitureInventory.ToggleBox(user,furniture);else furniture.Place(user);return;}
         if(CaelumCampData.IsItem(entry) && CaelumContainerRules.Boxed(entry)){CaelumCampInventory.ToggleBox(user,entry);return;}
         if(entry is 'CaelumCampTent')
         {
@@ -2785,6 +2789,7 @@ class CaelumInventoryService : Object play
         if (entry == null) { return; }
         let lockItem=CaelumLockItem(entry);
         if(lockItem!=null){lockItem.ToggleBox(user);return;}
+        if(CaelumStorageFurnitureData.IsItem(entry)){CaelumStorageFurnitureInventory.ToggleBox(user,entry);return;}
         if(CaelumCampData.IsItem(entry)){CaelumCampInventory.ToggleBox(user,entry);return;}
         if(entry is "CaelumChestCargo")return;
         user.ApplyFormalInventorySelection(entry);
@@ -2802,6 +2807,7 @@ class CaelumInventoryService : Object play
         if (entry == null) { return; }
         let lockItem=CaelumLockItem(entry);
         if(lockItem!=null){lockItem.DropInstance(user);return;}
+        if(CaelumStorageFurnitureData.IsItem(entry)){CaelumStorageFurnitureInventory.Drop(user,entry);return;}
         if(CaelumCampData.IsItem(entry)){CaelumCampInventory.Drop(user,entry);return;}
         let cargo=CaelumChestCargo(entry);
         if(cargo!=null)
@@ -4595,6 +4601,7 @@ class CaelumInventoryService : Object play
         if (specialCategory == CaelumConstants.EQUIPMENT_KIND_KEY_ITEM)
         {
             if (specialType == CaelumConstants.KEY_ITEM_TAROT_DECK) return 'CaelumTarotDeck';
+            if(CaelumStorageFurnitureData.IsKey(specialType))return CaelumStorageFurnitureData.ItemClass(specialType-CaelumStorageFurnitureData.FIRST_KEY);
             if(specialType==CaelumHygieneData.CLOTH_KEY)return 'CaelumCleaningCloth';
             if(specialType==CaelumCampData.TENT_KEY)return CaelumCampData.ItemClass(0);
             if (specialType == CaelumConstants.KEY_ITEM_SLEEPING_BAG) return 'CaelumSleepingBag';

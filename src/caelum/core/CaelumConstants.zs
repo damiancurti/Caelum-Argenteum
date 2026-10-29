@@ -733,7 +733,7 @@ class CaelumConstants : Object
         CRAFTING_NETWORK_LEGACY_RECIPE_COUNT
         + CRAFTING_NETWORK_SHIELD_RECIPE_COUNT
         + CRAFTING_NETWORK_PROCESSING_RECIPE_COUNT
-        + CRAFTING_NETWORK_COMPONENT_RECIPE_COUNT + 15 + CaelumClothingData.COUNT + 7 + CaelumChemistryData.RECIPE_COUNT + CaelumMateData.COUNT + CaelumCampData.COUNT + CaelumHygieneData.RECIPE_COUNT + CaelumMealData.COUNT;
+        + CRAFTING_NETWORK_COMPONENT_RECIPE_COUNT + 15 + CaelumClothingData.COUNT + 7 + CaelumChemistryData.RECIPE_COUNT + CaelumMateData.COUNT + CaelumCampData.COUNT + CaelumHygieneData.RECIPE_COUNT + CaelumMealData.COUNT + CaelumStorageFurnitureData.COUNT;
     // Se anexa sin mover ninguna receta aprendida (0..130).
     const CRAFTING_PICKAXE_RECIPE = 131;
     const CRAFTING_UTILITY_STAFF_RECIPE = 132;
@@ -741,7 +741,7 @@ class CaelumConstants : Object
     const CRAFTING_SLEEPING_BAG_RECIPE = 134;
     const CRAFTING_LARGE_CANTEEN_RECIPE = 135;
     const CRAFTING_RECIPE_KIND_UTILITY = 9;
-    const CRAFTING_RECIPE_BOOK_VERSION = 17;
+    const CRAFTING_RECIPE_BOOK_VERSION = 18;
     // #380: IDs anexadas; ningún conocimiento anterior cambia de índice.
     const CRAFTING_CARBINE_CARTRIDGE_RECIPE = 166;
     const CRAFTING_SHOTGUN_CARTRIDGE_RECIPE = 167;
@@ -1232,7 +1232,7 @@ class CaelumConstants : Object
     const KEY_ITEM_RECIPE_BOOK = 2;
     const KEY_ITEM_SLEEPING_BAG = 2;
     const KEY_ITEM_TAROT_DECK = 3;
-    const KEY_ITEM_TYPE_COUNT = CaelumHygieneData.CLOTH_KEY + 1;
+    const KEY_ITEM_TYPE_COUNT = CaelumStorageFurnitureData.FIRST_KEY + CaelumStorageFurnitureData.COUNT;
     const LOCK_CAELUM_SILVER = 200;
     const LOCK_CAELUM_SILVER_STASH = 201;
 
