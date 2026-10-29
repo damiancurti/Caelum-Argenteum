@@ -1,0 +1,18 @@
+{
+  "issue": 416,
+  "byte_identical": true,
+  "files": {
+    "src\\sprites\\caelum\\transport\\CHRSA1.png": "81b690b94bd9741001853c638cc785ed4ebb7be576cdba94227c4e8c45257de0",
+    "src\\sprites\\caelum\\transport\\CHRSA2.png": "444178da991e0d771e625adb15a8cad51d0ce9455dfb9292ca8a1fb435e25965",
+    "src\\sprites\\caelum\\transport\\CHRSA3.png": "ebd61616574f10acefca73ee65d6a1bc71d0f44554a25023470f6bfd607ac3a3",
+    "src\\sprites\\caelum\\transport\\CHRSA4.png": "1ee4dae8755fda158e0a4290782051c2fa7719de65339f845fea25abc8f959df",
+    "src\\sprites\\caelum\\transport\\CHRSA5.png": "0d44cd0fc8613fc3b50298073ffc940f24959de46c499bb2ace8973ae90b6e86",
+    "src\\sprites\\caelum\\transport\\CHRSA6.png": "2d2de6e19661bd575a5df3d7e094858217b168238a4ebd255939399fb62f3e49",
+    "src\\sprites\\caelum\\transport\\CHRSA7.png": "27010c12c50523d197ced58216fcac432294ac29404e38f28ea82848f7bbd8e5",
+    "src\\sprites\\caelum\\transport\\CHRSA8.png": "7845f85245db50ce6199e5bebb6d785d3c3828e6336bee33a60ea66af5e49c96",
+    "src\\models\\caelum\\vehicles\\ca_steam_train.obj": "d01e3754e2f04d0535091c08fff453685dcc6067db53bfdce760f3bf3a2dab06",
+    "src\\models\\caelum\\vehicles\\ca_transport_sign.obj": "8beda8def3fe1983ba315ca5500ea9c23df49c68b2d6e6b40ab3be9fea52f500",
+    "src\\caelum\\data\\CaelumTransportVehicleData.zs": "3b7b441c9b0e8dea866e482470f2baf9f186826a55a53150eed63a76affd60a1",
+    "src\\caelum\\data\\transport_vehicles.modeldef": "8e64604c22c42f15fef7c6178a18581c36ad731aac53b9825c96df857f32f6ed"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "issue": 416,
+  "qualification": "Original stationary service representations using period-informed proportions, not a replica of a named historical locomotive. Horse 2.4 m long and about 2 m head height; train represents a small steam locomotive, tender and passenger coach. Existing cart and ship geometry is retained.",
+  "horse_atlas": "assets/art_source/transport/horse-eight-views.png",
+  "horse_columns": [0, 400, 825, 1340, 1774],
+  "horse_rows": [0, 440, 887],
+  "horse_scale_pixels": 0.375,
+  "horse_runtime_scale": 0.4,
+  "train_half_length_mu": 352,
+  "train_half_width_mu": 42,
+  "train_height_mu": 128,
+  "train_boarding_mu": [-96, -80, 0],
+  "positions": {
+    "CABAIRES": {"cart": [1216, 384, 0], "horse": [1216, 640, 0], "train": [640, 1216, 0], "ship": [5120, 1232, -24]},
+    "MAP03": {"horse": [-640, 0, 0], "train": [-640, -256, 0]},
+    "TCOAST": {"horse": [-512, 192, 0], "train": [-320, 0, 0]}
+  },
+  "image_provenance": {"tool": "OpenAI imagegen", "date": "2026-10-29", "author_direction": "Damián Curti, Caelum Argenteum SPRITE_ART_DIRECTION", "prompt": "Original painted pixel-oriented eight-direction stationary saddled bay horse, no rider, nineteenth-century Argentina, dark brown leather saddle and bridle, dark mane and tail, four legs, transparent background, neutral diffuse light. 4 columns by 2 rows: front, front-left, left, rear-left, rear, rear-right, right, front-right. No text, borders, floor or shadow. This is a hand-painted game sprite, not a glossy 3D render."}
+}

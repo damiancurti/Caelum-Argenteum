@@ -1,0 +1,66 @@
+﻿{
+    "label":  "vehicles-visual01",
+    "runtime":  "probe",
+    "started_utc":  "2026-10-29T14:11:50.7509117Z",
+    "engine":  "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "engine_sha256":  "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+    "iwad_sha256":  "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+    "package_sha256":  "AE99279B6B96E4F4E69ED87119CE9DCE2BCC3BA41BAFA6BC9CFE64ECADD29261",
+    "addon_sha256":  "EA241D53F554BD85ECE1D8F79E511342B7DEFC5848312DCA2395CB608EA9D6BE",
+    "initial_config":  "[LastRun]\r\nVersion=225\r\n[GlobalSettings]\r\nvid_preferbackend=1\r\nvid_vsync=false\r\nvid_maxfps=60\r\nvid_activeinbackground=true\r\ni_pauseinbackground=false\r\nvid_lowerinbackground=false\r\ni_soundinbackground=true\r\ncl_capfps=false\r\nvid_fullscreen=false\r\nvid_defwidth=1280\r\nvid_defheight=720\r\nwin_w=1296\r\nwin_h=759\r\nwin_maximized=false\r\nuse_mouse=false\r\nsnd_mastervolume=0.05\r\nlanguage=enu",
+    "arguments":  [
+                      "-noautoload",
+                      "-iwad",
+                      "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+                      "-file",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue416-network-work\\build\\issue416-network\\probe\\caelum_argenteum_dev.pk3\"",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue416-network-work\\build\\issue416-network\\checks.pk3\"",
+                      "-config",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue416-network-work\\build\\issue416-network\\vehicles-visual01.ini\"",
+                      "-savedir",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue416-network-work\\build\\issue416-network\"",
+                      "-width",
+                      "1280",
+                      "-height",
+                      "720",
+                      "-window",
+                      "-rngseed",
+                      "416",
+                      "-skill",
+                      "2",
+                      "+logfile",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue416-network-work\\build\\issue416-network\\vehicles-visual01.txt\"",
+                      "+con_notifytime",
+                      "0",
+                      "-nomouse",
+                      "+map",
+                      "CABAIRES",
+                      "+exec",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue416-network-work\\build\\issue416-network\\vehicles-visual.cfg\""
+                  ],
+    "command_script":  "wait 105; netevent ca416_catalogue; netevent ca416_camera 10; wait 10; screenshot C:/GZDooMProjects/CaelumArgenteum/build/issue416-network-work/build/issue416-network/horse-native.png; netevent ca416_camera 11; wait 10; screenshot C:/GZDooMProjects/CaelumArgenteum/build/issue416-network-work/build/issue416-network/train-native.png; netevent ca416_camera 13; wait 10; screenshot C:/GZDooMProjects/CaelumArgenteum/build/issue416-network-work/build/issue416-network/booking-native.png; wait 10; quit\r\n",
+    "cpu":  [
+                {
+                    "Name":  "AMD Ryzen 9 5950X 16-Core Processor            ",
+                    "NumberOfCores":  16,
+                    "NumberOfLogicalProcessors":  32
+                }
+            ],
+    "gpu":  [
+                {
+                    "Name":  "Parsec Virtual Display Adapter",
+                    "DriverVersion":  "0.45.0.0"
+                },
+                {
+                    "Name":  "NVIDIA GeForce RTX 3070 Ti",
+                    "DriverVersion":  "32.0.15.7688"
+                }
+            ],
+    "os":  {
+               "Caption":  "Microsoft Windows 11 Pro",
+               "Version":  "10.0.26200"
+           },
+    "pid":  25816,
+    "exit_code":  0,
+    "finished_utc":  "2026-10-29T14:12:02.9691323Z"
+}

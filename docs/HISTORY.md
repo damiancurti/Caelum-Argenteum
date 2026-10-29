@@ -4,6 +4,11 @@ Documentation version: **5.8.50** - 2026-10-28.
 
 ## Unreleased #416 transport catalogue - 2026-10-29
 
+Added original painted horse rotations and owned steam-train/service-sign
+models, with deterministic registration and source provenance in ASSETS.
+Native rendering captures are retained in validation_5852; author acceptance
+remains pending. This art checkpoint is separate from runtime travel integration.
+
 The author authorized calculations and period-transport approximations for
 missing route/speed/timetable data on 2026-10-29. Added a deterministic catalogue
 with explicit source/estimate distinctions, approved fares and 34 passing native

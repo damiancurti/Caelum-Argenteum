@@ -15,6 +15,8 @@ Buenos Aires layout preserves previous map geometry. Its shops, connected worksh
 and independent domestic water pass 38 native/save checks. Tickets and interruption
 integration remain pending. A saved ticket ledger passes 26 native payment/progress
 checks; boarding and moving journeys are not yet connected. Historical references and explicit estimates are distinguished in SYSTEMS.
+Original horse sprites and steam-train/service-sign models are prepared with
+native rendering evidence; see ASSETS for source provenance and regeneration.
 
 Original 5.8.50 save/upgrade/reload/rollback checks pass; see
 `assets/validation_5851/legacy-results.json` for the preservation boundary.
