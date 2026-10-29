@@ -537,6 +537,17 @@ cannot become retroactive physical contact. Rebind cached outer equipment
 endpoints without per-tic allocation. Native TryMove, stationary clock, brief
 contact, separation, current/old saves, hub and rollback tests cover these paths.
 
+Extension, #502/5.8.45: collision helpers are not necessarily independent game
+objects. Dining cells must resolve contamination to the real table/item before
+contact, cleaning or environmental registration. A table's one-unit controller
+radius is not its collision envelope. Deduplicate contacts by logical owner,
+while retaining the physical helper for touching geometry; remove duplicate
+saved links before charging another dose. Migration settles the old cell
+records once, retains the highest concentration without summing it and prevents
+later cleaning from resurrecting an old carrier value. Only the fixed 32-cell
+roster and existing per-body links are inspected. Native landing, packed sets,
+save/hub and genuine prior-runtime recovery evidence: assets/validation_5845.
+
 A peaceful1,000-body/500-pair native comparison retained similar callback cadence:
 mean16.667/16.668ms, p9517.366/17.391, p9918.103/18.082, worst22.949/19.611.
 Both ran700tics with1,000 survivors; only the final500 receivers gained exposure.

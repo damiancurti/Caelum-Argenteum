@@ -32,7 +32,10 @@ class CaelumContaminationContacts : Object play
         for(int i=0;i<links.Pairs.Size();i++)
         {
             let pair=links.Pairs[i];if(pair==null)continue;
-            if(pair.First==other || pair.Second==other){pair.LastCollisionTic=level.maptime;return;}
+            if(CaelumDiningContamination.Owner(pair.First)==CaelumDiningContamination.Owner(other))
+            {pair.First=other;pair.LastCollisionTic=level.maptime;return;}
+            if(CaelumDiningContamination.Owner(pair.Second)==CaelumDiningContamination.Owner(other))
+            {pair.Second=other;pair.LastCollisionTic=level.maptime;return;}
         }
         let pair=new('CaelumContaminationContact');pair.First=body;pair.Second=other;
         pair.LastCollisionTic=level.maptime;pair.Revision=1;pair.Rebase();
@@ -62,6 +65,22 @@ class CaelumContaminationContact : Thinker
     transient bool ClockReady;
     transient double LastStamp;
     transient CaelumContaminationContactPoint FirstPoint,SecondPoint;
+
+    bool Duplicate()
+    {
+        let links=CaelumContaminationContacts.Get(First);
+        if(links==null)links=CaelumContaminationContacts.Get(Second);
+        if(links==null)return false;
+        let a=CaelumDiningContamination.Owner(First),b=CaelumDiningContamination.Owner(Second);
+        for(int i=0;i<links.Pairs.Size();i++)
+        {
+            let prior=links.Pairs[i];if(prior==self)return false;
+            if(prior==null)continue;
+            let x=CaelumDiningContamination.Owner(prior.First),y=CaelumDiningContamination.Owner(prior.Second);
+            if((a==x && b==y) || (a==y && b==x))return true;
+        }
+        return false;
+    }
 
     bool Touching()
     {
@@ -97,7 +116,7 @@ class CaelumContaminationContact : Thinker
     }
     override void Tick()
     {
-        if(!Touching())
+        if((!ClockReady && Duplicate()) || !Touching())
         {
             CaelumContaminationContacts.Remove(First,self);CaelumContaminationContacts.Remove(Second,self);
             Destroy();return;

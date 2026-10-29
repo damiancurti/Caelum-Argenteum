@@ -1,6 +1,27 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.44** - 2026-10-28.
+Documentation version: **5.8.45** - 2026-10-28.
+
+## 5.8.45 - Shared dining contamination (#502, 2026-10-28)
+
+Inspection found separate contamination records on a table's invisible collision
+cells, while non-solid controllers missed exposure. Corrected the physical-to-
+logical ownership, full-envelope cylinder area, contact deduplication and
+revision1 migration retaining the highest previously stored concentration.
+Chairs retain separate state; geometry, art, rates and acquisition are unchanged.
+Validation evidence: assets/validation_5845. No author acceptance is inferred;
+manual corroboration remains grouped until the requested complete V5.8 handoff.
+
+Final evidence:104 current native PASS plus8 original-runtime PASS, zero final
+failures/static errors. All17,034 package members match source and14,064 prior
+map/art files are unchanged. SHA256:
+`4e90009c170c7522ed96826752f6b3dc067025eb84d65aafe218358b53c0eb01`.
+Native gravity/landing verifies actual physical registration, beyond direct
+callback diagnostics. Current save/hub, genuine5.8.44 upgrade/rollback and
+loaded-house access/resource-shortage regressions pass. The native home-access
+probe covers856targets:mean3.095135/p953.128900/max3.357000ms,20runs; this is not
+displayed-FPS acceptance. Private compiler/fixture failures are retained but
+excluded from final counts. CA502-DINING-CONTACT-01 remains author-pending.
 
 ## 5.8.44 - Landscapes and botanical sculpture (#410, 2026-10-28)
 

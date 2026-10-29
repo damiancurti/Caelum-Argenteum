@@ -362,3 +362,19 @@ Steps:
    then travel away and back while carrying it.
 Expected: Correct painted icons and original world objects, native permission
 and weight checks, no door obstruction, duplicates, new bonuses or lost dirt.
+
+ID: CA502-DINING-CONTACT-01
+Origin: 5.8.45 / #502
+Prerequisites: completed V5.8 grouped handoff, disposable save with a portable
+normal dining set; existing contamination diagnostic resources. Do not replace
+or overwrite the player's campaign save. Agent evidence: assets/validation_5845.
+Steps:
+1. Place a dining set and give its table a known contamination value through the
+   final diagnostic controls. Touch different edges and stand on the tabletop.
+2. Check that contact reaches the player's exposed skin or covering equipment;
+   moving across collision cells must not multiply the rate.
+3. Pack the set, save/load, travel and replace it. Inspect the same contamination.
+4. Clean the table through the household diagnostic, then save/load again.
+Expected: body, packed item and collision cells share one value; chairs remain
+separate; packing/returning never cleans it, and old cell values never undo a
+later cleaning. Corroborate only at the final grouped V5.8 handoff.
