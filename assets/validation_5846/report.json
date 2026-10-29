@@ -1,0 +1,155 @@
+{
+  "version": "5.8.46",
+  "issue": 502,
+  "base": "8ab70cb7012ef21efc681354672641474cfb2022",
+  "runtime_sha256": "2acb1905cb9466c5e787485246782b26f3834ae594f9ecb26486ae4938873d0c",
+  "source_matching_package_members": 17035,
+  "unchanged_map_art_members": 14064,
+  "native_passes": 155,
+  "original_runtime_passes": 4,
+  "native_failures": 0,
+  "runs": [
+    {
+      "label": "ready-core",
+      "executed_passes": 27,
+      "runtime_sha256": "2acb1905cb9466c5e787485246782b26f3834ae594f9ecb26486ae4938873d0c",
+      "addon_sha256": "3361e2783252563bc75cd55443b49583e93b7acffb9dc7e5092b741f8e91246e"
+    },
+    {
+      "label": "ready-exposure",
+      "executed_passes": 7,
+      "runtime_sha256": "2acb1905cb9466c5e787485246782b26f3834ae594f9ecb26486ae4938873d0c",
+      "addon_sha256": "3361e2783252563bc75cd55443b49583e93b7acffb9dc7e5092b741f8e91246e"
+    },
+    {
+      "label": "ready-clock",
+      "executed_passes": 4,
+      "runtime_sha256": "2acb1905cb9466c5e787485246782b26f3834ae594f9ecb26486ae4938873d0c",
+      "addon_sha256": "3361e2783252563bc75cd55443b49583e93b7acffb9dc7e5092b741f8e91246e"
+    },
+    {
+      "label": "ready-warm",
+      "executed_passes": 2,
+      "runtime_sha256": "2acb1905cb9466c5e787485246782b26f3834ae594f9ecb26486ae4938873d0c",
+      "addon_sha256": "3361e2783252563bc75cd55443b49583e93b7acffb9dc7e5092b741f8e91246e"
+    },
+    {
+      "label": "ready-guards",
+      "executed_passes": 5,
+      "runtime_sha256": "2acb1905cb9466c5e787485246782b26f3834ae594f9ecb26486ae4938873d0c",
+      "addon_sha256": "3361e2783252563bc75cd55443b49583e93b7acffb9dc7e5092b741f8e91246e"
+    },
+    {
+      "label": "ready-production",
+      "executed_passes": 9,
+      "runtime_sha256": "2acb1905cb9466c5e787485246782b26f3834ae594f9ecb26486ae4938873d0c",
+      "addon_sha256": "3361e2783252563bc75cd55443b49583e93b7acffb9dc7e5092b741f8e91246e"
+    },
+    {
+      "label": "ready-resident",
+      "executed_passes": 11,
+      "runtime_sha256": "2acb1905cb9466c5e787485246782b26f3834ae594f9ecb26486ae4938873d0c",
+      "addon_sha256": "3361e2783252563bc75cd55443b49583e93b7acffb9dc7e5092b741f8e91246e"
+    },
+    {
+      "label": "ready-lethal",
+      "executed_passes": 4,
+      "runtime_sha256": "2acb1905cb9466c5e787485246782b26f3834ae594f9ecb26486ae4938873d0c",
+      "addon_sha256": "3361e2783252563bc75cd55443b49583e93b7acffb9dc7e5092b741f8e91246e"
+    },
+    {
+      "label": "ready-seed",
+      "executed_passes": 1,
+      "runtime_sha256": "2acb1905cb9466c5e787485246782b26f3834ae594f9ecb26486ae4938873d0c",
+      "addon_sha256": "3361e2783252563bc75cd55443b49583e93b7acffb9dc7e5092b741f8e91246e"
+    },
+    {
+      "label": "ready-perf",
+      "executed_passes": 1,
+      "runtime_sha256": "2acb1905cb9466c5e787485246782b26f3834ae594f9ecb26486ae4938873d0c",
+      "addon_sha256": "3361e2783252563bc75cd55443b49583e93b7acffb9dc7e5092b741f8e91246e"
+    },
+    {
+      "label": "ready-captureperf",
+      "executed_passes": 1,
+      "runtime_sha256": "2acb1905cb9466c5e787485246782b26f3834ae594f9ecb26486ae4938873d0c",
+      "addon_sha256": "3361e2783252563bc75cd55443b49583e93b7acffb9dc7e5092b741f8e91246e"
+    },
+    {
+      "label": "ready-resume",
+      "executed_passes": 4,
+      "runtime_sha256": "2acb1905cb9466c5e787485246782b26f3834ae594f9ecb26486ae4938873d0c",
+      "addon_sha256": "3361e2783252563bc75cd55443b49583e93b7acffb9dc7e5092b741f8e91246e"
+    },
+    {
+      "label": "ready-upgrade",
+      "executed_passes": 7,
+      "runtime_sha256": "2acb1905cb9466c5e787485246782b26f3834ae594f9ecb26486ae4938873d0c",
+      "addon_sha256": "3361e2783252563bc75cd55443b49583e93b7acffb9dc7e5092b741f8e91246e"
+    }
+  ],
+  "regressions": [
+    {
+      "label": "ready46-active-core",
+      "executed_passes": 14,
+      "runtime_sha256": "2acb1905cb9466c5e787485246782b26f3834ae594f9ecb26486ae4938873d0c",
+      "addon_sha256": "623d8fb33ce47ce5c098f1a65ffc544c306c74e2bb5e422dc79af9f9123ad9a3"
+    },
+    {
+      "label": "ready46-active-recovery",
+      "executed_passes": 12,
+      "runtime_sha256": "2acb1905cb9466c5e787485246782b26f3834ae594f9ecb26486ae4938873d0c",
+      "addon_sha256": "623d8fb33ce47ce5c098f1a65ffc544c306c74e2bb5e422dc79af9f9123ad9a3"
+    },
+    {
+      "label": "ready46-home-seed",
+      "executed_passes": 18,
+      "runtime_sha256": "2acb1905cb9466c5e787485246782b26f3834ae594f9ecb26486ae4938873d0c",
+      "addon_sha256": "050bd38ca67a5335541321572a68c62674e927b9f940a7713bffcde8e12bacb8"
+    },
+    {
+      "label": "ready46-home-core",
+      "executed_passes": 12,
+      "runtime_sha256": "2acb1905cb9466c5e787485246782b26f3834ae594f9ecb26486ae4938873d0c",
+      "addon_sha256": "050bd38ca67a5335541321572a68c62674e927b9f940a7713bffcde8e12bacb8"
+    },
+    {
+      "label": "ready46-home-shortages",
+      "executed_passes": 4,
+      "runtime_sha256": "2acb1905cb9466c5e787485246782b26f3834ae594f9ecb26486ae4938873d0c",
+      "addon_sha256": "050bd38ca67a5335541321572a68c62674e927b9f940a7713bffcde8e12bacb8"
+    },
+    {
+      "label": "ready46-home-limbo",
+      "executed_passes": 12,
+      "runtime_sha256": "2acb1905cb9466c5e787485246782b26f3834ae594f9ecb26486ae4938873d0c",
+      "addon_sha256": "050bd38ca67a5335541321572a68c62674e927b9f940a7713bffcde8e12bacb8"
+    }
+  ],
+  "original_runs": [
+    {
+      "label": "old45-seed-b",
+      "executed_passes": 1,
+      "runtime_sha256": "4e90009c170c7522ed96826752f6b3dc067025eb84d65aafe218358b53c0eb01",
+      "addon_sha256": "d6f3290cb4e428ac487941f855139ade4bdb5c0d63c258dabbf2758cf9ccf755"
+    },
+    {
+      "label": "ready-rollback",
+      "executed_passes": 3,
+      "runtime_sha256": "4e90009c170c7522ed96826752f6b3dc067025eb84d65aafe218358b53c0eb01",
+      "addon_sha256": "d6f3290cb4e428ac487941f855139ade4bdb5c0d63c258dabbf2758cf9ccf755"
+    }
+  ],
+  "prior_save_sha256": "6e50c0f8a07f91f7b1791e925041bded532291672b36d7d3a45240bd677e12ca",
+  "scope": "Source-map illness/recovery clock, exposure through original equipment, initial thermal sample, native damage factors/immunities/story protection, native hub and travelling resident restoration, load-time and deferred native deaths, fractional save/resume, genuine original45 migration/rollback, loaded physiology and household work regressions.",
+  "performance": [
+    "CA502N TIMING 600_days_total_ms=5863.580200 mean_ms=9.772634 p95_ms=9.928600 max_ms=11.523700",
+    "CA502N TIMING departure600_3runs_mean_ms=2.850667 max_ms=3.295800",
+    "CA502A TIMING access_targets=856 mean_ms=3.110800 p95_ms=3.193800 max_ms=3.393900"
+  ],
+  "performance_scope": "Departure is a single typed census of the loaded default-stat population, not a routine scan. Capture benchmark uses600 added native bodies plus the2 ordinary fixture bodies. Long-absence benchmark repeats600 independent one-day integrations; it is not600 simultaneous attackers or a renderer measurement. Full hub catch-up is in the existing load census, before playable ticks. No displayed-FPS acceptance is claimed.",
+  "probe_findings": "Preserved private probes identified a floating-point integer-recovery boundary, an active fixture entering See while resetting Spawn, a zero weather seed, native travel clearing diagnostic TIDs, and legacy-fixture warmup/addon-name requirements. Corrected fixtures and shared rounding use the final runtime; failed probes are excluded. An initial5.8.46 package lacked two diagnostic version labels, and later reviews added first-sample capture and native damage policy preservation; final46e supersedes those retained packages.",
+  "limits": "The snapshot retains the last recovery gate and existing combat/status state; battle/status decisions remain#415. It follows original native hub bodies and resident travellers, not replacement actors in reset maps. Stackable/non-solid/contact completion remains#502.",
+  "author_acceptance": "CA502-NPC-ABSENCE-01 pending grouped final V5.8 handoff; no prior author test removed.",
+  "fixture_reproducibility_verified": true
+}

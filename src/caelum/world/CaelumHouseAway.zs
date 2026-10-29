@@ -89,7 +89,7 @@ class CaelumHouseAwayWork : Object play
         let roster=CaelumHouseResidents.Get();if(roster==null || index<0 || index>=Residents.Size())return false;
         int id=Residents[index];if(id<0 || id>=roster.Residents.Size())return false;
         let resident=roster.Residents[id];let body=resident.Body;
-        return body!=null && !body.bDestroyed && body.health>0 && resident.Suspended
+        return body!=null && !body.bDestroyed && CaelumContaminationAbsence.Alive(body,Stamp) && resident.Suspended
             && !resident.Emitted && !resident.Delegated && resident.ResidentMap==CaelumHouseHubData.MapName(entry.House)
             && body.ForcedSleepTics<=0 && body.CombatLucidityPhysicalStunRemaining<=0 && !body.ResourceRecoveryActive()
             && (body.target==null || body.target.health<=0) && !CaelumTheftWitnesses.HasTarget(body)

@@ -63,6 +63,7 @@ class CaelumCombatActor : Actor
     CaelumElementalStatus ElementalStatus;
     CaelumThermalState ThermalState;
     transient CaelumContaminationNPC ContaminationExposure;
+    CaelumContaminationAbsence ContaminationAbsence;
     transient CaelumContaminationState ContaminationBody;
     transient bool ContaminationBodyReady;
     CaelumContaminationContacts ContaminationContacts;
@@ -3964,10 +3965,9 @@ class CaelumCombatActor : Actor
         double idleFactor=IsCombatIdle() ? CaelumRestRules.CHAIR_RESOURCE_FACTOR : 1;
         if (idleFactor>1 && health>0 && (health<CombatMaximumHealth || CaelumContaminationNPC.NeedsRecovery(self)))
         {
-            IdleHealthAccumulator+=CombatMaximumHealth/CaelumConstants.HEALTH_BASE_RECOVERY_REAL_SECONDS
-                *CalculateActorType4Percent(CombatResilience)/100.0*idleFactor/TICRATE;
-            int recovered=int(IdleHealthAccumulator);
-            IdleHealthAccumulator-=recovered;health=Min(CombatMaximumHealth,health+recovered);
+            IdleHealthAccumulator+=CaelumContaminationNPC.HealthRate(self)/TICRATE;
+            int recovered=int(IdleHealthAccumulator+0.0000001);
+            IdleHealthAccumulator=Max(0.0,IdleHealthAccumulator-recovered);health=Min(CombatMaximumHealth,health+recovered);
             // El mismo esfuerzo natural depura incluso con Vida llena; se
             // conservan las condiciones y el presupuesto de recuperación NPC.
             CaelumContaminationNPC.Recover(self,recovered);
@@ -4004,6 +4004,11 @@ class CaelumCombatActor : Actor
 
     override void Tick()
     {
+        if(ContaminationAbsence!=null && ContaminationAbsence.Away)
+        {
+            for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i] && players[i].mo!=null)
+            {CaelumContaminationAbsence.Restore(self,CaelumPlayer(players[i].mo));break;}
+        }
         if(CaelumRedemption.Pending(self))return;
         MigrateNativeFrozenDeathState();
         EnsureCombatPersonality();

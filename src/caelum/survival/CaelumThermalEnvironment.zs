@@ -71,6 +71,18 @@ class CaelumThermalWorld : StaticEventHandler
     Array<CaelumVehicleRanch> Ranches;
     int FireSampleTic;
     bool HasThermalSurfaces;
+    override void WorldUnloaded(WorldEvent e)
+    {
+        // Un censo tipado por transición, acotado a la población nativa.
+        // Cada cuerpo posee su registro; no hay búsquedas por NPC ni por tic.
+        CaelumPlayer user;
+        for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i] && players[i].mo!=null)
+        {user=CaelumPlayer(players[i].mo);break;}
+        if(user==null)return;
+        let actors=ThinkerIterator.Create('CaelumCombatActor',Thinker.STAT_DEFAULT);CaelumCombatActor body;
+        while((body=CaelumCombatActor(actors.Next()))!=null)
+            CaelumContaminationAbsence.Capture(body,user);
+    }
     override void WorldLoaded(WorldEvent e)
     {
         ReferenceWeather=null;ReferenceClock=null;ReferenceCalendar=null;NextPhase=0;FireSources.Clear();Ranches.Clear();FireSampleTic=-TICRATE;
@@ -84,17 +96,28 @@ class CaelumThermalWorld : StaticEventHandler
         for(int i=0;i<level.Sectors.Size();i++)
             if(CaelumThermalSurfaceData.Valid(level.Sectors[i].GetUDMFInt('user_ca_thermal_surface')))
             {HasThermalSurfaces=true;break;}
-        // Los mapas descargados no simulan fisiología. Al volver de un hub,
-        // conservar el estado personal y reiniciar sólo los relojes locales.
+        // #502 restaura contaminación/enfermedad en el primer Tick del cuerpo.
+        // Reiniciar los demás relojes térmicos evita cobrar el intervalo dos veces.
         if(e.IsReopen && !e.IsSaveGame)
         {
+            CaelumPlayer user;
+            for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i] && players[i].mo!=null)
+            {user=CaelumPlayer(players[i].mo);break;}
             let actors=ThinkerIterator.Create("CaelumCombatActor");CaelumCombatActor body;
             while((body=CaelumCombatActor(actors.Next()))!=null)
+            {
+                // Resolver cuerpos del hub mientras todavía se carga el mapa,
+                // reutilizando este censo, antes del primer fotograma jugable.
+                // Los residentes viajeros se restauran en Resume, ya colocados.
+                let defender=CaelumPortDefender(body);
+                if(defender==null || defender.Residence==null || !defender.Residence.Suspended)
+                    CaelumContaminationAbsence.Restore(body,user);
                 if(body.ThermalState!=null)
                 {
                     body.ThermalState.RuntimeReady=false;body.ThermalState.SourceMap="";
                     body.ThermalState.PendingActivityJoules=0;body.ThermalState.PropelledVelocity=(0,0);
                 }
+            }
         }
     }
     CaelumWeatherSample LocalSample(CaelumWeatherState weather,int shelter)

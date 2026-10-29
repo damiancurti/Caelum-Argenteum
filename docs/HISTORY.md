@@ -1,6 +1,40 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.45** - 2026-10-28.
+Documentation version: **5.8.46** - 2026-10-28.
+
+## 5.8.46 - Native NPC absence physiology (#502, 2026-10-28)
+
+Author decisions: source-clock physiology uses20 world seconds per exterior
+active second and the existing Limbo clock; documented physical calculations
+are authorized for remaining stackable surfaces, preserving separate lots and
+additive split/merge exposure. The latter is still pending implementation.
+
+Added revision1 absence records to original NPC bodies, captured only on actual
+departure, with source climate, recovery eligibility, native equipment identity
+and fractional health events. Preserved hub bodies resolve during loading;
+travelling residents resolve after their normal native placement. Logical deaths
+block away housekeeping/deployment and invoke native death/loot once on return.
+No map/art files, combat selection, recipes or rates changed. Other off-map
+combat/status work remains with#415; reset-map replacement actors are not added.
+
+Evidence: assets/validation_5846; 155 current native PASS and
+4 original-runtime checks, zero failures/static errors. Native hub/resident
+return, original5.8.45 migration/rollback, fractional save/resume, native damage
+protections, active illness and household work regressions pass. All
+17035 package members match source; 14064 previous map/art members are
+byte-identical. Final46e SHA256:
+`2acb1905cb9466c5e787485246782b26f3834ae594f9ecb26486ae4938873d0c`.
+
+The typed departure census (600 added bodies plus2 existing fixture bodies)
+measured2.851ms mean/3.296ms max across3 runs. The600 independent one-day
+integrations took5863.580ms total,9.773ms mean/9.929ms p95 per NPC. Full catch-up
+runs during map loading; long absences can increase loading time. These are
+subsystem costs, not displayed-frame/FPS acceptance. The existing856-target
+household access probe measured3.194ms p95. The retired6,000-attacker stress
+cases were not run.
+
+Author acceptance remains pending under CA502-NPC-ABSENCE-01, grouped with
+earlier outstanding tests. No existing author result was removed or reclassified.
 
 ## 5.8.45 - Shared dining contamination (#502, 2026-10-28)
 

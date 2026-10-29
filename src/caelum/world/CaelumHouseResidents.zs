@@ -15,6 +15,8 @@ class CaelumHouseResident : Object play
     void Suspend()
     {
         if(Body==null || Suspended)return;
+        let roster=CaelumHouseResidents.Get();
+        if(roster!=null)CaelumContaminationAbsence.Capture(Body,CaelumPlayer(roster.Owner));
         for(int i=0;i<Body.ImpactContacts.Size();i++)
         {
             let contact=Body.ImpactContacts[i];if(contact==null)continue;
@@ -59,10 +61,17 @@ class CaelumHouseResident : Object play
     {
         if(Body==null || !Suspended)return Body!=null;
         if(!Body.CombatProfileInitialized)return false;
+        let roster=CaelumHouseResidents.Get();let user=roster!=null?CaelumPlayer(roster.Owner):null;
+        let absence=Body.ContaminationAbsence;
+        if(absence!=null && absence.Away)
+        {
+            absence.SyncTo(Body,CaelumContaminationAbsence.Clock(user,absence.Map));
+            if(absence.Life<=0 && ResidentMap!=level.MapName)return false;
+        }
         Body.ResetMaintenanceForTravel();
         Body.SetOrigin(point,false);Body.FindFloorCeiling();
         // Un acceso ocupado aplaza la colocación; no consume ni duplica al soldado.
-        if(Body.health>0)
+        if(Body.health>0 && (absence==null || !absence.Away || absence.Life>0))
         {
             let probe=Actor.Spawn("CaelumSummoningProbe",point,NO_REPLACE);
             probe.A_SetSize(Body.Radius,Body.Height);
@@ -93,7 +102,7 @@ class CaelumHouseResident : Object play
             for(Inventory item=Binding.Inv;item!=null;item=item.Inv)
                 item.ChangeStatNum(Thinker.STAT_INVENTORY);
         }
-        Suspended=false;return true;
+        Suspended=false;CaelumContaminationAbsence.Restore(Body,user);return true;
     }
 }
 
@@ -328,7 +337,7 @@ class CaelumHouseResidents : Inventory
         {
             let entry=Residents[i];DelegatesTravel(entry);
             entry.DeploymentResolved=entry.Emitted || entry.ExcludedFromDeployment
-                || (entry.Created && (entry.Body==null || entry.Body.health<=0));
+                || (entry.Created && !CaelumContaminationAbsence.Alive(entry.Body,CaelumHouseAwayWork.Civil(CaelumPlayer(Owner))));
             if(!entry.DeploymentResolved)Unresolved++;
         }
         DeploymentPending=Unresolved>0;
@@ -367,7 +376,7 @@ class CaelumHouseResidents : Inventory
         int identity=PendingCursor;PendingCursor=(PendingCursor+1)%Residents.Size();
         let entry=Residents[identity];
         if(entry.DeploymentResolved)return;
-        if(entry.Created && (entry.Body==null || entry.Body.health<=0))
+        if(entry.Created && !CaelumContaminationAbsence.Alive(entry.Body,CaelumHouseAwayWork.Civil(CaelumPlayer(Owner))))
         {entry.DeploymentResolved=true;DeploymentPending=--Unresolved>0;return;}
         vector3 point=CaelumCityData.DoorOutside(CaelumPropertyData.ResidentHouse(identity));
         let probe=Spawn("CaelumSummoningProbe",point,NO_REPLACE);
