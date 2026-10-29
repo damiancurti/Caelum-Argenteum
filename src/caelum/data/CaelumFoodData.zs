@@ -23,7 +23,8 @@ class CaelumFoodData : Object
     const VEGETABLES = 6;
     const RATION = 7;
     const FLOUR = 8;
-    const KIND_COUNT = 9;
+    const DOUGH = 9;
+    const KIND_COUNT = 10;
     static clearscope bool Prepared(int kind)
     {return kind==RATION || (kind>=ROAST_FISH && kind<=BREAD);}
     static clearscope double ServingGrams(int kind)
@@ -35,7 +36,7 @@ class CaelumFoodData : Object
         {
             case RAW_FISH: return 6;
             case RAW_BEEF: case ROAST_FISH: return 12;
-            case ROAST_BEEF: case PUCHERO: return 24;
+            case ROAST_BEEF: case PUCHERO: case DOUGH: return 24;
             case BREAD: case VEGETABLES: return 72;
             case RATION: return 168;
             case FLOUR: return 720;

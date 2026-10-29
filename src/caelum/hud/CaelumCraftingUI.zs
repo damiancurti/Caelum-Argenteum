@@ -44,6 +44,7 @@ class CaelumCraftingUI : Object
     }
     static ui String Blueprint(CaelumJournalOverlay view, CaelumPlayer user)
     {
+        if(CaelumMealData.IsRecipe(user.CraftingSelectionRecipe))return CookingDetails(user);
         if(CaelumChemistryData.IsRecipe(user.CraftingSelectionRecipe))return ChemistryDetails(user);
         String result;
         for (int node = 0; node < user.CraftingBlueprintNodeCount; node++)
@@ -67,6 +68,22 @@ class CaelumCraftingUI : Object
             }
         }
         return result;
+    }
+    static ui String CookingDetails(CaelumPlayer user)
+    {
+        int recipe=user.CraftingSelectionRecipe;
+        String result=String.Format(L("CA_CHEMISTRY_OUTPUT"),user.CraftingOutputAmount,user.CraftingFinalWeight);
+        for(int slot=0;CaelumCookingData.InputMaterial(recipe,slot)>=0;slot++)
+        {
+            int material=CaelumCookingData.InputMaterial(recipe,slot),required=CaelumCookingData.InputGrams(recipe,slot);
+            int owned=slot==0?user.CraftingBasicOwned:slot==1?user.CraftingTierOwned:slot==2?user.CraftingSilverOwned:user.CraftingGoldOwned;
+            result=result.."\n"..String.Format(L("CA_CHEMISTRY_INPUT"),
+                L(CaelumDisplayNames.GetSpecialItemKey(CaelumConstants.EQUIPMENT_KIND_MATERIAL,material)),owned,required,
+                CaelumMaterialRules.UnitWeight(material)*required);
+        }
+        if(CaelumCookingData.WaterLiters(recipe)>0)
+            result=result.."\n"..String.Format(L("CA_CHEMISTRY_WATER"),user.ChemistryAvailableWater,CaelumCookingData.WaterLiters(recipe));
+        return result.."\n"..String.Format(L("CA_CHEMISTRY_TIME"),user.CraftingPreviewSeconds/60).."\n"..L("CA_COOKING_CANCEL");
     }
     static ui String ChemistryDetails(CaelumPlayer user)
     {
@@ -129,6 +146,8 @@ class CaelumCraftingUI : Object
     }
     static ui bool MaterialsReady(CaelumPlayer user)
     {
+        if(CaelumMealData.IsRecipe(user.CraftingSelectionRecipe) && user.ChemistryAvailableWater+0.0000001
+            <CaelumCookingData.WaterLiters(user.CraftingSelectionRecipe))return false;
         if(CaelumChemistryData.IsRecipe(user.CraftingSelectionRecipe) && user.ChemistryAvailableWater+0.0000001
             <CaelumChemistryData.WaterLiters(user.CraftingSelectionRecipe)*user.CraftingProcessingBatchMultiplier)return false;
         return user.CraftingDirectPlanAvailable || (user.CraftingBasicOwned>=user.CraftingBasicRequired
@@ -166,8 +185,9 @@ class CaelumCraftingUI : Object
             if(craft)
             {
                 int kind=user.CraftingSelectedRecipeKind;
-                bool batch=kind==CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING || kind==CaelumConstants.CRAFTING_RECIPE_KIND_COMPONENT;
-                bool sized=!batch && kind!=CaelumConstants.CRAFTING_RECIPE_KIND_UTILITY && kind!=CaelumConstants.CRAFTING_RECIPE_KIND_AMULET
+                bool batch=(kind==CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING || kind==CaelumConstants.CRAFTING_RECIPE_KIND_COMPONENT)
+                    && !CaelumMealData.IsRecipe(user.CraftingSelectionRecipe);
+                bool sized=!batch && kind!=CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING && kind!=CaelumConstants.CRAFTING_RECIPE_KIND_UTILITY && kind!=CaelumConstants.CRAFTING_RECIPE_KIND_AMULET
                     && kind!=CaelumConstants.CRAFTING_RECIPE_KIND_SEAL && kind!=CaelumConstants.CRAFTING_RECIPE_KIND_AMMUNITION;
                 pointer.Button(view,11,244,178,72,CaelumInputHints.Context(String.Format("T%d",user.CraftingSelectionTier),InputEvent.Key_Space),
                     !CaelumCraftingRules.IsSingleTierRecipe(user.CraftingSelectionRecipe) && kind!=CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING,false,draw);
@@ -175,7 +195,7 @@ class CaelumCraftingUI : Object
                     user.CraftingSelectionRecipe,user.CraftingSelectionSize))),0,114),sized,false,draw);
                 pointer.Button(view,13,436,178,68,CaelumInputHints.Context(String.Format("x%d",user.CraftingProcessingBatchMultiplier),0,98),batch,false,draw);
             }
-            if(mode!=CaelumCraftingBrowser.DISMANTLE && !CaelumChemistryData.IsRecipe(user.CraftingSelectionRecipe))
+            if(mode!=CaelumCraftingBrowser.DISMANTLE && !CaelumChemistryData.IsRecipe(user.CraftingSelectionRecipe) && !CaelumMealData.IsRecipe(user.CraftingSelectionRecipe))
                 pointer.Button(view,14,508,178,84,CaelumInputHints.Context(String.Format("%d%%",user.CraftingEfficiencyPercent),0,120),true,false,draw);
             pointer.Button(view,20,552,218,56,CaelumInputHints.Context("^",InputEvent.Key_UpArrow),true,false,draw);
             pointer.Button(view,21,552,250,56,CaelumInputHints.Context("v",InputEvent.Key_DownArrow),true,false,draw);
@@ -188,6 +208,7 @@ class CaelumCraftingUI : Object
     }
     static ui void Draw(CaelumJournalOverlay view,CaelumPlayer user)
     {
+        if(CaelumProofingUI.Active(user)){CaelumProofingUI.Draw(view,user);return;}
         if(CaelumFermentationMenu.Active(user)){CaelumFermentationUI.Draw(view,user);return;}
         let browser=user.CraftingBrowser;if(browser==null)return;
         int mode=browser.Mode;
@@ -241,6 +262,7 @@ class CaelumCraftingUI : Object
     }
     static ui bool Key(CaelumJournalOverlay view,CaelumPlayer user,int scan,int character)
     {
+        if(CaelumProofingUI.Active(user))return CaelumProofingUI.Key(view,user,scan,character);
         if(CaelumFermentationMenu.Active(user))return CaelumFermentationUI.Key(view,user,scan,character);
         let browser = user.CraftingBrowser;
         if (browser == null) return true;
@@ -259,9 +281,9 @@ class CaelumCraftingUI : Object
         else if ((character == 103 || character == 71 || scan == InputEvent.Key_Pad_Y) && mode == CaelumCraftingBrowser.CRAFT)
         { view.SendNetworkEvent("ca_crafting_filter"); Scroll("ca_journal_craft_scroll",0); }
         else if ((scan == InputEvent.Key_Space || scan == InputEvent.Key_Pad_X) && mode == CaelumCraftingBrowser.CRAFT) view.SendNetworkEvent("ca_crafting_tier");
-        else if ((character == 114 || character == 82) && mode == CaelumCraftingBrowser.CRAFT) view.SendNetworkEvent("ca_crafting_size");
-        else if ((character == 98 || character == 66) && mode == CaelumCraftingBrowser.CRAFT) view.SendNetworkEvent("ca_crafting_batch");
-        else if ((character == 120 || character == 88) && mode != CaelumCraftingBrowser.DISMANTLE && !CaelumChemistryData.IsRecipe(user.CraftingSelectionRecipe)) view.SendNetworkEvent("ca_crafting_efficiency");
+        else if ((character == 114 || character == 82) && mode == CaelumCraftingBrowser.CRAFT && !CaelumMealData.IsRecipe(user.CraftingSelectionRecipe)) view.SendNetworkEvent("ca_crafting_size");
+        else if ((character == 98 || character == 66) && mode == CaelumCraftingBrowser.CRAFT && !CaelumMealData.IsRecipe(user.CraftingSelectionRecipe)) view.SendNetworkEvent("ca_crafting_batch");
+        else if ((character == 120 || character == 88) && mode != CaelumCraftingBrowser.DISMANTLE && !CaelumChemistryData.IsRecipe(user.CraftingSelectionRecipe) && !CaelumMealData.IsRecipe(user.CraftingSelectionRecipe)) view.SendNetworkEvent("ca_crafting_efficiency");
         else if (character == 99 || character == 67) view.SendNetworkEvent("ca_crafting_cancel_task");
         else return false;
         view.SendNetworkEvent("ca_journal_menu_move_sound");
@@ -288,6 +310,7 @@ class CaelumCraftingUI : Object
     }
     static ui bool Mouse(CaelumJournalOverlay view,CaelumPlayer user,int type,Vector2 point)
     {
+        if(CaelumProofingUI.Active(user))return CaelumProofingUI.Mouse(view,user,type,point);
         if(CaelumFermentationMenu.Active(user))return CaelumFermentationUI.Mouse(view,user,type,point);
         let pointer=CaelumJournalInput.PointerFor(4);
         pointer.Move(point);Layout(view,user,pointer,false);

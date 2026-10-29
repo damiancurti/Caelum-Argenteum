@@ -1,6 +1,56 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.18** - 2026-10-26.
+Documentation version: **5.8.19** - 2026-10-26.
+
+## 5.8.19 - Attended cooking and shared bread proofing (#410)
+
+This delivery activates the four previously reserved recipe IDs 205-208.
+The author approved shared access to a single fixed proofing vessel: a user
+who can use the kitchen may start or collect it, with no personal ownership.
+All checks still require a live, reachable, out-of-combat user. The current
+installation is the mansion's accessible kitchen; private-home permissions
+are not broadened by this patch.
+
+| Process | Inputs for one batch | World time / output |
+| --- | --- | --- |
+| Counter proofing | 700g flour, 14g salt, 7g yeast, 420mL potable water | 2h unattended; 1,141g dough |
+| Oven bread | 1,141g proofed dough, 772g coal | 45min attended; ten 100g portions |
+| Stove roast beef | 1,250g raw beef, 10g salt, 1,029g coal | 60min attended; ten 100g portions |
+| Stove roast fish | 1,330g raw fish, 10g salt, 515g coal | 30min attended; ten 100g portions |
+| Stove puchero | 300g raw beef, 500g vegetable mix, 10g salt, 500mL potable water, 1,543g coal | 90min attended; ten 100g portions |
+
+Heat remains the approved 2kW useful / 25% efficiency / 28MJ per kg of coal.
+Dexterity does not shorten proofing or cooking. Thermal recipes use one fixed
+batch at 100% recipe quantities; the native wait/attended acceleration controls
+apply their normal safety, resource and interruption rules. Leaving the station
+pauses attended work. Proofing continues across saves and map absence; collecting
+the entire ready batch frees the counter. No unapproved discard/refund option
+or second vessel is introduced.
+
+Dough is new gram material 113, not directly edible. It reaches contamination
+100 after 24h at 20C / 50% humidity, with existing food modifiers; bread retains
+72h. Food ingredients pass their mass-weighted contamination to dough and meals.
+Water and fuel do not dilute it; cooking/reheating does not reset it. Reserved
+ingredients and fuel stay in their actual inventory until completion, continue
+ageing and remain available after cancellation. Potable water is reserved by
+actual container and rechecked before completion. Late missing supplies cannot
+partially consume ingredients or create food. Existing automatic eating may
+consume a freshly completed portion during accelerated work.
+
+The four recipe books use normal learning and ten copies each in the library,
+added idempotently without refilling already sold copies. Meal prices retain
+the approved original ingredient/fuel total plus 25%; dough does not cause a
+second processing markup on bread. No prepared-meal shop stock is invented.
+Recipe-book revision 17 and cooking-material revision 1 append the new entries
+without renumbering previous food kinds or learned recipes. Native state stores
+the proofing batch, climate history and cooking reservations. Migration and
+rollback use separate copies of the original save; an older runtime is not
+promised to read new dough/station classes.
+
+This section supersedes the earlier 5.8.18 statements that these four recipes
+and the mansion cooking workflow were still unimplemented. It does not finish
+the wider furniture catalogue or campfire adapter. Author test CA410-COOKING-01
+remains pending; engine assertions are separate evidence.
 
 ## 5.8.18 - Prepared meal items and consumption (#410)
 

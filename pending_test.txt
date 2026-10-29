@@ -1,0 +1,20 @@
+CA410-COOKING-01 | Origin: 5.8.19 | Issue: #410
+Prerequisites: final 5.8.19 package; GZDoom 4.14.2; a disposable campaign or
+the prepared #410 process fixture, with the four learned cooking recipes,
+approved ingredients, potable water and coal. Author review is deferred until return.
+1. In the mansion false-wall room, inspect and use stove, oven and counter.
+   Expect readable period artwork, clear approaches, no obstruction of the secret access.
+2. At the counter start one bread batch (700g flour, 14g salt, 7g yeast, 420mL water).
+   Expect one unattended two-hour batch; no second batch/early withdrawal.
+   Wait or leave/return; the open menu updates its remaining time and readiness.
+3. Collect the ready 1.141kg dough. The counter is free; quantity and contamination
+   persist in inventory/save. The dough is not directly edible. Take it to the oven.
+4. Start/cancel bread baking: dough and 772g coal remain, with accumulated age.
+   Complete 45 world minutes: ten 100g bread portions, preserving food contamination.
+5. At the stove cook/cancel the beef, fish and puchero recipes shown in the menu.
+   Expect the documented quantities, 60/30/90 world minutes, ten portions per batch,
+   preserved containers and cancellation resources. Automatic eating may consume a
+   completed portion if Hunger requires it; this is reported separately from output.
+6. Verify library access to the four learned recipes and one saved/resumed cooking
+   session. No duplicate products or refilled sold recipe stock on repeated use.
+Expected: all process, persistence and visual checks pass. Report any failed step.

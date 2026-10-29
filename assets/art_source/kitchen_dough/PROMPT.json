@@ -1,0 +1,11 @@
+{
+  "tool": "Built-in image_gen",
+  "author": "Generated for Damián Curti / Caelum Argenteum",
+  "date": "2026-10-26",
+  "issue": 410,
+  "source": "dough.png",
+  "transparent_background": true,
+  "prompt": "Use case: stylized-concept. Asset type: a single painted inventory and world sprite for Caelum Argenteum, dark-fantasy RPG inspired by nineteenth-century Argentina. Subject: one rounded, slightly irregular mound of raw risen wheat bread dough, approximately a kilogram, pale warm cream with a lightly flour-dusted surface, soft folded edges and a few subtle proofing dimples. No baked brown crust, cuts, scoring, plate, bowl, board, fabric, packaging, utensils or surrounding objects. Hand-painted pixel-oriented RPG item style, clearly visible brush-shaped shading, warm muted ivory and umber palette, readable broad silhouette and material texture, slightly elevated three-quarter front view. Soft upper-left lighting, restrained highlights, dark warm shading near the underside; no glossy modern 3D rendering, no photo, no cartoon outlines. Whole object centered with clear margins on true transparent background; no text, border, watermark or cast shadow outside the silhouette. This will be downsampled to a 128x128 game sprite, so prioritize simple readable form rather than tiny details. Generate one square source image.",
+  "style_reference": "Observed accepted flour sprite; textual style guidance, no existing pixels edited.",
+  "technical_processing": "Deterministic alpha threshold, crop, resize and alias packing per SPRITE_ART_DIRECTION."
+}

@@ -4,6 +4,16 @@
 class CaelumPersistentCharacterState : Inventory
 {
     Array<CaelumFermentationRecord> FermentationBatches;
+    Array<CaelumProofingRecord> ProofingBatches;
+    int CookingMaterialSchemaRevision;
+    void EnsureCookingMaterialSchema()
+    {
+        if(CookingMaterialSchemaRevision>=CaelumCookingData.REVISION)return;
+        int id=CaelumCookingData.DOUGH;
+        MainM00RepairSupply[id]=0;MainM00SupplyLimit[id]=0;MainM00SupplyIssued[id]=0;
+        MainM00MazeRepairUnits[id]=0;MainM00StarterRequired[id]=0;
+        CookingMaterialSchemaRevision=CaelumCookingData.REVISION;
+    }
     CaelumLawfulIdentity LawfulIdentity;
     bool ProfileCommitted;
     // #147: autoridad compartida. Los campos planos se conservan para saves
@@ -1485,6 +1495,7 @@ class CaelumPersistentCharacterState : Inventory
 
     void EnsureRecipeBookInitialized()
     {
+        EnsureCookingMaterialSchema();
         if (RecipeBookVersion >= CaelumConstants.CRAFTING_RECIPE_BOOK_VERSION)
         {
             return;
@@ -1516,7 +1527,8 @@ class CaelumPersistentCharacterState : Inventory
         // recetas de procesamiento (v3) y las cincuenta de componentes (v4)
         // se anexan bloqueadas; se aprenderán con sus Arcanos Menores.
         int addedRecipeStart;
-        if(RecipeBookVersion>=15){addedRecipeStart=CaelumHygieneData.SOAP_RECIPE;}
+        if(RecipeBookVersion>=16){addedRecipeStart=CaelumMealData.FIRST_RECIPE;}
+        else if(RecipeBookVersion>=15){addedRecipeStart=CaelumHygieneData.SOAP_RECIPE;}
         else if(RecipeBookVersion>=14){addedRecipeStart=CaelumCampData.FIRST_RECIPE;}
         else if(RecipeBookVersion>=13){addedRecipeStart=CaelumMateData.FIRST_RECIPE;}
         else if (RecipeBookVersion >= 12)

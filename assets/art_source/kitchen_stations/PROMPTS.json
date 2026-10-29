@@ -1,0 +1,27 @@
+{
+  "issue": 410,
+  "date": "2026-10-26",
+  "tool": "Built-in imagegen",
+  "art_direction": "docs/SPRITE_ART_DIRECTION.md",
+  "author": "Original assets generated for Damián Curti / Caelum Argenteum",
+  "sources": {
+    "stove": {
+      "file": "stove.png",
+      "prompt": "Create one original inventory/world fallback sprite for Caelum Argenteum, a dark-fantasy RPG inspired by 1889 Argentina. One compact nineteenth-century coal cooking stove, approximately 70 cm wide, 65 cm deep, 80 cm high at the hotplate, soot-dark cast iron on four short feet, two concentric round hotplates on top, small ash/firebox doors with worn brass handles, restrained moulded trim, short rear flue extending upward. It is the stovetop half of a Victorian cooking range; no large oven door. Full object in front three-quarter view, centered, entirely visible. Painted pixel-oriented game art, broad deliberate brush clusters, warm umber shadows, matte charcoal iron, restrained ochre highlights, soft consistent upper-left light. Recognizable silhouette at 128 pixels. No glossy 3D render, no photography, no labels or text, no people, no scenery, no floor or cast shadow. Transparent background with a clean alpha cutout and generous separation from canvas edges. Preserve period practical construction."
+    },
+    "oven": {
+      "file": "oven.png",
+      "prompt": "Single original game inventory sprite: a compact freestanding nineteenth-century coal bread oven, circa 1889 Argentina, approximately 70cm wide,65cm deep,80cm high body, soot-dark cast iron, four short sturdy feet, one large square front oven door with embossed simple border and worn brass horizontal handle, narrow lower ash drawer, short iron flue at rear. Closed solid flat top WITHOUT circular stovetop burners. Full object, front three-quarter view, entire silhouette centered with margin. Caelum Argenteum painted pixel-oriented dark fantasy inventory art: broad brush clusters, matte charcoal iron, warm brown wear, restrained ochre brass, soft upper-left light, legible at128pixels. Not photography, not glossy3D, not cartoon. No people, background scenery, text, labels, floor or shadows. Transparent background clean alpha. Match a practical Victorian iron cooking range in restrained proportion."
+    },
+    "counter": {
+      "file": "counter.png",
+      "prompt": "One original painted game sprite of a nineteenth-century kitchen preparation counter for Caelum Argenteum, dark-fantasy RPG in1889Argentina. Sturdy broad dark honey-brown wooden work table,1.8m wide,0.7m deep,0.85m high, thick planked top, four square legs and lower plank shelf, two shallow apron drawers with simple bronze knobs. A single fixed shallow oval wooden kneading trough rests on top toward the back, containing pale raw dough under a loosely folded cream linen cloth. No other objects. Full front three-quarter view entire silhouette, generous transparent margins. Painterly pixel-oriented inventory art, modeled volume through broad brush clusters and warm brown/ochre palette, subtle wear and distinct woodgrain, soft upper-left lighting. Readable at128pixels. No glossy3D, photography, background scenery, floor, cast shadow, humans, words or labels. Clean transparent alpha background."
+    }
+  },
+  "counter_variant": {
+    "file": "counter-alpha-v2.png",
+    "prompt": "Edit this kitchen counter sprite ONLY to remove the entire brown glow/background. Keep every painted table, legs, drawers, kneading trough and cloth pixel as closely as possible. All spaces around the silhouette AND the gaps between the table legs and underneath the tabletop must be fully transparent, with no ground shadow, glow or backdrop. Preserve its original painterly style and framing. Output clean alpha transparency.",
+    "note": "Preserved edit variant; registration applies the approved alpha threshold to the original."
+  },
+  "processing": "Deterministic alpha128 threshold, crop and 128px registration; no 3D sprite projection."
+}

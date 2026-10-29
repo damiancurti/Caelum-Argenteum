@@ -880,6 +880,8 @@ class CaelumCraftingCoordinator : Object play
             return;
         }
 
+        if(CaelumMealData.IsRecipe(user.CraftingSelectionRecipe))
+        {if(!CaelumCookingCrafting.Begin(user))user.LastCraftingAction=CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;return;}
         if(CaelumChemistryData.IsRecipe(user.CraftingSelectionRecipe))
         {if(!CaelumChemistryCrafting.Begin(user))user.LastCraftingAction=CaelumConstants.CRAFTING_ACTION_FAILED_MATERIALS;return;}
         int taskKind = CaelumConstants.CRAFTING_TASK_ASSEMBLY;
@@ -1083,6 +1085,8 @@ class CaelumCraftingCoordinator : Object play
             user.CraftingEfficiencyIndex, 0,
             CaelumConstants.CRAFTING_EFFICIENCY_OPTION_COUNT - 1
         );
+        if(CaelumMealData.IsRecipe(user.CraftingSelectionRecipe))
+        {user.CraftingProcessingBatchIndex=0;user.CraftingEfficiencyIndex=2;}
         user.CraftingEfficiencyPercent =
             CaelumCraftingRules.GetCraftingEfficiencyPercent(
                 user.CraftingEfficiencyIndex
@@ -1313,8 +1317,12 @@ class CaelumCraftingCoordinator : Object play
                     user.CraftingEfficiencyIndex
                 );
             user.CraftingFinalWeight = user.CraftingOutputAmount
-                * (CaelumChemistryData.IsRecipe(user.CraftingSelectionRecipe)?CaelumChemistryCrafting.UnitMass(user.CraftingSelectionRecipe)
+                * (CaelumMealData.IsRecipe(user.CraftingSelectionRecipe)?CaelumMealData.PORTION_KG
+                    :CaelumChemistryData.IsRecipe(user.CraftingSelectionRecipe)?CaelumChemistryCrafting.UnitMass(user.CraftingSelectionRecipe)
                     :CaelumMaterialRules.UnitWeight(user.CraftingOutputMaterialType));
+            if(CaelumMealData.IsRecipe(user.CraftingSelectionRecipe))
+            {user.CraftingSilverRequired=CaelumCookingData.InputGrams(user.CraftingSelectionRecipe,2);
+             user.CraftingGoldRequired=CaelumCookingData.InputGrams(user.CraftingSelectionRecipe,3);}
             if(CaelumChemistryData.IsRecipe(user.CraftingSelectionRecipe))
                 user.CraftingSilverRequired=CaelumChemistryData.InputUnits(user.CraftingSelectionRecipe,2)*user.CraftingProcessingBatchMultiplier;
             user.CraftingMissingStationType =
@@ -1528,7 +1536,7 @@ class CaelumCraftingCoordinator : Object play
         user.BuildCraftingBlueprint();
         user.RefreshDirectWeaponCraftingPlan();
         user.CraftingPreviewIconPath = user.ResolveCraftingPreviewIconPath();
-        if(CaelumChemistryData.IsRecipe(user.CraftingSelectionRecipe))
+        if(CaelumMealData.IsRecipe(user.CraftingSelectionRecipe) || CaelumChemistryData.IsRecipe(user.CraftingSelectionRecipe))
             user.ChemistryAvailableWater=CaelumFermentationService.AvailableWater(user);
         if (user.CraftingSelectedRecipeKind
                 == CaelumConstants.CRAFTING_RECIPE_KIND_PHYSICAL_WEAPON
@@ -1570,6 +1578,12 @@ class CaelumCraftingCoordinator : Object play
 
     static void OpenCraftingNetwork(CaelumPlayer user, Actor sourceStation)
     {
+        let counter=CaelumKitchenCounterStation(sourceStation);
+        if(counter!=null && CaelumProofing.Reachable(user,counter))
+        {
+            CaelumProofing.Bind(user,counter);user.ActiveCraftingStationActor=counter;user.CraftingSessionValidationTics=0;
+            user.OpenCraftingStation(CaelumConstants.CRAFTING_STATION_WORKBENCH);return;
+        }
         let barrel=CaelumFermentationStation(sourceStation);
         if(barrel!=null && CaelumFermentationService.Reachable(user,barrel))
         {
@@ -1579,7 +1593,7 @@ class CaelumCraftingCoordinator : Object play
             user.OpenCraftingStation(CaelumConstants.CRAFTING_STATION_WORKBENCH);
             return;
         }
-        if (!CaelumCraftingRules.NetworkHasStation(
+        if (!CaelumCookingData.IsStation(sourceStation) && !CaelumCraftingRules.NetworkHasStation(
             user.CraftingNetworkCapabilities,
             CaelumConstants.CRAFTING_STATION_WORKBENCH
         ))
@@ -1712,6 +1726,8 @@ class CaelumCraftingCoordinator : Object play
         {
             user.CraftingSessionValidationTics--;
         }
+        if(CaelumProofingUI.Active(user))
+        {CaelumProofing.Bind(user,CaelumKitchenCounterStation(station));return !user.CraftingTaskActive;}
         if(CaelumFermentationMenu.Active(user))
         {CaelumFermentationMenu.Get(user);return !user.CraftingTaskActive;}
         if(!CaelumCraftingRules.StationAccessAllowed(station.GetCraftingStationType(),
@@ -1904,6 +1920,13 @@ class CaelumCraftingCoordinator : Object play
 
     static void UpdateCraftingTask(CaelumPlayer user)
     {
+        if(CaelumProofingUI.Active(user) && level.Time%TICRATE==0)
+        {
+            let counter=CaelumKitchenCounterStation(user.ActiveCraftingStationActor);
+            // Una actualización por segundo visible, incluso en esperas aceleradas.
+            if(counter.MenuRefreshTic!=level.Time)
+            {counter.MenuRefreshTic=level.Time;user.RefreshActiveCraftingStationSession(false);}
+        }
         user.CraftingTaskProgressing = false;
         if (CaelumSleepRules.IsSleeping(user) || CaelumTimeSkipState.PausesWork(user)
             || (CaelumTimeSkipState.IsActive(user) && CaelumScheduleState.SiegeActive(user,level.MapName))) return;
@@ -1918,6 +1941,7 @@ class CaelumCraftingCoordinator : Object play
             user.CraftingTaskRemainingSeconds - (user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_BOIL
                 || user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_CAMP
                 || user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_HYGIENE
+                || user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_COOKING
                 || CaelumChemistryData.IsRecipe(user.CraftingTaskRecipeIndex)
                 ? CaelumThermalRuntime.WorldTicSeconds() : 1.0 / TICRATE)
         );

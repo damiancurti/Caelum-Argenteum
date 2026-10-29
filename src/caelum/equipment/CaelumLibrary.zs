@@ -24,6 +24,7 @@ class CaelumLibrary : Object play
         int tier=CaelumRecipeLearning.Tier(recipe,requestedTier);
         int size=CaelumConstants.EQUIPMENT_SIZE_XL;
         int kind=CaelumCraftingRules.GetUnifiedRecipeKind(recipe);
+        if(CaelumMealData.IsRecipe(recipe))return CaelumMealData.UnitValue(CaelumCookingData.Meal(recipe));
         int potion=CaelumChemistryData.OutputConsumable(recipe);
         if(potion>=0)return CaelumEconomyRules.GetConsumableUnitBaseValue(potion);
         if(CaelumClothingData.IsRecipe(recipe))return CaelumClothingData.Value(recipe-CaelumClothingData.FIRST_RECIPE,size);

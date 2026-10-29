@@ -105,7 +105,9 @@ class CaelumClothing : Object play
     }
 
     static int ThirdMaterial(CaelumPlayer user)
-    {if(CaelumCampData.IsRecipe(user.CraftingSelectionRecipe))return CaelumCampData.Material(user.CraftingSelectionRecipe-CaelumCampData.FIRST_RECIPE,2);
+    {
+        if(CaelumMealData.IsRecipe(user.CraftingSelectionRecipe))return CaelumCookingData.InputMaterial(user.CraftingSelectionRecipe,2);
+        if(CaelumCampData.IsRecipe(user.CraftingSelectionRecipe))return CaelumCampData.Material(user.CraftingSelectionRecipe-CaelumCampData.FIRST_RECIPE,2);
         if(CaelumMateData.IsRecipe(user.CraftingSelectionRecipe))return CaelumConstants.MATERIAL_BRONZE_INGOT;
         if(CaelumChemistryData.IsRecipe(user.CraftingSelectionRecipe))return CaelumChemistryData.InputMaterial(user.CraftingSelectionRecipe,2);
         return CaelumClothingData.IsRecipe(user.CraftingSelectionRecipe)
@@ -116,7 +118,9 @@ class CaelumClothing : Object play
         ? CaelumClothingData.MaterialTier(user.CraftingSelectionRecipe-CaelumClothingData.FIRST_RECIPE,2) : 1;}
 
     static int FourthMaterial(CaelumPlayer user)
-    {return CaelumCampData.IsRecipe(user.CraftingSelectionRecipe)?CaelumCampData.Material(user.CraftingSelectionRecipe-CaelumCampData.FIRST_RECIPE,3):CaelumConstants.MATERIAL_GOLD_INGOT;}
+    {
+        if(CaelumMealData.IsRecipe(user.CraftingSelectionRecipe))return CaelumCookingData.InputMaterial(user.CraftingSelectionRecipe,3);
+        return CaelumCampData.IsRecipe(user.CraftingSelectionRecipe)?CaelumCampData.Material(user.CraftingSelectionRecipe-CaelumCampData.FIRST_RECIPE,3):CaelumConstants.MATERIAL_GOLD_INGOT;}
     static int FourthTier(CaelumPlayer user)
     {return CaelumCampData.IsRecipe(user.CraftingSelectionRecipe)?CaelumCampData.MaterialTier(user.CraftingSelectionRecipe-CaelumCampData.FIRST_RECIPE,3):1;}
 

@@ -1,6 +1,38 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.18** - 2026-10-26.
+Documentation version: **5.8.19** - 2026-10-26.
+
+## 5.8.19 - Attended cooking and shared bread proofing (#410)
+
+Implemented the author-approved attended cooking and shared unattended
+proofing workflow. Follow-up approvals cover shared counter access, transportable
+1.141-kg dough, preserved age/cancelled oven inputs, and dough spoilage in 24h
+at reference conditions. Existing dish nutrition, recipes and coal calibration
+are retained. The library gains four learned single-tier recipe entries without
+resetting old stock. Three original kitchen actors occupy existing mansion
+geometry; visual sources, museum construction references and delegated physical
+approximations are preserved. Art is committed separately from runtime integration.
+
+Validation evidence is retained in assets/validation_5819/RESULTS.md and report.json:
+160 newly executed PASS / zero FAIL in 13 selected native runs, zero static errors
+and an official 16,951-member package matching source exactly. Coverage includes
+four recipes, exact consumption, cancellation/age, late water failure, no duplicate
+completion, unattended proofing across hub/save, active cooking save/resume,
+recipe migration/stock, actual mansion placement and visible menu readiness.
+The native full-duration fish run also verified existing automatic food service:
+ten portions were produced and one immediately consumed. Original prior-save
+migration and original-package rollback both pass; no author save was modified.
+Repeated art exports match and accepted food exports stay unchanged.
+
+Resolved development failures remain private evidence: a reserved ZScript local
+name, a play-scope declaration, an incompatible Inventory ternary, invalid fixture
+coordinates, the fixture log-prefix matcher, and the new kitchen's missing Limbo
+wait eligibility. The latter is fixed in production safety logic and rechecked.
+Native technical review does not establish campaign frame-presentation performance.
+
+CA410-COOKING-01 (origin 5.8.19/#410) is pending. The author is away; no acceptance,
+issue closure or merge is inferred. Broader furniture, camp cooking and other
+V5.8 issues remain open; #412 multiplayer corroboration stays deferred to V5.12.
 
 ## 5.8.18 - Prepared meal items and consumption (#410)
 

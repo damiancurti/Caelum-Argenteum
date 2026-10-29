@@ -1,0 +1,78 @@
+{
+  "issue": 410,
+  "version": "5.8.19",
+  "runtime_sha256": "ec91cf0029723430ab93e68d349808e5252646663e53d565aab50f184d4d9b77",
+  "source_matching_members": 16951,
+  "native_passes": 160,
+  "native_failures": 0,
+  "runs": [
+    {
+      "label": "process-final19b",
+      "executed_passes": 55,
+      "runtime_sha256": "ec91cf0029723430ab93e68d349808e5252646663e53d565aab50f184d4d9b77"
+    },
+    {
+      "label": "process-guards05",
+      "executed_passes": 5,
+      "runtime_sha256": "8b4dbc862a823c86ea5850b1607dc62977313bc1acf6d54091134c01decd5684"
+    },
+    {
+      "label": "process-library05",
+      "executed_passes": 9,
+      "runtime_sha256": "8b4dbc862a823c86ea5850b1607dc62977313bc1acf6d54091134c01decd5684"
+    },
+    {
+      "label": "process-seed04",
+      "executed_passes": 6,
+      "runtime_sha256": "9292ad0bdd6e9914c7eed96d080e64065d0f3f38116a2be9c52b642b160f589d"
+    },
+    {
+      "label": "process-resume04",
+      "executed_passes": 7,
+      "runtime_sha256": "9292ad0bdd6e9914c7eed96d080e64065d0f3f38116a2be9c52b642b160f589d"
+    },
+    {
+      "label": "process-hub07",
+      "executed_passes": 14,
+      "runtime_sha256": "b279465a194d0aee100260c07327c3f3a9457953fa967b99108c83de625df630"
+    },
+    {
+      "label": "process-taskseed05",
+      "executed_passes": 1,
+      "runtime_sha256": "8b4dbc862a823c86ea5850b1607dc62977313bc1acf6d54091134c01decd5684"
+    },
+    {
+      "label": "process-taskresume05",
+      "executed_passes": 4,
+      "runtime_sha256": "8b4dbc862a823c86ea5850b1607dc62977313bc1acf6d54091134c01decd5684"
+    },
+    {
+      "label": "process-fast07c",
+      "executed_passes": 5,
+      "runtime_sha256": "b279465a194d0aee100260c07327c3f3a9457953fa967b99108c83de625df630"
+    },
+    {
+      "label": "process-menu07",
+      "executed_passes": 9,
+      "runtime_sha256": "b279465a194d0aee100260c07327c3f3a9457953fa967b99108c83de625df630"
+    },
+    {
+      "label": "process-mansion08",
+      "executed_passes": 11,
+      "runtime_sha256": "c13645060f3598c058e428005caa7af14ff950511a1c49cf3c71dc7dd61e45a9"
+    },
+    {
+      "label": "process-oldsave07",
+      "executed_passes": 17,
+      "runtime_sha256": "b279465a194d0aee100260c07327c3f3a9457953fa967b99108c83de625df630"
+    },
+    {
+      "label": "process-original-rollback18",
+      "executed_passes": 17,
+      "runtime_sha256": "9a243426e2647b7573e593766a862004ccf3b7683254cfe07dbb028f5cc0cf2f"
+    }
+  ],
+  "author_check": "CA410-COOKING-01",
+  "author_acceptance": "pending",
+  "static_errors": []
+}

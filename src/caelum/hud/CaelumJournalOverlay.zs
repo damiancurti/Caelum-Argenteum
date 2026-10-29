@@ -2868,6 +2868,8 @@ class CaelumJournalOverlay : EventHandler
     {
         CaelumPlayer requestingPlayer = CaelumPlayerAuthority.FromNetworkPlayer(e.Player);
         if (requestingPlayer == null) { return; }
+        if(e.Name=="ca_kitchen_proof")
+        {CaelumProofing.Act(requestingPlayer,e.Args[0]);return;}
         if(e.Name=="ca_fermentation_action")
         {CaelumFermentationMenu.Act(requestingPlayer,e.Args[0],e.Args[1],e.Args[2]);return;}
         if (e.Name == "ca_crafting_browser_mode")

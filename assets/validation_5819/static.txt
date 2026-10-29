@@ -1,0 +1,3 @@
+validate_project.py: exit 0, zero errors. Dialogue/localization and document indexes current.
+Official build_dev.ps1: final19b, current map geometry; all members match source.
+Native engine evidence is separate from pending author corroboration and rendering performance.

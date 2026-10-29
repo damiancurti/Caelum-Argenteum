@@ -244,7 +244,7 @@ class CaelumCraftingRules : Object
 
     static bool IsSingleTierRecipe(int recipeIndex)
     {
-        return CaelumChemistryData.IsRecipe(recipeIndex) || CaelumClothingData.IsRecipe(recipeIndex) || CaelumUtilityCrafting.IsRecipe(recipeIndex)
+        return CaelumMealData.IsRecipe(recipeIndex) || CaelumChemistryData.IsRecipe(recipeIndex) || CaelumClothingData.IsRecipe(recipeIndex) || CaelumUtilityCrafting.IsRecipe(recipeIndex)
             || recipeIndex == CaelumConstants.CRAFTING_PICKAXE_RECIPE
             || recipeIndex == CaelumConstants.CRAFTING_UTILITY_STAFF_RECIPE
             || recipeIndex == CaelumConstants.CRAFTING_BOLAS_RECIPE;
@@ -252,6 +252,7 @@ class CaelumCraftingRules : Object
 
     static int GetUnifiedRecipeKind(int recipeIndex)
     {
+        if(CaelumMealData.IsRecipe(recipeIndex))return CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING;
         if(CaelumChemistryData.IsRecipe(recipeIndex))return CaelumConstants.CRAFTING_RECIPE_KIND_PROCESSING;
         if(CaelumSupportImplementData.IsRecipe(recipeIndex))return CaelumConstants.CRAFTING_RECIPE_KIND_ESSENCE_WEAPON;
         if(CaelumSupportImplementData.IsComponentRecipe(recipeIndex))return CaelumConstants.CRAFTING_RECIPE_KIND_COMPONENT;
@@ -821,6 +822,7 @@ class CaelumCraftingRules : Object
 
     static int GetProcessingInputOneMaterial(int recipeIndex)
     {
+        if(CaelumMealData.IsRecipe(recipeIndex))return CaelumCookingData.InputMaterial(recipeIndex,0);
         if(CaelumChemistryData.IsRecipe(recipeIndex))return CaelumChemistryData.InputMaterial(recipeIndex,0);
         if(recipeIndex==CaelumMarineData.IODINE_RECIPE)return CaelumConstants.MATERIAL_DRIED_KELP;
         switch (GetUnifiedProcessingRecipeIndex(recipeIndex))
@@ -858,6 +860,7 @@ class CaelumCraftingRules : Object
 
     static int GetProcessingInputTwoMaterial(int recipeIndex)
     {
+        if(CaelumMealData.IsRecipe(recipeIndex))return CaelumCookingData.InputMaterial(recipeIndex,1);
         if(CaelumChemistryData.IsRecipe(recipeIndex))return CaelumChemistryData.InputMaterial(recipeIndex,1);
         if(recipeIndex==CaelumMarineData.IODINE_RECIPE)return -1;
         switch (GetUnifiedProcessingRecipeIndex(recipeIndex))
@@ -873,6 +876,7 @@ class CaelumCraftingRules : Object
 
     static int GetProcessingInputOneTier(int recipeIndex)
     {
+        if(CaelumMealData.IsRecipe(recipeIndex))return 1;
         if(CaelumChemistryData.IsRecipe(recipeIndex))return 1;
         if(recipeIndex==CaelumMarineData.IODINE_RECIPE)return 1;
         return GetUnifiedProcessingRecipeIndex(recipeIndex)
@@ -886,6 +890,7 @@ class CaelumCraftingRules : Object
 
     static int GetProcessingOutputMaterial(int recipeIndex)
     {
+        if(CaelumMealData.IsRecipe(recipeIndex))return -1;
         if(CaelumChemistryData.IsRecipe(recipeIndex))return CaelumChemistryData.OutputMaterial(recipeIndex);
         if(recipeIndex==CaelumMarineData.IODINE_RECIPE)return CaelumConstants.MATERIAL_IODINE;
         switch (GetUnifiedProcessingRecipeIndex(recipeIndex))
@@ -919,6 +924,7 @@ class CaelumCraftingRules : Object
 
     static int GetProcessingOutputTier(int recipeIndex)
     {
+        if(CaelumMealData.IsRecipe(recipeIndex))return 1;
         if(CaelumChemistryData.IsRecipe(recipeIndex))return 1;
         if(recipeIndex==CaelumMarineData.IODINE_RECIPE)return 1;
         switch (GetUnifiedProcessingRecipeIndex(recipeIndex))
@@ -938,6 +944,7 @@ class CaelumCraftingRules : Object
 
     static int GetProcessingInputOneUnits(int recipeIndex, int batchIndex)
     {
+        if(CaelumMealData.IsRecipe(recipeIndex))return CaelumCookingData.InputGrams(recipeIndex,0);
         if(CaelumChemistryData.IsRecipe(recipeIndex))return CaelumChemistryData.InputUnits(recipeIndex,0)*GetProcessingBatchMultiplier(batchIndex);
         if(recipeIndex==CaelumMarineData.IODINE_RECIPE)return CaelumMarineData.INPUT_GRAMS * GetProcessingBatchMultiplier(batchIndex);
         int units = CaelumConstants.CRAFTING_COMMON_BASE_BATCH_UNITS;
@@ -955,6 +962,7 @@ class CaelumCraftingRules : Object
 
     static int GetProcessingInputTwoUnits(int recipeIndex, int batchIndex)
     {
+        if(CaelumMealData.IsRecipe(recipeIndex))return CaelumCookingData.InputGrams(recipeIndex,1);
         if(CaelumChemistryData.IsRecipe(recipeIndex))return CaelumChemistryData.InputUnits(recipeIndex,1)*GetProcessingBatchMultiplier(batchIndex);
         if(recipeIndex==CaelumMarineData.IODINE_RECIPE)return 0;
         int units = 0;
@@ -972,6 +980,7 @@ class CaelumCraftingRules : Object
 
     static int GetProcessingOutputUnits(int recipeIndex, int batchIndex)
     {
+        if(CaelumMealData.IsRecipe(recipeIndex))return CaelumMealData.BATCH_PORTIONS;
         if(CaelumChemistryData.IsRecipe(recipeIndex))return CaelumChemistryData.OutputUnits(recipeIndex)*GetProcessingBatchMultiplier(batchIndex);
         if(recipeIndex==CaelumMarineData.IODINE_RECIPE)return CaelumMarineData.OUTPUT_GRAMS * GetProcessingBatchMultiplier(batchIndex);
         // Esta es la salida teórica al 100 %. La eficiencia 25/50/100 se
@@ -993,7 +1002,7 @@ class CaelumCraftingRules : Object
         int recipeIndex, int batchIndex, int efficiencyIndex
     )
     {
-        if(CaelumChemistryData.IsRecipe(recipeIndex))return GetProcessingOutputUnits(recipeIndex,batchIndex);
+        if(CaelumMealData.IsRecipe(recipeIndex) || CaelumChemistryData.IsRecipe(recipeIndex))return GetProcessingOutputUnits(recipeIndex,batchIndex);
         return ApplyOutputEfficiency(
             GetProcessingOutputUnits(recipeIndex, batchIndex),
             efficiencyIndex
@@ -1053,6 +1062,7 @@ class CaelumCraftingRules : Object
 
     static int GetMissingProcessingStation(int capabilities, int recipeIndex)
     {
+        if(CaelumMealData.IsRecipe(recipeIndex))return CaelumCookingData.MissingStation(capabilities,recipeIndex);
         if(CaelumChemistryData.IsRecipe(recipeIndex))return CaelumChemistryData.IsFermentation(recipeIndex)
             ? GetMissingFermentationStation(capabilities) : GetMissingAlchemyStation(capabilities);
         if(recipeIndex==CaelumMarineData.IODINE_RECIPE)return GetMissingAlchemyStation(capabilities);

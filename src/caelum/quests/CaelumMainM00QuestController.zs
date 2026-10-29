@@ -33,6 +33,7 @@ class CaelumMainM00QuestController : EventHandler
     bool TravelVehiclesPrepared;
     bool ExpandedStationsPrepared;
     bool MansionFurniturePrepared;
+    bool MansionKitchenPrepared;
     bool StationAccessPrepared;
     bool MansionAccessPrepared;
     int MansionDiningRevision;
@@ -531,6 +532,7 @@ class CaelumMainM00QuestController : EventHandler
         PrepareExpandedStations();
         if(level.maptime%TICRATE==0)
         {
+            if(!MansionKitchenPrepared)MansionKitchenPrepared=CaelumMansionKitchen.Prepare();
             if(!MansionFurniturePrepared || !MansionAccessPrepared || MansionDiningRevision<2)
             {
                 MansionFurniturePrepared=CaelumMansionFurniture.Prepare();
