@@ -1,0 +1,70 @@
+{
+  "issue": 410,
+  "models": [
+    {
+      "kind": "chair",
+      "width": 0.699,
+      "depth": 0.699,
+      "height": 0.94,
+      "surface": 0.42,
+      "reference": "https://www.metmuseum.org/art/collection/search/237",
+      "object": "1970.35.1",
+      "date": "circa 1870-1875",
+      "wood_kg": 28.47698871999995,
+      "iron_kg": 0.3085040000000001,
+      "cotton_cloth_kg": 0.21715442,
+      "empty_kg": 29.00264713999995,
+      "recipe_grams": {
+        "wood": 28477,
+        "iron": 309,
+        "cotton_cloth": 218
+      },
+      "sha256": "79bc7cece19493408f0b8c5920ca8494a9ed7c090d89d120fe6540b9d917d0c9"
+    },
+    {
+      "kind": "bed",
+      "width": 1.6,
+      "depth": 2.032,
+      "height": 2.134,
+      "surface": 0.45,
+      "reference": "https://www.metmuseum.org/art/collection/search/19766",
+      "object": "2021.109a-vv",
+      "date": "1815-1825",
+      "wood_kg": 132.88621280000015,
+      "iron_kg": 1.142724,
+      "cotton_cloth_kg": 1.0624572000000003,
+      "empty_kg": 135.09139400000015,
+      "recipe_grams": {
+        "wood": 132887,
+        "iron": 1143,
+        "cotton_cloth": 1063
+      },
+      "sha256": "857151a16e2caf3ac02af39e369d80d3d089f6289a9cf5e46ce77db4d3768e40"
+    },
+    {
+      "kind": "table",
+      "width": 4.159,
+      "depth": 1.53,
+      "height": 0.737,
+      "surface": 0.737,
+      "reference": "https://www.metmuseum.org/art/collection/search/3184",
+      "object": "11.60.157a-c",
+      "date": "1810-1820",
+      "wood_kg": 191.07321120000069,
+      "iron_kg": 1.147446,
+      "cotton_cloth_kg": 0.0,
+      "empty_kg": 192.2206572000007,
+      "recipe_grams": {
+        "wood": 191074,
+        "iron": 1148,
+        "cotton_cloth": 0
+      },
+      "sha256": "c2130f5cbda0574c24a4ae6a57cbe5e6713a9f50cab555947e8f529e1c25aa94"
+    }
+  ],
+  "textures_reused": [
+    "models/caelum/props/stash/ca_stash_wood.png",
+    "models/caelum/props/stash/ca_stash_metal.png",
+    "models/caelum/props/stash/ca_stash_inside.png"
+  ]
+}

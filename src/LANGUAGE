@@ -6848,3 +6848,13 @@ CA_WATER_DEPOSITED = "Agua trasladada a la cisterna.";
 CA_WATER_DEPOSIT_REJECTED = "Apuntá a una cisterna accesible con espacio y seleccioná un recipiente con agua fuera de la Caja.";
 CA_CISTERN_HINT = "{bind:+use}: reserva | {bind:+speed}+{bind:+use}: bañarse | Inventario: R recoger / G depositar";
 CA_FOUNTAIN_HINT = "{bind:+use}: reserva | {bind:+speed}+{bind:+use}: bañarse | Inventario: R recoger";
+
+[enu default]
+CA_LUXURY_CHAIR = "Luxury armchair";
+CA_LUXURY_BED = "Luxury bed";
+CA_LUXURY_TABLE = "Luxury dining table";
+
+[es]
+CA_LUXURY_CHAIR = "Sillón de lujo";
+CA_LUXURY_BED = "Cama de lujo";
+CA_LUXURY_TABLE = "Mesa de lujo";

@@ -1,7 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.8.29** - 2026-10-27.
+Documentation version: **5.8.30** - 2026-10-27.
 
+**5.8.30:** luxury catalogue;acquisition pending;validation_5830.
 **5.8.26-29:** stored books/interior placement/weather history/sofa seating; validation_5826-29; author-pending.
 
 **5.8.24-25/#410:** wardrobe/fountain/cistern; validation_5824-25; author-pending.

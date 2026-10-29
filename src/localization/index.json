@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "b8649fb9d61f533387aeb4ea7bdf6934ca8f13419e85659237cd26568ec5dd54",
+  "sha256": "3cc730c617d00f36570cdceeaa63eec5fa1af87294ebe1e94f7548a67c821cce",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[468,468]],"default":[[468,468]],"es":[[1163,1163]]},
     "CA_ADRENALINE_EVENT_ALLY_DEATH": {"enu":[[1018,1018]],"default":[[1018,1018]],"es":[[1713,1713]]},
@@ -1295,6 +1295,9 @@
     "CA_LUCIDITY_STATE_DIZZY": {"enu":[[1001,1001]],"default":[[1001,1001]],"es":[[1696,1696]]},
     "CA_LUCIDITY_STATE_NORMAL": {"enu":[[1000,1000]],"default":[[1000,1000]],"es":[[1695,1695]]},
     "CA_LUCIDITY_STATE_STUNNED": {"enu":[[1002,1002]],"default":[[1002,1002]],"es":[[1697,1697]]},
+    "CA_LUXURY_BED": {"enu":[[6854,6854]],"default":[[6854,6854]],"es":[[6859,6859]]},
+    "CA_LUXURY_CHAIR": {"enu":[[6853,6853]],"default":[[6853,6853]],"es":[[6858,6858]]},
+    "CA_LUXURY_TABLE": {"enu":[[6855,6855]],"default":[[6855,6855]],"es":[[6860,6860]]},
     "CA_M01_AIR_ASK": {"default":[[3349,3349]],"es":[[3361,3361]]},
     "CA_M01_AIR_DETAIL_DONE": {"default":[[3357,3357]],"es":[[3369,3369]]},
     "CA_M01_AIR_DETAIL_RECOVER": {"default":[[3356,3356]],"es":[[3368,3368]]},

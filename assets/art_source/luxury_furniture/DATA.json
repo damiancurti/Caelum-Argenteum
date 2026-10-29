@@ -1,0 +1,15 @@
+{
+  "issue": 410,
+  "authority": "Author delegated historical dimensions, materials, masses and recipes on 2026-10-25; acquisition approved 2026-10-27. Ordinary rest benefits remain unchanged.",
+  "units_per_meter": 32,
+  "wood_density": 760,
+  "iron_density": 7870,
+  "cloth_kg_m2": 0.38,
+  "serving_diameter_mu": 21,
+  "collision_cell_mu": 48,
+  "layout_reference": "Existing ca_food_plate.obj spans 21 MU. Existing CaelumDiningBlock uses radius 24, hence a 48 MU cell. These inherited presentation/collision measurements are not new balances.",
+  "construction": "Original carved wood furniture with iron fasteners and fitted cotton over solid wooden seating/slats. Sum modeled solid members for the bill, without subtracting small join overlaps. No unapproved foam, springs or upholstery filling. Museum metadata supplies envelopes and period context only; no copied photographs or mesh.",
+  "chair": {"width": 0.699, "depth": 0.699, "height": 0.940, "surface": 0.420, "reference": "https://www.metmuseum.org/art/collection/search/237", "object": "1970.35.1", "date": "circa 1870-1875"},
+  "bed": {"width": 1.600, "depth": 2.032, "height": 2.134, "surface": 0.450, "reference": "https://www.metmuseum.org/art/collection/search/19766", "object": "2021.109a-vv", "date": "1815-1825"},
+  "table": {"width": 4.159, "depth": 1.530, "height": 0.737, "surface": 0.737, "reference": "https://www.metmuseum.org/art/collection/search/3184", "object": "11.60.157a-c", "date": "1810-1820"}
+}

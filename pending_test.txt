@@ -177,3 +177,14 @@ an older compatible save. Deferred until all V5.8 implementation is ready.
 Expected: all five individual seats work with the reference character, ordinary
 chair benefits only. Larger characters still need their full physical clearance.
 Multiplayer author checks remain deferred to V5.12.
+
+[CA410-LUXURY-01] 5.8.30 / #410 - Luxury furniture catalogue
+Prerequisite: final grouped V5.8 handoff, including the preserved luxury gallery
+from assets/validation_5830/run_native.ps1 (-Runtime final30c -Checks -Interactive
+-Script interactive). This gallery alone does not establish campaign acquisition.
+1. Inspect the armchair, four-post bed and six-seat dining table in native views.
+2. Use the armchair and bed, choose rest, stand/cancel, and check alignment/access.
+3. Deposit and withdraw food/water on the table; verify matching chairs and objects.
+Expected: original period furniture, ordinary rest bonuses, no duplicated items,
+no overlapping seated bodies or missing serving/canteen visuals. Repeat after save.
+Outstanding; author corroboration is deferred until all V5.8 implementation is ready.

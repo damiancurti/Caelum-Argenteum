@@ -1,6 +1,25 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.29** - 2026-10-27.
+Documentation version: **5.8.30** - 2026-10-27.
+
+## 5.8.30 - Original luxury furniture models (#410)
+
+assets/art_source/luxury_furniture/DATA.json records envelopes from Metropolitan
+Museum metadata: armchair1970.35.1(ca1870-1875),
+https://www.metmuseum.org/art/collection/search/237 ; bedstead2021.109a-vv(1815-1825),
+https://www.metmuseum.org/art/collection/search/19766 ; dining table11.60.157a-c
+(1810-1820), https://www.metmuseum.org/art/collection/search/3184 . Metadata informs
+dimensions and period context; none of their photographs or mesh is imported.
+The generated designs are original interpretations, not replicas.
+
+assets/generators/generate_luxury_furniture.py produces carved/turned wood members,
+medallions, iron joinery and thin fitted cotton over solid boards/slats. It reuses
+owned stash wood/metal/interior textures. Its explicit construction and solid
+volumes provide reproducible material bills in GENERATED.json and runtime data.
+No synthetic upholstery filling or copied image is added. This world-model stage
+does not supply portable inventory sprites; that artwork remains with acquisition.
+Native gallery/occupied captures and hashes: assets/validation_5830. Appearance
+still needs author corroboration; no final V5.17 visual-polish claim is made.
 
 ## 5.8.29 - Original period sofa models (#410)
 

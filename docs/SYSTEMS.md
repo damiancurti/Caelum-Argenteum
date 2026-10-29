@@ -1,6 +1,37 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.29** - 2026-10-27.
+Documentation version: **5.8.30** - 2026-10-27.
+
+## 5.8.30 - Luxury furniture and movable supply decision (#410)
+
+The original luxury armchair measures0.699x0.699x0.940m (seat0.420m), the four-post
+bed1.600x2.032x2.134m (surface0.450m), and the table4.159x1.530x0.737m.
+Delegated construction uses wood760kg/m3, iron7870kg/m3 and cotton380g/m2.
+Summed modeled members, including small joint overlaps, give:
+
+| Piece | Exact empty mass (kg) | Wood / iron / cotton inputs (g, rounded upward) |
+| --- | ---: | --- |
+| Armchair |29.00264714|28477 /309 /218|
+| Bed |135.091394|132887 /1143 /1063|
+| Table alone |192.22065720|191074 /1148 /0|
+
+These are transparent game construction estimates, not museum object weights.
+The table layout uses revision1 and reconstructs missing initial components
+idempotently. It also has six separately owned functional armchairs. The table's
+mass/bill excludes those chairs; acquisition must account for each real piece.
+Ordinary chair/bed comfort, safety, full native pawn collision and cancellation
+apply. No luxury multiplier or sleep bonus is introduced. Food/water remain real
+Inventory objects on the table. Six seats/eighteen slots are inherited from the
+ordinary dining table. Serving drawings fit the narrower board with a fixed
+geometry-derived scale; item amounts, ownership and gameplay masses are unchanged.
+This new movable table does not generate food or refill water by itself.
+
+Author decision2026-10-27: all movable chairs, beds, tables, sofas, bookcases,
+desks, wardrobes and cupboards may be bought and fabricated. Provisions holds
+three of each; the library ten copies of each recipe. Base price is material
+cost plus25%, then ordinary shop margins; restock follows fabrication. Fixed
+water/kitchen installations are excluded. That acquisition/portable-item stage
+is pending; the current gallery is diagnostic access, not normal-game delivery.
 
 ## 5.8.29 - Sofa seats (#410)
 
