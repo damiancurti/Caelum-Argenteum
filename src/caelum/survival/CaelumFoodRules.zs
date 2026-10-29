@@ -43,6 +43,26 @@ class CaelumFoodIllness : Object play
         if(Revision>=CaelumFoodData.REVISION)return;
         Contamination=0;DamageFraction=0;Revision=CaelumFoodData.REVISION;
     }
+    CaelumFoodIllness Copy()
+    {
+        let copy=new('CaelumFoodIllness');copy.Ensure();
+        if(Revision==CaelumFoodData.REVISION)
+        {copy.Contamination=Contamination;copy.DamageFraction=DamageFraction;}
+        return copy;
+    }
+    // La previsión usa su propia copia; el personaje conserva la fracción
+    // original hasta confirmar el viaje. Esperar usa la misma aritmética.
+    int Damage(double seconds,double maximumLife,double toughness)
+    {
+        DamageFraction+=CaelumFoodRules.DamagePerSecond(Contamination,maximumLife,toughness)*Max(0.0,seconds);
+        int damage=int(DamageFraction+0.0000001);
+        if(damage>0)DamageFraction=Max(0.0,DamageFraction-damage);
+        return damage;
+    }
+    void Depurate(double naturalLifeEffort,double maximumLife)
+    {
+        if(maximumLife>0)Contamination=Max(0.0,Contamination-Max(0.0,naturalLifeEffort)/maximumLife);
+    }
     static CaelumFoodIllness Get(CaelumPlayer user)
     {
         if(user==null)return null;
@@ -66,18 +86,16 @@ class CaelumFoodIllness : Object play
     {
         let illness=Get(user);
         if(illness==null || user.CaelumMaximumHealth<=0)return;
-        illness.Contamination=Max(0.0,illness.Contamination-Max(0.0,naturalLifeEffort)/user.CaelumMaximumHealth);
+        illness.Depurate(naturalLifeEffort,user.CaelumMaximumHealth);
     }
     static void Advance(CaelumPlayer user)
     {
         if(!CaelumPlayerAuthority.CanMutate(user) || user.health<=0 || user.player==null
             || user.player.playerstate!=PST_LIVE || user.Attributes==null)return;
         let illness=Get(user);if(illness==null)return;
-        illness.DamageFraction+=CaelumFoodRules.DamagePerSecond(illness.Contamination,
-            user.CaelumMaximumHealth,user.Attributes.Toughness)/TICRATE;
         // Igual que los pulsos existentes: compensar sólo redondeo binario.
-        int damage=int(illness.DamageFraction+0.0000001);if(damage<=0)return;
-        illness.DamageFraction=Max(0.0,illness.DamageFraction-damage);
+        int damage=illness.Damage(1.0/TICRATE,user.CaelumMaximumHealth,user.Attributes.Toughness);
+        if(damage<=0)return;
         int before=user.health,visual=user.PendingDamageVFXKind;
         user.PendingDamageVFXKind=0;
         user.DamageMobj(null,null,damage,'CaelumDiseaseDOT',DMG_NO_ARMOR,0.0);

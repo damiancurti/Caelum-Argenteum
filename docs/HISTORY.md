@@ -1,6 +1,19 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.6** — 2026-10-24.
+Documentation version: **5.8.7** — 2026-10-24.
+
+## 5.8.7 - Food illness in forecasts (#410, in progress), 2026-10-24
+
+Travel and waiting previews now copy the existing illness state, preserve its
+fractional damage and apply shared resistance/depuration arithmetic. Full-Life
+potential regeneration pays existing costs once; wounded regeneration heals
+and depurates together. Actual journey commit installs an independent copy.
+Wait forecast schema 6 rebuilds old previews. No new balance or map changes.
+Evidence: assets/validation_587, 68 native PASS across eight selected runs;
+original 5.8.6 save load and rollback preserve both the original file and illness.
+core01 private-fixture reserved-identifier failure is retained, not counted.
+Author acceptance remains deferred during absence; actual food/cooking/furniture
+integration remains pending under #410. Reviewed README and consolidated status.
 
 ## 5.8.6 - Central property access (#411, in progress), 2026-10-24
 

@@ -25,7 +25,7 @@ class CaelumSkipTableStock : Object play
 
 class CaelumTimeSkipModel : CaelumJourneyModel
 {
-    const PROVISION_REVISION = 5;
+    const PROVISION_REVISION = 6;
     int ProvisionRevision;
     Array<CaelumSkipSupply> Supplies;
     Array<CaelumSkipTableStock> Tables;

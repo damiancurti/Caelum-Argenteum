@@ -1,6 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.8.6** — 2026-10-24.
+Documentation version: **5.8.7** — 2026-10-24.
+
+**5.8.7/#410:** illness in journey/wait forecasts;68 native PASS;independent commit/save/hub/legacy rollback;food/cooking/furniture-WIP;validation_587. Author away: retain questions/checks until return.
 
 **5.8.6/#411:** central-house contracts/relocation;142PASS;CA411-PROPERTY-01accepted2026-10-24;camp-acquisition72PASS/author-deferred;deployment/cooking-WIP;validation_586/camp.
 **5.8.5/#415:**discovery accepted2026-10-24;unloaded-battles-WIP.
