@@ -7203,7 +7203,18 @@ class CaelumPlayer : DoomPlayer
             if(!CaelumPlayerAuthority.CanMutate(self) || !CaelumQuickUse.Available(self,item))return false;
             let mate=CaelumMateItem(item);if(mate!=null)return mate.Drink(self);
             let water=CaelumWaterContainer(item);
-            if(water!=null)return water.Drink();
+            if(water!=null)
+            {
+                // Prioridad a llenar mientras se apunta a una fuente válida.
+                // Si está llena/vacía la reserva, no beber como efecto lateral.
+                if(CaelumDomesticFixture.SourceFor(self)!=null || CaelumWaterQuality.Valid(CaelumWaterQuality.Source(self)))
+                {
+                    bool filled=water.FillFromSource(self);
+                    CaelumNotifications.Notify(self,StringTable.Localize(filled?"CA_WATER_COLLECTED":"CA_WATER_TRANSFER_REJECTED",false));
+                    RefreshFormalInventorySnapshot();return filled;
+                }
+                return water.Drink();
+            }
         }
         if(item==null || !Super.UseInventory(item))return false;
         if(consumable!=null)OnNativeInventoryChanged();

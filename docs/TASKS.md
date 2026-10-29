@@ -1,6 +1,12 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.53** - 2026-10-29.
+Documentation version: **5.8.54** - 2026-10-29.
+
+## 5.8.54 / #410 - Author review corrections
+
+Validation: 53 native assertions passed; visible captures inspected. See `assets/validation_5854/RESULTS.md`. Corrections still require author corroboration.
+
+Implement selected-container refill, mattresses/pillows/luxury canopy, and museum-size landscape. Keep the original statue visible in the author gallery. Verify changed interactions/art and migration; accepted unrelated checks are not reopened. City frame-time regression belongs to #415; Buenos Aires uses the author-selected original Ciudad track under #416. No merge or closure yet.
 
 ## 5.8.53 / #417 - Final V5.8 implementation handoff - 2026-10-29
 

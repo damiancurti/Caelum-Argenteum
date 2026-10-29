@@ -20,7 +20,16 @@ class CaelumRestFurnitureCatalogue : Object play
             for(int variant=0;variant<CaelumRestFurnitureData.COUNT;variant++)
             {
                 int kind=books?CaelumShopProduct.BOOK:CaelumShopProduct.SIMPLE;
-                if(Has(vendor,kind,variant))continue;
+                if(Has(vendor,kind,variant))
+                {
+                    // Revisar sólo precio, nunca reponer stock vendido al
+                    // añadir colchón/dosel a las dos camas ya existentes.
+                    if(!books && (variant==1 || variant==3))
+                        for(int i=0;i<vendor.Products.Size();i++)
+                            if(vendor.Products[i].Kind==kind && vendor.Products[i].NativeClass==CaelumRestFurnitureData.ItemClass(variant))
+                                vendor.Products[i].BaseValue=CaelumRestFurnitureCrafting.Value(variant);
+                    continue;
+                }
                 int recipe=CaelumRestFurnitureData.FIRST_RECIPE+variant;
                 double value=books?CaelumLibrary.BookValue(user,recipe,1):CaelumRestFurnitureCrafting.Value(variant);
                 Inventory stock=books?Inventory(vendor.SeedBook(recipe,1,value)):vendor.SeedSimple(CaelumRestFurnitureData.ItemClass(variant),CaelumRestFurnitureData.SHOP_STOCK);

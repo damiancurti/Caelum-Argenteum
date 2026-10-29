@@ -6,15 +6,15 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.53.** Obtain and update the complete repository, validate
+**Current release: 5.8.54.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-5.8.53 implements the remaining travel incidents (#417). Paid journeys retain
-saved ambush/repair rolls, actual-weather holds, real bandit ammunition, gear and
-loot. Surviving bandits can steal physically accessible camp stacks; losses are
-discovered on returning. Evidence and final integration checks are retained in
-`assets/validation_5853`. V5.8 implementation is ready for the grouped author
-review in `pending_test.txt`; open PRs are not merged author acceptance.
+5.8.54 addresses the furniture review: direct selected-container refilling,
+visible bedding and canopy, and a museum-size landscape. The corrected review
+gallery includes the original statue. Unrelated author checks passed; city
+performance (#415) and Buenos Aires music (#416) are separate follow-ups.
+Native evidence is recorded in `assets/validation_5854`; remaining author
+checks are in `pending_test.txt`. No PR merge or issue closure is implied.
 Multiplayer rest testing remains deferred to V5.12 by request.
 
 5.8.52 completes the four-mode transport network (#416): Buenos Aires,

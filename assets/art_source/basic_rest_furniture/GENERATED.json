@@ -26,17 +26,17 @@
       "surface": 0.46,
       "kind": "bed",
       "material_kg": {
-        "wood": 27.634208000000005,
+        "wood": 26.798208000000006,
         "iron": 0.623304,
-        "cloth": 0.717822242
+        "cloth": 7.405769864000001
       },
-      "empty_kg": 28.975334242000006,
+      "empty_kg": 34.82728186400001,
       "recipe_grams": {
-        "wood": 27635,
+        "wood": 26799,
         "iron": 624,
-        "cloth": 718
+        "cloth": 7406
       },
-      "sha256": "a3c535ab417854b151251349b45674cde4a8c3763f82b51993dc51b17fbd9700"
+      "sha256": "3015c9c350c033308131c79d7d337aceb4908c0f9fa89daf64ff7963df501693"
     }
   ],
   "mass_method": "Sum of modeled members, including joint overlaps; textile face area. Design construction estimates, not measured museum masses."

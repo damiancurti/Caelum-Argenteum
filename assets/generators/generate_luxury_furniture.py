@@ -6,6 +6,7 @@ import math
 import sys
 sys.dont_write_bytecode=True
 from generate_stash_models import Mesh, WOOD, METAL, INSIDE
+from furniture_bedding import bedding, CLOTH
 
 ROOT=Path(__file__).resolve().parents[2]
 ART=ROOT/'assets/art_source/luxury_furniture'
@@ -83,7 +84,21 @@ def bed():
     for z in (-d/2+.055,d/2-.055):c.box(WOOD,(0,s-.065,z),(w-.11,.13,.05))
     count=16
     for i in range(count):c.box(WOOD,(0,s-.012,-d/2+.12+i*(d-.24)/(count-1)),(w-.11,.024,(d-.24)/count-.009))
-    c.cover((0,s+.001,0),(w-.13,.002,d-.13))
+    # Keep the accepted sleeping plane; move the support below the mattress.
+    t=DATA['bedding']['mattress_thickness_m']
+    c.mesh.vertices=[(x,y-t*U if (s-.14)*U<=y<=(s+.005)*U else y,z) for x,y,z in c.mesh.vertices]
+    c.cloth+=bedding(c.mesh,w,d,s,DATA['bedding'],U,DATA['cloth_kg_m2'])/DATA['cloth_kg_m2']
+    canopy=DATA['canopy'];rw,rh=canopy['rail_m'];drop=canopy['valance_m']
+    for z in (-d/2+.055,d/2-.055):
+        c.box(WOOD,(0,h-rh/2,z),(w,rh,rw))
+        c.mesh.add_box(CLOTH,(0,(h-drop/2)*U,z*U),(w*U,drop*U,.006*U));c.cloth+=w*drop
+    for x in (-w/2+.055,w/2-.055):
+        c.box(WOOD,(x,h-rh/2,0),(rw,rh,d))
+        c.mesh.add_box(CLOTH,(x*U,(h-drop/2)*U,0),(.006*U,drop*U,d*U));c.cloth+=d*drop
+        for z in (-d/2+.07,d/2-.07):
+            cw=canopy['curtain_width_m'];ch=canopy['curtain_drop_m']
+            c.mesh.add_box(CLOTH,(x*U,(h-ch/2)*U,z*U),(cw*U,ch*U,.012*U));c.cloth+=cw*ch
+    c.mesh.add_box(CLOTH,(0,(h-.006)*U,0),(w*U,.006*U,d*U));c.cloth+=w*d
     for z,top in ((-d/2+.055,.99),(d/2-.055,.70)):
         c.box(WOOD,(0,(s+top)/2,z),(w-.11,top-s,.025))
         c.box(WOOD,(0,top,z),(w-.10,.05,.05))

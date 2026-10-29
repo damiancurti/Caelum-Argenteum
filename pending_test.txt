@@ -38,41 +38,6 @@ Expected: chronological resources/ownership and saved progress survive. A city-d
 may require about 77 seconds of paused preparation on the recorded machine; this
 is a known limitation, not claimed rendering-FPS acceptance. #417 bandits separate.
 
-CA410-COOKING-01 | Origin: 5.8.19 | Issue: #410
-Prerequisites: final 5.8.19 package; GZDoom 4.14.2; a disposable campaign or
-the prepared #410 process fixture, with the four learned cooking recipes,
-approved ingredients, potable water and coal. Author corroboration remains pending.
-1. In the mansion false-wall room, inspect and use stove, oven and counter.
-   Expect readable period artwork, clear approaches, no obstruction of the secret access.
-2. At the counter start one bread batch (700g flour, 14g salt, 7g yeast, 420mL water).
-   Expect one unattended two-hour batch; no second batch/early withdrawal.
-   Wait or leave/return; the open menu updates its remaining time and readiness.
-3. Collect the ready 1.141kg dough. The counter is free; quantity and contamination
-   persist in inventory/save. The dough is not directly edible. Take it to the oven.
-4. Start/cancel bread baking: dough and 772g coal remain, with accumulated age.
-   Complete 45 world minutes: ten 100g bread portions, preserving food contamination.
-5. At the stove cook/cancel the beef, fish and puchero recipes shown in the menu.
-   Expect the documented quantities, 60/30/90 world minutes, ten portions per batch,
-   preserved containers and cancellation resources. Automatic eating may consume a
-   completed portion if Hunger requires it; this is reported separately from output.
-6. Verify library access to the four learned recipes and one saved/resumed cooking
-   session. No duplicate products or refilled sold recipe stock on repeated use.
-Expected: all process, persistence and visual checks pass. Report any failed step.
-
-CA410-FIXTURES-01 | Origin: 5.8.20 | Issue: #410
-Prerequisites: final5.8.20 package, GZDoom4.14.2, disposable mansion campaign;
-carried empty bottle/canteen, several stored items, and a small padlock/key pair.
-1. Inspect the sink and overhead cupboard in the false-wall kitchen. Approach
-   from in front of the counter and use both; passage and nearby stations stay clear.
-2. Use the sink to inspect its200L reserve. Fill a carried container through
-   inventory: deduct only the volume supplied. Wait one world minute: gain1L,
-   capped at200. Save/load and leave/return: preserve water plus elapsed refill.
-3. Put items/food in the cupboard, close/reopen, save/load and travel/return.
-   Preserve quantities and food age. Limits are ten stacks and100kg of contents.
-   A matching small padlock/key uses normal lock rules; no portable-carry action
-   is offered for this wall fixture. Ordinary portable chests still work.
-Expected: readable artwork, reachable fixtures and persistent finite resources.
-
 CA411-COOKING-01 | Origin: 5.8.21 | Issue: #411
 Prerequisites: final 5.8.21 package, GZDoom 4.14.2, disposable campaign;
 owned deployed fire, wood, learned recipes206-208, their food ingredients,
@@ -92,22 +57,6 @@ carried potable water and a camp pot. Existing #410 checks remain separate.
    must not heat simultaneously. Cancelling restores its ordinary heating.
 Expected: readable working controls, retained progress, exact resources and no
 duplicate portions. Report the failed step, if any; do not reuse prior acceptance.
-CA410-MANSION-BATH-01 | Origin: 5.8.22 | Issue: #410
-Prerequisites: final5.8.22 package, GZDoom4.14.2, disposable mansion campaign;
-carried bottle/canteen, soap, contamination and metabolic toilet credit. The
-prepared terminal supplies a private character; previous pending checks remain separate.
-1. Visit the four first-floor bedrooms. Inspect washstand, tub and toilet;
-   existing beds, tables/chairs and doors must remain accessible.
-2. Fill a canteen at a bedroom sink, then inspect another bedroom or the kitchen.
-   They share one finite200-L reserve, replenished only1L/world-minute in total.
-3. Use a bathtub, lie down, and bathe with carried soap. Confirm contamination
-   decreases and water/soap are spent; stand up into a clear space.
-4. Use a toilet with contamination/credit. Confirm the seated pose; completion
-   spends10L and removes only available credit. Cancelling spends nothing.
-5. Save/load and leave/return. No duplicate fixtures or refilled reserve; preserve
-   previously stored water plus elapsed replenishment. Report any blocked approach.
-Expected: usable placement and existing accepted hygiene behavior throughout.
-
 ID: CA502-LIMBO-HISTORY-01
 Origin: 5.8.23 / issue #502
 Prerequisites: final23 package and assets/validation_5823 fixtures; close other GZDoom sessions.
@@ -115,64 +64,6 @@ Prerequisites: final23 package and assets/validation_5823 fixtures; close other 
 2. Observe the initial CA502H MANUAL reading at zero, the private half-hour absence, and the return reading at the recorded ambient value.
 3. The final console and game remain open. Confirm there is no VM error, duplicate object or repeated catch-up when continuing.
 Expected: the same sink gains the approved constant Limbo exposure while absent. Returning/reading again does not charge the same interval twice. No exterior-history claim.
-
-CA410-WARDROBE-01 | Origin:5.8.24 | Issue:#410
-Prerequisites: final5.8.24 package,GZDoom4.14.2,disposable mansion campaign;
-normal inventory controls and a character able to carry153.896kg plus contents.
-The prepared private fixture grants2000kg carrying capacity solely for testing.
-1. In the northwest first-floor bedroom, inspect the closed wardrobe. Check
-   proportions, painted inventory icon, open doors and locked state. Existing
-   bed,table/chair and bathroom fixtures must remain present and reachable.
-2. Use it to deposit/withdraw objects and food; close/reopen and save/load.
-   Expect original quantities and food age; limit25 stacks/1000kg contents.
-3. Install/remove a matching medium padlock using a lawful owner and carried key.
-   A boxed key must not open it. Ordinary chest behavior remains unchanged.
-4. With sufficient capacity, Shift+Use carries the same full wardrobe. Its
-   inventory name/icon and weight include furniture,contents and installed lock.
-   Save/load or change maps with it; no replacement wardrobe appears in the room.
-5. Place it on clear dry mansion garden ground or permitted property/countryside.
-   Invalid space or unauthorized terrain must retain it and its contents.
-   In5.8.27+, the author-approved extension also permits clear mansion interiors;
-   corroborate that extension separately under CA411-INTERIOR-01.
-Expected: all listed storage,persistence and visual checks pass. Author review
-is pending; do not reuse acceptance of the earlier kitchen/bathroom/camp tests.
-CA410-WATER-FURNITURE-01 | Origin:5.8.25 | Issue:#410
-Prerequisites: final25c package, GZDoom4.14.2 and assets/validation_5825 fixtures.
-Use a disposable mansion campaign; author_terminal.ps1 supplies ordinary controls,
-an empty bottle/pot,a1-L contaminated canteen,100g soap and contamination30. No F-key macros are required.
-1. Inspect fountain and cistern in the south garden, including basin/tap/lid,
-   proportions and clear approach. Use reports each independent reserve.
-2. Aim at fountain, select a carried container in Inventory and press R/click
-   collect. Its actual liters leave the200-L reserve. Wait one world minute:
-   replenish1L, capped200L. Domestic kitchen/bathroom water stays separate.
-3. Aim at cistern and press G/click Store. It begins empty, accepts only
-   the carried water, caps1000L and retains any remainder in the container.
-   R withdraws from it. V still discards water. Boxed/unowned/out-of-reach
-   transfers must not spend resources. Waiting does not refill the cistern.
-4. Shift+Use at a potable source opens bathing; select affordable degrees.
-   Water and soap decrease as contamination decreases. Cancel retains only
-   the partial progress/costs. Contaminated cistern water cannot be used to bathe.
-5. Save/load and travel away/back: source volumes and contamination persist;
-   only elapsed fountain replenishment is added, once. Existing beds, tables,
-   bathrooms, cupboard and wardrobe remain usable.
-Expected: all listed behavior/visual checks pass. Author acceptance is pending;
-the successful earlier kitchen, camp and contamination checks do not cover this.
-
-CA410-READING-01 | Origin: 5.8.26 | Issue: #410
-Prerequisites: final 5.8.26 package or later; disposable mansion campaign,
-a recipe book with at least one page, and access to the existing library.
-Deliver this check only when the full V5.8 implementation is ready, as requested.
-1. Use the shelf for storage; deposit a recipe book. Expect25 stacks/100kg,
-   preserved pages and quantity. Excess capacity must not remove an item.
-2. Use the adjacent reading desk, select the stored book and start one recipe.
-   Expect the actual book to remain in the shelf, with existing reading duration.
-3. Close/reopen the menu; move beyond desk reach, return and resume. Expect pause
-   and unchanged progress while unavailable. A locked shelf requires its own key.
-4. Save/load a paused reading. Travel away and return; reopen the same stored book.
-   Expect preserved progress, one shelf/desk, no duplicate book or learned recipe.
-5. Inspect the existing shelf and reused table artwork, target hints and menu.
-   Retrieve the book and verify ordinary personal-book reading still works.
-Expected: usable collision/access, correct storage/learning/persistence and clear UI.
 
 CA411-INTERIOR-01 | Origin: 5.8.27 | Issue: #411
 Prerequisites: final5.8.27 or later, disposable mansion campaign, wardrobe or
@@ -202,22 +93,6 @@ is ready; do not infer author acceptance from agent-run native assertions.
 4. Continue an original pre5.8.28 save: existing concentration is retained;
    missing exterior history starts at migration, without retroactive dirt.
 
-CA410-SOFAS-01 | Origin: 5.8.29 | Issue: #410
-Prerequisites: complete final V5.8 review build; GZDoom4.14.2; new mansion or
-an older compatible save. Deferred until all V5.8 implementation is ready.
-1. Inspect the two- and three-seat sofas in the mansion reading room, beside the
-   existing shelf/desk. Expect original period wood/cloth furniture, readable
-   seats and clear doors/library access; no replacement of accepted furnishings.
-2. Approach each visible seat and press Use. Choose seated waiting; stand up.
-   Expect the nearest free seat, the ordinary chair posture and safe exit.
-3. Save while seated, reload and stand. Expect the same seat/posture and intact
-   furniture. Leave/return to the mansion: no duplicate sofas or seat blockers.
-4. Inspect each sofa's contamination before/after saved exposure or cleaning.
-   All its seats represent the same object; no duplicated or free cleaning.
-Expected: all five individual seats work with the reference character, ordinary
-chair benefits only. Larger characters still need their full physical clearance.
-Multiplayer author checks remain deferred to V5.12.
-
 [CA410-LUXURY-01] 5.8.30 / #410 - Luxury furniture catalogue
 Prerequisite: final grouped V5.8 handoff, including the preserved luxury gallery
 from assets/validation_5830/run_native.ps1 (-Runtime final30c -Checks -Interactive
@@ -228,18 +103,6 @@ from assets/validation_5830/run_native.ps1 (-Runtime final30c -Checks -Interacti
 Expected: original period furniture, ordinary rest bonuses, no duplicated items,
 no overlapping seated bodies or missing serving/canteen visuals. Repeat after save.
 Outstanding; author corroboration is deferred until all V5.8 implementation is ready.
-
-[CA410-STORAGE-ACQUISITION-01] Version5.8.31 / #410 - Furniture acquisition
-Prerequisites: final grouped V5.8 handoff; keep original saves for rollback.
-1. In Provisions, buy a wardrobe and a cupboard. Check the price, mass and icons;
-   buy another of the same type and confirm separate objects and decreasing stock.
-2. Read each recipe from the library and craft it with Workbench + Fine Tools.
-   Cancel once, then finish; cancellation keeps ingredients, completion spends them.
-3. Activate a furniture item from inventory on a clear permitted floor. Try an
-   occupied spot first: the item must remain. Store food/water, carry and replace it.
-4. Save/load and leave/return with a carried piece. Contents, lock, title and dirt
-   must persist. The existing fixed kitchen cupboard must remain fixed.
-Expected: no duplicated items, free stock resets, lost contents or changed limits.
 
 CA410-REST-ACQUISITION-01 | 5.8.32 | #410
 Prerequisites: final grouped V5.8 build, learned luxury chair/bed recipes and
@@ -274,34 +137,6 @@ Deliver together with the remaining V5.8 checks, not before implementation is co
    the two ordinary recipes start unknown until learned.
 Expected: all checks pass. Author corroboration is pending.
 
-CA410-SOFA-ACQUISITION-01 | Origin: 5.8.35 | Issue: #410
-Prerequisites: final5.8.35 or later, disposable normal-controls furniture fixture,
-sufficient carrying space/money and learned sofa recipes/materials. Present only
-with the final grouped V5.8 manual handoff.
-1. Inspect both sofa inventory/crafting/shop sprites. Expect painted two/three
-   seat designs consistent with the deployed models, without rectangular backgrounds.
-2. Buy/craft a sofa. Expect actual material cost/weight, three initial shop units
-   and ten copies of each recipe; repeated visits do not refill sold stock.
-3. Place on permitted clear ground; use each seat to rest, then stand. An occupied
-   sofa cannot be carried. Crouch+Use picks up the complete owned empty sofa.
-4. Walk through its old position: no invisible seat should remain. Place it at
-   a different orientation and use every seat again. Failed placements retain it.
-5. Store/retrieve through the Box and save/load/travel carrying it. Expect the same
-   object, title, dirt, seat count and functional rest; no duplicates or orphan seats.
-6. Upgrade a preceding save. Existing furniture knowledge and shop stock remain;
-   new sofa recipes must be learned normally.
-Expected: all checks pass. Author corroboration remains pending.
-
-CA410-STUDY-ACQUISITION-01 | Origin5.8.36 | Issue#410
-Prerequisites: final groupedV5.8 author build and a new/compatible campaign; learned desk/bookcase recipes, material supply, sufficient carrying capacity. Fixed mansion library is unchanged.
-1. Buy or craft a writing desk and bookcase; inspect painted inventory icons and material-derived mass/price. Place in permitted clear space within96 units and line of sight.
-2. Store a recipe book in the bookcase, use the desk and begin reading. The book stays stored. While reading, neither connected piece can be carried.
-3. Pause reading, carry each piece (crouch+Use), save/load and travel. Place them again and resume the same book/progress; inspect contents, lock, ownership and contamination.
-4. Check25-pile/100kg limits and real content weight. Deployed bookcase cargo stays outside the Box like other storage; unused bookcase item and desk support the Box.
-5. Confirm blocked doorways/obstacles reject placement and the existing mansion library/desk remain present.
-Expected: original bodies/books/progress persist, no duplication, free books, silent stock reset or access through a locked/packed library.
-Status: pending author corroboration, held for the completeV5.8 handoff.
-
 CA502-SEAL-HISTORY-01 | Origin: 5.8.37 | Issue: #502
 Prerequisites: grouped final V5.8 build; disposable scene with physical objects,
 Fire/Water seals, a normal regional climate and a nearby map transition.
@@ -326,24 +161,6 @@ NPC exposure acceptance is retained. Do not hand off before full implementation.
    diagnostic hub: Life, contamination and fractional damage retain their values;
    the next active tic resumes once. No offline physiology is claimed by this test.
 Expected: shared illness rules, no physical armor wear, no duplicate body record.
-
-CA410-DINING-SETS-01 | Origin: 5.8.40 | Issue: #410
-Prerequisites: complete V5.8 grouped handoff, normal controls, sufficient carrying
-capacity/materials/money and learned dining-set recipes. Do not hand off early.
-1. Inspect all four painted inventory/shop/crafting icons and deployed sets:
-   small2, ordinary6, long12 and luxury6 chairs. Use every seat; face the table.
-2. Buy/craft/place a set on clear permitted ground. Check material-derived mass,
-   actual station/recipe requirements, stock3 and recipe stock10 without refills.
-3. Put food and a partially filled warm bottle on it. Crouch+Use carries the
-   complete owned set including actual content weight. Occupancy blocks pickup.
-4. Place again, rotate and inspect the same items, quantities, water quality,
-   temperature and food age. New sets must not create food or refill bottles.
-5. Box/retrieve, save/load and cross a map boundary carrying the loaded set;
-   repeat with the set inside a carried chest. No duplicates or ghost chairs.
-6. Wait with the set packed: food still ages and water cools. Earlier saves keep
-   their fixed tables, learned furniture recipes and sold stock; new recipes
-   start unknown. Inspect ownership and contamination after redeployment.
-Expected: all checks pass. Pending author corroboration.
 
 CA502-HOME-STORAGE-01 | Origin: 5.8.41 | Issue: #502
 Prerequisites: grouped final V5.8 author build; a visited house with its original
@@ -476,3 +293,15 @@ contaminated ground; save/reload and revisit. Clean equipment with stacked cloth
 Expected: native quantities/dirt survive; only the used cloth is rinsed; deployed
 states retain their concentration; protected storage stays protected; NPC and
 unlinked physical contacts work without duplicate pair dosing.
+
+CA410-REVIEW-01 | Origin: 5.8.54 | Issue: #410
+Prerequisites: final review-corrections terminal and disposable scenarios.
+1. Select an empty bottle or canteen at the fountain. Press the displayed Use key:
+   it fills and spends the matching volume. Inventory R still refills. A full
+   container does not drink while aimed at the source; away from it Use drinks.
+2. Inspect both beds: raised mattress and pillow(s); luxury bed has a canopy.
+   Lie down: the existing sleeping plane and exit remain usable.
+3. Inspect the small accepted landscape, the museum-size landscape, and the
+   original ornamental statue, all present together. Check the large painting
+   inventory, placement and packing in the mansion. Report any visual obstruction.
+Expected: all corrected functions/art are usable; earlier passed cases need no repeat.

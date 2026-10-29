@@ -6,6 +6,7 @@ import math
 import sys
 sys.dont_write_bytecode = True
 from generate_stash_models import Mesh, WOOD, METAL, INSIDE
+from furniture_bedding import bedding
 
 ROOT = Path(__file__).resolve().parents[2]
 ART = ROOT / 'assets/art_source/basic_rest_furniture'
@@ -16,8 +17,16 @@ def construction(kind):
     mesh = Mesh()
     mass = dict.fromkeys(MATERIALS, 0.0)
     for part in DATA[kind]['members']:
-        material, size = part['material'], part['size']
-        mesh.add_box(MATERIALS[material], tuple(v*DATA['units_per_meter'] for v in part['center']),
+        material, size = part['material'], list(part['size'])
+        center=list(part['center'])
+        if kind=='bed':
+            if material=='cloth':continue
+            lower=DATA['bedding']['mattress_thickness_m']
+            if material=='wood' and size[1]>.4 and size[0]<.1:
+                size[1]-=lower;center[1]-=lower/2
+            elif center[1]<DATA[kind]['surface']:center[1]-=lower
+
+        mesh.add_box(MATERIALS[material], tuple(v*DATA['units_per_meter'] for v in center),
                      tuple(v*DATA['units_per_meter'] for v in size))
         if material == 'cloth':
             # A fitted textile face, including the existing folded head support;
@@ -25,6 +34,8 @@ def construction(kind):
             mass[material] += math.prod(sorted(size)[1:])*DATA['cloth_kg_m2']
         else:
             mass[material] += math.prod(size)*DATA[material+'_density']
+    if kind=='bed':
+        mass['cloth']+=bedding(mesh,DATA[kind]['width'],DATA[kind]['depth'],DATA[kind]['surface'],DATA['bedding'],DATA['units_per_meter'],DATA['cloth_kg_m2'])
     return mesh, mass
 
 def generate():
@@ -40,7 +51,7 @@ def generate():
                    sha256=hashlib.sha256(path.read_bytes()).hexdigest())
         rows.append(row)
     (ART/'GENERATED.json').write_text(json.dumps({'models': rows, 'mass_method': 'Sum of modeled members, including joint overlaps; textile face area. Design construction estimates, not measured museum masses.'}, indent=2)+'\n', encoding='utf-8')
-    lines = ['// #410: generado desde basic_rest_furniture/DATA.json.', 'class CaelumBasicRestData : Object', '{', '    const REVISION=1;']
+    lines = ['// #410: generado desde basic_rest_furniture/DATA.json.', 'class CaelumBasicRestData : Object', '{', '    const REVISION=2;']
     for row in rows:
         for name, value in [('RADIUS', math.hypot(row['width'], row['depth'])/2*DATA['units_per_meter']),
                             ('HEIGHT', row['height']*DATA['units_per_meter']),

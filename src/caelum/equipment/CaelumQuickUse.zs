@@ -39,7 +39,8 @@ class CaelumQuickUse : Object
         let mate=CaelumMateItem(item);
         if(mate!=null)return mate.CanDrink(user);
         let water=CaelumWaterContainer(item);
-        return water==null || (user.DerivedStats!=null && user.CurrentThirst<100
-            && water.IsDrinkable() && water.WaterLiters>0.000001);
+        // El mismo botón recoge agua de una fuente. Un recipiente vacío o
+        // un personaje hidratado conserva esa acción; Drink valida el sorbo.
+        return water==null || !CaelumWaterBoiling.Locked(water);
     }
 }

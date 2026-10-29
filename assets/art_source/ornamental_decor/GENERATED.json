@@ -34,18 +34,37 @@
       "width_units": 11.2,
       "height_units": 27.2,
       "radius_units": 7.919595949289332
+    },
+    {
+      "name": "large_painting",
+      "mass_kg": 57.305191140459236,
+      "materials_kg": [
+        56.47104000000001,
+        0.013351140459225901,
+        0.8208
+      ],
+      "recipe_grams": [
+        56472,
+        14,
+        821
+      ],
+      "width_units": 69.12,
+      "height_units": 49.92,
+      "radius_units": 34.573330762308686
     }
   ],
   "outputs": {
     "src/models/caelum/props/ornamental/carved_wood.png": "467d97247a5f612e20bf15cdb539b26ff4eafaba48ce26a886c3c906e7f1f1b4",
     "src/models/caelum/props/ornamental/ca_botanical_statue.obj": "e5bd86fd058d3071192a3f20f867579a71d3f5c9249e7577b642127dd7b9df8a",
+    "src/models/caelum/props/ornamental/ca_large_river_painting.obj": "d7e010c8ea04f6a6c68edcd970d5fd938ac683a6a54c64971dd2cda289d5fbe3",
     "src/models/caelum/props/ornamental/ca_river_painting.obj": "03f9d296e54f6c1351020992f8bc7b790a31ebc703cc123f8889f560737f8200",
     "src/models/caelum/props/ornamental/river_landscape.png": "d8b2c712ad38af0fbc1cbc8c770fc14f4520f71279698f3244237d3e822e3f67",
+    "src/sprites/caelum/ornamental/COALA0.png": "c2153f77e11087fcb078ae38527fa83bef29791e3700e30cc87fec4405a66d0f",
     "src/sprites/caelum/ornamental/COAPA0.png": "c2153f77e11087fcb078ae38527fa83bef29791e3700e30cc87fec4405a66d0f",
     "src/sprites/caelum/ornamental/COASA0.png": "c2153f77e11087fcb078ae38527fa83bef29791e3700e30cc87fec4405a66d0f",
     "src/sprites/caelum/ornamental/COTPA0.png": "d8a9375033985104b26e3698c9d972735630242f4959878727f57d0d416fc839",
     "src/sprites/caelum/ornamental/COTSA0.png": "4ccf8aafc50672af42db56f1d01197f30441f9a71f3fd6349e2e9a65b263f99f",
-    "src/caelum/data/CaelumDecorData.zs": "986c20cf4d1eadb33c5dc7538dd160181591f3173e565319a6f9f35a011e1078"
+    "src/caelum/data/CaelumDecorData.zs": "ce4443c0391ee7545fbcf3941c8e57f5ece48a9a47c30fa2593f3faaf63ca25c"
   },
   "sources": {
     "painting_sprite_source.png": "61a6a7f7f3a9a69d8342b624782171f3546a0bf413f13ef8c9fa07b76c73ebb4",
