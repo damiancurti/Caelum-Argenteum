@@ -2232,6 +2232,7 @@ class CaelumInventoryService : Object play
         }
 
         double soapCreditWeight=CaelumSoapSupply.Credit(user)*CaelumConstants.MATERIAL_UNIT_WEIGHT;
+        soapCreditWeight+=CaelumCampFuelCredit.Weight(user);
         personalInventoryWeight+=soapCreditWeight;carriedItemWeight+=soapCreditWeight;
 
         // Los cofres cargados no reciben la compresión de la Caja Mágica.
@@ -2709,6 +2710,14 @@ class CaelumInventoryService : Object play
         {
             if(CaelumCampTask.Locked(entry))user.CancelCraftingTask();
             else CaelumCampTask.BeginSetup(user,CaelumCampTent(entry));
+            user.RefreshFormalInventorySnapshot();return;
+        }
+        let firewood=CaelumMaterialPickup(entry);
+        if(firewood!=null && !firewood.InMagicBox && firewood.GetSpecialType()==CaelumConstants.MATERIAL_WOOD && firewood.GetSpecialTier()==1)
+        {
+            let task=CaelumCampTask.Find(user);
+            if(CaelumCampTask.Active(user) && task!=null && task.FireAction>0)user.CancelCraftingTask();
+            else CaelumCampFireSession.Show(user,null);
             user.RefreshFormalInventorySnapshot();return;
         }
         user.ApplyFormalInventorySelection(entry);

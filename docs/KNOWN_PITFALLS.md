@@ -4,6 +4,50 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-173 - Verify manual fixture startup, not only automated checks
+
+Status/evidence: ENGINE-VERIFIED; #411 / PR507; 2026-10-26.
+Affected baseline: 50e3e27d; GZDoom 4.14.2, Windows 11/Vulkan, final05.
+Scope: assets/validation_5813/prepare.py and run_native.ps1.
+
+The author's original manual script began with a nested exec of the canonical
+controls, followed by wait/setup/binds. Running that exact script left default
+engine bindings and never seeded the fixture. Adding unrelated trailing echo
+commands made a separate probe pass: the precise engine scheduling cause remains
+UNCONFIRMED. Passing automated scenarios did not establish a working author menu.
+
+Inline the owned control-file commands, install diagnostic bindings before the
+delayed setup, query them natively, and check a readiness marker before handoff.
+The exact corrected manual entry and its smoke extension both initialize. Retain
+the failed original local log; selected passing evidence is in validation_5813.
+Remote key injection did not reach this game window. Binding queries and scripted
+commands are not proof of physical-key acceptance; CA411-FIRE-01 remains pending.
+Regression: prepare.py, then run_native.ps1 -Script manual-smoke -Runtime final05
+-Checks with a fresh label; also verify the unchanged manual interactive entry.
+
+## CA-KP-170 - Camp fuel stacks and immutable native test archives
+
+Status/evidence: ENGINE-VERIFIED, #411, 2026-10-26; assets/validation_5813.
+The existing recipe catalogue resolves one native stack per material. Returning
+unburned fuel as a second attached stack hides the previous stack from crafting
+counts. Merge whole grams into the matching stack and preserve the fractional
+gram as saved mass-bearing metadata; test conservation over refill/recovery.
+
+Spawn registration can precede deferred native PostBeginPlay. An immediately
+usable newly assembled heat source explicitly registers during preparation;
+PostBeginPlay deduplicates, destruction removes it, and save/hub load performs
+one typed census. The registry owns only current-map declared heat sources;
+there is no routine all-actor scan or new population cap. Fixed-source before/
+after and one burning camp rendering measurements are recorded in the evidence;
+they do not establish a worst case for arbitrarily many player-built fires.
+The unrelated ranch census remains unchanged.
+
+Never rewrite a fixture PK3 while an engine still has it open: a later hub map
+read can fail with No map despite valid new archive contents. The affected
+hub-final03 attempt timed out; rebuilding only after exit and rerunning the same
+route passed. The fixture builder now refuses regeneration with GZDoom running.
+Keep immutable runtime labels, raw failed attempts and final successful evidence.
+
 ## CA-KP-169 - Household work must preserve native stock and hidden metadata
 
 Status/evidence: ENGINE-VERIFIED, #502/PR506,2026-10-25; baseline eedb1b87.

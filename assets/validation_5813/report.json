@@ -1,0 +1,119 @@
+{
+  "issue": 411,
+  "version": "5.8.13",
+  "runtime": "final05",
+  "sha256": "dfb026a61fcb90af1a5446f764584eaf032495ba77c3140797336dec9dbbc8ce",
+  "source_matching_members": 16914,
+  "passes": 131,
+  "failures": 0,
+  "runs": [
+    {
+      "label": "core-final03",
+      "passes": 34,
+      "runtime_sha256": "5A38402B6242D95523541D8C182DD77DD2D3F6E343830F5EBD5BA1775AA2C516",
+      "addon_sha256": "1686408B595AE1EEBE5DA089B9EB6AABDF6808BA3A5A1DC54CA104A8A1D62DDB"
+    },
+    {
+      "label": "pot-final03",
+      "passes": 14,
+      "runtime_sha256": "5A38402B6242D95523541D8C182DD77DD2D3F6E343830F5EBD5BA1775AA2C516",
+      "addon_sha256": "1686408B595AE1EEBE5DA089B9EB6AABDF6808BA3A5A1DC54CA104A8A1D62DDB"
+    },
+    {
+      "label": "wait-final03",
+      "passes": 5,
+      "runtime_sha256": "5A38402B6242D95523541D8C182DD77DD2D3F6E343830F5EBD5BA1775AA2C516",
+      "addon_sha256": "1686408B595AE1EEBE5DA089B9EB6AABDF6808BA3A5A1DC54CA104A8A1D62DDB"
+    },
+    {
+      "label": "ui-final03",
+      "passes": 5,
+      "runtime_sha256": "5A38402B6242D95523541D8C182DD77DD2D3F6E343830F5EBD5BA1775AA2C516",
+      "addon_sha256": "1686408B595AE1EEBE5DA089B9EB6AABDF6808BA3A5A1DC54CA104A8A1D62DDB"
+    },
+    {
+      "label": "load-final03",
+      "passes": 5,
+      "runtime_sha256": "5A38402B6242D95523541D8C182DD77DD2D3F6E343830F5EBD5BA1775AA2C516",
+      "addon_sha256": "1686408B595AE1EEBE5DA089B9EB6AABDF6808BA3A5A1DC54CA104A8A1D62DDB"
+    },
+    {
+      "label": "hub-final03b",
+      "passes": 11,
+      "runtime_sha256": "5A38402B6242D95523541D8C182DD77DD2D3F6E343830F5EBD5BA1775AA2C516",
+      "addon_sha256": "A5503487D7733CBEC7BC56064D36049F7F3046CBAA43CCE30426375938A952AA"
+    },
+    {
+      "label": "taskload-final03b",
+      "passes": 2,
+      "runtime_sha256": "5A38402B6242D95523541D8C182DD77DD2D3F6E343830F5EBD5BA1775AA2C516",
+      "addon_sha256": "A5503487D7733CBEC7BC56064D36049F7F3046CBAA43CCE30426375938A952AA"
+    },
+    {
+      "label": "potload-final03b",
+      "passes": 3,
+      "runtime_sha256": "5A38402B6242D95523541D8C182DD77DD2D3F6E343830F5EBD5BA1775AA2C516",
+      "addon_sha256": "A5503487D7733CBEC7BC56064D36049F7F3046CBAA43CCE30426375938A952AA"
+    },
+    {
+      "label": "capture-final05",
+      "passes": 3,
+      "runtime_sha256": "DFB026A61FCB90AF1A5446F764584EAF032495BA77C3140797336DEC9DBBC8CE",
+      "addon_sha256": "A5503487D7733CBEC7BC56064D36049F7F3046CBAA43CCE30426375938A952AA"
+    },
+    {
+      "label": "legacy-seed01",
+      "passes": 1,
+      "runtime_sha256": "41DB7950E5E4CAB2D7BA6A56829E939E0602A5A2A47C77BA679AADB3D1943991",
+      "addon_sha256": "DC4623C67F6100D405E740B69F314B23700DC1ABE151870F24109958210F4018"
+    },
+    {
+      "label": "legacy-upgrade02",
+      "passes": 1,
+      "runtime_sha256": "7E572337130694B2A71252385B9A5A1EFDCE079507AECA22DB3FE59EF0C3C4E1",
+      "addon_sha256": "DC4623C67F6100D405E740B69F314B23700DC1ABE151870F24109958210F4018"
+    },
+    {
+      "label": "legacy-rollback02",
+      "passes": 1,
+      "runtime_sha256": "41DB7950E5E4CAB2D7BA6A56829E939E0602A5A2A47C77BA679AADB3D1943991",
+      "addon_sha256": "DC4623C67F6100D405E740B69F314B23700DC1ABE151870F24109958210F4018"
+    },
+    {
+      "label": "seed-final02",
+      "passes": 2,
+      "runtime_sha256": "9E38EE5012F9A40993E57BAABBE93E380FF3F7259B0826F934DFCA2823D85F7C",
+      "addon_sha256": "D4500C76D6069CF9B7CD511A5EEC8DB60DB12D646AAAE853D58093AFA919F565"
+    },
+    {
+      "label": "taskseed-final02",
+      "passes": 1,
+      "runtime_sha256": "9E38EE5012F9A40993E57BAABBE93E380FF3F7259B0826F934DFCA2823D85F7C",
+      "addon_sha256": "D4500C76D6069CF9B7CD511A5EEC8DB60DB12D646AAAE853D58093AFA919F565"
+    },
+    {
+      "label": "potseed-final02",
+      "passes": 3,
+      "runtime_sha256": "9E38EE5012F9A40993E57BAABBE93E380FF3F7259B0826F934DFCA2823D85F7C",
+      "addon_sha256": "D4500C76D6069CF9B7CD511A5EEC8DB60DB12D646AAAE853D58093AFA919F565"
+    },
+    {
+      "label": "tent-regression-fire-final04",
+      "passes": 40,
+      "runtime_sha256": "7E572337130694B2A71252385B9A5A1EFDCE079507AECA22DB3FE59EF0C3C4E1",
+      "addon_sha256": "AFFE8404DCB763CECDA25AF02E0CE42AEB33A9962D7DAEA8AD0264DC9094C07C"
+    }
+  ],
+  "changes_since_behavior_suite": [
+    "models/caelum/world/camp/fire_1.obj",
+    "models/caelum/world/camp/fire_2.obj",
+    "models/caelum/world/camp/fire_3.obj",
+    "models/caelum/world/camp/fire_4.obj",
+    "models/caelum/world/camp/fire_6.obj",
+    "models/caelum/world/camp/fire_7.obj",
+    "models/caelum/world/camp/fire_8.obj",
+    "models/caelum/world/camp/fire_9.obj"
+  ],
+  "author_acceptance": "Pending CA411-FIRE-01; author away",
+  "limitations": "Native single-player/private fixture checks and narrow callback measurements; not cooking, multiplayer, full V5.8 or global performance acceptance."
+}

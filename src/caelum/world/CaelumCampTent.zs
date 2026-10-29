@@ -3,6 +3,7 @@
 class CaelumCampWorld : StaticEventHandler
 {
     Array<CaelumDeployedTent> Tents;
+    Array<CaelumCampFire> Fires;
     static CaelumCampWorld Get(){return CaelumCampWorld(StaticEventHandler.Find('CaelumCampWorld'));}
     void Track(CaelumDeployedTent tent){if(Tents.Find(tent)==Tents.Size())Tents.Push(tent);}
     void Forget(CaelumDeployedTent tent){int i=Tents.Find(tent);if(i<Tents.Size())Tents.Delete(i);}
@@ -10,10 +11,22 @@ class CaelumCampWorld : StaticEventHandler
     {
         Tents.Clear();let it=ThinkerIterator.Create('CaelumDeployedTent');CaelumDeployedTent tent;
         while((tent=CaelumDeployedTent(it.Next()))!=null)if(tent.Ready)Tents.Push(tent);
+        Fires.Clear();let fires=ThinkerIterator.Create('CaelumCampFire');CaelumCampFire fire;
+        while((fire=CaelumCampFire(fires.Next()))!=null){fire.Prepare();fire.ClockReady=false;}
     }
     override void WorldLoaded(WorldEvent e){Rebuild();}
-    override void WorldUnloaded(WorldEvent e){Tents.Clear();}
-    override void OnUnregister(){Tents.Clear();}
+    override void WorldUnloaded(WorldEvent e){for(int i=0;i<Fires.Size();i++)Fires[i].Extinguish();Tents.Clear();Fires.Clear();}
+    override void OnUnregister(){Tents.Clear();Fires.Clear();}
+    override void NetworkProcess(ConsoleEvent e)
+    {
+        if(e.Name!='ca_camp_fire_action' || e.Player<0 || e.Player>=MAXPLAYERS || !playeringame[e.Player])return;
+        let user=CaelumPlayer(players[e.Player].mo);let session=CaelumCampFireSession.Find(user);
+        if(session!=null)session.Act(user,e.Args[0]);
+    }
+    static void AdvanceFires()
+    {let world=Get();if(world!=null)for(int i=0;i<world.Fires.Size();i++)world.Fires[i].Advance();}
+    static bool Burning()
+    {let world=Get();if(world!=null)for(int i=0;i<world.Fires.Size();i++)if(world.Fires[i].Fuel!=null && world.Fires[i].Fuel.Lit)return true;return false;}
 }
 // #411: estructura guardable; la pieza Inventory original se conserva dentro.
 class CaelumCampTentPart : CaelumVehiclePart
@@ -146,6 +159,8 @@ class CaelumCampTask : Inventory
     int Revision;
     int GeometryRevision;
     bool Packing;
+    int FireAction,FireGrams;
+    CaelumCampFire Fire;
     String OriginMap;
     vector3 Point;
     double Facing;
@@ -166,7 +181,8 @@ class CaelumCampTask : Inventory
         let advance=CaelumTimeAdvanceState.Get(user);
         if(task.Anchor!=null && advance!=null && advance.Active && advance.Station==task.Anchor)CaelumTimeAdvanceState.Halt(user);
         if(task.Anchor is 'CaelumCampWorkAnchor')task.Anchor.Destroy();
-        task.Anchor=null;task.Tent=null;task.Item=null;
+        if(task.Fire!=null && task.Fire.Busy==user)task.Fire.Busy=null;
+        task.Anchor=null;task.Tent=null;task.Item=null;task.Fire=null;task.FireAction=0;task.FireGrams=0;
     }
     static bool Available(CaelumPlayer user)
     {
@@ -212,11 +228,12 @@ class CaelumCampTask : Inventory
         user.CraftingTaskRecipeIndex=-1;user.CraftingTaskNetworkCapabilities=0;
         user.EquipmentMenuOpen=false;user.CraftingMenuOpen=false;
         user.PersistCharacterState();
-        CaelumNotifications.Notify(user,StringTable.Localize(task.Packing?"CA_CAMP_PACKING":"CA_CAMP_SETTING_UP",false));
+        CaelumNotifications.Notify(user,StringTable.Localize(task.FireAction>0?"CA_CAMP_FIRE_WORK":task.Packing?"CA_CAMP_PACKING":"CA_CAMP_SETTING_UP",false));
     }
     static bool Attended(CaelumPlayer user)
     {
         let task=Find(user);
+        if(Active(user) && task!=null && task.FireAction>0)return CaelumCampFireWork.Attended(user,task);
         return Active(user) && task!=null && task.Revision==CaelumCampData.REVISION
             && task.OriginMap==level.MapName && task.Anchor!=null && task.Item!=null
             && user.health>0 && user.player!=null && user.player.playerstate==PST_LIVE
@@ -231,6 +248,7 @@ class CaelumCampTask : Inventory
     {
         if(!Attended(user))return false;
         let task=Find(user);let item=task.Item;
+        if(task.FireAction>0)return CaelumCampFireWork.Complete(user,task);
         if(task.Packing)
         {
             if(!user.CanAddWeightToPersonalInventory(item.GetUnitWeight())

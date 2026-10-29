@@ -1,0 +1,18 @@
+{
+  "issue": 411,
+  "physical_source": "src/caelum/data/CaelumCampData.zs",
+  "units_source": "src/caelum/core/CaelumPhysicsUnits.zs",
+  "materials": {
+    "wood": "models/caelum/props/stash/ca_stash_wood.png",
+    "ember": "models/caelum/projectiles/breath.png",
+    "iron": "models/caelum/props/stations/ca_station_iron.png"
+  },
+  "visual_only": {
+    "log_count": 5,
+    "log_radius_fraction": 0.065,
+    "log_length_fraction": 0.82,
+    "log_sides": 7,
+    "flame_count": 7,
+    "pixel_stretch_compensation": 1.2
+  }
+}

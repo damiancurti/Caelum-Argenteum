@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.12** — 2026-10-25.
+Documentation version: **5.8.13** - 2026-10-26.
 
 ## 5.8.12 - Metabolic toilet sessions (#502, in progress)
 
@@ -608,7 +608,11 @@ fire with 2 kW useful cooking heat (25% efficiency), wood at 15 MJ/kg and 1.92 k
 fuel per game hour; flame diameter 0.60 m and height 0.50 m. Existing approved
 meat/fish/puchero durations stay unchanged. The pot is an open cylinder with
 0.36 m inside diameter, approximately 0.196 m depth, 2 mm iron side/base walls
-and handles, approximately 5.5 kg empty. Iron density is 7,870 kg/m3, specific
+and handles, 5.5 kg vessel mass. The inseparable trivet approved on 2026-10-26
+adds 1.6 kg, for 7.1 kg empty carried mass: a 0.32 m iron ring, three
+0.50 m legs and 0.010 m rod. Ideal rod mass is about 1.55 kg; the approved
+rounding includes joints. The support sits outside the water/vessel thermal
+mass, so accepted heating/cooling uses the original 5.5 kg vessel. Iron density is 7,870 kg/m3, specific
 heat 450 J/(kg K), conductivity 80 W/(m K). These are approved design references.
 Tent and pot use both purchase and fabrication with learned recipes; the fire
 is assembled on suitable ground with wood. The author then approved approximately
@@ -620,7 +624,7 @@ blocks direct rain and reduces exterior wind by 90%, retaining exterior air
 temperature with no self-heating or new rest bonus. The fire extinguishes when
 leaving its map and retains the unspent loaded wood; off-map burning was rejected.
 Approved recipes at 100% efficiency: tent uses 13,500 g cotton fabric (T2),
-4,100 g wood, 600 g iron ingot (T2) and 600 g rope; pot uses 5,500 g iron ingot
+4,100 g wood, 600 g iron ingot (T2) and 600 g rope; pot with integral trivet uses 7,100 g iron ingot
 (T2). Tent needs Workbench + Sewing machine + Fine tools; pot needs Forge +
 Anvil. Existing fabrication duration, Dexterity and waste apply at normal
 complexity. Base prices are ingredient costs plus the existing 25% manufacturing
@@ -644,7 +648,40 @@ knowledge; camp catalogue revision 1 appends missing entries without resetting
 stock. Pot cooling uses the approved iron cylinder wall and heat capacity, plus
 convection/radiation at its open top, through the existing water clock. Existing
 glass/leather containers keep their original formulas. Fire fuel/heat helpers
-have isolated numerical evidence; no deployed fire runtime is claimed yet.
+have isolated numerical evidence; the deployed runtime is described below.
+
+The 5.8.13 campfire runtime uses a maximum of 10,000 g wood, one world minute
+for assembly/ignition or dismantling, and immediate extinguishing. Unfinished
+assembly reserves wood; cancellation leaves it intact. Completion rechecks
+permission and geometry. Only the lawful owner manages the fire; retrieval
+remains possible after a lease expires. Dismantling requires an extinguished
+fire and removal of its pot. Recovery preserves all unburned wood, including a
+saved fractional gram with its carried mass, and merges whole grams into the
+existing material stack. Refilling reuses that fraction before consuming whole
+grams. Box capacity is checked when the existing wood stack is boxed.
+
+Burning integrates world-clock seconds at 1.92 kg/hour, including ordinary and
+accelerated waiting. It stops exactly at zero fuel and on map departure; there
+is no off-map burn. The thermal source uses the approved 8 kW and flame
+dimensions. A shared typed registry replaces the old per-second fire census;
+its load/save/hub census has explicit ownership in CaelumThermalWorld. Fires
+update through their registry during accelerated time. Exact task-end forecasts
+are conservatively unavailable while a mutable fire burns; manual waits remain.
+
+An unboxed, unreserved original pot can be placed or retrieved by interaction,
+subject to access, clear volume and carrying capacity. Its water receives the
+approved 2 kW useful heat while fuel burns. Heating includes the 5.5 kg iron
+vessel's heat capacity; at 100 C, 60 seconds of boiling remove only biological
+contamination. Evaporation uses the existing 2,257,000 J/kg latent heat. Salt and
+chemical flags persist. With the fire out, the existing approved open-cylinder
+cooling model uses local shelter, ambient temperature and wind. Mounted pots
+skip their independent container tick, preventing duplicate cooling. Adding or
+removing the pot preserves its native identity and state; removal resets its
+temperature clock without resetting its water. No extra water or fuel appears.
+The additive fire/fuel/session schema starts at revision 1; existing saves do
+not gain fires. Original saves and their previous runtime remain the reversible
+rollback path. Native migration and save/hub checks are separate from author
+acceptance. Food preparation remains pending with #410.
 
 The 5.8.8 geometry slice integrates dry/stable support and complete native
 collision-volume checks into existing carried-chest placement. The 1 MU support
@@ -668,9 +705,9 @@ temperature and humidity are retained. An event-maintained shelter registry
 skips blockmap queries when no tents exist. Its only typed census runs on
 map/save/hub load; normal updates use spawn/destruction bookkeeping and local
 queries. This adds no rest recovery bonus or two-occupant sleeping arrangement.
-Fire deployment, cooking and the remaining furniture work are still pending.
-CA411-TENT-01 passed behavior except the rejected narrow shape; author review
-of the enlarged 4 x 3 m model remains pending. Geometry revision 2 uses a
+Fire deployment now has the 5.8.13 runtime above; cooking and remaining furniture work are pending.
+CA411-TENT-01, including the corrected enlarged 4 x 3 m model, passed author
+review on 2026-10-25. Geometry revision 2 uses a
 rectangular footprint and 224 local solid roof/back pieces. Existing revision-1
 deployed tents and unfinished old assembly tasks retain their original 2 x 2 m
 geometry/model until packed, avoiding expansion into occupied terrain. New

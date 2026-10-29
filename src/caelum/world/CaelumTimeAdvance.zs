@@ -109,6 +109,7 @@ class CaelumTimeAdvanceState : Inventory
         clock.AdvanceOnMap(level.MapName);
         CaelumWeatherState.Sync(user,clock,CaelumCalendarState.Get(user));
         CaelumHousekeepingWork.AdvanceSkippedTic(user);
+        CaelumCampWorld.AdvanceFires();
         AdvancePowers(user);
         user.UpdateCraftingTask();
         let reading=CaelumRecipeSession.Get(user);if(reading!=null)reading.Advance();

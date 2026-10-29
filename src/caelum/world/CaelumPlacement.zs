@@ -63,7 +63,7 @@ class CaelumPlacementGeometry : Object play
                 if(other==probe || other==ignored || other.bNoBlockmap)continue;
                 if(other.Pos.Z>=point.Z+height || other.Pos.Z+other.Height<=point.Z)continue;
                 bool access=other is 'CaelumSlidingDoorLeaf' || other is 'CaelumHousePortal';
-                if(!other.bSolid && !access)continue;
+                if(!other.bSolid && !access && !(other is 'CaelumCampFire'))continue;
                 double clearance=radius+other.Radius+(access?user.Radius:0);
                 if(Abs(other.Pos.X-point.X)<clearance && Abs(other.Pos.Y-point.Y)<clearance)fits=false;
                 // La hoja abierta se aparta físicamente de su hueco. Su origen

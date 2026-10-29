@@ -2,7 +2,7 @@
 class CaelumCampData : Object
 {
     const REVISION=1;
-    const CATALOGUE_REVISION=2;
+    const CATALOGUE_REVISION=3;
     const FIRST_RECIPE=201;
     const COUNT=2;
     const TENT_KEY=12;
@@ -19,7 +19,15 @@ class CaelumCampData : Object
     const SETUP_SECONDS=600.0;
     const PACK_SECONDS=300.0;
     const IGNITE_SECONDS=60.0;
-    const POT_KG=5.5;
+    const DISMANTLE_SECONDS=60.0;
+    const FIRE_CAPACITY_G=10000;
+    const POT_BODY_KG=5.5;
+    const POT_TRIVET_KG=1.6;
+    const POT_KG=7.1;
+    const TRIVET_DIAMETER_M=0.32;
+    const TRIVET_HEIGHT_M=0.50;
+    const TRIVET_ROD_M=0.010;
+    const TRIVET_LEGS=3;
     const POT_LITERS=20.0;
     const POT_DIAMETER_M=0.36;
     const POT_WALL_M=0.002;
@@ -56,7 +64,7 @@ class CaelumCampData : Object
     {return (variant==1 && slot==0) || (variant==0 && (slot==0 || slot==2))?2:1;}
     static clearscope int Grams(int variant,int slot)
     {
-        if(variant==1)return slot==0?5500:0;
+        if(variant==1)return slot==0?int(Round(POT_KG/CaelumConstants.MATERIAL_UNIT_WEIGHT)):0;
         switch(slot){case 0:return 13500;case 1:return 4100;case 2:return 600;case 3:return 600;}
         return 0;
     }

@@ -1,6 +1,21 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.12** — 2026-10-25.
+Documentation version: **5.8.13** - 2026-10-26.
+
+## 5.8.13 - Campfire world artwork (#411)
+
+Original deterministic OBJ log piles, flame variations and mounted iron pot:
+assets/generators/generate_camp_fire.py with camp_fire_art.json. Dimensions
+derive from CaelumCampData and CaelumPhysicsUnits. The author-accepted #137 flame atlas,
+station iron and stash wood textures are reused with their existing provenance.
+Flame UVs use the atlas measured row boundaries; its pixels remain unchanged.
+No raster is edited and existing painted tent/pot inventory sprites are retained.
+One model slot per actor frame avoids the earlier overlapping-model defect.
+The mounted pot rests on its integral iron trivet, with the ring and three legs
+using the approved physical dimensions from CaelumCampData. Original pot shape,
+handles, textures and inventory artwork remain; no raster edit is introduced.
+Manifest: assets/art_source/camp_equipment/FIRE_MODEL.json. Native captures and
+determinism results: assets/validation_5813. Author visual acceptance is pending.
 
 Solid-contact continuation (#502): no production art or map changes. The
 unshipped contact laboratory reuses existing rat sprites and local development
