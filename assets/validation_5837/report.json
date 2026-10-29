@@ -1,0 +1,101 @@
+{
+  "version": "5.8.37",
+  "issue": 502,
+  "runtime_sha256": "870d8c7b18b0f2c555e004baab4e8849a054bae7a915e589ef6c39a8c4c4edc5",
+  "native_passes": 53,
+  "original_runtime_passes": 4,
+  "native_failures": 0,
+  "runs": [
+    {
+      "label": "releasea-core",
+      "executed_passes": 14,
+      "package_sha256": "870d8c7b18b0f2c555e004baab4e8849a054bae7a915e589ef6c39a8c4c4edc5",
+      "addon_sha256": "2765e63f8acf67060aec5d0bd57a7dc6dd5be68c8807aba8db26ca134f070b8c"
+    },
+    {
+      "label": "releasea-weather",
+      "executed_passes": 20,
+      "package_sha256": "870d8c7b18b0f2c555e004baab4e8849a054bae7a915e589ef6c39a8c4c4edc5",
+      "addon_sha256": "2765e63f8acf67060aec5d0bd57a7dc6dd5be68c8807aba8db26ca134f070b8c"
+    },
+    {
+      "label": "releasea-seed",
+      "executed_passes": 1,
+      "package_sha256": "870d8c7b18b0f2c555e004baab4e8849a054bae7a915e589ef6c39a8c4c4edc5",
+      "addon_sha256": "2765e63f8acf67060aec5d0bd57a7dc6dd5be68c8807aba8db26ca134f070b8c"
+    },
+    {
+      "label": "releasea-load",
+      "executed_passes": 4,
+      "package_sha256": "870d8c7b18b0f2c555e004baab4e8849a054bae7a915e589ef6c39a8c4c4edc5",
+      "addon_sha256": "2765e63f8acf67060aec5d0bd57a7dc6dd5be68c8807aba8db26ca134f070b8c"
+    },
+    {
+      "label": "releasea-hub",
+      "executed_passes": 5,
+      "package_sha256": "870d8c7b18b0f2c555e004baab4e8849a054bae7a915e589ef6c39a8c4c4edc5",
+      "addon_sha256": "2765e63f8acf67060aec5d0bd57a7dc6dd5be68c8807aba8db26ca134f070b8c"
+    },
+    {
+      "label": "releasea-legacy",
+      "executed_passes": 4,
+      "package_sha256": "870d8c7b18b0f2c555e004baab4e8849a054bae7a915e589ef6c39a8c4c4edc5",
+      "addon_sha256": "2765e63f8acf67060aec5d0bd57a7dc6dd5be68c8807aba8db26ca134f070b8c"
+    },
+    {
+      "label": "releasea-rainseed",
+      "executed_passes": 1,
+      "package_sha256": "870d8c7b18b0f2c555e004baab4e8849a054bae7a915e589ef6c39a8c4c4edc5",
+      "addon_sha256": "2765e63f8acf67060aec5d0bd57a7dc6dd5be68c8807aba8db26ca134f070b8c"
+    },
+    {
+      "label": "releasea-rainload",
+      "executed_passes": 3,
+      "package_sha256": "870d8c7b18b0f2c555e004baab4e8849a054bae7a915e589ef6c39a8c4c4edc5",
+      "addon_sha256": "2765e63f8acf67060aec5d0bd57a7dc6dd5be68c8807aba8db26ca134f070b8c"
+    },
+    {
+      "label": "releasea-perf",
+      "executed_passes": 1,
+      "package_sha256": "870d8c7b18b0f2c555e004baab4e8849a054bae7a915e589ef6c39a8c4c4edc5",
+      "addon_sha256": "2765e63f8acf67060aec5d0bd57a7dc6dd5be68c8807aba8db26ca134f070b8c"
+    }
+  ],
+  "original_runs": [
+    {
+      "label": "prior-oldseed",
+      "executed_passes": 2,
+      "package_sha256": "93082478a316a54216b4965d8685169766722320a8f2b7d28d2f8bc09dde96eb"
+    },
+    {
+      "label": "prior-oldcheck",
+      "executed_passes": 2,
+      "package_sha256": "93082478a316a54216b4965d8685169766722320a8f2b7d28d2f8bc09dde96eb"
+    }
+  ],
+  "source_matching_package_members": 17011,
+  "preserved_map_art_members": 14047,
+  "prior_obj_line_endings_only": [
+    "models/caelum/props/study/ca_study_bookcase.obj",
+    "models/caelum/props/study/ca_study_desk.obj"
+  ],
+  "original_save_sha256": "1f4a6934e6d18ac1028a6cff051c0901332464f70050c3353bf9f49389e74065",
+  "boundary_timings": [
+    {
+      "label": "probe07-perf",
+      "boundary_1000_ms": 1999.4711
+    },
+    {
+      "label": "probe09-perf",
+      "boundary_1000_ms": 0.4031
+    },
+    {
+      "label": "releasea-perf",
+      "boundary_1000_ms": 0.4211
+    }
+  ],
+  "migration": "Actual original5.8.36 sealed-object save is reopened unchanged under original runtime and migrated under final37a. Missing temporary history starts now without altering its concentration; repeated migration is idempotent.",
+  "scope": "Loaded Fire/Water surface sampling, default versus surface trace and intervening solid, rain/temporary interval save persistence, stop/departure boundaries, original-runtime migration, natural regional history, real hub absence and repeat queries. Same immutable final runtime and addon across all selected current assertions.",
+  "performance_limit": "One typed traversal at unload over current-map exposure nodes; no recurring population scan. The1000-object dense peaceful callback measures synchronous boundary work, not presented-frame tails, simulation throughput or FPS. The uncached prototype is historical diagnostic evidence, not accepted production.",
+  "author_acceptance": "CA502-SEAL-HISTORY-01 pending grouped V5.8 handoff; NPC physiology, unloaded housekeeping and other issue scopes remain unfinished."
+}

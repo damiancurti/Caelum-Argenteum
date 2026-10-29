@@ -28,6 +28,14 @@ class CaelumContaminationWorld : StaticEventHandler
         while((object=Actor(objects.Next()))!=null)CaelumContaminationObject.Register(object);
     }
     override void WorldThingSpawned(WorldEvent e){Observe(e.Thing);CaelumContaminationObject.Register(e.Thing);}
+    void DepartObjects()
+    {
+        // Una consulta tipada por salida de mapa, nunca por tic/actor. Sólo
+        // los nodos bajo un sello cierran su muestra y capturan el clima base.
+        let nodes=ThinkerIterator.Create('CaelumContaminationObject');CaelumContaminationObject node;
+        while((node=CaelumContaminationObject(nodes.Next()))!=null)node.Depart();
+    }
+    override void WorldUnloaded(WorldEvent e){DepartObjects();}
     static CaelumContaminationWorld Get()
     {return CaelumContaminationWorld(StaticEventHandler.Find('CaelumContaminationWorld'));}
 }

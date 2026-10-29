@@ -1,6 +1,29 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.36** - 2026-10-27.
+Documentation version: **5.8.37** - 2026-10-27.
+
+## 5.8.37 - Temporary climate and object exposure (#502)
+
+Object exposure revision4 records the current sampled seal interval, its rain
+and its existing surface area. Fire/Water channel modifiers use the established
+climate and contamination formulas; the one-second staggered sampling cadence
+is unchanged. Save/load retains the interval without adding a second charge.
+On map departure, close the sampled interval at the authoritative world clock,
+then switch to the natural-climate descriptor retained by that same sample.
+Reuse its location/shelter/region without repeating geometry traces on departure.
+Subsequent
+absence reuses existing minute-based regional weather history (or the constant
+Limbo environment). The climate-seal actor and its costs are not altered.
+
+Contamination samples the receiving object's exposed surface: its own solid
+body does not block that trace. Intervening walls/solid scenery still block it.
+The shared seal tracer keeps its previous default for all other consumers.
+Older saved concentrations are preserved; unrecorded pre-revision4 temporary
+intervals start at migration time without invented retrospective exposure.
+An unload-only typed traversal visits existing physical exposure nodes, updating
+only those with temporary climate. It adds no recurring population scan.
+NPC physiology, unloaded household work and other outstanding adapters remain
+separate; this does not complete #502 or V5.8.
 
 ## 5.8.36 - Study furniture acquisition (#410)
 

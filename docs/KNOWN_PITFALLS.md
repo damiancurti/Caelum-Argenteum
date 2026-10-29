@@ -4,6 +4,40 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-183 - Retain natural climate beside temporary object samples
+Status/evidence: RESOLVED-VERIFIED (53 current native assertions plus four original-runtime checks)
+First recorded / last checked: 2026-10-27 / 2026-10-27
+Issue / PR: #502; seal object history5.8.37
+Affected baseline: 685c8d76 plus the temporary-climate history patch
+Environment: GZDoom4.14.2, Windows11, Ryzen9 5950X, Vulkan1280x720/60cap
+Scope: CaelumContaminationObject.Sample/Depart; WorldUnloaded boundary
+
+Do not replay a sampled temporary seal through an absent-map interval. Settle
+its last loaded interval, preserving simultaneous rain washing, then use the
+natural environment. Retain natural ambient/region/shelter alongside the regular
+one-second sample; resampling geometry for every sealed object during departure
+made a deliberately dense1000-object probe take1999.4711ms. Reusing the descriptor
+reduced that boundary callback to0.4031ms in the corrected probe and0.4211ms in
+the final package with the same1000-object workload. Exact packages are in
+assets/validation_5837; no frame-presentation/FPS improvement is inferred.
+
+The new population traversal is typed and happens once on map unload, over the
+current map's existing exposure nodes. Each node exits immediately unless its
+last sample included temporary climate. Ownership stays with that object's
+saved exposure node; no repeated global actor scan or per-recipient population
+query is added. The measured population is1000 additional peaceful objects,
+not a production population cap or an exhaustive hardware worst case.
+
+A solid receiver can stop a climate trace before its center. Surface exposure
+skips only the receiving object, preserving intervening walls/solid scenery;
+all other seal consumers keep the original trace default. Native checks include
+both outcomes. GZDoom dispatches WorldUnloaded in reverse handler order, unlike
+WorldLoaded: post-boundary diagnostic observers need a lower order. This was
+verified in g4.14.2 src/events.cpp and the native round-trip observer.
+
+Author check CA502-SEAL-HISTORY-01 remains pending for the grouped V5.8 handoff.
+NPC physiology and unloaded household work are separate unfinished scopes.
+
 ## CA-KP-182 - Discard map contacts when transporting parked furniture
 Status/evidence: RESOLVED-VERIFIED (isolated native engine and crash stack)
 First recorded / last checked: 2026-10-27 / 2026-10-27

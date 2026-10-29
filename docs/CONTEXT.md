@@ -1,13 +1,14 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.8.36** - 2026-10-27.
+Documentation version: **5.8.37** - 2026-10-27.
 
+**5.8.37/#502:**seal-history;validation_5837;53+4PASS.
 **5.8.30-36:** furniture acquisition/scale;validation_5830-36;36:468+19PASS;author-pending.
 **5.8.26-29:** stored books/interior placement/weather history/sofa seating; validation_5826-29; author-pending.
 
 **5.8.24-25/#410:** wardrobe/fountain/cistern; validation_5824-25; author-pending.
 
-**5.8.19-23:** integration; validation_5819-23; author-pending.
+**5.8.19-23:**integration;validation_5819-23;author-pending.
 
 **5.8.17/#410:**ingredients;174PASS;validation_5817;CA410-INGREDIENTS-01accepted2026-10-26.
 
