@@ -14,6 +14,8 @@ for 5.8.51. Its partial combat integration is not a completed release; see
 `docs/TASKS.md` for remaining work and `assets/validation_5851` for evidence.
 Its native checks include returning household combatants, fractional clock
 boundaries and racial breath; scheduled deployment and theft remain unfinished.
+The catch-up performance diagnostic and its remaining stalls are documented in
+the same evidence directory; this checkpoint is not a playability claim.
 
 ## 5.8.50 - Remaining physical contact adapters (#502)
 

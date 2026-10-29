@@ -18,6 +18,14 @@ Final fractional absence time resolves once before native resume; victory
 withdrawals retain parked bodies and real gear. Traveling deployed residents
 are captured before suspension and rebound through their household identity
 after return, including native death and collision flags.
+The authorized 1,000/600 isolated diagnostic found a repeated per-survivor
+target search after combat ended. Shared first-valid-target results and direct
+clearing of unopposed targets reduce its quiet-hour catch-up from 46.712 s to
+5.989 s (87.18%), with exactly matching Life, Anima, Air, contamination, thermal
+exposure and shot totals at three checkpoints. The remaining synchronous
+stalls are still unacceptable for delivery: about 2.4 s per combat minute and
+6 s per quiet hour in that fixture. Renderer callback tails are recorded in
+performance-comparison.json; they are not presentation/FPS acceptance.
 
 Still required before delivery: pending projectile and remaining control coverage,
 terminal/quiet performance review, scheduled starts/deployment while

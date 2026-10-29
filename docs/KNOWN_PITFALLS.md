@@ -2215,6 +2215,19 @@ test cost and behavior at representative populations. Scan count alone is not
 an exact CPU cost: measure recipient work, native calls and frame-time stalls.
 The source of this policy is the author's instruction, recorded also in AGENTS.
 
+Unreleased #415 checkpoint, 2026-10-29: a typed encounter registry still caused
+quadratic work when every unopposed survivor called Choose each world second.
+The 1,000/600 isolated native diagnostic spent 46.712 s advancing its quiet
+defending cohort by one hour. Removing that redundant search and sharing the
+first valid opponent reduced it to 5.989 s without changing the time steps;
+Life, Anima, Air, contamination, exposure and shots match exactly at three
+checkpoints. Invalidate the shared result on admission, capture, faction changes
+or head death/withdrawal; retain each already-valid individual target. Native
+load/leave capture with 1,600 rows costs approximately 21 ms in this fixture.
+This does not validate arbitrary populations or frame presentation: synchronous
+remaining stalls still require bounded catch-up. Raw callback tails and timers
+are in assets/validation_5851/performance-comparison.json and native logs.
+
 ## CA-KP-110 - Simulation throughput does not establish playable frame presentation
 
 Status/evidence: ENGINE-VERIFIED measurement distinction; AUTHOR-REPORTED

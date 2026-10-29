@@ -1,0 +1,51 @@
+{
+  "issue": 415,
+  "reference_commit": "4905d8b35bbd445677990800bd034951057a79ff",
+  "population": "1000 attackers and 600 defenders; regular AI frozen, native profiles/inventory intact",
+  "scope": "One capture,61 world seconds of combat and a diagnostic quiet hour with only defender rows participating; no actor deleted",
+  "reference": {
+    "outcomes": [
+      "first life=1415600.000000000 anima=1964223.521366185 air=1756096.000000018 dirt=0.000000000 heat=0.000000000 shots=0",
+      "combat life=1407578.000000000 anima=1635713.737022836 air=1733470.863212381 dirt=0.000000000 heat=10.606209381 shots=11774",
+      "quiet life=1407578.000000000 anima=1635713.737022836 air=1755946.659999651 dirt=0.000000000 heat=10.606209381 shots=11774"
+    ],
+    "timing": [
+      "capture_ms=21.268900 rows=1600",
+      "world_seconds=1 active_scale=0.050000 elapsed_ms=35.237600 alive=1600 rounds=1",
+      "world_seconds=60 active_scale=0.050000 elapsed_ms=2492.689400 alive=1593 rounds=61",
+      "quiet_world_seconds=3600 elapsed_ms=46711.756000"
+    ],
+    "callbacks_ms": {
+      "n": 121,
+      "mean": 424.44892644628095,
+      "p95": 17.8401,
+      "p99": 51.87083999999999,
+      "max": 49280.1983
+    }
+  },
+  "current": {
+    "outcomes": [
+      "first life=1415600.000000000 anima=1964223.521366185 air=1756096.000000018 dirt=0.000000000 heat=0.000000000 shots=0",
+      "combat life=1407578.000000000 anima=1635713.737022836 air=1733470.863212381 dirt=0.000000000 heat=10.606209381 shots=11774",
+      "quiet life=1407578.000000000 anima=1635713.737022836 air=1755946.659999651 dirt=0.000000000 heat=10.606209381 shots=11774"
+    ],
+    "timing": [
+      "capture_ms=20.833800 rows=1600",
+      "world_seconds=1 active_scale=0.050000 elapsed_ms=18.274700 alive=1600 rounds=1",
+      "world_seconds=60 active_scale=0.050000 elapsed_ms=2402.391000 alive=1593 rounds=61",
+      "quiet_world_seconds=3600 elapsed_ms=5989.124200"
+    ],
+    "callbacks_ms": {
+      "n": 93,
+      "mean": 108.64801505376344,
+      "p95": 26.321839999999852,
+      "p99": 2759.359963999994,
+      "max": 6040.1037
+    }
+  },
+  "outcomes_exactly_equal": true,
+  "quiet_reduction_percent": 87.17855051306572,
+  "measurement": "MSTimeF kernel timers and renderer callback intervals; no presentation/monitor FPS claim",
+  "profile": "Old quiet hour49.15s: thermal2.92s, contamination1.37s,statuses0.63s,resources1.87s; most remaining cost was per-survivor target search",
+  "remaining": "Synchronous6s quiet catch-up and2.4s/minute battle stalls still need bounded processing before delivery"
+}

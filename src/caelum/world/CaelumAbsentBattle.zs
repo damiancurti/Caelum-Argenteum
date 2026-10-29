@@ -31,6 +31,7 @@ class CaelumAbsentCombatant : Object play
 
     void Capture()
     {
+        if(Battle!=null)Battle.TargetCacheReady=false;
         Participating=true;
         Friendly=Body.bFriendly;Recovering=Body.RecoveryPhase!=0;
         let entry=Body.SiegeCombatant;
@@ -76,9 +77,7 @@ class CaelumAbsentCombatant : Object play
     void Choose()
     {
         if(Enemy(Opponent))return;
-        Opponent=null;
-        for(int i=0;i<Battle.Rows.Size();i++)if(Enemy(Battle.Rows[i]))
-        {Opponent=Battle.Rows[i];return;}
+        Opponent=Battle.FirstOpponent(Friendly);
     }
 
     bool Blocking(CaelumCombatActor source)
@@ -459,6 +458,28 @@ class CaelumAbsentBattle : Object play
     Array<int> SpatialHeads;
     bool SpatialDirty;
     double LargestRadius;
+    CaelumAbsentCombatant FirstFriendly,FirstHostile;
+    bool TargetCacheReady;
+
+    void RefreshFirstTargets()
+    {
+        FirstFriendly=FirstHostile=null;
+        for(int i=0;i<Rows.Size();i++)
+        {
+            let row=Rows[i];if(!row.Alive())continue;
+            if(row.Friendly){if(FirstFriendly==null)FirstFriendly=row;}
+            else if(FirstHostile==null)FirstHostile=row;
+            if(FirstFriendly!=null && FirstHostile!=null)break;
+        }
+        TargetCacheReady=true;
+    }
+
+    CaelumAbsentCombatant FirstOpponent(bool friendly)
+    {
+        if(!TargetCacheReady || (FirstFriendly!=null && (!FirstFriendly.Alive() || !FirstFriendly.Friendly))
+            || (FirstHostile!=null && (!FirstHostile.Alive() || FirstHostile.Friendly)))RefreshFirstTargets();
+        return friendly?FirstHostile:FirstFriendly;
+    }
 
     int SpatialHash(int x,int y){return ((x*37+y*73)&0x7fffffff)%SPATIAL_BUCKETS;}
 
@@ -505,7 +526,7 @@ class CaelumAbsentBattle : Object play
             row=new('CaelumAbsentCombatant');row.Battle=self;row.Body=body;row.Identity=Rows.Size();
             body.AbsentCombatant=row;Rows.Push(row);
         }
-        row.Capture();SpatialDirty=true;return row;
+        row.Capture();SpatialDirty=true;TargetCacheReady=false;return row;
     }
 
     void Capture(CaelumSiegeEncounter encounter,CaelumPlayer user)
@@ -515,7 +536,7 @@ class CaelumAbsentBattle : Object play
         Observer=user;
         if(Stamp<0)return;
         ActiveScale=CaelumWorldClock.SecondsPerGameHour(SourceMap)/3600.0;SchemaRevision=REVISION;
-        SpatialDirty=true;
+        SpatialDirty=true;TargetCacheReady=false;
         for(int i=0;i<Rows.Size();i++)Rows[i].Participating=false;
         for(int i=0;i<encounter.Attackers.Size();i++)
         {let e=encounter.Attackers[i];if(e!=null && !e.Exited && !e.ConfirmedDead)Add(e.Body);}
@@ -572,10 +593,8 @@ class CaelumAbsentBattle : Object play
 
     bool Opposed()
     {
-        bool ally=false,enemy=false;
-        for(int i=0;i<Rows.Size();i++)if(Rows[i].Alive())
-        {if(Rows[i].Friendly)ally=true;else enemy=true;}
-        return ally && enemy;
+        FirstOpponent(true);
+        return FirstFriendly!=null && FirstHostile!=null;
     }
 
     bool MachineWork()
@@ -618,7 +637,9 @@ class CaelumAbsentBattle : Object play
         {
             for(int i=0;i<Rows.Size();i++)if(Rows[i].Alive())
             {
-                Rows[i].Choose();Rows[i].Recover(seconds);Rows[i].FinishRound();
+                // Opposed ya confirmo que no queda un rival. No repetir una
+                // busqueda de toda la fuerza por cada superviviente y segundo.
+                Rows[i].Opponent=null;Rows[i].Recover(seconds);Rows[i].FinishRound();
                 Rows[i].Body.target=null;
                 if(Rows[i].Body.ContaminationAbsence!=null)Rows[i].Body.ContaminationAbsence.Idle=true;
             }
@@ -669,7 +690,7 @@ class CaelumAbsentBattle : Object play
                 }
             }
         }
-        SpatialDirty=true;return true;
+        SpatialDirty=true;TargetCacheReady=false;return true;
     }
 
     void Reanchor(CaelumSiegeEncounter encounter,CaelumPlayer user)

@@ -23,6 +23,19 @@ despite passing isolated arithmetic cases. Tests now assert actual controller
 ownership and use the household registry for traveling bodies. The original
 87-check checkpoint remains historical evidence, not additional unique tests.
 
+Follow-up performance work on the same unreleased issue removed a quadratic
+target search: unopposed survivors no longer each rescan the whole encounter,
+and valid first opponents are shared while retaining existing targets. The
+authorized 1,000-attacker/600-defender diagnostic preserves native profiles and
+inventory, freezes regular AI to isolate catch-up, then excludes attacker rows
+for its quiet phase without deleting actors. Matched runs reduce that phase
+from 46.712 s to 5.989 s, with exact aggregate outcome parity at all three
+checkpoints. Callback maximum falls from 49.280 s to 6.040 s; p95/p99 remain
+reported separately and neither run establishes playable frame presentation.
+Bounded processing is still required. Evidence: validation_5851 performance
+source, builder, comparison and raw reference/current logs. The integrated04
+native regression batch retains 116 distinct passing assertions.
+
 Fixture corrections preserved in the private logs: cannon parity must use a
 projectile after its native PostBeginPlay sets its calibre; a manual Life edit
 after capturing absence must also update that saved Life, exactly as the
