@@ -883,6 +883,24 @@ class CaelumAbsentBattle : Object play
 // encuentros. Ningun NPC busca adversarios recorriendo actores globales.
 class CaelumAbsentBattles : Object play
 {
+    static void FirstArrival(CaelumPortSiege port)
+    {
+        if(port==null || !port.UnvisitedCalendarPending)return;
+        port.UnvisitedCalendarPending=false;
+        if(multiplayer || !CaelumHouseHub.IsCity(port) || port.SiegeStarted || port.AbsentBattle!=null)return;
+        CaelumPlayer user;
+        for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i] && players[i].mo!=null)
+        {user=CaelumPlayer(players[i].mo);break;}
+        if(user==null || CaelumHouseAwayWork.Civil(user)<=CaelumCityWorld.SiegeCivilSeconds())return;
+        let roster=CaelumHouseResidents.Get();if(roster==null)return;
+        // Una region sin visitar no tiene estados antiguos que reconstruir.
+        // Si ya se conocio un hogar, sus cuerpos tienen historia propia: no
+        // retroceder su Vida/inventario actual hasta una fecha no registrada.
+        for(int i=0;i<roster.Residents.Size();i++)if(roster.Residents[i].Created)return;
+        port.AbsentBattle=new('CaelumAbsentBattle');
+        port.AbsentBattle.Capture(port,user,CaelumCityWorld.SiegeCivilSeconds());
+        CaelumAbsentArrival.Begin(user);
+    }
     static void Capture(CaelumPlayer user)
     {
         if(user==null)return;

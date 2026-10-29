@@ -46,6 +46,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
     Actor AttackingTarget[6];
     Actor DefendingTarget[6];
     int SetupRevision, SetupTick, Groups;
+    bool UnvisitedCalendarPending;
     int TargetingRevision;
     // Sólo la revisión geométrica 3 tiene fase de paz y viviendas.
     bool SiegeStarted;
@@ -732,7 +733,15 @@ class CaelumPortSiege : CaelumSiegeEncounter
                 if(waiting.health>0 && (!waiting.DeploymentComplete || waiting.ReturningFromYield || waiting.FollowingCrewRoute))waiting.CityNavigation.Build(waiting);
             }
         }
-        if(SetupRevision==0){if(CaelumCityWorld.Prepare())Deploy();return;}
+        if(SetupRevision==0)
+        {
+            if(CaelumCityWorld.Prepare())
+            {
+                Deploy();
+                if(UnvisitedCalendarPending)CaelumAbsentBattles.FirstArrival(self);
+            }
+            return;
+        }
         if(CaelumCityData.Enabled() && !SiegeStarted)
         {
             for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i] && players[i].mo!=null)Calendar(CaelumPlayer(players[i].mo));

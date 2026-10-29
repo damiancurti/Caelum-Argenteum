@@ -38,7 +38,7 @@ class CA415ArrivalHarness : EventHandler
         let events=CaelumAbsentArrivalEvents(StaticEventHandler.Find('CaelumAbsentArrivalEvents'));
         if(events!=null && events.Job!=null && events.Job.Running)return;
         Sent=true;
-        String names[]={"","ca415r_hub","ca415r_residenthome","ca415r_residentdeath","ca415r_flighthome","ca415r_calendarhome","ca415r_workarrival"};
+        String names[]={"","ca415r_hub","ca415r_residenthome","ca415r_residentdeath","ca415r_flighthome","ca415r_calendarhome","ca415r_workarrival","ca415r_firsthome"};
         EventHandler.SendNetworkEvent(names[Pending]);EventHandler.SendNetworkEvent("ca415_awaitdone");
     }
 }

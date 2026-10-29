@@ -137,6 +137,11 @@ class CaelumAbsentArrivalEvents : StaticEventHandler
     override void WorldLoaded(WorldEvent e)
     {
         Job=CaelumAbsentArrival.Find();
+        if(!e.IsReopen && !e.IsSaveGame && level.MapName=="MAP03")
+        {
+            let port=CaelumPortSiege.Get();
+            if(port!=null && port.SetupRevision==0)port.UnvisitedCalendarPending=true;
+        }
         if(Job!=null && Job.Running){level.setFrozen(true);Menu.SetMenu('CaelumAbsentArrivalMenu');}
     }
     override void NetworkProcess(ConsoleEvent e)

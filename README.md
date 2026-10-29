@@ -17,7 +17,8 @@ boundaries, racial breath and saved in-flight attacks. Native explosion and
 ground-slam falloff are checked separately. Sleep, restraint and frozen attack
 preparations also retain their native clocks and saved identity. Revisited cities
 start the siege at its authored calendar boundary and admit real residents;
-first-arrival/legacy scheduling and theft remain unfinished.
+First arrival after the deadline also resolves a previously unvisited city.
+Legacy states without an earlier snapshot and theft remain unfinished.
 Reopening a region now uses saved, bounded round phases behind a paused loading
 menu. Partial save/load preserves pending simultaneous damage and resources;
 native clocks remain paused until the work finishes. This prevents long single

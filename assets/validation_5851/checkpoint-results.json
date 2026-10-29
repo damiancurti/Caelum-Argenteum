@@ -1,8 +1,8 @@
 {
   "issue": 415,
-  "status": "Unreleased seventh integration checkpoint; #415 NOT complete",
+  "status": "Unreleased eighth integration checkpoint; #415 NOT complete",
   "planned_version": "5.8.51",
-  "native_distinct_assertions": 246,
+  "native_distinct_assertions": 255,
   "cases": {
     "math": 29,
     "rounds": 10,
@@ -29,15 +29,17 @@
     "wakesave": 1,
     "wakeload": 2,
     "calendar": 12,
-    "calendarload": 5,
+    "calendarload": 6,
     "calendarhub": 8,
     "worksave": 4,
     "workload": 5,
     "arrivalsave": 2,
     "arrivalload": 6,
-    "arrival": 1
+    "arrival": 1,
+    "firstvisit": 5,
+    "arrivalguards": 3
   },
-  "runtime_sha256": "851ffff29286a31ac779f443387321cf912cbcae5e870bfb96413ef925a96397",
+  "runtime_sha256": "e6ec80b03ce8046b2574a21a8be5e22d686468e75f76b3610bbcc2112e11168e",
   "source_overlay_members_verified": 32,
   "fixtures": [
     "checks.zs",
@@ -48,14 +50,15 @@
     "prepare.py",
     "run_native.ps1"
   ],
-  "batch": "integrated10",
+  "batch": "integrated10 + firstvisit",
   "static_errors": 0,
   "remaining": [
-    "First-arrival and legacy-save siege scheduling",
+    "Legacy/observed-household states without an earlier encounter snapshot; fresh unvisited cities now reconcile from the authored deadline",
     "Efficient long combat/quiet catch-up; bounded callbacks now retain clocks and exact outcomes but total latency remains excessive",
     "Theft and access integration",
     "Original-save regressions and completed canonical delivery; draft PR545 tracks ongoing work"
   ],
   "author": "Deferred until all V5.8 implementation is complete",
-  "performance": "arrival-performance.json: exact outcome parity and bounded renderer callbacks, separate total-latency limitation; prior comparisons retained"
+  "performance": "arrival-performance.json: exact outcome parity and bounded renderer callbacks, separate total-latency limitation; prior comparisons retained",
+  "validation_reuse": "d602c3189 integrated10 remains applicable to the unchanged round/physiology kernel; firstvisit01, firstvisit-guards01, firstvisit-oldsave01 and firstvisit-calendarhub01 test the changed initialization and original field-default migration."
 }

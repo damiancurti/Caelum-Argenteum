@@ -64,6 +64,7 @@ class CA415CalendarChecks : EventHandler
     void Loaded()
     {
         let roster=CaelumHouseResidents.Get();
+        Check(!Port.UnvisitedCalendarPending,"older save defaults to an already visited city without inventing first-arrival history");
         Check(Port!=null && Battle!=null && Port.AbsentBattle==Battle && !Battle.ScheduleWaiting,"save retains the started event and its authoritative controller");
         Check(Port.Defenders[0]==Retained && Possession.Owner==Retained && Possession.Amount==17,"save preserves the admitted resident and actual possession identity");
         Battle.SyncTo(Due+3);
@@ -123,6 +124,43 @@ class CA415CalendarChecks : EventHandler
         Check(Port.Attackers.Size()==serial && !Battle.Away,"second native restore cannot redeploy the calendar event");
     }
 
+    void EnterUnvisited(CaelumPlayer user)
+    {
+        let calendar=CaelumCalendarState.Get(user,true);let clock=CaelumWorldClock.Get(user,true);
+        calendar.SetAnchor(clock,CaelumCityWorld.SiegeDay(),CaelumCityData.SIEGE_HOUR*CaelumWorldClock.TicsPerHour()+CaelumWorldClock.TicsPerHour()/60,false);
+        level.ChangeLevel("MAP03",0,CHANGELEVEL_NOINTERMISSION,-1);
+    }
+    void ArrivalGuards(CaelumPlayer user)
+    {
+        Port=CaelumPortSiege.Get();let calendar=CaelumCalendarState.Get(user,true);let clock=CaelumWorldClock.Get(user,true);
+        Port.UnvisitedCalendarPending=true;CaelumAbsentBattles.FirstArrival(Port);
+        Check(!Port.UnvisitedCalendarPending && Port.AbsentBattle==null && !Port.SiegeStarted,"first arrival before the deadline retains the existing peaceful city");
+        calendar.SetAnchor(clock,CaelumCityWorld.SiegeDay(),CaelumCityData.SIEGE_HOUR*CaelumWorldClock.TicsPerHour()+CaelumWorldClock.TicsPerHour()/60,false);
+        CaelumAbsentBattles.FirstArrival(Port);
+        Check(Port.AbsentBattle==null,"visited or legacy state is not retroactively initialized as an unseen region");
+        let roster=CaelumHouseResidents.Get(true);let resident=roster.CreateResident(0,CaelumCityData.DoorOutside(CaelumPropertyData.ResidentHouse(0)));
+        resident.PostBeginPlay();resident.health-=17;int life=resident.health;
+        let item=Inventory(Actor.Spawn('CaelumCarbineAmmo',resident.Pos,NO_REPLACE));
+        item.BecomeItem();resident.AddInventory(item);item.Amount=17;
+        Port.UnvisitedCalendarPending=true;CaelumAbsentBattles.FirstArrival(Port);
+        Check(!Port.UnvisitedCalendarPending && Port.AbsentBattle==null && resident.health==life && item.Owner==resident && item.Amount==17,
+            "previously observed household bodies are never reset to fabricate a missing past state");
+    }
+    void FirstHome(CaelumPlayer user)
+    {
+        Port=CaelumPortSiege.Get();Battle=Port!=null?Port.AbsentBattle:null;
+        Check(Port!=null && Port.SiegeStarted && Battle!=null && !Battle.Away,"first visit after the scheduled date resolves the unseen city's real encounter");
+        if(Battle==null)return;
+        Check(Battle.Rounds>=60 && Battle.Stamp>=CaelumCityWorld.SiegeCivilSeconds()+60,"first-arrival summary begins at the authored date rather than the arrival date");
+        Check(Port.Boss!=null && Port.Boss.Body.CombatProfileInitialized && Port.RosterSealed,"first-arrival summary uses the guarded native boss and sealed roster");
+        let roster=CaelumHouseResidents.Get();int admitted=0;
+        for(int i=0;i<roster.Residents.Size();i++)if(roster.Residents[i].Emitted)admitted++;
+        Check(admitted>0 && roster.Residents[0].Body!=null && Port.Defenders[0]==roster.Residents[0].Body,"unseen resident admission creates authoritative households and binds their actual bodies");
+        int rows=Battle.Rows.Size(),attackers=Port.Attackers.Size(),rounds=Battle.Rounds;
+        CaelumAbsentBattles.FirstArrival(Port);CaelumAbsentBattles.Restore(user);
+        Check(!Port.UnvisitedCalendarPending && Battle.Rows.Size()==rows && Port.Attackers.Size()==attackers && Battle.Rounds==rounds,"first-arrival catch-up is idempotent after initialization");
+    }
+
     override void NetworkProcess(ConsoleEvent e)
     {
         let user=CaelumPlayer(players[e.Player].mo);if(user==null)return;
@@ -131,6 +169,9 @@ class CA415CalendarChecks : EventHandler
         else if(e.Name=="ca415r_calendardepart")Depart(user);
         else if(e.Name=="ca415r_calendarreturn")ReturnCity(user);
         else if(e.Name=="ca415r_calendarhome")Home();
+        else if(e.Name=="ca415r_firstvisit")EnterUnvisited(user);
+        else if(e.Name=="ca415r_firsthome")FirstHome(user);
+        else if(e.Name=="ca415r_arrivalguards")ArrivalGuards(user);
         else return;
         Console.Printf("CA415C RESULT passed=%d failed=%d",Passed,Failed);
     }

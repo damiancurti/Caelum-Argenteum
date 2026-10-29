@@ -6,7 +6,7 @@ Documentation version: **5.8.50** - 2026-10-28.
 
 The focused `feat/issue415-absent-rounds` worktree contains an intermediate
 checkpoint, not a completed delivery. Private `validation_5851` fixtures pass
-246 native assertions across scenarios, excluding repeated setup: damage/dispersion, simultaneous casualties,
+255 native assertions across scenarios, excluding repeated setup: damage/dispersion, simultaneous casualties,
 actual magazines/Anima, statuses, healing consumables, structural/cannon
 impacts, finite reserve admission, save identity and native load/unload hooks.
 The hub check resolves ten rounds, thirteen shots and one reload without
@@ -70,8 +70,18 @@ multi-second renderer callback stalls, but quiet-hour wall time is still about
 52 seconds in this diagnostic. This is not completed performance acceptance;
 `arrival-performance.json` records both callback tails and total duration.
 
-Still required before delivery: efficient long combat/quiet processing, first-arrival
-and legacy-save scheduling, theft/access with real inventory transfers,
+Fresh first arrival after the siege deadline now initializes the actual city
+installation and captures its encounter at the authored date before queuing
+absent rounds. Its original roster/household bodies and inventories remain
+authoritative. A saved one-time flag is set only for a newly loaded map and
+consumed during setup; old saves default false. Native checks cover first
+arrival, peaceful arrival, repeated reconciliation and loading the prior
+checkpoint's save. A previously observed household is never reset to fabricate
+an unrecorded past. Missing legacy history still requires an explicit migration
+policy; this guard preserves current bodies while that decision is pending.
+
+Still required before delivery: efficient long combat/quiet processing,
+legacy history without an earlier snapshot, theft/access with real inventory transfers,
 performance and original-save regressions, and final canonical rules/version.
 Draft PR545 tracks this branch. The calendar tests do not establish safe long
 catch-up latency or complete the remaining world/event adapters.
