@@ -503,3 +503,6 @@ version "4.14"
 #include "caelum/ui/CaelumPropertyUI.zs"
 
 #include "caelum/data/CaelumPropertyRoutes.zs"
+
+#include "caelum/data/CaelumTransportData.zs"
+#include "caelum/world/CaelumTransportRules.zs"

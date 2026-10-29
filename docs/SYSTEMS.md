@@ -2,6 +2,41 @@
 
 Documentation version: **5.8.50** - 2026-10-28.
 
+## Unreleased #416 transport catalogue - 2026-10-29
+
+The author authorized geographic calculations and period-transport approximations
+for missing distances, speeds and schedules, with source/estimate distinctions.
+The authoritative inputs are `assets/transport/network.json`; its deterministic
+generator produces `CaelumTransportData.zs` and `assets/transport/derived.json`.
+
+| Corridor | Road estimate | Sea estimate | Railway reference |
+| --- | ---: | ---: | ---: |
+| Buenos Aires - Barracas al Sud | 4.005979 km | 4.521879 km | 3.6 km |
+| Barracas al Sud - Mar del Plata | 390.560257 km | 451.444750 km | 398.736 km |
+
+Road and sea lengths sum great-circle segments through documented approximate
+reference positions; they are not surveys or disembarkation permission. Railway
+length follows Mulhall (1892), 250 miles / 402.336 km end-to-end, with the 3.6-km
+Barracas station segment from a secondary history. Mulhall's twelve-hour night
+journey is retained: estimated fifteen-minute Barracas stop plus derived running
+pace 34.241361702 km/h. Symmetric daily 20:30 terminal departures are estimates;
+the secondary newspaper transcription has an unresolved date/weekday conflict.
+Ship pace retains nominal five knots (9.26 km/h), with estimated terminal services
+at 08:00 every third civil day and a one-hour Barracas stop. Intermediate departures
+follow each originating terminal's arrival and stop, including midnight crossings.
+
+Cart/horse movement is estimated at 3/8 km/h for eight hours per day, with eight
+hours of sleep and eight other rest hours. The cart's 24-km day is near the cited
+earlier colonial fifteen-mile reference; the horse estimate is not a relay record.
+Approved rates remain 2/1/3/2 copper per kilometre and traveler for cart/ship/horse/
+train; round the total party ticket upward. Saved past travel is not recalculated.
+
+Thirty-four native catalogue assertions pass; source bytes and deterministic
+regeneration match. Evidence: `assets/validation_5852/catalogue-results.json`.
+Runtime boarding/payment/progress, six-block Buenos Aires, interruption placement
+and #417 encounters remain unfinished. Current release stays 5.8.50; this is a
+focused unreleased #416 checkpoint, not a completed version or manual acceptance.
+
 ## Unreleased #415 integration
 
 Existing saves without an absent-encounter snapshot retain their actual bodies,

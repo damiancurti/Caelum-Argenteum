@@ -1,0 +1,16 @@
+{
+  "issue": 416,
+  "date": "2026-10-29",
+  "runtime_sha256": "1D412E98C44538F53A1144C68D877785CA8F7AB2907F129308FC017624CAFE1F",
+  "native_assertions": 34,
+  "selected_run": "catalogue02",
+  "qualification": "Pure catalogue/clock/fare checks; destination, tickets and interrupted travel remain pending. No author acceptance.",
+  "source_members": [
+    "ZSCRIPT",
+    "LANGUAGE",
+    "localization/INDEX.md",
+    "localization/index.json",
+    "caelum/data/CaelumTransportData.zs",
+    "caelum/world/CaelumTransportRules.zs"
+  ]
+}

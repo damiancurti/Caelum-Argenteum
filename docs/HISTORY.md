@@ -2,6 +2,15 @@
 
 Documentation version: **5.8.50** - 2026-10-28.
 
+## Unreleased #416 transport catalogue - 2026-10-29
+
+The author authorized calculations and period-transport approximations for
+missing route/speed/timetable data on 2026-10-29. Added a deterministic catalogue
+with explicit source/estimate distinctions, approved fares and 34 passing native
+checks. SYSTEMS and assets/transport/network.json retain the calculations.
+This is unreleased #416 groundwork, not destination/ticket integration or author
+acceptance. No manual check was removed.
+
 ## Unreleased #415 checkpoint - 2026-10-29
 
 Original 5.8.50 compatibility was checked with a city save created by its exact

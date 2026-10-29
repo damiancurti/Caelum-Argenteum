@@ -2,6 +2,14 @@
 
 Documentation version: **5.8.50** - 2026-10-28.
 
+## Unreleased #416 transport catalogue - 2026-10-29
+
+The approved #416 catalogue now separates historical references from authorized
+geographic/operating estimates; SYSTEMS and assets/transport/network.json hold
+the values and source limits. Thirty-four native catalogue checks pass. Continue
+with boarding, ticket payment/progress, six-block Buenos Aires and interrupted
+travel before delivery; #417 incidents stay separate. No author handoff yet.
+
 ## Unreleased #415 integration work
 
 The focused `feat/issue415-absent-rounds` worktree contains an intermediate
