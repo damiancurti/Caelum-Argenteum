@@ -1,0 +1,305 @@
+{
+  "version": "5.8.47",
+  "issue": 502,
+  "base": "0ca084ba3304005389bd7eeac15726c0cca9d525",
+  "runtime_sha256": "e8eb74a6ea4725f53f94720942db96c5d818b1889a14139adebd301e10b67d4d",
+  "source_matching_package_members": 17037,
+  "unchanged_map_art_members": 14064,
+  "native_passes": 168,
+  "original_runtime_passes": 2,
+  "native_failures": 0,
+  "runs": [
+    {
+      "label": "ready47b-core",
+      "executed_passes": 12,
+      "runtime_sha256": "e8eb74a6ea4725f53f94720942db96c5d818b1889a14139adebd301e10b67d4d",
+      "addon_sha256": "098afe48308ad271f5214f3ed6248d3f462525c02c1f28d5eed5209e30ba79d3"
+    },
+    {
+      "label": "ready47b-native",
+      "executed_passes": 5,
+      "runtime_sha256": "e8eb74a6ea4725f53f94720942db96c5d818b1889a14139adebd301e10b67d4d",
+      "addon_sha256": "098afe48308ad271f5214f3ed6248d3f462525c02c1f28d5eed5209e30ba79d3"
+    },
+    {
+      "label": "ready47b-exposure",
+      "executed_passes": 5,
+      "runtime_sha256": "e8eb74a6ea4725f53f94720942db96c5d818b1889a14139adebd301e10b67d4d",
+      "addon_sha256": "098afe48308ad271f5214f3ed6248d3f462525c02c1f28d5eed5209e30ba79d3"
+    },
+    {
+      "label": "ready47b-contact",
+      "executed_passes": 4,
+      "runtime_sha256": "e8eb74a6ea4725f53f94720942db96c5d818b1889a14139adebd301e10b67d4d",
+      "addon_sha256": "098afe48308ad271f5214f3ed6248d3f462525c02c1f28d5eed5209e30ba79d3"
+    },
+    {
+      "label": "ready47b-storage",
+      "executed_passes": 8,
+      "runtime_sha256": "e8eb74a6ea4725f53f94720942db96c5d818b1889a14139adebd301e10b67d4d",
+      "addon_sha256": "098afe48308ad271f5214f3ed6248d3f462525c02c1f28d5eed5209e30ba79d3"
+    },
+    {
+      "label": "ready47b-catalogue",
+      "executed_passes": 29,
+      "runtime_sha256": "e8eb74a6ea4725f53f94720942db96c5d818b1889a14139adebd301e10b67d4d",
+      "addon_sha256": "098afe48308ad271f5214f3ed6248d3f462525c02c1f28d5eed5209e30ba79d3"
+    },
+    {
+      "label": "ready47b-npc",
+      "executed_passes": 2,
+      "runtime_sha256": "e8eb74a6ea4725f53f94720942db96c5d818b1889a14139adebd301e10b67d4d",
+      "addon_sha256": "098afe48308ad271f5214f3ed6248d3f462525c02c1f28d5eed5209e30ba79d3"
+    },
+    {
+      "label": "ready47b-merchant",
+      "executed_passes": 4,
+      "runtime_sha256": "e8eb74a6ea4725f53f94720942db96c5d818b1889a14139adebd301e10b67d4d",
+      "addon_sha256": "098afe48308ad271f5214f3ed6248d3f462525c02c1f28d5eed5209e30ba79d3"
+    },
+    {
+      "label": "ready47b-rebase",
+      "executed_passes": 3,
+      "runtime_sha256": "e8eb74a6ea4725f53f94720942db96c5d818b1889a14139adebd301e10b67d4d",
+      "addon_sha256": "098afe48308ad271f5214f3ed6248d3f462525c02c1f28d5eed5209e30ba79d3"
+    },
+    {
+      "label": "ready47b-perf",
+      "executed_passes": 2,
+      "runtime_sha256": "e8eb74a6ea4725f53f94720942db96c5d818b1889a14139adebd301e10b67d4d",
+      "addon_sha256": "098afe48308ad271f5214f3ed6248d3f462525c02c1f28d5eed5209e30ba79d3"
+    },
+    {
+      "label": "ready47b-seed",
+      "executed_passes": 1,
+      "runtime_sha256": "e8eb74a6ea4725f53f94720942db96c5d818b1889a14139adebd301e10b67d4d",
+      "addon_sha256": "098afe48308ad271f5214f3ed6248d3f462525c02c1f28d5eed5209e30ba79d3"
+    },
+    {
+      "label": "ready47b-hub",
+      "executed_passes": 5,
+      "runtime_sha256": "e8eb74a6ea4725f53f94720942db96c5d818b1889a14139adebd301e10b67d4d",
+      "addon_sha256": "098afe48308ad271f5214f3ed6248d3f462525c02c1f28d5eed5209e30ba79d3"
+    },
+    {
+      "label": "ready47b-ground",
+      "executed_passes": 5,
+      "runtime_sha256": "e8eb74a6ea4725f53f94720942db96c5d818b1889a14139adebd301e10b67d4d",
+      "addon_sha256": "098afe48308ad271f5214f3ed6248d3f462525c02c1f28d5eed5209e30ba79d3"
+    },
+    {
+      "label": "ready47b-groundlive",
+      "executed_passes": 2,
+      "runtime_sha256": "e8eb74a6ea4725f53f94720942db96c5d818b1889a14139adebd301e10b67d4d",
+      "addon_sha256": "098afe48308ad271f5214f3ed6248d3f462525c02c1f28d5eed5209e30ba79d3"
+    },
+    {
+      "label": "ready47b-resume",
+      "executed_passes": 4,
+      "runtime_sha256": "e8eb74a6ea4725f53f94720942db96c5d818b1889a14139adebd301e10b67d4d",
+      "addon_sha256": "098afe48308ad271f5214f3ed6248d3f462525c02c1f28d5eed5209e30ba79d3"
+    },
+    {
+      "label": "ready47b-upgrade",
+      "executed_passes": 4,
+      "runtime_sha256": "e8eb74a6ea4725f53f94720942db96c5d818b1889a14139adebd301e10b67d4d",
+      "addon_sha256": "098afe48308ad271f5214f3ed6248d3f462525c02c1f28d5eed5209e30ba79d3"
+    }
+  ],
+  "regressions": [
+    {
+      "label": "ready47b-absence-core",
+      "executed_passes": 27,
+      "runtime_sha256": "e8eb74a6ea4725f53f94720942db96c5d818b1889a14139adebd301e10b67d4d",
+      "addon_sha256": "3361e2783252563bc75cd55443b49583e93b7acffb9dc7e5092b741f8e91246e"
+    },
+    {
+      "label": "ready47b-absence-exposure",
+      "executed_passes": 7,
+      "runtime_sha256": "e8eb74a6ea4725f53f94720942db96c5d818b1889a14139adebd301e10b67d4d",
+      "addon_sha256": "3361e2783252563bc75cd55443b49583e93b7acffb9dc7e5092b741f8e91246e"
+    },
+    {
+      "label": "ready47b-absence-production",
+      "executed_passes": 9,
+      "runtime_sha256": "e8eb74a6ea4725f53f94720942db96c5d818b1889a14139adebd301e10b67d4d",
+      "addon_sha256": "3361e2783252563bc75cd55443b49583e93b7acffb9dc7e5092b741f8e91246e"
+    },
+    {
+      "label": "ready47b-food-k-transfer",
+      "executed_passes": 9,
+      "runtime_sha256": "e8eb74a6ea4725f53f94720942db96c5d818b1889a14139adebd301e10b67d4d",
+      "addon_sha256": "d025e4493e56d9b3d982bab8ea5717df1dee96aebdab75816af7680c496f1158"
+    },
+    {
+      "label": "ready47b-food-k-pickup",
+      "executed_passes": 5,
+      "runtime_sha256": "e8eb74a6ea4725f53f94720942db96c5d818b1889a14139adebd301e10b67d4d",
+      "addon_sha256": "d025e4493e56d9b3d982bab8ea5717df1dee96aebdab75816af7680c496f1158"
+    },
+    {
+      "label": "ready47b-food-k-market",
+      "executed_passes": 16,
+      "runtime_sha256": "e8eb74a6ea4725f53f94720942db96c5d818b1889a14139adebd301e10b67d4d",
+      "addon_sha256": "d025e4493e56d9b3d982bab8ea5717df1dee96aebdab75816af7680c496f1158"
+    }
+  ],
+  "original_runs": [
+    {
+      "label": "original46-seed",
+      "executed_passes": 1,
+      "runtime_sha256": "2acb1905cb9466c5e787485246782b26f3834ae594f9ecb26486ae4938873d0c",
+      "addon_sha256": "cb6d0650af13939c8f7b2c490a0a3eec20cb57784ef6084c97f0e63294b629ad"
+    },
+    {
+      "label": "original46-rollback",
+      "executed_passes": 1,
+      "runtime_sha256": "2acb1905cb9466c5e787485246782b26f3834ae594f9ecb26486ae4938873d0c",
+      "addon_sha256": "cb6d0650af13939c8f7b2c490a0a3eec20cb57784ef6084c97f0e63294b629ad"
+    }
+  ],
+  "prior_save_sha256": "c4dcd74c9cb335715f8d09f838b5213d84137e78aca97264b7140d15f5c9a546",
+  "scope": "Approved abstract unit surface; native FIFO lots, pickup/toss/storage, crafting quantity hooks, inventory details, independent carried/NPC forecasts, immersion, ground source weather, current save/hub and genuine prior-runtime migration/rollback.",
+  "performance": [
+    {
+      "label": "baseline46-stacks-live",
+      "utc": "2026-10-28T23:43:45.799490+00:00",
+      "runtime_sha256": "2acb1905cb9466c5e787485246782b26f3834ae594f9ecb26486ae4938873d0c",
+      "fixture_sha256": "40836aeedbdfc766f6101d02c5db27f40e7ff72fdcef276cfe04d0bf67aef682",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "presentmon_sha256": "b2a706bc6ad475749e3b7e3409263aa1e6906d45bdcf993f6dbc0f660188f1af",
+      "arguments": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-stackables-work\\build\\issue502-stackables\\original46\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-stackables-work\\build\\issue502-stackables\\object-perf.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-stackables-work\\build\\issue502-stackables\\baseline46-stacks-live.ini",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "502",
+        "-nomouse",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-stackables-work\\build\\issue502-stackables\\baseline46-stacks-live.txt",
+        "+con_notifytime",
+        "0",
+        "+map",
+        "MAP01",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-stackables-work\\build\\issue502-stackables\\baseline46-stacks-live.cfg"
+      ],
+      "presentmon_arguments": [
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\tools\\PresentMon-2.6.0-x64.exe",
+        "--process_name",
+        "gzdoom.exe",
+        "--output_file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-stackables-work\\build\\issue502-stackables\\baseline46-stacks-live.csv",
+        "--no_console_stats",
+        "--qpc_time_ms",
+        "--session_name",
+        "Caelum502Objects",
+        "--timed",
+        "65",
+        "--terminate_after_timed",
+        "--terminate_on_proc_exit"
+      ],
+      "config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\ncl_capfps=false\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nvid_defwidth=1280\nvid_defheight=720\n",
+      "simulation_tics": 700,
+      "receivers_exposed": 0,
+      "spawned_objects": 1000,
+      "census_population": 1236,
+      "census_ms": 0.1533,
+      "phase_elapsed_ms": 20021.1523001194,
+      "phase_bound_uncertainty_ms": 100,
+      "frames": 1199,
+      "mean_callback_ms": 16.66752768974145,
+      "p95_callback_ms": 17.0999,
+      "p99_callback_ms": 17.4225,
+      "worst_callback_ms": 18.0898,
+      "present_modes": [],
+      "presentmon_available": false,
+      "presentmon_result": "warning: PresentMon requires elevated privilege in order to query processes that are\n         short-running or started on another account.  Without it, those processes will\n         be listed as '<unknown>' and they can't be targeted by --process_name nor trigger\n         --terminate_on_proc_exit.\nerror: failed to start trace session: access denied.\n       PresentMon requires either administrative privileges or to be run by a user in the\n       \"Performance Log Users\" user group.  View the readme for more details.\n",
+      "note": "Peaceful 1,000 abstract inventory piles, one million native units each; active exposure and climate sampling, no artificial per-object Tick. One complete initialization census is measured immediately after spawning. Not a 6,000-attacker scenario. Not whole-campaign or siege FPS acceptance. RenderOverlay callback intervals are a renderer cadence proxy, not displayed frames or GPU execution. PresentMon capture requires unavailable Windows privileges.",
+      "object_kind": "abstract inventory pile"
+    },
+    {
+      "label": "final47b-stacks-live",
+      "utc": "2026-10-29T00:06:49.227558+00:00",
+      "runtime_sha256": "e8eb74a6ea4725f53f94720942db96c5d818b1889a14139adebd301e10b67d4d",
+      "fixture_sha256": "40836aeedbdfc766f6101d02c5db27f40e7ff72fdcef276cfe04d0bf67aef682",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "presentmon_sha256": "b2a706bc6ad475749e3b7e3409263aa1e6906d45bdcf993f6dbc0f660188f1af",
+      "arguments": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-stackables-work\\build\\issue502-stackables\\final47b\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-stackables-work\\build\\issue502-stackables\\object-perf.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-stackables-work\\build\\issue502-stackables\\final47b-stacks-live.ini",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-window",
+        "-rngseed",
+        "502",
+        "-nomouse",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-stackables-work\\build\\issue502-stackables\\final47b-stacks-live.txt",
+        "+con_notifytime",
+        "0",
+        "+map",
+        "MAP01",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-stackables-work\\build\\issue502-stackables\\final47b-stacks-live.cfg"
+      ],
+      "presentmon_arguments": [
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\tools\\PresentMon-2.6.0-x64.exe",
+        "--process_name",
+        "gzdoom.exe",
+        "--output_file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue502-stackables-work\\build\\issue502-stackables\\final47b-stacks-live.csv",
+        "--no_console_stats",
+        "--qpc_time_ms",
+        "--session_name",
+        "Caelum502Objects",
+        "--timed",
+        "65",
+        "--terminate_after_timed",
+        "--terminate_on_proc_exit"
+      ],
+      "config": "[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\nvid_vsync=false\nvid_maxfps=60\ncl_capfps=false\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nvid_fullscreen=false\nuse_mouse=false\nsnd_mastervolume=0.05\nlanguage=enu\nvid_defwidth=1280\nvid_defheight=720\n",
+      "simulation_tics": 700,
+      "receivers_exposed": 1000,
+      "spawned_objects": 1000,
+      "census_population": 1236,
+      "census_ms": 0.2091,
+      "phase_elapsed_ms": 20051.99130010605,
+      "phase_bound_uncertainty_ms": 100,
+      "frames": 1199,
+      "mean_callback_ms": 16.666626605504586,
+      "p95_callback_ms": 17.1993,
+      "p99_callback_ms": 17.4622,
+      "worst_callback_ms": 18.2687,
+      "present_modes": [],
+      "presentmon_available": false,
+      "presentmon_result": "warning: PresentMon requires elevated privilege in order to query processes that are\n         short-running or started on another account.  Without it, those processes will\n         be listed as '<unknown>' and they can't be targeted by --process_name nor trigger\n         --terminate_on_proc_exit.\nerror: failed to start trace session: access denied.\n       PresentMon requires either administrative privileges or to be run by a user in the\n       \"Performance Log Users\" user group.  View the readme for more details.\n",
+      "note": "Peaceful 1,000 abstract inventory piles, one million native units each; active exposure and climate sampling, no artificial per-object Tick. One complete initialization census is measured immediately after spawning. Not a 6,000-attacker scenario. Not whole-campaign or siege FPS acceptance. RenderOverlay callback intervals are a renderer cadence proxy, not displayed frames or GPU execution. PresentMon capture requires unavailable Windows privileges.",
+      "object_kind": "abstract inventory pile"
+    }
+  ],
+  "performance_scope": "1,000 peaceful piles with one million native units each. 700 active tics, 1,199 renderer callback intervals per sample. Current runtime verifies all 1,000 exposed. PresentMon ETW remains denied; callback tails are not displayed FPS. A separate one-billion-unit homogeneous lot completes 1,000 integration steps without a per-unit loop.",
+  "probe_findings": "Private probes retained. A fixture initially called a protected pickup method and then used a non-player receiver rejected by the existing game policy; corrected to CallTryPickup with the real player. The first performance map had no known weather profile; it is excluded in favor of the matched MAP01-classified fixture with all current receivers exposed. Early compilation diagnostics corrected data play scope and the fixture method name. No failed probe is counted.",
+  "limits": "Only approved abstract geometries are covered here. Other physical-material, food and vessel exteriors plus remaining contact discovery remain separate adapters. No new ingestion dose or crafting inheritance balance is added.",
+  "author_acceptance": "CA502-ABSTRACT-STACKS-01 pending final grouped V5.8 handoff; no author entry removed."
+}

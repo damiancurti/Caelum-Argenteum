@@ -495,6 +495,23 @@ presented-frame/FPS evidence. Source paths and final measurements: validation_58
 
 ## CA-KP-168 - World-object exposure must follow native inventory ownership
 
+**5.8.47/#502 extension (ENGINE-VERIFIED):** abstract stack area belongs to each
+native unit, while integration and ownership belong to each distinct lot/pile.
+Do not derive area from merged mass or average saved concentrations. Native
+pickup/toss, coffer splits and copied forecasts must move exactly the same FIFO
+units. Source-owned thermal frames handle carried exposure; ground histories
+must not charge that interval again. An untracked old pile starts clean, but a
+previous generic contact carrier must be adopted rather than reset. Evidence:
+assets/validation_5847. A billion-unit homogeneous pile remains one lot; the
+1,000-pile renderer comparison verifies actual exposure before recording tails.
+The first custom-map benchmark had no weather profile and was excluded. Exact
+package hashes and original-save rollback are retained; author checks are pending.
+Travelling vendor inventories retain source civil time/climate rather than the
+parking map. Household restoration rebases stack history with the other native
+inventory clocks. Native tests exercise both boundaries. At the absolute civil
+epoch (about 6e10 seconds), a double ULP is about 7.6 microseconds; clock assertions
+allow that representation error while checking concentrations independently.
+
 Status/evidence: ENGINE-VERIFIED, #502/PR506, 2026-10-25, baseline d801ae4c.
 Environment: GZDoom 4.14.2/Windows 11/Vulkan, 1280x720; evidence:
 assets/validation_5812/objects. CA502-OBJECTS-01 accepted on 2026-10-25.

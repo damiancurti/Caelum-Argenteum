@@ -2491,6 +2491,12 @@ class CaelumInventoryService : Object play
             user.FormalInventoryRowFoodContamination[row]=lots.OldestContamination();
             user.FormalInventoryRowFoodLots[row]=lots.Lots.Size();
         }
+        else if(CaelumContaminationStack.Eligible(entry))
+        {
+            CaelumContaminationStack.Reconcile(entry);let lots=CaelumContaminationStack.Prepare(entry);
+            user.FormalInventoryRowFoodContamination[row]=lots.OldestContamination();
+            user.FormalInventoryRowFoodLots[row]=lots.Lots.Size();
+        }
         user.FormalInventoryRowWaterLiters[row] = -1;
         let mate=CaelumMateItem(entry);if(mate!=null)mate.SyncTemperature(user);
         let water = CaelumWaterContainer(entry);
@@ -3802,6 +3808,7 @@ class CaelumInventoryService : Object play
         }
         material.LimboSupplyUnits = Max(0, material.LimboSupplyUnits - requiredAmount);
         material.LimboQuestUnits = Max(0, material.LimboQuestUnits - requiredAmount);
+        CaelumContaminationStack.Reconcile(material);CaelumContaminationStack.Remove(material,requiredAmount);
         material.Amount -= requiredAmount;
         if (material.Amount <= 0) { material.Destroy(); }
         return true;
@@ -3918,7 +3925,9 @@ class CaelumInventoryService : Object play
 
         if (existingOutput != null)
         {
+            CaelumContaminationStack.Reconcile(existingOutput);
             existingOutput.Amount += user.CraftingOutputAmount;
+            CaelumContaminationStack.Reconcile(existingOutput);
             if (user.CraftingTaskUsesLimboMaterials) existingOutput.LimboQuestUnits += user.CraftingOutputAmount;
             if (sendOutputToMagicBox) { existingOutput.InMagicBox = true; }
         }
@@ -6431,7 +6440,9 @@ class CaelumInventoryService : Object play
         if ((existing != null && existing.Owner != user) || (detached != null && detached.Owner != null && detached.Owner != user)) return;
         if (existing != null)
         {
+            CaelumContaminationStack.Reconcile(existing);
             existing.Amount += recoveredAmount;
+            CaelumContaminationStack.Reconcile(existing);
             if (sendToMagicBox) { existing.InMagicBox = true; }
             if (detached != null) { detached.Destroy(); }
             CaelumNotifications.Acquired(user, existing, recoveredAmount);

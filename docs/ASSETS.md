@@ -1,6 +1,13 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.46** - 2026-10-28.
+Documentation version: **5.8.47** - 2026-10-28.
+
+## 5.8.47 - Stack contamination evidence (#502)
+
+No sprites, models, maps or audio change. The approved 1,000 kg/m^3 reference is
+an abstract inventory geometry convention, not physical art scale. Native
+fixtures, reproducible preparation and evidence are in assets/validation_5847;
+test PK3s, engine/IWAD and saves remain private regenerable build outputs.
 
 ## 5.8.44 - Original landscapes and ornamental sculpture (#410)
 

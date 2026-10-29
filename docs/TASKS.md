@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.46** - 2026-10-28.
+Documentation version: **5.8.47** - 2026-10-28.
+
+## 5.8.47 / #502 - Abstract stack contact
+
+Implement additive per-unit surfaces, separate FIFO contamination lots, native
+pickup/toss/container/trade/crafting hooks, weather history, carried thermal
+exposure, immutable forecasts, save/hub and genuine prior-runtime migration.
+Evidence: assets/validation_5847; 168 current and two original-runtime native
+checks pass, with zero failures/static errors. Keep author checks in the final grouped queue;
+remaining physical-material/food/container/contact adapters are not closed by
+this abstract-material reference. Continue #415, #416 and #417 separately.
 
 ## 5.8.46 / #502 - Absent native NPC physiology
 

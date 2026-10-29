@@ -61,6 +61,7 @@ class CaelumContaminationNPC : Object play
     void Capture(CaelumCombatActor npc,CaelumThermalState thermal)
     {
         if(Frame==null)Frame=new('CaelumContaminationExposure');
+        Frame.CaptureStacks(npc);
         if(Body==null)Body=new('CaelumFoodIllness');
         Count=0;Frame.BodyKg=thermal.BodyMassKg;
         for(int slot=0;slot<4;slot++)
@@ -121,6 +122,7 @@ class CaelumContaminationNPC : Object play
     }
     void CommitCaptured(CaelumCombatActor npc)
     {
+        Frame.CommitStacks(npc);
         if(Body.Contamination!=CaelumContaminationStorage.Value(npc))
             CaelumContaminationStorage.Set(npc,Body.Contamination);
         for(int i=0;i<Frame.Items.Size();i++)

@@ -49,6 +49,7 @@ class CaelumFoodInventory : Object play
     // antes de la operación siguiente; las transferencias nunca usan este ajuste.
     static void Reconcile(Inventory item)
     {
+        CaelumContaminationStack.Reconcile(item);
         let clock=CaelumFoodClock.Get(item);
         if(clock!=null)clock.Advance();
         let lots=Prepare(item);if(lots==null)return;
@@ -59,6 +60,7 @@ class CaelumFoodInventory : Object play
 
     static bool Transfer(Inventory source,Inventory target,int count,bool emptyTarget=false)
     {
+        if(!CaelumContaminationStack.Transfer(source,target,count,emptyTarget))return false;
         if(!IsFood(source))return true;
         let from=Prepare(source);
         if(target==null || Kind(target)!=Kind(source) || source==target)return source==target;
@@ -78,11 +80,13 @@ class CaelumFoodInventory : Object play
     static void Relocate(Inventory item)
     {
         if(item==null || item.bDestroyed)return;
+        CaelumContaminationStack.Relocate(item);
         let clock=CaelumFoodClock.Get(item);if(clock!=null)clock.Advance();
     }
 
     static bool Remove(Inventory item,int count)
     {
+        CaelumContaminationStack.Remove(item,count);
         let lots=Prepare(item);if(lots==null)return true;
         double ignored;return lots.Consume(count,ignored);
     }

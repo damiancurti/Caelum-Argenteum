@@ -1,6 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.8.46** - 2026-10-28.
+Documentation version: **5.8.47** - 2026-10-28.
+
+**5.8.47/#502:**abstract-lots/exposure;validation_5847;author-grouped;physical-adapters/#415-417-pending.
 
 **5.8.43-46:**housekeeping/decor/dining-contact/absent-NPC;validation_5843-46.
 

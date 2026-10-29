@@ -7,6 +7,8 @@ class CaelumContaminationState : Object play
     int PhysiologyRevision;
     double DiseaseFraction;
     int DomesticTargetKey;
+    int StackRevision;
+    CaelumFoodLots StackLots;
 
     void EnsurePhysiology()
     {
@@ -54,6 +56,7 @@ class CaelumContaminationStorage : Object play
     static CaelumContaminationState Get(Actor body,bool create=false,bool raw=false)
     {
         if(body==null || body is 'CaelumPlayer')return null;
+        if(CaelumContaminationStack.Eligible(Inventory(body)))return CaelumContaminationStack.Record(Inventory(body),create);
         let proxy=CaelumDiningBlock(body);
         let dining=proxy!=null?proxy.Table:CaelumDiningTable(body);
         if(!raw && dining!=null && !dining.ContaminationMigrating)
@@ -113,6 +116,7 @@ class CaelumContaminationStorage : Object play
     }
     static double Value(Actor body)
     {
+        if(CaelumContaminationStack.Eligible(Inventory(body)))return CaelumContaminationStack.Value(Inventory(body));
         let remote=CaelumHouseStorageEntry.Remote(body);if(remote!=null)remote.SyncDirt();
         let user=CaelumPlayer(body);
         if(user!=null)return CaelumFoodIllness.Value(user);
@@ -125,6 +129,7 @@ class CaelumContaminationStorage : Object play
     }
     static void Set(Actor body,double value)
     {
+        if(CaelumContaminationStack.Eligible(Inventory(body))){CaelumContaminationStack.Set(Inventory(body),value);return;}
         let remote=CaelumHouseStorageEntry.Remote(body);if(remote!=null)remote.SyncDirt();
         value=Clamp(value,0.0,CaelumFoodData.MAX_CONTAMINATION);
         let user=CaelumPlayer(body);
@@ -167,6 +172,7 @@ class CaelumContaminationStorage : Object play
     static void Touch(Actor first,Actor second,double areaM2,double worldSeconds)
     {
         if(first==null || second==null || first==second || IsShielded(first) || IsShielded(second))return;
+        if(CaelumContaminationStack.Touch(first,second,areaM2,worldSeconds))return;
         double a=Value(first),b=Value(second);
         if(a>b)Set(second,CaelumContaminationRules.AfterContact(b,a,areaM2,worldSeconds,Dose(second)));
         else if(b>a)Set(first,CaelumContaminationRules.AfterContact(a,b,areaM2,worldSeconds,Dose(first)));

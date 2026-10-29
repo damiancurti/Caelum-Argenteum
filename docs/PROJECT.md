@@ -1,6 +1,18 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.46** - 2026-10-28.
+Documentation version: **5.8.47** - 2026-10-28.
+
+## 5.8.47 / #502 - Abstract stack contamination
+
+Implemented the approved equivalent-unit sphere reference and native lot
+persistence/exposure for essences and abstract preparations. Evidence is in
+assets/validation_5847; author corroboration stays grouped.
+Native/static verification passes: 168 current and two original-runtime checks,
+zero failures. The package is source-identical, with previous art/maps unchanged.
+Remaining work:
+other physical-material/food/container exposure and contact adapters (#502),
+absent combat/theft (#415), historical routes and Buenos Aires (#416), travel
+encounters (#417). Multiplayer rest stays deferred to V5.12. V5.8 is not complete.
 
 ## 5.8.46 / #502 - Native NPC absence physiology
 
