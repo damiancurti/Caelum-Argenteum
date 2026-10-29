@@ -2,6 +2,8 @@
 
 Documentation version: **5.8.56** - 2026-10-29.
 
+Author acceptance 2026-10-29 / #416: all remaining correction checks passed; stable IDs and original releases are recorded in HISTORY. Merge and issue closure are authorized.
+
 Author acceptance 2026-10-29 / #415: all remaining correction checks passed; stable IDs and original releases are recorded in HISTORY. Merge and issue closure are authorized.
 
 Author acceptance 2026-10-29 / #410: all remaining correction checks passed; stable IDs and original releases are recorded in HISTORY. Merge and issue closure are authorized.

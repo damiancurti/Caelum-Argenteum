@@ -2,6 +2,8 @@
 
 Documentation version: **5.8.56** - 2026-10-29.
 
+Author acceptance 2026-10-29 / #416: all remaining correction checks passed; stable IDs and original releases are recorded in HISTORY. Merge and issue closure are authorized.
+
 Author acceptance 2026-10-29 / #415: all remaining correction checks passed; stable IDs and original releases are recorded in HISTORY. Merge and issue closure are authorized.
 
 Author acceptance 2026-10-29 / #410: all remaining correction checks passed; stable IDs and original releases are recorded in HISTORY. Merge and issue closure are authorized.
@@ -17,7 +19,7 @@ Author review 2026-10-29 / #411: all remaining grouped scenarios passed without 
 
 ## 5.8.56 / #416 - Original Ciudad theme for Buenos Aires
 
-Native validation: CABAIRES automatically selects the encoded track, PASS. See `assets/validation_5856/RESULTS.md`. Author listening remains pending.
+Native validation: CABAIRES automatically selects the encoded track, PASS. See `assets/validation_5856/RESULTS.md`. Author listening passed on 2026-10-29.
 
 The author selected the original **Ciudad**, retained since the first music collection, for CABAIRES. The complete 188.8-second stereo master is encoded as `music/CA_MUS_CIUDAD.ogg` with Vorbis quality 6, no filters, trimming or normalization. Two encodes produced identical bytes and full decode preserved duration. Credits retain Damián Curti/Suno and the original embedded ID. `Campo de Buenos Aires` retains its countryside assignment. See `assets/validation_5856/PROVENANCE.json`; native playback and author listening are tracked separately.
 

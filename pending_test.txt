@@ -1,7 +1,0 @@
-CA416-NETWORK-01 | Origin: 5.8.52 | Issue: #416
-Author accepted the grouped travel/city checks on 2026-10-29 except the missing
-Buenos Aires theme. Correction originates in 5.8.56.
-Prerequisites: final correction terminal, Buenos Aires scenario (CABAIRES).
-Listen for the original Ciudad theme, selected automatically on entry and looping
-normally. Campo de Buenos Aires remains assigned to countryside, as requested.
-Expected: the intended original city music is audible; no travel retest required.
