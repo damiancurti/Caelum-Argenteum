@@ -72,6 +72,20 @@ floating-point residue initially delayed an exact-tic release. Neither required
 a new balance rule. Draft PR545 remains incomplete, with scheduling, theft and
 bounded catch-up tracked above; author checks are still deferred.
 
+The sixth checkpoint adds calendar-driven siege starts for revisited peaceful
+cities and shares native household admission/activation. The actual MAP03
+fixture preserves an existing resident and its finite possession, crosses the
+exact authored date, saves/loads the deployment fraction, and performs a real
+hub round trip with collision-safe placement. It also verifies victory dating
+and exactly-once reconciliation. The integrated09 package passes 228 distinct
+scenario assertions, with all 24 changed source members byte-verified. A private
+save fixture initially quit before the engine wrote its file; the runner refused
+the missing-file load, and the corrected fixture waits for completion. Native
+NPC ammo rejects player-only pickup, so the identity test attaches the actual
+fixture item directly. These are isolated harness corrections, not gameplay
+changes. First-arrival/legacy scheduling, bounded catch-up and theft remain open;
+no author test was removed and no release or acceptance is claimed.
+
 ## 5.8.50 - Remaining physical contact adapters (#502)
 
 The author requested completion without further small partial handoffs. Added

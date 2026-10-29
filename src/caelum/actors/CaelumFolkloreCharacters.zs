@@ -622,6 +622,7 @@ class CaelumMandinga : CaelumFolkloreCombatActor
 
 class CaelumZupayColossus : CaelumFolkloreCombatActor
 {
+    bool ZupayBirthInitialized;
     override bool UsesWeaponProjectileDispersion()
     { return CaelumResidentData.DEMON_PROJECTILE_DISPERSION; }
     override int GetApprovedPersonality(){return CaelumResidentData.ZUPAY_PERSONALITY;}
@@ -734,6 +735,8 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
 
     override void PostBeginPlay()
     {
+        if(ZupayBirthInitialized)return;
+        ZupayBirthInitialized=true;
         Super.PostBeginPlay();
         InitializeUniformFolkloreProfile(CaelumConstants.ZUPAY_ATTRIBUTE_LEVEL);
         ConfigureCombatMagicalRange();

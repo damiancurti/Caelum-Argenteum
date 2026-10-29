@@ -33,16 +33,20 @@ if args.probe:
     print(f'Probe: {len(changed)} current source members')
 arena = (R / 'assets/validation_5826/away.wad').read_bytes()
 pack(W / 'checks.pk3', {
-    'ZSCRIPT': b'version "4.14"\n#include "checks.zs"\n#include "flights.zs"\n',
+    'ZSCRIPT': b'version "4.14"\n#include "checks.zs"\n#include "flights.zs"\n#include "calendar.zs"\n',
     'checks.zs': (H / 'checks.zs').read_bytes(),
     'flights.zs': (H / 'flights.zs').read_bytes(),
-    'MAPINFO': b'GameInfo {AddEventHandlers="CA415RoundChecks","CA415FlightChecks"}\ncluster 8551 {hub}\nmap MAP01 "Absent combat" {cluster=8551}\nmap CABS415B "Away" {cluster=8551}\n',
+    'calendar.zs': (H / 'calendar.zs').read_bytes(),
+    'MAPINFO': b'GameInfo {AddEventHandlers="CA415RoundChecks","CA415FlightChecks","CA415CalendarChecks"}\ncluster 8551 {hub}\nmap MAP01 "Absent combat" {cluster=8551}\nmap MAP03 "Scheduled city" {cluster=8551}\nmap CABS415B "Away" {cluster=8551}\n',
     'maps/MAP01.wad': arena,
     'maps/CABS415B.wad': arena,
 })
 for case in ['math', 'rounds', 'physiology', 'potions', 'boundaries', 'breath']:
     (W / (case + '.cfg')).write_text(f'wait 105; netevent ca415r_prepare; wait 3; netevent ca415r_{case}; wait 10; quit\n')
 print('Prepared private fixtures')
+(W/'calendar.cfg').write_text('wait 105; netevent ca415r_calendar; save calendar-started; wait 10; quit\n')
+(W/'calendarload.cfg').write_text('wait 1; netevent ca415r_calendarload; wait 1; quit\n')
+(W/'calendarhub.cfg').write_text('wait 105; netevent ca415r_calendardepart; wait 35; netevent ca415r_calendarreturn; wait 35; netevent ca415r_calendarhome; wait 5; quit\n')
 (W/'flights.cfg').write_text('wait 105; netevent ca415r_prepare; wait 3; netevent ca415r_flights; wait 10; quit\n')
 (W/'flightsave.cfg').write_text('wait 105; netevent ca415r_prepare; wait 3; netevent ca415r_flightsave; save flight-pending; wait 10; quit\n')
 (W/'flightload.cfg').write_text('wait 1; netevent ca415r_flightload; wait 10; quit\n')

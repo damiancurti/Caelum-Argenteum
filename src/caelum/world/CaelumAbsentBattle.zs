@@ -544,6 +544,8 @@ class CaelumAbsentBattle : Object play
     double LargestRadius;
     CaelumAbsentCombatant FirstFriendly,FirstHostile;
     bool TargetCacheReady;
+    bool ScheduleWaiting;
+    double ScheduledCivil,DeploymentTicFraction;
 
     void RefreshFirstTargets()
     {
@@ -599,11 +601,11 @@ class CaelumAbsentBattle : Object play
             }
     }
 
-    CaelumAbsentCombatant Add(CaelumCombatActor body)
+    CaelumAbsentCombatant Add(CaelumCombatActor body,bool admitted=false)
     {
         if(body==null || body.health<=0 || !body.CombatProfileInitialized)return null;
         let resident=CaelumPortDefender(body);
-        if(resident!=null && resident.Residence!=null && resident.Residence.Suspended)return null;
+        if(resident!=null && resident.Residence!=null && resident.Residence.Suspended && !admitted)return null;
         let row=body.AbsentCombatant;
         if(row==null || row.Battle!=self)
         {
@@ -613,10 +615,10 @@ class CaelumAbsentBattle : Object play
         row.Capture();SpatialDirty=true;TargetCacheReady=false;return row;
     }
 
-    void Capture(CaelumSiegeEncounter encounter,CaelumPlayer user)
+    void Capture(CaelumSiegeEncounter encounter,CaelumPlayer user,double at=-1)
     {
         if(Away || encounter==null || user==null)return;
-        self.Encounter=encounter;SourceMap=level.MapName;Stamp=CaelumContaminationAbsence.Clock(user,SourceMap);
+        self.Encounter=encounter;SourceMap=level.MapName;Stamp=at>=0?at:CaelumContaminationAbsence.Clock(user,SourceMap);
         Observer=user;
         if(Stamp<0)return;
         ActiveScale=CaelumWorldClock.SecondsPerGameHour(SourceMap)/3600.0;SchemaRevision=REVISION;
@@ -625,6 +627,8 @@ class CaelumAbsentBattle : Object play
         for(int i=0;i<encounter.Attackers.Size();i++)
         {let e=encounter.Attackers[i];if(e!=null && !e.Exited && !e.ConfirmedDead)Add(e.Body);}
         let port=CaelumPortSiege(encounter);
+        ScheduleWaiting=port!=null && !port.SiegeStarted && CaelumCityData.Enabled();
+        if(ScheduleWaiting)ScheduledCivil=Max(Stamp,CaelumCityWorld.SiegeCivilSeconds());
         if(port!=null)for(int i=0;i<port.Defenders.Size();i++)
         {let row=Add(port.Defenders[i]);if(row!=null){row.RosterKind=2;row.RosterIndex=i;}}
         if(port!=null && port.Reinforcements!=null)
@@ -637,7 +641,13 @@ class CaelumAbsentBattle : Object play
             let row=Rows[i];let target=row.Body!=null?CaelumCombatActor(row.Body.target):null;
             row.Opponent=target!=null?target.AbsentCombatant:null;
             if(!row.Enemy(row.Opponent))row.Opponent=null;
-            if(row.Participating)CaelumContaminationAbsence.Capture(row.Body,user);
+            if(row.Participating)
+            {
+                bool captured=row.Body.ContaminationAbsence!=null && row.Body.ContaminationAbsence.Away;
+                CaelumContaminationAbsence.Capture(row.Body,user);
+                if(!captured && at>=0 && row.Body.ContaminationAbsence!=null)
+                {row.Body.ContaminationAbsence.Stamp=at;row.Body.ContaminationAbsence.Civil=at;}
+            }
         }
         CaelumAbsentShot.Capture(self);
         Away=true;
@@ -660,11 +670,13 @@ class CaelumAbsentBattle : Object play
         StructureHits.Clear();
         for(int i=0;i<Rows.Size();i++)Rows[i].FinishRound();
         for(int i=0;i<Machines.Size();i++)Machines[i].Observe();
+        bool won=Encounter!=null && Encounter.Victory;
         if(Encounter!=null)Encounter.ResolveVictory(true);
+        let port=CaelumPortSiege(Encounter);
+        if(port!=null && port.Victory && !won && SourceMap=="MAP03")port.Calendar(Observer,SimulationTime);
         // La victoria puede ordenar retiradas despues de resolver las bajas.
         // Se conservan los cuerpos y su equipo sin otra ronda ofensiva.
         for(int i=0;i<Rows.Size();i++)Rows[i].FinishRound();
-        let port=CaelumPortSiege(Encounter);
         if(port!=null && !port.Victory)port.RefillCrews();
         let corpses=CaelumCorpseArchive.Get(true);if(corpses!=null)corpses.Tick();
         Rounds++;
@@ -696,7 +708,7 @@ class CaelumAbsentBattle : Object play
     void Reinforce(double seconds)
     {
         let port=CaelumPortSiege(Encounter);
-        if(port==null || port.Reinforcements==null)return;
+        if(port==null || !port.SiegeStarted || port.Reinforcements==null)return;
         let reserve=port.Reinforcements;
         if(!reserve.Enabled || reserve.Stopped || reserve.Remaining==0)return;
         if(port.Victory){reserve.Stopped=true;return;}
@@ -718,6 +730,7 @@ class CaelumAbsentBattle : Object play
     {
         SimulationTime=end;
         double seconds=ActiveScale*worldSeconds;
+        DeployResidents(seconds);
         Reinforce(seconds);
         Engaged=Opposed();
         for(int i=0;i<Rows.Size();i++)Rows[i].Physiology(end,seconds);
@@ -739,6 +752,19 @@ class CaelumAbsentBattle : Object play
     {
         if(!Away || Busy || SchemaRevision!=REVISION || end<=Stamp)return;
         Busy=true;
+        if(ScheduleWaiting)
+        {
+            double before=Min(end,ScheduledCivil);
+            if(Rows.Size()==0){Stamp=before;SimulationTime=before;Fraction=0;}
+            else ResolveUntil(before);
+            if(end<ScheduledCivil){Busy=false;return;}
+            StartScheduled();
+        }
+        ResolveUntil(end);Busy=false;
+    }
+
+    void ResolveUntil(double end)
+    {
         double elapsed=end-Stamp+Fraction;
         int whole=int(Floor(elapsed+0.000000001));
         double first=Stamp-Fraction;
@@ -749,11 +775,49 @@ class CaelumAbsentBattle : Object play
             Interval(first+second+1,1);
         }
         SimulationTime=end;
-        Stamp=end;Busy=false;
+        Stamp=end;
+    }
+
+    void StartScheduled()
+    {
+        let port=CaelumPortSiege(Encounter);
+        if(!ScheduleWaiting || port==null)return;
+        ScheduleWaiting=false;
+        if(!port.SiegeStarted)port.Deploy(true,ScheduledCivil);
+        // Spawn difiere PostBeginPlay; el resumen necesita el perfil real ya
+        // inicializado. Las guardas impiden duplicarlo en el siguiente tic.
+        for(int i=0;i<port.Attackers.Size();i++)
+        {
+            let body=port.Attackers[i].Body;
+            if(body!=null && !body.CombatProfileInitialized)body.PostBeginPlay();
+        }
+        port.ActivateDeployment(true);
+        Away=false;Capture(port,Observer,ScheduledCivil);
+        SimulationTime=Stamp;Fraction=0;
+    }
+
+    void DeployResidents(double seconds)
+    {
+        let port=CaelumPortSiege(Encounter);
+        if(port==null || !port.SiegeStarted || !CaelumHouseHub.IsCity(port))return;
+        let roster=CaelumHouseResidents.Get();if(roster==null || !roster.DeploymentPending)return;
+        DeploymentTicFraction+=seconds*TICRATE;
+        int attempts=int(DeploymentTicFraction+0.000000001);
+        DeploymentTicFraction=Max(0,DeploymentTicFraction-attempts);
+        for(int i=0;i<attempts && roster.DeploymentPending;i++)
+        {
+            let body=roster.DeploymentOpportunity(port,SimulationTime,true);
+            if(body==null)continue;
+            let row=Add(body,true);
+            if(row!=null){row.RosterKind=2;row.RosterIndex=body.HomeIdentity;}
+        }
     }
 
     bool Terminal()
     {
+        if(ScheduleWaiting)return false;
+        let roster=CaelumHouseResidents.Get();
+        if(CaelumHouseHub.IsCity(CaelumPortSiege(Encounter)) && roster!=null && roster.DeploymentPending)return false;
         FirstOpponent(true);
         if(FirstFriendly!=null || FirstHostile!=null || Flights.Size()>0)return false;
         let port=CaelumPortSiege(Encounter);
@@ -850,8 +914,6 @@ class CaelumAbsentBattles : Object play
         let iterator=ThinkerIterator.Create('CaelumSiegeEncounter');CaelumSiegeEncounter encounter;
         while((encounter=CaelumSiegeEncounter(iterator.Next()))!=null)
         {
-            let port=CaelumPortSiege(encounter);
-            if(port!=null && !port.SiegeStarted)continue;
             if(encounter.AbsentBattle==null)encounter.AbsentBattle=new('CaelumAbsentBattle');
             encounter.AbsentBattle.Capture(encounter,user);
         }

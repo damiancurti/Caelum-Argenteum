@@ -15,8 +15,9 @@ for 5.8.51. Its partial combat integration is not a completed release; see
 Its native checks include returning household combatants, fractional clock
 boundaries, racial breath and saved in-flight attacks. Native explosion and
 ground-slam falloff are checked separately. Sleep, restraint and frozen attack
-preparations also retain their native clocks and saved identity; scheduled
-deployment and theft remain unfinished.
+preparations also retain their native clocks and saved identity. Revisited cities
+start the siege at its authored calendar boundary and admit real residents;
+first-arrival/legacy scheduling and theft remain unfinished.
 The catch-up performance diagnostic and its remaining stalls are documented in
 the same evidence directory; this checkpoint is not a playability claim.
 

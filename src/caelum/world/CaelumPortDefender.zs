@@ -208,6 +208,8 @@ class CaelumPortDefender : CaelumFolkloreCombatActor
 
     override void PostBeginPlay()
     {
+        if(DefenderBirthInitialized)return;
+        DefenderBirthInitialized=true;
         Super.PostBeginPlay();
         Mass=CaelumPortData.DEFENDER_MASS_KG;
         A_SetSize(GetDefaultByType("CaelumPlayer").Radius,CaelumPortData.DEFENDER_HEIGHT);
@@ -221,6 +223,8 @@ class CaelumPortDefender : CaelumFolkloreCombatActor
         Sword.Tier=CaelumPortData.EQUIPMENT_TIER;Sword.Durability=Sword.GetMaximumDurability();
         MeleeRange=CaelumWeaponCatalogue.GetPrimaryRange(CaelumConstants.CATALOGUE_WEAPON_SWORD);
     }
+
+    bool DefenderBirthInitialized;
 
     override double GetAttackCarriedWeight()
     {

@@ -6,7 +6,7 @@ Documentation version: **5.8.50** - 2026-10-28.
 
 The focused `feat/issue415-absent-rounds` worktree contains an intermediate
 checkpoint, not a completed delivery. Private `validation_5851` fixtures pass
-203 native assertions across scenarios, excluding repeated setup: damage/dispersion, simultaneous casualties,
+228 native assertions across scenarios, excluding repeated setup: damage/dispersion, simultaneous casualties,
 actual magazines/Anima, statuses, healing consumables, structural/cannon
 impacts, finite reserve admission, save identity and native load/unload hooks.
 The hub check resolves ten rounds, thirteen shots and one reload without
@@ -45,13 +45,21 @@ budget. Capturing a sleeping attacker reads its saved prepared pose and tics;
 absolute wind/recovery deadlines continue, as in native play. Early wake and
 return between wind frames neither replay preparation nor charge twice.
 
-Still required before delivery: bounded combat/quiet processing,
-scheduled starts/deployment while
-absent, theft/access with real inventory transfers, performance and original-save
-regressions and final canonical rules/version. Draft PR545 tracks this branch. In particular, the
-current capture intentionally excludes residents not yet deployed: a parked
-body must not be treated as a safe cross-map collision object. Do not claim the
-scheduled start or full absent deployment complete before that is integrated.
+Revisited peaceful cities now retain the authored siege deadline. Empty peace
+advances directly to that date; new attackers receive their guarded native
+profiles and machines use the existing activation path. Residents are admitted
+through the shared one-attempt-per-active-tic routine, carrying its fractional
+budget. They keep actual inventory/Life, use their authored door coordinates,
+and remain parked until collision-safe native placement after return. A victory
+records the actual summary-round date independently of discovery on return.
+The native MAP03 checks cover the exact boundary, retained residents, save/load,
+actual hub departure/return, placement and repeated reconciliation.
+
+Still required before delivery: bounded combat/quiet processing, first-arrival
+and legacy-save scheduling, theft/access with real inventory transfers,
+performance and original-save regressions, and final canonical rules/version.
+Draft PR545 tracks this branch. The calendar tests do not establish safe long
+catch-up latency or complete the remaining world/event adapters.
 No author handoff or released 5.8.51 is claimed for this checkpoint.
 Continue this issue to completion; #502 patch50 is already delivered in PR544.
 

@@ -34,7 +34,16 @@ Death releases the actual unbroken bolas item through its native lifecycle.
 A frozen attack keeps its saved pose and remaining tics separately from the
 absolute cycle clock, whose later wind/recovery boundaries continue to age.
 Returning does not replay that pose's entry action or spend preparation twice.
-This is unreleased work, not completion of scheduled siege starts, theft or V5.8.
+A peaceful-city departure records the existing authored siege date. On return,
+the summary starts at that date and uses actual native attackers and finite
+reserves. Household admission retains the existing one-attempt-per-active-tic
+cadence, including its fractional remainder. A returning resident carries its
+original Life/inventory, remains parked at its recorded door during the summary,
+and resumes native movement only after safe placement. Bodies are not rebuilt
+from equipment templates when they already exist. The victory journal event
+uses the actual concluding round timestamp; discovery remains regional.
+This is unreleased work; first-arrival/legacy scheduling, theft and V5.8 are
+still incomplete.
 
 ## 5.8.50 - Physical contact coverage (#502)
 
