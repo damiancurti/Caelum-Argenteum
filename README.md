@@ -9,29 +9,24 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 **Current release: 5.8.56.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-Author acceptance 2026-10-29 / #416: all remaining correction checks passed; stable IDs and original releases are recorded in HISTORY. Merge and issue closure are authorized.
+**V5.8 is complete and author-accepted (2026-10-29).** Issues #410-417,
+#496 and #502 are integrated into main. All outstanding manual checks passed;
+their stable IDs and dates are recorded in [HISTORY](docs/HISTORY.md), and
+`pending_test.txt` is empty. Multiplayer rest authority and verification remain
+deferred to V5.12 by request.
 
-Author acceptance 2026-10-29 / #415: all remaining correction checks passed; stable IDs and original releases are recorded in HISTORY. Merge and issue closure are authorized.
+The final corrections provide selected-container Use refilling alongside R,
+visible bedding and luxury canopy, small/large paintings and the original statue,
+the city Rally scan fix, and the original **Ciudad** theme in Buenos Aires.
+Native evidence remains in `assets/validation_5854` through `validation_5856`.
+The runtime is unchanged from the author-approved final package. Long-absence
+loading remains expensive; ETW presentation measurements were unavailable, so
+the recorded callback improvement does not establish 60 displayed FPS.
 
-Author acceptance 2026-10-29 / #410: all remaining correction checks passed; stable IDs and original releases are recorded in HISTORY. Merge and issue closure are authorized.
+### Historical delivery checkpoints
 
-Author-confirmed grouped #411 checks are recorded in HISTORY and removed from the outstanding queue.
-
-Author-confirmed grouped #502 checks are recorded in HISTORY and removed from the outstanding queue.
-
-Author-confirmed grouped #417 checks are recorded in HISTORY and removed from the outstanding queue.
-
-5.8.56 assigns the author-selected original **Ciudad** theme to Buenos Aires. The correction terminal groups only the outstanding water, furniture, city performance and music checks.
-
-5.8.55 removes repeated global Rally lookups causing the city slowdown. Effect and save tests pass; city corroboration passed on 2026-10-29. See `assets/validation_5855/RESULTS.md` for measurements and the ETW limitation.
-
-5.8.54 addresses the furniture review: direct selected-container refilling,
-visible bedding and canopy, and a museum-size landscape. The corrected review
-gallery includes the original statue. Unrelated author checks passed; city
-performance (#415) and Buenos Aires music (#416) are separate follow-ups.
-Native evidence is recorded in `assets/validation_5854`; remaining author
-checks are in `pending_test.txt`. No PR merge or issue closure is implied.
-Multiplayer rest testing remains deferred to V5.12 by request.
+The entries below preserve the original stage evidence. Their pending statements
+are superseded by the completion and acceptance record above.
 
 5.8.52 completes the four-mode transport network (#416): Buenos Aires,
 Barracas al Sud and Mar del Plata, with six playable Buenos Aires blocks,

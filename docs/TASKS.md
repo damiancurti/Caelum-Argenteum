@@ -2,6 +2,25 @@
 
 Documentation version: **5.8.56** - 2026-10-29.
 
+## V5.8 completion - 2026-10-29 (#403)
+
+V5.8 is complete at **5.8.56**. The author confirmed every remaining correction
+test and explicitly authorized integration and issue closure. Issues #410-417,
+#496 and #502 are completed; their focused commits and PR ancestry are retained
+in main. Stable acceptance IDs, original versions and dates are recorded in
+HISTORY; the tracked pending_test.txt is empty.
+
+Cooperative rest authority, shared-clock integration and multi-client verification
+remain deferred by the author to V5.12 (#435-437). They are not claimed as tested
+or delivered by this single-player release. The documented long-absence loading
+cost and unavailable ETW presentation measurements remain limitations; author
+acceptance of the corrected city slowdown is not a claim of 60 displayed FPS.
+
+Earlier delivery checkpoints below are historical. Their pending statements are
+superseded by this completion record and the per-test confirmations in HISTORY.
+Next implementation follows the existing V5.9 roadmap; no new scope is opened
+by this release consolidation.
+
 Author acceptance 2026-10-29 / #416: all remaining correction checks passed; stable IDs and original releases are recorded in HISTORY. Merge and issue closure are authorized.
 
 Author acceptance 2026-10-29 / #415: all remaining correction checks passed; stable IDs and original releases are recorded in HISTORY. Merge and issue closure are authorized.
