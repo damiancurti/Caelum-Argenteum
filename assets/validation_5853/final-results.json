@@ -1,0 +1,55 @@
+{
+  "version": "5.8.53",
+  "issue": 417,
+  "native_runs": [
+    {
+      "case": "core",
+      "executed_assertions": 31,
+      "package_sha256": "71E977E718624921DC28299A8AFE8E5B185F680D517582BF8AFE1F62BB6A7ADC",
+      "log_sha256": "ea03e71a387d771fd398f52b45097e992a61e9095b169e84d1ecfeeb32a200ac"
+    },
+    {
+      "case": "reload",
+      "executed_assertions": 4,
+      "package_sha256": "71E977E718624921DC28299A8AFE8E5B185F680D517582BF8AFE1F62BB6A7ADC",
+      "log_sha256": "3c9aa73524dd2d79f4d85a109f8e88bfc5b8701fc233b407cfb1ce1ba96d0303"
+    },
+    {
+      "case": "bandits",
+      "executed_assertions": 39,
+      "package_sha256": "71E977E718624921DC28299A8AFE8E5B185F680D517582BF8AFE1F62BB6A7ADC",
+      "log_sha256": "6fc76951835a4f8e13b685f49c6369fa5ece17d3ebf6fdb7dd933130d22a82e4"
+    },
+    {
+      "case": "encounter",
+      "executed_assertions": 6,
+      "package_sha256": "71E977E718624921DC28299A8AFE8E5B185F680D517582BF8AFE1F62BB6A7ADC",
+      "log_sha256": "134b97408efc8a5a3eb2c76d47c9ace6611f36de4c893dde178833eaa471f3fc"
+    },
+    {
+      "case": "resume",
+      "executed_assertions": 16,
+      "package_sha256": "71E977E718624921DC28299A8AFE8E5B185F680D517582BF8AFE1F62BB6A7ADC",
+      "log_sha256": "8e4b52b0c6665f03c22b861304d922dcd28d64c320241b0464774e5bd8f921ca"
+    },
+    {
+      "case": "clock",
+      "executed_assertions": 9,
+      "package_sha256": "71E977E718624921DC28299A8AFE8E5B185F680D517582BF8AFE1F62BB6A7ADC",
+      "log_sha256": "77b8f8c2c4d466a04a7dbd3656e33ebdda6ea5a4a13e1e53f7850afc568f29b8"
+    },
+    {
+      "case": "camp",
+      "executed_assertions": 7,
+      "package_sha256": "71E977E718624921DC28299A8AFE8E5B185F680D517582BF8AFE1F62BB6A7ADC",
+      "log_sha256": "cae600d5d18a9a895aea3e3fe6be3fc51e89a6e29322984cfa6bdd9aedd31031"
+    }
+  ],
+  "executed_assertions": 112,
+  "source_matched_members": 17144,
+  "package_sha256": "71e977e718624921dc28299a8afe8e5b185f680d517582bf8afe1f62bb6a7adc",
+  "engine": "GZDoom 4.14.2 / Windows 11 / Vulkan / 1280x720 / background unpaused / 5% audio",
+  "scope": "Real resource clock, saved rolls, native hub escape/return, finite native shots and loot, survivor camp theft/discovery/recovery.",
+  "fixture_corrections": "Earlier private scenarios waited for deferred PostBeginPlay, checked zero-amount original inventory rather than owner pointer, waited for queued travel and opened the actual wait menu before checking it. Earlier failed diagnostic logs remain in build.",
+  "author_acceptance": "Pending grouped V5.8 corroboration. No author entry removed."
+}

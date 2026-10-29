@@ -1,3 +1,17 @@
+CA417-INCIDENTS-01 | Origin: 5.8.53 | Issue: #417
+Prerequisites: grouped review53 build and private deterministic incident scene;
+ordinary campaign incident chances stay unchanged. Keep original saves separate.
+1. Observe a rural encounter: two T1 machetes and one T1 carbine with twenty real
+   rounds. Fight or flee, save/load and revisit; preserve the same three bodies.
+2. Inspect dropped equipment/ammunition: only actual remaining rounds and gear,
+   including wear/contamination and stolen camp objects; no duplicate rewards.
+3. Observe actual-weather and breakdown checks. Travel pauses while personal
+   resources/time continue; repairs take two world hours with no extra fare.
+4. Save during repair and resume; the same consumed interval is never rerolled.
+Expected: visible readable enemies/vehicles/UI, retained ticket/encounter state,
+safe exit rules and no crash. The deterministic fixture forces private events
+only; it is not a change to the approved production probabilities.
+
 CA410-COOKING-01 | Origin: 5.8.19 | Issue: #410
 Prerequisites: final 5.8.19 package; GZDoom 4.14.2; a disposable campaign or
 the prepared #410 process fixture, with the four learned cooking recipes,
