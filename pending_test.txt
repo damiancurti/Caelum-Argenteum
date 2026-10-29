@@ -286,3 +286,21 @@ NPC exposure acceptance is retained. Do not hand off before full implementation.
    diagnostic hub: Life, contamination and fractional damage retain their values;
    the next active tic resumes once. No offline physiology is claimed by this test.
 Expected: shared illness rules, no physical armor wear, no duplicate body record.
+
+CA410-DINING-SETS-01 | Origin: 5.8.40 | Issue: #410
+Prerequisites: complete V5.8 grouped handoff, normal controls, sufficient carrying
+capacity/materials/money and learned dining-set recipes. Do not hand off early.
+1. Inspect all four painted inventory/shop/crafting icons and deployed sets:
+   small2, ordinary6, long12 and luxury6 chairs. Use every seat; face the table.
+2. Buy/craft/place a set on clear permitted ground. Check material-derived mass,
+   actual station/recipe requirements, stock3 and recipe stock10 without refills.
+3. Put food and a partially filled warm bottle on it. Crouch+Use carries the
+   complete owned set including actual content weight. Occupancy blocks pickup.
+4. Place again, rotate and inspect the same items, quantities, water quality,
+   temperature and food age. New sets must not create food or refill bottles.
+5. Box/retrieve, save/load and cross a map boundary carrying the loaded set;
+   repeat with the set inside a carried chest. No duplicates or ghost chairs.
+6. Wait with the set packed: food still ages and water cools. Earlier saves keep
+   their fixed tables, learned furniture recipes and sold stock; new recipes
+   start unknown. Inspect ownership and contamination after redeployment.
+Expected: all checks pass. Pending author corroboration.

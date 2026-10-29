@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `3310bdc3e64f2dd4296003ed2054c8a72e4c11b8ae3485542eb6b7dc77206f99`. Locations include every definition; the last one per language wins.
+SHA-256: `4e8269156f3ebb1996643a6c22b7d59797dd14d08a7f0675e1e26b867ff53ff5`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -65,6 +65,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_DEMO | 36 | CA_DEMO_BULL_0_1 | CA_DEMO_VOICE_9 |
 | CA_DEV | 1 | CA_DEV_BUILD_NAME | CA_DEV_BUILD_NAME |
 | CA_DIALOGUE | 3 | CA_DIALOGUE_MORE | CA_DIALOGUE_RETURN |
+| CA_DINING | 5 | CA_DINING_PORTABLE_HINT | CA_DINING_SET_SMALL |
 | CA_DLG | 108 | CA_DLG_M01_ARGENTO_ACCEPT | CA_DLG_M01_WORKSHOP_RULO |
 | CA_DOMESTIC | 5 | CA_DOMESTIC_BATHTUB | CA_DOMESTIC_WATER_HINT |
 | CA_DOOR | 7 | CA_DOOR_TRIAL_DISABLED | CA_DOOR_TRIAL_NOT_ENABLED |

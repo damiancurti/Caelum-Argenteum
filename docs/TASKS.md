@@ -1,6 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.39** - 2026-10-27.
+Documentation version: **5.8.40** - 2026-10-28.
+
+## 5.8.40 / #410 - Dining set acquisition and transport
+
+Four complete sets now use real contents, normal acquisition, original object
+identity and all26 native chairs. Food/water climate, nested chest/hub travel,
+earlier saves and catalogue migration are covered by assets/validation_5840:
+1,201 current native PASS plus22 original-runtime checks, zero failures/static errors.
+Keep CA410-DINING-SETS-01 grouped with the final V5.8 author handoff.
+Next furniture audit: paintings/statues and final integration. Remaining version
+work includes unloaded NPC physiology/household routines and contact adapters
+(#502), unloaded combat/theft (#415), documented routes (#416) and travel events
+(#417). Multiplayer rest remains deferred to V5.12 by the author.
 
 ## 5.8.39 / #415 - Shared aim and mean-hit calculation
 

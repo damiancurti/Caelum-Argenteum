@@ -1,0 +1,120 @@
+{
+  "issue": 410,
+  "models": [
+    {
+      "kind": "small",
+      "seats": 2,
+      "capacity": 4,
+      "round": true,
+      "width": 1.04,
+      "depth": 1.04,
+      "height": 0.74,
+      "reference": "https://www.thakehamfurniture.co.uk/antique-tables/dining-table-breakfast-table/william-iv-mahogany-centre-table-antique-round-table-3-56-refno-1851/",
+      "object": "Stock3340, circa1840; published104cm diameter/74cm height; envelope only",
+      "wood_kg": 35.95701125993735,
+      "iron_kg": 0.0,
+      "cotton_cloth_kg": 0.0,
+      "empty_kg": 35.95701125993735,
+      "recipe_grams": {
+        "wood": 35958,
+        "iron": 0,
+        "cotton_cloth": 0
+      },
+      "sha256": "57b6fd96fe60c60b3b6062a471522b2272c10d9c8e1d22e97f98e1f819bd1596",
+      "set_kg": 51.315145979937355,
+      "set_recipe_grams": {
+        "wood": 51318,
+        "iron": 0,
+        "cotton_cloth": 0
+      }
+    },
+    {
+      "kind": "normal",
+      "seats": 6,
+      "capacity": 18,
+      "round": false,
+      "width": 1.702,
+      "depth": 0.883,
+      "height": 0.711,
+      "reference": "https://www.metmuseum.org/art/collection/search/205696",
+      "object": "1974.28.218, circa1840; published170.2x88.3x71.1cm; envelope only",
+      "wood_kg": 53.321531600000014,
+      "iron_kg": 0.1359935999999999,
+      "cotton_cloth_kg": 0.0,
+      "empty_kg": 53.45752520000001,
+      "recipe_grams": {
+        "wood": 53322,
+        "iron": 136,
+        "cotton_cloth": 0
+      },
+      "sha256": "5b398f4144cb8b68a5fb23f6d97fceaa6b2eac86c9ab5a932c0e459b6be89920",
+      "set_kg": 99.53192936000002,
+      "set_recipe_grams": {
+        "wood": 99402,
+        "iron": 136,
+        "cotton_cloth": 0
+      }
+    },
+    {
+      "kind": "large",
+      "seats": 12,
+      "capacity": 60,
+      "round": false,
+      "width": 3.105,
+      "depth": 0.845,
+      "height": 0.699,
+      "reference": "https://www.metmuseum.org/art/collection/search/3181",
+      "object": "67.243.1,1825-1850; published310.5x84.5x69.9cm; museum explicitly describes12 diners; envelope/capacity reference only",
+      "wood_kg": 87.175629,
+      "iron_kg": 0.1359935999999999,
+      "cotton_cloth_kg": 0.0,
+      "empty_kg": 87.3116226,
+      "recipe_grams": {
+        "wood": 87176,
+        "iron": 136,
+        "cotton_cloth": 0
+      },
+      "sha256": "85e07db7ff2227483793636827ec6636955ab4a843a391b21f9e94845588e370",
+      "set_kg": 179.46043092000002,
+      "set_recipe_grams": {
+        "wood": 179336,
+        "iron": 136,
+        "cotton_cloth": 0
+      }
+    },
+    {
+      "kind": "luxury",
+      "seats": 6,
+      "capacity": 18,
+      "round": false,
+      "reuse": "luxury_furniture/table",
+      "reference": "https://www.metmuseum.org/art/collection/search/3184",
+      "object": "11.60.157a-c",
+      "width": 4.159,
+      "depth": 1.53,
+      "height": 0.737,
+      "surface": 0.737,
+      "date": "1810-1820",
+      "wood_kg": 191.07321120000069,
+      "iron_kg": 1.147446,
+      "cotton_cloth_kg": 0.0,
+      "empty_kg": 192.2206572000007,
+      "recipe_grams": {
+        "wood": 191074,
+        "iron": 1148,
+        "cotton_cloth": 0
+      },
+      "sha256": "c2130f5cbda0574c24a4ae6a57cbe5e6713a9f50cab555947e8f529e1c25aa94",
+      "set_kg": 366.23654004000036,
+      "set_recipe_grams": {
+        "wood": 361936,
+        "iron": 3002,
+        "cotton_cloth": 1308
+      }
+    }
+  ],
+  "textures_reused": [
+    "models/caelum/props/stash/ca_stash_wood.png",
+    "models/caelum/props/stash/ca_stash_metal.png"
+  ]
+}

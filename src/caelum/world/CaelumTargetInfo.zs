@@ -108,6 +108,9 @@ class CaelumTargetInfo : Object play
         let gate=CaelumSewerTravelGate(Subject);
         let rest=CaelumRestFurniture(Subject);
         let sofa=CaelumSofa(Subject);
+        let dining=CaelumPortableDiningTable(Subject);
+        if(dining==null && Subject is 'CaelumDiningBlock')dining=CaelumPortableDiningTable(CaelumDiningBlock(Subject).Table);
+        if(dining!=null){Actions=L(reachable?"CA_DINING_PORTABLE_HINT":"CA_TARGET_APPROACH");return;}
         if(sofa!=null && sofa.PackedItem!=null)
         {Actions=L(reachable?"CA_FURNITURE_REST_PORTABLE_HINT":"CA_TARGET_APPROACH");return;}
         if(rest!=null && rest.PackedItem!=null)

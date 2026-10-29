@@ -133,9 +133,12 @@ class CaelumChestCargo : Inventory
         // La tabla TID pertenece al mapa. Desvincular antes de cambiar de nivel.
         TravelTID=Chest.TID;Chest.ChangeTid(0);
         ContentTravelTIDs.Clear();
+        CaelumStudyUse.ClearContacts(Chest);
         Chest.UnlinkFromWorld();Chest.ChangeStatNum(STAT_TRAVELLING);
         for(Inventory item=Chest.Inv;item!=null;item=item.Inv)
         {
+            let dining=CaelumDiningSetItem(item);if(dining!=null)dining.PreTravelled();
+            CaelumStudyUse.ClearContacts(item);
             ContentTravelTIDs.Push(item.TID);item.ChangeTid(0);
             item.UnlinkFromWorld();item.ChangeStatNum(STAT_TRAVELLING);
         }
@@ -146,12 +149,15 @@ class CaelumChestCargo : Inventory
         if(Chest==null || Owner==null)return;
         Chest.ChangeStatNum(STAT_DEFAULT);
         Chest.SetOrigin(Owner.Pos,false);Chest.LinkToWorld();
+        Chest.FindFloorCeiling();
         Chest.ChangeTid(TravelTID);TravelTID=0;
         int index=0;
         for(Inventory item=Chest.Inv;item!=null;item=item.Inv)
         {
+            item.SetOrigin(Owner.Pos,false);item.FindFloorCeiling();
             item.ChangeStatNum(STAT_INVENTORY);item.LinkToWorld();
             if(index<ContentTravelTIDs.Size())item.ChangeTid(ContentTravelTIDs[index++]);
+            let dining=CaelumDiningSetItem(item);if(dining!=null)dining.Travelled();
         }
         ContentTravelTIDs.Clear();
     }

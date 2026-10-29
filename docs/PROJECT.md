@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.8.39** - 2026-10-27.
+Documentation version: **5.8.40** - 2026-10-28.
+
+## 5.8.40 / #410 - Complete dining sets
+
+Portable small, ordinary, long and luxury table sets now carry actual chairs,
+food and containers through the existing inventory, commerce and hub systems.
+Period dimensions, material calculations, painted icons and native evidence
+are retained in assets/art_source/dining_sets and assets/validation_5840.
+Validation passes1,201 current native assertions and22 original-runtime checks,
+with zero failures/static errors. Author corroboration stays pending until the
+complete V5.8 handoff. Outstanding
+furniture integration, #502 absence/contact adapters and #415-417 remain open.
 
 ## 5.8.39 / #415 - Mean-hit prerequisite
 
