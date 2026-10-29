@@ -1,0 +1,67 @@
+﻿{
+    "label":  "review-sign53c",
+    "runtime":  "review53c",
+    "started_utc":  "2026-10-29T17:07:37.8116028Z",
+    "engine":  "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "engine_sha256":  "EC706C2EA1EF946EEC13BE7B1B461DF8D52EFCD47CAA6C056ED0E0257F7F9FFA",
+    "iwad_sha256":  "10D67824B11025DDD9198E8CFC87CA335EE6E2D3E63AF4180FA9B8A471893255",
+    "package_sha256":  "CE4C2CCC5AC58E707E855C50FF436AFDCA3EFA2D5C440BEFB2B3A2576D89B7EC",
+    "addon_sha256":  "0A68D01A4F3DD1144AB19F09DBFA5E85BF480269CCE41BCB81F4C21B543C3C8D",
+    "initial_config":  "[LastRun]\r\nVersion=225\r\n[GlobalSettings]\r\nvid_preferbackend=1\r\nvid_vsync=false\r\nvid_maxfps=60\r\nvid_activeinbackground=true\r\ni_pauseinbackground=false\r\nvid_lowerinbackground=false\r\ni_soundinbackground=true\r\ncl_capfps=false\r\nvid_fullscreen=false\r\nvid_defwidth=1280\r\nvid_defheight=720\r\nwin_w=1296\r\nwin_h=759\r\nwin_maximized=false\r\nuse_mouse=false\r\nsnd_mastervolume=0.05\r\nlanguage=enu",
+    "arguments":  [
+                      "-noautoload",
+                      "-iwad",
+                      "\"C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD\"",
+                      "-file",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue417-incidents-work\\build\\issue417-incidents\\review53c\\caelum_argenteum_dev.pk3\"",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue417-incidents-work\\build\\issue417-incidents\\author-5853.pk3\"",
+                      "-config",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue417-incidents-work\\build\\issue417-incidents\\review-sign53c.ini\"",
+                      "-savedir",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue417-incidents-work\\build\\issue417-incidents\"",
+                      "-width",
+                      "1280",
+                      "-height",
+                      "720",
+                      "-window",
+                      "-rngseed",
+                      "417",
+                      "-skill",
+                      "2",
+                      "+logfile",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue417-incidents-work\\build\\issue417-incidents\\review-sign53c.txt\"",
+                      "+con_notifytime",
+                      "0",
+                      "-nomouse",
+                      "+map",
+                      "CAR01",
+                      "+exec",
+                      "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue417-incidents-work\\build\\issue417-incidents\\visual53c.cfg\""
+                  ],
+    "command_script":  "bind E +use; bind I ca_inventory_open; bind Tab ca_journal_toggle; bind Y ca_time_skip; wait 105; netevent ca417_encounter 0; wait 70; screenshot review-ambush53c.png; wait 2; netevent careview_ready; \r\n",
+    "cpu":  [
+                {
+                    "Name":  "AMD Ryzen 9 5950X 16-Core Processor            ",
+                    "NumberOfCores":  16,
+                    "NumberOfLogicalProcessors":  32
+                }
+            ],
+    "gpu":  [
+                {
+                    "Name":  "Parsec Virtual Display Adapter",
+                    "DriverVersion":  "0.45.0.0"
+                },
+                {
+                    "Name":  "NVIDIA GeForce RTX 3070 Ti",
+                    "DriverVersion":  "32.0.15.7688"
+                }
+            ],
+    "os":  {
+               "Caption":  "Microsoft Windows 11 Pro",
+               "Version":  "10.0.26200"
+           },
+    "pid":  28680,
+    "stopped_on_result":  "CAREV RESULT",
+    "exit_code":  -1,
+    "finished_utc":  "2026-10-29T17:07:50.2423553Z"
+}

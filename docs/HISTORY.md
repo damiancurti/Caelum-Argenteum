@@ -4,6 +4,18 @@ Documentation version: **5.8.53** - 2026-10-29.
 
 ## 5.8.53 / #417 - Final V5.8 implementation handoff - 2026-10-29
 
+Final incident evidence:112 executed native assertions across seven runs, with
+zero failures. The final review53c package has17,144 source-identical members;
+its only difference from the112-check package is #416's existing-sign MODELDEF
+binding/orientation, verified separately in a native roadside screenshot.
+Evidence:assets/validation_5853/final-results.json and final-visual-package.json.
+The local grouped author terminal prepares34 separate issue scenes; their
+initialization was checked against the same runtime code. Historical fixture
+adaptations preserve current history revision4, the actual MAP03 market startup,
+and a spent daily quota to isolate furnishing persistence from later automatic
+housekeeping. The dedicated housekeeping scene separately passes real work/costs.
+These preparations are agent evidence, not author acceptance.
+
 Saved interval rolls, actual-weather holds and two-hour crew repairs are connected
 to paid travel. Rural ambushes preserve three real human combatants, their T1 gear,
 twenty actual carbine rounds, wear, contamination and remaining loot. Flee/revisit
