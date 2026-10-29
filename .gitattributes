@@ -350,3 +350,7 @@
 /assets/validation_584/native/* whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
 /assets/generators/prepare_map_music_496.py text eol=lf
 /src/music/CA_MUS_*.ogg -text
+
+# Preserve #415 native discovery evidence.
+/assets/validation_585/** -text whitespace=cr-at-eol
+/assets/validation_585/native/* whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
