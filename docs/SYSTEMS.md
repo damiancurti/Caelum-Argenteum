@@ -1,6 +1,37 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.32** - 2026-10-27.
+Documentation version: **5.8.33** - 2026-10-27.
+
+## 5.8.33 / #410 - Ordinary chair and raised cot scale
+
+On 2026-10-27 the author requested correction of the oversized ordinary chair
+and cot, with the cot sleeping surface raised on legs to chair-seat height.
+The sleeping bag remains on the floor. The owned wooden silhouettes and textures
+are retained; no luxury rest bonus or new recovery rule is introduced.
+
+The chair now measures 0.43 x 0.44 x 0.88 m, with its seat at 0.46 m. The cot
+footprint is 1.0414 x 1.9685 m; its four legs support the textile sleeping surface
+at the same 0.46 m, beneath a 0.68 m low headboard. These nominal modeled dimensions
+use the existing 32 map-units/m and native CorrectPixelStretch presentation.
+The chair dimensions/seat height use the published circa-1840 Heymann AH-263
+reference; the cot footprint uses Colonial Williamsburg 1952-658 (1780-1820).
+The author's equal-height requirement supersedes that cot's historical height.
+References establish dimensions only, not a copied design, local provenance or
+external artwork license. Full source URLs are in ASSETS and the source DATA.json.
+
+The existing material densities and modeled member bills give a chair mass of
+7.67906736 kg (7,680 g wood) and cot mass of 28.975334242 kg (27,635 g wood,
+624 g iron, 718 g cotton). These are construction estimates including joint
+overlaps and the fitted textile faces, not measured antique masses. The values
+prepare later acquisition; this correction alone does not add merchandise.
+
+Revision1 updates the same ordinary actor on spawn or its first loaded tick,
+shrinking its collision envelope without replacing inventory, contamination,
+position, dining association or occupant. Native saved-rest pose updates align
+the existing occupant with the new support. Ordinary sitters are centered on the
+smaller seat; sleepers face the headboard, including already occupied saves.
+Exact-class checks preserve luxury,
+sofa and sleeping-bag geometry. No recurring actor scan is added.
 
 ## 5.8.32 / #410 - Luxury rest furniture acquisition
 

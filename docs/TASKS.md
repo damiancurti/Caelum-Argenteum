@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.32** - 2026-10-27.
+Documentation version: **5.8.33** - 2026-10-27.
+
+## 5.8.33 / #410 - Ordinary rest furniture scale
+
+Implement the author's 2026-10-27 correction: human-scale ordinary chair/cot,
+four raised cot legs at chair-seat height, unchanged floor sleeping bag.
+Retain old saves and active occupants, dining identity, luxury/sofa geometry.
+Native85PASS plus9 baseline compatibility checks and static validation pass.
+Evidence: assets/validation_5833; author review CA410-BASIC-REST-01 remains pending.
+Next: ordinary furniture acquisition from the calculated bill and owned painted
+inventory assets, remaining tables/sofas/study acquisition, and the other V5.8 issues.
 
 ## 5.8.32 / #410 - Luxury rest furniture supply and transport
 

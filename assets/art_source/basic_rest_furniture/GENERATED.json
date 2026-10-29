@@ -1,0 +1,43 @@
+{
+  "models": [
+    {
+      "width": 0.43,
+      "depth": 0.44,
+      "height": 0.88,
+      "surface": 0.46,
+      "kind": "chair",
+      "material_kg": {
+        "wood": 7.6790673599999995,
+        "iron": 0.0,
+        "cloth": 0.0
+      },
+      "empty_kg": 7.6790673599999995,
+      "recipe_grams": {
+        "wood": 7680,
+        "iron": 0,
+        "cloth": 0
+      },
+      "sha256": "afcaaa467c5dc2c04ca7e85d52d5dbf0013947c25709f098a606036bef1a3e6f"
+    },
+    {
+      "width": 1.0414,
+      "depth": 1.9685,
+      "height": 0.68,
+      "surface": 0.46,
+      "kind": "bed",
+      "material_kg": {
+        "wood": 27.634208000000005,
+        "iron": 0.623304,
+        "cloth": 0.717822242
+      },
+      "empty_kg": 28.975334242000006,
+      "recipe_grams": {
+        "wood": 27635,
+        "iron": 624,
+        "cloth": 718
+      },
+      "sha256": "a3c535ab417854b151251349b45674cde4a8c3763f82b51993dc51b17fbd9700"
+    }
+  ],
+  "mass_method": "Sum of modeled members, including joint overlaps; textile face area. Design construction estimates, not measured museum masses."
+}

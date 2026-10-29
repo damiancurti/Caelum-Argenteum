@@ -1,6 +1,22 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.8.32** - 2026-10-27.
+Documentation version: **5.8.33** - 2026-10-27.
+
+## 5.8.33 - Ordinary chair and raised cot (#410, 2026-10-27)
+
+The author approved correcting the old oversized ordinary chair/cot and specified
+legs supporting the cot at chair-seat height, while sleeping bags stay on the floor.
+The correction uses documented nineteenth-century dimensions, owned construction
+and textures, revision1 in-place collision migration and native saved-rest pose
+updates. Old models remain in the art sources; no map geometry or bag mesh changes.
+Validation:85 literal native PASS on final33b plus9 original-runtime
+compatibility checks; zero failures and zero static errors. All17,000 packaged
+source members match;14,039 prior map/art members are byte-identical except the
+two intentionally replaced chair/cot meshes. Deterministic generation, native
+Use, full pawn collision, active occupied5.8.32 migration/rollback, current save/
+hub and original5.8.26 reading progress passed. Native Spanish views were
+inspected, including the corrected seat center/headboard direction. Evidence:
+assets/validation_5833. No author acceptance or display-FPS result is inferred. CA410-BASIC-REST-01 is pending the grouped V5.8 handoff.
 
 ## 5.8.32 - Luxury rest furniture acquisition (#410, 2026-10-27)
 

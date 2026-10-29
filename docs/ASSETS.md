@@ -1,6 +1,24 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.8.32** - 2026-10-27.
+Documentation version: **5.8.33** - 2026-10-27.
+
+## 5.8.33 / #410 - Human-scale chair and raised cot
+
+The author requested this ordinary furniture correction on 2026-10-27.
+`assets/art_source/basic_rest_furniture/DATA.json` owns dimension references and
+all construction members; `GENERATED.json` records masses/material bills/hashes.
+`assets/generators/generate_basic_rest_furniture.py` deterministically generates
+the two owned models and runtime dimension constants. The older rest generator
+now delegates these two meshes to that source; sleeping-bag outputs are unchanged.
+Original chair/cot models are retained beside the source as `legacy-*.obj` and in Git.
+
+Dimension-only references: [Heymann AH-263, circa1840](https://www.antik-heymann.de/en/antiquitaeten/stuehle/biedermeier-stuhl-kirschbaum-619.html)
+and [Colonial Williamsburg folding cot1952-658,1780-1820](https://emuseum.colonialwilliamsburg.org/objects/23/cot-folding).
+No external image, model or texture is copied. The chair keeps three horizontal
+back rails; the cot keeps four straight legs, low wooden headboard and textile
+support. Its sleeping surface is raised to the chair's seat, as requested.
+The existing owned wood/iron/canvas textures remain byte-identical.
+Native render/pose review belongs to validation_5833; author acceptance is pending.
 
 ## 5.8.32 / #410 - Painted luxury furniture inventory items
 

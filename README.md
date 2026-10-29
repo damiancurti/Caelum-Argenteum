@@ -6,8 +6,17 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.8.32.** Obtain and update the complete repository, validate
+**Current release: 5.8.33.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+## 5.8.33 - Ordinary chair and raised cot (#410)
+
+The ordinary chair/cot use documented human dimensions; the cot rests on four
+legs with its sleeping surface at chair-seat height. Sleeping bags stay on the
+floor. Old actors, occupied saves and native rest keep their identity.
+Validation:85 native PASS plus9 original-runtime checks; zero static errors.
+Evidence: assets/validation_5833; author check CA410-BASIC-REST-01 is pending.
+V5.8 remains incomplete; grouped manual handoff waits for the remaining work.
 
 ## 5.8.32 - Portable luxury rest furniture (#410)
 
