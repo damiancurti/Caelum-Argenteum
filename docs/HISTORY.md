@@ -2,6 +2,19 @@
 
 Documentation version: **5.11.4** - 2026-10-30.
 
+Author feedback2026-10-30: CA432-01 (origin5.11.2/#432) passed; CA430-01
+(origin5.11.4/#430) inventory, trust, equipment and revival passed with
+movement/animation/Leonor exceptions. CA429-01 was not accepted: one soldier
+became stuck at a corridor exit. Keep correction retests pending; no merge.
+The author approved6m/3m run/walk thresholds. Correct passive animation,
+per-tic follow, escort precedence and stairs using existing movement/Air rules.
+Doors retain permissions with a shared peer registry, not per-request scans.
+Native correction checks: two stair scenarios19+19, prisoners14, single-body
+descent5, door permissions/reload7+3, city bootstrap1, moving save/reload4+10,
+ranged combat14 PASS. Evidence: validation_v5_11_4/motion-results.json.
+The first flat reload fixture wrongly expected a walk transition while all
+formation slots remained beyond3m; moving the leader within3m verifies it.
+
 ## 5.11.4 - Companion implementation (#430, 2026-10-30)
 
 Final package verification: administration47, gifts83, legacy migration7,

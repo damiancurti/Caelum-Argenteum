@@ -24,6 +24,7 @@ def main():
     parser.add_argument("--checks", type=Path)
     parser.add_argument("--prefix", default="CA428")
     parser.add_argument("--commands", default="netevent ca428_seed; wait 230")
+    parser.add_argument("--timeout", type=float, default=90, help="Maximum scenario wall time in seconds")
     args = parser.parse_args()
     running = subprocess.check_output(["powershell", "-NoProfile", "-Command",
         "Get-Process | Where-Object ProcessName -eq 'gzdoom' | Select-Object -ExpandProperty Id"], text=True)
@@ -68,7 +69,7 @@ def main():
     while process.poll() is None:
         text = log.read_text(encoding="utf-8", errors="replace") if log.exists() else ""
         if any(token in text for token in ("Script error", "VM execution aborted", "Execution could not continue",
-                "errors while parsing", "DIED WITH FATAL ERROR", "Unknown command")) or time.time() - started > 90:
+                "errors while parsing", "DIED WITH FATAL ERROR", "Unknown command")) or time.time() - started > args.timeout:
             process.terminate(); failed = True
             break
         time.sleep(0.5)

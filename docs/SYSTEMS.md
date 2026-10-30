@@ -2,6 +2,18 @@
 
 Documentation version: **5.11.4** - 2026-10-30.
 
+Companion correction2026-10-30: run beyond6m, return to walking within3m,
+using the companion's own existing speed, equipment, Air and penalties.
+Drive passive locomotion each native Tick; preserve attack/pain/reload cadence.
+Explicit follow takes precedence over prisoner idle escort and anonymous noise;
+identified threats still take combat priority. Mansion routing reuses Palomo's
+fifteen authored nodes and bounded local collision/navigation, without teleport.
+Door peers use one shared typed bootstrap per map, then event registration;
+late group assignment after Spawn updates the cache. No repeated global scan. The first bootstrap is owned by the map event handler,
+visits the map thinker population once and stores only door leaves; later
+requests inspect only their peer group. Private native timing:0.5274ms in
+MAP03,0.0075ms in the empty-room fixture. No frame-presentation claim.
+
 ## Companion contract and implementation (5.11.4, #430)
 
 The authored roster is the four mansion residents, four freed sewer prisoners

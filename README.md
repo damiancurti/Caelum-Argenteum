@@ -19,7 +19,8 @@ was demonstrated. Large siege stalls remain; this is not a60-FPS claim.
 
 Run `assets/validation_v5_11_4/launch_manual.ps1` from the companion branch for
 the numbered local test terminal. Outstanding checks are in `pending_test.txt`.
-No V5.11 author acceptance, issue closure or merge is claimed.
+Other author checks passed on2026-10-30; companion movement and formation
+corrections remain for retest. No issue closure or merge is claimed.
 
 **V5.10 is complete and author-accepted (2026-10-30).** Issues #425-428 are
 closed and their focused PRs #570-573 are merged into main with commit ancestry

@@ -12,4 +12,6 @@ class CaelumCompanionData : Object
     const FOLLOW=0;
     const WAIT=1;
     const DISMISSED=2;
+    const RUN_DISTANCE_METERS=6.0;
+    const WALK_DISTANCE_METERS=3.0;
 }

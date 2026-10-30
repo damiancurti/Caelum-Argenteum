@@ -2,11 +2,11 @@
 
 Documentation version: **5.11.4** - 2026-10-30.
 
-**V5.11 ready (5.11.4):** implementation complete; author checks pending.
-#431/PR575; #429/PR576; #432/PR577; #433/PR578 (candidate not adopted).
-#430/PR579: companions/gear/provenance; validation_v5_11_4; TASKS.
-Manual terminal: assets/validation_v5_11_4/launch_manual.ps1; pending_test.txt.
-Unaccepted/unmerged. Keep-awake released on return, 2026-10-30.
+**V5.11 corrections (5.11.4):** companion motion/formation retests remain. #429/PR576; #430/PR579. New reports:
+#580 rental dialogue, #581 central-house workshop/cot, #582 rat immunity.
+Run/walk6m/3m; existing stair nodes/local collision.
+Evidence: validation_v5_11_4. Pending: pending_test.txt. Not merged.
+#431/PR575 profiling; #432/PR577 accepted; #433/PR578 candidate not adopted.
 **V5.10 accepted:** #425-428/PR570-573, CA425-01..CA428-01; HISTORY.
 Siege stalls persist. Keep-awake released.
 

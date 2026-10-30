@@ -77,6 +77,10 @@ class CaelumPrisonerUnitario : CaelumCaella
     EscortIdle:
         PUNI A -1;
         Stop;
+    CompanionWalk:
+        Goto EscortFollow;
+    CompanionIdle:
+        Goto EscortIdle;
     }
 }
 
@@ -156,6 +160,10 @@ class CaelumPrisonerFederal : CaelumRonnie
     EscortIdle:
         PFED A -1;
         Stop;
+    CompanionWalk:
+        Goto EscortFollow;
+    CompanionIdle:
+        Goto EscortIdle;
     }
 }
 
@@ -235,6 +243,10 @@ class CaelumPrisonerBestia : CaelumRulo
     EscortIdle:
         PBES A -1;
         Stop;
+    CompanionWalk:
+        Goto EscortFollow;
+    CompanionIdle:
+        Goto EscortIdle;
     }
 }
 
@@ -314,5 +326,9 @@ class CaelumPrisonerTarot : CaelumArgento
     EscortIdle:
         PTAR A -1;
         Stop;
+    CompanionWalk:
+        Goto EscortFollow;
+    CompanionIdle:
+        Goto EscortIdle;
     }
 }

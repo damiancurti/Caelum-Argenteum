@@ -2,6 +2,12 @@
 
 Documentation version: **5.11.4** - 2026-10-30.
 
+Author feedback2026-10-30 accepted CA432-01 and nonmovement portions of
+CA430-01. Companion motion/animation/Leonor and corridor exit still need retest.
+The correction uses per-tic passive locomotion, approved6m/3m running thresholds,
+existing mansion stair nodes and local navigation. #580-582 separately address
+rental progression, central-house placement and rat disease immunity.
+
 ## V5.11 active - 5.11.4 (#429-433, 2026-10-30)
 
 - #431: subsystem profiling and current/full35/reduced5/simplified diagnostic
