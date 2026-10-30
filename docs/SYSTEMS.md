@@ -1,6 +1,49 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.10.2** - 2026-10-30.
+Documentation version: **5.10.3** - 2026-10-30.
+
+## 5.10.3 / #428 - Audible reports and leader orders
+
+Approved communication uses the existing shout range/Insight/obstruction rules.
+Only identified threats, recorded points and their original observation times
+are transmitted. Same real group, confirmed faction or authored allied faction
+is required; the current faction matrix contains no cross-faction alliances.
+Generic friendliness and clothing do not establish membership. A report expires
+30 active seconds after observation; forwarding never renews that timestamp.
+Each speaker may shout at most once per five active seconds for new evidence.
+An older or duplicate report cannot overwrite a fresher point. Provenance,
+report throttles and order ages are saved under communication revision 1.
+
+Existing siege groups retain their elected leader. Members report to that
+leader only when that threat is unknown to the leader, who shouts orders to
+audible eligible listeners. Each member chooses
+the nearest still-valid ordered target relative to its own position and the
+latest point it actually knows; unseen targets are investigated, never tracked.
+This group rule supersedes retaining a current target when a nearer valid order
+exists. The >=500 shared cache supplies candidates only, never private knowledge.
+Orders must actually arrive; roster membership alone does not authorize attack.
+Other existing real parties/factions can exchange warnings without inventing a
+new leader or player command interface. Anonymous suspicion is never reported.
+
+When an existing retreat condition applies and nobody can receive the warning,
+an NPC may seek the last position of an eligible ally it observed during the
+previous 30 active seconds. Without that evidence normal retreat continues.
+The warning is delivered only within actual audibility. Existing protected
+story/escort duties remain authoritative. No global actor query is added:
+visual ally observation reuses local candidate enumeration, and actual shouts
+use bounded spatial delivery plus the existing typed unlinked-guard fallback.
+Pre-communication saves retain their existing private evidence and begin with
+no invented reports/orders. Original save/package rollback remains available.
+The high-density command roster shares one bounded spatial candidate query per
+group/tic, padded for one tic of member motion; the final observer-specific
+visibility and order gates still run. Repeated acquisition within the same tic
+reuses that observer's candidate enumeration without caching an attack permit.
+Unseen attackers march toward the existing authored gate point. The old live
+defender fallback cannot stand in for a route point or disclose hidden motion.
+Full-package communication/save/migration/rollback: 53 assertions pass.
+Combined #425-427 regression: 91 assertions pass. Author review remains pending;
+campaign measurements and their presentation limits are recorded in HISTORY
+and assets/validation_5103/summary.json.
 
 ## 5.10.2 / #427 - Private memory and point investigation
 
