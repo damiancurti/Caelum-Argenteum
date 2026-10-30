@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.11.1** - 2026-10-30.
+Documentation version: **5.11.2** - 2026-10-30.
 
 ## 5.11.0 / #431 - Profiling provenance
 

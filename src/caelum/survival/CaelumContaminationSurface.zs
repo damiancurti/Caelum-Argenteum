@@ -85,11 +85,24 @@ class CaelumContaminationTile : Object play
             if(end<=Stamp)end=now;
             if(!WeatherReady || WeatherDay!=day || WeatherMinute!=minute)
             {
-                outside.EvaluateRegion(Region,day,minute*(CaelumWorldClock.TicsPerHour()/60),Seed);
-                local.ApplyShelter(outside,Shelter,Profile);
-                Rain=Covered?0:local.PrecipitationMmPerHour;
-                Ambient=local.Available?CaelumContaminationRules.Ambient(Reference,
-                    local.AirTemperatureC,local.RelativeHumidityPercent,Rain,!Covered):-1;
+                // #432: el clima historico es comun; la concentracion y el
+                // intervalo siguen siendo propios de cada zona. La cache
+                // existente acota memoria y recalcula al expulsar una fecha.
+                let world=CaelumContaminationWorld.Get();
+                if(world!=null)
+                {
+                    if(world.HistoryWeather==null)world.HistoryWeather=new('CaelumContaminationWeatherCache');
+                    let history=world.HistoryWeather.GetTileDay(self,day);history.Sample(minute);
+                    Rain=history.Rain[minute];Ambient=history.Ambient[minute];
+                }
+                else
+                {
+                    outside.EvaluateRegion(Region,day,minute*(CaelumWorldClock.TicsPerHour()/60),Seed);
+                    local.ApplyShelter(outside,Shelter,Profile);
+                    Rain=Covered?0:local.PrecipitationMmPerHour;
+                    Ambient=local.Available?CaelumContaminationRules.Ambient(Reference,
+                        local.AirTemperatureC,local.RelativeHumidityPercent,Rain,!Covered):-1;
+                }
                 WeatherDay=day;WeatherMinute=minute;WeatherReady=true;
             }
             if(Ambient>=0)Concentration=Evolve(Concentration,Ambient,Rain,end-Stamp);
@@ -165,6 +178,11 @@ class CaelumContaminationMap : Object play
     Array<CaelumContaminationTile> Tiles;
     Array<int> Buckets;
     transient CaelumWeatherSample Outside,Local;
+    transient Array<CaelumContaminationTile> Pristine;
+    transient int PristineTic;
+    transient bool PristineReady;
+    // Limite tecnico de resultados derivados por tic, no de zonas guardadas.
+    const PRISTINE_CACHE_LIMIT=32;
     // Tamaño del índice, no un límite de población ni de estado guardado.
     const BUCKET_COUNT=1024;
     static int Hash(int kind,int surface,int side,int x,int y)
@@ -187,9 +205,36 @@ class CaelumContaminationMap : Object play
     }
     void Sync(CaelumContaminationTile tile,double now)
     {
+        if(now<=tile.Stamp)return;
+        bool freshTile=tile.Stamp==Epoch && tile.Concentration==0;
+        if(freshTile)
+        {
+            if(!PristineReady || PristineTic!=level.time)
+            {Pristine.Clear();PristineTic=level.time;PristineReady=true;}
+            for(int i=0;i<Pristine.Size();i++)
+            {
+                let sample=Pristine[i];
+                if(sample.Stamp!=now || sample.Profile!=tile.Profile || sample.Region!=tile.Region
+                    || sample.Seed!=tile.Seed || sample.Shelter!=tile.Shelter
+                    || sample.Reference!=tile.Reference || sample.Covered!=tile.Covered)continue;
+                // Copia de un resultado determinista desde el mismo origen
+                // limpio; nunca comparte concentraciones vivas ni contactos.
+                tile.Stamp=sample.Stamp;tile.Concentration=sample.Concentration;
+                tile.WeatherReady=sample.WeatherReady;tile.WeatherDay=sample.WeatherDay;
+                tile.WeatherMinute=sample.WeatherMinute;tile.Rain=sample.Rain;tile.Ambient=sample.Ambient;
+                return;
+            }
+        }
         if(Outside==null)Outside=new('CaelumWeatherSample');
         if(Local==null)Local=new('CaelumWeatherSample');
         tile.Sync(now,CivilOffset,Outside,Local);
+        if(freshTile)
+        {
+            let sample=tile.Copy();sample.WeatherReady=tile.WeatherReady;sample.WeatherDay=tile.WeatherDay;
+            sample.WeatherMinute=tile.WeatherMinute;sample.Rain=tile.Rain;sample.Ambient=tile.Ambient;
+            if(Pristine.Size()>=PRISTINE_CACHE_LIMIT)Pristine.Delete(0);
+            Pristine.Push(sample);
+        }
     }
     void SyncContact(CaelumContaminationTile tile,double now,double seconds,double ambient,double rain)
     {

@@ -1,6 +1,36 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.11.1** - 2026-10-30.
+Documentation version: **5.11.2** - 2026-10-30.
+
+## 5.11.2 - Shared deterministic NPC costs (#432, 2026-10-30)
+
+Historical contamination samples reuse the existing bounded tile-day weather
+cache. A map-local, transient, maximum32-entry cache shares the result for
+identical pristine cells sampled at the same tic, epoch and environment; later
+contact, concentration and rain state stay independent. Pure NPC Insight and
+Agility curve results are cached by their input attribute, including same-tic
+changes. Player effects and target/evidence decisions are not cached by this patch.
+Save state remains authoritative; caches rebuild after loading.
+
+Exact-reference full-package native tests:130 PASS, plus3 reload assertions.
+They cover midnight/day-cache eviction, independent concentrations, identical
+pristine intervals and same-tic attribute changes. Static validation: zero errors.
+Evidence: assets/validation_v5_11_2/summary.json and compressed native logs.
+
+On the accepted5.10.3 baseline, pristine caching repeats35.763/35.835 ms mean
+simulation versus a matched40.174 ms reference. Historical climate sharing alone
+regressed to41.339 ms and is not an independently accepted improvement. The first
+attribute-cache diagnostic overlapped worktree I/O; no causal claim relies on it.
+The final full5.11.2 package, including formations, averages43.082 ms (p95 64.982,
+p99 71.644), compared with5.11.1 at45.956/68.209/72.856 with the same1401 ->1588
+census. Render callbacks average729.258 ms (p99 790.578), versus787.698/850.620.
+The modest improvement does not solve large-siege stalls.
+
+Final mansion/sewer/city/ground callbacks mean/p99 ms:16.121/19.224,
+5.535/7.315,8.408/11.184,11.500/15.393. Simulation stays near28.57 ms between
+active ticks in these peaceful scenes. These callbacks are not displayed frames;
+no new ETW capture or60FPS acceptance is claimed. Saved authoritative values
+are unchanged and all added caches are transient. Author acceptance is pending.
 
 ## 5.11.1 - Formations and bounded siege membership (#429, 2026-10-30)
 

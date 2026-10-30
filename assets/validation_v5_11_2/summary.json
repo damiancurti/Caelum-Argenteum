@@ -1,0 +1,1044 @@
+{
+  "issue": 432,
+  "release": "5.11.2",
+  "author_acceptance": false,
+  "runs": {
+    "pristine-b": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\checks.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\pristine-b.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\pristine-b.log",
+        "+map",
+        "MAP03",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\pristine-b.cfg"
+      ],
+      "pid": 52172,
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3": "4c9830777147237c5797c646d10bd1f00f2379369ddbe50134049dc64f13818d",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\checks.pk3": "d79ce18fa015556588e4942511fe7097736bbc2c007765ecdd5c60f5f4ac3a65"
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 11.154,
+      "failures": [],
+      "pass_count": 128,
+      "log": {
+        "file": "evidence\\pristine-b.log.gz",
+        "sha256": "b22e8d8ad712ef77ea9bee9c8ba9418cea0ffe1efd8f3e5fad0fb157184ea568"
+      }
+    },
+    "pristine-reload": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\checks.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\pristine-reload.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\pristine-reload.log",
+        "-loadgame",
+        "ca432-pristine-b.zds",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\pristine-reload.cfg"
+      ],
+      "pid": 54528,
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3": "4c9830777147237c5797c646d10bd1f00f2379369ddbe50134049dc64f13818d",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\checks.pk3": "d79ce18fa015556588e4942511fe7097736bbc2c007765ecdd5c60f5f4ac3a65"
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 10.181,
+      "failures": [],
+      "pass_count": 2,
+      "log": {
+        "file": "evidence\\pristine-reload.log.gz",
+        "sha256": "90e11cc7a9773fd994e29980d12bb693a4e0c9afd22ea38208244c1bd70fefc1"
+      }
+    },
+    "visual-cache": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\checks.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\visual-cache.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\visual-cache.log",
+        "+map",
+        "MAP03",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\visual-cache.cfg"
+      ],
+      "pid": 41752,
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3": "4c9830777147237c5797c646d10bd1f00f2379369ddbe50134049dc64f13818d",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\checks.pk3": "712c14d2d7e93a106bfe1ef2d270af75ec832b662e2932751974bf92e8b7ce09"
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 10.646,
+      "failures": [],
+      "pass_count": 130,
+      "log": {
+        "file": "evidence\\visual-cache.log.gz",
+        "sha256": "273c97465c2cb4a07b5442faeca38d05b153ef6f004d7cd6dc5e538e76a438b6"
+      }
+    },
+    "visual-reload": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\checks.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\visual-reload.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\visual-reload.log",
+        "-loadgame",
+        "ca432-visual-cache.zds",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\visual-reload.cfg"
+      ],
+      "pid": 54036,
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3": "4c9830777147237c5797c646d10bd1f00f2379369ddbe50134049dc64f13818d",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\checks.pk3": "712c14d2d7e93a106bfe1ef2d270af75ec832b662e2932751974bf92e8b7ce09"
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 9.653,
+      "failures": [],
+      "pass_count": 3,
+      "log": {
+        "file": "evidence\\visual-reload.log.gz",
+        "sha256": "d721364093ad60c4408d0e53244b29068f68f234ad4f95f70cec47f3ea3cf427"
+      }
+    },
+    "final-checks": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\checks-full.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\final-checks.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\final-checks.log",
+        "+map",
+        "MAP01",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\final-checks.cfg"
+      ],
+      "pid": 56152,
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\final\\caelum_argenteum_dev.pk3": "13fd400fc6779aa96b5b3c39e32fbd0b45522c3df82c8af01f7315f0ee929a05",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\checks-full.pk3": "265ff07014254badac2c720b229bf6338025f60d2b805eda00efb9f99f4d91d0"
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 10.745,
+      "failures": [],
+      "pass_count": 130,
+      "log": {
+        "file": "evidence\\final-checks.log.gz",
+        "sha256": "d8a13e85890fc0da28f0decbd45148a9b9ebe6ba611c322481b5472cba02b4a7"
+      }
+    },
+    "final-reload": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\checks-full.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\final-reload.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\final-reload.log",
+        "-loadgame",
+        "ca432-final.zds",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\final-reload.cfg"
+      ],
+      "pid": 44504,
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\final\\caelum_argenteum_dev.pk3": "13fd400fc6779aa96b5b3c39e32fbd0b45522c3df82c8af01f7315f0ee929a05",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\checks-full.pk3": "265ff07014254badac2c720b229bf6338025f60d2b805eda00efb9f99f4d91d0"
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 8.72,
+      "failures": [],
+      "pass_count": 3,
+      "log": {
+        "file": "evidence\\final-reload.log.gz",
+        "sha256": "84516e05a34ce6fb62da83f81be15d8480501808fe26990faad27e1e8692aa9e"
+      }
+    }
+  },
+  "performance": {
+    "surface-cache": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\surface-cache.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\surface-cache.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\surface-cache.ini",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\surface-cache.log",
+        "+map",
+        "MAP03",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\surface-cache.cfg"
+      ],
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3": "4c9830777147237c5797c646d10bd1f00f2379369ddbe50134049dc64f13818d",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\surface-cache.pk3": "00a6d64b179954ef1a3ea267bd2a4b5465f73f6129b79d4d469369a419763e93",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\surface-cache.pk3": "76cd611cd9ec5cc28da5a908b1cc20a1ac12cf747d41f1a70d78f2b78a29b1ce"
+      },
+      "started_utc": "2026-10-30T17:25:18.208809+00:00",
+      "pid": 51064,
+      "ended_utc": "2026-10-30T17:27:54.030385+00:00",
+      "window_utc": {
+        "BEGIN": {
+          "after_utc": "2026-10-30T17:27:21.960646+00:00",
+          "before_utc": "2026-10-30T17:27:22.467628+00:00",
+          "after_qpc_ms": 1239175667.5367,
+          "before_qpc_ms": 1239176175.4723
+        },
+        "END": {
+          "after_utc": "2026-10-30T17:27:51.009396+00:00",
+          "before_utc": "2026-10-30T17:27:51.516736+00:00",
+          "after_qpc_ms": 1239204716.6233,
+          "before_qpc_ms": 1239205224.1857002
+        }
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 155.822,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 41.33897857142857,
+        "p95_ms": 57.7794,
+        "p99_ms": 64.5414,
+        "max_ms": 73.6232
+      },
+      "render_callbacks": {
+        "samples": 36,
+        "mean_ms": 699.0368305555555,
+        "p95_ms": 743.8568,
+        "p99_ms": 794.2517,
+        "max_ms": 872.6158
+      },
+      "census": [
+        "CA510 CENSUS start alive=1500 attackers=900 defenders=600 groups=14 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00",
+        "CA510 CENSUS end alive=1598 attackers=998 defenders=600 groups=14 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00"
+      ],
+      "limit": "RenderOverlay callbacks do not measure displayed frames; presentation capture remains separate.",
+      "log": {
+        "file": "evidence\\surface-cache.log.gz",
+        "sha256": "76f893d6d15c275b170951f517292e084c011556330521b595eab156fe19aa2d"
+      },
+      "config": {
+        "file": "evidence\\surface-cache.ini.gz",
+        "sha256": "b3a6a4a2f10e41bc27ed609980f48723737d7033a009a658f393e3b2be857b38"
+      }
+    },
+    "pristine-cache": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\pristine-cache.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\pristine-cache.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\pristine-cache.ini",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\pristine-cache.log",
+        "+map",
+        "MAP03",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\pristine-cache.cfg"
+      ],
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3": "4c9830777147237c5797c646d10bd1f00f2379369ddbe50134049dc64f13818d",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\pristine-cache.pk3": "00a6d64b179954ef1a3ea267bd2a4b5465f73f6129b79d4d469369a419763e93",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\pristine-cache.pk3": "8563cc29140d0777dccfa9f8dd9ae6ec566c4f8a836f57aba0b88ad04fcb88ae"
+      },
+      "started_utc": "2026-10-30T17:38:58.325546+00:00",
+      "pid": 7228,
+      "ended_utc": "2026-10-30T17:41:21.620732+00:00",
+      "window_utc": {
+        "BEGIN": {
+          "after_utc": "2026-10-30T17:40:53.057306+00:00",
+          "before_utc": "2026-10-30T17:40:53.565843+00:00",
+          "after_qpc_ms": 1239986764.4579,
+          "before_qpc_ms": 1239987272.5817
+        },
+        "END": {
+          "after_utc": "2026-10-30T17:41:18.101754+00:00",
+          "before_utc": "2026-10-30T17:41:18.608682+00:00",
+          "after_qpc_ms": 1240011808.8415,
+          "before_qpc_ms": 1240012316.2211
+        }
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 143.295,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 35.76335485714286,
+        "p95_ms": 50.5123,
+        "p99_ms": 57.0278,
+        "max_ms": 60.4838
+      },
+      "render_callbacks": {
+        "samples": 36,
+        "mean_ms": 612.3673194444444,
+        "p95_ms": 664.0413,
+        "p99_ms": 691.0819,
+        "max_ms": 707.723
+      },
+      "census": [
+        "CA510 CENSUS start alive=1500 attackers=900 defenders=600 groups=14 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00",
+        "CA510 CENSUS end alive=1598 attackers=998 defenders=600 groups=14 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00"
+      ],
+      "limit": "RenderOverlay callbacks do not measure displayed frames; presentation capture remains separate.",
+      "log": {
+        "file": "evidence\\pristine-cache.log.gz",
+        "sha256": "f0157539e85b4c5d9bc14655333ab906e4b1a1696d59d9c3ca129bebb0c447d4"
+      },
+      "config": {
+        "file": "evidence\\pristine-cache.ini.gz",
+        "sha256": "f4383fcaa2f72418fef74eb9c3cf89736a4a3c39e3d3e2c57f319616ef31afda"
+      }
+    },
+    "matched-current-b": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\matched-current-b.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\matched-current-b.ini",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\matched-current-b.log",
+        "+map",
+        "MAP03",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\matched-current-b.cfg"
+      ],
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3": "4c9830777147237c5797c646d10bd1f00f2379369ddbe50134049dc64f13818d",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\matched-current-b.pk3": "00a6d64b179954ef1a3ea267bd2a4b5465f73f6129b79d4d469369a419763e93"
+      },
+      "started_utc": "2026-10-30T17:47:04.430873+00:00",
+      "pid": 37396,
+      "ended_utc": "2026-10-30T17:49:38.241054+00:00",
+      "window_utc": {
+        "BEGIN": {
+          "after_utc": "2026-10-30T17:49:06.673760+00:00",
+          "before_utc": "2026-10-30T17:49:07.183016+00:00",
+          "after_qpc_ms": 1240480380.8844001,
+          "before_qpc_ms": 1240480889.9052
+        },
+        "END": {
+          "after_utc": "2026-10-30T17:49:34.722196+00:00",
+          "before_utc": "2026-10-30T17:49:35.229747+00:00",
+          "after_qpc_ms": 1240508429.3097,
+          "before_qpc_ms": 1240508936.7646
+        }
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 153.81,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 40.17373857142857,
+        "p95_ms": 55.7786,
+        "p99_ms": 61.0441,
+        "max_ms": 65.0602
+      },
+      "render_callbacks": {
+        "samples": 36,
+        "mean_ms": 685.2258388888889,
+        "p95_ms": 758.6621,
+        "p99_ms": 774.5344,
+        "max_ms": 847.2802
+      },
+      "census": [
+        "CA510 CENSUS start alive=1500 attackers=900 defenders=600 groups=14 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00",
+        "CA510 CENSUS end alive=1598 attackers=998 defenders=600 groups=14 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00"
+      ],
+      "limit": "RenderOverlay callbacks do not measure displayed frames; presentation capture remains separate.",
+      "log": {
+        "file": "evidence\\matched-current-b.log.gz",
+        "sha256": "3d184764acb21c17634f009fc264d09f26e7d495f804fde0972578dd5605f288"
+      },
+      "config": {
+        "file": "evidence\\matched-current-b.ini.gz",
+        "sha256": "43cf1060d825c94eb9e03768c2ce50ed0d98894e9113aed8bbfd09bd57d5adb6"
+      }
+    },
+    "pristine-cache-b": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\pristine-cache-b.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\pristine-cache.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\pristine-cache-b.ini",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\pristine-cache-b.log",
+        "+map",
+        "MAP03",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\pristine-cache-b.cfg"
+      ],
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3": "4c9830777147237c5797c646d10bd1f00f2379369ddbe50134049dc64f13818d",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\pristine-cache-b.pk3": "00a6d64b179954ef1a3ea267bd2a4b5465f73f6129b79d4d469369a419763e93",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\pristine-cache.pk3": "8563cc29140d0777dccfa9f8dd9ae6ec566c4f8a836f57aba0b88ad04fcb88ae"
+      },
+      "started_utc": "2026-10-30T17:50:49.529436+00:00",
+      "pid": 26472,
+      "ended_utc": "2026-10-30T17:53:12.324566+00:00",
+      "window_utc": {
+        "BEGIN": {
+          "after_utc": "2026-10-30T17:52:44.262364+00:00",
+          "before_utc": "2026-10-30T17:52:44.770578+00:00",
+          "after_qpc_ms": 1240697969.4745,
+          "before_qpc_ms": 1240698477.601
+        },
+        "END": {
+          "after_utc": "2026-10-30T17:53:09.306731+00:00",
+          "before_utc": "2026-10-30T17:53:09.813313+00:00",
+          "after_qpc_ms": 1240723013.8565,
+          "before_qpc_ms": 1240723520.8325
+        }
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 142.795,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 35.83520371428571,
+        "p95_ms": 49.7075,
+        "p99_ms": 57.2839,
+        "max_ms": 62.2608
+      },
+      "render_callbacks": {
+        "samples": 36,
+        "mean_ms": 613.6813083333333,
+        "p95_ms": 648.6986,
+        "p99_ms": 683.226,
+        "max_ms": 707.922
+      },
+      "census": [
+        "CA510 CENSUS start alive=1500 attackers=900 defenders=600 groups=14 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00",
+        "CA510 CENSUS end alive=1598 attackers=998 defenders=600 groups=14 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00"
+      ],
+      "limit": "RenderOverlay callbacks do not measure displayed frames; presentation capture remains separate.",
+      "log": {
+        "file": "evidence\\pristine-cache-b.log.gz",
+        "sha256": "794adf4e182f51272e613e9b33b12a8f0ae5a945f3445e1b7f0ebe48bde16ef5"
+      },
+      "config": {
+        "file": "evidence\\pristine-cache-b.ini.gz",
+        "sha256": "b5234d7cccefc8a0b6be4b4baab5cfddba72f6d05d39ff04bb0ae8668c3c01c1"
+      }
+    },
+    "visual-cache": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\visual-cache.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\visual-cache.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\visual-cache.ini",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\visual-cache.log",
+        "+map",
+        "MAP03",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\visual-cache.cfg"
+      ],
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3": "4c9830777147237c5797c646d10bd1f00f2379369ddbe50134049dc64f13818d",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\visual-cache.pk3": "00a6d64b179954ef1a3ea267bd2a4b5465f73f6129b79d4d469369a419763e93",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\visual-cache.pk3": "fc966c3a9602d37625227af4b6e096e2ad9e9683f892309c0301eaa7929df40e"
+      },
+      "started_utc": "2026-10-30T18:19:41.819177+00:00",
+      "pid": 39732,
+      "ended_utc": "2026-10-30T18:22:05.612850+00:00",
+      "window_utc": {
+        "BEGIN": {
+          "after_utc": "2026-10-30T18:21:38.050473+00:00",
+          "before_utc": "2026-10-30T18:21:38.558311+00:00",
+          "after_qpc_ms": 1242431757.5179,
+          "before_qpc_ms": 1242432265.5381
+        },
+        "END": {
+          "after_utc": "2026-10-30T18:22:02.092296+00:00",
+          "before_utc": "2026-10-30T18:22:02.600612+00:00",
+          "after_qpc_ms": 1242455799.4407,
+          "before_qpc_ms": 1242456308.1216
+        }
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 143.794,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 34.71254042857143,
+        "p95_ms": 47.9017,
+        "p99_ms": 52.8296,
+        "max_ms": 72.0961
+      },
+      "render_callbacks": {
+        "samples": 36,
+        "mean_ms": 593.7221944444444,
+        "p95_ms": 648.1866,
+        "p99_ms": 651.5254,
+        "max_ms": 664.21
+      },
+      "census": [
+        "CA510 CENSUS start alive=1500 attackers=900 defenders=600 groups=14 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00",
+        "CA510 CENSUS end alive=1598 attackers=998 defenders=600 groups=14 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00"
+      ],
+      "limit": "RenderOverlay callbacks do not measure displayed frames; presentation capture remains separate.",
+      "log": {
+        "file": "evidence\\visual-cache.log.gz",
+        "sha256": "dcec814633b67d684a61819d791cf98c78f84c2c29a39f9dc142a0851d0e711e"
+      },
+      "config": {
+        "file": "evidence\\visual-cache.ini.gz",
+        "sha256": "bd01c9fb287ba089ca4168540abc148687bb8fbcc2e1d18ef10b432353e77c86"
+      }
+    },
+    "final-siege": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\final-siege.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\final-siege.ini",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\final-siege.log",
+        "+map",
+        "MAP03",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\final-siege.cfg"
+      ],
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\final\\caelum_argenteum_dev.pk3": "13fd400fc6779aa96b5b3c39e32fbd0b45522c3df82c8af01f7315f0ee929a05",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\final-siege.pk3": "00a6d64b179954ef1a3ea267bd2a4b5465f73f6129b79d4d469369a419763e93"
+      },
+      "started_utc": "2026-10-30T18:25:40.406883+00:00",
+      "pid": 21052,
+      "ended_utc": "2026-10-30T18:28:16.716218+00:00",
+      "window_utc": {
+        "BEGIN": {
+          "after_utc": "2026-10-30T18:27:42.650382+00:00",
+          "before_utc": "2026-10-30T18:27:43.157988+00:00",
+          "after_qpc_ms": 1242796357.4783,
+          "before_qpc_ms": 1242796864.8095
+        },
+        "END": {
+          "after_utc": "2026-10-30T18:28:13.198309+00:00",
+          "before_utc": "2026-10-30T18:28:13.704970+00:00",
+          "after_qpc_ms": 1242826905.4974,
+          "before_qpc_ms": 1242827411.8484
+        }
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 156.309,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 43.081675142857144,
+        "p95_ms": 64.9815,
+        "p99_ms": 71.6443,
+        "max_ms": 81.265
+      },
+      "render_callbacks": {
+        "samples": 37,
+        "mean_ms": 729.2576135135135,
+        "p95_ms": 787.5537,
+        "p99_ms": 790.5784,
+        "max_ms": 804.2276
+      },
+      "census": [
+        "CA510 CENSUS start alive=1401 attackers=801 defenders=600 groups=13 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00",
+        "CA510 CENSUS end alive=1588 attackers=988 defenders=600 groups=15 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00"
+      ],
+      "limit": "RenderOverlay callbacks do not measure displayed frames; presentation capture remains separate.",
+      "log": {
+        "file": "evidence\\final-siege.log.gz",
+        "sha256": "0e87dbbcfc29ae260a393e20491bbb5b4e4c39a12dfd3fb5e040632b7f465e1e"
+      },
+      "config": {
+        "file": "evidence\\final-siege.ini.gz",
+        "sha256": "f95941e8881a7b644605bfd132c2d6f9d25e488f507d8a8ae1a71217d570fbcd"
+      }
+    },
+    "final-mansion": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\final-mansion.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\final-mansion.ini",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\final-mansion.log",
+        "+map",
+        "MAP01",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\final-mansion.cfg"
+      ],
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\final\\caelum_argenteum_dev.pk3": "13fd400fc6779aa96b5b3c39e32fbd0b45522c3df82c8af01f7315f0ee929a05",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\final-mansion.pk3": "034d56828b23a0f4b663015830e6874272319b9f0cd9eb636b4112c4b678c1fa"
+      },
+      "started_utc": "2026-10-30T18:28:17.606214+00:00",
+      "pid": 9320,
+      "ended_utc": "2026-10-30T18:28:55.743025+00:00",
+      "window_utc": {
+        "BEGIN": {
+          "after_utc": "2026-10-30T18:28:33.687314+00:00",
+          "before_utc": "2026-10-30T18:28:34.194836+00:00",
+          "after_qpc_ms": 1242847394.4246001,
+          "before_qpc_ms": 1242847902.1149
+        },
+        "END": {
+          "after_utc": "2026-10-30T18:28:53.225158+00:00",
+          "before_utc": "2026-10-30T18:28:53.731989+00:00",
+          "after_qpc_ms": 1242866932.2179,
+          "before_qpc_ms": 1242867439.6881
+        }
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 38.137,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.587611857142857,
+        "p95_ms": 34.541,
+        "p99_ms": 37.2571,
+        "max_ms": 42.4722
+      },
+      "render_callbacks": {
+        "samples": 1118,
+        "mean_ms": 16.12117853309481,
+        "p95_ms": 17.9956,
+        "p99_ms": 19.2244,
+        "max_ms": 22.5851
+      },
+      "census": [
+        "CA510 CENSUS start alive=6 attackers=0 defenders=0 groups=0 highdensity=0 pos=(-1600.00,0.00,-0.00) angle=0.00 pitch=0.00",
+        "CA510 CENSUS end alive=6 attackers=0 defenders=0 groups=0 highdensity=0 pos=(-1600.00,0.00,-0.00) angle=0.00 pitch=0.00"
+      ],
+      "limit": "RenderOverlay callbacks do not measure displayed frames; presentation capture remains separate.",
+      "log": {
+        "file": "evidence\\final-mansion.log.gz",
+        "sha256": "1a0060b3803faa6b9bb5c36389bf7b6234c1c0ca42f7496e0e1a8b9d9f3df778"
+      },
+      "config": {
+        "file": "evidence\\final-mansion.ini.gz",
+        "sha256": "0b7c10eae4b9814ad94ce40ffbc9e1609cba9a370f0a1faff1167a2936539817"
+      }
+    },
+    "final-sewers": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\final-sewers.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\final-sewers.ini",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\final-sewers.log",
+        "+map",
+        "MAP02",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\final-sewers.cfg"
+      ],
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\final\\caelum_argenteum_dev.pk3": "13fd400fc6779aa96b5b3c39e32fbd0b45522c3df82c8af01f7315f0ee929a05",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\final-sewers.pk3": "034d56828b23a0f4b663015830e6874272319b9f0cd9eb636b4112c4b678c1fa"
+      },
+      "started_utc": "2026-10-30T18:28:56.661892+00:00",
+      "pid": 55504,
+      "ended_utc": "2026-10-30T18:29:34.795541+00:00",
+      "window_utc": {
+        "BEGIN": {
+          "after_utc": "2026-10-30T18:29:12.241240+00:00",
+          "before_utc": "2026-10-30T18:29:12.748513+00:00",
+          "after_qpc_ms": 1242885948.3898,
+          "before_qpc_ms": 1242886456.1999998
+        },
+        "END": {
+          "after_utc": "2026-10-30T18:29:32.277219+00:00",
+          "before_utc": "2026-10-30T18:29:32.784862+00:00",
+          "after_qpc_ms": 1242905984.2781,
+          "before_qpc_ms": 1242906492.1704
+        }
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 38.134,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.57066628571429,
+        "p95_ms": 33.0879,
+        "p99_ms": 33.7518,
+        "max_ms": 41.576
+      },
+      "render_callbacks": {
+        "samples": 3256,
+        "mean_ms": 5.534888114250615,
+        "p95_ms": 6.6531,
+        "p99_ms": 7.315,
+        "max_ms": 36.782
+      },
+      "census": [
+        "CA510 CENSUS start alive=293 attackers=0 defenders=0 groups=0 highdensity=0 pos=(0.00,0.00,-0.00) angle=90.00 pitch=0.00",
+        "CA510 CENSUS end alive=293 attackers=0 defenders=0 groups=0 highdensity=0 pos=(0.00,0.00,-0.00) angle=90.00 pitch=0.00"
+      ],
+      "limit": "RenderOverlay callbacks do not measure displayed frames; presentation capture remains separate.",
+      "log": {
+        "file": "evidence\\final-sewers.log.gz",
+        "sha256": "51fa1a3bca21b316dddf14a20f1f4269a4fece41a951aeffbd86da1697bcc881"
+      },
+      "config": {
+        "file": "evidence\\final-sewers.ini.gz",
+        "sha256": "e0213e81f9f054bfa867f293681a796a14e62ded504e1305605ee80addab84fe"
+      }
+    },
+    "final-city": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\final-city.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\final-city.ini",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\final-city.log",
+        "+map",
+        "MAP03",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\final-city.cfg"
+      ],
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\final\\caelum_argenteum_dev.pk3": "13fd400fc6779aa96b5b3c39e32fbd0b45522c3df82c8af01f7315f0ee929a05",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\final-city.pk3": "034d56828b23a0f4b663015830e6874272319b9f0cd9eb636b4112c4b678c1fa"
+      },
+      "started_utc": "2026-10-30T18:29:35.682359+00:00",
+      "pid": 48188,
+      "ended_utc": "2026-10-30T18:30:14.814866+00:00",
+      "window_utc": {
+        "BEGIN": {
+          "after_utc": "2026-10-30T18:29:52.269482+00:00",
+          "before_utc": "2026-10-30T18:29:52.776726+00:00",
+          "after_qpc_ms": 1242925976.7038999,
+          "before_qpc_ms": 1242926484.3225
+        },
+        "END": {
+          "after_utc": "2026-10-30T18:30:12.304844+00:00",
+          "before_utc": "2026-10-30T18:30:12.811415+00:00",
+          "after_qpc_ms": 1242946011.955,
+          "before_qpc_ms": 1242946519.1199
+        }
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 39.133,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.572010714285717,
+        "p95_ms": 33.9626,
+        "p99_ms": 34.7841,
+        "max_ms": 36.3012
+      },
+      "render_callbacks": {
+        "samples": 2143,
+        "mean_ms": 8.407562202519832,
+        "p95_ms": 9.788,
+        "p99_ms": 11.1836,
+        "max_ms": 12.9246
+      },
+      "census": [
+        "CA510 CENSUS start alive=0 attackers=0 defenders=600 groups=0 highdensity=0 pos=(0.00,320.00,-0.00) angle=180.00 pitch=0.00",
+        "CA510 CENSUS end alive=0 attackers=0 defenders=600 groups=0 highdensity=0 pos=(0.00,320.00,-0.00) angle=180.00 pitch=0.00"
+      ],
+      "limit": "RenderOverlay callbacks do not measure displayed frames; presentation capture remains separate.",
+      "log": {
+        "file": "evidence\\final-city.log.gz",
+        "sha256": "e6ae710e7050431b447df916cc6dd017931a059468f0403e6a35c1cefac9f9ab"
+      },
+      "config": {
+        "file": "evidence\\final-city.ini.gz",
+        "sha256": "5df31891c448839a9f3888c14a7ba90a5ca0c4059d319b7e555c33dc86fca17a"
+      }
+    },
+    "final-ground": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\final-ground.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\final-ground.ini",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\final-ground.log",
+        "+map",
+        "MAP03",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\final-ground.cfg"
+      ],
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\final\\caelum_argenteum_dev.pk3": "13fd400fc6779aa96b5b3c39e32fbd0b45522c3df82c8af01f7315f0ee929a05",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue432-work\\build\\issue432\\performance\\final-ground.pk3": "995fd93027f83a7f8baaa1f82bc55acb56e8f6deed8f2ae0a00a2df4860f7131"
+      },
+      "started_utc": "2026-10-30T18:30:15.713658+00:00",
+      "pid": 18972,
+      "ended_utc": "2026-10-30T18:30:54.353480+00:00",
+      "window_utc": {
+        "BEGIN": {
+          "after_utc": "2026-10-30T18:30:32.299083+00:00",
+          "before_utc": "2026-10-30T18:30:32.806018+00:00",
+          "after_qpc_ms": 1242966006.253,
+          "before_qpc_ms": 1242966513.5802999
+        },
+        "END": {
+          "after_utc": "2026-10-30T18:30:52.331960+00:00",
+          "before_utc": "2026-10-30T18:30:52.838921+00:00",
+          "after_qpc_ms": 1242986039.0579,
+          "before_qpc_ms": 1242986546.175
+        }
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 38.64,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.568996714285714,
+        "p95_ms": 35.1409,
+        "p99_ms": 37.7514,
+        "max_ms": 39.7399
+      },
+      "render_callbacks": {
+        "samples": 1567,
+        "mean_ms": 11.500262284620293,
+        "p95_ms": 13.5027,
+        "p99_ms": 15.3931,
+        "max_ms": 16.5869
+      },
+      "census": [
+        "CA510 CENSUS start alive=0 attackers=0 defenders=600 groups=0 highdensity=0 pos=(0.00,320.00,-0.00) angle=180.00 pitch=75.00",
+        "CA510 CENSUS end alive=0 attackers=0 defenders=600 groups=0 highdensity=0 pos=(0.00,320.00,-0.00) angle=180.00 pitch=75.00"
+      ],
+      "limit": "RenderOverlay callbacks do not measure displayed frames; presentation capture remains separate.",
+      "log": {
+        "file": "evidence\\final-ground.log.gz",
+        "sha256": "596ac4d8ad1e5716fda5df0841ec22f193b218b22385f41f7e0370333a7a3c5d"
+      },
+      "config": {
+        "file": "evidence\\final-ground.ini.gz",
+        "sha256": "f016f1435e78a59faabb9109e6ec2186a7e06b01de3955018f5a66385ab49cba"
+      }
+    }
+  },
+  "limits": [
+    "No candidate presentation capture; render callbacks are not displayed frames.",
+    "Large-siege stalls remain.",
+    "The first visual-cache diagnostic overlapped worktree I/O; final package runs did not."
+  ]
+}
