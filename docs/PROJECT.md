@@ -1,8 +1,11 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.9.2** - 2026-10-29.
+Documentation version: **5.9.3** - 2026-10-29.
 
-## V5.9 in progress - 5.9.2 (#418/#420/#419)
+#420 campaign membership is now integrated (5.9.3); evidence validation_593.
+#421-424 and final #418 reward integration remain in progress.
+
+## V5.9 in progress - 5.9.3 (#418/#420/#419)
 
 Shared quest coordination, faction consequences and private port dialogue are
 implemented on separate focused branches. #419 now connects actual native

@@ -1,6 +1,17 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.9.2** - 2026-10-29.
+Documentation version: **5.9.3** - 2026-10-29.
+
+## 5.9.3 / #420 - Campaign membership
+
+After rescue and arrival in Barracas, Leonor, Rufino and Santos offer membership
+in their own confirmed faction through their native social dialogue. Neutral
+or better reputation (at least -49) is required. Joining has no fee, additional
+quest or reward-claim prerequisite. Existing members cannot join again. The
+other three factions wait for authored representatives; Leandro offers no
+membership. Revalidate the current speaker, proximity, sight, authority and
+eligibility when committing. Joining preserves every concealed membership and
+does not declare/report it. Existing revisioned membership records own saves.
 
 ## 5.9.2 / #419 - Private port emotions and explicit reports
 

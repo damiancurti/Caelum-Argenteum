@@ -1,6 +1,13 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.9.2** - 2026-10-29.
+Documentation version: **5.9.3** - 2026-10-29.
+
+## 5.9.3 / #420 - Representative access
+
+Leonor, Rufino and Santos offer free membership after arrival in Barracas at
+Neutral or better reputation. No additional mission is required. Leandro and
+the other undefined representatives do not grant affiliation. Joining does not
+reveal concealed affiliations or add a narrative revelation.
 
 ## 5.9.2 / #419 - Port emotional readings
 

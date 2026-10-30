@@ -130,6 +130,14 @@ conversation
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
         choice
         {
+            text = "$CA_PORT_JOIN_CHOICE";
+            nextpage = "prisoner_bestia_social";
+            closedialog = false;
+            giveitem = "CaelumPortJoinAction";
+            require { item = "CaelumPortJoinToken"; amount = 1; }
+        }
+        choice
+        {
             text = "$CA_PORT_EMOTION_READ";
             nextpage = "prisoner_bestia_emotion";
             closedialog = false;

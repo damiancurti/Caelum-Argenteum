@@ -1,8 +1,11 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.9.2** - 2026-10-29.
+Documentation version: **5.9.3** - 2026-10-29.
 
-## V5.9 active work - 5.9.2
+#420 campaign membership is now integrated (5.9.3); evidence validation_593.
+#421-424 and final #418 reward integration remain in progress.
+
+## V5.9 active work - 5.9.3
 
 - #418: shared requirement evaluator and compared quest writes implemented;
   port narrative registry integrated. Native evidence: validation_590. Finish

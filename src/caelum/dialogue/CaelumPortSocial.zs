@@ -84,6 +84,7 @@ class CaelumPortSocial : Object
             ? record.PortEmotionChance[slot] : Chance(user, id);
         user.SetPalomoDialogueToken("CaelumPortEmotionTriedToken", record.PortEmotionResult[slot] != 0);
         user.SetPalomoDialogueToken("CaelumPortRepresentativeToken", CaelumFactionData.ConfirmedPrisonerFaction(id) >= 0);
+        user.SetPalomoDialogueToken("CaelumPortJoinToken", CaelumPortMembership.Eligible(record, speaker));
         for (int faction = 0; faction < CaelumConstants.FACTION_COUNT; faction++)
             user.SetPalomoDialogueToken(MemberToken(faction), record.FactionMember[faction]);
     }

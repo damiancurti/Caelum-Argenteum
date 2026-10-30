@@ -3982,6 +3982,14 @@ conversation
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
         choice
         {
+            text = "$CA_PORT_JOIN_CHOICE";
+            nextpage = "prisoner_unitario_social";
+            closedialog = false;
+            giveitem = "CaelumPortJoinAction";
+            require { item = "CaelumPortJoinToken"; amount = 1; }
+        }
+        choice
+        {
             text = "$CA_PORT_EMOTION_READ";
             nextpage = "prisoner_unitario_emotion";
             closedialog = false;
@@ -4202,6 +4210,14 @@ conversation
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
         choice
         {
+            text = "$CA_PORT_JOIN_CHOICE";
+            nextpage = "prisoner_federal_social";
+            closedialog = false;
+            giveitem = "CaelumPortJoinAction";
+            require { item = "CaelumPortJoinToken"; amount = 1; }
+        }
+        choice
+        {
             text = "$CA_PORT_EMOTION_READ";
             nextpage = "prisoner_federal_emotion";
             closedialog = false;
@@ -4420,6 +4436,14 @@ conversation
         name = "$CA_PRISONER_BESTIA_NAME";
         dialog = "$CA_PORT_SOCIAL_INTRO";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice
+        {
+            text = "$CA_PORT_JOIN_CHOICE";
+            nextpage = "prisoner_bestia_social";
+            closedialog = false;
+            giveitem = "CaelumPortJoinAction";
+            require { item = "CaelumPortJoinToken"; amount = 1; }
+        }
         choice
         {
             text = "$CA_PORT_EMOTION_READ";

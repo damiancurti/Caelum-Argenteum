@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "6da9147434bd4f893ad39da8cc063200018788efe9e3340549ce7bf1b7320ba5",
+  "sha256": "8440c09a05da13588f48e70d38f0d29c78a6f4a7358f5f49a6bfb3a704c4513d",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[483,483]],"default":[[483,483]],"es":[[1178,1178]]},
     "CA_ABSENT_THEFT_FOUND": {"enu":[[6906,6906]],"default":[[6906,6906]],"es":[[6908,6908]]},
@@ -2091,6 +2091,8 @@
     "CA_PORT_END": {"enu":[[4720,4720]],"default":[[4720,4720]],"es":[[4726,4726]]},
     "CA_PORT_END_SIGN": {"enu":[[4719,4719]],"default":[[4719,4719]],"es":[[4725,4725]]},
     "CA_PORT_FACTION_CHOICE": {"enu":[[7027,7027]],"default":[[7027,7027]],"es":[[7054,7054]]},
+    "CA_PORT_JOIN_CHOICE": {"enu":[[7070,7070]],"default":[[7070,7070]],"es":[[7073,7073]]},
+    "CA_PORT_JOIN_DONE": {"enu":[[7071,7071]],"default":[[7071,7071]],"es":[[7074,7074]]},
     "CA_PORT_OBJECTIVES": {"enu":[[4717,4717]],"default":[[4717,4717]],"es":[[4723,4723]]},
     "CA_PORT_REPORT_CHOICE": {"enu":[[7031,7031]],"default":[[7031,7031]],"es":[[7058,7058]]},
     "CA_PORT_REPORT_CONFIRM": {"enu":[[7033,7033]],"default":[[7033,7033]],"es":[[7060,7060]]},
