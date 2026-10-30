@@ -25,15 +25,25 @@ class CaelumTheftWitnesses : Object play
         while(nearby.Next())
         {
             let npc=CaelumCombatActor(nearby.thing);
-            if(!CanReact(npc) || npc.Distance3D(user)>range || !npc.CheckSight(user))continue;
-            npc.TheftTarget=user;
-            if(CaelumRedemption.Commander(npc)!=null)continue;
-            npc.bFriendly=false;npc.Target=user;npc.LastEnemy=user;
-            if(npc.ForcedSleepTics<=0 && npc.CombatLucidityPhysicalStunRemaining<=0
-                && !npc.ResourceRecoveryActive() && !npc.bInConversation
-                && !npc.InStateSequence(npc.CurState,npc.FindState("Melee"))
-                && !npc.InStateSequence(npc.CurState,npc.FindState("Missile")))npc.SetState(npc.FindState("See"));
+            if(!CanReact(npc) || npc.Distance3D(user)>range || !CaelumVisualPerception.CanSee(npc,user))continue;
+            // El evento guarda un sospechoso privado, sin identificarlo por su puntero.
+            npc.PendingTheftTarget=user;UpdatePending(npc);
         }
+    }
+    static void UpdatePending(CaelumCombatActor npc)
+    {
+        let user=npc.PendingTheftTarget;
+        if(user==null)return;
+        if(!CanReact(npc) || !CaelumPlayerAuthority.CanMutate(user) || !CaelumVisualPerception.CanSee(npc,user))
+        {npc.PendingTheftTarget=null;return;}
+        if(!CaelumVisualPerception.Identify(npc,user))return;
+        npc.PendingTheftTarget=null;npc.TheftTarget=user;
+        if(CaelumRedemption.Commander(npc)!=null)return;
+        npc.bFriendly=false;npc.Target=user;npc.LastEnemy=user;
+        if(npc.ForcedSleepTics<=0 && npc.CombatLucidityPhysicalStunRemaining<=0
+            && !npc.ResourceRecoveryActive() && !npc.bInConversation
+            && !npc.InStateSequence(npc.CurState,npc.FindState("Melee"))
+            && !npc.InStateSequence(npc.CurState,npc.FindState("Missile")))npc.SetState(npc.FindState("See"));
     }
     static bool Pursue(CaelumCombatActor npc)
     {

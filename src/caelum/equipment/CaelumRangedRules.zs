@@ -179,6 +179,7 @@ class CaelumCityCarbine : Object play
     bool InRange(CaelumPortDefender owner,Actor victim)
     {
         if(Weapon==null || Weapon.Durability<=0 || victim==null || victim.health<=0 || !victim.bShootable || !owner.CarbineTarget(victim) || !HasAmmunition())return false;
+        if(!CaelumVisualPerception.CanSee(owner,victim))return false;
         vector3 origin=owner.Pos+(0,0,CaelumRangedRules.LaunchHeight(owner,Weapon.WeaponType));
         return (victim.Pos+(0,0,victim.Height/2)-origin).Length()<=Weapon.GetRangedRangeFor(Weapon.WeaponType) && owner.CheckSight(victim);
     }
@@ -187,7 +188,7 @@ class CaelumCityCarbine : Object play
         if(CaelumBattleCry.Active(owner))return false;
         if(owner==null || (CaelumBolas.Restrained(owner) || CaelumTelekinesisRules.Held(owner)) || owner.health<=0 || owner.ForcedSleepTics>0 || owner.CombatLucidityPhysicalStunRemaining>0
             || owner.InStateSequence(owner.CurState,owner.FindState("Pain")))return false;
-        if(!InRange(owner,victim))return false;
+        if(!CaelumVisualPerception.Identify(owner,victim) || !InRange(owner,victim))return false;
         Initialize(owner);Select(true);owner.target=victim;owner.A_FaceTarget();owner.Vel.X=0;owner.Vel.Y=0;
         if(owner.RecoveryPhase!=0 || !SetCrouched(owner,true))return false;
         // Volver a comprobar visibilidad desde la altura física ya agachada.

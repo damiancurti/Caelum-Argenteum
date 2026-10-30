@@ -1,6 +1,22 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.9.7** - 2026-10-29.
+Documentation version: **5.10.0** - 2026-10-30.
+
+## V5.10 active - 5.10.0 (#425-428)
+
+- #425: visual filters, private recognition, attack gates, operator observation
+  and reset-only legacy migration implemented. Full-package native/save/rollback
+  checks: 53 PASS; static: zero errors. Combined campaign/performance comparison
+  and author acceptance remain pending after #426-428.
+- #426: integrate anonymous sound events, surface/equipment factors and alert.
+- #427: saved 30-second last-known positions, search and target replacement.
+- #428: audible member reports to leader and return orders. Each member selects
+  the nearest valid communicated threat to itself; unheard messages grant no
+  knowledge. Preserve original evidence age and five-second report throttle.
+- Keep separate commits/PRs/evidence; do not merge or close these issues yet.
+- Author away: temporary system-only keep-awake helper active in local issue425
+  evidence folder. Queue new questions; prepare the grouped terminal only after
+  all four issues are implemented. Manual checks remain unconfirmed.
 
 ## V5.9 complete - author-accepted 2026-10-30 (5.9.7, #403)
 

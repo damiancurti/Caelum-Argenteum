@@ -1,0 +1,38 @@
+{
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-nomouse",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue425\\legacy\\caelum_argenteum_dev.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue425\\legacy\\checks.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue425\\release-rollback.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue425",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "-rngseed",
+    "425",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue425\\release-rollback.log",
+    "-loadgame",
+    "ca425-legacy-final.zds",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue425\\release-rollback.cfg"
+  ],
+  "pid": 49908,
+  "packages": {
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue425\\legacy\\caelum_argenteum_dev.pk3": "4aa64b99c6908e34c6046313fa3e31926f060862b528df27e99c02dd075a504a",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue425\\legacy\\checks.pk3": "e3351e40ed1a81a5be2aea0db3a6ded25604571548414c7f28dfd04b9c6d0cf6"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 8.159,
+  "failures": [],
+  "pass_count": 1
+}

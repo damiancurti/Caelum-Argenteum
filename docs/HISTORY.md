@@ -1,6 +1,33 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.9.7** - 2026-10-29.
+Documentation version: **5.10.0** - 2026-10-30.
+
+## 5.10.0 - Visual perception (#425, 2026-10-30)
+
+The author approved common 180-degree vision, Insight M2/sector-light/visible-
+height/stealth scaling, two-second identity checks, suspicion grace/decay,
+contact/damage exceptions and real cannon-operator perception. Noise raises
+alert separately from identity. Old perception is reset rather than preserved.
+Runtime integration covers acquisition, final attacks/facing, breath, bull
+charges, resident tools, crime witnesses, carbines, factions, escorts, summoned/
+converted allies and cannon observation. The shared census
+supplies query bounds and its existing unlinked-guard fallback; no new routine
+global actor scan is added. #426-428 remain separate follow-up patches.
+
+Development native evidence: visual geometry, contact, two-second timing,
+operator death and hidden-damage identity checks pass; partial observations
+survive save/load and a genuine 5.9.7 save migrates idempotently while preserving
+health. Early failed timing checks exposed PostBeginPlay replacing an existing
+record; corrected by initializing only when absent. A failed reload assertion
+was caused by the runner waiting 80 tics before inspection; load checks now
+execute after one tic. Raw failed attempts remain in local build evidence.
+Final full-package native runs pass 53 assertions across acquisition/timing,
+partial save/reload, genuine 5.9.7 migration and original-package rollback.
+Static validation has zero errors. Logs/metadata: validation_5100; exact PK3 hash
+in summary.json. Copied logs normalize LF/trailing whitespace; raw attempts stay
+in build/issue425. Combined campaign/performance measurements and author review
+remain pending after #426-428. This is not completion of V5.10 or a presentation-
+FPS guarantee.
 
 ## V5.9 completion - 2026-10-30 (#403)
 

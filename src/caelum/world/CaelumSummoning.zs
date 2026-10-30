@@ -44,7 +44,7 @@ class CaelumSummonedZupay : CaelumZupayColossus
     bool FollowCaster()
     {
         if(target!=null)return false;
-        A_Look();if(target!=null)return false;
+        CaelumVisualPerception.Look(self);if(target!=null)return false;
         if(master==null)return true;
         vector2 delta=master.Pos.XY-Pos.XY;double distance=delta.Length();
         double gap=distance-Radius-master.Radius;

@@ -3,6 +3,9 @@
 // evasion, dolor, adrenalina y efectos de los estados de salud.
 class CaelumCombatActor : Actor
 {
+    CaelumVisualEvidence VisualEvidence;
+    CaelumPlayer PendingTheftTarget;
+
     int MaintenanceRevision;
     transient CaelumActorMaintenance Maintenance;
     transient CaelumPopulationState MaintenancePopulation;
@@ -316,6 +319,7 @@ class CaelumCombatActor : Actor
         if(CombatBirthInitialized)return;
         CombatBirthInitialized=true;
         Super.PostBeginPlay();
+        if(VisualEvidence==null){VisualEvidence=new("CaelumVisualEvidence");VisualEvidence.Initialize();}
         NativeDeathLootRevision = NATIVE_DEATH_LOOT_REVISION;
         CollisionDamageMultiplier = 1.0;
         CollisionEffectiveMassMultiplier = 1.0;
@@ -598,6 +602,14 @@ class CaelumCombatActor : Actor
         return true;
     }
 
+    action void A_CaelumFacePerceivedTarget()
+    {
+        let body=CaelumCombatActor(self);
+        if(body==null || body.target==null)return;
+        if(body.IsCaelumMassDiagnosticActor() || !(body.target is "CaelumCombatActor" || body.target is "CaelumPlayer")
+            || CaelumVisualPerception.Identify(body,body.target))body.A_FaceTarget();
+    }
+
     action void A_CaelumBudgetedLook()
     {
         CaelumCombatActor combatActor = CaelumCombatActor(self);
@@ -626,7 +638,8 @@ class CaelumCombatActor : Actor
             }
         }
         if (!combatActor.BeginCaelumDiagnosticLook()) { return; }
-        combatActor.A_Look();
+        if(combatActor.IsCaelumMassDiagnosticActor())combatActor.A_Look();
+        else CaelumVisualPerception.Look(combatActor);
         if (combatActor.CaelumMassAIScheduleActive
             && combatActor.CaelumMassScheduler != null
             && combatActor.target != null)
@@ -730,7 +743,7 @@ class CaelumCombatActor : Actor
         }
 
         ImpactDiagnosticFollowerPulses++;
-        A_FaceTarget();
+        A_CaelumFacePerceivedTarget();
     }
 
     bool IsCaelumMassDiagnosticAlly(Actor other)
@@ -1026,6 +1039,7 @@ class CaelumCombatActor : Actor
     {
         if(CaelumBattleCry.Active(self))return false;
         if((CaelumBolas.Restrained(self) || CaelumTelekinesisRules.Held(self)) || target==null || target.health<=0 || !target.bShootable || RecoveryPhase!=0)return false;
+        if(!CaelumVisualPerception.Identify(self,target))return false;
         if(!magical)return CheckMeleeRange();
         vector3 origin=Pos+(0,0,spawnHeight>=0 ? spawnHeight : Height*0.65);
         vector3 aim=target.Pos+(0,0,target.Height/2);
@@ -1220,7 +1234,7 @@ class CaelumCombatActor : Actor
             actor.tics=actor.WeaponCyclePreparationTics;
         }
         else actor.tics=int(Ceil(actor.tics/CaelumThermalEffects.Speed(actor)));
-        actor.A_FaceTarget();
+        actor.A_CaelumFacePerceivedTarget();
     }
 
     action void A_CaelumThermalAttackFrame()
@@ -2996,6 +3010,12 @@ class CaelumCombatActor : Actor
         int result=ReceiveCaelumDamage(inflictor,source,damage,mod,flags,angle);
         RallyDamageFactor=previousRallyFactor;
         if(shot!=null)shot.CaelumDefenseReceiver=previousReceiver;
+        if(result>0 && source!=null && source!=self && !IsCaelumMassDiagnosticActor())
+        {
+            let evidence=CaelumVisualPerception.Evidence(self);evidence.Damaged(self,source);
+            if(target==source && evidence.IdentifiedSubject!=source)target=null;
+            if(LastEnemy==source && evidence.IdentifiedSubject!=source)LastEnemy=null;
+        }
         return result;
     }
 
@@ -3940,9 +3960,24 @@ class CaelumCombatActor : Actor
     void ThermalChase(statelabel melee='_a_chase_default',statelabel missile='_a_chase_default',int flags=0)
     {
         if((CaelumBolas.Restrained(self) || CaelumTelekinesisRules.Held(self)))return;
+        // Un destino de ruta no es un combatiente. Los actores ocultos nunca
+        // llegan a A_Chase, que leería sus coordenadas vivas y podría atacar.
+        bool combatTarget=target is "CaelumCombatActor" || target is "CaelumPlayer";
+        if(!IsCaelumMassDiagnosticActor() && combatTarget && !CaelumVisualPerception.Identify(self,target))
+        {
+            target=CaelumVisualPerception.Acquire(self);
+            if(target==null){LastEnemy=null;return;}
+        }
+        if(target==null && !IsCaelumMassDiagnosticActor())
+        {
+            target=CaelumVisualPerception.Acquire(self);
+            if(target==null)return;
+        }
         vector3 before=Pos;
         if(CaelumBattleCry.Active(self)){melee=null;missile=null;}
         A_Chase(melee,missile,flags);
+        if(!IsCaelumMassDiagnosticActor() && (target is "CaelumCombatActor" || target is "CaelumPlayer")
+            && !CaelumVisualPerception.Identify(self,target)){target=null;LastEnemy=null;}
         if(Pos.Z<=FloorZ+0.01)CaelumThermalMotion.Path(self,before,Pos,false);
     }
 
@@ -4013,6 +4048,8 @@ class CaelumCombatActor : Actor
 
     override void Tick()
     {
+        if(VisualEvidence==null && !IsCaelumMassDiagnosticActor())CaelumVisualPerception.Evidence(self);
+        if(PendingTheftTarget!=null)CaelumTheftWitnesses.UpdatePending(self);
         if(AbsentCombatant!=null && AbsentCombatant.Battle!=null && AbsentCombatant.Battle.Away)
         {
             for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i] && players[i].mo!=null)

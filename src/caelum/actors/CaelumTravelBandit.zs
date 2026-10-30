@@ -143,7 +143,7 @@ class CaelumTravelAmbush : Actor
             if(!probe.CheckPosition(point.XY,false,fit) || fit.floorz!=point.Z || fit.ceilingz-point.Z<probe.Height)continue;
             class<CaelumTravelBandit> kind=Cursor==2?'CaelumTravelCarbineBandit':'CaelumTravelBandit';
             let body=CaelumTravelBandit(Spawn(kind,point,NO_REPLACE));if(body==null)continue;
-            body.target=user;body.A_FaceTarget();body.SetState(body.SeeState);
+            body.target=user;body.A_CaelumFacePerceivedTarget();body.SetState(body.SeeState);
             Bandits.Push(body);Cursor++;
         }
         probe.Destroy();

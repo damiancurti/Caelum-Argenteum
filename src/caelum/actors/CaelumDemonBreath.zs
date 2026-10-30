@@ -99,7 +99,7 @@ class CaelumDemonBreath : Actor
         // potencia de quemadura; ningún barrido global ni radiación a distancia.
         vector3 next=Mouth(Emitter);
         vector3 nextDirection=(Cos(Emitter.Angle),Sin(Emitter.Angle),0);
-        if(Emitter.target!=null && CanReach(Emitter,Emitter.target))
+        if(Emitter.target!=null && CaelumVisualPerception.Identify(Emitter,Emitter.target) && CanReach(Emitter,Emitter.target))
         {
             vector3 aim=Emitter.target.Pos+(0,0,Emitter.target.Height/2)-next;
             if(aim.Length()>0)nextDirection=aim/aim.Length();
