@@ -4,6 +4,13 @@ class CaelumGiantRat : CaelumCombatActor
 {
     const MOVEMENT_REVISION=1;
     int RatMovementRevision;
+    override int TakeSpecialDamage(Actor inflictor,Actor source,int damage,Name mod)
+    {
+        // Inmunidad al daño de enfermedad, no a adquirir/transmitir suciedad.
+        // La simulación ausente pasa por este mismo filtro nativo.
+        if(mod=='CaelumDiseaseDOT')return 0;
+        return Super.TakeSpecialDamage(inflictor,source,damage,mod);
+    }
     override String GetCaelumRecognitionSound()
     {return health>0 ? "caelum/enemies/rat_alert" : "";}
     override int GetArmorRace() { return CaelumConstants.RACE_BEAST_MAN; }

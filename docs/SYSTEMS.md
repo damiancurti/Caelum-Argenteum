@@ -1,6 +1,10 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.11.5** - 2026-10-30.
+Documentation version: **5.11.6** - 2026-10-30.
+
+## Rat disease immunity (#582, 5.11.6)
+
+Giant rats acquire and transmit contamination normally but take no CaelumDiseaseDOT damage, both on the active map and during absent physiology. This does not change their other damage resistances or confer immunity on Mandinga. Updating does not resurrect dead rats or reset their health or contamination.
 
 ## House dialogue refresh (#580, 5.11.5)
 

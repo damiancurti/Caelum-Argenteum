@@ -1,6 +1,10 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.11.5** - 2026-10-30.
+Documentation version: **5.11.6** - 2026-10-30.
+
+## 5.11.6 - Rat disease correction (#582)
+
+Species-specific immunity prevents contamination damage to rats without changing exposure or other combat rules. Native verification and author retest CA582-01 are tracked separately. #580 has PR583; #429/#430 movement and #581 placement remain separate corrections.
 
 ## 5.11.5 - Rental dialogue refresh (#580)
 
