@@ -65,6 +65,14 @@ are unchanged and all added caches are transient. Author acceptance is pending.
 
 ## 5.11.1 - Formations and bounded siege membership (#429, 2026-10-30)
 
+Author correction, 2026-10-30: CA429-01 remained failed because the front-left
+soldier stopped at (193.377,-15.586) when the group widened at the corridor exit.
+Visibility alone admitted that diagonal although the body could not fit. Recovery
+now checks sampled native cylinder clearance along the entire candidate segment,
+within the group's length, before widening. The shared recovery trigger remains
+movement-based; no per-tic actor census was added. The visible five-guard native
+fixture passes all four checks (passage-correction-a); author retest is pending.
+
 Formation revision1 owns stable member identities, leader succession, four role
 layouts, player-reserved party capacity, passage fallback and combat regroup
 orders. Native movement retains collision/resource accounting. Encounter admission

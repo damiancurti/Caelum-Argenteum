@@ -1,0 +1,5 @@
+CA429-01 | Origin 5.11.1 | Issue #429 | Corridor exit retest
+Use the combined V5.11 terminal, scenario 3, then F1.
+Expected: all five guards cross, including the front-left guard; no body remains
+at the right-hand exit corner. The formation widens only after bodies fit.
+Four PASS lines; no FAIL. Author reported the previous failure on 2026-10-30.
