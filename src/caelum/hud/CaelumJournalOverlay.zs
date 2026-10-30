@@ -337,6 +337,7 @@ class CaelumJournalOverlay : EventHandler
     {
         let confirm = CVar.GetCVar("ca_journal_quest_abandon", players[consoleplayer]);
         if (confirm != null && confirm.GetInt() == id) return "CA_Q_SIDE_CONFIRM_ABANDON";
+        if (CaelumPortQuestData.Defined(id)) return CaelumPortQuestView.Help(user,id);
         if (user.JournalQuestState[id] == CaelumConstants.QUEST_STATE_OFFERED)
             return user.JournalQuestCanStart[id] ? "CA_Q_SIDE_ACCEPT" : "CA_Q_SIDE_LOCKED";
         if (user.JournalQuestState[id] == CaelumConstants.QUEST_STATE_ACTIVE)
@@ -404,6 +405,7 @@ class CaelumJournalOverlay : EventHandler
 
     ui String GetQuestDetailText(CaelumPlayer localPlayer, int questId)
     {
+        if (CaelumPortQuestData.Defined(questId)) return CaelumPortQuestView.Detail(localPlayer,questId);
         if (questId == CaelumConstants.QUEST_GUARD_CAPTAIN || questId == CaelumConstants.QUEST_SEWERS)
             return CaelumQuestTrackingView.Objective(localPlayer,questId);
         if (CaelumQuestCatalogue.IsRescue(questId))
@@ -686,6 +688,7 @@ class CaelumJournalOverlay : EventHandler
 
     ui String GetQuestObjectiveKey(int questId, int objectiveId)
     {
+        if (CaelumPortQuestData.Defined(questId)) return CaelumPortQuestData.ObjectiveKey(questId,objectiveId);
         if (questId == CaelumConstants.QUEST_PORT_SIEGE)
             return objectiveId == 0 ? "CA_DEMO_PORT_MACHINES" : "CA_DEMO_PORT_COMMANDER";
         if (questId != CaelumConstants.QUEST_MAIN_M00_THE_FOOL)

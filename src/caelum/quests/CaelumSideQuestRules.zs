@@ -8,7 +8,7 @@ class CaelumSideQuestRules : Object
             || id == CaelumConstants.QUEST_TRIAL_WAIT;
     }
 
-    static bool IsDefined(int id) { return IsTrial(id); }
+    static bool IsDefined(int id) { return IsTrial(id) || CaelumPortQuestData.Defined(id); }
     static bool AllowsAbandon(int id) { return IsDefined(id); }
 
     static int Prerequisite(int id)
@@ -26,6 +26,7 @@ class CaelumSideQuestRules : Object
 
     static play bool CanStart(CaelumPersistentCharacterState r, int id)
     {
+        if(CaelumPortQuestData.Defined(id))return r!=null && r.QuestState[id]==CaelumConstants.QUEST_STATE_ABANDONED;
         if (r == null || !IsDefined(id) || (IsTrial(id) && !r.QuestTrialEnabled)
             || r.QuestState[id] != CaelumConstants.QUEST_STATE_OFFERED) return false;
         int required = Prerequisite(id);
@@ -85,6 +86,7 @@ class CaelumSideQuestRules : Object
 
     static play bool ObjectivesComplete(CaelumPersistentCharacterState r, int id)
     {
+        if(CaelumPortQuestData.Defined(id))return r!=null && r.QuestState[id]==CaelumConstants.QUEST_STATE_COMPLETED;
         if (r == null || !IsDefined(id) || ObjectiveCount(id) <= 0) return false;
         for (int i = 0; i < ObjectiveCount(id); i++)
         {
@@ -107,6 +109,7 @@ class CaelumSideQuestRules : Object
 
     static play bool End(CaelumPersistentCharacterState r, int id, bool abandoned)
     {
+        if(CaelumPortQuestData.Defined(id))return abandoned && CaelumPortQuests.Abandon(r,id);
         if (r == null || !IsDefined(id)
             || (abandoned && !AllowsAbandon(id))
             || r.QuestState[id] != CaelumConstants.QUEST_STATE_ACTIVE) return false;
@@ -141,6 +144,7 @@ class CaelumSideQuestRules : Object
 
     static play bool Activate(CaelumPlayer user, int id)
     {
+        if(CaelumPortQuestData.Defined(id))return CaelumPortQuests.Activate(user,id);
         if (user == null || user.health <= 0 || user.player == null
             || user.player.playerstate != PST_LIVE || !IsDefined(id)) return false;
         let r = user.GetPersistentCharacterState(false);

@@ -76,6 +76,10 @@
     {
       "name": "guards",
       "path": "dialogues/npc/guards.usdf"
+    },
+    {
+      "name": "rental_agent",
+      "path": "dialogues/npc/rental_agent.usdf"
     }
   ],
   "order": [
@@ -141,6 +145,7 @@
     43652,
     43653,
     43654,
-    43655
+    43655,
+    43660
   ]
 }

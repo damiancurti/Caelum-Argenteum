@@ -346,6 +346,45 @@ class CaelumSiegeEvents : EventHandler
     // guardado sin revisión se reconstruye con un recorrido tipado único.
     int NarrativeRegistryRevision;
     Array<CaelumSiegeEncounter> NarrativeEncounters;
+    int PortPeopleRevision;
+    CaelumAnchoredResident PortPeople[CaelumConstants.PRISONER_COUNT];
+
+    void EnsurePortPeople()
+    {
+        if(PortPeopleRevision>=1 || level.MapName!="MAP03")return;
+        // Migración única: los cuatro cuerpos antiguos no guardaban un registro.
+        // La consulta tipada no se repite al hablar ni por personaje/tic.
+        let it=ThinkerIterator.Create("CaelumAnchoredResident");CaelumAnchoredResident body;
+        while((body=CaelumAnchoredResident(it.Next()))!=null)
+            if(body.EscortPrisonerPort && body.EscortPrisonerId>=0 && body.EscortPrisonerId<CaelumConstants.PRISONER_COUNT)
+                PortPeople[body.EscortPrisonerId]=body;
+        PortPeopleRevision=1;
+    }
+    void RegisterPortPerson(CaelumAnchoredResident body)
+    {
+        if(level.MapName!="MAP03" || body==null || !body.EscortPrisonerPort
+            || body.EscortPrisonerId<0 || body.EscortPrisonerId>=CaelumConstants.PRISONER_COUNT)return;
+        EnsurePortPeople();PortPeople[body.EscortPrisonerId]=body;
+    }
+    int PortSurvivors()
+    {
+        EnsurePortPeople();int mask=0;
+        for(int i=0;i<CaelumConstants.PRISONER_COUNT;i++)
+            if(PortPeople[i]!=null && PortPeople[i].health>0)mask|=1<<i;
+        return mask;
+    }
+    void SyncPortSurvivors()
+    {
+        if(level.MapName!="MAP03")return;
+        int mask=PortSurvivors();
+        for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i])
+        {
+            let user=CaelumPlayer(players[i].mo);if(!CaelumPlayerAuthority.CanMutate(user))continue;
+            let record=user.GetPersistentCharacterState(false);if(record==null)continue;
+            if(record.PortSurvivorsMask==mask)continue;
+            record.PortSurvivorsMask=mask;CaelumPortQuests.Observe(user);
+        }
+    }
 
     void EnsureNarrativeRegistry()
     {
@@ -380,7 +419,7 @@ class CaelumSiegeEvents : EventHandler
     }
 
     override void WorldLoaded(WorldEvent e)
-    { EnsureNarrativeRegistry(); }
+    { EnsureNarrativeRegistry();EnsurePortPeople();SyncPortSurvivors(); }
 
     void RegisterNarrative(CaelumSiegeEncounter encounter)
     {
@@ -400,6 +439,11 @@ class CaelumSiegeEvents : EventHandler
 
     override void WorldThingDestroyed(WorldEvent e)
     {
+        if(e.Thing is "CaelumAnchoredResident")
+        {
+            for(int i=0;i<CaelumConstants.PRISONER_COUNT;i++)if(PortPeople[i]==e.Thing)PortPeople[i]=null;
+            SyncPortSurvivors();
+        }
         CaelumTargetSubscriptions.Retire(e.Thing);
         if (!(e.Thing is "CaelumSiegeEncounter")) return;
         UnregisterNarrative(CaelumSiegeEncounter(e.Thing));
@@ -411,6 +455,7 @@ class CaelumSiegeEvents : EventHandler
     }
     override void WorldThingDied(WorldEvent e)
     {
+        if(e.Thing is "CaelumAnchoredResident")SyncPortSurvivors();
         CaelumTargetSubscriptions.Retire(e.Thing);
         CaelumSiegeCombatant.ConfirmDeath(CaelumCombatActor(e.Thing));
         CaelumCorpseArchive.Died(e.Thing);

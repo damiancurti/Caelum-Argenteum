@@ -5976,3 +5976,103 @@ conversation
         }
     }
 }
+
+conversation
+{
+    id = 43660;
+    class = "CaelumRentalMenu";
+    page
+    {
+        pagename = "rental_offer";
+        userstring = "rental_offer";
+        name = "$CA_RENTAL_AGENT";
+        dialog = "$CA_RENTAL_OFFER";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumHouseRestoredToken"; amount = 1; } link = "rental_restored";
+        choice
+        {
+            text = "$CA_RENTAL_VERIFY";
+            giveitem = "CaelumHouseVerifyAction";
+            require { item = "CaelumHouseRecognizedToken"; amount = 1; }
+            nextpage = "rental_result";
+            closedialog = false;
+        }
+        choice
+        {
+            text = "$CA_RENTAL_RESUME";
+            giveitem = "CaelumHouseResumeAction";
+            require { item = "CaelumHouseAbandonedToken"; amount = 1; }
+            nextpage = "rental_offer";
+            closedialog = false;
+        }
+        choice
+        {
+            text = "$CA_RENTAL_GUIDANCE_CHOICE";
+            nextpage = "rental_guidance";
+            closedialog = false;
+        }
+    }
+    page
+    {
+        pagename = "rental_guidance";
+        name = "$CA_RENTAL_AGENT";
+        dialog = "$CA_RENTAL_GUIDANCE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_PORT_SOCIAL_BACK"; nextpage = "rental_offer"; closedialog = false; }
+    }
+    page
+    {
+        pagename = "rental_result";
+        name = "$CA_RENTAL_AGENT";
+        dialog = "$CA_RENTAL_NOT_READY";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumHouseRestoredToken"; amount = 1; } link = "rental_restored";
+        choice { text = "$CA_PORT_SOCIAL_BACK"; nextpage = "rental_offer"; closedialog = false; }
+    }
+    page
+    {
+        pagename = "rental_restored";
+        userstring = "rental_restored";
+        name = "$CA_RENTAL_AGENT";
+        dialog = "$CA_RENTAL_RESTORED";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice
+        {
+            text = "$CA_RENTAL_REFUND_CHOICE";
+            giveitem = "CaelumHouseVerifyAction";
+            nextpage = "rental_restored";
+            closedialog = false;
+        }
+    }
+
+    page
+    {
+        pagename = "rental_existing";
+        name = "$CA_RENTAL_AGENT";
+        dialog = "$CA_RENTAL_EXISTING";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumHouseRestoredToken"; amount = 1; } link = "rental_restored";
+        choice
+        {
+            text = "$CA_RENTAL_VERIFY";
+            giveitem = "CaelumHouseVerifyAction";
+            require { item = "CaelumHouseRecognizedToken"; amount = 1; }
+            nextpage = "rental_result";
+            closedialog = false;
+        }
+        choice
+        {
+            text = "$CA_RENTAL_RESUME";
+            giveitem = "CaelumHouseResumeAction";
+            require { item = "CaelumHouseAbandonedToken"; amount = 1; }
+            nextpage = "rental_offer";
+            closedialog = false;
+        }
+        choice
+        {
+            text = "$CA_RENTAL_GUIDANCE_CHOICE";
+            nextpage = "rental_guidance";
+            closedialog = false;
+        }
+    }
+}

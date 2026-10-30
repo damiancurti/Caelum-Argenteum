@@ -38,6 +38,7 @@ Runtime-generated text keys are also discoverable with `find TERM` in the comple
 | cups_ace | [cups_ace.usdf](npc/cups_ace.usdf) | 43620 |
 | wands_knight | [wands_knight.usdf](npc/wands_knight.usdf) | 43621 |
 | guards | [guards.usdf](npc/guards.usdf) | 43631, 43632, 43654, 43655 |
+| rental_agent | [rental_agent.usdf](npc/rental_agent.usdf) | 43660 |
 
 Source SHA-256 fingerprints:
 
@@ -60,4 +61,5 @@ Source SHA-256 fingerprints:
 - `dialogues/npc/cups_ace.usdf`: `914303f65c6cc2f81a13c673852889f0c52d28ca7a2b389c7cd1d9b8644f1145`
 - `dialogues/npc/wands_knight.usdf`: `53fcc360073bce30f82f7168a6cb64a224fe2303c38cd01841439bb448a8b894`
 - `dialogues/npc/guards.usdf`: `8fea805fc5c840d714f04bc151b53c03d3c080dbafd644b536602ffdba1d2a51`
-- `dialogues/index.json`: `ef09a53e35b5c9330f4b66c4090f6f76c3bc45a096696592368d5c032d55d996`
+- `dialogues/npc/rental_agent.usdf`: `41f0f8696a70290e98c38bf1952824bc7a53eb106d55a47783cfc59f8c0d7b53`
+- `dialogues/index.json`: `561cee01ce83675d8c16fc164d29a7e525ea93e3641d346de7ffde070ea4aad0`

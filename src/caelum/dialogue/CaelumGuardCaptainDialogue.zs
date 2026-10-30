@@ -30,6 +30,7 @@ class CaelumGuardCaptainDialogue : Object play
         // Abrir ya revela el cargo, incluso si se sale sin elegir respuesta.
         // Completar esta pista no significa recuperar la memoria ni otra misión.
         record.QuestState[clue] = CaelumConstants.QUEST_STATE_COMPLETED;
+        CaelumPortQuests.Observe(user);
         user.RefreshSocialJournalSnapshot();
         return true;
     }

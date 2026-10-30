@@ -172,6 +172,8 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
                 return;
             }
             EscortPrisonerPort = true;
+            let registry=CaelumSiegeEvents(EventHandler.Find("CaelumSiegeEvents"));
+            if(registry!=null)registry.RegisterPortPerson(self);
             bInvulnerable = true;
             SetStateLabel("Spawn");
             return;
