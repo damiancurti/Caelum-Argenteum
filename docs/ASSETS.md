@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.11.4** - 2026-10-30.
+Documentation version: **5.11.5** - 2026-10-30.
 
 The #430 movement correction reuses existing resident/prisoner walking
 frames. Passive CompanionWalk/CompanionIdle labels are appended to preserve

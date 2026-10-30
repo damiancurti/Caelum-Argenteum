@@ -1,12 +1,12 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.11.4** - 2026-10-30.
+Documentation version: **5.11.5** - 2026-10-30.
 
-**V5.11 corrections (5.11.4):** companion motion/formation retests remain. #429/PR576; #430/PR579. New reports:
-#580 rental dialogue, #581 central-house workshop/cot, #582 rat immunity.
-Run/walk6m/3m; existing stair nodes/local collision.
-Evidence: validation_v5_11_4. Pending: pending_test.txt. Not merged.
-#431/PR575 profiling; #432/PR577 accepted; #433/PR578 candidate not adopted.
+**V5.11 author corrections:** #580/5.11.5 refreshes rental dialogue; native
+validation_v5_11_5, CA580-01 pending. #429 corridor, #430 companion motion,
+#581 household placement and #582 rat immunity are separate active patches.
+Other checks accepted 2026-10-30; unmerged.
+Keep-awake released. Terminal after corrections.
 **V5.10 accepted:** #425-428/PR570-573, CA425-01..CA428-01; HISTORY.
 Siege stalls persist. Keep-awake released.
 

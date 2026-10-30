@@ -1,6 +1,10 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.11.4** - 2026-10-30.
+Documentation version: **5.11.5** - 2026-10-30.
+
+## 5.11.5 - Refresh rental dialogue after recognition (#580, 2026-10-30)
+
+The author reported that returning after speaking to a guard kept the rental offer unchanged. The rental actor retained its native conversation pointer after closing, so later Use could bypass the synchronization method. Clear that pointer only after a conversation closes; preserve active conversations and native pages on load. Quest data, property payments and refunds are unchanged. Native validation: 11 dialogue/property assertions and 2 save/reload assertions passed in GZDoom 4.14.2; static validation has no errors. Evidence: assets/validation_v5_11_5. Author retest CA580-01 is pending.
 
 Author feedback2026-10-30: CA432-01 (origin5.11.2/#432) passed; CA430-01
 (origin5.11.4/#430) inventory, trust, equipment and revival passed with

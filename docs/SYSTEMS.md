@@ -1,6 +1,10 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.11.4** - 2026-10-30.
+Documentation version: **5.11.5** - 2026-10-30.
+
+## House dialogue refresh (#580, 5.11.5)
+
+After a rental conversation closes, the next Use rebuilds its starting page and private requirement tokens from the current character record. A completed guard-recognition clue therefore enables the existing registry-check choice. Open conversations retain their current page across saves; ownership and refund idempotence remain unchanged.
 
 Companion correction2026-10-30: run beyond6m, return to walking within3m,
 using the companion's own existing speed, equipment, Air and penalties.
