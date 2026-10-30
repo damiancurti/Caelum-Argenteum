@@ -453,6 +453,12 @@ class CaelumPalomo : CaelumInteractiveFolkloreActor
 
 class CaelumMandinga : CaelumFolkloreCombatActor
 {
+    override int TakeSpecialDamage(Actor inflictor,Actor source,int damage,Name mod)
+    {
+        // Inmunidad al dano de contaminacion; conservar contacto y otros danos.
+        if(mod=='CaelumDiseaseDOT')return 0;
+        return Super.TakeSpecialDamage(inflictor,source,damage,mod);
+    }
     override bool UsesWeaponProjectileDispersion()
     { return CaelumResidentData.DEMON_PROJECTILE_DISPERSION; }
     override CaelumMixedMeleeDamage PrepareMixedMelee(Actor victim,double baseDamage)
@@ -622,6 +628,12 @@ class CaelumMandinga : CaelumFolkloreCombatActor
 
 class CaelumZupayColossus : CaelumFolkloreCombatActor
 {
+    override int TakeSpecialDamage(Actor inflictor,Actor source,int damage,Name mod)
+    {
+        // El mismo filtro se aplica a la fisiologia activa y ausente.
+        if(mod=='CaelumDiseaseDOT')return 0;
+        return Super.TakeSpecialDamage(inflictor,source,damage,mod);
+    }
     bool ZupayBirthInitialized;
     override bool UsesWeaponProjectileDispersion()
     { return CaelumResidentData.DEMON_PROJECTILE_DISPERSION; }

@@ -1,29 +1,11 @@
-CA429-01 | Origin 5.11.1 | Issue #429 | Corridor exit retest
-Use the combined V5.11 terminal, scenario3, then F1.
-All five guards must cross; no body should remain at the exit corner.
-The formation widens only after bodies fit. Expect four PASS, no FAIL.
+CA430-01 | Origin 5.11.4 | Issue #430 | Caella/Leonor speed review
+Prerequisite: assets/validation_v5_11_8/launch_manual.ps1, option2.
+Observe the actual mansion Caella and released Leonor running in the same hall.
+Expected: seven PASS; Caella carries22.0184kg versus Leonor5kg and runs slower
+under the approved load rule. Other companion checks were accepted2026-10-30.
 
-CA430-01 | Origin 5.11.4 | Issue #430 | Companion movement correction
-Prerequisite: assets/validation_v5_11_7/launch_manual.ps1; scenarios1 and2.
-Recruit the four residents. Walk up/down both mansion stair flights; let them
-pass through doors and cross your path. Watch their walking frames.
-Beyond6m they run using their own stats/Air; within3m they walk again.
-Save/load and continue. No overlapping bodies, teleporting or permanent jams.
-Free and recruit Leonor and the other prisoners; all must follow, retaining
-unfinished escort objectives after dismissal. Other checks passed: HISTORY.
-
-CA580-01 | Origin 5.11.5 | Issue #580 | Home investigation dialogue
-Use terminal scenario4, or a campaign. Start the home investigation
-at the rental agent, close the dialogue, speak to a guard, then return.
-Expected: the registry-check reply becomes available and restores the property;
-repeating it cannot duplicate refunds. Saving/reloading keeps the result.
-
-CA582-01 | 5.11.6 | #582 | Rat contamination damage
-Prerequisites: corrected V5.11 terminal, scenario6.
-Steps: run the focused active/absent disease and save/reload checks.
-Expected: rat health is unchanged by disease; contamination persists, ordinary damage still works, and Mandinga keeps its previous susceptibility.
-
-CA581-01 | Origin 5.11.7 | Issue #581 | Household placement
-Prerequisite: corrected terminal, scenario5 (central house).
-Check the workbench, Chemistry station and barrel against the north living-room wall and the extra cot in the bedroom. Use the stations and rest; leave/return and save/load.
-Expected: accessible original objects; barrel work retained; the former outdoor locations remain empty, including after returning to MAP03.
+CA586-01 | Origin 5.11.8 | Issue #586 | Demon disease immunity
+Prerequisite: the same terminal, option1.
+Expected: twenty policy PASS and six save/reload PASS, no FAIL. Mandinga, Zupay
+and rat health resist contamination damage while contamination is retained.
+Ordinary damage still hurts; the Caella control remains disease-susceptible.

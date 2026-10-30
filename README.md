@@ -6,7 +6,7 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.11.7.** Obtain and update the complete repository, validate
+**Current release: 5.11.8.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
 Author clarification: the comparison is Leonor versus Caella. Caella carries
@@ -20,15 +20,12 @@ duplicate movement. Leonor accelerates sooner because her body and equipment
 weigh less; her final speed is below Rufino and Leandro in this fixture.
 Evidence: `assets/validation_v5_11_4/speed-results.json`. Balance is unchanged.
 
-**V5.11 corrections are ready for author retest.** Companion walking/running,
-Leonor follow and mansion stairs are corrected (#430), as is the corridor exit
-(#429). Rental progression (#580), rat disease immunity (#582) and the workshop/
-cot relocation into the central house (#581) have separate commits and PRs.
-Native checks pass; no issue closure or merge is claimed.
-
-Run `assets/validation_v5_11_7/launch_manual.ps1` from the household branch for
-the numbered local test terminal. Outstanding checks are in `pending_test.txt`.
-The author accepted the other checks; reported corrections remain pending. No V5.11 closure or merge is claimed.
+**V5.11:** the author accepted the other correction scenarios. The remaining
+checks are the Caella/Leonor load comparison (#430) and Mandinga/Zupay disease
+immunity (#586), which preserves contamination and ordinary combat damage.
+Run `assets/validation_v5_11_8/launch_manual.ps1` for the two numbered tests.
+Outstanding checks: `pending_test.txt`. Commits and PRs remain separate and
+unmerged. Native upgrade/reload/rollback and both launchers pass.
 
 **V5.10 is complete and author-accepted (2026-10-30).** Issues #425-428 are
 closed and their focused PRs #570-573 are merged into main with commit ancestry

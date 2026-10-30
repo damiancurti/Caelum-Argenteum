@@ -1,12 +1,12 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.11.7** - 2026-10-30.
+Documentation version: **5.11.8** - 2026-10-30.
 
-**V5.11 corrections ready (5.11.7):** #429 passage, #430 companion motion,
-#580 rental, #581 house69 placement, #582 rat immunity. Native evidence:
-validation_v5_11_1/4/5/6/7. Separate PR576/579/583/584/585; unmerged.
-Other checks accepted2026-10-30. Retests: pending_test.txt; terminal:
-assets/validation_v5_11_7/launch_manual.ps1. Keep-awake released.
+**V5.11:** correction tests accepted2026-10-30 except Caella/Leonor speed
+review (#430). Her lower load explains faster movement; native ratios1.0.
+5.11.8/#586 adds Mandinga/Zupay disease immunity. Pending: CA430-01/CA586-01.
+PRs remain separate/unmerged. Terminal: assets/validation_v5_11_8/launch_manual.ps1.
+Keep-awake released.
 **V5.10 accepted:** #425-428/PR570-573, CA425-01..CA428-01; HISTORY.
 Siege stalls persist. Keep-awake released.
 

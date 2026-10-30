@@ -1,8 +1,33 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.11.7** - 2026-10-30.
+Documentation version: **5.11.8** - 2026-10-30.
+
+## 5.11.8 - Mandinga and Zupay contamination immunity (#586, 2026-10-30)
+
+The author explicitly requested the same contamination-damage immunity for
+Mandinga and Zupay. Each class rejects only CaelumDiseaseDOT. Active and
+absent physiology already call that filter, including restored native bodies;
+no data migration, health reset or resurrection is performed. Concentration,
+transmission and normal combat damage remain unchanged. No new actor scan.
+Native evidence and author confirmation are tracked separately in
+assets/validation_v5_11_8 and pending_test.txt.
+
+GZDoom4.14.2 final package: upgrade from the untouched5.11.7 save26 PASS,
+new-save reload6 PASS and original-save rollback under5.11.7 three PASS.
+The visible handoff scripts also pass26 immunity and7 speed assertions with
+Spanish UI and verified F-key bindings. Project validation has no errors.
+Native package SHA256: 6e88c82c7e5f67a4debbdfb8679c507d71d0e93376ca2a82592bbffb4ae871c0.
+Evidence: assets/validation_v5_11_8/results.json and compressed logs. Early
+fixture failures exposed native dormancy blocking all damage and Zupay
+absorbing a100-point hit; corrected fixtures activate the synchronous sample
+and use a hit above natural defense. Production changes remain the two
+species filters only; no immunity is inferred from a dormant actor.
+CA586-01 awaits author confirmation; CA430-01 awaits the load-review response.
 
 ## 5.11.7 - Arrival workshop moved into the protagonist house (#581, 2026-10-30)
+
+Author acceptance2026-10-30: CA581-01 (origin5.11.7/#581) passed,
+confirmed by "the rest of the tests passed" after the speed/species report.
 
 Final combined handoff: source package SHA256
 7f02160e26247425b49ed89cf118ef75b78a955bf8d107481b81f786abf6cfd8.
@@ -13,15 +38,22 @@ workshop were inspected. Keyboard use and correction acceptance remain the
 author's pending checks. Six focused scenarios are provided by
 assets/validation_v5_11_7/launch_manual.ps1; evidence stays separated by issue.
 
-The author identified the outdoor workbench, Chemistry station, fermentation barrel and cot, then selected the protagonist central house (house69) as their destination. Relocate the same actors through the established native travelling protocol; retain contamination, inventory and barrel batch, and move the batch lookup key to CAH069. Revision1 captures only the four authored source positions, defers while occupied/in use, and does not recreate removed objects. No WAD geometry changes. Placement retries use four retained entries; source migration uses four local blockmap queries per load, not global actor scans. GZDoom4.14.2:56 assertions passed across capture, roundtrip, save/reload, legacy upgrade and original-save rollback. Generator regeneration is byte-identical; project validation reports no errors. Evidence: assets/validation_v5_11_7. Author retest CA581-01 remains pending.
+The author identified the outdoor workbench, Chemistry station, fermentation barrel and cot, then selected the protagonist central house (house69) as their destination. Relocate the same actors through the established native travelling protocol; retain contamination, inventory and barrel batch, and move the batch lookup key to CAH069. Revision1 captures only the four authored source positions, defers while occupied/in use, and does not recreate removed objects. No WAD geometry changes. Placement retries use four retained entries; source migration uses four local blockmap queries per load, not global actor scans. GZDoom4.14.2:56 assertions passed across capture, roundtrip, save/reload, legacy upgrade and original-save rollback. Generator regeneration is byte-identical; project validation reports no errors. Evidence: assets/validation_v5_11_7. CA581-01: accepted2026-10-30 (record above).
 
 ## 5.11.6 - Rat contamination-damage immunity (#582, 2026-10-30)
 
-The author requested immunity after observing rats die from contamination. The rat class now rejects only CaelumDiseaseDOT in its native damage filter; active and absent physiology use that filter. Concentration, contact transmission, normal combat damage and already-dead bodies are preserved. Mandinga remains susceptible under its existing Toughness; no immunity was requested for that species. Existing saves need no data rewrite because the class filter applies to restored bodies. GZDoom 4.14.2: 5 active/absent disease and ordinary-damage checks plus 2 save/reload checks passed. Evidence: assets/validation_v5_11_6. CA582-01 remains pending.
+Author acceptance2026-10-30: CA582-01 (origin5.11.6/#582) passed,
+confirmed by "the rest of the tests passed" after the speed/species report.
+The prior Mandinga-susceptibility check is historical; #586 supersedes that rule.
+
+The author requested immunity after observing rats die from contamination. The rat class now rejects only CaelumDiseaseDOT in its native damage filter; active and absent physiology use that filter. Concentration, contact transmission, normal combat damage and already-dead bodies are preserved. Mandinga remains susceptible under its existing Toughness; no immunity was requested for that species. Existing saves need no data rewrite because the class filter applies to restored bodies. GZDoom 4.14.2: 5 active/absent disease and ordinary-damage checks plus 2 save/reload checks passed. Evidence: assets/validation_v5_11_6. CA582-01: accepted2026-10-30.
 
 ## 5.11.5 - Refresh rental dialogue after recognition (#580, 2026-10-30)
 
-The author reported that returning after speaking to a guard kept the rental offer unchanged. The rental actor retained its native conversation pointer after closing, so later Use could bypass the synchronization method. Clear that pointer only after a conversation closes; preserve active conversations and native pages on load. Quest data, property payments and refunds are unchanged. Native validation: 11 dialogue/property assertions and 2 save/reload assertions passed in GZDoom 4.14.2; static validation has no errors. Evidence: assets/validation_v5_11_5. Author retest CA580-01 is pending.
+Author acceptance2026-10-30: CA580-01 (origin5.11.5/#580) passed,
+confirmed by "the rest of the tests passed" after the speed/species report.
+
+The author reported that returning after speaking to a guard kept the rental offer unchanged. The rental actor retained its native conversation pointer after closing, so later Use could bypass the synchronization method. Clear that pointer only after a conversation closes; preserve active conversations and native pages on load. Quest data, property payments and refunds are unchanged. Native validation: 11 dialogue/property assertions and 2 save/reload assertions passed in GZDoom 4.14.2; static validation has no errors. Evidence: assets/validation_v5_11_5. CA580-01: accepted2026-10-30.
 
 Author feedback2026-10-30: CA432-01 (origin5.11.2/#432) passed; CA430-01
 (origin5.11.4/#430) inventory, trust, equipment and revival passed with
@@ -37,6 +69,10 @@ The first flat reload fixture wrongly expected a walk transition while all
 formation slots remained beyond3m; moving the leader within3m verifies it.
 
 ## 5.11.4 - Companion implementation (#430, 2026-10-30)
+
+Author acceptance2026-10-30: CA430-01 motion, animation, escort and mansion
+stairs passed except the clarified Leonor-versus-Caella speed observation.
+That comparison is documented below; its author review remains pending.
 
 Author clarification: the comparison is Leonor versus Caella. Caella carries
 22.0184kg (armor plus pickaxe, utility staff and bolas); Leonor carries5kg.
@@ -249,6 +285,9 @@ no new ETW capture or60FPS acceptance is claimed. Saved authoritative values
 are unchanged and all added caches are transient. Author acceptance is pending.
 
 ## 5.11.1 - Formations and bounded siege membership (#429, 2026-10-30)
+
+Author acceptance2026-10-30: CA429-01 (origin5.11.1/#429) passed,
+confirmed by "the rest of the tests passed" after the speed/species report.
 
 Author correction, 2026-10-30: CA429-01 remained failed because the front-left
 soldier stopped at (193.377,-15.586) when the group widened at the corridor exit.

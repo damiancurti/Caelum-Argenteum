@@ -1,29 +1,13 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.11.7** - 2026-10-30.
+Documentation version: **5.11.8** - 2026-10-30.
 
-The combined correction terminal is assets/validation_v5_11_7/launch_manual.ps1.
-Native final-package stairs/corridor and launcher reload checks pass. Await only
-the five correction IDs in pending_test.txt; other author checks are accepted.
-Do not close or merge issues until the correction retests are confirmed.
-
-## V5.11 household correction - #581
-
-Move the four authored exterior objects into house69. Preserve barrel work, contamination and ownership; verify source, house fit, hub round trip and save/reload. Author retest CA581-01 pending; V5.11 remains unmerged.
-
-## V5.11 rat correction - #582
-
-Active/absent disease immunity, ordinary damage, Mandinga non-regression and save/reload passed seven native assertions. Author retest CA582-01 remains pending. No V5.11 merge or closure is authorized by this patch.
-
-## V5.11 author corrections - #580
-
-Repair the rental agent's cached dialogue after guard recognition. Native dialogue/property (11) and save/reload (2) checks passed; CA580-01 author retest remains pending. Companion movement (#430), corridor recovery (#429), household placement (#581) and rat contamination immunity (#582) remain separate changes.
-
-Author feedback2026-10-30 accepted CA432-01 and nonmovement portions of
-CA430-01. Companion motion/animation/Leonor and corridor exit still need retest.
-The correction uses per-tic passive locomotion, approved6m/3m running thresholds,
-existing mansion stair nodes and local navigation. #580-582 separately address
-rental progression, central-house placement and rat disease immunity.
+Current author queue: Caella/Leonor speed review (#430) and new Mandinga/Zupay
+disease immunity (#586). Other correction IDs CA429-01, CA580-01, CA581-01 and
+CA582-01 passed2026-10-30; originating-release entries in HISTORY record them.
+Companion motion/animation/navigation passed apart from the speed observation.
+Measured equipment load explains that difference; no movement balance change.
+Use assets/validation_v5_11_8/launch_manual.ps1. No merge/closure authorization.
 
 ## V5.11 active - 5.11.4 (#429-433, 2026-10-30)
 
