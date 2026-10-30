@@ -9,12 +9,13 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 **Current release: 5.11.7.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-**V5.11 author corrections are in progress.** #580 refreshes the rental
-conversation; #582 makes rats immune to disease damage. Companion motion,
-passage recovery remain separate; #581 moves the workshop/cot into house69. Native checks do
-not replace author retests; no new merge or issue closure is claimed.
+**V5.11 corrections are ready for author retest.** Companion walking/running,
+Leonor follow and mansion stairs are corrected (#430), as is the corridor exit
+(#429). Rental progression (#580), rat disease immunity (#582) and the workshop/
+cot relocation into the central house (#581) have separate commits and PRs.
+Native checks pass; no issue closure or merge is claimed.
 
-Run `assets/validation_v5_11_4/launch_manual.ps1` from the companion branch for
+Run `assets/validation_v5_11_7/launch_manual.ps1` from the household branch for
 the numbered local test terminal. Outstanding checks are in `pending_test.txt`.
 The author accepted the other checks; reported corrections remain pending. No V5.11 closure or merge is claimed.
 

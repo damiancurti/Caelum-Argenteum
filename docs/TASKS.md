@@ -2,6 +2,11 @@
 
 Documentation version: **5.11.7** - 2026-10-30.
 
+The combined correction terminal is assets/validation_v5_11_7/launch_manual.ps1.
+Native final-package stairs/corridor and launcher reload checks pass. Await only
+the five correction IDs in pending_test.txt; other author checks are accepted.
+Do not close or merge issues until the correction retests are confirmed.
+
 ## V5.11 household correction - #581
 
 Move the four authored exterior objects into house69. Preserve barrel work, contamination and ownership; verify source, house fit, hub round trip and save/reload. Author retest CA581-01 pending; V5.11 remains unmerged.

@@ -1,0 +1,27 @@
+{
+  "rental": {
+    "log": "build\\issue581\\handoff\\author\\20261030-195137\\engine.log",
+    "saved_and_reloaded": true,
+    "bindings_queried": [
+      "F1",
+      "F5",
+      "F10"
+    ],
+    "screenshot": "manual-es.png"
+  },
+  "house": {
+    "log": "build\\issue581\\handoff\\author\\20261030-195205\\engine.log",
+    "saved_and_reloaded": true,
+    "bindings_queried": [
+      "F1",
+      "F5",
+      "F10"
+    ],
+    "screenshot": "manual-es.png"
+  },
+  "rat": {
+    "pass_count": 7,
+    "saved_and_reloaded": true
+  },
+  "runtime_sha256": "7f02160e26247425b49ed89cf118ef75b78a955bf8d107481b81f786abf6cfd8"
+}

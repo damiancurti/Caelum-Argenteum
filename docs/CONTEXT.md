@@ -2,11 +2,11 @@
 
 Documentation version: **5.11.7** - 2026-10-30.
 
-**V5.11 author corrections:** #580/5.11.5 refreshes rental dialogue; native
-validation_v5_11_5, CA580-01 pending. #429 corridor, #430 companion motion,
-#581 moves four objects into house69; #582 immunity passed native checks.
-Other checks accepted 2026-10-30; unmerged.
-Keep-awake released. Terminal after corrections.
+**V5.11 corrections ready (5.11.7):** #429 passage, #430 companion motion,
+#580 rental, #581 house69 placement, #582 rat immunity. Native evidence:
+validation_v5_11_1/4/5/6/7. Separate PR576/579/583/584/585; unmerged.
+Other checks accepted2026-10-30. Retests: pending_test.txt; terminal:
+assets/validation_v5_11_7/launch_manual.ps1. Keep-awake released.
 **V5.10 accepted:** #425-428/PR570-573, CA425-01..CA428-01; HISTORY.
 Siege stalls persist. Keep-awake released.
 
