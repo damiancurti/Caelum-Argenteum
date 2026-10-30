@@ -8318,14 +8318,7 @@ class CaelumPlayer : DoomPlayer
     }
 
     int GetRangedAmmoType(int weaponType)
-    {
-        if(weaponType==CaelumConstants.WEAPON_TYPE_SHOTGUN)return CaelumConstants.AMMUNITION_SHOTGUN;
-        if (weaponType == CaelumConstants.WEAPON_TYPE_CARBINE)
-            return CaelumConstants.AMMUNITION_CARBINE;
-        if (weaponType == CaelumConstants.WEAPON_TYPE_CROSSBOW)
-            return CaelumConstants.AMMUNITION_BOLT;
-        return CaelumConstants.AMMUNITION_ARROW;
-    }
+    {return CaelumRangedRules.AmmoType(weaponType);}
 
     double GetRangedBaseReloadSeconds(int weaponType)
     {

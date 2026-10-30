@@ -7148,3 +7148,51 @@ CA_RENTAL_EXISTING = "Tenemos registrados tus pagos por esta casa. Su dueño ant
 CA_SERVICE_HOSTILE = "%FACTION% refuses its services while your reputation is hostile.";
 [es]
 CA_SERVICE_HOSTILE = "%FACTION% rechaza sus servicios mientras tu reputación sea hostil.";
+
+// #430 companion administration.
+
+[enu default]
+CA_COMPANION_DIALOGUE = "Travel together / manage party";
+CA_COMPANION_SUBCAPTAIN = "Subcaptain";
+CA_COMPANION_INTRO = "We can coordinate our group here.";
+CA_COMPANION_TRUST = "Trust: %.2f / 100";
+CA_COMPANION_YOUR_ITEMS = "Your inventory. Enter: gift; L: lend. Whole stacks retain their identity.";
+CA_COMPANION_THEIR_ITEMS = "Companion inventory. Enter: request item; E: equip or remove.";
+CA_COMPANION_EQUIP = "E Equip / remove";
+CA_COMPANION_EQUIPPED = "Equipped";
+CA_COMPANION_REFUSED = "Refused. Try again after trust or the story situation changes.";
+CA_COMPANION_DONE = "Done.";
+CA_COMPANION_REJECTED = "Unavailable: check membership, capacity, access and item ownership.";
+CA_COMPANION_JOIN = "1 Join group";
+CA_COMPANION_FOLLOW = "2 Follow";
+CA_COMPANION_WAIT = "3 Wait";
+CA_COMPANION_LEAVE = "4 Dismiss";
+CA_COMPANION_FORMATION = "F Change formation";
+CA_COMPANION_SWITCH = "I Switch inventory";
+CA_COMPANION_TRANSFER = "Enter Gift / request";
+CA_COMPANION_LOAN = "L Lend item";
+CA_COMPANION_PREVIOUS = "Up Previous";
+CA_COMPANION_NEXT = "Down Next";
+
+[es]
+CA_COMPANION_DIALOGUE = "Viajar juntos / administrar grupo";
+CA_COMPANION_SUBCAPTAIN = "Subcapitán";
+CA_COMPANION_INTRO = "Podemos organizar el grupo aquí.";
+CA_COMPANION_TRUST = "Confianza: %.2f / 100";
+CA_COMPANION_YOUR_ITEMS = "Tu inventario. Enter: regalar; L: prestar. Se trasladan pilas completas.";
+CA_COMPANION_THEIR_ITEMS = "Inventario del compañero. Enter: solicitar objeto; E: equipar o quitar.";
+CA_COMPANION_EQUIP = "E Equipar / quitar";
+CA_COMPANION_EQUIPPED = "Equipado";
+CA_COMPANION_REFUSED = "No acepta. Podrás volver a pedirlo cuando cambie la confianza o la situación.";
+CA_COMPANION_DONE = "Hecho.";
+CA_COMPANION_REJECTED = "No disponible: revisá pertenencia al grupo, capacidad, acceso y propiedad del objeto.";
+CA_COMPANION_JOIN = "1 Incorporar";
+CA_COMPANION_FOLLOW = "2 Seguir";
+CA_COMPANION_WAIT = "3 Esperar";
+CA_COMPANION_LEAVE = "4 Despedir";
+CA_COMPANION_FORMATION = "F Cambiar formación";
+CA_COMPANION_SWITCH = "I Cambiar inventario";
+CA_COMPANION_TRANSFER = "Enter Regalar / solicitar";
+CA_COMPANION_LOAN = "L Prestar objeto";
+CA_COMPANION_PREVIOUS = "Arriba Anterior";
+CA_COMPANION_NEXT = "Abajo Siguiente";

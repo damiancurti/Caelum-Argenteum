@@ -1,8 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.11.3** - 2026-10-30.
+Documentation version: **5.11.4** - 2026-10-30.
 
-## V5.11 active - 5.11.3 (#429-433, 2026-10-30)
+Author feedback2026-10-30 accepted CA432-01 and nonmovement portions of
+CA430-01. Companion motion/animation/Leonor and corridor exit still need retest.
+The correction uses per-tic passive locomotion, approved6m/3m running thresholds,
+existing mansion stair nodes and local navigation. #580-582 separately address
+rental progression, central-house placement and rat disease immunity.
+
+## V5.11 active - 5.11.4 (#429-433, 2026-10-30)
 
 - #431: subsystem profiling and current/full35/reduced5/simplified diagnostic
   comparisons; production runtime unchanged. Numerical accuracy observations
@@ -10,18 +16,22 @@ Documentation version: **5.11.3** - 2026-10-30.
   remaining limitations must be reported separately from render callbacks.
 - #429: formation/admission implementation has passed focused native geometry,
   membership, combat-order, full-package save/migration and campaign checks.
-  Author reported a corridor-exit stall; sampled cylinder clearance corrects it.
-  Four native checks pass; CA429-01 retest remains pending.
-- #430: approved roster, recruitment, persistent death, trust and consent are
-  recorded on its issue. The subcaptain uses Domingo's appearance and 20 in
-  every attribute, not customizable player statistics or ordinary guard 18.
+  Corridor-exit correction passes four native checks; CA429-01 retest pending.
+- #430: implementation complete, pending author review. All nine authored
+  identities, dialogue administration, native equipment, finite ranged/magic
+  attacks, jewelry/clothing, unit-level gift/loan provenance, private consent,
+  travel, persistent death and the paid revival ability have native coverage.
+  The full package retains accepted-save bodies/inventory and adds no automatic
+  recruits. Mansion protection/trial precedence and campaign mortality pass.
+  Visual panel review covers English/Spanish. Windows input injection was
+  unavailable; native bindings were queried and physical keys remain author QA.
 - #432: shared climate/pristine/attribute caches pass133 final native assertions.
   Normal siege improves modestly; presentation remains unmeasured for this patch.
 - #433: approved candidate evaluated;14 native wake/reload assertions pass.
   No production adoption: siege sample avoids zero queries, and peaceful scenes
   show no clear benefit. Evidence and counter limitations: validation_v5_11_3.
 - Deliver one linked PR per issue, commit/push separately, and group outstanding
-  author checks in root pending_test.txt when the whole version is ready.
+  author checks in root pending_test.txt; the combined numbered terminal is ready.
   V5.11 merges/closure are not yet authorized.
 
 ## V5.10 complete - author-accepted 2026-10-30 (5.10.3, #425-428)

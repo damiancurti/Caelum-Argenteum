@@ -12,6 +12,8 @@ conversation
         name = "$CA_ARGENTO_NAME";
         dialog = "$CA_DLG_M01_ARGENTO_EARLY";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         ifitem
         {
             item = "CaelumM00SocialReadyToken";
@@ -28,6 +30,8 @@ conversation
         name = "$CA_ARGENTO_NAME";
         dialog = "$CA_DLG_M01_ARGENTO_START";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         ifitem
         {
             item = "CaelumM00ArgentoStartedToken";
@@ -50,6 +54,8 @@ conversation
         name = "$CA_ARGENTO_NAME";
         dialog = "$CA_DLG_M01_ARGENTO_RESIDENTS";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice
         {
             text = "$CA_DLG_M01_ARGENTO_ASK_HOW";
@@ -64,6 +70,8 @@ conversation
         name = "$CA_ARGENTO_NAME";
         dialog = "$CA_DLG_M01_ARGENTO_QUOTE";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice
         {
             text = "$CA_DLG_M01_ARGENTO_ACCEPT";
@@ -79,6 +87,8 @@ conversation
         name = "$CA_ARGENTO_NAME";
         dialog = "$CA_DLG_M01_ARGENTO_PROGRESS";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         ifitem
         {
             item = "CaelumM00AllConvincedToken";
@@ -131,6 +141,8 @@ conversation
         name = "$CA_ARGENTO_NAME";
         dialog = "$CA_DLG_M01_ARGENTO_HINT_RULO";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice
         {
             text = "$CA_DLG_M01_BACK";
@@ -145,6 +157,8 @@ conversation
         name = "$CA_ARGENTO_NAME";
         dialog = "$CA_DLG_M01_ARGENTO_HINT_RONNIE";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice
         {
             text = "$CA_DLG_M01_BACK";
@@ -159,6 +173,8 @@ conversation
         name = "$CA_ARGENTO_NAME";
         dialog = "$CA_DLG_M01_ARGENTO_HINT_CAELLA";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice
         {
             text = "$CA_DLG_M01_BACK";
@@ -173,6 +189,8 @@ conversation
         name = "$CA_ARGENTO_NAME";
         dialog = "$CA_DLG_M01_ARGENTO_ALL_READY";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         ifitem
         {
             item = "CaelumM00ArgentoCompleteToken";
@@ -194,6 +212,8 @@ conversation
         name = "$CA_ARGENTO_NAME";
         dialog = "$CA_DLG_M01_ARGENTO_COMPLETE";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice
         {
             text = "$CA_DLG_M01_ARGENTO_NEXT";
@@ -212,6 +232,8 @@ conversation
         name = "$CA_ARGENTO_NAME";
         dialog = "$CA_DLG_M01_ARGENTO_NEXT_REPLY";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
     }
     page
     {
@@ -220,6 +242,8 @@ conversation
         name = "$CA_ARGENTO_NAME";
         dialog = "$CA_DLG_M01_WORKSHOP_ARGENTO";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice { text = "$CA_DLG_M01_GARDEN_ASK"; nextpage = "argento_resources"; }
     }
     page
@@ -229,6 +253,8 @@ conversation
         name = "$CA_ARGENTO_NAME";
         dialog = "$CA_M01_RONNIE_LOCATION";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
     }
 
     page
@@ -238,6 +264,8 @@ conversation
         name = "$CA_ARGENTO_NAME";
         dialog = "$CA_M01_KEY_WAIT";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         ifitem { item = "CaelumM00SilverKeyReadyToken"; amount = 1; }
         link = "argento_key_ready";
     }
@@ -248,6 +276,8 @@ conversation
         name = "$CA_ARGENTO_NAME";
         dialog = "$CA_M01_KEY_READY";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         ifitem { item = "CaelumM00SilverKeyHeldToken"; amount = 1; }
         link = "argento_key_given";
         choice { text = "$CA_M01_KEY_TAKE"; nextpage = "argento_key_given"; closedialog = false; giveitem = "CaelumM00TakeSilverKeyAction"; }
@@ -259,6 +289,8 @@ conversation
         name = "$CA_ARGENTO_NAME";
         dialog = "$CA_M01_KEY_GIVEN";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
     }
 
 }

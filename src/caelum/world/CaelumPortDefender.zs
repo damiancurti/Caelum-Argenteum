@@ -180,6 +180,7 @@ class CaelumPortDefender : CaelumFolkloreCombatActor
 
     override void Tick()
     {
+        if(Companion!=null && Companion.Parked)return;
         // Un nacimiento que cruzó un mapa aún debe recibir PostBeginPlay nativo.
         // Después se archiva sin ejecutar combate en una casa que no está cargada.
         if(Residence!=null && Residence.Suspended)
@@ -243,6 +244,8 @@ class CaelumPortDefender : CaelumFolkloreCombatActor
         FollowingCrewRoute=false;return Station;
     }
 
+    virtual int BirthAttribute(){return CaelumPortData.DEFENDER_ATTRIBUTE;}
+
     override void PostBeginPlay()
     {
         if(DefenderBirthInitialized)return;
@@ -250,7 +253,7 @@ class CaelumPortDefender : CaelumFolkloreCombatActor
         Super.PostBeginPlay();
         Mass=CaelumPortData.DEFENDER_MASS_KG;
         A_SetSize(GetDefaultByType("CaelumPlayer").Radius,CaelumPortData.DEFENDER_HEIGHT);
-        InitializeUniformFolkloreProfile(CaelumPortData.DEFENDER_ATTRIBUTE);
+        InitializeUniformFolkloreProfile(BirthAttribute());
         InitializeCombatArmor(CaelumConstants.ARMOR_TYPE_MEDIUM,CaelumPortData.EQUIPMENT_TIER);
         Shield=new("CaelumShieldModel");Shield.InitializeDefaults();
         Shield.ShieldType=CaelumConstants.SHIELD_TYPE_KITE;Shield.Equipped=true;
@@ -265,45 +268,16 @@ class CaelumPortDefender : CaelumFolkloreCombatActor
 
     override double GetAttackCarriedWeight()
     {
-        return Super.GetAttackCarriedWeight()+(Shield==null ? 0 : Shield.GetWeight())
-            +(Sword==null ? 0 : Sword.GetWeightFor(0,CaelumPortData.EQUIPMENT_TIER,CaelumConstants.EQUIPMENT_SIZE_M))
+        let loadout=Companion!=null ? Companion.Loadout : null;
+        return Super.GetAttackCarriedWeight()+(Shield==null || (loadout!=null && loadout.ShieldItem!=null) ? 0 : Shield.GetWeight())
+            +(Sword==null || (loadout!=null && loadout.SidearmItem!=null) ? 0 : Sword.GetWeightFor(0,CaelumPortData.EQUIPMENT_TIER,CaelumConstants.EQUIPMENT_SIZE_M))
             +(Carbine==null || Carbine.Weapon==null ? 0 : Carbine.Weapon.GetWeightFor(Carbine.Weapon.WeaponType,Carbine.Weapon.Tier,Carbine.Weapon.Size));
     }
 
     override Sound GetCombatPainSound(){return "caelum/player/pain_male";}
 
     override double ResolveActorShieldDamage(Actor inflictor,Actor source,double damage,Name mod,int flags)
-    {
-        Actor attacker=source!=null ? source : inflictor;
-        bool blocking=health>0 && !bInvulnerable && Shield!=null && Shield.Durability>0 && (Carbine==null || !Carbine.Held)
-            && attacker!=null && attacker!=self && damage>0
-            && mod!='CaelumImpact' && mod!='Crush' && mod!='CaelumWeight'
-            && !(mod=='Electric' && inflictor is "CaelumChannelEffect")
-            && !InStateSequence(CurState,MeleeState)
-            && Abs(DeltaAngle(Angle,AngleTo(attacker)))<=Shield.GetCoverageDegrees()/2.0;
-        if(blocking)
-        {
-            if(CaelumContaminationCombat.Physical(self,inflictor,source,mod,flags))
-                ContaminationBlocker=CaelumContaminationCombat.ShieldPoint(Shield);
-            bool magic=CaelumArmorRules.IsMagical(inflictor,mod);
-            int kind=magic ? CaelumConstants.SHIELD_DAMAGE_MAGICAL : CaelumConstants.SHIELD_DAMAGE_PHYSICAL;
-            double absorption=Shield.GetDefense(kind)/100.0*CaelumPersonalityRules.Absorption(self,magic)
-                *(1-CaelumPersonalityRules.AttackPenetration(inflictor,source));
-            double absorbed=damage*Clamp(absorption,0,1);
-            damage=Max(0,damage-absorbed);
-            let mixed=CaelumMixedMeleeDamage.ForHit(self,inflictor,source,mod);
-            if(mixed!=null)absorbed+=mixed.BlockFire(self,Shield.GetDefense(CaelumConstants.SHIELD_DAMAGE_MAGICAL),inflictor,source);
-            double wear=absorbed;
-            int loss=int(wear/CaelumConstants.ARMOR_ABSORBED_DAMAGE_PER_GUARANTEED_DURABILITY);
-            double remainder=wear-loss*CaelumConstants.ARMOR_ABSORBED_DAMAGE_PER_GUARANTEED_DURABILITY;
-            if(Random[CaelumShieldDurability](0,999999)/10000.0
-                < remainder/CaelumConstants.ARMOR_DAMAGE_PER_DURABILITY_CHANCE_PERCENT)loss++;
-            Shield.Durability=Max(0,Shield.Durability-loss);
-            if(absorbed>0)AddActorCombatAdrenaline(CaelumConstants.ADRENALINE_GAIN_ON_SHIELD_BLOCK
-                *CaelumConstants.SHIELD_KITE_BLOCK_ADRENALINE_MULTIPLIER);
-        }
-        return damage;
-    }
+    {return CaelumActorShield.Resolve(self,Shield,Carbine!=null && Carbine.Held,inflictor,source,damage,mod,flags);}
 
     action void A_PortSword()
     {

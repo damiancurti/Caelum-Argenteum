@@ -93,5 +93,11 @@ class CaelumRonnie : CaelumAnchoredResident
     ResidentToolUse:
         RONI E 1;
         Loop;
+    CompanionWalk:
+        RORN ABCD 4;
+        Loop;
+    CompanionIdle:
+        ROID A -1;
+        Stop;
     }
 }

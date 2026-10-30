@@ -175,7 +175,7 @@ class CaelumPalomo : CaelumInteractiveFolkloreActor
         if (NarrativeRevealRequired) bInvulnerable = true;
     }
 
-    Vector3 GetDepartureWaypoint(int index)
+    static Vector3 GetDepartureWaypoint(int index)
     {
         switch (index)
         {

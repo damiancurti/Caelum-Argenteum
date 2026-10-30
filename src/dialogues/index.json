@@ -80,6 +80,10 @@
     {
       "name": "rental_agent",
       "path": "dialogues/npc/rental_agent.usdf"
+    },
+    {
+      "name": "companions",
+      "path": "dialogues/shared/companions.usdf"
     }
   ],
   "order": [
@@ -146,6 +150,7 @@
     43653,
     43654,
     43655,
-    43660
+    43660,
+    43890
   ]
 }

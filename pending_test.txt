@@ -1,5 +1,13 @@
 CA429-01 | Origin 5.11.1 | Issue #429 | Corridor exit retest
-Use the combined V5.11 terminal, scenario 3, then F1.
-Expected: all five guards cross, including the front-left guard; no body remains
-at the right-hand exit corner. The formation widens only after bodies fit.
-Four PASS lines; no FAIL. Author reported the previous failure on 2026-10-30.
+Use the combined V5.11 terminal, scenario3, then F1.
+All five guards must cross; no body should remain at the exit corner.
+The formation widens only after bodies fit. Expect four PASS, no FAIL.
+
+CA430-01 | Origin 5.11.4 | Issue #430 | Companion movement correction
+Prerequisite: corrected combined terminal; mansion and prisoner scenarios.
+Recruit the four residents. Walk up/down both mansion stair flights; let them
+pass through doors and cross your path. Watch their walking frames.
+Beyond6m they run using their own stats/Air; within3m they walk again.
+Save/load and continue. No overlapping bodies, teleporting or permanent jams.
+Free and recruit Leonor and the other prisoners; all must follow, retaining
+unfinished escort objectives after dismissal. Other checks passed: HISTORY.

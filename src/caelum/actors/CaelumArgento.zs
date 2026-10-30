@@ -92,5 +92,11 @@ class CaelumArgento : CaelumAnchoredResident
     ResidentToolUse:
         ARGO E 1;
         Loop;
+    CompanionWalk:
+        ARRN ABCD 4;
+        Loop;
+    CompanionIdle:
+        ARID A -1;
+        Stop;
     }
 }

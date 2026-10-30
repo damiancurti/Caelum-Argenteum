@@ -293,6 +293,9 @@ class CaelumActorProjectile : Actor
         CaelumWeaponWearPrepared = true;
         let user = CaelumPlayer(Target);
         if (user != null) CaelumWearSourceItem = user.FindNativeEquipmentItemById(user.ActiveWeaponItemId);
+        let npc=CaelumCombatActor(Target);
+        if(npc!=null && npc.Companion!=null && npc.Companion.Loadout!=null)
+            CaelumWearSourceItem=npc.Companion.Loadout.SelectedWeapon;
         CaelumWearWeaponType = weaponType;
         CaelumWearWeaponTier = tier;
         CaelumWearWeaponSize = equipmentSize;

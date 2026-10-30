@@ -4,11 +4,12 @@
 class CaelumCombatActor : Actor
 {
     CaelumVisualEvidence VisualEvidence;
-    CaelumFormationMember Formation;
-    // #432: resultados puros por atributo; no guardan objetivos ni percepcion.
     transient bool VisualInsightReady,VisualStealthReady;
     transient int VisualInsightKey,VisualStealthKey;
     transient double VisualInsightFactor,VisualStealthPercent;
+
+    CaelumFormationMember Formation;
+    CaelumCompanionBond Companion;
     CaelumPlayer PendingTheftTarget;
     int NextNoiseStepTic;
     bool NoiseStepScheduled;
@@ -623,6 +624,7 @@ class CaelumCombatActor : Actor
         if (combatActor == null) { return; }
         if (combatActor.PulseResourceRecovery()) return;
         if (CaelumTheftWitnesses.Pursue(combatActor)) return;
+        if(CaelumCompanions.Pulse(combatActor))return;
         if (CaelumPortSiege.Pulse(combatActor)) return;
 
         // El primer miembro que ve al jugador publica el objetivo. Los demás
@@ -663,6 +665,7 @@ class CaelumCombatActor : Actor
         if (combatActor == null) { return; }
         if (combatActor.PulseResourceRecovery()) return;
         if (CaelumTheftWitnesses.Pursue(combatActor)) return;
+        if(CaelumCompanions.Pulse(combatActor))return;
         if (CaelumPortSiege.Pulse(combatActor)) return;
 
         // La prueba de escuadras separa decisión y combate de la consulta
@@ -1152,8 +1155,11 @@ class CaelumCombatActor : Actor
     {
         if(AbsentTheft!=null)return CaelumTheftTransfer.Carried(self);
         double weight = CombatArmor == null ? 0 : CombatArmor.GetTotalWeight();
+        if(Companion!=null && Companion.Loadout!=null)weight-=Companion.Loadout.MaterializedArmorWeight();
         for (Inventory cursor=Inv; cursor!=null; cursor=cursor.Inv)
         {
+            if(Companion!=null)
+            {if(!CaelumContainerRules.Boxed(cursor))weight+=CaelumTheftTransfer.Weight(cursor);continue;}
             let item=CaelumEquipmentItem(cursor);
             if (item!=null && !item.InMagicBox) weight+=item.UnitWeight*item.Amount;
             let consumable=CaelumConsumableItem(cursor);
@@ -3036,7 +3042,10 @@ class CaelumCombatActor : Actor
     }
 
     virtual double ResolveActorShieldDamage(Actor inflictor,Actor source,double damage,Name mod,int flags)
-    {return damage;}
+    {
+        return Companion!=null && Companion.Loadout!=null
+            ? CaelumActorShield.Resolve(self,Companion.Loadout.Shield,false,inflictor,source,damage,mod,flags) : damage;
+    }
 
     int ReceiveCaelumDamage(
         Actor inflictor,
@@ -3751,10 +3760,17 @@ class CaelumCombatActor : Actor
         if(cache!=null && !cache.HealthChanged(self))
         {
             // Restaurar también asignaciones alteradas por consumidores, como la recarga.
-            cache.RestoreHealth(self);return;
+            cache.RestoreHealth(self);
         }
-        CalculateCombatHealthEffects();
-        if(cache!=null)cache.StoreHealth(self);
+        else
+        {
+            CalculateCombatHealthEffects();
+            if(cache!=null)cache.StoreHealth(self);
+        }
+        // La cache conserva la velocidad sin recarga; aplicar una sola vez al restaurar.
+        if(Companion!=null && Companion.Loadout!=null && Companion.Loadout.Ranged!=null
+            && Companion.Loadout.Ranged.ReloadRemaining>0)
+            Speed*=CaelumConstants.RELOAD_MOVEMENT_AND_PROGRESS_MULTIPLIER;
     }
 
     void CalculateCombatHealthEffects()
@@ -3954,6 +3970,7 @@ class CaelumCombatActor : Actor
         // El guard transitorio cubre esa reentrada; KILLED cubre la repetición.
         if(DispatchingDeath || bKilled)return;
         DispatchingDeath=true;
+        if(Companion!=null)Companion.RecordDeath();
         EnsureNativeDeathLootState();
         if(CaelumRedemption.PreviouslyRaised(self)){MazeDropReleased=true;DemonDeathLootReleased=true;}
         // La posición seca original recupera incluso bajas en pozos/aplastamientos.
@@ -4101,7 +4118,8 @@ class CaelumCombatActor : Actor
             for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i] && players[i].mo!=null)
             {CaelumContaminationAbsence.Restore(self,CaelumPlayer(players[i].mo));break;}
         }
-        if(CaelumRedemption.Pending(self))return;
+        if((Companion!=null && Companion.Parked) || CaelumRedemption.Pending(self))return;
+        if(Companion!=null && Companion.Loadout!=null)Companion.Loadout.Step();
         MigrateNativeFrozenDeathState();
         EnsureCombatPersonality();
         EnsureGrowthBalance();
@@ -4129,6 +4147,7 @@ class CaelumCombatActor : Actor
             if (!SiegeCombatant.Exited) { Super.Tick();CaelumThermalRuntime.NPCStep(self); }
             return;
         }
+        CaelumCompanionMotion.Tick(self);
         Vector3 prePhysicsVelocity = Vel;
         vector3 thermalBefore=Pos;
         Sector thermalSector=CurSector;

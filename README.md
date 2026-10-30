@@ -6,15 +6,21 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.11.3.** Obtain and update the complete repository, validate
+**Current release: 5.11.4.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-**V5.11 implementation is in progress.** Patch 5.11.3 records the #433 distant
-search evaluation. Its five-tic empty-query prototype passes event-wake and reload
-checks but has no isolated measured benefit, so production retains normal searches.
-#429 formations, #431 profiling and #432 derived caches have separate PRs.
-#430 companions remain under implementation. No V5.11 author acceptance or merge
-is claimed; manual checks will be grouped after the whole version is ready.
+**V5.11 implementation is ready for author review.** Patch5.11.4 completes
+#430 companions: dialogue recruitment, orders, native equipment, private trust,
+loans/gifts, cross-map bodies and paid resurrection. Full-package native tests
+cover inventory provenance, campaign protection, legacy saves and combined
+formations/caches. Separate PRs575-579 cover issues429-433. The distant-search
+candidate in #433 was evaluated and not adopted because no isolated improvement
+was demonstrated. Large siege stalls remain; this is not a60-FPS claim.
+
+Run `assets/validation_v5_11_4/launch_manual.ps1` from the companion branch for
+the numbered local test terminal. Outstanding checks are in `pending_test.txt`.
+Other author checks passed on2026-10-30; companion movement and formation
+corrections remain for retest. No issue closure or merge is claimed.
 
 The #429 corridor-exit correction is included; its author retest remains pending.
 
@@ -23,7 +29,7 @@ closed and their focused PRs #570-573 are merged into main with commit ancestry
 preserved. Vision, anonymous noise, private memory/search and audible reports/
 orders are accepted. Evidence: validation_5100-5103; final communication/save/
 migration assertions: 53 PASS, combined regression: 91 PASS. HISTORY records
-CA425-01 through CA428-01; `pending_test.txt` is empty. The release remains
+CA425-01 through CA428-01; `pending_test.txt` was empty at that closure. The release remains
 5.10.3 because acceptance changes no gameplay. The large siege remains slow:
 its final render-callback
 mean is 653.63 ms versus 601.96 ms on the accepted baseline; these are not monitor

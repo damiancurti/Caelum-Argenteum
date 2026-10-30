@@ -107,22 +107,33 @@ class CaelumSupportMagic : Object play
         if(user!=null){user.player.health=body.health;user.UpdateHealthStateEffects();}
         else if(npc!=null)npc.UpdateCombatHealthEffects();
     }
-    static bool Eligible(CaelumPlayer caster,Actor body,int role)
+    static bool Eligible(Actor caster,Actor body,int role)
     {
         if(caster==null || body==null || caster.health<=0 || body.health<=0
             || !CaelumSupportImplementData.ValidRole(role)
             || (CaelumPlayer(body)==null && CaelumCombatActor(body)==null)
             || CaelumRedemption.Pending(body))return false;
         let summoned=CaelumSummonedZupay(body);if(summoned!=null && summoned.AwaitingPlacement)return false;
-        return CaelumSupportImplementData.Beneficial(role)?CaelumRedemption.Allied(caster,body):CaelumSummoning.Enemy(caster,body);
+        let user=CaelumPlayer(caster);
+        if(user!=null)return CaelumSupportImplementData.Beneficial(role)?CaelumRedemption.Allied(user,body):CaelumSummoning.Enemy(user,body);
+        let npc=CaelumCombatActor(caster);let leader=npc!=null ? CaelumCommunication.Principal(npc) : null;
+        if(leader==null)return false;
+        return CaelumSupportImplementData.Beneficial(role) ? body==npc || CaelumRedemption.Allied(leader,body)
+            : CaelumVisualPerception.Opponent(npc,body);
     }
-    static bool Apply(CaelumPlayer caster,Actor body,int role)
+    static bool Apply(Actor caster,Actor body,int role)
     {
-        if(!Eligible(caster,body,role) || caster.Attributes==null)return false;
+        if(!Eligible(caster,body,role))return false;
+        let user=CaelumPlayer(caster);let npc=CaelumCombatActor(caster);
+        if(user!=null && user.Attributes==null)return false;
         let status=Status(body);
         if(status==null)status=CaelumSupportStatus(body.GiveInventoryType("CaelumSupportStatus"));
         if(status==null)return false;
-        status.Apply(role,caster,CaelumSupportImplementData.Beneficial(role)?caster.Attributes.Empathy:caster.Attributes.Charisma);
+        bool benefit=CaelumSupportImplementData.Beneficial(role);
+        double attribute=user!=null ? (benefit ? user.Attributes.Empathy : user.Attributes.Charisma)
+            : (benefit ? npc.CombatEmpathy+npc.GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_EMPATHY)
+                : npc.CombatCharisma+npc.GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_CHARISMA));
+        status.Apply(role,caster,attribute);
         return true;
     }
     static bool InArea(Actor body,vector3 point,double radius)
@@ -131,7 +142,7 @@ class CaelumSupportMagic : Object play
         double vertical=Max(0,Max(body.Pos.Z-point.Z,point.Z-body.Pos.Z-body.Height));
         return horizontal*horizontal+vertical*vertical<=radius*radius;
     }
-    static int ApplyArea(CaelumPlayer caster,vector3 point,int role,double radius)
+    static int ApplyArea(Actor caster,vector3 point,int role,double radius)
     {
         let origin=Actor.Spawn("CaelumSupportAreaOrigin",point,NO_REPLACE);if(origin==null)return 0;
         int applied=0;

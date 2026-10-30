@@ -2751,7 +2751,9 @@ class CaelumCarbineProjectile : CaelumActorProjectile
         int preparedDamage=GetCaelumPreparedDamage(int(CaelumConstants.CARBINE_TIER_ONE_DAMAGE));
         CaelumPlayer weaponOwner = CaelumPlayer(Target);
         let soldier=CaelumPortDefender(Target);
-        if(soldier!=null && soldier.Carbine!=null && CaelumWeaponWearPrepared
+        if(CaelumCombatActor(Target)!=null && CaelumWearSourceItem!=null && CaelumWeaponWearPrepared
+            && !(victim is "CaelumM00TrainingDummy"))CaelumWeaponUseRules.Wear(CaelumWearSourceItem,preparedDamage);
+        else if(soldier!=null && soldier.Carbine!=null && CaelumWeaponWearPrepared
             && !(victim is "CaelumM00TrainingDummy"))soldier.Carbine.Wear(preparedDamage);
         if (weaponOwner != null && CaelumWeaponWearPrepared
             && !(victim is "CaelumM00TrainingDummy"))
@@ -2974,6 +2976,8 @@ class CaelumPlayerMagicProjectile : CaelumActorProjectile
     {
         int preparedDamage=GetCaelumPreparedDamage(1);
         CaelumPlayer weaponOwner = CaelumPlayer(Target);
+        if(CaelumCombatActor(Target)!=null && CaelumWearSourceItem!=null && CaelumWeaponWearPrepared
+            && !(victim is "CaelumM00TrainingDummy"))CaelumWeaponUseRules.Wear(CaelumWearSourceItem,preparedDamage);
         if (weaponOwner != null && CaelumWeaponWearPrepared
             && !(victim is "CaelumM00TrainingDummy"))
         {
@@ -3094,52 +3098,41 @@ class CaelumHomingMagicProjectile : CaelumPlayerMagicProjectile
             && pitchDifference <= CaelumSeekHalfAngle;
     }
 
+    double SeekAngularScore(Actor candidate)
+    {
+        vector3 offset=candidate.Pos+(0,0,candidate.Height*0.5)-CaelumSeekOrigin;
+        double yaw=Abs(DeltaAngle(CaelumSeekAimAngle,VectorAngle(offset.X,offset.Y)));
+        double pitch=Abs(DeltaAngle(CaelumSeekAimPitch,-ATan2(offset.Z,Max(0.001,offset.XY.Length()))));
+        return yaw*yaw+pitch*pitch;
+    }
+
+    Actor BetterSeekTarget(Actor candidate,Actor current)
+    {
+        if(!IsCaelumSeekCandidate(candidate,true))return current;
+        if(current==null)return candidate;
+        double score=SeekAngularScore(candidate);double previous=SeekAngularScore(current);
+        if(score<previous || (Abs(score-previous)<0.0001
+            && (candidate.Pos+(0,0,candidate.Height*0.5)-CaelumSeekOrigin).Length()
+                < (current.Pos+(0,0,current.Height*0.5)-CaelumSeekOrigin).Length()))return candidate;
+        return current;
+    }
+
     Actor FindBestCaelumSeekTarget()
     {
-        Actor bestTarget;
-        double bestAngularScore = double.max;
-        double bestDistance = double.max;
-        ThinkerIterator iterator = ThinkerIterator.Create("Actor");
-        Thinker entry;
-
-        while ((entry = iterator.Next()) != null)
+        Actor best;
+        // La esfera original sigue siendo autoridad; la consulta cubre su
+        // desplazamiento desde este proyectil sin recorrer actores ajenos.
+        let nearby=BlockThingsIterator.Create(self,CaelumSeekRange+(Pos-CaelumSeekOrigin).Length());
+        while(nearby.Next())best=BetterSeekTarget(nearby.thing,best);
+        // Los guardias estacionados sin blockmap conservan el registro tipado.
+        let population=CaelumPopulationState.Get();
+        if(population!=null)for(int i=0;i<population.UnlinkedGuards.Size();i++)
         {
-            Actor candidate = Actor(entry);
-            if (!IsCaelumSeekCandidate(candidate, true)) { continue; }
-
-            Vector3 candidateCenter = candidate.Pos
-                + (0.0, 0.0, candidate.Height * 0.5);
-            Vector3 offset = candidateCenter - CaelumSeekOrigin;
-            Vector2 horizontalOffset = (offset.X, offset.Y);
-            double targetAngle = VectorAngle(offset.X, offset.Y);
-            double targetPitch = -ATan2(
-                offset.Z,
-                Max(0.001, horizontalOffset.Length())
-            );
-            double yawDifference = Abs(DeltaAngle(
-                CaelumSeekAimAngle,
-                targetAngle
-            ));
-            double pitchDifference = Abs(DeltaAngle(
-                CaelumSeekAimPitch,
-                targetPitch
-            ));
-            double angularScore = yawDifference * yawDifference
-                + pitchDifference * pitchDifference;
-            double distance = offset.Length();
-
-            // La prioridad es la cercania a la mira; la distancia solo
-            // desempata objetivos con practicamente el mismo angulo.
-            if (angularScore < bestAngularScore
-                || (Abs(angularScore - bestAngularScore) < 0.0001
-                    && distance < bestDistance))
-            {
-                bestTarget = candidate;
-                bestAngularScore = angularScore;
-                bestDistance = distance;
-            }
+            let record=population.UnlinkedGuards[i];
+            if(record!=null && record.Body!=null && record.Body.bNoBlockmap)
+                best=BetterSeekTarget(record.Body,best);
         }
-        return bestTarget;
+        return best;
     }
 
     action void A_UpdateCaelumSeeking()

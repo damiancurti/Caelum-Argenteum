@@ -34,6 +34,7 @@ class CaelumMagicBox : Inventory
 // en la clase y la ubicacion en la instancia, igual que el resto del sistema.
 class CaelumSpecialInventoryItem : Inventory
 {
+    CaelumCompanionHistory CompanionHistory;
     CaelumContaminationState GenericContamination;
     bool InMagicBox;
     // Cantidades temporales dentro de una pila normal: no se pierde el stock
@@ -106,6 +107,7 @@ class CaelumSpecialInventoryItem : Inventory
         if (copy != null && copy != self)
         {
             copy.InMagicBox = InMagicBox;
+            copy.CompanionHistory=CompanionHistory!=null?CompanionHistory.Copy():null;
             copy.LimboQuestUnits = LimboQuestUnits;
             copy.LimboSupplyUnits = LimboSupplyUnits;
             copy.LimboQuotaReserved = LimboQuotaReserved;
@@ -132,6 +134,7 @@ class CaelumSpecialInventoryItem : Inventory
         if (copy != null && copy != self)
         {
             copy.InMagicBox = InMagicBox;
+            copy.CompanionHistory=CompanionHistory!=null?CompanionHistory.Copy():null;
             copy.LimboQuestUnits = LimboQuestUnits;
             copy.LimboSupplyUnits = LimboSupplyUnits;
             copy.LimboQuotaReserved = LimboQuotaReserved;

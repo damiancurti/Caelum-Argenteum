@@ -11,6 +11,8 @@ conversation
         name = "$CA_PRISONER_TAROT_NAME";
         dialog = "$CA_PRISONER_DLG_TAROT_CELL";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         ifitem { item = "CaelumPrisonerFreed3Token"; amount = 1; } link = "prisoner_tarot_follow";
         choice
         {
@@ -27,6 +29,8 @@ conversation
         name = "$CA_PRISONER_TAROT_NAME";
         dialog = "$CA_PRISONER_DLG_TAROT_FOLLOW";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
     }
 }
 
@@ -41,6 +45,8 @@ conversation
         name = "$CA_PRISONER_TAROT_NAME";
         dialog = "$CA_PRISONER_DLG_TAROT_PORT";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         ifitem { item = "CaelumPrisonerClaimed3Token"; amount = 1; } link = "prisoner_tarot_claimed";
         choice
         {
@@ -57,6 +63,8 @@ conversation
         name = "$CA_PRISONER_TAROT_NAME";
         dialog = "$CA_PRISONER_PORT_REWARD_FAIL";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         ifitem { item = "CaelumPrisonerClaimed3Token"; amount = 1; } link = "prisoner_tarot_claimed";
     }
 
@@ -67,6 +75,8 @@ conversation
         name = "$CA_PRISONER_TAROT_NAME";
         dialog = "$CA_PRISONER_PORT_REWARD_GRANTED";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
     }
 }
 
@@ -82,6 +92,8 @@ conversation
         name = "$CA_PRISONER_TAROT_NAME";
         dialog = "$CA_PRISONER_DLG_TAROT_PORT";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice
         {
             text = "$CA_PORT_SOCIAL_CHOICE";
@@ -104,6 +116,8 @@ conversation
         name = "$CA_PRISONER_TAROT_NAME";
         dialog = "$CA_PRISONER_PORT_REWARD_FAIL";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         ifitem { item = "CaelumPrisonerClaimed3Token"; amount = 1; } link = "prisoner_tarot_claimed";
     }
 
@@ -114,6 +128,8 @@ conversation
         name = "$CA_PRISONER_TAROT_NAME";
         dialog = "$CA_PRISONER_PORT_REWARD_GRANTED";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice
         {
             text = "$CA_PORT_SOCIAL_CHOICE";
@@ -128,6 +144,8 @@ conversation
         name = "$CA_PRISONER_TAROT_NAME";
         dialog = "$CA_PORT_SOCIAL_INTRO";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice
         {
             text = "$CA_PORT_EMOTION_READ";
@@ -157,6 +175,8 @@ conversation
         name = "$CA_PRISONER_TAROT_NAME";
         dialog = "$CA_PORT_EMOTION_UNTRIED";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice
         {
             text = "$CA_PORT_SOCIAL_BACK";
@@ -171,6 +191,8 @@ conversation
         name = "$CA_PRISONER_TAROT_NAME";
         dialog = "$CA_PORT_DECLARATION_INTRO";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice
         {
             text = "$CA_PORT_DECLARE_0";
@@ -246,6 +268,8 @@ conversation
         name = "$CA_PRISONER_TAROT_NAME";
         dialog = "$CA_PORT_DECLARATION_PRIVATE";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice
         {
             text = "$CA_PORT_SOCIAL_BACK";
@@ -260,6 +284,8 @@ conversation
         name = "$CA_PRISONER_TAROT_NAME";
         dialog = "$CA_PORT_REPORT_WARNING";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice
         {
             text = "$CA_PORT_REPORT_CONFIRM";
@@ -281,6 +307,8 @@ conversation
         name = "$CA_PRISONER_TAROT_NAME";
         dialog = "$CA_PORT_REPORT_DONE";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice
         {
             text = "$CA_PORT_SOCIAL_BACK";
@@ -303,6 +331,8 @@ conversation
         name = "$CA_PRISONER_TAROT_NAME";
         dialog = "$CA_PORT_STORY_ARRIVAL_3";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice
         {
             text = "$CA_PORT_STORY_CHOICE";
@@ -333,6 +363,8 @@ conversation
         name = "$CA_PRISONER_TAROT_NAME";
         dialog = "$CA_PRISONER_PORT_REWARD_FAIL";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         ifitem { item = "CaelumPrisonerClaimed3Token"; amount = 1; } link = "story_prisoner_tarot_claimed";
     }
 
@@ -343,6 +375,8 @@ conversation
         name = "$CA_PRISONER_TAROT_NAME";
         dialog = "$CA_PRISONER_PORT_REWARD_GRANTED";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice
         {
             text = "$CA_PORT_STORY_CHOICE";
@@ -365,6 +399,8 @@ conversation
         name = "$CA_PRISONER_TAROT_NAME";
         dialog = "$CA_PORT_SOCIAL_INTRO";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice
         {
             text = "$CA_PORT_EMOTION_READ";
@@ -394,6 +430,8 @@ conversation
         name = "$CA_PRISONER_TAROT_NAME";
         dialog = "$CA_PORT_EMOTION_UNTRIED";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice
         {
             text = "$CA_PORT_SOCIAL_BACK";
@@ -408,6 +446,8 @@ conversation
         name = "$CA_PRISONER_TAROT_NAME";
         dialog = "$CA_PORT_DECLARATION_INTRO";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice
         {
             text = "$CA_PORT_DECLARE_0";
@@ -483,6 +523,8 @@ conversation
         name = "$CA_PRISONER_TAROT_NAME";
         dialog = "$CA_PORT_DECLARATION_PRIVATE";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice
         {
             text = "$CA_PORT_SOCIAL_BACK";
@@ -497,6 +539,8 @@ conversation
         name = "$CA_PRISONER_TAROT_NAME";
         dialog = "$CA_PORT_REPORT_WARNING";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice
         {
             text = "$CA_PORT_REPORT_CONFIRM";
@@ -518,6 +562,8 @@ conversation
         name = "$CA_PRISONER_TAROT_NAME";
         dialog = "$CA_PORT_REPORT_DONE";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice
         {
             text = "$CA_PORT_SOCIAL_BACK";
@@ -533,6 +579,8 @@ conversation
         name = "$CA_PRISONER_TAROT_NAME";
         dialog = "$CA_PORT_STORY_PRISONER";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice
         {
             text = "$CA_PORT_SOCIAL_BACK";

@@ -1,11 +1,12 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.11.3** - 2026-10-30.
+Documentation version: **5.11.4** - 2026-10-30.
 
-**V5.11 active (5.11.3/#433):** distant-search evaluation complete; no measured
-benefit, no adoption. #431 PR575; #429 PR576; #432 PR577. #430 remains active.
-Manual handoff after completion; unaccepted/unmerged.
-Keep-awake released. #429 corridor correction included; retest pending.
+**V5.11 corrections (5.11.4):** companion motion/formation retests remain. #429/PR576; #430/PR579. New reports:
+#580 rental dialogue, #581 central-house workshop/cot, #582 rat immunity.
+Run/walk6m/3m; existing stair nodes/local collision.
+Evidence: validation_v5_11_4. Pending: pending_test.txt. Not merged.
+#431/PR575 profiling; #432/PR577 accepted; #433/PR578 candidate not adopted.
 **V5.10 accepted:** #425-428/PR570-573, CA425-01..CA428-01; HISTORY.
 Siege stalls persist. Keep-awake released.
 

@@ -1,0 +1,13 @@
+namespace = "GZDoom";
+conversation
+{
+    id = 43890;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        name = "$CA_COMPANION_DIALOGUE";
+        dialog = "$CA_COMPANION_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+    }
+}

@@ -123,6 +123,7 @@ class CaelumWorldSpriteRegistry : Actor
 // durabilidad y estados de equipado/Caja Mágica dentro de la propia instancia.
 class CaelumEquipmentItem : Inventory
 {
+    CaelumCompanionHistory CompanionHistory;
     // Identidad estable de esta pieza concreta. Dos objetos con la misma
     // receta, tier y talle siguen siendo instancias distintas para reparar,
     // soltar, equipar y guardar. El contador vive en el estado persistente
@@ -442,6 +443,7 @@ class CaelumEquipmentItem : Inventory
         {
             copy.EquipmentKind = EquipmentKind;
             copy.ItemId = ItemId;
+            copy.CompanionHistory=CompanionHistory!=null?CompanionHistory.Copy():null;
             copy.ItemFlags = ItemFlags;
             copy.ItemType = ItemType;
             copy.ArmorSlot = ArmorSlot;
@@ -476,6 +478,7 @@ class CaelumEquipmentItem : Inventory
         if (copy != null && copy != self)
         {
             copy.ItemId = ItemId;
+            copy.CompanionHistory=CompanionHistory!=null?CompanionHistory.Copy():null;
             copy.ItemFlags = ItemFlags;
             copy.EquipmentKind = EquipmentKind;
             copy.ItemType = ItemType;
@@ -849,6 +852,14 @@ class CaelumSealPickup : CaelumEquipmentItem
 // de 0,003; dentro, la pila participa del cálculo agregado reducido.
 class CaelumCarbineAmmo : Ammo
 {
+    override Inventory CreateTossable(int count)
+    {
+        CaelumCompanionProvenance.AmmoLots(self);
+        let copy=Super.CreateTossable(count);
+        if(copy!=null && copy!=self)CaelumCompanionProvenance.TransferAmmo(self,copy,copy.Amount,true);
+        return copy;
+    }
+    CaelumFoodLots CompanionLots;
     bool InMagicBox;
     override String PickupMessage() { return ""; }
 
@@ -918,7 +929,10 @@ class CaelumCarbineAmmo : Ammo
                 return true;
             }
         }
-        return Super.HandlePickup(item);
+        CaelumCompanionProvenance.AmmoLots(self);CaelumCompanionProvenance.AmmoLots(incoming);
+        int before=Amount;bool accepted=Super.HandlePickup(item);
+        if(Amount>before)CaelumCompanionProvenance.TransferAmmo(incoming,self,Amount-before);
+        return accepted;
     }
 
     override bool TryPickup(in out Actor toucher)
@@ -945,8 +959,10 @@ class CaelumCarbineAmmo : Ammo
 
     override Inventory CreateCopy(Actor other)
     {
+        CaelumCompanionProvenance.AmmoLots(self);
         CaelumCarbineAmmo copy = CaelumCarbineAmmo(Super.CreateCopy(other));
         if (copy != null && copy != self) { copy.InMagicBox = InMagicBox; }
+        if(copy!=null && copy!=self)CaelumCompanionProvenance.TransferAmmo(self,copy,copy.Amount,true);
         return copy;
     }
 
@@ -968,7 +984,7 @@ class CaelumArrowAmmo : CaelumCarbineAmmo
     {
         let user = CaelumPlayer(toucher);
         if (user == null || Owner != null) return false;
-        if (!CaelumInventoryService.AcquireDistinctAmmunition(user, GetAmmoType(), Amount)) return false;
+        if (!CaelumInventoryService.AcquireDistinctAmmunition(user, GetAmmoType(), Amount,self)) return false;
         A_StartSound("caelum/items/pickup", CHAN_ITEM); Destroy(); return true;
     }
 
@@ -997,7 +1013,7 @@ class CaelumBoltAmmo : CaelumCarbineAmmo
     {
         let user = CaelumPlayer(toucher);
         if (user == null || Owner != null) return false;
-        if (!CaelumInventoryService.AcquireDistinctAmmunition(user, GetAmmoType(), Amount)) return false;
+        if (!CaelumInventoryService.AcquireDistinctAmmunition(user, GetAmmoType(), Amount,self)) return false;
         A_StartSound("caelum/items/pickup", CHAN_ITEM); Destroy(); return true;
     }
 
@@ -1028,8 +1044,8 @@ class CaelumJavelinAmmo : CaelumCarbineAmmo
         if (caelumPlayer == null) { return false; }
 
         int incomingAmount = Max(1, Amount);
-        if (!caelumPlayer.AcquireJavelinAmmunition(
-            GetAmmoType(), incomingAmount
+        if (!CaelumInventoryService.AcquireDistinctAmmunition(
+            caelumPlayer,GetAmmoType(), incomingAmount,self
         ))
         {
             return false;

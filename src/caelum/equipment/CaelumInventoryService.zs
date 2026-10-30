@@ -910,7 +910,7 @@ class CaelumInventoryService : Object play
     }
 
     // Misma transferencia aceptada para pilas que no comparten el Ammo nativo.
-    static bool AcquireDistinctAmmunition(CaelumPlayer user, int ammunitionType, int incomingAmount)
+    static bool AcquireDistinctAmmunition(CaelumPlayer user, int ammunitionType, int incomingAmount,CaelumCarbineAmmo source=null)
     {
         if (!CaelumPlayerAuthority.CanMutate(user)) return false;
         if (incomingAmount <= 0 || user.DerivedStats == null) { return false; }
@@ -944,6 +944,7 @@ class CaelumInventoryService : Object play
             }
         }
 
+        CaelumCompanionProvenance.AmmoLots(existing);CaelumCompanionProvenance.AmmoLots(source);
         // IMPORTANTE: no usar GiveInventoryType con las clases de jabalina.
         // Su TryPickup llama nuevamente a AcquireJavelinAmmunition y generaría
         // recursión infinita (stack overflow). Modificamos la pila directamente.
@@ -968,6 +969,7 @@ class CaelumInventoryService : Object play
         }
 
         if (result == null || result.Amount <= 0) { return false; }
+        if(source!=null)CaelumCompanionProvenance.TransferAmmo(source,result,incomingAmount,createdNewStack);
         result.InMagicBox = storeInMagicBox;
         user.LastEquipmentPickupWasNew = createdNewStack;
         user.LastEquipmentPickupWentToMagicBox = storeInMagicBox;

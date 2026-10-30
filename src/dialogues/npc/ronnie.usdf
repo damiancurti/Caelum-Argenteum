@@ -11,6 +11,8 @@ conversation
         name = "$CA_RONNIE_NAME";
         dialog = "$CA_DLG_M01_RONNIE_EARLY";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         ifitem
         {
             item = "CaelumM00ArgentoStartedToken";
@@ -25,6 +27,8 @@ conversation
         name = "$CA_RONNIE_NAME";
         dialog = "$CA_DLG_M01_RONNIE_RECRUIT";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         ifitem
         {
             item = "CaelumM00RonnieConvincedToken";
@@ -64,6 +68,8 @@ conversation
         name = "$CA_RONNIE_NAME";
         dialog = "$CA_DLG_M01_RONNIE_PLAN_HINT";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice
         {
             text = "$CA_DLG_M01_BACK";
@@ -78,6 +84,8 @@ conversation
         name = "$CA_RONNIE_NAME";
         dialog = "$CA_DLG_M01_RONNIE_REQUIREMENT";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         ifitem
         {
             item = "CaelumM00RonnieConvincedToken";
@@ -92,82 +100,176 @@ conversation
         name = "$CA_RONNIE_NAME";
         dialog = "$CA_DLG_M01_RONNIE_ACCEPTED";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         ifitem { item = "CaelumM00MagicCompleteToken"; amount = 1; }
         link = "ronnie_magic_ready";
     }
     page { pagename = "ronnie_magic_ready"; userstring = "ronnie_magic_ready";
         name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_RONNIE";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         ifitem { item = "CaelumM00RonnieStartedToken"; amount = 1; } link = "ronnie_collect";
         choice { text = "$CA_LOADOUT_START"; giveitem = "CaelumM00StartRonnieAction";
             nextpage = "ronnie_collect"; closedialog = false;
             require { item = "CaelumM00LoadoutReadyToken"; amount = 1; } }
     }
-    page { pagename = "ronnie_family_0"; userstring = "ronnie_family_0"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
-    page { pagename = "ronnie_family_1"; userstring = "ronnie_family_1"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
-    page { pagename = "ronnie_family_2"; userstring = "ronnie_family_2"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
-    page { pagename = "ronnie_family_3"; userstring = "ronnie_family_3"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
-    page { pagename = "ronnie_family_4"; userstring = "ronnie_family_4"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
-    page { pagename = "ronnie_weapon_0"; userstring = "ronnie_weapon_0"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
-    page { pagename = "ronnie_weapon_1"; userstring = "ronnie_weapon_1"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
-    page { pagename = "ronnie_weapon_2"; userstring = "ronnie_weapon_2"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
-    page { pagename = "ronnie_weapon_3"; userstring = "ronnie_weapon_3"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
-    page { pagename = "ronnie_weapon_4"; userstring = "ronnie_weapon_4"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
-    page { pagename = "ronnie_weapon_5"; userstring = "ronnie_weapon_5"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
-    page { pagename = "ronnie_weapon_6"; userstring = "ronnie_weapon_6"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
-    page { pagename = "ronnie_weapon_7"; userstring = "ronnie_weapon_7"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
-    page { pagename = "ronnie_weapon_8"; userstring = "ronnie_weapon_8"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
-    page { pagename = "ronnie_weapon_9"; userstring = "ronnie_weapon_9"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
-    page { pagename = "ronnie_weapon_10"; userstring = "ronnie_weapon_10"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
-    page { pagename = "ronnie_weapon_11"; userstring = "ronnie_weapon_11"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
-    page { pagename = "ronnie_weapon_12"; userstring = "ronnie_weapon_12"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
-    page { pagename = "ronnie_weapon_13"; userstring = "ronnie_weapon_13"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
-    page { pagename = "ronnie_weapon_14"; userstring = "ronnie_weapon_14"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
-    page { pagename = "ronnie_weapon_15"; userstring = "ronnie_weapon_15"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
-    page { pagename = "ronnie_weapon_16"; userstring = "ronnie_weapon_16"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_family_0"; userstring = "ronnie_family_0"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
+    page { pagename = "ronnie_family_1"; userstring = "ronnie_family_1"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
+    page { pagename = "ronnie_family_2"; userstring = "ronnie_family_2"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
+    page { pagename = "ronnie_family_3"; userstring = "ronnie_family_3"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
+    page { pagename = "ronnie_family_4"; userstring = "ronnie_family_4"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
+    page { pagename = "ronnie_weapon_0"; userstring = "ronnie_weapon_0"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
+    page { pagename = "ronnie_weapon_1"; userstring = "ronnie_weapon_1"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
+    page { pagename = "ronnie_weapon_2"; userstring = "ronnie_weapon_2"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
+    page { pagename = "ronnie_weapon_3"; userstring = "ronnie_weapon_3"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
+    page { pagename = "ronnie_weapon_4"; userstring = "ronnie_weapon_4"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
+    page { pagename = "ronnie_weapon_5"; userstring = "ronnie_weapon_5"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
+    page { pagename = "ronnie_weapon_6"; userstring = "ronnie_weapon_6"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
+    page { pagename = "ronnie_weapon_7"; userstring = "ronnie_weapon_7"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
+    page { pagename = "ronnie_weapon_8"; userstring = "ronnie_weapon_8"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
+    page { pagename = "ronnie_weapon_9"; userstring = "ronnie_weapon_9"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
+    page { pagename = "ronnie_weapon_10"; userstring = "ronnie_weapon_10"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
+    page { pagename = "ronnie_weapon_11"; userstring = "ronnie_weapon_11"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
+    page { pagename = "ronnie_weapon_12"; userstring = "ronnie_weapon_12"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
+    page { pagename = "ronnie_weapon_13"; userstring = "ronnie_weapon_13"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
+    page { pagename = "ronnie_weapon_14"; userstring = "ronnie_weapon_14"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
+    page { pagename = "ronnie_weapon_15"; userstring = "ronnie_weapon_15"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
+    page { pagename = "ronnie_weapon_16"; userstring = "ronnie_weapon_16"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
     page { pagename = "ronnie_magic_16_0"; userstring = "ronnie_magic_16_0";
-        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
     page { pagename = "ronnie_magic_16_1"; userstring = "ronnie_magic_16_1";
-        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
     page { pagename = "ronnie_magic_16_2"; userstring = "ronnie_magic_16_2";
-        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
     page { pagename = "ronnie_magic_16_3"; userstring = "ronnie_magic_16_3";
-        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
     page { pagename = "ronnie_magic_16_4"; userstring = "ronnie_magic_16_4";
-        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
-    page { pagename = "ronnie_weapon_17"; userstring = "ronnie_weapon_17"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
+    page { pagename = "ronnie_weapon_17"; userstring = "ronnie_weapon_17"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
     page { pagename = "ronnie_magic_17_0"; userstring = "ronnie_magic_17_0";
-        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
     page { pagename = "ronnie_magic_17_1"; userstring = "ronnie_magic_17_1";
-        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
     page { pagename = "ronnie_magic_17_2"; userstring = "ronnie_magic_17_2";
-        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
     page { pagename = "ronnie_magic_17_3"; userstring = "ronnie_magic_17_3";
-        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
     page { pagename = "ronnie_magic_17_4"; userstring = "ronnie_magic_17_4";
-        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
-    page { pagename = "ronnie_weapon_18"; userstring = "ronnie_weapon_18"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
+    page { pagename = "ronnie_weapon_18"; userstring = "ronnie_weapon_18"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
     page { pagename = "ronnie_magic_18_0"; userstring = "ronnie_magic_18_0";
-        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
     page { pagename = "ronnie_magic_18_1"; userstring = "ronnie_magic_18_1";
-        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
     page { pagename = "ronnie_magic_18_2"; userstring = "ronnie_magic_18_2";
-        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
     page { pagename = "ronnie_magic_18_3"; userstring = "ronnie_magic_18_3";
-        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
     page { pagename = "ronnie_magic_18_4"; userstring = "ronnie_magic_18_4";
-        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
-    page { pagename = "ronnie_weapon_19"; userstring = "ronnie_weapon_19"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
+    page { pagename = "ronnie_weapon_19"; userstring = "ronnie_weapon_19"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
     page { pagename = "ronnie_magic_19_0"; userstring = "ronnie_magic_19_0";
-        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
     page { pagename = "ronnie_magic_19_1"; userstring = "ronnie_magic_19_1";
-        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
     page { pagename = "ronnie_magic_19_2"; userstring = "ronnie_magic_19_2";
-        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
     page { pagename = "ronnie_magic_19_3"; userstring = "ronnie_magic_19_3";
-        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
     page { pagename = "ronnie_magic_19_4"; userstring = "ronnie_magic_19_4";
-        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+        name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
     page
     {
         pagename = "ronnie_collect";
@@ -176,6 +278,8 @@ conversation
         dialog = "$CA_M01_RONNIE_COLLECT";
         choice { text = "$CA_ONBOARD_GOLD_REWARD"; giveitem = "CaelumM00ClaimLessonMaterials"; closedialog = true; }
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         ifitem { item = "CaelumM00StarterCraftedToken"; amount = 1; }
         link = "ronnie_crafted";
         choice
@@ -200,6 +304,8 @@ conversation
         name = "$CA_RONNIE_NAME";
         dialog = "$CA_M01_RONNIE_LOCATION";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice
         {
             text = "$CA_DLG_M01_BACK";
@@ -214,6 +320,8 @@ conversation
         name = "$CA_RONNIE_NAME";
         dialog = "$CA_M01_RONNIE_CRAFTED";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         ifitem { item = "CaelumM00RonnieFinishedToken"; amount = 1; }
         link = "ronnie_finished";
         choice
@@ -231,6 +339,8 @@ conversation
         name = "$CA_RONNIE_NAME";
         dialog = "$CA_M01_RONNIE_FINISHED";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice { text = "$CA_M01_REPAIR_ASK"; nextpage = "ronnie_repair"; giveitem = "CaelumM00RepairLessonAction"; }
         choice { text = "$CA_DLG_M01_WORKSHOPS_ASK"; nextpage = "ronnie_workshop"; }
     }
@@ -242,6 +352,8 @@ conversation
         name = "$CA_RONNIE_NAME";
         dialog = "$CA_M01_REPAIR_INTRO";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice { text = "$CA_M01_REPAIR_STEPS_ASK"; nextpage = "ronnie_repair_steps"; }
         choice { text = "$CA_M01_REPAIR_COST_ASK"; nextpage = "ronnie_repair_cost"; }
     }
@@ -252,6 +364,8 @@ conversation
         name = "$CA_RONNIE_NAME";
         dialog = "$CA_M01_REPAIR_STEPS";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice { text = "$CA_M01_REPAIR_COST_ASK"; nextpage = "ronnie_repair_cost"; }
     }
     page
@@ -261,6 +375,8 @@ conversation
         name = "$CA_RONNIE_NAME";
         dialog = "$CA_M01_REPAIR_COST";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice { text = "$CA_M01_REPAIR_STEPS_ASK"; nextpage = "ronnie_repair_steps"; }
     }
     page
@@ -271,6 +387,8 @@ conversation
         name = "$CA_RONNIE_NAME";
         dialog = "$CA_DLG_M01_WORKSHOP_RONNIE";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice { text = "$CA_M01_AMMO_ASK"; nextpage = "ronnie_ammo"; }
         choice { text = "$CA_DLG_M01_GARDEN_ASK"; nextpage = "ronnie_resources"; }
         choice { text = "$CA_M01_SEALS_GATHER_ASK"; nextpage = "ronnie_seals_gather";
@@ -281,6 +399,8 @@ conversation
         pagename = "ronnie_calendar";
         name = "$CA_RONNIE_NAME"; dialog = "$CA_DEMO_CALENDAR";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
     }
     page
     {
@@ -289,6 +409,8 @@ conversation
         name = "$CA_RONNIE_NAME";
         dialog = "$CA_M01_RONNIE_LOCATION";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
     }
 
 
@@ -312,20 +434,36 @@ conversation
         name = "$CA_RONNIE_NAME";
         dialog = "$CA_M01_AMMO_GENERAL";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
     }
 
-    page { pagename = "ronnie_armor"; userstring = "ronnie_armor"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
-    page { pagename = "ronnie_armor_0"; userstring = "ronnie_armor_0"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
-    page { pagename = "ronnie_armor_1"; userstring = "ronnie_armor_1"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
-    page { pagename = "ronnie_armor_2"; userstring = "ronnie_armor_2"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
-    page { pagename = "ronnie_armor_3"; userstring = "ronnie_armor_3"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
-    page { pagename = "ronnie_armor_ready"; userstring = "ronnie_armor_ready"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE"; }
+    page { pagename = "ronnie_armor"; userstring = "ronnie_armor"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
+    page { pagename = "ronnie_armor_0"; userstring = "ronnie_armor_0"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
+    page { pagename = "ronnie_armor_1"; userstring = "ronnie_armor_1"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
+    page { pagename = "ronnie_armor_2"; userstring = "ronnie_armor_2"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
+    page { pagename = "ronnie_armor_3"; userstring = "ronnie_armor_3"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
+    page { pagename = "ronnie_armor_ready"; userstring = "ronnie_armor_ready"; name = "$CA_RONNIE_NAME"; dialog = "$CA_LOADOUT_REFERRAL"; goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+ }
 
     page
     {
         pagename = "ronnie_seals_gather"; userstring = "ronnie_seals_gather";
         name = "$CA_RONNIE_NAME"; dialog = "$CA_M01_SEALS_GATHER";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice { text = "$CA_M01_SEALS_BORROW"; closedialog = true; giveitem = "CaelumM00BorrowSealSwordAction";
             require { item = "CaelumM00SealGatherReadyToken"; amount = 1; } }
     }

@@ -39,27 +39,29 @@ Runtime-generated text keys are also discoverable with `find TERM` in the comple
 | wands_knight | [wands_knight.usdf](npc/wands_knight.usdf) | 43621 |
 | guards | [guards.usdf](npc/guards.usdf) | 43631, 43632, 43654, 43655 |
 | rental_agent | [rental_agent.usdf](npc/rental_agent.usdf) | 43660 |
+| companions | [companions.usdf](shared/companions.usdf) | 43890 |
 
 Source SHA-256 fingerprints:
 
 - `dialogues/npc/unknown_voice.usdf`: `d42e187f60d26c424dbf0b654bf2099958d9a1fa7a9e53ce47b4fe66ffe83957`
 - `dialogues/npc/palomo.usdf`: `ea8455379f855bd8eec28e02c8d844882e59e7af3daaf93a52cff77b588fb178`
-- `dialogues/npc/argento.usdf`: `01cf73641f01d1590417250eca88c60c09f84b7b48a7b773ce66c6cae67a71dc`
-- `dialogues/npc/rulo.usdf`: `6bb83911ca35ba3c85198560cc13ea60e509079ba23cf1246ae1b5573a861dd0`
-- `dialogues/npc/ronnie.usdf`: `c5cf18f9541d3b57bd4bdd05e4c961a8f8f07d9055b9aba609e45c4ca57e80c7`
-- `dialogues/npc/caella.usdf`: `9e74e490bafa4a50e096b015b3337d228071fcc835aa4739d0b35587b3b2b954`
+- `dialogues/npc/argento.usdf`: `ae624b03ca33e5bce1938b595a749614228ba838aa13c9baa79357733989e69e`
+- `dialogues/npc/rulo.usdf`: `5ef93ded5c9e16157a4882fdfa8da14f36f1a3657281ac169034aacf42c0fc62`
+- `dialogues/npc/ronnie.usdf`: `a0eeaa7b52ad9327909a45a3afe56f719b29ec67323d344f6d60e3b998063828`
+- `dialogues/npc/caella.usdf`: `c776c33d13467a8fa03f03afad9c07d73856fe72ee2309d6130d6f0900d167eb`
 - `dialogues/shared/tutorial_chest.usdf`: `b8c052e454287c322506015bb057cbe7d0a3e8738f0d17a349b9d582b702e763`
 - `dialogues/npc/fool.usdf`: `57519f41a25031e7aeca323dfda0c86f96e7ba01585b47e1bafa40026fb2b82f`
 - `dialogues/shared/departure.usdf`: `096f77f458622a61aa94904a5ddfe98808e5c88a008fdb491d41b50e87a5b860`
 - `dialogues/shared/reputation_trial.usdf`: `5dca1d778da39b44c65083d94e097263ea4c07c54268cf2dff301bc61a55802f`
 - `dialogues/shared/caravan_routes.usdf`: `20ab0bc770aca3186a5eedae754eee526aef890e066355ac24c73c776902b72d`
 - `dialogues/shared/rest_and_tables.usdf`: `8c4e68ac60b11860e3e3a127f7a2e668d34d5a0644008217083cc9258a6db015`
-- `dialogues/npc/prisoner_unitario.usdf`: `d1fa041c45f00fb587c84c4dc19dec88be914228ce6082090116322048f9596b`
-- `dialogues/npc/prisoner_federal.usdf`: `0550fee4d84d32ef277445b2dbc640f7df3c97dbc3f4d196296b01b622da2ba4`
-- `dialogues/npc/prisoner_bestia.usdf`: `753ad000090c1f8d21d600823807544fc1be81a405523be09db442fe878ca4dd`
-- `dialogues/npc/prisoner_tarot.usdf`: `783c7e221586260268bf01e3db2201f1244f4b0cdef0a011b613864a2175bc09`
+- `dialogues/npc/prisoner_unitario.usdf`: `66f2ca94c916e68fd239e6f0fa199ec602713c9f95e270c003dc4bbcc8c293cb`
+- `dialogues/npc/prisoner_federal.usdf`: `ef4c99fba25f3613e2361c234f78a692faf9e90cf242e9c01cc6c1e632616860`
+- `dialogues/npc/prisoner_bestia.usdf`: `f1a8ef1aba904a50e70d9be4a0e0131a6345749779c7674fdc2cb08cb1f82a2e`
+- `dialogues/npc/prisoner_tarot.usdf`: `e34526cddacb1c2ff2b15793dabe9c774a9e4c13b76b0cde1616ae5079abb23a`
 - `dialogues/npc/cups_ace.usdf`: `914303f65c6cc2f81a13c673852889f0c52d28ca7a2b389c7cd1d9b8644f1145`
 - `dialogues/npc/wands_knight.usdf`: `53fcc360073bce30f82f7168a6cb64a224fe2303c38cd01841439bb448a8b894`
 - `dialogues/npc/guards.usdf`: `8fea805fc5c840d714f04bc151b53c03d3c080dbafd644b536602ffdba1d2a51`
 - `dialogues/npc/rental_agent.usdf`: `41f0f8696a70290e98c38bf1952824bc7a53eb106d55a47783cfc59f8c0d7b53`
-- `dialogues/index.json`: `561cee01ce83675d8c16fc164d29a7e525ea93e3641d346de7ffde070ea4aad0`
+- `dialogues/shared/companions.usdf`: `8f0fe3747a879e7ce156c26425f9fb8106363c18c25babf9c3a3cdfab425fa5f`
+- `dialogues/index.json`: `3eb05c3f4a95d45dbe497736efe42941a58ca64cf233032588ce6177761efad8`

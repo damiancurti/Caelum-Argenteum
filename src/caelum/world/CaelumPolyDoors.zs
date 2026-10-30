@@ -1,8 +1,9 @@
-// Las hojas conservan su modelo y contrato de interacción. La colisión pertenece
-// al PolyObject; sólo una pareja solicitada necesita un pensador de movimiento.
+// Las hojas conservan su modelo y contrato de interacciÃ³n. La colisiÃ³n pertenece
+// al PolyObject; sÃ³lo una pareja solicitada necesita un pensador de movimiento.
 class CaelumPolyDoorEvents : EventHandler
 {
     Array<CaelumHingedDoorLeaf> Leaves;
+    CaelumDoorPeerRegistry PeerRegistry;
 
     static CaelumPolyDoorEvents Get()
     { return CaelumPolyDoorEvents(EventHandler.Find("CaelumPolyDoorEvents")); }
@@ -24,8 +25,8 @@ class CaelumPolyDoorEvents : EventHandler
                 vector2 delta=line.v2.p-line.v1.p;
                 leaf.NativeClosedAngle=Atan2(delta.Y,delta.X);
             }
-            // StartLine ya fue consumida por la inicialización del mapa. Todas
-            // las caras ahora pasan por la misma validación, incluso el canto.
+            // StartLine ya fue consumida por la inicializaciÃ³n del mapa. Todas
+            // las caras ahora pasan por la misma validaciÃ³n, incluso el canto.
             line.special=7;line.args[0]=id;
         }
     }
@@ -130,7 +131,7 @@ class CaelumPolyDoors : Object play
         Pose(a,Progress(a));Pose(b,Progress(b));
         // El guard NUEVO queda inmediatamente antes de ambas acciones en la
         // lista fresh y luego en STAT_DEFAULT. No reutilizar un guard anterior:
-        // permitiría que otro cuerpo se moviera entre el control y la rotación.
+        // permitirÃ­a que otro cuerpo se moviera entre el control y la rotaciÃ³n.
         let guard=CaelumPolyDoorMotion(Actor.Spawn("CaelumPolyDoorMotion",a.ClosedPosition,NO_REPLACE));
         guard.A=a;guard.B=b;guard.Closing=closing;
         a.NativeMotion=b.NativeMotion=guard;
@@ -145,12 +146,12 @@ class CaelumPolyDoors : Object play
         while(it.Next())
         {
             let body=it.thing;if(!body.bSolid || body.bNoClip)continue;
-            // El motor puede tratar el borde superior como escalón. Este margen
+            // El motor puede tratar el borde superior como escalÃ³n. Este margen
             // conservador cubre ese caso sin bloquear los techos de 184 MU.
             if(body.Pos.Z>leaf.ClosedPosition.Z+leaf.Height+body.MaxStepHeight
                 || body.Pos.Z+body.Height<leaf.ClosedPosition.Z)continue;
-            // El contacto con la pose inicial no impide abrir alejándose del
-            // cuerpo apoyado. Sólo se prueban las posiciones por recorrer.
+            // El contacto con la pose inicial no impide abrir alejÃ¡ndose del
+            // cuerpo apoyado. SÃ³lo se prueban las posiciones por recorrer.
             for(int progress=leaf.SlideProgress+step;progress!=next+step;progress+=step)
             {
                 double angle=(leaf.args[2]==0?0:90)-leaf.args[1]*leaf.SwingSide
@@ -159,7 +160,7 @@ class CaelumPolyDoors : Object play
                 vector3 center=leaf.PositionAt(progress,0);
                 vector2 delta=body.Pos.XY-center.XY;
                 double half=CaelumMansionDoorData.HALF_WIDTH,thick=CaelumNativeDoorData.HALF_THICKNESS;
-                // SAT: el motor comprueba la caja XY del cuerpo contra líneas.
+                // SAT: el motor comprueba la caja XY del cuerpo contra lÃ­neas.
                 // Incluir ejes mundiales y ambos ejes de la hoja girada.
                 if(Abs(delta.X)>Abs(along.X)*half+Abs(across.X)*thick+body.Radius
                     || Abs(delta.Y)>Abs(along.Y)*half+Abs(across.Y)*thick+body.Radius)continue;
@@ -203,7 +204,7 @@ class CaelumPolyDoorMotion : Actor
         }
         if(blocked){CaelumPolyDoors.HaltMotion(A,B);Waiting=true;return;}
         if(Waiting){CaelumPolyDoors.Start(A,B,Closing);return;}
-        // Ambas acciones contiguas aplicarán este paso después del guard.
+        // Ambas acciones contiguas aplicarÃ¡n este paso despuÃ©s del guard.
         CaelumPolyDoors.Pose(A,nextA);CaelumPolyDoors.Pose(B,nextB);
     }
     Default { +NOINTERACTION }

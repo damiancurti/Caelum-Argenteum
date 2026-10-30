@@ -99,5 +99,11 @@ class CaelumRulo : CaelumAnchoredResident
     ResidentToolUse:
         RULO E 1;
         Loop;
+    CompanionWalk:
+        RURN ABCD 4;
+        Loop;
+    CompanionIdle:
+        RUID A -1;
+        Stop;
     }
 }

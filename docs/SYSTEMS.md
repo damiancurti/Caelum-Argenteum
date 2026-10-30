@@ -1,6 +1,97 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.11.3** - 2026-10-30.
+Documentation version: **5.11.4** - 2026-10-30.
+
+Companion correction2026-10-30: run beyond6m, return to walking within3m,
+using the companion's own existing speed, equipment, Air and penalties.
+Drive passive locomotion each native Tick; preserve attack/pain/reload cadence.
+Explicit follow takes precedence over prisoner idle escort and anonymous noise;
+identified threats still take combat priority. Mansion routing reuses Palomo's
+fifteen authored nodes and bounded local collision/navigation, without teleport.
+Door peers use one shared typed bootstrap per map, then event registration;
+late group assignment after Spawn updates the cache. No repeated global scan. The first bootstrap is owned by the map event handler,
+visits the map thinker population once and stores only door leaves; later
+requests inspect only their peer group. Private native timing:0.5274ms in
+MAP03,0.0075ms in the empty-room fixture. No frame-presentation claim.
+
+## Companion contract and implementation (5.11.4, #430)
+
+The authored roster is the four mansion residents, four freed sewer prisoners
+and the siege subcaptain (Domingo appearance, every attribute20). Recruitment
+is free through dialogue: residents in the mansion, prisoners after release,
+subcaptain after siege start. The party holds eight members including its player.
+Follow/wait/dismiss preserve native bodies and items. Unfinished prisoner escort
+objectives survive dismissal; other dismissed companions wait at their location.
+Mansion narrative protection stays local; campaign death is persistent.
+
+A dead member retains the slot through exactly3 world days, releases it only
+after that deadline, and is never automatically revived/deleted. The existing
+resurrection ability and its requirements remain authoritative. A revived member
+whose slot was released waits if the party is full, until invited with room.
+
+Trust begins at0, caps at100, and gifts add base copper value/1000, retaining
+fractions. Returning and gifting the same item cannot award trust again.
+Companion-owned retrieval uses Charisma and the current social formula with
+difficulty120, reputation and (1+trust/100), capped at100percent. Lent player
+items return without a roll. A refusal persists for that item until trust or
+narrative stage changes. Companions never choose the player's dialogue.
+
+Implemented: revisioned party/bond inventory; whole-instance item
+transfers and private records; dialogue order/inventory UI; native travel and
+parking of waiting/dead bodies; armor/shield materialization without changing
+weight or ownership; selected melee via shared resident attack rules. The
+inventory list's E action equips/removes supported pieces; Enter requests or
+gifts, L lends. Consented retrieval removes equipped defense before transfer.
+Provided clothing uses native regional layers and existing thermal materials.
+Moisture and contamination remain on the actual garments; outer armor follows
+the current layering rule. Recruitment retains implicit authored clothing
+without minting new inventory or loot. Once a region has been administered,
+removing its garment exposes that region. Sizes reuse the existing seven body
+heights and equipment compatibility table; an incompatible item cannot displace
+the current one. Amulets apply the existing family bonuses exactly once, using
+saved deltas; removing one reverses them without granting health or resources.
+Seals use the existing native equipped-item resistance rule. Armor removal
+invalidates derived combat statistics immediately, as equipping does.
+
+Gift, loan and refusal provenance follows inventory units through native stack
+splits, merges, tosses, pickup and storage transfers. New saved per-lot histories
+migrate previous whole-item records lazily and idempotently. Fresh units can
+increase trust; previously credited units cannot. Splitting a loan and gifting
+one fragment does not change ownership treatment of the remaining fragment.
+Food age, contamination and native ammunition quantities remain authoritative.
+
+Selected carbine, shotgun, bow and crossbow use the existing shared catalogues,
+physical native ammunition and owner resources. Reloads are interruptible,
+magazines reference the real reserve rather than creating ammunition, and wear
+follows the exact weapon that fired. Save/load preserves depleted ammunition,
+magazines and reload/cooldown progress. Existing non-companion guards keep their
+authored reserve rules. The reload movement modifier is applied after the
+unmodified health cache is restored, once per calculation.
+
+Selected offensive implements use the existing projectiles, tier/Intelligence,
+accuracy, elemental payload, critical, range and durability rules. Eloquence,
+weapon/glove weight and thermal speed determine preparation; native Anima is
+paid only on committed release. Physical interruption cancels unpaid casts.
+The four support implements share the existing receiver status and caster
+attributes: curses use the perceived enemy; beneficial casts use the existing
+self-target option, with nearby allies included by an area implement. No new
+stack limits, durations, costs or factions are introduced.
+
+Homing acquisition keeps its original origin/range/cone/LOS priority through a
+local blockmap query and the existing typed unlinked-guard list. It no longer
+starts a global actor iterator for each projectile/retry. Player support still
+uses its original ally/enemy rules; generalized ownership retains the actual
+caster for effects and the exact firing item for wear.
+
+Queries use the bounded nine-identity roster and local placement/visibility.
+Mansion residents register at birth/return. Legacy saves may rebuild the four
+resident references once per map revision; this is not a routine per-NPC scan.
+The previous repeated post-trial Rulo lookup now uses that registry.
+Subcaptain admission includes living players and present friendly companion
+bodies in the defending total. A body already in the typed defender registry
+counts once. Dead, parked and hostile companions do not occupy a defending
+place. This bounded census runs only at an eligible subcaptain spawn attempt,
+not per NPC or per tic; it does not turn death-slot reservation into immortality.
 
 ### Distant visual search evaluation (5.11.3, #433)
 

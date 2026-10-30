@@ -1,15 +1,22 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.11.3** - 2026-10-30.
+Documentation version: **5.11.4** - 2026-10-30.
 
-## V5.11 implementation - 5.11.3 (#433, 2026-10-30)
+V5.11 review2026-10-30 accepted the other tests with explicit exceptions
+for companion motion, corridor formation, rental progression, household
+placement and rat contamination damage. #429/#430 retain correction checks;
+#580-582 handle the unrelated reports. No merge or closure is implied.
+Companion navigation reuses authored stair nodes and bounded local collision.
+
+## V5.11 implementation - 5.11.4 (#430, 2026-10-30)
 
 #429 formations, #431 profiling and #432 derived caches have PRs576/575/577.
-#433 evaluated the approved five-tic empty-search candidate, retaining event
-wakeups and14 native/save checks. It is not adopted: no eligible searches were
-skipped during the measured siege window, and peaceful scenes show no clear gain.
-#430 companions remain active. The author will receive the combined manual handoff
-when implementation finishes. No V5.11 merge or author acceptance is claimed.
+#433/PR578 records the conditional distant-search evaluation without adoption.
+#430 completes the authored companion roster, native equipment administration,
+private trust/consent, following/waiting, cross-map ownership, persistent death
+and the existing paid revival ability. Full-package and accepted-save checks
+pass. The numbered manual terminal and outstanding IDs are in pending_test.txt.
+Implementation is ready; author acceptance and merges remain pending.
 
 ## V5.10 complete and author-accepted - 5.10.3 (2026-10-30, #403)
 

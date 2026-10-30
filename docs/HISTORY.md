@@ -1,6 +1,152 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.11.3** - 2026-10-30.
+Documentation version: **5.11.4** - 2026-10-30.
+
+Author feedback2026-10-30: CA432-01 (origin5.11.2/#432) passed; CA430-01
+(origin5.11.4/#430) inventory, trust, equipment and revival passed with
+movement/animation/Leonor exceptions. CA429-01 was not accepted: one soldier
+became stuck at a corridor exit. Keep correction retests pending; no merge.
+The author approved6m/3m run/walk thresholds. Correct passive animation,
+per-tic follow, escort precedence and stairs using existing movement/Air rules.
+Doors retain permissions with a shared peer registry, not per-request scans.
+Native correction checks: two stair scenarios19+19, prisoners14, single-body
+descent5, door permissions/reload7+3, city bootstrap1, moving save/reload4+10,
+ranged combat14 PASS. Evidence: validation_v5_11_4/motion-results.json.
+The first flat reload fixture wrongly expected a walk transition while all
+formation slots remained beyond3m; moving the leader within3m verifies it.
+
+## 5.11.4 - Companion implementation (#430, 2026-10-30)
+
+Final package verification: administration47, gifts83, legacy migration7,
+mansion protection8, campaign protection5, utility staff7, gift/jewelry reload2
+each, ranged14, combined formations32, exact caches130 and narrow passage4
+native PASS. A separate visible-guard manual passage also passes4 checks.
+These are agent results, not author acceptance. The utility fixture samples
+Anima payment during the action because native regeneration can restore it
+before the final observation; actual freezing is also asserted. Mansion
+protection tests assert survival and no death record, rather than the stricter
+unapproved assumption that incoming damage cannot change Health at all.
+
+The accepted5.10 campaign save remains byte-identical (SHA256 recorded in
+summary.json); all101 bodies and native possessions survive the full current
+runtime. Original-package rollback evidence from #429 remains applicable to
+that unchanged original save. Migration creates no automatic companion party.
+English/Spanish native panel captures were inspected. Native launcher bindings
+and local save/load are verified separately from physical keyboard injection,
+which was unavailable because the Windows Computer Use pipe could not connect.
+
+The numbered terminal separates companion, prisoner, formation, equipment,
+revival and peaceful performance scenes. CA429-01, CA430-01 and CA432-01 are
+pending author checks. #431 is profiling evidence and #433 concludes with no
+candidate adoption; neither implies an unmeasured rendering improvement.
+README reviewed. No merge, closure or author acceptance is recorded.
+Final integration review added players and present companions to the existing
+subcaptain admission count; typed registry duplicates, dead/hostile bodies and
+parked companions are handled without a global scan. Companion-census-a passes6
+native assertions. The final package repeats6 admission,5 authored spawn and7
+accepted-save migration assertions. Existing registered military actors and machines keep their
+own authoritative counts; the1000-side boundary is unchanged.
+
+Implementation complete; not author-accepted. Approved roster, free recruitment, party
+capacity, three-day death-slot boundary, native resurrection, trust and consent
+are recorded in SYSTEMS and issue430. No new balance or story was invented.
+
+The checkpoint adds native companion identities, shared formation orders,
+dialogue administration, gifts/loans/social retrieval and saved private trust.
+Actual bodies and inventory travel; waiting/dead bodies park against their
+source map. Armor and subcaptain shield/sidearm models become native pieces
+once, preserving wear/contamination and avoiding duplicate carried weight.
+Selected melee reuses resident tools; provided clothing uses native layers,
+existing thermal rules and size compatibility, without inventing initial loot.
+Old player saves gain no automatic recruits and remain archived for rollback.
+
+Ranged follow-up: carbine-c, shotgun-a, bow-a and crossbow-a each pass14 native
+checks: empty reserves, full timed reload, cancellation without consumption,
+exact Air/ammunition payment, native projectile damage, wear and exhausted
+magazines. Save-a repeats14 checks; reload-a passes3 persisted ownership,
+reserve/magazine and impact-wear checks. Compilation/core regression retained
+27 checks. Initial fixture failures (misspelled size constant; player-only ammo
+pickup on an NPC) are preserved and fixed using native inventory attachment,
+the same ownership path used by companion transfers. No author acceptance.
+
+Magic follow-up: staff-d plus bell/scepter/orb/book/censer/statuette/effigy-a
+pass12 native checks each (96). They cover no-Anima refusal, real preparation,
+physical interruption, payment on release, actual projectiles/effects, effect
+ownership and hostile/beneficial eligibility. Offensive fixtures explicitly
+raise only diagnostic Intellect to1000 to guarantee wear beyond its stochastic
+remainder; this does not change the authored20-attribute subcaptain. Initial
+fixtures incorrectly assumed every small hit removes durability, dereferenced
+an already-destroyed target, or compared two overlapping equal-priority homing
+targets. Corrected fixtures preserve those failed logs without counting them.
+Magic-regressions-c passes15 player-support and local-homing checks. The old
+oracle executes once only in this QA scene, capped at2048 actors (1547 observed);
+production uses local queries. This is a correctness check, not a frame-time
+claim. Magic-save-a passes7 preparation/snapshot checks and magic-reload-a7
+further checks: the same saved preparation finishes exactly once. Current
+magic-compile-a retains the27 core checks. Author review remains pending.
+
+Campaign/clothing follow-up: campaign-prisoners-a13 PASS uses the four actual
+MAP02 prisoners, rejects captivity recruitment and joins their exact freed
+bodies. Campaign-arrival-a14 PASS transfers them into MAP03, registers their
+actual bodies for testimony and preserves one-time rewards. Campaign-captain-b5
+PASS exercises the real controller's authored spawn gate without deploying
+another army. The initial fixture held an incomplete SiegeStarted flag across
+tics and entered uninitialized cannon deployment; b isolates the gate within
+one callback. That failed fixture is retained and is not a production result.
+Clothing-native-a40 PASS comprises27 core checks and13 regional garment/size,
+wetness conservation, runoff, native contamination and armor-layer checks.
+Agent evidence only; no author acceptance or manual handoff yet.
+Temporary keep-awake PID42276 was released when the author returned.
+
+Inventory follow-up: jewelry-a34 PASS and jewelry-reload-a2 PASS verify native
+slots, shared bonuses/resistance, no free healing and saved delta idempotence.
+Gift-splits-c83 PASS includes27 core and56 actual transfer/split/merge checks
+for money, materials, ammunition, food, medicine and equipment. Gift-reload-a2
+PASS retains unit credit after native save/load. Histories preserve partial
+loans/refusals and prevent repeat trust; old whole-item records migrate lazily.
+The first arrow fixture incorrectly called HandlePickup rather than the public
+CallTryPickup path; failed fixtures remain archived and are not acceptance.
+
+Selected-sword-h and selected-bolas-a pass7 checks each, including native paid
+attacks, exact target effects and released equipment reservation. Earlier sword
+fixtures spawned their emitter inside Palomo; native traces diagnosed the
+interception and the corrected fixture moves the emitter, not the game NPC.
+Ability-revival-c34 PASS verifies actual death, missing-Anima refusal, native
+Pilgrim preparation, exact payment/cooldown, revival and preserved belongings.
+Its first fixture left the automatic Palomo conversation open; closing that
+native menu restored the existing eligibility rule. No production exception.
+
+
+Focused overlay evidence: equipment-a26 PASS; death-a29 PASS; revival-a5 PASS.
+Earlier inventory reload2 PASS and travel-a19 PASS preceded equipment binding.
+Waiting-return-e4 PASS verifies a parked save and return after500 active tics;
+the body settles1.35 map units from its anchor and remains in its collision
+footprint, with no further drift between100 and500tics. The initial <1-unit
+assertion was overstrict for native settling. A separate failed fixture queued
+save/changemap in one tic; separate runs now verify both transitions. Failed
+iterations remain local and are not counted as passing evidence.
+
+The native death test uses actual DamageMobj and the approved shared resurrection
+service, preserving seven diagnostic token units through death, hub travel and
+revival. It does not replace ability-level cost/eligibility or full-campaign QA.
+Follow-up exposure-a28 PASS and ui-b28 PASS include one authoritative exposure
+per materialized piece with actual worn area. Native Spanish panel capture was
+visually inspected; no overlap or missing accents. These are agent checks.
+Roster-b39 PASS additionally covers the four mansion recruits, player+seven
+capacity, rejected overflow, release of a dead slot, native revival into a full
+party without displacement, reinvitation after freeing space, and preserved
+unfinished prisoner escort after dismissal.
+Full checkpoint-c package: full-roster-a repeats39 native assertions without
+source overlays; full-reload-a2 PASS retains the same party/body/trust.
+This confirms packaging of the current checkpoint, not completion
+of the remaining weapon families or campaign acceptance.
+Full checkpoint-d includes both new weapon modules: full-roster-b39,
+full-magic-a27 and full-ranged-a14 assertions pass (80 total). Homing comparison
+in the full scene inspected1557 actors only in its bounded diagnostic oracle.
+The final source-only cleanup uses the already-approved Anima tier constants
+rather than the numerically identical ranged-critical helper; evidence hashes
+identify the earlier full package separately from its checked source overlay.
+Remaining work is explicit in TASKS. No manual handoff or acceptance is claimed.
 
 ## 5.11.3 - Conditional distant-search evaluation (#433, 2026-10-30)
 
