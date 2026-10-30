@@ -231,6 +231,7 @@ class CaelumCannon : CaelumHostileMachine
         let shot=CaelumCannonProjectile(Spawn("CaelumCannonProjectile",pivot-(0,0,CaelumCannonData.RADIUS)));
         if(shot==null){Phase=LOADED; return;}
         ShotSerial++; Shots++; if(!UnlimitedAmmunition)Ammunition--;
+        CaelumNoise.Emit(self,CaelumNoiseData.FIREARM);
         shot.Launcher=self; shot.target=self; shot.master=self;
         shot.Defending=Defending; shot.Serial=ShotSerial;
         for(int i=0;i<Operators.Size();i++)if(Operators[i]!=null && Operators[i].health>0)LastOperator=Operators[i];
@@ -409,6 +410,7 @@ class CaelumCannonProjectile : FastProjectile
     {
         let shot=CaelumCannonProjectile(self);
         shot.ResolveContact(shot.BlockingMobj);
+        CaelumNoise.Emit(shot,CaelumNoiseData.IMPACT);
         tics=CaelumCannonData.SPENT_TICS;
         Vel=(0,0,0); bMissile=false; bNoGravity=true;
     }

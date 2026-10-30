@@ -132,6 +132,7 @@ class CaelumSlidingDoorLeaf : Actor
         // abertura grande. El sonido se emite una sola vez al iniciar el grupo.
         if (!groupWasRequested && groupLeafCount > 0)
         {
+            CaelumNoise.Emit(self,CaelumNoiseData.DOOR);
             if (groupLeafCount > 1)
             {
                 A_StartSound("caelum/world/door_large_open", CHAN_BODY);

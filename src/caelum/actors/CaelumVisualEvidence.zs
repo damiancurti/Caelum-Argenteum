@@ -4,6 +4,10 @@ class CaelumVisualEvidence : Object play
     int Revision, LastSampleTic, LastEvidenceTic, LastDecayTic, ContinuousSightTics;
     Actor Subject, IdentifiedSubject;
     CaelumCombatActor Witness;
+    int NoiseRevision,NoiseTic,NoiseKind;
+    vector3 NoisePosition;
+    double NoiseIntensity;
+    bool HasHeardNoise;
     vector3 ObservedPosition;
     double Suspicion;
     bool PreviousSampleVisible, VisibleNow, HasEvidence;

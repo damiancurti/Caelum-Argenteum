@@ -4,7 +4,7 @@ class CaelumPopulationState : Object play
     int Revision, LivingCombatants;
     int NextMaintenancePhase;
     bool HighDensity;
-    double PerceptionMaximumHeight;
+    double PerceptionMaximumHeight,PerceptionMaximumInsightFactor;
     Array<CaelumSiegeCombatant> UnlinkedGuards;
 
     static CaelumPopulationState Get()
@@ -13,12 +13,18 @@ class CaelumPopulationState : Object play
         return owner!=null ? owner.Population : null;
     }
 
+    void IncludeHearing(CaelumCombatActor body)
+    {
+        if(body!=null && body.health>0)PerceptionMaximumInsightFactor=Max(PerceptionMaximumInsightFactor,CaelumVisualPerception.InsightFactor(body));
+    }
+
     void Refresh()
     {
         // Reconstrucción idempotente: también detecta resurrecciones y cambios
         // de flags. El resultado permanece estable durante este tic completo.
         LivingCombatants=0;UnlinkedGuards.Clear();
         PerceptionMaximumHeight=CaelumPerceptionData.REFERENCE_VISIBLE_HEIGHT;
+        PerceptionMaximumInsightFactor=1;
         let it=ThinkerIterator.Create("CaelumCombatActor");
         CaelumCombatActor body;
         while((body=CaelumCombatActor(it.Next()))!=null)
@@ -30,7 +36,7 @@ class CaelumPopulationState : Object play
                 body.MaintenancePopulation=self;
             }
             if(body.health<=0)continue;
-            if(body.bShootable){LivingCombatants++;PerceptionMaximumHeight=Max(PerceptionMaximumHeight,body.Height);}
+            if(body.bShootable){LivingCombatants++;PerceptionMaximumHeight=Max(PerceptionMaximumHeight,body.Height);PerceptionMaximumInsightFactor=Max(PerceptionMaximumInsightFactor,CaelumVisualPerception.InsightFactor(body));}
             if(body.bNoBlockmap && body.SiegeCombatant!=null)
                 UnlinkedGuards.Push(body.SiegeCombatant);
         }

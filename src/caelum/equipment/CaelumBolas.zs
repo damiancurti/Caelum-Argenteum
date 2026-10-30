@@ -224,6 +224,7 @@ class CaelumBolas : Object play
         let flight=CaelumBolasFlight(Actor.Spawn("CaelumBolasFlight",origin,NO_REPLACE));
         if(flight==null)return null;
         flight.SourceItem=item;flight.Target=emitter;flight.SourceMap=level.MapName;
+        CaelumNoise.Emit(emitter,CaelumNoiseData.SWING);
         emitter.RemoveInventory(item);item.Equipped=false;item.AttachToOwner(flight);
         if(user!=null){CaelumAirPayment.Spend(user,cost);user.UpdateAirStateEffects();user.MarkCombatActivity();}
         else {npc.CurrentCombatAir-=cost;npc.MarkActorCombatActivity();}

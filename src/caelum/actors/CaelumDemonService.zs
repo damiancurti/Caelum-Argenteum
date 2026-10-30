@@ -40,6 +40,7 @@ class CaelumDemonService : Object play
             npc.DemonBreath=CaelumDemonBreath(Actor.Spawn("CaelumDemonBreath",npc.Pos,NO_REPLACE));
             if(npc.DemonBreath==null)return;
             npc.DemonBreath.Emitter=npc;
+            CaelumNoise.Emit(npc,CaelumNoiseData.MAGIC);
             npc.SetStateLabel("RacialBreath");
         }
         // La regeneración natural sigue en el Tick normal, sin bloqueo mágico.

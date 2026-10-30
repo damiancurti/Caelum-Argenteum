@@ -227,6 +227,7 @@ class CaelumCityCarbine : Object play
         if(!owner.TrySpendCombatAir(cost)){projectile.Destroy();owner.WaitForAttackResource();return true;}
         owner.MarkActorCombatActivity();
         CaelumThermalEffects.RecordFirearmShot(owner);
+        CaelumNoise.Emit(owner,CaelumNoiseData.FIREARM);
         CommitRound();NextShotTic=level.time+int(Ceil(owner.GetProfileWeaponDuration(Weapon.WeaponType)));
         owner.tics=Max(owner.tics,NextShotTic-level.time);
         owner.A_StartSound("caelum/weapons/carabine_fire",CHAN_WEAPON);return true;

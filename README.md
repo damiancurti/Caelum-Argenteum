@@ -6,15 +6,15 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.10.0.** Obtain and update the complete repository, validate
+**Current release: 5.10.1.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-**V5.10 is in progress.** #425 adds visual perception and private recognition;
-#426 noise, #427 memory/search and #428 audible group orders remain separate
-patches. Native vision/save/rollback checks pass (53 assertions); combined
-performance checks remain pending. Author review
-will use a grouped terminal after all four issues are implemented; this branch
-is not an accepted V5.10 release. See SYSTEMS, TASKS and validation_5100.
+**V5.10 is in progress.** #425 visual recognition and #426 anonymous action
+noise are implemented. Native evidence: validation_5100-5101; combined campaign
+and performance checks remain pending. #427 memory/search and #428 audible
+leader orders are separate dependent patches. Author review will use a grouped
+terminal after all four issues are implemented; this is not an accepted V5.10
+release. See SYSTEMS and TASKS.
 
 **V5.9 is complete and author-accepted (2026-10-30).** Issues #418-424 are
 closed; focused PRs #561-568 are merged into main with their commit ancestry.

@@ -257,11 +257,22 @@ class CaelumActorProjectile : Actor
         return true;
     }
 
+    bool NoiseImpactRecorded;
+    action void A_CaelumImpactNoise()
+    {
+        let projectile=CaelumActorProjectile(invoker);
+        if(projectile==null || projectile.NoiseImpactRecorded)return;
+        projectile.NoiseImpactRecorded=true;
+        if(!(projectile is "CaelumExplosiveMagicProjectile") && !(projectile is "CaelumActorExplosiveElementalProjectile"))
+            CaelumNoise.Emit(projectile,CaelumNoiseData.IMPACT);
+    }
+
     action void A_CaelumRecordDiagnosticProjectileImpact()
     {
         CaelumActorProjectile projectile = CaelumActorProjectile(self);
         if (projectile != null)
         {
+            projectile.A_CaelumImpactNoise();
             projectile.RegisterCaelumDiagnosticCompletion(true, false);
             CaelumElementalVFX.Impact(projectile);
         }
@@ -269,6 +280,7 @@ class CaelumActorProjectile : Actor
 
     action void A_CaelumShowElementalImpact()
     {
+        invoker.A_CaelumImpactNoise();
         CaelumElementalVFX.Impact(CaelumActorProjectile(invoker));
     }
 

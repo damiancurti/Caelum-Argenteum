@@ -2797,6 +2797,7 @@ class CaelumCarbineProjectile : CaelumActorProjectile
         PUFF A 24 Bright;
         Stop;
     Death:
+        TNT1 A 0 A_CaelumImpactNoise;
         PUFF BCD 2 Bright;
         Stop;
     }
@@ -2816,6 +2817,7 @@ class CaelumArrowProjectile : CaelumCarbineProjectile
         ARRO A 1;
         Loop;
     Death:
+        TNT1 A 0 A_CaelumImpactNoise;
         PUFF BCD 2 Bright;
         Stop;
     }
@@ -2835,6 +2837,7 @@ class CaelumBoltProjectile : CaelumCarbineProjectile
         BOLT A 1;
         Loop;
     Death:
+        TNT1 A 0 A_CaelumImpactNoise;
         PUFF BCD 2 Bright;
         Stop;
     }
@@ -2936,6 +2939,7 @@ class CaelumJavelinProjectile : CaelumCarbineProjectile
         Loop;
     Death:
         TNT1 A 0 DropBrokenJavelinMaterials();
+        TNT1 A 0 A_CaelumImpactNoise;
         PUFF BCD 2 Bright;
         Stop;
     }
@@ -3190,6 +3194,7 @@ class CaelumExplosiveMagicProjectile : CaelumPlayerMagicProjectile
     {
         // En una accion de estado, GZDoom 4.14.2 necesita que los campos
         // propios del proyectil se resuelvan explicitamente desde invoker.
+        CaelumNoise.Emit(invoker,CaelumNoiseData.EXPLOSION);
         invoker.A_Explode(
             invoker.CaelumExplosionDamage,
             invoker.CaelumExplosionRadius,

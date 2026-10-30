@@ -7668,10 +7668,11 @@ class CaelumPlayer : DoomPlayer
 
         if (LastMovementNoiseRange > 0.0)
         {
+            LastMovementNoiseRange*=CaelumNoise.SurfaceFactor(self)*CaelumNoise.EquipmentFactor(self);
             LastMovementNoiseEventTic = level.time;
             LastMovementNoiseEventRange = LastMovementNoiseRange;
             MovementNoiseEventSerial++;
-            SoundAlert(self, false, LastMovementNoiseRange);
+            CaelumNoise.Emit(self,CaelumNoiseData.STEP,LastMovementNoiseRange);
         }
     }
 
@@ -8265,6 +8266,7 @@ class CaelumPlayer : DoomPlayer
         );
 
         CaelumThermalEffects.RecordWeaponAction(self,CaelumConstants.WEAPON_TYPE_JAVELIN,true,chargedAttack);
+        CaelumNoise.Emit(self,CaelumNoiseData.SWING);
         CaelumAirPayment.Spend(self,airCost);
         UpdateAirStateEffects();
         EquippedWeaponCooldownRemaining = GetEquippedAttackDurationTics()
@@ -8704,6 +8706,7 @@ class CaelumPlayer : DoomPlayer
         CaelumAirPayment.Spend(self,airCost);
         UpdateAirStateEffects();
         LastCarbineFired = true;
+        CaelumNoise.Emit(self,CaelumRangedRules.IsFirearm(WeaponModel.WeaponType) ? CaelumNoiseData.FIREARM : CaelumNoiseData.SWING);
         if(CaelumRangedRules.IsFirearm(WeaponModel.WeaponType))
             WorldCarbineShotUntil=level.time+GetEquippedAttackDurationTics();
         UpdateWorldCarbineVisual();
@@ -8794,6 +8797,7 @@ class CaelumPlayer : DoomPlayer
         }
 
         CurrentAnima -= animaCost;
+        CaelumNoise.Emit(self,CaelumNoiseData.MAGIC);
         ReleasePendingStaffAttack(
             secondaryAttack,
             activeMagicType,
@@ -10138,6 +10142,7 @@ class CaelumPlayer : DoomPlayer
         LastMeleeHadEnoughAir = true;
         if (chargedAttack) { ConsumeWeaponChargedState(); }
         CaelumThermalEffects.RecordWeaponAction(self,WeaponModel.WeaponType,secondaryAttack,chargedAttack,areaSweep);
+        CaelumNoise.Emit(self,CaelumNoiseData.SWING);
         CaelumAirPayment.Spend(self,LastMeleeAirCost);
         UpdateAirStateEffects();
 
@@ -10205,6 +10210,7 @@ class CaelumPlayer : DoomPlayer
             targetData
         );
 
+        if(targetData.linetarget!=null || detectionPuff!=null)CaelumNoise.Emit(self,CaelumNoiseData.IMPACT);
         LastMeleeHit = targetData.linetarget != null;
         if (!LastMeleeHit)
         {
@@ -10378,6 +10384,7 @@ class CaelumPlayer : DoomPlayer
 
             LastMeleeHit = true;
             LastMeleeSweepHitCount++;
+            CaelumNoise.Emit(candidate,CaelumNoiseData.IMPACT);
             if (candidate is "CaelumM00TrainingDummy")
             {
                 CaelumMainM00RuloTrial.RecordHit(self, false, chargedAttack);

@@ -1,6 +1,21 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.10.0** - 2026-10-30.
+Documentation version: **5.10.1** - 2026-10-30.
+
+## 5.10.1 - Anonymous action noise (#426, 2026-10-30)
+
+Implemented the approved event ranges, Insight/occlusion/intensity model,
+movement factors and private hearing revision. Real action commits emit once;
+no source actor reference is stored. Alert remains separate from recognition.
+Native evidence checks rear hearing, attenuation, range boundaries, equipment,
+failed actions, real door/shotgun events, duplicate impacts, two-second identity,
+save continuity and reversible migration from the full #425 package.
+Full-package results: 39 PASS; static validation: zero errors.
+Evidence: validation_5101. Combined campaign/performance checks and author
+acceptance remain pending until #427-428 complete. No manual check was marked
+passed or removed. Early fixture compilation used a nonexistent diagnostic
+field; corrected without changing the approved runtime rules. Failed/raw
+attempts remain in local build/issue426.
 
 ## 5.10.0 - Visual perception (#425, 2026-10-30)
 

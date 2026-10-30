@@ -1,14 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.10.0** - 2026-10-30.
+Documentation version: **5.10.1** - 2026-10-30.
 
-## V5.10 active - 5.10.0 (#425-428)
+## V5.10 active - 5.10.1 (#425-428)
 
 - #425: visual filters, private recognition, attack gates, operator observation
   and reset-only legacy migration implemented. Full-package native/save/rollback
   checks: 53 PASS; static: zero errors. Combined campaign/performance comparison
   and author acceptance remain pending after #426-428.
-- #426: integrate anonymous sound events, surface/equipment factors and alert.
+- #426: anonymous action events, surface/equipment factors, alert and saved
+  heard points implemented; 39 full-package native/save/migration assertions
+  and static validation pass (validation_5101).
+  Investigation consumes these points in #427; combined performance pending.
 - #427: saved 30-second last-known positions, search and target replacement.
 - #428: audible member reports to leader and return orders. Each member selects
   the nearest valid communicated threat to itself; unheard messages grant no

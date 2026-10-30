@@ -12,6 +12,7 @@ class CaelumThermalMotion : Object play
         double distance=(after.XY-before.XY).Length();
         if(distance<=0)return;
         CaelumThermalBody.Refresh(body,thermal);
+        let npc=CaelumCombatActor(body);if(npc!=null)CaelumNoise.NPCStep(npc,running,thermal.MovedMassKg);
         double grade=(after.Z-before.Z)/distance;
         thermal.PendingActivityJoules+=CaelumThermalRules.PositiveWorkHeat(CaelumThermalRules.LocomotionWork(
             thermal.MovedMassKg,CaelumPhysicsUnits.Meters(distance),grade,running,Gravity(body)),thermal.MuscularEfficiency);

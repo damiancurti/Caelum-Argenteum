@@ -28,6 +28,7 @@ class CaelumUnarmedWeapon : Weapon
         double cost=CaelumAttackRules.NaturalAir()*user.DerivedStats.AirConsumptionMultiplier;
         if (!CaelumAirPayment.CanAfford(user,cost)) return;
         CaelumAirPayment.Spend(user,cost);
+        CaelumNoise.Emit(user,CaelumNoiseData.SWING);
         user.UpdateAirStateEffects();
         invoker.Punching=true; invoker.PunchFrame=0;
         invoker.LeftPunch=!invoker.LeftPunch;
@@ -46,6 +47,7 @@ class CaelumUnarmedWeapon : Weapon
         double aim=user.AimLineAttack(direction,distance,null,0,ALF_CHECK3D);
         FTranslatedLineTarget hit;
         user.LineAttack(direction,distance,aim,damage,'Melee',"CaelumSilentDetectionPuff",LAF_ISMELEEATTACK,hit);
+        if(hit.linetarget!=null)CaelumNoise.Emit(user,CaelumNoiseData.IMPACT);
         if(hit.linetarget!=null)
         {
             user.Angle=hit.angleFromSource;
