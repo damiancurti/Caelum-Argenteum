@@ -1,6 +1,28 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.10.1** - 2026-10-30.
+Documentation version: **5.10.2** - 2026-10-30.
+
+## 5.10.2 - Private perception memory (#427, 2026-10-30)
+
+Implemented the approved 30-active-second private identity/position memory,
+immediate reacquisition within that interval, expiry and point investigation.
+Search goals use native collision-aware chase and cannot authorize attacks;
+resource retreat also uses a recorded point. Dead/removed targets and orphaned
+markers are cleared without global scans. Existing story/escort/crew duties
+remain authoritative. Old hearing state migrates without invented identities.
+
+Native evidence: validation_5102. A same-tic death/reappearance check exposed a
+stale record behind the once-per-tic pruning cache; requested dead subjects now
+clear immediately. A scene setup initially placed a door noise beyond its
+approved eight-metre range; moved inside the range, without changing runtime
+balance. The ordinary state-machine test also caught chase retaining an old
+heading; investigation now uses the existing route pattern of a native direct
+step with collision checks and chase fallback when blocked. Save/reload and
+original-package rollback are checked separately from author acceptance.
+Full-package results: 56 PASS; static validation: zero errors. A recovery
+fixture needed its real revision and maximum resources initialized before
+forcing retreat; this fixture correction did not alter runtime recovery.
+Combined campaign/performance and #428 remain outstanding.
 
 ## 5.10.1 - Anonymous action noise (#426, 2026-10-30)
 

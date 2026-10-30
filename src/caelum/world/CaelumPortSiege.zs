@@ -357,6 +357,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
         EnsureTargetingRevision();
         let victim=CaelumVisualPerception.Acquire(entry.Body);
         entry.CombatTarget=victim;
+        if(victim==null)victim=CaelumVisualPerception.SearchGoal(entry.Body);
         return victim!=null ? victim : AttackingTarget[entry.Lane];
     }
 
@@ -613,6 +614,14 @@ class CaelumPortSiege : CaelumSiegeEncounter
             if(entry.NavigationTarget==null)entry.NavigationTarget=Actor.Spawn("CaelumSewerEscapeTarget",body.Pos);
             goal=entry.NavigationTarget;
         }
+        // Un operador conserva su puesto; el resto busca dentro del sector de defensa ya autorizado.
+        if(soldier!=null && soldier.Gun==null && victim==null)
+        {
+            let search=CaelumVisualPerception.SearchGoal(body);
+            if(search!=null && (search.Pos-post).Length()<=CaelumPortData.COMMAND_LINK_RADIUS)
+            {CaelumVisualPerception.SearchPulse(body);return true;}
+        }
+        if(victim is "CaelumSearchPoint"){CaelumVisualPerception.SearchPulse(body);return true;}
         bool nearEnemy=victim!=null && victim.health>0 && body.Distance2D(victim)<=body.MeleeRange+victim.Radius;
         if(soldier!=null && soldier.Carbine!=null)soldier.Carbine.Select(!nearEnemy);
         if(hasPost && !nearEnemy && (body.Pos-post).Length()>body.Radius)

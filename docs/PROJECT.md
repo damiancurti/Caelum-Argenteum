@@ -1,14 +1,13 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.10.1** - 2026-10-30.
+Documentation version: **5.10.2** - 2026-10-30.
 
-## V5.10 in progress - 5.10.1 (#426)
+## V5.10 in progress - 5.10.2 (#427)
 
-Visual recognition (#425) and anonymous action noise (#426) are implemented.
-Native/save/migration evidence is in validation_5100-5101; approved values are
-consolidated in SYSTEMS. Combined campaign/performance checks remain pending.
-#427 memory/search and #428 reports/leader orders are separate dependent
-patches. V5.10 is not complete or author-accepted. The author requested one
+Vision (#425), anonymous action noise (#426) and private memory/search (#427)
+are implemented. Native/save/migration evidence is in validation_5100-5102;
+approved values are consolidated in SYSTEMS. Combined campaign/performance
+checks remain pending. #428 reports/leader orders is the next dependent patch. V5.10 is not complete or author-accepted. The author requested one
 final grouped manual-test handoff.
 
 ## V5.9 completion - 5.9.7 (2026-10-30, #403)

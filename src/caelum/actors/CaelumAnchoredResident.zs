@@ -62,7 +62,8 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
     {
         if (!EscortPrisonerPort || health <= 0
             || CaelumFactionData.ConfirmedPrisonerFaction(EscortPrisonerId) < 0) return;
-        if (!CanBeFactionTarget(FactionTarget) || !CaelumVisualPerception.Identify(self,FactionTarget)) FactionTarget = null;
+        if (!CanBeFactionTarget(FactionTarget) || (!CaelumVisualPerception.Identify(self,FactionTarget)
+            && CaelumVisualPerception.Evidence(self).GetMemory().Find(FactionTarget)==null)) FactionTarget = null;
         // Sólo tres representantes canónicos y MAXPLAYERS; cadencia de su
         // locomoción existente. Nunca recorrer actores ni inferir facción visual.
         if (FactionTarget == null && level.time % CaelumConstants.PRISONER_WALK_STATE_TICS == 0)

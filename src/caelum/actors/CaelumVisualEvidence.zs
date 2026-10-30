@@ -3,6 +3,15 @@ class CaelumVisualEvidence : Object play
 {
     int Revision, LastSampleTic, LastEvidenceTic, LastDecayTic, ContinuousSightTics;
     Actor Subject, IdentifiedSubject;
+    CaelumPerceptionMemory Memory;
+    int LastVisualTic;
+    bool HasVisualPoint;
+
+    CaelumPerceptionMemory GetMemory()
+    {
+        if(Memory==null)Memory=new("CaelumPerceptionMemory");
+        Memory.Prune();return Memory;
+    }
     CaelumCombatActor Witness;
     int NoiseRevision,NoiseTic,NoiseKind;
     vector3 NoisePosition;
@@ -36,12 +45,14 @@ class CaelumVisualEvidence : Object play
             if(Subject!=candidate)IdentifiedSubject=null;
             bool contact=CaelumVisualPerception.Touching(observer,candidate);
             int required=int(TICRATE*CaelumPerceptionData.IDENTIFICATION_SECONDS);
-            ContinuousSightTics=contact ? required : same ? Min(required,ContinuousSightTics+Max(0,level.time-LastSampleTic)) : 0;
+            bool known=GetMemory().Find(candidate)!=null;
+            ContinuousSightTics=contact || known ? required : same ? Min(required,ContinuousSightTics+Max(0,level.time-LastSampleTic)) : 0;
             double visual=double(ContinuousSightTics)*CaelumPerceptionData.SUSPICION_MAXIMUM/required;
             Suspicion=Max(Suspicion,visual);
-            Subject=candidate;ObservedPosition=candidate.Pos;
+            Subject=candidate;ObservedPosition=candidate.Pos;LastVisualTic=level.time;HasVisualPoint=true;
             LastEvidenceTic=level.time;HasEvidence=true;
-            if(ContinuousSightTics>=required)IdentifiedSubject=candidate;
+            if(ContinuousSightTics>=required)
+            {IdentifiedSubject=candidate;GetMemory().Remember(candidate,ObservedPosition,level.time);}
         }
         else {IdentifiedSubject=null;ContinuousSightTics=0;}
         VisibleNow=visible;PreviousSampleVisible=visible;LastSampleTic=level.time;
@@ -55,7 +66,9 @@ class CaelumVisualEvidence : Object play
         // El puntero del proyectil no es conocimiento. Sólo guardar un autor percibido.
         if(CaelumVisualPerception.CanSee(observer,source))
         {
-            Subject=IdentifiedSubject=source;ObservedPosition=source.Pos;
+            Subject=IdentifiedSubject=source;ObservedPosition=source.Pos;LastVisualTic=level.time;HasVisualPoint=true;
+            GetMemory().Remember(source,ObservedPosition,level.time);
+            if(CaelumVisualPerception.Opponent(observer,source))GetMemory().Focus=source;
             ContinuousSightTics=int(TICRATE*CaelumPerceptionData.IDENTIFICATION_SECONDS);
             PreviousSampleVisible=VisibleNow=true;LastSampleTic=level.time;
         }
