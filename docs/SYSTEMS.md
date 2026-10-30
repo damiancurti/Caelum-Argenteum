@@ -14,6 +14,12 @@ Giant rats acquire and transmit contamination normally but take no CaelumDisease
 
 After a rental conversation closes, the next Use rebuilds its starting page and private requirement tokens from the current character record. A completed guard-recognition clue therefore enables the existing registry-check choice. Open conversations retain their current page across saves; ownership and refund idempotence remain unchanged.
 
+Author clarification: the comparison is Leonor versus Caella. Caella carries
+22.0184kg (armor plus pickaxe, utility staff and bolas); Leonor carries5kg.
+Native mansion speeds are6.26658 versus7.93925m/s respectively, a26.69%
+difference explained by the approved load penalty. Their base profile matches;
+no duplicated motion was found. Seven focused native assertions pass.
+
 Companion acceleration remains the existing three seconds per100kg of body
 plus carried mass. It is not a shared party speed: Leonor85kg takes2.55s,
 Rufino160kg4.8s, Leandro130kg3.9s and Santos260kg7.8s in their initial gear.

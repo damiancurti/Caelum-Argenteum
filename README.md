@@ -9,6 +9,12 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 **Current release: 5.11.7.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
+Author clarification: the comparison is Leonor versus Caella. Caella carries
+22.0184kg (armor plus pickaxe, utility staff and bolas); Leonor carries5kg.
+Native mansion speeds are6.26658 versus7.93925m/s respectively, a26.69%
+difference explained by the approved load penalty. Their base profile matches;
+no duplicated motion was found. Seven focused native assertions pass.
+
 **Companion speed review (#430):** native equal-condition measurement found no
 duplicate movement. Leonor accelerates sooner because her body and equipment
 weigh less; her final speed is below Rufino and Leandro in this fixture.

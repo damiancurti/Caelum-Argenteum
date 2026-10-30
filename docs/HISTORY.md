@@ -38,6 +38,12 @@ formation slots remained beyond3m; moving the leader within3m verifies it.
 
 ## 5.11.4 - Companion implementation (#430, 2026-10-30)
 
+Author clarification: the comparison is Leonor versus Caella. Caella carries
+22.0184kg (armor plus pickaxe, utility staff and bolas); Leonor carries5kg.
+Native mansion speeds are6.26658 versus7.93925m/s respectively, a26.69%
+difference explained by the approved load penalty. Their base profile matches;
+no duplicated motion was found. Seven focused native assertions pass.
+
 Follow-up speed report2026-10-30: the author observed Leonor moving faster.
 Native comparison after acceleration (seconds10-14) measured Leonor7.9392,
 Rufino8.3716, Leandro8.1652 and Santos7.1458m/s under equal conditions. All

@@ -30,3 +30,8 @@ files = {"ZSCRIPT": b'version "4.14"\n#include "speed_checks.zs"\n',
 with zipfile.ZipFile(OUT / "speed.pk3", "w") as archive:
     for name, data in sorted(files.items()):
         archive.writestr(zipfile.ZipInfo(name, (2000, 1, 1, 0, 0, 0)), data)
+with zipfile.ZipFile(OUT / "pair.pk3", "w") as archive:
+    for name, data in {"ZSCRIPT": b'version "4.14"\n#include "pair_checks.zs"\n',
+                       "pair_checks.zs": Path(__file__).with_name("pair_checks.zs").read_bytes(),
+                       "MAPINFO": b'GameInfo { AddEventHandlers="CA430PairChecks" }\n'}.items():
+        archive.writestr(zipfile.ZipInfo(name, (2000, 1, 1, 0, 0, 0)), data)

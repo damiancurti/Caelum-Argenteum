@@ -2,6 +2,12 @@
 
 Documentation version: **5.11.7** - 2026-10-30.
 
+Author clarification: the comparison is Leonor versus Caella. Caella carries
+22.0184kg (armor plus pickaxe, utility staff and bolas); Leonor carries5kg.
+Native mansion speeds are6.26658 versus7.93925m/s respectively, a26.69%
+difference explained by the approved load penalty. Their base profile matches;
+no duplicated motion was found. Seven focused native assertions pass.
+
 Companion speed review (#430): equal-condition native displacement confirms
 the existing mass-dependent acceleration, without duplicate movement. Twelve
 comparison and four reload assertions pass; no balance adjustment is applied.
