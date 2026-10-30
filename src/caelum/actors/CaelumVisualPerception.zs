@@ -77,7 +77,7 @@ class CaelumVisualPerception : Object play
     {
         let evidence=Evidence(observer);
         if(observer.PendingTheftTarget!=null && CanSee(observer,observer.PendingTheftTarget))return observer.PendingTheftTarget;
-        Actor current=evidence.Subject;
+        Actor current=evidence.PreviousSampleVisible && CaelumPerceptionMemoryData.Fresh(evidence.LastVisualTic) ? evidence.Subject : null;
         if(Opponent(observer,current) && CanSee(observer,current))return current;
         Actor nearest;double best=1e30;
         let local=BlockThingsIterator.Create(observer,QueryRadius(observer));
@@ -107,21 +107,42 @@ class CaelumVisualPerception : Object play
     static bool Identify(CaelumCombatActor observer,Actor candidate)
     {
         if(observer==null)return false;
+        if(candidate is "CaelumSearchPoint")return false;
         if(observer.IsCaelumMassDiagnosticActor())return candidate!=null;
         return Evidence(observer).Observe(observer,candidate);
     }
 
     static Actor Acquire(CaelumCombatActor observer)
     {
-        let candidate=Candidate(observer);
-        return Identify(observer,candidate) && Opponent(observer,candidate) ? candidate : null;
+        let evidence=Evidence(observer);let memory=evidence.GetMemory();
+        Actor candidate;memory.ChooseFocus(observer);
+        if(memory.HasFocus(observer))candidate=memory.Focus;
+        else candidate=Candidate(observer);
+        if(Identify(observer,candidate) && Opponent(observer,candidate))
+        {memory.Focus=candidate;memory.ClearGoal(observer);return candidate;}
+        return null;
     }
 
     static void Look(CaelumCombatActor observer)
     {
         observer.LastEnemy=null;
         observer.target=Acquire(observer);
+        if(observer.target==null)observer.target=SearchGoal(observer);
         if(observer.target!=null && observer.SeeState!=null)observer.SetState(observer.SeeState);
+    }
+
+    static Actor SearchGoal(CaelumCombatActor body)
+    {
+        let evidence=Evidence(body);return evidence.GetMemory().Search(body,evidence);
+    }
+
+    static bool SearchPulse(CaelumCombatActor body)
+    {
+        Actor goal=SearchGoal(body);if(goal==null)return false;
+        body.target=goal;body.LastEnemy=null;
+        if(body.SeeState!=null && !body.InStateSequence(body.CurState,body.SeeState))body.SetState(body.SeeState);
+        else body.ThermalChase(null,null,CHF_DONTLOOKALLAROUND);
+        return true;
     }
 
     static CaelumVisualEvidence Evidence(CaelumCombatActor body)

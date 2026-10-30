@@ -49,7 +49,9 @@ class CaelumTheftWitnesses : Object play
     {
         if(!HasTarget(npc))return false;
         if(npc.ForcedSleepTics>0 || npc.CombatLucidityPhysicalStunRemaining>0 || npc.bInConversation)return true;
-        npc.Target=npc.TheftTarget;npc.LastEnemy=npc.TheftTarget;
+        Actor perceived=CaelumVisualPerception.Acquire(npc);
+        if(perceived==null)return CaelumVisualPerception.SearchPulse(npc);
+        npc.Target=perceived;npc.LastEnemy=null;
         let soldier=CaelumPortDefender(npc);
         if(soldier!=null)
         {

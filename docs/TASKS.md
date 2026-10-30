@@ -1,8 +1,8 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.10.1** - 2026-10-30.
+Documentation version: **5.10.2** - 2026-10-30.
 
-## V5.10 active - 5.10.1 (#425-428)
+## V5.10 active - 5.10.2 (#425-428)
 
 - #425: visual filters, private recognition, attack gates, operator observation
   and reset-only legacy migration implemented. Full-package native/save/rollback
@@ -12,7 +12,10 @@ Documentation version: **5.10.1** - 2026-10-30.
   heard points implemented; 39 full-package native/save/migration assertions
   and static validation pass (validation_5101).
   Investigation consumes these points in #427; combined performance pending.
-- #427: saved 30-second last-known positions, search and target replacement.
+- #427: saved 30-second private positions, native point search, recognition
+  reacquisition/expiry and target replacement implemented; 56 full-package
+  native/save/migration assertions pass (validation_5102), static zero errors.
+  Original saves/packages remain available for rollback.
 - #428: audible member reports to leader and return orders. Each member selects
   the nearest valid communicated threat to itself; unheard messages grant no
   knowledge. Preserve original evidence age and five-second report throttle.

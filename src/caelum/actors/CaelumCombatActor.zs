@@ -1020,7 +1020,7 @@ class CaelumCombatActor : Actor
     // Revisión 1: retirada por agotamiento y descanso hasta completar reservas.
     int RecoveryRevision, RecoveryPhase;
     Actor RecoveryThreat, RecoveryGoal;
-    double IdleHealthAccumulator;
+    double IdleHealthAccumulator,RecoveryThreatPerceivedRange;
     bool AttackResourceMagical;
     double AttackResourceBaseCost;
     int AttackResourceWeapon;
@@ -1098,17 +1098,19 @@ class CaelumCombatActor : Actor
         }
         if(RecoveryPhase==1)
         {
-            double reach=RecoveryThreatRange()+Radius;
+            if(CaelumVisualPerception.Identify(self,RecoveryThreat))RecoveryThreatPerceivedRange=RecoveryThreatRange();
+            let known=CaelumVisualPerception.Evidence(self).GetMemory().Find(RecoveryThreat);
+            double reach=RecoveryThreatPerceivedRange+Radius;
             // La envolvente horizontal también cubre el alcance melee nativo:
             // una diferencia de altura no debe acortar la retirada por sí sola.
-            if(RecoveryThreat==null || RecoveryThreat.health<=0 || Distance2D(RecoveryThreat)>reach)
+            if(known==null || (Pos.XY-known.Position.XY).Length()>reach)
             {
                 RecoveryPhase=2;target=null;LastEnemy=null;Vel.X=0;Vel.Y=0;
                 SetState(SpawnState);return true;
             }
-            vector2 away=Pos.XY-RecoveryThreat.Pos.XY;
+            vector2 away=Pos.XY-known.Position.XY;
             if(away.Length()==0)away=(Cos(Angle),Sin(Angle));
-            vector3 destination=(RecoveryThreat.Pos.XY+away.Unit()*(reach+Speed),Pos.Z);
+            vector3 destination=(known.Position.XY+away.Unit()*(reach+Speed),Pos.Z);
             if(RecoveryGoal==null)RecoveryGoal=Spawn("CaelumSewerEscapeTarget",destination,NO_REPLACE);
             else RecoveryGoal.SetOrigin(destination,false);
             target=RecoveryGoal;LastEnemy=null;Vel.X=0;Vel.Y=0;
@@ -1194,6 +1196,7 @@ class CaelumCombatActor : Actor
         if(RecoveryPhase==0)
         {
             RecoveryThreat=target!=RecoveryGoal ? target : RecoveryThreat;
+            RecoveryThreatPerceivedRange=CaelumVisualPerception.CanSee(self,RecoveryThreat) ? RecoveryThreatRange() : 0;
             RecoveryPhase=1;
         }
         SetStateLabel("ResourceRetreat");
@@ -3973,12 +3976,28 @@ class CaelumCombatActor : Actor
         if(!IsCaelumMassDiagnosticActor() && combatTarget && !CaelumVisualPerception.Identify(self,target))
         {
             target=CaelumVisualPerception.Acquire(self);
+            if(target==null)target=CaelumVisualPerception.SearchGoal(self);
             if(target==null){LastEnemy=null;return;}
         }
-        if(target==null && !IsCaelumMassDiagnosticActor())
+        else if((target==null || target is "CaelumSearchPoint") && !IsCaelumMassDiagnosticActor())
         {
             target=CaelumVisualPerception.Acquire(self);
+            if(target==null)target=CaelumVisualPerception.SearchGoal(self);
             if(target==null)return;
+        }
+        if(target is "CaelumSearchPoint")
+        {
+            melee=null;missile=null;flags|=CHF_DONTLOOKALLAROUND;
+            if(Distance2D(target)<=Radius+target.Radius && Abs(Pos.Z-target.Pos.Z)<=MaxStepHeight)
+            {Vel.X=0;Vel.Y=0;LastEnemy=null;return;}
+            // Como las rutas existentes: paso nativo hacia el punto; A_Chase
+            // conserva el desvio si hay un obstaculo. No heredar un rumbo viejo.
+            vector2 delta=target.Pos.XY-Pos.XY;
+            if((flags&CHF_DONTMOVE)==0 && delta.Length()>0)
+            {
+                Angle=VectorAngle(delta.X,delta.Y);
+                if(ThermalTryMove(Pos.XY+delta.Unit()*Min(Speed,delta.Length())))return;
+            }
         }
         vector3 before=Pos;
         if(CaelumBattleCry.Active(self)){melee=null;missile=null;}

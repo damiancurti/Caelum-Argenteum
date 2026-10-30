@@ -1,11 +1,11 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.10.1** - 2026-10-30.
+Documentation version: **5.10.2** - 2026-10-30.
 
-**V5.10 active, 5.10.1/#426:** vision/recognition/operator gates and anonymous
-noise implemented; validation_5100-5101. Combined performance pending.
-#427 memory/search and #428 reports/orders next. Author away; temporary
-keep-awake active. Grouped manual handoff only after completion; no acceptance.
+**V5.10 active, 5.10.2/#427:** vision, anonymous noise and private memory/search
+implemented; validation_5100-5102. Combined performance pending; #428 audible
+reports/orders next. Author away; temporary keep-awake active. Grouped manual
+handoff only after completion; no acceptance.
 
 **V5.9 accepted/merged:** #418-424 closed, PR561-569; CA418-01..CA424-01
 confirmed 2026-10-30 in HISTORY. validation_590-597; pending_test.txt empty.
