@@ -1,10 +1,7 @@
-CA429-01 | Origin 5.11.1 | Issue #429 | Formation movement
-Prerequisite: final V5.11 package; launch assets/validation_v5_11_4/launch_manual.ps1.
-Choose 3, then press F1 in the game. Walk alongside the five guards.
-Expected: single file through the narrow passage, restored formation outside,
-no overlapping bodies; four PASS lines after 40 active seconds.
-In scenario1, recruit residents and cycle F in their panel to inspect shapes.
-Close the panel with Tab before using function-key shortcuts.
+CA429-01 | Origin 5.11.1 | Issue #429 | Corridor exit retest
+Use the combined V5.11 terminal, scenario3, then F1.
+All five guards must cross; no body should remain at the exit corner.
+The formation widens only after bodies fit. Expect four PASS, no FAIL.
 
 CA430-01 | Origin 5.11.4 | Issue #430 | Companion movement correction
 Prerequisite: corrected combined terminal; mansion and prisoner scenarios.

@@ -22,6 +22,8 @@ the numbered local test terminal. Outstanding checks are in `pending_test.txt`.
 Other author checks passed on2026-10-30; companion movement and formation
 corrections remain for retest. No issue closure or merge is claimed.
 
+The #429 corridor-exit correction is included; its author retest remains pending.
+
 **V5.10 is complete and author-accepted (2026-10-30).** Issues #425-428 are
 closed and their focused PRs #570-573 are merged into main with commit ancestry
 preserved. Vision, anonymous noise, private memory/search and audible reports/

@@ -16,7 +16,7 @@ rental progression, central-house placement and rat disease immunity.
   remaining limitations must be reported separately from render callbacks.
 - #429: formation/admission implementation has passed focused native geometry,
   membership, combat-order, full-package save/migration and campaign checks.
-  Source/evidence are ready; author review is deferred to the combined handoff.
+  Corridor-exit correction passes four native checks; CA429-01 retest pending.
 - #430: implementation complete, pending author review. All nine authored
   identities, dialogue administration, native equipment, finite ranged/magic
   attacks, jewelry/clothing, unit-level gift/loan provenance, private consent,
