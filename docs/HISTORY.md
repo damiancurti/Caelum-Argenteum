@@ -1,6 +1,25 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.9.0** - 2026-10-29.
+Documentation version: **5.9.1** - 2026-10-29.
+
+## 5.9.1 - Faction consequence implementation (#420, 2026-10-29)
+
+Implemented the approved seven ranks, quotation factors and two enemy pairs;
+added revisioned per-character assistance receipts, membership tenures and
+explicit disclosure consequences. Existing rescue rewards use the receipt
+without changing money or accepted claim flags. Confirmed representatives gain
+post-arrival hostility while captivity/escort and Leandro's ambiguity remain
+protected. The Journal shows the player's own rank.
+
+Native checks cover old-save migration, rank boundaries, the relationship
+matrix, capped aid/report idempotency, private knowledge, saved expulsion, hub
+travel and post-arrival targeting/attacks. Evidence and limitations are in
+assets/validation_591/RESULTS.md. An initial launcher used the unsupported
+changelevel command; corrected to changemap and repeated the actual hub trip.
+An attack assertion initially used a counter restricted to TACTORS; the final
+fixture observes real attack resource expenditure instead. These failed probes
+remain local evidence. Dialogue reports and service wiring remain #419/#424;
+no author acceptance, issue closure or completed V5.9 claim is implied.
 
 ## 5.9.0 - Quest coordination checkpoint (#418, 2026-10-29)
 

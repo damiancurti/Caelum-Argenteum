@@ -1,6 +1,45 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.9.0** - 2026-10-29.
+Documentation version: **5.9.1** - 2026-10-29.
+
+## 5.9.1 / #420 - Faction ranks and recorded consequences
+
+The six existing identities retain the -1000..1000 scale. The approved ranks
+are Hated (-1000..-500), Hostile (-499..-250), Distrusted (-249..-50), Neutral
+(-49..49), Friendly (50..249), Respected (250..499), Revered (500..1000).
+Hated/Hostile deny faction trade. Purchase factors for the other five ranks
+are 1.50/1/0.85/0.75/0.66; selling factors are 0.80/1/1.05/1.10/1.15. Apply
+the factor before the existing merchant margin and round once for the whole
+lot. Shared quotation helpers are implemented here; actual service transactions
+are wired separately under #424. Unaffiliated civilian services stay unchanged.
+
+Unitarians/Federals and Cult of the Tarot/Sun Warriors are mutual enemies;
+other cross-faction pairs are neutral. This does not establish signed peace,
+new alliances, or allegiance inferred from race or generic clothing.
+
+An assistance receipt records its stable authored event key and actual capped
+reputation gain. Repeating the reward cannot grant it twice. Only an explicit
+report to an enemy subtracts that gain 1:1; unknown or repeated reports do not
+invent/duplicate penalties. Existing prisoner reward currency/claimed flags
+remain authoritative. Leandro's accepted reward affiliation remains distinct
+from confirmed membership.
+
+Multiple concealed memberships remain legal. Each membership tenure has an
+epoch; explicit faction knowledge records the revealed epoch separately from
+private witness knowledge. On disclosure of simultaneous membership, only the
+informed faction removes its own membership and subtracts 100 reputation once.
+Revision1 initializes legacy tenure epochs idempotently, without inventing old
+reports or retroactive aid penalties. Dialogue declarations and requests to
+register a report are separate approved actions, integrated under #419; six
+physical faction insignias are deferred.
+
+Leonor, Rufino and Santos can target a visible hostile player after arrival in
+Barracas, using their existing attacks/resources and vulnerable native bodies.
+Captivity/escort protection remains unchanged; Leandro is not a confirmed Cult
+member. Leaving the hostile rank releases only faction aggression. Theft keeps
+its own authority. Acquisition checks only MAXPLAYERS at the existing four-tic
+prisoner movement cadence, on these three authored actors; no global actor
+query, generic outfit inference or new faction army is introduced.
 
 ## 5.9.0 / #418 - Shared quest requirements and narrative observations
 

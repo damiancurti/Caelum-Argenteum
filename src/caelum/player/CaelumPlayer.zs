@@ -1059,7 +1059,8 @@ class CaelumPlayer : DoomPlayer
             if (!ApplyPalomoCurrencyPlan()) { return false; }
             CaelumDemoNarrative.EnsureRevision(persistentState);
             persistentState.MarkPrisonerRewardClaimed(prisonerId);
-            persistentState.ChangeFactionReputation(
+            CaelumFactionConsequences.GrantAid(persistentState,
+                String.Format("prisoner_reward_%d", prisonerId),
                 factionId, CaelumConstants.PRISONER_RESCUE_REPUTATION_GAIN);
             RefreshSocialJournalSnapshot();
             PersistCharacterState();

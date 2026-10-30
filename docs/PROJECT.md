@@ -1,15 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.9.0** - 2026-10-29.
+Documentation version: **5.9.1** - 2026-10-29.
 
-## V5.9 in progress - 5.9.0 (#418)
+## V5.9 in progress - 5.9.1 (#418/#420)
 
-The first focused implementation extends quest coordination over the existing
-character record, Journal and world facts: composite requirements, idempotent
-observations and an encounter lifecycle registry. Native old-save, current-save
-and hub verification are recorded in assets/validation_590. No new story reward
-or faction balance is activated by this patch. Issues #418-424 remain open;
-author acceptance and the grouped manual launcher wait for the full version.
+Shared quest coordination and faction consequence foundations are implemented
+on separate focused branches. #420 includes approved ranks/relationships,
+revisioned event receipts and post-arrival hostility; native old-save/current
+save and hub evidence is retained in validation_590/591. Dialogue/report choices,
+new story/quests, service integration and visual variants remain in progress.
+Issues #418-424 stay open and the manual terminal waits for the complete version.
 V5.8 remains the accepted baseline described below.
 
 ## V5.8 completion - 2026-10-29 (#403)
@@ -6172,9 +6172,9 @@ rewards. Close trade with Q/B; Esc retains the engine pause menu. To remove the 
 close your menus and use `give CaelumDebugReputationTrialOff`: removes guide and door,
 without reversing reputation. Loading the previous save restores the pre-test status.
 
-The current six ids, -1000..1000 scale and existing relationships are preserved. The
-seven ranks and future relationships are still pending
-thresholds and author matrix. The values of this test do not set that design. Maps,
+The six ids and -1000..1000 scale are preserved. At this historical checkpoint,
+rank thresholds and the author matrix were pending; approved V5.9 data now
+supersedes that pending status. The values of this test do not set that design. Maps,
 missions, campaign reputation gains, regional price formulas or attribute bonuses are not
 added.
 

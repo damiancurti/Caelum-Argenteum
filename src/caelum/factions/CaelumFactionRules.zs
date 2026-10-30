@@ -29,12 +29,29 @@ class CaelumFactionRules : Object
             return CaelumConstants.FACTION_RELATION_NEUTRAL;
         }
 
-        // Sólo la identidad propia está definida. Toda relación cruzada se
-        // mantiene neutral hasta recibir la matriz narrativa del autor.
+        // Matriz aprobada para #420; no atribuye identidad a ningún actor.
         if (sourceFactionId == targetFactionId)
         {
             return CaelumConstants.FACTION_RELATION_FRIENDLY;
         }
+        if (CaelumFactionData.EnemyPair(sourceFactionId, targetFactionId))
+            return CaelumConstants.FACTION_RELATION_HOSTILE;
         return CaelumConstants.FACTION_RELATION_NEUTRAL;
+    }
+
+    static bool HostileReputation(CaelumPersistentCharacterState record, int faction)
+    {
+        return record != null && IsValidFactionId(faction)
+            && record.FactionReputation[faction] <= CaelumFactionData.HOSTILITY_MAXIMUM;
+    }
+
+    static int TradePrice(double value, int amount, bool selling, int reputation)
+    {
+        double factor = selling ? CaelumFactionData.SaleFactor(reputation)
+            : CaelumFactionData.PurchaseFactor(reputation);
+        if (factor <= 0 || value <= 0 || amount <= 0) return 0;
+        // Redondear una vez, al final del lote, conserva los márgenes nativos.
+        return selling ? CaelumEconomyRules.GetPricePaidByMerchant(value * factor, amount)
+            : CaelumEconomyRules.GetPriceChargedByMerchant(value * factor, amount);
     }
 }

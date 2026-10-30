@@ -6994,3 +6994,20 @@ CA_TRANSPORT_REMAINING = "Salida en %.2f h | Trayecto restante: %.2f h";
 CA_TRANSPORT_SUPPLIES = "Automatic provisions use carried supplies outside the Box.";
 [es]
 CA_TRANSPORT_SUPPLIES = "Las provisiones automáticas usan lo que llevás fuera de la Caja.";
+
+[enu default]
+CA_FACTION_RANK_0 = "Hated";
+CA_FACTION_RANK_1 = "Hostile";
+CA_FACTION_RANK_2 = "Distrusted";
+CA_FACTION_RANK_3 = "Neutral";
+CA_FACTION_RANK_4 = "Friendly";
+CA_FACTION_RANK_5 = "Respected";
+CA_FACTION_RANK_6 = "Revered";
+[es]
+CA_FACTION_RANK_0 = "Odiado";
+CA_FACTION_RANK_1 = "Hostil";
+CA_FACTION_RANK_2 = "Desconfiado";
+CA_FACTION_RANK_3 = "Neutral";
+CA_FACTION_RANK_4 = "Amistoso";
+CA_FACTION_RANK_5 = "Respetado";
+CA_FACTION_RANK_6 = "Venerado";

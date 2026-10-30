@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "f932f0c2b6f00b2a4966abc30e269756c83962c58ae6bfd45e2ea05a96b072e2",
+  "sha256": "a303d7e30874033a7b590528ed9521fcfa8b33a0abcdff50ac9ca95041100291",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[483,483]],"default":[[483,483]],"es":[[1178,1178]]},
     "CA_ABSENT_THEFT_FOUND": {"enu":[[6906,6906]],"default":[[6906,6906]],"es":[[6908,6908]]},
@@ -996,6 +996,13 @@
     "CA_FACTION_MEMBER_NO": {"enu":[[1970,1970]],"default":[[1970,1970]],"es":[[2040,2040]]},
     "CA_FACTION_MEMBER_YES": {"enu":[[1969,1969]],"default":[[1969,1969]],"es":[[2039,2039]]},
     "CA_FACTION_PUEBLOS_LIBRES": {"enu":[[1973,1973]],"default":[[1973,1973]],"es":[[2043,2043]]},
+    "CA_FACTION_RANK_0": {"enu":[[6999,6999]],"default":[[6999,6999]],"es":[[7007,7007]]},
+    "CA_FACTION_RANK_1": {"enu":[[7000,7000]],"default":[[7000,7000]],"es":[[7008,7008]]},
+    "CA_FACTION_RANK_2": {"enu":[[7001,7001]],"default":[[7001,7001]],"es":[[7009,7009]]},
+    "CA_FACTION_RANK_3": {"enu":[[7002,7002]],"default":[[7002,7002]],"es":[[7010,7010]]},
+    "CA_FACTION_RANK_4": {"enu":[[7003,7003]],"default":[[7003,7003]],"es":[[7011,7011]]},
+    "CA_FACTION_RANK_5": {"enu":[[7004,7004]],"default":[[7004,7004]],"es":[[7012,7012]]},
+    "CA_FACTION_RANK_6": {"enu":[[7005,7005]],"default":[[7005,7005]],"es":[[7013,7013]]},
     "CA_FACTION_SUN_WARRIORS": {"enu":[[1976,1976]],"default":[[1976,1976]],"es":[[2046,2046]]},
     "CA_FACTION_UNITARIOS": {"enu":[[1971,1971]],"default":[[1971,1971]],"es":[[2041,2041]]},
     "CA_FAST_ACTIVITY": {"default":[[4012,4012]],"es":[[4049,4049]]},
