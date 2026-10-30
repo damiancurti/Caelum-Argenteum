@@ -2,7 +2,7 @@
 
 Documentation version: **5.9.7** - 2026-10-29.
 
-## V5.9 implementation complete - author review pending (5.9.7)
+## V5.9 complete - author-accepted 2026-10-30 (5.9.7, #403)
 
 - #418: shared requirements/transitions and world narrative registry; validation_590.
 - #419: saved private emotional readings and separate declaration/report actions; validation_592.
@@ -16,9 +16,11 @@ Documentation version: **5.9.7** - 2026-10-29.
 - #424: explicit faction commerce/door consequences; civilian access unchanged;
   validation_596.
 
-Next: author executes the numbered scenarios and confirms pending_test.txt IDs.
-Keep issues open and PRs unmerged until that review and integration instruction.
-Do not reopen accepted V5.8 or add new balance/content to this handoff.
+The author confirmed CA418-01 through CA424-01 and explicitly requested merging
+and closure on 2026-10-30. PRs #561-568 are merged into main; #418-424 are closed.
+HISTORY records each original version and confirmation; pending_test.txt is
+empty. Next: the existing V5.10 roadmap. Do not reopen accepted V5.8/V5.9 scope.
+Earlier checkpoints below are historical and superseded by this completion.
 
 ## V5.8 completion - 2026-10-29 (#403)
 
