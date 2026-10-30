@@ -2,17 +2,21 @@
 
 Documentation version: **5.10.3** - 2026-10-30.
 
-## V5.10 implementation complete; author review pending - 5.10.3 (#428)
+## V5.10 complete and author-accepted - 5.10.3 (2026-10-30, #403)
 
 Vision (#425), anonymous action noise (#426), private memory/search (#427)
-and audible reports/leader orders (#428) are implemented on separate branches.
+and audible reports/leader orders (#428) are integrated through focused PRs
+#570-573. All four issues are closed; branch-tip ancestry is preserved.
 Native evidence is in validation_5100-5103; approved data are in SYSTEMS.
 Full-package communication/save/migration/rollback: 53 PASS; combined #425-427
 regression: 91 PASS. Representative campaign measurements are complete, with
 the large siege's existing stalls and modest additional cost explicitly retained
 as limitations, not a 60-FPS claim. See HISTORY and validation_5103/summary.json.
-The grouped launcher and four pending author checks are ready; V5.10 is not yet
-author-accepted or merged.
+The author confirmed all final tests and explicitly requested integration and
+closure. CA425-01..CA428-01 are recorded under their originating releases in
+HISTORY; pending_test.txt is empty. This acceptance record changes no runtime,
+assets or balance and does not increase 5.10.3. The existing V5.11 roadmap is
+next; its implementation is outside this acceptance-only request.
 
 ## V5.9 completion - 5.9.7 (2026-10-30, #403)
 

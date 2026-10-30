@@ -1,0 +1,78 @@
+{
+  "version": "5.10.3",
+  "date": "2026-10-30",
+  "scope": "Author confirmation and integration only; no runtime or asset change.",
+  "author_confirmation": "All final tests passed; explicitly requested closing issues and merging PRs.",
+  "tests": [
+    {
+      "id": "CA425-01",
+      "issue": 425,
+      "originating_version": "5.10.0",
+      "result": "passed",
+      "confirmation_date": "2026-10-30"
+    },
+    {
+      "id": "CA426-01",
+      "issue": 426,
+      "originating_version": "5.10.1",
+      "result": "passed",
+      "confirmation_date": "2026-10-30"
+    },
+    {
+      "id": "CA427-01",
+      "issue": 427,
+      "originating_version": "5.10.2",
+      "result": "passed",
+      "confirmation_date": "2026-10-30"
+    },
+    {
+      "id": "CA428-01",
+      "issue": 428,
+      "originating_version": "5.10.3",
+      "result": "passed",
+      "confirmation_date": "2026-10-30"
+    }
+  ],
+  "pull_requests": [
+    570,
+    571,
+    572,
+    573
+  ],
+  "accepted_head": "b9da96167fa1ba08684003b86cb53892eb5abd94",
+  "integrated_main": "0b60cfbcd3611bb0f8a66df72821ecde7033433b",
+  "runtime_and_assets_match_accepted_head": true,
+  "pending_test_bytes": 0,
+  "static": {
+    "version": "5.10.3",
+    "documents": 11,
+    "audio_files": 131,
+    "station_models": 14,
+    "spanish_caella_keys": 25,
+    "premise_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "context_words": 2499,
+    "errors": []
+  },
+  "limitations": "Large-siege costs and unavailable monitor-presentation evidence remain documented; acceptance does not claim 60 displayed FPS."
+}

@@ -41,8 +41,9 @@ reuses that observer's candidate enumeration without caching an attack permit.
 Unseen attackers march toward the existing authored gate point. The old live
 defender fallback cannot stand in for a route point or disclose hidden motion.
 Full-package communication/save/migration/rollback: 53 assertions pass.
-Combined #425-427 regression: 91 assertions pass. Author review remains pending;
-campaign measurements and their presentation limits are recorded in HISTORY
+Combined #425-427 regression: 91 assertions pass. The author accepted
+CA425-01..CA428-01 on 2026-10-30 and PR570-573 are merged; #425-428 closed.
+Campaign measurements and their presentation limits are recorded in HISTORY
 and assets/validation_5103/summary.json.
 
 ## 5.10.2 / #427 - Private memory and point investigation

@@ -4,6 +4,12 @@ Documentation version: **5.10.3** - 2026-10-30.
 
 ## 5.10.3 - Audible reports and leader orders (#428, 2026-10-30)
 
+Author confirmation: **CA428-01**, originating version **5.10.3**, issue
+**#428**, **PASSED 2026-10-30**. The author confirmed every final V5.10 manual
+test on the 5.10.3 delivery and explicitly authorized merges and issue closure.
+PR #573 is merged into main; #428 is closed. The confirmed queue entry
+was removed. Original native evidence remains separate from this confirmation.
+
 Implemented private saved report provenance, original-age expiry, five-second
 shout throttling and actual group/faction eligibility. Members inform their
 leader through real audibility; only an audible return order authorizes their
@@ -35,7 +41,8 @@ orders1/0/1 (identity states). Reappearance is deliberately separated from the
 NPC so direct contact cannot mask the expired-memory test. Native captures were
 inspected; this is agent verification, not author acceptance or a physical-key
 input test. Logs are retained in validation_5103; captures stay local in build.
-Author acceptance remains pending; no V5.10 issue is merged or closed.
+The acceptance record above supersedes the original pending status. PR570-573
+are merged; #425-428 closed. No runtime or asset changes accompany acceptance.
 
 Final uninstrumented full-package campaign comparisons (callback mean / p99 ms):
 
@@ -58,11 +65,18 @@ hashes, mean/p95/p99/max and counts are archived in validation_5103.
 RenderOverlay callbacks are not displayed-frame presentation. Prior ETW capture
 was access-denied and the local PresentMon executable is unavailable; no monitor
 FPS is asserted. Native screenshots support lab visual review; the Windows
-computer-use bridge was unavailable, so physical keyboard delivery remains an
-author check. The original save/package rollback and all failed diagnostic
-attempts remain on disk. Pending author IDs: CA425-01 through CA428-01.
+computer-use bridge was unavailable during agent verification; the subsequent
+author confirmation is recorded separately above. Original save/package rollback
+and failed diagnostic attempts remain on disk. CA425-01 through CA428-01 are
+confirmed; pending_test.txt is empty. Acceptance does not assert displayed FPS.
 
 ## 5.10.2 - Private perception memory (#427, 2026-10-30)
+
+Author confirmation: **CA427-01**, originating version **5.10.2**, issue
+**#427**, **PASSED 2026-10-30**. The author confirmed every final V5.10 manual
+test on the 5.10.3 delivery and explicitly authorized merges and issue closure.
+PR #572 is merged into main; #427 is closed. The confirmed queue entry
+was removed. Original native evidence remains separate from this confirmation.
 
 Implemented the approved 30-active-second private identity/position memory,
 immediate reacquisition within that interval, expiry and point investigation.
@@ -86,6 +100,12 @@ Combined campaign/performance and #428 remain outstanding.
 
 ## 5.10.1 - Anonymous action noise (#426, 2026-10-30)
 
+Author confirmation: **CA426-01**, originating version **5.10.1**, issue
+**#426**, **PASSED 2026-10-30**. The author confirmed every final V5.10 manual
+test on the 5.10.3 delivery and explicitly authorized merges and issue closure.
+PR #571 is merged into main; #426 is closed. The confirmed queue entry
+was removed. Original native evidence remains separate from this confirmation.
+
 Implemented the approved event ranges, Insight/occlusion/intensity model,
 movement factors and private hearing revision. Real action commits emit once;
 no source actor reference is stored. Alert remains separate from recognition.
@@ -100,6 +120,12 @@ field; corrected without changing the approved runtime rules. Failed/raw
 attempts remain in local build/issue426.
 
 ## 5.10.0 - Visual perception (#425, 2026-10-30)
+
+Author confirmation: **CA425-01**, originating version **5.10.0**, issue
+**#425**, **PASSED 2026-10-30**. The author confirmed every final V5.10 manual
+test on the 5.10.3 delivery and explicitly authorized merges and issue closure.
+PR #570 is merged into main; #425 is closed. The confirmed queue entry
+was removed. Original native evidence remains separate from this confirmation.
 
 The author approved common 180-degree vision, Insight M2/sector-light/visible-
 height/stealth scaling, two-second identity checks, suspicion grace/decay,

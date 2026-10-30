@@ -2,12 +2,12 @@
 
 Documentation version: **5.10.3** - 2026-10-30.
 
-**V5.10 implemented, 5.10.3/#428:** vision/noise/memory/reports; validation_5100-5103.
-Final communication/save checks:53 PASS; combined regression:91. Campaign
-comparisons complete; large siege remains slow (callbacks653.63 vs601.96 ms,
-not displayed FPS; HISTORY). Author away; temporary keep-awake active.
-Launcher:assets/validation_5103/start_manual.ps1. CA425-01..CA428-01 pending;
-no merge/acceptance.
+**V5.10 accepted/merged, 5.10.3 (2026-10-30):** #425-428 closed, PR570-573 merged.
+CA425-01..CA428-01 passed; HISTORY. pending_test.txt empty. Native evidence:
+validation_5100-5103; final communication/save53 PASS, combined regression91.
+Large siege remains slow (callbacks653.63 vs601.96 ms, not displayed FPS).
+Temporary keep-awake released after the author returned. Next: existing V5.11
+roadmap; no new implementation authorized by the acceptance-only request.
 
 **V5.9 accepted/merged:** #418-424 closed, PR561-569; CA418-01..CA424-01
 confirmed 2026-10-30 in HISTORY. validation_590-597; pending_test.txt empty.
