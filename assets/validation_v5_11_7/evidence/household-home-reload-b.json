@@ -1,0 +1,38 @@
+{
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-nomouse",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue430-work\\build\\issue430\\final\\caelum_argenteum_dev.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue581\\checks.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue581\\household-home-reload-b.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue581",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "-rngseed",
+    "428",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue581\\household-home-reload-b.log",
+    "-loadgame",
+    "household-home.zds",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue581\\household-home-reload-b.cfg"
+  ],
+  "pid": 17168,
+  "packages": {
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue430-work\\build\\issue430\\final\\caelum_argenteum_dev.pk3": "e3d2f1bd875244cdf0a68e4d06cace34b61ab8012273dba066a2f943a161e58a",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue581\\checks.pk3": "45efa67674ccc4f98a2805bcd857531620ae1abb28dae31b786ca8adc8579ca2"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 9.717,
+  "failures": [],
+  "pass_count": 10
+}

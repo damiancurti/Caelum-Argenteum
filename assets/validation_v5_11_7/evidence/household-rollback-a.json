@@ -1,0 +1,38 @@
+{
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-nomouse",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue430-work\\build\\issue430\\final\\caelum_argenteum_dev.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue581\\legacy-checks.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue581\\household-rollback-a.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue581",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "-rngseed",
+    "428",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue581\\household-rollback-a.log",
+    "-loadgame",
+    "household-legacy.zds",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue581\\household-rollback-a.cfg"
+  ],
+  "pid": 7456,
+  "packages": {
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue430-work\\build\\issue430\\final\\caelum_argenteum_dev.pk3": "e3d2f1bd875244cdf0a68e4d06cace34b61ab8012273dba066a2f943a161e58a",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue581\\legacy-checks.pk3": "de9e9f2507ea5f92802dce2d811a1c513e2d368b6c7eecea3217c5ae2516ca05"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 10.703,
+  "failures": [],
+  "pass_count": 5
+}

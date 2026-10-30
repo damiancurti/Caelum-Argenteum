@@ -1,3 +1,6 @@
+#include "caelum/data/CaelumArrivalHouseholdData.zs"
+#include "caelum/world/CaelumArrivalHousehold.zs"
+
 // Las fachadas mantienen colisión geométrica; Use cambia al interior del hub.
 class CaelumHouseHub : Object play
 {
@@ -10,6 +13,7 @@ class CaelumHouseHub : Object play
 
     static bool Prepare()
     {
+        if(!CaelumArrivalHousehold.Prepare())return false;
         int house=CaelumHouseHubData.HouseForMap(level.MapName);
         if(house<0)return true;
         let roster=CaelumHouseResidents.Get(true);if(roster==null)return false;
