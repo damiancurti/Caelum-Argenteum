@@ -1,6 +1,10 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.11.5** - 2026-10-30.
+Documentation version: **5.11.6** - 2026-10-30.
+
+## 5.11.6 - Rat contamination-damage immunity (#582, 2026-10-30)
+
+The author requested immunity after observing rats die from contamination. The rat class now rejects only CaelumDiseaseDOT in its native damage filter; active and absent physiology use that filter. Concentration, contact transmission, normal combat damage and already-dead bodies are preserved. Mandinga remains susceptible under its existing Toughness; no immunity was requested for that species. Existing saves need no data rewrite because the class filter applies to restored bodies. GZDoom 4.14.2: 5 active/absent disease and ordinary-damage checks plus 2 save/reload checks passed. Evidence: assets/validation_v5_11_6. CA582-01 remains pending.
 
 ## 5.11.5 - Refresh rental dialogue after recognition (#580, 2026-10-30)
 

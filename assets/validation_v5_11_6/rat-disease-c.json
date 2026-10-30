@@ -1,0 +1,38 @@
+{
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-nomouse",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue430-work\\build\\issue430\\final\\caelum_argenteum_dev.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue582\\checks.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue582\\rat-disease-c.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue582",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "-rngseed",
+    "428",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue582\\rat-disease-c.log",
+    "+map",
+    "MAP03",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue582\\rat-disease-c.cfg"
+  ],
+  "pid": 42244,
+  "packages": {
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue430-work\\build\\issue430\\final\\caelum_argenteum_dev.pk3": "e3d2f1bd875244cdf0a68e4d06cace34b61ab8012273dba066a2f943a161e58a",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue582\\checks.pk3": "bda2cecac16eb681cd0eb86d1ba9c6e97f3fa45a5e685adc9a12298fb7ef1ef3"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 10.729,
+  "failures": [],
+  "pass_count": 5
+}

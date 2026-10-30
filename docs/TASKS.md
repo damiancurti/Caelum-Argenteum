@@ -1,6 +1,10 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.11.5** - 2026-10-30.
+Documentation version: **5.11.6** - 2026-10-30.
+
+## V5.11 rat correction - #582
+
+Active/absent disease immunity, ordinary damage, Mandinga non-regression and save/reload passed seven native assertions. Author retest CA582-01 remains pending. No V5.11 merge or closure is authorized by this patch.
 
 ## V5.11 author corrections - #580
 

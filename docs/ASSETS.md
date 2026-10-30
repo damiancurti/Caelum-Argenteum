@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.11.5** - 2026-10-30.
+Documentation version: **5.11.6** - 2026-10-30.
 
 ### Companion delivery (5.11.4, #430)
 
