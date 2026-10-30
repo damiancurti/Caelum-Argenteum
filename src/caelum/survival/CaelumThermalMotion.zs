@@ -78,7 +78,9 @@ class CaelumThermalMotion : Object play
                 // no es una subida, pero cruzar un escalón sí requiere trabajo.
                 double supportRise=SupportHeight(supportSector,supportFloor,before.XY)-supportHeight;
                 bool running=user!=null ? (user.player.cmd.buttons & BT_RUN)!=0
-                    : body is 'CaelumBull' && CaelumBull(body).BullChargeActive;
+                    : (body is 'CaelumBull' && CaelumBull(body).BullChargeActive)
+                        || (npc!=null && npc.Companion!=null && npc.Companion.Motion!=null
+                            && npc.Companion.Motion.Running && npc.CombatAirSpending);
                 Path(body,(0,0,0),(along,0,delta.Z-supportRise),running);
             }
             else if(intent && length>0 && delta.XY.Length()<=0.01)

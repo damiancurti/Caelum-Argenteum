@@ -1,31 +1,16 @@
-CA429-01 | Origin 5.11.1 | Issue #429 | Formation movement
-Prerequisite: final V5.11 package; launch assets/validation_v5_11_4/launch_manual.ps1.
-Choose 3, then press F1 in the game. Walk alongside the five guards.
-Expected: single file through the narrow passage, restored formation outside,
-no overlapping bodies; four PASS lines after 40 active seconds.
-In scenario1, recruit residents and cycle F in their panel to inspect shapes.
-Close the panel with Tab before using function-key shortcuts.
+CA429-01 | Origin 5.11.1 | Issue #429 | Corridor exit retest
+Use the combined V5.11 terminal, scenario3, then F1.
+All five guards must cross; no body should remain at the exit corner.
+The formation widens only after bodies fit. Expect four PASS, no FAIL.
 
-CA430-01 | Origin 5.11.4 | Issue #430 | Companions and inventory
-Use terminal scenarios1,2,4,5. Scenario1 provides local money/weapon fixtures.
-F1-F4 visit residents; Use opens dialogue; F5 opens administration directly.
-Join (1), follow (2), wait (3), dismiss (4), then reinvite. Observe movement.
-I changes inventory; Enter gifts/requests; L lends; E equips compatible gear.
-Expected: native ownership/weight and consent; lent items return without rolls;
-returning/regifting the same items never increases trust again. Wrong sizes fail.
-F9 saves the local scenario and F10 restores it, retaining group/items/trust.
-Scenario2: captive recruitment is refused; F6 frees the selected prisoner for QA.
-Invite through F5 afterward; dismissal does not cancel unfinished escort.
-Scenario4 checks unit provenance/equipment; scenario5 shows actual paid revival
-of the20-attribute subcaptain. Expect PASS, no FAIL; belongings survive revival.
-Gameplay test fixtures and saves remain local, separate from campaign saves.
-
-CA432-01 | Origin 5.11.2 | Issue #432 | Peaceful gameplay regression
-Use terminal6(city),8(mansion),9(sewers); walk, turn and inspect normal NPCs.
-Expected: ordinary perception/movement/collision, climate and survival remain
-active; report any new severe stalls with scene and action. Displayed FPS is
-visible. Existing large-siege stalls remain and no60-FPS siege claim is made.
-Terminal7 summarizes #431 measurement and #433's rejected distant-search candidate.
+CA430-01 | Origin 5.11.4 | Issue #430 | Companion movement correction
+Prerequisite: corrected combined terminal; mansion and prisoner scenarios.
+Recruit the four residents. Walk up/down both mansion stair flights; let them
+pass through doors and cross your path. Watch their walking frames.
+Beyond6m they run using their own stats/Air; within3m they walk again.
+Save/load and continue. No overlapping bodies, teleporting or permanent jams.
+Free and recruit Leonor and the other prisoners; all must follow, retaining
+unfinished escort objectives after dismissal. Other checks passed: HISTORY.
 
 CA580-01 | Origin 5.11.5 | Issue #580 | Home investigation dialogue
 Use a campaign or the final combined test terminal. Start the home investigation

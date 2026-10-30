@@ -6,6 +6,12 @@ Documentation version: **5.11.5** - 2026-10-30.
 
 Returning to the rental agent re-evaluates current guard recognition instead of reusing stale native dialogue. This is a correction to accepted #422; no narrative, ownership or reward calibration changes. Author retest remains pending.
 
+V5.11 review2026-10-30 accepted the other tests with explicit exceptions
+for companion motion, corridor formation, rental progression, household
+placement and rat contamination damage. #429/#430 retain correction checks;
+#580-582 handle the unrelated reports. No merge or closure is implied.
+Companion navigation reuses authored stair nodes and bounded local collision.
+
 ## V5.11 implementation - 5.11.4 (#430, 2026-10-30)
 
 #429 formations, #431 profiling and #432 derived caches have PRs576/575/577.

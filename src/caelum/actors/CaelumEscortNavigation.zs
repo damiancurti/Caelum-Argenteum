@@ -12,7 +12,7 @@ class CaelumEscortNavigation : Object play
     void Clear(){PointX.Clear();PointY.Clear();Cursor=0;}
     vector2 Point(int i){return (PointX[i],PointY[i]);}
 
-    vector2 Next(CaelumAnchoredResident body,vector3 goal)
+    vector2 Next(CaelumCombatActor body,vector3 goal)
     {
         if((goal.XY-self.Goal).Length()>body.Radius || goal.Z!=GoalHeight){Clear();self.Goal=goal.XY;GoalHeight=goal.Z;}
         while(Cursor<PointX.Size() && (Point(Cursor)-body.Pos.XY).Length()<0.5)Cursor++;
@@ -26,7 +26,7 @@ class CaelumEscortNavigation : Object play
         return Cursor<PointX.Size() ? Point(Cursor) : goal.XY;
     }
 
-    bool Build(CaelumAnchoredResident body,vector3 goalPoint)
+    bool Build(CaelumCombatActor body,vector3 goalPoint)
     {
         // Techo total de consultas igual a la cuadrícula fina original (65²),
         // compartido por todas las fases y sus enlaces iniciales.
@@ -50,7 +50,7 @@ class CaelumEscortNavigation : Object play
         return PointX.Size()>0;
     }
 
-    bool StartLinkFits(CaelumAnchoredResident body,vector2 destination)
+    bool StartLinkFits(CaelumCombatActor body,vector2 destination)
     {
         vector2 delta=destination-body.Pos.XY;
         int steps=Max(1,int(Ceil(delta.Length()/Max(1.0,body.Radius/2))));
@@ -61,14 +61,14 @@ class CaelumEscortNavigation : Object play
             SearchBudget--;FCheckPosition fit;
             if(!body.CheckPosition(body.Pos.XY+delta*i/steps,false,fit)
                 || fit.ceilingz-fit.floorz<body.Height
-                || fit.floorz-fit.dropoffz>body.MaxDropOffHeight
+                || (body.Companion==null && fit.floorz-fit.dropoffz>body.MaxDropOffHeight)
                 || fit.floorz-floor>body.MaxStepHeight || floor-fit.floorz>body.MaxDropOffHeight)return false;
             floor=fit.floorz;
         }
         return true;
     }
 
-    bool BuildGrid(CaelumAnchoredResident body,vector3 goalPoint,int phase)
+    bool BuildGrid(CaelumCombatActor body,vector3 goalPoint,int phase)
     {
         Clear();HeightProgress=false;Goal=goalPoint.XY;GoalHeight=goalPoint.Z;vector2 goal=Goal;
         RetryTic=level.time+TICRATE;
@@ -119,7 +119,7 @@ class CaelumEscortNavigation : Object play
                     SearchBudget--;
                     if(!body.CheckPosition(candidate,false,fit)
                         || fit.ceilingz-fit.floorz<body.Height
-                        || fit.floorz-fit.dropoffz>body.MaxDropOffHeight)
+                        || (body.Companion==null && fit.floorz-fit.dropoffz>body.MaxDropOffHeight))
                     {nodeState[next]=3;continue;}
                     nodeHeight[next]=fit.floorz;
                     if(nodeHeight[next]-nodeHeight[node]>body.MaxStepHeight
