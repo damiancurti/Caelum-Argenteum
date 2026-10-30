@@ -77,7 +77,7 @@ def main():
         meta=source.with_suffix('.json')
         report[source.stem]=json.loads(meta.read_text(encoding='utf-8-sig'))
         report[source.stem]['log']=archive(source.with_suffix('.log'))
-    (HERE/'presentation.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+    (HERE/'presentation.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8',newline='\n')
     print(json.dumps({name:{'fps':round(row['application_present_fps'],2),
         'interval':row['MsBetweenPresents'],'display_coverage':row['display_change_coverage']}
         for name,row in report['runs'].items()},indent=2))

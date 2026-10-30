@@ -76,7 +76,7 @@ def main():
         'The campaign reinforcement window changes its living census; no fixed 1600 claim or retired stress case.',
         'Pure thermal cases compare conserved elapsed time, transition flushes, exposure, moisture, hydration, damage and activity.'
     ]
-    (HERE / 'summary.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
+    (HERE / 'summary.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8',newline='\n')
     print(json.dumps({'runs':len(result['runs']),'accuracy':{k:len(v['rows']) for k,v in result['thermal_accuracy'].items()}}))
 
 
