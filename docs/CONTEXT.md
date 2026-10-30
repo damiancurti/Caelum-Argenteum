@@ -1,9 +1,9 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.11.2** - 2026-10-30.
+Documentation version: **5.11.3** - 2026-10-30.
 
-**V5.11 active (5.11.2/#432):** shared climate/attribute caches validated (133 native checks).
-#431 PR575; #429 PR576. #430 companions/#433 evaluation remain.
+**V5.11 active (5.11.3/#433):** distant-search evaluation complete; no measured
+benefit, no adoption. #431 PR575; #429 PR576; #432 PR577. #430 remains active.
 Manual handoff after completion; unaccepted/unmerged.
 Keep-awake released. #429 corridor correction included; retest pending.
 **V5.10 accepted:** #425-428/PR570-573, CA425-01..CA428-01; HISTORY.

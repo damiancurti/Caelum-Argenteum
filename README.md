@@ -6,15 +6,15 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.11.2.** Obtain and update the complete repository, validate
+**Current release: 5.11.3.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-**V5.11 implementation is in progress.** Patch 5.11.2 (#432) shares deterministic
-contamination climate work and caches pure NPC perception attribute curves.
-Individual concentration, clocks, contacts, visibility and resources remain
-authoritative. #429 formations and #431 profiling have separate PRs; #430/#433
-remain in progress. 133 full-package native/reload assertions pass. Siege costs improve modestly;
-large stalls remain. No author acceptance or merge is claimed. Manual checks will be grouped when the entire version is ready.
+**V5.11 implementation is in progress.** Patch 5.11.3 records the #433 distant
+search evaluation. Its five-tic empty-query prototype passes event-wake and reload
+checks but has no isolated measured benefit, so production retains normal searches.
+#429 formations, #431 profiling and #432 derived caches have separate PRs.
+#430 companions remain under implementation. No V5.11 author acceptance or merge
+is claimed; manual checks will be grouped after the whole version is ready.
 
 The #429 corridor-exit correction is included; its author retest remains pending.
 

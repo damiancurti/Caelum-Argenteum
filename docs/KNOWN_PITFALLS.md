@@ -4,6 +4,17 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-194 - Verify that an optimization actually runs inside the measured window
+
+Status/evidence: ENGINE-VERIFIED, #433, 2026-10-30. Candidate not adopted;
+assets/validation_v5_11_3/summary.json. No author acceptance or presentation claim.
+The five-tic empty-search experiment showed slightly lower siege times, but its
+cumulative skipped-query counter was178 at both boundaries. No target queries
+were avoided during that sample. Contact wakeups also changed the group trajectory.
+Counters must bracket the same measured interval as timing; total startup skips
+cannot prove steady-state gains. Retain controls, census and both tails. A passed
+wake/save fixture is correctness evidence, not evidence of a performance benefit.
+
 ## CA-KP-193 - Share pristine exposure results without sharing mutable contamination
 
 Status/evidence: ENGINE-VERIFIED, #432, 2026-10-30, 5.11.2. Evidence:

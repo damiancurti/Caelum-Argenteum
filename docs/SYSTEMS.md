@@ -1,6 +1,12 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.11.2** - 2026-10-30.
+Documentation version: **5.11.3** - 2026-10-30.
+
+### Distant visual search evaluation (5.11.3, #433)
+
+The authorized five-active-tic empty-search candidate remains diagnostic only.
+It did not establish a measurable benefit, so normal visual search cadence is
+unchanged. No actor sleeps or loses resources/collision due to distance or visibility.
 
 ### Deterministic NPC derived caches (5.11.2, #432)
 
