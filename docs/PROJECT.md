@@ -6,11 +6,11 @@ Documentation version: **5.11.4** - 2026-10-30.
 
 #429 formations, #431 profiling and #432 derived caches have PRs576/575/577.
 #433/PR578 records the conditional distant-search evaluation without adoption.
-#430 now has a tested companion foundation: persistent native bodies/items,
-dialogue administration, private trust, social consent, orders, map travel,
-death/revival, armor, finite ranged equipment and magic. It is not complete: TASKS
-lists the remaining inventory/combat/roster/campaign and verification work.
-The combined manual handoff waits for completion. No author acceptance or merge.
+#430 completes the authored companion roster, native equipment administration,
+private trust/consent, following/waiting, cross-map ownership, persistent death
+and the existing paid revival ability. Full-package and accepted-save checks
+pass. The numbered manual terminal and outstanding IDs are in pending_test.txt.
+Implementation is ready; author acceptance and merges remain pending.
 
 ## V5.10 complete and author-accepted - 5.10.3 (2026-10-30, #403)
 

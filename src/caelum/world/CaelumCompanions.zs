@@ -2,6 +2,7 @@
 class CaelumCompanionItemRecord : Object play
 {
     Inventory Item;
+    CaelumCompanionBond Bond;
     bool Loan,Credited,Refused;
     double RefusedTrust;
     int RefusedStage;
@@ -466,16 +467,16 @@ class CaelumCompanionSession : Inventory
         {
             user.RefreshCarriedInventorySummary();if(!user.CanAddWeightToPersonalInventory(weight))return false;
         }
-        let row=bond.ItemRecord(item,true);
-        if(!PlayerItems && !row.Loan)
+        let provenance=CaelumCompanionProvenance.View(item,bond);
+        if(!PlayerItems && !provenance.IsLoan())
         {
             int stage=NarrativeStage();
-            if(row.Refused && row.RefusedTrust==bond.Trust && row.RefusedStage==stage)
+            if(provenance.Refused(bond.Trust,stage))
             {Status="CA_COMPANION_REFUSED";return false;}
             int chance=Chance(bond);
             if(chance<=0 || (chance<100 && Random[CaelumCompanionConsent](1,100)>chance))
-            {row.Refused=true;row.RefusedTrust=bond.Trust;row.RefusedStage=stage;Status="CA_COMPANION_REFUSED";return false;}
-            row.Refused=false;
+            {provenance.Consent(true,bond.Trust,stage);Status="CA_COMPANION_REFUSED";return false;}
+            provenance.Consent(false,bond.Trust,stage);
         }
         if(!PlayerItems && equipment!=null && equipment.Equipped && !bond.Loadout.Unequip(equipment))return false;
         CaelumFoodInventory.Reconcile(item);
@@ -484,9 +485,8 @@ class CaelumCompanionSession : Inventory
         CaelumContainerRules.SetBoxed(item,false);CaelumFoodInventory.Relocate(item);
         if(PlayerItems)
         {
-            row.Loan=loan;
-            if(!loan && !row.Credited)
-            {bond.Trust=Min(CaelumCompanionData.MAX_TRUST,bond.Trust+value/CaelumCompanionData.TRUST_VALUE);row.Credited=true;}
+            bond.Trust=Min(CaelumCompanionData.MAX_TRUST,bond.Trust
+                +provenance.Gift(loan,value)/CaelumCompanionData.TRUST_VALUE);
         }
         if(!PlayerItems && equipment!=null)user.EnsureEquipmentItemId(equipment);
         let maintenance=Subject.GetActorMaintenance();if(maintenance!=null)maintenance.WeightReady=false;

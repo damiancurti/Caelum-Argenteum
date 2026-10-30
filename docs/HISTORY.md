@@ -2,9 +2,39 @@
 
 Documentation version: **5.11.4** - 2026-10-30.
 
-## 5.11.4 - Companion implementation checkpoint (#430, 2026-10-30)
+## 5.11.4 - Companion implementation (#430, 2026-10-30)
 
-Unfinished and not author-accepted. Approved roster, free recruitment, party
+Final package verification: administration47, gifts83, legacy migration7,
+mansion protection8, campaign protection5, utility staff7, gift/jewelry reload2
+each, ranged14, combined formations32, exact caches130 and narrow passage4
+native PASS. A separate visible-guard manual passage also passes4 checks.
+These are agent results, not author acceptance. The utility fixture samples
+Anima payment during the action because native regeneration can restore it
+before the final observation; actual freezing is also asserted. Mansion
+protection tests assert survival and no death record, rather than the stricter
+unapproved assumption that incoming damage cannot change Health at all.
+
+The accepted5.10 campaign save remains byte-identical (SHA256 recorded in
+summary.json); all101 bodies and native possessions survive the full current
+runtime. Original-package rollback evidence from #429 remains applicable to
+that unchanged original save. Migration creates no automatic companion party.
+English/Spanish native panel captures were inspected. Native launcher bindings
+and local save/load are verified separately from physical keyboard injection,
+which was unavailable because the Windows Computer Use pipe could not connect.
+
+The numbered terminal separates companion, prisoner, formation, equipment,
+revival and peaceful performance scenes. CA429-01, CA430-01 and CA432-01 are
+pending author checks. #431 is profiling evidence and #433 concludes with no
+candidate adoption; neither implies an unmeasured rendering improvement.
+README reviewed. No merge, closure or author acceptance is recorded.
+Final integration review added players and present companions to the existing
+subcaptain admission count; typed registry duplicates, dead/hostile bodies and
+parked companions are handled without a global scan. Companion-census-a passes6
+native assertions. The final package repeats6 admission,5 authored spawn and7
+accepted-save migration assertions. Existing registered military actors and machines keep their
+own authoritative counts; the1000-side boundary is unchanged.
+
+Implementation complete; not author-accepted. Approved roster, free recruitment, party
 capacity, three-day death-slot boundary, native resurrection, trust and consent
 are recorded in SYSTEMS and issue430. No new balance or story was invented.
 
@@ -54,6 +84,25 @@ Clothing-native-a40 PASS comprises27 core checks and13 regional garment/size,
 wetness conservation, runoff, native contamination and armor-layer checks.
 Agent evidence only; no author acceptance or manual handoff yet.
 Temporary keep-awake PID42276 was released when the author returned.
+
+Inventory follow-up: jewelry-a34 PASS and jewelry-reload-a2 PASS verify native
+slots, shared bonuses/resistance, no free healing and saved delta idempotence.
+Gift-splits-c83 PASS includes27 core and56 actual transfer/split/merge checks
+for money, materials, ammunition, food, medicine and equipment. Gift-reload-a2
+PASS retains unit credit after native save/load. Histories preserve partial
+loans/refusals and prevent repeat trust; old whole-item records migrate lazily.
+The first arrow fixture incorrectly called HandlePickup rather than the public
+CallTryPickup path; failed fixtures remain archived and are not acceptance.
+
+Selected-sword-h and selected-bolas-a pass7 checks each, including native paid
+attacks, exact target effects and released equipment reservation. Earlier sword
+fixtures spawned their emitter inside Palomo; native traces diagnosed the
+interception and the corrected fixture moves the emitter, not the game NPC.
+Ability-revival-c34 PASS verifies actual death, missing-Anima refusal, native
+Pilgrim preparation, exact payment/cooldown, revival and preserved belongings.
+Its first fixture left the automatic Palomo conversation open; closing that
+native menu restored the existing eligibility rule. No production exception.
+
 
 Focused overlay evidence: equipment-a26 PASS; death-a29 PASS; revival-a5 PASS.
 Earlier inventory reload2 PASS and travel-a19 PASS preceded equipment binding.

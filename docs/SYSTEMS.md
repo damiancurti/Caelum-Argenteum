@@ -2,7 +2,7 @@
 
 Documentation version: **5.11.4** - 2026-10-30.
 
-## Companion contract and implementation checkpoint (5.11.4, #430)
+## Companion contract and implementation (5.11.4, #430)
 
 The authored roster is the four mansion residents, four freed sewer prisoners
 and the siege subcaptain (Domingo appearance, every attribute20). Recruitment
@@ -24,7 +24,7 @@ difficulty120, reputation and (1+trust/100), capped at100percent. Lent player
 items return without a roll. A refusal persists for that item until trust or
 narrative stage changes. Companions never choose the player's dialogue.
 
-Implemented checkpoint: revisioned party/bond inventory; whole-instance item
+Implemented: revisioned party/bond inventory; whole-instance item
 transfers and private records; dialogue order/inventory UI; native travel and
 parking of waiting/dead bodies; armor/shield materialization without changing
 weight or ownership; selected melee via shared resident attack rules. The
@@ -36,7 +36,17 @@ the current layering rule. Recruitment retains implicit authored clothing
 without minting new inventory or loot. Once a region has been administered,
 removing its garment exposes that region. Sizes reuse the existing seven body
 heights and equipment compatibility table; an incompatible item cannot displace
-the current one. Jewelry and remaining integration checks are unfinished; TASKS.
+the current one. Amulets apply the existing family bonuses exactly once, using
+saved deltas; removing one reverses them without granting health or resources.
+Seals use the existing native equipped-item resistance rule. Armor removal
+invalidates derived combat statistics immediately, as equipping does.
+
+Gift, loan and refusal provenance follows inventory units through native stack
+splits, merges, tosses, pickup and storage transfers. New saved per-lot histories
+migrate previous whole-item records lazily and idempotently. Fresh units can
+increase trust; previously credited units cannot. Splitting a loan and gifting
+one fragment does not change ownership treatment of the remaining fragment.
+Food age, contamination and native ammunition quantities remain authoritative.
 
 Selected carbine, shotgun, bow and crossbow use the existing shared catalogues,
 physical native ammunition and owner resources. Reloads are interruptible,
@@ -65,6 +75,11 @@ Queries use the bounded nine-identity roster and local placement/visibility.
 Mansion residents register at birth/return. Legacy saves may rebuild the four
 resident references once per map revision; this is not a routine per-NPC scan.
 The previous repeated post-trial Rulo lookup now uses that registry.
+Subcaptain admission includes living players and present friendly companion
+bodies in the defending total. A body already in the typed defender registry
+counts once. Dead, parked and hostile companions do not occupy a defending
+place. This bounded census runs only at an eligible subcaptain spawn attempt,
+not per NPC or per tic; it does not turn death-slot reservation into immortality.
 
 ### Distant visual search evaluation (5.11.3, #433)
 

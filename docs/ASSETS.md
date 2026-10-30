@@ -2,7 +2,7 @@
 
 Documentation version: **5.11.4** - 2026-10-30.
 
-### Companion checkpoint (5.11.4, #430)
+### Companion delivery (5.11.4, #430)
 
 The subcaptain reuses the owned Domingo body/frames and the existing guard
 equipment catalogue; the four residents and prisoner appearances are unchanged.

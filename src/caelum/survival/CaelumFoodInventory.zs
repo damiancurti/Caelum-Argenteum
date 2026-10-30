@@ -49,6 +49,7 @@ class CaelumFoodInventory : Object play
     // antes de la operación siguiente; las transferencias nunca usan este ajuste.
     static void Reconcile(Inventory item)
     {
+        if(item is "CaelumCarbineAmmo")CaelumCompanionProvenance.AmmoLots(CaelumCarbineAmmo(item));
         CaelumContaminationStack.Reconcile(item);
         let clock=CaelumFoodClock.Get(item);
         if(clock!=null)clock.Advance();
@@ -60,6 +61,7 @@ class CaelumFoodInventory : Object play
 
     static bool Transfer(Inventory source,Inventory target,int count,bool emptyTarget=false)
     {
+        CaelumCompanionProvenance.TransferAmmo(source,target,count,emptyTarget);
         if(!CaelumContaminationStack.Transfer(source,target,count,emptyTarget))return false;
         if(!IsFood(source))return true;
         let from=Prepare(source);

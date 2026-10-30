@@ -68,7 +68,7 @@ class CaelumShotgunAmmo : CaelumCarbineAmmo
     {
         let user=CaelumPlayer(toucher);
         if(user==null || Owner!=null)return false;
-        if(!CaelumInventoryService.AcquireDistinctAmmunition(user,GetAmmoType(),Amount))return false;
+        if(!CaelumInventoryService.AcquireDistinctAmmunition(user,GetAmmoType(),Amount,self))return false;
         A_StartSound("caelum/items/pickup",CHAN_ITEM);Destroy();return true;
     }
     Default

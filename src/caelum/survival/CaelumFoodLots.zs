@@ -4,6 +4,7 @@ class CaelumFoodLot : Object play
 {
     int Units;
     double CreatedStamp,BaseContamination,ExposureAtEntry;
+    CaelumCompanionHistory CompanionHistory;
 }
 
 // Libro de lotes guardable, sin actores, búsquedas globales ni reloj propio.
@@ -40,7 +41,7 @@ class CaelumFoodLots : Object play
     clearscope double OldestContamination()
     {return Contamination(0);}
 
-    bool Add(int units,double contamination,double createdStamp)
+    bool Add(int units,double contamination,double createdStamp,CaelumCompanionHistory history=null)
     {
         if(Revision!=CaelumFoodData.REVISION || units<=0
             || units>2147483647-Units())return false;
@@ -48,11 +49,11 @@ class CaelumFoodLots : Object play
         // Sólo se reúnen fragmentos del mismo momento y estado; nunca promediar
         // para rejuvenecer un lote al añadir comida fresca.
         for(int i=Lots.Size()-1;i>=0;i--)
-            if(Lots[i].CreatedStamp==createdStamp && Contamination(i)==contamination)
+            if(Lots[i].CreatedStamp==createdStamp && Contamination(i)==contamination && Lots[i].CompanionHistory==history)
             {Lots[i].Units+=units;return true;}
         let lot=new('CaelumFoodLot');
         lot.Units=units;lot.CreatedStamp=createdStamp;
-        lot.BaseContamination=contamination;lot.ExposureAtEntry=Exposure;
+        lot.BaseContamination=contamination;lot.ExposureAtEntry=Exposure;lot.CompanionHistory=history;
         int insert=Lots.Size();Lots.Push(lot);
         while(insert>0 && Lots[insert-1].CreatedStamp>createdStamp)
         {Lots[insert]=Lots[insert-1];insert--;}
@@ -97,7 +98,8 @@ class CaelumFoodLots : Object play
         for(int i=0;remaining>0;i++)
         {
             int taken=Min(remaining,Lots[i].Units);
-            copy.Add(taken,Contamination(i),Lots[i].CreatedStamp);remaining-=taken;
+            copy.Add(taken,Contamination(i),Lots[i].CreatedStamp,
+                Lots[i].CompanionHistory!=null?Lots[i].CompanionHistory.Copy():null);remaining-=taken;
         }
         return copy;
     }
@@ -118,7 +120,8 @@ class CaelumFoodLots : Object play
         for(int i=0;remaining>0;i++)
         {
             int taken=Min(remaining,Lots[i].Units);
-            destination.Add(taken,Contamination(i),Lots[i].CreatedStamp);remaining-=taken;
+            destination.Add(taken,Contamination(i),Lots[i].CreatedStamp,
+                Lots[i].CompanionHistory!=null?Lots[i].CompanionHistory.Copy():null);remaining-=taken;
         }
         double ignored;
         return Consume(units,ignored);

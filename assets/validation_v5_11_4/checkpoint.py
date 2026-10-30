@@ -17,7 +17,7 @@ def insert(name, content):
     assert marker
     write(name, source[:marker.end()] + '\n' + content.rstrip() + '\n' + source[marker.end():])
 
-if '## 5.11.4 - Companion implementation checkpoint' in read('docs/HISTORY.md'):
+if '## 5.11.4 - Companion implementation' in read('docs/HISTORY.md'):
     raise SystemExit('Checkpoint already recorded; no files changed.')
 
 versioned = ['AGENTS.md'] + ['docs/' + name for name in (

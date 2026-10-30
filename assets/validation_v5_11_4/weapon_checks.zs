@@ -10,7 +10,7 @@ class CA430WeaponTarget : CaelumCombatActor
 }
 class CA430WeaponCompanion : CaelumCompanionSubcaptain
 {
-    States { TestIdle: DOMI A -1; Stop; }
+    States { TestIdle: DOMI A -1; Stop; See: DOMI A -1; Stop; }
 }
 class CA430WeaponChecks : EventHandler
 {
@@ -22,13 +22,16 @@ class CA430WeaponChecks : EventHandler
     int Type,Stage,Start,ShotStart,FinishTic,Failures,Passes;
     double ReloadSeconds,OriginalSpeed,BeforeAnima,MagicCost;
     bool MagicMode,VictimDied;
+    bool ToolMode,ToolPaidAir,ToolPaidAnima,ToolAppliedEffect;
+    double ToolInitialAir;
+    int ToolDiagnostic;
     override void WorldThingDied(WorldEvent e){if(e.Thing==Victim)VictimDied=true;}
     void Check(bool ok,String label)
     {if(ok){Passes++;Console.Printf("CA430 PASS %s",label);}else{Failures++;Console.Printf("CA430 FAIL %s",label);}}
     void Begin(int kind)
     {
         Type=kind;let user=CaelumPlayer(players[0].mo);
-        Body=CA430WeaponCompanion(Actor.Spawn("CA430WeaponCompanion",user.Pos+(160,0,0),NO_REPLACE));
+        Body=CA430WeaponCompanion(Actor.Spawn("CA430WeaponCompanion",user.Pos+(0,160,0),NO_REPLACE));
         Victim=CA430WeaponTarget(Actor.Spawn("CA430WeaponTarget",user.Pos+(300,0,0),NO_REPLACE));
         Start=level.time;Stage=1;
     }
@@ -75,6 +78,9 @@ class CA430WeaponChecks : EventHandler
         if(e.Name=='ca430_shotgun')Begin(CaelumConstants.WEAPON_TYPE_SHOTGUN);
         if(e.Name=='ca430_bow')Begin(CaelumConstants.WEAPON_TYPE_LONGBOW);
         if(e.Name=='ca430_crossbow')Begin(CaelumConstants.WEAPON_TYPE_CROSSBOW);
+        if(e.Name=='ca430_sword'){ToolMode=true;Begin(CaelumConstants.WEAPON_TYPE_SWORD);}
+        if(e.Name=='ca430_bolas'){ToolMode=true;Begin(CaelumConstants.WEAPON_TYPE_BOLAS);}
+        if(e.Name=='ca430_utility'){ToolMode=true;Begin(CaelumConstants.WEAPON_TYPE_UTILITY_STAFF);}
     }
     void PlayerSupport()
     {
@@ -132,7 +138,44 @@ class CA430WeaponChecks : EventHandler
                 // Diagnostic-only intellect forces guaranteed wear, independently of the random remainder.
                 Body.CombatIntelligence=1000;Body.UpdateActorOffensiveStatistics();Body.bBuddha=true;
             }
-            Check(Loadout.Toggle(Item),"native weapon equipment can be selected");Stage=MagicMode ? 10 : 2;
+            Check(Loadout.Toggle(Item),"native weapon equipment can be selected");Stage=ToolMode ? 20 : MagicMode ? 10 : 2;
+        }
+        if(Stage==20)
+        {
+            Body.SetStateLabel("TestIdle");Victim.SetOrigin(Body.Pos+(Type==CaelumConstants.WEAPON_TYPE_BOLAS?-120:-64,0,0),false);
+            Body.Angle=Body.AngleTo(Victim);Body.target=Victim;
+            if(!CaelumVisualPerception.Identify(Body,Victim))return;
+            Body.CurrentCombatAir=0;Body.CurrentCombatAnima=0;
+            Check(!Loadout.TryAttack(),"selected tool cannot act with empty resources");
+            Body.CurrentCombatAir=Body.MaximumCombatAir;Body.CurrentCombatAnima=Body.MaximumCombatAnima;
+            BeforeAnima=Body.CurrentCombatAnima;double air=Body.CurrentCombatAir;
+            Check(Loadout.TryAttack() && Body.CombatActiveTool==Item,"selected tool begins its native actor action");
+            Check(!Loadout.CanChange(),"equipment cannot be replaced during a tool action");
+            ToolInitialAir=air;
+            Body.SetStateLabel("TestIdle");FinishTic=level.time+100;Stage=21;
+        }
+        if(Stage==21)
+        {
+            if(Type==CaelumConstants.WEAPON_TYPE_UTILITY_STAFF && ToolDiagnostic++<3)
+                Console.Printf("CA430 ICE phase=%d anima=%.3f cost=%.3f equipped=%d owner=%d health=%d interrupted=%d valid=%d target=%s sight=%d",Loadout.Tools.Phase,Body.CurrentCombatAnima,CaelumUtilityStaff.ActorCostPerSecond(Body)/TICRATE,Item.Equipped,Item.Owner==Body,Body.health,CaelumBolas.Interrupted(Body),Loadout.Tools.BattleActive(),Body.target!=null?Body.target.GetClassName():'none',Body.CheckSight(Victim));
+            if(Body.CurrentCombatAir<ToolInitialAir)ToolPaidAir=true;
+            if(Body.CurrentCombatAnima<BeforeAnima)ToolPaidAnima=true;
+            if(Victim.ElementalStatus!=null && Victim.ElementalStatus.FreezeRemaining>0)ToolAppliedEffect=true;
+            Body.SetStateLabel("TestIdle");
+            if(level.time<FinishTic)return;
+            Console.Printf("CA430 TOOL type=%d phase=%d uses=%d air=%d hp=%d raw=%.3f damage=%d distance=%.3f",Type,Loadout.Tools.Phase,Loadout.Tools.MeleeUses,ToolPaidAir,Victim!=null?Victim.health:-1,Loadout.Tools.LastStrikeRawDamage,Loadout.Tools.LastStrikeDamage,Victim!=null?Body.Distance2D(Victim):-1);
+            if(Victim!=null)Console.Printf("CA430 DEFENSE post=%.3f grade=%d armor=%.3f invuln=%d evasion=%d",Victim.LastCombatPostToughnessDamage,Victim.LastAnatomyVulnerabilityGrade,Victim.LastCombatArmorDefenseExactPercent,Victim.bInvulnerable,Victim.LastCombatEvasionSucceeded);
+            if(Victim!=null)Console.Printf("CA430 BIO mass=%.1f toughness=%d reduction=%.3f incoming=%.3f",double(Victim.Mass),Victim.CombatToughness,CaelumToughnessRules.ActorReduction(Victim,CaelumToughnessRules.Effective(Victim)),Victim.LastCombatArmorIncomingDamage);
+            FLineTraceData trace;Body.LineTrace(Body.Angle,Loadout.Tools.MeleeRange(false),Body.Pitch,TRF_ABSPOSITION,Body.Pos.Z+Body.Height/2,Body.Pos.X,Body.Pos.Y,trace);
+            Console.Printf("CA430 TRACE receiver=%s expected=%s yaw=%.2f pitch=%.2f range=%.2f",trace.HitActor!=null?trace.HitActor.GetClassName():'none',Victim.GetClassName(),Body.Angle,Body.Pitch,Loadout.Tools.MeleeRange(false));
+            if(Type==CaelumConstants.WEAPON_TYPE_SWORD)
+                Check(ToolPaidAir && Loadout.Tools.MeleeUses==1 && (VictimDied || Victim.health<100000),"native selected melee cycle damages the real opponent once");
+            else if(Type==CaelumConstants.WEAPON_TYPE_BOLAS)
+                Check(Loadout.Tools.BolasThrows==1 && CaelumBolas.Restrained(Victim),"native companion bolas physically bind the opponent");
+            else Check(Loadout.Tools.IcePaidTics>0 && ToolPaidAnima
+                && ToolAppliedEffect,"utility staff uses paid native elemental contact");
+            Loadout.Tools.Cancel();Check(Body.CombatActiveTool==null,"tool action releases its equipment reservation");
+            Console.Printf("CA430 RESULT selected tool passes=%d failures=%d",Passes,Failures);Stage=0;
         }
         if(Stage==10)
         {

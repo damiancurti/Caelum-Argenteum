@@ -11,27 +11,21 @@ Documentation version: **5.11.4** - 2026-10-30.
 - #429: formation/admission implementation has passed focused native geometry,
   membership, combat-order, full-package save/migration and campaign checks.
   Source/evidence are ready; author review is deferred to the combined handoff.
-- #430: unfinished companion implementation on its focused branch. Dialogue
-  administration, native transfers, private trust/consent, following/waiting,
-  cross-map bodies, persistent death and the existing revival service have
-  focused native coverage. Subcaptain uses Domingo and 20 per attribute.
-  Armor/shields are native pieces; selected melee uses the resident catalogue.
-  Finite ranged ammunition/reload/damage/wear and save state pass native checks.
-  Magic uses native projectiles/support effects, paid preparation and item wear.
-  Clothing, native wetness/contamination and size compatibility pass13 checks.
-  All nine authored identities recruit; campaign subcaptain spawn and the four
-  prisoners' extraction/testimony registry/reward idempotence pass32 checks.
-  Remaining: jewelry administration; gift provenance through other split/merge
-  paths; actual selected-melee combat, final UI visual review,
-  full package and accepted-save/rollback regression. Recheck equipped item
-  state after combat/death and old model-only loadouts before claiming completion.
+- #430: implementation complete, pending author review. All nine authored
+  identities, dialogue administration, native equipment, finite ranged/magic
+  attacks, jewelry/clothing, unit-level gift/loan provenance, private consent,
+  travel, persistent death and the paid revival ability have native coverage.
+  The full package retains accepted-save bodies/inventory and adds no automatic
+  recruits. Mansion protection/trial precedence and campaign mortality pass.
+  Visual panel review covers English/Spanish. Windows input injection was
+  unavailable; native bindings were queried and physical keys remain author QA.
 - #432: shared climate/pristine/attribute caches pass133 final native assertions.
   Normal siege improves modestly; presentation remains unmeasured for this patch.
 - #433: approved candidate evaluated;14 native wake/reload assertions pass.
   No production adoption: siege sample avoids zero queries, and peaceful scenes
   show no clear benefit. Evidence and counter limitations: validation_v5_11_3.
 - Deliver one linked PR per issue, commit/push separately, and group outstanding
-  author checks in root pending_test.txt when the whole version is ready.
+  author checks in root pending_test.txt; the combined numbered terminal is ready.
   V5.11 merges/closure are not yet authorized.
 
 ## V5.10 complete - author-accepted 2026-10-30 (5.10.3, #425-428)

@@ -8,20 +8,21 @@ parser.add_argument('--full',action='store_true',help='Use the built runtime; pa
 args=parser.parse_args()
 names=subprocess.check_output(['git','-c','core.autocrlf=false','diff','85bf55503322aed7fffdb2189707058243c20f16','--name-only'],cwd=ROOT,text=True).splitlines()
 names += ['src/caelum/data/CaelumCompanionData.zs','src/caelum/world/CaelumCompanions.zs','src/caelum/ui/CaelumCompanionUI.zs']
-names += ['src/caelum/equipment/CaelumCompanionLoadout.zs']
+names += ['src/caelum/equipment/CaelumCompanionLoadout.zs','src/caelum/equipment/CaelumCompanionProvenance.zs']
 names += ['src/caelum/equipment/CaelumCompanionRanged.zs','src/caelum/equipment/CaelumCompanionMagic.zs']
 files={n[4:]:(ROOT/n).read_bytes() for n in names if n.startswith('src/') and n!='src/ZSCRIPT'}
 name='caelum/data/CaelumFormationData.zs'
 files[name]=(ROOT/'src'/name).read_bytes()+b'\n#include "caelum/data/CaelumCompanionData.zs"\n#include "caelum/world/CaelumCompanions.zs"\n#include "caelum/ui/CaelumCompanionUI.zs"\n'
-files[name]+=b'\n#include "caelum/equipment/CaelumCompanionLoadout.zs"\n'
+files[name]+=b'\n#include "caelum/equipment/CaelumCompanionLoadout.zs"\n#include "caelum/equipment/CaelumCompanionProvenance.zs"\n'
 files[name]+=b'\n#include "caelum/equipment/CaelumCompanionRanged.zs"\n'
 files[name]+=b'\n#include "caelum/equipment/CaelumCompanionMagic.zs"\n'
 if args.full:files={}
-files['ZSCRIPT']=b'version "4.14"\n#include "checks.zs"\n#include "weapon_checks.zs"\n#include "campaign_checks.zs"\n'
+files['ZSCRIPT']=b'version "4.14"\n#include "checks.zs"\n#include "weapon_checks.zs"\n#include "campaign_checks.zs"\n#include "gift_checks.zs"\n'
 files['checks.zs']=(Path(__file__).parent/'checks.zs').read_bytes()
 files['weapon_checks.zs']=(Path(__file__).parent/'weapon_checks.zs').read_bytes()
+files['gift_checks.zs']=(Path(__file__).parent/'gift_checks.zs').read_bytes()
 files['campaign_checks.zs']=(Path(__file__).parent/'campaign_checks.zs').read_bytes()
-files['MAPINFO']=b'GameInfo { AddEventHandlers="CA430Checks", "CA430WeaponChecks", "CA430CampaignChecks" }\n'
+files['MAPINFO']=b'GameInfo { AddEventHandlers="CA430Checks", "CA430WeaponChecks", "CA430CampaignChecks", "CA430GiftChecks" }\n'
 with zipfile.ZipFile(OUT/('full-checks.pk3' if args.full else 'checks.pk3'),'w',zipfile.ZIP_STORED) as z:
  for name,data in sorted(files.items()):z.writestr(zipfile.ZipInfo(name,(2000,1,1,0,0,0)),data)
 print('Prepared companion native fixture.')

@@ -55,6 +55,32 @@ class CaelumPortSiege : CaelumSiegeEncounter
     bool SubcaptainCreated;
     CaelumCompanionSubcaptain Subcaptain;
 
+    int LivingDefendingPopulation()
+    {
+        int living=0;
+        for(int i=0;i<Defenders.Size();i++)if(Defenders[i]!=null && Defenders[i].health>0)living++;
+        for(int i=0;i<Guns.Size();i++)if(Guns[i]!=null && Guns[i].health>0)living++;
+        // Solo al intentar el alta del subcapitan; planteles tipados y nueve identidades por jugador.
+        for(int n=0;n<MAXPLAYERS;n++)
+        {
+            if(!playeringame[n])continue;
+            let user=CaelumPlayer(players[n].mo);if(user==null)continue;
+            if(user.health>0)living++;
+            let party=CaelumCompanionParty.Get(user);if(party==null)continue;
+            for(int i=0;i<party.Roster.Size();i++)
+            {
+                let bond=party.Roster[i];let body=bond.Body;
+                if(body==null || body.bDestroyed || body.health<=0 || bond.Parked || !body.bFriendly)continue;
+                bool registered=false;
+                // Solo el subcapitan puede pertenecer tambien al registro militar.
+                if(body is "CaelumPortDefender")
+                    for(int d=0;d<Defenders.Size();d++)if(Defenders[d]==body){registered=true;break;}
+                if(!registered)living++;
+            }
+        }
+        return living;
+    }
+
     void EnsureSubcaptain()
     {
         if(!SiegeStarted || SubcaptainCreated || level.time%CaelumPortData.COMMAND_UPDATE_TICS!=0)return;
@@ -64,10 +90,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
             let user=CaelumPlayer(players[n].mo);if(user==null || user.health<=0)continue;
             let party=CaelumCompanionParty.Get(user);
             if(party!=null && party.Find(8)!=null){SubcaptainCreated=true;return;}
-            int living=0;
-            for(int i=0;i<Defenders.Size();i++)if(Defenders[i]!=null && Defenders[i].health>0)living++;
-            for(int i=0;i<Guns.Size();i++)if(Guns[i]!=null && Guns[i].health>0)living++;
-            if(living>=CaelumFormationData.SIDE_CAPACITY)return;
+            if(LivingDefendingPopulation()>=CaelumFormationData.SIDE_CAPACITY)return;
             let defaults=GetDefaultByType("CaelumPlayer");
             let place=CaelumSummoning.FindPlace(user,user.Pos,CaelumConstants.PALOMO_MERCHANT_SESSION_DISTANCE,defaults.Radius,CaelumPortData.DEFENDER_HEIGHT);
             if(!place.Found)return;

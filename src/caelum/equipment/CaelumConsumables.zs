@@ -2,6 +2,7 @@
 // consumir una unidad y de crear o refrescar el efecto temporal asociado.
 class CaelumConsumableItem : PowerupGiver
 {
+    CaelumCompanionHistory CompanionHistory;
     CaelumContaminationState ContaminationState;
     bool InMagicBox;
     CaelumFoodLots FoodLots;
@@ -22,6 +23,8 @@ class CaelumConsumableItem : PowerupGiver
         CaelumFoodInventory.Reconcile(self);
         let previousOwner=Owner;
         let result=Super.CreateTossable(amount);
+        let prepared=CaelumConsumableItem(result);
+        if(prepared!=null && prepared!=self)prepared.CompanionHistory=CompanionHistory!=null?CompanionHistory.Copy():null;
         if(result!=null && result!=self)CaelumFoodInventory.Transfer(self,result,result.Amount,true);
         if(result!=null)CaelumFoodInventory.Relocate(result);
         CaelumActorMaintenance.InventoryChanged(previousOwner);
@@ -185,6 +188,7 @@ class CaelumConsumableItem : PowerupGiver
         if (copy != null && copy != self)
         {
             copy.InMagicBox = InMagicBox;
+            copy.CompanionHistory=CompanionHistory!=null?CompanionHistory.Copy():null;
             CaelumFoodInventory.Transfer(self,copy,copy.Amount,true);
         }
         return copy;

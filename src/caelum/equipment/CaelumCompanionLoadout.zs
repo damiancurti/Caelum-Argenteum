@@ -8,6 +8,8 @@ class CaelumCompanionLoadout : Object play
     CaelumEquipmentItem Armor[4];
     CaelumEquipmentItem Clothing[4];
     bool ClothingManaged[4];
+    CaelumEquipmentItem Amulet,Seal;
+    int AppliedAmuletBonus[4];
     CaelumEquipmentItem ShieldItem,SidearmItem;
     CaelumShieldModel Shield;
     CaelumWeaponModel Sidearm;
@@ -107,6 +109,31 @@ class CaelumCompanionLoadout : Object play
         return Body.CombatActiveTool==null;
     }
 
+    void ApplyAmulet()
+    {
+        int delta[4];bool changed=false;int oldAgility=Body.CombatAgility;
+        for(int family=0;family<4;family++)
+        {
+            int bonus=Amulet!=null && Amulet.Equipped && Amulet.Owner==Body
+                ? CaelumEquipmentRules.AmuletFamilyBonus(Amulet.ItemType,family,Amulet.Tier) : 0;
+            delta[family]=bonus-AppliedAmuletBonus[family];
+            AppliedAmuletBonus[family]=bonus;changed|=delta[family]!=0;
+        }
+        if(!changed)return;
+        // Guardar el aporte aplicado permite retirarlo sin acumularlo al cargar.
+        Body.CombatStrength+=delta[0];Body.CombatToughness+=delta[0];Body.CombatConstitution+=delta[0];
+        Body.CombatAgility+=delta[1];Body.CombatDexterity+=delta[1];Body.CombatResilience+=delta[1];
+        Body.CombatCharisma+=delta[2];Body.CombatEmpathy+=delta[2];Body.CombatEloquence+=delta[2];
+        Body.CombatIntelligence+=delta[3];Body.CombatPatience+=delta[3];Body.CombatInsight+=delta[3];
+        Body.CombatBaseSpeed*=CaelumGrowthRules.Multiplier(Body.CombatAgility,2)
+            /CaelumGrowthRules.Multiplier(oldAgility,2);
+        Body.CombatMaximumHealth=Max(1,int(CaelumConstants.HEALTH_ANIMA_DAMAGE_SCALE
+            *Body.CalculateActorType1Percent(Body.CombatConstitution)*Max(0.01,Body.Mass/100.0)));
+        if(Body.health>Body.CombatMaximumHealth)Body.health=Body.CombatMaximumHealth;
+        let cache=Body.GetActorMaintenance();if(cache!=null)cache.Invalidate();
+        Body.RecalculateCombatStatistics();
+    }
+
     bool Fits(CaelumEquipmentItem item)
     {
         if(item.EquipmentKind==CaelumConstants.EQUIPMENT_KIND_AMULET
@@ -162,6 +189,8 @@ class CaelumCompanionLoadout : Object play
     {
         if(item==null || item.Owner!=Body || !CanChange())return false;
         Sync();
+        if(item==Amulet){Amulet=null;item.Equipped=false;ApplyAmulet();return true;}
+        if(item==Seal){Seal=null;item.Equipped=false;return true;}
         for(int slot=0;slot<4;slot++)if(Clothing[slot]==item)
         {Clothing[slot]=null;item.Equipped=false;ReconcileWater();CaelumActorMaintenance.InventoryChanged(Body);return true;}
         if(SelectedWeapon==item)
@@ -185,7 +214,7 @@ class CaelumCompanionLoadout : Object play
             Body.CombatArmor.ArmorType[slot]=CaelumConstants.ARMOR_TYPE_BASE_CLOTHING;
             Body.CombatArmor.Tier[slot]=1;Body.CombatArmor.Durability[slot]=0;
             Body.CombatArmor.ContaminationState[slot]=null;
-            ReconcileWater();CaelumActorMaintenance.InventoryChanged(Body);return true;
+            ReconcileWater();Body.RecalculateCombatStatistics();CaelumActorMaintenance.InventoryChanged(Body);return true;
         }
         return !item.Equipped;
     }
@@ -195,6 +224,16 @@ class CaelumCompanionLoadout : Object play
         if(item==null || item.Owner!=Body || item.InMagicBox || !CanChange())return false;
         if(item.Equipped)return Unequip(item);
         if(!Fits(item))return false;
+        if(item.EquipmentKind==CaelumConstants.EQUIPMENT_KIND_AMULET)
+        {
+            if(Amulet!=null && !Unequip(Amulet))return false;
+            Amulet=item;item.Equipped=true;ApplyAmulet();return true;
+        }
+        if(item.EquipmentKind==CaelumConstants.EQUIPMENT_KIND_SEAL)
+        {
+            if(Seal!=null && !Unequip(Seal))return false;
+            Seal=item;item.Equipped=true;return true;
+        }
         if(item.EquipmentKind==CaelumConstants.EQUIPMENT_KIND_CLOTHING)
         {
             int region=item.ArmorSlot;if(region<0 || region>=4)return false;
