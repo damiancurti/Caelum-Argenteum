@@ -38,6 +38,24 @@ formation slots remained beyond3m; moving the leader within3m verifies it.
 
 ## 5.11.4 - Companion implementation (#430, 2026-10-30)
 
+Author clarification: the comparison is Leonor versus Caella. Caella carries
+22.0184kg (armor plus pickaxe, utility staff and bolas); Leonor carries5kg.
+Native mansion speeds are6.26658 versus7.93925m/s respectively, a26.69%
+difference explained by the approved load penalty. Their base profile matches;
+no duplicated motion was found. Seven focused native assertions pass.
+
+Follow-up speed report2026-10-30: the author observed Leonor moving faster.
+Native comparison after acceleration (seconds10-14) measured Leonor7.9392,
+Rufino8.3716, Leandro8.1652 and Santos7.1458m/s under equal conditions. All
+maximum actual/prescribed displacement ratios were1.000000. Leonor reaches
+full speed after2.55s, versus4.8/3.9/7.8s: existing mass/load acceleration
+explains her earlier lead, not a doubled movement action. No production
+calibration changed. Comparison12 and save/reload4 assertions passed. Evidence:
+assets/validation_v5_11_4/speed-results.json. The fixture first had a ZScript
+array error, then caught pre-recruitment escort recovery moving three actors
+near the leader; final setup resets them after recruitment. Those failed local
+runs are retained and are not production failures or acceptance evidence.
+
 Final package verification: administration47, gifts83, legacy migration7,
 mansion protection8, campaign protection5, utility staff7, gift/jewelry reload2
 each, ranged14, combined formations32, exact caches130 and narrow passage4
