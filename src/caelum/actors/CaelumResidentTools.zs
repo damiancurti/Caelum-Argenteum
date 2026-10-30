@@ -168,11 +168,12 @@ class CaelumResidentTools : Object play
         Phase=ICE_EMISSION;return true;
     }
 
-    double AttackDuration(CaelumEquipmentItem item)
+    double AttackDuration(CaelumEquipmentItem item,bool magical=false)
     {
         if(!Available(item))return -1;
-        double factor=100.0/Owner.CalculateActorType4Percent(Owner.CombatDexterity
-            +Owner.GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_DEXTERITY));
+        int attribute=magical ? Owner.CombatEloquence+Owner.GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_ELOQUENCE)
+            : Owner.CombatDexterity+Owner.GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_DEXTERITY);
+        double factor=100.0/Owner.CalculateActorType4Percent(attribute);
         double gloves=Owner.CombatArmor!=null ? Owner.CombatArmor.GetWeight(CaelumConstants.ARMOR_SLOT_HANDS) : 0;
         double capacity=Owner.Mass*Owner.CalculateActorType4Percent(Owner.CombatStrength)/100.0;
         return CaelumAttackRules.Duration(factor,item.UnitWeight,gloves,capacity)/CaelumThermalEffects.Speed(Owner);

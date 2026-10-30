@@ -13,6 +13,7 @@ class CaelumCompanionLoadout : Object play
     CaelumEquipmentItem SelectedWeapon;
     bool ManualWeapon;
     CaelumCompanionRanged Ranged;
+    CaelumCompanionMagic Magic;
 
     CaelumEquipmentItem MakeArmor(int slot)
     {
@@ -140,8 +141,6 @@ class CaelumCompanionLoadout : Object play
         if(item.Equipped)return Unequip(item);
         if(item.EquipmentKind==CaelumConstants.EQUIPMENT_KIND_WEAPON)
         {
-            let model=new("CaelumWeaponModel");
-            if(model.IsMagicalType(item.ItemType))return false;
             if(SidearmItem!=null && !Unequip(SidearmItem))return false;
             if(SelectedWeapon!=null && !Unequip(SelectedWeapon))return false;
             let defender=CaelumPortDefender(Body);
@@ -173,6 +172,7 @@ class CaelumCompanionLoadout : Object play
     void Step()
     {
         if(Ranged!=null)Ranged.Tick();
+        if(Magic!=null)Magic.Tick();
         let resident=CaelumAnchoredResident(Body);
         if(Tools!=null && (resident==null || resident.ResidentTools!=Tools))Tools.Tick();
     }
@@ -181,6 +181,12 @@ class CaelumCompanionLoadout : Object play
     {
         if(SelectedWeapon!=null)
         {
+            if(CaelumSupportImplementData.IsSupport(SelectedWeapon.ItemType)
+                || CaelumSupportImplementData.IsOffensiveMagic(SelectedWeapon.ItemType))
+            {
+                if(Magic==null){Magic=new("CaelumCompanionMagic");Magic.Loadout=self;}
+                return Magic.TryAttack();
+            }
             if(CaelumRangedRules.MagazineCapacity(SelectedWeapon.ItemType)>0)
             {
                 if(Ranged==null){Ranged=new("CaelumCompanionRanged");Ranged.Loadout=self;}

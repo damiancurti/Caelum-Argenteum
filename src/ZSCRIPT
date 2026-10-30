@@ -548,3 +548,5 @@ version "4.14"
 #include "caelum/data/CaelumTravelIncidentData.zs"
 #include "caelum/world/CaelumTravelIncidents.zs"
 #include "caelum/actors/CaelumTravelBandit.zs"
+
+#include "caelum/equipment/CaelumCompanionMagic.zs"

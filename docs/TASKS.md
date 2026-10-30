@@ -17,10 +17,11 @@ Documentation version: **5.11.4** - 2026-10-30.
   focused native coverage. Subcaptain uses Domingo and 20 per attribute.
   Armor/shields are native pieces; selected melee uses the resident catalogue.
   Finite ranged ammunition/reload/damage/wear and save state pass native checks.
-  Remaining: magic/clothing administration; size compatibility and
+  Magic uses native projectiles/support effects, paid preparation and item wear.
+  Remaining: clothing administration; size compatibility and
   gift provenance through other split/merge paths; all nine authored recruits,
   campaign subcaptain spawn,
-  prison extraction/rewards, actual selected-weapon combat, UI visual review,
+  prison extraction/rewards, actual selected-melee combat, final UI visual review,
   full package and accepted-save/rollback regression. Recheck equipped item
   state after combat/death and old model-only loadouts before claiming completion.
 - #432: shared climate/pristine/attribute caches pass133 final native assertions.

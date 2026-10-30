@@ -13,7 +13,7 @@ dialogue administration, gifts/loans/social retrieval and saved private trust.
 Actual bodies and inventory travel; waiting/dead bodies park against their
 source map. Armor and subcaptain shield/sidearm models become native pieces
 once, preserving wear/contamination and avoiding duplicate carried weight.
-Selected melee reuses resident tools; magic/clothing paths remain unfinished.
+Selected melee reuses resident tools; clothing paths remain unfinished.
 Old player saves gain no automatic recruits and remain archived for rollback.
 
 Ranged follow-up: carbine-c, shotgun-a, bow-a and crossbow-a each pass14 native
@@ -24,6 +24,22 @@ reserve/magazine and impact-wear checks. Compilation/core regression retained
 27 checks. Initial fixture failures (misspelled size constant; player-only ammo
 pickup on an NPC) are preserved and fixed using native inventory attachment,
 the same ownership path used by companion transfers. No author acceptance.
+
+Magic follow-up: staff-d plus bell/scepter/orb/book/censer/statuette/effigy-a
+pass12 native checks each (96). They cover no-Anima refusal, real preparation,
+physical interruption, payment on release, actual projectiles/effects, effect
+ownership and hostile/beneficial eligibility. Offensive fixtures explicitly
+raise only diagnostic Intellect to1000 to guarantee wear beyond its stochastic
+remainder; this does not change the authored20-attribute subcaptain. Initial
+fixtures incorrectly assumed every small hit removes durability, dereferenced
+an already-destroyed target, or compared two overlapping equal-priority homing
+targets. Corrected fixtures preserve those failed logs without counting them.
+Magic-regressions-c passes15 player-support and local-homing checks. The old
+oracle executes once only in this QA scene, capped at2048 actors (1547 observed);
+production uses local queries. This is a correctness check, not a frame-time
+claim. Magic-save-a passes7 preparation/snapshot checks and magic-reload-a7
+further checks: the same saved preparation finishes exactly once. Current
+magic-compile-a retains the27 core checks. Author review remains pending.
 
 Focused overlay evidence: equipment-a26 PASS; death-a29 PASS; revival-a5 PASS.
 Earlier inventory reload2 PASS and travel-a19 PASS preceded equipment binding.
@@ -48,6 +64,12 @@ Full checkpoint-c package: full-roster-a repeats39 native assertions without
 source overlays; full-reload-a2 PASS retains the same party/body/trust.
 This confirms packaging of the current checkpoint, not completion
 of the remaining weapon families or campaign acceptance.
+Full checkpoint-d includes both new weapon modules: full-roster-b39,
+full-magic-a27 and full-ranged-a14 assertions pass (80 total). Homing comparison
+in the full scene inspected1557 actors only in its bounded diagnostic oracle.
+The final source-only cleanup uses the already-approved Anima tier constants
+rather than the numerically identical ranged-critical helper; evidence hashes
+identify the earlier full package separately from its checked source overlay.
 Remaining work is explicit in TASKS. No manual handoff or acceptance is claimed.
 
 ## 5.11.3 - Conditional distant-search evaluation (#433, 2026-10-30)

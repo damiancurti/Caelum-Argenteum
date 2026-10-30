@@ -30,7 +30,7 @@ parking of waiting/dead bodies; armor/shield materialization without changing
 weight or ownership; selected melee via shared resident attack rules. The
 inventory list's E action equips/removes supported pieces; Enter requests or
 gifts, L lends. Consented retrieval removes equipped defense before transfer.
-Magic/clothing equipment and remaining integration checks are unfinished,
+Clothing equipment and remaining integration checks are unfinished,
 not silently replaced by invented gear restrictions. Full status: TASKS.
 
 Selected carbine, shotgun, bow and crossbow use the existing shared catalogues,
@@ -40,6 +40,21 @@ follows the exact weapon that fired. Save/load preserves depleted ammunition,
 magazines and reload/cooldown progress. Existing non-companion guards keep their
 authored reserve rules. The reload movement modifier is applied after the
 unmodified health cache is restored, once per calculation.
+
+Selected offensive implements use the existing projectiles, tier/Intelligence,
+accuracy, elemental payload, critical, range and durability rules. Eloquence,
+weapon/glove weight and thermal speed determine preparation; native Anima is
+paid only on committed release. Physical interruption cancels unpaid casts.
+The four support implements share the existing receiver status and caster
+attributes: curses use the perceived enemy; beneficial casts use the existing
+self-target option, with nearby allies included by an area implement. No new
+stack limits, durations, costs or factions are introduced.
+
+Homing acquisition keeps its original origin/range/cone/LOS priority through a
+local blockmap query and the existing typed unlinked-guard list. It no longer
+starts a global actor iterator for each projectile/retry. Player support still
+uses its original ally/enemy rules; generalized ownership retains the actual
+caster for effects and the exact firing item for wear.
 
 Queries use the bounded nine-identity roster and local placement/visibility.
 Mansion residents register at birth/return. Legacy saves may rebuild the four

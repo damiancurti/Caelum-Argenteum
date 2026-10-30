@@ -8,7 +8,7 @@ Documentation version: **5.11.4** - 2026-10-30.
 #433/PR578 records the conditional distant-search evaluation without adoption.
 #430 now has a tested companion foundation: persistent native bodies/items,
 dialogue administration, private trust, social consent, orders, map travel,
-death/revival, armor and finite ranged equipment administration. It is not complete: TASKS
+death/revival, armor, finite ranged equipment and magic. It is not complete: TASKS
 lists the remaining inventory/combat/roster/campaign and verification work.
 The combined manual handoff waits for completion. No author acceptance or merge.
 

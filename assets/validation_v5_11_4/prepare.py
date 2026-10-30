@@ -9,12 +9,13 @@ args=parser.parse_args()
 names=subprocess.check_output(['git','-c','core.autocrlf=false','diff','85bf55503322aed7fffdb2189707058243c20f16','--name-only'],cwd=ROOT,text=True).splitlines()
 names += ['src/caelum/data/CaelumCompanionData.zs','src/caelum/world/CaelumCompanions.zs','src/caelum/ui/CaelumCompanionUI.zs']
 names += ['src/caelum/equipment/CaelumCompanionLoadout.zs']
-names += ['src/caelum/equipment/CaelumCompanionRanged.zs']
+names += ['src/caelum/equipment/CaelumCompanionRanged.zs','src/caelum/equipment/CaelumCompanionMagic.zs']
 files={n[4:]:(ROOT/n).read_bytes() for n in names if n.startswith('src/') and n!='src/ZSCRIPT'}
 name='caelum/data/CaelumFormationData.zs'
 files[name]=(ROOT/'src'/name).read_bytes()+b'\n#include "caelum/data/CaelumCompanionData.zs"\n#include "caelum/world/CaelumCompanions.zs"\n#include "caelum/ui/CaelumCompanionUI.zs"\n'
 files[name]+=b'\n#include "caelum/equipment/CaelumCompanionLoadout.zs"\n'
 files[name]+=b'\n#include "caelum/equipment/CaelumCompanionRanged.zs"\n'
+files[name]+=b'\n#include "caelum/equipment/CaelumCompanionMagic.zs"\n'
 if args.full:files={}
 files['ZSCRIPT']=b'version "4.14"\n#include "checks.zs"\n#include "weapon_checks.zs"\n'
 files['checks.zs']=(Path(__file__).parent/'checks.zs').read_bytes()

@@ -12,8 +12,8 @@ it, then rebuild with `run_dev.bat` as described below.
 **V5.11 implementation is in progress.** Patch 5.11.4/#430 is an unfinished
 companion checkpoint: dialogue administration, native item transfers, trust,
 orders, cross-map bodies and persistent death/revival have focused native tests.
-Armor, shields, selected melee and finite-ammunition ranged weapons use the same owned inventory.
-Magic/clothing equipment, campaign integration, legacy/full-package
+Armor, shields, selected melee, finite-ammunition ranged weapons and magic use native inventory.
+Clothing equipment, campaign integration, legacy/full-package
 verification and the final manual handoff remain pending. Separate PRs cover
 #429 formations, #431 profiling, #432 derived caches and the #433 evaluation
 (no measured gain, no production adoption). No V5.11 acceptance or merge is claimed.
