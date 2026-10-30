@@ -210,6 +210,7 @@ class CaelumResidentTools : Object play
         if(Owner.CurrentCombatAir<cost)return;
         Owner.CurrentCombatAir-=cost;Owner.MarkActorCombatActivity();
         CaelumThermalEffects.RecordWeaponAction(Owner,ActiveItem.ItemType,Secondary,Charged,false);
+        CaelumNoise.Emit(Owner,CaelumNoiseData.SWING);
         Owner.EnsureCombatPersonality();Owner.UpdateCombatHealthEffects();Owner.UpdateActorOffensiveStatistics();
         int catalogue=CaelumCraftingRules.GetCatalogueWeaponForPlayableType(ActiveItem.ItemType);
         double accuracy=Max(1.0,Owner.CombatPhysicalAccuracyPercent
@@ -224,6 +225,7 @@ class CaelumResidentTools : Object play
         vector3 origin=Owner.Pos+(0,0,Owner.Height/2);
         if(!Owner.LineTrace(yaw,MeleeRange(Secondary),pitch,TRF_ABSPOSITION,
             origin.Z,origin.X,origin.Y,hit) || hit.HitActor==null)return;
+        CaelumNoise.Emit(Owner,CaelumNoiseData.IMPACT);
         let victim=CaelumCombatActor(hit.HitActor);
         if(victim==null || victim==Owner || victim.IsFriend(Owner))return;
         double chance=Clamp((CaelumWeaponCatalogue.GetCriticalChancePercent(catalogue)

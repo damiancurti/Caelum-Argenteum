@@ -97,6 +97,7 @@ class CaelumActorExplosiveElementalProjectile : CaelumActorProjectile
 
     action void A_CaelumActorExplode()
     {
+        CaelumNoise.Emit(invoker,CaelumNoiseData.EXPLOSION);
         invoker.A_Explode(
             invoker.CaelumActorExplosionDamage,
             invoker.CaelumActorExplosionRadius,

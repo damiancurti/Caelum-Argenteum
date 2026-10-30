@@ -1,0 +1,36 @@
+{
+  "issue": 426,
+  "version": "5.10.1",
+  "date": "2026-10-30",
+  "native_assertions": 39,
+  "runs": [
+    {
+      "run": "release-save",
+      "passes": 30,
+      "elapsed_seconds": 12.603
+    },
+    {
+      "run": "release-reload",
+      "passes": 3,
+      "elapsed_seconds": 9.159
+    },
+    {
+      "run": "release-migration",
+      "passes": 5,
+      "elapsed_seconds": 9.123
+    },
+    {
+      "run": "release-rollback",
+      "passes": 1,
+      "elapsed_seconds": 9.135
+    }
+  ],
+  "full_package_sha256": "99f8dc067e47d4416273c408c33b1a64be10908c74b7342f54589aee529ae9b0",
+  "verified_runtime_files": 26,
+  "limits": [
+    "No author acceptance yet.",
+    "Combined campaign, peaceful/siege simulation and presentation-tail comparisons remain pending after #427-428.",
+    "Final release runs use the full package without iteration overlays."
+  ],
+  "log_normalization": "UTF-8, LF, trailing whitespace removed; original logs retained in local build/issue426."
+}

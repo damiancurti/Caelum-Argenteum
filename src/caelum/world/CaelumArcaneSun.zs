@@ -134,6 +134,7 @@ class CaelumArcaneSunOrb : CaelumArcaneSunShot
         if(Finished)return;
         Finished=true;RemainingTics=0;bMissile=false;Vel=(0,0,0);Explosions++;
         // El motor conserva la caída radial y la oclusión de la estatuilla.
+        CaelumNoise.Emit(self,CaelumNoiseData.EXPLOSION);
         A_Explode(CaelumActorExplosionDamage,CaelumActorExplosionRadius,0,false);
         for(int i=0;i<CaelumArcaneSunRules.BURST_COUNT;i++)
             if(SpawnChild(CaelumArcaneSunRules.BurstDirection(i))!=null)BurstShots++;

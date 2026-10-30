@@ -115,6 +115,7 @@ class CaelumUtilityStaff : Object play
             if(stream==null)return false;
             stream.Emitter=emitter; stream.SourceItem=item; stream.Mode=mode;
             stream.SourceMap=level.MapName;
+            CaelumNoise.Emit(emitter,CaelumNoiseData.MAGIC);
             if(user!=null)user.UtilityStaffStream=stream;
             if(npc!=null)npc.CombatUtilityStaffStream=stream;
         }

@@ -1,6 +1,44 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.10.0** - 2026-10-30.
+Documentation version: **5.10.1** - 2026-10-30.
+
+## 5.10.1 / #426 - Anonymous action noise
+
+Author-approved calibration (2026-10-30): steps every 0.5 active seconds,
+base 625 MU, run x2/crouch x0.5, total carried mass/100 kg and the existing
+stealth complement. Surface factors: stone/wood x1, metal x1.5, soil/grass x0.5,
+shallow water x1.25. Worn metal contributes x1.5 once; cloth/leather x1. Existing
+terrain assignments identify grass/wood/pool water; declared CaelumSoil and
+CaelumMetal types are available for explicitly classified map floors. Unknown
+floors keep the stone/wood reference rather than guessing from texture names.
+
+Other base ranges at Insight 0: firearm 160 m; explosion 250 m; magic/shout
+64 m; weapon impact 16 m; swing/bow/crossbow/door 8 m. Hearing uses Insight M2;
+blocked native sight quarters the range. Intensity is 1-distance/effectiveRange,
+clamped to 0-1. Each audible event adds up to 50 suspicion, capped at 100.
+Sleeping, stunned, dormant and dead listeners do not receive active evidence;
+this patch introduces no new waking rule. Noise does not shorten visual
+identification, disclose identity/allegiance or update the emitter's location.
+
+Player/NPC movement, paid physical/magic releases, firearms, cannon shots,
+projectile/melee impacts, explosions, opening doors and the beginning of
+continuous magical streams emit real events. Failed/unfunded actions are
+silent; shotgun pellets share one firing event. Each actual impact remains
+its own event. Repeated projectile impact callbacks and already requested
+opening doors do not duplicate their event. Cosmetic sound volume is unchanged.
+
+Hearing revision 1 stores only event point, kind, intensity and original tic
+in private perception state. A pre-hearing save starts without invented noise;
+first actual delivery initializes the revision without replacing visual state.
+#427 consumes the saved point for investigation and expiry; #428 adds identified
+reports/orders. Original packages/saves remain the reversible rollback path.
+
+Each event uses a blockmap query bounded by the shared census's maximum Insight
+and the existing typed unlinked-guard fallback. Real attribute updates raise
+that bound between censuses, without a per-sound global lookup. The authorized
+>=500 census policy is unchanged. Existing door group iteration remains limited
+to explicit group interaction; no listener initiates a global scan. Combined
+peaceful/siege and presentation-tail measurements remain pending after #428.
 
 ## 5.10.0 / #425 - Visual observation and private recognition
 

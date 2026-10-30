@@ -226,6 +226,8 @@ class CaelumActorMaintenance : Object play
     {
         body.CombatEffectiveDexterity=int(OffenseOutputs[0]);
         body.CombatEffectiveInsight=int(OffenseOutputs[1]);
+        let hearingPopulation=CaelumPopulationState.Get();
+        if(hearingPopulation!=null)hearingPopulation.IncludeHearing(body);
         body.CombatEffectiveIntelligence=int(OffenseOutputs[2]);
         body.CombatPhysicalAccuracyPercent=double(OffenseOutputs[3]);
         body.CombatMagicalAccuracyPercent=double(OffenseOutputs[4]);

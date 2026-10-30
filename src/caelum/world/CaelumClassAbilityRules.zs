@@ -143,6 +143,7 @@ class CaelumClassAbilityRules : Object play
         {
             if(!CaelumArcaneCloud.Release(user)){user.PersistCharacterState();return;}
         }
+        CaelumNoise.Emit(user,user.ClassCastProfession==CaelumConstants.PROFESSION_WARRIOR ? CaelumNoiseData.SHOUT : CaelumNoiseData.MAGIC);
         user.ClassSleepCooldownRemaining=REUSE_SECONDS;
         user.PersistCharacterState();
     }

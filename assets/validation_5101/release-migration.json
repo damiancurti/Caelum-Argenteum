@@ -1,0 +1,38 @@
+{
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-nomouse",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue426\\current\\caelum_argenteum_dev.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue426\\current\\checks.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue426\\release-migration.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue426",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "-rngseed",
+    "426",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue426\\release-migration.log",
+    "-loadgame",
+    "ca426-legacy.zds",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue426\\release-migration.cfg"
+  ],
+  "pid": 41256,
+  "packages": {
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue426\\current\\caelum_argenteum_dev.pk3": "99f8dc067e47d4416273c408c33b1a64be10908c74b7342f54589aee529ae9b0",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue426\\current\\checks.pk3": "1b95a7170f0d0104a0ce0559fc4bef5ec084c0239d4eb0aafd7523d678f773e7"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 9.123,
+  "failures": [],
+  "pass_count": 5
+}

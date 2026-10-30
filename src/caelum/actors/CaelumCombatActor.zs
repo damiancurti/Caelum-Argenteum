@@ -5,6 +5,8 @@ class CaelumCombatActor : Actor
 {
     CaelumVisualEvidence VisualEvidence;
     CaelumPlayer PendingTheftTarget;
+    int NextNoiseStepTic;
+    bool NoiseStepScheduled;
 
     int MaintenanceRevision;
     transient CaelumActorMaintenance Maintenance;
@@ -1277,6 +1279,7 @@ class CaelumCombatActor : Actor
         if(!TrySpendCombatAir(GetEffectiveAttackAir(baseAir)))
         {WaitForAttackResource();return false;}
         CaelumThermalService.Impulse(self,CaelumThermalRules.PositiveWorkHeat(workJoules,CaelumThermalBody.Efficiency(self)),true);
+        CaelumNoise.Emit(self,CaelumNoiseData.SWING);
         return true;
     }
 
@@ -1343,7 +1346,7 @@ class CaelumCombatActor : Actor
 
     bool SpendBasicMagic(int weaponType=CaelumConstants.WEAPON_TYPE_STAFF)
     {
-        if(TrySpendTierOneMagicAnima(weaponType))return true;
+        if(TrySpendTierOneMagicAnima(weaponType)){CaelumNoise.Emit(self,CaelumNoiseData.MAGIC);return true;}
         AttackResourceMagical=true;AttackResourceWeapon=weaponType;
         AttackResourceResume=MissileState;WaitForAttackResource();return false;
     }
@@ -1376,6 +1379,8 @@ class CaelumCombatActor : Actor
             + GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_DEXTERITY);
         CombatEffectiveInsight = CombatInsight
             + GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_INSIGHT);
+        let hearingPopulation=CaelumPopulationState.Get();
+        if(hearingPopulation!=null)hearingPopulation.IncludeHearing(self);
         CombatEffectiveIntelligence = CombatIntelligence
             + GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_INTELLIGENCE);
         CombatPhysicalAccuracyPercent = CalculateActorType1Percent(
@@ -1529,6 +1534,7 @@ class CaelumCombatActor : Actor
     void DeliverContactMelee(int damage,Sound hitSound="")
     {
         bool previous=ContaminationMeleeActive;ContaminationMeleeActive=true;
+        if(CheckMeleeRange())CaelumNoise.Emit(self,CaelumNoiseData.IMPACT);
         A_CustomMeleeAttack(damage,hitSound);
         ContaminationMeleeActive=previous;
     }
@@ -1693,6 +1699,7 @@ class CaelumCombatActor : Actor
         // su empuje nativo para que la elevación sea exactamente +8 MU/tic y
         // atraviese de forma controlada NODAMAGETHRUST del sistema Caelum.
         combatActor.ThermalBluntDelivery=true;
+        CaelumNoise.Emit(combatActor,CaelumNoiseData.IMPACT);
         combatActor.BeginCombatAreaExplosion(radius);
         combatActor.LaunchActorsInGroundRadius(radius, verticalSpeed);
         combatActor.A_Explode(

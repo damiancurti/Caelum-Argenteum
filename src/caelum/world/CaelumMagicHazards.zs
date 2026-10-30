@@ -63,6 +63,7 @@ class CaelumMagicMine : CaelumPressureTrap
         A_StartSound("caelum/world/magic_mine", CHAN_BODY);
         let flash = Spawn("CaelumMineBurst", Pos + (0,0,16), NO_REPLACE);
         // El inflictor es la mina: no atribuir al jugador el ataque ambiental.
+        CaelumNoise.Emit(self,CaelumNoiseData.EXPLOSION);
         A_Explode(args[0], BlastRadius(), XF_THRUSTLESS, false);
         return true;
     }

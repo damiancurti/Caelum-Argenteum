@@ -16,6 +16,11 @@ Terrain CaelumWood
     StepSounds "caelum/player/footstep_wood"
 }
 
+// #426: tipos declarados para superficies clasificadas; los suelos sin
+// material identificado conservan la referencia de piedra/madera.
+Terrain CaelumSoil { }
+Terrain CaelumMetal { }
+
 Terrain CaelumPoolWater
 {
     FootClip 8
