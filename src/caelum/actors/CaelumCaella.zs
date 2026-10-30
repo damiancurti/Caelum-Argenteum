@@ -93,5 +93,11 @@ class CaelumCaella : CaelumAnchoredResident
     ResidentToolUse:
         CAEL E 1;
         Loop;
+    CompanionWalk:
+        CARN ABCD 4;
+        Loop;
+    CompanionIdle:
+        CAID A -1;
+        Stop;
     }
 }

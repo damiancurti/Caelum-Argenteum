@@ -5739,6 +5739,25 @@ unlinked registry for pulses. Do not remove offscreen illness or alter the censu
 Regression: run the same visible arrival/walk sequence and native effect/save checks.
 Limitations: callback tails are not display presentation; ETW was access-denied.
 
+## CA-KP-191 - Passive frame cadence and stair footprints can stall companions
+Status/evidence: RESOLVED-VERIFIED (native motion); author retest pending
+First recorded / last checked: 2026-10-30 / 2026-10-30
+Issue / PR: #430 / PR579; affected baseline51f25169f plus correction.
+Environment: GZDoom4.14.2, Windows11, Doom2 development IWAD, Vulkan60FPS cap.
+Scope: companion Tick, shared escort navigation and existing mansion stair nodes.
+Cause: idle frames did not drive every movement tic; prisoner escort bypassed
+party follow. A large footprint spanning several stairs failed the dropoff-edge
+check even when the next actual support step was within native limits. Resetting
+a descending route to the nearest landing could send the body back upstairs.
+Fix: passive per-tic follow with native combat cadence retained; reuse authored
+nodes and local paths, joining an already-entered segment ahead. Check actual
+support step/headroom before allowing the native footprint-dropoff exception.
+Evidence: validation_v5_11_4 motion-stuck-b, motion-stairs-k, prisoner-motion-a.
+Regression: actual residents, both flights and crossing the player; free/recruit
+all four prisoners. Empty-Tick stand-ins alone cannot verify walking animations.
+Limitations: retain all body collisions; this is local navigation, not a global
+navmesh. CA430-01 remains for author confirmation.
+
 ## Copyable entry template
 
 ```text

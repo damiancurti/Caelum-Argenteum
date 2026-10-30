@@ -22,7 +22,7 @@ class CaelumPrisonerEscort : Object play
     bool GivingWay;
     bool LeaderIntendsMove;
 
-    void Observe(CaelumAnchoredResident body,CaelumPlayer leader)
+    void Observe(CaelumCombatActor body,CaelumPlayer leader)
     {
         if(SchemaRevision<REVISION || Leader!=leader)
         {
@@ -48,33 +48,35 @@ class CaelumPrisonerEscort : Object play
         }
     }
 
-    bool Immobilized(CaelumAnchoredResident body)
+    bool Immobilized(CaelumCombatActor body)
     {
         return body.ForcedSleepTics>0 || body.CombatLucidityPhysicalStunRemaining>0
             || CaelumBolas.Restrained(body) || CaelumTelekinesisRules.Held(body)
             || (body.ElementalStatus!=null && body.ElementalStatus.GetMovementMultiplier()<=0);
     }
 
-    void SetPose(CaelumAnchoredResident body,bool moving)
+    void SetPose(CaelumCombatActor body,bool moving)
     {
-        State pose=moving?body.FindState("EscortFollow"):body.FindState("EscortIdle");
+        State pose=body.Companion!=null ? (moving ? body.FindState("CompanionWalk") : body.FindState("CompanionIdle"))
+            : moving ? body.FindState("EscortFollow") : body.FindState("EscortIdle");
+        if(pose==null)return;
         if(!body.InStateSequence(body.CurState,pose))body.SetState(pose);
     }
 
-    void Hold(CaelumAnchoredResident body,bool showPose=true)
+    void Hold(CaelumCombatActor body,bool showPose=true)
     {
         body.Vel.X=0;body.Vel.Y=0;Acceleration=0;Controlled=true;
         CaelumThermalMotion.SetVelocity(body);
         if(showPose)SetPose(body,false);
     }
 
-    void Yield(CaelumAnchoredResident body)
+    void Yield(CaelumCombatActor body)
     {
         if(Controlled){body.Vel.X=0;body.Vel.Y=0;}
         Controlled=false;Acceleration=0;
     }
 
-    double WalkingSpeed(CaelumAnchoredResident body)
+    double WalkingSpeed(CaelumCombatActor body)
     {
         // Misma marcha base, curva, carga, Aire y penalizaciones del jugador.
         // Los NPC no tienen hambre/sed/sueño metabólico: no crear esos recursos.
@@ -92,7 +94,7 @@ class CaelumPrisonerEscort : Object play
 
     // Sólo para trayectos cortos de igual nivel. Los desniveles y esquinas
     // conservan su ruta local y el control de suelo del motor en cada paso.
-    bool ClearSegment(CaelumAnchoredResident body,Vector3 goal,double stopDistance=CaelumConstants.PRISONER_FOLLOW_DISTANCE,bool geometryOnly=false)
+    bool ClearSegment(CaelumCombatActor body,Vector3 goal,double stopDistance=CaelumConstants.PRISONER_FOLLOW_DISTANCE,bool geometryOnly=false)
     {
         vector2 delta=goal.XY-body.Pos.XY;
         double distance=delta.Length();
@@ -112,12 +114,12 @@ class CaelumPrisonerEscort : Object play
             if(!fits
                 || fit.ceilingz-fit.floorz<body.Height
                 || abs(fit.floorz-body.FloorZ)>body.MaxStepHeight
-                || fit.floorz-fit.dropoffz>body.MaxDropOffHeight)return false;
+                || (body.Companion==null && fit.floorz-fit.dropoffz>body.MaxDropOffHeight))return false;
         }
         return true;
     }
 
-    bool MoveTowards(CaelumAnchoredResident body,vector2 destination,double speed,double limit)
+    bool MoveTowards(CaelumCombatActor body,vector2 destination,double speed,double limit)
     {
         vector2 delta=destination-body.Pos.XY;double distance=delta.Length();
         if(distance<=0.001)return false;
@@ -127,14 +129,29 @@ class CaelumPrisonerEscort : Object play
             Acceleration=Min(1.0,Acceleration+1/(duration*TICRATE));
         double step=Min(distance,speed*Acceleration);
         if(limit>=0)step=Min(step,limit);
-        if(!body.CheckMove(body.Pos.XY+delta/distance*step,0))return false;
+        vector2 next=body.Pos.XY+delta/distance*step;
+        if(!body.CheckMove(next,0))
+        {
+            // Un cuerpo ancho puede pisar varios peldaños a la vez. El desnivel
+            // bajo el borde no es la caída del próximo paso: validar el suelo
+            // que sostendrá el cuerpo, sin permitir saltar desde un precipicio.
+            if(body.Companion==null)return false;
+            FCheckPosition fit;
+            if(!body.CheckPosition(next,false,fit)
+                || fit.ceilingz-fit.floorz<body.Height
+                || fit.floorz-body.FloorZ>body.MaxStepHeight
+                || body.FloorZ-fit.floorz>body.MaxDropOffHeight
+                || !body.CheckMove(next,PCM_DROPOFF))return false;
+        }
         body.Angle=VectorAngle(delta.X,delta.Y);
         body.Vel.X=delta.X/distance*step;body.Vel.Y=delta.Y/distance*step;
         CaelumThermalMotion.SetVelocity(body);Controlled=true;SetPose(body,true);return true;
     }
 
-    bool GiveWay(CaelumAnchoredResident body,CaelumPlayer leader,double speed)
+    bool GiveWay(CaelumCombatActor body,CaelumPlayer leader,double speed)
     {
+        if(body.Pos.Z>=leader.Pos.Z+leader.Height || leader.Pos.Z>=body.Pos.Z+body.Height)
+        {GivingWay=false;return false;}
         vector2 separation=body.Pos.XY-leader.Pos.XY;
         double width=body.Radius+leader.Radius;
         vector2 side=(-LeaderDirection.Y,LeaderDirection.X);
@@ -145,14 +162,17 @@ class CaelumPrisonerEscort : Object play
             if(side dot separation<0)side=-side;
             for(int choice=0;choice<3;choice++)
             {
-                vector2 direction=choice==0?side:choice==1?-side:forward;
+                // Si el lateral está cerrado, avanzar despeja una escalera;
+                // alternar antes al otro lado hacía oscilar delante del líder.
+                vector2 direction=choice==0?side:choice==1?forward:-side;
                 // En un corredor no siempre cabe el desplazamiento completo.
                 // Apartarse hasta donde quepa permite que el jugador también
                 // se aparte, sin suprimir la colisión de ninguno de los dos.
                 for(double distance=width+body.Radius;distance>=body.Radius/2;distance-=body.Radius/2)
                 {
                     vector3 candidate=(body.Pos.XY+direction*distance,body.Pos.Z);
-                    if(ClearSegment(body,candidate,0))
+                    if(ClearSegment(body,candidate,0)
+                        && body.CheckMove(body.Pos.XY+direction*Min(speed,distance),body.Companion!=null?PCM_DROPOFF:0))
                     {GivingWay=true;YieldPoint=candidate.XY;Path=null;break;}
                 }
                 if(GivingWay)break;
@@ -165,7 +185,7 @@ class CaelumPrisonerEscort : Object play
         return true;
     }
 
-    void Follow(CaelumAnchoredResident body,CaelumPlayer leader)
+    void Follow(CaelumCombatActor body,CaelumPlayer leader)
     {
         if(Immobilized(body)) {Yield(body);return;}
         double speed=WalkingSpeed(body);
@@ -220,7 +240,7 @@ class CaelumPrisonerEscort : Object play
         }
     }
 
-    bool Recover(CaelumAnchoredResident body,CaelumPlayer leader)
+    bool Recover(CaelumCombatActor body,CaelumPlayer leader)
     {
         if(leader==null || Immobilized(body) || WalkingSpeed(body)<=0)return false;
         // Los doce candidatos y su margen proceden del recuperador anterior.

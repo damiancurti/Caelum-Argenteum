@@ -4147,6 +4147,7 @@ class CaelumCombatActor : Actor
             if (!SiegeCombatant.Exited) { Super.Tick();CaelumThermalRuntime.NPCStep(self); }
             return;
         }
+        CaelumCompanionMotion.Tick(self);
         Vector3 prePhysicsVelocity = Vel;
         vector3 thermalBefore=Pos;
         Sector thermalSector=CurSector;

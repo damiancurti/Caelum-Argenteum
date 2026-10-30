@@ -14,6 +14,19 @@ The author requested immunity after observing rats die from contamination. The r
 
 The author reported that returning after speaking to a guard kept the rental offer unchanged. The rental actor retained its native conversation pointer after closing, so later Use could bypass the synchronization method. Clear that pointer only after a conversation closes; preserve active conversations and native pages on load. Quest data, property payments and refunds are unchanged. Native validation: 11 dialogue/property assertions and 2 save/reload assertions passed in GZDoom 4.14.2; static validation has no errors. Evidence: assets/validation_v5_11_5. Author retest CA580-01 is pending.
 
+Author feedback2026-10-30: CA432-01 (origin5.11.2/#432) passed; CA430-01
+(origin5.11.4/#430) inventory, trust, equipment and revival passed with
+movement/animation/Leonor exceptions. CA429-01 was not accepted: one soldier
+became stuck at a corridor exit. Keep correction retests pending; no merge.
+The author approved6m/3m run/walk thresholds. Correct passive animation,
+per-tic follow, escort precedence and stairs using existing movement/Air rules.
+Doors retain permissions with a shared peer registry, not per-request scans.
+Native correction checks: two stair scenarios19+19, prisoners14, single-body
+descent5, door permissions/reload7+3, city bootstrap1, moving save/reload4+10,
+ranged combat14 PASS. Evidence: validation_v5_11_4/motion-results.json.
+The first flat reload fixture wrongly expected a walk transition while all
+formation slots remained beyond3m; moving the leader within3m verifies it.
+
 ## 5.11.4 - Companion implementation (#430, 2026-10-30)
 
 Final package verification: administration47, gifts83, legacy migration7,
@@ -209,6 +222,14 @@ no new ETW capture or60FPS acceptance is claimed. Saved authoritative values
 are unchanged and all added caches are transient. Author acceptance is pending.
 
 ## 5.11.1 - Formations and bounded siege membership (#429, 2026-10-30)
+
+Author correction, 2026-10-30: CA429-01 remained failed because the front-left
+soldier stopped at (193.377,-15.586) when the group widened at the corridor exit.
+Visibility alone admitted that diagonal although the body could not fit. Recovery
+now checks sampled native cylinder clearance along the entire candidate segment,
+within the group's length, before widening. The shared recovery trigger remains
+movement-based; no per-tic actor census was added. The visible five-guard native
+fixture passes all four checks (passage-correction-a); author retest is pending.
 
 Formation revision1 owns stable member identities, leader succession, four role
 layouts, player-reserved party capacity, passage fallback and combat regroup

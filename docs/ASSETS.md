@@ -6,6 +6,10 @@ Documentation version: **5.11.7** - 2026-10-30.
 
 assets/map06_port/ARRIVAL_HOUSEHOLD.json supplies the four classes, original positions, house69 offsets and facing. assets/generators/generate_arrival_household.py deterministically writes CaelumArrivalHouseholdData.zs. Existing models are reused unchanged. The workbench/Chemistry/barrel use the north living-room wall, clear of the dining set; the cot uses the bedroom south of its existing bed. Native fit checks preserve paths and defer occupied placements.
 
+The #430 movement correction reuses existing resident/prisoner walking
+frames. Passive CompanionWalk/CompanionIdle labels are appended to preserve
+existing state indices. No new artwork or changed asset provenance.
+
 ### Companion delivery (5.11.4, #430)
 
 The subcaptain reuses the owned Domingo body/frames and the existing guard
