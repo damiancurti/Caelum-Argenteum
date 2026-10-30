@@ -264,20 +264,20 @@ class CaelumEconomyRules : Object
     // redondea hacia arriba; venderle redondea hacia abajo.
     static clearscope int GetPalomoMerchantLotPrice(
         int merchantItem, int quantity, int merchantMode,
-        bool negotiatedDiscount = false
+        bool negotiatedDiscount = false, double reputationFactor = 1
     )
     {
-        int baseLot = GetPalomoMerchantBaseValue(merchantItem)
-            * Max(0, quantity);
+        double baseLot = GetPalomoMerchantBaseValue(merchantItem)
+            * Max(0, quantity) * Max(0,reputationFactor);
         if (merchantMode == CaelumConstants.PALOMO_MERCHANT_MODE_SELL)
         {
             int sellPercent = negotiatedDiscount
                 ? CaelumConstants.PALOMO_DISCOUNT_SELL_PERCENT : 50;
-            return baseLot * sellPercent / 100;
+            return RoundCopperDown(baseLot * sellPercent / 100);
         }
         int buyPercent = negotiatedDiscount
             ? CaelumConstants.PALOMO_DISCOUNT_BUY_PERCENT : 150;
-        return (baseLot * buyPercent + 99) / 100;
+        return RoundCopperUp(baseLot * buyPercent / 100);
     }
 
     static clearscope int ResolveCurrencyType(int currencyType)

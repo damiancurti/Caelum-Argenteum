@@ -1,6 +1,9 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.9.5** - 2026-10-29.
+Documentation version: **5.9.6** - 2026-10-29.
+
+#424 service integration: explicit affiliations only; validation_596.
+#423 visual delivery remains before the grouped author handoff.
 
 #420 campaign membership is now integrated (5.9.3); evidence validation_593.
 #421 story is integrated; evidence validation_594.

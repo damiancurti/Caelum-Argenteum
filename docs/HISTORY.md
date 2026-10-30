@@ -1,6 +1,13 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.9.5** - 2026-10-29.
+Documentation version: **5.9.6** - 2026-10-29.
+
+## 5.9.6 - Faction service consequences (#424, 2026-10-29)
+
+Integrated explicit faction hostility and prices into actual merchant and door
+service paths, including commit-time checks and library purchases. Civilian
+shops/travel and narrative dialogue keep their existing access. Native evidence:
+assets/validation_596/RESULTS.md. Author review remains grouped after #423.
 
 ## 5.9.5 - House and siege side quests (#422, 2026-10-29)
 

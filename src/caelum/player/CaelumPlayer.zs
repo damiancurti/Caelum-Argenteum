@@ -108,6 +108,7 @@ class CaelumPlayer : DoomPlayer
     int WorldCarbineShotUntil;
     bool PalomoMerchantDiscountGranted;
     bool PalomoMerchantReputationDiscount;
+    double PalomoMerchantFactionPriceFactor;
     CaelumFactionCondition ActivePalomoMerchantRequirement;
     CaelumFactionCondition ActivePalomoMerchantDiscountCondition;
     String PalomoMerchantTitleKey;

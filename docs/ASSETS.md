@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.9.5** - 2026-10-29.
+Documentation version: **5.9.6** - 2026-10-29.
 
 ## 5.8.56 / #416 - Original Ciudad theme for Buenos Aires
 

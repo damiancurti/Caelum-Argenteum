@@ -111,7 +111,7 @@ class CaelumSlidingDoorLeaf : Actor
                 }
                 return false;
             }
-            if (!CaelumFactionCondition.Require(CaelumPlayer(user), guardedLeaf.AccessCondition)) return false;
+            if (!CaelumFactionServices.Require(CaelumPlayer(user), guardedLeaf.AccessCondition)) return false;
         }
 
         int groupLeafCount = 0;

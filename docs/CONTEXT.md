@@ -1,10 +1,13 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.9.5** - 2026-10-29.
+Documentation version: **5.9.6** - 2026-10-29.
 
-**V5.9 in progress, 5.9.5:** #418 coordination/rewards, #420 factions,
+#424 service integration: explicit affiliations only; validation_596.
+#423 visual delivery remains before the grouped author handoff.
+
+**V5.9 in progress, 5.9.6:** #418 coordination/rewards, #420 factions,
 #419 private dialogue, #421 story and #422 house/siege quests implemented.
-Evidence: validation_590-595. Finish #423 art and #424 services. All #418-424
+Evidence: validation_590-596. #424 services integrated; finish #423 art. All #418-424
 stay open. Separate PRs/evidence; grouped author terminal after the whole version.
 GitHub retains approvals.
 
