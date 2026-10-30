@@ -1,9 +1,10 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.11.3** - 2026-10-30.
+Documentation version: **5.11.4** - 2026-10-30.
 
-**V5.11 active (5.11.3/#433):** distant-search evaluation complete; no measured
-benefit, no adoption. #431 PR575; #429 PR576; #432 PR577. #430 remains active.
+**V5.11 active (5.11.4/#430):** companion checkpoint, unfinished.
+#431/PR575; #429/PR576; #432/PR577; #433/PR578 (no candidate adoption).
+#430: bonds/UI/trust/orders/travel/death/gear; validation_v5_11_4; remaining: TASKS.
 Manual handoff after completion; unaccepted/unmerged.
 Keep-awake PID42276; stop build/issue429/keep-awake-511-20261030.stop
 in issue429 worktree. Release on return.

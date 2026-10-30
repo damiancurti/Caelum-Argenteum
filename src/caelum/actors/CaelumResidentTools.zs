@@ -9,7 +9,7 @@ class CaelumResidentTools : Object play
     const MELEE_CYCLE=4;
     const RECOVERY=5;
     const PREPARED=6;
-    CaelumAnchoredResident Owner;
+    CaelumCombatActor Owner;
     CaelumEquipmentItem Pickaxe,Staff,Bolas,Melee,ActiveItem;
     int Revision,Phase,PreparedTics,NextMeleeVariant;
     double ChargeRemaining,PreparedRemaining,CycleProgress,CycleDuration,RecoveryTics;
@@ -18,6 +18,12 @@ class CaelumResidentTools : Object play
     int LastStrikeDamage,LastStrikeRawDamage,LastStrikeGrade;
     bool LastStrikeCritical;
     CaelumWeaponModel Sidearm;
+
+    bool BattleActive()
+    {
+        let resident=CaelumAnchoredResident(Owner);
+        return (resident!=null && resident.IsRuloPartyFighting()) || CaelumCompanions.Controlled(Owner);
+    }
 
     CaelumEquipmentItem Grant(int type,int size)
     {
@@ -68,7 +74,8 @@ class CaelumResidentTools : Object play
     void Cancel()
     {
         if(Owner!=null){CaelumUtilityStaff.EndEmission(Owner);Owner.CombatActiveTool=null;}
-        if(ActiveItem!=null)ActiveItem.Equipped=false;
+        if(ActiveItem!=null)ActiveItem.Equipped=Owner!=null && Owner.Companion!=null
+            && Owner.Companion.Loadout!=null && Owner.Companion.Loadout.SelectedWeapon==ActiveItem;
         ActiveItem=null;Phase=IDLE;PreparedTics=0;ChargeRemaining=PreparedRemaining=0;
         CycleProgress=RecoveryTics=0;StrikeResolved=false;
     }
@@ -115,11 +122,22 @@ class CaelumResidentTools : Object play
     bool TryStart()
     {
         if(CaelumBattleCry.Active(Owner))return false;
-        if(Owner==null || !Owner.IsRuloPartyFighting() || Owner.target==null
+        if(Owner==null || !BattleActive() || Owner.target==null
             || CaelumBolas.Restrained(Owner) || CaelumBolas.Interrupted(Owner) || !CaelumVisualPerception.Identify(Owner,Owner.target))return false;
         if(Phase!=IDLE)return true;
         RecoverBolas();
         let victim=CaelumCombatActor(Owner.target);
+        let loadout=Owner.Companion!=null ? Owner.Companion.Loadout : null;
+        if(loadout!=null && loadout.ManualWeapon)
+        {
+            let chosen=loadout.SelectedWeapon;if(!Available(chosen))return false;
+            if(chosen.ItemType==CaelumConstants.WEAPON_TYPE_BOLAS)
+            {Bolas=chosen;return victim!=null && !CaelumBolas.Restrained(victim) && AimBolas() && BeginBolas();}
+            if(chosen.ItemType==CaelumConstants.WEAPON_TYPE_UTILITY_STAFF)
+            {Staff=chosen;return victim!=null && Owner.Distance2D(victim)<=CaelumDemonBreathRules.Range()+victim.Radius && BeginIce();}
+            Melee=chosen;
+            return victim!=null && Owner.Distance2D(victim)<=MeleeRange(false)+victim.Radius && BeginMelee(false,false);
+        }
         bool bound=CaelumBolas.Restrained(victim);
         if(victim!=null && Available(Bolas) && !bound && Owner.Distance2D(victim)<=Owner.MaxTargetRange && AimBolas() && BeginBolas())return true;
         if(Available(Staff) && victim!=null && victim.ElementalStatus!=null && victim.ElementalStatus.FreezeRemaining<=0
@@ -270,7 +288,7 @@ class CaelumResidentTools : Object play
     void Tick()
     {
         if(Owner==null)return;
-        if(CaelumBattleCry.Active(Owner) || !Owner.IsRuloPartyFighting() || CaelumBolas.Restrained(Owner) || CaelumBolas.Interrupted(Owner) || (Phase!=IDLE && !CaelumVisualPerception.Identify(Owner,Owner.target)))
+        if(CaelumBattleCry.Active(Owner) || !BattleActive() || CaelumBolas.Restrained(Owner) || CaelumBolas.Interrupted(Owner) || (Phase!=IDLE && !CaelumVisualPerception.Identify(Owner,Owner.target)))
         {
             if(Phase!=IDLE)
             {

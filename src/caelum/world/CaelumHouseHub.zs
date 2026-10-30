@@ -38,6 +38,8 @@ class CaelumHouseHubEvents : EventHandler
 {
     override void NetworkProcess(ConsoleEvent e)
     {
+        if(e.Name=="ca_companion_action" && e.Player>=0 && e.Player<MAXPLAYERS && playeringame[e.Player])
+        {let user=CaelumPlayer(players[e.Player].mo);let session=CaelumCompanionSession.Find(user);if(session!=null)session.Act(e.Args[0]);return;}
         if(e.Name=="ca_clean_open" && e.Player>=0 && e.Player<MAXPLAYERS && playeringame[e.Player])
         {CaelumCleaningSession.Show(CaelumPlayer(players[e.Player].mo));return;}
         if(e.Name=="ca_clean_action" && e.Player>=0 && e.Player<MAXPLAYERS && playeringame[e.Player])

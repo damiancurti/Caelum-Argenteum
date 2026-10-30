@@ -1,6 +1,45 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.11.3** - 2026-10-30.
+Documentation version: **5.11.4** - 2026-10-30.
+
+## 5.11.4 - Companion implementation checkpoint (#430, 2026-10-30)
+
+Unfinished and not author-accepted. Approved roster, free recruitment, party
+capacity, three-day death-slot boundary, native resurrection, trust and consent
+are recorded in SYSTEMS and issue430. No new balance or story was invented.
+
+The checkpoint adds native companion identities, shared formation orders,
+dialogue administration, gifts/loans/social retrieval and saved private trust.
+Actual bodies and inventory travel; waiting/dead bodies park against their
+source map. Armor and subcaptain shield/sidearm models become native pieces
+once, preserving wear/contamination and avoiding duplicate carried weight.
+Selected melee reuses resident tools; other equipment paths remain unfinished.
+Old player saves gain no automatic recruits and remain archived for rollback.
+
+Focused overlay evidence: equipment-a26 PASS; death-a29 PASS; revival-a5 PASS.
+Earlier inventory reload2 PASS and travel-a19 PASS preceded equipment binding.
+Waiting-return-e4 PASS verifies a parked save and return after500 active tics;
+the body settles1.35 map units from its anchor and remains in its collision
+footprint, with no further drift between100 and500tics. The initial <1-unit
+assertion was overstrict for native settling. A separate failed fixture queued
+save/changemap in one tic; separate runs now verify both transitions. Failed
+iterations remain local and are not counted as passing evidence.
+
+The native death test uses actual DamageMobj and the approved shared resurrection
+service, preserving seven diagnostic token units through death, hub travel and
+revival. It does not replace ability-level cost/eligibility or full-campaign QA.
+Follow-up exposure-a28 PASS and ui-b28 PASS include one authoritative exposure
+per materialized piece with actual worn area. Native Spanish panel capture was
+visually inspected; no overlap or missing accents. These are agent checks.
+Roster-b39 PASS additionally covers the four mansion recruits, player+seven
+capacity, rejected overflow, release of a dead slot, native revival into a full
+party without displacement, reinvitation after freeing space, and preserved
+unfinished prisoner escort after dismissal.
+Full checkpoint-c package: full-roster-a repeats39 native assertions without
+source overlays; full-reload-a2 PASS retains the same party/body/trust.
+This confirms packaging of the current checkpoint, not completion
+of the remaining weapon families or campaign acceptance.
+Remaining work is explicit in TASKS. No manual handoff or acceptance is claimed.
 
 ## 5.11.3 - Conditional distant-search evaluation (#433, 2026-10-30)
 

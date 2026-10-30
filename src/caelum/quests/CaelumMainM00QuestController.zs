@@ -3,6 +3,27 @@
 class CaelumMainM00QuestController : EventHandler
 {
     bool RuloWorldPrepared;
+    int ResidentRegistryRevision;
+    CaelumAnchoredResident StoryResidents[4];
+
+    void RegisterResident(CaelumAnchoredResident resident)
+    {
+        if(level.MapName!="MAP01" || resident==null || !resident.StoryAnchored
+            || resident.IsEscortPrisoner() || (resident.Companion!=null && resident.Companion.Parked))return;
+        int identity=CaelumMainM00SocialDialogue.GetResidentId(resident);
+        if(identity>=0 && identity<4)StoryResidents[identity]=resident;
+    }
+
+    void EnsureResidentRegistry()
+    {
+        if(ResidentRegistryRevision>=1 || level.MapName!="MAP01")return;
+        // Solo migracion de saves anteriores: un recorrido compartido por mapa.
+        // Las cuatro identidades se mantienen despues mediante altas/traslados.
+        ResidentRegistryRevision=1;
+        let iterator=ThinkerIterator.Create("CaelumAnchoredResident");CaelumAnchoredResident resident;
+        while((resident=CaelumAnchoredResident(iterator.Next()))!=null)RegisterResident(resident);
+    }
+
     Line Passage;
     CaelumM00ElementRune Runes[4];
     bool WorldPrepared;

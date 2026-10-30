@@ -1,6 +1,13 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.11.3** - 2026-10-30.
+Documentation version: **5.11.4** - 2026-10-30.
+
+### Companion checkpoint (5.11.4, #430)
+
+The subcaptain reuses the owned Domingo body/frames and the existing guard
+equipment catalogue; the four residents and prisoner appearances are unchanged.
+The party panel reuses the shared journal/menu presentation and bilingual text.
+No new raster art, external assets or attribution changes are introduced.
 
 ## 5.11.0 / #431 - Profiling provenance
 

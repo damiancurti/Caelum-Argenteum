@@ -1,15 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.11.3** - 2026-10-30.
+Documentation version: **5.11.4** - 2026-10-30.
 
-## V5.11 implementation - 5.11.3 (#433, 2026-10-30)
+## V5.11 implementation - 5.11.4 (#430, 2026-10-30)
 
 #429 formations, #431 profiling and #432 derived caches have PRs576/575/577.
-#433 evaluated the approved five-tic empty-search candidate, retaining event
-wakeups and14 native/save checks. It is not adopted: no eligible searches were
-skipped during the measured siege window, and peaceful scenes show no clear gain.
-#430 companions remain active. The author will receive the combined manual handoff
-when implementation finishes. No V5.11 merge or author acceptance is claimed.
+#433/PR578 records the conditional distant-search evaluation without adoption.
+#430 now has a tested companion foundation: persistent native bodies/items,
+dialogue administration, private trust, social consent, orders, map travel,
+death/revival and initial equipment administration. It is not complete: TASKS
+lists the remaining inventory/combat/roster/campaign and verification work.
+The combined manual handoff waits for completion. No author acceptance or merge.
 
 ## V5.10 complete and author-accepted - 5.10.3 (2026-10-30, #403)
 

@@ -98,7 +98,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
 
     bool IsProtectedStoryResident()
     {
-        return StoryAnchored && level.MapName == "MAP01";
+        return StoryAnchored && level.MapName == "MAP01" && (Companion==null || !Companion.DeathRecorded);
     }
 
     void ClearStoryCombatState()
@@ -151,6 +151,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
     void BecomePrisoner(int prisonerId)
     {
         EscortPrisonerId = prisonerId;
+        if(CaelumCompanions.Superseded(self)){Destroy();return;}
         StoryAnchored = false;
         StoryReturningHome = false;
         RuloPartyMode = 0; RuloPartyBull = null; RuloPartyTraveler = null;
@@ -239,7 +240,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
         }
         CaelumNotifications.Notify(owner,
             StringTable.Localize("CA_PRISONER_EXTRACTED", false));
-        Destroy();
+        if(Companion==null)Destroy();
     }
 
     bool AtPrisonerExtraction()
@@ -514,6 +515,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
 
     void JoinRuloParty(CaelumPlayer traveler, CaelumM00Bull bull)
     {
+        if(Companion!=null && (Companion.Parked || Companion.DeathRecorded))return;
         RuloPartyTraveler = traveler; RuloPartyBull = bull;
         RuloPartyMode = 1; StoryReturningHome = false;
         RestoreRuloPartyHealth();
@@ -615,6 +617,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
         StoryHome = Pos;
         StoryHomeAngle = Angle;
         StoryAnchored = args[0] == CaelumConstants.STORY_NPC_ANCHORED;
+        if(StoryAnchored && CaelumCompanions.Superseded(self)){Destroy();return;}
         StoryReturningHome = false;
 
         if (StoryAnchored)
@@ -628,10 +631,16 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
             target = null;
         }
         if(IsProtectedStoryResident())RuloMovementRevision=RULO_MOVEMENT_REVISION;
+        let world=CaelumMainM00QuestController(EventHandler.Find("CaelumMainM00QuestController"));
+        if(world!=null)world.RegisterResident(self);
     }
 
     override bool Used(Actor user)
     {
+        if(Companion!=null && ((StoryAnchored && level.MapName!="MAP01")
+            || (IsEscortPrisoner() && ((EscortPrisonerPort && level.MapName!="MAP03")
+                || (!EscortPrisonerPort && level.MapName!="MAP02")))))
+            return CaelumCompanions.Dialogue(CaelumPlayer(user),self);
         if (IsEscortPrisoner())
         {
             return UseEscortPrisoner(CaelumPlayer(user));
@@ -652,6 +661,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
     {
         CaelumAnchoredResident resident = CaelumAnchoredResident(self);
         if(resident!=null && resident.PulseResourceRecovery())return;
+        if(resident!=null && CaelumCompanions.Pulse(resident))return;
         if (resident != null && resident.StoryAnchored)
         {
             if (resident.IsRuloPartyFighting())
@@ -677,6 +687,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
             { resident.Target = resident.FactionTarget; resident.ThermalChase(); }
             return;
         }
+        if(resident!=null && CaelumCompanions.Pulse(resident))return;
         if (resident != null && resident.StoryAnchored)
         {
             if (resident.IsRuloPartyFighting())
@@ -693,13 +704,20 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
 
     override void Tick()
     {
-        if(CaelumRedemption.Pending(self))return;
+        if((Companion!=null && Companion.Parked) || CaelumRedemption.Pending(self))return;
         EnsureRuloMovement();
         EnsureResidentTools();
         if(ResidentTools!=null)ResidentTools.Tick();
         EnsureStorySurvival();
         if(ResourceRecoveryActive() && IsRuloPartyFighting())
         {Super.Tick();return;}
+        if(IsEscortPrisoner() && EscortPrisonerPort)UpdatePortFactionHostility();
+        if(CaelumCompanions.Controlled(self))
+        {
+            if(IsEscortPrisoner() && level.MapName=="MAP02" && AtPrisonerExtraction())
+                MarkEscortPrisonerExtracted(Companion.Leader());
+            Super.Tick();return;
+        }
         if (IsEscortPrisoner())
         {
             UpdatePortFactionHostility();

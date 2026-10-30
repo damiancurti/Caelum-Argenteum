@@ -52,6 +52,30 @@ class CaelumPortSiege : CaelumSiegeEncounter
     int TargetingRevision;
     // Sólo la revisión geométrica 3 tiene fase de paz y viviendas.
     bool SiegeStarted;
+    bool SubcaptainCreated;
+    CaelumCompanionSubcaptain Subcaptain;
+
+    void EnsureSubcaptain()
+    {
+        if(!SiegeStarted || SubcaptainCreated || level.time%CaelumPortData.COMMAND_UPDATE_TICS!=0)return;
+        for(int n=0;n<MAXPLAYERS;n++)
+        {
+            if(!playeringame[n])continue;
+            let user=CaelumPlayer(players[n].mo);if(user==null || user.health<=0)continue;
+            let party=CaelumCompanionParty.Get(user);
+            if(party!=null && party.Find(8)!=null){SubcaptainCreated=true;return;}
+            int living=0;
+            for(int i=0;i<Defenders.Size();i++)if(Defenders[i]!=null && Defenders[i].health>0)living++;
+            for(int i=0;i<Guns.Size();i++)if(Guns[i]!=null && Guns[i].health>0)living++;
+            if(living>=CaelumFormationData.SIDE_CAPACITY)return;
+            let defaults=GetDefaultByType("CaelumPlayer");
+            let place=CaelumSummoning.FindPlace(user,user.Pos,CaelumConstants.PALOMO_MERCHANT_SESSION_DISTANCE,defaults.Radius,CaelumPortData.DEFENDER_HEIGHT);
+            if(!place.Found)return;
+            Subcaptain=CaelumCompanionSubcaptain(Spawn("CaelumCompanionSubcaptain",place.Point,NO_REPLACE));
+            if(Subcaptain==null)return;
+            Subcaptain.Port=self;Subcaptain.Station=place.Point;Defenders.Push(Subcaptain);SubcaptainCreated=true;return;
+        }
+    }
     int InteriorDoorRevision;
     int RentalAgentRevision;
     CaelumRentalAgent RentalAgent;
@@ -751,6 +775,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
 
     override void Tick()
     {
+        EnsureSubcaptain();
         if(RentalAgentRevision<CaelumPortQuestData.REVISION && SetupRevision>0 && CaelumHouseHub.IsCity(self))
         {
             RentalAgent=CaelumRentalAgent(Spawn("CaelumRentalAgent",CaelumPortQuestData.AgentPosition(),NO_REPLACE));

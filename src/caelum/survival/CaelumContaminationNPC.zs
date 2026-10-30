@@ -68,7 +68,8 @@ class CaelumContaminationNPC : Object play
         {
             Frame.Armor[slot]=-1;Frame.Clothes[slot]=-1;
             Frame.BodyArea[slot]=thermal.SurfaceArea*thermal.Coverage[slot];
-            if(npc.CombatArmor!=null && !CaelumThermalBody.FurryAnimal(npc))
+            if(npc.CombatArmor!=null && !CaelumThermalBody.FurryAnimal(npc)
+                && (npc.Companion==null || npc.CombatArmor.ArmorType[slot]!=CaelumConstants.ARMOR_TYPE_BASE_CLOTHING))
             {
                 if(npc.CombatArmor.ContaminationState[slot]==null)
                     npc.CombatArmor.ContaminationState[slot]=new('CaelumContaminationState');
@@ -93,6 +94,7 @@ class CaelumContaminationNPC : Object play
         }
         // Sólo el inventario de este dueño, en su intervalo térmico compartido.
         // Los objetos nativos guardan identidad; no se copian a los modelos.
+        if(npc.Companion!=null && npc.Companion.Loadout!=null)npc.Companion.Loadout.Sync();
         for(Inventory cursor=npc.Inv;cursor!=null;cursor=cursor.Inv)
         {
             if(cursor is 'CaelumStorageFurnitureItem' && cursor.Owner==npc && cursor.Amount>0 && !CaelumContaminationStorage.IsShielded(cursor))
@@ -113,8 +115,8 @@ class CaelumContaminationNPC : Object play
             if(item.ContaminationState!=null)
                 for(int i=0;i<Count;i++)
                     if(Frame.Items[i].Endpoint.Record==item.ContaminationState){row=Frame.Items[i];break;}
-            if(row==null)row=Row();
-            row.Item=item;row.Endpoint.Body=item;row.Endpoint.Record=null;row.Area=area;row.Kind=kind;
+            if(row==null){row=Row();row.Area=area;}
+            row.Item=item;row.Endpoint.Body=item;row.Endpoint.Record=null;row.Kind=kind;
         }
         Frame.Items.Resize(Count);Frame.Immersion(thermal);Frame.ReadLive();
         Body.Contamination=CaelumContaminationStorage.Value(npc);

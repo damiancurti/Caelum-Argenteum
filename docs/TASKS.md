@@ -1,8 +1,8 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.11.3** - 2026-10-30.
+Documentation version: **5.11.4** - 2026-10-30.
 
-## V5.11 active - 5.11.3 (#429-433, 2026-10-30)
+## V5.11 active - 5.11.4 (#429-433, 2026-10-30)
 
 - #431: subsystem profiling and current/full35/reduced5/simplified diagnostic
   comparisons; production runtime unchanged. Numerical accuracy observations
@@ -11,9 +11,17 @@ Documentation version: **5.11.3** - 2026-10-30.
 - #429: formation/admission implementation has passed focused native geometry,
   membership, combat-order, full-package save/migration and campaign checks.
   Source/evidence are ready; author review is deferred to the combined handoff.
-- #430: approved roster, recruitment, persistent death, trust and consent are
-  recorded on its issue. The subcaptain uses Domingo's appearance and 20 in
-  every attribute, not customizable player statistics or ordinary guard 18.
+- #430: unfinished companion implementation on its focused branch. Dialogue
+  administration, native transfers, private trust/consent, following/waiting,
+  cross-map bodies, persistent death and the existing revival service have
+  focused native coverage. Subcaptain uses Domingo and 20 per attribute.
+  Armor/shields are native pieces; selected melee uses the resident catalogue.
+  Remaining: ranged/magic/clothing administration; size compatibility and
+  gift provenance through other split/merge paths; all nine authored recruits,
+  campaign subcaptain spawn,
+  prison extraction/rewards, actual selected-weapon combat, UI visual review,
+  full package and accepted-save/rollback regression. Recheck equipped item
+  state after combat/death and old model-only loadouts before claiming completion.
 - #432: shared climate/pristine/attribute caches pass133 final native assertions.
   Normal siege improves modestly; presentation remains unmeasured for this patch.
 - #433: approved candidate evaluated;14 native wake/reload assertions pass.

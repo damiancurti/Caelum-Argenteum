@@ -1,6 +1,42 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.11.3** - 2026-10-30.
+Documentation version: **5.11.4** - 2026-10-30.
+
+## Companion contract and implementation checkpoint (5.11.4, #430)
+
+The authored roster is the four mansion residents, four freed sewer prisoners
+and the siege subcaptain (Domingo appearance, every attribute20). Recruitment
+is free through dialogue: residents in the mansion, prisoners after release,
+subcaptain after siege start. The party holds eight members including its player.
+Follow/wait/dismiss preserve native bodies and items. Unfinished prisoner escort
+objectives survive dismissal; other dismissed companions wait at their location.
+Mansion narrative protection stays local; campaign death is persistent.
+
+A dead member retains the slot through exactly3 world days, releases it only
+after that deadline, and is never automatically revived/deleted. The existing
+resurrection ability and its requirements remain authoritative. A revived member
+whose slot was released waits if the party is full, until invited with room.
+
+Trust begins at0, caps at100, and gifts add base copper value/1000, retaining
+fractions. Returning and gifting the same item cannot award trust again.
+Companion-owned retrieval uses Charisma and the current social formula with
+difficulty120, reputation and (1+trust/100), capped at100percent. Lent player
+items return without a roll. A refusal persists for that item until trust or
+narrative stage changes. Companions never choose the player's dialogue.
+
+Implemented checkpoint: revisioned party/bond inventory; whole-instance item
+transfers and private records; dialogue order/inventory UI; native travel and
+parking of waiting/dead bodies; armor/shield materialization without changing
+weight or ownership; selected melee via shared resident attack rules. The
+inventory list's E action equips/removes supported pieces; Enter requests or
+gifts, L lends. Consented retrieval removes equipped defense before transfer.
+Ranged/magic/clothing equipment and remaining integration checks are unfinished,
+not silently replaced by invented gear restrictions. Full status: TASKS.
+
+Queries use the bounded nine-identity roster and local placement/visibility.
+Mansion residents register at birth/return. Legacy saves may rebuild the four
+resident references once per map revision; this is not a routine per-NPC scan.
+The previous repeated post-trial Rulo lookup now uses that registry.
 
 ### Distant visual search evaluation (5.11.3, #433)
 

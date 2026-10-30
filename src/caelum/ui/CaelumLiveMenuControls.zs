@@ -209,6 +209,14 @@ class CaelumLiveMenuControls : Object ui
             Row(298);Button("CA_PROPERTY_BUY",0,98,"b",280,available);Button("CA_PROPERTY_RENT",0,114,"r",280,available);
             Row(326);Button("CA_PROPERTY_CROSS",InputEvent.Key_Enter,0,"",280);Button("CA_UI_BACK",InputEvent.Key_Tab,0,"",280);
         }
+        else if(context==host.CTX_COMPANION)
+        {
+            Row(254);Button("CA_COMPANION_JOIN",0,49,"1",138);Button("CA_COMPANION_FOLLOW",0,50,"2",138);
+            Button("CA_COMPANION_WAIT",0,51,"3",138);Button("CA_COMPANION_LEAVE",0,52,"4",138);
+            Row(278);Button("CA_COMPANION_FORMATION",0,102,"f",280);Button("CA_COMPANION_SWITCH",0,105,"i",280);
+            Row(302);Button("CA_COMPANION_TRANSFER",InputEvent.Key_Enter,0,"",180);Button("CA_COMPANION_LOAN",0,108,"l",180);Button("CA_COMPANION_EQUIP",0,101,"e",180);
+            Row(326);Button("CA_COMPANION_PREVIOUS",InputEvent.Key_UpArrow,0,"",180);Button("CA_COMPANION_NEXT",InputEvent.Key_DownArrow,0,"",180);Button("CA_UI_BACK",InputEvent.Key_Tab,0,"",180);
+        }
         else if(context==host.CTX_CLEAN)
         {
             let session=CaelumCleaningSession.Find(user);

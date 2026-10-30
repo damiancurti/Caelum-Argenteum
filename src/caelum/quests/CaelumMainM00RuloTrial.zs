@@ -43,9 +43,13 @@ class CaelumMainM00RuloTrial : Object play
 
     static void GatherParty(CaelumPlayer user, CaelumM00Bull bull)
     {
-        let it = ThinkerIterator.Create("CaelumAnchoredResident"); CaelumAnchoredResident resident;
-        while ((resident = CaelumAnchoredResident(it.Next())) != null)
-            if (resident.StoryAnchored) resident.JoinRuloParty(user, bull);
+        let world=CaelumMainM00QuestController(EventHandler.Find("CaelumMainM00QuestController"));
+        if(world!=null)
+        {
+            world.EnsureResidentRegistry();
+            for(int i=0;i<4;i++)if(world.StoryResidents[i]!=null && !world.StoryResidents[i].bDestroyed)
+                world.StoryResidents[i].JoinRuloParty(user,bull);
+        }
         if (bull != null) bull.RuloPartyPrepared = true;
     }
 
@@ -291,8 +295,10 @@ class CaelumMainM00RuloTrial : Object play
         if (r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_BULL_DEFEATED))
         {
             // También actualizar una victoria 0p que aún espera la charla final.
-            let it = ThinkerIterator.Create("CaelumRulo"); let rulo = CaelumRulo(it.Next());
-            if (rulo != null && rulo.StoryAnchored && rulo.RuloPartyMode == 0) GatherParty(user, bull);
+            if(world!=null)world.EnsureResidentRegistry();
+            let rulo=world!=null ? world.StoryResidents[CaelumConstants.MAIN_M00_RESIDENT_RULO] : null;
+            if (rulo != null && !rulo.bDestroyed && rulo.StoryAnchored && rulo.RuloPartyMode == 0
+                && (rulo.Companion==null || (!rulo.Companion.Parked && !rulo.Companion.DeathRecorded))) GatherParty(user, bull);
             if (level.time % TICRATE == 0) Sync(user);
             return;
         }

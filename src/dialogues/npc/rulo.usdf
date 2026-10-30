@@ -11,6 +11,8 @@ conversation
         name = "$CA_RULO_NAME";
         dialog = "$CA_DLG_M01_RULO_EARLY";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         ifitem
         {
             item = "CaelumM00ArgentoStartedToken";
@@ -25,6 +27,8 @@ conversation
         name = "$CA_RULO_NAME";
         dialog = "$CA_DLG_M01_RULO_RECRUIT";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         ifitem
         {
             item = "CaelumM00RuloConvincedToken";
@@ -61,6 +65,8 @@ conversation
         name = "$CA_RULO_NAME";
         dialog = "$CA_DLG_M01_RULO_CHECK";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         ifitem
         {
             item = "CaelumM00RuloAttemptedToken";
@@ -82,6 +88,8 @@ conversation
         name = "$CA_RULO_NAME";
         dialog = "$CA_DLG_M01_RULO_READ_FAILURE";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         ifitem
         {
             item = "CaelumM00RuloReadToken";
@@ -108,6 +116,8 @@ conversation
         name = "$CA_RULO_NAME";
         dialog = "$CA_DLG_M01_RULO_READ_SUCCESS";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice
         {
             text = "$CA_DLG_M01_RULO_RESPECT";
@@ -123,6 +133,8 @@ conversation
         name = "$CA_RULO_NAME";
         dialog = "$CA_DLG_M01_RULO_STILL_WAITING";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         ifitem
         {
             item = "CaelumM00RuloConvincedToken";
@@ -139,6 +151,8 @@ conversation
         ifitem { item = "CaelumM00RonnieFinishedToken"; amount = 1; }
         link = "rulo_trial_offer";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice { text = "$CA_DLG_M01_WORKSHOPS_ASK"; nextpage = "rulo_workshop"; }
     }
     page
@@ -148,6 +162,8 @@ conversation
         name = "$CA_RULO_NAME";
         dialog = "$CA_DLG_M01_WORKSHOP_RULO";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice { text = "$CA_DLG_M01_GARDEN_ASK"; nextpage = "rulo_resources"; }
     }
     page
@@ -157,6 +173,8 @@ conversation
         name = "$CA_RULO_NAME";
         dialog = "$CA_M01_RONNIE_LOCATION";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
     }
 
     page
@@ -164,6 +182,8 @@ conversation
         pagename = "rulo_trial_offer"; userstring = "rulo_trial_offer";
         name = "$CA_RULO_NAME"; dialog = "$CA_M01_RULO_OFFER";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         ifitem { item = "CaelumM00RuloStartedToken"; amount = 1; }
         link = "rulo_trial_active";
         choice { text = "$CA_M01_RULO_START"; nextpage = "rulo_trial_lesson"; giveitem = "CaelumM00StartRuloAction"; }
@@ -174,6 +194,8 @@ conversation
         pagename = "rulo_trial_active"; userstring = "rulo_trial_active";
         name = "$CA_RULO_NAME"; dialog = "$CA_M01_RULO_PRACTICE";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         ifitem { item = "CaelumM00RuloPracticeToken"; amount = 1; }
         link = "rulo_trial_key";
         choice { text = "$CA_M01_RULO_PREPARE"; nextpage = "rulo_trial_lesson"; giveitem = "CaelumM00StartRuloAction"; }
@@ -185,6 +207,8 @@ conversation
         pagename = "rulo_trial_key"; userstring = "rulo_trial_key";
         name = "$CA_RULO_NAME"; dialog = "$CA_M01_RULO_KEY";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         ifitem { item = "CaelumM00BullDefeatedToken"; amount = 1; }
         link = "rulo_trial_victory";
         choice { text = "$CA_M01_RULO_PREPARE"; nextpage = "rulo_trial_lesson"; giveitem = "CaelumM00StartRuloAction"; }
@@ -195,6 +219,8 @@ conversation
         pagename = "rulo_trial_victory"; userstring = "rulo_trial_victory";
         name = "$CA_RULO_NAME"; dialog = "$CA_M01_RULO_VICTORY";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         ifitem { item = "CaelumM00RuloCompleteToken"; amount = 1; }
         link = "rulo_trial_done";
         choice { text = "$CA_M01_RULO_FINISH"; nextpage = "rulo_trial_done"; giveitem = "CaelumM00FinishRuloAction"; }
@@ -205,6 +231,8 @@ conversation
         pagename = "rulo_trial_done"; userstring = "rulo_trial_done";
         name = "$CA_RULO_NAME"; dialog = "$CA_M01_RULO_DONE";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice { text = "$CA_DLG_M01_WORKSHOPS_ASK"; nextpage = "rulo_workshop"; }
     }
 
@@ -213,6 +241,8 @@ conversation
         pagename = "rulo_trial_lesson"; userstring = "rulo_trial_lesson";
         name = "$CA_RULO_NAME"; dialog = "$CA_M01_RULO_LESSON";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
         choice { text = "$CA_M01_RULO_EQUIVALENTS"; nextpage = "rulo_trial_equivalents"; }
     }
 
@@ -221,6 +251,8 @@ conversation
         pagename = "rulo_trial_equivalents"; userstring = "rulo_trial_equivalents";
         name = "$CA_RULO_NAME"; dialog = "$CA_M01_RULO_EQUIVALENT_TEXT";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
+
     }
 
 }
