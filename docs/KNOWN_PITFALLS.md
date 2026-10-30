@@ -8,7 +8,7 @@ Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED; #431, 2026-10-30,
 5.11.0 diagnostic patch against accepted5.10.3. No author acceptance or
-production thermal simplification. Evidence: assets/validation_5110/summary.json
+production thermal simplification. Evidence: assets/validation_v5_11_0/summary.json
 and presentation.json; native environment/configuration retained there.
 
 Symptom: profiling NPCStep inclusively can misidentify contamination exposure
@@ -34,6 +34,11 @@ mansion/sewer/city/ground-facing references and approved siege census; never
 resume retired simultaneous-attacker scales. Preserve numerical and native
 checks separately from author acceptance.
 
+
+Evidence directories use the unambiguous `validation_v5_11_0` spelling. The
+older `validation_5110` belongs to5.1.10; concatenating version digits collides.
+The original historical report is preserved byte-for-byte. New work must check
+existing provenance before choosing an evidence directory.
 
 ## CA-KP-191 - Share spatial candidates without sharing perception
 

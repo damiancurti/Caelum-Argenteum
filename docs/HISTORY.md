@@ -7,7 +7,7 @@ Documentation version: **5.11.0** - 2026-10-30.
 Only two required diagnostic release labels change in src; gameplay, assets,
 save schema and balance are unchanged. The immutable accepted 5.10.3 package remains the measured baseline:
 SHA256 4c9830777147237c5797c646d10bd1f00f2379369ddbe50134049dc64f13818d.
-Evidence: assets/validation_5110/summary.json and presentation.json, compressed
+Evidence: assets/validation_v5_11_0/summary.json and presentation.json, compressed
 raw logs/CSVs/configurations, deterministic overlay generators and native grid.
 No V5.11 manual acceptance or merge is claimed; the author requested one grouped
 manual handoff after all #429-433 work is complete.

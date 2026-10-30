@@ -14,7 +14,7 @@ NPC subsystems and thermal alternatives using the accepted 5.10.3 runtime.
 The diagnostic variants are not production gameplay changes. Formation and
 companion work (#429/#430) and measured optimizations (#432/#433) remain separate
 issues. No V5.11 author acceptance or merge is claimed. Native evidence and
-limitations: `assets/validation_5110/summary.json`; conclusions: HISTORY.
+limitations: `assets/validation_v5_11_0/summary.json`; conclusions: HISTORY.
 Manual checks will be grouped when the entire version is ready, as requested.
 
 **V5.10 is complete and author-accepted (2026-10-30).** Issues #425-428 are

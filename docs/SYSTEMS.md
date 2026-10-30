@@ -12,7 +12,7 @@ work. Diagnostic full-35-Hz, five-second and one-step quadrature variants are
 not approved production rules. Numerical comparisons preserve elapsed energy,
 record moisture/hydration, exposure, damage dose and threshold timing; retain
 the current solver. Measurements and their limits are in HISTORY and
-assets/validation_5110. No save schema or migration is changed here.
+assets/validation_v5_11_0. No save schema or migration is changed here.
 
 ## 5.10.3 / #428 - Audible reports and leader orders
 

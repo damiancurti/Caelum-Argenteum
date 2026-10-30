@@ -6,7 +6,7 @@ Documentation version: **5.11.0** - 2026-10-30.
 
 - #431: subsystem profiling and current/full35/reduced5/simplified diagnostic
   comparisons; production runtime unchanged. Numerical accuracy observations
-  and immutable run evidence are in validation_5110. Presentation coverage and
+  and immutable run evidence are in validation_v5_11_0. Presentation coverage and
   remaining limitations must be reported separately from render callbacks.
 - #429: focused formation/admission implementation and native fixtures in
   progress; no completion or author acceptance claimed by #431.
