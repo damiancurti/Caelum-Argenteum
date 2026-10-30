@@ -5,8 +5,7 @@ Documentation version: **5.11.2** - 2026-10-30.
 **V5.11 active (5.11.2/#432):** shared climate/attribute caches validated (133 native checks).
 #431 PR575; #429 PR576. #430 companions/#433 evaluation remain.
 Manual handoff after completion; unaccepted/unmerged.
-Keep-awake PID42276; stop build/issue429/keep-awake-511-20261030.stop
-in issue429 worktree. Release on return.
+Keep-awake released. #429 corridor correction included; retest pending.
 **V5.10 accepted:** #425-428/PR570-573, CA425-01..CA428-01; HISTORY.
 Siege stalls persist. Keep-awake released.
 

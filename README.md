@@ -16,6 +16,8 @@ authoritative. #429 formations and #431 profiling have separate PRs; #430/#433
 remain in progress. 133 full-package native/reload assertions pass. Siege costs improve modestly;
 large stalls remain. No author acceptance or merge is claimed. Manual checks will be grouped when the entire version is ready.
 
+The #429 corridor-exit correction is included; its author retest remains pending.
+
 **V5.10 is complete and author-accepted (2026-10-30).** Issues #425-428 are
 closed and their focused PRs #570-573 are merged into main with commit ancestry
 preserved. Vision, anonymous noise, private memory/search and audible reports/
