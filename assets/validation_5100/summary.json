@@ -1,0 +1,36 @@
+{
+  "issue": 425,
+  "version": "5.10.0",
+  "date": "2026-10-30",
+  "native_assertions": 53,
+  "runs": [
+    {
+      "run": "release-save",
+      "passes": 32,
+      "elapsed_seconds": 16.137
+    },
+    {
+      "run": "release-reload",
+      "passes": 15,
+      "elapsed_seconds": 13.607
+    },
+    {
+      "run": "release-migration",
+      "passes": 5,
+      "elapsed_seconds": 8.591
+    },
+    {
+      "run": "release-rollback",
+      "passes": 1,
+      "elapsed_seconds": 8.159
+    }
+  ],
+  "full_package": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue425\\current\\caelum_argenteum_dev.pk3",
+  "full_package_sha256": "aec90bac1ac4f06693196917ebd7d68f05b860e9e11ab9c8ceba93ebee3b652c",
+  "limits": [
+    "No author acceptance yet.",
+    "Combined V5.10 campaign and frame-tail comparisons remain pending after #426-428.",
+    "Iteration overlays were excluded from all release-* current runs."
+  ],
+  "log_normalization": "UTF-8, LF, trailing whitespace removed; raw logs retained in local build/issue425."
+}

@@ -134,7 +134,7 @@ class CaelumBull : CaelumCombatActor
         let bull=CaelumBull(self);
         if(bull==null || bull.PulseResourceRecovery())return;
         if(!bull.BullChargeInterrupted() && bull.target!=null && bull.target.health>0
-            && bull.Distance2D(bull.target)<=bull.MaxTargetRange && bull.CheckSight(bull.target))
+            && bull.Distance2D(bull.target)<=bull.MaxTargetRange && CaelumVisualPerception.Identify(bull,bull.target))
         {bull.SetState(bull.MeleeState);return;}
         bull.A_CaelumBudgetedChase();
     }
@@ -154,7 +154,7 @@ class CaelumBull : CaelumCombatActor
         CaelumBull bull = CaelumBull(self);
         if (bull == null) { return; }
         if(bull.ResourceRecoveryActive() || bull.target==null || bull.target.health<=0
-            || bull.Distance2D(bull.target)>bull.MaxTargetRange || !bull.CheckSight(bull.target))return;
+            || bull.Distance2D(bull.target)>bull.MaxTargetRange || !CaelumVisualPerception.Identify(bull,bull.target))return;
         if (!bull.BeginCaelumDiagnosticAttack())
         {
             bull.StopBullCharge();
@@ -226,7 +226,7 @@ class CaelumBull : CaelumCombatActor
         if (BullChargeActive)
         {
             if(BullChargeInterrupted() || target==null || target.health<=0
-                || Distance2D(target)>MaxTargetRange || !CheckSight(target))
+                || Distance2D(target)>MaxTargetRange || !CaelumVisualPerception.Identify(self,target))
             {StopBullCharge();if(health>0 && !BullChargeInterrupted())SetState(SeeState);}
         }
         if(BullChargeActive)
@@ -239,7 +239,7 @@ class CaelumBull : CaelumCombatActor
             }
             else
             {
-                A_FaceTarget();
+                A_CaelumFacePerceivedTarget();
                 BullChargeSpeed=Min(GetBullRunningSpeed(),BullChargeSpeed+CaelumBullRules.SpeedPerTic());
                 double impaired=Clamp(CombatHealthPerformanceMultiplier*CaelumThermalEffects.Speed(self)
                     *(ElementalStatus!=null ? ElementalStatus.GetMovementMultiplier() : 1),0.0,1.0);

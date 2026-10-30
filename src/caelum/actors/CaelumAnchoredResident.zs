@@ -62,7 +62,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
     {
         if (!EscortPrisonerPort || health <= 0
             || CaelumFactionData.ConfirmedPrisonerFaction(EscortPrisonerId) < 0) return;
-        if (!CanBeFactionTarget(FactionTarget)) FactionTarget = null;
+        if (!CanBeFactionTarget(FactionTarget) || !CaelumVisualPerception.Identify(self,FactionTarget)) FactionTarget = null;
         // Sólo tres representantes canónicos y MAXPLAYERS; cadencia de su
         // locomoción existente. Nunca recorrer actores ni inferir facción visual.
         if (FactionTarget == null && level.time % CaelumConstants.PRISONER_WALK_STATE_TICS == 0)
@@ -71,7 +71,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
             {
                 if (!playeringame[p]) continue;
                 let user = CaelumPlayer(players[p].mo);
-                if (CanBeFactionTarget(user) && CheckSight(user))
+                if (CanBeFactionTarget(user) && CaelumVisualPerception.Identify(self,user))
                 { FactionTarget = user; break; }
             }
         }
@@ -308,23 +308,9 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
     Actor FindEscortThreat()
     {
         if(CaelumTheftWitnesses.HasTarget(self))return TheftTarget;
-        BlockThingsIterator iterator = BlockThingsIterator.Create(
-            self, CaelumConstants.PRISONER_THREAT_RADIUS);
-        while (iterator.Next())
-        {
-            Actor candidate = iterator.thing;
-            if (candidate == null || candidate == self
-                || candidate.health <= 0 || !candidate.bShootable
-                || !candidate.bIsMonster || IsFriend(candidate)
-                || candidate is "CaelumZupayColossus")
-            { continue; }
-            if (candidate.Distance2D(self)
-                > CaelumConstants.PRISONER_THREAT_RADIUS
-                || !CheckSight(candidate))
-            { continue; }
-            return candidate;
-        }
-        return null;
+        let candidate=CaelumVisualPerception.Candidate(self);
+        if(candidate is "CaelumZupayColossus")return null;
+        return CaelumVisualPerception.Identify(self,candidate) ? candidate : null;
     }
 
     void InterruptEscortConversation()

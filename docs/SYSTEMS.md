@@ -1,6 +1,49 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.9.7** - 2026-10-29.
+Documentation version: **5.10.0** - 2026-10-30.
+
+## 5.10.0 / #425 - Visual observation and private recognition
+
+Approved by the author on 2026-10-30: all observers have a 180-degree horizontal
+field and 32 m base sight at Insight 0, multiplied by the existing M2 curve.
+Ambient sector light scales range linearly from 0.10 at light 0 to 1 at 255.
+Visible height / 56 MU scales range; effective Agility/Hunter stealth reduces
+it by its percentage. Crouching changes visible height once. Cosmetic dynamic
+flashes do not contribute in this initial delivery. Native geometric sight is
+required. Physical body contact reveals even behind the observer or at full
+stealth. Sleeping, stunned, dormant and dead observers cannot observe.
+
+A previously unknown body requires two active seconds of continuous visual
+observation. General suspicion is 0-100; after two seconds without evidence it
+falls by 20 per active second. Contact or actual external damage alerts at
+once; damage identifies its source only through sight or body contact. The
+source pointer of an unseen projectile is not evidence. Noise may increase
+alert in #426 but will not shorten the two-second identity check (separately
+approved). Observation never supplies a secret affiliation or creates a hostile
+relationship. Existing theft, escort, faction and combat authority remain.
+
+Final attack preparation/releases, facing, continuous breath, bull charges,
+resident tools and carbine actions use the same perception gate. A witnessed
+crime first records a private suspect; hostility begins only after recognition. Native combat acquisition no longer consumes the engine's anonymous-area
+sound target as identity. Navigation markers retain their route semantics.
+Cannons observe through living assigned operators at their actual positions,
+using each operator's Insight/field, and retain barrel-origin ballistic sight.
+An uncrewed cannon cannot acquire new observations. A requested shot retains its
+recorded aim point rather than tracking an unseen body's current coordinates.
+
+Visual state revision 1 is private and saved. Old saves explicitly reset prior
+target/LastEnemy recognition, as the author requested, without resetting health,
+resources, belongings or route goals. Initialization is idempotent and does not
+overwrite evidence obtained before PostBeginPlay. Original saves/packages remain
+the reversible rollback path. Thirty-second remembered positions/search belong
+to #427; anonymous sounds to #426; audible leader/member orders to #428.
+
+Spatial candidate queries replace per-NPC siege defender-roster scans. Their
+upper height bound reuses the already-authorized shared combatant census;
+stationary NOBlockmap guards reuse its typed fallback list. No new routine
+ThinkerIterator scan is introduced. The >=500 census threshold is unchanged.
+Shared siege candidates in this patch do not grant identification to followers;
+the completed leader order mechanism is a separate #428 dependency.
 
 ## 5.9.7 / #423 - Cosmetic port wardrobe ownership
 

@@ -216,7 +216,7 @@ class CaelumRedemption : Object play
     static bool Follow(CaelumCombatActor body)
     {
         let caster=Commander(body);if(caster==null || body.target!=null)return false;
-        body.A_Look();if(body.target!=null)return false;
+        CaelumVisualPerception.Look(body);if(body.target!=null)return false;
         vector2 delta=caster.Pos.XY-body.Pos.XY;double distance=delta.Length();
         double gap=distance-body.Radius-caster.Radius;
         if(gap<=body.Speed)return true;

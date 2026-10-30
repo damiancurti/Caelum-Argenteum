@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.9.7** - 2026-10-29.
+Documentation version: **5.10.0** - 2026-10-30.
+
+## V5.10 in progress - 5.10.0 (#425)
+
+The visual-perception patch is implemented; 53 full-package native assertions
+and static validation pass. Combined campaign/performance checks remain pending.
+Author-approved values and migration are consolidated in SYSTEMS; evidence is
+recorded in validation_5100. #426 sound, #427 memory/search and #428
+reports/leader orders remain separate dependent patches. V5.10 is not complete
+or author-accepted. The author requested one final grouped manual-test handoff.
 
 ## V5.9 completion - 5.9.7 (2026-10-30, #403)
 

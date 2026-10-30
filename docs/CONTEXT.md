@@ -1,14 +1,14 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.9.7** - 2026-10-29.
+Documentation version: **5.10.0** - 2026-10-30.
 
-**V5.9 complete at 5.9.7, author-accepted 2026-10-30.**
-#418 coordination, #419 private dialogue, #420 factions/joining, #421 story,
-#422 house/siege quests, #423 wardrobes and #424 services are integrated.
-Focused PRs #561-568 are merged into main; issues #418-424 are closed.
-CA418-01 through CA424-01 passed author review; origin records: HISTORY.
-pending_test.txt is empty. Evidence: validation_590-597. Next: V5.10.
-Closure changes no gameplay or rendering guarantees.
+**V5.10 active, 5.10.0/#425:** vision/recognition/operator gates implemented;
+validation_5100 native/save/rollback:53 PASS; performance pending. #426 noise, #427 memory and #428
+reports/orders pending. Author away; local temporary keep-awake active. Grouped
+manual handoff only after completion; no V5.10 author acceptance.
+
+**V5.9 accepted/merged:** #418-424 closed, PR561-569; CA418-01..CA424-01
+confirmed 2026-10-30 in HISTORY. validation_590-597; pending_test.txt empty.
 
 **V5.8 accepted/integrated:** #410-417/#496/#502, 5.8.56, 2026-10-29.
 Acceptance IDs/dates: HISTORY. No outstanding author checks at that closure.

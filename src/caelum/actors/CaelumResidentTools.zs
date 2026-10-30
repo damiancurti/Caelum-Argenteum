@@ -77,14 +77,14 @@ class CaelumResidentTools : Object play
     {
         if(!Available(item))return false;
         Cancel();ActiveItem=item;item.Equipped=true;Owner.CombatActiveTool=item;
-        Owner.Vel.X=Owner.Vel.Y=0;Owner.A_FaceTarget();
+        Owner.Vel.X=Owner.Vel.Y=0;Owner.A_CaelumFacePerceivedTarget();
         Owner.SetStateLabel("ResidentToolUse");return true;
     }
 
     void Aim()
     {
-        if(Owner.target==null)return;
-        Owner.A_FaceTarget();
+        if(Owner.target==null || !CaelumVisualPerception.Identify(Owner,Owner.target))return;
+        Owner.A_CaelumFacePerceivedTarget();
         vector3 aim=Owner.target.Pos+(0,0,Owner.target.Height/2)
             -Owner.Pos-(0,0,Owner.Height/2);
         Owner.Pitch=-VectorAngle(aim.XY.Length(),aim.Z);
@@ -98,8 +98,8 @@ class CaelumResidentTools : Object play
 
     bool AimBolas()
     {
-        if(Owner==null || Owner.target==null || !Owner.CheckSight(Owner.target))return false;
-        Owner.UpdateActorOffensiveStatistics();Owner.A_FaceTarget();
+        if(Owner==null || Owner.target==null || !CaelumVisualPerception.Identify(Owner,Owner.target))return false;
+        Owner.UpdateActorOffensiveStatistics();Owner.A_CaelumFacePerceivedTarget();
         vector3 origin=Owner.Pos+(Cos(Owner.Angle)*32,Sin(Owner.Angle)*32,Owner.Height*0.65);
         vector3 delta=Owner.target.Pos+(0,0,Owner.target.Height/2)-origin;
         double distance=delta.XY.Length();
@@ -116,7 +116,7 @@ class CaelumResidentTools : Object play
     {
         if(CaelumBattleCry.Active(Owner))return false;
         if(Owner==null || !Owner.IsRuloPartyFighting() || Owner.target==null
-            || CaelumBolas.Restrained(Owner) || CaelumBolas.Interrupted(Owner))return false;
+            || CaelumBolas.Restrained(Owner) || CaelumBolas.Interrupted(Owner) || !CaelumVisualPerception.Identify(Owner,Owner.target))return false;
         if(Phase!=IDLE)return true;
         RecoverBolas();
         let victim=CaelumCombatActor(Owner.target);
@@ -268,7 +268,7 @@ class CaelumResidentTools : Object play
     void Tick()
     {
         if(Owner==null)return;
-        if(CaelumBattleCry.Active(Owner) || !Owner.IsRuloPartyFighting() || CaelumBolas.Restrained(Owner) || CaelumBolas.Interrupted(Owner))
+        if(CaelumBattleCry.Active(Owner) || !Owner.IsRuloPartyFighting() || CaelumBolas.Restrained(Owner) || CaelumBolas.Interrupted(Owner) || (Phase!=IDLE && !CaelumVisualPerception.Identify(Owner,Owner.target)))
         {
             if(Phase!=IDLE)
             {

@@ -24,6 +24,7 @@ class CaelumCannon : CaelumHostileMachine
 {
     enum CannonPhase { LOADING, LOADED, LAUNCH, RECOVERY }
     Array<CaelumCombatActor> Operators;
+    Array<CaelumVisualEvidence> OperatorPerception;
     Array<CaelumCannonBlock> Blocks;
     CaelumCannonFrame Frame;
     CaelumCannonBarrel Barrel;
@@ -85,6 +86,45 @@ class CaelumCannon : CaelumHostileMachine
         return true;
     }
 
+    bool Watching(CaelumCombatActor body)
+    {
+        let resident=CaelumPortDefender(body);
+        return CaelumVisualPerception.Living(body) && body.bFriendly==Defending
+            && (body.Pos-Pos).Length()<=GuardRadius
+            && !(resident!=null && resident.Residence!=null && resident.Residence.Suspended);
+    }
+
+    double ObservationRadius()
+    {
+        double range=0;
+        for(int i=0;i<Operators.Size();i++)if(Watching(Operators[i]))
+            range=Max(range,CaelumVisualPerception.QueryRadius(Operators[i])+GuardRadius);
+        return range;
+    }
+
+    bool OperatorsSee(Actor candidate)
+    {
+        for(int i=0;i<Operators.Size();i++)if(Watching(Operators[i])
+            && CaelumVisualPerception.CanSee(Operators[i],candidate))return true;
+        return false;
+    }
+
+    bool OperatorsIdentify(Actor candidate)
+    {
+        bool identified=false;
+        for(int i=0;i<Operators.Size();i++)
+        {
+            if(i>=OperatorPerception.Size())OperatorPerception.Push(null);
+            let body=Operators[i];
+            if(!Watching(body))continue;
+            let record=OperatorPerception[i];
+            if(record==null || record.Witness!=body)
+            {record=new("CaelumVisualEvidence");record.Initialize();record.Witness=body;OperatorPerception[i]=record;}
+            if(record.Observe(body,candidate))identified=true;
+        }
+        return identified;
+    }
+
     int OperatorsPresent(bool attacking=false)
     {
         int count=0;
@@ -128,6 +168,7 @@ class CaelumCannon : CaelumHostileMachine
         if(OperatorsPresent()>0 && OperatorsPresent(true)==0)return false;
         // El tiro pendiente conserva su punto y blanco; no se reasigna a mitad de carga.
         if(Requested)return true;
+        if(intended!=null && !OperatorsIdentify(intended))return false;
         AimPoint=point; IntendedTarget=intended; Requested=true;
         return true;
     }
