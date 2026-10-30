@@ -13,7 +13,8 @@ dialogue administration, gifts/loans/social retrieval and saved private trust.
 Actual bodies and inventory travel; waiting/dead bodies park against their
 source map. Armor and subcaptain shield/sidearm models become native pieces
 once, preserving wear/contamination and avoiding duplicate carried weight.
-Selected melee reuses resident tools; clothing paths remain unfinished.
+Selected melee reuses resident tools; provided clothing uses native layers,
+existing thermal rules and size compatibility, without inventing initial loot.
 Old player saves gain no automatic recruits and remain archived for rollback.
 
 Ranged follow-up: carbine-c, shotgun-a, bow-a and crossbow-a each pass14 native
@@ -40,6 +41,19 @@ production uses local queries. This is a correctness check, not a frame-time
 claim. Magic-save-a passes7 preparation/snapshot checks and magic-reload-a7
 further checks: the same saved preparation finishes exactly once. Current
 magic-compile-a retains the27 core checks. Author review remains pending.
+
+Campaign/clothing follow-up: campaign-prisoners-a13 PASS uses the four actual
+MAP02 prisoners, rejects captivity recruitment and joins their exact freed
+bodies. Campaign-arrival-a14 PASS transfers them into MAP03, registers their
+actual bodies for testimony and preserves one-time rewards. Campaign-captain-b5
+PASS exercises the real controller's authored spawn gate without deploying
+another army. The initial fixture held an incomplete SiegeStarted flag across
+tics and entered uninitialized cannon deployment; b isolates the gate within
+one callback. That failed fixture is retained and is not a production result.
+Clothing-native-a40 PASS comprises27 core checks and13 regional garment/size,
+wetness conservation, runoff, native contamination and armor-layer checks.
+Agent evidence only; no author acceptance or manual handoff yet.
+Temporary keep-awake PID42276 was released when the author returned.
 
 Focused overlay evidence: equipment-a26 PASS; death-a29 PASS; revival-a5 PASS.
 Earlier inventory reload2 PASS and travel-a19 PASS preceded equipment binding.

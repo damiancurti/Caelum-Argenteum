@@ -13,8 +13,9 @@ it, then rebuild with `run_dev.bat` as described below.
 companion checkpoint: dialogue administration, native item transfers, trust,
 orders, cross-map bodies and persistent death/revival have focused native tests.
 Armor, shields, selected melee, finite-ammunition ranged weapons and magic use native inventory.
-Clothing equipment, campaign integration, legacy/full-package
-verification and the final manual handoff remain pending. Separate PRs cover
+Clothing/sizes and authored prisoner/subcaptain campaign checks now pass.
+Jewelry, gift provenance through split/merge paths, remaining campaign and
+legacy/full-package verification and the final manual handoff remain pending. Separate PRs cover
 #429 formations, #431 profiling, #432 derived caches and the #433 evaluation
 (no measured gain, no production adoption). No V5.11 acceptance or merge is claimed.
 

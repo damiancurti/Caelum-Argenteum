@@ -103,6 +103,8 @@ class CaelumCompanionBond : Object play
         }
         let world=CaelumMainM00QuestController(EventHandler.Find("CaelumMainM00QuestController"));
         if(world!=null && resident!=null)world.RegisterResident(resident);
+        let port=CaelumSiegeEvents(EventHandler.Find("CaelumSiegeEvents"));
+        if(port!=null && resident!=null)port.RegisterPortPerson(resident);
         CaelumContaminationAbsence.Restore(Body,Leader());Reconcile();return true;
     }
 }

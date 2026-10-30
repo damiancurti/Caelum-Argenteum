@@ -117,6 +117,13 @@ class CaelumContaminationNPC : Object play
                     if(Frame.Items[i].Endpoint.Record==item.ContaminationState){row=Frame.Items[i];break;}
             if(row==null){row=Row();row.Area=area;}
             row.Item=item;row.Endpoint.Body=item;row.Endpoint.Record=null;row.Kind=kind;
+            if(kind==CaelumConstants.EQUIPMENT_KIND_CLOTHING && item.Equipped && npc.Companion!=null
+                && npc.Companion.Loadout!=null && npc.Companion.Loadout.Clothing[item.ArmorSlot]==item)
+            {
+                row.Worn=true;row.Slot=item.ArmorSlot;row.Area=Frame.BodyArea[row.Slot];
+                // Row puede reutilizar un registro: localizarlo en el conjunto acotado.
+                for(int i=0;i<Count;i++)if(Frame.Items[i]==row){Frame.Clothes[row.Slot]=i;break;}
+            }
         }
         Frame.Items.Resize(Count);Frame.Immersion(thermal);Frame.ReadLive();
         Body.Contamination=CaelumContaminationStorage.Value(npc);

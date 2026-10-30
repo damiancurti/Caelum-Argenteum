@@ -30,8 +30,13 @@ parking of waiting/dead bodies; armor/shield materialization without changing
 weight or ownership; selected melee via shared resident attack rules. The
 inventory list's E action equips/removes supported pieces; Enter requests or
 gifts, L lends. Consented retrieval removes equipped defense before transfer.
-Clothing equipment and remaining integration checks are unfinished,
-not silently replaced by invented gear restrictions. Full status: TASKS.
+Provided clothing uses native regional layers and existing thermal materials.
+Moisture and contamination remain on the actual garments; outer armor follows
+the current layering rule. Recruitment retains implicit authored clothing
+without minting new inventory or loot. Once a region has been administered,
+removing its garment exposes that region. Sizes reuse the existing seven body
+heights and equipment compatibility table; an incompatible item cannot displace
+the current one. Jewelry and remaining integration checks are unfinished; TASKS.
 
 Selected carbine, shotgun, bow and crossbow use the existing shared catalogues,
 physical native ammunition and owner resources. Reloads are interruptible,

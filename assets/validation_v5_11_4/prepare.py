@@ -17,10 +17,11 @@ files[name]+=b'\n#include "caelum/equipment/CaelumCompanionLoadout.zs"\n'
 files[name]+=b'\n#include "caelum/equipment/CaelumCompanionRanged.zs"\n'
 files[name]+=b'\n#include "caelum/equipment/CaelumCompanionMagic.zs"\n'
 if args.full:files={}
-files['ZSCRIPT']=b'version "4.14"\n#include "checks.zs"\n#include "weapon_checks.zs"\n'
+files['ZSCRIPT']=b'version "4.14"\n#include "checks.zs"\n#include "weapon_checks.zs"\n#include "campaign_checks.zs"\n'
 files['checks.zs']=(Path(__file__).parent/'checks.zs').read_bytes()
 files['weapon_checks.zs']=(Path(__file__).parent/'weapon_checks.zs').read_bytes()
-files['MAPINFO']=b'GameInfo { AddEventHandlers="CA430Checks", "CA430WeaponChecks" }\n'
+files['campaign_checks.zs']=(Path(__file__).parent/'campaign_checks.zs').read_bytes()
+files['MAPINFO']=b'GameInfo { AddEventHandlers="CA430Checks", "CA430WeaponChecks", "CA430CampaignChecks" }\n'
 with zipfile.ZipFile(OUT/('full-checks.pk3' if args.full else 'checks.pk3'),'w',zipfile.ZIP_STORED) as z:
  for name,data in sorted(files.items()):z.writestr(zipfile.ZipInfo(name,(2000,1,1,0,0,0)),data)
 print('Prepared companion native fixture.')

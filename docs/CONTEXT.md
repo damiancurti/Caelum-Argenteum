@@ -6,8 +6,7 @@ Documentation version: **5.11.4** - 2026-10-30.
 #431/PR575; #429/PR576; #432/PR577; #433/PR578 (no candidate adoption).
 #430/PR579: bonds/UI/trust/travel/death/gear/ranged/magic; validation_v5_11_4; TASKS.
 Manual handoff after completion; unaccepted/unmerged.
-Keep-awake PID42276; stop build/issue429/keep-awake-511-20261030.stop
-in issue429 worktree. Release on return.
+Temporary keep-awake released on author return, 2026-10-30.
 **V5.10 accepted:** #425-428/PR570-573, CA425-01..CA428-01; HISTORY.
 Siege stalls persist. Keep-awake released.
 

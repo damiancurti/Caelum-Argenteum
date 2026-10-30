@@ -125,6 +125,9 @@ class CaelumThermalBody : Object play
     static int Material(Actor body,int slot)
     {
         if(FurryAnimal(body))return -1;
+        let companion=CaelumCombatActor(body);
+        if(companion!=null && companion.Companion!=null && companion.Companion.Loadout!=null)
+            return companion.Companion.Loadout.ThermalMaterial(slot);
         let piece=EquippedPiece(body,slot);
         if(piece!=null && piece.Equipped && !piece.InMagicBox)
             return CaelumThermalData.MaterialForArmor(piece.ItemType);
@@ -142,6 +145,9 @@ class CaelumThermalBody : Object play
 
     static double Water(Actor body,CaelumThermalState thermal,int slot)
     {
+        let companion=CaelumCombatActor(body);
+        if(companion!=null && companion.Companion!=null && companion.Companion.Loadout!=null)
+            return companion.Companion.Loadout.Water(thermal,slot);
         let user=CaelumPlayer(body);
         if(CaelumClothing.Converted(user))return CaelumClothing.Water(user,thermal,slot);
         let piece=EquippedPiece(body,slot);
@@ -152,6 +158,9 @@ class CaelumThermalBody : Object play
     static void SetWater(Actor body,CaelumThermalState thermal,int slot,double kg)
     {
         kg=Max(0.0,kg);
+        let companion=CaelumCombatActor(body);
+        if(companion!=null && companion.Companion!=null && companion.Companion.Loadout!=null)
+        {companion.Companion.Loadout.SetWater(thermal,slot,kg);return;}
         let user=CaelumPlayer(body);
         if(CaelumClothing.Converted(user)){CaelumClothing.SetWater(user,thermal,slot,kg);return;}
         let piece=EquippedPiece(body,slot);

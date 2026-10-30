@@ -6,6 +6,8 @@ class CaelumCompanionLoadout : Object play
     CaelumCombatActor Body;
     int Revision;
     CaelumEquipmentItem Armor[4];
+    CaelumEquipmentItem Clothing[4];
+    bool ClothingManaged[4];
     CaelumEquipmentItem ShieldItem,SidearmItem;
     CaelumShieldModel Shield;
     CaelumWeaponModel Sidearm;
@@ -105,10 +107,63 @@ class CaelumCompanionLoadout : Object play
         return Body.CombatActiveTool==null;
     }
 
+    bool Fits(CaelumEquipmentItem item)
+    {
+        if(item.EquipmentKind==CaelumConstants.EQUIPMENT_KIND_AMULET
+            || item.EquipmentKind==CaelumConstants.EQUIPMENT_KIND_SEAL)return true;
+        // Invertir las siete alturas existentes, sin otra tabla de talles.
+        let dimensions=new("CaelumDerivedStats");int tier=1;double best=double.MAX;
+        for(int i=1;i<=7;i++)
+        {
+            double distance=Abs(Body.GetPhysiologicalHeight()-dimensions.GetActorHeightForTier(i));
+            if(distance<best){best=distance;tier=i;}
+        }
+        return CaelumEquipmentRules.IsSizeCompatible(item.EquipmentSize,tier);
+    }
+
+    int ThermalMaterial(int slot)
+    {
+        if(Armor[slot]!=null)return CaelumThermalData.MaterialForArmor(Armor[slot].ItemType);
+        if(Clothing[slot]!=null)return CaelumClothingData.THERMAL_FIRST+Clothing[slot].ItemType;
+        // La ropa implicita anterior no se convierte en botin inventado.
+        return ClothingManaged[slot] ? -1 : CaelumThermalData.LIGHT_CLOTH;
+    }
+    double Water(CaelumThermalState thermal,int slot)
+    {
+        return thermal.ActorWaterKg[slot]+(Clothing[slot]!=null?Clothing[slot].ThermalWaterKg:0)
+            +(Armor[slot]!=null?Armor[slot].ThermalWaterKg:0);
+    }
+    void SetWater(CaelumThermalState thermal,int slot,double kg)
+    {
+        let garment=Clothing[slot];let armor=Armor[slot];
+        double total=CaelumThermalData.WaterCapacityKgPerArea(ThermalMaterial(slot));
+        double inner=garment==null && ClothingManaged[slot] ? 0 : armor==null ? total
+            : Min(total,CaelumThermalData.WaterCapacityKgPerArea(CaelumThermalData.LIGHT_CLOTH));
+        double fraction=total>0 ? inner/total : 0;
+        if(garment!=null)garment.ThermalWaterKg=kg*fraction;
+        if(armor!=null)armor.ThermalWaterKg=kg*(1-fraction);
+        thermal.ActorWaterKg[slot]=garment==null ? (armor==null ? kg : kg*fraction) : 0;
+        CaelumActorMaintenance.InventoryChanged(Body);
+    }
+    void ReconcileWater()
+    {
+        let thermal=CaelumThermalBody.Get(Body,false);if(thermal==null || thermal.SurfaceArea<=0)return;
+        for(int slot=0;slot<4;slot++)
+        {
+            double before=Water(thermal,slot);
+            double capacity=thermal.SurfaceArea*thermal.Coverage[slot]
+                *CaelumThermalData.WaterCapacityKgPerArea(ThermalMaterial(slot));
+            double after=Min(before,capacity);thermal.ClothingRunoffKg+=before-after;
+            SetWater(thermal,slot,after);
+        }
+    }
+
     bool Unequip(CaelumEquipmentItem item)
     {
         if(item==null || item.Owner!=Body || !CanChange())return false;
         Sync();
+        for(int slot=0;slot<4;slot++)if(Clothing[slot]==item)
+        {Clothing[slot]=null;item.Equipped=false;ReconcileWater();CaelumActorMaintenance.InventoryChanged(Body);return true;}
         if(SelectedWeapon==item)
         {SelectedWeapon=null;Tools.Cancel();if(Ranged!=null)Ranged.CancelReload();item.Equipped=false;ManualWeapon=true;return true;}
         if(item==ShieldItem)
@@ -130,7 +185,7 @@ class CaelumCompanionLoadout : Object play
             Body.CombatArmor.ArmorType[slot]=CaelumConstants.ARMOR_TYPE_BASE_CLOTHING;
             Body.CombatArmor.Tier[slot]=1;Body.CombatArmor.Durability[slot]=0;
             Body.CombatArmor.ContaminationState[slot]=null;
-            CaelumActorMaintenance.InventoryChanged(Body);return true;
+            ReconcileWater();CaelumActorMaintenance.InventoryChanged(Body);return true;
         }
         return !item.Equipped;
     }
@@ -139,6 +194,14 @@ class CaelumCompanionLoadout : Object play
     {
         if(item==null || item.Owner!=Body || item.InMagicBox || !CanChange())return false;
         if(item.Equipped)return Unequip(item);
+        if(!Fits(item))return false;
+        if(item.EquipmentKind==CaelumConstants.EQUIPMENT_KIND_CLOTHING)
+        {
+            int region=item.ArmorSlot;if(region<0 || region>=4)return false;
+            if(Clothing[region]!=null && !Unequip(Clothing[region]))return false;
+            Clothing[region]=item;ClothingManaged[region]=true;item.Equipped=true;
+            ReconcileWater();CaelumActorMaintenance.InventoryChanged(Body);return true;
+        }
         if(item.EquipmentKind==CaelumConstants.EQUIPMENT_KIND_WEAPON)
         {
             if(SidearmItem!=null && !Unequip(SidearmItem))return false;
@@ -166,7 +229,7 @@ class CaelumCompanionLoadout : Object play
         Body.CombatArmor.ArmorType[slot]=item.ItemType;Body.CombatArmor.Tier[slot]=item.Tier;
         Body.CombatArmor.Size[slot]=item.EquipmentSize;Body.CombatArmor.Durability[slot]=item.Durability;
         Body.CombatArmor.ContaminationState[slot]=item.ContaminationState;
-        CaelumActorMaintenance.InventoryChanged(Body);return true;
+        ReconcileWater();Body.RecalculateCombatStatistics();CaelumActorMaintenance.InventoryChanged(Body);return true;
     }
 
     void Step()
