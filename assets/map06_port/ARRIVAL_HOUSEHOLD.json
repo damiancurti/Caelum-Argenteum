@@ -1,0 +1,69 @@
+{
+  "issue": 581,
+  "revision": 1,
+  "source_map": "MAP03",
+  "target_house": 69,
+  "notes": [
+    "Author: move the outdoor workshop and cot to the protagonist central house.",
+    "Offsets fit the existing house rooms; no geometry or map checksum change.",
+    "Retain the original actors, contamination, inventories and fermentation batch."
+  ],
+  "items": [
+    {
+      "class": "CaelumWorkbenchStation",
+      "source": [
+        -768,
+        1472,
+        0
+      ],
+      "offset": [
+        560,
+        1120,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "class": "CaelumAlchemyStation",
+      "source": [
+        -656,
+        1472,
+        0
+      ],
+      "offset": [
+        656,
+        1120,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "class": "CaelumFermentationStation",
+      "source": [
+        -584,
+        1472,
+        0
+      ],
+      "offset": [
+        752,
+        1120,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "class": "CaelumRestBed",
+      "source": [
+        -768,
+        1664,
+        0
+      ],
+      "offset": [
+        256,
+        256,
+        0
+      ],
+      "angle": 90
+    }
+  ]
+}

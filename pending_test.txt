@@ -37,3 +37,8 @@ CA582-01 | 5.11.6 | #582 | Rat contamination damage
 Prerequisites: corrected V5.11 terminal, rat disease scenario.
 Steps: run the focused active/absent disease and save/reload checks.
 Expected: rat health is unchanged by disease; contamination persists, ordinary damage still works, and Mandinga keeps its previous susceptibility.
+
+CA581-01 | Origin 5.11.7 | Issue #581 | Household placement
+Prerequisite: corrected terminal, central-house scenario.
+Check the workbench, Chemistry station and barrel against the north living-room wall and the extra cot in the bedroom. Use the stations and rest; leave/return and save/load.
+Expected: accessible original objects; barrel work retained; the former outdoor locations remain empty, including after returning to MAP03.

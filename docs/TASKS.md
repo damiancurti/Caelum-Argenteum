@@ -1,6 +1,10 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.11.6** - 2026-10-30.
+Documentation version: **5.11.7** - 2026-10-30.
+
+## V5.11 household correction - #581
+
+Move the four authored exterior objects into house69. Preserve barrel work, contamination and ownership; verify source, house fit, hub round trip and save/reload. Author retest CA581-01 pending; V5.11 remains unmerged.
 
 ## V5.11 rat correction - #582
 

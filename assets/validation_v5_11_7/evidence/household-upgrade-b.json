@@ -1,0 +1,38 @@
+{
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-nomouse",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue430-work\\build\\issue430\\final\\caelum_argenteum_dev.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue581\\checks.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue581\\household-upgrade-b.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue581",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "-rngseed",
+    "428",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue581\\household-upgrade-b.log",
+    "-loadgame",
+    "household-legacy.zds",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue581\\household-upgrade-b.cfg"
+  ],
+  "pid": 35404,
+  "packages": {
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue430-work\\build\\issue430\\final\\caelum_argenteum_dev.pk3": "e3d2f1bd875244cdf0a68e4d06cace34b61ab8012273dba066a2f943a161e58a",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue581\\checks.pk3": "28d3572d2c51974bb2f65e475cca5859b667a8ecb1d653f9aa2d0b64acae5226"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 14.224,
+  "failures": [],
+  "pass_count": 16
+}

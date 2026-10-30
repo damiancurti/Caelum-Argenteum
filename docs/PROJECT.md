@@ -1,6 +1,10 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.11.6** - 2026-10-30.
+Documentation version: **5.11.7** - 2026-10-30.
+
+## 5.11.7 - Household placement correction (#581)
+
+The four outdoor arrival workshop/rest objects move into the protagonist central house, retaining native instances and batches without changing map geometry. Target-room fit, travel, duplication prevention and save checks precede author retest CA581-01. #580/PR583 and #582/PR584 remain focused companion corrections.
 
 ## 5.11.6 - Rat disease correction (#582)
 

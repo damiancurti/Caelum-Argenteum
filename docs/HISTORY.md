@@ -1,6 +1,10 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.11.6** - 2026-10-30.
+Documentation version: **5.11.7** - 2026-10-30.
+
+## 5.11.7 - Arrival workshop moved into the protagonist house (#581, 2026-10-30)
+
+The author identified the outdoor workbench, Chemistry station, fermentation barrel and cot, then selected the protagonist central house (house69) as their destination. Relocate the same actors through the established native travelling protocol; retain contamination, inventory and barrel batch, and move the batch lookup key to CAH069. Revision1 captures only the four authored source positions, defers while occupied/in use, and does not recreate removed objects. No WAD geometry changes. Placement retries use four retained entries; source migration uses four local blockmap queries per load, not global actor scans. GZDoom4.14.2:56 assertions passed across capture, roundtrip, save/reload, legacy upgrade and original-save rollback. Generator regeneration is byte-identical; project validation reports no errors. Evidence: assets/validation_v5_11_7. Author retest CA581-01 remains pending.
 
 ## 5.11.6 - Rat contamination-damage immunity (#582, 2026-10-30)
 

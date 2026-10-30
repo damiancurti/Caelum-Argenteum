@@ -1,6 +1,10 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.11.6** - 2026-10-30.
+Documentation version: **5.11.7** - 2026-10-30.
+
+## Arrival household relocation (#581, 5.11.7)
+
+The original outdoor workbench, Chemistry station, fermentation barrel and cot now belong inside the central house recovered through the protagonist house quest. The original bodies and contents persist across travel/save; a barrel batch keeps its progress and remaining output. Existing purchased/rented/restored access rules are unchanged. No items are duplicated to replace previously removed furniture. The migration waits for active crafting/rest to end and retries occupied destination spaces. Coordinates and orientation are authored in assets/map06_port/ARRIVAL_HOUSEHOLD.json.
 
 ## Rat disease immunity (#582, 5.11.6)
 
