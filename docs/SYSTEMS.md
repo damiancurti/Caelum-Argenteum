@@ -10,6 +10,18 @@ Giant rats acquire and transmit contamination normally but take no CaelumDisease
 
 After a rental conversation closes, the next Use rebuilds its starting page and private requirement tokens from the current character record. A completed guard-recognition clue therefore enables the existing registry-check choice. Open conversations retain their current page across saves; ownership and refund idempotence remain unchanged.
 
+Companion correction2026-10-30: run beyond6m, return to walking within3m,
+using the companion's own existing speed, equipment, Air and penalties.
+Drive passive locomotion each native Tick; preserve attack/pain/reload cadence.
+Explicit follow takes precedence over prisoner idle escort and anonymous noise;
+identified threats still take combat priority. Mansion routing reuses Palomo's
+fifteen authored nodes and bounded local collision/navigation, without teleport.
+Door peers use one shared typed bootstrap per map, then event registration;
+late group assignment after Spawn updates the cache. No repeated global scan. The first bootstrap is owned by the map event handler,
+visits the map thinker population once and stores only door leaves; later
+requests inspect only their peer group. Private native timing:0.5274ms in
+MAP03,0.0075ms in the empty-room fixture. No frame-presentation claim.
+
 ## Companion contract and implementation (5.11.4, #430)
 
 The authored roster is the four mansion residents, four freed sewer prisoners
@@ -104,6 +116,12 @@ transient cache contains at most32 entries per contamination map. NPC Insight
 and Agility curve results are reused only while their exact input is unchanged.
 These caches never retain target identity, line of sight or resources; loading
 rebuilds them from unchanged authoritative state. No cadence or balance changes.
+
+Passage correction (#429, 2026-10-30): recovering a wide formation validates
+native cylinder clearance along each member's candidate segment, not sight alone.
+The shared movement-triggered recovery check bounds each segment to group length;
+its samples are separated by the member's collision radius. Actor collisions
+remain enforced by movement; these geometry probes do not displace bodies.
 
 ## 5.11.1 / #429 - Persistent formations and admission
 

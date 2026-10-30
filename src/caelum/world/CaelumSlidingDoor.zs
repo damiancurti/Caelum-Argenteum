@@ -62,6 +62,10 @@ class CaelumSlidingDoorLeaf : Actor
     bool DoorRequested;
     bool RuloArenaLocked;
     CaelumFactionCondition AccessCondition;
+    CaelumDoorPeerGroup CachedPeers;
+
+    CaelumDoorPeerGroup Peers()
+    {return CaelumDoorPeerRegistry.Get(self);}
 
     virtual bool NativeDoorCollision(){return false;}
 
@@ -69,6 +73,8 @@ class CaelumSlidingDoorLeaf : Actor
     {
         Super.PostBeginPlay();
         ClosedPosition = Pos;
+        let doorEvents=CaelumPolyDoorEvents.Get();
+        if(doorEvents!=null && doorEvents.PeerRegistry!=null && doorEvents.PeerRegistry.Ready)doorEvents.PeerRegistry.Pending.Push(self);
         if(NativeDoorCollision())return;
 
         // El actor visible ocupa el centro; estos ocho cilindros completan
@@ -94,10 +100,11 @@ class CaelumSlidingDoorLeaf : Actor
 
         // Prevalidar todas las hojas antes de cambiar peticiones o temporizadores.
         // Una hoja libre no elude la llave, bloqueo de arena o condición de otra.
-        let conditions = ThinkerIterator.Create("CaelumSlidingDoorLeaf");
-        CaelumSlidingDoorLeaf guardedLeaf;
-        while ((guardedLeaf = CaelumSlidingDoorLeaf(conditions.Next())) != null)
+        let peers=Peers();
+        for(int i=0;i<peers.Leaves.Size();i++)
         {
+            let guardedLeaf=peers.Leaves[i];
+            if(guardedLeaf==null || guardedLeaf.bDestroyed)continue;
             if (!IsGroupPeer(guardedLeaf)) continue;
             if (guardedLeaf.RuloArenaLocked) return false;
             // LOCKDEFS nativo comprueba posesión y no consume la llave.
@@ -116,10 +123,10 @@ class CaelumSlidingDoorLeaf : Actor
 
         int groupLeafCount = 0;
         bool groupWasRequested = false;
-        let iterator = ThinkerIterator.Create("CaelumSlidingDoorLeaf");
-        CaelumSlidingDoorLeaf leaf;
-        while ((leaf = CaelumSlidingDoorLeaf(iterator.Next())))
+        for(int i=0;i<peers.Leaves.Size();i++)
         {
+            let leaf=peers.Leaves[i];
+            if(leaf==null || leaf.bDestroyed)continue;
             if (IsGroupPeer(leaf))
             {
                 groupLeafCount++;
@@ -185,19 +192,19 @@ class CaelumSlidingDoorLeaf : Actor
 
     bool GroupDoorwayOccupied()
     {
-        let iterator = ThinkerIterator.Create("CaelumSlidingDoorLeaf");
-        CaelumSlidingDoorLeaf leaf;
-        while ((leaf = CaelumSlidingDoorLeaf(iterator.Next())) != null)
-            if (IsGroupPeer(leaf) && leaf.PlayerOccupiesDoorway()) return true;
+        let peers=Peers();
+        for(int i=0;i<peers.Leaves.Size();i++)
+        {let leaf=peers.Leaves[i];if(leaf!=null && !leaf.bDestroyed && leaf.PlayerOccupiesDoorway())return true;}
         return false;
     }
 
     void HoldOccupiedGroup()
     {
-        let iterator = ThinkerIterator.Create("CaelumSlidingDoorLeaf");
-        CaelumSlidingDoorLeaf leaf;
-        while ((leaf = CaelumSlidingDoorLeaf(iterator.Next())) != null)
+        let peers=Peers();
+        for(int i=0;i<peers.Leaves.Size();i++)
         {
+            let leaf=peers.Leaves[i];
+            if(leaf==null || leaf.bDestroyed)continue;
             if (!IsGroupPeer(leaf) || leaf.RuloArenaLocked) continue;
             leaf.DoorRequested = true;
             leaf.HoldTimer = 18;
@@ -287,5 +294,55 @@ class CaelumSlidingDoorLeaf : Actor
     Spawn:
         CDLS A -1;
         Stop;
+    }
+}
+
+// Registro compartido por mapa. Una sola reconstruccion tipada en guardados
+// anteriores; las altas posteriores se enlazan por evento PostBeginPlay.
+class CaelumDoorPeerGroup : Object play
+{
+    int Id;
+    Array<CaelumSlidingDoorLeaf> Leaves;
+}
+class CaelumDoorPeerRegistry : Object play
+{
+    bool Ready;
+    int Rebuilds,Registered;
+    Array<CaelumDoorPeerGroup> Groups;
+    Array<CaelumSlidingDoorLeaf> Pending;
+    void Add(CaelumSlidingDoorLeaf leaf)
+    {
+        if(leaf==null)return;
+        if(leaf.CachedPeers!=null)
+        {
+            if(leaf.CachedPeers.Id==leaf.args[0])return;
+            // Los instaladores asignan args despues de Spawn; reubicar la
+            // hoja si recibio su grupo definitivo tras PostBeginPlay.
+            for(int i=0;i<leaf.CachedPeers.Leaves.Size();i++)
+                if(leaf.CachedPeers.Leaves[i]==leaf){leaf.CachedPeers.Leaves.Delete(i);break;}
+            leaf.CachedPeers=null;Registered--;
+        }
+        CaelumDoorPeerGroup group;
+        if(leaf.args[0]>0)for(int i=0;i<Groups.Size();i++)
+            if(Groups[i].Id==leaf.args[0]){group=Groups[i];break;}
+        if(group==null){group=new("CaelumDoorPeerGroup");group.Id=leaf.args[0];Groups.Push(group);}
+        group.Leaves.Push(leaf);leaf.CachedPeers=group;Registered++;
+    }
+    static CaelumDoorPeerGroup Get(CaelumSlidingDoorLeaf leaf)
+    {
+        let events=CaelumPolyDoorEvents.Get();
+        if(events.PeerRegistry==null)events.PeerRegistry=new("CaelumDoorPeerRegistry");
+        let registry=events.PeerRegistry;
+        if(!registry.Ready)
+        {
+            registry.Ready=true;registry.Rebuilds++;
+            let iterator=ThinkerIterator.Create("CaelumSlidingDoorLeaf");CaelumSlidingDoorLeaf current;
+            while((current=CaelumSlidingDoorLeaf(iterator.Next()))!=null)registry.Add(current);
+        }
+        // Resolver juntas las altas pendientes cuando sus args ya fueron
+        // asignados, antes de comprobar permisos de cualquiera de las hojas.
+        for(int i=0;i<registry.Pending.Size();i++)
+            if(registry.Pending[i]!=null && !registry.Pending[i].bDestroyed)registry.Add(registry.Pending[i]);
+        registry.Pending.Clear();registry.Add(leaf);return leaf.CachedPeers;
     }
 }

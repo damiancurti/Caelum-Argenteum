@@ -21,6 +21,9 @@ class CaelumCompanionBond : Object play
     bool Invisible,Solid,Shootable,NoInteraction,NoBlock,NoSector;
     Array<CaelumCompanionItemRecord> Items;
     CaelumCompanionLoadout Loadout;
+    CaelumCompanionMotion Motion;
+    transient bool PulseReady;
+    transient int PulseTic;
 
     CaelumPlayer Leader(){return Party!=null ? CaelumPlayer(Party.Owner) : null;}
 
@@ -317,11 +320,15 @@ class CaelumCompanions : Object play
     {
         if(!Controlled(body))return false;
         let bond=body.Companion;
+        if(bond.PulseReady && bond.PulseTic==level.time)return true;
+        bond.PulseReady=true;bond.PulseTic=level.time;
         if(body.ForcedSleepTics>0 || body.CombatLucidityPhysicalStunRemaining>0 || body.bInConversation
-            || CaelumBolas.Restrained(body) || CaelumTelekinesisRules.Held(body))return true;
+            || CaelumBolas.Restrained(body) || CaelumTelekinesisRules.Held(body))
+        {if(body.bInConversation && bond.Motion!=null)bond.Motion.Hold(body);return true;}
         Actor enemy=CaelumVisualPerception.Acquire(body,body.target);
         if(enemy!=null)
         {
+            if(bond.Motion!=null)bond.Motion.Yield(body);
             body.target=enemy;
             if(body.Formation!=null && body.Formation.Group.RegroupCombat(body.Formation,enemy))return true;
             if(bond.Loadout!=null && bond.Loadout.ManualWeapon)
@@ -333,20 +340,206 @@ class CaelumCompanions : Object play
             if(resident!=null && resident.ResidentTools!=null && resident.ResidentTools.TryStart())return true;
             body.ThermalChase();return true;
         }
-        body.target=CaelumVisualPerception.SearchGoal(body);
-        if(body.target!=null){body.ThermalChase();return true;}
+        // Seguir/esperar son ordenes explicitas: una pista anonima conserva
+        // la alerta, pero no arrastra al grupo tras sus propios pasos.
+        // Un enemigo identificado conserva su busqueda y posicion recordada.
+        let memory=CaelumVisualPerception.Evidence(body).GetMemory();memory.ChooseFocus(body);
+        body.target=memory.HasFocus(body) ? CaelumVisualPerception.SearchGoal(body) : null;
+        if(body.target!=null){if(bond.Motion!=null)bond.Motion.Yield(body);body.ThermalChase();return true;}
         if(bond.Enlisted && bond.Order==CaelumCompanionData.FOLLOW)
         {
             bond.Party.EnsureFormation();
             if(body.Formation==null)bond.Party.Formation.Add(body,CaelumFormation.RoleFor(body),0);
             if(body.Formation!=null)
             {
-                bool moved=body.Formation.Group.Follow(body.Formation);
-                if(moved && body.InStateSequence(body.CurState,body.SpawnState))body.SetStateLabel("See");
+                if(bond.Motion==null)bond.Motion=new("CaelumCompanionMotion");
+                bond.Motion.Step(body);
             }
         }
-        else {body.Vel.X=0;body.Vel.Y=0;}
+        else {if(bond.Motion==null)bond.Motion=new("CaelumCompanionMotion");bond.Motion.Hold(body);}
         return true;
+    }
+}
+
+// El reloj de locomocion es independiente de los cuadros de animacion.
+// Se reutilizan colision, aceleracion y rutas locales de la escolta aceptada.
+class CaelumCompanionMotion : Object play
+{
+    CaelumPrisonerEscort Walker;
+    String SourceMap;
+    bool Direct;
+    bool Running;
+    int RouteTic;
+    bool MansionRoute;
+    int MansionNode,MansionEnd;
+
+    void Ensure()
+    {
+        if(Walker==null || SourceMap!=level.MapName)
+        {Walker=new("CaelumPrisonerEscort");SourceMap=level.MapName;Direct=false;RouteTic=0;MansionRoute=false;Running=false;}
+    }
+    void Hold(CaelumCombatActor body){Ensure();body.CombatAirSpending=false;Walker.Hold(body);}
+    void Yield(CaelumCombatActor body)
+    {
+        Ensure();Running=false;body.CombatAirSpending=false;Walker.Yield(body);
+        if(Pose(body))body.SetStateLabel("See");
+    }
+    static bool Pose(CaelumCombatActor body)
+    {
+        return body.InStateSequence(body.CurState,body.FindState("CompanionWalk"))
+            || body.InStateSequence(body.CurState,body.FindState("CompanionIdle"));
+    }
+    static void Tick(CaelumCombatActor body)
+    {
+        if(!CaelumCompanions.Controlled(body))return;
+        // No adelantar preparaciones, dolor, recargas ni acciones de herramientas.
+        bool ordinary=Pose(body) || (body.target==null && (body.InStateSequence(body.CurState,body.SpawnState)
+            || body.InStateSequence(body.CurState,body.SeeState)
+            || body.InStateSequence(body.CurState,body.FindState("IdleBreathing"))
+            || body.InStateSequence(body.CurState,body.FindState("EscortFollow"))
+            || body.InStateSequence(body.CurState,body.FindState("EscortIdle"))));
+        if(ordinary)CaelumCompanions.Pulse(body);
+    }
+    static bool OpenBlockedDoor(Actor body)
+    {
+        let blocker=CaelumSlidingDoorBlocker(body.BlockingMobj);
+        if(blocker!=null && blocker.master!=null)
+        {let leaf=CaelumSlidingDoorLeaf(blocker.master);return leaf!=null && leaf.RequestDoorGroup(body);}
+        let line=body.MovementBlockingLine!=null ? body.MovementBlockingLine : body.BlockingLine;
+        if(line==null || line.special!=7)return false;
+        let doors=CaelumPolyDoorEvents.Get();int id=line.args[0];
+        if(doors==null || id<=0 || id>=doors.Leaves.Size())return false;
+        let leaf=doors.Leaves[id];if(leaf==null || !leaf.NativeDoorCollision())return false;
+        for(int face=0;face<leaf.NativeFaces.Size();face++)
+            if(leaf.NativeFaces[face]==line)return leaf.RequestDoorGroup(body);
+        return false;
+    }
+    bool MansionGoal(CaelumCombatActor body,CaelumPlayer leader)
+    {
+        if(level.MapName!="MAP01"){MansionRoute=false;return false;}
+        if(!MansionRoute && Abs(body.FloorZ-leader.FloorZ)<=body.MaxStepHeight)return false;
+        if(level.time>=RouteTic || !MansionRoute)
+        {
+            // Los nodos ya recorridos por Palomo conectan ambas escaleras.
+            // Se consultan quince puntos de datos, nunca actores del mapa.
+            int first=-1,last=-1;double from=1e30,to=1e30,fromHeight=1e30,toHeight=1e30;
+            for(int i=1;i<=14;i++)
+            {
+                vector3 point=CaelumPalomo.GetDepartureWaypoint(i);
+                double h=Abs(body.Pos.Z-point.Z),d=(body.Pos.XY-point.XY).Length();
+                if(h<fromHeight || (h==fromHeight && d<from)){first=i;from=d;fromHeight=h;}
+                h=Abs(leader.Pos.Z-point.Z);d=(leader.Pos.XY-point.XY).Length();
+                if(h<toHeight || (h==toHeight && d<to)){last=i;to=d;toHeight=h;}
+            }
+            RouteTic=level.time+CaelumConstants.PRISONER_WALK_STATE_TICS;
+            if(!MansionRoute || MansionEnd!=last)
+            {
+                // Incorporarse al tramo por delante: quien ya baja una
+                // escalera no debe volver al rellano superior para tomarla.
+                if(first!=last)
+                {
+                    int ahead=first+(last>first?1:-1);
+                    vector3 start=CaelumPalomo.GetDepartureWaypoint(first);
+                    vector3 span=CaelumPalomo.GetDepartureWaypoint(ahead)-start;
+                    double along=((body.Pos-start) dot span)/(span dot span);
+                    if(along>0 && along<=1 && (body.Pos-(start+span*along)).Length()<=body.Radius*2)first=ahead;
+                }
+                MansionNode=first;MansionEnd=last;MansionRoute=true;Walker.Path=null;
+            }
+        }
+        return MansionRoute;
+    }
+    void Step(CaelumCombatActor body)
+    {
+        Ensure();let leader=body.Companion.Leader();if(leader==null)return;
+        Walker.Observe(body,leader);
+        double distance=body.Distance3D(leader);
+        if(distance>CaelumPhysicsUnits.MapUnits(CaelumCompanionData.RUN_DISTANCE_METERS))Running=true;
+        else if(distance<=CaelumPhysicsUnits.MapUnits(CaelumCompanionData.WALK_DISTANCE_METERS))Running=false;
+        double cost=body.GetEffectiveAttackAir(CaelumConstants.RUN_AIR_COST_PER_SECOND)/TICRATE;
+        if(body.CurrentCombatAir<=body.MaximumCombatAir*CaelumConstants.AIR_BREATHLESS_THRESHOLD
+            || body.CurrentCombatAir<cost*CaelumThermalEffects.HeatCost(body)*CaelumAltitudeService.Effort(body))Running=false;
+        double speed=Walker.WalkingSpeed(body);
+        if(Running)speed*=CaelumConstants.GZDOOM_BASE_MAX_RUN_SPEED/CaelumConstants.GZDOOM_BASE_MAX_WALK_SPEED;
+        if(speed<=0 || Walker.Immobilized(body)){Hold(body);return;}
+        if(Walker.GiveWay(body,leader,speed))
+        {
+            body.CombatAirSpending=Running && body.Vel.XY.Length()>0;
+            if(body.CombatAirSpending)body.TrySpendCombatAir(cost);
+            return;
+        }
+        if(MansionGoal(body,leader))
+        {
+            vector3 point=CaelumPalomo.GetDepartureWaypoint(MansionNode);
+            bool reached=(point.XY-body.Pos.XY).Length()<=Max(speed,body.Radius/2);
+            if(!reached && MansionNode!=MansionEnd && (point.XY-body.Pos.XY).Length()<=body.Radius*2)
+            {
+                vector3 nextPoint=CaelumPalomo.GetDepartureWaypoint(MansionNode+(MansionEnd>MansionNode?1:-1));
+                reached=Walker.ClearSegment(body,nextPoint,0,true);
+            }
+            if(reached
+                && Abs(point.Z-body.FloorZ)<=body.MaxStepHeight)
+            {
+                if(MansionNode==MansionEnd){MansionRoute=false;Walker.ClearTrail();Walker.PushTrail(leader.Pos);Walker.Path=null;}
+                else{MansionNode+=MansionEnd>MansionNode?1:-1;Walker.Path=null;}
+            }
+            if(MansionRoute)
+            {
+                point=CaelumPalomo.GetDepartureWaypoint(MansionNode);
+                Navigate(body,point,speed);return;
+            }
+        }
+        let group=body.Formation.Group;group.Refresh();group.RecoverShape();
+        vector3 slot=group.Destination(body.Formation);
+        bool sameFloor=Abs(slot.Z-body.FloorZ)<=body.MaxStepHeight;
+        if(level.time>=RouteTic)
+        {
+            RouteTic=level.time+CaelumConstants.PRISONER_WALK_STATE_TICS;
+            Direct=sameFloor && (slot.XY-body.Pos.XY).Length()<=CaelumConstants.PRISONER_FOLLOW_TELEPORT_DISTANCE
+                && Walker.ClearSegment(body,slot,0,true);
+            if(Direct){Walker.ClearTrail();Walker.PushTrail(leader.Pos);Walker.Path=null;}
+        }
+        if(Direct && sameFloor)
+        {
+            if((slot.XY-body.Pos.XY).Length()<=speed){Hold(body);return;}
+            if(Move(body,slot.XY,speed))return;
+            Direct=false;RouteTic=level.time+TICRATE;
+            if(body.MovementBlockingLine!=null || body.BlockingLine!=null)
+            {group.SingleFile=true;group.LayoutDirty=true;group.RecoveryProbeReady=false;}
+        }
+        if(Walker.TrailSize()==0)Walker.PushTrail(leader.Pos);
+        vector3 goal=Walker.TrailPoint(0);
+        while(Walker.TrailSize()>1 && (goal.XY-body.Pos.XY).Length()<=Max(speed,body.Radius/2)
+            && Abs(goal.Z-body.FloorZ)<=body.MaxStepHeight)
+        {Walker.PopTrail();Walker.Path=null;goal=Walker.TrailPoint(0);}
+        if(Walker.TrailSize()==1 && sameFloor)goal=slot;
+        vector2 destination=goal.XY;
+        if(Walker.Path!=null)destination=Walker.Path.Next(body,goal);
+        if((goal.XY-body.Pos.XY).Length()<=speed && Abs(goal.Z-body.FloorZ)<=body.MaxStepHeight)
+        {Hold(body);return;}
+        if(!Move(body,destination,speed))
+        {
+            if(Walker.Path==null)Walker.Path=new("CaelumEscortNavigation");
+            Walker.Path.AllowLateralEscape=Walker.LeaderIntendsMove || Walker.TrailSize()>1;
+            if(level.time>=Walker.Path.RetryTic)Walker.Path.Build(body,goal);
+            Hold(body);
+        }
+    }
+    bool Move(CaelumCombatActor body,vector2 point,double speed)
+    {
+        if(!Walker.MoveTowards(body,point,speed,-1)){OpenBlockedDoor(body);return false;}
+        body.CombatAirSpending=Running;
+        if(Running)body.TrySpendCombatAir(body.GetEffectiveAttackAir(CaelumConstants.RUN_AIR_COST_PER_SECOND)/TICRATE);
+        return true;
+    }
+    void Navigate(CaelumCombatActor body,vector3 point,double speed)
+    {
+        vector2 next=Walker.Path!=null ? Walker.Path.Next(body,point) : point.XY;
+        if(Move(body,next,speed))return;
+        if(Walker.Path==null)Walker.Path=new("CaelumEscortNavigation");
+        Walker.Path.AllowLateralEscape=true;
+        if(level.time>=Walker.Path.RetryTic)Walker.Path.Build(body,point);
+        Hold(body);
     }
 }
 
@@ -355,7 +548,9 @@ class CaelumCompanionSubcaptain : CaelumPortDefender
     override int BirthAttribute(){return CaelumCompanionData.SUBCAPTAIN_ATTRIBUTE;}
     override bool Used(Actor user){return CaelumCompanions.Dialogue(CaelumPlayer(user),self);}
     Default { Tag "$CA_COMPANION_SUBCAPTAIN"; }
-    States { ResidentToolUse: DOMI K 1; Loop; }
+    States { ResidentToolUse: DOMI K 1; Loop;
+        CompanionWalk: DOWK AB 4; Loop;
+        CompanionIdle: DOID A -1; Stop; }
 }
 
 // La administracion usa el mismo inventario nativo y conserva instancias completas.

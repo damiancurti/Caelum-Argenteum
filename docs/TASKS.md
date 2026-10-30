@@ -10,6 +10,12 @@ Active/absent disease immunity, ordinary damage, Mandinga non-regression and sav
 
 Repair the rental agent's cached dialogue after guard recognition. Native dialogue/property (11) and save/reload (2) checks passed; CA580-01 author retest remains pending. Companion movement (#430), corridor recovery (#429), household placement (#581) and rat contamination immunity (#582) remain separate changes.
 
+Author feedback2026-10-30 accepted CA432-01 and nonmovement portions of
+CA430-01. Companion motion/animation/Leonor and corridor exit still need retest.
+The correction uses per-tic passive locomotion, approved6m/3m running thresholds,
+existing mansion stair nodes and local navigation. #580-582 separately address
+rental progression, central-house placement and rat disease immunity.
+
 ## V5.11 active - 5.11.4 (#429-433, 2026-10-30)
 
 - #431: subsystem profiling and current/full35/reduced5/simplified diagnostic
@@ -18,7 +24,7 @@ Repair the rental agent's cached dialogue after guard recognition. Native dialog
   remaining limitations must be reported separately from render callbacks.
 - #429: formation/admission implementation has passed focused native geometry,
   membership, combat-order, full-package save/migration and campaign checks.
-  Source/evidence are ready; author review is deferred to the combined handoff.
+  Corridor-exit correction passes four native checks; CA429-01 retest pending.
 - #430: implementation complete, pending author review. All nine authored
   identities, dialogue administration, native equipment, finite ranged/magic
   attacks, jewelry/clothing, unit-level gift/loan provenance, private consent,

@@ -20,7 +20,7 @@ class CaelumHingedDoorLeaf : CaelumSlidingDoorLeaf
         Scale = (1, 1);
         if(NativeDoorCollision())
         {
-            // La hoja es sólo representación: no debe subirse sobre su propio
+            // La hoja es sÃ³lo representaciÃ³n: no debe subirse sobre su propio
             // midtexture al detenerse. El uso se recibe por las caras nativas.
             bSolid=false;bNoInteraction=true;
             let events=CaelumPolyDoorEvents.Get();if(events!=null)events.Register(self);
@@ -40,15 +40,16 @@ class CaelumHingedDoorLeaf : CaelumSlidingDoorLeaf
         int fixedSide = level.MapName == "MAP01"
             ? CaelumMansionDoorData.FixedSwingSide(args[0]) : 0;
         if (fixedSide != 0) groupSide = fixedSide;
-        let it = ThinkerIterator.Create("CaelumHingedDoorLeaf");
-        CaelumHingedDoorLeaf leaf;
-        while ((leaf = CaelumHingedDoorLeaf(it.Next())) != null)
-            if (IsGroupPeer(leaf) && leaf.SlideProgress > 0) { groupSide = leaf.SwingSide; break; }
-        it = ThinkerIterator.Create("CaelumHingedDoorLeaf");
-        while ((leaf = CaelumHingedDoorLeaf(it.Next())) != null)
+        let peers=Peers();
+        for(int i=0;i<peers.Leaves.Size();i++)
         {
-            if (!IsGroupPeer(leaf) || leaf.SlideProgress != 0) continue;
-            leaf.SwingSide = groupSide;
+            let leaf=CaelumHingedDoorLeaf(peers.Leaves[i]);
+            if(leaf!=null && !leaf.bDestroyed && leaf.SlideProgress>0){groupSide=leaf.SwingSide;break;}
+        }
+        for(int i=0;i<peers.Leaves.Size();i++)
+        {
+            let leaf=CaelumHingedDoorLeaf(peers.Leaves[i]);
+            if(leaf!=null && !leaf.bDestroyed && leaf.SlideProgress==0)leaf.SwingSide=groupSide;
         }
         return true;
     }
@@ -110,7 +111,7 @@ class CaelumHingedDoorLeaf : CaelumSlidingDoorLeaf
         Angle = (args[2] == 0 ? 0 : 90) + (args[1] > 0 ? 180 : 0) - args[1] * SwingSide
             * CaelumMansionDoorData.OPEN_DEGREES * SlideProgress / 64.0;
         SetOrigin(PositionAt(SlideProgress, 0), true);
-        // Actualizar también en este tic, sin depender del orden de pensadores.
+        // Actualizar tambiÃ©n en este tic, sin depender del orden de pensadores.
         let it = ThinkerIterator.Create("CaelumSlidingDoorBlocker");
         CaelumSlidingDoorBlocker block;
         while ((block = CaelumSlidingDoorBlocker(it.Next())) != null)
