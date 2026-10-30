@@ -1,6 +1,24 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.10.3** - 2026-10-30.
+Documentation version: **5.11.0** - 2026-10-30.
+
+## V5.11 active - 5.11.0 (#429-433, 2026-10-30)
+
+- #431: subsystem profiling and current/full35/reduced5/simplified diagnostic
+  comparisons; production runtime unchanged. Numerical accuracy observations
+  and immutable run evidence are in validation_v5_11_0. Presentation coverage and
+  remaining limitations must be reported separately from render callbacks.
+- #429: focused formation/admission implementation and native fixtures in
+  progress; no completion or author acceptance claimed by #431.
+- #430: approved roster, recruitment, persistent death, trust and consent are
+  recorded on its issue. The subcaptain uses Domingo's appearance and 20 in
+  every attribute, not customizable player statistics or ordinary guard 18.
+- #432/#433: implement only evidence-supported improvements; preserve individual
+  combat, resources, collisions and event wakeups. The five-tic empty-search
+  candidate is authorized for evaluation, not assumed beneficial.
+- Deliver one linked PR per issue, commit/push separately, and group outstanding
+  author checks in root pending_test.txt when the whole version is ready.
+  V5.11 merges/closure are not yet authorized.
 
 ## V5.10 complete - author-accepted 2026-10-30 (5.10.3, #425-428)
 

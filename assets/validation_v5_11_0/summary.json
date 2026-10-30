@@ -1,0 +1,3984 @@
+{
+  "baseline_commit": "d1ae50345cb5b95d00da32f7a17467e51a0e0e58",
+  "issue": 431,
+  "release": "5.11.0",
+  "production_gameplay_changed": false,
+  "runtime_label_changes": 2,
+  "author_acceptance": false,
+  "runs": {
+    "current-siege-profile-a": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-siege-profile-a.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\current-siege-timers.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-siege-profile-a.ini",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-siege-profile-a.log",
+        "+map",
+        "MAP03",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-siege-profile-a.cfg"
+      ],
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3": "4c9830777147237c5797c646d10bd1f00f2379369ddbe50134049dc64f13818d",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-siege-profile-a.pk3": "00a6d64b179954ef1a3ea267bd2a4b5465f73f6129b79d4d469369a419763e93",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\current-siege-timers.pk3": "607514acfc5f86e0496f944d282ac9f374a48f77b45e76934f4c49d08cc3e7e1"
+      },
+      "pid": 55776,
+      "exit_code": 1,
+      "elapsed_seconds": 5.645,
+      "simulation": null,
+      "render_callbacks": null,
+      "census": [],
+      "limit": "RenderOverlay callbacks do not measure displayed frames; presentation capture remains separate.",
+      "log": {
+        "file": "evidence\\current-siege-profile-a.log.gz",
+        "source_sha256": "00591ae93d3f94b271e5b3da01c11bf117c9495aebad190771bb0d353e7269eb"
+      },
+      "scopes": [],
+      "profile_depth": [],
+      "native_completed": false,
+      "environment": [
+        "GZDoom version g4.14.2",
+        "Vulkan device: NVIDIA GeForce RTX 3070 Ti",
+        "Vulkan version: 1.4.303 (api) 576.352.0 (driver)",
+        "Resolution: 1520 x 825",
+        "  Name: AMD Ryzen 9 5950X 16-Core Processor "
+      ],
+      "ini": {
+        "file": "evidence\\current-siege-profile-a.ini.gz",
+        "source_sha256": "d8914ac99eb1d31ca70eeaab5946f71e654d3f60c7bce1f185968499a2965458"
+      },
+      "cfg": {
+        "file": "evidence\\current-siege-profile-a.cfg.gz",
+        "source_sha256": "ae4419f6605a265359118d81819b8c1a12f80961e6d1cfdd853b4ef50963b930"
+      }
+    },
+    "current-siege-profile-b": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-siege-profile-b.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\current-siege-timers.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-siege-profile-b.ini",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-siege-profile-b.log",
+        "+map",
+        "MAP03",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-siege-profile-b.cfg"
+      ],
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3": "4c9830777147237c5797c646d10bd1f00f2379369ddbe50134049dc64f13818d",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-siege-profile-b.pk3": "00a6d64b179954ef1a3ea267bd2a4b5465f73f6129b79d4d469369a419763e93",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\current-siege-timers.pk3": "21df8cf33783a25ffbc9e4900642142b0706bcfba66bff01d4bd3b587b1f7bd8"
+      },
+      "pid": 56080,
+      "exit_code": 0,
+      "elapsed_seconds": 155.798,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 40.602049428571426,
+        "p95_ms": 56.5388,
+        "p99_ms": 61.6352,
+        "max_ms": 67.4244
+      },
+      "render_callbacks": {
+        "samples": 36,
+        "mean_ms": 692.6355027777778,
+        "p95_ms": 751.91,
+        "p99_ms": 754.7951,
+        "max_ms": 770.5718
+      },
+      "census": [
+        "CA510 CENSUS start alive=1500 attackers=900 defenders=600 groups=14 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00",
+        "CA510 CENSUS end alive=1598 attackers=998 defenders=600 groups=14 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00"
+      ],
+      "limit": "RenderOverlay callbacks do not measure displayed frames; presentation capture remains separate.",
+      "log": {
+        "file": "evidence\\current-siege-profile-b.log.gz",
+        "source_sha256": "9ca065206defb829e3275e94a133f512e387b51c3fdd8cda1ca4f1e6e61d783c"
+      },
+      "scopes": [
+        {
+          "label": "NPC",
+          "calls": 63285,
+          "inclusive_ms": 1021.7691,
+          "exclusive_ms": 308.0621
+        },
+        {
+          "label": "Resources",
+          "calls": 63285,
+          "inclusive_ms": 16.8681,
+          "exclusive_ms": 16.8681
+        },
+        {
+          "label": "Contact",
+          "calls": 63285,
+          "inclusive_ms": 2.2135,
+          "exclusive_ms": 2.2135
+        },
+        {
+          "label": "HealthEffects",
+          "calls": 63780,
+          "inclusive_ms": 31.7341,
+          "exclusive_ms": 31.7341
+        },
+        {
+          "label": "Offense",
+          "calls": 63285,
+          "inclusive_ms": 11.4523,
+          "exclusive_ms": 11.4523
+        },
+        {
+          "label": "Chase",
+          "calls": 9698,
+          "inclusive_ms": 63.9987,
+          "exclusive_ms": 35.0094
+        },
+        {
+          "label": "Controller",
+          "calls": 41,
+          "inclusive_ms": 10.6756,
+          "exclusive_ms": 8.0321
+        },
+        {
+          "label": "Election",
+          "calls": 1,
+          "inclusive_ms": 2.0668,
+          "exclusive_ms": 2.0668
+        },
+        {
+          "label": "Lanes",
+          "calls": 1,
+          "inclusive_ms": 0.5767,
+          "exclusive_ms": 0.5767
+        },
+        {
+          "label": "ThermalSchedule",
+          "calls": 63285,
+          "inclusive_ms": 261.178,
+          "exclusive_ms": 43.0273
+        },
+        {
+          "label": "ThermalAdvance",
+          "calls": 1856,
+          "inclusive_ms": 219.1991,
+          "exclusive_ms": 219.1991
+        },
+        {
+          "label": "Candidate",
+          "calls": 30345,
+          "inclusive_ms": 263.036,
+          "exclusive_ms": 263.036
+        },
+        {
+          "label": "Acquire",
+          "calls": 30336,
+          "inclusive_ms": 273.6568,
+          "exclusive_ms": 11.4096
+        },
+        {
+          "label": "Communication",
+          "calls": 63285,
+          "inclusive_ms": 47.9802,
+          "exclusive_ms": 47.9802
+        },
+        {
+          "label": "Noise",
+          "calls": 3402,
+          "inclusive_ms": 32.8258,
+          "exclusive_ms": 32.8258
+        }
+      ],
+      "profile_depth": [
+        "0"
+      ],
+      "native_completed": true,
+      "environment": [
+        "GZDoom version g4.14.2",
+        "Vulkan device: NVIDIA GeForce RTX 3070 Ti",
+        "Vulkan version: 1.4.303 (api) 576.352.0 (driver)",
+        "Resolution: 1520 x 825",
+        "  Name: AMD Ryzen 9 5950X 16-Core Processor "
+      ],
+      "ini": {
+        "file": "evidence\\current-siege-profile-b.ini.gz",
+        "source_sha256": "cafcca2b8cdadae19b481b626c9fe10531998907196237d2c32a3461c8b96fce"
+      },
+      "cfg": {
+        "file": "evidence\\current-siege-profile-b.cfg.gz",
+        "source_sha256": "ae4419f6605a265359118d81819b8c1a12f80961e6d1cfdd853b4ef50963b930"
+      }
+    },
+    "current-complete": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-complete.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\current-siege-timers-complete.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-complete.ini",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-complete.log",
+        "+map",
+        "MAP03",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-complete.cfg"
+      ],
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3": "4c9830777147237c5797c646d10bd1f00f2379369ddbe50134049dc64f13818d",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-complete.pk3": "00a6d64b179954ef1a3ea267bd2a4b5465f73f6129b79d4d469369a419763e93",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\current-siege-timers-complete.pk3": "391cb6d1e3038c651a65369ebcd5b478c8c638cce1b517b67633c68515b08df7"
+      },
+      "pid": 36464,
+      "exit_code": 0,
+      "elapsed_seconds": 157.792,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 39.68079171428571,
+        "p95_ms": 54.692,
+        "p99_ms": 59.7725,
+        "max_ms": 67.6905
+      },
+      "render_callbacks": {
+        "samples": 36,
+        "mean_ms": 677.9861722222222,
+        "p95_ms": 728.1741,
+        "p99_ms": 740.5037,
+        "max_ms": 754.1933
+      },
+      "census": [
+        "CA510 CENSUS start alive=1500 attackers=900 defenders=600 groups=14 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00",
+        "CA510 CENSUS end alive=1598 attackers=998 defenders=600 groups=14 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00"
+      ],
+      "limit": "RenderOverlay callbacks do not measure displayed frames; presentation capture remains separate.",
+      "log": {
+        "file": "evidence\\current-complete.log.gz",
+        "source_sha256": "5bdf0f3ccbc67f69f5131a74e438d9bf6393b08114354a062bb5130ad2073225"
+      },
+      "scopes": [
+        {
+          "label": "NPC",
+          "calls": 63285,
+          "inclusive_ms": 1011.3337,
+          "exclusive_ms": 284.0406
+        },
+        {
+          "label": "Resources",
+          "calls": 63285,
+          "inclusive_ms": 15.9192,
+          "exclusive_ms": 15.9192
+        },
+        {
+          "label": "Contact",
+          "calls": 63285,
+          "inclusive_ms": 2.2822,
+          "exclusive_ms": 2.2822
+        },
+        {
+          "label": "HealthEffects",
+          "calls": 63780,
+          "inclusive_ms": 31.8756,
+          "exclusive_ms": 31.8756
+        },
+        {
+          "label": "Offense",
+          "calls": 63285,
+          "inclusive_ms": 10.984,
+          "exclusive_ms": 10.984
+        },
+        {
+          "label": "Chase",
+          "calls": 9698,
+          "inclusive_ms": 64.2464,
+          "exclusive_ms": 35.0168
+        },
+        {
+          "label": "Controller",
+          "calls": 41,
+          "inclusive_ms": 11.1821,
+          "exclusive_ms": 8.43
+        },
+        {
+          "label": "Election",
+          "calls": 1,
+          "inclusive_ms": 2.1325,
+          "exclusive_ms": 2.1325
+        },
+        {
+          "label": "Lanes",
+          "calls": 1,
+          "inclusive_ms": 0.6196,
+          "exclusive_ms": 0.6196
+        },
+        {
+          "label": "ThermalSchedule",
+          "calls": 63285,
+          "inclusive_ms": 261.3134,
+          "exclusive_ms": 42.1096
+        },
+        {
+          "label": "ThermalMotion",
+          "calls": 63326,
+          "inclusive_ms": 6.1049,
+          "exclusive_ms": 6.1049
+        },
+        {
+          "label": "Illness",
+          "calls": 63285,
+          "inclusive_ms": 19.4439,
+          "exclusive_ms": 18.9001
+        },
+        {
+          "label": "Contamination",
+          "calls": 1815,
+          "inclusive_ms": 207.1663,
+          "exclusive_ms": 207.1663
+        },
+        {
+          "label": "ThermalAdvance",
+          "calls": 1856,
+          "inclusive_ms": 220.1942,
+          "exclusive_ms": 13.0279
+        },
+        {
+          "label": "Candidate",
+          "calls": 30345,
+          "inclusive_ms": 253.9833,
+          "exclusive_ms": 253.9833
+        },
+        {
+          "label": "Acquire",
+          "calls": 30336,
+          "inclusive_ms": 264.825,
+          "exclusive_ms": 11.5235
+        },
+        {
+          "label": "Communication",
+          "calls": 63285,
+          "inclusive_ms": 46.542,
+          "exclusive_ms": 46.542
+        },
+        {
+          "label": "Noise",
+          "calls": 3402,
+          "inclusive_ms": 32.894,
+          "exclusive_ms": 32.894
+        }
+      ],
+      "profile_depth": [
+        "0"
+      ],
+      "native_completed": true,
+      "environment": [
+        "GZDoom version g4.14.2",
+        "Vulkan device: NVIDIA GeForce RTX 3070 Ti",
+        "Vulkan version: 1.4.303 (api) 576.352.0 (driver)",
+        "Resolution: 1520 x 825",
+        "  Name: AMD Ryzen 9 5950X 16-Core Processor "
+      ],
+      "ini": {
+        "file": "evidence\\current-complete.ini.gz",
+        "source_sha256": "6a8a74951a5511b76ddab10dc97f0a73b3e279a7ecb81aaabe75625c3a715318"
+      },
+      "cfg": {
+        "file": "evidence\\current-complete.cfg.gz",
+        "source_sha256": "ae4419f6605a265359118d81819b8c1a12f80961e6d1cfdd853b4ef50963b930"
+      }
+    },
+    "current-siege": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-siege.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-siege.ini",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-siege.log",
+        "+map",
+        "MAP03",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-siege.cfg"
+      ],
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3": "4c9830777147237c5797c646d10bd1f00f2379369ddbe50134049dc64f13818d",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-siege.pk3": "00a6d64b179954ef1a3ea267bd2a4b5465f73f6129b79d4d469369a419763e93"
+      },
+      "pid": 28968,
+      "exit_code": 0,
+      "elapsed_seconds": 150.782,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 38.46447442857143,
+        "p95_ms": 53.2148,
+        "p99_ms": 58.7559,
+        "max_ms": 67.7324
+      },
+      "render_callbacks": {
+        "samples": 36,
+        "mean_ms": 657.1899861111111,
+        "p95_ms": 712.7947,
+        "p99_ms": 726.8822,
+        "max_ms": 729.6406
+      },
+      "census": [
+        "CA510 CENSUS start alive=1500 attackers=900 defenders=600 groups=14 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00",
+        "CA510 CENSUS end alive=1598 attackers=998 defenders=600 groups=14 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00"
+      ],
+      "limit": "RenderOverlay callbacks do not measure displayed frames; presentation capture remains separate.",
+      "log": {
+        "file": "evidence\\current-siege.log.gz",
+        "source_sha256": "bb36ee048c0997b461c6f81f28737a6087f2831b34d914d1cbb4e0b3788f0066"
+      },
+      "scopes": [],
+      "profile_depth": [],
+      "native_completed": true,
+      "environment": [
+        "GZDoom version g4.14.2",
+        "Vulkan device: NVIDIA GeForce RTX 3070 Ti",
+        "Vulkan version: 1.4.303 (api) 576.352.0 (driver)",
+        "Resolution: 1520 x 825",
+        "  Name: AMD Ryzen 9 5950X 16-Core Processor "
+      ],
+      "ini": {
+        "file": "evidence\\current-siege.ini.gz",
+        "source_sha256": "5646ad2d40dbd9e11466028b2f8760e9a803dc3178edca89df1b6a9d99863dba"
+      },
+      "cfg": {
+        "file": "evidence\\current-siege.cfg.gz",
+        "source_sha256": "ae4419f6605a265359118d81819b8c1a12f80961e6d1cfdd853b4ef50963b930"
+      }
+    },
+    "reduced5-siege": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\reduced5-siege.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\reduced5-siege.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\reduced5-siege.ini",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\reduced5-siege.log",
+        "+map",
+        "MAP03",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\reduced5-siege.cfg"
+      ],
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3": "4c9830777147237c5797c646d10bd1f00f2379369ddbe50134049dc64f13818d",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\reduced5-siege.pk3": "00a6d64b179954ef1a3ea267bd2a4b5465f73f6129b79d4d469369a419763e93",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\reduced5-siege.pk3": "25140f4d76feefeb2c8354e48c365090533689cb6cf7bac2146c6211e5899745"
+      },
+      "pid": 54852,
+      "exit_code": 0,
+      "elapsed_seconds": 141.781,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 33.90503528571429,
+        "p95_ms": 49.0473,
+        "p99_ms": 57.1064,
+        "max_ms": 63.9335
+      },
+      "render_callbacks": {
+        "samples": 37,
+        "mean_ms": 573.5663054054054,
+        "p95_ms": 690.8957,
+        "p99_ms": 698.8006,
+        "max_ms": 744.7604
+      },
+      "census": [
+        "CA510 CENSUS start alive=1500 attackers=900 defenders=600 groups=14 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00",
+        "CA510 CENSUS end alive=1598 attackers=998 defenders=600 groups=14 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00"
+      ],
+      "limit": "RenderOverlay callbacks do not measure displayed frames; presentation capture remains separate.",
+      "log": {
+        "file": "evidence\\reduced5-siege.log.gz",
+        "source_sha256": "c2edc209332e008fe865b1477cc9b5c0ae8b512a1b2067d78e6376c3daec7f8b"
+      },
+      "scopes": [],
+      "profile_depth": [],
+      "native_completed": true,
+      "environment": [
+        "GZDoom version g4.14.2",
+        "Vulkan device: NVIDIA GeForce RTX 3070 Ti",
+        "Vulkan version: 1.4.303 (api) 576.352.0 (driver)",
+        "Resolution: 1520 x 825",
+        "  Name: AMD Ryzen 9 5950X 16-Core Processor "
+      ],
+      "ini": {
+        "file": "evidence\\reduced5-siege.ini.gz",
+        "source_sha256": "2deb06e46a70b25910936b7025cd11d5184967dfc7921c419200c4179c34db21"
+      },
+      "cfg": {
+        "file": "evidence\\reduced5-siege.cfg.gz",
+        "source_sha256": "ae4419f6605a265359118d81819b8c1a12f80961e6d1cfdd853b4ef50963b930"
+      }
+    },
+    "simplified-siege": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\simplified-siege.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\simplified-siege.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\simplified-siege.ini",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\simplified-siege.log",
+        "+map",
+        "MAP03",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\simplified-siege.cfg"
+      ],
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3": "4c9830777147237c5797c646d10bd1f00f2379369ddbe50134049dc64f13818d",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\simplified-siege.pk3": "00a6d64b179954ef1a3ea267bd2a4b5465f73f6129b79d4d469369a419763e93",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\simplified-siege.pk3": "fc891bf3c0fbd6d9e6159ba14e9234003fa02e706924ea2287feb8cdfe5584e3"
+      },
+      "pid": 54180,
+      "exit_code": 0,
+      "elapsed_seconds": 151.285,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 39.22051642857143,
+        "p95_ms": 55.4494,
+        "p99_ms": 61.5687,
+        "max_ms": 72.332
+      },
+      "render_callbacks": {
+        "samples": 36,
+        "mean_ms": 672.9852833333333,
+        "p95_ms": 789.8955,
+        "p99_ms": 807.9205,
+        "max_ms": 811.6742
+      },
+      "census": [
+        "CA510 CENSUS start alive=1500 attackers=900 defenders=600 groups=14 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00",
+        "CA510 CENSUS end alive=1598 attackers=998 defenders=600 groups=14 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00"
+      ],
+      "limit": "RenderOverlay callbacks do not measure displayed frames; presentation capture remains separate.",
+      "log": {
+        "file": "evidence\\simplified-siege.log.gz",
+        "source_sha256": "1cfc65916e336e4533e40ce4135bba9fe98fc4ae83ed166de9500dce938e7bf6"
+      },
+      "scopes": [],
+      "profile_depth": [],
+      "native_completed": true,
+      "environment": [
+        "GZDoom version g4.14.2",
+        "Vulkan device: NVIDIA GeForce RTX 3070 Ti",
+        "Vulkan version: 1.4.303 (api) 576.352.0 (driver)",
+        "Resolution: 1520 x 825",
+        "  Name: AMD Ryzen 9 5950X 16-Core Processor "
+      ],
+      "ini": {
+        "file": "evidence\\simplified-siege.ini.gz",
+        "source_sha256": "afd798b2325c93d0187a7cb3e63d14e654ab094c6985a3d39d586f7b649a0bf4"
+      },
+      "cfg": {
+        "file": "evidence\\simplified-siege.cfg.gz",
+        "source_sha256": "ae4419f6605a265359118d81819b8c1a12f80961e6d1cfdd853b4ef50963b930"
+      }
+    },
+    "full35-siege": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\full35-siege.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\full35-siege.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\full35-siege.ini",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\full35-siege.log",
+        "+map",
+        "MAP03",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\full35-siege.cfg"
+      ],
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3": "4c9830777147237c5797c646d10bd1f00f2379369ddbe50134049dc64f13818d",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\full35-siege.pk3": "00a6d64b179954ef1a3ea267bd2a4b5465f73f6129b79d4d469369a419763e93",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\full35-siege.pk3": "755ea30caaf535605220ce5f46908be3022edaf95ca2c486e3d75be668be42a3"
+      },
+      "pid": 4136,
+      "exit_code": 0,
+      "elapsed_seconds": 326.091,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 104.97118842857144,
+        "p95_ms": 139.0389,
+        "p99_ms": 170.6962,
+        "max_ms": 1103.4197
+      },
+      "render_callbacks": {
+        "samples": 36,
+        "mean_ms": 1808.8635194444444,
+        "p95_ms": 2310.7311,
+        "p99_ms": 2764.6454,
+        "max_ms": 3044.8147
+      },
+      "census": [
+        "CA510 CENSUS start alive=1500 attackers=900 defenders=600 groups=14 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00",
+        "CA510 CENSUS end alive=1598 attackers=998 defenders=600 groups=14 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00"
+      ],
+      "limit": "RenderOverlay callbacks do not measure displayed frames; presentation capture remains separate.",
+      "log": {
+        "file": "evidence\\full35-siege.log.gz",
+        "source_sha256": "80634ad4f75f2113b6361b2f0721560a8d51b9bf18e1b14dc42372ac78043727"
+      },
+      "scopes": [],
+      "profile_depth": [],
+      "native_completed": true,
+      "environment": [
+        "GZDoom version g4.14.2",
+        "Vulkan device: NVIDIA GeForce RTX 3070 Ti",
+        "Vulkan version: 1.4.303 (api) 576.352.0 (driver)",
+        "Resolution: 1520 x 825",
+        "  Name: AMD Ryzen 9 5950X 16-Core Processor "
+      ],
+      "ini": {
+        "file": "evidence\\full35-siege.ini.gz",
+        "source_sha256": "cd4c219de3c6e6b28e746c2a48cf479a9533edb274e6b5ff94cecd0478f4c8d7"
+      },
+      "cfg": {
+        "file": "evidence\\full35-siege.cfg.gz",
+        "source_sha256": "ae4419f6605a265359118d81819b8c1a12f80961e6d1cfdd853b4ef50963b930"
+      }
+    },
+    "current-mansion": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-mansion.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-mansion.ini",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-mansion.log",
+        "+map",
+        "MAP01",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-mansion.cfg"
+      ],
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3": "4c9830777147237c5797c646d10bd1f00f2379369ddbe50134049dc64f13818d",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-mansion.pk3": "034d56828b23a0f4b663015830e6874272319b9f0cd9eb636b4112c4b678c1fa"
+      },
+      "pid": 8852,
+      "exit_code": 0,
+      "elapsed_seconds": 39.139,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.559127142857143,
+        "p95_ms": 34.6574,
+        "p99_ms": 38.4926,
+        "max_ms": 42.736
+      },
+      "render_callbacks": {
+        "samples": 1121,
+        "mean_ms": 16.058862622658342,
+        "p95_ms": 18.3369,
+        "p99_ms": 20.2405,
+        "max_ms": 22.1991
+      },
+      "census": [
+        "CA510 CENSUS start alive=6 attackers=0 defenders=0 groups=0 highdensity=0 pos=(-1600.00,0.00,-0.00) angle=0.00 pitch=0.00",
+        "CA510 CENSUS end alive=6 attackers=0 defenders=0 groups=0 highdensity=0 pos=(-1600.00,0.00,-0.00) angle=0.00 pitch=0.00"
+      ],
+      "limit": "RenderOverlay callbacks do not measure displayed frames; presentation capture remains separate.",
+      "log": {
+        "file": "evidence\\current-mansion.log.gz",
+        "source_sha256": "12698a801ef3baa09f736672eb45acd0b4848ee2bd5b0599c2f040f2b46b143f"
+      },
+      "scopes": [],
+      "profile_depth": [],
+      "native_completed": true,
+      "environment": [
+        "GZDoom version g4.14.2",
+        "Vulkan device: NVIDIA GeForce RTX 3070 Ti",
+        "Vulkan version: 1.4.303 (api) 576.352.0 (driver)",
+        "Resolution: 1520 x 825",
+        "  Name: AMD Ryzen 9 5950X 16-Core Processor "
+      ],
+      "ini": {
+        "file": "evidence\\current-mansion.ini.gz",
+        "source_sha256": "0a360181f74623d07516fca613c88f87a855ae9327705966ffc8723bc24f9953"
+      },
+      "cfg": {
+        "file": "evidence\\current-mansion.cfg.gz",
+        "source_sha256": "9fca4d2f8d265fedfb04e38779dff870fe7df465e42a2c93f0924e8b66f02246"
+      }
+    },
+    "current-sewers": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-sewers.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-sewers.ini",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-sewers.log",
+        "+map",
+        "MAP02",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-sewers.cfg"
+      ],
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3": "4c9830777147237c5797c646d10bd1f00f2379369ddbe50134049dc64f13818d",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-sewers.pk3": "034d56828b23a0f4b663015830e6874272319b9f0cd9eb636b4112c4b678c1fa"
+      },
+      "pid": 35400,
+      "exit_code": 0,
+      "elapsed_seconds": 38.125,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.571204428571427,
+        "p95_ms": 32.5663,
+        "p99_ms": 34.0941,
+        "max_ms": 41.9891
+      },
+      "render_callbacks": {
+        "samples": 3172,
+        "mean_ms": 5.680690636822193,
+        "p95_ms": 7.4034,
+        "p99_ms": 8.9527,
+        "max_ms": 37.9348
+      },
+      "census": [
+        "CA510 CENSUS start alive=293 attackers=0 defenders=0 groups=0 highdensity=0 pos=(0.00,0.00,-0.00) angle=90.00 pitch=0.00",
+        "CA510 CENSUS end alive=293 attackers=0 defenders=0 groups=0 highdensity=0 pos=(0.00,0.00,-0.00) angle=90.00 pitch=0.00"
+      ],
+      "limit": "RenderOverlay callbacks do not measure displayed frames; presentation capture remains separate.",
+      "log": {
+        "file": "evidence\\current-sewers.log.gz",
+        "source_sha256": "3aa62db1a2767407425f9fd9d7acff0e6dfc95caf88b12e8c0f874974f0dd43c"
+      },
+      "scopes": [],
+      "profile_depth": [],
+      "native_completed": true,
+      "environment": [
+        "GZDoom version g4.14.2",
+        "Vulkan device: NVIDIA GeForce RTX 3070 Ti",
+        "Vulkan version: 1.4.303 (api) 576.352.0 (driver)",
+        "Resolution: 1520 x 825",
+        "  Name: AMD Ryzen 9 5950X 16-Core Processor "
+      ],
+      "ini": {
+        "file": "evidence\\current-sewers.ini.gz",
+        "source_sha256": "217056c199634a679ea22a54bceb8213583913383e131e1962536e2788f095b4"
+      },
+      "cfg": {
+        "file": "evidence\\current-sewers.cfg.gz",
+        "source_sha256": "9fca4d2f8d265fedfb04e38779dff870fe7df465e42a2c93f0924e8b66f02246"
+      }
+    },
+    "current-city": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-city.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-city.ini",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-city.log",
+        "+map",
+        "MAP03",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-city.cfg"
+      ],
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3": "4c9830777147237c5797c646d10bd1f00f2379369ddbe50134049dc64f13818d",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-city.pk3": "034d56828b23a0f4b663015830e6874272319b9f0cd9eb636b4112c4b678c1fa"
+      },
+      "pid": 37024,
+      "exit_code": 0,
+      "elapsed_seconds": 39.127,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.564990714285717,
+        "p95_ms": 33.8868,
+        "p99_ms": 34.4937,
+        "max_ms": 37.2177
+      },
+      "render_callbacks": {
+        "samples": 2132,
+        "mean_ms": 8.450873499061913,
+        "p95_ms": 9.7862,
+        "p99_ms": 11.2747,
+        "max_ms": 12.5495
+      },
+      "census": [
+        "CA510 CENSUS start alive=0 attackers=0 defenders=600 groups=0 highdensity=0 pos=(0.00,320.00,-0.00) angle=180.00 pitch=0.00",
+        "CA510 CENSUS end alive=0 attackers=0 defenders=600 groups=0 highdensity=0 pos=(0.00,320.00,-0.00) angle=180.00 pitch=0.00"
+      ],
+      "limit": "RenderOverlay callbacks do not measure displayed frames; presentation capture remains separate.",
+      "log": {
+        "file": "evidence\\current-city.log.gz",
+        "source_sha256": "c6e1a92fcef77e4691dd7e5932a3e98d1c2d75c11a9b5862784dc3a3a11b257a"
+      },
+      "scopes": [],
+      "profile_depth": [],
+      "native_completed": true,
+      "environment": [
+        "GZDoom version g4.14.2",
+        "Vulkan device: NVIDIA GeForce RTX 3070 Ti",
+        "Vulkan version: 1.4.303 (api) 576.352.0 (driver)",
+        "Resolution: 1520 x 825",
+        "  Name: AMD Ryzen 9 5950X 16-Core Processor "
+      ],
+      "ini": {
+        "file": "evidence\\current-city.ini.gz",
+        "source_sha256": "f6fb9c8e3257d160b9aa01d6d5bcdd7c4d0106a21df889c194d607fc583e5bb8"
+      },
+      "cfg": {
+        "file": "evidence\\current-city.cfg.gz",
+        "source_sha256": "9fca4d2f8d265fedfb04e38779dff870fe7df465e42a2c93f0924e8b66f02246"
+      }
+    },
+    "current-ground": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-ground.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-ground.ini",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-ground.log",
+        "+map",
+        "MAP03",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-ground.cfg"
+      ],
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3": "4c9830777147237c5797c646d10bd1f00f2379369ddbe50134049dc64f13818d",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-ground.pk3": "995fd93027f83a7f8baaa1f82bc55acb56e8f6deed8f2ae0a00a2df4860f7131"
+      },
+      "pid": 39424,
+      "exit_code": 0,
+      "elapsed_seconds": 38.623,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.570400857142854,
+        "p95_ms": 35.0877,
+        "p99_ms": 39.4786,
+        "max_ms": 42.0852
+      },
+      "render_callbacks": {
+        "samples": 1576,
+        "mean_ms": 11.430195177664976,
+        "p95_ms": 13.3173,
+        "p99_ms": 15.2343,
+        "max_ms": 16.4595
+      },
+      "census": [
+        "CA510 CENSUS start alive=0 attackers=0 defenders=600 groups=0 highdensity=0 pos=(0.00,320.00,-0.00) angle=180.00 pitch=75.00",
+        "CA510 CENSUS end alive=0 attackers=0 defenders=600 groups=0 highdensity=0 pos=(0.00,320.00,-0.00) angle=180.00 pitch=75.00"
+      ],
+      "limit": "RenderOverlay callbacks do not measure displayed frames; presentation capture remains separate.",
+      "log": {
+        "file": "evidence\\current-ground.log.gz",
+        "source_sha256": "0ac081bcd57d3bf6c755adec9befe076732a6c06973d6099e4ebdf06d06f7dd9"
+      },
+      "scopes": [],
+      "profile_depth": [],
+      "native_completed": true,
+      "environment": [
+        "GZDoom version g4.14.2",
+        "Vulkan device: NVIDIA GeForce RTX 3070 Ti",
+        "Vulkan version: 1.4.303 (api) 576.352.0 (driver)",
+        "Resolution: 1520 x 825",
+        "  Name: AMD Ryzen 9 5950X 16-Core Processor "
+      ],
+      "ini": {
+        "file": "evidence\\current-ground.ini.gz",
+        "source_sha256": "14c20335c20e28b8ecbd8b94022a272c47bfa99a6f1d81d2ef1e48182c61c492"
+      },
+      "cfg": {
+        "file": "evidence\\current-ground.cfg.gz",
+        "source_sha256": "9fca4d2f8d265fedfb04e38779dff870fe7df465e42a2c93f0924e8b66f02246"
+      }
+    },
+    "display-mansion": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\display-mansion.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\display-mansion.ini",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\display-mansion.log",
+        "+map",
+        "MAP01",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\display-mansion.cfg"
+      ],
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3": "4c9830777147237c5797c646d10bd1f00f2379369ddbe50134049dc64f13818d",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\display-mansion.pk3": "034d56828b23a0f4b663015830e6874272319b9f0cd9eb636b4112c4b678c1fa"
+      },
+      "started_utc": "2026-10-30T16:59:19.953773+00:00",
+      "pid": 34516,
+      "ended_utc": "2026-10-30T16:59:58.086583+00:00",
+      "window_utc": {
+        "BEGIN": {
+          "after_utc": "2026-10-30T16:59:36.036921+00:00",
+          "before_utc": "2026-10-30T16:59:36.544592+00:00"
+        },
+        "END": {
+          "after_utc": "2026-10-30T16:59:55.569664+00:00",
+          "before_utc": "2026-10-30T16:59:56.077583+00:00"
+        }
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 38.133,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.56977857142857,
+        "p95_ms": 34.6114,
+        "p99_ms": 37.032,
+        "max_ms": 43.5571
+      },
+      "render_callbacks": {
+        "samples": 1131,
+        "mean_ms": 15.913628205128205,
+        "p95_ms": 17.9616,
+        "p99_ms": 19.1077,
+        "max_ms": 21.0424
+      },
+      "census": [
+        "CA510 CENSUS start alive=6 attackers=0 defenders=0 groups=0 highdensity=0 pos=(-1600.00,0.00,-0.00) angle=0.00 pitch=0.00",
+        "CA510 CENSUS end alive=6 attackers=0 defenders=0 groups=0 highdensity=0 pos=(-1600.00,0.00,-0.00) angle=0.00 pitch=0.00"
+      ],
+      "limit": "RenderOverlay callbacks do not measure displayed frames; presentation capture remains separate.",
+      "log": {
+        "file": "evidence\\display-mansion.log.gz",
+        "source_sha256": "0e5ddace66c18b2b16794bf6be03bc8fe0ed2b6c0444f0767faa3264076fe681"
+      },
+      "scopes": [],
+      "profile_depth": [],
+      "native_completed": true,
+      "environment": [
+        "GZDoom version g4.14.2",
+        "Vulkan device: NVIDIA GeForce RTX 3070 Ti",
+        "Vulkan version: 1.4.303 (api) 576.352.0 (driver)",
+        "Resolution: 1520 x 825",
+        "  Name: AMD Ryzen 9 5950X 16-Core Processor "
+      ],
+      "ini": {
+        "file": "evidence\\display-mansion.ini.gz",
+        "source_sha256": "cd5e5c26d9f355fe53efe72eaf1ddacafcbd0ceec06e5a5934337de8a541a3ef"
+      },
+      "cfg": {
+        "file": "evidence\\display-mansion.cfg.gz",
+        "source_sha256": "9fca4d2f8d265fedfb04e38779dff870fe7df465e42a2c93f0924e8b66f02246"
+      }
+    },
+    "display-sewers": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\display-sewers.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\display-sewers.ini",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\display-sewers.log",
+        "+map",
+        "MAP02",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\display-sewers.cfg"
+      ],
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3": "4c9830777147237c5797c646d10bd1f00f2379369ddbe50134049dc64f13818d",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\display-sewers.pk3": "034d56828b23a0f4b663015830e6874272319b9f0cd9eb636b4112c4b678c1fa"
+      },
+      "started_utc": "2026-10-30T16:59:58.984299+00:00",
+      "pid": 3452,
+      "ended_utc": "2026-10-30T17:00:37.114449+00:00",
+      "window_utc": {
+        "BEGIN": {
+          "after_utc": "2026-10-30T17:00:14.560245+00:00",
+          "before_utc": "2026-10-30T17:00:15.067753+00:00"
+        },
+        "END": {
+          "after_utc": "2026-10-30T17:00:34.595276+00:00",
+          "before_utc": "2026-10-30T17:00:35.102632+00:00"
+        }
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 38.13,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.567938714285713,
+        "p95_ms": 32.2842,
+        "p99_ms": 33.4044,
+        "max_ms": 39.3952
+      },
+      "render_callbacks": {
+        "samples": 3495,
+        "mean_ms": 5.157164120171673,
+        "p95_ms": 6.5481,
+        "p99_ms": 7.2454,
+        "max_ms": 34.7925
+      },
+      "census": [
+        "CA510 CENSUS start alive=293 attackers=0 defenders=0 groups=0 highdensity=0 pos=(0.00,0.00,-0.00) angle=90.00 pitch=0.00",
+        "CA510 CENSUS end alive=293 attackers=0 defenders=0 groups=0 highdensity=0 pos=(0.00,0.00,-0.00) angle=90.00 pitch=0.00"
+      ],
+      "limit": "RenderOverlay callbacks do not measure displayed frames; presentation capture remains separate.",
+      "log": {
+        "file": "evidence\\display-sewers.log.gz",
+        "source_sha256": "29309b5bafd11e665b3caaad84db247f8fe42bc7224f30fdea292ca7f66e2188"
+      },
+      "scopes": [],
+      "profile_depth": [],
+      "native_completed": true,
+      "environment": [
+        "GZDoom version g4.14.2",
+        "Vulkan device: NVIDIA GeForce RTX 3070 Ti",
+        "Vulkan version: 1.4.303 (api) 576.352.0 (driver)",
+        "Resolution: 1520 x 825",
+        "  Name: AMD Ryzen 9 5950X 16-Core Processor "
+      ],
+      "ini": {
+        "file": "evidence\\display-sewers.ini.gz",
+        "source_sha256": "06c3ddc8ac1ab01c40072ba30837033ce176c909f74f2d16453c6bb5954a2b1b"
+      },
+      "cfg": {
+        "file": "evidence\\display-sewers.cfg.gz",
+        "source_sha256": "9fca4d2f8d265fedfb04e38779dff870fe7df465e42a2c93f0924e8b66f02246"
+      }
+    },
+    "display-city": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\display-city.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\display-city.ini",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\display-city.log",
+        "+map",
+        "MAP03",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\display-city.cfg"
+      ],
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3": "4c9830777147237c5797c646d10bd1f00f2379369ddbe50134049dc64f13818d",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\display-city.pk3": "034d56828b23a0f4b663015830e6874272319b9f0cd9eb636b4112c4b678c1fa"
+      },
+      "started_utc": "2026-10-30T17:00:38.119593+00:00",
+      "pid": 40212,
+      "ended_utc": "2026-10-30T17:01:17.259531+00:00",
+      "window_utc": {
+        "BEGIN": {
+          "after_utc": "2026-10-30T17:00:55.205823+00:00",
+          "before_utc": "2026-10-30T17:00:55.714328+00:00"
+        },
+        "END": {
+          "after_utc": "2026-10-30T17:01:15.242742+00:00",
+          "before_utc": "2026-10-30T17:01:15.749874+00:00"
+        }
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 39.14,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.564534000000002,
+        "p95_ms": 34.1045,
+        "p99_ms": 36.4537,
+        "max_ms": 53.7995
+      },
+      "render_callbacks": {
+        "samples": 2073,
+        "mean_ms": 8.693243415340087,
+        "p95_ms": 10.6556,
+        "p99_ms": 12.2721,
+        "max_ms": 48.4508
+      },
+      "census": [
+        "CA510 CENSUS start alive=0 attackers=0 defenders=600 groups=0 highdensity=0 pos=(0.00,320.00,-0.00) angle=180.00 pitch=0.00",
+        "CA510 CENSUS end alive=0 attackers=0 defenders=600 groups=0 highdensity=0 pos=(0.00,320.00,-0.00) angle=180.00 pitch=0.00"
+      ],
+      "limit": "RenderOverlay callbacks do not measure displayed frames; presentation capture remains separate.",
+      "log": {
+        "file": "evidence\\display-city.log.gz",
+        "source_sha256": "1fdee985c8699b15524a48d62f462d9d73b82f12521413b439c915022a6da4c1"
+      },
+      "scopes": [],
+      "profile_depth": [],
+      "native_completed": true,
+      "environment": [
+        "GZDoom version g4.14.2",
+        "Vulkan device: NVIDIA GeForce RTX 3070 Ti",
+        "Vulkan version: 1.4.303 (api) 576.352.0 (driver)",
+        "Resolution: 1520 x 825",
+        "  Name: AMD Ryzen 9 5950X 16-Core Processor "
+      ],
+      "ini": {
+        "file": "evidence\\display-city.ini.gz",
+        "source_sha256": "3aac1ac579fc0468d5099396e692cd54dd5f0732a2dacaf3c3893abdd87fe239"
+      },
+      "cfg": {
+        "file": "evidence\\display-city.cfg.gz",
+        "source_sha256": "9fca4d2f8d265fedfb04e38779dff870fe7df465e42a2c93f0924e8b66f02246"
+      }
+    },
+    "display-ground": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\display-ground.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\display-ground.ini",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\display-ground.log",
+        "+map",
+        "MAP03",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\display-ground.cfg"
+      ],
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3": "4c9830777147237c5797c646d10bd1f00f2379369ddbe50134049dc64f13818d",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\display-ground.pk3": "995fd93027f83a7f8baaa1f82bc55acb56e8f6deed8f2ae0a00a2df4860f7131"
+      },
+      "started_utc": "2026-10-30T17:01:18.207458+00:00",
+      "pid": 10016,
+      "ended_utc": "2026-10-30T17:01:57.333588+00:00",
+      "window_utc": {
+        "BEGIN": {
+          "after_utc": "2026-10-30T17:01:34.790128+00:00",
+          "before_utc": "2026-10-30T17:01:35.297787+00:00"
+        },
+        "END": {
+          "after_utc": "2026-10-30T17:01:54.823064+00:00",
+          "before_utc": "2026-10-30T17:01:55.330653+00:00"
+        }
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 39.126,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.562746,
+        "p95_ms": 36.9638,
+        "p99_ms": 39.5363,
+        "max_ms": 43.4277
+      },
+      "render_callbacks": {
+        "samples": 1551,
+        "mean_ms": 11.613824758220503,
+        "p95_ms": 14.0429,
+        "p99_ms": 16.0798,
+        "max_ms": 18.1949
+      },
+      "census": [
+        "CA510 CENSUS start alive=0 attackers=0 defenders=600 groups=0 highdensity=0 pos=(0.00,320.00,-0.00) angle=180.00 pitch=75.00",
+        "CA510 CENSUS end alive=0 attackers=0 defenders=600 groups=0 highdensity=0 pos=(0.00,320.00,-0.00) angle=180.00 pitch=75.00"
+      ],
+      "limit": "RenderOverlay callbacks do not measure displayed frames; presentation capture remains separate.",
+      "log": {
+        "file": "evidence\\display-ground.log.gz",
+        "source_sha256": "14393a19f660d5e29908ad9bd1db8a21b3a29bcd15e5f2b4f33d9788ca726569"
+      },
+      "scopes": [],
+      "profile_depth": [],
+      "native_completed": true,
+      "environment": [
+        "GZDoom version g4.14.2",
+        "Vulkan device: NVIDIA GeForce RTX 3070 Ti",
+        "Vulkan version: 1.4.303 (api) 576.352.0 (driver)",
+        "Resolution: 1520 x 825",
+        "  Name: AMD Ryzen 9 5950X 16-Core Processor "
+      ],
+      "ini": {
+        "file": "evidence\\display-ground.ini.gz",
+        "source_sha256": "09ab82f0e6593ae461b9cda59245ea2f5b7c0bc01641ee2a040c44a4abf79cc4"
+      },
+      "cfg": {
+        "file": "evidence\\display-ground.cfg.gz",
+        "source_sha256": "9fca4d2f8d265fedfb04e38779dff870fe7df465e42a2c93f0924e8b66f02246"
+      }
+    },
+    "display-siege": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\display-siege.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\display-siege.ini",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\display-siege.log",
+        "+map",
+        "MAP03",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\display-siege.cfg"
+      ],
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3": "4c9830777147237c5797c646d10bd1f00f2379369ddbe50134049dc64f13818d",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\display-siege.pk3": "00a6d64b179954ef1a3ea267bd2a4b5465f73f6129b79d4d469369a419763e93"
+      },
+      "started_utc": "2026-10-30T17:01:58.260349+00:00",
+      "pid": 34324,
+      "ended_utc": "2026-10-30T17:04:29.062488+00:00",
+      "window_utc": {
+        "BEGIN": {
+          "after_utc": "2026-10-30T17:03:58.499775+00:00",
+          "before_utc": "2026-10-30T17:03:59.008202+00:00"
+        },
+        "END": {
+          "after_utc": "2026-10-30T17:04:25.544904+00:00",
+          "before_utc": "2026-10-30T17:04:26.051777+00:00"
+        }
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 150.802,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 38.998200000000004,
+        "p95_ms": 53.1312,
+        "p99_ms": 58.1798,
+        "max_ms": 69.0752
+      },
+      "render_callbacks": {
+        "samples": 36,
+        "mean_ms": 665.5101416666666,
+        "p95_ms": 732.1486,
+        "p99_ms": 735.575,
+        "max_ms": 736.8479
+      },
+      "census": [
+        "CA510 CENSUS start alive=1500 attackers=900 defenders=600 groups=14 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00",
+        "CA510 CENSUS end alive=1598 attackers=998 defenders=600 groups=14 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00"
+      ],
+      "limit": "RenderOverlay callbacks do not measure displayed frames; presentation capture remains separate.",
+      "log": {
+        "file": "evidence\\display-siege.log.gz",
+        "source_sha256": "ff74ead13ef8592b2a2023df9b8bf6e246b8f0e7cf028d368607db9ae3cf65fd"
+      },
+      "scopes": [],
+      "profile_depth": [],
+      "native_completed": true,
+      "environment": [
+        "GZDoom version g4.14.2",
+        "Vulkan device: NVIDIA GeForce RTX 3070 Ti",
+        "Vulkan version: 1.4.303 (api) 576.352.0 (driver)",
+        "Resolution: 1520 x 825",
+        "  Name: AMD Ryzen 9 5950X 16-Core Processor "
+      ],
+      "ini": {
+        "file": "evidence\\display-siege.ini.gz",
+        "source_sha256": "27e31fb19bc5f3aa2193da345201e86f10709aa717215ac3e2ca162a8025f874"
+      },
+      "cfg": {
+        "file": "evidence\\display-siege.cfg.gz",
+        "source_sha256": "ae4419f6605a265359118d81819b8c1a12f80961e6d1cfdd853b4ef50963b930"
+      }
+    },
+    "current-contacts": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-contacts.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\current-siege-timers-contacts.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-contacts.ini",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-contacts.log",
+        "+map",
+        "MAP03",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-contacts.cfg"
+      ],
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3": "4c9830777147237c5797c646d10bd1f00f2379369ddbe50134049dc64f13818d",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-contacts.pk3": "00a6d64b179954ef1a3ea267bd2a4b5465f73f6129b79d4d469369a419763e93",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\current-siege-timers-contacts.pk3": "1e8ee4b8897a8459b078d582de83806c78bb96ea8ff71be6aaf16a5d85b344d3"
+      },
+      "started_utc": "2026-10-30T17:04:29.999768+00:00",
+      "pid": 39212,
+      "ended_utc": "2026-10-30T17:07:22.335593+00:00",
+      "window_utc": {
+        "BEGIN": {
+          "after_utc": "2026-10-30T17:06:46.761635+00:00",
+          "before_utc": "2026-10-30T17:06:47.270509+00:00"
+        },
+        "END": {
+          "after_utc": "2026-10-30T17:07:18.816340+00:00",
+          "before_utc": "2026-10-30T17:07:19.323845+00:00"
+        }
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 172.336,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 45.78738942857143,
+        "p95_ms": 62.9261,
+        "p99_ms": 68.8673,
+        "max_ms": 84.826
+      },
+      "render_callbacks": {
+        "samples": 36,
+        "mean_ms": 772.9265694444445,
+        "p95_ms": 867.3141,
+        "p99_ms": 881.4157,
+        "max_ms": 881.4826
+      },
+      "census": [
+        "CA510 CENSUS start alive=1500 attackers=900 defenders=600 groups=14 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00",
+        "CA510 CENSUS end alive=1598 attackers=998 defenders=600 groups=14 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00"
+      ],
+      "limit": "RenderOverlay callbacks do not measure displayed frames; presentation capture remains separate.",
+      "log": {
+        "file": "evidence\\current-contacts.log.gz",
+        "source_sha256": "958f97366c9ae7b95e4a6f3b500a83f4df7349d4a47e9e0991c5147aafdac38d"
+      },
+      "scopes": [
+        {
+          "label": "NPC",
+          "calls": 63285,
+          "inclusive_ms": 1132.41,
+          "exclusive_ms": 304.551
+        },
+        {
+          "label": "Resources",
+          "calls": 63285,
+          "inclusive_ms": 15.4929,
+          "exclusive_ms": 15.4929
+        },
+        {
+          "label": "Contact",
+          "calls": 63285,
+          "inclusive_ms": 2.2103,
+          "exclusive_ms": 2.2103
+        },
+        {
+          "label": "HealthEffects",
+          "calls": 63780,
+          "inclusive_ms": 32.9308,
+          "exclusive_ms": 32.9308
+        },
+        {
+          "label": "Offense",
+          "calls": 63285,
+          "inclusive_ms": 11.1264,
+          "exclusive_ms": 11.1264
+        },
+        {
+          "label": "Chase",
+          "calls": 9698,
+          "inclusive_ms": 65.7662,
+          "exclusive_ms": 35.7843
+        },
+        {
+          "label": "Controller",
+          "calls": 41,
+          "inclusive_ms": 11.2089,
+          "exclusive_ms": 8.5809
+        },
+        {
+          "label": "Election",
+          "calls": 1,
+          "inclusive_ms": 2.0531,
+          "exclusive_ms": 2.0531
+        },
+        {
+          "label": "Lanes",
+          "calls": 1,
+          "inclusive_ms": 0.5749,
+          "exclusive_ms": 0.5749
+        },
+        {
+          "label": "ThermalSchedule",
+          "calls": 63285,
+          "inclusive_ms": 325.6352,
+          "exclusive_ms": 45.4739
+        },
+        {
+          "label": "ThermalMotion",
+          "calls": 63326,
+          "inclusive_ms": 6.3054,
+          "exclusive_ms": 6.3054
+        },
+        {
+          "label": "Illness",
+          "calls": 63285,
+          "inclusive_ms": 21.4671,
+          "exclusive_ms": 20.9403
+        },
+        {
+          "label": "Contamination",
+          "calls": 1815,
+          "inclusive_ms": 267.7201,
+          "exclusive_ms": 3.2365
+        },
+        {
+          "label": "ContaminationCapture",
+          "calls": 1815,
+          "inclusive_ms": 20.3733,
+          "exclusive_ms": 20.3733
+        },
+        {
+          "label": "ContaminationBalance",
+          "calls": 1815,
+          "inclusive_ms": 8.1207,
+          "exclusive_ms": 8.1207
+        },
+        {
+          "label": "ThermalAdvance",
+          "calls": 1856,
+          "inclusive_ms": 281.4371,
+          "exclusive_ms": 13.6084
+        },
+        {
+          "label": "Candidate",
+          "calls": 30345,
+          "inclusive_ms": 278.7318,
+          "exclusive_ms": 278.7318
+        },
+        {
+          "label": "Acquire",
+          "calls": 30336,
+          "inclusive_ms": 289.4116,
+          "exclusive_ms": 11.7602
+        },
+        {
+          "label": "Communication",
+          "calls": 63285,
+          "inclusive_ms": 52.3516,
+          "exclusive_ms": 52.3516
+        },
+        {
+          "label": "Noise",
+          "calls": 3402,
+          "inclusive_ms": 34.6435,
+          "exclusive_ms": 34.6435
+        },
+        {
+          "label": "SurfaceContact",
+          "calls": 1815,
+          "inclusive_ms": 233.4799,
+          "exclusive_ms": 233.4799
+        },
+        {
+          "label": "ContactQuery",
+          "calls": 4209,
+          "inclusive_ms": 8.3277,
+          "exclusive_ms": 8.3277
+        }
+      ],
+      "profile_depth": [
+        "0"
+      ],
+      "native_completed": true,
+      "environment": [
+        "GZDoom version g4.14.2",
+        "Vulkan device: NVIDIA GeForce RTX 3070 Ti",
+        "Vulkan version: 1.4.303 (api) 576.352.0 (driver)",
+        "Resolution: 1520 x 825",
+        "  Name: AMD Ryzen 9 5950X 16-Core Processor "
+      ],
+      "ini": {
+        "file": "evidence\\current-contacts.ini.gz",
+        "source_sha256": "388729056df23a174c401107751bc60adb4673f5dcee80c9e2664504a6ddc400"
+      },
+      "cfg": {
+        "file": "evidence\\current-contacts.cfg.gz",
+        "source_sha256": "ae4419f6605a265359118d81819b8c1a12f80961e6d1cfdd853b4ef50963b930"
+      }
+    },
+    "current-surfaces": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-surfaces.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\current-siege-timers-surfaces.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-surfaces.ini",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-surfaces.log",
+        "+map",
+        "MAP03",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-surfaces.cfg"
+      ],
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3": "4c9830777147237c5797c646d10bd1f00f2379369ddbe50134049dc64f13818d",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\performance\\current-surfaces.pk3": "00a6d64b179954ef1a3ea267bd2a4b5465f73f6129b79d4d469369a419763e93",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\current-siege-timers-surfaces.pk3": "5c7fb58720a73ab1036c78fe2b756d7f221a13fadf5e906ebbdd0491d91ffac3"
+      },
+      "started_utc": "2026-10-30T17:09:28.491386+00:00",
+      "pid": 3004,
+      "ended_utc": "2026-10-30T17:12:15.320411+00:00",
+      "window_utc": {
+        "BEGIN": {
+          "after_utc": "2026-10-30T17:11:40.251069+00:00",
+          "before_utc": "2026-10-30T17:11:40.758739+00:00"
+        },
+        "END": {
+          "after_utc": "2026-10-30T17:12:11.300712+00:00",
+          "before_utc": "2026-10-30T17:12:11.808276+00:00"
+        }
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 166.829,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 44.918094714285715,
+        "p95_ms": 60.2227,
+        "p99_ms": 67.3364,
+        "max_ms": 76.5063
+      },
+      "render_callbacks": {
+        "samples": 36,
+        "mean_ms": 768.7460888888888,
+        "p95_ms": 811.0675,
+        "p99_ms": 819.1629,
+        "max_ms": 822.2227
+      },
+      "census": [
+        "CA510 CENSUS start alive=1500 attackers=900 defenders=600 groups=14 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00",
+        "CA510 CENSUS end alive=1598 attackers=998 defenders=600 groups=14 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00"
+      ],
+      "limit": "RenderOverlay callbacks do not measure displayed frames; presentation capture remains separate.",
+      "log": {
+        "file": "evidence\\current-surfaces.log.gz",
+        "source_sha256": "7761c00325b2acb8c7d2dc76ba73cc3c42ef2b7985c555eebd79f8104b60bd86"
+      },
+      "scopes": [
+        {
+          "label": "NPC",
+          "calls": 63285,
+          "inclusive_ms": 1088.5318,
+          "exclusive_ms": 310.7565
+        },
+        {
+          "label": "Resources",
+          "calls": 63285,
+          "inclusive_ms": 16.3822,
+          "exclusive_ms": 16.3822
+        },
+        {
+          "label": "Contact",
+          "calls": 63285,
+          "inclusive_ms": 2.3381,
+          "exclusive_ms": 2.3381
+        },
+        {
+          "label": "HealthEffects",
+          "calls": 63780,
+          "inclusive_ms": 33.9249,
+          "exclusive_ms": 33.9249
+        },
+        {
+          "label": "Offense",
+          "calls": 63285,
+          "inclusive_ms": 11.1114,
+          "exclusive_ms": 11.1114
+        },
+        {
+          "label": "Chase",
+          "calls": 9698,
+          "inclusive_ms": 65.7794,
+          "exclusive_ms": 35.7986
+        },
+        {
+          "label": "Controller",
+          "calls": 41,
+          "inclusive_ms": 11.4221,
+          "exclusive_ms": 8.7458
+        },
+        {
+          "label": "Election",
+          "calls": 1,
+          "inclusive_ms": 2.0953,
+          "exclusive_ms": 2.0953
+        },
+        {
+          "label": "Lanes",
+          "calls": 1,
+          "inclusive_ms": 0.581,
+          "exclusive_ms": 0.581
+        },
+        {
+          "label": "ThermalSchedule",
+          "calls": 63285,
+          "inclusive_ms": 272.2375,
+          "exclusive_ms": 46.1336
+        },
+        {
+          "label": "ThermalMotion",
+          "calls": 63326,
+          "inclusive_ms": 6.2588,
+          "exclusive_ms": 6.2588
+        },
+        {
+          "label": "Illness",
+          "calls": 63285,
+          "inclusive_ms": 22.0709,
+          "exclusive_ms": 21.4933
+        },
+        {
+          "label": "Contamination",
+          "calls": 1815,
+          "inclusive_ms": 213.5858,
+          "exclusive_ms": 3.1799
+        },
+        {
+          "label": "ContaminationCapture",
+          "calls": 1815,
+          "inclusive_ms": 20.6111,
+          "exclusive_ms": 20.6111
+        },
+        {
+          "label": "ContaminationBalance",
+          "calls": 1815,
+          "inclusive_ms": 8.1069,
+          "exclusive_ms": 8.1069
+        },
+        {
+          "label": "ThermalAdvance",
+          "calls": 1856,
+          "inclusive_ms": 227.4591,
+          "exclusive_ms": 13.7219
+        },
+        {
+          "label": "Candidate",
+          "calls": 30345,
+          "inclusive_ms": 278.179,
+          "exclusive_ms": 278.179
+        },
+        {
+          "label": "Acquire",
+          "calls": 30336,
+          "inclusive_ms": 288.5671,
+          "exclusive_ms": 11.31
+        },
+        {
+          "label": "Communication",
+          "calls": 63285,
+          "inclusive_ms": 54.1928,
+          "exclusive_ms": 54.1928
+        },
+        {
+          "label": "Noise",
+          "calls": 3402,
+          "inclusive_ms": 34.6067,
+          "exclusive_ms": 34.6067
+        },
+        {
+          "label": "SurfaceContact",
+          "calls": 1815,
+          "inclusive_ms": 179.1958,
+          "exclusive_ms": 15.4742
+        },
+        {
+          "label": "SurfaceHistory",
+          "calls": 3721,
+          "inclusive_ms": 151.3151,
+          "exclusive_ms": 149.888
+        },
+        {
+          "label": "SurfaceBalance",
+          "calls": 25034,
+          "inclusive_ms": 1.6467,
+          "exclusive_ms": 1.6467
+        },
+        {
+          "label": "SurfaceConfiguration",
+          "calls": 4068,
+          "inclusive_ms": 44.88,
+          "exclusive_ms": 44.88
+        },
+        {
+          "label": "ContactQuery",
+          "calls": 4209,
+          "inclusive_ms": 8.6356,
+          "exclusive_ms": 8.6356
+        }
+      ],
+      "profile_depth": [
+        "0"
+      ],
+      "native_completed": true,
+      "environment": [
+        "GZDoom version g4.14.2",
+        "Vulkan device: NVIDIA GeForce RTX 3070 Ti",
+        "Vulkan version: 1.4.303 (api) 576.352.0 (driver)",
+        "Resolution: 1520 x 825",
+        "  Name: AMD Ryzen 9 5950X 16-Core Processor "
+      ],
+      "ini": {
+        "file": "evidence\\current-surfaces.ini.gz",
+        "source_sha256": "57dd0c385e467ab6e9816f578644c2f918ef0c8dd408374aa1c36091d1d628f2"
+      },
+      "cfg": {
+        "file": "evidence\\current-surfaces.cfg.gz",
+        "source_sha256": "ae4419f6605a265359118d81819b8c1a12f80961e6d1cfdd853b4ef50963b930"
+      }
+    }
+  },
+  "thermal_accuracy": {
+    "current": {
+      "rows": [
+        {
+          "case": 0,
+          "interval": 1,
+          "current": -25.142153237897,
+          "candidate": -25.143377723365,
+          "max_gap": 1.986389293698,
+          "water_error": 4.7531254e-05,
+          "hydration_error": 0.0,
+          "current_dose": 43.038769550403,
+          "candidate_dose": 43.042811771735,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 0,
+          "interval": 35,
+          "current": -25.142153237897,
+          "candidate": -25.142153237897,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 43.038769550403,
+          "candidate_dose": 43.038769550403,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 0,
+          "interval": 175,
+          "current": -25.142153237897,
+          "candidate": -25.140020619985,
+          "max_gap": 5.982709254514,
+          "water_error": 7.2960416e-05,
+          "hydration_error": 0.0,
+          "current_dose": 43.038769550403,
+          "candidate_dose": 43.033282926541,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 1,
+          "interval": 1,
+          "current": -34.890356726658,
+          "candidate": -34.890302046979,
+          "max_gap": 0.045705614924,
+          "water_error": 1.37337e-07,
+          "hydration_error": 0.0,
+          "current_dose": 60.0,
+          "candidate_dose": 60.000000000001,
+          "activity_error": 2.8e-11,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 1,
+          "interval": 35,
+          "current": -34.890356726658,
+          "candidate": -34.890356726658,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 60.0,
+          "candidate_dose": 60.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 1,
+          "interval": 175,
+          "current": -34.890356726658,
+          "candidate": -34.890356726658,
+          "max_gap": 0.186638289117,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 60.0,
+          "candidate_dose": 60.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 2,
+          "interval": 1,
+          "current": -38.730828061909,
+          "candidate": -38.730257164425,
+          "max_gap": 0.363778523014,
+          "water_error": 3.048373e-06,
+          "hydration_error": 0.0,
+          "current_dose": 60.0,
+          "candidate_dose": 60.000000000001,
+          "activity_error": 5.6e-11,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 2,
+          "interval": 35,
+          "current": -38.730828061909,
+          "candidate": -38.730828061909,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 60.0,
+          "candidate_dose": 60.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 2,
+          "interval": 175,
+          "current": -38.730828061909,
+          "candidate": -38.730828061909,
+          "max_gap": 1.432058818908,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 60.0,
+          "candidate_dose": 60.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 3,
+          "interval": 1,
+          "current": -30.231578121633,
+          "candidate": -30.23167721313,
+          "max_gap": 0.117624165619,
+          "water_error": 5.12863e-07,
+          "hydration_error": 0.0,
+          "current_dose": 60.0,
+          "candidate_dose": 60.000000000001,
+          "activity_error": 1.76e-10,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 3,
+          "interval": 35,
+          "current": -30.231578121633,
+          "candidate": -30.231578121633,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 60.0,
+          "candidate_dose": 60.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 3,
+          "interval": 175,
+          "current": -30.231578121633,
+          "candidate": -30.231578121633,
+          "max_gap": 0.461313441051,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 60.0,
+          "candidate_dose": 60.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 4,
+          "interval": 1,
+          "current": -30.972099117488,
+          "candidate": -30.972099116824,
+          "max_gap": 0.001520295838,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 60.0,
+          "candidate_dose": 60.000000000001,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 4,
+          "interval": 35,
+          "current": -30.972099117488,
+          "candidate": -30.972099117488,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 60.0,
+          "candidate_dose": 60.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 4,
+          "interval": 175,
+          "current": -30.972099117488,
+          "candidate": -30.972099117488,
+          "max_gap": 0.006143260354,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 60.0,
+          "candidate_dose": 60.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 5,
+          "interval": 1,
+          "current": -36.756293570462,
+          "candidate": -36.755280084278,
+          "max_gap": 0.429597675195,
+          "water_error": 1.619568e-06,
+          "hydration_error": 0.0,
+          "current_dose": 59.188062830954,
+          "candidate_dose": 59.187852298261,
+          "activity_error": 2.8e-11,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 5,
+          "interval": 35,
+          "current": -36.756293570462,
+          "candidate": -36.756293570462,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 59.188062830954,
+          "candidate_dose": 59.188062830954,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 5,
+          "interval": 175,
+          "current": -36.756293570462,
+          "candidate": -36.756293570462,
+          "max_gap": 1.692786947446,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 59.188062830954,
+          "candidate_dose": 59.188062830954,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 6,
+          "interval": 1,
+          "current": -25.455988074742,
+          "candidate": -25.456063866108,
+          "max_gap": 0.205756912127,
+          "water_error": 2.316444e-06,
+          "hydration_error": 0.0,
+          "current_dose": 40.0,
+          "candidate_dose": 40.0,
+          "activity_error": 5.6e-11,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 6,
+          "interval": 35,
+          "current": -25.455988074742,
+          "candidate": -25.455988074742,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 40.0,
+          "candidate_dose": 40.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 6,
+          "interval": 175,
+          "current": -25.455988074742,
+          "candidate": -25.455988074742,
+          "max_gap": 0.822947120681,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 40.0,
+          "candidate_dose": 40.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 7,
+          "interval": 1,
+          "current": -31.826442044943,
+          "candidate": -31.817435720342,
+          "max_gap": 0.387829099204,
+          "water_error": 0.00014822419,
+          "hydration_error": 0.0,
+          "current_dose": 51.264318498049,
+          "candidate_dose": 51.190145067533,
+          "activity_error": 1.78e-10,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 7,
+          "interval": 35,
+          "current": -31.826442044943,
+          "candidate": -31.826442044943,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 51.264318498049,
+          "candidate_dose": 51.264318498049,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 7,
+          "interval": 175,
+          "current": -31.826442044943,
+          "candidate": -31.841626903537,
+          "max_gap": 1.413545158742,
+          "water_error": 0.000232081198,
+          "hydration_error": 0.0,
+          "current_dose": 51.264318498049,
+          "candidate_dose": 51.385798278992,
+          "activity_error": 7e-12,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 8,
+          "interval": 1,
+          "current": -29.282996646856,
+          "candidate": -29.282996647493,
+          "max_gap": 0.126682752119,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 40.0,
+          "candidate_dose": 40.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 8,
+          "interval": 35,
+          "current": -29.282996646856,
+          "candidate": -29.282996646856,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 40.0,
+          "candidate_dose": 40.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 8,
+          "interval": 175,
+          "current": -29.282996646856,
+          "candidate": -29.282996646856,
+          "max_gap": 0.510481875174,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 40.0,
+          "candidate_dose": 40.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 9,
+          "interval": 1,
+          "current": -24.927805507141,
+          "candidate": -24.927895721826,
+          "max_gap": 0.067890035844,
+          "water_error": 8.06591e-07,
+          "hydration_error": 0.0,
+          "current_dose": 40.0,
+          "candidate_dose": 40.0,
+          "activity_error": 2.8e-11,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 9,
+          "interval": 35,
+          "current": -24.927805507141,
+          "candidate": -24.927805507141,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 40.0,
+          "candidate_dose": 40.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 9,
+          "interval": 175,
+          "current": -24.927805507141,
+          "candidate": -24.927805507141,
+          "max_gap": 0.26781870723,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 40.0,
+          "candidate_dose": 40.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 10,
+          "interval": 1,
+          "current": -27.293487460488,
+          "candidate": -27.293088267298,
+          "max_gap": 0.170522954038,
+          "water_error": 6.59513e-07,
+          "hydration_error": 0.0,
+          "current_dose": 40.0,
+          "candidate_dose": 40.0,
+          "activity_error": 5.6e-11,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 10,
+          "interval": 35,
+          "current": -27.293487460488,
+          "candidate": -27.293487460488,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 40.0,
+          "candidate_dose": 40.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 10,
+          "interval": 175,
+          "current": -27.293487460488,
+          "candidate": -27.293487460488,
+          "max_gap": 0.65321118228,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 40.0,
+          "candidate_dose": 40.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 11,
+          "interval": 1,
+          "current": -31.754292612245,
+          "candidate": -31.753359695658,
+          "max_gap": 0.458365442456,
+          "water_error": 9.204538e-06,
+          "hydration_error": 0.0,
+          "current_dose": 42.669809874572,
+          "candidate_dose": 42.666858148113,
+          "activity_error": 1.76e-10,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 11,
+          "interval": 35,
+          "current": -31.754292612245,
+          "candidate": -31.754292612245,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 42.669809874572,
+          "candidate_dose": 42.669809874572,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 11,
+          "interval": 175,
+          "current": -31.754292612245,
+          "candidate": -31.754292612245,
+          "max_gap": 1.840751123208,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 42.669809874572,
+          "candidate_dose": 42.669809874572,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 12,
+          "interval": 1,
+          "current": -12.791623328339,
+          "candidate": -12.7914404399,
+          "max_gap": 1.153253115808,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 26.352830130092,
+          "candidate_dose": 26.352854003088,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 12,
+          "interval": 35,
+          "current": -12.791623328339,
+          "candidate": -12.791623328339,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 26.352830130092,
+          "candidate_dose": 26.352830130092,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 12,
+          "interval": 175,
+          "current": -12.791623328339,
+          "candidate": -12.791623328339,
+          "max_gap": 4.618483589472,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 26.352830130092,
+          "candidate_dose": 26.352830130092,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 13,
+          "interval": 1,
+          "current": -17.479563651656,
+          "candidate": -17.479153534322,
+          "max_gap": 0.861403474982,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 30.058453886192,
+          "candidate_dose": 30.056946657114,
+          "activity_error": 2.8e-11,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 13,
+          "interval": 35,
+          "current": -17.479563651656,
+          "candidate": -17.479563651656,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 30.058453886192,
+          "candidate_dose": 30.058453886192,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 13,
+          "interval": 175,
+          "current": -17.479563651656,
+          "candidate": -17.479563651656,
+          "max_gap": 3.441119165925,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 30.058453886192,
+          "candidate_dose": 30.058453886192,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 14,
+          "interval": 1,
+          "current": -25.308491837065,
+          "candidate": -25.264215013786,
+          "max_gap": 1.989041226149,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 40.186513968064,
+          "candidate_dose": 40.0,
+          "activity_error": 7.1e-11,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 14,
+          "interval": 35,
+          "current": -25.308491837065,
+          "candidate": -25.308491837065,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 40.186513968064,
+          "candidate_dose": 40.186513968064,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 14,
+          "interval": 175,
+          "current": -25.308491837065,
+          "candidate": -25.392357619445,
+          "max_gap": 6.356221688537,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 40.186513968064,
+          "candidate_dose": 40.572393152263,
+          "activity_error": 2e-12,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 15,
+          "interval": 1,
+          "current": 5.432439979582,
+          "candidate": 5.433504280571,
+          "max_gap": 3.166718280529,
+          "water_error": 0.0,
+          "hydration_error": 0.005372520083,
+          "current_dose": 7.706595492737,
+          "candidate_dose": 7.706643526205,
+          "activity_error": 1.76e-10,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 15,
+          "interval": 35,
+          "current": 5.432439979582,
+          "candidate": 5.432439979582,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 7.706595492737,
+          "candidate_dose": 7.706595492737,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 15,
+          "interval": 175,
+          "current": 5.432439979582,
+          "candidate": 5.432439979582,
+          "max_gap": 12.600148816161,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 7.706595492737,
+          "candidate_dose": 7.706595492737,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 16,
+          "interval": 1,
+          "current": -7.199792232323,
+          "candidate": -7.198970164009,
+          "max_gap": 1.551308102983,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 17.685748470103,
+          "candidate_dose": 17.685164529728,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 16,
+          "interval": 35,
+          "current": -7.199792232323,
+          "candidate": -7.199792232323,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 17.685748470103,
+          "candidate_dose": 17.685748470103,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 16,
+          "interval": 175,
+          "current": -7.199792232323,
+          "candidate": -7.199792232323,
+          "max_gap": 6.221580436051,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 17.685748470103,
+          "candidate_dose": 17.685748470103,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 17,
+          "interval": 1,
+          "current": -15.325618234264,
+          "candidate": -15.32418606455,
+          "max_gap": 1.014958976314,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 20.0,
+          "candidate_dose": 20.0,
+          "activity_error": 2.8e-11,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 17,
+          "interval": 35,
+          "current": -15.325618234264,
+          "candidate": -15.325618234264,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 20.0,
+          "candidate_dose": 20.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 17,
+          "interval": 175,
+          "current": -15.325618234264,
+          "candidate": -15.325618234264,
+          "max_gap": 3.834532418386,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 20.0,
+          "candidate_dose": 20.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 18,
+          "interval": 1,
+          "current": -9.184219832961,
+          "candidate": -9.183861766801,
+          "max_gap": 0.940033863738,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 18.307211528108,
+          "candidate_dose": 18.306781898581,
+          "activity_error": 5.6e-11,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 18,
+          "interval": 35,
+          "current": -9.184219832961,
+          "candidate": -9.184219832961,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 18.307211528108,
+          "candidate_dose": 18.307211528108,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 18,
+          "interval": 175,
+          "current": -9.184219832961,
+          "candidate": -9.184219832961,
+          "max_gap": 3.756346215893,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 18.307211528108,
+          "candidate_dose": 18.307211528108,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 19,
+          "interval": 1,
+          "current": -13.373889989263,
+          "candidate": -13.373078451584,
+          "max_gap": 0.741248133296,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 20.0,
+          "candidate_dose": 20.0,
+          "activity_error": 1.76e-10,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 19,
+          "interval": 35,
+          "current": -13.373889989263,
+          "candidate": -13.373889989263,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 20.0,
+          "candidate_dose": 20.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 19,
+          "interval": 175,
+          "current": -13.373889989263,
+          "candidate": -13.373889989263,
+          "max_gap": 2.965826288869,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 20.0,
+          "candidate_dose": 20.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 20,
+          "interval": 1,
+          "current": 1.182882252815,
+          "candidate": 1.187834743267,
+          "max_gap": 2.771702112114,
+          "water_error": 0.0,
+          "hydration_error": 0.001323075107,
+          "current_dose": 7.940933647208,
+          "candidate_dose": 7.936157269682,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 20,
+          "interval": 35,
+          "current": 1.182882252815,
+          "candidate": 1.182882252815,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 7.940933647208,
+          "candidate_dose": 7.940933647208,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 20,
+          "interval": 175,
+          "current": 1.182882252815,
+          "candidate": 1.182882252815,
+          "max_gap": 11.027809474635,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 7.940933647208,
+          "candidate_dose": 7.940933647208,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 21,
+          "interval": 1,
+          "current": -1.241457938225,
+          "candidate": -1.181004725123,
+          "max_gap": 3.691625050742,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 4.172291128024,
+          "candidate_dose": 3.905534902661,
+          "activity_error": 3.5e-11,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 21,
+          "interval": 35,
+          "current": -1.241457938225,
+          "candidate": -1.241457938225,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 4.172291128024,
+          "candidate_dose": 4.172291128024,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 21,
+          "interval": 175,
+          "current": -1.241457938225,
+          "candidate": -1.376504455416,
+          "max_gap": 10.075537033793,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 4.172291128024,
+          "candidate_dose": 4.707820126021,
+          "activity_error": 1e-12,
+          "first_current": 35.0,
+          "first_candidate": 525.0
+        },
+        {
+          "case": 22,
+          "interval": 1,
+          "current": -6.512083815554,
+          "candidate": -6.510477669612,
+          "max_gap": 1.125495492134,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 10.839265482663,
+          "candidate_dose": 10.834896511318,
+          "activity_error": 5.6e-11,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 22,
+          "interval": 35,
+          "current": -6.512083815554,
+          "candidate": -6.512083815554,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 10.839265482663,
+          "candidate_dose": 10.839265482663,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 22,
+          "interval": 175,
+          "current": -6.512083815554,
+          "candidate": -6.512083815554,
+          "max_gap": 4.505010493387,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 10.839265482663,
+          "candidate_dose": 10.839265482663,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 23,
+          "interval": 1,
+          "current": -12.697747163864,
+          "candidate": -12.694798492312,
+          "max_gap": 1.068774169927,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 20.0,
+          "candidate_dose": 20.0,
+          "activity_error": 1.76e-10,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 23,
+          "interval": 35,
+          "current": -12.697747163864,
+          "candidate": -12.697747163864,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 20.0,
+          "candidate_dose": 20.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 23,
+          "interval": 175,
+          "current": -12.697747163864,
+          "candidate": -12.697747163864,
+          "max_gap": 3.981665422894,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 20.0,
+          "candidate_dose": 20.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        }
+      ],
+      "log": {
+        "file": "evidence\\current.log.gz",
+        "source_sha256": "f099467a77a63986e85cea55ab85cdfd8df847b5d440c1d8d9d03fe04802ecac"
+      },
+      "completed": true,
+      "failures": []
+    },
+    "simplified": {
+      "rows": [
+        {
+          "case": 0,
+          "interval": 1,
+          "current": -25.142153237897,
+          "candidate": -25.143377723365,
+          "max_gap": 1.986389293698,
+          "water_error": 4.7531254e-05,
+          "hydration_error": 0.0,
+          "current_dose": 43.038769550403,
+          "candidate_dose": 43.042811771735,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 0,
+          "interval": 35,
+          "current": -25.142153237897,
+          "candidate": -25.142153237897,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 43.038769550403,
+          "candidate_dose": 43.038769550403,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 0,
+          "interval": 175,
+          "current": -25.142153237897,
+          "candidate": -25.140020619985,
+          "max_gap": 5.982709254514,
+          "water_error": 7.2960416e-05,
+          "hydration_error": 0.0,
+          "current_dose": 43.038769550403,
+          "candidate_dose": 43.033282926541,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 1,
+          "interval": 1,
+          "current": -34.891028031468,
+          "candidate": -34.890302046979,
+          "max_gap": 0.045061875353,
+          "water_error": 1.868274e-06,
+          "hydration_error": 0.0,
+          "current_dose": 60.0,
+          "candidate_dose": 60.000000000001,
+          "activity_error": 3.5e-11,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 1,
+          "interval": 35,
+          "current": -34.891028031468,
+          "candidate": -34.891028031468,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 60.0,
+          "candidate_dose": 60.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 1,
+          "interval": 175,
+          "current": -34.891028031468,
+          "candidate": -34.892074073553,
+          "max_gap": 0.185936127223,
+          "water_error": 2.886577e-06,
+          "hydration_error": 0.0,
+          "current_dose": 60.0,
+          "candidate_dose": 60.0,
+          "activity_error": 1e-12,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 2,
+          "interval": 1,
+          "current": -38.738117662514,
+          "candidate": -38.730257164425,
+          "max_gap": 0.363778523014,
+          "water_error": 4.1730806e-05,
+          "hydration_error": 0.0,
+          "current_dose": 60.0,
+          "candidate_dose": 60.000000000001,
+          "activity_error": 7.1e-11,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 2,
+          "interval": 35,
+          "current": -38.738117662514,
+          "candidate": -38.738117662514,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 60.0,
+          "candidate_dose": 60.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 2,
+          "interval": 175,
+          "current": -38.738117662514,
+          "candidate": -38.750674353833,
+          "max_gap": 1.434665765579,
+          "water_error": 6.5609032e-05,
+          "hydration_error": 0.0,
+          "current_dose": 60.0,
+          "candidate_dose": 60.0,
+          "activity_error": 2e-12,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 3,
+          "interval": 1,
+          "current": -30.23028137012,
+          "candidate": -30.23167721313,
+          "max_gap": 0.117624165619,
+          "water_error": 7.012336e-06,
+          "hydration_error": 0.0,
+          "current_dose": 60.0,
+          "candidate_dose": 60.000000000001,
+          "activity_error": 1.78e-10,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 3,
+          "interval": 35,
+          "current": -30.23028137012,
+          "candidate": -30.23028137012,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 60.0,
+          "candidate_dose": 60.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 3,
+          "interval": 175,
+          "current": -30.23028137012,
+          "candidate": -30.227919811385,
+          "max_gap": 0.461747762501,
+          "water_error": 1.098907e-05,
+          "hydration_error": 0.0,
+          "current_dose": 60.0,
+          "candidate_dose": 60.0,
+          "activity_error": 7e-12,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 4,
+          "interval": 1,
+          "current": -30.972099189069,
+          "candidate": -30.972099116824,
+          "max_gap": 0.001520295838,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 60.0,
+          "candidate_dose": 60.000000000001,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 4,
+          "interval": 35,
+          "current": -30.972099189069,
+          "candidate": -30.972099189069,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 60.0,
+          "candidate_dose": 60.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 4,
+          "interval": 175,
+          "current": -30.972099189069,
+          "candidate": -30.972099568656,
+          "max_gap": 0.006143244306,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 60.0,
+          "candidate_dose": 60.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 5,
+          "interval": 1,
+          "current": -36.76921012524,
+          "candidate": -36.755280084278,
+          "max_gap": 0.429597675195,
+          "water_error": 2.2174603e-05,
+          "hydration_error": 0.0,
+          "current_dose": 59.190856118833,
+          "candidate_dose": 59.187852298261,
+          "activity_error": 3.5e-11,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 5,
+          "interval": 35,
+          "current": -36.76921012524,
+          "candidate": -36.76921012524,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 59.190856118833,
+          "candidate_dose": 59.190856118833,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 5,
+          "interval": 175,
+          "current": -36.76921012524,
+          "candidate": -36.791370570453,
+          "max_gap": 1.697855895977,
+          "water_error": 3.4881149e-05,
+          "hydration_error": 0.0,
+          "current_dose": 59.190856118833,
+          "candidate_dose": 59.196271025108,
+          "activity_error": 1e-12,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 6,
+          "interval": 1,
+          "current": -25.455028846921,
+          "candidate": -25.456063866108,
+          "max_gap": 0.205756912127,
+          "water_error": 3.1379333e-05,
+          "hydration_error": 0.0,
+          "current_dose": 40.0,
+          "candidate_dose": 40.0,
+          "activity_error": 7.1e-11,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 6,
+          "interval": 35,
+          "current": -25.455028846921,
+          "candidate": -25.455028846921,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 40.0,
+          "candidate_dose": 40.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 6,
+          "interval": 175,
+          "current": -25.455028846921,
+          "candidate": -25.453412795863,
+          "max_gap": 0.823182424381,
+          "water_error": 4.791601e-05,
+          "hydration_error": 0.0,
+          "current_dose": 40.0,
+          "candidate_dose": 40.0,
+          "activity_error": 2e-12,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 7,
+          "interval": 1,
+          "current": -31.826442044943,
+          "candidate": -31.817435720342,
+          "max_gap": 0.387829099204,
+          "water_error": 0.00014822419,
+          "hydration_error": 0.0,
+          "current_dose": 51.264318498049,
+          "candidate_dose": 51.190145067533,
+          "activity_error": 1.78e-10,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 7,
+          "interval": 35,
+          "current": -31.826442044943,
+          "candidate": -31.826442044943,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 51.264318498049,
+          "candidate_dose": 51.264318498049,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 7,
+          "interval": 175,
+          "current": -31.826442044943,
+          "candidate": -31.841626903537,
+          "max_gap": 1.413545158742,
+          "water_error": 0.000232081198,
+          "hydration_error": 0.0,
+          "current_dose": 51.264318498049,
+          "candidate_dose": 51.385798278992,
+          "activity_error": 7e-12,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 8,
+          "interval": 1,
+          "current": -29.282996578184,
+          "candidate": -29.282996647493,
+          "max_gap": 0.126682752119,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 40.0,
+          "candidate_dose": 40.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 8,
+          "interval": 35,
+          "current": -29.282996578184,
+          "candidate": -29.282996578184,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 40.0,
+          "candidate_dose": 40.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 8,
+          "interval": 175,
+          "current": -29.282996578184,
+          "candidate": -29.282996214021,
+          "max_gap": 0.510481859816,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 40.0,
+          "candidate_dose": 40.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 9,
+          "interval": 1,
+          "current": -24.926651642919,
+          "candidate": -24.927895721826,
+          "max_gap": 0.067890035844,
+          "water_error": 1.1025838e-05,
+          "hydration_error": 0.0,
+          "current_dose": 40.0,
+          "candidate_dose": 40.0,
+          "activity_error": 3.5e-11,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 9,
+          "interval": 35,
+          "current": -24.926651642919,
+          "candidate": -24.926651642919,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 40.0,
+          "candidate_dose": 40.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 9,
+          "interval": 175,
+          "current": -24.926651642919,
+          "candidate": -24.924656688925,
+          "max_gap": 0.26818327695,
+          "water_error": 1.7266513e-05,
+          "hydration_error": 0.0,
+          "current_dose": 40.0,
+          "candidate_dose": 40.0,
+          "activity_error": 1e-12,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 10,
+          "interval": 1,
+          "current": -27.298612619424,
+          "candidate": -27.293088267298,
+          "max_gap": 0.170522954038,
+          "water_error": 9.052141e-06,
+          "hydration_error": 0.0,
+          "current_dose": 40.0,
+          "candidate_dose": 40.0,
+          "activity_error": 7.1e-11,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 10,
+          "interval": 35,
+          "current": -27.298612619424,
+          "candidate": -27.298612619424,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 40.0,
+          "candidate_dose": 40.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 10,
+          "interval": 175,
+          "current": -27.298612619424,
+          "candidate": -27.307562000525,
+          "max_gap": 0.655488957075,
+          "water_error": 1.4335969e-05,
+          "hydration_error": 0.0,
+          "current_dose": 40.0,
+          "candidate_dose": 40.0,
+          "activity_error": 2e-12,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 11,
+          "interval": 1,
+          "current": -31.766101415465,
+          "candidate": -31.753359695658,
+          "max_gap": 0.458365442456,
+          "water_error": 0.000128252373,
+          "hydration_error": 0.0,
+          "current_dose": 42.707601768229,
+          "candidate_dose": 42.666858148113,
+          "activity_error": 1.78e-10,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 11,
+          "interval": 35,
+          "current": -31.766101415465,
+          "candidate": -31.766101415465,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 42.707601768229,
+          "candidate_dose": 42.707601768229,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 11,
+          "interval": 175,
+          "current": -31.766101415465,
+          "candidate": -31.784196352569,
+          "max_gap": 1.845689706964,
+          "water_error": 0.000211778893,
+          "hydration_error": 0.0,
+          "current_dose": 42.707601768229,
+          "candidate_dose": 42.764742906816,
+          "activity_error": 7e-12,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 12,
+          "interval": 1,
+          "current": -12.79396812091,
+          "candidate": -12.7914404399,
+          "max_gap": 1.152891081733,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 26.35252750255,
+          "candidate_dose": 26.352854003088,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 12,
+          "interval": 35,
+          "current": -12.79396812091,
+          "candidate": -12.79396812091,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 26.35252750255,
+          "candidate_dose": 26.35252750255,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 12,
+          "interval": 175,
+          "current": -12.79396812091,
+          "candidate": -12.798048542507,
+          "max_gap": 4.617846980157,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 26.35252750255,
+          "candidate_dose": 26.352015282427,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 13,
+          "interval": 1,
+          "current": -17.485359941738,
+          "candidate": -17.479153534322,
+          "max_gap": 0.864370751444,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 30.07870002168,
+          "candidate_dose": 30.056946657114,
+          "activity_error": 3.5e-11,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 13,
+          "interval": 35,
+          "current": -17.485359941738,
+          "candidate": -17.485359941738,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 30.07870002168,
+          "candidate_dose": 30.07870002168,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 13,
+          "interval": 175,
+          "current": -17.485359941738,
+          "candidate": -17.497688087858,
+          "max_gap": 3.446431799423,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 30.07870002168,
+          "candidate_dose": 30.118009911628,
+          "activity_error": 1e-12,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 14,
+          "interval": 1,
+          "current": -25.308491837065,
+          "candidate": -25.264215013786,
+          "max_gap": 1.989041226149,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 40.186513968064,
+          "candidate_dose": 40.0,
+          "activity_error": 7.1e-11,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 14,
+          "interval": 35,
+          "current": -25.308491837065,
+          "candidate": -25.308491837065,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 40.186513968064,
+          "candidate_dose": 40.186513968064,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 14,
+          "interval": 175,
+          "current": -25.308491837065,
+          "candidate": -25.392357619445,
+          "max_gap": 6.356221688537,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 40.186513968064,
+          "candidate_dose": 40.572393152263,
+          "activity_error": 2e-12,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 15,
+          "interval": 1,
+          "current": 5.417732888325,
+          "candidate": 5.433504280571,
+          "max_gap": 3.164699831428,
+          "water_error": 0.0,
+          "hydration_error": 0.078000427218,
+          "current_dose": 7.705982999972,
+          "candidate_dose": 7.706643526205,
+          "activity_error": 1.78e-10,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 15,
+          "interval": 35,
+          "current": 5.417732888325,
+          "candidate": 5.417732888325,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 7.705982999972,
+          "candidate_dose": 7.705982999972,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 15,
+          "interval": 175,
+          "current": 5.417732888325,
+          "candidate": 5.387368060448,
+          "max_gap": 12.59651340925,
+          "water_error": 0.0,
+          "hydration_error": 0.083460209067,
+          "current_dose": 7.705982999972,
+          "candidate_dose": 7.704933512184,
+          "activity_error": 7e-12,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 16,
+          "interval": 1,
+          "current": -7.210381668154,
+          "candidate": -7.198970164009,
+          "max_gap": 1.551308102983,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 17.693269937202,
+          "candidate_dose": 17.685164529728,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 16,
+          "interval": 35,
+          "current": -7.210381668154,
+          "candidate": -7.210381668154,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 17.693269937202,
+          "candidate_dose": 17.693269937202,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 16,
+          "interval": 175,
+          "current": -7.210381668154,
+          "candidate": -7.229034024137,
+          "max_gap": 6.221580436051,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 17.693269937202,
+          "candidate_dose": 17.706515925506,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 17,
+          "interval": 1,
+          "current": -15.344953842833,
+          "candidate": -15.32418606455,
+          "max_gap": 1.005887613635,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 20.0,
+          "candidate_dose": 20.0,
+          "activity_error": 3.5e-11,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 17,
+          "interval": 35,
+          "current": -15.344953842833,
+          "candidate": -15.344953842833,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 20.0,
+          "candidate_dose": 20.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 17,
+          "interval": 175,
+          "current": -15.344953842833,
+          "candidate": -15.382865851867,
+          "max_gap": 3.829528922034,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 20.0,
+          "candidate_dose": 20.0,
+          "activity_error": 1e-12,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 18,
+          "interval": 1,
+          "current": -9.188817325832,
+          "candidate": -9.183861766801,
+          "max_gap": 0.939461204228,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 18.312728123187,
+          "candidate_dose": 18.306781898581,
+          "activity_error": 7.1e-11,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 18,
+          "interval": 35,
+          "current": -9.188817325832,
+          "candidate": -9.188817325832,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 18.312728123187,
+          "candidate_dose": 18.312728123187,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 18,
+          "interval": 175,
+          "current": -9.188817325832,
+          "candidate": -9.196849176474,
+          "max_gap": 3.755333908101,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 18.312728123187,
+          "candidate_dose": 18.322366376086,
+          "activity_error": 2e-12,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 19,
+          "interval": 1,
+          "current": -13.384948091491,
+          "candidate": -13.373078451584,
+          "max_gap": 0.74792702279,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 20.0,
+          "candidate_dose": 20.0,
+          "activity_error": 1.78e-10,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 19,
+          "interval": 35,
+          "current": -13.384948091491,
+          "candidate": -13.384948091491,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 20.0,
+          "candidate_dose": 20.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 19,
+          "interval": 175,
+          "current": -13.384948091491,
+          "candidate": -13.406946365956,
+          "max_gap": 2.977890432123,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 20.0,
+          "candidate_dose": 20.0,
+          "activity_error": 7e-12,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 20,
+          "interval": 1,
+          "current": 1.118279199777,
+          "candidate": 1.187834743267,
+          "max_gap": 2.775698986794,
+          "water_error": 0.0,
+          "hydration_error": 0.008302426598,
+          "current_dose": 8.001559791961,
+          "candidate_dose": 7.936157269682,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 20,
+          "interval": 35,
+          "current": 1.118279199777,
+          "candidate": 1.118279199777,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 8.001559791961,
+          "candidate_dose": 8.001559791961,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 20,
+          "interval": 175,
+          "current": 1.118279199777,
+          "candidate": 1.000704543614,
+          "max_gap": 11.02780935536,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 8.001559791961,
+          "candidate_dose": 8.098126765565,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 21,
+          "interval": 1,
+          "current": -1.241457938225,
+          "candidate": -1.181004725123,
+          "max_gap": 3.691625050742,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 4.172291128024,
+          "candidate_dose": 3.905534902661,
+          "activity_error": 3.5e-11,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 21,
+          "interval": 35,
+          "current": -1.241457938225,
+          "candidate": -1.241457938225,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 4.172291128024,
+          "candidate_dose": 4.172291128024,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 21,
+          "interval": 175,
+          "current": -1.241457938225,
+          "candidate": -1.376504455416,
+          "max_gap": 10.075537033793,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 4.172291128024,
+          "candidate_dose": 4.707820126021,
+          "activity_error": 1e-12,
+          "first_current": 35.0,
+          "first_candidate": 525.0
+        },
+        {
+          "case": 22,
+          "interval": 1,
+          "current": -6.532806906339,
+          "candidate": -6.510477669612,
+          "max_gap": 1.132676524757,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 10.894670811332,
+          "candidate_dose": 10.834896511318,
+          "activity_error": 7.1e-11,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 22,
+          "interval": 35,
+          "current": -6.532806906339,
+          "candidate": -6.532806906339,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 10.894670811332,
+          "candidate_dose": 10.894670811332,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 22,
+          "interval": 175,
+          "current": -6.532806906339,
+          "candidate": -6.569471374219,
+          "max_gap": 4.51804290159,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 10.894670811332,
+          "candidate_dose": 10.984031856698,
+          "activity_error": 2e-12,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        },
+        {
+          "case": 23,
+          "interval": 1,
+          "current": -12.736720516388,
+          "candidate": -12.694798492312,
+          "max_gap": 1.045557902062,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 20.0,
+          "candidate_dose": 20.0,
+          "activity_error": 1.78e-10,
+          "first_current": 35.0,
+          "first_candidate": 1.0
+        },
+        {
+          "case": 23,
+          "interval": 35,
+          "current": -12.736720516388,
+          "candidate": -12.736720516388,
+          "max_gap": 0.0,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 20.0,
+          "candidate_dose": 20.0,
+          "activity_error": 0.0,
+          "first_current": 35.0,
+          "first_candidate": 35.0
+        },
+        {
+          "case": 23,
+          "interval": 175,
+          "current": -12.736720516388,
+          "candidate": -12.810193412285,
+          "max_gap": 3.958104358118,
+          "water_error": 0.0,
+          "hydration_error": 0.0,
+          "current_dose": 20.0,
+          "candidate_dose": 20.0,
+          "activity_error": 7e-12,
+          "first_current": 35.0,
+          "first_candidate": 175.0
+        }
+      ],
+      "log": {
+        "file": "evidence\\simplified.log.gz",
+        "source_sha256": "d9900c17112efef975e935468432bf007164f3db98934520c8a7a93f04ada0e6"
+      },
+      "completed": true,
+      "failures": []
+    }
+  },
+  "limitations": [
+    "Profiled scopes include instrumentation overhead; nested inclusive scopes must not be summed.",
+    "Current ordinary NPC thermal cadence is 35 tics, not every tic; forced surfaces remain earlier.",
+    "full35/reduced5 alter the shared thermal AND contamination schedule. Their gains are not isolated heat-model gains.",
+    "Simplified and frequency variants are diagnostic only and are not approved production changes.",
+    "RenderOverlay intervals are not display presents. Separate ETW capture reports its own coverage and tails.",
+    "The campaign reinforcement window changes its living census; no fixed 1600 claim or retired stress case.",
+    "Pure thermal cases compare conserved elapsed time, transition flushes, exposure, moisture, hydration, damage and activity."
+  ]
+}
