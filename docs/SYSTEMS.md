@@ -1,6 +1,38 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.10.1** - 2026-10-30.
+Documentation version: **5.10.2** - 2026-10-30.
+
+## 5.10.2 / #427 - Private memory and point investigation
+
+Author-approved lifetime: 30 active seconds from the actual observation, not
+calendar seconds. A confirmed identity is recognized immediately when actually
+seen again within that interval; expired identities require two new continuous
+seconds. Anonymous noise never renews an identified body's timestamp. Damage
+continues to grant identity only through sight/contact.
+
+Each observer owns revision-1 records containing identified body, recorded
+position and original observation tic. Retain a valid current threat; when it
+is lost/dead/expired, choose the nearest eligible remembered position or perform
+normal local visual acquisition. No hidden live position is used for selection,
+search or the resource-retreat destination. Dead/removed records are rejected
+immediately, including death/reappearance within one tic. The private bounded
+list is pruned once per active access/tic, never by scanning world actors.
+
+Investigation moves toward a private, invisible navigation marker with native
+collision-aware chase and thermal/movement accounting. It cannot authorize an
+attack. Reaching the point holds there while normal observation continues;
+reacquisition, expiry and observer death release the marker. Unidentified visual
+points and anonymous sounds can be investigated without declaring hostility.
+Current threat memory takes priority over unrelated noise. Search preserves
+existing rest, escort/story protection, recovery and cannon-operator duties;
+stationed defenders retain their approved command-area restriction.
+
+Memory timers and references are serialized. Pre-memory saves start with no
+invented confirmed records; existing anonymous events retain their original
+point/age and can be investigated. Original packages and unmodified input saves
+remain the reversible rollback path. The user-requested reset of pre-V5.10
+perception is still handled by #425. Audible identified reports/orders belong
+to #428; combined campaign/performance and author acceptance remain pending.
 
 ## 5.10.1 / #426 - Anonymous action noise
 
