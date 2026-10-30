@@ -51,6 +51,7 @@ class CaelumPrisonerClaimAction : CaelumPalomoDialogueAction
             CaelumPrisonerRescue.FactionFor(speaker.EscortPrisonerId)
         );
         CaelumPrisonerRescue.Sync(user);
+        CaelumPortSocial.Sync(user, speaker);
         return claimed;
     }
 }
@@ -124,8 +125,9 @@ class CaelumPrisonerRescue : Object play
             return false;
         }
         Sync(user);
+        CaelumPortSocial.Sync(user, speaker);
         int conversation = speaker.EscortPrisonerPort
-            ? CaelumConstants.PRISONER_PORT_CONVERSATION_BASE
+            ? CaelumPortSocialData.CONVERSATION_BASE
                 + speaker.EscortPrisonerId
             : CaelumConstants.PRISONER_CONVERSATION_BASE
                 + speaker.EscortPrisonerId;

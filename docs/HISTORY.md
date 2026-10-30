@@ -1,6 +1,24 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.9.1** - 2026-10-29.
+Documentation version: **5.9.2** - 2026-10-29.
+
+## 5.9.2 - Private port dialogue (#419, 2026-10-29)
+
+Added the approved per-stage Empathy readings, private witness declarations
+and explicit faction reports to the four rescued characters' native dialogue.
+Canonical manuscript/affiliation secrecy remains unchanged. The original
+runtime dialogue is an exact prefix of the extended runtime; appended IDs
+preserve old open saves without selecting replies during migration.
+
+Static and native evidence: assets/validation_592/RESULTS.md. Tests cover native
+menu replies, unchanged tutorial probability, result caching, distinct stages,
+private record/witness isolation, one-time disclosure/aid consequences, old
+open-dialogue restoration, current save/load, hub travel and hostility handoff.
+An initial interruption assertion mistook the following queued narrative voice
+for the closed representative; it now checks that specific participant. A hub
+fixture initially kept its expected roll in a map-local handler; a separate
+traveling diagnostic receipt now supplies the reference. No production private
+roll was lost. Author acceptance waits for the complete V5.9 handoff.
 
 ## 5.9.1 - Faction consequence implementation (#420, 2026-10-29)
 

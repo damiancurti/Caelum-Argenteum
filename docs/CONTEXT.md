@@ -1,14 +1,14 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.9.1** - 2026-10-29.
+Documentation version: **5.9.2** - 2026-10-29.
 
-**V5.9 in progress, 5.9.1/#420:** approved faction ranks, relationships,
-recorded aid/disclosure consequences and post-arrival hostility implemented.
-#418 coordination is the dependency. Evidence: assets/validation_590/591.
-#418-424 stay open: finish #419 private readings/reports, #421 story, #422
-quests, #423 guard/prisoner art and #424 service integration. The two #422
-quests still complete #418 integration. Grouped author terminal only after the
-whole version. Separate branches/PRs/evidence; GitHub issues retain approvals.
+**V5.9 in progress, 5.9.2/#419:** private port emotions and separate
+witness declarations/faction reports implemented. Depends on #420 consequences
+(5.9.1) and #418 coordination (5.9.0); evidence validation_590/591/592.
+Finish #421 story, #422 house/siege-information quests, #423 guard/prisoner art
+and #424 service integration. #422 completes #418's new reward integration.
+All #418-424 remain open; grouped author terminal only after the whole version.
+Separate branches/PRs/evidence; GitHub issues retain approvals.
 
 **V5.8 accepted/integrated:** #410-417/#496/#502, 5.8.56, 2026-10-29.
 Acceptance IDs/dates: HISTORY. No outstanding author checks at that closure.

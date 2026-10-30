@@ -1,6 +1,15 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.9.1** - 2026-10-29.
+Documentation version: **5.9.2** - 2026-10-29.
+
+## 5.9.2 / #419 - Port emotional readings
+
+The author approved relief on rescued arrival, concern during preparation,
+fear while the actual siege threat continues and relief after actual victory.
+These readings reveal no memory, secret affiliation or implanted-soul truth.
+Leonor, Rufino and Santos can receive private declarations and explicit requests
+to report them; Leandro remains unconfirmed and has no representative report
+option. Existing reward dialogue remains available outside hostile encounters.
 
 ## 5.9.1 / #420 - Confirmed representatives after rescue
 

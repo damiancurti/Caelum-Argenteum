@@ -1,6 +1,44 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.9.1** - 2026-10-29.
+Documentation version: **5.9.2** - 2026-10-29.
+
+## 5.9.2 / #419 - Private port emotions and explicit reports
+
+The four rescued speakers offer private emotional readings and the three
+confirmed representatives offer declarations/reports. Current native prisoner
+conversations are appended as IDs43640-43643, preserving every earlier native
+node byte/index. Old open conversations resume unchanged; using the speaker
+again selects the extended conversation. New conversations retain native
+history, input controls and unpaused world behavior.
+
+Readings use the existing Empathy ability curve and difficulty120, multiplied
+by reputation rank: Distrusted0.75, Neutral1, Friendly1.10, Respected1.20,
+Revered1.30; clamp and round to0..100. Existing tutorial/Racial Socialization
+rules are unchanged. Unconfirmed Leandro uses neutral reputation. The result,
+roll and displayed chance belong to the character and named speaker/stage;
+closing, loading, travel, changed attributes or reputation cannot reroll it.
+Another character or NPC does not inherit that private reading.
+
+The authored situation keys are arrival before payment (relief), preparation
+after the speaker's reward/intelligence (concern), actual siege start while
+unresolved (fear), and actual victory (relief). One attempt is allowed per key;
+old impressions are preserved separately. Revision1 introduces no retroactive
+readings or witness knowledge into legacy records.
+
+A true membership can be declared to a confirmed representative. The named
+witness alone remembers that tenure. Assistance declarations disclose only
+actual recorded aid. A separate, confirmed request to register the declarations
+shares them with that representative's faction through #420's idempotent
+consequences. Undeclared memberships/aid remain unknown. This adds neither
+free faction membership nor physical insignias or new rewards.
+
+Actions revalidate the actual native speaker, character, health, sight,
+distance, awake state and reputation. The participant's existing update path
+checks only its current port interlocutor at the existing four-tic cadence;
+no actor search is added. Invalid/hostile conversations close, and pending
+narration may then continue through the existing queue. Tutorial dialogue is
+outside these new checks. Multi-client networking remains outside this
+single-player verification.
 
 ## 5.9.1 / #420 - Faction ranks and recorded consequences
 
