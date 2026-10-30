@@ -1,15 +1,14 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.9.6** - 2026-10-29.
+Documentation version: **5.9.7** - 2026-10-29.
 
-#424 service integration: explicit affiliations only; validation_596.
-#423 visual delivery remains before the grouped author handoff.
-
-**V5.9 in progress, 5.9.6:** #418 coordination/rewards, #420 factions,
-#419 private dialogue, #421 story and #422 house/siege quests implemented.
-Evidence: validation_590-596. #424 services integrated; finish #423 art. All #418-424
-stay open. Separate PRs/evidence; grouped author terminal after the whole version.
-GitHub retains approvals.
+**V5.9 implemented, awaiting author corroboration at 5.9.7.**
+#418 coordination, #419 private dialogue, #420 factions/joining, #421 story,
+#422 house/siege quests, #423 wardrobes and #424 services are integrated.
+Focused PR stack and evidence validation_590-597 remain separate. Do not merge
+or close these issues before the author accepts and authorizes integration.
+Outstanding checks: root pending_test.txt. Numbered launcher:
+assets/validation_597/handoff.py. No repeat design questions are required.
 
 **V5.8 accepted/integrated:** #410-417/#496/#502, 5.8.56, 2026-10-29.
 Acceptance IDs/dates: HISTORY. No outstanding author checks at that closure.

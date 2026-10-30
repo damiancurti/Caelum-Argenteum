@@ -1,6 +1,30 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.9.6** - 2026-10-29.
+Documentation version: **5.9.7** - 2026-10-29.
+
+## 5.9.7 / #423 - Port wardrobes
+
+The approved scope is guards and the four rescued prisoners. Guards reuse four
+human face/hair variants from the existing modular catalog. OpenAI native image
+generation supplied headless navy jackets/gray trousers, caps, firearm, sword,
+walking, pain/fall/death and crouch paintings from owned pose/equipment references.
+Technical cutting and registration produce 160 shared body/cap modules and 544
+native TEXTURES compositions (four faces, seventeen poses, eight views), without
+extra head actors or a Cartesian collection of full character PNGs.
+
+Prisoners use 632 finite cloth-palette variants of their existing pose files;
+original files stay intact. Alpha, protected head envelopes, body silhouettes,
+skin/fur and unselected pixels remain unchanged by the masks. Neutral umber,
+slate, ochre and olive clothing choices add no insignia or faction knowledge.
+Actual weapons/equipment and the twenty-five #387 inventory garments are
+unchanged; worn player equipment/3D presentation remains deferred to V5.17.
+
+Sources, exact prompts, rejected candidates, palettes, crops and output hashes:
+assets/source/art/port_597. Deterministic processors:
+assets/generators/generate_port_wardrobes.py and
+generate_port_prisoner_wardrobes.py. The latter follows the legacy prisoner
+processor if that catalog is regenerated. Native review/evidence is under
+assets/validation_597; visual author acceptance remains pending.
 
 ## 5.8.56 / #416 - Original Ciudad theme for Buenos Aires
 

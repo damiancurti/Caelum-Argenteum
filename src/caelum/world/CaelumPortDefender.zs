@@ -16,6 +16,40 @@ class CaelumPortDefender : CaelumFolkloreCombatActor
     CaelumWeaponModel Sword;
     override CaelumWeaponModel GetPossessedSidearm(){return Sword;}
     CaelumCityCarbine Carbine;
+    int WardrobeRevision, WardrobeFace;
+    bool WardrobeApplied;
+    transient bool WardrobeCacheReady;
+    transient int WardrobeCachedFace, WardrobeSprite, WardrobeCarbineSprite, WardrobeCrouchSprite, WardrobeWalkSprite, WardrobeMeleeSprite;
+
+    void RestoreWardrobeState()
+    {
+        if(!WardrobeApplied || CurState==null)return;
+        sprite=CurState.sprite;frame=CurState.Frame;WardrobeApplied=false;
+    }
+
+    void ApplyWardrobe()
+    {
+        // Los bandidos heredan combate, no el uniforme de la guardia.
+        if(GetClassName()!='CaelumPortDefender' || CurState==null)return;
+        if(WardrobeRevision==0 && HomeRevision>0)
+        {
+            WardrobeFace=Abs(HomeIdentity)%CaelumPortWardrobeData.FACE_COUNT;
+            WardrobeRevision=CaelumPortWardrobeData.REVISION;
+        }
+        // Los índices nativos se resuelven una vez por cuerpo/carga, nunca se guardan.
+        if(!WardrobeCacheReady || WardrobeCachedFace!=WardrobeFace)
+        {
+            WardrobeSprite=CaelumPortWardrobeData.SpriteFor(self,WardrobeFace);
+            WardrobeCarbineSprite=GetSpriteIndex("CAGN");WardrobeCrouchSprite=GetSpriteIndex("CAGC");
+            WardrobeWalkSprite=GetSpriteIndex("DOWK");WardrobeMeleeSprite=GetSpriteIndex("DOMI");
+            WardrobeCachedFace=WardrobeFace;WardrobeCacheReady=true;
+        }
+        int visualFrame=CaelumPortWardrobeData.FrameFor(self);
+        sprite=WardrobeSprite;
+        frame=visualFrame;
+        double ratio=GetPhysiologicalHeight()/CaelumAppearanceRegistry.StandingHeight(0,true);
+        Scale=(ratio,ratio);WardrobeApplied=true;
+    }
     virtual bool CarbineTarget(Actor victim){return victim!=null && !victim.bFriendly;}
     override double GetPhysiologicalHeight()
     { return Carbine!=null && Carbine.StandingHeight>0 ? Carbine.StandingHeight : Height; }
@@ -156,10 +190,12 @@ class CaelumPortDefender : CaelumFolkloreCombatActor
             for(Inventory item=Inv;item!=null;item=item.Inv)item.ChangeStatNum(CaelumHouseResidents.PARKED_STAT);
             return;
         }
+        RestoreWardrobeState();
         CaelumCarbineWorld.Restore(self);
         Super.Tick();
         if(HomeRevision>0 && Carbine==null){Carbine=new("CaelumCityCarbine");Carbine.Initialize(self);}
         if(Carbine!=null)Carbine.Tick(self);
+        ApplyWardrobe();
         // Reconstruir la primera/repetida charla desde el registro del hablante.
         // No alterar el nodo de una conversación que sigue abierta al cargar.
         if (!bInConversation && HasConversation())

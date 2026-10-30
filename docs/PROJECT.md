@@ -1,24 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.9.6** - 2026-10-29.
+Documentation version: **5.9.7** - 2026-10-29.
 
-#424 service integration: explicit affiliations only; validation_596.
-#423 visual delivery remains before the grouped author handoff.
+## V5.9 implementation handoff - 5.9.7 (#418-424)
 
-#420 campaign membership is now integrated (5.9.3); evidence validation_593.
-#421 story is integrated; evidence validation_594.
-#422 integrates the two quests and #418 reward types; validation_595.
-#423 visuals and #424 services remain in progress.
-
-## V5.9 in progress - 5.9.3 (#418/#420/#419)
-
-Shared quest coordination, faction consequences and private port dialogue are
-implemented on separate focused branches. #419 now connects actual native
-readings/declarations/reports to #420, preserving tutorial rules and old native
-conversation nodes. Native evidence is retained in validation_590/591/592.
-New story/quests, service transactions and visual variants remain in progress.
-Issues #418-424 stay open and the manual terminal waits for the complete version.
-V5.8 remains the accepted baseline described below.
+All seven issues are implemented in separate focused branches/PRs. Native and
+static evidence is retained in validation_590-597. The final art patch preserves
+actual equipment and identities and introduces no routine actor scans. Grouped
+manual review is now actionable in pending_test.txt and the numbered launcher.
+Issues remain open; merge/closure requires the author's acceptance/instruction.
+The accepted V5.8 baseline is preserved below.
 
 ## V5.8 completion - 2026-10-29 (#403)
 

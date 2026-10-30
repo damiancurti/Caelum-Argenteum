@@ -1,6 +1,17 @@
 # Caelum Argenteum - Sprite art direction
 
-Documentation version: **5.9.6** - 2026-10-29.
+Documentation version: **5.9.7** - 2026-10-29.
+
+## Port wardrobe brief for #423 (2026-10-29)
+
+The author approved guards and the four prisoners: period dark-blue jackets,
+gray trousers and caps for guards, with existing face variants; recognizable
+prisoner bodies/faces and distinct clothing without secret faction insignia.
+The implementation shares guard modules and applies finite prisoner cloth
+palettes. It does not replace owned equipment or expand #387 worn views.
+Representative source/registration boards are in assets/source/art/port_597;
+engine captures and the outstanding author review are in validation_597 and
+pending_test.txt. This records scope, not visual acceptance.
 
 This is the artistic brief for generating and reviewing sprite artwork. Damián
 Curti requested this dedicated canonical document during issue
