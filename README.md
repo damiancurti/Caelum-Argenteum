@@ -9,13 +9,14 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 **Current release: 5.10.3.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-**V5.10 is implemented and awaiting author review.** #425 vision, #426 anonymous
-noise, #427 private memory/search and #428 audible reports/orders have separate
-commits, PRs and native evidence in validation_5100-5103. The final package passes
-53 communication/save/migration assertions and 91 combined regression checks.
-The grouped review launcher is `assets/validation_5103/start_manual.ps1`;
-`pending_test.txt` contains the four outstanding author checks. Issues remain
-open until accepted. The large siege remains slow: its final render-callback
+**V5.10 is complete and author-accepted (2026-10-30).** Issues #425-428 are
+closed and their focused PRs #570-573 are merged into main with commit ancestry
+preserved. Vision, anonymous noise, private memory/search and audible reports/
+orders are accepted. Evidence: validation_5100-5103; final communication/save/
+migration assertions: 53 PASS, combined regression: 91 PASS. HISTORY records
+CA425-01 through CA428-01; `pending_test.txt` is empty. The release remains
+5.10.3 because acceptance changes no gameplay. The large siege remains slow:
+its final render-callback
 mean is 653.63 ms versus 601.96 ms on the accepted baseline; these are not monitor
 FPS. Peaceful comparisons and all tails are in validation_5103/summary.json.
 See SYSTEMS, HISTORY and TASKS.

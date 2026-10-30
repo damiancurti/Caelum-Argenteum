@@ -2,12 +2,12 @@
 
 Documentation version: **5.10.3** - 2026-10-30.
 
-## V5.10 active - 5.10.3 (#425-428)
+## V5.10 complete - author-accepted 2026-10-30 (5.10.3, #425-428)
 
 - #425: visual filters, private recognition, attack gates, operator observation
   and reset-only legacy migration implemented. Full-package native/save/rollback
   checks: 53 PASS; static: zero errors. Final combined regression and campaign
-  comparisons are recorded under #428; author acceptance remains pending.
+  comparisons are recorded under #428; CA425-01 accepted 2026-10-30.
 - #426: anonymous action events, surface/equipment factors, alert and saved
   heard points implemented; 39 full-package native/save/migration assertions
   and static validation pass (validation_5101).
@@ -22,10 +22,12 @@ Documentation version: **5.10.3** - 2026-10-30.
   in HISTORY/validation_5103 rather than claimed as solved. Each member selects
   the nearest valid communicated threat to itself; unheard messages grant no
   knowledge. Preserve original evidence age and five-second report throttle.
-- Keep separate commits/PRs/evidence; do not merge or close these issues yet.
-- Author away: temporary system-only keep-awake helper active in local issue425
-  evidence folder. All four issues are implemented; grouped launcher:
-  assets/validation_5103/start_manual.ps1. CA425-01..CA428-01 remain unconfirmed.
+- CA425-01..CA428-01 passed by explicit author confirmation on 2026-10-30.
+  PR570-573 are merged into main; #425-428 closed. HISTORY retains each ID's
+  originating version and the final reviewed 5.10.3 package.
+- pending_test.txt is empty. The temporary keep-awake request was released.
+  No gameplay change or version increment accompanies acceptance. Existing
+  siege/presentation limits remain documented; next is the V5.11 roadmap.
 
 ## V5.9 complete - author-accepted 2026-10-30 (5.9.7, #403)
 

@@ -6,7 +6,8 @@ Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
 ## CA-KP-191 - Share spatial candidates without sharing perception
 
-Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED; author acceptance PENDING.
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED; CA428-01 author-confirmed
+2026-10-30. The performance limits below remain; acceptance is not a stall fix.
 First recorded / last checked: 2026-10-30 / 2026-10-30.
 Issue: #428, based on 91786d4e5; final runtime hash and comparisons are recorded
 in assets/validation_5103/summary.json. Windows 11, GZDoom 4.14.2, Vulkan,
