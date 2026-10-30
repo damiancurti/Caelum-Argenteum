@@ -1,0 +1,53 @@
+{
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-nomouse",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\performance\\final-sewers.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\performance\\final-sewers.ini",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "-rngseed",
+    "428",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\performance\\final-sewers.log",
+    "+map",
+    "MAP02",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\performance\\final-sewers.cfg"
+  ],
+  "packages": {
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3": "4c9830777147237c5797c646d10bd1f00f2379369ddbe50134049dc64f13818d",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\performance\\final-sewers.pk3": "034d56828b23a0f4b663015830e6874272319b9f0cd9eb636b4112c4b678c1fa"
+  },
+  "pid": 13396,
+  "exit_code": 0,
+  "elapsed_seconds": 38.124,
+  "simulation": {
+    "samples": 700,
+    "mean_ms": 28.566249142857142,
+    "p95_ms": 32.6268,
+    "p99_ms": 33.8796,
+    "max_ms": 59.1102
+  },
+  "render_callbacks": {
+    "samples": 3071,
+    "mean_ms": 5.868162878541192,
+    "p95_ms": 7.2511,
+    "p99_ms": 8.1357,
+    "max_ms": 57.9528
+  },
+  "census": [
+    "CA510 CENSUS start alive=293 attackers=0 defenders=0 groups=0 highdensity=0 pos=(0.00,0.00,-0.00) angle=90.00 pitch=0.00",
+    "CA510 CENSUS end alive=293 attackers=0 defenders=0 groups=0 highdensity=0 pos=(0.00,0.00,-0.00) angle=90.00 pitch=0.00"
+  ],
+  "limit": "RenderOverlay callbacks do not measure displayed frames; presentation capture remains separate."
+}

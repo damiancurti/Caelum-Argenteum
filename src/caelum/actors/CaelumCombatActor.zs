@@ -1098,6 +1098,7 @@ class CaelumCombatActor : Actor
         }
         if(RecoveryPhase==1)
         {
+            if(CaelumCommunication.SeekHelp(self))return true;
             if(CaelumVisualPerception.Identify(self,RecoveryThreat))RecoveryThreatPerceivedRange=RecoveryThreatRange();
             let known=CaelumVisualPerception.Evidence(self).GetMemory().Find(RecoveryThreat);
             double reach=RecoveryThreatPerceivedRange+Radius;
@@ -3970,16 +3971,25 @@ class CaelumCombatActor : Actor
     void ThermalChase(statelabel melee='_a_chase_default',statelabel missile='_a_chase_default',int flags=0)
     {
         if((CaelumBolas.Restrained(self) || CaelumTelekinesisRules.Held(self)))return;
+        bool perceptionUpdated=false;
+        if(CaelumCommunication.NeedsOrder(self)
+            && (target is "CaelumCombatActor" || target is "CaelumPlayer" || target is "CaelumSearchPoint"))
+        {
+            target=CaelumVisualPerception.Acquire(self,target);
+            if(target==null)target=CaelumVisualPerception.SearchGoal(self);
+            perceptionUpdated=true;
+            if(target==null)return;
+        }
         // Un destino de ruta no es un combatiente. Los actores ocultos nunca
         // llegan a A_Chase, que leería sus coordenadas vivas y podría atacar.
         bool combatTarget=target is "CaelumCombatActor" || target is "CaelumPlayer";
-        if(!IsCaelumMassDiagnosticActor() && combatTarget && !CaelumVisualPerception.Identify(self,target))
+        if(!perceptionUpdated && !IsCaelumMassDiagnosticActor() && combatTarget && !CaelumVisualPerception.Identify(self,target))
         {
             target=CaelumVisualPerception.Acquire(self);
             if(target==null)target=CaelumVisualPerception.SearchGoal(self);
             if(target==null){LastEnemy=null;return;}
         }
-        else if((target==null || target is "CaelumSearchPoint") && !IsCaelumMassDiagnosticActor())
+        else if(!perceptionUpdated && (target==null || target is "CaelumSearchPoint") && !IsCaelumMassDiagnosticActor())
         {
             target=CaelumVisualPerception.Acquire(self);
             if(target==null)target=CaelumVisualPerception.SearchGoal(self);
@@ -4095,6 +4105,7 @@ class CaelumCombatActor : Actor
         CaelumAltitudeService.Update(self);
         CaelumBreathing.UpdateSound(self);
         ResourceRecoveryActive();
+        CaelumCommunication.Pulse(self);
         CaelumDemonService.UpdateBreath(self);
         // Los valores base quedan intactos: reconstruir evita restas acumuladas.
         if (ArmorBalanceRevision < 1 && CombatProfileInitialized)

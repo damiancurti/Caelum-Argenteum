@@ -14,6 +14,7 @@ class CaelumSiegeCombatant : Object play
     int StableIdentity;
     int CommandGroup;
     CaelumSiegeCombatant CommandLeader;
+    CaelumCommandCandidates GroupCandidates;
     // Caché de percepción del puerto; revisión propia en CaelumPortSiege.
     Actor CombatTarget;
     int TargetRefreshTic;
@@ -48,6 +49,7 @@ class CaelumSiegeCombatant : Object play
     void WithdrawTick()
     {
         if (Body == null || ConfirmedDead || Exited || Body.health <= 0) return;
+        if(CaelumCommunication.SeekHelp(Body))return;
         if (Encounter is "CaelumPortSiege")
         {
             CaelumPortSiege(Encounter).Withdraw(self);

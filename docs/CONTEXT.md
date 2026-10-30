@@ -1,11 +1,13 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.10.2** - 2026-10-30.
+Documentation version: **5.10.3** - 2026-10-30.
 
-**V5.10 active, 5.10.2/#427:** vision, anonymous noise and private memory/search
-implemented; validation_5100-5102. Combined performance pending; #428 audible
-reports/orders next. Author away; temporary keep-awake active. Grouped manual
-handoff only after completion; no acceptance.
+**V5.10 implemented, 5.10.3/#428:** vision/noise/memory/reports; validation_5100-5103.
+Final communication/save checks:53 PASS; combined regression:91. Campaign
+comparisons complete; large siege remains slow (callbacks653.63 vs601.96 ms,
+not displayed FPS; HISTORY). Author away; temporary keep-awake active.
+Launcher:assets/validation_5103/start_manual.ps1. CA425-01..CA428-01 pending;
+no merge/acceptance.
 
 **V5.9 accepted/merged:** #418-424 closed, PR561-569; CA418-01..CA424-01
 confirmed 2026-10-30 in HISTORY. validation_590-597; pending_test.txt empty.

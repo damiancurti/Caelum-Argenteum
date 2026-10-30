@@ -1,28 +1,31 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.10.2** - 2026-10-30.
+Documentation version: **5.10.3** - 2026-10-30.
 
-## V5.10 active - 5.10.2 (#425-428)
+## V5.10 active - 5.10.3 (#425-428)
 
 - #425: visual filters, private recognition, attack gates, operator observation
   and reset-only legacy migration implemented. Full-package native/save/rollback
-  checks: 53 PASS; static: zero errors. Combined campaign/performance comparison
-  and author acceptance remain pending after #426-428.
+  checks: 53 PASS; static: zero errors. Final combined regression and campaign
+  comparisons are recorded under #428; author acceptance remains pending.
 - #426: anonymous action events, surface/equipment factors, alert and saved
   heard points implemented; 39 full-package native/save/migration assertions
   and static validation pass (validation_5101).
-  Investigation consumes these points in #427; combined performance pending.
+  Investigation consumes these points in #427; combined evidence: validation_5103.
 - #427: saved 30-second private positions, native point search, recognition
   reacquisition/expiry and target replacement implemented; 56 full-package
   native/save/migration assertions pass (validation_5102), static zero errors.
   Original saves/packages remain available for rollback.
-- #428: audible member reports to leader and return orders. Each member selects
+- #428: audible member reports to leader and return orders implemented. Final
+  communication/save/migration/rollback: 53 PASS; combined #425-427: 91 PASS.
+  Campaign measurements complete, with large-siege stalls explicitly documented
+  in HISTORY/validation_5103 rather than claimed as solved. Each member selects
   the nearest valid communicated threat to itself; unheard messages grant no
   knowledge. Preserve original evidence age and five-second report throttle.
 - Keep separate commits/PRs/evidence; do not merge or close these issues yet.
 - Author away: temporary system-only keep-awake helper active in local issue425
-  evidence folder. Queue new questions; prepare the grouped terminal only after
-  all four issues are implemented. Manual checks remain unconfirmed.
+  evidence folder. All four issues are implemented; grouped launcher:
+  assets/validation_5103/start_manual.ps1. CA425-01..CA428-01 remain unconfirmed.
 
 ## V5.9 complete - author-accepted 2026-10-30 (5.9.7, #403)
 
