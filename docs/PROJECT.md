@@ -2,14 +2,17 @@
 
 Documentation version: **5.9.7** - 2026-10-29.
 
-## V5.9 implementation handoff - 5.9.7 (#418-424)
+## V5.9 completion - 5.9.7 (2026-10-30, #403)
 
-All seven issues are implemented in separate focused branches/PRs. Native and
-static evidence is retained in validation_590-597. The final art patch preserves
-actual equipment and identities and introduces no routine actor scans. Grouped
-manual review is now actionable in pending_test.txt and the numbered launcher.
-Issues remain open; merge/closure requires the author's acceptance/instruction.
-The accepted V5.8 baseline is preserved below.
+The author confirmed all numbered manual tests and requested integration and
+closure. Issues #418-424 are complete and closed; focused PRs #561-568 are merged
+into main with their original commit ancestry. The integrated tree matches the
+accepted 2d20943ec delivery before this documentation-only acceptance update.
+CA418-01 through CA424-01 retain their original versions and confirmation date
+in HISTORY. pending_test.txt is empty. Evidence remains in validation_590-597.
+No gameplay or art changes accompany acceptance; existing measurement limits
+remain in force. Next: the existing V5.10 roadmap. Earlier delivery checkpoints
+below are historical and do not reopen completed V5.8/V5.9 work.
 
 ## V5.8 completion - 2026-10-29 (#403)
 

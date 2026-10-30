@@ -9,15 +9,15 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 **Current release: 5.9.7.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-**V5.9 implementation is complete; author review is pending.** Issues #418-424
-have focused branches and draft PRs. Quest coordination, factions, private
-conversation knowledge, Barracas story, house/siege investigations, wardrobes
-and explicit faction services are integrated. Evidence: `assets/validation_590`
-through `assets/validation_597`. All issues remain open pending review.
+**V5.9 is complete and author-accepted (2026-10-30).** Issues #418-424 are
+closed; focused PRs #561-568 are merged into main with their commit ancestry.
+Quest coordination, factions, private conversation knowledge, Barracas story,
+house/siege investigations, wardrobes and explicit faction services are accepted.
+Evidence: `assets/validation_590` through `assets/validation_597`; per-test author
+confirmations are in HISTORY. The tracked `pending_test.txt` is empty.
 
-The numbered author launcher is `assets/validation_597/handoff.py`; build the
-final runtime first as documented in its evidence. Outstanding checks are in
-`pending_test.txt`. No agent-only run counts as author acceptance.
+The existing V5.10 roadmap is next. This acceptance does not change gameplay or
+turn render-callback evidence into a claim of 60 monitor-presented FPS.
 
 **V5.8 remains complete and author-accepted (2026-10-29).** Its issues #410-417,
 #496 and #502 are integrated into main; acceptance records remain in HISTORY.

@@ -2,7 +2,28 @@
 
 Documentation version: **5.9.7** - 2026-10-29.
 
+## V5.9 completion - 2026-10-30 (#403)
+
+The author confirmed: "Todas las pruebas dieron correcto, cierra los issues y
+haz los merge." All seven outstanding V5.9 test IDs below passed without a
+reported exception. PRs #561-568 were merged in dependency order with ordinary
+merge commits, preserving each issue's original commits. Issues #418-424 are
+closed as completed. Before this documentation-only acceptance update, main's
+tracked tree exactly matched accepted delivery 2d20943ec. Version remains 5.9.7:
+later acceptance of the same patch does not increment its release number.
+
+The seven confirmed entries were removed from pending_test.txt, which remains
+tracked and empty. Original test versions, issue IDs and confirmations are
+recorded in their release entries below. Static/native evidence and author
+acceptance remain distinct; no new gameplay or quantitative FPS claim is made.
+Earlier pending statements describe historical delivery checkpoints and are
+superseded by this acceptance. Next: the existing V5.10 roadmap.
+
 ## 5.9.7 - Guard and prisoner wardrobes (#423, 2026-10-29)
+
+Author acceptance 2026-10-30: **CA423-01**, origin 5.9.7 / #423,
+passed (wardrobe identity, save/reload and real-city traversal). The author confirmed all terminal tests;
+no exception was reported. Native measurement limitations remain unchanged.
 
 Implemented the approved navy/gray/cap guard wardrobe with four existing faces,
 shared authored pose modules and native composition. Prisoners retain their
@@ -17,12 +38,20 @@ for #418-424. None is author-accepted yet, and no merge/closure is claimed.
 
 ## 5.9.6 - Faction service consequences (#424, 2026-10-29)
 
+Author acceptance 2026-10-30: **CA424-01**, origin 5.9.6 / #424,
+passed (explicit faction prices, hostility and preserved civilian access). The author confirmed all terminal tests;
+no exception was reported. Native measurement limitations remain unchanged.
+
 Integrated explicit faction hostility and prices into actual merchant and door
 service paths, including commit-time checks and library purchases. Civilian
 shops/travel and narrative dialogue keep their existing access. Native evidence:
 assets/validation_596/RESULTS.md. Author review remains grouped after #423.
 
 ## 5.9.5 - House and siege side quests (#422, 2026-10-29)
+
+Author acceptance 2026-10-30: **CA422-01**, origin 5.9.5 / #422,
+passed (home restitution, recorded refund and siege testimony progress). The author confirmed all terminal tests;
+no exception was reported. Native measurement limitations remain unchanged.
 
 Implemented the two approved quests using #418 shared requirements/transitions,
 #421 heard accounts and the existing #411 property/currency owners. Property
@@ -34,6 +63,10 @@ separately. Whole V5.9 author handoff remains pending #423/#424.
 
 ## 5.9.4 - Barracas story integration (#421, 2026-10-29)
 
+Author acceptance 2026-10-30: **CA421-01**, origin 5.9.4 / #421,
+passed (arrival, preparation, ongoing siege and aftermath dialogue). The author confirmed all terminal tests;
+no exception was reported. Native measurement limitations remain unchanged.
+
 Extended native conversations cover arrival, captain recognition, preparation
 and actual siege aftermath. New private heard-account records support the
 Journal and upcoming #422 investigation; the original reward owner remains
@@ -43,6 +76,10 @@ acceptance is reserved for the complete V5.9 terminal.
 
 ## 5.9.3 - Campaign membership (#420, 2026-10-29)
 
+Author acceptance 2026-10-30: **CA420-01**, origin 5.9.1/5.9.3 / #420,
+passed (campaign joining and private declaration/report consequences). The author confirmed all terminal tests;
+no exception was reported. Native measurement limitations remain unchanged.
+
 Added the author-approved free post-rescue joining option for the three confirmed
 representatives, gated at Neutral reputation. Native choices reuse current pages
 without changing saved conversation indices. The authoritative action rechecks
@@ -51,6 +88,10 @@ reputation, money and witness knowledge remain unchanged. Evidence:
 assets/validation_593/RESULTS.md. Author acceptance awaits complete V5.9 handoff.
 
 ## 5.9.2 - Private port dialogue (#419, 2026-10-29)
+
+Author acceptance 2026-10-30: **CA419-01**, origin 5.9.2 / #419,
+passed (private saved emotional readings and distinct report action). The author confirmed all terminal tests;
+no exception was reported. Native measurement limitations remain unchanged.
 
 Added the approved per-stage Empathy readings, private witness declarations
 and explicit faction reports to the four rescued characters' native dialogue.
@@ -70,6 +111,10 @@ roll was lost. Author acceptance waits for the complete V5.9 handoff.
 
 ## 5.9.1 - Faction consequence implementation (#420, 2026-10-29)
 
+Author acceptance 2026-10-30: **CA420-01**, origin 5.9.1/5.9.3 / #420,
+passed (faction ranks and one-time disclosure consequences). The author confirmed all terminal tests;
+no exception was reported. Native measurement limitations remain unchanged.
+
 Implemented the approved seven ranks, quotation factors and two enemy pairs;
 added revisioned per-character assistance receipts, membership tenures and
 explicit disclosure consequences. Existing rescue rewards use the receipt
@@ -88,6 +133,10 @@ remain local evidence. Dialogue reports and service wiring remain #419/#424;
 no author acceptance, issue closure or completed V5.9 claim is implied.
 
 ## 5.9.0 - Quest coordination checkpoint (#418, 2026-10-29)
+
+Author acceptance 2026-10-30: **CA418-01**, origin 5.9.0 / #418,
+passed (quest coordination and the playable house chain). The author confirmed all terminal tests;
+no exception was reported. Native measurement limitations remain unchanged.
 
 Added composite read-only requirements and compared state/objective transitions
 over existing authoritative records. Integrated the side-trial prerequisite and

@@ -10,8 +10,8 @@ prisoner bodies/faces and distinct clothing without secret faction insignia.
 The implementation shares guard modules and applies finite prisoner cloth
 palettes. It does not replace owned equipment or expand #387 worn views.
 Representative source/registration boards are in assets/source/art/port_597;
-engine captures and the outstanding author review are in validation_597 and
-pending_test.txt. This records scope, not visual acceptance.
+engine captures are in validation_597. CA423-01 (origin 5.9.7 / #423) received
+explicit author acceptance on 2026-10-30; HISTORY records the confirmation.
 
 This is the artistic brief for generating and reviewing sprite artwork. Damián
 Curti requested this dedicated canonical document during issue

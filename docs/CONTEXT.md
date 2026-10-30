@@ -2,13 +2,13 @@
 
 Documentation version: **5.9.7** - 2026-10-29.
 
-**V5.9 implemented, awaiting author corroboration at 5.9.7.**
+**V5.9 complete at 5.9.7, author-accepted 2026-10-30.**
 #418 coordination, #419 private dialogue, #420 factions/joining, #421 story,
 #422 house/siege quests, #423 wardrobes and #424 services are integrated.
-Focused PR stack and evidence validation_590-597 remain separate. Do not merge
-or close these issues before the author accepts and authorizes integration.
-Outstanding checks: root pending_test.txt. Numbered launcher:
-assets/validation_597/handoff.py. No repeat design questions are required.
+Focused PRs #561-568 are merged into main; issues #418-424 are closed.
+CA418-01 through CA424-01 passed author review; origin records: HISTORY.
+pending_test.txt is empty. Evidence: validation_590-597. Next: V5.10.
+Closure changes no gameplay or rendering guarantees.
 
 **V5.8 accepted/integrated:** #410-417/#496/#502, 5.8.56, 2026-10-29.
 Acceptance IDs/dates: HISTORY. No outstanding author checks at that closure.

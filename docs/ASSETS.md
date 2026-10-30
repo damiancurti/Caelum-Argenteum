@@ -24,7 +24,8 @@ assets/source/art/port_597. Deterministic processors:
 assets/generators/generate_port_wardrobes.py and
 generate_port_prisoner_wardrobes.py. The latter follows the legacy prisoner
 processor if that catalog is regenerated. Native review/evidence is under
-assets/validation_597; visual author acceptance remains pending.
+assets/validation_597. CA423-01 (origin 5.9.7 / #423) passed author visual and
+city-traversal review on 2026-10-30. This does not assert measured monitor FPS.
 
 ## 5.8.56 / #416 - Original Ciudad theme for Buenos Aires
 
