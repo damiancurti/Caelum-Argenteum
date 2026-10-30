@@ -1,9 +1,10 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.9.3** - 2026-10-29.
+Documentation version: **5.9.4** - 2026-10-29.
 
 #420 campaign membership is now integrated (5.9.3); evidence validation_593.
-#421-424 and final #418 reward integration remain in progress.
+#421 story is integrated; evidence validation_594.
+#422-424 and final #418 reward integration remain in progress.
 
 ## V5.9 active work - 5.9.3
 
@@ -16,8 +17,8 @@ Documentation version: **5.9.3** - 2026-10-29.
 - #419: private emotional readings and separate declaration/report choices
   implemented in native port dialogue; evidence validation_592. Tutorial rolls
   and all old dialogue nodes remain unchanged. Author corroboration grouped.
-- #421/#422: Barracas arrival/recognition/preparation/aftermath and the two
-  requested quests (find the protagonist's house; investigate the siege).
+- #421: arrival/recognition/preparation/aftermath and heard accounts implemented.
+- #422: implement house restitution and siege-information investigation.
 - #423: guards and four prisoners, preserving canonical bodies/identities and
   separating visual wardrobe from actual inventory.
 - #424: explicit quest/faction-to-service mappings, with existing world owners.

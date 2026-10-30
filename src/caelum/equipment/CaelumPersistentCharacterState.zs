@@ -260,6 +260,10 @@ class CaelumPersistentCharacterState : Inventory
     int FactionMembershipKnownEpoch[CaelumConstants.FACTION_COUNT * CaelumConstants.FACTION_COUNT];
     Array<CaelumFactionAidEvent> FactionAidEvents;
     int PortSocialRevision;
+    int PortStoryRevision;
+    int PortArrivalHeardMask;
+    int PortPrisonerAccountMask;
+    bool PortGuardAccountHeard;
     int PortEmotionResult[CaelumConstants.PRISONER_COUNT * CaelumPortSocialData.STAGES];
     int PortEmotionChance[CaelumConstants.PRISONER_COUNT * CaelumPortSocialData.STAGES];
     int PortEmotionRoll[CaelumConstants.PRISONER_COUNT * CaelumPortSocialData.STAGES];

@@ -1,6 +1,16 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.9.3** - 2026-10-29.
+Documentation version: **5.9.4** - 2026-10-29.
+
+## 5.9.4 / #421 - Barracas conversation outline implemented
+
+Arrival confirms the rescue and existing promised reward. Guards still call
+the protagonist captain without restoring his memory. Defense discussion and
+paid prisoner accounts repeat the established twelve hostile engines/Zupay
+commander. During attack the text says the siege is active; only real recorded
+victory enables the aftermath. That aftermath names only accounts actually
+selected by this character. The implanted-soul truth and Leandro's ambiguous
+affiliation stay undisclosed. No new enemy organizer, peace treaty or reward.
 
 ## 5.9.3 / #420 - Representative access
 

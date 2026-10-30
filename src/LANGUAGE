@@ -7072,3 +7072,24 @@ CA_PORT_JOIN_DONE = "You have joined this representative's faction. Your other a
 [es]
 CA_PORT_JOIN_CHOICE = "Quiero incorporarme a tu facción. [Sin coste]";
 CA_PORT_JOIN_DONE = "Te incorporaste a la facción de este representante. Tus otras afiliaciones siguen siendo privadas.";
+
+[enu default]
+CA_PORT_STORY_CHOICE = "What can you tell me about the siege?";
+CA_PORT_STORY_GUARD = "Captain, we are defending Barracas al Sud. I can tell you how the defense stands; I cannot give you back your memories.";
+CA_PORT_STORY_PRISONER = "Now that we are in Barracas and I have honored my promise, I can repeat what I know about the assault.";
+CA_PORT_STORY_NONE = "No accounts have been heard in these conversations yet.";
+CA_PORT_STORY_HEARD = "Accounts you have heard:";
+CA_PORT_STORY_ARRIVAL_0 = "We reached Barracas al Sud. You kept your word. I still owe you the reward I promised.";
+CA_PORT_STORY_ARRIVAL_1 = "We made it to Barracas. I can settle the reward I promised you here.";
+CA_PORT_STORY_ARRIVAL_2 = "We are in Barracas, out of those cells. I will honor the reward I promised you.";
+CA_PORT_STORY_ARRIVAL_3 = "Barracas al Sud again. You brought me back; I still have my promise to keep.";
+[es]
+CA_PORT_STORY_CHOICE = "¿Qué podés contarme sobre el asedio?";
+CA_PORT_STORY_GUARD = "Capitán, estamos defendiendo Barracas al Sud. Puedo contarte cómo está la defensa; no puedo devolverte tus recuerdos.";
+CA_PORT_STORY_PRISONER = "Ahora que estamos en Barracas y cumplí mi promesa, puedo repetirte lo que sé del asalto.";
+CA_PORT_STORY_NONE = "Todavía no escuchaste testimonios en estas conversaciones.";
+CA_PORT_STORY_HEARD = "Testimonios que escuchaste:";
+CA_PORT_STORY_ARRIVAL_0 = "Llegamos a Barracas al Sud. Cumpliste tu palabra. Todavía te debo la recompensa que prometí.";
+CA_PORT_STORY_ARRIVAL_1 = "Llegamos a Barracas. Acá puedo entregarte la recompensa que te prometí.";
+CA_PORT_STORY_ARRIVAL_2 = "Estamos en Barracas, fuera de esas celdas. Voy a cumplir con la recompensa que te prometí.";
+CA_PORT_STORY_ARRIVAL_3 = "Otra vez en Barracas al Sud. Me trajiste de vuelta; todavía tengo que cumplir mi promesa.";

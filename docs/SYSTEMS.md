@@ -1,6 +1,27 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.9.3** - 2026-10-29.
+Documentation version: **5.9.4** - 2026-10-29.
+
+## 5.9.4 / #421 - Barracas story and heard accounts
+
+The port conversations confirm arrival and retain existing reward ownership.
+After payment, each rescued character can repeat the existing siege account;
+guards retain first/repeat captain recognition and discuss defense. Preparation
+names the twelve engines and Zupay commander already established by #78. Active
+and aftermath wording reads the actual siege flags, never elapsed time alone.
+The victory page lists only accounts this character selected in these new
+conversations. A separate revision1 heard-account mask and guard flag start
+empty in legacy saves; existing paid intelligence remains available unchanged.
+The Journal's siege entry lists those heard accounts without granting rewards.
+
+New conversation IDs43650-43655 append complete extended conversations after
+all accepted nodes. Original open dialogues retain their indices and actions;
+next interaction selects the extension. First recognition still completes only
+its existing clue. New testimony actions revalidate the current living, awake,
+accessible speaker and paid prerequisite; stale actions cannot record testimony.
+Guards interrupt on active combat/theft, using only the current participant.
+No new alliance, perpetrator, recovered memory, concealed-soul revelation or
+reward is introduced. #422 owns the separate investigation and house quests.
 
 ## 5.9.3 / #420 - Campaign membership
 

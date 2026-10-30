@@ -1,6 +1,15 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.9.3** - 2026-10-29.
+Documentation version: **5.9.4** - 2026-10-29.
+
+## 5.9.4 - Barracas story integration (#421, 2026-10-29)
+
+Extended native conversations cover arrival, captain recognition, preparation
+and actual siege aftermath. New private heard-account records support the
+Journal and upcoming #422 investigation; the original reward owner remains
+unchanged. New nodes append after the entire accepted runtime, preserving old
+open saves. Static/native evidence: assets/validation_594/RESULTS.md. Author
+acceptance is reserved for the complete V5.9 terminal.
 
 ## 5.9.3 - Campaign membership (#420, 2026-10-29)
 

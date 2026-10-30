@@ -127,11 +127,13 @@ class CaelumPrisonerRescue : Object play
         Sync(user);
         CaelumPortSocial.Sync(user, speaker);
         int conversation = speaker.EscortPrisonerPort
-            ? CaelumPortSocialData.CONVERSATION_BASE
+            ? CaelumPortStoryData.PRISONER_BASE
                 + speaker.EscortPrisonerId
             : CaelumConstants.PRISONER_CONVERSATION_BASE
                 + speaker.EscortPrisonerId;
-        return CaelumFactionCondition.OpenDialogue(user, speaker, conversation);
+        bool opened = CaelumFactionCondition.OpenDialogue(user, speaker, conversation);
+        if (opened) CaelumPortStory.Arrived(user, speaker);
+        return opened;
     }
 }
 

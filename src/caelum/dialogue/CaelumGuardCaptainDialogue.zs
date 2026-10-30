@@ -22,7 +22,7 @@ class CaelumGuardCaptainDialogue : Object play
         record.EnsureQuestStateInitialized();
         int clue = CaelumConstants.QUEST_GUARD_CAPTAIN;
         int conversation = record.QuestState[clue] == CaelumConstants.QUEST_STATE_UNDISCOVERED
-            ? FIRST_CONVERSATION : REPEAT_CONVERSATION;
+            ? CaelumPortStoryData.GUARD_FIRST : CaelumPortStoryData.GUARD_REPEAT;
         guard.bInCombat = false;
         bool opened = CaelumFactionCondition.OpenDialogue(user, guard, conversation);
         guard.bInCombat = fighting;

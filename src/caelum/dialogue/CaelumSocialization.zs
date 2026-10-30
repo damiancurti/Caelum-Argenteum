@@ -72,7 +72,7 @@ class CaelumSocialization : Object play
     static void Clear(CaelumPlayer user){user.SocialSession=null;}
 
     static void Update(CaelumPlayer user)
-    {CaelumPortSocial.Guard(user);if(!InConversation(user))Clear(user);}
+    {CaelumPortSocial.Guard(user);CaelumPortStory.Guard(user);if(!InConversation(user))Clear(user);}
 
     static void Capture(CaelumPlayer user,int node,int offset)
     {

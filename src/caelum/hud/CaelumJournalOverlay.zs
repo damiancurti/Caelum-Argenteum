@@ -418,7 +418,7 @@ class CaelumJournalOverlay : EventHandler
             return text;
         }
         if (questId == CaelumConstants.QUEST_PORT_SIEGE)
-            return CaelumSiegeIntelligence.Text(localPlayer);
+            return CaelumSiegeIntelligence.Text(localPlayer) .. "\n\n" .. CaelumPortStory.Accounts(localPlayer);
         if (CaelumSideQuestRules.IsDefined(questId))
         {
             return CaelumQuestTrackingView.Objective(localPlayer,questId) .. "\n\n"
