@@ -9,6 +9,11 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 **Current release: 5.11.7.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
+**Companion speed review (#430):** native equal-condition measurement found no
+duplicate movement. Leonor accelerates sooner because her body and equipment
+weigh less; her final speed is below Rufino and Leandro in this fixture.
+Evidence: `assets/validation_v5_11_4/speed-results.json`. Balance is unchanged.
+
 **V5.11 corrections are ready for author retest.** Companion walking/running,
 Leonor follow and mansion stairs are corrected (#430), as is the corridor exit
 (#429). Rental progression (#580), rat disease immunity (#582) and the workshop/

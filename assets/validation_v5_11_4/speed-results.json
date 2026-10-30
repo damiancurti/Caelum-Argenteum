@@ -1,0 +1,82 @@
+{
+  "runs": [
+    {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue581\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue430\\speed.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue430\\speed-comparison-d.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue430",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue430\\speed-comparison-d.log",
+        "+map",
+        "MAP02",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue430\\speed-comparison-d.cfg"
+      ],
+      "pid": 49516,
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue581\\final\\caelum_argenteum_dev.pk3": "7f02160e26247425b49ed89cf118ef75b78a955bf8d107481b81f786abf6cfd8",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue430\\speed.pk3": "c4a42c9c3ee3af3d18508a35a929948a61cada482ae2f67047a320072906cbae"
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 25.136,
+      "failures": [],
+      "pass_count": 12
+    },
+    {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue581\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue430\\speed.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue430\\speed-reload-a.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue430",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue430\\speed-reload-a.log",
+        "-loadgame",
+        "speed-comparison-d.zds",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue430\\speed-reload-a.cfg"
+      ],
+      "pid": 31584,
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue581\\final\\caelum_argenteum_dev.pk3": "7f02160e26247425b49ed89cf118ef75b78a955bf8d107481b81f786abf6cfd8",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue430\\speed.pk3": "c4a42c9c3ee3af3d18508a35a929948a61cada482ae2f67047a320072906cbae"
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 8.604,
+      "failures": [],
+      "pass_count": 4
+    }
+  ],
+  "interpretation": "No duplicated movement. Acceleration uses (body mass + carried mass) / 100 * 3 seconds. Equal conditions after acceleration: Leonor 7.9392, Rufino 8.3716, Leandro 8.1652, Santos 7.1458 m/s. Climate, load, health and Air can change these sample speeds. No production balance change.",
+  "fixture_history": "Initial fixture used unsupported Vector3 arrays. After correcting that, pre-recruitment escort recovery moved three prisoners beside the leader, invalidating distance comparisons. Final fixture resets all positions after recruitment and measures seconds 10-14 to exclude acceleration."
+}
