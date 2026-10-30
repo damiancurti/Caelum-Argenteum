@@ -5,6 +5,10 @@ class CaelumCombatActor : Actor
 {
     CaelumVisualEvidence VisualEvidence;
     CaelumFormationMember Formation;
+    // #432: resultados puros por atributo; no guardan objetivos ni percepcion.
+    transient bool VisualInsightReady,VisualStealthReady;
+    transient int VisualInsightKey,VisualStealthKey;
+    transient double VisualInsightFactor,VisualStealthPercent;
     CaelumPlayer PendingTheftTarget;
     int NextNoiseStepTic;
     bool NoiseStepScheduled;

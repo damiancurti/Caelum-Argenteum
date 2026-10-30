@@ -4,6 +4,20 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-193 - Share pristine exposure results without sharing mutable contamination
+
+Status/evidence: ENGINE-VERIFIED, #432, 2026-10-30, 5.11.2. Evidence:
+assets/validation_v5_11_2/summary.json; author acceptance pending.
+A per-cell historical weather optimization alone regressed in the measured siege.
+Reusing both the existing bounded day cache and identical pristine interval results
+improved repeated comparisons. Key the latter by map epoch, exact target time and
+all climate inputs, bound it to32 entries and one tic, and copy derived scalar state;
+never alias the live contamination cells. Later contact must remain independent.
+Transient caches rebuild on load. Exact old-code comparisons, midnight eviction,
+same-tic attribute changes and reload pass133 assertions. Measure the final normal
+campaign as well: the gain is modest and does not resolve siege rendering stalls.
+Render callbacks are not presentation measurements; retain that distinction.
+
 ## CA-KP-192 - Thermal scheduler cost includes contamination surface history
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED; #431, 2026-10-30,

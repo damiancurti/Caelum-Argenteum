@@ -1,8 +1,8 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.11.1** - 2026-10-30.
+Documentation version: **5.11.2** - 2026-10-30.
 
-## V5.11 active - 5.11.1 (#429-433, 2026-10-30)
+## V5.11 active - 5.11.2 (#429-433, 2026-10-30)
 
 - #431: subsystem profiling and current/full35/reduced5/simplified diagnostic
   comparisons; production runtime unchanged. Numerical accuracy observations
@@ -14,7 +14,9 @@ Documentation version: **5.11.1** - 2026-10-30.
 - #430: approved roster, recruitment, persistent death, trust and consent are
   recorded on its issue. The subcaptain uses Domingo's appearance and 20 in
   every attribute, not customizable player statistics or ordinary guard 18.
-- #432/#433: implement only evidence-supported improvements; preserve individual
+- #432: shared climate/pristine/attribute caches pass133 final native assertions.
+  Normal siege improves modestly; presentation remains unmeasured for this patch.
+- #433: implement only evidence-supported improvements; preserve individual
   combat, resources, collisions and event wakeups. The five-tic empty-search
   candidate is authorized for evaluation, not assumed beneficial.
 - Deliver one linked PR per issue, commit/push separately, and group outstanding

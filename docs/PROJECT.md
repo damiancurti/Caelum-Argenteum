@@ -1,14 +1,14 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.11.1** - 2026-10-30.
+Documentation version: **5.11.2** - 2026-10-30.
 
-## V5.11 implementation - 5.11.1 (#429, 2026-10-30)
+## V5.11 implementation - 5.11.2 (#432, 2026-10-30)
 
-#429 implements stable formations and corrected admission accounting; native
-validation is in progress. #431 profiling is delivered separately in PR575.
-#430 companions and measured #432/#433 optimizations remain active. The author
-will receive grouped manual checks after all issues are implemented. Native
-checks are not author acceptance or authorization to merge.
+#429 formations and #431 profiling have separate PRs576/575. #432 now shares
+bounded historical climate work and unchanged NPC attribute curve results.
+Static/native equivalence and full-package campaign measurements pass; siege
+simulation improves modestly but remains slow. #430 companions and #433 distant
+search evaluation remain active. Author review is deferred to a combined handoff.
 
 ## V5.10 complete and author-accepted - 5.10.3 (2026-10-30, #403)
 

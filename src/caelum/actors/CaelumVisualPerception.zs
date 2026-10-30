@@ -12,11 +12,27 @@ class CaelumVisualPerception : Object play
         let user=CaelumPlayer(body);
         if(user!=null)return Clamp(user.EffectiveStealthPercent,0.0,100.0);
         let npc=CaelumCombatActor(body);
-        return npc==null ? 0.0 : Clamp(npc.CalculateActorType2Percent(npc.CombatAgility),0.0,100.0);
+        if(npc==null)return 0;
+        if(!npc.VisualStealthReady || npc.VisualStealthKey!=npc.CombatAgility)
+        {
+            npc.VisualStealthKey=npc.CombatAgility;
+            npc.VisualStealthPercent=Clamp(npc.CalculateActorType2Percent(npc.CombatAgility),0.0,100.0);
+            npc.VisualStealthReady=true;
+        }
+        return npc.VisualStealthPercent;
     }
 
     static double InsightFactor(CaelumCombatActor observer)
-    { return observer==null ? 1.0 : CaelumGrowthRules.Multiplier(observer.CombatEffectiveInsight,2); }
+    {
+        if(observer==null)return 1;
+        if(!observer.VisualInsightReady || observer.VisualInsightKey!=observer.CombatEffectiveInsight)
+        {
+            observer.VisualInsightKey=observer.CombatEffectiveInsight;
+            observer.VisualInsightFactor=CaelumGrowthRules.Multiplier(observer.CombatEffectiveInsight,2);
+            observer.VisualInsightReady=true;
+        }
+        return observer.VisualInsightFactor;
+    }
 
     static double Range(CaelumCombatActor observer,Actor candidate)
     {

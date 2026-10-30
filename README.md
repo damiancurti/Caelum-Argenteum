@@ -6,17 +6,15 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.11.1.** Obtain and update the complete repository, validate
+**Current release: 5.11.2.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-**V5.11 implementation is in progress.** Patch 5.11.1 (#429) adds persistent
-formation membership, role layouts, leader succession and bounded passage
-coordination while preserving individual collisions and combat. A party
-reserves one of its eight places for its player leader; recruitment is #430.
-The 1,000-side admission ceiling includes commanders, crews and machines.
-#431 profiling is available separately; #430/#432/#433 remain in progress.
-No V5.11 author acceptance or merge is claimed. Manual checks will be grouped
-when the entire version is ready. Native evidence: validation_v5_11_1; HISTORY.
+**V5.11 implementation is in progress.** Patch 5.11.2 (#432) shares deterministic
+contamination climate work and caches pure NPC perception attribute curves.
+Individual concentration, clocks, contacts, visibility and resources remain
+authoritative. #429 formations and #431 profiling have separate PRs; #430/#433
+remain in progress. 133 full-package native/reload assertions pass. Siege costs improve modestly;
+large stalls remain. No author acceptance or merge is claimed. Manual checks will be grouped when the entire version is ready.
 
 **V5.10 is complete and author-accepted (2026-10-30).** Issues #425-428 are
 closed and their focused PRs #570-573 are merged into main with commit ancestry
