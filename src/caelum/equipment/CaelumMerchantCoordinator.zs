@@ -2,6 +2,21 @@
 // Inventario, dinero y transferencias se confirman en el servicio compartido.
 class CaelumMerchantCoordinator : Object play
 {
+    static CaelumFactionCondition ServiceCondition(CaelumPlayer user)
+    {
+        return user.CityTrade!=null && user.CityTrade.Vendor!=null
+            ?user.CityTrade.Vendor.AccessCondition:user.ActivePalomoMerchantRequirement;
+    }
+    static double PriceFactor(CaelumPlayer user)
+    {
+        return CaelumFactionServices.Factor(user,ServiceCondition(user),
+            user.PalomoMerchantMode==CaelumConstants.PALOMO_MERCHANT_MODE_SELL);
+    }
+    static int CityPrice(CaelumPlayer user,CaelumCityTradeSession session,double value,int amount=1)
+    {
+        return CaelumFactionServices.Price(user,session.Vendor.AccessCondition,value,amount,session.Selling);
+    }
+
     static int GetPalomoMerchantQuantityForIndex(CaelumPlayer user, int quantityIndex)
     {
         switch (Clamp(quantityIndex, 0,
@@ -64,6 +79,7 @@ class CaelumMerchantCoordinator : Object play
             persistentState.PalomoDiscountGranted;
         // Esta rebaja es de la sesión: nunca se guarda como rebaja negociada.
         user.PalomoMerchantReputationDiscount = user.HasPalomoMerchantReputationDiscount();
+        user.PalomoMerchantFactionPriceFactor=PriceFactor(user);
         for (int merchantItem = 0;
             merchantItem < CaelumConstants.PALOMO_MERCHANT_ITEM_COUNT; merchantItem++)
         {
@@ -87,7 +103,7 @@ class CaelumMerchantCoordinator : Object play
                         >= CaelumEconomyRules.GetPalomoMerchantLotPrice(
                             merchantItem, 1,
                             CaelumConstants.PALOMO_MERCHANT_MODE_SELL,
-                            user.PalomoMerchantDiscountGranted || user.PalomoMerchantReputationDiscount
+                            user.PalomoMerchantDiscountGranted || user.PalomoMerchantReputationDiscount, user.PalomoMerchantFactionPriceFactor
                         ));
             if (!visible) { continue; }
 
@@ -114,7 +130,7 @@ class CaelumMerchantCoordinator : Object play
         user.PalomoMerchantSelectedLotPrice = user.PalomoMerchantVisibleItemCount > 0
             ? CaelumEconomyRules.GetPalomoMerchantLotPrice(
                 user.PalomoMerchantSelection, user.PalomoMerchantSelectedQuantity,
-                user.PalomoMerchantMode, user.PalomoMerchantDiscountGranted || user.PalomoMerchantReputationDiscount)
+                user.PalomoMerchantMode, user.PalomoMerchantDiscountGranted || user.PalomoMerchantReputationDiscount, user.PalomoMerchantFactionPriceFactor)
             : 0;
         user.RefreshCarriedInventorySummary();
     }
@@ -125,7 +141,7 @@ class CaelumMerchantCoordinator : Object play
             || user.ActivePalomoMerchant.health <= 0 || user.health <= 0) { return false; }
         return user.Distance3D(user.ActivePalomoMerchant)
             <= CaelumConstants.PALOMO_MERCHANT_SESSION_DISTANCE
-            && CaelumFactionCondition.Check(user, user.ActivePalomoMerchantRequirement)
+            && CaelumFactionServices.Check(user, ServiceCondition(user))
                 == CaelumFactionCondition.ALLOWED;
     }
 
@@ -135,7 +151,7 @@ class CaelumMerchantCoordinator : Object play
         if (user.CreationWizardOpen || merchant == null) { return; }
         CaelumPoiKnowledge.RecordUse(user,merchant,CaelumPoiData.MERCHANT);
         if (!user.MagicBoxOwned) { return; }
-        if (!CaelumFactionCondition.Require(user, requirement)) return;
+        if (!CaelumFactionServices.Require(user, requirement)) return;
         if (user.StaffCastPending) { user.CancelPendingStaffCast(false); }
         user.EquipmentMenuOpen = false;
         user.CloseCraftingStationSession();
@@ -182,12 +198,13 @@ class CaelumMerchantCoordinator : Object play
         user.PalomoMerchantSessionValidationTics = 0;
         if (!user.IsActivePalomoMerchantSessionValid())
         {
-            CaelumFactionCondition.Require(user, user.ActivePalomoMerchantRequirement);
+            CaelumFactionServices.Require(user, ServiceCondition(user));
             user.LastPalomoMerchantAction =
                 CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_SESSION;
             user.ClosePalomoMerchant();
         }
-        else if (user.PalomoMerchantReputationDiscount != user.HasPalomoMerchantReputationDiscount())
+        else if (user.PalomoMerchantReputationDiscount != user.HasPalomoMerchantReputationDiscount()
+            || user.PalomoMerchantFactionPriceFactor!=PriceFactor(user))
         {
             user.RefreshPalomoMerchantSnapshot();
             user.LastPalomoMerchantAction = CaelumConstants.PALOMO_MERCHANT_ACTION_PRICE_CHANGED;
@@ -255,7 +272,7 @@ class CaelumMerchantCoordinator : Object play
         if(user.CityTrade!=null){user.CityTrade.Execute(user);return;}
         if (!user.IsActivePalomoMerchantSessionValid())
         {
-            CaelumFactionCondition.Require(user, user.ActivePalomoMerchantRequirement);
+            CaelumFactionServices.Require(user, ServiceCondition(user));
             user.LastPalomoMerchantAction =
                 CaelumConstants.PALOMO_MERCHANT_ACTION_FAILED_SESSION;
             user.ClosePalomoMerchant();
@@ -370,6 +387,7 @@ class CaelumMerchantCoordinator : Object play
     static void OpenCityTrade(CaelumPlayer user,CaelumCityMerchant vendor)
     {
         if(!CaelumPlayerAuthority.CanMutate(user) || vendor==null || user.CreationWizardOpen || !user.MagicBoxOwned)return;
+        if(!CaelumFactionServices.Require(user,vendor.AccessCondition))return;
         if(user.StaffCastPending)user.CancelPendingStaffCast(false);
         user.EquipmentMenuOpen=false;user.CloseCraftingStationSession();user.SetCraftingJournalState(false);
         user.ClosePalomoMerchant();
@@ -386,6 +404,7 @@ class CaelumMerchantCoordinator : Object play
     static void RefreshCityTrade(CaelumCityTradeSession session,CaelumPlayer user)
     {
         if(!IsCurrentCityTrade(session,user))return;
+        user.PalomoMerchantFactionPriceFactor=PriceFactor(user);
         CaelumShopRestock.Sync(session.Vendor,user);
         session.Selling=user.PalomoMerchantMode==CaelumConstants.PALOMO_MERCHANT_MODE_SELL;
         Inventory selected=session.Selection<session.Rows.Size() ? session.Rows[session.Selection] : null;
@@ -398,7 +417,7 @@ class CaelumMerchantCoordinator : Object play
             if(offer!=null && !CaelumLibrary.MatchesCategory(offer.Recipe,session.CategoryFilter))continue;
             double value=CaelumCityTradeSession.Value(item);
             if(value<=0)continue;
-            int price=session.Selling ? CaelumEconomyRules.GetPricePaidByMerchant(value) : CaelumEconomyRules.GetPriceChargedByMerchant(value);
+            int price=CityPrice(user,session,value);
             String label=offer!=null ? CaelumLibrary.NameFor(offer) : CaelumNotifications.Describe(user,item,0);
             if(CaelumCityTradeSession.Companion(item)!=null)label=String.Format(StringTable.Localize("CA_MERCHANT_LOCK_PAIR",false),label);
             session.Rows.Push(item);session.Names.Push(label);session.Quantities.Push(item.Amount);session.Prices.Push(price);
@@ -414,8 +433,7 @@ class CaelumMerchantCoordinator : Object play
         if(session.Rows.Size()>0)
         {
             double value=CaelumCityTradeSession.Value(session.Rows[session.Selection]);
-            user.PalomoMerchantSelectedLotPrice=session.Selling ? CaelumEconomyRules.GetPricePaidByMerchant(value,quantity)
-                : CaelumEconomyRules.GetPriceChargedByMerchant(value,quantity);
+            user.PalomoMerchantSelectedLotPrice=CityPrice(user,session,value,quantity);
         }
         user.RefreshCarriedInventorySummary();
     }
@@ -522,7 +540,8 @@ class CaelumMerchantCoordinator : Object play
     {
         return CaelumPlayerAuthority.CanMutate(user) && session!=null
             && session.Vendor!=null && user.CityTrade==session
-            && user.ActivePalomoMerchant==session.Vendor;
+            && user.ActivePalomoMerchant==session.Vendor
+            && CaelumFactionServices.Check(user,session.Vendor.AccessCondition)==CaelumFactionCondition.ALLOWED;
     }
 
 }

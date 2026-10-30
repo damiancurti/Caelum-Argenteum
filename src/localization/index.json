@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "77f0527969e73bb07e3d9dc5156bb80605410b8660abdd52ed797a6b17e0138a",
+  "sha256": "628467e2b7e0821cbc59c0aafa4283e4957e1c3737cdff52af434fa284036f43",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[483,483]],"default":[[483,483]],"es":[[1178,1178]]},
     "CA_ABSENT_THEFT_FOUND": {"enu":[[6906,6906]],"default":[[6906,6906]],"es":[[6908,6908]]},
@@ -2510,6 +2510,7 @@
     "CA_SEAL_RESIST_QUINTESSENCE": {"enu":[[5987,5987]],"default":[[5987,5987]],"es":[[5994,5994]]},
     "CA_SEAL_RESIST_WATER": {"enu":[[5984,5984]],"default":[[5984,5984]],"es":[[5991,5991]]},
     "CA_SEAL_WATER": {"enu":[[1821,1821]],"default":[[1821,1821]],"es":[[1836,1836]]},
+    "CA_SERVICE_HOSTILE": {"enu":[[7148,7148]],"default":[[7148,7148]],"es":[[7150,7150]]},
     "CA_SEWER_SUPPORT_CRAFT": {"enu":[[3854,3854]],"default":[[3854,3854]],"es":[[3861,3861]]},
     "CA_SEWER_SUPPORT_CRAFT_READY": {"enu":[[3856,3856]],"default":[[3856,3856]],"es":[[3863,3863]]},
     "CA_SEWER_SUPPORT_FULL": {"enu":[[3857,3857]],"default":[[3857,3857]],"es":[[3864,3864]]},

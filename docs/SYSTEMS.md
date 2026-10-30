@@ -1,6 +1,30 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.9.5** - 2026-10-29.
+Documentation version: **5.9.6** - 2026-10-29.
+
+## 5.9.6 / #424 - Faction service consequences
+
+Only an explicit service AccessCondition identifies its faction. Null preserves
+civilian access and prices; no city shop receives a new affiliation. Hostile
+reputation blocks that faction's commerce and guarded doors in addition to
+existing membership/reputation/key requirements. Narrative dialogue conditions
+remain separate so hostility does not silently rewrite authored conversations.
+The current travel network stays unaligned and acquires no new quest gate.
+
+City trade quotes and commits use #420 buy/sale factors on base value, followed
+by existing margins and one whole-lot rounding. Library purchases share that
+price validation. Palomo's generic merchant adapter applies the same factor
+only when an explicit faction requirement is supplied; its existing negotiated
+and diagnostic discount rules remain intact. Normal tutorial commerce is null
+and unchanged. Current vendor references are revalidated at commit; a changed
+quote requires another confirmation. Refusal transfers no stock or money.
+The house and siege consequences remain the single #422 property/Journal owners.
+
+No new progress copy or actor census is introduced. Optional saved merchant
+conditions default to null for legacy actors; the derived price snapshot is
+recomputed by the existing session refresh. Existing door peer lookups remain
+per explicit activation; this patch only adds an O(1) condition at their existing
+authorization boundary. Native evidence and limitations: validation_596.
 
 ## 5.9.5 / #422 - House and siege investigations
 

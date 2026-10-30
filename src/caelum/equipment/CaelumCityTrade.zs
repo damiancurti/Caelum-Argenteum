@@ -21,6 +21,7 @@ class CaelumCityMerchant : Actor
     Array<CaelumShopProduct> Products;
     // Capacidad explícita para #383; ningún comercio actual se convierte aquí.
     bool TradesClothing;
+    CaelumFactionCondition AccessCondition;
 
     static CaelumCityMerchant Find(int identity)
     {

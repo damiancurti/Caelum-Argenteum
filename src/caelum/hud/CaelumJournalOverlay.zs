@@ -2370,7 +2370,7 @@ class CaelumJournalOverlay : EventHandler
                     "%d c",
                     CaelumEconomyRules.GetPalomoMerchantLotPrice(
                         merchantItem, 1, localPlayer.PalomoMerchantMode,
-                        localPlayer.PalomoMerchantDiscountGranted || localPlayer.PalomoMerchantReputationDiscount
+                        localPlayer.PalomoMerchantDiscountGranted || localPlayer.PalomoMerchantReputationDiscount, localPlayer.PalomoMerchantFactionPriceFactor
                     )
                 )
             );

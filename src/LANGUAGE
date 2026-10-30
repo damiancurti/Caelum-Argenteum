@@ -7143,3 +7143,8 @@ CA_Q_PORT_ACTIVE_HELP = "Seguí las pistas de los diálogos. G: abandonar; podé
 CA_RENTAL_EXISTING = "We have your payments for this house on record. Its previous owner disappeared. If you recognize it, ask the guards and return so we can check that earlier identity in the property register.";
 [es]
 CA_RENTAL_EXISTING = "Tenemos registrados tus pagos por esta casa. Su dueño anterior desapareció. Si la reconocés, preguntales a los guardias y volvé para que contrastemos esa identidad anterior con el registro de la vivienda.";
+
+[enu default]
+CA_SERVICE_HOSTILE = "%FACTION% refuses its services while your reputation is hostile.";
+[es]
+CA_SERVICE_HOSTILE = "%FACTION% rechaza sus servicios mientras tu reputación sea hostil.";

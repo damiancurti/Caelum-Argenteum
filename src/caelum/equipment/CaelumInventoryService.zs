@@ -264,7 +264,8 @@ class CaelumInventoryService : Object play
         if (!CaelumPlayerAuthority.CanMutate(user) || session == null || user.CityTrade != session
             || session.Vendor == null || user.ActivePalomoMerchant != session.Vendor
             || !user.IsActivePalomoMerchantSessionValid() || item == null || quantity <= 0
-            || item.Amount < quantity) return null;
+            || item.Amount < quantity
+            || price!=CaelumMerchantCoordinator.CityPrice(user,session,CaelumCityTradeSession.Value(item),quantity)) return null;
         Actor owner = session.Selling ? Actor(user) : Actor(session.Vendor);
         Actor receiver = session.Selling ? Actor(session.Vendor) : Actor(user);
         if (item.Owner != owner || (receiving != null && receiving.Owner != receiver)) return null;
@@ -332,7 +333,7 @@ class CaelumInventoryService : Object play
     {
         if(!CaelumMerchantCoordinator.IsCurrentCityTrade(session,user) || !user.IsActivePalomoMerchantSessionValid()
             || session.Selling || offer==null || offer.Owner!=session.Vendor || offer.Amount<=0 || plan==null
-            || plan.Quote==null || price!=CaelumEconomyRules.GetPriceChargedByMerchant(offer.BaseValue)
+            || plan.Quote==null || price!=CaelumMerchantCoordinator.CityPrice(user,session,offer.BaseValue)
             || user.GetOwnedMoneyCopperValue()<price || session.Vendor.WalletCopper>2147483647-price)return null;
         let book=CaelumRecipeBook(user.FindInventory("CaelumRecipeBook"));if(book!=plan.Book)return null;
         int missing=0;

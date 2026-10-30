@@ -1,20 +1,23 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.9.5** - 2026-10-29.
+Documentation version: **5.9.6** - 2026-10-29.
+
+#424 service integration: explicit affiliations only; validation_596.
+#423 visual delivery remains before the grouped author handoff.
 
 #420 campaign membership is now integrated (5.9.3); evidence validation_593.
 #421 story is integrated; evidence validation_594.
 #422 integrates the two quests and #418 reward types; validation_595.
-#423 visuals and #424 services remain in progress.
+#424 services integrated; #423 visuals remain in progress.
 
-## V5.9 active work - 5.9.5
+## V5.9 active work - 5.9.6
 
 - #418: shared requirement evaluator and compared quest writes implemented;
   port narrative registry integrated. Native evidence: validation_590. Integrated
   with the authored #422 chains, property/refunds and information rewards.
 - #420: ranks/relations, event receipts and post-arrival hostility implemented;
   native evidence validation_591. #419 now connects actual reports; services
-  via #424 remain before complete integration.
+  are integrated by #424.
 - #419: private emotional readings and separate declaration/report choices
   implemented in native port dialogue; evidence validation_592. Tutorial rolls
   and all old dialogue nodes remain unchanged. Author corroboration grouped.

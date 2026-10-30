@@ -157,7 +157,7 @@ class CaelumBreakableGate : Actor
             if (!IsPeer(peer) || peer.Broken) continue;
             if (peer.args[2] == 0) return false;
             if (peer.args[3] > 0 && !user.CheckKeys(peer.args[3], false)) return false;
-            if (!CaelumFactionCondition.Require(CaelumPlayer(user), peer.AccessCondition)) return false;
+            if (!CaelumFactionServices.Require(CaelumPlayer(user), peer.AccessCondition)) return false;
         }
         check = ThinkerIterator.Create("CaelumBreakableGate");
         while ((peer = CaelumBreakableGate(check.Next())) != null)

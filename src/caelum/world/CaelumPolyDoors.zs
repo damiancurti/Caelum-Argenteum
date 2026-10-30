@@ -79,7 +79,7 @@ class CaelumPolyDoors : Object play
             {user.CheckKeys(leaf.args[3],false);leaf.LockedSoundCooldown=7;}
             return false;
         }
-        return CaelumFactionCondition.Require(CaelumPlayer(user),leaf.AccessCondition);
+        return CaelumFactionServices.Require(CaelumPlayer(user),leaf.AccessCondition);
     }
 
     static bool Request(CaelumHingedDoorLeaf leaf,Actor user)
