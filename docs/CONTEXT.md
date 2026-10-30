@@ -1,13 +1,12 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.9.3** - 2026-10-29.
+Documentation version: **5.9.4** - 2026-10-29.
 
-**V5.9 in progress, 5.9.3:** quest coordination (#418), faction consequences
-and membership (#420), private port emotions/reports (#419) implemented.
-Evidence: validation_590-593. Finish #421 story, #422 house/siege quests,
-#423 guard/prisoner art and #424 services; #422 completes #418 rewards.
+**V5.9 in progress, 5.9.4:** #418 coordination, #420 factions/membership,
+#419 private dialogue and #421 Barracas story implemented; validation_590-594.
+Finish #422 house/siege quests (also #418 rewards), #423 art and #424 services.
 All #418-424 stay open. Separate PRs/evidence; grouped author terminal only
-after the whole version. GitHub retains design approvals.
+after the whole version. GitHub retains approvals.
 
 **V5.8 accepted/integrated:** #410-417/#496/#502, 5.8.56, 2026-10-29.
 Acceptance IDs/dates: HISTORY. No outstanding author checks at that closure.

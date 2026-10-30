@@ -289,3 +289,255 @@ conversation
         }
     }
 }
+
+// #421: nodos nuevos al final del manifiesto; los antiguos siguen cargando.
+
+conversation
+{
+    id = 43653;
+    class = "CaelumPortStoryMenu";
+
+    page
+    {
+        pagename = "story_prisoner_tarot_port";
+        name = "$CA_PRISONER_TAROT_NAME";
+        dialog = "$CA_PORT_STORY_ARRIVAL_3";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice
+        {
+            text = "$CA_PORT_STORY_CHOICE";
+            nextpage = "story_tarot_account";
+            closedialog = false;
+            giveitem = "CaelumPortStoryAction";
+            require { item = "CaelumPrisonerClaimed3Token"; amount = 1; }
+        }
+        choice
+        {
+            text = "$CA_PORT_SOCIAL_CHOICE";
+            nextpage = "story_prisoner_tarot_social";
+            closedialog = false;
+        }
+        ifitem { item = "CaelumPrisonerClaimed3Token"; amount = 1; } link = "story_prisoner_tarot_claimed";
+        choice
+        {
+            text = "$CA_PRISONER_PORT_CLAIM_CHOICE";
+            giveitem = "CaelumPrisonerClaimAction";
+            nextpage = "story_prisoner_tarot_outcome";
+            closedialog = false;
+        }
+    }
+
+    page
+    {
+        pagename = "story_prisoner_tarot_outcome";
+        name = "$CA_PRISONER_TAROT_NAME";
+        dialog = "$CA_PRISONER_PORT_REWARD_FAIL";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        ifitem { item = "CaelumPrisonerClaimed3Token"; amount = 1; } link = "story_prisoner_tarot_claimed";
+    }
+
+    page
+    {
+        pagename = "story_prisoner_tarot_claimed";
+        userstring = "prisoner_tarot_claimed";
+        name = "$CA_PRISONER_TAROT_NAME";
+        dialog = "$CA_PRISONER_PORT_REWARD_GRANTED";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice
+        {
+            text = "$CA_PORT_STORY_CHOICE";
+            nextpage = "story_tarot_account";
+            closedialog = false;
+            giveitem = "CaelumPortStoryAction";
+            require { item = "CaelumPrisonerClaimed3Token"; amount = 1; }
+        }
+        choice
+        {
+            text = "$CA_PORT_SOCIAL_CHOICE";
+            nextpage = "story_prisoner_tarot_social";
+            closedialog = false;
+        }
+    }
+
+    page
+    {
+        pagename = "story_prisoner_tarot_social";
+        name = "$CA_PRISONER_TAROT_NAME";
+        dialog = "$CA_PORT_SOCIAL_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice
+        {
+            text = "$CA_PORT_EMOTION_READ";
+            nextpage = "story_prisoner_tarot_emotion";
+            closedialog = false;
+            giveitem = "CaelumPortEmotionAction";
+        }
+        choice
+        {
+            text = "$CA_PORT_FACTION_CHOICE";
+            nextpage = "story_prisoner_tarot_affiliations";
+            closedialog = false;
+            require { item = "CaelumPortRepresentativeToken"; amount = 1; }
+        }
+        choice
+        {
+            text = "$CA_PORT_SOCIAL_BACK";
+            nextpage = "story_prisoner_tarot_port";
+            closedialog = false;
+        }
+    }
+
+    page
+    {
+        pagename = "story_prisoner_tarot_emotion";
+        userstring = "port_emotion_result";
+        name = "$CA_PRISONER_TAROT_NAME";
+        dialog = "$CA_PORT_EMOTION_UNTRIED";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice
+        {
+            text = "$CA_PORT_SOCIAL_BACK";
+            nextpage = "story_prisoner_tarot_social";
+            closedialog = false;
+        }
+    }
+
+    page
+    {
+        pagename = "story_prisoner_tarot_affiliations";
+        name = "$CA_PRISONER_TAROT_NAME";
+        dialog = "$CA_PORT_DECLARATION_INTRO";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice
+        {
+            text = "$CA_PORT_DECLARE_0";
+            nextpage = "story_prisoner_tarot_declared";
+            closedialog = false;
+            giveitem = "CaelumPortDeclare0Action";
+            require { item = "CaelumPortMember0Token"; amount = 1; }
+        }
+        choice
+        {
+            text = "$CA_PORT_DECLARE_1";
+            nextpage = "story_prisoner_tarot_declared";
+            closedialog = false;
+            giveitem = "CaelumPortDeclare1Action";
+            require { item = "CaelumPortMember1Token"; amount = 1; }
+        }
+        choice
+        {
+            text = "$CA_PORT_DECLARE_2";
+            nextpage = "story_prisoner_tarot_declared";
+            closedialog = false;
+            giveitem = "CaelumPortDeclare2Action";
+            require { item = "CaelumPortMember2Token"; amount = 1; }
+        }
+        choice
+        {
+            text = "$CA_PORT_DECLARE_3";
+            nextpage = "story_prisoner_tarot_declared";
+            closedialog = false;
+            giveitem = "CaelumPortDeclare3Action";
+            require { item = "CaelumPortMember3Token"; amount = 1; }
+        }
+        choice
+        {
+            text = "$CA_PORT_DECLARE_4";
+            nextpage = "story_prisoner_tarot_declared";
+            closedialog = false;
+            giveitem = "CaelumPortDeclare4Action";
+            require { item = "CaelumPortMember4Token"; amount = 1; }
+        }
+        choice
+        {
+            text = "$CA_PORT_DECLARE_5";
+            nextpage = "story_prisoner_tarot_declared";
+            closedialog = false;
+            giveitem = "CaelumPortDeclare5Action";
+            require { item = "CaelumPortMember5Token"; amount = 1; }
+        }
+        choice
+        {
+            text = "$CA_PORT_DECLARE_AID";
+            nextpage = "story_prisoner_tarot_declared";
+            closedialog = false;
+            giveitem = "CaelumPortAidDeclarationAction";
+        }
+        choice
+        {
+            text = "$CA_PORT_REPORT_CHOICE";
+            nextpage = "story_prisoner_tarot_report_confirm";
+            closedialog = false;
+        }
+        choice
+        {
+            text = "$CA_PORT_SOCIAL_BACK";
+            nextpage = "story_prisoner_tarot_social";
+            closedialog = false;
+        }
+    }
+
+    page
+    {
+        pagename = "story_prisoner_tarot_declared";
+        name = "$CA_PRISONER_TAROT_NAME";
+        dialog = "$CA_PORT_DECLARATION_PRIVATE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice
+        {
+            text = "$CA_PORT_SOCIAL_BACK";
+            nextpage = "story_prisoner_tarot_affiliations";
+            closedialog = false;
+        }
+    }
+
+    page
+    {
+        pagename = "story_prisoner_tarot_report_confirm";
+        name = "$CA_PRISONER_TAROT_NAME";
+        dialog = "$CA_PORT_REPORT_WARNING";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice
+        {
+            text = "$CA_PORT_REPORT_CONFIRM";
+            nextpage = "story_prisoner_tarot_reported";
+            closedialog = false;
+            giveitem = "CaelumPortFactionReportAction";
+        }
+        choice
+        {
+            text = "$CA_PORT_SOCIAL_BACK";
+            nextpage = "story_prisoner_tarot_affiliations";
+            closedialog = false;
+        }
+    }
+
+    page
+    {
+        pagename = "story_prisoner_tarot_reported";
+        name = "$CA_PRISONER_TAROT_NAME";
+        dialog = "$CA_PORT_REPORT_DONE";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice
+        {
+            text = "$CA_PORT_SOCIAL_BACK";
+            nextpage = "story_prisoner_tarot_social";
+            closedialog = false;
+        }
+    }
+
+    page
+    {
+        pagename = "story_tarot_account";
+        userstring = "port_story_account";
+        name = "$CA_PRISONER_TAROT_NAME";
+        dialog = "$CA_PORT_STORY_PRISONER";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice
+        {
+            text = "$CA_PORT_SOCIAL_BACK";
+            nextpage = "story_prisoner_tarot_port";
+            closedialog = false;
+        }
+    }
+}
