@@ -12,6 +12,7 @@ class CaelumCompanionLoadout : Object play
     CaelumResidentTools Tools;
     CaelumEquipmentItem SelectedWeapon;
     bool ManualWeapon;
+    CaelumCompanionRanged Ranged;
 
     CaelumEquipmentItem MakeArmor(int slot)
     {
@@ -108,7 +109,7 @@ class CaelumCompanionLoadout : Object play
         if(item==null || item.Owner!=Body || !CanChange())return false;
         Sync();
         if(SelectedWeapon==item)
-        {SelectedWeapon=null;Tools.Cancel();item.Equipped=false;ManualWeapon=true;return true;}
+        {SelectedWeapon=null;Tools.Cancel();if(Ranged!=null)Ranged.CancelReload();item.Equipped=false;ManualWeapon=true;return true;}
         if(item==ShieldItem)
         {
             ShieldItem=null;item.Equipped=false;Shield.Equipped=false;
@@ -140,9 +141,11 @@ class CaelumCompanionLoadout : Object play
         if(item.EquipmentKind==CaelumConstants.EQUIPMENT_KIND_WEAPON)
         {
             let model=new("CaelumWeaponModel");
-            if(model.IsMagicalType(item.ItemType) || model.IsRangedPhysicalType(item.ItemType))return false;
+            if(model.IsMagicalType(item.ItemType))return false;
             if(SidearmItem!=null && !Unequip(SidearmItem))return false;
             if(SelectedWeapon!=null && !Unequip(SelectedWeapon))return false;
+            let defender=CaelumPortDefender(Body);
+            if(defender!=null && defender.Carbine!=null)defender.Carbine.Select(false);
             Tools.Cancel();SelectedWeapon=item;ManualWeapon=true;item.Equipped=true;
             Tools.Melee=item;CaelumActorMaintenance.InventoryChanged(Body);return true;
         }
@@ -169,8 +172,22 @@ class CaelumCompanionLoadout : Object play
 
     void Step()
     {
+        if(Ranged!=null)Ranged.Tick();
         let resident=CaelumAnchoredResident(Body);
         if(Tools!=null && (resident==null || resident.ResidentTools!=Tools))Tools.Tick();
+    }
+
+    bool TryAttack()
+    {
+        if(SelectedWeapon!=null)
+        {
+            if(CaelumRangedRules.MagazineCapacity(SelectedWeapon.ItemType)>0)
+            {
+                if(Ranged==null){Ranged=new("CaelumCompanionRanged");Ranged.Loadout=self;}
+                return Ranged.TryAttack();
+            }
+        }
+        return Tools.TryStart();
     }
 }
 

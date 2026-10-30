@@ -3760,10 +3760,17 @@ class CaelumCombatActor : Actor
         if(cache!=null && !cache.HealthChanged(self))
         {
             // Restaurar también asignaciones alteradas por consumidores, como la recarga.
-            cache.RestoreHealth(self);return;
+            cache.RestoreHealth(self);
         }
-        CalculateCombatHealthEffects();
-        if(cache!=null)cache.StoreHealth(self);
+        else
+        {
+            CalculateCombatHealthEffects();
+            if(cache!=null)cache.StoreHealth(self);
+        }
+        // La cache conserva la velocidad sin recarga; aplicar una sola vez al restaurar.
+        if(Companion!=null && Companion.Loadout!=null && Companion.Loadout.Ranged!=null
+            && Companion.Loadout.Ranged.ReloadRemaining>0)
+            Speed*=CaelumConstants.RELOAD_MOVEMENT_AND_PROGRESS_MULTIPLIER;
     }
 
     void CalculateCombatHealthEffects()

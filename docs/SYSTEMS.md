@@ -30,8 +30,16 @@ parking of waiting/dead bodies; armor/shield materialization without changing
 weight or ownership; selected melee via shared resident attack rules. The
 inventory list's E action equips/removes supported pieces; Enter requests or
 gifts, L lends. Consented retrieval removes equipped defense before transfer.
-Ranged/magic/clothing equipment and remaining integration checks are unfinished,
+Magic/clothing equipment and remaining integration checks are unfinished,
 not silently replaced by invented gear restrictions. Full status: TASKS.
+
+Selected carbine, shotgun, bow and crossbow use the existing shared catalogues,
+physical native ammunition and owner resources. Reloads are interruptible,
+magazines reference the real reserve rather than creating ammunition, and wear
+follows the exact weapon that fired. Save/load preserves depleted ammunition,
+magazines and reload/cooldown progress. Existing non-companion guards keep their
+authored reserve rules. The reload movement modifier is applied after the
+unmodified health cache is restored, once per calculation.
 
 Queries use the bounded nine-identity roster and local placement/visibility.
 Mansion residents register at birth/return. Legacy saves may rebuild the four

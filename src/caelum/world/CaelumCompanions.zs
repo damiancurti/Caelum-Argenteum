@@ -323,7 +323,7 @@ class CaelumCompanions : Object play
             if(body.Formation!=null && body.Formation.Group.RegroupCombat(body.Formation,enemy))return true;
             if(bond.Loadout!=null && bond.Loadout.ManualWeapon)
             {
-                if(!bond.Loadout.Tools.TryStart())body.ThermalChase(null,null);
+                if(!bond.Loadout.TryAttack())body.ThermalChase(null,null);
                 return true;
             }
             let resident=CaelumAnchoredResident(body);

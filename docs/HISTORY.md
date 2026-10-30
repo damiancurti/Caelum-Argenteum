@@ -13,8 +13,17 @@ dialogue administration, gifts/loans/social retrieval and saved private trust.
 Actual bodies and inventory travel; waiting/dead bodies park against their
 source map. Armor and subcaptain shield/sidearm models become native pieces
 once, preserving wear/contamination and avoiding duplicate carried weight.
-Selected melee reuses resident tools; other equipment paths remain unfinished.
+Selected melee reuses resident tools; magic/clothing paths remain unfinished.
 Old player saves gain no automatic recruits and remain archived for rollback.
+
+Ranged follow-up: carbine-c, shotgun-a, bow-a and crossbow-a each pass14 native
+checks: empty reserves, full timed reload, cancellation without consumption,
+exact Air/ammunition payment, native projectile damage, wear and exhausted
+magazines. Save-a repeats14 checks; reload-a passes3 persisted ownership,
+reserve/magazine and impact-wear checks. Compilation/core regression retained
+27 checks. Initial fixture failures (misspelled size constant; player-only ammo
+pickup on an NPC) are preserved and fixed using native inventory attachment,
+the same ownership path used by companion transfers. No author acceptance.
 
 Focused overlay evidence: equipment-a26 PASS; death-a29 PASS; revival-a5 PASS.
 Earlier inventory reload2 PASS and travel-a19 PASS preceded equipment binding.

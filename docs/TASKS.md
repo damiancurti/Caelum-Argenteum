@@ -16,7 +16,8 @@ Documentation version: **5.11.4** - 2026-10-30.
   cross-map bodies, persistent death and the existing revival service have
   focused native coverage. Subcaptain uses Domingo and 20 per attribute.
   Armor/shields are native pieces; selected melee uses the resident catalogue.
-  Remaining: ranged/magic/clothing administration; size compatibility and
+  Finite ranged ammunition/reload/damage/wear and save state pass native checks.
+  Remaining: magic/clothing administration; size compatibility and
   gift provenance through other split/merge paths; all nine authored recruits,
   campaign subcaptain spawn,
   prison extraction/rewards, actual selected-weapon combat, UI visual review,

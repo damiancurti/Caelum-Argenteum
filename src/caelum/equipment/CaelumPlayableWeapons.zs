@@ -2751,7 +2751,9 @@ class CaelumCarbineProjectile : CaelumActorProjectile
         int preparedDamage=GetCaelumPreparedDamage(int(CaelumConstants.CARBINE_TIER_ONE_DAMAGE));
         CaelumPlayer weaponOwner = CaelumPlayer(Target);
         let soldier=CaelumPortDefender(Target);
-        if(soldier!=null && soldier.Carbine!=null && CaelumWeaponWearPrepared
+        if(CaelumCombatActor(Target)!=null && CaelumWearSourceItem!=null && CaelumWeaponWearPrepared
+            && !(victim is "CaelumM00TrainingDummy"))CaelumWeaponUseRules.Wear(CaelumWearSourceItem,preparedDamage);
+        else if(soldier!=null && soldier.Carbine!=null && CaelumWeaponWearPrepared
             && !(victim is "CaelumM00TrainingDummy"))soldier.Carbine.Wear(preparedDamage);
         if (weaponOwner != null && CaelumWeaponWearPrepared
             && !(victim is "CaelumM00TrainingDummy"))

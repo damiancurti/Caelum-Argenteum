@@ -17,6 +17,14 @@ class CaelumRangedRules : Object
     static bool IsFirearm(int type)
     {return type==CaelumConstants.WEAPON_TYPE_CARBINE || type==CaelumConstants.WEAPON_TYPE_SHOTGUN;}
 
+    static int AmmoType(int type)
+    {
+        if(type==CaelumConstants.WEAPON_TYPE_SHOTGUN)return CaelumConstants.AMMUNITION_SHOTGUN;
+        if(type==CaelumConstants.WEAPON_TYPE_CARBINE)return CaelumConstants.AMMUNITION_CARBINE;
+        if(type==CaelumConstants.WEAPON_TYPE_CROSSBOW)return CaelumConstants.AMMUNITION_BOLT;
+        return CaelumConstants.AMMUNITION_ARROW;
+    }
+
     static int MagazineCapacity(int type)
     {
         if(type==CaelumConstants.WEAPON_TYPE_SHOTGUN)return CaelumShotgunRules.CAPACITY;
