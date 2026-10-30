@@ -259,6 +259,24 @@ class CaelumFormation : Object play
             vector2 direction=point.XY-member.Body.Pos.XY;
             if(direction.Length()>0)
             {
+                // La vista puede rozar una esquina por la que no cabe el
+                // cilindro. Validar todo el segmento antes de abrir la fila.
+                // Una consulta compartida al recuperar forma, acotada a su
+                // longitud; no hay barridos de actores por miembro/tic.
+                if(direction.Length()>Spacing*(Members.Size()+1)){clear=false;break;}
+                int samples=int(Ceil(direction.Length()/Max(1.0,member.Body.Radius)));
+                double floor=member.Body.FloorZ;
+                for(int sample=1;sample<=samples;sample++)
+                {
+                    ClearanceProbe.SetOrigin(member.Body.Pos,false);
+                    FCheckPosition segment;
+                    if(!ClearanceProbe.CheckPosition(member.Body.Pos.XY+direction*sample/samples,false,segment)
+                        || segment.ceilingz-segment.floorz<member.Body.Height
+                        || Abs(segment.floorz-floor)>member.Body.MaxStepHeight)
+                    {clear=false;break;}
+                    floor=segment.floorz;
+                }
+                if(!clear)break;
                 vector2 edge=(-direction.Y,direction.X).Unit()*member.Body.Radius;
                 for(int sign=-1;sign<=1;sign+=2)
                 {

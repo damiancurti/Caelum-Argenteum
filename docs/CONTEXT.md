@@ -2,11 +2,9 @@
 
 Documentation version: **5.11.1** - 2026-10-30.
 
-**V5.11 active (5.11.1/#429):** formations/native migration passed; #431 PR575.
-#430: Domingo subcaptain,20/all attributes. #432/#433 need measured benefit.
-Manual tests after completion; unaccepted/unmerged.
-Keep-awake PID42276 active; stop file: build/issue429/keep-awake-511-20261030.stop
-in issue429 worktree. Release on return.
+**V5.11 / #429:** author corridor-exit failure corrected with cylinder clearance;
+four native checks pass, CA429-01 retest pending. PR576 remains unmerged.
+Other issue branches retain their own status. Keep-awake released on return.
 **V5.10 accepted:** #425-428/PR570-573, CA425-01..CA428-01; HISTORY.
 Siege stalls persist. Keep-awake released.
 

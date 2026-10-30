@@ -9,7 +9,8 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 **Current release: 5.11.1.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-**V5.11 implementation is in progress.** Patch 5.11.1 (#429) adds persistent
+**V5.11 implementation is in progress.** The author reported a corridor-exit
+stall; its native correction passes, with author retest pending (#429). Patch 5.11.1 (#429) adds persistent
 formation membership, role layouts, leader succession and bounded passage
 coordination while preserving individual collisions and combat. A party
 reserves one of its eight places for its player leader; recruitment is #430.

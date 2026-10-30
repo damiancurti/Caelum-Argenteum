@@ -10,7 +10,8 @@ Documentation version: **5.11.1** - 2026-10-30.
   remaining limitations must be reported separately from render callbacks.
 - #429: formation/admission implementation has passed focused native geometry,
   membership, combat-order, full-package save/migration and campaign checks.
-  Source/evidence are ready; author review is deferred to the combined handoff.
+  Author reported a corridor-exit stall; sampled cylinder clearance corrects it.
+  Four native checks pass; CA429-01 retest remains pending.
 - #430: approved roster, recruitment, persistent death, trust and consent are
   recorded on its issue. The subcaptain uses Domingo's appearance and 20 in
   every attribute, not customizable player statistics or ordinary guard 18.

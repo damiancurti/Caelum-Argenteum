@@ -2,6 +2,12 @@
 
 Documentation version: **5.11.1** - 2026-10-30.
 
+Passage correction (#429, 2026-10-30): recovering a wide formation validates
+native cylinder clearance along each member's candidate segment, not sight alone.
+The shared movement-triggered recovery check bounds each segment to group length;
+its samples are separated by the member's collision radius. Actor collisions
+remain enforced by movement; these geometry probes do not displace bodies.
+
 ## 5.11.1 / #429 - Persistent formations and admission
 
 A military group owns up to 100 stable members, with explicit melee/support/
