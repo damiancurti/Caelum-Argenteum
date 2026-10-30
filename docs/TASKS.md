@@ -1,6 +1,10 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.11.4** - 2026-10-30.
+Documentation version: **5.11.5** - 2026-10-30.
+
+## V5.11 author corrections - #580
+
+Repair the rental agent's cached dialogue after guard recognition. Native dialogue/property (11) and save/reload (2) checks passed; CA580-01 author retest remains pending. Companion movement (#430), corridor recovery (#429), household placement (#581) and rat contamination immunity (#582) remain separate changes.
 
 ## V5.11 active - 5.11.4 (#429-433, 2026-10-30)
 

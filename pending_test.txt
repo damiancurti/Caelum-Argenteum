@@ -26,3 +26,9 @@ Expected: ordinary perception/movement/collision, climate and survival remain
 active; report any new severe stalls with scene and action. Displayed FPS is
 visible. Existing large-siege stalls remain and no60-FPS siege claim is made.
 Terminal7 summarizes #431 measurement and #433's rejected distant-search candidate.
+
+CA580-01 | Origin 5.11.5 | Issue #580 | Home investigation dialogue
+Use a campaign or the final combined test terminal. Start the home investigation
+at the rental agent, close the dialogue, speak to a guard, then return.
+Expected: the registry-check reply becomes available and restores the property;
+repeating it cannot duplicate refunds. Saving/reloading keeps the result.

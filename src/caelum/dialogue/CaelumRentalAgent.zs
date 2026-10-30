@@ -1,6 +1,16 @@
 // Perfil físico civil reutilizado del comerciante; no posee una tienda ni facción.
 class CaelumRentalAgent : Actor
 {
+    override void Tick()
+    {
+        Super.Tick();
+        // Al volver, Used debe sincronizar la pista del guardia y resolver
+        // otra vez las opciones del personaje; no reutilizar el nodo anterior.
+        // Una charla abierta, incluso cargada, conserva su pagina actual.
+        if(!bInConversation && HasConversation())
+            Level.ExecuteSpecial(CaelumConstants.GZDOOM_THING_SET_CONVERSATION_SPECIAL,
+                self,null,false,0,0);
+    }
     static play bool ValidSpeaker(CaelumPlayer user)
     {
         if(!CaelumPlayerAuthority.CanMutate(user) || user.health<=0 || !user.HasActiveConversation()

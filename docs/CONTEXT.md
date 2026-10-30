@@ -1,12 +1,12 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.11.4** - 2026-10-30.
+Documentation version: **5.11.5** - 2026-10-30.
 
-**V5.11 ready (5.11.4):** implementation complete; author checks pending.
-#431/PR575; #429/PR576; #432/PR577; #433/PR578 (candidate not adopted).
-#430/PR579: companions/gear/provenance; validation_v5_11_4; TASKS.
-Manual terminal: assets/validation_v5_11_4/launch_manual.ps1; pending_test.txt.
-Unaccepted/unmerged. Keep-awake released on return, 2026-10-30.
+**V5.11 author corrections:** #580/5.11.5 refreshes rental dialogue; native
+validation_v5_11_5, CA580-01 pending. #429 corridor, #430 companion motion,
+#581 household placement and #582 rat immunity are separate active patches.
+Other checks accepted 2026-10-30; unmerged.
+Keep-awake released. Terminal after corrections.
 **V5.10 accepted:** #425-428/PR570-573, CA425-01..CA428-01; HISTORY.
 Siege stalls persist. Keep-awake released.
 

@@ -1,6 +1,10 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.11.4** - 2026-10-30.
+Documentation version: **5.11.5** - 2026-10-30.
+
+## 5.11.5 - Rental dialogue refresh (#580)
+
+Returning to the rental agent re-evaluates current guard recognition instead of reusing stale native dialogue. This is a correction to accepted #422; no narrative, ownership or reward calibration changes. Author retest remains pending.
 
 ## V5.11 implementation - 5.11.4 (#430, 2026-10-30)
 
