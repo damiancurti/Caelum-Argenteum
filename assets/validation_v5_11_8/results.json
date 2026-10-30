@@ -1,0 +1,185 @@
+{
+  "runtime_sha256": "6e88c82c7e5f67a4debbdfb8679c507d71d0e93376ca2a82592bbffb4ae871c0",
+  "native": [
+    {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue581\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue586\\checks.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue586\\legacy-seed.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue586",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue586\\legacy-seed.log",
+        "+map",
+        "MAP03",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue586\\legacy-seed.cfg"
+      ],
+      "pid": 50784,
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue581\\final\\caelum_argenteum_dev.pk3": "7f02160e26247425b49ed89cf118ef75b78a955bf8d107481b81f786abf6cfd8",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue586\\checks.pk3": "7a3bc65b73869a68cfff52578c824678fb6c7d2c19c314a76e419c33655a4f2b"
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 10.131,
+      "failures": [],
+      "pass_count": 0
+    },
+    {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue586\\current\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue586\\checks.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue586\\immunity-upgrade-c.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue586",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue586\\immunity-upgrade-c.log",
+        "-loadgame",
+        "species-before-immunity.zds",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue586\\immunity-upgrade-c.cfg"
+      ],
+      "pid": 35012,
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue586\\current\\caelum_argenteum_dev.pk3": "6e88c82c7e5f67a4debbdfb8679c507d71d0e93376ca2a82592bbffb4ae871c0",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue586\\checks.pk3": "b3a5075e69d8c0f14f4d055a25d1e72a58c5a6f5111def55567803e99cfe29f1"
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 8.609,
+      "failures": [],
+      "pass_count": 26
+    },
+    {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue586\\current\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue586\\checks.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue586\\immunity-reload.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue586",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue586\\immunity-reload.log",
+        "-loadgame",
+        "species-after-immunity-c.zds",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue586\\immunity-reload.cfg"
+      ],
+      "pid": 35904,
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue586\\current\\caelum_argenteum_dev.pk3": "6e88c82c7e5f67a4debbdfb8679c507d71d0e93376ca2a82592bbffb4ae871c0",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue586\\checks.pk3": "1830a04df8143648df005d7c0b3c3ab9da3e81b6d7a557edc53058aff3da7055"
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 8.595,
+      "failures": [],
+      "pass_count": 6
+    },
+    {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue581\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue586\\checks.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue586\\original-save-rollback.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue586",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue586\\original-save-rollback.log",
+        "-loadgame",
+        "species-before-immunity.zds",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue586\\original-save-rollback.cfg"
+      ],
+      "pid": 16988,
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue581\\final\\caelum_argenteum_dev.pk3": "7f02160e26247425b49ed89cf118ef75b78a955bf8d107481b81f786abf6cfd8",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue580-work\\build\\issue586\\checks.pk3": "1830a04df8143648df005d7c0b3c3ab9da3e81b6d7a557edc53058aff3da7055"
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 8.601,
+      "failures": [],
+      "pass_count": 3
+    }
+  ],
+  "author_launcher_checks": [
+    {
+      "log": "build\\issue586\\author\\20261030-202335\\engine.log",
+      "pass_count": 26,
+      "fail_count": 0,
+      "config_sha256": "97825045d0d769633b5e05d857ac1b9ad44d6d650c40e5af1f915761fafca91a"
+    },
+    {
+      "log": "build\\issue586\\author\\20261030-202346\\engine.log",
+      "pass_count": 7,
+      "fail_count": 0,
+      "config_sha256": "6345dd33f754695f36c3a970f5152b78789bba481378652d78b6b5c23ae74bc3"
+    },
+    {
+      "log": "build\\issue586\\author\\20261030-202520\\engine.log",
+      "pass_count": 7,
+      "fail_count": 0,
+      "config_sha256": "14cee623227013e06a147300e4756caec20cce3e83929aed8c2f8407077cbe4a"
+    },
+    {
+      "log": "build\\issue586\\author\\20261030-202703\\engine.log",
+      "pass_count": 7,
+      "fail_count": 0,
+      "note": "Final handoff dismisses the initial tutorial conversation through the established private UI fixture; player faces both running actors."
+    }
+  ],
+  "fixture_corrections": "Initial dormant actors rejected all native damage, caught by the ordinary-damage and susceptible-control assertions. Activate each actor for the synchronous sample. A flat 100-point normal hit was absorbed by Zupay natural defense; the final hit scales to one quarter maximum health. No production defense or attributes were changed. Failed local runs are retained.",
+  "acceptance": "CA586-01 is pending; the preceding correction checks were author-accepted except the Caella/Leonor speed review."
+}

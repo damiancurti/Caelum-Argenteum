@@ -1,12 +1,12 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.11.7** - 2026-10-30.
+Documentation version: **5.11.8** - 2026-10-30.
 
-**V5.11 corrections ready (5.11.7):** #429 passage, #430 companion motion,
-#580 rental, #581 house69 placement, #582 rat immunity. Native evidence:
-validation_v5_11_1/4/5/6/7. Separate PR576/579/583/584/585; unmerged.
-Other checks accepted2026-10-30. Retests: pending_test.txt; terminal:
-assets/validation_v5_11_7/launch_manual.ps1. Keep-awake released.
+**V5.11 complete/accepted2026-10-30:** #429-433/#580-582/#586; focused
+PR575-579/583-585/587-588. Integration/closure authorized; HISTORY records all
+checks and pending_test.txt is empty. Caella/Leonor load difference accepted;
+Mandinga/Zupay disease immunity accepted. No version bump beyond5.11.8.
+Distant-search candidate not adopted; siege stalls persist. Keep-awake released.
 **V5.10 accepted:** #425-428/PR570-573, CA425-01..CA428-01; HISTORY.
 Siege stalls persist. Keep-awake released.
 

@@ -1,31 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.11.7** - 2026-10-30.
+Documentation version: **5.11.8** - 2026-10-30.
 
-The combined correction terminal is assets/validation_v5_11_7/launch_manual.ps1.
-Native final-package stairs/corridor and launcher reload checks pass. Await only
-the five correction IDs in pending_test.txt; other author checks are accepted.
-Do not close or merge issues until the correction retests are confirmed.
+Current author queue: empty. The author confirmed all remaining checks on
+2026-10-30 and requested merges and issue closure. HISTORY records CA430-01
+and CA586-01 under their originating releases, alongside earlier acceptances.
+The Caella/Leonor speed difference follows the accepted equipment-load rule.
+No movement balance change or new release increment accompanies acceptance.
 
-## V5.11 household correction - #581
-
-Move the four authored exterior objects into house69. Preserve barrel work, contamination and ownership; verify source, house fit, hub round trip and save/reload. Author retest CA581-01 pending; V5.11 remains unmerged.
-
-## V5.11 rat correction - #582
-
-Active/absent disease immunity, ordinary damage, Mandinga non-regression and save/reload passed seven native assertions. Author retest CA582-01 remains pending. No V5.11 merge or closure is authorized by this patch.
-
-## V5.11 author corrections - #580
-
-Repair the rental agent's cached dialogue after guard recognition. Native dialogue/property (11) and save/reload (2) checks passed; CA580-01 author retest remains pending. Companion movement (#430), corridor recovery (#429), household placement (#581) and rat contamination immunity (#582) remain separate changes.
-
-Author feedback2026-10-30 accepted CA432-01 and nonmovement portions of
-CA430-01. Companion motion/animation/Leonor and corridor exit still need retest.
-The correction uses per-tic passive locomotion, approved6m/3m running thresholds,
-existing mansion stair nodes and local navigation. #580-582 separately address
-rental progression, central-house placement and rat disease immunity.
-
-## V5.11 active - 5.11.4 (#429-433, 2026-10-30)
+## V5.11 complete - 5.11.8 (#429-433, #580-582, #586, 2026-10-30)
 
 - #431: subsystem profiling and current/full35/reduced5/simplified diagnostic
   comparisons; production runtime unchanged. Numerical accuracy observations
@@ -33,23 +16,24 @@ rental progression, central-house placement and rat disease immunity.
   remaining limitations must be reported separately from render callbacks.
 - #429: formation/admission implementation has passed focused native geometry,
   membership, combat-order, full-package save/migration and campaign checks.
-  Corridor-exit correction passes four native checks; CA429-01 retest pending.
-- #430: implementation complete, pending author review. All nine authored
+  Corridor-exit correction passes four native checks; CA429-01 author-accepted.
+- #430: implementation complete and author-accepted. All nine authored
   identities, dialogue administration, native equipment, finite ranged/magic
   attacks, jewelry/clothing, unit-level gift/loan provenance, private consent,
   travel, persistent death and the paid revival ability have native coverage.
   The full package retains accepted-save bodies/inventory and adds no automatic
   recruits. Mansion protection/trial precedence and campaign mortality pass.
-  Visual panel review covers English/Spanish. Windows input injection was
-  unavailable; native bindings were queried and physical keys remain author QA.
+  Visual panel review covers English/Spanish. Native bindings were queried;
+  the author accepted the terminal checks and final load comparison.
 - #432: shared climate/pristine/attribute caches pass133 final native assertions.
   Normal siege improves modestly; presentation remains unmeasured for this patch.
 - #433: approved candidate evaluated;14 native wake/reload assertions pass.
   No production adoption: siege sample avoids zero queries, and peaceful scenes
   show no clear benefit. Evidence and counter limitations: validation_v5_11_3.
-- Deliver one linked PR per issue, commit/push separately, and group outstanding
-  author checks in root pending_test.txt; the combined numbered terminal is ready.
-  V5.11 merges/closure are not yet authorized.
+- #580-582/#586: rental dialogue, household placement and rat/demon disease
+  immunity corrections have native/save coverage and explicit author acceptance.
+- Integration authorized for focused PRs #575-579/#583-585/#587-588, preserving
+  commit ancestry. No outstanding V5.11 author checks; no new 60-FPS claim.
 
 ## V5.10 complete - author-accepted 2026-10-30 (5.10.3, #425-428)
 

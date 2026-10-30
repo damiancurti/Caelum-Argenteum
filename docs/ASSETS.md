@@ -1,6 +1,13 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.11.7** - 2026-10-30.
+Documentation version: **5.11.8** - 2026-10-30.
+
+## 5.11.8 - Species damage policy (#586)
+
+Reuse accepted Mandinga, Zupay and rat artwork unchanged. The native diagnostic
+room and test configuration remain under assets/build, outside runtime assets.
+The author accepted the final scenarios on 2026-10-30; acceptance changes no
+artwork, provenance or runtime resources. See HISTORY for per-issue records.
 
 Companion speed verification reuses the accepted prisoner sprites and profiles;
 no visual assets or production balance change (#430,2026-10-30).

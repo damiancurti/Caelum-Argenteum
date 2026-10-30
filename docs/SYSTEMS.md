@@ -1,6 +1,14 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.11.7** - 2026-10-30.
+Documentation version: **5.11.8** - 2026-10-30.
+
+## Demon disease immunity (#586, 5.11.8)
+
+Mandinga and Zupay now reject CaelumDiseaseDOT, as rats already do. Their
+contamination and contact transmission remain active; ordinary damage still
+uses existing defenses. The class filter applies to active and absent physiology
+and restored actors without rewriting health, contamination or dead bodies.
+This supersedes the earlier Mandinga susceptibility retained by #582.
 
 ## Arrival household relocation (#581, 5.11.7)
 
@@ -8,7 +16,7 @@ The original outdoor workbench, Chemistry station, fermentation barrel and cot n
 
 ## Rat disease immunity (#582, 5.11.6)
 
-Giant rats acquire and transmit contamination normally but take no CaelumDiseaseDOT damage, both on the active map and during absent physiology. This does not change their other damage resistances or confer immunity on Mandinga. Updating does not resurrect dead rats or reset their health or contamination.
+Giant rats acquire and transmit contamination normally but take no CaelumDiseaseDOT damage, both on the active map and during absent physiology. This does not change their other damage resistances; Mandinga and Zupay are covered separately by #586. Updating does not resurrect dead rats or reset their health or contamination.
 
 ## House dialogue refresh (#580, 5.11.5)
 
