@@ -1,12 +1,10 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.11.0** - 2026-10-30.
+Documentation version: **5.11.1** - 2026-10-30.
 
-**V5.11 active (5.11.0/#431):** #429-433 authorized;
-group manual tests only after all complete. #431 profiles accepted 5.10.3;
-no production thermal changes. #429 formation work pending verification;
-#430 subcaptain: Domingo appearance, 20/all attributes. Decisions: issues.
-#432/#433 require measured benefit. Unaccepted; unmerged.
+**V5.11 / #429:** author corridor-exit failure corrected with cylinder clearance;
+four native checks pass, CA429-01 retest pending. PR576 remains unmerged.
+Other issue branches retain their own status. Keep-awake released on return.
 **V5.10 accepted:** #425-428/PR570-573, CA425-01..CA428-01; HISTORY.
 Siege stalls persist. Keep-awake released.
 

@@ -39,6 +39,8 @@ class CaelumPortCommander : CaelumZupayColossus
 // Controlador local guardado con MAP03. No recrea población al cargar el hub.
 class CaelumPortSiege : CaelumSiegeEncounter
 {
+    int FormationRevision;
+    Array<CaelumFormation> FormationGroups;
     Array<CaelumPortDefender> Defenders;
     Array<CaelumCannon> Guns;
     Array<CaelumBreakableGate> Gates;
@@ -82,6 +84,20 @@ class CaelumPortSiege : CaelumSiegeEncounter
         let entry=RegisterAttacker(body);
         if(entry!=null){entry.Lane=lane;entry.ExitNode=Exits[lane];}
         return entry;
+    }
+
+    int LivingHostilePopulation()
+    {
+        int result=0;
+        for(int i=0;i<Attackers.Size();i++)
+        {
+            let entry=Attackers[i];let body=entry!=null ? entry.Body : null;
+            if(body!=null && !body.bDestroyed && body.health>0 && !body.bFriendly && !entry.Exited)result++;
+        }
+        // Las dotaciones ya estan en Attackers; las maquinas se cuentan una vez.
+        for(int i=0;i<Machines.Size();i++)
+            if(Machines[i]!=null && !Machines[i].bDestroyed && Machines[i].health>0)result++;
+        return result;
     }
 
     void Deploy(bool attackOnly=false,double civil=-1)
@@ -153,10 +169,13 @@ class CaelumPortSiege : CaelumSiegeEncounter
             }
         }
         int infantry=0;
-        while(!peaceful && !Reinforcements.Enabled && Attackers.Size()<CaelumPortData.MandingaCount())
+        int hostileSlots=Max(0,CaelumFormationData.SIDE_CAPACITY-LivingHostilePopulation()-1);
+        while(!peaceful && !Reinforcements.Enabled && Attackers.Size()<CaelumPortData.MandingaCount()
+            && hostileSlots>0)
         {
             vector3 spot=CaelumPortData.FormationPosition(infantry);
-            AddDemon(spot,NearestLane(spot.X));infantry++;
+            if(AddDemon(spot,NearestLane(spot.X))!=null)hostileSlots--;
+            infantry++;
         }
         int guard=0;
         while(!separateHomes && !attackOnly && Defenders.Size()<CaelumPortData.DefenderCount())
@@ -200,49 +219,70 @@ class CaelumPortSiege : CaelumSiegeEncounter
 
     void ElectCommands()
     {
-        Groups=0;CommandDirty=false;
-        for(int i=0;i<Attackers.Size();i++)
+        CommandDirty=false;
+        // El registro del encuentro es la unica fuente. Un grupo valido no se
+        // vuelve a disolver por cambiar de posicion ni por cargar la partida.
+        for(int i=FormationGroups.Size()-1;i>=0;i--)
         {
-            let entry=Attackers[i];
-            if(entry.SharedTargetSubscription!=null && !ActiveEntry(entry))CaelumTargetSubscriptions.Unwatch(entry);
-            entry.CommandGroup=-1;entry.CommandLeader=null;
+            let group=FormationGroups[i];group.CommandOwner=self;group.PulseReady=false;group.Refresh();
+            if(group.Members.Size()==0)
+            {if(group.ClearanceProbe!=null)group.ClearanceProbe.Destroy();FormationGroups.Delete(i);}
         }
-        Array<CaelumSiegeCombatant> queue;
         for(int seed=0;seed<Attackers.Size();seed++)
         {
             let first=Attackers[seed];
-            if(!ActiveEntry(first) || first.CommandGroup>=0)continue;
-            queue.Clear();queue.Push(first);first.CommandGroup=Groups;
-            CaelumSiegeCombatant leader=first;
-            for(int head=0;head<queue.Size();head++)
+            if(first==null)continue;
+            if(!ActiveEntry(first))
+            {CaelumTargetSubscriptions.Unwatch(first);first.CommandGroup=-1;first.CommandLeader=null;continue;}
+            if(!ActiveEntry(first) || CaelumRedemption.PreviouslyRaised(first.Body) || first.Body.Formation!=null)continue;
+            CaelumFormation group=null;
+            for(int i=0;i<FormationGroups.Size();i++)
             {
-                let entry=queue[head];
-                if(entry.CommandPriority<leader.CommandPriority || (entry.CommandPriority==leader.CommandPriority
-                    && entry.StableIdentity<leader.StableIdentity))leader=entry;
-                // El límite incluye al mando. Aunque se llene la escuadra,
-                // todos los miembros encolados participan en elegir su líder.
-                if(queue.Size()>=CaelumPortData.COMMAND_GROUP_LIMIT)continue;
-                let neighbors=BlockThingsIterator.Create(entry.Body,CaelumPortData.COMMAND_LINK_RADIUS);
-                while(queue.Size()<CaelumPortData.COMMAND_GROUP_LIMIT && neighbors.Next())
+                let existing=FormationGroups[i];
+                if(existing.Retreat || existing.Leader==null || existing.Members.Size()>=existing.Capacity)continue;
+                let leader=existing.Leader.Body;
+                if(leader.Distance3D(first.Body)<=CaelumPortData.COMMAND_LINK_RADIUS && leader.CheckSight(first.Body))
+                {group=existing;break;}
+            }
+            if(group==null)
+            {group=new("CaelumFormation");group.Initialize();group.CommandOwner=self;group.Heading=CaelumPortData.AttackAngle();FormationGroups.Push(group);}
+            group.Add(first.Body,CaelumFormation.RoleFor(first.Body),first.CommandPriority);
+            // Solo al admitir miembros: consulta local acotada por los cien
+            // integrantes. No hay censo por cada soldado ni por cada tic.
+            for(int head=0;head<group.Members.Size() && group.Members.Size()<group.Capacity;head++)
+            {
+                let body=group.Members[head].Body;
+                let neighbors=BlockThingsIterator.Create(body,CaelumPortData.COMMAND_LINK_RADIUS);
+                while(group.Members.Size()<group.Capacity && neighbors.Next())
                 {
-                    let body=CaelumCombatActor(neighbors.thing);
-                    if(body==null || body.SiegeCombatant==null)continue;
-                    let other=body.SiegeCombatant;
-                    if(other.Encounter!=self || other.CommandGroup>=0 || !ActiveEntry(other))continue;
-                    if((body.Pos-entry.Body.Pos).Length()>CaelumPortData.COMMAND_LINK_RADIUS || !entry.Body.CheckSight(body))continue;
-                    other.CommandGroup=Groups;queue.Push(other);
+                    let other=CaelumCombatActor(neighbors.thing);
+                    if(other==null || other.Formation!=null || other.SiegeCombatant==null
+                        || other.SiegeCombatant.Encounter!=self || !ActiveEntry(other.SiegeCombatant)
+                        || CaelumRedemption.PreviouslyRaised(other))continue;
+                    if(body.Distance3D(other)>CaelumPortData.COMMAND_LINK_RADIUS || !body.CheckSight(other))continue;
+                    group.Add(other,CaelumFormation.RoleFor(other),other.SiegeCombatant.CommandPriority);
                 }
             }
+            group.Elect();group.Layout();
+        }
+        Groups=FormationGroups.Size();
+        for(int index=0;index<FormationGroups.Size();index++)
+        {
+            let group=FormationGroups[index];if(group.Leader==null)continue;
+            let leader=group.Leader.Body.SiegeCombatant;
             if(leader.GroupCandidates==null)leader.GroupCandidates=new("CaelumCommandCandidates");
             leader.GroupCandidates.Members.Clear();leader.GroupCandidates.Ready=false;
-            for(int i=0;i<queue.Size();i++)
+            for(int i=0;i<group.Members.Size();i++)
             {
-                queue[i].CommandLeader=leader;
-                leader.GroupCandidates.Members.Push(queue[i]);
-                if(queue[i]!=leader)CaelumTargetSubscriptions.Unwatch(queue[i]);
+                let member=group.Members[i];let entry=member.Body.SiegeCombatant;
+                group.SetRole(member,CaelumFormation.RoleFor(member.Body));
+                entry.CommandGroup=index;entry.CommandLeader=leader;
+                leader.GroupCandidates.Members.Push(entry);
+                if(entry!=leader)CaelumTargetSubscriptions.Unwatch(entry);
             }
-            Groups++;
+            group.Layout();
         }
+        FormationRevision=CaelumFormationData.REVISION;
     }
 
     void RefreshTargets()
@@ -637,11 +677,21 @@ class CaelumPortSiege : CaelumSiegeEncounter
             // La puerta es un destino de marcha conocido. El defensor mas
             // cercano, aun oculto, nunca puede sustituirlo como coordenada viva.
             vector3 gate=(CaelumPortData.GateX(entry.Lane),CaelumPortData.GateY(),0);
+            let formation=body.Formation!=null ? body.Formation.Group : null;
+            if(formation!=null)
+            {
+                formation.Refresh();
+                if(formation.Leader!=null && formation.Leader.Body==body)
+                    formation.Heading=VectorAngle(gate.X-body.Pos.X,gate.Y-body.Pos.Y);
+                else if(formation.Follow(body.Formation))return true;
+            }
             if((body.Pos.XY-gate.XY).Length()>body.Radius)WalkTo(body,goal,gate);
             else {body.target=null;body.Vel.X=0;body.Vel.Y=0;}
             return true;
         }
         if(victim==null || victim.health<=0){body.target=null;return true;}
+        if(!hasPost && !nearEnemy && body.Formation!=null
+            && body.Formation.Group.RegroupCombat(body.Formation,victim))return true;
         body.target=victim;
         if(soldier!=null && soldier.Carbine!=null && !nearEnemy && soldier.Carbine.Attack(soldier,victim))return true;
         bool canCast=soldier==null;
@@ -735,6 +785,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
             return;
         }
         EnsureReinforcements();
+        if(FormationRevision<CaelumFormationData.REVISION)CommandDirty=true;
         RefreshDensity();
         if(!RosterSealed && !ActivateDeployment())return;
         Super.Tick();

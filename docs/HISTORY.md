@@ -1,6 +1,44 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.11.0** - 2026-10-30.
+Documentation version: **5.11.1** - 2026-10-30.
+
+## 5.11.1 - Formations and bounded siege membership (#429, 2026-10-30)
+
+Author correction, 2026-10-30: CA429-01 remained failed because the front-left
+soldier stopped at (193.377,-15.586) when the group widened at the corridor exit.
+Visibility alone admitted that diagonal although the body could not fit. Recovery
+now checks sampled native cylinder clearance along the entire candidate segment,
+within the group's length, before widening. The shared recovery trigger remains
+movement-based; no per-tic actor census was added. The visible five-guard native
+fixture passes all four checks (passage-correction-a); author retest is pending.
+
+Formation revision1 owns stable member identities, leader succession, four role
+layouts, player-reserved party capacity, passage fallback and combat regroup
+orders. Native movement retains collision/resource accounting. Encounter admission
+counts commanders/crews/machines together, accepts finite partial tails and
+preserves preexisting over-cap populations. No new army-control permission,
+recruitment, faction rule or story content is introduced.
+
+The author approved breaking formation for individual combat and regrouping on
+a new order only outside attacks/melee engagement. Geometry fixtures exposed
+native chase orbiting and premature recovery through a doorway that admitted a
+center sight ray but not body width; direct TryMove and paired boundary sight
+checks corrected those failures. Failed iterations remain local evidence.
+
+Static validation: zero errors/warnings. The final full package passes 32 native
+formation/admission checks, four reload checks, four five-body passage checks and
+six legacy-campaign migration/ownership checks. An additional diagnostic confirms
+that a previously failed exact-count fixture had a due reinforcement admission
+(101 ->201); it did not duplicate the existing roster. The controlled source save
+retains all101 native bodies and their inventories; the original accepted build
+still opens its original save. Evidence: assets/validation_v5_11_1/summary.json.
+
+Normal siege simulation averages45.956 ms (p95 68.209, p99 72.856); render callbacks
+average787.698 ms (p99 850.620). Population changes1401 ->1588 with the revised
+whole-side admission accounting. These are not matched-population performance
+improvements or displayed-frame measurements. Large-siege stalls remain; #432/#433
+carry separate measured optimization work. Author acceptance is pending; manual
+tests are withheld until all V5.11 issues are ready.
 
 ## 5.11.0 - NPC subsystem and presentation profiling (#431, 2026-10-30)
 

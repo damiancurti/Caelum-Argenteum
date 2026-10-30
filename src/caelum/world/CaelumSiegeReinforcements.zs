@@ -45,12 +45,7 @@ class CaelumSiegeReinforcements : Object play
 
     void RefreshLiving(CaelumPortSiege port)
     {
-        Living=0;
-        for(int i=0;i<port.Attackers.Size();i++)
-        {
-            let e=port.Attackers[i];
-            if(e.Body!=null && e.Body is "CaelumMandinga" && e.Body.health>0 && !e.Exited)Living++;
-        }
+        Living=port.LivingHostilePopulation();
     }
 
     bool Fits(CaelumMandinga body)
@@ -134,10 +129,11 @@ class CaelumSiegeReinforcements : Object play
     {
         if(Pending==0)
         {
-            if(Living>CaelumReinforcementData.LIVING_CAP-CaelumReinforcementData.GROUP_SIZE
-                || Remaining<CaelumReinforcementData.GROUP_SIZE)return;
-            GroupStart=Successful;Pending=CaelumReinforcementData.GROUP_SIZE;
-            for(int i=0;i<CaelumReinforcementData.GROUP_SIZE;i++)Placed[i]=false;
+            // Una partida anterior sobre el limite conserva todos sus actores.
+            // Las plazas nuevas esperan a bajas reales; no se archiva ni borra nadie.
+            if(Living>=CaelumFormationData.SIDE_CAPACITY || Remaining<=0)return;
+            GroupStart=Successful;Pending=Min(Remaining,CaelumReinforcementData.GROUP_SIZE);
+            for(int i=0;i<CaelumReinforcementData.GROUP_SIZE;i++)Placed[i]=i>=Pending;
         }
         for(int i=0;i<CaelumReinforcementData.GROUP_SIZE;i++)
             if(!Placed[i] && Living<CaelumReinforcementData.LIVING_CAP)Place(port,i);

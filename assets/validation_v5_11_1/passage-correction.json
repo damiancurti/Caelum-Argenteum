@@ -1,0 +1,39 @@
+{
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-nomouse",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue430-work\\build\\issue430\\final\\caelum_argenteum_dev.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\passage-correction.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\passage-correction-a.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "-rngseed",
+    "428",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\passage-correction-a.log",
+    "+map",
+    "CA429B",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\passage-correction-a.cfg"
+  ],
+  "pid": 45536,
+  "packages": {
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue430-work\\build\\issue430\\final\\caelum_argenteum_dev.pk3": "e3d2f1bd875244cdf0a68e4d06cace34b61ab8012273dba066a2f943a161e58a",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\passage-correction.pk3": "9f323370bca8196f1a93f16833eda37a85a45bbb64c08d0609a80356f6e1113f"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 50.92,
+  "failures": [],
+  "pass_count": 4,
+  "author_status": "Pending retest; previous terminal scenario failed at the exit corner."
+}

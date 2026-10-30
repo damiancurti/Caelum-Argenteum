@@ -1,6 +1,43 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.11.0** - 2026-10-30.
+Documentation version: **5.11.1** - 2026-10-30.
+
+Passage correction (#429, 2026-10-30): recovering a wide formation validates
+native cylinder clearance along each member's candidate segment, not sight alone.
+The shared movement-triggered recovery check bounds each segment to group length;
+its samples are separated by the member's collision radius. Actor collisions
+remain enforced by movement; these geometry probes do not displace bodies.
+
+## 5.11.1 / #429 - Persistent formations and admission
+
+A military group owns up to 100 stable members, with explicit melee/support/
+ranged roles. Line uses transverse role rows, column longitudinal order and
+wedge 45-degree arms. Clear spacing is 0.5 m between actual collision bodies;
+dispersed uses 1 m. Player-anchored groups reserve one of 8 total places for the
+player, leaving 7 companions. Recruitment, retained death slots and transfers
+belong to #430; this formation object does not replace that identity ledger.
+
+A leader must be alive, conscious, unrestrained and not withdrawing. Succession
+uses existing command priority then stable joining order; no eligible successor
+causes withdrawal. Removing a member never renumbers others or deletes a corpse.
+Formation revision 1 is saved. Existing saves lazily construct groups from their
+current siege roster, retaining all bodies, resources and private perception.
+
+Narrow passages temporarily use a single-file trail and recover the chosen
+layout when both collision fit and body-width sight paths permit it. Direct
+steps use native TryMove and thermal movement accounting; blocked steps use the
+existing native chase detour. Each group refreshes its bounded membership once
+per tic. No global actor search is added. Stationed operators and accepted
+city deployment keep their posts/routes. New formation orders can regroup
+combatants outside attack animations and melee engagement; arriving releases
+them to individual combat. Formation membership conveys no hidden target data.
+
+The 1,000 living actors per side include commanders, machine crews and machines,
+including offscreen participants. Admission uses the encounter-owned roster;
+crew bodies are counted once. Dead/exited bodies release a slot without deleting
+belongings. Partial reinforcement batches are allowed. Existing over-cap saves
+retain every body and block new admissions until below the limit. Finite reserve
+counts, placement collision checks and opportunity timing remain unchanged.
 
 ## 5.11.0 / #431 - Measured runtime baseline
 

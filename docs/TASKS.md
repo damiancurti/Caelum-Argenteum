@@ -1,15 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.11.0** - 2026-10-30.
+Documentation version: **5.11.1** - 2026-10-30.
 
-## V5.11 active - 5.11.0 (#429-433, 2026-10-30)
+## V5.11 active - 5.11.1 (#429-433, 2026-10-30)
 
 - #431: subsystem profiling and current/full35/reduced5/simplified diagnostic
   comparisons; production runtime unchanged. Numerical accuracy observations
   and immutable run evidence are in validation_v5_11_0. Presentation coverage and
   remaining limitations must be reported separately from render callbacks.
-- #429: focused formation/admission implementation and native fixtures in
-  progress; no completion or author acceptance claimed by #431.
+- #429: formation/admission implementation has passed focused native geometry,
+  membership, combat-order, full-package save/migration and campaign checks.
+  Author reported a corridor-exit stall; sampled cylinder clearance corrects it.
+  Four native checks pass; CA429-01 retest remains pending.
 - #430: approved roster, recruitment, persistent death, trust and consent are
   recorded on its issue. The subcaptain uses Domingo's appearance and 20 in
   every attribute, not customizable player statistics or ordinary guard 18.
