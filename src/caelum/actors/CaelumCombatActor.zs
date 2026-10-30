@@ -4,6 +4,7 @@
 class CaelumCombatActor : Actor
 {
     CaelumVisualEvidence VisualEvidence;
+    CaelumFormationMember Formation;
     CaelumPlayer PendingTheftTarget;
     int NextNoiseStepTic;
     bool NoiseStepScheduled;

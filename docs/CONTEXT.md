@@ -1,12 +1,12 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.11.0** - 2026-10-30.
+Documentation version: **5.11.1** - 2026-10-30.
 
-**V5.11 active (5.11.0/#431):** #429-433 authorized;
-group manual tests only after all complete. #431 profiles accepted 5.10.3;
-no production thermal changes. #429 formation work pending verification;
-#430 subcaptain: Domingo appearance, 20/all attributes. Decisions: issues.
-#432/#433 require measured benefit. Unaccepted; unmerged.
+**V5.11 active (5.11.1/#429):** formations/native migration passed; #431 PR575.
+#430: Domingo subcaptain,20/all attributes. #432/#433 need measured benefit.
+Manual tests after completion; unaccepted/unmerged.
+Keep-awake PID42276 active; stop file: build/issue429/keep-awake-511-20261030.stop
+in issue429 worktree. Release on return.
 **V5.10 accepted:** #425-428/PR570-573, CA425-01..CA428-01; HISTORY.
 Siege stalls persist. Keep-awake released.
 

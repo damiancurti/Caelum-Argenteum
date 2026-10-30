@@ -1,0 +1,450 @@
+{
+  "issue": 429,
+  "release": "5.11.1",
+  "author_acceptance": false,
+  "runs": {
+    "final-state": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\final-d\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\checks-full.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\final-state.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\final-state.log",
+        "+map",
+        "CA429A",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\final-state.cfg"
+      ],
+      "pid": 27180,
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\final-d\\caelum_argenteum_dev.pk3": "a0f552c014c4d1e8c156e67beff4c007027f53704c9e6a0d024a4350729a3475",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\checks-full.pk3": "3389d58d2e45a9ac73c8417ec8540181005dff777593a6b9b9f643e54c3c459f"
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 9.696,
+      "failures": [],
+      "pass_count": 32,
+      "evidence": [
+        {
+          "file": "evidence\\final-state.log.gz",
+          "sha256": "75c2d4ffb2bd5b8ebf671c855f6ab154dd9453ca6a081122ebd2d61939a4aedb"
+        },
+        {
+          "file": "evidence\\final-state.ini.gz",
+          "sha256": "a58c8b1af1c9951a2b84b1e5773f04a6af791b8dfa19dead9d827c281b981fd6"
+        },
+        {
+          "file": "evidence\\final-state.cfg.gz",
+          "sha256": "ee171a4b98f0f5b6c024ddc8a0a16839f9a48b779c852d9996e98cc70cdf75c5"
+        }
+      ]
+    },
+    "final-reload": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\final-d\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\checks-full.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\final-reload.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\final-reload.log",
+        "-loadgame",
+        "ca429-final-state.zds",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\final-reload.cfg"
+      ],
+      "pid": 19936,
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\final-d\\caelum_argenteum_dev.pk3": "a0f552c014c4d1e8c156e67beff4c007027f53704c9e6a0d024a4350729a3475",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\checks-full.pk3": "3389d58d2e45a9ac73c8417ec8540181005dff777593a6b9b9f643e54c3c459f"
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 8.664,
+      "failures": [],
+      "pass_count": 4,
+      "evidence": [
+        {
+          "file": "evidence\\final-reload.log.gz",
+          "sha256": "69fd42376de19627077c858486f5837e61f643b2b0299c88bb192675a322f731"
+        },
+        {
+          "file": "evidence\\final-reload.ini.gz",
+          "sha256": "560f6ffd0d9145b09f63b801c5fed3d0eb0ee85a4fb9a2d0e333a27c563922d8"
+        },
+        {
+          "file": "evidence\\final-reload.cfg.gz",
+          "sha256": "366985dfb671462af9c1c7becb75bf8124f1f6ae60840b3b28edaa7fcccce556"
+        }
+      ]
+    },
+    "final-passage": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\final-d\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\checks-full.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\final-passage.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\final-passage.log",
+        "+map",
+        "CA429B",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\final-passage.cfg"
+      ],
+      "pid": 9228,
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\final-d\\caelum_argenteum_dev.pk3": "a0f552c014c4d1e8c156e67beff4c007027f53704c9e6a0d024a4350729a3475",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\checks-full.pk3": "3389d58d2e45a9ac73c8417ec8540181005dff777593a6b9b9f643e54c3c459f"
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 49.756,
+      "failures": [],
+      "pass_count": 4,
+      "evidence": [
+        {
+          "file": "evidence\\final-passage.log.gz",
+          "sha256": "a520f39f91f4835e68de939b66e0cc7d713d44294d3ce4104b8553b8328453c6"
+        },
+        {
+          "file": "evidence\\final-passage.ini.gz",
+          "sha256": "eac7edc216e487a08db3c479e7498fb452bb6cdf1be04f03228a31a9918d2a6f"
+        },
+        {
+          "file": "evidence\\final-passage.cfg.gz",
+          "sha256": "c20da982216b15c10974ebbfd9623ccfee417e6a7fafe5d203afbb058eb766b2"
+        }
+      ]
+    },
+    "final-migration": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\final-d\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\current\\campaign-legacy.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\final-migration.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\final-migration.log",
+        "-loadgame",
+        "ca429-legacy-campaign-b.zds",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\final-migration.cfg"
+      ],
+      "pid": 40368,
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\final-d\\caelum_argenteum_dev.pk3": "a0f552c014c4d1e8c156e67beff4c007027f53704c9e6a0d024a4350729a3475",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\current\\campaign-legacy.pk3": "8d8e30db9e2d42beee5d87ae3688c49d2aec2f7bd3635189df7d3514ad635119"
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 10.196,
+      "failures": [],
+      "pass_count": 6,
+      "evidence": [
+        {
+          "file": "evidence\\final-migration.log.gz",
+          "sha256": "8d0722b1e54dc90b8438bcd6df0c2985b7206d54c0e7a269ad42aa4fbab69423"
+        },
+        {
+          "file": "evidence\\final-migration.ini.gz",
+          "sha256": "3e06c6d8278c25381fe735ecad9c97fb2f0cc81ac944db57e7e04c21736958d7"
+        },
+        {
+          "file": "evidence\\final-migration.cfg.gz",
+          "sha256": "1dc6fcbb16c158cfbc3230176d8d7e946a038a1934c092d6f22c6f2b3df5a700"
+        }
+      ]
+    },
+    "due-diagnostic": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\final-d\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\current\\campaign-legacy.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\due-diagnostic.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\due-diagnostic.log",
+        "-loadgame",
+        "ca429-legacy-campaign.zds",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\due-diagnostic.cfg"
+      ],
+      "pid": 43032,
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\final-d\\caelum_argenteum_dev.pk3": "a0f552c014c4d1e8c156e67beff4c007027f53704c9e6a0d024a4350729a3475",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\current\\campaign-legacy.pk3": "8d8e30db9e2d42beee5d87ae3688c49d2aec2f7bd3635189df7d3514ad635119"
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 10.162,
+      "failures": [],
+      "pass_count": 1,
+      "evidence": [
+        {
+          "file": "evidence\\due-diagnostic.log.gz",
+          "sha256": "4705ce4c2158ef46b485f9ea145d18790bbd983d0c688758aa8ec0ddb1864b2e"
+        },
+        {
+          "file": "evidence\\due-diagnostic.ini.gz",
+          "sha256": "cc1170fb3967c3d59fdb45530c1cd90672a440ad4039e4987d7d42cdb27fa291"
+        },
+        {
+          "file": "evidence\\due-diagnostic.cfg.gz",
+          "sha256": "100d9f1537b6f6f0e15ddeec92ad29798c47fc98db967264c7da15ad3cc1d779"
+        }
+      ]
+    },
+    "legacy-campaign-b": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\campaign-legacy.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\legacy-campaign-b.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\legacy-campaign-b.log",
+        "+map",
+        "MAP03",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\legacy-campaign-b.cfg"
+      ],
+      "pid": 23888,
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3": "4c9830777147237c5797c646d10bd1f00f2379369ddbe50134049dc64f13818d",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\campaign-legacy.pk3": "9965ba0216629af90ac8e5f317b8eb4ed031fee137f811ec6a933c466a7e5ef6"
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 21.239,
+      "failures": [],
+      "pass_count": 1,
+      "evidence": [
+        {
+          "file": "evidence\\legacy-campaign-b.log.gz",
+          "sha256": "b849ae4fef7dafd81607ce59d612eaa9cd8fe23c11d976a7e4a4a46bb848f7d4"
+        },
+        {
+          "file": "evidence\\legacy-campaign-b.ini.gz",
+          "sha256": "572aa13adafe948a6cb87fa70265cbea9125df71595a45f0633380dfbbb64332"
+        },
+        {
+          "file": "evidence\\legacy-campaign-b.cfg.gz",
+          "sha256": "85456e6b5cf3f6e4ac8c03b4262ea8e6cb3f771808341c9a5c206141ded728e2"
+        }
+      ]
+    },
+    "campaign-rollback": {
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-nomouse",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\campaign-legacy.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\campaign-rollback.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429",
+        "-window",
+        "-width",
+        "1280",
+        "-height",
+        "720",
+        "-rngseed",
+        "428",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\campaign-rollback.log",
+        "-loadgame",
+        "ca429-legacy-campaign-b.zds",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\campaign-rollback.cfg"
+      ],
+      "pid": 52760,
+      "packages": {
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3": "4c9830777147237c5797c646d10bd1f00f2379369ddbe50134049dc64f13818d",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\campaign-legacy.pk3": "9965ba0216629af90ac8e5f317b8eb4ed031fee137f811ec6a933c466a7e5ef6"
+      },
+      "exit_code": 0,
+      "elapsed_seconds": 10.686,
+      "failures": [],
+      "pass_count": 2,
+      "evidence": [
+        {
+          "file": "evidence\\campaign-rollback.log.gz",
+          "sha256": "b627949fe7e02710222644fcffd8631877df11e0f87a979cede282df27393998"
+        },
+        {
+          "file": "evidence\\campaign-rollback.ini.gz",
+          "sha256": "9aa78a813e31158dc7b24f7062b2aca9b80063f8d65fd7cad568c8eca2a68da5"
+        },
+        {
+          "file": "evidence\\campaign-rollback.cfg.gz",
+          "sha256": "adfba9c2af2abe8feb020d66d4cd2675605f38f8d3cef23ec0e9bf436012b552"
+        }
+      ]
+    }
+  },
+  "performance": {
+    "command": [
+      "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "-noautoload",
+      "-nomouse",
+      "-iwad",
+      "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+      "-file",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\final-d\\caelum_argenteum_dev.pk3",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\performance\\final-siege.pk3",
+      "-config",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\performance\\final-siege.ini",
+      "-window",
+      "-width",
+      "1280",
+      "-height",
+      "720",
+      "-rngseed",
+      "428",
+      "+logfile",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\performance\\final-siege.log",
+      "+map",
+      "MAP03",
+      "+exec",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\performance\\final-siege.cfg"
+    ],
+    "packages": {
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\final-d\\caelum_argenteum_dev.pk3": "a0f552c014c4d1e8c156e67beff4c007027f53704c9e6a0d024a4350729a3475",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue429-work\\build\\issue429\\performance\\final-siege.pk3": "00a6d64b179954ef1a3ea267bd2a4b5465f73f6129b79d4d469369a419763e93"
+    },
+    "started_utc": "2026-10-30T18:15:53.435943+00:00",
+    "pid": 19716,
+    "ended_utc": "2026-10-30T18:18:39.251420+00:00",
+    "window_utc": {
+      "BEGIN": {
+        "after_utc": "2026-10-30T18:18:03.679706+00:00",
+        "before_utc": "2026-10-30T18:18:04.187486+00:00",
+        "after_qpc_ms": 1242217386.8133,
+        "before_qpc_ms": 1242217894.8916
+      },
+      "END": {
+        "after_utc": "2026-10-30T18:18:35.732325+00:00",
+        "before_utc": "2026-10-30T18:18:36.240155+00:00",
+        "after_qpc_ms": 1242249439.4317,
+        "before_qpc_ms": 1242249946.9093
+      }
+    },
+    "exit_code": 0,
+    "elapsed_seconds": 165.815,
+    "simulation": {
+      "samples": 700,
+      "mean_ms": 45.955824428571425,
+      "p95_ms": 68.2085,
+      "p99_ms": 72.8562,
+      "max_ms": 83.5447
+    },
+    "render_callbacks": {
+      "samples": 36,
+      "mean_ms": 787.698175,
+      "p95_ms": 836.4111,
+      "p99_ms": 850.6195,
+      "max_ms": 864.9393
+    },
+    "census": [
+      "CA510 CENSUS start alive=1401 attackers=801 defenders=600 groups=13 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00",
+      "CA510 CENSUS end alive=1588 attackers=988 defenders=600 groups=15 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00"
+    ],
+    "limit": "RenderOverlay callbacks do not measure displayed frames; presentation capture remains separate.",
+    "log": {
+      "file": "evidence\\final-siege.log.gz",
+      "sha256": "d63c5033a4e5dbedd090594e0550606b305e12279d21871ef7a2b5ddb3287906"
+    }
+  },
+  "limits": [
+    "Author checks deferred until all V5.11 work is ready.",
+    "Render callbacks are not frame presentation.",
+    "Revised population accounting changes the comparison census.",
+    "Large-siege stalls remain; optimization work is tracked separately."
+  ]
+}
