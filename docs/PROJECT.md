@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.10.3** - 2026-10-30.
+Documentation version: **5.11.0** - 2026-10-30.
+
+## V5.11 implementation - 5.11.0 (#431, 2026-10-30)
+
+The author authorized all five V5.11 issues and separate commits/PRs. #431
+profiles the accepted runtime and diagnostic alternatives. #429 formations,
+#430 companions, #432 measured optimization and #433 distant AI remain separate
+work; this measurement patch does not claim their completion. The author will
+receive grouped manual checks after all issues are implemented. Native checks
+and performance evidence do not constitute author acceptance or merge approval.
 
 ## V5.10 complete and author-accepted - 5.10.3 (2026-10-30, #403)
 

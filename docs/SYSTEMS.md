@@ -1,6 +1,18 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.10.3** - 2026-10-30.
+Documentation version: **5.11.0** - 2026-10-30.
+
+## 5.11.0 / #431 - Measured runtime baseline
+
+Production gameplay is unchanged by this profiling patch. Ordinary NPC thermal
+advancement already runs once per active second, staggered by body; thermal
+surface transitions can force earlier advancement. The same scheduler calls
+contamination exposure/contact, so changing its frequency also changes that
+work. Diagnostic full-35-Hz, five-second and one-step quadrature variants are
+not approved production rules. Numerical comparisons preserve elapsed energy,
+record moisture/hydration, exposure, damage dose and threshold timing; retain
+the current solver. Measurements and their limits are in HISTORY and
+assets/validation_5110. No save schema or migration is changed here.
 
 ## 5.10.3 / #428 - Audible reports and leader orders
 

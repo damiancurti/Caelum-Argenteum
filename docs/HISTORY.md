@@ -1,6 +1,94 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.10.3** - 2026-10-30.
+Documentation version: **5.11.0** - 2026-10-30.
+
+## 5.11.0 - NPC subsystem and presentation profiling (#431, 2026-10-30)
+
+Only two required diagnostic release labels change in src; gameplay, assets,
+save schema and balance are unchanged. The immutable accepted 5.10.3 package remains the measured baseline:
+SHA256 4c9830777147237c5797c646d10bd1f00f2379369ddbe50134049dc64f13818d.
+Evidence: assets/validation_5110/summary.json and presentation.json, compressed
+raw logs/CSVs/configurations, deterministic overlay generators and native grid.
+No V5.11 manual acceptance or merge is claimed; the author requested one grouped
+manual handoff after all #429-433 work is complete.
+
+Measured Windows 11 build 26200, GZDoom 4.14.2/Vulkan, Ryzen 9 5950X and RTX 3070 Ti.
+Uncapped, vsync off, unpaused background, 5 percent audio. Requested window
+1280x720; native logs retain the actual resolution and driver. Current campaign
+reinforcements were preserved: the siege window grows from 1500 to1598 living
+combatants (900 to998 attacker entries and600 defenders). This is the approved
+1000-attacker/600-defender scenario, not a fixed population or a retired stress
+case. No 6000 simultaneous attackers or stale 15000-active ladder was run.
+
+Uninstrumented diagnostic siege comparisons (mean / p95 / p99 simulation ms):
+
+| Scheduler/model | Simulation | Render callbacks mean / p99 ms |
+| --- | --- | --- |
+| Current, ordinary NPC once/second | 38.464 / 53.215 / 58.756 | 657.190 / 726.882 |
+| Five-second diagnostic interval | 33.905 / 49.047 / 57.106 | 573.566 / 698.801 |
+| One-step thermal quadrature | 39.221 / 55.449 / 61.569 | 672.985 / 807.921 |
+| Full35 diagnostic interval | 104.971 / 139.039 / 170.696 | 1808.864 / 2764.645 |
+
+The old issue wording incorrectly described full35 as production. Current NPC
+thermal work is already staggered at35 tics, with forced thermal-surface cases.
+Its scheduler also owns contamination. Therefore the reduced-frequency result
+is confounded with contamination cadence and is not evidence for removing heat
+simulation. Simplifying quadrature showed no benefit in this comparison.
+Neither experimental variant is incorporated into normal gameplay.
+
+Nested scopes, sampled every17 tics over41 sample tics, identify visual candidate
+filtering and contamination surface work as substantial costs. In the detailed
+contact run, thermal Advance inclusive281.44 ms contains contamination267.72 ms;
+its own exclusive cost is13.61 ms. Surface contact accounts for233.48 ms;
+inventory capture20.37, exposure balance8.12, contact query8.33. The finer surface
+run attributes151.32 ms to historical surface synchronization, of which149.89
+is outside its tiny balance solver; geometry/configuration costs44.88 ms.
+These instrumented timings include probe overhead and overlapping inclusive
+scopes. They cannot be summed or substituted for uninstrumented frame results.
+Resources, movement/contact, health/offense, communication and controller scopes
+are retained in the report. Election/lane maintenance has only one sampled
+invocation; it does not establish a worst-case maintenance bound.
+
+The pure thermal grid completed144 observations (24 states times3 intervals,
+current and simplified solvers), with no elapsed-time conservation failures.
+For the current solver, five-second advancement differs by at most0.13505 in
+final exposure, but by12.60015 between updates; threshold onset can be delayed.
+Maximum damage-dose difference is0.53553. Simplified quadrature at the ordinary
+interval differs by0.06461 final exposure and0.06063 dose. Full rows also retain
+moisture, hydration and activity errors. No acceptable-error threshold was
+invented, and these differences are not an approval to change production rules.
+
+The author authorized bounded administrator PresentMon capture. The original
+15-minute capture flushed its CSV on exit; its apparently empty active file was
+not a failed capture. A60-second QPC capture provided24 unambiguous shared events
+and calibrated the date CSV's six-hour offset to UTC; offsets agree within a
+millisecond. Do not guess the CSV timezone in future runs. A redundant subsequent
+capture was cancelled; no services, group memberships or persistent permissions
+were changed, and no temporary collector remains required.
+
+ETW application-present intervals, using conservative UTC/PID windows:
+
+| Scene | Mean ms | p95 ms | p99 ms | Worst ms | Application presents/s |
+| --- | --- | --- | --- | --- | --- |
+| Mansion entrance | 15.856 | 17.620 | 18.916 | 19.769 | 63.07 |
+| Sewer entrance | 5.156 | 6.546 | 7.230 | 38.047 | 193.95 |
+| Peaceful city | 8.703 | 10.680 | 12.434 | 44.328 | 114.90 |
+| City ground-facing | 11.613 | 14.013 | 16.072 | 18.214 | 86.11 |
+| Campaign siege | 668.572 | 735.436 | 736.960 | 778.721 | 1.50 |
+
+PresentMon reports Other / Composed: Copy with GPU GDI. Display-change coverage
+is95 percent for the mansion,2-5 percent for sewers/city and100 percent for the
+siege. These are application-present measurements, not a universal monitor-FPS
+or exact Vulkan GPU-time claim. Only37 siege frames fall inside the bounded
+window. Entrance tests and mansion mean63 do not establish60-FPS traversal.
+
+Early diagnostic compilation exposed insertion into the wrong owning class;
+the corrected wrapper locates that method's own closing brace. Failed evidence
+is preserved. The subsequent native runs completed and nested timing depth
+returned to zero. Static project validation passes with zero errors. PR linkage accompanies delivery.
+Next: #432 can optimize shared climate/history and redundant perception work,
+while #433 separately evaluates its approved empty-search scheduling candidate.
+
 
 ## 5.10.3 - Audible reports and leader orders (#428, 2026-10-30)
 

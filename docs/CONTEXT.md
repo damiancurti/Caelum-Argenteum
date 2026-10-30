@@ -1,13 +1,14 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.10.3** - 2026-10-30.
+Documentation version: **5.11.0** - 2026-10-30.
 
-**V5.10 accepted/merged, 5.10.3 (2026-10-30):** #425-428 closed, PR570-573 merged.
-CA425-01..CA428-01 passed; HISTORY. pending_test.txt empty. Native evidence:
-validation_5100-5103; final communication/save53 PASS, combined regression91.
-Large siege remains slow (callbacks653.63 vs601.96 ms, not displayed FPS).
-Temporary keep-awake released after the author returned. Next: existing V5.11
-roadmap; no new implementation authorized by the acceptance-only request.
+**V5.11 active (5.11.0/#431):** #429-433 authorized;
+group manual tests only after all complete. #431 profiles accepted 5.10.3;
+no production thermal changes. #429 formation work pending verification;
+#430 subcaptain: Domingo appearance, 20/all attributes. Decisions: issues.
+#432/#433 require measured benefit. Unaccepted; unmerged.
+**V5.10 accepted:** #425-428/PR570-573, CA425-01..CA428-01; HISTORY.
+Siege stalls persist. Keep-awake released.
 
 **V5.9 accepted/merged:** #418-424 closed, PR561-569; CA418-01..CA424-01
 confirmed 2026-10-30 in HISTORY. validation_590-597; pending_test.txt empty.

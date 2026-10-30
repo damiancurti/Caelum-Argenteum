@@ -4,6 +4,37 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-192 - Thermal scheduler cost includes contamination surface history
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED; #431, 2026-10-30,
+5.11.0 diagnostic patch against accepted5.10.3. No author acceptance or
+production thermal simplification. Evidence: assets/validation_5110/summary.json
+and presentation.json; native environment/configuration retained there.
+
+Symptom: profiling NPCStep inclusively can misidentify contamination exposure
+and historical surface climate as heat-integration cost. The scheduler advances
+both. Full35 and five-second cadence experiments therefore change both and are
+not isolated heat-model ablations. Use nested-exclusive scopes before choosing
+a production optimization. Here thermal Advance exclusive13.61 ms versus
+inclusive281.44 ms is dominated by contamination267.72 ms in the sampled window.
+Surface history and visual candidate filtering merit separate investigation;
+removing thermal gameplay is not justified by this result. Preserve individual
+state, exact calendar intervals, microclimate transitions and local contact.
+
+PresentMon's date-mode CSV can remain buffered until normal termination. Do not
+conclude from an empty live file that it failed. The date timestamps in this
+capture required a measured six-hour UTC correction, verified against24 matching
+QPC events. Future tools should record QPC host-window bounds directly and retain
+raw CSV, capture lifetime, tool hash, sampling uncertainty and presentation-mode
+coverage. Other/GDI metrics do not establish Vulkan scene GPU execution time.
+
+Regression: profile the actual current scheduler, record both inclusive and
+exclusive work, and compare the final uninstrumented campaign package. Retain
+mansion/sewer/city/ground-facing references and approved siege census; never
+resume retired simultaneous-attacker scales. Preserve numerical and native
+checks separately from author acceptance.
+
+
 ## CA-KP-191 - Share spatial candidates without sharing perception
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED; CA428-01 author-confirmed

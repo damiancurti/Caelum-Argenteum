@@ -1,0 +1,379 @@
+{
+  "date_capture": {
+    "file": "evidence\\20261030-135842.csv.gz",
+    "source_sha256": "17758ab38fb236ca4523d79857c0c56a7c08b6c439c062121fde0a717d108706"
+  },
+  "qpc_capture": {
+    "file": "evidence\\20261030-141125.csv.gz",
+    "source_sha256": "d8fb74791a5d9a1d8c8923af1fa3a78e097707b9f2ede9ffde0faf0e1060bd5b"
+  },
+  "calibration": {
+    "utc": "2026-10-30T17:16:24.969494+00:00",
+    "qpc_mid_ms": 1238518332.6981502,
+    "qpc_bracket_ms": 0.0051000118255615234,
+    "date_to_utc_ms": 21599999.90576172,
+    "matches": 24,
+    "offset_spread_ms": 0.0009765625
+  },
+  "runs": {
+    "mansion": {
+      "MsBetweenPresents": {
+        "samples": 1074,
+        "mean_ms": 15.85590251396648,
+        "p95_ms": 17.6203,
+        "p99_ms": 18.9163,
+        "max_ms": 19.7692
+      },
+      "MsBetweenDisplayChange": {
+        "samples": 1019,
+        "mean_ms": 16.715360058881256,
+        "p95_ms": 16.6868,
+        "p99_ms": 16.7169,
+        "max_ms": 33.343
+      },
+      "MsCPUBusy": {
+        "samples": 1074,
+        "mean_ms": 15.85590251396648,
+        "p95_ms": 17.6203,
+        "p99_ms": 18.9163,
+        "max_ms": 19.7692
+      },
+      "MsCPUWait": {
+        "samples": 1074,
+        "mean_ms": 0.0,
+        "p95_ms": 0.0,
+        "p99_ms": 0.0,
+        "max_ms": 0.0
+      },
+      "MsGPUBusy": {
+        "samples": 1074,
+        "mean_ms": 5.915895251396648,
+        "p95_ms": 7.1309,
+        "p99_ms": 7.8584,
+        "max_ms": 8.6291
+      },
+      "MsGPUWait": {
+        "samples": 1074,
+        "mean_ms": 9.935652420856611,
+        "p95_ms": 11.4716,
+        "p99_ms": 12.9478,
+        "max_ms": 14.1149
+      },
+      "MsUntilDisplayed": {
+        "samples": 1019,
+        "mean_ms": 27.019163297350342,
+        "p95_ms": 31.6818,
+        "p99_ms": 32.5043,
+        "max_ms": 33.8697
+      },
+      "pid": 34516,
+      "window_utc_ms": [
+        1793379578544.5918,
+        1793379595569.664
+      ],
+      "frames": 1074,
+      "application_present_fps": 63.067996231634375,
+      "display_change_coverage": 0.9487895716945997,
+      "present_modes": [
+        "Composed: Copy with GPU GDI"
+      ],
+      "runtimes": [
+        "Other"
+      ]
+    },
+    "sewers": {
+      "MsBetweenPresents": {
+        "samples": 3400,
+        "mean_ms": 5.156064558823529,
+        "p95_ms": 6.5463,
+        "p99_ms": 7.2301,
+        "max_ms": 38.0467
+      },
+      "MsBetweenDisplayChange": {
+        "samples": 74,
+        "mean_ms": 235.1307972972973,
+        "p95_ms": 299.95500000000004,
+        "p99_ms": 299.9998,
+        "max_ms": 316.6632
+      },
+      "MsCPUBusy": {
+        "samples": 3400,
+        "mean_ms": 5.156064558823529,
+        "p95_ms": 6.5463,
+        "p99_ms": 7.2301,
+        "max_ms": 38.0467
+      },
+      "MsCPUWait": {
+        "samples": 3400,
+        "mean_ms": 0.0,
+        "p95_ms": 0.0,
+        "p99_ms": 0.0,
+        "max_ms": 0.0
+      },
+      "MsGPUBusy": {
+        "samples": 3400,
+        "mean_ms": 1.8350650294117647,
+        "p95_ms": 3.2942,
+        "p99_ms": 3.9383,
+        "max_ms": 8.5402
+      },
+      "MsGPUWait": {
+        "samples": 3400,
+        "mean_ms": 3.315962588235294,
+        "p95_ms": 3.907,
+        "p99_ms": 4.213,
+        "max_ms": 37.1135
+      },
+      "MsUntilDisplayed": {
+        "samples": 74,
+        "mean_ms": 20.94228108108108,
+        "p95_ms": 23.7302,
+        "p99_ms": 24.8789,
+        "max_ms": 24.9562
+      },
+      "pid": 3452,
+      "window_utc_ms": [
+        1793379617067.7532,
+        1793379634595.2761
+      ],
+      "frames": 3400,
+      "application_present_fps": 193.94636909437227,
+      "display_change_coverage": 0.02176470588235294,
+      "present_modes": [
+        "Composed: Copy with GPU GDI"
+      ],
+      "runtimes": [
+        "Other"
+      ]
+    },
+    "city": {
+      "MsBetweenPresents": {
+        "samples": 2014,
+        "mean_ms": 8.702866782522344,
+        "p95_ms": 10.6795,
+        "p99_ms": 12.4338,
+        "max_ms": 44.3275
+      },
+      "MsBetweenDisplayChange": {
+        "samples": 76,
+        "mean_ms": 232.2329105263158,
+        "p95_ms": 283.365,
+        "p99_ms": 299.9971,
+        "max_ms": 316.6557
+      },
+      "MsCPUBusy": {
+        "samples": 2014,
+        "mean_ms": 8.702866782522344,
+        "p95_ms": 10.6795,
+        "p99_ms": 12.4338,
+        "max_ms": 44.3275
+      },
+      "MsCPUWait": {
+        "samples": 2014,
+        "mean_ms": 0.0,
+        "p95_ms": 0.0,
+        "p99_ms": 0.0,
+        "max_ms": 0.0
+      },
+      "MsGPUBusy": {
+        "samples": 2014,
+        "mean_ms": 2.736287537239325,
+        "p95_ms": 4.2201,
+        "p99_ms": 6.7171,
+        "max_ms": 8.7121
+      },
+      "MsGPUWait": {
+        "samples": 2014,
+        "mean_ms": 5.962827606752731,
+        "p95_ms": 7.2615,
+        "p99_ms": 7.9504,
+        "max_ms": 37.1579
+      },
+      "MsUntilDisplayed": {
+        "samples": 76,
+        "mean_ms": 23.236134210526316,
+        "p95_ms": 28.324,
+        "p99_ms": 28.9532,
+        "max_ms": 30.0513
+      },
+      "pid": 40212,
+      "window_utc_ms": [
+        1793379657714.3281,
+        1793379675242.742
+      ],
+      "frames": 2014,
+      "application_present_fps": 114.90466589793886,
+      "display_change_coverage": 0.03773584905660377,
+      "present_modes": [
+        "Composed: Copy with GPU GDI"
+      ],
+      "runtimes": [
+        "Other"
+      ]
+    },
+    "ground": {
+      "MsBetweenPresents": {
+        "samples": 1509,
+        "mean_ms": 11.612996885354539,
+        "p95_ms": 14.0125,
+        "p99_ms": 16.072,
+        "max_ms": 18.2144
+      },
+      "MsBetweenDisplayChange": {
+        "samples": 77,
+        "mean_ms": 228.99983766233768,
+        "p95_ms": 283.35020000000003,
+        "p99_ms": 299.9984,
+        "max_ms": 300.0031
+      },
+      "MsCPUBusy": {
+        "samples": 1509,
+        "mean_ms": 11.612996885354539,
+        "p95_ms": 14.0125,
+        "p99_ms": 16.072,
+        "max_ms": 18.2144
+      },
+      "MsCPUWait": {
+        "samples": 1509,
+        "mean_ms": 0.0,
+        "p95_ms": 0.0,
+        "p99_ms": 0.0,
+        "max_ms": 0.0
+      },
+      "MsGPUBusy": {
+        "samples": 1509,
+        "mean_ms": 3.7434374420145793,
+        "p95_ms": 5.8032,
+        "p99_ms": 8.1665,
+        "max_ms": 9.5721
+      },
+      "MsGPUWait": {
+        "samples": 1509,
+        "mean_ms": 7.863810404241219,
+        "p95_ms": 8.9277,
+        "p99_ms": 9.8791,
+        "max_ms": 11.0825
+      },
+      "MsUntilDisplayed": {
+        "samples": 77,
+        "mean_ms": 23.758676623376623,
+        "p95_ms": 29.1763,
+        "p99_ms": 31.2916,
+        "max_ms": 31.6398
+      },
+      "pid": 10016,
+      "window_utc_ms": [
+        1793379697297.7869,
+        1793379714823.0642
+      ],
+      "frames": 1509,
+      "application_present_fps": 86.1104166196003,
+      "display_change_coverage": 0.051027170311464545,
+      "present_modes": [
+        "Composed: Copy with GPU GDI"
+      ],
+      "runtimes": [
+        "Other"
+      ]
+    },
+    "siege": {
+      "MsBetweenPresents": {
+        "samples": 37,
+        "mean_ms": 668.5718459459459,
+        "p95_ms": 735.4364,
+        "p99_ms": 736.9598000000001,
+        "max_ms": 778.721
+      },
+      "MsBetweenDisplayChange": {
+        "samples": 37,
+        "mean_ms": 669.8069459459459,
+        "p95_ms": 816.6614000000001,
+        "p99_ms": 849.9807000000001,
+        "max_ms": 883.3317000000001
+      },
+      "MsCPUBusy": {
+        "samples": 37,
+        "mean_ms": 668.5718459459459,
+        "p95_ms": 735.4364,
+        "p99_ms": 736.9598,
+        "max_ms": 778.721
+      },
+      "MsCPUWait": {
+        "samples": 37,
+        "mean_ms": 0.0,
+        "p95_ms": 0.0,
+        "p99_ms": 0.0,
+        "max_ms": 0.0
+      },
+      "MsGPUBusy": {
+        "samples": 37,
+        "mean_ms": 6.558762162162162,
+        "p95_ms": 10.2335,
+        "p99_ms": 10.4778,
+        "max_ms": 10.7472
+      },
+      "MsGPUWait": {
+        "samples": 37,
+        "mean_ms": 661.9998351351352,
+        "p95_ms": 725.9418,
+        "p99_ms": 729.9328,
+        "max_ms": 768.9305
+      },
+      "MsUntilDisplayed": {
+        "samples": 37,
+        "mean_ms": 157.20827567567568,
+        "p95_ms": 294.5398,
+        "p99_ms": 296.4306,
+        "max_ms": 302.319
+      },
+      "pid": 34324,
+      "window_utc_ms": [
+        1793379841008.2021,
+        1793379865544.904
+      ],
+      "frames": 37,
+      "application_present_fps": 1.4957255619777474,
+      "display_change_coverage": 1.0,
+      "present_modes": [
+        "Composed: Copy with GPU GDI"
+      ],
+      "runtimes": [
+        "Other"
+      ]
+    }
+  },
+  "limits": [
+    "Process IDs plus bounded host log windows; discard the first two wall seconds and the uncertain ending poll.",
+    "Date-mode CSV timestamps are calibrated from matching QPC events, not assumed to be local or UTC.",
+    "Application-present intervals are distinct from physical display-change coverage.",
+    "Other / Composed: Copy with GPU GDI does not prove Vulkan scene GPU execution time or monitor refresh.",
+    "Entrance/reference windows are not whole-map 60-FPS acceptance; the siege has a short frame sample."
+  ],
+  "20261030-135842": {
+    "exit_code": 0,
+    "ended_utc": "2026-10-30T17:13:42.7364512Z",
+    "source": "https://github.com/GameTechDev/PresentMon/releases/tag/v2.6.0",
+    "tool_sha256": "b2a706bc6ad475749e3b7e3409263aa1e6906d45bdcf993f6dbc0f660188f1af",
+    "started_utc": "2026-10-30T16:58:42.6024755Z",
+    "csv": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\presentation\\20261030-135842.csv",
+    "seconds": 900,
+    "log": {
+      "file": "evidence\\20261030-135842.log.gz",
+      "source_sha256": "a9130f7ca0a9bf20318a0122cdf0d1189d2a1ffbb038a45a6bfaf514bf9c5931"
+    }
+  },
+  "20261030-141125": {
+    "exit_code": 0,
+    "tool_sha256": "b2a706bc6ad475749e3b7e3409263aa1e6906d45bdcf993f6dbc0f660188f1af",
+    "seconds": 60,
+    "csv": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue431-work\\build\\issue431\\presentation\\20261030-141125.csv",
+    "source": "https://github.com/GameTechDev/PresentMon/releases/tag/v2.6.0",
+    "started_utc": "2026-10-30T17:11:25.9692453Z",
+    "time_mode": "--qpc_time_ms",
+    "ended_utc": "2026-10-30T17:12:26.0710331Z",
+    "log": {
+      "file": "evidence\\20261030-141125.log.gz",
+      "source_sha256": "a9130f7ca0a9bf20318a0122cdf0d1189d2a1ffbb038a45a6bfaf514bf9c5931"
+    }
+  }
+}
