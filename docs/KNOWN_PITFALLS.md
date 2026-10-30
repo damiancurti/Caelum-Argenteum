@@ -2289,6 +2289,16 @@ test cost and behavior at representative populations. Scan count alone is not
 an exact CPU cost: measure recipient work, native calls and frame-time stalls.
 The source of this policy is the author's instruction, recorded also in AGENTS.
 
+#418 / 5.9.0, 2026-10-29: narrative coordination and the shared port getter use
+the saved CaelumSiegeEvents encounter registry. A revision-zero legacy save
+requires one typed reconstruction; actor lifecycle callbacks maintain it after
+that. On peaceful MAP03 with one encounter, the worst of 20 isolated migration
+repetitions was 0.2943ms. Normal reads do not repeat the census. Measured render
+callback gaps were mean16.8255/p95 20.0451/p99 22.3951/max139.4954ms, including
+startup; no ETW/displayed-FPS claim follows. Evidence: assets/validation_590.
+Native lifecycle tests must allow Spawn/Destroy processing on the next tic;
+checking immediately inside the same console event produced false negatives.
+
 Unreleased #415 checkpoint, 2026-10-29: a typed encounter registry still caused
 quadratic work when every unopposed survivor called Choose each world second.
 The 1,000/600 isolated native diagnostic spent 46.712 s advancing its quiet

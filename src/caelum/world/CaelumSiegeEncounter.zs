@@ -99,6 +99,20 @@ class CaelumSiegeEncounter : Actor
     int VictoryCount;
     int NeutralizedCount;
 
+    override void PostBeginPlay()
+    {
+        Super.PostBeginPlay();
+        let registry = CaelumSiegeEvents(EventHandler.Find("CaelumSiegeEvents"));
+        if (registry != null) registry.RegisterNarrative(self);
+    }
+
+    override void OnDestroy()
+    {
+        let registry = CaelumSiegeEvents(EventHandler.Find("CaelumSiegeEvents"));
+        if (registry != null) registry.UnregisterNarrative(self);
+        Super.OnDestroy();
+    }
+
     bool BossDefeated()
     {
         return Boss != null && (Boss.ConfirmedDead || BossRetreated);
@@ -328,8 +342,68 @@ class CaelumHostileMachine : Actor
 
 class CaelumSiegeEvents : EventHandler
 {
+    // #418: registro del mapa, actualizado por eventos. Sólo al cargar un
+    // guardado sin revisión se reconstruye con un recorrido tipado único.
+    int NarrativeRegistryRevision;
+    Array<CaelumSiegeEncounter> NarrativeEncounters;
+
+    void EnsureNarrativeRegistry()
+    {
+        if (NarrativeRegistryRevision >= 1) return;
+        NarrativeEncounters.Clear();
+        let it = ThinkerIterator.Create("CaelumSiegeEncounter");
+        CaelumSiegeEncounter encounter;
+        while ((encounter = CaelumSiegeEncounter(it.Next())) != null)
+            NarrativeEncounters.Push(encounter);
+        NarrativeRegistryRevision = 1;
+    }
+
+    CaelumSiegeEncounter NarrativeEncounter()
+    {
+        EnsureNarrativeRegistry();
+        for (int i = 0; i < NarrativeEncounters.Size(); i++)
+        {
+            let encounter = NarrativeEncounters[i];
+            if (encounter != null && encounter.RosterSealed
+                && encounter.Machines.Size() == 12 && encounter.Boss != null) return encounter;
+        }
+        return null;
+    }
+
+    CaelumPortSiege PortEncounter()
+    {
+        EnsureNarrativeRegistry();
+        for (int i = 0; i < NarrativeEncounters.Size(); i++)
+            if (NarrativeEncounters[i] is "CaelumPortSiege")
+                return CaelumPortSiege(NarrativeEncounters[i]);
+        return null;
+    }
+
+    override void WorldLoaded(WorldEvent e)
+    { EnsureNarrativeRegistry(); }
+
+    void RegisterNarrative(CaelumSiegeEncounter encounter)
+    {
+        if (encounter == null) return;
+        EnsureNarrativeRegistry();
+        for (int i = 0; i < NarrativeEncounters.Size(); i++)
+            if (NarrativeEncounters[i] == encounter) return;
+        NarrativeEncounters.Push(encounter);
+    }
+
+    void UnregisterNarrative(CaelumSiegeEncounter encounter)
+    {
+        for (int i = NarrativeEncounters.Size() - 1; i >= 0; i--)
+            if (NarrativeEncounters[i] == null || NarrativeEncounters[i] == encounter)
+                NarrativeEncounters.Delete(i);
+    }
+
     override void WorldThingDestroyed(WorldEvent e)
-    { CaelumTargetSubscriptions.Retire(e.Thing); }
+    {
+        CaelumTargetSubscriptions.Retire(e.Thing);
+        if (!(e.Thing is "CaelumSiegeEncounter")) return;
+        UnregisterNarrative(CaelumSiegeEncounter(e.Thing));
+    }
 
     override void WorldTick()
     {

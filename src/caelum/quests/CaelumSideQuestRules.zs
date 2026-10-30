@@ -24,21 +24,21 @@ class CaelumSideQuestRules : Object
         return id == CaelumConstants.QUEST_TRIAL_WAIT ? 5 : 1;
     }
 
-    static bool CanStart(CaelumPersistentCharacterState r, int id)
+    static play bool CanStart(CaelumPersistentCharacterState r, int id)
     {
         if (r == null || !IsDefined(id) || (IsTrial(id) && !r.QuestTrialEnabled)
             || r.QuestState[id] != CaelumConstants.QUEST_STATE_OFFERED) return false;
         int required = Prerequisite(id);
-        return required < 0 || r.QuestState[required] == CaelumConstants.QUEST_STATE_COMPLETED;
+        return required < 0 || CaelumQuestRequirements.Matches(r,
+            CaelumQuestRequirements.QUEST_STATE, required, CaelumConstants.QUEST_STATE_COMPLETED);
     }
 
     static play bool Discover(CaelumPersistentCharacterState r, int id)
     {
         if (r == null || !IsDefined(id) || (IsTrial(id) && !r.QuestTrialEnabled)) return false;
         r.EnsureQuestStateInitialized();
-        if (r.QuestState[id] != CaelumConstants.QUEST_STATE_UNDISCOVERED) return false;
-        r.QuestState[id] = CaelumConstants.QUEST_STATE_OFFERED;
-        return true;
+        return CaelumQuestTransitions.TryState(r, id, CaelumConstants.QUEST_STATE_UNDISCOVERED,
+            CaelumConstants.QUEST_STATE_OFFERED, r.QuestStage[id]);
     }
 
     static play bool Start(CaelumPlayer user, int id)
@@ -47,8 +47,8 @@ class CaelumSideQuestRules : Object
             || user.player.playerstate != PST_LIVE) return false;
         let r = user.GetPersistentCharacterState(false);
         if (!CanStart(r, id)) return false;
-        r.QuestState[id] = CaelumConstants.QUEST_STATE_ACTIVE;
-        r.QuestStage[id] = 1;
+        if (!CaelumQuestTransitions.TryState(r, id, CaelumConstants.QUEST_STATE_OFFERED,
+            CaelumConstants.QUEST_STATE_ACTIVE, 1)) return false;
         for (int i = 0; i < ObjectiveCount(id); i++)
         {
             int slot = r.GetQuestObjectiveStorageIndex(id, i);
@@ -101,9 +101,8 @@ class CaelumSideQuestRules : Object
         if (r == null || !IsDefined(id)
             || r.QuestState[id] != CaelumConstants.QUEST_STATE_ACTIVE
             || !ObjectivesComplete(r, id)) return false;
-        r.QuestState[id] = CaelumConstants.QUEST_STATE_COMPLETED;
-        r.QuestStage[id] = 2;
-        return true;
+        return CaelumQuestTransitions.TryState(r, id, CaelumConstants.QUEST_STATE_ACTIVE,
+            CaelumConstants.QUEST_STATE_COMPLETED, 2);
     }
 
     static play bool End(CaelumPersistentCharacterState r, int id, bool abandoned)
@@ -111,9 +110,9 @@ class CaelumSideQuestRules : Object
         if (r == null || !IsDefined(id)
             || (abandoned && !AllowsAbandon(id))
             || r.QuestState[id] != CaelumConstants.QUEST_STATE_ACTIVE) return false;
-        r.QuestState[id] = abandoned ? CaelumConstants.QUEST_STATE_ABANDONED
-            : CaelumConstants.QUEST_STATE_FAILED;
-        return true;
+        return CaelumQuestTransitions.TryState(r, id, CaelumConstants.QUEST_STATE_ACTIVE,
+            abandoned ? CaelumConstants.QUEST_STATE_ABANDONED : CaelumConstants.QUEST_STATE_FAILED,
+            r.QuestStage[id]);
     }
 
     static class<Inventory> RewardType(int id)

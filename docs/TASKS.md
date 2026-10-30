@@ -1,6 +1,24 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.8.56** - 2026-10-29.
+Documentation version: **5.9.0** - 2026-10-29.
+
+## V5.9 active work - 5.9.0
+
+- #418: shared requirement evaluator and compared quest writes implemented;
+  port narrative registry integrated. Native evidence: validation_590. Finish
+  integration with the authored #422 chains and resulting reward/unlock types.
+- #419/#420: private emotional reading and faction ranks/relations; author
+  decisions continue in their respective GitHub issues. Preserve tutorial rolls.
+- #421/#422: Barracas arrival/recognition/preparation/aftermath and the two
+  requested quests (find the protagonist's house; investigate the siege).
+- #423: guards and four prisoners, preserving canonical bodies/identities and
+  separating visual wardrobe from actual inventory.
+- #424: explicit quest/faction-to-service mappings, with existing world owners.
+
+Keep issue branches/commits/PRs and evidence separate. Prepare the author-facing
+manual terminal after all V5.9 work is complete; do not claim acceptance from
+agent-only tests. No new actionable author check is queued for this internal
+coordination checkpoint.
 
 ## V5.8 completion - 2026-10-29 (#403)
 

@@ -75,12 +75,29 @@ class CaelumDemoNarrative : Object play
     static CaelumSiegeEncounter PortEncounter()
     {
         if (level.MapName != "MAP03") return null;
-        let it = ThinkerIterator.Create("CaelumSiegeEncounter");
-        CaelumSiegeEncounter encounter;
-        while ((encounter = CaelumSiegeEncounter(it.Next())) != null)
-            if (encounter.RosterSealed && encounter.Machines.Size() == 12 && encounter.Boss != null)
-                return encounter;
-        return null;
+        let registry = CaelumSiegeEvents(EventHandler.Find("CaelumSiegeEvents"));
+        return registry != null ? registry.NarrativeEncounter() : null;
+    }
+
+    static bool ObservePort(CaelumPlayer user, CaelumSiegeEncounter encounter)
+    {
+        if (user == null || encounter == null || !encounter.RosterSealed
+            || encounter.Machines.Size() != 12 || encounter.Boss == null) return false;
+        let record = user.GetPersistentCharacterState(false);
+        if (record == null) return false;
+        record.PortSiegeNarrativeStarted = true;
+        if (encounter.Victory) record.PortSiegeNarrativeComplete = true;
+        int quest = CaelumConstants.QUEST_PORT_SIEGE;
+        bool changed = CaelumQuestTransitions.ObserveState(record, quest,
+            record.PortSiegeNarrativeComplete ? CaelumConstants.QUEST_STATE_COMPLETED
+                : CaelumConstants.QUEST_STATE_ACTIVE,
+            record.PortSiegeNarrativeComplete ? 2 : 1);
+        changed = CaelumQuestTransitions.ObserveObjective(record, quest, 0,
+            encounter.NeutralizedCount, 12) || changed;
+        changed = CaelumQuestTransitions.ObserveObjective(record, quest, 1,
+            encounter.BossDefeated() ? 1 : 0, 1) || changed;
+        if (changed) user.RefreshSocialJournalSnapshot();
+        return changed;
     }
 
     static bool PortCardReady(CaelumPersistentCharacterState record)
@@ -102,24 +119,7 @@ class CaelumDemoNarrative : Object play
         EnsureRevision(record);
         CaelumSiegeIntelligence.ObservePayment(user);
         let encounter = PortEncounter();
-        if (encounter != null)
-        {
-            record.PortSiegeNarrativeStarted = true;
-            if (encounter.Victory) record.PortSiegeNarrativeComplete = true;
-            int quest = CaelumConstants.QUEST_PORT_SIEGE;
-            record.QuestState[quest] = record.PortSiegeNarrativeComplete
-                ? CaelumConstants.QUEST_STATE_COMPLETED : CaelumConstants.QUEST_STATE_ACTIVE;
-            record.QuestStage[quest] = record.PortSiegeNarrativeComplete ? 2 : 1;
-            for (int objective = 0; objective < 2; objective++)
-            {
-                int slot = record.GetQuestObjectiveStorageIndex(quest, objective);
-                record.QuestObjectiveKnown[slot] = true;
-                record.QuestObjectiveTarget[slot] = objective == 0 ? 12 : 1;
-                record.QuestObjectiveProgress[slot] = objective == 0 ? encounter.NeutralizedCount
-                    : encounter.BossDefeated() ? 1 : 0;
-            }
-            user.RefreshSocialJournalSnapshot();
-        }
+        ObservePort(user, encounter);
         record.DemoNarrativePending |= ObservedEvents(record) & ~record.DemoNarrativeDelivered;
         let rest = CaelumRestState.Get(user);
         if (record.PalomoSleepLessonStarted && !record.PalomoSleepLessonComplete

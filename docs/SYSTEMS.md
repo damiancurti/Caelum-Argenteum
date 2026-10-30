@@ -1,6 +1,34 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.8.56** - 2026-10-29.
+Documentation version: **5.9.0** - 2026-10-29.
+
+## 5.9.0 / #418 - Shared quest requirements and narrative observations
+
+Quest requirements compose ALL/ANY groups over canonical quest states, stages,
+known objectives, main flags, faction reputation and membership. They carry no
+progress, reveal no hidden objective, perform no actor search and award nothing.
+Empty groups, invalid references and excessive recursion fail safely. Existing
+side-trial prerequisites use the same evaluator; trials remain explicitly opt-in.
+
+Compared state/objective writes suppress identical notifications. They cannot
+write the world-derived sewer/rescue views. Existing offered/active/completed,
+failed/abandoned and exactly-once native receipt rules remain unchanged. The
+campaign port coordinator uses these writes and refreshes the Journal only when
+its observed state or objectives change; actual encounter victory remains the
+authority, with twelve machines and the existing boss condition.
+
+CaelumSiegeEvents owns the map's typed encounter registry. Encounter lifecycle
+callbacks register/remove references; revision1 rebuilds pre-existing encounters
+once for old saves. Normal narrative queries and the shared port getter inspect this registry,
+never the global actor population. The existing 32 quest slots and eight objectives per
+quest remain sufficient for the ten current entries and two requested #422
+quests; their concrete content belongs to #422. No save-array expansion or
+reassignment of existing IDs occurs. Original saves/packages remain recoverable.
+
+This is a coordination checkpoint, not completion of #418 or V5.9. Authored new
+chains/rewards and their integration are pending. Native evidence and the narrow
+registry-migration measurement are in assets/validation_590/RESULTS.md; author
+review will be grouped with the complete V5.9 content.
 
 ## 5.8.55 / #415 - Remove repeated global Rally lookups
 
