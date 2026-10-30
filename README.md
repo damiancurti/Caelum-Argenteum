@@ -20,12 +20,14 @@ duplicate movement. Leonor accelerates sooner because her body and equipment
 weigh less; her final speed is below Rufino and Leandro in this fixture.
 Evidence: `assets/validation_v5_11_4/speed-results.json`. Balance is unchanged.
 
-**V5.11:** the author accepted the other correction scenarios. The remaining
-checks are the Caella/Leonor load comparison (#430) and Mandinga/Zupay disease
-immunity (#586), which preserves contamination and ordinary combat damage.
-Run `assets/validation_v5_11_8/launch_manual.ps1` for the two numbered tests.
-Outstanding checks: `pending_test.txt`. Commits and PRs remain separate and
-unmerged. Native upgrade/reload/rollback and both launchers pass.
+**V5.11 is complete and author-accepted (2026-10-30).** The final confirmation
+accepts the Caella/Leonor load comparison (#430) and Mandinga/Zupay disease
+immunity (#586), and authorizes integration and issue closure. All author checks
+are recorded in HISTORY; `pending_test.txt` is empty. Focused delivery: issues
+#429-433, #580-582 and #586; PRs #575-579, #583-585 and #587-588. Native upgrade,
+reload and rollback passed. Acceptance changes no gameplay or version number.
+The distant-search candidate was evaluated but not adopted; large-siege
+presentation stalls remain a documented limitation.
 
 **V5.10 is complete and author-accepted (2026-10-30).** Issues #425-428 are
 closed and their focused PRs #570-573 are merged into main with commit ancestry

@@ -6,10 +6,10 @@ Documentation version: **5.11.8** - 2026-10-30.
 
 The author extends the rat damage rule to these two species. No exposure,
 ordinary combat or save-data changes. Native policy and save verification
-passed (26 upgrade,6 reload,3 original-save rollback assertions); author
-check CA586-01 remains pending. The other correction scenarios were
-accepted2026-10-30; only the Caella/Leonor speed review and new immunity check
-remain in pending_test.txt. Focused PRs remain unmerged.
+passed (26 upgrade,6 reload,3 original-save rollback assertions). The author
+accepted CA586-01 and the remaining CA430-01 load comparison on 2026-10-30,
+confirming all V5.11 checks and authorizing integration and closure. HISTORY
+records acceptance by originating release; pending_test.txt is empty.
 
 Author clarification: the comparison is Leonor versus Caella. Caella carries
 22.0184kg (armor plus pickaxe, utility staff and bolas); Leonor carries5kg.
@@ -35,8 +35,8 @@ Returning to the rental agent re-evaluates current guard recognition instead of 
 
 Earlier V5.11 review2026-10-30 accepted the other tests with explicit exceptions
 for companion motion, corridor formation, rental progression, household
-placement and rat contamination damage. #429/#430 retain correction checks;
-#580-582 handle the unrelated reports. No merge or closure is implied.
+placement and rat contamination damage. Those exceptions are now accepted;
+#580-582 retain the unrelated corrections as focused patches.
 Companion navigation reuses authored stair nodes and bounded local collision.
 
 ## V5.11 implementation - 5.11.4 (#430, 2026-10-30)
@@ -46,8 +46,10 @@ Companion navigation reuses authored stair nodes and bounded local collision.
 #430 completes the authored companion roster, native equipment administration,
 private trust/consent, following/waiting, cross-map ownership, persistent death
 and the existing paid revival ability. Full-package and accepted-save checks
-pass. The numbered manual terminal and outstanding IDs are in pending_test.txt.
-Implementation is ready; author acceptance and merges remain pending.
+pass. All final author checks are accepted on 2026-10-30 and integration is
+authorized through PRs #575-579, #583-585 and #587-588, with commit ancestry
+preserved. V5.11 is complete at 5.11.8; the conditional distant-search candidate
+is not adopted and the measured siege presentation limits remain explicit.
 
 ## V5.10 complete and author-accepted - 5.10.3 (2026-10-30, #403)
 

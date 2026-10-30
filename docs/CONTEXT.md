@@ -2,11 +2,11 @@
 
 Documentation version: **5.11.8** - 2026-10-30.
 
-**V5.11:** correction tests accepted2026-10-30 except Caella/Leonor speed
-review (#430). Her lower load explains faster movement; native ratios1.0.
-5.11.8/#586 adds Mandinga/Zupay disease immunity. Pending: CA430-01/CA586-01.
-PRs remain separate/unmerged. Terminal: assets/validation_v5_11_8/launch_manual.ps1.
-Keep-awake released.
+**V5.11 complete/accepted2026-10-30:** #429-433/#580-582/#586; focused
+PR575-579/583-585/587-588. Integration/closure authorized; HISTORY records all
+checks and pending_test.txt is empty. Caella/Leonor load difference accepted;
+Mandinga/Zupay disease immunity accepted. No version bump beyond5.11.8.
+Distant-search candidate not adopted; siege stalls persist. Keep-awake released.
 **V5.10 accepted:** #425-428/PR570-573, CA425-01..CA428-01; HISTORY.
 Siege stalls persist. Keep-awake released.
 

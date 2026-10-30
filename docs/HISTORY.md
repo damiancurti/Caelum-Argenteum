@@ -22,7 +22,15 @@ fixture failures exposed native dormancy blocking all damage and Zupay
 absorbing a100-point hit; corrected fixtures activate the synchronous sample
 and use a hit above natural defense. Production changes remain the two
 species filters only; no immunity is inferred from a dormant actor.
-CA586-01 awaits author confirmation; CA430-01 awaits the load-review response.
+Author acceptance 2026-10-30: CA586-01 (origin 5.11.8/#586) passed. The
+final confirmation also accepts the Caella/Leonor comparison under CA430-01
+(recorded in 5.11.4 below) and explicitly requests integration and issue closure.
+All V5.11 author checks are now accepted; pending_test.txt is empty. Focused
+PRs #575-579, #583-585 and #587-588 retain issue-separated history for
+#429-433, #580-582 and #586. Acceptance adds no runtime changes and keeps
+5.11.8. The profiling result and non-adoption of the distant-search candidate
+retain their measured limitations; closure is not a claim that siege stalls
+have been solved.
 
 ## 5.11.7 - Arrival workshop moved into the protagonist house (#581, 2026-10-30)
 
@@ -70,9 +78,11 @@ formation slots remained beyond3m; moving the leader within3m verifies it.
 
 ## 5.11.4 - Companion implementation (#430, 2026-10-30)
 
-Author acceptance2026-10-30: CA430-01 motion, animation, escort and mansion
-stairs passed except the clarified Leonor-versus-Caella speed observation.
-That comparison is documented below; its author review remains pending.
+Final author acceptance 2026-10-30: CA430-01 (origin 5.11.4/#430) passed
+in full. Motion, animation, escort and mansion stairs were already accepted;
+the final response accepts the clarified Leonor-versus-Caella equipment-load
+explanation below, without requesting a balance change. The author requests
+integration and closure. Earlier partial results below remain historical.
 
 Author clarification: the comparison is Leonor versus Caella. Caella carries
 22.0184kg (armor plus pickaxe, utility staff and bolas); Leonor carries5kg.
@@ -255,6 +265,10 @@ shipping an unproven change. No candidate presentation/60FPS claim is made.
 Evidence: assets/validation_v5_11_3/summary.json and compressed native logs.
 
 ## 5.11.2 - Shared deterministic NPC costs (#432, 2026-10-30)
+
+Author acceptance 2026-10-30: CA432-01 (origin 5.11.2/#432) passed in the
+terminal review; the final release confirmation authorizes integration and
+closure. Measured gains and remaining presentation limits below are unchanged.
 
 Historical contamination samples reuse the existing bounded tile-day weather
 cache. A map-local, transient, maximum32-entry cache shares the result for
