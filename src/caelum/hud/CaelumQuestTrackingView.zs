@@ -7,6 +7,7 @@ class CaelumQuestTrackingView : Object ui
         if(user==null || quest<0 || quest>=CaelumConstants.QUEST_DEFINED_COUNT
             || user.JournalQuestState[quest]==CaelumConstants.QUEST_STATE_UNDISCOVERED)return "";
         String key;
+        if(CaelumPortQuestData.Defined(quest))return CaelumPortQuestView.Objective(user,quest);
         if(quest==CaelumConstants.QUEST_MAIN_M00_THE_FOOL)
             key=CaelumJournalOverlay.GetQuestDetailStageKey(user,quest);
         else if(quest==CaelumConstants.QUEST_SEWERS)

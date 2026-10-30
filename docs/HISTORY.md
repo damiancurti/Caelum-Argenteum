@@ -1,6 +1,16 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.9.4** - 2026-10-29.
+Documentation version: **5.9.5** - 2026-10-29.
+
+## 5.9.5 - House and siege side quests (#422, 2026-10-29)
+
+Implemented the two approved quests using #418 shared requirements/transitions,
+#421 heard accounts and the existing #411 property/currency owners. Property
+restitution and recorded refunds are once-only and preserve pending capacity
+failures. Journal abandonment/resumption keeps knowledge. Native guard-only
+completion excludes dead prisoners. Evidence: assets/validation_595/RESULTS.md;
+static, isolated native, real city placement and author acceptance are reported
+separately. Whole V5.9 author handoff remains pending #423/#424.
 
 ## 5.9.4 - Barracas story integration (#421, 2026-10-29)
 

@@ -1,6 +1,20 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.9.4** - 2026-10-29.
+Documentation version: **5.9.5** - 2026-10-29.
+
+## 5.9.5 / #422 - Central house and siege investigation
+
+A generic rental caretaker stands beside the existing central house69 and
+explains that its former owner disappeared. A guard's existing recognition of
+the protagonist as captain is compared with the property register. The house
+is restored without purchase or rent; recorded payments are returned once.
+Existing customers receive wording that acknowledges their recorded contracts.
+No memories, new proper name or additional biography are supplied.
+
+The second investigation collects the guard and rescued surviving prisoners'
+paid accounts. No survivor means the guard alone suffices with missing testimony
+noted. Previously heard information survives abandonment. Neither quest adds
+a timer failure or Tarot essence; the siege quest rewards information only.
 
 ## 5.9.4 / #421 - Barracas conversation outline implemented
 

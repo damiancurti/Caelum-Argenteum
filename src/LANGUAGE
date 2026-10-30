@@ -7093,3 +7093,53 @@ CA_PORT_STORY_ARRIVAL_0 = "Llegamos a Barracas al Sud. Cumpliste tu palabra. Tod
 CA_PORT_STORY_ARRIVAL_1 = "Llegamos a Barracas. Acá puedo entregarte la recompensa que te prometí.";
 CA_PORT_STORY_ARRIVAL_2 = "Estamos en Barracas, fuera de esas celdas. Voy a cumplir con la recompensa que te prometí.";
 CA_PORT_STORY_ARRIVAL_3 = "Otra vez en Barracas al Sud. Me trajiste de vuelta; todavía tengo que cumplir mi promesa.";
+
+[enu default]
+CA_RENTAL_AGENT = "Rental caretaker";
+CA_RENTAL_OFFER = "Are you looking for a house to rent? This one is available: its previous owner disappeared. If you recognize it, ask the guards and come back. I can check the property register.";
+CA_RENTAL_VERIFY = "A guard recognized me as the captain. Please check the register.";
+CA_RENTAL_RESUME = "I want to resume looking into this house.";
+CA_RENTAL_GUIDANCE_CHOICE = "Where should I start?";
+CA_RENTAL_GUIDANCE = "Talk to a guard about who you are, then return here so I can compare that identity with the register. You can inspect the house and its rental terms at the entrance.";
+CA_RENTAL_NOT_READY = "I cannot confirm restitution yet. We need the guard's recognition and a valid claim to this property.";
+CA_RENTAL_RESTORED = "The guard's identification matches the register. This was your house. Its ownership and access are restored without purchase or rent. The record confirms your identity; it does not bring back your memories.";
+CA_RENTAL_REFUND_PENDING = "Recorded payments awaiting refund: %COPPER% copper. Make room in your inventory or Box, then claim them here or in the Journal.";
+CA_RENTAL_REFUND_DONE = "There are no recorded payments left to refund.";
+CA_RENTAL_REFUND_CHOICE = "Check my outstanding refund.";
+CA_Q_HOUSE_TITLE = "Find my house";
+CA_Q_HOUSE_GUARD = "Ask a guard who you are, then return to the central house offered for rent.";
+CA_Q_HOUSE_REGISTER = "Ask the rental caretaker to compare the guard's identification with the property register.";
+CA_Q_HOUSE_DONE = "The register confirms that the central house was yours. Its ownership and access have been restored.";
+CA_Q_PORT_TITLE = "Investigate the siege";
+CA_Q_PORT_ACCOUNTS = "Hear a guard's account and those of the rescued survivors after receiving their promised rewards.";
+CA_Q_PORT_DONE = "The available accounts about the siege are recorded. No new organizer or hidden identity has been established.";
+CA_Q_PORT_MISSING = "Some prisoner testimonies could not be gathered. The available accounts suffice; missing information remains unknown.";
+CA_Q_PORT_RESUME = "Enter: resume this investigation. Previous testimony is preserved.";
+CA_Q_PORT_ACTIVE_HELP = "Follow the leads in the dialogue. G: abandon; you can resume without losing what you learned.";
+[es]
+CA_RENTAL_AGENT = "Encargado del alquiler";
+CA_RENTAL_OFFER = "¿Buscás una casa para alquilar? Esta está disponible: el dueño anterior desapareció. Si la reconocés, preguntales a los guardias y volvé. Puedo consultar el registro de la vivienda.";
+CA_RENTAL_VERIFY = "Un guardia me reconoció como capitán. Consultá el registro, por favor.";
+CA_RENTAL_RESUME = "Quiero retomar la averiguación sobre esta casa.";
+CA_RENTAL_GUIDANCE_CHOICE = "¿Por dónde empiezo?";
+CA_RENTAL_GUIDANCE = "Hablá con un guardia sobre quién sos y volvé para que contraste esa identidad con el registro. En la entrada podés visitar la casa y consultar sus condiciones de alquiler.";
+CA_RENTAL_NOT_READY = "Todavía no puedo confirmar la restitución. Hace falta el reconocimiento del guardia y un reclamo válido sobre esta vivienda.";
+CA_RENTAL_RESTORED = "La identificación del guardia coincide con el registro. Esta era tu casa. Recuperás la propiedad y el acceso sin pagar compra ni alquiler. El registro confirma tu identidad; no te devuelve los recuerdos.";
+CA_RENTAL_REFUND_PENDING = "Pagos registrados pendientes de devolución: %COPPER% cobres. Hacé espacio en el inventario o la Caja y reclamalos aquí o en el Diario.";
+CA_RENTAL_REFUND_DONE = "No quedan pagos registrados por devolver.";
+CA_RENTAL_REFUND_CHOICE = "Revisá mi devolución pendiente.";
+CA_Q_HOUSE_TITLE = "Encontrar mi casa";
+CA_Q_HOUSE_GUARD = "Preguntale a un guardia quién sos y volvé a la casa céntrica ofrecida en alquiler.";
+CA_Q_HOUSE_REGISTER = "Pedile al encargado del alquiler que contraste la identificación del guardia con el registro de la vivienda.";
+CA_Q_HOUSE_DONE = "El registro confirma que la casa céntrica era tuya. Recuperaste su propiedad y acceso.";
+CA_Q_PORT_TITLE = "Averiguar sobre el asedio";
+CA_Q_PORT_ACCOUNTS = "Escuchá a un guardia y a los rescatados que sigan vivos, después de recibir sus recompensas prometidas.";
+CA_Q_PORT_DONE = "Quedaron registrados los testimonios disponibles sobre el asedio. No se estableció un nuevo organizador ni una identidad oculta.";
+CA_Q_PORT_MISSING = "No pudieron reunirse todos los testimonios de los prisioneros. Los disponibles bastan; la información que falta sigue siendo desconocida.";
+CA_Q_PORT_RESUME = "Enter: retomar la investigación. Se conservan los testimonios anteriores.";
+CA_Q_PORT_ACTIVE_HELP = "Seguí las pistas de los diálogos. G: abandonar; podés retomar sin perder lo averiguado.";
+
+[enu default]
+CA_RENTAL_EXISTING = "We have your payments for this house on record. Its previous owner disappeared. If you recognize it, ask the guards and return so we can check that earlier identity in the property register.";
+[es]
+CA_RENTAL_EXISTING = "Tenemos registrados tus pagos por esta casa. Su dueño anterior desapareció. Si la reconocés, preguntales a los guardias y volvé para que contrastemos esa identidad anterior con el registro de la vivienda.";

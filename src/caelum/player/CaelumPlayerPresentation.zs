@@ -37,7 +37,7 @@ class CaelumPlayerPresentation : Object play
             user.JournalQuestReady[questId] = CaelumSideQuestRules.ObjectivesComplete(persistentState, questId);
             user.JournalQuestState[questId] =
                 CaelumQuestCatalogue.State(persistentState, questId);
-            user.JournalQuestStage[questId] = questId < CaelumConstants.QUEST_SEWERS
+            user.JournalQuestStage[questId] = questId < CaelumConstants.QUEST_SEWERS || CaelumPortQuestData.Defined(questId)
                 ? persistentState.QuestStage[questId] : user.JournalQuestState[questId];
             if (CaelumQuestCatalogue.IsRescue(questId))
                 user.JournalQuestRewardClaimed[questId] = persistentState.PrisonerRewardClaimed[

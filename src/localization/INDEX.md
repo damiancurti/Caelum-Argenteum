@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `f4296f896c9326510cbc6f7d79f8c3813e1187824354cb6807c61f36aee653c5`. Locations include every definition; the last one per language wins.
+SHA-256: `77f0527969e73bb07e3d9dc5156bb80605410b8660abdd52ed797a6b17e0138a`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -151,7 +151,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_PROFILE | 4 | CA_PROFILE_HEIGHT | CA_PROFILE_SEX |
 | CA_PROOF | 5 | CA_PROOF_BEGIN | CA_PROOF_TITLE |
 | CA_PROPERTY | 15 | CA_PROPERTY_BUY | CA_PROPERTY_TITLE |
-| CA_Q | 97 | CA_Q_DETAIL_ABOUT | CA_Q_SIDE_WAIT_TITLE |
+| CA_Q | 107 | CA_Q_DETAIL_ABOUT | CA_Q_SIDE_WAIT_TITLE |
 | CA_QUEST | 12 | CA_QUEST_FOUNDATION_NOTE | CA_QUEST_STATUS_OFFERED |
 | CA_QUICK | 8 | CA_QUICK_EMPTY | CA_QUICK_WATER |
 | CA_RACE | 5 | CA_RACE_BEAST_MAN | CA_RACE_HUMAN |
@@ -161,6 +161,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_RECIPE | 18 | CA_RECIPE_CANCEL | CA_RECIPE_UNREAD |
 | CA_REDEMPTION | 1 | CA_REDEMPTION_CAST | CA_REDEMPTION_CAST |
 | CA_REGION | 1 | CA_REGION_PREPARING | CA_REGION_PREPARING |
+| CA_RENTAL | 12 | CA_RENTAL_AGENT | CA_RENTAL_VERIFY |
 | CA_REP | 29 | CA_REP_NEEDS_MEMBER | CA_REP_UNKNOWN_FACTION |
 | CA_REPUTATION | 2 | CA_REPUTATION_FOUNDATION_NOTE | CA_REPUTATION_VALUE_LABEL |
 | CA_RESOURCE | 72 | CA_RESOURCE_ACTIVE_ESSENCE | CA_RESOURCE_TEST_AIR_COST |

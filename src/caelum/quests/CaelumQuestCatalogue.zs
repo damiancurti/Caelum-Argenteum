@@ -21,6 +21,8 @@ class CaelumQuestCatalogue : Object
             case 7: return "CA_Q_RESCUE_2";
             case 8: return "CA_Q_RESCUE_3";
             case CaelumConstants.QUEST_GUARD_CAPTAIN: return "CA_Q_GUARD_CAPTAIN_TITLE";
+            case CaelumConstants.QUEST_FIND_HOUSE: return "CA_Q_HOUSE_TITLE";
+            case CaelumConstants.QUEST_INVESTIGATE_SIEGE: return "CA_Q_PORT_TITLE";
         }
         return "CA_JOURNAL_QUESTS";
     }
@@ -50,7 +52,7 @@ class CaelumQuestCatalogue : Object
             && record.QuestStage[id]<=CaelumConstants.MAIN_M00_STATE_MET_PALOMO
             && !record.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_PALOMO_MET))
             return CaelumConstants.QUEST_STATE_UNDISCOVERED;
-        if (id < CaelumConstants.QUEST_SEWERS || id == CaelumConstants.QUEST_GUARD_CAPTAIN)
+        if (id < CaelumConstants.QUEST_SEWERS || id == CaelumConstants.QUEST_GUARD_CAPTAIN || CaelumPortQuestData.Defined(id))
             return CaelumScheduleState.KnownQuestState(record,id,record.QuestState[id]);
         if (id == CaelumConstants.QUEST_SEWERS)
         {
@@ -72,7 +74,8 @@ class CaelumQuestCatalogue : Object
 
     static play bool KnownObjective(CaelumPersistentCharacterState record,int quest,int objective)
     {
-        if(record==null || quest<0 || quest>=CaelumConstants.QUEST_SEWERS
+        if(record==null || quest<0 || quest>=CaelumConstants.QUEST_DEFINED_COUNT
+            || (quest>=CaelumConstants.QUEST_SEWERS && !CaelumPortQuestData.Defined(quest))
             || objective<0 || objective>=CaelumConstants.QUEST_OBJECTIVE_CAPACITY
             || State(record,quest)==CaelumConstants.QUEST_STATE_UNDISCOVERED
             || !record.QuestObjectiveKnown[quest*CaelumConstants.QUEST_OBJECTIVE_CAPACITY+objective])return false;

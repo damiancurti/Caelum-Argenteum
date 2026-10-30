@@ -1,6 +1,39 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.9.4** - 2026-10-29.
+Documentation version: **5.9.5** - 2026-10-29.
+
+## 5.9.5 / #422 - House and siege investigations
+
+Two stored side quests occupy reserved slots10/11; schema4 clears only those
+previously unused slots and preserves the captain clue and all accepted quests.
+The rental caretaker beside central house69 starts Find my house. Recognition
+by an actual guard advances the return objective. The caretaker compares that
+identity with the register, then uses the existing property's title and access
+rules to restore permanent ownership. Recorded purchase (100000 copper) and
+RentPayments (1000 each) are refunded once. If inventory/Box capacity prevents
+payment, the exact balance remains pending for the caretaker or Journal; the
+property is already restored. Existing contracts/contents are never recreated.
+The generic caretaker reuses the existing civilian physical/visual profile;
+no proper name, biography, new faction or combat profile is authored here.
+
+Selecting a guard or paid surviving prisoner's siege account starts Investigate
+the siege. Completion requires a guard plus every currently living rescued
+port prisoner. With no rescued survivor the guard suffices. Missing accounts
+are noted without inventing their contents. Eligibility is live while active;
+the committed completion stores its required mask and is not revoked by later
+rescues. Reward is Journal information only: no money, reputation or essence.
+Both quests can be abandoned and resumed through the Journal without erasing
+heard accounts or repeating rewards; neither fails through elapsed time.
+
+The four port bodies use an event-maintained map registry, updated on arrival,
+death and destruction. A single typed reconstruction on legacy MAP03 load is
+necessary because old saves stored no such references. Its authored population
+is four prisoners. Real-city forced reconstruction worst: 0.8300 ms; 10000
+ordinary reads: 0.2441 ms (validation_595), not a frame-presentation claim. No per-tic/NPC global
+search is introduced. Active queries inspect four slots; character propagation
+uses MAXPLAYERS. Other-map records retain the last confirmed survivor mask.
+The caretaker is spawned once by the city's saved controller revision, using
+the existing door coordinate and civilian clearance; no geometry replacement.
 
 ## 5.9.4 / #421 - Barracas story and heard accounts
 

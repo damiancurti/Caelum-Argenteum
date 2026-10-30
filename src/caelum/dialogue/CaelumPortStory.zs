@@ -51,6 +51,9 @@ class CaelumPortStory : Object
         Ensure(record);
         if (guard != null) record.PortGuardAccountHeard = true;
         else record.PortPrisonerAccountMask |= 1 << prisoner.EscortPrisonerId;
+        let registry=CaelumSiegeEvents(EventHandler.Find("CaelumSiegeEvents"));
+        if(registry!=null)registry.SyncPortSurvivors();
+        CaelumPortQuests.AccountHeard(user);
         user.RefreshSocialJournalSnapshot();
         return true;
     }

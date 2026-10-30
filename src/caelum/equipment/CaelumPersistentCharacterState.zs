@@ -261,6 +261,11 @@ class CaelumPersistentCharacterState : Inventory
     Array<CaelumFactionAidEvent> FactionAidEvents;
     int PortSocialRevision;
     int PortStoryRevision;
+    int PortQuestRevision;
+    int PortSurvivorsMask;
+    int PortInvestigationRequiredMask;
+    bool HouseRestitutionConfirmed;
+    int HouseRefundPending;
     int PortArrivalHeardMask;
     int PortPrisonerAccountMask;
     bool PortGuardAccountHeard;
@@ -652,12 +657,12 @@ class CaelumPersistentCharacterState : Inventory
         {
             MainM00Flag[flagId] = false;
         }
-        QuestStateVersion = 3;
+        QuestStateVersion = 4;
     }
 
     void EnsureQuestStateInitialized()
     {
-        if (QuestStateVersion >= 3) { return; }
+        if (QuestStateVersion >= 4) { return; }
 
         if (QuestStateVersion < 1)
         {
@@ -672,18 +677,27 @@ class CaelumPersistentCharacterState : Inventory
         if (QuestStateVersion < 2) ClearMainM00QuestRecord();
         // #79 ocupa un índice antes reservado. Una visita al puerto no implica
         // haber oído el reconocimiento; sólo el diálogo descubre esta pista.
-        int clue = CaelumConstants.QUEST_GUARD_CAPTAIN;
-        QuestState[clue] = CaelumConstants.QUEST_STATE_UNDISCOVERED;
-        QuestStage[clue] = 0;
-        QuestRewardClaimed[clue] = false;
-        for (int i = 0; i < CaelumConstants.QUEST_OBJECTIVE_CAPACITY; i++)
+        if (QuestStateVersion < 3)
         {
-            int slot = GetQuestObjectiveStorageIndex(clue, i);
-            QuestObjectiveKnown[slot] = false;
-            QuestObjectiveProgress[slot] = 0;
-            QuestObjectiveTarget[slot] = 0;
+            int clue = CaelumConstants.QUEST_GUARD_CAPTAIN;
+            QuestState[clue] = CaelumConstants.QUEST_STATE_UNDISCOVERED;
+            QuestStage[clue] = 0;
+            QuestRewardClaimed[clue] = false;
+            for (int i = 0; i < CaelumConstants.QUEST_OBJECTIVE_CAPACITY; i++)
+            {
+                int slot = GetQuestObjectiveStorageIndex(clue, i);
+                QuestObjectiveKnown[slot] = false;
+                QuestObjectiveProgress[slot] = 0;
+                QuestObjectiveTarget[slot] = 0;
+            }
         }
-        QuestStateVersion = 3;
+        for(int quest=CaelumConstants.QUEST_FIND_HOUSE;quest<=CaelumConstants.QUEST_INVESTIGATE_SIEGE;quest++)
+        {
+            QuestState[quest]=CaelumConstants.QUEST_STATE_UNDISCOVERED;QuestStage[quest]=0;QuestRewardClaimed[quest]=false;
+            for(int i=0;i<CaelumConstants.QUEST_OBJECTIVE_CAPACITY;i++)
+            {int slot=GetQuestObjectiveStorageIndex(quest,i);QuestObjectiveKnown[slot]=false;QuestObjectiveProgress[slot]=0;QuestObjectiveTarget[slot]=0;}
+        }
+        QuestStateVersion = 4;
     }
 
     bool IsValidMainM00FlagId(int flagId)

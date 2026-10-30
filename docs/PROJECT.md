@@ -1,10 +1,11 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.9.4** - 2026-10-29.
+Documentation version: **5.9.5** - 2026-10-29.
 
 #420 campaign membership is now integrated (5.9.3); evidence validation_593.
 #421 story is integrated; evidence validation_594.
-#422-424 and final #418 reward integration remain in progress.
+#422 integrates the two quests and #418 reward types; validation_595.
+#423 visuals and #424 services remain in progress.
 
 ## V5.9 in progress - 5.9.3 (#418/#420/#419)
 

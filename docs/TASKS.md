@@ -1,16 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.9.4** - 2026-10-29.
+Documentation version: **5.9.5** - 2026-10-29.
 
 #420 campaign membership is now integrated (5.9.3); evidence validation_593.
 #421 story is integrated; evidence validation_594.
-#422-424 and final #418 reward integration remain in progress.
+#422 integrates the two quests and #418 reward types; validation_595.
+#423 visuals and #424 services remain in progress.
 
-## V5.9 active work - 5.9.3
+## V5.9 active work - 5.9.5
 
 - #418: shared requirement evaluator and compared quest writes implemented;
-  port narrative registry integrated. Native evidence: validation_590. Finish
-  integration with the authored #422 chains and resulting reward/unlock types.
+  port narrative registry integrated. Native evidence: validation_590. Integrated
+  with the authored #422 chains, property/refunds and information rewards.
 - #420: ranks/relations, event receipts and post-arrival hostility implemented;
   native evidence validation_591. #419 now connects actual reports; services
   via #424 remain before complete integration.
@@ -18,7 +19,8 @@ Documentation version: **5.9.4** - 2026-10-29.
   implemented in native port dialogue; evidence validation_592. Tutorial rolls
   and all old dialogue nodes remain unchanged. Author corroboration grouped.
 - #421: arrival/recognition/preparation/aftermath and heard accounts implemented.
-- #422: implement house restitution and siege-information investigation.
+- #422: house restitution/refunds and siege-information investigation implemented;
+  evidence validation_595, author review grouped with the version.
 - #423: guards and four prisoners, preserving canonical bodies/identities and
   separating visual wardrobe from actual inventory.
 - #424: explicit quest/faction-to-service mappings, with existing world owners.

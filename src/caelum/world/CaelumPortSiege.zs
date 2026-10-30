@@ -51,6 +51,8 @@ class CaelumPortSiege : CaelumSiegeEncounter
     // Sólo la revisión geométrica 3 tiene fase de paz y viviendas.
     bool SiegeStarted;
     int InteriorDoorRevision;
+    int RentalAgentRevision;
+    CaelumRentalAgent RentalAgent;
     Array<CaelumPortDefender> CityPathQueue;
     CaelumSiegeReinforcements Reinforcements;
 
@@ -724,6 +726,11 @@ class CaelumPortSiege : CaelumSiegeEncounter
 
     override void Tick()
     {
+        if(RentalAgentRevision<CaelumPortQuestData.REVISION && SetupRevision>0 && CaelumHouseHub.IsCity(self))
+        {
+            RentalAgent=CaelumRentalAgent(Spawn("CaelumRentalAgent",CaelumPortQuestData.AgentPosition(),NO_REPLACE));
+            if(RentalAgent!=null)RentalAgentRevision=CaelumPortQuestData.REVISION;
+        }
         CaelumCityInteriorDoors.Ensure(self);
         // Cola justa: como máximo una búsqueda local por tic, incluso cuando
         // centenares de estados See comparten la misma fase de animación.
