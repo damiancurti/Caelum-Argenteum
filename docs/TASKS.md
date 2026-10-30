@@ -1,37 +1,24 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.9.6** - 2026-10-29.
+Documentation version: **5.9.7** - 2026-10-29.
 
-#424 service integration: explicit affiliations only; validation_596.
-#423 visual delivery remains before the grouped author handoff.
+## V5.9 implementation complete - author review pending (5.9.7)
 
-#420 campaign membership is now integrated (5.9.3); evidence validation_593.
-#421 story is integrated; evidence validation_594.
-#422 integrates the two quests and #418 reward types; validation_595.
-#424 services integrated; #423 visuals remain in progress.
+- #418: shared requirements/transitions and world narrative registry; validation_590.
+- #419: saved private emotional readings and separate declaration/report actions; validation_592.
+- #420: ranks, relations, aid/revelation receipts, post-arrival hostility and free
+  neutral-or-better campaign joining; validation_591/593.
+- #421: arrival, captain recognition, preparation and actual aftermath; validation_594.
+- #422: original home restitution/recorded refunds and heard siege testimony;
+  validation_595. Abandon/resume retains progress and rewards cannot repeat.
+- #423: shared guard uniforms/caps/faces and finite prisoner cloth palettes;
+  validation_597. Existing items/stats, identities and save rollback preserved.
+- #424: explicit faction commerce/door consequences; civilian access unchanged;
+  validation_596.
 
-## V5.9 active work - 5.9.6
-
-- #418: shared requirement evaluator and compared quest writes implemented;
-  port narrative registry integrated. Native evidence: validation_590. Integrated
-  with the authored #422 chains, property/refunds and information rewards.
-- #420: ranks/relations, event receipts and post-arrival hostility implemented;
-  native evidence validation_591. #419 now connects actual reports; services
-  are integrated by #424.
-- #419: private emotional readings and separate declaration/report choices
-  implemented in native port dialogue; evidence validation_592. Tutorial rolls
-  and all old dialogue nodes remain unchanged. Author corroboration grouped.
-- #421: arrival/recognition/preparation/aftermath and heard accounts implemented.
-- #422: house restitution/refunds and siege-information investigation implemented;
-  evidence validation_595, author review grouped with the version.
-- #423: guards and four prisoners, preserving canonical bodies/identities and
-  separating visual wardrobe from actual inventory.
-- #424: explicit quest/faction-to-service mappings, with existing world owners.
-
-Keep issue branches/commits/PRs and evidence separate. Prepare the author-facing
-manual terminal after all V5.9 work is complete; do not claim acceptance from
-agent-only tests. No new actionable author check is queued for this internal
-coordination checkpoint.
+Next: author executes the numbered scenarios and confirms pending_test.txt IDs.
+Keep issues open and PRs unmerged until that review and integration instruction.
+Do not reopen accepted V5.8 or add new balance/content to this handoff.
 
 ## V5.8 completion - 2026-10-29 (#403)
 

@@ -1,0 +1,963 @@
+{
+  "issue": 423,
+  "poses": [
+    0,
+    2,
+    3,
+    9,
+    10,
+    11,
+    12,
+    13,
+    15,
+    18,
+    19,
+    20,
+    21,
+    22,
+    26,
+    27,
+    28
+  ],
+  "atlas_boxes": {
+    "guard_walk_melee_v1.png": [
+      [
+        74,
+        58,
+        155,
+        208
+      ],
+      [
+        301,
+        58,
+        384,
+        210
+      ],
+      [
+        513,
+        59,
+        618,
+        208
+      ],
+      [
+        761,
+        58,
+        844,
+        211
+      ],
+      [
+        991,
+        58,
+        1076,
+        208
+      ],
+      [
+        1228,
+        58,
+        1308,
+        210
+      ],
+      [
+        1448,
+        59,
+        1558,
+        208
+      ],
+      [
+        1686,
+        58,
+        1769,
+        211
+      ],
+      [
+        73,
+        266,
+        160,
+        419
+      ],
+      [
+        299,
+        266,
+        387,
+        421
+      ],
+      [
+        510,
+        268,
+        622,
+        419
+      ],
+      [
+        762,
+        265,
+        848,
+        421
+      ],
+      [
+        989,
+        264,
+        1078,
+        419
+      ],
+      [
+        1223,
+        266,
+        1311,
+        423
+      ],
+      [
+        1447,
+        269,
+        1556,
+        420
+      ],
+      [
+        1682,
+        264,
+        1773,
+        422
+      ],
+      [
+        59,
+        474,
+        159,
+        627
+      ],
+      [
+        289,
+        475,
+        388,
+        627
+      ],
+      [
+        524,
+        476,
+        606,
+        629
+      ],
+      [
+        748,
+        475,
+        852,
+        629
+      ],
+      [
+        981,
+        474,
+        1078,
+        628
+      ],
+      [
+        1218,
+        475,
+        1320,
+        629
+      ],
+      [
+        1468,
+        476,
+        1543,
+        629
+      ],
+      [
+        1682,
+        474,
+        1785,
+        628
+      ],
+      [
+        60,
+        677,
+        162,
+        832
+      ],
+      [
+        287,
+        676,
+        389,
+        832
+      ],
+      [
+        521,
+        677,
+        605,
+        833
+      ],
+      [
+        739,
+        676,
+        854,
+        832
+      ],
+      [
+        981,
+        676,
+        1080,
+        832
+      ],
+      [
+        1214,
+        676,
+        1333,
+        833
+      ],
+      [
+        1468,
+        676,
+        1558,
+        833
+      ],
+      [
+        1683,
+        676,
+        1785,
+        832
+      ]
+    ],
+    "guard_fire_v1.png": [
+      [
+        72,
+        55,
+        172,
+        207
+      ],
+      [
+        301,
+        56,
+        387,
+        207
+      ],
+      [
+        510,
+        57,
+        596,
+        208
+      ],
+      [
+        733,
+        57,
+        834,
+        208
+      ],
+      [
+        976,
+        56,
+        1077,
+        207
+      ],
+      [
+        1235,
+        57,
+        1324,
+        207
+      ],
+      [
+        1474,
+        57,
+        1564,
+        208
+      ],
+      [
+        1690,
+        56,
+        1794,
+        208
+      ],
+      [
+        72,
+        269,
+        172,
+        420
+      ],
+      [
+        300,
+        269,
+        388,
+        421
+      ],
+      [
+        510,
+        271,
+        596,
+        421
+      ],
+      [
+        732,
+        271,
+        834,
+        420
+      ],
+      [
+        976,
+        270,
+        1077,
+        420
+      ],
+      [
+        1235,
+        271,
+        1325,
+        420
+      ],
+      [
+        1474,
+        271,
+        1564,
+        421
+      ],
+      [
+        1690,
+        270,
+        1793,
+        421
+      ],
+      [
+        72,
+        482,
+        172,
+        633
+      ],
+      [
+        301,
+        482,
+        387,
+        633
+      ],
+      [
+        510,
+        483,
+        596,
+        634
+      ],
+      [
+        732,
+        483,
+        834,
+        633
+      ],
+      [
+        976,
+        483,
+        1077,
+        633
+      ],
+      [
+        1235,
+        483,
+        1325,
+        633
+      ],
+      [
+        1474,
+        483,
+        1564,
+        634
+      ],
+      [
+        1690,
+        483,
+        1793,
+        633
+      ],
+      [
+        72,
+        693,
+        172,
+        843
+      ],
+      [
+        301,
+        694,
+        387,
+        844
+      ],
+      [
+        510,
+        694,
+        596,
+        845
+      ],
+      [
+        732,
+        694,
+        834,
+        844
+      ],
+      [
+        975,
+        694,
+        1077,
+        844
+      ],
+      [
+        1235,
+        694,
+        1325,
+        843
+      ],
+      [
+        1474,
+        694,
+        1564,
+        844
+      ],
+      [
+        1690,
+        693,
+        1794,
+        844
+      ]
+    ],
+    "guard_pain_death_v1.png": [
+      [
+        66,
+        54,
+        174,
+        211
+      ],
+      [
+        302,
+        55,
+        404,
+        211
+      ],
+      [
+        552,
+        59,
+        625,
+        211
+      ],
+      [
+        770,
+        56,
+        879,
+        211
+      ],
+      [
+        1013,
+        55,
+        1118,
+        211
+      ],
+      [
+        1249,
+        55,
+        1353,
+        211
+      ],
+      [
+        1498,
+        58,
+        1572,
+        211
+      ],
+      [
+        1720,
+        55,
+        1823,
+        211
+      ],
+      [
+        79,
+        293,
+        160,
+        430
+      ],
+      [
+        319,
+        294,
+        400,
+        430
+      ],
+      [
+        567,
+        294,
+        631,
+        430
+      ],
+      [
+        796,
+        293,
+        878,
+        430
+      ],
+      [
+        1020,
+        293,
+        1101,
+        431
+      ],
+      [
+        1247,
+        293,
+        1329,
+        431
+      ],
+      [
+        1494,
+        294,
+        1556,
+        430
+      ],
+      [
+        1726,
+        294,
+        1809,
+        430
+      ],
+      [
+        73,
+        560,
+        159,
+        639
+      ],
+      [
+        316,
+        559,
+        413,
+        640
+      ],
+      [
+        563,
+        560,
+        656,
+        648
+      ],
+      [
+        794,
+        557,
+        889,
+        646
+      ],
+      [
+        1016,
+        556,
+        1100,
+        647
+      ],
+      [
+        1228,
+        556,
+        1331,
+        646
+      ],
+      [
+        1477,
+        557,
+        1557,
+        648
+      ],
+      [
+        1704,
+        556,
+        1809,
+        636
+      ],
+      [
+        62,
+        782,
+        183,
+        840
+      ],
+      [
+        291,
+        780,
+        424,
+        839
+      ],
+      [
+        518,
+        765,
+        667,
+        840
+      ],
+      [
+        757,
+        777,
+        891,
+        840
+      ],
+      [
+        998,
+        770,
+        1124,
+        841
+      ],
+      [
+        1232,
+        770,
+        1365,
+        840
+      ],
+      [
+        1459,
+        769,
+        1609,
+        840
+      ],
+      [
+        1698,
+        782,
+        1828,
+        839
+      ]
+    ],
+    "guard_crouch_v1.png": [
+      [
+        63,
+        105,
+        181,
+        210
+      ],
+      [
+        291,
+        107,
+        395,
+        210
+      ],
+      [
+        495,
+        106,
+        621,
+        211
+      ],
+      [
+        724,
+        107,
+        870,
+        211
+      ],
+      [
+        971,
+        107,
+        1097,
+        211
+      ],
+      [
+        1215,
+        106,
+        1345,
+        212
+      ],
+      [
+        1456,
+        107,
+        1584,
+        212
+      ],
+      [
+        1676,
+        107,
+        1808,
+        212
+      ],
+      [
+        63,
+        317,
+        181,
+        421
+      ],
+      [
+        291,
+        319,
+        394,
+        422
+      ],
+      [
+        497,
+        318,
+        625,
+        424
+      ],
+      [
+        725,
+        318,
+        871,
+        423
+      ],
+      [
+        971,
+        317,
+        1097,
+        422
+      ],
+      [
+        1215,
+        319,
+        1345,
+        424
+      ],
+      [
+        1452,
+        318,
+        1581,
+        424
+      ],
+      [
+        1676,
+        318,
+        1808,
+        423
+      ],
+      [
+        63,
+        533,
+        181,
+        637
+      ],
+      [
+        292,
+        534,
+        395,
+        637
+      ],
+      [
+        496,
+        534,
+        625,
+        639
+      ],
+      [
+        725,
+        533,
+        869,
+        638
+      ],
+      [
+        971,
+        534,
+        1097,
+        639
+      ],
+      [
+        1215,
+        533,
+        1346,
+        640
+      ],
+      [
+        1454,
+        535,
+        1583,
+        639
+      ],
+      [
+        1676,
+        533,
+        1808,
+        639
+      ],
+      [
+        63,
+        676,
+        182,
+        843
+      ],
+      [
+        292,
+        677,
+        397,
+        842
+      ],
+      [
+        494,
+        677,
+        604,
+        843
+      ],
+      [
+        725,
+        677,
+        855,
+        843
+      ],
+      [
+        971,
+        674,
+        1097,
+        842
+      ],
+      [
+        1234,
+        676,
+        1345,
+        843
+      ],
+      [
+        1472,
+        676,
+        1585,
+        843
+      ],
+      [
+        1684,
+        676,
+        1808,
+        843
+      ]
+    ]
+  },
+  "module_sha256": {
+    "src/graphics/caelum/port_wardrobe/body/0_0.png": "6aa3370b54ca8a813264808800ab48df6600abeb1b416431ab42c570e4f1d7b2",
+    "src/graphics/caelum/port_wardrobe/body/0_1.png": "ce9e5fce56b85c782036adcd7b9fee035a98828abf9b84e80fced7d844efa854",
+    "src/graphics/caelum/port_wardrobe/body/0_2.png": "a0fc1736881917e040d8ec714f33048bc8cb2d6a554947c9622e61fbd1c112f2",
+    "src/graphics/caelum/port_wardrobe/body/0_3.png": "e153a031f9311b288077c36fff561c78f8511d2b97e52d4ef1cc8f59a7bb7ad2",
+    "src/graphics/caelum/port_wardrobe/body/0_4.png": "2037d5d767a5fca2e3287700ae16c199ea13bcda87ea62e0261d6ef5e2e4359f",
+    "src/graphics/caelum/port_wardrobe/body/0_5.png": "c09991412916980d22d621b2066549bcd1ddbbeae535b2bf8a1daabaea97c212",
+    "src/graphics/caelum/port_wardrobe/body/0_6.png": "dfae386af986b28083ad08f0567d2f9345901d0c0e6c5d28661ddaa4fa77b56d",
+    "src/graphics/caelum/port_wardrobe/body/0_7.png": "299c85012bd62f365cea86bffd5294031c43794aef64da981173282cf9e12a66",
+    "src/graphics/caelum/port_wardrobe/body/2_0.png": "e873d991f91814820d075e95c339f4233b077b8c318eeecefed662fc2a393381",
+    "src/graphics/caelum/port_wardrobe/body/2_1.png": "06f6ac11c1c912d1624bda7353dee96171b3e8d377e98e3e2eab1bdf6541523a",
+    "src/graphics/caelum/port_wardrobe/body/2_2.png": "04c067e5c1b80cc242e538354563c5e11bf64f49e2f8a73cb2f94dae1500576c",
+    "src/graphics/caelum/port_wardrobe/body/2_3.png": "7b813a6eb9378e02d4c92bc801ab3d2dcf8466d3b9737a815fd1e89122509dc8",
+    "src/graphics/caelum/port_wardrobe/body/2_4.png": "7dbbf592cac42794366cdedba117e030aa3e9c65eb507e69d96bf477fba59352",
+    "src/graphics/caelum/port_wardrobe/body/2_5.png": "7159a3a0a678c15dbab9ef7b4337009039d8dcbc8a08246b8f2036674a145873",
+    "src/graphics/caelum/port_wardrobe/body/2_6.png": "e53929b623e0642085fa7c3669f31024cddc70f75b75c9e188d131df1224754b",
+    "src/graphics/caelum/port_wardrobe/body/2_7.png": "1c9b3d247f346b1200952b6efebffb09bfb4fcb5ae853477f214f438fd5d56bc",
+    "src/graphics/caelum/port_wardrobe/body/3_0.png": "c3a8135073f9fc3775c1bc7d3e9fa745d7eb0bc685cb1698a9a8ae5bc16fe5de",
+    "src/graphics/caelum/port_wardrobe/body/3_1.png": "25c1f2c62ae5ad817005a99ed5dc4cd825ba947458a5f8af2c9841a0a506b04b",
+    "src/graphics/caelum/port_wardrobe/body/3_2.png": "09a2dd8aaf072f2b7f1bffc54f068dd5120ca7ee6379b7d3bd02893cb73d73f5",
+    "src/graphics/caelum/port_wardrobe/body/3_3.png": "f7c438d929ca5211c54ac3cd18d516a4b84954a1a35bb056d12c28dae21f9eb5",
+    "src/graphics/caelum/port_wardrobe/body/3_4.png": "c4d177b2b5c4e4a87245682d052c93a5ad1405969180055a6423fb4ecd99e24f",
+    "src/graphics/caelum/port_wardrobe/body/3_5.png": "fab47578c4a2502f29f6ef0515203b818a1025798fadb28fd458dd7e3213a8ac",
+    "src/graphics/caelum/port_wardrobe/body/3_6.png": "6d8457af728dd8f67024f7b1f93f032a08b1612aedf038907d6ed3d7ebd18814",
+    "src/graphics/caelum/port_wardrobe/body/3_7.png": "1981eea76b8120874bc9055e14fee6a81ad6773351b67fe11c5c118c1665b5ec",
+    "src/graphics/caelum/port_wardrobe/body/9_0.png": "da0f226b0b9f04ddde04672260126e14ee20906a711921923687eb2cda3abbd8",
+    "src/graphics/caelum/port_wardrobe/body/9_1.png": "b7c36aa52c47980f1d1fa890668da4be146222c9b7cfb69103a3d08be806cc9a",
+    "src/graphics/caelum/port_wardrobe/body/9_2.png": "c78d73e38d38f4d941caad180f6a403c25367b5c08a81e7a4caa2eccd091ad58",
+    "src/graphics/caelum/port_wardrobe/body/9_3.png": "04a8e7d5de0f7e34f1735edc71bfbb915ab37e50602824e6f121b5175dbdf3cf",
+    "src/graphics/caelum/port_wardrobe/body/9_4.png": "cb3c11f3f01ae5c65107519f909881b8af9f95dcf515a2015f181cf73a6531d1",
+    "src/graphics/caelum/port_wardrobe/body/9_5.png": "8e60e8db8ecbbf0ca511e2c228588666a82ac05aae231497bf309547369cc5fe",
+    "src/graphics/caelum/port_wardrobe/body/9_6.png": "f9f0be0f766b08413d4bd8bd32fe924f7e70b895ec72015765178f587a1d62dd",
+    "src/graphics/caelum/port_wardrobe/body/9_7.png": "2ac439f477bb20e314a7aac16ce9b593237d3aea4a3c5f24137c53d79e627f4d",
+    "src/graphics/caelum/port_wardrobe/body/10_0.png": "b831f123a504a6e458eb58e788331cee811c5ec0cbba339506f2233e48c84d74",
+    "src/graphics/caelum/port_wardrobe/body/10_1.png": "aba46665d6f90d6e09d98b2d351241622673bc92e4740962f9de9129c07d0265",
+    "src/graphics/caelum/port_wardrobe/body/10_2.png": "885a21870bdb41c89cd1435700a2d0ef85838f5903680eabd4a2d8628c6a8fa7",
+    "src/graphics/caelum/port_wardrobe/body/10_3.png": "c104c8c5408825078ddbb7be6e7e11c876d78068729407f23f185055711d4f0c",
+    "src/graphics/caelum/port_wardrobe/body/10_4.png": "5103fee965acab5a481ae9ca6d416edef1f374d05972ff7f294d6ff42e60aa85",
+    "src/graphics/caelum/port_wardrobe/body/10_5.png": "8bfeb67d7120c4ec0d38f3d0150effe2dc09da02671d24ac95560c098772a0ca",
+    "src/graphics/caelum/port_wardrobe/body/10_6.png": "b3ba86587ac29967cb29f385802c6134a4af95b06d3244ed8b88827f6961791e",
+    "src/graphics/caelum/port_wardrobe/body/10_7.png": "44ee5b345ae9e8718bc7e47e0d7b92f2724cbb6383fa8da5d40a066fea1ee6bf",
+    "src/graphics/caelum/port_wardrobe/body/18_0.png": "65fb789ca2261ef5e4f36841533abc539a28fc1210e1a5d69f7444ab0c2c2af3",
+    "src/graphics/caelum/port_wardrobe/body/18_1.png": "42cc4e7fe9429072be1299eba1ef6349dc4c9bdb6d993170c7f60b20dee42414",
+    "src/graphics/caelum/port_wardrobe/body/18_2.png": "e419a8470ae91f422bbac837e3099bc1ebe38caf2286431067352d57d66575f7",
+    "src/graphics/caelum/port_wardrobe/body/18_3.png": "e8e6dc115d17180d920d44ce19fa32f701b739d395224bd51257ca3db003ba91",
+    "src/graphics/caelum/port_wardrobe/body/18_4.png": "6c817fe2deeef5a49236534791a9056d6cd9c916460a943284be0702ac02cd41",
+    "src/graphics/caelum/port_wardrobe/body/18_5.png": "6f6c2067faa1b0b92238b70638e47df1d24c629587d412c71b6ceee687ad5cd3",
+    "src/graphics/caelum/port_wardrobe/body/18_6.png": "c7ac2f44412210cf74e916fccfca2760b439577da25eacffcaa43f1afc126d28",
+    "src/graphics/caelum/port_wardrobe/body/18_7.png": "0cac64ae95169b200131d3db17d4a1baf66da35f49d8d1ecf16eb7f1a07f868d",
+    "src/graphics/caelum/port_wardrobe/body/19_0.png": "204c1a547049a31cfa54ac13ff20d9eb01f94cfd6c28e95c38a7044193e01362",
+    "src/graphics/caelum/port_wardrobe/body/19_1.png": "44eb80b49288b50d3bf42ab67a22517d464c410946b08c23163f51339953a4e2",
+    "src/graphics/caelum/port_wardrobe/body/19_2.png": "b2eed79e7444a21e5e07006347fc5746312bbc33dc8a739d71207da7c5398e8b",
+    "src/graphics/caelum/port_wardrobe/body/19_3.png": "2f4abe4c494bae519e14958eeda1d7d35c011740c1107b05cc51e8500c9d7752",
+    "src/graphics/caelum/port_wardrobe/body/19_4.png": "959d31c8f0c1c5422719270e358474d41d77c3812d67a03a31c811ad859a225c",
+    "src/graphics/caelum/port_wardrobe/body/19_5.png": "55d32c3308a82971013a087885746d4b437dd0d8711a147c9bf35e2b8f6105ab",
+    "src/graphics/caelum/port_wardrobe/body/19_6.png": "fa09f7eb0d98e2eb78de4a2425a0bb67782ed6dcd017efb22404bf490708f2c9",
+    "src/graphics/caelum/port_wardrobe/body/19_7.png": "1161a28f71ee1cab068fd11c468f0d3f74c6a1c8aec112ffb5e0a66b1cd34931",
+    "src/graphics/caelum/port_wardrobe/body/20_0.png": "9d134acb26dc25a32b9e6607603de5d139541d81e25408a7383aadeb984909f7",
+    "src/graphics/caelum/port_wardrobe/body/20_1.png": "003999242570806f0e3fdb98d4ad252033b8fc08249b91482de017fcd3b71943",
+    "src/graphics/caelum/port_wardrobe/body/20_2.png": "be393d5b3cacd0afd01901e35aea146ac757f3fa1942dfdc83c84346de50a630",
+    "src/graphics/caelum/port_wardrobe/body/20_3.png": "ab4b2b90ea32a9c79a503555f334043e247493823eaf8b65b71d2e97c85fec03",
+    "src/graphics/caelum/port_wardrobe/body/20_4.png": "b8b4b002a2cc0cfcc4316bc0aab776d6e6c0b1376a726ecfae19929f1d541e91",
+    "src/graphics/caelum/port_wardrobe/body/20_5.png": "87e33fc17b3f38e3072e90d6be1ddce6173faf6768719ef4933615fb21871143",
+    "src/graphics/caelum/port_wardrobe/body/20_6.png": "e8ce09a30824de2321e4ae168bdfadb31836bb3deba084807a1c5821a96cddf3",
+    "src/graphics/caelum/port_wardrobe/body/20_7.png": "bebf8bbf8390f25a3ad70321a4d78312fcc7366199c268c5b0c65f3f6b290218",
+    "src/graphics/caelum/port_wardrobe/body/21_0.png": "f7d6c3cdbb9aa93f3bb04e3471e68c657f6fa1e623b240cb7f14bc8740dfadfa",
+    "src/graphics/caelum/port_wardrobe/body/21_1.png": "f2209c472d6ab39719576eb87ca82d83bb3d9dcfc78da45e2badd0e31c1ca11f",
+    "src/graphics/caelum/port_wardrobe/body/21_2.png": "506e0ce593552846a9391f06e72f0f35e8c7f10a2c7f1e91829aac1b18977d98",
+    "src/graphics/caelum/port_wardrobe/body/21_3.png": "6317803abc7fcb6b1a13439f9d3522306f19dbace557fb939954c9d0989901ba",
+    "src/graphics/caelum/port_wardrobe/body/21_4.png": "f42de3b91adb0a4c2b9e7677a28609bbde2bb8243117119a063ccda9a18161c5",
+    "src/graphics/caelum/port_wardrobe/body/21_5.png": "7b4a4168597076e75b720b39707e2eb0fcc287da4885b3d91eb56c1186ee316c",
+    "src/graphics/caelum/port_wardrobe/body/21_6.png": "cf5364fa9a4909956b866d29b5ec62f4c87913554f54443557fd77a1261197a2",
+    "src/graphics/caelum/port_wardrobe/body/21_7.png": "d7a9bfde5be9b16db1cea543fe8be944668ac97627e11161f5ab111a49e9db7c",
+    "src/graphics/caelum/port_wardrobe/body/11_0.png": "1e904c01747612a3280290fb208de99b1e4f6f1377bb9a8a2f23ecdd2af61336",
+    "src/graphics/caelum/port_wardrobe/body/11_1.png": "f8a8f78a1a8facaf1d55708fd5f61c6f0523a4a5f98b028a28dc3d2ab95fdac5",
+    "src/graphics/caelum/port_wardrobe/body/11_2.png": "4d8ed13005fdcc58940d72409a217d36e51e8faf9a234827fb685a242825f18c",
+    "src/graphics/caelum/port_wardrobe/body/11_3.png": "4f6990897638e34f142c7f52b9ff04a08fcdd3bd698a1127f25f2a1c2b46604b",
+    "src/graphics/caelum/port_wardrobe/body/11_4.png": "21090304b5066f637e25820e495f345086f1b4622ff091026ebf593cfd67340f",
+    "src/graphics/caelum/port_wardrobe/body/11_5.png": "5e3d7a3f1a0fcef2d941be301b95b90cdb4f64ce364abfa723ea8ca6b7cc6010",
+    "src/graphics/caelum/port_wardrobe/body/11_6.png": "711a9d3edbee85612e04451f998a6e9a778e13a986e4e894f4a0481bb3c3b107",
+    "src/graphics/caelum/port_wardrobe/body/11_7.png": "42c0f38ea646a77f9420c36c5da9909bf0273c395d3e9d8cc117d2fba5632912",
+    "src/graphics/caelum/port_wardrobe/body/12_0.png": "1db1b4b10473265420f7511fc4d69083aabc0c7c7a9ec64716ada2cdd93f7c90",
+    "src/graphics/caelum/port_wardrobe/body/12_1.png": "bd7a5932ffd1356da040e777c31a502b542c9b48416a174350e98341c225c1f8",
+    "src/graphics/caelum/port_wardrobe/body/12_2.png": "3e2cc1854f2e12debcced3b439e7b8fdba945e9df21b016c988ee0860abfd9c7",
+    "src/graphics/caelum/port_wardrobe/body/12_3.png": "16c3e81faeeea687221929d7b9b9c4c859dd9d6fe0f89f1048fac59485b9f8ab",
+    "src/graphics/caelum/port_wardrobe/body/12_4.png": "8d020861cc4bfc56c84cd276cbf0d69cd0a626ca58114abfdaa27bf59325256c",
+    "src/graphics/caelum/port_wardrobe/body/12_5.png": "b7a06cc8dfd5d2f68867b61da6350f63e2075a0aec18c0865e2d21685a010d2d",
+    "src/graphics/caelum/port_wardrobe/body/12_6.png": "c160c5426b0a41fbeb63b7fd5fd07d069803e2f6e1bd22fdee6e57fd45fa4d53",
+    "src/graphics/caelum/port_wardrobe/body/12_7.png": "dcc003162bef62a18f46355235723dc3e27a9f607c518a4a9a88accca974eed1",
+    "src/graphics/caelum/port_wardrobe/body/13_0.png": "86fa9d1d5bb633d1315a42cd467dea5d9c1946cba984b01b4943d85f1d579584",
+    "src/graphics/caelum/port_wardrobe/body/13_1.png": "c42d5ffc588d2a9c426449535fd95c3edea955cde3b57075a1ef3ccaa87e865a",
+    "src/graphics/caelum/port_wardrobe/body/13_2.png": "c2aed877e784e1588d43a642d219f88fb58c17ac4157ee76dcd77493ec620cfe",
+    "src/graphics/caelum/port_wardrobe/body/13_3.png": "2a4b865150b28fe00a438a5f39c6c86d75c930b0c7c6ad3c849553b42f976ddd",
+    "src/graphics/caelum/port_wardrobe/body/13_4.png": "e98d819bc1e2d25b7e9e8d3de3353c6174ec994db20e61654e14b0deff4d6e34",
+    "src/graphics/caelum/port_wardrobe/body/13_5.png": "d992f1cd5ee2939c72cabca969a216040922cedfce2827dec0b3790518ad5d3a",
+    "src/graphics/caelum/port_wardrobe/body/13_6.png": "de92e18e9a14ff624c6824cfa9d0a383ec73bcd1650e63321b85f178cf2561f0",
+    "src/graphics/caelum/port_wardrobe/body/13_7.png": "875e53573d8b04fff189d02c9cc99148f5db4008ad306c2a7796cee61345164d",
+    "src/graphics/caelum/port_wardrobe/body/15_0.png": "39b5ec584c2fdbb07ca8964edd86b011882eb192b9e78eed50e14026d2019e34",
+    "src/graphics/caelum/port_wardrobe/body/15_1.png": "6720547fdd379266b07f442001a4b2b8f1da5249aff6878b72f596f9744ed3f6",
+    "src/graphics/caelum/port_wardrobe/body/15_2.png": "a4ac48351af5bae37c90976493fc27e5933763544c099c4c364b2b8ae5b42300",
+    "src/graphics/caelum/port_wardrobe/body/15_3.png": "4802c11cf9c569e2c6cab6965732681a96a648787a48fe82cbd8ae72cd5f85e6",
+    "src/graphics/caelum/port_wardrobe/body/15_4.png": "4e28a7ba1bace985270f8502fb43767aff687330f86a1c2d3edcc00fe4372ea1",
+    "src/graphics/caelum/port_wardrobe/body/15_5.png": "c775ed92370a7d749aad9429562b6f0c41850ae521be9da2e5d2ff371d449c7f",
+    "src/graphics/caelum/port_wardrobe/body/15_6.png": "fca124091fcc9ebae9c940141286ae9e9d452c953caf80750f79cd4b0f417f6f",
+    "src/graphics/caelum/port_wardrobe/body/15_7.png": "58b128ef2f2dcd46cef6cbb9207456b646fa3b89ee022de6f5df3fc0e884bfa1",
+    "src/graphics/caelum/port_wardrobe/body/26_0.png": "0f7f3cc1dab08afdaa4bc3e5804378492da600c3cbc3a542fc30731d09e5a83b",
+    "src/graphics/caelum/port_wardrobe/body/26_1.png": "6fcb55d0b95d154578d772a404ddc87530743fede463d235ce4194b564163274",
+    "src/graphics/caelum/port_wardrobe/body/26_2.png": "79226bb91c099c66354b3bdd506bc014d58e5482e14fc13d4caa7f396196767f",
+    "src/graphics/caelum/port_wardrobe/body/26_3.png": "b69958ce70b9c2a43eeaa5e566ef6df719f1650ae9c1fecfaa28c077d21ff0fc",
+    "src/graphics/caelum/port_wardrobe/body/26_4.png": "7e39a02d993d271f5ee2b1f5a53864bd0030dfb6f92dae3df5737624b7d0779e",
+    "src/graphics/caelum/port_wardrobe/body/26_5.png": "fd20d68e8a3030f243065c47c4a88bcdbc7ff73e6d79512a1ffc2205789fdb29",
+    "src/graphics/caelum/port_wardrobe/body/26_6.png": "5854bf5760b8afad3544667e927b39a82441c141634649b3bd059334d93c3ac3",
+    "src/graphics/caelum/port_wardrobe/body/26_7.png": "704046f5b166392f4c1ef8f5c3460de009cf069973f7df47e60f1c3f119b2938",
+    "src/graphics/caelum/port_wardrobe/body/27_0.png": "d0cef95b9aa5a5a44e2c60c37888e40d75c82d9d759990ca136f18eb98f4fb01",
+    "src/graphics/caelum/port_wardrobe/body/27_1.png": "fc4007ece3766b5244e132f847e5271249b6d6a1fe70e812c0b93daf7f7a240f",
+    "src/graphics/caelum/port_wardrobe/body/27_2.png": "9b66de60e702a020a370bd5fdb74acbfaf3f23040737299c6314f6d35541caaf",
+    "src/graphics/caelum/port_wardrobe/body/27_3.png": "8687fee4d39c32a435820333df80bb4b33492a30d652105f64e9dce68e98b95d",
+    "src/graphics/caelum/port_wardrobe/body/27_4.png": "799f12fa9d1b86024eb92255fa048a5f7e3960d19dde3982a97720eddcd005c2",
+    "src/graphics/caelum/port_wardrobe/body/27_5.png": "121affbbbd19da41fa284d5454da80a089320cc3e315e87260a9d06c215d2f21",
+    "src/graphics/caelum/port_wardrobe/body/27_6.png": "eb1abcc9bd14622a109ed768f37ac106d444079cc712b72d6245b735e3889907",
+    "src/graphics/caelum/port_wardrobe/body/27_7.png": "eb8fc185e1bd49635e660b04195c0a605b7db9642f4422ff3fc350fdae45d74f",
+    "src/graphics/caelum/port_wardrobe/body/28_0.png": "2fb1d1513bff09f78bbca05c85c666eecd4f8563db20c23b01b020efe0371b7a",
+    "src/graphics/caelum/port_wardrobe/body/28_1.png": "337b1f87e50a8897b23d900e62d8a33b247079b57dcffc46b2e472da4b91b1a9",
+    "src/graphics/caelum/port_wardrobe/body/28_2.png": "7c6380e3d1a475b97d0adc0cc9cec4e7a62cda88d5478b6641acd5d06e374a14",
+    "src/graphics/caelum/port_wardrobe/body/28_3.png": "8c9fee01af4dffad6d4d97ae67f699aaa47e9e1189cb9f6176625eef12c398c8",
+    "src/graphics/caelum/port_wardrobe/body/28_4.png": "d6d19276e97e5ce70d6d5c94516ffd5dd34b10037f810e32181af4197115b1a1",
+    "src/graphics/caelum/port_wardrobe/body/28_5.png": "a7629c0aa36041bf6b981dbcfda6bc63e768def729bcbb08d5120cd6507ef4ae",
+    "src/graphics/caelum/port_wardrobe/body/28_6.png": "cbc1827d68f87bce0c253a261ec84a6a17cb89571c50c528b17d75a956282680",
+    "src/graphics/caelum/port_wardrobe/body/28_7.png": "0cfaf5442a6e995ce46f5ffb5ce524c0edb346f87a8288ff7f2e83b365c05672",
+    "src/graphics/caelum/port_wardrobe/body/22_0.png": "e99f88a0e29768f14b7947a3b50c1b49e56f443005f596d37591744464636a54",
+    "src/graphics/caelum/port_wardrobe/body/22_1.png": "1550b92e726b3dc5163278fc9afe81a39f6c34565107774509a764d49ab692e0",
+    "src/graphics/caelum/port_wardrobe/body/22_2.png": "bf856a815772232c350a0d8ba38809b5803e23ab4af025771b7bf6e80cc77b58",
+    "src/graphics/caelum/port_wardrobe/body/22_3.png": "d864714860063ff28fa207d916aa6635b1c64f769a8c5c157f0b6d9421d70cc5",
+    "src/graphics/caelum/port_wardrobe/body/22_4.png": "74414cad6fc3e2c7b9f3b402e85c04311a178329b0b992bb645e0427f9c84c7a",
+    "src/graphics/caelum/port_wardrobe/body/22_5.png": "1d9204f37ab00d94c0c23adb49c95f2ec424ea0cc155297dc9a145b17464f709",
+    "src/graphics/caelum/port_wardrobe/body/22_6.png": "f3cfb0f165c98fd684df7de571cf147fd3548b70087f6fd1b35a380a0110826a",
+    "src/graphics/caelum/port_wardrobe/body/22_7.png": "5d7dce370261bc60f7829124818ffa52c4a7f9ed495be263205af1bf07e577d1",
+    "src/graphics/caelum/port_wardrobe/cap/0_0.png": "822c8713b3e1a42d34a14514f00c947985aec7549ac2913c40cfcb69d950916b",
+    "src/graphics/caelum/port_wardrobe/cap/0_1.png": "5f66cfe5f52694e834bde4fdfff541a17745a064931c1731b91c448a227dcc87",
+    "src/graphics/caelum/port_wardrobe/cap/0_2.png": "454bda53110fdd8c2d30b787293847cd8b0ab2dba616f35d1644e777ad73c1ce",
+    "src/graphics/caelum/port_wardrobe/cap/0_3.png": "040af34184bc0317f97c265e2b16b05eed71b48556fce3eb0846a7f25ba6617a",
+    "src/graphics/caelum/port_wardrobe/cap/0_4.png": "273193d2c76a7842665e5ced2479a541926d3b60c5efb8f7bc59817203c4b7d0",
+    "src/graphics/caelum/port_wardrobe/cap/0_5.png": "04bbc4be9d09474810420901083c07815ec64d30104a1dbca21ad772e2c880ab",
+    "src/graphics/caelum/port_wardrobe/cap/0_6.png": "c838b8c94f766185c9dc6ef9b0699f570052887b445e9d2d0d45e5f16263d973",
+    "src/graphics/caelum/port_wardrobe/cap/0_7.png": "d761300f725668440309cc791e9b8b41e72057da9c34ce2eeeb89199c5755405",
+    "src/graphics/caelum/port_wardrobe/cap/4_0.png": "c3d7fe703b776d01e28370d91641a18a6235bb20cd7750a59d569d757011dba8",
+    "src/graphics/caelum/port_wardrobe/cap/4_1.png": "46ab605acd8846a42fc71d2af36942627b4e222f7318363d3535b73370e019e6",
+    "src/graphics/caelum/port_wardrobe/cap/4_2.png": "9149d535a4a4d712e59eb7e62bb7ce8278fab65b044dbb17164911866d1c1441",
+    "src/graphics/caelum/port_wardrobe/cap/4_3.png": "dfd99bef50f46d1a24cbc99373d4a912095114243555cbe989045ac40ee8a819",
+    "src/graphics/caelum/port_wardrobe/cap/4_4.png": "91e794c40b46089b4dc187592fe4ec1c0cf99dbb46b33cba0b5250e38fa84ed3",
+    "src/graphics/caelum/port_wardrobe/cap/4_5.png": "256be0d6cdc4caad1b23744f9951aa40d59f7368d239f94711e089b0a0a82fbd",
+    "src/graphics/caelum/port_wardrobe/cap/4_6.png": "79df5280d0d600ebd9f30ea0767596eb1ccad9fed9d0194383704a9264ea9931",
+    "src/graphics/caelum/port_wardrobe/cap/4_7.png": "789eddf7f8682e963b1028de542c582564f6c3140d6e0f4ff3a95cb62256f0aa",
+    "src/graphics/caelum/port_wardrobe/cap/2_0.png": "47b73c4364c8766c7596d71d23245a22f1e54370ca233da3071fc32f8a196214",
+    "src/graphics/caelum/port_wardrobe/cap/2_1.png": "5aad0224d9a5bbb04b10f2b987cd45111b13a479592fc1ccce59d306384062c3",
+    "src/graphics/caelum/port_wardrobe/cap/2_2.png": "ccd357f79d09d4b7f4255b24ec27a2b2b890beb5bc94ad3b25b60277b303d97e",
+    "src/graphics/caelum/port_wardrobe/cap/2_3.png": "b2d10b64f79dacd372dc421651a63b044663abf5f5cf017522e6afa76dde9bf9",
+    "src/graphics/caelum/port_wardrobe/cap/2_4.png": "b27ddbc1f22ddafcbd898dea0f3b85c144774591de234aee92a4fb7c77107c17",
+    "src/graphics/caelum/port_wardrobe/cap/2_5.png": "4864bf37b10b9beead3970125228a45c4c23948307baacd1e1ea92f4e0c7717a",
+    "src/graphics/caelum/port_wardrobe/cap/2_6.png": "aebaf48a35f848bb6a1a69fc8d34a575a34eabd71d980e98ab500de9a7b87786",
+    "src/graphics/caelum/port_wardrobe/cap/2_7.png": "c7ea713cbc281943630bbbadd20e87bfd8f8d6786919e83076b2a4b9ebc3aeb3"
+  },
+  "compositions": 544
+}

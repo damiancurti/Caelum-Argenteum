@@ -6,22 +6,18 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.9.6.** Obtain and update the complete repository, validate
+**Current release: 5.9.7.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-#424 service integration: explicit affiliations only; validation_596.
-#423 visual delivery remains before the grouped author handoff.
+**V5.9 implementation is complete; author review is pending.** Issues #418-424
+have focused branches and draft PRs. Quest coordination, factions, private
+conversation knowledge, Barracas story, house/siege investigations, wardrobes
+and explicit faction services are integrated. Evidence: `assets/validation_590`
+through `assets/validation_597`. All issues remain open pending review.
 
-Campaign membership is integrated under #420; evidence `assets/validation_593`.
-
-**V5.9 is in progress.** #418 quest coordination, #420 faction consequences
-and #419 private port dialogue are implemented on separate branches. Native
-readings retain their result across saves/travel; declarations stay private
-until explicitly reported. Evidence: `assets/validation_590/RESULTS.md`,
-`assets/validation_591/RESULTS.md` and `assets/validation_592/RESULTS.md`.
-Barracas story is integrated (#421; validation_594). House/siege quests and refunds are integrated (#422; validation_595). Service
-wiring and visual variants remain in progress.
-Issues #418-424 stay open; grouped author review waits for the complete version.
+The numbered author launcher is `assets/validation_597/handoff.py`; build the
+final runtime first as documented in its evidence. Outstanding checks are in
+`pending_test.txt`. No agent-only run counts as author acceptance.
 
 **V5.8 remains complete and author-accepted (2026-10-29).** Its issues #410-417,
 #496 and #502 are integrated into main; acceptance records remain in HISTORY.

@@ -1,6 +1,21 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.9.6** - 2026-10-29.
+Documentation version: **5.9.7** - 2026-10-29.
+
+## 5.9.7 / #423 - Cosmetic port wardrobe ownership
+
+Exact CaelumPortDefender bodies receive a semantic face derived from their
+stable household identity modulo four, once under wardrobe revision1. Existing
+unhomed diagnostic bodies use the first face until assigned. Native sprite
+indices are transient caches, rebuilt after loading; no global actor lookup is
+introduced. Bandit subclasses are excluded. The original state machine,
+weapon/shield/carbine objects, collision, physiology and damage are unchanged.
+The same saved face is used for movement, firing, pain and death.
+
+The four prisoner classes retain their identity and pose names with cloth-only
+finite palettes. Clothing appearance neither grants equipment nor reveals a
+hidden affiliation. Guard recognition still identifies the protagonist as
+captain; this patch adds no separate captain NPC.
 
 ## 5.9.6 / #424 - Faction service consequences
 

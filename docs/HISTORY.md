@@ -1,6 +1,19 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.9.6** - 2026-10-29.
+Documentation version: **5.9.7** - 2026-10-29.
+
+## 5.9.7 - Guard and prisoner wardrobes (#423, 2026-10-29)
+
+Implemented the approved navy/gray/cap guard wardrobe with four existing faces,
+shared authored pose modules and native composition. Prisoners retain their
+current identity art; conservative finite cloth palettes distinguish their
+wardrobes without secret insignia. No item, stat, faction or combat action is
+changed. Additive guard revision stores semantic face only; transient native
+indices rebuild after loading. Original packages/saves remain reversible.
+
+Static/native/art and rendering-callback evidence: assets/validation_597.
+V5.9 implementation is complete; numbered manual checks are queued separately
+for #418-424. None is author-accepted yet, and no merge/closure is claimed.
 
 ## 5.9.6 - Faction service consequences (#424, 2026-10-29)
 

@@ -2321,6 +2321,12 @@ deduplication, cleared on resolution. The measured population is one volley of
 a separate latency concern. This is neither a per-tic global scan nor a claim
 that arbitrary projectile counts or active rendering have been validated.
 
+#423 / 5.9.7: cache native sprite identifiers in transient per-body fields.
+The isolated 10,000 restore/apply loop fell from53.875ms to0.2373ms with
+identical poses and save behavior. Resolve names once per body/load instead of
+repeating lookups every tic. These are local loop costs, not displayed FPS;
+see validation_597 for the separate city callback comparison and its limits.
+
 ## CA-KP-110 - Simulation throughput does not establish playable frame presentation
 
 Status/evidence: ENGINE-VERIFIED measurement distinction; AUTHOR-REPORTED
