@@ -1,0 +1,32 @@
+{
+  "issue": 423,
+  "version": "5.9.7",
+  "author": "Damian Curti / Caelum Argenteum",
+  "tool": "OpenAI native image_gen through the imagegen skill",
+  "mode": "reference edits with transparent background; no model/API override",
+  "references": "Project-owned modular human bodies/heads/hair and established guard equipment; exact prompts in PROMPTS.json and PROMPTS_ADDITIONAL.json",
+  "unused": [
+    "guard_sword_candidate_v1.png (wrong cell count)",
+    "reference_guard_sword.png (empty failed technical board)"
+  ],
+  "processing": "Deterministic alpha cleanup, crop, resizing, registration and finite palettes; original sources retained",
+  "source_sha256": {
+    "guard_cap_v1.png": "fb73592d9da1172988388b7b569e0aafd772453434e2515af3d59975278c30d5",
+    "guard_crouch_v1.png": "336b4d1aa1269d4baf1a1860d46ceff7ee2c642cfa9236f9624aaffdb43deab9",
+    "guard_fire_v1.png": "9c276882f028fec60173f87bfa4aadbefe784050deb08c804f3997303df05d6c",
+    "guard_idle_v1.png": "7c206894abe3ad481e88088b42855e45b586c5e914208bcc6a8b99960b24dbae",
+    "guard_pain_death_v1.png": "fb5a4be3aebce47142d62d6b0d075f798b264137defd9afbdf435954d95fb65b",
+    "guard_registration.png": "58e84d13f343b1514f1e5321669fcfab03e8539cdbaacb61e004b39d92de5359",
+    "guard_sword_candidate_v1.png": "49d6203c53074f562167b05a40910e21a56b955058c888df5730bbc09620056a",
+    "guard_sword_v2.png": "fa738443766d40c9f2c7f3c04234e5cce33519b2ac47214e4bd2498c0a759e7b",
+    "guard_walk_melee_v1.png": "515edd8f30871cb06268e8cbd0c700fc7b6cfbf4384fea008a56398331c4c614",
+    "prisoner_registration.png": "d6615c4eca18f7560e4c80dfef8b30278d195b3943f2188505e9a8a8401dd799",
+    "reference_crouch.png": "a886afd6027a01400a599594dccca3d89a32ebb568703bd4deda42b952934be8",
+    "reference_fire.png": "3eec5d4c2b5a1b0f59b85e52c87bcbbf360debe5233f6ff2732c8db507507548",
+    "reference_guard_sword.png": "f9363671308f8b04e7f66f443e0ee206a6e49bc10c190705b6bb5eefd8ff337c",
+    "reference_melee_grid.png": "755998a874ca06ea3bf990955963a4a6ad032f2235f60ab696468fcea7eb77cf",
+    "reference_pain_death.png": "dec7b1068f6cae1255ed4486a1f219a814cad0bba1bab183efd0a82a56e50a2d",
+    "reference_walk_melee.png": "dc9d6ce52eae4f5cdc4ff0cb5cef84d261aaa0736a858cbf5669ddde91136a7e"
+  },
+  "author_acceptance": "pending"
+}

@@ -1,0 +1,10 @@
+{
+  "issue": 423,
+  "policy": "Cloth overlays only; retain current prisoner faces, hair/fur, skin, alpha, silhouettes and owned equipment. No insignia or faction discovery.",
+  "wardrobes": {
+    "unitario": {"name": "Leonor: muted umber cloak", "ramp": [[0, [12, 10, 8]], [0.3, [63, 43, 29]], [0.62, [127, 96, 66]], [1, [202, 177, 142]]]},
+    "federal": {"name": "Rufino: slate coat", "ramp": [[0, [9, 11, 15]], [0.3, [40, 49, 63]], [0.62, [91, 106, 125]], [1, [179, 188, 199]]]},
+    "bestia": {"name": "Santos: ochre waist cloth", "ramp": [[0, [14, 12, 8]], [0.3, [66, 48, 24]], [0.62, [137, 108, 56]], [1, [206, 183, 125]]]},
+    "tarot": {"name": "Leandro: muted olive coat", "ramp": [[0, [10, 12, 9]], [0.3, [41, 48, 33]], [0.62, [92, 103, 72]], [1, [175, 185, 148]]]}
+  }
+}
