@@ -1,14 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.11.2** - 2026-10-30.
+Documentation version: **5.11.3** - 2026-10-30.
 
-## V5.11 implementation - 5.11.2 (#432, 2026-10-30)
+## V5.11 implementation - 5.11.3 (#433, 2026-10-30)
 
-#429 formations and #431 profiling have separate PRs576/575. #432 now shares
-bounded historical climate work and unchanged NPC attribute curve results.
-Static/native equivalence and full-package campaign measurements pass; siege
-simulation improves modestly but remains slow. #430 companions and #433 distant
-search evaluation remain active. Author review is deferred to a combined handoff.
+#429 formations, #431 profiling and #432 derived caches have PRs576/575/577.
+#433 evaluated the approved five-tic empty-search candidate, retaining event
+wakeups and14 native/save checks. It is not adopted: no eligible searches were
+skipped during the measured siege window, and peaceful scenes show no clear gain.
+#430 companions remain active. The author will receive the combined manual handoff
+when implementation finishes. No V5.11 merge or author acceptance is claimed.
 
 ## V5.10 complete and author-accepted - 5.10.3 (2026-10-30, #403)
 

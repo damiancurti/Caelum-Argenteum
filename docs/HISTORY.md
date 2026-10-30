@@ -1,6 +1,37 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.11.2** - 2026-10-30.
+Documentation version: **5.11.3** - 2026-10-30.
+
+## 5.11.3 - Conditional distant-search evaluation (#433, 2026-10-30)
+
+The author authorized evaluating empty visual searches every5 active tics only
+without targets, private memories or nearby perceptible actors, with immediate
+sound/damage/contact/order wakeups and unchanged combat/resources/collision.
+The deterministic prototype remains in assets/validation_v5_11_3; it is NOT
+adopted in production. Only the two required diagnostic release labels change.
+
+Final diagnostic native checks:12 PASS plus2 reload checks. They cover empty
+reuse, movement/turn wake, newly entering targets, visible allies, anonymous
+noise, hidden damage, physical contact, audible orders, private memory and
+unchanged physics flags. Static validation: zero errors. No author acceptance.
+
+Compared with5.11.2, candidate mean/p99 render callbacks (ms) are mansion
+16.244/19.202, sewers5.682/7.719, city8.451/11.240, ground11.406/15.782.
+The corresponding references are16.121/19.224,5.535/7.315,8.408/11.184,
+11.500/15.393; no clear peaceful improvement follows. First siege candidate
+simulation mean/p99 is41.995/70.465 versus43.082/71.644. A repeat reference is
+42.044/70.039, candidate41.009/66.706; callback means719.748 versus703.075.
+However the diagnostic skip counter remains178 at BOTH window boundaries:
+zero searches are avoided inside that sample. The small differences cannot
+establish benefit from throttling. Updated contact wakeups also change the
+command-group trajectory (15 versus16 groups), despite equal1401 ->1588 census.
+Do not misattribute scheduling/contact variance to the empty-search cache.
+
+The conditional adoption gate is therefore unmet. General actor sleep, renderer
+culling, reduced resources and broader cadences remain unauthorized. Preserve
+these failed-to-demonstrate-benefit results for future profiling rather than
+shipping an unproven change. No candidate presentation/60FPS claim is made.
+Evidence: assets/validation_v5_11_3/summary.json and compressed native logs.
 
 ## 5.11.2 - Shared deterministic NPC costs (#432, 2026-10-30)
 

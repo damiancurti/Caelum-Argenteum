@@ -1,8 +1,8 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.11.2** - 2026-10-30.
+Documentation version: **5.11.3** - 2026-10-30.
 
-## V5.11 active - 5.11.2 (#429-433, 2026-10-30)
+## V5.11 active - 5.11.3 (#429-433, 2026-10-30)
 
 - #431: subsystem profiling and current/full35/reduced5/simplified diagnostic
   comparisons; production runtime unchanged. Numerical accuracy observations
@@ -16,9 +16,9 @@ Documentation version: **5.11.2** - 2026-10-30.
   every attribute, not customizable player statistics or ordinary guard 18.
 - #432: shared climate/pristine/attribute caches pass133 final native assertions.
   Normal siege improves modestly; presentation remains unmeasured for this patch.
-- #433: implement only evidence-supported improvements; preserve individual
-  combat, resources, collisions and event wakeups. The five-tic empty-search
-  candidate is authorized for evaluation, not assumed beneficial.
+- #433: approved candidate evaluated;14 native wake/reload assertions pass.
+  No production adoption: siege sample avoids zero queries, and peaceful scenes
+  show no clear benefit. Evidence and counter limitations: validation_v5_11_3.
 - Deliver one linked PR per issue, commit/push separately, and group outstanding
   author checks in root pending_test.txt when the whole version is ready.
   V5.11 merges/closure are not yet authorized.
