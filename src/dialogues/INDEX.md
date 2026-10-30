@@ -53,9 +53,9 @@ Source SHA-256 fingerprints:
 - `dialogues/shared/reputation_trial.usdf`: `5dca1d778da39b44c65083d94e097263ea4c07c54268cf2dff301bc61a55802f`
 - `dialogues/shared/caravan_routes.usdf`: `20ab0bc770aca3186a5eedae754eee526aef890e066355ac24c73c776902b72d`
 - `dialogues/shared/rest_and_tables.usdf`: `8c4e68ac60b11860e3e3a127f7a2e668d34d5a0644008217083cc9258a6db015`
-- `dialogues/npc/prisoner_unitario.usdf`: `98d26a3113f329a61f1c8e88ce23cd44f082c118c11bd98c8292303cf1e29168`
-- `dialogues/npc/prisoner_federal.usdf`: `261d9a9853b1dc98ba8f50d0e2c75a0fdd3d344f52087576aa90ee07377b79b4`
-- `dialogues/npc/prisoner_bestia.usdf`: `acb541248beaf1b2e581bea25f15714ee9aed6a5bd855c80831c56400d66160e`
+- `dialogues/npc/prisoner_unitario.usdf`: `37bdc2b76b525fee5123514c7b9c2e1f566a2be204437c69d67121e4939cc985`
+- `dialogues/npc/prisoner_federal.usdf`: `47cbea0874b51cbfe1df09c80674445c1152689dc48a4bf7c4266a06c2b01dd7`
+- `dialogues/npc/prisoner_bestia.usdf`: `376bd8a2e17406e07c91822f68f1601a88b9f9e0aa0fd66551ebe6f5dcd23b09`
 - `dialogues/npc/prisoner_tarot.usdf`: `106352a75150b41b0460544ad08f767642ed79f5661986f7cdc54cde151d92ae`
 - `dialogues/npc/cups_ace.usdf`: `914303f65c6cc2f81a13c673852889f0c52d28ca7a2b389c7cd1d9b8644f1145`
 - `dialogues/npc/wands_knight.usdf`: `53fcc360073bce30f82f7168a6cb64a224fe2303c38cd01841439bb448a8b894`

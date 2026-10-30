@@ -1,6 +1,15 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.9.2** - 2026-10-29.
+Documentation version: **5.9.3** - 2026-10-29.
+
+## 5.9.3 - Campaign membership (#420, 2026-10-29)
+
+Added the author-approved free post-rescue joining option for the three confirmed
+representatives, gated at Neutral reputation. Native choices reuse current pages
+without changing saved conversation indices. The authoritative action rechecks
+eligibility and updates the existing membership record once; hidden memberships,
+reputation, money and witness knowledge remain unchanged. Evidence:
+assets/validation_593/RESULTS.md. Author acceptance awaits complete V5.9 handoff.
 
 ## 5.9.2 - Private port dialogue (#419, 2026-10-29)
 

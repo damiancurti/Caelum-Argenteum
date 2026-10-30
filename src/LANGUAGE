@@ -7065,3 +7065,10 @@ CA_PORT_DECLARE_2 = "Pertenezco a los Pueblos Libres.";
 CA_PORT_DECLARE_3 = "Pertenezco a los Caelith.";
 CA_PORT_DECLARE_4 = "Pertenezco al Culto del Tarot.";
 CA_PORT_DECLARE_5 = "Pertenezco a los Guerreros del Sol.";
+
+[enu default]
+CA_PORT_JOIN_CHOICE = "I want to join your faction. [Free]";
+CA_PORT_JOIN_DONE = "You have joined this representative's faction. Your other affiliations remain private.";
+[es]
+CA_PORT_JOIN_CHOICE = "Quiero incorporarme a tu facción. [Sin coste]";
+CA_PORT_JOIN_DONE = "Te incorporaste a la facción de este representante. Tus otras afiliaciones siguen siendo privadas.";

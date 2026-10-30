@@ -4,6 +4,7 @@ class CaelumFactionData : Object
     const RANK_COUNT = 7;
     const HOSTILITY_MAXIMUM = -250;
     const DISCLOSURE_PENALTY = 100;
+    const JOIN_MINIMUM_RANK = 3; // Neutral o mejor.
 
     static clearscope int ConfirmedPrisonerFaction(int prisoner)
     {
