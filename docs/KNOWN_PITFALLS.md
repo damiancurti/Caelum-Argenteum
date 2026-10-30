@@ -5119,6 +5119,13 @@ old mentor/prisoner close/reopen, new exact-page saves and original-save rollbac
 Author confirmation: CA-43622-NARRATIVE-01 passed 2026-09-27. See
 [evidence](../assets/validation_43622/dialogue_resume_fix.json).
 
+#419 / 5.9.2: append new conversations at the end of index.json's explicit
+order and retain old owned conversations as compatibility sources. The prior
+runtime.usdf remains an exact byte prefix; native old open-dialogue loading is
+verified in validation_592. Adding pages inside an earlier conversation would
+shift every later global node even if public conversation IDs remained stable.
+
+
 ## How to read this register
 
 This is a compact engineering memory, not a second bug tracker or a claim that every historical fix has been independently reproduced. Use the current issue for active scope and HISTORY for release chronology and author acceptance.

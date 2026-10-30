@@ -158,6 +158,7 @@ class CaelumPlayer : DoomPlayer
     bool MainM00AwakeningVisualStarted;
     bool JournalFactionMember[CaelumConstants.FACTION_COUNT];
     int JournalFactionReputation[CaelumConstants.FACTION_COUNT];
+    int PortEmotionChance;
     bool JournalReputationTrialEnabled;
     // Plan transaccional temporal. Contiene el saldo físico final por
     // denominación y permite validar peso/slots antes de mutar inventario.

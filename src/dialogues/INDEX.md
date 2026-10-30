@@ -31,10 +31,10 @@ Runtime-generated text keys are also discoverable with `find TERM` in the comple
 | reputation_trial | [reputation_trial.usdf](shared/reputation_trial.usdf) | 43322, 43323 |
 | caravan_routes | [caravan_routes.usdf](shared/caravan_routes.usdf) | 43410, 43411, 43412, 43413, 43414, 43415 |
 | rest_and_tables | [rest_and_tables.usdf](shared/rest_and_tables.usdf) | 43510, 43511, 43512, 43513, 43514, 43515, 43516 |
-| prisoner_unitario | [prisoner_unitario.usdf](npc/prisoner_unitario.usdf) | 43420, 43424 |
-| prisoner_federal | [prisoner_federal.usdf](npc/prisoner_federal.usdf) | 43421, 43425 |
-| prisoner_bestia | [prisoner_bestia.usdf](npc/prisoner_bestia.usdf) | 43422, 43426 |
-| prisoner_tarot | [prisoner_tarot.usdf](npc/prisoner_tarot.usdf) | 43423, 43427 |
+| prisoner_unitario | [prisoner_unitario.usdf](npc/prisoner_unitario.usdf) | 43420, 43424, 43640 |
+| prisoner_federal | [prisoner_federal.usdf](npc/prisoner_federal.usdf) | 43421, 43425, 43641 |
+| prisoner_bestia | [prisoner_bestia.usdf](npc/prisoner_bestia.usdf) | 43422, 43426, 43642 |
+| prisoner_tarot | [prisoner_tarot.usdf](npc/prisoner_tarot.usdf) | 43423, 43427, 43643 |
 | cups_ace | [cups_ace.usdf](npc/cups_ace.usdf) | 43620 |
 | wands_knight | [wands_knight.usdf](npc/wands_knight.usdf) | 43621 |
 | guards | [guards.usdf](npc/guards.usdf) | 43631, 43632 |
@@ -53,11 +53,11 @@ Source SHA-256 fingerprints:
 - `dialogues/shared/reputation_trial.usdf`: `5dca1d778da39b44c65083d94e097263ea4c07c54268cf2dff301bc61a55802f`
 - `dialogues/shared/caravan_routes.usdf`: `20ab0bc770aca3186a5eedae754eee526aef890e066355ac24c73c776902b72d`
 - `dialogues/shared/rest_and_tables.usdf`: `8c4e68ac60b11860e3e3a127f7a2e668d34d5a0644008217083cc9258a6db015`
-- `dialogues/npc/prisoner_unitario.usdf`: `4f4272dd6700c5173d2215f822bdd9dbf221aee33083eeac0d208a149b1b8955`
-- `dialogues/npc/prisoner_federal.usdf`: `c949a4660d2461f0c1220d3787bc3845b15f663ced8e890505a9b58c2a057712`
-- `dialogues/npc/prisoner_bestia.usdf`: `0d14555bb7f7c7417713ed6818cca90de21d8cb1807c3c66bcc658c9d5f56656`
-- `dialogues/npc/prisoner_tarot.usdf`: `d74a5b5e409c147e11505fcefb0281cd520aebaf3ebaac15a8c48ef6349511f6`
+- `dialogues/npc/prisoner_unitario.usdf`: `98d26a3113f329a61f1c8e88ce23cd44f082c118c11bd98c8292303cf1e29168`
+- `dialogues/npc/prisoner_federal.usdf`: `261d9a9853b1dc98ba8f50d0e2c75a0fdd3d344f52087576aa90ee07377b79b4`
+- `dialogues/npc/prisoner_bestia.usdf`: `acb541248beaf1b2e581bea25f15714ee9aed6a5bd855c80831c56400d66160e`
+- `dialogues/npc/prisoner_tarot.usdf`: `106352a75150b41b0460544ad08f767642ed79f5661986f7cdc54cde151d92ae`
 - `dialogues/npc/cups_ace.usdf`: `914303f65c6cc2f81a13c673852889f0c52d28ca7a2b389c7cd1d9b8644f1145`
 - `dialogues/npc/wands_knight.usdf`: `53fcc360073bce30f82f7168a6cb64a224fe2303c38cd01841439bb448a8b894`
 - `dialogues/npc/guards.usdf`: `3828796ecdf2bdf00205032d123c2723471888151bea12c4144db0c6d39081bf`
-- `dialogues/index.json`: `f61bd507fe6dd12d33c2aa2db49cf7abea6c2d97af95de3e1d9a61391aa5555b`
+- `dialogues/index.json`: `0904058bbf37939e0128dbb2953d3f3fdebba24ed698dc61d3263ab2bd5c1825`

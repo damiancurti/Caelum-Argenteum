@@ -1,17 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.9.1** - 2026-10-29.
+Documentation version: **5.9.2** - 2026-10-29.
 
-## V5.9 active work - 5.9.1
+## V5.9 active work - 5.9.2
 
 - #418: shared requirement evaluator and compared quest writes implemented;
   port narrative registry integrated. Native evidence: validation_590. Finish
   integration with the authored #422 chains and resulting reward/unlock types.
 - #420: ranks/relations, event receipts and post-arrival hostility implemented;
-  native evidence validation_591. Finish actual reports via #419 and services
-  via #424 before claiming complete integration.
-- #419: private emotional readings and separate declaration/report choices;
-  exact table approved in GitHub. Preserve tutorial rolls.
+  native evidence validation_591. #419 now connects actual reports; services
+  via #424 remain before complete integration.
+- #419: private emotional readings and separate declaration/report choices
+  implemented in native port dialogue; evidence validation_592. Tutorial rolls
+  and all old dialogue nodes remain unchanged. Author corroboration grouped.
 - #421/#422: Barracas arrival/recognition/preparation/aftermath and the two
   requested quests (find the protagonist's house; investigate the siege).
 - #423: guards and four prisoners, preserving canonical bodies/identities and

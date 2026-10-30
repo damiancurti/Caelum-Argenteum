@@ -1,14 +1,14 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.9.1** - 2026-10-29.
+Documentation version: **5.9.2** - 2026-10-29.
 
-## V5.9 in progress - 5.9.1 (#418/#420)
+## V5.9 in progress - 5.9.2 (#418/#420/#419)
 
-Shared quest coordination and faction consequence foundations are implemented
-on separate focused branches. #420 includes approved ranks/relationships,
-revisioned event receipts and post-arrival hostility; native old-save/current
-save and hub evidence is retained in validation_590/591. Dialogue/report choices,
-new story/quests, service integration and visual variants remain in progress.
+Shared quest coordination, faction consequences and private port dialogue are
+implemented on separate focused branches. #419 now connects actual native
+readings/declarations/reports to #420, preserving tutorial rules and old native
+conversation nodes. Native evidence is retained in validation_590/591/592.
+New story/quests, service transactions and visual variants remain in progress.
 Issues #418-424 stay open and the manual terminal waits for the complete version.
 V5.8 remains the accepted baseline described below.
 

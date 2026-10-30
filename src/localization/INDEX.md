@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `a303d7e30874033a7b590528ed9521fcfa8b33a0abcdff50ac9ca95041100291`. Locations include every definition; the last one per language wins.
+SHA-256: `6da9147434bd4f893ad39da8cc063200018788efe9e3340549ce7bf1b7320ba5`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -145,7 +145,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_PICKUP | 16 | CA_PICKUP_AMULET | CA_PICKUP_WATER_RATION |
 | CA_PLAYER | 1 | CA_PLAYER_DISPLAY_NAME | CA_PLAYER_DISPLAY_NAME |
 | CA_POI | 45 | CA_POI_BED | CA_POI_WORKSHOP_RULO |
-| CA_PORT | 5 | CA_PORT_AFTER | CA_PORT_SOLDIER |
+| CA_PORT | 30 | CA_PORT_AFTER | CA_PORT_SOLDIER |
 | CA_PRISONER | 30 | CA_PRISONER_BESTIA_NAME | CA_PRISONER_UNITARIO_NAME |
 | CA_PROFESSION | 6 | CA_PROFESSION_ARCANIST | CA_PROFESSION_PILGRIM |
 | CA_PROFILE | 4 | CA_PROFILE_HEIGHT | CA_PROFILE_SEX |
