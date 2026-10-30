@@ -1,0 +1,38 @@
+{
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-nomouse",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\integration\\checks425.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\integrated-425-memory.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "-rngseed",
+    "428",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\integrated-425-memory.log",
+    "+map",
+    "CA425A",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\integrated-425-memory.cfg"
+  ],
+  "pid": 12528,
+  "packages": {
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\final\\caelum_argenteum_dev.pk3": "4c9830777147237c5797c646d10bd1f00f2379369ddbe50134049dc64f13818d",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\integration\\checks425.pk3": "0daf3aee2dc4916448b2ff02bc8a16cc73879a6e307171db3ac31e885deb485b"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 17.204,
+  "failures": [],
+  "pass_count": 33
+}

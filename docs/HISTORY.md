@@ -1,6 +1,66 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.10.2** - 2026-10-30.
+Documentation version: **5.10.3** - 2026-10-30.
+
+## 5.10.3 - Audible reports and leader orders (#428, 2026-10-30)
+
+Implemented private saved report provenance, original-age expiry, five-second
+shout throttling and actual group/faction eligibility. Members inform their
+leader through real audibility; only an audible return order authorizes their
+group target. Members independently choose the nearest valid ordered point.
+Help-seeking uses remembered ally positions during existing retreat conditions.
+The shared high-density cache remains a candidate hint, not shared knowledge.
+Existing owned recognition voices accompany shouts where a class supplies one;
+no new external audio is introduced.
+
+Full-package communication/save/migration/rollback: 53 PASS, plus one original
+legacy-seed check. Combined #425-427 regression: 91 PASS. Evidence and immutable
+package hashes: assets/validation_5103. Early compilation caught a reserved
+identifier and a case-insensitive fixture name collision; both are corrected.
+The old #425 fixture called a previously recognized body new after three
+seconds. Its integration copy now verifies approved immediate reacquisition
+and separately spawns an unknown body. The first #427 combined run ended before
+expiry; the corrected run retains the original 1320-tic window. Historical
+fixtures and all local failed attempts are preserved.
+
+Profiling found repeated visual acquisition and a live defender fallback that
+incorrectly doubled as a route destination. Attackers now march toward the
+authored gate, preserving crew posts. Same-tic private candidate reuse and the
+existing >=500 command groups share spatial candidates only, retaining each
+member's vision and audible-order requirements. No global actor scan was added.
+Native state-machine checks cover reports, help seeking and route privacy.
+Static project validation reports zero errors. The visible lab's event sequence
+was exercised natively: vision1/0/1/0, noise0, memory1/0/1/0/0/1 and receiver
+orders1/0/1 (identity states). Reappearance is deliberately separated from the
+NPC so direct contact cannot mask the expired-memory test. Native captures were
+inspected; this is agent verification, not author acceptance or a physical-key
+input test. Logs are retained in validation_5103; captures stay local in build.
+Author acceptance remains pending; no V5.10 issue is merged or closed.
+
+Final uninstrumented full-package campaign comparisons (callback mean / p99 ms):
+
+| Scene | Accepted 5.9.7 baseline | 5.10.3 final |
+| --- | --- | --- |
+| Mansion | 15.710 / 19.638 | 15.290 / 18.703 |
+| Sewers | 5.010 / 7.466 | 5.868 / 8.136 |
+| Peaceful city | 9.406 / 11.609 | 9.392 / 11.681 |
+| City, ground-facing | 12.988 / 15.540 | 12.783 / 15.190 |
+| Large campaign siege | 601.959 / 650.804 | 653.627 / 696.412 |
+
+The siege's simulation mean/p95/p99 was 35.252/45.143/50.673 ms baseline and
+38.183/52.723/58.403 ms final. The additional cost remains visible; this is not
+performance parity or a fixed siege-stall claim. Normal authored reinforcements
+were retained: baseline census 1600 to1572 living combatants, final 1500 to1598,
+with 600 defender entries and up to the approved 1000 living attacker admission
+limit. These are representative campaign windows, not identical trajectories.
+No retired 6000-simultaneous-attacker test was run. Raw full logs/configuration
+hashes, mean/p95/p99/max and counts are archived in validation_5103.
+RenderOverlay callbacks are not displayed-frame presentation. Prior ETW capture
+was access-denied and the local PresentMon executable is unavailable; no monitor
+FPS is asserted. Native screenshots support lab visual review; the Windows
+computer-use bridge was unavailable, so physical keyboard delivery remains an
+author check. The original save/package rollback and all failed diagnostic
+attempts remain on disk. Pending author IDs: CA425-01 through CA428-01.
 
 ## 5.10.2 - Private perception memory (#427, 2026-10-30)
 

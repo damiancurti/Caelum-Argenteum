@@ -4,6 +4,9 @@ class CaelumPerceptionRecord : Object play
     Actor Subject;
     vector3 Position;
     int ObservedTic;
+    CaelumCombatActor OriginalWitness,Reporter,OrderLeader;
+    int OrderObservedTic,LastReportObservedTic,LastReportSentTic;
+    bool ReportSent;
 }
 
 class CaelumSearchPoint : CaelumSewerEscapeTarget
@@ -48,13 +51,15 @@ class CaelumPerceptionMemory : Object play
         return null;
     }
 
-    void Remember(Actor subject,vector3 point,int observedTic)
+    void Remember(Actor subject,vector3 point,int observedTic,
+        CaelumCombatActor originalWitness=null,CaelumCombatActor reporter=null)
     {
         if(!CaelumVisualPerception.Living(subject) || !CaelumPerceptionMemoryData.Fresh(observedTic))return;
         let record=Find(subject);
         if(record==null){record=new("CaelumPerceptionRecord");record.Subject=subject;Records.Push(record);}
-        else if(record.ObservedTic>observedTic)return;
+        else if(record.ObservedTic>observedTic || (record.ObservedTic==observedTic && reporter!=null))return;
         record.Position=point;record.ObservedTic=observedTic;
+        record.OriginalWitness=originalWitness;record.Reporter=reporter;
     }
 
     void ClearGoal(CaelumCombatActor body)
@@ -75,6 +80,8 @@ class CaelumPerceptionMemory : Object play
 
     void ChooseFocus(CaelumCombatActor body)
     {
+        if(CaelumCommunication.NeedsOrder(body))
+        {CaelumCommunication.ChooseOrderedFocus(body,self);return;}
         if(HasFocus(body))return;
         double best=1e30;
         for(int i=0;i<Records.Size();i++)
@@ -99,8 +106,15 @@ class CaelumPerceptionMemory : Object play
         }
         else
         {
+            // Un aviso autorizado permite investigar sin inventar enemistad.
+            for(int i=0;i<Records.Size();i++)
+            {
+                let record=Records[i];
+                if(record.Reporter!=null && record.ObservedTic>newest)
+                {point=record.Position;newest=record.ObservedTic;found=true;}
+            }
             if(evidence.HasVisualPoint && CaelumVisualPerception.Living(evidence.Subject)
-                && CaelumPerceptionMemoryData.Fresh(evidence.LastVisualTic))
+                && CaelumPerceptionMemoryData.Fresh(evidence.LastVisualTic) && evidence.LastVisualTic>newest)
             {point=evidence.ObservedPosition;newest=evidence.LastVisualTic;found=true;}
             if(evidence.HasHeardNoise && CaelumPerceptionMemoryData.Fresh(evidence.NoiseTic)
                 && evidence.NoiseTic>newest)

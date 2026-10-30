@@ -4,6 +4,10 @@ class CaelumVisualEvidence : Object play
     int Revision, LastSampleTic, LastEvidenceTic, LastDecayTic, ContinuousSightTics;
     Actor Subject, IdentifiedSubject;
     CaelumPerceptionMemory Memory;
+    CaelumCommunicationState Communication;
+    transient Actor CandidateCache;
+    transient int CandidateCacheTic;
+    transient bool CandidateCacheReady;
     int LastVisualTic;
     bool HasVisualPoint;
 
@@ -52,7 +56,7 @@ class CaelumVisualEvidence : Object play
             Subject=candidate;ObservedPosition=candidate.Pos;LastVisualTic=level.time;HasVisualPoint=true;
             LastEvidenceTic=level.time;HasEvidence=true;
             if(ContinuousSightTics>=required)
-            {IdentifiedSubject=candidate;GetMemory().Remember(candidate,ObservedPosition,level.time);}
+            {IdentifiedSubject=candidate;GetMemory().Remember(candidate,ObservedPosition,level.time,observer);}
         }
         else {IdentifiedSubject=null;ContinuousSightTics=0;}
         VisibleNow=visible;PreviousSampleVisible=visible;LastSampleTic=level.time;
@@ -67,7 +71,7 @@ class CaelumVisualEvidence : Object play
         if(CaelumVisualPerception.CanSee(observer,source))
         {
             Subject=IdentifiedSubject=source;ObservedPosition=source.Pos;LastVisualTic=level.time;HasVisualPoint=true;
-            GetMemory().Remember(source,ObservedPosition,level.time);
+            GetMemory().Remember(source,ObservedPosition,level.time,observer);
             if(CaelumVisualPerception.Opponent(observer,source))GetMemory().Focus=source;
             ContinuousSightTics=int(TICRATE*CaelumPerceptionData.IDENTIFICATION_SECONDS);
             PreviousSampleVisible=VisibleNow=true;LastSampleTic=level.time;

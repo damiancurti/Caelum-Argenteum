@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.10.2** - 2026-10-30.
+Documentation version: **5.10.3** - 2026-10-30.
 
 ## 5.9.7 / #423 - Port wardrobes
 

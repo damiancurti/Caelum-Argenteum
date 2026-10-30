@@ -1,0 +1,188 @@
+{
+  "status": "Exploratory inclusive timings, not final acceptance; nested costs overlap. Final immutable package comparisons are in summary.json.",
+  "runs": [
+    {
+      "label": "diagnostic-siege-timers",
+      "measurement": [
+        "CA510 MEASURE candidate_ms=14762.733600 candidate_calls=541867 noise_ms=464.184800 noise_calls=54174 communication_ms=848.416200 communication_calls=1117100 acquire_ms=15031.166700 acquire_calls=541758"
+      ],
+      "run": {
+        "command": [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-nomouse",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\current\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\performance\\diagnostic-siege-timers.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\performance\\profile.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\performance\\diagnostic-siege-timers.ini",
+          "-window",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-rngseed",
+          "428",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\performance\\diagnostic-siege-timers.log",
+          "+map",
+          "MAP03",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\performance\\diagnostic-siege-timers.cfg"
+        ],
+        "packages": {
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\current\\caelum_argenteum_dev.pk3": "5f9d92f8daa085b4870bef127a5656d4b3d355ba1a9edabf3dad559e57ab4dd2",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\performance\\diagnostic-siege-timers.pk3": "1f38ee7a5511aea5ad12b92d2813788c506be284644305d149af07e1758d0c02",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\performance\\profile.pk3": "0618e5877f700a9f88ee79e44f7ed2f733ddd70bb077012ba0b6af5a654863e9"
+        },
+        "pid": 55524,
+        "exit_code": 0,
+        "elapsed_seconds": 179.329,
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 54.41201185714286,
+          "p95_ms": 86.6769,
+          "p99_ms": 90.5009,
+          "max_ms": 101.2759
+        },
+        "render_callbacks": {
+          "samples": 36,
+          "mean_ms": 929.4443027777777,
+          "p95_ms": 974.2881,
+          "p99_ms": 981.4144,
+          "max_ms": 993.1489
+        },
+        "census": [
+          "CA510 CENSUS start alive=1501 attackers=901 defenders=600 groups=14 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00",
+          "CA510 CENSUS end alive=1601 attackers=1001 defenders=600 groups=14 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00"
+        ],
+        "limit": "RenderOverlay callbacks do not measure displayed frames; presentation capture remains separate."
+      }
+    },
+    {
+      "label": "diagnostic-siege-routes",
+      "measurement": [
+        "CA510 MEASURE candidate_ms=6100.382900 candidate_calls=512773 noise_ms=490.252400 noise_calls=53427 communication_ms=756.547400 communication_calls=1081122 acquire_ms=6280.046300 acquire_calls=512646"
+      ],
+      "run": {
+        "command": [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-nomouse",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\current\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\performance\\diagnostic-siege-routes.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\performance\\profile.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\performance\\diagnostic-siege-routes.ini",
+          "-window",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-rngseed",
+          "428",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\performance\\diagnostic-siege-routes.log",
+          "+map",
+          "MAP03",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\performance\\diagnostic-siege-routes.cfg"
+        ],
+        "packages": {
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\current\\caelum_argenteum_dev.pk3": "5f9d92f8daa085b4870bef127a5656d4b3d355ba1a9edabf3dad559e57ab4dd2",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\performance\\diagnostic-siege-routes.pk3": "1f38ee7a5511aea5ad12b92d2813788c506be284644305d149af07e1758d0c02",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\performance\\profile.pk3": "a5ed8be9445180575853bed7f470ce697403471ce5b12ee1f352e427f247adb1"
+        },
+        "pid": 50596,
+        "exit_code": 0,
+        "elapsed_seconds": 151.792,
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 41.144814000000004,
+          "p95_ms": 58.8719,
+          "p99_ms": 65.1747,
+          "max_ms": 75.0593
+        },
+        "render_callbacks": {
+          "samples": 36,
+          "mean_ms": 704.3982583333333,
+          "p95_ms": 770.8681,
+          "p99_ms": 792.6009,
+          "max_ms": 835.3562
+        },
+        "census": [
+          "CA510 CENSUS start alive=1500 attackers=900 defenders=600 groups=14 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00",
+          "CA510 CENSUS end alive=1598 attackers=998 defenders=600 groups=14 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00"
+        ],
+        "limit": "RenderOverlay callbacks do not measure displayed frames; presentation capture remains separate."
+      }
+    },
+    {
+      "label": "diagnostic-siege-shared",
+      "measurement": [
+        "CA510 MEASURE candidate_ms=4303.752900 candidate_calls=512773 noise_ms=505.425100 noise_calls=53427 communication_ms=778.961400 communication_calls=1081122 acquire_ms=4484.632700 acquire_calls=512646"
+      ],
+      "run": {
+        "command": [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-nomouse",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\current\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\performance\\diagnostic-siege-shared.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\performance\\profile.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\performance\\diagnostic-siege-shared.ini",
+          "-window",
+          "-width",
+          "1280",
+          "-height",
+          "720",
+          "-rngseed",
+          "428",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\performance\\diagnostic-siege-shared.log",
+          "+map",
+          "MAP03",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\performance\\diagnostic-siege-shared.cfg"
+        ],
+        "packages": {
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\current\\caelum_argenteum_dev.pk3": "5f9d92f8daa085b4870bef127a5656d4b3d355ba1a9edabf3dad559e57ab4dd2",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\performance\\diagnostic-siege-shared.pk3": "1f38ee7a5511aea5ad12b92d2813788c506be284644305d149af07e1758d0c02",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\performance\\profile.pk3": "04db44357b5fe5c99e6a36af50778ce6631f14c9f832d384d73c6a3ef7e68b30"
+        },
+        "pid": 17228,
+        "exit_code": 0,
+        "elapsed_seconds": 149.786,
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 39.06366642857143,
+          "p95_ms": 53.4796,
+          "p99_ms": 62.153,
+          "max_ms": 69.0662
+        },
+        "render_callbacks": {
+          "samples": 36,
+          "mean_ms": 668.3297194444444,
+          "p95_ms": 714.8087,
+          "p99_ms": 721.1939,
+          "max_ms": 798.6468
+        },
+        "census": [
+          "CA510 CENSUS start alive=1500 attackers=900 defenders=600 groups=14 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00",
+          "CA510 CENSUS end alive=1598 attackers=998 defenders=600 groups=14 highdensity=1 pos=(-14464.00,-14000.00,0.00) angle=270.00 pitch=0.00"
+        ],
+        "limit": "RenderOverlay callbacks do not measure displayed frames; presentation capture remains separate."
+      }
+    }
+  ]
+}

@@ -79,12 +79,47 @@ class CaelumVisualPerception : Object play
         if(observer.PendingTheftTarget!=null && CanSee(observer,observer.PendingTheftTarget))return observer.PendingTheftTarget;
         Actor current=evidence.PreviousSampleVisible && CaelumPerceptionMemoryData.Fresh(evidence.LastVisualTic) ? evidence.Subject : null;
         if(Opponent(observer,current) && CanSee(observer,current))return current;
+        if(evidence.CandidateCacheReady && evidence.CandidateCacheTic==level.time)
+            return Opponent(observer,evidence.CandidateCache) && CanSee(observer,evidence.CandidateCache) ? evidence.CandidateCache : null;
         Actor nearest;double best=1e30;
+        CaelumCombatActor ally;double allyDistance=1e30;
+        let group=CaelumCommunication.CandidatesFor(observer);
+        if(group!=null)
+        {
+            // La lista espacial se comparte; cada miembro conserva sus filtros
+            // visuales y dos segundos propios. No constituye un aviso audible.
+            for(int i=0;i<group.Candidates.Size();i++)
+            {
+                let candidate=group.Candidates[i];
+                if(!Opponent(observer,candidate))continue;
+                double distance=observer.Distance3D(candidate);
+                if(distance<best && CanSee(observer,candidate)){nearest=candidate;best=distance;}
+            }
+            for(int i=0;i<group.Members.Size();i++)
+            {
+                let entry=group.Members[i];let friend=entry!=null ? entry.Body : null;
+                if(friend==observer || !Living(friend))continue;
+                double distance=observer.Distance3D(friend);
+                if(distance<allyDistance && CanSee(observer,friend)){ally=friend;allyDistance=distance;}
+            }
+            if(ally!=null)CaelumCommunication.ObserveAlly(observer,ally);
+            evidence.CandidateCache=nearest;evidence.CandidateCacheTic=level.time;evidence.CandidateCacheReady=true;
+            return nearest;
+        }
         let local=BlockThingsIterator.Create(observer,QueryRadius(observer));
         while(local.Next())
         {
             let candidate=local.thing;
-            if(!Opponent(observer,candidate))continue;
+            if(!Opponent(observer,candidate))
+            {
+                let friend=CaelumCombatActor(candidate);
+                if(friend!=null && CaelumCommunication.Eligible(observer,friend))
+                {
+                    double distance=observer.Distance3D(friend);
+                    if(distance<allyDistance && CanSee(observer,friend)){ally=friend;allyDistance=distance;}
+                }
+                continue;
+            }
             double distance=observer.Distance3D(candidate);
             if(distance>=best || !CanSee(observer,candidate))continue;
             nearest=candidate;best=distance;
@@ -101,6 +136,8 @@ class CaelumVisualPerception : Object play
             if(distance>=best || !CanSee(observer,candidate))continue;
             nearest=candidate;best=distance;
         }
+        if(ally!=null)CaelumCommunication.ObserveAlly(observer,ally);
+        evidence.CandidateCache=nearest;evidence.CandidateCacheTic=level.time;evidence.CandidateCacheReady=true;
         return nearest;
     }
 
@@ -109,15 +146,15 @@ class CaelumVisualPerception : Object play
         if(observer==null)return false;
         if(candidate is "CaelumSearchPoint")return false;
         if(observer.IsCaelumMassDiagnosticActor())return candidate!=null;
-        return Evidence(observer).Observe(observer,candidate);
+        return Evidence(observer).Observe(observer,candidate) && CaelumCommunication.MayEngage(observer,candidate);
     }
 
-    static Actor Acquire(CaelumCombatActor observer)
+    static Actor Acquire(CaelumCombatActor observer,Actor hint=null)
     {
         let evidence=Evidence(observer);let memory=evidence.GetMemory();
         Actor candidate;memory.ChooseFocus(observer);
         if(memory.HasFocus(observer))candidate=memory.Focus;
-        else candidate=Candidate(observer);
+        else candidate=hint!=null && CanSee(observer,hint) ? hint : Candidate(observer);
         if(Identify(observer,candidate) && Opponent(observer,candidate))
         {memory.Focus=candidate;memory.ClearGoal(observer);return candidate;}
         return null;

@@ -4,6 +4,44 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-191 - Share spatial candidates without sharing perception
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED; author acceptance PENDING.
+First recorded / last checked: 2026-10-30 / 2026-10-30.
+Issue: #428, based on 91786d4e5; final runtime hash and comparisons are recorded
+in assets/validation_5103/summary.json. Windows 11, GZDoom 4.14.2, Vulkan,
+RTX 3070 Ti/Ryzen 5950X; normal campaign, uncapped background rendering at 5% audio.
+Scope: visual acquisition, command rosters, PortSiege route fallback.
+
+Symptom: adding individually checked perception to the existing command groups
+repeated the same local enumeration through several state-machine paths in one
+tic. A legacy fallback returned a live unseen defender as a route destination.
+The first approved 1000-attacker/600-defender window regressed from 35.25 to
+57.65 ms per simulation tic on average; rendering callbacks were also slower.
+
+Fix: preserve the authored gate point and crew posts; cache private candidate
+enumeration once per tic, then reuse one bounded spatial list for each existing
+high-density command group. Keep all individual visibility, recognition and
+audible-order gates. Group membership is not evidence, a candidate is not a
+target permit, and an unseen live actor pointer is not a navigation coordinate.
+The group query includes member reach and one-tic motion padding. Existing
+offscreen census and unlinked-guard ownership remain unchanged.
+
+Diagnostic inclusive candidate cost fell from 14762.73 to 4303.75 ms in a
+700-tic window; nested acquisition timings overlap and must not be summed.
+Those instrumented runs are diagnostic evidence, not the final performance
+result. The uninstrumented full-package campaign comparisons, populations,
+mean/p95/p99/max simulation and render-callback intervals are archived in
+validation_5103. The native help/route fixture verifies that the old hidden
+defender pointer never replaces the gate route and shared candidates grant no
+identity or order. The automatic state-machine fixture verifies both audible
+legs without calling the diagnostic emit helper.
+
+Limitations: the accepted baseline siege already has severe rendering stalls.
+RenderOverlay callbacks do not measure monitor presentation; ETW capture was
+unavailable. Neither 35 tics/s nor these callbacks establish 60 displayed FPS.
+No retired 6000-simultaneous-attacker scenario was run.
+
 ## CA-KP-189 - Pause resumed-world work before native actors can run
 
 Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, unreleased #415,

@@ -1,0 +1,53 @@
+{
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-nomouse",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue425\\legacy\\caelum_argenteum_dev.pk3",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\performance\\baseline-ground.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\performance\\baseline-ground.ini",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "-rngseed",
+    "428",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\performance\\baseline-ground.log",
+    "+map",
+    "MAP03",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\performance\\baseline-ground.cfg"
+  ],
+  "packages": {
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue425\\legacy\\caelum_argenteum_dev.pk3": "4aa64b99c6908e34c6046313fa3e31926f060862b528df27e99c02dd075a504a",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue425-work\\build\\issue428\\performance\\baseline-ground.pk3": "995fd93027f83a7f8baaa1f82bc55acb56e8f6deed8f2ae0a00a2df4860f7131"
+  },
+  "pid": 31524,
+  "exit_code": 0,
+  "elapsed_seconds": 38.632,
+  "simulation": {
+    "samples": 700,
+    "mean_ms": 28.569337857142855,
+    "p95_ms": 38.9896,
+    "p99_ms": 40.3031,
+    "max_ms": 41.1205
+  },
+  "render_callbacks": {
+    "samples": 1387,
+    "mean_ms": 12.9881763518385,
+    "p95_ms": 14.5793,
+    "p99_ms": 15.5397,
+    "max_ms": 18.6103
+  },
+  "census": [
+    "CA510 CENSUS start alive=0 attackers=0 defenders=600 groups=0 highdensity=0 pos=(0.00,320.00,-0.00) angle=180.00 pitch=75.00",
+    "CA510 CENSUS end alive=0 attackers=0 defenders=600 groups=0 highdensity=0 pos=(0.00,320.00,-0.00) angle=180.00 pitch=75.00"
+  ],
+  "limit": "RenderOverlay callbacks do not measure displayed frames; presentation capture remains separate."
+}

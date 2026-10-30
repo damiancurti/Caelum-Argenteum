@@ -1,0 +1,59 @@
+{
+  "vision": {
+    "run": "manual-review-vision",
+    "identity_sequence": [
+      1,
+      0,
+      1,
+      0
+    ],
+    "expected": [
+      1,
+      0,
+      1,
+      0
+    ]
+  },
+  "noise": {
+    "run": "manual-review-noise",
+    "identity_sequence": [
+      0
+    ],
+    "expected": [
+      0
+    ]
+  },
+  "memory": {
+    "run": "manual-memory-verified-memory",
+    "identity_sequence": [
+      1,
+      0,
+      1,
+      0,
+      0,
+      1
+    ],
+    "expected": [
+      1,
+      0,
+      1,
+      0,
+      0,
+      1
+    ]
+  },
+  "orders": {
+    "run": "manual-review-orders",
+    "identity_sequence": [
+      1,
+      0,
+      1
+    ],
+    "expected": [
+      1,
+      0,
+      1
+    ]
+  },
+  "limits": "Native lab events and inspected engine captures; no author confirmation or physical keyboard test. Final memory fixture isolates visual reacquisition from direct contact."
+}

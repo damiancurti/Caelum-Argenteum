@@ -1,0 +1,17 @@
+CA425-01 | Origin 5.10.0 | Issue #425 | Final review package 5.10.3
+Prerequisites: final package and native lab prepared in build/issue428; GZDoom 4.14.2 and the local development IWAD. Close other GZDoom instances.
+Launcher: powershell -NoProfile -ExecutionPolicy Bypass -File C:\GZDooMProjects\CaelumArgenteum\build\issue425-work\assets\validation_5103\start_manual.ps1
+Choose 1. The visible observer recognizes you after two active seconds. F6 resets only the laboratory observer and turns it away; no rear recognition. F5 places you in front. F7 toggles darkness: at this distance the observer must lose visual contact, though its previous memory remains. F2 prints the actual state; F1 restarts this scene.
+Expected: alert and identity are distinct; turning/darkness block new visual recognition; returning into light permits recognition. Native assertions cover stealth, size, Insight, obstacles and cannon operators separately. Author corroboration pending.
+
+CA426-01 | Origin 5.10.1 | Issue #426 | Final review package 5.10.3
+Use the same launcher, choose 2. This laboratory disables your visual detectability to isolate hearing. F3 emits an anonymous noise at your position. F4 silently relocates you; do not walk, since footsteps are new sounds. Watch the NPC investigate the original noise point; F2 prints the heard point and identity state.
+Expected: alert increases and the observer investigates that point, without recognizing or tracking your silently relocated character. F1 resets. Author corroboration pending.
+
+CA427-01 | Origin 5.10.2 | Issue #427 | Final review package 5.10.3
+Use the same launcher, choose 3. Let the NPC recognize you. F4 hides you; it should search the last visible point. F5 within thirty active seconds permits immediate reacquisition. Restart with F1, repeat, then remain hidden until the displayed memory count becomes zero. F5 now requires two new seconds of observation. F2 prints point and age.
+Expected: hidden movement does not update the remembered position; expiry uses active game time and does not reveal the current hidden position. Author corroboration pending.
+
+CA428-01 | Origin 5.10.3 | Issue #428
+Use the same launcher, choose 4. The witness sees the target, reports to its leader, and the leader issues an audible order. The overlay displays each actor's memory and order. F4 moves the receiver beyond shout range and resets only that receiver's laboratory evidence. F5 returns it within range; allow up to five active seconds for the next order. F2 prints provenance and ages. Choose 5 separately to walk through the normal city and check fluency.
+Expected: the nearby receiver receives an order; the distant receiver does not gain identity/orders automatically. Anonymous noises may raise its alert independently. Returned orders preserve evidence age. Native save/reload, stale-report rejection, help seeking, and the measured high-density scenario are documented in validation_5103. Frame callbacks are not displayed-FPS evidence; author corroboration pending.

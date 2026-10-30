@@ -233,9 +233,12 @@ class CaelumPortSiege : CaelumSiegeEncounter
                     other.CommandGroup=Groups;queue.Push(other);
                 }
             }
+            if(leader.GroupCandidates==null)leader.GroupCandidates=new("CaelumCommandCandidates");
+            leader.GroupCandidates.Members.Clear();leader.GroupCandidates.Ready=false;
             for(int i=0;i<queue.Size();i++)
             {
                 queue[i].CommandLeader=leader;
+                leader.GroupCandidates.Members.Push(queue[i]);
                 if(queue[i]!=leader)CaelumTargetSubscriptions.Unwatch(queue[i]);
             }
             Groups++;
@@ -320,7 +323,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
     {
         let victim=CaelumVisualPerception.Candidate(leader.Body);
         leader.CombatTarget=victim;
-        return victim!=null ? victim : AttackingTarget[leader.Lane];
+        return victim;
     }
 
     void UpdateSharedTarget(CaelumSiegeCombatant leader)
@@ -348,8 +351,11 @@ class CaelumPortSiege : CaelumSiegeEncounter
             UpdateSharedTarget(leader);
         else CaelumTargetSubscriptions.Watch(leader);
         let victim=leader.SharedTarget;
-        // Una baja nunca se adopta como blanco vivo entre turnos de percepción.
-        return victim!=null && victim.health>0 && victim.bShootable ? victim : null;
+        // La cache solo ahorra candidatos; la vision y las ordenes audibles
+        // privadas siguen siendo obligatorias para autorizar el combate.
+        let perceived=CaelumVisualPerception.Acquire(entry.Body,victim);
+        if(perceived==null)perceived=CaelumVisualPerception.SearchGoal(entry.Body);
+        return perceived;
     }
 
     Actor IndividualAttackerTarget(CaelumSiegeCombatant entry)
@@ -358,7 +364,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
         let victim=CaelumVisualPerception.Acquire(entry.Body);
         entry.CombatTarget=victim;
         if(victim==null)victim=CaelumVisualPerception.SearchGoal(entry.Body);
-        return victim!=null ? victim : AttackingTarget[entry.Lane];
+        return victim;
     }
 
     CaelumSiegeCombatant NearestReserve(vector3 station)
@@ -626,6 +632,15 @@ class CaelumPortSiege : CaelumSiegeEncounter
         if(soldier!=null && soldier.Carbine!=null)soldier.Carbine.Select(!nearEnemy);
         if(hasPost && !nearEnemy && (body.Pos-post).Length()>body.Radius)
         {WalkTo(body,goal,post);return true;}
+        if(soldier==null && victim==null && !hasPost)
+        {
+            // La puerta es un destino de marcha conocido. El defensor mas
+            // cercano, aun oculto, nunca puede sustituirlo como coordenada viva.
+            vector3 gate=(CaelumPortData.GateX(entry.Lane),CaelumPortData.GateY(),0);
+            if((body.Pos.XY-gate.XY).Length()>body.Radius)WalkTo(body,goal,gate);
+            else {body.target=null;body.Vel.X=0;body.Vel.Y=0;}
+            return true;
+        }
         if(victim==null || victim.health<=0){body.target=null;return true;}
         body.target=victim;
         if(soldier!=null && soldier.Carbine!=null && !nearEnemy && soldier.Carbine.Attack(soldier,victim))return true;

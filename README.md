@@ -6,22 +6,26 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.10.2.** Obtain and update the complete repository, validate
+**Current release: 5.10.3.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-**V5.10 is in progress.** #425 vision, #426 anonymous noise and #427 private
-memory/search are implemented. Native evidence: validation_5100-5102; combined
-campaign/performance checks remain pending. #428 audible leader orders is the
-next separate dependent patch. Author review will use a grouped
-terminal after all four issues are implemented; this is not an accepted V5.10
-release. See SYSTEMS and TASKS.
+**V5.10 is implemented and awaiting author review.** #425 vision, #426 anonymous
+noise, #427 private memory/search and #428 audible reports/orders have separate
+commits, PRs and native evidence in validation_5100-5103. The final package passes
+53 communication/save/migration assertions and 91 combined regression checks.
+The grouped review launcher is `assets/validation_5103/start_manual.ps1`;
+`pending_test.txt` contains the four outstanding author checks. Issues remain
+open until accepted. The large siege remains slow: its final render-callback
+mean is 653.63 ms versus 601.96 ms on the accepted baseline; these are not monitor
+FPS. Peaceful comparisons and all tails are in validation_5103/summary.json.
+See SYSTEMS, HISTORY and TASKS.
 
 **V5.9 is complete and author-accepted (2026-10-30).** Issues #418-424 are
 closed; focused PRs #561-568 are merged into main with their commit ancestry.
 Quest coordination, factions, private conversation knowledge, Barracas story,
 house/siege investigations, wardrobes and explicit faction services are accepted.
 Evidence: `assets/validation_590` through `assets/validation_597`; per-test author
-confirmations are in HISTORY. The tracked `pending_test.txt` is empty.
+confirmations are in HISTORY. The tracked `pending_test.txt` was empty at that closure.
 
 V5.9 acceptance does not turn render-callback evidence into a claim of
 60 monitor-presented FPS.
