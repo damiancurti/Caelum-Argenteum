@@ -456,6 +456,8 @@ version "4.14"
 #include "caelum/trucazo/CaelumTrucoRules.zs"
 #include "caelum/trucazo/CaelumTrucoMatch.zs"
 #include "caelum/trucazo/CaelumTrucoMenu.zs"
+#include "caelum/trucazo/CaelumCardTable.zs"
+#include "caelum/trucazo/CaelumCardTableMenu.zs"
 
 #include "caelum/survival/CaelumThermalData.zs"
 #include "caelum/data/CaelumAltitudeData.zs"

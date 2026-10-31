@@ -71,7 +71,7 @@ class CaelumPortableDiningTable : CaelumDiningTable abstract
         {
             if(Chairs[i]==null)Chairs[i]=CaelumRestChair(Spawn(ChairClass(),SeatPosition(i),NO_REPLACE));
             if(Chairs[i]==null)return false;
-            let chair=Chairs[i];chair.DiningTable=self;chair.Angle=SeatAngle(i);
+            let chair=Chairs[i];chair.DiningTable=self;chair.DiningSeat=i;chair.Angle=SeatAngle(i);
             chair.A_SetSize(CaelumDiningSetData.ChairRadius(Kind()),CaelumDiningSetData.FullHeight(Kind()),false);
             chair.SetOrigin(SeatPosition(i),false);
         }

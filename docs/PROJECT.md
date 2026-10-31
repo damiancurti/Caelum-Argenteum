@@ -1,7 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.12.4** - 2026-10-31.
+Documentation version: **5.12.5** - 2026-10-31.
 
+## 5.12.5 - Human card-table PvP preparation (#590)
+
+V5.12 gains a separate focused issue for 1v1 Truco/Trucazo at the same occupied
+table, by mutual consent, with one deck supplied by either player. The author
+approved stand-up forfeit, active world and common-save recovery for disconnect.
+The existing rules are reused. #443-446 retain their later mechanics/services.
+Normal seating/shared time from #436, native two-peer invitations/actions,
+active-hand common-save restart, private-hand UI review and Argento regression
+now pass. This does not complete #434-438 or establish author acceptance. The
+author requested the manual terminal only after the entire version is ready.
 ## 5.12.4 - Organized combat venues (#438, in progress)
 
 Original 12 m ring and 64 m sewer maze, eight separate starts and passages at

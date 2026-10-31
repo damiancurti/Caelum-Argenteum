@@ -295,6 +295,12 @@ class CaelumRestState : Inventory
                 && user.player.cmd.upmove == 0 && (user.player.cmd.buttons & cancelButtons) == 0;
             return;
         }
+        if ((user.player.cmd.buttons & BT_USE)!=0 && CaelumCardSeat.Interact(user))
+        {
+            user.player.cmd.buttons &= ~BT_USE;
+            rest.InputArmed=false;
+            return;
+        }
         if (user.player.cmd.forwardmove != 0 || user.player.cmd.sidemove != 0
             || user.player.cmd.upmove != 0 || (user.player.cmd.buttons & cancelButtons))
             Cancel(user);
