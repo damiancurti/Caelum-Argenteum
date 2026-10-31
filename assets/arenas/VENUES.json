@@ -1,0 +1,14 @@
+{
+  "issue": 438,
+  "revision": 1,
+  "units_per_metre": 32,
+  "headroom": 160,
+  "light": 176,
+  "ring_frame_visual_only": {"editor_number":31090,"post_inset_m":0.1,"post_height_m":1.3,"post_radius_m":0.08,"rope_radius_m":0.018,"rope_heights_m":[0.45,0.85,1.2],"sides":8,"pixel_stretch_compensation":1.2,"wood":"models/caelum/props/stash/ca_stash_wood.png","rope":"models/caelum/world/alchemy_ingredients/cloth.png","note":"Original decorative corner posts and ropes. No collision, balance, additional arena area or new bitmap. Bounds remain inside the approved ring."},
+  "organizer": {"map": "CABAIRES", "position": [2368, 768, 0], "angle": 180},
+  "provenance": "Original layouts; approved 12 m ring and 64 m sewer maze, 2 m minimum passages. Existing owned city/sewer materials and Domingo DOID sprite, no new character identity or balance. Headroom/light reuse the city interior references.",
+  "venues": [
+    {"map": "CARING", "name_key": "CA_ARENA_RING", "size_m": 12, "floor": "CVPO01", "wall": "CVPO03", "ceiling": "CMST01", "music": "CA_MUS04_PORT", "starts": [[64,64,45],[192,64,90],[320,64,135],[320,192,180],[320,320,225],[192,320,270],[64,320,315],[64,192,0]]},
+    {"map": "CASEWER", "name_key": "CA_ARENA_MAZE", "size_m": 64, "passage_m": 2, "seed": 438, "floor": "CMST02", "wall": "CMST01", "ceiling": "CMST01", "music": "CA_MUS03_SEWER", "starts": [[96,96,0],[992,96,90],[1888,96,180],[1888,992,180],[1888,1888,180],[992,1888,270],[96,1888,0],[96,992,0]]}
+  ]
+}

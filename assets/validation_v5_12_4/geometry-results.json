@@ -1,0 +1,15 @@
+{
+  "issue": 438,
+  "deterministic": true,
+  "connected_cells": 573,
+  "maze_metres": 64,
+  "corridor_metres": 2,
+  "ring_metres": 12,
+  "sha256": {
+    "src\\maps\\CARING.wad": "427f079c98d2c9076d2c46d88bad9351e08f07bc17e77e5d8d71868c3d8c6ac8",
+    "src\\maps\\CASEWER.wad": "5f9f67ea0ffe92da0c7683ef66454817954ac77eaf08d951891f2de0a422db1d",
+    "src\\caelum\\data\\CaelumArenaData.zs": "d09bdc513515ff3ddfac5fc94f7f580d493e0f5807ff6218cae18c743bdb5321",
+    "src\\caelum\\data\\arenas.mapinfo": "f844418ff3fff651dff46c478d6412b2b2952d0a1bd78fccc3cfd001319afa00",
+    "src\\models\\caelum\\world\\arenas\\ring_frame.obj": "281b6d85a7aae6c5762f55caa296eecb522b6723978db7c2784dfcb07be8220c"
+  }
+}

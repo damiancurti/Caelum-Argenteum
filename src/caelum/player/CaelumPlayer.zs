@@ -1147,6 +1147,7 @@ class CaelumPlayer : DoomPlayer
     // registro persistente del personaje, no en el actor de Palomo.
     void SyncPalomoDialogueTokens()
     {
+        SetPalomoDialogueToken("CaelumArenaUnavailableToken",!multiplayer || health<=0);
         CaelumPersistentCharacterState persistentState =
             GetPersistentCharacterState(true);
         if (persistentState == null) { return; }
@@ -4429,6 +4430,7 @@ class CaelumPlayer : DoomPlayer
         CaelumTarotService.RestoreNativeEffect(self);
         CaelumDeadTraveler.Arrive(self);
         CaelumFoolJourney.Arrive(self);
+        CaelumArena.Arrive(self);
     }
 
     // PostBeginPlay runs after this player actor has entered the game world.
