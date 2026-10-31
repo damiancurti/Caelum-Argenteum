@@ -7196,3 +7196,34 @@ CA_COMPANION_TRANSFER = "Enter Regalar / solicitar";
 CA_COMPANION_LOAN = "L Prestar objeto";
 CA_COMPANION_PREVIOUS = "Arriba Anterior";
 CA_COMPANION_NEXT = "Abajo Siguiente";
+
+[enu default]
+CA_COOP_TIME_TITLE = "Shared time";
+CA_COOP_TIME_HELP = "Everyone must accept this exact duration. Waiting does not count as consent. Any player may cancel; changing the duration clears all votes.";
+CA_COOP_TIME_DURATION = "Duration: %d minutes of world time";
+CA_COOP_TIME_VOTES = "Consent: %d / %d";
+CA_COOP_TIME_ACCEPT = "Accept this duration";
+CA_COOP_TIME_REJECT = "Reject / cancel for everyone";
+CA_COOP_HOUR_DOWN = "-1 hour";
+CA_COOP_MINUTE_DOWN = "-1 minute";
+CA_COOP_MINUTE_UP = "+1 minute";
+CA_COOP_HOUR_UP = "+1 hour";
+CA_COOP_TIME_REST_ALL = "Everyone must be resting before accepting this rest proposal.";
+CA_COOP_TIME_RUNNING = "Advancing together. Anyone may interrupt.";
+CA_COOP_TIME_CANCELLED = "Shared time advance cancelled.";
+CA_COOP_TIME_COMPLETE = "The agreed time has elapsed.";
+[es]
+CA_COOP_TIME_TITLE = "Tiempo compartido";
+CA_COOP_TIME_HELP = "Todos deben aceptar esta duraci?n exacta. Esperar no cuenta como consentimiento. Cualquiera puede cancelar; cambiar la duraci?n borra todos los votos.";
+CA_COOP_TIME_DURATION = "Duraci?n: %d minutos del mundo";
+CA_COOP_TIME_VOTES = "Consentimiento: %d / %d";
+CA_COOP_TIME_ACCEPT = "Aceptar esta duraci?n";
+CA_COOP_TIME_REJECT = "Rechazar / cancelar para todos";
+CA_COOP_HOUR_DOWN = "-1 hora";
+CA_COOP_MINUTE_DOWN = "-1 minuto";
+CA_COOP_MINUTE_UP = "+1 minuto";
+CA_COOP_HOUR_UP = "+1 hora";
+CA_COOP_TIME_REST_ALL = "Todos deben estar descansando antes de aceptar esta propuesta de descanso.";
+CA_COOP_TIME_RUNNING = "Avanzando juntos. Cualquiera puede interrumpir.";
+CA_COOP_TIME_CANCELLED = "Avance de tiempo compartido cancelado.";
+CA_COOP_TIME_COMPLETE = "Transcurri? el tiempo acordado.";

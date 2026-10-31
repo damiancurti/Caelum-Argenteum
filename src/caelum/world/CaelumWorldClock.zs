@@ -9,6 +9,22 @@ class CaelumWorldClock : Inventory
     int LocalClockRevision;
     int LimboDays;
     int LimboDayTics;
+    // Revisión 1: réplicas del reloj de campaña en los inventarios viajeros.
+    // Elegir por plaza nativa, nunca por consoleplayer, mantiene todos los peers
+    // iguales. Una réplica ya sincronizada prevalece sobre un personaje nuevo.
+    int SharedRevision;
+    int CooperativeSerial;
+    CaelumCooperativeTime TimeVote;
+
+    void CopyShared(CaelumWorldClock source)
+    {
+        if (source == null || source == self) return;
+        CompletedDays=source.CompletedDays;DayTics=source.DayTics;
+        LimboSubTics=source.LimboSubTics;LocalClockRevision=source.LocalClockRevision;
+        LimboDays=source.LimboDays;LimboDayTics=source.LimboDayTics;
+        SharedRevision=1;
+        CooperativeSerial=source.CooperativeSerial;TimeVote=source.TimeVote;
+    }
 
     void EnsureLocalClock()
     {
@@ -152,39 +168,125 @@ class CaelumWorldClockTicker : StaticEventHandler
 {
     CaelumPhysicsMapState AltitudeMap;
     CaelumConnectedWaterMap WaterMap;
+    Array<CaelumClimateRegion> ClimateMarkers;
     // El handler ya existe en saves anteriores; su nueva implementación
     // alcanza también esos mapas sin depender de registrar otro handler.
     override void WorldLoaded(WorldEvent e)
-    { CaelumPhysicsWorld.Initialize();CaelumConnectedWaterMap.Initialize(); }
+    {
+        CaelumPhysicsWorld.Initialize();CaelumConnectedWaterMap.Initialize();
+        // Un censo tipado por carga restaura marcadores de mapas/save antiguos.
+        // El coste posterior es O(1) por consulta y altas/bajas por evento.
+        ClimateMarkers.Clear();
+        let it=ThinkerIterator.Create("CaelumClimateRegion");CaelumClimateRegion marker;
+        while((marker=CaelumClimateRegion(it.Next()))!=null)ClimateMarkers.Push(marker);
+    }
+
+    override void WorldThingSpawned(WorldEvent e)
+    {
+        let marker=CaelumClimateRegion(e.Thing);if(marker==null)return;
+        for(int i=0;i<ClimateMarkers.Size();i++)if(ClimateMarkers[i]==marker)return;
+        ClimateMarkers.Push(marker);
+    }
+    override void WorldThingDestroyed(WorldEvent e)
+    {
+        if(!(e.Thing is 'CaelumClimateRegion'))return;
+        for(int i=0;i<ClimateMarkers.Size();i++)if(ClimateMarkers[i]==e.Thing)
+        {ClimateMarkers.Delete(i);return;}
+    }
+    static CaelumClimateRegion ClimateMarker()
+    {
+        let ticker=CaelumWorldClockTicker(StaticEventHandler.Find('CaelumWorldClockTicker'));
+        return ticker!=null && ticker.ClimateMarkers.Size()>0?ticker.ClimateMarkers[0]:null;
+    }
+
+    static bool Ready(CaelumPlayer user)
+    {
+        if (!CaelumPlayerAuthority.CanMutate(user) || !user.CharacterCreationComplete
+            || user.CreationWizardOpen) return false;
+        let record=user.GetPersistentCharacterState(false);
+        return record!=null && record.ProfileCommitted;
+    }
+
+    static CaelumPlayer CampaignOwner()
+    {
+        CaelumPlayer first;
+        // O(MAXPLAYERS): el padrón de red es acotado; no recorre actores.
+        for(int i=0;i<MAXPLAYERS;i++)
+        {
+            if(!playeringame[i])continue;
+            let user=CaelumPlayer(players[i].mo);
+            if(!Ready(user))continue;
+            if(first==null)first=user;
+            let clock=CaelumWorldClock.Get(user);
+            if(clock!=null && clock.SharedRevision>=1)return user;
+        }
+        return first;
+    }
+
+    static void Mirror(CaelumPlayer source)
+    {
+        let clock=CaelumWorldClock.Get(source);
+        let calendar=CaelumCalendarState.Get(source);
+        let weather=CaelumWeatherState.Get(source);
+        if(clock==null || calendar==null)return;
+        clock.SharedRevision=1;
+        for(int i=0;i<MAXPLAYERS;i++)
+        {
+            if(!playeringame[i])continue;
+            let user=CaelumPlayer(players[i].mo);
+            if(user==source || !Ready(user))continue;
+            CaelumWorldClock.Get(user,true).CopyShared(clock);
+            let peerCalendar=CaelumCalendarState.Get(user,true);
+            peerCalendar.Configured=calendar.Configured;
+            peerCalendar.CampaignRevision=calendar.CampaignRevision;
+            peerCalendar.AnchorSerial=calendar.AnchorSerial;
+            peerCalendar.AnchorClockDays=calendar.AnchorClockDays;
+            peerCalendar.AnchorClockTics=calendar.AnchorClockTics;
+            peerCalendar.AnchorCivilTics=calendar.AnchorCivilTics;
+            // Las fechas de diagnóstico personales no sustituyen la campaña.
+            if(weather!=null && weather.Seed!=0)
+            {
+                let peerWeather=CaelumWeatherState.Get(user,true);
+                if(peerWeather.Seed!=weather.Seed)
+                {peerWeather.Seed=weather.Seed;peerWeather.Revision=0;}
+            }
+        }
+    }
 
     override void WorldTick()
     {
-        // La base de mundo y viajes actual es individual. No crear relojes
-        // divergentes para una sesión compartida aún pendiente de V5.
-        CaelumPlayer user;
+        CaelumPlayer user=CampaignOwner();
         int participants = 0;
         for (int i = 0; i < MAXPLAYERS; i++)
         {
             if (!playeringame[i]) continue;
             participants++;
-            user = CaelumPlayer(players[i].mo);
         }
-        if (participants != 1 || user == null || user.player == null
-            || !user.CharacterCreationComplete || user.CreationWizardOpen
-            || (user.player.cheats & CF_PREDICTING)) return;
-        let record = user.GetPersistentCharacterState(false);
-        if (record == null || !record.ProfileCommitted) return;
+        if (user == null) return;
         let clock = CaelumWorldClock.Get(user, true);
         if (clock == null) return;
         // Inicializa también en MAP01 y al cargar una partida anterior.
         // El anclaje civil se fija antes de consumir el primer tic exterior.
         let calendar = CaelumCalendarState.Get(user, true);
         if (calendar == null || !calendar.EnsureCampaign(clock)) return;
-        CaelumTimeSkipState.PrepareStep(user);
+        if(participants==1)CaelumTimeSkipState.PrepareStep(user);
+        else Mirror(user);
         clock.AdvanceOnMap(level.MapName);
         if(WaterMap!=null)WaterMap.Sync(clock);
         CaelumShopRestock.UpdateActive(user);
         CaelumWeatherState.Sync(user, clock, calendar);
+        if(participants>1)
+        {
+            Mirror(user);
+            for(int i=0;i<MAXPLAYERS;i++)
+            {
+                if(!playeringame[i])continue;
+                let peer=CaelumPlayer(players[i].mo);
+                if(peer==user || !Ready(peer))continue;
+                CaelumScheduleState.Sync(peer);
+                CaelumWeatherState.Sync(peer,CaelumWorldClock.Get(peer),CaelumCalendarState.Get(peer));
+            }
+        }
         // WorldTick sigue la simulación nativa. Las conversaciones de Caelum
         // continúan; la pausa voluntaria y la carga no se compensan con tiempo
         // del sistema operativo.

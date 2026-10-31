@@ -269,8 +269,7 @@ class CaelumWeatherState : Inventory
             if(weather.Revision!=CaelumWeatherRules.REVISION || weather.SourceMap!=level.MapName
                 || level.maptime-weather.MarkerCheckedTic>=TICRATE || weather.MarkerCheckedTic>level.maptime)
             {
-                let it=ThinkerIterator.Create("CaelumClimateRegion");
-                weather.RegionMarker=CaelumClimateRegion(it.Next());weather.MarkerCheckedTic=level.maptime;
+                weather.RegionMarker=CaelumWorldClockTicker.ClimateMarker();weather.MarkerCheckedTic=level.maptime;
             }
             let marker=weather.RegionMarker;
             if(marker!=null)

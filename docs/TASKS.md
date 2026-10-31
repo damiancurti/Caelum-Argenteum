@@ -1,6 +1,19 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.11.8** - 2026-10-30.
+Documentation version: **5.12.2** - 2026-10-30.
+
+## V5.12 work in progress - #436 / 5.12.2
+
+Implemented: shared clock/calendar/weather seed, individual native sitting/rest,
+unanimous exact-duration acceleration, stale/duplicate vote rejection and shared
+cancellation. Tests exercise native peers, not simulated player actors.
+Remaining #436: travel agreement/return, quest objective eligibility and rewards,
+personal/world conflicts, full save/load/restart and tent-rest integration.
+Cross-issue remaining: #434 portable profiles/checkpoints; #435 production
+network authority; #437 lifecycle; #438 arenas/organizers; #590 card seating/UI
+integration. Keep focused branches/PRs; no V5.12 author acceptance yet. Prepare
+one combined manual launcher only after all required implementation is ready.
+
 
 Current author queue: empty. The author confirmed all remaining checks on
 2026-10-30 and requested merges and issue closure. HISTORY records CA430-01

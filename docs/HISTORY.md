@@ -1,6 +1,32 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.11.8** - 2026-10-30.
+Documentation version: **5.12.2** - 2026-10-30.
+
+## 5.12.2 - Shared clock and time consent (#436, 2026-10-30, in progress)
+
+Author decisions: individual unaccelerated rest; unanimous exact-duration
+acceleration; silence remains pending; edits clear consent; anyone may cancel;
+disconnection cancels. The author also approved interface-only votes from dead
+participants waiting for Limbo. No new balance values, artwork or narrative introduced.
+Revision-1 clock replicas preserve the existing single-player fields and civil
+anchors; old saves gain initialized cooperative replicas only when required.
+
+Native source-overlay development evidence: four/eight real peers each passed
+18 clock/rest assertions, then two peers each passed32 including actual native
+consent events, precise endpoint, individual costs, duplicate/stale rejection
+and shared cancellation. All processes ran on this Windows11/GZDoom4.14.2 PC;
+no Internet latency or full multiplayer-playability claim. Final package,
+save/reload and broader integration results are recorded as they are obtained.
+Final builder package: eight native peers each passed36 assertions (288 total),
+including dead-vote policy checks and actual native consent events. All18 changed
+packaged members match source bytes. Shared native-save creation passed4 checks
+per peer and coordinated restart passed6 per peer, preserving real seats,
+clock replicas and pending consent. Death checks in this fixture restore the
+body before native death handling; full death lifecycle remains #437. Native
+load uses a copied recovery basename inside each isolated savedir, preserving
+original snapshots. The author has not accepted these checks; the combined manual suite is deferred
+until V5.12 implementation is complete. Failed development probes remain local.
+
 
 ## 5.11.8 - Mandinga and Zupay contamination immunity (#586, 2026-10-30)
 

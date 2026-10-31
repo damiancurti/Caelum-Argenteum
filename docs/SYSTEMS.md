@@ -1,6 +1,45 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.11.8** - 2026-10-30.
+Documentation version: **5.12.2** - 2026-10-30.
+
+## Shared clock and unanimous time (5.12.2, #436)
+
+The native startup roster shares campaign time, civil date, Limbo fractions and
+weather seed. Revision-1 clock replicas travel with each character. The lowest
+ready native slot with an initialized replica supplies the shared clock; a
+newly ready, lower slot cannot reset it. Removing that owner leaves the already
+synchronized replicas available. This is deterministic simulation on every
+peer, not a host-only mutation or independent clocks. Personal trial calendars,
+rest state, inventories and physiological costs remain separate.
+
+Individual sitting and rest no longer require a solo session. One occupant
+standing does not wake another. Accelerating time requires an exact-duration
+proposal from T or the time menu. All roster members must explicitly accept;
+silence waits, refusal/cancellation stops the proposal, changing duration clears
+consent and stale/repeated requests cannot act on a new proposal. A rest-origin
+proposal requires all participants to rest. Safety, activity interruption,
+roster changes or map changes stop acceleration. The author-approved exception
+allows a dead participant to vote from the interface while waiting for Limbo.
+Only living bodies receive personal substeps; a new death interrupts the advance. Current menu starts at the
+existing 60-minute default, with one-minute/hour adjustments and the existing
+30-day bound. Native and extra tics both count toward the agreed endpoint.
+
+A single shared pump runs after every participant's normal personal step. It
+advances the clock once, then each participant's existing personal simulation,
+using the current x105 batch bound. Weather is projected by each actual local
+shelter. No NPC movement/physics acceleration is newly promised. Climate-marker
+queries use a shared typed registry (one typed reconstruction on map/save load,
+spawn/destruction updates); rest offers use an owner reference, not actor scans.
+
+Approved next travel integration: use the slowest walking participant
+and each character's own provisions over shared elapsed time. Each transport
+traveler pays their own existing fare. This rule is not implemented by the time
+consent patch.
+
+Implementation gate: cooperative travel/reward arbitration,
+full save/restart lifecycle, portable profiles and complete V5.12 integration
+remain pending. Partial engine evidence is not author acceptance.
+
 
 ## Demon disease immunity (#586, 5.11.8)
 

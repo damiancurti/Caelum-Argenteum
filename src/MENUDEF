@@ -215,3 +215,8 @@ ListMenu "CaelumAbsentArrivalMenu"
 {
     Class "CaelumAbsentArrivalMenu"
 }
+
+ListMenu "CaelumCooperativeTimeMenu"
+{
+    Class "CaelumCooperativeTimeMenu"
+}

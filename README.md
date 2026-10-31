@@ -6,8 +6,16 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.11.8.** Obtain and update the complete repository, validate
+**Current release: 5.12.2.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+**V5.12 in progress (#436):** native peers now share one campaign clock and
+weather seed, with individual nonaccelerated rest. T/the time menu opens an
+exact-duration proposal: everyone must consent, edits clear votes, silence
+waits and any participant may cancel. Personal resources remain individual.
+This is not full cooperative campaign acceptance: travel, quest rewards,
+profile portability and lifecycle integration remain under their focused issues.
+Author checks will be delivered together after the release is complete.
 
 Author clarification: the comparison is Leonor versus Caella. Caella carries
 22.0184kg (armor plus pickaxe, utility staff and bolas); Leonor carries5kg.

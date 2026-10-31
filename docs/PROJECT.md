@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.11.8** - 2026-10-30.
+Documentation version: **5.12.2** - 2026-10-30.
+
+## 5.12.2 - Cooperative clock/rest and time consent (#436, in progress)
+
+Native peers share one campaign clock while retaining individual rest and
+physiology. Exact-duration time proposals require every participant's consent;
+editing resets votes and any participant can stop acceleration. Bounded native
+player loops and an event-maintained climate registry replace repeated marker
+queries. Travel and reward ownership remain unfinished under #436; the full
+V5.12 milestone is not complete or author-accepted. Evidence is kept in
+`assets/validation_v5_12_2`, distinct from #435 and #590.
+
 
 ## 5.11.8 - Mandinga and Zupay disease immunity (#586)
 
