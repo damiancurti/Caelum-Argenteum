@@ -4,6 +4,15 @@ Documentation version: **5.12.7** - 2026-10-31.
 
 ## V5.12 native session coordination - #435 / 5.12.7 in progress
 
+Native gameplay follow-up: 2/4/8 real clients pass concurrent last-unit city
+purchases, independent wallets, owned Quimica vessels and fuel reservations,
+duplicate start/completion rejection and one-owner cancellation (168 assertions).
+The final four-peer run uses the complete package with validated debug-event
+senders. The 2/8 runs use the prior complete package with unchanged trade/crafting
+logic. Completion is an explicit diagnostic endpoint, not accelerated time.
+Evidence: gameplay-results.json/gameplay-logs.json.gz. Remaining: combat/ability
+integration, hub/profile progress and frame presentation; no author acceptance.
+
 The launcher pins the engine/resources, IWAD and ordered packages, exports one
 common checkpoint and reserves campaign custody in the profile database. Native
 slots must acknowledge their selected profile and a shared session nonce before

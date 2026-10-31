@@ -19,6 +19,7 @@ def main():
     parser.add_argument('--wrong-slot',action='store_true')
     parser.add_argument('--source-overlay',action='store_true')
     parser.add_argument('--unmanaged-reload',action='store_true')
+    parser.add_argument('--gameplay',action='store_true',help='Exercise actual concurrent trade and crafting services')
     args=parser.parse_args();runtime=args.runtime.resolve(strict=True)
     spec=importlib.util.spec_from_file_location('fixture',ROOT/'assets/validation_v5_12_1/run_network_probe.py');fixture=importlib.util.module_from_spec(spec);spec.loader.exec_module(fixture)
     out=ROOT/'build/issue435'/datetime.datetime.now().strftime('session-%Y%m%d-%H%M%S-%f');out.mkdir()
@@ -27,7 +28,7 @@ def main():
         z.writestr('maps/MAP03.wad',old.read('maps/MAP03.wad'))
         z.writestr('MAPINFO','gameinfo { AddEventHandlers="CA435SessionProbe" }\n')
         z.writestr('ZSCRIPT','version "4.14.2"\n#include "probe.zs"\n')
-        z.writestr('probe.zs',(Path(__file__).parent/'session_probe.zs').read_bytes())
+        z.writestr('probe.zs',(Path(__file__).parent/('gameplay_probe.zs' if args.gameplay else 'session_probe.zs')).read_bytes())
         if args.source_overlay:z.writestr('caelum/world/CaelumSessionIdentity.zs',(ROOT/'src/caelum/world/CaelumSessionIdentity.zs').read_bytes())
     packages=[runtime,out/'checks.pk3'];store=None;sessions=None;token=out.name
     if args.resume_registry and (args.source or args.unmanaged_reload):parser.error('Resume reuses the existing registry; do not supply a seed')
@@ -74,7 +75,7 @@ def main():
     for i,(p,peer) in enumerate(zip(processes,peers)):
         log=(peer/'engine.log').read_text(errors='replace') if (peer/'engine.log').exists() else ''
         errors=[l for l in log.splitlines() if any(x in l for x in (' FAIL ','Execution could not continue','Script error','VM execution aborted','errors parsing JSON','out of sync','desync'))]
-        expected=4 if sessions else 1
+        expected=12 if args.gameplay else 4 if sessions else 1
         passed=p.returncode==0 and not errors and (('CA_SESSION REJECT' in log and 'CA_SESSION READY' not in log and 'CA435SESSION RESULT' not in log) if args.wrong_slot else log.count('CA435SESSION PASS')==expected and log.count('CA435SESSION RESULT')==1)
         reports.append(dict(peer=i,exit=p.returncode,errors=errors,passed=passed))
         if sessions:sessions.finished(token,i)
@@ -83,7 +84,7 @@ def main():
         watch(processes[0],peers[0],sessions,token,0)
         recovery=sessions.close(token)
         store.close()
-    result=dict(issue=435,directory=str(out),source=str(args.source),resume_registry=str(args.resume_registry),players=args.players,wrong_slot=args.wrong_slot,source_overlay=args.source_overlay,unmanaged_reload=args.unmanaged_reload,commands=commands,runtime_sha256=fixture.digest(runtime),peers=reports,recovery=recovery,passed=all(r['passed'] for r in reports))
+    result=dict(issue=435,directory=str(out),source=str(args.source),resume_registry=str(args.resume_registry),players=args.players,wrong_slot=args.wrong_slot,source_overlay=args.source_overlay,unmanaged_reload=args.unmanaged_reload,gameplay=args.gameplay,commands=commands,runtime_sha256=fixture.digest(runtime),peers=reports,recovery=recovery,passed=all(r['passed'] for r in reports))
     (out/'results.json').write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps(dict(directory=str(out),peers=reports,recovery=recovery),indent=2))
     if not result['passed']:raise SystemExit(1)
