@@ -1,6 +1,28 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.12.5** - 2026-10-31.
+Documentation version: **5.12.6** - 2026-10-31.
+
+## External character profile boundary (#434, 5.12.6, in progress)
+
+The approved profile carries identity, attributes, abilities, Tarot, inventory,
+money and personal progress. Campaign maps, NPCs, shops and property titles do
+not travel. assets/profiles/personal-boundary.json documents the current adapter's
+class/field partition. References are resolved from the exact engine/runtime
+ZScript declarations: integers such as quantities or item IDs are not treated as
+object pointers. Unknown fields/types and conflicting owners fail closed.
+
+Carried containers and packed furniture retain their actual ownership graph,
+including chairs, contained food, water and contamination. Source geometry indices
+are replaced by destination indices; environmental clocks sample the destination
+without retroactive aging. The additive per-record import serial prevents native
+reconciliation from repeating on subsequent loads. Material transfers require
+an empty destination or the same external identity; another committed character
+is never silently overwritten. Native validation is isolated, not author approval.
+
+The immutable-anchor store and graph adapter are not yet wired into a completed
+custody transaction. Source retirement, production profile commands, campaign
+checkpoint registration and narrative save hooks remain open. Direct graph
+installation is an internal adapter, not permission to publish two active owners.
 
 ## 5.12.5 - Seated human card matches (#590, implementation in progress)
 

@@ -1,6 +1,30 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.12.5** - 2026-10-31.
+Documentation version: **5.12.6** - 2026-10-31.
+
+## 5.12.6 - Typed personal profile graph foundation (#434, 2026-10-31)
+
+Implements read-only typed ownership extraction and copied native installation,
+plus an additive static import reconciler. SQLite foundation checks cover immutable
+anchors, concurrent custody, stale revisions, rollback and corruption refusal.
+Seven graph checks reject unrelated owners, malformed references, unknown fields
+and changed packages; ordinary numeric quantities remain unchanged. A test found
+that payload package hashes aliased the schema dictionary; copying that metadata
+fixed the rejection boundary before delivery.
+
+The prototype package (diagnostic labels still5.12.5) passes66 native assertions:
+two peers prepare three each; import and common-checkpoint reload pass15 each
+per peer. The import retains attributes, Tarot, recipes,321 copper, water, table,
+chairs, food quantity/deterioration and ready-weapon ownership. Destination stock
+and house title remain campaign-owned. No duplicate import grant on native reload.
+The controlled fixture makes only its disposable target slot uncommitted; the
+production adapter refuses replacing an unrelated committed character.
+
+Failed fixture attempts remain preserved: a wrong method name, an absolute
+-loadgame path combined with -savedir, and reuse of an occupied diagnostic port.
+These were corrected in the runner; none touched author saves. Typed graph/native
+verification does not complete source retirement, custody orchestration, narrative
+checkpoints, profile UI or #435 session tooling. Author acceptance is pending.
 
 ## 5.12.5 - Seated human card-rule preparation (#590, 2026-10-30)
 

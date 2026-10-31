@@ -1,6 +1,19 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.12.5** - 2026-10-31.
+Documentation version: **5.12.6** - 2026-10-31.
+
+## V5.12 profiles - #434 / 5.12.6 in progress
+
+Verified: immutable recovery-anchor store; typed personal graph; native additive
+import reconciliation; two-peer import/common-save reload. Tests preserve wallet,
+attributes, Tarot, recipes, water, carried table/chairs/food and destination stock.
+
+Still required before delivery:
+- Connect source retirement, campaign checkpoints and exactly-once custody commit.
+- Provide profile operations and supported migration/recovery without resetting originals.
+- Hook complete narrative transactions into the existing autosave owner.
+- Integrate #435 session identities/preflight/recovery and remaining #436 rest checks.
+- Finish combined validation before creating the author terminal and pending checks.
 
 ## V5.12 in progress - #590 seated 1v1 cards (5.12.5)
 

@@ -1,0 +1,49 @@
+{
+  "revision": 1,
+  "native_save_version": 4560,
+  "author_scope": "Identity, attributes, abilities, Tarot, inventory, money and personal progress travel. Maps, NPCs, shops and property ownership remain campaign-owned.",
+  "root_bases": [
+    "CaelumPersistentCharacterState", "CaelumEquipmentItem", "CaelumConsumableItem",
+    "CaelumSpecialInventoryItem", "CaelumChestCargo", "CaelumCarbineAmmo",
+    "CaelumArrowAmmo", "CaelumBoltAmmo", "CaelumWeightedKey", "Weapon", "BasicArmor", "HexenArmor",
+    "CaelumMagicBox", "CaelumSoapSupply", "CaelumCampFuelCredit", "CaelumQuestRouteReceipt",
+    "CaelumArcaneCloudEffect", "CaelumBattleCryEffect", "CaelumFormationBreakerEffect",
+    "CaelumMiracleEffect", "CaelumRallyEffect", "CaelumRedemptionEffect",
+    "CaelumSummoningEffect", "CaelumSupportStatus", "CaelumSurvivalInstinctEffect"
+  ],
+  "record_world_fields": [
+    "FermentationBatches", "ProofingBatches", "PalomoMerchantVersion",
+    "PalomoMerchantStock", "PalomoMerchantWalletCopper", "HouseRestitutionConfirmed",
+    "HouseRefundPending", "WorldPendingConnection"
+  ],
+  "owned_actor_edges": {
+    "CaelumChestCargo": ["Chest"],
+    "CaelumRestFurnitureItem": ["Body"],
+    "CaelumDiningSetItem": ["Table"],
+    "CaelumDecorItem": ["Decoration"],
+    "CaelumDeskItem": ["Desk"],
+    "CaelumBookcaseStorage": ["Shelf"],
+    "CaelumStashChest": ["ChestVisual", "InstalledPadlock"],
+    "CaelumDiningTable": ["Items", "Chairs", "Blocks", "Displays"]
+  },
+  "exclude_reference_fields": {
+    "CaelumCompanionBond": ["Party", "Body", "Motion", "Loadout"],
+    "CaelumContaminationContacts": ["Rows"],
+    "CaelumContaminationObject": ["Previous", "Next"]
+  },
+  "rebase_fields": {
+    "CaelumFoodClock": {"Ready": false},
+    "CaelumWaterContainer": {"TemperatureClockReady": false},
+    "CaelumThermalState": {"RuntimeReady": false, "RuntimeMap": ""},
+    "CaelumAltitudeState": {"ClockReady": false, "LastMap": ""},
+    "CaelumChestCargo": {"TravelTID": 0, "ContentTravelTIDs": []},
+    "CaelumRestFurnitureItem": {"TravelTID": 0, "ContentTravelTIDs": []}
+  },
+  "body_personal_fields": [
+    "Attributes", "CharacterProfile", "CharacterAllocation", "DerivedStats",
+    "AnatomyProfile", "ArmorModel", "ShieldModel", "WeaponModel", "ElementalStatus", "RacialAbility", "SpellSleep",
+    "CurrentAnima", "CurrentAir", "CurrentAdrenaline", "CurrentLucidity",
+    "CurrentHunger", "CurrentThirst", "CurrentSleep", "UnderwaterNoBreathTics",
+    "UnderwaterAirRecoveryDebt", "UnderwaterAirRecoveryTicsRemaining"
+  ]
+}

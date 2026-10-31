@@ -3,6 +3,9 @@
 // mapas sin convertir los controles temporales en objetos visibles todavia.
 class CaelumPersistentCharacterState : Inventory
 {
+    // #434: la herramienta externa confirma la custodia antes de publicar el save.
+    String ExternalProfileId;
+    int ExternalProfileRevision,ProfileImportSerial,ProfileImportApplied;
     Array<CaelumFermentationRecord> FermentationBatches;
     Array<CaelumProofingRecord> ProofingBatches;
     int CookingMaterialSchemaRevision;

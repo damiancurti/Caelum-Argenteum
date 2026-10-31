@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.12.5** - 2026-10-31.
+Documentation version: **5.12.6** - 2026-10-31.
+
+## V5.12 profile integration (#434, 5.12.6, in progress)
+
+External SQLite custody retains immutable native recovery anchors and revisioned
+single-campaign assignment. The typed graph adapter now extracts actual personal
+inventory, identity/progress and packed furniture without cloning a campaign.
+An isolated native two-player import/reload preserves resources and ownership.
+The production transfer transaction, source departure, UI/launcher and narrative
+checkpoint hooks remain unfinished. No author acceptance or release completion.
 
 ## 5.12.5 - Human card-table PvP preparation (#590)
 
