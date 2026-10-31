@@ -10,7 +10,9 @@ editing resets votes and any participant can stop acceleration. Bounded native
 player loops and an event-maintained climate registry replace repeated marker
 queries. Walking and house transitions require unanimous destination consent;
 walking shares the slowest pace with personal provisions and one elapsed clock.
-Transport, tutorial departure and reward ownership remain unfinished; the full
+Transport now shares one route/incident record with individual atomic fares,
+consented stops and original-ticket resumption. Tutorial departure and reward
+ownership remain unfinished; the full
 V5.12 milestone is not complete or author-accepted. Evidence is kept in
 `assets/validation_v5_12_2`, distinct from #435 and #590.
 

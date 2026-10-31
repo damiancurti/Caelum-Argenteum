@@ -44,9 +44,25 @@ class CaelumCooperativeTravelMenu : ListMenu
         CaelumTrucoMenu.Text(22,24,L("CA_COOP_TRAVEL_TITLE"),Font.CR_GOLD);
         CaelumTrucoMenu.Wrap(22,60,730,L("CA_COOP_TRAVEL_HELP"));
         let vote=CaelumCooperativeTravel.View(User());if(vote==null)return;
-        String target=vote.Kind==CaelumCooperativeTravel.HOUSE?L("CA_COOP_TRAVEL_HOUSE")
+        String target=vote.Kind==CaelumCooperativeTravel.ABANDON?L("CA_COOP_TRAVEL_ABANDON")
+            :vote.Kind==CaelumCooperativeTravel.HOUSE?L("CA_COOP_TRAVEL_HOUSE")
             :L(CaelumWorldCatalogue.ConnectionNameKey(vote.Connection));
+        if(vote.Kind==CaelumCooperativeTravel.DISEMBARK)
+        {
+            int location=CaelumWorldCatalogue.LocationForMap(vote.Destination);
+            target=CaelumWorldCatalogue.IsLocation(location)?L(CaelumWorldCatalogue.LocationNameKey(location))
+                :String.Format(L("CA_COOP_TRAVEL_ROADSIDE"),vote.Ride!=null?vote.Ride.CoveredKm():0);
+        }
         CaelumTrucoMenu.Text(22,125,String.Format(L("CA_COOP_TRAVEL_TARGET"),target));
+        if(vote.Kind>=CaelumCooperativeTravel.BOARD)
+        {
+            int slot=vote.Slot(User());int fare=slot>=0 && (vote.AliveMask&(1<<slot))!=0?vote.Fare:0;
+            CaelumTrucoMenu.Text(22,155,String.Format(L("CA_COOP_TRAVEL_FARE"),fare));
+            if(vote.Kind==CaelumCooperativeTravel.DISEMBARK)
+                CaelumTrucoMenu.Text(22,185,L("CA_COOP_TRAVEL_DISEMBARK"));
+            else if(vote.Kind==CaelumCooperativeTravel.BOARD && vote.Ride!=null)
+                CaelumTrucoMenu.Text(22,185,String.Format(L("CA_COOP_TRAVEL_DEPARTURE"),Max(0,vote.Ride.Departure-vote.Ride.Stamp)/3600));
+        }
         if(vote.Elapsed>0)
         {
             CaelumTrucoMenu.Text(22,155,String.Format(L("CA_COOP_TRAVEL_PACE"),vote.Pace,CaelumJourneyRules.Duration(vote.Elapsed)));

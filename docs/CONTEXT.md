@@ -3,7 +3,7 @@
 Documentation version: **5.12.2** - 2026-10-30.
 
 **V5.12 in progress:** #436/PR592 shared clock/rest, unanimous time/walking/house
-travel; validation_v5_12_2. Transport/rewards and #434/#435/#437/#438/#590
+travel/transport; validation_v5_12_2. Rewards and #434/#435/#437/#438/#590
 integration remain unfinished. No author acceptance; combined manual suite after completion.
 **V5.11/V5.10 accepted/merged:** HISTORY; no pending checks. Siege stalls persist.
 

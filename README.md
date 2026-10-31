@@ -15,7 +15,9 @@ exact-duration proposal: everyone must consent, edits clear votes, silence
 waits and any participant may cancel. Personal resources remain individual.
 Walking routes and house doors now require unanimous destination consent;
 walking uses the slowest pace and each character pays their own provisions.
-This is not full cooperative campaign acceptance: transport, quest rewards,
+Vehicle boarding also requires unanimous consent and independent ticket payments;
+shared stops and resumption retain the original trip.
+This is not full cooperative campaign acceptance: quest rewards,
 profile portability and lifecycle integration remain under their focused issues.
 Author checks will be delivered together after the release is complete.
 

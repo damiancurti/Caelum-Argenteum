@@ -49,10 +49,28 @@ House entry preserves property/household systems and does not grant residence
 rights to visitors. The multiplayer branch avoids the old console-local capture
 handshake; native house-door presentation remains unchanged for solo play.
 
-Transport fares are approved per traveler from each character's money. Actual
-cooperative transport boarding/stops/resume, tutorial departure/return and quest
-eligibility/conflicts remain unfinished. These are not certified by the walking
-or house-door tests.
+Vehicle boarding uses the same unanimous native protocol. Every living traveler
+must satisfy the existing boarding checks and afford their own ticket/change.
+All currency transactions are prepared before any wallet is charged. Refusal,
+missing funds or stale scheduled departures cannot charge part of the group.
+Unscheduled cart/horse departure timestamps update at confirmation without
+invalidating an otherwise identical offer. Scheduled ship/train departures and
+fares are revalidated; the menu shows the quoted wait.
+
+The vehicle shares one ticket progress object and one incident record, while
+bookings, departure stamps, survival and money remain personal. Native incident
+boundaries are not rolled once per passenger. Arrival or a valid requested stop
+opens a destination vote before changing maps. Refusal leaves the stopped
+vehicle and ticket intact; the transport controls explicitly reopen the vote.
+Returning to the same journey requires consent and costs no new fare. Abandoning
+the ticket requires shared consent; rebooking uses the existing remaining-route
+fare, individually paid. Personal profile transfer must not carry this shared
+campaign journey into a different campaign.
+
+Tutorial departure/return and quest eligibility/conflicts remain unfinished;
+full death/disconnect/restart integration remains #437. Cart boarding, survival
+advance, rejected arrival, native destination arrival and rural stop/resumption
+have dedicated real-peer checks; they do not certify those remaining systems.
 
 Implementation gate: cooperative travel/reward arbitration,
 full save/restart lifecycle, portable profiles and complete V5.12 integration

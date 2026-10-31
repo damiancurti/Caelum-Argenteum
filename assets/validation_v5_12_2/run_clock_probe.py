@@ -22,7 +22,7 @@ def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def fixture(path: Path, peers: int, source_overlay: bool = False, persistence: bool = False, travel: bool = False) -> None:
+def fixture(path: Path, peers: int, source_overlay: bool = False, persistence: bool = False, travel: bool = False, transport: bool = False, transport_stop: bool = False, transport_mode: int = 3) -> None:
     # Disposable geometry; installed development IWAD textures are not distributed.
     text = '''namespace="ZDoom";
 vertex{x=-1024;y=-1024;} vertex{x=1024;y=-1024;}
@@ -46,9 +46,9 @@ linedef{v1=0;v2=3;sidefront=0;blocking=true;}
     wad = struct.pack("<4sii", b"PWAD", len(lumps), 12 + len(payload)) + payload + b"".join(entries)
     with zipfile.ZipFile(path, "w", compression=zipfile.ZIP_STORED) as archive:
         for name, data in {
-            "MAPINFO": ('gameinfo { AddEventHandlers = "CA436ClockProbe"' + (', "CaelumCooperativeTravelEvents"' if source_overlay else '') + ' }\n').encode(),
+            "MAPINFO": ('gameinfo { AddEventHandlers = "CA436ClockProbe"' + ' }\n').encode(),
             "ZSCRIPT": b'version "4.14.2"\n#include "probe.zs"\n',
-            "probe.zs": (SOURCE / ("travel_probe.zs" if travel else "persistence_probe.zs" if persistence else "clock_probe.zs")).read_bytes(),
+            "probe.zs": (SOURCE / ("transport_probe.zs" if transport else "travel_probe.zs" if travel else "persistence_probe.zs" if persistence else "clock_probe.zs")).read_bytes().replace(b"const STOP_EARLY = 0;", b"const STOP_EARLY = 1;" if transport_stop else b"const STOP_EARLY = 0;").replace(b"const TRAVEL_MODE = 3;", f"const TRAVEL_MODE = {transport_mode};".encode()),
             "maps/MAP03.wad": wad,
         }.items():
             entry = zipfile.ZipInfo(name, (2026, 10, 30, 0, 0, 0))
@@ -56,6 +56,10 @@ linedef{v1=0;v2=3;sidefront=0;blocking=true;}
         if travel:
             archive.writestr("maps/TRESERV.wad", wad)
             archive.writestr("maps/CAH000.wad", wad)
+        if transport:
+            archive.writestr(f"maps/CAT{transport_mode}17.wad", wad)
+            archive.writestr("maps/CABAIRES.wad", wad)
+            archive.writestr("maps/CAR00.wad", wad)
         # Source overlays keep iterative native checks fast; final evidence uses
         # a full builder package with identical bytes for these members.
         if source_overlay:
@@ -67,7 +71,7 @@ linedef{v1=0;v2=3;sidefront=0;blocking=true;}
                 if source.is_file() and name not in ('src/MAPINFO', 'src/ZSCRIPT'):
                     data = source.read_bytes()
                     if source.name == 'CaelumWorldClock.zs':
-                        data += b'\n#include "caelum/world/CaelumCooperativeTravel.zs"\n#include "caelum/world/CaelumCooperativeTravelMenu.zs"\n'
+                        data += b'\n#include "caelum/world/CaelumCooperativeFare.zs"\n#include "caelum/world/CaelumCooperativeTransport.zs"\n'
                     archive.writestr(name[4:], data)
 
 
@@ -81,13 +85,18 @@ def main() -> None:
     parser.add_argument("--source-overlay", action="store_true", help="Overlay edited clock/rest sources for iteration only")
     parser.add_argument("--persistence", action="store_true")
     parser.add_argument("--travel", action="store_true")
+    parser.add_argument("--transport", action="store_true")
+    parser.add_argument("--transport-stop", action="store_true")
+    parser.add_argument("--transport-mode", type=int, choices=(3,4,5,6), default=3)
     parser.add_argument("--load-directory", type=Path, help="Read the common save from a prior isolated persistence run")
     args = parser.parse_args()
+    if args.transport_stop:
+        args.transport = True
     runtime = args.runtime.resolve(strict=True)
     out = ROOT / "build/issue436" / datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
     out.mkdir(parents=True)
     package = out / "checks.pk3"
-    fixture(package, args.players, args.source_overlay, args.persistence, args.travel)
+    fixture(package, args.players, args.source_overlay, args.persistence, args.travel, args.transport, args.transport_stop, args.transport_mode)
     processes, streams, commands = [], [], []
     startup = subprocess.STARTUPINFO()
     startup.dwFlags |= subprocess.STARTF_USESHOWWINDOW
@@ -100,7 +109,7 @@ def main() -> None:
             commands_file = peer / "test.cfg"
             # Close remote peers first and the native arbitrator last. The separate
             # lifecycle probe must exercise unexpected arbitrator departure.
-            quit_tic = 350 + (args.players - index) * 35
+            quit_tic = (700 if args.transport else 350) + (args.players - index) * 35
             commands_file.write_text("wait 105; netevent ca436_verify_reload; wait 245; quit\n" if args.load_directory and index==0 else f"wait {quit_tic}; quit\n", encoding="utf-8")
             config.write_text("[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\n"
                               "vid_vsync=false\nvid_maxfps=60\ncl_capfps=false\nvid_activeinbackground=true\n"
@@ -128,7 +137,7 @@ def main() -> None:
         print(f"Started {args.players} native peers: {out}", flush=True)
         deadline = time.monotonic() + 90
         while any(p.poll() is None for p in processes) and time.monotonic() < deadline:
-            if any(any(token in log.read_text(encoding="utf-8", errors="replace") for token in ("Script error", "Attempt to redefine", "Unable to resolve", "compile errors", "Execution could not continue", "Cannot find savegame", "VM execution aborted"))
+            if any(any(token in log.read_text(encoding="utf-8", errors="replace") for token in ("Bad type", "errors while compiling", "Script error", "Attempt to redefine", "Unable to resolve", "compile errors", "Execution could not continue", "Cannot find savegame", "VM execution aborted"))
                    for log in out.glob("peer*/engine.log")):
                 break
             time.sleep(0.2)
@@ -146,16 +155,18 @@ def main() -> None:
         text = log.read_text(encoding="utf-8", errors="replace") if log.exists() else ""
         lines = text.splitlines()
         errors = [line for line in lines if any(token in line for token in
-                  (" FAIL", "Script error", "Execution could not continue", "Cannot find savegame", "VM execution aborted", "desync", "out of sync"))]
+                  (" FAIL", "Bad type", "errors while compiling", "Script error", "Execution could not continue", "Cannot find savegame", "VM execution aborted", "desync", "out of sync"))]
         checks = [line for line in lines if line.startswith("CA436 ")]
         ordered_requests.append(re.findall(r"CA436 EVENT peer=\d+ sender=(\d+) serial=(\d+)", text))
-        success = process.returncode == 0 and not errors and text.count("CA436 PASS") == (31 if args.travel else (6 if args.load_directory else 4) if args.persistence else 36) and text.count("CA436 RESULT") == 1
+        success = process.returncode == 0 and not errors and text.count("CA436 PASS") == (30 if args.transport_stop else 26 if args.transport else 31 if args.travel else (6 if args.load_directory else 4) if args.persistence else 36) and text.count("CA436 RESULT") == 1
         reports.append({"peer": index, "exit": process.returncode, "passed": success, "checks": checks, "errors": errors})
     same_order = len(ordered_requests) == args.players and all(
-        len(events) == args.players * (3 if args.travel else 1) and events == ordered_requests[0] for events in ordered_requests)
+        len(events) == args.players * (3 if args.travel or args.transport else 1) and events == ordered_requests[0] for events in ordered_requests)
+    if args.transport_stop:
+        same_order = all(len(events) >= args.players * 3 and events == ordered_requests[0] for events in ordered_requests)
     if args.persistence:
         same_order = True
-    result = {"persistence": args.persistence, "travel": args.travel, "load_directory": str(args.load_directory) if args.load_directory else None, "issue": 436, "baseline": "5.11.8", "source_overlay": args.source_overlay, "real_processes": args.players, "runtime_sha256": digest(runtime),
+    result = {"persistence": args.persistence, "travel": args.travel, "transport": args.transport, "transport_stop": args.transport_stop, "transport_mode": args.transport_mode, "load_directory": str(args.load_directory) if args.load_directory else None, "issue": 436, "baseline": "5.11.8", "source_overlay": args.source_overlay, "real_processes": args.players, "runtime_sha256": digest(runtime),
               "engine_sha256": digest(ENGINE), "iwad_sha256": digest(IWAD), "fixture_sha256": digest(package),
               "commands": commands, "peers": reports, "same_order": same_order,
               "passed": same_order and all(x["passed"] for x in reports)}

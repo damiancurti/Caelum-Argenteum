@@ -1,11 +1,14 @@
 // Una salida pertenece a la sesión. Ningún consentimiento cobra ni cambia mapa.
 class CaelumCooperativeTravel : Inventory
 {
-    enum TravelKind { JOURNEY, HOUSE }
+    enum TravelKind { JOURNEY, HOUSE, BOARD, DISEMBARK, RESUME, ABANDON }
     enum Operation { ACCEPT, CANCEL }
     CaelumPlayer Members[MAXPLAYERS];
     CaelumJourneyPlan Plans[MAXPLAYERS];
     CaelumHousePortal Portal;
+    CaelumTravelVehicle Vehicle;
+    CaelumTransportTicket Ride;
+    int Fare;
     int Mask,AliveMask,Accepted,Serial,Kind,Connection,Mode,Entry,Elapsed;
     bool Opened,Committed,Interrupted;
     double Pace;
@@ -45,6 +48,7 @@ class CaelumCooperativeTravel : Inventory
     {
         let proposer=CaelumPlayer(Owner);
         if(!CaelumCooperativeTime.Living(proposer))return false;
+        if(Kind>=BOARD)return CaelumCooperativeTransport.SourceValid(self);
         if(Kind==HOUSE)return Portal!=null && !Portal.bDestroyed
             && Portal.DestinationMap()==Destination && CaelumUseGeometry.AimedAt(proposer,Portal);
         return (proposer.Pos-OriginPosition).Length()<=64;
@@ -65,7 +69,8 @@ class CaelumCooperativeTravel : Inventory
         if(vote==null)vote=CaelumCooperativeTravel(user.GiveInventoryType('CaelumCooperativeTravel'));
         if(vote==null)return null;
         vote.ReleasePlans();vote.Mask=vote.AliveMask=vote.Accepted=0;
-        vote.Opened=vote.Committed=vote.Interrupted=false;vote.Portal=null;vote.Elapsed=0;vote.Pace=0;
+        vote.Opened=vote.Committed=vote.Interrupted=false;vote.Portal=null;vote.Vehicle=null;vote.Ride=null;
+        vote.Elapsed=0;vote.Pace=0;vote.Fare=0;
         vote.OriginMap=level.MapName;vote.OriginPosition=user.Pos;
         for(int i=0;i<MAXPLAYERS;i++)
         {
@@ -118,6 +123,7 @@ class CaelumCooperativeTravel : Inventory
     }
     bool,bool PreparePlans(bool compare)
     {
+        if(Kind>=BOARD){bool okay,changed;[okay,changed]=CaelumCooperativeTransport.Prepare(self,compare);return okay,changed;}
         if(Kind!=JOURNEY)return true,false;
         double speed=0;
         for(int i=0;i<MAXPLAYERS;i++)if((AliveMask&(1<<i))!=0)
@@ -177,6 +183,7 @@ class CaelumCooperativeTravel : Inventory
     }
     void Finish(String reason)
     {
+        if(Kind==DISEMBARK && !Committed && Ride!=null)Ride.TransferDeclined=true;
         Opened=false;NextSerial();
         for(int i=0;i<MAXPLAYERS;i++)if(Members[i]!=null)
         {
@@ -188,6 +195,13 @@ class CaelumCooperativeTravel : Inventory
     void Commit()
     {
         if(!Opened || Accepted!=Mask || !RosterValid() || !SourceValid())return;
+        if(Kind>=BOARD)
+        {
+            if(!CaelumCooperativeTransport.Commit(self)){Finish("CA_COOP_TRAVEL_CANCELLED");return;}
+            Committed=true;Finish("");
+            if(Kind!=ABANDON)Level.ChangeLevel(Destination,Entry,CHANGELEVEL_NOINTERMISSION);
+            return;
+        }
         Committed=true;
         // Registrar todas las salidas antes de avanzar un único reloj compartido.
         for(int i=0;i<MAXPLAYERS;i++)if(Members[i]!=null)

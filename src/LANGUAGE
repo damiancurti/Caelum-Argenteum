@@ -7237,7 +7237,7 @@ CA_COOP_TRAVEL_PACE = "Group pace: %.2f km/h. Time: %s";
 CA_COOP_TRAVEL_COST = "Your supplies: %d food portions, %d water portions and %.3f L";
 CA_COOP_TRAVEL_RISK = "The forecast includes a death before arrival. The group will stop at that moment.";
 CA_COOP_TRAVEL_ACCEPT = "Accept this trip";
-CA_COOP_TRAVEL_CANCELLED = "Shared travel cancelled. No travel resources were spent.";
+CA_COOP_TRAVEL_CANCELLED = "Travel request cancelled. No new travel costs were charged.";
 CA_COOP_TRAVEL_INTERRUPTED = "Travel interrupted by a death. Everyone has spent the same elapsed time.";
 [es]
 CA_COOP_TRAVEL_TITLE = "Viajar juntos";
@@ -7248,5 +7248,26 @@ CA_COOP_TRAVEL_PACE = "Ritmo del grupo: %.2f km/h. Tiempo: %s";
 CA_COOP_TRAVEL_COST = "Tus provisiones: %d porciones de comida, %d de agua y %.3f L";
 CA_COOP_TRAVEL_RISK = "La previsi?n incluye una muerte antes de llegar. El grupo se detendr? en ese momento.";
 CA_COOP_TRAVEL_ACCEPT = "Aceptar este viaje";
-CA_COOP_TRAVEL_CANCELLED = "Viaje compartido cancelado. No se gastaron recursos del trayecto.";
+CA_COOP_TRAVEL_CANCELLED = "Solicitud de viaje cancelada. No se cobraron nuevos gastos de viaje.";
 CA_COOP_TRAVEL_INTERRUPTED = "Viaje interrumpido por una muerte. Para todos transcurri? el mismo tiempo.";
+
+[enu default]
+CA_COOP_TRAVEL_FUNDS = "You cannot pay your own ticket or carry its change.";
+CA_COOP_TRAVEL_FARE = "Your ticket: %d copper. Charged only after unanimous consent.";
+CA_COOP_TRAVEL_ABANDON = "Abandon the current ticket (no refund)";
+CA_COOP_TRAVEL_DISEMBARK = "Leave the stopped vehicle at its current stop.";
+[es]
+CA_COOP_TRAVEL_FUNDS = "No puedes pagar tu propio billete o llevar el cambio.";
+CA_COOP_TRAVEL_FARE = "Tu billete: %d cobres. Se cobra solo despu?s del acuerdo un?nime.";
+CA_COOP_TRAVEL_ABANDON = "Abandonar el billete actual (sin devoluci?n)";
+CA_COOP_TRAVEL_DISEMBARK = "Bajar del veh?culo detenido en su parada actual.";
+
+[enu default]
+CA_COOP_TRAVEL_DEPARTURE = "Estimated wait before departure: %.2f h";
+[es]
+CA_COOP_TRAVEL_DEPARTURE = "Espera prevista antes de salir: %.2f h";
+
+[enu default]
+CA_COOP_TRAVEL_ROADSIDE = "Roadside stop, %.2f km traveled";
+[es]
+CA_COOP_TRAVEL_ROADSIDE = "Parada en el camino, %.2f km recorridos";

@@ -10,6 +10,19 @@ This remains agent verification, not author acceptance.
 
 ## 5.12.2 - Shared clock and time consent (#436, 2026-10-30, in progress)
 
+Transport follow-up: individual all-or-nothing fare preparation, one shared
+vehicle/incident record, unanimous boarding/disembarkation/resumption, and no
+repeat fare for the original ticket. Existing transport distance/speed/prices
+remain data-owned. Static source scans remain bounded to native player slots.
+Native probes wait after each WorldLoaded callback, including restored hubs;
+checking arrival before the first actor tic produced false probe failures and
+was corrected without adding an unnecessary player update hook.
+Final full-package checks: eight peers each pass26 cart checks; two peers each
+pass30 stop/resume checks,26 each for ship/horse/train, and36 clock/rest checks.
+All six runs exit cleanly; 496 assertions total. Hashes, exact engine logs and
+earlier failed development evidence are in transport-results.json. These tests
+cover native local networking, not Internet play or author acceptance.
+
 Walking/house follow-up: explicit destination offers, all-player consent,
 slowest living pace, separate resources, revalidation before commitment, first
 fatal-instant truncation and a single shared elapsed clock. Native source-overlay
