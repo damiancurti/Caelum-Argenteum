@@ -4,6 +4,11 @@ Documentation version: **5.12.6** - 2026-10-31.
 
 ## 5.12.6 - Typed personal profile graph foundation (#434, 2026-10-31)
 
+Bootstrap window follow-up: explicitly set the isolated configuration's window
+and dimensions. One native MAP01 preparation confirms 640 × 480 and a valid
+vacant checkpoint; window-results.json/window-logs.json.gz retain the evidence.
+Ordinary game settings are unchanged; this is not a native crash fix.
+
 Vacant campaign preparation: corrected the documented 1–8 range encoding; no
 runtime or balance change. The engine now creates actual MAP01 checkpoints
 with 1, 2 and 8 inert native slots without material inventory or committed profiles.

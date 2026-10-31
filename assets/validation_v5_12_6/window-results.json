@@ -1,0 +1,36 @@
+{
+  "players": 1,
+  "save": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue434-work\\build\\issue434\\windowed-20261031-075140\\peer0\\save00.zds",
+  "sha256": "40a6f175408bb93c2158bdbee32216ce8d2f9cdef361bdc8f714f2fbdd87b2fa",
+  "commands": [
+    [
+      "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+      "-noautoload",
+      "-iwad",
+      "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+      "-file",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue434-work\\build\\issue434\\vacancy-validated\\caelum_argenteum_dev.pk3",
+      "-config",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue434-work\\build\\issue434\\windowed-20261031-075140\\peer0\\bootstrap.ini",
+      "-savedir",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue434-work\\build\\issue434\\windowed-20261031-075140\\peer0",
+      "-window",
+      "-width",
+      "640",
+      "-height",
+      "480",
+      "+logfile",
+      "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue434-work\\build\\issue434\\windowed-20261031-075140\\peer0\\engine.log",
+      "+set",
+      "ca_profile_bootstrap",
+      "true",
+      "-warp",
+      "1"
+    ]
+  ],
+  "passed": true,
+  "runtime_sha256": "909bdfd1f2bf4f683360310e160ff7527b198530acefe213545ad7ad1016b386",
+  "resolution": "640 x 480",
+  "qualification": "Private bootstrap window only; no gameplay setting or crash fix claimed.",
+  "author_accepted": false
+}

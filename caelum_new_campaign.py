@@ -19,7 +19,9 @@ def create_vacant_save(engine: Path,iwad: Path,packages: list[Path],players: int
         for slot in range(players):
             peer=directory/f'peer{slot}';peer.mkdir();peers.append(peer)
             config=peer/'bootstrap.ini'
-            config.write_text('[GlobalSettings]\nvid_preferbackend=1\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\nsnd_mastervolume=0.05\n[Doom.LocalServerInfo.Mod]\nca_profile_bootstrap=true\n',encoding='utf-8')
+            config.write_text('[GlobalSettings]\nvid_preferbackend=1\nvid_maxfps=60\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\nsnd_mastervolume=0.05\n'
+                'vid_fullscreen=false\nvid_defwidth=640\nvid_defheight=480\nwin_w=656\nwin_h=519\n'
+                '[Doom.LocalServerInfo.Mod]\nca_profile_bootstrap=true\n',encoding='utf-8')
             network=[] if players==1 else ['-host',str(players),'-netmode','0','-port',str(port)] if slot==0 else ['-join',f'127.0.0.1:{port}','-port',str(port+slot)]
             cmd=[str(engine),'-noautoload','-iwad',str(iwad),'-file',*[str(p) for p in packages],'-config',str(config),'-savedir',str(peer),'-window','-width','640','-height','480',*network,'+logfile',str(peer/'engine.log'),'+set','ca_profile_bootstrap','true','-warp','1']
             commands.append(cmd);stream=(peer/'process.log').open('wb');streams.append(stream)
