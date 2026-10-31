@@ -5758,6 +5758,34 @@ all four prisoners. Empty-Tick stand-ins alone cannot verify walking animations.
 Limitations: retain all body collisions; this is local navigation, not a global
 navmesh. CA430-01 remains for author confirmation.
 
+## CA-KP-196 - Native map travel can replace a dead cooperative player
+
+Status/evidence: ENGINE-VERIFIED; isolated native guard verified.
+First recorded / last checked: 2026-10-31 / 2026-10-31.
+Issue / PR: #437 / PR593. Baseline: a77e76571 plus the same-issue follow-up.
+Environment: Windows 11, GZDoom 4.14.2, native peer-to-peer session; development
+DOOM2 IWAD, isolated configuration and flat diagnostic maps.
+Scope: CaelumDeadTraveler, every production Level.ChangeLevel caller.
+
+Symptom: blocking Use-to-respawn does not preserve a dead character during map
+changes. ChangeLevel force-respawns PST_DEAD players before PreTravelled;
+StartTravel excludes native player.health <= 0. FinishTravel resets actor state.
+These engine paths bypass an ordinary non-forced respawn guard.
+
+Prevention: wrap the map-change transaction before native travel begins. Keep
+death, position, state and flags on the same Inventory owner; mark only the
+native carrier eligible, without restoring actor health. Restore death on
+arrival, without a second pawn or inventory copy. The mansion must retain the
+campaign hub to preserve inactive campaign maps. This does not authorize
+geometry changes to old saves or change explicit resurrection requirements.
+
+Evidence: validation_v5_12_3 travel/spirit scenarios check original object
+identity, wallet, corpse position, hub stock, consent and explicit resurrection.
+Exact 4.14.2 ChangeLevel/StartTravel/FinishTravel source inspected locally;
+no engine/IWAD is distributed. Regression: dead-party hub round trip and native
+save/load, followed by explicit resurrection; verify the same pawn, record and
+material instances. Author acceptance PENDING; no general host-migration claim.
+
 ## Copyable entry template
 
 ```text
@@ -5780,3 +5808,19 @@ Limitations / superseded by:
 ```
 
 For non-runtime constraints, mark engine reproduction not applicable and provide the static/source evidence. Empty template fields are not executed tests.
+
+## CA-KP-197 - Old native saves keep event-handler lists and team damage
+
+Status/evidence: ENGINE-VERIFIED, #438, 2026-10-31, GZDoom 4.14.2/Windows11.
+Evidence: assets/validation_v5_12_4/arena-results.json and arena-logs.json.gz.
+A pre-arena native two-player save loaded without the newly listed per-level
+CaelumArenaEvents and retained saved teamdamage=0 despite MAPINFO teamdamage=1.
+Use a static handler for this additive service, with per-arrival state reset;
+one local query at the authored organizer position preserves its existing body.
+Do not assume that adding GameInfo EventHandlers upgrades old serialized levels.
+The reversible migrate_arena_save.py adapter changes only teamdamage in saved
+level JSON, preserves every other field/member and retains the original archive.
+It validates native revision4560, refuses overwrite, records revision1 and is
+idempotent. Two real recovered peers confirm the handler, original record and
+actual friendly damage. Integrate this adapter in the #434/#435 recovery launcher.
+No author acceptance or general compatibility with other native save versions.

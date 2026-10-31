@@ -4915,7 +4915,7 @@ CA_TAROT_POWER_COOLDOWN = "Tarot is recharging. See the remaining time in the Jo
 CA_TAROT_POWER_ANIMA = "Not enough Anima to activate Tarot.";
 CA_TAROT_POWER_ACTIVATED = "Selected Tarot powers activated.";
 CA_TAROT_POWER_EXPIRED = "The Tarot effects have ended.";
-CA_TAROT_POWER_FOOL = "Passive: +2% collection. Active: flight. Use Fly/swim up or down in Controls. The mansion crossing keeps its usual rules.";
+CA_TAROT_POWER_FOOL = "Passive: +2% collection. Active: unanimous travel to the mansion. Palomo offers the return without another payment.";
 CA_TAROT_POWER_CUPS = "Passive: +1 Charisma, Empathy and Eloquence; +1% collection. Active: the fixed bonuses become +2 each.";
 CA_TAROT_POWER_WANDS = "Passive: +0.6 Strength; +1% collection. Active: the fixed Strength bonus becomes +1.2.";
 CA_TAROT_POWER_MINOR = "Active: doubles this card's fixed attribute contribution. Its permanent collection percentage stays unchanged.";
@@ -4950,7 +4950,7 @@ CA_TAROT_POWER_COOLDOWN = "El Tarot se está recargando. Consultá el tiempo res
 CA_TAROT_POWER_ANIMA = "No tenés suficiente ánima para activar el Tarot.";
 CA_TAROT_POWER_ACTIVATED = "Poderes elegidos del Tarot activados.";
 CA_TAROT_POWER_EXPIRED = "Los efectos del Tarot terminaron.";
-CA_TAROT_POWER_FOOL = "Pasiva: +2% de colección. Activa: vuelo. Usá Subir o Bajar al volar/nadar, en Controles. El cruce de la mansión conserva sus reglas.";
+CA_TAROT_POWER_FOOL = "Pasiva: +2% de colección. Activa: viaje a la mansión por unanimidad. Palomo ofrece el regreso sin otro pago.";
 CA_TAROT_POWER_CUPS = "Pasiva: +1 Carisma, Empatía y Elocuencia; +1% de colección. Activa: esos bonos fijos pasan a +2 cada uno.";
 CA_TAROT_POWER_WANDS = "Pasiva: +0,6 Fuerza; +1% de colección. Activa: el bono fijo de Fuerza pasa a +1,2.";
 CA_TAROT_POWER_MINOR = "Activa: duplica el aporte fijo de atributos de esta carta. Su porcentaje permanente de colección no cambia.";
@@ -5199,7 +5199,7 @@ CA_TAROT_DETAIL_UNREVEALED = "Capture the essence to reveal its effect. The phys
 CA_TAROT_DETAIL_NO_FIXED = "No fixed attribute bonus";
 CA_TAROT_DETAIL_COLLECTION = "Collection: +%d%% to primary attributes, permanently while owned.";
 CA_TAROT_DETAIL_PENDING = "No active effect is implemented for this essence yet. It cannot be selected.";
-CA_TAROT_DETAIL_FOOL = "Flight. Use Fly/swim up or down in Controls. The mansion crossing retains its requirements.";
+CA_TAROT_DETAIL_FOOL = "Unanimous travel to the mansion. The journey does not resurrect the dead.";
 CA_TAROT_DETAIL_DOUBLE = "Fixed contribution becomes %s. Collection percentage stays unchanged.";
 CA_TAROT_DETAIL_CONTEXT = "Up to three captured essences. No manual cancellation or refund. Unavailable during dialogue, trading, crafting, rest, time skips, channeling, casting or forced immobilization.";
 CA_TAROT_DETAIL_TRUCAZO_UNREVEALED = "Essence not captured: no awakened effect. Owning the physical deck does not reveal or awaken it.";
@@ -5241,7 +5241,7 @@ CA_TAROT_DETAIL_UNREVEALED = "Capturá la esencia para revelar su efecto. La car
 CA_TAROT_DETAIL_NO_FIXED = "Sin bono fijo de atributos";
 CA_TAROT_DETAIL_COLLECTION = "Colección: +%d%% a los atributos primarios, permanente mientras poseas la esencia.";
 CA_TAROT_DETAIL_PENDING = "Esta esencia aún no tiene efecto activo implementado. No se puede seleccionar.";
-CA_TAROT_DETAIL_FOOL = "Vuelo. Usá Subir o Bajar al volar/nadar en Controles. El cruce de la mansión conserva sus requisitos.";
+CA_TAROT_DETAIL_FOOL = "Viaje a la mansión por unanimidad. El viaje no resucita a los muertos.";
 CA_TAROT_DETAIL_DOUBLE = "El aporte fijo pasa a %s. El porcentaje de colección no cambia.";
 CA_TAROT_DETAIL_CONTEXT = "Hasta tres esencias capturadas. Sin cancelación manual ni devolución. No disponible durante diálogos, comercio, trabajo, descanso, saltos temporales, canalización, lanzamiento o inmovilización forzada.";
 CA_TAROT_DETAIL_TRUCAZO_UNREVEALED = "Esencia no capturada: sin efecto despierto. Poseer el mazo físico no la revela ni la despierta.";
@@ -7318,3 +7318,86 @@ CA_CARD_TRICKS = "Bazas: tú %d / contrincante %d";
 CA_CARD_ENVIDO_VALUES = "Tu envido: %d | Contrincante: %d";
 CA_CARD_FLOR_VALUES = "Flores: tú %d / contrincante %d";
 CA_CARD_HAND_POINTS = "Tantos de esta mano: tú %d | contrincante %d";
+
+[enu default]
+CA_COOP_RETURN_READY = "Every living player must finish the mansion trials and carry their own departure equipment.";
+CA_COOP_RETURN_DESTINATION = "Leave the mansion and return to your bodies";
+[es]
+CA_COOP_RETURN_READY = "Todos los jugadores vivos deben terminar las pruebas de la mansión y llevar su propio equipo de salida.";
+CA_COOP_RETURN_DESTINATION = "Salir de la mansión y regresar a sus cuerpos";
+
+[enu default]
+CA_COOP_QUEST_UNAVAILABLE = "This world has already resolved this objective. Your personal progress is preserved; continue in a compatible campaign. No retroactive reward is available here.";
+[es]
+CA_COOP_QUEST_UNAVAILABLE = "Este mundo ya resolvió este objetivo. Conservas tu progreso personal; puedes continuar en otra campaña compatible. Aquí no hay recompensa retroactiva.";
+
+[enu default]
+CA_FOOL_JOURNEY_DESTINATION = "The mansion in Limbo";
+CA_FOOL_JOURNEY_RETURN = "Return to the place of departure";
+CA_FOOL_JOURNEY_COST = "The activator pays %.0f Anima and receives a %d-second cooldown only after everyone accepts.";
+CA_FOOL_JOURNEY_DEAD = "If everyone has died, activate The Fool with {bind:+user3}. Its normal Anima and cooldown requirements still apply.";
+CA_FOOL_JOURNEY_RULE = "Travel to the mansion by unanimous consent. Cost: %.0f Anima; cooldown: %d seconds. Palomo offers the return without an additional charge.";
+[es]
+CA_FOOL_JOURNEY_DESTINATION = "La mansión del Limbo";
+CA_FOOL_JOURNEY_RETURN = "Volver al lugar de salida";
+CA_FOOL_JOURNEY_COST = "El activador paga %.0f Ánima y recibe %d segundos de recarga solo cuando todos aceptan.";
+CA_FOOL_JOURNEY_DEAD = "Si todos han muerto, activá El Loco con {bind:+user3}. Sigue requiriendo su Ánima y recarga habituales.";
+CA_FOOL_JOURNEY_RULE = "Viaje a la mansión por unanimidad. Coste: %.0f Ánima; recarga: %d segundos. Palomo ofrece el regreso sin otro pago.";
+
+[enu default]
+CA_FOOL_VISIT_HELP = "You can return to the place where you activated The Fool. Everyone must agree; the journey does not resurrect the dead.";
+CA_FOOL_VISIT_TALK = "Ask about the mansion";
+CA_SPIRIT_REWARD_PENDING = "Your quest has advanced. The material reward remains pending until resurrection.";
+[es]
+CA_FOOL_VISIT_HELP = "Podés volver al lugar donde activaste El Loco. Todos deben aceptar; el viaje no resucita a los muertos.";
+CA_FOOL_VISIT_TALK = "Preguntar por la mansión";
+CA_SPIRIT_REWARD_PENDING = "Tu misión avanzó. La recompensa material queda pendiente hasta resucitar.";
+
+[enu default]
+CA_SPIRIT_CONTROLS = "Spirit in Limbo: move and talk with {bind:+use}. Your body and material possessions remain where you died. Palomo offers the return.";
+[es]
+CA_SPIRIT_CONTROLS = "Espíritu en el Limbo: movete y hablá con {bind:+use}. Tu cuerpo y tus pertenencias materiales siguen donde moriste. Palomo ofrece el regreso.";
+
+[enu default]
+CA_ARENA_TITLE = "Combat session";
+CA_ARENA_RING = "Ring";
+CA_ARENA_MAZE = "Sewer labyrinth";
+CA_ARENA_ORGANIZER = "Combat organizer";
+CA_ARENA_ASK = "Organize a combat between players.";
+CA_ARENA_RULES = "Use your own attributes and equipment. Damage, wear, consumables and death keep their usual consequences; friendly fire is active. No additional prizes or time limit. Everyone must agree to enter and to return.";
+CA_ARENA_NEED_ORGANIZER = "Speak to Palomo or the combat organizer in the Buenos Aires plaza to arrange a match.";
+CA_ARENA_INDIVIDUAL = "Individual combat: last survivor wins";
+CA_ARENA_TEAMS = "Two teams: up to four players each";
+CA_ARENA_TEAMS_HELP = "T: choose your team. Changing teams clears everyone's acceptance. Each team needs one to four players; friendly fire remains active.";
+CA_ARENA_YOUR_TEAM = "Your team: %d";
+CA_ARENA_PROPOSE = "Invite everyone and request the transfer";
+CA_ARENA_NOT_READY = "The match needs 2–8 living, available players. Teams must contain 1–4 players each. Finish and return from any previous match first.";
+CA_ARENA_FIGHTING = "Combat in progress";
+CA_ARENA_NO_WINNER = "Combat ended without a survivor";
+CA_ARENA_WINNER = "Winner: %s";
+CA_ARENA_TEAM_WINNER = "Winning team: %d";
+CA_ARENA_SURRENDER = "Surrender and withdraw from combat";
+CA_ARENA_RETURN = "Request return to the departure location";
+CA_ARENA_CLOSE = "Close";
+
+[es]
+CA_ARENA_TITLE = "Sesión de combate";
+CA_ARENA_RING = "Ring";
+CA_ARENA_MAZE = "Alcantarillas laberínticas";
+CA_ARENA_ORGANIZER = "Organizador de combates";
+CA_ARENA_ASK = "Organizar un combate entre jugadores.";
+CA_ARENA_RULES = "Usás tus propios atributos y equipo. El daño, desgaste, consumo y muerte conservan sus consecuencias habituales; hay fuego amigo. Sin premios adicionales ni límite de tiempo. Todos deben aceptar la entrada y el regreso.";
+CA_ARENA_NEED_ORGANIZER = "Hablá con Palomo o con el organizador de combates de la plaza de Buenos Aires para preparar una partida.";
+CA_ARENA_INDIVIDUAL = "Combate individual: gana el último superviviente";
+CA_ARENA_TEAMS = "Dos equipos: hasta cuatro jugadores por equipo";
+CA_ARENA_TEAMS_HELP = "T: elegir equipo. Cambiarlo borra las aceptaciones de todos. Cada equipo necesita de uno a cuatro jugadores; se mantiene el fuego amigo.";
+CA_ARENA_YOUR_TEAM = "Tu equipo: %d";
+CA_ARENA_PROPOSE = "Invitar a todos y proponer el traslado";
+CA_ARENA_NOT_READY = "Se necesitan de 2 a 8 jugadores vivos y disponibles. Cada equipo admite de 1 a 4. Primero hay que terminar y regresar de cualquier combate anterior.";
+CA_ARENA_FIGHTING = "Combate en curso";
+CA_ARENA_NO_WINNER = "El combate terminó sin supervivientes";
+CA_ARENA_WINNER = "Ganador: %s";
+CA_ARENA_TEAM_WINNER = "Equipo ganador: %d";
+CA_ARENA_SURRENDER = "Rendirse y abandonar el combate";
+CA_ARENA_RETURN = "Proponer el regreso al lugar de salida";
+CA_ARENA_CLOSE = "Cerrar";

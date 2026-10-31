@@ -22,7 +22,7 @@ def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def fixture(path: Path, peers: int, source_overlay: bool = False, integration: bool = False, magic: bool = False, npc: bool = False) -> None:
+def fixture(path: Path, peers: int, source_overlay: bool = False, integration: bool = False, magic: bool = False, npc: bool = False, disconnect: bool = False) -> None:
     # Disposable geometry; installed development IWAD textures are not distributed.
     text = '''namespace="ZDoom";
 vertex{x=-1024;y=-1024;} vertex{x=1024;y=-1024;}
@@ -48,7 +48,7 @@ linedef{v1=0;v2=3;sidefront=0;blocking=true;}
         for name, data in {
             "MAPINFO": b'gameinfo { AddEventHandlers = "CA590NetworkProbe" }\n',
             "ZSCRIPT": b'version "4.14.2"\n#include "probe.zs"\n',
-            "probe.zs": (SOURCE / ("npc_probe.zs" if npc else "integration_probe.zs" if integration else "card_probe.zs")).read_bytes().replace(b"const MAGIC = 0;", b"const MAGIC = 1;" if magic else b"const MAGIC = 0;"),
+            "probe.zs": (SOURCE / ("npc_probe.zs" if npc else "integration_probe.zs" if integration else "card_probe.zs")).read_bytes().replace(b"const MAGIC = 0;", b"const MAGIC = 1;" if magic else b"const MAGIC = 0;").replace(b"const DISCONNECT = 0;", b"const DISCONNECT = 1;" if disconnect else b"const DISCONNECT = 0;"),
             ("maps/MAP01.wad" if npc else "maps/MAP03.wad"): wad,
         }.items():
             entry = zipfile.ZipInfo(name, (2026, 10, 30, 0, 0, 0))
@@ -68,18 +68,20 @@ def main() -> None:
     parser.add_argument("--source-overlay", action="store_true", help="Overlay edited card sources for iteration only")
     parser.add_argument("--integration", action="store_true", help="Use actual seats and production network events")
     parser.add_argument("--load-directory", type=Path, help="Restart isolated per-peer saved active matches")
+    parser.add_argument("--common-anchor", action="store_true", help="Load peer0 common checkpoint in every native process")
     parser.add_argument("--hold", action="store_true", help="Keep native windows for two minutes for agent UI review")
+    parser.add_argument("--disconnect", action="store_true", help="Leave the second native peer after saving; verify suspended hand on the survivor")
     parser.add_argument("--magic", action="store_true", help="Exercise human Trucazo integration")
     parser.add_argument("--npc", action="store_true", help="Run single-player Argento regression")
     args = parser.parse_args()
     if args.npc: args.players=1
-    if args.magic: args.integration=True
+    if args.magic or args.disconnect: args.integration=True
     if args.load_directory: args.integration = True
     runtime = args.runtime.resolve(strict=True)
-    out = ROOT / "build/issue590" / datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+    out = ROOT / "build/issue590" / datetime.datetime.now().strftime("%Y%m%d-%H%M%S-%f")
     out.mkdir(parents=True)
     package = out / "checks.pk3"
-    fixture(package, args.players, args.source_overlay, args.integration, args.magic, args.npc)
+    fixture(package, args.players, args.source_overlay, args.integration, args.magic, args.npc, args.disconnect)
     processes, streams, commands = [], [], []
     startup = subprocess.STARTUPINFO()
     startup.dwFlags |= subprocess.STARTF_USESHOWWINDOW
@@ -91,7 +93,8 @@ def main() -> None:
             config = peer / "isolated.ini"
             commands_file = peer / "test.cfg"
             quit_tic = (4200 if args.hold else 525 if args.integration else 350) + (args.players - index) * 35
-            prefix = "wait 105; netevent ca590_verify_reload; " if args.load_directory and index == 0 else ""
+            if args.disconnect and not args.load_directory and index == 1: quit_tic=420
+            prefix = "wait 100; netevent ca_session_recover; wait 5; netevent ca590_verify_reload; " if args.load_directory and index == 0 else ""
             commands_file.write_text(prefix + f"wait {quit_tic}; quit\n", encoding="utf-8")
             config.write_text("[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\n"
                               "vid_vsync=false\nvid_maxfps=60\ncl_capfps=false\nvid_activeinbackground=true\n"
@@ -102,7 +105,7 @@ def main() -> None:
             if args.npc: network = []
             entry = ["+map", "MAP01" if args.npc else "MAP03"]
             if args.load_directory:
-                saves = list((args.load_directory / f"peer{index}").glob("save*.zds"))
+                saves = list((args.load_directory / f"peer{0 if args.common_anchor else index}").glob("save*.zds"))
                 if len(saves) != 1: raise RuntimeError(f"Expected one preserved save for peer {index}, found {len(saves)}")
                 with (peer / "recovery.zds").open("xb") as target: target.write(saves[0].read_bytes())
                 entry = ["-loadgame", "recovery.zds"]
@@ -139,12 +142,13 @@ def main() -> None:
                   (" FAIL", "Script error", "Execution could not continue", "VM execution aborted", "desync", "out of sync"))]
         checks = [line for line in lines if line.startswith("CA590 ")]
         ordered_requests.append(re.findall(r"CA590 EVENT peer=\d+ sender=(\d+) serial=(\d+)", text))
-        success = process.returncode == 0 and not errors and text.count("CA590 PASS") == (12 if args.npc else (9 if args.load_directory else 15) if args.integration else 32 + int(args.players > 2)) and text.count("CA590 RESULT") == 1
+        expected = (12 if args.npc else (9 if args.load_directory else 17 + (6 if args.disconnect and index==0 else 0)) if args.integration else 32 + int(args.players > 2))
+        success = process.returncode == 0 and not errors and text.count("CA590 PASS") == expected and text.count("CA590 RESULT") == (2 if args.disconnect and index==0 and not args.load_directory else 1)
         reports.append({"peer": index, "exit": process.returncode, "passed": success, "checks": checks, "errors": errors})
     same_order = len(ordered_requests) == args.players and all(
         len(events) == args.players and events == ordered_requests[0] for events in ordered_requests)
     if args.integration or args.npc: same_order = True
-    result = {"npc":args.npc,"magic":args.magic,"integration":args.integration,"load_directory":str(args.load_directory) if args.load_directory else None,"issue": 590, "baseline": "5.11.8", "source_overlay": args.source_overlay, "real_processes": args.players, "runtime_sha256": digest(runtime),
+    result = {"common_anchor":args.common_anchor,"disconnect":args.disconnect,"npc":args.npc,"magic":args.magic,"integration":args.integration,"load_directory":str(args.load_directory) if args.load_directory else None,"issue": 590, "baseline": "5.11.8", "source_overlay": args.source_overlay, "real_processes": args.players, "runtime_sha256": digest(runtime),
               "engine_sha256": digest(ENGINE), "iwad_sha256": digest(IWAD), "fixture_sha256": digest(package),
               "commands": commands, "peers": reports, "same_order": same_order,
               "passed": same_order and all(x["passed"] for x in reports)}

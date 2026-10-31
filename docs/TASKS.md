@@ -1,6 +1,6 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.12.5** - 2026-10-30.
+Documentation version: **5.12.5** - 2026-10-31.
 
 ## V5.12 in progress - #590 seated 1v1 cards (5.12.5)
 
@@ -15,11 +15,30 @@ keyboard/private-hand UI review and single-player Argento regression. Portable
 seat indexing is corrected, with a bounded legacy-reference fallback.
 
 Outstanding before author handoff:
-- Integrate abrupt disconnect lifecycle/recovery under #437.
+- Integrated #437 departure/common-save recovery passes; finish the session launcher.
 - Complete #434-438 separately, then provide the combined manual terminal.
 
 No new author test is ready yet; do not populate pending_test.txt with backlog.
 
+## V5.12 organized combat - #438 / 5.12.4
+
+Implemented the authored ring/labyrinth, NPC entry, shared consent, individual/
+team results, surrender and original-body return. Native 2/8-peer tests cover
+consent, actual friendly damage, state/item identity and checkpoint recovery.
+Pre-arena saves need the tested scalar-only adapter; connect it to the #434/#435
+launcher. Visual author acceptance remains pending. Keep #438 separate from
+#437 and #590.
+
+## V5.12 lifecycle work - #437 / 5.12.3
+
+Implemented: dead native body/inventory preservation through map travel;
+cancellation on death/departure; common-recovery consent reset; The Fool's
+unanimous mansion journey and all-dead exception; spirit movement/conversation;
+pending material rewards; Palomo return without payment or resurrection.
+Final package: 374 native assertions, including saved spirit rewards, earlier
+lifecycle-save recovery, solo native User3 and companion slot boundaries.
+Remaining: coordinated recovery launcher integration with #434/#435. Author checks stay
+deferred until all V5.12 issues are ready. No release-completion claim.
 
 ## V5.12 work in progress - #436 / 5.12.2
 
@@ -28,8 +47,13 @@ unanimous exact-duration acceleration, stale/duplicate vote rejection and shared
 cancellation. Walking routes/house doors now share explicit destination consent,
 slowest group pace and individual provisions. Tests exercise real native peers.
 Transport boarding/fares/stop/resume are implemented; broaden lifecycle and
-rebooking/abandonment coverage. Remaining #436: tutorial departure/return, quest objective eligibility and rewards,
-personal/world conflicts, full save/load/restart and tent-rest integration.
+rebooking/abandonment coverage. Initial tutorial departure now validates all
+living participants and loadouts before unanimous transfer. Rescue objectives
+now snapshot eligible character records, preserve late personal progress and
+grant each eligible reward once, including coordinated save recovery. Remaining
+#436: other objective conflicts, full lifecycle and tent-rest integration.
+Central-house restitution now grants shared titles to eligible present characters
+and refunds only the original payer, using one world-owned settlement.
 Cross-issue remaining: #434 portable profiles/checkpoints; #435 production
 network authority; #437 lifecycle; #438 arenas/organizers; #590 card seating/UI
 integration. Keep focused branches/PRs; no V5.12 author acceptance yet. Prepare

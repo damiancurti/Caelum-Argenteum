@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.12.5** - 2026-10-30.
+Documentation version: **5.12.5** - 2026-10-31.
 
 ## 5.12.5 - Card-table PvP reuses accepted artwork (#590)
 
@@ -8,6 +8,25 @@ No new graphics are generated. Both human card screens reuse the existing Tarot
 fronts/back, fonts and table/chair assets with their existing provenance.
 Native probe source/evidence: assets/validation_v5_12_5. Disposable generated
 maps and test PK3s stay in build; no development IWAD or executable is distributed.
+## Organized combat venues (#438, 5.12.4)
+
+assets/arenas/VENUES.json is the geometry source; generate_arenas.py builds CARING
+and CASEWER deterministically using the existing owned city/sewer materials.
+The ring is 12 x 12 m. The connected maze occupies 64 x 64 m, including its outer
+passage, with corridors at least 2 m wide. Both have eight native player starts.
+Ceiling/light references reuse current city interiors. The Buenos Aires organizer
+reuses the existing DOID Domingo sprite and the established civilian dimensions;
+no newly generated face, equipment, voice or secret identity is introduced.
+Original decorative corner posts and three rope courses reuse owned wood and
+cloth textures. They introduce no collision, item, mass or balance rule. The
+generator produces stable LF text and original WAD geometry. Native checks cover
+all eight authored starts; author visual acceptance remains pending.
+
+## 5.12.3 - Cooperative lifecycle guards (#437)
+
+This implementation slice changes no artwork, audio or map geometry. Existing
+native death presentation remains. The implemented spirit/journey behavior
+reuses the accepted presentation; no new visual asset is claimed.
 
 
 ## 5.12.2 - Cooperative time interface (#436)

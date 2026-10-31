@@ -2,6 +2,7 @@
 class CA590NetworkProbe : EventHandler
 {
     const MAGIC = 0;
+    const DISCONNECT = 0;
     int Phase,Stamp,SerialBefore,ClockBefore,UsedBefore;
     bool Reloaded,Complete;
     ui int SentPhase;
@@ -55,6 +56,17 @@ class CA590NetworkProbe : EventHandler
     {
         if(Complete || level.time<TICRATE*3)return;
         let a=CaelumPlayer(players[0].mo);let b=CaelumPlayer(players[1].mo);
+        if(DISCONNECT && !Reloaded && Phase==6 && !playeringame[1])
+        {
+            Duel.Tick();
+            Check(Duel.Suspended && !Duel.Finished(),"native departure suspends without defeat");
+            Check(HandState()==HandBefore,"departure preserves exact cards and score");
+            Check(Duel.Serial==SerialBefore,"departure does not replay or redeal actions");
+            Check(!Duel.Dispatch(a,Duel.Game,CaelumTrucoRules.PLAY_CARD,0,Duel.Serial),"survivor cannot play for absent participant");
+            Check(CaelumCardSeat.Session(a)==Duel,"survivor retains saved shared match reference");
+            Check(CaelumCooperativeTravel.View(a)==null || !CaelumCooperativeTravel.View(a).Opened,"departure leaves no active travel consent");
+            Complete=true;Console.Printf("CA590 RESULT peer=%d suspended",consoleplayer);return;
+        }
         if(!CaelumWorldClockTicker.Ready(a) || !CaelumWorldClockTicker.Ready(b))return;
         if(Reloaded && Phase==6)
         {
@@ -116,6 +128,8 @@ class CA590NetworkProbe : EventHandler
             Check(CaelumWorldClock.Get(a).DayTics>ClockBefore,"world clock advances with both card menus open");
             Check(CaelumWorldClock.Get(a).DayTics==CaelumWorldClock.Get(b).DayTics,"card players retain a shared clock");
             Check(CaelumRestState.IsActive(a) && CaelumRestState.IsActive(b),"actual seats persist through native menu tics");
+            Check(!CaelumCooperativeTravel.BodyReady(a) && !CaelumCooperativeTravel.BodyReady(b),"seated card participants cannot commit arena or world travel");
+            Check(EventHandler.Find('CaelumSessionLifecycle')!=null && StaticEventHandler.Find('CaelumArenaEvents')!=null,"card session uses integrated lifecycle and arena services");
             HandBefore=HandState();SerialBefore=Duel.Serial;Phase=6;
             Console.Printf("CA590 RESULT peer=%d fresh",consoleplayer);
         }

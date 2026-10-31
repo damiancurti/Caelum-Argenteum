@@ -13,11 +13,45 @@ it, then rebuild with `run_dev.bat` as described below.
 use actual seats at the same table and preserve inventory/world health. Native
 two-player invitations, play, active-hand common-save restart and stand-up
 forfeit pass; agent UI review confirms private hands in both games. Argento
-regression passes. Full lifecycle/profile/quest/arena integration remains open;
+regression passes. Lifecycle and arena dependencies now pass together; profile/session tooling remains open;
 author handoff waits for the combined release. No asset redesign or new balance.
 
-The #436 dependency adds native sitting, a shared clock, unanimous time/travel
-and personal transport fares. Quest/profile/lifecycle integration remains open.
+
+**V5.12 organized combat (#438):** Palomo and a Domingo-appearance
+organizer in the Buenos Aires plaza offer the approved ring and sewer maze.
+The shared consent mechanism governs entry and return. Combat keeps actual
+attributes, equipment, friendly fire and ordinary death. Native multi-peer and
+save recovery checks pass; the final combined author suite remains pending.
+For pre-arena saves, `python migrate_arena_save.py original.zds migrated.zds`
+creates a separate revisioned copy with the approved friendly-fire rule, without
+overwriting the original. The coordinated session launcher will apply this adapter.
+
+**V5.12 lifecycle (#437):** cooperative death retains the original pawn, inventory
+and identity through native map travel. The Fool now requests a unanimous mansion
+visit; only the activator pays after consent. Dead visitors move and converse as
+spirits, with material rewards pending until resurrection. Palomo returns the
+group to its recorded departure without another payment or automatic revival.
+Death/departure cancel shared consent. Coordinated recovery tooling and other
+V5.12 dependencies remain unfinished; author acceptance is still pending.
+
+**V5.12 cooperative world (#436):** native peers now share one campaign clock and
+weather seed, with individual nonaccelerated rest. T/the time menu opens an
+exact-duration proposal: everyone must consent, edits clear votes, silence
+waits and any participant may cancel. Personal resources remain individual.
+Walking routes and house doors now require unanimous destination consent;
+walking uses the slowest pace and each character pays their own provisions.
+Vehicle boarding also requires unanimous consent and independent ticket payments;
+shared stops and resumption retain the original trip. Initial mansion departure
+also requires everyone's consent and each living character's completed trials
+and own equipment, checked before any personal completion or packing.
+Rescue objectives now capture the present character roster; each eligible
+character claims their own reward once. Late-ready records keep their personal
+progress and see unavailable-world objectives in the Journal.
+Recovering the central house grants shared access to the present characters;
+only the actual payer receives the single refund of recorded payments.
+This is not full cooperative campaign acceptance: other quest integration,
+profile portability and lifecycle integration remain under their focused issues.
+Author checks will be delivered together after the release is complete.
 
 Author clarification: the comparison is Leonor versus Caella. Caella carries
 22.0184kg (armor plus pickaxe, utility staff and bolas); Leonor carries5kg.

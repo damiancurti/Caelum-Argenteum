@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.12.5** - 2026-10-30.
+Documentation version: **5.12.5** - 2026-10-31.
 
 ## 5.12.5 - Seated human card matches (#590, implementation in progress)
 
@@ -38,9 +38,77 @@ Status: #436 ordinary sitting/shared time is integrated. Native two-peer tests
 pass invitations/actions, actual occupancy, continued shared time, active-hand
 common-save restart and stand-up defeat for both games. Agent UI review checked
 both private hands and keyboard play; single-player Argento regression passes.
-Abrupt disconnect/session recovery integration remains under #437. No author
-acceptance is claimed.
+Integrated #437 native departure suspends the exact hand; common-save restart
+with the lifecycle recovery event passes. No author acceptance is claimed.
 
+## Organized PvP sessions (5.12.4, #438, in progress)
+
+Palomo and the Domingo-appearance organizer in the Buenos Aires plaza offer the
+ring and sewer maze. Starting a match requires 2-8 living available players and
+unanimous entry consent. Individual combat ends with the last surviving entrant;
+teams contain 1-4 players each and end when only one team retains active survivors.
+Initial team allocation alternates native slots; each player may change their
+team before accepting, which clears all votes. Invalid team sizes cannot start.
+
+The native map teamdamage factor is 1 for both campaign and arenas: friendly fire
+also applies within an arena team. Attributes, equipment, wear and consumptions
+remain real. The ring uses the approved urban environmental category and the
+maze uses the sewer category; neither grants immunity to ordinary needs or
+contamination. Surrender removes the participant from the result and locks their
+controls until the match ends; it grants no invulnerability or refunds. There
+is no time limit or additional reward. A simultaneous final death has no winner.
+
+Entry saves each participant's departure position. After the match, return needs
+unanimous consent. It carries the same original bodies/items to their departure
+positions, including corpses, without resurrection. Dead arrivals in the mansion
+use the approved spirit rules. The session menu is accessible from the main menu;
+starting an event still requires a nearby organizer. Saved matches retain their
+roster, teams, withdrawals and result; disconnects withdraw that participant.
+Native multi-peer verification passes; author acceptance is pending. Older
+saves require the separate-copy `migrate_arena_save.py` adapter because GZDoom
+restores their saved teamdamage value. It changes only that scalar in each saved
+level, records migration revision1 and preserves the original archive. The
+static arena service works when loading pre-arena saves. Organizer preparation
+uses one local query at its authored position on entry/load, avoiding duplication.
+
+## Cooperative death and recovery (5.12.3, #437, in progress)
+
+A dead native cooperative player keeps the same pawn and personal record.
+Pressing Use or forced-respawn flags cannot create a replacement pawn. Native
+death camera presentation is retained; the existing explicit Redemption path
+can restore the same body with its established requirements and resource rules.
+Death and disconnection cancel pending travel/time consent immediately, through
+bounded native-player references. Survivors may continue only when the engine
+keeps the native session alive; uninterrupted arbitrator migration is not promised.
+The coordinated recovery launcher must send the native ca_session_recover event
+from player0 after loading a common checkpoint to invalidate old-session consent.
+That event does not move items, revive bodies or assign new identities.
+
+Activating The Fool replaces flight with unanimous travel to the mansion. The
+initiator pays the existing 1,000 Anima and 600-second cooldown only after all
+accept; refusal costs nothing. Palomo offers unanimous return to each original
+position without another charge or automatic resurrection. If every player is
+dead, an owner of The Fool may exceptionally initiate it with User3 and the same
+requirements/cost. Dead players can still vote, but cannot act in the campaign.
+
+Inside the mansion only, the same dead identity controls a spirit. Movement and
+resident/Palomo conversations are allowed; material pickup, use, crafting and
+transfers are denied. Conversations can advance earned objectives, but do not
+complete physical practices. Promised decks/Boxes remain in revision-1 personal
+pending flags and are delivered once after resurrection, retrying if necessary.
+Existing tool gifts retain their original unclaimed-ID mechanism. Argento keeps
+the actual unique silver key until the living character claims it; a pending
+promise does not manufacture a replacement or remotely take his inventory.
+
+Native 4.14.2 normally force-respawns dead players before map travel and excludes
+dead pawns from its traveler list. The shared wrapper temporarily marks only the
+native carrier as eligible, never restores actor health, and restores death on
+arrival. It preserves the same pawn, record, inventory and corpse position; no
+second material inventory is created. The mansion now belongs to campaign hub
+434 so visiting it retains inactive campaign maps. On return the original body
+is visible at its recorded death position; elsewhere it remains noninteractive.
+Tarot power revision 2 removes legacy Fool flight while preserving ownership,
+selection and cooldown. Original saves/packages remain the reversible baseline.
 
 ## Shared clock and unanimous time (5.12.2, #436)
 
@@ -89,6 +157,56 @@ House entry preserves property/household systems and does not grant residence
 rights to visitors. The multiplayer branch avoids the old console-local capture
 handshake; native house-door presentation remains unchanged for solo play.
 
+The initial MAP01 return doorway also proposes a unanimous destination after
+the initiator closes its conversation. All living players must have completed
+their own trials and hold their departure equipment; already-completed personal
+tutorials are not repeated. Dead participants retain the approved interface
+vote and receive no living tutorial transaction. Every loadout and Box capacity
+is checked before any packing, inventory sanitation or completion. Final
+consent revalidates them: a missing item cancels the whole proposal. Each
+character keeps their native item references and records their own departure.
+Equipment IDs are local: multiplayer departure never searches the map for a
+dropped starter by numeric ID; the owner must retrieve it first. Solo recovery
+retains its existing explicit departure-only search. Saved enum values are
+preserved, the new kind is appended, and the new door reference defaults null.
+No routine global actor scan is added.
+
+Rescue objectives are campaign-owned in multiplayer. Completing extraction
+captures the ready characters present in the session, including a dead waiting
+participant; eligibility refers to the saved character record, not its reusable
+native player slot. Repeating the objective cannot expand that roster. Each
+eligible character can claim the existing currency/reputation reward once.
+Personal claim flags remain authoritative against repeat rewards across worlds.
+A late-ready character keeps their pending personal rescue and the Journal says
+that the already-resolved objective is unavailable in this world. Private
+conversations, emotion reads and independent quest progress are not copied.
+The actual initiating player remains the prisoner's escort leader.
+
+Revision-1 migration seeds the campaign rescue state from its existing clock
+owner, granting old extracted-objective eligibility only to records that already
+held extraction. Original saves remain untouched. New portable campaigns must
+initialize a fresh world ledger rather than import an advanced profile's world
+state; that profile-boundary integration remains #434. Eligibility snapshots and
+migration iterate only the bounded native roster and four rescue records.
+
+Central-house restitution is a single world transaction. The initiating
+character must still be recognized and speak with the rental agent. Every
+ready character present at completion receives the house quest reward and a
+saved legal co-title; each can use its residence/camp permissions. Completing
+or replaying the dialogue cannot add later arrivals. An existing contract may
+belong to another present participant, but an absent holder is not displaced.
+Rent/purchase now permits an individual native cooperative transaction with
+unchanged activity, title, funds and inventory-capacity guards.
+
+Only the original contract holder receives the recorded rent/purchase refund.
+A world-owned paid flag prevents multiplying it by the number of recipients or
+repeating it after reload. A capacity failure leaves the actual payer's refund
+pending and retryable; no other character can collect it. Already-completed
+personal quest flags do not erase a real new campaign's outstanding payment.
+Revision-1 property migration recognizes prior solo restitution and preserves
+its sole title and already-paid refund, rather than treating the restored
+ownership as a fresh paid purchase. Original saves remain recoverable.
+
 Vehicle boarding uses the same unanimous native protocol. Every living traveler
 must satisfy the existing boarding checks and afford their own ticket/change.
 All currency transactions are prepared before any wallet is charged. Refusal,
@@ -107,7 +225,7 @@ the ticket requires shared consent; rebooking uses the existing remaining-route
 fare, individually paid. Personal profile transfer must not carry this shared
 campaign journey into a different campaign.
 
-Tutorial departure/return and quest eligibility/conflicts remain unfinished;
+Remaining quest conflicts are unfinished;
 full death/disconnect/restart integration remains #437. Cart boarding, survival
 advance, rejected arrival, native destination arrival and rural stop/resumption
 have dedicated real-peer checks; they do not certify those remaining systems.

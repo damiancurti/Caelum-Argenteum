@@ -36,6 +36,8 @@ class CaelumTarotDetails : Object
     {
         if (!captured) return L("CA_TAROT_DETAIL_UNREVEALED");
         if (!CaelumTarotPowers.Implemented(card)) return L("CA_TAROT_DETAIL_PENDING");
+        if(card==CaelumConstants.TAROT_THE_FOOL)return String.Format(L("CA_FOOL_JOURNEY_RULE"),
+            CaelumConstants.TAROT_ACTIVATION_ANIMA,CaelumConstants.TAROT_COOLDOWN_SECONDS);
         String effect = card == CaelumConstants.TAROT_THE_FOOL ? L("CA_TAROT_DETAIL_FOOL")
             : String.Format(L("CA_TAROT_DETAIL_DOUBLE"), FixedBonus(card, 2));
         return effect .. " " .. String.Format(L("CA_TAROT_POWER_RULE"),

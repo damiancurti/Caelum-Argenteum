@@ -377,6 +377,18 @@
       "lump": "CAT620",
       "previous": "CAT620",
       "kind": "campaign"
+    },
+    "pvp_ring": {
+      "lump": "CARING",
+      "previous": null,
+      "kind": "campaign",
+      "issue": 438
+    },
+    "pvp_sewer_maze": {
+      "lump": "CASEWER",
+      "previous": null,
+      "kind": "campaign",
+      "issue": 438
     }
   },
   "private_interiors": "CAH000 through CAH159 retain their identities and link to port",

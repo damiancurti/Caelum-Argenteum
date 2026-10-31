@@ -10,8 +10,9 @@ class CaelumCooperativeTravelEvents : StaticEventHandler
     override void NetworkProcess(ConsoleEvent e)
     {
         if(e.Name!="ca_cooperative_travel")return;
-        let user=CaelumPlayerAuthority.FromNetworkPlayer(e.Player);
+        let user=CaelumPlayerAuthority.FromNetworkPlayer(e.Player,true);
         let vote=CaelumCooperativeTravel.View(user);
+        if(e.Args[0]==CaelumArena.TEAM){CaelumArena.ChangeTeam(vote,user,e.Args[1]);return;}
         if(vote!=null)vote.Request(user,e.Args[0],e.Args[1]);
     }
 }
@@ -38,6 +39,11 @@ class CaelumCooperativeTravelMenu : ListMenu
         else if(key==MKEY_Back)Send(CaelumCooperativeTravel.CANCEL);
         return true;
     }
+    override bool OnUIEvent(UIEvent e)
+    {
+        if(e.type==UIEvent.Type_Char && (e.KeyChar==116 || e.KeyChar==84)){Send(CaelumArena.TEAM);return true;}
+        return Super.OnUIEvent(e);
+    }
     override void Drawer()
     {
         Screen.Dim(0x080E12,0.92,0,0,Screen.GetWidth(),Screen.GetHeight());
@@ -45,6 +51,11 @@ class CaelumCooperativeTravelMenu : ListMenu
         CaelumTrucoMenu.Wrap(22,60,730,L("CA_COOP_TRAVEL_HELP"));
         let vote=CaelumCooperativeTravel.View(User());if(vote==null)return;
         String target=vote.Kind==CaelumCooperativeTravel.ABANDON?L("CA_COOP_TRAVEL_ABANDON")
+            :vote.Kind==CaelumCooperativeTravel.ARENA?L(CaelumArenaData.NameKey(vote.ArenaVenue))
+            :vote.Kind==CaelumCooperativeTravel.ARENA_RETURN?L("CA_ARENA_RETURN")
+            :vote.Kind==CaelumCooperativeTravel.LIMBO?L("CA_FOOL_JOURNEY_DESTINATION")
+            :vote.Kind==CaelumCooperativeTravel.LIMBO_RETURN?L("CA_FOOL_JOURNEY_RETURN")
+            :vote.Kind==CaelumCooperativeTravel.TUTORIAL?L("CA_COOP_RETURN_DESTINATION")
             :vote.Kind==CaelumCooperativeTravel.HOUSE?L("CA_COOP_TRAVEL_HOUSE")
             :L(CaelumWorldCatalogue.ConnectionNameKey(vote.Connection));
         if(vote.Kind==CaelumCooperativeTravel.DISEMBARK)
@@ -54,7 +65,16 @@ class CaelumCooperativeTravelMenu : ListMenu
                 :String.Format(L("CA_COOP_TRAVEL_ROADSIDE"),vote.Ride!=null?vote.Ride.CoveredKm():0);
         }
         CaelumTrucoMenu.Text(22,125,String.Format(L("CA_COOP_TRAVEL_TARGET"),target));
-        if(vote.Kind>=CaelumCooperativeTravel.BOARD)
+        if(vote.Kind==CaelumCooperativeTravel.LIMBO)
+            CaelumTrucoMenu.Wrap(22,155,730,String.Format(L("CA_FOOL_JOURNEY_COST"),
+                CaelumConstants.TAROT_ACTIVATION_ANIMA,CaelumConstants.TAROT_COOLDOWN_SECONDS));
+        if(vote.Kind==CaelumCooperativeTravel.ARENA)
+        {
+            CaelumTrucoMenu.Wrap(22,155,730,L(vote.ArenaMode==0?"CA_ARENA_INDIVIDUAL":"CA_ARENA_TEAMS_HELP"));
+            int slot=vote.Slot(User());
+            if(vote.ArenaMode==1 && slot>=0)CaelumTrucoMenu.Text(22,215,String.Format(L("CA_ARENA_YOUR_TEAM"),vote.ArenaTeams[slot]+1));
+        }
+        if(vote.IsTransport())
         {
             int slot=vote.Slot(User());int fare=slot>=0 && (vote.AliveMask&(1<<slot))!=0?vote.Fare:0;
             CaelumTrucoMenu.Text(22,155,String.Format(L("CA_COOP_TRAVEL_FARE"),fare));

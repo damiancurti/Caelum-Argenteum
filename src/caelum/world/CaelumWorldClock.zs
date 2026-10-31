@@ -16,6 +16,7 @@ class CaelumWorldClock : Inventory
     int CooperativeSerial;
     CaelumCooperativeTime TimeVote;
     CaelumCooperativeTravel TravelVote;
+    CaelumCooperativeQuests CampaignQuests;
 
     void CopyShared(CaelumWorldClock source)
     {
@@ -25,6 +26,7 @@ class CaelumWorldClock : Inventory
         LimboDays=source.LimboDays;LimboDayTics=source.LimboDayTics;
         SharedRevision=1;
         CooperativeSerial=source.CooperativeSerial;TimeVote=source.TimeVote;TravelVote=source.TravelVote;
+        CampaignQuests=source.CampaignQuests;
     }
 
     void EnsureLocalClock()

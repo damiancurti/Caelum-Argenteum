@@ -29,6 +29,7 @@ class CaelumCampWorld : StaticEventHandler
     override void OnUnregister(){Tents.Clear();Fires.Clear();}
     override void NetworkProcess(ConsoleEvent e)
     {
+        if (CaelumPlayerAuthority.FromNetworkPlayer(e.Player) == null) return;
         if(e.Name=='ca_camp_tent_action' && e.Player>=0 && e.Player<MAXPLAYERS && playeringame[e.Player])
         {
             let user=CaelumPlayer(players[e.Player].mo);let session=CaelumTentSession.Find(user);

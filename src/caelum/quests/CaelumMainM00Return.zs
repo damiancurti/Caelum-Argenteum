@@ -46,11 +46,8 @@ class CaelumMainM00Return : Object play
         if (r.QuestStage[0] != CaelumConstants.MAIN_M00_STATE_FOOL_CAPTURED) return false;
         if (user.CraftingTaskActive)
         { Feedback(user, "CA_M01_RETURN_FINISH_TASK"); return false; }
-        // ChangeLevel mueve la sesión completa. Hasta definir la salida
-        // conjunta, no se puede arrastrar a otro jugador ni limpiar sus objetos.
-        for (int i = 0; i < MAXPLAYERS; i++)
-            if (playeringame[i] && players[i].mo != user)
-            { Feedback(user, "CA_M01_RETURN_SOLO"); return false; }
+        // En red esta confirmación prepara una votación al cerrar el diálogo.
+        // Todavía no empaqueta ni completa el inventario de nadie.
         if (!LevelInfo.MapExists("MAP02"))
         { Feedback(user, "CA_M01_RETURN_ERROR"); return false; }
         r.QuestStage[0] = CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED;
@@ -75,7 +72,7 @@ class CaelumMainM00Return : Object play
         r.MainM00ReturnOwnsFreeze = false;
     }
 
-    static void Cancel(CaelumPlayer user)
+    static void Cancel(CaelumPlayer user, bool notify=true)
     {
         let r = user.GetPersistentCharacterState(false);
         if (r == null || r.QuestStage[0] != CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED) return;
@@ -85,7 +82,7 @@ class CaelumMainM00Return : Object play
         r.QuestStage[0] = CaelumConstants.MAIN_M00_STATE_FOOL_CAPTURED;
         user.A_SetBlend("Black", 0.0, 1);
         user.PersistCharacterState();
-        Feedback(user, "CA_M01_RETURN_ERROR");
+        if (notify) Feedback(user, "CA_M01_RETURN_ERROR");
     }
 
     static CaelumEquipmentItem ResolveStarter(CaelumPlayer user)
@@ -96,6 +93,9 @@ class CaelumMainM00Return : Object play
         let item = user.FindNativeEquipmentItemById(r.MainM00StarterWeaponId);
         if (item != null)
             return item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_WEAPON ? item : null;
+        // Los ItemId son locales al propietario; buscar piezas caídas en red
+        // podría confundir el arma de otra persona. Debe recogerla primero.
+        if (multiplayer) return null;
         // Buscar primero la pieza caída: nunca reemplazar una instancia que
         // todavía existe en el mundo. La salida sólo admite una persona.
         let it = ThinkerIterator.Create("CaelumEquipmentItem");
@@ -112,14 +112,13 @@ class CaelumMainM00Return : Object play
         return null;
     }
 
-    static bool Commit(CaelumPlayer user)
+    static bool Commit(CaelumPlayer user, bool cooperative=false)
     {
         if (!IsReady(user) || user.CraftingTaskActive || !LevelInfo.MapExists("MAP02")) return false;
         let controller = CaelumMainM00QuestController(EventHandler.Find("CaelumMainM00QuestController"));
-        if (controller == null || !CanApproach(user, controller.ReturnDoor)
+        if ((!cooperative && (controller == null || !CanApproach(user, controller.ReturnDoor)))
             || user.HasActiveConversation()) return false;
-        for (int i = 0; i < MAXPLAYERS; i++)
-            if (playeringame[i] && players[i].mo != user) return false;
+        if (multiplayer && !cooperative) return false;
         let r = user.GetPersistentCharacterState(false);
         if (r.QuestStage[0] != CaelumConstants.MAIN_M00_STATE_EXIT_CONFIRMED
             || !r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_EXIT_CONFIRMED)
@@ -184,6 +183,15 @@ class CaelumMainM00Return : Object play
             if (door == null) return;
             if (!CanApproach(user, door) || user.CraftingTaskActive) { Cancel(user); return; }
             if (user.HasActiveConversation()) return;
+            if (multiplayer)
+            {
+                let vote=CaelumCooperativeTravel.View(user);
+                if (vote!=null && vote.Opened) return;
+                ReleaseFreeze(user);
+                if (!CaelumCooperativeReturn.Propose(user,door))
+                { Feedback(user,"CA_COOP_RETURN_READY");Cancel(user,false); }
+                return;
+            }
             user.Vel = (0,0,0);
             if (r.MainM00ReturnTics == FADE_TICS) user.A_SetBlend("Black", 0.0, 1);
             if (r.MainM00ReturnTics > 0) { r.MainM00ReturnTics--; return; }
@@ -193,7 +201,7 @@ class CaelumMainM00Return : Object play
             // negra superpuesta ocultaría la transición solicitada.
             user.A_SetBlend("Black", 0.0, 1);
             user.PendingTravelWipe = 2;
-            Level.ChangeLevel("MAP02", 0, CHANGELEVEL_NOINTERMISSION);
+            CaelumDeadTraveler.ChangeMap("MAP02", 0, CHANGELEVEL_NOINTERMISSION);
         }
         if (level.MapName == "MAP02" && r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_COMPLETE)
             && !r.MainM00SewerVoiceHeard && user.health > 0 && !user.HasActiveConversation())

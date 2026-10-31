@@ -1,3 +1,6 @@
+// #438: el fuego amigo aprobado usa el factor nativo completo.
+defaultmap { teamdamage=1 }
+include "caelum/data/arenas.mapinfo"
 include "caelum/data/transport.mapinfo"
 include "caelum/data/transport_scenes.mapinfo"
 include "caelum/data/cartography.mapinfo"
@@ -32,7 +35,7 @@ GameInfo
 
     // El controlador de prólogo reconstruye MAP01 desde el estado viajero; los
     // demás EventHandlers observan el motor sin convertirse en actores del mapa.
-    EventHandlers = "CaelumPolyDoorEvents", "CaelumCharacterSettings", "CaelumMenuAudio", "CaelumUtilityStaffEvents", "CaelumStoryIntermission", "CaelumConversationResume", "CaelumDialogueHistory", "CaelumWorldClockTicker", "CaelumCooperativeTimeEvents", "CaelumCooperativeTravelEvents", "CaelumThermalWorld", "CaelumAbsentArrivalEvents", "CaelumContaminationWorld", "CaelumFoodWorld", "CaelumCampWorld", "CaelumSealRegistry", "CaelumVehicleWorld", "CaelumMassAIScheduler", "CaelumMainM00QuestController", "CaelumHUDOverlay", "CaelumJournalOverlay", "CaelumJournalInput", "CaelumMapNoteEvents", "CaelumMapLegendEvents", "CaelumDebugOverlay", "CaelumChestPreview", "CaelumRecipeEvents", "CaelumMazeGateEvents", "CaelumSiegeEvents", "CaelumTrucazoEvents", "CaelumTrucoEvents", "CaelumCardTableEvents", "CaelumHouseHubEvents", "CaelumAutosaveEvents", "CaelumBullModelRegistry", "CaelumLandSourceEvents", "CaelumAlchemyEvents", "CaelumFermentationEvents"
+    EventHandlers = "CaelumPolyDoorEvents", "CaelumCharacterSettings", "CaelumMenuAudio", "CaelumUtilityStaffEvents", "CaelumStoryIntermission", "CaelumConversationResume", "CaelumDialogueHistory", "CaelumWorldClockTicker", "CaelumCooperativeTimeEvents", "CaelumCooperativeTravelEvents", "CaelumSessionLifecycle", "CaelumArenaEvents", "CaelumThermalWorld", "CaelumAbsentArrivalEvents", "CaelumContaminationWorld", "CaelumFoodWorld", "CaelumCampWorld", "CaelumSealRegistry", "CaelumVehicleWorld", "CaelumMassAIScheduler", "CaelumMainM00QuestController", "CaelumHUDOverlay", "CaelumJournalOverlay", "CaelumJournalInput", "CaelumMapNoteEvents", "CaelumMapLegendEvents", "CaelumDebugOverlay", "CaelumChestPreview", "CaelumRecipeEvents", "CaelumMazeGateEvents", "CaelumSiegeEvents", "CaelumTrucazoEvents", "CaelumTrucoEvents", "CaelumCardTableEvents", "CaelumHouseHubEvents", "CaelumAutosaveEvents", "CaelumBullModelRegistry", "CaelumLandSourceEvents", "CaelumAlchemyEvents", "CaelumFermentationEvents"
 
     // El índice de dialogues/ reúne fuentes por NPC y conserva el orden de nodos.
     // El USDF generado se carga de forma aditiva en todos los mapas.
@@ -63,6 +66,7 @@ AddDefaultMap
 
 map MAP01 "$CA_MAP01_NAME"
 {
+    cluster = 434
     UnFreezeSinglePlayerConversations
     music = "CA_MUS02"
     // Horizonte propio del Limbo tras retirar el muro perimetral visible.
@@ -83,7 +87,7 @@ map MAP02 "$CA_MAP02_SEWER_NAME"
     cluster = 434
 }
 
-// Estados de mapa conservados por GZDoom al ir y volver. MAP01 queda fuera.
+// Estados de mapa conservados por GZDoom al ir y volver, incluida la visita al Limbo.
 cluster 434
 {
     hub

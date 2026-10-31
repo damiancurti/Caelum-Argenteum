@@ -1,6 +1,6 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.12.5** - 2026-10-30.
+Documentation version: **5.12.5** - 2026-10-31.
 
 ## 5.12.5 - Seated human card-rule preparation (#590, 2026-10-30)
 
@@ -35,6 +35,84 @@ are retained: the first restart fixture attempted a card at a result phase;
 the first NPC fixture started before deferred PostBeginPlay populated Patience.
 Corrected fixtures pass without changing game rules. Abrupt disconnect recovery
 remains a #437 integration obligation; native save restart is not hot joining.
+Final dependency integration with #436/#437/#438 passes164 native assertions.
+Both games suspend after a real peer departure without changing cards, score or
+revision; the survivor cannot play for the absent participant. Coordinated
+restart sends the lifecycle recovery event and restores the exact hand and seats.
+Both games additionally load the same host checkpoint in both native processes.
+Final packaging normalizes only MENUDEF/ZSCRIPT line endings; the final archive
+repeats18 checks and all16 card-source members match the staged Git bytes.
+Seated players cannot commit arena/world travel. Evidence and retained logs:
+assets/validation_v5_12_5/lifecycle-results.json and lifecycle-logs.json.gz.
+The runner now uses unique microsecond directories after a parallel-launch
+collision before native startup. No gameplay change or author acceptance is implied.
+
+## 5.12.4 - Organized combat venues (#438, 2026-10-31, in progress)
+
+Implements the approved venue dimensions and NPC organizers without altering
+personal stats or equipment. Original deterministic geometry reuses owned city
+materials and the Domingo sprite. Shared travel consent is extended for arena
+entry/return and explicit team changes. Match results grant no prizes; death
+remains persistent. Final native package passes390 assertions: eight peers each
+check39 outcomes, two peers save13 checks each and reload26 checks each. The
+pre-arena copy migration/static handler pass six additional native checks. The
+legacy input and every failed iteration remain preserved; the adapter changes
+only saved teamdamage and passes scalar-diff, idempotence and refusal checks.
+Live visual review confirms the ring posts/ropes and stone maze. The actual
+Buenos Aires organizer opens the Spanish UI; keyboard destination/mode changes
+were checked through CUA. An initial
+editor id outside the signed range produced an unknown thing; corrected before
+the final build. Determinism/connectivity checks pass. Evidence lives in
+assets/validation_v5_12_4. Coordinated-launcher integration and the combined
+author suite remain pending; no manual acceptance or rendering-FPS claim.
+Final packaging normalizes one source member from CRLF to LF; all other members
+remain identical. The final archive matches all23 changed Git members and repeats
+the six native migration checks. Source equivalence and both hashes are recorded.
+
+## 5.12.3 - Cooperative lifecycle guards (#437, 2026-10-31, in progress)
+
+Author decisions: dead players wait without world actions, but can vote; native
+Use must not respawn a replacement. Shared consent cancels at death/departure.
+Existing Redemption may still restore the same corpse. The author separately
+approved replacing The Fool flight with unanimous mansion travel, charging the
+existing 1,000 Anima/600-second cooldown only after consent; Palomo provides a
+free unanimous return to origin. The spirit only moves/converses in the mansion,
+without material inventory interactions. If all players die, one may initiate
+The Fool from the interface with the same payment. Spirit conversations may
+advance missions; their material rewards must wait for resurrection.
+
+Follow-up implementation: a native travel guard preserves the original dead
+pawn, inventory and recorded corpse position across hub travel. The mansion
+joins campaign hub 434; The Fool now requests consent and Palomo offers return.
+Spirit controls allow movement/resident dialogue but deny material actions.
+Personal pending flags defer decks/Boxes; the unique silver key remains with
+Argento until claimed alive. Tarot revision 2 removes legacy flight without
+resetting ownership, selected cards or cooldown. No automatic resurrection.
+
+Native verification: eight actual peers pass 11 death/consent checks each and
+six common-save recovery/resurrection checks each. Four-peer remote departure
+and two-peer arbitrator departure pass, including original-roster restarts and
+the native recovery event: 188 assertions, clean exits. After correcting diagnostic release labels, the
+exact delivery package passed 22 more two-peer assertions (210 total); all six
+changed packaged members match the staged index byte-for-byte. Package hashes,
+commands and full logs (including corrected fixture failures) are preserved in
+assets/validation_v5_12_3/lifecycle-results.json and lifecycle-logs.json.gz.
+This does not establish general host migration or repair the earlier #436 engine
+crash. Static validator passes; author confirmation remains pending.
+
+
+Follow-up native delivery verification: 374 assertions from the final package,
+with one, two and eight real processes. Eight peers pass 36 checks each; two
+peers save pending spirit rewards (19 each), reload and complete the same visit
+(13 each), and load the earlier lifecycle build's common save (6 each). Solo
+living travel and the actual native User3 all-dead exception pass 10 checks.
+The companion boundary retains a dead slot at exactly three days, releases it
+one world tic later, and does not evict anyone when a revived member finds a
+full party. All 35 changed packaged members match source bytes. Evidence:
+assets/validation_v5_12_3/spirit-results.json and spirit-logs.json.gz, including
+failed fixture iterations and their corrections. CA-KP-196 documents native
+forced respawn during ChangeLevel. Static checks and author acceptance remain
+separate; coordinated recovery tooling and whole-release integration remain.
 
 
 #436 package follow-up: CRLF/LF normalization changes no logic. The rebuilt
@@ -44,6 +122,48 @@ Runs 20261030-222144/222237 and package SHA-256 are in validation_v5_12_2.
 This remains agent verification, not author acceptance.
 
 ## 5.12.2 - Shared clock and time consent (#436, 2026-10-30, in progress)
+
+House follow-up (2026-10-31): the author approves shared title/access for
+characters present when the house is recovered, with refunds only to the actual
+payer. A single saved world settlement and co-titles implement that rule. Native
+checks exposed a prior solo-only acquisition guard; personal rent/purchase now
+works with actual peers without lifting unrelated schedule restrictions. Old
+restitution migrates once without inventing a purchase refund or new co-owners.
+Final native evidence: eight peers each pass17 house/title/payment checks and
+six common-save recovery checks; two peers each pass six old-save migration
+checks. The preserved prior package passes two legacy-setup checks per peer.
+All exit cleanly (200 final assertions). Failed fixture/development evidence,
+full logs and package hashes: house-results.json/house-logs.json.gz. Static
+validation and exact staged-source/package comparison are recorded with the
+commit. This is not author acceptance or completion of V5.12. Final PK3 SHA-256:
+`413202c32bcea16c0669544c9aa1cc5e4baad01a159243943b85fa11ec1bff71`.
+
+Rescue follow-up (2026-10-31): campaign-owned revision-1 objective snapshots
+capture eligible character records at extraction. Each character keeps its own
+claim guard and wallet; late-ready characters retain personal progress and see
+an unavailable-world Journal explanation. Escort ownership follows the actual
+conversation initiator. Native final package: eight peers each pass28 assertions,
+then six each after common-save recovery; two peers each pass six old-save
+migration checks. The untouched previous package created that legacy save and
+passed two checks per peer. All exit cleanly (288 final assertions). Preserved
+fixture failures and exact logs/hashes: rewards-results.json/rewards-logs.json.gz.
+No author acceptance, Internet test or completed V5.12 claim. Final PK3 SHA-256:
+`63a88a218cf1b5d03dd13593e652fc19faa4ad51f9707e53adc583900c10757c`.
+
+Tutorial follow-up: the author requires all living characters to finish their
+own trials before leaving. The doorway publishes unanimous consent after its
+initiating conversation. A read-only packing preflight validates every personal
+loadout, then the existing completion/sanitation applies to each living record
+once. Item-ID lookup stays owner-local in multiplayer; no global dropped-item
+search is introduced. Initial fixture failures retained: an opening narrative
+conversation correctly blocked a guest; an attempted DetachFromOwner called a
+hook rather than removing the test item. Corrected fixtures use explicit setup
+and native RemoveInventory. Final results are recorded in return-results.json;
+no author acceptance is implied. Final native evidence: eight peers each pass21
+tutorial checks; solo departure passes8; two transport peers each pass26. All
+exit cleanly (228 assertions total). The final package matches the staged
+source members exactly; SHA-256:
+`514644e12729603258c7fb2f2dbf0aa1c65404dc185cab01fe097a6a03126f45`.
 
 Transport follow-up: individual all-or-nothing fare preparation, one shared
 vehicle/incident record, unanimous boarding/disembarkation/resumption, and no
