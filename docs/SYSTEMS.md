@@ -10,8 +10,13 @@ duplicate start/completion rejection and one-owner cancellation (168 assertions)
 The final four-peer run uses the complete package with validated debug-event
 senders. The 2/8 runs use the prior complete package with unchanged trade/crafting
 logic. Completion is an explicit diagnostic endpoint, not accelerated time.
-Evidence: gameplay-results.json/gameplay-logs.json.gz. Remaining: combat/ability
-integration, hub/profile progress and frame presentation; no author acceptance.
+Evidence: gameplay-results.json/gameplay-logs.json.gz. Native command follow-up
+also passes with 2/4/8 clients: synchronized movement, one actual melee impact
+per sender, one approved Tarot payment despite repeated input, and unchanged
+ability state for nonactivating participants. Every peer reports identical
+positions, damage attribution and cooldowns (112 assertions). Evidence:
+combat-results.json/combat-logs.json.gz. Managed profile integration and frame
+presentation remain pending; no author acceptance or Internet-latency claim.
 
 The launcher pins the engine/resources, IWAD and ordered packages, exports one
 common checkpoint and reserves campaign custody in the profile database. Native
@@ -29,8 +34,8 @@ identity, sender attribution and duplicate rejection, followed by restart from
 the same registry and checkpoint with unchanged identities. Two-peer wrong-slot
 refusal preserves the prior head. Handshake inputs are local, nonpersistent
 CVars; only the explicit validated network event communicates them. The host
-reads new log bytes incrementally. Gameplay and frame-presentation integration
-remain pending; these results do not certify Internet latency or author acceptance.
+reads new log bytes incrementally. Final managed-workflow and frame-presentation
+verification remain pending; these results do not certify Internet latency or author acceptance.
 
 
 #434: transfer preflight checks the native active-conversation flag, not a stale

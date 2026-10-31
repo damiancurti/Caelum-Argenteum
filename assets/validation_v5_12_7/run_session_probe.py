@@ -20,6 +20,7 @@ def main():
     parser.add_argument('--source-overlay',action='store_true')
     parser.add_argument('--unmanaged-reload',action='store_true')
     parser.add_argument('--gameplay',action='store_true',help='Exercise actual concurrent trade and crafting services')
+    parser.add_argument('--combat',action='store_true',help='Exercise real native movement, attack and Tarot commands')
     args=parser.parse_args();runtime=args.runtime.resolve(strict=True)
     spec=importlib.util.spec_from_file_location('fixture',ROOT/'assets/validation_v5_12_1/run_network_probe.py');fixture=importlib.util.module_from_spec(spec);spec.loader.exec_module(fixture)
     out=ROOT/'build/issue435'/datetime.datetime.now().strftime('session-%Y%m%d-%H%M%S-%f');out.mkdir()
@@ -28,7 +29,7 @@ def main():
         z.writestr('maps/MAP03.wad',old.read('maps/MAP03.wad'))
         z.writestr('MAPINFO','gameinfo { AddEventHandlers="CA435SessionProbe" }\n')
         z.writestr('ZSCRIPT','version "4.14.2"\n#include "probe.zs"\n')
-        z.writestr('probe.zs',(Path(__file__).parent/('gameplay_probe.zs' if args.gameplay else 'session_probe.zs')).read_bytes())
+        z.writestr('probe.zs',(Path(__file__).parent/('combat_probe.zs' if args.combat else 'gameplay_probe.zs' if args.gameplay else 'session_probe.zs')).read_bytes())
         if args.source_overlay:z.writestr('caelum/world/CaelumSessionIdentity.zs',(ROOT/'src/caelum/world/CaelumSessionIdentity.zs').read_bytes())
     packages=[runtime,out/'checks.pk3'];store=None;sessions=None;token=out.name
     if args.resume_registry and (args.source or args.unmanaged_reload):parser.error('Resume reuses the existing registry; do not supply a seed')
@@ -58,6 +59,14 @@ def main():
                 network=['-host',str(args.players),'-port',str(args.port),'-netmode','0'] if not i else ['-join',f'127.0.0.1:{args.port}','-port',str(args.port+i)]
                 cmd=[str(fixture.ENGINE),'-noautoload','-iwad',str(fixture.IWAD),'-file',*[str(p) for p in packages],'-config',str(peer/'session.ini'),'-savedir',str(peer),*network,'+logfile',str(peer/'engine.log'),*entry,'+exec',str(cfg)]
             cmd.extend(['-window','-width','640','-height','480']);commands.append(cmd);peers.append(peer)
+            if args.combat:
+                actions=f'wait 140; +forward; wait {7+i}; -forward; wait {79-i}; +attack; wait 1; -attack; wait 50; '
+                if i%2==0:actions+='+user3; wait 1; -user3; wait 3; +user3; wait 1; -user3; '
+                actions+=f'wait {150+(args.players-i)*35}; quit\n'
+                if sessions:
+                    content=cfg.read_text();content=content[:content.rfind('wait ')]
+                    cfg.write_text(content+actions)
+                else:cfg.write_text(actions)
             stream=(peer/'process.log').open('wb');streams.append(stream)
             process=subprocess.Popen(cmd,cwd=peer,startupinfo=startup,stdout=stream,stderr=stream);processes.append(process)
             if sessions:sessions.attach(token,i,process.pid)
@@ -75,16 +84,18 @@ def main():
     for i,(p,peer) in enumerate(zip(processes,peers)):
         log=(peer/'engine.log').read_text(errors='replace') if (peer/'engine.log').exists() else ''
         errors=[l for l in log.splitlines() if any(x in l for x in (' FAIL ','Execution could not continue','Script error','VM execution aborted','errors parsing JSON','out of sync','desync'))]
-        expected=12 if args.gameplay else 4 if sessions else 1
+        expected=8 if args.combat else 12 if args.gameplay else 4 if sessions else 1
         passed=p.returncode==0 and not errors and (('CA_SESSION REJECT' in log and 'CA_SESSION READY' not in log and 'CA435SESSION RESULT' not in log) if args.wrong_slot else log.count('CA435SESSION PASS')==expected and log.count('CA435SESSION RESULT')==1)
-        reports.append(dict(peer=i,exit=p.returncode,errors=errors,passed=passed))
+        reports.append(dict(peer=i,exit=p.returncode,errors=errors,passed=passed,
+                            states=[l for l in log.splitlines() if l.startswith('CA435SESSION STATE')]))
         if sessions:sessions.finished(token,i)
     recovery=None
     if sessions:
         watch(processes[0],peers[0],sessions,token,0)
         recovery=sessions.close(token)
         store.close()
-    result=dict(issue=435,directory=str(out),source=str(args.source),resume_registry=str(args.resume_registry),players=args.players,wrong_slot=args.wrong_slot,source_overlay=args.source_overlay,unmanaged_reload=args.unmanaged_reload,gameplay=args.gameplay,commands=commands,runtime_sha256=fixture.digest(runtime),peers=reports,recovery=recovery,passed=all(r['passed'] for r in reports))
+    same_state=not args.combat or all(r['states']==reports[0]['states'] for r in reports)
+    result=dict(issue=435,directory=str(out),source=str(args.source),resume_registry=str(args.resume_registry),players=args.players,wrong_slot=args.wrong_slot,source_overlay=args.source_overlay,unmanaged_reload=args.unmanaged_reload,gameplay=args.gameplay,combat=args.combat,same_state=same_state,commands=commands,runtime_sha256=fixture.digest(runtime),peers=reports,recovery=recovery,passed=same_state and all(r['passed'] for r in reports))
     (out/'results.json').write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps(dict(directory=str(out),peers=reports,recovery=recovery),indent=2))
     if not result['passed']:raise SystemExit(1)

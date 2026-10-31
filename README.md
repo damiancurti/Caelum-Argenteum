@@ -13,7 +13,8 @@ it, then rebuild with `run_dev.bat` as described below.
 ordered package hashes and character slots, reserve campaign custody and retain
 valid common recovery checkpoints. Four/eight-peer identity and common restart
 pass on the complete package; wrong identities leave recovery unchanged. Broader
-combat/abilities, presentation measurements and manual handoff remain pending.
+presentation measurements and manual handoff remain pending. Native movement,
+melee impact attribution and owned Tarot cost/cooldown pass with 2/4/8 clients.
 Concurrent trade and personal crafting pass with 2/4/8 native clients.
 
 **V5.12 profiles (#434, implementation in progress):** staged campaign transfers
