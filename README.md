@@ -29,6 +29,9 @@ it while preserving the original checkpoints. Creation, outward/return transfer,
 normal imported gameplay and vacancy refusal pass, including a fresh eight-client
 combat regression. Intermittent native exits and presentation measurements still
 prevent declaring the release complete.
+Actual two-client mansion, sewer and city observations agree; siege callback
+stalls remain. The older two-client baseline skipped the world clock and related
+simulation, so its lower timings are not equivalent gameplay. See CA-KP-201.
 
 **V5.12 profiles (#434, implementation in progress):** staged campaign transfers
 and return now preserve a single active owner, packed inventory and each world's

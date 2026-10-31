@@ -4,6 +4,23 @@ Documentation version: **5.12.7** - 2026-10-31.
 
 ## V5.12 native session coordination - #435 / 5.12.7 in progress
 
+Campaign performance diagnostics use actual maps and independent native clients,
+with matching recorded state in mansion, sewers, peaceful/ground-facing city and
+the normal calendar siege. Direct deployment comparisons retain the existing
+deployment service, combatants, AI and formations. Two earlier 5.11 calendar
+attempts contained no attackers in the observation window and are explicitly
+excluded. The instrumented 5.11 two-peer control also skips world-clock advancement
+and sampled no thermal/contamination integration; its lower cost does not imply
+a comparable simulation. Current clock scopes cost about 0.03–0.04 ms per update,
+while visual candidate selection is the largest measured nested NPC scope.
+No production mechanics or scheduling were changed by the profiler. Siege stalls
+and the real-presentation gate remain open; see CA-KP-201 and
+campaign-results.json/campaign-logs.json.gz. No author acceptance is implied.
+One-player controls have identical recorded census, aggregate NPC health and
+positions; simulation means are 39.14 ms current / 39.81 ms baseline, with callback
+p99 739.71 / 744.76 ms. Both retain heavy stalls. These single observations do not
+replace the presentation gate or establish general regression clearance.
+
 Window and load follow-up: the transfer verifier now explicitly requests a
 private 640 × 480 window in its own INI; the command-line width/height alone had
 left native peers fullscreen at 1920 × 1080. Two real peers confirm the intended

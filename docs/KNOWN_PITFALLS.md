@@ -5899,3 +5899,36 @@ The private verifier now also pins vid_fullscreen=false and its 640 × 480 INI
 dimensions: command-line dimensions alone did not override a fullscreen default.
 Two native peers confirm the requested window and checkpoint (window-results.json).
 This is a verified launch-configuration correction, not a crash mitigation claim.
+
+## CA-KP-201 - Check simulation equivalence before multiplayer performance comparisons
+
+Status/evidence: VERIFIED guard and sampled observation, #435, 2026-10-31,
+GZDoom4.14.2/Windows11. The accepted 5.11.8 package's WorldClockTicker returns
+when participants != 1. Two-peer calendar-siege attempts therefore had no
+attackers during the recorded window; mark them ineligible rather than treating
+their short timings as a siege baseline. Calling the existing deployment service
+at the same tic creates the intended armies in both versions, but does not make
+their other gameplay equivalent. The baseline sampled zero thermal/contamination
+advances; current multiplayer runs those systems with the shared clock.
+
+In the sampled current two-peer siege, 41 WorldTick observations total 1.3222 /
+1.4357 ms across the two processes; their 82 clock mirrors total 0.0846 / 0.0980 ms.
+NPC inclusive scopes total 1088.4544 / 1104.8480 ms and visual candidate selection
+486.0094 / 488.6384 ms. These are nested, sampled wall-time scopes: do not add
+overlapping totals or extrapolate them as displayed FPS. The matching baseline
+still exhibits severe callback stalls. This does not establish that all current
+stalls have the same cause or that the multiplayer release meets its rendering gate.
+
+One-player controls with identical recorded census, aggregate NPC health and
+player positions give simulation mean 39.14 ms current / 39.81 ms baseline,
+p99 73.28 / 74.81 ms; callback p99 739.71 / 744.76 ms. Both retain the heavy siege
+stalls. This is one observation per version, not whole-state proof, a statistical
+regression clearance, or an actual presentation measurement.
+
+Use actual campaign geometry, bound the native clients, retain both failed and
+excluded runs, and record runtime hashes, commands, census and observation windows.
+One-player controls are not network validation; several peers on one GPU are not
+measurements of separate computers. The profiler reuses #431 wrappers and only
+emits isolated overlays; it changes no production AI, resources or collisions.
+Evidence: validation_v5_12_7/campaign-results.json and campaign-logs.json.gz;
+prepare_session_profile.py and run_campaign_profile.py reproduce the diagnostics.

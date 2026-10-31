@@ -41,6 +41,16 @@ through FBaseCVar::GetHumanString; that partial reconstruction does not establis
 the cause. Intermittent native exits, presentation measurement and final author
 handoff remain open. No full stability or rendering acceptance is claimed.
 
+Campaign diagnostics now include two native peers in the actual mansion,
+sewers, city, ground-facing city and calendar-triggered siege. Recorded state
+agrees and each process exits normally. Siege render-callback stalls remain;
+they are not presented-frame measurements. The 5.11 two-peer comparison stops
+the world clock and has no sampled thermal/contamination advances, so its lower
+cost is not a behavior-equivalent multiplayer baseline. New shared-clock work
+costs about 0.03–0.04 ms per sampled update; visual candidate evaluation dominates
+the measured NPC scopes. No gameplay subsystem was disabled. Detailed controls,
+excluded empty-siege attempts and full logs: campaign-results.json/campaign-logs.json.gz.
+
 The launcher pins the engine/resources, IWAD and ordered packages, exports one
 common checkpoint and reserves campaign custody in the profile database. Native
 slots must acknowledge their selected profile and a shared session nonce before
