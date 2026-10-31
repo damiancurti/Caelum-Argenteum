@@ -11,8 +11,9 @@ it, then rebuild with `run_dev.bat` as described below.
 
 **V5.12 sessions (#435, in progress):** profile-bound native launches now check
 ordered package hashes and character slots, reserve campaign custody and retain
-valid common recovery checkpoints. Two-peer identity/refusal and transaction tests
-pass; 4/8-peer integration, final package and manual handoff remain pending.
+valid common recovery checkpoints. Four/eight-peer identity and common restart
+pass on the complete package; wrong identities leave recovery unchanged. Broader
+gameplay, presentation measurements and manual handoff remain pending.
 
 **V5.12 profiles (#434, implementation in progress):** staged campaign transfers
 and return now preserve a single active owner, packed inventory and each world's

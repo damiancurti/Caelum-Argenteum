@@ -45,9 +45,9 @@ class CaelumSessionIdentity : StaticEventHandler
     {
         if(Sent || gamestate!=GS_LEVEL || consoleplayer<0 || Inspect)return;
         let user=CaelumPlayer(players[consoleplayer].mo);if(user==null)return;
-        let id=CVar.GetCVar("ca_session_profile",players[consoleplayer]);
-        let slot=CVar.GetCVar("ca_session_slot",players[consoleplayer]);
-        let nonce=CVar.GetCVar("ca_session_nonce",players[consoleplayer]);
+        let id=CVar.GetCVar("ca_session_profile");
+        let slot=CVar.GetCVar("ca_session_slot");
+        let nonce=CVar.GetCVar("ca_session_nonce");
         if(id==null || id.GetString().Length()==0)return;
         Sent=true;
         EventHandler.SendNetworkEvent("ca_session_identity:"..id.GetString(),slot.GetInt(),nonce.GetInt(),1);

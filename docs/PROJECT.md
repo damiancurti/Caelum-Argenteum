@@ -15,10 +15,13 @@ head. Live recorded processes block lease release. The host retains valid native
 checkpoints after roster confirmation, and incomplete/foreign saves cannot replace
 recovery. Original anchors and additive session-schema backups are preserved.
 
-Initial evidence: nine transaction/manifest checks and isolated two-peer native
-identity, sender attribution, duplicate rejection and wrong-slot refusal pass.
-These iteration runs use an explicit source overlay. Final full-package, 4/8-peer,
-common recovery, disconnect, gameplay and frame-presentation checks remain.
+Nine transaction/manifest checks pass. Final packages pass four/eight-peer
+identity, sender attribution and duplicate rejection, followed by restart from
+the same registry and checkpoint with unchanged identities. Two-peer wrong-slot
+refusal preserves the prior head. Handshake inputs are local, nonpersistent
+CVars; only the explicit validated network event communicates them. The host
+reads new log bytes incrementally. Gameplay and frame-presentation integration
+remain pending; these results do not certify Internet latency or author acceptance.
 
 
 ## V5.12 profile integration (#434, 5.12.6, in progress)

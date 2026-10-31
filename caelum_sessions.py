@@ -193,7 +193,7 @@ def command(bundle: Path,slot: int,engine: Path,iwad: Path,packages: list[Path],
     if not all(c in 'abcdefghijklmnopqrstuvwxyz0123456789-:' for c in identity):raise ProfileError('Invalid stored profile identifier.')
     ini='[GlobalSettings]\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\nsnd_mastervolume=0.05\n'
     write_new(peer/'session.ini',ini.encode())
-    # User CVars are local inputs, validated against the synchronized native
+    # Nonpersistent local CVars are inputs, validated against the synchronized native
     # slot/record before any managed character accepts gameplay mutations.
     cfg=f'ca_session_profile "{identity}"\nca_session_slot {slot}\nca_session_nonce {request["nonce"]}\n'
     write_new(peer/'start.cfg',cfg.encode())
@@ -207,13 +207,20 @@ def command(bundle: Path,slot: int,engine: Path,iwad: Path,packages: list[Path],
 
 def watch(process,peer: Path,sessions: Sessions | None,token: str,slot: int) -> int:
     """Publish only complete host checkpoints after the native roster agrees."""
-    seen={};published={};ready=False;rejected=False
+    seen={};published={};ready=False;rejected=False;log_offset=0;log_tail=''
     session=sessions.get(token) if sessions else None
     nonce=session['request']['nonce'] if session else 0
     while True:
         ended=process.poll() is not None
         if sessions and slot==0:
-            path=peer/'engine.log';log=path.read_text(errors='replace') if path.exists() else ''
+            path=peer/'engine.log';log=''
+            if path.exists():
+                if path.stat().st_size<log_offset:log_offset=0;log_tail=''
+                with path.open('rb') as stream:
+                    stream.seek(log_offset);chunk=stream.read();log_offset=stream.tell()
+                log=log_tail+chunk.decode('utf-8',errors='replace')
+                # Retain an incomplete trailing line without rereading the log.
+                split=log.rfind('\n');log_tail=log[split+1:];log=log[:split+1]
             ready=ready or f'CA_SESSION READY peer=0 nonce={nonce}' in log
             rejected=rejected or 'CA_SESSION REJECT' in log
             if ready and not rejected:
