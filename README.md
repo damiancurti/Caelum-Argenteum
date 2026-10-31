@@ -14,6 +14,7 @@ and return now preserve a single active owner, packed inventory and each world's
 shops/properties. Native narrative checkpoints save complete transactions without
 replaying rewards on load. The session launcher, broader migration/recovery and
 remaining multiplayer integration are still unfinished; no author handoff yet.
+Transfers reject active conversations while allowing finished dialogue references.
 
 **V5.12 work in progress - #590 table-card PvP:** human Truco and Trucazo
 use actual seats at the same table and preserve inventory/world health. Native

@@ -4,6 +4,15 @@ Documentation version: **5.12.6** - 2026-10-31.
 
 ## 5.12.6 - Typed personal profile graph foundation (#434, 2026-10-31)
 
+Native conversation preflight follow-up: GZDoom4.14.2 serializes the speaker as
+`conversionnpc` (its actual spelling), with `flags5 & 0x20000000` indicating an
+active conversation. Transfer now rejects that active state but accepts a stale
+speaker pointer after dialogue. Two native peers pass10 assertions; both produced
+saves pass the corresponding offline deny/allow checks without modifying originals.
+Fourteen transaction checks pass. Bindings are data in personal-boundary.json;
+source references are g4.14.2 playsim/p_user.cpp, p_mobj.cpp and actor.h. The first
+fixture misspelled the Palomo actor class; its failed logs remain preserved.
+
 Implements read-only typed ownership extraction and copied native installation,
 plus an additive static import reconciler. SQLite foundation checks cover immutable
 anchors, concurrent custody, stale revisions, rollback and corruption refusal.

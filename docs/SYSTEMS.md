@@ -2,6 +2,9 @@
 
 Documentation version: **5.12.6** - 2026-10-31.
 
+#434: transfer preflight checks the native active-conversation flag, not a stale
+speaker pointer. Ordinary saves remain allowed; no dialogue progress is discarded.
+
 ## External character profile boundary (#434, 5.12.6, in progress)
 
 The approved profile carries identity, attributes, abilities, Tarot, inventory,

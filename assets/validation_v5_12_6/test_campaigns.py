@@ -34,6 +34,16 @@ class CampaignTests(unittest.TestCase):
 
     def stage(self,token='one'):return self.campaigns.stage(self.identity,'b',1,token)
 
+    def test_native_dialogue_flag_blocks_but_stale_reference_does_not(self):
+        members,name,level=unpack(self.store.anchor(self.a['snapshot']))
+        speaker=level['players'][1]['mo'];level['players'][0]['conversionnpc']=speaker
+        level['objects'][speaker]['flags5']=ADAPTER.policy['native_conversation']['active_mask']
+        self.campaigns.checkpoint('a',pack(members,name,level),0)
+        with self.assertRaises(ProfileError):self.stage()
+        level['objects'][speaker]['flags5']=0
+        self.campaigns.checkpoint('a',pack(members,name,level),1)
+        self.assertEqual(json.loads(self.stage()['request'])['identity'],self.identity)
+
     def verified(self,row):
         source=self.store.anchor(row['source_draft'])
         members,name,level=unpack(self.store.anchor(row['destination_draft']))
