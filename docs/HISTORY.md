@@ -63,6 +63,16 @@ This remains agent verification, not author acceptance.
 
 ## 5.12.2 - Shared clock and time consent (#436, 2026-10-30, in progress)
 
+Identity-snapshot follow-up (2026-10-31): the actual #434 return test exposed
+that GZDoom discards a detached historical Inventory record during load.
+Revision-2 world migration now retains separate legal-identity objects for each
+objective; it does not depend on the lifetime of the former record actor.
+Final full package passes 146 assertions: eight peers test missing historical
+records; two test old-save migration; two repeat house restitution. Overlay
+development passes 26 additional assertions. Evidence: identity-results.json
+and identity-logs.json.gz. Full coordinator return verification continues in
+#434; no author acceptance is claimed.
+
 Portable-progress follow-up (2026-10-31): solo campaigns now initialize the
 same revision-1 world objective ledger before profile transfer. Earned reward
 eligibility compares the existing persistent legal identity as well as the

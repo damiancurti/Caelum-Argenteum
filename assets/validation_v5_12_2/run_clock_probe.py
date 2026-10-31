@@ -105,7 +105,7 @@ def main() -> None:
     if args.transport_stop:
         args.transport = True
     runtime = args.runtime.resolve(strict=True)
-    out = ROOT / "build/issue436" / datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+    out = ROOT / "build/issue436" / datetime.datetime.now().strftime("%Y%m%d-%H%M%S-%f")
     out.mkdir(parents=True)
     package = out / "checks.pk3"
     fixture(package, args.players, args.source_overlay, args.persistence, args.travel, args.transport, args.transport_stop, args.transport_mode, args.tutorial, args.rewards, args.legacy_rewards, args.house, args.legacy_house, args.tent, args.overlay_base, args.progress)
@@ -170,7 +170,7 @@ def main() -> None:
                   (" FAIL", "Bad type", "errors while compiling", "Script error", "Execution could not continue", "Cannot find savegame", "VM execution aborted", "desync", "out of sync"))]
         checks = [line for line in lines if line.startswith("CA436 ")]
         ordered_requests.append(re.findall(r"CA436 EVENT peer=\d+ sender=(\d+) serial=(\d+)", text))
-        success = process.returncode == 0 and not errors and text.count("CA436 PASS") == (12 if args.progress else 18 if args.tent else 2 if args.legacy_rewards or args.legacy_house else (6 if args.load_directory else 15+(2 if args.players>2 else 0)) if args.house else (6 if args.load_directory else 10+2*args.players+(2 if args.players>2 else 0)) if args.rewards else (8 if args.players==1 else 21) if args.tutorial else 30 if args.transport_stop else 26 if args.transport else 31 if args.travel else (6 if args.load_directory else 4) if args.persistence else 36) and text.count("CA436 RESULT") == 1
+        success = process.returncode == 0 and not errors and text.count("CA436 PASS") == (13 if args.progress else 18 if args.tent else 2 if args.legacy_rewards or args.legacy_house else (6 if args.load_directory else 15+(2 if args.players>2 else 0)) if args.house else (6 if args.load_directory else 10+2*args.players+(2 if args.players>2 else 0)) if args.rewards else (8 if args.players==1 else 21) if args.tutorial else 30 if args.transport_stop else 26 if args.transport else 31 if args.travel else (6 if args.load_directory else 4) if args.persistence else 36) and text.count("CA436 RESULT") == 1
         reports.append({"peer": index, "exit": process.returncode, "passed": success, "checks": checks, "errors": errors})
     same_order = len(ordered_requests) == args.players and all(
         len(events) == args.players * (3 if args.travel or args.transport else 1) and events == ordered_requests[0] for events in ordered_requests)
