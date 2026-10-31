@@ -39,6 +39,7 @@ boundaries pass, including pending rewards on return. Managed native transfer
 integration passes; final stability/presentation checks and author handoff remain.
 Transfers reject active conversations while allowing finished dialogue references.
 `caelum_new_campaign.py` creates a separate native MAP01 with 1–8 vacant slots
+using a private 640 × 480 window configuration
 for imports, without replacing a save or granting placeholder equipment. The
 coordinator retains the native world and registers no character until a transfer.
 
