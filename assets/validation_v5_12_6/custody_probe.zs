@@ -32,6 +32,11 @@ class CA434ProfileProbe : StaticEventHandler
             Check(!a.bSolid && !a.bShootable && a.bInvisible,"departed body does not block or participate");
             Check(first.HouseRestitutionConfirmed && first.PalomoMerchantStock[0]==23,"source title and shop retained");
             Check(!b.ProfileDeparted && CaelumPlayerAuthority.CanMutate(b),"other source participant remains active");
+            let world=CaelumCooperativeQuests.Get(b);
+            Check(world.Rescue[0]!=null && world.Rescue[0].Contains(first),"source retains absent character's earned eligibility");
+            Check(!first.PrisonerRewardClaimed[0],"departure does not redeem a pending reward");
+            Check(world.PrisonerState[1]==CaelumConstants.PRISONER_STATE_FOLLOWING,"source world keeps its unresolved objective");
+            Check(first.LawfulIdentity!=null,"historical eligibility keeps the original legal identity");
         }
         else
         {
@@ -45,6 +50,12 @@ class CA434ProfileProbe : StaticEventHandler
             Check(table!=null && table.Table!=null && table.Table.Items[0]!=null && table.Table.Items[0].Amount==3,"packed food retained");
             Check(!second.HouseRestitutionConfirmed && second.PalomoMerchantStock[0]==91,"destination world retained");
             Check(b.player.ReadyWeapon!=null && b.player.ReadyWeapon.Owner==b,"destination native weapon restored");
+            let world=CaelumCooperativeQuests.Get(b);
+            Check(world.Rescue[0]!=null && !world.Rescue[0].Contains(second),"new occupant does not inherit old occupant eligibility");
+            int money=b.GetOwnedMoneyCopperValue();
+            Check(!b.ClaimPrisonerPortReward(0,CaelumPrisonerRescue.FactionFor(0)) && b.GetOwnedMoneyCopperValue()==money,"foreign campaign gives no retroactive reward");
+            Check(second.PrisonerRescueState[1]==CaelumConstants.PRISONER_STATE_FOLLOWING,"incoming personal objective remains pending");
+            Check(CaelumCooperativeQuests.Unavailable(b,CaelumConstants.QUEST_RESCUE_FIRST+1),"resolved foreign objective appears unavailable");
         }
         Done=true;Console.Printf("CA434 RESULT custody peer=%d",consoleplayer);
     }

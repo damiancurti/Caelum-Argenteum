@@ -4,6 +4,21 @@ Documentation version: **5.12.6** - 2026-10-31.
 
 ## 5.12.6 - Typed personal profile graph foundation (#434, 2026-10-31)
 
+Identity/hub follow-up: 120 assertions in real two-client runs now verify old
+native identity/world-ledger upgrade, two-map hub retention, outward/return
+custody and post-transfer hub return. Source pending eligibility survives; a
+resolved destination objective grants nothing retroactively; returning redeems
+the source reward exactly once. Twenty-three transaction and seven graph checks
+pass, including raw-copy duplicate identity refusal and legacy origin-binding
+upgrade. Evidence: identity-results.json and identity-logs.json.gz.
+The first actual return failed because GZDoom discarded a detached Inventory
+record referenced by world eligibility. #436 revision2 stores independent legal
+identity snapshots; this adapter also allocates a new record for the imported
+occupant. Failed predecessors remain preserved. Native FName keys are matched
+case-insensitively (`token`, `REVISION`); ambiguous duplicate fields are rejected.
+Diagnostic second-world identities are explicit independent-world fixtures,
+never a production identity rewrite. Final #435 launch integration remains open.
+
 Recovery follow-up: registration invokes the existing #438 copy-only native
 team-damage migration, including inactive saved levels, while retaining the
 original anchor byte-for-byte. Closed coordinators can be backed up and recovered

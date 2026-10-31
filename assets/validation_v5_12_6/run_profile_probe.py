@@ -85,7 +85,7 @@ def main():
         log=out/f'peer{index}/engine.log';text=log.read_text(errors='replace') if log.exists() else ''
         errors=[l for l in text.splitlines() if any(t in l for t in (' FAIL ','Execution could not continue','Script error','VM execution aborted','out of sync','desync','Unknown type','Unknown sprite','Cannot find savegame','DIED WITH FATAL ERROR','EADDRINUSE','errors parsing JSON','type expected for'))]
         checks=[l for l in text.splitlines() if l.startswith('CA434 ')]
-        expected=args.checks if args.checks is not None else (15 if args.source or args.reload else 3)
+        expected=args.checks if args.checks is not None else (15 if args.source or args.reload else 7)
         passed=process.returncode==0 and not errors and text.count('CA434 PASS')==expected and text.count('CA434 RESULT')==1
         reports.append(dict(peer=index,exit=process.returncode,passed=passed,checks=checks,errors=errors))
     result=dict(issue=434,directory=str(out),stage='isolated native profile assertions',runtime_sha256=fixture.digest(runtime),

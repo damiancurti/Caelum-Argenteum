@@ -3,7 +3,7 @@
 Documentation version: **5.12.6** - 2026-10-31.
 
 **V5.12 in progress:** #436 world/rewards, #437 lifecycle, #438 arenas and #590
-cards verified together. #434 native custody/return and narrative saves verified;
+cards verified together. #434 custody/return, hub, quest boundaries and saves pass;
 #435 launcher/recovery and final integration remain. Author suite deferred.
 
 **V5.11/V5.10 accepted/merged:** HISTORY; no pending checks. Siege stalls persist.

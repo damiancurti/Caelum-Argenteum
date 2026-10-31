@@ -11,6 +11,7 @@ sys.path.insert(0,str(ROOT))
 from caelum_profiles import ProfileStore,ProfileError
 from caelum_profile_graph import PersonalGraph,NativeSchema
 from caelum_campaigns import Campaigns,unpack,pack,personal_record
+from campaign_fixture import independent_world
 
 
 def main():
@@ -23,7 +24,15 @@ def main():
     store=ProfileStore(out/'profiles.sqlite3',create=True)
     campaigns=Campaigns(store,PersonalGraph(NativeSchema(Path('C:/Program Files (x86)/GZDoom/gzdoom.pk3'),runtime)))
     data=args.anchor.read_bytes();a=campaigns.register('a',data)
-    members,name,level=unpack(data);personal_record(level,1)['ProfileCommitted']=0
+    members,name,level=unpack(independent_world(data,'b'));personal_record(level,1)['ProfileCommitted']=0
+    if not args.deceased:
+        # This different world has also resolved objective 1, while the incoming
+        # character still has that personal investigation pending.
+        for obj in level['objects']:
+            if obj.get('classtype')=='CaelumCooperativeQuests':
+                state=obj['class:CaelumCooperativeQuests']
+                state['PrisonerState'][1]=state['PrisonerState'][0]
+                state['Rescue'][1]=state['Rescue'][0]
     campaigns.register('b',pack(members,name,level))
     identity=store.connection.execute("SELECT identity FROM campaign_slots WHERE campaign='a' AND player=0").fetchone()[0]
     result={'issue':434,'runs':[],'transfers':[],'directory':str(out)}
@@ -35,7 +44,7 @@ def main():
             draft=out/f'{token}-{side}.zds';store.export_anchor(row[side+'_draft'],draft)
             report=out/f'{token}-{side}.json'
             command=[sys.executable,str(Path(__file__).with_name('run_profile_probe.py')),'--runtime',str(runtime),
-                '--reload',str(draft),'--probe',str(Path(__file__).with_name(probe)),'--checks','4' if args.deceased else '8','--port','30444','--report',str(report)]
+                '--reload',str(draft),'--probe',str(Path(__file__).with_name(probe)),'--checks','4' if args.deceased else '12','--port','30444','--report',str(report)]
             if args.campaign:command.append('--campaign')
             run=subprocess.run(command,cwd=ROOT,capture_output=True,text=True)
             (out/f'{token}-{side}.log').write_text(run.stdout+'\n'+run.stderr,encoding='utf-8')

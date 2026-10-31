@@ -11,10 +11,10 @@ reward/choice saves survive reload without another reward or automatic save.
 
 Still required before delivery:
 - Integrate profile commands with #435 session identities, package preflight and recovery.
-- Actual MAP03/deceased transfer and native migration/backup integration pass;
-  complete hub and personal/world quest-boundary coverage.
+- Actual MAP03/deceased transfer, native migration/backup, hub travel and
+  personal/world quest boundaries pass (120 latest native assertions).
 - Active-conversation native preflight is verified; complete broader profile root coverage.
-- Complete remaining #436 two-player rest/portable-progress integration.
+- #436 two-player rest and independent world-eligibility snapshots are integrated.
 - The #437 legacy registration bridge is integrated and verified.
 - Finish combined validation before creating the author terminal and pending checks.
 

@@ -13,6 +13,7 @@ sys.path.insert(0,str(ROOT))
 from caelum_profiles import ProfileStore,ProfileError,recover_backup
 from caelum_profile_graph import NativeSchema,PersonalGraph
 from caelum_campaigns import Campaigns,unpack,pack,personal_record
+from campaign_fixture import independent_world
 
 RUNTIME=Path(sys.argv[1]).resolve();SOURCE=Path(sys.argv[2]).resolve();DATA=SOURCE.read_bytes()
 ADAPTER=PersonalGraph(NativeSchema(Path('C:/Program Files (x86)/GZDoom/gzdoom.pk3'),RUNTIME))
@@ -26,7 +27,7 @@ class CampaignTests(unittest.TestCase):
         self.store=ProfileStore(self.directory/'profiles.sqlite3',create=True)
         self.campaigns=Campaigns(self.store,ADAPTER)
         self.a=self.campaigns.register('a',DATA)
-        members,name,level=unpack(DATA);personal_record(level,1)['ProfileCommitted']=False
+        members,name,level=unpack(independent_world(DATA,'b'));personal_record(level,1)['ProfileCommitted']=0
         self.b=self.campaigns.register('b',pack(members,name,level))
         self.identity=self.store.connection.execute("SELECT identity FROM campaign_slots WHERE campaign='a' AND player=0").fetchone()[0]
 
@@ -160,7 +161,7 @@ class CampaignTests(unittest.TestCase):
         self.assertIs(type(level['multiplayer']),bool)
 
     def test_registration_migrates_all_saved_levels_and_retains_original(self):
-        members,name,level=unpack(DATA)
+        members,name,level=unpack(independent_world(DATA,'legacy-hub'))
         level['teamdamage']=0
         members['inactive.map.json']=json.dumps(level).encode()
         data=pack(members,name,level)
@@ -170,6 +171,46 @@ class CampaignTests(unittest.TestCase):
         self.assertEqual(json.loads(migrated['inactive.map.json'])['teamdamage'],1)
         self.assertIn('caelum-arena-migration.json',migrated)
         self.assertEqual(self.store.anchor(hashlib.sha256(data).hexdigest()),data)
+
+    def test_unmanaged_copy_cannot_register_a_second_character(self):
+        with self.assertRaisesRegex(ProfileError,'already has a profile'):
+            self.campaigns.register('copied-world',DATA)
+        self.assertIsNone(self.store.connection.execute("SELECT 1 FROM campaigns WHERE identity='copied-world'").fetchone())
+        self.assertEqual(self.campaigns.head('a'),self.a)
+
+    def test_legacy_identity_or_ledger_requires_native_upgrade(self):
+        for key in ('LawfulIdentity','CampaignQuests'):
+            members,name,level=unpack(independent_world(DATA,key))
+            if key=='LawfulIdentity':personal_record(level,0).pop(key,None)
+            else:
+                for obj in level['objects']:
+                    if obj.get('classtype')=='CaelumWorldClock':obj['class:CaelumWorldClock'].pop(key,None)
+            with self.assertRaisesRegex(ProfileError,'Load and save'):
+                self.campaigns.register('missing-'+key,pack(members,name,level))
+            self.assertIsNone(self.store.connection.execute('SELECT 1 FROM campaigns WHERE identity=?',('missing-'+key,)).fetchone())
+
+    def test_checkpoint_cannot_replace_bound_legal_identity(self):
+        members,name,level=unpack(self.store.anchor(self.a['snapshot']))
+        identity=personal_record(level,0)['LawfulIdentity']
+        state=level['objects'][identity]['class:CaelumLawfulIdentity']
+        key=next(k for k in state if k.casefold()=='token');state[key]='replacement'
+        with self.assertRaisesRegex(ProfileError,'legal identity changed'):
+            self.campaigns.checkpoint('a',pack(members,name,level),0)
+        self.assertEqual(self.campaigns.head('a'),self.a)
+
+    def test_invalid_origin_is_refused_without_checkpoint_mutation(self):
+        self.store.connection.execute('UPDATE profiles SET origin=? WHERE identity=?',('[]',self.identity))
+        with self.assertRaisesRegex(ProfileError,'Unsupported stored profile origin'):
+            self.campaigns.checkpoint('a',self.store.anchor(self.a['snapshot']),0)
+        self.assertEqual(self.campaigns.head('a'),self.a)
+
+    def test_legacy_origin_upgrades_only_with_a_valid_native_checkpoint(self):
+        old=json.dumps(['a',self.a['snapshot'],0])
+        self.store.connection.execute('UPDATE profiles SET origin=? WHERE identity=?',(old,self.identity))
+        self.campaigns.checkpoint('a',self.store.anchor(self.a['snapshot']),0)
+        value=self.store.connection.execute('SELECT origin FROM profiles WHERE identity=?',(self.identity,)).fetchone()[0]
+        self.assertEqual(json.loads(value)[0],'native-lawful-v1')
+        self.campaigns.validate('a',self.store.anchor(self.campaigns.head('a')['snapshot']),current=True)
 
     def test_closed_backup_recovers_all_custody_and_refuses_overwrite(self):
         backup=self.directory/'backup.sqlite3';recovered=self.directory/'recovered.sqlite3'

@@ -475,7 +475,12 @@ class PersonalGraph:
         for group in result["thinkers"]:
             group[:] = [i for i in group if i not in retired and i != record_index]
 
-        mapping = {-1: body_index, graph["record"]: record_index}
+        # Campaign eligibility may still reference the former record. Keep that
+        # historical object detached instead of replacing its identity in place.
+        # Otherwise an imported character would inherit a prior occupant's reward.
+        objects[record_index]["class:Inventory"]["Owner"] = None
+        objects[record_index]["inventory"] = None
+        mapping = {-1: body_index}
         for i in range(len(graph["objects"])):
             if i not in mapping:
                 mapping[i] = len(objects)
@@ -507,7 +512,7 @@ class PersonalGraph:
                 result["spawnindex"] = result.get("spawnindex", 0) + 1
                 obj["spawnorder"] = result["spawnindex"]
             objects[mapping[index]] = obj
-        target_record = objects[record_index]["class:CaelumPersistentCharacterState"]
+        target_record = objects[mapping[graph["record"]]]["class:CaelumPersistentCharacterState"]
         target_record.update(world_fields)
         target_record.update(ExternalProfileId=identity, ExternalProfileRevision=revision,
                              ProfileImportSerial=revision + 1, ProfileImportApplied=0, ProfileDeparted=0)
