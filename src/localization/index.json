@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "eeb52b8db3642bf259437afd0d7cbe0df02ea9ce3bbd5bbddc8b2ca2580b8bac",
+  "sha256": "416714ce80c576f8843a6b07c1813b3d9839a128ddc74004a07313cb1772b420",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[483,483]],"default":[[483,483]],"es":[[1178,1178]]},
     "CA_ABSENT_THEFT_FOUND": {"enu":[[6906,6906]],"default":[[6906,6906]],"es":[[6908,6908]]},
@@ -512,6 +512,7 @@
     "CA_COOP_HOUR_UP": {"enu":[[7210,7210]],"default":[[7210,7210]],"es":[[7225,7225]]},
     "CA_COOP_MINUTE_DOWN": {"enu":[[7208,7208]],"default":[[7208,7208]],"es":[[7223,7223]]},
     "CA_COOP_MINUTE_UP": {"enu":[[7209,7209]],"default":[[7209,7209]],"es":[[7224,7224]]},
+    "CA_COOP_QUEST_UNAVAILABLE": {"enu":[[7283,7283]],"default":[[7283,7283]],"es":[[7285,7285]]},
     "CA_COOP_RETURN_DESTINATION": {"enu":[[7277,7277]],"default":[[7277,7277]],"es":[[7280,7280]]},
     "CA_COOP_RETURN_READY": {"enu":[[7276,7276]],"default":[[7276,7276]],"es":[[7279,7279]]},
     "CA_COOP_TIME_ACCEPT": {"enu":[[7205,7205]],"default":[[7205,7205]],"es":[[7220,7220]]},

@@ -19,7 +19,10 @@ Vehicle boarding also requires unanimous consent and independent ticket payments
 shared stops and resumption retain the original trip. Initial mansion departure
 also requires everyone's consent and each living character's completed trials
 and own equipment, checked before any personal completion or packing.
-This is not full cooperative campaign acceptance: quest rewards,
+Rescue objectives now capture the present character roster; each eligible
+character claims their own reward once. Late-ready records keep their personal
+progress and see unavailable-world objectives in the Journal.
+This is not full cooperative campaign acceptance: house/other quest integration,
 profile portability and lifecycle integration remain under their focused issues.
 Author checks will be delivered together after the release is complete.
 

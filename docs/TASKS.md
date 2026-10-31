@@ -10,9 +10,11 @@ cancellation. Walking routes/house doors now share explicit destination consent,
 slowest group pace and individual provisions. Tests exercise real native peers.
 Transport boarding/fares/stop/resume are implemented; broaden lifecycle and
 rebooking/abandonment coverage. Initial tutorial departure now validates all
-living participants and loadouts before unanimous transfer. Remaining #436:
-quest objective eligibility and rewards,
-personal/world conflicts, full save/load/restart and tent-rest integration.
+living participants and loadouts before unanimous transfer. Rescue objectives
+now snapshot eligible character records, preserve late personal progress and
+grant each eligible reward once, including coordinated save recovery. Remaining
+#436: shared house ownership/refunds, other objective conflicts, full lifecycle
+and tent-rest integration.
 Cross-issue remaining: #434 portable profiles/checkpoints; #435 production
 network authority; #437 lifecycle; #438 arenas/organizers; #590 card seating/UI
 integration. Keep focused branches/PRs; no V5.12 author acceptance yet. Prepare

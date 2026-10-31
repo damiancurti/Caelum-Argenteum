@@ -7278,3 +7278,8 @@ CA_COOP_RETURN_DESTINATION = "Leave the mansion and return to your bodies";
 [es]
 CA_COOP_RETURN_READY = "Todos los jugadores vivos deben terminar las pruebas de la mansión y llevar su propio equipo de salida.";
 CA_COOP_RETURN_DESTINATION = "Salir de la mansión y regresar a sus cuerpos";
+
+[enu default]
+CA_COOP_QUEST_UNAVAILABLE = "This world has already resolved this objective. Your personal progress is preserved; continue in a compatible campaign. No retroactive reward is available here.";
+[es]
+CA_COOP_QUEST_UNAVAILABLE = "Este mundo ya resolvió este objetivo. Conservas tu progreso personal; puedes continuar en otra campaña compatible. Aquí no hay recompensa retroactiva.";

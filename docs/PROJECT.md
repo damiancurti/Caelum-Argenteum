@@ -13,7 +13,9 @@ walking shares the slowest pace with personal provisions and one elapsed clock.
 Transport now shares one route/incident record with individual atomic fares,
 consented stops and original-ticket resumption. Initial tutorial departure
 requires all living players to finish and retain their personal loadout before
-unanimous transfer; reward ownership remains unfinished. The full
+unanimous transfer. Rescues snapshot eligible characters and prevent duplicate
+or retroactive claims; shared house rewards and remaining quest integration
+are unfinished. The full
 V5.12 milestone is not complete or author-accepted. Evidence is kept in
 `assets/validation_v5_12_2`, distinct from #435 and #590.
 

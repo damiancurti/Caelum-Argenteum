@@ -63,6 +63,24 @@ retains its existing explicit departure-only search. Saved enum values are
 preserved, the new kind is appended, and the new door reference defaults null.
 No routine global actor scan is added.
 
+Rescue objectives are campaign-owned in multiplayer. Completing extraction
+captures the ready characters present in the session, including a dead waiting
+participant; eligibility refers to the saved character record, not its reusable
+native player slot. Repeating the objective cannot expand that roster. Each
+eligible character can claim the existing currency/reputation reward once.
+Personal claim flags remain authoritative against repeat rewards across worlds.
+A late-ready character keeps their pending personal rescue and the Journal says
+that the already-resolved objective is unavailable in this world. Private
+conversations, emotion reads and independent quest progress are not copied.
+The actual initiating player remains the prisoner's escort leader.
+
+Revision-1 migration seeds the campaign rescue state from its existing clock
+owner, granting old extracted-objective eligibility only to records that already
+held extraction. Original saves remain untouched. New portable campaigns must
+initialize a fresh world ledger rather than import an advanced profile's world
+state; that profile-boundary integration remains #434. Eligibility snapshots and
+migration iterate only the bounded native roster and four rescue records.
+
 Vehicle boarding uses the same unanimous native protocol. Every living traveler
 must satisfy the existing boarding checks and afford their own ticket/change.
 All currency transactions are prepared before any wallet is charged. Refusal,
@@ -81,7 +99,7 @@ the ticket requires shared consent; rebooking uses the existing remaining-route
 fare, individually paid. Personal profile transfer must not carry this shared
 campaign journey into a different campaign.
 
-Tutorial departure/return and quest eligibility/conflicts remain unfinished;
+Shared house rewards and remaining quest conflicts are unfinished;
 full death/disconnect/restart integration remains #437. Cart boarding, survival
 advance, rejected arrival, native destination arrival and rural stop/resumption
 have dedicated real-peer checks; they do not certify those remaining systems.

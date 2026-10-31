@@ -10,6 +10,18 @@ This remains agent verification, not author acceptance.
 
 ## 5.12.2 - Shared clock and time consent (#436, 2026-10-30, in progress)
 
+Rescue follow-up (2026-10-31): campaign-owned revision-1 objective snapshots
+capture eligible character records at extraction. Each character keeps its own
+claim guard and wallet; late-ready characters retain personal progress and see
+an unavailable-world Journal explanation. Escort ownership follows the actual
+conversation initiator. Native final package: eight peers each pass28 assertions,
+then six each after common-save recovery; two peers each pass six old-save
+migration checks. The untouched previous package created that legacy save and
+passed two checks per peer. All exit cleanly (288 final assertions). Preserved
+fixture failures and exact logs/hashes: rewards-results.json/rewards-logs.json.gz.
+No author acceptance, Internet test or completed V5.12 claim. Final PK3 SHA-256:
+`63a88a218cf1b5d03dd13593e652fc19faa4ad51f9707e53adc583900c10757c`.
+
 Tutorial follow-up: the author requires all living characters to finish their
 own trials before leaving. The doorway publishes unanimous consent after its
 initiating conversation. A read-only packing preflight validates every personal
