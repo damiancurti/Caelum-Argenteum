@@ -1,6 +1,58 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.12.7** - 2026-10-31.
+Documentation version: **5.12.7a** - 2026-10-31.
+
+## 5.12.7a - Dead-player interface repair (#602), 2026-10-31
+
+The author reported an invisible Palomo conversation for a dead mansion visitor
+and missing T activation in the multiplayer test. The native page event rejected
+all health-zero players despite the approved spirit exception. Saved-conversation
+restoration repeated that restriction. Both now use the existing CanConverse
+policy; no material actions, automatic revival or broader corpse permissions are
+added. The native session launcher initializes its new INI from the packaged
+control preset. Expanding the commands avoids invoking KEYCONF aliases before
+those aliases exist during startup. A further native regression reproduced a
+saved open spirit conversation without an acknowledged social page: the restored
+menu sent its request before session admission and never retried. Page requests
+now wait for the existing identity gate and are emitted once per pending page.
+
+Author confirmation: "El resto de las pruebas dieron bien", 2026-10-31. Accepted
+entries removed from pending_test.txt (original provenance retained):
+
+- CA434-PROFILE-01 | Origin 5.12.6 | Issue #434 | PASS, confirmed 2026-10-31.
+- CA435-NATIVE-01 | Origin 5.12.7 | Issue #435 | PASS, confirmed 2026-10-31.
+- CA436-COOP-01 | Origin 5.12.2 | Issue #436 | PASS, confirmed 2026-10-31.
+- CA438-ARENA-01 | Origin 5.12.4 | Issue #438 | PASS, confirmed 2026-10-31.
+- CA590-CARDS-01 | Origin 5.12.5 | Issue #590 | PASS, confirmed 2026-10-31.
+
+Final author confirmation: "Ahora si todas las pruebas dieron correcto, cierra
+los issues y haz los merge", 2026-10-31. This explicitly accepts the remaining
+correction and authorizes integration of all seven focused issues:
+
+- CA437-LIFECYCLE-01 | Origin 5.12.3 | Issue #437; regression #602 | PASS,
+  confirmed 2026-10-31. Removed from pending_test.txt; the tracked file is empty.
+
+Integration order: PR #592 (#436), #593 (#437), #594 (#438), #591 (#590),
+#595 (#434), #589 (#435), then #603 (#602). Acceptance is part of the same
+5.12.7a patch; no gameplay change or version increment accompanies this record.
+
+Qualification: these are the author's listed local scenarios, not certification
+of Internet latency or resolution of the previously measured siege rendering
+limit. Earlier handoff and checkpoint notes below retain their historical status;
+their pending-acceptance statements are superseded by this final confirmation.
+The compiler error reported immediately after closing Truco came from the new
+CA602 diagnostic fixture, not the card-game runtime. Failed fixture runs remain
+preserved alongside final native evidence in validation_v5_12_7a.
+
+Final agent validation: 42 PASS assertions across initial travel and recovery of
+the previously unacknowledged saved dialogue, each with two admitted native
+clients, normal process exits and no engine checksum mismatch. The actual native
+Palomo reply returns both original dead bodies; Back/reopen releases conversation
+locks. Packaged T binding and native User3 dispatch pass. Project validation has
+zero errors and three affected Python sources parse. results.json records package
+hashes and logs.json.gz retains failed and passed engine logs. Physical-key and
+final author confirmation are now recorded above, separately from agent evidence.
+
 
 ## V5.12 implementation ready for author review - 2026-10-31
 

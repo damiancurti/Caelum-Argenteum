@@ -26,11 +26,12 @@ SCENES={0:('#435 - Identidad y guardado',
     'Repite aceptando ambos y comprueba que despertar/interrumpir detiene a todos.'),
     2:('#437 - El Loco, muerte y espiritu',
     'F3 mata SOLO al personaje de esa ventana (preparacion de prueba).\n'
-    'F2 activa El Loco: acepta en ambas ventanas y comprueba el cobro unico.\n'
+    'T activa El Loco: acepta en ambas ventanas y comprueba el cobro unico.\n'
     'En la mansion el fallecido se mueve como espiritu, sin usar objetos.\n'
     'F2 alli abre a Palomo para volver por unanimidad. Sigue muerto al volver.\n'
     'F4 permite resucitar en esta prueba; no es un atajo del juego normal.\n'
-    'Para el caso todos muertos, vuelve a abrir esta opcion y usa F3 en ambos.'),
+    'Para el caso todos muertos, vuelve a abrir esta opcion y usa F3 en ambos.\n'
+    'Luego T en cualquiera propone el viaje al Limbo; no resucita automaticamente.'),
     3:('#438 - Ring',
     'F2 abre al organizador. Elige ring y modo, propone y acepta en ambas ventanas.\n'
     'Comprueba posiciones separadas, combate real y resultado al rendirse.\n'

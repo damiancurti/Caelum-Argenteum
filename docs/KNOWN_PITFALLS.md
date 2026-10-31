@@ -6021,3 +6021,26 @@ Actual UI review also requires per-viewer card visibility (Match.View), not the
 owner's shared Visible field: one participant closing a result must regain their
 rest/movement controls while the other still sees the result. Table availability
 is a read-only prediction-safe query; Interact remains authority-checked.
+
+## CA-KP-205 - Dead spirits need the dialogue page authority exception
+
+Status/evidence: VERIFIED, #602, 2026-10-31. Palomo can start a native
+conversation for a dead mansion visitor, but a living-only network dispatcher
+rejects ca_social_page. The menu deliberately draws nothing until that page is
+authoritatively acknowledged, leaving the cursor and movement lock visible.
+Use the existing CanConverse policy after FromNetworkPlayer(..., true); do not
+bypass SocialPageReady or grant generic actions to every dead pawn. Apply the
+same policy when restoring a saved conversation. An unacknowledged saved page
+must wait for session identity admission before sending its one native request;
+otherwise the correct authority gate rejects it and no retry is scheduled. Keep
+that wait local to the menu, without bypassing admission or flooding events.
+Check actual menu readiness,
+Back, native replies and common save/reload, not only OpenPalomoDialogue's return.
+
+New native-session INIs also require the generated gameplay controls. Their
+startup exec runs before KEYCONF aliases are installed: invoking
+ca_controls_defaults there reports an unknown command. Expand the preset read
+from the verified runtime's KEYCONF instead, retaining one authoritative mapping.
+The focused diagnostic uses two real admitted peers, native +user3 input,
+per-viewer page acknowledgements and native checksum checks. Physical-key author
+acceptance remains separate. See assets/validation_v5_12_7a.
