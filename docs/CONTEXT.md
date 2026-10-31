@@ -4,7 +4,7 @@ Documentation version: **5.12.2** - 2026-10-30.
 
 **V5.12 in progress:** #436/PR592 shared clock/rest, unanimous time/walking/house
 travel/transport/tutorial departure and rescue eligibility; validation_v5_12_2.
-Shared house titles/refunds are implemented. #434/#435/#437/#438/#590 remain unfinished. No author acceptance; combined manual suite after completion.
+Shared house titles/refunds and two-player tent rest are implemented. Other V5.12 issues remain unfinished. No author acceptance; combined manual suite after completion.
 **V5.11/V5.10 accepted/merged:** HISTORY; no pending checks. Siege stalls persist.
 
 **V5.9 accepted/merged:** #418-424 closed, PR561-569; CA418-01..CA424-01

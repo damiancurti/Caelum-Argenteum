@@ -24,6 +24,9 @@ character claims their own reward once. Late-ready records keep their personal
 progress and see unavailable-world objectives in the Journal.
 Recovering the central house grants shared access to the present characters;
 only the actual payer receives the single refund of recorded payments.
+Two cooperative players can use the same tent with their own sleeping bags;
+sharing shelter does not transfer ownership or packing permission. Waking one
+player cancels shared acceleration while the other may continue ordinary rest.
 This is not full cooperative campaign acceptance: other quest integration,
 profile portability and lifecycle integration remain under their focused issues.
 Author checks will be delivered together after the release is complete.

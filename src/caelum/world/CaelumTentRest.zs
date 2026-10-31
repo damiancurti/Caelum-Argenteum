@@ -3,6 +3,20 @@
 // FullHeight, radio, colisiones ajenas ni las reglas de seguridad del descanso.
 class CaelumTentRest : Object play
 {
+    static bool CanRest(CaelumPlayer user,CaelumDeployedTent tent)
+    {
+        if(user==null || tent==null)return false;
+        if(CaelumLockRules.SameTitle(tent.Title,CaelumLockRules.Character(user)))return true;
+        // Las dos plazas aprobadas se comparten con la sesión cooperativa del
+        // propietario presente. Compartir abrigo no concede título ni desmontaje.
+        if(!multiplayer || deathmatch)return false;
+        for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i])
+        {
+            let owner=CaelumPlayer(players[i].mo);
+            if(owner!=null && CaelumLockRules.SameTitle(tent.Title,CaelumLockRules.Character(owner)))return true;
+        }
+        return false;
+    }
     static void RestoreCrouch(CaelumPlayer user,double factor,int toggle)
     {
         if(user==null || user.player==null)return;
@@ -21,7 +35,7 @@ class CaelumTentRest : Object play
     {
         if(user==null || tent==null || tent.bDestroyed || !tent.Ready || !tent.Reach(user)
             || !CaelumCampTask.Available(user) || bag==null || !bag.AvailableTo(user)
-            || !CaelumLockRules.SameTitle(tent.Title,CaelumLockRules.Character(user)))return false;
+            || !CanRest(user,tent))return false;
         vector3 entry=user.Pos;double angle=user.Angle,factor=user.player.crouchfactor;
         int toggle=user.player.crouching;
         if(user.CanCrouch())
@@ -32,7 +46,7 @@ class CaelumTentRest : Object play
         }
         // Dos plazas derivadas de la anchura del saco, junto al eje del techo.
         // Compartir el reloj sigue sujeto a las reglas de descanso existentes.
-        double offset=CaelumAppearanceRegistry.BagHalfWidth()+CaelumPlacementGeometry.SUPPORT_TOLERANCE_MU;
+        double offset=Max(CaelumAppearanceRegistry.BagHalfWidth(),user.Radius)+CaelumPlacementGeometry.SUPPORT_TOLERANCE_MU;
         for(int slot=0;slot<2;slot++)
         {
             user.SetOrigin(tent.Pos+tent.LocalOffset((slot==0?offset:-offset,0,0)),false);
@@ -88,7 +102,7 @@ class CaelumTentSession : Inventory
     static bool Show(CaelumPlayer user,CaelumDeployedTent tent)
     {
         if(!CaelumCampTask.Available(user) || tent==null || !tent.Ready || !tent.Reach(user))return false;
-        if(!CaelumLockRules.SameTitle(tent.Title,CaelumLockRules.Character(user)))
+        if(!CaelumTentRest.CanRest(user,tent))
         {CaelumNotifications.Notify(user,StringTable.Localize("CA_PROPERTY_NO_RESIDENCE",false));return true;}
         let session=Find(user);if(session==null)session=CaelumTentSession(user.GiveInventoryType('CaelumTentSession'));
         if(session==null)return false;
@@ -96,7 +110,7 @@ class CaelumTentSession : Inventory
     }
     bool Valid(CaelumPlayer user)
     {return Tent!=null && !Tent.bDestroyed && Tent.Ready && OriginMap==level.MapName && Tent.Reach(user)
-        && CaelumCampTask.Available(user) && CaelumLockRules.SameTitle(Tent.Title,CaelumLockRules.Character(user));}
+        && CaelumCampTask.Available(user) && CaelumTentRest.CanRest(user,Tent);}
     void Act(CaelumPlayer user,int choice)
     {
         if(!Open || !Valid(user)){Open=false;return;}

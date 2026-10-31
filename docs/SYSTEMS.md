@@ -13,7 +13,13 @@ peer, not a host-only mutation or independent clocks. Personal trial calendars,
 rest state, inventories and physiological costs remain separate.
 
 Individual sitting and rest no longer require a solo session. One occupant
-standing does not wake another. Accelerating time requires an exact-duration
+standing does not wake another. The two tent berths are available to cooperative
+players while the owner is present in the session. Each needs their own bag;
+the owner retains title and packing permission, and occupancy still blocks
+packing. Berth spacing uses the larger of bag half-width and the occupant's
+actual collision radius, retaining the existing support tolerance. No actor
+radius, tent geometry, recovery bonus or resource cost changes.
+Accelerating time requires an exact-duration
 proposal from T or the time menu. All roster members must explicitly accept;
 silence waits, refusal/cancellation stops the proposal, changing duration clears
 consent and stale/repeated requests cannot act on a new proposal. A rest-origin

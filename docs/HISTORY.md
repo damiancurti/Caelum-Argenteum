@@ -10,6 +10,17 @@ This remains agent verification, not author acceptance.
 
 ## 5.12.2 - Shared clock and time consent (#436, 2026-10-30, in progress)
 
+Tent follow-up (2026-10-31): the old owner-only rest guard prevented a second
+cooperative player from using the approved second berth. Sharing now requires
+the owner's presence in the native roster, without transferring ownership or
+packing rights. Berths account for actual collision radii. Two real native
+players pass 18 checks each: separate bags, simultaneous occupancy, ordinary
+rest while another plays, unanimous acceleration, wake cancellation and retained
+bag ownership. The initial overlay incorrectly replaced newer dependency files;
+the runner now overlays only the affected tent source for this scenario.
+Final-package and failed development evidence: tent-results.json/tent-logs.json.gz.
+This is agent verification, not author acceptance.
+
 House follow-up (2026-10-31): the author approves shared title/access for
 characters present when the house is recovered, with refunds only to the actual
 payer. A single saved world settlement and co-titles implement that rule. Native
