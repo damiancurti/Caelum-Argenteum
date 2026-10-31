@@ -1,7 +1,7 @@
 // Una salida pertenece a la sesión. Ningún consentimiento cobra ni cambia mapa.
 class CaelumCooperativeTravel : Inventory
 {
-    enum TravelKind { JOURNEY, HOUSE, BOARD, DISEMBARK, RESUME, ABANDON, TUTORIAL, LIMBO, LIMBO_RETURN }
+    enum TravelKind { JOURNEY, HOUSE, BOARD, DISEMBARK, RESUME, ABANDON, TUTORIAL, LIMBO, LIMBO_RETURN, ARENA, ARENA_RETURN }
     enum Operation { ACCEPT, CANCEL }
     CaelumPlayer Members[MAXPLAYERS];
     CaelumJourneyPlan Plans[MAXPLAYERS];
@@ -10,6 +10,8 @@ class CaelumCooperativeTravel : Inventory
     CaelumTravelVehicle Vehicle;
     CaelumTransportTicket Ride;
     int Fare;
+    int ArenaVenue,ArenaMode,ArenaTeams[MAXPLAYERS];
+    Actor ArenaOrganizer;
     bool ExceptionalFool;
     bool TarotSelection[CaelumConstants.TAROT_CARD_COUNT];
     CaelumPalomo FoolSpeaker;
@@ -53,6 +55,7 @@ class CaelumCooperativeTravel : Inventory
     bool SourceValid()
     {
         let proposer=CaelumPlayer(Owner);
+        if(Kind==ARENA || Kind==ARENA_RETURN)return CaelumArena.Valid(self);
         if(Kind==LIMBO || Kind==LIMBO_RETURN)return CaelumFoolTravel.Valid(self);
         if(!CaelumCooperativeTime.Living(proposer))return false;
         if(Kind==TUTORIAL)return TutorialDoor!=null && !TutorialDoor.bDestroyed
@@ -206,6 +209,11 @@ class CaelumCooperativeTravel : Inventory
     void Commit()
     {
         if(!Opened || Accepted!=Mask || !RosterValid() || !SourceValid())return;
+        if(Kind==ARENA || Kind==ARENA_RETURN)
+        {
+            if(!CaelumArena.Commit(self)){Finish("CA_ARENA_NOT_READY");return;}
+            Committed=true;Finish("");CaelumDeadTraveler.ChangeMap(Destination,Entry,CHANGELEVEL_NOINTERMISSION);return;
+        }
         if(Kind==LIMBO || Kind==LIMBO_RETURN)
         {
             if(!CaelumFoolTravel.Commit(self)){Finish("CA_COOP_TRAVEL_CANCELLED");return;}

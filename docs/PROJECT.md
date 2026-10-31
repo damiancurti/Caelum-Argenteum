@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.12.3** - 2026-10-31.
+Documentation version: **5.12.4** - 2026-10-31.
+
+## 5.12.4 - Organized combat venues (#438, in progress)
+
+Original 12 m ring and 64 m sewer maze, eight separate starts and passages at
+least 2 m wide. Palomo and the Buenos Aires plaza organizer offer both venues.
+Session-owned match state tracks individual/two-team outcomes, surrender and
+unanimous return without equipment normalization, prizes or automatic revival.
+Native 2/8-peer consent, damage, results and recovery checks pass.
+A reversible native-save adapter migrates the old friendly-fire setting.
+Combined release integration and author acceptance remain pending.
 
 ## 5.12.3 - Cooperative lifecycle guards (#437, in progress)
 

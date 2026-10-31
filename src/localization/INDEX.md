@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `4c88923cb7b136d68735643edc3ccaa1ecb3ba4c3441a648c176858e30c3c067`. Locations include every definition; the last one per language wins.
+SHA-256: `f562bbb532f35e05604c5e5291c312f218ede58868b96f41b9ddd7579637bdf7`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -24,6 +24,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_APPEARANCE | 37 | CA_APPEARANCE_FACE | CA_APPEARANCE_WALK |
 | CA_ARCANA | 3 | CA_ARCANA_CUPS_REVEAL | CA_ARCANA_WANDS_REVEAL |
 | CA_ARCANE | 2 | CA_ARCANE_CLOUD_CAST | CA_ARCANE_SUN_CAST |
+| CA_ARENA | 20 | CA_ARENA_ASK | CA_ARENA_YOUR_TEAM |
 | CA_ARGENTO | 1 | CA_ARGENTO_NAME | CA_ARGENTO_NAME |
 | CA_ARMOR | 13 | CA_ARMOR_BASE_NOTHING | CA_ARMOR_TYPE_MEDIUM |
 | CA_ATTACK | 4 | CA_ATTACK_HIT | CA_ATTACK_NO_ANIMA |

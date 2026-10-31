@@ -8,6 +8,13 @@ conversation
 
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_foyer";
         name = "$CA_PALOMO_NAME";
         dialog = "$CA_DLG_M01_PALOMO_FOYER";
@@ -78,6 +85,13 @@ conversation
 
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_answer_where";
         name = "$CA_PALOMO_NAME";
         dialog = "$CA_DLG_M01_PALOMO_WHERE_REPLY";
@@ -92,6 +106,13 @@ conversation
 
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_answer_what_happened";
         name = "$CA_PALOMO_NAME";
         dialog = "$CA_DLG_M01_PALOMO_WHAT_HAPPENED_REPLY";
@@ -106,6 +127,13 @@ conversation
 
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_answer_memory_gap";
         name = "$CA_PALOMO_NAME";
         dialog = "$CA_DLG_M01_PALOMO_MEMORY_GAP_REPLY";
@@ -120,6 +148,13 @@ conversation
 
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_answer_voice";
         name = "$CA_PALOMO_NAME";
         dialog = "$CA_DLG_M01_PALOMO_VOICE_REPLY";
@@ -140,6 +175,13 @@ conversation
 
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_answer_voice_doubt";
         name = "$CA_PALOMO_NAME";
         dialog = "$CA_DLG_M01_PALOMO_VOICE_DOUBT_REPLY";
@@ -154,6 +196,13 @@ conversation
 
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_guides_to_argento";
         name = "$CA_PALOMO_NAME";
         dialog = "$CA_DLG_M01_PALOMO_GUIDANCE_REPLY";
@@ -168,6 +217,13 @@ conversation
 
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_waiting_for_argento";
         name = "$CA_PALOMO_NAME";
         dialog = "$CA_DLG_M01_PALOMO_WAITING_ARGENTO";
@@ -176,6 +232,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_lessons";
         name = "$CA_PALOMO_NAME";
         dialog = "$CA_DEMO_PALOMO_LESSONS";
@@ -190,18 +253,39 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_sleep"; userstring = "palomo_sleep";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_DEMO_SLEEP";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_materials";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_DEMO_MATERIALS";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_needs";
         userstring = "ronnie_needs";
         name = "$CA_PALOMO_NAME";
@@ -212,6 +296,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_needs_practice";
         userstring = "ronnie_needs_practice";
         name = "$CA_PALOMO_NAME";
@@ -222,6 +313,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_needs_safe";
         userstring = "ronnie_needs_safe";
         name = "$CA_PALOMO_NAME";
@@ -231,6 +329,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_air";
         userstring = "ronnie_air";
         name = "$CA_PALOMO_NAME";
@@ -240,6 +345,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_air_practice";
         userstring = "ronnie_air_practice";
         name = "$CA_PALOMO_NAME";
@@ -248,6 +360,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_load";
         userstring = "ronnie_load";
         name = "$CA_PALOMO_NAME";
@@ -257,6 +376,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_load_practice";
         userstring = "ronnie_load_practice";
         name = "$CA_PALOMO_NAME";
@@ -265,6 +391,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_swim";
         userstring = "ronnie_swim";
         name = "$CA_PALOMO_NAME";
@@ -274,6 +407,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_swim_practice";
         userstring = "ronnie_swim_practice";
         name = "$CA_PALOMO_NAME";
@@ -282,6 +422,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_water"; userstring = "ronnie_water";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_WATER_RONNIE";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
@@ -296,6 +443,13 @@ conversation
     class = "CaelumMainM00ConversationMenu";
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_final"; userstring = "palomo_final";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_PALOMO_FINAL";
         goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
@@ -310,6 +464,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_final_idea"; userstring = "palomo_final_idea";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_PALOMO_IDEA";
         goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
@@ -317,6 +478,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_final_exit"; userstring = "palomo_final_exit";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_PALOMO_EXIT";
         goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
@@ -324,6 +492,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_final_where"; userstring = "palomo_final_where";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_PALOMO_WHERE";
         goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
@@ -331,6 +506,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_final_voice"; userstring = "palomo_final_voice";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_PALOMO_VOICE";
         goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
@@ -338,6 +520,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_box_offer"; userstring = "palomo_box_offer";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_PALOMO_OFFER";
         goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
@@ -351,6 +540,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_box_magic"; userstring = "palomo_box_magic";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_PALOMO_MAGIC";
         goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
@@ -358,6 +554,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_box_contents"; userstring = "palomo_box_contents";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_PALOMO_CONTENTS";
         goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
@@ -365,6 +568,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_box_why"; userstring = "palomo_box_why";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_PALOMO_WHY";
         goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
@@ -372,6 +582,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_box_received"; userstring = "palomo_box_received";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_PALOMO_RECEIVED";
         goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
@@ -381,6 +598,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_box_use"; userstring = "palomo_box_use";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_PALOMO_USE";
         goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
@@ -388,6 +612,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_box_cave"; userstring = "palomo_box_cave";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_PALOMO_CAVE";
         goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
@@ -395,6 +626,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_lessons";
         name = "$CA_PALOMO_NAME";
         dialog = "$CA_DEMO_PALOMO_LESSONS";
@@ -409,18 +647,39 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_sleep"; userstring = "palomo_sleep";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_DEMO_SLEEP";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_materials";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_DEMO_MATERIALS";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_needs";
         userstring = "ronnie_needs";
         name = "$CA_PALOMO_NAME";
@@ -431,6 +690,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_needs_practice";
         userstring = "ronnie_needs_practice";
         name = "$CA_PALOMO_NAME";
@@ -441,6 +707,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_needs_safe";
         userstring = "ronnie_needs_safe";
         name = "$CA_PALOMO_NAME";
@@ -450,6 +723,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_air";
         userstring = "ronnie_air";
         name = "$CA_PALOMO_NAME";
@@ -459,6 +739,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_air_practice";
         userstring = "ronnie_air_practice";
         name = "$CA_PALOMO_NAME";
@@ -467,6 +754,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_load";
         userstring = "ronnie_load";
         name = "$CA_PALOMO_NAME";
@@ -476,6 +770,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_load_practice";
         userstring = "ronnie_load_practice";
         name = "$CA_PALOMO_NAME";
@@ -484,6 +785,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_swim";
         userstring = "ronnie_swim";
         name = "$CA_PALOMO_NAME";
@@ -493,6 +801,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_swim_practice";
         userstring = "ronnie_swim_practice";
         name = "$CA_PALOMO_NAME";
@@ -501,6 +816,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_water"; userstring = "ronnie_water";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_WATER_RONNIE";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
@@ -514,6 +836,13 @@ conversation
     class = "CaelumMainM00ConversationMenu";
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_upstairs_wait"; userstring = "palomo_upstairs_wait";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_PALOMO_WAIT";
         goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
@@ -521,6 +850,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_lessons";
         name = "$CA_PALOMO_NAME";
         dialog = "$CA_DEMO_PALOMO_LESSONS";
@@ -535,18 +871,39 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_sleep"; userstring = "palomo_sleep";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_DEMO_SLEEP";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_materials";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_DEMO_MATERIALS";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_needs";
         userstring = "ronnie_needs";
         name = "$CA_PALOMO_NAME";
@@ -557,6 +914,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_needs_practice";
         userstring = "ronnie_needs_practice";
         name = "$CA_PALOMO_NAME";
@@ -567,6 +931,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_needs_safe";
         userstring = "ronnie_needs_safe";
         name = "$CA_PALOMO_NAME";
@@ -576,6 +947,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_air";
         userstring = "ronnie_air";
         name = "$CA_PALOMO_NAME";
@@ -585,6 +963,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_air_practice";
         userstring = "ronnie_air_practice";
         name = "$CA_PALOMO_NAME";
@@ -593,6 +978,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_load";
         userstring = "ronnie_load";
         name = "$CA_PALOMO_NAME";
@@ -602,6 +994,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_load_practice";
         userstring = "ronnie_load_practice";
         name = "$CA_PALOMO_NAME";
@@ -610,6 +1009,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_swim";
         userstring = "ronnie_swim";
         name = "$CA_PALOMO_NAME";
@@ -619,6 +1025,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_swim_practice";
         userstring = "ronnie_swim_practice";
         name = "$CA_PALOMO_NAME";
@@ -627,6 +1040,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_water"; userstring = "ronnie_water";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_WATER_RONNIE";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
@@ -640,6 +1060,13 @@ conversation
     class = "CaelumMainM00ConversationMenu";
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_fool_received"; userstring = "palomo_fool_received";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_FOOL_PALOMO";
         goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
@@ -650,6 +1077,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_fool_collection"; userstring = "palomo_fool_collection";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_FOOL_COLLECTION_HELP";
         goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
@@ -657,6 +1091,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_fool_box_use"; userstring = "palomo_fool_box_use";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_PALOMO_USE";
         goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
@@ -664,6 +1105,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_return_door"; userstring = "palomo_return_door";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_M01_RETURN_PALOMO";
         goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
@@ -672,6 +1120,13 @@ conversation
 
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_lessons";
         name = "$CA_PALOMO_NAME";
         dialog = "$CA_DEMO_PALOMO_LESSONS";
@@ -686,18 +1141,39 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_sleep"; userstring = "palomo_sleep";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_DEMO_SLEEP";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_materials";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_DEMO_MATERIALS";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_needs";
         userstring = "ronnie_needs";
         name = "$CA_PALOMO_NAME";
@@ -708,6 +1184,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_needs_practice";
         userstring = "ronnie_needs_practice";
         name = "$CA_PALOMO_NAME";
@@ -718,6 +1201,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_needs_safe";
         userstring = "ronnie_needs_safe";
         name = "$CA_PALOMO_NAME";
@@ -727,6 +1217,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_air";
         userstring = "ronnie_air";
         name = "$CA_PALOMO_NAME";
@@ -736,6 +1233,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_air_practice";
         userstring = "ronnie_air_practice";
         name = "$CA_PALOMO_NAME";
@@ -744,6 +1248,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_load";
         userstring = "ronnie_load";
         name = "$CA_PALOMO_NAME";
@@ -753,6 +1264,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_load_practice";
         userstring = "ronnie_load_practice";
         name = "$CA_PALOMO_NAME";
@@ -761,6 +1279,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_swim";
         userstring = "ronnie_swim";
         name = "$CA_PALOMO_NAME";
@@ -770,6 +1295,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_swim_practice";
         userstring = "ronnie_swim_practice";
         name = "$CA_PALOMO_NAME";
@@ -778,6 +1310,13 @@ conversation
     }
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "ronnie_water"; userstring = "ronnie_water";
         name = "$CA_PALOMO_NAME"; dialog = "$CA_WATER_RONNIE";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
@@ -1676,6 +2215,13 @@ conversation
     class = "CaelumMainM00ConversationMenu";
     page
     {
+        choice
+        {
+            text = "$CA_ARENA_ASK";
+            exclude { item = "CaelumArenaUnavailableToken"; amount = 1; }
+            giveitem = "CaelumArenaOpenAction";
+            closedialog = true;
+        }
         pagename = "palomo_fool_return";
         name = "$CA_PALOMO_NAME";
         dialog = "$CA_FOOL_VISIT_HELP";
