@@ -6,46 +6,91 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.12.6.** Obtain and update the complete repository, validate
+**Current release: 5.12.7.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-**V5.12 profiles (#434, implementation in progress):** staged campaign transfers
+Native review found and corrected a client-local travel camera that changed shared
+RNG. Final checks include the engine's own inconsistency flag; earlier log-only
+passes are not a synchronization clearance. Unsynchronized saves cannot overwrite
+common recovery. The installed engine and original saves remain unchanged.
+
+**V5.12 sessions (#435, ready for author review):** profile-bound native launches now check
+ordered package hashes and character slots, reserve campaign custody and retain
+valid common recovery checkpoints. Four/eight-peer identity and common restart
+pass on the complete package; wrong identities leave recovery unchanged. Actual application-presentation measurements are recorded below;
+the combined manual terminal is ready, with six checks in `pending_test.txt`. Native movement,
+melee impact attribution and owned Tarot cost/cooldown pass with 2/4/8 clients.
+Concurrent trade and personal crafting pass with 2/4/8 native clients.
+
+
+Final native integration also excludes prediction from the shared time barrier:
+two participants can finish the agreed accelerated rest without a false clock-jump
+interruption. Card results close independently. New managed-session configurations
+explicitly use windowed rendering; retained native save failures and subsequent
+passes are documented in `assets/validation_v5_12_7/handoff-results.json`.
+
+`run_multiplayer.bat` opens the ES/EN profile/session menu after validation and
+packaging. The registry defaults to `%LOCALAPPDATA%/CaelumArgenteum/profiles.sqlite3`,
+separate from regenerable builds. Use `--language en` or `--store PATH` as needed.
+Register an existing current native save, prepare one common session, then open
+that bundle as the selected host/guest in its displayed connection order. Transfers
+are verified on copied worlds before custody is published; recovery retains originals.
+Menu option11 creates a new mansion with empty slots; transfer a character into
+every slot before playing. Option12 retries a pending transfer; option7 cancels
+it while preserving the original checkpoints. Creation, outward/return transfer,
+normal imported gameplay and vacancy refusal pass, including a fresh eight-client
+combat regression. The review candidate uses a private GZDoom 4.14.2 build with
+an upstream timer-lifetime fix; the installed engine is unchanged. Both builds
+and failed attempts remain documented. Repeated native passes do not establish
+that every earlier native crash has the same cause or is fixed.
+
+Actual Vulkan presentation is now measured for two clients on one shared GPU:
+about 60 FPS mansion,199-201 sewers,112-114 city and75-76 ground-facing city. The siege
+remains poor at 1.33-6.48 FPS, with p99 gaps 475-868ms; this is a known performance
+limitation, not acceptance. These are application presentation calls, not monitor
+scanout or an Internet test. Evidence and exact builds:
+`assets/validation_v5_12_7/native-sync-presentation-results.json` and
+`engine-timer-results.json`; see CA-KP-202/203.
+
+**V5.12 profiles (#434, awaiting author review):** staged campaign transfers
 and return now preserve a single active owner, packed inventory and each world's
 shops/properties. Native narrative checkpoints save complete transactions without
 replaying rewards on load. Whole-coordinator backup/recovery and deceased-profile
 transfer in actual Barracas pass. Native hub travel and portable/world quest
-boundaries pass, including pending rewards on return. Final managed multiplayer
-integration remains; no author handoff yet.
+boundaries pass, including pending rewards on return. Managed native transfer
+integration and manual-launcher verification pass; author acceptance remains.
 Transfers reject active conversations while allowing finished dialogue references.
 `caelum_new_campaign.py` creates a separate native MAP01 with 1–8 vacant slots
 using a private 640 × 480 window configuration
 for imports, without replacing a save or granting placeholder equipment. The
 coordinator retains the native world and registers no character until a transfer.
 
-**V5.12 work in progress - #590 table-card PvP:** human Truco and Trucazo
+**V5.12 table-card PvP (#590, awaiting author review):** human Truco and Trucazo
 use actual seats at the same table and preserve inventory/world health. Native
 two-player invitations, play, active-hand common-save restart and stand-up
 forfeit pass; agent UI review confirms private hands in both games. Argento
-regression passes. Lifecycle and arena dependencies now pass together; profile/session tooling remains open;
-author handoff waits for the combined release. No asset redesign or new balance.
+regression passes. Lifecycle, arena and managed profile/session dependencies pass
+together; the combined author suite is ready, with the measured siege limitations above.
+No asset redesign or new balance.
 
 
 **V5.12 organized combat (#438):** Palomo and a Domingo-appearance
 organizer in the Buenos Aires plaza offer the approved ring and sewer maze.
 The shared consent mechanism governs entry and return. Combat keeps actual
 attributes, equipment, friendly fire and ordinary death. Native multi-peer and
-save recovery checks pass; the final combined author suite remains pending.
+save recovery checks pass; author acceptance remains pending.
 For pre-arena saves, `python migrate_arena_save.py original.zds migrated.zds`
 creates a separate revisioned copy with the approved friendly-fire rule, without
-overwriting the original. The coordinated session launcher will apply this adapter.
+overwriting the original. The coordinated session launcher applies this adapter.
 
 **V5.12 lifecycle (#437):** cooperative death retains the original pawn, inventory
 and identity through native map travel. The Fool now requests a unanimous mansion
 visit; only the activator pays after consent. Dead visitors move and converse as
 spirits, with material rewards pending until resurrection. Palomo returns the
 group to its recorded departure without another payment or automatic revival.
-Death/departure cancel shared consent, including native saves predating the lifecycle handler. Coordinated recovery tooling and other
-V5.12 dependencies remain unfinished; author acceptance is still pending.
+Death/departure cancel shared consent, including native saves predating the lifecycle
+handler. Coordinated recovery and the combined dependencies pass native checks;
+author acceptance is still pending.
 
 **V5.12 cooperative world (#436):** native peers now share one campaign clock and
 weather seed, with individual nonaccelerated rest. T/the time menu opens an
@@ -67,9 +112,9 @@ only the actual payer receives the single refund of recorded payments.
 Two cooperative players can use the same tent with their own sleeping bags;
 sharing shelter does not transfer ownership or packing permission. Waking one
 player cancels shared acceleration while the other may continue ordinary rest.
-This is not full cooperative campaign acceptance: other quest integration,
-profile portability and lifecycle integration remain under their focused issues.
-Author checks will be delivered together after the release is complete.
+Profile portability and lifecycle integration are verified under their focused
+issues. This is not full cooperative campaign acceptance.
+The grouped checks are available in `pending_test.txt`; issues remain open until author review.
 
 Author clarification: the comparison is Leonor versus Caella. Caella carries
 22.0184kg (armor plus pickaxe, utility staff and bolas); Leonor carries5kg.

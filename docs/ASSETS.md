@@ -1,6 +1,15 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.12.6** - 2026-10-31.
+Documentation version: **5.12.7** - 2026-10-31.
+
+## Native diagnostics and local presentation (#435, 5.12.7)
+
+No new game artwork or audio. Multiplayer snapshots reuse the existing viewer
+without creating local simulation actors. The optional diagnostic engine keeps
+its official source provenance and the upstream ZWidget timer patch in
+validation_v5_12_7/engine-timer-results.json; engine binaries, DLLs and development
+IWADs remain local and are not distributed as project assets. The presentation
+layer source and bounded evidence are tooling, not packaged runtime content.
 
 ## Profile graph tooling (#434, 5.12.6)
 
@@ -43,6 +52,13 @@ duration and cancellation text; no new bitmap/model/audio assets. Diagnostic
 map fixtures use the installed development IWAD only and are not packaged or
 distributed as production content. Native evidence belongs to validation_v5_12_2.
 
+
+## V5.12 native network fixture (#435, preparation)
+
+The deterministic disposable square-map generator and network probe live in
+assets/validation_v5_12_1; outputs stay under build. The probe uses only the
+locally installed development IWAD for test textures and distributes no IWAD,
+engine executable or generated fixture. No production art/audio changes.
 
 ## 5.11.8 - Species damage policy (#586)
 

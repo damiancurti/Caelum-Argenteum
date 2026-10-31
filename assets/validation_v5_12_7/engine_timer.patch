@@ -1,0 +1,37 @@
+--- a/libraries/ZWidget/src/core/timer.cpp
++++ b/libraries/ZWidget/src/core/timer.cpp
+@@ -13,6 +13,8 @@
+ 
+ Timer::~Timer()
+ {
++	Stop();
++
+ 	if (PrevTimerObj)
+ 		PrevTimerObj->NextTimerObj = NextTimerObj;
+ 	if (NextTimerObj)
+--- a/libraries/ZWidget/src/window/win32/win32window.cpp
++++ b/libraries/ZWidget/src/window/win32/win32window.cpp
+@@ -1,6 +1,7 @@
+ 
+ #include "win32window.h"
+ #include <windowsx.h>
++#include <tchar.h>
+ #include <stdexcept>
+ #include <cmath>
+ #include <vector>
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -69,7 +69,12 @@
+ 		setupapi
+ 		oleaut32
+ 		dbghelp
+-		legacy_stdio_definitions )
++	)
++	if(MSVC)
++		list(APPEND PROJECT_LIBRARIES legacy_stdio_definitions)
++	elseif(MINGW)
++		list(APPEND PROJECT_LIBRARIES dxguid dwmapi)
++	endif()
+ 
+ 	if( DEM_CMAKE_COMPILER_IS_GNUCXX_COMPATIBLE )
+ 		if( DX_dxguid_LIBRARY )

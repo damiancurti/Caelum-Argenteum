@@ -1,0 +1,63 @@
+CA434-PROFILE-01 | Origin 5.12.6 | Issue #434
+Prerequisites: combined V5.12 test terminal, option 8; use its private test registry.
+Steps: list the two identities in prueba-a. Create prueba-b with two vacant slots
+using option 11. Transfer one character there with option 6, inspect custody and
+inventory, then return it to prueba-a. Exercise backup/recovery options 8/9 into a
+new path. Do not use personal saves for this diagnostic.
+Expected: one active custody per character; inventory, money and personal progress
+survive; the other character and each world's property remain separate. Failed or
+cancelled operations retain the original common checkpoints.
+
+CA435-NATIVE-01 | Origin 5.12.7 | Issue #435
+Prerequisites: combined terminal option 1; two native windows on this computer.
+Steps: use Alt+Tab to select each player. F1 reports that player's state outside
+menus; close the console before continuing. F2 adds one test coin to that player.
+Compare both wallets. Save from the host with F5, close both windows, then choose
+option 9 in the terminal to reopen the common checkpoint.
+Expected: only the requesting wallet changes; both identities and their own
+inventories survive. No native out-of-sync warning. The two-client siege has a
+documented performance limitation; this check does not certify Internet latency.
+
+CA436-COOP-01 | Origin 5.12.2 | Issue #436
+Prerequisites: combined terminal option 2.
+Steps: press F2 in each window to sit. From one rest panel press T, choose the
+duration and accept. Leave the other vote unanswered, then reject it. Repeat with
+both accepting. Check that the agreed time completes with both still seated.
+Repeat with a longer duration and cancel during advancement. Close the vote and
+use W to stand one character while leaving the other seated.
+Expected: one vote never accelerates time; rejection cancels for both; acceptance
+advances one shared clock with individual resources. Cancellation stops the shared
+advance, preserves elapsed progress, and does not force the other person to stand.
+No false external-clock-change interruption or native desynchronization.
+
+CA437-LIFECYCLE-01 | Origin 5.12.3 | Issue #437
+Prerequisites: combined terminal option 3; F3/F4 are diagnostic death/resurrection.
+Steps: kill one character with F3 in its window. F2 activates The Fool; accept in
+both windows. In the mansion move/converse as the spirit and try material actions.
+F2 opens Palomo for the unanimous return. Confirm the character is still dead;
+F4 in the campaign explicitly resurrects it. Restart option 3 and repeat with both
+characters dead, activating The Fool from the dead player's interface.
+Expected: only the activator pays after consent; the original body/inventory stays
+owned, spirits cannot take/craft/transfer objects, material rewards wait for revival,
+and returning does not resurrect anyone. Dead participants can vote.
+
+CA438-ARENA-01 | Origin 5.12.4 | Issue #438
+Prerequisites: combined terminal options 4 (ring) and 5 (sewer maze).
+Steps: F2 opens the organizer; select venue/mode and accept in both windows.
+Inspect the ring and maze, separated starts, normal equipment and combat. Check
+individual/team choices and surrender. Propose return with F2/F3 and accept in
+both windows; do not expect automatic resurrection after a death.
+Expected: unanimity governs entry and return; the last survivor/team wins, real
+equipment/resources and friendly damage apply, with no added prize or free revival.
+
+CA590-CARDS-01 | Origin 5.12.5 | Issue #590
+Prerequisites: combined terminal options 6 (Truco) and 7 (Trucazo). Both characters
+start seated at the same real table; only the second carries a deck.
+Steps: E opens the table, invite the other participant, choose the game and accept
+from both windows. Compare private hands, turns and calls. Escape asks to abandon;
+confirm, close that player's result and press W while the other still views its
+result. Also test leaving the seat during an active game. Use the native common
+save/restart flow to resume with the same participants when desired.
+Expected: cards stay private; turns/calls affect the same match, world time keeps
+running, standing forfeits, closing a result restores only that player's controls.
+Trucazo uses match life from Patience without damaging the character's real life.

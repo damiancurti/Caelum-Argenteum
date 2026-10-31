@@ -3941,7 +3941,7 @@ class CaelumDebugOverlay : EventHandler
             CaelumHazardDiagnostics.Report();
             return;
         }
-        CaelumPlayer requestingPlayer = CaelumPlayer(players[e.Player].mo);
+        CaelumPlayer requestingPlayer = CaelumPlayerAuthority.FromNetworkPlayer(e.Player,true);
 
         if(e.Name=="ca_movement_clear_taps")
         {

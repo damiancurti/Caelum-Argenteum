@@ -21,7 +21,9 @@ class CaelumCardSeat : Inventory
     { let link=Read(user);return link==null?null:link.Duel; }
     static clearscope CaelumDiningTable Table(CaelumPlayer user)
     {
-        if(!CaelumPlayerAuthority.CanMutate(user) || user.health<=0)return null;
+        // La UI puede consultar durante predicción; no modifica el asiento.
+        if(!CaelumPlayerAuthority.CanRead(user) || user.ProfileDeparted
+            || user.SessionIdentityPending || user.health<=0)return null;
         let rest=user==null?null:CaelumRestState(user.FindInventory("CaelumRestState"));
         if(rest==null || rest.Status!=CaelumRestRules.STATUS_ACTIVE
             || rest.Mode!=CaelumRestRules.MODE_WAIT)return null;
@@ -38,7 +40,7 @@ class CaelumCardSeat : Inventory
     // Usar sentado abre la interacción con las otras plazas de esa mesa.
     static bool Interact(CaelumPlayer user)
     {
-        if(!multiplayer || Table(user)==null)return false;
+        if(!multiplayer || !CaelumPlayerAuthority.CanMutate(user) || Table(user)==null)return false;
         let link=Get(user);
         if(link==null)return false;
         link.Open=true;

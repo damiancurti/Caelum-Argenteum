@@ -1,0 +1,2677 @@
+{
+  "issue": 435,
+  "version": "5.12.7",
+  "runtime_sha256": "ebd373849e90cfde579927e2784f96e51a529a1c140150a7e94bb541b841c118",
+  "author_accepted": false,
+  "runs": {
+    "rest_before": {
+      "scene": 1,
+      "commands": [
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\handoff-final\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\cooperative-rest-20261031-123347-584420\\scene1-20261031-123347-585420\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\cooperative-rest-20261031-123347-584420\\scene1-20261031-123347-585420\\bundle\\peer0\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\cooperative-rest-20261031-123347-584420\\scene1-20261031-123347-585420\\bundle\\peer0",
+          "-host",
+          "2",
+          "-port",
+          "31535",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\cooperative-rest-20261031-123347-584420\\scene1-20261031-123347-585420\\bundle\\peer0\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\cooperative-rest-20261031-123347-584420\\scene1-20261031-123347-585420\\bundle\\peer0\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ],
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\handoff-final\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\cooperative-rest-20261031-123347-584420\\scene1-20261031-123347-585420\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\cooperative-rest-20261031-123347-584420\\scene1-20261031-123347-585420\\bundle\\peer1\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\cooperative-rest-20261031-123347-584420\\scene1-20261031-123347-585420\\bundle\\peer1",
+          "-join",
+          "127.0.0.1:31535",
+          "-port",
+          "31536",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\cooperative-rest-20261031-123347-584420\\scene1-20261031-123347-585420\\bundle\\peer1\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\cooperative-rest-20261031-123347-584420\\scene1-20261031-123347-585420\\bundle\\peer1\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ]
+      ],
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 1,
+          "errors": [
+            "CA435SYNC FAIL peer=0 slot=1 native=111 tic=256"
+          ],
+          "ready": false,
+          "status": [
+            "CA512 player=2 map=MAP03 health=1248 anima=1248.64 money=1001 rest=0 spirit=0 clock=1681 profile=dd7d6f3d-294e-45c5-9ced-433d5c4f6186"
+          ]
+        },
+        {
+          "slot": 1,
+          "exit": 1,
+          "errors": [
+            "CA435REST FAIL real player ticks preserve both rests during acceleration",
+            "CA435REST FAIL one accelerated world clock independent of peer count",
+            "CA435REST FAIL each body receives exactly the elapsed rest tics",
+            "CA435SYNC FAIL peer=1 slot=0 native=111 tic=256"
+          ],
+          "ready": false,
+          "status": [
+            "CA512 player=2 map=MAP03 health=1248 anima=1248.64 money=1001 rest=0 spirit=0 clock=330 profile=dd7d6f3d-294e-45c5-9ced-433d5c4f6186"
+          ]
+        }
+      ],
+      "recovery": {
+        "status": "closed",
+        "recovery": {
+          "identity": "author-test",
+          "revision": 0,
+          "snapshot": "8266923ca9b436ddf1563bd6c6f721610e26260075ca81eaa3022ca013b7c94a"
+        }
+      },
+      "runtime_sha256": "bb0cd219087141e2c23cf82e41f304220d889e8e9d93daa2a0123b0f9655fc1f",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "addon": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\cooperative-rest-20261031-123347-584420\\scene1-20261031-123347-585420\\checks.pk3",
+      "store": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\cooperative-rest-20261031-123347-584420\\scene1-20261031-123347-585420\\profiles.sqlite3",
+      "author_accepted": false,
+      "error": "Native scene failed; complete logs retained.",
+      "scope": "Startup, process exits and native sync only; interactive acceptance must be recorded separately.",
+      "passed": false,
+      "rest_checks": [
+        [
+          "CA435REST PASS seat with real furniture",
+          "CA435REST PASS seat with real furniture",
+          "CA435REST PASS open shared vote",
+          "CA435REST PASS one vote leaves both resting without acceleration",
+          "CA435REST PASS rejection preserves individual rest",
+          "CA435REST PASS reopen after rejection",
+          "CA435REST PASS both native votes begin acceleration",
+          "CA435REST PASS real player ticks preserve both rests during acceleration",
+          "CA435REST PASS one accelerated world clock independent of peer count",
+          "CA435REST PASS clock replicas match",
+          "CA435REST PASS each body receives exactly the elapsed rest tics",
+          "CA435REST PASS each body receives exactly the elapsed rest tics",
+          "CA435REST DIAG elapsed=10 clock=1050",
+          "CA435REST PASS one player standing stops acceleration without waking the other",
+          "CA435REST CLOCK slot=0 now=1690 last=1687 tic=238 pumping=0 serial=1456",
+          "CA435REST PASS external clock jump still interrupts rest",
+          "CA435REST RESULT real-tick cooperative regression complete"
+        ],
+        [
+          "CA435REST PASS seat with real furniture",
+          "CA435REST PASS seat with real furniture",
+          "CA435REST PASS open shared vote",
+          "CA435REST PASS one vote leaves both resting without acceleration",
+          "CA435REST PASS rejection preserves individual rest",
+          "CA435REST PASS reopen after rejection",
+          "CA435REST PASS both native votes begin acceleration",
+          "CA435REST CLOCK slot=1 now=318 last=316 tic=219 pumping=1 serial=105",
+          "CA435REST FAIL real player ticks preserve both rests during acceleration",
+          "CA435REST FAIL one accelerated world clock independent of peer count",
+          "CA435REST PASS clock replicas match",
+          "CA435REST PASS each body receives exactly the elapsed rest tics",
+          "CA435REST FAIL each body receives exactly the elapsed rest tics",
+          "CA435REST DIAG elapsed=10 clock=115",
+          "CA435REST PASS one player standing stops acceleration without waking the other",
+          "CA435REST CLOCK slot=0 now=339 last=336 tic=238 pumping=0 serial=105",
+          "CA435REST PASS external clock jump still interrupts rest",
+          "CA435REST RESULT real-tick cooperative regression complete"
+        ]
+      ]
+    },
+    "rest_prediction_diagnosis": {
+      "scene": 1,
+      "commands": [
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\handoff-final\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\cooperative-rest-20261031-123449-379025\\scene1-20261031-123449-380026\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\cooperative-rest-20261031-123449-379025\\scene1-20261031-123449-380026\\bundle\\peer0\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\cooperative-rest-20261031-123449-379025\\scene1-20261031-123449-380026\\bundle\\peer0",
+          "-host",
+          "2",
+          "-port",
+          "31535",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\cooperative-rest-20261031-123449-379025\\scene1-20261031-123449-380026\\bundle\\peer0\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\cooperative-rest-20261031-123449-379025\\scene1-20261031-123449-380026\\bundle\\peer0\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ],
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\handoff-final\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\cooperative-rest-20261031-123449-379025\\scene1-20261031-123449-380026\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\cooperative-rest-20261031-123449-379025\\scene1-20261031-123449-380026\\bundle\\peer1\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\cooperative-rest-20261031-123449-379025\\scene1-20261031-123449-380026\\bundle\\peer1",
+          "-join",
+          "127.0.0.1:31535",
+          "-port",
+          "31536",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\cooperative-rest-20261031-123449-379025\\scene1-20261031-123449-380026\\bundle\\peer1\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\cooperative-rest-20261031-123449-379025\\scene1-20261031-123449-380026\\bundle\\peer1\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ]
+      ],
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 1,
+          "errors": [
+            "CA435SYNC FAIL peer=0 slot=1 native=111 tic=256"
+          ],
+          "ready": false,
+          "status": [
+            "CA512 player=2 map=MAP03 health=1248 anima=1248.64 money=1001 rest=0 spirit=0 clock=1681 profile=6f7907b4-0165-4bc9-97a0-2e82bdfe9da2"
+          ]
+        },
+        {
+          "slot": 1,
+          "exit": 1,
+          "errors": [
+            "CA435REST FAIL real player ticks preserve both rests during acceleration",
+            "CA435REST FAIL one accelerated world clock independent of peer count",
+            "CA435REST FAIL each body receives exactly the elapsed rest tics",
+            "CA435SYNC FAIL peer=1 slot=0 native=111 tic=256"
+          ],
+          "ready": false,
+          "status": [
+            "CA512 player=2 map=MAP03 health=1248 anima=1248.64 money=1001 rest=0 spirit=0 clock=330 profile=6f7907b4-0165-4bc9-97a0-2e82bdfe9da2"
+          ]
+        }
+      ],
+      "recovery": {
+        "status": "closed",
+        "recovery": {
+          "identity": "author-test",
+          "revision": 0,
+          "snapshot": "39805bfe347d4b24ea5284fa5b29fb5a24132801535db95bf6e8f18dd9af814c"
+        }
+      },
+      "runtime_sha256": "bb0cd219087141e2c23cf82e41f304220d889e8e9d93daa2a0123b0f9655fc1f",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "addon": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\cooperative-rest-20261031-123449-379025\\scene1-20261031-123449-380026\\checks.pk3",
+      "store": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\cooperative-rest-20261031-123449-379025\\scene1-20261031-123449-380026\\profiles.sqlite3",
+      "author_accepted": false,
+      "error": "Native scene failed; complete logs retained.",
+      "scope": "Startup, process exits and native sync only; interactive acceptance must be recorded separately.",
+      "passed": false,
+      "rest_checks": [
+        [
+          "CA435REST PASS seat with real furniture",
+          "CA435REST PASS seat with real furniture",
+          "CA435REST PASS open shared vote",
+          "CA435REST PASS one vote leaves both resting without acceleration",
+          "CA435REST PASS rejection preserves individual rest",
+          "CA435REST PASS reopen after rejection",
+          "CA435REST PASS both native votes begin acceleration",
+          "CA435REST STEP slot=0 tic=218 predicting=0 seen=0 seentic=-1",
+          "CA435REST STEP slot=1 tic=218 predicting=0 seen=1 seentic=218",
+          "CA435REST PUMP slot=0 tic=218 step=1 now=212 last=212 predict=0",
+          "CA435REST PUMP slot=1 tic=218 step=1 now=212 last=212 predict=0",
+          "CA435REST PUMP slot=0 tic=218 step=2 now=213 last=213 predict=0",
+          "CA435REST PUMP slot=1 tic=218 step=2 now=213 last=213 predict=0",
+          "CA435REST STEP slot=0 tic=219 predicting=1 seen=3 seentic=218",
+          "CA435REST STEP slot=0 tic=219 predicting=0 seen=1 seentic=219",
+          "CA435REST STEP slot=1 tic=219 predicting=0 seen=1 seentic=219",
+          "CA435REST PUMP slot=0 tic=219 step=1 now=317 last=317 predict=0",
+          "CA435REST PUMP slot=1 tic=219 step=1 now=317 last=317 predict=0",
+          "CA435REST PUMP slot=0 tic=219 step=2 now=318 last=318 predict=0",
+          "CA435REST PUMP slot=1 tic=219 step=2 now=318 last=318 predict=0",
+          "CA435REST STEP slot=0 tic=220 predicting=1 seen=3 seentic=219",
+          "CA435REST STEP slot=0 tic=220 predicting=0 seen=1 seentic=220",
+          "CA435REST STEP slot=1 tic=220 predicting=0 seen=1 seentic=220",
+          "CA435REST PUMP slot=0 tic=220 step=1 now=422 last=422 predict=0",
+          "CA435REST PUMP slot=1 tic=220 step=1 now=422 last=422 predict=0",
+          "CA435REST PUMP slot=0 tic=220 step=2 now=423 last=423 predict=0",
+          "CA435REST PUMP slot=1 tic=220 step=2 now=423 last=423 predict=0",
+          "CA435REST STEP slot=0 tic=221 predicting=1 seen=3 seentic=220",
+          "CA435REST STEP slot=0 tic=221 predicting=0 seen=1 seentic=221",
+          "CA435REST STEP slot=1 tic=221 predicting=0 seen=1 seentic=221",
+          "CA435REST PUMP slot=0 tic=221 step=1 now=527 last=527 predict=0",
+          "CA435REST PUMP slot=1 tic=221 step=1 now=527 last=527 predict=0",
+          "CA435REST PUMP slot=0 tic=221 step=2 now=528 last=528 predict=0",
+          "CA435REST PUMP slot=1 tic=221 step=2 now=528 last=528 predict=0",
+          "CA435REST PASS real player ticks preserve both rests during acceleration",
+          "CA435REST PASS one accelerated world clock independent of peer count",
+          "CA435REST PASS clock replicas match",
+          "CA435REST PASS each body receives exactly the elapsed rest tics",
+          "CA435REST PASS each body receives exactly the elapsed rest tics",
+          "CA435REST DIAG elapsed=10 clock=1050",
+          "CA435REST PASS one player standing stops acceleration without waking the other",
+          "CA435REST CLOCK slot=0 now=1690 last=1687 tic=238 pumping=0 serial=1456",
+          "CA435REST PASS external clock jump still interrupts rest",
+          "CA435REST RESULT real-tick cooperative regression complete"
+        ],
+        [
+          "CA435REST PASS seat with real furniture",
+          "CA435REST PASS seat with real furniture",
+          "CA435REST PASS open shared vote",
+          "CA435REST PASS one vote leaves both resting without acceleration",
+          "CA435REST PASS rejection preserves individual rest",
+          "CA435REST PASS reopen after rejection",
+          "CA435REST PASS both native votes begin acceleration",
+          "CA435REST STEP slot=0 tic=218 predicting=0 seen=0 seentic=-1",
+          "CA435REST STEP slot=1 tic=218 predicting=0 seen=1 seentic=218",
+          "CA435REST PUMP slot=0 tic=218 step=1 now=212 last=212 predict=0",
+          "CA435REST PUMP slot=1 tic=218 step=1 now=212 last=212 predict=0",
+          "CA435REST PUMP slot=0 tic=218 step=2 now=213 last=213 predict=0",
+          "CA435REST PUMP slot=1 tic=218 step=2 now=213 last=213 predict=0",
+          "CA435REST STEP slot=1 tic=219 predicting=1 seen=3 seentic=218",
+          "CA435REST STEP slot=1 tic=219 predicting=1 seen=2 seentic=219",
+          "CA435REST STEP slot=0 tic=219 predicting=0 seen=2 seentic=219",
+          "CA435REST PUMP slot=0 tic=219 step=1 now=317 last=317 predict=0",
+          "CA435REST PUMP slot=1 tic=219 step=1 now=317 last=316 predict=0",
+          "CA435REST CLOCK slot=1 now=318 last=316 tic=219 pumping=1 serial=105",
+          "CA435REST FAIL real player ticks preserve both rests during acceleration",
+          "CA435REST FAIL one accelerated world clock independent of peer count",
+          "CA435REST PASS clock replicas match",
+          "CA435REST PASS each body receives exactly the elapsed rest tics",
+          "CA435REST FAIL each body receives exactly the elapsed rest tics",
+          "CA435REST DIAG elapsed=10 clock=115",
+          "CA435REST PASS one player standing stops acceleration without waking the other",
+          "CA435REST CLOCK slot=0 now=339 last=336 tic=238 pumping=0 serial=105",
+          "CA435REST PASS external clock jump still interrupts rest",
+          "CA435REST RESULT real-tick cooperative regression complete"
+        ]
+      ]
+    },
+    "rest_after": {
+      "scene": 1,
+      "commands": [
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\review-rest\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\cooperative-rest-20261031-123610-205088\\scene1-20261031-123610-205088\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\cooperative-rest-20261031-123610-205088\\scene1-20261031-123610-205088\\bundle\\peer0\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\cooperative-rest-20261031-123610-205088\\scene1-20261031-123610-205088\\bundle\\peer0",
+          "-host",
+          "2",
+          "-port",
+          "31535",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\cooperative-rest-20261031-123610-205088\\scene1-20261031-123610-205088\\bundle\\peer0\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\cooperative-rest-20261031-123610-205088\\scene1-20261031-123610-205088\\bundle\\peer0\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ],
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\review-rest\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\cooperative-rest-20261031-123610-205088\\scene1-20261031-123610-205088\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\cooperative-rest-20261031-123610-205088\\scene1-20261031-123610-205088\\bundle\\peer1\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\cooperative-rest-20261031-123610-205088\\scene1-20261031-123610-205088\\bundle\\peer1",
+          "-join",
+          "127.0.0.1:31535",
+          "-port",
+          "31536",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\cooperative-rest-20261031-123610-205088\\scene1-20261031-123610-205088\\bundle\\peer1\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\cooperative-rest-20261031-123610-205088\\scene1-20261031-123610-205088\\bundle\\peer1\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ]
+      ],
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "ready": true,
+          "status": [
+            "CA512 player=2 map=MAP03 health=1248 anima=1248.64 money=1001 rest=0 spirit=0 clock=1575 profile=913e0483-d72a-4638-b67f-afe3b7429cab",
+            "CA512 player=2 map=MAP03 health=1248 anima=1248.64 money=1001 rest=0 spirit=0 clock=1913 profile=913e0483-d72a-4638-b67f-afe3b7429cab",
+            "CA512 player=1 map=MAP03 health=1248 anima=1248.64 money=1000 rest=0 spirit=0 clock=1947 profile=c61b3a32-1979-4960-bb6c-51ea101e7624"
+          ]
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "ready": true,
+          "status": [
+            "CA512 player=2 map=MAP03 health=1248 anima=1248.64 money=1001 rest=0 spirit=0 clock=1575 profile=913e0483-d72a-4638-b67f-afe3b7429cab",
+            "CA512 player=2 map=MAP03 health=1248 anima=1248.64 money=1001 rest=0 spirit=0 clock=1913 profile=913e0483-d72a-4638-b67f-afe3b7429cab"
+          ]
+        }
+      ],
+      "recovery": {
+        "status": "closed",
+        "recovery": {
+          "identity": "author-test",
+          "revision": 1,
+          "snapshot": "2d675e19b562304740852f24e18781fb962e3dab87561b89f70966ad007affd8"
+        }
+      },
+      "runtime_sha256": "ebd373849e90cfde579927e2784f96e51a529a1c140150a7e94bb541b841c118",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "addon": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\cooperative-rest-20261031-123610-205088\\scene1-20261031-123610-205088\\checks.pk3",
+      "store": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\cooperative-rest-20261031-123610-205088\\scene1-20261031-123610-205088\\profiles.sqlite3",
+      "author_accepted": false,
+      "error": null,
+      "scope": "Startup, process exits and native sync only; interactive acceptance must be recorded separately.",
+      "passed": true,
+      "rest_checks": [
+        [
+          "CA435REST PASS seat with real furniture",
+          "CA435REST PASS seat with real furniture",
+          "CA435REST PASS open shared vote",
+          "CA435REST PASS one vote leaves both resting without acceleration",
+          "CA435REST PASS rejection preserves individual rest",
+          "CA435REST PASS reopen after rejection",
+          "CA435REST PASS both native votes begin acceleration",
+          "CA435REST PASS real player ticks preserve both rests during acceleration",
+          "CA435REST PASS one accelerated world clock independent of peer count",
+          "CA435REST PASS clock replicas match",
+          "CA435REST PASS each body receives exactly the elapsed rest tics",
+          "CA435REST PASS each body receives exactly the elapsed rest tics",
+          "CA435REST DIAG elapsed=10 clock=1050",
+          "CA435REST PASS one player standing stops acceleration without waking the other",
+          "CA435REST PASS external clock jump still interrupts rest",
+          "CA435REST RESULT real-tick cooperative regression complete"
+        ],
+        [
+          "CA435REST PASS seat with real furniture",
+          "CA435REST PASS seat with real furniture",
+          "CA435REST PASS open shared vote",
+          "CA435REST PASS one vote leaves both resting without acceleration",
+          "CA435REST PASS rejection preserves individual rest",
+          "CA435REST PASS reopen after rejection",
+          "CA435REST PASS both native votes begin acceleration",
+          "CA435REST PASS real player ticks preserve both rests during acceleration",
+          "CA435REST PASS one accelerated world clock independent of peer count",
+          "CA435REST PASS clock replicas match",
+          "CA435REST PASS each body receives exactly the elapsed rest tics",
+          "CA435REST PASS each body receives exactly the elapsed rest tics",
+          "CA435REST DIAG elapsed=10 clock=1050",
+          "CA435REST PASS one player standing stops acceleration without waking the other",
+          "CA435REST PASS external clock jump still interrupts rest",
+          "CA435REST RESULT real-tick cooperative regression complete"
+        ]
+      ]
+    },
+    "rest_live": {
+      "scene": 1,
+      "commands": [
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\review-rest\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-suite-20261031-123651-017095\\scene1-20261031-123651-017095\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-suite-20261031-123651-017095\\scene1-20261031-123651-017095\\bundle\\peer0\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-suite-20261031-123651-017095\\scene1-20261031-123651-017095\\bundle\\peer0",
+          "-host",
+          "2",
+          "-port",
+          "31535",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-suite-20261031-123651-017095\\scene1-20261031-123651-017095\\bundle\\peer0\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-suite-20261031-123651-017095\\scene1-20261031-123651-017095\\bundle\\peer0\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ],
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\review-rest\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-suite-20261031-123651-017095\\scene1-20261031-123651-017095\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-suite-20261031-123651-017095\\scene1-20261031-123651-017095\\bundle\\peer1\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-suite-20261031-123651-017095\\scene1-20261031-123651-017095\\bundle\\peer1",
+          "-join",
+          "127.0.0.1:31535",
+          "-port",
+          "31536",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-suite-20261031-123651-017095\\scene1-20261031-123651-017095\\bundle\\peer1\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-suite-20261031-123651-017095\\scene1-20261031-123651-017095\\bundle\\peer1\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ]
+      ],
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "ready": true,
+          "status": []
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "ready": true,
+          "status": []
+        }
+      ],
+      "recovery": {
+        "status": "closed",
+        "recovery": {
+          "identity": "author-test",
+          "revision": 0,
+          "snapshot": "55b0328466ad82f2efb67bdd7547844e6d73b0cc9ec5c225d4abc373e23618f7"
+        }
+      },
+      "runtime_sha256": "ebd373849e90cfde579927e2784f96e51a529a1c140150a7e94bb541b841c118",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "addon": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-suite-20261031-123651-017095\\scene1-20261031-123651-017095\\checks.pk3",
+      "store": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-suite-20261031-123651-017095\\scene1-20261031-123651-017095\\profiles.sqlite3",
+      "author_accepted": false,
+      "error": null,
+      "scope": "Startup, process exits and native sync only; interactive acceptance must be recorded separately.",
+      "passed": true
+    },
+    "card_live": {
+      "scene": 5,
+      "commands": [
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\handoff-final\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-suite-20261031-120310-352035\\scene5-20261031-120310-352035\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-suite-20261031-120310-352035\\scene5-20261031-120310-352035\\bundle\\peer0\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-suite-20261031-120310-352035\\scene5-20261031-120310-352035\\bundle\\peer0",
+          "-host",
+          "2",
+          "-port",
+          "31535",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-suite-20261031-120310-352035\\scene5-20261031-120310-352035\\bundle\\peer0\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-suite-20261031-120310-352035\\scene5-20261031-120310-352035\\bundle\\peer0\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ],
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\handoff-final\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-suite-20261031-120310-352035\\scene5-20261031-120310-352035\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-suite-20261031-120310-352035\\scene5-20261031-120310-352035\\bundle\\peer1\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-suite-20261031-120310-352035\\scene5-20261031-120310-352035\\bundle\\peer1",
+          "-join",
+          "127.0.0.1:31535",
+          "-port",
+          "31536",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-suite-20261031-120310-352035\\scene5-20261031-120310-352035\\bundle\\peer1\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-suite-20261031-120310-352035\\scene5-20261031-120310-352035\\bundle\\peer1\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ]
+      ],
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "ready": true,
+          "status": []
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "ready": true,
+          "status": []
+        }
+      ],
+      "recovery": {
+        "status": "closed",
+        "recovery": {
+          "identity": "author-test",
+          "revision": 0,
+          "snapshot": "a82a7a73d5ff60f8d4e6394ffc257dd295fc14a201ca71258959bd87dd5bc2cf"
+        }
+      },
+      "runtime_sha256": "bb0cd219087141e2c23cf82e41f304220d889e8e9d93daa2a0123b0f9655fc1f",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "addon": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-suite-20261031-120310-352035\\scene5-20261031-120310-352035\\checks.pk3",
+      "store": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-suite-20261031-120310-352035\\scene5-20261031-120310-352035\\profiles.sqlite3",
+      "author_accepted": false,
+      "error": null,
+      "scope": "Startup, process exits and native sync only; interactive acceptance must be recorded separately.",
+      "passed": true
+    },
+    "fixtures_and_common_restart": {
+      "runs": [
+        {
+          "scene": 0,
+          "commands": [
+            [
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+              "-noautoload",
+              "-iwad",
+              "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+              "-file",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\handoff-final\\caelum_argenteum_dev.pk3",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene0-20261031-121228-872628\\checks.pk3",
+              "-config",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene0-20261031-121228-872628\\bundle\\peer0\\session.ini",
+              "-savedir",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene0-20261031-121228-872628\\bundle\\peer0",
+              "-host",
+              "2",
+              "-port",
+              "31535",
+              "-netmode",
+              "0",
+              "+logfile",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene0-20261031-121228-872628\\bundle\\peer0\\engine.log",
+              "-loadgame",
+              "recovery.zds",
+              "+exec",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene0-20261031-121228-872628\\bundle\\peer0\\start.cfg",
+              "-window",
+              "-width",
+              "800",
+              "-height",
+              "600"
+            ],
+            [
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+              "-noautoload",
+              "-iwad",
+              "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+              "-file",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\handoff-final\\caelum_argenteum_dev.pk3",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene0-20261031-121228-872628\\checks.pk3",
+              "-config",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene0-20261031-121228-872628\\bundle\\peer1\\session.ini",
+              "-savedir",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene0-20261031-121228-872628\\bundle\\peer1",
+              "-join",
+              "127.0.0.1:31535",
+              "-port",
+              "31536",
+              "+logfile",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene0-20261031-121228-872628\\bundle\\peer1\\engine.log",
+              "-loadgame",
+              "recovery.zds",
+              "+exec",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene0-20261031-121228-872628\\bundle\\peer1\\start.cfg",
+              "-window",
+              "-width",
+              "800",
+              "-height",
+              "600"
+            ]
+          ],
+          "peers": [
+            {
+              "slot": 0,
+              "exit": 0,
+              "errors": [],
+              "ready": true,
+              "status": [
+                "CA512 player=2 map=MAP03 health=1248 anima=1248.64 money=1001 rest=0 spirit=0 clock=558 profile=0abf0279-5ea7-4dfc-9c57-3e8ae3739788",
+                "CA512 player=1 map=MAP03 health=1248 anima=1248.64 money=1000 rest=0 spirit=0 clock=593 profile=ddf78797-4a60-47f5-82dc-f90655f214d8"
+              ]
+            },
+            {
+              "slot": 1,
+              "exit": 0,
+              "errors": [],
+              "ready": true,
+              "status": [
+                "CA512 player=2 map=MAP03 health=1248 anima=1248.64 money=1001 rest=0 spirit=0 clock=558 profile=0abf0279-5ea7-4dfc-9c57-3e8ae3739788"
+              ]
+            }
+          ],
+          "recovery": {
+            "status": "closed",
+            "recovery": {
+              "identity": "author-test",
+              "revision": 1,
+              "snapshot": "ee3738e59d35bdb327ce81ee89eee0f8d22022807ecbbbb3d13b6e41aefb3aa0"
+            }
+          },
+          "runtime_sha256": "bb0cd219087141e2c23cf82e41f304220d889e8e9d93daa2a0123b0f9655fc1f",
+          "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+          "addon": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene0-20261031-121228-872628\\checks.pk3",
+          "store": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene0-20261031-121228-872628\\profiles.sqlite3",
+          "author_accepted": false,
+          "error": null,
+          "scope": "Startup, process exits and native sync only; interactive acceptance must be recorded separately.",
+          "passed": true
+        },
+        {
+          "scene": 0,
+          "commands": [
+            [
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+              "-noautoload",
+              "-iwad",
+              "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+              "-file",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\handoff-final\\caelum_argenteum_dev.pk3",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene0-20261031-121228-872628\\checks.pk3",
+              "-config",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene0-20261031-121259-497701\\bundle\\peer0\\session.ini",
+              "-savedir",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene0-20261031-121259-497701\\bundle\\peer0",
+              "-host",
+              "2",
+              "-port",
+              "31535",
+              "-netmode",
+              "0",
+              "+logfile",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene0-20261031-121259-497701\\bundle\\peer0\\engine.log",
+              "-loadgame",
+              "recovery.zds",
+              "+exec",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene0-20261031-121259-497701\\bundle\\peer0\\start.cfg",
+              "-window",
+              "-width",
+              "800",
+              "-height",
+              "600"
+            ],
+            [
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+              "-noautoload",
+              "-iwad",
+              "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+              "-file",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\handoff-final\\caelum_argenteum_dev.pk3",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene0-20261031-121228-872628\\checks.pk3",
+              "-config",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene0-20261031-121259-497701\\bundle\\peer1\\session.ini",
+              "-savedir",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene0-20261031-121259-497701\\bundle\\peer1",
+              "-join",
+              "127.0.0.1:31535",
+              "-port",
+              "31536",
+              "+logfile",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene0-20261031-121259-497701\\bundle\\peer1\\engine.log",
+              "-loadgame",
+              "recovery.zds",
+              "+exec",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene0-20261031-121259-497701\\bundle\\peer1\\start.cfg",
+              "-window",
+              "-width",
+              "800",
+              "-height",
+              "600"
+            ]
+          ],
+          "peers": [
+            {
+              "slot": 0,
+              "exit": 0,
+              "errors": [],
+              "ready": true,
+              "status": [
+                "CA512 player=2 map=MAP03 health=1248 anima=1248.64 money=1001 rest=0 spirit=0 clock=905 profile=0abf0279-5ea7-4dfc-9c57-3e8ae3739788",
+                "CA512 player=1 map=MAP03 health=1248 anima=1248.64 money=1000 rest=0 spirit=0 clock=939 profile=ddf78797-4a60-47f5-82dc-f90655f214d8"
+              ]
+            },
+            {
+              "slot": 1,
+              "exit": 0,
+              "errors": [],
+              "ready": true,
+              "status": [
+                "CA512 player=2 map=MAP03 health=1248 anima=1248.64 money=1001 rest=0 spirit=0 clock=905 profile=0abf0279-5ea7-4dfc-9c57-3e8ae3739788"
+              ]
+            }
+          ],
+          "recovery": {
+            "status": "closed",
+            "recovery": {
+              "identity": "author-test",
+              "revision": 2,
+              "snapshot": "24994af78974d53463104a7ca7d54e356ddcc380fdefaab04de959982d762ffc"
+            }
+          },
+          "runtime_sha256": "bb0cd219087141e2c23cf82e41f304220d889e8e9d93daa2a0123b0f9655fc1f",
+          "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+          "addon": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene0-20261031-121228-872628\\checks.pk3",
+          "store": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene0-20261031-121228-872628\\profiles.sqlite3",
+          "author_accepted": false,
+          "error": null,
+          "scope": "Startup, process exits and native sync only; interactive acceptance must be recorded separately.",
+          "passed": true
+        },
+        {
+          "scene": 1,
+          "commands": [
+            [
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+              "-noautoload",
+              "-iwad",
+              "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+              "-file",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\handoff-final\\caelum_argenteum_dev.pk3",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene1-20261031-121329-899898\\checks.pk3",
+              "-config",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene1-20261031-121329-899898\\bundle\\peer0\\session.ini",
+              "-savedir",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene1-20261031-121329-899898\\bundle\\peer0",
+              "-host",
+              "2",
+              "-port",
+              "31535",
+              "-netmode",
+              "0",
+              "+logfile",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene1-20261031-121329-899898\\bundle\\peer0\\engine.log",
+              "-loadgame",
+              "recovery.zds",
+              "+exec",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene1-20261031-121329-899898\\bundle\\peer0\\start.cfg",
+              "-window",
+              "-width",
+              "800",
+              "-height",
+              "600"
+            ],
+            [
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+              "-noautoload",
+              "-iwad",
+              "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+              "-file",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\handoff-final\\caelum_argenteum_dev.pk3",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene1-20261031-121329-899898\\checks.pk3",
+              "-config",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene1-20261031-121329-899898\\bundle\\peer1\\session.ini",
+              "-savedir",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene1-20261031-121329-899898\\bundle\\peer1",
+              "-join",
+              "127.0.0.1:31535",
+              "-port",
+              "31536",
+              "+logfile",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene1-20261031-121329-899898\\bundle\\peer1\\engine.log",
+              "-loadgame",
+              "recovery.zds",
+              "+exec",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene1-20261031-121329-899898\\bundle\\peer1\\start.cfg",
+              "-window",
+              "-width",
+              "800",
+              "-height",
+              "600"
+            ]
+          ],
+          "peers": [
+            {
+              "slot": 0,
+              "exit": 0,
+              "errors": [],
+              "ready": true,
+              "status": [
+                "CA512 player=2 map=MAP03 health=1248 anima=1248.64 money=1001 rest=0 spirit=0 clock=559 profile=267b41d2-82eb-410d-8b6f-7fb95a5cf71a",
+                "CA512 player=1 map=MAP03 health=1248 anima=1248.64 money=1000 rest=0 spirit=0 clock=593 profile=a83a938a-1e3c-47c9-952d-4020df92ce6a"
+              ]
+            },
+            {
+              "slot": 1,
+              "exit": 0,
+              "errors": [],
+              "ready": true,
+              "status": [
+                "CA512 player=2 map=MAP03 health=1248 anima=1248.64 money=1001 rest=0 spirit=0 clock=559 profile=267b41d2-82eb-410d-8b6f-7fb95a5cf71a"
+              ]
+            }
+          ],
+          "recovery": {
+            "status": "closed",
+            "recovery": {
+              "identity": "author-test",
+              "revision": 1,
+              "snapshot": "1b77b04aeece87523df76c46b341dba8f6e2071287d2a84965513956037534c3"
+            }
+          },
+          "runtime_sha256": "bb0cd219087141e2c23cf82e41f304220d889e8e9d93daa2a0123b0f9655fc1f",
+          "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+          "addon": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene1-20261031-121329-899898\\checks.pk3",
+          "store": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene1-20261031-121329-899898\\profiles.sqlite3",
+          "author_accepted": false,
+          "error": null,
+          "scope": "Startup, process exits and native sync only; interactive acceptance must be recorded separately.",
+          "passed": true
+        },
+        {
+          "scene": 2,
+          "commands": [
+            [
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+              "-noautoload",
+              "-iwad",
+              "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+              "-file",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\handoff-final\\caelum_argenteum_dev.pk3",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene2-20261031-121401-472942\\checks.pk3",
+              "-config",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene2-20261031-121401-472942\\bundle\\peer0\\session.ini",
+              "-savedir",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene2-20261031-121401-472942\\bundle\\peer0",
+              "-host",
+              "2",
+              "-port",
+              "31535",
+              "-netmode",
+              "0",
+              "+logfile",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene2-20261031-121401-472942\\bundle\\peer0\\engine.log",
+              "-loadgame",
+              "recovery.zds",
+              "+exec",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene2-20261031-121401-472942\\bundle\\peer0\\start.cfg",
+              "-window",
+              "-width",
+              "800",
+              "-height",
+              "600"
+            ],
+            [
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+              "-noautoload",
+              "-iwad",
+              "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+              "-file",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\handoff-final\\caelum_argenteum_dev.pk3",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene2-20261031-121401-472942\\checks.pk3",
+              "-config",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene2-20261031-121401-472942\\bundle\\peer1\\session.ini",
+              "-savedir",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene2-20261031-121401-472942\\bundle\\peer1",
+              "-join",
+              "127.0.0.1:31535",
+              "-port",
+              "31536",
+              "+logfile",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene2-20261031-121401-472942\\bundle\\peer1\\engine.log",
+              "-loadgame",
+              "recovery.zds",
+              "+exec",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene2-20261031-121401-472942\\bundle\\peer1\\start.cfg",
+              "-window",
+              "-width",
+              "800",
+              "-height",
+              "600"
+            ]
+          ],
+          "peers": [
+            {
+              "slot": 0,
+              "exit": 0,
+              "errors": [],
+              "ready": true,
+              "status": [
+                "CA512 player=2 map=MAP03 health=1248 anima=1248.64 money=1001 rest=0 spirit=0 clock=558 profile=df20caf0-d3ba-4c03-bb15-93f9f4396da3",
+                "CA512 player=1 map=MAP03 health=1248 anima=1248.64 money=1000 rest=0 spirit=0 clock=593 profile=9042b621-f504-4831-a17a-a2876ca52d2b"
+              ]
+            },
+            {
+              "slot": 1,
+              "exit": 0,
+              "errors": [],
+              "ready": true,
+              "status": [
+                "CA512 player=2 map=MAP03 health=1248 anima=1248.64 money=1001 rest=0 spirit=0 clock=558 profile=df20caf0-d3ba-4c03-bb15-93f9f4396da3"
+              ]
+            }
+          ],
+          "recovery": {
+            "status": "closed",
+            "recovery": {
+              "identity": "author-test",
+              "revision": 1,
+              "snapshot": "d8db9fd018b5d6b1bdb0bf07c99d668507b7e5963b959a14d0326a7ed477bc01"
+            }
+          },
+          "runtime_sha256": "bb0cd219087141e2c23cf82e41f304220d889e8e9d93daa2a0123b0f9655fc1f",
+          "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+          "addon": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene2-20261031-121401-472942\\checks.pk3",
+          "store": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene2-20261031-121401-472942\\profiles.sqlite3",
+          "author_accepted": false,
+          "error": null,
+          "scope": "Startup, process exits and native sync only; interactive acceptance must be recorded separately.",
+          "passed": true
+        },
+        {
+          "scene": 3,
+          "commands": [
+            [
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+              "-noautoload",
+              "-iwad",
+              "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+              "-file",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\handoff-final\\caelum_argenteum_dev.pk3",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene3-20261031-121432-156993\\checks.pk3",
+              "-config",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene3-20261031-121432-156993\\bundle\\peer0\\session.ini",
+              "-savedir",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene3-20261031-121432-156993\\bundle\\peer0",
+              "-host",
+              "2",
+              "-port",
+              "31535",
+              "-netmode",
+              "0",
+              "+logfile",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene3-20261031-121432-156993\\bundle\\peer0\\engine.log",
+              "-loadgame",
+              "recovery.zds",
+              "+exec",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene3-20261031-121432-156993\\bundle\\peer0\\start.cfg",
+              "-window",
+              "-width",
+              "800",
+              "-height",
+              "600"
+            ],
+            [
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+              "-noautoload",
+              "-iwad",
+              "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+              "-file",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\handoff-final\\caelum_argenteum_dev.pk3",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene3-20261031-121432-156993\\checks.pk3",
+              "-config",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene3-20261031-121432-156993\\bundle\\peer1\\session.ini",
+              "-savedir",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene3-20261031-121432-156993\\bundle\\peer1",
+              "-join",
+              "127.0.0.1:31535",
+              "-port",
+              "31536",
+              "+logfile",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene3-20261031-121432-156993\\bundle\\peer1\\engine.log",
+              "-loadgame",
+              "recovery.zds",
+              "+exec",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene3-20261031-121432-156993\\bundle\\peer1\\start.cfg",
+              "-window",
+              "-width",
+              "800",
+              "-height",
+              "600"
+            ]
+          ],
+          "peers": [
+            {
+              "slot": 0,
+              "exit": 0,
+              "errors": [],
+              "ready": true,
+              "status": [
+                "CA512 player=2 map=MAP03 health=1248 anima=1248.64 money=1001 rest=0 spirit=0 clock=558 profile=d10b2ef7-0fbc-4619-8c95-ee387ef685ba",
+                "CA512 player=1 map=MAP03 health=1248 anima=1248.64 money=1000 rest=0 spirit=0 clock=593 profile=a5158473-056e-4b61-8739-c1503f924d95"
+              ]
+            },
+            {
+              "slot": 1,
+              "exit": 0,
+              "errors": [],
+              "ready": true,
+              "status": [
+                "CA512 player=2 map=MAP03 health=1248 anima=1248.64 money=1001 rest=0 spirit=0 clock=558 profile=d10b2ef7-0fbc-4619-8c95-ee387ef685ba"
+              ]
+            }
+          ],
+          "recovery": {
+            "status": "closed",
+            "recovery": {
+              "identity": "author-test",
+              "revision": 1,
+              "snapshot": "6c004a075231adb92bb43d8152b06fc0fa0dc061d81344cb53d0169fa773043d"
+            }
+          },
+          "runtime_sha256": "bb0cd219087141e2c23cf82e41f304220d889e8e9d93daa2a0123b0f9655fc1f",
+          "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+          "addon": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene3-20261031-121432-156993\\checks.pk3",
+          "store": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene3-20261031-121432-156993\\profiles.sqlite3",
+          "author_accepted": false,
+          "error": null,
+          "scope": "Startup, process exits and native sync only; interactive acceptance must be recorded separately.",
+          "passed": true
+        },
+        {
+          "scene": 4,
+          "commands": [
+            [
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+              "-noautoload",
+              "-iwad",
+              "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+              "-file",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\handoff-final\\caelum_argenteum_dev.pk3",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene4-20261031-121502-698779\\checks.pk3",
+              "-config",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene4-20261031-121502-698779\\bundle\\peer0\\session.ini",
+              "-savedir",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene4-20261031-121502-698779\\bundle\\peer0",
+              "-host",
+              "2",
+              "-port",
+              "31535",
+              "-netmode",
+              "0",
+              "+logfile",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene4-20261031-121502-698779\\bundle\\peer0\\engine.log",
+              "-loadgame",
+              "recovery.zds",
+              "+exec",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene4-20261031-121502-698779\\bundle\\peer0\\start.cfg",
+              "-window",
+              "-width",
+              "800",
+              "-height",
+              "600"
+            ],
+            [
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+              "-noautoload",
+              "-iwad",
+              "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+              "-file",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\handoff-final\\caelum_argenteum_dev.pk3",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene4-20261031-121502-698779\\checks.pk3",
+              "-config",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene4-20261031-121502-698779\\bundle\\peer1\\session.ini",
+              "-savedir",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene4-20261031-121502-698779\\bundle\\peer1",
+              "-join",
+              "127.0.0.1:31535",
+              "-port",
+              "31536",
+              "+logfile",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene4-20261031-121502-698779\\bundle\\peer1\\engine.log",
+              "-loadgame",
+              "recovery.zds",
+              "+exec",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene4-20261031-121502-698779\\bundle\\peer1\\start.cfg",
+              "-window",
+              "-width",
+              "800",
+              "-height",
+              "600"
+            ]
+          ],
+          "peers": [
+            {
+              "slot": 0,
+              "exit": 0,
+              "errors": [],
+              "ready": true,
+              "status": [
+                "CA512 player=2 map=MAP03 health=1248 anima=1248.64 money=1001 rest=0 spirit=0 clock=559 profile=8c227e8b-15f9-4ecd-8b79-b8288a00181f",
+                "CA512 player=1 map=MAP03 health=1248 anima=1248.64 money=1000 rest=0 spirit=0 clock=593 profile=cf608740-850d-42af-b9d4-1d27e28b6e3e"
+              ]
+            },
+            {
+              "slot": 1,
+              "exit": 0,
+              "errors": [],
+              "ready": true,
+              "status": [
+                "CA512 player=2 map=MAP03 health=1248 anima=1248.64 money=1001 rest=0 spirit=0 clock=559 profile=8c227e8b-15f9-4ecd-8b79-b8288a00181f"
+              ]
+            }
+          ],
+          "recovery": {
+            "status": "closed",
+            "recovery": {
+              "identity": "author-test",
+              "revision": 1,
+              "snapshot": "1683d19cfd2ee950251a3c001758ff54272ed43928c36e59b54030802f933e73"
+            }
+          },
+          "runtime_sha256": "bb0cd219087141e2c23cf82e41f304220d889e8e9d93daa2a0123b0f9655fc1f",
+          "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+          "addon": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene4-20261031-121502-698779\\checks.pk3",
+          "store": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene4-20261031-121502-698779\\profiles.sqlite3",
+          "author_accepted": false,
+          "error": null,
+          "scope": "Startup, process exits and native sync only; interactive acceptance must be recorded separately.",
+          "passed": true
+        },
+        {
+          "scene": 5,
+          "commands": [
+            [
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+              "-noautoload",
+              "-iwad",
+              "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+              "-file",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\handoff-final\\caelum_argenteum_dev.pk3",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene5-20261031-121533-278862\\checks.pk3",
+              "-config",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene5-20261031-121533-278862\\bundle\\peer0\\session.ini",
+              "-savedir",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene5-20261031-121533-278862\\bundle\\peer0",
+              "-host",
+              "2",
+              "-port",
+              "31535",
+              "-netmode",
+              "0",
+              "+logfile",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene5-20261031-121533-278862\\bundle\\peer0\\engine.log",
+              "-loadgame",
+              "recovery.zds",
+              "+exec",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene5-20261031-121533-278862\\bundle\\peer0\\start.cfg",
+              "-window",
+              "-width",
+              "800",
+              "-height",
+              "600"
+            ],
+            [
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+              "-noautoload",
+              "-iwad",
+              "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+              "-file",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\handoff-final\\caelum_argenteum_dev.pk3",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene5-20261031-121533-278862\\checks.pk3",
+              "-config",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene5-20261031-121533-278862\\bundle\\peer1\\session.ini",
+              "-savedir",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene5-20261031-121533-278862\\bundle\\peer1",
+              "-join",
+              "127.0.0.1:31535",
+              "-port",
+              "31536",
+              "+logfile",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene5-20261031-121533-278862\\bundle\\peer1\\engine.log",
+              "-loadgame",
+              "recovery.zds",
+              "+exec",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene5-20261031-121533-278862\\bundle\\peer1\\start.cfg",
+              "-window",
+              "-width",
+              "800",
+              "-height",
+              "600"
+            ]
+          ],
+          "peers": [
+            {
+              "slot": 0,
+              "exit": 0,
+              "errors": [],
+              "ready": true,
+              "status": [
+                "CA512 player=2 map=MAP03 health=1255 anima=1255.26 money=1001 rest=1 spirit=0 clock=559 profile=d1bfd5c8-102b-4bde-81aa-769f994cbbb0",
+                "CA512 player=1 map=MAP03 health=1248 anima=1248.64 money=1000 rest=1 spirit=0 clock=593 profile=7081b9c6-daff-4eec-950b-9cbe7a565dc6"
+              ]
+            },
+            {
+              "slot": 1,
+              "exit": 0,
+              "errors": [],
+              "ready": true,
+              "status": [
+                "CA512 player=2 map=MAP03 health=1255 anima=1255.26 money=1001 rest=1 spirit=0 clock=559 profile=d1bfd5c8-102b-4bde-81aa-769f994cbbb0"
+              ]
+            }
+          ],
+          "recovery": {
+            "status": "closed",
+            "recovery": {
+              "identity": "author-test",
+              "revision": 1,
+              "snapshot": "0db85d89e8521f6c0904392e46f738e2a14f0d1914154833a43b56509f077beb"
+            }
+          },
+          "runtime_sha256": "bb0cd219087141e2c23cf82e41f304220d889e8e9d93daa2a0123b0f9655fc1f",
+          "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+          "addon": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene5-20261031-121533-278862\\checks.pk3",
+          "store": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene5-20261031-121533-278862\\profiles.sqlite3",
+          "author_accepted": false,
+          "error": null,
+          "scope": "Startup, process exits and native sync only; interactive acceptance must be recorded separately.",
+          "passed": true
+        },
+        {
+          "scene": 6,
+          "commands": [
+            [
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+              "-noautoload",
+              "-iwad",
+              "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+              "-file",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\handoff-final\\caelum_argenteum_dev.pk3",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene6-20261031-121603-878961\\checks.pk3",
+              "-config",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene6-20261031-121603-878961\\bundle\\peer0\\session.ini",
+              "-savedir",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene6-20261031-121603-878961\\bundle\\peer0",
+              "-host",
+              "2",
+              "-port",
+              "31535",
+              "-netmode",
+              "0",
+              "+logfile",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene6-20261031-121603-878961\\bundle\\peer0\\engine.log",
+              "-loadgame",
+              "recovery.zds",
+              "+exec",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene6-20261031-121603-878961\\bundle\\peer0\\start.cfg",
+              "-window",
+              "-width",
+              "800",
+              "-height",
+              "600"
+            ],
+            [
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+              "-noautoload",
+              "-iwad",
+              "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+              "-file",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\handoff-final\\caelum_argenteum_dev.pk3",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene6-20261031-121603-878961\\checks.pk3",
+              "-config",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene6-20261031-121603-878961\\bundle\\peer1\\session.ini",
+              "-savedir",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene6-20261031-121603-878961\\bundle\\peer1",
+              "-join",
+              "127.0.0.1:31535",
+              "-port",
+              "31536",
+              "+logfile",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene6-20261031-121603-878961\\bundle\\peer1\\engine.log",
+              "-loadgame",
+              "recovery.zds",
+              "+exec",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene6-20261031-121603-878961\\bundle\\peer1\\start.cfg",
+              "-window",
+              "-width",
+              "800",
+              "-height",
+              "600"
+            ]
+          ],
+          "peers": [
+            {
+              "slot": 0,
+              "exit": 0,
+              "errors": [],
+              "ready": true,
+              "status": [
+                "CA512 player=2 map=MAP03 health=1255 anima=1255.26 money=1001 rest=1 spirit=0 clock=559 profile=36e3e8b3-e56d-4951-992f-a543ec50d296",
+                "CA512 player=1 map=MAP03 health=1248 anima=1248.64 money=1000 rest=1 spirit=0 clock=593 profile=6eb54972-8784-4f67-a749-5d2ddbb0b4a3"
+              ]
+            },
+            {
+              "slot": 1,
+              "exit": 0,
+              "errors": [],
+              "ready": true,
+              "status": [
+                "CA512 player=2 map=MAP03 health=1255 anima=1255.26 money=1001 rest=1 spirit=0 clock=559 profile=36e3e8b3-e56d-4951-992f-a543ec50d296"
+              ]
+            }
+          ],
+          "recovery": {
+            "status": "closed",
+            "recovery": {
+              "identity": "author-test",
+              "revision": 1,
+              "snapshot": "aea92410b37c1687a01067cf7d6f0a89c15bd105cdbd2c888a3724402f069591"
+            }
+          },
+          "runtime_sha256": "bb0cd219087141e2c23cf82e41f304220d889e8e9d93daa2a0123b0f9655fc1f",
+          "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+          "addon": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene6-20261031-121603-878961\\checks.pk3",
+          "store": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\author-smoke-20261031-121228-871617\\scene6-20261031-121603-878961\\profiles.sqlite3",
+          "author_accepted": false,
+          "error": null,
+          "scope": "Startup, process exits and native sync only; interactive acceptance must be recorded separately.",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "author_accepted": false,
+      "scope": "Seven native fixture startups and one saved restart; not gameplay acceptance."
+    },
+    "profile_roundtrip": {
+      "issue": 435,
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236",
+      "runs": [
+        {
+          "token": "outbound",
+          "native": [
+            {
+              "campaign": "a",
+              "players": 2,
+              "commands": [
+                [
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+                  "-noautoload",
+                  "-iwad",
+                  "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+                  "-file",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\handoff-final\\caelum_argenteum_dev.pk3",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\checks.pk3",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\outbound\\source\\verification.pk3",
+                  "-config",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\outbound\\source\\peer0\\session.ini",
+                  "-savedir",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\outbound\\source\\peer0",
+                  "-host",
+                  "2",
+                  "-port",
+                  "30635",
+                  "-netmode",
+                  "0",
+                  "+logfile",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\outbound\\source\\peer0\\engine.log",
+                  "-loadgame",
+                  "recovery.zds",
+                  "+exec",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\outbound\\source\\peer0\\start.cfg",
+                  "-window",
+                  "-width",
+                  "640",
+                  "-height",
+                  "480"
+                ],
+                [
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+                  "-noautoload",
+                  "-iwad",
+                  "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+                  "-file",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\handoff-final\\caelum_argenteum_dev.pk3",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\checks.pk3",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\outbound\\source\\verification.pk3",
+                  "-config",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\outbound\\source\\peer1\\session.ini",
+                  "-savedir",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\outbound\\source\\peer1",
+                  "-join",
+                  "127.0.0.1:30635",
+                  "-port",
+                  "30636",
+                  "+logfile",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\outbound\\source\\peer1\\engine.log",
+                  "-loadgame",
+                  "recovery.zds",
+                  "+exec",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\outbound\\source\\peer1\\start.cfg",
+                  "-window",
+                  "-width",
+                  "640",
+                  "-height",
+                  "480"
+                ]
+              ],
+              "output": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\outbound\\source\\peer0\\save00.zds",
+              "snapshot": "2821f630c7f960dbd008a0bff1f27f806456cbe7d9dbdeb92157dcdf193561ec",
+              "passed": true
+            },
+            {
+              "campaign": "b",
+              "players": 1,
+              "commands": [
+                [
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+                  "-noautoload",
+                  "-iwad",
+                  "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+                  "-file",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\handoff-final\\caelum_argenteum_dev.pk3",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\checks.pk3",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\outbound\\destination\\verification.pk3",
+                  "-config",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\outbound\\destination\\peer0\\session.ini",
+                  "-savedir",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\outbound\\destination\\peer0",
+                  "+logfile",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\outbound\\destination\\peer0\\engine.log",
+                  "-loadgame",
+                  "recovery.zds",
+                  "+exec",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\outbound\\destination\\peer0\\start.cfg",
+                  "-window",
+                  "-width",
+                  "640",
+                  "-height",
+                  "480"
+                ]
+              ],
+              "output": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\outbound\\destination\\peer0\\save00.zds",
+              "snapshot": "50400a2b3999907b9ca9129581b8485a530707db75bc85499478eec7e1bb7547",
+              "passed": true
+            }
+          ],
+          "published": {
+            "identity": "a927b346-7f81-421e-96d0-2364b73a66f8",
+            "campaign": "b",
+            "revision": 1,
+            "source_snapshot": "2821f630c7f960dbd008a0bff1f27f806456cbe7d9dbdeb92157dcdf193561ec",
+            "destination_snapshot": "50400a2b3999907b9ca9129581b8485a530707db75bc85499478eec7e1bb7547"
+          }
+        },
+        {
+          "token": "return",
+          "native": [
+            {
+              "campaign": "b",
+              "players": 1,
+              "commands": [
+                [
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+                  "-noautoload",
+                  "-iwad",
+                  "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+                  "-file",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\handoff-final\\caelum_argenteum_dev.pk3",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\checks.pk3",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\return\\source\\verification.pk3",
+                  "-config",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\return\\source\\peer0\\session.ini",
+                  "-savedir",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\return\\source\\peer0",
+                  "+logfile",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\return\\source\\peer0\\engine.log",
+                  "-loadgame",
+                  "recovery.zds",
+                  "+exec",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\return\\source\\peer0\\start.cfg",
+                  "-window",
+                  "-width",
+                  "640",
+                  "-height",
+                  "480"
+                ]
+              ],
+              "output": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\return\\source\\peer0\\save00.zds",
+              "snapshot": "516dee7b219bdb8941d104db7bf7dda2d7260203023194370f2af6b821cd12d8",
+              "passed": true
+            },
+            {
+              "campaign": "a",
+              "players": 2,
+              "commands": [
+                [
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+                  "-noautoload",
+                  "-iwad",
+                  "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+                  "-file",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\handoff-final\\caelum_argenteum_dev.pk3",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\checks.pk3",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\return\\destination\\verification.pk3",
+                  "-config",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\return\\destination\\peer0\\session.ini",
+                  "-savedir",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\return\\destination\\peer0",
+                  "-host",
+                  "2",
+                  "-port",
+                  "30635",
+                  "-netmode",
+                  "0",
+                  "+logfile",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\return\\destination\\peer0\\engine.log",
+                  "-loadgame",
+                  "recovery.zds",
+                  "+exec",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\return\\destination\\peer0\\start.cfg",
+                  "-window",
+                  "-width",
+                  "640",
+                  "-height",
+                  "480"
+                ],
+                [
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+                  "-noautoload",
+                  "-iwad",
+                  "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+                  "-file",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\handoff-final\\caelum_argenteum_dev.pk3",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\checks.pk3",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\return\\destination\\verification.pk3",
+                  "-config",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\return\\destination\\peer1\\session.ini",
+                  "-savedir",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\return\\destination\\peer1",
+                  "-join",
+                  "127.0.0.1:30635",
+                  "-port",
+                  "30636",
+                  "+logfile",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\return\\destination\\peer1\\engine.log",
+                  "-loadgame",
+                  "recovery.zds",
+                  "+exec",
+                  "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\return\\destination\\peer1\\start.cfg",
+                  "-window",
+                  "-width",
+                  "640",
+                  "-height",
+                  "480"
+                ]
+              ],
+              "output": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\return\\destination\\peer0\\save00.zds",
+              "snapshot": "db816b262c789d6f0f10a2c58669b1db7c7b3f30712fb4a855e7125170a88cfe",
+              "passed": true
+            }
+          ],
+          "published": {
+            "identity": "a927b346-7f81-421e-96d0-2364b73a66f8",
+            "campaign": "a",
+            "revision": 2,
+            "source_snapshot": "516dee7b219bdb8941d104db7bf7dda2d7260203023194370f2af6b821cd12d8",
+            "destination_snapshot": "db816b262c789d6f0f10a2c58669b1db7c7b3f30712fb4a855e7125170a88cfe"
+          }
+        }
+      ],
+      "native_vacancy": true,
+      "native_play": {
+        "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-120806-564236\\imported-play",
+        "checks": 2,
+        "recovery": {
+          "status": "closed",
+          "recovery": {
+            "identity": "b",
+            "revision": 2,
+            "snapshot": "4acf9baa56da9aa4e08ef967876bd9fe0351221e25f8dec5249f745a382d144a"
+          }
+        },
+        "passed": true
+      },
+      "admission": [
+        "a vacant normal launch refused",
+        "b occupied normal session prepared",
+        "b vacant normal launch refused",
+        "a occupied normal session prepared"
+      ],
+      "passed": true,
+      "author_acceptance": false
+    },
+    "transactions": {
+      "issue": 435,
+      "tests": 12,
+      "errors": [],
+      "failures": [],
+      "passed": true
+    },
+    "trucazo_save_failure_1": {
+      "issue": 435,
+      "scenario_issue": 590,
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-120954-949662",
+      "scenario": "trucazo",
+      "commands": [
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\handoff-final\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-120954-949662\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-120954-949662\\bundle\\peer0\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-120954-949662\\bundle\\peer0",
+          "-host",
+          "2",
+          "-port",
+          "30935",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-120954-949662\\bundle\\peer0\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-120954-949662\\bundle\\peer0\\start.cfg",
+          "-window",
+          "-width",
+          "640",
+          "-height",
+          "480"
+        ],
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\handoff-final\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-120954-949662\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-120954-949662\\bundle\\peer1\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-120954-949662\\bundle\\peer1",
+          "-join",
+          "127.0.0.1:30935",
+          "-port",
+          "30936",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-120954-949662\\bundle\\peer1\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-120954-949662\\bundle\\peer1\\start.cfg",
+          "-window",
+          "-width",
+          "640",
+          "-height",
+          "480"
+        ]
+      ],
+      "peers": [
+        {
+          "peer": 0,
+          "exit": 1,
+          "passed": false,
+          "checks": [
+            "CA590 PASS ordinary portable table builds its real chairs",
+            "CA590 PASS ordinary sitting succeeds for native player",
+            "CA590 PASS seated interaction opens participant picker",
+            "CA590 PASS ordinary sitting succeeds for native player",
+            "CA590 PASS seated interaction opens participant picker",
+            "CA590 PASS portable chair records distinct seat index",
+            "CA590 PASS legacy portable chair index resolves by existing references",
+            "CA590 PASS native invitation opens shared unstarted lobby",
+            "CA590 PASS first native acceptance waits for the other player",
+            "CA590 PASS second native acceptance starts the agreed human game",
+            "CA590 PASS guest deck is retained without transfer or consumption",
+            "CA590 PASS production action event plays one human card",
+            "CA590 PASS world clock advances with both card menus open",
+            "CA590 PASS card players retain a shared clock",
+            "CA590 PASS actual seats persist through native menu tics",
+            "CA590 PASS seated card participants cannot commit arena or world travel",
+            "CA590 PASS card session uses integrated lifecycle and arena services",
+            "CA590 RESULT peer=0 fresh"
+          ],
+          "errors": []
+        },
+        {
+          "peer": 1,
+          "exit": 1,
+          "passed": false,
+          "checks": [
+            "CA590 PASS ordinary portable table builds its real chairs",
+            "CA590 PASS ordinary sitting succeeds for native player",
+            "CA590 PASS seated interaction opens participant picker",
+            "CA590 PASS ordinary sitting succeeds for native player",
+            "CA590 PASS seated interaction opens participant picker",
+            "CA590 PASS portable chair records distinct seat index",
+            "CA590 PASS legacy portable chair index resolves by existing references",
+            "CA590 PASS native invitation opens shared unstarted lobby",
+            "CA590 PASS first native acceptance waits for the other player",
+            "CA590 PASS second native acceptance starts the agreed human game",
+            "CA590 PASS guest deck is retained without transfer or consumption",
+            "CA590 PASS production action event plays one human card",
+            "CA590 PASS world clock advances with both card menus open",
+            "CA590 PASS card players retain a shared clock",
+            "CA590 PASS actual seats persist through native menu tics",
+            "CA590 PASS seated card participants cannot commit arena or world travel",
+            "CA590 PASS card session uses integrated lifecycle and arena services",
+            "CA590 RESULT peer=1 fresh"
+          ],
+          "errors": []
+        }
+      ],
+      "recovery": {
+        "status": "closed",
+        "recovery": {
+          "identity": "scenario",
+          "revision": 0,
+          "snapshot": "12df53a7a5550ad6477b9d55e9a09baa0b6d8e6a4d6d1ac258560dd8ff1fd99f"
+        }
+      },
+      "runtime_sha256": "bb0cd219087141e2c23cf82e41f304220d889e8e9d93daa2a0123b0f9655fc1f",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "error": "Bounded scenario timeout",
+      "observed_before_cleanup": [
+        null,
+        null
+      ],
+      "passed": false
+    },
+    "trucazo_save_failure_2": {
+      "issue": 435,
+      "scenario_issue": 590,
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-121648-291329",
+      "scenario": "trucazo",
+      "commands": [
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\handoff-final\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-121648-291329\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-121648-291329\\bundle\\peer0\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-121648-291329\\bundle\\peer0",
+          "-host",
+          "2",
+          "-port",
+          "30935",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-121648-291329\\bundle\\peer0\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-121648-291329\\bundle\\peer0\\start.cfg",
+          "-window",
+          "-width",
+          "640",
+          "-height",
+          "480"
+        ],
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\handoff-final\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-121648-291329\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-121648-291329\\bundle\\peer1\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-121648-291329\\bundle\\peer1",
+          "-join",
+          "127.0.0.1:30935",
+          "-port",
+          "30936",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-121648-291329\\bundle\\peer1\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-121648-291329\\bundle\\peer1\\start.cfg",
+          "-window",
+          "-width",
+          "640",
+          "-height",
+          "480"
+        ]
+      ],
+      "peers": [
+        {
+          "peer": 0,
+          "exit": 1,
+          "passed": false,
+          "checks": [
+            "CA590 PASS ordinary portable table builds its real chairs",
+            "CA590 PASS ordinary sitting succeeds for native player",
+            "CA590 PASS seated interaction opens participant picker",
+            "CA590 PASS ordinary sitting succeeds for native player",
+            "CA590 PASS seated interaction opens participant picker",
+            "CA590 PASS portable chair records distinct seat index",
+            "CA590 PASS legacy portable chair index resolves by existing references",
+            "CA590 PASS native invitation opens shared unstarted lobby",
+            "CA590 PASS first native acceptance waits for the other player",
+            "CA590 PASS second native acceptance starts the agreed human game",
+            "CA590 PASS guest deck is retained without transfer or consumption",
+            "CA590 PASS production action event plays one human card",
+            "CA590 PASS world clock advances with both card menus open",
+            "CA590 PASS card players retain a shared clock",
+            "CA590 PASS actual seats persist through native menu tics",
+            "CA590 PASS seated card participants cannot commit arena or world travel",
+            "CA590 PASS card session uses integrated lifecycle and arena services",
+            "CA590 RESULT peer=0 fresh"
+          ],
+          "errors": []
+        },
+        {
+          "peer": 1,
+          "exit": 1,
+          "passed": false,
+          "checks": [
+            "CA590 PASS ordinary portable table builds its real chairs",
+            "CA590 PASS ordinary sitting succeeds for native player",
+            "CA590 PASS seated interaction opens participant picker",
+            "CA590 PASS ordinary sitting succeeds for native player",
+            "CA590 PASS seated interaction opens participant picker",
+            "CA590 PASS portable chair records distinct seat index",
+            "CA590 PASS legacy portable chair index resolves by existing references",
+            "CA590 PASS native invitation opens shared unstarted lobby",
+            "CA590 PASS first native acceptance waits for the other player",
+            "CA590 PASS second native acceptance starts the agreed human game",
+            "CA590 PASS guest deck is retained without transfer or consumption",
+            "CA590 PASS production action event plays one human card",
+            "CA590 PASS world clock advances with both card menus open",
+            "CA590 PASS card players retain a shared clock",
+            "CA590 PASS actual seats persist through native menu tics",
+            "CA590 PASS seated card participants cannot commit arena or world travel",
+            "CA590 PASS card session uses integrated lifecycle and arena services",
+            "CA590 RESULT peer=1 fresh"
+          ],
+          "errors": []
+        }
+      ],
+      "recovery": {
+        "status": "closed",
+        "recovery": {
+          "identity": "scenario",
+          "revision": 0,
+          "snapshot": "ab28bcb0a38e077aa5a7c40b16ee3b0bcc665f9cb66f21043ad5ad9c93f5b43c"
+        }
+      },
+      "runtime_sha256": "bb0cd219087141e2c23cf82e41f304220d889e8e9d93daa2a0123b0f9655fc1f",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "error": "Bounded scenario timeout",
+      "observed_before_cleanup": [
+        null,
+        null
+      ],
+      "passed": false
+    },
+    "trucazo_windowed_before_rest_fix": {
+      "issue": 435,
+      "scenario_issue": 590,
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-122408-703473",
+      "scenario": "trucazo",
+      "commands": [
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\handoff-final\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-122408-703473\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-122408-703473\\bundle\\peer0\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-122408-703473\\bundle\\peer0",
+          "-host",
+          "2",
+          "-port",
+          "30935",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-122408-703473\\bundle\\peer0\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-122408-703473\\bundle\\peer0\\start.cfg",
+          "-window",
+          "-width",
+          "640",
+          "-height",
+          "480"
+        ],
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\handoff-final\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-122408-703473\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-122408-703473\\bundle\\peer1\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-122408-703473\\bundle\\peer1",
+          "-join",
+          "127.0.0.1:30935",
+          "-port",
+          "30936",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-122408-703473\\bundle\\peer1\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-122408-703473\\bundle\\peer1\\start.cfg",
+          "-window",
+          "-width",
+          "640",
+          "-height",
+          "480"
+        ]
+      ],
+      "peers": [
+        {
+          "peer": 0,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA590 PASS ordinary portable table builds its real chairs",
+            "CA590 PASS ordinary sitting succeeds for native player",
+            "CA590 PASS seated interaction opens participant picker",
+            "CA590 PASS ordinary sitting succeeds for native player",
+            "CA590 PASS seated interaction opens participant picker",
+            "CA590 PASS portable chair records distinct seat index",
+            "CA590 PASS legacy portable chair index resolves by existing references",
+            "CA590 PASS native invitation opens shared unstarted lobby",
+            "CA590 PASS first native acceptance waits for the other player",
+            "CA590 PASS second native acceptance starts the agreed human game",
+            "CA590 PASS guest deck is retained without transfer or consumption",
+            "CA590 PASS production action event plays one human card",
+            "CA590 PASS world clock advances with both card menus open",
+            "CA590 PASS card players retain a shared clock",
+            "CA590 PASS actual seats persist through native menu tics",
+            "CA590 PASS seated card participants cannot commit arena or world travel",
+            "CA590 PASS card session uses integrated lifecycle and arena services",
+            "CA590 RESULT peer=0 fresh"
+          ],
+          "errors": []
+        },
+        {
+          "peer": 1,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA590 PASS ordinary portable table builds its real chairs",
+            "CA590 PASS ordinary sitting succeeds for native player",
+            "CA590 PASS seated interaction opens participant picker",
+            "CA590 PASS ordinary sitting succeeds for native player",
+            "CA590 PASS seated interaction opens participant picker",
+            "CA590 PASS portable chair records distinct seat index",
+            "CA590 PASS legacy portable chair index resolves by existing references",
+            "CA590 PASS native invitation opens shared unstarted lobby",
+            "CA590 PASS first native acceptance waits for the other player",
+            "CA590 PASS second native acceptance starts the agreed human game",
+            "CA590 PASS guest deck is retained without transfer or consumption",
+            "CA590 PASS production action event plays one human card",
+            "CA590 PASS world clock advances with both card menus open",
+            "CA590 PASS card players retain a shared clock",
+            "CA590 PASS actual seats persist through native menu tics",
+            "CA590 PASS seated card participants cannot commit arena or world travel",
+            "CA590 PASS card session uses integrated lifecycle and arena services",
+            "CA590 RESULT peer=1 fresh"
+          ],
+          "errors": []
+        }
+      ],
+      "recovery": {
+        "status": "closed",
+        "recovery": {
+          "identity": "scenario",
+          "revision": 1,
+          "snapshot": "de5c300ff0b3a5520dc0205b03a11b63d3fda41a2955672121621a6d36f46039"
+        }
+      },
+      "runtime_sha256": "bb0cd219087141e2c23cf82e41f304220d889e8e9d93daa2a0123b0f9655fc1f",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "error": null,
+      "observed_before_cleanup": [
+        0,
+        0
+      ],
+      "passed": true
+    },
+    "trucazo_final": {
+      "issue": 435,
+      "scenario_issue": 590,
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-123838-062200",
+      "scenario": "trucazo",
+      "commands": [
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\review-rest\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-123838-062200\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-123838-062200\\bundle\\peer0\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-123838-062200\\bundle\\peer0",
+          "-host",
+          "2",
+          "-port",
+          "30935",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-123838-062200\\bundle\\peer0\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-123838-062200\\bundle\\peer0\\start.cfg",
+          "-window",
+          "-width",
+          "640",
+          "-height",
+          "480"
+        ],
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\review-rest\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-123838-062200\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-123838-062200\\bundle\\peer1\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-123838-062200\\bundle\\peer1",
+          "-join",
+          "127.0.0.1:30935",
+          "-port",
+          "30936",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-123838-062200\\bundle\\peer1\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-trucazo-20261031-123838-062200\\bundle\\peer1\\start.cfg",
+          "-window",
+          "-width",
+          "640",
+          "-height",
+          "480"
+        ]
+      ],
+      "peers": [
+        {
+          "peer": 0,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA590 PASS ordinary portable table builds its real chairs",
+            "CA590 PASS ordinary sitting succeeds for native player",
+            "CA590 PASS seated interaction opens participant picker",
+            "CA590 PASS ordinary sitting succeeds for native player",
+            "CA590 PASS seated interaction opens participant picker",
+            "CA590 PASS portable chair records distinct seat index",
+            "CA590 PASS legacy portable chair index resolves by existing references",
+            "CA590 PASS native invitation opens shared unstarted lobby",
+            "CA590 PASS first native acceptance waits for the other player",
+            "CA590 PASS second native acceptance starts the agreed human game",
+            "CA590 PASS guest deck is retained without transfer or consumption",
+            "CA590 PASS production action event plays one human card",
+            "CA590 PASS world clock advances with both card menus open",
+            "CA590 PASS card players retain a shared clock",
+            "CA590 PASS actual seats persist through native menu tics",
+            "CA590 PASS seated card participants cannot commit arena or world travel",
+            "CA590 PASS card session uses integrated lifecycle and arena services",
+            "CA590 RESULT peer=0 fresh"
+          ],
+          "errors": []
+        },
+        {
+          "peer": 1,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA590 PASS ordinary portable table builds its real chairs",
+            "CA590 PASS ordinary sitting succeeds for native player",
+            "CA590 PASS seated interaction opens participant picker",
+            "CA590 PASS ordinary sitting succeeds for native player",
+            "CA590 PASS seated interaction opens participant picker",
+            "CA590 PASS portable chair records distinct seat index",
+            "CA590 PASS legacy portable chair index resolves by existing references",
+            "CA590 PASS native invitation opens shared unstarted lobby",
+            "CA590 PASS first native acceptance waits for the other player",
+            "CA590 PASS second native acceptance starts the agreed human game",
+            "CA590 PASS guest deck is retained without transfer or consumption",
+            "CA590 PASS production action event plays one human card",
+            "CA590 PASS world clock advances with both card menus open",
+            "CA590 PASS card players retain a shared clock",
+            "CA590 PASS actual seats persist through native menu tics",
+            "CA590 PASS seated card participants cannot commit arena or world travel",
+            "CA590 PASS card session uses integrated lifecycle and arena services",
+            "CA590 RESULT peer=1 fresh"
+          ],
+          "errors": []
+        }
+      ],
+      "recovery": {
+        "status": "closed",
+        "recovery": {
+          "identity": "scenario",
+          "revision": 1,
+          "snapshot": "9be0c89a4acf02cbd003479ebdddc0acc2d2dc702a6da5f1365b4c6a7f6b386a"
+        }
+      },
+      "runtime_sha256": "ebd373849e90cfde579927e2784f96e51a529a1c140150a7e94bb541b841c118",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "error": null,
+      "observed_before_cleanup": [
+        0,
+        0
+      ],
+      "passed": true
+    },
+    "truco_final": {
+      "issue": 435,
+      "scenario_issue": 590,
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-truco-20261031-124010-131043",
+      "scenario": "truco",
+      "commands": [
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\review-rest\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-truco-20261031-124010-131043\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-truco-20261031-124010-131043\\bundle\\peer0\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-truco-20261031-124010-131043\\bundle\\peer0",
+          "-host",
+          "2",
+          "-port",
+          "30935",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-truco-20261031-124010-131043\\bundle\\peer0\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-truco-20261031-124010-131043\\bundle\\peer0\\start.cfg",
+          "-window",
+          "-width",
+          "640",
+          "-height",
+          "480"
+        ],
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\review-rest\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-truco-20261031-124010-131043\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-truco-20261031-124010-131043\\bundle\\peer1\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-truco-20261031-124010-131043\\bundle\\peer1",
+          "-join",
+          "127.0.0.1:30935",
+          "-port",
+          "30936",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-truco-20261031-124010-131043\\bundle\\peer1\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-truco-20261031-124010-131043\\bundle\\peer1\\start.cfg",
+          "-window",
+          "-width",
+          "640",
+          "-height",
+          "480"
+        ]
+      ],
+      "peers": [
+        {
+          "peer": 0,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA590 PASS ordinary portable table builds its real chairs",
+            "CA590 PASS ordinary sitting succeeds for native player",
+            "CA590 PASS seated interaction opens participant picker",
+            "CA590 PASS ordinary sitting succeeds for native player",
+            "CA590 PASS seated interaction opens participant picker",
+            "CA590 PASS portable chair records distinct seat index",
+            "CA590 PASS legacy portable chair index resolves by existing references",
+            "CA590 PASS native invitation opens shared unstarted lobby",
+            "CA590 PASS first native acceptance waits for the other player",
+            "CA590 PASS second native acceptance starts the agreed human game",
+            "CA590 PASS guest deck is retained without transfer or consumption",
+            "CA590 PASS production action event plays one human card",
+            "CA590 PASS world clock advances with both card menus open",
+            "CA590 PASS card players retain a shared clock",
+            "CA590 PASS actual seats persist through native menu tics",
+            "CA590 PASS seated card participants cannot commit arena or world travel",
+            "CA590 PASS card session uses integrated lifecycle and arena services",
+            "CA590 RESULT peer=0 fresh"
+          ],
+          "errors": []
+        },
+        {
+          "peer": 1,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA590 PASS ordinary portable table builds its real chairs",
+            "CA590 PASS ordinary sitting succeeds for native player",
+            "CA590 PASS seated interaction opens participant picker",
+            "CA590 PASS ordinary sitting succeeds for native player",
+            "CA590 PASS seated interaction opens participant picker",
+            "CA590 PASS portable chair records distinct seat index",
+            "CA590 PASS legacy portable chair index resolves by existing references",
+            "CA590 PASS native invitation opens shared unstarted lobby",
+            "CA590 PASS first native acceptance waits for the other player",
+            "CA590 PASS second native acceptance starts the agreed human game",
+            "CA590 PASS guest deck is retained without transfer or consumption",
+            "CA590 PASS production action event plays one human card",
+            "CA590 PASS world clock advances with both card menus open",
+            "CA590 PASS card players retain a shared clock",
+            "CA590 PASS actual seats persist through native menu tics",
+            "CA590 PASS seated card participants cannot commit arena or world travel",
+            "CA590 PASS card session uses integrated lifecycle and arena services",
+            "CA590 RESULT peer=1 fresh"
+          ],
+          "errors": []
+        }
+      ],
+      "recovery": {
+        "status": "closed",
+        "recovery": {
+          "identity": "scenario",
+          "revision": 1,
+          "snapshot": "5b4acce262fbf8b0b5e0a531c987e4189e67ca50a439ca3183a46c7354af679b"
+        }
+      },
+      "runtime_sha256": "ebd373849e90cfde579927e2784f96e51a529a1c140150a7e94bb541b841c118",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "error": null,
+      "observed_before_cleanup": [
+        0,
+        0
+      ],
+      "passed": true
+    },
+    "final_rest_fixture_and_restart": {
+      "runs": [
+        {
+          "scene": 1,
+          "commands": [
+            [
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+              "-noautoload",
+              "-iwad",
+              "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+              "-file",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\review-rest\\caelum_argenteum_dev.pk3",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\final-rest-fixture-20261031-124305-196584\\scene1-20261031-124305-196584\\checks.pk3",
+              "-config",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\final-rest-fixture-20261031-124305-196584\\scene1-20261031-124305-196584\\bundle\\peer0\\session.ini",
+              "-savedir",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\final-rest-fixture-20261031-124305-196584\\scene1-20261031-124305-196584\\bundle\\peer0",
+              "-host",
+              "2",
+              "-port",
+              "31535",
+              "-netmode",
+              "0",
+              "+logfile",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\final-rest-fixture-20261031-124305-196584\\scene1-20261031-124305-196584\\bundle\\peer0\\engine.log",
+              "-loadgame",
+              "recovery.zds",
+              "+exec",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\final-rest-fixture-20261031-124305-196584\\scene1-20261031-124305-196584\\bundle\\peer0\\start.cfg",
+              "-window",
+              "-width",
+              "800",
+              "-height",
+              "600"
+            ],
+            [
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+              "-noautoload",
+              "-iwad",
+              "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+              "-file",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\review-rest\\caelum_argenteum_dev.pk3",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\final-rest-fixture-20261031-124305-196584\\scene1-20261031-124305-196584\\checks.pk3",
+              "-config",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\final-rest-fixture-20261031-124305-196584\\scene1-20261031-124305-196584\\bundle\\peer1\\session.ini",
+              "-savedir",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\final-rest-fixture-20261031-124305-196584\\scene1-20261031-124305-196584\\bundle\\peer1",
+              "-join",
+              "127.0.0.1:31535",
+              "-port",
+              "31536",
+              "+logfile",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\final-rest-fixture-20261031-124305-196584\\scene1-20261031-124305-196584\\bundle\\peer1\\engine.log",
+              "-loadgame",
+              "recovery.zds",
+              "+exec",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\final-rest-fixture-20261031-124305-196584\\scene1-20261031-124305-196584\\bundle\\peer1\\start.cfg",
+              "-window",
+              "-width",
+              "800",
+              "-height",
+              "600"
+            ]
+          ],
+          "peers": [
+            {
+              "slot": 0,
+              "exit": 0,
+              "errors": [],
+              "ready": true,
+              "status": [
+                "CA512 player=2 map=MAP03 health=1248 anima=1248.64 money=1001 rest=0 spirit=0 clock=559 profile=426b6b7e-2c40-4957-b733-2c7b97228248",
+                "CA512 player=1 map=MAP03 health=1248 anima=1248.64 money=1000 rest=0 spirit=0 clock=593 profile=9adf93fc-c246-414f-9d1b-e73eefbe458e"
+              ]
+            },
+            {
+              "slot": 1,
+              "exit": 0,
+              "errors": [],
+              "ready": true,
+              "status": [
+                "CA512 player=2 map=MAP03 health=1248 anima=1248.64 money=1001 rest=0 spirit=0 clock=559 profile=426b6b7e-2c40-4957-b733-2c7b97228248"
+              ]
+            }
+          ],
+          "recovery": {
+            "status": "closed",
+            "recovery": {
+              "identity": "author-test",
+              "revision": 1,
+              "snapshot": "3e7e3318f6229e6adc6d05030fb3f67494c475dd282faa9cb7e4e6b91b0bef5a"
+            }
+          },
+          "runtime_sha256": "ebd373849e90cfde579927e2784f96e51a529a1c140150a7e94bb541b841c118",
+          "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+          "addon": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\final-rest-fixture-20261031-124305-196584\\scene1-20261031-124305-196584\\checks.pk3",
+          "store": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\final-rest-fixture-20261031-124305-196584\\scene1-20261031-124305-196584\\profiles.sqlite3",
+          "author_accepted": false,
+          "error": null,
+          "scope": "Startup, process exits and native sync only; interactive acceptance must be recorded separately.",
+          "passed": true
+        },
+        {
+          "scene": 1,
+          "commands": [
+            [
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+              "-noautoload",
+              "-iwad",
+              "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+              "-file",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\review-rest\\caelum_argenteum_dev.pk3",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\final-rest-fixture-20261031-124305-196584\\scene1-20261031-124305-196584\\checks.pk3",
+              "-config",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\final-rest-fixture-20261031-124305-196584\\scene1-20261031-124336-370007\\bundle\\peer0\\session.ini",
+              "-savedir",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\final-rest-fixture-20261031-124305-196584\\scene1-20261031-124336-370007\\bundle\\peer0",
+              "-host",
+              "2",
+              "-port",
+              "31535",
+              "-netmode",
+              "0",
+              "+logfile",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\final-rest-fixture-20261031-124305-196584\\scene1-20261031-124336-370007\\bundle\\peer0\\engine.log",
+              "-loadgame",
+              "recovery.zds",
+              "+exec",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\final-rest-fixture-20261031-124305-196584\\scene1-20261031-124336-370007\\bundle\\peer0\\start.cfg",
+              "-window",
+              "-width",
+              "800",
+              "-height",
+              "600"
+            ],
+            [
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+              "-noautoload",
+              "-iwad",
+              "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+              "-file",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\review-rest\\caelum_argenteum_dev.pk3",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\final-rest-fixture-20261031-124305-196584\\scene1-20261031-124305-196584\\checks.pk3",
+              "-config",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\final-rest-fixture-20261031-124305-196584\\scene1-20261031-124336-370007\\bundle\\peer1\\session.ini",
+              "-savedir",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\final-rest-fixture-20261031-124305-196584\\scene1-20261031-124336-370007\\bundle\\peer1",
+              "-join",
+              "127.0.0.1:31535",
+              "-port",
+              "31536",
+              "+logfile",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\final-rest-fixture-20261031-124305-196584\\scene1-20261031-124336-370007\\bundle\\peer1\\engine.log",
+              "-loadgame",
+              "recovery.zds",
+              "+exec",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\final-rest-fixture-20261031-124305-196584\\scene1-20261031-124336-370007\\bundle\\peer1\\start.cfg",
+              "-window",
+              "-width",
+              "800",
+              "-height",
+              "600"
+            ]
+          ],
+          "peers": [
+            {
+              "slot": 0,
+              "exit": 0,
+              "errors": [],
+              "ready": true,
+              "status": [
+                "CA512 player=2 map=MAP03 health=1248 anima=1248.64 money=1001 rest=0 spirit=0 clock=906 profile=426b6b7e-2c40-4957-b733-2c7b97228248",
+                "CA512 player=1 map=MAP03 health=1248 anima=1248.64 money=1000 rest=0 spirit=0 clock=940 profile=9adf93fc-c246-414f-9d1b-e73eefbe458e"
+              ]
+            },
+            {
+              "slot": 1,
+              "exit": 0,
+              "errors": [],
+              "ready": true,
+              "status": [
+                "CA512 player=2 map=MAP03 health=1248 anima=1248.64 money=1001 rest=0 spirit=0 clock=906 profile=426b6b7e-2c40-4957-b733-2c7b97228248"
+              ]
+            }
+          ],
+          "recovery": {
+            "status": "closed",
+            "recovery": {
+              "identity": "author-test",
+              "revision": 2,
+              "snapshot": "f058e299ddd6b755bf6dc44eb79bcd034a00fab57e3366ae06ca9a652666e94c"
+            }
+          },
+          "runtime_sha256": "ebd373849e90cfde579927e2784f96e51a529a1c140150a7e94bb541b841c118",
+          "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+          "addon": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\final-rest-fixture-20261031-124305-196584\\scene1-20261031-124305-196584\\checks.pk3",
+          "store": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\final-rest-fixture-20261031-124305-196584\\scene1-20261031-124305-196584\\profiles.sqlite3",
+          "author_accepted": false,
+          "error": null,
+          "scope": "Startup, process exits and native sync only; interactive acceptance must be recorded separately.",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "author_accepted": false
+    }
+  },
+  "scope": "Focused final integration. Earlier evidence has its own exact package hash; final package adds cooperative prediction guard and per-viewer card UI corrections.",
+  "live_ui": {
+    "rest": "Actual keys: proposal 0/2, first consent 1/2, second 2/2, advancing together, agreed time completes with both seated; W stands one while the other remains seated. Native checks stay clear.",
+    "cards": "Actual seated Use, invitation/consent, distinct private hands, Escape/forfeit confirmation, independent Close, then W restores movement while the other still sees its result.",
+    "function_keys": "Bindings written and fixture/native save actions verified. Injected gameplay function keys were not reliably delivered by computer use; physical author review remains required."
+  },
+  "retained_native_failure": {
+    "code": "C0000005",
+    "address": "0x7ff6babeb097",
+    "evidence": "Observed fatal dialog and retained debugger thread report. Symbol-only relink maps its RVA near Vulkan PipelineBarrier::AddImage. No crash ZIP was captured; this is not a complete fault-context diagnosis.",
+    "mitigation": "New managed-session configurations explicitly set vid_fullscreen=false. Windowed card saves pass; two earlier failures remain retained and the timer patch is not claimed to fix every native failure."
+  },
+  "limitations": [
+    "No separate-machine/Internet latency coverage.",
+    "Two-client siege presentation remains poor on the shared GPU; see native-sync-presentation-results.json.",
+    "Author acceptance and merge/closure remain pending."
+  ],
+  "static": {
+    "version": "5.12.7",
+    "documents": 11,
+    "audio_files": 131,
+    "station_models": 14,
+    "spanish_caella_keys": 25,
+    "premise_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "context_words": 2490,
+    "errors": []
+  },
+  "syntax_files": 16
+}

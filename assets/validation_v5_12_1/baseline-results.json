@@ -1,0 +1,101 @@
+{
+  "issue": 435,
+  "status": "preparatory native baseline; authority implementation incomplete",
+  "date": "2026-10-30",
+  "baseline_release": "5.11.8",
+  "baseline_commit": "f38aef3c122deb7bcab456ba6b7ad3907168c42b",
+  "transport": "GZDoom 4.14.2 native peer-to-peer, independent loopback processes",
+  "runs": [
+    {
+      "run": "20261030-210536",
+      "real_processes": 2,
+      "passed": false,
+      "runtime_sha256": "6e88c82c7e5f67a4debbdfb8679c507d71d0e93376ca2a82592bbffb4ae871c0",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "iwad_sha256": "10d67824b11025ddd9198e8cfc87ca335ee6e2d3e63af4180fa9b8a471893255",
+      "fixture_sha256": "80326c0c678e5cd1255e7fa58a33bd7e043f1846cca8c6bb8ac39e559d7c7f2d",
+      "checks_per_peer": [
+        0,
+        0
+      ],
+      "logs": [
+        "evidence/20261030-210536-peer0.log.gz",
+        "evidence/20261030-210536-peer1.log.gz"
+      ]
+    },
+    {
+      "run": "20261030-210642",
+      "real_processes": 2,
+      "passed": true,
+      "runtime_sha256": "6e88c82c7e5f67a4debbdfb8679c507d71d0e93376ca2a82592bbffb4ae871c0",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "iwad_sha256": "10d67824b11025ddd9198e8cfc87ca335ee6e2d3e63af4180fa9b8a471893255",
+      "fixture_sha256": "ad196ff5a5b426e697c4f81d8bf9cc72b208d4a73cbae00f0c27fe054421706a",
+      "checks_per_peer": [
+        3,
+        3
+      ],
+      "logs": [
+        "evidence/20261030-210642-peer0.log.gz",
+        "evidence/20261030-210642-peer1.log.gz"
+      ]
+    },
+    {
+      "run": "20261030-210752",
+      "real_processes": 4,
+      "passed": true,
+      "runtime_sha256": "6e88c82c7e5f67a4debbdfb8679c507d71d0e93376ca2a82592bbffb4ae871c0",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "iwad_sha256": "10d67824b11025ddd9198e8cfc87ca335ee6e2d3e63af4180fa9b8a471893255",
+      "fixture_sha256": "8e7d14ffc297f0a64258d403c30597d31f2080a829ceec6e5695d5cd5d327916",
+      "checks_per_peer": [
+        5,
+        5,
+        5,
+        5
+      ],
+      "logs": [
+        "evidence/20261030-210752-peer0.log.gz",
+        "evidence/20261030-210752-peer1.log.gz",
+        "evidence/20261030-210752-peer2.log.gz",
+        "evidence/20261030-210752-peer3.log.gz"
+      ]
+    },
+    {
+      "run": "20261030-210948",
+      "real_processes": 8,
+      "passed": true,
+      "runtime_sha256": "6e88c82c7e5f67a4debbdfb8679c507d71d0e93376ca2a82592bbffb4ae871c0",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "iwad_sha256": "10d67824b11025ddd9198e8cfc87ca335ee6e2d3e63af4180fa9b8a471893255",
+      "fixture_sha256": "d68190f8815ff1499cdabb8db4fb1cce9061e4944de4e7e743cc52a37ae7b8dc",
+      "checks_per_peer": [
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9
+      ],
+      "logs": [
+        "evidence/20261030-210948-peer0.log.gz",
+        "evidence/20261030-210948-peer1.log.gz",
+        "evidence/20261030-210948-peer2.log.gz",
+        "evidence/20261030-210948-peer3.log.gz",
+        "evidence/20261030-210948-peer4.log.gz",
+        "evidence/20261030-210948-peer5.log.gz",
+        "evidence/20261030-210948-peer6.log.gz",
+        "evidence/20261030-210948-peer7.log.gz"
+      ]
+    }
+  ],
+  "limits": [
+    "Same Windows machine; no Internet latency or multi-machine rendering claim.",
+    "Tests validate startup, peer event ordering, sender attribution and native player ownership only.",
+    "No inventory, crafting, save/recovery, travel, consent or full multiplayer acceptance is claimed.",
+    "Initial fixture used an unsupported ConsoleCommand call; retained failure, corrected to native configuration quit command.",
+    "No production code changed."
+  ]
+}

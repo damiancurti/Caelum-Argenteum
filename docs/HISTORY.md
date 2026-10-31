@@ -1,6 +1,199 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.12.6** - 2026-10-31.
+Documentation version: **5.12.7** - 2026-10-31.
+
+## V5.12 implementation ready for author review - 2026-10-31
+
+#434-438 and #590 now have focused implementations and native integration evidence.
+The six author checks in pending_test.txt are outstanding; no issue closure, merge
+or author acceptance is inferred. Earlier checkpoint sections below retain their
+original evidence; their unfinished integration notes are superseded here.
+
+Final #435 corrections keep the local travel snapshot from advancing shared RNG,
+reject native-inconsistent saves before publishing recovery/custody, and prevent
+predicted player ticks from advancing the cooperative completion barrier. The last
+bug reproduced only on the second peer: one predicted step caused an early shared
+pump and interrupted rest. The real-tick regression now passes 28 assertions over
+two clients, including refusal, exactly x105 advancement, independent rest, one
+participant cancelling, and continued rejection of genuine external clock jumps.
+Agent keyboard review also reaches 1/2 then 2/2 consent and completes the agreed
+time with both participants seated. No balance or clock scale changed.
+
+Card panels now yield correctly from seating, validate Use through a native event,
+and close separately for each participant. Actual keyboard review confirms private
+hands, forfeit confirmation and movement after closing one's result. Both native
+card games save successfully on the final package. Seven manual fixtures and a
+common saved restart pass on the preceding package; the final change only affects
+the cooperative barrier, covered by the new regression. The final rest fixture
+and its common saved restart also pass. Static validation reports zero errors
+and 16 changed/new Python sources parse successfully. Profile outward/return
+transfer and 12 checkpoint/custody checks pass with native mismatch rejection.
+
+The combined terminal uses the private upstream timer-fixed 4.14.2 candidate;
+the installed engine and original saves remain untouched. Two later native card-save
+failures are retained, including a Vulkan-related fault address and debugger trace;
+new session configurations pin windowed rendering explicitly and subsequent saves
+pass. This is bounded mitigation, not proof that every native crash is resolved.
+
+Latest synchronized two-client presentation means: mansion 60.13-60.85 FPS,
+sewers 198.64-201.02, city 111.99-113.76, ground-facing city 75.36-75.75;
+siege remains 1.33-6.48 FPS with p99 gaps 474.84-867.92 ms. These are application
+Vulkan presents on one shared GPU, not monitor scanout or Internet measurements.
+Evidence: validation_v5_12_7/handoff-results.json and handoff-logs.json.gz;
+native-sync-results.json; native-sync-presentation-results.json; CA-KP-202/203/204.
+
+## Earlier 5.12.7 integration checkpoints - #435
+
+Native consistency correction (2026-10-31): visual review exposed a native
+checksum warning omitted by earlier log-only checks. A local travel-camera spawn
+advanced shared RNG on only one peer. Multiplayer now binds the existing viewer;
+vehicle lookup uses an event-maintained typed registry, rebuilt once per map load.
+The old package reproduces the warning; fresh corrected 2/4/8-player seeds and
+combat are rechecked with the native inconsistency flag, without clearing it.
+Earlier selected-state passes remain evidence of those assertions only, not a
+native synchronization clearance. Session admission/checkpoint publication and
+native transfer verification reject saves carrying that warning while retaining
+the originals and last valid common checkpoint. Rest UI now yields to cooperative
+votes and card lobbies; seated Use sends a validated request instead of standing.
+Final evidence and author handoff are recorded below; author acceptance is pending.
+
+2026-10-31 later follow-up supersedes the measurement blocker below: a bounded,
+child-only Vulkan layer now records actual presentation calls for all five
+representative two-client scenes. Means are 62.24-62.48FPS mansion,187.77-190.60
+sewers,97.81-98.14 city,72.56-72.74 ground city and1.99-2.49 siege. Siege p99
+626.19-753.38ms remains poor. Normal exits and matching sampled state are native
+evidence; neither monitor scanout nor author performance acceptance is implied.
+PresentMon2.3.0, isolated capture layers, ETW-status and offline-provider attempts
+also failed; retained separately in etw-followup-results.json/logs, not discarded.
+
+The official 4.14.2 Timer destructor fails to unregister its Windows callback.
+Upstream ZWidget commit 28b54d2b37e51e2af83117137c09a1c565528d66 adds Stop().
+Compiled original/fixed reproductions leave1/0 callbacks. A private 4.14.2 source
+candidate applies this plus MinGW build compatibility adjustments; official
+installation remains intact. Six retained native reloads and four/eight-client
+combat, both card games and arenas pass. A Fool attempt used an incompatible
+previously visited mansion fixture; it is retained as failed setup, not a crash
+fix or permission to discard hub geometry. Follow-up verification is recorded
+separately. The original dump does not contain the retained Timer object's memory;
+source lifetime evidence is stronger than the incomplete crash attribution.
+
+2026-10-31 presentation follow-up: seven further campaign observations (five
+two-peer scenes plus current/baseline one-player siege controls) and three short
+two-peer mansion/sewer probes pass with matching recorded state and normal exits.
+The first authorized elevated 900-second collector leaves an empty log without a
+CSV or final metadata; its exit code is unknown. A new bounded helper separates
+native streams, caches the process handle for ExitCode and records final metadata.
+Four short elevated attempts still produce no frame CSV: default QPC reports
+529,444 lost ETW events, reduced GPU/input tracking 516,175, an existing visible
+GZDoom PID with application-only tracking 8,931, and default date mode 522,239.
+The latter three retain exit code 0, which does not establish a valid capture.
+All four finish without forced termination. CUA verifies the visible PID's mansion
+and narrative overlay; it is a transport probe, not a matched performance window.
+No collector, renderer, driver or Windows root cause is established.
+
+The new QPC analyzer excludes other PIDs/windows and refuses lost events, missing
+frames or mixed swapchains. Five synthetic parsing/safety checks pass; they are
+not gameplay or rendering evidence. Full native/capture logs and qualifications:
+assets/validation_v5_12_7/presentation-results.json and presentation-logs.json.gz.
+No production gameplay, native binary, security setting or unrelated trace is
+changed. Intermittent native load exits and real-presentation validation remain
+open. No new author confirmation was received and pending_test.txt stays empty
+until the complete V5.12 handoff is ready, as requested.
+
+Campaign performance diagnostics use actual maps and independent native clients,
+with matching recorded state in mansion, sewers, peaceful/ground-facing city and
+the normal calendar siege. Direct deployment comparisons retain the existing
+deployment service, combatants, AI and formations. Two earlier 5.11 calendar
+attempts contained no attackers in the observation window and are explicitly
+excluded. The instrumented 5.11 two-peer control also skips world-clock advancement
+and sampled no thermal/contamination integration; its lower cost does not imply
+a comparable simulation. Current clock scopes cost about 0.03–0.04 ms per update,
+while visual candidate selection is the largest measured nested NPC scope.
+No production mechanics or scheduling were changed by the profiler. Siege stalls
+and the real-presentation gate remain open; see CA-KP-201 and
+campaign-results.json/campaign-logs.json.gz. No author acceptance is implied.
+One-player controls have identical recorded census, aggregate NPC health and
+positions; simulation means are 39.14 ms current / 39.81 ms baseline, with callback
+p99 739.71 / 744.76 ms. Both retain heavy stalls. These single observations do not
+replace the presentation gate or establish general regression clearance.
+
+Window and load follow-up: the transfer verifier now explicitly requests a
+private 640 × 480 window in its own INI; the command-line width/height alone had
+left native peers fullscreen at 1920 × 1080. Two real peers confirm the intended
+resolution and a valid checkpoint without changing the retained input or custody.
+Six additional two-peer loads of the previously failing return draft also pass.
+These bounded successes do not establish a native crash fix. Evidence:
+window-results.json/window-logs.json.gz and load-retry-results.json/load-retry-logs.json.gz.
+
+Native gameplay follow-up: 2/4/8 real clients pass concurrent last-unit city
+purchases, independent wallets, owned Quimica vessels and fuel reservations,
+duplicate start/completion rejection and one-owner cancellation (168 assertions).
+The final four-peer run uses the complete package with validated debug-event
+senders. The 2/8 runs use the prior complete package with unchanged trade/crafting
+logic. Completion is an explicit diagnostic endpoint, not accelerated time.
+Evidence: gameplay-results.json/gameplay-logs.json.gz. Native command follow-up
+also passes with 2/4/8 clients: synchronized movement, one actual melee impact
+per sender, one approved Tarot payment despite repeated input, and unchanged
+ability state for nonactivating participants. Every peer reports identical
+positions, damage attribution and cooldowns (112 assertions). Evidence:
+combat-results.json/combat-logs.json.gz. Subsequent managed integration is recorded below; frame
+presentation remains pending. No author acceptance or Internet-latency claim.
+
+Managed-workflow follow-up: 402 assertions pass through profile admission:
+2/4/8-client movement/combat/Tarot, an eight-client common restart, two-client
+Truco/Trucazo, arena entry/return, and The Fool's all-dead journey, spirit promises
+and explicit resurrection. Every combat peer reports identical owned results.
+Four native source/destination verifications also publish a complete outward and
+return transfer through the production identity gate. Nine transaction checks
+and menu registration/list/preparation/closure/backup pass. Evidence:
+managed-results.json, managed-logs.json.gz and launcher-results.json.
+Native vacant-world onboarding now passes: actual MAP01 creation, outward
+transfer, native dialogue cancellation/movement/save, and return to the original
+campaign. Ordinary sessions reject empty/departed slots before launch; the menu
+creates 1–8-slot worlds and can retry a reserved transfer without staging it again.
+Ten transaction checks (including injected failure/retry through the menu), actual
+menu creation/duplicate-name refusal, and 64 eight-client combat assertions pass.
+Evidence: vacancy-results.json and vacancy-logs.json.gz.
+
+A two-peer return also hit a native abort before identity readiness; the exact
+reserved drafts passed on retry, and a separate complete roundtrip passed. Both
+original campaign heads stayed protected. Dump5388 includes a pure virtual call
+through FBaseCVar::GetHumanString; that partial reconstruction does not establish
+the cause. Intermittent native exits, presentation measurement and final author
+handoff remain open. No full stability or rendering acceptance is claimed.
+
+The launcher pins the engine/resources, IWAD and ordered packages, exports one
+common checkpoint and reserves campaign custody in the profile database. Native
+slots must acknowledge their selected profile and a shared session nonce before
+managed characters accept input or mutations. A mismatched slot keeps the gate
+closed. This remains native peer-to-peer lockstep, not a new game server.
+
+Session writes use revision checks; closing an old token cannot replace a newer
+head. Live recorded processes block lease release. The host retains valid native
+checkpoints after roster confirmation, and incomplete/foreign saves cannot replace
+recovery. Original anchors and additive session-schema backups are preserved.
+
+Nine transaction/manifest checks pass. Final packages pass four/eight-peer
+identity, sender attribution and duplicate rejection, followed by restart from
+the same registry and checkpoint with unchanged identities. Two-peer wrong-slot
+refusal preserves the prior head. Handshake inputs are local, nonpersistent
+CVars; only the explicit validated network event communicates them. The host
+reads new log bytes incrementally. Native managed workflow passes as qualified above.
+Frame presentation and native-failure investigation remain pending; no
+Internet-latency or author acceptance claim.
+
+Two earlier managed-load runs using native user-info CVars failed inside the
+engine (c0000409/c0000374); invalid resulting checkpoints were refused. Local
+nonpersistent configuration avoids unnecessary native user-info serialization.
+Four/eight-peer loads and subsequent common restarts pass with that change. The
+original faults and logs remain in session-results.json/session-logs.json.gz;
+this is not proof that every native-engine crash is eliminated.
+
+The first static-handler prototype used unqualified EventHandler send methods;
+compilation rejected it. The test wallet then mutated an absorbed pickup object;
+the corrected probe uses native GiveInventory with its intended count. Failed
+runs remain alongside successful evidence. No author acceptance is recorded.
+
 
 ## 5.12.6 - Typed personal profile graph foundation (#434, 2026-10-31)
 
@@ -355,6 +548,20 @@ load uses a copied recovery basename inside each isolated savedir, preserving
 original snapshots. The author has not accepted these checks; the combined manual suite is deferred
 until V5.12 implementation is complete. Failed development probes remain local.
 
+
+## Unreleased V5.12 network baseline (#435, 2026-10-30)
+
+The author requests implementation of #434-438, with issue-separated branches,
+commits, evidence and PRs and a combined terminal after completion. Existing
+#10 two-peer evidence informed a new native loopback baseline on exact 5.11.8.
+Independent 2/4/8-process sessions pass 6/20/72 startup/request attribution
+assertions; every peer observes the same ordered sender list. These checks do
+not establish inventories, multiplayer persistence, recovery, consent, travel,
+PvP or multi-machine performance. The first fixture failed compilation because
+ConsoleCommand is not a ZScript API; the corrected fixture exits through native
+configuration commands. Preserve failed and successful logs in
+assets/validation_v5_12_1. This preparatory commit changes no production runtime
+and does not assign a completed V5.12 patch or claim author acceptance.
 
 ## 5.11.8 - Mandinga and Zupay contamination immunity (#586, 2026-10-30)
 

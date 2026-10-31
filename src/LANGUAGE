@@ -1,4 +1,11 @@
 [enu default]
+CA_SESSION_IDENTITY_WAIT = "Waiting for the session to confirm every character. Open managed campaigns through the session launcher.";
+CA_SESSION_IDENTITY_REJECT = "The selected character does not match this session. Close the session and recover with the agreed player order.";
+[es]
+CA_SESSION_IDENTITY_WAIT = "Esperando que la sesi?n confirme a cada personaje. Abre las campa?as administradas desde el lanzador de sesiones.";
+CA_SESSION_IDENTITY_REJECT = "El personaje elegido no coincide con esta sesi?n. Cierra la sesi?n y recup?rala con el orden de jugadores acordado.";
+
+[enu default]
 CA_PROFILE_NARRATIVE_SAVE = "Caelum Argenteum - story checkpoint";
 CA_DINING_SET_SMALL = "Round table with 2 chairs";
 CA_DINING_SET_NORMAL = "Dining table with 6 chairs";
@@ -7200,6 +7207,7 @@ CA_COMPANION_PREVIOUS = "Arriba Anterior";
 CA_COMPANION_NEXT = "Abajo Siguiente";
 
 [enu default]
+CA_CARD_CLOSE = "Close";
 CA_CARD_OPPONENT = "Opponent";
 CA_CARD_PVP = "Player versus player - the world continues";
 CA_CARD_TABLE_TITLE = "Cards at the table";
@@ -7211,6 +7219,7 @@ CA_CARD_CONSENT = "Accept game and options";
 CA_CARD_ACCEPTED = "Accepted: %d / 2";
 CA_CARD_NO_PARTNER = "No other available player is seated at this table.";
 [es]
+CA_CARD_CLOSE = "Cerrar";
 CA_CARD_OPPONENT = "Contrincante";
 CA_CARD_PVP = "Jugador contra jugador - el mundo continúa";
 CA_CARD_TABLE_TITLE = "Cartas en la mesa";
