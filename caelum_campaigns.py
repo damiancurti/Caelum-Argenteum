@@ -163,6 +163,23 @@ class Campaigns:
                 if player.get('class') != 'CaelumPlayer':
                     raise ProfileError('Every native session slot must have a Caelum character.')
                 record = personal_record(level, slot)
+                if record.get('ProfileVacancyRevision') == 1 and not record.get('ProfileCommitted'):
+                    if record.get('ExternalProfileId') or record.get('ExternalProfileCampaign') or not record.get('ProfileDeparted'):
+                        raise ProfileError('Vacant slots cannot carry another campaign identity.')
+                    require_world_ledger(level,slot)
+                    owner=level['players'][slot]['mo'];cursor=level['objects'][owner].get('inventory');visited=set()
+                    while cursor is not None:
+                        if type(cursor) is not int or not 0<=cursor<len(level['objects']) or cursor in visited:
+                            raise ProfileError('Invalid vacant inventory chain; original retained.')
+                        visited.add(cursor)
+                        obj=level['objects'][cursor]
+                        if obj.get('class:Inventory',{}).get('Owner')!=owner:
+                            raise ProfileError('A vacant slot references another owner.')
+                        if self.adapter.personal_item(obj) and obj['classtype']!='CaelumPersistentCharacterState':
+                            raise ProfileError('A vacant slot cannot retain personal material inventory.')
+                        cursor=obj.get('inventory')
+                    record['ExternalProfileCampaign']=campaign
+                    continue
                 if record.get('ExternalProfileId') or record.get('ProfileDeparted'):
                     raise ProfileError('Already managed characters cannot be enrolled into a second world.')
                 if not record.get('ProfileCommitted'):

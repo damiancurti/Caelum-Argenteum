@@ -7,6 +7,7 @@ class CaelumPersistentCharacterState : Inventory
     String ExternalProfileId, ExternalProfileCampaign;
     bool ProfileDeparted;
     int ExternalProfileRevision,ProfileImportSerial,ProfileImportApplied;
+    int ProfileVacancyRevision;
     CaelumNarrativeCheckpoint NarrativeCheckpoint;
     Array<CaelumFermentationRecord> FermentationBatches;
     Array<CaelumProofingRecord> ProofingBatches;
