@@ -3,7 +3,7 @@
 Documentation version: **5.12.7a** - 2026-10-31.
 
 **V5.12:** #434-438/#590/#602 implemented and accepted on 2026-10-31;
-merge/closure authorized. All six author checks passed; pending_test.txt empty.
+merged/closed. All six author checks passed; pending_test.txt empty.
 #602 fixes spirit dialogue/Tarot controls. Evidence: validation_v5_12_7a.
 Private timer-fixed4.14.2; installed engine untouched. CA-KP-202/203/204;
 previous evidence: validation_v5_12_7. Siege1.33-6.48FPS/sharedGPU; no Internet claim.

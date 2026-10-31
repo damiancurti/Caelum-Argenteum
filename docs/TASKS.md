@@ -5,8 +5,8 @@ Documentation version: **5.12.7a** - 2026-10-31.
 ## 5.12.7a - Death-interface correction (#602)
 
 The author accepted all V5.12 checks on 2026-10-31, including CA437-LIFECYCLE-01
-after the spirit-dialogue and Tarot-input correction. The author authorized
-merging and closing #434-438/#590/#602; pending_test.txt is empty.
+after the spirit-dialogue and Tarot-input correction. The seven focused PRs are
+merged and #434-438/#590/#602 are closed; pending_test.txt is empty.
 Dialogue page authority and saved-menu reconstruction now
 allow only living players or valid mansion spirits. Fresh session configurations
 expand the packaged control preset before startup, including T. No automatic
