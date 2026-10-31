@@ -62,6 +62,8 @@ MAP03 pass, preserving original anchors and single custody without resurrection.
 Native hub travel and portable/world quest boundaries now pass: source eligibility
 survives departure, destination grants remain world-owned and returning claims a
 pending source reward once. Final session integration remains unfinished.
+New native destination preparation now creates vacant MAP01 rosters without
+replacing characters; #435 exposes that flow through the session menu.
 No author acceptance or release completion.
 
 ## 5.12.5 - Human card-table PvP preparation (#590)

@@ -64,6 +64,20 @@ runs remain alongside successful evidence. No author acceptance is recorded.
 
 ## 5.12.6 - Typed personal profile graph foundation (#434, 2026-10-31)
 
+Vacant campaign preparation: the engine now creates actual MAP01 checkpoints
+with 1, 2 and 8 inert native slots without material inventory or committed profiles.
+All 11 native processes report readiness; 21 offline enrollment/negative checks
+pass, retaining original saves and refusing malformed markers, conflicting owners,
+material inventory and cyclic chains. Evidence: vacancy-results.json and
+vacancy-logs.json.gz. The 23 custody and seven graph regression checks also pass.
+Early isolated overlay attempts duplicated additive engine
+roots or referenced a class across compilation units; native compilation then
+identified the missing play scope. Multi-slot verification exposed the need to
+initialize the calendar before the existing clock mirror, and native HexenArmor's
+empty marker has Amount1. Those bootstrap defects were corrected; failed evidence
+remains in build/issue434. No existing character or map was replaced. Integration
+with #435 and author acceptance remain separate.
+
 Identity/hub follow-up: 120 assertions in real two-client runs now verify old
 native identity/world-ledger upgrade, two-map hub retention, outward/return
 custody and post-transfer hub return. Source pending eligibility survives; a

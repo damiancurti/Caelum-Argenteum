@@ -4522,6 +4522,8 @@ class CaelumPlayer : DoomPlayer
             ArmorDurabilityMultiplierInitialized = true;
         }
 
+        if(CaelumProfileVacancy.Prepare(self))return;
+
         bool restoredPersistentState = RestorePersistentCharacterState();
         bool initializedNewCharacter = false;
         if (!restoredPersistentState)

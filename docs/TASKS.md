@@ -58,7 +58,8 @@ Two-peer outward/return checks preserve packed possessions and campaign stock/ti
 reward/choice saves survive reload without another reward or automatic save.
 
 Still required before delivery:
-- Integrate profile commands with #435 session identities, package preflight and recovery.
+- Integrate native vacant-world preparation with the #435 session menu.
+- Keep native fixed-roster admission separate from temporary transfer verification.
 - Actual MAP03/deceased transfer, native migration/backup, hub travel and
   personal/world quest boundaries pass (120 latest native assertions).
 - Active-conversation native preflight is verified; complete broader profile root coverage.

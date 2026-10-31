@@ -98,6 +98,18 @@ must first load/save in the current runtime; external tooling does not guess
 unrecorded eligibility. Replacement creates a new personal record instead of
 overwriting world references to the old occupant. Independent legal-identity
 snapshots preserve earned source rewards after departure and return.
+New destination campaigns use `caelum_new_campaign.py`: the actual engine creates
+MAP01 and its world ledger with 1?8 vacant native slots. The additive
+ProfileVacancyRevision1 marker is accepted only for uncommitted, departed records
+without an external identity or personal material inventory. Existing characters
+are never changed into vacancies. Bootstrap is an explicit nonpersistent server
+option; ordinary starts retain character creation. It gives no development kit,
+initializes the existing calendar/world ledger synchronously, and saves before
+ordinary simulation advances. Enrollment preserves that native anchor and creates
+no profile until a verified transfer fills a slot. Malformed markers, another
+owner or retained material inventory are refused atomically. This is preparation,
+not an independent playable character or a change to native fixed-roster networking.
+
 Active crafting/rest/card/travel operations must finish or be cancelled for transfer;
 ordinary native checkpoints may retain crafting. Source retirement performs one
 offline pass over the saved object table; gameplay uses no global actor scan.
