@@ -20,7 +20,7 @@ Runtime-generated text keys are also discoverable with `find TERM` in the comple
 | NPC / system | Authoritative source | Conversation IDs |
 | --- | --- | --- |
 | unknown_voice | [unknown_voice.usdf](npc/unknown_voice.usdf) | 43300, 43321, 43480, 43481, 43482, 43483, 43484, 43485, 43486, 43487, 43488, 43489, 43490 |
-| palomo | [palomo.usdf](npc/palomo.usdf) | 43200, 43316, 43317, 43319, 43630, 43633 |
+| palomo | [palomo.usdf](npc/palomo.usdf) | 43200, 43316, 43317, 43319, 43630, 43633, 43700 |
 | argento | [argento.usdf](npc/argento.usdf) | 43310 |
 | rulo | [rulo.usdf](npc/rulo.usdf) | 43311 |
 | ronnie | [ronnie.usdf](npc/ronnie.usdf) | 43312 |
@@ -44,7 +44,7 @@ Runtime-generated text keys are also discoverable with `find TERM` in the comple
 Source SHA-256 fingerprints:
 
 - `dialogues/npc/unknown_voice.usdf`: `d42e187f60d26c424dbf0b654bf2099958d9a1fa7a9e53ce47b4fe66ffe83957`
-- `dialogues/npc/palomo.usdf`: `ea8455379f855bd8eec28e02c8d844882e59e7af3daaf93a52cff77b588fb178`
+- `dialogues/npc/palomo.usdf`: `c3cbcb4117c3e902e30c3b7d5211b96062dad35cad6bff8d82ef222c03a982d6`
 - `dialogues/npc/argento.usdf`: `ae624b03ca33e5bce1938b595a749614228ba838aa13c9baa79357733989e69e`
 - `dialogues/npc/rulo.usdf`: `5ef93ded5c9e16157a4882fdfa8da14f36f1a3657281ac169034aacf42c0fc62`
 - `dialogues/npc/ronnie.usdf`: `a0eeaa7b52ad9327909a45a3afe56f719b29ec67323d344f6d60e3b998063828`
@@ -64,4 +64,4 @@ Source SHA-256 fingerprints:
 - `dialogues/npc/guards.usdf`: `8fea805fc5c840d714f04bc151b53c03d3c080dbafd644b536602ffdba1d2a51`
 - `dialogues/npc/rental_agent.usdf`: `41f0f8696a70290e98c38bf1952824bc7a53eb106d55a47783cfc59f8c0d7b53`
 - `dialogues/shared/companions.usdf`: `8f0fe3747a879e7ce156c26425f9fb8106363c18c25babf9c3a3cdfab425fa5f`
-- `dialogues/index.json`: `3eb05c3f4a95d45dbe497736efe42941a58ca64cf233032588ce6177761efad8`
+- `dialogues/index.json`: `2452aa0d5fbd429a8085d8ca47f140cd98b709028b096fcef143caffb2bafe88`

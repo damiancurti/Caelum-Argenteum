@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.12.2** - 2026-10-30.
+Documentation version: **5.12.3** - 2026-10-31.
+
+## 5.12.3 - Cooperative lifecycle guards (#437, in progress)
+
+Cooperative death no longer uses the native Use-to-respawn shortcut. The same
+pawn, character record and wallet remain saved; existing explicit resurrection
+is retained. Death/departure cancel shared consent, and coordinated recovery has
+an explicit consent-reset event. Native evidence is in validation_v5_12_3.
+The Fool now performs a consented mansion round trip. Dead visitors can move and
+converse without material interactions; earned material rewards stay pending
+until resurrection. Full recovery tooling and release integration remain unfinished. No author acceptance or V5.12 completion is claimed.
+
 
 ## 5.12.2 - Cooperative clock/rest and time consent (#436, in progress)
 

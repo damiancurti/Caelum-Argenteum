@@ -1,6 +1,6 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.12.2** - 2026-10-30.
+Documentation version: **5.12.3** - 2026-10-31.
 
 ## 5.9.5 / #422 - Central house and siege investigation
 

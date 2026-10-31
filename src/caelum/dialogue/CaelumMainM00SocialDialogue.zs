@@ -77,9 +77,10 @@ class CaelumMainM00SocialDialogue : Object play
 
     static bool GiveSilverKey(CaelumPlayer user)
     {
-        if (!CanReceiveSilverKey(user) || user.player == null || user.health <= 0) return false;
+        if (!CanReceiveSilverKey(user) || !CaelumSpirit.CanConverse(user)) return false;
         let keeper = CaelumArgento(user.player.ConversationNPC);
         if (keeper == null || !keeper.StoryAnchored) return false;
+        if(CaelumSpirit.Active(user))return CaelumSpiritRewards.Queue(user,CaelumSpiritRewards.SILVER_KEY);
         if (user.FindInventory("CaelumSilverKey") == null)
         {
             let key = CaelumWeightedKey(keeper.FindInventory("CaelumSilverKey"));
@@ -96,6 +97,7 @@ class CaelumMainM00SocialDialogue : Object play
             key.AttachToOwner(user);
         }
         user.OnNativeInventoryChanged();
+        user.GetPersistentCharacterState(false).SpiritSilverKeyPending=false;
         Sync(user); return true;
     }
 
@@ -146,7 +148,7 @@ class CaelumMainM00SocialDialogue : Object play
 
     static bool Open(CaelumPlayer user, CaelumAnchoredResident speaker)
     {
-        if (user == null || user.player == null || user.health <= 0
+        if (!CaelumSpirit.CanConverse(user)
             || user.CreationWizardOpen || !user.CharacterCreationComplete
             || speaker == null || !speaker.StoryAnchored || speaker.bInConversation
             || level.MapName != "MAP01") { return false; }
@@ -191,7 +193,7 @@ class CaelumMainM00SocialDialogue : Object play
 
     static bool Apply(CaelumPlayer user, Name actionName)
     {
-        if (user == null || user.player == null || user.health <= 0
+        if (!CaelumSpirit.CanConverse(user)
             || level.MapName != "MAP01") { return false; }
         CaelumAnchoredResident speaker = CaelumAnchoredResident(user.player.ConversationNPC);
         if (speaker == null || !speaker.StoryAnchored) { return false; }

@@ -10,7 +10,7 @@ class CaelumCooperativeTimeEvents : StaticEventHandler
     override void NetworkProcess(ConsoleEvent e)
     {
         if(e.Name!="ca_cooperative_time")return;
-        let user=CaelumPlayerAuthority.FromNetworkPlayer(e.Player);
+        let user=CaelumPlayerAuthority.FromNetworkPlayer(e.Player,true);
         let vote=CaelumCooperativeTime.View(user);
         if(vote!=null)vote.Request(user,e.Args[0],e.Args[1]);
     }

@@ -1,6 +1,50 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.12.2** - 2026-10-30.
+Documentation version: **5.12.3** - 2026-10-31.
+
+#437 compatibility: lifecycle callbacks register statically on load; the old per-level
+class is retained only to deserialize existing checkpoints. No duplicate death or
+disconnection callbacks; consent reset and native respawn prevention also apply to
+saves created before this handler was introduced.
+
+## Cooperative death and recovery (5.12.3, #437, in progress)
+
+A dead native cooperative player keeps the same pawn and personal record.
+Pressing Use or forced-respawn flags cannot create a replacement pawn. Native
+death camera presentation is retained; the existing explicit Redemption path
+can restore the same body with its established requirements and resource rules.
+Death and disconnection cancel pending travel/time consent immediately, through
+bounded native-player references. Survivors may continue only when the engine
+keeps the native session alive; uninterrupted arbitrator migration is not promised.
+The coordinated recovery launcher must send the native ca_session_recover event
+from player0 after loading a common checkpoint to invalidate old-session consent.
+That event does not move items, revive bodies or assign new identities.
+
+Activating The Fool replaces flight with unanimous travel to the mansion. The
+initiator pays the existing 1,000 Anima and 600-second cooldown only after all
+accept; refusal costs nothing. Palomo offers unanimous return to each original
+position without another charge or automatic resurrection. If every player is
+dead, an owner of The Fool may exceptionally initiate it with User3 and the same
+requirements/cost. Dead players can still vote, but cannot act in the campaign.
+
+Inside the mansion only, the same dead identity controls a spirit. Movement and
+resident/Palomo conversations are allowed; material pickup, use, crafting and
+transfers are denied. Conversations can advance earned objectives, but do not
+complete physical practices. Promised decks/Boxes remain in revision-1 personal
+pending flags and are delivered once after resurrection, retrying if necessary.
+Existing tool gifts retain their original unclaimed-ID mechanism. Argento keeps
+the actual unique silver key until the living character claims it; a pending
+promise does not manufacture a replacement or remotely take his inventory.
+
+Native 4.14.2 normally force-respawns dead players before map travel and excludes
+dead pawns from its traveler list. The shared wrapper temporarily marks only the
+native carrier as eligible, never restores actor health, and restores death on
+arrival. It preserves the same pawn, record, inventory and corpse position; no
+second material inventory is created. The mansion now belongs to campaign hub
+434 so visiting it retains inactive campaign maps. On return the original body
+is visible at its recorded death position; elsewhere it remains noninteractive.
+Tarot power revision 2 removes legacy Fool flight while preserving ownership,
+selection and cooldown. Original saves/packages remain the reversible baseline.
 
 ## Shared clock and unanimous time (5.12.2, #436)
 

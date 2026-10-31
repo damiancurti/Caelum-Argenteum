@@ -824,7 +824,13 @@ class CaelumHUDOverlay : EventHandler
         {
             if(localPlayer!=null && localPlayer.player!=null
                 && localPlayer.player.playerstate==PST_DEAD)
+            {
                 CaelumScreenFeedback.Damage(localPlayer,event.FracTic);
+                String message=StringTable.Localize(CaelumSpirit.Active(localPlayer)
+                    ? "CA_SPIRIT_CONTROLS" : "CA_FOOL_JOURNEY_DEAD",false);
+                CaelumTrucoMenu.Wrap(22,36,730,CaelumInputHints.Resolve(message));
+                CaelumNotifications.Draw(localPlayer,HUDFont,90);
+            }
             return;
         }
 

@@ -199,7 +199,7 @@ class CaelumTravelService : Object play
         record.WorldConnectionKnown[id] = true;
         record.WorldPendingConnection = id;
         user.PersistCharacterState();
-        Level.ChangeLevel(CaelumWorldCatalogue.MapForLocation(CaelumWorldCatalogue.ConnectionDestination(id)),
+        CaelumDeadTraveler.ChangeMap(CaelumWorldCatalogue.MapForLocation(CaelumWorldCatalogue.ConnectionDestination(id)),
             CaelumWorldCatalogue.ConnectionDestination(id)==CaelumWorldCatalogue.LOCATION_SEWERS ? 1 : 0, CHANGELEVEL_NOINTERMISSION);
         return true;
     }

@@ -70,7 +70,7 @@ class CaelumMainM00PalomoFinal : Object play
 {
     static bool AcceptMagicBox(CaelumPlayer user)
     {
-        if (user == null || user.player == null || user.health <= 0
+        if (!CaelumSpirit.CanConverse(user)
             || !user.CharacterCreationComplete || user.CreationWizardOpen
             || level.MapName != "MAP01" || (user.player.cheats & CF_PREDICTING)) return false;
         let palomo = CaelumPalomo(user.player.ConversationNPC);
@@ -82,11 +82,20 @@ class CaelumMainM00PalomoFinal : Object play
         if (record == null) return false;
         if (record.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_MAGIC_BOX_GRANTED))
         {
+            if (CaelumSpirit.Active(user)) return record.SpiritBoxPending || record.MagicBoxOwned;
             user.SyncLiveMagicBoxOwnershipFromPersistentState();
             user.SyncPalomoDialogueTokens();
             return record.MagicBoxOwned && CaelumMagicBox.EnsureOwned(user) != null;
         }
         if (!record.CanReceiveMainM00MagicBox()) return false;
+        if(CaelumSpirit.Active(user))
+        {
+            if(!CaelumSpiritRewards.Queue(user,CaelumSpiritRewards.BOX))return false;
+            record.TryAdvanceMainM00State(CaelumConstants.MAIN_M00_STATE_RULO_COMPLETE,
+                CaelumConstants.MAIN_M00_STATE_BOX_RECEIVED);
+            record.SetMainM00Flag(CaelumConstants.MAIN_M00_FLAG_MAGIC_BOX_GRANTED);
+            user.SyncPalomoDialogueTokens();user.RefreshSocialJournalSnapshot();user.PersistCharacterState();return true;
+        }
         // Una Caja heredada de pruebas conserva identidad, contenido y peso.
         user.GrantMagicBoxFromPalomo(false);
         if (!user.MagicBoxOwned || CaelumMagicBox.EnsureOwned(user) == null
@@ -290,6 +299,16 @@ class CaelumPalomoConversationMenu : CaelumHistoryConversationMenu
 
     override void FormatSpeakerMessage()
     {
+        if (mCurNode.UserData ~== "palomo_box_received")
+        {
+            let user = mPlayer == null ? null : CaelumPlayer(mPlayer.mo);
+            let record = user == null ? null : CaelumPersistentCharacterState(user.FindInventory('CaelumPersistentCharacterState'));
+            if (record != null && record.SpiritBoxPending)
+            {
+                mDialogueLines = displayFont.BreakLines(StringTable.Localize("CA_SPIRIT_REWARD_PENDING", false), SpeechWidth);
+                return;
+            }
+        }
         if (CaelumSiegeIntelligence.IsPaidPage(mCurNode.UserData)
             || mCurNode.UserData ~== "port_siege_start" || mCurNode.UserData ~== "port_siege_complete")
         {

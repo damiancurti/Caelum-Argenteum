@@ -1314,7 +1314,7 @@ class CaelumPlayer : DoomPlayer
 
     bool OpenPalomoDialogue(Actor speaker)
     {
-        if (CreationWizardOpen || !CharacterCreationComplete || speaker == null || health <= 0)
+        if (CreationWizardOpen || !CharacterCreationComplete || speaker == null || !CaelumSpirit.CanConverse(self))
         {
             return false;
         }
@@ -1346,6 +1346,9 @@ class CaelumPlayer : DoomPlayer
         }
         if (conversationId == CaelumConstants.MAIN_M00_PALOMO_WAIT_CONVERSATION_ID)
             conversationId = CaelumMainM00Loadout.CONVERSATION;
+        let visit=CaelumFoolJourney.View(self);
+        if(visit!=null && visit.Active && !visit.OrdinaryConversation)
+            conversationId=CaelumFoolJourney.CONVERSATION;
         CaelumMainM00Loadout.Refresh(self);
         CaelumSocialization.Clear(self);
         SyncPalomoDialogueTokens();
@@ -4424,6 +4427,8 @@ class CaelumPlayer : DoomPlayer
         CaelumDamageFeedback.ClearFlash(self);
         RestorePersistentCharacterState();
         CaelumTarotService.RestoreNativeEffect(self);
+        CaelumDeadTraveler.Arrive(self);
+        CaelumFoolJourney.Arrive(self);
     }
 
     // PostBeginPlay runs after this player actor has entered the game world.
@@ -5892,6 +5897,15 @@ class CaelumPlayer : DoomPlayer
 
     // Defensa final para muertes solicitadas directamente por scripts; no
     // resucitar cadáveres cargados ni crear un nuevo perfil o cuerpo.
+    override void DeathThink()
+    {
+        Super.DeathThink();
+        // Conserva la cámara y presentación nativas de muerte, pero no el
+        // respawn por Usar ni por flags de deathmatch. Redención sigue usando
+        // su restauración explícita del mismo cuerpo y sus requisitos.
+        if(multiplayer && player!=null && health<=0)player.playerstate=PST_DEAD;
+    }
+
     override void Die(Actor source, Actor inflictor, int dmgflags, Name MeansOfDeath)
     {
         CaelumAltitudeService.StopClock(self);
@@ -7101,6 +7115,7 @@ class CaelumPlayer : DoomPlayer
     // Los comandos del creador viajan por eventos de red independientes.
     override void MovePlayer()
     {
+        if(CaelumSpirit.Active(self)){Super.MovePlayer();return;}
         bool impulse=CaelumMovementImpulse.Begin(self);
         CaelumFormationBreaker.PrepareMove(self);
         vector3 before=Vel;
@@ -7125,6 +7140,21 @@ class CaelumPlayer : DoomPlayer
 
     override void PlayerThink()
     {
+        if(CaelumSpirit.Active(self))
+        {
+            bool usePressed=(player.cmd.buttons&BT_USE)!=0;
+            if(usePressed && !player.usedown)CaelumSpirit.Use(self);
+            player.usedown=usePressed;
+            player.cmd.buttons&=BT_SPEED|BT_STRAFE|BT_JUMP|BT_CROUCH;
+            if(HasActiveConversation())
+            {player.cmd.forwardmove=player.cmd.sidemove=player.cmd.upmove=0;player.cmd.yaw=player.cmd.pitch=0;Vel.X=Vel.Y=0;}
+            // Sólo el cálculo nativo de movimiento/vista necesita PST_LIVE.
+            // La salud permanece en cero y no se ejecutan armas ni CheckUse.
+            player.playerstate=PST_LIVE;
+            UpdateMovementAcceleration();ApplyPhysicalMovement();
+            CheckPitch();HandleMovement();CalcHeight();
+            player.playerstate=PST_DEAD;return;
+        }
         // El cursor evita movimientos nuevos; también hay que neutralizar
         // los giros que estaban retenidos antes de abrir estos paneles.
         let journalOpen=player==null?null:CVar.GetCVar("ca_journal_open",player);
@@ -7200,6 +7230,7 @@ class CaelumPlayer : DoomPlayer
     // regeneration that also pauses when the game itself is paused.
     override bool UseInventory(Inventory item)
     {
+        if(health<=0)return false;
         // La bolsa abre su interacción existente sin consumir el Inventory.
         let soap=CaelumMaterialPickup(item);
         if(soap!=null && soap.Owner==self && soap.GetSpecialType()==CaelumHygieneData.SOAP)
@@ -7236,8 +7267,12 @@ class CaelumPlayer : DoomPlayer
         return true;
     }
 
+    override bool CanTouchItem(Inventory item)
+    {return health>0 && Super.CanTouchItem(item);}
+
     override void Tick()
     {
+        if(CaelumSpirit.Active(self)){Super.Tick();CaelumTarotService.Advance(self);return;}
         // También repara flags/selección de saves anteriores sin duplicar stock.
         CaelumQuickUse.Reconcile(self);
         CaelumCharacterIdentity.Ensure(self);
@@ -7269,7 +7304,8 @@ class CaelumPlayer : DoomPlayer
         CaelumBolas.Update(self);
         CaelumRestState.Validate(self);
         if(!ClothingMigrationReady)CaelumClothing.Migrate(self);
-        if (level.time % TICRATE == 0) CaelumRecipeLearning.DeliverPending(self);
+        if (level.time % TICRATE == 0)
+        {CaelumRecipeLearning.DeliverPending(self);CaelumSpiritRewards.Deliver(self);}
         UpdateCraftingTask();
         UpdatePalomoMerchantSession();
 

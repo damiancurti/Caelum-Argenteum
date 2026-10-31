@@ -6,10 +6,18 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.12.2.** Obtain and update the complete repository, validate
+**Current release: 5.12.3.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-**V5.12 in progress (#436):** native peers now share one campaign clock and
+**V5.12 lifecycle (#437):** cooperative death retains the original pawn, inventory
+and identity through native map travel. The Fool now requests a unanimous mansion
+visit; only the activator pays after consent. Dead visitors move and converse as
+spirits, with material rewards pending until resurrection. Palomo returns the
+group to its recorded departure without another payment or automatic revival.
+Death/departure cancel shared consent, including native saves predating the lifecycle handler. Coordinated recovery tooling and other
+V5.12 dependencies remain unfinished; author acceptance is still pending.
+
+**V5.12 cooperative world (#436):** native peers now share one campaign clock and
 weather seed, with individual nonaccelerated rest. T/the time menu opens an
 exact-duration proposal: everyone must consent, edits clear votes, silence
 waits and any participant may cancel. Personal resources remain individual.
