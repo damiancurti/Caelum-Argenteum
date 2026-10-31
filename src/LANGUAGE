@@ -7271,3 +7271,10 @@ CA_COOP_TRAVEL_DEPARTURE = "Espera prevista antes de salir: %.2f h";
 CA_COOP_TRAVEL_ROADSIDE = "Roadside stop, %.2f km traveled";
 [es]
 CA_COOP_TRAVEL_ROADSIDE = "Parada en el camino, %.2f km recorridos";
+
+[enu default]
+CA_COOP_RETURN_READY = "Every living player must finish the mansion trials and carry their own departure equipment.";
+CA_COOP_RETURN_DESTINATION = "Leave the mansion and return to your bodies";
+[es]
+CA_COOP_RETURN_READY = "Todos los jugadores vivos deben terminar las pruebas de la mansión y llevar su propio equipo de salida.";
+CA_COOP_RETURN_DESTINATION = "Salir de la mansión y regresar a sus cuerpos";

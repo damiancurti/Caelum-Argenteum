@@ -1,11 +1,12 @@
 // Una salida pertenece a la sesión. Ningún consentimiento cobra ni cambia mapa.
 class CaelumCooperativeTravel : Inventory
 {
-    enum TravelKind { JOURNEY, HOUSE, BOARD, DISEMBARK, RESUME, ABANDON }
+    enum TravelKind { JOURNEY, HOUSE, BOARD, DISEMBARK, RESUME, ABANDON, TUTORIAL }
     enum Operation { ACCEPT, CANCEL }
     CaelumPlayer Members[MAXPLAYERS];
     CaelumJourneyPlan Plans[MAXPLAYERS];
     CaelumHousePortal Portal;
+    CaelumM00ReturnDoor TutorialDoor;
     CaelumTravelVehicle Vehicle;
     CaelumTransportTicket Ride;
     int Fare;
@@ -14,6 +15,8 @@ class CaelumCooperativeTravel : Inventory
     double Pace;
     String OriginMap,Destination;
     vector3 OriginPosition;
+
+    clearscope bool IsTransport() const { return Kind>=BOARD && Kind<=ABANDON; }
 
     static clearscope CaelumCooperativeTravel View(CaelumPlayer user)
     {
@@ -48,7 +51,9 @@ class CaelumCooperativeTravel : Inventory
     {
         let proposer=CaelumPlayer(Owner);
         if(!CaelumCooperativeTime.Living(proposer))return false;
-        if(Kind>=BOARD)return CaelumCooperativeTransport.SourceValid(self);
+        if(Kind==TUTORIAL)return TutorialDoor!=null && !TutorialDoor.bDestroyed
+            && CaelumMainM00Return.CanApproach(proposer,TutorialDoor);
+        if(IsTransport())return CaelumCooperativeTransport.SourceValid(self);
         if(Kind==HOUSE)return Portal!=null && !Portal.bDestroyed
             && Portal.DestinationMap()==Destination && CaelumUseGeometry.AimedAt(proposer,Portal);
         return (proposer.Pos-OriginPosition).Length()<=64;
@@ -69,7 +74,7 @@ class CaelumCooperativeTravel : Inventory
         if(vote==null)vote=CaelumCooperativeTravel(user.GiveInventoryType('CaelumCooperativeTravel'));
         if(vote==null)return null;
         vote.ReleasePlans();vote.Mask=vote.AliveMask=vote.Accepted=0;
-        vote.Opened=vote.Committed=vote.Interrupted=false;vote.Portal=null;vote.Vehicle=null;vote.Ride=null;
+        vote.Opened=vote.Committed=vote.Interrupted=false;vote.Portal=null;vote.TutorialDoor=null;vote.Vehicle=null;vote.Ride=null;
         vote.Elapsed=0;vote.Pace=0;vote.Fare=0;
         vote.OriginMap=level.MapName;vote.OriginPosition=user.Pos;
         for(int i=0;i<MAXPLAYERS;i++)
@@ -123,7 +128,8 @@ class CaelumCooperativeTravel : Inventory
     }
     bool,bool PreparePlans(bool compare)
     {
-        if(Kind>=BOARD){bool okay,changed;[okay,changed]=CaelumCooperativeTransport.Prepare(self,compare);return okay,changed;}
+        if(IsTransport()){bool okay,changed;[okay,changed]=CaelumCooperativeTransport.Prepare(self,compare);return okay,changed;}
+        if(Kind==TUTORIAL)return CaelumCooperativeReturn.Prepare(self),false;
         if(Kind!=JOURNEY)return true,false;
         double speed=0;
         for(int i=0;i<MAXPLAYERS;i++)if((AliveMask&(1<<i))!=0)
@@ -185,6 +191,7 @@ class CaelumCooperativeTravel : Inventory
     {
         if(Kind==DISEMBARK && !Committed && Ride!=null)Ride.TransferDeclined=true;
         Opened=false;NextSerial();
+        if(Kind==TUTORIAL && !Committed)CaelumMainM00Return.Cancel(CaelumPlayer(Owner),false);
         for(int i=0;i<MAXPLAYERS;i++)if(Members[i]!=null)
         {
             let clock=CaelumWorldClock.Get(Members[i]);if(clock!=null && clock.TravelVote==self)clock.TravelVote=null;
@@ -195,7 +202,13 @@ class CaelumCooperativeTravel : Inventory
     void Commit()
     {
         if(!Opened || Accepted!=Mask || !RosterValid() || !SourceValid())return;
-        if(Kind>=BOARD)
+        if(Kind==TUTORIAL)
+        {
+            if(!CaelumCooperativeReturn.Commit(self)){Finish("CA_COOP_RETURN_READY");return;}
+            Committed=true;Finish("");
+            Level.ChangeLevel(Destination,Entry,CHANGELEVEL_NOINTERMISSION);return;
+        }
+        if(IsTransport())
         {
             if(!CaelumCooperativeTransport.Commit(self)){Finish("CA_COOP_TRAVEL_CANCELLED");return;}
             Committed=true;Finish("");

@@ -9,7 +9,9 @@ unanimous exact-duration acceleration, stale/duplicate vote rejection and shared
 cancellation. Walking routes/house doors now share explicit destination consent,
 slowest group pace and individual provisions. Tests exercise real native peers.
 Transport boarding/fares/stop/resume are implemented; broaden lifecycle and
-rebooking/abandonment coverage. Remaining #436: tutorial departure/return, quest objective eligibility and rewards,
+rebooking/abandonment coverage. Initial tutorial departure now validates all
+living participants and loadouts before unanimous transfer. Remaining #436:
+quest objective eligibility and rewards,
 personal/world conflicts, full save/load/restart and tent-rest integration.
 Cross-issue remaining: #434 portable profiles/checkpoints; #435 production
 network authority; #437 lifecycle; #438 arenas/organizers; #590 card seating/UI

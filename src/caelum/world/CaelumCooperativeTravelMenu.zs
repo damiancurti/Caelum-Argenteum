@@ -45,6 +45,7 @@ class CaelumCooperativeTravelMenu : ListMenu
         CaelumTrucoMenu.Wrap(22,60,730,L("CA_COOP_TRAVEL_HELP"));
         let vote=CaelumCooperativeTravel.View(User());if(vote==null)return;
         String target=vote.Kind==CaelumCooperativeTravel.ABANDON?L("CA_COOP_TRAVEL_ABANDON")
+            :vote.Kind==CaelumCooperativeTravel.TUTORIAL?L("CA_COOP_RETURN_DESTINATION")
             :vote.Kind==CaelumCooperativeTravel.HOUSE?L("CA_COOP_TRAVEL_HOUSE")
             :L(CaelumWorldCatalogue.ConnectionNameKey(vote.Connection));
         if(vote.Kind==CaelumCooperativeTravel.DISEMBARK)
@@ -54,7 +55,7 @@ class CaelumCooperativeTravelMenu : ListMenu
                 :String.Format(L("CA_COOP_TRAVEL_ROADSIDE"),vote.Ride!=null?vote.Ride.CoveredKm():0);
         }
         CaelumTrucoMenu.Text(22,125,String.Format(L("CA_COOP_TRAVEL_TARGET"),target));
-        if(vote.Kind>=CaelumCooperativeTravel.BOARD)
+        if(vote.IsTransport())
         {
             int slot=vote.Slot(User());int fare=slot>=0 && (vote.AliveMask&(1<<slot))!=0?vote.Fare:0;
             CaelumTrucoMenu.Text(22,155,String.Format(L("CA_COOP_TRAVEL_FARE"),fare));

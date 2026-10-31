@@ -49,6 +49,20 @@ House entry preserves property/household systems and does not grant residence
 rights to visitors. The multiplayer branch avoids the old console-local capture
 handshake; native house-door presentation remains unchanged for solo play.
 
+The initial MAP01 return doorway also proposes a unanimous destination after
+the initiator closes its conversation. All living players must have completed
+their own trials and hold their departure equipment; already-completed personal
+tutorials are not repeated. Dead participants retain the approved interface
+vote and receive no living tutorial transaction. Every loadout and Box capacity
+is checked before any packing, inventory sanitation or completion. Final
+consent revalidates them: a missing item cancels the whole proposal. Each
+character keeps their native item references and records their own departure.
+Equipment IDs are local: multiplayer departure never searches the map for a
+dropped starter by numeric ID; the owner must retrieve it first. Solo recovery
+retains its existing explicit departure-only search. Saved enum values are
+preserved, the new kind is appended, and the new door reference defaults null.
+No routine global actor scan is added.
+
 Vehicle boarding uses the same unanimous native protocol. Every living traveler
 must satisfy the existing boarding checks and afford their own ticket/change.
 All currency transactions are prepared before any wallet is charged. Refusal,

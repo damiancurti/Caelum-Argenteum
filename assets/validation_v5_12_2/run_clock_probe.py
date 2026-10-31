@@ -22,7 +22,7 @@ def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def fixture(path: Path, peers: int, source_overlay: bool = False, persistence: bool = False, travel: bool = False, transport: bool = False, transport_stop: bool = False, transport_mode: int = 3) -> None:
+def fixture(path: Path, peers: int, source_overlay: bool = False, persistence: bool = False, travel: bool = False, transport: bool = False, transport_stop: bool = False, transport_mode: int = 3, tutorial: bool = False) -> None:
     # Disposable geometry; installed development IWAD textures are not distributed.
     text = '''namespace="ZDoom";
 vertex{x=-1024;y=-1024;} vertex{x=1024;y=-1024;}
@@ -48,11 +48,14 @@ linedef{v1=0;v2=3;sidefront=0;blocking=true;}
         for name, data in {
             "MAPINFO": ('gameinfo { AddEventHandlers = "CA436ClockProbe"' + ' }\n').encode(),
             "ZSCRIPT": b'version "4.14.2"\n#include "probe.zs"\n',
-            "probe.zs": (SOURCE / ("transport_probe.zs" if transport else "travel_probe.zs" if travel else "persistence_probe.zs" if persistence else "clock_probe.zs")).read_bytes().replace(b"const STOP_EARLY = 0;", b"const STOP_EARLY = 1;" if transport_stop else b"const STOP_EARLY = 0;").replace(b"const TRAVEL_MODE = 3;", f"const TRAVEL_MODE = {transport_mode};".encode()),
+            "probe.zs": (SOURCE / ("return_probe.zs" if tutorial else "transport_probe.zs" if transport else "travel_probe.zs" if travel else "persistence_probe.zs" if persistence else "clock_probe.zs")).read_bytes().replace(b"const STOP_EARLY = 0;", b"const STOP_EARLY = 1;" if transport_stop else b"const STOP_EARLY = 0;").replace(b"const TRAVEL_MODE = 3;", f"const TRAVEL_MODE = {transport_mode};".encode()),
             "maps/MAP03.wad": wad,
         }.items():
             entry = zipfile.ZipInfo(name, (2026, 10, 30, 0, 0, 0))
             archive.writestr(entry, data)
+        if tutorial:
+            archive.writestr("maps/MAP01.wad", wad)
+            archive.writestr("maps/MAP02.wad", wad)
         if travel:
             archive.writestr("maps/TRESERV.wad", wad)
             archive.writestr("maps/CAH000.wad", wad)
@@ -80,11 +83,12 @@ linedef{v1=0;v2=3;sidefront=0;blocking=true;}
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--runtime", type=Path, required=True)
-    parser.add_argument("--players", type=int, choices=(2, 4, 8), default=2)
+    parser.add_argument("--players", type=int, choices=(1, 2, 4, 8), default=2)
     parser.add_argument("--port", type=int, default=29660)
     parser.add_argument("--source-overlay", action="store_true", help="Overlay edited clock/rest sources for iteration only")
     parser.add_argument("--persistence", action="store_true")
     parser.add_argument("--travel", action="store_true")
+    parser.add_argument("--tutorial", action="store_true")
     parser.add_argument("--transport", action="store_true")
     parser.add_argument("--transport-stop", action="store_true")
     parser.add_argument("--transport-mode", type=int, choices=(3,4,5,6), default=3)
@@ -96,7 +100,7 @@ def main() -> None:
     out = ROOT / "build/issue436" / datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
     out.mkdir(parents=True)
     package = out / "checks.pk3"
-    fixture(package, args.players, args.source_overlay, args.persistence, args.travel, args.transport, args.transport_stop, args.transport_mode)
+    fixture(package, args.players, args.source_overlay, args.persistence, args.travel, args.transport, args.transport_stop, args.transport_mode, args.tutorial)
     processes, streams, commands = [], [], []
     startup = subprocess.STARTUPINFO()
     startup.dwFlags |= subprocess.STARTF_USESHOWWINDOW
@@ -109,15 +113,15 @@ def main() -> None:
             commands_file = peer / "test.cfg"
             # Close remote peers first and the native arbitrator last. The separate
             # lifecycle probe must exercise unexpected arbitrator departure.
-            quit_tic = (700 if args.transport else 350) + (args.players - index) * 35
+            quit_tic = (700 if args.transport or args.tutorial else 350) + (args.players - index) * 35
             commands_file.write_text("wait 105; netevent ca436_verify_reload; wait 245; quit\n" if args.load_directory and index==0 else f"wait {quit_tic}; quit\n", encoding="utf-8")
             config.write_text("[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\n"
                               "vid_vsync=false\nvid_maxfps=60\ncl_capfps=false\nvid_activeinbackground=true\n"
                               "i_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\n"
                               "snd_mastervolume=0.05\nvid_fullscreen=false\nuse_mouse=false\nlanguage=en\n", encoding="utf-8")
-            network = ["-host", str(args.players), "-port", str(args.port), "-netmode", "0"] if index == 0 else [
+            network = [] if args.players==1 else ["-host", str(args.players), "-port", str(args.port), "-netmode", "0"] if index == 0 else [
                 "-join", f"127.0.0.1:{args.port}", "-port", str(args.port + index)]
-            entry = ["+map", "TRESERV" if args.travel else "MAP03"]
+            entry = ["+map", "MAP01" if args.tutorial else "TRESERV" if args.travel else "MAP03"]
             if args.load_directory:
                 saves = list((args.load_directory / f"peer{index}").glob("save*.zds"))
                 if len(saves) != 1:
@@ -158,7 +162,7 @@ def main() -> None:
                   (" FAIL", "Bad type", "errors while compiling", "Script error", "Execution could not continue", "Cannot find savegame", "VM execution aborted", "desync", "out of sync"))]
         checks = [line for line in lines if line.startswith("CA436 ")]
         ordered_requests.append(re.findall(r"CA436 EVENT peer=\d+ sender=(\d+) serial=(\d+)", text))
-        success = process.returncode == 0 and not errors and text.count("CA436 PASS") == (30 if args.transport_stop else 26 if args.transport else 31 if args.travel else (6 if args.load_directory else 4) if args.persistence else 36) and text.count("CA436 RESULT") == 1
+        success = process.returncode == 0 and not errors and text.count("CA436 PASS") == ((8 if args.players==1 else 21) if args.tutorial else 30 if args.transport_stop else 26 if args.transport else 31 if args.travel else (6 if args.load_directory else 4) if args.persistence else 36) and text.count("CA436 RESULT") == 1
         reports.append({"peer": index, "exit": process.returncode, "passed": success, "checks": checks, "errors": errors})
     same_order = len(ordered_requests) == args.players and all(
         len(events) == args.players * (3 if args.travel or args.transport else 1) and events == ordered_requests[0] for events in ordered_requests)
@@ -166,7 +170,9 @@ def main() -> None:
         same_order = all(len(events) >= args.players * 3 and events == ordered_requests[0] for events in ordered_requests)
     if args.persistence:
         same_order = True
-    result = {"persistence": args.persistence, "travel": args.travel, "transport": args.transport, "transport_stop": args.transport_stop, "transport_mode": args.transport_mode, "load_directory": str(args.load_directory) if args.load_directory else None, "issue": 436, "baseline": "5.11.8", "source_overlay": args.source_overlay, "real_processes": args.players, "runtime_sha256": digest(runtime),
+    if args.tutorial:
+        same_order = all(len(events)==args.players*2 and events==ordered_requests[0] for events in ordered_requests)
+    result = {"tutorial":args.tutorial, "persistence": args.persistence, "travel": args.travel, "transport": args.transport, "transport_stop": args.transport_stop, "transport_mode": args.transport_mode, "load_directory": str(args.load_directory) if args.load_directory else None, "issue": 436, "baseline": "5.11.8", "source_overlay": args.source_overlay, "real_processes": args.players, "runtime_sha256": digest(runtime),
               "engine_sha256": digest(ENGINE), "iwad_sha256": digest(IWAD), "fixture_sha256": digest(package),
               "commands": commands, "peers": reports, "same_order": same_order,
               "passed": same_order and all(x["passed"] for x in reports)}

@@ -10,6 +10,21 @@ This remains agent verification, not author acceptance.
 
 ## 5.12.2 - Shared clock and time consent (#436, 2026-10-30, in progress)
 
+Tutorial follow-up: the author requires all living characters to finish their
+own trials before leaving. The doorway publishes unanimous consent after its
+initiating conversation. A read-only packing preflight validates every personal
+loadout, then the existing completion/sanitation applies to each living record
+once. Item-ID lookup stays owner-local in multiplayer; no global dropped-item
+search is introduced. Initial fixture failures retained: an opening narrative
+conversation correctly blocked a guest; an attempted DetachFromOwner called a
+hook rather than removing the test item. Corrected fixtures use explicit setup
+and native RemoveInventory. Final results are recorded in return-results.json;
+no author acceptance is implied. Final native evidence: eight peers each pass21
+tutorial checks; solo departure passes8; two transport peers each pass26. All
+exit cleanly (228 assertions total). The final package matches the staged
+source members exactly; SHA-256:
+`514644e12729603258c7fb2f2dbf0aa1c65404dc185cab01fe097a6a03126f45`.
+
 Transport follow-up: individual all-or-nothing fare preparation, one shared
 vehicle/incident record, unanimous boarding/disembarkation/resumption, and no
 repeat fare for the original ticket. Existing transport distance/speed/prices

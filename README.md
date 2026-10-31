@@ -16,7 +16,9 @@ waits and any participant may cancel. Personal resources remain individual.
 Walking routes and house doors now require unanimous destination consent;
 walking uses the slowest pace and each character pays their own provisions.
 Vehicle boarding also requires unanimous consent and independent ticket payments;
-shared stops and resumption retain the original trip.
+shared stops and resumption retain the original trip. Initial mansion departure
+also requires everyone's consent and each living character's completed trials
+and own equipment, checked before any personal completion or packing.
 This is not full cooperative campaign acceptance: quest rewards,
 profile portability and lifecycle integration remain under their focused issues.
 Author checks will be delivered together after the release is complete.
