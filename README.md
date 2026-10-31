@@ -38,7 +38,7 @@ transfer in actual Barracas pass. Native hub travel and portable/world quest
 boundaries pass, including pending rewards on return. Managed native transfer
 integration passes; final stability/presentation checks and author handoff remain.
 Transfers reject active conversations while allowing finished dialogue references.
-`caelum_new_campaign.py` creates a separate native MAP01 with 1?8 vacant slots
+`caelum_new_campaign.py` creates a separate native MAP01 with 1–8 vacant slots
 for imports, without replacing a save or granting placeholder equipment. The
 coordinator retains the native world and registers no character until a transfer.
 
