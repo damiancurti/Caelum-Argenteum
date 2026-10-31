@@ -1,6 +1,45 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.12.4** - 2026-10-31.
+Documentation version: **5.12.5** - 2026-10-31.
+
+## 5.12.5 - Seated human card matches (#590, implementation in progress)
+
+The author approved one-on-one human Truco and Trucazo in V5.12. Both players
+must occupy actual chairs attached to the same dining-table object. Proximity,
+an unrelated chair or two different tables is insufficient. While seated, Use
+opens the interaction with available players at that table. The inviter selects
+Truco/Trucazo and optional Flor for Truco; both explicitly accept those options.
+Changing an option clears both acceptances. One physical deck owned by either
+participant suffices, without consumption or ownership transfer.
+
+A shared native session references the two participants and existing match
+state. Sender identity selects the side; game, turn, table/occupancy, acceptance
+and revision are checked in play scope. Serial revisions survive between
+sessions so old invitations cannot reopen a newer match. Opponent hands remain
+hidden in ordinary UI; native lockstep replicates simulation state, so this is
+not a cryptographic anti-cheat boundary. No routine global actor scan is added:
+seat identity uses direct references; the participant picker is bounded by
+MAXPLAYERS. Portable chairs record their table seat index; older chairs lacking
+that index resolve against the table's at most twelve existing chair references.
+
+Truco keeps 30 points and its accepted optional Flor rules. Trucazo snapshots
+each participant's own Patience/Intelligence/awakened minors and only changes
+match health. No world damage, wagers, rewards, Major Arcana, Magic Senses,
+team play or ranking service is introduced. Existing Argento practice remains
+single-player. The network menu does not globally pause the simulation.
+
+Standing up during a started match forfeits it. A disconnect suspends instead;
+it does not resolve defeat, redeal or erase the hand. Recovery remains the
+common-save coordinated restart contract of #437. Each participant closes their
+own result view independently. New session/link fields are additive; older
+matches have no human-session reference and retain the existing NPC path.
+
+Status: #436 ordinary sitting/shared time is integrated. Native two-peer tests
+pass invitations/actions, actual occupancy, continued shared time, active-hand
+common-save restart and stand-up defeat for both games. Agent UI review checked
+both private hands and keyboard play; single-player Argento regression passes.
+Integrated #437 native departure suspends the exact hand; common-save restart
+with the lifecycle recovery event passes. No author acceptance is claimed.
 
 ## Organized PvP sessions (5.12.4, #438, in progress)
 

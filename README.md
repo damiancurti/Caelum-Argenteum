@@ -6,8 +6,16 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.12.4.** Obtain and update the complete repository, validate
+**Current release: 5.12.5.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+**V5.12 work in progress - #590 table-card PvP:** human Truco and Trucazo
+use actual seats at the same table and preserve inventory/world health. Native
+two-player invitations, play, active-hand common-save restart and stand-up
+forfeit pass; agent UI review confirms private hands in both games. Argento
+regression passes. Lifecycle and arena dependencies now pass together; profile/session tooling remains open;
+author handoff waits for the combined release. No asset redesign or new balance.
+
 
 **V5.12 organized combat (#438):** Palomo and a Domingo-appearance
 organizer in the Buenos Aires plaza offer the approved ring and sewer maze.

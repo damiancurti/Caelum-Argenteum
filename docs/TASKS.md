@@ -1,6 +1,24 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.12.4** - 2026-10-31.
+Documentation version: **5.12.5** - 2026-10-31.
+
+## V5.12 in progress - #590 seated 1v1 cards (5.12.5)
+
+Implemented: direct chair/table ownership, two-party consent and option reset,
+shared match references, sender-side actions, duplicate/stale rejection, human
+Trucazo attribute snapshots, local private-hand projection, stand-up defeat and
+independent result closure. Native isolated two/four-client rules pass.
+
+Verified integration: actual #436 seats/shared clock, production network
+invitations/actions, native active-hand common restart for both games, agent
+keyboard/private-hand UI review and single-player Argento regression. Portable
+seat indexing is corrected, with a bounded legacy-reference fallback.
+
+Outstanding before author handoff:
+- Integrated #437 departure/common-save recovery passes; finish the session launcher.
+- Complete #434-438 separately, then provide the combined manual terminal.
+
+No new author test is ready yet; do not populate pending_test.txt with backlog.
 
 ## V5.12 organized combat - #438 / 5.12.4
 

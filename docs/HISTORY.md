@@ -1,6 +1,51 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.12.4** - 2026-10-31.
+Documentation version: **5.12.5** - 2026-10-31.
+
+## 5.12.5 - Seated human card-rule preparation (#590, 2026-10-30)
+
+Author decisions: one-on-one Truco and Trucazo, both seated at the same table,
+both consent, world continues, one physical deck between them, stand-up forfeit,
+disconnect recovery through a common save. No wagers/rewards or future #443-446
+features. This branch remains in progress, not a completed release acceptance.
+
+Isolated native probes on GZDoom4.14.2: two clients passed26 checks each;
+four clients passed29 each, including games through30 Truco points and a
+Trucazo match KO, stale/duplicate/wrong-game/turn and nonparticipant rejection.
+A full builder package then passed33 checks on each of four native peers,
+including different-table rejection and suspended-session handling.
+The final rebuilt runtime (no source overlay) repeats33 PASS on all four peers;
+all15 changed/new packaged source members match the working tree exactly.
+Those early rule tests used fixture seat state; the integration follow-up below
+uses ordinary #436 sitting and the production network event path. Engine error attempts
+are retained locally; final compiler corrections rename case-insensitive enum
+collisions and remove a shadowing game argument. Original campaign files stay
+untouched. No author check has been requested or accepted for this slice.
+
+Integration follow-up: portable dining chairs now record their seat index, with
+a bounded twelve-chair reference fallback for older saves. PvP labels identify
+the human opponent rather than Argento/ranking. Final package SHA-256:
+`ad2bf1901110d4a33e31b72a64cecc5309720556a26eeebd856ec27fd16c0edb`.
+Both games pass fifteen integration checks per native peer and nine common-save
+restart checks per peer. Two additional UI review runs pass fifteen per peer;
+the agent activated each window and checked different private hands, opponent
+card backs and keyboard play. Argento passes twelve single-player checks.
+Evidence: `assets/validation_v5_12_5/integration-results.json`. Failed probes
+are retained: the first restart fixture attempted a card at a result phase;
+the first NPC fixture started before deferred PostBeginPlay populated Patience.
+Corrected fixtures pass without changing game rules. Abrupt disconnect recovery
+remains a #437 integration obligation; native save restart is not hot joining.
+Final dependency integration with #436/#437/#438 passes164 native assertions.
+Both games suspend after a real peer departure without changing cards, score or
+revision; the survivor cannot play for the absent participant. Coordinated
+restart sends the lifecycle recovery event and restores the exact hand and seats.
+Both games additionally load the same host checkpoint in both native processes.
+Final packaging normalizes only MENUDEF/ZSCRIPT line endings; the final archive
+repeats18 checks and all16 card-source members match the staged Git bytes.
+Seated players cannot commit arena/world travel. Evidence and retained logs:
+assets/validation_v5_12_5/lifecycle-results.json and lifecycle-logs.json.gz.
+The runner now uses unique microsecond directories after a parallel-launch
+collision before native startup. No gameplay change or author acceptance is implied.
 
 ## 5.12.4 - Organized combat venues (#438, 2026-10-31, in progress)
 

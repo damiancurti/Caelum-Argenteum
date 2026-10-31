@@ -7198,6 +7198,34 @@ CA_COMPANION_PREVIOUS = "Arriba Anterior";
 CA_COMPANION_NEXT = "Abajo Siguiente";
 
 [enu default]
+CA_CARD_OPPONENT = "Opponent";
+CA_CARD_PVP = "Player versus player - the world continues";
+CA_CARD_TABLE_TITLE = "Cards at the table";
+CA_CARD_TABLE_HELP = "Both players must stay seated at this same table. Choose a partner, agree on the game, and both accept. Standing up during play forfeits the match.";
+CA_CARD_INVITE_PLAYER = "Invite player %d";
+CA_CARD_SELECT_TRUCO = "Game: Truco (change)";
+CA_CARD_SELECT_TRUCAZO = "Game: Trucazo (change)";
+CA_CARD_CONSENT = "Accept game and options";
+CA_CARD_ACCEPTED = "Accepted: %d / 2";
+CA_CARD_NO_PARTNER = "No other available player is seated at this table.";
+[es]
+CA_CARD_OPPONENT = "Contrincante";
+CA_CARD_PVP = "Jugador contra jugador - el mundo continúa";
+CA_CARD_TABLE_TITLE = "Cartas en la mesa";
+CA_CARD_TABLE_HELP = "Ambos deben permanecer sentados en esta misma mesa. Elegí contrincante, acordá el juego y acepten los dos. Levantarse durante la partida cuenta como abandono.";
+CA_CARD_INVITE_PLAYER = "Invitar al jugador %d";
+CA_CARD_SELECT_TRUCO = "Juego: Truco (cambiar)";
+CA_CARD_SELECT_TRUCAZO = "Juego: Trucazo (cambiar)";
+CA_CARD_CONSENT = "Aceptar juego y opciones";
+CA_CARD_ACCEPTED = "Aceptaron: %d / 2";
+CA_CARD_NO_PARTNER = "No hay otro jugador disponible sentado en esta mesa.";
+
+[enu default]
+CA_CARD_RECOVERY = "Session interrupted. The hand is preserved for recovery from a common save.";
+[es]
+CA_CARD_RECOVERY = "Sesión interrumpida. La mano se conserva para recuperar desde un guardado común.";
+
+[enu default]
 CA_COOP_TIME_TITLE = "Shared time";
 CA_COOP_TIME_HELP = "Everyone must accept this exact duration. Waiting does not count as consent. Any player may cancel; changing the duration clears all votes.";
 CA_COOP_TIME_DURATION = "Duration: %d minutes of world time";
@@ -7271,6 +7299,25 @@ CA_COOP_TRAVEL_DEPARTURE = "Espera prevista antes de salir: %.2f h";
 CA_COOP_TRAVEL_ROADSIDE = "Roadside stop, %.2f km traveled";
 [es]
 CA_COOP_TRAVEL_ROADSIDE = "Parada en el camino, %.2f km recorridos";
+
+[enu default]
+CA_CARD_TRUCO = "TRUCO - Player versus player";
+CA_CARD_TRUCAZO = "TRUCAZO - Player versus player";
+CA_CARD_WITH_FLOR = "30 points | With Flor | The world continues";
+CA_CARD_WITHOUT_FLOR = "30 points | Without Flor | The world continues";
+CA_CARD_TRICKS = "Tricks: you %d / opponent %d";
+CA_CARD_ENVIDO_VALUES = "Your envido: %d | Opponent: %d";
+CA_CARD_FLOR_VALUES = "Flor values: you %d / opponent %d";
+CA_CARD_HAND_POINTS = "Points this hand: you %d | opponent %d";
+[es]
+CA_CARD_TRUCO = "TRUCO - Jugador contra jugador";
+CA_CARD_TRUCAZO = "TRUCAZO - Jugador contra jugador";
+CA_CARD_WITH_FLOR = "30 tantos | Con Flor | El mundo sigue avanzando";
+CA_CARD_WITHOUT_FLOR = "30 tantos | Sin Flor | El mundo sigue avanzando";
+CA_CARD_TRICKS = "Bazas: tú %d / contrincante %d";
+CA_CARD_ENVIDO_VALUES = "Tu envido: %d | Contrincante: %d";
+CA_CARD_FLOR_VALUES = "Flores: tú %d / contrincante %d";
+CA_CARD_HAND_POINTS = "Tantos de esta mano: tú %d | contrincante %d";
 
 [enu default]
 CA_COOP_RETURN_READY = "Every living player must finish the mansion trials and carry their own departure equipment.";

@@ -15,7 +15,7 @@ class CaelumTrucazoEvents : StaticEventHandler
     {
         if(consoleplayer<0 || gamestate!=GS_LEVEL)return;
         let user=CaelumPlayer(players[consoleplayer].mo);
-        let match=user==null?null:CaelumTrucazoMatch(user.FindInventory("CaelumTrucazoMatch"));
+        let match=CaelumTrucazoMatch.View(user);
         // Un menú anterior no forma parte del save y puede sobrevivir a load.
         // Reponer la vista una vez también recupera la pausa nativa correcta.
         if(match!=null && match.Visible && (RestorePending || menuactive==0))Menu.SetMenu("CaelumTrucazoMenu");
@@ -26,6 +26,8 @@ class CaelumTrucazoEvents : StaticEventHandler
         if(e.Name!="ca_trucazo")return;
         let user=CaelumPlayerAuthority.FromNetworkPlayer(e.Player);
         if(user==null)return;
+        let duel=CaelumCardSeat.Session(user);
+        if(duel!=null){duel.Dispatch(user,CaelumCardDuel.GAME_TRUCAZO,e.Args[0],e.Args[1],e.Args[2]);return;}
         let match=CaelumTrucazoMatch.Get(user);
         if(match!=null)match.Dispatch(e.Args[0],e.Args[1],e.Args[2]);
     }
@@ -46,7 +48,7 @@ class CaelumTrucazoMenu : ListMenu
     {
         if(consoleplayer<0 || gamestate!=GS_LEVEL)return null;
         let user=CaelumPlayer(players[consoleplayer].mo);
-        return user==null?null:CaelumTrucazoMatch(user.FindInventory("CaelumTrucazoMatch"));
+        return CaelumTrucazoMatch.View(user);
     }
     override void Init(Menu parent,ListMenuDescriptor desc)
     {
@@ -56,7 +58,16 @@ class CaelumTrucazoMenu : ListMenu
         mParentMenu=null;menuactive=Menu.On;
     }
     static String L(String key) { return StringTable.Localize(key,false); }
-    static String Person(int side) {return L(side==0?"CA_TC_YOU":"CA_ARGENTO_NAME");}
+    static int OwnSide()
+    {
+        let match=Match();
+        return match==null || match.Duel==null?0:match.Duel.Side(CaelumPlayer(players[consoleplayer].mo));
+    }
+    static String Person(int side)
+    {
+        let match=Match();
+        return L(side==OwnSide()?"CA_TC_YOU":match!=null && match.Duel!=null?"CA_CARD_OPPONENT":"CA_ARGENTO_NAME");
+    }
     void Send(int operation,int index=0)
     {
         let match=Match();
@@ -67,13 +78,15 @@ class CaelumTrucazoMenu : ListMenu
     void Add(int operation,String label)
     {
         let match=Match();
-        if(operation>=0 && !match.CanAct(0,operation,CardCursor))return;
+        if(operation>=0 && !match.CanAct(OwnSide(),operation,CardCursor)
+            && !(match.Duel!=null && match.Duel.Suspended && operation==CaelumTrucazoRules.CLOSE))return;
         Operations.Push(operation);Labels.Push(label);
     }
     void Choices()
     {
         Operations.Clear();Labels.Clear();
         let match=Match();if(match==null)return;
+        if(match.Duel!=null && match.Duel.Suspended){Add(CaelumTrucazoRules.CLOSE,L("CA_TC_CLOSE"));return;}
         if(ConfirmForfeit)
         {Add(CaelumTrucazoRules.FORFEIT,L("CA_TC_CONFIRM"));Add(-4,L("CA_TC_RETURN"));return;}
         if(Details>0){Add(-1,L("CA_TC_RETURN"));return;}
@@ -88,7 +101,7 @@ class CaelumTrucazoMenu : ListMenu
         Add(CaelumTrucazoRules.ADVANCE,L("CA_TC_NEXT"));
         Add(-1,L("CA_TC_RULES"));
         if(match.HandNumber>0)Add(-2,L("CA_TC_ROWS"));
-        Add(-5,L("CA_TC_SAVE"));Add(-6,L("CA_TC_LOAD"));
+        if(match.Duel==null){Add(-5,L("CA_TC_SAVE"));Add(-6,L("CA_TC_LOAD"));}
         if(match.Active())Add(-3,L("CA_TC_FORFEIT"));
         else Add(CaelumTrucazoRules.CLOSE,L("CA_TC_CLOSE"));
         Focus=Clamp(Focus,0,Max(0,int(Operations.Size())-1));
@@ -100,22 +113,22 @@ class CaelumTrucazoMenu : ListMenu
         menuactive=Menu.On;
         if(match.HandNumber>0)
         {
-            CardCursor=Clamp(CardCursor,0,Max(0,int(match.Sides[0].Hand.Size())-1));
-            if(match.Sides[0].Used[CardCursor])MoveCard(1);
+            CardCursor=Clamp(CardCursor,0,Max(0,int(match.Sides[OwnSide()].Hand.Size())-1));
+            if(match.Sides[OwnSide()].Used[CardCursor])MoveCard(1);
         }
         Choices();
         // Sólo un paso pendiente por revisión evita dobles jugadas por FPS.
-        if(match.Phase==CaelumTrucazoRules.PLAYING
+        if(match.Duel==null && match.Phase==CaelumTrucazoRules.PLAYING
             && (match.Pending!=0?match.Caller==0:match.Turn==1))Send(CaelumTrucazoRules.NPC_STEP);
     }
     void MoveCard(int direction)
     {
         let match=Match();if(match==null || match.HandNumber==0)return;
-        int count=match.Sides[0].Hand.Size();
+        int count=match.Sides[OwnSide()].Hand.Size();
         for(int step=0;step<count;step++)
         {
             CardCursor=(CardCursor+direction+count)%count;
-            if(!match.Sides[0].Used[CardCursor])break;
+            if(!match.Sides[OwnSide()].Used[CardCursor])break;
         }
     }
     void Choose()
@@ -158,8 +171,8 @@ class CaelumTrucazoMenu : ListMenu
             if(e.KeyChar>=49 && e.KeyChar<=53)
             {
                 let match=Match();int index=e.KeyChar-49;
-                if(match!=null && match.HandNumber>0 && index<int(match.Sides[0].Hand.Size())
-                    && !match.Sides[0].Used[index])CardCursor=index;
+                if(match!=null && match.HandNumber>0 && index<int(match.Sides[OwnSide()].Hand.Size())
+                    && !match.Sides[OwnSide()].Used[index])CardCursor=index;
                 return true;
             }
         }
@@ -173,10 +186,10 @@ class CaelumTrucazoMenu : ListMenu
         for(int i=0;i<int(Operations.Size());i++)
             Pointer.Add(100+Operations[i],562,110+i*27,220,27);
         if(Details==0 && !ConfirmForfeit && match.HandNumber>0 && match.Phase!=CaelumTrucazoRules.INTRO)
-            for(int i=0;i<int(match.Sides[0].Hand.Size());i++)
+            for(int i=0;i<int(match.Sides[OwnSide()].Hand.Size());i++)
             {
-                if(match.Sides[0].Used[i])continue;
-                let texture=TexMan.CheckForTexture(CaelumTarotArt.FrontPath(match.Sides[0].Hand[i]),TexMan.Type_Any);
+                if(match.Sides[OwnSide()].Used[i])continue;
+                let texture=TexMan.CheckForTexture(CaelumTarotArt.FrontPath(match.Sides[OwnSide()].Hand[i]),TexMan.Type_Any);
                 if(!texture.IsValid())continue;
                 let size=TexMan.GetScaledSize(texture);double scale=Min(92/size.X,120/size.Y);
                 Pointer.Add(i+1,22+i*105+(92-size.X*scale)/2,390,size.X*scale,size.Y*scale);
@@ -221,8 +234,9 @@ class CaelumTrucazoMenu : ListMenu
     }
     String Status(CaelumTrucazoMatch match)
     {
+        if(match.Duel!=null && match.Duel.Suspended)return L("CA_CARD_RECOVERY");
         if(match.Phase==CaelumTrucazoRules.INTRO)return L("CA_TC_INTRO");
-        if(match.Phase==CaelumTrucazoRules.MATCH_RESULT)return L(match.Abandoned?"CA_TC_ABANDONED":match.Winner==0?"CA_TC_WIN":"CA_TC_LOSS");
+        if(match.Phase==CaelumTrucazoRules.MATCH_RESULT)return L(match.Winner==OwnSide()?"CA_TC_WIN":match.Abandoned?"CA_TC_ABANDONED":"CA_TC_LOSS");
         if(match.Phase==CaelumTrucazoRules.HAND_RESULT)return String.Format(L("CA_TC_HAND_WIN"),Person(match.Winner));
         if(match.Phase==CaelumTrucazoRules.TRICK_RESULT)return String.Format(L("CA_TC_TRICK_WIN"),Person(match.TrickVictors[match.Trick]));
         if(match.Pending!=0)return String.Format(L("CA_TC_PENDING"),Person(match.Caller),
@@ -245,8 +259,8 @@ class CaelumTrucazoMenu : ListMenu
     {
         let match=Match();if(match==null)return;
         Screen.Dim(0x080E12,1,0,0,Screen.GetWidth(),Screen.GetHeight());
-        Text(22,18,L("CA_TC_TITLE"),Font.CR_GOLD);
-        Text(22,40,L("CA_TC_PRACTICE"),Font.CR_GRAY);
+        Text(22,18,L(match.Duel!=null?"CA_CARD_TRUCAZO":"CA_TC_TITLE"),Font.CR_GOLD);
+        Text(22,40,L(match.Duel!=null?"CA_CARD_PVP":"CA_TC_PRACTICE"),Font.CR_GRAY);
         Wrap(22,62,750,Status(match),Font.CR_YELLOW);
         Choices();
         if(ConfirmForfeit)Wrap(22,130,510,L("CA_TC_FORFEIT_HELP"));
@@ -258,18 +272,18 @@ class CaelumTrucazoMenu : ListMenu
         else if(Details==2)DrawRows(match);
         else
         {
-            let own=match.Sides[0];let other=match.Sides[1];
-            Text(22,96,String.Format(L("CA_TC_HP"),Person(0),own.Health,own.MaximumHealth),Font.CR_GREEN);
-            Text(294,96,String.Format(L("CA_TC_HP"),Person(1),other.Health,other.MaximumHealth),Font.CR_ORANGE);
+            let own=match.Sides[OwnSide()];let other=match.Sides[1-OwnSide()];
+            Text(22,96,String.Format(L("CA_TC_HP"),Person(OwnSide()),own.Health,own.MaximumHealth),Font.CR_GREEN);
+            Text(294,96,String.Format(L("CA_TC_HP"),Person(1-OwnSide()),other.Health,other.MaximumHealth),Font.CR_ORANGE);
             Text(22,118,String.Format(L("CA_TC_HAND_INFO"),match.HandNumber,match.Trick+1,Person(match.Mano),int(match.Deck.Size())-match.Drawn),Font.CR_GRAY);
             // Sólo el número de cartas rivales se usa; ni índice ni frente.
             for(int i=0;i<other.Remaining();i++)Card(-1,22+i*68,145,60,86);
-            Text(370,153,String.Format(L("CA_TC_TRICKS"),own.Tricks,other.Tricks));
+            Text(370,153,String.Format(L(match.Duel!=null?"CA_CARD_TRICKS":"CA_TC_TRICKS"),own.Tricks,other.Tricks));
             Text(370,175,String.Format(L("CA_TC_STAKES"),match.TrucoValue));
             if(match.EnvidoSettled)
             {
                 Text(370,197,String.Format(L("CA_TC_ENVIDO_AWARD"),Person(match.EnvidoWinner),match.EnvidoAward));
-                if(match.EnvidoRevealed)Text(370,219,String.Format(L("CA_TC_ENVIDO_VALUES"),own.EnvidoValue(),other.EnvidoValue()));
+                if(match.EnvidoRevealed)Text(370,219,String.Format(L(match.Duel!=null?"CA_CARD_ENVIDO_VALUES":"CA_TC_ENVIDO_VALUES"),own.EnvidoValue(),other.EnvidoValue()));
             }
             Text(22,234,L("CA_TC_TABLE"),Font.CR_GRAY);
             for(int side=0;side<2;side++)
