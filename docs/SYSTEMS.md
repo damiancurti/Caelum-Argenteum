@@ -33,6 +33,9 @@ reads new log bytes incrementally. Gameplay and frame-presentation integration
 remain pending; these results do not certify Internet latency or author acceptance.
 
 
+#434: transfer preflight checks the native active-conversation flag, not a stale
+speaker pointer. Ordinary saves remain allowed; no dialogue progress is discarded.
+
 ## External character profile boundary (#434, 5.12.6, in progress)
 
 The approved profile carries identity, attributes, abilities, Tarot, inventory,
@@ -62,6 +65,15 @@ its draft outputs are verification artifacts, not ordinary session launch inputs
 Active crafting/rest/card/travel operations must finish or be cancelled for transfer;
 ordinary native checkpoints may retain crafting. Source retirement performs one
 offline pass over the saved object table; gameplay uses no global actor scan.
+
+Registering older native checkpoints applies the existing #438 team-damage
+copy migration to every saved level before stamping identities; the exact original
+remains an immutable anchor. `caelum_campaigns.py backup OUTPUT` exports a
+consistent closed coordinator. `--store NEW_PATH recover BACKUP` restores all
+campaign/profile custody together to a new path. Never run that restored copy
+alongside an older writable coordinator. Both operations validate SQLite schema,
+references and native anchor hashes; pending reservations and overwrites are
+refused. Missing/corrupt data is never silently replaced by an empty profile.
 
 NarrativeCheckpoint revision1 observes the personal record at the end of
 PersistCharacterState: completed quests, reward receipts, starter/equipment choices,
@@ -201,7 +213,13 @@ peer, not a host-only mutation or independent clocks. Personal trial calendars,
 rest state, inventories and physiological costs remain separate.
 
 Individual sitting and rest no longer require a solo session. One occupant
-standing does not wake another. Accelerating time requires an exact-duration
+standing does not wake another. The two tent berths are available to cooperative
+players while the owner is present in the session. Each needs their own bag;
+the owner retains title and packing permission, and occupancy still blocks
+packing. Berth spacing uses the larger of bag half-width and the occupant's
+actual collision radius, retaining the existing support tolerance. No actor
+radius, tent geometry, recovery bonus or resource cost changes.
+Accelerating time requires an exact-duration
 proposal from T or the time menu. All roster members must explicitly accept;
 silence waits, refusal/cancellation stops the proposal, changing duration clears
 consent and stale/repeated requests cannot act on a new proposal. A rest-origin
@@ -251,10 +269,11 @@ retains its existing explicit departure-only search. Saved enum values are
 preserved, the new kind is appended, and the new door reference defaults null.
 No routine global actor scan is added.
 
-Rescue objectives are campaign-owned in multiplayer. Completing extraction
+Rescue objectives are campaign-owned in solo and multiplayer campaigns. Completing extraction
 captures the ready characters present in the session, including a dead waiting
-participant; eligibility refers to the saved character record, not its reusable
-native player slot. Repeating the objective cannot expand that roster. Each
+participant; eligibility refers to the existing persistent legal identity, with
+the saved-record reference retained for old saves, not its reusable player slot.
+Reconstructing a returning profile therefore does not erase earned eligibility. Repeating the objective cannot expand that roster. Each
 eligible character can claim the existing currency/reputation reward once.
 Personal claim flags remain authoritative against repeat rewards across worlds.
 A late-ready character keeps their pending personal rescue and the Journal says
@@ -264,9 +283,10 @@ The actual initiating player remains the prisoner's escort leader.
 
 Revision-1 migration seeds the campaign rescue state from its existing clock
 owner, granting old extracted-objective eligibility only to records that already
-held extraction. Original saves remain untouched. New portable campaigns must
-initialize a fresh world ledger rather than import an advanced profile's world
-state; that profile-boundary integration remains #434. Eligibility snapshots and
+held extraction. Original saves remain untouched. Ready characters initialize their legal
+identity idempotently, and the campaign initializes its world ledger before a
+profile can transfer. The #434 coordinator must require that native migration
+in both campaigns rather than seed a foreign world from an imported profile. Eligibility snapshots and
 migration iterate only the bounded native roster and four rescue records.
 
 Central-house restitution is a single world transaction. The initiating

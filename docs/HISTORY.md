@@ -47,6 +47,27 @@ runs remain alongside successful evidence. No author acceptance is recorded.
 
 ## 5.12.6 - Typed personal profile graph foundation (#434, 2026-10-31)
 
+Recovery follow-up: registration invokes the existing #438 copy-only native
+team-damage migration, including inactive saved levels, while retaining the
+original anchor byte-for-byte. Closed coordinators can be backed up and recovered
+to a new path, restoring every campaign head and profile assignment together.
+Active reservations, corrupt/future databases, damaged anchors and overwrites
+are refused. Recovery does not authorize running two writable coordinator copies.
+Eighteen transaction checks pass. Actual MAP03 native peers also verify death
+and staged deceased-profile transfer (8 seed +16 transfer assertions): no
+resurrection, material duplication or change to the other participant. Evidence:
+recovery-results.json/recovery-logs.json.gz. The native runner now distinguishes
+packaged campaign geometry from isolated fixtures; both retain originals.
+
+Native conversation preflight follow-up: GZDoom4.14.2 serializes the speaker as
+`conversionnpc` (its actual spelling), with `flags5 & 0x20000000` indicating an
+active conversation. Transfer now rejects that active state but accepts a stale
+speaker pointer after dialogue. Two native peers pass10 assertions; both produced
+saves pass the corresponding offline deny/allow checks without modifying originals.
+Fourteen transaction checks pass. Bindings are data in personal-boundary.json;
+source references are g4.14.2 playsim/p_user.cpp, p_mobj.cpp and actor.h. The first
+fixture misspelled the Palomo actor class; its failed logs remain preserved.
+
 Implements read-only typed ownership extraction and copied native installation,
 plus an additive static import reconciler. SQLite foundation checks cover immutable
 anchors, concurrent custody, stale revisions, rollback and corruption refusal.
@@ -214,6 +235,28 @@ Runs 20261030-222144/222237 and package SHA-256 are in validation_v5_12_2.
 This remains agent verification, not author acceptance.
 
 ## 5.12.2 - Shared clock and time consent (#436, 2026-10-30, in progress)
+
+Portable-progress follow-up (2026-10-31): solo campaigns now initialize the
+same revision-1 world objective ledger before profile transfer. Earned reward
+eligibility compares the existing persistent legal identity as well as the
+original record pointer. No new field, balance rule or global actor scan is
+introduced. Final native package passes 150 assertions: one/eight-player
+progress checks, two-player house regression and true old-save rescue migration.
+The first build exposed a scope mismatch in the pure identity comparator; its
+failed logs are preserved. Results, hashes and logs: progress-results.json and
+progress-logs.json.gz. Actual coordinator transfer/return verification remains
+#434; these isolated checks are not author acceptance.
+
+Tent follow-up (2026-10-31): the old owner-only rest guard prevented a second
+cooperative player from using the approved second berth. Sharing now requires
+the owner's presence in the native roster, without transferring ownership or
+packing rights. Berths account for actual collision radii. Two real native
+players pass 18 checks each: separate bags, simultaneous occupancy, ordinary
+rest while another plays, unanimous acceleration, wake cancellation and retained
+bag ownership. The initial overlay incorrectly replaced newer dependency files;
+the runner now overlays only the affected tent source for this scenario.
+Final-package and failed development evidence: tent-results.json/tent-logs.json.gz.
+This is agent verification, not author acceptance.
 
 House follow-up (2026-10-31): the author approves shared title/access for
 characters present when the house is recovered, with refunds only to the actual

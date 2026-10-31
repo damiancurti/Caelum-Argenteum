@@ -1003,7 +1003,7 @@ class CaelumPlayer : DoomPlayer
 
     int GetPrisonerRescueState(int prisonerId)
     {
-        if(multiplayer && prisonerId>=0 && prisonerId<CaelumConstants.PRISONER_COUNT)
+        if(prisonerId>=0 && prisonerId<CaelumConstants.PRISONER_COUNT)
         {
             let world=CaelumCooperativeQuests.Get(self);
             if(world!=null)return world.PrisonerState[prisonerId];
@@ -1016,7 +1016,7 @@ class CaelumPlayer : DoomPlayer
 
     bool SetPlayerPrisonerRescueState(int prisonerId, int nextState)
     {
-        if(multiplayer)
+        if(CaelumCooperativeQuests.Get(self)!=null)
         {
             let world=CaelumCooperativeQuests.Get(self);
             return world!=null && world.Transition(self,prisonerId,nextState);

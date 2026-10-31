@@ -1,6 +1,7 @@
 """Transactional campaign custody checks using real native saves (#434)."""
 from concurrent.futures import ThreadPoolExecutor
 import copy
+import hashlib
 import datetime
 import json
 from pathlib import Path
@@ -9,7 +10,7 @@ import unittest
 
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT))
-from caelum_profiles import ProfileStore,ProfileError
+from caelum_profiles import ProfileStore,ProfileError,recover_backup
 from caelum_profile_graph import NativeSchema,PersonalGraph
 from caelum_campaigns import Campaigns,unpack,pack,personal_record
 
@@ -33,6 +34,16 @@ class CampaignTests(unittest.TestCase):
         self.store.close();self.assertEqual(SOURCE.read_bytes(),DATA)
 
     def stage(self,token='one'):return self.campaigns.stage(self.identity,'b',1,token)
+
+    def test_native_dialogue_flag_blocks_but_stale_reference_does_not(self):
+        members,name,level=unpack(self.store.anchor(self.a['snapshot']))
+        speaker=level['players'][1]['mo'];level['players'][0]['conversionnpc']=speaker
+        level['objects'][speaker]['flags5']=ADAPTER.policy['native_conversation']['active_mask']
+        self.campaigns.checkpoint('a',pack(members,name,level),0)
+        with self.assertRaises(ProfileError):self.stage()
+        level['objects'][speaker]['flags5']=0
+        self.campaigns.checkpoint('a',pack(members,name,level),1)
+        self.assertEqual(json.loads(self.stage()['request'])['identity'],self.identity)
 
     def verified(self,row):
         source=self.store.anchor(row['source_draft'])
@@ -147,6 +158,44 @@ class CampaignTests(unittest.TestCase):
         self.assertIs(type(personal_record(level,0)['ProfileDeparted']),int)
         self.assertEqual(personal_record(level,0)['ProfileDeparted'],1)
         self.assertIs(type(level['multiplayer']),bool)
+
+    def test_registration_migrates_all_saved_levels_and_retains_original(self):
+        members,name,level=unpack(DATA)
+        level['teamdamage']=0
+        members['inactive.map.json']=json.dumps(level).encode()
+        data=pack(members,name,level)
+        head=self.campaigns.register('legacy-hub',data)
+        migrated,_,current=unpack(self.store.anchor(head['snapshot']))
+        self.assertEqual(current['teamdamage'],1)
+        self.assertEqual(json.loads(migrated['inactive.map.json'])['teamdamage'],1)
+        self.assertIn('caelum-arena-migration.json',migrated)
+        self.assertEqual(self.store.anchor(hashlib.sha256(data).hexdigest()),data)
+
+    def test_closed_backup_recovers_all_custody_and_refuses_overwrite(self):
+        backup=self.directory/'backup.sqlite3';recovered=self.directory/'recovered.sqlite3'
+        self.store.backup(backup);original=backup.read_bytes()
+        recover_backup(backup,recovered)
+        restored=ProfileStore(recovered)
+        try:
+            self.assertEqual(restored.get(self.identity),self.store.get(self.identity))
+            self.assertEqual(Campaigns(restored,ADAPTER).head('a'),self.a)
+            self.assertEqual(Campaigns(restored,ADAPTER).head('b'),self.b)
+        finally:restored.close()
+        self.assertEqual(backup.read_bytes(),original)
+        with self.assertRaises(FileExistsError):recover_backup(backup,recovered)
+        self.assertEqual(backup.read_bytes(),original)
+
+    def test_pending_transfer_cannot_be_cloned_as_recovery(self):
+        self.stage()
+        with self.assertRaises(ProfileError):self.store.backup(self.directory/'busy.sqlite3')
+        self.assertFalse((self.directory/'busy.sqlite3').exists())
+
+    def test_corrupt_backup_never_creates_replacement(self):
+        damaged=self.directory/'corrupt.sqlite3';damaged.write_bytes(b'broken SQLite')
+        destination=self.directory/'replacement.sqlite3'
+        with self.assertRaises(ProfileError):recover_backup(damaged,destination)
+        self.assertEqual(damaged.read_bytes(),b'broken SQLite')
+        self.assertFalse(destination.exists())
 
 
 if __name__=='__main__':

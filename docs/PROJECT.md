@@ -40,8 +40,10 @@ heads. Transfers reserve both worlds, retire source material ownership and publi
 both engine-verified results in one transaction. Two native peers verify outward
 and return transfers, preserving other participants and campaign property/stock.
 Narrative saves follow committed personal changes and retain pending work while
-busy. The session launcher, broader migration/recovery and remaining multiplayer
-integration are still unfinished. No author acceptance or release completion.
+busy. Whole-coordinator backup/recovery and deceased-profile transfer in actual
+MAP03 pass, preserving original anchors and single custody without resurrection.
+Hub/portable-quest boundaries and final session integration remain unfinished.
+No author acceptance or release completion.
 
 ## 5.12.5 - Human card-table PvP preparation (#590)
 
@@ -87,7 +89,11 @@ consented stops and original-ticket resumption. Initial tutorial departure
 requires all living players to finish and retain their personal loadout before
 unanimous transfer. Rescues snapshot eligible characters and prevent duplicate
 or retroactive claims. House restitution shares title/access while refunding
-only the original payer. Remaining quest/lifecycle integration is unfinished. The full
+only the original payer. Two cooperative players share the actual tent berths,
+each with their own bag, without sharing ownership or packing permission.
+Solo and cooperative objective ledgers now preserve earned eligibility by the
+character's existing legal identity, rather than only a record pointer. Actual
+cross-campaign transfer integration remains under verification. The full
 V5.12 milestone is not complete or author-accepted. Evidence is kept in
 `assets/validation_v5_12_2`, distinct from #435 and #590.
 

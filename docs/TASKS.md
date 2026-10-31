@@ -42,8 +42,9 @@ reward/choice saves survive reload without another reward or automatic save.
 
 Still required before delivery:
 - Integrate profile commands with #435 session identities, package preflight and recovery.
-- Expand native coverage to campaign geometry, deceased profiles and migration sources.
-- Check active-conversation preflight against native serialized state and profile root coverage.
+- Actual MAP03/deceased transfer and native migration/backup integration pass;
+  complete hub and personal/world quest-boundary coverage.
+- Active-conversation native preflight is verified; complete broader profile root coverage.
 - Complete remaining #436 two-player rest/portable-progress integration.
 - Legacy #437 registration is fixed and verified; retain it in final recovery tests.
 - Finish combined validation before creating the author terminal and pending checks.
@@ -99,8 +100,12 @@ Transport boarding/fares/stop/resume are implemented; broaden lifecycle and
 rebooking/abandonment coverage. Initial tutorial departure now validates all
 living participants and loadouts before unanimous transfer. Rescue objectives
 now snapshot eligible character records, preserve late personal progress and
-grant each eligible reward once, including coordinated save recovery. Remaining
-#436: other objective conflicts, full lifecycle and tent-rest integration.
+grant each eligible reward once, including coordinated save recovery. Solo
+worlds initialize the same ledger and reconstructed records match existing legal
+identity. Remaining #436: actual cross-campaign/profile integration.
+Two actual cooperative bodies now share the deployed tent with separate native
+bags and ownership. The focused two-peer test passes 18 assertions per peer;
+full-package verification remains recorded in the accompanying tent evidence.
 Central-house restitution now grants shared titles to eligible present characters
 and refunds only the original payer, using one world-owned settlement.
 Cross-issue remaining: #434 portable profiles/checkpoints; #435 production

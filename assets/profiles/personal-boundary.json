@@ -1,6 +1,7 @@
 {
   "revision": 1,
   "native_save_version": 4560,
+  "native_conversation": {"reference": "conversionnpc", "flags": "flags5", "active_mask": 536870912},
   "author_scope": "Identity, attributes, abilities, Tarot, inventory, money and personal progress travel. Maps, NPCs, shops and property ownership remain campaign-owned.",
   "root_bases": [
     "CaelumPersistentCharacterState", "CaelumEquipmentItem", "CaelumConsumableItem",

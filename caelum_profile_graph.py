@@ -235,8 +235,19 @@ class PersonalGraph:
         for field in self.policy['transfer_blocked_body_flags']:
             if live.get(field):
                 raise ProfileError(f'Finish or cancel the active operation before transfer: {field}')
-        if native.get('conversationnpc') is not None:
-            raise ProfileError('Finish the current conversation before transfer.')
+        # GZDoom 4.14.2 deliberately serializes the misspelled "conversionnpc".
+        # Its pointer can outlive the dialogue; only the actor's active flag
+        # blocks transfer. These are native ABI bindings, not gameplay tuning.
+        guard = self.policy['native_conversation']
+        speaker = native.get(guard['reference'])
+        if speaker is not None:
+            if isinstance(speaker,bool) or not isinstance(speaker,int) or not 0 <= speaker < len(level['objects']):
+                raise ProfileError('Invalid native conversation reference.')
+            flags = level['objects'][speaker].get(guard['flags'], 0)
+            if isinstance(flags,bool) or not isinstance(flags,int):
+                raise ProfileError('Invalid native conversation flags.')
+            if flags & guard['active_mask']:
+                raise ProfileError('Finish the current conversation before transfer.')
         cursor = body.get('inventory')
         seen = set()
         while cursor is not None:
