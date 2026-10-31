@@ -1,6 +1,25 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.12.3** - 2026-10-31.
+Documentation version: **5.12.4** - 2026-10-31.
+
+## 5.12.4 - Organized combat venues (#438, 2026-10-31, in progress)
+
+Implements the approved venue dimensions and NPC organizers without altering
+personal stats or equipment. Original deterministic geometry reuses owned city
+materials and the Domingo sprite. Shared travel consent is extended for arena
+entry/return and explicit team changes. Match results grant no prizes; death
+remains persistent. Final native package passes390 assertions: eight peers each
+check39 outcomes, two peers save13 checks each and reload26 checks each. The
+pre-arena copy migration/static handler pass six additional native checks. The
+legacy input and every failed iteration remain preserved; the adapter changes
+only saved teamdamage and passes scalar-diff, idempotence and refusal checks.
+Live visual review confirms the ring posts/ropes and stone maze. The actual
+Buenos Aires organizer opens the Spanish UI; keyboard destination/mode changes
+were checked through CUA. An initial
+editor id outside the signed range produced an unknown thing; corrected before
+the final build. Determinism/connectivity checks pass. Evidence lives in
+assets/validation_v5_12_4. Coordinated-launcher integration and the combined
+author suite remain pending; no manual acceptance or rendering-FPS claim.
 
 ## 5.12.3 - Cooperative lifecycle guards (#437, 2026-10-31, in progress)
 

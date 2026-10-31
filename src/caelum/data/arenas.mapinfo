@@ -1,0 +1,3 @@
+map CARING "$CA_ARENA_RING" { cluster=434 nointermission teamdamage=1 UnFreezeSinglePlayerConversations music="CA_MUS04_PORT" }
+map CASEWER "$CA_ARENA_MAZE" { cluster=434 nointermission teamdamage=1 UnFreezeSinglePlayerConversations music="CA_MUS03_SEWER" }
+DoomEdNums { 31090=CaelumArenaRingFrame }

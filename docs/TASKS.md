@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.12.3** - 2026-10-31.
+Documentation version: **5.12.4** - 2026-10-31.
+
+## V5.12 organized combat - #438 / 5.12.4
+
+Implemented the authored ring/labyrinth, NPC entry, shared consent, individual/
+team results, surrender and original-body return. Native 2/8-peer tests cover
+consent, actual friendly damage, state/item identity and checkpoint recovery.
+Pre-arena saves need the tested scalar-only adapter; connect it to the #434/#435
+launcher. Visual author acceptance remains pending. Keep #438 separate from
+#437 and #590.
 
 ## V5.12 lifecycle work - #437 / 5.12.3
 

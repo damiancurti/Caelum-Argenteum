@@ -6,8 +6,17 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.12.3.** Obtain and update the complete repository, validate
+**Current release: 5.12.4.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+**V5.12 organized combat (#438):** Palomo and a Domingo-appearance
+organizer in the Buenos Aires plaza offer the approved ring and sewer maze.
+The shared consent mechanism governs entry and return. Combat keeps actual
+attributes, equipment, friendly fire and ordinary death. Native multi-peer and
+save recovery checks pass; the final combined author suite remains pending.
+For pre-arena saves, `python migrate_arena_save.py original.zds migrated.zds`
+creates a separate revisioned copy with the approved friendly-fire rule, without
+overwriting the original. The coordinated session launcher will apply this adapter.
 
 **V5.12 lifecycle (#437):** cooperative death retains the original pawn, inventory
 and identity through native map travel. The Fool now requests a unanimous mansion

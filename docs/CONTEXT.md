@@ -1,10 +1,10 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.12.3** - 2026-10-31.
+Documentation version: **5.12.4** - 2026-10-31.
 
 **V5.12 in progress:** #436/PR592 clock/travel/tutorial/rescue/shared-house rules;
 #437 native death/consent, Fool journey, spirit dialogue/deferred rewards.
-#434/#435/#438/#590 integration unfinished. No author acceptance; combined manual suite after completion.
+#438 arenas/native recovery verified; #434/#435/#590 integration unfinished. No author acceptance; combined manual suite after completion.
 **V5.11/V5.10 accepted/merged:** HISTORY; no pending checks. Siege stalls persist.
 
 **V5.9 accepted/merged:** #418-424 closed, PR561-569; CA418-01..CA424-01

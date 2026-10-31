@@ -1,6 +1,36 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.12.3** - 2026-10-31.
+Documentation version: **5.12.4** - 2026-10-31.
+
+## Organized PvP sessions (5.12.4, #438, in progress)
+
+Palomo and the Domingo-appearance organizer in the Buenos Aires plaza offer the
+ring and sewer maze. Starting a match requires 2-8 living available players and
+unanimous entry consent. Individual combat ends with the last surviving entrant;
+teams contain 1-4 players each and end when only one team retains active survivors.
+Initial team allocation alternates native slots; each player may change their
+team before accepting, which clears all votes. Invalid team sizes cannot start.
+
+The native map teamdamage factor is 1 for both campaign and arenas: friendly fire
+also applies within an arena team. Attributes, equipment, wear and consumptions
+remain real. The ring uses the approved urban environmental category and the
+maze uses the sewer category; neither grants immunity to ordinary needs or
+contamination. Surrender removes the participant from the result and locks their
+controls until the match ends; it grants no invulnerability or refunds. There
+is no time limit or additional reward. A simultaneous final death has no winner.
+
+Entry saves each participant's departure position. After the match, return needs
+unanimous consent. It carries the same original bodies/items to their departure
+positions, including corpses, without resurrection. Dead arrivals in the mansion
+use the approved spirit rules. The session menu is accessible from the main menu;
+starting an event still requires a nearby organizer. Saved matches retain their
+roster, teams, withdrawals and result; disconnects withdraw that participant.
+Native multi-peer verification passes; author acceptance is pending. Older
+saves require the separate-copy `migrate_arena_save.py` adapter because GZDoom
+restores their saved teamdamage value. It changes only that scalar in each saved
+level, records migration revision1 and preserves the original archive. The
+static arena service works when loading pre-arena saves. Organizer preparation
+uses one local query at its authored position on entry/load, avoiding duplication.
 
 ## Cooperative death and recovery (5.12.3, #437, in progress)
 

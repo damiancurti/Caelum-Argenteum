@@ -5808,3 +5808,19 @@ Limitations / superseded by:
 ```
 
 For non-runtime constraints, mark engine reproduction not applicable and provide the static/source evidence. Empty template fields are not executed tests.
+
+## CA-KP-197 - Old native saves keep event-handler lists and team damage
+
+Status/evidence: ENGINE-VERIFIED, #438, 2026-10-31, GZDoom 4.14.2/Windows11.
+Evidence: assets/validation_v5_12_4/arena-results.json and arena-logs.json.gz.
+A pre-arena native two-player save loaded without the newly listed per-level
+CaelumArenaEvents and retained saved teamdamage=0 despite MAPINFO teamdamage=1.
+Use a static handler for this additive service, with per-arrival state reset;
+one local query at the authored organizer position preserves its existing body.
+Do not assume that adding GameInfo EventHandlers upgrades old serialized levels.
+The reversible migrate_arena_save.py adapter changes only teamdamage in saved
+level JSON, preserves every other field/member and retains the original archive.
+It validates native revision4560, refuses overwrite, records revision1 and is
+idempotent. Two real recovered peers confirm the handler, original record and
+actual friendly damage. Integrate this adapter in the #434/#435 recovery launcher.
+No author acceptance or general compatibility with other native save versions.

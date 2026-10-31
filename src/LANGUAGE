@@ -7310,3 +7310,47 @@ CA_SPIRIT_REWARD_PENDING = "Tu misión avanzó. La recompensa material queda pen
 CA_SPIRIT_CONTROLS = "Spirit in Limbo: move and talk with {bind:+use}. Your body and material possessions remain where you died. Palomo offers the return.";
 [es]
 CA_SPIRIT_CONTROLS = "Espíritu en el Limbo: movete y hablá con {bind:+use}. Tu cuerpo y tus pertenencias materiales siguen donde moriste. Palomo ofrece el regreso.";
+
+[enu default]
+CA_ARENA_TITLE = "Combat session";
+CA_ARENA_RING = "Ring";
+CA_ARENA_MAZE = "Sewer labyrinth";
+CA_ARENA_ORGANIZER = "Combat organizer";
+CA_ARENA_ASK = "Organize a combat between players.";
+CA_ARENA_RULES = "Use your own attributes and equipment. Damage, wear, consumables and death keep their usual consequences; friendly fire is active. No additional prizes or time limit. Everyone must agree to enter and to return.";
+CA_ARENA_NEED_ORGANIZER = "Speak to Palomo or the combat organizer in the Buenos Aires plaza to arrange a match.";
+CA_ARENA_INDIVIDUAL = "Individual combat: last survivor wins";
+CA_ARENA_TEAMS = "Two teams: up to four players each";
+CA_ARENA_TEAMS_HELP = "T: choose your team. Changing teams clears everyone's acceptance. Each team needs one to four players; friendly fire remains active.";
+CA_ARENA_YOUR_TEAM = "Your team: %d";
+CA_ARENA_PROPOSE = "Invite everyone and request the transfer";
+CA_ARENA_NOT_READY = "The match needs 2–8 living, available players. Teams must contain 1–4 players each. Finish and return from any previous match first.";
+CA_ARENA_FIGHTING = "Combat in progress";
+CA_ARENA_NO_WINNER = "Combat ended without a survivor";
+CA_ARENA_WINNER = "Winner: %s";
+CA_ARENA_TEAM_WINNER = "Winning team: %d";
+CA_ARENA_SURRENDER = "Surrender and withdraw from combat";
+CA_ARENA_RETURN = "Request return to the departure location";
+CA_ARENA_CLOSE = "Close";
+
+[es]
+CA_ARENA_TITLE = "Sesión de combate";
+CA_ARENA_RING = "Ring";
+CA_ARENA_MAZE = "Alcantarillas laberínticas";
+CA_ARENA_ORGANIZER = "Organizador de combates";
+CA_ARENA_ASK = "Organizar un combate entre jugadores.";
+CA_ARENA_RULES = "Usás tus propios atributos y equipo. El daño, desgaste, consumo y muerte conservan sus consecuencias habituales; hay fuego amigo. Sin premios adicionales ni límite de tiempo. Todos deben aceptar la entrada y el regreso.";
+CA_ARENA_NEED_ORGANIZER = "Hablá con Palomo o con el organizador de combates de la plaza de Buenos Aires para preparar una partida.";
+CA_ARENA_INDIVIDUAL = "Combate individual: gana el último superviviente";
+CA_ARENA_TEAMS = "Dos equipos: hasta cuatro jugadores por equipo";
+CA_ARENA_TEAMS_HELP = "T: elegir equipo. Cambiarlo borra las aceptaciones de todos. Cada equipo necesita de uno a cuatro jugadores; se mantiene el fuego amigo.";
+CA_ARENA_YOUR_TEAM = "Tu equipo: %d";
+CA_ARENA_PROPOSE = "Invitar a todos y proponer el traslado";
+CA_ARENA_NOT_READY = "Se necesitan de 2 a 8 jugadores vivos y disponibles. Cada equipo admite de 1 a 4. Primero hay que terminar y regresar de cualquier combate anterior.";
+CA_ARENA_FIGHTING = "Combate en curso";
+CA_ARENA_NO_WINNER = "El combate terminó sin supervivientes";
+CA_ARENA_WINNER = "Ganador: %s";
+CA_ARENA_TEAM_WINNER = "Equipo ganador: %d";
+CA_ARENA_SURRENDER = "Rendirse y abandonar el combate";
+CA_ARENA_RETURN = "Proponer el regreso al lugar de salida";
+CA_ARENA_CLOSE = "Cerrar";
