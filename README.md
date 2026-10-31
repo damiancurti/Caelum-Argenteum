@@ -37,7 +37,7 @@ and identity through native map travel. The Fool now requests a unanimous mansio
 visit; only the activator pays after consent. Dead visitors move and converse as
 spirits, with material rewards pending until resurrection. Palomo returns the
 group to its recorded departure without another payment or automatic revival.
-Death/departure cancel shared consent. Coordinated recovery tooling and other
+Death/departure cancel shared consent, including native saves predating the lifecycle handler. Coordinated recovery tooling and other
 V5.12 dependencies remain unfinished; author acceptance is still pending.
 
 **V5.12 cooperative world (#436):** native peers now share one campaign clock and
