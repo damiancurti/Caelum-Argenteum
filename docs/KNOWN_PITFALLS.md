@@ -6,7 +6,7 @@ Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
 ## CA-KP-195 - Native inventory pickup may deliberately reject an NPC
 
-Status/evidence: RESOLVED-VERIFIED, #430/PR579, 2026-10-30, GZDoom4.14.2/Windows11.
+Status/evidence: RESOLVED-VERIFIED, #430/PR579, 2026-10-30, GZDoom 4.14.2/Windows11.
 Baseline: companion ranged checkpoint3369321ee; assets/validation_v5_11_4.
 CaelumCarbineAmmo.TryPickup requires a CaelumPlayer. GiveInventory on an NPC can
 therefore leave no ammunition even though the class and amount are valid.
@@ -215,7 +215,7 @@ Status/evidence: RESOLVED-VERIFIED (194 current native assertions;16 original ch
 First recorded / last checked: 2026-10-27 / 2026-10-27
 Issue / PR: #415; shared aim prerequisite5.8.39
 Affected baseline:47fa8dc3 native carbine and WeaponAimOffset
-Environment: GZDoom4.14.2, Windows11, Vulkan1280x720/60cap
+Environment: GZDoom 4.14.2, Windows11, Vulkan1280x720/60cap
 Scope: angular probability estimates; not final damage or trajectories
 
 Carbines share one randomly chosen spread width between their two offsets.
@@ -235,7 +235,7 @@ Status/evidence: RESOLVED-VERIFIED (71 current native assertions plus two origin
 First recorded / last checked: 2026-10-27 / 2026-10-27
 Issue / PR: #502; loaded NPC illness5.8.38
 Affected baseline: 39adda1c plus NPC illness integration
-Environment: GZDoom4.14.2, Windows11, Ryzen9 5950X, Vulkan1280x720/60cap
+Environment: GZDoom 4.14.2, Windows11, Ryzen9 5950X, Vulkan1280x720/60cap
 Scope: combat NPC recovery, canonical contamination carrier and active ticks
 
 Full Life/Anima/Air/Lucidity does not make recovery idle when contamination still
@@ -262,7 +262,7 @@ Status/evidence: RESOLVED-VERIFIED (53 current native assertions plus four origi
 First recorded / last checked: 2026-10-27 / 2026-10-27
 Issue / PR: #502; seal object history5.8.37
 Affected baseline: 685c8d76 plus the temporary-climate history patch
-Environment: GZDoom4.14.2, Windows11, Ryzen9 5950X, Vulkan1280x720/60cap
+Environment: GZDoom 4.14.2, Windows11, Ryzen9 5950X, Vulkan1280x720/60cap
 Scope: CaelumContaminationObject.Sample/Depart; WorldUnloaded boundary
 
 Do not replay a sampled temporary seal through an absent-map interval. Settle
@@ -296,7 +296,7 @@ Status/evidence: RESOLVED-VERIFIED (isolated native engine and crash stack)
 First recorded / last checked: 2026-10-27 / 2026-10-27
 Issue / PR: #410; study acquisition5.8.36
 Affected baseline: d9f561f9 plus initial5.8.36 implementation
-Environment: GZDoom4.14.2, Windows11, Vulkan1280x720/60cap
+Environment: GZDoom 4.14.2, Windows11, Vulkan1280x720/60cap
 Scope: new desk/bookcase transport, their companions and native inventories
 
 TestMobjLocation records BlockingMobj on an obstructed placement. A parked
@@ -333,7 +333,7 @@ Status/evidence: RESOLVED-VERIFIED (isolated native engine)
 First recorded / last checked: 2026-10-27 / 2026-10-27
 Issue / PR: #410; portable study furniture5.8.36
 Affected baseline: d9f561f9 plus initial5.8.36 study implementation
-Environment: GZDoom4.14.2, Windows11, Vulkan1280x720/60cap
+Environment: GZDoom 4.14.2, Windows11, Vulkan1280x720/60cap
 Scope: new writing desk, library companion and its placement storage proxy
 
 The placement probe permits vertically separated solid actors. A new scenery
@@ -355,7 +355,7 @@ Status/evidence: RESOLVED-VERIFIED (native engine and upstream source)
 First recorded / last checked: 2026-10-27 / 2026-10-27
 Issue / PR: #410; sofa seating delivery5.8.29
 Affected baseline: 28e4cd65 plus initial5.8.29 working tree
-Environment: GZDoom4.14.2, Windows11, Vulkan,1280x720/60cap
+Environment: GZDoom 4.14.2, Windows11, Vulkan,1280x720/60cap
 Scope: CaelumRestFurniture.Seat; chairs, beds and sofa proxies
 
 SetOrigin followed by the player's TestMobjLocation does not prove that another
@@ -384,7 +384,7 @@ Status/evidence: RESOLVED-VERIFIED (native engine)
 First recorded / last checked: 2026-10-27 / 2026-10-27
 Issue / PR: #502; regional object history delivery
 Affected baseline: ecdea2b9 plus5.8.28 working tree; validation_5828
-Environment: GZDoom4.14.2, Windows11, Vulkan,1280x720/60cap
+Environment: GZDoom 4.14.2, Windows11, Vulkan,1280x720/60cap
 Scope: CaelumContaminationObject, CaelumContaminationStorage, weather cache
 
 Independently evaluating each elapsed weather minute for1,000 receivers cost
@@ -412,7 +412,7 @@ Status/evidence: RESOLVED-VERIFIED (native engine)
 First recorded / last checked: 2026-10-27 / 2026-10-27
 Issue / PR: #410; mansion bathroom delivery
 Affected baseline: 2a67b934 plus5.8.22 working tree; validation_5822
-Environment: GZDoom4.14.2, Windows11, unchanged campaign mansion
+Environment: GZDoom 4.14.2, Windows11, unchanged campaign mansion
 Scope: CaelumMansionBathrooms and quest preparation ordering
 
 Checking only new fixture collision and use was insufficient. The first layout
@@ -436,7 +436,7 @@ Status/evidence: RESOLVED-VERIFIED (native engine)
 First recorded / last checked: 2026-10-26 / 2026-10-26
 Issue / PR: #411; camp-cooking delivery
 Affected baseline: 7b41e3fc plus5.8.21 working tree; validation_5821
-Environment: GZDoom4.14.2, Windows11, private two-map hub
+Environment: GZDoom 4.14.2, Windows11, private two-map hub
 Scope: CaelumCampWorld.WorldUnloaded and CaelumCampCooking fire reservation
 
 The player cancelled an attended camp recipe after arriving in another map,
@@ -460,7 +460,7 @@ Status/evidence: RESOLVED-VERIFIED (native engine)
 First recorded / last checked: 2026-10-26 / 2026-10-26
 Issue / PR: #410; kitchen-fixture delivery
 Affected baseline: b68f93ae plus5.8.20 working tree; validation_5820
-Environment: GZDoom4.14.2, Windows11, Vulkan1280x720, unchanged mansion geometry
+Environment: GZDoom 4.14.2, Windows11, Vulkan1280x720, unchanged mansion geometry
 Scope: CaelumKitchenCupboard; native storage reach and installation
 
 An overhead cupboard inherited the ground chest's collision flags and foot-origin
@@ -513,7 +513,7 @@ scale; visual acceptance is independent of successful inventory assertions.
 
 ## CA-KP-174 - Native crouch and safe exits during tent rest
 
-Status/evidence: ENGINE-VERIFIED, #412, 2026-10-26; GZDoom4.14.2/Windows11.
+Status/evidence: ENGINE-VERIFIED, #412, 2026-10-26; GZDoom 4.14.2/Windows11.
 Affected implementation: CaelumTentRest; assets/validation_5815/entry-report.json.
 
 PlayerPawn.CrouchMove changes the factor/view but restores the old Height until
@@ -633,7 +633,7 @@ Keep immutable runtime labels, raw failed attempts and final successful evidence
 ## CA-KP-169 - Household work must preserve native stock and hidden metadata
 
 Status/evidence: ENGINE-VERIFIED, #502/PR506,2026-10-25; baseline eedb1b87.
-Environment: GZDoom4.14.2/Windows11/Vulkan1280x720; evidence:
+Environment: GZDoom 4.14.2/Windows11/Vulkan1280x720; evidence:
 assets/validation_5812/domestic. Author check CA502-HOUSEKEEPING-01 passed2026-10-25.
 
 ZScript names are case-insensitive: local `chest`/`day` shadowed saved `Chest`/
@@ -758,7 +758,7 @@ implement historical exposure in unloaded maps. Keep that limitation explicit.
 ## CA-KP-167 - Continuous native contacts need shared ownership and elapsed clocks
 
 Status/evidence: ENGINE-VERIFIED, #502/PR506,2026-10-25, baseline c6508075.
-Environment: GZDoom4.14.2/Windows11/Vulkan,1280x720; evidence:
+Environment: GZDoom 4.14.2/Windows11/Vulkan,1280x720; evidence:
 assets/validation_5812/contact. Author check CA502-CONTACT-01 accepted2026-10-25.
 
 Active/passive native collision callbacks can report the same pair repeatedly.
@@ -792,7 +792,7 @@ performance acceptance. Follow CA-KP-110/115 rather than claiming FPS from35Hz.
 
 ## CA-KP-166 - Hidden inventory carriers must leave world links before attachment
 
-Status/evidence: ENGINE-VERIFIED, #502, GZDoom4.14.2,2026-10-25.
+Status/evidence: ENGINE-VERIFIED, #502, GZDoom 4.14.2,2026-10-25.
 Evidence: assets/validation_5812/npc; the author's local CrashReport.zip is
 preserved in ignored build/issue502-hygiene/npc-hub02-author-crash.zip.
 
@@ -827,7 +827,7 @@ when the producing run fails. Evidence: assets/validation_5848.
 ## CA-KP-165 - Native melee defaults to None; test the delivery path
 
 Status/evidence: ENGINE-VERIFIED; #502,5.8.12,2026-10-25; author review pending.
-Environment: GZDoom4.14.2/Windows11/Vulkan. Evidence: assets/validation_5812/combat.
+Environment: GZDoom 4.14.2/Windows11/Vulkan. Evidence: assets/validation_5812/combat.
 
 The engine declaration of A_CustomMeleeAttack defaults its damage type to None.
 Direct diagnostic DamageMobj(...,'Melee') calls therefore do not establish that
@@ -848,7 +848,7 @@ native PostBeginPlay before testing modeled NPC loadouts (CA-KP-160).
 
 Status/evidence: ENGINE-VERIFIED diagnostic correction; author acceptance pending.
 First recorded / last checked: 2026-10-25 / 2026-10-25.
-Issue: #502,5.8.12. GZDoom4.14.2/Windows11/Vulkan,1280x720,60FPS cap,
+Issue: #502,5.8.12. GZDoom 4.14.2/Windows11/Vulkan,1280x720,60FPS cap,
 5% audio, unpaused background. Evidence: assets/validation_5812/surfaces/responsiveness.
 
 The surface laboratory advanced30 world minutes in one network event. Native
@@ -877,7 +877,7 @@ arithmetic, including repeated setup, cancellation and contaminated prior state.
 
 Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED
 First recorded / last checked: 2026-10-25 / 2026-10-25
-Issue: #502,5.8.12 posture continuation. GZDoom4.14.2/Windows11/Vulkan.
+Issue: #502,5.8.12 posture continuation. GZDoom 4.14.2/Windows11/Vulkan.
 Evidence: assets/validation_5812/postures; pose-core-c fails, pose-core-d and
 pose-final-core pass. The production toilet and player remain solid; noclip is off.
 
@@ -1830,7 +1830,7 @@ boundary: later real-time ticks legitimately resume the original task.
 ## CA-KP-126 - Native no-wipe does not clear a custom travel overlay
 
 Status/evidence: ENGINE-VERIFIED and CODE-VERIFIED, #334 /5.4.36,2026-10-18.
-GZDoom4.14.2 Windows. Evidence: assets/validation_5436;8 native runs/64 checks,
+GZDoom 4.14.2 Windows. Evidence: assets/validation_5436;8 native runs/64 checks,
 two baseline routes and16,375-member source/package equivalence. CA334-01 accepted
 October18. The revised5.4.46 contract is covered by CA-KP-134.
 
@@ -5743,7 +5743,7 @@ Limitations: callback tails are not display presentation; ETW was access-denied.
 Status/evidence: RESOLVED-VERIFIED (native motion); author retest pending
 First recorded / last checked: 2026-10-30 / 2026-10-30
 Issue / PR: #430 / PR579; affected baseline51f25169f plus correction.
-Environment: GZDoom4.14.2, Windows11, Doom2 development IWAD, Vulkan60FPS cap.
+Environment: GZDoom 4.14.2, Windows11, Doom2 development IWAD, Vulkan60FPS cap.
 Scope: companion Tick, shared escort navigation and existing mansion stair nodes.
 Cause: idle frames did not drive every movement tic; prisoner escort bypassed
 party follow. A large footprint spanning several stairs failed the dropoff-edge
@@ -5827,7 +5827,7 @@ No author acceptance or general compatibility with other native save versions.
 
 ## CA-KP-198 - Native save booleans and extended classes require typed handling
 
-Status/evidence: ENGINE-VERIFIED, #434 / PR595, 2026-10-31, GZDoom4.14.2/Windows11.
+Status/evidence: ENGINE-VERIFIED, #434 / PR595, 2026-10-31, GZDoom 4.14.2/Windows11.
 Affected work: 8041964f2 plus the same-issue custody follow-up; native save revision4560.
 Scope: caelum_profile_graph.py, caelum_campaigns.py, copied native-save adapters.
 ZScript bool fields serialize as numeric0/1. Writing JSON true to the new departed
@@ -5847,7 +5847,7 @@ No original author save was rewritten; author acceptance remains pending.
 
 ## CA-KP-199 - Load-based probes must preserve map bytes and handler lifetime
 
-Status/evidence: ENGINE-VERIFIED, #435, 2026-10-31, GZDoom4.14.2/Windows11.
+Status/evidence: ENGINE-VERIFIED, #435, 2026-10-31, GZDoom 4.14.2/Windows11.
 Evidence: validation_v5_12_7/managed-results.json and managed-logs.json.gz.
 The native map checksum rejected equivalent UDMF geometry with different source
 formatting. A managed-load fixture must retain the original map WAD bytes, not
@@ -5864,7 +5864,7 @@ handler classes and saved-object ownership are unchanged by these probe adaptati
 
 ## CA-KP-200 - Intermittent native failures during local multi-process sessions
 
-Status/evidence: OBSERVED/UNRESOLVED, #435, 2026-10-31, GZDoom4.14.2/Windows11,
+Status/evidence: OBSERVED/UNRESOLVED, #435, 2026-10-31, GZDoom 4.14.2/Windows11,
 RTX3070Ti. Local runs session-20261031-060502-507379 and -060617-276664 had native
 exits despite other peers reaching assertions. WER recorded 0xc0000409 in NVIDIA's
 nvoglv64.dll and in gzdoom.exe/abort, plus 0xc0000005 in the engine crash-information
@@ -5903,7 +5903,7 @@ This is a verified launch-configuration correction, not a crash mitigation claim
 ## CA-KP-201 - Check simulation equivalence before multiplayer performance comparisons
 
 Status/evidence: VERIFIED guard and sampled observation, #435, 2026-10-31,
-GZDoom4.14.2/Windows11. The accepted 5.11.8 package's WorldClockTicker returns
+GZDoom 4.14.2/Windows11. The accepted 5.11.8 package's WorldClockTicker returns
 when participants != 1. Two-peer calendar-siege attempts therefore had no
 attackers during the recorded window; mark them ineligible rather than treating
 their short timings as a siege baseline. Calling the existing deployment service
@@ -5932,3 +5932,92 @@ measurements of separate computers. The profiler reuses #431 wrappers and only
 emits isolated overlays; it changes no production AI, resources or collisions.
 Evidence: validation_v5_12_7/campaign-results.json and campaign-logs.json.gz;
 prepare_session_profile.py and run_campaign_profile.py reproduce the diagnostics.
+
+## CA-KP-202 - Measure native presentation without confusing it with display scanout
+
+Status/evidence: VERIFIED diagnostic, #435, 2026-10-31. PresentMon2.6.0/2.3.0
+failed on this Windows11 installation with lost ETW events and no frame CSV,
+including bounded elevated, reduced-provider and offline ETL attempts. Exit 0
+does not mean valid capture. Disabling OBS/Overwolf layers only in the diagnostic
+children did not resolve it; do not change global settings or blame those layers.
+
+A child-only explicit Vulkan layer records the actual vkQueuePresentKHR entry,
+return, result, PID and swapchain with QPC timestamps. It forwards native calls
+and stops at 900 seconds/120000rows. Require normal completion, exact row count,
+correct PID, monotonic timestamps, a single scene swapchain and successful calls.
+Reject incomplete captures rather than reporting fabricated zero-cost frames.
+Seven synthetic rejection checks are separate from the five actual two-client
+scene captures. Neither ZScript callbacks nor this API trace prove monitor scanout.
+
+The matched 1280x720 candidate-engine windows on one RTX3070Ti give mean presents
+62.24-62.48FPS mansion,187.77-190.60 sewers,97.81-98.14 city,72.56-72.74 ground city.
+The normal siege remains poor:1.99-2.49FPS, p99 gaps 626.19-753.38ms. Every peer
+reports matching sampled state and exits normally. This is not a60FPS acceptance
+or a separate-machine/Internet benchmark. Evidence: validation_v5_12_7/
+native-presentation-results.json and native-presentation-logs.json.gz. No gameplay
+feature, individual combat or offscreen simulation was disabled.
+
+## CA-KP-203 - Preserve upstream timer ownership and qualify native candidates
+
+Status/evidence: VERIFIED source lifetime defect; broader native-crash cause
+UNRESOLVED, #435,2026-10-31. Official g4.14.2 ZWidget Timer::~Timer unlinks its
+owner but does not cancel the registered Windows timer. Deleting the network
+startup pane can leave a callback retaining the deleted Timer. Upstream fixed
+this with Stop() in commit 28b54d2b37e51e2af83117137c09a1c565528d66 (2024-01-12).
+The exact original/patched implementations compiled against a counting window
+stub leave1/0 callbacks after deletion. The test never invokes a freed object.
+
+A private g4.14.2-ca435-timer candidate applies that fix plus MinGW build-only
+header/linker adjustments. The installed official binary stays intact. Record
+compiler, source archive, patch and every runtime resource hash; do not mix engine
+builds between peers. The retained official dump includes WM_TIMER/id0x4ad6 and
+a registry entry retaining a Timer pointer, but that object's memory is absent.
+Neither partial unwinding nor successful retries proves the cause of all crashes,
+including the separate NVIDIA/crash-reporter failures. Keep failed attempts.
+
+Native fixture hub geometry must also match every visited map: an admission seed
+with the production mansion cannot later load a diagnostic replacement mansion.
+Use a matching fixture or an unvisited native seed; never strip a real saved hub
+to make a test pass. Source/engine provenance, bounded reload evidence and the
+failed incompatible fixture are in engine-timer-results.json.
+
+## CA-KP-204 - Native checksum warnings can survive without console errors
+
+Status/evidence: VERIFIED reproduction, #435, 2026-10-31. The old complete
+runtime creates a CaelumTravelSnapshotCamera from consoleplayer proximity.
+That local spawn advances shared RNG and produces native mismatch flags in both
+clients. Selected wallet/position assertions and a normal exit still pass.
+The warning is rendered, not necessarily logged, and survives in saved player
+field `inconsistant` (ZScript `inconsistent`). Do not reset it to manufacture a pass.
+
+CaelumMenuAudio now binds the existing multiplayer viewer without spawning or
+moving simulation actors. Its vehicle registry is maintained by spawn/destruction
+events, with one typed reconstruction on WorldLoaded; no per-tic global scan.
+Keep solo snapshot behavior. Recheck fresh native seeds, movement/combat, actual
+menus and save/reload; native_sync_probe observes every occupied slot (at most
+MAXPLAYERS), independent of functional assertions. Reject mismatched checkpoints
+before publishing custody/recovery; retain them for diagnosis.
+
+A native menu may consume Use/function keys before StaticEventHandler input.
+The rest panel must send a validated network request for table interaction and
+yield to pending card/time/travel menus. Automated direct service calls alone do
+not prove that a human can reach those controls. Evidence: validation_v5_12_7
+run_sync_matrix.py and the final manual-interface review; author acceptance stays
+separate from agent checks.
+
+### CA-KP-204 follow-up: prediction cannot satisfy a shared time barrier
+
+VERIFIED, #435, 2026-10-31. Player Tick also runs locally with CF_PREDICTING.
+Recording that call in the cooperative Seen mask lets peer 1 pump the group after
+only peer 0's real step. Peer 1's clock then jumps two ticks ahead of its rest
+record, cancelling rest and eventually raising the native mismatch flag. Guard
+AfterPlayerStep with CanMutate before touching the barrier. Do not weaken the rest
+clock-jump check. The retained negative diagnostic logs expose predicting=1 and
+the early pump; the fixed real-tick two-client test passes 28 assertions and a
+native save. Consent must arrive through native events; calling Pump directly
+does not exercise this ordering. See cooperative_rest_probe.zs/handoff-results.
+
+Actual UI review also requires per-viewer card visibility (Match.View), not the
+owner's shared Visible field: one participant closing a result must regain their
+rest/movement controls while the other still sees the result. Table availability
+is a read-only prediction-safe query; Interact remains authority-checked.

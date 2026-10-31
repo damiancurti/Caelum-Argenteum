@@ -1,6 +1,7 @@
 """Exercise the production session manifest and identity gate with real peers."""
 from pathlib import Path
 import argparse,datetime,importlib.util,json,subprocess,sys,time,zipfile
+import native_sync
 
 ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT))
 from caelum_profiles import ProfileStore
@@ -12,6 +13,7 @@ from caelum_sessions import Sessions,manifest,command,watch
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--runtime',type=Path,required=True)
+    parser.add_argument('--engine',type=Path,default=Path('C:/Program Files (x86)/GZDoom/gzdoom.exe'))
     parser.add_argument('--players',type=int,choices=(2,4,8),default=2)
     parser.add_argument('--source',type=Path)
     parser.add_argument('--resume-registry',type=Path,help='Restart the closed native-session campaign from its current immutable head')
@@ -23,12 +25,14 @@ def main():
     parser.add_argument('--combat',action='store_true',help='Exercise real native movement, attack and Tarot commands')
     args=parser.parse_args();runtime=args.runtime.resolve(strict=True)
     spec=importlib.util.spec_from_file_location('fixture',ROOT/'assets/validation_v5_12_1/run_network_probe.py');fixture=importlib.util.module_from_spec(spec);spec.loader.exec_module(fixture)
+    fixture.ENGINE=args.engine.resolve(strict=True)
     out=ROOT/'build/issue435'/datetime.datetime.now().strftime('session-%Y%m%d-%H%M%S-%f');out.mkdir()
     fixture.fixture(out/'geometry.pk3',args.players)
     with zipfile.ZipFile(out/'geometry.pk3') as old,zipfile.ZipFile(out/'checks.pk3','w') as z:
         z.writestr('maps/MAP03.wad',old.read('maps/MAP03.wad'))
-        z.writestr('MAPINFO','gameinfo { AddEventHandlers="CA435SessionProbe" }\n')
-        z.writestr('ZSCRIPT','version "4.14.2"\n#include "probe.zs"\n')
+        z.writestr('MAPINFO','gameinfo { AddEventHandlers="CA435SessionProbe", "CA435NativeSyncProbe" }\n')
+        z.writestr('ZSCRIPT','version "4.14.2"\n#include "probe.zs"\n#include "native_sync.zs"\n')
+        z.writestr('native_sync.zs',native_sync.SOURCE.read_bytes())
         z.writestr('probe.zs',(Path(__file__).parent/('combat_probe.zs' if args.combat else 'gameplay_probe.zs' if args.gameplay else 'session_probe.zs')).read_bytes().replace(b'const RESTORED=0;',b'const RESTORED=1;' if args.resume_registry else b'const RESTORED=0;'))
         if args.source_overlay:z.writestr('caelum/world/CaelumSessionIdentity.zs',(ROOT/'src/caelum/world/CaelumSessionIdentity.zs').read_bytes())
     packages=[runtime,out/'checks.pk3'];store=None;sessions=None;token=out.name
@@ -85,7 +89,7 @@ def main():
         log=(peer/'engine.log').read_text(errors='replace') if (peer/'engine.log').exists() else ''
         errors=[l for l in log.splitlines() if any(x in l for x in (' FAIL ','Execution could not continue','Script error','VM execution aborted','errors parsing JSON','out of sync','desync'))]
         expected=(9 if args.resume_registry else 8) if args.combat else 12 if args.gameplay else 4 if sessions else 1
-        passed=p.returncode==0 and not errors and (('CA_SESSION REJECT' in log and 'CA_SESSION READY' not in log and 'CA435SESSION RESULT' not in log) if args.wrong_slot else log.count('CA435SESSION PASS')==expected and log.count('CA435SESSION RESULT')==1)
+        passed=p.returncode==0 and not errors and native_sync.clean(log) and (('CA_SESSION REJECT' in log and 'CA_SESSION READY' not in log and 'CA435SESSION RESULT' not in log) if args.wrong_slot else log.count('CA435SESSION PASS')==expected and log.count('CA435SESSION RESULT')==1)
         reports.append(dict(peer=i,exit=p.returncode,errors=errors,passed=passed,
                             states=[l for l in log.splitlines() if l.startswith('CA435SESSION STATE')]))
         if sessions:sessions.finished(token,i)

@@ -7,6 +7,7 @@ class CaelumMenuAudio : StaticEventHandler
     ui int TravelWipe;
     ui int TravelSound;
     Actor TravelCamera;
+    Array<CaelumTravelVehicle> SnapshotVehicles;
     bool CaptureSuspended;
     bool SnapshotWatching;
     ui TextureID TravelSnapshot;
@@ -57,9 +58,9 @@ class CaelumMenuAudio : StaticEventHandler
             || (user.player.ConversationNPC is "CaelumCaravanGuide");
         if(!SnapshotWatching)
         {
-            let vehicles=ThinkerIterator.Create("CaelumTravelVehicle");CaelumTravelVehicle vehicle;
-            while((vehicle=CaelumTravelVehicle(vehicles.Next()))!=null)
-                if((user.Pos-vehicle.BoardingPoint).Length()<200)SnapshotWatching=true;
+            for(int i=0;i<SnapshotVehicles.Size();i++)
+                if(SnapshotVehicles[i]!=null && (user.Pos-SnapshotVehicles[i].BoardingPoint).Length()<200)
+                {SnapshotWatching=true;break;}
         }
         if(!SnapshotWatching)return;
         UpdateTravelCamera(user);
@@ -67,8 +68,10 @@ class CaelumMenuAudio : StaticEventHandler
 
     play bool UpdateTravelCamera(CaelumPlayer user)
     {
-        if(HousePresentationActive)
+        if(HousePresentationActive || multiplayer)
         {
+            // La vista local nunca crea ni mueve actores sincronizados en red.
+            // Spawn consumiría RNG sólo en el cliente próximo al vehículo.
             // El visor real excluye su propio cuerpo; una cámara auxiliar
             // colocada dentro del personaje puede capturar su modelo.
             TexMan.SetCameraToTexture(user,"CAJVIEW",user.player.FOV);
@@ -245,6 +248,11 @@ class CaelumMenuAudio : StaticEventHandler
     override void WorldLoaded(WorldEvent e)
     {
         TravelCamera=null;
+        // Un censo tipado por carga restaura el índice; las consultas por tic
+        // recorren sólo vehículos registrados, sin escanear actores del mapa.
+        SnapshotVehicles.Clear();
+        let vehicles=ThinkerIterator.Create("CaelumTravelVehicle");CaelumTravelVehicle vehicle;
+        while((vehicle=CaelumTravelVehicle(vehicles.Next()))!=null)SnapshotVehicles.Push(vehicle);
         let user=consoleplayer>=0?CaelumPlayer(players[consoleplayer].mo):null;
         if(HousePresentationActive)
         {
@@ -258,6 +266,19 @@ class CaelumMenuAudio : StaticEventHandler
             && journey.TravelMode!=CaelumJourneyState.MODE_CARAVAN && journey.TravelMode!=CaelumJourneyState.MODE_SHIP)))
             CaptureSuspended=false;
         EventHandler.SendInterfaceEvent(consoleplayer, "ca_map_arrive", e.IsSaveGame ? 1 : 0);
+    }
+
+    override void WorldThingSpawned(WorldEvent e)
+    {
+        let vehicle=CaelumTravelVehicle(e.Thing);if(vehicle==null)return;
+        for(int i=0;i<SnapshotVehicles.Size();i++)if(SnapshotVehicles[i]==vehicle)return;
+        SnapshotVehicles.Push(vehicle);
+    }
+    override void WorldThingDestroyed(WorldEvent e)
+    {
+        if(!(e.Thing is 'CaelumTravelVehicle'))return;
+        for(int i=0;i<SnapshotVehicles.Size();i++)if(SnapshotVehicles[i]==e.Thing)
+        {SnapshotVehicles.Delete(i);return;}
     }
 
     override void NewGame(){if(HousePresentationActive)CancelHouseDoor();}

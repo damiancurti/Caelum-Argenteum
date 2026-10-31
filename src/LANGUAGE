@@ -7207,6 +7207,7 @@ CA_COMPANION_PREVIOUS = "Arriba Anterior";
 CA_COMPANION_NEXT = "Abajo Siguiente";
 
 [enu default]
+CA_CARD_CLOSE = "Close";
 CA_CARD_OPPONENT = "Opponent";
 CA_CARD_PVP = "Player versus player - the world continues";
 CA_CARD_TABLE_TITLE = "Cards at the table";
@@ -7218,6 +7219,7 @@ CA_CARD_CONSENT = "Accept game and options";
 CA_CARD_ACCEPTED = "Accepted: %d / 2";
 CA_CARD_NO_PARTNER = "No other available player is seated at this table.";
 [es]
+CA_CARD_CLOSE = "Cerrar";
 CA_CARD_OPPONENT = "Contrincante";
 CA_CARD_PVP = "Jugador contra jugador - el mundo continúa";
 CA_CARD_TABLE_TITLE = "Cartas en la mesa";

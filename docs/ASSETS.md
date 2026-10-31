@@ -2,6 +2,15 @@
 
 Documentation version: **5.12.7** - 2026-10-31.
 
+## Native diagnostics and local presentation (#435, 5.12.7)
+
+No new game artwork or audio. Multiplayer snapshots reuse the existing viewer
+without creating local simulation actors. The optional diagnostic engine keeps
+its official source provenance and the upstream ZWidget timer patch in
+validation_v5_12_7/engine-timer-results.json; engine binaries, DLLs and development
+IWADs remain local and are not distributed as project assets. The presentation
+layer source and bounded evidence are tooling, not packaged runtime content.
+
 ## Profile graph tooling (#434, 5.12.6)
 
 No artwork changes. The offline schema reader inspects the installed, version-

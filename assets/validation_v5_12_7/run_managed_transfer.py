@@ -45,11 +45,12 @@ def exercise_imported_session(sessions,out,engine,iwad,packages):
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--runtime',type=Path,required=True);parser.add_argument('--anchor',type=Path,required=True)
+    parser.add_argument('--engine',type=Path,default=Path('C:/Program Files (x86)/GZDoom/gzdoom.exe'))
     parser.add_argument('--map-fixture',type=Path,help='Original diagnostic map archive; copy geometry only, not its test script')
     parser.add_argument('--native-vacancy',action='store_true',help='Create an actual one-slot MAP01 target, without editing a character into a vacancy')
     args=parser.parse_args();runtime=args.runtime.resolve(strict=True)
     out=ROOT/'build/issue435'/datetime.datetime.now().strftime('managed-transfer-%Y%m%d-%H%M%S-%f');out.mkdir(parents=True)
-    engine=Path('C:/Program Files (x86)/GZDoom/gzdoom.exe')
+    engine=args.engine.resolve(strict=True)
     iwad=Path('C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD')
     packages=[runtime]
     if args.map_fixture:

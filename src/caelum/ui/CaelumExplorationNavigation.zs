@@ -7,8 +7,8 @@ class CaelumExplorationNavigation : Object ui
     {
         let user=Subject();
         if(user==null)return false;
-        let truco=CaelumTrucoMatch(user.FindInventory("CaelumTrucoMatch"));
-        let trucazo=CaelumTrucazoMatch(user.FindInventory("CaelumTrucazoMatch"));
+        let truco=CaelumTrucoMatch.View(user);
+        let trucazo=CaelumTrucazoMatch.View(user);
         return gamestate==GS_LEVEL && user!=null && user.health>0
             && user.CharacterCreationComplete && !user.CreationWizardOpen
             && user.player!=null && (user.player.ConversationNPC==null || !user.player.ConversationNPC.bInConversation)

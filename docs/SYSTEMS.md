@@ -2,7 +2,33 @@
 
 Documentation version: **5.12.7** - 2026-10-31.
 
-## V5.12 native session coordination - #435 / 5.12.7 in progress
+## V5.12 final authority and UI integration - #435
+
+Only authoritative player steps count toward the shared time barrier; native
+prediction cannot mark a participant finished or pump the shared clock. Each
+virtual step advances the world once, then every living participant once. Ordinary
+external clock-jump protection remains active. Rest yields to consent/card menus;
+seated Use remains an owned network request. Each card player closes their own
+result and regains their own rest/movement UI independently.
+Native saves with an inconsistency flag cannot replace a valid common checkpoint
+or publish transferred custody. The failed save remains available for diagnosis.
+The grouped manual suite is ready; acceptance is pending in pending_test.txt.
+Earlier integration checkpoints below preserve historical test qualifications.
+
+## Earlier 5.12.7 integration checkpoints - #435
+
+Native consistency correction (2026-10-31): visual review exposed a native
+checksum warning omitted by earlier log-only checks. A local travel-camera spawn
+advanced shared RNG on only one peer. Multiplayer now binds the existing viewer;
+vehicle lookup uses an event-maintained typed registry, rebuilt once per map load.
+The old package reproduces the warning; fresh corrected 2/4/8-player seeds and
+combat are rechecked with the native inconsistency flag, without clearing it.
+Earlier selected-state passes remain evidence of those assertions only, not a
+native synchronization clearance. Session admission/checkpoint publication and
+native transfer verification reject saves carrying that warning while retaining
+the originals and last valid common checkpoint. Rest UI now yields to cooperative
+votes and card lobbies; seated Use sends a validated request instead of standing.
+Final evidence and author handoff are recorded below; author acceptance is pending.
 
 Native gameplay follow-up: 2/4/8 real clients pass concurrent last-unit city
 purchases, independent wallets, owned Quimica vessels and fuel reservations,

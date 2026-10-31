@@ -29,6 +29,12 @@ def digest(path: Path) -> str:
         return hashlib.file_digest(stream,'sha256').hexdigest()
 
 
+def require_native_sync(level: dict) -> None:
+    """Never publish a native checkpoint that already records desynchronization."""
+    if any(player.get('inconsistant',0)!=0 for player in level['players']):
+        raise ProfileError('The native save records desynchronization; retain it for diagnosis and recover the last synchronized common checkpoint.')
+
+
 def manifest(engine: Path, iwad: Path, packages: list[Path]) -> dict:
     """Pin binary, engine resources, IWAD and every explicit package in order."""
     paths=[engine,engine.parent/'gzdoom.pk3',engine.parent/'game_support.pk3',
@@ -111,6 +117,7 @@ class Sessions:
             self.campaigns.unlocked(campaign)
             head=self.campaigns.head(campaign);data=self.store.anchor(head['snapshot'])
             level=self.campaigns.validate(campaign,data,current=True)
+            require_native_sync(level)
             if not 1<=len(level['players'])<=8:raise ProfileError('Native roster must contain one to eight slots.')
             roster=[]
             for slot in range(len(level['players'])):
@@ -140,7 +147,8 @@ class Sessions:
             campaign=session['request']['campaign'];self.lease(campaign,token)
             head=self.campaigns.head(campaign)
             if head['revision']!=expected_revision:raise ProfileError('Checkpoint revision advanced; late write rejected.')
-            self.campaigns.validate(campaign,data)
+            level=self.campaigns.validate(campaign,data)
+            require_native_sync(level)
             snapshot=self.store._snapshot(data,0)
             if snapshot!=head['snapshot']:
                 self.db.execute('UPDATE campaigns SET revision=revision+1,snapshot=? WHERE identity=?',(snapshot,campaign))
@@ -197,7 +205,7 @@ def command(bundle: Path,slot: int,engine: Path,iwad: Path,packages: list[Path],
     write_new(peer/'recovery.zds',data)
     identity=roster[slot]['identity']
     if not all(c in 'abcdefghijklmnopqrstuvwxyz0123456789-:' for c in identity):raise ProfileError('Invalid stored profile identifier.')
-    ini='[GlobalSettings]\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\nsnd_mastervolume=0.05\n'
+    ini='[GlobalSettings]\nvid_fullscreen=false\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\nsnd_mastervolume=0.05\n'
     write_new(peer/'session.ini',ini.encode())
     # Nonpersistent local CVars are inputs, validated against the synchronized native
     # slot/record before any managed character accepts gameplay mutations.

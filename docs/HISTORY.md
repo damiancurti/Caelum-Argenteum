@@ -2,7 +2,80 @@
 
 Documentation version: **5.12.7** - 2026-10-31.
 
-## V5.12 native session coordination - #435 / 5.12.7 in progress
+## V5.12 implementation ready for author review - 2026-10-31
+
+#434-438 and #590 now have focused implementations and native integration evidence.
+The six author checks in pending_test.txt are outstanding; no issue closure, merge
+or author acceptance is inferred. Earlier checkpoint sections below retain their
+original evidence; their unfinished integration notes are superseded here.
+
+Final #435 corrections keep the local travel snapshot from advancing shared RNG,
+reject native-inconsistent saves before publishing recovery/custody, and prevent
+predicted player ticks from advancing the cooperative completion barrier. The last
+bug reproduced only on the second peer: one predicted step caused an early shared
+pump and interrupted rest. The real-tick regression now passes 28 assertions over
+two clients, including refusal, exactly x105 advancement, independent rest, one
+participant cancelling, and continued rejection of genuine external clock jumps.
+Agent keyboard review also reaches 1/2 then 2/2 consent and completes the agreed
+time with both participants seated. No balance or clock scale changed.
+
+Card panels now yield correctly from seating, validate Use through a native event,
+and close separately for each participant. Actual keyboard review confirms private
+hands, forfeit confirmation and movement after closing one's result. Both native
+card games save successfully on the final package. Seven manual fixtures and a
+common saved restart pass on the preceding package; the final change only affects
+the cooperative barrier, covered by the new regression. The final rest fixture
+and its common saved restart also pass. Static validation reports zero errors
+and 16 changed/new Python sources parse successfully. Profile outward/return
+transfer and 12 checkpoint/custody checks pass with native mismatch rejection.
+
+The combined terminal uses the private upstream timer-fixed 4.14.2 candidate;
+the installed engine and original saves remain untouched. Two later native card-save
+failures are retained, including a Vulkan-related fault address and debugger trace;
+new session configurations pin windowed rendering explicitly and subsequent saves
+pass. This is bounded mitigation, not proof that every native crash is resolved.
+
+Latest synchronized two-client presentation means: mansion 60.13-60.85 FPS,
+sewers 198.64-201.02, city 111.99-113.76, ground-facing city 75.36-75.75;
+siege remains 1.33-6.48 FPS with p99 gaps 474.84-867.92 ms. These are application
+Vulkan presents on one shared GPU, not monitor scanout or Internet measurements.
+Evidence: validation_v5_12_7/handoff-results.json and handoff-logs.json.gz;
+native-sync-results.json; native-sync-presentation-results.json; CA-KP-202/203/204.
+
+## Earlier 5.12.7 integration checkpoints - #435
+
+Native consistency correction (2026-10-31): visual review exposed a native
+checksum warning omitted by earlier log-only checks. A local travel-camera spawn
+advanced shared RNG on only one peer. Multiplayer now binds the existing viewer;
+vehicle lookup uses an event-maintained typed registry, rebuilt once per map load.
+The old package reproduces the warning; fresh corrected 2/4/8-player seeds and
+combat are rechecked with the native inconsistency flag, without clearing it.
+Earlier selected-state passes remain evidence of those assertions only, not a
+native synchronization clearance. Session admission/checkpoint publication and
+native transfer verification reject saves carrying that warning while retaining
+the originals and last valid common checkpoint. Rest UI now yields to cooperative
+votes and card lobbies; seated Use sends a validated request instead of standing.
+Final evidence and author handoff are recorded below; author acceptance is pending.
+
+2026-10-31 later follow-up supersedes the measurement blocker below: a bounded,
+child-only Vulkan layer now records actual presentation calls for all five
+representative two-client scenes. Means are 62.24-62.48FPS mansion,187.77-190.60
+sewers,97.81-98.14 city,72.56-72.74 ground city and1.99-2.49 siege. Siege p99
+626.19-753.38ms remains poor. Normal exits and matching sampled state are native
+evidence; neither monitor scanout nor author performance acceptance is implied.
+PresentMon2.3.0, isolated capture layers, ETW-status and offline-provider attempts
+also failed; retained separately in etw-followup-results.json/logs, not discarded.
+
+The official 4.14.2 Timer destructor fails to unregister its Windows callback.
+Upstream ZWidget commit 28b54d2b37e51e2af83117137c09a1c565528d66 adds Stop().
+Compiled original/fixed reproductions leave1/0 callbacks. A private 4.14.2 source
+candidate applies this plus MinGW build compatibility adjustments; official
+installation remains intact. Six retained native reloads and four/eight-client
+combat, both card games and arenas pass. A Fool attempt used an incompatible
+previously visited mansion fixture; it is retained as failed setup, not a crash
+fix or permission to discard hub geometry. Follow-up verification is recorded
+separately. The original dump does not contain the retained Timer object's memory;
+source lifetime evidence is stronger than the incomplete crash attribution.
 
 2026-10-31 presentation follow-up: seven further campaign observations (five
 two-peer scenes plus current/baseline one-player siege controls) and three short

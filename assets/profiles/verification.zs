@@ -2,12 +2,20 @@
 class CaelumTransferVerification : StaticEventHandler
 {
     int Ticks;
-    bool Ready;
+    bool Ready,Failed;
     ui bool Saved;
-    override void WorldLoaded(WorldEvent e){Ticks=0;Ready=false;}
+    override void WorldLoaded(WorldEvent e){Ticks=0;Ready=false;Failed=false;}
     override void WorldTick()
     {
-        if(Ready || ++Ticks<3)return;
+        if(Failed)return;
+        for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i] && players[i].inconsistent!=0)
+        {
+            Failed=true;Ready=false;
+            Console.Printf("CA_PROFILE REJECT native inconsistency peer=%d slot=%d value=%d",consoleplayer,i,players[i].inconsistent);
+            return;
+        }
+        // Dar tiempo al checksum nativo antes de publicar el guardado común.
+        if(Ready || ++Ticks<105)return;
         for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i])
         {
             let user=CaelumPlayer(players[i].mo);

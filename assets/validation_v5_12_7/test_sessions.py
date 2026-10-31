@@ -58,6 +58,29 @@ class SessionTests(unittest.TestCase):
         with self.assertRaises(ProfileError):self.sessions.publish('one',pack(members,name,level),0)
         self.assertEqual(self.worlds.head('world'),self.head)
 
+    def test_native_desync_cannot_replace_valid_recovery(self):
+        self.prepare()
+        members,name,level=unpack(self.store.anchor(self.head['snapshot']))
+        for slot in range(len(level['players'])):
+            bad=copy.deepcopy(level);bad['players'][slot]['inconsistant']=72
+            with self.assertRaisesRegex(ProfileError,'desynchronization'):
+                self.sessions.publish('one',pack(members,name,bad),0)
+            self.assertEqual(self.worlds.head('world'),self.head)
+        self.assertEqual(self.sessions.close('one')['recovery'],self.head)
+
+    def test_native_desync_seed_cannot_start_session(self):
+        members,name,level=unpack(original)
+        level['players'][1]['inconsistant']=72
+        path=self.path/'rejected.sqlite3'
+        store=ProfileStore(path,create=True)
+        try:
+            worlds=Campaigns(store,adapter);head=worlds.register('bad',pack(members,name,level))
+            with self.assertRaisesRegex(ProfileError,'desynchronization'):
+                Sessions(worlds).prepare('bad',FILES,'bad-session')
+            self.assertEqual(worlds.head('bad'),head)
+            self.assertEqual(store.connection.execute('SELECT COUNT(*) FROM campaign_locks').fetchone()[0],0)
+        finally:store.close()
+
     def test_source_identity_remains_unique_during_session(self):
         self.prepare();members,name,level=unpack(independent_world(original,'session-destination'));personal_record(level,1)['ProfileCommitted']=0
         self.worlds.register('destination',pack(members,name,level))

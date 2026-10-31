@@ -1,0 +1,175 @@
+{
+  "issue": 435,
+  "runs": [
+    {
+      "directory": "build\\issue435\\presentation-230-20261031-100042",
+      "exists": true,
+      "capture": {
+        "tool_sha256": "690533CF5C2591EF571A3037AA4C205C8E75860EF3F56927BF3A98ACF7198485",
+        "parent_pid": 12036,
+        "presentation_only": false,
+        "source": "https://github.com/GameTechDev/PresentMon/releases/tag/v2.3.0",
+        "arguments": [
+          "--process_name",
+          "gzdoom.exe",
+          "--session_name",
+          "Caelum435-ca0af312f0314ee0a2b68d31a21a1047",
+          "--qpc_time_ms",
+          "--timed",
+          "80",
+          "--terminate_after_timed",
+          "--no_console_stats",
+          "--output_file",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\presentation-230-20261031-100042\\frames.csv\""
+        ],
+        "child_pid": 51000,
+        "administrator": true,
+        "status": "no_frames",
+        "csv_exists": false,
+        "exit_code": 0,
+        "collector_version": "2.3.0",
+        "time_format": "qpc",
+        "hard_limit_seconds": 90,
+        "recording_seconds": 80,
+        "application_only": false,
+        "session_id": 5,
+        "target_pid": 0,
+        "forced_stop": false,
+        "csv": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\presentation-230-20261031-100042\\frames.csv",
+        "lost_buffers": 0,
+        "started_utc": "2026-10-31T13:00:45.2293806Z",
+        "lost_events": 562884,
+        "ended_utc": "2026-10-31T13:02:05.4843982Z"
+      },
+      "frame_csv_present": false
+    },
+    {
+      "directory": "build\\issue435\\presentation-isolated-20261031-100622",
+      "exists": true,
+      "capture": {
+        "tool_sha256": "B2A706BC6AD475749E3B7E3409263AA1E6906D45BDCF993F6DBC0F660188F1AF",
+        "parent_pid": 43720,
+        "presentation_only": false,
+        "source": "https://github.com/GameTechDev/PresentMon/releases/tag/v2.6.0",
+        "arguments": [
+          "--process_name",
+          "gzdoom.exe",
+          "--session_name",
+          "Caelum435-edeb48d29de94f21b9afdb69ee56293c",
+          "--qpc_time_ms",
+          "--timed",
+          "80",
+          "--terminate_after_timed",
+          "--no_console_stats",
+          "--output_file",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\presentation-isolated-20261031-100622\\frames.csv\""
+        ],
+        "child_pid": 10984,
+        "administrator": true,
+        "status": "no_frames",
+        "csv_exists": false,
+        "exit_code": 0,
+        "collector_version": "2.6.0",
+        "time_format": "qpc",
+        "hard_limit_seconds": 90,
+        "recording_seconds": 80,
+        "application_only": false,
+        "session_id": 5,
+        "target_pid": 0,
+        "forced_stop": false,
+        "csv": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\presentation-isolated-20261031-100622\\frames.csv",
+        "lost_buffers": 0,
+        "started_utc": "2026-10-31T13:06:24.5718707Z",
+        "lost_events": 586347,
+        "ended_utc": "2026-10-31T13:07:44.8207238Z"
+      },
+      "frame_csv_present": false
+    },
+    {
+      "directory": "build\\issue435\\presentation-status-20261031-101410",
+      "exists": true,
+      "capture": {
+        "tool_sha256": "B2A706BC6AD475749E3B7E3409263AA1E6906D45BDCF993F6DBC0F660188F1AF",
+        "parent_pid": 33348,
+        "presentation_only": true,
+        "source": "https://github.com/GameTechDev/PresentMon/releases/tag/v2.6.0",
+        "arguments": [
+          "--process_name",
+          "gzdoom.exe",
+          "--session_name",
+          "Caelum435-138277558f004265b3f9d023e934ff12",
+          "--qpc_time_ms",
+          "--timed",
+          "45",
+          "--terminate_after_timed",
+          "--no_console_stats",
+          "--output_file",
+          "\"C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\presentation-status-20261031-101410\\frames.csv\"",
+          "--no_track_gpu",
+          "--no_track_input",
+          "--track_etw_status"
+        ],
+        "child_pid": 46716,
+        "administrator": true,
+        "status": "no_frames",
+        "csv_exists": false,
+        "exit_code": 0,
+        "collector_version": "2.6.0",
+        "time_format": "qpc",
+        "hard_limit_seconds": 55,
+        "recording_seconds": 45,
+        "application_only": false,
+        "session_id": 5,
+        "target_pid": 0,
+        "forced_stop": false,
+        "csv": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\presentation-status-20261031-101410\\frames.csv",
+        "lost_buffers": 0,
+        "started_utc": "2026-10-31T13:14:13.2361167Z",
+        "lost_events": 290999,
+        "ended_utc": "2026-10-31T13:14:58.4884382Z"
+      },
+      "frame_csv_present": false
+    },
+    {
+      "directory": "build\\issue435\\presentation-offline-20261031-101600",
+      "exists": false
+    },
+    {
+      "directory": "build\\issue435\\presentation-offline-20261031-101722",
+      "exists": true,
+      "capture": {
+        "seconds": 50,
+        "ended_utc": "2026-10-31T13:17:24.7012370Z",
+        "providers": [
+          "Microsoft-Windows-DxgKrnl:0x8000001",
+          "Microsoft-Windows-DXGI:0xffffffffffffffff",
+          "Microsoft-Windows-Kernel-Process:0x10"
+        ],
+        "started_utc": "2026-10-31T13:17:24.6088579Z",
+        "error": "Native ETL start failed",
+        "session": "Caelum435Offline-babe06cd97d94af19e4bc29b2016e494",
+        "start_exit": -2147024809
+      },
+      "frame_csv_present": false
+    },
+    {
+      "directory": "build\\issue435\\presentation-offline-20261031-101848",
+      "exists": true,
+      "capture": {
+        "seconds": 50,
+        "ended_utc": "2026-10-31T13:19:41.8529368Z",
+        "providers": [
+          "Microsoft-Windows-DxgKrnl:0x8000001",
+          "Microsoft-Windows-DXGI:0xffffffffffffffff",
+          "Microsoft-Windows-Kernel-Process:0x10"
+        ],
+        "started_utc": "2026-10-31T13:18:50.9698482Z",
+        "session": "Caelum435Offline-e794bc24a7444526a9b29765777cb3f3",
+        "start_exit": 0,
+        "stop_exit": 0
+      },
+      "frame_csv_present": false
+    }
+  ],
+  "qualification": "No valid frame CSV. Direct Vulkan capture is recorded separately. Raw 477 MB ETL stays local; no lost-event trace is used as presentation evidence."
+}

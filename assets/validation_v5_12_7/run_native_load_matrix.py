@@ -16,9 +16,10 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--runtime',type=Path,required=True);parser.add_argument('--seed',type=Path,required=True)
     parser.add_argument('--map-fixture',type=Path,required=True);parser.add_argument('--campaign',required=True)
+    parser.add_argument('--engine',type=Path,default=Path('C:/Program Files (x86)/GZDoom/gzdoom.exe'))
     args=parser.parse_args();runtime=args.runtime.resolve(strict=True);seed=args.seed.resolve(strict=True)
     fixture=args.map_fixture.resolve(strict=True);data=seed.read_bytes()
-    engine=Path('C:/Program Files (x86)/GZDoom/gzdoom.exe')
+    engine=args.engine.resolve(strict=True)
     iwad=Path('C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD')
     out=ROOT/'build/issue435'/datetime.datetime.now().strftime('native-load-matrix-%Y%m%d-%H%M%S-%f');out.mkdir(parents=True)
     command=verification.command;reports=[]
@@ -38,7 +39,7 @@ def main():
         assert seed.read_bytes()==data,'The retained input changed'
         (out/'results.json').write_text(json.dumps(dict(seed=str(seed),seed_sha256=hashlib.sha256(data).hexdigest(),
             runtime_sha256=hashlib.sha256(runtime.read_bytes()).hexdigest(),fixture_sha256=hashlib.sha256(fixture.read_bytes()).hexdigest(),
-            runs=reports,qualification='Six local load attempts are a bounded diagnostic, not proof of stability or a production mitigation. A windowed request may match current launcher defaults.'),indent=2)+'\n')
+            engine=dict(path=str(engine),sha256=hashlib.sha256(engine.read_bytes()).hexdigest()),runs=reports,qualification='Six local load attempts are a bounded diagnostic, not proof of stability or a production mitigation. A windowed request may match current launcher defaults.'),indent=2)+'\n')
     print('Retained load matrix:',out,flush=True)
 
 

@@ -19,7 +19,7 @@ import zipfile
 from caelum_profiles import ProfileStore, ProfileError, validate_anchor
 from caelum_profile_graph import NativeSchema, PersonalGraph
 from caelum_campaigns import Campaigns, unpack, personal_record
-from caelum_sessions import manifest, command, write_new
+from caelum_sessions import manifest, command, write_new, require_native_sync
 
 
 def verification_overlay(path: Path) -> None:
@@ -37,6 +37,7 @@ def native_checkpoint(data: bytes, campaign: str, directory: Path, engine: Path,
                       iwad: Path, packages: list[Path], port: int) -> tuple[bytes,dict]:
     """Run only this isolated roster, retain every input/log, never edit originals."""
     _,_,level=unpack(data)
+    require_native_sync(level)
     if not 1<=len(level['players'])<=8:raise ProfileError('Unsupported native transfer roster.')
     roster=[]
     for slot in range(len(level['players'])):
@@ -67,7 +68,7 @@ def native_checkpoint(data: bytes, campaign: str, directory: Path, engine: Path,
         deadline=time.monotonic()+120;last=None
         while time.monotonic()<deadline:
             logs=[(p/'engine.log').read_text(errors='replace') if (p/'engine.log').exists() else '' for p in peers]
-            if any(any(mark in log for mark in ('CA_SESSION REJECT','Execution could not continue','VM execution aborted','Script error','out of sync','desync','This savegame needs these files','Savegame is from a different level')) for log in logs):
+            if any(any(mark in log for mark in ('CA_SESSION REJECT','CA_PROFILE REJECT','Execution could not continue','VM execution aborted','Script error','out of sync','desync','This savegame needs these files','Savegame is from a different level')) for log in logs):
                 raise ProfileError(f'Native verification failed; retained evidence: {directory}')
             if any(p.poll() is not None for p in processes):raise ProfileError(f'A verification peer exited early: {directory}')
             ready=all(f'CA_SESSION READY peer={i} nonce={nonce}' in log and f'CA_PROFILE VERIFIED peer={i}' in log for i,log in enumerate(logs))
@@ -76,6 +77,7 @@ def native_checkpoint(data: bytes, campaign: str, directory: Path, engine: Path,
                 stat=saves[0].stat();fingerprint=(stat.st_size,stat.st_mtime_ns)
                 if fingerprint==last:
                     output=saves[0].read_bytes();validate_anchor(output,0)
+                    require_native_sync(unpack(output)[2])
                     result=dict(campaign=campaign,players=len(roster),commands=commands,
                                 output=str(saves[0]),snapshot=hashlib.sha256(output).hexdigest(),passed=True)
                     write_new(directory/'verified.json',(json.dumps(result,indent=2)+'\n').encode())

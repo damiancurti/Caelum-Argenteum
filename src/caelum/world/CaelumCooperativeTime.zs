@@ -152,6 +152,10 @@ class CaelumCooperativeTime : Inventory
     }
     static void AfterPlayerStep(CaelumPlayer user)
     {
+        // La predicción local también ejecuta Tick. No cuenta como un paso
+        // compartido: adelantar el grupo antes del cuerpo remoto desincroniza
+        // su reloj y hace que el descanso detecte un salto externo.
+        if(!CaelumPlayerAuthority.CanMutate(user))return;
         let vote=View(user);if(vote==null || !vote.Running)return;
         int slot=vote.Slot(user);if(slot<0)return;
         if(vote.SeenTic!=level.maptime){vote.SeenTic=level.maptime;vote.Seen=0;}

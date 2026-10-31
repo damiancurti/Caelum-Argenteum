@@ -14,12 +14,16 @@ IWAD=Path('C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--runtime',type=Path,required=True)
+    parser.add_argument('--engine',type=Path,default=ENGINE,help='Isolated diagnostic engine; never replaces the installed executable')
+    parser.add_argument('--presentation-layer',type=Path,help='Explicit diagnostic Vulkan layer directory, enabled only in these children')
     parser.add_argument('--players',type=int,choices=(1,2,4,8),default=2)
     parser.add_argument('--map',choices=('MAP01','MAP02','MAP03'),default='MAP03')
     parser.add_argument('--overlay',type=Path,action='append',default=[],help='Additional diagnostic overlay, loaded before the observer; recorded by hash')
     parser.add_argument('--siege',action='store_true');parser.add_argument('--ground',action='store_true')
     parser.add_argument('--direct-deployment',action='store_true',help='Invoke the existing deployment service at the same diagnostic tic for pre-cooperative-clock comparison')
+    parser.add_argument('--isolate-capture-layers',action='store_true',help='Diagnostic only: use the installed OBS/Overwolf Vulkan manifest disable variables in these child processes')
     args=parser.parse_args();runtime=args.runtime.resolve(strict=True)
+    engine=args.engine.resolve(strict=True)
     overlays=[p.resolve(strict=True) for p in args.overlay]
     if args.siege and args.map!='MAP03':parser.error('The approved siege is in MAP03.')
     if args.direct_deployment and not args.siege:parser.error('Direct deployment requires the siege scenario.')
@@ -43,12 +47,21 @@ def main():
                  'MAPINFO':b'gameinfo { AddEventHandlers="CA510Performance" }\n',
                  'observer.zs':source.encode('utf-8'),
                  'census.zs':Path(__file__).with_name('campaign_census.zs').read_bytes()}
-        for name,data in sorted(members.items()):
+        import native_sync
+        for name,data in sorted(native_sync.instrument(members).items()):
             archive.writestr(zipfile.ZipInfo(name,(2000,1,1,0,0,0)),data)
     spec=importlib.util.spec_from_file_location('previous_profile',ROOT/'assets/validation_v5_11_0/run_profile.py')
     previous=importlib.util.module_from_spec(spec);spec.loader.exec_module(previous)
     processes=[];streams=[];commands=[];peers=[];markers=[{} for _ in range(args.players)];offsets=[0]*args.players
     startup=subprocess.STARTUPINFO();startup.dwFlags|=subprocess.STARTF_USESHOWWINDOW;startup.wShowWindow=0
+    import os
+    child_environment=os.environ.copy();environment_overrides={}
+    if args.isolate_capture_layers:
+        environment_overrides={name:'1' for name in ('DISABLE_VULKAN_OBS_CAPTURE','DISABLE_VULKAN_OW_OVERLAY_LAYER','DISABLE_VULKAN_OW_OBS_CAPTURE')}
+        child_environment.update(environment_overrides)
+    if args.presentation_layer:
+        environment_overrides.update(VK_LAYER_PATH=str(args.presentation_layer.resolve(strict=True)),VK_INSTANCE_LAYERS='VK_LAYER_CA_presentation')
+        child_environment.update(environment_overrides)
     deadline=time.monotonic()+480;error=None
     started=datetime.datetime.now(datetime.timezone.utc).isoformat()
     try:
@@ -62,11 +75,13 @@ def main():
             duration=(4350 if args.siege else 1100)+(args.players-slot)*35
             (peer/'start.cfg').write_text(f'wait {duration}; event ca510_frames; wait 3; quit\n')
             network=[] if args.players==1 else ['-host',str(args.players),'-port','31335','-netmode','0'] if slot==0 else ['-join','127.0.0.1:31335','-port',str(31335+slot)]
-            command=[str(ENGINE),'-noautoload','-nomouse','-iwad',str(IWAD),'-file',str(runtime),*[str(p) for p in overlays],str(overlay),
+            command=[str(engine),'-noautoload','-nomouse','-iwad',str(IWAD),'-file',str(runtime),*[str(p) for p in overlays],str(overlay),
                 '-config',str(peer/'session.ini'),'-savedir',str(peer),*network,'-rngseed','428','-warp',str(int(args.map[3:])),
                 '+logfile',str(peer/'engine.log'),'+exec',str(peer/'start.cfg')]
             commands.append(command);stream=(peer/'process.log').open('wb');streams.append(stream)
-            processes.append(subprocess.Popen(command,cwd=peer,startupinfo=startup,stdout=stream,stderr=stream));time.sleep(.4)
+            peer_environment=child_environment.copy()
+            if args.presentation_layer:peer_environment['CA_PRESENT_TRACE']=str(peer/'presents.csv')
+            processes.append(subprocess.Popen(command,cwd=peer,startupinfo=startup,stdout=stream,stderr=stream,env=peer_environment));time.sleep(.4)
         print('Campaign peers started:',out,flush=True)
         while any(p.poll() is None for p in processes):
             for slot,peer in enumerate(peers):
@@ -96,7 +111,8 @@ def main():
             states=[re.sub(r'peer=\d+ ','',line) for line in log.splitlines() if line.startswith('CA435PERF STATE')],
             census=[line for line in log.splitlines() if 'CA510 CENSUS' in line],
             scopes=[line for line in log.splitlines() if line.startswith('CA511 SCOPE') or line.startswith('CA511 PROFILE_END')],
-            passed=process.returncode==0 and 'CA510 RESULT' in log and 'CA510 FRAMES_END' in log))
+            native_sync=native_sync.clean(log),
+            passed=process.returncode==0 and native_sync.clean(log) and 'CA510 RESULT' in log and 'CA510 FRAMES_END' in log))
     same=bool(reports) and all(r['states']==reports[0]['states'] for r in reports)
     for report in reports:
         report['complete_window']=(set(report['window'])=={'BEGIN','END'}
@@ -105,7 +121,9 @@ def main():
             and report['render_callbacks'] is not None)
         report['passed']=report['passed'] and report['complete_window']
     scenario_valid=not args.siege or all(any(int(v)>0 for line in r['census'] for v in re.findall(r'registered_attackers=(\d+)',line)) for r in reports)
-    report=dict(issue=435,started_utc=started,ended_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),
+    report=dict(issue=435,started_utc=started,ended_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),environment_overrides=environment_overrides,
+        engine=dict(path=str(engine),sha256=hashlib.sha256(engine.read_bytes()).hexdigest()),
+        presentation_layer=(dict(path=str(args.presentation_layer.resolve()),sha256=hashlib.sha256((args.presentation_layer/'ca_presentation.dll').read_bytes()).hexdigest()) if args.presentation_layer else None),
         runtime_sha256=hashlib.sha256(runtime.read_bytes()).hexdigest(),commands=commands,observed_before_cleanup=observed,
         observer_sha256=hashlib.sha256(overlay.read_bytes()).hexdigest(),
         overlays=[dict(path=str(p),sha256=hashlib.sha256(p.read_bytes()).hexdigest()) for p in overlays],

@@ -4,14 +4,20 @@ param(
     [switch]$PresentationOnly,
     [ValidateRange(0,2147483647)][int]$TargetProcessId=0,
     [switch]$ApplicationOnly,
-    [ValidateSet('qpc','date')][string]$TimeFormat='qpc'
+    [switch]$TraceStatus,
+    [ValidateSet('qpc','date')][string]$TimeFormat='qpc',
+    [ValidateSet('2.6.0','2.3.0')][string]$CollectorVersion='2.6.0'
 )
 $ErrorActionPreference='Stop'
 $captureRoot=[IO.Path]::GetFullPath((Join-Path $PSScriptRoot '../..'))
 $captureTool=Join-Path $captureRoot 'build/issue431/tools/PresentMon-2.6.0-x64.exe'
 $captureHash='B2A706BC6AD475749E3B7E3409263AA1E6906D45BDCF993F6DBC0F660188F1AF'
+if($CollectorVersion -eq '2.3.0'){
+    $captureTool=Join-Path $captureRoot 'build/issue435/tools/PresentMon-2.3.0-x64.exe'
+    $captureHash='690533CF5C2591EF571A3037AA4C205C8E75860EF3F56927BF3A98ACF7198485'
+}
 if ((Get-FileHash -LiteralPath $captureTool -Algorithm SHA256).Hash -ne $captureHash) {
-    throw 'PresentMon checksum differs from the previously verified official 2.6.0 binary.'
+    throw 'PresentMon checksum differs from the selected official binary.'
 }
 $captureOut=[IO.Path]::GetFullPath($OutputDirectory)
 New-Item -ItemType Directory -Force -Path $captureOut | Out-Null
@@ -25,7 +31,7 @@ $captureRecord=@{
     session_id=(Get-Process -Id $PID).SessionId; parent_pid=$PID;
     status='starting'; forced_stop=$false; exit_code=$null; presentation_only=[bool]$PresentationOnly;
     application_only=[bool]$ApplicationOnly; target_pid=$TargetProcessId; time_format=$TimeFormat;
-    source='https://github.com/GameTechDev/PresentMon/releases/tag/v2.6.0'
+    source=('https://github.com/GameTechDev/PresentMon/releases/tag/v'+$CollectorVersion); collector_version=$CollectorVersion;
 }
 $captureRecord | ConvertTo-Json | Set-Content -LiteralPath $captureMeta -Encoding UTF8
 $captureChild=$null
@@ -41,6 +47,7 @@ try {
     # event streams when diagnosing a trace with lost events.
     if($PresentationOnly){$captureArgs+=@('--no_track_gpu','--no_track_input')}
     if($ApplicationOnly){$captureArgs+=@('--no_track_display')}
+    if($TraceStatus){$captureArgs+=@('--track_etw_status')}
     $captureChild=Start-Process -FilePath $captureTool -ArgumentList $captureArgs -WorkingDirectory $captureOut `
         -RedirectStandardOutput (Join-Path $captureOut 'stdout.log') -RedirectStandardError (Join-Path $captureOut 'stderr.log') `
         -WindowStyle Hidden -PassThru
