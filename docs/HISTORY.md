@@ -10,6 +10,17 @@ This remains agent verification, not author acceptance.
 
 ## 5.12.2 - Shared clock and time consent (#436, 2026-10-30, in progress)
 
+Portable-progress follow-up (2026-10-31): solo campaigns now initialize the
+same revision-1 world objective ledger before profile transfer. Earned reward
+eligibility compares the existing persistent legal identity as well as the
+original record pointer. No new field, balance rule or global actor scan is
+introduced. Final native package passes 150 assertions: one/eight-player
+progress checks, two-player house regression and true old-save rescue migration.
+The first build exposed a scope mismatch in the pure identity comparator; its
+failed logs are preserved. Results, hashes and logs: progress-results.json and
+progress-logs.json.gz. Actual coordinator transfer/return verification remains
+#434; these isolated checks are not author acceptance.
+
 Tent follow-up (2026-10-31): the old owner-only rest guard prevented a second
 cooperative player from using the approved second berth. Sharing now requires
 the owner's presence in the native roster, without transferring ownership or

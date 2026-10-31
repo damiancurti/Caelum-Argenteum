@@ -69,10 +69,11 @@ retains its existing explicit departure-only search. Saved enum values are
 preserved, the new kind is appended, and the new door reference defaults null.
 No routine global actor scan is added.
 
-Rescue objectives are campaign-owned in multiplayer. Completing extraction
+Rescue objectives are campaign-owned in solo and multiplayer campaigns. Completing extraction
 captures the ready characters present in the session, including a dead waiting
-participant; eligibility refers to the saved character record, not its reusable
-native player slot. Repeating the objective cannot expand that roster. Each
+participant; eligibility refers to the existing persistent legal identity, with
+the saved-record reference retained for old saves, not its reusable player slot.
+Reconstructing a returning profile therefore does not erase earned eligibility. Repeating the objective cannot expand that roster. Each
 eligible character can claim the existing currency/reputation reward once.
 Personal claim flags remain authoritative against repeat rewards across worlds.
 A late-ready character keeps their pending personal rescue and the Journal says
@@ -82,9 +83,10 @@ The actual initiating player remains the prisoner's escort leader.
 
 Revision-1 migration seeds the campaign rescue state from its existing clock
 owner, granting old extracted-objective eligibility only to records that already
-held extraction. Original saves remain untouched. New portable campaigns must
-initialize a fresh world ledger rather than import an advanced profile's world
-state; that profile-boundary integration remains #434. Eligibility snapshots and
+held extraction. Original saves remain untouched. Ready characters initialize their legal
+identity idempotently, and the campaign initializes its world ledger before a
+profile can transfer. The #434 coordinator must require that native migration
+in both campaigns rather than seed a foreign world from an imported profile. Eligibility snapshots and
 migration iterate only the bounded native roster and four rescue records.
 
 Central-house restitution is a single world transaction. The initiating
