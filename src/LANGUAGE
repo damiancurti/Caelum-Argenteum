@@ -4915,7 +4915,7 @@ CA_TAROT_POWER_COOLDOWN = "Tarot is recharging. See the remaining time in the Jo
 CA_TAROT_POWER_ANIMA = "Not enough Anima to activate Tarot.";
 CA_TAROT_POWER_ACTIVATED = "Selected Tarot powers activated.";
 CA_TAROT_POWER_EXPIRED = "The Tarot effects have ended.";
-CA_TAROT_POWER_FOOL = "Passive: +2% collection. Active: flight. Use Fly/swim up or down in Controls. The mansion crossing keeps its usual rules.";
+CA_TAROT_POWER_FOOL = "Passive: +2% collection. Active: unanimous travel to the mansion. Palomo offers the return without another payment.";
 CA_TAROT_POWER_CUPS = "Passive: +1 Charisma, Empathy and Eloquence; +1% collection. Active: the fixed bonuses become +2 each.";
 CA_TAROT_POWER_WANDS = "Passive: +0.6 Strength; +1% collection. Active: the fixed Strength bonus becomes +1.2.";
 CA_TAROT_POWER_MINOR = "Active: doubles this card's fixed attribute contribution. Its permanent collection percentage stays unchanged.";
@@ -4950,7 +4950,7 @@ CA_TAROT_POWER_COOLDOWN = "El Tarot se está recargando. Consultá el tiempo res
 CA_TAROT_POWER_ANIMA = "No tenés suficiente ánima para activar el Tarot.";
 CA_TAROT_POWER_ACTIVATED = "Poderes elegidos del Tarot activados.";
 CA_TAROT_POWER_EXPIRED = "Los efectos del Tarot terminaron.";
-CA_TAROT_POWER_FOOL = "Pasiva: +2% de colección. Activa: vuelo. Usá Subir o Bajar al volar/nadar, en Controles. El cruce de la mansión conserva sus reglas.";
+CA_TAROT_POWER_FOOL = "Pasiva: +2% de colección. Activa: viaje a la mansión por unanimidad. Palomo ofrece el regreso sin otro pago.";
 CA_TAROT_POWER_CUPS = "Pasiva: +1 Carisma, Empatía y Elocuencia; +1% de colección. Activa: esos bonos fijos pasan a +2 cada uno.";
 CA_TAROT_POWER_WANDS = "Pasiva: +0,6 Fuerza; +1% de colección. Activa: el bono fijo de Fuerza pasa a +1,2.";
 CA_TAROT_POWER_MINOR = "Activa: duplica el aporte fijo de atributos de esta carta. Su porcentaje permanente de colección no cambia.";
@@ -5199,7 +5199,7 @@ CA_TAROT_DETAIL_UNREVEALED = "Capture the essence to reveal its effect. The phys
 CA_TAROT_DETAIL_NO_FIXED = "No fixed attribute bonus";
 CA_TAROT_DETAIL_COLLECTION = "Collection: +%d%% to primary attributes, permanently while owned.";
 CA_TAROT_DETAIL_PENDING = "No active effect is implemented for this essence yet. It cannot be selected.";
-CA_TAROT_DETAIL_FOOL = "Flight. Use Fly/swim up or down in Controls. The mansion crossing retains its requirements.";
+CA_TAROT_DETAIL_FOOL = "Unanimous travel to the mansion. The journey does not resurrect the dead.";
 CA_TAROT_DETAIL_DOUBLE = "Fixed contribution becomes %s. Collection percentage stays unchanged.";
 CA_TAROT_DETAIL_CONTEXT = "Up to three captured essences. No manual cancellation or refund. Unavailable during dialogue, trading, crafting, rest, time skips, channeling, casting or forced immobilization.";
 CA_TAROT_DETAIL_TRUCAZO_UNREVEALED = "Essence not captured: no awakened effect. Owning the physical deck does not reveal or awaken it.";
@@ -5241,7 +5241,7 @@ CA_TAROT_DETAIL_UNREVEALED = "Capturá la esencia para revelar su efecto. La car
 CA_TAROT_DETAIL_NO_FIXED = "Sin bono fijo de atributos";
 CA_TAROT_DETAIL_COLLECTION = "Colección: +%d%% a los atributos primarios, permanente mientras poseas la esencia.";
 CA_TAROT_DETAIL_PENDING = "Esta esencia aún no tiene efecto activo implementado. No se puede seleccionar.";
-CA_TAROT_DETAIL_FOOL = "Vuelo. Usá Subir o Bajar al volar/nadar en Controles. El cruce de la mansión conserva sus requisitos.";
+CA_TAROT_DETAIL_FOOL = "Viaje a la mansión por unanimidad. El viaje no resucita a los muertos.";
 CA_TAROT_DETAIL_DOUBLE = "El aporte fijo pasa a %s. El porcentaje de colección no cambia.";
 CA_TAROT_DETAIL_CONTEXT = "Hasta tres esencias capturadas. Sin cancelación manual ni devolución. No disponible durante diálogos, comercio, trabajo, descanso, saltos temporales, canalización, lanzamiento o inmovilización forzada.";
 CA_TAROT_DETAIL_TRUCAZO_UNREVEALED = "Esencia no capturada: sin efecto despierto. Poseer el mazo físico no la revela ni la despierta.";
@@ -7283,3 +7283,30 @@ CA_COOP_RETURN_DESTINATION = "Salir de la mansión y regresar a sus cuerpos";
 CA_COOP_QUEST_UNAVAILABLE = "This world has already resolved this objective. Your personal progress is preserved; continue in a compatible campaign. No retroactive reward is available here.";
 [es]
 CA_COOP_QUEST_UNAVAILABLE = "Este mundo ya resolvió este objetivo. Conservas tu progreso personal; puedes continuar en otra campaña compatible. Aquí no hay recompensa retroactiva.";
+
+[enu default]
+CA_FOOL_JOURNEY_DESTINATION = "The mansion in Limbo";
+CA_FOOL_JOURNEY_RETURN = "Return to the place of departure";
+CA_FOOL_JOURNEY_COST = "The activator pays %.0f Anima and receives a %d-second cooldown only after everyone accepts.";
+CA_FOOL_JOURNEY_DEAD = "If everyone has died, activate The Fool with {bind:+user3}. Its normal Anima and cooldown requirements still apply.";
+CA_FOOL_JOURNEY_RULE = "Travel to the mansion by unanimous consent. Cost: %.0f Anima; cooldown: %d seconds. Palomo offers the return without an additional charge.";
+[es]
+CA_FOOL_JOURNEY_DESTINATION = "La mansión del Limbo";
+CA_FOOL_JOURNEY_RETURN = "Volver al lugar de salida";
+CA_FOOL_JOURNEY_COST = "El activador paga %.0f Ánima y recibe %d segundos de recarga solo cuando todos aceptan.";
+CA_FOOL_JOURNEY_DEAD = "Si todos han muerto, activá El Loco con {bind:+user3}. Sigue requiriendo su Ánima y recarga habituales.";
+CA_FOOL_JOURNEY_RULE = "Viaje a la mansión por unanimidad. Coste: %.0f Ánima; recarga: %d segundos. Palomo ofrece el regreso sin otro pago.";
+
+[enu default]
+CA_FOOL_VISIT_HELP = "You can return to the place where you activated The Fool. Everyone must agree; the journey does not resurrect the dead.";
+CA_FOOL_VISIT_TALK = "Ask about the mansion";
+CA_SPIRIT_REWARD_PENDING = "Your quest has advanced. The material reward remains pending until resurrection.";
+[es]
+CA_FOOL_VISIT_HELP = "Podés volver al lugar donde activaste El Loco. Todos deben aceptar; el viaje no resucita a los muertos.";
+CA_FOOL_VISIT_TALK = "Preguntar por la mansión";
+CA_SPIRIT_REWARD_PENDING = "Tu misión avanzó. La recompensa material queda pendiente hasta resucitar.";
+
+[enu default]
+CA_SPIRIT_CONTROLS = "Spirit in Limbo: move and talk with {bind:+use}. Your body and material possessions remain where you died. Palomo offers the return.";
+[es]
+CA_SPIRIT_CONTROLS = "Espíritu en el Limbo: movete y hablá con {bind:+use}. Tu cuerpo y tus pertenencias materiales siguen donde moriste. Palomo ofrece el regreso.";

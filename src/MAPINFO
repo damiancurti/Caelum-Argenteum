@@ -63,6 +63,7 @@ AddDefaultMap
 
 map MAP01 "$CA_MAP01_NAME"
 {
+    cluster = 434
     UnFreezeSinglePlayerConversations
     music = "CA_MUS02"
     // Horizonte propio del Limbo tras retirar el muro perimetral visible.
@@ -83,7 +84,7 @@ map MAP02 "$CA_MAP02_SEWER_NAME"
     cluster = 434
 }
 
-// Estados de mapa conservados por GZDoom al ir y volver. MAP01 queda fuera.
+// Estados de mapa conservados por GZDoom al ir y volver, incluida la visita al Limbo.
 cluster 434
 {
     hub

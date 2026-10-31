@@ -61,7 +61,7 @@ class CaelumTransportTrip : Object play
         // La asignacion pendiente vive en el inventario; PostTravelled no la
         // borra. Registrar la llegada solo al cargar el destino esperado.
         b.TransferPending=false;b.ArrivalPending=true;
-        user.PersistCharacterState();Level.ChangeLevel(target,0,CHANGELEVEL_NOINTERMISSION);
+        user.PersistCharacterState();CaelumDeadTraveler.ChangeMap(target,0,CHANGELEVEL_NOINTERMISSION);
     }
     static void Loaded(CaelumPlayer user)
     {

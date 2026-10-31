@@ -213,6 +213,8 @@ class CaelumPersistentCharacterState : Inventory
     int MainM00ShieldId, MainM00ArmorIds[4], MainM00CraftedSealId;
     Inventory MainM00CraftedBag, MainM00CraftedCanteen;
     bool MainM00GoldRewardStarted, MainM00RuloPrepared;
+    int SpiritRewardRevision;
+    bool SpiritDeckPending, SpiritBoxPending, SpiritSilverKeyPending;
     int MainM00MazeRepairUnits[CaelumConstants.MATERIAL_TYPE_COUNT];
     int MainM00StarterAmmoIssued, MainM00GoldMinedUnits;
     // 0ab: práctica opcional de respiración; falso en guardados anteriores.

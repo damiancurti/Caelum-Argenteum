@@ -1,7 +1,7 @@
 // Una salida pertenece a la sesión. Ningún consentimiento cobra ni cambia mapa.
 class CaelumCooperativeTravel : Inventory
 {
-    enum TravelKind { JOURNEY, HOUSE, BOARD, DISEMBARK, RESUME, ABANDON, TUTORIAL }
+    enum TravelKind { JOURNEY, HOUSE, BOARD, DISEMBARK, RESUME, ABANDON, TUTORIAL, LIMBO, LIMBO_RETURN }
     enum Operation { ACCEPT, CANCEL }
     CaelumPlayer Members[MAXPLAYERS];
     CaelumJourneyPlan Plans[MAXPLAYERS];
@@ -10,6 +10,9 @@ class CaelumCooperativeTravel : Inventory
     CaelumTravelVehicle Vehicle;
     CaelumTransportTicket Ride;
     int Fare;
+    bool ExceptionalFool;
+    bool TarotSelection[CaelumConstants.TAROT_CARD_COUNT];
+    CaelumPalomo FoolSpeaker;
     int Mask,AliveMask,Accepted,Serial,Kind,Connection,Mode,Entry,Elapsed;
     bool Opened,Committed,Interrupted;
     double Pace;
@@ -50,6 +53,7 @@ class CaelumCooperativeTravel : Inventory
     bool SourceValid()
     {
         let proposer=CaelumPlayer(Owner);
+        if(Kind==LIMBO || Kind==LIMBO_RETURN)return CaelumFoolTravel.Valid(self);
         if(!CaelumCooperativeTime.Living(proposer))return false;
         if(Kind==TUTORIAL)return TutorialDoor!=null && !TutorialDoor.bDestroyed
             && CaelumMainM00Return.CanApproach(proposer,TutorialDoor);
@@ -64,9 +68,9 @@ class CaelumCooperativeTravel : Inventory
         if(clock==null || clock.CooperativeSerial==2147483647)return false;
         Serial=++clock.CooperativeSerial;CaelumWorldClockTicker.Mirror(source);return true;
     }
-    static CaelumCooperativeTravel Draft(CaelumPlayer user)
+    static CaelumCooperativeTravel Draft(CaelumPlayer user,bool allowDead=false,bool allowSolo=false)
     {
-        if(!multiplayer || !CaelumPlayerAuthority.CanMutate(user) || !CaelumCooperativeTime.Living(user))return null;
+        if((!multiplayer && !allowSolo) || !CaelumPlayerAuthority.CanMutate(user) || (!allowDead && !CaelumCooperativeTime.Living(user)))return null;
         let clock=CaelumWorldClock.Get(CaelumWorldClockTicker.CampaignOwner());
         if(clock==null || (clock.TimeVote!=null && clock.TimeVote.Opened)
             || (clock.TravelVote!=null && clock.TravelVote.Opened))return null;
@@ -202,17 +206,22 @@ class CaelumCooperativeTravel : Inventory
     void Commit()
     {
         if(!Opened || Accepted!=Mask || !RosterValid() || !SourceValid())return;
+        if(Kind==LIMBO || Kind==LIMBO_RETURN)
+        {
+            if(!CaelumFoolTravel.Commit(self)){Finish("CA_COOP_TRAVEL_CANCELLED");return;}
+            Committed=true;Finish("");CaelumDeadTraveler.ChangeMap(Destination,Entry,CHANGELEVEL_NOINTERMISSION);return;
+        }
         if(Kind==TUTORIAL)
         {
             if(!CaelumCooperativeReturn.Commit(self)){Finish("CA_COOP_RETURN_READY");return;}
             Committed=true;Finish("");
-            Level.ChangeLevel(Destination,Entry,CHANGELEVEL_NOINTERMISSION);return;
+            CaelumDeadTraveler.ChangeMap(Destination,Entry,CHANGELEVEL_NOINTERMISSION);return;
         }
         if(IsTransport())
         {
             if(!CaelumCooperativeTransport.Commit(self)){Finish("CA_COOP_TRAVEL_CANCELLED");return;}
             Committed=true;Finish("");
-            if(Kind!=ABANDON)Level.ChangeLevel(Destination,Entry,CHANGELEVEL_NOINTERMISSION);
+            if(Kind!=ABANDON)CaelumDeadTraveler.ChangeMap(Destination,Entry,CHANGELEVEL_NOINTERMISSION);
             return;
         }
         Committed=true;
@@ -252,7 +261,7 @@ class CaelumCooperativeTravel : Inventory
                 Members[i].Die(Members[i],Members[i],0,'CaelumSurvival');
             return;
         }
-        Level.ChangeLevel(Destination,Entry,CHANGELEVEL_NOINTERMISSION);
+        CaelumDeadTraveler.ChangeMap(Destination,Entry,CHANGELEVEL_NOINTERMISSION);
     }
     override void Tick(){Super.Tick();if(Opened && (!RosterValid() || !SourceValid()))Finish("CA_COOP_TRAVEL_CANCELLED");}
     override void PreTravelled(){if(Opened)Finish("CA_COOP_TRAVEL_CANCELLED");Super.PreTravelled();}

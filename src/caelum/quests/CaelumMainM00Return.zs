@@ -201,7 +201,7 @@ class CaelumMainM00Return : Object play
             // negra superpuesta ocultaría la transición solicitada.
             user.A_SetBlend("Black", 0.0, 1);
             user.PendingTravelWipe = 2;
-            Level.ChangeLevel("MAP02", 0, CHANGELEVEL_NOINTERMISSION);
+            CaelumDeadTraveler.ChangeMap("MAP02", 0, CHANGELEVEL_NOINTERMISSION);
         }
         if (level.MapName == "MAP02" && r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_COMPLETE)
             && !r.MainM00SewerVoiceHeard && user.health > 0 && !user.HasActiveConversation())

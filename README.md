@@ -9,12 +9,13 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 **Current release: 5.12.3.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-**V5.12 lifecycle in progress (#437):** cooperative death retains the original
-pawn instead of respawning on Use. Death and departure cancel shared consent;
-common recovery preserves the saved character, and explicit Redemption keeps
-its existing resurrection rules. The Fool journey/spiritual form, coordinated
-recovery tooling and other V5.12 dependencies remain unfinished. Native evidence
-is separate from author acceptance; the combined manual suite remains deferred.
+**V5.12 lifecycle (#437):** cooperative death retains the original pawn, inventory
+and identity through native map travel. The Fool now requests a unanimous mansion
+visit; only the activator pays after consent. Dead visitors move and converse as
+spirits, with material rewards pending until resurrection. Palomo returns the
+group to its recorded departure without another payment or automatic revival.
+Death/departure cancel shared consent. Coordinated recovery tooling and other
+V5.12 dependencies remain unfinished; author acceptance is still pending.
 
 **V5.12 cooperative world (#436):** native peers now share one campaign clock and
 weather seed, with individual nonaccelerated rest. T/the time menu opens an

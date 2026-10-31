@@ -29,7 +29,7 @@ class CA437ClockProbe : EventHandler
         if(e.Name=="ca_session_recover" && e.Player==0)RecoveryRequested=true;
         if(e.Name=="ca437_verify_reload" && e.Player==0){Reloaded=true;Verified=false;return;}
         if(e.Name!="ca437_dead_vote" || Phase!=1 || e.Player!=Victim || Voted)return;
-        let user=CaelumPlayerAuthority.FromNetworkPlayer(e.Player);
+        let user=CaelumPlayerAuthority.FromNetworkPlayer(e.Player,true);
         Voted=Vote.Request(user,CaelumCooperativeTime.ACCEPT,Vote.Serial);
     }
     override void WorldTick()

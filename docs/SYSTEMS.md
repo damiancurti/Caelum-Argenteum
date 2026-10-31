@@ -15,17 +15,31 @@ The coordinated recovery launcher must send the native ca_session_recover event
 from player0 after loading a common checkpoint to invalidate old-session consent.
 That event does not move items, revive bodies or assign new identities.
 
-Author decisions on 2026-10-31, pending full implementation: activating The Fool
-replaces its flight power with unanimous travel to the mansion. Charge the
-initiator the existing 1,000 Anima and 600-second cooldown only after unanimity;
-refusal costs nothing. Palomo offers unanimous return to the original location,
-without another charge or automatic resurrection. A dead player controls a
-spiritual form only inside the mansion, able to move and converse but not to
-pick up, manufacture or transfer material items; the corpse and inventory remain
-in the campaign. If every player is dead, one may exceptionally initiate The
-Fool from the interface, paying the same Anima/cooldown; this does not authorize
-other world actions while dead. Native map/body/return integration is unfinished.
+Activating The Fool replaces flight with unanimous travel to the mansion. The
+initiator pays the existing 1,000 Anima and 600-second cooldown only after all
+accept; refusal costs nothing. Palomo offers unanimous return to each original
+position without another charge or automatic resurrection. If every player is
+dead, an owner of The Fool may exceptionally initiate it with User3 and the same
+requirements/cost. Dead players can still vote, but cannot act in the campaign.
 
+Inside the mansion only, the same dead identity controls a spirit. Movement and
+resident/Palomo conversations are allowed; material pickup, use, crafting and
+transfers are denied. Conversations can advance earned objectives, but do not
+complete physical practices. Promised decks/Boxes remain in revision-1 personal
+pending flags and are delivered once after resurrection, retrying if necessary.
+Existing tool gifts retain their original unclaimed-ID mechanism. Argento keeps
+the actual unique silver key until the living character claims it; a pending
+promise does not manufacture a replacement or remotely take his inventory.
+
+Native 4.14.2 normally force-respawns dead players before map travel and excludes
+dead pawns from its traveler list. The shared wrapper temporarily marks only the
+native carrier as eligible, never restores actor health, and restores death on
+arrival. It preserves the same pawn, record, inventory and corpse position; no
+second material inventory is created. The mansion now belongs to campaign hub
+434 so visiting it retains inactive campaign maps. On return the original body
+is visible at its recorded death position; elsewhere it remains noninteractive.
+Tarot power revision 2 removes legacy Fool flight while preserving ownership,
+selection and cooldown. Original saves/packages remain the reversible baseline.
 
 ## Shared clock and unanimous time (5.12.2, #436)
 

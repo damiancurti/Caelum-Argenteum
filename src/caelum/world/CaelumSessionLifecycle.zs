@@ -1,6 +1,20 @@
 // La muerte cooperativa conserva el cuerpo; Usar no crea otro personaje.
 class CaelumSessionLifecycle : EventHandler
 {
+    bool DeadFoolHeld[MAXPLAYERS];
+    override void WorldTick()
+    {
+        for(int i=0;i<MAXPLAYERS;i++)
+        {
+            if(!playeringame[i]){DeadFoolHeld[i]=false;continue;}
+            let user=CaelumPlayer(players[i].mo);
+            if(user==null || user.player==null)continue;
+            bool pressed=(user.player.cmd.buttons&BT_USER3)!=0;
+            if(user.health<=0 && pressed && !DeadFoolHeld[i] && CaelumFoolTravel.AllDead())
+                CaelumFoolTravel.Propose(user,true);
+            DeadFoolHeld[i]=pressed;
+        }
+    }
     static clearscope bool Waiting(CaelumPlayer user)
     {
         return multiplayer && CaelumPlayerAuthority.CanRead(user)
@@ -29,6 +43,6 @@ class CaelumSessionLifecycle : EventHandler
         // El lanzador de recuperación común invalida consentimientos del
         // proceso anterior después de cargar el guardado acordado.
         if(e.Name=="ca_session_recover" && e.Player==0
-            && CaelumPlayerAuthority.FromNetworkPlayer(e.Player)!=null)CancelConsent();
+            && CaelumPlayerAuthority.FromNetworkPlayer(e.Player,true)!=null)CancelConsent();
     }
 }

@@ -4,14 +4,14 @@ Documentation version: **5.12.3** - 2026-10-31.
 
 ## V5.12 lifecycle work - #437 / 5.12.3
 
-Implemented: preserve the dead native body instead of Use-to-respawn; cancel
-travel/time consent on death/departure; native common-recovery consent reset.
-Remaining: The Fool replaces flight with consented mansion travel; spirit-only
-movement/conversation; Palomo return to origin; complete departure/restart/map
-and companion-slot evidence. Author-approved all-dead exception allows a dead
-character to initiate The Fool with its ordinary Anima/cooldown. No auto-revival.
-Keep this PR separate from #436 and defer combined author checks until ready.
-
+Implemented: dead native body/inventory preservation through map travel;
+cancellation on death/departure; common-recovery consent reset; The Fool's
+unanimous mansion journey and all-dead exception; spirit movement/conversation;
+pending material rewards; Palomo return without payment or resurrection.
+Final package: 374 native assertions, including saved spirit rewards, earlier
+lifecycle-save recovery, solo native User3 and companion slot boundaries.
+Remaining: coordinated recovery launcher integration with #434/#435. Author checks stay
+deferred until all V5.12 issues are ready. No release-completion claim.
 
 ## V5.12 work in progress - #436 / 5.12.2
 

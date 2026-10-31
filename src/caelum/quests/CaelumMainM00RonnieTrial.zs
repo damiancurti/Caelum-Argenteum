@@ -454,7 +454,9 @@ class CaelumMainM00RonnieTrial : Object play
 
     static bool Finish(CaelumPlayer user)
     {
-        if (!IsRonnie(user)) return false;
+        if (!CaelumSpirit.CanConverse(user) || level.MapName != "MAP01") return false;
+        let speaker = CaelumRonnie(user.player.ConversationNPC);
+        if (speaker == null || !speaker.StoryAnchored) return false;
         let record = user.GetPersistentCharacterState(true);
         let first = user.FindNativeEquipmentItemById(record.MainM00StarterWeaponId);
         if (first == null || !CaelumOnboarding.LessonsComplete(record)) return false;
