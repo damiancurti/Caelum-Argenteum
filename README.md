@@ -63,7 +63,7 @@ Rescue objectives now capture the present character roster; each eligible
 character claims their own reward once. Late-ready records keep their personal
 progress and see unavailable-world objectives in the Journal. Solo campaigns
 also retain their own objective ledger; returning characters keep earned
-eligibility through their existing persistent legal identity.
+eligibility through independent snapshots of their persistent legal identity.
 Recovering the central house grants shared access to the present characters;
 only the actual payer receives the single refund of recorded payments.
 Two cooperative players can use the same tent with their own sleeping bags;

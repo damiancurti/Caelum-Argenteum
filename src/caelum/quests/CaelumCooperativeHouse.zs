@@ -3,6 +3,7 @@ class CaelumCooperativeHouse : Object play
 {
     static void Ensure(CaelumPropertyRecord property)
     {
+        if(property!=null && property.Restitution!=null)property.Restitution.EnsureIdentity();
         if(property==null || property.CooperativeRevision>=1)return;
         if(property.Holder==null){property.CooperativeRevision=1;return;}
         // Una restitución anterior no era una compra. Sólo su titular original
@@ -15,6 +16,7 @@ class CaelumCooperativeHouse : Object play
             if(property.Purchased && record.HouseRestitutionConfirmed)
             {
                 property.Restitution=new("CaelumCooperativeObjective");property.Restitution.Eligible.Push(record);
+                property.Restitution.EnsureIdentity();
                 property.CoHolders.Push(property.Holder);property.RefundHolder=property.Holder;
                 property.RefundCopper=record.HouseRefundPending;
                 property.RefundPaid=record.QuestRewardClaimed[CaelumConstants.QUEST_FIND_HOUSE];
