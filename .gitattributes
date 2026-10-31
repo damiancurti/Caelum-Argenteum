@@ -397,3 +397,9 @@
 # Preserve #502 dining contact native evidence.
 /assets/validation_5845/** -text whitespace=cr-at-eol
 /assets/validation_5845/native/*.txt whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+
+# Preserve deterministic arena geometry and data (#438).
+/assets/arenas/*.json text eol=lf
+/src/models/caelum/world/arenas/*.obj text eol=lf
+/src/caelum/data/arenas.mapinfo text eol=lf
+/src/caelum/data/CaelumArenaData.zs text eol=lf
