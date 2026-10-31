@@ -2,6 +2,12 @@
 
 Documentation version: **5.12.2** - 2026-10-30.
 
+#436 package follow-up: CRLF/LF normalization changes no logic. The rebuilt
+final package matches all changed source members exactly; native eight-peer
+36 checks each and two-peer six-check saved-session recovery pass again.
+Runs 20261030-222144/222237 and package SHA-256 are in validation_v5_12_2.
+This remains agent verification, not author acceptance.
+
 ## 5.12.2 - Shared clock and time consent (#436, 2026-10-30, in progress)
 
 Author decisions: individual unaccelerated rest; unanimous exact-duration
