@@ -1,11 +1,14 @@
 """Custody, recovery and manifest boundaries using real native profile anchors."""
 from pathlib import Path
-import copy,datetime,json,sys,unittest
+import contextlib,copy,datetime,io,json,sys,unittest
+from unittest.mock import patch
 ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT))
 from caelum_profiles import ProfileStore,ProfileError
 from caelum_profile_graph import NativeSchema,PersonalGraph
 from caelum_campaigns import Campaigns,unpack,pack,personal_record
 from caelum_sessions import Sessions,manifest,verify_manifest
+from caelum_transfer_verify import verify_transfer
+import caelum_session_menu
 sys.path.insert(0,str(ROOT/"assets/validation_v5_12_6"))
 from campaign_fixture import independent_world
 
@@ -96,6 +99,41 @@ class SessionTests(unittest.TestCase):
         with self.assertRaises(ProfileError):verify_manifest(recorded,engine,iwad,list(reversed(packages)))
         packages[0].write_bytes(b'changed')
         with self.assertRaises(ProfileError):verify_manifest(recorded,engine,iwad,packages)
+
+    def test_failed_native_transfer_remains_reserved_and_can_retry(self):
+        members,name,level=unpack(independent_world(original,'retry-destination'))
+        personal_record(level,1)['ProfileCommitted']=0
+        target=self.worlds.register('destination',pack(members,name,level))
+        identity=self.store.connection.execute("SELECT identity FROM campaign_slots WHERE campaign='world' AND player=0").fetchone()[0]
+        staged=self.worlds.stage(identity,'destination',1,'retry')
+        source_data=self.store.anchor(staged['source_draft'])
+        with patch('caelum_transfer_verify.native_checkpoint',side_effect=[(source_data,{'passed':True}),ProfileError('injected peer failure')]):
+            with self.assertRaisesRegex(ProfileError,'injected peer failure'):
+                verify_transfer(self.worlds,'retry',self.path/'failed',Path('unused'),Path('unused'),[runtime])
+        self.assertEqual(self.worlds.head('world'),self.head)
+        self.assertEqual(self.worlds.head('destination'),target)
+        self.assertEqual(self.store.get(identity).campaign,'world')
+        self.assertIsNone(self.store.connection.execute("SELECT result FROM transfers WHERE token='retry'").fetchone()[0])
+        self.assertEqual(self.store.connection.execute("SELECT COUNT(*) FROM campaign_locks WHERE token='retry'").fetchone()[0],2)
+        members,name,level=unpack(self.store.anchor(staged['destination_draft']))
+        record=personal_record(level,1);record['ProfileImportApplied']=record['ProfileImportSerial']
+        destination_data=pack(members,name,level)
+        arguments=['menu','--store',str(self.path/'profiles.sqlite3'),
+            '--engine','C:/Program Files (x86)/GZDoom/gzdoom.exe',
+            '--iwad','C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD',
+            '--package',str(runtime),'--language','en']
+        output=io.StringIO()
+        with patch('caelum_transfer_verify.native_checkpoint',side_effect=[(source_data,{'passed':True}),(destination_data,{'passed':True})]), \
+             patch.object(sys,'argv',arguments),patch('builtins.input',side_effect=['12','1','0']),contextlib.redirect_stdout(output):
+            caelum_session_menu.main()
+        self.assertIn('Transfer verified and published in both campaigns.',output.getvalue())
+        self.assertEqual(self.store.get(identity).campaign,'destination')
+        with self.assertRaisesRegex(ProfileError,'Fill every native slot'):
+            self.sessions.prepare('world',FILES,'empty-source')
+        with self.assertRaises(ProfileError):
+            verify_transfer(self.worlds,'retry',self.path/'duplicate',Path('unused'),Path('unused'),[runtime])
+        self.assertEqual(self.store.get(identity).revision,1)
+        self.assertEqual(self.store.connection.execute('SELECT COUNT(*) FROM campaign_locks').fetchone()[0],0)
 
 
 suite=unittest.defaultTestLoader.loadTestsFromTestCase(SessionTests)

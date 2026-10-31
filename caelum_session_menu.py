@@ -7,6 +7,7 @@ from caelum_profile_graph import NativeSchema,PersonalGraph
 from caelum_campaigns import Campaigns
 from caelum_sessions import Sessions,manifest
 from caelum_transfer_verify import verify_transfer
+from caelum_new_campaign import create_vacant_save
 
 ROOT=Path(__file__).resolve().parent
 
@@ -79,10 +80,15 @@ def main():
                     print(text('verifying')+str(directory));print(text('transfer_token')+token)
                     verify_transfer(worlds,token,directory,engine,iwad,packages)
                     print(text('transferred'))
-                elif action=='7':
+                elif action in ('7','12'):
                     pending=[dict(r) for r in store.connection.execute('SELECT token,request FROM transfers WHERE result IS NULL')]
                     selected=choose(pending,lambda r:json.loads(r['request'])['source']+' → '+json.loads(r['request'])['destination']+' — '+r['token'][:8])
-                    worlds.cancel(selected['token']);print(text('cancelled'))
+                    if action=='7':worlds.cancel(selected['token']);print(text('cancelled'))
+                    else:
+                        directory=folder('transfers')
+                        print(text('verifying')+str(directory));print(text('transfer_token')+selected['token'])
+                        verify_transfer(worlds,selected['token'],directory,engine,iwad,packages)
+                        print(text('transferred'))
                 elif action=='8':
                     output=Path(ask('backup')).resolve();store.backup(output);print(text('written')+str(output))
                 elif action=='9':
@@ -91,6 +97,14 @@ def main():
                 elif action=='10':
                     selected=world();output=Path(ask('save')).resolve();store.export_anchor(selected['snapshot'],output)
                     print(text('written')+str(output));print(text('export_warning'))
+                elif action=='11':
+                    name=ask('campaign');store._key(name,'campaign identity')
+                    if store.connection.execute('SELECT 1 FROM campaigns WHERE identity=?',(name,)).fetchone():
+                        raise ProfileError(text('exists'))
+                    count=int(ask('players'));directory=folder('campaigns')
+                    print(text('vacancy_notice'));print(text('verifying')+str(directory))
+                    save=create_vacant_save(engine,iwad,packages,count,directory)
+                    worlds.register(name,save.read_bytes());print(text('registered')+name)
                 else:print(text('invalid'))
             except (ProfileError,OSError,ValueError,KeyError) as exc:
                 print(text('error')+str(exc))

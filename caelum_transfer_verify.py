@@ -12,6 +12,7 @@ import json
 from pathlib import Path
 import secrets
 import subprocess
+import sys
 import time
 import zipfile
 
@@ -54,7 +55,7 @@ def native_checkpoint(data: bytes, campaign: str, directory: Path, engine: Path,
     startup=subprocess.STARTUPINFO();startup.dwFlags|=subprocess.STARTF_USESHOWWINDOW;startup.wShowWindow=0
     try:
         for slot in range(len(roster)):
-            cmd,peer=command(directory,slot,engine,iwad,files,port,'127.0.0.1')
+            cmd,peer=command(directory,slot,engine,iwad,files,port,'127.0.0.1',verification=True)
             cmd+=['-window','-width','640','-height','480']
             streams.append((peer/'process.log').open('wb'));peers.append(peer);commands.append(cmd)
             processes.append(subprocess.Popen(cmd,cwd=peer,startupinfo=startup,stdout=streams[-1],stderr=streams[-1]))
@@ -80,12 +81,16 @@ def native_checkpoint(data: bytes, campaign: str, directory: Path, engine: Path,
         raise ProfileError(f'Native verification timed out; original campaign heads remain intact: {directory}')
     finally:
         # These are only the child processes created above, never an author's game.
+        failure=sys.exc_info()[1]
+        observed=[dict(slot=i,pid=p.pid,exit_code=p.poll()) for i,p in enumerate(processes)]
         for process in processes:
             if process.poll() is None:process.terminate()
         for process in processes:process.wait(timeout=15)
         for stream in streams:stream.close()
         if result is None:
-            write_new(directory/'failure.json',(json.dumps(dict(campaign=campaign,commands=commands,passed=False),indent=2)+'\n').encode())
+            write_new(directory/'failure.json',(json.dumps(dict(campaign=campaign,commands=commands,
+                observed_before_cleanup=observed,error=str(failure) if failure else None,
+                passed=False),indent=2)+'\n').encode())
 
 
 def verify_transfer(campaigns: Campaigns, token: str, directory: Path,

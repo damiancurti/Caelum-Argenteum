@@ -105,6 +105,8 @@ class Sessions:
                 previous=self.get(token)
                 if previous['request']['campaign']!=campaign or previous['request']['manifest']!=files:
                     raise ProfileError('Session token belongs to another request.')
+                if any(r['identity'].startswith('vacant:') for r in previous['request']['roster']):
+                    raise ProfileError('Fill every native slot before playing this fixed-roster campaign.')
                 return previous
             self.campaigns.unlocked(campaign)
             head=self.campaigns.head(campaign);data=self.store.anchor(head['snapshot'])
@@ -114,7 +116,9 @@ class Sessions:
             for slot in range(len(level['players'])):
                 record=personal_record(level,slot)
                 if record.get('ExternalProfileCampaign')!=campaign:raise ProfileError('Initialize/import every native slot before managed launch.')
-                roster.append(dict(slot=slot,identity=f'vacant:{slot}' if record.get('ProfileDeparted') else record['ExternalProfileId'],
+                if record.get('ProfileDeparted') or not record.get('ProfileCommitted') or not record.get('ExternalProfileId'):
+                    raise ProfileError('Fill every native slot before playing this fixed-roster campaign.')
+                roster.append(dict(slot=slot,identity=record['ExternalProfileId'],
                                    name=level['players'][slot].get('playername','Character')))
             request=dict(revision=1,campaign=campaign,head=head,manifest=files,roster=roster,nonce=secrets.randbelow(2147483646)+1)
             self.db.execute('INSERT INTO network_sessions VALUES (?,?,NULL)',(token,json.dumps(request,sort_keys=True)))
@@ -178,12 +182,14 @@ class Sessions:
             return result
 
 
-def command(bundle: Path,slot: int,engine: Path,iwad: Path,packages: list[Path],port: int,host: str) -> tuple[list[str],Path]:
+def command(bundle: Path,slot: int,engine: Path,iwad: Path,packages: list[Path],port: int,host: str,*,verification: bool=False) -> tuple[list[str],Path]:
     """Prepare one native process. Joining order is checked by the runtime gate."""
     session=json.loads((bundle/'session.json').read_text(encoding='utf-8'));request=session['request']
     if session.get('result') is not None:raise ProfileError('Closed session bundle.')
     verify_manifest(request['manifest'],engine,iwad,packages)
     roster=request['roster']
+    if not verification and any(r['identity'].startswith('vacant:') for r in roster):
+        raise ProfileError('Vacant peers are only supported during isolated transfer verification; fill every slot before playing.')
     if isinstance(slot,bool) or not 0<=slot<len(roster):raise ProfileError('Unknown native player slot.')
     data=(bundle/'recovery.zds').read_bytes()
     if hashlib.sha256(data).hexdigest()!=request['head']['snapshot']:raise ProfileError('Common recovery checkpoint does not match manifest.')

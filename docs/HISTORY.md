@@ -26,9 +26,20 @@ Four native source/destination verifications also publish a complete outward and
 return transfer through the production identity gate. Nine transaction checks
 and menu registration/list/preparation/closure/backup pass. Evidence:
 managed-results.json, managed-logs.json.gz and launcher-results.json.
-Intermittent eight-process engine/driver exits remain unresolved; retained dumps
-are partially symbolized with official matching PDBs. No rendering or complete
-stability claim. Empty-slot onboarding and the final author handoff remain open.
+Native vacant-world onboarding now passes: actual MAP01 creation, outward
+transfer, native dialogue cancellation/movement/save, and return to the original
+campaign. Ordinary sessions reject empty/departed slots before launch; the menu
+creates 1–8-slot worlds and can retry a reserved transfer without staging it again.
+Ten transaction checks (including injected failure/retry through the menu), actual
+menu creation/duplicate-name refusal, and 64 eight-client combat assertions pass.
+Evidence: vacancy-results.json and vacancy-logs.json.gz.
+
+A two-peer return also hit a native abort before identity readiness; the exact
+reserved drafts passed on retry, and a separate complete roundtrip passed. Both
+original campaign heads stayed protected. Dump5388 includes a pure virtual call
+through FBaseCVar::GetHumanString; that partial reconstruction does not establish
+the cause. Intermittent native exits, presentation measurement and final author
+handoff remain open. No full stability or rendering acceptance is claimed.
 
 The launcher pins the engine/resources, IWAD and ordered packages, exports one
 common checkpoint and reserves campaign custody in the profile database. Native
@@ -46,8 +57,9 @@ identity, sender attribution and duplicate rejection, followed by restart from
 the same registry and checkpoint with unchanged identities. Two-peer wrong-slot
 refusal preserves the prior head. Handshake inputs are local, nonpersistent
 CVars; only the explicit validated network event communicates them. The host
-reads new log bytes incrementally. Native managed workflow passes as qualified above. Frame presentation and
-remaining onboarding remain pending; no Internet-latency or author acceptance claim.
+reads new log bytes incrementally. Native managed workflow passes as qualified above.
+Frame presentation and native-failure investigation remain pending; no
+Internet-latency or author acceptance claim.
 
 Two earlier managed-load runs using native user-info CVars failed inside the
 engine (c0000409/c0000374); invalid resulting checkpoints were refused. Local

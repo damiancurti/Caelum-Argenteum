@@ -5862,7 +5862,7 @@ lost static reference as missing world stock. Likewise, distinguish an admission
 seed from an actual active-card-hand reload before issuing test input. Production
 handler classes and saved-object ownership are unchanged by these probe adaptations.
 
-## CA-KP-200 - Intermittent native failures during local eight-process sessions
+## CA-KP-200 - Intermittent native failures during local multi-process sessions
 
 Status/evidence: OBSERVED/UNRESOLVED, #435, 2026-10-31, GZDoom4.14.2/Windows11,
 RTX3070Ti. Local runs session-20261031-060502-507379 and -060617-276664 had native
@@ -5879,3 +5879,16 @@ with identical state and native checkpoint publication. Those passes do not eras
 the intermittent failures or establish stable rendering on eight processes sharing
 one GPU. Actual presentation still requires the authorized bounded elevated capture;
 the normal-user attempt returned access denied (exit6), not a measurement.
+
+Follow-up: an actual vacant MAP01 outward/return workflow had a two-process abort
+on its return to diagnostic MAP03 (managed-transfer-20261031-070756-933623).
+The exact reserved drafts passed on retry; another full roundtrip and a new
+64-assertion eight-client run passed. Keep the failure separate from those passes.
+Read-only PE unwind metadata and matching PDBs identify abort, _purecall and
+FBaseCVar::GetHumanString in dump5388. The remaining reconstruction is partial;
+raw stack candidates are untrusted values, not call frames. This is a native-CVar
+investigation lead, not proof that user-info, the renderer or profile data caused
+it. The diagnostic reader validates installed PE timestamps and never reconstructs
+missing mutable data. Evidence: validation_v5_12_7/vacancy-results.json and logs.
+The production verifier records observed peer exits before terminating only its
+own remaining children, and leaves both original heads/reservations unchanged.

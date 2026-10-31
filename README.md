@@ -23,16 +23,20 @@ separate from regenerable builds. Use `--language en` or `--store PATH` as neede
 Register an existing current native save, prepare one common session, then open
 that bundle as the selected host/guest in its displayed connection order. Transfers
 are verified on copied worlds before custody is published; recovery retains originals.
-Native vacancy onboarding, intermittent eight-process exits and presentation
-measurements still prevent declaring the release complete.
+Menu option11 creates a new mansion with empty slots; transfer a character into
+every slot before playing. Option12 retries a pending transfer; option7 cancels
+it while preserving the original checkpoints. Creation, outward/return transfer,
+normal imported gameplay and vacancy refusal pass, including a fresh eight-client
+combat regression. Intermittent native exits and presentation measurements still
+prevent declaring the release complete.
 
 **V5.12 profiles (#434, implementation in progress):** staged campaign transfers
 and return now preserve a single active owner, packed inventory and each world's
 shops/properties. Native narrative checkpoints save complete transactions without
 replaying rewards on load. Whole-coordinator backup/recovery and deceased-profile
 transfer in actual Barracas pass. Native hub travel and portable/world quest
-boundaries pass, including pending rewards on return. Final managed multiplayer
-integration remains; no author handoff yet.
+boundaries pass, including pending rewards on return. Managed native transfer
+integration passes; final stability/presentation checks and author handoff remain.
 Transfers reject active conversations while allowing finished dialogue references.
 `caelum_new_campaign.py` creates a separate native MAP01 with 1?8 vacant slots
 for imports, without replacing a save or granting placeholder equipment. The

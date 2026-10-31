@@ -1,0 +1,1398 @@
+{
+  "issue": 435,
+  "version": "5.12.7",
+  "author_accepted": false,
+  "status": "native vacancy workflow verified; intermittent native exits and presentation gate unresolved",
+  "runtime_sha256": "c3c8f9e71c3f4eb600dfdf3c7be7500f936f18bc68607e475d754e83763ab3fc",
+  "native_roundtrip": {
+    "issue": 435,
+    "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247",
+    "runs": [
+      {
+        "token": "outbound",
+        "native": [
+          {
+            "campaign": "a",
+            "players": 2,
+            "commands": [
+              [
+                "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+                "-noautoload",
+                "-iwad",
+                "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+                "-file",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\vacancy-final\\caelum_argenteum_dev.pk3",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\checks.pk3",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\outbound\\source\\verification.pk3",
+                "-config",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\outbound\\source\\peer0\\session.ini",
+                "-savedir",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\outbound\\source\\peer0",
+                "-host",
+                "2",
+                "-port",
+                "30635",
+                "-netmode",
+                "0",
+                "+logfile",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\outbound\\source\\peer0\\engine.log",
+                "-loadgame",
+                "recovery.zds",
+                "+exec",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\outbound\\source\\peer0\\start.cfg",
+                "-window",
+                "-width",
+                "640",
+                "-height",
+                "480"
+              ],
+              [
+                "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+                "-noautoload",
+                "-iwad",
+                "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+                "-file",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\vacancy-final\\caelum_argenteum_dev.pk3",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\checks.pk3",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\outbound\\source\\verification.pk3",
+                "-config",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\outbound\\source\\peer1\\session.ini",
+                "-savedir",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\outbound\\source\\peer1",
+                "-join",
+                "127.0.0.1:30635",
+                "-port",
+                "30636",
+                "+logfile",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\outbound\\source\\peer1\\engine.log",
+                "-loadgame",
+                "recovery.zds",
+                "+exec",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\outbound\\source\\peer1\\start.cfg",
+                "-window",
+                "-width",
+                "640",
+                "-height",
+                "480"
+              ]
+            ],
+            "output": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\outbound\\source\\peer0\\save00.zds",
+            "snapshot": "e929726f58e551a7675ce14f181d70b1b2bda0b295c2b57d83f16f91bab46aea",
+            "passed": true
+          },
+          {
+            "campaign": "b",
+            "players": 1,
+            "commands": [
+              [
+                "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+                "-noautoload",
+                "-iwad",
+                "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+                "-file",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\vacancy-final\\caelum_argenteum_dev.pk3",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\checks.pk3",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\outbound\\destination\\verification.pk3",
+                "-config",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\outbound\\destination\\peer0\\session.ini",
+                "-savedir",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\outbound\\destination\\peer0",
+                "+logfile",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\outbound\\destination\\peer0\\engine.log",
+                "-loadgame",
+                "recovery.zds",
+                "+exec",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\outbound\\destination\\peer0\\start.cfg",
+                "-window",
+                "-width",
+                "640",
+                "-height",
+                "480"
+              ]
+            ],
+            "output": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\outbound\\destination\\peer0\\save00.zds",
+            "snapshot": "f3ceaf848d6c989cad32cd1911492271d34a17206df537d5383865edeb555011",
+            "passed": true
+          }
+        ],
+        "published": {
+          "identity": "b49bbecc-89cd-4c09-b344-322ed081b0a0",
+          "campaign": "b",
+          "revision": 1,
+          "source_snapshot": "e929726f58e551a7675ce14f181d70b1b2bda0b295c2b57d83f16f91bab46aea",
+          "destination_snapshot": "f3ceaf848d6c989cad32cd1911492271d34a17206df537d5383865edeb555011"
+        }
+      },
+      {
+        "token": "return",
+        "native": [
+          {
+            "campaign": "b",
+            "players": 1,
+            "commands": [
+              [
+                "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+                "-noautoload",
+                "-iwad",
+                "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+                "-file",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\vacancy-final\\caelum_argenteum_dev.pk3",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\checks.pk3",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\return\\source\\verification.pk3",
+                "-config",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\return\\source\\peer0\\session.ini",
+                "-savedir",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\return\\source\\peer0",
+                "+logfile",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\return\\source\\peer0\\engine.log",
+                "-loadgame",
+                "recovery.zds",
+                "+exec",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\return\\source\\peer0\\start.cfg",
+                "-window",
+                "-width",
+                "640",
+                "-height",
+                "480"
+              ]
+            ],
+            "output": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\return\\source\\peer0\\save00.zds",
+            "snapshot": "fee9cca814a72226beb9edd5af17e1c3c908de90a3e0d01d41a20da2340d136d",
+            "passed": true
+          },
+          {
+            "campaign": "a",
+            "players": 2,
+            "commands": [
+              [
+                "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+                "-noautoload",
+                "-iwad",
+                "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+                "-file",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\vacancy-final\\caelum_argenteum_dev.pk3",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\checks.pk3",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\return\\destination\\verification.pk3",
+                "-config",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\return\\destination\\peer0\\session.ini",
+                "-savedir",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\return\\destination\\peer0",
+                "-host",
+                "2",
+                "-port",
+                "30635",
+                "-netmode",
+                "0",
+                "+logfile",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\return\\destination\\peer0\\engine.log",
+                "-loadgame",
+                "recovery.zds",
+                "+exec",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\return\\destination\\peer0\\start.cfg",
+                "-window",
+                "-width",
+                "640",
+                "-height",
+                "480"
+              ],
+              [
+                "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+                "-noautoload",
+                "-iwad",
+                "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+                "-file",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\vacancy-final\\caelum_argenteum_dev.pk3",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\checks.pk3",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\return\\destination\\verification.pk3",
+                "-config",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\return\\destination\\peer1\\session.ini",
+                "-savedir",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\return\\destination\\peer1",
+                "-join",
+                "127.0.0.1:30635",
+                "-port",
+                "30636",
+                "+logfile",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\return\\destination\\peer1\\engine.log",
+                "-loadgame",
+                "recovery.zds",
+                "+exec",
+                "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\return\\destination\\peer1\\start.cfg",
+                "-window",
+                "-width",
+                "640",
+                "-height",
+                "480"
+              ]
+            ],
+            "output": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\return\\destination\\peer0\\save00.zds",
+            "snapshot": "6e0419473b532bfe2edbcd339286e2d47b2d1d123aa0b3218ae4971b5016acc6",
+            "passed": true
+          }
+        ],
+        "published": {
+          "identity": "b49bbecc-89cd-4c09-b344-322ed081b0a0",
+          "campaign": "a",
+          "revision": 2,
+          "source_snapshot": "fee9cca814a72226beb9edd5af17e1c3c908de90a3e0d01d41a20da2340d136d",
+          "destination_snapshot": "6e0419473b532bfe2edbcd339286e2d47b2d1d123aa0b3218ae4971b5016acc6"
+        }
+      }
+    ],
+    "native_vacancy": true,
+    "native_play": {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-072010-614247\\imported-play",
+      "checks": 2,
+      "recovery": {
+        "status": "closed",
+        "recovery": {
+          "identity": "b",
+          "revision": 2,
+          "snapshot": "01876e376fe83ab208807b0c7b789dc9f3fe9bb4542215914f10ab3471a0ff77"
+        }
+      },
+      "passed": true
+    },
+    "admission": [
+      "a vacant normal launch refused",
+      "b occupied normal session prepared",
+      "b vacant normal launch refused",
+      "a occupied normal session prepared"
+    ],
+    "passed": true,
+    "author_acceptance": false
+  },
+  "earlier_failed_return": {
+    "directory": "build\\issue435\\managed-transfer-20261031-070756-933623\\return",
+    "failure": {
+      "campaign": "a",
+      "commands": [
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\vacancy-final\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-070756-933623\\checks.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-070756-933623\\return\\destination\\verification.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-070756-933623\\return\\destination\\peer0\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-070756-933623\\return\\destination\\peer0",
+          "-host",
+          "2",
+          "-port",
+          "30635",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-070756-933623\\return\\destination\\peer0\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-070756-933623\\return\\destination\\peer0\\start.cfg",
+          "-window",
+          "-width",
+          "640",
+          "-height",
+          "480"
+        ],
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\vacancy-final\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-070756-933623\\checks.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-070756-933623\\return\\destination\\verification.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-070756-933623\\return\\destination\\peer1\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-070756-933623\\return\\destination\\peer1",
+          "-join",
+          "127.0.0.1:30635",
+          "-port",
+          "30636",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-070756-933623\\return\\destination\\peer1\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-070756-933623\\return\\destination\\peer1\\start.cfg",
+          "-window",
+          "-width",
+          "640",
+          "-height",
+          "480"
+        ]
+      ],
+      "passed": false
+    },
+    "retry": {
+      "token": "return",
+      "native": [
+        {
+          "campaign": "b",
+          "players": 1,
+          "commands": [
+            [
+              "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+              "-noautoload",
+              "-iwad",
+              "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+              "-file",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\vacancy-final\\caelum_argenteum_dev.pk3",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-070756-933623\\checks.pk3",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-070756-933623\\return-retry\\source\\verification.pk3",
+              "-config",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-070756-933623\\return-retry\\source\\peer0\\session.ini",
+              "-savedir",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-070756-933623\\return-retry\\source\\peer0",
+              "+logfile",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-070756-933623\\return-retry\\source\\peer0\\engine.log",
+              "-loadgame",
+              "recovery.zds",
+              "+exec",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-070756-933623\\return-retry\\source\\peer0\\start.cfg",
+              "-window",
+              "-width",
+              "640",
+              "-height",
+              "480"
+            ]
+          ],
+          "output": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-070756-933623\\return-retry\\source\\peer0\\save00.zds",
+          "snapshot": "5c6fe307da122e34469002794cec58420d3e0815b84dd23e267cec52efd5928a",
+          "passed": true
+        },
+        {
+          "campaign": "a",
+          "players": 2,
+          "commands": [
+            [
+              "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+              "-noautoload",
+              "-iwad",
+              "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+              "-file",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\vacancy-final\\caelum_argenteum_dev.pk3",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-070756-933623\\checks.pk3",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-070756-933623\\return-retry\\destination\\verification.pk3",
+              "-config",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-070756-933623\\return-retry\\destination\\peer0\\session.ini",
+              "-savedir",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-070756-933623\\return-retry\\destination\\peer0",
+              "-host",
+              "2",
+              "-port",
+              "30635",
+              "-netmode",
+              "0",
+              "+logfile",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-070756-933623\\return-retry\\destination\\peer0\\engine.log",
+              "-loadgame",
+              "recovery.zds",
+              "+exec",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-070756-933623\\return-retry\\destination\\peer0\\start.cfg",
+              "-window",
+              "-width",
+              "640",
+              "-height",
+              "480"
+            ],
+            [
+              "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+              "-noautoload",
+              "-iwad",
+              "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+              "-file",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\vacancy-final\\caelum_argenteum_dev.pk3",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-070756-933623\\checks.pk3",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-070756-933623\\return-retry\\destination\\verification.pk3",
+              "-config",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-070756-933623\\return-retry\\destination\\peer1\\session.ini",
+              "-savedir",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-070756-933623\\return-retry\\destination\\peer1",
+              "-join",
+              "127.0.0.1:30635",
+              "-port",
+              "30636",
+              "+logfile",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-070756-933623\\return-retry\\destination\\peer1\\engine.log",
+              "-loadgame",
+              "recovery.zds",
+              "+exec",
+              "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-070756-933623\\return-retry\\destination\\peer1\\start.cfg",
+              "-window",
+              "-width",
+              "640",
+              "-height",
+              "480"
+            ]
+          ],
+          "output": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\managed-transfer-20261031-070756-933623\\return-retry\\destination\\peer0\\save00.zds",
+          "snapshot": "cecf1e74faf22321261cb46d677a8f3ff2e415592f221552bf5f9218686242fe",
+          "passed": true
+        }
+      ],
+      "published": {
+        "identity": "fbaa1bcd-7720-4015-bd90-98a57cd834b2",
+        "campaign": "a",
+        "revision": 2,
+        "source_snapshot": "5c6fe307da122e34469002794cec58420d3e0815b84dd23e267cec52efd5928a",
+        "destination_snapshot": "cecf1e74faf22321261cb46d677a8f3ff2e415592f221552bf5f9218686242fe"
+      }
+    },
+    "post_return": {
+      "occupied_world_prepares": true,
+      "vacant_world_refused": true,
+      "identity": "fbaa1bcd-7720-4015-bd90-98a57cd834b2",
+      "revision": 2,
+      "passed": true
+    }
+  },
+  "eight_client_regression": {
+    "issue": 435,
+    "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703",
+    "source": "build\\issue435\\session-20261031-060731-680166\\peer0\\save00.zds",
+    "resume_registry": "None",
+    "players": 8,
+    "wrong_slot": false,
+    "source_overlay": false,
+    "unmanaged_reload": false,
+    "gameplay": false,
+    "combat": true,
+    "same_state": true,
+    "commands": [
+      [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\vacancy-final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\checks.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\bundle\\peer0\\session.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\bundle\\peer0",
+        "-host",
+        "8",
+        "-port",
+        "30535",
+        "-netmode",
+        "0",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\bundle\\peer0\\engine.log",
+        "-loadgame",
+        "recovery.zds",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\bundle\\peer0\\start.cfg",
+        "-window",
+        "-width",
+        "640",
+        "-height",
+        "480"
+      ],
+      [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\vacancy-final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\checks.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\bundle\\peer1\\session.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\bundle\\peer1",
+        "-join",
+        "127.0.0.1:30535",
+        "-port",
+        "30536",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\bundle\\peer1\\engine.log",
+        "-loadgame",
+        "recovery.zds",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\bundle\\peer1\\start.cfg",
+        "-window",
+        "-width",
+        "640",
+        "-height",
+        "480"
+      ],
+      [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\vacancy-final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\checks.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\bundle\\peer2\\session.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\bundle\\peer2",
+        "-join",
+        "127.0.0.1:30535",
+        "-port",
+        "30537",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\bundle\\peer2\\engine.log",
+        "-loadgame",
+        "recovery.zds",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\bundle\\peer2\\start.cfg",
+        "-window",
+        "-width",
+        "640",
+        "-height",
+        "480"
+      ],
+      [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\vacancy-final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\checks.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\bundle\\peer3\\session.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\bundle\\peer3",
+        "-join",
+        "127.0.0.1:30535",
+        "-port",
+        "30538",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\bundle\\peer3\\engine.log",
+        "-loadgame",
+        "recovery.zds",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\bundle\\peer3\\start.cfg",
+        "-window",
+        "-width",
+        "640",
+        "-height",
+        "480"
+      ],
+      [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\vacancy-final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\checks.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\bundle\\peer4\\session.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\bundle\\peer4",
+        "-join",
+        "127.0.0.1:30535",
+        "-port",
+        "30539",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\bundle\\peer4\\engine.log",
+        "-loadgame",
+        "recovery.zds",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\bundle\\peer4\\start.cfg",
+        "-window",
+        "-width",
+        "640",
+        "-height",
+        "480"
+      ],
+      [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\vacancy-final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\checks.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\bundle\\peer5\\session.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\bundle\\peer5",
+        "-join",
+        "127.0.0.1:30535",
+        "-port",
+        "30540",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\bundle\\peer5\\engine.log",
+        "-loadgame",
+        "recovery.zds",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\bundle\\peer5\\start.cfg",
+        "-window",
+        "-width",
+        "640",
+        "-height",
+        "480"
+      ],
+      [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\vacancy-final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\checks.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\bundle\\peer6\\session.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\bundle\\peer6",
+        "-join",
+        "127.0.0.1:30535",
+        "-port",
+        "30541",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\bundle\\peer6\\engine.log",
+        "-loadgame",
+        "recovery.zds",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\bundle\\peer6\\start.cfg",
+        "-window",
+        "-width",
+        "640",
+        "-height",
+        "480"
+      ],
+      [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\vacancy-final\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\checks.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\bundle\\peer7\\session.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\bundle\\peer7",
+        "-join",
+        "127.0.0.1:30535",
+        "-port",
+        "30542",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\bundle\\peer7\\engine.log",
+        "-loadgame",
+        "recovery.zds",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\session-20261031-072249-981703\\bundle\\peer7\\start.cfg",
+        "-window",
+        "-width",
+        "640",
+        "-height",
+        "480"
+      ]
+    ],
+    "runtime_sha256": "c3c8f9e71c3f4eb600dfdf3c7be7500f936f18bc68607e475d754e83763ab3fc",
+    "peers": [
+      {
+        "peer": 0,
+        "exit": 0,
+        "errors": [],
+        "passed": true,
+        "states": [
+          "CA435SESSION STATE slot=0 x=-397.724133 health=9980 hits=1 attacker=0 casts=1 paid=1000.000000 cooldown=20948",
+          "CA435SESSION STATE slot=1 x=-397.096430 health=9988 hits=1 attacker=1 casts=0 paid=0.000000 cooldown=0",
+          "CA435SESSION STATE slot=2 x=-396.476958 health=9998 hits=1 attacker=2 casts=1 paid=1000.000000 cooldown=20948",
+          "CA435SESSION STATE slot=3 x=-395.812647 health=9994 hits=1 attacker=3 casts=0 paid=0.000000 cooldown=0",
+          "CA435SESSION STATE slot=4 x=-395.812726 health=9982 hits=1 attacker=4 casts=1 paid=1000.000000 cooldown=20948",
+          "CA435SESSION STATE slot=5 x=-394.355122 health=9982 hits=1 attacker=5 casts=0 paid=0.000000 cooldown=0",
+          "CA435SESSION STATE slot=6 x=-393.564247 health=9990 hits=1 attacker=6 casts=1 paid=1000.000000 cooldown=20948",
+          "CA435SESSION STATE slot=7 x=-392.733258 health=9988 hits=1 attacker=7 casts=0 paid=0.000000 cooldown=0"
+        ]
+      },
+      {
+        "peer": 1,
+        "exit": 0,
+        "errors": [],
+        "passed": true,
+        "states": [
+          "CA435SESSION STATE slot=0 x=-397.724133 health=9980 hits=1 attacker=0 casts=1 paid=1000.000000 cooldown=20948",
+          "CA435SESSION STATE slot=1 x=-397.096430 health=9988 hits=1 attacker=1 casts=0 paid=0.000000 cooldown=0",
+          "CA435SESSION STATE slot=2 x=-396.476958 health=9998 hits=1 attacker=2 casts=1 paid=1000.000000 cooldown=20948",
+          "CA435SESSION STATE slot=3 x=-395.812647 health=9994 hits=1 attacker=3 casts=0 paid=0.000000 cooldown=0",
+          "CA435SESSION STATE slot=4 x=-395.812726 health=9982 hits=1 attacker=4 casts=1 paid=1000.000000 cooldown=20948",
+          "CA435SESSION STATE slot=5 x=-394.355122 health=9982 hits=1 attacker=5 casts=0 paid=0.000000 cooldown=0",
+          "CA435SESSION STATE slot=6 x=-393.564247 health=9990 hits=1 attacker=6 casts=1 paid=1000.000000 cooldown=20948",
+          "CA435SESSION STATE slot=7 x=-392.733258 health=9988 hits=1 attacker=7 casts=0 paid=0.000000 cooldown=0"
+        ]
+      },
+      {
+        "peer": 2,
+        "exit": 0,
+        "errors": [],
+        "passed": true,
+        "states": [
+          "CA435SESSION STATE slot=0 x=-397.724133 health=9980 hits=1 attacker=0 casts=1 paid=1000.000000 cooldown=20948",
+          "CA435SESSION STATE slot=1 x=-397.096430 health=9988 hits=1 attacker=1 casts=0 paid=0.000000 cooldown=0",
+          "CA435SESSION STATE slot=2 x=-396.476958 health=9998 hits=1 attacker=2 casts=1 paid=1000.000000 cooldown=20948",
+          "CA435SESSION STATE slot=3 x=-395.812647 health=9994 hits=1 attacker=3 casts=0 paid=0.000000 cooldown=0",
+          "CA435SESSION STATE slot=4 x=-395.812726 health=9982 hits=1 attacker=4 casts=1 paid=1000.000000 cooldown=20948",
+          "CA435SESSION STATE slot=5 x=-394.355122 health=9982 hits=1 attacker=5 casts=0 paid=0.000000 cooldown=0",
+          "CA435SESSION STATE slot=6 x=-393.564247 health=9990 hits=1 attacker=6 casts=1 paid=1000.000000 cooldown=20948",
+          "CA435SESSION STATE slot=7 x=-392.733258 health=9988 hits=1 attacker=7 casts=0 paid=0.000000 cooldown=0"
+        ]
+      },
+      {
+        "peer": 3,
+        "exit": 0,
+        "errors": [],
+        "passed": true,
+        "states": [
+          "CA435SESSION STATE slot=0 x=-397.724133 health=9980 hits=1 attacker=0 casts=1 paid=1000.000000 cooldown=20948",
+          "CA435SESSION STATE slot=1 x=-397.096430 health=9988 hits=1 attacker=1 casts=0 paid=0.000000 cooldown=0",
+          "CA435SESSION STATE slot=2 x=-396.476958 health=9998 hits=1 attacker=2 casts=1 paid=1000.000000 cooldown=20948",
+          "CA435SESSION STATE slot=3 x=-395.812647 health=9994 hits=1 attacker=3 casts=0 paid=0.000000 cooldown=0",
+          "CA435SESSION STATE slot=4 x=-395.812726 health=9982 hits=1 attacker=4 casts=1 paid=1000.000000 cooldown=20948",
+          "CA435SESSION STATE slot=5 x=-394.355122 health=9982 hits=1 attacker=5 casts=0 paid=0.000000 cooldown=0",
+          "CA435SESSION STATE slot=6 x=-393.564247 health=9990 hits=1 attacker=6 casts=1 paid=1000.000000 cooldown=20948",
+          "CA435SESSION STATE slot=7 x=-392.733258 health=9988 hits=1 attacker=7 casts=0 paid=0.000000 cooldown=0"
+        ]
+      },
+      {
+        "peer": 4,
+        "exit": 0,
+        "errors": [],
+        "passed": true,
+        "states": [
+          "CA435SESSION STATE slot=0 x=-397.724133 health=9980 hits=1 attacker=0 casts=1 paid=1000.000000 cooldown=20948",
+          "CA435SESSION STATE slot=1 x=-397.096430 health=9988 hits=1 attacker=1 casts=0 paid=0.000000 cooldown=0",
+          "CA435SESSION STATE slot=2 x=-396.476958 health=9998 hits=1 attacker=2 casts=1 paid=1000.000000 cooldown=20948",
+          "CA435SESSION STATE slot=3 x=-395.812647 health=9994 hits=1 attacker=3 casts=0 paid=0.000000 cooldown=0",
+          "CA435SESSION STATE slot=4 x=-395.812726 health=9982 hits=1 attacker=4 casts=1 paid=1000.000000 cooldown=20948",
+          "CA435SESSION STATE slot=5 x=-394.355122 health=9982 hits=1 attacker=5 casts=0 paid=0.000000 cooldown=0",
+          "CA435SESSION STATE slot=6 x=-393.564247 health=9990 hits=1 attacker=6 casts=1 paid=1000.000000 cooldown=20948",
+          "CA435SESSION STATE slot=7 x=-392.733258 health=9988 hits=1 attacker=7 casts=0 paid=0.000000 cooldown=0"
+        ]
+      },
+      {
+        "peer": 5,
+        "exit": 0,
+        "errors": [],
+        "passed": true,
+        "states": [
+          "CA435SESSION STATE slot=0 x=-397.724133 health=9980 hits=1 attacker=0 casts=1 paid=1000.000000 cooldown=20948",
+          "CA435SESSION STATE slot=1 x=-397.096430 health=9988 hits=1 attacker=1 casts=0 paid=0.000000 cooldown=0",
+          "CA435SESSION STATE slot=2 x=-396.476958 health=9998 hits=1 attacker=2 casts=1 paid=1000.000000 cooldown=20948",
+          "CA435SESSION STATE slot=3 x=-395.812647 health=9994 hits=1 attacker=3 casts=0 paid=0.000000 cooldown=0",
+          "CA435SESSION STATE slot=4 x=-395.812726 health=9982 hits=1 attacker=4 casts=1 paid=1000.000000 cooldown=20948",
+          "CA435SESSION STATE slot=5 x=-394.355122 health=9982 hits=1 attacker=5 casts=0 paid=0.000000 cooldown=0",
+          "CA435SESSION STATE slot=6 x=-393.564247 health=9990 hits=1 attacker=6 casts=1 paid=1000.000000 cooldown=20948",
+          "CA435SESSION STATE slot=7 x=-392.733258 health=9988 hits=1 attacker=7 casts=0 paid=0.000000 cooldown=0"
+        ]
+      },
+      {
+        "peer": 6,
+        "exit": 0,
+        "errors": [],
+        "passed": true,
+        "states": [
+          "CA435SESSION STATE slot=0 x=-397.724133 health=9980 hits=1 attacker=0 casts=1 paid=1000.000000 cooldown=20948",
+          "CA435SESSION STATE slot=1 x=-397.096430 health=9988 hits=1 attacker=1 casts=0 paid=0.000000 cooldown=0",
+          "CA435SESSION STATE slot=2 x=-396.476958 health=9998 hits=1 attacker=2 casts=1 paid=1000.000000 cooldown=20948",
+          "CA435SESSION STATE slot=3 x=-395.812647 health=9994 hits=1 attacker=3 casts=0 paid=0.000000 cooldown=0",
+          "CA435SESSION STATE slot=4 x=-395.812726 health=9982 hits=1 attacker=4 casts=1 paid=1000.000000 cooldown=20948",
+          "CA435SESSION STATE slot=5 x=-394.355122 health=9982 hits=1 attacker=5 casts=0 paid=0.000000 cooldown=0",
+          "CA435SESSION STATE slot=6 x=-393.564247 health=9990 hits=1 attacker=6 casts=1 paid=1000.000000 cooldown=20948",
+          "CA435SESSION STATE slot=7 x=-392.733258 health=9988 hits=1 attacker=7 casts=0 paid=0.000000 cooldown=0"
+        ]
+      },
+      {
+        "peer": 7,
+        "exit": 0,
+        "errors": [],
+        "passed": true,
+        "states": [
+          "CA435SESSION STATE slot=0 x=-397.724133 health=9980 hits=1 attacker=0 casts=1 paid=1000.000000 cooldown=20948",
+          "CA435SESSION STATE slot=1 x=-397.096430 health=9988 hits=1 attacker=1 casts=0 paid=0.000000 cooldown=0",
+          "CA435SESSION STATE slot=2 x=-396.476958 health=9998 hits=1 attacker=2 casts=1 paid=1000.000000 cooldown=20948",
+          "CA435SESSION STATE slot=3 x=-395.812647 health=9994 hits=1 attacker=3 casts=0 paid=0.000000 cooldown=0",
+          "CA435SESSION STATE slot=4 x=-395.812726 health=9982 hits=1 attacker=4 casts=1 paid=1000.000000 cooldown=20948",
+          "CA435SESSION STATE slot=5 x=-394.355122 health=9982 hits=1 attacker=5 casts=0 paid=0.000000 cooldown=0",
+          "CA435SESSION STATE slot=6 x=-393.564247 health=9990 hits=1 attacker=6 casts=1 paid=1000.000000 cooldown=20948",
+          "CA435SESSION STATE slot=7 x=-392.733258 health=9988 hits=1 attacker=7 casts=0 paid=0.000000 cooldown=0"
+        ]
+      }
+    ],
+    "recovery": {
+      "status": "closed",
+      "recovery": {
+        "identity": "native-session",
+        "revision": 1,
+        "snapshot": "8188e9628092172855006fabefd9d16445b48cdfb5b5e35e4fed21b4208d7399"
+      }
+    },
+    "passed": true
+  },
+  "menu": {
+    "issue": 435,
+    "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue435-work\\build\\issue435\\vacancy-menu-20261031-070833",
+    "exit": 0,
+    "counts": {
+      "campaigns": 1,
+      "profiles": 0,
+      "campaign_slots": 0,
+      "campaign_locks": 0,
+      "network_sessions": 0
+    },
+    "passed": true
+  },
+  "transaction_checks": {
+    "issue": 435,
+    "tests": 10,
+    "errors": [],
+    "failures": [],
+    "passed": true
+  },
+  "qualification": "MAP01 is the actual mansion; source MAP03 uses the retained exact diagnostic geometry. Menu retry unit test injects a native peer failure and accepted checkpoint; native transfer retries are separately recorded. Eight-client combat uses the existing diagnostic map, not a city rendering benchmark.",
+  "native_crash": {
+    "path": "C:\\Users\\dcc70\\AppData\\Local\\CrashDumps\\gzdoom.exe.5388.dmp",
+    "sha256": "cdc2a0e2bfc0e1dc449b17b08beeb746f7b34f63a32f45d5ef1458828cbfd860",
+    "analysis": {
+      "dump": "C:\\Users\\dcc70\\AppData\\Local\\CrashDumps\\gzdoom.exe.5388.dmp",
+      "thread": 39868,
+      "exception": "ExceptionCode.EXCEPTION_UNKNOWN",
+      "fault": {
+        "address": "0x7ff781fc601d",
+        "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "name": "abort",
+        "displacement": "0x35"
+      },
+      "frames": [
+        {
+          "address": "0x7ff781fc601d",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "abort",
+          "displacement": "0x35"
+        }
+      ],
+      "metadata_unwind": [
+        {
+          "address": "0x7ff781fc601d",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "abort",
+          "displacement": "0x35",
+          "stack": "0xfd09cfed10"
+        },
+        {
+          "address": "0x7ff781fa3c05",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "_purecall",
+          "displacement": "0x19",
+          "stack": "0xfd09cfed40"
+        },
+        {
+          "address": "0x7ff781cbefa5",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "FBaseCVar::GetHumanString",
+          "displacement": "0x15",
+          "stack": "0xfd09cfed70"
+        },
+        {
+          "address": "0x7ffe6dd74859",
+          "module": "C:\\Windows\\System32\\user32.dll",
+          "name": "GetFocus",
+          "displacement": "0x1b29",
+          "stack": "0xfd09cfeda0"
+        },
+        {
+          "address": "0x7ffe6dd75e64",
+          "module": "C:\\Windows\\System32\\user32.dll",
+          "name": "IsWindowUnicode",
+          "displacement": "0x2b4",
+          "stack": "0xfd09cfeef0"
+        },
+        {
+          "address": "0x7ff7818ebc0b",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "I_StartTic",
+          "displacement": "0xcb",
+          "stack": "0xfd09cfef70"
+        },
+        {
+          "address": "0x7ff781a42d33",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "D_DoomLoop",
+          "displacement": "0x1c3",
+          "stack": "0xfd09cff000"
+        },
+        {
+          "address": "0x7ff781a4363c",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "D_DoomMain_Internal",
+          "displacement": "0x8bc",
+          "stack": "0xfd09cff050"
+        },
+        {
+          "address": "0x7ff781a45f1a",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "GameMain",
+          "displacement": "0x7a",
+          "stack": "0xfd09cff220"
+        },
+        {
+          "address": "0x7ff7818f2e80",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "DoMain",
+          "displacement": "0x430",
+          "stack": "0xfd09cff2a0"
+        },
+        {
+          "address": "0x7ff7818f327c",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "wWinMain",
+          "displacement": "0xec",
+          "stack": "0xfd09cffe60"
+        },
+        {
+          "address": "0x7ff781f83b2e",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "__scrt_common_main_seh",
+          "displacement": "0x106",
+          "stack": "0xfd09cffeb0"
+        },
+        {
+          "address": "0x7ffe6dcadda7",
+          "module": "C:\\Windows\\System32\\kernel32.dll",
+          "name": "BaseThreadInitThunk",
+          "displacement": "0x17",
+          "stack": "0xfd09cffef0"
+        },
+        {
+          "address": "0x7ffe6fe1ee4c",
+          "module": "C:\\Windows\\System32\\ntdll.dll",
+          "name": "RtlUserThreadStart",
+          "displacement": "0x2c",
+          "stack": "0xfd09cfff20"
+        }
+      ],
+      "raw_stack_candidates": [
+        {
+          "stack_offset": 40,
+          "address": "0x7ff781fa3c05",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "_purecall",
+          "displacement": "0x19"
+        },
+        {
+          "stack_offset": 88,
+          "address": "0x7ff781cbefa5",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "FBaseCVar::GetHumanString",
+          "displacement": "0x15"
+        },
+        {
+          "stack_offset": 488,
+          "address": "0x7ff781f0cda0",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "Win32TimerCallback",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 568,
+          "address": "0x7ff782a96660",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "netcmds",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 592,
+          "address": "0x7ff782a9d698",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "players",
+          "displacement": "0x178"
+        },
+        {
+          "stack_offset": 600,
+          "address": "0x7ff7818ebc0b",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "I_StartTic",
+          "displacement": "0xcb"
+        },
+        {
+          "stack_offset": 624,
+          "address": "0x7ff782a9d558",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "players",
+          "displacement": "0x38"
+        },
+        {
+          "stack_offset": 664,
+          "address": "0x7ff781a4fe8b",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "TryRunTics",
+          "displacement": "0x46b"
+        },
+        {
+          "stack_offset": 712,
+          "address": "0x7ff781f0cda0",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "Win32TimerCallback",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 744,
+          "address": "0x7ff781a42d33",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "D_DoomLoop",
+          "displacement": "0x1c3"
+        },
+        {
+          "stack_offset": 760,
+          "address": "0x7ff782a9d698",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "players",
+          "displacement": "0x178"
+        },
+        {
+          "stack_offset": 768,
+          "address": "0x7ff782a96660",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "netcmds",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 824,
+          "address": "0x7ff781a4363c",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "D_DoomMain_Internal",
+          "displacement": "0x8bc"
+        },
+        {
+          "stack_offset": 872,
+          "address": "0x7ff781cd709c",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "FName::NameManager::FindName",
+          "displacement": "0x8c"
+        },
+        {
+          "stack_offset": 944,
+          "address": "0x7ff781a5a830",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "G_Responder",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 952,
+          "address": "0x7ff781a48be0",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "System_WantGuiCapture",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 960,
+          "address": "0x7ff781a48c50",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "System_WantLeftButton",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 968,
+          "address": "0x7ff781a48ad0",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "System_NetGame",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 976,
+          "address": "0x7ff781a48c70",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "System_WantNativeMouse",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 984,
+          "address": "0x7ff781a48340",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "System_CaptureModeInGame",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 992,
+          "address": "0x7ff781a483b0",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "System_CrashInfo",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 1000,
+          "address": "0x7ff781a48b50",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "System_PlayStartupSound",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 1008,
+          "address": "0x7ff781a489f0",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "System_IsSpecialUI",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 1016,
+          "address": "0x7ff781a48630",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "System_DisableTextureFilter",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 1024,
+          "address": "0x7ff781a48ae0",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "System_OnScreenSizeChanged",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 1032,
+          "address": "0x7ff781a48940",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "System_GetSceneRect",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 1040,
+          "address": "0x7ff781a48780",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "System_GetLocationDescription",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 1048,
+          "address": "0x7ff781bb42b0",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "System_M_Dim",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 1056,
+          "address": "0x7ff781a488c0",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "System_GetPlayerName",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 1064,
+          "address": "0x7ff781a48640",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "System_DispatchEvent",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 1072,
+          "address": "0x7ff781a482d0",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "StrTable_ValidFilter",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 1088,
+          "address": "0x7ff781bb1040",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "CheckSkipGameOptionBlock",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 1096,
+          "address": "0x7ff781a48390",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "System_ConsoleToggled",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 1120,
+          "address": "0x7ff781a48bd0",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "System_ToggleFullConsole",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 1128,
+          "address": "0x7ff781a48bc0",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "System_StartCutscene",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 1136,
+          "address": "0x7ff781a48b90",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "System_SetTransition",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 1144,
+          "address": "0x7ff781a353e0",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "CheckCheatmode",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 1152,
+          "address": "0x7ff781a489c0",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "System_HudScaleChanged",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 1160,
+          "address": "0x7ff781bb23c0",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "M_SetSpecialMenu",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 1168,
+          "address": "0x7ff781bb3e00",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "OnMenuOpen",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 1176,
+          "address": "0x7ff781a48a80",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "System_LanguageChanged",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 1184,
+          "address": "0x7ff781bb3db0",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "OkForLocalization",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 1192,
+          "address": "0x7ff781a3eda0",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "`D_DoomMain_Internal'::`2'::<lambda_1>::<lambda_invoker_cdecl>",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 1208,
+          "address": "0x7ff781bdb070",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "RemapUserTranslation",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 1288,
+          "address": "0x7ff781a45f1a",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "GameMain",
+          "displacement": "0x7a"
+        },
+        {
+          "stack_offset": 1296,
+          "address": "0x7ff78225c91c",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "FString::NullString",
+          "displacement": "0xc"
+        },
+        {
+          "stack_offset": 1328,
+          "address": "0x7ff782c14630",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "__acrt_atexit_table",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 1336,
+          "address": "0x7ff7818f28d0",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "`DoMain'::`2'::<lambda_2>::<lambda_invoker_cdecl>",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 1344,
+          "address": "0x7ff781a52110",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "D_UserInfoChanged",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 1352,
+          "address": "0x7ff781a51da0",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "D_SendServerInfoChange",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 1360,
+          "address": "0x7ff781a51ca0",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "D_SendServerFlagChange",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 1368,
+          "address": "0x7ff781a59e50",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "G_GetUserCVar",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 1376,
+          "address": "0x7ff781a3edb0",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "`GameMain'::`2'::<lambda_1>::<lambda_invoker_cdecl>",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 1416,
+          "address": "0x7ff7818f2e80",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "DoMain",
+          "displacement": "0x430"
+        },
+        {
+          "stack_offset": 3680,
+          "address": "0x7ff781f84000",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "operator new",
+          "displacement": "0x10"
+        },
+        {
+          "stack_offset": 3688,
+          "address": "0x7ff781850000",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "_FInf_C",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 3784,
+          "address": "0x7ff7818f28e0",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "CatchAllExceptions",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 3808,
+          "address": "0x7ff781f84a48",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "__scrt_unhandled_exception_filter",
+          "displacement": "0x0"
+        },
+        {
+          "stack_offset": 3840,
+          "address": "0x7ff781850000",
+          "module": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "name": "_FInf_C",
+          "displacement": "0x0"
+        }
+      ],
+      "qualification": "Partial unwind; raw stack candidates are untrusted values, NOT a call stack. Nearest driver exports are not private function symbols or proof of the originating failure."
+    },
+    "note": "PE metadata confirms abort/_purecall/FBaseCVar::GetHumanString frames. The caller reconstruction is partial and does not establish the originating cause. Raw stack candidates are not call frames. No engine fix or driver fix is claimed."
+  }
+}
