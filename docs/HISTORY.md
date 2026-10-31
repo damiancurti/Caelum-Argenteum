@@ -4,7 +4,8 @@ Documentation version: **5.12.6** - 2026-10-31.
 
 ## 5.12.6 - Typed personal profile graph foundation (#434, 2026-10-31)
 
-Vacant campaign preparation: the engine now creates actual MAP01 checkpoints
+Vacant campaign preparation: corrected the documented 1–8 range encoding; no
+runtime or balance change. The engine now creates actual MAP01 checkpoints
 with 1, 2 and 8 inert native slots without material inventory or committed profiles.
 All 11 native processes report readiness; 21 offline enrollment/negative checks
 pass, retaining original saves and refusing malformed markers, conflicting owners,

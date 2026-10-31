@@ -39,7 +39,7 @@ unrecorded eligibility. Replacement creates a new personal record instead of
 overwriting world references to the old occupant. Independent legal-identity
 snapshots preserve earned source rewards after departure and return.
 New destination campaigns use `caelum_new_campaign.py`: the actual engine creates
-MAP01 and its world ledger with 1?8 vacant native slots. The additive
+MAP01 and its world ledger with 1–8 vacant native slots. The additive
 ProfileVacancyRevision1 marker is accepted only for uncommitted, departed records
 without an external identity or personal material inventory. Existing characters
 are never changed into vacancies. Bootstrap is an explicit nonpersistent server
