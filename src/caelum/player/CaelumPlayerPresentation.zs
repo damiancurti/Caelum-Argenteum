@@ -33,6 +33,7 @@ class CaelumPlayerPresentation : Object play
             questId < CaelumConstants.QUEST_DEFINED_COUNT; questId++)
         {
             user.JournalQuestRewardClaimed[questId] = persistentState.QuestRewardClaimed[questId];
+            user.JournalQuestUnavailable[questId] = CaelumCooperativeQuests.Unavailable(user,questId);
             user.JournalQuestCanStart[questId] = CaelumSideQuestRules.CanStart(persistentState, questId);
             user.JournalQuestReady[questId] = CaelumSideQuestRules.ObjectivesComplete(persistentState, questId);
             user.JournalQuestState[questId] =

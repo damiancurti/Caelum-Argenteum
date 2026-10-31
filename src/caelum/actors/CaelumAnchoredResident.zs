@@ -142,6 +142,8 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
 
     CaelumPlayer GetEscortOwnerPlayer()
     {
+        if(CaelumPlayerAuthority.CanMutate(EscortPrisonerLeader)
+            && playeringame[EscortPrisonerLeader.PlayerNumber()])return EscortPrisonerLeader;
         for (int n = 0; n < MAXPLAYERS; n++)
             if (playeringame[n] && players[n].mo != null)
                 return CaelumPlayer(players[n].mo);

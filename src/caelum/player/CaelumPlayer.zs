@@ -136,6 +136,7 @@ class CaelumPlayer : DoomPlayer
     bool JournalQuestCanStart[CaelumConstants.QUEST_DEFINED_COUNT];
     bool JournalQuestReady[CaelumConstants.QUEST_DEFINED_COUNT];
     int JournalQuestState[CaelumConstants.QUEST_DEFINED_COUNT];
+    bool JournalQuestUnavailable[CaelumConstants.QUEST_DEFINED_COUNT];
     int JournalQuestStage[CaelumConstants.QUEST_DEFINED_COUNT];
     bool JournalQuestObjectiveKnown[
         CaelumConstants.QUEST_JOURNAL_OBJECTIVE_STORAGE_COUNT
@@ -999,6 +1000,11 @@ class CaelumPlayer : DoomPlayer
 
     int GetPrisonerRescueState(int prisonerId)
     {
+        if(prisonerId>=0 && prisonerId<CaelumConstants.PRISONER_COUNT)
+        {
+            let world=CaelumCooperativeQuests.Get(self);
+            if(world!=null)return world.PrisonerState[prisonerId];
+        }
         CaelumPersistentCharacterState persistentState =
             GetPersistentCharacterState(true);
         if (persistentState == null) { return CaelumConstants.PRISONER_STATE_CAPTIVE; }
@@ -1007,6 +1013,11 @@ class CaelumPlayer : DoomPlayer
 
     bool SetPlayerPrisonerRescueState(int prisonerId, int nextState)
     {
+        if(CaelumCooperativeQuests.Get(self)!=null)
+        {
+            let world=CaelumCooperativeQuests.Get(self);
+            return world!=null && world.Transition(self,prisonerId,nextState);
+        }
         CaelumPersistentCharacterState persistentState =
             GetPersistentCharacterState(true);
         if (persistentState == null) { return false; }
@@ -1028,10 +1039,11 @@ class CaelumPlayer : DoomPlayer
 
     bool ClaimPrisonerPortReward(int prisonerId, int factionId)
     {
+        if(!CaelumCooperativeQuests.CanClaim(self,prisonerId))return false;
         CaelumPersistentCharacterState persistentState =
             GetPersistentCharacterState(true);
         if (persistentState == null || player == null || health <= 0
-            || persistentState.GetPrisonerRescueState(prisonerId)
+            || GetPrisonerRescueState(prisonerId)
                 != CaelumConstants.PRISONER_STATE_EXTRACTED
             || persistentState.IsPrisonerRewardClaimed(prisonerId))
         {
@@ -7404,6 +7416,7 @@ class CaelumPlayer : DoomPlayer
         CaelumTimeAdvanceState.Pump(self);
         CaelumTimeSkipState.AfterStep(self);
         CaelumTimeSkipState.Pump(self);
+        CaelumCooperativeTime.AfterPlayerStep(self);
         CaelumTransportTrip.Step(self);
         CaelumTransportTrip.Flush(self);
         CaelumNotifications.Survival(self);

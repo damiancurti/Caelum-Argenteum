@@ -201,7 +201,7 @@ class CaelumOnboarding : Object play
             || (weapon == CaelumConstants.WEAPON_TYPE_CROSSBOW && item is "CaelumBoltAmmo");
     }
 
-    static bool PackDeparture(CaelumPlayer user)
+    static bool PackDeparture(CaelumPlayer user, bool checkOnly=false)
     {
         let r = user.GetPersistentCharacterState(false);
         if (!LessonsComplete(r) || r.MainM00CraftedBag.Owner != user || r.MainM00CraftedCanteen.Owner != user) return false;
@@ -226,6 +226,7 @@ class CaelumOnboarding : Object play
             if (cursor is "CaelumEquipmentItem" || cursor is "CaelumTarotDeck" || cursor is "CaelumSleepingBag"
                 || cursor == r.MainM00CraftedCanteen || IsStarterAmmo(user, cursor)) slots++;
         if (slots > CaelumEquipmentRules.MagicBoxSlots(attributes.Intelligence)) return false;
+        if (checkOnly) return true;
         // Sin recrear nada: desactiva cada equipo por la operación nativa y
         // conserva la misma instancia, condición, agua y esencia capturada.
         for (Inventory cursor = user.Inv; cursor != null; cursor = cursor.Inv)

@@ -15,13 +15,12 @@ class CaelumRestTrial : Object play
             if (user != null) user.A_Print(StringTable.Localize(reason, false));
             return false;
         }
-        let it = ThinkerIterator.Create("CaelumRestGuide");
-        CaelumRestGuide old;
-        while ((old = CaelumRestGuide(it.Next())) != null)
-            if (old.Subject == user) return false;
+        let rest=CaelumRestState.Get(user,true);
+        if(rest==null || rest.Guide!=null)return false;
         let guide = CaelumRestGuide(Actor.Spawn("CaelumRestGuide", user.Pos + (0,0,user.Height*0.5), NO_REPLACE));
         if (guide == null) return false;
         guide.Subject = user;
+        rest.Guide=guide;
         guide.OriginMap = level.MapName;
         guide.Furniture = furniture;
         guide.UsesFurniture = furniture != null;
@@ -83,11 +82,20 @@ class CaelumRestGuide : Actor
     bool UsesTent;
     bool UsesBag;
 
+    override void OnDestroy()
+    {
+        let rest=CaelumRestState.Get(Subject);
+        if(rest!=null && rest.Guide==self)rest.Guide=null;
+        Super.OnDestroy();
+    }
+
     override void Tick()
     {
         Super.Tick();
         if (Subject == null || Subject.health <= 0 || OriginMap != level.MapName)
         { Destroy(); return; }
+        // Reenlazar un diálogo de una partida anterior, sin censar actores.
+        let rest=CaelumRestState.Get(Subject,true);if(rest!=null && rest.Guide==null)rest.Guide=self;
         if (bInConversation || Subject.HasActiveConversation()) return;
         int mode = QueuedMode;
         int minutes = QueuedMinutes;

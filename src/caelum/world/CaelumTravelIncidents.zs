@@ -93,7 +93,7 @@ class CaelumTravelIncidents : Object play
     }
     static bool MayResume(CaelumPlayer user,CaelumTransportBooking booking)
     {
-        String reason=CaelumRestSafety.BlockReason(user);
+        String reason=CaelumRestSafety.BlockReason(user,false,false,true,multiplayer);
         let incidents=Get(booking);
         return reason.Length()==0 || (reason=="CA_REST_ENEMY" && incidents!=null && incidents.AmbushActive
             && incidents.AmbushMap==level.MapName && booking.StopMap==level.MapName && CaelumTransportSceneData.IsRural(level.MapName));

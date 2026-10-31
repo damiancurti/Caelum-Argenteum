@@ -53,6 +53,7 @@ class CaelumTimeAdvanceState : Inventory
 
     static bool Toggle(CaelumPlayer user)
     {
+        if(multiplayer)return CaelumCooperativeTime.Open(user);
         if (CaelumTimeSkipState.IsOpen(user)) return false;
         let advance=Get(user,true); if(advance==null)return false;
         if(advance.Active) { Halt(user); CaelumNotifications.Notify(user,StringTable.Localize("CA_FAST_OFF",false)); return true; }
@@ -105,15 +106,15 @@ class CaelumTimeAdvanceState : Inventory
     }
 
     // Un paso compartido por los dos avances; no ejecuta IA ni física ajenas.
-    static void SimulatePersonalTic(CaelumPlayer user)
+    static void SimulatePersonalTic(CaelumPlayer user,bool advanceWorld=true)
     {
         let advance=Get(user,true);
         advance.PersonalStepSerial=advance.PersonalStepSerial==2147483647?0:advance.PersonalStepSerial+1;
         let clock=CaelumWorldClock.Get(user);
-        clock.AdvanceOnMap(level.MapName);
+        if(advanceWorld)clock.AdvanceOnMap(level.MapName);
         CaelumWeatherState.Sync(user,clock,CaelumCalendarState.Get(user));
-        CaelumHousekeepingWork.AdvanceSkippedTic(user);
-        CaelumCampWorld.AdvanceFires();
+        if(advanceWorld)
+        {CaelumHousekeepingWork.AdvanceSkippedTic(user);CaelumCampWorld.AdvanceFires();}
         AdvancePowers(user);
         user.UpdateCraftingTask();
         let reading=CaelumRecipeSession.Get(user);if(reading!=null)reading.Advance();

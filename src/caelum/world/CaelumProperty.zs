@@ -6,6 +6,12 @@ class CaelumPropertyRecord : Object play
     bool Purchased;
     double PaidUntil;
     int RentPayments;
+    int CooperativeRevision;
+    Array<CaelumLawfulIdentity> CoHolders;
+    CaelumCooperativeObjective Restitution;
+    CaelumLawfulIdentity RefundHolder;
+    int RefundCopper;
+    bool RefundPaid;
     clearscope bool Current(double now){return Holder!=null && (Purchased || (now>=0 && now<PaidUntil));}
 }
 
@@ -16,10 +22,18 @@ class CaelumPropertyRules : Object play
         let roster=CaelumHouseResidents.Get(create);if(roster==null)return null;
         for(int i=0;i<roster.Properties.Size();i++)if(roster.Properties[i].House==house)return roster.Properties[i];
         if(!create || !CaelumPropertyData.Offered(house))return null;
-        let record=new("CaelumPropertyRecord");record.House=house;roster.Properties.Push(record);return record;
+        let record=new("CaelumPropertyRecord");record.House=house;record.CooperativeRevision=1;
+        roster.Properties.Push(record);return record;
     }
     static bool Holds(CaelumPlayer user,CaelumPropertyRecord record)
-    {return record!=null && CaelumLockRules.SameTitle(record.Holder,CaelumLockRules.Character(user));}
+    {
+        if(record==null)return false;
+        let title=CaelumLockRules.Character(user);
+        if(CaelumLockRules.SameTitle(record.Holder,title))return true;
+        for(int i=0;i<record.CoHolders.Size();i++)
+            if(CaelumLockRules.SameTitle(record.CoHolders[i],title))return true;
+        return false;
+    }
     static bool ResidenceAllowed(CaelumPlayer user)
     {
         int house=CaelumHouseHubData.HouseForMap(level.MapName);
@@ -28,7 +42,8 @@ class CaelumPropertyRules : Object play
     }
     static bool Acquire(CaelumPlayer user,int house,bool purchase)
     {
-        if(!CaelumScheduleState.CanTransact(user) || !CaelumPropertyData.Offered(house))return false;
+        if(!CaelumPlayerAuthority.CanMutate(user) || !CaelumScheduleState.CanTransact(user,true)
+            || !CaelumPropertyData.Offered(house))return false;
         double now=CaelumScheduleState.Now(user);if(now<0)return false;
         let record=Find(house,true);if(record==null || record.Purchased)return false;
         // Sin una regla de reasignacion aprobada, un vencimiento no despoja

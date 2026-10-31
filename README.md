@@ -6,8 +6,32 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.11.8.** Obtain and update the complete repository, validate
+**Current release: 5.12.2.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+**V5.12 in progress (#436):** native peers now share one campaign clock and
+weather seed, with individual nonaccelerated rest. T/the time menu opens an
+exact-duration proposal: everyone must consent, edits clear votes, silence
+waits and any participant may cancel. Personal resources remain individual.
+Walking routes and house doors now require unanimous destination consent;
+walking uses the slowest pace and each character pays their own provisions.
+Vehicle boarding also requires unanimous consent and independent ticket payments;
+shared stops and resumption retain the original trip. Initial mansion departure
+also requires everyone's consent and each living character's completed trials
+and own equipment, checked before any personal completion or packing.
+Rescue objectives now capture the present character roster; each eligible
+character claims their own reward once. Late-ready records keep their personal
+progress and see unavailable-world objectives in the Journal. Solo campaigns
+also retain their own objective ledger; returning characters keep earned
+eligibility through independent snapshots of their persistent legal identity.
+Recovering the central house grants shared access to the present characters;
+only the actual payer receives the single refund of recorded payments.
+Two cooperative players can use the same tent with their own sleeping bags;
+sharing shelter does not transfer ownership or packing permission. Waking one
+player cancels shared acceleration while the other may continue ordinary rest.
+This is not full cooperative campaign acceptance: other quest integration,
+profile portability and lifecycle integration remain under their focused issues.
+Author checks will be delivered together after the release is complete.
 
 Author clarification: the comparison is Leonor versus Caella. Caella carries
 22.0184kg (armor plus pickaxe, utility staff and bolas); Leonor carries5kg.
