@@ -21,8 +21,9 @@ Concurrent trade and personal crafting pass with 2/4/8 native clients.
 and return now preserve a single active owner, packed inventory and each world's
 shops/properties. Native narrative checkpoints save complete transactions without
 replaying rewards on load. Whole-coordinator backup/recovery and deceased-profile
-transfer in actual Barracas pass. Hub/quest-boundary and remaining multiplayer
-integration are still unfinished; no author handoff yet.
+transfer in actual Barracas pass. Native hub travel and portable/world quest
+boundaries pass, including pending rewards on return. Final managed multiplayer
+integration remains; no author handoff yet.
 Transfers reject active conversations while allowing finished dialogue references.
 
 **V5.12 work in progress - #590 table-card PvP:** human Truco and Trucazo

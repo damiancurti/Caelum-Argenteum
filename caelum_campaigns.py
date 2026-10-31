@@ -62,6 +62,63 @@ def personal_record(level: dict, slot: int) -> dict:
     return records[0]
 
 
+def script_member(state: dict, key: str):
+    """Native FName spelling is case-insensitive and may differ from ZScript."""
+    matches = [value for name, value in state.items() if name.casefold() == key.casefold()]
+    if len(matches) > 1:
+        raise ProfileError('Ambiguous native script member; original retained.')
+    return matches[0] if matches else None
+
+
+def native_identity(level: dict, slot: int) -> str:
+    """Use the existing persistent legal identity, never a display name."""
+    index=personal_record(level,slot).get('LawfulIdentity')
+    if isinstance(index,bool) or not isinstance(index,int) or not 0<=index<len(level['objects']):
+        raise ProfileError('Load and save this character with the current runtime before registering or transferring it.')
+    obj=level['objects'][index]
+    token=script_member(obj.get('class:CaelumLawfulIdentity',{}),'Token')
+    if obj.get('classtype')!='CaelumLawfulIdentity' or not isinstance(token,str) or not token:
+        raise ProfileError('Invalid native character identity; original retained.')
+    return token
+
+
+def require_world_ledger(level: dict, slot: int) -> None:
+    """Legacy worlds must first be reconciled by the native game, not guessed."""
+    owner=level['players'][slot]['mo'];cursor=level['objects'][owner].get('inventory');seen=set()
+    while cursor is not None and cursor not in seen:
+        seen.add(cursor);obj=level['objects'][cursor]
+        if obj.get('classtype')=='CaelumWorldClock':
+            index=obj.get('class:CaelumWorldClock',{}).get('CampaignQuests')
+            if isinstance(index,int) and not isinstance(index,bool) and 0<=index<len(level['objects']):
+                world=level['objects'][index]
+                if (world.get('classtype')=='CaelumCooperativeQuests'
+                        and script_member(world.get('class:CaelumCooperativeQuests',{}),'Revision')==2):return
+        cursor=obj.get('inventory')
+    raise ProfileError('Load and save both campaigns with the current runtime before transferring: world objective ledger is missing.')
+
+
+def origin_binding(value: str) -> tuple[str, str | int]:
+    """Accept the documented legacy pair or the versioned native binding."""
+    try:
+        origin = json.loads(value)
+    except (TypeError, ValueError) as exc:
+        raise ProfileError('Invalid stored profile origin; recover the coordinator backup.') from exc
+    if (isinstance(origin, list) and len(origin) == 3
+            and isinstance(origin[0], str) and origin[0]
+            and isinstance(origin[1], str) and len(origin[1]) == 64
+            and all(c in '0123456789abcdef' for c in origin[1])
+            and type(origin[2]) is int and origin[2] >= 0):
+        return origin[0], origin[2]
+    if not isinstance(origin, list) or len(origin) != 2 or not isinstance(origin[0], str):
+        raise ProfileError('Unsupported stored profile origin; original retained.')
+    if origin[0] == 'native-lawful-v1':
+        if not isinstance(origin[1], str) or not origin[1]:
+            raise ProfileError('Invalid stored native identity; original retained.')
+    elif type(origin[1]) is not int or origin[1] < 0:
+        raise ProfileError('Unsupported stored profile origin; original retained.')
+    return tuple(origin)
+
+
 class Campaigns:
     def __init__(self, store: ProfileStore, adapter: PersonalGraph):
         self.store, self.adapter = store, adapter
@@ -90,6 +147,15 @@ class Campaigns:
         with self.store.transaction():
             if self.db.execute('SELECT 1 FROM campaigns WHERE identity=?', (campaign,)).fetchone():
                 raise ProfileError('Campaign already registered; use its current checkpoint.')
+            known={};levels={}
+            # One offline registration pass over existing profile heads; each
+            # shared native snapshot is decoded once, never during gameplay.
+            for row in self.db.execute('SELECT identity,snapshot,player FROM profiles'):
+                if row['snapshot'] not in levels:levels[row['snapshot']]=unpack(self.store.anchor(row['snapshot']))[2]
+                token=native_identity(levels[row['snapshot']],row['player'])
+                if token in known and known[token] != row['identity']:
+                    raise ProfileError('Existing profiles conflict over one native identity; original coordinator retained.')
+                known[token]=row['identity']
             original = self.store._snapshot(original_data, 0)
             self.db.execute('INSERT INTO campaigns VALUES (?,0,?)', (campaign, original))
             enrolled = []
@@ -102,8 +168,13 @@ class Campaigns:
                 if not record.get('ProfileCommitted'):
                     continue
                 self.adapter.capture(level, slot)
+                token=native_identity(level,slot)
+                require_world_ledger(level,slot)
+                if token in known:
+                    raise ProfileError('This native character already has a profile; transfer its current identity instead of registering a copy.')
                 identity = str(uuid.uuid4())
-                origin = json.dumps([campaign, slot], separators=(',', ':'))
+                known[token]=identity
+                origin = json.dumps(['native-lawful-v1', token], separators=(',', ':'))
                 self.db.execute('INSERT INTO profiles VALUES (?,?,?,0,?,?,?)',
                                 (identity, player.get('playername') or 'Character', campaign, original, slot, origin))
                 record.update(ExternalProfileId=identity, ExternalProfileRevision=0,
@@ -138,6 +209,9 @@ class Campaigns:
             if (record.get('ExternalProfileId') != identity or record.get('ExternalProfileCampaign') != campaign
                     or record.get('ExternalProfileRevision') != profile.revision or record.get('ProfileDeparted')):
                 raise ProfileError('Native profile identity/revision does not match current custody.')
+            origin=origin_binding(self.db.execute('SELECT origin FROM profiles WHERE identity=?',(identity,)).fetchone()[0])
+            if origin[0]=='native-lawful-v1' and native_identity(level,slot)!=origin[1]:
+                raise ProfileError('Native legal identity changed; the registered owner cannot be replaced.')
             self.adapter.capture(level, slot)
             seen.add(identity)
         if len(seen) != len(expected):
@@ -149,7 +223,17 @@ class Campaigns:
             self.unlocked(campaign, lease)
             if self.head(campaign)['revision'] != expected_revision:
                 raise ProfileError('The campaign advanced; old sessions cannot overwrite its checkpoint.')
-            self.validate(campaign, data)
+            level = self.validate(campaign, data)
+            # Older closed coordinators acquire the new native binding only
+            # after the engine has produced a valid current checkpoint.
+            for row in self.db.execute('SELECT identity,player,origin FROM profiles WHERE campaign=?',(campaign,)):
+                if origin_binding(row['origin'])[0] == 'native-lawful-v1':continue
+                token = native_identity(level,row['player'])
+                binding = json.dumps(['native-lawful-v1',token],separators=(',',':'))
+                duplicate = self.db.execute('SELECT identity FROM profiles WHERE origin=?',(binding,)).fetchone()
+                if duplicate is not None and duplicate[0] != row['identity']:
+                    raise ProfileError('Legacy identity conflicts with another current profile; original retained.')
+                self.db.execute('UPDATE profiles SET origin=? WHERE identity=?',(binding,row['identity']))
             digest = self.store._snapshot(data, 0)
             self.db.execute('UPDATE campaigns SET revision=revision+1,snapshot=? WHERE identity=?', (digest, campaign))
             self.db.execute('UPDATE profiles SET snapshot=? WHERE campaign=?', (digest, campaign))
@@ -173,6 +257,7 @@ class Campaigns:
             target_data = self.store.anchor(target_head['snapshot'])
             source_level = self.validate(profile.campaign, source_data, current=True)
             target_level = self.validate(destination, target_data, current=True)
+            require_world_ledger(source_level,profile.player);require_world_ledger(target_level,slot)
             target_record = personal_record(target_level, slot)
             if target_record.get('ProfileCommitted') and not target_record.get('ProfileDeparted'):
                 raise ProfileError('Destination slot is occupied; move its character first.')

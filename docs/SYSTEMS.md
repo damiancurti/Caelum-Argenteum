@@ -58,15 +58,22 @@ reconciliation from repeating on subsequent loads. Material transfers require
 an empty destination or the same external identity; another committed character
 is never silently overwritten. Native validation is isolated, not author approval.
 
-The schema-2 store adds campaign heads, original-slot identity bindings and
+The schema-2 store adds campaign heads, persistent legal-identity bindings and
 reserved transfers. Upgrading schema1 first copies the original database; reopening
-is idempotent. Registering a managed character again is refused. Transfers reserve
+is idempotent. Registering a managed character or a raw copy of the same native legal identity
+again is refused. Older origin bindings upgrade on a validated checkpoint;
+ambiguous identities or unknown binding formats fail closed. Transfers reserve
 both campaign heads, keep current custody until verification, and publish source,
 destination and profile revision atomically. Cancellation preserves original heads;
 stale heads, occupied slots and unverified imports fail closed. A departed native
 slot has no material inventory, weapon, collision or permission to act. Returning
 reuses that slot and its campaign data. The command adapter is caelum_campaigns.py;
 its draft outputs are verification artifacts, not ordinary session launch inputs.
+Registration and transfers require native world-ledger revision2. Older worlds
+must first load/save in the current runtime; external tooling does not guess
+unrecorded eligibility. Replacement creates a new personal record instead of
+overwriting world references to the old occupant. Independent legal-identity
+snapshots preserve earned source rewards after departure and return.
 Active crafting/rest/card/travel operations must finish or be cancelled for transfer;
 ordinary native checkpoints may retain crafting. Source retirement performs one
 offline pass over the saved object table; gameplay uses no global actor scan.

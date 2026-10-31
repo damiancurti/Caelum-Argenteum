@@ -47,7 +47,9 @@ and return transfers, preserving other participants and campaign property/stock.
 Narrative saves follow committed personal changes and retain pending work while
 busy. Whole-coordinator backup/recovery and deceased-profile transfer in actual
 MAP03 pass, preserving original anchors and single custody without resurrection.
-Hub/portable-quest boundaries and final session integration remain unfinished.
+Native hub travel and portable/world quest boundaries now pass: source eligibility
+survives departure, destination grants remain world-owned and returning claims a
+pending source reward once. Final session integration remains unfinished.
 No author acceptance or release completion.
 
 ## 5.12.5 - Human card-table PvP preparation (#590)

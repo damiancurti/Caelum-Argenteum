@@ -57,6 +57,26 @@ class CA434ProfileProbe : StaticEventHandler
         Check(bundle.Table.Chairs[0]!=null && bundle.Table.Chairs[1]!=null,"source owns packed table and chairs");
         Check(food.Owner==bundle.Table && coins.Owner==a,"native source inventory ownership valid");
         Check(destination.PalomoMerchantStock[0]!=source.PalomoMerchantStock[0],"distinct source and destination world stock");
+        let world=CaelumCooperativeQuests.Get(a);
+        a.SetPlayerPrisonerRescueState(0,CaelumConstants.PRISONER_STATE_FOLLOWING);
+        a.SetPlayerPrisonerRescueState(0,CaelumConstants.PRISONER_STATE_EXTRACTED);
+        a.SetPlayerPrisonerRescueState(1,CaelumConstants.PRISONER_STATE_FOLLOWING);
+        Check(world.Rescue[0]!=null && world.Rescue[0].Contains(source),"source campaign records earned reward eligibility");
+        Check(!source.PrisonerRewardClaimed[0],"earned source reward remains pending for the return test");
+        Check(source.LawfulIdentity!=null && destination.LawfulIdentity!=null,"both native identities initialized before registration");
+        Check(source.PrisonerRescueState[1]==CaelumConstants.PRISONER_STATE_FOLLOWING,"independent personal investigation remains pending");
+        // El escenario comienza por comando y abre su narración de diagnóstico.
+        // Cerrarla explícitamente deja un punto válido de traslado; el control
+        // de producción sigue rechazando conversaciones activas.
+        for(int i=0;i<2;i++)
+        {
+            let user=CaelumPlayer(players[i].mo);
+            let record=user.GetPersistentCharacterState(false);
+            record.DemoNarrativeDelivered|=CaelumDemoNarrative.ObservedEvents(record);
+            record.DemoNarrativePending=0;
+            if(user.player.ConversationNPC!=null)user.player.ConversationNPC.bInConversation=false;
+            user.player.ConversationNPC=null;user.player.ConversationPC=null;
+        }
         Done=true;Ready=true;Console.Printf("CA434 RESULT prepared peer=%d",consoleplayer);
     }
 }

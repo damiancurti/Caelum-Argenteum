@@ -29,6 +29,11 @@ class CA434ProfileProbe : StaticEventHandler
             Check(!b.bSolid && !b.bShootable && b.bInvisible,"return source has no collision or combat");
             Check(second.PalomoMerchantStock[0]==91,"second campaign shop retained");
             Check(CaelumPlayerAuthority.CanMutate(a),"other second-campaign participant preserved");
+            let world=CaelumCooperativeQuests.Get(a);
+            Check(world.Rescue[0]!=null && !world.Rescue[0].Contains(second),"leaving foreign world cannot create eligibility");
+            Check(world.PrisonerState[1]==CaelumConstants.PRISONER_STATE_EXTRACTED,"foreign resolved objective stays resolved");
+            Check(second.PrisonerRescueState[1]==CaelumConstants.PRISONER_STATE_FOLLOWING,"return departure preserves personal investigation");
+            Check(!second.PrisonerRewardClaimed[0],"foreign world never paid the pending source reward");
         }
         else
         {
@@ -42,6 +47,12 @@ class CA434ProfileProbe : StaticEventHandler
             Check(table!=null && table.Table!=null && table.Table.Items[0]!=null && table.Table.Items[0].Amount==3,"returned packed food");
             Check(a.bSolid && a.bShootable && !a.bInvisible && !a.bCorpse,"returned living body restored");
             Check(a.player.ReadyWeapon!=null && a.player.ReadyWeapon.Owner==a,"returned weapon owner restored");
+            let world=CaelumCooperativeQuests.Get(a);
+            Check(world.Rescue[0]!=null && world.Rescue[0].Contains(first),"returning reconstructed character retains earned eligibility");
+            int money=a.GetOwnedMoneyCopperValue();
+            Check(a.ClaimPrisonerPortReward(0,CaelumPrisonerRescue.FactionFor(0)),"original campaign pays pending reward after actual return");
+            Check(!a.ClaimPrisonerPortReward(0,CaelumPrisonerRescue.FactionFor(0)) && a.GetOwnedMoneyCopperValue()==money+CaelumConstants.PRISONER_RESCUE_COPPER_REWARD,"return reward paid exactly once");
+            Check(first.PrisonerRescueState[1]==CaelumConstants.PRISONER_STATE_FOLLOWING && !CaelumCooperativeQuests.Unavailable(a,CaelumConstants.QUEST_RESCUE_FIRST+1),"original campaign can continue the pending investigation");
         }
         Done=true;Console.Printf("CA434 RESULT return peer=%d",consoleplayer);
     }
