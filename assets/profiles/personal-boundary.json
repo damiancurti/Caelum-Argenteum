@@ -1,0 +1,58 @@
+{
+  "revision": 1,
+  "native_save_version": 4560,
+  "native_conversation": {"reference": "conversionnpc", "flags": "flags5", "active_mask": 536870912},
+  "author_scope": "Identity, attributes, abilities, Tarot, inventory, money and personal progress travel. Maps, NPCs, shops and property ownership remain campaign-owned.",
+  "root_bases": [
+    "CaelumPersistentCharacterState", "CaelumEquipmentItem", "CaelumConsumableItem",
+    "CaelumSpecialInventoryItem", "CaelumChestCargo", "CaelumCarbineAmmo",
+    "CaelumArrowAmmo", "CaelumBoltAmmo", "CaelumWeightedKey", "Weapon", "BasicArmor", "HexenArmor",
+    "CaelumMagicBox", "CaelumSoapSupply", "CaelumCampFuelCredit", "CaelumQuestRouteReceipt",
+    "CaelumArcaneCloudEffect", "CaelumBattleCryEffect", "CaelumFormationBreakerEffect",
+    "CaelumMiracleEffect", "CaelumRallyEffect", "CaelumRedemptionEffect",
+    "CaelumSummoningEffect", "CaelumSupportStatus", "CaelumSurvivalInstinctEffect"
+  ],
+  "record_world_fields": [
+    "FermentationBatches", "ProofingBatches", "PalomoMerchantVersion",
+    "PalomoMerchantStock", "PalomoMerchantWalletCopper", "HouseRestitutionConfirmed",
+    "HouseRefundPending", "WorldPendingConnection", "FactionWitnesses"
+  ],
+  "transfer_blocked_body_flags": ["CraftingTaskActive", "RangedReloadActive", "WeaponChargeActive", "ClassCastActive"],
+  "transfer_blocked_inventory_fields": {
+    "CaelumRestState": {"Status": [1]},
+    "CaelumTimeAdvanceState": {"Active": [1]},
+    "CaelumJourneyState": {"Status": [1, 3]},
+    "CaelumFoolJourney": {"Active": [1]}
+  },
+  "owned_actor_edges": {
+    "CaelumChestCargo": ["Chest"],
+    "CaelumRestFurnitureItem": ["Body"],
+    "CaelumDiningSetItem": ["Table"],
+    "CaelumDecorItem": ["Decoration"],
+    "CaelumDeskItem": ["Desk"],
+    "CaelumBookcaseStorage": ["Shelf"],
+    "CaelumStashChest": ["ChestVisual", "InstalledPadlock"],
+    "CaelumDiningTable": ["Items", "Chairs", "Blocks", "Displays"]
+  },
+  "exclude_reference_fields": {
+    "CaelumStashChest": ["DomesticStorage"],
+    "CaelumCompanionBond": ["Party", "Body", "Motion", "Loadout"],
+    "CaelumContaminationContacts": ["Rows"],
+    "CaelumContaminationObject": ["Previous", "Next"]
+  },
+  "rebase_fields": {
+    "CaelumFoodClock": {"Ready": false},
+    "CaelumWaterContainer": {"TemperatureClockReady": false},
+    "CaelumThermalState": {"RuntimeReady": false, "RuntimeMap": ""},
+    "CaelumAltitudeState": {"ClockReady": false, "LastMap": ""},
+    "CaelumChestCargo": {"TravelTID": 0, "ContentTravelTIDs": []},
+    "CaelumRestFurnitureItem": {"TravelTID": 0, "ContentTravelTIDs": []}
+  },
+  "body_personal_fields": [
+    "Attributes", "CharacterProfile", "CharacterAllocation", "DerivedStats",
+    "AnatomyProfile", "ArmorModel", "ShieldModel", "WeaponModel", "ElementalStatus", "RacialAbility", "SpellSleep",
+    "CurrentAnima", "CurrentAir", "CurrentAdrenaline", "CurrentLucidity",
+    "CurrentHunger", "CurrentThirst", "CurrentSleep", "UnderwaterNoBreathTics",
+    "UnderwaterAirRecoveryDebt", "UnderwaterAirRecoveryTicsRemaining"
+  ]
+}

@@ -1,6 +1,13 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.12.5** - 2026-10-31.
+Documentation version: **5.12.6** - 2026-10-31.
+
+## Profile graph tooling (#434, 5.12.6)
+
+No artwork changes. The offline schema reader inspects the installed, version-
+pinned engine PK3 and built project PK3; neither engine nor development IWAD is
+redistributed. Disposable native saves/maps remain under build. Boundary data is
+assets/profiles/personal-boundary.json; retained evidence is validation_v5_12_6.
 
 ## 5.12.5 - Card-table PvP reuses accepted artwork (#590)
 

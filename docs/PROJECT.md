@@ -1,6 +1,22 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.12.5** - 2026-10-31.
+Documentation version: **5.12.6** - 2026-10-31.
+
+## V5.12 profile integration (#434, 5.12.6, in progress)
+
+External SQLite custody retains immutable native anchors and revisioned campaign
+heads. Transfers reserve both worlds, retire source material ownership and publish
+both engine-verified results in one transaction. Two native peers verify outward
+and return transfers, preserving other participants and campaign property/stock.
+Narrative saves follow committed personal changes and retain pending work while
+busy. Whole-coordinator backup/recovery and deceased-profile transfer in actual
+MAP03 pass, preserving original anchors and single custody without resurrection.
+Native hub travel and portable/world quest boundaries now pass: source eligibility
+survives departure, destination grants remain world-owned and returning claims a
+pending source reward once. Final session integration remains unfinished.
+New native destination preparation now creates vacant MAP01 rosters without
+replacing characters; #435 exposes that flow through the session menu.
+No author acceptance or release completion.
 
 ## 5.12.5 - Human card-table PvP preparation (#590)
 

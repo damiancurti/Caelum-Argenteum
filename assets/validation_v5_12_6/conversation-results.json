@@ -1,0 +1,230 @@
+{
+  "issue": 434,
+  "author_accepted": false,
+  "runs": [
+    {
+      "issue": 434,
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue434-work\\build\\issue434\\native-20261031-043946-347760",
+      "stage": "isolated native profile assertions",
+      "runtime_sha256": "35daf1bb0bacf1971bf9c4343a579202b8c99a9714a6f28c1e8573d93688bff1",
+      "commands": [
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue434-work\\build\\issue434\\final-core\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue434-work\\build\\issue434\\native-20261031-043946-347760\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue434-work\\build\\issue434\\native-20261031-043946-347760\\peer0\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue434-work\\build\\issue434\\native-20261031-043946-347760\\peer0",
+          "-window",
+          "-width",
+          "640",
+          "-height",
+          "480",
+          "-rngseed",
+          "434",
+          "-host",
+          "2",
+          "-port",
+          "30444",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue434-work\\build\\issue434\\native-20261031-043946-347760\\peer0\\engine.log",
+          "+map",
+          "MAP03",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue434-work\\build\\issue434\\native-20261031-043946-347760\\peer0\\test.cfg"
+        ],
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue434-work\\build\\issue434\\final-core\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue434-work\\build\\issue434\\native-20261031-043946-347760\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue434-work\\build\\issue434\\native-20261031-043946-347760\\peer1\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue434-work\\build\\issue434\\native-20261031-043946-347760\\peer1",
+          "-window",
+          "-width",
+          "640",
+          "-height",
+          "480",
+          "-rngseed",
+          "434",
+          "-join",
+          "127.0.0.1:30444",
+          "-port",
+          "30445",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue434-work\\build\\issue434\\native-20261031-043946-347760\\peer1\\engine.log",
+          "+map",
+          "MAP03",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue434-work\\build\\issue434\\native-20261031-043946-347760\\peer1\\test.cfg"
+        ]
+      ],
+      "source": "None",
+      "reload": "None",
+      "probe": "assets\\validation_v5_12_6\\conversation_probe.zs",
+      "peers": [
+        {
+          "peer": 0,
+          "exit": 1,
+          "passed": false,
+          "checks": [],
+          "errors": [
+            "Script error, \"checks.pk3:probe.zs\" line 23:"
+          ]
+        },
+        {
+          "peer": 1,
+          "exit": 1,
+          "passed": false,
+          "checks": [],
+          "errors": []
+        }
+      ],
+      "passed": false
+    },
+    {
+      "issue": 434,
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue434-work\\build\\issue434\\native-20261031-044140-088688",
+      "stage": "isolated native profile assertions",
+      "runtime_sha256": "35daf1bb0bacf1971bf9c4343a579202b8c99a9714a6f28c1e8573d93688bff1",
+      "commands": [
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue434-work\\build\\issue434\\final-core\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue434-work\\build\\issue434\\native-20261031-044140-088688\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue434-work\\build\\issue434\\native-20261031-044140-088688\\peer0\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue434-work\\build\\issue434\\native-20261031-044140-088688\\peer0",
+          "-window",
+          "-width",
+          "640",
+          "-height",
+          "480",
+          "-rngseed",
+          "434",
+          "-host",
+          "2",
+          "-port",
+          "30444",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue434-work\\build\\issue434\\native-20261031-044140-088688\\peer0\\engine.log",
+          "+map",
+          "MAP03",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue434-work\\build\\issue434\\native-20261031-044140-088688\\peer0\\test.cfg"
+        ],
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue434-work\\build\\issue434\\final-core\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue434-work\\build\\issue434\\native-20261031-044140-088688\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue434-work\\build\\issue434\\native-20261031-044140-088688\\peer1\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue434-work\\build\\issue434\\native-20261031-044140-088688\\peer1",
+          "-window",
+          "-width",
+          "640",
+          "-height",
+          "480",
+          "-rngseed",
+          "434",
+          "-join",
+          "127.0.0.1:30444",
+          "-port",
+          "30445",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue434-work\\build\\issue434\\native-20261031-044140-088688\\peer1\\engine.log",
+          "+map",
+          "MAP03",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue434-work\\build\\issue434\\native-20261031-044140-088688\\peer1\\test.cfg"
+        ]
+      ],
+      "source": "None",
+      "reload": "None",
+      "probe": "assets\\validation_v5_12_6\\conversation_probe.zs",
+      "peers": [
+        {
+          "peer": 0,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA434 PASS real speaker actor created",
+            "CA434 PASS native active dialogue visible to player",
+            "CA434 PASS native speaker reference can remain after dialogue",
+            "CA434 PASS stale reference is not an active dialogue",
+            "CA434 PASS speaker remains inactive",
+            "CA434 RESULT conversation peer=0"
+          ],
+          "errors": []
+        },
+        {
+          "peer": 1,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA434 PASS real speaker actor created",
+            "CA434 PASS native active dialogue visible to player",
+            "CA434 PASS native speaker reference can remain after dialogue",
+            "CA434 PASS stale reference is not an active dialogue",
+            "CA434 PASS speaker remains inactive",
+            "CA434 RESULT conversation peer=1"
+          ],
+          "errors": []
+        }
+      ],
+      "passed": true
+    },
+    {
+      "issue": 434,
+      "checks": [
+        {
+          "file": "save00.zds",
+          "sha256": "334cf67a970872c3fbb64f55fc8ebc3db0c182ff3cfe29af62cb8e08d500a3b7",
+          "native_speaker": 614,
+          "flags5": 536870912,
+          "blocked": true,
+          "passed": true
+        },
+        {
+          "file": "save01.zds",
+          "sha256": "af5d0e554f5e82ed76d718c0fdb7b89d6ab1e002d28e6724c69b7768b11d58f0",
+          "native_speaker": 614,
+          "flags5": null,
+          "blocked": false,
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "engine_reference_tag": "ZDoom/gzdoom g4.14.2",
+  "reference_sha256": {
+    "p_user.cpp": "34274d50f855f6613098ff9c49010439278f1e07bcf9b9513ebab47043d0a79a",
+    "p_mobj.cpp": "24781f59e76d1874927dc9e0b7a2e14f89a91c5f053736c2e171044b86d2f544",
+    "actor.h": "8b6b9d5449f1ac66f737993ec1842753a20f4161e08a07060cc7787fd7eda86e"
+  }
+}

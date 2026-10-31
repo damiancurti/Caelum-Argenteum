@@ -1,6 +1,104 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.12.5** - 2026-10-31.
+Documentation version: **5.12.6** - 2026-10-31.
+
+## 5.12.6 - Typed personal profile graph foundation (#434, 2026-10-31)
+
+Bootstrap window follow-up: explicitly set the isolated configuration's window
+and dimensions. One native MAP01 preparation confirms 640 × 480 and a valid
+vacant checkpoint; window-results.json/window-logs.json.gz retain the evidence.
+Ordinary game settings are unchanged; this is not a native crash fix.
+
+Vacant campaign preparation: corrected the documented 1–8 range encoding; no
+runtime or balance change. The engine now creates actual MAP01 checkpoints
+with 1, 2 and 8 inert native slots without material inventory or committed profiles.
+All 11 native processes report readiness; 21 offline enrollment/negative checks
+pass, retaining original saves and refusing malformed markers, conflicting owners,
+material inventory and cyclic chains. Evidence: vacancy-results.json and
+vacancy-logs.json.gz. The 23 custody and seven graph regression checks also pass.
+Early isolated overlay attempts duplicated additive engine
+roots or referenced a class across compilation units; native compilation then
+identified the missing play scope. Multi-slot verification exposed the need to
+initialize the calendar before the existing clock mirror, and native HexenArmor's
+empty marker has Amount1. Those bootstrap defects were corrected; failed evidence
+remains in build/issue434. No existing character or map was replaced. Integration
+with #435 and author acceptance remain separate.
+
+Identity/hub follow-up: 120 assertions in real two-client runs now verify old
+native identity/world-ledger upgrade, two-map hub retention, outward/return
+custody and post-transfer hub return. Source pending eligibility survives; a
+resolved destination objective grants nothing retroactively; returning redeems
+the source reward exactly once. Twenty-three transaction and seven graph checks
+pass, including raw-copy duplicate identity refusal and legacy origin-binding
+upgrade. Evidence: identity-results.json and identity-logs.json.gz.
+The first actual return failed because GZDoom discarded a detached Inventory
+record referenced by world eligibility. #436 revision2 stores independent legal
+identity snapshots; this adapter also allocates a new record for the imported
+occupant. Failed predecessors remain preserved. Native FName keys are matched
+case-insensitively (`token`, `REVISION`); ambiguous duplicate fields are rejected.
+Diagnostic second-world identities are explicit independent-world fixtures,
+never a production identity rewrite. Final #435 launch integration remains open.
+
+Recovery follow-up: registration invokes the existing #438 copy-only native
+team-damage migration, including inactive saved levels, while retaining the
+original anchor byte-for-byte. Closed coordinators can be backed up and recovered
+to a new path, restoring every campaign head and profile assignment together.
+Active reservations, corrupt/future databases, damaged anchors and overwrites
+are refused. Recovery does not authorize running two writable coordinator copies.
+Eighteen transaction checks pass. Actual MAP03 native peers also verify death
+and staged deceased-profile transfer (8 seed +16 transfer assertions): no
+resurrection, material duplication or change to the other participant. Evidence:
+recovery-results.json/recovery-logs.json.gz. The native runner now distinguishes
+packaged campaign geometry from isolated fixtures; both retain originals.
+
+Native conversation preflight follow-up: GZDoom4.14.2 serializes the speaker as
+`conversionnpc` (its actual spelling), with `flags5 & 0x20000000` indicating an
+active conversation. Transfer now rejects that active state but accepts a stale
+speaker pointer after dialogue. Two native peers pass10 assertions; both produced
+saves pass the corresponding offline deny/allow checks without modifying originals.
+Fourteen transaction checks pass. Bindings are data in personal-boundary.json;
+source references are g4.14.2 playsim/p_user.cpp, p_mobj.cpp and actor.h. The first
+fixture misspelled the Palomo actor class; its failed logs remain preserved.
+
+Implements read-only typed ownership extraction and copied native installation,
+plus an additive static import reconciler. SQLite foundation checks cover immutable
+anchors, concurrent custody, stale revisions, rollback and corruption refusal.
+Seven graph checks reject unrelated owners, malformed references, unknown fields
+and changed packages; ordinary numeric quantities remain unchanged. A test found
+that payload package hashes aliased the schema dictionary; copying that metadata
+fixed the rejection boundary before delivery.
+
+The prototype package (diagnostic labels still5.12.5) passes66 native assertions:
+two peers prepare three each; import and common-checkpoint reload pass15 each
+per peer. The import retains attributes, Tarot, recipes,321 copper, water, table,
+chairs, food quantity/deterioration and ready-weapon ownership. Destination stock
+and house title remain campaign-owned. No duplicate import grant on native reload.
+The controlled fixture makes only its disposable target slot uncommitted; the
+production adapter refuses replacing an unrelated committed character.
+
+Failed fixture attempts remain preserved: a wrong method name, an absolute
+-loadgame path combined with -savedir, and reuse of an occupied diagnostic port.
+These were corrected in the runner; none touched author saves.
+
+Follow-up: schema2 records campaign heads, reservations and exactly-once publication.
+Original-slot binding no longer depends on checkpoint bytes. Source retirement
+removes actual material actors/packed contents from the copied active graph and
+leaves an inert native slot; return restores living control and original world data.
+Thirteen transaction checks cover atomic rollback, stale heads, active crafting,
+cancellation, owner identity and distinct native/script boolean formats; eight
+store and seven graph checks also pass. Four two-peer outward/return engine runs
+pass64 assertions, followed by atomic commits and old-origin rejection.
+
+Narrative checkpoints observe completed personal transactions and queue new native
+files through the existing autosave owner. Two peers pass18 reward/choice/busy checks;
+common reload passes12 more. Both actual saves retain the complete reward/choice,
+and reload produces no additional save files. The five-minute periodic timer remains.
+The native fixture suppresses the separate automatic rescue conversation; an earlier
+run correctly remained deferred because that conversation was open. Its failures
+and the JSON boolean-format investigation are retained with the successful evidence.
+
+Source/profile UI, package and migration preflight, broader recovery and #435 session
+integration remain open. Native isolated verification is not author acceptance.
 
 ## 5.12.5 - Seated human card-rule preparation (#590, 2026-10-30)
 

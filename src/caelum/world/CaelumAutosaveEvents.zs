@@ -14,6 +14,7 @@ class CaelumAutosaveEvents : StaticEventHandler
     ui bool HasSample, WasActive, RequestSent;
     ui bool ReportedDispatch;
     ui int ReportedQueue;
+    ui int NarrativeSent[MAXPLAYERS],NarrativeWorld;
 
     clearscope static CaelumAutosaveEvents Get()
     { return CaelumAutosaveEvents(StaticEventHandler.Find("CaelumAutosaveEvents")); }
@@ -61,6 +62,7 @@ class CaelumAutosaveEvents : StaticEventHandler
 
     override void UiTick()
     {
+        NarrativeTick();
         double now = MSTimeF();
         if (SeenReset != ResetSerial)
         {
@@ -110,6 +112,16 @@ class CaelumAutosaveEvents : StaticEventHandler
 
     override void NetworkProcess(ConsoleEvent e)
     {
+        if(e.Name=="ca_narrative_checkpoint")
+        {
+            // La solicitud sale únicamente del coordinador nativo; el registro
+            // queda marcado en todos los peers antes del DEM_SAVEGAME siguiente.
+            if(e.Player!=0)return;
+            let checkpoint=CaelumNarrativeCheckpoint.Read(e.Args[0]);
+            if(checkpoint!=null && e.Args[1]>checkpoint.Queued && e.Args[1]<=checkpoint.Serial)
+                checkpoint.Queued=e.Args[1];
+            return;
+        }
         if (e.Player != consoleplayer) return;
         if (e.Name == "ca_autosave_finished")
         {
@@ -180,10 +192,28 @@ class CaelumAutosaveEvents : StaticEventHandler
 
     static void Checkpoint(CaelumPlayer user)
     {
-        let owner = Get();
-        if (owner == null) return;
-        owner.Pending = true; owner.PendingSerial++;
-        owner.TryRequest(user);
+        CaelumNarrativeCheckpoint.Request(user);
+    }
+
+    ui void NarrativeTick()
+    {
+        if(consoleplayer!=0 || !CaelumNarrativeCheckpoint.Ready() || paused!=0
+            || menuactive!=0 || Menu.GetCurrentMenu()!=null || ConsoleState!=c_up)return;
+        if(NarrativeWorld!=WorldSerial)
+        {NarrativeWorld=WorldSerial;for(int i=0;i<MAXPLAYERS;i++)NarrativeSent[i]=0;}
+        bool pending=false;
+        for(int i=0;i<MAXPLAYERS;i++)
+        {
+            let checkpoint=CaelumNarrativeCheckpoint.Read(i);
+            if(checkpoint==null || checkpoint.Serial<=checkpoint.Queued || checkpoint.Serial<=NarrativeSent[i])continue;
+            NarrativeSent[i]=checkpoint.Serial;pending=true;
+            EventHandler.SendNetworkEvent("ca_narrative_checkpoint",i,checkpoint.Serial);
+        }
+        if(!pending)return;
+        // Insertar el nodo vacío garantiza un archivo nuevo: ningún guardado
+        // manual anterior se usa como destino implícito de la transacción.
+        let manager=SavegameManager.GetManager();manager.ReadSaveStrings();manager.InsertNewSaveNode();
+        manager.DoSave(0,StringTable.Localize("CA_PROFILE_NARRATIVE_SAVE"));manager.RemoveNewSaveNode();
     }
 
     override void WorldTick()
