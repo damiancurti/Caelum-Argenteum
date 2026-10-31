@@ -14,8 +14,8 @@ Transport now shares one route/incident record with individual atomic fares,
 consented stops and original-ticket resumption. Initial tutorial departure
 requires all living players to finish and retain their personal loadout before
 unanimous transfer. Rescues snapshot eligible characters and prevent duplicate
-or retroactive claims; shared house rewards and remaining quest integration
-are unfinished. The full
+or retroactive claims. House restitution shares title/access while refunding
+only the original payer. Remaining quest/lifecycle integration is unfinished. The full
 V5.12 milestone is not complete or author-accepted. Evidence is kept in
 `assets/validation_v5_12_2`, distinct from #435 and #590.
 

@@ -557,6 +557,7 @@ version "4.14"
 #include "caelum/world/CaelumCooperativeTravel.zs"
 #include "caelum/world/CaelumCooperativeReturn.zs"
 #include "caelum/quests/CaelumCooperativeQuests.zs"
+#include "caelum/quests/CaelumCooperativeHouse.zs"
 #include "caelum/world/CaelumCooperativeTravelMenu.zs"
 
 #include "caelum/world/CaelumCooperativeFare.zs"

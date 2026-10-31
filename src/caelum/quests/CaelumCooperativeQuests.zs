@@ -26,13 +26,21 @@ class CaelumCooperativeQuests : Object play
     int Revision;
     int PrisonerState[CaelumConstants.PRISONER_COUNT];
     CaelumCooperativeObjective Rescue[CaelumConstants.PRISONER_COUNT];
+    CaelumPropertyRecord House;
 
     static clearscope bool Unavailable(CaelumPlayer user,int quest)
     {
-        if(!multiplayer || user==null || !CaelumQuestCatalogue.IsRescue(quest))return false;
+        if(!multiplayer || user==null)return false;
         let clock=CaelumWorldClock(user.FindInventory('CaelumWorldClock'));
         let record=CaelumPersistentCharacterState(user.FindInventory('CaelumPersistentCharacterState'));
         if(clock==null || clock.CampaignQuests==null || record==null)return false;
+        if(quest==CaelumConstants.QUEST_FIND_HOUSE)
+        {
+            let house=clock.CampaignQuests.House;
+            return !record.HouseRestitutionConfirmed && house!=null && house.Restitution!=null
+                && !house.Restitution.Contains(record);
+        }
+        if(!CaelumQuestCatalogue.IsRescue(quest))return false;
         int prisoner=quest-CaelumConstants.QUEST_RESCUE_FIRST;
         if(record.PrisonerRewardClaimed[prisoner] || record.PrisonerRescueState[prisoner]==CaelumConstants.PRISONER_STATE_EXTRACTED)return false;
         let world=clock.CampaignQuests;
@@ -58,6 +66,8 @@ class CaelumCooperativeQuests : Object play
                 if(world.PrisonerState[i]==CaelumConstants.PRISONER_STATE_EXTRACTED)
                 {world.Rescue[i]=new("CaelumCooperativeObjective");world.Rescue[i].Capture(i);}
             }
+            world.House=CaelumPropertyRules.Find(CaelumPropertyData.CENTRAL_HOUSE);
+            CaelumCooperativeHouse.Ensure(world.House);
             world.Revision=1;clock.CampaignQuests=world;CaelumWorldClockTicker.Mirror(owner);
         }
         return clock.CampaignQuests;

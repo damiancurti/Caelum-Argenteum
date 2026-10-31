@@ -81,6 +81,24 @@ initialize a fresh world ledger rather than import an advanced profile's world
 state; that profile-boundary integration remains #434. Eligibility snapshots and
 migration iterate only the bounded native roster and four rescue records.
 
+Central-house restitution is a single world transaction. The initiating
+character must still be recognized and speak with the rental agent. Every
+ready character present at completion receives the house quest reward and a
+saved legal co-title; each can use its residence/camp permissions. Completing
+or replaying the dialogue cannot add later arrivals. An existing contract may
+belong to another present participant, but an absent holder is not displaced.
+Rent/purchase now permits an individual native cooperative transaction with
+unchanged activity, title, funds and inventory-capacity guards.
+
+Only the original contract holder receives the recorded rent/purchase refund.
+A world-owned paid flag prevents multiplying it by the number of recipients or
+repeating it after reload. A capacity failure leaves the actual payer's refund
+pending and retryable; no other character can collect it. Already-completed
+personal quest flags do not erase a real new campaign's outstanding payment.
+Revision-1 property migration recognizes prior solo restitution and preserves
+its sole title and already-paid refund, rather than treating the restored
+ownership as a fresh paid purchase. Original saves remain recoverable.
+
 Vehicle boarding uses the same unanimous native protocol. Every living traveler
 must satisfy the existing boarding checks and afford their own ticket/change.
 All currency transactions are prepared before any wallet is charged. Refusal,
@@ -99,7 +117,7 @@ the ticket requires shared consent; rebooking uses the existing remaining-route
 fare, individually paid. Personal profile transfer must not carry this shared
 campaign journey into a different campaign.
 
-Shared house rewards and remaining quest conflicts are unfinished;
+Remaining quest conflicts are unfinished;
 full death/disconnect/restart integration remains #437. Cart boarding, survival
 advance, rejected arrival, native destination arrival and rural stop/resumption
 have dedicated real-peer checks; they do not certify those remaining systems.

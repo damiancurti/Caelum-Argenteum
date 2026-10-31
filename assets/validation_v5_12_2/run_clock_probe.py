@@ -22,7 +22,7 @@ def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def fixture(path: Path, peers: int, source_overlay: bool = False, persistence: bool = False, travel: bool = False, transport: bool = False, transport_stop: bool = False, transport_mode: int = 3, tutorial: bool = False, rewards: bool = False, legacy_rewards: bool = False) -> None:
+def fixture(path: Path, peers: int, source_overlay: bool = False, persistence: bool = False, travel: bool = False, transport: bool = False, transport_stop: bool = False, transport_mode: int = 3, tutorial: bool = False, rewards: bool = False, legacy_rewards: bool = False, house: bool = False, legacy_house: bool = False) -> None:
     # Disposable geometry; installed development IWAD textures are not distributed.
     text = '''namespace="ZDoom";
 vertex{x=-1024;y=-1024;} vertex{x=1024;y=-1024;}
@@ -48,7 +48,7 @@ linedef{v1=0;v2=3;sidefront=0;blocking=true;}
         for name, data in {
             "MAPINFO": ('gameinfo { AddEventHandlers = "CA436ClockProbe"' + ' }\n').encode(),
             "ZSCRIPT": b'version "4.14.2"\n#include "probe.zs"\n',
-            "probe.zs": (SOURCE / ("rewards_legacy_probe.zs" if legacy_rewards else "rewards_probe.zs" if rewards else "return_probe.zs" if tutorial else "transport_probe.zs" if transport else "travel_probe.zs" if travel else "persistence_probe.zs" if persistence else "clock_probe.zs")).read_bytes().replace(b"const STOP_EARLY = 0;", b"const STOP_EARLY = 1;" if transport_stop else b"const STOP_EARLY = 0;").replace(b"const TRAVEL_MODE = 3;", f"const TRAVEL_MODE = {transport_mode};".encode()),
+            "probe.zs": (SOURCE / ("house_legacy_probe.zs" if legacy_house else "house_probe.zs" if house else "rewards_legacy_probe.zs" if legacy_rewards else "rewards_probe.zs" if rewards else "return_probe.zs" if tutorial else "transport_probe.zs" if transport else "travel_probe.zs" if travel else "persistence_probe.zs" if persistence else "clock_probe.zs")).read_bytes().replace(b"const STOP_EARLY = 0;", b"const STOP_EARLY = 1;" if transport_stop else b"const STOP_EARLY = 0;").replace(b"const TRAVEL_MODE = 3;", f"const TRAVEL_MODE = {transport_mode};".encode()),
             "maps/MAP03.wad": wad,
         }.items():
             entry = zipfile.ZipInfo(name, (2026, 10, 30, 0, 0, 0))
@@ -90,6 +90,8 @@ def main() -> None:
     parser.add_argument("--travel", action="store_true")
     parser.add_argument("--tutorial", action="store_true")
     parser.add_argument("--rewards", action="store_true")
+    parser.add_argument("--house", action="store_true")
+    parser.add_argument("--legacy-house", action="store_true")
     parser.add_argument("--legacy-rewards", action="store_true")
     parser.add_argument("--transport", action="store_true")
     parser.add_argument("--transport-stop", action="store_true")
@@ -102,7 +104,7 @@ def main() -> None:
     out = ROOT / "build/issue436" / datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
     out.mkdir(parents=True)
     package = out / "checks.pk3"
-    fixture(package, args.players, args.source_overlay, args.persistence, args.travel, args.transport, args.transport_stop, args.transport_mode, args.tutorial, args.rewards, args.legacy_rewards)
+    fixture(package, args.players, args.source_overlay, args.persistence, args.travel, args.transport, args.transport_stop, args.transport_mode, args.tutorial, args.rewards, args.legacy_rewards, args.house, args.legacy_house)
     processes, streams, commands = [], [], []
     startup = subprocess.STARTUPINFO()
     startup.dwFlags |= subprocess.STARTF_USESHOWWINDOW
@@ -164,17 +166,17 @@ def main() -> None:
                   (" FAIL", "Bad type", "errors while compiling", "Script error", "Execution could not continue", "Cannot find savegame", "VM execution aborted", "desync", "out of sync"))]
         checks = [line for line in lines if line.startswith("CA436 ")]
         ordered_requests.append(re.findall(r"CA436 EVENT peer=\d+ sender=(\d+) serial=(\d+)", text))
-        success = process.returncode == 0 and not errors and text.count("CA436 PASS") == (2 if args.legacy_rewards else (6 if args.load_directory else 10+2*args.players+(2 if args.players>2 else 0)) if args.rewards else (8 if args.players==1 else 21) if args.tutorial else 30 if args.transport_stop else 26 if args.transport else 31 if args.travel else (6 if args.load_directory else 4) if args.persistence else 36) and text.count("CA436 RESULT") == 1
+        success = process.returncode == 0 and not errors and text.count("CA436 PASS") == (2 if args.legacy_rewards or args.legacy_house else (6 if args.load_directory else 15+(2 if args.players>2 else 0)) if args.house else (6 if args.load_directory else 10+2*args.players+(2 if args.players>2 else 0)) if args.rewards else (8 if args.players==1 else 21) if args.tutorial else 30 if args.transport_stop else 26 if args.transport else 31 if args.travel else (6 if args.load_directory else 4) if args.persistence else 36) and text.count("CA436 RESULT") == 1
         reports.append({"peer": index, "exit": process.returncode, "passed": success, "checks": checks, "errors": errors})
     same_order = len(ordered_requests) == args.players and all(
         len(events) == args.players * (3 if args.travel or args.transport else 1) and events == ordered_requests[0] for events in ordered_requests)
     if args.transport_stop:
         same_order = all(len(events) >= args.players * 3 and events == ordered_requests[0] for events in ordered_requests)
-    if args.persistence or args.rewards or args.legacy_rewards:
+    if args.persistence or args.rewards or args.legacy_rewards or args.house or args.legacy_house:
         same_order = True
     if args.tutorial:
         same_order = all(len(events)==args.players*2 and events==ordered_requests[0] for events in ordered_requests)
-    result = {"legacy_rewards":args.legacy_rewards,"rewards":args.rewards,"tutorial":args.tutorial, "persistence": args.persistence, "travel": args.travel, "transport": args.transport, "transport_stop": args.transport_stop, "transport_mode": args.transport_mode, "load_directory": str(args.load_directory) if args.load_directory else None, "issue": 436, "baseline": "5.11.8", "source_overlay": args.source_overlay, "real_processes": args.players, "runtime_sha256": digest(runtime),
+    result = {"house":args.house,"legacy_house":args.legacy_house,"legacy_rewards":args.legacy_rewards,"rewards":args.rewards,"tutorial":args.tutorial, "persistence": args.persistence, "travel": args.travel, "transport": args.transport, "transport_stop": args.transport_stop, "transport_mode": args.transport_mode, "load_directory": str(args.load_directory) if args.load_directory else None, "issue": 436, "baseline": "5.11.8", "source_overlay": args.source_overlay, "real_processes": args.players, "runtime_sha256": digest(runtime),
               "engine_sha256": digest(ENGINE), "iwad_sha256": digest(IWAD), "fixture_sha256": digest(package),
               "commands": commands, "peers": reports, "same_order": same_order,
               "passed": same_order and all(x["passed"] for x in reports)}

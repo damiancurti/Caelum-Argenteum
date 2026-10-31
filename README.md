@@ -22,7 +22,9 @@ and own equipment, checked before any personal completion or packing.
 Rescue objectives now capture the present character roster; each eligible
 character claims their own reward once. Late-ready records keep their personal
 progress and see unavailable-world objectives in the Journal.
-This is not full cooperative campaign acceptance: house/other quest integration,
+Recovering the central house grants shared access to the present characters;
+only the actual payer receives the single refund of recorded payments.
+This is not full cooperative campaign acceptance: other quest integration,
 profile portability and lifecycle integration remain under their focused issues.
 Author checks will be delivered together after the release is complete.
 

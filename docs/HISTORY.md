@@ -10,6 +10,21 @@ This remains agent verification, not author acceptance.
 
 ## 5.12.2 - Shared clock and time consent (#436, 2026-10-30, in progress)
 
+House follow-up (2026-10-31): the author approves shared title/access for
+characters present when the house is recovered, with refunds only to the actual
+payer. A single saved world settlement and co-titles implement that rule. Native
+checks exposed a prior solo-only acquisition guard; personal rent/purchase now
+works with actual peers without lifting unrelated schedule restrictions. Old
+restitution migrates once without inventing a purchase refund or new co-owners.
+Final native evidence: eight peers each pass17 house/title/payment checks and
+six common-save recovery checks; two peers each pass six old-save migration
+checks. The preserved prior package passes two legacy-setup checks per peer.
+All exit cleanly (200 final assertions). Failed fixture/development evidence,
+full logs and package hashes: house-results.json/house-logs.json.gz. Static
+validation and exact staged-source/package comparison are recorded with the
+commit. This is not author acceptance or completion of V5.12. Final PK3 SHA-256:
+`413202c32bcea16c0669544c9aa1cc5e4baad01a159243943b85fa11ec1bff71`.
+
 Rescue follow-up (2026-10-31): campaign-owned revision-1 objective snapshots
 capture eligible character records at extraction. Each character keeps its own
 claim guard and wallet; late-ready characters retain personal progress and see
