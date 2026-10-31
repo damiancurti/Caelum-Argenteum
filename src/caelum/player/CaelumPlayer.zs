@@ -7404,6 +7404,7 @@ class CaelumPlayer : DoomPlayer
         CaelumTimeAdvanceState.Pump(self);
         CaelumTimeSkipState.AfterStep(self);
         CaelumTimeSkipState.Pump(self);
+        CaelumCooperativeTime.AfterPlayerStep(self);
         CaelumTransportTrip.Step(self);
         CaelumTransportTrip.Flush(self);
         CaelumNotifications.Survival(self);

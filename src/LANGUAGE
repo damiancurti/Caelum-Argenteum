@@ -7224,3 +7224,78 @@ CA_CARD_NO_PARTNER = "No hay otro jugador disponible sentado en esta mesa.";
 CA_CARD_RECOVERY = "Session interrupted. The hand is preserved for recovery from a common save.";
 [es]
 CA_CARD_RECOVERY = "Sesi?n interrumpida. La mano se conserva para recuperar desde un guardado com?n.";
+
+[enu default]
+CA_COOP_TIME_TITLE = "Shared time";
+CA_COOP_TIME_HELP = "Everyone must accept this exact duration. Waiting does not count as consent. Any player may cancel; changing the duration clears all votes.";
+CA_COOP_TIME_DURATION = "Duration: %d minutes of world time";
+CA_COOP_TIME_VOTES = "Consent: %d / %d";
+CA_COOP_TIME_ACCEPT = "Accept this duration";
+CA_COOP_TIME_REJECT = "Reject / cancel for everyone";
+CA_COOP_HOUR_DOWN = "-1 hour";
+CA_COOP_MINUTE_DOWN = "-1 minute";
+CA_COOP_MINUTE_UP = "+1 minute";
+CA_COOP_HOUR_UP = "+1 hour";
+CA_COOP_TIME_REST_ALL = "Everyone must be resting before accepting this rest proposal.";
+CA_COOP_TIME_RUNNING = "Advancing together. Anyone may interrupt.";
+CA_COOP_TIME_CANCELLED = "Shared time advance cancelled.";
+CA_COOP_TIME_COMPLETE = "The agreed time has elapsed.";
+[es]
+CA_COOP_TIME_TITLE = "Tiempo compartido";
+CA_COOP_TIME_HELP = "Todos deben aceptar esta duraci?n exacta. Esperar no cuenta como consentimiento. Cualquiera puede cancelar; cambiar la duraci?n borra todos los votos.";
+CA_COOP_TIME_DURATION = "Duraci?n: %d minutos del mundo";
+CA_COOP_TIME_VOTES = "Consentimiento: %d / %d";
+CA_COOP_TIME_ACCEPT = "Aceptar esta duraci?n";
+CA_COOP_TIME_REJECT = "Rechazar / cancelar para todos";
+CA_COOP_HOUR_DOWN = "-1 hora";
+CA_COOP_MINUTE_DOWN = "-1 minuto";
+CA_COOP_MINUTE_UP = "+1 minuto";
+CA_COOP_HOUR_UP = "+1 hora";
+CA_COOP_TIME_REST_ALL = "Todos deben estar descansando antes de aceptar esta propuesta de descanso.";
+CA_COOP_TIME_RUNNING = "Avanzando juntos. Cualquiera puede interrumpir.";
+CA_COOP_TIME_CANCELLED = "Avance de tiempo compartido cancelado.";
+CA_COOP_TIME_COMPLETE = "Transcurri? el tiempo acordado.";
+
+[enu default]
+CA_COOP_TRAVEL_TITLE = "Travel together";
+CA_COOP_TRAVEL_HELP = "Everyone must accept this destination. Silence leaves the request pending; anyone may cancel. Resources are spent only when everyone agrees.";
+CA_COOP_TRAVEL_HOUSE = "The house on the selected doorway";
+CA_COOP_TRAVEL_TARGET = "Destination: %s";
+CA_COOP_TRAVEL_PACE = "Group pace: %.2f km/h. Time: %s";
+CA_COOP_TRAVEL_COST = "Your supplies: %d food portions, %d water portions and %.3f L";
+CA_COOP_TRAVEL_RISK = "The forecast includes a death before arrival. The group will stop at that moment.";
+CA_COOP_TRAVEL_ACCEPT = "Accept this trip";
+CA_COOP_TRAVEL_CANCELLED = "Travel request cancelled. No new travel costs were charged.";
+CA_COOP_TRAVEL_INTERRUPTED = "Travel interrupted by a death. Everyone has spent the same elapsed time.";
+[es]
+CA_COOP_TRAVEL_TITLE = "Viajar juntos";
+CA_COOP_TRAVEL_HELP = "Todos deben aceptar este destino. Sin respuesta, la solicitud queda pendiente; cualquiera puede cancelar. Los recursos se gastan solo cuando todos aceptan.";
+CA_COOP_TRAVEL_HOUSE = "La vivienda de la puerta seleccionada";
+CA_COOP_TRAVEL_TARGET = "Destino: %s";
+CA_COOP_TRAVEL_PACE = "Ritmo del grupo: %.2f km/h. Tiempo: %s";
+CA_COOP_TRAVEL_COST = "Tus provisiones: %d porciones de comida, %d de agua y %.3f L";
+CA_COOP_TRAVEL_RISK = "La previsi?n incluye una muerte antes de llegar. El grupo se detendr? en ese momento.";
+CA_COOP_TRAVEL_ACCEPT = "Aceptar este viaje";
+CA_COOP_TRAVEL_CANCELLED = "Solicitud de viaje cancelada. No se cobraron nuevos gastos de viaje.";
+CA_COOP_TRAVEL_INTERRUPTED = "Viaje interrumpido por una muerte. Para todos transcurri? el mismo tiempo.";
+
+[enu default]
+CA_COOP_TRAVEL_FUNDS = "You cannot pay your own ticket or carry its change.";
+CA_COOP_TRAVEL_FARE = "Your ticket: %d copper. Charged only after unanimous consent.";
+CA_COOP_TRAVEL_ABANDON = "Abandon the current ticket (no refund)";
+CA_COOP_TRAVEL_DISEMBARK = "Leave the stopped vehicle at its current stop.";
+[es]
+CA_COOP_TRAVEL_FUNDS = "No puedes pagar tu propio billete o llevar el cambio.";
+CA_COOP_TRAVEL_FARE = "Tu billete: %d cobres. Se cobra solo despu?s del acuerdo un?nime.";
+CA_COOP_TRAVEL_ABANDON = "Abandonar el billete actual (sin devoluci?n)";
+CA_COOP_TRAVEL_DISEMBARK = "Bajar del veh?culo detenido en su parada actual.";
+
+[enu default]
+CA_COOP_TRAVEL_DEPARTURE = "Estimated wait before departure: %.2f h";
+[es]
+CA_COOP_TRAVEL_DEPARTURE = "Espera prevista antes de salir: %.2f h";
+
+[enu default]
+CA_COOP_TRAVEL_ROADSIDE = "Roadside stop, %.2f km traveled";
+[es]
+CA_COOP_TRAVEL_ROADSIDE = "Parada en el camino, %.2f km recorridos";

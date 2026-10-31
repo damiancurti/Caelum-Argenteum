@@ -2,12 +2,10 @@
 
 Documentation version: **5.12.5** - 2026-10-30.
 
-**V5.12 in progress:** #434-438 plus #590 seated 1v1 Truco/Trucazo. #590
-isolated rules pass; normal seating/shared clock/recovery/UI remain pending.
-Manual handoff waits for all issues. #435 native2/4/8 startup baseline passes.
-**V5.11 complete/accepted:** #429-433/#580-582/#586; HISTORY. Pending queue empty.
-**V5.10 accepted:** #425-428/PR570-573, CA425-01..CA428-01; HISTORY.
-Siege stalls persist. Keep-awake released.
+**V5.12 in progress:** #436/PR592 shared clock/rest, unanimous time/walking/house
+travel/transport; #590 card integration ongoing. Rewards and #434/#435/#437/#438
+integration remain unfinished. No author acceptance; combined manual suite after completion.
+**V5.11/V5.10 accepted/merged:** HISTORY; no pending checks. Siege stalls persist.
 
 **V5.9 accepted/merged:** #418-424 closed, PR561-569; CA418-01..CA424-01
 confirmed 2026-10-30 in HISTORY. validation_590-597; pending_test.txt empty.

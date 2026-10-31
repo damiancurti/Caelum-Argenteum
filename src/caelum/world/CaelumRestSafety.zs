@@ -78,13 +78,15 @@ class CaelumRestSafety : Object play
         let skip=CaelumTimeSkipState.Get(user);
         return (advance!=null && advance.Pumping) || (skip!=null && skip.Pumping);
     }
-    static String BlockReason(CaelumPlayer user,bool allowTimelessFurniture=false,bool crafting=false,bool scan=true)
+    static String BlockReason(CaelumPlayer user,bool allowTimelessFurniture=false,bool crafting=false,bool scan=true,bool individualRest=false)
     {
         if (user == null || user.player == null || user.health <= 0
             || user.player.playerstate != PST_LIVE || !user.CharacterCreationComplete
             || user.CreationWizardOpen || (user.player.cheats & CF_PREDICTING)) return "CA_REST_UNAVAILABLE";
         if(!CaelumPropertyRules.ResidenceAllowed(user))return "CA_PROPERTY_NO_RESIDENCE";
-        for (int i = 0; i < MAXPLAYERS; i++)
+        // Sentarse/descansar no adelanta el reloj compartido. Los avances
+        // individuales siguen bloqueados hasta obtener el consentimiento.
+        if (!individualRest) for (int i = 0; i < MAXPLAYERS; i++)
             if (playeringame[i] && players[i].mo != user) return "CA_M01_RETURN_SOLO";
         let active=CaelumRestState.Get(user);
         let skip=CaelumTimeSkipState.Get(user);

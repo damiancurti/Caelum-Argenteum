@@ -141,9 +141,6 @@ class CaelumTravelService : Object play
             || CaelumRestState.IsActive(user)
             || (user.player.cheats & CF_TOTALLYFROZEN))
         { CaelumNotifications.Notify(user,StringTable.Localize("CA_SEWER_TRAVEL_BUSY", false)); return false; }
-        for (int i = 0; i < MAXPLAYERS; i++)
-            if (playeringame[i] && players[i].mo != user)
-            { CaelumNotifications.Notify(user,StringTable.Localize("CA_M01_RETURN_SOLO", false)); return false; }
         String destination = CaelumWorldCatalogue.MapForLocation(CaelumWorldCatalogue.ConnectionDestination(id));
         if (destination == "MAP01" || !LevelInfo.MapExists(destination))
         { CaelumNotifications.Notify(user,StringTable.Localize("CA_SEWER_TRAVEL_MISSING", false)); return false; }
@@ -156,6 +153,7 @@ class CaelumTravelService : Object play
     static bool Begin(CaelumPlayer user, int id, int travelMode)
     {
         if (!CaelumJourneyRules.ValidMode(id, travelMode) || !CanDepart(user, id)) return false;
+        if(multiplayer)return CaelumCooperativeTravel.ProposeJourney(user,id,travelMode);
         if (CaelumJourneyRules.DistanceKm(id) > 0) return CaelumJourneyPlan.Preview(user, id, travelMode);
         CaelumJourneyPlan.Cancel(user);
         return Commit(user, id, travelMode);
@@ -163,6 +161,7 @@ class CaelumTravelService : Object play
 
     static bool Commit(CaelumPlayer user, int id, int travelMode, CaelumJourneyPlan plan = null)
     {
+        if(multiplayer)return CaelumCooperativeTravel.ProposeJourney(user,id,travelMode);
         if (!CaelumJourneyRules.ValidMode(id, travelMode) || !CanDepart(user, id)) return false;
         // Las rutas medidas nunca admiten la antigua salida sin presupuesto.
         if (CaelumJourneyRules.DistanceKm(id) > 0

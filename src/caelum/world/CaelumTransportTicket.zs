@@ -7,6 +7,8 @@ class CaelumTransportTicket : Object play
     double Departure, Stamp, Elapsed, DistanceKm, SpeedKmh, DurationSeconds;
     double LandMovingHours, StopAtSeconds, StopSeconds;
     bool ExitRequested;
+    // Billetes cooperativos comparten sólo trayecto/incidentes; el pago es personal.
+    bool Shared,TransferDeclined;
 
     static CaelumTransportTicket Create(int route,int mode,int travelers,double now,double epoch)
     {
@@ -128,6 +130,7 @@ class CaelumTransportBooking : Inventory
     }
     static bool Buy(CaelumPlayer user,CaelumTravelVehicle source,int route)
     {
+        if(multiplayer)return false; // El cobro conjunto se confirma en una única transacción.
         if(!CaelumPlayerAuthority.CanMutate(user) || !user.CharacterCreationComplete || user.health<=0
             || source==null || !source.CanBoard(user) || !CaelumTravelService.CanDepart(user,route,true)
             || CaelumJourneyRules.BlockReason(user).Length()!=0 || !CaelumTransportRules.Route(route)

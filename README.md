@@ -12,9 +12,12 @@ it, then rebuild with `run_dev.bat` as described below.
 **V5.12 work in progress ? #590 table-card PvP:** human 1v1 match/lobby logic
 reuses Truco and Trucazo, requires two occupied seats belonging to the same
 table, and preserves ordinary inventory/world health. This branch is not a
-completed V5.12 delivery: normal multiplayer seating, shared time and recovery
-still depend on #435-437. Native isolated rule checks pass; author handoff waits
+completed V5.12 delivery: native seating/shared time are integrated from #436; recovery
+and full interface validation remain under #435-437/#590. Native isolated rule checks pass; author handoff waits
 for the combined release, as requested. No asset redesign or new balance.
+
+The #436 dependency adds native sitting, a shared clock, unanimous time/travel
+and personal transport fares. Quest/profile/lifecycle integration remains open.
 
 Author clarification: the comparison is Leonor versus Caella. Caella carries
 22.0184kg (armor plus pickaxe, utility staff and bolas); Leonor carries5kg.

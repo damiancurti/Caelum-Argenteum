@@ -32,6 +32,7 @@ class CaelumMenuAudio : StaticEventHandler
 
     play bool RequestHouseDoor(CaelumPlayer user,CaelumHousePortal portal)
     {
+        if(multiplayer)return CaelumCooperativeTravel.ProposeHouse(user,portal);
         if(HousePresentationActive || user!=players[consoleplayer].mo)return false;
         HouseRequest++;PendingHousePortal=portal;PendingHouseUser=user;PendingHouseMap=level.MapName;
         HouseDestinationMap=portal.DestinationMap();

@@ -202,6 +202,7 @@ class CaelumHousePortal : Actor
     }
     bool CompleteTravel(CaelumPlayer user)
     {
+        if(multiplayer)return CaelumCooperativeTravel.ProposeHouse(user,self);
         if(user==null || user.player==null || user.health<=0 || !user.CharacterCreationComplete
             || !CaelumUseGeometry.AimedAt(user,self))return false;
         // Sólo el ACK de la captura vigente puede confirmar este viaje.

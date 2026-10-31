@@ -9,6 +9,15 @@ fronts/back, fonts and table/chair assets with their existing provenance.
 Native probe source/evidence: assets/validation_v5_12_5. Disposable generated
 maps and test PK3s stay in build; no development IWAD or executable is distributed.
 
+
+## 5.12.2 - Cooperative time interface (#436)
+
+Reuse existing fonts, menu rendering and furniture art. Add bilingual consent,
+duration and cancellation text; no new bitmap/model/audio assets. Diagnostic
+map fixtures use the installed development IWAD only and are not packaged or
+distributed as production content. Native evidence belongs to validation_v5_12_2.
+
+
 ## 5.11.8 - Species damage policy (#586)
 
 Reuse accepted Mandinga, Zupay and rat artwork unchanged. The native diagnostic

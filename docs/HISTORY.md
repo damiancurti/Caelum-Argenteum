@@ -23,6 +23,69 @@ are retained locally; final compiler corrections rename case-insensitive enum
 collisions and remove a shadowing game argument. Original campaign files stay
 untouched. No author check has been requested or accepted for this slice.
 
+
+#436 package follow-up: CRLF/LF normalization changes no logic. The rebuilt
+final package matches all changed source members exactly; native eight-peer
+36 checks each and two-peer six-check saved-session recovery pass again.
+Runs 20261030-222144/222237 and package SHA-256 are in validation_v5_12_2.
+This remains agent verification, not author acceptance.
+
+## 5.12.2 - Shared clock and time consent (#436, 2026-10-30, in progress)
+
+Transport follow-up: individual all-or-nothing fare preparation, one shared
+vehicle/incident record, unanimous boarding/disembarkation/resumption, and no
+repeat fare for the original ticket. Existing transport distance/speed/prices
+remain data-owned. Static source scans remain bounded to native player slots.
+Native probes wait after each WorldLoaded callback, including restored hubs;
+checking arrival before the first actor tic produced false probe failures and
+was corrected without adding an unnecessary player update hook.
+Final full-package checks: eight peers each pass26 cart checks; two peers each
+pass30 stop/resume checks,26 each for ship/horse/train, and36 clock/rest checks.
+All six runs exit cleanly; 496 assertions total. Hashes, exact engine logs and
+earlier failed development evidence are in transport-results.json. These tests
+cover native local networking, not Internet play or author acceptance.
+
+Walking/house follow-up: explicit destination offers, all-player consent,
+slowest living pace, separate resources, revalidation before commitment, first
+fatal-instant truncation and a single shared elapsed clock. Native source-overlay
+checks cover two/eight actual peers and real map changes. No routine actor scan
+is added: participants and proposal references are bounded by MAXPLAYERS;
+forecasts run only at proposal/confirmation. Full cooperative campaign acceptance
+and remaining transport/quest/lifecycle integrations are not claimed.
+Final package: eight native peers each pass 31 travel checks (20261030-223659),
+and two peers each pass the existing 36 time/rest checks (223549). Validator:
+zero errors. The final PK3 matches changed source bytes; hash/logs are recorded
+in travel-results.json. An earlier eight-peer run (223512) passes all gameplay
+assertions but crashes peer 5 during concurrent shutdown/arbitrator handoff:
+GZDoom access violation 0xc0000005 at 0x135db0. Preserved as failed evidence and
+tracked in #437. Closing remote peers before the arbitrator passes the travel
+probe; it is not a production lifecycle fix or author acceptance.
+
+
+Author decisions: individual unaccelerated rest; unanimous exact-duration
+acceleration; silence remains pending; edits clear consent; anyone may cancel;
+disconnection cancels. The author also approved interface-only votes from dead
+participants waiting for Limbo. No new balance values, artwork or narrative introduced.
+Revision-1 clock replicas preserve the existing single-player fields and civil
+anchors; old saves gain initialized cooperative replicas only when required.
+
+Native source-overlay development evidence: four/eight real peers each passed
+18 clock/rest assertions, then two peers each passed32 including actual native
+consent events, precise endpoint, individual costs, duplicate/stale rejection
+and shared cancellation. All processes ran on this Windows11/GZDoom4.14.2 PC;
+no Internet latency or full multiplayer-playability claim. Final package,
+save/reload and broader integration results are recorded as they are obtained.
+Final builder package: eight native peers each passed36 assertions (288 total),
+including dead-vote policy checks and actual native consent events. All18 changed
+packaged members match source bytes. Shared native-save creation passed4 checks
+per peer and coordinated restart passed6 per peer, preserving real seats,
+clock replicas and pending consent. Death checks in this fixture restore the
+body before native death handling; full death lifecycle remains #437. Native
+load uses a copied recovery basename inside each isolated savedir, preserving
+original snapshots. The author has not accepted these checks; the combined manual suite is deferred
+until V5.12 implementation is complete. Failed development probes remain local.
+
+
 ## 5.11.8 - Mandinga and Zupay contamination immunity (#586, 2026-10-30)
 
 The author explicitly requested the same contamination-damage immunity for

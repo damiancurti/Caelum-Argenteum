@@ -220,3 +220,13 @@ ListMenu "CaelumCardTableMenu"
 {
     Class "CaelumCardTableMenu"
 }
+
+ListMenu "CaelumCooperativeTimeMenu"
+{
+    Class "CaelumCooperativeTimeMenu"
+}
+
+ListMenu "CaelumCooperativeTravelMenu"
+{
+    Class "CaelumCooperativeTravelMenu"
+}

@@ -359,6 +359,8 @@ version "4.14"
 #include "caelum/world/CaelumTelekinesis.zs"
 #include "caelum/survival/CaelumSupernaturalBreathing.zs"
 #include "caelum/world/CaelumTimeAdvance.zs"
+#include "caelum/world/CaelumCooperativeTime.zs"
+#include "caelum/world/CaelumCooperativeTimeMenu.zs"
 #include "caelum/world/CaelumTimeSkip.zs"
 #include "caelum/world/CaelumTimeSkipModel.zs"
 #include "caelum/hud/CaelumTimeSkipPanel.zs"
@@ -553,3 +555,9 @@ version "4.14"
 #include "caelum/actors/CaelumTravelBandit.zs"
 
 #include "caelum/equipment/CaelumCompanionMagic.zs"
+
+#include "caelum/world/CaelumCooperativeTravel.zs"
+#include "caelum/world/CaelumCooperativeTravelMenu.zs"
+
+#include "caelum/world/CaelumCooperativeFare.zs"
+#include "caelum/world/CaelumCooperativeTransport.zs"

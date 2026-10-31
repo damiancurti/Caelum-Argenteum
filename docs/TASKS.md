@@ -10,7 +10,7 @@ Trucazo attribute snapshots, local private-hand projection, stand-up defeat and
 independent result closure. Native isolated two/four-client rules pass.
 
 Outstanding before author handoff:
-- #436 normal multiplayer sitting and a shared active calendar.
+- Validate actual #436 seats/shared calendar with the human card session.
 - Exercise invitations/actions through real UI input, private hands, rejection,
   and continued activity of other players; do not count fixture seating as this.
 - Active match native save/common restart and disconnect lifecycle under #437.
@@ -18,6 +18,22 @@ Outstanding before author handoff:
 - Complete #434-438 separately, then provide the combined manual terminal.
 
 No new author test is ready yet; do not populate pending_test.txt with backlog.
+
+
+## V5.12 work in progress - #436 / 5.12.2
+
+Implemented: shared clock/calendar/weather seed, individual native sitting/rest,
+unanimous exact-duration acceleration, stale/duplicate vote rejection and shared
+cancellation. Walking routes/house doors now share explicit destination consent,
+slowest group pace and individual provisions. Tests exercise real native peers.
+Transport boarding/fares/stop/resume are implemented; broaden lifecycle and
+rebooking/abandonment coverage. Remaining #436: tutorial departure/return, quest objective eligibility and rewards,
+personal/world conflicts, full save/load/restart and tent-rest integration.
+Cross-issue remaining: #434 portable profiles/checkpoints; #435 production
+network authority; #437 lifecycle; #438 arenas/organizers; #590 card seating/UI
+integration. Keep focused branches/PRs; no V5.12 author acceptance yet. Prepare
+one combined manual launcher only after all required implementation is ready.
+
 
 Current author queue: empty. The author confirmed all remaining checks on
 2026-10-30 and requested merges and issue closure. HISTORY records CA430-01
