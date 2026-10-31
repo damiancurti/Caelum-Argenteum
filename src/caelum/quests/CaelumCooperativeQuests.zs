@@ -2,16 +2,32 @@
 class CaelumCooperativeObjective : Object play
 {
     Array<CaelumPersistentCharacterState> Eligible;
+    Array<CaelumLawfulIdentity> EligibleIdentities;
+    int IdentityRevision;
+    void EnsureIdentity()
+    {
+        if(IdentityRevision>=1)return;
+        for(int i=0;i<Eligible.Size();i++)
+            if(Eligible[i]!=null && Eligible[i].LawfulIdentity!=null)
+                EligibleIdentities.Push(Eligible[i].LawfulIdentity);
+        IdentityRevision=1;
+    }
     clearscope bool Contains(CaelumPersistentCharacterState record) const
     {
         if(record==null)return false;
-        for(int i=0;i<Eligible.Size();i++)
+        for(int i=0;i<EligibleIdentities.Size();i++)
+            if(CaelumLockRules.SameTitle(EligibleIdentities[i],record.LawfulIdentity))return true;
+        // Sólo compatibilidad de lectura antes de la migración idempotente.
+        // Una ficha Inventory puede desaparecer al cargar: la elegibilidad
+        // vigente conserva objetos de identidad, nunca depende de ese actor.
+        if(IdentityRevision<1)for(int i=0;i<Eligible.Size();i++)
             if(Eligible[i]==record || (Eligible[i]!=null
                 && CaelumLockRules.SameTitle(Eligible[i].LawfulIdentity,record.LawfulIdentity)))return true;
         return false;
     }
     void Capture(int legacyPrisoner=-1)
     {
+        EnsureIdentity();
         for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i])
         {
             let user=CaelumPlayer(players[i].mo);
@@ -19,7 +35,8 @@ class CaelumCooperativeObjective : Object play
             let record=user.GetPersistentCharacterState(false);
             CaelumLockRules.Character(user,true);
             if(legacyPrisoner>=0 && record.GetPrisonerRescueState(legacyPrisoner)!=CaelumConstants.PRISONER_STATE_EXTRACTED)continue;
-            if(!Contains(record))Eligible.Push(record);
+            if(!Contains(record))
+            {Eligible.Push(record);EligibleIdentities.Push(record.LawfulIdentity);}
         }
     }
 }
@@ -73,6 +90,10 @@ class CaelumCooperativeQuests : Object play
             CaelumCooperativeHouse.Ensure(world.House);
             world.Revision=1;clock.CampaignQuests=world;CaelumWorldClockTicker.Mirror(owner);
         }
+        for(int i=0;i<CaelumConstants.PRISONER_COUNT;i++)
+            if(clock.CampaignQuests.Rescue[i]!=null)clock.CampaignQuests.Rescue[i].EnsureIdentity();
+        CaelumCooperativeHouse.Ensure(clock.CampaignQuests.House);
+        clock.CampaignQuests.Revision=2;
         return clock.CampaignQuests;
     }
     static bool CanClaim(CaelumPlayer user,int prisoner)

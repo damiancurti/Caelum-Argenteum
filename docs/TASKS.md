@@ -14,7 +14,9 @@ living participants and loadouts before unanimous transfer. Rescue objectives
 now snapshot eligible character records, preserve late personal progress and
 grant each eligible reward once, including coordinated save recovery. Solo
 worlds initialize the same ledger and reconstructed records match existing legal
-identity. Remaining #436: actual cross-campaign/profile integration.
+identity snapshots, even when native loading discards an old record actor.
+Revision-2 migration passes legacy and eight-peer checks. Actual cross-campaign
+profile integration remains under verification.
 Two actual cooperative bodies now share the deployed tent with separate native
 bags and ownership. The focused two-peer test passes 18 assertions per peer;
 full-package verification remains recorded in the accompanying tent evidence.
