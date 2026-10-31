@@ -42,6 +42,7 @@ class CaelumHouseHubEvents : EventHandler
 {
     override void NetworkProcess(ConsoleEvent e)
     {
+        if (CaelumPlayerAuthority.FromNetworkPlayer(e.Player) == null) return;
         if(e.Name=="ca_companion_action" && e.Player>=0 && e.Player<MAXPLAYERS && playeringame[e.Player])
         {let user=CaelumPlayer(players[e.Player].mo);let session=CaelumCompanionSession.Find(user);if(session!=null)session.Act(e.Args[0]);return;}
         if(e.Name=="ca_clean_open" && e.Player>=0 && e.Player<MAXPLAYERS && playeringame[e.Player])
@@ -202,11 +203,12 @@ class CaelumHousePortal : Actor
     }
     bool CompleteTravel(CaelumPlayer user)
     {
+        if(multiplayer)return CaelumCooperativeTravel.ProposeHouse(user,self);
         if(user==null || user.player==null || user.health<=0 || !user.CharacterCreationComplete
             || !CaelumUseGeometry.AimedAt(user,self))return false;
         // Sólo el ACK de la captura vigente puede confirmar este viaje.
         user.PendingTravelWipe=CaelumConstants.TRAVEL_WIPE_HOUSE_DOOR;
-        Level.ChangeLevel(DestinationMap(),
+        CaelumDeadTraveler.ChangeMap(DestinationMap(),
             args[1]==0?0:args[0]+1,CHANGELEVEL_NOINTERMISSION);
         return true;
     }

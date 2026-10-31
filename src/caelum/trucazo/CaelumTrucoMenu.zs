@@ -15,7 +15,7 @@ class CaelumTrucoEvents : StaticEventHandler
     {
         if(consoleplayer<0 || gamestate!=GS_LEVEL)return;
         let user=CaelumPlayer(players[consoleplayer].mo);
-        let match=user==null?null:CaelumTrucoMatch(user.FindInventory("CaelumTrucoMatch"));
+        let match=CaelumTrucoMatch.View(user);
         // Un menú anterior no forma parte del save y puede sobrevivir a load.
         // Reponer la vista una vez también recupera la pausa nativa correcta.
         if(match!=null && match.Visible && (RestorePending || menuactive==0))Menu.SetMenu("CaelumTrucoMenu");
@@ -26,6 +26,8 @@ class CaelumTrucoEvents : StaticEventHandler
         if(e.Name!="ca_truco")return;
         let user=CaelumPlayerAuthority.FromNetworkPlayer(e.Player);
         if(user==null)return;
+        let duel=CaelumCardSeat.Session(user);
+        if(duel!=null){duel.Dispatch(user,CaelumCardDuel.GAME_TRUCO,e.Args[0],e.Args[1],e.Args[2]);return;}
         let match=CaelumTrucoMatch.Get(user);
         if(match!=null)match.Dispatch(e.Args[0],e.Args[1],e.Args[2]);
     }
@@ -46,7 +48,7 @@ class CaelumTrucoMenu : ListMenu
     {
         if(consoleplayer<0 || gamestate!=GS_LEVEL)return null;
         let user=CaelumPlayer(players[consoleplayer].mo);
-        return user==null?null:CaelumTrucoMatch(user.FindInventory("CaelumTrucoMatch"));
+        return CaelumTrucoMatch.View(user);
     }
     override void Init(Menu parent,ListMenuDescriptor desc)
     {
@@ -56,7 +58,16 @@ class CaelumTrucoMenu : ListMenu
         mParentMenu=null;menuactive=Menu.On;
     }
     static String L(String key) { return StringTable.Localize(key,false); }
-    static String Person(int side) {return L(side==0?"CA_TC_YOU":"CA_ARGENTO_NAME");}
+    static int OwnSide()
+    {
+        let match=Match();
+        return match==null || match.Duel==null?0:match.Duel.Side(CaelumPlayer(players[consoleplayer].mo));
+    }
+    static String Person(int side)
+    {
+        let match=Match();
+        return L(side==OwnSide()?"CA_TC_YOU":match!=null && match.Duel!=null?"CA_CARD_OPPONENT":"CA_ARGENTO_NAME");
+    }
     void Send(int operation,int index=0)
     {
         let match=Match();
@@ -67,20 +78,22 @@ class CaelumTrucoMenu : ListMenu
     void Add(int operation,String label)
     {
         let match=Match();
-        if(operation>=0 && !match.CanAct(0,operation,CardCursor))return;
+        if(operation>=0 && !match.CanAct(OwnSide(),operation,CardCursor)
+            && !(match.Duel!=null && match.Duel.Suspended && operation==CaelumTrucoRules.CLOSE))return;
         Operations.Push(operation);Labels.Push(label);
     }
     void Choices()
     {
         Operations.Clear();Labels.Clear();
         let match=Match();if(match==null)return;
+        if(match.Duel!=null && match.Duel.Suspended){Add(CaelumTrucoRules.CLOSE,L("CA_TC_CLOSE"));return;}
         if(ConfirmForfeit)
         {Add(CaelumTrucoRules.FORFEIT,L("CA_TC_CONFIRM"));Add(-4,L("CA_TC_RETURN"));return;}
         if(Details>0){Add(-1,L("CA_TC_RETURN"));return;}
         Add(CaelumTrucoRules.TOGGLE_FLOR,L(match.WithFlor?"CA_TT_FLOR_ON":"CA_TT_FLOR_OFF"));
         Add(CaelumTrucoRules.BEGIN,L("CA_TC_BEGIN"));
         Add(CaelumTrucoRules.ACCEPT,L("CA_TC_ACCEPT"));
-        Add(CaelumTrucoRules.REFUSE,L(match.Pending==CaelumTrucoRules.FLOR_CALL && CaelumTrucoRules.FlorValue(match.Sides[0])==0?"CA_TT_NO_FLOR":"CA_TC_REFUSE"));
+        Add(CaelumTrucoRules.REFUSE,L(match.Pending==CaelumTrucoRules.FLOR_CALL && CaelumTrucoRules.FlorValue(match.Sides[OwnSide()])==0?"CA_TT_NO_FLOR":"CA_TC_REFUSE"));
         Add(CaelumTrucoRules.PLAY_CARD,L("CA_TC_PLAY"));
         int bid=match.Pending==CaelumTrucoRules.TRUCO_CALL?match.Bid:match.TrucoValue;
         Add(CaelumTrucoRules.TRUCO,L(bid<2?"CA_TC_TRUCO":bid==2?"CA_TC_RETRUCO":"CA_TC_VALE4"));
@@ -93,7 +106,7 @@ class CaelumTrucoMenu : ListMenu
         Add(CaelumTrucoRules.FOLD,L("CA_TT_FOLD"));
         Add(CaelumTrucoRules.ADVANCE,L("CA_TC_NEXT"));
         Add(-1,L("CA_TC_RULES"));
-        Add(-5,L("CA_TC_SAVE"));Add(-6,L("CA_TC_LOAD"));
+        if(match.Duel==null){Add(-5,L("CA_TC_SAVE"));Add(-6,L("CA_TC_LOAD"));}
         if(match.Active())Add(-3,L("CA_TC_FORFEIT"));
         else Add(CaelumTrucoRules.CLOSE,L("CA_TC_CLOSE"));
         Focus=Clamp(Focus,0,Max(0,int(Operations.Size())-1));
@@ -105,22 +118,22 @@ class CaelumTrucoMenu : ListMenu
         menuactive=Menu.On;
         if(match.HandNumber>0)
         {
-            CardCursor=Clamp(CardCursor,0,Max(0,int(match.Sides[0].Hand.Size())-1));
-            if(match.Sides[0].Used[CardCursor])MoveCard(1);
+            CardCursor=Clamp(CardCursor,0,Max(0,int(match.Sides[OwnSide()].Hand.Size())-1));
+            if(match.Sides[OwnSide()].Used[CardCursor])MoveCard(1);
         }
         Choices();
         // Sólo un paso pendiente por revisión evita dobles jugadas por FPS.
-        if(match.Phase==CaelumTrucoRules.PLAYING
+        if(match.Duel==null && match.Phase==CaelumTrucoRules.PLAYING
             && (match.Pending!=0?match.Caller==0:match.Turn==1))Send(CaelumTrucoRules.NPC_STEP);
     }
     void MoveCard(int direction)
     {
         let match=Match();if(match==null || match.HandNumber==0)return;
-        int count=match.Sides[0].Hand.Size();
+        int count=match.Sides[OwnSide()].Hand.Size();
         for(int step=0;step<count;step++)
         {
             CardCursor=(CardCursor+direction+count)%count;
-            if(!match.Sides[0].Used[CardCursor])break;
+            if(!match.Sides[OwnSide()].Used[CardCursor])break;
         }
     }
     void Choose()
@@ -163,8 +176,8 @@ class CaelumTrucoMenu : ListMenu
             if(e.KeyChar>=49 && e.KeyChar<=53)
             {
                 let match=Match();int index=e.KeyChar-49;
-                if(match!=null && match.HandNumber>0 && index<int(match.Sides[0].Hand.Size())
-                    && !match.Sides[0].Used[index])CardCursor=index;
+                if(match!=null && match.HandNumber>0 && index<int(match.Sides[OwnSide()].Hand.Size())
+                    && !match.Sides[OwnSide()].Used[index])CardCursor=index;
                 return true;
             }
         }
@@ -178,10 +191,10 @@ class CaelumTrucoMenu : ListMenu
         for(int i=0;i<int(Operations.Size());i++)
             Pointer.Add(100+Operations[i],562,110+i*24,220,24);
         if(Details==0 && !ConfirmForfeit && match.HandNumber>0 && match.Phase!=CaelumTrucoRules.INTRO)
-            for(int i=0;i<int(match.Sides[0].Hand.Size());i++)
+            for(int i=0;i<int(match.Sides[OwnSide()].Hand.Size());i++)
             {
-                if(match.Sides[0].Used[i])continue;
-                let texture=TexMan.CheckForTexture(CaelumTarotArt.FrontPath(match.Sides[0].Hand[i]),TexMan.Type_Any);
+                if(match.Sides[OwnSide()].Used[i])continue;
+                let texture=TexMan.CheckForTexture(CaelumTarotArt.FrontPath(match.Sides[OwnSide()].Hand[i]),TexMan.Type_Any);
                 if(!texture.IsValid())continue;
                 let size=TexMan.GetScaledSize(texture);double scale=Min(92/size.X,120/size.Y);
                 Pointer.Add(i+1,22+i*105+(92-size.X*scale)/2,390,size.X*scale,size.Y*scale);
@@ -226,8 +239,9 @@ class CaelumTrucoMenu : ListMenu
     }
     String Status(CaelumTrucoMatch match)
     {
+        if(match.Duel!=null && match.Duel.Suspended)return L("CA_CARD_RECOVERY");
         if(match.Phase==CaelumTrucoRules.INTRO)return L("CA_TT_INTRO");
-        if(match.Phase==CaelumTrucoRules.MATCH_RESULT)return L(match.Abandoned?"CA_TC_ABANDONED":match.Winner==0?"CA_TC_WIN":"CA_TC_LOSS");
+        if(match.Phase==CaelumTrucoRules.MATCH_RESULT)return L(match.Winner==OwnSide()?"CA_TC_WIN":match.Abandoned?"CA_TC_ABANDONED":"CA_TC_LOSS");
         if(match.Phase==CaelumTrucoRules.HAND_RESULT)return String.Format(L("CA_TC_HAND_WIN"),Person(match.Winner));
         if(match.Phase==CaelumTrucoRules.TRICK_RESULT)return match.TrickVictors[match.Trick]<0?L("CA_TT_PARDA"):String.Format(L("CA_TC_TRICK_WIN"),Person(match.TrickVictors[match.Trick]));
         if(match.Pending==CaelumTrucoRules.FLOR_CALL)return String.Format(L("CA_TT_FLOR_PENDING"),Person(match.Caller),
@@ -240,8 +254,8 @@ class CaelumTrucoMenu : ListMenu
     {
         let match=Match();if(match==null)return;
         Screen.Dim(0x080E12,1,0,0,Screen.GetWidth(),Screen.GetHeight());
-        Text(22,18,L("CA_TT_TITLE"),Font.CR_GOLD);
-        Text(22,40,L(match.WithFlor?"CA_TT_WITH_FLOR":"CA_TT_WITHOUT_FLOR"),Font.CR_GRAY);
+        Text(22,18,L(match.Duel!=null?"CA_CARD_TRUCO":"CA_TT_TITLE"),Font.CR_GOLD);
+        Text(22,40,L(match.Duel!=null?(match.WithFlor?"CA_CARD_WITH_FLOR":"CA_CARD_WITHOUT_FLOR"):(match.WithFlor?"CA_TT_WITH_FLOR":"CA_TT_WITHOUT_FLOR")),Font.CR_GRAY);
         Wrap(22,62,750,Status(match),Font.CR_YELLOW);
         Choices();
         if(ConfirmForfeit)Wrap(22,130,510,L("CA_TC_FORFEIT_HELP"));
@@ -252,18 +266,18 @@ class CaelumTrucoMenu : ListMenu
         }
         else
         {
-            let own=match.Sides[0];let other=match.Sides[1];
-            Text(22,96,String.Format(L("CA_TT_SCORE"),Person(0),match.Score[0],L(match.Score[0]<CaelumTrucoRules.MALAS?"CA_TT_MALAS":"CA_TT_BUENAS")),Font.CR_GREEN);
-            Text(294,96,String.Format(L("CA_TT_SCORE"),Person(1),match.Score[1],L(match.Score[1]<CaelumTrucoRules.MALAS?"CA_TT_MALAS":"CA_TT_BUENAS")),Font.CR_ORANGE);
+            let own=match.Sides[OwnSide()];let other=match.Sides[1-OwnSide()];
+            Text(22,96,String.Format(L("CA_TT_SCORE"),Person(OwnSide()),match.Score[OwnSide()],L(match.Score[OwnSide()]<CaelumTrucoRules.MALAS?"CA_TT_MALAS":"CA_TT_BUENAS")),Font.CR_GREEN);
+            Text(294,96,String.Format(L("CA_TT_SCORE"),Person(1-OwnSide()),match.Score[1-OwnSide()],L(match.Score[1-OwnSide()]<CaelumTrucoRules.MALAS?"CA_TT_MALAS":"CA_TT_BUENAS")),Font.CR_ORANGE);
             Text(22,118,String.Format(L("CA_TC_HAND_INFO"),match.HandNumber,match.Trick+1,Person(match.Mano),int(match.Deck.Size())-match.Drawn),Font.CR_GRAY);
             // Sólo el número de cartas rivales se usa; ni índice ni frente.
             for(int i=0;i<other.Remaining();i++)Card(-1,22+i*68,145,60,86);
-            Text(370,153,String.Format(L("CA_TC_TRICKS"),own.Tricks,other.Tricks));
+            Text(370,153,String.Format(L(match.Duel!=null?"CA_CARD_TRICKS":"CA_TC_TRICKS"),own.Tricks,other.Tricks));
             Text(370,175,String.Format(L("CA_TC_STAKES"),match.TrucoValue));
             if(match.EnvidoSettled && match.EnvidoWinner>=0)
             {
                 Text(370,197,String.Format(L(match.SideGame==CaelumTrucoRules.FLOR_CALL?"CA_TT_FLOR_AWARD":"CA_TC_ENVIDO_AWARD"),Person(match.EnvidoWinner),match.EnvidoAward));
-                if(match.EnvidoRevealed)Text(370,219,String.Format(L(match.SideGame==CaelumTrucoRules.FLOR_CALL?"CA_TT_FLOR_VALUES":"CA_TC_ENVIDO_VALUES"),
+                if(match.EnvidoRevealed)Text(370,219,String.Format(L(match.SideGame==CaelumTrucoRules.FLOR_CALL?(match.Duel!=null?"CA_CARD_FLOR_VALUES":"CA_TT_FLOR_VALUES"):(match.Duel!=null?"CA_CARD_ENVIDO_VALUES":"CA_TC_ENVIDO_VALUES")),
                     match.SideGame==CaelumTrucoRules.FLOR_CALL?CaelumTrucoRules.FlorValue(own):own.EnvidoValue(),
                     match.SideGame==CaelumTrucoRules.FLOR_CALL?CaelumTrucoRules.FlorValue(other):other.EnvidoValue()));
             }
@@ -287,7 +301,7 @@ class CaelumTrucoMenu : ListMenu
             }
             Wrap(22,537,525,CaelumTrucoRules.CardName(own.Hand[CardCursor]),Font.CR_GOLD);
             if(match.Phase==CaelumTrucoRules.HAND_RESULT || match.Phase==CaelumTrucoRules.MATCH_RESULT)
-                Wrap(22,560,525,String.Format(L("CA_TT_HAND_POINTS"),own.Points,other.Points));
+                Wrap(22,560,525,String.Format(L(match.Duel!=null?"CA_CARD_HAND_POINTS":"CA_TT_HAND_POINTS"),own.Points,other.Points));
         }
         for(int i=0;i<int(Operations.Size());i++)
             Text(566,114+i*24,(Focus==i?"> ":"  ")..CaelumInputHints.Fixed(Labels[i],InputEvent.Key_Enter),Focus==i?Font.CR_GOLD:Font.CR_WHITE);

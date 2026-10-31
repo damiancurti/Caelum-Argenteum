@@ -2,7 +2,7 @@
 // El Inventory viajero conserva campos y revisiones; el servicio recibe al propietario.
 class CaelumTarotService : Object play
 {
-    const REVISION = 1;
+    const REVISION = 2;
 
     static void EnsureRevision(CaelumPersistentCharacterState record)
     {
@@ -10,10 +10,19 @@ class CaelumTarotService : Object play
         if (record == null || record.TarotPowerRevision >= REVISION) return;
         // Los saves anteriores no tenían carta equipada: no interpretar el
         // cero predeterminado ni el cursor local como una elección de El loco.
-        for (int i = 0; i < CaelumConstants.TAROT_CARD_COUNT; i++)
-        { record.TarotSelected[i] = false; record.TarotActive[i] = false; }
-        record.TarotEffectTics = 0;
-        record.TarotCooldownTics = 0;
+        if(record.TarotPowerRevision<1)
+        {
+            for (int i = 0; i < CaelumConstants.TAROT_CARD_COUNT; i++)
+            { record.TarotSelected[i] = false; record.TarotActive[i] = false; }
+            record.TarotEffectTics = 0;record.TarotCooldownTics = 0;
+        }
+        // El viaje sustituye al vuelo. Se conservan selección, recarga y los
+        // menores pagados; sólo se retira el antiguo efecto de El Loco.
+        record.TarotActive[CaelumConstants.TAROT_THE_FOOL]=false;
+        bool remaining=false;
+        for(int i=0;i<CaelumConstants.TAROT_CARD_COUNT;i++)remaining=remaining || record.TarotActive[i];
+        if(!remaining)record.TarotEffectTics=0;
+        let flight=record.Owner.FindInventory('CaelumTarotFlight');if(flight!=null)flight.Destroy();
         record.TarotPowerRevision = REVISION;
     }
 
@@ -91,9 +100,8 @@ class CaelumTarotService : Object play
         { Feedback(user, "CA_TAROT_POWER_COOLDOWN"); return false; }
         if (user.CurrentAnima < CaelumConstants.TAROT_ACTIVATION_ANIMA)
         { Feedback(user, "CA_TAROT_POWER_ANIMA"); return false; }
-        // Preparar la única instancia nativa que puede fallar antes del pago.
-        if (record.TarotSelected[CaelumConstants.TAROT_THE_FOOL]
-            && user.GiveInventoryType("CaelumTarotFlight") == null) return false;
+        if (record.TarotSelected[CaelumConstants.TAROT_THE_FOOL])
+            return CaelumFoolTravel.Propose(user);
         user.CurrentAnima -= CaelumConstants.TAROT_ACTIVATION_ANIMA;
         record.TarotEffectTics = CaelumConstants.TAROT_EFFECT_SECONDS * TICRATE;
         record.TarotCooldownTics = CaelumConstants.TAROT_COOLDOWN_SECONDS * TICRATE;
@@ -122,7 +130,7 @@ class CaelumTarotService : Object play
                 for (int i = 0; i < CaelumConstants.TAROT_CARD_COUNT; i++) record.TarotActive[i] = false;
                 let flight = user.FindInventory("CaelumTarotFlight");
                 if (flight != null) flight.Destroy();
-                user.ApplyCharacterProfile();
+                if(user.health>0)user.ApplyCharacterProfile();
                 user.RefreshSocialJournalSnapshot();
                 Feedback(user, "CA_TAROT_POWER_EXPIRED");
             }
@@ -311,17 +319,12 @@ class CaelumTarotService : Object play
     static bool HasPhysicalDeck(CaelumPlayer user)
     { return CaelumInventoryService.FindOwnedTarotDeck(user) != null; }
 
-    // GZDoom retira PowerFlight al salir de un hub. El registro conserva el
-    // efecto pagado: reponer sólo la instancia ausente, sin pagar ni reiniciar.
+    // Se conserva el punto de entrada de saves y del perfil anterior.
     static void RestoreNativeEffect(CaelumPlayer user)
     {
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
-        if (user == null || user.player == null || user.health <= 0
-            || (user.player.cheats & CF_PREDICTING)) return;
         let record = user.GetPersistentCharacterState(false);
-        if (IsActive(record, CaelumConstants.TAROT_THE_FOOL)
-            && user.FindInventory("CaelumTarotFlight") == null)
-            user.GiveInventoryType("CaelumTarotFlight");
+        EnsureRevision(record);
     }
 
     static void Reveal(CaelumPersistentCharacterState record, int card)

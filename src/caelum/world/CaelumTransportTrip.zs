@@ -18,6 +18,7 @@ class CaelumTransportTrip : Object play
     }
     static bool Begin(CaelumPlayer user,CaelumTravelVehicle source,int route)
     {
+        if(multiplayer)return CaelumCooperativeTransport.Board(user,source,route);
         String stage=CaelumTransportSceneData.Stage(route,source==null?0:source.TravelMode());
         if(!LevelInfo.MapExists(stage) || !CaelumTransportBooking.Buy(user,source,route))return false;
         let b=CaelumTransportBooking.Find(user);
@@ -38,7 +39,7 @@ class CaelumTransportTrip : Object play
     {
         let b=CaelumTransportBooking.Find(user);
         if(b==null || b.Ticket==null || b.TransferPending || !Aboard(user))return;
-        if(user.health<=0){b.Ticket.RequestStop(CaelumTransportBooking.Now(user),true,true,false);return;}
+        if(user.health<=0 && !multiplayer){b.Ticket.RequestStop(CaelumTransportBooking.Now(user),true,true,false);return;}
         CaelumTravelIncidents.Observe(user,b,CaelumTransportBooking.Now(user));
         if(b.Ticket.Status!=CaelumTransportTicket.COMPLETE && b.Ticket.Status!=CaelumTransportTicket.STOPPED)return;
         int node=-1;
@@ -54,12 +55,13 @@ class CaelumTransportTrip : Object play
         let b=CaelumTransportBooking.Find(user);if(b==null || !b.TransferPending)return;
         let skip=CaelumTimeSkipState.Get(user);let advance=CaelumTimeAdvanceState.Get(user);
         if((skip!=null && skip.Pumping) || (advance!=null && advance.Pumping))return;
+        if(multiplayer){CaelumCooperativeTransport.OfferExit(user);return;}
         if(!LevelInfo.MapExists(b.TransferMap))return;
         String target=b.TransferMap;
         // La asignacion pendiente vive en el inventario; PostTravelled no la
         // borra. Registrar la llegada solo al cargar el destino esperado.
         b.TransferPending=false;b.ArrivalPending=true;
-        user.PersistCharacterState();Level.ChangeLevel(target,0,CHANGELEVEL_NOINTERMISSION);
+        user.PersistCharacterState();CaelumDeadTraveler.ChangeMap(target,0,CHANGELEVEL_NOINTERMISSION);
     }
     static void Loaded(CaelumPlayer user)
     {
@@ -85,6 +87,7 @@ class CaelumTransportTrip : Object play
     }
     static bool Resume(CaelumPlayer user)
     {
+        if(multiplayer)return CaelumCooperativeTransport.Resume(user);
         let b=CaelumTransportBooking.Find(user);
         if(b==null || b.Ticket==null || b.Onboard || b.TransferPending || b.ArrivalPending
             || level.MapName!=b.StopMap || !CaelumTravelIncidents.MayResume(user,b)
@@ -94,6 +97,7 @@ class CaelumTransportTrip : Object play
     }
     static bool Rebook(CaelumPlayer user)
     {
+        if(multiplayer)return CaelumCooperativeTransport.Resume(user);
         let b=CaelumTransportBooking.Find(user);
         if(b==null || b.Ticket==null || b.Onboard || b.TransferPending || b.ArrivalPending
             || b.Ticket.Status!=CaelumTransportTicket.ABANDONED || b.StopMap!=level.MapName
@@ -125,6 +129,12 @@ class CaelumTransportTrip : Object play
             +Max(0,b.Ticket.DurationSeconds-b.Ticket.Elapsed);
         let incidents=CaelumTravelIncidents.Get(b);
         seconds+=Max(0,incidents.RepairUntil-CaelumTransportBooking.Now(user));
+        if(multiplayer)
+        {
+            let vote=CaelumCooperativeTime.View(user);
+            if(vote!=null){vote.Minutes=Clamp(int(Ceil(seconds/60)),1,CaelumTimeSkipRules.MAX_DAYS*1440);vote.NextSerial();}
+            return;
+        }
         skip.TargetDay=CaelumTimeSkipState.NowDay(user);
         skip.TargetTics=CaelumTimeSkipState.NowTics(user)+int(Ceil(seconds*CaelumWorldClock.TicsPerHour()/3600));
         skip.TargetDay+=skip.TargetTics/CaelumWorldClock.TicsPerDay();skip.TargetTics%=CaelumWorldClock.TicsPerDay();
@@ -145,8 +155,10 @@ class CaelumTransportSession : Inventory
     {
         if(!CaelumPlayerAuthority.CanMutate(user) || user.health<=0)return false;
         let booking=CaelumTransportBooking.Find(user);
-        bool current=booking!=null && booking.Ticket!=null && (booking.Ticket.Active() || booking.Ticket.Status==CaelumTransportTicket.ABANDONED)
-            && (CaelumTransportTrip.Aboard(user) || level.MapName==booking.StopMap);
+        bool current=booking!=null && booking.Ticket!=null
+            && ((booking.TransferPending && level.MapName==CaelumTransportSceneData.Stage(booking.Ticket.Route,booking.Ticket.Mode))
+                || ((booking.Ticket.Active() || booking.Ticket.Status==CaelumTransportTicket.ABANDONED)
+                    && (CaelumTransportTrip.Aboard(user) || level.MapName==booking.StopMap)));
         if(!current && (source==null || !source.CanBoard(user)))return false;
         let s=Find(user);if(s==null)s=CaelumTransportSession(user.GiveInventoryType('CaelumTransportSession'));
         s.Open=true;s.Source=source;s.Access=access;s.OriginMap=level.MapName;s.SelectedRoute=0;
@@ -158,7 +170,9 @@ class CaelumTransportSession : Inventory
     {
         if(!Open || OriginMap!=level.MapName || user==null || user.health<=0)return false;
         let b=CaelumTransportBooking.Find(user);
-        return CaelumTransportTrip.Aboard(user) || (b!=null && b.Ticket!=null && b.StopMap==level.MapName
+        return CaelumTransportTrip.Aboard(user) || (b!=null && b.Ticket!=null && b.TransferPending
+            && level.MapName==CaelumTransportSceneData.Stage(b.Ticket.Route,b.Ticket.Mode))
+            || (b!=null && b.Ticket!=null && b.StopMap==level.MapName
             && (b.Ticket.Active() || b.Ticket.Status==CaelumTransportTicket.ABANDONED)
             && Access!=null && !Access.bDestroyed && user.Distance2D(Access)<=user.UseRange && user.CheckSight(Access,SF_IGNOREVISIBILITY))
             || (Source!=null && !Source.bDestroyed && Source.CanBoard(user));
@@ -168,13 +182,16 @@ class CaelumTransportSession : Inventory
         if(!Valid(user)){Open=false;return;}
         if(choice==0){Open=false;return;}
         let b=CaelumTransportBooking.Find(user);
+        if(multiplayer && b!=null && b.TransferPending)
+        {if(choice==1)CaelumCooperativeTransport.OfferExit(user,true);return;}
         if(b!=null && b.Ticket!=null && b.Ticket.Status==CaelumTransportTicket.ABANDONED && b.StopMap==level.MapName && Source==null)
         {if(choice==1 && !CaelumTransportTrip.Rebook(user))CaelumNotifications.Notify(user,StringTable.Localize("CA_TRANSPORT_UNAVAILABLE",false));return;}
         if(b!=null && b.Ticket!=null && b.Ticket.Active())
         {
             if(choice==1){if(b.Onboard)CaelumTransportTrip.Wait(user);else CaelumTransportTrip.Resume(user);}
             if(choice==3)CaelumTransportTrip.RequestExit(user);
-            if(choice==4 && !b.Onboard){b.Ticket.Abandon(CaelumTransportBooking.Now(user));user.PersistCharacterState();}
+            if(choice==4 && !b.Onboard)
+            {if(multiplayer)CaelumCooperativeTransport.Resume(user,true);else{b.Ticket.Abandon(CaelumTransportBooking.Now(user));user.PersistCharacterState();}}
             return;
         }
         if(choice==2)
@@ -211,7 +228,7 @@ class CaelumTransportUI : Object ui
     {
         let s=CaelumTransportSession.Find(user);if(s==null || !s.Open || view==null)return;
         let b=CaelumTransportBooking.Find(user);let t=b==null?null:b.Ticket;
-        bool active=t!=null && (t.Active() || (t.Status==CaelumTransportTicket.ABANDONED && b.StopMap==level.MapName && s.Source==null));
+        bool active=t!=null && (b.TransferPending || t.Active() || (t.Status==CaelumTransportTicket.ABANDONED && b.StopMap==level.MapName && s.Source==null));
         int route=active?t.Route:s.SelectedRoute,mode=active?t.Mode:s.Source==null?0:s.Source.TravelMode();
         CaelumPresentation.MenuBackground(0x05070A,0.94);view.DrawPanel(16,12,608,336);
         view.DrawCenteredText(view.TitleFont,Font.CR_GOLD,320,28,StringTable.Localize("CA_TRANSPORT_TITLE",false));

@@ -1,6 +1,65 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.11.8** - 2026-10-30.
+Documentation version: **5.12.6** - 2026-10-31.
+
+## V5.12 profile integration (#434, 5.12.6, in progress)
+
+External SQLite custody retains immutable native anchors and revisioned campaign
+heads. Transfers reserve both worlds, retire source material ownership and publish
+both engine-verified results in one transaction. Two native peers verify outward
+and return transfers, preserving other participants and campaign property/stock.
+Narrative saves follow committed personal changes and retain pending work while
+busy. The session launcher, broader migration/recovery and remaining multiplayer
+integration are still unfinished. No author acceptance or release completion.
+
+## 5.12.5 - Human card-table PvP preparation (#590)
+
+V5.12 gains a separate focused issue for 1v1 Truco/Trucazo at the same occupied
+table, by mutual consent, with one deck supplied by either player. The author
+approved stand-up forfeit, active world and common-save recovery for disconnect.
+The existing rules are reused. #443-446 retain their later mechanics/services.
+Normal seating/shared time from #436, native two-peer invitations/actions,
+active-hand common-save restart, private-hand UI review and Argento regression
+now pass. This does not complete #434-438 or establish author acceptance. The
+author requested the manual terminal only after the entire version is ready.
+## 5.12.4 - Organized combat venues (#438, in progress)
+
+Original 12 m ring and 64 m sewer maze, eight separate starts and passages at
+least 2 m wide. Palomo and the Buenos Aires plaza organizer offer both venues.
+Session-owned match state tracks individual/two-team outcomes, surrender and
+unanimous return without equipment normalization, prizes or automatic revival.
+Native 2/8-peer consent, damage, results and recovery checks pass.
+A reversible native-save adapter migrates the old friendly-fire setting.
+Combined release integration and author acceptance remain pending.
+
+## 5.12.3 - Cooperative lifecycle guards (#437, in progress)
+
+Cooperative death no longer uses the native Use-to-respawn shortcut. The same
+pawn, character record and wallet remain saved; existing explicit resurrection
+is retained. Death/departure cancel shared consent, and coordinated recovery has
+an explicit consent-reset event. Native evidence is in validation_v5_12_3.
+The Fool now performs a consented mansion round trip. Dead visitors can move and
+converse without material interactions; earned material rewards stay pending
+until resurrection. Full recovery tooling and release integration remain unfinished. No author acceptance or V5.12 completion is claimed.
+
+
+## 5.12.2 - Cooperative clock/rest and time consent (#436, in progress)
+
+Native peers share one campaign clock while retaining individual rest and
+physiology. Exact-duration time proposals require every participant's consent;
+editing resets votes and any participant can stop acceleration. Bounded native
+player loops and an event-maintained climate registry replace repeated marker
+queries. Walking and house transitions require unanimous destination consent;
+walking shares the slowest pace with personal provisions and one elapsed clock.
+Transport now shares one route/incident record with individual atomic fares,
+consented stops and original-ticket resumption. Initial tutorial departure
+requires all living players to finish and retain their personal loadout before
+unanimous transfer. Rescues snapshot eligible characters and prevent duplicate
+or retroactive claims. House restitution shares title/access while refunding
+only the original payer. Remaining quest/lifecycle integration is unfinished. The full
+V5.12 milestone is not complete or author-accepted. Evidence is kept in
+`assets/validation_v5_12_2`, distinct from #435 and #590.
+
 
 ## V5.12 preparation - native multiplayer baseline (#435)
 

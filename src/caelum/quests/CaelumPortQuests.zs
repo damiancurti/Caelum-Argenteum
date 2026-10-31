@@ -68,6 +68,7 @@ class CaelumPortQuests : Object play
         if(!CaelumQuestRequirements.Matches(record,CaelumQuestRequirements.QUEST_STATE,
             CaelumConstants.QUEST_GUARD_CAPTAIN,CaelumConstants.QUEST_STATE_COMPLETED))return false;
         let property=CaelumPropertyRules.Find(CaelumPropertyData.CENTRAL_HOUSE,true);if(property==null)return false;
+        if(multiplayer)return CaelumCooperativeHouse.Restore(user,property);
         if(property.Holder!=null && !CaelumPropertyRules.Holds(user,property))return false;
         if(!record.HouseRestitutionConfirmed)
         {
@@ -83,14 +84,21 @@ class CaelumPortQuests : Object play
     static bool ClaimRefund(CaelumPlayer user)
     {
         if(!CaelumPlayerAuthority.CanMutate(user))return false;
+        if(multiplayer)return CaelumCooperativeHouse.Claim(user);
         let record=user.GetPersistentCharacterState(false);int quest=CaelumConstants.QUEST_FIND_HOUSE;
         if(record==null || !record.HouseRestitutionConfirmed || record.QuestRewardClaimed[quest])return false;
-        if(record.HouseRefundPending>0)
+        if(!CreditRefund(user,record.HouseRefundPending))return false;
+        record.HouseRefundPending=0;record.QuestRewardClaimed[quest]=true;
+        user.RefreshSocialJournalSnapshot();user.PersistCharacterState();return true;
+    }
+    static bool CreditRefund(CaelumPlayer user,int amount)
+    {
+        if(amount>0)
         {
             bool credited=false;
             for(int route=0;route<2;route++)
             {
-                if(!user.BuildPalomoCurrencyCreditPlan(record.HouseRefundPending))return false;
+                if(!user.BuildPalomoCurrencyCreditPlan(amount))return false;
                 if(route==1){if(!user.MagicBoxOwned)continue;user.RoutePalomoCurrencyGainsToMagicBox();}
                 if(!user.PalomoTransactionCapacityFits(user.GetPalomoCurrencyPlanPersonalWeightDelta(),
                     user.GetPalomoCurrencyPlanBoxRawWeightDelta(),user.GetPalomoCurrencyPlanBoxSlotDelta()))continue;
@@ -98,8 +106,7 @@ class CaelumPortQuests : Object play
             }
             if(!credited)return false;
         }
-        record.HouseRefundPending=0;record.QuestRewardClaimed[quest]=true;
-        user.RefreshSocialJournalSnapshot();user.PersistCharacterState();return true;
+        return true;
     }
     static bool Activate(CaelumPlayer user,int quest)
     {

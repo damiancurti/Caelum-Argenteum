@@ -21,6 +21,7 @@ ListMenu "MainMenu"
     TextItem "$CA_MENU_SAVE_CHARACTER", "g", "SaveGameMenu"
     TextItem "$CA_NAV_TITLE", "e", "CaelumNavigationMenu"
     TextItem "$CA_NOTE_TITLE", "m", "CaelumMapNoteMenu"
+    TextItem "$CA_ARENA_TITLE", "c", "CaelumArenaMenu"
     TextItem "$MNU_OPTIONS", "o", "OptionsMenu"
     TextItem "$MNU_QUITGAME", "s", "CaelumExitMenu"
 }
@@ -215,3 +216,20 @@ ListMenu "CaelumAbsentArrivalMenu"
 {
     Class "CaelumAbsentArrivalMenu"
 }
+
+ListMenu "CaelumCardTableMenu"
+{
+    Class "CaelumCardTableMenu"
+}
+
+ListMenu "CaelumCooperativeTimeMenu"
+{
+    Class "CaelumCooperativeTimeMenu"
+}
+
+ListMenu "CaelumCooperativeTravelMenu"
+{
+    Class "CaelumCooperativeTravelMenu"
+}
+
+ListMenu "CaelumArenaMenu" { Class "CaelumArenaMenu" }

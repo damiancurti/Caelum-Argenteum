@@ -1,15 +1,12 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.11.8** - 2026-10-30.
+Documentation version: **5.12.6** - 2026-10-31.
 
-**V5.12 in progress:** #434-438 open. #435 baseline passes2/4/8 real loopback
-peers; startup/ownership only. Evidence: validation_v5_12_1/baseline-results.json.
-Decisions: GitHub issues. Profiles/transactions/consent/recovery/PvP remain;
-no author test ready.
-**V5.11 accepted/integrated:**5.11.8; HISTORY records all checks. Siege stalls
-persist; distant-search candidate not adopted. Keep-awake released.
-**V5.10 accepted:** #425-428/PR570-573, CA425-01..CA428-01; HISTORY.
-Siege stalls persist. Keep-awake released.
+**V5.12 in progress:** #436 world/rewards, #437 lifecycle, #438 arenas and #590
+cards verified together. #434 native custody/return and narrative saves verified;
+#435 launcher/recovery and final integration remain. Author suite deferred.
+
+**V5.11/V5.10 accepted/merged:** HISTORY; no pending checks. Siege stalls persist.
 
 **V5.9 accepted/merged:** #418-424 closed, PR561-569; CA418-01..CA424-01
 confirmed 2026-10-30 in HISTORY. validation_590-597; pending_test.txt empty.

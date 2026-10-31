@@ -6,14 +6,58 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.11.8.** Obtain and update the complete repository, validate
+**Current release: 5.12.6.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-**V5.12 is in progress.** #434-438 remain open. Preparatory #435 checks pass
-with 2, 4 and 8 independent native processes on the same machine; they verify
-startup and request attribution only. Full authority, profiles, cooperative
-policies, recovery and PvP are not yet delivered. Evidence:
-`assets/validation_v5_12_1/baseline-results.json`. No new author test is ready.
+**V5.12 profiles (#434, implementation in progress):** staged campaign transfers
+and return now preserve a single active owner, packed inventory and each world's
+shops/properties. Native narrative checkpoints save complete transactions without
+replaying rewards on load. The session launcher, broader migration/recovery and
+remaining multiplayer integration are still unfinished; no author handoff yet.
+
+**V5.12 work in progress - #590 table-card PvP:** human Truco and Trucazo
+use actual seats at the same table and preserve inventory/world health. Native
+two-player invitations, play, active-hand common-save restart and stand-up
+forfeit pass; agent UI review confirms private hands in both games. Argento
+regression passes. Lifecycle and arena dependencies now pass together; profile/session tooling remains open;
+author handoff waits for the combined release. No asset redesign or new balance.
+
+
+**V5.12 organized combat (#438):** Palomo and a Domingo-appearance
+organizer in the Buenos Aires plaza offer the approved ring and sewer maze.
+The shared consent mechanism governs entry and return. Combat keeps actual
+attributes, equipment, friendly fire and ordinary death. Native multi-peer and
+save recovery checks pass; the final combined author suite remains pending.
+For pre-arena saves, `python migrate_arena_save.py original.zds migrated.zds`
+creates a separate revisioned copy with the approved friendly-fire rule, without
+overwriting the original. The coordinated session launcher will apply this adapter.
+
+**V5.12 lifecycle (#437):** cooperative death retains the original pawn, inventory
+and identity through native map travel. The Fool now requests a unanimous mansion
+visit; only the activator pays after consent. Dead visitors move and converse as
+spirits, with material rewards pending until resurrection. Palomo returns the
+group to its recorded departure without another payment or automatic revival.
+Death/departure cancel shared consent. Coordinated recovery tooling and other
+V5.12 dependencies remain unfinished; author acceptance is still pending.
+
+**V5.12 cooperative world (#436):** native peers now share one campaign clock and
+weather seed, with individual nonaccelerated rest. T/the time menu opens an
+exact-duration proposal: everyone must consent, edits clear votes, silence
+waits and any participant may cancel. Personal resources remain individual.
+Walking routes and house doors now require unanimous destination consent;
+walking uses the slowest pace and each character pays their own provisions.
+Vehicle boarding also requires unanimous consent and independent ticket payments;
+shared stops and resumption retain the original trip. Initial mansion departure
+also requires everyone's consent and each living character's completed trials
+and own equipment, checked before any personal completion or packing.
+Rescue objectives now capture the present character roster; each eligible
+character claims their own reward once. Late-ready records keep their personal
+progress and see unavailable-world objectives in the Journal.
+Recovering the central house grants shared access to the present characters;
+only the actual payer receives the single refund of recorded payments.
+This is not full cooperative campaign acceptance: other quest integration,
+profile portability and lifecycle integration remain under their focused issues.
+Author checks will be delivered together after the release is complete.
 
 Author clarification: the comparison is Leonor versus Caella. Caella carries
 22.0184kg (armor plus pickaxe, utility staff and bolas); Leonor carries5kg.

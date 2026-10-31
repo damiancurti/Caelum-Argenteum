@@ -45,6 +45,7 @@ class CaelumRestState : Inventory
     int LastClockDays;
     int LastClockDayTics;
     CaelumRestFurniture Furniture;
+    CaelumRestGuide Guide;
     bool UsesFurniture;
     vector3 EntryPosition;
     double EntryAngle;
@@ -133,7 +134,7 @@ class CaelumRestState : Inventory
     // Una sola validación de contexto para la oferta, el inicio diferido y
     // cada tic activo. No considera a la propia sesión una actividad ajena.
     static String BlockReason(CaelumPlayer user,bool allowTimelessFurniture=false)
-    { return CaelumRestSafety.BlockReason(user,allowTimelessFurniture,false,!CaelumRestSafety.PersonalSubstep(user)); }
+    { return CaelumRestSafety.BlockReason(user,allowTimelessFurniture,false,!CaelumRestSafety.PersonalSubstep(user),true); }
 
     static bool Begin(CaelumPlayer user, int mode, int minutes, CaelumRestFurniture furniture = null)
     {
@@ -292,6 +293,12 @@ class CaelumRestState : Inventory
             // modifica usedown: el motor sigue recibiendo la liberación real.
             rest.InputArmed = user.player.cmd.forwardmove == 0 && user.player.cmd.sidemove == 0
                 && user.player.cmd.upmove == 0 && (user.player.cmd.buttons & cancelButtons) == 0;
+            return;
+        }
+        if ((user.player.cmd.buttons & BT_USE)!=0 && CaelumCardSeat.Interact(user))
+        {
+            user.player.cmd.buttons &= ~BT_USE;
+            rest.InputArmed=false;
             return;
         }
         if (user.player.cmd.forwardmove != 0 || user.player.cmd.sidemove != 0

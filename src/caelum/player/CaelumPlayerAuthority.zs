@@ -6,13 +6,14 @@ class CaelumPlayerAuthority : Object play
     { return user != null && user.player != null && user.player.mo == user; }
 
     static clearscope bool CanMutate(CaelumPlayer user)
-    { return CanRead(user) && !(user.player.cheats & CF_PREDICTING); }
+    { return CanRead(user) && !user.ProfileDeparted && !(user.player.cheats & CF_PREDICTING); }
 
-    static CaelumPlayer FromNetworkPlayer(int number)
+    static CaelumPlayer FromNetworkPlayer(int number,bool allowDead=false)
     {
         if (number < 0 || number >= MAXPLAYERS || !playeringame[number]) return null;
         let user = CaelumPlayer(players[number].mo);
-        return CanMutate(user) && user.PlayerNumber() == number ? user : null;
+        return CanMutate(user) && user.PlayerNumber() == number
+            && (allowDead || user.health>0) ? user : null;
     }
 
     static clearscope bool OwnsRecord(CaelumPlayer user, CaelumPersistentCharacterState record)

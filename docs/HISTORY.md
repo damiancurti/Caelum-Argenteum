@@ -1,6 +1,265 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.11.8** - 2026-10-30.
+Documentation version: **5.12.6** - 2026-10-31.
+
+## 5.12.6 - Typed personal profile graph foundation (#434, 2026-10-31)
+
+Implements read-only typed ownership extraction and copied native installation,
+plus an additive static import reconciler. SQLite foundation checks cover immutable
+anchors, concurrent custody, stale revisions, rollback and corruption refusal.
+Seven graph checks reject unrelated owners, malformed references, unknown fields
+and changed packages; ordinary numeric quantities remain unchanged. A test found
+that payload package hashes aliased the schema dictionary; copying that metadata
+fixed the rejection boundary before delivery.
+
+The prototype package (diagnostic labels still5.12.5) passes66 native assertions:
+two peers prepare three each; import and common-checkpoint reload pass15 each
+per peer. The import retains attributes, Tarot, recipes,321 copper, water, table,
+chairs, food quantity/deterioration and ready-weapon ownership. Destination stock
+and house title remain campaign-owned. No duplicate import grant on native reload.
+The controlled fixture makes only its disposable target slot uncommitted; the
+production adapter refuses replacing an unrelated committed character.
+
+Failed fixture attempts remain preserved: a wrong method name, an absolute
+-loadgame path combined with -savedir, and reuse of an occupied diagnostic port.
+These were corrected in the runner; none touched author saves.
+
+Follow-up: schema2 records campaign heads, reservations and exactly-once publication.
+Original-slot binding no longer depends on checkpoint bytes. Source retirement
+removes actual material actors/packed contents from the copied active graph and
+leaves an inert native slot; return restores living control and original world data.
+Thirteen transaction checks cover atomic rollback, stale heads, active crafting,
+cancellation, owner identity and distinct native/script boolean formats; eight
+store and seven graph checks also pass. Four two-peer outward/return engine runs
+pass64 assertions, followed by atomic commits and old-origin rejection.
+
+Narrative checkpoints observe completed personal transactions and queue new native
+files through the existing autosave owner. Two peers pass18 reward/choice/busy checks;
+common reload passes12 more. Both actual saves retain the complete reward/choice,
+and reload produces no additional save files. The five-minute periodic timer remains.
+The native fixture suppresses the separate automatic rescue conversation; an earlier
+run correctly remained deferred because that conversation was open. Its failures
+and the JSON boolean-format investigation are retained with the successful evidence.
+
+Source/profile UI, package and migration preflight, broader recovery and #435 session
+integration remain open. Native isolated verification is not author acceptance.
+
+## 5.12.5 - Seated human card-rule preparation (#590, 2026-10-30)
+
+Author decisions: one-on-one Truco and Trucazo, both seated at the same table,
+both consent, world continues, one physical deck between them, stand-up forfeit,
+disconnect recovery through a common save. No wagers/rewards or future #443-446
+features. This branch remains in progress, not a completed release acceptance.
+
+Isolated native probes on GZDoom4.14.2: two clients passed26 checks each;
+four clients passed29 each, including games through30 Truco points and a
+Trucazo match KO, stale/duplicate/wrong-game/turn and nonparticipant rejection.
+A full builder package then passed33 checks on each of four native peers,
+including different-table rejection and suspended-session handling.
+The final rebuilt runtime (no source overlay) repeats33 PASS on all four peers;
+all15 changed/new packaged source members match the working tree exactly.
+Those early rule tests used fixture seat state; the integration follow-up below
+uses ordinary #436 sitting and the production network event path. Engine error attempts
+are retained locally; final compiler corrections rename case-insensitive enum
+collisions and remove a shadowing game argument. Original campaign files stay
+untouched. No author check has been requested or accepted for this slice.
+
+Integration follow-up: portable dining chairs now record their seat index, with
+a bounded twelve-chair reference fallback for older saves. PvP labels identify
+the human opponent rather than Argento/ranking. Final package SHA-256:
+`ad2bf1901110d4a33e31b72a64cecc5309720556a26eeebd856ec27fd16c0edb`.
+Both games pass fifteen integration checks per native peer and nine common-save
+restart checks per peer. Two additional UI review runs pass fifteen per peer;
+the agent activated each window and checked different private hands, opponent
+card backs and keyboard play. Argento passes twelve single-player checks.
+Evidence: `assets/validation_v5_12_5/integration-results.json`. Failed probes
+are retained: the first restart fixture attempted a card at a result phase;
+the first NPC fixture started before deferred PostBeginPlay populated Patience.
+Corrected fixtures pass without changing game rules. Abrupt disconnect recovery
+remains a #437 integration obligation; native save restart is not hot joining.
+Final dependency integration with #436/#437/#438 passes164 native assertions.
+Both games suspend after a real peer departure without changing cards, score or
+revision; the survivor cannot play for the absent participant. Coordinated
+restart sends the lifecycle recovery event and restores the exact hand and seats.
+Both games additionally load the same host checkpoint in both native processes.
+Final packaging normalizes only MENUDEF/ZSCRIPT line endings; the final archive
+repeats18 checks and all16 card-source members match the staged Git bytes.
+Seated players cannot commit arena/world travel. Evidence and retained logs:
+assets/validation_v5_12_5/lifecycle-results.json and lifecycle-logs.json.gz.
+The runner now uses unique microsecond directories after a parallel-launch
+collision before native startup. No gameplay change or author acceptance is implied.
+
+## 5.12.4 - Organized combat venues (#438, 2026-10-31, in progress)
+
+Implements the approved venue dimensions and NPC organizers without altering
+personal stats or equipment. Original deterministic geometry reuses owned city
+materials and the Domingo sprite. Shared travel consent is extended for arena
+entry/return and explicit team changes. Match results grant no prizes; death
+remains persistent. Final native package passes390 assertions: eight peers each
+check39 outcomes, two peers save13 checks each and reload26 checks each. The
+pre-arena copy migration/static handler pass six additional native checks. The
+legacy input and every failed iteration remain preserved; the adapter changes
+only saved teamdamage and passes scalar-diff, idempotence and refusal checks.
+Live visual review confirms the ring posts/ropes and stone maze. The actual
+Buenos Aires organizer opens the Spanish UI; keyboard destination/mode changes
+were checked through CUA. An initial
+editor id outside the signed range produced an unknown thing; corrected before
+the final build. Determinism/connectivity checks pass. Evidence lives in
+assets/validation_v5_12_4. Coordinated-launcher integration and the combined
+author suite remain pending; no manual acceptance or rendering-FPS claim.
+Final packaging normalizes one source member from CRLF to LF; all other members
+remain identical. The final archive matches all23 changed Git members and repeats
+the six native migration checks. Source equivalence and both hashes are recorded.
+
+## 5.12.3 - Cooperative lifecycle guards (#437, 2026-10-31, in progress)
+
+Author decisions: dead players wait without world actions, but can vote; native
+Use must not respawn a replacement. Shared consent cancels at death/departure.
+Existing Redemption may still restore the same corpse. The author separately
+approved replacing The Fool flight with unanimous mansion travel, charging the
+existing 1,000 Anima/600-second cooldown only after consent; Palomo provides a
+free unanimous return to origin. The spirit only moves/converses in the mansion,
+without material inventory interactions. If all players die, one may initiate
+The Fool from the interface with the same payment. Spirit conversations may
+advance missions; their material rewards must wait for resurrection.
+
+Follow-up implementation: a native travel guard preserves the original dead
+pawn, inventory and recorded corpse position across hub travel. The mansion
+joins campaign hub 434; The Fool now requests consent and Palomo offers return.
+Spirit controls allow movement/resident dialogue but deny material actions.
+Personal pending flags defer decks/Boxes; the unique silver key remains with
+Argento until claimed alive. Tarot revision 2 removes legacy flight without
+resetting ownership, selected cards or cooldown. No automatic resurrection.
+
+Native verification: eight actual peers pass 11 death/consent checks each and
+six common-save recovery/resurrection checks each. Four-peer remote departure
+and two-peer arbitrator departure pass, including original-roster restarts and
+the native recovery event: 188 assertions, clean exits. After correcting diagnostic release labels, the
+exact delivery package passed 22 more two-peer assertions (210 total); all six
+changed packaged members match the staged index byte-for-byte. Package hashes,
+commands and full logs (including corrected fixture failures) are preserved in
+assets/validation_v5_12_3/lifecycle-results.json and lifecycle-logs.json.gz.
+This does not establish general host migration or repair the earlier #436 engine
+crash. Static validator passes; author confirmation remains pending.
+
+
+Follow-up native delivery verification: 374 assertions from the final package,
+with one, two and eight real processes. Eight peers pass 36 checks each; two
+peers save pending spirit rewards (19 each), reload and complete the same visit
+(13 each), and load the earlier lifecycle build's common save (6 each). Solo
+living travel and the actual native User3 all-dead exception pass 10 checks.
+The companion boundary retains a dead slot at exactly three days, releases it
+one world tic later, and does not evict anyone when a revived member finds a
+full party. All 35 changed packaged members match source bytes. Evidence:
+assets/validation_v5_12_3/spirit-results.json and spirit-logs.json.gz, including
+failed fixture iterations and their corrections. CA-KP-196 documents native
+forced respawn during ChangeLevel. Static checks and author acceptance remain
+separate; coordinated recovery tooling and whole-release integration remain.
+
+
+#436 package follow-up: CRLF/LF normalization changes no logic. The rebuilt
+final package matches all changed source members exactly; native eight-peer
+36 checks each and two-peer six-check saved-session recovery pass again.
+Runs 20261030-222144/222237 and package SHA-256 are in validation_v5_12_2.
+This remains agent verification, not author acceptance.
+
+## 5.12.2 - Shared clock and time consent (#436, 2026-10-30, in progress)
+
+House follow-up (2026-10-31): the author approves shared title/access for
+characters present when the house is recovered, with refunds only to the actual
+payer. A single saved world settlement and co-titles implement that rule. Native
+checks exposed a prior solo-only acquisition guard; personal rent/purchase now
+works with actual peers without lifting unrelated schedule restrictions. Old
+restitution migrates once without inventing a purchase refund or new co-owners.
+Final native evidence: eight peers each pass17 house/title/payment checks and
+six common-save recovery checks; two peers each pass six old-save migration
+checks. The preserved prior package passes two legacy-setup checks per peer.
+All exit cleanly (200 final assertions). Failed fixture/development evidence,
+full logs and package hashes: house-results.json/house-logs.json.gz. Static
+validation and exact staged-source/package comparison are recorded with the
+commit. This is not author acceptance or completion of V5.12. Final PK3 SHA-256:
+`413202c32bcea16c0669544c9aa1cc5e4baad01a159243943b85fa11ec1bff71`.
+
+Rescue follow-up (2026-10-31): campaign-owned revision-1 objective snapshots
+capture eligible character records at extraction. Each character keeps its own
+claim guard and wallet; late-ready characters retain personal progress and see
+an unavailable-world Journal explanation. Escort ownership follows the actual
+conversation initiator. Native final package: eight peers each pass28 assertions,
+then six each after common-save recovery; two peers each pass six old-save
+migration checks. The untouched previous package created that legacy save and
+passed two checks per peer. All exit cleanly (288 final assertions). Preserved
+fixture failures and exact logs/hashes: rewards-results.json/rewards-logs.json.gz.
+No author acceptance, Internet test or completed V5.12 claim. Final PK3 SHA-256:
+`63a88a218cf1b5d03dd13593e652fc19faa4ad51f9707e53adc583900c10757c`.
+
+Tutorial follow-up: the author requires all living characters to finish their
+own trials before leaving. The doorway publishes unanimous consent after its
+initiating conversation. A read-only packing preflight validates every personal
+loadout, then the existing completion/sanitation applies to each living record
+once. Item-ID lookup stays owner-local in multiplayer; no global dropped-item
+search is introduced. Initial fixture failures retained: an opening narrative
+conversation correctly blocked a guest; an attempted DetachFromOwner called a
+hook rather than removing the test item. Corrected fixtures use explicit setup
+and native RemoveInventory. Final results are recorded in return-results.json;
+no author acceptance is implied. Final native evidence: eight peers each pass21
+tutorial checks; solo departure passes8; two transport peers each pass26. All
+exit cleanly (228 assertions total). The final package matches the staged
+source members exactly; SHA-256:
+`514644e12729603258c7fb2f2dbf0aa1c65404dc185cab01fe097a6a03126f45`.
+
+Transport follow-up: individual all-or-nothing fare preparation, one shared
+vehicle/incident record, unanimous boarding/disembarkation/resumption, and no
+repeat fare for the original ticket. Existing transport distance/speed/prices
+remain data-owned. Static source scans remain bounded to native player slots.
+Native probes wait after each WorldLoaded callback, including restored hubs;
+checking arrival before the first actor tic produced false probe failures and
+was corrected without adding an unnecessary player update hook.
+Final full-package checks: eight peers each pass26 cart checks; two peers each
+pass30 stop/resume checks,26 each for ship/horse/train, and36 clock/rest checks.
+All six runs exit cleanly; 496 assertions total. Hashes, exact engine logs and
+earlier failed development evidence are in transport-results.json. These tests
+cover native local networking, not Internet play or author acceptance.
+
+Walking/house follow-up: explicit destination offers, all-player consent,
+slowest living pace, separate resources, revalidation before commitment, first
+fatal-instant truncation and a single shared elapsed clock. Native source-overlay
+checks cover two/eight actual peers and real map changes. No routine actor scan
+is added: participants and proposal references are bounded by MAXPLAYERS;
+forecasts run only at proposal/confirmation. Full cooperative campaign acceptance
+and remaining transport/quest/lifecycle integrations are not claimed.
+Final package: eight native peers each pass 31 travel checks (20261030-223659),
+and two peers each pass the existing 36 time/rest checks (223549). Validator:
+zero errors. The final PK3 matches changed source bytes; hash/logs are recorded
+in travel-results.json. An earlier eight-peer run (223512) passes all gameplay
+assertions but crashes peer 5 during concurrent shutdown/arbitrator handoff:
+GZDoom access violation 0xc0000005 at 0x135db0. Preserved as failed evidence and
+tracked in #437. Closing remote peers before the arbitrator passes the travel
+probe; it is not a production lifecycle fix or author acceptance.
+
+
+Author decisions: individual unaccelerated rest; unanimous exact-duration
+acceleration; silence remains pending; edits clear consent; anyone may cancel;
+disconnection cancels. The author also approved interface-only votes from dead
+participants waiting for Limbo. No new balance values, artwork or narrative introduced.
+Revision-1 clock replicas preserve the existing single-player fields and civil
+anchors; old saves gain initialized cooperative replicas only when required.
+
+Native source-overlay development evidence: four/eight real peers each passed
+18 clock/rest assertions, then two peers each passed32 including actual native
+consent events, precise endpoint, individual costs, duplicate/stale rejection
+and shared cancellation. All processes ran on this Windows11/GZDoom4.14.2 PC;
+no Internet latency or full multiplayer-playability claim. Final package,
+save/reload and broader integration results are recorded as they are obtained.
+Final builder package: eight native peers each passed36 assertions (288 total),
+including dead-vote policy checks and actual native consent events. All18 changed
+packaged members match source bytes. Shared native-save creation passed4 checks
+per peer and coordinated restart passed6 per peer, preserving real seats,
+clock replicas and pending consent. Death checks in this fixture restore the
+body before native death handling; full death lifecycle remains #437. Native
+load uses a copied recovery basename inside each isolated savedir, preserving
+original snapshots. The author has not accepted these checks; the combined manual suite is deferred
+until V5.12 implementation is complete. Failed development probes remain local.
+
 
 ## Unreleased V5.12 network baseline (#435, 2026-10-30)
 

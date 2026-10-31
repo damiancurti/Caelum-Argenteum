@@ -46,8 +46,7 @@ class CaelumMainM00MagicTrial : Object play
 
     static bool Begin(CaelumPlayer user)
     {
-        if (user == null || user.player == null || user.health <= 0
-            || user.player.playerstate != PST_LIVE || !user.CharacterCreationComplete
+        if (!CaelumSpirit.CanConverse(user) || !user.CharacterCreationComplete
             || user.CreationWizardOpen || (user.player.cheats & CF_PREDICTING)
             || level.MapName != "MAP01") return false;
         let speaker = CaelumCaella(user.player.ConversationNPC);
@@ -63,7 +62,7 @@ class CaelumMainM00MagicTrial : Object play
 
     static bool Complete(CaelumPlayer user)
     {
-        if (!IsActive(user)) return false;
+        if (!IsActive(user) && !CaelumSpirit.Active(user)) return false;
         let speaker = CaelumCaella(user.player.ConversationNPC);
         if (speaker == null || !speaker.StoryAnchored) return false;
         let record = user.GetPersistentCharacterState(true);

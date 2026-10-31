@@ -3,6 +3,11 @@
 // mapas sin convertir los controles temporales en objetos visibles todavia.
 class CaelumPersistentCharacterState : Inventory
 {
+    // #434: la herramienta externa confirma la custodia antes de publicar el save.
+    String ExternalProfileId, ExternalProfileCampaign;
+    bool ProfileDeparted;
+    int ExternalProfileRevision,ProfileImportSerial,ProfileImportApplied;
+    CaelumNarrativeCheckpoint NarrativeCheckpoint;
     Array<CaelumFermentationRecord> FermentationBatches;
     Array<CaelumProofingRecord> ProofingBatches;
     int CookingMaterialSchemaRevision;
@@ -213,6 +218,8 @@ class CaelumPersistentCharacterState : Inventory
     int MainM00ShieldId, MainM00ArmorIds[4], MainM00CraftedSealId;
     Inventory MainM00CraftedBag, MainM00CraftedCanteen;
     bool MainM00GoldRewardStarted, MainM00RuloPrepared;
+    int SpiritRewardRevision;
+    bool SpiritDeckPending, SpiritBoxPending, SpiritSilverKeyPending;
     int MainM00MazeRepairUnits[CaelumConstants.MATERIAL_TYPE_COUNT];
     int MainM00StarterAmmoIssued, MainM00GoldMinedUnits;
     // 0ab: práctica opcional de respiración; falso en guardados anteriores.
