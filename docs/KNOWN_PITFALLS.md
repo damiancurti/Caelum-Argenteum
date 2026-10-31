@@ -5892,3 +5892,10 @@ it. The diagnostic reader validates installed PE timestamps and never reconstruc
 missing mutable data. Evidence: validation_v5_12_7/vacancy-results.json and logs.
 The production verifier records observed peer exits before terminating only its
 own remaining children, and leaves both original heads/reservations unchanged.
+
+Six subsequent two-peer loads of that exact retained draft passed; do not infer
+a fix from intermittent success (load-retry-results.json/load-retry-logs.json.gz).
+The private verifier now also pins vid_fullscreen=false and its 640 × 480 INI
+dimensions: command-line dimensions alone did not override a fullscreen default.
+Two native peers confirm the requested window and checkpoint (window-results.json).
+This is a verified launch-configuration correction, not a crash mitigation claim.

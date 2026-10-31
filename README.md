@@ -47,8 +47,9 @@ coordinator retains the native world and registers no character until a transfer
 use actual seats at the same table and preserve inventory/world health. Native
 two-player invitations, play, active-hand common-save restart and stand-up
 forfeit pass; agent UI review confirms private hands in both games. Argento
-regression passes. Lifecycle and arena dependencies now pass together; profile/session tooling remains open;
-author handoff waits for the combined release. No asset redesign or new balance.
+regression passes. Lifecycle, arena and managed profile/session dependencies pass
+together; author handoff waits for final stability and presentation validation.
+No asset redesign or new balance.
 
 
 **V5.12 organized combat (#438):** Palomo and a Domingo-appearance
@@ -58,15 +59,16 @@ attributes, equipment, friendly fire and ordinary death. Native multi-peer and
 save recovery checks pass; the final combined author suite remains pending.
 For pre-arena saves, `python migrate_arena_save.py original.zds migrated.zds`
 creates a separate revisioned copy with the approved friendly-fire rule, without
-overwriting the original. The coordinated session launcher will apply this adapter.
+overwriting the original. The coordinated session launcher applies this adapter.
 
 **V5.12 lifecycle (#437):** cooperative death retains the original pawn, inventory
 and identity through native map travel. The Fool now requests a unanimous mansion
 visit; only the activator pays after consent. Dead visitors move and converse as
 spirits, with material rewards pending until resurrection. Palomo returns the
 group to its recorded departure without another payment or automatic revival.
-Death/departure cancel shared consent, including native saves predating the lifecycle handler. Coordinated recovery tooling and other
-V5.12 dependencies remain unfinished; author acceptance is still pending.
+Death/departure cancel shared consent, including native saves predating the lifecycle
+handler. Coordinated recovery and the combined dependencies pass native checks;
+author acceptance is still pending.
 
 **V5.12 cooperative world (#436):** native peers now share one campaign clock and
 weather seed, with individual nonaccelerated rest. T/the time menu opens an
@@ -88,8 +90,8 @@ only the actual payer receives the single refund of recorded payments.
 Two cooperative players can use the same tent with their own sleeping bags;
 sharing shelter does not transfer ownership or packing permission. Waking one
 player cancels shared acceleration while the other may continue ordinary rest.
-This is not full cooperative campaign acceptance: other quest integration,
-profile portability and lifecycle integration remain under their focused issues.
+Profile portability and lifecycle integration are verified under their focused
+issues. This is not full cooperative campaign acceptance.
 Author checks will be delivered together after the release is complete.
 
 Author clarification: the comparison is Leonor versus Caella. Caella carries

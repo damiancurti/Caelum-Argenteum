@@ -56,6 +56,10 @@ def native_checkpoint(data: bytes, campaign: str, directory: Path, engine: Path,
     try:
         for slot in range(len(roster)):
             cmd,peer=command(directory,slot,engine,iwad,files,port,'127.0.0.1',verification=True)
+            # The command-line window hint alone can still start fullscreen.
+            # Only this isolated verifier pins its private window configuration.
+            with (peer/'session.ini').open('a') as config:
+                config.write('vid_fullscreen=false\nvid_defwidth=640\nvid_defheight=480\nwin_w=656\nwin_h=519\n')
             cmd+=['-window','-width','640','-height','480']
             streams.append((peer/'process.log').open('wb'));peers.append(peer);commands.append(cmd)
             processes.append(subprocess.Popen(cmd,cwd=peer,startupinfo=startup,stdout=streams[-1],stderr=streams[-1]))

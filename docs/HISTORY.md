@@ -4,6 +4,14 @@ Documentation version: **5.12.7** - 2026-10-31.
 
 ## V5.12 native session coordination - #435 / 5.12.7 in progress
 
+Window and load follow-up: the transfer verifier now explicitly requests a
+private 640 × 480 window in its own INI; the command-line width/height alone had
+left native peers fullscreen at 1920 × 1080. Two real peers confirm the intended
+resolution and a valid checkpoint without changing the retained input or custody.
+Six additional two-peer loads of the previously failing return draft also pass.
+These bounded successes do not establish a native crash fix. Evidence:
+window-results.json/window-logs.json.gz and load-retry-results.json/load-retry-logs.json.gz.
+
 Native gameplay follow-up: 2/4/8 real clients pass concurrent last-unit city
 purchases, independent wallets, owned Quimica vessels and fuel reservations,
 duplicate start/completion rejection and one-owner cancellation (168 assertions).

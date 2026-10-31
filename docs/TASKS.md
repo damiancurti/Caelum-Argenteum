@@ -69,15 +69,14 @@ atomic publication of both campaign heads, stale-owner refusal and narrative sav
 Two-peer outward/return checks preserve packed possessions and campaign stock/title;
 reward/choice saves survive reload without another reward or automatic save.
 
-Still required before delivery:
-- Integrate native vacant-world preparation with the #435 session menu.
-- Keep native fixed-roster admission separate from temporary transfer verification.
-- Actual MAP03/deceased transfer, native migration/backup, hub travel and
-  personal/world quest boundaries pass (120 latest native assertions).
-- Active-conversation native preflight is verified; complete broader profile root coverage.
-- #436 two-player rest and independent world-eligibility snapshots are integrated.
-- Legacy #437 registration is fixed and verified; retain it in final recovery tests.
-- Finish combined validation before creating the author terminal and pending checks.
+Integrated under #435: native vacant-world preparation, ordinary fixed-roster
+admission and separate temporary transfer verification. Actual MAP03/deceased
+transfer, native migration/backup, hub travel and personal/world quest boundaries
+pass (120 latest native assertions). Active-conversation preflight, portable graph
+checks, two-player rest and independent world eligibility are verified; the legacy
+#437 handler bridge remains included in common recovery. Outstanding: resolve or
+qualify the native instability and presentation gate above, then provide the
+combined author terminal. No author acceptance is recorded.
 
 ## V5.12 in progress - #590 seated 1v1 cards (5.12.5)
 
@@ -91,9 +90,9 @@ invitations/actions, native active-hand common restart for both games, agent
 keyboard/private-hand UI review and single-player Argento regression. Portable
 seat indexing is corrected, with a bounded legacy-reference fallback.
 
-Outstanding before author handoff:
-- Integrated #437 departure/common-save recovery passes; finish the session launcher.
-- Complete #434-438 separately, then provide the combined manual terminal.
+The #435 launcher now verifies managed cards, departure and common-save recovery.
+Author handoff waits for the final release-level gates above; no card-rule gap is
+known from the completed native and UI checks.
 
 No new author test is ready yet; do not populate pending_test.txt with backlog.
 
