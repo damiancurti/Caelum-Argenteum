@@ -569,7 +569,9 @@ class CaelumJournalOverlay : EventHandler
     {
         int questId = GetVisibleQuestId(localPlayer);
         if (questId < 0 || SmallFont == null) return;
-        let lines = SmallFont.BreakLines(QuestClassification(localPlayer, questId) .. "\n" .. CaelumQuestTrackingView.Detail(localPlayer,questId) .. "\n\n" .. GetQuestDetailText(localPlayer, questId), 512);
+        String availability=localPlayer.JournalQuestUnavailable[questId]
+            ? StringTable.Localize("CA_COOP_QUEST_UNAVAILABLE",false).."\n\n" : "";
+        let lines = SmallFont.BreakLines(QuestClassification(localPlayer, questId) .. "\n" .. CaelumQuestTrackingView.Detail(localPlayer,questId) .. "\n\n" .. availability .. GetQuestDetailText(localPlayer, questId), 512);
         int count = GetQuestDetailLineCount();
         int last = Max(0, (lines.Count() - 1) / count) * count;
         let scroll = CVar.GetCVar("ca_journal_quest_scroll", players[consoleplayer]);

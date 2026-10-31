@@ -131,6 +131,12 @@ map MAP02
 
 Direct map loading tests startup, not normal campaign progression. Use an ordinary-player route when keys, quests, exits or persistent progression are in scope. Preserve the user's real saves and use copies for migration tests.
 
+For transition probes, measure the settling interval from the current
+`WorldLoaded` callback. `level.time` already includes earlier maps, and a
+restored hub resumes its previous `level.maptime`. Neither threshold alone proves
+that the new arrival has received its first actor tic. #436 transport evidence
+uses a fresh entry timestamp and validates after native tics, including hub return.
+
 ### Continuing campaigns after a map rebuild
 
 Issue #77 distinguishes four MAP06 geometries. A normal build selects the

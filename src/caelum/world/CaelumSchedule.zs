@@ -367,13 +367,14 @@ class CaelumScheduleState : Inventory
         agenda.PublishDiscovery(user);
     }
 
-    static bool CanTransact(CaelumPlayer user)
+    static bool CanTransact(CaelumPlayer user,bool personalCooperative=false)
     {
         if (user == null || user.player == null || user.health <= 0 || !user.CharacterCreationComplete
             || user.CreationWizardOpen || user.CraftingTaskActive || user.HasActiveConversation()
             || user.PalomoMerchantMenuOpen || user.CombatTimeRemaining > 0
             || (user.player.cheats & CF_PREDICTING)) return false;
-        for (int i = 0; i < MAXPLAYERS; i++) if (playeringame[i] && players[i].mo != user) return false;
+        if(!personalCooperative)
+            for (int i = 0; i < MAXPLAYERS; i++) if (playeringame[i] && players[i].mo != user) return false;
         let plan = CaelumJourneyPlan.Get(user);
         return !CaelumRestState.IsActive(user) && (plan == null || !plan.Open);
     }

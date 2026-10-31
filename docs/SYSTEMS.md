@@ -1,6 +1,143 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.11.8** - 2026-10-30.
+Documentation version: **5.12.2** - 2026-10-30.
+
+## Shared clock and unanimous time (5.12.2, #436)
+
+The native startup roster shares campaign time, civil date, Limbo fractions and
+weather seed. Revision-1 clock replicas travel with each character. The lowest
+ready native slot with an initialized replica supplies the shared clock; a
+newly ready, lower slot cannot reset it. Removing that owner leaves the already
+synchronized replicas available. This is deterministic simulation on every
+peer, not a host-only mutation or independent clocks. Personal trial calendars,
+rest state, inventories and physiological costs remain separate.
+
+Individual sitting and rest no longer require a solo session. One occupant
+standing does not wake another. The two tent berths are available to cooperative
+players while the owner is present in the session. Each needs their own bag;
+the owner retains title and packing permission, and occupancy still blocks
+packing. Berth spacing uses the larger of bag half-width and the occupant's
+actual collision radius, retaining the existing support tolerance. No actor
+radius, tent geometry, recovery bonus or resource cost changes.
+Accelerating time requires an exact-duration
+proposal from T or the time menu. All roster members must explicitly accept;
+silence waits, refusal/cancellation stops the proposal, changing duration clears
+consent and stale/repeated requests cannot act on a new proposal. A rest-origin
+proposal requires all participants to rest. Safety, activity interruption,
+roster changes or map changes stop acceleration. The author-approved exception
+allows a dead participant to vote from the interface while waiting for Limbo.
+Only living bodies receive personal substeps; a new death interrupts the advance. Current menu starts at the
+existing 60-minute default, with one-minute/hour adjustments and the existing
+30-day bound. Native and extra tics both count toward the agreed endpoint.
+
+A single shared pump runs after every participant's normal personal step. It
+advances the clock once, then each participant's existing personal simulation,
+using the current x105 batch bound. Weather is projected by each actual local
+shelter. No NPC movement/physics acceleration is newly promised. Climate-marker
+queries use a shared typed registry (one typed reconstruction on map/save load,
+spawn/destruction updates); rest offers use an owner reference, not actor scans.
+
+Walking routes and private-house door transitions now use a single saved
+proposal shared by the native roster. The exact destination is fixed before
+consent. Every member accepts; silence waits and refusal cancels without journey
+costs. No elapsed journey time or provisions are committed before unanimity.
+Time and travel proposals cannot overlap. Map/roster/body changes invalidate a
+pending proposal. Dead waiting players can consent but do not walk or consume
+provisions; complete native death/arrival integration remains #437.
+
+Walking calculations use the slowest living participant's existing pace, with
+separate thermal/survival/inventory forecasts over the same interval. Material
+changes to pace or required supplies regenerate the offer and clear every vote.
+The first forecast death truncates every participant at the same instant; no
+survivor consumes the remaining route or arrives. Applying an accepted journey
+advances the shared clock once, then each personal resource snapshot once.
+House entry preserves property/household systems and does not grant residence
+rights to visitors. The multiplayer branch avoids the old console-local capture
+handshake; native house-door presentation remains unchanged for solo play.
+
+The initial MAP01 return doorway also proposes a unanimous destination after
+the initiator closes its conversation. All living players must have completed
+their own trials and hold their departure equipment; already-completed personal
+tutorials are not repeated. Dead participants retain the approved interface
+vote and receive no living tutorial transaction. Every loadout and Box capacity
+is checked before any packing, inventory sanitation or completion. Final
+consent revalidates them: a missing item cancels the whole proposal. Each
+character keeps their native item references and records their own departure.
+Equipment IDs are local: multiplayer departure never searches the map for a
+dropped starter by numeric ID; the owner must retrieve it first. Solo recovery
+retains its existing explicit departure-only search. Saved enum values are
+preserved, the new kind is appended, and the new door reference defaults null.
+No routine global actor scan is added.
+
+Rescue objectives are campaign-owned in solo and multiplayer campaigns. Completing extraction
+captures the ready characters present in the session, including a dead waiting
+participant; eligibility refers to the existing persistent legal identity, with
+the saved-record reference retained for old saves, not its reusable player slot.
+Reconstructing a returning profile therefore does not erase earned eligibility.
+Revision-2 world migration snapshots identity objects separately from Inventory
+records: GZDoom may remove detached record actors on load. Existing objectives
+upgrade once from their retained records; new objectives capture both references
+and independent identities. No actor scan or reward replay is introduced. Repeating the objective cannot expand that roster. Each
+eligible character can claim the existing currency/reputation reward once.
+Personal claim flags remain authoritative against repeat rewards across worlds.
+A late-ready character keeps their pending personal rescue and the Journal says
+that the already-resolved objective is unavailable in this world. Private
+conversations, emotion reads and independent quest progress are not copied.
+The actual initiating player remains the prisoner's escort leader.
+
+Initial migration seeds the campaign rescue state from its existing clock
+owner, granting old extracted-objective eligibility only to records that already
+held extraction. Original saves remain untouched. Ready characters initialize their legal
+identity idempotently, and the campaign initializes its world ledger before a
+profile can transfer. The #434 coordinator must require that native migration
+in both campaigns rather than seed a foreign world from an imported profile. Eligibility snapshots and
+migration iterate only the bounded native roster and four rescue records.
+
+Central-house restitution is a single world transaction. The initiating
+character must still be recognized and speak with the rental agent. Every
+ready character present at completion receives the house quest reward and a
+saved legal co-title; each can use its residence/camp permissions. Completing
+or replaying the dialogue cannot add later arrivals. An existing contract may
+belong to another present participant, but an absent holder is not displaced.
+Rent/purchase now permits an individual native cooperative transaction with
+unchanged activity, title, funds and inventory-capacity guards.
+
+Only the original contract holder receives the recorded rent/purchase refund.
+A world-owned paid flag prevents multiplying it by the number of recipients or
+repeating it after reload. A capacity failure leaves the actual payer's refund
+pending and retryable; no other character can collect it. Already-completed
+personal quest flags do not erase a real new campaign's outstanding payment.
+Revision-1 property migration recognizes prior solo restitution and preserves
+its sole title and already-paid refund, rather than treating the restored
+ownership as a fresh paid purchase. Original saves remain recoverable.
+
+Vehicle boarding uses the same unanimous native protocol. Every living traveler
+must satisfy the existing boarding checks and afford their own ticket/change.
+All currency transactions are prepared before any wallet is charged. Refusal,
+missing funds or stale scheduled departures cannot charge part of the group.
+Unscheduled cart/horse departure timestamps update at confirmation without
+invalidating an otherwise identical offer. Scheduled ship/train departures and
+fares are revalidated; the menu shows the quoted wait.
+
+The vehicle shares one ticket progress object and one incident record, while
+bookings, departure stamps, survival and money remain personal. Native incident
+boundaries are not rolled once per passenger. Arrival or a valid requested stop
+opens a destination vote before changing maps. Refusal leaves the stopped
+vehicle and ticket intact; the transport controls explicitly reopen the vote.
+Returning to the same journey requires consent and costs no new fare. Abandoning
+the ticket requires shared consent; rebooking uses the existing remaining-route
+fare, individually paid. Personal profile transfer must not carry this shared
+campaign journey into a different campaign.
+
+Remaining quest conflicts are unfinished;
+full death/disconnect/restart integration remains #437. Cart boarding, survival
+advance, rejected arrival, native destination arrival and rural stop/resumption
+have dedicated real-peer checks; they do not certify those remaining systems.
+
+Implementation gate: cooperative travel/reward arbitration,
+full save/restart lifecycle, portable profiles and complete V5.12 integration
+remain pending. Partial engine evidence is not author acceptance.
+
 
 ## Demon disease immunity (#586, 5.11.8)
 

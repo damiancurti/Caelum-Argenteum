@@ -1,14 +1,12 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.11.8** - 2026-10-30.
+Documentation version: **5.12.2** - 2026-10-30.
 
-**V5.11 complete/accepted2026-10-30:** #429-433/#580-582/#586; focused
-PR575-579/583-585/587-588. Integration/closure authorized; HISTORY records all
-checks and pending_test.txt is empty. Caella/Leonor load difference accepted;
-Mandinga/Zupay disease immunity accepted. No version bump beyond5.11.8.
-Distant-search candidate not adopted; siege stalls persist. Keep-awake released.
-**V5.10 accepted:** #425-428/PR570-573, CA425-01..CA428-01; HISTORY.
-Siege stalls persist. Keep-awake released.
+**V5.12 in progress:** #436/PR592 shared clock/rest, unanimous time/walking/house
+travel/transport/tutorial departure and rescue eligibility; validation_v5_12_2.
+Shared house titles/refunds, tent rest and portable eligibility are implemented.
+Other V5.12 work remains unfinished; combined author tests follow completion.
+**V5.11/V5.10 accepted/merged:** HISTORY; no pending checks. Siege stalls persist.
 
 **V5.9 accepted/merged:** #418-424 closed, PR561-569; CA418-01..CA424-01
 confirmed 2026-10-30 in HISTORY. validation_590-597; pending_test.txt empty.

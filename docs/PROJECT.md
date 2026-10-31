@@ -1,6 +1,29 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.11.8** - 2026-10-30.
+Documentation version: **5.12.2** - 2026-10-30.
+
+## 5.12.2 - Cooperative clock/rest and time consent (#436, in progress)
+
+Native peers share one campaign clock while retaining individual rest and
+physiology. Exact-duration time proposals require every participant's consent;
+editing resets votes and any participant can stop acceleration. Bounded native
+player loops and an event-maintained climate registry replace repeated marker
+queries. Walking and house transitions require unanimous destination consent;
+walking shares the slowest pace with personal provisions and one elapsed clock.
+Transport now shares one route/incident record with individual atomic fares,
+consented stops and original-ticket resumption. Initial tutorial departure
+requires all living players to finish and retain their personal loadout before
+unanimous transfer. Rescues snapshot eligible characters and prevent duplicate
+or retroactive claims. House restitution shares title/access while refunding
+only the original payer. Two cooperative players share the actual tent berths,
+each with their own bag, without sharing ownership or packing permission.
+Solo and cooperative objective ledgers now preserve earned eligibility by the
+character's existing legal identity, independently of the native record actor.
+Revision-2 migration retains these identity snapshots before external transfer. Actual
+cross-campaign transfer integration remains under verification. The full
+V5.12 milestone is not complete or author-accepted. Evidence is kept in
+`assets/validation_v5_12_2`, distinct from #435 and #590.
+
 
 ## 5.11.8 - Mandinga and Zupay disease immunity (#586)
 

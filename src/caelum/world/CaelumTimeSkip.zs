@@ -193,6 +193,7 @@ class CaelumTimeSkipState : Inventory
 
     static bool OpenMenu(CaelumPlayer user)
     {
+        if(multiplayer)return CaelumCooperativeTime.Open(user);
         if(IsOpen(user))return false;
         if(CaelumExhaustion.Locked(user)){CaelumExhaustion.NotifyLocked(user);return false;}
         String reason=CaelumTimeSkipRules.BlockReason(user);

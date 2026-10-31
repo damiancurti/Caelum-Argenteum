@@ -1,6 +1,32 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.11.8** - 2026-10-30.
+Documentation version: **5.12.2** - 2026-10-30.
+
+## V5.12 work in progress - #436 / 5.12.2
+
+Implemented: shared clock/calendar/weather seed, individual native sitting/rest,
+unanimous exact-duration acceleration, stale/duplicate vote rejection and shared
+cancellation. Walking routes/house doors now share explicit destination consent,
+slowest group pace and individual provisions. Tests exercise real native peers.
+Transport boarding/fares/stop/resume are implemented; broaden lifecycle and
+rebooking/abandonment coverage. Initial tutorial departure now validates all
+living participants and loadouts before unanimous transfer. Rescue objectives
+now snapshot eligible character records, preserve late personal progress and
+grant each eligible reward once, including coordinated save recovery. Solo
+worlds initialize the same ledger and reconstructed records match existing legal
+identity snapshots, even when native loading discards an old record actor.
+Revision-2 migration passes legacy and eight-peer checks. Actual cross-campaign
+profile integration remains under verification.
+Two actual cooperative bodies now share the deployed tent with separate native
+bags and ownership. The focused two-peer test passes 18 assertions per peer;
+full-package verification remains recorded in the accompanying tent evidence.
+Central-house restitution now grants shared titles to eligible present characters
+and refunds only the original payer, using one world-owned settlement.
+Cross-issue remaining: #434 portable profiles/checkpoints; #435 production
+network authority; #437 lifecycle; #438 arenas/organizers; #590 card seating/UI
+integration. Keep focused branches/PRs; no V5.12 author acceptance yet. Prepare
+one combined manual launcher only after all required implementation is ready.
+
 
 Current author queue: empty. The author confirmed all remaining checks on
 2026-10-30 and requested merges and issue closure. HISTORY records CA430-01
