@@ -1,6 +1,13 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.11.8** - 2026-10-30.
+Documentation version: **5.12.5** - 2026-10-30.
+
+## 5.12.5 - Card-table PvP reuses accepted artwork (#590)
+
+No new graphics are generated. Both human card screens reuse the existing Tarot
+fronts/back, fonts and table/chair assets with their existing provenance.
+Native probe source/evidence: assets/validation_v5_12_5. Disposable generated
+maps and test PK3s stay in build; no development IWAD or executable is distributed.
 
 ## 5.11.8 - Species damage policy (#586)
 

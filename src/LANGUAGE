@@ -7196,3 +7196,31 @@ CA_COMPANION_TRANSFER = "Enter Regalar / solicitar";
 CA_COMPANION_LOAN = "L Prestar objeto";
 CA_COMPANION_PREVIOUS = "Arriba Anterior";
 CA_COMPANION_NEXT = "Abajo Siguiente";
+
+[enu default]
+CA_CARD_OPPONENT = "Opponent";
+CA_CARD_PVP = "Player versus player - the world continues";
+CA_CARD_TABLE_TITLE = "Cards at the table";
+CA_CARD_TABLE_HELP = "Both players must stay seated at this same table. Choose a partner, agree on the game, and both accept. Standing up during play forfeits the match.";
+CA_CARD_INVITE_PLAYER = "Invite player %d";
+CA_CARD_SELECT_TRUCO = "Game: Truco (change)";
+CA_CARD_SELECT_TRUCAZO = "Game: Trucazo (change)";
+CA_CARD_CONSENT = "Accept game and options";
+CA_CARD_ACCEPTED = "Accepted: %d / 2";
+CA_CARD_NO_PARTNER = "No other available player is seated at this table.";
+[es]
+CA_CARD_OPPONENT = "Contrincante";
+CA_CARD_PVP = "Jugador contra jugador - el mundo contin?a";
+CA_CARD_TABLE_TITLE = "Cartas en la mesa";
+CA_CARD_TABLE_HELP = "Ambos deben permanecer sentados en esta misma mesa. Eleg? contrincante, acord? el juego y acepten los dos. Levantarse durante la partida cuenta como abandono.";
+CA_CARD_INVITE_PLAYER = "Invitar al jugador %d";
+CA_CARD_SELECT_TRUCO = "Juego: Truco (cambiar)";
+CA_CARD_SELECT_TRUCAZO = "Juego: Trucazo (cambiar)";
+CA_CARD_CONSENT = "Aceptar juego y opciones";
+CA_CARD_ACCEPTED = "Aceptaron: %d / 2";
+CA_CARD_NO_PARTNER = "No hay otro jugador disponible sentado en esta mesa.";
+
+[enu default]
+CA_CARD_RECOVERY = "Session interrupted. The hand is preserved for recovery from a common save.";
+[es]
+CA_CARD_RECOVERY = "Sesi?n interrumpida. La mano se conserva para recuperar desde un guardado com?n.";

@@ -6,6 +6,7 @@ class CaelumTrucazoMatch : Inventory
     int Serial;
     bool Visible;
     CaelumArgento Opponent;
+    CaelumCardDuel Duel;
     CaelumTrucazoSide Sides[2];
     Array<int> Deck;
     int Drawn;
@@ -50,10 +51,19 @@ class CaelumTrucazoMatch : Inventory
         }
         return match;
     }
+    static clearscope CaelumTrucazoMatch View(CaelumPlayer user)
+    {
+        let link=CaelumCardSeat.Read(user);
+        if(link!=null && link.Duel!=null)
+            return !link.Open || !link.Duel.Started?null:link.Duel.Trucazo;
+        return user==null?null:CaelumTrucazoMatch(user.FindInventory("CaelumTrucazoMatch"));
+    }
     clearscope bool Active() const
     { return HandNumber>0 && Phase!=CaelumTrucazoRules.MATCH_RESULT; }
     bool ContextValid() const
     {
+        if(Duel!=null)return true; // La sesi?n com?n valida ambas plazas.
+
         let user=CaelumPlayer(Owner);
         return user!=null && user.health>0 && user.player!=null && !multiplayer
             && !CaelumExhaustion.Active(user)
@@ -90,15 +100,25 @@ class CaelumTrucazoMatch : Inventory
     {
         let user=CaelumPlayer(Owner);
         for(int side=0;side<2;side++)Sides[side]=new("CaelumTrucazoSide");
-        let record=user.GetPersistentCharacterState(false);
-        for(int card=CaelumConstants.TAROT_MAJOR_COUNT;card<CaelumConstants.TAROT_CARD_COUNT;card++)
-            Sides[0].Awake[card]=record!=null && CaelumTarotService.HasTarotCard(record, card);
-        Sides[0].MaximumHealth=CaelumTrucazoRules.Health(user.Attributes.Patience);
-        Sides[0].Intelligence=user.Attributes.Intelligence;
-        Sides[1].MaximumHealth=CaelumTrucazoRules.Health(Opponent.CombatPatience
-            +Opponent.GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_PATIENCE));
-        Sides[1].Intelligence=Opponent.CombatIntelligence
-            +Opponent.GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_INTELLIGENCE);
+        for(int side=0;side<2;side++)
+        {
+            let human=side==0?user:Duel!=null?Duel.Participants[1]:null;
+            if(human!=null)
+            {
+                let record=human.GetPersistentCharacterState(false);
+                for(int card=CaelumConstants.TAROT_MAJOR_COUNT;card<CaelumConstants.TAROT_CARD_COUNT;card++)
+                    Sides[side].Awake[card]=record!=null && CaelumTarotService.HasTarotCard(record,card);
+                Sides[side].MaximumHealth=CaelumTrucazoRules.Health(human.Attributes.Patience);
+                Sides[side].Intelligence=human.Attributes.Intelligence;
+            }
+            else
+            {
+                Sides[side].MaximumHealth=CaelumTrucazoRules.Health(Opponent.CombatPatience
+                    +Opponent.GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_PATIENCE));
+                Sides[side].Intelligence=Opponent.CombatIntelligence
+                    +Opponent.GetCombatArmorAttributeBonus(CaelumConstants.ATTRIBUTE_INTELLIGENCE);
+            }
+        }
         for(int side=0;side<2;side++)Sides[side].Health=Sides[side].MaximumHealth;
         Mano=Random[CaelumTrucazo](0,1);HandNumber=0;Abandoned=false;
         Deal();CheckMatchEnd();
@@ -152,10 +172,10 @@ class CaelumTrucazoMatch : Inventory
     clearscope bool CanAct(int side,int operation,int index=0) const
     {
         if(side<0 || side>1 || !Visible)return false;
-        if(operation==CaelumTrucazoRules.BEGIN)return Phase==CaelumTrucazoRules.INTRO && side==0;
-        if(operation==CaelumTrucazoRules.CLOSE)return !Active() && side==0;
-        if(operation==CaelumTrucazoRules.FORFEIT)return Active() && side==0;
-        if(operation==CaelumTrucazoRules.ADVANCE)return side==0 &&
+        if(operation==CaelumTrucazoRules.BEGIN)return Duel==null && Phase==CaelumTrucazoRules.INTRO && side==0;
+        if(operation==CaelumTrucazoRules.CLOSE)return !Active() && (Duel!=null || side==0);
+        if(operation==CaelumTrucazoRules.FORFEIT)return Active() && (Duel!=null || side==0);
+        if(operation==CaelumTrucazoRules.ADVANCE)return (Duel!=null || side==0) &&
             (Phase==CaelumTrucazoRules.TRICK_RESULT || Phase==CaelumTrucazoRules.HAND_RESULT);
         if(Phase!=CaelumTrucazoRules.PLAYING)return false;
         if(operation==CaelumTrucazoRules.ACCEPT || operation==CaelumTrucazoRules.REFUSE)
@@ -209,8 +229,8 @@ class CaelumTrucazoMatch : Inventory
         if(operation==CaelumTrucazoRules.CLOSE){Visible=false;return true;}
         if(operation==CaelumTrucazoRules.FORFEIT)
         {
-            Winner=1;Abandoned=true;Phase=CaelumTrucazoRules.MATCH_RESULT;Pending=0;
-            LogEvent(CaelumTrucazoRules.FORFEIT_EVENT,0);return true;
+            Winner=1-side;Abandoned=true;Phase=CaelumTrucazoRules.MATCH_RESULT;Pending=0;
+            LogEvent(CaelumTrucazoRules.FORFEIT_EVENT,side);return true;
         }
         if(operation==CaelumTrucazoRules.ADVANCE)
         {
@@ -267,6 +287,7 @@ class CaelumTrucazoMatch : Inventory
     }
     bool NPCAction()
     {
+        if(Duel!=null)return false;
         if(Phase!=CaelumTrucazoRules.PLAYING)return false;
         let own=Sides[1];
         if(Pending!=CaelumTrucazoRules.NO_CALL)
@@ -292,7 +313,7 @@ class CaelumTrucazoMatch : Inventory
     }
     void Dispatch(int operation,int index,int expectedSerial)
     {
-        if(expectedSerial!=Serial || !Visible)return;
+        if(Duel!=null || expectedSerial!=Serial || !Visible)return;
         if(!ContextValid())
         {
             if(Active())Act(0,CaelumTrucazoRules.FORFEIT);

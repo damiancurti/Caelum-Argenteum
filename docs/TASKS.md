@@ -1,6 +1,23 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.11.8** - 2026-10-30.
+Documentation version: **5.12.5** - 2026-10-30.
+
+## V5.12 in progress - #590 seated 1v1 cards (5.12.5)
+
+Implemented: direct chair/table ownership, two-party consent and option reset,
+shared match references, sender-side actions, duplicate/stale rejection, human
+Trucazo attribute snapshots, local private-hand projection, stand-up defeat and
+independent result closure. Native isolated two/four-client rules pass.
+
+Outstanding before author handoff:
+- #436 normal multiplayer sitting and a shared active calendar.
+- Exercise invitations/actions through real UI input, private hands, rejection,
+  and continued activity of other players; do not count fixture seating as this.
+- Active match native save/common restart and disconnect lifecycle under #437.
+- Preserve single-player Argento behavior and validate final integrated build.
+- Complete #434-438 separately, then provide the combined manual terminal.
+
+No new author test is ready yet; do not populate pending_test.txt with backlog.
 
 Current author queue: empty. The author confirmed all remaining checks on
 2026-10-30 and requested merges and issue closure. HISTORY records CA430-01

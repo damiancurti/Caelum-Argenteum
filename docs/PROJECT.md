@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.11.8** - 2026-10-30.
+Documentation version: **5.12.5** - 2026-10-30.
+
+## 5.12.5 - Human card-table PvP preparation (#590)
+
+V5.12 gains a separate focused issue for 1v1 Truco/Trucazo at the same occupied
+table, by mutual consent, with one deck supplied by either player. The author
+approved stand-up forfeit, active world and common-save recovery for disconnect.
+The existing rules are reused. #443-446 retain their later mechanics/services.
+Native multi-client rule checks are evidence of this slice, not completion of
+#434-438 or the playable integrated card experience. Normal shared seating and
+world clock remain #436 dependencies. The author requested the manual terminal
+only after the entire version is ready.
 
 ## 5.11.8 - Mandinga and Zupay disease immunity (#586)
 

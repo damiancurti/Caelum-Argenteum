@@ -14,6 +14,7 @@ class CaelumTrucoMatch : Inventory
     int Serial;
     bool Visible;
     CaelumArgento Opponent;
+    CaelumCardDuel Duel;
     CaelumTrucazoSide Sides[2];
     Array<int> Deck;
     int Drawn;
@@ -58,10 +59,19 @@ class CaelumTrucoMatch : Inventory
         }
         return match;
     }
+    static clearscope CaelumTrucoMatch View(CaelumPlayer user)
+    {
+        let link=CaelumCardSeat.Read(user);
+        if(link!=null && link.Duel!=null)
+            return !link.Open || !link.Duel.Started?null:link.Duel.Truco;
+        return user==null?null:CaelumTrucoMatch(user.FindInventory("CaelumTrucoMatch"));
+    }
     clearscope bool Active() const
     { return HandNumber>0 && Phase!=CaelumTrucoRules.MATCH_RESULT; }
     bool ContextValid() const
     {
+        if(Duel!=null)return true; // La sesi?n com?n valida ambas plazas.
+
         let user=CaelumPlayer(Owner);
         return user!=null && user.health>0 && user.player!=null && !multiplayer
             && !CaelumExhaustion.Active(user)
@@ -149,10 +159,10 @@ class CaelumTrucoMatch : Inventory
     {
         if(side<0 || side>1 || !Visible)return false;
         if(operation==CaelumTrucoRules.TOGGLE_FLOR)return Phase==CaelumTrucoRules.INTRO && side==0;
-        if(operation==CaelumTrucoRules.BEGIN)return Phase==CaelumTrucoRules.INTRO && side==0;
-        if(operation==CaelumTrucoRules.CLOSE)return !Active() && side==0;
-        if(operation==CaelumTrucoRules.FORFEIT)return Active() && side==0;
-        if(operation==CaelumTrucoRules.ADVANCE)return side==0 &&
+        if(operation==CaelumTrucoRules.BEGIN)return Duel==null && Phase==CaelumTrucoRules.INTRO && side==0;
+        if(operation==CaelumTrucoRules.CLOSE)return !Active() && (Duel!=null || side==0);
+        if(operation==CaelumTrucoRules.FORFEIT)return Active() && (Duel!=null || side==0);
+        if(operation==CaelumTrucoRules.ADVANCE)return (Duel!=null || side==0) &&
             (Phase==CaelumTrucoRules.TRICK_RESULT || Phase==CaelumTrucoRules.HAND_RESULT);
         if(Phase!=CaelumTrucoRules.PLAYING)return false;
         if(operation==CaelumTrucoRules.ACCEPT || operation==CaelumTrucoRules.REFUSE)
@@ -212,8 +222,8 @@ class CaelumTrucoMatch : Inventory
         if(operation==CaelumTrucoRules.CLOSE){Visible=false;return true;}
         if(operation==CaelumTrucoRules.FORFEIT)
         {
-            Winner=1;Abandoned=true;Phase=CaelumTrucoRules.MATCH_RESULT;Pending=0;
-            LogEvent(CaelumTrucoRules.FORFEIT_EVENT,0);return true;
+            Winner=1-side;Abandoned=true;Phase=CaelumTrucoRules.MATCH_RESULT;Pending=0;
+            LogEvent(CaelumTrucoRules.FORFEIT_EVENT,side);return true;
         }
         if(operation==CaelumTrucoRules.ADVANCE)
         {
@@ -306,6 +316,7 @@ class CaelumTrucoMatch : Inventory
     }
     bool NPCAction()
     {
+        if(Duel!=null)return false;
         if(Phase!=CaelumTrucoRules.PLAYING)return false;
         let own=Sides[1];
         if(CanAct(1,CaelumTrucoRules.FLOR))return Act(1,CaelumTrucoRules.FLOR);
@@ -337,7 +348,7 @@ class CaelumTrucoMatch : Inventory
     }
     void Dispatch(int operation,int index,int expectedSerial)
     {
-        if(expectedSerial!=Serial || !Visible)return;
+        if(Duel!=null || expectedSerial!=Serial || !Visible)return;
         if(!ContextValid())
         {
             if(Active())Act(0,CaelumTrucoRules.FORFEIT);

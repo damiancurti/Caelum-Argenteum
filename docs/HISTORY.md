@@ -1,6 +1,27 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.11.8** - 2026-10-30.
+Documentation version: **5.12.5** - 2026-10-30.
+
+## 5.12.5 - Seated human card-rule preparation (#590, 2026-10-30)
+
+Author decisions: one-on-one Truco and Trucazo, both seated at the same table,
+both consent, world continues, one physical deck between them, stand-up forfeit,
+disconnect recovery through a common save. No wagers/rewards or future #443-446
+features. This branch remains in progress, not a completed release acceptance.
+
+Isolated native probes on GZDoom4.14.2: two clients passed26 checks each;
+four clients passed29 each, including games through30 Truco points and a
+Trucazo match KO, stale/duplicate/wrong-game/turn and nonparticipant rejection.
+A full builder package then passed33 checks on each of four native peers,
+including different-table rejection and suspended-session handling.
+The final rebuilt runtime (no source overlay) repeats33 PASS on all four peers;
+all15 changed/new packaged source members match the working tree exactly.
+Fixture code sets temporary seat state for rule tests; normal sitting is still
+blocked pending #436. These tests do not establish visual private hands,
+end-to-end native UI authority or active-match recovery. Engine error attempts
+are retained locally; final compiler corrections rename case-insensitive enum
+collisions and remove a shadowing game argument. Original campaign files stay
+untouched. No author check has been requested or accepted for this slice.
 
 ## 5.11.8 - Mandinga and Zupay contamination immunity (#586, 2026-10-30)
 

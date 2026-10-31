@@ -1,12 +1,11 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.11.8** - 2026-10-30.
+Documentation version: **5.12.5** - 2026-10-30.
 
-**V5.11 complete/accepted2026-10-30:** #429-433/#580-582/#586; focused
-PR575-579/583-585/587-588. Integration/closure authorized; HISTORY records all
-checks and pending_test.txt is empty. Caella/Leonor load difference accepted;
-Mandinga/Zupay disease immunity accepted. No version bump beyond5.11.8.
-Distant-search candidate not adopted; siege stalls persist. Keep-awake released.
+**V5.12 in progress:** #434-438 plus #590 seated 1v1 Truco/Trucazo. #590
+isolated rules pass; normal seating/shared clock/recovery/UI remain pending.
+Manual handoff waits for all issues. #435 native2/4/8 startup baseline passes.
+**V5.11 complete/accepted:** #429-433/#580-582/#586; HISTORY. Pending queue empty.
 **V5.10 accepted:** #425-428/PR570-573, CA425-01..CA428-01; HISTORY.
 Siege stalls persist. Keep-awake released.
 
