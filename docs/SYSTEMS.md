@@ -1,6 +1,31 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.12.2** - 2026-10-30.
+Documentation version: **5.12.3** - 2026-10-31.
+
+## Cooperative death and recovery (5.12.3, #437, in progress)
+
+A dead native cooperative player keeps the same pawn and personal record.
+Pressing Use or forced-respawn flags cannot create a replacement pawn. Native
+death camera presentation is retained; the existing explicit Redemption path
+can restore the same body with its established requirements and resource rules.
+Death and disconnection cancel pending travel/time consent immediately, through
+bounded native-player references. Survivors may continue only when the engine
+keeps the native session alive; uninterrupted arbitrator migration is not promised.
+The coordinated recovery launcher must send the native ca_session_recover event
+from player0 after loading a common checkpoint to invalidate old-session consent.
+That event does not move items, revive bodies or assign new identities.
+
+Author decisions on 2026-10-31, pending full implementation: activating The Fool
+replaces its flight power with unanimous travel to the mansion. Charge the
+initiator the existing 1,000 Anima and 600-second cooldown only after unanimity;
+refusal costs nothing. Palomo offers unanimous return to the original location,
+without another charge or automatic resurrection. A dead player controls a
+spiritual form only inside the mansion, able to move and converse but not to
+pick up, manufacture or transfer material items; the corpse and inventory remain
+in the campaign. If every player is dead, one may exceptionally initiate The
+Fool from the interface, paying the same Anima/cooldown; this does not authorize
+other world actions while dead. Native map/body/return integration is unfinished.
+
 
 ## Shared clock and unanimous time (5.12.2, #436)
 

@@ -1,6 +1,30 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.12.2** - 2026-10-30.
+Documentation version: **5.12.3** - 2026-10-31.
+
+## 5.12.3 - Cooperative lifecycle guards (#437, 2026-10-31, in progress)
+
+Author decisions: dead players wait without world actions, but can vote; native
+Use must not respawn a replacement. Shared consent cancels at death/departure.
+Existing Redemption may still restore the same corpse. The author separately
+approved replacing The Fool flight with unanimous mansion travel, charging the
+existing 1,000 Anima/600-second cooldown only after consent; Palomo provides a
+free unanimous return to origin. The spirit only moves/converses in the mansion,
+without material inventory interactions. If all players die, one may initiate
+The Fool from the interface with the same payment. Those map/spirit integrations
+remain pending; native lifecycle evidence below does not claim their completion.
+
+Native verification: eight actual peers pass 11 death/consent checks each and
+six common-save recovery/resurrection checks each. Four-peer remote departure
+and two-peer arbitrator departure pass, including original-roster restarts and
+the native recovery event: 188 assertions, clean exits. After correcting diagnostic release labels, the
+exact delivery package passed 22 more two-peer assertions (210 total); all six
+changed packaged members match the staged index byte-for-byte. Package hashes,
+commands and full logs (including corrected fixture failures) are preserved in
+assets/validation_v5_12_3/lifecycle-results.json and lifecycle-logs.json.gz.
+This does not establish general host migration or repair the earlier #436 engine
+crash. Static validator passes; author confirmation remains pending.
+
 
 #436 package follow-up: CRLF/LF normalization changes no logic. The rebuilt
 final package matches all changed source members exactly; native eight-peer

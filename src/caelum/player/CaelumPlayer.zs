@@ -5892,6 +5892,15 @@ class CaelumPlayer : DoomPlayer
 
     // Defensa final para muertes solicitadas directamente por scripts; no
     // resucitar cadáveres cargados ni crear un nuevo perfil o cuerpo.
+    override void DeathThink()
+    {
+        Super.DeathThink();
+        // Conserva la cámara y presentación nativas de muerte, pero no el
+        // respawn por Usar ni por flags de deathmatch. Redención sigue usando
+        // su restauración explícita del mismo cuerpo y sus requisitos.
+        if(multiplayer && player!=null && health<=0)player.playerstate=PST_DEAD;
+    }
+
     override void Die(Actor source, Actor inflictor, int dmgflags, Name MeansOfDeath)
     {
         CaelumAltitudeService.StopClock(self);

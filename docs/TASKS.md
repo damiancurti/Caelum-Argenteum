@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.12.2** - 2026-10-30.
+Documentation version: **5.12.3** - 2026-10-31.
+
+## V5.12 lifecycle work - #437 / 5.12.3
+
+Implemented: preserve the dead native body instead of Use-to-respawn; cancel
+travel/time consent on death/departure; native common-recovery consent reset.
+Remaining: The Fool replaces flight with consented mansion travel; spirit-only
+movement/conversation; Palomo return to origin; complete departure/restart/map
+and companion-slot evidence. Author-approved all-dead exception allows a dead
+character to initiate The Fool with its ordinary Anima/cooldown. No auto-revival.
+Keep this PR separate from #436 and defer combined author checks until ready.
+
 
 ## V5.12 work in progress - #436 / 5.12.2
 
