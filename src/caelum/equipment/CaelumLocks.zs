@@ -86,7 +86,7 @@ class CaelumLockRules : Object play
             Random[CaelumLawfulIdentity](0,2147483647),Random[CaelumLawfulIdentity](0,2147483647),
             Random[CaelumLawfulIdentity](0,2147483647),Random[CaelumLawfulIdentity](0,2147483647));
     }
-    static bool SameTitle(CaelumLawfulIdentity a,CaelumLawfulIdentity b)
+    static clearscope bool SameTitle(CaelumLawfulIdentity a,CaelumLawfulIdentity b)
     {return a!=null && b!=null && a.Token!="" && a.Token==b.Token;}
     static bool SamePair(CaelumLockIdentity a,CaelumLockIdentity b)
     {return a!=null && b!=null && a.Token!="" && a.Token==b.Token;}

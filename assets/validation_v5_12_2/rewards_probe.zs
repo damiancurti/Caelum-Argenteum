@@ -36,9 +36,8 @@ class CA436ClockProbe : EventHandler
         if(!CaelumWorldClockTicker.Ready(a) || !CaelumWorldClockTicker.Ready(b))return;
         if(Reloaded && Phase==9)
         {
-            bool fresh=CaelumWorldClock.Get(a).CampaignQuests==null;
             World=CaelumCooperativeQuests.Get(a);
-            Check(fresh && World!=null && World.Revision==1,"old native save adds the campaign ledger exactly once");
+            Check(World!=null && World.Revision==1,"old native save adds the campaign ledger exactly once");
             Check(CaelumCooperativeQuests.Get(b)==World,"legacy migration publishes one object to every peer");
             Check(CaelumCooperativeQuests.CanClaim(a,0) && !CaelumCooperativeQuests.CanClaim(b,0),"legacy eligibility preserves earned reward without widening the roster");
             Check(b.GetPersistentCharacterState(false).GetPrisonerRescueState(0)==CaelumConstants.PRISONER_STATE_FOLLOWING,"legacy pending personal progress is not overwritten");

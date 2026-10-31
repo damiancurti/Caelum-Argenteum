@@ -207,7 +207,11 @@ class CaelumWorldClockTicker : StaticEventHandler
         if (!CaelumPlayerAuthority.CanMutate(user) || !user.CharacterCreationComplete
             || user.CreationWizardOpen) return false;
         let record=user.GetPersistentCharacterState(false);
-        return record!=null && record.ProfileCommitted;
+        if(record==null || !record.ProfileCommitted)return false;
+        // La identidad legal existente es estable al exportar/reimportar el
+        // perfil. Su creación es idempotente y sólo toca a este participante.
+        if(record.LawfulIdentity==null)CaelumLockRules.Character(user,true);
+        return true;
     }
 
     static CaelumPlayer CampaignOwner()
@@ -268,6 +272,9 @@ class CaelumWorldClockTicker : StaticEventHandler
         if (user == null) return;
         let clock = CaelumWorldClock.Get(user, true);
         if (clock == null) return;
+        // También una campaña individual conserva sus objetivos en el mundo,
+        // antes de que un perfil pueda trasladarse a una campaña diferente.
+        if(clock.CampaignQuests==null)CaelumCooperativeQuests.Get(user);
         // Inicializa también en MAP01 y al cargar una partida anterior.
         // El anclaje civil se fija antes de consumir el primer tic exterior.
         let calendar = CaelumCalendarState.Get(user, true);

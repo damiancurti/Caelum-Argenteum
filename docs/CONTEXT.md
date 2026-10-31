@@ -2,8 +2,8 @@
 
 Documentation version: **5.12.4** - 2026-10-31.
 
-**V5.12 in progress:** #436/PR592 clock/travel/tutorial/rescue/shared-house rules;
-#437 native death/consent, Fool journey, spirit dialogue/deferred rewards.
+**V5.12 in progress:** #436/PR592 clock/travel/tutorial/rescue/house/tent/portable-eligibility rules;
+#437 native death/consent/legacy bridge, Fool journey, spirit dialogue/deferred rewards.
 #438 arenas/native recovery verified; #434/#435/#590 integration unfinished. No author acceptance; combined manual suite after completion.
 **V5.11/V5.10 accepted/merged:** HISTORY; no pending checks. Siege stalls persist.
 
