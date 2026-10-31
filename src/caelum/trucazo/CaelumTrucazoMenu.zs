@@ -259,7 +259,7 @@ class CaelumTrucazoMenu : ListMenu
     {
         let match=Match();if(match==null)return;
         Screen.Dim(0x080E12,1,0,0,Screen.GetWidth(),Screen.GetHeight());
-        Text(22,18,L("CA_TC_TITLE"),Font.CR_GOLD);
+        Text(22,18,L(match.Duel!=null?"CA_CARD_TRUCAZO":"CA_TC_TITLE"),Font.CR_GOLD);
         Text(22,40,L(match.Duel!=null?"CA_CARD_PVP":"CA_TC_PRACTICE"),Font.CR_GRAY);
         Wrap(22,62,750,Status(match),Font.CR_YELLOW);
         Choices();
@@ -278,12 +278,12 @@ class CaelumTrucazoMenu : ListMenu
             Text(22,118,String.Format(L("CA_TC_HAND_INFO"),match.HandNumber,match.Trick+1,Person(match.Mano),int(match.Deck.Size())-match.Drawn),Font.CR_GRAY);
             // Sólo el número de cartas rivales se usa; ni índice ni frente.
             for(int i=0;i<other.Remaining();i++)Card(-1,22+i*68,145,60,86);
-            Text(370,153,String.Format(L("CA_TC_TRICKS"),own.Tricks,other.Tricks));
+            Text(370,153,String.Format(L(match.Duel!=null?"CA_CARD_TRICKS":"CA_TC_TRICKS"),own.Tricks,other.Tricks));
             Text(370,175,String.Format(L("CA_TC_STAKES"),match.TrucoValue));
             if(match.EnvidoSettled)
             {
                 Text(370,197,String.Format(L("CA_TC_ENVIDO_AWARD"),Person(match.EnvidoWinner),match.EnvidoAward));
-                if(match.EnvidoRevealed)Text(370,219,String.Format(L("CA_TC_ENVIDO_VALUES"),own.EnvidoValue(),other.EnvidoValue()));
+                if(match.EnvidoRevealed)Text(370,219,String.Format(L(match.Duel!=null?"CA_CARD_ENVIDO_VALUES":"CA_TC_ENVIDO_VALUES"),own.EnvidoValue(),other.EnvidoValue()));
             }
             Text(22,234,L("CA_TC_TABLE"),Font.CR_GRAY);
             for(int side=0;side<2;side++)

@@ -3,7 +3,7 @@
 Documentation version: **5.12.5** - 2026-10-30.
 
 **V5.12 in progress:** #436/PR592 shared clock/rest, unanimous time/walking/house
-travel/transport; #590 card integration ongoing. Rewards and #434/#435/#437/#438
+travel/transport; #590 native cards, common-save recovery/UI verified. Rewards and #434/#435/#437/#438
 integration remain unfinished. No author acceptance; combined manual suite after completion.
 **V5.11/V5.10 accepted/merged:** HISTORY; no pending checks. Siege stalls persist.
 

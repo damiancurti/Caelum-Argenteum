@@ -16,12 +16,25 @@ A full builder package then passed33 checks on each of four native peers,
 including different-table rejection and suspended-session handling.
 The final rebuilt runtime (no source overlay) repeats33 PASS on all four peers;
 all15 changed/new packaged source members match the working tree exactly.
-Fixture code sets temporary seat state for rule tests; normal sitting is still
-blocked pending #436. These tests do not establish visual private hands,
-end-to-end native UI authority or active-match recovery. Engine error attempts
+Those early rule tests used fixture seat state; the integration follow-up below
+uses ordinary #436 sitting and the production network event path. Engine error attempts
 are retained locally; final compiler corrections rename case-insensitive enum
 collisions and remove a shadowing game argument. Original campaign files stay
 untouched. No author check has been requested or accepted for this slice.
+
+Integration follow-up: portable dining chairs now record their seat index, with
+a bounded twelve-chair reference fallback for older saves. PvP labels identify
+the human opponent rather than Argento/ranking. Final package SHA-256:
+`ad2bf1901110d4a33e31b72a64cecc5309720556a26eeebd856ec27fd16c0edb`.
+Both games pass fifteen integration checks per native peer and nine common-save
+restart checks per peer. Two additional UI review runs pass fifteen per peer;
+the agent activated each window and checked different private hands, opponent
+card backs and keyboard play. Argento passes twelve single-player checks.
+Evidence: `assets/validation_v5_12_5/integration-results.json`. Failed probes
+are retained: the first restart fixture attempted a card at a result phase;
+the first NPC fixture started before deferred PostBeginPlay populated Patience.
+Corrected fixtures pass without changing game rules. Abrupt disconnect recovery
+remains a #437 integration obligation; native save restart is not hot joining.
 
 
 #436 package follow-up: CRLF/LF normalization changes no logic. The rebuilt

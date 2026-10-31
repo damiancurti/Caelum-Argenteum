@@ -9,12 +9,12 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 **Current release: 5.12.5.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-**V5.12 work in progress ? #590 table-card PvP:** human 1v1 match/lobby logic
-reuses Truco and Trucazo, requires two occupied seats belonging to the same
-table, and preserves ordinary inventory/world health. This branch is not a
-completed V5.12 delivery: native seating/shared time are integrated from #436; recovery
-and full interface validation remain under #435-437/#590. Native isolated rule checks pass; author handoff waits
-for the combined release, as requested. No asset redesign or new balance.
+**V5.12 work in progress - #590 table-card PvP:** human Truco and Trucazo
+use actual seats at the same table and preserve inventory/world health. Native
+two-player invitations, play, active-hand common-save restart and stand-up
+forfeit pass; agent UI review confirms private hands in both games. Argento
+regression passes. Full lifecycle/profile/quest/arena integration remains open;
+author handoff waits for the combined release. No asset redesign or new balance.
 
 The #436 dependency adds native sitting, a shared clock, unanimous time/travel
 and personal transport fares. Quest/profile/lifecycle integration remains open.

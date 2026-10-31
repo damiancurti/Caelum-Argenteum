@@ -9,12 +9,13 @@ shared match references, sender-side actions, duplicate/stale rejection, human
 Trucazo attribute snapshots, local private-hand projection, stand-up defeat and
 independent result closure. Native isolated two/four-client rules pass.
 
+Verified integration: actual #436 seats/shared clock, production network
+invitations/actions, native active-hand common restart for both games, agent
+keyboard/private-hand UI review and single-player Argento regression. Portable
+seat indexing is corrected, with a bounded legacy-reference fallback.
+
 Outstanding before author handoff:
-- Validate actual #436 seats/shared calendar with the human card session.
-- Exercise invitations/actions through real UI input, private hands, rejection,
-  and continued activity of other players; do not count fixture seating as this.
-- Active match native save/common restart and disconnect lifecycle under #437.
-- Preserve single-player Argento behavior and validate final integrated build.
+- Integrate abrupt disconnect lifecycle/recovery under #437.
 - Complete #434-438 separately, then provide the combined manual terminal.
 
 No new author test is ready yet; do not populate pending_test.txt with backlog.

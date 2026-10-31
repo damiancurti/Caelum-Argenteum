@@ -103,8 +103,8 @@ class CaelumCardTableMenu : ListMenu
         let duel=link.Duel;
         if(duel!=null)
         {
-            CaelumTrucoMenu.Text(22,130,L(duel.Game==CaelumCardDuel.GAME_TRUCO?"CA_TT_TITLE":"CA_TC_TITLE"),Font.CR_GOLD);
-            if(duel.Game==CaelumCardDuel.GAME_TRUCO)CaelumTrucoMenu.Text(22,154,L(duel.Flor?"CA_TT_WITH_FLOR":"CA_TT_WITHOUT_FLOR"));
+            CaelumTrucoMenu.Text(22,130,L(duel.Game==CaelumCardDuel.GAME_TRUCO?"CA_CARD_TRUCO":"CA_CARD_TRUCAZO"),Font.CR_GOLD);
+            if(duel.Game==CaelumCardDuel.GAME_TRUCO)CaelumTrucoMenu.Text(22,154,L(duel.Flor?"CA_CARD_WITH_FLOR":"CA_CARD_WITHOUT_FLOR"));
             CaelumTrucoMenu.Text(22,180,String.Format(L("CA_CARD_ACCEPTED"),int((duel.Accepted&1)!=0)+int((duel.Accepted&2)!=0)));
         }
         Choices();

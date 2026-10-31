@@ -19,7 +19,8 @@ sessions so old invitations cannot reopen a newer match. Opponent hands remain
 hidden in ordinary UI; native lockstep replicates simulation state, so this is
 not a cryptographic anti-cheat boundary. No routine global actor scan is added:
 seat identity uses direct references; the participant picker is bounded by
-MAXPLAYERS.
+MAXPLAYERS. Portable chairs record their table seat index; older chairs lacking
+that index resolve against the table's at most twelve existing chair references.
 
 Truco keeps 30 points and its accepted optional Flor rules. Trucazo snapshots
 each participant's own Patience/Intelligence/awakened minors and only changes
@@ -33,10 +34,12 @@ common-save coordinated restart contract of #437. Each participant closes their
 own result view independently. New session/link fields are additive; older
 matches have no human-session reference and retain the existing NPC path.
 
-Status: isolated rules/ownership tests initially used fixture seats. The #436
-ordinary sitting/shared clock dependency is now integrated for native validation;
-shared-calendar progression, native active-match save/restart and visual private
-hand checks remain outstanding. These are not author-accepted multiplayer games.
+Status: #436 ordinary sitting/shared time is integrated. Native two-peer tests
+pass invitations/actions, actual occupancy, continued shared time, active-hand
+common-save restart and stand-up defeat for both games. Agent UI review checked
+both private hands and keyboard play; single-player Argento regression passes.
+Abrupt disconnect/session recovery integration remains under #437. No author
+acceptance is claimed.
 
 
 ## Shared clock and unanimous time (5.12.2, #436)

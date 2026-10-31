@@ -8,10 +8,10 @@ V5.12 gains a separate focused issue for 1v1 Truco/Trucazo at the same occupied
 table, by mutual consent, with one deck supplied by either player. The author
 approved stand-up forfeit, active world and common-save recovery for disconnect.
 The existing rules are reused. #443-446 retain their later mechanics/services.
-Native multi-client rule checks are evidence of this slice, not completion of
-#434-438 or the playable integrated card experience. Normal shared seating and
-world clock are now integrated from #436. The author requested the manual terminal
-only after the entire version is ready.
+Normal seating/shared time from #436, native two-peer invitations/actions,
+active-hand common-save restart, private-hand UI review and Argento regression
+now pass. This does not complete #434-438 or establish author acceptance. The
+author requested the manual terminal only after the entire version is ready.
 
 
 ## 5.12.2 - Cooperative clock/rest and time consent (#436, in progress)

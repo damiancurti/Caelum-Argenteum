@@ -29,7 +29,11 @@ class CaelumCardSeat : Inventory
         if(chair==null || chair.Occupant!=user || chair.DiningTable==null)return null;
         let table=chair.DiningTable;
         int seat=chair.DiningSeat;
-        return seat>=0 && seat<table.SeatCount() && table.Chairs[seat]==chair?table:null;
+        if(seat>=0 && seat<table.SeatCount() && table.Chairs[seat]==chair)return table;
+        // Las mesas transportables anteriores no guardaban el índice de plaza.
+        // Validar sus referencias reales conserva esos saves sin crear sillas.
+        for(int i=0;i<table.SeatCount();i++)if(table.Chairs[i]==chair)return table;
+        return null;
     }
     // Usar sentado abre la interacción con las otras plazas de esa mesa.
     static bool Interact(CaelumPlayer user)
