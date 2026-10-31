@@ -4,6 +4,18 @@ Documentation version: **5.12.6** - 2026-10-31.
 
 ## 5.12.6 - Typed personal profile graph foundation (#434, 2026-10-31)
 
+Recovery follow-up: registration invokes the existing #438 copy-only native
+team-damage migration, including inactive saved levels, while retaining the
+original anchor byte-for-byte. Closed coordinators can be backed up and recovered
+to a new path, restoring every campaign head and profile assignment together.
+Active reservations, corrupt/future databases, damaged anchors and overwrites
+are refused. Recovery does not authorize running two writable coordinator copies.
+Eighteen transaction checks pass. Actual MAP03 native peers also verify death
+and staged deceased-profile transfer (8 seed +16 transfer assertions): no
+resurrection, material duplication or change to the other participant. Evidence:
+recovery-results.json/recovery-logs.json.gz. The native runner now distinguishes
+packaged campaign geometry from isolated fixtures; both retain originals.
+
 Native conversation preflight follow-up: GZDoom4.14.2 serializes the speaker as
 `conversionnpc` (its actual spelling), with `flags5 & 0x20000000` indicating an
 active conversation. Transfer now rejects that active state but accepts a stale

@@ -14,8 +14,9 @@ from pathlib import Path
 import uuid
 import zipfile
 
-from caelum_profiles import ProfileError, ProfileStore, validate_anchor
+from caelum_profiles import ProfileError, ProfileStore, validate_anchor, recover_backup
 from caelum_profile_graph import NativeSchema, PersonalGraph
+from migrate_arena_save import migrate as migrate_arena_rules
 
 
 def unpack(data: bytes) -> tuple[dict[str, bytes], str, dict]:
@@ -80,11 +81,16 @@ class Campaigns:
     def register(self, campaign: str, data: bytes) -> dict:
         """Register an existing world once, stamping stable IDs on its records."""
         self.store._key(campaign, 'campaign identity')
+        original_data = data
+        try:
+            data = migrate_arena_rules(data)
+        except (ValueError, KeyError, zipfile.BadZipFile) as exc:
+            raise ProfileError(f'Cannot migrate the native checkpoint: {exc}') from exc
         members, name, level = unpack(data)
         with self.store.transaction():
             if self.db.execute('SELECT 1 FROM campaigns WHERE identity=?', (campaign,)).fetchone():
                 raise ProfileError('Campaign already registered; use its current checkpoint.')
-            original = self.store._snapshot(data, 0)
+            original = self.store._snapshot(original_data, 0)
             self.db.execute('INSERT INTO campaigns VALUES (?,0,?)', (campaign, original))
             enrolled = []
             for slot, player in enumerate(level['players']):
@@ -271,6 +277,8 @@ def main() -> None:
     parser.add_argument('--runtime', type=Path, required=True)
     sub = parser.add_subparsers(dest='command', required=True)
     sub.add_parser('create')
+    backup = sub.add_parser('backup'); backup.add_argument('output', type=Path)
+    recover = sub.add_parser('recover'); recover.add_argument('backup', type=Path)
     register = sub.add_parser('register'); register.add_argument('campaign'); register.add_argument('save', type=Path)
     sub.add_parser('list')
     export = sub.add_parser('export'); export.add_argument('campaign'); export.add_argument('output', type=Path)
@@ -280,10 +288,15 @@ def main() -> None:
     cancel = sub.add_parser('cancel'); cancel.add_argument('token')
     check = sub.add_parser('checkpoint'); check.add_argument('campaign'); check.add_argument('revision', type=int); check.add_argument('save', type=Path)
     args = parser.parse_args()
+    if args.command == 'recover':
+        recover_backup(args.backup,args.store)
+        print(json.dumps({'recovered':str(args.store),'source_retained':str(args.backup)},indent=2))
+        return
     store = ProfileStore(args.store, create=args.command == 'create')
     try:
         campaigns = Campaigns(store, PersonalGraph(NativeSchema(args.engine_package, args.runtime)))
         if args.command == 'create': result = {'created': str(store.path)}
+        elif args.command == 'backup': store.backup(args.output); result = {'backup':str(args.output)}
         elif args.command == 'register': result = campaigns.register(args.campaign, args.save.read_bytes())
         elif args.command == 'list': result = {'campaigns': [dict(r) for r in store.connection.execute('SELECT * FROM campaigns')],
                                                'profiles': [dict(r) for r in store.connection.execute('SELECT identity,name,campaign,revision,player FROM profiles')]}

@@ -9,8 +9,10 @@ heads. Transfers reserve both worlds, retire source material ownership and publi
 both engine-verified results in one transaction. Two native peers verify outward
 and return transfers, preserving other participants and campaign property/stock.
 Narrative saves follow committed personal changes and retain pending work while
-busy. The session launcher, broader migration/recovery and remaining multiplayer
-integration are still unfinished. No author acceptance or release completion.
+busy. Whole-coordinator backup/recovery and deceased-profile transfer in actual
+MAP03 pass, preserving original anchors and single custody without resurrection.
+Hub/portable-quest boundaries and final session integration remain unfinished.
+No author acceptance or release completion.
 
 ## 5.12.5 - Human card-table PvP preparation (#590)
 

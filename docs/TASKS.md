@@ -11,10 +11,11 @@ reward/choice saves survive reload without another reward or automatic save.
 
 Still required before delivery:
 - Integrate profile commands with #435 session identities, package preflight and recovery.
-- Expand native coverage to campaign geometry, deceased profiles and migration sources.
+- Actual MAP03/deceased transfer and native migration/backup integration pass;
+  complete hub and personal/world quest-boundary coverage.
 - Active-conversation native preflight is verified; complete broader profile root coverage.
 - Complete remaining #436 two-player rest/portable-progress integration.
-- Resolve the legacy #437 per-level-handler registration before old-session recovery.
+- The #437 legacy registration bridge is integrated and verified.
 - Finish combined validation before creating the author terminal and pending checks.
 
 ## V5.12 in progress - #590 seated 1v1 cards (5.12.5)

@@ -110,6 +110,15 @@ class ProfileStore:
     def close(self) -> None:
         self.connection.close()
 
+    def backup(self, path: Path) -> None:
+        """Export one consistent closed coordinator; never replace a file."""
+        # BEGIN IMMEDIATE blocks concurrent custody writers while the readonly
+        # connection takes its SQLite snapshot. No gameplay polling is added.
+        with self.transaction():
+            if self.connection.execute('SELECT 1 FROM campaign_locks LIMIT 1').fetchone():
+                raise ProfileError('Close sessions and finish/cancel transfers before backup.')
+            recover_backup(self.path, path)
+
     def _upgrade(self) -> None:
         """Copy the original store before the additive, idempotent v2 upgrade."""
         app = self.connection.execute("PRAGMA application_id").fetchone()[0]
@@ -252,3 +261,36 @@ class ProfileStore:
             stream.flush()
             import os
             os.fsync(stream.fileno())
+
+
+def recover_backup(source: Path, destination: Path) -> None:
+    """Recover a whole coordinator to a new path, retaining the original backup.
+
+    Use the restored coordinator in place of the lost one, never alongside an
+    older writable copy. All campaign heads roll back together, not one profile.
+    """
+    source=Path(source).resolve(strict=True);destination=Path(destination).resolve()
+    connection=sqlite3.connect(source.as_uri()+'?mode=ro',uri=True,isolation_level=None,timeout=10)
+    try:
+        connection.execute('BEGIN')
+        if (connection.execute('PRAGMA application_id').fetchone()[0]!=APPLICATION_ID
+                or connection.execute('PRAGMA user_version').fetchone()[0] not in (1,SCHEMA_VERSION)
+                or connection.execute('PRAGMA quick_check').fetchone()[0]!='ok'
+                or connection.execute('PRAGMA foreign_key_check').fetchone() is not None):
+            raise ProfileError('Unsupported or corrupt backup; original retained.')
+        tables={r[0] for r in connection.execute("SELECT name FROM sqlite_master WHERE type='table'")}
+        if 'campaign_locks' in tables and connection.execute('SELECT 1 FROM campaign_locks LIMIT 1').fetchone():
+            raise ProfileError('Backup has unfinished session/transfer reservations; recover its original workflow first.')
+        for digest,data in connection.execute('SELECT digest,native FROM snapshots'):
+            if hashlib.sha256(data).hexdigest()!=digest:
+                raise ProfileError('Corrupt recovery anchor in backup; nothing was replaced.')
+            validate_anchor(data,0)
+        with destination.open('xb'):
+            pass
+        target=sqlite3.connect(destination)
+        try:connection.backup(target)
+        finally:target.close()
+    except sqlite3.DatabaseError as exc:
+        raise ProfileError('Cannot read the backup; original retained.') from exc
+    finally:
+        connection.close()

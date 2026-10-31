@@ -23,6 +23,8 @@ def main():
     parser.add_argument('--probe', type=Path, help='Alternate focused native assertions')
     parser.add_argument('--checks', type=int, help='Exact expected assertion count per peer')
     parser.add_argument('--report', type=Path, help='Write the complete run report to this new file')
+    parser.add_argument('--campaign', action='store_true', help='Use packaged campaign geometry instead of the disposable room')
+    parser.add_argument('--map', default='MAP03', help='Initial native map; ignored when reloading')
     args = parser.parse_args()
     spec = importlib.util.spec_from_file_location('card_fixture', ROOT/'assets/validation_v5_12_5/run_card_probe.py')
     fixture = importlib.util.module_from_spec(spec); spec.loader.exec_module(fixture)
@@ -32,7 +34,7 @@ def main():
     # Reuse the accepted disposable two-start UDMF geometry, not its card probe.
     geometry = out/'geometry.pk3'; fixture.fixture(geometry, 2)
     with zipfile.ZipFile(geometry) as old, zipfile.ZipFile(out/'checks.pk3','w') as archive:
-        archive.writestr('maps/MAP03.wad', old.read('maps/MAP03.wad'))
+        if not args.campaign:archive.writestr('maps/MAP03.wad', old.read('maps/MAP03.wad'))
         archive.writestr('MAPINFO', 'gameinfo { AddEventHandlers="CA434ProfileProbe" }')
         archive.writestr('ZSCRIPT', 'version "4.14.2"\n#include "probe.zs"\n')
         archive.writestr('probe.zs', (args.probe or Path(__file__).parent/'profile_probe.zs').read_bytes())
@@ -45,7 +47,7 @@ def main():
         # install refuses to overwrite a committed unrelated character.
         target_record = next(o for o in level['objects'] if o['classtype']=='CaelumPersistentCharacterState'
                              and o['class:Inventory']['Owner']==level['players'][1]['mo'])
-        target_record['class:CaelumPersistentCharacterState']['ProfileCommitted']=False
+        target_record['class:CaelumPersistentCharacterState']['ProfileCommitted']=0
         installed = adapter.install(level, graph, 1, 'profile-native-fixture', 0)
         members[info['Current Map'].lower()+'.map.json']=json.dumps(installed,separators=(',',':')).encode()
         with zipfile.ZipFile(out/'imported.zds','w',compression=zipfile.ZIP_DEFLATED) as archive:
@@ -63,7 +65,7 @@ def main():
             network=['-host','2','-port',str(args.port),'-netmode','0'] if index==0 else ['-join',f'127.0.0.1:{args.port}','-port',str(args.port+1)]
             if args.source or args.reload:
                 with (peer/'recovery.zds').open('xb') as copied:copied.write((out/'imported.zds').read_bytes())
-            entry=['-loadgame','recovery.zds'] if args.source or args.reload else ['+map','MAP03']
+            entry=['-loadgame','recovery.zds'] if args.source or args.reload else ['+map',args.map]
             cmd=[str(fixture.ENGINE),'-noautoload','-iwad',str(fixture.IWAD),'-file',str(runtime),str(out/'checks.pk3'),
                  '-config',str(peer/'isolated.ini'),'-savedir',str(peer),'-window','-width','640','-height','480','-rngseed','434',
                  *network,'+logfile',str(peer/'engine.log'),*entry,'+exec',str(peer/'test.cfg')]
@@ -87,7 +89,7 @@ def main():
         passed=process.returncode==0 and not errors and text.count('CA434 PASS')==expected and text.count('CA434 RESULT')==1
         reports.append(dict(peer=index,exit=process.returncode,passed=passed,checks=checks,errors=errors))
     result=dict(issue=434,directory=str(out),stage='isolated native profile assertions',runtime_sha256=fixture.digest(runtime),
-                commands=commands,source=str(args.source),reload=str(args.reload),probe=str(args.probe),peers=reports,passed=all(r['passed'] for r in reports))
+                commands=commands,source=str(args.source),reload=str(args.reload),probe=str(args.probe),campaign=args.campaign,initial_map=args.map,peers=reports,passed=all(r['passed'] for r in reports))
     (out/'results.json').write_text(json.dumps(result,indent=2),encoding='utf-8')
     if args.report:
         with args.report.open('x',encoding='utf-8') as stream:json.dump(result,stream,indent=2)

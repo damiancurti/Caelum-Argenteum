@@ -35,6 +35,15 @@ Active crafting/rest/card/travel operations must finish or be cancelled for tran
 ordinary native checkpoints may retain crafting. Source retirement performs one
 offline pass over the saved object table; gameplay uses no global actor scan.
 
+Registering older native checkpoints applies the existing #438 team-damage
+copy migration to every saved level before stamping identities; the exact original
+remains an immutable anchor. `caelum_campaigns.py backup OUTPUT` exports a
+consistent closed coordinator. `--store NEW_PATH recover BACKUP` restores all
+campaign/profile custody together to a new path. Never run that restored copy
+alongside an older writable coordinator. Both operations validate SQLite schema,
+references and native anchor hashes; pending reservations and overwrites are
+refused. Missing/corrupt data is never silently replaced by an empty profile.
+
 NarrativeCheckpoint revision1 observes the personal record at the end of
 PersistCharacterState: completed quests, reward receipts, starter/equipment choices,
 trial completion, secret passage/exit confirmation and membership epochs. Older
