@@ -86,7 +86,7 @@ class CaelumTrucoMenu : ListMenu
     {
         Operations.Clear();Labels.Clear();
         let match=Match();if(match==null)return;
-        if(match.Duel!=null && match.Duel.Suspended){Add(CaelumTrucoRules.CLOSE,L("CA_TC_CLOSE"));return;}
+        if(match.Duel!=null && match.Duel.Suspended){Add(CaelumTrucoRules.CLOSE,L(match.Duel!=null?"CA_CARD_CLOSE":"CA_TC_CLOSE"));return;}
         if(ConfirmForfeit)
         {Add(CaelumTrucoRules.FORFEIT,L("CA_TC_CONFIRM"));Add(-4,L("CA_TC_RETURN"));return;}
         if(Details>0){Add(-1,L("CA_TC_RETURN"));return;}
@@ -108,7 +108,7 @@ class CaelumTrucoMenu : ListMenu
         Add(-1,L("CA_TC_RULES"));
         if(match.Duel==null){Add(-5,L("CA_TC_SAVE"));Add(-6,L("CA_TC_LOAD"));}
         if(match.Active())Add(-3,L("CA_TC_FORFEIT"));
-        else Add(CaelumTrucoRules.CLOSE,L("CA_TC_CLOSE"));
+        else Add(CaelumTrucoRules.CLOSE,L(match.Duel!=null?"CA_CARD_CLOSE":"CA_TC_CLOSE"));
         Focus=Clamp(Focus,0,Max(0,int(Operations.Size())-1));
     }
     override void Ticker()

@@ -1,10 +1,12 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.12.6** - 2026-10-31.
+Documentation version: **5.12.7** - 2026-10-31.
 
-**V5.12 in progress:** #436 world/rewards, #437 lifecycle, #438 arenas and #590
-cards verified together. #434 custody/return, hub, quest boundaries and saves pass;
-#434 vacant-world preparation added; #435 final integration remains. Author suite deferred.
+**V5.12:** #434-438/#590 implemented; six author checks pending_test.txt.
+Native camera RNG/predicted-time-barrier bugs fixed; cards/rest UI verified.
+Private timer-fixed4.14.2; installed engine untouched. CA-KP-202/203/204;
+validation_v5_12_7/handoff-results.json. Original failed runs retained.
+Siege remains1.33-6.48FPS/sharedGPU; no Internet/author acceptance claim.
 
 **V5.11/V5.10 accepted/merged:** HISTORY; no pending checks. Siege stalls persist.
 

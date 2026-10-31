@@ -405,3 +405,6 @@
 /src/caelum/data/CaelumArenaData.zs text eol=lf
 
 /src/caelum/data/CaelumContaminationData.zs text eol=lf
+
+# Unified patch context includes a leading space before tabs and blank lines.
+/assets/validation_v5_12_7/engine_timer.patch text eol=lf whitespace=-blank-at-eol,-space-before-tab

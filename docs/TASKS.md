@@ -1,6 +1,146 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.12.6** - 2026-10-31.
+Documentation version: **5.12.7** - 2026-10-31.
+
+## V5.12 implementation ready for author review - 2026-10-31
+
+#434-438 and #590 now have focused implementations and native integration evidence.
+The six author checks in pending_test.txt are outstanding; no issue closure, merge
+or author acceptance is inferred. Earlier checkpoint sections below retain their
+original evidence; their unfinished integration notes are superseded here.
+
+Final #435 corrections keep the local travel snapshot from advancing shared RNG,
+reject native-inconsistent saves before publishing recovery/custody, and prevent
+predicted player ticks from advancing the cooperative completion barrier. The last
+bug reproduced only on the second peer: one predicted step caused an early shared
+pump and interrupted rest. The real-tick regression now passes 28 assertions over
+two clients, including refusal, exactly x105 advancement, independent rest, one
+participant cancelling, and continued rejection of genuine external clock jumps.
+Agent keyboard review also reaches 1/2 then 2/2 consent and completes the agreed
+time with both participants seated. No balance or clock scale changed.
+
+Card panels now yield correctly from seating, validate Use through a native event,
+and close separately for each participant. Actual keyboard review confirms private
+hands, forfeit confirmation and movement after closing one's result. Both native
+card games save successfully on the final package. Seven manual fixtures and a
+common saved restart pass on the preceding package; the final change only affects
+the cooperative barrier, covered by the new regression. The final rest fixture
+and its common saved restart also pass. Static validation reports zero errors
+and 16 changed/new Python sources parse successfully. Profile outward/return
+transfer and 12 checkpoint/custody checks pass with native mismatch rejection.
+
+The combined terminal uses the private upstream timer-fixed 4.14.2 candidate;
+the installed engine and original saves remain untouched. Two later native card-save
+failures are retained, including a Vulkan-related fault address and debugger trace;
+new session configurations pin windowed rendering explicitly and subsequent saves
+pass. This is bounded mitigation, not proof that every native crash is resolved.
+
+Latest synchronized two-client presentation means: mansion 60.13-60.85 FPS,
+sewers 198.64-201.02, city 111.99-113.76, ground-facing city 75.36-75.75;
+siege remains 1.33-6.48 FPS with p99 gaps 474.84-867.92 ms. These are application
+Vulkan presents on one shared GPU, not monitor scanout or Internet measurements.
+Evidence: validation_v5_12_7/handoff-results.json and handoff-logs.json.gz;
+native-sync-results.json; native-sync-presentation-results.json; CA-KP-202/203/204.
+
+## Earlier 5.12.7 integration checkpoints - #435
+
+Native consistency correction (2026-10-31): visual review exposed a native
+checksum warning omitted by earlier log-only checks. A local travel-camera spawn
+advanced shared RNG on only one peer. Multiplayer now binds the existing viewer;
+vehicle lookup uses an event-maintained typed registry, rebuilt once per map load.
+The old package reproduces the warning; fresh corrected 2/4/8-player seeds and
+combat are rechecked with the native inconsistency flag, without clearing it.
+Earlier selected-state passes remain evidence of those assertions only, not a
+native synchronization clearance. Session admission/checkpoint publication and
+native transfer verification reject saves carrying that warning while retaining
+the originals and last valid common checkpoint. Rest UI now yields to cooperative
+votes and card lobbies; seated Use sends a validated request instead of standing.
+Final evidence and author handoff are recorded below; author acceptance is pending.
+
+Actual application presentation is now measured through a child-only explicit
+Vulkan layer, after the retained ETW attempts failed. Two-client 1280x720 means:
+mansion 62.24-62.48FPS, sewers 187.77-190.60, city 97.81-98.14, ground city 72.56-72.74.
+The siege remains a serious limitation at 1.99-2.49FPS (p99 gaps 626-753ms). These
+are native QueuePresent calls on one shared GPU, not monitor scanout or a
+separate-machine/Internet benchmark. All five windows have matching sampled
+state and normal exits; no production gameplay was disabled.
+
+A private g4.14.2-ca435-timer build applies the upstream ZWidget Timer destructor
+fix, with source/tool/resource hashes and reversible build instructions. The
+installed official 4.14.2 remains untouched. A compiled original/fixed reproduction
+leaves 1/0 registered callbacks after deletion. Six copied reloads, four/eight-peer
+combat, cards and arenas pass on the candidate. This proves the source fix and
+bounded regressions, not the cause or absence of every earlier native crash.
+Evidence: native-presentation-results.json, engine-timer-results.json and CA-KP-202/203.
+Final manual-launcher verification is in progress; author acceptance stays separate.
+
+Native gameplay follow-up: 2/4/8 real clients pass concurrent last-unit city
+purchases, independent wallets, owned Quimica vessels and fuel reservations,
+duplicate start/completion rejection and one-owner cancellation (168 assertions).
+The final four-peer run uses the complete package with validated debug-event
+senders. The 2/8 runs use the prior complete package with unchanged trade/crafting
+logic. Completion is an explicit diagnostic endpoint, not accelerated time.
+Evidence: gameplay-results.json/gameplay-logs.json.gz. Native command follow-up
+also passes with 2/4/8 clients: synchronized movement, one actual melee impact
+per sender, one approved Tarot payment despite repeated input, and unchanged
+ability state for nonactivating participants. Every peer reports identical
+positions, damage attribution and cooldowns (112 assertions). Evidence:
+combat-results.json/combat-logs.json.gz. Later presentation evidence is above;
+no author acceptance or Internet-latency claim.
+
+Managed-workflow follow-up: 402 assertions pass through profile admission:
+2/4/8-client movement/combat/Tarot, an eight-client common restart, two-client
+Truco/Trucazo, arena entry/return, and The Fool's all-dead journey, spirit promises
+and explicit resurrection. Every combat peer reports identical owned results.
+Four native source/destination verifications also publish a complete outward and
+return transfer through the production identity gate. Nine transaction checks
+and menu registration/list/preparation/closure/backup pass. Evidence:
+managed-results.json, managed-logs.json.gz and launcher-results.json.
+Native vacant-world onboarding now passes: actual MAP01 creation, outward
+transfer, native dialogue cancellation/movement/save, and return to the original
+campaign. Ordinary sessions reject empty/departed slots before launch; the menu
+creates 1–8-slot worlds and can retry a reserved transfer without staging it again.
+Ten transaction checks (including injected failure/retry through the menu), actual
+menu creation/duplicate-name refusal, and 64 eight-client combat assertions pass.
+Evidence: vacancy-results.json and vacancy-logs.json.gz.
+
+A two-peer return also hit a native abort before identity readiness; the exact
+reserved drafts passed on retry, and a separate complete roundtrip passed. Both
+original campaign heads stayed protected. Dump5388 includes a pure virtual call
+through FBaseCVar::GetHumanString; that partial reconstruction does not establish
+the cause. The later source-timer fix and presentation evidence above supersede
+the measurement blocker; full stability and author acceptance are not claimed.
+
+Campaign diagnostics now include two native peers in the actual mansion,
+sewers, city, ground-facing city and calendar-triggered siege. Recorded state
+agrees and each process exits normally. Siege render-callback stalls remain;
+they are not presented-frame measurements. The 5.11 two-peer comparison stops
+the world clock and has no sampled thermal/contamination advances, so its lower
+cost is not a behavior-equivalent multiplayer baseline. New shared-clock work
+costs about 0.03–0.04 ms per sampled update; visual candidate evaluation dominates
+the measured NPC scopes. No gameplay subsystem was disabled. Detailed controls,
+excluded empty-siege attempts and full logs: campaign-results.json/campaign-logs.json.gz.
+
+The launcher pins the engine/resources, IWAD and ordered packages, exports one
+common checkpoint and reserves campaign custody in the profile database. Native
+slots must acknowledge their selected profile and a shared session nonce before
+managed characters accept input or mutations. A mismatched slot keeps the gate
+closed. This remains native peer-to-peer lockstep, not a new game server.
+
+Session writes use revision checks; closing an old token cannot replace a newer
+head. Live recorded processes block lease release. The host retains valid native
+checkpoints after roster confirmation, and incomplete/foreign saves cannot replace
+recovery. Original anchors and additive session-schema backups are preserved.
+
+Nine transaction/manifest checks pass. Final packages pass four/eight-peer
+identity, sender attribution and duplicate rejection, followed by restart from
+the same registry and checkpoint with unchanged identities. Two-peer wrong-slot
+refusal preserves the prior head. Handshake inputs are local, nonpersistent
+CVars; only the explicit validated network event communicates them. The host
+reads new log bytes incrementally. Native managed workflow passes as qualified above.
+Presentation and the source-timer follow-up are recorded above; no
+Internet-latency or author acceptance claim.
+
 
 ## V5.12 profiles - #434 / 5.12.6 in progress
 
@@ -9,15 +149,14 @@ atomic publication of both campaign heads, stale-owner refusal and narrative sav
 Two-peer outward/return checks preserve packed possessions and campaign stock/title;
 reward/choice saves survive reload without another reward or automatic save.
 
-Still required before delivery:
-- Integrate native vacant-world preparation with the #435 session menu.
-- Keep native fixed-roster admission separate from temporary transfer verification.
-- Actual MAP03/deceased transfer, native migration/backup, hub travel and
-  personal/world quest boundaries pass (120 latest native assertions).
-- Active-conversation native preflight is verified; complete broader profile root coverage.
-- #436 two-player rest and independent world-eligibility snapshots are integrated.
-- The #437 legacy registration bridge is integrated and verified.
-- Finish combined validation before creating the author terminal and pending checks.
+Integrated under #435: native vacant-world preparation, ordinary fixed-roster
+admission and separate temporary transfer verification. Actual MAP03/deceased
+transfer, native migration/backup, hub travel and personal/world quest boundaries
+pass (120 latest native assertions). Active-conversation preflight, portable graph
+checks, two-player rest and independent world eligibility are verified; the legacy
+#437 handler bridge remains included in common recovery. Outstanding: resolve or
+qualify the native instability and presentation gate above, then provide the
+combined author terminal. No author acceptance is recorded.
 
 ## V5.12 in progress - #590 seated 1v1 cards (5.12.5)
 
@@ -31,9 +170,9 @@ invitations/actions, native active-hand common restart for both games, agent
 keyboard/private-hand UI review and single-player Argento regression. Portable
 seat indexing is corrected, with a bounded legacy-reference fallback.
 
-Outstanding before author handoff:
-- Integrated #437 departure/common-save recovery passes; finish the session launcher.
-- Complete #434-438 separately, then provide the combined manual terminal.
+The #435 launcher now verifies managed cards, departure and common-save recovery.
+Author handoff waits for the final release-level gates above; no card-rule gap is
+known from the completed native and UI checks.
 
 No new author test is ready yet; do not populate pending_test.txt with backlog.
 
@@ -85,6 +224,16 @@ network authority; #437 lifecycle; #438 arenas/organizers; #590 card seating/UI
 integration. Keep focused branches/PRs; no V5.12 author acceptance yet. Prepare
 one combined manual launcher only after all required implementation is ready.
 
+
+## V5.12 preparation - #434-438 (unreleased, 2026-10-30)
+
+#435 native baseline passes 2/4/8 independent peers on one Windows machine:
+6/20/72 assertions respectively. This covers sender attribution and startup,
+not full authority, state transactions, save recovery or Internet performance.
+#434 profiles/checkpoints precede completed #435 authority; #436 clock/progress/
+travel, #437 recovery/death and #438 ring/maze modes remain focused issues.
+Approved decisions are recorded in their GitHub issue bodies. No author queue
+entry until an actionable completed scenario is ready. No issue is complete.
 
 Current author queue: empty. The author confirmed all remaining checks on
 2026-10-30 and requested merges and issue closure. HISTORY records CA430-01

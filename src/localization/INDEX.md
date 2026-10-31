@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `e570899af8b236f82bd728ec85f1f21764bdd0f04742ee3310d9b72a6bddd742`. Locations include every definition; the last one per language wins.
+SHA-256: `11bb2f4c94ac6fbeb186d50cf6a7c0b4ae55cba74b3976506fb58fb606b9a591`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -40,7 +40,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_CALENDAR | 8 | CA_CALENDAR_AUTUMN | CA_CALENDAR_WINTER |
 | CA_CAMP | 40 | CA_CAMP_COOK_CANCEL | CA_CAMP_TENT |
 | CA_CARAVAN | 18 | CA_CARAVAN_BACK | CA_CARAVAN_WORLD_HELP |
-| CA_CARD | 19 | CA_CARD_ACCEPTED | CA_CARD_WITH_FLOR |
+| CA_CARD | 20 | CA_CARD_ACCEPTED | CA_CARD_WITH_FLOR |
 | CA_CAST | 4 | CA_CAST_STATE_COMPLETED | CA_CAST_STATE_PREPARING |
 | CA_CHARACTER | 10 | CA_CHARACTER_EVASION | CA_CHARACTER_THERMAL |
 | CA_CHEMISTRY | 27 | CA_CHEMISTRY_ALCOHOL | CA_CHEMISTRY_WATER |
@@ -176,6 +176,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_RULO | 1 | CA_RULO_NAME | CA_RULO_NAME |
 | CA_SEAL | 10 | CA_SEAL_AIR | CA_SEAL_WATER |
 | CA_SERVICE | 1 | CA_SERVICE_HOSTILE | CA_SERVICE_HOSTILE |
+| CA_SESSION | 2 | CA_SESSION_IDENTITY_REJECT | CA_SESSION_IDENTITY_WAIT |
 | CA_SEWER | 9 | CA_SEWER_SUPPORT_CRAFT | CA_SEWER_WORLD_HELP |
 | CA_SEX | 2 | CA_SEX_FEMALE | CA_SEX_MALE |
 | CA_SHIELD | 4 | CA_SHIELD_TYPE_BUCKLER | CA_SHIELD_TYPE_TOWER |

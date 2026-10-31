@@ -1,9 +1,113 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.12.6** - 2026-10-31.
+Documentation version: **5.12.7** - 2026-10-31.
+
+## V5.12 final authority and UI integration - #435
+
+Only authoritative player steps count toward the shared time barrier; native
+prediction cannot mark a participant finished or pump the shared clock. Each
+virtual step advances the world once, then every living participant once. Ordinary
+external clock-jump protection remains active. Rest yields to consent/card menus;
+seated Use remains an owned network request. Each card player closes their own
+result and regains their own rest/movement UI independently.
+Native saves with an inconsistency flag cannot replace a valid common checkpoint
+or publish transferred custody. The failed save remains available for diagnosis.
+The grouped manual suite is ready; acceptance is pending in pending_test.txt.
+Earlier integration checkpoints below preserve historical test qualifications.
+
+## Earlier 5.12.7 integration checkpoints - #435
+
+Native consistency correction (2026-10-31): visual review exposed a native
+checksum warning omitted by earlier log-only checks. A local travel-camera spawn
+advanced shared RNG on only one peer. Multiplayer now binds the existing viewer;
+vehicle lookup uses an event-maintained typed registry, rebuilt once per map load.
+The old package reproduces the warning; fresh corrected 2/4/8-player seeds and
+combat are rechecked with the native inconsistency flag, without clearing it.
+Earlier selected-state passes remain evidence of those assertions only, not a
+native synchronization clearance. Session admission/checkpoint publication and
+native transfer verification reject saves carrying that warning while retaining
+the originals and last valid common checkpoint. Rest UI now yields to cooperative
+votes and card lobbies; seated Use sends a validated request instead of standing.
+Final evidence and author handoff are recorded below; author acceptance is pending.
+
+Native gameplay follow-up: 2/4/8 real clients pass concurrent last-unit city
+purchases, independent wallets, owned Quimica vessels and fuel reservations,
+duplicate start/completion rejection and one-owner cancellation (168 assertions).
+The final four-peer run uses the complete package with validated debug-event
+senders. The 2/8 runs use the prior complete package with unchanged trade/crafting
+logic. Completion is an explicit diagnostic endpoint, not accelerated time.
+Evidence: gameplay-results.json/gameplay-logs.json.gz. Native command follow-up
+also passes with 2/4/8 clients: synchronized movement, one actual melee impact
+per sender, one approved Tarot payment despite repeated input, and unchanged
+ability state for nonactivating participants. Every peer reports identical
+positions, damage attribution and cooldowns (112 assertions). Evidence:
+combat-results.json/combat-logs.json.gz. Subsequent managed integration is recorded below; frame
+presentation remains pending. No author acceptance or Internet-latency claim.
+
+Managed-workflow follow-up: 402 assertions pass through profile admission:
+2/4/8-client movement/combat/Tarot, an eight-client common restart, two-client
+Truco/Trucazo, arena entry/return, and The Fool's all-dead journey, spirit promises
+and explicit resurrection. Every combat peer reports identical owned results.
+Four native source/destination verifications also publish a complete outward and
+return transfer through the production identity gate. Nine transaction checks
+and menu registration/list/preparation/closure/backup pass. Evidence:
+managed-results.json, managed-logs.json.gz and launcher-results.json.
+Native vacant-world onboarding now passes: actual MAP01 creation, outward
+transfer, native dialogue cancellation/movement/save, and return to the original
+campaign. Ordinary sessions reject empty/departed slots before launch; the menu
+creates 1–8-slot worlds and can retry a reserved transfer without staging it again.
+Ten transaction checks (including injected failure/retry through the menu), actual
+menu creation/duplicate-name refusal, and 64 eight-client combat assertions pass.
+Evidence: vacancy-results.json and vacancy-logs.json.gz.
+
+A two-peer return also hit a native abort before identity readiness; the exact
+reserved drafts passed on retry, and a separate complete roundtrip passed. Both
+original campaign heads stayed protected. Dump5388 includes a pure virtual call
+through FBaseCVar::GetHumanString; that partial reconstruction does not establish
+the cause. Intermittent native exits, presentation measurement and final author
+handoff remain open. No full stability or rendering acceptance is claimed.
+
+The launcher pins the engine/resources, IWAD and ordered packages, exports one
+common checkpoint and reserves campaign custody in the profile database. Native
+slots must acknowledge their selected profile and a shared session nonce before
+managed characters accept input or mutations. A mismatched slot keeps the gate
+closed. This remains native peer-to-peer lockstep, not a new game server.
+
+Session writes use revision checks; closing an old token cannot replace a newer
+head. Live recorded processes block lease release. The host retains valid native
+checkpoints after roster confirmation, and incomplete/foreign saves cannot replace
+recovery. Original anchors and additive session-schema backups are preserved.
+
+Nine transaction/manifest checks pass. Final packages pass four/eight-peer
+identity, sender attribution and duplicate rejection, followed by restart from
+the same registry and checkpoint with unchanged identities. Two-peer wrong-slot
+refusal preserves the prior head. Handshake inputs are local, nonpersistent
+CVars; only the explicit validated network event communicates them. The host
+reads new log bytes incrementally. Native managed workflow passes as qualified above.
+Frame presentation and native-failure investigation remain pending; no
+Internet-latency or author acceptance claim.
+
 
 #434: transfer preflight checks the native active-conversation flag, not a stale
 speaker pointer. Ordinary saves remain allowed; no dialogue progress is discarded.
+
+The ES/EN console menu (`caelum_session_menu.py`, `run_multiplayer.bat`) uses the
+same registry/session services. Preparing reserves a closed world; joining requires
+the same ordered package hashes and one displayed slot. Close ended sessions before
+preparing recovery. Register an initialized native save or create a new empty
+campaign from menu option11. Its chosen 1–8 native slots must all receive a
+transferred character before ordinary play; the source also needs all slots
+occupied to reopen. No invisible vacant proxy participates in ordinary play.
+Menu option12 retries an existing reserved transfer; option7 cancels it. A retry
+uses the same drafts and rechecks both heads. Each attempt retains its own logs,
+commands and any observed early process exit before owned-process cleanup.
+`caelum_transfer_verify.py` runs only its own isolated local peers against copied
+source/destination drafts, checks every roster acknowledgement/import serial, then
+publishes both native checkpoints atomically. Timeout, wrong map/package or failed
+admission retains original custody and the reservation for retry/cancellation.
+A temporary static verification handler only observes state and requests a host
+save; it grants no material items and adds no map geometry. Retain required map
+addons when verifying a save that used them. Normal gameplay has no new actor scan.
 
 ## External character profile boundary (#434, 5.12.6, in progress)
 
@@ -328,6 +432,17 @@ Implementation gate: cooperative travel/reward arbitration,
 full save/restart lifecycle, portable profiles and complete V5.12 integration
 remain pending. Partial engine evidence is not author acceptance.
 
+
+## V5.12 network boundary under implementation (#435)
+
+Native GZDoom 4.14.2 peer-to-peer sessions share one active map and synchronized
+simulation. Preparatory 2/4/8-process loopback evidence verifies event source
+ownership only. Existing single-player systems are not thereby certified for
+multiplayer. The author-approved disconnection rule cancels votes and accelerated
+time; continuation is permitted only while the native session survives.
+Rejoining requires a coordinated restart from a common valid save and matching
+identities. Unexpected termination uses the latest valid save. No seamless hot
+join or independent-map capability is claimed. Implementation remains pending.
 
 ## Demon disease immunity (#586, 5.11.8)
 

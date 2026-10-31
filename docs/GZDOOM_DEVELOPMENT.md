@@ -472,3 +472,70 @@ pending_test.txt remains the only author-test queue. Only explicit confirmation 
 
 Inspected baseline: https://github.com/damiancurti/Caelum-Argenteum/commit/1dc390576fa330d37ff543526fc7e69a397fc28f
 Workflow: AGENTS.md, build_dev.ps1, run_dev.bat, validate_project.py and the source paths above at that baseline. Open issues #8–#21 describe future work, not completed behavior. Later author confirmation makes MAP02 equipment and rescue price references T1 and character-sized, superseding earlier fixed-M/tier-pending wording. Integrators must reconcile that decision in current canonical documents.
+
+## Private 4.14.2 native candidate and presentation capture (#435)
+
+The V5.12 review terminal uses a separate `g4.14.2-ca435-timer` executable;
+it does not replace the installed engine. Source and compiler archive URLs,
+SHA-256 values, resources and bounded test results are in
+`assets/validation_v5_12_7/engine-timer-results.json`. The source is the official
+[g4.14.2 archive](https://github.com/ZDoom/gzdoom/archive/refs/tags/g4.14.2.zip).
+The behavioral change is the upstream [ZWidget timer fix](https://github.com/dpjudas/zwidget/commit/28b54d2b37e51e2af83117137c09a1c565528d66).
+`engine_timer.patch` also adds the missing tchar header and MinGW dxguid/dwmapi
+link libraries, leaving the MSVC branch intact. The UCRT build attempt failed
+against vendored VPX; the working candidate uses MinGW14.2 MSVCRT, not UCRT.
+
+To reproduce in a new local build directory, apply that patch to the extracted
+release. Use CMake3.31.10 with the recorded MSVCRT compiler on the private shell's
+PATH, `-G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release`, and these source-relative
+cache inputs: `ZMUSIC_INCLUDE_DIR=bin/windows/zmusic/include`,
+`ZMUSIC_LIBRARIES=bin/windows/zmusic/64bit/zmusic.lib`,
+`VPX_INCLUDE_DIR=bin/windows/vpx/include`,
+`VPX_LIBRARIES=bin/windows/vpx/lib/64/libvpx.lib`, `DYN_OPENAL=ON`.
+Use absolute resolved paths for those inputs. After configure, label the generated
+`src/gitinfo.h` description `g4.14.2-ca435-timer`, then build with `--parallel 12`.
+Keep the executable beside private copies of the matching installed PK3/DLL
+resources and the compiler's libgcc_s_seh-1/libstdc++-6/libwinpthread-1 DLLs.
+Record every hash. Do not distribute the engine, IWAD or diagnostic fixtures as
+game assets, and never mix candidate/official builds within one native session.
+This is an isolated review candidate; universal native stability is not claimed.
+
+`build_native_diagnostics.py --source SOURCE --compiler GXX --output NEW_DIR`
+builds the small explicit Vulkan layer and the original/fixed timer reproduction.
+The reproduction counts pending callbacks without invoking freed objects. The
+layer is enabled only in selected children by `run_campaign_profile.py
+--presentation-layer DIR --engine EXE`; no registry or global environment edits.
+It records native QueuePresent, not monitor scanout. Use
+`analyze_vulkan_presents.py RUN_DIR`; missing/failed/mixed-PID or swapchain data
+are rejected. `check_vulkan_analyzer.py --output NEW_DIR` checks those guards;
+synthetic samples are never rendering evidence. See CA-KP-202/203.
+
+The combined manual terminal is `assets/validation_v5_12_7/run_author_suite.py
+--engine EXE --runtime PK3 --anchor TWO_PLAYER_SEED`. The seed must have matching
+MAP03 fixture bytes in `checks.pk3` two directories above it and must not have
+visited the replacement diagnostic mansion. The launcher preserves seeds and
+creates a private registry per scenario. Native session admission remains active.
+Do not rename participants before loading: the engine also matches native saved
+player names. Each menu option has its own issue and manual acceptance ID.
+An optional `--scene N --smoke` performs only bounded startup/status checks;
+it is not author acceptance or a substitute for interaction/save-reload review.
+
+Native checks must read `players[i].inconsistent` during the run. GZDoom saves
+that flag as `inconsistant`; it can persist without printing a console error.
+`native_sync_probe.zs` never clears it. Use fresh synchronized seeds and retain
+failed ones. `run_sync_matrix.py` contrasts the old camera path with the corrected
+package, then exercises fresh 2/4/8-player admission/combat and focused scenarios.
+Session publication and transfer verification reject a recorded native mismatch;
+they do not edit the warning away or replace the previous valid checkpoint.
+See CA-KP-204. Test launcher function keys apply outside menus; inside native
+menus use their real controls (seated Use, arrows and Enter).
+
+For shared acceleration, run `assets/validation_v5_12_7/run_cooperative_rest.py`
+with the same engine/runtime/anchor arguments. It uses native consent events and
+actual player ticks, not a direct Pump invocation; the optional --diagnose overlay
+logs prediction/clock ordering without changing production rules. Preserve failed
+runs. Managed-session defaults explicitly pin vid_fullscreen=false; a -window
+command-line hint alone did not prevent native Vulkan save failures in all runs.
+F5 in the author fixture writes a named private common checkpoint; close both
+clients and choose option 9 to reopen it. In the rest fixture, F2 seats each
+participant, then T in the rest panel opens the real consent menu.

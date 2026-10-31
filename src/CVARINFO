@@ -111,5 +111,9 @@ server bool ca_test_siege_reinforcements = false;
 // Presentación reversible del toro; desactivar antes de guardar para rollback.
 server bool ca_bull_3d = true;
 
+// Identidad local emitida por el lanzador; no concede propiedad.
+nosave noarchive string ca_session_profile = "";
+nosave noarchive int ca_session_slot = -1;
+nosave noarchive int ca_session_nonce = 0;
 // Modo de nueva partida sin personajes; nunca se guarda como regla de juego.
 nosave noarchive server bool ca_profile_bootstrap = false;

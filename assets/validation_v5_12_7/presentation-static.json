@@ -1,0 +1,8 @@
+{
+  "issue": 435,
+  "checked_utc": "2026-10-31T12:46:02.098769+00:00",
+  "exit_code": 0,
+  "stdout": "{\n  \"version\": \"5.12.7\",\n  \"documents\": 11,\n  \"audio_files\": 131,\n  \"station_models\": 14,\n  \"spanish_caella_keys\": 25,\n  \"premise_numbers\": [\n    1,\n    2,\n    3,\n    4,\n    5,\n    6,\n    7,\n    8,\n    9,\n    10,\n    11,\n    12,\n    13,\n    14,\n    15,\n    16,\n    17,\n    18,\n    19,\n    20\n  ],\n  \"context_words\": 2490,\n  \"errors\": []\n}\n",
+  "stderr": "",
+  "scope": "Final documentation and capture-tool patch; no runtime source change."
+}

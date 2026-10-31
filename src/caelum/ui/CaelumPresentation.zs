@@ -153,8 +153,8 @@ class CaelumPresentation : Object ui
         let user=CaelumPlayer(players[consoleplayer].mo);
         if(user==null || user.player==null || user.health<=0 || CaelumLiveMenu.Wanted(user)!=0)return false;
         if(user.player.ConversationNPC!=null && user.player.ConversationNPC.bInConversation)return false;
-        let truco=CaelumTrucoMatch(user.FindInventory("CaelumTrucoMatch"));
-        let trucazo=CaelumTrucazoMatch(user.FindInventory("CaelumTrucazoMatch"));
+        let truco=CaelumTrucoMatch.View(user);
+        let trucazo=CaelumTrucazoMatch.View(user);
         return !(truco!=null && truco.Visible) && !(trucazo!=null && trucazo.Visible);
     }
 }

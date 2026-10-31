@@ -11,6 +11,12 @@ class CaelumCardTableEvents : StaticEventHandler
     }
     override void NetworkProcess(ConsoleEvent e)
     {
+        if(e.Name=="ca_card_open")
+        {
+            // El emisor real y la mesa se validan en la simulación de cada par.
+            CaelumCardSeat.Interact(CaelumPlayerAuthority.FromNetworkPlayer(e.Player));
+            return;
+        }
         if(e.Name!="ca_card_table")return;
         let user=CaelumPlayerAuthority.FromNetworkPlayer(e.Player);
         let link=CaelumCardSeat.Read(user);
@@ -66,7 +72,7 @@ class CaelumCardTableMenu : ListMenu
             }
             if((duel.Accepted & (1<<duel.Side(user)))==0)Add(CaelumCardDuel.CONSENT,L("CA_CARD_CONSENT"));
         }
-        Add(CaelumCardDuel.CANCEL,L("CA_TC_CLOSE"));
+        Add(CaelumCardDuel.CANCEL,L("CA_CARD_CLOSE"));
         Focus=Clamp(Focus,0,Max(0,int(Actions.Size())-1));
     }
     void Send(int operation,int target=0)

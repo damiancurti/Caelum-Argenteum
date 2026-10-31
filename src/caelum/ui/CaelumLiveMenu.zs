@@ -26,9 +26,16 @@ class CaelumLiveMenu : ListMenu
     static int Wanted(CaelumPlayer user)
     {
         if(gamestate!=GS_LEVEL || user==null || user.health<=0 || user.player==null || (user.player.ConversationNPC!=null && user.player.ConversationNPC.bInConversation))return 0;
-        let truco=CaelumTrucoMatch(user.FindInventory("CaelumTrucoMatch"));
-        let trucazo=CaelumTrucazoMatch(user.FindInventory("CaelumTrucazoMatch"));
+        let truco=CaelumTrucoMatch.View(user);
+        let trucazo=CaelumTrucazoMatch.View(user);
         if((truco!=null && truco.Visible) || (trucazo!=null && trucazo.Visible))return 0;
+        // Los paneles cooperativos reciben la entrada sin cancelar el descanso.
+        let cardSeat=CaelumCardSeat.Read(user);
+        if(cardSeat!=null && cardSeat.Open && (cardSeat.Duel==null || !cardSeat.Duel.Started))return 0;
+        let timeVote=CaelumCooperativeTime.View(user);
+        if(timeVote!=null && timeVote.Opened)return 0;
+        let clock=CaelumWorldClock(user.FindInventory('CaelumWorldClock'));
+        if(clock!=null && clock.TravelVote!=null && clock.TravelVote.Opened)return 0;
         if(user.CreationWizardOpen)return CTX_CREATION;
         let companion=CaelumCompanionSession(user.FindInventory("CaelumCompanionSession"));
         if(companion!=null && companion.Open)return CTX_COMPANION;
@@ -183,6 +190,12 @@ class CaelumLiveMenu : ListMenu
         if(physical && Context==CTX_REST && type==InputEvent.Type_KeyDown && !restAction)
         {
             String binding=Bindings.GetBinding(scan);
+            if(binding~=="+use" && multiplayer && CaelumCardSeat.Table(Subject)!=null)
+            {
+                let seatRest=CaelumRestState(Subject.FindInventory("CaelumRestState"));
+                if(seatRest!=null && seatRest.InputArmed)EventHandler.SendNetworkEvent("ca_card_open");
+                return true;
+            }
             if(binding~=="+forward" || binding~=="+back" || binding~=="+moveleft" || binding~=="+moveright"
                 || binding~=="+attack" || binding~=="+altattack" || binding~=="+use" || binding~=="+jump"
                 || binding~=="+crouch" || binding~=="+zoom" || binding~=="+reload" || binding~=="+moveup" || binding~=="+movedown"
