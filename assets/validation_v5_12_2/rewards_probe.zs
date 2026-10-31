@@ -37,7 +37,7 @@ class CA436ClockProbe : EventHandler
         if(Reloaded && Phase==9)
         {
             World=CaelumCooperativeQuests.Get(a);
-            Check(World!=null && World.Revision==1,"old native save adds the campaign ledger exactly once");
+            Check(World!=null && World.Revision==2,"old native save adds the campaign ledger exactly once");
             Check(CaelumCooperativeQuests.Get(b)==World,"legacy migration publishes one object to every peer");
             Check(CaelumCooperativeQuests.CanClaim(a,0) && !CaelumCooperativeQuests.CanClaim(b,0),"legacy eligibility preserves earned reward without widening the roster");
             Check(b.GetPersistentCharacterState(false).GetPrisonerRescueState(0)==CaelumConstants.PRISONER_STATE_FOLLOWING,"legacy pending personal progress is not overwritten");
@@ -76,7 +76,7 @@ class CA436ClockProbe : EventHandler
             }
             World=CaelumCooperativeQuests.Get(a);
             Check(World!=null && CaelumWorldClock.Get(b).CampaignQuests==World,"native replicas reference the same world rescue record");
-            Check(World.Revision==1 && a.GetPrisonerRescueState(0)==CaelumConstants.PRISONER_STATE_CAPTIVE,"new rescue migration initializes once without inventing progress");
+            Check(World.Revision==2 && a.GetPrisonerRescueState(0)==CaelumConstants.PRISONER_STATE_CAPTIVE,"new rescue migration initializes once without inventing progress");
             Check(b.SetPlayerPrisonerRescueState(0,CaelumConstants.PRISONER_STATE_FOLLOWING),"a non-host can initiate the shared public rescue");
             Check(!a.SetPlayerPrisonerRescueState(0,CaelumConstants.PRISONER_STATE_CAPTIVE),"shared rescue cannot regress to captive");
             let pending=CaelumPlayer(players[last].mo).GetPersistentCharacterState(false);

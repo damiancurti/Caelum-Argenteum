@@ -18,6 +18,8 @@ class CA436ClockProbe : EventHandler
         let imported=CaelumPersistentCharacterState(Actor.Spawn('CaelumPersistentCharacterState',(0,512,0),NO_REPLACE));
         imported.LawfulIdentity=new('CaelumLawfulIdentity');imported.LawfulIdentity.Token=record.LawfulIdentity.Token;
         Check(earned.Contains(imported),"a reconstructed record retains the same earned eligibility");
+        earned.Eligible[0]=null;
+        Check(earned.Contains(imported),"eligibility survives a detached historical Inventory record");
         let foreign=CaelumPersistentCharacterState(Actor.Spawn('CaelumPersistentCharacterState',(0,576,0),NO_REPLACE));
         foreign.LawfulIdentity=new('CaelumLawfulIdentity');foreign.LawfulIdentity.Token="diagnostic-unrelated-character";
         Check(!earned.Contains(foreign),"an unrelated identity cannot inherit that eligibility");
