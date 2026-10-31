@@ -7227,3 +7227,26 @@ CA_COOP_TIME_REST_ALL = "Todos deben estar descansando antes de aceptar esta pro
 CA_COOP_TIME_RUNNING = "Avanzando juntos. Cualquiera puede interrumpir.";
 CA_COOP_TIME_CANCELLED = "Avance de tiempo compartido cancelado.";
 CA_COOP_TIME_COMPLETE = "Transcurri? el tiempo acordado.";
+
+[enu default]
+CA_COOP_TRAVEL_TITLE = "Travel together";
+CA_COOP_TRAVEL_HELP = "Everyone must accept this destination. Silence leaves the request pending; anyone may cancel. Resources are spent only when everyone agrees.";
+CA_COOP_TRAVEL_HOUSE = "The house on the selected doorway";
+CA_COOP_TRAVEL_TARGET = "Destination: %s";
+CA_COOP_TRAVEL_PACE = "Group pace: %.2f km/h. Time: %s";
+CA_COOP_TRAVEL_COST = "Your supplies: %d food portions, %d water portions and %.3f L";
+CA_COOP_TRAVEL_RISK = "The forecast includes a death before arrival. The group will stop at that moment.";
+CA_COOP_TRAVEL_ACCEPT = "Accept this trip";
+CA_COOP_TRAVEL_CANCELLED = "Shared travel cancelled. No travel resources were spent.";
+CA_COOP_TRAVEL_INTERRUPTED = "Travel interrupted by a death. Everyone has spent the same elapsed time.";
+[es]
+CA_COOP_TRAVEL_TITLE = "Viajar juntos";
+CA_COOP_TRAVEL_HELP = "Todos deben aceptar este destino. Sin respuesta, la solicitud queda pendiente; cualquiera puede cancelar. Los recursos se gastan solo cuando todos aceptan.";
+CA_COOP_TRAVEL_HOUSE = "La vivienda de la puerta seleccionada";
+CA_COOP_TRAVEL_TARGET = "Destino: %s";
+CA_COOP_TRAVEL_PACE = "Ritmo del grupo: %.2f km/h. Tiempo: %s";
+CA_COOP_TRAVEL_COST = "Tus provisiones: %d porciones de comida, %d de agua y %.3f L";
+CA_COOP_TRAVEL_RISK = "La previsi?n incluye una muerte antes de llegar. El grupo se detendr? en ese momento.";
+CA_COOP_TRAVEL_ACCEPT = "Aceptar este viaje";
+CA_COOP_TRAVEL_CANCELLED = "Viaje compartido cancelado. No se gastaron recursos del trayecto.";
+CA_COOP_TRAVEL_INTERRUPTED = "Viaje interrumpido por una muerte. Para todos transcurri? el mismo tiempo.";

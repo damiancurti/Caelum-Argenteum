@@ -21,7 +21,7 @@ class CaelumThermalJourney : Object play
         result.CloudFraction=CaelumWeatherRules.Mix(origin.CloudFraction,destination.CloudFraction,p);
     }
 
-    bool Forecast(CaelumPlayer user,int mode,int elapsedTics,double speedKmh,int destinationRegion=-1,CaelumJourneyModel supplies=null)
+    bool Forecast(CaelumPlayer user,int mode,int elapsedTics,double speedKmh,int destinationRegion=-1,CaelumJourneyModel supplies=null,int limitTics=0)
     {
         Result=CaelumThermalService.CaptureForecast(user);Failure="";WorstExposure=0;
         // El viaje abstracto no arrastra el suelo de su punto de partida.
@@ -49,12 +49,13 @@ class CaelumThermalJourney : Object play
         for(int i=0;i<4;i++){Result.DirtyWaterCoverage[i]=0;Result.CleanWaterCoverage[i]=0;}
         if(supplies!=null && supplies.Contamination!=null)supplies.Contamination.ClearImmersion();
         int elapsed=0;
-        while(elapsed<elapsedTics)
+        int end=limitTics>0 ? Min(elapsedTics,limitTics) : elapsedTics;
+        while(elapsed<end)
         {
             int phase=elapsed%(24*hour);
             bool sleeping=phase>=CaelumJourneyRules.WALK_HOURS*hour;
             int boundary=(sleeping ? 24*hour : CaelumJourneyRules.WALK_HOURS*hour)-phase;
-            int step=Min(elapsedTics-elapsed,Min(boundary,hour/60));
+            int step=Min(end-elapsed,Min(boundary,hour/60));
             int midpoint=elapsed+step/2;
             int timestamp=civil+midpoint;
             origin.EvaluateRegion(weather.Region,serial+timestamp/day,timestamp%day,weather.Seed);

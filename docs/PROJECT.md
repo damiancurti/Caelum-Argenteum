@@ -8,7 +8,9 @@ Native peers share one campaign clock while retaining individual rest and
 physiology. Exact-duration time proposals require every participant's consent;
 editing resets votes and any participant can stop acceleration. Bounded native
 player loops and an event-maintained climate registry replace repeated marker
-queries. Travel and reward ownership remain unfinished under #436; the full
+queries. Walking and house transitions require unanimous destination consent;
+walking shares the slowest pace with personal provisions and one elapsed clock.
+Transport, tutorial departure and reward ownership remain unfinished; the full
 V5.12 milestone is not complete or author-accepted. Evidence is kept in
 `assets/validation_v5_12_2`, distinct from #435 and #590.
 

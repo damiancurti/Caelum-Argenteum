@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `79c7dafc0da6f8092d4bafaf2d6888f34fb0ce8f868204c0bf274db3c42962c9`. Locations include every definition; the last one per language wins.
+SHA-256: `72ba09594bfdd394172d03e99e241591a60e948bec09499643ee7642a6bd8f84`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -58,7 +58,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_CONTAMINATION | 4 | CA_CONTAMINATION_ENVIRONMENT | CA_CONTAMINATION_SICK_IMMUNE |
 | CA_CONTROL | 80 | CA_CONTROL_ABILITIES | CA_CONTROL_TOGGLE_ATTRIBUTE_PANEL |
 | CA_COOKING | 1 | CA_COOKING_CANCEL | CA_COOKING_CANCEL |
-| CA_COOP | 14 | CA_COOP_HOUR_DOWN | CA_COOP_TIME_VOTES |
+| CA_COOP | 24 | CA_COOP_HOUR_DOWN | CA_COOP_TRAVEL_TITLE |
 | CA_CRAFT | 19 | CA_CRAFT_BROWSER_BOXED | CA_CRAFT_BROWSER_STATION |
 | CA_CRAFTING | 74 | CA_CRAFTING_ACTION_CREATED | CA_CRAFTING_TEN_SHOTGUN_CARTRIDGES |
 | CA_CREATE | 51 | CA_CREATE_ACTIVITY_0 | CA_CREATE_SECOND_NOTE |

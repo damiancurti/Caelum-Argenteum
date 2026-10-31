@@ -10,6 +10,23 @@ This remains agent verification, not author acceptance.
 
 ## 5.12.2 - Shared clock and time consent (#436, 2026-10-30, in progress)
 
+Walking/house follow-up: explicit destination offers, all-player consent,
+slowest living pace, separate resources, revalidation before commitment, first
+fatal-instant truncation and a single shared elapsed clock. Native source-overlay
+checks cover two/eight actual peers and real map changes. No routine actor scan
+is added: participants and proposal references are bounded by MAXPLAYERS;
+forecasts run only at proposal/confirmation. Full cooperative campaign acceptance
+and remaining transport/quest/lifecycle integrations are not claimed.
+Final package: eight native peers each pass 31 travel checks (20261030-223659),
+and two peers each pass the existing 36 time/rest checks (223549). Validator:
+zero errors. The final PK3 matches changed source bytes; hash/logs are recorded
+in travel-results.json. An earlier eight-peer run (223512) passes all gameplay
+assertions but crashes peer 5 during concurrent shutdown/arbitrator handoff:
+GZDoom access violation 0xc0000005 at 0x135db0. Preserved as failed evidence and
+tracked in #437. Closing remote peers before the arbitrator passes the travel
+probe; it is not a production lifecycle fix or author acceptance.
+
+
 Author decisions: individual unaccelerated rest; unanimous exact-duration
 acceleration; silence remains pending; edits clear consent; anyone may cancel;
 disconnection cancels. The author also approved interface-only votes from dead

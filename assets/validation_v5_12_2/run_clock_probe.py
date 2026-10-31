@@ -22,7 +22,7 @@ def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def fixture(path: Path, peers: int, source_overlay: bool = False, persistence: bool = False) -> None:
+def fixture(path: Path, peers: int, source_overlay: bool = False, persistence: bool = False, travel: bool = False) -> None:
     # Disposable geometry; installed development IWAD textures are not distributed.
     text = '''namespace="ZDoom";
 vertex{x=-1024;y=-1024;} vertex{x=1024;y=-1024;}
@@ -46,20 +46,30 @@ linedef{v1=0;v2=3;sidefront=0;blocking=true;}
     wad = struct.pack("<4sii", b"PWAD", len(lumps), 12 + len(payload)) + payload + b"".join(entries)
     with zipfile.ZipFile(path, "w", compression=zipfile.ZIP_STORED) as archive:
         for name, data in {
-            "MAPINFO": ('gameinfo { AddEventHandlers = "CA436ClockProbe"' + (', "CaelumCooperativeTimeEvents"' if source_overlay else '') + ' }\n').encode(),
+            "MAPINFO": ('gameinfo { AddEventHandlers = "CA436ClockProbe"' + (', "CaelumCooperativeTravelEvents"' if source_overlay else '') + ' }\n').encode(),
             "ZSCRIPT": b'version "4.14.2"\n#include "probe.zs"\n',
-            "probe.zs": (SOURCE / ("persistence_probe.zs" if persistence else "clock_probe.zs")).read_bytes(),
+            "probe.zs": (SOURCE / ("travel_probe.zs" if travel else "persistence_probe.zs" if persistence else "clock_probe.zs")).read_bytes(),
             "maps/MAP03.wad": wad,
         }.items():
             entry = zipfile.ZipInfo(name, (2026, 10, 30, 0, 0, 0))
             archive.writestr(entry, data)
+        if travel:
+            archive.writestr("maps/TRESERV.wad", wad)
+            archive.writestr("maps/CAH000.wad", wad)
         # Source overlays keep iterative native checks fast; final evidence uses
         # a full builder package with identical bytes for these members.
-        for source in [ROOT / "src" / name for name in ("caelum/world/CaelumWorldClock.zs", "caelum/world/CaelumWeather.zs", "caelum/world/CaelumRest.zs", "caelum/world/CaelumRestSafety.zs", "caelum/world/CaelumRestTrial.zs", "caelum/world/CaelumCooperativeTime.zs", "caelum/world/CaelumCooperativeTimeMenu.zs", "caelum/world/CaelumTimeAdvance.zs", "caelum/world/CaelumTimeSkip.zs", "caelum/player/CaelumPlayer.zs", "LANGUAGE", "MENUDEF")] if source_overlay else []:
-            data = source.read_bytes()
-            if source.name == "CaelumWorldClock.zs":
-                data += b'\n#include "caelum/world/CaelumCooperativeTime.zs"\n#include "caelum/world/CaelumCooperativeTimeMenu.zs"\n'
-            archive.writestr(str(source.relative_to(ROOT / "src")).replace("\\", "/"), data)
+        if source_overlay:
+            import subprocess
+            names = subprocess.check_output(['git', 'diff', 'main', '--name-only', '--', 'src'], cwd=ROOT, text=True).splitlines()
+            names += subprocess.check_output(['git', 'ls-files', '--others', '--exclude-standard', 'src'], cwd=ROOT, text=True).splitlines()
+            for name in sorted(set(names)):
+                source = ROOT / name
+                if source.is_file() and name not in ('src/MAPINFO', 'src/ZSCRIPT'):
+                    data = source.read_bytes()
+                    if source.name == 'CaelumWorldClock.zs':
+                        data += b'\n#include "caelum/world/CaelumCooperativeTravel.zs"\n#include "caelum/world/CaelumCooperativeTravelMenu.zs"\n'
+                    archive.writestr(name[4:], data)
+
 
 
 
@@ -70,13 +80,14 @@ def main() -> None:
     parser.add_argument("--port", type=int, default=29660)
     parser.add_argument("--source-overlay", action="store_true", help="Overlay edited clock/rest sources for iteration only")
     parser.add_argument("--persistence", action="store_true")
+    parser.add_argument("--travel", action="store_true")
     parser.add_argument("--load-directory", type=Path, help="Read the common save from a prior isolated persistence run")
     args = parser.parse_args()
     runtime = args.runtime.resolve(strict=True)
     out = ROOT / "build/issue436" / datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
     out.mkdir(parents=True)
     package = out / "checks.pk3"
-    fixture(package, args.players, args.source_overlay, args.persistence)
+    fixture(package, args.players, args.source_overlay, args.persistence, args.travel)
     processes, streams, commands = [], [], []
     startup = subprocess.STARTUPINFO()
     startup.dwFlags |= subprocess.STARTF_USESHOWWINDOW
@@ -87,14 +98,17 @@ def main() -> None:
             peer.mkdir()
             config = peer / "isolated.ini"
             commands_file = peer / "test.cfg"
-            commands_file.write_text("wait 105; netevent ca436_verify_reload; wait 245; quit\n" if args.load_directory and index==0 else "wait 350; quit\n", encoding="utf-8")
+            # Close remote peers first and the native arbitrator last. The separate
+            # lifecycle probe must exercise unexpected arbitrator departure.
+            quit_tic = 350 + (args.players - index) * 35
+            commands_file.write_text("wait 105; netevent ca436_verify_reload; wait 245; quit\n" if args.load_directory and index==0 else f"wait {quit_tic}; quit\n", encoding="utf-8")
             config.write_text("[LastRun]\nVersion=225\n[GlobalSettings]\nvid_preferbackend=1\n"
                               "vid_vsync=false\nvid_maxfps=60\ncl_capfps=false\nvid_activeinbackground=true\n"
                               "i_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\n"
                               "snd_mastervolume=0.05\nvid_fullscreen=false\nuse_mouse=false\nlanguage=en\n", encoding="utf-8")
             network = ["-host", str(args.players), "-port", str(args.port), "-netmode", "0"] if index == 0 else [
                 "-join", f"127.0.0.1:{args.port}", "-port", str(args.port + index)]
-            entry = ["+map", "MAP03"]
+            entry = ["+map", "TRESERV" if args.travel else "MAP03"]
             if args.load_directory:
                 saves = list((args.load_directory / f"peer{index}").glob("save*.zds"))
                 if len(saves) != 1:
@@ -135,13 +149,13 @@ def main() -> None:
                   (" FAIL", "Script error", "Execution could not continue", "Cannot find savegame", "VM execution aborted", "desync", "out of sync"))]
         checks = [line for line in lines if line.startswith("CA436 ")]
         ordered_requests.append(re.findall(r"CA436 EVENT peer=\d+ sender=(\d+) serial=(\d+)", text))
-        success = process.returncode == 0 and not errors and text.count("CA436 PASS") == ((6 if args.load_directory else 4) if args.persistence else 36) and text.count("CA436 RESULT") == 1
+        success = process.returncode == 0 and not errors and text.count("CA436 PASS") == (31 if args.travel else (6 if args.load_directory else 4) if args.persistence else 36) and text.count("CA436 RESULT") == 1
         reports.append({"peer": index, "exit": process.returncode, "passed": success, "checks": checks, "errors": errors})
     same_order = len(ordered_requests) == args.players and all(
-        len(events) == args.players and events == ordered_requests[0] for events in ordered_requests)
+        len(events) == args.players * (3 if args.travel else 1) and events == ordered_requests[0] for events in ordered_requests)
     if args.persistence:
         same_order = True
-    result = {"persistence": args.persistence, "load_directory": str(args.load_directory) if args.load_directory else None, "issue": 436, "baseline": "5.11.8", "source_overlay": args.source_overlay, "real_processes": args.players, "runtime_sha256": digest(runtime),
+    result = {"persistence": args.persistence, "travel": args.travel, "load_directory": str(args.load_directory) if args.load_directory else None, "issue": 436, "baseline": "5.11.8", "source_overlay": args.source_overlay, "real_processes": args.players, "runtime_sha256": digest(runtime),
               "engine_sha256": digest(ENGINE), "iwad_sha256": digest(IWAD), "fixture_sha256": digest(package),
               "commands": commands, "peers": reports, "same_order": same_order,
               "passed": same_order and all(x["passed"] for x in reports)}

@@ -368,10 +368,10 @@ class CaelumJourneyPlan : Inventory
         return plan;
     }
 
-    bool Calculate(CaelumPlayer user, int id, int mode)
+    bool Calculate(CaelumPlayer user, int id, int mode, double sharedSpeed = 0, int limitTics = 0)
     {
         if(!CaelumJourneyRules.ValidMode(id,mode))return false;
-        double speed = CaelumJourneyRules.SpeedForMode(user,mode);
+        double speed = sharedSpeed > 0 ? sharedSpeed : CaelumJourneyRules.SpeedForMode(user,mode);
         double hours = speed > 0 ? CaelumJourneyRules.DistanceKm(id) / speed : 0;
         if (speed <= 0 || hours <= 0 || hours > CaelumJourneyRules.MAX_WALK_HOURS)
         { CaelumNotifications.Notify(user,StringTable.Localize("CA_JOURNEY_PACE", false)); return false; }
@@ -384,10 +384,10 @@ class CaelumJourneyPlan : Inventory
         int destinationRegion=CaelumWeatherRules.RegionForLocation(CaelumWorldCatalogue.ConnectionDestination(id));
         Needed = new("CaelumJourneyModel"); Needed.Capture(user, true);
         let neededThermal=new("CaelumThermalJourney");
-        if(!neededThermal.Forecast(user,mode,TotalTics(),speed,destinationRegion,Needed))
+        if(!neededThermal.Forecast(user,mode,TotalTics(),speed,destinationRegion,Needed,limitTics))
         {CaelumNotifications.Notify(user,StringTable.Localize(neededThermal.Failure,false));return false;}
         Available = new("CaelumJourneyModel"); Available.Capture(user, false);
-        if(!ThermalForecast.Forecast(user,mode,TotalTics(),speed,destinationRegion,Available))
+        if(!ThermalForecast.Forecast(user,mode,TotalTics(),speed,destinationRegion,Available,limitTics))
         {CaelumNotifications.Notify(user,StringTable.Localize(ThermalForecast.Failure,false));return false;}
         return true;
     }
@@ -434,7 +434,7 @@ class CaelumJourneyPlan : Inventory
         return CaelumTravelService.Commit(user, plan.ConnectionId, plan.TravelMode, plan);
     }
 
-    void Apply(CaelumPlayer user)
+    void Apply(CaelumPlayer user, bool advanceWorld = true)
     {
         Open = false; SourceVehicle = null;
         let model = Available;
@@ -507,7 +507,7 @@ class CaelumJourneyPlan : Inventory
             if (power != null) { power.EffectTics = model.WaterEffectTics; power.PulseTics = model.WaterPulseTics; power.WaterRecoveryPerPulse = model.WaterPulse; }
         }
         user.OnNativeInventoryChanged();
-        CaelumWorldClock.Get(user, true).AdvanceTics(model.ElapsedTics);
+        if(advanceWorld)CaelumWorldClock.Get(user, true).AdvanceTics(model.ElapsedTics);
         if(model.FoodInventory!=null){model.FoodInventory.Commit(user);user.OnNativeInventoryChanged();}
         CaelumAltitudeService.CommitForecast(user,model.Altitude);
         CaelumWeatherState.Sync(user, CaelumWorldClock.Get(user), CaelumCalendarState.Get(user));

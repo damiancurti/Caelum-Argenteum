@@ -31,10 +31,28 @@ shelter. No NPC movement/physics acceleration is newly promised. Climate-marker
 queries use a shared typed registry (one typed reconstruction on map/save load,
 spawn/destruction updates); rest offers use an owner reference, not actor scans.
 
-Approved next travel integration: use the slowest walking participant
-and each character's own provisions over shared elapsed time. Each transport
-traveler pays their own existing fare. This rule is not implemented by the time
-consent patch.
+Walking routes and private-house door transitions now use a single saved
+proposal shared by the native roster. The exact destination is fixed before
+consent. Every member accepts; silence waits and refusal cancels without journey
+costs. No elapsed journey time or provisions are committed before unanimity.
+Time and travel proposals cannot overlap. Map/roster/body changes invalidate a
+pending proposal. Dead waiting players can consent but do not walk or consume
+provisions; complete native death/arrival integration remains #437.
+
+Walking calculations use the slowest living participant's existing pace, with
+separate thermal/survival/inventory forecasts over the same interval. Material
+changes to pace or required supplies regenerate the offer and clear every vote.
+The first forecast death truncates every participant at the same instant; no
+survivor consumes the remaining route or arrives. Applying an accepted journey
+advances the shared clock once, then each personal resource snapshot once.
+House entry preserves property/household systems and does not grant residence
+rights to visitors. The multiplayer branch avoids the old console-local capture
+handshake; native house-door presentation remains unchanged for solo play.
+
+Transport fares are approved per traveler from each character's money. Actual
+cooperative transport boarding/stops/resume, tutorial departure/return and quest
+eligibility/conflicts remain unfinished. These are not certified by the walking
+or house-door tests.
 
 Implementation gate: cooperative travel/reward arbitration,
 full save/restart lifecycle, portable profiles and complete V5.12 integration

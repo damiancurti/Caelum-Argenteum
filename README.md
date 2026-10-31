@@ -13,7 +13,9 @@ it, then rebuild with `run_dev.bat` as described below.
 weather seed, with individual nonaccelerated rest. T/the time menu opens an
 exact-duration proposal: everyone must consent, edits clear votes, silence
 waits and any participant may cancel. Personal resources remain individual.
-This is not full cooperative campaign acceptance: travel, quest rewards,
+Walking routes and house doors now require unanimous destination consent;
+walking uses the slowest pace and each character pays their own provisions.
+This is not full cooperative campaign acceptance: transport, quest rewards,
 profile portability and lifecycle integration remain under their focused issues.
 Author checks will be delivered together after the release is complete.
 

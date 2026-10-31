@@ -57,6 +57,7 @@ class CaelumCooperativeTime : Inventory
         if(reason!=""){CaelumNotifications.Notify(user,StringTable.Localize(reason,false));return false;}
         let source=CaelumWorldClockTicker.CampaignOwner();
         let clock=CaelumWorldClock.Get(source);if(clock==null)return false;
+        if(clock.TravelVote!=null && clock.TravelVote.Opened)return false;
         if(clock.TimeVote!=null && clock.TimeVote.Opened)return false;
         let vote=CaelumCooperativeTime(user.FindInventory('CaelumCooperativeTime'));
         if(vote==null)vote=CaelumCooperativeTime(user.GiveInventoryType('CaelumCooperativeTime'));

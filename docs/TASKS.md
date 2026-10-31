@@ -6,8 +6,9 @@ Documentation version: **5.12.2** - 2026-10-30.
 
 Implemented: shared clock/calendar/weather seed, individual native sitting/rest,
 unanimous exact-duration acceleration, stale/duplicate vote rejection and shared
-cancellation. Tests exercise native peers, not simulated player actors.
-Remaining #436: travel agreement/return, quest objective eligibility and rewards,
+cancellation. Walking routes/house doors now share explicit destination consent,
+slowest group pace and individual provisions. Tests exercise real native peers.
+Remaining #436: transport fares/stop/resume, tutorial departure/return, quest objective eligibility and rewards,
 personal/world conflicts, full save/load/restart and tent-rest integration.
 Cross-issue remaining: #434 portable profiles/checkpoints; #435 production
 network authority; #437 lifecycle; #438 arenas/organizers; #590 card seating/UI
