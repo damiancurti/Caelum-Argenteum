@@ -137,6 +137,13 @@ the six native migration checks. Source equivalence and both hashes are recorded
 
 ## 5.12.3 - Cooperative lifecycle guards (#437, 2026-10-31, in progress)
 
+Legacy-session follow-up: a static lifecycle bridge now installs on native reload,
+while the old serialized EventHandler class remains an inert compatibility shell.
+No class-base rewrite or duplicate callbacks. Two-peer tests pass26 spirit-reload,
+22 fresh death and20 old-death boundary assertions, including a copied save without
+the old registration. Use does not respawn and record/wallet identity remains intact.
+Evidence: assets/validation_v5_12_3/bridge-results.json; author acceptance pending.
+
 Author decisions: dead players wait without world actions, but can vote; native
 Use must not respawn a replacement. Shared consent cancels at death/departure.
 Existing Redemption may still restore the same corpse. The author separately

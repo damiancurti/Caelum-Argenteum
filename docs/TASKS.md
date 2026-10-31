@@ -33,7 +33,7 @@ Still required before delivery:
 - Expand native coverage to campaign geometry, deceased profiles and migration sources.
 - Check active-conversation preflight against native serialized state and profile root coverage.
 - Complete remaining #436 two-player rest/portable-progress integration.
-- Resolve the legacy #437 per-level-handler registration before old-session recovery.
+- Legacy #437 registration is fixed and verified; retain it in final recovery tests.
 - Finish combined validation before creating the author terminal and pending checks.
 
 ## V5.12 in progress - #590 seated 1v1 cards (5.12.5)
@@ -64,6 +64,9 @@ launcher. Visual author acceptance remains pending. Keep #438 separate from
 #437 and #590.
 
 ## V5.12 lifecycle work - #437 / 5.12.3
+
+Legacy registration fixed and verified: static bridge, inert old serialized shell;
+68 native assertions pass. Session launcher and final release integration remain.
 
 Implemented: dead native body/inventory preservation through map travel;
 cancellation on death/departure; common-recovery consent reset; The Fool's
