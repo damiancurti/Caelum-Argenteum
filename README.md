@@ -32,6 +32,11 @@ prevent declaring the release complete.
 Actual two-client mansion, sewer and city observations agree; siege callback
 stalls remain. The older two-client baseline skipped the world clock and related
 simulation, so its lower timings are not equivalent gameplay. See CA-KP-201.
+Ten further campaign observations pass, but the elevated presentation collector
+produces no frame CSV and reports lost Windows ETW events. Reduced tracking,
+an existing visible process and the previously used date mode also fail.
+This is a measurement failure, not a rendering pass or a demonstrated cause of
+the native load abort. Evidence: `assets/validation_v5_12_7/presentation-results.json`.
 
 **V5.12 profiles (#434, implementation in progress):** staged campaign transfers
 and return now preserve a single active owner, packed inventory and each world's

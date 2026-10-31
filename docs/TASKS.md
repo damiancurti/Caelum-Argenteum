@@ -4,6 +4,16 @@ Documentation version: **5.12.7** - 2026-10-31.
 
 ## V5.12 native session coordination - #435 / 5.12.7 in progress
 
+Presentation gate: ten additional native observations pass, including the five
+two-peer campaign scenarios and one-player current/baseline siege controls.
+No usable PresentMon CSV was produced: four bounded elevated probes report lost
+ETW events, including reduced tracking, an existing visible process and date mode.
+Preserve these failures in presentation-results.json/presentation-logs.json.gz;
+do not substitute callback timings or synthetic analyzer checks for presented
+frames. Capture tooling now retains native exit codes, enforces its own deadline
+and rejects missing/lost data. Native load-abort investigation and the combined
+author handoff remain outstanding; no new design decision is required.
+
 Native gameplay follow-up: 2/4/8 real clients pass concurrent last-unit city
 purchases, independent wallets, owned Quimica vessels and fuel reservations,
 duplicate start/completion rejection and one-owner cancellation (168 assertions).

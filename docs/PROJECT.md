@@ -4,6 +4,12 @@ Documentation version: **5.12.7** - 2026-10-31.
 
 ## V5.12 native session coordination - #435 / 5.12.7 in progress
 
+The latest ten native campaign observations pass, but actual presentation remains
+unmeasured. Elevated PresentMon probes produce no CSV and report ETW event loss;
+neither reduced tracking, an existing visible process nor date mode resolved it.
+The cause is not established. Evidence: validation_v5_12_7/presentation-results.json.
+Intermittent native loading failures and grouped author acceptance remain open.
+
 Native gameplay follow-up: 2/4/8 real clients pass concurrent last-unit city
 purchases, independent wallets, owned Quimica vessels and fuel reservations,
 duplicate start/completion rejection and one-owner cancellation (168 assertions).

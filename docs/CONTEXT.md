@@ -4,7 +4,7 @@ Documentation version: **5.12.7** - 2026-10-31.
 
 **V5.12 in progress:** #436 world/rewards, #437 lifecycle, #438 arenas and #590
 cards verified together. #434 custody/return, hub, quest boundaries and saves pass;
-#435 transfer/vacancy passes; campaign states agree. Native exits/siege stalls remain.
+#435 transfer/vacancy passes; states agree. Native exits/ETW capture remain unresolved.
 
 **V5.11/V5.10 accepted/merged:** HISTORY; no pending checks. Siege stalls persist.
 

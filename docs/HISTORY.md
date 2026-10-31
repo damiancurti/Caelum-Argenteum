@@ -4,6 +4,29 @@ Documentation version: **5.12.7** - 2026-10-31.
 
 ## V5.12 native session coordination - #435 / 5.12.7 in progress
 
+2026-10-31 presentation follow-up: seven further campaign observations (five
+two-peer scenes plus current/baseline one-player siege controls) and three short
+two-peer mansion/sewer probes pass with matching recorded state and normal exits.
+The first authorized elevated 900-second collector leaves an empty log without a
+CSV or final metadata; its exit code is unknown. A new bounded helper separates
+native streams, caches the process handle for ExitCode and records final metadata.
+Four short elevated attempts still produce no frame CSV: default QPC reports
+529,444 lost ETW events, reduced GPU/input tracking 516,175, an existing visible
+GZDoom PID with application-only tracking 8,931, and default date mode 522,239.
+The latter three retain exit code 0, which does not establish a valid capture.
+All four finish without forced termination. CUA verifies the visible PID's mansion
+and narrative overlay; it is a transport probe, not a matched performance window.
+No collector, renderer, driver or Windows root cause is established.
+
+The new QPC analyzer excludes other PIDs/windows and refuses lost events, missing
+frames or mixed swapchains. Five synthetic parsing/safety checks pass; they are
+not gameplay or rendering evidence. Full native/capture logs and qualifications:
+assets/validation_v5_12_7/presentation-results.json and presentation-logs.json.gz.
+No production gameplay, native binary, security setting or unrelated trace is
+changed. Intermittent native load exits and real-presentation validation remain
+open. No new author confirmation was received and pending_test.txt stays empty
+until the complete V5.12 handoff is ready, as requested.
+
 Campaign performance diagnostics use actual maps and independent native clients,
 with matching recorded state in mansion, sewers, peaceful/ground-facing city and
 the normal calendar siege. Direct deployment comparisons retain the existing
