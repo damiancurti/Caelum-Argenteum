@@ -1,6 +1,23 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.12.5** - 2026-10-31.
+Documentation version: **5.12.6** - 2026-10-31.
+
+## V5.12 profiles - #434 / 5.12.6 in progress
+
+Verified: immutable anchors, schema-2 custody, native source retirement and return,
+atomic publication of both campaign heads, stale-owner refusal and narrative saves.
+Two-peer outward/return checks preserve packed possessions and campaign stock/title;
+reward/choice saves survive reload without another reward or automatic save.
+
+Still required before delivery:
+- Integrate native vacant-world preparation with the #435 session menu.
+- Keep native fixed-roster admission separate from temporary transfer verification.
+- Actual MAP03/deceased transfer, native migration/backup, hub travel and
+  personal/world quest boundaries pass (120 latest native assertions).
+- Active-conversation native preflight is verified; complete broader profile root coverage.
+- #436 two-player rest and independent world-eligibility snapshots are integrated.
+- The #437 legacy registration bridge is integrated and verified.
+- Finish combined validation before creating the author terminal and pending checks.
 
 ## V5.12 in progress - #590 seated 1v1 cards (5.12.5)
 

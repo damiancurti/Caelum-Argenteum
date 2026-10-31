@@ -6,8 +6,21 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.12.5.** Obtain and update the complete repository, validate
+**Current release: 5.12.6.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+**V5.12 profiles (#434, implementation in progress):** staged campaign transfers
+and return now preserve a single active owner, packed inventory and each world's
+shops/properties. Native narrative checkpoints save complete transactions without
+replaying rewards on load. Whole-coordinator backup/recovery and deceased-profile
+transfer in actual Barracas pass. Native hub travel and portable/world quest
+boundaries pass, including pending rewards on return. Final managed multiplayer
+integration remains; no author handoff yet.
+Transfers reject active conversations while allowing finished dialogue references.
+`caelum_new_campaign.py` creates a separate native MAP01 with 1–8 vacant slots
+using a private 640 × 480 window configuration
+for imports, without replacing a save or granting placeholder equipment. The
+coordinator retains the native world and registers no character until a transfer.
 
 **V5.12 work in progress - #590 table-card PvP:** human Truco and Trucazo
 use actual seats at the same table and preserve inventory/world health. Native

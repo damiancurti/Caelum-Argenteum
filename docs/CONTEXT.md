@@ -1,11 +1,10 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.12.5** - 2026-10-31.
+Documentation version: **5.12.6** - 2026-10-31.
 
-**V5.12 in progress:** #436 clock/travel/tutorial/rescue/shared-house rules;
-#437 death/Fool journey/spirit rewards; #438 arenas/native recovery verified.
-#590 cards integration ongoing; #434/#435 portability/recovery unfinished.
-Author acceptance and the combined manual suite remain pending.
+**V5.12 in progress:** #436 world/rewards, #437 lifecycle, #438 arenas and #590
+cards verified together. #434 custody/return, hub, quest boundaries and saves pass;
+#434 vacant-world preparation added; #435 final integration remains. Author suite deferred.
 
 **V5.11/V5.10 accepted/merged:** HISTORY; no pending checks. Siege stalls persist.
 

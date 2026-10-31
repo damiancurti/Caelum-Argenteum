@@ -1,6 +1,83 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.12.5** - 2026-10-31.
+Documentation version: **5.12.6** - 2026-10-31.
+
+#434: transfer preflight checks the native active-conversation flag, not a stale
+speaker pointer. Ordinary saves remain allowed; no dialogue progress is discarded.
+
+## External character profile boundary (#434, 5.12.6, in progress)
+
+The approved profile carries identity, attributes, abilities, Tarot, inventory,
+money and personal progress. Campaign maps, NPCs, shops and property titles do
+not travel. assets/profiles/personal-boundary.json documents the current adapter's
+class/field partition. References are resolved from the exact engine/runtime
+ZScript declarations: integers such as quantities or item IDs are not treated as
+object pointers. Unknown fields/types and conflicting owners fail closed.
+
+Carried containers and packed furniture retain their actual ownership graph,
+including chairs, contained food, water and contamination. Source geometry indices
+are replaced by destination indices; environmental clocks sample the destination
+without retroactive aging. The additive per-record import serial prevents native
+reconciliation from repeating on subsequent loads. Material transfers require
+an empty destination or the same external identity; another committed character
+is never silently overwritten. Native validation is isolated, not author approval.
+
+The schema-2 store adds campaign heads, persistent legal-identity bindings and
+reserved transfers. Upgrading schema1 first copies the original database; reopening
+is idempotent. Registering a managed character or a raw copy of the same native legal identity
+again is refused. Older origin bindings upgrade on a validated checkpoint;
+ambiguous identities or unknown binding formats fail closed. Transfers reserve
+both campaign heads, keep current custody until verification, and publish source,
+destination and profile revision atomically. Cancellation preserves original heads;
+stale heads, occupied slots and unverified imports fail closed. A departed native
+slot has no material inventory, weapon, collision or permission to act. Returning
+reuses that slot and its campaign data. The command adapter is caelum_campaigns.py;
+its draft outputs are verification artifacts, not ordinary session launch inputs.
+Registration and transfers require native world-ledger revision2. Older worlds
+must first load/save in the current runtime; external tooling does not guess
+unrecorded eligibility. Replacement creates a new personal record instead of
+overwriting world references to the old occupant. Independent legal-identity
+snapshots preserve earned source rewards after departure and return.
+New destination campaigns use `caelum_new_campaign.py`: the actual engine creates
+MAP01 and its world ledger with 1–8 vacant native slots. Preparation explicitly
+uses a private 640 × 480 window; the command-line hint alone did not ensure it.
+This does not change the author's ordinary game configuration. The additive
+ProfileVacancyRevision1 marker is accepted only for uncommitted, departed records
+without an external identity or personal material inventory. Existing characters
+are never changed into vacancies. Bootstrap is an explicit nonpersistent server
+option; ordinary starts retain character creation. It gives no development kit,
+initializes the existing calendar/world ledger synchronously, and saves before
+ordinary simulation advances. Enrollment preserves that native anchor and creates
+no profile until a verified transfer fills a slot. Malformed markers, another
+owner or retained material inventory are refused atomically. This is preparation,
+not an independent playable character or a change to native fixed-roster networking.
+
+Active crafting/rest/card/travel operations must finish or be cancelled for transfer;
+ordinary native checkpoints may retain crafting. Source retirement performs one
+offline pass over the saved object table; gameplay uses no global actor scan.
+
+Registering older native checkpoints applies the existing #438 team-damage
+copy migration to every saved level before stamping identities; the exact original
+remains an immutable anchor. `caelum_campaigns.py backup OUTPUT` exports a
+consistent closed coordinator. `--store NEW_PATH recover BACKUP` restores all
+campaign/profile custody together to a new path. Never run that restored copy
+alongside an older writable coordinator. Both operations validate SQLite schema,
+references and native anchor hashes; pending reservations and overwrites are
+refused. Missing/corrupt data is never silently replaced by an empty profile.
+
+NarrativeCheckpoint revision1 observes the personal record at the end of
+PersistCharacterState: completed quests, reward receipts, starter/equipment choices,
+trial completion, secret passage/exit confirmation and membership epochs. Older
+records establish a baseline without retrospective grants/saves. Pending serials
+survive native saves; the existing AutosaveEvents owner dispatches a new native
+save from player0 after busy transactions/conversations finish. Multiple changes
+coalesce; loading an already dispatched transaction does not dispatch it again.
+The dispatched receipt confirms native command submission, not physical disk IO.
+The existing five-active-minute single-player timer and its pause accounting remain.
+
+Still open: the supported session/profile UI, package/migration preflight, broader
+recovery integration and remaining multiplayer tests. These native results do not
+claim a complete release or adversarial protection against editing local files.
 
 ## 5.12.5 - Seated human card matches (#590, implementation in progress)
 

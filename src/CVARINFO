@@ -110,3 +110,6 @@ server bool ca_test_siege_reinforcements = false;
 
 // Presentación reversible del toro; desactivar antes de guardar para rollback.
 server bool ca_bull_3d = true;
+
+// Modo de nueva partida sin personajes; nunca se guarda como regla de juego.
+nosave noarchive server bool ca_profile_bootstrap = false;
