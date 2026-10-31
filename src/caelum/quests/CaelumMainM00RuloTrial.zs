@@ -191,7 +191,7 @@ class CaelumMainM00RuloTrial : Object play
 
     static bool Begin(CaelumPlayer user)
     {
-        if (user == null || user.player == null || user.health <= 0 || level.MapName != "MAP01"
+        if (!CaelumSpirit.CanConverse(user) || level.MapName != "MAP01"
             || user.CreationWizardOpen || !user.CharacterCreationComplete
             || !(user.player.ConversationNPC is "CaelumRulo")) return false;
         let r = user.GetPersistentCharacterState(true);
@@ -208,6 +208,8 @@ class CaelumMainM00RuloTrial : Object play
             r.SetQuestObjectiveProgress(CaelumConstants.QUEST_MAIN_M00_THE_FOOL,
                 CaelumConstants.MAIN_M00_OBJECTIVE_DEFEAT_BULL, 0, 1);
         }
+        // Aceptar la misión no habilita combate ni entrega material al espíritu.
+        if (CaelumSpirit.Active(user)) { Sync(user); return true; }
         bool receivedBolas = r.MainM00BolasId <= 0;
         if (!CaelumMainM00Gifts.EnsureTool(user, true, false))
         { CaelumMainM00MagicTrial.Feedback(user, "CA_M01_GIFT_NO_ROOM", true); return false; }
@@ -221,7 +223,8 @@ class CaelumMainM00RuloTrial : Object play
 
     static bool Complete(CaelumPlayer user)
     {
-        if (!IsActive(user) || !(user.player.ConversationNPC is "CaelumRulo")) return false;
+        if ((!IsActive(user) && !CaelumSpirit.Active(user))
+            || !(user.player.ConversationNPC is "CaelumRulo")) return false;
         let r = user.GetPersistentCharacterState(true);
         if (!r.HasMainM00Flag(CaelumConstants.MAIN_M00_FLAG_BULL_DEFEATED)
             || !r.TryAdvanceMainM00State(CaelumConstants.MAIN_M00_STATE_RULO_ACTIVE,

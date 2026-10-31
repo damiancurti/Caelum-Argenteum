@@ -6557,3 +6557,19 @@ conversation
         choice { text = "$CA_COMPANION_DIALOGUE"; giveitem = "CaelumCompanionOpenAction"; closedialog = true; }
     }
 }
+
+// The existing story remains available during an agreed Fool visit.
+conversation
+{
+    id = 43700;
+    class = "CaelumMainM00ConversationMenu";
+    page
+    {
+        pagename = "palomo_fool_return";
+        name = "$CA_PALOMO_NAME";
+        dialog = "$CA_FOOL_VISIT_HELP";
+        goodbye = "$CA_DLG_M01_PALOMO_LEAVE";
+        choice { text = "$CA_FOOL_JOURNEY_RETURN"; giveitem = "CaelumFoolReturnAction"; closedialog = true; }
+        choice { text = "$CA_FOOL_VISIT_TALK"; giveitem = "CaelumFoolConversationAction"; closedialog = true; }
+    }
+}

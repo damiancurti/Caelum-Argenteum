@@ -160,6 +160,7 @@ class CaelumChestPreview : StaticEventHandler
 
     override void NetworkProcess(ConsoleEvent e)
     {
+        if (CaelumPlayerAuthority.FromNetworkPlayer(e.Player) == null) return;
         if(e.Name=="ca_container_open" || e.Name=="ca_container_close"
             || e.Name=="ca_container_move" || e.Name=="ca_container_quantity"
             || e.Name=="ca_container_mode" || e.Name=="ca_container_transfer"

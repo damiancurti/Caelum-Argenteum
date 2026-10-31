@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `416714ce80c576f8843a6b07c1813b3d9839a128ddc74004a07313cb1772b420`. Locations include every definition; the last one per language wins.
+SHA-256: `4c88923cb7b136d68735643edc3ccaa1ecb3ba4c3441a648c176858e30c3c067`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -87,6 +87,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_FERMENT | 17 | CA_FERMENT_ACTION_OK | CA_FERMENT_WITHDRAW_UNITS |
 | CA_FERMENTATION | 2 | CA_FERMENTATION_MISSING_CHEMISTRY | CA_FERMENTATION_TITLE |
 | CA_FOOD | 5 | CA_FOOD_CLEAN | CA_FOOD_LOTS_DETAIL |
+| CA_FOOL | 7 | CA_FOOL_JOURNEY_COST | CA_FOOL_VISIT_TALK |
 | CA_FORMATION | 1 | CA_FORMATION_BREAKER_CAST | CA_FORMATION_BREAKER_CAST |
 | CA_FOUNTAIN | 1 | CA_FOUNTAIN_HINT | CA_FOUNTAIN_HINT |
 | CA_FURNITURE | 4 | CA_FURNITURE_CISTERN | CA_FURNITURE_WARDROBE |
@@ -183,6 +184,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_SOFAS | 2 | CA_SOFAS_THREE | CA_SOFAS_TWO |
 | CA_SOURCE | 7 | CA_SOURCE_COTTON | CA_SOURCE_YERBA_MATE |
 | CA_SPEAKER | 1 | CA_SPEAKER_UNKNOWN_VOICE | CA_SPEAKER_UNKNOWN_VOICE |
+| CA_SPIRIT | 2 | CA_SPIRIT_CONTROLS | CA_SPIRIT_REWARD_PENDING |
 | CA_STASH | 1 | CA_STASH_CHEST | CA_STASH_CHEST |
 | CA_STAT | 36 | CA_STAT_ABILITY_RANGE | CA_STAT_TOTAL_MASS |
 | CA_STORED | 6 | CA_STORED_READING_BOOK | CA_STORED_READING_TITLE |

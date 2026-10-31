@@ -391,6 +391,7 @@ class CaelumInventoryService : Object play
     static bool GrantMagicBoxFromPalomo(CaelumPlayer user, bool announce = true)
     {
         if (!CaelumPlayerAuthority.CanMutate(user)) return false;
+        if(user.health<=0)return CaelumSpiritRewards.Queue(user,CaelumSpiritRewards.BOX);
         CaelumPersistentCharacterState persistentState =
             user.GetPersistentCharacterState(true);
         if (persistentState == null) { return false; }
@@ -6970,6 +6971,7 @@ class CaelumInventoryService : Object play
     static bool GrantTarotDeck(CaelumPlayer user, bool explain = true)
     {
         if (!CaelumPlayerAuthority.CanMutate(user)) return false;
+        if(user.health<=0)return CaelumSpiritRewards.Queue(user,CaelumSpiritRewards.DECK);
         let record = user.GetPersistentCharacterState(false);
         if (record == null) return false;
         // Una ausencia no autoriza otra entrega del mazo.

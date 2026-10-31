@@ -121,11 +121,13 @@ class CaelumResurrection : Object play
         ClearNegative(body);
         if(user!=null)
         {
+            CaelumDeadTraveler.Restored(user);
             user.health=user.player.health=user.CaelumMaximumHealth;
             user.CurrentAnima=user.DerivedStats.MaximumAnima;
             user.CurrentAir=user.DerivedStats.MaximumAir;
             user.CurrentLucidity=CaelumConstants.MAXIMUM_LUCIDITY;
             user.UpdateHealthStateEffects();user.UpdateLucidityState();
+            CaelumSpiritRewards.Deliver(user);
             user.PersistCharacterState();
         }
         else if(npc!=null)

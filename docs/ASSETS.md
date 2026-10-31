@@ -1,6 +1,13 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.12.2** - 2026-10-30.
+Documentation version: **5.12.3** - 2026-10-31.
+
+## 5.12.3 - Cooperative lifecycle guards (#437)
+
+This implementation slice changes no artwork, audio or map geometry. Existing
+native death presentation remains. The accepted future spirit/journey behavior
+is still pending implementation; no new visual asset is claimed.
+
 
 ## 5.12.2 - Cooperative time interface (#436)
 

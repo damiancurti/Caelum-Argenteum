@@ -1,6 +1,20 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.12.2** - 2026-10-30.
+Documentation version: **5.12.3** - 2026-10-31.
+
+## V5.12 lifecycle work - #437 / 5.12.3
+
+Legacy registration fixed and verified: static bridge, inert old serialized shell;
+68 native assertions pass. Session launcher and final release integration remain.
+
+Implemented: dead native body/inventory preservation through map travel;
+cancellation on death/departure; common-recovery consent reset; The Fool's
+unanimous mansion journey and all-dead exception; spirit movement/conversation;
+pending material rewards; Palomo return without payment or resurrection.
+Final package: 374 native assertions, including saved spirit rewards, earlier
+lifecycle-save recovery, solo native User3 and companion slot boundaries.
+Remaining: coordinated recovery launcher integration with #434/#435. Author checks stay
+deferred until all V5.12 issues are ready. No release-completion claim.
 
 ## V5.12 work in progress - #436 / 5.12.2
 

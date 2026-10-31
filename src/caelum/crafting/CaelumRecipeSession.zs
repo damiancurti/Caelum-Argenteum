@@ -296,6 +296,7 @@ class CaelumRecipeEvents : StaticEventHandler
     }
     override void NetworkProcess(ConsoleEvent e)
     {
+        if (CaelumPlayerAuthority.FromNetworkPlayer(e.Player) == null) return;
         if(e.Name!="ca_recipe_move" && e.Name!="ca_recipe_read" && e.Name!="ca_recipe_filter"
             && e.Name!="ca_recipe_cancel" && e.Name!="ca_recipe_close" && e.Name!="ca_recipe_select")return;
         if(e.Player<0 || e.Player>=MAXPLAYERS || !playeringame[e.Player])return;

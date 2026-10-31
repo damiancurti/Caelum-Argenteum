@@ -1,6 +1,59 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.12.2** - 2026-10-30.
+Documentation version: **5.12.3** - 2026-10-31.
+
+## 5.12.3 - Cooperative lifecycle guards (#437, 2026-10-31, in progress)
+
+Legacy-session follow-up: a static lifecycle bridge now installs on native reload,
+while the old serialized EventHandler class remains an inert compatibility shell.
+No class-base rewrite or duplicate callbacks. Two-peer tests pass26 spirit-reload,
+22 fresh death and20 old-death boundary assertions, including a copied save without
+the old registration. Use does not respawn and record/wallet identity remains intact.
+Evidence: assets/validation_v5_12_3/bridge-results.json; author acceptance pending.
+
+Author decisions: dead players wait without world actions, but can vote; native
+Use must not respawn a replacement. Shared consent cancels at death/departure.
+Existing Redemption may still restore the same corpse. The author separately
+approved replacing The Fool flight with unanimous mansion travel, charging the
+existing 1,000 Anima/600-second cooldown only after consent; Palomo provides a
+free unanimous return to origin. The spirit only moves/converses in the mansion,
+without material inventory interactions. If all players die, one may initiate
+The Fool from the interface with the same payment. Spirit conversations may
+advance missions; their material rewards must wait for resurrection.
+
+Follow-up implementation: a native travel guard preserves the original dead
+pawn, inventory and recorded corpse position across hub travel. The mansion
+joins campaign hub 434; The Fool now requests consent and Palomo offers return.
+Spirit controls allow movement/resident dialogue but deny material actions.
+Personal pending flags defer decks/Boxes; the unique silver key remains with
+Argento until claimed alive. Tarot revision 2 removes legacy flight without
+resetting ownership, selected cards or cooldown. No automatic resurrection.
+
+Native verification: eight actual peers pass 11 death/consent checks each and
+six common-save recovery/resurrection checks each. Four-peer remote departure
+and two-peer arbitrator departure pass, including original-roster restarts and
+the native recovery event: 188 assertions, clean exits. After correcting diagnostic release labels, the
+exact delivery package passed 22 more two-peer assertions (210 total); all six
+changed packaged members match the staged index byte-for-byte. Package hashes,
+commands and full logs (including corrected fixture failures) are preserved in
+assets/validation_v5_12_3/lifecycle-results.json and lifecycle-logs.json.gz.
+This does not establish general host migration or repair the earlier #436 engine
+crash. Static validator passes; author confirmation remains pending.
+
+
+Follow-up native delivery verification: 374 assertions from the final package,
+with one, two and eight real processes. Eight peers pass 36 checks each; two
+peers save pending spirit rewards (19 each), reload and complete the same visit
+(13 each), and load the earlier lifecycle build's common save (6 each). Solo
+living travel and the actual native User3 all-dead exception pass 10 checks.
+The companion boundary retains a dead slot at exactly three days, releases it
+one world tic later, and does not evict anyone when a revived member finds a
+full party. All 35 changed packaged members match source bytes. Evidence:
+assets/validation_v5_12_3/spirit-results.json and spirit-logs.json.gz, including
+failed fixture iterations and their corrections. CA-KP-196 documents native
+forced respawn during ChangeLevel. Static checks and author acceptance remain
+separate; coordinated recovery tooling and whole-release integration remain.
+
 
 #436 package follow-up: CRLF/LF normalization changes no logic. The rebuilt
 final package matches all changed source members exactly; native eight-peer
