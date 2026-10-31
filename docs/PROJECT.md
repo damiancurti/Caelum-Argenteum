@@ -2,6 +2,16 @@
 
 Documentation version: **5.11.8** - 2026-10-30.
 
+## V5.12 preparation - native multiplayer baseline (#435)
+
+The accepted 5.11.8 runtime starts with 2, 4 and 8 independent GZDoom 4.14.2
+processes on one machine. Every peer observes the same request sequence and
+native player ownership (6/20/72 assertions). Evidence is in
+assets/validation_v5_12_1/baseline-results.json. This is preparatory evidence,
+not completed 2-8-player support or a performance result. #434-438 remain open;
+profiles, authority transactions, cooperative policies, recovery and two authored
+PvP venues remain to implement. No production or release-version change yet.
+
 ## 5.11.8 - Mandinga and Zupay disease immunity (#586)
 
 The author extends the rat damage rule to these two species. No exposure,

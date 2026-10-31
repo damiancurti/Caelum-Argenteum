@@ -9,6 +9,12 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 **Current release: 5.11.8.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
+**V5.12 is in progress.** #434-438 remain open. Preparatory #435 checks pass
+with 2, 4 and 8 independent native processes on the same machine; they verify
+startup and request attribution only. Full authority, profiles, cooperative
+policies, recovery and PvP are not yet delivered. Evidence:
+`assets/validation_v5_12_1/baseline-results.json`. No new author test is ready.
+
 Author clarification: the comparison is Leonor versus Caella. Caella carries
 22.0184kg (armor plus pickaxe, utility staff and bolas); Leonor carries5kg.
 Native mansion speeds are6.26658 versus7.93925m/s respectively, a26.69%

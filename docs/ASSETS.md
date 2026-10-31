@@ -2,6 +2,13 @@
 
 Documentation version: **5.11.8** - 2026-10-30.
 
+## V5.12 native network fixture (#435, preparation)
+
+The deterministic disposable square-map generator and network probe live in
+assets/validation_v5_12_1; outputs stay under build. The probe uses only the
+locally installed development IWAD for test textures and distributes no IWAD,
+engine executable or generated fixture. No production art/audio changes.
+
 ## 5.11.8 - Species damage policy (#586)
 
 Reuse accepted Mandinga, Zupay and rat artwork unchanged. The native diagnostic

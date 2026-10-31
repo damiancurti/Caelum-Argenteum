@@ -2,6 +2,16 @@
 
 Documentation version: **5.11.8** - 2026-10-30.
 
+## V5.12 preparation - #434-438 (unreleased, 2026-10-30)
+
+#435 native baseline passes 2/4/8 independent peers on one Windows machine:
+6/20/72 assertions respectively. This covers sender attribution and startup,
+not full authority, state transactions, save recovery or Internet performance.
+#434 profiles/checkpoints precede completed #435 authority; #436 clock/progress/
+travel, #437 recovery/death and #438 ring/maze modes remain focused issues.
+Approved decisions are recorded in their GitHub issue bodies. No author queue
+entry until an actionable completed scenario is ready. No issue is complete.
+
 Current author queue: empty. The author confirmed all remaining checks on
 2026-10-30 and requested merges and issue closure. HISTORY records CA430-01
 and CA586-01 under their originating releases, alongside earlier acceptances.

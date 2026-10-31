@@ -2,6 +2,17 @@
 
 Documentation version: **5.11.8** - 2026-10-30.
 
+## V5.12 network boundary under implementation (#435)
+
+Native GZDoom 4.14.2 peer-to-peer sessions share one active map and synchronized
+simulation. Preparatory 2/4/8-process loopback evidence verifies event source
+ownership only. Existing single-player systems are not thereby certified for
+multiplayer. The author-approved disconnection rule cancels votes and accelerated
+time; continuation is permitted only while the native session survives.
+Rejoining requires a coordinated restart from a common valid save and matching
+identities. Unexpected termination uses the latest valid save. No seamless hot
+join or independent-map capability is claimed. Implementation remains pending.
+
 ## Demon disease immunity (#586, 5.11.8)
 
 Mandinga and Zupay now reject CaelumDiseaseDOT, as rats already do. Their

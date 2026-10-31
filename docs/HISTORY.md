@@ -2,6 +2,20 @@
 
 Documentation version: **5.11.8** - 2026-10-30.
 
+## Unreleased V5.12 network baseline (#435, 2026-10-30)
+
+The author requests implementation of #434-438, with issue-separated branches,
+commits, evidence and PRs and a combined terminal after completion. Existing
+#10 two-peer evidence informed a new native loopback baseline on exact 5.11.8.
+Independent 2/4/8-process sessions pass 6/20/72 startup/request attribution
+assertions; every peer observes the same ordered sender list. These checks do
+not establish inventories, multiplayer persistence, recovery, consent, travel,
+PvP or multi-machine performance. The first fixture failed compilation because
+ConsoleCommand is not a ZScript API; the corrected fixture exits through native
+configuration commands. Preserve failed and successful logs in
+assets/validation_v5_12_1. This preparatory commit changes no production runtime
+and does not assign a completed V5.12 patch or claim author acceptance.
+
 ## 5.11.8 - Mandinga and Zupay contamination immunity (#586, 2026-10-30)
 
 The author explicitly requested the same contamination-damage immunity for
