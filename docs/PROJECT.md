@@ -49,7 +49,8 @@ or retroactive claims. House restitution shares title/access while refunding
 only the original payer. Two cooperative players share the actual tent berths,
 each with their own bag, without sharing ownership or packing permission.
 Solo and cooperative objective ledgers now preserve earned eligibility by the
-character's existing legal identity, rather than only a record pointer. Actual
+character's existing legal identity, independently of the native record actor.
+Revision-2 migration retains these identity snapshots before external transfer. Actual
 cross-campaign transfer integration remains under verification. The full
 V5.12 milestone is not complete or author-accepted. Evidence is kept in
 `assets/validation_v5_12_2`, distinct from #435 and #590.
