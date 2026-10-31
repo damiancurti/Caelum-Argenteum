@@ -1,12 +1,13 @@
 {
   "issue": 438,
-  "runtime": "build/issue438/delivery/caelum_argenteum_dev.pk3",
-  "runtime_sha256": "905bd5840bf2bbd68c13164135a35cdfb80e77385d639cee5fb6954717043b43",
+  "runtime": "build/issue438/delivery-lf/caelum_argenteum_dev.pk3",
+  "runtime_sha256": "17b2928044d779157c50fdd51629bfbd1f5144fb5f93ab8208be92cecfdd059c",
   "final_runs": [
     "20261031-023833",
     "20261031-023946",
     "20261031-024051",
-    "legacy-20261031-024200"
+    "legacy-20261031-024200",
+    "legacy-20261031-024722"
   ],
   "native_assertions": 390,
   "legacy_native_checks": 6,
@@ -4740,6 +4741,41 @@
           }
         ]
       }
+    },
+    {
+      "run": "legacy-20261031-024722",
+      "final_scope": true,
+      "result": {
+        "issue": 438,
+        "previous": "..\\issue437-work\\build\\issue437\\20261031-014121",
+        "migration": true,
+        "passed": true,
+        "peers": [
+          {
+            "peer": 0,
+            "exit": 0,
+            "observations": [
+              "CA438 LEGACY arena_handler=1 teamdamage=1",
+              "CA438 LEGACY original_record=1",
+              "CA438 LEGACY friendly_damage=1"
+            ],
+            "errors": []
+          },
+          {
+            "peer": 1,
+            "exit": 0,
+            "observations": [
+              "CA438 LEGACY arena_handler=1 teamdamage=1",
+              "CA438 LEGACY original_record=1",
+              "CA438 LEGACY friendly_damage=1"
+            ],
+            "errors": []
+          }
+        ]
+      }
     }
-  ]
+  ],
+  "behavior_test_runtime": "build/issue438/delivery/caelum_argenteum_dev.pk3",
+  "behavior_test_sha256": "905bd5840bf2bbd68c13164135a35cdfb80e77385d639cee5fb6954717043b43",
+  "packaging_note": "One CRLF-to-LF normalization in CaelumContaminationData.zs; all other archive members byte-identical, normalized source identical. All 23 changed packaged members match Git. Final LF package reruns six native legacy recovery checks."
 }

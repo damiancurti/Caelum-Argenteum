@@ -403,3 +403,5 @@
 /src/models/caelum/world/arenas/*.obj text eol=lf
 /src/caelum/data/arenas.mapinfo text eol=lf
 /src/caelum/data/CaelumArenaData.zs text eol=lf
+
+/src/caelum/data/CaelumContaminationData.zs text eol=lf

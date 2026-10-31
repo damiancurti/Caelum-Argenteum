@@ -20,6 +20,9 @@ editor id outside the signed range produced an unknown thing; corrected before
 the final build. Determinism/connectivity checks pass. Evidence lives in
 assets/validation_v5_12_4. Coordinated-launcher integration and the combined
 author suite remain pending; no manual acceptance or rendering-FPS claim.
+Final packaging normalizes one source member from CRLF to LF; all other members
+remain identical. The final archive matches all23 changed Git members and repeats
+the six native migration checks. Source equivalence and both hashes are recorded.
 
 ## 5.12.3 - Cooperative lifecycle guards (#437, 2026-10-31, in progress)
 
