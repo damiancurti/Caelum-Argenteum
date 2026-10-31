@@ -36,6 +36,15 @@ Integration order: PR #592 (#436), #593 (#437), #594 (#438), #591 (#590),
 #595 (#434), #589 (#435), then #603 (#602). Acceptance is part of the same
 5.12.7a patch; no gameplay change or version increment accompanies this record.
 
+All seven PRs were merged and the seven issues closed on 2026-10-31. Main's
+complete tree matched the accepted branch after integration. Validation from its
+fresh checkout then exposed stale raw-byte hashes: the working sources used CRLF
+although Git stores the documented LF form. The #602 checkout follow-up regenerates
+the document/localization indexes from canonical LF bytes and records this closure.
+Only generated localization hashes change under src; gameplay and dialogue text
+remain byte-identical to the accepted Git tree. This follows CA-KP-015 and requires
+static checkout validation, not repeating the accepted native scenarios.
+
 Qualification: these are the author's listed local scenarios, not certification
 of Internet latency or resolution of the previously measured siege rendering
 limit. Earlier handoff and checkpoint notes below retain their historical status;

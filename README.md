@@ -13,7 +13,8 @@ The 5.12.7a correction (#602) lets valid mansion spirits confirm and restore
 native dialogue pages. New multiplayer session configurations initialize controls
 from the packaged preset, including T for Tarot. These changes do not revive
 characters automatically. All V5.12 author checks, including the death-interface
-correction, passed on 2026-10-31; the author authorized merging and issue closure.
+correction, passed on 2026-10-31. All seven issues and their focused PRs are
+closed and merged. Generated indexes use the canonical LF checkout bytes.
 
 Native review found and corrected a client-local travel camera that changed shared
 RNG. Final checks include the engine's own inconsistency flag; earlier log-only
