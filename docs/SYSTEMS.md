@@ -12,7 +12,8 @@ seated Use remains an owned network request. Each card player closes their own
 result and regains their own rest/movement UI independently.
 Native saves with an inconsistency flag cannot replace a valid common checkpoint
 or publish transferred custody. The failed save remains available for diagnosis.
-The grouped manual suite is ready; acceptance is pending in pending_test.txt.
+The grouped manual suite, including the #602 spirit-interface correction, was
+accepted on 2026-10-31. All six author checks passed; pending_test.txt is empty.
 Earlier integration checkpoints below preserve historical test qualifications.
 
 ## Earlier 5.12.7 integration checkpoints - #435

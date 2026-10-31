@@ -12,8 +12,8 @@ it, then rebuild with `run_dev.bat` as described below.
 The 5.12.7a correction (#602) lets valid mansion spirits confirm and restore
 native dialogue pages. New multiplayer session configurations initialize controls
 from the packaged preset, including T for Tarot. These changes do not revive
-characters automatically. Other author checks passed on 2026-10-31; the death
-interface correction still requires confirmation.
+characters automatically. All V5.12 author checks, including the death-interface
+correction, passed on 2026-10-31; the author authorized merging and issue closure.
 
 Native review found and corrected a client-local travel camera that changed shared
 RNG. Final checks include the engine's own inconsistency flag; earlier log-only
@@ -24,8 +24,7 @@ common recovery. The installed engine and original saves remain unchanged.
 ordered package hashes and character slots, reserve campaign custody and retain
 valid common recovery checkpoints. Four/eight-peer identity and common restart
 pass on the complete package; wrong identities leave recovery unchanged. Actual application-presentation measurements are recorded below;
-the combined manual terminal is available. Only the #437/#602 death-interface
-recheck remains in `pending_test.txt`. Native movement,
+the combined manual suite is accepted and `pending_test.txt` is empty. Native movement,
 melee impact attribution and owned Tarot cost/cooldown pass with 2/4/8 clients.
 Concurrent trade and personal crafting pass with 2/4/8 native clients.
 

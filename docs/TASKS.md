@@ -4,14 +4,15 @@ Documentation version: **5.12.7a** - 2026-10-31.
 
 ## 5.12.7a - Death-interface correction (#602)
 
-The author accepted all other V5.12 checks on 2026-10-31. CA437-LIFECYCLE-01
-remains pending after invisible spirit dialogues and missing Tarot input in the
-multiplayer launcher. Dialogue page authority and saved-menu reconstruction now
+The author accepted all V5.12 checks on 2026-10-31, including CA437-LIFECYCLE-01
+after the spirit-dialogue and Tarot-input correction. The author authorized
+merging and closing #434-438/#590/#602; pending_test.txt is empty.
+Dialogue page authority and saved-menu reconstruction now
 allow only living players or valid mansion spirits. Fresh session configurations
 expand the packaged control preset before startup, including T. No automatic
 resurrection or new gameplay permissions are introduced. Focused native evidence:
 assets/validation_v5_12_7a (42 native assertions; project validation: zero errors).
-Recheck the remaining author entry before closure.
+Acceptance IDs and their original versions are recorded in HISTORY.
 
 ## Earlier V5.12 integration handoff - 2026-10-31
 

@@ -25,9 +25,21 @@ entries removed from pending_test.txt (original provenance retained):
 - CA438-ARENA-01 | Origin 5.12.4 | Issue #438 | PASS, confirmed 2026-10-31.
 - CA590-CARDS-01 | Origin 5.12.5 | Issue #590 | PASS, confirmed 2026-10-31.
 
+Final author confirmation: "Ahora si todas las pruebas dieron correcto, cierra
+los issues y haz los merge", 2026-10-31. This explicitly accepts the remaining
+correction and authorizes integration of all seven focused issues:
+
+- CA437-LIFECYCLE-01 | Origin 5.12.3 | Issue #437; regression #602 | PASS,
+  confirmed 2026-10-31. Removed from pending_test.txt; the tracked file is empty.
+
+Integration order: PR #592 (#436), #593 (#437), #594 (#438), #591 (#590),
+#595 (#434), #589 (#435), then #603 (#602). Acceptance is part of the same
+5.12.7a patch; no gameplay change or version increment accompanies this record.
+
 Qualification: these are the author's listed local scenarios, not certification
 of Internet latency or resolution of the previously measured siege rendering
-limit. CA437-LIFECYCLE-01 remains pending for #602; no merge or closure is implied.
+limit. Earlier handoff and checkpoint notes below retain their historical status;
+their pending-acceptance statements are superseded by this final confirmation.
 The compiler error reported immediately after closing Truco came from the new
 CA602 diagnostic fixture, not the card-game runtime. Failed fixture runs remain
 preserved alongside final native evidence in validation_v5_12_7a.
@@ -39,7 +51,7 @@ Palomo reply returns both original dead bodies; Back/reopen releases conversatio
 locks. Packaged T binding and native User3 dispatch pass. Project validation has
 zero errors and three affected Python sources parse. results.json records package
 hashes and logs.json.gz retains failed and passed engine logs. Physical-key and
-final author confirmation remain pending.
+final author confirmation are now recorded above, separately from agent evidence.
 
 
 ## V5.12 implementation ready for author review - 2026-10-31
