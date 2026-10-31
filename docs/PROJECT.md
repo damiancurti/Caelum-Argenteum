@@ -15,8 +15,20 @@ also passes with 2/4/8 clients: synchronized movement, one actual melee impact
 per sender, one approved Tarot payment despite repeated input, and unchanged
 ability state for nonactivating participants. Every peer reports identical
 positions, damage attribution and cooldowns (112 assertions). Evidence:
-combat-results.json/combat-logs.json.gz. Managed profile integration and frame
-presentation remain pending; no author acceptance or Internet-latency claim.
+combat-results.json/combat-logs.json.gz. Subsequent managed integration is recorded below; frame
+presentation remains pending. No author acceptance or Internet-latency claim.
+
+Managed-workflow follow-up: 402 assertions pass through profile admission:
+2/4/8-client movement/combat/Tarot, an eight-client common restart, two-client
+Truco/Trucazo, arena entry/return, and The Fool's all-dead journey, spirit promises
+and explicit resurrection. Every combat peer reports identical owned results.
+Four native source/destination verifications also publish a complete outward and
+return transfer through the production identity gate. Nine transaction checks
+and menu registration/list/preparation/closure/backup pass. Evidence:
+managed-results.json, managed-logs.json.gz and launcher-results.json.
+Intermittent eight-process engine/driver exits remain unresolved; retained dumps
+are partially symbolized with official matching PDBs. No rendering or complete
+stability claim. Empty-slot onboarding and the final author handoff remain open.
 
 The launcher pins the engine/resources, IWAD and ordered packages, exports one
 common checkpoint and reserves campaign custody in the profile database. Native
@@ -34,8 +46,8 @@ identity, sender attribution and duplicate rejection, followed by restart from
 the same registry and checkpoint with unchanged identities. Two-peer wrong-slot
 refusal preserves the prior head. Handshake inputs are local, nonpersistent
 CVars; only the explicit validated network event communicates them. The host
-reads new log bytes incrementally. Final managed-workflow and frame-presentation
-verification remain pending; these results do not certify Internet latency or author acceptance.
+reads new log bytes incrementally. Native managed workflow passes as qualified above. Frame presentation and
+remaining onboarding remain pending; no Internet-latency or author acceptance claim.
 
 
 ## V5.12 profile integration (#434, 5.12.6, in progress)

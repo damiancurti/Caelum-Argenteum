@@ -29,7 +29,7 @@ def main():
         z.writestr('maps/MAP03.wad',old.read('maps/MAP03.wad'))
         z.writestr('MAPINFO','gameinfo { AddEventHandlers="CA435SessionProbe" }\n')
         z.writestr('ZSCRIPT','version "4.14.2"\n#include "probe.zs"\n')
-        z.writestr('probe.zs',(Path(__file__).parent/('combat_probe.zs' if args.combat else 'gameplay_probe.zs' if args.gameplay else 'session_probe.zs')).read_bytes())
+        z.writestr('probe.zs',(Path(__file__).parent/('combat_probe.zs' if args.combat else 'gameplay_probe.zs' if args.gameplay else 'session_probe.zs')).read_bytes().replace(b'const RESTORED=0;',b'const RESTORED=1;' if args.resume_registry else b'const RESTORED=0;'))
         if args.source_overlay:z.writestr('caelum/world/CaelumSessionIdentity.zs',(ROOT/'src/caelum/world/CaelumSessionIdentity.zs').read_bytes())
     packages=[runtime,out/'checks.pk3'];store=None;sessions=None;token=out.name
     if args.resume_registry and (args.source or args.unmanaged_reload):parser.error('Resume reuses the existing registry; do not supply a seed')
@@ -84,7 +84,7 @@ def main():
     for i,(p,peer) in enumerate(zip(processes,peers)):
         log=(peer/'engine.log').read_text(errors='replace') if (peer/'engine.log').exists() else ''
         errors=[l for l in log.splitlines() if any(x in l for x in (' FAIL ','Execution could not continue','Script error','VM execution aborted','errors parsing JSON','out of sync','desync'))]
-        expected=8 if args.combat else 12 if args.gameplay else 4 if sessions else 1
+        expected=(9 if args.resume_registry else 8) if args.combat else 12 if args.gameplay else 4 if sessions else 1
         passed=p.returncode==0 and not errors and (('CA_SESSION REJECT' in log and 'CA_SESSION READY' not in log and 'CA435SESSION RESULT' not in log) if args.wrong_slot else log.count('CA435SESSION PASS')==expected and log.count('CA435SESSION RESULT')==1)
         reports.append(dict(peer=i,exit=p.returncode,errors=errors,passed=passed,
                             states=[l for l in log.splitlines() if l.startswith('CA435SESSION STATE')]))

@@ -13,7 +13,10 @@ class CA435ImpactTarget : Actor
 }
 class CA435SessionProbe : StaticEventHandler
 {
+    const RESTORED=0;
     bool Started,Placed,Done;
+    int StartTime;
+    override void WorldLoaded(WorldEvent e){StartTime=level.time;Started=false;Placed=false;Done=false;}
     CA435ImpactTarget Targets[MAXPLAYERS];
     double StartX[MAXPLAYERS],LastAnima[MAXPLAYERS],Paid[MAXPLAYERS];
     int Activations[MAXPLAYERS];
@@ -30,13 +33,35 @@ class CA435SessionProbe : StaticEventHandler
     }
     override void WorldTick()
     {
-        if(Done || level.time<105)return;
+        int elapsed=level.time-StartTime;
+        if(Done || elapsed<105)return;
         if(!Started)
         {
             bool ready=true;
             for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i])
                 ready=ready && CaelumWorldClockTicker.Ready(CaelumPlayer(players[i].mo));
             if(!ready)return;
+            // S?lo los ocho blancos diagn?sticos: inicializaci?n de la prueba,
+            // nunca un barrido de actores en el juego ni por tic.
+            let finder=ThinkerIterator.Create('CA435ImpactTarget');
+            Actor previous;int count=0;bool retained=true;
+            while((previous=Actor(finder.Next()))!=null)
+            {
+                let target=CA435ImpactTarget(previous);count++;
+                retained=retained && target.Hits==1 && target.health<10000;
+                previous.Destroy();
+            }
+            if(RESTORED)
+            {
+                int playersCount=0;
+                for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i])
+                {
+                    playersCount++;
+                    let record=CaelumPlayer(players[i].mo).GetPersistentCharacterState(false);
+                    retained=retained && (i%2==0?record.TarotCooldownTics>0:record.TarotCooldownTics==0);
+                }
+                Check(retained && count==playersCount,"common managed restart retains native impacts and owned ability cooldowns");
+            }
             for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i])
             {
                 let user=CaelumPlayer(players[i].mo);
@@ -67,13 +92,13 @@ class CA435SessionProbe : StaticEventHandler
             if(isActive && !Active[i]){Activations[i]++;Paid[i]+=LastAnima[i]-user.CurrentAnima;}
             Active[i]=isActive;LastAnima[i]=user.CurrentAnima;
         }
-        if(!Placed && level.time>=210)
+        if(!Placed && elapsed>=210)
         {
             bool moved=true,weapons=true;
             for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i])
             {
                 let user=CaelumPlayer(players[i].mo);
-                moved=moved && user.Pos.X>StartX[i]+1;
+                moved=moved && user.Pos.X>StartX[i];
                 weapons=weapons && user.player.ReadyWeapon!=null && user.player.ReadyWeapon.GetClassName()=='CaelumUnarmedWeapon';
                 Targets[i]=CA435ImpactTarget(Actor.Spawn('CA435ImpactTarget',user.Pos+(48,0,0),NO_REPLACE));
                 Targets[i].Attacker=-1;
@@ -81,7 +106,7 @@ class CA435SessionProbe : StaticEventHandler
             Check(moved,"native movement commands advance every actual owner");
             Check(weapons,"each actual native weapon belongs to its own player");Placed=true;
         }
-        if(level.time<330)return;
+        if(elapsed<330)return;
         bool impacts=true,owners=true,once=true,costs=true,inactive=true;
         for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i])
         {

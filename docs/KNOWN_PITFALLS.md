@@ -5844,3 +5844,38 @@ Evidence: validation_v5_12_6 custody/narrative reports and compressed engine log
 real outbound/return peers verify absent source weapons and restored destination
 ownership. Unit checks preserve both boolean forms and reject stale custody.
 No original author save was rewritten; author acceptance remains pending.
+
+## CA-KP-199 - Load-based probes must preserve map bytes and handler lifetime
+
+Status/evidence: ENGINE-VERIFIED, #435, 2026-10-31, GZDoom4.14.2/Windows11.
+Evidence: validation_v5_12_7/managed-results.json and managed-logs.json.gz.
+The native map checksum rejected equivalent UDMF geometry with different source
+formatting. A managed-load fixture must retain the original map WAD bytes, not
+regenerate visually identical geometry. Missing required map packages must fail
+verification before publishing custody; retain the originals and failure logs.
+
+A newly added per-level diagnostic EventHandler is not instantiated by an older
+seed's saved handler list (CA-KP-197). A static admission probe can run the new
+scenario, but its world actor references are not serialized per hub map. Check
+restored local fixture actors through an explicit unique TID; do not interpret a
+lost static reference as missing world stock. Likewise, distinguish an admission
+seed from an actual active-card-hand reload before issuing test input. Production
+handler classes and saved-object ownership are unchanged by these probe adaptations.
+
+## CA-KP-200 - Intermittent native failures during local eight-process sessions
+
+Status/evidence: OBSERVED/UNRESOLVED, #435, 2026-10-31, GZDoom4.14.2/Windows11,
+RTX3070Ti. Local runs session-20261031-060502-507379 and -060617-276664 had native
+exits despite other peers reaching assertions. WER recorded 0xc0000409 in NVIDIA's
+nvoglv64.dll and in gzdoom.exe/abort, plus 0xc0000005 in the engine crash-information
+path (TArray<subsector_t>::Size / System_CrashInfo). Official g4.14.2 PDB provenance
+and partial dump reports are retained in managed-results.json/launcher-results.json.
+The driver export is only the nearest available symbol; incomplete stack unwinding
+and a crashing error reporter do not establish the original cause. Do not label
+this a script fix or a synchronization failure without further evidence.
+
+Separate eight-client managed combat and common restart passed every assertion,
+with identical state and native checkpoint publication. Those passes do not erase
+the intermittent failures or establish stable rendering on eight processes sharing
+one GPU. Actual presentation still requires the authorized bounded elevated capture;
+the normal-user attempt returned access denied (exit6), not a measurement.

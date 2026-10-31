@@ -6,6 +6,8 @@ from caelum_profiles import ProfileStore,ProfileError
 from caelum_profile_graph import NativeSchema,PersonalGraph
 from caelum_campaigns import Campaigns,unpack,pack,personal_record
 from caelum_sessions import Sessions,manifest,verify_manifest
+sys.path.insert(0,str(ROOT/"assets/validation_v5_12_6"))
+from campaign_fixture import independent_world
 
 runtime=Path(sys.argv[1]).resolve();source=Path(sys.argv[2]).resolve();original=source.read_bytes()
 adapter=PersonalGraph(NativeSchema(Path('C:/Program Files (x86)/GZDoom/gzdoom.pk3'),runtime))
@@ -54,7 +56,7 @@ class SessionTests(unittest.TestCase):
         self.assertEqual(self.worlds.head('world'),self.head)
 
     def test_source_identity_remains_unique_during_session(self):
-        self.prepare();members,name,level=unpack(original);personal_record(level,1)['ProfileCommitted']=0
+        self.prepare();members,name,level=unpack(independent_world(original,'session-destination'));personal_record(level,1)['ProfileCommitted']=0
         self.worlds.register('destination',pack(members,name,level))
         identity=personal_record(unpack(self.store.anchor(self.head['snapshot']))[2],0)['ExternalProfileId']
         with self.assertRaises(ProfileError):self.worlds.stage(identity,'destination',1,'transfer')

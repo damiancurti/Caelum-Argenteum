@@ -15,8 +15,20 @@ also passes with 2/4/8 clients: synchronized movement, one actual melee impact
 per sender, one approved Tarot payment despite repeated input, and unchanged
 ability state for nonactivating participants. Every peer reports identical
 positions, damage attribution and cooldowns (112 assertions). Evidence:
-combat-results.json/combat-logs.json.gz. Managed profile integration and frame
-presentation remain pending; no author acceptance or Internet-latency claim.
+combat-results.json/combat-logs.json.gz. Subsequent managed integration is recorded below; frame
+presentation remains pending. No author acceptance or Internet-latency claim.
+
+Managed-workflow follow-up: 402 assertions pass through profile admission:
+2/4/8-client movement/combat/Tarot, an eight-client common restart, two-client
+Truco/Trucazo, arena entry/return, and The Fool's all-dead journey, spirit promises
+and explicit resurrection. Every combat peer reports identical owned results.
+Four native source/destination verifications also publish a complete outward and
+return transfer through the production identity gate. Nine transaction checks
+and menu registration/list/preparation/closure/backup pass. Evidence:
+managed-results.json, managed-logs.json.gz and launcher-results.json.
+Intermittent eight-process engine/driver exits remain unresolved; retained dumps
+are partially symbolized with official matching PDBs. No rendering or complete
+stability claim. Empty-slot onboarding and the final author handoff remain open.
 
 The launcher pins the engine/resources, IWAD and ordered packages, exports one
 common checkpoint and reserves campaign custody in the profile database. Native
@@ -34,12 +46,24 @@ identity, sender attribution and duplicate rejection, followed by restart from
 the same registry and checkpoint with unchanged identities. Two-peer wrong-slot
 refusal preserves the prior head. Handshake inputs are local, nonpersistent
 CVars; only the explicit validated network event communicates them. The host
-reads new log bytes incrementally. Final managed-workflow and frame-presentation
-verification remain pending; these results do not certify Internet latency or author acceptance.
+reads new log bytes incrementally. Native managed workflow passes as qualified above. Frame presentation and
+remaining onboarding remain pending; no Internet-latency or author acceptance claim.
 
 
 #434: transfer preflight checks the native active-conversation flag, not a stale
 speaker pointer. Ordinary saves remain allowed; no dialogue progress is discarded.
+
+The ES/EN console menu (`caelum_session_menu.py`, `run_multiplayer.bat`) uses the
+same registry/session services. Preparing reserves a closed world; joining requires
+the same ordered package hashes and one displayed slot. Close ended sessions before
+preparing recovery. The current registration input is an initialized native save.
+`caelum_transfer_verify.py` runs only its own isolated local peers against copied
+source/destination drafts, checks every roster acknowledgement/import serial, then
+publishes both native checkpoints atomically. Timeout, wrong map/package or failed
+admission retains original custody and the reservation for retry/cancellation.
+A temporary static verification handler only observes state and requests a host
+save; it grants no material items and adds no map geometry. Retain required map
+addons when verifying a save that used them. Normal gameplay has no new actor scan.
 
 ## External character profile boundary (#434, 5.12.6, in progress)
 

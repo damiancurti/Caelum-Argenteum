@@ -17,6 +17,15 @@ presentation measurements and manual handoff remain pending. Native movement,
 melee impact attribution and owned Tarot cost/cooldown pass with 2/4/8 clients.
 Concurrent trade and personal crafting pass with 2/4/8 native clients.
 
+`run_multiplayer.bat` opens the ES/EN profile/session menu after validation and
+packaging. The registry defaults to `%LOCALAPPDATA%/CaelumArgenteum/profiles.sqlite3`,
+separate from regenerable builds. Use `--language en` or `--store PATH` as needed.
+Register an existing current native save, prepare one common session, then open
+that bundle as the selected host/guest in its displayed connection order. Transfers
+are verified on copied worlds before custody is published; recovery retains originals.
+Native vacancy onboarding, intermittent eight-process exits and presentation
+measurements still prevent declaring the release complete.
+
 **V5.12 profiles (#434, implementation in progress):** staged campaign transfers
 and return now preserve a single active owner, packed inventory and each world's
 shops/properties. Native narrative checkpoints save complete transactions without
