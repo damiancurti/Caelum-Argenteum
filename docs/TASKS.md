@@ -26,8 +26,12 @@ Transport boarding/fares/stop/resume are implemented; broaden lifecycle and
 rebooking/abandonment coverage. Initial tutorial departure now validates all
 living participants and loadouts before unanimous transfer. Rescue objectives
 now snapshot eligible character records, preserve late personal progress and
-grant each eligible reward once, including coordinated save recovery. Remaining
-#436: other objective conflicts, full lifecycle and tent-rest integration.
+grant each eligible reward once, including coordinated save recovery. Solo
+worlds initialize the same ledger and reconstructed records match existing legal
+identity. Remaining #436: actual cross-campaign/profile integration.
+Two actual cooperative bodies now share the deployed tent with separate native
+bags and ownership. The focused two-peer test passes 18 assertions per peer;
+full-package verification remains recorded in the accompanying tent evidence.
 Central-house restitution now grants shared titles to eligible present characters
 and refunds only the original payer, using one world-owned settlement.
 Cross-issue remaining: #434 portable profiles/checkpoints; #435 production

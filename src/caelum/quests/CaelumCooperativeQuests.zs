@@ -5,7 +5,9 @@ class CaelumCooperativeObjective : Object play
     clearscope bool Contains(CaelumPersistentCharacterState record) const
     {
         if(record==null)return false;
-        for(int i=0;i<Eligible.Size();i++)if(Eligible[i]==record)return true;
+        for(int i=0;i<Eligible.Size();i++)
+            if(Eligible[i]==record || (Eligible[i]!=null
+                && CaelumLockRules.SameTitle(Eligible[i].LawfulIdentity,record.LawfulIdentity)))return true;
         return false;
     }
     void Capture(int legacyPrisoner=-1)
@@ -15,6 +17,7 @@ class CaelumCooperativeObjective : Object play
             let user=CaelumPlayer(players[i].mo);
             if(!CaelumWorldClockTicker.Ready(user))continue;
             let record=user.GetPersistentCharacterState(false);
+            CaelumLockRules.Character(user,true);
             if(legacyPrisoner>=0 && record.GetPrisonerRescueState(legacyPrisoner)!=CaelumConstants.PRISONER_STATE_EXTRACTED)continue;
             if(!Contains(record))Eligible.Push(record);
         }
@@ -30,7 +33,7 @@ class CaelumCooperativeQuests : Object play
 
     static clearscope bool Unavailable(CaelumPlayer user,int quest)
     {
-        if(!multiplayer || user==null)return false;
+        if(user==null)return false;
         let clock=CaelumWorldClock(user.FindInventory('CaelumWorldClock'));
         let record=CaelumPersistentCharacterState(user.FindInventory('CaelumPersistentCharacterState'));
         if(clock==null || clock.CampaignQuests==null || record==null)return false;
@@ -51,7 +54,7 @@ class CaelumCooperativeQuests : Object play
 
     static CaelumCooperativeQuests Get(CaelumPlayer user)
     {
-        if(!multiplayer || !CaelumPlayerAuthority.CanMutate(user))return null;
+        if(!CaelumPlayerAuthority.CanMutate(user))return null;
         let owner=CaelumWorldClockTicker.CampaignOwner();if(owner==null)return null;
         let clock=CaelumWorldClock.Get(owner,true);
         if(clock.CampaignQuests==null)
@@ -74,7 +77,6 @@ class CaelumCooperativeQuests : Object play
     }
     static bool CanClaim(CaelumPlayer user,int prisoner)
     {
-        if(!multiplayer)return true;
         if(prisoner<0 || prisoner>=CaelumConstants.PRISONER_COUNT)return false;
         let world=Get(user);let record=user!=null?user.GetPersistentCharacterState(false):null;
         return world!=null && world.PrisonerState[prisoner]==CaelumConstants.PRISONER_STATE_EXTRACTED
