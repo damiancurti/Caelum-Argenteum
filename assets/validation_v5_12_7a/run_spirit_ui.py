@@ -1,0 +1,76 @@
+"""Exercise real native menus/page acknowledgement and common save recovery."""
+from pathlib import Path
+import argparse, datetime, json, subprocess, sys, time, zipfile
+
+ROOT=Path(__file__).resolve().parents[2]
+sys.path[:0]=[str(ROOT),str(ROOT/'assets/validation_v5_12_7')]
+import run_author_suite as author
+from caelum_profiles import ProfileStore
+from caelum_profile_graph import NativeSchema,PersonalGraph
+from caelum_campaigns import Campaigns
+from caelum_sessions import Sessions,manifest,command,watch,digest
+
+def main():
+    p=argparse.ArgumentParser(description=__doc__)
+    p.add_argument('--runtime',type=Path,required=True);p.add_argument('--anchor',type=Path,required=True)
+    p.add_argument('--engine',type=Path,required=True);p.add_argument('--reload',type=Path)
+    p.add_argument('--port',type=int,default=31935);args=p.parse_args()
+    for key in ('runtime','anchor','engine'):setattr(args,key,getattr(args,key).resolve(strict=True))
+    out=ROOT/'build/issue602'/datetime.datetime.now().strftime(f'native-{args.port}-%Y%m%d-%H%M%S-%f');out.mkdir(parents=True)
+    addon=out/'checks.pk3'
+    if args.reload:
+        previous=args.reload.resolve(strict=True);addon.write_bytes((previous/'checks.pk3').read_bytes())
+        seed=previous/'bundle/peer0/save00.zds'
+    else:
+        author.fixture(addon,args.anchor,2)
+        with zipfile.ZipFile(addon) as z:members={n:z.read(n) for n in z.namelist()}
+        members['ZSCRIPT']+=b'\n#include "spirit_ui.zs"\n'
+        members['MAPINFO']+=b'\ngameinfo { AddEventHandlers="CA602Probe" }\n'
+        members['spirit_ui.zs']=Path(__file__).with_name('spirit_ui_probe.zs').read_bytes()
+        with zipfile.ZipFile(addon,'w') as z:
+            for name,data in sorted(members.items()):z.writestr(zipfile.ZipInfo(name,(2000,1,1,0,0,0)),data)
+        seed=args.anchor
+    packages=[args.runtime,addon]
+    store=ProfileStore(previous/'profiles.sqlite3') if args.reload else ProfileStore(out/'profiles.sqlite3',create=True)
+    campaigns=Campaigns(store,PersonalGraph(NativeSchema(args.engine.parent/'gzdoom.pk3',args.runtime)))
+    if not args.reload:campaigns.register('spirit-ui',seed.read_bytes())
+    sessions=Sessions(campaigns);token=out.name
+    sessions.prepare('spirit-ui',manifest(args.engine,author.IWAD,packages),token);sessions.export(token,out/'bundle')
+    processes=[];streams=[];peers=[];commands=[];error=None
+    startup=subprocess.STARTUPINFO();startup.dwFlags|=subprocess.STARTF_USESHOWWINDOW;startup.wShowWindow=0
+    try:
+        for slot in range(2):
+            cmd,peer=command(out/'bundle',slot,args.engine,author.IWAD,packages,args.port,'127.0.0.1');peers.append(peer)
+            with (peer/'session.ini').open('a') as f:f.write('vid_fullscreen=false\nvid_defwidth=800\nvid_defheight=600\nwin_w=816\nwin_h=639\nvid_maxfps=60\nvid_vsync=false\nlanguage=es\n')
+            with (peer/'start.cfg').open('a') as f:
+                # Native command input, not a direct call to the journey service.
+                if not args.reload and slot==0:f.write('wait 280; +user3; wait 2; -user3\n')
+                f.write(f'wait {1100+(2-slot)*35}; quit\n')
+            cmd+=['-window','-width','800','-height','600'];commands.append(cmd)
+            stream=(peer/'process.log').open('wb');streams.append(stream);sessions.claim(token,slot)
+            process=subprocess.Popen(cmd,cwd=peer,startupinfo=startup,stdout=stream,stderr=stream)
+            processes.append(process);sessions.attach(token,slot,process.pid);time.sleep(.4)
+        print(out,flush=True);deadline=time.monotonic()+100
+        while any(x.poll() is None for x in processes):
+            if time.monotonic()>deadline:raise RuntimeError('Bounded native UI timeout')
+            if any(any(mark in (peer/'engine.log').read_text(errors='replace') for mark in ('Execution could not continue','Script error,')) for peer in peers if (peer/'engine.log').exists()):raise RuntimeError('Native error; full logs retained')
+            time.sleep(.25)
+    except (OSError,RuntimeError) as exc:error=str(exc)
+    finally:
+        for process in processes:
+            if process.poll() is None:process.terminate()
+        for process in processes:process.wait(timeout=15)
+        for stream in streams:stream.close()
+    reports=[]
+    for slot,(process,peer) in enumerate(zip(processes,peers)):
+        log=(peer/'engine.log').read_text(errors='replace') if (peer/'engine.log').exists() else ''
+        errors=[line for line in log.splitlines() if any(mark in line for mark in (' FAIL ','Execution could not continue','VM execution aborted','Script error','CA_SESSION REJECT','out of sync'))]
+        marker='CA602 RESULT reload-return' if args.reload else 'CA602 RESULT initial'
+        reports.append(dict(slot=slot,exit=process.returncode,errors=errors,checks=[l for l in log.splitlines() if l.startswith('CA602 ')],passed=process.returncode==0 and not errors and author.native_sync.clean(log) and 'CA_SESSION READY' in log and marker in log))
+        sessions.finished(token,slot)
+    watch(processes[0],peers[0],sessions,token,0);sessions.close(token);store.close()
+    result=dict(directory=str(out),runtime_sha256=digest(args.runtime),engine_sha256=digest(args.engine),commands=commands,error=error,peers=reports,passed=not error and all(r['passed'] for r in reports))
+    (out/'results.json').write_text(json.dumps(result,indent=2)+'\n')
+    print(json.dumps({k:result[k] for k in ('directory','error','peers','passed')},indent=2));raise SystemExit(not result['passed'])
+
+if __name__=='__main__':main()

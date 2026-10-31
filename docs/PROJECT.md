@@ -1,8 +1,19 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.12.7** - 2026-10-31.
+Documentation version: **5.12.7a** - 2026-10-31.
 
-## V5.12 implementation ready for author review - 2026-10-31
+## 5.12.7a - Death-interface correction (#602)
+
+The author accepted all other V5.12 checks on 2026-10-31. CA437-LIFECYCLE-01
+remains pending after invisible spirit dialogues and missing Tarot input in the
+multiplayer launcher. Dialogue page authority and saved-menu reconstruction now
+allow only living players or valid mansion spirits. Fresh session configurations
+expand the packaged control preset before startup, including T. No automatic
+resurrection or new gameplay permissions are introduced. Focused native evidence:
+assets/validation_v5_12_7a (42 native assertions; project validation: zero errors).
+Recheck the remaining author entry before closure.
+
+## Earlier V5.12 integration handoff - 2026-10-31
 
 #434-438 and #590 now have focused implementations and native integration evidence.
 The six author checks in pending_test.txt are outstanding; no issue closure, merge

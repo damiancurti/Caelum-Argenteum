@@ -1,12 +1,12 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.12.7** - 2026-10-31.
+Documentation version: **5.12.7a** - 2026-10-31.
 
-**V5.12:** #434-438/#590 implemented; six author checks pending_test.txt.
-Native camera RNG/predicted-time-barrier bugs fixed; cards/rest UI verified.
+**V5.12:** #434-438/#590 implemented. Author accepted all except #437 on
+2026-10-31. #602 fixes invisible spirit dialogues and missing native-session
+Tarot controls; CA437-LIFECYCLE-01 remains pending. Evidence: validation_v5_12_7a.
 Private timer-fixed4.14.2; installed engine untouched. CA-KP-202/203/204;
-validation_v5_12_7/handoff-results.json. Original failed runs retained.
-Siege remains1.33-6.48FPS/sharedGPU; no Internet/author acceptance claim.
+previous evidence: validation_v5_12_7. Siege1.33-6.48FPS/sharedGPU; no Internet claim.
 
 **V5.11/V5.10 accepted/merged:** HISTORY; no pending checks. Siege stalls persist.
 

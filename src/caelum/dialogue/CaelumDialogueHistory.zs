@@ -24,8 +24,10 @@ class CaelumDialogueHistory : StaticEventHandler
     {
         if(e.Name=="ca_social_page" || e.Name=="ca_social_stop")
         {
-            let user=CaelumPlayerAuthority.FromNetworkPlayer(e.Player);
-            if(user==null)return;
+            // El espíritu conserva Vida 0, pero puede confirmar páginas del Limbo.
+            // La excepción no habilita conversaciones del cadáver en campaña.
+            let user=CaelumPlayerAuthority.FromNetworkPlayer(e.Player,true);
+            if(!CaelumSpirit.CanConverse(user))return;
             if(e.Name=="ca_social_page")CaelumSocialization.Capture(user,e.Args[0],e.Args[1]);
             else CaelumSocialization.StopInConversation(user);
             return;
@@ -43,13 +45,23 @@ class CaelumDialogueHistory : StaticEventHandler
 
 class CaelumHistoryConversationMenu : ConversationMenu
 {
-    bool SocialPageReady;
+    bool SocialPageReady, SocialPageRequested;
+    void SendSocialPageRequest(CaelumPlayer user)
+    {
+        // Al cargar, el menú puede restaurarse antes de validar la identidad.
+        // Esperar esa admisión; cada página envía una sola solicitud válida.
+        if(!CaelumPlayerAuthority.CanMutate(user)){SocialPageRequested=false;return;}
+        if(!SocialPageReady && !SocialPageRequested && mCurNode!=null && CaelumSpirit.CanConverse(user))
+        {
+            SocialPageRequested=true;
+            EventHandler.SendNetworkEvent("ca_social_page",mCurNode.ThisNodeNum,PageOffset);
+        }
+    }
     void RequestSocialPage()
     {
         let user=mPlayer==null?null:CaelumPlayer(mPlayer.mo);
         SocialPageReady=Replaying || (mCurNode!=null && CaelumSocialization.Ready(user,mCurNode.ThisNodeNum,PageOffset));
-        if(!SocialPageReady && mCurNode!=null)
-            EventHandler.SendNetworkEvent("ca_social_page",mCurNode.ThisNodeNum,PageOffset);
+        SocialPageRequested=false;SendSocialPageRequest(user);
     }
     override int Init(StrifeDialogueNode node,PlayerInfo player,int activereply)
     {
@@ -61,6 +73,7 @@ class CaelumHistoryConversationMenu : ConversationMenu
         let user=mPlayer==null?null:CaelumPlayer(mPlayer.mo);
         if(!SocialPageReady && mCurNode!=null && CaelumSocialization.Ready(user,mCurNode.ThisNodeNum,PageOffset))
         {SocialPageReady=true;RestorePage();}
+        else if(!SocialPageReady)SendSocialPageRequest(user);
     }
     override void Ticker(){UpdateSocialPage();Super.Ticker();}
     override void Drawer(){if(SocialPageReady)Super.Drawer();}

@@ -29,7 +29,7 @@ class CaelumConversationResume : StaticEventHandler
         {
             if (!playeringame[i]) continue;
             let user = CaelumPlayer(players[i].mo);
-            if (user == null || user.player == null || user.health <= 0
+            if (!CaelumSpirit.CanConverse(user)
                 || !user.CharacterCreationComplete || user.CreationWizardOpen
                 || (user.player.cheats & CF_PREDICTING)) continue;
             CaelumJourneyState.Update(user, true);

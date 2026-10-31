@@ -6,19 +6,26 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.12.7.** Obtain and update the complete repository, validate
+**Current release: 5.12.7a.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
+
+The 5.12.7a correction (#602) lets valid mansion spirits confirm and restore
+native dialogue pages. New multiplayer session configurations initialize controls
+from the packaged preset, including T for Tarot. These changes do not revive
+characters automatically. Other author checks passed on 2026-10-31; the death
+interface correction still requires confirmation.
 
 Native review found and corrected a client-local travel camera that changed shared
 RNG. Final checks include the engine's own inconsistency flag; earlier log-only
 passes are not a synchronization clearance. Unsynchronized saves cannot overwrite
 common recovery. The installed engine and original saves remain unchanged.
 
-**V5.12 sessions (#435, ready for author review):** profile-bound native launches now check
+**V5.12 sessions (#435, author checks accepted 2026-10-31):** profile-bound native launches now check
 ordered package hashes and character slots, reserve campaign custody and retain
 valid common recovery checkpoints. Four/eight-peer identity and common restart
 pass on the complete package; wrong identities leave recovery unchanged. Actual application-presentation measurements are recorded below;
-the combined manual terminal is ready, with six checks in `pending_test.txt`. Native movement,
+the combined manual terminal is available. Only the #437/#602 death-interface
+recheck remains in `pending_test.txt`. Native movement,
 melee impact attribution and owned Tarot cost/cooldown pass with 2/4/8 clients.
 Concurrent trade and personal crafting pass with 2/4/8 native clients.
 

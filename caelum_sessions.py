@@ -190,6 +190,19 @@ class Sessions:
             return result
 
 
+def control_preset(runtime: Path) -> str:
+    """Initialize a fresh session INI from the packaged authoritative preset."""
+    with zipfile.ZipFile(runtime) as package:
+        keyconf=package.read('KEYCONF').decode('utf-8-sig')
+    prefix='alias ca_controls_defaults "'
+    for line in keyconf.splitlines():
+        if line.startswith(prefix) and line.endswith('"'):
+            # Startup exec runs before KEYCONF aliases are installed; expand the
+            # preset instead of invoking an alias that is not defined yet.
+            return line[len(prefix):-1]+'\n'
+    raise ProfileError('Runtime is missing its generated control preset.')
+
+
 def command(bundle: Path,slot: int,engine: Path,iwad: Path,packages: list[Path],port: int,host: str,*,verification: bool=False) -> tuple[list[str],Path]:
     """Prepare one native process. Joining order is checked by the runtime gate."""
     session=json.loads((bundle/'session.json').read_text(encoding='utf-8'));request=session['request']
@@ -209,7 +222,7 @@ def command(bundle: Path,slot: int,engine: Path,iwad: Path,packages: list[Path],
     write_new(peer/'session.ini',ini.encode())
     # Nonpersistent local CVars are inputs, validated against the synchronized native
     # slot/record before any managed character accepts gameplay mutations.
-    cfg=f'ca_session_profile "{identity}"\nca_session_slot {slot}\nca_session_nonce {request["nonce"]}\n'
+    cfg=f'ca_session_profile "{identity}"\nca_session_slot {slot}\nca_session_nonce {request["nonce"]}\n'+control_preset(packages[0])
     write_new(peer/'start.cfg',cfg.encode())
     network=[] if len(roster)==1 else ['-host',str(len(roster)),'-port',str(port),'-netmode','0'] if slot==0 else ['-join',f'{host}:{port}','-port',str(port+slot)]
     cmd=[str(engine.resolve()),'-noautoload','-iwad',str(iwad.resolve()),'-file',*[str(p.resolve()) for p in packages],

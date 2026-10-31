@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.12.7** - 2026-10-31.
+Documentation version: **5.12.7a** - 2026-10-31.
 
 ## V5.12 final authority and UI integration - #435
 
@@ -15892,6 +15892,16 @@ transaction. `map MAP02` starts another character without Box and does not prove
 persistence. `map CADEV02` is used for independent actor testing.
 
 ## Native dialogues and audio
+
+The 5.12.7a (#602) page acknowledgement and saved-conversation restoration use
+CanConverse: a living player or the approved dead spirit visiting MAP01. Dead
+campaign bodies remain excluded. The menu still waits for authoritative page
+data; drawing around that gate is not an authorization fix. A restored page waits
+for native identity admission before issuing its one request. Native session
+launches seed their fresh INI with the generated preset from packaged KEYCONF,
+including T / +user3. The all-dead exception still requires The Fool, its cost,
+cooldown and unanimous travel consent; it does not resurrect the participants.
+
 
 From 0b the conversations keep the simulation active. MAPINFO declares
 UnFreezeSinglePlayerConversations and the common menu omits the delayed pause of
