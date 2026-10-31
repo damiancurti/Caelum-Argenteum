@@ -110,3 +110,8 @@ server bool ca_test_siege_reinforcements = false;
 
 // Presentación reversible del toro; desactivar antes de guardar para rollback.
 server bool ca_bull_3d = true;
+
+// Identidad local emitida por el lanzador; no concede propiedad por s? misma.
+user string ca_session_profile = "";
+user int ca_session_slot = -1;
+user int ca_session_nonce = 0;

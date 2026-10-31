@@ -1,4 +1,11 @@
 [enu default]
+CA_SESSION_IDENTITY_WAIT = "Waiting for the session to confirm every character. Open managed campaigns through the session launcher.";
+CA_SESSION_IDENTITY_REJECT = "The selected character does not match this session. Close the session and recover with the agreed player order.";
+[es]
+CA_SESSION_IDENTITY_WAIT = "Esperando que la sesi?n confirme a cada personaje. Abre las campa?as administradas desde el lanzador de sesiones.";
+CA_SESSION_IDENTITY_REJECT = "El personaje elegido no coincide con esta sesi?n. Cierra la sesi?n y recup?rala con el orden de jugadores acordado.";
+
+[enu default]
 CA_PROFILE_NARRATIVE_SAVE = "Caelum Argenteum - story checkpoint";
 CA_DINING_SET_SMALL = "Round table with 2 chairs";
 CA_DINING_SET_NORMAL = "Dining table with 6 chairs";

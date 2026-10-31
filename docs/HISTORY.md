@@ -1,6 +1,30 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.12.6** - 2026-10-31.
+Documentation version: **5.12.7** - 2026-10-31.
+
+## V5.12 native session coordination - #435 / 5.12.7 in progress
+
+The launcher pins the engine/resources, IWAD and ordered packages, exports one
+common checkpoint and reserves campaign custody in the profile database. Native
+slots must acknowledge their selected profile and a shared session nonce before
+managed characters accept input or mutations. A mismatched slot keeps the gate
+closed. This remains native peer-to-peer lockstep, not a new game server.
+
+Session writes use revision checks; closing an old token cannot replace a newer
+head. Live recorded processes block lease release. The host retains valid native
+checkpoints after roster confirmation, and incomplete/foreign saves cannot replace
+recovery. Original anchors and additive session-schema backups are preserved.
+
+Initial evidence: nine transaction/manifest checks and isolated two-peer native
+identity, sender attribution, duplicate rejection and wrong-slot refusal pass.
+These iteration runs use an explicit source overlay. Final full-package, 4/8-peer,
+common recovery, disconnect, gameplay and frame-presentation checks remain.
+
+The first static-handler prototype used unqualified EventHandler send methods;
+compilation rejected it. The test wallet then mutated an absorbed pickup object;
+the corrected probe uses native GiveInventory with its intended count. Failed
+runs remain alongside successful evidence. No author acceptance is recorded.
+
 
 ## 5.12.6 - Typed personal profile graph foundation (#434, 2026-10-31)
 

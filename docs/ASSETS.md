@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.12.6** - 2026-10-31.
+Documentation version: **5.12.7** - 2026-10-31.
 
 ## Profile graph tooling (#434, 5.12.6)
 
