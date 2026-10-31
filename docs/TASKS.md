@@ -4,15 +4,17 @@ Documentation version: **5.12.6** - 2026-10-31.
 
 ## V5.12 profiles - #434 / 5.12.6 in progress
 
-Verified: immutable recovery-anchor store; typed personal graph; native additive
-import reconciliation; two-peer import/common-save reload. Tests preserve wallet,
-attributes, Tarot, recipes, water, carried table/chairs/food and destination stock.
+Verified: immutable anchors, schema-2 custody, native source retirement and return,
+atomic publication of both campaign heads, stale-owner refusal and narrative saves.
+Two-peer outward/return checks preserve packed possessions and campaign stock/title;
+reward/choice saves survive reload without another reward or automatic save.
 
 Still required before delivery:
-- Connect source retirement, campaign checkpoints and exactly-once custody commit.
-- Provide profile operations and supported migration/recovery without resetting originals.
-- Hook complete narrative transactions into the existing autosave owner.
-- Integrate #435 session identities/preflight/recovery and remaining #436 rest checks.
+- Integrate profile commands with #435 session identities, package preflight and recovery.
+- Expand native coverage to campaign geometry, deceased profiles and migration sources.
+- Check active-conversation preflight against native serialized state and profile root coverage.
+- Complete remaining #436 two-player rest/portable-progress integration.
+- Resolve the legacy #437 per-level-handler registration before old-session recovery.
 - Finish combined validation before creating the author terminal and pending checks.
 
 ## V5.12 in progress - #590 seated 1v1 cards (5.12.5)

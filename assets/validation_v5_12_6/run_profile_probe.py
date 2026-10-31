@@ -20,6 +20,9 @@ def main():
     parser.add_argument('--source', type=Path)
     parser.add_argument('--reload', type=Path, help='Reload a previously imported native checkpoint without importing it again')
     parser.add_argument('--port', type=int, default=30434)
+    parser.add_argument('--probe', type=Path, help='Alternate focused native assertions')
+    parser.add_argument('--checks', type=int, help='Exact expected assertion count per peer')
+    parser.add_argument('--report', type=Path, help='Write the complete run report to this new file')
     args = parser.parse_args()
     spec = importlib.util.spec_from_file_location('card_fixture', ROOT/'assets/validation_v5_12_5/run_card_probe.py')
     fixture = importlib.util.module_from_spec(spec); spec.loader.exec_module(fixture)
@@ -32,7 +35,7 @@ def main():
         archive.writestr('maps/MAP03.wad', old.read('maps/MAP03.wad'))
         archive.writestr('MAPINFO', 'gameinfo { AddEventHandlers="CA434ProfileProbe" }')
         archive.writestr('ZSCRIPT', 'version "4.14.2"\n#include "probe.zs"\n')
-        archive.writestr('probe.zs', (Path(__file__).parent/'profile_probe.zs').read_bytes())
+        archive.writestr('probe.zs', (args.probe or Path(__file__).parent/'profile_probe.zs').read_bytes())
     if args.source:
         source = args.source.resolve(strict=True)
         members, info, level = native_archive(source)
@@ -69,7 +72,7 @@ def main():
         print('Started two native peers:',out,flush=True)
         deadline=time.monotonic()+70
         while any(p.poll() is None for p in processes) and time.monotonic()<deadline:
-            if any(any(t in p.read_text(errors='replace') for t in ('Execution could not continue','Script error','VM execution aborted','Cannot find savegame','DIED WITH FATAL ERROR','EADDRINUSE')) for p in out.glob('peer*/engine.log')):break
+            if any(any(t in p.read_text(errors='replace') for t in ('Execution could not continue','Script error','VM execution aborted','Cannot find savegame','DIED WITH FATAL ERROR','EADDRINUSE','errors parsing JSON')) for p in out.glob('peer*/engine.log')):break
             time.sleep(.2)
     finally:
         for process in processes:
@@ -78,13 +81,16 @@ def main():
     reports=[]
     for index,process in enumerate(processes):
         log=out/f'peer{index}/engine.log';text=log.read_text(errors='replace') if log.exists() else ''
-        errors=[l for l in text.splitlines() if any(t in l for t in (' FAIL ','Execution could not continue','Script error','VM execution aborted','out of sync','desync','Unknown type','Unknown sprite','Cannot find savegame','DIED WITH FATAL ERROR','EADDRINUSE'))]
+        errors=[l for l in text.splitlines() if any(t in l for t in (' FAIL ','Execution could not continue','Script error','VM execution aborted','out of sync','desync','Unknown type','Unknown sprite','Cannot find savegame','DIED WITH FATAL ERROR','EADDRINUSE','errors parsing JSON','type expected for'))]
         checks=[l for l in text.splitlines() if l.startswith('CA434 ')]
-        passed=process.returncode==0 and not errors and text.count('CA434 PASS')==(15 if args.source or args.reload else 3) and text.count('CA434 RESULT')==1
+        expected=args.checks if args.checks is not None else (15 if args.source or args.reload else 3)
+        passed=process.returncode==0 and not errors and text.count('CA434 PASS')==expected and text.count('CA434 RESULT')==1
         reports.append(dict(peer=index,exit=process.returncode,passed=passed,checks=checks,errors=errors))
-    result=dict(issue=434,stage='typed graph prototype; not durable custody acceptance',runtime_sha256=fixture.digest(runtime),
-                commands=commands,source=str(args.source),reload=str(args.reload),peers=reports,passed=all(r['passed'] for r in reports))
+    result=dict(issue=434,directory=str(out),stage='isolated native profile assertions',runtime_sha256=fixture.digest(runtime),
+                commands=commands,source=str(args.source),reload=str(args.reload),probe=str(args.probe),peers=reports,passed=all(r['passed'] for r in reports))
     (out/'results.json').write_text(json.dumps(result,indent=2),encoding='utf-8')
+    if args.report:
+        with args.report.open('x',encoding='utf-8') as stream:json.dump(result,stream,indent=2)
     print(json.dumps({'directory':str(out),'passed':result['passed'],'peers':reports},indent=2))
     if not result['passed']:raise SystemExit(1)
 

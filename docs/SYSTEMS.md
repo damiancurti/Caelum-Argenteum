@@ -19,10 +19,32 @@ reconciliation from repeating on subsequent loads. Material transfers require
 an empty destination or the same external identity; another committed character
 is never silently overwritten. Native validation is isolated, not author approval.
 
-The immutable-anchor store and graph adapter are not yet wired into a completed
-custody transaction. Source retirement, production profile commands, campaign
-checkpoint registration and narrative save hooks remain open. Direct graph
-installation is an internal adapter, not permission to publish two active owners.
+The schema-2 store adds campaign heads, original-slot identity bindings and
+reserved transfers. Upgrading schema1 first copies the original database; reopening
+is idempotent. Registering a managed character again is refused. Transfers reserve
+both campaign heads, keep current custody until verification, and publish source,
+destination and profile revision atomically. Cancellation preserves original heads;
+stale heads, occupied slots and unverified imports fail closed. A departed native
+slot has no material inventory, weapon, collision or permission to act. Returning
+reuses that slot and its campaign data. The command adapter is caelum_campaigns.py;
+its draft outputs are verification artifacts, not ordinary session launch inputs.
+Active crafting/rest/card/travel operations must finish or be cancelled for transfer;
+ordinary native checkpoints may retain crafting. Source retirement performs one
+offline pass over the saved object table; gameplay uses no global actor scan.
+
+NarrativeCheckpoint revision1 observes the personal record at the end of
+PersistCharacterState: completed quests, reward receipts, starter/equipment choices,
+trial completion, secret passage/exit confirmation and membership epochs. Older
+records establish a baseline without retrospective grants/saves. Pending serials
+survive native saves; the existing AutosaveEvents owner dispatches a new native
+save from player0 after busy transactions/conversations finish. Multiple changes
+coalesce; loading an already dispatched transaction does not dispatch it again.
+The dispatched receipt confirms native command submission, not physical disk IO.
+The existing five-active-minute single-player timer and its pause accounting remain.
+
+Still open: the supported session/profile UI, package/migration preflight, broader
+recovery integration and remaining multiplayer tests. These native results do not
+claim a complete release or adversarial protection against editing local files.
 
 ## 5.12.5 - Seated human card matches (#590, implementation in progress)
 

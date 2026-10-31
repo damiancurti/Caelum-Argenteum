@@ -17,7 +17,7 @@ import sqlite3
 import uuid
 import zipfile
 
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 APPLICATION_ID = 0x43415052
 
 
@@ -89,7 +89,7 @@ class ProfileStore:
             if create:
                 with self.transaction():
                     self.connection.execute(f"PRAGMA application_id={APPLICATION_ID}")
-                    self.connection.execute(f"PRAGMA user_version={SCHEMA_VERSION}")
+                    self.connection.execute("PRAGMA user_version=1")
                     self.connection.execute("CREATE TABLE snapshots (digest TEXT PRIMARY KEY, native BLOB NOT NULL)")
                     self.connection.execute("""CREATE TABLE profiles (
                         identity TEXT PRIMARY KEY, name TEXT NOT NULL, campaign TEXT NOT NULL,
@@ -98,6 +98,7 @@ class ProfileStore:
                         origin TEXT NOT NULL UNIQUE)""")
                     self.connection.execute("""CREATE TABLE operations (
                         token TEXT PRIMARY KEY, request TEXT NOT NULL, result TEXT NOT NULL)""")
+            self._upgrade()
             self._check_schema()
         except sqlite3.DatabaseError as exc:
             self.connection.close()
@@ -108,6 +109,40 @@ class ProfileStore:
 
     def close(self) -> None:
         self.connection.close()
+
+    def _upgrade(self) -> None:
+        """Copy the original store before the additive, idempotent v2 upgrade."""
+        app = self.connection.execute("PRAGMA application_id").fetchone()[0]
+        version = self.connection.execute("PRAGMA user_version").fetchone()[0]
+        if app != APPLICATION_ID or version != 1:
+            return
+        backup = self.path.with_name(self.path.name + ".v1-backup-" + str(uuid.uuid4()))
+        with backup.open("xb"):
+            pass
+        target = sqlite3.connect(backup)
+        try:
+            self.connection.backup(target)
+        finally:
+            target.close()
+        with self.transaction():
+            # Another process may have completed migration while backup ran.
+            if self.connection.execute("PRAGMA user_version").fetchone()[0] != 1:
+                return
+            self.connection.execute("""CREATE TABLE campaigns (
+                identity TEXT PRIMARY KEY, revision INTEGER NOT NULL,
+                snapshot TEXT NOT NULL REFERENCES snapshots(digest))""")
+            self.connection.execute("""CREATE TABLE campaign_slots (
+                campaign TEXT NOT NULL REFERENCES campaigns(identity), player INTEGER NOT NULL,
+                identity TEXT NOT NULL REFERENCES profiles(identity),
+                PRIMARY KEY(campaign,player))""")
+            self.connection.execute("""CREATE TABLE transfers (
+                token TEXT PRIMARY KEY, request TEXT NOT NULL,
+                source_draft TEXT NOT NULL REFERENCES snapshots(digest),
+                destination_draft TEXT NOT NULL REFERENCES snapshots(digest),
+                result TEXT)""")
+            self.connection.execute("""CREATE TABLE campaign_locks (
+                campaign TEXT PRIMARY KEY REFERENCES campaigns(identity), token TEXT NOT NULL)""")
+            self.connection.execute(f"PRAGMA user_version={SCHEMA_VERSION}")
 
     def _check_schema(self) -> None:
         try:
@@ -156,8 +191,18 @@ class ProfileStore:
         self._key(name, "character name")
         with self.transaction():
             digest = self._snapshot(data, player)
-            origin = json.dumps([campaign, digest, player], separators=(",", ":"))
+            # A newer checkpoint is not a new character. Bind the original slot
+            # independently of file bytes; departed slots cannot be re-enrolled.
+            origin = json.dumps([campaign, player], separators=(",", ":"))
             old = self.connection.execute("SELECT identity FROM profiles WHERE origin=?", (origin,)).fetchone()
+            if old is None:
+                legacy = [r for r in self.connection.execute("SELECT identity,origin FROM profiles")
+                          if json.loads(r["origin"])[0] == campaign
+                          and json.loads(r["origin"])[-1] == player]
+                if len(legacy) > 1:
+                    raise ProfileError("Legacy slot has multiple identities; recovery must resolve its history.")
+                if legacy:
+                    old = legacy[0]
             if old is not None:
                 return self.get(old[0])
             identity = str(uuid.uuid4())

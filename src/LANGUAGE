@@ -1,4 +1,5 @@
 [enu default]
+CA_PROFILE_NARRATIVE_SAVE = "Caelum Argenteum - story checkpoint";
 CA_DINING_SET_SMALL = "Round table with 2 chairs";
 CA_DINING_SET_NORMAL = "Dining table with 6 chairs";
 CA_DINING_SET_LARGE = "Long table with 12 chairs";
@@ -6,6 +7,7 @@ CA_DINING_SET_LUXURY = "Luxury table with 6 armchairs";
 CA_DINING_PORTABLE_HINT = "{bind:+use}: table contents | {bind:+crouch}+{bind:+use}: carry your set and contents";
 CA_FURNITURE_REST_PORTABLE_HINT = "{bind:+use}: rest | {bind:+crouch}+{bind:+use}: carry your furniture";
 [es]
+CA_PROFILE_NARRATIVE_SAVE = "Caelum Argenteum - punto de historia";
 CA_DINING_SET_SMALL = "Mesa redonda con 2 sillas";
 CA_DINING_SET_NORMAL = "Mesa de comedor con 6 sillas";
 CA_DINING_SET_LARGE = "Mesa larga con 12 sillas";

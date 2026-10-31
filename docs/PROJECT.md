@@ -4,12 +4,13 @@ Documentation version: **5.12.6** - 2026-10-31.
 
 ## V5.12 profile integration (#434, 5.12.6, in progress)
 
-External SQLite custody retains immutable native recovery anchors and revisioned
-single-campaign assignment. The typed graph adapter now extracts actual personal
-inventory, identity/progress and packed furniture without cloning a campaign.
-An isolated native two-player import/reload preserves resources and ownership.
-The production transfer transaction, source departure, UI/launcher and narrative
-checkpoint hooks remain unfinished. No author acceptance or release completion.
+External SQLite custody retains immutable native anchors and revisioned campaign
+heads. Transfers reserve both worlds, retire source material ownership and publish
+both engine-verified results in one transaction. Two native peers verify outward
+and return transfers, preserving other participants and campaign property/stock.
+Narrative saves follow committed personal changes and retain pending work while
+busy. The session launcher, broader migration/recovery and remaining multiplayer
+integration are still unfinished. No author acceptance or release completion.
 
 ## 5.12.5 - Human card-table PvP preparation (#590)
 

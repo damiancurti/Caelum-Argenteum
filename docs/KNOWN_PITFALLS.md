@@ -5824,3 +5824,23 @@ It validates native revision4560, refuses overwrite, records revision1 and is
 idempotent. Two real recovered peers confirm the handler, original record and
 actual friendly damage. Integrate this adapter in the #434/#435 recovery launcher.
 No author acceptance or general compatibility with other native save versions.
+
+## CA-KP-198 - Native save booleans and extended classes require typed handling
+
+Status/evidence: ENGINE-VERIFIED, #434 / PR595, 2026-10-31, GZDoom4.14.2/Windows11.
+Affected work: 8041964f2 plus the same-issue custody follow-up; native save revision4560.
+Scope: caelum_profile_graph.py, caelum_campaigns.py, copied native-save adapters.
+ZScript bool fields serialize as numeric0/1. Writing JSON true to the new departed
+marker loaded its default0 without a script error. Native fields such as multiplayer,
+RequireMouse and player onground instead require actual JSON booleans; a blanket
+conversion produced27 JSON parsing errors. Preserve original native values and use
+numeric bytes only for authored script fields. CRC-valid ZIP alone is insufficient.
+
+The engine also places extend-class declarations before the main StateProvider
+class. A typed reader that retains an empty parent from the extension misclassifies
+Weapon as a non-Actor and can leave it in the source graph. Merge the actual declared
+parent, reject conflicts and distinguish native struct handles from object indices.
+Evidence: validation_v5_12_6 custody/narrative reports and compressed engine logs;
+real outbound/return peers verify absent source weapons and restored destination
+ownership. Unit checks preserve both boolean forms and reject stale custody.
+No original author save was rewritten; author acceptance remains pending.

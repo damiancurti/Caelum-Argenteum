@@ -22,9 +22,27 @@ production adapter refuses replacing an unrelated committed character.
 
 Failed fixture attempts remain preserved: a wrong method name, an absolute
 -loadgame path combined with -savedir, and reuse of an occupied diagnostic port.
-These were corrected in the runner; none touched author saves. Typed graph/native
-verification does not complete source retirement, custody orchestration, narrative
-checkpoints, profile UI or #435 session tooling. Author acceptance is pending.
+These were corrected in the runner; none touched author saves.
+
+Follow-up: schema2 records campaign heads, reservations and exactly-once publication.
+Original-slot binding no longer depends on checkpoint bytes. Source retirement
+removes actual material actors/packed contents from the copied active graph and
+leaves an inert native slot; return restores living control and original world data.
+Thirteen transaction checks cover atomic rollback, stale heads, active crafting,
+cancellation, owner identity and distinct native/script boolean formats; eight
+store and seven graph checks also pass. Four two-peer outward/return engine runs
+pass64 assertions, followed by atomic commits and old-origin rejection.
+
+Narrative checkpoints observe completed personal transactions and queue new native
+files through the existing autosave owner. Two peers pass18 reward/choice/busy checks;
+common reload passes12 more. Both actual saves retain the complete reward/choice,
+and reload produces no additional save files. The five-minute periodic timer remains.
+The native fixture suppresses the separate automatic rescue conversation; an earlier
+run correctly remained deferred because that conversation was open. Its failures
+and the JSON boolean-format investigation are retained with the successful evidence.
+
+Source/profile UI, package and migration preflight, broader recovery and #435 session
+integration remain open. Native isolated verification is not author acceptance.
 
 ## 5.12.5 - Seated human card-rule preparation (#590, 2026-10-30)
 

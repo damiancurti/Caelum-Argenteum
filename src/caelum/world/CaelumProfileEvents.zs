@@ -10,9 +10,17 @@ class CaelumProfileEvents : StaticEventHandler
         for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i])
         {
             let user=CaelumPlayer(players[i].mo);
-            if(!CaelumPlayerAuthority.CanMutate(user)){pending=true;continue;}
+            if(!CaelumPlayerAuthority.CanRead(user)){pending=true;continue;}
             let record=user.GetPersistentCharacterState(false);
+            if(record!=null && record.ProfileDeparted)
+            {
+                user.ProfileDeparted=true;user.Vel=(0,0,0);
+                user.bSolid=false;user.bShootable=false;user.bInvisible=true;
+                continue;
+            }
             if(record==null || record.ProfileImportSerial<=record.ProfileImportApplied)continue;
+            user.ProfileDeparted=false;user.bInvisible=false;user.bSolid=true;
+            user.bShootable=user.health>0;
             int originalHealth=user.health;
             user.CraftingMenuOpen=false;user.EquipmentMenuOpen=false;user.PalomoMerchantMenuOpen=false;
             user.ActivePalomoMerchant=null;user.ActiveCraftingStationActor=null;
@@ -28,6 +36,7 @@ class CaelumProfileEvents : StaticEventHandler
             }
             else
             {
+                user.bCorpse=false;
                 user.player.playerstate=PST_LIVE;
                 user.player.PendingWeapon=user.player.ReadyWeapon;
                 user.BringUpWeapon();

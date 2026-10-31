@@ -5,6 +5,8 @@
 // These inherited resources will be replaced by original assets later.
 class CaelumPlayer : DoomPlayer
 {
+    // #434: plaza nativa vacante tras un traslado confirmado del perfil.
+    bool ProfileDeparted;
     transient CaelumTargetSubscriptions TargetSubscribers;
     transient CaelumContaminationExposure ContaminationExposure;
     CaelumContaminationContacts ContaminationContacts;
@@ -1662,6 +1664,7 @@ class CaelumPlayer : DoomPlayer
             persistentState.MainM00StarterDurability = starter.Durability;
         }
         RefreshSocialJournalSnapshot();
+        CaelumNarrativeCheckpoint.Observe(self);
     }
 
     bool RestorePersistentCharacterState()
@@ -7142,6 +7145,7 @@ class CaelumPlayer : DoomPlayer
 
     override void PlayerThink()
     {
+        if(ProfileDeparted){Vel=(0,0,0);return;}
         if(CaelumSpirit.Active(self))
         {
             bool usePressed=(player.cmd.buttons&BT_USE)!=0;
@@ -7274,6 +7278,7 @@ class CaelumPlayer : DoomPlayer
 
     override void Tick()
     {
+        if(ProfileDeparted)return;
         if(CaelumSpirit.Active(self)){Super.Tick();CaelumTarotService.Advance(self);return;}
         // También repara flags/selección de saves anteriores sin duplicar stock.
         CaelumQuickUse.Reconcile(self);

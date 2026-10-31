@@ -9,12 +9,11 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 **Current release: 5.12.6.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-**V5.12 profiles (#434, implementation in progress):** typed personal graph
-extraction/import and native reconciliation pass isolated two-client checks,
-including carried table contents and common-save reload. Campaign shops and
-property titles stay outside the personal payload. Durable transfer orchestration,
-source departure, narrative checkpoints and session tooling are still unfinished;
-this is not a completed portable-profile release or author handoff.
+**V5.12 profiles (#434, implementation in progress):** staged campaign transfers
+and return now preserve a single active owner, packed inventory and each world's
+shops/properties. Native narrative checkpoints save complete transactions without
+replaying rewards on load. The session launcher, broader migration/recovery and
+remaining multiplayer integration are still unfinished; no author handoff yet.
 
 **V5.12 work in progress - #590 table-card PvP:** human Truco and Trucazo
 use actual seats at the same table and preserve inventory/world health. Native

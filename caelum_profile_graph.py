@@ -29,6 +29,7 @@ class Declaration:
     parent: str
     fields: dict[str, Field]
     struct: bool = False
+    native: bool = False
 
 
 def _matching(text: str, begin: int, left: str = "{", right: str = "}") -> int:
@@ -107,9 +108,15 @@ class NativeSchema:
                             previous = self.types[key]
                             if any(k in previous.fields and previous.fields[k] != v for k, v in fields.items()):
                                 raise ProfileError(f"Conflicting field declaration: {key}")
+                            if match[3]:
+                                if previous.parent and previous.parent != match[3].lower():
+                                    raise ProfileError(f"Conflicting parent declaration: {key}")
+                                previous.parent = match[3].lower()
                             previous.fields.update(fields)
                         else:
-                            self.types[key] = Declaration((match[3] or "").lower(), fields, match[1].lower() == "struct")
+                            self.types[key] = Declaration((match[3] or "").lower(), fields,
+                                                          match[1].lower() == "struct",
+                                                          bool(re.search(r"\bnative\b", match[0], re.I)))
 
     def inherits(self, name: str, base: str) -> bool:
         visited = set()
@@ -143,6 +150,10 @@ class NativeSchema:
                     raise ProfileError(f"Invalid native reference: {path}")
                 yield path, value
             elif field.kind in self.types and self.types[field.kind].struct:
+                # Engine handles (Font, Sector, Line, etc.) use their native
+                # serializers: names/indices, not the objects[] namespace.
+                if self.types[field.kind].native:
+                    return
                 yield from members(field.kind, value, path)
 
         def members(kind: str, value: dict, path):
@@ -216,6 +227,39 @@ class PersonalGraph:
                     data.pop(key, None)
         return result
 
+    def transfer_ready(self, level: dict, player: int) -> None:
+        """Transfers require a quiescent character; ordinary saves do not."""
+        native = level['players'][player]
+        body = level['objects'][native['mo']]
+        live = body.get('class:CaelumPlayer', {})
+        for field in self.policy['transfer_blocked_body_flags']:
+            if live.get(field):
+                raise ProfileError(f'Finish or cancel the active operation before transfer: {field}')
+        if native.get('conversationnpc') is not None:
+            raise ProfileError('Finish the current conversation before transfer.')
+        cursor = body.get('inventory')
+        seen = set()
+        while cursor is not None:
+            if cursor in seen:
+                raise ProfileError('Cyclic inventory during transfer preparation.')
+            seen.add(cursor)
+            obj = level['objects'][cursor]
+            for kind, fields in self.policy['transfer_blocked_inventory_fields'].items():
+                values = obj.get('class:' + kind, {})
+                if any(values.get(field) in prohibited for field, prohibited in fields.items()):
+                    raise ProfileError(f'Finish or cancel the campaign activity before transfer: {kind}')
+            seat = obj.get('class:CaelumCardSeat', {})
+            if seat.get('Duel') is not None:
+                raise ProfileError('Leave the card session before transferring.')
+            clock = obj.get('class:CaelumWorldClock', {})
+            for field in ('TimeVote', 'TravelVote'):
+                index = clock.get(field)
+                if index is not None:
+                    vote = level['objects'][index]
+                    if any(values.get('Opened') for kind, values in vote.items() if kind.startswith('class:')):
+                        raise ProfileError('Resolve the shared vote before transferring.')
+            cursor = obj.get('inventory')
+
     def capture(self, level: dict, player: int) -> dict:
         if isinstance(player, bool) or not isinstance(player, int) or not 0 <= player < len(level["players"]):
             raise ProfileError("Invalid native character slot.")
@@ -249,8 +293,8 @@ class PersonalGraph:
         record = read(records[0])["class:CaelumPersistentCharacterState"]
         if not record.get("ProfileCommitted"):
             raise ProfileError("Finish character creation before transferring the profile.")
-        if live.get("CraftingTaskActive") or record.get("CraftingTaskActive"):
-            raise ProfileError("Finish or cancel the reserved crafting transaction before transfer.")
+        if record.get('ProfileDeparted'):
+            raise ProfileError('This character has departed to another campaign.')
 
         body_data = copy.deepcopy(live)
         # Include typed personal attributes/models without taking UI/world links.
@@ -316,6 +360,7 @@ class PersonalGraph:
             captured[root]["inventory"] = mapping[roots[position + 1]] if position + 1 < len(roots) else None
         stats = {index: group for group, members in enumerate(level["thinkers"]) for index in members}
         return {"schema": 1, "packages": self.schema.packages.copy(),
+                "source_indices": order,
                 "objects": [captured[index] for index in order],
                 "roots": [mapping[index] for index in roots],
                 "record": mapping[records[0]], "body": body_projection,
@@ -325,6 +370,52 @@ class PersonalGraph:
                 "playerstate": level["players"][player].get("playerstate"),
                 "thinker_groups": {str(mapping[index]): stats[index] for index in order if index in stats},
                 "world_links_excluded": removed}
+
+    def retire(self, level: dict, player: int, identity: str) -> dict:
+        """Remove the carried material graph from a copy of the source world.
+
+        Original files and campaign actors are retained. The inactive native slot
+        can only be used again after an authorized profile installation.
+        """
+        graph = self.capture(level, player)
+        result = copy.deepcopy(level)
+        objects = result["objects"]
+        body_index = result["players"][player]["mo"]
+        body = objects[body_index]
+        record_index = graph["source_indices"][graph["record"]]
+        record = objects[record_index]["class:CaelumPersistentCharacterState"]
+        if record.get("ExternalProfileId") != identity:
+            raise ProfileError("The source slot does not own this external identity.")
+        retired = {i for i in graph["source_indices"] if i != record_index
+                   and self.schema.inherits(objects[i]["classtype"], "Actor")}
+        retained = []
+        cursor = body.get("inventory")
+        while cursor is not None:
+            if cursor not in retired:
+                retained.append(cursor)
+            cursor = objects[cursor].get("inventory")
+        # A single offline pass clears links to retired material actors. This is
+        # not a runtime actor census and never changes the original checkpoint.
+        for obj in objects:
+            for path, target in list(self.schema.references(obj)):
+                if target in retired:
+                    _set_path(obj, path, None)
+        for index in retired:
+            item = objects[index].get("class:Inventory")
+            if item is not None:
+                item.update(Owner=None, Amount=0)
+            objects[index]["inventory"] = None
+        for group in result["thinkers"]:
+            group[:] = [index for index in group if index not in retired]
+        for i, index in enumerate(retained):
+            objects[index]["inventory"] = retained[i + 1] if i + 1 < len(retained) else None
+        body["inventory"] = retained[0] if retained else None
+        # ZScript bools use numeric bytes; engine-native bool members use JSON
+        # booleans. Preserve the latter rather than globally converting JSON.
+        record.update(ProfileDeparted=1)
+        body["class:CaelumPlayer"]["ProfileDeparted"] = 1
+        result["players"][player].update(readyweapon=None, pendingweapon=-1, psprites=None)
+        return result
 
     def install(self, level: dict, graph: dict, player: int, identity: str, revision: int) -> dict:
         """Install into an uncommitted slot, returning a new level value only.
@@ -390,7 +481,8 @@ class PersonalGraph:
             remap(obj)
             for kind, resets in self.policy["rebase_fields"].items():
                 if "class:" + kind in obj:
-                    obj["class:" + kind].update(copy.deepcopy(resets))
+                    obj["class:" + kind].update({key: int(value) if isinstance(value, bool) else copy.deepcopy(value)
+                                               for key, value in resets.items()})
             if self.schema.inherits(obj["classtype"], "Actor"):
                 # Geometry indices belong to the destination. Carried items keep
                 # their flags, physical dimensions and state; no source sectors.
@@ -407,10 +499,11 @@ class PersonalGraph:
         target_record = objects[record_index]["class:CaelumPersistentCharacterState"]
         target_record.update(world_fields)
         target_record.update(ExternalProfileId=identity, ExternalProfileRevision=revision,
-                             ProfileImportSerial=revision + 1, ProfileImportApplied=0)
+                             ProfileImportSerial=revision + 1, ProfileImportApplied=0, ProfileDeparted=0)
         personal_body = copy.deepcopy(graph["body"])
         remap(personal_body)
         body["class:CaelumPlayer"] = personal_body["class:CaelumPlayer"]
+        body["class:CaelumPlayer"]["ProfileDeparted"] = 0
         body["health"] = graph["health"]
         # Native serialization and the game share one resource snapshot. The
         # import hook restores from these current values, not an older travel.
