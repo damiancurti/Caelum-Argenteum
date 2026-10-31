@@ -274,7 +274,7 @@ class CaelumWorldClockTicker : StaticEventHandler
         if (clock == null) return;
         // También una campaña individual conserva sus objetivos en el mundo,
         // antes de que un perfil pueda trasladarse a una campaña diferente.
-        if(clock.CampaignQuests==null)CaelumCooperativeQuests.Get(user);
+        if(clock.CampaignQuests==null || clock.CampaignQuests.Revision<2)CaelumCooperativeQuests.Get(user);
         // Inicializa también en MAP01 y al cargar una partida anterior.
         // El anclaje civil se fija antes de consumir el primer tic exterior.
         let calendar = CaelumCalendarState.Get(user, true);

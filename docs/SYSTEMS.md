@@ -242,7 +242,11 @@ Rescue objectives are campaign-owned in solo and multiplayer campaigns. Completi
 captures the ready characters present in the session, including a dead waiting
 participant; eligibility refers to the existing persistent legal identity, with
 the saved-record reference retained for old saves, not its reusable player slot.
-Reconstructing a returning profile therefore does not erase earned eligibility. Repeating the objective cannot expand that roster. Each
+Reconstructing a returning profile therefore does not erase earned eligibility.
+Revision-2 world migration snapshots identity objects separately from Inventory
+records: GZDoom may remove detached record actors on load. Existing objectives
+upgrade once from their retained records; new objectives capture both references
+and independent identities. No actor scan or reward replay is introduced. Repeating the objective cannot expand that roster. Each
 eligible character can claim the existing currency/reputation reward once.
 Personal claim flags remain authoritative against repeat rewards across worlds.
 A late-ready character keeps their pending personal rescue and the Journal says
@@ -250,7 +254,7 @@ that the already-resolved objective is unavailable in this world. Private
 conversations, emotion reads and independent quest progress are not copied.
 The actual initiating player remains the prisoner's escort leader.
 
-Revision-1 migration seeds the campaign rescue state from its existing clock
+Initial migration seeds the campaign rescue state from its existing clock
 owner, granting old extracted-objective eligibility only to records that already
 held extraction. Original saves remain untouched. Ready characters initialize their legal
 identity idempotently, and the campaign initializes its world ledger before a
