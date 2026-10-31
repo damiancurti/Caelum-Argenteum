@@ -13,6 +13,9 @@ launcher. Visual author acceptance remains pending. Keep #438 separate from
 
 ## V5.12 lifecycle work - #437 / 5.12.3
 
+Legacy registration fixed and verified: static bridge, inert old serialized shell;
+68 native assertions pass. Session launcher and final release integration remain.
+
 Implemented: dead native body/inventory preservation through map travel;
 cancellation on death/departure; common-recovery consent reset; The Fool's
 unanimous mansion journey and all-dead exception; spirit movement/conversation;

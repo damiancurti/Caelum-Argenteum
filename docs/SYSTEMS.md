@@ -32,6 +32,11 @@ level, records migration revision1 and preserves the original archive. The
 static arena service works when loading pre-arena saves. Organizer preparation
 uses one local query at its authored position on entry/load, avoiding duplication.
 
+#437 compatibility: lifecycle callbacks register statically on load; the old per-level
+class is retained only to deserialize existing checkpoints. No duplicate death or
+disconnection callbacks; consent reset and native respawn prevention also apply to
+saves created before this handler was introduced.
+
 ## Cooperative death and recovery (5.12.3, #437, in progress)
 
 A dead native cooperative player keeps the same pawn and personal record.
