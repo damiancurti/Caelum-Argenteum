@@ -1,6 +1,7 @@
 // Guarda las decisiones estructurales del creador de personajes 4.0.
 class CaelumCharacterProfile : Object
 {
+    CaelumStandaloneProfile Standalone;
     int Race;
     int FirstClass;
     int SecondClass;
@@ -34,6 +35,7 @@ class CaelumCharacterProfile : Object
 
     void CopyFrom(CaelumCharacterProfile source)
     {
+        Standalone=source.Standalone;
         Race = source.Race;
         FirstClass = source.FirstClass;
         SecondClass = source.SecondClass;

@@ -1,0 +1,41 @@
+// #597: nombres y roles ya definidos en MAP01; los números vienen del residente.
+class CaelumStandaloneData : Object
+{
+    const REVISION=1;
+    static clearscope class<CaelumAnchoredResident> Resident(int preset)
+    {
+        switch(preset)
+        {
+            case 0:return 'CaelumRulo';
+            case 1:return 'CaelumRonnie';
+            case 2:return 'CaelumArgento';
+            default:return 'CaelumCaella';
+        }
+    }
+    static clearscope int Branch(int preset)
+    {
+        switch(preset)
+        {
+            case 0:return CaelumConstants.CLASS_WARRIOR;
+            case 1:return CaelumConstants.CLASS_EXPLORER;
+            case 2:return CaelumConstants.CLASS_PRIEST;
+            default:return CaelumConstants.CLASS_MAGE;
+        }
+    }
+}
+
+// Copia inmutable de las cifras del actor al iniciar la partida independiente.
+// No contiene referencias al residente temporal ni a una campaña.
+class CaelumStandaloneProfile : Object
+{
+    int Revision,Preset;
+    double BodyMass,BodyHeight,BodyRadius;
+    double Base[12];
+    void Apply(CaelumAttributes target)
+    {
+        target.Strength=Base[0];target.Toughness=Base[1];target.Constitution=Base[2];
+        target.Agility=Base[3];target.Dexterity=Base[4];target.Resilience=Base[5];
+        target.Charisma=Base[6];target.Empathy=Base[7];target.Eloquence=Base[8];
+        target.Intelligence=Base[9];target.Patience=Base[10];target.Insight=Base[11];
+    }
+}

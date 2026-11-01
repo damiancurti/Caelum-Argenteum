@@ -1,0 +1,68 @@
+{
+  "runs": [
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue597\\menu-native-20261101-163702-297234",
+      "runtime_sha256": "4336270b885cd910b8cafd914b623512876eadc541f1fef904740c637d244af7",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "language": "es",
+      "exit": 0,
+      "error": null,
+      "physical_button_verified": false,
+      "checks": [
+        "CA597 PASS main menu exposes localized Multiplayer entry",
+        "CA597 PASS native Multiplayer menu opens on title",
+        "CA597 PASS direct engine launch cannot request an unavailable bridge",
+        "CA597 PASS native mode selector changes the request",
+        "CA597 PASS native resident selector changes the request",
+        "CA597 PASS bridge enables explicit fresh-match launch",
+        "CA597 RESULT menu"
+      ],
+      "launches": [
+        {
+          "role": 0,
+          "mode": 1,
+          "preset": 1,
+          "players": 2,
+          "port": 5029,
+          "venue": 0,
+          "host": "127.0.0.1",
+          "session": ""
+        }
+      ],
+      "passed": true
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue597\\menu-native-20261101-164444-011165",
+      "runtime_sha256": "98e66ebb62ca72188deff3717e4968f099a317423d51b4a60f1f98b42f63a899",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "language": "enu",
+      "exit": 0,
+      "error": null,
+      "physical_button_verified": false,
+      "checks": [
+        "CA597 PASS main menu exposes localized Multiplayer entry",
+        "CA597 PASS native Multiplayer menu opens on title",
+        "CA597 PASS direct engine launch cannot request an unavailable bridge",
+        "CA597 PASS native mode selector changes the request",
+        "CA597 PASS native resident selector changes the request",
+        "CA597 PASS bridge enables explicit fresh-match launch",
+        "CA597 RESULT menu"
+      ],
+      "launches": [
+        {
+          "role": 0,
+          "mode": 1,
+          "preset": 1,
+          "players": 2,
+          "port": 5029,
+          "venue": 0,
+          "host": "127.0.0.1",
+          "session": ""
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "physical_button_verified": false,
+  "limitation": "Computer Use native pipe unavailable; startup console event tests the handshake, not the final physical menu click."
+}

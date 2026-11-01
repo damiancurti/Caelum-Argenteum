@@ -117,3 +117,17 @@ nosave noarchive int ca_session_slot = -1;
 nosave noarchive int ca_session_nonce = 0;
 // Modo de nueva partida sin personajes; nunca se guarda como regla de juego.
 nosave noarchive server bool ca_profile_bootstrap = false;
+
+// Preferencias del menú; el proceso de partida usa una configuración nueva.
+nosave noarchive bool ca_standalone_bridge = false;
+nosave noarchive int ca_standalone_menu_ready = 0;
+nosave int ca_match_role = 0;
+nosave int ca_match_mode = 0;
+nosave int ca_match_preset = 0;
+nosave int ca_match_venue = 0;
+nosave int ca_match_players = 2;
+nosave int ca_match_port = 5029;
+nosave string ca_match_host = "127.0.0.1";
+nosave string ca_match_session = "";
+nosave noarchive server int ca_standalone_mode = 0;
+user int ca_standalone_preset = 0;

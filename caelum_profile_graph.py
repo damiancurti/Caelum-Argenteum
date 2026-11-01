@@ -287,6 +287,8 @@ class PersonalGraph:
             return objects[index]
 
         actor = read(body)
+        if self.schema.inherits(actor['classtype'], 'CaelumStandalonePlayer'):
+            raise ProfileError('Standalone match characters cannot become campaign profiles.')
         if actor["classtype"] != "CaelumPlayer":
             raise ProfileError("Selected owner is not a Caelum character.")
         live = actor.get("class:CaelumPlayer", {})

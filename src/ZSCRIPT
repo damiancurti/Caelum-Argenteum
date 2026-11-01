@@ -613,3 +613,6 @@ version "4.14"
 
 #include "caelum/world/CaelumSessionIdentity.zs"
 #include "caelum/world/CaelumProfileVacancy.zs"
+#include "caelum/ui/CaelumStandaloneMenu.zs"
+#include "caelum/data/CaelumStandaloneData.zs"
+#include "caelum/world/CaelumStandalonePlayer.zs"

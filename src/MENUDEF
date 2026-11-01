@@ -12,18 +12,52 @@ DefaultListMenu
 ListMenu "MainMenu"
 {
     StaticPatch 94, 2, "M_DOOM"
-    Position 97, 72
+    Position 97, 64
     Font "CaelumText", "Gold"
     Linespacing 16
 
     TextItem "$CA_MENU_NEW_CHARACTER", "n", "CaelumNewCharacterMenu"
     TextItem "$CA_MENU_LOAD_CHARACTER", "l", "LoadGameMenu"
+    TextItem "$CA_STANDALONE_TITLE", "u", "CaelumStandaloneMenu"
     TextItem "$CA_MENU_SAVE_CHARACTER", "g", "SaveGameMenu"
     TextItem "$CA_NAV_TITLE", "e", "CaelumNavigationMenu"
     TextItem "$CA_NOTE_TITLE", "m", "CaelumMapNoteMenu"
     TextItem "$CA_ARENA_TITLE", "c", "CaelumArenaMenu"
     TextItem "$MNU_OPTIONS", "o", "OptionsMenu"
     TextItem "$MNU_QUITGAME", "s", "CaelumExitMenu"
+}
+
+OptionValue "CaelumMatchRoles" { 0, "$CA_MATCH_HOST" 1, "$CA_MATCH_JOIN" }
+OptionValue "CaelumMatchModes"
+{
+    0, "$CA_MATCH_DM"
+    1, "$CA_MATCH_TDM"
+    2, "$CA_MATCH_CAPTURE"
+    3, "$CA_MATCH_HUNT"
+}
+OptionValue "CaelumMatchPresets"
+{
+    0, "$CA_RULO_NAME"
+    1, "$CA_RONNIE_NAME"
+    2, "$CA_ARGENTO_NAME"
+    3, "$CA_CAELLA_NAME"
+}
+OptionValue "CaelumMatchVenues" { 0, "$CA_ARENA_RING" 1, "$CA_ARENA_MAZE" }
+OptionMenu "CaelumStandaloneMenu"
+{
+    Class "CaelumStandaloneMenu"
+    Title "$CA_STANDALONE_TITLE"
+    StaticText "$CA_MATCH_ISOLATED"
+    Option "$CA_MATCH_CONNECTION", "ca_match_role", "CaelumMatchRoles"
+    Option "$CA_MATCH_MODE", "ca_match_mode", "CaelumMatchModes"
+    Option "$CA_MATCH_CHARACTER", "ca_match_preset", "CaelumMatchPresets"
+    Option "$CA_MATCH_VENUE", "ca_match_venue", "CaelumMatchVenues"
+    TextField "$CA_MATCH_PLAYERS", "ca_match_players"
+    TextField "$CA_MATCH_PORT", "ca_match_port"
+    TextField "$CA_MATCH_ADDRESS", "ca_match_host"
+    TextField "$CA_MATCH_SESSION", "ca_match_session"
+    StaticText "$CA_MATCH_MENU_HELP"
+    Command "$CA_MATCH_LAUNCH", "event ca_standalone_launch; quit"
 }
 
 // Reenvío inmediato a la confirmación nativa, con el audio propio de Salir.

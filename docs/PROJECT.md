@@ -1,6 +1,13 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.13.3** - 2026-10-31.
+Documentation version: **5.13.4** - 2026-11-01.
+
+## 5.13.4 - Standalone session foundation (#597, in progress)
+
+The localized title menu and isolated native launcher are implemented with four
+resident presets and pinned session files. Native preset initialization and common-save recovery passed on two clients;
+physical menu entry remains under verification. Competitive/cooperative
+rules remain separate in #598–601; no complete V5.13 acceptance is claimed.
 
 ## 5.13.3 - Ordered Tarot foundation (#440, partial)
 

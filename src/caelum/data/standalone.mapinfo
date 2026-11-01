@@ -1,0 +1,2 @@
+// La clase de campaña no se reemplaza fuera del proceso independiente.
+gameinfo { PlayerClasses = "CaelumStandalonePlayer" }
