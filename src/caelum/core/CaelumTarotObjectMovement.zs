@@ -123,6 +123,10 @@ class CaelumMajorWorldEvents : StaticEventHandler
     {
         // Sólo los propietarios de la sesión: sin censo de actores del mapa.
         for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i])
-            CaelumTarotObjectMovement.Release(CaelumPlayer(players[i].mo));
+        {
+            let user=CaelumPlayer(players[i].mo);CaelumTarotObjectMovement.Release(user);
+            let cart=user!=null?CaelumTarotChariotState(user.FindInventory('CaelumTarotChariotState')):null;
+            if(cart!=null && cart.Projection!=null)cart.Projection.Destroy();
+        }
     }
 }

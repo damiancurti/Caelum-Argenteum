@@ -12,4 +12,12 @@ class CaelumMajorArcanaData : Object
     const FOOL_VOTE_REVISION=1;
     const OBJECT_MOVEMENT_REVISION=1;
     const STRENGTH_MOVEMENT=10;
+    const CHARIOT_REVISION=1;
+    const CHARIOT_SECONDS=2;
+    const CHARIOT_DISTANCE_MU=384.0;
+    const CHARIOT_SPEED_MU=192.0;
+    const CHARIOT_WIDTH_MU=64.0;
+    // Geometría exterior de la carreta original, escalada a dos metros.
+    const CHARIOT_LENGTH_MU=182.6*64.0/82.0;
+    const CHARIOT_HEIGHT_MU=115.555785*64.0/82.0;
 }

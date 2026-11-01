@@ -67,6 +67,18 @@ before session identity admission; the binding now waits for admission before
 resuming. Failed evidence is retained. See strength-results.json. These are isolated
 checks; map-departure release and final author presentation remain to be exercised.
 
+Chariot behavior passed19 initial and four recovery assertions on each native
+client. Tests cover equipped fragile Use, one impulse per body, unchanged Health,
+force thresholds, Strength integration, replacement, late unlinked registration,
+wall stopping, six meters per second and automatic expiry. Common recovery keeps
+distance/age/contact history and destroyed obstacles. All18,017 package members
+match source. Evidence: validation_v5_13_3/chariot-results.json. The first recovery
+fixture saved after its short-lived projection had expired; capture is now timed
+relative to the loaded world's start. A later native compile caught an Actor-scope
+identifier collision with `state`; the local holder name resolves it. No accepted
+save was discarded. Model adaptation, frame-presentation and author checks follow
+separately from this behavior checkpoint.
+
 ## 5.13.2 - Reversible equipment awakening (#442)
 
 Author-approved +25% damage/defense and half wear are implemented on the exact

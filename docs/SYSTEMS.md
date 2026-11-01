@@ -84,6 +84,27 @@ to be visible/in range is omitted. Refusal costs nothing. Pending legacy proposa
 without revision1 snapshots are cancelled without payment; session recovery also
 cancels pending votes under the existing reconnection policy and needs new consent.
 
+### Chariot movement and fragile obstacles
+
+Activation launches one projection at6m/s for12m, at most2s. Each reached actor
+receives one existing movement-force impulse per launch, never direct damage;
+its normal knockback resistance or scenery force threshold applies. Active Strength
+is evaluated when this ordered effect launches. Walls and immovable unmarked bodies
+stop it. Only explicitly typed fragile obstacles break; the equipped passive also
+permits aimed Use on them. Ordinary scenery and characters are not made fragile.
+Saved projection state includes distance, age, contacts, caster and geometry probe;
+recasting replaces only that caster's projection. Map departure releases it.
+
+The author approved reusing the owned covered-cart model, uniformly scaled to2m
+width and centered on its footprint. Derived length is4.4536585m and height2.8184338m.
+Three overlapping native geometry probes cover that length and width; local
+blockmap queries cover contacts. Stationary guards without blockmap are filtered
+from the existing shared typed registry once at launch. Late encounter registration
+notifies only the fixed player slots and their active projections; no actor-global
+per-tic scan is introduced. The contact list grows only during this2s/12m traversal.
+Artwork and final frame-presentation/author checks remain separate from this
+behavior checkpoint. Native evidence is in validation_v5_13_3/chariot-results.json.
+
 ### Strength object movement and lifting
 
 Equipped Strength permits Use to lift/release configured movable scenery, never
@@ -148,6 +169,8 @@ The aimed-action priority for the remaining powers is still to be integrated.
 - Chariot:12m straight at6m/s,2m wide,maximum2s; object-movement Strength pushes
   movable actors, including active Strength; stops at walls, no direct damage.
   Fixed obstacles break only when explicitly marked fragile.
+  Each actor receives one impulse per launch. The approved appearance reuses the
+  original covered cart at2m width.
 - Strength lifting: Use picks up/releases movable scenery only, excluding people
   and fixed installations. Its mass counts toward carried load. The limit uses
   existing carrying capacity, evaluating Strength x10 only while the active lasts.

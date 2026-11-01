@@ -1,0 +1,114 @@
+{
+  "issue": 440,
+  "release": "5.13.3",
+  "scope": "Chariot contact, movement, fragile obstacles and recovery",
+  "author_acceptance": false,
+  "runtime_members_matching_source": 18017,
+  "native_runs": [
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32302-20261101-004401-042288",
+      "runtime_sha256": "b5846ef21dc6bf66046f17179d90b2aa247ff5f528c96a733f865e69e6739a1d",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440C PASS unequipped Chariot cannot use a fragile obstacle",
+            "CA440C PASS equipped passive breaks a targeted marked obstacle",
+            "CA440C PASS native activation launches Chariot",
+            "CA440C PASS launch charges shared sequence once",
+            "CA440C PASS instant launch is not a repeated sixty-second effect",
+            "CA440C PASS contact pushes a body without direct damage",
+            "CA440C PASS same launch never pushes the same body twice",
+            "CA440C PASS movable scenery uses its existing force threshold",
+            "CA440C PASS unmarked fixed scenery is not destroyed",
+            "CA440C PASS marked fragile obstacle breaks without harming unrelated actors",
+            "CA440C PASS recast replaces only this caster's previous projection",
+            "CA440C PASS active Strength changes the launched movement force",
+            "CA440C PASS late unlinked guard registration enters only local projection contacts",
+            "CA440C PASS wall test begins in valid free space",
+            "CA440C PASS native world ticks stop the cart at the map wall",
+            "CA440C PASS native half-run advances six meters in one second",
+            "CA440C PASS one local contact query per simulation step",
+            "CA440C PASS projection expires after its two-second traversal",
+            "CA440C PASS native local queries push a newly reached body without damage",
+            "CA440C RESULT capture"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440C PASS unequipped Chariot cannot use a fragile obstacle",
+            "CA440C PASS equipped passive breaks a targeted marked obstacle",
+            "CA440C PASS native activation launches Chariot",
+            "CA440C PASS launch charges shared sequence once",
+            "CA440C PASS instant launch is not a repeated sixty-second effect",
+            "CA440C PASS contact pushes a body without direct damage",
+            "CA440C PASS same launch never pushes the same body twice",
+            "CA440C PASS movable scenery uses its existing force threshold",
+            "CA440C PASS unmarked fixed scenery is not destroyed",
+            "CA440C PASS marked fragile obstacle breaks without harming unrelated actors",
+            "CA440C PASS recast replaces only this caster's previous projection",
+            "CA440C PASS active Strength changes the launched movement force",
+            "CA440C PASS late unlinked guard registration enters only local projection contacts",
+            "CA440C PASS wall test begins in valid free space",
+            "CA440C PASS native world ticks stop the cart at the map wall",
+            "CA440C PASS native half-run advances six meters in one second",
+            "CA440C PASS one local contact query per simulation step",
+            "CA440C PASS projection expires after its two-second traversal",
+            "CA440C PASS native local queries push a newly reached body without damage",
+            "CA440C RESULT capture"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32303-20261101-004508-789982",
+      "runtime_sha256": "b5846ef21dc6bf66046f17179d90b2aa247ff5f528c96a733f865e69e6739a1d",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440C PASS recovery preserves the exact projection and owner",
+            "CA440C PASS recovery does not restart distance or elapsed time",
+            "CA440C PASS recovery preserves already-contacted actors",
+            "CA440C PASS destroyed fragile obstacle stays destroyed after load",
+            "CA440C RESULT reload"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440C PASS recovery preserves the exact projection and owner",
+            "CA440C PASS recovery does not restart distance or elapsed time",
+            "CA440C PASS recovery preserves already-contacted actors",
+            "CA440C PASS destroyed fragile obstacle stays destroyed after load",
+            "CA440C RESULT reload"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "qualification": "Art adaptation, full frame-presentation and author acceptance remain pending. Shared typed registry filtered once at launch; late registration uses fixed player slots.",
+  "retained_failures": [
+    "build/issue440/native-32300-20261101-004001-841393/results.json",
+    "build/issue440/native-32301-20261101-004239-906254/results.json"
+  ]
+}

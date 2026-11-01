@@ -163,6 +163,7 @@ class CaelumSiegeEncounter : Actor
         {
             let population=CaelumPopulationState.Get();
             if(population!=null)population.UnlinkedGuards.Push(entry);
+            CaelumTarotChariot.RegisteredUnlinked(body);
         }
         return entry;
     }

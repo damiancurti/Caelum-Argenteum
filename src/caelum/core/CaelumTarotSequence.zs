@@ -14,6 +14,7 @@ class CaelumTarotSequence : Object play
         if(!CaelumTarotService.Implemented(card))return;
         if(card==CaelumHangedMan.CARD && !CaelumHangedMan.Prepare(user,record))return;
         if(card==14)CaelumTemperance.Cleanse(user);
+        if(card==7)CaelumTarotChariot.Launch(user);
         if(card==16)
         {
             bool destroyed=CaelumMajorTargets.Tower(aimed);

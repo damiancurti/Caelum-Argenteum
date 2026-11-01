@@ -7085,6 +7085,9 @@ class CaelumPlayer : DoomPlayer
         );
 
         CaelumMovableProp movable = CaelumMovableProp(targetData.linetarget);
+        let fragile=CaelumTarotFragileObstacle(movable);
+        if(fragile!=null && CaelumTarotLoadout.Passive(GetPersistentCharacterState(false),7))
+            return fragile.BreakByTarot();
         if(CaelumTarotObjectMovement.Use(self,movable))return true;
         if (movable == null) { return false; }
 
