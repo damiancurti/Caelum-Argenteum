@@ -12,6 +12,7 @@ stone surface from both sides. An actual prior apparatus save retains its
 controller and collision while adopting visual revision1. Native recovery is
 idempotent. Evidence, fixture failures and final package verification:
 assets/validation_v5_13_3/example-wall-art-results.json. Author review is pending.
+The independent visual/collision check is preserved as CA-KP-208.
 
 The example-apparatus checkpoint (2026-11-01) connects the practice room and
 annex with usable same-map portals, places the authored passage types, and

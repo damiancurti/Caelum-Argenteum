@@ -4,6 +4,21 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-208 - Wall-sprite facing is independent of doorway collision
+
+Status/evidence: ENGINE-VERIFIED, #440, 2026-11-01, private GZDoom4.14.2 timer build.
+The annex's native blockers correctly closed its X-axis openings while the
+WALLSPRITE leaves at angle0 rendered edge-on from the approach. Collision and
+state assertions passed, but both front/rear captures showed an empty doorway.
+Setting the authored visual angle to90 made the stone/door surfaces visible;
+the blocker axis and sliding progress did not change. Do not infer visibility
+from TestMobjLocation, sprite identity or a successful state transition. Inspect
+both approach directions, and reapply authored facing when loading prior saves.
+The false-wall visual revision changes its inherited state only once without
+recreating the actor. Final evidence: example-wall-art-results.json under
+assets/validation_v5_13_3,44 final-build assertions and reviewed native images.
+The earlier edge-on captures remain as failure evidence, not author acceptance.
+
 ## CA-KP-207 - World departure callbacks run in reverse handler order
 
 VERIFIED, #440, 2026-11-01. Native4.14.2 events.cpp dispatches WorldUnloaded
