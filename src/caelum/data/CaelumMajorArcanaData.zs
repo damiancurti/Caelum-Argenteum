@@ -10,4 +10,6 @@ class CaelumMajorArcanaData : Object
     const TARGET_METERS=100.0;
     const MACHINE_REVISION=1;
     const FOOL_VOTE_REVISION=1;
+    const OBJECT_MOVEMENT_REVISION=1;
+    const STRENGTH_MOVEMENT=10;
 }

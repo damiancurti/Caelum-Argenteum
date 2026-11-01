@@ -22,7 +22,8 @@
     "CaelumRestState": {"Status": [1]},
     "CaelumTimeAdvanceState": {"Active": [1]},
     "CaelumJourneyState": {"Status": [1, 3]},
-    "CaelumFoolJourney": {"Active": [1]}
+    "CaelumFoolJourney": {"Active": [1]},
+    "CaelumTarotLift": {"Holding": [1]}
   },
   "owned_actor_edges": {
     "CaelumChestCargo": ["Chest"],

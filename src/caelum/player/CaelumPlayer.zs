@@ -7085,11 +7085,10 @@ class CaelumPlayer : DoomPlayer
         );
 
         CaelumMovableProp movable = CaelumMovableProp(targetData.linetarget);
+        if(CaelumTarotObjectMovement.Use(self,movable))return true;
         if (movable == null) { return false; }
 
-        double physicalPower = Max(
-            0.0, DerivedStats.PhysicalPushMultiplier
-        );
+        double physicalPower = CaelumTarotObjectMovement.Push(self);
         double pushForce = CaelumConstants.BASE_ATTACK_PUSH_FORCE
             * physicalPower;
         return movable.TryPushFrom(self, physicalPower, pushForce);

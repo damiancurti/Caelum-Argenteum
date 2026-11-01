@@ -4,6 +4,19 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-206 - Pending session admission is not loss of an effect owner
+
+Status/evidence: ENGINE-VERIFIED, #440, 2026-11-01, private GZDoom4.14.2 timer build.
+The Strength save contained the exact held actor and reciprocal binding, but its
+inventory Tick released them before SessionIdentityPending cleared during common
+recovery. Defer that lifecycle while identity admission is pending; do not weaken
+input authority or treat an unvalidated player as eligible to act. Once admitted,
+normal permission, capacity and collision guards resume. Both native clients pass
+five recovery assertions after this correction; evidence and retained failed run
+are indexed by assets/validation_v5_13_3/strength-results.json. Author acceptance
+and cross-map release remain pending. Apply this lesson to affected lifecycles,
+not as permission to skip their normal death/departure rules.
+
 ## CA-KP-195 - Native inventory pickup may deliberately reject an NPC
 
 Status/evidence: RESOLVED-VERIFIED, #430/PR579, 2026-10-30, GZDoom 4.14.2/Windows11.

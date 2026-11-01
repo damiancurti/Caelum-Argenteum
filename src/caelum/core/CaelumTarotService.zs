@@ -47,7 +47,7 @@ class CaelumTarotService : Object play
     static clearscope bool Implemented(int card)
     {
         return card == CaelumConstants.TAROT_THE_FOOL
-            || card==9 || card==12 || card==14 || card==15 || card==16 || card==17 || card==21
+            || card==9 || card==11 || card==12 || card==14 || card==15 || card==16 || card==17 || card==21
             || (card >= CaelumConstants.TAROT_MAJOR_COUNT && card < CaelumConstants.TAROT_CARD_COUNT);
     }
 
@@ -80,6 +80,7 @@ class CaelumTarotService : Object play
             record.TarotHangedRace=alternateRace;record.TarotRaceMenuOpen=false;
         }
         CaelumTarotLoadout.Toggle(record,card);
+        if(card==11)CaelumTarotObjectMovement.Guard(user);
         if(user.health>0)user.ApplyCharacterProfile();
         user.RefreshSocialJournalSnapshot();
         user.PersistCharacterState();

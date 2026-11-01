@@ -1,0 +1,116 @@
+{
+  "issue": 440,
+  "release": "5.13.3",
+  "scope": "Strength object movement and lifting",
+  "author_acceptance": false,
+  "runtime_members_matching_source": 18016,
+  "native_runs": [
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32298-20261101-003254-210623",
+      "runtime_sha256": "8028a8c070570da04b9daa23d9432ddc6ede4175e7da259e53f65560ebada7f6",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440S PASS unequipped Strength cannot lift scenery",
+            "CA440S PASS native aimed Use lifts an eligible object",
+            "CA440S PASS lift preserves exact object with reciprocal ownership",
+            "CA440S PASS lifted mass counts once toward real load",
+            "CA440S PASS refresh does not accumulate lifted weight",
+            "CA440S PASS a held object cannot be captured by telekinesis",
+            "CA440S PASS object follows its holder using native collision checks",
+            "CA440S PASS next Use releases and restores gravity",
+            "CA440S PASS release removes only the lifted mass",
+            "CA440S PASS normal lifting limit includes the existing load",
+            "CA440S PASS Strength opens its existing sixty-second window",
+            "CA440S PASS Strength charges the shared sequence exactly once",
+            "CA440S PASS active Strength does not change combat or ordinary inventory capacity",
+            "CA440S PASS object push evaluates the native curve at Strength times ten",
+            "CA440S PASS active Strength permits heavier scenery within its derived limit",
+            "CA440S PASS unequipping removes lifting permission without waiting for expiry",
+            "CA440S PASS held object cannot jump through a solid obstacle",
+            "CA440S PASS fixed or unconfigured objects remain excluded",
+            "CA440S PASS release preserves pre-existing gravity flags",
+            "CA440S PASS lifting does not clean the object",
+            "CA440S RESULT capture"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440S PASS unequipped Strength cannot lift scenery",
+            "CA440S PASS native aimed Use lifts an eligible object",
+            "CA440S PASS lift preserves exact object with reciprocal ownership",
+            "CA440S PASS lifted mass counts once toward real load",
+            "CA440S PASS refresh does not accumulate lifted weight",
+            "CA440S PASS a held object cannot be captured by telekinesis",
+            "CA440S PASS object follows its holder using native collision checks",
+            "CA440S PASS next Use releases and restores gravity",
+            "CA440S PASS release removes only the lifted mass",
+            "CA440S PASS normal lifting limit includes the existing load",
+            "CA440S PASS Strength opens its existing sixty-second window",
+            "CA440S PASS Strength charges the shared sequence exactly once",
+            "CA440S PASS active Strength does not change combat or ordinary inventory capacity",
+            "CA440S PASS object push evaluates the native curve at Strength times ten",
+            "CA440S PASS active Strength permits heavier scenery within its derived limit",
+            "CA440S PASS unequipping removes lifting permission without waiting for expiry",
+            "CA440S PASS held object cannot jump through a solid obstacle",
+            "CA440S PASS fixed or unconfigured objects remain excluded",
+            "CA440S PASS release preserves pre-existing gravity flags",
+            "CA440S PASS lifting does not clean the object",
+            "CA440S RESULT capture"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32297-20261101-003203-533730",
+      "runtime_sha256": "8028a8c070570da04b9daa23d9432ddc6ede4175e7da259e53f65560ebada7f6",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440S PASS common recovery preserves exact held object and reciprocal link",
+            "CA440S PASS recovery charges carried mass only once",
+            "CA440S PASS recovery preserves object contamination",
+            "CA440S PASS normal-capacity object stays held after active window ends",
+            "CA440S PASS insufficient capacity releases the existing body safely",
+            "CA440S RESULT reload"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440S PASS common recovery preserves exact held object and reciprocal link",
+            "CA440S PASS recovery charges carried mass only once",
+            "CA440S PASS recovery preserves object contamination",
+            "CA440S PASS normal-capacity object stays held after active window ends",
+            "CA440S PASS insufficient capacity releases the existing body safely",
+            "CA440S RESULT reload"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "transfer_boundary": "PASS: held world actor blocks external profile transfer; ordinary common save remains valid",
+  "retained_failure": "build/issue440/native-32296-20261101-002743-389030/results.json",
+  "qualification": "Map-departure release and final visual author checks remain pending."
+}

@@ -5,7 +5,7 @@ Documentation version: **5.13.3** - 2026-10-31.
 ## 5.13.3 - Continue Major handlers (#440)
 
 Order, capacities, individual timers, Hermit, Devil payment, Star weight and
-World dispatch, Temperance, Tower, Fool and Hanged Man have isolated evidence;
+World dispatch, Temperance, Tower, Fool, Hanged Man and Strength have isolated evidence;
 finish remaining handlers,
 giant/harmful objects, arena geometry/save compatibility, authored mansion
 fixtures, automaton3D art/combat and input arbitration. The confirmed per-power

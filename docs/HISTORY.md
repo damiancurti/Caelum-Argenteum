@@ -57,6 +57,16 @@ match source. Initial compilation exposed UI/read-only calls to a play-scoped
 record accessor; these now use read-only inventory lookup. Evidence is in
 validation_v5_13_3/hanged-results.json. Final author checks remain deferred.
 
+Strength lifting then passed20 initial assertions and five common-save recovery
+assertions per native client. The exact object remains collidable and counts once
+as carried mass; ordinary attributes/combat/capacity stay unchanged. Collision,
+telekinesis exclusion, active heavier lifting, removal, gravity and contamination
+checks pass. All18,016 packaged members match source. Profile transfer explicitly
+rejects the active hold. An initial recovery failure exposed lifecycle evaluation
+before session identity admission; the binding now waits for admission before
+resuming. Failed evidence is retained. See strength-results.json. These are isolated
+checks; map-departure release and final author presentation remain to be exercised.
+
 ## 5.13.2 - Reversible equipment awakening (#442)
 
 Author-approved +25% damage/defense and half wear are implemented on the exact

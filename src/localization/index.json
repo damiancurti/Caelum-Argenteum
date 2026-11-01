@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "9f28c740ca0efdcfeef4292363838787c1ee142df5d5029b88a2058c7b8e76b1",
+  "sha256": "f1c19678e4518528d3447e7170541015f75db45ea2c8bb7dc0691f7ded2300e4",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[492,492]],"default":[[492,492]],"es":[[1187,1187]]},
     "CA_ABSENT_THEFT_FOUND": {"enu":[[6915,6915]],"default":[[6915,6915]],"es":[[6917,6917]]},
@@ -2833,6 +2833,8 @@
     "CA_TAROT_FOOL_NAME": {"enu":[[3217,3217]],"default":[[3217,3217]],"es":[[3243,3243]]},
     "CA_TAROT_HUD_COOLDOWN": {"enu":[[4985,4985]],"default":[[4985,4985]],"es":[[4989,4989]]},
     "CA_TAROT_HUD_DURATION": {"enu":[[4984,4984]],"default":[[4984,4984]],"es":[[4988,4988]]},
+    "CA_TAROT_LIFT_HEAVY": {"enu":[[7537,7537]],"default":[[7537,7537]],"es":[[7540,7540]]},
+    "CA_TAROT_LIFT_STARTED": {"enu":[[7538,7538]],"default":[[7538,7538]],"es":[[7541,7541]]},
     "CA_TAROT_MAJOR_01": {"enu":[[7422,7422]],"default":[[7422,7422]],"es":[[7448,7448]]},
     "CA_TAROT_MAJOR_02": {"enu":[[7423,7423]],"default":[[7423,7423]],"es":[[7449,7449]]},
     "CA_TAROT_MAJOR_03": {"enu":[[7424,7424]],"default":[[7424,7424]],"es":[[7450,7450]]},

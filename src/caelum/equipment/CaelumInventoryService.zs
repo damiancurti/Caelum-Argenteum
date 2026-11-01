@@ -2281,6 +2281,8 @@ class CaelumInventoryService : Object play
             : 0.0;
         personalInventoryWeight += user.HUDMagicBoxTotalWeight;
         carriedItemWeight += user.HUDMagicBoxTotalWeight;
+        double liftedWeight=CaelumTarotObjectMovement.Weight(user);
+        personalInventoryWeight+=liftedWeight;carriedItemWeight+=liftedWeight;
         if (user.DerivedStats != null)
         {
             user.DerivedStats.SetCarriedLoadBreakdown(
