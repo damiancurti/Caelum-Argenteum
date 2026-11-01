@@ -1,0 +1,101 @@
+{
+  "issue": 440,
+  "release": "5.13.3",
+  "scope": "Equipped Empress vegetation collision permission and persistence",
+  "author_acceptance": false,
+  "runtime_members_matching_source": 18021,
+  "native_runs": [
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32325-20261101-013717-898065",
+      "runtime_sha256": "7b080d27f39da9a18fbdcc7434226af2246fb0e2677a27f8ac58f728252247a9",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440G PASS owning an unequipped Empress does not bypass a tree",
+            "CA440G PASS equipping recalculates the cached vegetation permission",
+            "CA440G PASS native movement crosses vegetation for its equipped owner",
+            "CA440G PASS vegetation keeps its physical and harvesting flags",
+            "CA440G PASS another player without Empress still collides",
+            "CA440G PASS removing the card immediately restores collision policy",
+            "CA440G PASS a player already inside can take an ordinary outward step after removal",
+            "CA440G PASS a player already inside can finish leaving after removal",
+            "CA440G PASS removed card cannot re-enter vegetation",
+            "CA440G PASS an active World-dispatched Empress does not grant its passive",
+            "CA440G PASS equipped Empress does not bypass stone",
+            "CA440G PASS equipped Empress does not bypass map walls",
+            "CA440G PASS vegetation passage requires no active sequence or cooldown",
+            "CA440G RESULT capture"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440G PASS owning an unequipped Empress does not bypass a tree",
+            "CA440G PASS equipping recalculates the cached vegetation permission",
+            "CA440G PASS native movement crosses vegetation for its equipped owner",
+            "CA440G PASS vegetation keeps its physical and harvesting flags",
+            "CA440G PASS another player without Empress still collides",
+            "CA440G PASS removing the card immediately restores collision policy",
+            "CA440G PASS a player already inside can take an ordinary outward step after removal",
+            "CA440G PASS a player already inside can finish leaving after removal",
+            "CA440G PASS removed card cannot re-enter vegetation",
+            "CA440G PASS an active World-dispatched Empress does not grant its passive",
+            "CA440G PASS equipped Empress does not bypass stone",
+            "CA440G PASS equipped Empress does not bypass map walls",
+            "CA440G PASS vegetation passage requires no active sequence or cooldown",
+            "CA440G RESULT capture"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32324-20261101-013621-283434",
+      "runtime_sha256": "7b080d27f39da9a18fbdcc7434226af2246fb0e2677a27f8ac58f728252247a9",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440G PASS common recovery preserves equipped vegetation permission",
+            "CA440G PASS recovered exact tree remains selectively traversable",
+            "CA440G PASS recovery does not grant another player the passive",
+            "CA440G RESULT reload"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440G PASS common recovery preserves equipped vegetation permission",
+            "CA440G PASS recovered exact tree remains selectively traversable",
+            "CA440G PASS recovery does not grant another player the passive",
+            "CA440G RESULT reload"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "qualification": "Final initial fixture moves its owner away before testing the second player, so only vegetation can block that player. Recovery uses the identical production runtime and unchanged recovery checks. No frame-presentation claim.",
+  "generator_check": "Affected CaelumTreeEnvironmentProp base matches generated output.",
+  "retained_fixture_failures": [
+    "native-32322-20261101-013416-622128"
+  ],
+  "failure_correction": "A distant endpoint beyond the wall does not test swept movement with TryMove; the corrected fixture steps into the wall from adjacent interior ground."
+}

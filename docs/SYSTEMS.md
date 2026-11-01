@@ -118,8 +118,18 @@ Revision1 saves exact caster/victim references, lifetime and fractional damage.
 Network identity admission pauses evaluation. Direct cached body references avoid
 inventory or global actor scans during movement; the source list is bounded by
 the fixed player population. Thorned plant artwork scales to the actual victim;
-its native visual evidence is separate from these behavior checks. Vegetation
-traversal and final author review remain pending.
+its native visual evidence is separate from these behavior checks.
+
+The equipped passive lets that player cross the existing typed vegetation family
+(`CaelumTreeEnvironmentProp`, including its age/biome variants). A collision-local
+callback reads the permission cached during character recalculation; it performs
+no actor or inventory search. Trees remain solid/shootable for other players and
+retain their resource state. Stone, buildings and map geometry keep normal collision.
+Ownership without equipment, or World activating the card, does not grant this
+passive. Removing the card restores normal collision immediately; the engine's
+existing outward-overlap movement lets a player already inside leave. Derived
+permission is recomputed from the saved loadout on admission. Final author review
+and authored mansion examples remain pending.
 
 ### Chariot movement and fragile obstacles
 

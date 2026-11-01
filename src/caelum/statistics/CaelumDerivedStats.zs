@@ -37,6 +37,7 @@ class CaelumDerivedStats : Object
     double CarryCapacity;
     int MagicBoxCapacity;
     int TarotBoxBonus;
+    bool TarotVegetationPassage;
 
     int MassTier;
     int SizeTier;

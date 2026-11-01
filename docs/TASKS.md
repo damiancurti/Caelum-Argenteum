@@ -8,7 +8,7 @@ Order, capacities, individual timers, Hermit, Devil payment, Star weight and
 World dispatch, Temperance, Tower, Fool, Hanged Man and Strength have isolated evidence;
 Chariot movement/contact and its owned-model adaptation have isolated evidence;
 Priestess ground traps, Empress restraint and their departure cleanup are implemented;
-plant art has isolated native front/rear evidence; vegetation traversal remains pending;
+plant art has native front/rear evidence; equipped vegetation traversal is implemented;
 finish remaining handlers,
 giant/harmful objects, arena geometry/save compatibility, authored mansion
 fixtures, automaton3D art/combat and input arbitration. The confirmed per-power

@@ -117,6 +117,17 @@ class without errors or desynchronization. The generator's deterministic check
 passes and all18,021 package members match source. See empress-art-results.json.
 This is visual registration evidence, not author acceptance or a frame-rate claim.
 
+The Empress vegetation passive then passed13 initial and three common-save
+recovery assertions per native client. Equipped ownership changes only that
+player's collision with the existing typed tree family; rocks, walls, other
+players and harvesting flags retain their rules. Unequipping while inside allows
+ordinary outward steps through GZDoom's existing overlap recovery. The permission
+is cached during profile calculation, not searched per collision. Generator and
+runtime vegetation bases match, and all18,021 package members match source.
+Evidence: vegetation-results.json. The retained first fixture incorrectly used
+an endpoint-only TryMove beyond a wall; the final test uses an ordinary step into
+the wall. Production wall collision was unchanged. Author acceptance is pending.
+
 ## 5.13.2 - Reversible equipment awakening (#442)
 
 Author-approved +25% damage/defense and half wear are implemented on the exact
