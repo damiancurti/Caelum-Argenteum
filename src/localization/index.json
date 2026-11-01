@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "697e61488ab0a27f2763a0c3cc8e7c4ff6209619c3d8310486dd2634af88cbb5",
+  "sha256": "31807151a3687de18c86c6af81154437b170c0c1571cdc1f5c1c07ae68985faf",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[534,534]],"default":[[534,534]],"es":[[1229,1229]]},
     "CA_ABSENT_THEFT_FOUND": {"enu":[[6957,6957]],"default":[[6957,6957]],"es":[[6959,6959]]},
@@ -2838,6 +2838,7 @@
     "CA_TAROT_EXAMPLES": {"enu":[[2,2]],"default":[[2,2]],"es":[[9,9]]},
     "CA_TAROT_EXAMPLES_BLOCKED": {"enu":[[4,4]],"default":[[4,4]],"es":[[11,11]]},
     "CA_TAROT_EXAMPLES_RETURN": {"enu":[[3,3]],"default":[[3,3]],"es":[[10,10]]},
+    "CA_TAROT_EXAMPLE_SPIRIT": {"enu":[[7622,7622]],"default":[[7622,7622]],"es":[[7626,7626]]},
     "CA_TAROT_FALSE_WALL": {"enu":[[16,16]],"default":[[16,16]],"es":[[23,23]]},
     "CA_TAROT_FOOL_DESCRIPTION": {"enu":[[3260,3260]],"default":[[3260,3260]],"es":[[3286,3286]]},
     "CA_TAROT_FOOL_NAME": {"enu":[[3259,3259]],"default":[[3259,3259]],"es":[[3285,3285]]},
@@ -2909,6 +2910,8 @@
     "CA_TAROT_ROOM_REQUIRED": {"enu":[[6,6]],"default":[[6,6]],"es":[[13,13]]},
     "CA_TAROT_ROOM_ROUTE": {"enu":[[5,5]],"default":[[5,5]],"es":[[12,12]]},
     "CA_TAROT_ROOTS_TARGET": {"enu":[[33,33]],"default":[[33,33]],"es":[[38,38]]},
+    "CA_TAROT_SPIRIT_DEMONSTRATION": {"enu":[[7624,7624]],"default":[[7624,7624]],"es":[[7628,7628]]},
+    "CA_TAROT_SPIRIT_REQUIRES": {"enu":[[7623,7623]],"default":[[7623,7623]],"es":[[7627,7627]]},
     "CA_TAROT_SUN_CAPACITY": {"enu":[[7601,7601]],"default":[[7601,7601]],"es":[[7608,7608]]},
     "CA_TAROT_SUN_CAPTURED": {"enu":[[7602,7602]],"default":[[7602,7602]],"es":[[7609,7609]]},
     "CA_TAROT_SUN_OCCUPIED": {"enu":[[7600,7600]],"default":[[7600,7600]],"es":[[7607,7607]]},

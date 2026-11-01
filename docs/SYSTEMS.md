@@ -47,7 +47,17 @@ contact grid and fixed player slots; deduplication precedes any actor destructio
 It adds no ticker or global actor search. Shared sequence cost/cooldown applies
 once; Hermit does not repeat an instantaneous pulse. Native saves retain the
 resulting body state, with no new migration or retroactive effects.
-Spirit conversation/immortal-target examples remain separate pending content.
+Spirit passives use the explicit `CaelumTarotSpirit` actor family. Equipped
+Justice allows the attacking player to damage these otherwise immortal bodies;
+acquisition alone and another player's selected card do not qualify. Equipped
+Judgement permits native conversation with the living demonstration body. Without
+it, Use only gives feedback and never opens an invisible conversation. The node
+is removed after closing so every new speaker is checked again.
+
+Annex apparatus revision4 adds one non-narrative example with the existing guard
+appearance and base attributes/body references, without equipment or rewards.
+Its saved identity, Health/death and native conversation survive common-save
+recovery. It does not classify ordinary NPCs or divine story actors as spirits.
 
 ### Moon illusions
 
@@ -684,7 +694,7 @@ new effect's quantitative behavior.
 | 5 | The Hierophant (El Hierofante) | Allows purifying cursed passages. | Reduces contamination in the area to zero. | Authored cursed passages; purification radius/targets, pulse versus continuous application and stored-surface coverage. |
 | 6 | The Lovers (Los Enamorados) | Allows damage to be shared among team members. | Those under the effect share damage and healing equally. | Active-map group/radius/LOS, attribution, fractional persistence and single redistribution implemented; abstract journey integration remains pending. |
 | 7 | The Chariot (El Carro) | Allows breaking specific fragile objects. | Launches a chariot that pushes everything in its path. | Fragile-object allowlist; chariot geometry, velocity, range, collision, pushing and damage. |
-| 8 | Justice (La Justicia) | Allows killing immortal enemies, such as spirits. | Takes the user and target to a separate arena. | Active duel admission/return/travel implemented with native evidence; passive immortal-target allowlist remains pending. |
+| 8 | Justice (La Justicia) | Allows killing immortal enemies, such as spirits. | Takes the user and target to a separate arena. | Active duel admission/return/travel implemented with native evidence; passive admits only the explicit Tarot spirit actor family. |
 | 9 | The Hermit (El Ermitaño) | Adds two Tarot equipment slots. | Doubles the effect duration of the first Tarot card activated. | Capacity known (+2); instantaneous first effects, position after first card and own-duration eligibility. |
 | 10 | Wheel of Fortune (La Rueda de la Fortuna) | Allows altering rooms. | Alternates the conditions of a special room: flooded/dry, lit/dark, active/inactive. Each state opens a different route and closes another. | Authored special rooms, state cycles, route changes and safe/persistent occupation. |
 | 11 | Strength (La Fuerza) | Allows lifting heavy objects using Strength. | Multiplies Strength by ten for object-movement calculations. | Object eligibility, lifting/movement interaction and application of x10 to object movement only. |
@@ -696,7 +706,7 @@ new effect's quantitative behavior.
 | 17 | The Star (La Estrella) | Adds ten Magic Box slots and allows storing one giant object. An object is giant when its volume is at least twice the user's volume. | All objects inside the Magic Box weigh zero for the effect's duration. | Capacity (+10), one >=2x-volume giant and zero contents mass known; volume representation and safe giant drop. |
 | 18 | The Moon (La Luna) | Allows swapping places with clones. | Creates clones of the player. | Clone count/geometry, behavior, damage, lifetime, swap targeting and safe placement. |
 | 19 | The Sun (El Sol) | Adds ten Magic Box slots and prevents damage from objects inside the Box. | Captures one harmful object while the effect is active; it is automatically dropped when the effect ends. | Capacity (+10), stored-object damage prevention and one temporary capture known; eligible harmful objects, capture/drop behavior. |
-| 20 | Judgement (El Juicio) | Allows talking to spirits. | Breaks mind control and illusions within the area. | Eligible spirits, mind controls/illusions, radius, restoration and quest protections. |
+| 20 | Judgement (El Juicio) | Allows talking to spirits. | Breaks mind control and illusions within the area. | Explicit spirit conversation and local control/illusion cleanup implemented; ordinary NPCs retain their rules. |
 | 21 | The World (El Mundo) | Allows activating the unified Tarot essence. | Activates the effects of all unequipped Arcana, both Major and Minor; skips invalid targets. | Unified essence damages deities (author clarification); formed by all 78; activation defined in #441 above. Active needs internal order, ownership, target selection and recursion/cost rules. |
 
 ### Pre-5.13 runtime and migration audit (historical baseline)

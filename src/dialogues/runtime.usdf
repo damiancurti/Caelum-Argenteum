@@ -7129,3 +7129,18 @@ conversation {
   choice { text="$CA_M01_FOOL_CAPTURE"; giveitem="CaelumM00CaptureFoolAction"; closedialog=true; }
  }
 }
+
+// Demostración sin identidad narrativa, misiones ni recompensas.
+conversation
+{
+    id = 44020;
+    class = "CaelumPalomoConversationMenu";
+    page
+    {
+        pagename = "tarot_spirit_example";
+        userstring = "tarot_spirit_example";
+        name = "$CA_TAROT_EXAMPLE_SPIRIT";
+        dialog = "$CA_TAROT_SPIRIT_DEMONSTRATION";
+        goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+    }
+}

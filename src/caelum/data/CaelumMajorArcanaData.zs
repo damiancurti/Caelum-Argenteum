@@ -27,6 +27,7 @@ class CaelumMajorArcanaData : Object
     const LOVERS_REVISION=1;
     const PASSAGE_REVISION=1;
     const EMPEROR_REVISION=1;
+    const SPIRIT_CONVERSATION=44020;
     const AUTOMATON_REVISION=1;
     const AUTOMATON_BODY_KG=1000;
     const AUTOMATON_ATTRIBUTE=30;

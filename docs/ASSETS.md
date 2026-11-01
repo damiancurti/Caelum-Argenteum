@@ -6,6 +6,10 @@ The Sun containment checkpoint adds no raster/model sources. Its diagnostic
 rock still uses the existing CARK fallback; sized owned-model presentation and
 thermal/contamination examples remain pending. It is not a visual acceptance.
 
+The demonstration spirit reuses the unchanged V9G0 guard sprite and native
+body scale. No new art or third-party resource is introduced. Its bilingual
+native conversation capture is recorded in spirit-results.json.
+
 ## Moon clone appearance reuse (#440, 5.13.3)
 
 Moon illusions reuse the existing owned player body/head appearance registry and

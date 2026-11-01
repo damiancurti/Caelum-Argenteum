@@ -15,7 +15,8 @@ waits and legacy maps are checked.
 Lovers active-map damage/healing is checked; integrate its passive in abstract
 journey simulation before claiming completion. Finish remaining handlers/passives,
 giant/harmful objects and display-room examples on the appended annex geometry,
-the demonstration spirit and the remaining input integration. Automaton
+the remaining input integration. The demonstration spirit now exposes equipped
+Justice/Judgement with native dialogue recovery evidence. Automaton
 combat/control now uses inseparable equipment, actual displacement animation
 and the shared clock; two-peer and common-save evidence is recorded. Existing world-effect
 clocks also follow shared accelerated steps; add future creations to that bounded
@@ -25,8 +26,8 @@ The marked living-obstacle example is placed; finish the remaining display objec
 Emperor pacification, control arbitration and departure restoration are implemented;
 Moon clones, independent resources and equipped swaps are implemented;
 these native checkpoints do not complete the remaining Major handlers.
-Judgement's local dispel is implemented; its spirit interaction/example remains
-separate from this active-effect checkpoint.
+Judgement's local dispel and the explicit demonstration-spirit interaction are
+implemented; their native evidence is separate from final author acceptance.
 Sun rock containment, Star requirement, Box mass/slots and safe-release travel
 gating are implemented. Finish the actual heat/contamination emitter adapters,
 owned visual registration, example placements and inventory presentation;

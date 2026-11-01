@@ -1,5 +1,5 @@
 {
-  "revision": 3,
+  "revision": 4,
   "mansion_portal": [
     368,
     112,
@@ -66,6 +66,11 @@
   ],
   "automaton_offset": [
     256,
+    528,
+    0
+  ],
+  "spirit_offset": [
+    640,
     528,
     0
   ]

@@ -7617,3 +7617,12 @@ CA_TAROT_AUTOMATON_ORDER = "The automaton received the target's observed positio
 CA_TAROT_AUTOMATON = "Autómata del Tarot";
 CA_TAROT_AUTOMATON_TARGET = "Apuntá a un autómata inactivo que siga vivo. Solo podés controlar uno a la vez.";
 CA_TAROT_AUTOMATON_ORDER = "El autómata recibió la posición observada del objetivo.";
+
+[enu default]
+CA_TAROT_EXAMPLE_SPIRIT = "Demonstration spirit";
+CA_TAROT_SPIRIT_REQUIRES = "Equip Judgement to hear this spirit.";
+CA_TAROT_SPIRIT_DEMONSTRATION = "You can hear this demonstration spirit while Judgement is equipped. Justice allows your attacks to harm it. This example grants no quest or reward.";
+[es]
+CA_TAROT_EXAMPLE_SPIRIT = "Espíritu de demostración";
+CA_TAROT_SPIRIT_REQUIRES = "Equipá El Juicio para escuchar a este espíritu.";
+CA_TAROT_SPIRIT_DEMONSTRATION = "Podés escuchar a este espíritu de demostración mientras tengas equipado El Juicio. La Justicia permite que tus ataques lo dañen. Este ejemplo no concede misiones ni recompensas.";

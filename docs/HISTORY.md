@@ -4,6 +4,21 @@ Documentation version: **5.13.3** - 2026-10-31.
 
 ## 5.13.3 - Ordered Tarot foundation (#440, implementation checkpoint)
 
+Spirit checkpoint (2026-11-01): the explicit Tarot-spirit family admits damage
+only from a player with equipped Justice. Equipped Judgement opens the approved
+demonstration dialogue; unauthorised Use gives feedback without acquiring a
+conversation/cursor lock. The example reuses the guard's base body/profile and
+unchanged sprite, adds no narrative identity or reward, and is placed once by
+annex apparatus revision4. Existing conversation order is unchanged; its new
+ID44020 is appended through the authoritative dialogue manifest.
+
+Native two-peer capture32440 and common-save dialogue recovery32441 passed
+32 assertions. The Spanish dialogue was visually inspected. Package
+`spirit/r1` matches all 18043 source entries; SHA-256
+`dad38f79124a9114c7b7dcfca9fa8c9243067af9737202a9f591c59a9fd91cb9`. See
+`assets/validation_v5_13_3/spirit-results.json`. Static validation and generated
+indexes/apparatus pass. These agent checks do not establish author acceptance.
+
 2026-11-01 author decisions: automaton mace base Air6, critical5%, ordinary
 melee dispersion and no separate secondary attack. Its armor, tower shield and
 mace are indestructible and inseparable, overriding previously normal wear;

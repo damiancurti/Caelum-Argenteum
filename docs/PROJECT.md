@@ -26,7 +26,8 @@ Sun containment now preserves one rock identity, requires Star, accounts for
 Box mass/slots and delays travel until a collision-safe release succeeds.
 This checkpoint does not yet place the harmful emitters in the campaign.
 Judgement's local instantaneous pulse uses those control/illusion adapters;
-spirit passives and the remaining display content still need completion.
+the approved demonstration spirit now exposes its equipped hearing/damage
+passives. Remaining display content still needs completion.
 SYSTEMS distinguishes these handlers from the remaining powers and map targets.
 #439/441/442 have separate draft PRs605/606/607; #440 is draft PR608, in progress;
 standalone modes #596-601 remain last. No full V5.13 acceptance is claimed.

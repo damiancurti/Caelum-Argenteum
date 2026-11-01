@@ -6,6 +6,7 @@ class CaelumTarotExampleRoom : Actor
     bool Wet;
     CaelumTarotLivingObstacle LivingObstacle;
     CaelumTarotAutomaton Automaton;
+    CaelumTarotExampleSpirit Spirit;
     CaelumSlidingDoorLeaf Doors[4];
     CaelumTarotExamplePortal Portals[2];
 
@@ -46,6 +47,11 @@ class CaelumTarotExampleRoom : Actor
         {
             Automaton=CaelumTarotAutomaton(Actor.Spawn('CaelumTarotAutomaton',CaelumTarotExampleData.Automaton(),NO_REPLACE));
             Revision=3;
+        }
+        if(Revision<4)
+        {
+            Spirit=CaelumTarotExampleSpirit(Actor.Spawn('CaelumTarotExampleSpirit',CaelumTarotExampleData.Spirit(),NO_REPLACE));
+            Revision=4;
         }
         Apply();
     }
