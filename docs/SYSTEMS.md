@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.13.8** - 2026-11-01.
+Documentation version: **5.13.9** - 2026-11-01.
 
 ## Cooperative standalone Tarot hunt (#601)
 

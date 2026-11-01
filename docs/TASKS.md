@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.13.8** - 2026-11-01.
+Documentation version: **5.13.9** - 2026-11-01.
+
+## 5.13.9 - Remaining final integration (#596/#614)
+
+Keep #614 power-ups in a separate branch/PR. Complete their native checks, add
+manual scenarios, finish the two-client menu walkthrough and common-save smoke,
+then populate pending_test.txt and open the final terminal for the author.
+Ten current author-scene startup/synchronization checks passed; those do not
+replace manual gameplay or physical input verification.
 
 ## 5.13.8 - Cooperative hunt (#601)
 
