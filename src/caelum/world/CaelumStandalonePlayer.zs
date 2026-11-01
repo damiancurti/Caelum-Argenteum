@@ -53,7 +53,13 @@ class CaelumStandalonePlayer : CaelumPlayer
             RefreshFormalInventorySnapshot();PersistCharacterState();
         }
         Super.Tick();
-        if(StandaloneHunter)ApplyCustomWorldVisual();
+        if(StandaloneHunter)
+        {
+            // Palomo no ejecuta la fisiología del PJ; su estado inicial no
+            // debe dejar el HUD en "sin aliento" con el Aire completo.
+            AirState=CaelumConstants.AIR_STATE_NORMAL;
+            ApplyCustomWorldVisual();
+        }
     }
     override void PlayerThink()
     {

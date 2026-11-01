@@ -10,6 +10,7 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 it, then rebuild with `run_dev.bat` as described below.
 
 The six #614 labyrinth power-ups and optional #617 human Palomo are implemented.
+Human Palomo also preserves a normal full-Air HUD state on fresh and restored matches.
 V5.13 implementation is ready for author review. The #596 final terminal has 14 numbered
 scenarios, production host/join menus and common-save recovery; acceptance remains pending.
 Pre-5.13.12 hunt saves use `build_dev.ps1 -LegacyHunt` to retain their original geometry.

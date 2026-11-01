@@ -2,6 +2,11 @@
 
 Documentation version: **5.13.12** - 2026-11-01.
 
+## Human Palomo HUD evidence (#617 follow-up)
+
+assets/validation_v5_13_11/air-status.png records the corrected native full-Air
+label. The patch reuses all art and does not change the Palomo model or sprites.
+
 ## Final V5.13 manual scenes (#596)
 
 The final author launcher reuses the packaged artwork without replacements.

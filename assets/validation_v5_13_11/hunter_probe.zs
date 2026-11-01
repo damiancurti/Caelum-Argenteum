@@ -20,6 +20,7 @@ class CA617Probe : StaticEventHandler
             Check(Human>=0 && Human<4,"one human role selected by host");if(Human<0){Done=true;return;}
             let p=CaelumStandalonePlayer(players[Human].mo);let h=m.Hunt;
             Check(h.Hunter==null && p.StandaloneHunter,"human replaces NPC hunter");
+            Check(p.AirState==CaelumConstants.AIR_STATE_NORMAL && p.CurrentAir==p.DerivedStats.MaximumAir,"full Palomo Air is displayed as normal");
             Check(p.Mass==GetDefaultByType('CaelumPalomo').Mass && p.Radius==16 && p.Height==56,"native Palomo body dimensions and mass");
             Check(p.Attributes.Strength==100 && p.Attributes.Insight==100 && p.Attributes.Patience==100,"native Palomo attributes");
             Check(!CaelumPlayerAuthority.CanMutate(p) && !p.bPickup && p.player.ReadyWeapon==null,"hunter cannot act as a seeker or acquire inventory");

@@ -2,6 +2,11 @@
 
 Documentation version: **5.13.12** - 2026-11-01.
 
+## Human Palomo display check (#617)
+
+The full-Air/breathless label discrepancy is corrected and native-tested. Review
+CA617-01 in the final terminal; all V5.13 author acceptance remains pending.
+
 ## 5.13.12 - Final V5.13 handoff (#596)
 
 Implementation and final native startup/recovery checks are complete. The single
