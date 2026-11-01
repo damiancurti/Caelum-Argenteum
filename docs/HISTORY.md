@@ -1,6 +1,19 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.13.6** - 2026-11-01.
+Documentation version: **5.13.7** - 2026-11-01.
+
+## 5.13.7 - Capture the Arcana (#600, 2026-11-01)
+
+Approved opposite existing starts are the bases in both arenas. This patch adds
+only the capture objective lifecycle, shared capture scores and bilingual
+feedback. Owned Tarot art is reused without raster modification. Native fixtures
+and results belong to assets/validation_v5_13_7. Author acceptance remains
+pending for the final V5.13 suite; #601 still owns the separate hunt map.
+
+Final validation: 160 passing native assertions across four-peer capture,
+common recovery, overtime, dropped-object recovery and unanimous rematch.
+Runtime `ebddae74fa227093fb43a8fa6b469859db509e28a05151a3c068bbea94023d22` matches every src member. Native objective/ES-EN HUD captures were inspected.
+Project validation passes; no Internet, physical-input or FPS acceptance claim.
 
 ## 5.13.6 - Standalone Team Deathmatch (#599, 2026-11-01)
 

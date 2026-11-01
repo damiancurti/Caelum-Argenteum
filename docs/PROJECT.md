@@ -1,6 +1,13 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.13.6** - 2026-11-01.
+Documentation version: **5.13.7** - 2026-11-01.
+
+## 5.13.7 - Capture the Arcana (#600)
+
+Two saved team objectives support stealing, carrying, death drops, returns,
+capture conditions and shared victory. Both approved arenas reuse their existing
+opposite starts. Native validation is tracked in assets/validation_v5_13_7;
+#601 hunt remains separate and final author acceptance is outstanding.
 
 ## 5.13.6 - Standalone Team Deathmatch (#599)
 

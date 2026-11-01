@@ -1,6 +1,13 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.13.6** - 2026-11-01.
+Documentation version: **5.13.7** - 2026-11-01.
+
+## 5.13.7 - Capture the Arcana (#600)
+
+Completed native opposing pickup, denied capture while one's own token is missing,
+defender return, carrier death and continuation, automatic return, simultaneous
+contacts, three captures, overtime, common recovery and clean rematch. Preserve
+four-peer evidence and ES/EN presentation in assets/validation_v5_13_7. #601 remains a separate issue/branch.
 
 ## 5.13.6 - Standalone Team Deathmatch (#599)
 

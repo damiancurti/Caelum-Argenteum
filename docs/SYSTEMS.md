@@ -1,6 +1,24 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.13.6** - 2026-11-01.
+Documentation version: **5.13.7** - 2026-11-01.
+
+## Standalone Capture the Arcana (#600)
+
+Mode3 reuses the approved saved balanced teams. The author chose the existing
+southwest/northeast starts (slots0/4) as opposing bases in both venues. Base
+markers reuse the owned Tarot silhouette in team colors; each stealable objective
+uses the owned World card art. No collectible is added to personal inventory.
+Touch the opposing objective to carry it. Only bringing it to one's own base
+while the friendly objective is home awards a capture. Each transaction returns
+the enemy token before scoring, so duplicate touches cannot score again. Death
+drops the carried token at the body; allies can continue carrying it. Defenders
+return a dropped friendly token on contact, or it returns after30 active seconds.
+The fixed two-object ledger and native pickup contacts avoid global scans.
+The first team to3 captures wins. At ten active minutes, a tie continues until
+the next lead. Individual score records capture contributions, not kills. Combat,
+friendly fire, three-second preset respawn and unanimous rematch reuse the
+standalone foundation. Saved carriers, dropped state and deadlines survive
+common recovery; campaign card ownership is unaffected.
 
 ## Standalone Team Deathmatch (#599)
 

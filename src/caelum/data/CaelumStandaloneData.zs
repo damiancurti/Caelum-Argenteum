@@ -4,6 +4,12 @@ class CaelumStandaloneData : Object
     const REVISION=1;
     const DEATHMATCH=1;
     const TEAM_DEATHMATCH=2;
+    const CAPTURE_ARCANA=3;
+    const CAPTURE_LIMIT=3;
+    const OBJECTIVE_CARD=21; // El Mundo, catálogo existente.
+    const OBJECTIVE_RETURN_TICS=30*35;
+    static clearscope vector3 BasePosition(int teamId)
+    {return CaelumArenaData.Start(level.MapName==CaelumArenaData.Map(1)?1:0,teamId==0?0:4);}
     const FRAG_LIMIT=20;
     const TIME_LIMIT_TICS=10*60*35;
     const RESPAWN_TICS=3*35;

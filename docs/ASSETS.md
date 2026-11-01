@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.13.6** - 2026-11-01.
+Documentation version: **5.13.7** - 2026-11-01.
 
 Standalone resident presets (#597) reuse the four existing residents' owned
 sprite banks and scale for idle, walking, crouching, attacks, rest and death.
