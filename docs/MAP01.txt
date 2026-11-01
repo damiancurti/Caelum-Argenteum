@@ -2,6 +2,13 @@ CAELUM ARGENTEUM — STORY AND MAP01
 
 Documentation version: **5.13.12** - 2026-11-01.
 
+## Final author review boundary (#596)
+
+Campaign Tarot scenarios use isolated native sessions, existing resident presets
+and the mansion annex. Their fixture preparation does not add story characters,
+alter the campaign map or save an external campaign profile. Standalone hunt and
+competitive scenarios remain separate maps and matches.
+
 ## Standalone hunt boundary (#616)
 
 The new 22 Arcana opportunities belong to CAHUNT, not the mansion's story or

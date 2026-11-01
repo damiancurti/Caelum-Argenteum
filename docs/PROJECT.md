@@ -7,8 +7,9 @@ Documentation version: **5.13.12** - 2026-11-01.
 The 22 distributed Arcana opportunities, shared match collection and selected
 captive rescue are implemented. Existing art, bodies and approved effects are
 reused. Native four-peer checks and reversible original-map recovery are recorded
-in assets/validation_v5_13_12. #596 remains the consolidated manual handoff;
-author acceptance and all V5.13 merges/closures remain outstanding.
+in assets/validation_v5_13_12. The #596 consolidated manual terminal is ready,
+with final native startup/common-save evidence in validation_v5_13_9/final_results.json.
+Implementation is complete; author acceptance and V5.13 merges/closures remain outstanding.
 
 ## 5.13.11 - Optional human Palomo (#617)
 

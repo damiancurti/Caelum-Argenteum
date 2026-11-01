@@ -10,7 +10,8 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 it, then rebuild with `run_dev.bat` as described below.
 
 The six #614 labyrinth power-ups and optional #617 human Palomo are implemented.
-The #616 Arcana opportunities are implemented; #596 final author-suite delivery remains pending.
+V5.13 implementation is ready for author review. The #596 final terminal has 14 numbered
+scenarios, production host/join menus and common-save recovery; acceptance remains pending.
 Pre-5.13.12 hunt saves use `build_dev.ps1 -LegacyHunt` to retain their original geometry.
 See `docs/TASKS.md`.
 
@@ -20,17 +21,17 @@ to start GZDoom's native host/join process and returns to the title afterward.
 Deathmatch (#598), Team Deathmatch (#599) and Capture the Arcana (#600) have native scoring, respawn, recovery and rematch
 evidence. The cooperative hunt (#601) now has its distributed 128 m maze,
 78 essences, 24 rearming traps, Palomo pursuit and shared capture/rescue state.
-All standalone modes are implemented; final-suite delivery and author acceptance
-remain pending under #596.
+All standalone modes are implemented. Outstanding author checks are listed only in
+`pending_test.txt`; the final launcher is `assets/validation_v5_13_9/run_author_suite.py`.
 
-V5.13 is in progress. #440 now has ordered Tarot loadouts, additive capacities,
+V5.13 awaits author acceptance. #440 has ordered Tarot loadouts, additive capacities,
 Star volume admission, direct furniture collection, original storage contents and saved safe-drop queues,
 per-card timers, Hermit duration, Devil payment, Temperance, Tower, voted Fool sequences,
 borrowed racial abilities, Strength object lifting, Chariot movement, Priestess traps,
 Empress restraint, local Death contamination and Hierophant purification pulses
 and World dispatch. Lovers also shares damage in coupled, read-only journey
 forecasts before committing individual costs and results. This is an
-implementation checkpoint; Chariot reuses the original cart at its approved width,
+implementation summary; Chariot reuses the original cart at its approved width,
 and Empress plants have native visual evidence using owned vegetation materials.
 Its equipped passive also enables individual vegetation traversal.
 Death's equipped passive destroys explicitly marked living obstacles through Use.
@@ -70,7 +71,7 @@ All22 Major handlers and their approved examples are integrated; combined native
 sequence/recovery/annex regression passed118 assertions on the final package.
 Frame-presentation review remains pending after Windows denied ETW access.
 Standalone modes #597-601 have separate native evidence. #441 capture/unified power and #442 equipment awakening
-have separate tested PRs. Author scenarios remain deferred until all work is ready.
+have separate tested PRs. The final numbered author terminal is ready; manual acceptance remains outstanding.
 
 The 5.12.7a correction (#602) lets valid mansion spirits confirm and restore
 native dialogue pages. New multiplayer session configurations initialize controls

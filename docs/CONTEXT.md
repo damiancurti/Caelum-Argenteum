@@ -6,7 +6,7 @@ Documentation version: **5.13.12** - 2026-11-01.
 Order/capacity/timers/Temperance/Tower/Fool/Hanged/Strength/Chariot/Priestess/Empress implemented;
 Empress/Death/Hierophant/Justice/Lovers/Emperor/Moon/Judgement/spirit/Sun-cargo implemented; native-checked; automaton control/3D checked.
 Timed creations support waits; stone-passages/vegetation/Wheel/Sun-rocks checked.
-Star/journeys checked; #597-601 done; #596 startup10 passed; #614 native-checked; #617/#616 implemented; #596 handoff pending; author-deferred.
+Star/journeys checked; #597-601 done; #596 startup14/recovery2 passed; #614 native-checked; #617/#616 implemented; #596 terminal ready; author-pending.
 SYSTEMS; validation_v5_13_1-12.
 
 **V5.12 accepted/merged:** HISTORY; validation_v5_12_7/7a; timer-fixed4.14.2.

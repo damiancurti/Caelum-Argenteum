@@ -2,6 +2,27 @@
 
 Documentation version: **5.13.12** - 2026-11-01.
 
+## Final V5.13 author handoff (#596, 2026-11-01)
+
+Extended the single manual launcher to 14 scenarios plus two independent
+production host/join menus and reopening the last host F5 save. Each scene has
+its own preparation shortcuts; human Palomo requires four participants and the
+hunt Arcana/power-up scenes may pause only the fixture's NPC hunter for inspection.
+Original gameplay timers and effects are not changed by the handoff patch.
+
+The final sweep exposed a fixture dependency on competitive-match initialization
+for campaign Tarot scenes. The fixture now materializes resident presets through
+the existing service in a temporary initialization context, then removes that
+context before normal campaign simulation. It does not alter production rules.
+Fourteen native scene startups and two common-save recoveries passed against the
+final full package, with native synchronization and clean exits. Evidence and
+limits: assets/validation_v5_13_9/final_results.json. This establishes neither
+Internet/frame-presentation performance nor physical-input/visual author approval.
+Four affected checks were repeated after replacing fixed pickup offsets with
+collision-tested approaches and separating automated peer cameras.
+The outstanding checks are recorded in pending_test.txt; no V5.13 issue is closed
+or merged by this delivery.
+
 ## 5.13.12 - Distributed hunt Arcana (#616, 2026-11-01)
 
 Implemented the author's approved 22 opportunities, shared discovered cards,
