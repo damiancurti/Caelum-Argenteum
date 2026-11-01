@@ -8,7 +8,8 @@ class CaelumTarotService : Object play
     {
         if (record == null || !CaelumPlayerAuthority.OwnsRecord(CaelumPlayer(record.Owner), record)) return;
         CaelumUnifiedTarot.Ensure(record);
-        if (record == null || record.TarotPowerRevision >= REVISION) return;
+        if (record == null || record.TarotPowerRevision >= REVISION)
+        {CaelumTarotLoadout.Ensure(record);return;}
         // Los saves anteriores no tenían carta equipada: no interpretar el
         // cero predeterminado ni el cursor local como una elección de El loco.
         if(record.TarotPowerRevision<1)
@@ -25,6 +26,7 @@ class CaelumTarotService : Object play
         if(!remaining)record.TarotEffectTics=0;
         let flight=record.Owner.FindInventory('CaelumTarotFlight');if(flight!=null)flight.Destroy();
         record.TarotPowerRevision = REVISION;
+        CaelumTarotLoadout.Ensure(record);
     }
 
     static bool ValidUser(CaelumPlayer user)
@@ -44,6 +46,7 @@ class CaelumTarotService : Object play
     static clearscope bool Implemented(int card)
     {
         return card == CaelumConstants.TAROT_THE_FOOL
+            || card==9 || card==15 || card==17 || card==21
             || (card >= CaelumConstants.TAROT_MAJOR_COUNT && card < CaelumConstants.TAROT_CARD_COUNT);
     }
 
@@ -65,11 +68,12 @@ class CaelumTarotService : Object play
         { Feedback(user, "CA_TAROT_POWER_UNOWNED"); return false; }
         if(!record.TarotSelected[card] && CaelumAwakening.Bound(user,card)!=null)
         {Feedback(user,"CA_AWAKEN_BOUND");return false;}
-        if (!record.TarotSelected[card] && !Implemented(card))
-        { Feedback(user, "CA_TAROT_POWER_UNIMPLEMENTED"); return false; }
-        if (!record.TarotSelected[card] && SelectedCount(record) >= CaelumConstants.TAROT_SELECTED_LIMIT)
+        if (!record.TarotSelected[card] && SelectedCount(record) >= CaelumTarotLoadout.Capacity(record,card))
         { Feedback(user, "CA_TAROT_POWER_LIMIT"); return false; }
-        record.TarotSelected[card] = !record.TarotSelected[card];
+        if(record.TarotSelected[card] && !CaelumTarotLoadout.CanRemove(user,record,card))
+        {Feedback(user,"CA_TAROT_CAPACITY_REMOVE");return false;}
+        CaelumTarotLoadout.Toggle(record,card);
+        user.ApplyCharacterProfile();
         user.RefreshSocialJournalSnapshot();
         user.PersistCharacterState();
         Feedback(user, record.TarotSelected[card] ? "CA_TAROT_POWER_SELECTED" : "CA_TAROT_POWER_REMOVED");
@@ -83,7 +87,7 @@ class CaelumTarotService : Object play
         EnsureRevision(record);
         if (record == null || SelectedCount(record) == 0)
         { Feedback(user, "CA_TAROT_POWER_NONE"); return false; }
-        if (SelectedCount(record) > CaelumConstants.TAROT_SELECTED_LIMIT)
+        if (SelectedCount(record) > CaelumTarotLoadout.Capacity(record))
         { Feedback(user, "CA_TAROT_POWER_LIMIT"); return false; }
         for (int i = 0; i < CaelumConstants.TAROT_CARD_COUNT; i++)
         {
@@ -99,18 +103,16 @@ class CaelumTarotService : Object play
             || user.StaffCastPending || user.ForcedSleepTics > 0 || CaelumRestState.IsActive(user)
             || CaelumTimeSkipState.IsOpen(user) || (user.player.cheats & CF_TOTALLYFROZEN))
         { Feedback(user, "CA_TAROT_POWER_CONTEXT"); return false; }
-        if (record.TarotCooldownTics > 0 || record.TarotEffectTics > 0)
+        bool devil=record.TarotCooldownTics>0 && CaelumTarotLoadout.Passive(record,15);
+        if ((record.TarotCooldownTics > 0 || record.TarotEffectTics > 0) && !devil)
         { Feedback(user, "CA_TAROT_POWER_COOLDOWN"); return false; }
-        if (user.CurrentAnima < CaelumConstants.TAROT_ACTIVATION_ANIMA)
+        if (!devil && user.CurrentAnima < CaelumConstants.TAROT_ACTIVATION_ANIMA)
         { Feedback(user, "CA_TAROT_POWER_ANIMA"); return false; }
         if (record.TarotSelected[CaelumConstants.TAROT_THE_FOOL])
             return CaelumFoolTravel.Propose(user);
-        user.CurrentAnima -= CaelumConstants.TAROT_ACTIVATION_ANIMA;
-        record.TarotEffectTics = CaelumConstants.TAROT_EFFECT_SECONDS * TICRATE;
-        record.TarotCooldownTics = CaelumConstants.TAROT_COOLDOWN_SECONDS * TICRATE;
-        for (int i = 0; i < CaelumConstants.TAROT_CARD_COUNT; i++)
-            record.TarotActive[i] = record.TarotSelected[i];
-        user.ApplyCharacterProfile();
+        CaelumTarotSequence.Pay(user,record,devil);
+        CaelumTarotSequence.Apply(user,record);
+        if(user.health>0)user.ApplyCharacterProfile();
         user.RefreshSocialJournalSnapshot();
         user.PersistCharacterState();
         Feedback(user, "CA_TAROT_POWER_ACTIVATED");
@@ -128,15 +130,13 @@ class CaelumTarotService : Object play
         CaelumUnifiedTarot.Advance(user,record,elapsedTics);
         if (record.TarotEffectTics > 0)
         {
-            record.TarotEffectTics = Max(0, record.TarotEffectTics - elapsedTics);
-            if (record.TarotEffectTics == 0)
+            if (CaelumTarotSequence.Advance(user,record,elapsedTics))
             {
-                for (int i = 0; i < CaelumConstants.TAROT_CARD_COUNT; i++) record.TarotActive[i] = false;
                 let flight = user.FindInventory("CaelumTarotFlight");
                 if (flight != null) flight.Destroy();
                 if(user.health>0)user.ApplyCharacterProfile();
                 user.RefreshSocialJournalSnapshot();
-                Feedback(user, "CA_TAROT_POWER_EXPIRED");
+                if(record.TarotEffectTics==0)Feedback(user, "CA_TAROT_POWER_EXPIRED");
             }
         }
         RestoreNativeEffect(user);
@@ -176,7 +176,7 @@ class CaelumTarotService : Object play
             if (!HasTarotCard(record, card)) continue;
             int contribution = MinorTenths(card, attribute);
             tenths += contribution;
-            if (record.TarotEffectTics > 0 && record.TarotActive[card]) tenths += contribution;
+            if (IsActive(record,card)) tenths += contribution;
         }
         return tenths / 10.0;
     }
@@ -316,12 +316,13 @@ class CaelumTarotService : Object play
     }
 
     // Lecturas comunes para UI, vuelo y viajes: nunca avanzan el reloj.
-    static clearscope int EffectTics(CaelumPersistentCharacterState record)
-    { return record == null ? 0 : record.TarotEffectTics; }
+    static clearscope int EffectTics(CaelumPersistentCharacterState record,int card=-1)
+    { return record == null ? 0 : card>=0 && card<CaelumConstants.TAROT_CARD_COUNT
+        && record.TarotLoadoutRevision>0?record.TarotRemaining[card]:record.TarotEffectTics; }
     static clearscope int CooldownTics(CaelumPersistentCharacterState record)
     { return record == null ? 0 : record.TarotCooldownTics; }
     static clearscope bool IsActive(CaelumPersistentCharacterState record, int card)
-    { return EffectTics(record) > 0 && card >= 0 && card < CaelumConstants.TAROT_CARD_COUNT && record.TarotActive[card]; }
+    { return card >= 0 && card < CaelumConstants.TAROT_CARD_COUNT && EffectTics(record,card)>0 && record.TarotActive[card]; }
     static clearscope bool IsSelected(CaelumPersistentCharacterState record, int card)
     { return record != null && card >= 0 && card < CaelumConstants.TAROT_CARD_COUNT && record.TarotSelected[card]; }
 

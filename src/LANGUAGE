@@ -4917,7 +4917,7 @@ CA_TAROT_POWER_EQUIPPED = "Selected | Enter / A: remove";
 CA_TAROT_POWER_SELECT_HINT = "Enter / A: select this card";
 CA_TAROT_POWER_REMOVED = "Card removed from the next activation.";
 CA_TAROT_POWER_UNIMPLEMENTED = "This card has no implemented active power.";
-CA_TAROT_POWER_LIMIT = "You may select up to three captured essences.";
+CA_TAROT_POWER_LIMIT = "All available Tarot slots are occupied.";
 CA_TAROT_POWER_NONE = "Choose up to three captured essences in the Tarot Journal.";
 CA_TAROT_POWER_CONTEXT = "You cannot activate Tarot during this activity.";
 CA_TAROT_POWER_COOLDOWN = "Tarot is recharging. See the remaining time in the Journal.";
@@ -4952,7 +4952,7 @@ CA_TAROT_POWER_EQUIPPED = "Elegida | Enter / A: quitar";
 CA_TAROT_POWER_SELECT_HINT = "Enter / A: seleccionar esta carta";
 CA_TAROT_POWER_REMOVED = "Carta quitada de la próxima activación.";
 CA_TAROT_POWER_UNIMPLEMENTED = "Esta carta todavía no tiene poder activo implementado.";
-CA_TAROT_POWER_LIMIT = "Podés elegir hasta tres esencias capturadas.";
+CA_TAROT_POWER_LIMIT = "Todos los espacios disponibles del Tarot están ocupados.";
 CA_TAROT_POWER_NONE = "Elegí hasta tres esencias capturadas en Tarot, dentro del Diario.";
 CA_TAROT_POWER_CONTEXT = "No podés activar el Tarot durante esta actividad.";
 CA_TAROT_POWER_COOLDOWN = "El Tarot se está recargando. Consultá el tiempo restante en el Diario.";
@@ -7498,3 +7498,10 @@ CA_AWAKEN_UNAVAILABLE = "La esencia debe estar adquirida, desequipada e inactiva
 CA_AWAKEN_BOUND = "Esta esencia ya está asociada con equipo. Retirá primero esa asociación.";
 CA_AWAKEN_DONE = "Equipo despertado. Conservás la esencia, pero no podés equiparla.";
 CA_AWAKEN_REMOVED = "Asociación retirada. La esencia vuelve a estar disponible.";
+
+[enu default]
+CA_TAROT_CAPACITY_REMOVE = "Free the extra card or Box slots before removing this Major.";
+CA_TAROT_ORDER = "Sequence position: %d. Equipping a card places it last.";
+[esp]
+CA_TAROT_CAPACITY_REMOVE = "Liberá los espacios adicionales de cartas o de la Caja antes de quitar este Arcano.";
+CA_TAROT_ORDER = "Lugar en la secuencia: %d. Equipar una carta la coloca al final.";

@@ -1,6 +1,6 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.13.2** - 2026-10-31.
+Documentation version: **5.13.3** - 2026-10-31.
 
 ## 5.13.2 - Equipment awakening integration (#442)
 

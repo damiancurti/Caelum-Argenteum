@@ -811,6 +811,7 @@ class CaelumInventoryService : Object play
     {
         if (!CaelumPlayerAuthority.CanRead(user)) return 0;
         if (!user.MagicBoxOwned) { return 0.0; }
+        if(CaelumTarotService.IsActive(user.GetPersistentCharacterState(false),17))return 0;
         double precision = CaelumConstants.MAGIC_BOX_WEIGHT_PRECISION;
         double reducedWeight = Max(0.0, rawContentWeight)
             / user.GetMagicBoxWeightDivisor();

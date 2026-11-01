@@ -85,6 +85,9 @@ class CaelumPersistentCharacterState : Inventory
     bool TarotOwned[CaelumConstants.TAROT_CARD_COUNT];
     // #80: la selección de poder pertenece al personaje, no al cursor del Diario.
     int TarotPowerRevision;
+    int TarotLoadoutRevision,TarotOrderCount;
+    int TarotOrder[CaelumConstants.TAROT_CARD_COUNT];
+    int TarotRemaining[CaelumConstants.TAROT_CARD_COUNT];
     bool TarotSelected[CaelumConstants.TAROT_CARD_COUNT];
     bool TarotActive[CaelumConstants.TAROT_CARD_COUNT];
     int TarotEffectTics;

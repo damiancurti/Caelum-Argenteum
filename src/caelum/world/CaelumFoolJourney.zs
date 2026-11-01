@@ -217,6 +217,7 @@ class CaelumFoolTravel : Object play
             for(int card=0;card<CaelumConstants.TAROT_CARD_COUNT;card++)
             {
                 record.TarotActive[card]=vote.TarotSelection[card] && card!=CaelumConstants.TAROT_THE_FOOL;
+                record.TarotRemaining[card]=record.TarotActive[card]?CaelumConstants.TAROT_EFFECT_SECONDS*TICRATE:0;
                 minor=minor || record.TarotActive[card];
             }
             record.TarotEffectTics=minor?CaelumConstants.TAROT_EFFECT_SECONDS*TICRATE:0;

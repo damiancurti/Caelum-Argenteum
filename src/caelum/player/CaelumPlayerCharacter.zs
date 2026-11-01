@@ -254,6 +254,7 @@ class CaelumPlayerCharacter : Object play
                 user.Attributes.SetAllForDebug(CaelumConstants.DEBUG_ALL_ATTRIBUTES_LEVEL_75);
             }
             let tarotRecord = user.GetPersistentCharacterState(false);
+            user.DerivedStats.TarotBoxBonus=CaelumTarotLoadout.BoxBonus(tarotRecord);
             user.Attributes.ApplyTarotMinorBonuses(tarotRecord);
             user.Attributes.ApplyTarotBonus(tarotRecord == null ? 0 : tarotRecord.GetTarotAttributeBonusPercent());
             user.RefreshCarriedInventorySummary();

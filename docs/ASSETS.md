@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.13.2** - 2026-10-31.
+Documentation version: **5.13.3** - 2026-10-31.
 
 ## Equipment awakening panel (#442, 5.13.2)
 

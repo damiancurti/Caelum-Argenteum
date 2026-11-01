@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "2c08f9807dbe49b60ba1ff893e0f4e8474efdc411d0b6f5e8d02611fb3a3009f",
+  "sha256": "fdfa855a57c4cb0e11f6f427abefe62afd57f9f479a9c14a9c9b738d0227d707",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[492,492]],"default":[[492,492]],"es":[[1187,1187]]},
     "CA_ABSENT_THEFT_FOUND": {"enu":[[6915,6915]],"default":[[6915,6915]],"es":[[6917,6917]]},
@@ -2790,6 +2790,7 @@
     "CA_TARGET_UNLOCK": {"enu":[[6271,6271]],"default":[[6271,6271]],"es":[[6293,6293]]},
     "CA_TARGET_USE": {"enu":[[6274,6274]],"default":[[6274,6274]],"es":[[6296,6296]]},
     "CA_TAROT_BONUS": {"enu":[[3219,3219]],"default":[[3219,3219]],"es":[[3245,3245]]},
+    "CA_TAROT_CAPACITY_REMOVE": {"enu":[[7503,7503]],"default":[[7503,7503]],"esp":[[7506,7506]]},
     "CA_TAROT_CARD_NUMBER": {"enu":[[4942,4942]],"default":[[4942,4942]],"es":[[4977,4977]]},
     "CA_TAROT_COLLECTION_COUNT": {"enu":[[3215,3215]],"default":[[3215,3215]],"es":[[3241,3241]]},
     "CA_TAROT_COLLECTION_EMPTY": {"enu":[[3216,3216]],"default":[[3216,3216]],"es":[[3242,3242]]},
@@ -2852,6 +2853,7 @@
     "CA_TAROT_MAJOR_20": {"enu":[[7441,7441]],"default":[[7441,7441]],"es":[[7467,7467]]},
     "CA_TAROT_MAJOR_21": {"enu":[[7442,7442]],"default":[[7442,7442]],"es":[[7468,7468]]},
     "CA_TAROT_MINOR_ORDER": {"enu":[[3418,3418]],"default":[[3418,3418]],"es":[[3426,3426]]},
+    "CA_TAROT_ORDER": {"enu":[[7504,7504]],"default":[[7504,7504]],"esp":[[7507,7507]]},
     "CA_TAROT_POWER_ACTIVATED": {"enu":[[4925,4925]],"default":[[4925,4925]],"es":[[4960,4960]]},
     "CA_TAROT_POWER_ACTIVE_TIME": {"enu":[[4931,4931]],"default":[[4931,4931]],"es":[[4966,4966]]},
     "CA_TAROT_POWER_ANIMA": {"enu":[[4924,4924]],"default":[[4924,4924]],"es":[[4959,4959]]},

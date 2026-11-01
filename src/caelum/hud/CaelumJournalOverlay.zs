@@ -1583,15 +1583,16 @@ class CaelumJournalOverlay : EventHandler
             .. CaelumTarotDetails.Active(selected,captured)
             .. "\n\n\c[Gold]" .. CaelumTarotDetails.L("CA_TAROT_DETAIL_TRUCAZO_LABEL") .. "\c-: "
             .. CaelumTarotDetails.Trucazo(selected,captured);
+        details=details.."\n\n"..String.Format(StringTable.Localize("CA_TAROT_ORDER",false),CaelumTarotLoadout.Position(record,selected));
         CaelumCraftingUI.Paragraph(self,details,210,189,358,7,"ca_journal_tarot_scroll");
         bool active = record != null && CaelumTarotService.EffectTics(record) > 0 && CaelumTarotService.IsActive(record, selected);
         DrawTextLine(SmallFont, active ? Font.CR_CYAN : Font.CR_GRAY, 210, 282,
             active ? String.Format(StringTable.Localize("CA_TAROT_POWER_ACTIVE_TIME", false),
-                (CaelumTarotService.EffectTics(record) + TICRATE - 1) / TICRATE)
+                (CaelumTarotService.EffectTics(record,selected) + TICRATE - 1) / TICRATE)
                 : StringTable.Localize("CA_TAROT_POWER_INACTIVE", false));
         DrawTextLine(SmallFont, Font.CR_GOLD, 210, 297,
             String.Format(StringTable.Localize("CA_TAROT_POWER_GROUP_STATUS", false),
-                selectedCount, CaelumConstants.TAROT_SELECTED_LIMIT,
+                selectedCount, CaelumTarotLoadout.Capacity(record),
                 record == null ? 0 : (CaelumTarotService.CooldownTics(record) + TICRATE - 1) / TICRATE));
 
     }

@@ -1,6 +1,91 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.13.2** - 2026-10-31.
+Documentation version: **5.13.3** - 2026-10-31.
+
+## 5.13.3 - Ordered Tarot runtime foundation (#440, partial)
+
+Equipping appends a card to the saved activation order; removing/re-equipping
+moves it to the end. Legacy selections migrate once in their previous ascending
+ID order. Minor collection/passive bonuses remain unchanged. Major capability
+passives use actual acquired/equipped state, never the illustration cursor.
+Hermit and Devil each add two slots, including during their own equip transaction.
+Star and Sun each add ten Box slots. Removing a capacity card is blocked while
+ordinary selections/contents or reserved crafting slots would overflow.
+
+Each temporal card has its own persisted remaining time. Hermit doubles only
+the first applicable duration, even when selected later; an instantaneous first
+card does not pass the bonus onward. The shared effect timer remains the maximum
+for compatibility. One sequence pays1,000 Anima and600s recharge; temporary
+powers use60s before Hermit. Devil bypass pays2,000 Health instead of Anima and
+uses normal death. Payment does not abort the already-authorized sequence.
+Star's implemented active makes Box contents weightless, preserving the Box's
+own mass and restoring content weight when its timer expires.
+
+World dispatches acquired unequipped cards once in ascending ID order, without
+recursion, another charge or passive equipment. The author explicitly allows
+World to activate essences bound to equipment; the binding remains intact.
+This dispatch currently runs only implemented effect handlers. Remaining Major
+handlers, map targets, active input arbitration and combined Fool travel still
+need integration; this checkpoint is not completion of #440.
+
+Loadout revision1 preserves old ownership/selection and paid durations. Profile
+recalculation does not accumulate capacity. New loops are bounded by the78-card
+catalogue or the acting player's inventory; no actor-global scan is added.
+Validation: assets/validation_v5_13_3; final author acceptance remains deferred.
+
+### Confirmed follow-up contract for the remaining handlers
+
+- World order0..77, same target where applicable, skip invalid targets; selected
+  card order is separate. Equipped-only passives do not alter Minor collection.
+- Hanged Man chooses another playable race on equip, reusing its existing ability
+  costs/requirements with Tarot-key toggling during the effect.
+- Calibrated area powers use current magic-range scaling and line of sight.
+  D means current T1 staff magic damage before ordinary defenses/resistances.
+  Priestess: one trap/caster, visible ground within100m,60s, enemy contact,
+  radius4m and2D damage to anyone reached. Empress: one visible target within100m,
+  roots for60s prevent movement but not attacks; piercing damage totalsD over60s,
+  preserving damage rate if Hermit extends duration.
+- Hierophant: one4m pulse clears body, exposed equipment and accessible surfaces;
+  water loses biological/chemical contamination but retains salt. Closed storage
+  stays excluded. Death: one4m pulse around a visible target within100m sets those
+  contaminants to100, including allies/caster in range. Its equipped passive
+  directly destroys marked living tree/vine obstacles through contamination,
+  not decorative plants or characters.
+- Lovers: living caster/group (players and companions),4m plus range modifier,
+  line of sight; equipped passive shares post-defense damage equally; active
+  also shares healing. No second defense or recursive sharing; own health caps
+  remain and excess healing is lost.
+- Temperance: half duration for burn/cut/poison/freeze/dazzle/electric stun,
+  temporary disease, magical sleep and mind control. Active removes/prevents
+  those states. Contamination, hunger, thirst, natural sleep and scenes remain.
+- Emperor:4m plus range/LOS,60s cessation of attacks against caster; reached
+  summons obey its target, then recover prior allegiance. Protect scenes/residents.
+- Chariot:12m straight at6m/s,2m wide,maximum2s; object-movement Strength pushes
+  movable actors, including active Strength; stops at walls, no direct damage.
+  Fixed obstacles break only when explicitly marked fragile.
+- Justice: shared24x24m arena in every playable map. Each pair returns survivors
+  on its own60s expiry or either member's death, without ending other pairs;
+  no actor may belong to two simultaneous pairs. New campaigns receive the new
+  geometry; approved reversible legacy packages preserve visited-map saves and
+  report unavailable arenas. Compatibility still requires native recovery tests.
+- Tower: destroy one visible siege machine within100m plus magic range via its
+  ordinary destruction path, preserving existing operator consequences.
+- Moon: two60s clones, caster appearance/attributes,25%maximumHealth/damage,
+  perceived enemies, no transferable loot. Judgement: one4m pulse breaks recognized
+  magical mind control/illusions, preserving narrative scenes.
+- Magician: Zupay-sized3D automaton, body1,000kg/all attributes30. T1/XL armor60kg,
+  tower shield24kg/current defense and wear; mace12kg,base blunt130,2.5m reach,
+  native14-tic preparation modified by attributes/load. Total1,096kg. Tarot wakes
+  at most one per character for60s, then it becomes inactive preserving Health,
+  equipment and wear. Tarot key commands a visible enemy while controlled.
+- Sun harmful objects mean large rocks, not projectiles. Approved examples are
+  two1.2m-diameter rocks at2,500kg/m3 (about2,262kg): one8kW thermal source and
+  one environmental contamination100 source within4m/LOS. Temporary Box containment
+  blocks emissions outside and releases the same rock on expiry.
+- Giant classification compares exterior geometric volume: the character's
+  collision cylinder and the documented object shape, including spherical rocks.
+  It does not infer volume from mass; the threshold remains at least twice the
+  character's volume.
 
 ## 5.13.2 - Reversible equipment awakening (#442)
 

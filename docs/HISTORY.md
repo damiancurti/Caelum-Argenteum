@@ -1,6 +1,24 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.13.2** - 2026-10-31.
+Documentation version: **5.13.3** - 2026-10-31.
+
+## 5.13.3 - Ordered Tarot foundation (#440, implementation checkpoint)
+
+Adds saved equipment order, additive/self-granting card capacities, Box capacity
+removal guards, individual timers, Hermit duration, Devil lethal payment,
+Star content weight and bounded World dispatch. Bound equipment essences remain
+eligible for World by the author's explicit answer. Loadout revision1 migrates
+previous ID-order selections and paid effects without changing acquired cards.
+
+Both native clients pass 34 assertions plus five save-recovery assertions.
+All 18,011 packaged members match source. Isolated checks cover migration, capacity transactions, weight restore,
+per-card expiry, single payment, bound-essence World dispatch and completion after
+normal lethal Devil payment. Recovery checks preserve order, durations and shared
+cooldown. Evidence is in assets/validation_v5_13_3/results.json. Initial fixture
+corrections used a real granted Box and resource values within current maxima;
+the checkpoint now waits for pending narrative saves and inserts its own new save
+node. No production autosave change was needed. This checkpoint is partial #440;
+remaining powers, targets and full manual acceptance are explicitly outstanding.
 
 ## 5.13.2 - Reversible equipment awakening (#442)
 

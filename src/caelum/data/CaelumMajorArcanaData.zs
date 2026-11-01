@@ -1,0 +1,9 @@
+// Valores confirmados por el autor en #439/#440.
+class CaelumMajorArcanaData : Object
+{
+    const LOADOUT_REVISION=1;
+    const EXTRA_TAROT_SLOTS=2;
+    const EXTRA_BOX_SLOTS=10;
+    const HERMIT_DURATION=2;
+    const DEVIL_COST=2;
+}
