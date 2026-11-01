@@ -92,6 +92,8 @@ class CaelumPersistentCharacterState : Inventory
     bool TarotActive[CaelumConstants.TAROT_CARD_COUNT];
     int TarotEffectTics;
     int TarotCooldownTics;
+    int TarotRaceRevision,TarotHangedRace,TarotHangedActiveRace;
+    bool TarotRaceMenuOpen;
     int UnifiedTarotRevision;
     int UnifiedTarotTics;
     int TarotDeckRevision;

@@ -84,6 +84,22 @@ to be visible/in range is omitted. Refusal costs nothing. Pending legacy proposa
 without revision1 snapshots are cancelled without payment; session recovery also
 cancels pending votes under the existing reconnection policy and needs new consent.
 
+### Hanged Man and borrowed racial lifecycle
+
+Equipping Hanged Man opens a synchronized choice of the other three playable
+races. Cancelling does not equip the card. The saved choice survives removal;
+revision1 initializes previous saves with no choice. The character's race, body
+and attributes remain unchanged. World omits this handler until a choice exists.
+
+Activation opens the paid duration window; subsequent Tarot presses start/stop
+the chosen existing racial effect. Its native prerequisites, per-tic/effort Anima
+costs, interruption and target cleanup apply. Only one racial effect runs at once.
+The native racial control retains its original function. A separate activation
+snapshot prevents re-equipping with another choice from changing an already paid
+effect. Expiry releases the borrowed effect without stopping an unrelated native
+racial ability. The choice menu and journal details are localized in ES/EN.
+The aimed-action priority for the remaining powers is still to be integrated.
+
 ### Confirmed follow-up contract for the remaining handlers
 
 - World order0..77, same target where applicable, skip invalid targets; selected
@@ -116,6 +132,12 @@ cancels pending votes under the existing reconnection policy and needs new conse
   summons obey its target, then recover prior allegiance. Protect scenes/residents.
 - Chariot:12m straight at6m/s,2m wide,maximum2s; object-movement Strength pushes
   movable actors, including active Strength; stops at walls, no direct damage.
+- Strength lifting: Use picks up/releases movable scenery only, excluding people
+  and fixed installations. Its mass counts toward carried load. The limit uses
+  existing carrying capacity, evaluating Strength x10 only while the active lasts.
+- Wheel's mansion example has two linked states: dry/lit/inactive mechanisms or
+  flooded/dark/active mechanisms, opening one exit and closing the other. Approved
+  water depth2m and sector light192/32. Implementation remains pending.
   Fixed obstacles break only when explicitly marked fragile.
 - Justice: shared24x24m arena in every playable map. Each pair returns survivors
   on its own60s expiry or either member's death, without ending other pairs;

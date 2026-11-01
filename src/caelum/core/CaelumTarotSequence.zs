@@ -12,6 +12,7 @@ class CaelumTarotSequence : Object play
     static void ApplyCard(CaelumPlayer user,CaelumPersistentCharacterState record,int card,int duration,Actor aimed=null,bool report=true)
     {
         if(!CaelumTarotService.Implemented(card))return;
+        if(card==CaelumHangedMan.CARD && !CaelumHangedMan.Prepare(user,record))return;
         if(card==14)CaelumTemperance.Cleanse(user);
         if(card==16)
         {
@@ -80,6 +81,8 @@ class CaelumTarotSequence : Object play
             if(record.TarotRemaining[card]==0){record.TarotActive[card]=false;changed=true;}
             record.TarotEffectTics=Max(record.TarotEffectTics,record.TarotRemaining[card]);
         }
+        if(changed && user.RacialAbility!=null && user.RacialAbility.TarotBorrowed)
+            CaelumRacialAbilityRules.Guard(user);
         return changed;
     }
 }

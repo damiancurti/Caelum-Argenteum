@@ -1584,6 +1584,9 @@ class CaelumJournalOverlay : EventHandler
             .. "\n\n\c[Gold]" .. CaelumTarotDetails.L("CA_TAROT_DETAIL_TRUCAZO_LABEL") .. "\c-: "
             .. CaelumTarotDetails.Trucazo(selected,captured);
         details=details.."\n\n"..String.Format(StringTable.Localize("CA_TAROT_ORDER",false),CaelumTarotLoadout.Position(record,selected));
+        if(selected==CaelumHangedMan.CARD && CaelumHangedMan.Chosen(localPlayer,record))
+            details=details.."\n"..String.Format(StringTable.Localize("CA_TAROT_RACE_CHOSEN",false),
+                StringTable.Localize(CaelumHangedMan.RaceKey(record.TarotHangedRace),false));
         CaelumCraftingUI.Paragraph(self,details,210,189,358,7,"ca_journal_tarot_scroll");
         bool active = record != null && CaelumTarotService.EffectTics(record) > 0 && CaelumTarotService.IsActive(record, selected);
         DrawTextLine(SmallFont, active ? Font.CR_CYAN : Font.CR_GRAY, 210, 282,

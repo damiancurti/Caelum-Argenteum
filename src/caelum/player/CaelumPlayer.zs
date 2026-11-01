@@ -9540,6 +9540,7 @@ class CaelumPlayer : DoomPlayer
         if(CaelumClassCastView.Active(self))return;
         if (CombatTarotInputReserved) return;
         CombatTarotInputReserved = true;
+        if(CaelumTarotFollowup.Input(self))return;
         CaelumTarotService.Activate(self);
     }
 

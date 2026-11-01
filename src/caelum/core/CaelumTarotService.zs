@@ -8,6 +8,7 @@ class CaelumTarotService : Object play
     {
         if (record == null || !CaelumPlayerAuthority.OwnsRecord(CaelumPlayer(record.Owner), record)) return;
         CaelumUnifiedTarot.Ensure(record);
+        CaelumHangedMan.Ensure(record);
         if (record == null || record.TarotPowerRevision >= REVISION)
         {CaelumTarotLoadout.Ensure(record);return;}
         // Los saves anteriores no tenían carta equipada: no interpretar el
@@ -46,7 +47,7 @@ class CaelumTarotService : Object play
     static clearscope bool Implemented(int card)
     {
         return card == CaelumConstants.TAROT_THE_FOOL
-            || card==9 || card==14 || card==15 || card==16 || card==17 || card==21
+            || card==9 || card==12 || card==14 || card==15 || card==16 || card==17 || card==21
             || (card >= CaelumConstants.TAROT_MAJOR_COUNT && card < CaelumConstants.TAROT_CARD_COUNT);
     }
 
@@ -59,7 +60,7 @@ class CaelumTarotService : Object play
         return count;
     }
 
-    static bool Select(CaelumPlayer user, int card)
+    static bool Select(CaelumPlayer user, int card,int alternateRace=-1)
     {
         if (!ValidUser(user) && !CaelumFoolTravel.CanEditDeadLoadout(user)) return false;
         let record = user.GetPersistentCharacterState(false);
@@ -72,6 +73,12 @@ class CaelumTarotService : Object play
         { Feedback(user, "CA_TAROT_POWER_LIMIT"); return false; }
         if(record.TarotSelected[card] && !CaelumTarotLoadout.CanRemove(user,record,card))
         {Feedback(user,"CA_TAROT_CAPACITY_REMOVE");return false;}
+        if(card==CaelumHangedMan.CARD && !record.TarotSelected[card])
+        {
+            if(!CaelumHangedMan.ValidRace(user,alternateRace))
+            {record.TarotRaceMenuOpen=true;return false;}
+            record.TarotHangedRace=alternateRace;record.TarotRaceMenuOpen=false;
+        }
         CaelumTarotLoadout.Toggle(record,card);
         if(user.health>0)user.ApplyCharacterProfile();
         user.RefreshSocialJournalSnapshot();

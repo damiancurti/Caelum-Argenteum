@@ -47,6 +47,16 @@ the fixture now waits for admission and initializes its speaker after that callb
 Production identity and visibility guards remain intact. This is isolated native
 evidence, not author acceptance or completion of the remaining Major powers.
 
+Hanged Man then passed41 initial assertions and four common-save recovery
+assertions per native client. Each of the four existing racial effects retains
+its real cost/behavior, toggles off cleanly and leaves character identity unchanged.
+The tests cover migration, network choice/cancel, retained choice after removal,
+Hermit duration, World activation, Anima exhaustion and recovered expiry.
+The Spanish choice screen was inspected at800x600; all18,015 package members
+match source. Initial compilation exposed UI/read-only calls to a play-scoped
+record accessor; these now use read-only inventory lookup. Evidence is in
+validation_v5_13_3/hanged-results.json. Final author checks remain deferred.
+
 ## 5.13.2 - Reversible equipment awakening (#442)
 
 Author-approved +25% damage/defense and half wear are implemented on the exact

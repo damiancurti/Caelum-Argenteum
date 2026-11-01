@@ -7519,3 +7519,16 @@ CA_FOOL_JOURNEY_HEALTH = "The activator pays %d Health and receives %d seconds o
 [es]
 CA_FOOL_RETURN_EQUIP = "Equipa El Loco para pedir a Palomo el regreso del grupo.";
 CA_FOOL_JOURNEY_HEALTH = "El activador paga %d de Vida y recibe %d segundos de recarga solo tras el acuerdo. La secuencia completa se ejecuta aquí antes de viajar.";
+
+[enu default]
+CA_TAROT_RACE_TITLE = "The Hanged Man — borrowed racial ability";
+CA_TAROT_RACE_HELP = "Choose another race when equipping this card. Your body and race stay unchanged. The choice remains saved after unequipping.";
+CA_TAROT_RACE_CONTROLS = "Arrows: choose. Enter: equip. Escape: cancel. During the active power, the Tarot control toggles the borrowed ability, using its normal requirements and Anima costs.";
+CA_TAROT_RACE_EFFECT = "The Tarot control toggles your chosen racial ability while this power lasts. Normal ability requirements and Anima costs apply.";
+CA_TAROT_RACE_CHOSEN = "Chosen ability: %s.";
+[es]
+CA_TAROT_RACE_TITLE = "El Colgado — habilidad racial prestada";
+CA_TAROT_RACE_HELP = "Elegí otra raza al equipar esta carta. Tu cuerpo y tu raza se conservan. La elección queda guardada aunque desequipes la carta.";
+CA_TAROT_RACE_CONTROLS = "Flechas: elegir. Enter: equipar. Escape: cancelar. Mientras dure el poder activo, la tecla del Tarot alterna la habilidad prestada, con sus requisitos y costes de Ánima habituales.";
+CA_TAROT_RACE_EFFECT = "La tecla del Tarot alterna la habilidad racial elegida mientras dura este poder. Se aplican los requisitos y costes de Ánima habituales de esa habilidad.";
+CA_TAROT_RACE_CHOSEN = "Habilidad elegida: %s.";
