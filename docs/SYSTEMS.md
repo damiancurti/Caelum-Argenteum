@@ -33,6 +33,26 @@ recalculation does not accumulate capacity. New loops are bounded by the78-card
 catalogue or the acting player's inventory; no actor-global scan is added.
 Validation: assets/validation_v5_13_3; final author acceptance remains deferred.
 
+### Temperance status integration
+
+Temperance now halves new negative status durations at their existing application
+boundaries, not repeatedly during ticking. Its active cleanses burning (including
+stored burn heat), cut, poison, temporary disease, freeze, dazzle, lightning stun
+and magical sleep, then prevents those applications until expiry. A sequence that
+includes Temperance can wake its caster from magical sleep; natural rest and
+narrative freezes retain their restrictions. Hermit extends this protection.
+Existing beneficial Health doses produced by Toughness inversion are preserved,
+as in resurrection cleansing. Body contamination, hunger, thirst, natural sleep
+and the mechanical Earth-seal penalty remain unchanged.
+
+Status state keeps its existing save schema; protection uses the per-card timer.
+Future recognized mind-control handlers must call this same resistance/cleanse
+contract when integrated; this checkpoint does not claim those handlers exist.
+The affected sleep pulse now uses local blockmap queries plus the existing typed
+unlinked-guard registry and fixed player slots, preserving offscreen recipients
+without its former actor-global traversal. Native evidence: temperance-results.json
+in assets/validation_v5_13_3; 20 initial and seven recovery assertions per client.
+
 ### Confirmed follow-up contract for the remaining handlers
 
 - World order0..77, same target where applicable, skip invalid targets; selected

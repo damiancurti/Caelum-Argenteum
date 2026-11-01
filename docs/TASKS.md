@@ -5,7 +5,7 @@ Documentation version: **5.13.3** - 2026-10-31.
 ## 5.13.3 - Continue Major handlers (#440)
 
 Order, capacities, individual timers, Hermit, Devil payment, Star weight and
-World dispatch have isolated evidence. Finish remaining handlers, Fool vote/return
+World dispatch and Temperance have isolated evidence. Finish remaining handlers, Fool vote/return
 integration, giant/harmful objects, arena geometry/save compatibility, authored mansion
 fixtures, automaton3D art/combat and input arbitration. The confirmed per-power
 contract is consolidated in SYSTEMS; unresolved fields must still be asked.

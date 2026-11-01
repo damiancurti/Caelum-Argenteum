@@ -242,7 +242,7 @@ class CaelumArcaneCloud : Object
             let status=CaelumElementalStream.Status(body);
             if(body.health>0 && body.health<before && status!=null)
                 status.ApplyControlEffect(CaelumConstants.ELEMENTAL_EFFECT_LIGHTNING_STUN,
-                    effect.StunDuration,1.0);
+                    effect.StunDuration,1.0,body);
         }
     }
 

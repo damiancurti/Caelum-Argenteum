@@ -12,6 +12,7 @@ class CaelumTarotSequence : Object play
     static void ApplyCard(CaelumPlayer user,CaelumPersistentCharacterState record,int card,int duration)
     {
         if(!CaelumTarotService.Implemented(card))return;
+        if(card==14)CaelumTemperance.Cleanse(user);
         // Los activos instantáneos no se repiten por recibir una duración mayor.
         if(Temporal(card))
         {

@@ -1,0 +1,122 @@
+{
+  "issue": 440,
+  "release": "5.13.3",
+  "scope": "Temperance elemental and magical-sleep lifecycle",
+  "author_acceptance": false,
+  "static_validation": "validate_project.py: no errors; git diff --check: clean",
+  "runtime_members_matching_source": 18012,
+  "native_runs": [
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32266-20261031-232602-532120",
+      "runtime_sha256": "85ee1bcde5658808fbeb0e0cad9eee955efcf93c4af6fcaba8624b5931a25540",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440T PASS ownership alone does not shorten statuses",
+            "CA440T PASS native equip enables Temperance",
+            "CA440T PASS passive halves damaging biological durations",
+            "CA440T PASS passive halves cut duration",
+            "CA440T PASS passive halves temporary control durations",
+            "CA440T PASS passive halves stored burn heat duration",
+            "CA440T PASS ticking does not repeatedly halve remaining time",
+            "CA440T PASS passive halves magical sleep",
+            "CA440T PASS Temperance sequence can cleanse existing magical sleep",
+            "CA440T PASS activation clears approved statuses and sleep",
+            "CA440T PASS mechanical Earth seal penalty remains",
+            "CA440T PASS body contamination and needs remain unchanged",
+            "CA440T PASS cleanse charges one normal sequence",
+            "CA440T PASS active immunity rejects renewed negative statuses",
+            "CA440T PASS active immunity rejects magical sleep",
+            "CA440T PASS repeat input does not bypass cooldown",
+            "CA440T PASS other player does not inherit protection",
+            "CA440T PASS beneficial Toughness inversion remains applicable",
+            "CA440T PASS cleanse retains beneficial inverted dose",
+            "CA440T PASS Hermit extends Temperance once",
+            "CA440T RESULT capture"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440T PASS ownership alone does not shorten statuses",
+            "CA440T PASS native equip enables Temperance",
+            "CA440T PASS passive halves damaging biological durations",
+            "CA440T PASS passive halves cut duration",
+            "CA440T PASS passive halves temporary control durations",
+            "CA440T PASS passive halves stored burn heat duration",
+            "CA440T PASS ticking does not repeatedly halve remaining time",
+            "CA440T PASS passive halves magical sleep",
+            "CA440T PASS Temperance sequence can cleanse existing magical sleep",
+            "CA440T PASS activation clears approved statuses and sleep",
+            "CA440T PASS mechanical Earth seal penalty remains",
+            "CA440T PASS body contamination and needs remain unchanged",
+            "CA440T PASS cleanse charges one normal sequence",
+            "CA440T PASS active immunity rejects renewed negative statuses",
+            "CA440T PASS active immunity rejects magical sleep",
+            "CA440T PASS repeat input does not bypass cooldown",
+            "CA440T PASS other player does not inherit protection",
+            "CA440T PASS beneficial Toughness inversion remains applicable",
+            "CA440T PASS cleanse retains beneficial inverted dose",
+            "CA440T PASS Hermit extends Temperance once",
+            "CA440T RESULT capture"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32267-20261031-232658-673534",
+      "runtime_sha256": "85ee1bcde5658808fbeb0e0cad9eee955efcf93c4af6fcaba8624b5931a25540",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440T PASS load preserves paid protection",
+            "CA440T PASS load preserves Hermit extension",
+            "CA440T PASS load rejects renewed negative states",
+            "CA440T PASS load rejects magical sleep",
+            "CA440T PASS expiry removes active protection",
+            "CA440T PASS equipped passive remains after active expiry",
+            "CA440T PASS unequip removes passive for new applications",
+            "CA440T RESULT reload"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440T PASS load preserves paid protection",
+            "CA440T PASS load preserves Hermit extension",
+            "CA440T PASS load rejects renewed negative states",
+            "CA440T PASS load rejects magical sleep",
+            "CA440T PASS expiry removes active protection",
+            "CA440T PASS equipped passive remains after active expiry",
+            "CA440T PASS unequip removes passive for new applications",
+            "CA440T RESULT reload"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "limitations": [
+    "Remaining Major handlers and final author tests are incomplete.",
+    "No frame-presentation acceptance claimed by these native functional checks."
+  ]
+}

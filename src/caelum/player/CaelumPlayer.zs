@@ -4693,7 +4693,7 @@ class CaelumPlayer : DoomPlayer
                 ElementalStatus.ApplyControlEffect(
                     CaelumConstants.ELEMENTAL_EFFECT_DAZZLE,
                     duration,
-                    controlPower
+                    controlPower, self
                 );
             }
             else
@@ -4709,7 +4709,7 @@ class CaelumPlayer : DoomPlayer
             ElementalStatus.ApplyControlEffect(
                 CaelumConstants.ELEMENTAL_EFFECT_FREEZE,
                 duration,
-                controlPower
+                controlPower, self
             );
         }
         else if (essenceType == CaelumConstants.ESSENCE_EARTH)
@@ -4734,7 +4734,7 @@ class CaelumPlayer : DoomPlayer
                     CaelumConstants.ELEMENTAL_EFFECT_LIGHTNING_STUN,
                     CaelumConstants.ELEMENTAL_LIGHTNING_STUN_SECONDS
                         * debuffScale,
-                    1.0
+                    1.0, self
                 );
             }
             else
@@ -4756,7 +4756,7 @@ class CaelumPlayer : DoomPlayer
             if (RollQuintessenceEffect())
                 ElementalStatus.ApplyControlEffect(
                     CaelumConstants.ELEMENTAL_EFFECT_DAZZLE,
-                    duration, controlPower
+                    duration, controlPower, self
                 );
             if (RollQuintessenceEffect())
                 ApplyAttackPushToTarget(
@@ -4766,7 +4766,7 @@ class CaelumPlayer : DoomPlayer
             if (RollQuintessenceEffect())
                 ElementalStatus.ApplyControlEffect(
                     CaelumConstants.ELEMENTAL_EFFECT_FREEZE,
-                    duration, controlPower
+                    duration, controlPower, self
                 );
             if (RollQuintessenceEffect())
                 ApplyElementalLucidityLoss(debuffScale);
@@ -4790,7 +4790,7 @@ class CaelumPlayer : DoomPlayer
                     CaelumConstants.ELEMENTAL_EFFECT_LIGHTNING_STUN,
                     CaelumConstants.ELEMENTAL_LIGHTNING_STUN_SECONDS
                         * debuffScale,
-                    1.0
+                    1.0, self
                 );
         }
     }

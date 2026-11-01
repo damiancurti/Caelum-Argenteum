@@ -20,6 +20,14 @@ the checkpoint now waits for pending narrative saves and inserts its own new sav
 node. No production autosave change was needed. This checkpoint is partial #440;
 remaining powers, targets and full manual acceptance are explicitly outstanding.
 
+The next focused #440 commit integrates Temperance with existing elemental and
+magical-sleep application paths. Both native clients pass 20 assertions and seven
+save-recovery assertions, including no repeated halving, no cross-player benefit,
+single payment, Hermit duration, expiry, preserved needs/contamination and
+beneficial Toughness inversion. The affected sleep pulse now uses local queries
+and the existing unlinked-guard registry. See temperance-results.json beside the
+foundation evidence; frame-presentation and author acceptance remain pending.
+
 ## 5.13.2 - Reversible equipment awakening (#442)
 
 Author-approved +25% damage/defense and half wear are implemented on the exact

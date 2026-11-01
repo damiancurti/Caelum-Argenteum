@@ -2,8 +2,9 @@
 
 Documentation version: **5.13.3** - 2026-10-31.
 
-**V5.13:** PR605/606/607 cover #439/441/442. #440 order/capacity/timers
-verified; remaining powers/maps/art next. #596-601 last. Author suite deferred.
+**V5.13:** PR605/606/607 cover #439/441/442; PR608 covers #440.
+Order/capacity/timers/Temperance verified; remaining powers/maps/art next.
+#596-601 last. Author suite deferred.
 Approved rules: SYSTEMS; native evidence: validation_v5_13_1/2/3.
 
 **V5.12 accepted/merged:** HISTORY; validation_v5_12_7/7a. Private timer-fixed4.14.2.

@@ -83,7 +83,7 @@ class CaelumAbsentBreath : Object play
             let status=row.Body.ElementalStatus;
             double power=CaelumElementalStream.Power(source);
             if(status!=null)status.ApplyBurnHeat(CaelumConstants.ELEMENTAL_BASE_DURATION_SECONDS*power,
-                power,row.BreathWatts[i]);
+                power,row.BreathWatts[i],row.Body);
         }
     }
 }

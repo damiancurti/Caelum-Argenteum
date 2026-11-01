@@ -46,7 +46,7 @@ class CaelumTarotService : Object play
     static clearscope bool Implemented(int card)
     {
         return card == CaelumConstants.TAROT_THE_FOOL
-            || card==9 || card==15 || card==17 || card==21
+            || card==9 || card==14 || card==15 || card==17 || card==21
             || (card >= CaelumConstants.TAROT_MAJOR_COUNT && card < CaelumConstants.TAROT_CARD_COUNT);
     }
 
@@ -100,7 +100,9 @@ class CaelumTarotService : Object play
         // La misma validación protege tanto User3 como futuras interfaces.
         if (user.HasActiveConversation() || user.EquipmentMenuOpen || user.CraftingMenuOpen
             || user.PalomoMerchantMenuOpen || user.CraftingTaskActive || user.CombatChannelModeActive
-            || user.StaffCastPending || user.ForcedSleepTics > 0 || CaelumRestState.IsActive(user)
+            || user.StaffCastPending
+            || (user.ForcedSleepTics > 0 && !CaelumTemperance.SelectedForSequence(record))
+            || CaelumRestState.IsActive(user)
             || CaelumTimeSkipState.IsOpen(user) || (user.player.cheats & CF_TOTALLYFROZEN))
         { Feedback(user, "CA_TAROT_POWER_CONTEXT"); return false; }
         bool devil=record.TarotCooldownTics>0 && CaelumTarotLoadout.Passive(record,15);

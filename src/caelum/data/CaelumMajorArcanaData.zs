@@ -6,4 +6,5 @@ class CaelumMajorArcanaData : Object
     const EXTRA_BOX_SLOTS=10;
     const HERMIT_DURATION=2;
     const DEVIL_COST=2;
+    const TEMPERANCE_DURATION=0.5;
 }

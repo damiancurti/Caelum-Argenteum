@@ -153,7 +153,7 @@ class CaelumDemonBreath : Actor
         {
             let status=CaelumElementalStream.Status(bodies[i]);
             if(status!=null)status.ApplyBurnHeat(CaelumConstants.ELEMENTAL_BASE_DURATION_SECONDS*power,
-                power,received[i]*scale*CaelumThermalMagic.AreaRetention(bodies[i]));
+                power,received[i]*scale*CaelumThermalMagic.AreaRetention(bodies[i]),bodies[i]);
         }
     }
 
