@@ -1,5 +1,6 @@
 {
-  "revision": 4,
+  "revision": 5,
+  "hot_rock_offset": [128, 256, 0],
   "mansion_portal": [
     368,
     112,

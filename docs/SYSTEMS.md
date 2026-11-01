@@ -554,6 +554,12 @@ Lovers passive redistribution in the abstract journey model remains separate wor
   two1.2m-diameter rocks at2,500kg/m3 (about2,262kg): one8kW thermal source and
   one environmental contamination100 source within4m/LOS. Temporary Box containment
   blocks emissions outside and releases the same rock on expiry.
+  The heat adapter now uses the existing typed thermal-source registry, native
+  obstruction checks and normal environmental sampling cadence. Its spherical
+  emission center/radius follow the body; Watts becomes0 while contained.
+  Revision1 component preparation retains the same source/owned visual through
+  common saves and removes both on body destruction. Annex revision5 places
+  the hot example once. The contamination-source adapter remains pending.
   Captured harmful rocks are released in the origin map before travel, rather
   than transported to the destination (approved2026-11-01).
   These giant rocks also require Star equipped and occupy its one giant-object

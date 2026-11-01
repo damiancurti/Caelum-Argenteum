@@ -1,7 +1,7 @@
 // #440: generado desde assets/tarot_examples; sin búsquedas geométricas por tic.
 class CaelumTarotExampleData : Object
 {
-    const REVISION=4;
+    const REVISION=5;
     const ROOM=7754;
     const THRESHOLD=7758;
     const WATER=7759;
@@ -11,6 +11,7 @@ class CaelumTarotExampleData : Object
     const DOOR_VISUAL_ANGLE=90;
     static vector3 Living(){return (-29216,-30320,0);}
     static vector3 Spirit(){return (-29056,-30320,0);}
+    static vector3 HotRock(){return (-29568,-30592,0);}
     static vector3 Automaton(){return (-29440,-30320,0);}
     static vector3 Controller(){return (-27776,-30448,0);}
     static vector3 Door(int index) {

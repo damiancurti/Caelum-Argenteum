@@ -2,19 +2,62 @@
 class CaelumTarotRock : CaelumMovableProp
 {
     CaelumSunCargo Cargo;
+    CaelumHazardRockVisual Visual;
+    CaelumTarotRockHeat Heat;
+    int ComponentRevision;
     bool Contained;
     virtual double ExteriorVolume()
     {return 4.0/3*CaelumThermalData.CIRCLE_PI*CaelumMajorArcanaData.ROCK_RADIUS_METERS**3;}
     virtual double PhysicalMass()
     {return ExteriorVolume()*CaelumMajorArcanaData.ROCK_DENSITY;}
+    virtual double HeatWatts(){return 0;}
+    void UpdateComponents()
+    {
+        // La revisión evita recrear partes en cada tic; los punteros se guardan.
+        if(ComponentRevision<1)
+        {
+            Visual=CaelumHazardRockVisual(Actor.Spawn('CaelumHazardRockVisual',Pos,NO_REPLACE));
+            if(Visual!=null)Visual.master=self;
+            if(HeatWatts()>0)
+            {
+                Heat=CaelumTarotRockHeat(Actor.Spawn('CaelumTarotRockHeat',Pos,NO_REPLACE));
+                if(Heat!=null)Heat.Body=self;
+            }
+            ComponentRevision=1;
+        }
+        if(Visual!=null)Visual.bInvisible=Contained || bInvisible;
+        if(Heat!=null)Heat.SetOrigin(Pos,false);
+    }
+    override void PostBeginPlay(){Super.PostBeginPlay();UpdateComponents();}
     override void Tick()
-    {if(!Contained)Super.Tick();}
+    {if(!Contained)Super.Tick();UpdateComponents();}
+    override void OnDestroy()
+    {
+        if(Visual!=null)Visual.Destroy();if(Heat!=null)Heat.Destroy();
+        Super.OnDestroy();
+    }
     Default
     {
         Radius 19.2;Height 38.4;Mass 2262;
         Tag "$CA_TAROT_HAZARD_ROCK";
     }
-    States {Spawn:CARK A -1;Stop;}
+    States {Spawn:TNT1 A -1;Stop;}
+}
+
+// Emisión consultada desde el cuerpo: nunca queda activa dentro de la Caja.
+class CaelumTarotHeatRock : CaelumTarotRock
+{
+    override double HeatWatts(){return CaelumMajorArcanaData.ROCK_WATTS;}
+    Default {Tag "$CA_TAROT_HEAT_ROCK";}
+}
+class CaelumTarotRockHeat : CaelumThermalFireSource
+{
+    CaelumTarotRock Body;
+    override double Watts()
+    {return Body!=null && !Body.bDestroyed && !Body.Contained?Body.HeatWatts():0;}
+    override vector3 EmissionCenter()
+    {return Body!=null?Body.Pos+(0,0,Body.Height/2):Pos;}
+    override double EmissionRadiusMeters(){return CaelumMajorArcanaData.ROCK_RADIUS_METERS;}
 }
 
 class CaelumSunCargo : Inventory
@@ -66,6 +109,7 @@ class CaelumSunCargo : Inventory
         cargo.HadInvisible=body.bInvisible;cargo.HadNoGravity=body.bNoGravity;
         body.Cargo=cargo;body.Contained=true;body.bSolid=false;body.bShootable=false;
         body.bInvisible=true;body.bNoGravity=true;body.bNoInteraction=true;body.Vel=(0,0,0);
+        body.UpdateComponents();
         user.RefreshCarriedInventorySummary();
         CaelumTarotService.Feedback(user,"CA_TAROT_SUN_CAPTURED");return true;
     }
@@ -75,6 +119,7 @@ class CaelumSunCargo : Inventory
         body.SetOrigin(point,false);body.FindFloorCeiling();body.ClearInterpolation();body.Vel=(0,0,0);
         body.Cargo=null;body.Contained=false;body.bNoInteraction=false;
         body.bSolid=HadSolid;body.bShootable=HadShootable;body.bInvisible=HadInvisible;body.bNoGravity=HadNoGravity;
+        body.UpdateComponents();
         CaelumContaminationObject.Register(body);
         let user=CaelumPlayer(Owner);if(user!=null)user.RefreshCarriedInventorySummary();
     }

@@ -4,6 +4,21 @@ Documentation version: **5.13.3** - 2026-10-31.
 
 ## 5.13.3 - Ordered Tarot foundation (#440, implementation checkpoint)
 
+Sun heat checkpoint (2026-11-01): the approved8kW spherical rock uses the
+existing typed thermal-source registry and owned boulder visual. Capture hides
+the visual and suppresses emission without replacing either component; release
+restores both. Saved component revision1 is idempotent, destruction unregisters
+the source, and ordinary fire geometry/power are unchanged. Annex revision5
+places the hot example once. Environmental contamination remains separate work.
+
+Native capture32443/recovery32444 passed52 assertions across two peers.
+`sun-heat/r1` matches all18043 source entries; SHA-256
+`643dd5494484668550511acdfc907fa4157b6fd4616d1b48e9f952eccd547d81`.
+The retained32442 failure was premature fixture access before PostBeginPlay;
+the fixture now waits for native initialization. The owned-model screenshot
+was inspected. Evidence: `assets/validation_v5_13_3/sun-heat-results.json`.
+These are agent checks, not author acceptance or rendering-performance evidence.
+
 Spirit checkpoint (2026-11-01): the explicit Tarot-spirit family admits damage
 only from a player with equipped Justice. Equipped Judgement opens the approved
 demonstration dialogue; unauthorised Use gives feedback without acquiring a

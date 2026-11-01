@@ -24,7 +24,9 @@ effect clocks. Moon copies appearances/equipment/resources into temporary combat
 illusions with safe swaps and no loot; remaining powers are tracked in TASKS.
 Sun containment now preserves one rock identity, requires Star, accounts for
 Box mass/slots and delays travel until a collision-safe release succeeds.
-This checkpoint does not yet place the harmful emitters in the campaign.
+Annex revision5 places the8kW rock, using the owned boulder and existing thermal
+registry; its native containment/recovery evidence is recorded separately.
+The environmental-contamination rock and full inventory presentation remain pending.
 Judgement's local instantaneous pulse uses those control/illusion adapters;
 the approved demonstration spirit now exposes its equipped hearing/damage
 passives. Remaining display content still needs completion.

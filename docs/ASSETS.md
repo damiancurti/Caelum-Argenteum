@@ -2,9 +2,12 @@
 
 Documentation version: **5.13.3** - 2026-10-31.
 
-The Sun containment checkpoint adds no raster/model sources. Its diagnostic
-rock still uses the existing CARK fallback; sized owned-model presentation and
-thermal/contamination examples remain pending. It is not a visual acceptance.
+Sun rocks reuse the unchanged owned `models/caelum/world/hazards/ca_hazard_boulder.obj`
+through `CaelumHazardRockVisual`, at radius19.2MU (nominal diameter1.2m).
+No raster/model source is added. The separate visual follows the persistent
+body and hides during containment. Annex apparatus revision5 places the hot
+example clear of the display entrance. Native checks/screenshot are recorded
+in sun-heat-results.json; this is not author visual acceptance.
 
 The demonstration spirit reuses the unchanged V9G0 guard sprite and native
 body scale. No new art or third-party resource is introduced. Its bilingual
