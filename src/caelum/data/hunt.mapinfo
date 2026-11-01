@@ -1,0 +1,1 @@
+map CAHUNT "$CA_HUNT_MAP" { cluster=0 nointermission teamdamage=0 UnFreezeSinglePlayerConversations music="CA_MUS03_SEWER" }

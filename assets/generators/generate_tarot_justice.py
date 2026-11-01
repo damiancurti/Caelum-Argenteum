@@ -157,10 +157,12 @@ def main():
             'class CaelumJusticeGeometry : Object', '{',
             f'    const REVISION={data["revision"]};',
             f'    const WIDTH={data["width_m"]*data["units_per_metre"]};',
-            '    static clearscope int SectorIndex(String map) {']
+            '    static clearscope int SectorIndex(String map) {',
+            '        if(map==CaelumHuntData.Map())return CaelumHuntData.JUSTICE_SECTOR;']
     for row in manifest['maps']:
         native.append(f'        if(map=="{Path(row["file"]).stem}")return {row["geometry"]["sector"]};')
-    native+=['        return -1; }', '    static clearscope vector3 Center(String map) {']
+    native+=['        return -1; }', '    static clearscope vector3 Center(String map) {',
+             '        if(map==CaelumHuntData.Map())return CaelumHuntData.JusticeCenter();']
     for row in manifest['maps']:
         xyz=','.join(f'{v:g}' for v in row['geometry']['center'])
         native.append(f'        if(map=="{Path(row["file"]).stem}")return ({xyz});')
