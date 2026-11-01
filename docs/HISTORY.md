@@ -4,6 +4,23 @@ Documentation version: **5.13.3** - 2026-10-31.
 
 ## 5.13.3 - Ordered Tarot foundation (#440, implementation checkpoint)
 
+The Emperor checkpoint (2026-11-01) implements local pacification, reversible
+control of existing summoned Zupay, last-cast arbitration, Temperance resistance
+and cleanup, native/shared accelerated clocks and departure restoration. Final
+package emperor/r8 passes70 assertions across two real local clients:50 initial
+checks and20 common-save/recovery/actual-map-travel checks. The package's18,037
+members match current src byte-for-byte. Evidence and retained failed attempts:
+assets/validation_v5_13_3/emperor-results.json. Project validation passes.
+
+The native command test exposed interference between a new visual order and
+an old search point. The final implementation prioritizes the visible order
+through the normal recognition path and prevents that stale search from turning
+the observer away during recognition; it does not widen vision or track hidden
+targets. Loss of a native controller reference restores original allegiance.
+Author acceptance and final frame-presentation checks remain deferred; #440 and
+the full V5.13 release remain incomplete. This is a focused #440 code checkpoint,
+without artwork or balance changes.
+
 Author decisions (2026-11-01): the last valid Emperor cast controls a summon;
 expiry restores its original allegiance, not an earlier controller. Both control
 and pacification end on map departure without refunding cooldown. Moon clones

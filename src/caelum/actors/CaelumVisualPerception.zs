@@ -68,7 +68,17 @@ class CaelumVisualPerception : Object play
     // La relación real autoriza combatir; nunca se deduce por ropa o apariencia.
     static bool Opponent(CaelumCombatActor observer,Actor candidate)
     {
-        if(!Living(candidate) || observer==candidate)return false;
+        if(!Living(candidate) || observer==candidate || CaelumTarotEmperor.Blocks(observer,candidate))return false;
+        let summoned=CaelumSummonedZupay(observer);
+        if(summoned!=null && CaelumTarotEmperor.Commander(observer)!=null)
+            return CaelumMajorTargets.Enemy(summoned.Commander(),candidate);
+        return RelatedOpponent(observer,candidate);
+    }
+
+    // La pacificación impide atacar al lanzador; no vuelve aliado a su receptor.
+    static bool RelatedOpponent(CaelumCombatActor observer,Actor candidate)
+    {
+        if(observer==null || !Living(candidate) || observer==candidate)return false;
         let resident=CaelumAnchoredResident(observer);
         let user=CaelumPlayer(candidate);
         if(resident!=null && user!=null)
@@ -168,9 +178,13 @@ class CaelumVisualPerception : Object play
     static Actor Acquire(CaelumCombatActor observer,Actor hint=null)
     {
         let evidence=Evidence(observer);let memory=evidence.GetMemory();
-        Actor candidate;memory.ChooseFocus(observer);
-        if(memory.HasFocus(observer))candidate=memory.Focus;
-        else candidate=hint!=null && CanSee(observer,hint) ? hint : Candidate(observer);
+        Actor candidate=CaelumTarotEmperor.CommandCandidate(observer);
+        if(candidate==null)
+        {
+            memory.ChooseFocus(observer);
+            if(memory.HasFocus(observer))candidate=memory.Focus;
+            else candidate=hint!=null && CanSee(observer,hint) ? hint : Candidate(observer);
+        }
         if(Identify(observer,candidate) && Opponent(observer,candidate))
         {memory.Focus=candidate;memory.ClearGoal(observer);return candidate;}
         return null;
@@ -186,6 +200,8 @@ class CaelumVisualPerception : Object play
 
     static Actor SearchGoal(CaelumCombatActor body)
     {
+        // Una orden visible aún en reconocimiento no se abandona por un ruido anterior.
+        if(CaelumTarotEmperor.CommandCandidate(body)!=null)return null;
         let evidence=Evidence(body);return evidence.GetMemory().Search(body,evidence);
     }
 

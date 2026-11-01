@@ -39,12 +39,21 @@ class CaelumSummonedZupay : CaelumZupayColossus
     }
 
     bool CanAffect(Actor victim)
-    {return Binding!=null && CaelumSummoning.Enemy(CaelumPlayer(Binding.Owner),victim);}
+    {return Binding!=null && !CaelumTarotEmperor.Blocks(self,victim)
+        && (CaelumTarotEmperor.Commander(self)!=null?CaelumMajorTargets.Enemy(Commander(),victim)
+            : CaelumSummoning.Enemy(CaelumPlayer(Binding.Owner),victim));}
+
+    CaelumPlayer Commander()
+    {
+        let controller=CaelumTarotEmperor.Commander(self);
+        return controller!=null?controller:Binding!=null?CaelumPlayer(Binding.Owner):null;
+    }
 
     bool FollowCaster()
     {
         if(target!=null)return false;
         CaelumVisualPerception.Look(self);if(target!=null)return false;
+        if(CaelumTarotEmperor.CommandCandidate(self)!=null)return true;
         if(master==null)return true;
         vector2 delta=master.Pos.XY-Pos.XY;double distance=delta.Length();
         double gap=distance-Radius-master.Radius;

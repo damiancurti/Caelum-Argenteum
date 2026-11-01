@@ -94,7 +94,7 @@ class CaelumCommunication : Object play
         if(body!=null && body.Companion!=null && body.Companion.Enlisted)return body.Companion.Leader();
         let user=CaelumRedemption.Commander(body);if(user!=null)return user;
         let summoned=CaelumSummonedZupay(body);
-        if(summoned!=null && summoned.Binding!=null)return CaelumPlayer(summoned.Binding.Owner);
+        if(summoned!=null && summoned.Binding!=null)return summoned.Commander();
         let resident=CaelumAnchoredResident(body);
         if(resident!=null)
         {

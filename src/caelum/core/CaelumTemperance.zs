@@ -15,6 +15,7 @@ class CaelumTemperance : Object play
         if(user==null)return;
         if(user.ElementalStatus!=null)user.ElementalStatus.ClearTemporaryStates(user);
         if(user.ForcedSleepTics>0)CaelumSleepRules.Wake(user);
+        if(user.TarotEmperor!=null)user.TarotEmperor.Cleanse();
     }
 
     static bool SelectedForSequence(CaelumPersistentCharacterState record)

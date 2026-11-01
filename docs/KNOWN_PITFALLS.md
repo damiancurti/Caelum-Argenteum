@@ -4,6 +4,28 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-209 - A stale search goal can prevent a commanded target from being recognized
+
+Status/evidence: ENGINE-VERIFIED, #440 / 5.13.3, 2026-11-01; two local native
+4.14.2-ca435-timer clients. Author acceptance remains pending.
+
+An Emperor-controlled summon initially held the correct command reference but
+never engaged it. Native traces showed a visible candidate accumulating only a
+few recognition tics while an older CaelumSearchPoint rotated the body away.
+Calling a second observation routine from the control inventory also allowed
+different candidates to overwrite the same observer's continuous-sight state.
+
+Use one candidate-selection path for the command and normal perception. Clear
+obsolete search goals when allegiance changes and do not resume an old search
+while the visible command is still being recognized. Preserve the normal field
+of view, recognition delay and hidden-target memory; widening vision or testing
+only that an evidence object exists does not verify obedience.
+
+Evidence: assets/validation_v5_13_3/emperor-results.json, including the failing
+command assertions and diagnostic run32401, followed by final run32405's native
+engagement and run32406's saved-state/map-travel checks. This finding does not
+establish rendering performance or a general-purpose navigation change.
+
 ## CA-KP-208 - Wall-sprite facing is independent of doorway collision
 
 Status/evidence: ENGINE-VERIFIED, #440, 2026-11-01, private GZDoom4.14.2 timer build.

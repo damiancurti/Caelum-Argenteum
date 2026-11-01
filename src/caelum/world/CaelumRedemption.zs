@@ -207,6 +207,7 @@ class CaelumRedemption : Object play
 
     static bool AllowsDamage(Actor source,Actor victim,Name mod='None')
     {
+        if(CaelumTarotEmperor.Blocks(source,victim))return false;
         // La protección de ataques aliados no convierte caídas/esfuerzos propios en inmunidad.
         if(source==victim && (mod=='CaelumImpact' || mod=='Crush' || mod=='CaelumWeight'
             || mod=='CaelumPressure' || mod=='Drowning'))return true;

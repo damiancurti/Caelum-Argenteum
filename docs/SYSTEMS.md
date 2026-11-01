@@ -32,6 +32,34 @@ recalculation does not accumulate capacity. New loops are bounded by the78-card
 catalogue or the acting player's inventory; no actor-global scan is added.
 Validation: assets/validation_v5_13_3; final author acceptance remains deferred.
 
+### Emperor control and pacification
+
+The sequence applies Emperor once to eligible living actors within the approved
+caster-centered radius and line of sight. Scene-hidden/dormant bodies and protected
+residents are excluded. Each reached body stores revision1, at most MAXPLAYERS
+source slots and separate durations; Hermit extends the applicable cast and
+Temperance halves, prevents or removes received mind-control state.
+
+Pacification suppresses targeting/attacks toward its own caster without changing
+the receiver's underlying faction or protecting unrelated characters. Ordinary
+self-inflicted physiology remains active. The current controllable summon type is
+CaelumSummonedZupay: control changes master, friendly-player identity, communication
+principal and command target, retaining its original summoning lifetime owner.
+The last valid cast wins. Ending that control restores the original allegiance,
+without killing the body or returning control to an earlier temporary source.
+Native perception prioritizes a visible command candidate in its existing sampling
+path, preserving recognition time and avoiding continuous hidden-target tracking.
+
+State lives on the native body and is saved; legacy actors have no new effect until
+reached by a cast. Native ticks and shared accelerated steps advance each source
+once. Departure clears source bindings before summons follow their original
+owners; paid cooldown remains. Blockmap and the existing local contact grid serve
+one cast; cached body references and caster-owned recipient lists serve updates.
+No global actor scan is introduced. Existing Redemption world scans are neither
+reused nor expanded; only its shared damage permission hook gains a cached
+pacification check. Full-version author and frame-presentation acceptance remain
+pending; HISTORY records the isolated native checkpoint and its exact package.
+
 ### Temperance status integration
 
 Temperance now halves new negative status durations at their existing application

@@ -42,8 +42,10 @@ class CaelumMajorTargets : Object play
             }
         }
         if(CaelumRedemption.Commander(body)!=null)return !CaelumRedemption.Allied(user,body);
+        let controller=CaelumTarotEmperor.Commander(body);
+        if(controller!=null)return Enemy(user,controller);
         let combat=CaelumCombatActor(body);
-        return combat!=null?CaelumVisualPerception.Opponent(combat,user):CaelumSummoning.Enemy(user,body);
+        return combat!=null?CaelumVisualPerception.RelatedOpponent(combat,user):CaelumSummoning.Enemy(user,body);
     }
 
     static CaelumHostileMachine Machine(Actor hit)

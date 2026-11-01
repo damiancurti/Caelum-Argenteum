@@ -135,7 +135,11 @@ class CaelumMajorWorldEvents : StaticEventHandler
         if(world==null)return false;
         if(!world.TimeSnapshotReady || world.TimeSnapshotTic!=level.time)world.TimeSnapshot();
         for(int i=0;i<world.TimeEffects.Size();i++)
-            if(world.TimeEffects[i]!=null && !world.TimeEffects[i].bDestroyed)return true;
+        {
+            let effect=world.TimeEffects[i];if(effect==null || effect.bDestroyed)continue;
+            let empire=CaelumTarotEmperorCast(effect);
+            if(empire==null || empire.Bodies.Size()>0)return true;
+        }
         return false;
     }
 
@@ -147,8 +151,8 @@ class CaelumMajorWorldEvents : StaticEventHandler
     void TimeSnapshot()
     {
         TimeSnapshotReady=true;TimeSnapshotTic=level.time;TimeEffects.Clear();
-        // Una lectura por dueño y fotograma acelerado; máximo cuatro efectos
-        // por plaza. No se recorre el mundo ni se reescanean inventarios por subpaso.
+        // Una lectura por dueño y fotograma acelerado; sólo creaciones y pactos
+        // registrados. No se recorre el mundo ni se reescanean inventarios por subpaso.
         for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i])
         {
             let user=CaelumPlayer(players[i].mo);if(user==null)continue;
@@ -156,10 +160,12 @@ class CaelumMajorWorldEvents : StaticEventHandler
             let mine=CaelumTarotMineState(user.FindInventory('CaelumTarotMineState'));
             let plant=CaelumTarotPlantState(user.FindInventory('CaelumTarotPlantState'));
             let duel=CaelumJusticeLink.View(user);
+            let empire=CaelumTarotEmperorCast(user.FindInventory('CaelumTarotEmperorCast'));
             if(cart!=null)IncludeTimeEffect(cart.Projection);
             if(mine!=null)IncludeTimeEffect(mine.Mine);
             if(plant!=null)IncludeTimeEffect(plant.Roots);
             if(duel!=null)IncludeTimeEffect(duel.Duel);
+            if(empire!=null && empire.Bodies.Size()>0)IncludeTimeEffect(empire);
         }
     }
     static void AdvanceSkippedTic()
@@ -174,6 +180,7 @@ class CaelumMajorWorldEvents : StaticEventHandler
             let cart=CaelumTarotChariot(effect);if(cart!=null){cart.AdvanceEffect();continue;}
             let mine=CaelumTarotMine(effect);if(mine!=null){mine.AdvanceEffect();continue;}
             let plant=CaelumTarotRoots(effect);if(plant!=null){plant.AdvanceEffect();continue;}
+            let empire=CaelumTarotEmperorCast(effect);if(empire!=null){empire.AdvanceEffect();continue;}
             let duel=CaelumTarotJustice(effect);if(duel!=null)duel.AdvanceEffect();
         }
     }
@@ -187,6 +194,8 @@ class CaelumMajorWorldEvents : StaticEventHandler
         for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i])
         {
             let user=CaelumPlayer(players[i].mo);CaelumTarotObjectMovement.Release(user);
+            let empire=user!=null?CaelumTarotEmperorCast(user.FindInventory('CaelumTarotEmperorCast')):null;
+            if(empire!=null)empire.End();
             let cart=user!=null?CaelumTarotChariotState(user.FindInventory('CaelumTarotChariotState')):null;
             if(cart!=null && cart.Projection!=null)cart.Projection.Destroy();
             let mine=user!=null?CaelumTarotMineState(user.FindInventory('CaelumTarotMineState')):null;
@@ -200,7 +209,7 @@ class CaelumMajorWorldEvents : StaticEventHandler
                 {
                     // Los cuerpos temporales pertenecen al mapa que se abandona.
                     for(int card=0;card<CaelumConstants.TAROT_MAJOR_COUNT;card++)
-                        if(card==1 || card==2 || card==3 || card==18)
+                        if(card==1 || card==2 || card==3 || card==4 || card==18)
                         {record.TarotRemaining[card]=0;record.TarotActive[card]=false;}
                     CaelumTarotSequence.Advance(user,record,0);
                 }

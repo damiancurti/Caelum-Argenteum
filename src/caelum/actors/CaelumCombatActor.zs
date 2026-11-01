@@ -259,6 +259,7 @@ class CaelumCombatActor : Actor
     double CurrentCombatLucidity;
     CaelumTelekinesisEffect TelekinesisBinding;
     CaelumTarotRooted TarotRoots;
+    CaelumTarotEmperorBody TarotEmperor;
     int ForcedSleepTics;
     CaelumSpellSleepState SpellSleep;
     int SleepSavedTics;

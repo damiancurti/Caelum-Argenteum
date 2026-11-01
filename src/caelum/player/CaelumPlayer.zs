@@ -26,6 +26,7 @@ class CaelumPlayer : DoomPlayer
     CaelumBolasFlight BolasBinding;
     CaelumTelekinesisEffect TelekinesisBinding;
     CaelumTarotRooted TarotRoots;
+    CaelumTarotEmperorBody TarotEmperor;
     int BolasPreparedTics,BolasPreparedItem,BolasReleaseUntil;
     Actor UtilityStaffStream;
     int UtilityStaffRequestedMode;
