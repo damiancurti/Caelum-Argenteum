@@ -1,16 +1,18 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.12.7a** - 2026-10-31.
+Documentation version: **5.13.0** - 2026-10-31.
 
-**V5.12:** #434-438/#590/#602 implemented and accepted on 2026-10-31;
-merged/closed. All six author checks passed; pending_test.txt empty.
-#602 fixes spirit dialogue/Tarot controls. Evidence: validation_v5_12_7a.
-Private timer-fixed4.14.2; installed engine untouched. CA-KP-202/203/204;
-previous evidence: validation_v5_12_7. Siege1.33-6.48FPS/sharedGPU; no Internet claim.
+**V5.13:** #439 specification audited in SYSTEMS; #440-442 next, #596-601 last.
+Approved: only Major passives need equipping; block ordinary overflow on unequip.
+Unified essence allows deity damage. Other fields await replies.
+Manual suite deferred.
 
-**V5.11/V5.10 accepted/merged:** HISTORY; no pending checks. Siege stalls persist.
+**V5.12 accepted/merged:** HISTORY; validation_v5_12_7/7a. Private timer-fixed4.14.2.
+Siege1.33-6.48FPS/sharedGPU; no Internet claim. Canonical LF indexes (#604).
 
-**V5.9 accepted/merged:** #418-424 closed, PR561-569; CA418-01..CA424-01
+**V5.11/V5.10 accepted/merged:** HISTORY.
+
+**V5.9:** #418-424 closed, PR561-569; CA418-01..CA424-01
 confirmed 2026-10-30 in HISTORY. validation_590-597; pending_test.txt empty.
 
 **V5.8 accepted/integrated:** #410-417/#496/#502, 5.8.56, 2026-10-29.

@@ -1,6 +1,22 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.12.7a** - 2026-10-31.
+Documentation version: **5.13.0** - 2026-10-31.
+
+## 5.13.0 - Major Arcana specification audit (#439)
+
+V5.13 implementation is in progress. SYSTEMS contains the complete 22-row
+approved passive/active specification, stable Marseille IDs, current runtime
+comparison and unresolved fields. This checkpoint changes documentation only;
+no new gameplay or author test is claimed. The author confirmed that Minor
+passives/collection bonuses remain unchanged and approved blocking capacity-card
+removal until ordinary overflow is resolved. The unified essence permits damage
+to deities after collecting all 78 essences; its exact activation still needs decisions.
+
+Delivery order: #439, #440-442, then standalone multiplayer parent #596 and
+#597-601. Keep each issue's commits, evidence and PR separate. Continue settled
+work while gathering the remaining design answers; do not fill numeric or
+narrative gaps from card names. Final author scenarios are deferred until the
+complete V5.13 implementation is ready. V5.12 remains accepted and merged.
 
 ## 5.12.7a - Death-interface correction (#602)
 
