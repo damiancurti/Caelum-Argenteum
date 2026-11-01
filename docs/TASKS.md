@@ -14,11 +14,12 @@ are implemented; authored passage passives are implemented. Justice pairs/return
 waits and legacy maps are checked.
 Lovers active-map damage/healing is checked; integrate its passive in abstract
 journey simulation before claiming completion. Finish remaining handlers/passives,
-giant/harmful objects, mansion access/apparatus on the appended example geometry,
+giant/harmful objects and display-room examples on the appended annex geometry,
 automaton combat/control and input arbitration. Its owned 3D model is
 implemented separately, with native animation evidence. Existing world-effect
 clocks also follow shared accelerated steps; add future creations to that bounded
-owner index. The confirmed per-power
+owner index. Annex access, passage examples and Wheel state changes are checked.
+The confirmed per-power
 contract is consolidated in SYSTEMS; unresolved fields must still be asked.
 Only then integrate standalone modes #596-601 and issue final author scenarios.
 

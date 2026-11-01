@@ -24,6 +24,7 @@ class CaelumTarotSequence : Object play
         if(card==13 && !CaelumTarotContamination.Death(user,aimed,ground))
         {if(report)CaelumTarotService.Feedback(user,"CA_TAROT_CONTAMINATION_TARGET");return;}
         if(card==7)CaelumTarotChariot.Launch(user);
+        if(card==10)CaelumTarotExamples.Wheel(user,report);
         if(card==16)
         {
             bool destroyed=CaelumMajorTargets.Tower(aimed);

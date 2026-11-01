@@ -101,6 +101,18 @@ class CaelumTargetInfo : Object play
         }
         if(Title=="")Title=L(Subject is 'CaelumCombatActor'?"CA_TARGET_CHARACTER":"CA_TARGET_OBJECT");
         bool reachable=Distance<=user.UseRange;
+        let portal=CaelumTarotExamplePortal(Subject);
+        if(portal!=null)
+        {
+            Title=L(portal.Route==0?"CA_TAROT_EXAMPLES":"CA_TAROT_EXAMPLES_RETURN");
+            Actions=L(reachable?"CA_TARGET_TRAVEL":"CA_TARGET_APPROACH");return;
+        }
+        let route=CaelumTarotExampleRoute(Subject);
+        if(route!=null)
+        {
+            Title=L("CA_TAROT_ROOM_ROUTE");
+            Actions=L(route.OpenRoute()?"CA_TARGET_CROSS":"CA_TAROT_ROOM_REQUIRED");return;
+        }
         if(Subject is 'CaelumTarotFalseWall')
         {
             bool known=CaelumTarotFalseWall.Revealed(user);

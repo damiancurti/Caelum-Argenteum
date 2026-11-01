@@ -245,10 +245,30 @@ controller lookup; ordinary quality queries are constant-time. Eight diagnostic
 native MAP01 samples (7,749 sectors/30 water parts) measured0.2015-0.44863ms for
 constructing/indexing/destroying a cold controller and0.00018-0.00046ms for an
 already-indexed call. These are CPU samples, not frame-presentation evidence.
-The cursed-passage passive is implemented below; mansion examples still need
-runtime placement/access in the appended gallery. Its data and reversible
-geometry are described in MAP01. The native water floor has been checked at
-the approved dry/wet levels; the Wheel power/controller is not yet integrated.
+The cursed-passage passive and Wheel example are implemented below. MAP01
+describes their placements, same-map access and reversible geometry.
+
+### Wheel room and example access
+
+The practice-room portal opens the mansion teaching annex through normal Use;
+its counterpart returns to the practice room. Both preserve the active map,
+require range/sight and a living material actor, and reject occupied arrivals
+without telefragging. A Justice participant cannot leave through them.
+
+Wheel is an instantaneous sequence effect in the authored Wheel room only.
+It alternates dry/light192/first route and two-metre water/light32/second route.
+It uses the ordinary shared sequence payment and cooldown, creates no timer,
+and does not repeat when Hermit supplies a longer duration. Before changing
+anything, eight local native collision probes check the doorway that will close;
+an occupied doorway postpones the change without altering the room. This does
+not refund an otherwise valid paid sequence, just like other invalid targets.
+
+A saved revision1 controller owns four doors and two portals. One typed lookup
+per map load restores that controller; normal use consults the retained reference
+and authored sector marker. No per-tic map census is used. Legacy geometry lacks
+the marker/indices and creates no apparatus; Wheel reports no compatible room.
+APPARATUS.json owns placements and the generated runtime data. Save recovery
+retains room state, purification, doors and portal identities.
 
 ### Authored passage passives
 

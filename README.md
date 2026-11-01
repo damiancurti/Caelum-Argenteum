@@ -19,7 +19,8 @@ and Empress plants have native visual evidence using owned vegetation materials.
 Its equipped passive also enables individual vegetation traversal.
 Death's equipped passive destroys explicitly marked living obstacles through Use.
 Priestess identifies authored false walls; Hierophant purifies permitted cursed passages.
-The mansion example annex has reversible geometry; access and apparatus are still being integrated.
+The mansion example annex has reversible geometry, usable return portals and placed
+passage examples. Wheel changes its room's water, light and routes persistently.
 For existing saves, `build_dev.ps1 -LegacyTarotMaps` preserves pre-Justice maps;
 `-LegacyTarotExamples` preserves the Justice-era mansion before the annex.
 Justice now supports simultaneous pairs, safe returns and cancellable travel waits,

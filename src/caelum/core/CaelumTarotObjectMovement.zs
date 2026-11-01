@@ -119,6 +119,7 @@ class CaelumTarotLift : Inventory
 
 class CaelumMajorWorldEvents : StaticEventHandler
 {
+    transient CaelumTarotExampleRoom Examples;
     transient bool TimeSnapshotReady;
     transient int TimeSnapshotTic;
     transient Array<Actor> TimeEffects;
@@ -177,10 +178,11 @@ class CaelumMajorWorldEvents : StaticEventHandler
         }
     }
     override void WorldLoaded(WorldEvent e)
-    {TimeSnapshotReady=false;TimeEffects.Clear();}
+    {TimeSnapshotReady=false;TimeEffects.Clear();CaelumTarotExamples.Initialize();}
     override void WorldUnloaded(WorldEvent e)
     {
         TimeSnapshotReady=false;TimeEffects.Clear();
+        Examples=null;
         // Sólo los propietarios de la sesión: sin censo de actores del mapa.
         for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i])
         {

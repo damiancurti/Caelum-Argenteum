@@ -9,6 +9,7 @@ from build_dialogue_index import validate as dialogue_problems
 from assets.generators.generate_cartography_catalogue import render as cartography_catalogue
 from assets.generators.generate_siege_reinforcements import render as reinforcement_data
 from assets.generators.generate_tarot_justice import validate as justice_geometry_problems
+from assets.generators.generate_tarot_examples import render as tarot_example_data
 
 from build_document_index import (
     INDEX_NAME as DOC_INDEX_NAME,
@@ -68,6 +69,8 @@ def validate(root):
     errors = dialogue_problems(root)
     try:
         errors.extend(justice_geometry_problems(root))
+        if (root/'src/caelum/data/CaelumTarotExampleData.zs').read_bytes() != tarot_example_data(root):
+            errors.append('Stale Tarot example apparatus data; run python assets/generators/generate_tarot_examples.py')
     except (OSError, ValueError, KeyError) as error:
         errors.append(f'Justice geometry: {error}')
     try:

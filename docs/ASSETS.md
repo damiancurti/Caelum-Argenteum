@@ -9,8 +9,10 @@ reuses original mansion stone/pool textures (CMST01/CMST02/CAPOOL01), adding no
 external assets or narrative. `tarot_example_geometry.py` appends it after
 Justice through the existing deterministic map generator. The previous mansion
 bytes remain in `pre_examples_MAP01.wad`, with SHA-256/provenance in BASELINE.json.
-GEOMETRY.json records the appended indices/counts. Runtime apparatus and final
-visual review remain separate from this geometry checkpoint.
+GEOMETRY.json records the appended indices/counts. APPARATUS.json and
+generate_tarot_examples.py own the generated runtime placements. Portals reuse
+the owned pressure-trap floor visual; door artwork is still the existing leaf.
+Final false-wall styling and author visual review remain pending.
 
 ## Tarot automaton model (#440, 5.13.3)
 

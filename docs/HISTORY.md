@@ -4,6 +4,15 @@ Documentation version: **5.13.3** - 2026-10-31.
 
 ## 5.13.3 - Ordered Tarot foundation (#440, implementation checkpoint)
 
+The example-apparatus checkpoint (2026-11-01) connects the practice room and
+annex with usable same-map portals, places the authored passage types, and
+implements Wheel's instantaneous dry/wet room transaction. Native two-client
+checks cover blocked arrivals, real furnishings, exact shared cost/cooldown,
+water/light, alternate routes, occupied closure, Hermit non-repetition and
+common-save identities. The same runtime on pre-annex geometry creates no
+apparatus. Evidence: assets/validation_v5_13_3/example-runtime-results.json.
+Final display objects, false-wall styling and author review remain pending.
+
 The mansion example geometry checkpoint (2026-11-01) appends ten sectors,
 92 linedefs and82 vertices after the existing Justice arena, preserving the
 entire earlier TEXTMAP prefix and all actor placements. Native two-client tests

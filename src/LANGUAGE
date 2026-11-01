@@ -1,4 +1,18 @@
 [enu default]
+CA_TAROT_EXAMPLES = "Tarot examples";
+CA_TAROT_EXAMPLES_RETURN = "Return to the mansion practice room";
+CA_TAROT_EXAMPLES_BLOCKED = "The arrival point is occupied. Clear it before using the passage.";
+CA_TAROT_ROOM_ROUTE = "Wheel of Fortune route";
+CA_TAROT_ROOM_REQUIRED = "Activate the Wheel of Fortune inside its special room.";
+CA_TAROT_ROOM_BLOCKED = "Clear the closing doorway before changing the room.";
+[es]
+CA_TAROT_EXAMPLES = "Ejemplos del Tarot";
+CA_TAROT_EXAMPLES_RETURN = "Volver a la sala de práctica de la mansión";
+CA_TAROT_EXAMPLES_BLOCKED = "El punto de llegada está ocupado. Debe quedar libre para usar el paso.";
+CA_TAROT_ROOM_ROUTE = "Paso de La Rueda de la Fortuna";
+CA_TAROT_ROOM_REQUIRED = "Activa La Rueda de la Fortuna dentro de su habitación especial.";
+CA_TAROT_ROOM_BLOCKED = "Despeja la puerta que va a cerrarse antes de cambiar la habitación.";
+[enu default]
 CA_TAROT_FALSE_WALL = "False wall";
 CA_TAROT_UNMARKED_WALL = "Wall";
 CA_TAROT_PASSAGE_CURSED = "Cursed passage";
