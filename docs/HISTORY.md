@@ -4,6 +4,24 @@ Documentation version: **5.13.3** - 2026-10-31.
 
 ## 5.13.3 - Ordered Tarot foundation (#440, implementation checkpoint)
 
+Star furniture checkpoint (2026-11-01): the author explicitly extended the
+one-giant rule to furniture. Exterior dimensions now gate Box entry through
+manual storage, pickups, trade and chest withdrawal, sharing the allowance
+with Sun rocks. Furniture toggling correctly removes its former personal weight
+in the same transaction. Star removal/legacy excess use a saved revision1
+release queue, with bounded collision/obstruction checks and exact item/body
+identity. Blocked release prevents travel and external-profile transfer.
+
+Final `star/r3` matches18046 source entries; SHA-256
+`be9f7d77927bc7975f5c7350071ee56108dbf922e6e07cab740a8f13c01b22fb`.
+Two-peer capture32454/recovery32455 passed46 assertions; two profile-boundary
+checks passed against the actual common save. Evidence:
+`assets/validation_v5_13_3/star-results.json`. Retained32452 caught a reserved
+identifier;32453 exposed the missing personal-weight subtraction and an
+overloaded fixture setup, both corrected before the final capture. Direct
+collection/storage-furniture audit, full-annex tests and author acceptance
+remain pending. No new global actor scan or rendering-performance claim.
+
 Sun pollution checkpoint (2026-11-01): annex revision6 adds the owned-model
 rock with fixed environmental concentration100 within4m and native line of
 sight. Bodies/equipment and object histories use the existing exposure rules;

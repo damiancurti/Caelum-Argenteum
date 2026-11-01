@@ -469,6 +469,38 @@ for unsupported changing contacts/fire; actual accelerated waiting still resolve
 them. Overland journeys retain their existing rejection of active Tarot effects.
 Lovers passive redistribution in the abstract journey model remains separate work.
 
+### Star furniture volume and safe removal
+
+The author confirmed on2026-11-01 that the one-giant rule also applies to
+furniture. Existing documented exterior dimensions determine volume, never
+mass or the amount of solid material. Cuboid envelopes cover furniture;
+table sets include their complete chair layout. Compare against twice the
+current character collision-cylinder volume. Ordinary furniture retains its
+existing storage rules. Hazardous rocks share this one allowance and still
+explicitly require Star regardless of the user's size.
+
+Manual Box storage, direct pickups, shop purchases and chest withdrawals check
+the same admission rule before transferring goods or charging. A batch of
+multiple giant objects cannot enter a single free giant allowance. Moving
+furniture into the Box subtracts its personal weight in the same transaction.
+Manufactured furniture still enters personal inventory through its existing
+crafting path; this does not grant automatic giant storage.
+
+Unequipping Star queues the original giant furniture for release, preserving
+its physical body and table contents. Saved revision1 also audits old boxed
+furniture and size changes idempotently: retain one permitted giant, queue
+the rest without deleting anything. Eight candidate positions per tic preserve
+collision and straight unobstructed access. The furniture's nearest edge stays
+within4m; its radius extends the center search so wide dining sets can fit.
+Mandatory dropping bypasses only installation land permission, not geometry,
+and gives no permission to collect someone else's furniture. A blocked release
+retains the boxed object and prevents map/profile departure until resolved.
+Ordinary valid boxed furniture retains its existing travel lifecycle.
+
+Native evidence: `validation_v5_13_3/star-results.json`. Direct collection and
+already-placed storage-furniture paths remain under the follow-up audit; this
+checkpoint does not claim all generic scenery is capturable.
+
 ### Confirmed follow-up contract for the remaining handlers
 
 - World order0..77, same target where applicable, skip invalid targets; selected

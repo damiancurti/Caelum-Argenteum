@@ -162,7 +162,8 @@ class CaelumDiningSetItem : CaelumRestFurnitureItem abstract
         int kind=Variant()-CaelumRestFurnitureData.FIRST_DINING_VARIANT;
         double radius=CaelumDiningSetData.Radius(kind),height=CaelumDiningSetData.FullHeight(kind);
         vector3 point=user.Pos+(Cos(user.Angle),Sin(user.Angle),0)*(user.Radius+radius+1);
-        if(!CaelumCampLand.AllowsFurniture(user,point,radius)
+        point=CaelumTarotStar.Point(user,point);
+        if(!CaelumTarotStar.Land(user,point,radius)
             || !CaelumPlacementGeometry.Fits(user,point,radius,height,Table))return false;
         bool fresh=Table==null;
         if(fresh)Table=CaelumPortableDiningTable(Actor.Spawn(CaelumDiningSetData.BodyClass(kind),point,NO_REPLACE));
@@ -174,7 +175,7 @@ class CaelumDiningSetItem : CaelumRestFurnitureItem abstract
         for(int i=0;i<Table.SeatCount();i++)Wake(Table.Chairs[i],true);
         fits=fits && Table.LayoutFits() && user.CheckSight(Table,SF_IGNOREVISIBILITY);
         for(int i=0;i<Table.SeatCount() && fits;i++)
-            fits=CaelumCampLand.AllowsFurniture(user,Table.Chairs[i].Pos,Table.Chairs[i].Radius);
+            fits=CaelumTarotStar.Land(user,Table.Chairs[i].Pos,Table.Chairs[i].Radius);
         if(!fits){if(fresh){Table.Destroy();Table=null;}else Park();return false;}
         DetachFromOwner();AttachToOwner(Table);LawfulOwner=CaelumLockRules.Character(user,true);
         for(int i=0;i<32;i++)CaelumContaminationObject.Register(Table.Blocks[i]);

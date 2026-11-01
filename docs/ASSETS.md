@@ -2,6 +2,12 @@
 
 Documentation version: **5.13.3** - 2026-10-31.
 
+Star furniture volumes reuse the owned furniture envelopes and placed chair
+layouts. `generate_star_geometry.py` deterministically derives the missing
+basic-chair/cot/wardrobe/cupboard volume adapters from their existing DATA.json
+dimensions; it does not alter art, masses or recipes. Other envelopes read the
+existing runtime dimensions directly. No new exterior sizes are inferred.
+
 Sun rocks reuse the unchanged owned `models/caelum/world/hazards/ca_hazard_boulder.obj`
 through `CaelumHazardRockVisual`, at radius19.2MU (nominal diameter1.2m).
 No raster/model source is added. The separate visual follows the persistent

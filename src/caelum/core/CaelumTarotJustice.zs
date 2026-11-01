@@ -181,6 +181,7 @@ class CaelumTarotJustice : Actor
     static bool PrepareTravel()
     {
         bool ready=CaelumSunCargo.PrepareTravel();
+        if(!CaelumTarotStar.PrepareTravel())ready=false;
         // A lo sumo un duelo por personaje: sólo los ocho enlaces de sesión.
         for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i])
         {

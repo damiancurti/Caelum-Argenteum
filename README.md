@@ -10,6 +10,7 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 it, then rebuild with `run_dev.bat` as described below.
 
 V5.13 is in progress. #440 now has ordered Tarot loadouts, additive capacities,
+Star volume admission for portable furniture, saved safe-drop queues,
 per-card timers, Hermit duration, Devil payment, Temperance, Tower, voted Fool sequences,
 borrowed racial abilities, Strength object lifting, Chariot movement, Priestess traps,
 Empress restraint, local Death contamination and Hierophant purification pulses

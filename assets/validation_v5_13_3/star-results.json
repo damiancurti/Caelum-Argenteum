@@ -1,0 +1,118 @@
+{
+  "issue": 440,
+  "version": "5.13.3",
+  "date": "2026-11-01",
+  "package": "build/issue440/star/r3/caelum_argenteum_dev.pk3",
+  "sha256": "be9f7d77927bc7975f5c7350071ee56108dbf922e6e07cab740a8f13c01b22fb",
+  "source_files": 18046,
+  "exact_source_match": true,
+  "native_assertions": 46,
+  "profile_boundary_checks": 2,
+  "author_acceptance": false,
+  "runs": [
+    {
+      "directory": "build/issue440/native-32454-20261101-151327-510328",
+      "runtime_sha256": "be9f7d77927bc7975f5c7350071ee56108dbf922e6e07cab740a8f13c01b22fb",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440STAR PASS native furniture uses exterior dimensions, not its mass",
+            "CA440STAR PASS below twice-body boundary is ordinary",
+            "CA440STAR PASS above twice-body boundary is giant",
+            "CA440STAR PASS giant furniture requires equipped Star",
+            "CA440STAR PASS inventory route cannot bypass missing Star",
+            "CA440STAR PASS ordinary furniture keeps existing permission",
+            "CA440STAR PASS one giant allowed, batch of two refused before transfer",
+            "CA440STAR PASS one original bed occupies giant allowance",
+            "CA440STAR PASS second giant table is refused",
+            "CA440STAR PASS Sun rock and furniture share the same giant allowance",
+            "CA440STAR PASS peer does not share the owner's Box allowance",
+            "CA440STAR PASS Star can be unequipped with its giant-drop exception",
+            "CA440STAR PASS deselection queues original furniture, not a copy",
+            "CA440STAR PASS blocked release prevents departure",
+            "CA440STAR RESULT capture"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440STAR PASS native furniture uses exterior dimensions, not its mass",
+            "CA440STAR PASS below twice-body boundary is ordinary",
+            "CA440STAR PASS above twice-body boundary is giant",
+            "CA440STAR PASS giant furniture requires equipped Star",
+            "CA440STAR PASS inventory route cannot bypass missing Star",
+            "CA440STAR PASS ordinary furniture keeps existing permission",
+            "CA440STAR PASS one giant allowed, batch of two refused before transfer",
+            "CA440STAR PASS one original bed occupies giant allowance",
+            "CA440STAR PASS second giant table is refused",
+            "CA440STAR PASS Sun rock and furniture share the same giant allowance",
+            "CA440STAR PASS peer does not share the owner's Box allowance",
+            "CA440STAR PASS Star can be unequipped with its giant-drop exception",
+            "CA440STAR PASS deselection queues original furniture, not a copy",
+            "CA440STAR PASS blocked release prevents departure",
+            "CA440STAR RESULT capture"
+          ],
+          "passed": true
+        }
+      ]
+    },
+    {
+      "directory": "build/issue440/native-32455-20261101-151451-855261",
+      "runtime_sha256": "be9f7d77927bc7975f5c7350071ee56108dbf922e6e07cab740a8f13c01b22fb",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440STAR PASS save restores original pending furniture",
+            "CA440STAR PASS blocked release loses no item",
+            "CA440STAR PASS clearing geometry completes automatic drop",
+            "CA440STAR PASS drop preserves inventory identity and physical bed",
+            "CA440STAR PASS released bed renders with normal collision",
+            "CA440STAR PASS release frees allowance and travel",
+            "CA440STAR PASS legacy excess is queued idempotently without deleting items",
+            "CA440STAR PASS large dining set releases even when wider than rock search radius",
+            "CA440STAR PASS legacy queue drains without repeated furniture creation",
+            "CA440STAR RESULT reload"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440STAR PASS save restores original pending furniture",
+            "CA440STAR PASS blocked release loses no item",
+            "CA440STAR PASS clearing geometry completes automatic drop",
+            "CA440STAR PASS drop preserves inventory identity and physical bed",
+            "CA440STAR PASS released bed renders with normal collision",
+            "CA440STAR PASS release frees allowance and travel",
+            "CA440STAR PASS legacy excess is queued idempotently without deleting items",
+            "CA440STAR PASS large dining set releases even when wider than rock search radius",
+            "CA440STAR PASS legacy queue drains without repeated furniture creation",
+            "CA440STAR RESULT reload"
+          ],
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "retained_failures": {
+    "32452": "Reserved ZScript identifier in new adapter; renamed before final build.",
+    "32453": "Fixture began above carry capacity; furniture toggle also failed to subtract its previous personal weight. Corrected transition and staged fixture stock before final capture."
+  },
+  "limits": [
+    "Direct world collection into Box and placed storage furniture require their follow-up audit.",
+    "No frame-presentation or final-annex author acceptance claim."
+  ]
+}

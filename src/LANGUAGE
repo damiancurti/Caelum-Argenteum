@@ -1,4 +1,6 @@
 [enu default]
+CA_TAROT_STAR_LIMIT = "This giant object requires The Star equipped and its one giant-object space free.";
+CA_TAROT_STAR_RELEASE_WAIT = "Giant furniture is waiting for a safe release. Clear nearby space.";
 CA_TAROT_EXAMPLES = "Tarot examples";
 CA_TAROT_EXAMPLES_RETURN = "Return to the mansion practice room";
 CA_TAROT_EXAMPLES_BLOCKED = "The arrival point is occupied. Clear it before using the passage.";
@@ -6,6 +8,8 @@ CA_TAROT_ROOM_ROUTE = "Wheel of Fortune route";
 CA_TAROT_ROOM_REQUIRED = "Activate the Wheel of Fortune inside its special room.";
 CA_TAROT_ROOM_BLOCKED = "Clear the closing doorway before changing the room.";
 [es]
+CA_TAROT_STAR_LIMIT = "Este objeto gigante requiere La Estrella equipada y su único espacio gigante libre.";
+CA_TAROT_STAR_RELEASE_WAIT = "Un mueble gigante espera una salida segura. Despejá espacio cercano.";
 CA_TAROT_EXAMPLES = "Ejemplos del Tarot";
 CA_TAROT_EXAMPLES_RETURN = "Volver a la sala de práctica de la mansión";
 CA_TAROT_EXAMPLES_BLOCKED = "El punto de llegada está ocupado. Debe quedar libre para usar el paso.";

@@ -35,7 +35,8 @@ class CaelumRestFurnitureItem : CaelumStorageFurnitureItem abstract
         double radius=CaelumRestFurnitureData.Radius(Variant()),height=CaelumRestFurnitureData.Height(Variant());
         double offset=user.Radius+radius+1;
         vector3 point=user.Pos+(Cos(user.Angle)*offset,Sin(user.Angle)*offset,0);
-        if(!CaelumCampLand.AllowsFurniture(user,point,radius) || !CaelumPlacementGeometry.Fits(user,point,radius,height,Body))return false;
+        point=CaelumTarotStar.Point(user,point);
+        if(!CaelumTarotStar.Land(user,point,radius) || !CaelumPlacementGeometry.Fits(user,point,radius,height,Body))return false;
         bool fresh=Body==null;
         if(fresh)Body=CaelumRestFurniture(Actor.Spawn(CaelumRestFurnitureData.BodyClass(Variant()),point,NO_REPLACE));
         if(Body==null)return false;

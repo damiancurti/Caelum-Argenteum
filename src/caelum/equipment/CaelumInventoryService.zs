@@ -80,6 +80,7 @@ class CaelumInventoryService : Object play
             else if(destinationBox)
             {
                 if(!user.MagicBoxOwned)continue;
+                if(!CaelumTarotStar.CanBox(user,item,quantity))continue;
                 boxWeight+=weight;
                 if(!oldBox)
                 {
@@ -1609,6 +1610,7 @@ class CaelumInventoryService : Object play
         specialItem.InMagicBox = false;
         if (!user.CanAddWeightToPersonalInventory(specialItem.GetCarriedWeight()))
         {
+            if(!CaelumTarotStar.CanBox(user,specialItem,specialItem.Amount))return false;
             double incomingWeight = specialItem.Amount
                 * specialItem.GetUnitWeight();
             if (!user.HasNativeMagicBoxSlotAvailable()
@@ -1674,6 +1676,7 @@ class CaelumInventoryService : Object play
     static void OnNativeInventoryChanged(CaelumPlayer user)
     {
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
+        CaelumTarotStar.Changed(user);
         CaelumDiningSession.Invalidate(user);
         user.ApplyCharacterProfile();
         user.RefreshEquipmentSelectionPreview();
@@ -5087,6 +5090,8 @@ class CaelumInventoryService : Object play
             if (specialItem == null || specialItem.Amount <= 0) { return; }
             double stackWeight = specialItem.Amount
                 * specialItem.GetUnitWeight();
+            if(!specialItem.InMagicBox && !CaelumTarotStar.CanBox(user,specialItem,specialItem.Amount))
+            {CaelumTarotService.Feedback(user,"CA_TAROT_STAR_LIMIT");return;}
             if (specialItem.InMagicBox)
             {
                 if (!user.CanMoveRawWeightFromMagicBoxToPersonal(stackWeight))

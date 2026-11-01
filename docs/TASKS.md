@@ -32,7 +32,9 @@ Sun rock containment, Star requirement, Box mass/slots and safe-release travel
 gating are implemented. The8kW adapter, owned boulder and hot-rock placement are
 implemented and native-checked. Its inventory row/release commands and the
 local contamination source/example are integrated;
-generic giant-object capture remains separate from the hazardous-rock carrier.
+Star furniture volume admission and saved safe removal are native-checked.
+Finish direct collection into the Box and audit placed storage furniture;
+non-furniture world capture remains separate from the hazardous-rock carrier.
 The confirmed per-power
 contract is consolidated in SYSTEMS; unresolved fields must still be asked.
 Only then integrate standalone modes #596-601 and issue final author scenarios.

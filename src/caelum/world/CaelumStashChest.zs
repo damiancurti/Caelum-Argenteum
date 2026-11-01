@@ -216,7 +216,8 @@ class CaelumStashChest : Actor
         vector3 original=Pos;
         double offset=user.Radius+Radius+1.0;
         vector3 destination=user.Pos+(Cos(user.Angle)*offset,Sin(user.Angle)*offset,0);
-        if(!StoragePlacementAllowed(user,destination) || !CaelumPlacementGeometry.Fits(user,destination,Radius,Height,self))return false;
+        destination=CaelumTarotStar.Point(user,destination);
+        if((!CaelumTarotStar.Dropping(user) && !StoragePlacementAllowed(user,destination)) || !CaelumPlacementGeometry.Fits(user,destination,Radius,Height,self))return false;
         bSolid=true;A_ChangeLinkFlags(0,0);SetOrigin(destination,false);
         if(!TestMobjLocation() || !user.CheckSight(self,SF_IGNOREVISIBILITY))
         {SetOrigin(original,false);HideCarriedStorage();return false;}

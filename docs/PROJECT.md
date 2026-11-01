@@ -5,6 +5,9 @@ Documentation version: **5.13.3** - 2026-10-31.
 ## 5.13.3 - Ordered Tarot foundation (#440, partial)
 
 Native order/capacity/timer/sequence foundation is implemented and checked.
+Star now checks furniture exterior volume before Box transfers and releases
+invalidated furniture through a saved, collision-checked placement queue.
+Its native two-peer/common-save checkpoint is recorded in HISTORY.
 Temperance, Tower, voted Fool sequences, borrowed racial abilities and Strength
 object lifting, Chariot movement, Death's pulse/marked-obstacle passive and
 Hierophant purification extend it. Justice pairs, safe returns, travel waits and

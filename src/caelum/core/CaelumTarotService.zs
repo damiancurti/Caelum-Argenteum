@@ -81,7 +81,7 @@ class CaelumTarotService : Object play
         }
         CaelumTarotLoadout.Toggle(record,card);
         if(card==11)CaelumTarotObjectMovement.Guard(user);
-        if(card==17)CaelumSunCargo.Guard(user);
+        if(card==17){CaelumSunCargo.Guard(user);CaelumTarotStar.Changed(user);}
         if(user.health>0)user.ApplyCharacterProfile();
         user.RefreshSocialJournalSnapshot();
         user.PersistCharacterState();
@@ -138,6 +138,7 @@ class CaelumTarotService : Object play
     static void Advance(CaelumPlayer user, int elapsedTics = 1)
     {
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
+        if(CaelumTarotStar.View(user)==null)CaelumTarotStar.Changed(user);
         let record = user.GetPersistentCharacterState(false);
         if (record == null || elapsedTics <= 0
             || (user.player != null && (user.player.cheats & CF_PREDICTING))) return;

@@ -104,7 +104,7 @@ class CaelumSunCargo : Inventory
         if(!CaelumTarotService.IsActive(record,19))return false;
         if(!CaelumTarotLoadout.Passive(record,17))
         {CaelumTarotService.Feedback(user,"CA_TAROT_SUN_STAR");return false;}
-        if(Occupied(user) || body.TarotLift!=null || CaelumTelekinesisRules.Held(body))
+        if(CaelumTarotStar.Count(user)>0 || body.TarotLift!=null || CaelumTelekinesisRules.Held(body))
         {CaelumTarotService.Feedback(user,"CA_TAROT_SUN_OCCUPIED");return false;}
         if(!user.MagicBoxOwned || !user.HasNativeMagicBoxSlotAvailable() || !user.CanAddRawWeightToMagicBox(body.PhysicalMass()))
         {CaelumTarotService.Feedback(user,"CA_TAROT_SUN_CAPACITY");return false;}

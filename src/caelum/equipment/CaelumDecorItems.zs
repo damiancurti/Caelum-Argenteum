@@ -137,8 +137,9 @@ class CaelumDecorItem : CaelumRestFurnitureItem abstract
         if(!CaelumPlayerAuthority.CanMutate(user) || Owner!=user || InMagicBox || Amount!=1)return false;
         int k=Kind();double radius=CaelumDecorData.Radius(k),height=CaelumDecorData.Height(k),facing=user.Angle;
         vector3 point=user.Pos+(Cos(user.Angle),Sin(user.Angle),0)*(user.Radius+radius+1);
-        if(CaelumDecorData.WallMounted(k)){let mount=new('CaelumDecorPlacement');if(!mount.Wall(user,Decoration,k))return false;point=mount.ResultPoint;facing=mount.ResultAngle;}
-        else if(!CaelumCampLand.AllowsFurniture(user,point,radius) || !CaelumPlacementGeometry.Fits(user,point,radius,height,Decoration))return false;
+        point=CaelumTarotStar.Point(user,point);
+        if(CaelumDecorData.WallMounted(k) && !CaelumTarotStar.Dropping(user)){let mount=new('CaelumDecorPlacement');if(!mount.Wall(user,Decoration,k))return false;point=mount.ResultPoint;facing=mount.ResultAngle;}
+        else if(!CaelumTarotStar.Land(user,point,radius) || !CaelumPlacementGeometry.Fits(user,point,radius,height,Decoration))return false;
         bool fresh=Decoration==null;
         if(fresh)Decoration=CaelumDecorBody(Actor.Spawn(CaelumDecorData.BodyClass(k),point,NO_REPLACE));
         if(Decoration==null)return false;
