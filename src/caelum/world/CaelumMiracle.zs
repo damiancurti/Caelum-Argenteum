@@ -53,10 +53,10 @@ class CaelumMiracle : Object
     {
         // Cada lanzador conserva su reloj; un área más débil nunca suma otro pulso.
         // En empates, la identidad nativa del jugador da un orden estable.
-        let it=ThinkerIterator.Create("CaelumMiracleEffect");CaelumMiracleEffect other;
-        while((other=CaelumMiracleEffect(it.Next()))!=null)
+        for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i])
         {
-            if(other==effect || !Eligible(other,body))continue;
+            let other=Status(CaelumPlayer(players[i].mo));
+            if(other==null || other==effect || !Eligible(other,body))continue;
             if(other.RecoveryRatio>effect.RecoveryRatio
                 || (other.RecoveryRatio==effect.RecoveryRatio
                     && other.Owner.PlayerNumber()<effect.Owner.PlayerNumber()))return false;
@@ -66,18 +66,32 @@ class CaelumMiracle : Object
 
     static play bool Affected(Actor body)
     {
-        let it=ThinkerIterator.Create("CaelumMiracleEffect");CaelumMiracleEffect effect;
-        while((effect=CaelumMiracleEffect(it.Next()))!=null)
-            if(Eligible(effect,body))return true;
+        for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i])
+        {let effect=Status(CaelumPlayer(players[i].mo));if(effect!=null && Eligible(effect,body))return true;}
         return false;
     }
 
     static play void Pulse(CaelumMiracleEffect effect)
     {
-        let it=ThinkerIterator.Create("Actor");Actor body;
-        while((body=Actor(it.Next()))!=null)
+        if(effect==null || effect.Owner==null)return;
+        let bodies=new('CaelumLoversRecipients');
+        let nearby=BlockThingsIterator.Create(effect.Owner,effect.Range);
+        while(nearby.Next())if(Eligible(effect,nearby.thing))bodies.Add(nearby.thing);
+        // La rejilla existente conserva cuerpos sin blockmap, incluso fuera de c?mara.
+        let world=CaelumContaminationWorld.Get();let grid=world!=null?world.ContactGrid():null;
+        if(grid!=null && grid.Heads.Size()>0)
         {
-            if(!Eligible(effect,body) || !Strongest(effect,body))continue;
+            vector3 center=effect.Owner.Pos;double radius=effect.Range;
+            int left=int(Floor((center.X-radius)/grid.CELL)),right=int(Floor((center.X+radius)/grid.CELL));
+            int low=int(Floor((center.Y-radius)/grid.CELL)),high=int(Floor((center.Y+radius)/grid.CELL));
+            for(int x=left;x<=right;x++)for(int y=low;y<=high;y++)
+                for(let row=grid.Heads[grid.Hash(x,y)];row!=null;row=row.GridNext)
+                    if(row.GridX==x && row.GridY==y && Eligible(effect,row.GridBody))bodies.Add(row.GridBody);
+        }
+        for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i] && Eligible(effect,players[i].mo))bodies.Add(players[i].mo);
+        for(int i=0;i<bodies.Bodies.Size();i++)
+        {
+            Actor body=bodies.Bodies[i];if(!Strongest(effect,body))continue;
             let user=CaelumPlayer(body);
             if(user!=null)CaelumPlayerResources.ApplyMiraclePulse(user,effect.RecoveryRatio);
             else CaelumCombatActor(body).ApplyMiraclePulse(effect.RecoveryRatio);

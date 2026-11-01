@@ -94,7 +94,7 @@ class CaelumCombatActor : Actor
         MiracleHealthRemainder+=Max(0,CombatMaximumHealth)*ratio;
         int healing=int(MiracleHealthRemainder+1e-8);
         MiracleHealthRemainder=Max(0.0,MiracleHealthRemainder-healing);
-        health=Min(CombatMaximumHealth,health+healing);
+        CaelumTarotLovers.Heal(self,healing);
         if(health>=CombatMaximumHealth)MiracleHealthRemainder=0;
         CurrentCombatLucidity=Min(CaelumConstants.MAXIMUM_LUCIDITY,
             CurrentCombatLucidity+CaelumConstants.MAXIMUM_LUCIDITY*ratio);
@@ -3008,17 +3008,27 @@ class CaelumCombatActor : Actor
     int ApplyNativeHealthDamage(Actor inflictor,Actor source,double damage,Name mod,int flags,double angle)
     {
         int retained=CaelumSealResistance.HealthDamage(self,inflictor,damage,mod);
-        if(flags & DMG_FORCED)retained=CaelumRally.ScaleDamage(self,CaelumSleepRules.ScaleDamage(self,retained));
+        if(flags & DMG_FORCED)retained=CaelumTarotLovers.Damage(self,inflictor,source,
+            CaelumRally.ScaleDamage(self,CaelumSleepRules.ScaleDamage(self,retained)),mod);
         int before=health;
         int result=Super.DamageMobj(inflictor,source,retained,mod,flags,angle);
         CaelumSleepRules.HealthLost(self,before);
         return result;
     }
 
+    void ApplyLoversDamage(Actor inflictor,Actor source,int damage,Name mod)
+    {
+        if(CaelumTarotLovers.Immune(self,damage))return;
+        int before=health;
+        Super.DamageMobj(inflictor,source,damage,mod,DMG_FORCED|DMG_NO_ARMOR|DMG_THRUSTLESS,0);
+        CaelumSleepRules.HealthLost(self,before);
+        if(health<before)UpdateCombatHealthEffects();
+    }
+
     override int TakeSpecialDamage(Actor inflictor,Actor source,int damage,Name mod)
     {
-        return CaelumRally.ScaleDamage(self,
-            CaelumSleepRules.ScaleDamage(self,Super.TakeSpecialDamage(inflictor,source,damage,mod)));
+        return CaelumTarotLovers.Damage(self,inflictor,source,CaelumRally.ScaleDamage(self,
+            CaelumSleepRules.ScaleDamage(self,Super.TakeSpecialDamage(inflictor,source,damage,mod))),mod);
     }
 
     virtual bool IsTarotDeity(){return false;}
@@ -4074,7 +4084,7 @@ class CaelumCombatActor : Actor
         {
             IdleHealthAccumulator+=CaelumContaminationNPC.HealthRate(self)/TICRATE;
             int recovered=int(IdleHealthAccumulator+0.0000001);
-            IdleHealthAccumulator=Max(0.0,IdleHealthAccumulator-recovered);health=Min(CombatMaximumHealth,health+recovered);
+            IdleHealthAccumulator=Max(0.0,IdleHealthAccumulator-recovered);CaelumTarotLovers.Heal(self,recovered);
             // El mismo esfuerzo natural depura incluso con Vida llena; se
             // conservan las condiciones y el presupuesto de recuperación NPC.
             CaelumContaminationNPC.Recover(self,recovered);

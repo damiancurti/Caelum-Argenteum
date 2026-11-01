@@ -13,7 +13,7 @@ class CaelumPlayerResources : Object play
         user.MiracleHealthRemainder+=Max(0,user.CaelumMaximumHealth)*ratio;
         int healing=int(user.MiracleHealthRemainder+1e-8);
         user.MiracleHealthRemainder=Max(0.0,user.MiracleHealthRemainder-healing);
-        user.health=Min(user.CaelumMaximumHealth,user.health+healing);
+        CaelumTarotLovers.Heal(user,healing);
         if(user.health>=user.CaelumMaximumHealth)user.MiracleHealthRemainder=0;
         user.player.health=user.health;
         user.CurrentLucidity=Min(CaelumConstants.MAXIMUM_LUCIDITY,
@@ -98,7 +98,7 @@ class CaelumPlayerResources : Object play
             case CaelumConstants.CONSUMABLE_LIFE_POTION:
             {
                 int healing = Max(1, int(user.CaelumMaximumHealth * pulseRatio + 0.5));
-                user.health = Min(user.CaelumMaximumHealth, user.health + healing);
+                CaelumTarotLovers.Heal(user,healing);
                 user.player.health = user.health;
                 // Los efectos antiguos conservan su pulso de Vida ya redondeado.
                 if(user.CaelumMaximumHealth>0)CaelumContaminationStorage.Treatment(user,
@@ -602,7 +602,7 @@ class CaelumPlayerResources : Object play
         if (wholeHealing <= 0) return;
 
         user.NaturalHealthRegenerationAccumulator -= wholeHealing;
-        user.health += Min(wholeHealing,Max(0,user.CaelumMaximumHealth-user.health));
+        CaelumTarotLovers.Heal(user,wholeHealing);
         user.player.health = user.health;
         user.CurrentHunger = Max(0.0, user.CurrentHunger - wholeHealing * hungerCostPerHealth);
         user.CurrentThirst = Max(0.0, user.CurrentThirst - wholeHealing * thirstCostPerHealth);

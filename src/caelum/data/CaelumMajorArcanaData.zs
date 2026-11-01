@@ -24,6 +24,7 @@ class CaelumMajorArcanaData : Object
     const ROOTS_REVISION=1;
     const WATER_REVISION=1;
     const JUSTICE_REVISION=1;
+    const LOVERS_REVISION=1;
     const JUSTICE_RETURN_MU=128.0;
     // Presupuesto técnico por cuerpo/tic; no altera el radio autorizado.
     const JUSTICE_SEARCH_BUDGET=8;

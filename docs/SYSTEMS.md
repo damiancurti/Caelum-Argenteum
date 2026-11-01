@@ -152,6 +152,36 @@ between floors. Candidate sectors come from local linedefs, not a map census.
 The pulse has no recurring Tick or new saved ledger; existing body/item/tile
 state persists it. Hierophant reuses the same body/item/surface pulse at zero.
 
+### Lovers active-map Health redistribution
+
+The equipped passive or active effect shares resolved Health damage; only the
+active shares healing. The union contains living players in the real cooperative
+session/team and their enlisted, present companions within4m scaled by the aura
+owner's magic range and line of sight. Nearby friendly civilians are not members.
+Only auras reaching the original receiver contribute recipients, without chaining
+from a secondary receiver. Each body occurs once, including in overlapping auras.
+Campaign-arena enemies, released/dead companions and blocked/out-of-range bodies
+are excluded; standalone-mode team adapters remain part of their later delivery.
+
+Damage enters after the original recipient's defenses and resolves secondary
+Health shares through native damage/death attribution without repeating armor,
+resistances, offensive modifiers or this distribution. Native immunity and
+mansion death protection remain intact. Healing shares the Health that the
+original source would actually restore, then applies each recipient's own cap;
+excess is lost. Anima/Air restoration, food/water costs and treatment of bodily
+contamination remain properties of their original effects. Regeneration,
+medkits, mate, support magic, resistance healing and Miracle use this boundary.
+
+Revision1 inventory state stores separate fractional damage/healing shares,
+preventing repeated small hits from rounding up per recipient. Full Health drops
+fractional excess healing; immune receivers accrue no deferred damage. No actor
+census runs for an aura: queries visit the fixed player slots and bounded actual
+companion rosters only. The affected Miracle pulse now uses local blockmap and
+the existing spatial grid for unlinked bodies; strongest-source checks use fixed
+player slots, replacing its previous global scans. Active-map native and common
+save checks are recorded in lovers-results.json. Abstract overland journey
+simulation and final author/frame-presentation acceptance remain pending.
+
 ### Justice map geometry and reversible compatibility
 
 All237 packaged UDMF maps have an appended24x24m room using owned CMST01/02
@@ -479,7 +509,7 @@ new effect's quantitative behavior.
 | 3 | The Empress (La Emperatriz) | Allows moving over and through vegetation with ease. | Grows plants from the ground that trap the target and grow spikes dealing piercing damage. | Vegetation classification and traversal; target range, root movement policy, spikes, damage and population limit. |
 | 4 | The Emperor (El Emperador) | Allows changing the allegiance of summoned beings. | Stops hostility toward the user; while active, summoned units attack the target. | Eligible summons, allegiance ownership/restoration, hostility recipients and command lifecycle. |
 | 5 | The Hierophant (El Hierofante) | Allows purifying cursed passages. | Reduces contamination in the area to zero. | Authored cursed passages; purification radius/targets, pulse versus continuous application and stored-surface coverage. |
-| 6 | The Lovers (Los Enamorados) | Allows damage to be shared among team members. | Those under the effect share damage and healing equally. | Team membership, recipient radius/consent, attribution, rounding and damage/healing redistribution timing. |
+| 6 | The Lovers (Los Enamorados) | Allows damage to be shared among team members. | Those under the effect share damage and healing equally. | Active-map group/radius/LOS, attribution, fractional persistence and single redistribution implemented; abstract journey integration remains pending. |
 | 7 | The Chariot (El Carro) | Allows breaking specific fragile objects. | Launches a chariot that pushes everything in its path. | Fragile-object allowlist; chariot geometry, velocity, range, collision, pushing and damage. |
 | 8 | Justice (La Justicia) | Allows killing immortal enemies, such as spirits. | Takes the user and target to a separate arena. | Active duel admission/return/travel implemented with native evidence; passive immortal-target allowlist remains pending. |
 | 9 | The Hermit (El Ermitaño) | Adds two Tarot equipment slots. | Doubles the effect duration of the first Tarot card activated. | Capacity known (+2); instantaneous first effects, position after first card and own-duration eligibility. |

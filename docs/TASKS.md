@@ -11,7 +11,9 @@ Priestess ground traps, Empress restraint and their departure cleanup are implem
 plant art has native front/rear evidence; equipped vegetation traversal is implemented;
 Death's contamination pulse/marked-obstacle passive and Hierophant purification
 are implemented; Justice pairs/returns/travel waits and legacy maps are checked.
-Finish remaining handlers/passives, giant/harmful objects, authored mansion
+Lovers active-map damage/healing is checked; integrate its passive in abstract
+journey simulation before claiming completion. Finish remaining handlers/passives,
+giant/harmful objects, authored mansion
 fixtures, automaton3D art/combat and input arbitration. The confirmed per-power
 contract is consolidated in SYSTEMS; unresolved fields must still be asked.
 Only then integrate standalone modes #596-601 and issue final author scenarios.

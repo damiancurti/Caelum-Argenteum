@@ -306,7 +306,7 @@ class CaelumAnchoredResident : CaelumCombatActor abstract
         int wholeHealth = int(EscortPrisonerHealthRegenAccumulator);
         if (wholeHealth <= 0) return;
         EscortPrisonerHealthRegenAccumulator -= wholeHealth;
-        health = Min(CombatMaximumHealth, health + wholeHealth);
+        CaelumTarotLovers.Heal(self,wholeHealth);
     }
 
     Actor FindEscortThreat()

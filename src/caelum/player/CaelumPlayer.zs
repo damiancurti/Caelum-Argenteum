@@ -5953,7 +5953,8 @@ class CaelumPlayer : DoomPlayer
     int ApplyNativeHealthDamage(Actor inflictor,Actor source,double preciseDamage,Name mod,int flags,double damageAngle)
     {
         int damage=CaelumSealResistance.HealthDamage(self,inflictor,preciseDamage,mod);
-        if(flags & DMG_FORCED)damage=CaelumRally.ScaleDamage(self,CaelumSleepRules.ScaleDamage(self,damage));
+        if(flags & DMG_FORCED)damage=CaelumTarotLovers.Damage(self,inflictor,source,
+            CaelumRally.ScaleDamage(self,CaelumSleepRules.ScaleDamage(self,damage)),mod);
         // Buddha2 nativo impide la rama letal incluso ante telefrag/daño forzado,
         // después de las defensas. La bandera existe sólo durante esta llamada.
         bool protect=health>0 && damage>0 && CaelumTutorialSafety.Protects(self);
@@ -5967,11 +5968,31 @@ class CaelumPlayer : DoomPlayer
         return protect ? Max(0,Min(result,before-health)) : result;
     }
 
+    // El reparto ya resolvi? defensas, escalas y aura. Conservar muerte/atribuci?n
+    // nativas sin repetir armadura, efectos ofensivos ni el propio reparto.
+    void ApplyLoversDamage(Actor inflictor,Actor source,int damage,Name mod)
+    {
+        if(CaelumTarotLovers.Immune(self,damage))return;
+        int before=health;
+        bool introduced=CaelumTutorialSafety.Protects(self) && !(player.cheats&CF_BUDDHA2);
+        if(introduced)player.cheats|=CF_BUDDHA2;
+        Super.DamageMobj(inflictor,source,damage,mod,DMG_FORCED|DMG_NO_ARMOR|DMG_THRUSTLESS,0);
+        if(introduced)player.cheats&=~CF_BUDDHA2;
+        CaelumSleepRules.HealthLost(self,before);
+        if(health<before)
+        {
+            if(!CaelumToughnessRules.IsSustained(mod))CaelumRestSafety.Interrupt(self,"CA_REST_DAMAGE");
+            if(mod!='CaelumDiseaseDOT')CaelumHygienePose.Cancel(self);
+            CaelumDamageFeedback.Record(self,inflictor,mod,Max(0,before)-Max(0,health));
+            UpdateHealthStateEffects();
+        }
+    }
+
     override int TakeSpecialDamage(Actor inflictor,Actor source,int damage,Name mod)
     {
         // Tras las defensas propias y los factores nativos; antes de perder HP.
-        return CaelumRally.ScaleDamage(self,
-            CaelumSleepRules.ScaleDamage(self,Super.TakeSpecialDamage(inflictor,source,damage,mod)));
+        return CaelumTarotLovers.Damage(self,inflictor,source,CaelumRally.ScaleDamage(self,
+            CaelumSleepRules.ScaleDamage(self,Super.TakeSpecialDamage(inflictor,source,damage,mod))),mod);
     }
 
     override int DamageMobj(Actor inflictor,Actor source,int damage,Name mod,int flags,double angle)

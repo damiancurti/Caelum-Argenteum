@@ -102,7 +102,7 @@ class CaelumSupportMagic : Object play
     static void Heal(Actor body,int amount)
     {
         if(body==null || body.health<=0 || amount<=0)return;
-        body.health=Min(MaximumHealth(body),body.health+amount);
+        CaelumTarotLovers.Heal(body,amount);
         let user=CaelumPlayer(body);let npc=CaelumCombatActor(body);
         if(user!=null){user.player.health=body.health;user.UpdateHealthStateEffects();}
         else if(npc!=null)npc.UpdateCombatHealthEffects();

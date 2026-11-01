@@ -272,7 +272,7 @@ class CaelumElementalStatus : Object
         if(owner==null || owner.health<=0 || amount<=0)return;
         let user=CaelumPlayer(owner);let npc=CaelumCombatActor(owner);
         int maximum=user!=null ? user.CaelumMaximumHealth : npc!=null ? npc.CombatMaximumHealth : owner.GetMaxHealth();
-        owner.health=Min(maximum,owner.health+amount);
+        CaelumTarotLovers.Heal(owner,amount);
         if(user!=null){user.player.health=user.health;user.UpdateHealthStateEffects();}
         else if(npc!=null)npc.UpdateCombatHealthEffects();
     }

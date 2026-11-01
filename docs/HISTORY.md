@@ -198,6 +198,18 @@ the existing unlinked spatial grid and fixed player slots, with bounded fallback
 work. Internal screenshots do not establish native menu rendering; final author
 UI and frame-presentation checks remain deferred. No V5.13 completion is claimed.
 
+Lovers active-map integration passed29 initial and five common-save assertions
+per native client on2026-11-01. Both exact final-package runs preserve one-time
+post-defense damage, cooperative companions, overlapping unions, range/occlusion,
+native immunity, capped healing and persistent fractional shares. Real medkit,
+support and Miracle healing use the same boundary. The affected Miracle pulse
+now reaches unlinked actors through the existing local grid and resolves source
+precedence through fixed player slots, without global actor scans. All18,027
+members match source. The initial compiler rejected the reserved identifier
+`Protected`; the corrected `Immune` method and all retained failures are documented
+in lovers-results.json. Abstract overland sharing, final author acceptance and
+frame-presentation checks remain pending; this is not completion of #440.
+
 ## 5.13.2 - Reversible equipment awakening (#442)
 
 Author-approved +25% damage/defense and half wear are implemented on the exact
