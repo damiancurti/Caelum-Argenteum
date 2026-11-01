@@ -25,7 +25,7 @@ Its stone false wall has front/rear native evidence and an idempotent visual mig
 The display room now includes the existing espinillo as Death's marked obstacle.
 Emperor integrates local pacification, reversible summon control and shared
 effect clocks. Moon copies appearances/equipment/resources into temporary combat
-illusions with safe swaps and no loot; remaining powers are tracked in TASKS.
+illusions with safe swaps and no loot; all22 handlers now have focused evidence.
 Sun containment now preserves one rock identity, requires Star, accounts for
 Box mass/slots and delays travel until a collision-safe release succeeds.
 Annex revision6 places the8kW and environmental-contamination rocks, using the
@@ -34,8 +34,10 @@ The contained rock has a native inventory row and safe release actions; empty
 metadata is hidden after release. Native checks remain distinct from author acceptance.
 Judgement's local instantaneous pulse uses those control/illusion adapters;
 the approved demonstration spirit now exposes its equipped hearing/damage
-passives. Remaining display content still needs completion.
-SYSTEMS distinguishes these handlers from the remaining powers and map targets.
+passives. All approved annex examples are placed and the integrated native
+sequence/recovery/annex regression passed118 assertions. SYSTEMS maps the22
+handlers to source/evidence. ETW capture remains denied; presentation and final
+author review are pending.
 #439/441/442 have separate draft PRs605/606/607; #440 is draft PR608, in progress;
 standalone modes #596-601 remain last. No full V5.13 acceptance is claimed.
 

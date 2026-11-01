@@ -40,8 +40,9 @@ and bounded safe release. Its two rock examples reuse the owned boulder:8kW
 through the thermal system, or environmental contamination100 within4m/LOS.
 Containment suppresses their emissions without cleaning existing contamination. The
 contained original also appears in the inventory with its raw mass and release
-status. Use, Box and Drop request the same safe release. Generic giant-object
-integration remains unfinished.
+status. Use, Box and Drop request the same safe release. Star also applies to
+supported furniture cargo, preserving original contents and documented volume;
+it does not make arbitrary fixed scenery portable.
 For existing saves, `build_dev.ps1 -LegacyTarotMaps` preserves pre-Justice maps;
 `-LegacyTarotExamples` preserves the Justice-era mansion before the annex.
 Justice now supports simultaneous pairs, safe returns and cancellable travel waits,
@@ -51,8 +52,10 @@ The automaton now uses its owned 3D model in native combat: one controlled body 
 caster, timed commands, inseparable equipment and persistent Health. Its control
 ends before travel; body destruction remains possible.
 Accelerated waiting advances existing Tarot world effects once per shared step.
-Remaining Major targets/effects and standalone modes
-#596-601 are unfinished. #441 capture/unified power and #442 equipment awakening
+All22 Major handlers and their approved examples are integrated; combined native
+sequence/recovery/annex regression passed118 assertions on the final package.
+Frame-presentation review remains pending after Windows denied ETW access.
+Standalone modes #596-601 remain unfinished. #441 capture/unified power and #442 equipment awakening
 have separate tested PRs. Author scenarios remain deferred until all work is ready.
 
 The 5.12.7a correction (#602) lets valid mansion spirits confirm and restore

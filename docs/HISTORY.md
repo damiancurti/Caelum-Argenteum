@@ -4,6 +4,20 @@ Documentation version: **5.13.3** - 2026-10-31.
 
 ## 5.13.3 - Ordered Tarot foundation (#440, implementation checkpoint)
 
+Integrated audit checkpoint (2026-11-01): all22 Major rows now map to their
+source and focused evidence in SYSTEMS. No gameplay changed in this checkpoint.
+The exact `lovers-journey/r4` package passed118 assertions in native two-client
+runs32467/32468/32470: ordered sequence/payment including World and lethal Devil,
+common-save recovery, and real mansion annex portals/water/light/door safety.
+Evidence: `assets/validation_v5_13_3/major-regression-results.json`.
+The snapshot shows the actual dry room and synchronized peer state; it is not
+a whole-annex visual acceptance claim. Focused earlier reports remain intact.
+Routine queries are local/typed; World has78 IDs and creations have per-caster
+limits. ETW access is still denied, so presentation review remains outstanding.
+Standalone #597-601 follow this integrated implementation; author tests stay
+deferred until the full version is ready. No issue was closed or merged.
+
+
 Lovers journey checkpoint (2026-11-01): equipped damage sharing now participates
 in isolated solo/cooperative journey projections. Players advance on a common
 thermal/supply cursor; following companions receive their share without changing

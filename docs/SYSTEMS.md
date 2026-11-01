@@ -24,8 +24,10 @@ own mass and restoring content weight when its timer expires.
 World dispatches acquired unequipped cards once in ascending ID order, without
 recursion, another charge or passive equipment. The author explicitly allows
 World to activate essences bound to equipment; the binding remains intact.
-This dispatch currently runs only implemented effect handlers. Remaining Major
-handlers, map targets and active input arbitration still need integration; this checkpoint is not completion of #440.
+All22 Major handlers and their approved example targets are integrated.
+The shared Tarot key resolves clone swap, Sun capture, automaton command and
+then the chosen Hanged Man ability. The current implementation matrix below
+links every row to its focused evidence; author and presentation review remain pending.
 
 Loadout revision1 preserves old ownership/selection and paid durations. Profile
 recalculation does not accumulate capacity. New loops are bounded by the78-card
@@ -720,9 +722,10 @@ author scenarios wait for all V5.13 work; no author acceptance is claimed.
 
 ## V5.13 authored Tarot contract and implementation audit (#439)
 
-Status: specification checkpoint on 2026-10-31, baseline `4cbcf60fd` (5.12.7a).
-This section records approved design and explicit open fields. It does not claim
-that the remaining powers or the V5.13 finale are implemented. The issue's
+Specification baseline:2026-10-31, `4cbcf60fd` (5.12.7a). Implementation matrix
+updated2026-11-01 for #440. Approved definitions remain intact; quantitative
+follow-ups and lifecycle rules are consolidated in the current sections above.
+The standalone V5.13 finale and final author acceptance remain outstanding. The issue's
 2026-11-01 UTC decision label corresponds to the author's 2026-10-31 local date.
 
 ### Delivery order and shared ownership
@@ -750,8 +753,8 @@ slots, additively (+4 together) above the existing base of 3. Star and Sun each
 grant +10 Magic Box slots (+20 together). The author approved rejecting
 deselection when ordinary contents/selected cards would exceed the resulting
 capacity; free space first. Star's explicitly approved giant-object drop remains
-an exception, not permission to discard ordinary contents. Whether a capacity
-card can fill its own newly granted slot is still awaiting the author's reply.
+an exception, not permission to discard ordinary contents. The author approved
+a capacity card filling its own newly granted slot in the same equip operation.
 
 Devil bypass pays health only, twice the applicable normal Anima cost, and may
 kill the user. Strength's x10 affects object movement, not combat attributes.
@@ -759,39 +762,41 @@ A giant object's volume is at least twice the user's; Star supports only one
 and drops it on unequip. Sun's captured harmful object drops when its active
 ends, preserving exact identity. World activates unequipped Major and Minor
 effects, skips invalid targets and does not equip their passives. Its internal
-ordering, ownership, nested activation and target rules remain open.
+ordering is ascending acquired ID, with one shared target, no recursion and
+no second payment; equipment-bound essences remain eligible by author decision.
 
 ### All 22 approved rows
 
-The two ability columns are the author's definitions in #439. The last column
-separates integration work from fields still requiring decisions. Existing shared
-cost/timer constants are audited below; they are not assumed to settle every
-new effect's quantitative behavior.
+The two ability columns preserve the author's definitions in #439. The final
+column maps the integrated behavior to source and focused evidence under
+`assets/validation_v5_13_3/`; each named stem denotes its `-results.json`.
+These are engineering checks, not author acceptance. The historical baseline
+following the table is retained as migration context.
 
-| ID | Major | Equipped passive | Active | Audit / unresolved fields |
+| ID | Major | Equipped passive | Active | Implementation / focused evidence |
 | --- | --- | --- | --- | --- |
-| 0 | The Fool (El Loco) | Allows returning from Limbo. | Transports the entire player group to Limbo when at least one player is dead; requires agreement of the living players. | Implemented #440 consent snapshot, origin-map sequence, living-only outbound vote and equipped return gate; isolated validation below. |
-| 1 | The Magician (El Mago) | Allows awakening automatons using Anima. | Awakens an automaton or orders it to attack a target. | Automaton types, activation/command targets, awakening Anima payment and control lifecycle. |
-| 2 | The High Priestess (La Sacerdotisa) | Allows identifying false walls. | Places an explosive trap. | Authored false-wall markers; trap placement, trigger eligibility, damage, radius, lifetime and count. |
-| 3 | The Empress (La Emperatriz) | Allows moving over and through vegetation with ease. | Grows plants from the ground that trap the target and grow spikes dealing piercing damage. | Vegetation classification and traversal; target range, root movement policy, spikes, damage and population limit. |
-| 4 | The Emperor (El Emperador) | Allows changing the allegiance of summoned beings. | Stops hostility toward the user; while active, summoned units attack the target. | Eligible summons, allegiance ownership/restoration, hostility recipients and command lifecycle. |
-| 5 | The Hierophant (El Hierofante) | Allows purifying cursed passages. | Reduces contamination in the area to zero. | Authored cursed passages; purification radius/targets, pulse versus continuous application and stored-surface coverage. |
-| 6 | The Lovers (Los Enamorados) | Allows damage to be shared among team members. | Those under the effect share damage and healing equally. | Active-map group/radius/LOS, attribution, fractional persistence and single redistribution implemented; coupled abstract-journey damage also integrated. |
-| 7 | The Chariot (El Carro) | Allows breaking specific fragile objects. | Launches a chariot that pushes everything in its path. | Fragile-object allowlist; chariot geometry, velocity, range, collision, pushing and damage. |
-| 8 | Justice (La Justicia) | Allows killing immortal enemies, such as spirits. | Takes the user and target to a separate arena. | Active duel admission/return/travel implemented with native evidence; passive admits only the explicit Tarot spirit actor family. |
-| 9 | The Hermit (El Ermitaño) | Adds two Tarot equipment slots. | Doubles the effect duration of the first Tarot card activated. | Capacity known (+2); instantaneous first effects, position after first card and own-duration eligibility. |
-| 10 | Wheel of Fortune (La Rueda de la Fortuna) | Allows altering rooms. | Alternates the conditions of a special room: flooded/dry, lit/dark, active/inactive. Each state opens a different route and closes another. | Authored special rooms, state cycles, route changes and safe/persistent occupation. |
-| 11 | Strength (La Fuerza) | Allows lifting heavy objects using Strength. | Multiplies Strength by ten for object-movement calculations. | Object eligibility, lifting/movement interaction and application of x10 to object movement only. |
-| 12 | The Hanged Man (El Colgado) | Allows using abilities of another race; choose that race when equipping the card. | While active, the Tarot control toggles the racial ability on/off. | Selectable races, chosen-race persistence, racial ability prerequisites/costs and shared-control lifecycle. |
-| 13 | Death (La Muerte) | Allows contamination to destroy a target. | Contaminates an area. | Area/targets, contamination amount, pulse/timing and destruction threshold/eligibility. |
-| 14 | Temperance (La Templanza) | Allows resisting status effects. | Cleanses status effects and resists them while active. | Covered statuses, cleansing semantics, passive resistance magnitude and active resistance magnitude. |
-| 15 | The Devil (El Diablo) | Adds two Tarot equipment slots. | Allows activating Tarot during its cooldown by paying health only, equal to twice the normal Anima cost. This payment can kill the user. | Capacity and payment ratio known; lethal payment sequence outcome and repeated bypass timing. |
-| 16 | The Tower (La Torre) | Allows destroying siege weapons. | Destroys one siege weapon. | Eligible siege machines, targeting/range and operator/quest protection. |
-| 17 | The Star (La Estrella) | Adds ten Magic Box slots and allows storing one giant object. An object is giant when its volume is at least twice the user's volume. | All objects inside the Magic Box weigh zero for the effect's duration. | Capacity (+10), one >=2x-volume giant and zero contents mass known; volume representation and safe giant drop. |
-| 18 | The Moon (La Luna) | Allows swapping places with clones. | Creates clones of the player. | Clone count/geometry, behavior, damage, lifetime, swap targeting and safe placement. |
-| 19 | The Sun (El Sol) | Adds ten Magic Box slots and prevents damage from objects inside the Box. | Captures one harmful object while the effect is active; it is automatically dropped when the effect ends. | Capacity (+10), stored-object damage prevention and one temporary capture known; eligible harmful objects, capture/drop behavior. |
-| 20 | Judgement (El Juicio) | Allows talking to spirits. | Breaks mind control and illusions within the area. | Explicit spirit conversation and local control/illusion cleanup implemented; ordinary NPCs retain their rules. |
-| 21 | The World (El Mundo) | Allows activating the unified Tarot essence. | Activates the effects of all unequipped Arcana, both Major and Minor; skips invalid targets. | Unified essence damages deities (author clarification); formed by all 78; activation defined in #441 above. Active needs internal order, ownership, target selection and recursion/cost rules. |
+| 0 | The Fool (El Loco) | Allows returning from Limbo. | Transports the entire player group to Limbo when at least one player is dead; requires agreement of the living players. | `CaelumFoolJourney`; `fool`. Living-player consent; origin sequence and equipped return gate. |
+| 1 | The Magician (El Mago) | Allows awakening automatons using Anima. | Awakens an automaton or orders it to attack a target. | `CaelumTarotAutomaton`; `automaton`. One persistent automaton, native commands, expiry/departure and inseparable equipment. |
+| 2 | The High Priestess (La Sacerdotisa) | Allows identifying false walls. | Places an explosive trap. | `CaelumTarotPassage / CaelumTarotMine`; `priestess`. Marked false walls and one bounded trap per caster. |
+| 3 | The Empress (La Emperatriz) | Allows moving over and through vegetation with ease. | Grows plants from the ground that trap the target and grow spikes dealing piercing damage. | `CaelumTarotRoots / CaelumPlayerCharacter`; `empress`. Vegetation traversal and timed restraint with piercing damage. |
+| 4 | The Emperor (El Emperador) | Allows changing the allegiance of summoned beings. | Stops hostility toward the user; while active, summoned units attack the target. | `CaelumTarotEmperor`; `emperor`. Local pacification and last-cast summon control; original allegiance restored. |
+| 5 | The Hierophant (El Hierofante) | Allows purifying cursed passages. | Reduces contamination in the area to zero. | `CaelumTarotPassage / CaelumTarotContamination`; `hierophant`. Marked passages; local purification with complete-water-volume containment. |
+| 6 | The Lovers (Los Enamorados) | Allows damage to be shared among team members. | Those under the effect share damage and healing equally. | `CaelumTarotLovers / CaelumLoversJourney`; `lovers-journey`. Unique recipients, saved fractions, active-map healing and coupled journey damage. |
+| 7 | The Chariot (El Carro) | Allows breaking specific fragile objects. | Launches a chariot that pushes everything in its path. | `CaelumTarotChariot / CaelumTarotFragileObstacle`; `chariot`. Authored fragile targets, one impulse per actor and bounded cart movement. |
+| 8 | Justice (La Justicia) | Allows killing immortal enemies, such as spirits. | Takes the user and target to a separate arena. | `CaelumTarotJustice / CaelumTarotSpirit`; `justice-runtime`. Shared arenas, independent pairs, safe return/travel and explicit immortal spirits. |
+| 9 | The Hermit (El Ermitaño) | Adds two Tarot equipment slots. | Doubles the effect duration of the first Tarot card activated. | `CaelumTarotLoadout / CaelumTarotSequence`; `major-regression`. Additive capacity; first duration doubled without repeating instantaneous effects. |
+| 10 | Wheel of Fortune (La Rueda de la Fortuna) | Allows altering rooms. | Alternates the conditions of a special room: flooded/dry, lit/dark, active/inactive. Each state opens a different route and closes another. | `CaelumTarotExamples`; `example-runtime`. Persistent dry/wet room, real routes and safe occupied-door rejection. |
+| 11 | Strength (La Fuerza) | Allows lifting heavy objects using Strength. | Multiplies Strength by ten for object-movement calculations. | `CaelumTarotObjectMovement`; `strength`. Movable scenery only; real carried mass and movement-only Strength multiplier. |
+| 12 | The Hanged Man (El Colgado) | Allows using abilities of another race; choose that race when equipping the card. | While active, the Tarot control toggles the racial ability on/off. | `CaelumHangedMan`; `hanged`. Saved other-race choice, existing ability costs and shared-key arbitration. |
+| 13 | Death (La Muerte) | Allows contamination to destroy a target. | Contaminates an area. | `CaelumTarotLivingObstacle / CaelumTarotContamination`; `contamination`. Marked living obstacles and bounded contamination pulse. |
+| 14 | Temperance (La Templanza) | Allows resisting status effects. | Cleanses status effects and resists them while active. | `CaelumTemperance`; `temperance`. Authored temporary statuses only, passive duration and active cleanse/immunity. |
+| 15 | The Devil (El Diablo) | Adds two Tarot equipment slots. | Allows activating Tarot during its cooldown by paying health only, equal to twice the normal Anima cost. This payment can kill the user. | `CaelumTarotLoadout / CaelumTarotSequence`; `major-regression`. Additive capacity, lethal Health bypass and continuation of paid sequence. |
+| 16 | The Tower (La Torre) | Allows destroying siege weapons. | Destroys one siege weapon. | `CaelumMajorTargets`; `tower`. Explicit siege-machine destruction without destroying living operators. |
+| 17 | The Star (La Estrella) | Adds ten Magic Box slots and allows storing one giant object. An object is giant when its volume is at least twice the user's volume. | All objects inside the Magic Box weigh zero for the effect's duration. | `CaelumTarotStar / CaelumStarCargo`; `star-collection`. Documented furniture volumes, one giant, direct collection and safe saved release. |
+| 18 | The Moon (La Luna) | Allows swapping places with clones. | Creates clones of the player. | `CaelumTarotMoon`; `moon`. Two combat clones with private resources, no loot and safe swaps. |
+| 19 | The Sun (El Sol) | Adds ten Magic Box slots and prevents damage from objects inside the Box. | Captures one harmful object while the effect is active; it is automatically dropped when the effect ends. | `CaelumTarotSun / CaelumSunCargo`; `sun-inventory`. Original hazardous rocks, suppressed emissions, Box accounting and safe origin release. |
+| 20 | Judgement (El Juicio) | Allows talking to spirits. | Breaks mind control and illusions within the area. | `CaelumTarotJudgement / CaelumTarotSpirit`; `judgement`. Local recognized control/illusion dispel and bilingual spirit dialogue. |
+| 21 | The World (El Mundo) | Allows activating the unified Tarot essence. | Activates the effects of all unequipped Arcana, both Major and Minor; skips invalid targets. | `CaelumTarotSequence / CaelumUnifiedTarot`; `major-regression`. One ascending-ID fanout including bound essences; unified power remains #441. |
 
 ### Pre-5.13 runtime and migration audit (historical baseline)
 
@@ -839,12 +844,15 @@ supersede its statements about unsupported powers, voting and selection order.
 
 ### Evidence and outstanding work
 
-Static audit only: the source entry points, 22 IDs and current capture/activation
-contracts above were inspected against baseline 5.12.7a. This checkpoint changes
-documentation only, so it introduces no native gameplay or manual acceptance
-claim. Outstanding design fields are the last table column and the explicit
-questions above; #440-442 cannot treat those fields as defaults. Final V5.13
-manual scenarios will be supplied together when implementation is complete.
+The original #439 audit was documentation-only. #440 now supplies all22
+handlers, approved targets and saved lifecycle adapters. Integrated regression
+on the final package passed118 assertions across two native clients: sequence
+ordering/capacity/payment, common-save recovery and the actual mansion apparatus.
+Focused reports retain their own exact package hashes and limits. No global
+per-tic search was introduced; World iterates78 IDs, creation counts are bounded,
+and area powers use local queries or typed registries. ETW presentation capture
+was denied by Windows; frame-time review and author acceptance remain pending.
+Final V5.13 manual scenarios will be supplied together after #597-601.
 The author selected the four mansion residents' existing profiles/equipment as
 the standalone presets for #597; match-local progress never changes campaign data.
 

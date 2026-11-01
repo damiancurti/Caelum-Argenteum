@@ -2,48 +2,21 @@
 
 Documentation version: **5.13.3** - 2026-10-31.
 
-## 5.13.3 - Continue Major handlers (#440)
+## 5.13.3 - Integrated Major handlers (#440)
 
-Order, capacities, individual timers, Hermit, Devil payment, Star weight and
-World dispatch, Temperance, Tower, Fool, Hanged Man and Strength have isolated evidence;
-Chariot movement/contact and its owned-model adaptation have isolated evidence;
-Priestess ground traps, Empress restraint and their departure cleanup are implemented;
-plant art has native front/rear evidence; equipped vegetation traversal is implemented;
-Death's contamination pulse/marked-obstacle passive and Hierophant purification
-are implemented; authored passage passives are implemented. Justice pairs/returns/travel
-waits and legacy maps are checked.
-Lovers active-map damage/healing and coupled abstract-journey damage are implemented;
-thermal parity, common-time death and saved fractions have isolated evidence.
-Finish the combined handler/passive audit,
-giant/harmful objects and display-room examples on the appended annex geometry,
-the remaining input integration. The demonstration spirit now exposes equipped
-Justice/Judgement with native dialogue recovery evidence. Automaton
-combat/control now uses inseparable equipment, actual displacement animation
-and the shared clock; two-peer and common-save evidence is recorded. Existing world-effect
-clocks also follow shared accelerated steps; add future creations to that bounded
-owner index. Annex access, passage examples and Wheel state changes are checked.
-Stone-wall presentation and saved orientation are checked; final author review waits.
-The marked living-obstacle example is placed; finish the remaining display objects.
-Emperor pacification, control arbitration and departure restoration are implemented;
-Moon clones, independent resources and equipped swaps are implemented;
-these native checkpoints do not complete the remaining Major handlers.
-Judgement's local dispel and the explicit demonstration-spirit interaction are
-implemented; their native evidence is separate from final author acceptance.
-Sun rock containment, Star requirement, Box mass/slots and safe-release travel
-gating are implemented. The8kW adapter, owned boulder and hot-rock placement are
-implemented and native-checked. Its inventory row/release commands and the
-local contamination source/example are integrated;
-Star furniture volume admission and saved safe removal are native-checked.
-Direct furniture collection and placed wardrobe/cupboard/bookcase cargo now
-share the admission rule, preserve contents and support collision-safe Drop;
-two-peer capture/recovery and revision1 queue migration are checked.
-Non-furniture world capture remains separate from the hazardous-rock carrier.
-The confirmed per-power
-contract is consolidated in SYSTEMS; unresolved fields must still be asked.
-Only then integrate standalone modes #596-601 and issue final author scenarios.
-PresentMon availability probe on2026-11-01 was denied ETW access (exit6);
-frame-presentation capture needs the Windows privilege prompt when the author
-returns. No FPS claim follows from native functional checks.
+All22 Major handlers, approved annex targets, saved lifecycle adapters and shared
+key arbitration are implemented. SYSTEMS contains the source/evidence matrix;
+HISTORY records focused failures and corrections. Final-package native regression
+passed118 assertions across two clients for sequence/payment, common-save recovery
+and actual mansion portals/Wheel mechanisms. Star includes furniture and original
+storage contents; Lovers includes coupled abstract journeys. Arbitrary scenery
+does not gain a new capture capability.
+
+Continue standalone #597-601 in separate branches/PRs. The final author suite
+remains deferred until the whole version is ready. Complete frame-presentation
+review when Windows permits ETW: the2026-11-01 availability probe failed with
+access denied/exit6. Native functional checks do not establish FPS. Keep all
+unaccepted issue PRs open; no manual acceptance is inferred.
 
 ## 5.13.2 - Reversible equipment awakening (#442)
 
