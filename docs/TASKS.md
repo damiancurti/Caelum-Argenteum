@@ -10,8 +10,8 @@ Chariot movement/contact and its owned-model adaptation have isolated evidence;
 Priestess ground traps, Empress restraint and their departure cleanup are implemented;
 plant art has native front/rear evidence; equipped vegetation traversal is implemented;
 Death's contamination pulse/marked-obstacle passive and Hierophant purification
-are implemented; Justice geometry/legacy packages are prepared. Finish duel/return
-logic, remaining handlers/passives, giant/harmful objects, authored mansion
+are implemented; Justice pairs/returns/travel waits and legacy maps are checked.
+Finish remaining handlers/passives, giant/harmful objects, authored mansion
 fixtures, automaton3D art/combat and input arbitration. The confirmed per-power
 contract is consolidated in SYSTEMS; unresolved fields must still be asked.
 Only then integrate standalone modes #596-601 and issue final author scenarios.

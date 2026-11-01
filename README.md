@@ -18,8 +18,8 @@ implementation checkpoint; Chariot reuses the original cart at its approved widt
 and Empress plants have native visual evidence using owned vegetation materials.
 Its equipped passive also enables individual vegetation traversal.
 Death's equipped passive destroys explicitly marked living obstacles through Use.
-Justice arena geometry and an explicit legacy-map package are prepared; the
-duel/return handler is still pending.
+Justice now supports simultaneous pairs, safe returns and cancellable travel waits,
+with an explicit legacy-map package for prior saves.
 Remaining Major targets/effects and standalone modes
 #596-601 are unfinished. #441 capture/unified power and #442 equipment awakening
 have separate tested PRs. Author scenarios remain deferred until all work is ready.

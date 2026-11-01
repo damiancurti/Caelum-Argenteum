@@ -268,7 +268,13 @@ class CaelumFoolTravel : Object play
             let user=vote.Members[i];let visit=CaelumFoolJourney.Get(user);
             visit.Revision=1;visit.Returning=vote.Kind==CaelumCooperativeTravel.LIMBO_RETURN;
             if(!visit.Returning)
-            {visit.Active=true;visit.OriginMap=level.MapName;visit.OriginPosition=user.Pos;visit.OriginAngle=user.Angle;}
+            {
+                visit.Active=true;visit.OriginMap=level.MapName;visit.OriginPosition=user.Pos;visit.OriginAngle=user.Angle;
+                let link=CaelumJusticeLink.View(user);
+                if(link!=null && link.Duel!=null)
+                    for(int side=0;side<2;side++)if(link.Duel.Bodies[side]==user)
+                    {visit.OriginPosition=link.Duel.Origins[side];visit.OriginAngle=link.Duel.Angles[side];}
+            }
             CaelumTransportTrip.CloseActivities(user);user.PersistCharacterState();
         }
         return true;

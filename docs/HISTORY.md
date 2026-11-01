@@ -185,6 +185,19 @@ travel, rendering-performance or author acceptance. The author approved safe
 returns within4m and ending duels/returning survivors before map travel; blocked
 returns must defer travel while still allowing cancellation.
 
+Justice runtime then passed24 pair/return checks,16 cooperative-travel checks
+and14 combined Fool/pending-input checks per native client, followed by5/2/3
+respective common-save checks. Both clients preserve independent deadlines,
+blocked returns, native/unlinked collision, cancellation and safe pre-unload
+placement. A Fool sequence that creates Justice records the original campaign
+position and charges once. All18,026 final package members match source;
+justice-runtime-results.json records128 assertions across six runs. Source
+revision1 stores exact bodies/origins/timers/search progress; legacy maps reject
+arena admission without rewriting old saves. Searches use native local collision,
+the existing unlinked spatial grid and fixed player slots, with bounded fallback
+work. Internal screenshots do not establish native menu rendering; final author
+UI and frame-presentation checks remain deferred. No V5.13 completion is claimed.
+
 ## 5.13.2 - Reversible equipment awakening (#442)
 
 Author-approved +25% damage/defense and half wear are implemented on the exact

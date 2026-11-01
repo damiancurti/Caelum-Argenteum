@@ -207,6 +207,7 @@ class CaelumHousePortal : Actor
         if(user==null || user.player==null || user.health<=0 || !user.CharacterCreationComplete
             || !CaelumUseGeometry.AimedAt(user,self))return false;
         // Sólo el ACK de la captura vigente puede confirmar este viaje.
+        if(CaelumJusticeTransit.Defer(user,CaelumJusticeTransit.HOUSE,self))return true;
         user.PendingTravelWipe=CaelumConstants.TRAVEL_WIPE_HOUSE_DOOR;
         CaelumDeadTraveler.ChangeMap(DestinationMap(),
             args[1]==0?0:args[0]+1,CHANGELEVEL_NOINTERMISSION);

@@ -4,7 +4,7 @@ Documentation version: **5.13.3** - 2026-10-31.
 
 **V5.13:** PR605/606/607 cover #439/441/442; PR608 covers #440.
 Order/capacity/timers/Temperance/Tower/Fool/Hanged Man/Strength/Chariot/Priestess trap/Empress restraint implemented;
-Empress/Death/Hierophant tested; Justice geometry/compatibility prepared; duel handler next.
+Empress/Death/Hierophant/Justice tested; remaining Major handlers next.
 #596-601 last. Author suite deferred.
 Rules: SYSTEMS; evidence: validation_v5_13_1/2/3.
 

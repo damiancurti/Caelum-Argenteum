@@ -234,3 +234,4 @@ ListMenu "CaelumCooperativeTravelMenu"
 
 ListMenu "CaelumArenaMenu" { Class "CaelumArenaMenu" }
 ListMenu "CaelumTarotRaceMenu" { Class "CaelumTarotRaceMenu" }
+ListMenu "CaelumJusticeTravelMenu" { Class "CaelumJusticeTravelMenu" }

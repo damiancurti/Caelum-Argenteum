@@ -1,7 +1,11 @@
 [enu default]
+CA_JUSTICE_UNAVAILABLE = "Justice needs a free arena and a visible living target who is not already duelling.";
+CA_JUSTICE_RETURN_WAIT = "Justice is returning the survivors. A return point is blocked; travel will wait. You can still cancel travel.";
 CA_TAROT_CONTAMINATION_TARGET = "Death needs a visible target within range.";
 CA_TAROT_ROOTS_TARGET = "The Empress needs a visible living target within range.";
 [es]
+CA_JUSTICE_UNAVAILABLE = "Justicia necesita una arena disponible y un objetivo vivo y visible que no esté ya en duelo.";
+CA_JUSTICE_RETURN_WAIT = "Justicia está devolviendo a los supervivientes. Un punto de regreso está bloqueado; el viaje esperará. Aún puedes cancelar el viaje.";
 CA_TAROT_CONTAMINATION_TARGET = "La Muerte necesita un objetivo visible dentro de su alcance.";
 CA_TAROT_ROOTS_TARGET = "La Emperatriz necesita un objetivo vivo y visible dentro de su alcance.";
 [enu default]

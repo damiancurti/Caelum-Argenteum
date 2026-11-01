@@ -16,6 +16,8 @@ class CaelumTarotSequence : Object play
         {if(report)CaelumTarotService.Feedback(user,"CA_TAROT_MINE_GROUND");return;}
         if(card==3 && !CaelumTarotRoots.Place(user,aimed,duration,ground))
         {if(report)CaelumTarotService.Feedback(user,"CA_TAROT_ROOTS_TARGET");return;}
+        if(card==8 && !CaelumTarotJustice.Start(user,aimed,duration))
+        {if(report)CaelumTarotService.Feedback(user,"CA_JUSTICE_UNAVAILABLE");return;}
         if(card==CaelumHangedMan.CARD && !CaelumHangedMan.Prepare(user,record))return;
         if(card==14)CaelumTemperance.Cleanse(user);
         if(card==5)CaelumTarotContamination.Hierophant(user,ground);

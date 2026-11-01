@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `2762260dd9cc928d758dd9d6abf3987291cc6dde230b50614e9009be2cbcd8ed`. Locations include every definition; the last one per language wins.
+SHA-256: `d734fc26229b72ca6f1d31719e62bdc8d5977db51e70f9417c116295e70b9e1e`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -109,6 +109,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_INTRO | 9 | CA_INTRO_AWAKENING | CA_INTRO_WELCOME |
 | CA_JOURNAL | 44 | CA_JOURNAL_CHARACTER | CA_JOURNAL_WORLD_PENDING |
 | CA_JOURNEY | 36 | CA_JOURNEY_ARRIVED | CA_JOURNEY_WATER_LINE |
+| CA_JUSTICE | 2 | CA_JUSTICE_RETURN_WAIT | CA_JUSTICE_UNAVAILABLE |
 | CA_KEY | 4 | CA_KEY_ITEM_PROCESSING_MANUAL | CA_KEY_SILVER |
 | CA_KITCHEN | 11 | CA_KITCHEN_BEEF | CA_KITCHEN_VEGETABLES |
 | CA_LAYER | 4 | CA_LAYER_MENTAL | CA_LAYER_TECHNICAL |

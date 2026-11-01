@@ -157,8 +157,27 @@ state persists it. Hierophant reuses the same body/item/surface pulse at zero.
 All237 packaged UDMF maps have an appended24x24m room using owned CMST01/02
 materials and the existing arena's160-unit headroom. Existing TEXTMAP bytes and
 indices remain unchanged. A generated per-map sector index and marker identify
-the room without recurring sector/actor scans. Runtime duels/returns are still
-pending at this geometry checkpoint.
+the room without recurring sector/actor scans. Each player may bind one visible
+living player/NPC target that is not already paired or protected by a scene.
+Simultaneous casts share the room; each pair retains its own native active-time
+deadline, doubled only by the applicable Hermit rule. Expiry or either death
+returns surviving members independently; a corpse is not resurrected or moved.
+
+Return first tries the exact origin, then reachable free space within4m. Native
+collision and the existing unlinked-body grid prevent telefragging; swept-volume
+geometry rays prevent returning through walls. Search work is bounded to eight
+candidates per body/tic, with no global actor census. If blocked, the return
+remains pending and retries. Revision1 saves bodies, origins, timer and search
+progress; session identity admission pauses the controller.
+
+A confirmed map journey ends duels before paying ordinary travel costs or saving
+the old map. Blocked returns hold the request, and participants can cancel it.
+Deferred plans are revalidated before commit; changed costs require new consent.
+The single-player paths and central map dispatcher retain equivalent pending
+callbacks. If an accepted Fool sequence itself creates a duel, its already-paid
+powers are not replayed while waiting. The eventual Fool return records the
+campaign origin, never the arena; cancelling that pending journey preserves the
+executed sequence and its recharge. Final author UI review remains deferred.
 
 The deterministic generator reads the immutable pre-arena archive in
 assets/tarot_justice. It refuses unrelated map edits before writing anything.
@@ -320,7 +339,7 @@ The aimed-action priority for the remaining powers is still to be integrated.
   rules were approved2026-11-01. The
   approved reversible legacy packages preserve visited-map saves and
   report unavailable arenas. Native geometry/recovery evidence is in HISTORY;
-  duel and travel integration remain pending at this checkpoint.
+  duel/return/travel integration now has native and common-save evidence.
 - Moon: two60s clones, caster appearance/attributes,25%maximumHealth/damage,
   perceived enemies, no transferable loot. Judgement: one4m pulse breaks recognized
   magical mind control/illusions, preserving narrative scenes.
@@ -462,7 +481,7 @@ new effect's quantitative behavior.
 | 5 | The Hierophant (El Hierofante) | Allows purifying cursed passages. | Reduces contamination in the area to zero. | Authored cursed passages; purification radius/targets, pulse versus continuous application and stored-surface coverage. |
 | 6 | The Lovers (Los Enamorados) | Allows damage to be shared among team members. | Those under the effect share damage and healing equally. | Team membership, recipient radius/consent, attribution, rounding and damage/healing redistribution timing. |
 | 7 | The Chariot (El Carro) | Allows breaking specific fragile objects. | Launches a chariot that pushes everything in its path. | Fragile-object allowlist; chariot geometry, velocity, range, collision, pushing and damage. |
-| 8 | Justice (La Justicia) | Allows killing immortal enemies, such as spirits. | Takes the user and target to a separate arena. | Immortal-target allowlist; duel location, admission/exit, protected targets, multiple duels and native map constraints. |
+| 8 | Justice (La Justicia) | Allows killing immortal enemies, such as spirits. | Takes the user and target to a separate arena. | Active duel admission/return/travel implemented with native evidence; passive immortal-target allowlist remains pending. |
 | 9 | The Hermit (El Ermitaño) | Adds two Tarot equipment slots. | Doubles the effect duration of the first Tarot card activated. | Capacity known (+2); instantaneous first effects, position after first card and own-duration eligibility. |
 | 10 | Wheel of Fortune (La Rueda de la Fortuna) | Allows altering rooms. | Alternates the conditions of a special room: flooded/dry, lit/dark, active/inactive. Each state opens a different route and closes another. | Authored special rooms, state cycles, route changes and safe/persistent occupation. |
 | 11 | Strength (La Fuerza) | Allows lifting heavy objects using Strength. | Multiplies Strength by ten for object-movement calculations. | Object eligibility, lifting/movement interaction and application of x10 to object movement only. |

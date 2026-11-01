@@ -23,6 +23,10 @@ class CaelumMajorArcanaData : Object
     const MINE_REVISION=1;
     const ROOTS_REVISION=1;
     const WATER_REVISION=1;
+    const JUSTICE_REVISION=1;
+    const JUSTICE_RETURN_MU=128.0;
+    // Presupuesto técnico por cuerpo/tic; no altera el radio autorizado.
+    const JUSTICE_SEARCH_BUDGET=8;
     const AREA_METERS=4.0;
     const TRAP_DAMAGE_MULTIPLIER=2.0;
 }

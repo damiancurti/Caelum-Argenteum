@@ -56,7 +56,9 @@ class CaelumTransportTrip : Object play
         let skip=CaelumTimeSkipState.Get(user);let advance=CaelumTimeAdvanceState.Get(user);
         if((skip!=null && skip.Pumping) || (advance!=null && advance.Pumping))return;
         if(multiplayer){CaelumCooperativeTransport.OfferExit(user);return;}
+        if(b.Ticket!=null && b.Ticket.TransferDeclined)return;
         if(!LevelInfo.MapExists(b.TransferMap))return;
+        if(CaelumJusticeTransit.Defer(user,CaelumJusticeTransit.TRANSPORT))return;
         String target=b.TransferMap;
         // La asignacion pendiente vive en el inventario; PostTravelled no la
         // borra. Registrar la llegada solo al cargar el destino esperado.
@@ -184,6 +186,8 @@ class CaelumTransportSession : Inventory
         let b=CaelumTransportBooking.Find(user);
         if(multiplayer && b!=null && b.TransferPending)
         {if(choice==1)CaelumCooperativeTransport.OfferExit(user,true);return;}
+        if(!multiplayer && b!=null && b.TransferPending)
+        {if(choice==1 && b.Ticket!=null){b.Ticket.TransferDeclined=false;CaelumTransportTrip.Flush(user);}return;}
         if(b!=null && b.Ticket!=null && b.Ticket.Status==CaelumTransportTicket.ABANDONED && b.StopMap==level.MapName && Source==null)
         {if(choice==1 && !CaelumTransportTrip.Rebook(user))CaelumNotifications.Notify(user,StringTable.Localize("CA_TRANSPORT_UNAVAILABLE",false));return;}
         if(b!=null && b.Ticket!=null && b.Ticket.Active())

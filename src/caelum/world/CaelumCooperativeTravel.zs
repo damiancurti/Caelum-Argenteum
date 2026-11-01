@@ -21,7 +21,7 @@ class CaelumCooperativeTravel : Inventory
     CaelumTarotGroundAim TarotGround;
     CaelumPalomo FoolSpeaker;
     int Mask,AliveMask,Accepted,Serial,Kind,Connection,Mode,Entry,Elapsed;
-    bool Opened,Committed,Interrupted;
+    bool Opened,Committed,Interrupted,JusticeWaiting;
     double Pace;
     String OriginMap,Destination;
     vector3 OriginPosition;
@@ -83,7 +83,7 @@ class CaelumCooperativeTravel : Inventory
     }
     static CaelumCooperativeTravel Draft(CaelumPlayer user,bool allowDead=false,bool allowSolo=false)
     {
-        if((!multiplayer && !allowSolo) || !CaelumPlayerAuthority.CanMutate(user) || (!allowDead && !CaelumCooperativeTime.Living(user)))return null;
+        if(CaelumJusticeTransit.Active() || (!multiplayer && !allowSolo) || !CaelumPlayerAuthority.CanMutate(user) || (!allowDead && !CaelumCooperativeTime.Living(user)))return null;
         let clock=CaelumWorldClock.Get(CaelumWorldClockTicker.CampaignOwner());
         if(clock==null || (clock.TimeVote!=null && clock.TimeVote.Opened)
             || (clock.TravelVote!=null && clock.TravelVote.Opened))return null;
@@ -91,7 +91,7 @@ class CaelumCooperativeTravel : Inventory
         if(vote==null)vote=CaelumCooperativeTravel(user.GiveInventoryType('CaelumCooperativeTravel'));
         if(vote==null)return null;
         vote.ReleasePlans();vote.Mask=vote.AliveMask=vote.Accepted=0;
-        vote.Opened=vote.Committed=vote.Interrupted=false;vote.Portal=null;vote.TutorialDoor=null;vote.Vehicle=null;vote.Ride=null;
+        vote.Opened=vote.Committed=vote.Interrupted=vote.JusticeWaiting=false;vote.Portal=null;vote.TutorialDoor=null;vote.Vehicle=null;vote.Ride=null;
         vote.Elapsed=0;vote.Pace=0;vote.Fare=0;
         vote.FoolSequenceRevision=0;vote.FoolDevilPayment=false;vote.TarotTarget=null;vote.TarotGround=null;
         vote.OriginMap=level.MapName;vote.OriginPosition=user.Pos;
@@ -208,7 +208,7 @@ class CaelumCooperativeTravel : Inventory
     void Finish(String reason)
     {
         if(Kind==DISEMBARK && !Committed && Ride!=null)Ride.TransferDeclined=true;
-        Opened=false;NextSerial();
+        Opened=false;JusticeWaiting=false;NextSerial();
         if(Kind==TUTORIAL && !Committed)CaelumMainM00Return.Cancel(CaelumPlayer(Owner),false);
         for(int i=0;i<MAXPLAYERS;i++)if(Members[i]!=null)
         {
@@ -220,6 +220,21 @@ class CaelumCooperativeTravel : Inventory
     void Commit()
     {
         if(!Opened || !Consented() || !RosterValid() || !SourceValid())return;
+        bool waited=JusticeWaiting;JusticeWaiting=true;
+        if(!CaelumTarotJustice.PrepareTravel())return;
+        JusticeWaiting=false;
+        if(waited)
+        {
+            bool okay,changed;[okay,changed]=PreparePlans(true);
+            if(!okay){Finish("CA_COOP_TRAVEL_CANCELLED");return;}
+            if(changed)
+            {
+                Accepted=0;if(!NextSerial()){Finish("CA_COOP_TRAVEL_CANCELLED");return;}
+                for(int i=0;i<MAXPLAYERS;i++)if(Members[i]!=null)
+                    CaelumNotifications.Notify(Members[i],StringTable.Localize("CA_JOURNEY_REVISED",false));
+                return;
+            }
+        }
         if(Kind==ARENA || Kind==ARENA_RETURN)
         {
             if(!CaelumArena.Commit(self)){Finish("CA_ARENA_NOT_READY");return;}
@@ -282,7 +297,17 @@ class CaelumCooperativeTravel : Inventory
         }
         CaelumDeadTraveler.ChangeMap(Destination,Entry,CHANGELEVEL_NOINTERMISSION);
     }
-    override void Tick(){Super.Tick();if(Opened && (!RosterValid() || !SourceValid()))Finish("CA_COOP_TRAVEL_CANCELLED");}
+    override void Tick()
+    {
+        Super.Tick();if(!Opened)return;
+        if(!RosterValid() || !SourceValid()){Finish("CA_COOP_TRAVEL_CANCELLED");return;}
+        if(JusticeWaiting)
+        {
+            for(int i=0;i<MAXPLAYERS;i++)if(Members[i]!=null && !BodyReady(Members[i]))
+            {Finish("CA_COOP_TRAVEL_CANCELLED");return;}
+            Commit();
+        }
+    }
     override void PreTravelled(){if(Opened)Finish("CA_COOP_TRAVEL_CANCELLED");Super.PreTravelled();}
     Default {Inventory.MaxAmount 1;Inventory.InterHubAmount 1;+INVENTORY.UNDROPPABLE +INVENTORY.UNCLEARABLE -INVENTORY.INVBAR}
     States {Spawn:TNT1 A -1;Stop;}
