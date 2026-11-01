@@ -153,6 +153,20 @@ intact. All18,023 package members match source; evidence is recorded in
 living-obstacle-results.json. The class reuses the existing owned espinillo;
 authored mansion placement and author acceptance remain pending.
 
+Hierophant purification passed20 initial and six common-save recovery assertions
+per native client on2026-11-01, including ordered Death/Hierophant combinations,
+body/equipment/storage, container bounds, salt retention, fixed cisterns, full
+connected water-model bounds and later contamination of mutable reservoirs.
+The revision1 static-water overlay preserves authored metadata and old saves.
+All18,024 runtime members match source. Evidence: hierophant-results.json.
+The retained first compilation failure was an incompatible Actor/Inventory
+ternary; explicit assignment corrected it before successful native runs.
+Eight native profiler samples on real MAP01 (7,749 sectors/30 water parts)
+measured0.2015-0.44863ms for cold index construction/destruction and
+0.00018-0.00046ms for cached access. This supports the one-time metadata index,
+not a rendering/FPS claim. Remaining handlers, authored examples and final author
+acceptance are still pending.
+
 ## 5.13.2 - Reversible equipment awakening (#442)
 
 Author-approved +25% damage/defense and half wear are implemented on the exact

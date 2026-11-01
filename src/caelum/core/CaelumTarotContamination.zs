@@ -5,6 +5,7 @@ class CaelumTarotContamination : Object play
     Actor Probe;
     vector3 Center;
     double Radius,Concentration;
+    bool PurifyWater;
     CaelumContaminationMap Sheet;
     Array<Actor> Visited;
     Array<Sector> Sectors;
@@ -27,6 +28,7 @@ class CaelumTarotContamination : Object play
     void Item(Inventory item)
     {
         if(item==null || item.bDestroyed || item.Amount<=0 || CaelumContaminationStorage.IsShielded(item))return;
+        if(PurifyWater)CaelumTarotWater.Container(CaelumWaterContainer(item),self);
         if(item is 'CaelumEquipmentItem' || item is 'CaelumStorageFurnitureItem'
             || CaelumContaminationStack.Eligible(item))CaelumContaminationStorage.Set(item,Concentration);
         let set=CaelumDiningSetItem(item);
@@ -41,6 +43,11 @@ class CaelumTarotContamination : Object play
         for(int i=0;i<Visited.Size();i++)if(Visited[i]==body)return;
         Visited.Push(body);BodyCount++;
         CaelumContaminationStorage.Set(body,Concentration);
+        if(PurifyWater)
+        {
+            CaelumTarotWater.Container(CaelumWaterContainer(body),self);
+            let fixture=CaelumWaterFurniture(body);if(fixture!=null)fixture.SyncWater(Caster);
+        }
         // La Caja y los cofres cerrados conservan su contenido; la cara exterior sí recibe el pulso.
         let chest=CaelumStashChest(body);
         if(chest!=null && !chest.ChestOpen)return;
@@ -157,16 +164,25 @@ class CaelumTarotContamination : Object play
             }
         }
     }
-    static CaelumTarotContamination Pulse(CaelumPlayer user,vector3 point,double concentration,double multiplier)
+    static CaelumTarotContamination Pulse(CaelumPlayer user,vector3 point,double concentration,double multiplier,bool purifyWater=false)
     {
         if(user==null || user.bDestroyed || multiplier<=0)return null;
         let pulse=new('CaelumTarotContamination');pulse.Caster=user;pulse.Center=point;
         pulse.Radius=CaelumMajorArcanaData.AREA_METERS*CaelumPhysicsUnits.MAP_UNITS_PER_METER*multiplier;
         pulse.Concentration=Clamp(concentration,0,CaelumFoodData.MAX_CONTAMINATION);
+        pulse.PurifyWater=purifyWater;
         pulse.Probe=Actor.Spawn('CaelumTarotContaminationProbe',point,NO_REPLACE);
         if(pulse.Probe==null)return null;
-        pulse.Bodies();pulse.Surfaces();pulse.Probe.Destroy();pulse.Probe=null;
+        pulse.Bodies();pulse.Surfaces();
+        if(purifyWater){let water=CaelumTarotWaterMap.Ensure();if(water!=null)water.Pulse(pulse);}
+        pulse.Probe.Destroy();pulse.Probe=null;
         return pulse;
+    }
+    static bool Hierophant(CaelumPlayer user,CaelumTarotGroundAim snapshot)
+    {
+        if(user==null || user.DerivedStats==null)return false;
+        double range=snapshot!=null?snapshot.RangeMultiplier:user.DerivedStats.AbilityRangePercent/100.0;
+        return Pulse(user,user.Pos+(0,0,user.Height/2),0,range,true)!=null;
     }
     static bool Death(CaelumPlayer user,Actor aimed,CaelumTarotGroundAim snapshot)
     {

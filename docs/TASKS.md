@@ -9,8 +9,8 @@ World dispatch, Temperance, Tower, Fool, Hanged Man and Strength have isolated e
 Chariot movement/contact and its owned-model adaptation have isolated evidence;
 Priestess ground traps, Empress restraint and their departure cleanup are implemented;
 plant art has native front/rear evidence; equipped vegetation traversal is implemented;
-Death's contamination pulse and marked-obstacle passive are implemented;
-finish Hierophant water purification and remaining handlers,
+Death's contamination pulse/marked-obstacle passive and Hierophant purification
+are implemented; finish the remaining handlers/passives,
 giant/harmful objects, arena geometry/save compatibility, authored mansion
 fixtures, automaton3D art/combat and input arbitration. The confirmed per-power
 contract is consolidated in SYSTEMS; unresolved fields must still be asked.

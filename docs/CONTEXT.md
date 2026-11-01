@@ -4,9 +4,9 @@ Documentation version: **5.13.3** - 2026-10-31.
 
 **V5.13:** PR605/606/607 cover #439/441/442; PR608 covers #440.
 Order/capacity/timers/Temperance/Tower/Fool/Hanged Man/Strength/Chariot/Priestess trap/Empress restraint implemented;
-Empress art/traversal tested; Death pulse/passive implemented; other handlers/examples next.
+Empress art/traversal, Death pulse/passive and Hierophant purification tested; other handlers/examples next.
 #596-601 last. Author suite deferred.
-Approved rules: SYSTEMS; native evidence: validation_v5_13_1/2/3.
+Rules: SYSTEMS; evidence: validation_v5_13_1/2/3.
 
 **V5.12 accepted/merged:** HISTORY; validation_v5_12_7/7a. Private timer-fixed4.14.2.
 Siege1.33-6.48FPS/sharedGPU; no Internet claim. Canonical LF indexes (#604).

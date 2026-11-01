@@ -150,7 +150,35 @@ line traces determine reachability. Sloped planes retain their physical cell
 coordinates; solid3D support tops use their model sector and block effects
 between floors. Candidate sectors come from local linedefs, not a map census.
 The pulse has no recurring Tick or new saved ledger; existing body/item/tile
-state persists it. Hierophant water purification remains separate work.
+state persists it. Hierophant reuses the same body/item/surface pulse at zero.
+
+### Hierophant purification and complete water volumes
+
+The instantaneous4m pulse is centered on the caster and uses the same range and
+occlusion rules. It clears accessible contamination and removes biological and
+chemical water flags while retaining salt, quantity and temperature. Closed
+storage remains shielded. A container must fit entirely: existing thermal sphere
+for bottles/canteens, approved cylinder for the pot, documented collision envelope
+for fixed reservoirs. These carried-container envelopes use their owner's center.
+
+Static map water has a revision1 map-local purification overlay, initially absent
+for legacy saves. The original UDMF quality remains unchanged; save recovery
+restores the overlay. Connected reservoirs instead change their mutable quality,
+so later mixing can contaminate them again; unsettled catch-up volumes remain
+unavailable under their existing rule. All hosts sharing the authoritative water
+model must fit inside the radius and pass geometry visibility. Sloped hosts use
+a conservative full envelope, including dry boundary vertices. No partial large
+pool/river purification is performed.
+
+The first water pulse after loading builds a sector-to-water-model index once,
+because remote hosts must also be checked. It scans sector metadata, not actors;
+subsequent casts use locally found candidate sectors and cached host lists. Live
+water heights remain authoritative. World-load restoration uses one typed
+controller lookup; ordinary quality queries are constant-time. Eight diagnostic
+native MAP01 samples (7,749 sectors/30 water parts) measured0.2015-0.44863ms for
+constructing/indexing/destroying a cold controller and0.00018-0.00046ms for an
+already-indexed call. These are CPU samples, not frame-presentation evidence.
+The cursed-passage passive and authored mansion examples remain pending.
 
 The equipped Death passive also accepts Use on the explicitly typed
 CaelumTarotLivingObstacle family, within normal interaction range and sight.

@@ -22,6 +22,7 @@ class CaelumMajorArcanaData : Object
     const CHARIOT_HEIGHT_MU=115.555785*64.0/82.0;
     const MINE_REVISION=1;
     const ROOTS_REVISION=1;
+    const WATER_REVISION=1;
     const AREA_METERS=4.0;
     const TRAP_DAMAGE_MULTIPLIER=2.0;
 }
