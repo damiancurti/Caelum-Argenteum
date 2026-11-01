@@ -1,4 +1,8 @@
 [enu default]
+CA_TAROT_MINE_GROUND = "The High Priestess needs visible ground within range.";
+[es]
+CA_TAROT_MINE_GROUND = "La Sacerdotisa necesita suelo visible dentro de su alcance.";
+[enu default]
 CA_SESSION_IDENTITY_WAIT = "Waiting for the session to confirm every character. Open managed campaigns through the session launcher.";
 CA_SESSION_IDENTITY_REJECT = "The selected character does not match this session. Close the session and recover with the agreed player order.";
 [es]

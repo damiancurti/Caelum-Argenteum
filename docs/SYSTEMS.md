@@ -74,15 +74,34 @@ dead, the Tarot journal can equip/remove owned cards, preserving capacity and
 bound-essence restrictions, without recalculating a dead body into a living one.
 Other material inventory actions retain their restrictions.
 
-A normal proposal snapshots card order, ownership, selection, target and payment
+A normal proposal snapshots card order, ownership, selection, target, ground point,
+spell damage/range and payment
 kind. Changing those card choices or the required payment invalidates consent.
 The whole sequence executes once in the origin map after acceptance, then the
 group travels. Devil may pay Health and die without stopping subsequent powers
 or the journey. World skips the journey when no participant is dead or when
 already in the mansion, continuing other valid handlers. A target that ceased
 to be visible/in range is omitted. Refusal costs nothing. Pending legacy proposals
-without revision1 snapshots are cancelled without payment; session recovery also
+without revision2 ground snapshots are cancelled without payment; session recovery also
 cancels pending votes under the existing reconnection policy and needs new consent.
+
+### Priestess ground trap
+
+One trap per caster uses a visible floor point captured before payment. It lasts
+60 active seconds, doubled when it is the first effect with Hermit. Recasting
+replaces the previous trap. Its damage is twice the current T1 staff damage before
+defenses; its4m explosion radius uses current magical range. Only grounded enemy
+contact triggers it, using actual faction/theft relations and campaign-arena teams.
+The resulting ordinary magical explosion can damage the caster and allies too.
+Existing environmental mines keep their original contact rule.
+
+The save stores the exact trap, caster, damage, radius and remaining lifetime.
+Pending network identity admission pauses that lifetime. A voted Fool sequence
+retains its ground point even if the caster looks away; geometry/range are checked
+again on execution. Leaving the map removes the trap and its active window while
+retaining the paid cooldown. World-bound automaton/plant/clone windows follow the
+same departure rule as their handlers are integrated. Queries remain local;
+no global actor traversal is introduced. False-wall examples remain pending.
 
 ### Chariot movement and fragile obstacles
 

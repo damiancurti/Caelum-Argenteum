@@ -88,6 +88,16 @@ subclass and player-predicted camera; the corrected fixture uses the actual clas
 and a separate native camera. Evidence: chariot-art-results.json. This establishes
 rendering/registration, not author acceptance or an overall frame-rate benchmark.
 
+Priestess traps passed23 initial and five common-save recovery assertions per
+native client on2026-11-01. The extended Fool round trip passed39 per client,
+including saved aim, revision2 consent, departure cleanup and retained cooldown.
+All18,019 runtime members match source. Evidence: priestess-results.json.
+The retained failed fixtures first aimed above the floor, then inspected the
+trap after synchronous map cleanup. The final fixture observes WorldUnloaded
+before cleanup without moving session initialization earlier. These were fixture
+errors; the production ground checks were preserved. False-wall examples, final
+frame measurements and author acceptance remain pending.
+
 ## 5.13.2 - Reversible equipment awakening (#442)
 
 Author-approved +25% damage/defense and half wear are implemented on the exact

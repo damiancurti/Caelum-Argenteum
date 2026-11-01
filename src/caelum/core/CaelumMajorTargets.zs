@@ -24,6 +24,28 @@ class CaelumMajorTargets : Object play
                 <=Range(user)+target.Radius && user.CheckSight(target);
     }
 
+    static bool Enemy(CaelumPlayer user,Actor body)
+    {
+        if(user==null || body==null || body==user || body.health<=0 || !body.bShootable)return false;
+        let opponent=CaelumPlayer(body);
+        if(opponent!=null)
+        {
+            let session=CaelumArenaState.View(user),other=CaelumArenaState.View(opponent);
+            let match=session!=null?session.MatchState:null;
+            if(match!=null && other!=null && other.MatchState==match)
+            {
+                int a=user.PlayerNumber(),b=opponent.PlayerNumber();
+                return match.Status==CaelumArenaMatch.FIGHTING && a>=0 && b>=0
+                    && match.Members[a]==user && match.Members[b]==opponent
+                    && (match.Withdrawn&((1<<a)|(1<<b)))==0
+                    && (match.Mode==0 || match.Teams[a]!=match.Teams[b]);
+            }
+        }
+        if(CaelumRedemption.Commander(body)!=null)return !CaelumRedemption.Allied(user,body);
+        let combat=CaelumCombatActor(body);
+        return combat!=null?CaelumVisualPerception.Opponent(combat,user):CaelumSummoning.Enemy(user,body);
+    }
+
     static CaelumHostileMachine Machine(Actor hit)
     {
         if(hit==null)return null;

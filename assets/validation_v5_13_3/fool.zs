@@ -14,6 +14,7 @@ class CA440FoolLedger : Inventory
 {
     int Phase,Edited;
     double Anima;
+    vector3 Ground;
     CaelumCannon Gun;
     CaelumPalomo Speaker;
     Default {Inventory.MaxAmount 1;Inventory.InterHubAmount 1;+INVENTORY.UNDROPPABLE +INVENTORY.UNCLEARABLE -INVENTORY.INVBAR}
@@ -86,8 +87,9 @@ class CA440Probe : StaticEventHandler
             CaelumTarotService.Select(user,0);CaelumTarotService.Select(user,14);
             // Tower first: a later Hermit does not repeat an instant effect.
             CaelumTarotService.Select(user,9);CaelumTarotService.Select(user,9);
+            CaelumTarotService.Select(user,2);
             ledger.Gun=CaelumCannon(Actor.Spawn('CaelumCannon',(0,0,0),NO_REPLACE));ledger.Gun.InitializeCannon();
-            let part=ledger.Gun.Blocks[12];vector3 delta=part.Pos+(0,0,part.Height/2)-CaelumTelekinesisRules.Eye(user);
+            let part=ledger.Gun.Blocks[11];vector3 delta=part.Pos+(0,0,part.Height/2)-CaelumTelekinesisRules.Eye(user);
             user.Angle=VectorAngle(delta.X,delta.Y);user.Pitch=-VectorAngle(delta.XY.Length(),delta.Z);
             ledger.Anima=user.CurrentAnima;
             Check(CaelumTarotService.Activate(user),"ordered Fool sequence creates consent proposal");
@@ -99,10 +101,11 @@ class CA440Probe : StaticEventHandler
             CaelumTarotService.Activate(user);vote=CaelumCooperativeTravel.View(user);
             CaelumTarotService.Select(user,14);CaelumTarotService.Select(user,14);
             Check(!vote.SourceValid(),"changed order invalidates pending consent");vote.Request(user,CaelumCooperativeTravel.CANCEL,vote.Serial);
-            CaelumTarotService.Activate(user);vote=CaelumCooperativeTravel.View(user);vote.FoolSequenceRevision=0;
+            CaelumTarotService.Activate(user);vote=CaelumCooperativeTravel.View(user);vote.FoolSequenceRevision=1;
             Check(!vote.SourceValid() && user.CurrentAnima==ledger.Anima,"legacy unsnapshotted vote cancels without payment");vote.Request(user,CaelumCooperativeTravel.CANCEL,vote.Serial);
             CaelumTarotService.Activate(user);vote=CaelumCooperativeTravel.View(user);
-            Check(vote!=null && vote.Opened && vote.TarotOrder[0]==16 && vote.TarotOrderCount==4,"new proposal retains selected order and complete sequence");
+            Check(vote!=null && vote.Opened && vote.TarotOrder[0]==16 && vote.TarotOrderCount==5,"new proposal retains selected order and complete sequence");
+            Check(vote.TarotGround!=null && vote.TarotGround.Found && vote.TarotGround.Damage>0,"consent snapshots visible floor and spell power before payment");
             ledger.Phase=1;user.PersistCharacterState();Console.Printf("CA440F CHECKPOINT proposal");return;
         }
         if(ledger.Phase==1 && (Reloaded || level.time>120))
@@ -116,12 +119,18 @@ class CA440Probe : StaticEventHandler
             }
             if(vote==null){ledger.Phase=99;return;}
             ledger.Anima=user.CurrentAnima;ledger.Phase=2;
-            Check(vote.Request(user,CaelumCooperativeTravel.ACCEPT,vote.Serial),"living consent commits without requiring dead vote");return;
+            ledger.Ground=vote.TarotGround.Point;
+            user.Angle+=90;user.Pitch=0;
+            Check(vote.Request(user,CaelumCooperativeTravel.ACCEPT,vote.Serial),"living consent commits without requiring dead vote");
+            return;
         }
         if(ledger.Phase==2 && level.MapName=="MAP01")
         {
             Check(user.health>0 && CaelumSpirit.Active(other),"arrival preserves living caster and dead spirit");
             Check(record.TarotCooldownTics>0 && abs(user.CurrentAnima-(ledger.Anima-1000))<1,"accepted journey charges activator exactly once");
+            let trap=CaelumTarotMineState(user.FindInventory('CaelumTarotMineState'));
+            Check((trap==null || trap.Mine==null) && record.TarotRemaining[2]==0 && !record.TarotActive[2],
+                "map departure removes trap and its active window without refunding cooldown");
             Check(CaelumTarotService.IsActive(record,14) && record.TarotRemaining[16]==0,"instant and temporal results survive travel");
             Clear(user);CaelumTarotService.Select(user,21);user.CurrentAnima=user.DerivedStats.MaximumAnima;
             Check(CaelumTarotService.Activate(user) && CaelumCooperativeTravel.View(user)==null && CaelumTarotService.IsActive(record,14),"World in mansion skips only Fool journey");
@@ -206,5 +215,20 @@ class CA440FoolInput : StaticEventHandler
         {EditStep=1;Console.Printf("CA440F UI unequip");EventHandler.SendNetworkEvent("ca_tarot_select",0);}
         else if(ledger.Phase==5 && EditStep==1)
         {EditStep=2;Console.Printf("CA440F UI equip");EventHandler.SendNetworkEvent("ca_tarot_select",0);}
+    }
+}
+
+// Observe the departing world before production cleanup, without moving startup earlier.
+class CA440FoolBeforeUnload : StaticEventHandler
+{
+    override void OnRegister(){SetOrder(1);}
+    override void WorldUnloaded(WorldEvent e)
+    {
+        let user=CaelumPlayer(players[0].mo);
+        let ledger=user!=null?CA440FoolLedger(user.FindInventory('CA440FoolLedger')):null;
+        if(ledger==null || ledger.Phase!=2 || level.MapName!="MAP03")return;
+        let trap=CaelumTarotMineState(user.FindInventory('CaelumTarotMineState'));
+        bool okay=trap!=null && trap.Mine!=null && (trap.Mine.Pos-ledger.Ground-(0,0,0.5)).Length()<0.02;
+        Console.Printf("CA440F %s accepted trap uses saved floor even after looking away",okay?"PASS":"FAIL");
     }
 }

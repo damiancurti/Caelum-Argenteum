@@ -9,9 +9,11 @@ class CaelumTarotSequence : Object play
             || card==14 || card==17 || card==18 || card==19;
     }
 
-    static void ApplyCard(CaelumPlayer user,CaelumPersistentCharacterState record,int card,int duration,Actor aimed=null,bool report=true)
+    static void ApplyCard(CaelumPlayer user,CaelumPersistentCharacterState record,int card,int duration,Actor aimed=null,bool report=true,CaelumTarotGroundAim ground=null)
     {
         if(!CaelumTarotService.Implemented(card))return;
+        if(card==2 && !CaelumTarotMine.Place(user,ground,duration))
+        {if(report)CaelumTarotService.Feedback(user,"CA_TAROT_MINE_GROUND");return;}
         if(card==CaelumHangedMan.CARD && !CaelumHangedMan.Prepare(user,record))return;
         if(card==14)CaelumTemperance.Cleanse(user);
         if(card==7)CaelumTarotChariot.Launch(user);
@@ -29,7 +31,7 @@ class CaelumTarotSequence : Object play
         }
     }
 
-    static void Apply(CaelumPlayer user,CaelumPersistentCharacterState record,Actor aimed=null)
+    static void Apply(CaelumPlayer user,CaelumPersistentCharacterState record,Actor aimed=null,CaelumTarotGroundAim ground=null)
     {
         CaelumTarotLoadout.Ensure(record);
         bool selected[CaelumConstants.TAROT_CARD_COUNT];
@@ -52,10 +54,10 @@ class CaelumTarotSequence : Object play
                 {
                     if(nested==21 || selected[nested] || visited[nested] || !record.HasTarotCard(nested))continue;
                     visited[nested]=true;
-                    ApplyCard(user,record,nested,CaelumConstants.TAROT_EFFECT_SECONDS*TICRATE,aimed,false);
+                    ApplyCard(user,record,nested,CaelumConstants.TAROT_EFFECT_SECONDS*TICRATE,aimed,false,ground);
                 }
             }
-            else ApplyCard(user,record,card,duration,aimed);
+            else ApplyCard(user,record,card,duration,aimed,true,ground);
         }
     }
 

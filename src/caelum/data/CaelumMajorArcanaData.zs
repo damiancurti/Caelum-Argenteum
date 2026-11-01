@@ -9,7 +9,7 @@ class CaelumMajorArcanaData : Object
     const TEMPERANCE_DURATION=0.5;
     const TARGET_METERS=100.0;
     const MACHINE_REVISION=1;
-    const FOOL_VOTE_REVISION=1;
+    const FOOL_VOTE_REVISION=2;
     const OBJECT_MOVEMENT_REVISION=1;
     const STRENGTH_MOVEMENT=10;
     const CHARIOT_REVISION=1;
@@ -20,4 +20,7 @@ class CaelumMajorArcanaData : Object
     // Geometría exterior de la carreta original, escalada a dos metros.
     const CHARIOT_LENGTH_MU=182.6*64.0/82.0;
     const CHARIOT_HEIGHT_MU=115.555785*64.0/82.0;
+    const MINE_REVISION=1;
+    const AREA_METERS=4.0;
+    const TRAP_DAMAGE_MULTIPLIER=2.0;
 }

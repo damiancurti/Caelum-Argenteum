@@ -4,6 +4,19 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-207 - World departure callbacks run in reverse handler order
+
+VERIFIED, #440, 2026-11-01. Native4.14.2 events.cpp dispatches WorldUnloaded
+from LastEventHandler through prev, reversing ordinary WorldTick order. A fixture
+that verifies an effect before production cleanup must use a later SetOrder for
+that observer. Keep its startup logic separate: moving all fixture callbacks
+earlier can create a vote before session admission resets pending transactions.
+ChangeMap also dispatches departure synchronously, so inspecting an effect after
+the request returns may already observe its correct cleanup. The Priestess/Fool
+round trip passes39 assertions per native client with a separate departure
+observer; retained failures and exact packages are in priestess-results.json.
+This is lifecycle evidence, not a gameplay timing or rendering claim.
+
 ## CA-KP-206 - Pending session admission is not loss of an effect owner
 
 Status/evidence: ENGINE-VERIFIED, #440, 2026-11-01, private GZDoom4.14.2 timer build.

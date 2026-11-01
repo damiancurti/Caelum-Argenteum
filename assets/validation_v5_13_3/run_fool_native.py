@@ -34,7 +34,7 @@ def main():
         members['maps/MAP02.wad']=members['maps/MAP03.wad']
         members.setdefault('ZSCRIPT',b'version "4.14.2"\n')
         members['ZSCRIPT']+=b'\n#include "fool.zs"\n'
-        members['MAPINFO']=members.get('MAPINFO',b'')+b'\ngameinfo { AddEventHandlers="CA440Probe", "CA440FoolInput" }\n'
+        members['MAPINFO']=members.get('MAPINFO',b'')+b'\ngameinfo { AddEventHandlers="CA440Probe","CA440FoolBeforeUnload", "CA440FoolInput" }\n'
         members['fool.zs']=Path(__file__).with_name('fool.zs').read_bytes()
         with zipfile.ZipFile(addon,'w') as z:
             for name,data in sorted(members.items()):z.writestr(zipfile.ZipInfo(name,(2000,1,1,0,0,0)),data)

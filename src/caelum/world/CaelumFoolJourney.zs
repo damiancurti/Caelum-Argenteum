@@ -217,6 +217,7 @@ class CaelumFoolTravel : Object play
         vote.FoolDevilPayment=DevilPayment(record,exceptional);
         vote.TarotOrderCount=record.TarotOrderCount;
         vote.TarotTarget=exceptional?null:CaelumMajorTargets.Aim(user);
+        vote.TarotGround=exceptional?null:CaelumTarotGroundAim.Capture(user);
         for(int card=0;card<CaelumConstants.TAROT_CARD_COUNT;card++)
         {
             vote.TarotSelection[card]=record.TarotSelected[card];
@@ -258,7 +259,7 @@ class CaelumFoolTravel : Object play
             // aún en origen; incluso la muerte por El Diablo conserva el viaje.
             Actor aimed=CaelumMajorTargets.Visible(user,vote.TarotTarget)?vote.TarotTarget:null;
             CaelumTarotSequence.Pay(user,record,vote.FoolDevilPayment);
-            if(!vote.ExceptionalFool)CaelumTarotSequence.Apply(user,record,aimed);
+            if(!vote.ExceptionalFool)CaelumTarotSequence.Apply(user,record,aimed,vote.TarotGround);
             if(user.health>0)user.ApplyCharacterProfile();
             user.RefreshSocialJournalSnapshot();user.PersistCharacterState();
         }

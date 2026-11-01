@@ -18,6 +18,7 @@ class CaelumCooperativeTravel : Inventory
     int TarotOrder[CaelumConstants.TAROT_CARD_COUNT],TarotOrderCount,FoolSequenceRevision;
     bool FoolDevilPayment;
     Actor TarotTarget;
+    CaelumTarotGroundAim TarotGround;
     CaelumPalomo FoolSpeaker;
     int Mask,AliveMask,Accepted,Serial,Kind,Connection,Mode,Entry,Elapsed;
     bool Opened,Committed,Interrupted;
@@ -92,7 +93,7 @@ class CaelumCooperativeTravel : Inventory
         vote.ReleasePlans();vote.Mask=vote.AliveMask=vote.Accepted=0;
         vote.Opened=vote.Committed=vote.Interrupted=false;vote.Portal=null;vote.TutorialDoor=null;vote.Vehicle=null;vote.Ride=null;
         vote.Elapsed=0;vote.Pace=0;vote.Fare=0;
-        vote.FoolSequenceRevision=0;vote.FoolDevilPayment=false;vote.TarotTarget=null;
+        vote.FoolSequenceRevision=0;vote.FoolDevilPayment=false;vote.TarotTarget=null;vote.TarotGround=null;
         vote.OriginMap=level.MapName;vote.OriginPosition=user.Pos;
         for(int i=0;i<MAXPLAYERS;i++)
         {

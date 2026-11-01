@@ -127,6 +127,20 @@ class CaelumMajorWorldEvents : StaticEventHandler
             let user=CaelumPlayer(players[i].mo);CaelumTarotObjectMovement.Release(user);
             let cart=user!=null?CaelumTarotChariotState(user.FindInventory('CaelumTarotChariotState')):null;
             if(cart!=null && cart.Projection!=null)cart.Projection.Destroy();
+            let mine=user!=null?CaelumTarotMineState(user.FindInventory('CaelumTarotMineState')):null;
+            if(mine!=null && mine.Mine!=null)mine.Mine.Destroy();
+            if(user!=null)
+            {
+                let record=user.GetPersistentCharacterState(false);
+                if(record!=null)
+                {
+                    // Los cuerpos temporales pertenecen al mapa que se abandona.
+                    for(int card=0;card<CaelumConstants.TAROT_MAJOR_COUNT;card++)
+                        if(card==1 || card==2 || card==3 || card==18)
+                        {record.TarotRemaining[card]=0;record.TarotActive[card]=false;}
+                    CaelumTarotSequence.Advance(user,record,0);
+                }
+            }
         }
     }
 }
