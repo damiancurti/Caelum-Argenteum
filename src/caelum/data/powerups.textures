@@ -1,0 +1,8 @@
+Sprite "CPU0A0", 1, 1 { Patch "graphics/caelum/bull_invisible.png", 0, 0 }
+Sprite "CPU0B0", 1, 1 { Patch "graphics/caelum/bull_invisible.png", 0, 0 }
+Sprite "CPU1A0", 1, 1 { Patch "graphics/caelum/bull_invisible.png", 0, 0 }
+Sprite "CPU1B0", 1, 1 { Patch "graphics/caelum/bull_invisible.png", 0, 0 }
+Sprite "CPU1C0", 1, 1 { Patch "graphics/caelum/bull_invisible.png", 0, 0 }
+Sprite "CPU1D0", 1, 1 { Patch "graphics/caelum/bull_invisible.png", 0, 0 }
+Sprite "CPU1E0", 1, 1 { Patch "graphics/caelum/bull_invisible.png", 0, 0 }
+Sprite "CPU1F0", 1, 1 { Patch "graphics/caelum/bull_invisible.png", 0, 0 }

@@ -5090,3 +5090,5 @@ Model CaelumLargeLandscapePainting
     FrameIndex COAL A 0 0
 }
 #include "caelum/data/transport_vehicles.modeldef"
+
+#include "caelum/data/powerups.modeldef"
