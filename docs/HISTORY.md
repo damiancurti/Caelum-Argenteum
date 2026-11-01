@@ -4,6 +4,21 @@ Documentation version: **5.13.3** - 2026-10-31.
 
 ## 5.13.3 - Ordered Tarot foundation (#440, implementation checkpoint)
 
+The focused automaton artwork checkpoint (2026-11-01) adds an original modular
+mesh and20 native MD3 frames at the approved Zupay height. Four material batches
+carry3,232 triangles; new built-in image_gen iron paint is recorded byte-exactly
+with its prompt and existing owned brass/wood/dark materials. Native two-client
+runs pass nine initial and three common-save recovery assertions per client
+(24 total); all18,032 packaged members match source. Front/rear and animated
+poses were inspected. Earlier diagnostic fixtures needed literal StateLabels;
+visual review then caught a selector rotating a leg with the attacking arm.
+The final model corrects that and statically verifies planted legs in all seven
+attack/guard poses. The original failing evidence remains. Deterministic output,
+MD3 structure and project validation pass. Evidence:
+assets/validation_v5_13_3/automaton-art-results.json. This is artwork only: actual
+Tarot wake/control, AI, equipment wear, author review and frame-presentation
+measurements remain pending. No campaign automaton or balance change is claimed.
+
 Adds saved equipment order, additive/self-granting card capacities, Box capacity
 removal guards, individual timers, Hermit duration, Devil lethal payment,
 Star content weight and bounded World dispatch. Bound equipment essences remain

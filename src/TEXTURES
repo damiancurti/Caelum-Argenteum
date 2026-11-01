@@ -1,3 +1,4 @@
+#include "caelum/data/tarot_automaton.textures"
 #include "caelum/data/native_doors.textures"
 #include "caelum/data/clothing_sprites.textures"
 #include "caelum/data/cartridge_kits.textures"

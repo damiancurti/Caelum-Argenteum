@@ -2,6 +2,31 @@
 
 Documentation version: **5.13.3** - 2026-10-31.
 
+## Tarot automaton model (#440, 5.13.3)
+
+The author explicitly requested a Zupay-sized 3D automaton with heavy armor,
+tower shield and mace. `assets/source/art/tarot_automaton/DESIGN.json` and the
+neutral modular OBJ are editable art sources. The deterministic generator
+`assets/generators/generate_tarot_automaton.py` produces20 MD3 frames: inactive,
+idle, eight walking, six attack, guard and three fallen poses. Its93.333333-MU
+height follows the existing Zupay; visual geometry does not recalculate the
+approved1,000kg body or96kg equipment. The model has3,232 triangles/7,816 vertices
+in four material batches; individual joints do not become separate draw calls.
+`CaelumAutomatonModelBody` is a noninteracting visual body. Campaign AI, actual
+equipment, wake/control and combat integration remain pending.
+
+The iron uses a new opaque built-in image_gen painted value ramp, copied without
+raster editing from the retained source. Neutral-pose face UVs select its values
+so flat native sector lighting still shows the plates. `PROMPT.json` records the
+complete prompt, tool mode and original output. Brass, wood and dark joints reuse
+unchanged owned station/stash textures. No third-party or development-IWAD art is
+introduced. `manifest.json` records source/material/output hashes. `--check` is
+read-only; the binary validator also checks MD3 offsets, triangles and planted
+legs during stationary attacks/guard. Native captures verify front/rear, walking,
+attack, guard and fallen poses; common-save recovery preserves the visual body.
+Evidence is in `assets/validation_v5_13_3/automaton-art-results.json`.
+Author review and frame-presentation measurements remain pending.
+
 ## Justice arena geometry (#440, 5.13.3)
 
 The24x24m room appended to every packaged map reuses owned CMST01 wall/ceiling
@@ -10,7 +35,7 @@ and CMST02 floor materials. No external or Doom texture is introduced. Its
 exact pre-arena map archive: assets/tarot_justice; deterministic generator:
 assets/generators/generate_tarot_justice.py. The room is isolated from existing
 campaign geometry; it adds no public entrance, narrative or reward. Its runtime
-Tarot entry/return implementation remains pending at this checkpoint.
+Tarot entry/return now has separate runtime evidence in HISTORY.
 
 ## Tarot Empress roots (#440, 5.13.3)
 

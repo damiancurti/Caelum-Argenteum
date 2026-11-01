@@ -1,0 +1,45 @@
+{
+  "issue": 440,
+  "author": "Damián Curti",
+  "brief": "Original articulated iron automaton with heavy plate armor, large tower shield and flanged mace; no insignia or human face. Native 3D explicitly requested by the author.",
+  "units": "GZDoom map units; 32 per metre. Visual dimensions do not derive the approved gameplay mass.",
+  "approved": {"body_mass_kg": 1000, "attributes": 30, "armor_kg": 60, "shield_kg": 24, "mace_kg": 12, "size_reference": "CaelumZupay radius 26.666667, height 93.333333"},
+  "height": 93.333333,
+  "radius": 26.666667,
+  "materials": {
+    "iron": "models/caelum/tarot/automaton/iron-painted-ramp.png",
+    "brass": "models/caelum/props/stations/ca_station_brass.png",
+    "dark": "models/caelum/props/stash/ca_stash_inside.png",
+    "wood": "models/caelum/props/stations/ca_station_wood.png"
+  },
+  "painted_shading": {"light_vector": [-0.5, 0.7, 0.4], "center_u": 0.52, "normal_span": 0.33, "face_span": 0.10},
+  "geometry": {
+    "torso_rings": [[45, 9, 6], [51, 11, 7], [63, 16, 9], [71, 17, 8], [75, 13, 6]],
+    "helmet_rings": [[78, 7, 6], [82, 8, 7], [90, 7, 6], [93.333333, 3, 3]],
+    "leg_x": 9,
+    "hip_y": 46,
+    "knee_y": 26,
+    "ankle_y": 7,
+    "shoulder_x": 20,
+    "shoulder_y": 69,
+    "elbow_y": 53,
+    "hand_y": 40,
+    "shield_center": [27, 48, 10],
+    "shield_width": 24,
+    "shield_height": 52,
+    "mace_bottom": [-22, 20, 7],
+    "mace_top": [-22, 65, 7],
+    "mace_head_radius": 8,
+    "segments": 12,
+    "joint_rings": 3,
+    "joint_segments": 8
+  },
+  "motion": {
+    "inactive": {"frames": 1, "sample_tics": 1, "loop": false},
+    "idle": {"frames": 1, "sample_tics": 1, "loop": false},
+    "walk": {"frames": 8, "sample_tics": 4, "loop": true, "hip_degrees": 24, "knee_degrees": 28, "bob_mu": 1.5, "stride_mu": 34},
+    "attack": {"frames": 6, "sample_tics": 2, "loop": false, "arm_degrees": [0, -55, -115, -145, -35, 0]},
+    "guard": {"frames": 1, "sample_tics": 1, "loop": false},
+    "fallen": {"frames": 3, "sample_tics": 5, "loop": false, "degrees": [25, 58, 85]}
+  }
+}

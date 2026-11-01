@@ -21,6 +21,7 @@ Death's equipped passive destroys explicitly marked living obstacles through Use
 Justice now supports simultaneous pairs, safe returns and cancellable travel waits,
 with an explicit legacy-map package for prior saves. Lovers now shares active-map
 Health damage/healing through real group membership and overlapping-aura deduplication.
+The automaton has owned animated 3D artwork; its Tarot control/combat is still pending.
 Remaining Major targets/effects and standalone modes
 #596-601 are unfinished. #441 capture/unified power and #442 equipment awakening
 have separate tested PRs. Author scenarios remain deferred until all work is ready.

@@ -1,0 +1,29 @@
+// Autómata original; generado desde DESIGN.json.
+Model CaelumAutomatonModelBody
+{
+    Path "models/caelum/tarot/automaton"
+    Model 0 "automaton.md3"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex TAM0 A 0 0
+    FrameIndex TAM0 B 0 1
+    FrameIndex TAM0 C 0 2
+    FrameIndex TAM0 D 0 3
+    FrameIndex TAM0 E 0 4
+    FrameIndex TAM0 F 0 5
+    FrameIndex TAM0 G 0 6
+    FrameIndex TAM0 H 0 7
+    FrameIndex TAM0 I 0 8
+    FrameIndex TAM0 J 0 9
+    FrameIndex TAM0 K 0 10
+    FrameIndex TAM0 L 0 11
+    FrameIndex TAM0 M 0 12
+    FrameIndex TAM0 N 0 13
+    FrameIndex TAM0 O 0 14
+    FrameIndex TAM0 P 0 15
+    FrameIndex TAM0 Q 0 16
+    FrameIndex TAM0 R 0 17
+    FrameIndex TAM0 S 0 18
+    FrameIndex TAM0 T 0 19
+}

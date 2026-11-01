@@ -14,7 +14,8 @@ are implemented; Justice pairs/returns/travel waits and legacy maps are checked.
 Lovers active-map damage/healing is checked; integrate its passive in abstract
 journey simulation before claiming completion. Finish remaining handlers/passives,
 giant/harmful objects, authored mansion
-fixtures, automaton3D art/combat and input arbitration. The confirmed per-power
+fixtures, automaton combat/control and input arbitration. Its owned 3D model is
+implemented separately, with native animation evidence. The confirmed per-power
 contract is consolidated in SYSTEMS; unresolved fields must still be asked.
 Only then integrate standalone modes #596-601 and issue final author scenarios.
 

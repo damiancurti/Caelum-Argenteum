@@ -378,6 +378,8 @@ The aimed-action priority for the remaining powers is still to be integrated.
   native14-tic preparation modified by attributes/load. Total1,096kg. Tarot wakes
   at most one per character for60s, then it becomes inactive preserving Health,
   equipment and wear. Tarot key commands a visible enemy while controlled.
+  Its separate visual body now has native animated model registration; this
+  artwork checkpoint does not yet instantiate campaign AI or wake/control logic.
 - Sun harmful objects mean large rocks, not projectiles. Approved examples are
   two1.2m-diameter rocks at2,500kg/m3 (about2,262kg): one8kW thermal source and
   one environmental contamination100 source within4m/LOS. Temporary Box containment
