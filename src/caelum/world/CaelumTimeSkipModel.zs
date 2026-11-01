@@ -151,6 +151,7 @@ class CaelumTimeSkipModel : CaelumJourneyModel
         ProvisionRevision=PROVISION_REVISION;
         // Otro cuerpo puede moverse o cambiar de equipo durante la espera.
         if(CaelumContaminationContacts.Active(user) || CaelumHousekeepingWork.Pending() || CaelumCampWorld.Burning()){Reason="CA_SKIP_FORECAST_EFFECT";Done=true;}
+        if(CaelumMajorWorldEvents.HasTimeEffects()){Reason="CA_SKIP_FORECAST_EFFECT";Done=true;}
         SleepCleaningCloth=CaelumCleaningSupplies.Cloth(user);SleepCleaningSoap=CaelumSoapSupply.Available(user);
         if(CaelumTimeSkipState.IsPreparingSleep(user)){Reason="CA_SKIP_FORECAST_EFFECT";Done=true;}
         Capture(user,false);

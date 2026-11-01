@@ -179,6 +179,7 @@ class CaelumCooperativeTime : Inventory
             clock.AdvanceOnMap(level.MapName);
             CaelumWorldClockTicker.Mirror(source);
             CaelumHousekeepingWork.AdvanceSkippedTic(source);CaelumCampWorld.AdvanceFires();
+            CaelumMajorWorldEvents.AdvanceSkippedTic();
             for(int i=0;i<MAXPLAYERS;i++)if((AliveMask&(1<<i))!=0)
                 CaelumTimeAdvanceState.SimulatePersonalTic(Members[i],false);
             if(before!=clock.DayTics || day!=clock.CompletedDays)Remaining--;

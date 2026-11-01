@@ -22,6 +22,7 @@ Justice now supports simultaneous pairs, safe returns and cancellable travel wai
 with an explicit legacy-map package for prior saves. Lovers now shares active-map
 Health damage/healing through real group membership and overlapping-aura deduplication.
 The automaton has owned animated 3D artwork; its Tarot control/combat is still pending.
+Accelerated waiting advances existing Tarot world effects once per shared step.
 Remaining Major targets/effects and standalone modes
 #596-601 are unfinished. #441 capture/unified power and #442 equipment awakening
 have separate tested PRs. Author scenarios remain deferred until all work is ready.

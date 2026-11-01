@@ -4,6 +4,20 @@ Documentation version: **5.13.3** - 2026-10-31.
 
 ## 5.13.3 - Ordered Tarot foundation (#440, implementation checkpoint)
 
+The accelerated world-clock correction (2026-11-01) advances existing traps,
+plants, Chariot projections and Justice pairs once per shared skipped tic.
+A bounded owner index avoids per-substep map or inventory scans; personal-only
+cooperative steps do not duplicate world work. Forecasts decline these changing
+world effects rather than predict an incomplete result. Native two-client
+waiting, actual unanimous acceleration and common-save recovery pass56 assertions.
+The first diagnostic run exposed a deferred spawn notification; completed
+factories now invalidate the same-frame cache explicitly. Normal-tick trap
+regression also exposed an obsolete fixture ticking an already expired actor;
+the fixture now verifies exact-boundary removal. These failed runs are retained.
+Final regression counts and package identity are recorded in
+assets/validation_v5_13_3/effect-clock-results.json. No new balance, actor AI,
+author acceptance or frame-presentation result is claimed by this correction.
+
 The focused automaton artwork checkpoint (2026-11-01) adds an original modular
 mesh and20 native MD3 frames at the approved Zupay height. Four material batches
 carry3,232 triangles; new built-in image_gen iron paint is recorded byte-exactly

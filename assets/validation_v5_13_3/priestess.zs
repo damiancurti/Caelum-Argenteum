@@ -93,8 +93,8 @@ class CA440Probe : StaticEventHandler
             Check(CaelumTarotMine.Place(user,ledger.Aim,2100),"same captured ground can be reused while valid");
             let holder=CaelumTarotMineState(user.FindInventory('CaelumTarotMineState'));ledger.Mine=holder.Mine;
             Check(old.bDestroyed && ledger.Mine!=old,"recasting replaces the previous trap without duplication");
-            ledger.Mine.RemainingTics=1;ledger.Mine.Tick();ledger.Mine.Tick();
-            Check(holder.Mine==null,"expiration clears the caster's mine reference");
+            ledger.Mine.RemainingTics=1;ledger.Mine.Tick();
+            Check(holder.Mine==null,"exact lifetime expiration clears the caster's mine reference");
             Check(CaelumTarotMine.Place(user,ledger.Aim,2100),"new trap starts with its own saved timer");ledger.Mine=holder.Mine;
             ledger.Damage=ledger.Mine.args[0];ledger.Phase=2;user.PersistCharacterState();
             Console.Printf("CA440P RESULT capture");return;
@@ -107,7 +107,7 @@ class CA440Probe : StaticEventHandler
             Check(ledger.Mine.RemainingTics<=ledger.Life && ledger.Mine.RemainingTics>=ledger.Life-1,"recovery retains elapsed lifetime without restarting it");
             Check(ledger.Mine.args[0]==ledger.Damage && ledger.Mine.target==user,"recovery keeps damage and caster attribution");
             Check(ledger.Aim.Found && ledger.Aim.Valid(user),"saved floor snapshot retains its visible destination");
-            ledger.Mine.RemainingTics=1;ledger.Mine.Tick();ledger.Mine.Tick();
+            ledger.Mine.RemainingTics=1;ledger.Mine.Tick();
             Check(holder.Mine==null,"recovered expiration safely removes the existing trap");
             ledger.Phase=3;Console.Printf("CA440P RESULT reload");
         }

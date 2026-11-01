@@ -15,7 +15,9 @@ Lovers active-map damage/healing is checked; integrate its passive in abstract
 journey simulation before claiming completion. Finish remaining handlers/passives,
 giant/harmful objects, authored mansion
 fixtures, automaton combat/control and input arbitration. Its owned 3D model is
-implemented separately, with native animation evidence. The confirmed per-power
+implemented separately, with native animation evidence. Existing world-effect
+clocks also follow shared accelerated steps; add future creations to that bounded
+owner index. The confirmed per-power
 contract is consolidated in SYSTEMS; unresolved fields must still be asked.
 Only then integrate standalone modes #596-601 and issue final author scenarios.
 

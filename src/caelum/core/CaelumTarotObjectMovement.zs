@@ -119,8 +119,68 @@ class CaelumTarotLift : Inventory
 
 class CaelumMajorWorldEvents : StaticEventHandler
 {
+    transient bool TimeSnapshotReady;
+    transient int TimeSnapshotTic;
+    transient Array<Actor> TimeEffects;
+
+    static void TimeSourcesChanged()
+    {
+        let world=CaelumMajorWorldEvents(StaticEventHandler.Find('CaelumMajorWorldEvents'));
+        if(world!=null)world.TimeSnapshotReady=false;
+    }
+    static bool HasTimeEffects()
+    {
+        let world=CaelumMajorWorldEvents(StaticEventHandler.Find('CaelumMajorWorldEvents'));
+        if(world==null)return false;
+        if(!world.TimeSnapshotReady || world.TimeSnapshotTic!=level.time)world.TimeSnapshot();
+        for(int i=0;i<world.TimeEffects.Size();i++)
+            if(world.TimeEffects[i]!=null && !world.TimeEffects[i].bDestroyed)return true;
+        return false;
+    }
+
+    void IncludeTimeEffect(Actor effect)
+    {
+        if(effect==null || effect.bDestroyed || TimeEffects.Find(effect)<TimeEffects.Size())return;
+        TimeEffects.Push(effect);
+    }
+    void TimeSnapshot()
+    {
+        TimeSnapshotReady=true;TimeSnapshotTic=level.time;TimeEffects.Clear();
+        // Una lectura por dueño y fotograma acelerado; máximo cuatro efectos
+        // por plaza. No se recorre el mundo ni se reescanean inventarios por subpaso.
+        for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i])
+        {
+            let user=CaelumPlayer(players[i].mo);if(user==null)continue;
+            let cart=CaelumTarotChariotState(user.FindInventory('CaelumTarotChariotState'));
+            let mine=CaelumTarotMineState(user.FindInventory('CaelumTarotMineState'));
+            let plant=CaelumTarotPlantState(user.FindInventory('CaelumTarotPlantState'));
+            let duel=CaelumJusticeLink.View(user);
+            if(cart!=null)IncludeTimeEffect(cart.Projection);
+            if(mine!=null)IncludeTimeEffect(mine.Mine);
+            if(plant!=null)IncludeTimeEffect(plant.Roots);
+            if(duel!=null)IncludeTimeEffect(duel.Duel);
+        }
+    }
+    static void AdvanceSkippedTic()
+    {
+        let world=CaelumMajorWorldEvents(StaticEventHandler.Find('CaelumMajorWorldEvents'));
+        if(world==null)return;
+        if(!world.TimeSnapshotReady || world.TimeSnapshotTic!=level.time)world.TimeSnapshot();
+        // El mismo duelo puede enlazar dos jugadores; la lista lo incluye una vez.
+        for(int i=0;i<world.TimeEffects.Size();i++)
+        {
+            let effect=world.TimeEffects[i];if(effect==null || effect.bDestroyed)continue;
+            let cart=CaelumTarotChariot(effect);if(cart!=null){cart.AdvanceEffect();continue;}
+            let mine=CaelumTarotMine(effect);if(mine!=null){mine.AdvanceEffect();continue;}
+            let plant=CaelumTarotRoots(effect);if(plant!=null){plant.AdvanceEffect();continue;}
+            let duel=CaelumTarotJustice(effect);if(duel!=null)duel.AdvanceEffect();
+        }
+    }
+    override void WorldLoaded(WorldEvent e)
+    {TimeSnapshotReady=false;TimeEffects.Clear();}
     override void WorldUnloaded(WorldEvent e)
     {
+        TimeSnapshotReady=false;TimeEffects.Clear();
         // Sólo los propietarios de la sesión: sin censo de actores del mapa.
         for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i])
         {

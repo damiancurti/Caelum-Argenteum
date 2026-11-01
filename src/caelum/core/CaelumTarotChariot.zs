@@ -66,6 +66,7 @@ class CaelumTarotChariot : Actor
             cart.IncludeUnlinked(body);
         }
         if(!cart.Fits(cart.Pos)){cart.Destroy();return null;}
+        CaelumMajorWorldEvents.TimeSourcesChanged();
         return cart;
     }
 
@@ -118,6 +119,10 @@ class CaelumTarotChariot : Actor
     override void Tick()
     {
         Super.Tick();
+        AdvanceEffect();
+    }
+    void AdvanceEffect()
+    {
         if(Caster!=null && Caster.SessionIdentityPending)return;
         if(Age>=CaelumMajorArcanaData.CHARIOT_SECONDS*TICRATE
             || Travelled>=CaelumMajorArcanaData.CHARIOT_DISTANCE_MU){Destroy();return;}

@@ -56,6 +56,7 @@ class CaelumTarotMine : CaelumMagicMine
         mine.args[1]=Max(1,int(CaelumMajorArcanaData.AREA_METERS*CaelumPhysicsUnits.MAP_UNITS_PER_METER
             *aim.RangeMultiplier+0.5));
         if(holder.Mine!=null)holder.Mine.Destroy();holder.Mine=mine;
+        CaelumMajorWorldEvents.TimeSourcesChanged();
         return true;
     }
     override bool IsPressedBy(Actor body)
@@ -63,9 +64,17 @@ class CaelumTarotMine : CaelumMagicMine
     override int ExplosionFlags(){return XF_THRUSTLESS|XF_HURTSOURCE;}
     override void Tick()
     {
+        // Super.Tick conserva física y presión nativas; el salto usa sólo presión.
         if(Caster!=null && Caster.SessionIdentityPending)return;
         if(Caster==null || RemainingTics<=0){Destroy();return;}
-        Super.Tick();RemainingTics--;
+        Super.Tick();AdvanceEffect(false);
+    }
+    void AdvanceEffect(bool checkContact=true)
+    {
+        if(Caster!=null && Caster.SessionIdentityPending)return;
+        if(Caster==null || RemainingTics<=0){Destroy();return;}
+        if(checkContact)CheckPressure();
+        if(--RemainingTics<=0)Destroy();
     }
     override void OnDestroy()
     {

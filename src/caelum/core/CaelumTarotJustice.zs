@@ -118,6 +118,7 @@ class CaelumTarotJustice : Actor
         duel.Angles[0]=user.Angle;duel.Angles[1]=target.Angle;
         own.Duel=other.Duel=duel;
         Move(user,first,user.Angle);Move(target,second,target.Angle);
+        CaelumMajorWorldEvents.TimeSourcesChanged();
         return true;
     }
     bool Segment(Actor body,vector3 from,vector3 point)
@@ -189,12 +190,14 @@ class CaelumTarotJustice : Actor
         return ready;
     }
     override void Tick()
+    {AdvanceEffect();}
+    void AdvanceEffect()
     {
         for(int i=0;i<2;i++)
         {let user=CaelumPlayer(Bodies[i]);if(user!=null && user.SessionIdentityPending)return;}
         if(!Alive(Bodies[0]) || !Alive(Bodies[1]) || RemainingTics<=0)Ending=true;
         if(Ending){ReturnNow();return;}
-        RemainingTics--;
+        if(--RemainingTics<=0){Ending=true;ReturnNow();}
     }
     override void OnDestroy()
     {

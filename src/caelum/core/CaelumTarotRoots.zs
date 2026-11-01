@@ -70,18 +70,21 @@ class CaelumTarotRoots : Actor
         root.Binding=CaelumTarotRooted.Get(victim);root.Binding.Sources.Push(root);
         root.UpdateAppearance();
         if(holder.Roots!=null)holder.Roots.Destroy();holder.Roots=root;
+        CaelumMajorWorldEvents.TimeSourcesChanged();
         victim.Vel.X=0;victim.Vel.Y=0;
         let player=CaelumPlayer(victim);
         if(player!=null)CaelumMovementImpulse.Clear(player);
         return true;
     }
     override void Tick()
+    {Super.Tick();AdvanceEffect();}
+    void AdvanceEffect()
     {
         let player=CaelumPlayer(Victim);
         if((Caster!=null && Caster.SessionIdentityPending) || (player!=null && player.SessionIdentityPending))return;
         if(Caster==null || Victim==null || Victim.bDestroyed || Victim.health<=0 || RemainingTics<=0)
         {Destroy();return;}
-        Super.Tick();UpdateAppearance();
+        UpdateAppearance();
         RemainingTics--;PulseTics++;DamageRemainder+=DamagePerSecond/TICRATE;
         if(PulseTics>=TICRATE || RemainingTics==0)
         {

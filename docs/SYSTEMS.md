@@ -309,6 +309,24 @@ effect. Expiry releases the borrowed effect without stopping an unrelated native
 racial ability. The choice menu and journal details are localized in ES/EN.
 The aimed-action priority for the remaining powers is still to be integrated.
 
+### Accelerated world-effect clocks
+
+Priestess traps, Empress plants, Chariot projections and Justice duels now advance
+on each shared accelerated step as well as ordinary native tics. Existing pressure,
+movement/contact, piercing damage and safe-return rules are reused. A two-player
+duel advances once; personal-only cooperative steps never advance world effects.
+This does not run unrelated NPC AI or accelerate all map physics. A transient
+snapshot reads only the eight session owners and deduplicates their effect links,
+at most once per native tic unless a completed creation invalidates it. Substeps
+reuse that bounded list. Save recovery rebuilds it from the existing saved links;
+no global actor scan or saved-schema migration is added. Pending Justice return
+searches retain their per-native-tic geometry budget.
+
+An abstract wait forecast declines active world creations, as it already does
+for unsupported changing contacts/fire; actual accelerated waiting still resolves
+them. Overland journeys retain their existing rejection of active Tarot effects.
+Lovers passive redistribution in the abstract journey model remains separate work.
+
 ### Confirmed follow-up contract for the remaining handlers
 
 - World order0..77, same target where applicable, skip invalid targets; selected

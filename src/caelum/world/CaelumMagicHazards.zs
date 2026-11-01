@@ -32,6 +32,11 @@ class CaelumPressureTrap : Actor
     override void Tick()
     {
         Super.Tick();
+        CheckPressure();
+    }
+
+    void CheckPressure()
+    {
         if (Spent) return;
         if (RetryTics > 0) { RetryTics--; return; }
         let nearby = BlockThingsIterator.Create(self, Radius);
