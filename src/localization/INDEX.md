@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `4e01db7b613c922e7c34f6d388670f73b102cab670acada7e30393ea1648c01d`. Locations include every definition; the last one per language wins.
+SHA-256: `2c08f9807dbe49b60ba1ff893e0f4e8474efdc411d0b6f5e8d02611fb3a3009f`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -29,6 +29,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_ARMOR | 13 | CA_ARMOR_BASE_NOTHING | CA_ARMOR_TYPE_MEDIUM |
 | CA_ATTACK | 4 | CA_ATTACK_HIT | CA_ATTACK_NO_ANIMA |
 | CA_ATTRIBUTE | 12 | CA_ATTRIBUTE_AGILITY | CA_ATTRIBUTE_TOUGHNESS |
+| CA_AWAKEN | 10 | CA_AWAKEN_BOUND | CA_AWAKEN_UNAVAILABLE |
 | CA_BA | 6 | CA_BA_DOCK | CA_BA_WORKSHOPS |
 | CA_BASIC | 2 | CA_BASIC_BED | CA_BASIC_CHAIR |
 | CA_BATH | 15 | CA_BATH_CANCELLED | CA_BATH_TITLE |

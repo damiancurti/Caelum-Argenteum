@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.13.1** - 2026-10-31.
+Documentation version: **5.13.2** - 2026-10-31.
+
+## 5.13.2 - Reversible equipment awakening (#442)
+
+Implementation and isolated native validation cover inventory association,
+exclusive ownership, damage/defense, fractional wear, drop/transfer and save
+recovery. Keep #442's focused PR separate from #441 and #440. Continue #440's
+approved rules while collecting its outstanding per-power decisions; standalone
+#596-601 remain last. Author checks are not yet issued or accepted.
 
 ## 5.13.1 - Capture sources and unified Tarot (#441)
 

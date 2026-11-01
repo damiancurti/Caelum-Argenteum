@@ -3,6 +3,7 @@
 class CaelumArmorModel : Object
 {
     CaelumContaminationState ContaminationState[4];
+    CaelumEquipmentItem SourceItem[4];
     int ArmorType[4];
     int Tier[4];
     int Size[4];
@@ -62,7 +63,9 @@ class CaelumArmorModel : Object
     {
         if (ArmorType[slot] == CaelumConstants.ARMOR_TYPE_BASE_CLOTHING) { return 0; }
         if (Durability[slot] <= 0) { return 0; }
-        return CaelumArmorRules.EquipmentDefense(ArmorType[slot], Tier[slot], magical);
+        return CaelumArmorRules.EquipmentDefense(ArmorType[slot], Tier[slot], magical)
+            *CaelumAwakening.ActiveFactor(SourceItem[slot],CaelumConstants.EQUIPMENT_KIND_ARMOR,
+                ArmorType[slot],Tier[slot],Size[slot],slot);
     }
 
     // El peso pertenece a la pieza equipada aunque su durabilidad llegue a cero.

@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.13.1** - 2026-10-31.
+Documentation version: **5.13.2** - 2026-10-31.
+
+## 5.13.2 - Reversible equipment awakening (#442)
+
+The inventory now associates acquired, unequipped inactive essences with native
+weapons, armor and shields: +25% damage/defense and half wear. Transferring the
+item releases the association without transferring the essence. SYSTEMS holds
+the contract and migration; HISTORY and validation_v5_13_2 hold the evidence.
+#440 Major powers and the final standalone block #596-601 remain unfinished.
+Author acceptance is deferred to the full V5.13 suite.
 
 ## 5.13.1 - Capture sources and unified Tarot (#441)
 

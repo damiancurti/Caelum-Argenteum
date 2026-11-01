@@ -1,7 +1,7 @@
 // Un único propietario nativo para las vistas que mantienen viva la simulación.
 class CaelumLiveMenu : ListMenu
 {
-    enum ContextType { CTX_SKIP=100, CTX_JOURNEY, CTX_REST, CTX_MERCHANT, CTX_CALENDAR, CTX_EQUIPMENT, CTX_CHEST, CTX_CREATION, CTX_RECIPES, CTX_MATE, CTX_PROPERTY, CTX_BATH, CTX_CLEAN, CTX_CAMP_FIRE, CTX_CAMP_TENT, CTX_TRANSPORT, CTX_COMPANION };
+    enum ContextType { CTX_SKIP=100, CTX_JOURNEY, CTX_REST, CTX_MERCHANT, CTX_CALENDAR, CTX_EQUIPMENT, CTX_CHEST, CTX_CREATION, CTX_RECIPES, CTX_MATE, CTX_PROPERTY, CTX_BATH, CTX_CLEAN, CTX_CAMP_FIRE, CTX_CAMP_TENT, CTX_TRANSPORT, CTX_COMPANION, CTX_AWAKENING };
     CaelumPlayer Subject;
     String OriginMap;
     int Context;
@@ -37,6 +37,8 @@ class CaelumLiveMenu : ListMenu
         let clock=CaelumWorldClock(user.FindInventory('CaelumWorldClock'));
         if(clock!=null && clock.TravelVote!=null && clock.TravelVote.Opened)return 0;
         if(user.CreationWizardOpen)return CTX_CREATION;
+        let awakening=CaelumAwakeningMenu.Read(user);
+        if(awakening!=null && awakening.Opened)return CTX_AWAKENING;
         let companion=CaelumCompanionSession(user.FindInventory("CaelumCompanionSession"));
         if(companion!=null && companion.Open)return CTX_COMPANION;
         let property=CaelumPropertySession(user.FindInventory("CaelumPropertySession"));
@@ -98,6 +100,8 @@ class CaelumLiveMenu : ListMenu
         // Identidad seleccionada, no los valores de supervivencia que cambian cada tic.
         let view=Journal();
         int result=Context*100000;
+        if(Context==CTX_AWAKENING)
+        {let awakening=CaelumAwakeningMenu.Read(Subject);if(awakening!=null)result+=awakening.SelectedCard+2;}
         if(Context==CTX_TRANSPORT)
         {
             let session=CaelumTransportSession.Find(Subject);let booking=CaelumTransportBooking.Find(Subject);
@@ -132,6 +136,7 @@ class CaelumLiveMenu : ListMenu
         CaelumPresentation.BeginMenu();
         if(Context==CTX_CREATION)debug.DrawCreationWizard(Subject);
         else if(Context==CTX_EQUIPMENT)debug.DrawEquipmentMenu(Subject);
+        else if(Context==CTX_AWAKENING)Journal().DrawAwakening(Subject,CaelumAwakeningMenu.Read(Subject));
         else if(Context==CTX_PROPERTY)CaelumPropertyUI.Draw(Journal(),Subject);
         else if(Context==CTX_COMPANION)CaelumCompanionUI.Draw(Journal(),Subject);
         else if(Context==CTX_CLEAN)CaelumCleaningUI.Draw(Journal(),Subject);
@@ -153,6 +158,8 @@ class CaelumLiveMenu : ListMenu
         if(Wanted(Subject)!=Context)return true;
         if(type==InputEvent.Type_KeyDown)ResetPointer();
         if(scan==InputEvent.Key_Grave)return false;
+        if(Context==CTX_AWAKENING && scan!=InputEvent.Key_Escape && scan!=InputEvent.Key_Pad_Start)
+            return Journal().AwakeningKey(Subject,type,scan,keyString);
         if(physical && Context>=1 && Context<=7 && CaelumExplorationNavigation.Shortcut(type,scan))return true;
         if(Context>=1 && Context<=7 && keyString~=="n"
             && (!physical || (!CaelumInputHints.Matches(scan,"ca_journal_toggle") && !CaelumInputHints.Matches(scan,"ca_time_skip"))))

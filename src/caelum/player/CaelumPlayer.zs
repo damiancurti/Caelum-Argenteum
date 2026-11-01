@@ -6400,7 +6400,7 @@ class CaelumPlayer : DoomPlayer
                 double rollPercent = Random[CaelumArmorDurability](0, 999999)
                     / 10000.0;
                 if (rollPercent < chancePercent) { durabilityLoss++; }
-                durabilityLoss = Min(durabilityLoss, ArmorModel.Durability[slot]);
+                durabilityLoss = Min(CaelumAwakening.Wear(ArmorModel.SourceItem[slot],durabilityLoss), ArmorModel.Durability[slot]);
                 ArmorModel.Durability[slot] -= durabilityLoss;
                 if (durabilityLoss > 0 && ArmorModel.Durability[slot] <= 0)
                 {
@@ -6816,7 +6816,7 @@ class CaelumPlayer : DoomPlayer
         if (IsGiantGauntletsBlockSource())
         {
             LastShieldDurabilityLoss = Min(
-                LastShieldDurabilityLoss, WeaponModel.Durability
+                CaelumAwakening.Wear(WeaponModel.SourceItem,LastShieldDurabilityLoss), WeaponModel.Durability
             );
             WeaponModel.Durability -= LastShieldDurabilityLoss;
             if (WeaponModel.Durability <= 0) { CancelCombatBlockMode(); }
@@ -6824,7 +6824,7 @@ class CaelumPlayer : DoomPlayer
         }
         if (ShieldModel == null) { return; }
         LastShieldDurabilityLoss = Min(
-            LastShieldDurabilityLoss, ShieldModel.Durability
+            CaelumAwakening.Wear(ShieldModel.SourceItem,LastShieldDurabilityLoss), ShieldModel.Durability
         );
         ShieldModel.Durability -= LastShieldDurabilityLoss;
         if (ShieldModel.Durability <= 0) { CancelCombatBlockMode(); }
@@ -6918,7 +6918,7 @@ class CaelumPlayer : DoomPlayer
             LastIncomingArmorSlot, 0, CaelumConstants.ARMOR_SLOT_COUNT - 1
         );
         LastArmorDurabilityLoss = Min(
-            LastArmorDurabilityLoss,
+            CaelumAwakening.Wear(ArmorModel.SourceItem[slot],LastArmorDurabilityLoss),
             ArmorModel.Durability[slot]
         );
         ArmorModel.Durability[slot] -= LastArmorDurabilityLoss;
@@ -8044,7 +8044,7 @@ class CaelumPlayer : DoomPlayer
             return;
         }
 
-        LastWeaponDurabilityLoss = Min(requestedLoss, weapon.Durability);
+        LastWeaponDurabilityLoss = Min(CaelumAwakening.Wear(weapon,requestedLoss), weapon.Durability);
         weapon.Durability -= LastWeaponDurabilityLoss;
 
         bool isActiveWeapon = WeaponModel != null
@@ -8108,7 +8108,8 @@ class CaelumPlayer : DoomPlayer
         int roll = Random[CaelumWeaponDurability](0, 999999);
         LastWeaponDurabilityRollPercent = roll / 10000.0;
         LastWeaponDurabilityLoss = CaelumWeaponUseRules.WearLoss(eligibleDamage,
-            weapon.Durability,LastWeaponDurabilityRollPercent);
+            weapon.Durability,LastWeaponDurabilityRollPercent,false);
+        LastWeaponDurabilityLoss=Min(weapon.Durability,CaelumAwakening.Wear(weapon,LastWeaponDurabilityLoss));
         if (LastWeaponDurabilityLoss <= 0) { return; }
 
         weapon.Durability -= LastWeaponDurabilityLoss;
@@ -9243,6 +9244,7 @@ class CaelumPlayer : DoomPlayer
     {
         CaelumEquipmentItem shield = FindActiveNativeShield();
         EquippedShieldItemId = shield != null ? shield.ItemId : 0;
+        if(ShieldModel!=null)ShieldModel.SourceItem=shield;
         if (shield == null && ShieldModel != null && ShieldModel.Equipped)
         {
             // Nunca crea equipo para justificar un estado obsoleto. La
@@ -9266,7 +9268,7 @@ class CaelumPlayer : DoomPlayer
         return ShieldModel != null ? ShieldModel.GetCoverageDegrees() : 0;
     }
 
-    int GetActiveBlockDefense(int damageKind)
+    double GetActiveBlockDefense(int damageKind)
     {
         if (!IsGiantGauntletsBlockSource())
         {
@@ -9677,7 +9679,7 @@ class CaelumPlayer : DoomPlayer
                 LastShieldDurabilityLoss++;
             }
             LastShieldDurabilityLoss = Min(
-                LastShieldDurabilityLoss,
+                CaelumAwakening.Wear(ShieldModel.SourceItem,LastShieldDurabilityLoss),
                 ShieldModel.Durability
             );
             ShieldModel.Durability -= LastShieldDurabilityLoss;
@@ -10795,7 +10797,7 @@ class CaelumPlayer : DoomPlayer
             LastArmorDurabilityLoss++;
         }
         LastArmorDurabilityLoss = Min(
-            LastArmorDurabilityLoss,
+            CaelumAwakening.Wear(ArmorModel.SourceItem[slot],LastArmorDurabilityLoss),
             ArmorModel.Durability[slot]
         );
         ArmorModel.Durability[slot] -= LastArmorDurabilityLoss;

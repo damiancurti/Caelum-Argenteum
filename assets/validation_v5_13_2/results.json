@@ -1,0 +1,146 @@
+{
+  "issue": 442,
+  "release": "5.13.2",
+  "author_acceptance": false,
+  "static_validation": "validate_project.py: no errors; git diff --check: clean",
+  "runtime_members_matching_source": 18008,
+  "native_runs": [
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue442\\native-32256-20261031-225828-058034",
+      "runtime_sha256": "ad678c8f08270165bbea6bab48f145664e025e0ae8bc0ec7683bddff53294ea0",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA442 PASS new item starts unbound",
+            "CA442 PASS legacy zero does not bind Fool",
+            "CA442 PASS foreign owner rejected",
+            "CA442 PASS unacquired essence rejected",
+            "CA442 PASS equipped essence rejected",
+            "CA442 PASS active essence rejected",
+            "CA442 PASS rendered inventory menu and native confirmation bind chosen essence",
+            "CA442 PASS association preserves wear and contamination identity",
+            "CA442 PASS repeated confirmation is idempotent",
+            "CA442 PASS one essence cannot bind two items",
+            "CA442 PASS armor accepts acquired Minor",
+            "CA442 PASS bound essence cannot be equipped",
+            "CA442 PASS shield accepts separate essence",
+            "CA442 PASS weapon model applies 25 percent damage",
+            "CA442 PASS armor defense increases without rounding",
+            "CA442 PASS shield defense preserves half point",
+            "CA442 PASS native shield wear is halved",
+            "CA442 PASS native armor wear is halved",
+            "CA442 PASS native toss clears both association and occupancy",
+            "CA442 PASS toss preserves equipment wear and personal essence",
+            "CA442 PASS first wear half retained",
+            "CA442 PASS removal preserves wear debt",
+            "CA442 PASS removal restores damage immediately",
+            "CA442 PASS reassociation preserves identity",
+            "CA442 PASS reassociation cannot evade fractional wear",
+            "CA442 PASS fixed native wear is halved",
+            "CA442 PASS damage native wear is halved",
+            "CA442 PASS internal Box storage retains association",
+            "CA442 PASS save retains next half wear",
+            "CA442 RESULT capture"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA442 PASS new item starts unbound",
+            "CA442 PASS legacy zero does not bind Fool",
+            "CA442 PASS foreign owner rejected",
+            "CA442 PASS unacquired essence rejected",
+            "CA442 PASS equipped essence rejected",
+            "CA442 PASS active essence rejected",
+            "CA442 PASS rendered inventory menu and native confirmation bind chosen essence",
+            "CA442 PASS association preserves wear and contamination identity",
+            "CA442 PASS repeated confirmation is idempotent",
+            "CA442 PASS one essence cannot bind two items",
+            "CA442 PASS armor accepts acquired Minor",
+            "CA442 PASS bound essence cannot be equipped",
+            "CA442 PASS shield accepts separate essence",
+            "CA442 PASS weapon model applies 25 percent damage",
+            "CA442 PASS armor defense increases without rounding",
+            "CA442 PASS shield defense preserves half point",
+            "CA442 PASS native shield wear is halved",
+            "CA442 PASS native armor wear is halved",
+            "CA442 PASS native toss clears both association and occupancy",
+            "CA442 PASS toss preserves equipment wear and personal essence",
+            "CA442 PASS first wear half retained",
+            "CA442 PASS removal preserves wear debt",
+            "CA442 PASS removal restores damage immediately",
+            "CA442 PASS reassociation preserves identity",
+            "CA442 PASS reassociation cannot evade fractional wear",
+            "CA442 PASS fixed native wear is halved",
+            "CA442 PASS damage native wear is halved",
+            "CA442 PASS internal Box storage retains association",
+            "CA442 PASS save retains next half wear",
+            "CA442 RESULT capture"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue442\\native-32257-20261031-225933-857402",
+      "runtime_sha256": "ad678c8f08270165bbea6bab48f145664e025e0ae8bc0ec7683bddff53294ea0",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA442 PASS load restores item association and owner identity",
+            "CA442 PASS load preserves fractional wear debt",
+            "CA442 PASS second half becomes one durability loss",
+            "CA442 PASS load finds exact bound item",
+            "CA442 PASS load preserves essence ownership",
+            "CA442 PASS transfer clears association immediately",
+            "CA442 PASS transfer does not transfer essence",
+            "CA442 PASS former owner cannot mutate transferred piece",
+            "CA442 RESULT reload"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA442 PASS load restores item association and owner identity",
+            "CA442 PASS load preserves fractional wear debt",
+            "CA442 PASS second half becomes one durability loss",
+            "CA442 PASS load finds exact bound item",
+            "CA442 PASS load preserves essence ownership",
+            "CA442 PASS transfer clears association immediately",
+            "CA442 PASS transfer does not transfer essence",
+            "CA442 PASS former owner cannot mutate transferred piece",
+            "CA442 RESULT reload"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "visual_review": {
+    "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue442\\native-32256-20261031-225828-058034\\bundle\\peer0\\awakening.png",
+    "sha256": "7e2ac9b9e4ae682ee43668e6000b85d5b778363e5def3bcaade5c9c669d4f915",
+    "result": "Readable Spanish association panel with owned card image and dedicated previous/next/confirm/back footer."
+  },
+  "limitations": [
+    "Isolated two-client native checks, not author acceptance or rendering benchmark.",
+    "No actor-global scan added; pre-existing copy/toss projectile identity lookup unchanged."
+  ]
+}

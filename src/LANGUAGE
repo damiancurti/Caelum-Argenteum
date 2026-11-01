@@ -7475,3 +7475,26 @@ CA_TAROT_UNIFIED_ACTIVE = "Unified Tarot active: deity damage allowed for 60 s. 
 CA_TAROT_UNIFIED_ACTION = "U: Esencia unificada";
 CA_TAROT_UNIFIED_REQUIRES = "Requiere las 78 esencias y El Mundo equipado.";
 CA_TAROT_UNIFIED_ACTIVE = "Tarot unificado activo: permite herir deidades durante 60 s. Coste: 1.000 Ánima.";
+
+[enu default]
+CA_AWAKEN_TITLE = "Awaken equipment";
+CA_AWAKEN_HINT = "A: Associate / remove Tarot essence";
+CA_AWAKEN_RULES = "+25% weapon damage or armor/shield defense; half wear. One acquired, unequipped and inactive essence per item. No cost. Wear and contamination are preserved.";
+CA_AWAKEN_KEYS = "Arrows: choose essence\nEnter: confirm\nQ / Tab: cancel\nTransfer or drop removes the association.";
+CA_AWAKEN_NONE = "Remove association";
+CA_AWAKEN_EQUIPMENT_ONLY = "Select a weapon, armor piece or shield in the inventory.";
+CA_AWAKEN_UNAVAILABLE = "The essence must be acquired, unequipped and inactive.";
+CA_AWAKEN_BOUND = "This essence is already associated with equipment. Remove that association first.";
+CA_AWAKEN_DONE = "Equipment awakened. The essence remains owned but cannot be equipped.";
+CA_AWAKEN_REMOVED = "Association removed. The essence is available again.";
+[es]
+CA_AWAKEN_TITLE = "Despertar equipo";
+CA_AWAKEN_HINT = "A: Asociar / retirar esencia del Tarot";
+CA_AWAKEN_RULES = "+25% de daño del arma o defensa de armadura/escudo; mitad de desgaste. Una esencia adquirida, desequipada e inactiva por pieza. Sin coste. Conserva desgaste y contaminación.";
+CA_AWAKEN_KEYS = "Flechas: elegir esencia\nEnter: confirmar\nQ / Tab: cancelar\nTransferir o soltar elimina la asociación.";
+CA_AWAKEN_NONE = "Retirar asociación";
+CA_AWAKEN_EQUIPMENT_ONLY = "Seleccioná un arma, una armadura o un escudo en el inventario.";
+CA_AWAKEN_UNAVAILABLE = "La esencia debe estar adquirida, desequipada e inactiva.";
+CA_AWAKEN_BOUND = "Esta esencia ya está asociada con equipo. Retirá primero esa asociación.";
+CA_AWAKEN_DONE = "Equipo despertado. Conservás la esencia, pero no podés equiparla.";
+CA_AWAKEN_REMOVED = "Asociación retirada. La esencia vuelve a estar disponible.";
