@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.13.7** - 2026-11-01.
+Documentation version: **5.13.8** - 2026-11-01.
+
+## 5.13.8 - Cooperative hunt (#601)
+
+The final standalone mode is implemented separately after PR612 (#600).
+The new128m maze owns78 distributed objectives,24 reusable traps and Palomo's
+capture/rescue lifecycle. Four-client native evidence passes216 assertions,
+including ordinary movement into contact and uninterrupted native Use rescue.
+The combined final V5.13 manual terminal remains #596's next delivery; no issue
+is closed or merged before author acceptance.
 
 ## 5.13.7 - Capture the Arcana (#600)
 

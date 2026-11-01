@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.13.7** - 2026-11-01.
+Documentation version: **5.13.8** - 2026-11-01.
+
+## 5.13.8 - Cooperative hunt (#601)
+
+Completed four-client collection, duplicate contacts, pursuit/memory,
+capture/rescue interruption, resources, friendly-fire exclusion, native trap
+motion/full-minute rearm, shared victory/loss, save recovery and unanimous restart.
+Native map captures are inspected. Prepare the final V5.13 author terminal and
+pending_test entries under #596; keep the issue branches and evidence separate.
 
 ## 5.13.7 - Capture the Arcana (#600)
 

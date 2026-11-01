@@ -1,6 +1,7 @@
 // #438: el fuego amigo aprobado usa el factor nativo completo.
 defaultmap { teamdamage=1 }
 include "caelum/data/arenas.mapinfo"
+include "caelum/data/hunt.mapinfo"
 include "caelum/data/transport.mapinfo"
 include "caelum/data/transport_scenes.mapinfo"
 include "caelum/data/cartography.mapinfo"

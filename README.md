@@ -6,14 +6,17 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.13.7.** Obtain and update the complete repository, validate
+**Current release: 5.13.8.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
 #597's standalone setup is in PR609: a localized Multiplayer menu, separate
 match configuration/saves and the four resident presets. The launcher uses Python
 to start GZDoom's native host/join process and returns to the title afterward.
 Deathmatch (#598), Team Deathmatch (#599) and Capture the Arcana (#600) have native scoring, respawn, recovery and rematch
-evidence. Team/capture/hunt #599–601 and final author acceptance remain pending.
+evidence. The cooperative hunt (#601) now has its distributed 128 m maze,
+78 essences, 24 rearming traps, Palomo pursuit and shared capture/rescue state.
+All standalone modes are implemented; final-suite delivery and author acceptance
+remain pending under #596.
 
 V5.13 is in progress. #440 now has ordered Tarot loadouts, additive capacities,
 Star volume admission, direct furniture collection, original storage contents and saved safe-drop queues,
@@ -61,7 +64,7 @@ Accelerated waiting advances existing Tarot world effects once per shared step.
 All22 Major handlers and their approved examples are integrated; combined native
 sequence/recovery/annex regression passed118 assertions on the final package.
 Frame-presentation review remains pending after Windows denied ETW access.
-Standalone modes #596-601 remain unfinished. #441 capture/unified power and #442 equipment awakening
+Standalone modes #597-601 have separate native evidence. #441 capture/unified power and #442 equipment awakening
 have separate tested PRs. Author scenarios remain deferred until all work is ready.
 
 The 5.12.7a correction (#602) lets valid mansion spirits confirm and restore

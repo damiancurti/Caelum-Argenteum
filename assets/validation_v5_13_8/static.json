@@ -1,0 +1,11 @@
+{
+  "deterministic": true,
+  "outputs": {
+    "src\\maps\\CAHUNT.wad": "e304ef9682dd833f5f2a5f6bc329c5ec1da4796c8f11c2dd439d2dea7bfde513",
+    "src\\caelum\\data\\CaelumHuntData.zs": "d8e0db6167365fbfe1394b820acd0040031f69b9b38fe6fc696fccfb3d812c6f",
+    "src\\caelum\\data\\hunt.mapinfo": "0aab14272087b9ff5653682a2c3a08865d34f857928e4be7185d809bcae6e6af",
+    "assets\\hunt\\GENERATED.json": "78a21c39288340b34cbc45ef9d965ab4070540f98b1c6451903c750ac4d6a9b7"
+  },
+  "runtime_sha256": "a6e66af1309b98945321cab51eb157cedd58b53498641e80a0b2d606822e15ca",
+  "every_runtime_member_equals_src": true
+}
