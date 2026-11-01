@@ -624,3 +624,7 @@ version "4.14"
 #include "caelum/data/CaelumPowerupData.zs"
 #include "caelum/world/CaelumLabyrinthPowerups.zs"
 #include "caelum/world/CaelumPowerupRest.zs"
+#include "caelum/world/CaelumHuntArcana.zs"
+
+#include "caelum/data/CaelumHuntArcanaData.zs"
+#include "caelum/world/CaelumHuntOpportunities.zs"

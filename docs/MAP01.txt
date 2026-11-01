@@ -1,6 +1,13 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.13.11** - 2026-11-01.
+Documentation version: **5.13.12** - 2026-11-01.
+
+## Standalone hunt boundary (#616)
+
+The new 22 Arcana opportunities belong to CAHUNT, not the mansion's story or
+tutorial. They reuse the approved annex mechanics without changing MAP01.
+Hunt Fool rescues a selected captive locally; campaign Fool retains the voted
+Limbo journey. Human Palomo is not a seeker and never receives shared cards.
 
 ## 5.13.3 - Tarot example annex geometry (#440)
 

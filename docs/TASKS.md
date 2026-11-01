@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.13.11** - 2026-11-01.
+Documentation version: **5.13.12** - 2026-11-01.
+
+## 5.13.12 - Final V5.13 handoff (#596)
+
+#616 implements the last gameplay extension. Finish #596's combined terminal:
+include #614 power-ups, #617 human Palomo and #616 shared cards/rescue/22 rooms;
+verify final startup and common-save recovery, then populate pending_test.txt.
+Keep technical fixture success separate from physical-input/visual acceptance.
+Do not merge or close V5.13 issues before the author's confirmation.
 
 ## 5.13.11 - Remaining V5.13 work (#616/#596)
 

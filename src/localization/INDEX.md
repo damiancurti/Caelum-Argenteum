@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `b1392de326808b8750f05223072245bc4bfda76aa8c2ba76226eff3300dfbe71`. Locations include every definition; the last one per language wins.
+SHA-256: `c62a0f577bf348f1fa618db8966154ec01a68c11eeda2b43246d7ab141316211`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -105,7 +105,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_HIT | 5 | CA_HIT_LOCATION_ARMS | CA_HIT_LOCATION_TORSO |
 | CA_HUD | 30 | CA_HUD_ACTIVE_WEAPON | CA_HUD_UNARMED |
 | CA_HUNGER | 2 | CA_HUNGER_STATE_CRITICAL | CA_HUNGER_STATE_LOW |
-| CA_HUNT | 14 | CA_HUNT_AI_PALOMO | CA_HUNT_WAIT_RESCUE |
+| CA_HUNT | 42 | CA_HUNT_AI_PALOMO | CA_HUNT_WAIT_RESCUE |
 | CA_HYGIENE | 6 | CA_HYGIENE_CANCELLED | CA_HYGIENE_SODA |
 | CA_IDENTITY | 2 | CA_IDENTITY_CREATOR_OWNER | CA_IDENTITY_NETWORK_NAME |
 | CA_INTRO | 9 | CA_INTRO_AWAKENING | CA_INTRO_WELCOME |

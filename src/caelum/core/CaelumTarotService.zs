@@ -119,9 +119,10 @@ class CaelumTarotService : Object play
         { Feedback(user, "CA_TAROT_POWER_COOLDOWN"); return false; }
         if (!devil && user.CurrentAnima < CaelumConstants.TAROT_ACTIVATION_ANIMA)
         { Feedback(user, "CA_TAROT_POWER_ANIMA"); return false; }
-        if (record.TarotSelected[CaelumConstants.TAROT_THE_FOOL]
+        if(!CaelumHuntArcana.BeforeActivation(user,record))return false;
+        if (CaelumTarotHunt.View()==null && (record.TarotSelected[CaelumConstants.TAROT_THE_FOOL]
             || (record.TarotSelected[21] && record.HasTarotCard(CaelumConstants.TAROT_THE_FOOL)
-                && CaelumFoolTravel.JourneyAvailable(user)))
+                && CaelumFoolTravel.JourneyAvailable(user))))
             return CaelumFoolTravel.Propose(user);
         Actor aimed=(record.TarotSelected[1] || record.TarotSelected[3] || record.TarotSelected[4] || record.TarotSelected[8] || record.TarotSelected[13] || record.TarotSelected[16] || record.TarotSelected[21])
             ? CaelumMajorTargets.Aim(user) : null;
@@ -137,7 +138,7 @@ class CaelumTarotService : Object play
 
     static void Advance(CaelumPlayer user, int elapsedTics = 1)
     {
-        if (!CaelumPlayerAuthority.CanMutate(user)) return;
+        if (!CaelumPlayerAuthority.CanMutate(user) && !CaelumTarotHunt.Held(user)) return;
         if(CaelumTarotStar.View(user)==null)CaelumTarotStar.Changed(user);
         let record = user.GetPersistentCharacterState(false);
         if (record == null || elapsedTics <= 0

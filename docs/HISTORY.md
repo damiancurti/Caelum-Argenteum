@@ -1,6 +1,29 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.13.11** - 2026-11-01.
+Documentation version: **5.13.12** - 2026-11-01.
+
+## 5.13.12 - Distributed hunt Arcana (#616, 2026-11-01)
+
+Implemented the author's approved 22 opportunities, shared discovered cards,
+initial Box/deck and chosen-captive Fool rescue. The existing four-quarter hunt
+keeps all 78 objectives and 24 traps reachable with alternate routes. Existing
+art and combat calibrations are reused; new map coordinates are deterministic.
+The original 5.13.11 map and navigation are retained with hashes for reversible
+recovery. No author acceptance or issue closure is inferred.
+
+Cross-review found interactions between captivity and Justice/timers and moved
+obstacles. Captive Tarot timers now advance, captured duelists leave their pair,
+Fool waits for the caster's return, and navigation includes actual prop positions
+plus the edges between cells. Native evidence and limitations are retained in
+assets/validation_v5_13_12. Early fixture failures (declaration types, root-lump
+overlay duplication, too-short blocked-search/door timing and a wrong queried
+cell) remain in local logs; corrected probes use full native packaged builds.
+
+Six final native scenarios passed across 24 local peer processes: gallery,
+integration, safe/blocked rescue, current-save recovery, original-map recovery
+and the final marker/navigation integration. Deterministic regeneration and
+project validation pass. Native models were inspected; physical-input acceptance
+remains deferred to #596. These checks do not establish Internet performance.
 
 ## 5.13.11 - Player-controlled Palomo (#617, 2026-11-01)
 

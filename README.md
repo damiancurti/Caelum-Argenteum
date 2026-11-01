@@ -6,11 +6,12 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.13.11.** Obtain and update the complete repository, validate
+**Current release: 5.13.12.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
 The six #614 labyrinth power-ups and optional #617 human Palomo are implemented.
-The separate #616 Arcana opportunities and #596 final author suite remain in progress.
+The #616 Arcana opportunities are implemented; #596 final author-suite delivery remains pending.
+Pre-5.13.12 hunt saves use `build_dev.ps1 -LegacyHunt` to retain their original geometry.
 See `docs/TASKS.md`.
 
 #597's standalone setup is in PR609: a localized Multiplayer menu, separate

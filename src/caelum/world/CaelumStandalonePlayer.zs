@@ -31,7 +31,13 @@ class CaelumStandalonePlayer : CaelumPlayer
         let match=CaelumStandaloneMatch.View();
         if(match!=null && (!match.Started || match.Finished))return 0;
         if(match!=null && match.Hunt!=null && (CaelumTarotHunt.Held(self) || (source!=self && source is 'CaelumStandalonePlayer')))return 0;
-        return Super.DamageMobj(inflictor,source,damage,mod,flags,angle);
+        // Los peligros del laberinto conservan los recursos anteriores al golpe
+        // fatal; una trampa en curso ya tiene su propia instantánea de entrada.
+        int slot=PlayerNumber();bool snapshot=match!=null && match.Hunt!=null && match.Hunt.BeforeTrap[slot]==null;
+        if(snapshot){match.Hunt.BeforeTrap[slot]=new('CaelumHuntResources');match.Hunt.BeforeTrap[slot].Capture(self);}
+        int result=Super.DamageMobj(inflictor,source,damage,mod,flags,angle);
+        if(snapshot && !match.Hunt.Captive(slot))match.Hunt.BeforeTrap[slot]=null;
+        return result;
     }
     override void Tick()
     {
