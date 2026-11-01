@@ -245,7 +245,26 @@ controller lookup; ordinary quality queries are constant-time. Eight diagnostic
 native MAP01 samples (7,749 sectors/30 water parts) measured0.2015-0.44863ms for
 constructing/indexing/destroying a cold controller and0.00018-0.00046ms for an
 already-indexed call. These are CPU samples, not frame-presentation evidence.
-The cursed-passage passive and authored mansion examples remain pending.
+The cursed-passage passive is implemented below; authored mansion examples still
+need placement in the final gallery.
+
+### Authored passage passives
+
+Only `CaelumTarotFalseWall` leaves reveal their false-wall title and opening hint
+to a character with The High Priestess equipped. Collection alone does not reveal
+them, and another player's selection does not reveal them to the viewer. This
+identification does not add a new key requirement to an already discovered door.
+Decorative walls and unmarked doors retain their current behavior.
+
+`CaelumTarotCursedPassage` starts unpurified. Using its door with The Hierophant
+equipped purifies it and opens it without an active-sequence charge. Native group
+prevalidation first checks every leaf's scene locks, keys, faction access and
+passage permission. A blocked peer prevents partial purification. The saved
+revision1/Purified fields retain that world result after unequipping, loading or
+another character's use; an unrelated passage is unaffected. Existing doors
+default to their prior access rules. Both passives use the current aim/native
+door group, without polling the map for secrets or curses. Current maps have no
+implicit conversion to these classes; only authored examples opt in.
 
 The equipped Death passive also accepts Use on the explicitly typed
 CaelumTarotLivingObstacle family, within normal interaction range and sight.

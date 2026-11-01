@@ -1,0 +1,242 @@
+{
+  "issue": 440,
+  "version": "5.13.3",
+  "date": "2026-11-01",
+  "scope": "Authored passage passives and door-group transaction; mansion placement pending",
+  "runtime": "build\\issue440\\passages\\r1\\caelum_argenteum_dev.pk3",
+  "runtime_sha256": "0f5af34dd943bb3eb9bac57833074d7739bd1de818be5950f267847b7e984c00",
+  "members": 18033,
+  "source_equivalence": true,
+  "native_assertions": 40,
+  "runs": [
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32377-20261101-041700-205745",
+      "runtime_sha256": "0f5af34dd943bb3eb9bac57833074d7739bd1de818be5950f267847b7e984c00",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "commands": [
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\passages\\r1\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32377-20261101-041700-205745\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32377-20261101-041700-205745\\bundle\\peer0\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32377-20261101-041700-205745\\bundle\\peer0",
+          "-host",
+          "2",
+          "-port",
+          "32377",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32377-20261101-041700-205745\\bundle\\peer0\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32377-20261101-041700-205745\\bundle\\peer0\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ],
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\passages\\r1\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32377-20261101-041700-205745\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32377-20261101-041700-205745\\bundle\\peer1\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32377-20261101-041700-205745\\bundle\\peer1",
+          "-join",
+          "127.0.0.1:32377",
+          "-port",
+          "32378",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32377-20261101-041700-205745\\bundle\\peer1\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32377-20261101-041700-205745\\bundle\\peer1\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ]
+      ],
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440G PASS native aim keeps an unequipped false wall anonymous",
+            "CA440G PASS owning Priestess does not grant its passive",
+            "CA440G PASS equipped Priestess reveals only the aimed authored wall",
+            "CA440G PASS another player does not inherit private equipment knowledge",
+            "CA440G PASS identification is not an extra key requirement for a discovered wall",
+            "CA440G PASS owning Hierophant does not purify a curse",
+            "CA440G PASS unqualified use preserves every cursed leaf",
+            "CA440G PASS scene-locked peer prevents partial purification",
+            "CA440G PASS missing key is checked before purifying any leaf",
+            "CA440G PASS qualified use purifies and opens the entire permitted group",
+            "CA440G PASS passive purification does not charge a Tarot sequence",
+            "CA440G PASS unrelated passages retain their curse",
+            "CA440G PASS purification persists after unequipping Hierophant",
+            "CA440G PASS the opened world passage is shared with other characters",
+            "CA440G PASS ordinary doors retain their existing permission rules",
+            "CA440G RESULT capture"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440G PASS native aim keeps an unequipped false wall anonymous",
+            "CA440G PASS owning Priestess does not grant its passive",
+            "CA440G PASS equipped Priestess reveals only the aimed authored wall",
+            "CA440G PASS another player does not inherit private equipment knowledge",
+            "CA440G PASS identification is not an extra key requirement for a discovered wall",
+            "CA440G PASS owning Hierophant does not purify a curse",
+            "CA440G PASS unqualified use preserves every cursed leaf",
+            "CA440G PASS scene-locked peer prevents partial purification",
+            "CA440G PASS missing key is checked before purifying any leaf",
+            "CA440G PASS qualified use purifies and opens the entire permitted group",
+            "CA440G PASS passive purification does not charge a Tarot sequence",
+            "CA440G PASS unrelated passages retain their curse",
+            "CA440G PASS purification persists after unequipping Hierophant",
+            "CA440G PASS the opened world passage is shared with other characters",
+            "CA440G PASS ordinary doors retain their existing permission rules",
+            "CA440G RESULT capture"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32378-20261101-041806-393137",
+      "runtime_sha256": "0f5af34dd943bb3eb9bac57833074d7739bd1de818be5950f267847b7e984c00",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "commands": [
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\passages\\r1\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32378-20261101-041806-393137\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32378-20261101-041806-393137\\bundle\\peer0\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32378-20261101-041806-393137\\bundle\\peer0",
+          "-host",
+          "2",
+          "-port",
+          "32378",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32378-20261101-041806-393137\\bundle\\peer0\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32378-20261101-041806-393137\\bundle\\peer0\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ],
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\passages\\r1\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32378-20261101-041806-393137\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32378-20261101-041806-393137\\bundle\\peer1\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32378-20261101-041806-393137\\bundle\\peer1",
+          "-join",
+          "127.0.0.1:32378",
+          "-port",
+          "32379",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32378-20261101-041806-393137\\bundle\\peer1\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32378-20261101-041806-393137\\bundle\\peer1\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ]
+      ],
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440G PASS common save preserves both purified leaves and revision",
+            "CA440G PASS common save does not purify untouched passages",
+            "CA440G PASS loading does not equip cards or leak secret identification",
+            "CA440G PASS recovered purified passage opens without recasting",
+            "CA440G PASS recovered native door group retains one shared permission transaction",
+            "CA440G RESULT reload"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440G PASS common save preserves both purified leaves and revision",
+            "CA440G PASS common save does not purify untouched passages",
+            "CA440G PASS loading does not equip cards or leak secret identification",
+            "CA440G PASS recovered purified passage opens without recasting",
+            "CA440G PASS recovered native door group retains one shared permission transaction",
+            "CA440G RESULT reload"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "retained_failures": [
+    {
+      "directory": "build/issue440/native-32375-20261101-041238-950570",
+      "reason": "Fixture prefix replacement changed CA440Probe to CA440Grobe; startup modal timed out."
+    },
+    {
+      "directory": "build/issue440/native-32376-20261101-041525-748712",
+      "reason": "Desktop inspection confirmed unknown event-handler fatal. Explicit name restored; runner now validates declaration before launch."
+    }
+  ],
+  "author_acceptance": "Pending final V5.13 suite",
+  "limitations": [
+    "No new mansion placement in this runtime commit",
+    "No frame-presentation measurement"
+  ]
+}

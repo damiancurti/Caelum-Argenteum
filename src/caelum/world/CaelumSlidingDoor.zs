@@ -69,6 +69,10 @@ class CaelumSlidingDoorLeaf : Actor
 
     virtual bool NativeDoorCollision(){return false;}
 
+    // Los pasos especiales validan todas las hojas antes de modificar alguna.
+    virtual bool CanOpenPassage(Actor user){return true;}
+    virtual void PassageOpened(Actor user){}
+
     override void PostBeginPlay()
     {
         Super.PostBeginPlay();
@@ -107,6 +111,7 @@ class CaelumSlidingDoorLeaf : Actor
             if(guardedLeaf==null || guardedLeaf.bDestroyed)continue;
             if (!IsGroupPeer(guardedLeaf)) continue;
             if (guardedLeaf.RuloArenaLocked) return false;
+            if (!guardedLeaf.CanOpenPassage(user)) return false;
             // LOCKDEFS nativo comprueba posesión y no consume la llave.
             if (guardedLeaf.args[3] > 0 && !user.CheckKeys(guardedLeaf.args[3], false, true))
             {
@@ -130,6 +135,7 @@ class CaelumSlidingDoorLeaf : Actor
             if (IsGroupPeer(leaf))
             {
                 groupLeafCount++;
+                leaf.PassageOpened(user);
                 groupWasRequested = groupWasRequested || leaf.DoorRequested;
                 leaf.DoorRequested = true;
                 leaf.HoldTimer = 105;

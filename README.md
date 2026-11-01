@@ -18,6 +18,7 @@ implementation checkpoint; Chariot reuses the original cart at its approved widt
 and Empress plants have native visual evidence using owned vegetation materials.
 Its equipped passive also enables individual vegetation traversal.
 Death's equipped passive destroys explicitly marked living obstacles through Use.
+Priestess identifies authored false walls; Hierophant purifies permitted cursed passages.
 Justice now supports simultaneous pairs, safe returns and cancellable travel waits,
 with an explicit legacy-map package for prior saves. Lovers now shares active-map
 Health damage/healing through real group membership and overlapping-aura deduplication.

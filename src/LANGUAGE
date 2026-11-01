@@ -1,4 +1,18 @@
 [enu default]
+CA_TAROT_FALSE_WALL = "False wall";
+CA_TAROT_UNMARKED_WALL = "Wall";
+CA_TAROT_PASSAGE_CURSED = "Cursed passage";
+CA_TAROT_PASSAGE_PURIFIED = "Purified passage";
+CA_TAROT_PASSAGE_PURIFY = "Use: purify and open";
+CA_TAROT_PASSAGE_REQUIRES = "Equip The Hierophant to purify this passage.";
+[es]
+CA_TAROT_FALSE_WALL = "Pared falsa";
+CA_TAROT_UNMARKED_WALL = "Pared";
+CA_TAROT_PASSAGE_CURSED = "Paso maldito";
+CA_TAROT_PASSAGE_PURIFIED = "Paso purificado";
+CA_TAROT_PASSAGE_PURIFY = "Usar: purificar y abrir";
+CA_TAROT_PASSAGE_REQUIRES = "Equipa El Hierofante para purificar este paso.";
+[enu default]
 CA_JUSTICE_UNAVAILABLE = "Justice needs a free arena and a visible living target who is not already duelling.";
 CA_JUSTICE_RETURN_WAIT = "Justice is returning the survivors. A return point is blocked; travel will wait. You can still cancel travel.";
 CA_TAROT_CONTAMINATION_TARGET = "Death needs a visible target within range.";

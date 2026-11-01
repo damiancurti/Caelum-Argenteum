@@ -10,7 +10,8 @@ Chariot movement/contact and its owned-model adaptation have isolated evidence;
 Priestess ground traps, Empress restraint and their departure cleanup are implemented;
 plant art has native front/rear evidence; equipped vegetation traversal is implemented;
 Death's contamination pulse/marked-obstacle passive and Hierophant purification
-are implemented; Justice pairs/returns/travel waits and legacy maps are checked.
+are implemented; authored passage passives are implemented. Justice pairs/returns/travel
+waits and legacy maps are checked.
 Lovers active-map damage/healing is checked; integrate its passive in abstract
 journey simulation before claiming completion. Finish remaining handlers/passives,
 giant/harmful objects, authored mansion

@@ -4,6 +4,16 @@ Documentation version: **5.13.3** - 2026-10-31.
 
 ## 5.13.3 - Ordered Tarot foundation (#440, implementation checkpoint)
 
+The authored-passage checkpoint (2026-11-01) adds viewer-specific Priestess
+identification and persistent Hierophant purification. Door groups validate
+scene/key/faction/passive permissions before committing any leaf. Native tests
+exercise the actual aim panel, unequipped ownership, separate player selections,
+group failures, shared persistent results and ordinary-door compatibility.
+Evidence: assets/validation_v5_13_3/passages-results.json. The initial fixture
+renaming accidentally altered its event-handler name; desktop inspection exposed
+the fatal message and the explicit handler identifier was restored. Failed
+attempts remain recorded. Mansion placement and final author review remain pending.
+
 The accelerated world-clock correction (2026-11-01) advances existing traps,
 plants, Chariot projections and Justice pairs once per shared skipped tic.
 A bounded owner index avoids per-substep map or inventory scans; personal-only
