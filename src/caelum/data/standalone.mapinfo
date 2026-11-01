@@ -1,5 +1,4 @@
-// La clase de campaña no se reemplaza fuera del proceso independiente.
+// Datos compartidos con las arenas; cambia solamente el hub.
 gameinfo { PlayerClasses = "CaelumStandalonePlayer" }
-// Las arenas competitivas no conservan el hub de la campaña entre rondas.
-map CARING "$CA_ARENA_RING" { cluster=0 }
-map CASEWER "$CA_ARENA_MAZE" { cluster=0 }
+map CARING "$CA_ARENA_RING" { cluster=0 nointermission teamdamage=1 UnFreezeSinglePlayerConversations music="CA_MUS04_PORT" }
+map CASEWER "$CA_ARENA_MAZE" { cluster=0 nointermission teamdamage=1 UnFreezeSinglePlayerConversations music="CA_MUS03_SEWER" }

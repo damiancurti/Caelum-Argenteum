@@ -1,6 +1,28 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.13.5** - 2026-11-01.
+Documentation version: **5.13.6** - 2026-11-01.
+
+## 5.13.6 - Standalone Team Deathmatch (#599, 2026-11-01)
+
+The author approved automatic balanced team assignment by entry order for #599
+and #600. This patch implements only Team Deathmatch: saved teams, team-aware
+support/hostility, friendly fire scoring, shared victory and localized identity.
+The score is derived from individual points, avoiding a second mutable total.
+The shared rematch bridge now carries its saved mode into the new arena even
+when recovery used a different launch CVar. Preflight rejected a reserved local name and a case-insensitive field/parameter
+collision; both were corrected before native play. The first four-peer run
+then exposed a real MAPINFO defect: redefining only cluster resets omitted
+properties, including teamdamage and music. Standalone venue metadata now
+comes from the full canonical arena definitions, changing only hub membership.
+Native evidence is recorded in assets/validation_v5_13_6. Author acceptance remains pending for the final suite.
+
+Final validation: 166 passing native assertions across four-peer team rounds,
+recovery, overtime and rematch, plus two-peer revision1 individual-save recovery.
+Final runtime: `e203090afde60f1b655e84ecdecb3cd81fa6ed3c342e3913252c50b43c332d10`. Functional r4 and final r5 differ
+only in lighter blue UI text and a comment; final r5 overtime/menu checks pass.
+Every final package member equals src. ES/EN captures are retained. Existing
+diagnostic saves retain saved map metadata until the next fresh round. No
+Internet, physical-input or frame-performance claim is made.
 
 ## 5.13.5 - Individual Deathmatch (#598, 2026-11-01)
 

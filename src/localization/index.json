@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "cb95f687bca90fc8c74078cee005893ac72649c4feb21066fcb0adae06c9a3a1",
+  "sha256": "0e502504101bb00f32dfd87887fe31db9dfe5a3c1ef3fa157ed872f6b6918f29",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[538,538]],"default":[[538,538]],"es":[[1233,1233]]},
     "CA_ABSENT_THEFT_FOUND": {"enu":[[6961,6961]],"default":[[6961,6961]],"es":[[6963,6963]]},
@@ -1809,6 +1809,9 @@
     "CA_MATCH_SESSION": {"enu":[[7657,7657]],"default":[[7657,7657]],"es":[[7677,7677]]},
     "CA_MATCH_STANDINGS": {"enu":[[7682,7682]],"default":[[7682,7682]],"es":[[7690,7690]]},
     "CA_MATCH_TDM": {"enu":[[7646,7646]],"default":[[7646,7646]],"es":[[7666,7666]]},
+    "CA_MATCH_TEAM_BLUE": {"enu":[[7712,7712]],"default":[[7712,7712]],"es":[[7717,7717]]},
+    "CA_MATCH_TEAM_KILL": {"enu":[[7713,7713]],"default":[[7713,7713]],"es":[[7718,7718]]},
+    "CA_MATCH_TEAM_RED": {"enu":[[7711,7711]],"default":[[7711,7711]],"es":[[7716,7716]]},
     "CA_MATCH_VENUE": {"enu":[[7653,7653]],"default":[[7653,7653]],"es":[[7673,7673]]},
     "CA_MATCH_WAIT_VOTES": {"enu":[[7687,7687]],"default":[[7687,7687]],"es":[[7695,7695]]},
     "CA_MATCH_WINNER": {"enu":[[7683,7683]],"default":[[7683,7683]],"es":[[7691,7691]]},

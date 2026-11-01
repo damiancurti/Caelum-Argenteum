@@ -3,6 +3,7 @@ class CaelumStandaloneMatch : Object play
 {
     int Revision,Mode,Members,Elapsed,Winner,RematchVotes;
     int Score[MAXPLAYERS],Deaths[MAXPLAYERS],RespawnAt[MAXPLAYERS],Preset[MAXPLAYERS];
+    int Team[MAXPLAYERS];
     bool Started,Finished,Restarting;
 
     static clearscope CaelumStandaloneMatch View()
@@ -16,7 +17,21 @@ class CaelumStandaloneMatch : Object play
         if(!(first is 'CaelumStandalonePlayer') || !(second is 'CaelumStandalonePlayer'))return -1;
         let match=View();if(match==null || !match.Started || match.Finished)return 0;
         if(!match.Member(first.PlayerNumber()) || !match.Member(second.PlayerNumber()))return 0;
-        return first!=second && match.Mode==CaelumStandaloneData.DEATHMATCH?1:0;
+        if(first==second)return 0;
+        return !match.TeamsEnabled() || match.Team[first.PlayerNumber()]!=match.Team[second.PlayerNumber()]?1:0;
+    }
+    clearscope bool TeamsEnabled(){return Mode==CaelumStandaloneData.TEAM_DEATHMATCH;}
+    clearscope int TeamScore(int teamId)
+    {
+        int result=0;for(int i=0;i<MAXPLAYERS;i++)if(Member(i) && Team[i]==teamId)result+=Score[i];
+        return result;
+    }
+    static clearscope String TeamName(int team)
+    {return StringTable.Localize(team==0?'CA_MATCH_TEAM_RED':'CA_MATCH_TEAM_BLUE',false);}
+    clearscope String WinnerName(){return TeamsEnabled()?TeamName(Winner):players[Winner].GetUserName();}
+    void AssignTeams()
+    {
+        int order=0;for(int i=0;i<MAXPLAYERS;i++)if(Member(i)){Team[i]=order%2;order++;}
     }
     clearscope bool Member(int slot){return slot>=0 && slot<MAXPLAYERS && (Members&(1<<slot))!=0;}
     clearscope bool RespawnAllowed(int slot)
@@ -24,6 +39,8 @@ class CaelumStandaloneMatch : Object play
 
     void Tick()
     {
+        // Los guardados individuales de revisión 1 conservan todos sus puntos.
+        if(Revision<2){AssignTeams();Revision=2;}
         if(!Started)
         {
             int mask=0,count=0;
@@ -35,6 +52,7 @@ class CaelumStandaloneMatch : Object play
             }
             if(count<2)return;
             Members=mask;Started=true;Winner=-1;
+            AssignTeams();
         }
         for(int i=0;i<MAXPLAYERS;i++)if(Member(i))
         {
@@ -56,16 +74,26 @@ class CaelumStandaloneMatch : Object play
         RespawnAt[slot]=level.time+CaelumStandaloneData.RESPAWN_TICS;
         let killer=CaelumStandalonePlayer(source);
         int credit=killer!=null?killer.PlayerNumber():-1;
-        if(credit!=slot && Member(credit))Score[credit]++;
+        bool credited=credit!=slot && Member(credit);
+        bool teamkill=credited && TeamsEnabled() && Team[credit]==Team[slot];
+        if(credited)Score[credit]+=teamkill?-1:1;
         else Score[slot]--;
-        String line=credit!=slot && Member(credit)
-            ?String.Format(StringTable.Localize("CA_MATCH_KILL",false),players[credit].GetUserName(),players[slot].GetUserName())
+        String line=credited
+            ?String.Format(StringTable.Localize(teamkill?"CA_MATCH_TEAM_KILL":"CA_MATCH_KILL",false),players[credit].GetUserName(),players[slot].GetUserName())
             :String.Format(StringTable.Localize("CA_MATCH_SELF_DEATH",false),players[slot].GetUserName());
         Console.Printf("%s",line);
         // Evaluar al terminar el tic permite resolver bajas simultáneas.
     }
     void Evaluate()
     {
+        if(TeamsEnabled())
+        {
+            int red=TeamScore(0),blue=TeamScore(1);
+            if(red==blue || (Max(red,blue)<CaelumStandaloneData.FRAG_LIMIT && Elapsed<CaelumStandaloneData.TIME_LIMIT_TICS))return;
+            Finished=true;Winner=red>blue?0:1;
+            Console.Printf("CA_MATCH RESULT mode=%d team=%d score=%d",Mode,Winner,TeamScore(Winner));
+            return;
+        }
         int best=-1;bool tied=false;
         for(int i=0;i<MAXPLAYERS;i++)if(Member(i))
         {
@@ -83,6 +111,9 @@ class CaelumStandaloneMatch : Object play
         RematchVotes|=1<<slot;
         if((RematchVotes&Members)!=Members)return;
         Restarting=true;
+        // El modo guardado manda también tras recuperar con un CVar diferente.
+        let events=CaelumStandaloneMatchEvents(StaticEventHandler.Find('CaelumStandaloneMatchEvents'));
+        if(events!=null)events.NextMode=Mode;
         // Nueva instancia del mapa: elimina proyectiles y estado de la ronda.
         for(int i=0;i<MAXPLAYERS;i++)if(Member(i))
         {
@@ -105,6 +136,7 @@ class CaelumStandaloneMatchEvents : StaticEventHandler
 {
     CaelumStandaloneMatchStore Store;
     bool Located;
+    int NextMode;
     override void WorldLoaded(WorldEvent e){Store=null;Located=false;}
     override void WorldTick()
     {
@@ -116,11 +148,12 @@ class CaelumStandaloneMatchEvents : StaticEventHandler
         }
         if(Store==null)
         {
-            if(CVar.GetCVar('ca_standalone_mode').GetInt()!=CaelumStandaloneData.DEATHMATCH
+            int mode=NextMode>0?NextMode:CVar.GetCVar('ca_standalone_mode').GetInt();
+            if((mode!=CaelumStandaloneData.DEATHMATCH && mode!=CaelumStandaloneData.TEAM_DEATHMATCH)
                 || !(players[0].mo is 'CaelumStandalonePlayer'))return;
             Store=CaelumStandaloneMatchStore(Actor.Spawn('CaelumStandaloneMatchStore',(0,0,0),NO_REPLACE));
             Store.Match=new('CaelumStandaloneMatch');Store.Match.Revision=1;
-            Store.Match.Mode=CaelumStandaloneData.DEATHMATCH;
+            Store.Match.Mode=mode;NextMode=0;
         }
         Store.Match.Tick();
     }
@@ -136,8 +169,10 @@ class CaelumStandaloneScoreHUD : Object ui
     {
         let match=CaelumStandaloneMatch.View();if(match==null || !match.Started)return 0;
         int seconds=Max(0,(CaelumStandaloneData.TIME_LIMIT_TICS-match.Elapsed+TICRATE-1)/TICRATE);
-        String line=match.Finished?String.Format(StringTable.Localize('CA_MATCH_WINNER',false),players[match.Winner].GetUserName())
+        String line=match.Finished?String.Format(StringTable.Localize('CA_MATCH_WINNER',false),match.WinnerName())
             :seconds>0?String.Format("%02d:%02d",seconds/60,seconds%60):StringTable.Localize('CA_MATCH_OVERTIME',false);
+        if(match.TeamsEnabled() && match.Member(consoleplayer))
+            line=String.Format("%s | %s: %d - %s: %d | %s",CaelumStandaloneMatch.TeamName(match.Team[consoleplayer]),CaelumStandaloneMatch.TeamName(0),match.TeamScore(0),CaelumStandaloneMatch.TeamName(1),match.TeamScore(1),line);
         return CaelumPresentation.CenterMessage(font,Font.CR_GOLD,line,12)+CaelumTargetPanelData.PADDING;
     }
 }
@@ -160,17 +195,20 @@ class CaelumStandaloneScoreMenu : ListMenu
         CaelumTrucoMenu.Text(22,24,L('CA_MATCH_STANDINGS'),Font.CR_GOLD);
         let match=CaelumStandaloneMatch.View();
         if(match==null || !match.Started){CaelumTrucoMenu.Text(22,80,L('CA_MATCH_NOT_ACTIVE'));return;}
+        if(match.TeamsEnabled())CaelumTrucoMenu.Text(22,65,String.Format("%s: %d - %s: %d",CaelumStandaloneMatch.TeamName(0),match.TeamScore(0),CaelumStandaloneMatch.TeamName(1),match.TeamScore(1)),Font.CR_GOLD);
         int shown=0;
         for(int row=0;row<MAXPLAYERS;row++)
         {
             int best=-1;
             for(int i=0;i<MAXPLAYERS;i++)if(match.Member(i) && !(shown&(1<<i)) && (best<0 || match.Score[i]>match.Score[best]))best=i;
             if(best<0)break;shown|=1<<best;
-            CaelumTrucoMenu.Text(22,75+row*30,String.Format("%d. %s: %d",row+1,players[best].GetUserName(),match.Score[best]));
+            String participantLabel=players[best].GetUserName();
+            if(match.TeamsEnabled())participantLabel=CaelumStandaloneMatch.TeamName(match.Team[best]).." - "..participantLabel;
+            CaelumTrucoMenu.Text(22,(match.TeamsEnabled()?105:75)+row*30,String.Format("%d. %s: %d",row+1,participantLabel,match.Score[best]),match.TeamsEnabled()?(match.Team[best]==0?Font.CR_RED:Font.CR_LIGHTBLUE):Font.CR_WHITE);
         }
         if(match.Finished)
         {
-            CaelumTrucoMenu.Text(22,340,String.Format(L('CA_MATCH_WINNER'),players[match.Winner].GetUserName()),Font.CR_GOLD);
+            CaelumTrucoMenu.Text(22,350,String.Format(L('CA_MATCH_WINNER'),match.WinnerName()),Font.CR_GOLD);
             CaelumTrucoMenu.Wrap(22,380,730,L('CA_MATCH_REMATCH'));
             CaelumTrucoMenu.Text(22,450,(match.RematchVotes&(1<<consoleplayer))?L('CA_MATCH_WAIT_VOTES'):L('CA_MATCH_ENTER_REMATCH'));
         }

@@ -1,6 +1,21 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.13.5** - 2026-11-01.
+Documentation version: **5.13.6** - 2026-11-01.
+
+## Standalone Team Deathmatch (#599)
+
+Mode2 assigns two teams alternately in native participant entry order. The saved
+assignment is authoritative across body replacement and recovery, with no team
+choice or reshuffling during the round. Red/blue names appear in the match HUD,
+standings and aimed participant's title; resident artwork is unchanged.
+Team score is the sum of its members' individual scores. Enemy kills add one;
+suicide and friendly kills subtract one from the responsible participant and
+therefore their team. Friendly fire remains enabled. The first team to20 frags
+wins; at ten active minutes, tied teams continue until the next lead. Preset
+respawn, equipment isolation and unanimous rematch reuse #598. Revision2 adds
+saved team assignments idempotently without changing earlier individual scores.
+The saved mode also survives rematch after recovery with a different launch CVar.
+Native testing uses four real local clients; author acceptance remains deferred.
 
 ## Standalone individual Deathmatch (#598)
 

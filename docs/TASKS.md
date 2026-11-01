@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.13.5** - 2026-11-01.
+Documentation version: **5.13.6** - 2026-11-01.
+
+## 5.13.6 - Standalone Team Deathmatch (#599)
+
+Implement the approved automatic balanced teams, identity, friendly fire score
+and first-to20/ten-minute victory. Verify actual teammate damage, opposing kills,
+suicide, respawn, common-save recovery and unanimous clean rematch with four
+native peers. Keep #600 capture and #601 hunt separate. Author tests are deferred
+until the complete V5.13 suite, as requested.
 
 ## 5.13.5 - Individual Deathmatch (#598)
 
