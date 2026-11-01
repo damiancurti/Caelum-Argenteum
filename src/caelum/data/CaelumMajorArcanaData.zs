@@ -43,6 +43,8 @@ class CaelumMajorArcanaData : Object
     const ROCK_RADIUS_METERS=0.6;
     const ROCK_DENSITY=2500.0;
     const ROCK_WATTS=8000.0;
+    const SUN_CARGO_DISPLAY=44019;
+    const SUN_HEAT_DISPLAY=44020;
     const SUN_RELEASE_MU=128.0;
     const JUSTICE_RETURN_MU=128.0;
     // Presupuesto técnico por cuerpo/tic; no altera el radio autorizado.

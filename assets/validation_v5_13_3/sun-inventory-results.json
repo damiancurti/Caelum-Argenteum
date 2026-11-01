@@ -1,0 +1,223 @@
+{
+  "runtime_sha256": "b448272766e851a2b6094e8952febb36c27cf7ecc17110f378041678389ab8c6",
+  "source_entries": 18043,
+  "source_equivalent": true,
+  "issue": 440,
+  "date": "2026-11-01",
+  "native_pass_count": 30,
+  "runs": [
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32447-20261101-143800-643067",
+      "runtime_sha256": "b448272766e851a2b6094e8952febb36c27cf7ecc17110f378041678389ab8c6",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "commands": [
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\sun-inventory\\r2\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32447-20261101-143800-643067\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32447-20261101-143800-643067\\bundle\\peer0\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32447-20261101-143800-643067\\bundle\\peer0",
+          "-host",
+          "2",
+          "-port",
+          "32447",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32447-20261101-143800-643067\\bundle\\peer0\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32447-20261101-143800-643067\\bundle\\peer0\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ],
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\sun-inventory\\r2\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32447-20261101-143800-643067\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32447-20261101-143800-643067\\bundle\\peer1\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32447-20261101-143800-643067\\bundle\\peer1",
+          "-join",
+          "127.0.0.1:32447",
+          "-port",
+          "32448",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32447-20261101-143800-643067\\bundle\\peer1\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32447-20261101-143800-643067\\bundle\\peer1\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ]
+      ],
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440CARGO PASS capture installs original cargo",
+            "CA440CARGO PASS one contained object adds one inventory row",
+            "CA440CARGO PASS snapshot identifies hot rock without chest substitution",
+            "CA440CARGO PASS row reports one boxed original",
+            "CA440CARGO PASS row reports exact raw sphere mass",
+            "CA440CARGO PASS carrier cannot create a duplicate pickup",
+            "CA440CARGO PASS Use requests safe release instead of opening a chest",
+            "CA440CARGO PASS Move cannot bypass blocked geometry or attach rock to body",
+            "CA440CARGO PASS Drop retains original without telefrag or item loss",
+            "CA440CARGO PASS peer inventory does not inherit owner's cargo",
+            "CA440CARGO RESULT capture"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440CARGO PASS capture installs original cargo",
+            "CA440CARGO PASS one contained object adds one inventory row",
+            "CA440CARGO PASS snapshot identifies hot rock without chest substitution",
+            "CA440CARGO PASS row reports one boxed original",
+            "CA440CARGO PASS row reports exact raw sphere mass",
+            "CA440CARGO PASS carrier cannot create a duplicate pickup",
+            "CA440CARGO PASS Use requests safe release instead of opening a chest",
+            "CA440CARGO PASS Move cannot bypass blocked geometry or attach rock to body",
+            "CA440CARGO PASS Drop retains original without telefrag or item loss",
+            "CA440CARGO PASS peer inventory does not inherit owner's cargo",
+            "CA440CARGO RESULT capture"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32448-20261101-144001-916508",
+      "runtime_sha256": "b448272766e851a2b6094e8952febb36c27cf7ecc17110f378041678389ab8c6",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "commands": [
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\sun-inventory\\r2\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32448-20261101-144001-916508\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32448-20261101-144001-916508\\bundle\\peer0\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32448-20261101-144001-916508\\bundle\\peer0",
+          "-host",
+          "2",
+          "-port",
+          "32448",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32448-20261101-144001-916508\\bundle\\peer0\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32448-20261101-144001-916508\\bundle\\peer0\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ],
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\sun-inventory\\r2\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32448-20261101-144001-916508\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32448-20261101-144001-916508\\bundle\\peer1\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32448-20261101-144001-916508\\bundle\\peer1",
+          "-join",
+          "127.0.0.1:32448",
+          "-port",
+          "32449",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32448-20261101-144001-916508\\bundle\\peer1\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32448-20261101-144001-916508\\bundle\\peer1\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ]
+      ],
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440CARGO PASS recovery retains pending command and original identity",
+            "CA440CARGO PASS recovery shows exactly one cargo row",
+            "CA440CARGO PASS free space completes saved release request",
+            "CA440CARGO PASS empty metadata leaves no ghost inventory row",
+            "CA440CARGO PASS released original resumes owned visual and source",
+            "CA440CARGO RESULT reload"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440CARGO PASS recovery retains pending command and original identity",
+            "CA440CARGO PASS recovery shows exactly one cargo row",
+            "CA440CARGO PASS free space completes saved release request",
+            "CA440CARGO PASS empty metadata leaves no ghost inventory row",
+            "CA440CARGO PASS released original resumes owned visual and source",
+            "CA440CARGO RESULT reload"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "visual_review": "Spanish inventory row, mass, Box flag and short pending-release hint inspected at 800x600; no overlap with hygiene controls.",
+  "earlier_runs": [
+    "native-32445-20261101-143435-284465",
+    "native-32446-20261101-143543-309976"
+  ],
+  "limits": [
+    "Agent evidence only; author whole-version suite remains deferred.",
+    "Earlier r1 passed gameplay, but its longer hint overlapped the lower controls; r2 shortens the hint without changing actions."
+  ]
+}

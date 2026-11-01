@@ -74,6 +74,17 @@ class CaelumSunCargo : Inventory
     {return user!=null?CaelumSunCargo(user.FindInventory('CaelumSunCargo')):null;}
     static clearscope bool Occupied(CaelumPlayer user)
     {let cargo=View(user);return cargo!=null && cargo.Body!=null && !cargo.Body.bDestroyed;}
+    static clearscope bool Display(int itemType)
+    {return itemType==CaelumMajorArcanaData.SUN_CARGO_DISPLAY || itemType==CaelumMajorArcanaData.SUN_HEAT_DISPLAY;}
+    static clearscope String NameKey(int itemType)
+    {return itemType==CaelumMajorArcanaData.SUN_HEAT_DISPLAY?"CA_TAROT_HEAT_ROCK":"CA_TAROT_HAZARD_ROCK";}
+    static bool ReleaseSelection(CaelumPlayer user,Inventory entry)
+    {
+        let cargo=CaelumSunCargo(entry);
+        if(cargo==null)return false;
+        if(cargo.Owner==user)cargo.Release();
+        user.RefreshFormalInventorySnapshot();return true;
+    }
     static double Weight(CaelumPlayer user)
     {let cargo=View(user);return Occupied(user)?cargo.Body.PhysicalMass():0;}
     static bool Giant(CaelumPlayer user,CaelumTarotRock body)

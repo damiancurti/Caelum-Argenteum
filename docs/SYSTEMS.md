@@ -575,6 +575,11 @@ Lovers passive redistribution in the abstract journey model remains separate wor
   character's volume.
   A profile cannot leave its campaign while holding a world rock: release it
   first. Ordinary common saves still retain the cargo and pending safe release.
+  The original contained rock appears once in the ordinary inventory, showing
+  its name, one Box slot and raw mass; Star's active still controls the separate
+  effective carried weight. Use, Box and Drop all request the same collision-safe
+  release. A blocked release keeps the row and shows a pending hint. Empty
+  carrier metadata is hidden and cannot create a transferable duplicate.
 
 ## 5.13.2 - Reversible equipment awakening (#442)
 

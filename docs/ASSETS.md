@@ -8,6 +8,9 @@ No raster/model source is added. The separate visual follows the persistent
 body and hides during containment. Annex apparatus revision5 places the hot
 example clear of the display entrance. Native checks/screenshot are recorded
 in sun-heat-results.json; this is not author visual acceptance.
+The inventory carrier reuses the existing Magic Box icon and the ordinary
+inventory layout; no raster asset is generated. The native Spanish capture
+was reviewed for row width and release-hint clearance.
 
 The demonstration spirit reuses the unchanged V9G0 guard sprite and native
 body scale. No new art or third-party resource is introduced. Its bilingual

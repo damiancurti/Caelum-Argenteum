@@ -2314,6 +2314,8 @@ class CaelumInventoryService : Object play
 
     static int GetFormalInventoryEntryKind(CaelumPlayer user, Inventory entry)
     {
+        let sun=CaelumSunCargo(entry);
+        if(sun!=null)return sun.Body!=null && !sun.Body.bDestroyed?CaelumConstants.EQUIPMENT_KIND_CONTAINER:-1;
         if(entry is "CaelumChestCargo")return CaelumConstants.EQUIPMENT_KIND_CONTAINER;
         CaelumEquipmentItem equipment = CaelumEquipmentItem(entry);
         if (equipment != null) { return equipment.EquipmentKind; }
@@ -2407,6 +2409,8 @@ class CaelumInventoryService : Object play
 
     static double GetFormalInventoryEntryWeight(CaelumPlayer user, Inventory entry)
     {
+        let sun=CaelumSunCargo(entry);
+        if(sun!=null)return sun.Body!=null?sun.Body.PhysicalMass():0;
         let cargo=CaelumChestCargo(entry);
         if(cargo!=null)return cargo.CarriedWeight(user);
         CaelumEquipmentItem equipment = CaelumEquipmentItem(entry);
@@ -2520,6 +2524,13 @@ class CaelumInventoryService : Object play
         user.FormalInventoryRowAmount[row] = Max(1, entry.Amount);
         user.FormalInventoryRowWeight[row] =
             user.GetFormalInventoryEntryWeight(entry);
+        let sun=CaelumSunCargo(entry);
+        if(sun!=null)
+        {
+            user.FormalInventoryRowType[row]=sun.Body is 'CaelumTarotHeatRock'
+                ?CaelumMajorArcanaData.SUN_HEAT_DISPLAY:CaelumMajorArcanaData.SUN_CARGO_DISPLAY;
+            user.FormalInventoryRowAmount[row]=1;user.FormalInventoryRowInMagicBox[row]=true;return;
+        }
         let cargo=CaelumChestCargo(entry);
         if(cargo!=null)
         {
@@ -2744,6 +2755,7 @@ class CaelumInventoryService : Object play
         Inventory entry =
             user.GetFormalInventoryEntryAt(user.FormalInventorySelectionIndex);
         if (entry == null) { return; }
+        if(CaelumSunCargo.ReleaseSelection(user,entry))return;
         let cargo=CaelumChestCargo(entry);
         if(cargo!=null){CaelumContainerSession.Open(user,cargo.Chest);return;}
         let book=CaelumRecipeBook(entry);
@@ -2809,6 +2821,7 @@ class CaelumInventoryService : Object play
         Inventory entry =
             user.GetFormalInventoryEntryAt(user.FormalInventorySelectionIndex);
         if (entry == null) { return; }
+        if(CaelumSunCargo.ReleaseSelection(user,entry))return;
         let lockItem=CaelumLockItem(entry);
         if(lockItem!=null){lockItem.ToggleBox(user);return;}
         if(CaelumStorageFurnitureData.IsItem(entry)){CaelumStorageFurnitureInventory.ToggleBox(user,entry);return;}
@@ -2827,6 +2840,7 @@ class CaelumInventoryService : Object play
         Inventory entry =
             user.GetFormalInventoryEntryAt(user.FormalInventorySelectionIndex);
         if (entry == null) { return; }
+        if(CaelumSunCargo.ReleaseSelection(user,entry))return;
         let lockItem=CaelumLockItem(entry);
         if(lockItem!=null){lockItem.DropInstance(user);return;}
         let restItem=CaelumRestFurnitureItem(entry);

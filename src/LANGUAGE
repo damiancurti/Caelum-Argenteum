@@ -7597,6 +7597,8 @@ CA_TAROT_MOON_CLONE = "Ilusión de La Luna";
 [enu default]
 CA_TAROT_HAZARD_ROCK = "Hazardous giant rock";
 CA_TAROT_HEAT_ROCK = "Heat-emitting giant rock";
+CA_TAROT_SUN_INVENTORY = "Emissions blocked. Use, Box or Drop: release safely.";
+CA_TAROT_SUN_PENDING_SHORT = "Release pending: clear nearby space.";
 CA_TAROT_SUN_STAR = "Equip The Star to contain this giant rock.";
 CA_TAROT_SUN_OCCUPIED = "Only one giant object can occupy the Box; release any current hold first.";
 CA_TAROT_SUN_CAPACITY = "The Box needs a free slot and enough carrying capacity.";
@@ -7605,6 +7607,8 @@ CA_TAROT_SUN_RELEASE_WAIT = "The rock needs free space within 4 m. Travel waits 
 [es]
 CA_TAROT_HAZARD_ROCK = "Roca gigante peligrosa";
 CA_TAROT_HEAT_ROCK = "Roca gigante que irradia calor";
+CA_TAROT_SUN_INVENTORY = "Emisión bloqueada. Usar, Caja o Soltar: liberar.";
+CA_TAROT_SUN_PENDING_SHORT = "Salida pendiente: despejá espacio cercano.";
 CA_TAROT_SUN_STAR = "Equipa La Estrella para guardar esta roca gigante.";
 CA_TAROT_SUN_OCCUPIED = "La Caja admite un solo objeto gigante; soltá primero lo que estás sosteniendo.";
 CA_TAROT_SUN_CAPACITY = "La Caja necesita un espacio libre y capacidad de carga suficiente.";

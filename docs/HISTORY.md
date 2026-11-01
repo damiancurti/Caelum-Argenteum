@@ -4,6 +4,20 @@ Documentation version: **5.13.3** - 2026-10-31.
 
 ## 5.13.3 - Ordered Tarot foundation (#440, implementation checkpoint)
 
+Sun inventory checkpoint (2026-11-01): one contained original is visible in
+the native inventory with its name, Box marker and raw physical mass. Use,
+Box and Drop request the same safe placement; blocked placement keeps the
+item/pending hint, and successful release hides the empty metadata. The carrier
+cannot become a duplicate pickup or another player's inventory entry.
+
+Final `sun-inventory/r2` matches18043 source entries; SHA-256
+`b448272766e851a2b6094e8952febb36c27cf7ecc17110f378041678389ab8c6`.
+Two-peer capture32447/recovery32448 passed30 assertions, including release
+after a blocked saved request. The Spanish800x600 inventory was inspected;
+the final shorter hint clears the lower controls. Earlier r1 gameplay passed
+32445/32446 but its hint was too long. Evidence is in
+`assets/validation_v5_13_3/sun-inventory-results.json`. Author review remains deferred.
+
 Sun heat checkpoint (2026-11-01): the approved8kW spherical rock uses the
 existing typed thermal-source registry and owned boulder visual. Capture hides
 the visual and suppresses emission without replacing either component; release
