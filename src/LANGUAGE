@@ -6,10 +6,10 @@ CA_POWERUP_ARMOR = "Common: awaken armor";
 CA_POWERUP_SLEEP = "Rare: six-minute sleep";
 CA_POWERUP_UPGRADE = "Rare: improve equipment";
 [es]
-CA_POWERUP_REST = "Com?n: descanso de tres minutos";
-CA_POWERUP_REPLENISH = "Com?n: reposici?n de ?nima y munici?n";
-CA_POWERUP_WEAPONS = "Com?n: despertar armas y escudos";
-CA_POWERUP_ARMOR = "Com?n: despertar armadura";
+CA_POWERUP_REST = "Común: descanso de tres minutos";
+CA_POWERUP_REPLENISH = "Común: reposición de Ánima y munición";
+CA_POWERUP_WEAPONS = "Común: despertar armas y escudos";
+CA_POWERUP_ARMOR = "Común: despertar armadura";
 CA_POWERUP_SLEEP = "Raro: descanso de seis minutos";
 CA_POWERUP_UPGRADE = "Raro: mejorar equipo";
 [enu default]

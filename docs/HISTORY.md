@@ -23,6 +23,8 @@ ring exclusion. Final gallery inspection corrected overlapping MODELDEF slots
 and edge-on emblems. Per-collector rest costs were 3.04-3.36 ms seated and
 4.08-4.64 ms in bed. Short frame-callback samples and tails are retained in
 results.json; they are not ETW presentation measurements or a 60-FPS claim.
+Final source review restored the Spanish accents in four pickup labels; the
+dialogue/localization builder validates their generated index.
 
 ## 5.13.9 - Author-suite preparation (#596, checkpoint, 2026-11-01)
 

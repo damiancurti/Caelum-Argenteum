@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "ab08cea56ad2822be9db9dd9984aec254a6b5b6ba55d661910ba3dacdc8ee90e",
+  "sha256": "cab4933c640e486a3d4ea7a39a5da01c04e4adf097f28826b3732a17b3d72e03",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[552,552]],"default":[[552,552]],"es":[[1247,1247]]},
     "CA_ABSENT_THEFT_FOUND": {"enu":[[6975,6975]],"default":[[6975,6975]],"es":[[6977,6977]]},
