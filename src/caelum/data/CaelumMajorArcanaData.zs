@@ -27,6 +27,15 @@ class CaelumMajorArcanaData : Object
     const LOVERS_REVISION=1;
     const PASSAGE_REVISION=1;
     const EMPEROR_REVISION=1;
+    const AUTOMATON_REVISION=1;
+    const AUTOMATON_BODY_KG=1000;
+    const AUTOMATON_ATTRIBUTE=30;
+    const AUTOMATON_EQUIPMENT_KG=96.0;
+    const AUTOMATON_MACE_KG=12.0;
+    const AUTOMATON_MACE_DAMAGE=130.0;
+    const AUTOMATON_MACE_RANGE_MU=80.0;
+    const AUTOMATON_MACE_AIR=6.0;
+    const AUTOMATON_MACE_CRITICAL=5.0;
     const MOON_REVISION=1;
     const MOON_POWER=0.25;
     const SUN_REVISION=1;

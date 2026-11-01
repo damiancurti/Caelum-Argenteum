@@ -72,6 +72,10 @@ class CaelumVisualPerception : Object play
         let summoned=CaelumSummonedZupay(observer);
         if(summoned!=null && CaelumTarotEmperor.Commander(observer)!=null)
             return CaelumMajorTargets.Enemy(summoned.Commander(),candidate);
+        let machine=CaelumTarotAutomaton(observer);
+        if(machine!=null)return machine.Caster!=null && CaelumMajorTargets.Enemy(machine.Caster,candidate);
+        let automaton=CaelumTarotAutomaton(candidate);
+        if(automaton!=null && automaton.Caster!=null)return RelatedOpponent(observer,automaton.Caster);
         let clone=CaelumTarotClone(observer);
         if(clone!=null)return CaelumMajorTargets.Enemy(clone.Caster,candidate);
         let image=CaelumTarotClone(candidate);

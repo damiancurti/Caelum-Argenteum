@@ -136,6 +136,7 @@ class CaelumCombatActor : Actor
         UpdateActorOffensiveStatistics();UpdateCombatHealthEffects();
     }
     virtual CaelumWeaponModel GetPossessedSidearm(){return null;}
+    virtual bool EquipmentCanWear(){return true;}
     int CombatStrength;
     int CombatConstitution;
     int CombatIntelligence;
@@ -2357,7 +2358,7 @@ class CaelumCombatActor : Actor
         bool armorPieceBroken=false;
         for (int slot=0;slot<CaelumConstants.ARMOR_SLOT_COUNT;slot++)
         {
-            int loss=CaelumToughnessRules.ImpactWear(CombatArmor,slot,wearBySlot[slot]);
+            int loss=EquipmentCanWear()?CaelumToughnessRules.ImpactWear(CombatArmor,slot,wearBySlot[slot]):0;
             if (loss>0 && CombatArmor.Durability[slot]<=0) armorPieceBroken=true;
         }
         if (LastImpactFinalDamage <= 0) { return; }
@@ -3367,7 +3368,7 @@ class CaelumCombatActor : Actor
                 lucidityDefensePercent = defensePercent;
             }
 
-            if (CombatArmor != null
+            if (EquipmentCanWear() && CombatArmor != null
                 && CombatArmor.Durability[slot] > 0
                 && absorbedDamage > 0.0)
             {
@@ -3606,7 +3607,7 @@ class CaelumCombatActor : Actor
         LastCombatToughnessDamageMultiplier=CaelumToughnessRules.RetainedFraction(
             LastCombatArmorPostDefenseDamage,LastCombatPostToughnessDamage);
 
-        if (CombatArmor == null
+        if (!EquipmentCanWear() || CombatArmor == null
             || CombatArmor.Durability[LastCombatArmorSlot] <= 0
             || LastCombatArmorAbsorbedDamage <= 0.0)
         {

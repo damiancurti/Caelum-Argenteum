@@ -530,12 +530,16 @@ Lovers passive redistribution in the abstract journey model remains separate wor
   Each spends its own ammunition, Air and Anima under normal rules, without
   consuming the original's resources or leaving loot (approved2026-11-01).
 - Magician: Zupay-sized3D automaton, body1,000kg/all attributes30. T1/XL armor60kg,
-  tower shield24kg/current defense and wear; mace12kg,base blunt130,2.5m reach,
-  native14-tic preparation modified by attributes/load. Total1,096kg. Tarot wakes
+  tower shield24kg/current defense; mace12kg,base blunt130,2.5m reach,
+  native14-tic preparation modified by attributes/load, base Air6, critical5%,
+  ordinary melee dispersion and no separate secondary attack. The author
+  superseded normal wear: all three equipment components are indestructible and
+  inseparable, including after body death; the body remains damageable. Total1,096kg. Tarot wakes
   at most one per character for60s, then it becomes inactive preserving Health,
-  equipment and wear. Tarot key commands a visible enemy while controlled.
-  Its separate visual body now has native animated model registration; this
-  artwork checkpoint does not yet instantiate campaign AI or wake/control logic.
+  equipment and contamination. Tarot key commands a visible enemy while controlled.
+  Its separate animated visual body follows the persistent combat actor. Revision3
+  of the annex apparatus places one example without recreating a destroyed body.
+  Control expires on the shared active/accelerated clock and ends before departure.
 - Sun harmful objects mean large rocks, not projectiles. Approved examples are
   two1.2m-diameter rocks at2,500kg/m3 (about2,262kg): one8kW thermal source and
   one environmental contamination100 source within4m/LOS. Temporary Box containment

@@ -10,7 +10,9 @@ object lifting, Chariot movement, Death's pulse/marked-obstacle passive and
 Hierophant purification extend it. Justice pairs, safe returns, travel waits and
 legacy geometry compatibility have isolated native evidence. Lovers has active-map
 damage/healing integration; abstract journey sharing still needs integration.
-The automaton's owned animated model is separate from its pending combat/control.
+The automaton now links its owned model to a persistent combat body, timed
+Tarot control and inseparable equipment. Native two-peer/save evidence covers
+that integration; it does not constitute full-version acceptance.
 Shared accelerated waiting now advances existing Tarot creations and duel deadlines.
 Authored false-wall identification and cursed-passage purification are implemented.
 The reversible mansion annex has usable return portals and passage examples;

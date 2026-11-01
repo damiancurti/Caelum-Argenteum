@@ -42,8 +42,9 @@ idle, eight walking, six attack, guard and three fallen poses. Its93.333333-MU
 height follows the existing Zupay; visual geometry does not recalculate the
 approved1,000kg body or96kg equipment. The model has3,232 triangles/7,816 vertices
 in four material batches; individual joints do not become separate draw calls.
-`CaelumAutomatonModelBody` is a noninteracting visual body. Campaign AI, actual
-equipment, wake/control and combat integration remain pending.
+`CaelumAutomatonModelBody` is a noninteracting visual body. The persistent
+`CaelumTarotAutomaton` now drives it from actual displacement and the shared
+melee cycle, without editing the accepted source mesh or materials.
 
 The iron uses a new opaque built-in image_gen painted value ramp, copied without
 raster editing from the retained source. Neutral-pose face UVs select its values

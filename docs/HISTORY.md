@@ -4,6 +4,28 @@ Documentation version: **5.13.3** - 2026-10-31.
 
 ## 5.13.3 - Ordered Tarot foundation (#440, implementation checkpoint)
 
+2026-11-01 author decisions: automaton mace base Air6, critical5%, ordinary
+melee dispersion and no separate secondary attack. Its armor, tower shield and
+mace are indestructible and inseparable, overriding previously normal wear;
+the 1,000kg body remains vulnerable. A non-narrative demonstration spirit using
+the existing guard profile/appearance is authorized for Justice/Judgement, with
+no rewards. This decision does not claim that spirit integration is complete.
+
+Automaton control checkpoint: a persistent damageable body now drives the owned
+model, follows perceived enemy orders and uses the native fourteen-tic melee
+cycle, Air, armor and tower blocking. Equipment cannot be removed or worn;
+expiry/departure leaves the same body in its map. Shared acceleration indexes
+only active owner links. External profile transfer rejects a live control link;
+ordinary common saves retain it. Annex apparatus revision3 adds one body once.
+
+Final package `automaton/r6` matches all 18041 source entries, SHA-256
+`45367d2419c5dd661d5dfe995b60d1531477f1a491eaa482b88eb27393f8c81c`. Native two-peer capture32438
+and common-save reload32439 passed 78 assertions; profile boundary passed2.
+`automaton-results.json` retains paths, hashes and earlier failures. The final
+Spanish native capture was visually inspected. Static validation and deterministic
+apparatus generation passed. These are agent checks, not author acceptance;
+the whole-version suite stays deferred. No frame-presentation claim is made.
+
 On2026-11-01 the author required Star equipped for the giant hazardous rocks
 captured by Sun, and approved safe release within4m, pending containment and a
 travel block when no unobstructed free location exists. These decisions do not

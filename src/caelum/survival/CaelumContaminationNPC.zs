@@ -86,9 +86,10 @@ class CaelumContaminationNPC : Object play
             Model(weapon.ContaminationState,CaelumContaminationRules.WeaponArea(weapon.WeaponType,weapon.Size));
         }
         let defender=CaelumPortDefender(npc);
-        if(defender!=null && defender.Shield!=null)
+        let automaton=CaelumTarotAutomaton(npc);
+        let shield=defender!=null?defender.Shield:automaton!=null?automaton.Shield:null;
+        if(shield!=null)
         {
-            let shield=defender.Shield;
             if(shield.ContaminationState==null)shield.ContaminationState=new('CaelumContaminationState');
             Model(shield.ContaminationState,CaelumContaminationRules.ShieldArea(shield.ShieldType,shield.Size));
         }

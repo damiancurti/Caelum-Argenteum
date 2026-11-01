@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `3422b95bb9e93ac51c76c3b872086393195c90b9c0a60ee96e6c4bc400e6e4c4`. Locations include every definition; the last one per language wins.
+SHA-256: `697e61488ab0a27f2763a0c3cc8e7c4ff6209619c3d8310486dd2634af88cbb5`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -198,7 +198,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_SURVIVAL | 11 | CA_SURVIVAL_COLD_WARNING | CA_SURVIVAL_THIRST_WARNING |
 | CA_TABLE | 17 | CA_TABLE_AUTO_HELP | CA_TABLE_TAKE_FOOD |
 | CA_TARGET | 22 | CA_TARGET_APPROACH | CA_TARGET_USE |
-| CA_TAROT | 126 | CA_TAROT_BONUS | CA_TAROT_WANDS_KNIGHT_NAME |
+| CA_TAROT | 129 | CA_TAROT_AUTOMATON | CA_TAROT_WANDS_KNIGHT_NAME |
 | CA_TC | 79 | CA_TC_ABANDONED | CA_TC_YOUR_HAND |
 | CA_TELEKINESIS | 1 | CA_TELEKINESIS_TARGET | CA_TELEKINESIS_TARGET |
 | CA_TELEPORT | 1 | CA_TELEPORT_TRAP | CA_TELEPORT_TRAP |

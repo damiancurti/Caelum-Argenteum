@@ -15,8 +15,9 @@ waits and legacy maps are checked.
 Lovers active-map damage/healing is checked; integrate its passive in abstract
 journey simulation before claiming completion. Finish remaining handlers/passives,
 giant/harmful objects and display-room examples on the appended annex geometry,
-automaton combat/control and input arbitration. Its owned 3D model is
-implemented separately, with native animation evidence. Existing world-effect
+the demonstration spirit and the remaining input integration. Automaton
+combat/control now uses inseparable equipment, actual displacement animation
+and the shared clock; two-peer and common-save evidence is recorded. Existing world-effect
 clocks also follow shared accelerated steps; add future creations to that bounded
 owner index. Annex access, passage examples and Wheel state changes are checked.
 Stone-wall presentation and saved orientation are checked; final author review waits.

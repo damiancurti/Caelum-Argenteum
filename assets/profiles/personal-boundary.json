@@ -26,7 +26,8 @@
     "CaelumTarotLift": {"Holding": [1]}
   },
   "transfer_blocked_inventory_references": {
-    "CaelumSunCargo": ["Body"]
+    "CaelumSunCargo": ["Body"],
+    "CaelumAutomatonLink": ["Body"]
   },
   "owned_actor_edges": {
     "CaelumChestCargo": ["Chest"],

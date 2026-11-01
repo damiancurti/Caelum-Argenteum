@@ -1,5 +1,5 @@
 {
-  "revision": 2,
+  "revision": 3,
   "mansion_portal": [
     368,
     112,
@@ -61,6 +61,11 @@
   "provenance": "Technical placement inside the author-approved example annex and the existing mansion practice room. Portals reuse the owned magic-trap visual and only connect positions in MAP01; no new reward or story. Doors use the existing 64-by-120-MU leaf and its collision. Dry state opens the first Wheel doorway; wet state opens the second. A blocked closing doorway prevents changing state until clear. The living-obstacle example reuses the existing espinillo with its unchanged geometry, mass and owned artwork, clear of the display-room entrance.",
   "living_obstacle_offset": [
     480,
+    528,
+    0
+  ],
+  "automaton_offset": [
+    256,
     528,
     0
   ]

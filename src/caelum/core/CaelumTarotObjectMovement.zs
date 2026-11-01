@@ -161,6 +161,8 @@ class CaelumMajorWorldEvents : StaticEventHandler
             let plant=CaelumTarotPlantState(user.FindInventory('CaelumTarotPlantState'));
             let duel=CaelumJusticeLink.View(user);
             let empire=CaelumTarotEmperorCast(user.FindInventory('CaelumTarotEmperorCast'));
+            let automaton=CaelumTarotAutomata.View(user);
+            if(automaton!=null)IncludeTimeEffect(automaton.Body);
             let moon=CaelumTarotMoon.View(user);
             if(moon!=null)for(int j=0;j<2;j++)IncludeTimeEffect(moon.Bodies[j]);
             if(cart!=null)IncludeTimeEffect(cart.Projection);
@@ -179,6 +181,7 @@ class CaelumMajorWorldEvents : StaticEventHandler
         for(int i=0;i<world.TimeEffects.Size();i++)
         {
             let effect=world.TimeEffects[i];if(effect==null || effect.bDestroyed)continue;
+            let automaton=CaelumTarotAutomaton(effect);if(automaton!=null){automaton.AdvanceEffect();continue;}
             let clone=CaelumTarotClone(effect);if(clone!=null){clone.AdvanceEffect();continue;}
             let cart=CaelumTarotChariot(effect);if(cart!=null){cart.AdvanceEffect();continue;}
             let mine=CaelumTarotMine(effect);if(mine!=null){mine.AdvanceEffect();continue;}
@@ -199,6 +202,7 @@ class CaelumMajorWorldEvents : StaticEventHandler
             let user=CaelumPlayer(players[i].mo);CaelumTarotObjectMovement.Release(user);
             let empire=user!=null?CaelumTarotEmperorCast(user.FindInventory('CaelumTarotEmperorCast')):null;
             if(empire!=null)empire.End();
+            let automaton=CaelumTarotAutomata.View(user);if(automaton!=null)automaton.End();
             let moon=CaelumTarotMoon.View(user);if(moon!=null)moon.End();
             let cart=user!=null?CaelumTarotChariotState(user.FindInventory('CaelumTarotChariotState')):null;
             if(cart!=null && cart.Projection!=null)cart.Projection.Destroy();

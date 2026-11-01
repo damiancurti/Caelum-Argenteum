@@ -39,7 +39,9 @@ For existing saves, `build_dev.ps1 -LegacyTarotMaps` preserves pre-Justice maps;
 Justice now supports simultaneous pairs, safe returns and cancellable travel waits,
 with an explicit legacy-map package for prior saves. Lovers now shares active-map
 Health damage/healing through real group membership and overlapping-aura deduplication.
-The automaton has owned animated 3D artwork; its Tarot control/combat is still pending.
+The automaton now uses its owned 3D model in native combat: one controlled body per
+caster, timed commands, inseparable equipment and persistent Health. Its control
+ends before travel; body destruction remains possible.
 Accelerated waiting advances existing Tarot world effects once per shared step.
 Remaining Major targets/effects and standalone modes
 #596-601 are unfinished. #441 capture/unified power and #442 equipment awakening

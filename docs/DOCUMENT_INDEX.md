@@ -29,290 +29,290 @@ Read a selected inclusive line range from the original:
 python build_document_index.py read SYSTEMS.md 3643 3676
 ```
 
-## [ASSETS.md](ASSETS.md) - 40000 words
+## [ASSETS.md](ASSETS.md) - 40012 words
 
-SHA-256: `bc18d1d23e941e348b4b0b4279bfef3b179552323898f6c376a6549e6342d2df`
+SHA-256: `c3ae027a02f901b2d296a9bf9ccee7211db787aff9d75021945d9f0d4ad26f04`
 
 - Lines 1-8 - [Caelum Argenteum — Audio and art](ASSETS.md#caelum-argenteum--audio-and-art) - context: -
 - Lines 9-16 - [Moon clone appearance reuse (#440, 5.13.3)](ASSETS.md#moon-clone-appearance-reuse-440-5133) - context: Caelum Argenteum — Audio and art
 - Lines 17-34 - [Tarot example annex geometry (#440, 5.13.3)](ASSETS.md#tarot-example-annex-geometry-440-5133) - context: Caelum Argenteum — Audio and art
-- Lines 35-59 - [Tarot automaton model (#440, 5.13.3)](ASSETS.md#tarot-automaton-model-440-5133) - context: Caelum Argenteum — Audio and art
-- Lines 60-69 - [Justice arena geometry (#440, 5.13.3)](ASSETS.md#justice-arena-geometry-440-5133) - context: Caelum Argenteum — Audio and art
-- Lines 70-81 - [Tarot Empress roots (#440, 5.13.3)](ASSETS.md#tarot-empress-roots-440-5133) - context: Caelum Argenteum — Audio and art
-- Lines 82-94 - [Tarot Chariot adaptation (#440, 5.13.3)](ASSETS.md#tarot-chariot-adaptation-440-5133) - context: Caelum Argenteum — Audio and art
-- Lines 95-100 - [Equipment awakening panel (#442, 5.13.2)](ASSETS.md#equipment-awakening-panel-442-5132) - context: Caelum Argenteum — Audio and art
-- Lines 101-109 - [Tarot capture fronts (#441, 5.13.1)](ASSETS.md#tarot-capture-fronts-441-5131) - context: Caelum Argenteum — Audio and art
-- Lines 110-118 - [Native diagnostics and local presentation (#435, 5.12.7)](ASSETS.md#native-diagnostics-and-local-presentation-435-5127) - context: Caelum Argenteum — Audio and art
-- Lines 119-125 - [Profile graph tooling (#434, 5.12.6)](ASSETS.md#profile-graph-tooling-434-5126) - context: Caelum Argenteum — Audio and art
-- Lines 126-131 - [5.12.5 - Card-table PvP reuses accepted artwork (#590)](ASSETS.md#5125---card-table-pvp-reuses-accepted-artwork-590) - context: Caelum Argenteum — Audio and art
-- Lines 132-145 - [Organized combat venues (#438, 5.12.4)](ASSETS.md#organized-combat-venues-438-5124) - context: Caelum Argenteum — Audio and art
-- Lines 146-152 - [5.12.3 - Cooperative lifecycle guards (#437)](ASSETS.md#5123---cooperative-lifecycle-guards-437) - context: Caelum Argenteum — Audio and art
-- Lines 153-160 - [5.12.2 - Cooperative time interface (#436)](ASSETS.md#5122---cooperative-time-interface-436) - context: Caelum Argenteum — Audio and art
-- Lines 161-167 - [V5.12 native network fixture (#435, preparation)](ASSETS.md#v512-native-network-fixture-435-preparation) - context: Caelum Argenteum — Audio and art
-- Lines 168-177 - [5.11.8 - Species damage policy (#586)](ASSETS.md#5118---species-damage-policy-586) - context: Caelum Argenteum — Audio and art
-- Lines 178-185 - [Arrival household placement (5.11.7, #581)](ASSETS.md#arrival-household-placement-5117-581) - context: Caelum Argenteum — Audio and art
-- Lines 186-192 - [Companion delivery (5.11.4, #430)](ASSETS.md#companion-delivery-5114-430) - context: Caelum Argenteum — Audio and art > Arrival household placement (5.11.7, #581)
-- Lines 193-202 - [5.11.0 / #431 - Profiling provenance](ASSETS.md#5110--431---profiling-provenance) - context: Caelum Argenteum — Audio and art
-- Lines 203-227 - [5.9.7 / #423 - Port wardrobes](ASSETS.md#597--423---port-wardrobes) - context: Caelum Argenteum — Audio and art
-- Lines 228-232 - `5.8.56 / #416 - Original Ciudad theme for Buenos Aires` - context: Caelum Argenteum — Audio and art
-- Lines 233-256 - [5.8.54 furniture corrections (#410)](ASSETS.md#5854-furniture-corrections-410) - context: Caelum Argenteum — Audio and art
-- Lines 257-263 - [5.8.50 - Contact adapter evidence (#502)](ASSETS.md#5850---contact-adapter-evidence-502) - context: Caelum Argenteum — Audio and art
-- Lines 264-273 - [5.8.49 - Physical contact geometry references (#502)](ASSETS.md#5849---physical-contact-geometry-references-502) - context: Caelum Argenteum — Audio and art
-- Lines 274-283 - [5.8.48 - Vessel geometry and crash reproduction evidence (#502)](ASSETS.md#5848---vessel-geometry-and-crash-reproduction-evidence-502) - context: Caelum Argenteum — Audio and art
-- Lines 284-290 - [5.8.47 - Stack contamination evidence (#502)](ASSETS.md#5847---stack-contamination-evidence-502) - context: Caelum Argenteum — Audio and art
-- Lines 291-312 - [5.8.44 - Original landscapes and ornamental sculpture (#410)](ASSETS.md#5844---original-landscapes-and-ornamental-sculpture-410) - context: Caelum Argenteum — Audio and art
-- Lines 313-320 - [5.8.43 - Household absence evidence (#502)](ASSETS.md#5843---household-absence-evidence-502) - context: Caelum Argenteum — Audio and art
-- Lines 321-343 - [5.8.40 - Dining set artwork (#410)](ASSETS.md#5840---dining-set-artwork-410) - context: Caelum Argenteum — Audio and art
-- Lines 344-351 - [5.8.39 - Aim validation evidence (#415)](ASSETS.md#5839---aim-validation-evidence-415) - context: Caelum Argenteum — Audio and art
-- Lines 352-366 - [5.8.36 - Portable study artwork (#410)](ASSETS.md#5836---portable-study-artwork-410) - context: Caelum Argenteum — Audio and art
-- Lines 367-381 - [5.8.35 / #410 - Painted sofa item views](ASSETS.md#5835--410---painted-sofa-item-views) - context: Caelum Argenteum — Audio and art
-- Lines 382-392 - [5.8.34 / #410 - Painted ordinary chair and cot items](ASSETS.md#5834--410---painted-ordinary-chair-and-cot-items) - context: Caelum Argenteum — Audio and art
-- Lines 393-410 - [5.8.33 / #410 - Human-scale chair and raised cot](ASSETS.md#5833--410---human-scale-chair-and-raised-cot) - context: Caelum Argenteum — Audio and art
-- Lines 411-421 - [5.8.32 / #410 - Painted luxury furniture inventory items](ASSETS.md#5832--410---painted-luxury-furniture-inventory-items) - context: Caelum Argenteum — Audio and art
-- Lines 422-430 - [5.8.31 storage furniture acquisition](ASSETS.md#5831-storage-furniture-acquisition) - context: Caelum Argenteum — Audio and art
-- Lines 431-449 - [5.8.30 - Original luxury furniture models (#410)](ASSETS.md#5830---original-luxury-furniture-models-410) - context: Caelum Argenteum — Audio and art
-- Lines 450-468 - [5.8.29 - Original period sofa models (#410)](ASSETS.md#5829---original-period-sofa-models-410) - context: Caelum Argenteum — Audio and art
-- Lines 469-477 - [5.8.26 - Reused owned reading furniture (#410)](ASSETS.md#5826---reused-owned-reading-furniture-410) - context: Caelum Argenteum — Audio and art
-- Lines 478-500 - [5.8.25 - Original garden water furniture (#410)](ASSETS.md#5825---original-garden-water-furniture-410) - context: Caelum Argenteum — Audio and art
-- Lines 501-521 - [5.8.24 - Wardrobe models and painted icon (#410)](ASSETS.md#5824---wardrobe-models-and-painted-icon-410) - context: Caelum Argenteum — Audio and art
-- Lines 522-531 - `5.8.22 - Shared-water mansion bathroom fixtures (#410)` - context: Caelum Argenteum — Audio and art
-- Lines 532-559 - `5.8.20 - Mansion kitchen sink and wall cupboard (#410)` - context: Caelum Argenteum — Audio and art
-- Lines 560-586 - [5.8.19 - Kitchen process artwork (#410, author review pending)](ASSETS.md#5819---kitchen-process-artwork-410-author-review-pending) - context: Caelum Argenteum — Audio and art
-- Lines 587-600 - [5.8.18 - Accepted painted prepared meals (#410)](ASSETS.md#5818---accepted-painted-prepared-meals-410) - context: Caelum Argenteum — Audio and art
-- Lines 601-616 - [5.8.17 - Accepted painted kitchen ingredients (#410)](ASSETS.md#5817---accepted-painted-kitchen-ingredients-410) - context: Caelum Argenteum — Audio and art
-- Lines 617-622 - [5.8.14 - Ration lot presentation (#410)](ASSETS.md#5814---ration-lot-presentation-410) - context: Caelum Argenteum — Audio and art
-- Lines 623-653 - [5.8.13 - Campfire world artwork (#411)](ASSETS.md#5813---campfire-world-artwork-411) - context: Caelum Argenteum — Audio and art
-- Lines 654-666 - [5.8.12 - Toilet interaction (#502)](ASSETS.md#5812---toilet-interaction-502) - context: Caelum Argenteum — Audio and art
-- Lines 667-697 - [5.8.11 - Domestic bathroom artwork (#410)](ASSETS.md#5811---domestic-bathroom-artwork-410) - context: Caelum Argenteum — Audio and art
-- Lines 698-715 - [5.8.9 - Hygiene item artwork (#502, in progress)](ASSETS.md#589---hygiene-item-artwork-502-in-progress) - context: Caelum Argenteum — Audio and art
-- Lines 716-730 - [5.8.8 - Deployed tent artwork (#411, in progress)](ASSETS.md#588---deployed-tent-artwork-411-in-progress) - context: Caelum Argenteum — Audio and art
-- Lines 731-743 - [5.8.6 - Central property access (#411)](ASSETS.md#586---central-property-access-411) - context: Caelum Argenteum — Audio and art
-- Lines 744-747 - [5.8.5 - Regional event discovery (#415)](ASSETS.md#585---regional-event-discovery-415) - context: Caelum Argenteum — Audio and art
-- Lines 748-753 - `5.8.4 - Second map soundtrack (#496)` - context: Caelum Argenteum — Audio and art
-- Lines 754-765 - [5.8.3 - Contamination HUD icon (#410, in progress)](ASSETS.md#583---contamination-hud-icon-410-in-progress) - context: Caelum Argenteum — Audio and art
-- Lines 766-776 - [5.8.2 - Connected mansion deposits (#414)](ASSETS.md#582---connected-mansion-deposits-414) - context: Caelum Argenteum — Audio and art
-- Lines 777-803 - [5.7.14 - Mate vessels and inventory sprites (#472)](ASSETS.md#5714---mate-vessels-and-inventory-sprites-472) - context: Caelum Argenteum — Audio and art
-- Lines 804-821 - [5.7.13 - Chemistry supply presentation (#471)](ASSETS.md#5713---chemistry-supply-presentation-471) - context: Caelum Argenteum — Audio and art
-- Lines 822-832 - [5.7.12 - Owned Fermentation Barrel (#487)](ASSETS.md#5712---owned-fermentation-barrel-487) - context: Caelum Argenteum — Audio and art
-- Lines 833-838 - [5.7.11 - Station terminology (#486)](ASSETS.md#5711---station-terminology-486) - context: Caelum Argenteum — Audio and art
-- Lines 839-844 - [5.7.10 - Existing cartridge and station art reused (#471)](ASSETS.md#5710---existing-cartridge-and-station-art-reused-471) - context: Caelum Argenteum — Audio and art
-- Lines 845-851 - [5.7.9 - Existing water/Alchemy art reused (#409)](ASSETS.md#579---existing-wateralchemy-art-reused-409) - context: Caelum Argenteum — Audio and art
-- Lines 852-897 - [5.7.8 - Painted support implement correction (#479)](ASSETS.md#578---painted-support-implement-correction-479) - context: Caelum Argenteum — Audio and art
-- Lines 898-906 - [5.7.7 - Target-panel presentation (#481)](ASSETS.md#577---target-panel-presentation-481) - context: Caelum Argenteum — Audio and art
-- Lines 907-938 - `5.7.6 - Alchemy ingredient artwork (#471)` - context: Caelum Argenteum — Audio and art
-- Lines 939-950 - [5.7.5 - Owned marine material models (#407)](ASSETS.md#575---owned-marine-material-models-407) - context: Caelum Argenteum — Audio and art
-- Lines 951-962 - [5.7.4 - Owned Alchemy station (#470)](ASSETS.md#574---owned-alchemy-station-470) - context: Caelum Argenteum — Audio and art
-- Lines 963-969 - [5.7.3 - Recovery validation (#406)](ASSETS.md#573---recovery-validation-406) - context: Caelum Argenteum — Audio and art
-- Lines 970-983 - [5.7.2 - Owned 3D land resources (#405)](ASSETS.md#572---owned-3d-land-resources-405) - context: Caelum Argenteum — Audio and art
-- Lines 984-993 - [5.6.10 — library and clothing shop signs (#383)](ASSETS.md#5610--library-and-clothing-shop-signs-383) - context: Caelum Argenteum — Audio and art
-- Lines 994-1006 - [5.6.9 - Prepared cartridge-kit sprites (#380)](ASSETS.md#569---prepared-cartridge-kit-sprites-380) - context: Caelum Argenteum — Audio and art
-- Lines 1007-1034 - [5.6.7 - Distinct garment object artwork (#387)](ASSETS.md#567---distinct-garment-object-artwork-387) - context: Caelum Argenteum — Audio and art
-- Lines 1035-1041 - [5.6.6 - Clothing gameplay representation (#386)](ASSETS.md#566---clothing-gameplay-representation-386) - context: Caelum Argenteum — Audio and art
-- Lines 1042-1052 - [5.6.3 - Original reading bookshelf (#378)](ASSETS.md#563---original-reading-bookshelf-378) - context: Caelum Argenteum — Audio and art
-- Lines 1053-1126 - `5.5.8 - Cleaned animated bull model (#369)` - context: Caelum Argenteum — Audio and art
-- Lines 1127-1136 - [5.5.6 - Thermal surface fixture (#314)](ASSETS.md#556---thermal-surface-fixture-314) - context: Caelum Argenteum — Audio and art
-- Lines 1137-1143 - [5.5.5 - Unarmed input evidence (#363)](ASSETS.md#555---unarmed-input-evidence-363) - context: Caelum Argenteum — Audio and art
-- Lines 1144-1153 - [5.4.46 - House-transition evidence (#334)](ASSETS.md#5446---house-transition-evidence-334) - context: Caelum Argenteum — Audio and art
-- Lines 1154-1160 - [5.4.45 - Private breath regression evidence (#357)](ASSETS.md#5445---private-breath-regression-evidence-357) - context: Caelum Argenteum — Audio and art
-- Lines 1161-1171 - [5.4.42 - Distributed update evidence (#318)](ASSETS.md#5442---distributed-update-evidence-318) - context: Caelum Argenteum — Audio and art
-- Lines 1172-1180 - [5.4.41 - Isolated workload evidence (#318)](ASSETS.md#5441---isolated-workload-evidence-318) - context: Caelum Argenteum — Audio and art
-- Lines 1181-1187 - [5.4.40 - Rest and acceleration evidence (#325)](ASSETS.md#5440---rest-and-acceleration-evidence-325) - context: Caelum Argenteum — Audio and art
-- Lines 1188-1194 - [5.4.39 - Jump-wall diagnostic evidence (#339)](ASSETS.md#5439---jump-wall-diagnostic-evidence-339) - context: Caelum Argenteum — Audio and art
-- Lines 1195-1200 - [5.4.38 - Map-legend presentation evidence (#321)](ASSETS.md#5438---map-legend-presentation-evidence-321) - context: Caelum Argenteum — Audio and art
-- Lines 1201-1208 - [5.4.37 - Current MAP03 attribution evidence (#318)](ASSETS.md#5437---current-map03-attribution-evidence-318) - context: Caelum Argenteum — Audio and art
-- Lines 1209-1214 - [5.4.36 - House-door presentation checks (#334)](ASSETS.md#5436---house-door-presentation-checks-334) - context: Caelum Argenteum — Audio and art
-- Lines 1215-1222 - [5.4.35 - Prisoner escort test sources (#322)](ASSETS.md#5435---prisoner-escort-test-sources-322) - context: Caelum Argenteum — Audio and art
-- Lines 1223-1230 - [5.4.34 - Native autosave verification (#324)](ASSETS.md#5434---native-autosave-verification-324) - context: Caelum Argenteum — Audio and art
-- Lines 1231-1238 - [5.4.33 - MAP02 crusher geometry provenance (#323)](ASSETS.md#5433---map02-crusher-geometry-provenance-323) - context: Caelum Argenteum — Audio and art
-- Lines 1239-1253 - [5.4.29 - Map catalogue and exact geometry provenance (#327)](ASSETS.md#5429---map-catalogue-and-exact-geometry-provenance-327) - context: Caelum Argenteum — Audio and art
-- Lines 1254-1277 - [5.4.28 - House signs and performance evidence (#318)](ASSETS.md#5428---house-signs-and-performance-evidence-318) - context: Caelum Argenteum — Audio and art
-- Lines 1278-1289 - [5.4.25 - Soldier representation benchmark (#304)](ASSETS.md#5425---soldier-representation-benchmark-304) - context: Caelum Argenteum — Audio and art
-- Lines 1290-1307 - [5.4.24 - Zupay cosmetic rock projectile (#284)](ASSETS.md#5424---zupay-cosmetic-rock-projectile-284) - context: Caelum Argenteum — Audio and art
-- Lines 1308-1409 - [5.4.23 - Editable Domingo 3D prototype (#283, accepted)](ASSETS.md#5423---editable-domingo-3d-prototype-283-accepted) - context: Caelum Argenteum — Audio and art
-- Lines 1410-1417 - [5.4.22 - Quick-use HUD artwork (#282)](ASSETS.md#5422---quick-use-hud-artwork-282) - context: Caelum Argenteum — Audio and art
-- Lines 1418-1447 - [5.4.21 - Channel Seal presentation (#252)](ASSETS.md#5421---channel-seal-presentation-252) - context: Caelum Argenteum — Audio and art
-- Lines 1448-1460 - [5.4.20 - Mounted Arcane Cloud presentation (#251)](ASSETS.md#5420---mounted-arcane-cloud-presentation-251) - context: Caelum Argenteum — Audio and art
-- Lines 1461-1469 - [5.4.19 - Redemption asset reuse (#250)](ASSETS.md#5419---redemption-asset-reuse-250) - context: Caelum Argenteum — Audio and art
-- Lines 1470-1479 - [5.4.18 - Summoning asset reuse (#249)](ASSETS.md#5418---summoning-asset-reuse-249) - context: Caelum Argenteum — Audio and art
-- Lines 1480-1491 - [5.4.17 - Rally integration and isolated evidence (#248)](ASSETS.md#5417---rally-integration-and-isolated-evidence-248) - context: Caelum Argenteum — Audio and art
-- Lines 1492-1503 - [5.4.16 - Formation Breaker residual appearance (#247)](ASSETS.md#5416---formation-breaker-residual-appearance-247) - context: Caelum Argenteum — Audio and art
-- Lines 1504-1509 - [5.4.15 - Movement validation fixtures (#260)](ASSETS.md#5415---movement-validation-fixtures-260) - context: Caelum Argenteum — Audio and art
-- Lines 1510-1515 - [5.4.7 - Telekinesis validation fixtures (#241)](ASSETS.md#547---telekinesis-validation-fixtures-241) - context: Caelum Argenteum — Audio and art
-- Lines 1516-1543 - [5.4.5 - Reusable dark rain cloud (#251, in progress)](ASSETS.md#545---reusable-dark-rain-cloud-251-in-progress) - context: Caelum Argenteum — Audio and art
-- Lines 1544-1587 - [5.4.4 - Class preparation hands (#238)](ASSETS.md#544---class-preparation-hands-238) - context: Caelum Argenteum — Audio and art
-- Lines 1588-1603 - [5.4.3 - Original procedural rat audio (#254)](ASSETS.md#543---original-procedural-rat-audio-254) - context: Caelum Argenteum — Audio and art
-- Lines 1604-1617 - [5.3.8 - Existing quest text and known-place links (#235)](ASSETS.md#538---existing-quest-text-and-known-place-links-235) - context: Caelum Argenteum — Audio and art
-- Lines 1618-1655 - [5.3.7 - Authored cartographic data and symbols (#234)](ASSETS.md#537---authored-cartographic-data-and-symbols-234) - context: Caelum Argenteum — Audio and art
-- Lines 1656-1665 - [5.3.6 - Manual note presentation (#233)](ASSETS.md#536---manual-note-presentation-233) - context: Caelum Argenteum — Audio and art
-- Lines 1666-1676 - [5.3.5 - Known-service map icons (#232)](ASSETS.md#535---known-service-map-icons-232) - context: Caelum Argenteum — Audio and art
-- Lines 1677-1687 - [5.3.4 - Local cartographic presentation (#231)](ASSETS.md#534---local-cartographic-presentation-231) - context: Caelum Argenteum — Audio and art
-- Lines 1688-1694 - [5.3.1 - Survival and Character presentation (#256)](ASSETS.md#531---survival-and-character-presentation-256) - context: Caelum Argenteum — Audio and art
-- Lines 1695-1701 - [5.3.0 - Power indicator presentation (#255)](ASSETS.md#530---power-indicator-presentation-255) - context: Caelum Argenteum — Audio and art
-- Lines 1702-1707 - [5.2.27 - Magic Box weight evidence (#229)](ASSETS.md#5227---magic-box-weight-evidence-229) - context: Caelum Argenteum — Audio and art
-- Lines 1708-1715 - [5.2.26 - Rest feedback validation (#227)](ASSETS.md#5226---rest-feedback-validation-227) - context: Caelum Argenteum — Audio and art
-- Lines 1716-1722 - [5.2.23 - Sewer bag sleep (#219)](ASSETS.md#5223---sewer-bag-sleep-219) - context: Caelum Argenteum — Audio and art
-- Lines 1723-1730 - [5.2.22 - Menu control captions (#215)](ASSETS.md#5222---menu-control-captions-215) - context: Caelum Argenteum — Audio and art
-- Lines 1731-1738 - `5.2.21 - Visible tutorial gold (#216)` - context: Caelum Argenteum — Audio and art
-- Lines 1739-1747 - [5.2.20 - Resource HUD layout (#213)](ASSETS.md#5220---resource-hud-layout-213) - context: Caelum Argenteum — Audio and art
-- Lines 1748-1755 - [5.2.19 - Horizontal impact diagnostics (#211)](ASSETS.md#5219---horizontal-impact-diagnostics-211) - context: Caelum Argenteum — Audio and art
-- Lines 1756-1804 - [5.2.18 - Authored poses, female hands and dining model (#209)](ASSETS.md#5218---authored-poses-female-hands-and-dining-model-209) - context: Caelum Argenteum — Audio and art
-- Lines 1805-1812 - [5.2.17 - Preserve the living tutorial appearance (#207)](ASSETS.md#5217---preserve-the-living-tutorial-appearance-207) - context: Caelum Argenteum — Audio and art
-- Lines 1813-1820 - [5.2.16 - Fullscreen cursor evidence (#204)](ASSETS.md#5216---fullscreen-cursor-evidence-204) - context: Caelum Argenteum — Audio and art
-- Lines 1821-1832 - [5.2.15 - Presentation scaling and native feedback (#150)](ASSETS.md#5215---presentation-scaling-and-native-feedback-150) - context: Caelum Argenteum — Audio and art
-- Lines 1833-1843 - [5.2.14 - Native control presentation and test sources (#149)](ASSETS.md#5214---native-control-presentation-and-test-sources-149) - context: Caelum Argenteum — Audio and art
-- Lines 1844-1916 - [5.2.13 - Modular saved appearance and first-person hands (#148)](ASSETS.md#5213---modular-saved-appearance-and-first-person-hands-148) - context: Caelum Argenteum — Audio and art
-- Lines 1917-1924 - [5.2.12 - Bull and resident diagnostics (#195)](ASSETS.md#5212---bull-and-resident-diagnostics-195) - context: Caelum Argenteum — Audio and art
-- Lines 1925-1931 - [5.2.11 - Collision energy diagnostics (#194)](ASSETS.md#5211---collision-energy-diagnostics-194) - context: Caelum Argenteum — Audio and art
-- Lines 1932-1941 - [5.2.10 - Ranged descriptions and shotgun resource names (#192)](ASSETS.md#5210---ranged-descriptions-and-shotgun-resource-names-192) - context: Caelum Argenteum — Audio and art
-- Lines 1942-1950 - [5.2.9 - Personality descriptions and creator layout (#192)](ASSETS.md#529---personality-descriptions-and-creator-layout-192) - context: Caelum Argenteum — Audio and art
-- Lines 1951-1957 - [5.2.8 - Toughness evidence and existing status visuals (#188)](ASSETS.md#528---toughness-evidence-and-existing-status-visuals-188) - context: Caelum Argenteum — Audio and art
-- Lines 1958-1968 - [5.2.7 - Existing artwork inside native menus (#189)](ASSETS.md#527---existing-artwork-inside-native-menus-189) - context: Caelum Argenteum — Audio and art
-- Lines 1969-1977 - [5.2.6 - Menu pointer evidence (#184)](ASSETS.md#526---menu-pointer-evidence-184) - context: Caelum Argenteum — Audio and art
-- Lines 1978-1988 - [5.2.5 - Dialogue source provenance and evidence (#185)](ASSETS.md#525---dialogue-source-provenance-and-evidence-185) - context: Caelum Argenteum — Audio and art
-- Lines 1989-1999 - [5.2.4 - Reused onboarding assets and MAP02 generation (#183)](ASSETS.md#524---reused-onboarding-assets-and-map02-generation-183) - context: Caelum Argenteum — Audio and art
-- Lines 2000-2005 - [5.2.3 - Mandinga targeting evidence (#180)](ASSETS.md#523---mandinga-targeting-evidence-180) - context: Caelum Argenteum — Audio and art
-- Lines 2006-2011 - [5.2.2 - Time-skip performance evidence (#178)](ASSETS.md#522---time-skip-performance-evidence-178) - context: Caelum Argenteum — Audio and art
-- Lines 2012-2021 - [5.2.1 - Reused tutorial and provision presentation (#177)](ASSETS.md#521---reused-tutorial-and-provision-presentation-177) - context: Caelum Argenteum — Audio and art
-- Lines 2022-2032 - [5.2.0 - Saved identity presentation boundary (#147)](ASSETS.md#520---saved-identity-presentation-boundary-147) - context: Caelum Argenteum — Audio and art
-- Lines 2033-2039 - [5.1.20 - Existing native door art in MAP06 (#173)](ASSETS.md#5120---existing-native-door-art-in-map06-173) - context: Caelum Argenteum — Audio and art
-- Lines 2040-2046 - [5.1.19 - Shared dialogue history (#172)](ASSETS.md#5119---shared-dialogue-history-172) - context: Caelum Argenteum — Audio and art
-- Lines 2047-2053 - [5.1.18 - MAP01 gift presentation (#164)](ASSETS.md#5118---map01-gift-presentation-164) - context: Caelum Argenteum — Audio and art
-- Lines 2054-2061 - [5.1.17 - Medikit labels (#169)](ASSETS.md#5117---medikit-labels-169) - context: Caelum Argenteum — Audio and art
-- Lines 2062-2089 - [5.1.16 - Original bolas atlas (#163)](ASSETS.md#5116---original-bolas-atlas-163) - context: Caelum Argenteum — Audio and art
-- Lines 2090-2113 - [5.1.15 - Bronze utility staff (#162)](ASSETS.md#5115---bronze-utility-staff-162) - context: Caelum Argenteum — Audio and art
-- Lines 2114-2120 - [5.1.14 - Damage-flash travel validation (#165)](ASSETS.md#5114---damage-flash-travel-validation-165) - context: Caelum Argenteum — Audio and art
-- Lines 2121-2127 - [5.1.13 - Silver-key validation (#160)](ASSETS.md#5113---silver-key-validation-160) - context: Caelum Argenteum — Audio and art
-- Lines 2128-2134 - [5.1.12 - Crafting-size validation (#158)](ASSETS.md#5112---crafting-size-validation-158) - context: Caelum Argenteum — Audio and art
-- Lines 2135-2142 - [5.1.11 - Time-skip input validation (#156)](ASSETS.md#5111---time-skip-input-validation-156) - context: Caelum Argenteum — Audio and art
-- Lines 2143-2151 - [5.1.10 — Physics validation assets (#154)](ASSETS.md#5110--physics-validation-assets-154) - context: Caelum Argenteum — Audio and art
-- Lines 2152-2177 - [5.1.9 - Shotgun grip occlusion and cartridge world scale (#152)](ASSETS.md#519---shotgun-grip-occlusion-and-cartridge-world-scale-152) - context: Caelum Argenteum — Audio and art
-- Lines 2178-2224 - [5.1.8 - Original elemental atlases and projectile meshes (#137)](ASSETS.md#518---original-elemental-atlases-and-projectile-meshes-137) - context: Caelum Argenteum — Audio and art
-- Lines 2225-2262 - [5.1.7 - Modular shotgun artwork and evidence (#136)](ASSETS.md#517---modular-shotgun-artwork-and-evidence-136) - context: Caelum Argenteum — Audio and art
-- Lines 2263-2283 - [5.1.6 - Crouched Domingo carbine poses (#143)](ASSETS.md#516---crouched-domingo-carbine-poses-143) - context: Caelum Argenteum — Audio and art
-- Lines 2284-2315 - [5.1.5 - Demon breath and potion tiers (#135)](ASSETS.md#515---demon-breath-and-potion-tiers-135) - context: Caelum Argenteum — Audio and art
-- Lines 2316-2342 - [5.1.4 - Breathing recordings and native evidence (#140)](ASSETS.md#514---breathing-recordings-and-native-evidence-140) - context: Caelum Argenteum — Audio and art
-- Lines 2343-2363 - [5.1.3 - City interiors and world carbine artwork (#133)](ASSETS.md#513---city-interiors-and-world-carbine-artwork-133) - context: Caelum Argenteum — Audio and art
-- Lines 2364-2372 - [5.1.2 - Siege reinforcement evidence (#132)](ASSETS.md#512---siege-reinforcement-evidence-132) - context: Caelum Argenteum — Audio and art
-- Lines 2373-2391 - [5.1.1 - Thermal HUD verification sources (#131)](ASSETS.md#511---thermal-hud-verification-sources-131) - context: Caelum Argenteum — Audio and art
-- Lines 2392-2403 - [5.1.0 — Thermal validation sources (#130)](ASSETS.md#510--thermal-validation-sources-130) - context: Caelum Argenteum — Audio and art
-- Lines 2404-2412 - [5.0.6 — Normal high-density AI evidence (#128)](ASSETS.md#506--normal-high-density-ai-evidence-128) - context: Caelum Argenteum — Audio and art
-- Lines 2413-2422 - [5.0.5 — Siege profiling evidence (#121)](ASSETS.md#505--siege-profiling-evidence-121) - context: Caelum Argenteum — Audio and art
-- Lines 2423-2436 - [4.37.24 — Reproducible closing export (#82)](ASSETS.md#43724--reproducible-closing-export-82) - context: Caelum Argenteum — Audio and art
-- Lines 2437-2454 - [4.37.23 - Character-creation text and layout (#112)](ASSETS.md#43723---character-creation-text-and-layout-112) - context: Caelum Argenteum — Audio and art
-- Lines 2455-2527 - [4.37.22 - Equipped first-person shield artwork (#106)](ASSETS.md#43722---equipped-first-person-shield-artwork-106) - context: Caelum Argenteum — Audio and art
-- Lines 2528-2566 - [4.37.21 - Approved narrative artwork sources and presentation (#103)](ASSETS.md#43721---approved-narrative-artwork-sources-and-presentation-103) - context: Caelum Argenteum — Audio and art
-- Lines 2567-2603 - [4.37.20 - Original training mannequin model (#98)](ASSETS.md#43720---original-training-mannequin-model-98) - context: Caelum Argenteum — Audio and art
-- Lines 2604-2613 - [4.37.19 - Existing necklace assets and shield localization (#96)](ASSETS.md#43719---existing-necklace-assets-and-shield-localization-96) - context: Caelum Argenteum — Audio and art
-- Lines 2614-2623 - [4.37.18 - Journal subsection presentation (#91)](ASSETS.md#43718---journal-subsection-presentation-91) - context: Caelum Argenteum — Audio and art
-- Lines 2624-2647 - [4.37.17 - Pickaxe art and gathering audio (#89)](ASSETS.md#43717---pickaxe-art-and-gathering-audio-89) - context: Caelum Argenteum — Audio and art
-- Lines 2648-2678 - [4.37.16 - Compass, Sun of May and C moon (#87)](ASSETS.md#43716---compass-sun-of-may-and-c-moon-87) - context: Caelum Argenteum — Audio and art
-- Lines 2679-2685 - [4.37.15 - Traditional Truco card reuse (#101)](ASSETS.md#43715---traditional-truco-card-reuse-101) - context: Caelum Argenteum — Audio and art
-- Lines 2686-2704 - [4.37.13 — Trucazo source and existing card presentation (#81)](ASSETS.md#43713--trucazo-source-and-existing-card-presentation-81) - context: Caelum Argenteum — Audio and art
-- Lines 2705-2713 - [4.37.11 — Existing guard presentation and bilingual recognition (#79)](ASSETS.md#43711--existing-guard-presentation-and-bilingual-recognition-79) - context: Caelum Argenteum — Audio and art
-- Lines 2714-2722 - [4.37.10 — Existing prisoner dialogue presentation (#78)](ASSETS.md#43710--existing-prisoner-dialogue-presentation-78) - context: Caelum Argenteum — Audio and art
-- Lines 2723-2764 - [4.37.9 — Expanded urban geometry and save-layout provenance (#77)](ASSETS.md#4379--expanded-urban-geometry-and-save-layout-provenance-77) - context: Caelum Argenteum — Audio and art
-- Lines 2765-2788 - [4.37.8 — Supply ledger provenance and verification (#75)](ASSETS.md#4378--supply-ledger-provenance-and-verification-75) - context: Caelum Argenteum — Audio and art
-- Lines 2789-2812 - [4.37.7 — Layered sewer return geometry (#74)](ASSETS.md#4377--layered-sewer-return-geometry-74) - context: Caelum Argenteum — Audio and art
-- Lines 2813-2825 - [4.37.6 — Cardinal sewer data and supply ledger (#73/#75)](ASSETS.md#4376--cardinal-sewer-data-and-supply-ledger-7375) - context: Caelum Argenteum — Audio and art
-- Lines 2826-2834 - [4.37.5 — Existing food plates and water cups (#65)](ASSETS.md#4375--existing-food-plates-and-water-cups-65) - context: Caelum Argenteum — Audio and art
-- Lines 2835-2843 - [4.37.4 — Existing Journal assets for time skipping (#64)](ASSETS.md#4374--existing-journal-assets-for-time-skipping-64) - context: Caelum Argenteum — Audio and art
-- Lines 2844-2854 - [4.37.3 — Existing equipment catalogue and bilingual Palomo dialogue (#63)](ASSETS.md#4373--existing-equipment-catalogue-and-bilingual-palomo-dialogue-63) - context: Caelum Argenteum — Audio and art
-- Lines 2855-2861 - [4.37.2 — Magic-cost balance data and evidence (#68)](ASSETS.md#4372--magic-cost-balance-data-and-evidence-68) - context: Caelum Argenteum — Audio and art
-- Lines 2862-2870 - [4.37.1 — Reused practice target and bilingual directions (#62)](ASSETS.md#4371--reused-practice-target-and-bilingual-directions-62) - context: Caelum Argenteum — Audio and art
-- Lines 2871-2928 - [4.37.0 — Mansion landscape and filled tympana (#61)](ASSETS.md#4370--mansion-landscape-and-filled-tympana-61) - context: Caelum Argenteum — Audio and art
-- Lines 2929-2948 - [4.36.28 — Playtest resource packaging (#17)](ASSETS.md#43628--playtest-resource-packaging-17) - context: Caelum Argenteum — Audio and art
-- Lines 2949-2968 - [4.36.27 — Port battlefield and reused defenders (#16)](ASSETS.md#43627--port-battlefield-and-reused-defenders-16) - context: Caelum Argenteum — Audio and art
-- Lines 2969-2988 - [4.36.26 — Grip-centered thrust motion (#37)](ASSETS.md#43626--grip-centered-thrust-motion-37) - context: Caelum Argenteum — Audio and art
-- Lines 2989-3043 - [4.36.25 — Mansion architectural finishes (#36)](ASSETS.md#43625--mansion-architectural-finishes-36) - context: Caelum Argenteum — Audio and art
-- Lines 3044-3051 - [4.36.24a — Rights and attribution (#55)](ASSETS.md#43624a--rights-and-attribution-55) - context: Caelum Argenteum — Audio and art
-- Lines 3052-3060 - [4.36.24 — Quest journal labels (#35)](ASSETS.md#43624--quest-journal-labels-35) - context: Caelum Argenteum — Audio and art
-- Lines 3061-3070 - [4.36.23 — Armor presentation (#52)](ASSETS.md#43623--armor-presentation-52) - context: Caelum Argenteum — Audio and art
-- Lines 3071-3085 - [4.36.22 — Existing dialogue presentation (#34)](ASSETS.md#43622--existing-dialogue-presentation-34) - context: Caelum Argenteum — Audio and art
-- Lines 3086-3097 - [4.36.20 — Shared Arcana presentation (#33)](ASSETS.md#43620--shared-arcana-presentation-33) - context: Caelum Argenteum — Audio and art
-- Lines 3098-3148 - [4.36.17 — Approximate Argentine 1884 cannon reconstruction (#21)](ASSETS.md#43617--approximate-argentine-1884-cannon-reconstruction-21) - context: Caelum Argenteum — Audio and art
-- Lines 3149-3195 - [4.36.16 — Ram components and reference-based estimates (#20)](ASSETS.md#43616--ram-components-and-reference-based-estimates-20) - context: Caelum Argenteum — Audio and art
-- Lines 3196-3205 - [4.36.15 — Gate mechanics reuse accepted art (#19)](ASSETS.md#43615--gate-mechanics-reuse-accepted-art-19) - context: Caelum Argenteum — Audio and art
-- Lines 3206-3255 - [4.36.14a — Siege silhouettes and gate materials (#18 correction)](ASSETS.md#43614a--siege-silhouettes-and-gate-materials-18-correction) - context: Caelum Argenteum — Audio and art
-- Lines 3256-3280 - `4.36.10 — Reusable siege preview assets (#18)` - context: Caelum Argenteum — Audio and art
-- Lines 3281-3287 - [4.36.8 — No new runtime assets (#14)](ASSETS.md#4368--no-new-runtime-assets-14) - context: Caelum Argenteum — Audio and art
-- Lines 3288-3305 - [4.36.7 — Recolored prisoner sprites (#13)](ASSETS.md#4367--recolored-prisoner-sprites-13) - context: Caelum Argenteum — Audio and art
-- Lines 3306-3326 - [4.36.5 — Wider sewer and barred gates (#11)](ASSETS.md#4365--wider-sewer-and-barred-gates-11) - context: Caelum Argenteum — Audio and art
-- Lines 3327-3337 - [4.36.4 — T1 maze catalogue](ASSETS.md#4364--t1-maze-catalogue) - context: Caelum Argenteum — Audio and art
-- Lines 3338-3355 - [4.36.3 — Additional flail-handle rotation](ASSETS.md#4363--additional-flail-handle-rotation) - context: Caelum Argenteum — Audio and art
-- Lines 3356-3370 - [4.36.2 — Deterministic bow crop caches](ASSETS.md#4362--deterministic-bow-crop-caches) - context: Caelum Argenteum — Audio and art
-- Lines 3371-3385 - [4.36.1 — Documentation and provenance](ASSETS.md#4361--documentation-and-provenance) - context: Caelum Argenteum — Audio and art
-- Lines 3386-3425 - [4.36.0i — native composition and MAP02](ASSETS.md#4360i--native-composition-and-map02) - context: Caelum Argenteum — Audio and art
-- Lines 3426-3445 - [History 4.36.0h — adjustment to the capture marked by the author](ASSETS.md#history-4360h--adjustment-to-the-capture-marked-by-the-author) - context: Caelum Argenteum — Audio and art
-- Lines 3446-3467 - [4.36.0g — parts, fingers and muted colors](ASSETS.md#4360g--parts-fingers-and-muted-colors) - context: Caelum Argenteum — Audio and art
-- Lines 3468-3496 - [4.36.0f — broad blade and corrected native composition](ASSETS.md#4360f--broad-blade-and-corrected-native-composition) - context: Caelum Argenteum — Audio and art
-- Lines 3497-3524 - `4.36.0e — corrections requested after testing 0d` - context: Caelum Argenteum — Audio and art
-- Lines 3525-3554 - [Revised first-person view — 4.36.0d](ASSETS.md#revised-first-person-view--4360d) - context: Caelum Argenteum — Audio and art
-- Lines 3555-3592 - [Resources contributed and integrated — 4.36.0c](ASSETS.md#resources-contributed-and-integrated--4360c) - context: Caelum Argenteum — Audio and art
-- Lines 3593-3621 - [4.36.0b — lever, sphere and bull scale](ASSETS.md#4360b--lever-sphere-and-bull-scale) - context: Caelum Argenteum — Audio and art
-- Lines 3622-3635 - [4.36.0a — physical gallery resources](ASSETS.md#4360a--physical-gallery-resources) - context: Caelum Argenteum — Audio and art
-- Lines 3636-3672 - [4.35.0q — author v4 sprites and icons](ASSETS.md#4350q--author-v4-sprites-and-icons) - context: Caelum Argenteum — Audio and art
-- Lines 3673-3706 - [4.35.0p — original carriage and merchant ship](ASSETS.md#4350p--original-carriage-and-merchant-ship) - context: Caelum Argenteum — Audio and art
-- Lines 3707-3713 - [4.35.0o — monthly calendar](ASSETS.md#4350o--monthly-calendar) - context: Caelum Argenteum — Audio and art
-- Lines 3714-3721 - [4.35.0n — travel budget](ASSETS.md#4350n--travel-budget) - context: Caelum Argenteum — Audio and art
-- Lines 3722-3753 - [4.35.0m — author materials and coastal maps](ASSETS.md#4350m--author-materials-and-coastal-maps) - context: Caelum Argenteum — Audio and art
-- Lines 3754-3776 - [4.35.0l — attributed climate data and furniture](ASSETS.md#4350l--attributed-climate-data-and-furniture) - context: Caelum Argenteum — Audio and art
-- Lines 3777-3795 - [4.35.0k — Journal environmental reading](ASSETS.md#4350k--journal-environmental-reading) - context: Caelum Argenteum — Audio and art
-- Lines 3796-3814 - [4.35.0j — Limbo clock, station scale and text](ASSETS.md#4350j--limbo-clock-station-scale-and-text) - context: Caelum Argenteum — Audio and art
-- Lines 3815-3831 - [4.35.0i — serving placement on tabletops](ASSETS.md#4350i--serving-placement-on-tabletops) - context: Caelum Argenteum — Audio and art
-- Lines 3832-3854 - [4.35.0h — MAP01 plates, cups and furniture](ASSETS.md#4350h--map01-plates-cups-and-furniture) - context: Caelum Argenteum — Audio and art
-- Lines 3855-3874 - [4.35.0g — tables and view-direction mapping](ASSETS.md#4350g--tables-and-view-direction-mapping) - context: Caelum Argenteum — Audio and art
-- Lines 3875-3897 - [4.35.0f — portable sleeping bag and comfort reading](ASSETS.md#4350f--portable-sleeping-bag-and-comfort-reading) - context: Caelum Argenteum — Audio and art
-- Lines 3898-3927 - [4.35.0e — original furniture and rest view](ASSETS.md#4350e--original-furniture-and-rest-view) - context: Caelum Argenteum — Audio and art
-- Lines 3928-3934 - [4.35.0d1 — resolution of existing poses](ASSETS.md#4350d1--resolution-of-existing-poses) - context: Caelum Argenteum — Audio and art
-- Lines 3935-3956 - [4.35.0d — interface and rest poses](ASSETS.md#4350d--interface-and-rest-poses) - context: Caelum Argenteum — Audio and art
-- Lines 3957-3970 - [4.35.0c — Presentation of Stopped Time](ASSETS.md#4350c--presentation-of-stopped-time) - context: Caelum Argenteum — Audio and art
-- Lines 3971-3984 - [4.35.0b — schedule on the existing presentation](ASSETS.md#4350b--schedule-on-the-existing-presentation) - context: Caelum Argenteum — Audio and art
-- Lines 3985-3998 - [4.35.0a — presentation of the recorded time](ASSETS.md#4350a--presentation-of-the-recorded-time) - context: Caelum Argenteum — Audio and art
-- Lines 3999-4012 - [4.34.0e — test sites in sewers](ASSETS.md#4340e--test-sites-in-sewers) - context: Caelum Argenteum — Audio and art
-- Lines 4013-4099 - [4.34.0d — travel service resources](ASSETS.md#4340d--travel-service-resources) - context: Caelum Argenteum — Audio and art
-- Lines 4100-4122 - [New containers — 4.33.0af](ASSETS.md#new-containers--4330af) - context: Caelum Argenteum — Audio and art
-- Lines 4123-4129 - [4.33.0ae Review](ASSETS.md#4330ae-review) - context: Caelum Argenteum — Audio and art
-- Lines 4130-4136 - [4.33.0ad Review](ASSETS.md#4330ad-review) - context: Caelum Argenteum — Audio and art
-- Lines 4137-4143 - [4.33.0ac Review](ASSETS.md#4330ac-review) - context: Caelum Argenteum — Audio and art
-- Lines 4144-4150 - [4.33.0ab Review](ASSETS.md#4330ab-review) - context: Caelum Argenteum — Audio and art
-- Lines 4151-4158 - [4.33.0aa Review](ASSETS.md#4330aa-review) - context: Caelum Argenteum — Audio and art
-- Lines 4159-4164 - [4.33.0z Review](ASSETS.md#4330z-review) - context: Caelum Argenteum — Audio and art
-- Lines 4165-4170 - [4.33.0y Review](ASSETS.md#4330y-review) - context: Caelum Argenteum — Audio and art
-- Lines 4171-4179 - [4.33.0x Review](ASSETS.md#4330x-review) - context: Caelum Argenteum — Audio and art
-- Lines 4180-4185 - [4.33.0w Review](ASSETS.md#4330w-review) - context: Caelum Argenteum — Audio and art
-- Lines 4186-4201 - [Return and arrival gate to sewers (4.33.0v)](ASSETS.md#return-and-arrival-gate-to-sewers-4330v) - context: Caelum Argenteum — Audio and art
-- Lines 4202-4209 - [Sword view (4.33.0u)](ASSETS.md#sword-view-4330u) - context: Caelum Argenteum — Audio and art
-- Lines 4210-4226 - [Pampas El Loco (4.33.0t)](ASSETS.md#pampas-el-loco-4330t) - context: Caelum Argenteum — Audio and art
-- Lines 4227-4235 - [Reuse in 4.33.0s](ASSETS.md#reuse-in-4330s) - context: Caelum Argenteum — Audio and art
-- Lines 4236-4244 - [Reuse in 4.33.0r](ASSETS.md#reuse-in-4330r) - context: Caelum Argenteum — Audio and art
-- Lines 4245-4252 - [Reuse in 4.33.0q](ASSETS.md#reuse-in-4330q) - context: Caelum Argenteum — Audio and art
-- Lines 4253-4260 - [Reuse in 4.33.0p](ASSETS.md#reuse-in-4330p) - context: Caelum Argenteum — Audio and art
-- Lines 4261-4266 - [4.33.0o Review](ASSETS.md#4330o-review) - context: Caelum Argenteum — Audio and art
-- Lines 4267-4276 - [Resources reused in 4.33.0n](ASSETS.md#resources-reused-in-4330n) - context: Caelum Argenteum — Audio and art
-- Lines 4277-4301 - [Fiber shrub 2D (4.33.0l)](ASSETS.md#fiber-shrub-2d-4330l) - context: Caelum Argenteum — Audio and art
-- Lines 4302-4330 - [Poses delivered by the author (4.33.0m)](ASSETS.md#poses-delivered-by-the-author-4330m) - context: Caelum Argenteum — Audio and art
-- Lines 4331-4350 - [Current interface audio](ASSETS.md#current-interface-audio) - context: Caelum Argenteum — Audio and art
-- Lines 4351-4362 - [Current designations and emblems (4.33.0j)](ASSETS.md#current-designations-and-emblems-4330j) - context: Caelum Argenteum — Audio and art > Current interface audio
-- Lines 4363-4406 - [Simple station models (4.33.0j)](ASSETS.md#simple-station-models-4330j) - context: Caelum Argenteum — Audio and art
-- Lines 4407-4421 - [Terms of reference for interface resources](ASSETS.md#terms-of-reference-for-interface-resources) - context: Caelum Argenteum — Audio and art
-- Lines 4422-4528 - [Physical audio inventory](ASSETS.md#physical-audio-inventory) - context: Caelum Argenteum — Audio and art
-- Lines 4529-4548 - [External 05 package reserve](ASSETS.md#external-05-package-reserve) - context: Caelum Argenteum — Audio and art > Physical audio inventory
-- Lines 4549-4550 - [First person: accepted sword reference](ASSETS.md#first-person-accepted-sword-reference) - context: Caelum Argenteum — Audio and art
-- Lines 4551-4571 - [Scope](ASSETS.md#scope) - context: Caelum Argenteum — Audio and art > First person: accepted sword reference
-- Lines 4572-4582 - [Framing by state](ASSETS.md#framing-by-state) - context: Caelum Argenteum — Audio and art > First person: accepted sword reference
-- Lines 4583-4594 - [Frontal block, close and held](ASSETS.md#frontal-block-close-and-held) - context: Caelum Argenteum — Audio and art > First person: accepted sword reference
-- Lines 4595-4606 - [Full Thumb in front of Handle](ASSETS.md#full-thumb-in-front-of-handle) - context: Caelum Argenteum — Audio and art > First person: accepted sword reference
-- Lines 4607-4645 - [Synchronised turn without duplication](ASSETS.md#synchronised-turn-without-duplication) - context: Caelum Argenteum — Audio and art > First person: accepted sword reference
-- Lines 4646-4666 - [Attack curve and straight return](ASSETS.md#attack-curve-and-straight-return) - context: Caelum Argenteum — Audio and art > First person: accepted sword reference
-- Lines 4667-4684 - [Panoramic sleeve, depth and equipment](ASSETS.md#panoramic-sleeve-depth-and-equipment) - context: Caelum Argenteum — Audio and art > First person: accepted sword reference
-- Lines 4685-4693 - [State of evidence](ASSETS.md#state-of-evidence) - context: Caelum Argenteum — Audio and art > First person: accepted sword reference
-- Lines 4694-4714 - [Equipment icons](ASSETS.md#equipment-icons) - context: Caelum Argenteum — Audio and art
-- Lines 4715-4727 - [Typography and artistic direction](ASSETS.md#typography-and-artistic-direction) - context: Caelum Argenteum — Audio and art
-- Lines 4728-4735 - [Traceability and Next Assets](ASSETS.md#traceability-and-next-assets) - context: Caelum Argenteum — Audio and art
-- Lines 4736-4741 - [Historical source material](ASSETS.md#historical-source-material) - context: Caelum Argenteum — Audio and art
-- Lines 4742-4751 - [`assets/source/art/domingo_fp_4_32_0h|0i|0j|0n/`](ASSETS.md#assetssourceartdomingo_fp_4_32_0h0i0j0n) - context: Caelum Argenteum — Audio and art > Historical source material
-- Lines 4752-4761 - [`assets/first_person_v3/`](ASSETS.md#assetsfirst_person_v3) - context: Caelum Argenteum — Audio and art > Historical source material
-- Lines 4762-4783 - [Sources and generators after the 4.33.0h audit](ASSETS.md#sources-and-generators-after-the-4330h-audit) - context: Caelum Argenteum — Audio and art
+- Lines 35-60 - [Tarot automaton model (#440, 5.13.3)](ASSETS.md#tarot-automaton-model-440-5133) - context: Caelum Argenteum — Audio and art
+- Lines 61-70 - [Justice arena geometry (#440, 5.13.3)](ASSETS.md#justice-arena-geometry-440-5133) - context: Caelum Argenteum — Audio and art
+- Lines 71-82 - [Tarot Empress roots (#440, 5.13.3)](ASSETS.md#tarot-empress-roots-440-5133) - context: Caelum Argenteum — Audio and art
+- Lines 83-95 - [Tarot Chariot adaptation (#440, 5.13.3)](ASSETS.md#tarot-chariot-adaptation-440-5133) - context: Caelum Argenteum — Audio and art
+- Lines 96-101 - [Equipment awakening panel (#442, 5.13.2)](ASSETS.md#equipment-awakening-panel-442-5132) - context: Caelum Argenteum — Audio and art
+- Lines 102-110 - [Tarot capture fronts (#441, 5.13.1)](ASSETS.md#tarot-capture-fronts-441-5131) - context: Caelum Argenteum — Audio and art
+- Lines 111-119 - [Native diagnostics and local presentation (#435, 5.12.7)](ASSETS.md#native-diagnostics-and-local-presentation-435-5127) - context: Caelum Argenteum — Audio and art
+- Lines 120-126 - [Profile graph tooling (#434, 5.12.6)](ASSETS.md#profile-graph-tooling-434-5126) - context: Caelum Argenteum — Audio and art
+- Lines 127-132 - [5.12.5 - Card-table PvP reuses accepted artwork (#590)](ASSETS.md#5125---card-table-pvp-reuses-accepted-artwork-590) - context: Caelum Argenteum — Audio and art
+- Lines 133-146 - [Organized combat venues (#438, 5.12.4)](ASSETS.md#organized-combat-venues-438-5124) - context: Caelum Argenteum — Audio and art
+- Lines 147-153 - [5.12.3 - Cooperative lifecycle guards (#437)](ASSETS.md#5123---cooperative-lifecycle-guards-437) - context: Caelum Argenteum — Audio and art
+- Lines 154-161 - [5.12.2 - Cooperative time interface (#436)](ASSETS.md#5122---cooperative-time-interface-436) - context: Caelum Argenteum — Audio and art
+- Lines 162-168 - [V5.12 native network fixture (#435, preparation)](ASSETS.md#v512-native-network-fixture-435-preparation) - context: Caelum Argenteum — Audio and art
+- Lines 169-178 - [5.11.8 - Species damage policy (#586)](ASSETS.md#5118---species-damage-policy-586) - context: Caelum Argenteum — Audio and art
+- Lines 179-186 - [Arrival household placement (5.11.7, #581)](ASSETS.md#arrival-household-placement-5117-581) - context: Caelum Argenteum — Audio and art
+- Lines 187-193 - [Companion delivery (5.11.4, #430)](ASSETS.md#companion-delivery-5114-430) - context: Caelum Argenteum — Audio and art > Arrival household placement (5.11.7, #581)
+- Lines 194-203 - [5.11.0 / #431 - Profiling provenance](ASSETS.md#5110--431---profiling-provenance) - context: Caelum Argenteum — Audio and art
+- Lines 204-228 - [5.9.7 / #423 - Port wardrobes](ASSETS.md#597--423---port-wardrobes) - context: Caelum Argenteum — Audio and art
+- Lines 229-233 - `5.8.56 / #416 - Original Ciudad theme for Buenos Aires` - context: Caelum Argenteum — Audio and art
+- Lines 234-257 - [5.8.54 furniture corrections (#410)](ASSETS.md#5854-furniture-corrections-410) - context: Caelum Argenteum — Audio and art
+- Lines 258-264 - [5.8.50 - Contact adapter evidence (#502)](ASSETS.md#5850---contact-adapter-evidence-502) - context: Caelum Argenteum — Audio and art
+- Lines 265-274 - [5.8.49 - Physical contact geometry references (#502)](ASSETS.md#5849---physical-contact-geometry-references-502) - context: Caelum Argenteum — Audio and art
+- Lines 275-284 - [5.8.48 - Vessel geometry and crash reproduction evidence (#502)](ASSETS.md#5848---vessel-geometry-and-crash-reproduction-evidence-502) - context: Caelum Argenteum — Audio and art
+- Lines 285-291 - [5.8.47 - Stack contamination evidence (#502)](ASSETS.md#5847---stack-contamination-evidence-502) - context: Caelum Argenteum — Audio and art
+- Lines 292-313 - [5.8.44 - Original landscapes and ornamental sculpture (#410)](ASSETS.md#5844---original-landscapes-and-ornamental-sculpture-410) - context: Caelum Argenteum — Audio and art
+- Lines 314-321 - [5.8.43 - Household absence evidence (#502)](ASSETS.md#5843---household-absence-evidence-502) - context: Caelum Argenteum — Audio and art
+- Lines 322-344 - [5.8.40 - Dining set artwork (#410)](ASSETS.md#5840---dining-set-artwork-410) - context: Caelum Argenteum — Audio and art
+- Lines 345-352 - [5.8.39 - Aim validation evidence (#415)](ASSETS.md#5839---aim-validation-evidence-415) - context: Caelum Argenteum — Audio and art
+- Lines 353-367 - [5.8.36 - Portable study artwork (#410)](ASSETS.md#5836---portable-study-artwork-410) - context: Caelum Argenteum — Audio and art
+- Lines 368-382 - [5.8.35 / #410 - Painted sofa item views](ASSETS.md#5835--410---painted-sofa-item-views) - context: Caelum Argenteum — Audio and art
+- Lines 383-393 - [5.8.34 / #410 - Painted ordinary chair and cot items](ASSETS.md#5834--410---painted-ordinary-chair-and-cot-items) - context: Caelum Argenteum — Audio and art
+- Lines 394-411 - [5.8.33 / #410 - Human-scale chair and raised cot](ASSETS.md#5833--410---human-scale-chair-and-raised-cot) - context: Caelum Argenteum — Audio and art
+- Lines 412-422 - [5.8.32 / #410 - Painted luxury furniture inventory items](ASSETS.md#5832--410---painted-luxury-furniture-inventory-items) - context: Caelum Argenteum — Audio and art
+- Lines 423-431 - [5.8.31 storage furniture acquisition](ASSETS.md#5831-storage-furniture-acquisition) - context: Caelum Argenteum — Audio and art
+- Lines 432-450 - [5.8.30 - Original luxury furniture models (#410)](ASSETS.md#5830---original-luxury-furniture-models-410) - context: Caelum Argenteum — Audio and art
+- Lines 451-469 - [5.8.29 - Original period sofa models (#410)](ASSETS.md#5829---original-period-sofa-models-410) - context: Caelum Argenteum — Audio and art
+- Lines 470-478 - [5.8.26 - Reused owned reading furniture (#410)](ASSETS.md#5826---reused-owned-reading-furniture-410) - context: Caelum Argenteum — Audio and art
+- Lines 479-501 - [5.8.25 - Original garden water furniture (#410)](ASSETS.md#5825---original-garden-water-furniture-410) - context: Caelum Argenteum — Audio and art
+- Lines 502-522 - [5.8.24 - Wardrobe models and painted icon (#410)](ASSETS.md#5824---wardrobe-models-and-painted-icon-410) - context: Caelum Argenteum — Audio and art
+- Lines 523-532 - `5.8.22 - Shared-water mansion bathroom fixtures (#410)` - context: Caelum Argenteum — Audio and art
+- Lines 533-560 - `5.8.20 - Mansion kitchen sink and wall cupboard (#410)` - context: Caelum Argenteum — Audio and art
+- Lines 561-587 - [5.8.19 - Kitchen process artwork (#410, author review pending)](ASSETS.md#5819---kitchen-process-artwork-410-author-review-pending) - context: Caelum Argenteum — Audio and art
+- Lines 588-601 - [5.8.18 - Accepted painted prepared meals (#410)](ASSETS.md#5818---accepted-painted-prepared-meals-410) - context: Caelum Argenteum — Audio and art
+- Lines 602-617 - [5.8.17 - Accepted painted kitchen ingredients (#410)](ASSETS.md#5817---accepted-painted-kitchen-ingredients-410) - context: Caelum Argenteum — Audio and art
+- Lines 618-623 - [5.8.14 - Ration lot presentation (#410)](ASSETS.md#5814---ration-lot-presentation-410) - context: Caelum Argenteum — Audio and art
+- Lines 624-654 - [5.8.13 - Campfire world artwork (#411)](ASSETS.md#5813---campfire-world-artwork-411) - context: Caelum Argenteum — Audio and art
+- Lines 655-667 - [5.8.12 - Toilet interaction (#502)](ASSETS.md#5812---toilet-interaction-502) - context: Caelum Argenteum — Audio and art
+- Lines 668-698 - [5.8.11 - Domestic bathroom artwork (#410)](ASSETS.md#5811---domestic-bathroom-artwork-410) - context: Caelum Argenteum — Audio and art
+- Lines 699-716 - [5.8.9 - Hygiene item artwork (#502, in progress)](ASSETS.md#589---hygiene-item-artwork-502-in-progress) - context: Caelum Argenteum — Audio and art
+- Lines 717-731 - [5.8.8 - Deployed tent artwork (#411, in progress)](ASSETS.md#588---deployed-tent-artwork-411-in-progress) - context: Caelum Argenteum — Audio and art
+- Lines 732-744 - [5.8.6 - Central property access (#411)](ASSETS.md#586---central-property-access-411) - context: Caelum Argenteum — Audio and art
+- Lines 745-748 - [5.8.5 - Regional event discovery (#415)](ASSETS.md#585---regional-event-discovery-415) - context: Caelum Argenteum — Audio and art
+- Lines 749-754 - `5.8.4 - Second map soundtrack (#496)` - context: Caelum Argenteum — Audio and art
+- Lines 755-766 - [5.8.3 - Contamination HUD icon (#410, in progress)](ASSETS.md#583---contamination-hud-icon-410-in-progress) - context: Caelum Argenteum — Audio and art
+- Lines 767-777 - [5.8.2 - Connected mansion deposits (#414)](ASSETS.md#582---connected-mansion-deposits-414) - context: Caelum Argenteum — Audio and art
+- Lines 778-804 - [5.7.14 - Mate vessels and inventory sprites (#472)](ASSETS.md#5714---mate-vessels-and-inventory-sprites-472) - context: Caelum Argenteum — Audio and art
+- Lines 805-822 - [5.7.13 - Chemistry supply presentation (#471)](ASSETS.md#5713---chemistry-supply-presentation-471) - context: Caelum Argenteum — Audio and art
+- Lines 823-833 - [5.7.12 - Owned Fermentation Barrel (#487)](ASSETS.md#5712---owned-fermentation-barrel-487) - context: Caelum Argenteum — Audio and art
+- Lines 834-839 - [5.7.11 - Station terminology (#486)](ASSETS.md#5711---station-terminology-486) - context: Caelum Argenteum — Audio and art
+- Lines 840-845 - [5.7.10 - Existing cartridge and station art reused (#471)](ASSETS.md#5710---existing-cartridge-and-station-art-reused-471) - context: Caelum Argenteum — Audio and art
+- Lines 846-852 - [5.7.9 - Existing water/Alchemy art reused (#409)](ASSETS.md#579---existing-wateralchemy-art-reused-409) - context: Caelum Argenteum — Audio and art
+- Lines 853-898 - [5.7.8 - Painted support implement correction (#479)](ASSETS.md#578---painted-support-implement-correction-479) - context: Caelum Argenteum — Audio and art
+- Lines 899-907 - [5.7.7 - Target-panel presentation (#481)](ASSETS.md#577---target-panel-presentation-481) - context: Caelum Argenteum — Audio and art
+- Lines 908-939 - `5.7.6 - Alchemy ingredient artwork (#471)` - context: Caelum Argenteum — Audio and art
+- Lines 940-951 - [5.7.5 - Owned marine material models (#407)](ASSETS.md#575---owned-marine-material-models-407) - context: Caelum Argenteum — Audio and art
+- Lines 952-963 - [5.7.4 - Owned Alchemy station (#470)](ASSETS.md#574---owned-alchemy-station-470) - context: Caelum Argenteum — Audio and art
+- Lines 964-970 - [5.7.3 - Recovery validation (#406)](ASSETS.md#573---recovery-validation-406) - context: Caelum Argenteum — Audio and art
+- Lines 971-984 - [5.7.2 - Owned 3D land resources (#405)](ASSETS.md#572---owned-3d-land-resources-405) - context: Caelum Argenteum — Audio and art
+- Lines 985-994 - [5.6.10 — library and clothing shop signs (#383)](ASSETS.md#5610--library-and-clothing-shop-signs-383) - context: Caelum Argenteum — Audio and art
+- Lines 995-1007 - [5.6.9 - Prepared cartridge-kit sprites (#380)](ASSETS.md#569---prepared-cartridge-kit-sprites-380) - context: Caelum Argenteum — Audio and art
+- Lines 1008-1035 - [5.6.7 - Distinct garment object artwork (#387)](ASSETS.md#567---distinct-garment-object-artwork-387) - context: Caelum Argenteum — Audio and art
+- Lines 1036-1042 - [5.6.6 - Clothing gameplay representation (#386)](ASSETS.md#566---clothing-gameplay-representation-386) - context: Caelum Argenteum — Audio and art
+- Lines 1043-1053 - [5.6.3 - Original reading bookshelf (#378)](ASSETS.md#563---original-reading-bookshelf-378) - context: Caelum Argenteum — Audio and art
+- Lines 1054-1127 - `5.5.8 - Cleaned animated bull model (#369)` - context: Caelum Argenteum — Audio and art
+- Lines 1128-1137 - [5.5.6 - Thermal surface fixture (#314)](ASSETS.md#556---thermal-surface-fixture-314) - context: Caelum Argenteum — Audio and art
+- Lines 1138-1144 - [5.5.5 - Unarmed input evidence (#363)](ASSETS.md#555---unarmed-input-evidence-363) - context: Caelum Argenteum — Audio and art
+- Lines 1145-1154 - [5.4.46 - House-transition evidence (#334)](ASSETS.md#5446---house-transition-evidence-334) - context: Caelum Argenteum — Audio and art
+- Lines 1155-1161 - [5.4.45 - Private breath regression evidence (#357)](ASSETS.md#5445---private-breath-regression-evidence-357) - context: Caelum Argenteum — Audio and art
+- Lines 1162-1172 - [5.4.42 - Distributed update evidence (#318)](ASSETS.md#5442---distributed-update-evidence-318) - context: Caelum Argenteum — Audio and art
+- Lines 1173-1181 - [5.4.41 - Isolated workload evidence (#318)](ASSETS.md#5441---isolated-workload-evidence-318) - context: Caelum Argenteum — Audio and art
+- Lines 1182-1188 - [5.4.40 - Rest and acceleration evidence (#325)](ASSETS.md#5440---rest-and-acceleration-evidence-325) - context: Caelum Argenteum — Audio and art
+- Lines 1189-1195 - [5.4.39 - Jump-wall diagnostic evidence (#339)](ASSETS.md#5439---jump-wall-diagnostic-evidence-339) - context: Caelum Argenteum — Audio and art
+- Lines 1196-1201 - [5.4.38 - Map-legend presentation evidence (#321)](ASSETS.md#5438---map-legend-presentation-evidence-321) - context: Caelum Argenteum — Audio and art
+- Lines 1202-1209 - [5.4.37 - Current MAP03 attribution evidence (#318)](ASSETS.md#5437---current-map03-attribution-evidence-318) - context: Caelum Argenteum — Audio and art
+- Lines 1210-1215 - [5.4.36 - House-door presentation checks (#334)](ASSETS.md#5436---house-door-presentation-checks-334) - context: Caelum Argenteum — Audio and art
+- Lines 1216-1223 - [5.4.35 - Prisoner escort test sources (#322)](ASSETS.md#5435---prisoner-escort-test-sources-322) - context: Caelum Argenteum — Audio and art
+- Lines 1224-1231 - [5.4.34 - Native autosave verification (#324)](ASSETS.md#5434---native-autosave-verification-324) - context: Caelum Argenteum — Audio and art
+- Lines 1232-1239 - [5.4.33 - MAP02 crusher geometry provenance (#323)](ASSETS.md#5433---map02-crusher-geometry-provenance-323) - context: Caelum Argenteum — Audio and art
+- Lines 1240-1254 - [5.4.29 - Map catalogue and exact geometry provenance (#327)](ASSETS.md#5429---map-catalogue-and-exact-geometry-provenance-327) - context: Caelum Argenteum — Audio and art
+- Lines 1255-1278 - [5.4.28 - House signs and performance evidence (#318)](ASSETS.md#5428---house-signs-and-performance-evidence-318) - context: Caelum Argenteum — Audio and art
+- Lines 1279-1290 - [5.4.25 - Soldier representation benchmark (#304)](ASSETS.md#5425---soldier-representation-benchmark-304) - context: Caelum Argenteum — Audio and art
+- Lines 1291-1308 - [5.4.24 - Zupay cosmetic rock projectile (#284)](ASSETS.md#5424---zupay-cosmetic-rock-projectile-284) - context: Caelum Argenteum — Audio and art
+- Lines 1309-1410 - [5.4.23 - Editable Domingo 3D prototype (#283, accepted)](ASSETS.md#5423---editable-domingo-3d-prototype-283-accepted) - context: Caelum Argenteum — Audio and art
+- Lines 1411-1418 - [5.4.22 - Quick-use HUD artwork (#282)](ASSETS.md#5422---quick-use-hud-artwork-282) - context: Caelum Argenteum — Audio and art
+- Lines 1419-1448 - [5.4.21 - Channel Seal presentation (#252)](ASSETS.md#5421---channel-seal-presentation-252) - context: Caelum Argenteum — Audio and art
+- Lines 1449-1461 - [5.4.20 - Mounted Arcane Cloud presentation (#251)](ASSETS.md#5420---mounted-arcane-cloud-presentation-251) - context: Caelum Argenteum — Audio and art
+- Lines 1462-1470 - [5.4.19 - Redemption asset reuse (#250)](ASSETS.md#5419---redemption-asset-reuse-250) - context: Caelum Argenteum — Audio and art
+- Lines 1471-1480 - [5.4.18 - Summoning asset reuse (#249)](ASSETS.md#5418---summoning-asset-reuse-249) - context: Caelum Argenteum — Audio and art
+- Lines 1481-1492 - [5.4.17 - Rally integration and isolated evidence (#248)](ASSETS.md#5417---rally-integration-and-isolated-evidence-248) - context: Caelum Argenteum — Audio and art
+- Lines 1493-1504 - [5.4.16 - Formation Breaker residual appearance (#247)](ASSETS.md#5416---formation-breaker-residual-appearance-247) - context: Caelum Argenteum — Audio and art
+- Lines 1505-1510 - [5.4.15 - Movement validation fixtures (#260)](ASSETS.md#5415---movement-validation-fixtures-260) - context: Caelum Argenteum — Audio and art
+- Lines 1511-1516 - [5.4.7 - Telekinesis validation fixtures (#241)](ASSETS.md#547---telekinesis-validation-fixtures-241) - context: Caelum Argenteum — Audio and art
+- Lines 1517-1544 - [5.4.5 - Reusable dark rain cloud (#251, in progress)](ASSETS.md#545---reusable-dark-rain-cloud-251-in-progress) - context: Caelum Argenteum — Audio and art
+- Lines 1545-1588 - [5.4.4 - Class preparation hands (#238)](ASSETS.md#544---class-preparation-hands-238) - context: Caelum Argenteum — Audio and art
+- Lines 1589-1604 - [5.4.3 - Original procedural rat audio (#254)](ASSETS.md#543---original-procedural-rat-audio-254) - context: Caelum Argenteum — Audio and art
+- Lines 1605-1618 - [5.3.8 - Existing quest text and known-place links (#235)](ASSETS.md#538---existing-quest-text-and-known-place-links-235) - context: Caelum Argenteum — Audio and art
+- Lines 1619-1656 - [5.3.7 - Authored cartographic data and symbols (#234)](ASSETS.md#537---authored-cartographic-data-and-symbols-234) - context: Caelum Argenteum — Audio and art
+- Lines 1657-1666 - [5.3.6 - Manual note presentation (#233)](ASSETS.md#536---manual-note-presentation-233) - context: Caelum Argenteum — Audio and art
+- Lines 1667-1677 - [5.3.5 - Known-service map icons (#232)](ASSETS.md#535---known-service-map-icons-232) - context: Caelum Argenteum — Audio and art
+- Lines 1678-1688 - [5.3.4 - Local cartographic presentation (#231)](ASSETS.md#534---local-cartographic-presentation-231) - context: Caelum Argenteum — Audio and art
+- Lines 1689-1695 - [5.3.1 - Survival and Character presentation (#256)](ASSETS.md#531---survival-and-character-presentation-256) - context: Caelum Argenteum — Audio and art
+- Lines 1696-1702 - [5.3.0 - Power indicator presentation (#255)](ASSETS.md#530---power-indicator-presentation-255) - context: Caelum Argenteum — Audio and art
+- Lines 1703-1708 - [5.2.27 - Magic Box weight evidence (#229)](ASSETS.md#5227---magic-box-weight-evidence-229) - context: Caelum Argenteum — Audio and art
+- Lines 1709-1716 - [5.2.26 - Rest feedback validation (#227)](ASSETS.md#5226---rest-feedback-validation-227) - context: Caelum Argenteum — Audio and art
+- Lines 1717-1723 - [5.2.23 - Sewer bag sleep (#219)](ASSETS.md#5223---sewer-bag-sleep-219) - context: Caelum Argenteum — Audio and art
+- Lines 1724-1731 - [5.2.22 - Menu control captions (#215)](ASSETS.md#5222---menu-control-captions-215) - context: Caelum Argenteum — Audio and art
+- Lines 1732-1739 - `5.2.21 - Visible tutorial gold (#216)` - context: Caelum Argenteum — Audio and art
+- Lines 1740-1748 - [5.2.20 - Resource HUD layout (#213)](ASSETS.md#5220---resource-hud-layout-213) - context: Caelum Argenteum — Audio and art
+- Lines 1749-1756 - [5.2.19 - Horizontal impact diagnostics (#211)](ASSETS.md#5219---horizontal-impact-diagnostics-211) - context: Caelum Argenteum — Audio and art
+- Lines 1757-1805 - [5.2.18 - Authored poses, female hands and dining model (#209)](ASSETS.md#5218---authored-poses-female-hands-and-dining-model-209) - context: Caelum Argenteum — Audio and art
+- Lines 1806-1813 - [5.2.17 - Preserve the living tutorial appearance (#207)](ASSETS.md#5217---preserve-the-living-tutorial-appearance-207) - context: Caelum Argenteum — Audio and art
+- Lines 1814-1821 - [5.2.16 - Fullscreen cursor evidence (#204)](ASSETS.md#5216---fullscreen-cursor-evidence-204) - context: Caelum Argenteum — Audio and art
+- Lines 1822-1833 - [5.2.15 - Presentation scaling and native feedback (#150)](ASSETS.md#5215---presentation-scaling-and-native-feedback-150) - context: Caelum Argenteum — Audio and art
+- Lines 1834-1844 - [5.2.14 - Native control presentation and test sources (#149)](ASSETS.md#5214---native-control-presentation-and-test-sources-149) - context: Caelum Argenteum — Audio and art
+- Lines 1845-1917 - [5.2.13 - Modular saved appearance and first-person hands (#148)](ASSETS.md#5213---modular-saved-appearance-and-first-person-hands-148) - context: Caelum Argenteum — Audio and art
+- Lines 1918-1925 - [5.2.12 - Bull and resident diagnostics (#195)](ASSETS.md#5212---bull-and-resident-diagnostics-195) - context: Caelum Argenteum — Audio and art
+- Lines 1926-1932 - [5.2.11 - Collision energy diagnostics (#194)](ASSETS.md#5211---collision-energy-diagnostics-194) - context: Caelum Argenteum — Audio and art
+- Lines 1933-1942 - [5.2.10 - Ranged descriptions and shotgun resource names (#192)](ASSETS.md#5210---ranged-descriptions-and-shotgun-resource-names-192) - context: Caelum Argenteum — Audio and art
+- Lines 1943-1951 - [5.2.9 - Personality descriptions and creator layout (#192)](ASSETS.md#529---personality-descriptions-and-creator-layout-192) - context: Caelum Argenteum — Audio and art
+- Lines 1952-1958 - [5.2.8 - Toughness evidence and existing status visuals (#188)](ASSETS.md#528---toughness-evidence-and-existing-status-visuals-188) - context: Caelum Argenteum — Audio and art
+- Lines 1959-1969 - [5.2.7 - Existing artwork inside native menus (#189)](ASSETS.md#527---existing-artwork-inside-native-menus-189) - context: Caelum Argenteum — Audio and art
+- Lines 1970-1978 - [5.2.6 - Menu pointer evidence (#184)](ASSETS.md#526---menu-pointer-evidence-184) - context: Caelum Argenteum — Audio and art
+- Lines 1979-1989 - [5.2.5 - Dialogue source provenance and evidence (#185)](ASSETS.md#525---dialogue-source-provenance-and-evidence-185) - context: Caelum Argenteum — Audio and art
+- Lines 1990-2000 - [5.2.4 - Reused onboarding assets and MAP02 generation (#183)](ASSETS.md#524---reused-onboarding-assets-and-map02-generation-183) - context: Caelum Argenteum — Audio and art
+- Lines 2001-2006 - [5.2.3 - Mandinga targeting evidence (#180)](ASSETS.md#523---mandinga-targeting-evidence-180) - context: Caelum Argenteum — Audio and art
+- Lines 2007-2012 - [5.2.2 - Time-skip performance evidence (#178)](ASSETS.md#522---time-skip-performance-evidence-178) - context: Caelum Argenteum — Audio and art
+- Lines 2013-2022 - [5.2.1 - Reused tutorial and provision presentation (#177)](ASSETS.md#521---reused-tutorial-and-provision-presentation-177) - context: Caelum Argenteum — Audio and art
+- Lines 2023-2033 - [5.2.0 - Saved identity presentation boundary (#147)](ASSETS.md#520---saved-identity-presentation-boundary-147) - context: Caelum Argenteum — Audio and art
+- Lines 2034-2040 - [5.1.20 - Existing native door art in MAP06 (#173)](ASSETS.md#5120---existing-native-door-art-in-map06-173) - context: Caelum Argenteum — Audio and art
+- Lines 2041-2047 - [5.1.19 - Shared dialogue history (#172)](ASSETS.md#5119---shared-dialogue-history-172) - context: Caelum Argenteum — Audio and art
+- Lines 2048-2054 - [5.1.18 - MAP01 gift presentation (#164)](ASSETS.md#5118---map01-gift-presentation-164) - context: Caelum Argenteum — Audio and art
+- Lines 2055-2062 - [5.1.17 - Medikit labels (#169)](ASSETS.md#5117---medikit-labels-169) - context: Caelum Argenteum — Audio and art
+- Lines 2063-2090 - [5.1.16 - Original bolas atlas (#163)](ASSETS.md#5116---original-bolas-atlas-163) - context: Caelum Argenteum — Audio and art
+- Lines 2091-2114 - [5.1.15 - Bronze utility staff (#162)](ASSETS.md#5115---bronze-utility-staff-162) - context: Caelum Argenteum — Audio and art
+- Lines 2115-2121 - [5.1.14 - Damage-flash travel validation (#165)](ASSETS.md#5114---damage-flash-travel-validation-165) - context: Caelum Argenteum — Audio and art
+- Lines 2122-2128 - [5.1.13 - Silver-key validation (#160)](ASSETS.md#5113---silver-key-validation-160) - context: Caelum Argenteum — Audio and art
+- Lines 2129-2135 - [5.1.12 - Crafting-size validation (#158)](ASSETS.md#5112---crafting-size-validation-158) - context: Caelum Argenteum — Audio and art
+- Lines 2136-2143 - [5.1.11 - Time-skip input validation (#156)](ASSETS.md#5111---time-skip-input-validation-156) - context: Caelum Argenteum — Audio and art
+- Lines 2144-2152 - [5.1.10 — Physics validation assets (#154)](ASSETS.md#5110--physics-validation-assets-154) - context: Caelum Argenteum — Audio and art
+- Lines 2153-2178 - [5.1.9 - Shotgun grip occlusion and cartridge world scale (#152)](ASSETS.md#519---shotgun-grip-occlusion-and-cartridge-world-scale-152) - context: Caelum Argenteum — Audio and art
+- Lines 2179-2225 - [5.1.8 - Original elemental atlases and projectile meshes (#137)](ASSETS.md#518---original-elemental-atlases-and-projectile-meshes-137) - context: Caelum Argenteum — Audio and art
+- Lines 2226-2263 - [5.1.7 - Modular shotgun artwork and evidence (#136)](ASSETS.md#517---modular-shotgun-artwork-and-evidence-136) - context: Caelum Argenteum — Audio and art
+- Lines 2264-2284 - [5.1.6 - Crouched Domingo carbine poses (#143)](ASSETS.md#516---crouched-domingo-carbine-poses-143) - context: Caelum Argenteum — Audio and art
+- Lines 2285-2316 - [5.1.5 - Demon breath and potion tiers (#135)](ASSETS.md#515---demon-breath-and-potion-tiers-135) - context: Caelum Argenteum — Audio and art
+- Lines 2317-2343 - [5.1.4 - Breathing recordings and native evidence (#140)](ASSETS.md#514---breathing-recordings-and-native-evidence-140) - context: Caelum Argenteum — Audio and art
+- Lines 2344-2364 - [5.1.3 - City interiors and world carbine artwork (#133)](ASSETS.md#513---city-interiors-and-world-carbine-artwork-133) - context: Caelum Argenteum — Audio and art
+- Lines 2365-2373 - [5.1.2 - Siege reinforcement evidence (#132)](ASSETS.md#512---siege-reinforcement-evidence-132) - context: Caelum Argenteum — Audio and art
+- Lines 2374-2392 - [5.1.1 - Thermal HUD verification sources (#131)](ASSETS.md#511---thermal-hud-verification-sources-131) - context: Caelum Argenteum — Audio and art
+- Lines 2393-2404 - [5.1.0 — Thermal validation sources (#130)](ASSETS.md#510--thermal-validation-sources-130) - context: Caelum Argenteum — Audio and art
+- Lines 2405-2413 - [5.0.6 — Normal high-density AI evidence (#128)](ASSETS.md#506--normal-high-density-ai-evidence-128) - context: Caelum Argenteum — Audio and art
+- Lines 2414-2423 - [5.0.5 — Siege profiling evidence (#121)](ASSETS.md#505--siege-profiling-evidence-121) - context: Caelum Argenteum — Audio and art
+- Lines 2424-2437 - [4.37.24 — Reproducible closing export (#82)](ASSETS.md#43724--reproducible-closing-export-82) - context: Caelum Argenteum — Audio and art
+- Lines 2438-2455 - [4.37.23 - Character-creation text and layout (#112)](ASSETS.md#43723---character-creation-text-and-layout-112) - context: Caelum Argenteum — Audio and art
+- Lines 2456-2528 - [4.37.22 - Equipped first-person shield artwork (#106)](ASSETS.md#43722---equipped-first-person-shield-artwork-106) - context: Caelum Argenteum — Audio and art
+- Lines 2529-2567 - [4.37.21 - Approved narrative artwork sources and presentation (#103)](ASSETS.md#43721---approved-narrative-artwork-sources-and-presentation-103) - context: Caelum Argenteum — Audio and art
+- Lines 2568-2604 - [4.37.20 - Original training mannequin model (#98)](ASSETS.md#43720---original-training-mannequin-model-98) - context: Caelum Argenteum — Audio and art
+- Lines 2605-2614 - [4.37.19 - Existing necklace assets and shield localization (#96)](ASSETS.md#43719---existing-necklace-assets-and-shield-localization-96) - context: Caelum Argenteum — Audio and art
+- Lines 2615-2624 - [4.37.18 - Journal subsection presentation (#91)](ASSETS.md#43718---journal-subsection-presentation-91) - context: Caelum Argenteum — Audio and art
+- Lines 2625-2648 - [4.37.17 - Pickaxe art and gathering audio (#89)](ASSETS.md#43717---pickaxe-art-and-gathering-audio-89) - context: Caelum Argenteum — Audio and art
+- Lines 2649-2679 - [4.37.16 - Compass, Sun of May and C moon (#87)](ASSETS.md#43716---compass-sun-of-may-and-c-moon-87) - context: Caelum Argenteum — Audio and art
+- Lines 2680-2686 - [4.37.15 - Traditional Truco card reuse (#101)](ASSETS.md#43715---traditional-truco-card-reuse-101) - context: Caelum Argenteum — Audio and art
+- Lines 2687-2705 - [4.37.13 — Trucazo source and existing card presentation (#81)](ASSETS.md#43713--trucazo-source-and-existing-card-presentation-81) - context: Caelum Argenteum — Audio and art
+- Lines 2706-2714 - [4.37.11 — Existing guard presentation and bilingual recognition (#79)](ASSETS.md#43711--existing-guard-presentation-and-bilingual-recognition-79) - context: Caelum Argenteum — Audio and art
+- Lines 2715-2723 - [4.37.10 — Existing prisoner dialogue presentation (#78)](ASSETS.md#43710--existing-prisoner-dialogue-presentation-78) - context: Caelum Argenteum — Audio and art
+- Lines 2724-2765 - [4.37.9 — Expanded urban geometry and save-layout provenance (#77)](ASSETS.md#4379--expanded-urban-geometry-and-save-layout-provenance-77) - context: Caelum Argenteum — Audio and art
+- Lines 2766-2789 - [4.37.8 — Supply ledger provenance and verification (#75)](ASSETS.md#4378--supply-ledger-provenance-and-verification-75) - context: Caelum Argenteum — Audio and art
+- Lines 2790-2813 - [4.37.7 — Layered sewer return geometry (#74)](ASSETS.md#4377--layered-sewer-return-geometry-74) - context: Caelum Argenteum — Audio and art
+- Lines 2814-2826 - [4.37.6 — Cardinal sewer data and supply ledger (#73/#75)](ASSETS.md#4376--cardinal-sewer-data-and-supply-ledger-7375) - context: Caelum Argenteum — Audio and art
+- Lines 2827-2835 - [4.37.5 — Existing food plates and water cups (#65)](ASSETS.md#4375--existing-food-plates-and-water-cups-65) - context: Caelum Argenteum — Audio and art
+- Lines 2836-2844 - [4.37.4 — Existing Journal assets for time skipping (#64)](ASSETS.md#4374--existing-journal-assets-for-time-skipping-64) - context: Caelum Argenteum — Audio and art
+- Lines 2845-2855 - [4.37.3 — Existing equipment catalogue and bilingual Palomo dialogue (#63)](ASSETS.md#4373--existing-equipment-catalogue-and-bilingual-palomo-dialogue-63) - context: Caelum Argenteum — Audio and art
+- Lines 2856-2862 - [4.37.2 — Magic-cost balance data and evidence (#68)](ASSETS.md#4372--magic-cost-balance-data-and-evidence-68) - context: Caelum Argenteum — Audio and art
+- Lines 2863-2871 - [4.37.1 — Reused practice target and bilingual directions (#62)](ASSETS.md#4371--reused-practice-target-and-bilingual-directions-62) - context: Caelum Argenteum — Audio and art
+- Lines 2872-2929 - [4.37.0 — Mansion landscape and filled tympana (#61)](ASSETS.md#4370--mansion-landscape-and-filled-tympana-61) - context: Caelum Argenteum — Audio and art
+- Lines 2930-2949 - [4.36.28 — Playtest resource packaging (#17)](ASSETS.md#43628--playtest-resource-packaging-17) - context: Caelum Argenteum — Audio and art
+- Lines 2950-2969 - [4.36.27 — Port battlefield and reused defenders (#16)](ASSETS.md#43627--port-battlefield-and-reused-defenders-16) - context: Caelum Argenteum — Audio and art
+- Lines 2970-2989 - [4.36.26 — Grip-centered thrust motion (#37)](ASSETS.md#43626--grip-centered-thrust-motion-37) - context: Caelum Argenteum — Audio and art
+- Lines 2990-3044 - [4.36.25 — Mansion architectural finishes (#36)](ASSETS.md#43625--mansion-architectural-finishes-36) - context: Caelum Argenteum — Audio and art
+- Lines 3045-3052 - [4.36.24a — Rights and attribution (#55)](ASSETS.md#43624a--rights-and-attribution-55) - context: Caelum Argenteum — Audio and art
+- Lines 3053-3061 - [4.36.24 — Quest journal labels (#35)](ASSETS.md#43624--quest-journal-labels-35) - context: Caelum Argenteum — Audio and art
+- Lines 3062-3071 - [4.36.23 — Armor presentation (#52)](ASSETS.md#43623--armor-presentation-52) - context: Caelum Argenteum — Audio and art
+- Lines 3072-3086 - [4.36.22 — Existing dialogue presentation (#34)](ASSETS.md#43622--existing-dialogue-presentation-34) - context: Caelum Argenteum — Audio and art
+- Lines 3087-3098 - [4.36.20 — Shared Arcana presentation (#33)](ASSETS.md#43620--shared-arcana-presentation-33) - context: Caelum Argenteum — Audio and art
+- Lines 3099-3149 - [4.36.17 — Approximate Argentine 1884 cannon reconstruction (#21)](ASSETS.md#43617--approximate-argentine-1884-cannon-reconstruction-21) - context: Caelum Argenteum — Audio and art
+- Lines 3150-3196 - [4.36.16 — Ram components and reference-based estimates (#20)](ASSETS.md#43616--ram-components-and-reference-based-estimates-20) - context: Caelum Argenteum — Audio and art
+- Lines 3197-3206 - [4.36.15 — Gate mechanics reuse accepted art (#19)](ASSETS.md#43615--gate-mechanics-reuse-accepted-art-19) - context: Caelum Argenteum — Audio and art
+- Lines 3207-3256 - [4.36.14a — Siege silhouettes and gate materials (#18 correction)](ASSETS.md#43614a--siege-silhouettes-and-gate-materials-18-correction) - context: Caelum Argenteum — Audio and art
+- Lines 3257-3281 - `4.36.10 — Reusable siege preview assets (#18)` - context: Caelum Argenteum — Audio and art
+- Lines 3282-3288 - [4.36.8 — No new runtime assets (#14)](ASSETS.md#4368--no-new-runtime-assets-14) - context: Caelum Argenteum — Audio and art
+- Lines 3289-3306 - [4.36.7 — Recolored prisoner sprites (#13)](ASSETS.md#4367--recolored-prisoner-sprites-13) - context: Caelum Argenteum — Audio and art
+- Lines 3307-3327 - [4.36.5 — Wider sewer and barred gates (#11)](ASSETS.md#4365--wider-sewer-and-barred-gates-11) - context: Caelum Argenteum — Audio and art
+- Lines 3328-3338 - [4.36.4 — T1 maze catalogue](ASSETS.md#4364--t1-maze-catalogue) - context: Caelum Argenteum — Audio and art
+- Lines 3339-3356 - [4.36.3 — Additional flail-handle rotation](ASSETS.md#4363--additional-flail-handle-rotation) - context: Caelum Argenteum — Audio and art
+- Lines 3357-3371 - [4.36.2 — Deterministic bow crop caches](ASSETS.md#4362--deterministic-bow-crop-caches) - context: Caelum Argenteum — Audio and art
+- Lines 3372-3386 - [4.36.1 — Documentation and provenance](ASSETS.md#4361--documentation-and-provenance) - context: Caelum Argenteum — Audio and art
+- Lines 3387-3426 - [4.36.0i — native composition and MAP02](ASSETS.md#4360i--native-composition-and-map02) - context: Caelum Argenteum — Audio and art
+- Lines 3427-3446 - [History 4.36.0h — adjustment to the capture marked by the author](ASSETS.md#history-4360h--adjustment-to-the-capture-marked-by-the-author) - context: Caelum Argenteum — Audio and art
+- Lines 3447-3468 - [4.36.0g — parts, fingers and muted colors](ASSETS.md#4360g--parts-fingers-and-muted-colors) - context: Caelum Argenteum — Audio and art
+- Lines 3469-3497 - [4.36.0f — broad blade and corrected native composition](ASSETS.md#4360f--broad-blade-and-corrected-native-composition) - context: Caelum Argenteum — Audio and art
+- Lines 3498-3525 - `4.36.0e — corrections requested after testing 0d` - context: Caelum Argenteum — Audio and art
+- Lines 3526-3555 - [Revised first-person view — 4.36.0d](ASSETS.md#revised-first-person-view--4360d) - context: Caelum Argenteum — Audio and art
+- Lines 3556-3593 - [Resources contributed and integrated — 4.36.0c](ASSETS.md#resources-contributed-and-integrated--4360c) - context: Caelum Argenteum — Audio and art
+- Lines 3594-3622 - [4.36.0b — lever, sphere and bull scale](ASSETS.md#4360b--lever-sphere-and-bull-scale) - context: Caelum Argenteum — Audio and art
+- Lines 3623-3636 - [4.36.0a — physical gallery resources](ASSETS.md#4360a--physical-gallery-resources) - context: Caelum Argenteum — Audio and art
+- Lines 3637-3673 - [4.35.0q — author v4 sprites and icons](ASSETS.md#4350q--author-v4-sprites-and-icons) - context: Caelum Argenteum — Audio and art
+- Lines 3674-3707 - [4.35.0p — original carriage and merchant ship](ASSETS.md#4350p--original-carriage-and-merchant-ship) - context: Caelum Argenteum — Audio and art
+- Lines 3708-3714 - [4.35.0o — monthly calendar](ASSETS.md#4350o--monthly-calendar) - context: Caelum Argenteum — Audio and art
+- Lines 3715-3722 - [4.35.0n — travel budget](ASSETS.md#4350n--travel-budget) - context: Caelum Argenteum — Audio and art
+- Lines 3723-3754 - [4.35.0m — author materials and coastal maps](ASSETS.md#4350m--author-materials-and-coastal-maps) - context: Caelum Argenteum — Audio and art
+- Lines 3755-3777 - [4.35.0l — attributed climate data and furniture](ASSETS.md#4350l--attributed-climate-data-and-furniture) - context: Caelum Argenteum — Audio and art
+- Lines 3778-3796 - [4.35.0k — Journal environmental reading](ASSETS.md#4350k--journal-environmental-reading) - context: Caelum Argenteum — Audio and art
+- Lines 3797-3815 - [4.35.0j — Limbo clock, station scale and text](ASSETS.md#4350j--limbo-clock-station-scale-and-text) - context: Caelum Argenteum — Audio and art
+- Lines 3816-3832 - [4.35.0i — serving placement on tabletops](ASSETS.md#4350i--serving-placement-on-tabletops) - context: Caelum Argenteum — Audio and art
+- Lines 3833-3855 - [4.35.0h — MAP01 plates, cups and furniture](ASSETS.md#4350h--map01-plates-cups-and-furniture) - context: Caelum Argenteum — Audio and art
+- Lines 3856-3875 - [4.35.0g — tables and view-direction mapping](ASSETS.md#4350g--tables-and-view-direction-mapping) - context: Caelum Argenteum — Audio and art
+- Lines 3876-3898 - [4.35.0f — portable sleeping bag and comfort reading](ASSETS.md#4350f--portable-sleeping-bag-and-comfort-reading) - context: Caelum Argenteum — Audio and art
+- Lines 3899-3928 - [4.35.0e — original furniture and rest view](ASSETS.md#4350e--original-furniture-and-rest-view) - context: Caelum Argenteum — Audio and art
+- Lines 3929-3935 - [4.35.0d1 — resolution of existing poses](ASSETS.md#4350d1--resolution-of-existing-poses) - context: Caelum Argenteum — Audio and art
+- Lines 3936-3957 - [4.35.0d — interface and rest poses](ASSETS.md#4350d--interface-and-rest-poses) - context: Caelum Argenteum — Audio and art
+- Lines 3958-3971 - [4.35.0c — Presentation of Stopped Time](ASSETS.md#4350c--presentation-of-stopped-time) - context: Caelum Argenteum — Audio and art
+- Lines 3972-3985 - [4.35.0b — schedule on the existing presentation](ASSETS.md#4350b--schedule-on-the-existing-presentation) - context: Caelum Argenteum — Audio and art
+- Lines 3986-3999 - [4.35.0a — presentation of the recorded time](ASSETS.md#4350a--presentation-of-the-recorded-time) - context: Caelum Argenteum — Audio and art
+- Lines 4000-4013 - [4.34.0e — test sites in sewers](ASSETS.md#4340e--test-sites-in-sewers) - context: Caelum Argenteum — Audio and art
+- Lines 4014-4100 - [4.34.0d — travel service resources](ASSETS.md#4340d--travel-service-resources) - context: Caelum Argenteum — Audio and art
+- Lines 4101-4123 - [New containers — 4.33.0af](ASSETS.md#new-containers--4330af) - context: Caelum Argenteum — Audio and art
+- Lines 4124-4130 - [4.33.0ae Review](ASSETS.md#4330ae-review) - context: Caelum Argenteum — Audio and art
+- Lines 4131-4137 - [4.33.0ad Review](ASSETS.md#4330ad-review) - context: Caelum Argenteum — Audio and art
+- Lines 4138-4144 - [4.33.0ac Review](ASSETS.md#4330ac-review) - context: Caelum Argenteum — Audio and art
+- Lines 4145-4151 - [4.33.0ab Review](ASSETS.md#4330ab-review) - context: Caelum Argenteum — Audio and art
+- Lines 4152-4159 - [4.33.0aa Review](ASSETS.md#4330aa-review) - context: Caelum Argenteum — Audio and art
+- Lines 4160-4165 - [4.33.0z Review](ASSETS.md#4330z-review) - context: Caelum Argenteum — Audio and art
+- Lines 4166-4171 - [4.33.0y Review](ASSETS.md#4330y-review) - context: Caelum Argenteum — Audio and art
+- Lines 4172-4180 - [4.33.0x Review](ASSETS.md#4330x-review) - context: Caelum Argenteum — Audio and art
+- Lines 4181-4186 - [4.33.0w Review](ASSETS.md#4330w-review) - context: Caelum Argenteum — Audio and art
+- Lines 4187-4202 - [Return and arrival gate to sewers (4.33.0v)](ASSETS.md#return-and-arrival-gate-to-sewers-4330v) - context: Caelum Argenteum — Audio and art
+- Lines 4203-4210 - [Sword view (4.33.0u)](ASSETS.md#sword-view-4330u) - context: Caelum Argenteum — Audio and art
+- Lines 4211-4227 - [Pampas El Loco (4.33.0t)](ASSETS.md#pampas-el-loco-4330t) - context: Caelum Argenteum — Audio and art
+- Lines 4228-4236 - [Reuse in 4.33.0s](ASSETS.md#reuse-in-4330s) - context: Caelum Argenteum — Audio and art
+- Lines 4237-4245 - [Reuse in 4.33.0r](ASSETS.md#reuse-in-4330r) - context: Caelum Argenteum — Audio and art
+- Lines 4246-4253 - [Reuse in 4.33.0q](ASSETS.md#reuse-in-4330q) - context: Caelum Argenteum — Audio and art
+- Lines 4254-4261 - [Reuse in 4.33.0p](ASSETS.md#reuse-in-4330p) - context: Caelum Argenteum — Audio and art
+- Lines 4262-4267 - [4.33.0o Review](ASSETS.md#4330o-review) - context: Caelum Argenteum — Audio and art
+- Lines 4268-4277 - [Resources reused in 4.33.0n](ASSETS.md#resources-reused-in-4330n) - context: Caelum Argenteum — Audio and art
+- Lines 4278-4302 - [Fiber shrub 2D (4.33.0l)](ASSETS.md#fiber-shrub-2d-4330l) - context: Caelum Argenteum — Audio and art
+- Lines 4303-4331 - [Poses delivered by the author (4.33.0m)](ASSETS.md#poses-delivered-by-the-author-4330m) - context: Caelum Argenteum — Audio and art
+- Lines 4332-4351 - [Current interface audio](ASSETS.md#current-interface-audio) - context: Caelum Argenteum — Audio and art
+- Lines 4352-4363 - [Current designations and emblems (4.33.0j)](ASSETS.md#current-designations-and-emblems-4330j) - context: Caelum Argenteum — Audio and art > Current interface audio
+- Lines 4364-4407 - [Simple station models (4.33.0j)](ASSETS.md#simple-station-models-4330j) - context: Caelum Argenteum — Audio and art
+- Lines 4408-4422 - [Terms of reference for interface resources](ASSETS.md#terms-of-reference-for-interface-resources) - context: Caelum Argenteum — Audio and art
+- Lines 4423-4529 - [Physical audio inventory](ASSETS.md#physical-audio-inventory) - context: Caelum Argenteum — Audio and art
+- Lines 4530-4549 - [External 05 package reserve](ASSETS.md#external-05-package-reserve) - context: Caelum Argenteum — Audio and art > Physical audio inventory
+- Lines 4550-4551 - [First person: accepted sword reference](ASSETS.md#first-person-accepted-sword-reference) - context: Caelum Argenteum — Audio and art
+- Lines 4552-4572 - [Scope](ASSETS.md#scope) - context: Caelum Argenteum — Audio and art > First person: accepted sword reference
+- Lines 4573-4583 - [Framing by state](ASSETS.md#framing-by-state) - context: Caelum Argenteum — Audio and art > First person: accepted sword reference
+- Lines 4584-4595 - [Frontal block, close and held](ASSETS.md#frontal-block-close-and-held) - context: Caelum Argenteum — Audio and art > First person: accepted sword reference
+- Lines 4596-4607 - [Full Thumb in front of Handle](ASSETS.md#full-thumb-in-front-of-handle) - context: Caelum Argenteum — Audio and art > First person: accepted sword reference
+- Lines 4608-4646 - [Synchronised turn without duplication](ASSETS.md#synchronised-turn-without-duplication) - context: Caelum Argenteum — Audio and art > First person: accepted sword reference
+- Lines 4647-4667 - [Attack curve and straight return](ASSETS.md#attack-curve-and-straight-return) - context: Caelum Argenteum — Audio and art > First person: accepted sword reference
+- Lines 4668-4685 - [Panoramic sleeve, depth and equipment](ASSETS.md#panoramic-sleeve-depth-and-equipment) - context: Caelum Argenteum — Audio and art > First person: accepted sword reference
+- Lines 4686-4694 - [State of evidence](ASSETS.md#state-of-evidence) - context: Caelum Argenteum — Audio and art > First person: accepted sword reference
+- Lines 4695-4715 - [Equipment icons](ASSETS.md#equipment-icons) - context: Caelum Argenteum — Audio and art
+- Lines 4716-4728 - [Typography and artistic direction](ASSETS.md#typography-and-artistic-direction) - context: Caelum Argenteum — Audio and art
+- Lines 4729-4736 - [Traceability and Next Assets](ASSETS.md#traceability-and-next-assets) - context: Caelum Argenteum — Audio and art
+- Lines 4737-4742 - [Historical source material](ASSETS.md#historical-source-material) - context: Caelum Argenteum — Audio and art
+- Lines 4743-4752 - [`assets/source/art/domingo_fp_4_32_0h|0i|0j|0n/`](ASSETS.md#assetssourceartdomingo_fp_4_32_0h0i0j0n) - context: Caelum Argenteum — Audio and art > Historical source material
+- Lines 4753-4762 - [`assets/first_person_v3/`](ASSETS.md#assetsfirst_person_v3) - context: Caelum Argenteum — Audio and art > Historical source material
+- Lines 4763-4784 - [Sources and generators after the 4.33.0h audit](ASSETS.md#sources-and-generators-after-the-4330h-audit) - context: Caelum Argenteum — Audio and art
 
 ## [GZDOOM_DEVELOPMENT.md](GZDOOM_DEVELOPMENT.md) - 5089 words
 
@@ -339,510 +339,510 @@ SHA-256: `56e479e3893e27831a42d1dfe6ac0d5fcc80b556d6235ac8b9a076bb118376bb`
 - Lines 471-475 - [Sources and limitations](GZDOOM_DEVELOPMENT.md#sources-and-limitations) - context: GZDoom development guide — Caelum Argenteum
 - Lines 476-541 - [Private 4.14.2 native candidate and presentation capture (#435)](GZDOOM_DEVELOPMENT.md#private-4142-native-candidate-and-presentation-capture-435) - context: GZDoom development guide — Caelum Argenteum
 
-## [HISTORY.md](HISTORY.md) - 269037 words
+## [HISTORY.md](HISTORY.md) - 269228 words
 
-SHA-256: `39c5625181613ff1a1e20a50a4b9cd1a4ffe7e1f24065b51cad589bacf17ee0c`
+SHA-256: `a470b90f1121648a3d61a50b5eac2039ef3c39d09b21fa8ed457437cf42ad745`
 
 - Lines 1-4 - [Caelum Argenteum — Consolidated history](HISTORY.md#caelum-argenteum--consolidated-history) - context: -
 - Lines 5-204 - `5.13.3 - Ordered Tarot foundation (#440, implementation checkpoint)` - context: Caelum Argenteum — Consolidated history
-- Lines 205-371 - `5.13.3 - Ordered Tarot foundation (#440, implementation checkpoint) [part 2]` - context: Caelum Argenteum — Consolidated history
-- Lines 372-395 - `5.13.2 - Reversible equipment awakening (#442)` - context: Caelum Argenteum — Consolidated history
-- Lines 396-421 - `5.13.1 - Capture sources and unified Tarot (#441)` - context: Caelum Argenteum — Consolidated history
-- Lines 422-445 - [5.13.0 - Major Arcana specification audit (#439), 2026-10-31](HISTORY.md#5130---major-arcana-specification-audit-439-2026-10-31) - context: Caelum Argenteum — Consolidated history
-- Lines 446-506 - [5.12.7a - Dead-player interface repair (#602), 2026-10-31](HISTORY.md#5127a---dead-player-interface-repair-602-2026-10-31) - context: Caelum Argenteum — Consolidated history
-- Lines 507-546 - [V5.12 implementation ready for author review - 2026-10-31](HISTORY.md#v512-implementation-ready-for-author-review---2026-10-31) - context: Caelum Argenteum — Consolidated history
-- Lines 547-699 - `Earlier 5.12.7 integration checkpoints - #435` - context: Caelum Argenteum — Consolidated history
-- Lines 700-797 - [5.12.6 - Typed personal profile graph foundation (#434, 2026-10-31)](HISTORY.md#5126---typed-personal-profile-graph-foundation-434-2026-10-31) - context: Caelum Argenteum — Consolidated history
-- Lines 798-842 - [5.12.5 - Seated human card-rule preparation (#590, 2026-10-30)](HISTORY.md#5125---seated-human-card-rule-preparation-590-2026-10-30) - context: Caelum Argenteum — Consolidated history
-- Lines 843-864 - [5.12.4 - Organized combat venues (#438, 2026-10-31, in progress)](HISTORY.md#5124---organized-combat-venues-438-2026-10-31-in-progress) - context: Caelum Argenteum — Consolidated history
-- Lines 865-923 - [5.12.3 - Cooperative lifecycle guards (#437, 2026-10-31, in progress)](HISTORY.md#5123---cooperative-lifecycle-guards-437-2026-10-31-in-progress) - context: Caelum Argenteum — Consolidated history
-- Lines 924-1053 - [5.12.2 - Shared clock and time consent (#436, 2026-10-30, in progress)](HISTORY.md#5122---shared-clock-and-time-consent-436-2026-10-30-in-progress) - context: Caelum Argenteum — Consolidated history
-- Lines 1054-1067 - [Unreleased V5.12 network baseline (#435, 2026-10-30)](HISTORY.md#unreleased-v512-network-baseline-435-2026-10-30) - context: Caelum Argenteum — Consolidated history
-- Lines 1068-1097 - [5.11.8 - Mandinga and Zupay contamination immunity (#586, 2026-10-30)](HISTORY.md#5118---mandinga-and-zupay-contamination-immunity-586-2026-10-30) - context: Caelum Argenteum — Consolidated history
-- Lines 1098-1113 - [5.11.7 - Arrival workshop moved into the protagonist house (#581, 2026-10-30)](HISTORY.md#5117---arrival-workshop-moved-into-the-protagonist-house-581-2026-10-30) - context: Caelum Argenteum — Consolidated history
-- Lines 1114-1121 - [5.11.6 - Rat contamination-damage immunity (#582, 2026-10-30)](HISTORY.md#5116---rat-contamination-damage-immunity-582-2026-10-30) - context: Caelum Argenteum — Consolidated history
-- Lines 1122-1141 - [5.11.5 - Refresh rental dialogue after recognition (#580, 2026-10-30)](HISTORY.md#5115---refresh-rental-dialogue-after-recognition-580-2026-10-30) - context: Caelum Argenteum — Consolidated history
-- Lines 1142-1298 - [5.11.4 - Companion implementation (#430, 2026-10-30)](HISTORY.md#5114---companion-implementation-430-2026-10-30) - context: Caelum Argenteum — Consolidated history
-- Lines 1299-1329 - [5.11.3 - Conditional distant-search evaluation (#433, 2026-10-30)](HISTORY.md#5113---conditional-distant-search-evaluation-433-2026-10-30) - context: Caelum Argenteum — Consolidated history
-- Lines 1330-1363 - [5.11.2 - Shared deterministic NPC costs (#432, 2026-10-30)](HISTORY.md#5112---shared-deterministic-npc-costs-432-2026-10-30) - context: Caelum Argenteum — Consolidated history
-- Lines 1364-1404 - [5.11.1 - Formations and bounded siege membership (#429, 2026-10-30)](HISTORY.md#5111---formations-and-bounded-siege-membership-429-2026-10-30) - context: Caelum Argenteum — Consolidated history
-- Lines 1405-1492 - [5.11.0 - NPC subsystem and presentation profiling (#431, 2026-10-30)](HISTORY.md#5110---npc-subsystem-and-presentation-profiling-431-2026-10-30) - context: Caelum Argenteum — Consolidated history
-- Lines 1493-1560 - [5.10.3 - Audible reports and leader orders (#428, 2026-10-30)](HISTORY.md#5103---audible-reports-and-leader-orders-428-2026-10-30) - context: Caelum Argenteum — Consolidated history
-- Lines 1561-1588 - [5.10.2 - Private perception memory (#427, 2026-10-30)](HISTORY.md#5102---private-perception-memory-427-2026-10-30) - context: Caelum Argenteum — Consolidated history
-- Lines 1589-1609 - [5.10.1 - Anonymous action noise (#426, 2026-10-30)](HISTORY.md#5101---anonymous-action-noise-426-2026-10-30) - context: Caelum Argenteum — Consolidated history
-- Lines 1610-1642 - [5.10.0 - Visual perception (#425, 2026-10-30)](HISTORY.md#5100---visual-perception-425-2026-10-30) - context: Caelum Argenteum — Consolidated history
-- Lines 1643-1659 - [V5.9 completion - 2026-10-30 (#403)](HISTORY.md#v59-completion---2026-10-30-403) - context: Caelum Argenteum — Consolidated history
-- Lines 1660-1676 - [5.9.7 - Guard and prisoner wardrobes (#423, 2026-10-29)](HISTORY.md#597---guard-and-prisoner-wardrobes-423-2026-10-29) - context: Caelum Argenteum — Consolidated history
-- Lines 1677-1687 - [5.9.6 - Faction service consequences (#424, 2026-10-29)](HISTORY.md#596---faction-service-consequences-424-2026-10-29) - context: Caelum Argenteum — Consolidated history
-- Lines 1688-1701 - [5.9.5 - House and siege side quests (#422, 2026-10-29)](HISTORY.md#595---house-and-siege-side-quests-422-2026-10-29) - context: Caelum Argenteum — Consolidated history
-- Lines 1702-1714 - [5.9.4 - Barracas story integration (#421, 2026-10-29)](HISTORY.md#594---barracas-story-integration-421-2026-10-29) - context: Caelum Argenteum — Consolidated history
-- Lines 1715-1727 - [5.9.3 - Campaign membership (#420, 2026-10-29)](HISTORY.md#593---campaign-membership-420-2026-10-29) - context: Caelum Argenteum — Consolidated history
-- Lines 1728-1749 - [5.9.2 - Private port dialogue (#419, 2026-10-29)](HISTORY.md#592---private-port-dialogue-419-2026-10-29) - context: Caelum Argenteum — Consolidated history
-- Lines 1750-1772 - [5.9.1 - Faction consequence implementation (#420, 2026-10-29)](HISTORY.md#591---faction-consequence-implementation-420-2026-10-29) - context: Caelum Argenteum — Consolidated history
-- Lines 1773-1792 - [5.9.0 - Quest coordination checkpoint (#418, 2026-10-29)](HISTORY.md#590---quest-coordination-checkpoint-418-2026-10-29) - context: Caelum Argenteum — Consolidated history
-- Lines 1793-1821 - `V5.8 completion - 2026-10-29 (#403)` - context: Caelum Argenteum — Consolidated history
-- Lines 1822-1828 - `5.8.56 / #416 - Original Ciudad theme for Buenos Aires` - context: Caelum Argenteum — Consolidated history
-- Lines 1829-1833 - `5.8.55 / #415 - Remove repeated global Rally lookups` - context: Caelum Argenteum — Consolidated history
-- Lines 1834-1841 - [5.8.54 - Furniture review corrections (#410, 2026-10-29)](HISTORY.md#5854---furniture-review-corrections-410-2026-10-29) - context: Caelum Argenteum — Consolidated history
-- Lines 1842-1871 - `5.8.53 / #417 - Final V5.8 implementation handoff - 2026-10-29` - context: Caelum Argenteum — Consolidated history
-- Lines 1872-1889 - `5.8.52 / #416 - Network implementation ready - 2026-10-29` - context: Caelum Argenteum — Consolidated history
-- Lines 1890-1914 - [5.8.51 - Unloaded-world implementation (#415) - 2026-10-29](HISTORY.md#5851---unloaded-world-implementation-415---2026-10-29) - context: Caelum Argenteum — Consolidated history
-- Lines 1915-1931 - [Unreleased #417 incidents checkpoint - 2026-10-29](HISTORY.md#unreleased-417-incidents-checkpoint---2026-10-29) - context: Caelum Argenteum — Consolidated history
-- Lines 1932-1991 - `Unreleased #416 transport catalogue - 2026-10-29` - context: Caelum Argenteum — Consolidated history
-- Lines 1992-2133 - [Unreleased #415 checkpoint - 2026-10-29](HISTORY.md#unreleased-415-checkpoint---2026-10-29) - context: Caelum Argenteum — Consolidated history
-- Lines 2134-2155 - [5.8.50 - Remaining physical contact adapters (#502)](HISTORY.md#5850---remaining-physical-contact-adapters-502) - context: Caelum Argenteum — Consolidated history
-- Lines 2156-2179 - [5.8.49 - Physical material and food contact (#502)](HISTORY.md#5849---physical-material-and-food-contact-502) - context: Caelum Argenteum — Consolidated history
-- Lines 2180-2210 - [5.8.48 - Vessel exterior contamination (#502, 2026-10-28)](HISTORY.md#5848---vessel-exterior-contamination-502-2026-10-28) - context: Caelum Argenteum — Consolidated history
-- Lines 2211-2245 - [5.8.47 - Abstract stack contamination (#502, 2026-10-28)](HISTORY.md#5847---abstract-stack-contamination-502-2026-10-28) - context: Caelum Argenteum — Consolidated history
-- Lines 2246-2281 - [5.8.46 - Native NPC absence physiology (#502, 2026-10-28)](HISTORY.md#5846---native-npc-absence-physiology-502-2026-10-28) - context: Caelum Argenteum — Consolidated history
-- Lines 2282-2304 - [5.8.45 - Shared dining contamination (#502, 2026-10-28)](HISTORY.md#5845---shared-dining-contamination-502-2026-10-28) - context: Caelum Argenteum — Consolidated history
-- Lines 2305-2335 - [5.8.44 - Landscapes and botanical sculpture (#410, 2026-10-28)](HISTORY.md#5844---landscapes-and-botanical-sculpture-410-2026-10-28) - context: Caelum Argenteum — Consolidated history
-- Lines 2336-2368 - [5.8.43 - Unloaded household cleaning (#502, 2026-10-28)](HISTORY.md#5843---unloaded-household-cleaning-502-2026-10-28) - context: Caelum Argenteum — Consolidated history
-- Lines 2369-2397 - [5.8.42 - Household furnishing contamination persistence (#502, 2026-10-28)](HISTORY.md#5842---household-furnishing-contamination-persistence-502-2026-10-28) - context: Caelum Argenteum — Consolidated history
-- Lines 2398-2421 - [5.8.41 - Household storage persistence (#502, 2026-10-28)](HISTORY.md#5841---household-storage-persistence-502-2026-10-28) - context: Caelum Argenteum — Consolidated history
-- Lines 2422-2441 - [5.8.40 - Portable dining sets (#410, 2026-10-28)](HISTORY.md#5840---portable-dining-sets-410-2026-10-28) - context: Caelum Argenteum — Consolidated history
-- Lines 2442-2454 - [5.8.39 - Shared aim prerequisite (#415, 2026-10-27)](HISTORY.md#5839---shared-aim-prerequisite-415-2026-10-27) - context: Caelum Argenteum — Consolidated history
-- Lines 2455-2470 - [5.8.38 - Loaded NPC illness (#502, 2026-10-27)](HISTORY.md#5838---loaded-npc-illness-502-2026-10-27) - context: Caelum Argenteum — Consolidated history
-- Lines 2471-2486 - [5.8.37 - Seal object history (#502, 2026-10-27)](HISTORY.md#5837---seal-object-history-502-2026-10-27) - context: Caelum Argenteum — Consolidated history
-- Lines 2487-2508 - [5.8.36 - Study furniture acquisition (#410, 2026-10-27)](HISTORY.md#5836---study-furniture-acquisition-410-2026-10-27) - context: Caelum Argenteum — Consolidated history
-- Lines 2509-2526 - [5.8.35 - Sofa acquisition (#410, 2026-10-27)](HISTORY.md#5835---sofa-acquisition-410-2026-10-27) - context: Caelum Argenteum — Consolidated history
-- Lines 2527-2546 - [5.8.34 - Ordinary rest furniture acquisition (#410, 2026-10-27)](HISTORY.md#5834---ordinary-rest-furniture-acquisition-410-2026-10-27) - context: Caelum Argenteum — Consolidated history
-- Lines 2547-2566 - [5.8.33 - Ordinary chair and raised cot (#410, 2026-10-27)](HISTORY.md#5833---ordinary-chair-and-raised-cot-410-2026-10-27) - context: Caelum Argenteum — Consolidated history
-- Lines 2567-2586 - [5.8.32 - Luxury rest furniture acquisition (#410, 2026-10-27)](HISTORY.md#5832---luxury-rest-furniture-acquisition-410-2026-10-27) - context: Caelum Argenteum — Consolidated history
-- Lines 2587-2604 - [5.8.31 - Storage furniture acquisition (#410, 2026-10-27)](HISTORY.md#5831---storage-furniture-acquisition-410-2026-10-27) - context: Caelum Argenteum — Consolidated history
-- Lines 2605-2632 - [5.8.30 - Luxury furniture catalogue (#410, 2026-10-27)](HISTORY.md#5830---luxury-furniture-catalogue-410-2026-10-27) - context: Caelum Argenteum — Consolidated history
-- Lines 2633-2660 - [5.8.29 - Period sofa seating (#410, 2026-10-27)](HISTORY.md#5829---period-sofa-seating-410-2026-10-27) - context: Caelum Argenteum — Consolidated history
-- Lines 2661-2685 - `5.8.28 - Regional weather history for objects (#502)` - context: Caelum Argenteum — Consolidated history
-- Lines 2686-2703 - `5.8.27 - Indoor furniture placement (#411)` - context: Caelum Argenteum — Consolidated history
-- Lines 2704-2727 - [5.8.26 - Bookcase storage and desk reading (#410)](HISTORY.md#5826---bookcase-storage-and-desk-reading-410) - context: Caelum Argenteum — Consolidated history
-- Lines 2728-2746 - [5.8.25 - Finite garden water furniture (#410)](HISTORY.md#5825---finite-garden-water-furniture-410) - context: Caelum Argenteum — Consolidated history
-- Lines 2747-2768 - [5.8.24 - Wardrobe storage (#410)](HISTORY.md#5824---wardrobe-storage-410) - context: Caelum Argenteum — Consolidated history
-- Lines 2769-2790 - `5.8.23 - Constant Limbo exposure across absence (#502)` - context: Caelum Argenteum — Consolidated history
-- Lines 2791-2811 - `5.8.22 - Shared-water mansion bathroom fixtures (#410)` - context: Caelum Argenteum — Consolidated history
-- Lines 2812-2836 - `5.8.21 - Attended camp cooking and fuel interruption (#411)` - context: Caelum Argenteum — Consolidated history
-- Lines 2837-2870 - `5.8.20 - Mansion kitchen sink and wall cupboard (#410)` - context: Caelum Argenteum — Consolidated history
-- Lines 2871-2904 - `5.8.19 - Attended cooking and shared bread proofing (#410)` - context: Caelum Argenteum — Consolidated history
-- Lines 2905-2926 - `5.8.18 - Prepared meal items and consumption (#410)` - context: Caelum Argenteum — Consolidated history
-- Lines 2927-2949 - `5.8.17 - Kitchen ingredients (#410)` - context: Caelum Argenteum — Consolidated history
-- Lines 2950-2973 - `5.8.16 - Non-solid physical scenery exposure (#502)` - context: Caelum Argenteum — Consolidated history
-- Lines 2974-3006 - [5.8.15 - Sleeping-bag clearance and tent interaction (#412), 2026-10-26](HISTORY.md#5815---sleeping-bag-clearance-and-tent-interaction-412-2026-10-26) - context: Caelum Argenteum — Consolidated history
-- Lines 3007-3050 - [5.8.14 - Native ration lots (#410), 2026-10-26](HISTORY.md#5814---native-ration-lots-410-2026-10-26) - context: Caelum Argenteum — Consolidated history
-- Lines 3051-3093 - [5.8.13 - Campfire and mounted pot (#411), 2026-10-26](HISTORY.md#5813---campfire-and-mounted-pot-411-2026-10-26) - context: Caelum Argenteum — Consolidated history
-- Lines 3094-3293 - `5.8.12 - Metabolic toilet sessions (#502, in progress)` - context: Caelum Argenteum — Consolidated history
-- Lines 3294-3447 - `5.8.12 - Metabolic toilet sessions (#502, in progress) [part 2]` - context: Caelum Argenteum — Consolidated history
-- Lines 3448-3487 - [5.8.11 - Domestic bathrooms (#410, in progress), 2026-10-25](HISTORY.md#5811---domestic-bathrooms-410-in-progress-2026-10-25) - context: Caelum Argenteum — Consolidated history
-- Lines 3488-3508 - [5.8.10 - Tent packing occupancy guard (#412), 2026-10-25](HISTORY.md#5810---tent-packing-occupancy-guard-412-2026-10-25) - context: Caelum Argenteum — Consolidated history
-- Lines 3509-3683 - [5.8.9 - Severe contamination (#502, in progress), 2026-10-24](HISTORY.md#589---severe-contamination-502-in-progress-2026-10-24) - context: Caelum Argenteum — Consolidated history
-- Lines 3684-3754 - [5.8.8 - Carried-chest placement geometry (#411), 2026-10-24](HISTORY.md#588---carried-chest-placement-geometry-411-2026-10-24) - context: Caelum Argenteum — Consolidated history
-- Lines 3755-3767 - [5.8.7 - Food illness in forecasts (#410, in progress), 2026-10-24](HISTORY.md#587---food-illness-in-forecasts-410-in-progress-2026-10-24) - context: Caelum Argenteum — Consolidated history
-- Lines 3768-3777 - [5.8.6 - Central property access (#411, in progress), 2026-10-24](HISTORY.md#586---central-property-access-411-in-progress-2026-10-24) - context: Caelum Argenteum — Consolidated history
-- Lines 3778-3781 - [5.8.5 - Regional event discovery (#415, in progress), 2026-10-24](HISTORY.md#585---regional-event-discovery-415-in-progress-2026-10-24) - context: Caelum Argenteum — Consolidated history
-- Lines 3782-3785 - [5.8.4 - Second map soundtrack (#496), 2026-10-24](HISTORY.md#584---second-map-soundtrack-496-2026-10-24) - context: Caelum Argenteum — Consolidated history
-- Lines 3786-3821 - [5.8.3 - Food contamination foundation (#410, in progress), 2026-10-24](HISTORY.md#583---food-contamination-foundation-410-in-progress-2026-10-24) - context: Caelum Argenteum — Consolidated history
-- Lines 3822-3844 - [5.8.2 - Mansion connected water (#414), 2026-10-24](HISTORY.md#582---mansion-connected-water-414-2026-10-24) - context: Caelum Argenteum — Consolidated history
-- Lines 3845-3867 - [5.8.1 - Altitude and acclimatization (#413), 2026-10-23](HISTORY.md#581---altitude-and-acclimatization-413-2026-10-23) - context: Caelum Argenteum — Consolidated history
-- Lines 3868-3889 - [5.8.0 - Connected-water feasibility (#414), 2026-10-23](HISTORY.md#580---connected-water-feasibility-414-2026-10-23) - context: Caelum Argenteum — Consolidated history
-- Lines 3890-3938 - [5.7.14 - Reusable mates (#472), 2026-10-23](HISTORY.md#5714---reusable-mates-472-2026-10-23) - context: Caelum Argenteum — Consolidated history
-- Lines 3939-3989 - [5.7.13 - Chemistry batch implementation (#471), 2026-10-23](HISTORY.md#5713---chemistry-batch-implementation-471-2026-10-23) - context: Caelum Argenteum — Consolidated history
-- Lines 3990-4023 - [5.7.12 - Fermentation Barrel (#487), 2026-10-23](HISTORY.md#5712---fermentation-barrel-487-2026-10-23) - context: Caelum Argenteum — Consolidated history
-- Lines 4024-4041 - [5.7.11 - Chemistry station terminology (#486), 2026-10-23](HISTORY.md#5711---chemistry-station-terminology-486-2026-10-23) - context: Caelum Argenteum — Consolidated history
-- Lines 4042-4089 - [5.7.10 - Cartridge station migration (#471), 2026-10-23](HISTORY.md#5710---cartridge-station-migration-471-2026-10-23) - context: Caelum Argenteum — Consolidated history
-- Lines 4090-4143 - [5.7.9 - Water boiling and temperature (#409), 2026-10-23](HISTORY.md#579---water-boiling-and-temperature-409-2026-10-23) - context: Caelum Argenteum — Consolidated history
-- Lines 4144-4255 - [5.7.8 - Support implements (#479, awaiting author acceptance)](HISTORY.md#578---support-implements-479-awaiting-author-acceptance) - context: Caelum Argenteum — Consolidated history
-- Lines 4256-4277 - [5.7.7 - Aimed-target information (#481)](HISTORY.md#577---aimed-target-information-481) - context: Caelum Argenteum — Consolidated history
-- Lines 4278-4300 - `5.7.6 - Alchemy ingredient artwork (#471)` - context: Caelum Argenteum — Consolidated history
-- Lines 4301-4337 - `5.7.5 - Marine imports and iodine (#407)` - context: Caelum Argenteum — Consolidated history
-- Lines 4338-4365 - `5.7.4 - Fixed Alchemy station (#470)` - context: Caelum Argenteum — Consolidated history
-- Lines 4366-4384 - `5.7.3 - Monotonic source recovery (#406)` - context: Caelum Argenteum — Consolidated history
-- Lines 4385-4411 - `5.7.2 - Land resources and owned 3D objects (#405)` - context: Caelum Argenteum — Consolidated history
-- Lines 4412-4426 - [5.7.1 - Regional resource data approval (#404), 2026-10-21](HISTORY.md#571---regional-resource-data-approval-404-2026-10-21) - context: Caelum Argenteum — Consolidated history
-- Lines 4427-4444 - [5.7.0 - Water quality and conservative mixing (#408), 2026-10-21](HISTORY.md#570---water-quality-and-conservative-mixing-408-2026-10-21) - context: Caelum Argenteum — Consolidated history
-- Lines 4445-4466 - [5.6.11a - Defer clothing appearance and close the accepted batch (#387), 2026-10-21](HISTORY.md#5611a---defer-clothing-appearance-and-close-the-accepted-batch-387-2026-10-21) - context: Caelum Argenteum — Consolidated history
-- Lines 4467-4482 - [5.6.11 - Calendar shop replenishment (#385), 2026-10-21](HISTORY.md#5611---calendar-shop-replenishment-385-2026-10-21) - context: Caelum Argenteum — Consolidated history
-- Lines 4483-4499 - [5.6.10 - City catalogue extension (#383), 2026-10-21](HISTORY.md#5610---city-catalogue-extension-383-2026-10-21) - context: Caelum Argenteum — Consolidated history
-- Lines 4500-4518 - [5.6.9 - Native cartridge assembly (#380), 2026-10-21](HISTORY.md#569---native-cartridge-assembly-380-2026-10-21) - context: Caelum Argenteum — Consolidated history
-- Lines 4519-4530 - [5.6.8 - Approved sealed cartridge kits (#379), 2026-10-21](HISTORY.md#568---approved-sealed-cartridge-kits-379-2026-10-21) - context: Caelum Argenteum — Consolidated history
-- Lines 4531-4555 - [5.6.7 - Individual clothing object sprites (#387), 2026-10-21](HISTORY.md#567---individual-clothing-object-sprites-387-2026-10-21) - context: Caelum Argenteum — Consolidated history
-- Lines 4556-4577 - [5.6.6 - Native ordinary clothing (#386), 2026-10-21](HISTORY.md#566---native-ordinary-clothing-386-2026-10-21) - context: Caelum Argenteum — Consolidated history
-- Lines 4578-4611 - [5.6.5 - Approved padlocks and local theft witnesses (#382), 2026-10-21](HISTORY.md#565---approved-padlocks-and-local-theft-witnesses-382-2026-10-21) - context: Caelum Argenteum — Consolidated history
-- Lines 4612-4651 - [5.6.4 - Existing loot and native one-time death claims (#384), 2026-10-20](HISTORY.md#564---existing-loot-and-native-one-time-death-claims-384-2026-10-20) - context: Caelum Argenteum — Consolidated history
-- Lines 4652-4665 - [5.6.3b - Requested clothing-table proposal (#386), 2026-10-20](HISTORY.md#563b---requested-clothing-table-proposal-386-2026-10-20) - context: Caelum Argenteum — Consolidated history
-- Lines 4666-4680 - [5.6.3a - Lock tools and ownership proposal (#382), 2026-10-20](HISTORY.md#563a---lock-tools-and-ownership-proposal-382-2026-10-20) - context: Caelum Argenteum — Consolidated history
-- Lines 4681-4722 - [5.6.3 - Recipe sheets, study and practice (#378), 2026-10-20](HISTORY.md#563---recipe-sheets-study-and-practice-378-2026-10-20) - context: Caelum Argenteum — Consolidated history
-- Lines 4723-4761 - [5.6.2 - Ordinary chest storage (#381), 2026-10-20](HISTORY.md#562---ordinary-chest-storage-381-2026-10-20) - context: Caelum Argenteum — Consolidated history
-- Lines 4762-4798 - [5.6.1 - Merchant coordinator (#377), 2026-10-20](HISTORY.md#561---merchant-coordinator-377-2026-10-20) - context: Caelum Argenteum — Consolidated history
-- Lines 4799-4820 - [5.6.0 - Crafting coordinator (#376), 2026-10-20](HISTORY.md#560---crafting-coordinator-376-2026-10-20) - context: Caelum Argenteum — Consolidated history
-- Lines 4821-4838 - [5.5.8a - Author-requested deferred issue closure (#316), 2026-10-20](HISTORY.md#558a---author-requested-deferred-issue-closure-316-2026-10-20) - context: Caelum Argenteum — Consolidated history
-- Lines 4839-4905 - `5.5.8 - Cleaned animated bull model (#369)` - context: Caelum Argenteum — Consolidated history
-- Lines 4906-4924 - `5.5.7 - Future melee energy contract; conversion deferred (#315)` - context: Caelum Argenteum — Consolidated history
-- Lines 4925-4946 - `5.5.6 - Ice and lava ground contact (#314)` - context: Caelum Argenteum — Consolidated history
-- Lines 4947-4960 - `5.5.5 - Equipped-Seal input while unarmed (#363)` - context: Caelum Argenteum — Consolidated history
-- Lines 4961-4978 - `5.5.4 - Ammunition mass and finished-component contract (#313)` - context: Caelum Argenteum — Consolidated history
-- Lines 4979-4995 - `5.5.3 - Sustained pressure lifecycle and native descent (#312)` - context: Caelum Argenteum — Consolidated history
-- Lines 4996-5019 - [5.5.2 - Persistent contact release distance (#311)](HISTORY.md#552---persistent-contact-release-distance-311) - context: Caelum Argenteum — Consolidated history
-- Lines 5020-5044 - [5.5.1 - Combat dispatch extraction (#310, 2026-10-18)](HISTORY.md#551---combat-dispatch-extraction-310-2026-10-18) - context: Caelum Argenteum — Consolidated history
-- Lines 5045-5067 - [5.5.0 - Weapon/input audit (#309, 2026-10-18)](HISTORY.md#550---weaponinput-audit-309-2026-10-18) - context: Caelum Argenteum — Consolidated history
-- Lines 5068-5122 - [5.4.47 - Production maximum siege adrenaline (#361, 2026-10-18)](HISTORY.md#5447---production-maximum-siege-adrenaline-361-2026-10-18) - context: Caelum Argenteum — Consolidated history
-- Lines 5123-5164 - [5.4.46 - House entry and exit use Melt (#334, 2026-10-18)](HISTORY.md#5446---house-entry-and-exit-use-melt-334-2026-10-18) - context: Caelum Argenteum — Consolidated history
-- Lines 5165-5182 - [5.4.45 - Stop demon breath against technical route targets (#357, 2026-10-18)](HISTORY.md#5445---stop-demon-breath-against-technical-route-targets-357-2026-10-18) - context: Caelum Argenteum — Consolidated history
-- Lines 5183-5207 - [5.4.44 - Structural cache notification investigation (#354, 2026-10-18)](HISTORY.md#5444---structural-cache-notification-investigation-354-2026-10-18) - context: Caelum Argenteum — Consolidated history
-- Lines 5208-5243 - [5.4.43 - Production maintenance and target subscriptions (#353, 2026-10-18)](HISTORY.md#5443---production-maintenance-and-target-subscriptions-353-2026-10-18) - context: Caelum Argenteum — Consolidated history
-- Lines 5244-5275 - [5.4.42 - Staggered actor updates and siege focus trial (#318, 2026-10-18)](HISTORY.md#5442---staggered-actor-updates-and-siege-focus-trial-318-2026-10-18) - context: Caelum Argenteum — Consolidated history
-- Lines 5276-5304 - [5.4.41 - Individual siege workload controls (#318, 2026-10-18)](HISTORY.md#5441---individual-siege-workload-controls-318-2026-10-18) - context: Caelum Argenteum — Consolidated history
-- Lines 5305-5323 - [5.4.40 - Shared rest and acceleration safety (#325, 2026-10-18)](HISTORY.md#5440---shared-rest-and-acceleration-safety-325-2026-10-18) - context: Caelum Argenteum — Consolidated history
-- Lines 5324-5343 - [5.4.39 - Voluntary-jump wall cushioning (#339, 2026-10-18)](HISTORY.md#5439---voluntary-jump-wall-cushioning-339-2026-10-18) - context: Caelum Argenteum — Consolidated history
-- Lines 5344-5357 - [5.4.38 - Complete top-aligned map legend (#321, 2026-10-18)](HISTORY.md#5438---complete-top-aligned-map-legend-321-2026-10-18) - context: Caelum Argenteum — Consolidated history
-- Lines 5358-5373 - [5.4.37 - Current MAP03 attribution supplement (#318, 2026-10-18)](HISTORY.md#5437---current-map03-attribution-supplement-318-2026-10-18) - context: Caelum Argenteum — Consolidated history
-- Lines 5374-5397 - [5.4.36 - House-door presentation isolation (#334, 2026-10-18)](HISTORY.md#5436---house-door-presentation-isolation-334-2026-10-18) - context: Caelum Argenteum — Consolidated history
-- Lines 5398-5438 - [5.4.35 - Prisoner escort replacement (#322, 2026-10-18)](HISTORY.md#5435---prisoner-escort-replacement-322-2026-10-18) - context: Caelum Argenteum — Consolidated history
-- Lines 5439-5467 - [5.4.34 - Five-minute active-play autosaving (#324, 2026-10-17)](HISTORY.md#5434---five-minute-active-play-autosaving-324-2026-10-17) - context: Caelum Argenteum — Consolidated history
-- Lines 5468-5497 - [5.4.33 - Western sewer crusher sector isolation (#323, 2026-10-17)](HISTORY.md#5433---western-sewer-crusher-sector-isolation-323-2026-10-17) - context: Caelum Argenteum — Consolidated history
-- Lines 5498-5517 - [5.4.32 - Direct demon projectile aim (#320, 2026-10-17)](HISTORY.md#5432---direct-demon-projectile-aim-320-2026-10-17) - context: Caelum Argenteum — Consolidated history
-- Lines 5518-5539 - [5.4.31 - Collapsible map legend (#321, 2026-10-17)](HISTORY.md#5431---collapsible-map-legend-321-2026-10-17) - context: Caelum Argenteum — Consolidated history
-- Lines 5540-5559 - [5.4.30 - Sleeping bag quick-item access (#319, 2026-10-17)](HISTORY.md#5430---sleeping-bag-quick-item-access-319-2026-10-17) - context: Caelum Argenteum — Consolidated history
-- Lines 5560-5623 - [5.4.29 - Adopt low-sky MAP03 and staged normal siege (#327)](HISTORY.md#5429---adopt-low-sky-map03-and-staged-normal-siege-327) - context: Caelum Argenteum — Consolidated history
-- Lines 5624-5803 - [5.4.28 - Contact-only breath, MAP06 audit and scan policy (#318)](HISTORY.md#5428---contact-only-breath-map06-audit-and-scan-policy-318) - context: Caelum Argenteum — Consolidated history
-- Lines 5804-5828 - `5.4.27 - Normal-speed prisoner following (#307)` - context: Caelum Argenteum — Consolidated history
-- Lines 5829-5858 - [5.4.26 - Active climate-seal registry (#305)](HISTORY.md#5426---active-climate-seal-registry-305) - context: Caelum Argenteum — Consolidated history
-- Lines 5859-5898 - [5.4.25 - Siege profiling and corpse suspension (#304)](HISTORY.md#5425---siege-profiling-and-corpse-suspension-304) - context: Caelum Argenteum — Consolidated history
-- Lines 5899-5947 - [5.4.24 - Mandinga Fire, demon personalities and Zupay rock (#284, accepted)](HISTORY.md#5424---mandinga-fire-demon-personalities-and-zupay-rock-284-accepted) - context: Caelum Argenteum — Consolidated history
-- Lines 5948-6107 - [5.4.23 - Domingo 3D prototype (#283, 2026-10-15, accepted)](HISTORY.md#5423---domingo-3d-prototype-283-2026-10-15-accepted) - context: Caelum Argenteum — Consolidated history
-- Lines 6108-6134 - [5.4.22 - Quick-use selector (#282, 2026-10-15, accepted)](HISTORY.md#5422---quick-use-selector-282-2026-10-15-accepted) - context: Caelum Argenteum — Consolidated history
-- Lines 6135-6192 - [5.4.21 - Seal climate and presentation (#252, 2026-10-15, accepted)](HISTORY.md#5421---seal-climate-and-presentation-252-2026-10-15-accepted) - context: Caelum Argenteum — Consolidated history
-- Lines 6193-6221 - [5.4.20 - Investigator Arcane Cloud (#251, 2026-10-15, accepted)](HISTORY.md#5420---investigator-arcane-cloud-251-2026-10-15-accepted) - context: Caelum Argenteum — Consolidated history
-- Lines 6222-6240 - [#251 continuation on accepted 5.4.19 (2026-10-15, in progress)](HISTORY.md#251-continuation-on-accepted-5419-2026-10-15-in-progress) - context: Caelum Argenteum — Consolidated history
-- Lines 6241-6269 - [5.4.19 - Pilgrim Redemption (#250, 2026-10-15)](HISTORY.md#5419---pilgrim-redemption-250-2026-10-15) - context: Caelum Argenteum — Consolidated history
-- Lines 6270-6290 - [5.4.18 - Battle Mage Summoning (#249, 2026-10-15)](HISTORY.md#5418---battle-mage-summoning-249-2026-10-15) - context: Caelum Argenteum — Consolidated history
-- Lines 6291-6321 - [5.4.17 - Cleric Rally (#248, 2026-10-15)](HISTORY.md#5417---cleric-rally-248-2026-10-15) - context: Caelum Argenteum — Consolidated history
-- Lines 6322-6357 - [5.4.16 - Formation Breaker (#247, 2026-10-15)](HISTORY.md#5416---formation-breaker-247-2026-10-15) - context: Caelum Argenteum — Consolidated history
-- Lines 6358-6407 - [5.4.15 - Linear player acceleration component (#260, 2026-10-15)](HISTORY.md#5415---linear-player-acceleration-component-260-2026-10-15) - context: Caelum Argenteum — Consolidated history
-- Lines 6408-6435 - [5.4.14 - Mansion resident movement repair (#253, 2026-10-15)](HISTORY.md#5414---mansion-resident-movement-repair-253-2026-10-15) - context: Caelum Argenteum — Consolidated history
-- Lines 6436-6462 - [5.4.13 - Arcane Sun (#246, 2026-10-15)](HISTORY.md#5413---arcane-sun-246-2026-10-15) - context: Caelum Argenteum — Consolidated history
-- Lines 6463-6486 - [5.4.12 - Miracle (#245, 2026-10-15)](HISTORY.md#5412---miracle-245-2026-10-15) - context: Caelum Argenteum — Consolidated history
-- Lines 6487-6513 - [5.4.11 - Survival Instinct (#244, 2026-10-15)](HISTORY.md#5411---survival-instinct-244-2026-10-15) - context: Caelum Argenteum — Consolidated history
-- Lines 6514-6539 - [5.4.10 - Battle Cry (#243, 2026-10-15)](HISTORY.md#5410---battle-cry-243-2026-10-15) - context: Caelum Argenteum — Consolidated history
-- Lines 6540-6571 - [5.4.9 - Hunter's Instinct (#239, 2026-10-15)](HISTORY.md#549---hunters-instinct-239-2026-10-15) - context: Caelum Argenteum — Consolidated history
-- Lines 6572-6595 - [5.4.8 - Socialization (#240, 2026-10-14)](HISTORY.md#548---socialization-240-2026-10-14) - context: Caelum Argenteum — Consolidated history
-- Lines 6596-6632 - [5.4.7 - Telekinesis (#241, 2026-10-14)](HISTORY.md#547---telekinesis-241-2026-10-14) - context: Caelum Argenteum — Consolidated history
-- Lines 6633-6666 - [5.4.6 - Supernatural Breathing (#242, 2026-10-14)](HISTORY.md#546---supernatural-breathing-242-2026-10-14) - context: Caelum Argenteum — Consolidated history
-- Lines 6667-6690 - [5.4.5 - Arcane Cloud visual checkpoint (#251, 2026-10-14, in progress)](HISTORY.md#545---arcane-cloud-visual-checkpoint-251-2026-10-14-in-progress) - context: Caelum Argenteum — Consolidated history
-- Lines 6691-6839 - [5.4.4 - Class preparation checkpoint (#238, 2026-10-14, in progress)](HISTORY.md#544---class-preparation-checkpoint-238-2026-10-14-in-progress) - context: Caelum Argenteum — Consolidated history
-- Lines 6840-6875 - [5.4.3 - MAP02 rat movement and audio (#254, 2026-10-14)](HISTORY.md#543---map02-rat-movement-and-audio-254-2026-10-14) - context: Caelum Argenteum — Consolidated history
-- Lines 6876-6914 - [5.4.2 - Equipped-Seal resistances (#261, 2026-10-14)](HISTORY.md#542---equipped-seal-resistances-261-2026-10-14) - context: Caelum Argenteum — Consolidated history
-- Lines 6915-6942 - [5.4.1 - Weapon dispersion tiers (#259, 2026-10-14)](HISTORY.md#541---weapon-dispersion-tiers-259-2026-10-14) - context: Caelum Argenteum — Consolidated history
-- Lines 6943-6974 - [5.4.0 - Live attribute audit (#237, 2026-10-14)](HISTORY.md#540---live-attribute-audit-237-2026-10-14) - context: Caelum Argenteum — Consolidated history
-- Lines 6975-7019 - [5.3.9 - Exploration entry-point integration (#236, 2026-10-14)](HISTORY.md#539---exploration-entry-point-integration-236-2026-10-14) - context: Caelum Argenteum — Consolidated history
-- Lines 7020-7089 - [5.3.8 - Independent mission tracking (#235, 2026-10-14)](HISTORY.md#538---independent-mission-tracking-235-2026-10-14) - context: Caelum Argenteum — Consolidated history
-- Lines 7090-7190 - [5.3.7 - Authored map registrations (#234, 2026-10-14)](HISTORY.md#537---authored-map-registrations-234-2026-10-14) - context: Caelum Argenteum — Consolidated history
-- Lines 7191-7229 - [5.3.6 - Manual map notes (#233, 2026-10-14)](HISTORY.md#536---manual-map-notes-233-2026-10-14) - context: Caelum Argenteum — Consolidated history
-- Lines 7230-7259 - [5.3.5 - Known local POIs (#232, 2026-10-13)](HISTORY.md#535---known-local-pois-232-2026-10-13) - context: Caelum Argenteum — Consolidated history
-- Lines 7260-7280 - [5.3.4 - Native local cartography (#231), 2026-10-13](HISTORY.md#534---native-local-cartography-231-2026-10-13) - context: Caelum Argenteum — Consolidated history
-- Lines 7281-7308 - [5.3.3 - Exhaustion sleep (#258), 2026-10-13](HISTORY.md#533---exhaustion-sleep-258-2026-10-13) - context: Caelum Argenteum — Consolidated history
-- Lines 7309-7322 - [5.3.2 - Automatic provisions (#257), 2026-10-13](HISTORY.md#532---automatic-provisions-257-2026-10-13) - context: Caelum Argenteum — Consolidated history
-- Lines 7323-7337 - [5.3.1 - Character survival and defenses (#256), 2026-10-13](HISTORY.md#531---character-survival-and-defenses-256-2026-10-13) - context: Caelum Argenteum — Consolidated history
-- Lines 7338-7347 - [5.3.0 - Right-edge Seal/Tarot (#255), 2026-10-13](HISTORY.md#530---right-edge-sealtarot-255-2026-10-13) - context: Caelum Argenteum — Consolidated history
-- Lines 7348-7363 - [5.2.27 - Empty Magic Box mass (#229), 2026-10-13](HISTORY.md#5227---empty-magic-box-mass-229-2026-10-13) - context: Caelum Argenteum — Consolidated history
-- Lines 7364-7391 - [5.2.26 - Rest menu feedback (#227), 2026-10-13](HISTORY.md#5226---rest-menu-feedback-227-2026-10-13) - context: Caelum Argenteum — Consolidated history
-- Lines 7392-7420 - [5.2.25 - Staff dispersion (#222), 2026-10-13](HISTORY.md#5225---staff-dispersion-222-2026-10-13) - context: Caelum Argenteum — Consolidated history
-- Lines 7421-7446 - [5.2.24 - Missing Mandinga loot (#220), 2026-10-13](HISTORY.md#5224---missing-mandinga-loot-220-2026-10-13) - context: Caelum Argenteum — Consolidated history
-- Lines 7447-7472 - [5.2.23 - Sewer sleeping-bag acceleration (#219), 2026-10-13](HISTORY.md#5223---sewer-sleeping-bag-acceleration-219-2026-10-13) - context: Caelum Argenteum — Consolidated history
-- Lines 7473-7504 - [5.2.22 - Current menu controls (#215), 2026-10-12](HISTORY.md#5222---current-menu-controls-215-2026-10-12) - context: Caelum Argenteum — Consolidated history
-- Lines 7505-7523 - `5.2.21 - Visible tutorial gold (#216)` - context: Caelum Argenteum — Consolidated history
-- Lines 7524-7554 - [5.2.20 - Resource bar layout (#213), 2026-10-12](HISTORY.md#5220---resource-bar-layout-213-2026-10-12) - context: Caelum Argenteum — Consolidated history
-- Lines 7555-7587 - [5.2.19 - Landing capacity for impacts (#211), 2026-10-12](HISTORY.md#5219---landing-capacity-for-impacts-211-2026-10-12) - context: Caelum Argenteum — Consolidated history
-- Lines 7588-7622 - [5.2.18 - Modular animation and rest repairs (#209), 2026-10-12](HISTORY.md#5218---modular-animation-and-rest-repairs-209-2026-10-12) - context: Caelum Argenteum — Consolidated history
-- Lines 7623-7648 - [5.2.17 - MAP01 player remains alive at 1 HP (#207), 2026-10-12](HISTORY.md#5217---map01-player-remains-alive-at-1-hp-207-2026-10-12) - context: Caelum Argenteum — Consolidated history
-- Lines 7649-7681 - [5.2.16 - Accepted fullscreen cursor workaround (#204), 2026-10-12](HISTORY.md#5216---accepted-fullscreen-cursor-workaround-204-2026-10-12) - context: Caelum Argenteum — Consolidated history
-- Lines 7682-7713 - [5.2.15 - Native readability, crosshair and comfort (#150), 2026-10-12](HISTORY.md#5215---native-readability-crosshair-and-comfort-150-2026-10-12) - context: Caelum Argenteum — Consolidated history
-- Lines 7714-7749 - [5.2.14 - Native controls and synchronized hints (#149), 2026-10-12](HISTORY.md#5214---native-controls-and-synchronized-hints-149-2026-10-12) - context: Caelum Argenteum — Consolidated history
-- Lines 7750-7818 - [5.2.13 - Modular appearance, preview and hands (#148), 2026-10-11](HISTORY.md#5213---modular-appearance-preview-and-hands-148-2026-10-11) - context: Caelum Argenteum — Consolidated history
-- Lines 7819-7852 - [5.2.12 - Bull cushioning and finite resident combat (#195), 2026-10-11](HISTORY.md#5212---bull-cushioning-and-finite-resident-combat-195-2026-10-11) - context: Caelum Argenteum — Consolidated history
-- Lines 7853-7888 - [5.2.11 - Received collision energy and bilateral contact area (#194), 2026-10-11](HISTORY.md#5211---received-collision-energy-and-bilateral-contact-area-194-2026-10-11) - context: Caelum Argenteum — Consolidated history
-- Lines 7889-7923 - [5.2.10 - Ranged penetration amendment and shotgun names (#192), 2026-10-11](HISTORY.md#5210---ranged-penetration-amendment-and-shotgun-names-192-2026-10-11) - context: Caelum Argenteum — Consolidated history
-- Lines 7924-7963 - [5.2.9 - Personality, magical power and bell volley (#192), 2026-10-11](HISTORY.md#529---personality-magical-power-and-bell-volley-192-2026-10-11) - context: Caelum Argenteum — Consolidated history
-- Lines 7964-7992 - `5.2.8 - Mass-based Toughness and status resistance (#188)` - context: Caelum Argenteum — Consolidated history
-- Lines 7993-8030 - [5.2.7 - Native menu migration (#189), 2026-10-11](HISTORY.md#527---native-menu-migration-189-2026-10-11) - context: Caelum Argenteum — Consolidated history
-- Lines 8031-8056 - [5.2.6 - Pointer interaction in card/crafting/time menus (#184), 2026-10-11](HISTORY.md#526---pointer-interaction-in-cardcraftingtime-menus-184-2026-10-11) - context: Caelum Argenteum — Consolidated history
-- Lines 8057-8085 - [5.2.5 - Indexed NPC dialogue and LANGUAGE sources (#185), 2026-10-11](HISTORY.md#525---indexed-npc-dialogue-and-language-sources-185-2026-10-11) - context: Caelum Argenteum — Consolidated history
-- Lines 8086-8118 - [5.2.4 - Profession onboarding and MAP02 supplies (#183), 2026-10-11](HISTORY.md#524---profession-onboarding-and-map02-supplies-183-2026-10-11) - context: Caelum Argenteum — Consolidated history
-- Lines 8119-8143 - [5.2.3 - Mandinga friendly-fire retaliation (#180), 2026-10-11](HISTORY.md#523---mandinga-friendly-fire-retaliation-180-2026-10-11) - context: Caelum Argenteum — Consolidated history
-- Lines 8144-8164 - [5.2.2 - Accelerate multi-day time skipping (#178), 2026-10-11](HISTORY.md#522---accelerate-multi-day-time-skipping-178-2026-10-11) - context: Caelum Argenteum — Consolidated history
-- Lines 8165-8194 - [5.2.1 - Tutorial equipment, provisions and portable rest (#177), 2026-10-11](HISTORY.md#521---tutorial-equipment-provisions-and-portable-rest-177-2026-10-11) - context: Caelum Argenteum — Consolidated history
-- Lines 8195-8234 - [5.2.0 - Unified saved identity and native settings (#147), 2026-10-11](HISTORY.md#520---unified-saved-identity-and-native-settings-147-2026-10-11) - context: Caelum Argenteum — Consolidated history
-- Lines 8235-8262 - [5.1.20 - MAP06 doors and peaceful time skip (#173), 2026-10-10](HISTORY.md#5120---map06-doors-and-peaceful-time-skip-173-2026-10-10) - context: Caelum Argenteum — Consolidated history
-- Lines 8263-8277 - [5.1.19 - Hide seen NPC information (#172), 2026-10-10](HISTORY.md#5119---hide-seen-npc-information-172-2026-10-10) - context: Caelum Argenteum — Consolidated history
-- Lines 8278-8305 - [5.1.18 - MAP01 gifts and Bull checkpoint (#164), 2026-10-10](HISTORY.md#5118---map01-gifts-and-bull-checkpoint-164-2026-10-10) - context: Caelum Argenteum — Consolidated history
-- Lines 8306-8319 - [5.1.17 - Medikit names (#169), 2026-10-10](HISTORY.md#5117---medikit-names-169-2026-10-10) - context: Caelum Argenteum — Consolidated history
-- Lines 8320-8354 - [5.1.16 - Recoverable bolas (#163), 2026-10-10](HISTORY.md#5116---recoverable-bolas-163-2026-10-10) - context: Caelum Argenteum — Consolidated history
-- Lines 8355-8394 - [5.1.15 - Bronze utility staff and wand names (#162, 2026-10-10)](HISTORY.md#5115---bronze-utility-staff-and-wand-names-162-2026-10-10) - context: Caelum Argenteum — Consolidated history
-- Lines 8395-8433 - [5.1.14 - Damage flash across map travel (#165, 2026-10-10)](HISTORY.md#5114---damage-flash-across-map-travel-165-2026-10-10) - context: Caelum Argenteum — Consolidated history
-- Lines 8434-8467 - [5.1.13 - Argento silver-key handoff (#160, 2026-10-10)](HISTORY.md#5113---argento-silver-key-handoff-160-2026-10-10) - context: Caelum Argenteum — Consolidated history
-- Lines 8468-8503 - [5.1.12 - Preserve crafting equipment size (#158, 2026-10-10)](HISTORY.md#5112---preserve-crafting-equipment-size-158-2026-10-10) - context: Caelum Argenteum — Consolidated history
-- Lines 8504-8529 - [5.1.11 - Time-skip letter controls (#156, 2026-10-10)](HISTORY.md#5111---time-skip-letter-controls-156-2026-10-10) - context: Caelum Argenteum — Consolidated history
-- Lines 8530-8563 - [5.1.10 — SI physics, growth curves and migration (#154, 2026-10-09)](HISTORY.md#5110--si-physics-growth-curves-and-migration-154-2026-10-09) - context: Caelum Argenteum — Consolidated history
-- Lines 8564-8619 - [5.1.9 - Shotgun pickup, grip and held aim correction (#152, 2026-10-09)](HISTORY.md#519---shotgun-pickup-grip-and-held-aim-correction-152-2026-10-09) - context: Caelum Argenteum — Consolidated history
-- Lines 8620-8667 - [5.1.8 - Elemental VFX, flying models and screen feedback (#137, 2026-10-09)](HISTORY.md#518---elemental-vfx-flying-models-and-screen-feedback-137-2026-10-09) - context: Caelum Argenteum — Consolidated history
-- Lines 8668-8775 - [5.1.7 - Shortbow becomes a modular double-barrel shotgun (#136, 2026-10-08)](HISTORY.md#517---shortbow-becomes-a-modular-double-barrel-shotgun-136-2026-10-08) - context: Caelum Argenteum — Consolidated history
-- Lines 8776-8817 - [5.1.6 - Soldier crouched carbine aim (#143, 2026-10-08)](HISTORY.md#516---soldier-crouched-carbine-aim-143-2026-10-08) - context: Caelum Argenteum — Consolidated history
-- Lines 8818-8868 - [5.1.5 - Demon breath and finite potions (#135, 2026-10-08)](HISTORY.md#515---demon-breath-and-finite-potions-135-2026-10-08) - context: Caelum Argenteum — Consolidated history
-- Lines 8869-8939 - [5.1.4 - Cached thermal physiology and breathing (#140, 2026-10-08)](HISTORY.md#514---cached-thermal-physiology-and-breathing-140-2026-10-08) - context: Caelum Argenteum — Consolidated history
-- Lines 8940-9021 - [5.1.3 - Port interiors, commerce and deployment (#133, 2026-10-08)](HISTORY.md#513---port-interiors-commerce-and-deployment-133-2026-10-08) - context: Caelum Argenteum — Consolidated history
-- Lines 9022-9049 - [5.1.2 - Staged siege experiment (#132, 2026-10-07)](HISTORY.md#512---staged-siege-experiment-132-2026-10-07) - context: Caelum Argenteum — Consolidated history
-- Lines 9050-9091 - [5.1.1 - Thermal HUD, attributes and journey climate (#131, 2026-10-07)](HISTORY.md#511---thermal-hud-attributes-and-journey-climate-131-2026-10-07) - context: Caelum Argenteum — Consolidated history
-- Lines 9092-9134 - [5.1.0 — Thermal survival (#130, 2026-10-07)](HISTORY.md#510--thermal-survival-130-2026-10-07) - context: Caelum Argenteum — Consolidated history
-- Lines 9135-9180 - [5.0.6 — Automatic normal high-density AI (#128, 2026-10-07)](HISTORY.md#506--automatic-normal-high-density-ai-128-2026-10-07) - context: Caelum Argenteum — Consolidated history
-- Lines 9181-9252 - [5.0.5 — Siege profiling and combined diagnostic experiments (#121, 2026-10-07)](HISTORY.md#505--siege-profiling-and-combined-diagnostic-experiments-121-2026-10-07) - context: Caelum Argenteum — Consolidated history
-- Lines 9253-9330 - [5.0.4 — Per-player authority and integrated closure (#120, 2026-10-06)](HISTORY.md#504--per-player-authority-and-integrated-closure-120-2026-10-06) - context: Caelum Argenteum — Consolidated history
-- Lines 9331-9385 - [5.0.3 — Tarot domain service (#119, 2026-10-06)](HISTORY.md#503--tarot-domain-service-119-2026-10-06) - context: Caelum Argenteum — Consolidated history
-- Lines 9386-9435 - [5.0.2 — Inventory/equipment service (#118, 2026-10-06)](HISTORY.md#502--inventoryequipment-service-118-2026-10-06) - context: Caelum Argenteum — Consolidated history
-- Lines 9436-9480 - [5.0.1 — Compatible player character/resource adapters (#117, 2026-10-06)](HISTORY.md#501--compatible-player-characterresource-adapters-117-2026-10-06) - context: Caelum Argenteum — Consolidated history
-- Lines 9481-9518 - [5.0.0 — Dependency/state audit and first presentation extraction (#116, 2026-10-06)](HISTORY.md#500--dependencystate-audit-and-first-presentation-extraction-116-2026-10-06) - context: Caelum Argenteum — Consolidated history
-- Lines 9519-9589 - [4.37.24 — Final V4.37 integration and portable export (#82)](HISTORY.md#43724--final-v437-integration-and-portable-export-82) - context: Caelum Argenteum — Consolidated history
-- Lines 9590-9634 - [4.37.23 - Contextual creation and combined profession choices (#112)](HISTORY.md#43723---contextual-creation-and-combined-profession-choices-112) - context: Caelum Argenteum — Consolidated history
-- Lines 9635-9684 - [4.37.22 - Kite, tower and magic first-person shields (#106)](HISTORY.md#43722---kite-tower-and-magic-first-person-shields-106) - context: Caelum Argenteum — Consolidated history
-- Lines 9685-9750 - [4.37.21 - Narrative artwork, single-page introduction and farewell (#103)](HISTORY.md#43721---narrative-artwork-single-page-introduction-and-farewell-103) - context: Caelum Argenteum — Consolidated history
-- Lines 9751-9786 - [4.37.20 - Textured training dummy model (#98)](HISTORY.md#43720---textured-training-dummy-model-98) - context: Caelum Argenteum — Consolidated history
-- Lines 9787-9823 - [4.37.19 - Palomo necklace reward and shield naming (#96)](HISTORY.md#43719---palomo-necklace-reward-and-shield-naming-96) - context: Caelum Argenteum — Consolidated history
-- Lines 9824-9863 - [4.37.18 - Crafting browser and three Tarot effect fields (#91)](HISTORY.md#43718---crafting-browser-and-three-tarot-effect-fields-91) - context: Caelum Argenteum — Consolidated history
-- Lines 9864-9903 - [4.37.17 - Pickaxe and successful extraction feedback (#89)](HISTORY.md#43717---pickaxe-and-successful-extraction-feedback-89) - context: Caelum Argenteum — Consolidated history
-- Lines 9904-9942 - [4.37.16 - Add compass and project menu pointers (#87)](HISTORY.md#43716---add-compass-and-project-menu-pointers-87) - context: Caelum Argenteum — Consolidated history
-- Lines 9943-9964 - [4.37.15 - Add traditional Truco ranked mode (#101)](HISTORY.md#43715---add-traditional-truco-ranked-mode-101) - context: Caelum Argenteum — Consolidated history
-- Lines 9965-9979 - [4.37.14a - Move Argento practice to the end (#99)](HISTORY.md#43714a---move-argento-practice-to-the-end-99) - context: Caelum Argenteum — Consolidated history
-- Lines 9980-10003 - [4.37.14 - Give the deck at Palomo's first upstairs conversation (#97)](HISTORY.md#43714---give-the-deck-at-palomos-first-upstairs-conversation-97) - context: Caelum Argenteum — Consolidated history
-- Lines 10004-10021 - [4.37.13a - Show the crafting time-skip shortcut (#93)](HISTORY.md#43713a---show-the-crafting-time-skip-shortcut-93) - context: Caelum Argenteum — Consolidated history
-- Lines 10022-10082 - [4.37.13 — Complete Trucazo practice against Argento (#81)](HISTORY.md#43713--complete-trucazo-practice-against-argento-81) - context: Caelum Argenteum — Consolidated history
-- Lines 10083-10134 - `4.37.12 — Campaign Tarot powers and physical deck (#80)` - context: Caelum Argenteum — Consolidated history
-- Lines 10135-10209 - [4.37.11 — Barracas al Sud recognizes its amnesiac captain (#79)](HISTORY.md#43711--barracas-al-sud-recognizes-its-amnesiac-captain-79) - context: Caelum Argenteum — Consolidated history
-- Lines 10210-10268 - [4.37.10 — Prisoner intelligence after the Barracas al Sud reward (#78)](HISTORY.md#43710--prisoner-intelligence-after-the-barracas-al-sud-reward-78) - context: Caelum Argenteum — Consolidated history
-- Lines 10269-10412 - [4.37.9 — Expand fortified Barracas al Sud (#77)](HISTORY.md#4379--expand-fortified-barracas-al-sud-77) - context: Caelum Argenteum — Consolidated history
-- Lines 10413-10457 - [First city iteration — superseded geometry, retained evidence](HISTORY.md#first-city-iteration--superseded-geometry-retained-evidence) - context: Caelum Argenteum — Consolidated history > 4.37.9 — Expand fortified Barracas al Sud (#77)
-- Lines 10458-10514 - [4.37.8 — Correct MAP02 material ledger and verify finite supplies (#75)](HISTORY.md#4378--correct-map02-material-ledger-and-verify-finite-supplies-75) - context: Caelum Argenteum — Consolidated history
-- Lines 10515-10566 - [4.37.7 — Six flooded pit returns and central elevator (#74)](HISTORY.md#4377--six-flooded-pit-returns-and-central-elevator-74) - context: Caelum Argenteum — Consolidated history
-- Lines 10567-10616 - [4.37.6 — Central MAP02 and local progression carriers (#73)](HISTORY.md#4376--central-map02-and-local-progression-carriers-73) - context: Caelum Argenteum — Consolidated history
-- Lines 10617-10652 - [4.37.5 — Daily mansion food and water (#65)](HISTORY.md#4375--daily-mansion-food-and-water-65) - context: Caelum Argenteum — Consolidated history
-- Lines 10653-10683 - [4.37.4 — Explicit time skip and frozen exterior calendar (#64)](HISTORY.md#4374--explicit-time-skip-and-frozen-exterior-calendar-64) - context: Caelum Argenteum — Consolidated history
-- Lines 10684-10741 - [4.37.3 — Palomo equipment plan and retained owned equipment (#63)](HISTORY.md#4373--palomo-equipment-plan-and-retained-owned-equipment-63) - context: Caelum Argenteum — Consolidated history
-- Lines 10742-10779 - [4.37.2 — Tenfold reduction of magic-weapon Anima bases (#68)](HISTORY.md#4372--tenfold-reduction-of-magic-weapon-anima-bases-68) - context: Caelum Argenteum — Consolidated history
-- Lines 10780-10820 - [4.37.1 — Caella's shared training-dummy exercises (#62)](HISTORY.md#4371--caellas-shared-training-dummy-exercises-62) - context: Caelum Argenteum — Consolidated history
-- Lines 10821-10993 - [4.37.0 — Rolling mansion grounds and filled door tympana (#61)](HISTORY.md#4370--rolling-mansion-grounds-and-filled-door-tympana-61) - context: Caelum Argenteum — Consolidated history
-- Lines 10994-11068 - [4.36.28 — Verify and export the complete three-map test build (#17)](HISTORY.md#43628--verify-and-export-the-complete-three-map-test-build-17) - context: Caelum Argenteum — Consolidated history
-- Lines 11069-11127 - [4.36.27 — Complete third campaign map (#16)](HISTORY.md#43627--complete-third-campaign-map-16) - context: Caelum Argenteum — Consolidated history
-- Lines 11128-11172 - [4.36.26 — Attack clock, durability and thrusts (#37)](HISTORY.md#43626--attack-clock-durability-and-thrusts-37) - context: Caelum Argenteum — Consolidated history
-- Lines 11173-11314 - [4.36.25 — Mansion enclosure and architectural detail (#36)](HISTORY.md#43625--mansion-enclosure-and-architectural-detail-36) - context: Caelum Argenteum — Consolidated history
-- Lines 11315-11325 - `4.36.24a — Proprietary rights notice (#55)` - context: Caelum Argenteum — Consolidated history
-- Lines 11326-11352 - [4.36.24 — Active and completed quest journal (#35)](HISTORY.md#43624--active-and-completed-quest-journal-35) - context: Caelum Argenteum — Consolidated history
-- Lines 11353-11395 - [4.36.23 — Additive body/equipment armor after Toughness (#52)](HISTORY.md#43623--additive-bodyequipment-armor-after-toughness-52) - context: Caelum Argenteum — Consolidated history
-- Lines 11396-11428 - [4.36.22 — Palomo, Selene and port narrative (#34)](HISTORY.md#43622--palomo-selene-and-port-narrative-34) - context: Caelum Argenteum — Consolidated history
-- Lines 11429-11453 - [Same-patch MAP02 freeze correction, 2026-09-27](HISTORY.md#same-patch-map02-freeze-correction-2026-09-27) - context: Caelum Argenteum — Consolidated history > 4.36.22 — Palomo, Selene and port narrative (#34)
-- Lines 11454-11481 - [Same-patch legacy dialogue restoration, 2026-09-27](HISTORY.md#same-patch-legacy-dialogue-restoration-2026-09-27) - context: Caelum Argenteum — Consolidated history > 4.36.22 — Palomo, Selene and port narrative (#34)
-- Lines 11482-11492 - [Author acceptance, 2026-09-27](HISTORY.md#author-acceptance-2026-09-27) - context: Caelum Argenteum — Consolidated history > 4.36.22 — Palomo, Selene and port narrative (#34)
-- Lines 11493-11520 - [4.36.21 — Scenery adrenaline and running absorption (#49)](HISTORY.md#43621--scenery-adrenaline-and-running-absorption-49) - context: Caelum Argenteum — Consolidated history
-- Lines 11521-11572 - [4.36.20 — Shared Arcana capture and sewer escape (#33)](HISTORY.md#43620--shared-arcana-capture-and-sewer-escape-33) - context: Caelum Argenteum — Consolidated history
-- Lines 11573-11625 - [4.36.19 — Final author-approved siege balance (#21)](HISTORY.md#43619--final-author-approved-siege-balance-21) - context: Caelum Argenteum — Consolidated history
-- Lines 11626-11654 - `4.36.18 — Walking wall-impact absorption (#43)` - context: Caelum Argenteum — Consolidated history
-- Lines 11655-11700 - [4.36.17 — Cannon firing and physical contacts (#21; planned label 4.36.13)](HISTORY.md#43617--cannon-firing-and-physical-contacts-21-planned-label-43613) - context: Caelum Argenteum — Consolidated history
-- Lines 11701-11746 - [4.36.16 — Operational demonic rams (#20; planned label 4.36.12)](HISTORY.md#43616--operational-demonic-rams-20-planned-label-43612) - context: Caelum Argenteum — Consolidated history
-- Lines 11747-11826 - `4.36.15 — Breakable actor gates (#19; planned label 4.36.11)` - context: Caelum Argenteum — Consolidated history
-- Lines 11827-11874 - [4.36.14a — Refine siege models and separate gate materials (#18 follow-up)](HISTORY.md#43614a--refine-siege-models-and-separate-gate-materials-18-follow-up) - context: Caelum Argenteum — Consolidated history
-- Lines 11875-11915 - [4.36.14 — Pain sounds, dialogue cue, map music and story intermissions (#31)](HISTORY.md#43614--pain-sounds-dialogue-cue-map-music-and-story-intermissions-31) - context: Caelum Argenteum — Consolidated history
-- Lines 11916-11942 - `4.36.10 — Reusable siege preview assets (#18)` - context: Caelum Argenteum — Consolidated history
-- Lines 11943-11976 - [4.36.9 — Approved Tarot fronts and collection bindings (#15)](HISTORY.md#4369--approved-tarot-fronts-and-collection-bindings-15) - context: Caelum Argenteum — Consolidated history
-- Lines 11977-12080 - `4.36.8 — Prisoner rescue, escort and port rewards (#14)` - context: Caelum Argenteum — Consolidated history
-- Lines 12081-12127 - [4.36.7 — Recolored prisoner appearances (#13)](HISTORY.md#4367--recolored-prisoner-appearances-13) - context: Caelum Argenteum — Consolidated history
-- Lines 12128-12157 - `4.36.6 — Hostile sewer rats (#12)` - context: Caelum Argenteum — Consolidated history
-- Lines 12158-12163 - `4.36.5a — Selective file reading for agents (#29)` - context: Caelum Argenteum — Consolidated history
-- Lines 12164-12182 - `Implemented scope and decisions` - context: Caelum Argenteum — Consolidated history > 4.36.5a — Selective file reading for agents (#29)
-- Lines 12183-12194 - `Executed verification` - context: Caelum Argenteum — Consolidated history > 4.36.5a — Selective file reading for agents (#29)
-- Lines 12195-12266 - [4.36.5 — Four-section sewer, keyed cells and repair refuges (#11)](HISTORY.md#4365--four-section-sewer-keyed-cells-and-repair-refuges-11) - context: Caelum Argenteum — Consolidated history
-- Lines 12267-12334 - [4.36.4 — MAP02 T1 loot, recipient sizing and acquisition feedback (#10)](HISTORY.md#4364--map02-t1-loot-recipient-sizing-and-acquisition-feedback-10) - context: Caelum Argenteum — Consolidated history
-- Lines 12335-12386 - [4.36.3 — Additional counterclockwise flail rotation (issue #9)](HISTORY.md#4363--additional-counterclockwise-flail-rotation-issue-9) - context: Caelum Argenteum — Consolidated history
-- Lines 12387-12390 - [4.36.2 — Bow first-use composition stall (issue #8)](HISTORY.md#4362--bow-first-use-composition-stall-issue-8) - context: Caelum Argenteum — Consolidated history
-- Lines 12391-12409 - [Cause and correction](HISTORY.md#cause-and-correction) - context: Caelum Argenteum — Consolidated history > 4.36.2 — Bow first-use composition stall (issue #8)
-- Lines 12410-12463 - [Verification and acceptance](HISTORY.md#verification-and-acceptance) - context: Caelum Argenteum — Consolidated history > 4.36.2 — Bow first-use composition stall (issue #8)
-- Lines 12464-12482 - [Author environmental-scope clarification — 2026-09-23](HISTORY.md#author-environmental-scope-clarification--2026-09-23) - context: Caelum Argenteum — Consolidated history > 4.36.2 — Bow first-use composition stall (issue #8)
-- Lines 12483-12488 - `4.36.1b — Engineering guides and long-document index` - context: Caelum Argenteum — Consolidated history
-- Lines 12489-12508 - `Implemented scope and decisions` - context: Caelum Argenteum — Consolidated history > 4.36.1b — Engineering guides and long-document index
-- Lines 12509-12519 - `Executed verification` - context: Caelum Argenteum — Consolidated history > 4.36.1b — Engineering guides and long-document index
-- Lines 12520-12525 - [4.36.1 — English documentation and repository-owned acceptance workflow](HISTORY.md#4361--english-documentation-and-repository-owned-acceptance-workflow) - context: Caelum Argenteum — Consolidated history
-- Lines 12526-12562 - `Implemented scope and decisions` - context: Caelum Argenteum — Consolidated history > 4.36.1 — English documentation and repository-owned acceptance workflow
-- Lines 12563-12587 - [Author roadmap and usage request — 2026-09-23](HISTORY.md#author-roadmap-and-usage-request--2026-09-23) - context: Caelum Argenteum — Consolidated history > 4.36.1 — English documentation and repository-owned acceptance workflow
-- Lines 12588-12606 - [Further author clarification — 2026-09-23](HISTORY.md#further-author-clarification--2026-09-23) - context: Caelum Argenteum — Consolidated history > 4.36.1 — English documentation and repository-owned acceptance workflow
-- Lines 12607-12622 - [Prisoner reward clarification — 2026-09-23](HISTORY.md#prisoner-reward-clarification--2026-09-23) - context: Caelum Argenteum — Consolidated history > 4.36.1 — English documentation and repository-owned acceptance workflow
-- Lines 12623-12657 - `Executed verification` - context: Caelum Argenteum — Consolidated history > 4.36.1 — English documentation and repository-owned acceptance workflow
-- Lines 12658-12679 - [Engine verification and author acceptance](HISTORY.md#engine-verification-and-author-acceptance) - context: Caelum Argenteum — Consolidated history > 4.36.1 — English documentation and repository-owned acceptance workflow
-- Lines 12680-12703 - [4.36.0i — approved weight, provisions and complete maze](HISTORY.md#4360i--approved-weight-provisions-and-complete-maze) - context: Caelum Argenteum — Consolidated history
-- Lines 12704-12744 - [Author acceptance recorded on 2026-09-23](HISTORY.md#author-acceptance-recorded-on-2026-09-23) - context: Caelum Argenteum — Consolidated history > 4.36.0i — approved weight, provisions and complete maze
-- Lines 12745-12764 - [4.36.0h — 90° rotation, specified mask and percentage damage](HISTORY.md#4360h--90-rotation-specified-mask-and-percentage-damage) - context: Caelum Argenteum — Consolidated history
-- Lines 12765-12783 - [4.36.0g — corrections after the 0f review](HISTORY.md#4360g--corrections-after-the-0f-review) - context: Caelum Argenteum — Consolidated history
-- Lines 12784-12808 - [4.36.0f — native rotation, bow grip and fast rock](HISTORY.md#4360f--native-rotation-bow-grip-and-fast-rock) - context: Caelum Argenteum — Consolidated history
-- Lines 12809-12836 - `4.36.0e — corrections requested after testing 0d` - context: Caelum Argenteum — Consolidated history
-- Lines 12837-12863 - [4.36.0d — grips, fists and gallery reset (2026-09-17)](HISTORY.md#4360d--grips-fists-and-gallery-reset-2026-09-17) - context: Caelum Argenteum — Consolidated history
-- Lines 12864-12883 - [4.36.0c — views, sounds and mechanism review (2026-09-17)](HISTORY.md#4360c--views-sounds-and-mechanism-review-2026-09-17) - context: Caelum Argenteum — Consolidated history
-- Lines 12884-12903 - [4.36.0b — mechanisms and approved traps (2026-09-17)](HISTORY.md#4360b--mechanisms-and-approved-traps-2026-09-17) - context: Caelum Argenteum — Consolidated history
-- Lines 12904-12918 - [4.36.0a — trapdoor and physical rocks (2026-09-17)](HISTORY.md#4360a--trapdoor-and-physical-rocks-2026-09-17) - context: Caelum Argenteum — Consolidated history
-- Lines 12919-12932 - [4.35.0q — sprites v4 and one-third eating rate (2026-09-17)](HISTORY.md#4350q--sprites-v4-and-one-third-eating-rate-2026-09-17) - context: Caelum Argenteum — Consolidated history
-- Lines 12933-12945 - [4.35.0p — reservation and coastal transport (2026-09-17)](HISTORY.md#4350p--reservation-and-coastal-transport-2026-09-17) - context: Caelum Argenteum — Consolidated history
-- Lines 12946-12961 - [4.35.0o — monthly calendar and events (2026-09-17)](HISTORY.md#4350o--monthly-calendar-and-events-2026-09-17) - context: Caelum Argenteum — Consolidated history
-- Lines 12962-12978 - [4.35.0n — travel, rest and provisions (2026-09-17)](HISTORY.md#4350n--travel-rest-and-provisions-2026-09-17) - context: Caelum Argenteum — Consolidated history
-- Lines 12979-12997 - [4.35.0m — food by mass, port and coast (2026-09-17)](HISTORY.md#4350m--food-by-mass-port-and-coast-2026-09-17) - context: Caelum Argenteum — Consolidated history
-- Lines 12998-13014 - [4.35.0l — Climate regions, water and chairs (2026-09-17)](HISTORY.md#4350l--climate-regions-water-and-chairs-2026-09-17) - context: Caelum Argenteum — Consolidated history
-- Lines 13015-13036 - [4.35.0k — local climate status and consultation (2026-09-16)](HISTORY.md#4350k--local-climate-status-and-consultation-2026-09-16) - context: Caelum Argenteum — Consolidated history
-- Lines 13037-13061 - [4.35.0j — local time, slow meals, Use and class area (2026-09-16)](HISTORY.md#4350j--local-time-slow-meals-use-and-class-area-2026-09-16) - context: Caelum Argenteum — Consolidated history
-- Lines 13062-13078 - [4.35.0i — 0h corrections and Limbo acceleration (2026-09-16)](HISTORY.md#4350i--0h-corrections-and-limbo-acceleration-2026-09-16) - context: Caelum Argenteum — Consolidated history
-- Lines 13079-13101 - [4.35.0h — automatic meals and furnished mansion (2026-09-16)](HISTORY.md#4350h--automatic-meals-and-furnished-mansion-2026-09-16) - context: Caelum Argenteum — Consolidated history
-- Lines 13102-13121 - [4.35.0g — Fast-forward, tables and sleep (2026-09-16)](HISTORY.md#4350g--fast-forward-tables-and-sleep-2026-09-16) - context: Caelum Argenteum — Consolidated history
-- Lines 13122-13149 - [4.35.0f — Sleeping bag and comfort (2026-09-16)](HISTORY.md#4350f--sleeping-bag-and-comfort-2026-09-16) - context: Caelum Argenteum — Consolidated history
-- Lines 13150-13174 - [4.35.0e — chairs, cots and rest camera (2026-09-16)](HISTORY.md#4350e--chairs-cots-and-rest-camera-2026-09-16) - context: Caelum Argenteum — Consolidated history
-- Lines 13175-13189 - [4.35.0d1 — GZDoom 4.14.2 start repair (2026-09-15)](HISTORY.md#4350d1--gzdoom-4142-start-repair-2026-09-15) - context: Caelum Argenteum — Consolidated history
-- Lines 13190-13211 - [4.35.0d — rest and wait at normal scale (2026-09-15)](HISTORY.md#4350d--rest-and-wait-at-normal-scale-2026-09-15) - context: Caelum Argenteum — Consolidated history
-- Lines 13212-13230 - [4.35.0c — campaign start and Limbo timeless (2026-09-15)](HISTORY.md#4350c--campaign-start-and-limbo-timeless-2026-09-15) - context: Caelum Argenteum — Consolidated history
-- Lines 13231-13247 - [4.35.0b — calendar and dialogues without pause (2026-09-14)](HISTORY.md#4350b--calendar-and-dialogues-without-pause-2026-09-14) - context: Caelum Argenteum — Consolidated history
-- Lines 13248-13264 - [4.35.0a — persistent global clock (2026-09-14)](HISTORY.md#4350a--persistent-global-clock-2026-09-14) - context: Caelum Argenteum — Consolidated history
-- Lines 13265-13282 - [4.34.0e — stations and supplies for travel testing (2026-09-14)](HISTORY.md#4340e--stations-and-supplies-for-travel-testing-2026-09-14) - context: Caelum Argenteum — Consolidated history
-- Lines 13283-13299 - [4.34.0d — caravan base and persistent travel cycle (2026-09-14)](HISTORY.md#4340d--caravan-base-and-persistent-travel-cycle-2026-09-14) - context: Caelum Argenteum — Consolidated history
-- Lines 13300-13323 - [Test sewers connected — 4.34.0c](HISTORY.md#test-sewers-connected--4340c) - context: Caelum Argenteum — Consolidated history
-- Lines 13324-13346 - [Grouped doors and independent test key — 4.34.0b](HISTORY.md#grouped-doors-and-independent-test-key--4340b) - context: Caelum Argenteum — Consolidated history
-- Lines 13347-13370 - [Initial world and test export before V5 — 4.34.0a](HISTORY.md#initial-world-and-test-export-before-v5--4340a) - context: Caelum Argenteum — Consolidated history
-- Lines 13371-13394 - [Integration of 4.33 and remaining roadmap — 4.33.0ao](HISTORY.md#integration-of-433-and-remaining-roadmap--4330ao) - context: Caelum Argenteum — Consolidated history
-- Lines 13395-13418 - [Reusable Reputation Conditions — 4.33.0an](HISTORY.md#reusable-reputation-conditions--4330an) - context: Caelum Argenteum — Consolidated history
-- Lines 13419-13444 - [Journal Inactive Conversation and Boundary Navigation — 4.33.0am](HISTORY.md#journal-inactive-conversation-and-boundary-navigation--4330am) - context: Caelum Argenteum — Consolidated history
-- Lines 13445-13467 - [Filters, Single Mission and Capture Diagnosis — 4.33.0al](HISTORY.md#filters-single-mission-and-capture-diagnosis--4330al) - context: Caelum Argenteum — Consolidated history
-- Lines 13468-13496 - [Seal infrastructure, capture and navigation — 4.33.0ak](HISTORY.md#seal-infrastructure-capture-and-navigation--4330ak) - context: Caelum Argenteum — Consolidated history
-- Lines 13497-13520 - [Optional mission base and test chain — 4.33.0aj](HISTORY.md#optional-mission-base-and-test-chain--4330aj) - context: Caelum Argenteum — Consolidated history
-- Lines 13521-13542 - [Resilience, regeneration costs and attribute audit — 4.33.0ai](HISTORY.md#resilience-regeneration-costs-and-attribute-audit--4330ai) - context: Caelum Argenteum — Consolidated history
-- Lines 13543-13561 - [Survival with Type 4 divisors and restored critical states — 4.33.0ah](HISTORY.md#survival-with-type-4-divisors-and-restored-critical-states--4330ah) - context: Caelum Argenteum — Consolidated history
-- Lines 13562-13577 - [Hydration correction, sips and positive Thirst — 4.33.0ag](HISTORY.md#hydration-correction-sips-and-positive-thirst--4330ag) - context: Caelum Argenteum — Consolidated history
-- Lines 13578-13592 - [Containers, choice of accessories and quotas — 4.33.0af](HISTORY.md#containers-choice-of-accessories-and-quotas--4330af) - context: Caelum Argenteum — Consolidated history
-- Lines 13593-13610 - [Teaching and Seal allowances T1 — 4.33.0ae (approved)](HISTORY.md#teaching-and-seal-allowances-t1--4330ae-approved) - context: Caelum Argenteum — Consolidated history
-- Lines 13611-13624 - [Chosen armor and quotas to 100% — 4.33.0ad (approved)](HISTORY.md#chosen-armor-and-quotas-to-100--4330ad-approved) - context: Caelum Argenteum — Consolidated history
-- Lines 13625-13636 - [Crossbow bolts — 4.33.0ac](HISTORY.md#crossbow-bolts--4330ac) - context: Caelum Argenteum — Consolidated history
-- Lines 13637-13647 - [Swimming pool breathing — 4.33.0ab](HISTORY.md#swimming-pool-breathing--4330ab) - context: Caelum Argenteum — Consolidated history
-- Lines 13648-13667 - [Minor Arcana passives, sweeps and dividers — 4.33.0aa](HISTORY.md#minor-arcana-passives-sweeps-and-dividers--4330aa) - context: Caelum Argenteum — Consolidated history
-- Lines 13668-13676 - [Load and close observations — 4.33.0z](HISTORY.md#load-and-close-observations--4330z) - context: Caelum Argenteum — Consolidated history
-- Lines 13677-13686 - [Air and motion — 4.33.0y](HISTORY.md#air-and-motion--4330y) - context: Caelum Argenteum — Consolidated history
-- Lines 13687-13700 - [System needs and priority — 4.33.0x](HISTORY.md#system-needs-and-priority--4330x) - context: Caelum Argenteum — Consolidated history
-- Lines 13701-13706 - [Cumulative delivery correction 0u → 0w](HISTORY.md#cumulative-delivery-correction-0u--0w) - context: Caelum Argenteum — Consolidated history
-- Lines 13707-13723 - [Optional maintenance and coverage T1 — 4.33.0w, 2026-09-12](HISTORY.md#optional-maintenance-and-coverage-t1--4330w-2026-09-12) - context: Caelum Argenteum — Consolidated history
-- Lines 13724-13745 - [Departure from the mansion and back to body — 4.33.0v, 2026-09-12](HISTORY.md#departure-from-the-mansion-and-back-to-body--4330v-2026-09-12) - context: Caelum Argenteum — Consolidated history
-- Lines 13746-13759 - [Real Shield and Rulo Guide — 4.33.0u, 2026-09-12](HISTORY.md#real-shield-and-rulo-guide--4330u-2026-09-12) - context: Caelum Argenteum — Consolidated history
-- Lines 13760-13778 - [El Loco and Tarot collection — 4.33.0t, 2026-09-11](HISTORY.md#el-loco-and-tarot-collection--4330t-2026-09-11) - context: Caelum Argenteum — Consolidated history
-- Lines 13779-13794 - [Palomo final and Box — 4.33.0s, 2026-09-11](HISTORY.md#palomo-final-and-box--4330s-2026-09-11) - context: Caelum Argenteum — Consolidated history
-- Lines 13795-13810 - [Rulo Survival and Closure — 4.33.0r, 2026-09-11](HISTORY.md#rulo-survival-and-closure--4330r-2026-09-11) - context: Caelum Argenteum — Consolidated history
-- Lines 13811-13829 - [Rulo/Bull corrections — 4.33.0q, 2026-09-11](HISTORY.md#rulobull-corrections--4330q-2026-09-11) - context: Caelum Argenteum — Consolidated history
-- Lines 13830-13849 - [Rulo — 4.33.0p, 2026-09-11](HISTORY.md#rulo--4330p-2026-09-11) - context: Caelum Argenteum — Consolidated history
-- Lines 13850-13858 - [4.33.0n approval and 4.33.0o correction — 2026-09-11](HISTORY.md#4330n-approval-and-4330o-correction--2026-09-11) - context: Caelum Argenteum — Consolidated history
-- Lines 13859-13883 - [Decisions and corrections 4.33.0n](HISTORY.md#decisions-and-corrections-4330n) - context: Caelum Argenteum — Consolidated history
-- Lines 13884-13916 - [Decisions and corrections 4.33.0m](HISTORY.md#decisions-and-corrections-4330m) - context: Caelum Argenteum — Consolidated history
-- Lines 13917-13957 - [Archived technical record of 4.33.0l](HISTORY.md#archived-technical-record-of-4330l) - context: Caelum Argenteum — Consolidated history > Decisions and corrections 4.33.0m
-- Lines 13958-13979 - [Decisions and corrections 4.33.0l](HISTORY.md#decisions-and-corrections-4330l) - context: Caelum Argenteum — Consolidated history
-- Lines 13980-13999 - [Decisions and corrections 4.33.0k](HISTORY.md#decisions-and-corrections-4330k) - context: Caelum Argenteum — Consolidated history
-- Lines 14000-14019 - [Decisions and corrections 4.33.0j](HISTORY.md#decisions-and-corrections-4330j) - context: Caelum Argenteum — Consolidated history
-- Lines 14020-14035 - [Current registration of recent versions](HISTORY.md#current-registration-of-recent-versions) - context: Caelum Argenteum — Consolidated history
-- Lines 14036-14049 - [Decisions 4.33.0i](HISTORY.md#decisions-4330i) - context: Caelum Argenteum — Consolidated history
-- Lines 14050-14064 - [Decisions 4.33.0h](HISTORY.md#decisions-4330h) - context: Caelum Argenteum — Consolidated history
-- Lines 14065-14070 - [0i–0k validation file moved from PROJECT](HISTORY.md#0i0k-validation-file-moved-from-project) - context: Caelum Argenteum — Consolidated history
-- Lines 14071-14103 - [Scope and decisions of Caella 4.33.0i](HISTORY.md#scope-and-decisions-of-caella-4330i) - context: Caelum Argenteum — Consolidated history
-- Lines 14104-14136 - [4.33.0i Validation Record (previous)](HISTORY.md#4330i-validation-record-previous) - context: Caelum Argenteum — Consolidated history
-- Lines 14137-14165 - [Validation of 4.33.0j (previous)](HISTORY.md#validation-of-4330j-previous) - context: Caelum Argenteum — Consolidated history
-- Lines 14166-14229 - [4.33.0k Changes and Validation](HISTORY.md#4330k-changes-and-validation) - context: Caelum Argenteum — Consolidated history
-- Lines 14230-14246 - [How to read the file](HISTORY.md#how-to-read-the-file) - context: Caelum Argenteum — Consolidated history
-- Lines 14247-14446 - `Archived record: README.md` - context: Caelum Argenteum — Consolidated history
-- Lines 14447-14630 - `Archived record: README.md [part 2]` - context: Caelum Argenteum — Consolidated history
-- Lines 14631-14830 - `Archived record: legacy/ASSET_REGISTER.md` - context: Caelum Argenteum — Consolidated history
-- Lines 14831-14862 - `Archived record: legacy/ASSET_REGISTER.md [part 2]` - context: Caelum Argenteum — Consolidated history
-- Lines 14863-15062 - `Archived record: legacy/CHANGELOG.md` - context: Caelum Argenteum — Consolidated history
-- Lines 15063-15262 - `Archived record: legacy/CHANGELOG.md [part 2]` - context: Caelum Argenteum — Consolidated history
-- Lines 15263-15462 - `Archived record: legacy/CHANGELOG.md [part 3]` - context: Caelum Argenteum — Consolidated history
-- Lines 15463-15662 - `Archived record: legacy/CHANGELOG.md [part 4]` - context: Caelum Argenteum — Consolidated history
-- Lines 15663-15862 - `Archived record: legacy/CHANGELOG.md [part 5]` - context: Caelum Argenteum — Consolidated history
-- Lines 15863-16062 - `Archived record: legacy/CHANGELOG.md [part 6]` - context: Caelum Argenteum — Consolidated history
-- Lines 16063-16262 - `Archived record: legacy/CHANGELOG.md [part 7]` - context: Caelum Argenteum — Consolidated history
-- Lines 16263-16462 - `Archived record: legacy/CHANGELOG.md [part 8]` - context: Caelum Argenteum — Consolidated history
-- Lines 16463-16662 - `Archived record: legacy/CHANGELOG.md [part 9]` - context: Caelum Argenteum — Consolidated history
-- Lines 16663-16862 - `Archived record: legacy/CHANGELOG.md [part 10]` - context: Caelum Argenteum — Consolidated history
-- Lines 16863-16972 - `Archived record: legacy/CHANGELOG.md [part 11]` - context: Caelum Argenteum — Consolidated history
-- Lines 16973-17172 - `Archived record: legacy/IMPLEMENTATION_STATUS.md` - context: Caelum Argenteum — Consolidated history
-- Lines 17173-17372 - `Archived record: legacy/IMPLEMENTATION_STATUS.md [part 2]` - context: Caelum Argenteum — Consolidated history
-- Lines 17373-17572 - `Archived record: legacy/IMPLEMENTATION_STATUS.md [part 3]` - context: Caelum Argenteum — Consolidated history
-- Lines 17573-17772 - `Archived record: legacy/IMPLEMENTATION_STATUS.md [part 4]` - context: Caelum Argenteum — Consolidated history
-- Lines 17773-17972 - `Archived record: legacy/IMPLEMENTATION_STATUS.md [part 5]` - context: Caelum Argenteum — Consolidated history
-- Lines 17973-18172 - `Archived record: legacy/IMPLEMENTATION_STATUS.md [part 6]` - context: Caelum Argenteum — Consolidated history
-- Lines 18173-18372 - `Archived record: legacy/IMPLEMENTATION_STATUS.md [part 7]` - context: Caelum Argenteum — Consolidated history
-- Lines 18373-18572 - `Archived record: legacy/IMPLEMENTATION_STATUS.md [part 8]` - context: Caelum Argenteum — Consolidated history
-- Lines 18573-18772 - `Archived record: legacy/IMPLEMENTATION_STATUS.md [part 9]` - context: Caelum Argenteum — Consolidated history
-- Lines 18773-18867 - `Archived record: legacy/IMPLEMENTATION_STATUS.md [part 10]` - context: Caelum Argenteum — Consolidated history
-- Lines 18868-19067 - `Archived record: legacy/PHYSICS_COLLISION_SYSTEM.md` - context: Caelum Argenteum — Consolidated history
-- Lines 19068-19267 - `Archived record: legacy/PHYSICS_COLLISION_SYSTEM.md [part 2]` - context: Caelum Argenteum — Consolidated history
-- Lines 19268-19467 - `Archived record: legacy/PHYSICS_COLLISION_SYSTEM.md [part 3]` - context: Caelum Argenteum — Consolidated history
-- Lines 19468-19667 - `Archived record: legacy/PHYSICS_COLLISION_SYSTEM.md [part 4]` - context: Caelum Argenteum — Consolidated history
-- Lines 19668-19867 - `Archived record: legacy/PHYSICS_COLLISION_SYSTEM.md [part 5]` - context: Caelum Argenteum — Consolidated history
-- Lines 19868-19872 - `Archived record: legacy/PHYSICS_COLLISION_SYSTEM.md [part 6]` - context: Caelum Argenteum — Consolidated history
-- Lines 19873-20072 - `Archived record: legacy/ROADMAP.md` - context: Caelum Argenteum — Consolidated history
-- Lines 20073-20074 - `Archived record: legacy/ROADMAP.md [part 2]` - context: Caelum Argenteum — Consolidated history
-- Lines 20075-20139 - [Archived record: legacy/TYPOGRAPHY.md](HISTORY.md#archived-record-legacytypographymd) - context: Caelum Argenteum — Consolidated history
-- Lines 20140-20224 - [Archived record: legacy/WEAPON_INPUT_MATRIX.md](HISTORY.md#archived-record-legacyweapon_input_matrixmd) - context: Caelum Argenteum — Consolidated history
-- Lines 20225-20365 - [Archived record: before_4.33.0g/DIALOGUE.md](HISTORY.md#archived-record-before_4330gdialoguemd) - context: Caelum Argenteum — Consolidated history
-- Lines 20366-20555 - [Archived record: before_4.33.0g/ECONOMY.md](HISTORY.md#archived-record-before_4330geconomymd) - context: Caelum Argenteum — Consolidated history
-- Lines 20556-20584 - [Archived record: before_4.33.0g/EQUIPMENT_ICONS_4_33_0d.md](HISTORY.md#archived-record-before_4330gequipment_icons_4_33_0dmd) - context: Caelum Argenteum — Consolidated history
-- Lines 20585-20736 - [Archived record: before_4.33.0g/FIRST_PERSON.md](HISTORY.md#archived-record-before_4330gfirst_personmd) - context: Caelum Argenteum — Consolidated history
-- Lines 20737-20936 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md` - context: Caelum Argenteum — Consolidated history
-- Lines 20937-21136 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 2]` - context: Caelum Argenteum — Consolidated history
-- Lines 21137-21336 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 3]` - context: Caelum Argenteum — Consolidated history
-- Lines 21337-21536 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 4]` - context: Caelum Argenteum — Consolidated history
-- Lines 21537-21736 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 5]` - context: Caelum Argenteum — Consolidated history
-- Lines 21737-21936 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 6]` - context: Caelum Argenteum — Consolidated history
-- Lines 21937-22136 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 7]` - context: Caelum Argenteum — Consolidated history
-- Lines 22137-22336 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 8]` - context: Caelum Argenteum — Consolidated history
-- Lines 22337-22536 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 9]` - context: Caelum Argenteum — Consolidated history
-- Lines 22537-22736 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 10]` - context: Caelum Argenteum — Consolidated history
-- Lines 22737-22936 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 11]` - context: Caelum Argenteum — Consolidated history
-- Lines 22937-23136 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 12]` - context: Caelum Argenteum — Consolidated history
-- Lines 23137-23336 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 13]` - context: Caelum Argenteum — Consolidated history
-- Lines 23337-23536 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 14]` - context: Caelum Argenteum — Consolidated history
-- Lines 23537-23736 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 15]` - context: Caelum Argenteum — Consolidated history
-- Lines 23737-23936 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 16]` - context: Caelum Argenteum — Consolidated history
-- Lines 23937-24136 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 17]` - context: Caelum Argenteum — Consolidated history
-- Lines 24137-24336 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 18]` - context: Caelum Argenteum — Consolidated history
-- Lines 24337-24536 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 19]` - context: Caelum Argenteum — Consolidated history
-- Lines 24537-24736 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 20]` - context: Caelum Argenteum — Consolidated history
-- Lines 24737-24936 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 21]` - context: Caelum Argenteum — Consolidated history
-- Lines 24937-25136 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 22]` - context: Caelum Argenteum — Consolidated history
-- Lines 25137-25336 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 23]` - context: Caelum Argenteum — Consolidated history
-- Lines 25337-25536 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 24]` - context: Caelum Argenteum — Consolidated history
-- Lines 25537-25736 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 25]` - context: Caelum Argenteum — Consolidated history
-- Lines 25737-25936 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 26]` - context: Caelum Argenteum — Consolidated history
-- Lines 25937-26136 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 27]` - context: Caelum Argenteum — Consolidated history
-- Lines 26137-26336 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 28]` - context: Caelum Argenteum — Consolidated history
-- Lines 26337-26423 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 29]` - context: Caelum Argenteum — Consolidated history
-- Lines 26424-26542 - [Archived record: before_4.33.0g/MAGIC_BOX.md](HISTORY.md#archived-record-before_4330gmagic_boxmd) - context: Caelum Argenteum — Consolidated history
-- Lines 26543-26595 - [Archived record: before_4.33.0g/MAP01_ARGENTO_4_33_0f.md](HISTORY.md#archived-record-before_4330gmap01_argento_4_33_0fmd) - context: Caelum Argenteum — Consolidated history
-- Lines 26596-26795 - `Archived record: before_4.33.0g/MAP01_HISTORIA_Y_PROGRAMACION_v1_0.txt` - context: Caelum Argenteum — Consolidated history
-- Lines 26796-26995 - `Archived record: before_4.33.0g/MAP01_HISTORIA_Y_PROGRAMACION_v1_0.txt [part 2]` - context: Caelum Argenteum — Consolidated history
-- Lines 26996-27195 - `Archived record: before_4.33.0g/MAP01_HISTORIA_Y_PROGRAMACION_v1_0.txt [part 3]` - context: Caelum Argenteum — Consolidated history
-- Lines 27196-27395 - `Archived record: before_4.33.0g/MAP01_HISTORIA_Y_PROGRAMACION_v1_0.txt [part 4]` - context: Caelum Argenteum — Consolidated history
-- Lines 27396-27595 - `Archived record: before_4.33.0g/MAP01_HISTORIA_Y_PROGRAMACION_v1_0.txt [part 5]` - context: Caelum Argenteum — Consolidated history
-- Lines 27596-27795 - `Archived record: before_4.33.0g/MAP01_HISTORIA_Y_PROGRAMACION_v1_0.txt [part 6]` - context: Caelum Argenteum — Consolidated history
-- Lines 27796-27995 - `Archived record: before_4.33.0g/MAP01_HISTORIA_Y_PROGRAMACION_v1_0.txt [part 7]` - context: Caelum Argenteum — Consolidated history
-- Lines 27996-28195 - `Archived record: before_4.33.0g/MAP01_HISTORIA_Y_PROGRAMACION_v1_0.txt [part 8]` - context: Caelum Argenteum — Consolidated history
-- Lines 28196-28395 - `Archived record: before_4.33.0g/MAP01_HISTORIA_Y_PROGRAMACION_v1_0.txt [part 9]` - context: Caelum Argenteum — Consolidated history
-- Lines 28396-28595 - `Archived record: before_4.33.0g/MAP01_HISTORIA_Y_PROGRAMACION_v1_0.txt [part 10]` - context: Caelum Argenteum — Consolidated history
-- Lines 28596-28735 - `Archived record: before_4.33.0g/MAP01_HISTORIA_Y_PROGRAMACION_v1_0.txt [part 11]` - context: Caelum Argenteum — Consolidated history
-- Lines 28736-28803 - [Archived record: before_4.33.0g/MAP01_SECRET_PASSAGE_4_33_0c.md](HISTORY.md#archived-record-before_4330gmap01_secret_passage_4_33_0cmd) - context: Caelum Argenteum — Consolidated history
-- Lines 28804-28883 - [Archived record: before_4.33.0g/MAP01_SECRET_PASSAGE_4_33_0d.md](HISTORY.md#archived-record-before_4330gmap01_secret_passage_4_33_0dmd) - context: Caelum Argenteum — Consolidated history
-- Lines 28884-29069 - [Archived record: before_4.33.0g/QUESTS_REPUTATION_FACTIONS.md](HISTORY.md#archived-record-before_4330gquests_reputation_factionsmd) - context: Caelum Argenteum — Consolidated history
-- Lines 29070-29269 - `Archived record: before_4.33.0g/ROADMAP.md` - context: Caelum Argenteum — Consolidated history
-- Lines 29270-29469 - `Archived record: before_4.33.0g/ROADMAP.md [part 2]` - context: Caelum Argenteum — Consolidated history
-- Lines 29470-29669 - `Archived record: before_4.33.0g/ROADMAP.md [part 3]` - context: Caelum Argenteum — Consolidated history
-- Lines 29670-29869 - `Archived record: before_4.33.0g/ROADMAP.md [part 4]` - context: Caelum Argenteum — Consolidated history
-- Lines 29870-30069 - `Archived record: before_4.33.0g/ROADMAP.md [part 5]` - context: Caelum Argenteum — Consolidated history
-- Lines 30070-30106 - `Archived record: before_4.33.0g/ROADMAP.md [part 6]` - context: Caelum Argenteum — Consolidated history
-- Lines 30107-30139 - [Archived record: before_4.33.0g/VALIDACION_4_33_0e.txt](HISTORY.md#archived-record-before_4330gvalidacion_4_33_0etxt) - context: Caelum Argenteum — Consolidated history
-- Lines 30140-30193 - [Archived record: before_4.33.0g/VALIDACION_4_33_0f.txt](HISTORY.md#archived-record-before_4330gvalidacion_4_33_0ftxt) - context: Caelum Argenteum — Consolidated history
-- Lines 30194-30225 - [Archived record: release_4.33.0f/APLICAR_4_33_0f.txt](HISTORY.md#archived-record-release_4330faplicar_4_33_0ftxt) - context: Caelum Argenteum — Consolidated history
-- Lines 30226-30276 - [Registration: release_4.33.0f/PRUEBAS_4_33_0f.txt](HISTORY.md#registration-release_4330fpruebas_4_33_0ftxt) - context: Caelum Argenteum — Consolidated history
-- Lines 30277-30334 - [Archived record: release_4.33.0f/README_4_33_0f.md](HISTORY.md#archived-record-release_4330freadme_4_33_0fmd) - context: Caelum Argenteum — Consolidated history
-- Lines 30335-30336 - [Historical validation of 0h (record preserved)](HISTORY.md#historical-validation-of-0h-record-preserved) - context: Caelum Argenteum — Consolidated history
-- Lines 30337-30394 - [Technical result of 4.33.0h](HISTORY.md#technical-result-of-4330h) - context: Caelum Argenteum — Consolidated history > Historical validation of 0h (record preserved)
+- Lines 205-393 - `5.13.3 - Ordered Tarot foundation (#440, implementation checkpoint) [part 2]` - context: Caelum Argenteum — Consolidated history
+- Lines 394-417 - `5.13.2 - Reversible equipment awakening (#442)` - context: Caelum Argenteum — Consolidated history
+- Lines 418-443 - `5.13.1 - Capture sources and unified Tarot (#441)` - context: Caelum Argenteum — Consolidated history
+- Lines 444-467 - [5.13.0 - Major Arcana specification audit (#439), 2026-10-31](HISTORY.md#5130---major-arcana-specification-audit-439-2026-10-31) - context: Caelum Argenteum — Consolidated history
+- Lines 468-528 - [5.12.7a - Dead-player interface repair (#602), 2026-10-31](HISTORY.md#5127a---dead-player-interface-repair-602-2026-10-31) - context: Caelum Argenteum — Consolidated history
+- Lines 529-568 - [V5.12 implementation ready for author review - 2026-10-31](HISTORY.md#v512-implementation-ready-for-author-review---2026-10-31) - context: Caelum Argenteum — Consolidated history
+- Lines 569-721 - `Earlier 5.12.7 integration checkpoints - #435` - context: Caelum Argenteum — Consolidated history
+- Lines 722-819 - [5.12.6 - Typed personal profile graph foundation (#434, 2026-10-31)](HISTORY.md#5126---typed-personal-profile-graph-foundation-434-2026-10-31) - context: Caelum Argenteum — Consolidated history
+- Lines 820-864 - [5.12.5 - Seated human card-rule preparation (#590, 2026-10-30)](HISTORY.md#5125---seated-human-card-rule-preparation-590-2026-10-30) - context: Caelum Argenteum — Consolidated history
+- Lines 865-886 - [5.12.4 - Organized combat venues (#438, 2026-10-31, in progress)](HISTORY.md#5124---organized-combat-venues-438-2026-10-31-in-progress) - context: Caelum Argenteum — Consolidated history
+- Lines 887-945 - [5.12.3 - Cooperative lifecycle guards (#437, 2026-10-31, in progress)](HISTORY.md#5123---cooperative-lifecycle-guards-437-2026-10-31-in-progress) - context: Caelum Argenteum — Consolidated history
+- Lines 946-1075 - [5.12.2 - Shared clock and time consent (#436, 2026-10-30, in progress)](HISTORY.md#5122---shared-clock-and-time-consent-436-2026-10-30-in-progress) - context: Caelum Argenteum — Consolidated history
+- Lines 1076-1089 - [Unreleased V5.12 network baseline (#435, 2026-10-30)](HISTORY.md#unreleased-v512-network-baseline-435-2026-10-30) - context: Caelum Argenteum — Consolidated history
+- Lines 1090-1119 - [5.11.8 - Mandinga and Zupay contamination immunity (#586, 2026-10-30)](HISTORY.md#5118---mandinga-and-zupay-contamination-immunity-586-2026-10-30) - context: Caelum Argenteum — Consolidated history
+- Lines 1120-1135 - [5.11.7 - Arrival workshop moved into the protagonist house (#581, 2026-10-30)](HISTORY.md#5117---arrival-workshop-moved-into-the-protagonist-house-581-2026-10-30) - context: Caelum Argenteum — Consolidated history
+- Lines 1136-1143 - [5.11.6 - Rat contamination-damage immunity (#582, 2026-10-30)](HISTORY.md#5116---rat-contamination-damage-immunity-582-2026-10-30) - context: Caelum Argenteum — Consolidated history
+- Lines 1144-1163 - [5.11.5 - Refresh rental dialogue after recognition (#580, 2026-10-30)](HISTORY.md#5115---refresh-rental-dialogue-after-recognition-580-2026-10-30) - context: Caelum Argenteum — Consolidated history
+- Lines 1164-1320 - [5.11.4 - Companion implementation (#430, 2026-10-30)](HISTORY.md#5114---companion-implementation-430-2026-10-30) - context: Caelum Argenteum — Consolidated history
+- Lines 1321-1351 - [5.11.3 - Conditional distant-search evaluation (#433, 2026-10-30)](HISTORY.md#5113---conditional-distant-search-evaluation-433-2026-10-30) - context: Caelum Argenteum — Consolidated history
+- Lines 1352-1385 - [5.11.2 - Shared deterministic NPC costs (#432, 2026-10-30)](HISTORY.md#5112---shared-deterministic-npc-costs-432-2026-10-30) - context: Caelum Argenteum — Consolidated history
+- Lines 1386-1426 - [5.11.1 - Formations and bounded siege membership (#429, 2026-10-30)](HISTORY.md#5111---formations-and-bounded-siege-membership-429-2026-10-30) - context: Caelum Argenteum — Consolidated history
+- Lines 1427-1514 - [5.11.0 - NPC subsystem and presentation profiling (#431, 2026-10-30)](HISTORY.md#5110---npc-subsystem-and-presentation-profiling-431-2026-10-30) - context: Caelum Argenteum — Consolidated history
+- Lines 1515-1582 - [5.10.3 - Audible reports and leader orders (#428, 2026-10-30)](HISTORY.md#5103---audible-reports-and-leader-orders-428-2026-10-30) - context: Caelum Argenteum — Consolidated history
+- Lines 1583-1610 - [5.10.2 - Private perception memory (#427, 2026-10-30)](HISTORY.md#5102---private-perception-memory-427-2026-10-30) - context: Caelum Argenteum — Consolidated history
+- Lines 1611-1631 - [5.10.1 - Anonymous action noise (#426, 2026-10-30)](HISTORY.md#5101---anonymous-action-noise-426-2026-10-30) - context: Caelum Argenteum — Consolidated history
+- Lines 1632-1664 - [5.10.0 - Visual perception (#425, 2026-10-30)](HISTORY.md#5100---visual-perception-425-2026-10-30) - context: Caelum Argenteum — Consolidated history
+- Lines 1665-1681 - [V5.9 completion - 2026-10-30 (#403)](HISTORY.md#v59-completion---2026-10-30-403) - context: Caelum Argenteum — Consolidated history
+- Lines 1682-1698 - [5.9.7 - Guard and prisoner wardrobes (#423, 2026-10-29)](HISTORY.md#597---guard-and-prisoner-wardrobes-423-2026-10-29) - context: Caelum Argenteum — Consolidated history
+- Lines 1699-1709 - [5.9.6 - Faction service consequences (#424, 2026-10-29)](HISTORY.md#596---faction-service-consequences-424-2026-10-29) - context: Caelum Argenteum — Consolidated history
+- Lines 1710-1723 - [5.9.5 - House and siege side quests (#422, 2026-10-29)](HISTORY.md#595---house-and-siege-side-quests-422-2026-10-29) - context: Caelum Argenteum — Consolidated history
+- Lines 1724-1736 - [5.9.4 - Barracas story integration (#421, 2026-10-29)](HISTORY.md#594---barracas-story-integration-421-2026-10-29) - context: Caelum Argenteum — Consolidated history
+- Lines 1737-1749 - [5.9.3 - Campaign membership (#420, 2026-10-29)](HISTORY.md#593---campaign-membership-420-2026-10-29) - context: Caelum Argenteum — Consolidated history
+- Lines 1750-1771 - [5.9.2 - Private port dialogue (#419, 2026-10-29)](HISTORY.md#592---private-port-dialogue-419-2026-10-29) - context: Caelum Argenteum — Consolidated history
+- Lines 1772-1794 - [5.9.1 - Faction consequence implementation (#420, 2026-10-29)](HISTORY.md#591---faction-consequence-implementation-420-2026-10-29) - context: Caelum Argenteum — Consolidated history
+- Lines 1795-1814 - [5.9.0 - Quest coordination checkpoint (#418, 2026-10-29)](HISTORY.md#590---quest-coordination-checkpoint-418-2026-10-29) - context: Caelum Argenteum — Consolidated history
+- Lines 1815-1843 - `V5.8 completion - 2026-10-29 (#403)` - context: Caelum Argenteum — Consolidated history
+- Lines 1844-1850 - `5.8.56 / #416 - Original Ciudad theme for Buenos Aires` - context: Caelum Argenteum — Consolidated history
+- Lines 1851-1855 - `5.8.55 / #415 - Remove repeated global Rally lookups` - context: Caelum Argenteum — Consolidated history
+- Lines 1856-1863 - [5.8.54 - Furniture review corrections (#410, 2026-10-29)](HISTORY.md#5854---furniture-review-corrections-410-2026-10-29) - context: Caelum Argenteum — Consolidated history
+- Lines 1864-1893 - `5.8.53 / #417 - Final V5.8 implementation handoff - 2026-10-29` - context: Caelum Argenteum — Consolidated history
+- Lines 1894-1911 - `5.8.52 / #416 - Network implementation ready - 2026-10-29` - context: Caelum Argenteum — Consolidated history
+- Lines 1912-1936 - [5.8.51 - Unloaded-world implementation (#415) - 2026-10-29](HISTORY.md#5851---unloaded-world-implementation-415---2026-10-29) - context: Caelum Argenteum — Consolidated history
+- Lines 1937-1953 - [Unreleased #417 incidents checkpoint - 2026-10-29](HISTORY.md#unreleased-417-incidents-checkpoint---2026-10-29) - context: Caelum Argenteum — Consolidated history
+- Lines 1954-2013 - `Unreleased #416 transport catalogue - 2026-10-29` - context: Caelum Argenteum — Consolidated history
+- Lines 2014-2155 - [Unreleased #415 checkpoint - 2026-10-29](HISTORY.md#unreleased-415-checkpoint---2026-10-29) - context: Caelum Argenteum — Consolidated history
+- Lines 2156-2177 - [5.8.50 - Remaining physical contact adapters (#502)](HISTORY.md#5850---remaining-physical-contact-adapters-502) - context: Caelum Argenteum — Consolidated history
+- Lines 2178-2201 - [5.8.49 - Physical material and food contact (#502)](HISTORY.md#5849---physical-material-and-food-contact-502) - context: Caelum Argenteum — Consolidated history
+- Lines 2202-2232 - [5.8.48 - Vessel exterior contamination (#502, 2026-10-28)](HISTORY.md#5848---vessel-exterior-contamination-502-2026-10-28) - context: Caelum Argenteum — Consolidated history
+- Lines 2233-2267 - [5.8.47 - Abstract stack contamination (#502, 2026-10-28)](HISTORY.md#5847---abstract-stack-contamination-502-2026-10-28) - context: Caelum Argenteum — Consolidated history
+- Lines 2268-2303 - [5.8.46 - Native NPC absence physiology (#502, 2026-10-28)](HISTORY.md#5846---native-npc-absence-physiology-502-2026-10-28) - context: Caelum Argenteum — Consolidated history
+- Lines 2304-2326 - [5.8.45 - Shared dining contamination (#502, 2026-10-28)](HISTORY.md#5845---shared-dining-contamination-502-2026-10-28) - context: Caelum Argenteum — Consolidated history
+- Lines 2327-2357 - [5.8.44 - Landscapes and botanical sculpture (#410, 2026-10-28)](HISTORY.md#5844---landscapes-and-botanical-sculpture-410-2026-10-28) - context: Caelum Argenteum — Consolidated history
+- Lines 2358-2390 - [5.8.43 - Unloaded household cleaning (#502, 2026-10-28)](HISTORY.md#5843---unloaded-household-cleaning-502-2026-10-28) - context: Caelum Argenteum — Consolidated history
+- Lines 2391-2419 - [5.8.42 - Household furnishing contamination persistence (#502, 2026-10-28)](HISTORY.md#5842---household-furnishing-contamination-persistence-502-2026-10-28) - context: Caelum Argenteum — Consolidated history
+- Lines 2420-2443 - [5.8.41 - Household storage persistence (#502, 2026-10-28)](HISTORY.md#5841---household-storage-persistence-502-2026-10-28) - context: Caelum Argenteum — Consolidated history
+- Lines 2444-2463 - [5.8.40 - Portable dining sets (#410, 2026-10-28)](HISTORY.md#5840---portable-dining-sets-410-2026-10-28) - context: Caelum Argenteum — Consolidated history
+- Lines 2464-2476 - [5.8.39 - Shared aim prerequisite (#415, 2026-10-27)](HISTORY.md#5839---shared-aim-prerequisite-415-2026-10-27) - context: Caelum Argenteum — Consolidated history
+- Lines 2477-2492 - [5.8.38 - Loaded NPC illness (#502, 2026-10-27)](HISTORY.md#5838---loaded-npc-illness-502-2026-10-27) - context: Caelum Argenteum — Consolidated history
+- Lines 2493-2508 - [5.8.37 - Seal object history (#502, 2026-10-27)](HISTORY.md#5837---seal-object-history-502-2026-10-27) - context: Caelum Argenteum — Consolidated history
+- Lines 2509-2530 - [5.8.36 - Study furniture acquisition (#410, 2026-10-27)](HISTORY.md#5836---study-furniture-acquisition-410-2026-10-27) - context: Caelum Argenteum — Consolidated history
+- Lines 2531-2548 - [5.8.35 - Sofa acquisition (#410, 2026-10-27)](HISTORY.md#5835---sofa-acquisition-410-2026-10-27) - context: Caelum Argenteum — Consolidated history
+- Lines 2549-2568 - [5.8.34 - Ordinary rest furniture acquisition (#410, 2026-10-27)](HISTORY.md#5834---ordinary-rest-furniture-acquisition-410-2026-10-27) - context: Caelum Argenteum — Consolidated history
+- Lines 2569-2588 - [5.8.33 - Ordinary chair and raised cot (#410, 2026-10-27)](HISTORY.md#5833---ordinary-chair-and-raised-cot-410-2026-10-27) - context: Caelum Argenteum — Consolidated history
+- Lines 2589-2608 - [5.8.32 - Luxury rest furniture acquisition (#410, 2026-10-27)](HISTORY.md#5832---luxury-rest-furniture-acquisition-410-2026-10-27) - context: Caelum Argenteum — Consolidated history
+- Lines 2609-2626 - [5.8.31 - Storage furniture acquisition (#410, 2026-10-27)](HISTORY.md#5831---storage-furniture-acquisition-410-2026-10-27) - context: Caelum Argenteum — Consolidated history
+- Lines 2627-2654 - [5.8.30 - Luxury furniture catalogue (#410, 2026-10-27)](HISTORY.md#5830---luxury-furniture-catalogue-410-2026-10-27) - context: Caelum Argenteum — Consolidated history
+- Lines 2655-2682 - [5.8.29 - Period sofa seating (#410, 2026-10-27)](HISTORY.md#5829---period-sofa-seating-410-2026-10-27) - context: Caelum Argenteum — Consolidated history
+- Lines 2683-2707 - `5.8.28 - Regional weather history for objects (#502)` - context: Caelum Argenteum — Consolidated history
+- Lines 2708-2725 - `5.8.27 - Indoor furniture placement (#411)` - context: Caelum Argenteum — Consolidated history
+- Lines 2726-2749 - [5.8.26 - Bookcase storage and desk reading (#410)](HISTORY.md#5826---bookcase-storage-and-desk-reading-410) - context: Caelum Argenteum — Consolidated history
+- Lines 2750-2768 - [5.8.25 - Finite garden water furniture (#410)](HISTORY.md#5825---finite-garden-water-furniture-410) - context: Caelum Argenteum — Consolidated history
+- Lines 2769-2790 - [5.8.24 - Wardrobe storage (#410)](HISTORY.md#5824---wardrobe-storage-410) - context: Caelum Argenteum — Consolidated history
+- Lines 2791-2812 - `5.8.23 - Constant Limbo exposure across absence (#502)` - context: Caelum Argenteum — Consolidated history
+- Lines 2813-2833 - `5.8.22 - Shared-water mansion bathroom fixtures (#410)` - context: Caelum Argenteum — Consolidated history
+- Lines 2834-2858 - `5.8.21 - Attended camp cooking and fuel interruption (#411)` - context: Caelum Argenteum — Consolidated history
+- Lines 2859-2892 - `5.8.20 - Mansion kitchen sink and wall cupboard (#410)` - context: Caelum Argenteum — Consolidated history
+- Lines 2893-2926 - `5.8.19 - Attended cooking and shared bread proofing (#410)` - context: Caelum Argenteum — Consolidated history
+- Lines 2927-2948 - `5.8.18 - Prepared meal items and consumption (#410)` - context: Caelum Argenteum — Consolidated history
+- Lines 2949-2971 - `5.8.17 - Kitchen ingredients (#410)` - context: Caelum Argenteum — Consolidated history
+- Lines 2972-2995 - `5.8.16 - Non-solid physical scenery exposure (#502)` - context: Caelum Argenteum — Consolidated history
+- Lines 2996-3028 - [5.8.15 - Sleeping-bag clearance and tent interaction (#412), 2026-10-26](HISTORY.md#5815---sleeping-bag-clearance-and-tent-interaction-412-2026-10-26) - context: Caelum Argenteum — Consolidated history
+- Lines 3029-3072 - [5.8.14 - Native ration lots (#410), 2026-10-26](HISTORY.md#5814---native-ration-lots-410-2026-10-26) - context: Caelum Argenteum — Consolidated history
+- Lines 3073-3115 - [5.8.13 - Campfire and mounted pot (#411), 2026-10-26](HISTORY.md#5813---campfire-and-mounted-pot-411-2026-10-26) - context: Caelum Argenteum — Consolidated history
+- Lines 3116-3315 - `5.8.12 - Metabolic toilet sessions (#502, in progress)` - context: Caelum Argenteum — Consolidated history
+- Lines 3316-3469 - `5.8.12 - Metabolic toilet sessions (#502, in progress) [part 2]` - context: Caelum Argenteum — Consolidated history
+- Lines 3470-3509 - [5.8.11 - Domestic bathrooms (#410, in progress), 2026-10-25](HISTORY.md#5811---domestic-bathrooms-410-in-progress-2026-10-25) - context: Caelum Argenteum — Consolidated history
+- Lines 3510-3530 - [5.8.10 - Tent packing occupancy guard (#412), 2026-10-25](HISTORY.md#5810---tent-packing-occupancy-guard-412-2026-10-25) - context: Caelum Argenteum — Consolidated history
+- Lines 3531-3705 - [5.8.9 - Severe contamination (#502, in progress), 2026-10-24](HISTORY.md#589---severe-contamination-502-in-progress-2026-10-24) - context: Caelum Argenteum — Consolidated history
+- Lines 3706-3776 - [5.8.8 - Carried-chest placement geometry (#411), 2026-10-24](HISTORY.md#588---carried-chest-placement-geometry-411-2026-10-24) - context: Caelum Argenteum — Consolidated history
+- Lines 3777-3789 - [5.8.7 - Food illness in forecasts (#410, in progress), 2026-10-24](HISTORY.md#587---food-illness-in-forecasts-410-in-progress-2026-10-24) - context: Caelum Argenteum — Consolidated history
+- Lines 3790-3799 - [5.8.6 - Central property access (#411, in progress), 2026-10-24](HISTORY.md#586---central-property-access-411-in-progress-2026-10-24) - context: Caelum Argenteum — Consolidated history
+- Lines 3800-3803 - [5.8.5 - Regional event discovery (#415, in progress), 2026-10-24](HISTORY.md#585---regional-event-discovery-415-in-progress-2026-10-24) - context: Caelum Argenteum — Consolidated history
+- Lines 3804-3807 - [5.8.4 - Second map soundtrack (#496), 2026-10-24](HISTORY.md#584---second-map-soundtrack-496-2026-10-24) - context: Caelum Argenteum — Consolidated history
+- Lines 3808-3843 - [5.8.3 - Food contamination foundation (#410, in progress), 2026-10-24](HISTORY.md#583---food-contamination-foundation-410-in-progress-2026-10-24) - context: Caelum Argenteum — Consolidated history
+- Lines 3844-3866 - [5.8.2 - Mansion connected water (#414), 2026-10-24](HISTORY.md#582---mansion-connected-water-414-2026-10-24) - context: Caelum Argenteum — Consolidated history
+- Lines 3867-3889 - [5.8.1 - Altitude and acclimatization (#413), 2026-10-23](HISTORY.md#581---altitude-and-acclimatization-413-2026-10-23) - context: Caelum Argenteum — Consolidated history
+- Lines 3890-3911 - [5.8.0 - Connected-water feasibility (#414), 2026-10-23](HISTORY.md#580---connected-water-feasibility-414-2026-10-23) - context: Caelum Argenteum — Consolidated history
+- Lines 3912-3960 - [5.7.14 - Reusable mates (#472), 2026-10-23](HISTORY.md#5714---reusable-mates-472-2026-10-23) - context: Caelum Argenteum — Consolidated history
+- Lines 3961-4011 - [5.7.13 - Chemistry batch implementation (#471), 2026-10-23](HISTORY.md#5713---chemistry-batch-implementation-471-2026-10-23) - context: Caelum Argenteum — Consolidated history
+- Lines 4012-4045 - [5.7.12 - Fermentation Barrel (#487), 2026-10-23](HISTORY.md#5712---fermentation-barrel-487-2026-10-23) - context: Caelum Argenteum — Consolidated history
+- Lines 4046-4063 - [5.7.11 - Chemistry station terminology (#486), 2026-10-23](HISTORY.md#5711---chemistry-station-terminology-486-2026-10-23) - context: Caelum Argenteum — Consolidated history
+- Lines 4064-4111 - [5.7.10 - Cartridge station migration (#471), 2026-10-23](HISTORY.md#5710---cartridge-station-migration-471-2026-10-23) - context: Caelum Argenteum — Consolidated history
+- Lines 4112-4165 - [5.7.9 - Water boiling and temperature (#409), 2026-10-23](HISTORY.md#579---water-boiling-and-temperature-409-2026-10-23) - context: Caelum Argenteum — Consolidated history
+- Lines 4166-4277 - [5.7.8 - Support implements (#479, awaiting author acceptance)](HISTORY.md#578---support-implements-479-awaiting-author-acceptance) - context: Caelum Argenteum — Consolidated history
+- Lines 4278-4299 - [5.7.7 - Aimed-target information (#481)](HISTORY.md#577---aimed-target-information-481) - context: Caelum Argenteum — Consolidated history
+- Lines 4300-4322 - `5.7.6 - Alchemy ingredient artwork (#471)` - context: Caelum Argenteum — Consolidated history
+- Lines 4323-4359 - `5.7.5 - Marine imports and iodine (#407)` - context: Caelum Argenteum — Consolidated history
+- Lines 4360-4387 - `5.7.4 - Fixed Alchemy station (#470)` - context: Caelum Argenteum — Consolidated history
+- Lines 4388-4406 - `5.7.3 - Monotonic source recovery (#406)` - context: Caelum Argenteum — Consolidated history
+- Lines 4407-4433 - `5.7.2 - Land resources and owned 3D objects (#405)` - context: Caelum Argenteum — Consolidated history
+- Lines 4434-4448 - [5.7.1 - Regional resource data approval (#404), 2026-10-21](HISTORY.md#571---regional-resource-data-approval-404-2026-10-21) - context: Caelum Argenteum — Consolidated history
+- Lines 4449-4466 - [5.7.0 - Water quality and conservative mixing (#408), 2026-10-21](HISTORY.md#570---water-quality-and-conservative-mixing-408-2026-10-21) - context: Caelum Argenteum — Consolidated history
+- Lines 4467-4488 - [5.6.11a - Defer clothing appearance and close the accepted batch (#387), 2026-10-21](HISTORY.md#5611a---defer-clothing-appearance-and-close-the-accepted-batch-387-2026-10-21) - context: Caelum Argenteum — Consolidated history
+- Lines 4489-4504 - [5.6.11 - Calendar shop replenishment (#385), 2026-10-21](HISTORY.md#5611---calendar-shop-replenishment-385-2026-10-21) - context: Caelum Argenteum — Consolidated history
+- Lines 4505-4521 - [5.6.10 - City catalogue extension (#383), 2026-10-21](HISTORY.md#5610---city-catalogue-extension-383-2026-10-21) - context: Caelum Argenteum — Consolidated history
+- Lines 4522-4540 - [5.6.9 - Native cartridge assembly (#380), 2026-10-21](HISTORY.md#569---native-cartridge-assembly-380-2026-10-21) - context: Caelum Argenteum — Consolidated history
+- Lines 4541-4552 - [5.6.8 - Approved sealed cartridge kits (#379), 2026-10-21](HISTORY.md#568---approved-sealed-cartridge-kits-379-2026-10-21) - context: Caelum Argenteum — Consolidated history
+- Lines 4553-4577 - [5.6.7 - Individual clothing object sprites (#387), 2026-10-21](HISTORY.md#567---individual-clothing-object-sprites-387-2026-10-21) - context: Caelum Argenteum — Consolidated history
+- Lines 4578-4599 - [5.6.6 - Native ordinary clothing (#386), 2026-10-21](HISTORY.md#566---native-ordinary-clothing-386-2026-10-21) - context: Caelum Argenteum — Consolidated history
+- Lines 4600-4633 - [5.6.5 - Approved padlocks and local theft witnesses (#382), 2026-10-21](HISTORY.md#565---approved-padlocks-and-local-theft-witnesses-382-2026-10-21) - context: Caelum Argenteum — Consolidated history
+- Lines 4634-4673 - [5.6.4 - Existing loot and native one-time death claims (#384), 2026-10-20](HISTORY.md#564---existing-loot-and-native-one-time-death-claims-384-2026-10-20) - context: Caelum Argenteum — Consolidated history
+- Lines 4674-4687 - [5.6.3b - Requested clothing-table proposal (#386), 2026-10-20](HISTORY.md#563b---requested-clothing-table-proposal-386-2026-10-20) - context: Caelum Argenteum — Consolidated history
+- Lines 4688-4702 - [5.6.3a - Lock tools and ownership proposal (#382), 2026-10-20](HISTORY.md#563a---lock-tools-and-ownership-proposal-382-2026-10-20) - context: Caelum Argenteum — Consolidated history
+- Lines 4703-4744 - [5.6.3 - Recipe sheets, study and practice (#378), 2026-10-20](HISTORY.md#563---recipe-sheets-study-and-practice-378-2026-10-20) - context: Caelum Argenteum — Consolidated history
+- Lines 4745-4783 - [5.6.2 - Ordinary chest storage (#381), 2026-10-20](HISTORY.md#562---ordinary-chest-storage-381-2026-10-20) - context: Caelum Argenteum — Consolidated history
+- Lines 4784-4820 - [5.6.1 - Merchant coordinator (#377), 2026-10-20](HISTORY.md#561---merchant-coordinator-377-2026-10-20) - context: Caelum Argenteum — Consolidated history
+- Lines 4821-4842 - [5.6.0 - Crafting coordinator (#376), 2026-10-20](HISTORY.md#560---crafting-coordinator-376-2026-10-20) - context: Caelum Argenteum — Consolidated history
+- Lines 4843-4860 - [5.5.8a - Author-requested deferred issue closure (#316), 2026-10-20](HISTORY.md#558a---author-requested-deferred-issue-closure-316-2026-10-20) - context: Caelum Argenteum — Consolidated history
+- Lines 4861-4927 - `5.5.8 - Cleaned animated bull model (#369)` - context: Caelum Argenteum — Consolidated history
+- Lines 4928-4946 - `5.5.7 - Future melee energy contract; conversion deferred (#315)` - context: Caelum Argenteum — Consolidated history
+- Lines 4947-4968 - `5.5.6 - Ice and lava ground contact (#314)` - context: Caelum Argenteum — Consolidated history
+- Lines 4969-4982 - `5.5.5 - Equipped-Seal input while unarmed (#363)` - context: Caelum Argenteum — Consolidated history
+- Lines 4983-5000 - `5.5.4 - Ammunition mass and finished-component contract (#313)` - context: Caelum Argenteum — Consolidated history
+- Lines 5001-5017 - `5.5.3 - Sustained pressure lifecycle and native descent (#312)` - context: Caelum Argenteum — Consolidated history
+- Lines 5018-5041 - [5.5.2 - Persistent contact release distance (#311)](HISTORY.md#552---persistent-contact-release-distance-311) - context: Caelum Argenteum — Consolidated history
+- Lines 5042-5066 - [5.5.1 - Combat dispatch extraction (#310, 2026-10-18)](HISTORY.md#551---combat-dispatch-extraction-310-2026-10-18) - context: Caelum Argenteum — Consolidated history
+- Lines 5067-5089 - [5.5.0 - Weapon/input audit (#309, 2026-10-18)](HISTORY.md#550---weaponinput-audit-309-2026-10-18) - context: Caelum Argenteum — Consolidated history
+- Lines 5090-5144 - [5.4.47 - Production maximum siege adrenaline (#361, 2026-10-18)](HISTORY.md#5447---production-maximum-siege-adrenaline-361-2026-10-18) - context: Caelum Argenteum — Consolidated history
+- Lines 5145-5186 - [5.4.46 - House entry and exit use Melt (#334, 2026-10-18)](HISTORY.md#5446---house-entry-and-exit-use-melt-334-2026-10-18) - context: Caelum Argenteum — Consolidated history
+- Lines 5187-5204 - [5.4.45 - Stop demon breath against technical route targets (#357, 2026-10-18)](HISTORY.md#5445---stop-demon-breath-against-technical-route-targets-357-2026-10-18) - context: Caelum Argenteum — Consolidated history
+- Lines 5205-5229 - [5.4.44 - Structural cache notification investigation (#354, 2026-10-18)](HISTORY.md#5444---structural-cache-notification-investigation-354-2026-10-18) - context: Caelum Argenteum — Consolidated history
+- Lines 5230-5265 - [5.4.43 - Production maintenance and target subscriptions (#353, 2026-10-18)](HISTORY.md#5443---production-maintenance-and-target-subscriptions-353-2026-10-18) - context: Caelum Argenteum — Consolidated history
+- Lines 5266-5297 - [5.4.42 - Staggered actor updates and siege focus trial (#318, 2026-10-18)](HISTORY.md#5442---staggered-actor-updates-and-siege-focus-trial-318-2026-10-18) - context: Caelum Argenteum — Consolidated history
+- Lines 5298-5326 - [5.4.41 - Individual siege workload controls (#318, 2026-10-18)](HISTORY.md#5441---individual-siege-workload-controls-318-2026-10-18) - context: Caelum Argenteum — Consolidated history
+- Lines 5327-5345 - [5.4.40 - Shared rest and acceleration safety (#325, 2026-10-18)](HISTORY.md#5440---shared-rest-and-acceleration-safety-325-2026-10-18) - context: Caelum Argenteum — Consolidated history
+- Lines 5346-5365 - [5.4.39 - Voluntary-jump wall cushioning (#339, 2026-10-18)](HISTORY.md#5439---voluntary-jump-wall-cushioning-339-2026-10-18) - context: Caelum Argenteum — Consolidated history
+- Lines 5366-5379 - [5.4.38 - Complete top-aligned map legend (#321, 2026-10-18)](HISTORY.md#5438---complete-top-aligned-map-legend-321-2026-10-18) - context: Caelum Argenteum — Consolidated history
+- Lines 5380-5395 - [5.4.37 - Current MAP03 attribution supplement (#318, 2026-10-18)](HISTORY.md#5437---current-map03-attribution-supplement-318-2026-10-18) - context: Caelum Argenteum — Consolidated history
+- Lines 5396-5419 - [5.4.36 - House-door presentation isolation (#334, 2026-10-18)](HISTORY.md#5436---house-door-presentation-isolation-334-2026-10-18) - context: Caelum Argenteum — Consolidated history
+- Lines 5420-5460 - [5.4.35 - Prisoner escort replacement (#322, 2026-10-18)](HISTORY.md#5435---prisoner-escort-replacement-322-2026-10-18) - context: Caelum Argenteum — Consolidated history
+- Lines 5461-5489 - [5.4.34 - Five-minute active-play autosaving (#324, 2026-10-17)](HISTORY.md#5434---five-minute-active-play-autosaving-324-2026-10-17) - context: Caelum Argenteum — Consolidated history
+- Lines 5490-5519 - [5.4.33 - Western sewer crusher sector isolation (#323, 2026-10-17)](HISTORY.md#5433---western-sewer-crusher-sector-isolation-323-2026-10-17) - context: Caelum Argenteum — Consolidated history
+- Lines 5520-5539 - [5.4.32 - Direct demon projectile aim (#320, 2026-10-17)](HISTORY.md#5432---direct-demon-projectile-aim-320-2026-10-17) - context: Caelum Argenteum — Consolidated history
+- Lines 5540-5561 - [5.4.31 - Collapsible map legend (#321, 2026-10-17)](HISTORY.md#5431---collapsible-map-legend-321-2026-10-17) - context: Caelum Argenteum — Consolidated history
+- Lines 5562-5581 - [5.4.30 - Sleeping bag quick-item access (#319, 2026-10-17)](HISTORY.md#5430---sleeping-bag-quick-item-access-319-2026-10-17) - context: Caelum Argenteum — Consolidated history
+- Lines 5582-5645 - [5.4.29 - Adopt low-sky MAP03 and staged normal siege (#327)](HISTORY.md#5429---adopt-low-sky-map03-and-staged-normal-siege-327) - context: Caelum Argenteum — Consolidated history
+- Lines 5646-5825 - [5.4.28 - Contact-only breath, MAP06 audit and scan policy (#318)](HISTORY.md#5428---contact-only-breath-map06-audit-and-scan-policy-318) - context: Caelum Argenteum — Consolidated history
+- Lines 5826-5850 - `5.4.27 - Normal-speed prisoner following (#307)` - context: Caelum Argenteum — Consolidated history
+- Lines 5851-5880 - [5.4.26 - Active climate-seal registry (#305)](HISTORY.md#5426---active-climate-seal-registry-305) - context: Caelum Argenteum — Consolidated history
+- Lines 5881-5920 - [5.4.25 - Siege profiling and corpse suspension (#304)](HISTORY.md#5425---siege-profiling-and-corpse-suspension-304) - context: Caelum Argenteum — Consolidated history
+- Lines 5921-5969 - [5.4.24 - Mandinga Fire, demon personalities and Zupay rock (#284, accepted)](HISTORY.md#5424---mandinga-fire-demon-personalities-and-zupay-rock-284-accepted) - context: Caelum Argenteum — Consolidated history
+- Lines 5970-6129 - [5.4.23 - Domingo 3D prototype (#283, 2026-10-15, accepted)](HISTORY.md#5423---domingo-3d-prototype-283-2026-10-15-accepted) - context: Caelum Argenteum — Consolidated history
+- Lines 6130-6156 - [5.4.22 - Quick-use selector (#282, 2026-10-15, accepted)](HISTORY.md#5422---quick-use-selector-282-2026-10-15-accepted) - context: Caelum Argenteum — Consolidated history
+- Lines 6157-6214 - [5.4.21 - Seal climate and presentation (#252, 2026-10-15, accepted)](HISTORY.md#5421---seal-climate-and-presentation-252-2026-10-15-accepted) - context: Caelum Argenteum — Consolidated history
+- Lines 6215-6243 - [5.4.20 - Investigator Arcane Cloud (#251, 2026-10-15, accepted)](HISTORY.md#5420---investigator-arcane-cloud-251-2026-10-15-accepted) - context: Caelum Argenteum — Consolidated history
+- Lines 6244-6262 - [#251 continuation on accepted 5.4.19 (2026-10-15, in progress)](HISTORY.md#251-continuation-on-accepted-5419-2026-10-15-in-progress) - context: Caelum Argenteum — Consolidated history
+- Lines 6263-6291 - [5.4.19 - Pilgrim Redemption (#250, 2026-10-15)](HISTORY.md#5419---pilgrim-redemption-250-2026-10-15) - context: Caelum Argenteum — Consolidated history
+- Lines 6292-6312 - [5.4.18 - Battle Mage Summoning (#249, 2026-10-15)](HISTORY.md#5418---battle-mage-summoning-249-2026-10-15) - context: Caelum Argenteum — Consolidated history
+- Lines 6313-6343 - [5.4.17 - Cleric Rally (#248, 2026-10-15)](HISTORY.md#5417---cleric-rally-248-2026-10-15) - context: Caelum Argenteum — Consolidated history
+- Lines 6344-6379 - [5.4.16 - Formation Breaker (#247, 2026-10-15)](HISTORY.md#5416---formation-breaker-247-2026-10-15) - context: Caelum Argenteum — Consolidated history
+- Lines 6380-6429 - [5.4.15 - Linear player acceleration component (#260, 2026-10-15)](HISTORY.md#5415---linear-player-acceleration-component-260-2026-10-15) - context: Caelum Argenteum — Consolidated history
+- Lines 6430-6457 - [5.4.14 - Mansion resident movement repair (#253, 2026-10-15)](HISTORY.md#5414---mansion-resident-movement-repair-253-2026-10-15) - context: Caelum Argenteum — Consolidated history
+- Lines 6458-6484 - [5.4.13 - Arcane Sun (#246, 2026-10-15)](HISTORY.md#5413---arcane-sun-246-2026-10-15) - context: Caelum Argenteum — Consolidated history
+- Lines 6485-6508 - [5.4.12 - Miracle (#245, 2026-10-15)](HISTORY.md#5412---miracle-245-2026-10-15) - context: Caelum Argenteum — Consolidated history
+- Lines 6509-6535 - [5.4.11 - Survival Instinct (#244, 2026-10-15)](HISTORY.md#5411---survival-instinct-244-2026-10-15) - context: Caelum Argenteum — Consolidated history
+- Lines 6536-6561 - [5.4.10 - Battle Cry (#243, 2026-10-15)](HISTORY.md#5410---battle-cry-243-2026-10-15) - context: Caelum Argenteum — Consolidated history
+- Lines 6562-6593 - [5.4.9 - Hunter's Instinct (#239, 2026-10-15)](HISTORY.md#549---hunters-instinct-239-2026-10-15) - context: Caelum Argenteum — Consolidated history
+- Lines 6594-6617 - [5.4.8 - Socialization (#240, 2026-10-14)](HISTORY.md#548---socialization-240-2026-10-14) - context: Caelum Argenteum — Consolidated history
+- Lines 6618-6654 - [5.4.7 - Telekinesis (#241, 2026-10-14)](HISTORY.md#547---telekinesis-241-2026-10-14) - context: Caelum Argenteum — Consolidated history
+- Lines 6655-6688 - [5.4.6 - Supernatural Breathing (#242, 2026-10-14)](HISTORY.md#546---supernatural-breathing-242-2026-10-14) - context: Caelum Argenteum — Consolidated history
+- Lines 6689-6712 - [5.4.5 - Arcane Cloud visual checkpoint (#251, 2026-10-14, in progress)](HISTORY.md#545---arcane-cloud-visual-checkpoint-251-2026-10-14-in-progress) - context: Caelum Argenteum — Consolidated history
+- Lines 6713-6861 - [5.4.4 - Class preparation checkpoint (#238, 2026-10-14, in progress)](HISTORY.md#544---class-preparation-checkpoint-238-2026-10-14-in-progress) - context: Caelum Argenteum — Consolidated history
+- Lines 6862-6897 - [5.4.3 - MAP02 rat movement and audio (#254, 2026-10-14)](HISTORY.md#543---map02-rat-movement-and-audio-254-2026-10-14) - context: Caelum Argenteum — Consolidated history
+- Lines 6898-6936 - [5.4.2 - Equipped-Seal resistances (#261, 2026-10-14)](HISTORY.md#542---equipped-seal-resistances-261-2026-10-14) - context: Caelum Argenteum — Consolidated history
+- Lines 6937-6964 - [5.4.1 - Weapon dispersion tiers (#259, 2026-10-14)](HISTORY.md#541---weapon-dispersion-tiers-259-2026-10-14) - context: Caelum Argenteum — Consolidated history
+- Lines 6965-6996 - [5.4.0 - Live attribute audit (#237, 2026-10-14)](HISTORY.md#540---live-attribute-audit-237-2026-10-14) - context: Caelum Argenteum — Consolidated history
+- Lines 6997-7041 - [5.3.9 - Exploration entry-point integration (#236, 2026-10-14)](HISTORY.md#539---exploration-entry-point-integration-236-2026-10-14) - context: Caelum Argenteum — Consolidated history
+- Lines 7042-7111 - [5.3.8 - Independent mission tracking (#235, 2026-10-14)](HISTORY.md#538---independent-mission-tracking-235-2026-10-14) - context: Caelum Argenteum — Consolidated history
+- Lines 7112-7212 - [5.3.7 - Authored map registrations (#234, 2026-10-14)](HISTORY.md#537---authored-map-registrations-234-2026-10-14) - context: Caelum Argenteum — Consolidated history
+- Lines 7213-7251 - [5.3.6 - Manual map notes (#233, 2026-10-14)](HISTORY.md#536---manual-map-notes-233-2026-10-14) - context: Caelum Argenteum — Consolidated history
+- Lines 7252-7281 - [5.3.5 - Known local POIs (#232, 2026-10-13)](HISTORY.md#535---known-local-pois-232-2026-10-13) - context: Caelum Argenteum — Consolidated history
+- Lines 7282-7302 - [5.3.4 - Native local cartography (#231), 2026-10-13](HISTORY.md#534---native-local-cartography-231-2026-10-13) - context: Caelum Argenteum — Consolidated history
+- Lines 7303-7330 - [5.3.3 - Exhaustion sleep (#258), 2026-10-13](HISTORY.md#533---exhaustion-sleep-258-2026-10-13) - context: Caelum Argenteum — Consolidated history
+- Lines 7331-7344 - [5.3.2 - Automatic provisions (#257), 2026-10-13](HISTORY.md#532---automatic-provisions-257-2026-10-13) - context: Caelum Argenteum — Consolidated history
+- Lines 7345-7359 - [5.3.1 - Character survival and defenses (#256), 2026-10-13](HISTORY.md#531---character-survival-and-defenses-256-2026-10-13) - context: Caelum Argenteum — Consolidated history
+- Lines 7360-7369 - [5.3.0 - Right-edge Seal/Tarot (#255), 2026-10-13](HISTORY.md#530---right-edge-sealtarot-255-2026-10-13) - context: Caelum Argenteum — Consolidated history
+- Lines 7370-7385 - [5.2.27 - Empty Magic Box mass (#229), 2026-10-13](HISTORY.md#5227---empty-magic-box-mass-229-2026-10-13) - context: Caelum Argenteum — Consolidated history
+- Lines 7386-7413 - [5.2.26 - Rest menu feedback (#227), 2026-10-13](HISTORY.md#5226---rest-menu-feedback-227-2026-10-13) - context: Caelum Argenteum — Consolidated history
+- Lines 7414-7442 - [5.2.25 - Staff dispersion (#222), 2026-10-13](HISTORY.md#5225---staff-dispersion-222-2026-10-13) - context: Caelum Argenteum — Consolidated history
+- Lines 7443-7468 - [5.2.24 - Missing Mandinga loot (#220), 2026-10-13](HISTORY.md#5224---missing-mandinga-loot-220-2026-10-13) - context: Caelum Argenteum — Consolidated history
+- Lines 7469-7494 - [5.2.23 - Sewer sleeping-bag acceleration (#219), 2026-10-13](HISTORY.md#5223---sewer-sleeping-bag-acceleration-219-2026-10-13) - context: Caelum Argenteum — Consolidated history
+- Lines 7495-7526 - [5.2.22 - Current menu controls (#215), 2026-10-12](HISTORY.md#5222---current-menu-controls-215-2026-10-12) - context: Caelum Argenteum — Consolidated history
+- Lines 7527-7545 - `5.2.21 - Visible tutorial gold (#216)` - context: Caelum Argenteum — Consolidated history
+- Lines 7546-7576 - [5.2.20 - Resource bar layout (#213), 2026-10-12](HISTORY.md#5220---resource-bar-layout-213-2026-10-12) - context: Caelum Argenteum — Consolidated history
+- Lines 7577-7609 - [5.2.19 - Landing capacity for impacts (#211), 2026-10-12](HISTORY.md#5219---landing-capacity-for-impacts-211-2026-10-12) - context: Caelum Argenteum — Consolidated history
+- Lines 7610-7644 - [5.2.18 - Modular animation and rest repairs (#209), 2026-10-12](HISTORY.md#5218---modular-animation-and-rest-repairs-209-2026-10-12) - context: Caelum Argenteum — Consolidated history
+- Lines 7645-7670 - [5.2.17 - MAP01 player remains alive at 1 HP (#207), 2026-10-12](HISTORY.md#5217---map01-player-remains-alive-at-1-hp-207-2026-10-12) - context: Caelum Argenteum — Consolidated history
+- Lines 7671-7703 - [5.2.16 - Accepted fullscreen cursor workaround (#204), 2026-10-12](HISTORY.md#5216---accepted-fullscreen-cursor-workaround-204-2026-10-12) - context: Caelum Argenteum — Consolidated history
+- Lines 7704-7735 - [5.2.15 - Native readability, crosshair and comfort (#150), 2026-10-12](HISTORY.md#5215---native-readability-crosshair-and-comfort-150-2026-10-12) - context: Caelum Argenteum — Consolidated history
+- Lines 7736-7771 - [5.2.14 - Native controls and synchronized hints (#149), 2026-10-12](HISTORY.md#5214---native-controls-and-synchronized-hints-149-2026-10-12) - context: Caelum Argenteum — Consolidated history
+- Lines 7772-7840 - [5.2.13 - Modular appearance, preview and hands (#148), 2026-10-11](HISTORY.md#5213---modular-appearance-preview-and-hands-148-2026-10-11) - context: Caelum Argenteum — Consolidated history
+- Lines 7841-7874 - [5.2.12 - Bull cushioning and finite resident combat (#195), 2026-10-11](HISTORY.md#5212---bull-cushioning-and-finite-resident-combat-195-2026-10-11) - context: Caelum Argenteum — Consolidated history
+- Lines 7875-7910 - [5.2.11 - Received collision energy and bilateral contact area (#194), 2026-10-11](HISTORY.md#5211---received-collision-energy-and-bilateral-contact-area-194-2026-10-11) - context: Caelum Argenteum — Consolidated history
+- Lines 7911-7945 - [5.2.10 - Ranged penetration amendment and shotgun names (#192), 2026-10-11](HISTORY.md#5210---ranged-penetration-amendment-and-shotgun-names-192-2026-10-11) - context: Caelum Argenteum — Consolidated history
+- Lines 7946-7985 - [5.2.9 - Personality, magical power and bell volley (#192), 2026-10-11](HISTORY.md#529---personality-magical-power-and-bell-volley-192-2026-10-11) - context: Caelum Argenteum — Consolidated history
+- Lines 7986-8014 - `5.2.8 - Mass-based Toughness and status resistance (#188)` - context: Caelum Argenteum — Consolidated history
+- Lines 8015-8052 - [5.2.7 - Native menu migration (#189), 2026-10-11](HISTORY.md#527---native-menu-migration-189-2026-10-11) - context: Caelum Argenteum — Consolidated history
+- Lines 8053-8078 - [5.2.6 - Pointer interaction in card/crafting/time menus (#184), 2026-10-11](HISTORY.md#526---pointer-interaction-in-cardcraftingtime-menus-184-2026-10-11) - context: Caelum Argenteum — Consolidated history
+- Lines 8079-8107 - [5.2.5 - Indexed NPC dialogue and LANGUAGE sources (#185), 2026-10-11](HISTORY.md#525---indexed-npc-dialogue-and-language-sources-185-2026-10-11) - context: Caelum Argenteum — Consolidated history
+- Lines 8108-8140 - [5.2.4 - Profession onboarding and MAP02 supplies (#183), 2026-10-11](HISTORY.md#524---profession-onboarding-and-map02-supplies-183-2026-10-11) - context: Caelum Argenteum — Consolidated history
+- Lines 8141-8165 - [5.2.3 - Mandinga friendly-fire retaliation (#180), 2026-10-11](HISTORY.md#523---mandinga-friendly-fire-retaliation-180-2026-10-11) - context: Caelum Argenteum — Consolidated history
+- Lines 8166-8186 - [5.2.2 - Accelerate multi-day time skipping (#178), 2026-10-11](HISTORY.md#522---accelerate-multi-day-time-skipping-178-2026-10-11) - context: Caelum Argenteum — Consolidated history
+- Lines 8187-8216 - [5.2.1 - Tutorial equipment, provisions and portable rest (#177), 2026-10-11](HISTORY.md#521---tutorial-equipment-provisions-and-portable-rest-177-2026-10-11) - context: Caelum Argenteum — Consolidated history
+- Lines 8217-8256 - [5.2.0 - Unified saved identity and native settings (#147), 2026-10-11](HISTORY.md#520---unified-saved-identity-and-native-settings-147-2026-10-11) - context: Caelum Argenteum — Consolidated history
+- Lines 8257-8284 - [5.1.20 - MAP06 doors and peaceful time skip (#173), 2026-10-10](HISTORY.md#5120---map06-doors-and-peaceful-time-skip-173-2026-10-10) - context: Caelum Argenteum — Consolidated history
+- Lines 8285-8299 - [5.1.19 - Hide seen NPC information (#172), 2026-10-10](HISTORY.md#5119---hide-seen-npc-information-172-2026-10-10) - context: Caelum Argenteum — Consolidated history
+- Lines 8300-8327 - [5.1.18 - MAP01 gifts and Bull checkpoint (#164), 2026-10-10](HISTORY.md#5118---map01-gifts-and-bull-checkpoint-164-2026-10-10) - context: Caelum Argenteum — Consolidated history
+- Lines 8328-8341 - [5.1.17 - Medikit names (#169), 2026-10-10](HISTORY.md#5117---medikit-names-169-2026-10-10) - context: Caelum Argenteum — Consolidated history
+- Lines 8342-8376 - [5.1.16 - Recoverable bolas (#163), 2026-10-10](HISTORY.md#5116---recoverable-bolas-163-2026-10-10) - context: Caelum Argenteum — Consolidated history
+- Lines 8377-8416 - [5.1.15 - Bronze utility staff and wand names (#162, 2026-10-10)](HISTORY.md#5115---bronze-utility-staff-and-wand-names-162-2026-10-10) - context: Caelum Argenteum — Consolidated history
+- Lines 8417-8455 - [5.1.14 - Damage flash across map travel (#165, 2026-10-10)](HISTORY.md#5114---damage-flash-across-map-travel-165-2026-10-10) - context: Caelum Argenteum — Consolidated history
+- Lines 8456-8489 - [5.1.13 - Argento silver-key handoff (#160, 2026-10-10)](HISTORY.md#5113---argento-silver-key-handoff-160-2026-10-10) - context: Caelum Argenteum — Consolidated history
+- Lines 8490-8525 - [5.1.12 - Preserve crafting equipment size (#158, 2026-10-10)](HISTORY.md#5112---preserve-crafting-equipment-size-158-2026-10-10) - context: Caelum Argenteum — Consolidated history
+- Lines 8526-8551 - [5.1.11 - Time-skip letter controls (#156, 2026-10-10)](HISTORY.md#5111---time-skip-letter-controls-156-2026-10-10) - context: Caelum Argenteum — Consolidated history
+- Lines 8552-8585 - [5.1.10 — SI physics, growth curves and migration (#154, 2026-10-09)](HISTORY.md#5110--si-physics-growth-curves-and-migration-154-2026-10-09) - context: Caelum Argenteum — Consolidated history
+- Lines 8586-8641 - [5.1.9 - Shotgun pickup, grip and held aim correction (#152, 2026-10-09)](HISTORY.md#519---shotgun-pickup-grip-and-held-aim-correction-152-2026-10-09) - context: Caelum Argenteum — Consolidated history
+- Lines 8642-8689 - [5.1.8 - Elemental VFX, flying models and screen feedback (#137, 2026-10-09)](HISTORY.md#518---elemental-vfx-flying-models-and-screen-feedback-137-2026-10-09) - context: Caelum Argenteum — Consolidated history
+- Lines 8690-8797 - [5.1.7 - Shortbow becomes a modular double-barrel shotgun (#136, 2026-10-08)](HISTORY.md#517---shortbow-becomes-a-modular-double-barrel-shotgun-136-2026-10-08) - context: Caelum Argenteum — Consolidated history
+- Lines 8798-8839 - [5.1.6 - Soldier crouched carbine aim (#143, 2026-10-08)](HISTORY.md#516---soldier-crouched-carbine-aim-143-2026-10-08) - context: Caelum Argenteum — Consolidated history
+- Lines 8840-8890 - [5.1.5 - Demon breath and finite potions (#135, 2026-10-08)](HISTORY.md#515---demon-breath-and-finite-potions-135-2026-10-08) - context: Caelum Argenteum — Consolidated history
+- Lines 8891-8961 - [5.1.4 - Cached thermal physiology and breathing (#140, 2026-10-08)](HISTORY.md#514---cached-thermal-physiology-and-breathing-140-2026-10-08) - context: Caelum Argenteum — Consolidated history
+- Lines 8962-9043 - [5.1.3 - Port interiors, commerce and deployment (#133, 2026-10-08)](HISTORY.md#513---port-interiors-commerce-and-deployment-133-2026-10-08) - context: Caelum Argenteum — Consolidated history
+- Lines 9044-9071 - [5.1.2 - Staged siege experiment (#132, 2026-10-07)](HISTORY.md#512---staged-siege-experiment-132-2026-10-07) - context: Caelum Argenteum — Consolidated history
+- Lines 9072-9113 - [5.1.1 - Thermal HUD, attributes and journey climate (#131, 2026-10-07)](HISTORY.md#511---thermal-hud-attributes-and-journey-climate-131-2026-10-07) - context: Caelum Argenteum — Consolidated history
+- Lines 9114-9156 - [5.1.0 — Thermal survival (#130, 2026-10-07)](HISTORY.md#510--thermal-survival-130-2026-10-07) - context: Caelum Argenteum — Consolidated history
+- Lines 9157-9202 - [5.0.6 — Automatic normal high-density AI (#128, 2026-10-07)](HISTORY.md#506--automatic-normal-high-density-ai-128-2026-10-07) - context: Caelum Argenteum — Consolidated history
+- Lines 9203-9274 - [5.0.5 — Siege profiling and combined diagnostic experiments (#121, 2026-10-07)](HISTORY.md#505--siege-profiling-and-combined-diagnostic-experiments-121-2026-10-07) - context: Caelum Argenteum — Consolidated history
+- Lines 9275-9352 - [5.0.4 — Per-player authority and integrated closure (#120, 2026-10-06)](HISTORY.md#504--per-player-authority-and-integrated-closure-120-2026-10-06) - context: Caelum Argenteum — Consolidated history
+- Lines 9353-9407 - [5.0.3 — Tarot domain service (#119, 2026-10-06)](HISTORY.md#503--tarot-domain-service-119-2026-10-06) - context: Caelum Argenteum — Consolidated history
+- Lines 9408-9457 - [5.0.2 — Inventory/equipment service (#118, 2026-10-06)](HISTORY.md#502--inventoryequipment-service-118-2026-10-06) - context: Caelum Argenteum — Consolidated history
+- Lines 9458-9502 - [5.0.1 — Compatible player character/resource adapters (#117, 2026-10-06)](HISTORY.md#501--compatible-player-characterresource-adapters-117-2026-10-06) - context: Caelum Argenteum — Consolidated history
+- Lines 9503-9540 - [5.0.0 — Dependency/state audit and first presentation extraction (#116, 2026-10-06)](HISTORY.md#500--dependencystate-audit-and-first-presentation-extraction-116-2026-10-06) - context: Caelum Argenteum — Consolidated history
+- Lines 9541-9611 - [4.37.24 — Final V4.37 integration and portable export (#82)](HISTORY.md#43724--final-v437-integration-and-portable-export-82) - context: Caelum Argenteum — Consolidated history
+- Lines 9612-9656 - [4.37.23 - Contextual creation and combined profession choices (#112)](HISTORY.md#43723---contextual-creation-and-combined-profession-choices-112) - context: Caelum Argenteum — Consolidated history
+- Lines 9657-9706 - [4.37.22 - Kite, tower and magic first-person shields (#106)](HISTORY.md#43722---kite-tower-and-magic-first-person-shields-106) - context: Caelum Argenteum — Consolidated history
+- Lines 9707-9772 - [4.37.21 - Narrative artwork, single-page introduction and farewell (#103)](HISTORY.md#43721---narrative-artwork-single-page-introduction-and-farewell-103) - context: Caelum Argenteum — Consolidated history
+- Lines 9773-9808 - [4.37.20 - Textured training dummy model (#98)](HISTORY.md#43720---textured-training-dummy-model-98) - context: Caelum Argenteum — Consolidated history
+- Lines 9809-9845 - [4.37.19 - Palomo necklace reward and shield naming (#96)](HISTORY.md#43719---palomo-necklace-reward-and-shield-naming-96) - context: Caelum Argenteum — Consolidated history
+- Lines 9846-9885 - [4.37.18 - Crafting browser and three Tarot effect fields (#91)](HISTORY.md#43718---crafting-browser-and-three-tarot-effect-fields-91) - context: Caelum Argenteum — Consolidated history
+- Lines 9886-9925 - [4.37.17 - Pickaxe and successful extraction feedback (#89)](HISTORY.md#43717---pickaxe-and-successful-extraction-feedback-89) - context: Caelum Argenteum — Consolidated history
+- Lines 9926-9964 - [4.37.16 - Add compass and project menu pointers (#87)](HISTORY.md#43716---add-compass-and-project-menu-pointers-87) - context: Caelum Argenteum — Consolidated history
+- Lines 9965-9986 - [4.37.15 - Add traditional Truco ranked mode (#101)](HISTORY.md#43715---add-traditional-truco-ranked-mode-101) - context: Caelum Argenteum — Consolidated history
+- Lines 9987-10001 - [4.37.14a - Move Argento practice to the end (#99)](HISTORY.md#43714a---move-argento-practice-to-the-end-99) - context: Caelum Argenteum — Consolidated history
+- Lines 10002-10025 - [4.37.14 - Give the deck at Palomo's first upstairs conversation (#97)](HISTORY.md#43714---give-the-deck-at-palomos-first-upstairs-conversation-97) - context: Caelum Argenteum — Consolidated history
+- Lines 10026-10043 - [4.37.13a - Show the crafting time-skip shortcut (#93)](HISTORY.md#43713a---show-the-crafting-time-skip-shortcut-93) - context: Caelum Argenteum — Consolidated history
+- Lines 10044-10104 - [4.37.13 — Complete Trucazo practice against Argento (#81)](HISTORY.md#43713--complete-trucazo-practice-against-argento-81) - context: Caelum Argenteum — Consolidated history
+- Lines 10105-10156 - `4.37.12 — Campaign Tarot powers and physical deck (#80)` - context: Caelum Argenteum — Consolidated history
+- Lines 10157-10231 - [4.37.11 — Barracas al Sud recognizes its amnesiac captain (#79)](HISTORY.md#43711--barracas-al-sud-recognizes-its-amnesiac-captain-79) - context: Caelum Argenteum — Consolidated history
+- Lines 10232-10290 - [4.37.10 — Prisoner intelligence after the Barracas al Sud reward (#78)](HISTORY.md#43710--prisoner-intelligence-after-the-barracas-al-sud-reward-78) - context: Caelum Argenteum — Consolidated history
+- Lines 10291-10434 - [4.37.9 — Expand fortified Barracas al Sud (#77)](HISTORY.md#4379--expand-fortified-barracas-al-sud-77) - context: Caelum Argenteum — Consolidated history
+- Lines 10435-10479 - [First city iteration — superseded geometry, retained evidence](HISTORY.md#first-city-iteration--superseded-geometry-retained-evidence) - context: Caelum Argenteum — Consolidated history > 4.37.9 — Expand fortified Barracas al Sud (#77)
+- Lines 10480-10536 - [4.37.8 — Correct MAP02 material ledger and verify finite supplies (#75)](HISTORY.md#4378--correct-map02-material-ledger-and-verify-finite-supplies-75) - context: Caelum Argenteum — Consolidated history
+- Lines 10537-10588 - [4.37.7 — Six flooded pit returns and central elevator (#74)](HISTORY.md#4377--six-flooded-pit-returns-and-central-elevator-74) - context: Caelum Argenteum — Consolidated history
+- Lines 10589-10638 - [4.37.6 — Central MAP02 and local progression carriers (#73)](HISTORY.md#4376--central-map02-and-local-progression-carriers-73) - context: Caelum Argenteum — Consolidated history
+- Lines 10639-10674 - [4.37.5 — Daily mansion food and water (#65)](HISTORY.md#4375--daily-mansion-food-and-water-65) - context: Caelum Argenteum — Consolidated history
+- Lines 10675-10705 - [4.37.4 — Explicit time skip and frozen exterior calendar (#64)](HISTORY.md#4374--explicit-time-skip-and-frozen-exterior-calendar-64) - context: Caelum Argenteum — Consolidated history
+- Lines 10706-10763 - [4.37.3 — Palomo equipment plan and retained owned equipment (#63)](HISTORY.md#4373--palomo-equipment-plan-and-retained-owned-equipment-63) - context: Caelum Argenteum — Consolidated history
+- Lines 10764-10801 - [4.37.2 — Tenfold reduction of magic-weapon Anima bases (#68)](HISTORY.md#4372--tenfold-reduction-of-magic-weapon-anima-bases-68) - context: Caelum Argenteum — Consolidated history
+- Lines 10802-10842 - [4.37.1 — Caella's shared training-dummy exercises (#62)](HISTORY.md#4371--caellas-shared-training-dummy-exercises-62) - context: Caelum Argenteum — Consolidated history
+- Lines 10843-11015 - [4.37.0 — Rolling mansion grounds and filled door tympana (#61)](HISTORY.md#4370--rolling-mansion-grounds-and-filled-door-tympana-61) - context: Caelum Argenteum — Consolidated history
+- Lines 11016-11090 - [4.36.28 — Verify and export the complete three-map test build (#17)](HISTORY.md#43628--verify-and-export-the-complete-three-map-test-build-17) - context: Caelum Argenteum — Consolidated history
+- Lines 11091-11149 - [4.36.27 — Complete third campaign map (#16)](HISTORY.md#43627--complete-third-campaign-map-16) - context: Caelum Argenteum — Consolidated history
+- Lines 11150-11194 - [4.36.26 — Attack clock, durability and thrusts (#37)](HISTORY.md#43626--attack-clock-durability-and-thrusts-37) - context: Caelum Argenteum — Consolidated history
+- Lines 11195-11336 - [4.36.25 — Mansion enclosure and architectural detail (#36)](HISTORY.md#43625--mansion-enclosure-and-architectural-detail-36) - context: Caelum Argenteum — Consolidated history
+- Lines 11337-11347 - `4.36.24a — Proprietary rights notice (#55)` - context: Caelum Argenteum — Consolidated history
+- Lines 11348-11374 - [4.36.24 — Active and completed quest journal (#35)](HISTORY.md#43624--active-and-completed-quest-journal-35) - context: Caelum Argenteum — Consolidated history
+- Lines 11375-11417 - [4.36.23 — Additive body/equipment armor after Toughness (#52)](HISTORY.md#43623--additive-bodyequipment-armor-after-toughness-52) - context: Caelum Argenteum — Consolidated history
+- Lines 11418-11450 - [4.36.22 — Palomo, Selene and port narrative (#34)](HISTORY.md#43622--palomo-selene-and-port-narrative-34) - context: Caelum Argenteum — Consolidated history
+- Lines 11451-11475 - [Same-patch MAP02 freeze correction, 2026-09-27](HISTORY.md#same-patch-map02-freeze-correction-2026-09-27) - context: Caelum Argenteum — Consolidated history > 4.36.22 — Palomo, Selene and port narrative (#34)
+- Lines 11476-11503 - [Same-patch legacy dialogue restoration, 2026-09-27](HISTORY.md#same-patch-legacy-dialogue-restoration-2026-09-27) - context: Caelum Argenteum — Consolidated history > 4.36.22 — Palomo, Selene and port narrative (#34)
+- Lines 11504-11514 - [Author acceptance, 2026-09-27](HISTORY.md#author-acceptance-2026-09-27) - context: Caelum Argenteum — Consolidated history > 4.36.22 — Palomo, Selene and port narrative (#34)
+- Lines 11515-11542 - [4.36.21 — Scenery adrenaline and running absorption (#49)](HISTORY.md#43621--scenery-adrenaline-and-running-absorption-49) - context: Caelum Argenteum — Consolidated history
+- Lines 11543-11594 - [4.36.20 — Shared Arcana capture and sewer escape (#33)](HISTORY.md#43620--shared-arcana-capture-and-sewer-escape-33) - context: Caelum Argenteum — Consolidated history
+- Lines 11595-11647 - [4.36.19 — Final author-approved siege balance (#21)](HISTORY.md#43619--final-author-approved-siege-balance-21) - context: Caelum Argenteum — Consolidated history
+- Lines 11648-11676 - `4.36.18 — Walking wall-impact absorption (#43)` - context: Caelum Argenteum — Consolidated history
+- Lines 11677-11722 - [4.36.17 — Cannon firing and physical contacts (#21; planned label 4.36.13)](HISTORY.md#43617--cannon-firing-and-physical-contacts-21-planned-label-43613) - context: Caelum Argenteum — Consolidated history
+- Lines 11723-11768 - [4.36.16 — Operational demonic rams (#20; planned label 4.36.12)](HISTORY.md#43616--operational-demonic-rams-20-planned-label-43612) - context: Caelum Argenteum — Consolidated history
+- Lines 11769-11848 - `4.36.15 — Breakable actor gates (#19; planned label 4.36.11)` - context: Caelum Argenteum — Consolidated history
+- Lines 11849-11896 - [4.36.14a — Refine siege models and separate gate materials (#18 follow-up)](HISTORY.md#43614a--refine-siege-models-and-separate-gate-materials-18-follow-up) - context: Caelum Argenteum — Consolidated history
+- Lines 11897-11937 - [4.36.14 — Pain sounds, dialogue cue, map music and story intermissions (#31)](HISTORY.md#43614--pain-sounds-dialogue-cue-map-music-and-story-intermissions-31) - context: Caelum Argenteum — Consolidated history
+- Lines 11938-11964 - `4.36.10 — Reusable siege preview assets (#18)` - context: Caelum Argenteum — Consolidated history
+- Lines 11965-11998 - [4.36.9 — Approved Tarot fronts and collection bindings (#15)](HISTORY.md#4369--approved-tarot-fronts-and-collection-bindings-15) - context: Caelum Argenteum — Consolidated history
+- Lines 11999-12102 - `4.36.8 — Prisoner rescue, escort and port rewards (#14)` - context: Caelum Argenteum — Consolidated history
+- Lines 12103-12149 - [4.36.7 — Recolored prisoner appearances (#13)](HISTORY.md#4367--recolored-prisoner-appearances-13) - context: Caelum Argenteum — Consolidated history
+- Lines 12150-12179 - `4.36.6 — Hostile sewer rats (#12)` - context: Caelum Argenteum — Consolidated history
+- Lines 12180-12185 - `4.36.5a — Selective file reading for agents (#29)` - context: Caelum Argenteum — Consolidated history
+- Lines 12186-12204 - `Implemented scope and decisions` - context: Caelum Argenteum — Consolidated history > 4.36.5a — Selective file reading for agents (#29)
+- Lines 12205-12216 - `Executed verification` - context: Caelum Argenteum — Consolidated history > 4.36.5a — Selective file reading for agents (#29)
+- Lines 12217-12288 - [4.36.5 — Four-section sewer, keyed cells and repair refuges (#11)](HISTORY.md#4365--four-section-sewer-keyed-cells-and-repair-refuges-11) - context: Caelum Argenteum — Consolidated history
+- Lines 12289-12356 - [4.36.4 — MAP02 T1 loot, recipient sizing and acquisition feedback (#10)](HISTORY.md#4364--map02-t1-loot-recipient-sizing-and-acquisition-feedback-10) - context: Caelum Argenteum — Consolidated history
+- Lines 12357-12408 - [4.36.3 — Additional counterclockwise flail rotation (issue #9)](HISTORY.md#4363--additional-counterclockwise-flail-rotation-issue-9) - context: Caelum Argenteum — Consolidated history
+- Lines 12409-12412 - [4.36.2 — Bow first-use composition stall (issue #8)](HISTORY.md#4362--bow-first-use-composition-stall-issue-8) - context: Caelum Argenteum — Consolidated history
+- Lines 12413-12431 - [Cause and correction](HISTORY.md#cause-and-correction) - context: Caelum Argenteum — Consolidated history > 4.36.2 — Bow first-use composition stall (issue #8)
+- Lines 12432-12485 - [Verification and acceptance](HISTORY.md#verification-and-acceptance) - context: Caelum Argenteum — Consolidated history > 4.36.2 — Bow first-use composition stall (issue #8)
+- Lines 12486-12504 - [Author environmental-scope clarification — 2026-09-23](HISTORY.md#author-environmental-scope-clarification--2026-09-23) - context: Caelum Argenteum — Consolidated history > 4.36.2 — Bow first-use composition stall (issue #8)
+- Lines 12505-12510 - `4.36.1b — Engineering guides and long-document index` - context: Caelum Argenteum — Consolidated history
+- Lines 12511-12530 - `Implemented scope and decisions` - context: Caelum Argenteum — Consolidated history > 4.36.1b — Engineering guides and long-document index
+- Lines 12531-12541 - `Executed verification` - context: Caelum Argenteum — Consolidated history > 4.36.1b — Engineering guides and long-document index
+- Lines 12542-12547 - [4.36.1 — English documentation and repository-owned acceptance workflow](HISTORY.md#4361--english-documentation-and-repository-owned-acceptance-workflow) - context: Caelum Argenteum — Consolidated history
+- Lines 12548-12584 - `Implemented scope and decisions` - context: Caelum Argenteum — Consolidated history > 4.36.1 — English documentation and repository-owned acceptance workflow
+- Lines 12585-12609 - [Author roadmap and usage request — 2026-09-23](HISTORY.md#author-roadmap-and-usage-request--2026-09-23) - context: Caelum Argenteum — Consolidated history > 4.36.1 — English documentation and repository-owned acceptance workflow
+- Lines 12610-12628 - [Further author clarification — 2026-09-23](HISTORY.md#further-author-clarification--2026-09-23) - context: Caelum Argenteum — Consolidated history > 4.36.1 — English documentation and repository-owned acceptance workflow
+- Lines 12629-12644 - [Prisoner reward clarification — 2026-09-23](HISTORY.md#prisoner-reward-clarification--2026-09-23) - context: Caelum Argenteum — Consolidated history > 4.36.1 — English documentation and repository-owned acceptance workflow
+- Lines 12645-12679 - `Executed verification` - context: Caelum Argenteum — Consolidated history > 4.36.1 — English documentation and repository-owned acceptance workflow
+- Lines 12680-12701 - [Engine verification and author acceptance](HISTORY.md#engine-verification-and-author-acceptance) - context: Caelum Argenteum — Consolidated history > 4.36.1 — English documentation and repository-owned acceptance workflow
+- Lines 12702-12725 - [4.36.0i — approved weight, provisions and complete maze](HISTORY.md#4360i--approved-weight-provisions-and-complete-maze) - context: Caelum Argenteum — Consolidated history
+- Lines 12726-12766 - [Author acceptance recorded on 2026-09-23](HISTORY.md#author-acceptance-recorded-on-2026-09-23) - context: Caelum Argenteum — Consolidated history > 4.36.0i — approved weight, provisions and complete maze
+- Lines 12767-12786 - [4.36.0h — 90° rotation, specified mask and percentage damage](HISTORY.md#4360h--90-rotation-specified-mask-and-percentage-damage) - context: Caelum Argenteum — Consolidated history
+- Lines 12787-12805 - [4.36.0g — corrections after the 0f review](HISTORY.md#4360g--corrections-after-the-0f-review) - context: Caelum Argenteum — Consolidated history
+- Lines 12806-12830 - [4.36.0f — native rotation, bow grip and fast rock](HISTORY.md#4360f--native-rotation-bow-grip-and-fast-rock) - context: Caelum Argenteum — Consolidated history
+- Lines 12831-12858 - `4.36.0e — corrections requested after testing 0d` - context: Caelum Argenteum — Consolidated history
+- Lines 12859-12885 - [4.36.0d — grips, fists and gallery reset (2026-09-17)](HISTORY.md#4360d--grips-fists-and-gallery-reset-2026-09-17) - context: Caelum Argenteum — Consolidated history
+- Lines 12886-12905 - [4.36.0c — views, sounds and mechanism review (2026-09-17)](HISTORY.md#4360c--views-sounds-and-mechanism-review-2026-09-17) - context: Caelum Argenteum — Consolidated history
+- Lines 12906-12925 - [4.36.0b — mechanisms and approved traps (2026-09-17)](HISTORY.md#4360b--mechanisms-and-approved-traps-2026-09-17) - context: Caelum Argenteum — Consolidated history
+- Lines 12926-12940 - [4.36.0a — trapdoor and physical rocks (2026-09-17)](HISTORY.md#4360a--trapdoor-and-physical-rocks-2026-09-17) - context: Caelum Argenteum — Consolidated history
+- Lines 12941-12954 - [4.35.0q — sprites v4 and one-third eating rate (2026-09-17)](HISTORY.md#4350q--sprites-v4-and-one-third-eating-rate-2026-09-17) - context: Caelum Argenteum — Consolidated history
+- Lines 12955-12967 - [4.35.0p — reservation and coastal transport (2026-09-17)](HISTORY.md#4350p--reservation-and-coastal-transport-2026-09-17) - context: Caelum Argenteum — Consolidated history
+- Lines 12968-12983 - [4.35.0o — monthly calendar and events (2026-09-17)](HISTORY.md#4350o--monthly-calendar-and-events-2026-09-17) - context: Caelum Argenteum — Consolidated history
+- Lines 12984-13000 - [4.35.0n — travel, rest and provisions (2026-09-17)](HISTORY.md#4350n--travel-rest-and-provisions-2026-09-17) - context: Caelum Argenteum — Consolidated history
+- Lines 13001-13019 - [4.35.0m — food by mass, port and coast (2026-09-17)](HISTORY.md#4350m--food-by-mass-port-and-coast-2026-09-17) - context: Caelum Argenteum — Consolidated history
+- Lines 13020-13036 - [4.35.0l — Climate regions, water and chairs (2026-09-17)](HISTORY.md#4350l--climate-regions-water-and-chairs-2026-09-17) - context: Caelum Argenteum — Consolidated history
+- Lines 13037-13058 - [4.35.0k — local climate status and consultation (2026-09-16)](HISTORY.md#4350k--local-climate-status-and-consultation-2026-09-16) - context: Caelum Argenteum — Consolidated history
+- Lines 13059-13083 - [4.35.0j — local time, slow meals, Use and class area (2026-09-16)](HISTORY.md#4350j--local-time-slow-meals-use-and-class-area-2026-09-16) - context: Caelum Argenteum — Consolidated history
+- Lines 13084-13100 - [4.35.0i — 0h corrections and Limbo acceleration (2026-09-16)](HISTORY.md#4350i--0h-corrections-and-limbo-acceleration-2026-09-16) - context: Caelum Argenteum — Consolidated history
+- Lines 13101-13123 - [4.35.0h — automatic meals and furnished mansion (2026-09-16)](HISTORY.md#4350h--automatic-meals-and-furnished-mansion-2026-09-16) - context: Caelum Argenteum — Consolidated history
+- Lines 13124-13143 - [4.35.0g — Fast-forward, tables and sleep (2026-09-16)](HISTORY.md#4350g--fast-forward-tables-and-sleep-2026-09-16) - context: Caelum Argenteum — Consolidated history
+- Lines 13144-13171 - [4.35.0f — Sleeping bag and comfort (2026-09-16)](HISTORY.md#4350f--sleeping-bag-and-comfort-2026-09-16) - context: Caelum Argenteum — Consolidated history
+- Lines 13172-13196 - [4.35.0e — chairs, cots and rest camera (2026-09-16)](HISTORY.md#4350e--chairs-cots-and-rest-camera-2026-09-16) - context: Caelum Argenteum — Consolidated history
+- Lines 13197-13211 - [4.35.0d1 — GZDoom 4.14.2 start repair (2026-09-15)](HISTORY.md#4350d1--gzdoom-4142-start-repair-2026-09-15) - context: Caelum Argenteum — Consolidated history
+- Lines 13212-13233 - [4.35.0d — rest and wait at normal scale (2026-09-15)](HISTORY.md#4350d--rest-and-wait-at-normal-scale-2026-09-15) - context: Caelum Argenteum — Consolidated history
+- Lines 13234-13252 - [4.35.0c — campaign start and Limbo timeless (2026-09-15)](HISTORY.md#4350c--campaign-start-and-limbo-timeless-2026-09-15) - context: Caelum Argenteum — Consolidated history
+- Lines 13253-13269 - [4.35.0b — calendar and dialogues without pause (2026-09-14)](HISTORY.md#4350b--calendar-and-dialogues-without-pause-2026-09-14) - context: Caelum Argenteum — Consolidated history
+- Lines 13270-13286 - [4.35.0a — persistent global clock (2026-09-14)](HISTORY.md#4350a--persistent-global-clock-2026-09-14) - context: Caelum Argenteum — Consolidated history
+- Lines 13287-13304 - [4.34.0e — stations and supplies for travel testing (2026-09-14)](HISTORY.md#4340e--stations-and-supplies-for-travel-testing-2026-09-14) - context: Caelum Argenteum — Consolidated history
+- Lines 13305-13321 - [4.34.0d — caravan base and persistent travel cycle (2026-09-14)](HISTORY.md#4340d--caravan-base-and-persistent-travel-cycle-2026-09-14) - context: Caelum Argenteum — Consolidated history
+- Lines 13322-13345 - [Test sewers connected — 4.34.0c](HISTORY.md#test-sewers-connected--4340c) - context: Caelum Argenteum — Consolidated history
+- Lines 13346-13368 - [Grouped doors and independent test key — 4.34.0b](HISTORY.md#grouped-doors-and-independent-test-key--4340b) - context: Caelum Argenteum — Consolidated history
+- Lines 13369-13392 - [Initial world and test export before V5 — 4.34.0a](HISTORY.md#initial-world-and-test-export-before-v5--4340a) - context: Caelum Argenteum — Consolidated history
+- Lines 13393-13416 - [Integration of 4.33 and remaining roadmap — 4.33.0ao](HISTORY.md#integration-of-433-and-remaining-roadmap--4330ao) - context: Caelum Argenteum — Consolidated history
+- Lines 13417-13440 - [Reusable Reputation Conditions — 4.33.0an](HISTORY.md#reusable-reputation-conditions--4330an) - context: Caelum Argenteum — Consolidated history
+- Lines 13441-13466 - [Journal Inactive Conversation and Boundary Navigation — 4.33.0am](HISTORY.md#journal-inactive-conversation-and-boundary-navigation--4330am) - context: Caelum Argenteum — Consolidated history
+- Lines 13467-13489 - [Filters, Single Mission and Capture Diagnosis — 4.33.0al](HISTORY.md#filters-single-mission-and-capture-diagnosis--4330al) - context: Caelum Argenteum — Consolidated history
+- Lines 13490-13518 - [Seal infrastructure, capture and navigation — 4.33.0ak](HISTORY.md#seal-infrastructure-capture-and-navigation--4330ak) - context: Caelum Argenteum — Consolidated history
+- Lines 13519-13542 - [Optional mission base and test chain — 4.33.0aj](HISTORY.md#optional-mission-base-and-test-chain--4330aj) - context: Caelum Argenteum — Consolidated history
+- Lines 13543-13564 - [Resilience, regeneration costs and attribute audit — 4.33.0ai](HISTORY.md#resilience-regeneration-costs-and-attribute-audit--4330ai) - context: Caelum Argenteum — Consolidated history
+- Lines 13565-13583 - [Survival with Type 4 divisors and restored critical states — 4.33.0ah](HISTORY.md#survival-with-type-4-divisors-and-restored-critical-states--4330ah) - context: Caelum Argenteum — Consolidated history
+- Lines 13584-13599 - [Hydration correction, sips and positive Thirst — 4.33.0ag](HISTORY.md#hydration-correction-sips-and-positive-thirst--4330ag) - context: Caelum Argenteum — Consolidated history
+- Lines 13600-13614 - [Containers, choice of accessories and quotas — 4.33.0af](HISTORY.md#containers-choice-of-accessories-and-quotas--4330af) - context: Caelum Argenteum — Consolidated history
+- Lines 13615-13632 - [Teaching and Seal allowances T1 — 4.33.0ae (approved)](HISTORY.md#teaching-and-seal-allowances-t1--4330ae-approved) - context: Caelum Argenteum — Consolidated history
+- Lines 13633-13646 - [Chosen armor and quotas to 100% — 4.33.0ad (approved)](HISTORY.md#chosen-armor-and-quotas-to-100--4330ad-approved) - context: Caelum Argenteum — Consolidated history
+- Lines 13647-13658 - [Crossbow bolts — 4.33.0ac](HISTORY.md#crossbow-bolts--4330ac) - context: Caelum Argenteum — Consolidated history
+- Lines 13659-13669 - [Swimming pool breathing — 4.33.0ab](HISTORY.md#swimming-pool-breathing--4330ab) - context: Caelum Argenteum — Consolidated history
+- Lines 13670-13689 - [Minor Arcana passives, sweeps and dividers — 4.33.0aa](HISTORY.md#minor-arcana-passives-sweeps-and-dividers--4330aa) - context: Caelum Argenteum — Consolidated history
+- Lines 13690-13698 - [Load and close observations — 4.33.0z](HISTORY.md#load-and-close-observations--4330z) - context: Caelum Argenteum — Consolidated history
+- Lines 13699-13708 - [Air and motion — 4.33.0y](HISTORY.md#air-and-motion--4330y) - context: Caelum Argenteum — Consolidated history
+- Lines 13709-13722 - [System needs and priority — 4.33.0x](HISTORY.md#system-needs-and-priority--4330x) - context: Caelum Argenteum — Consolidated history
+- Lines 13723-13728 - [Cumulative delivery correction 0u → 0w](HISTORY.md#cumulative-delivery-correction-0u--0w) - context: Caelum Argenteum — Consolidated history
+- Lines 13729-13745 - [Optional maintenance and coverage T1 — 4.33.0w, 2026-09-12](HISTORY.md#optional-maintenance-and-coverage-t1--4330w-2026-09-12) - context: Caelum Argenteum — Consolidated history
+- Lines 13746-13767 - [Departure from the mansion and back to body — 4.33.0v, 2026-09-12](HISTORY.md#departure-from-the-mansion-and-back-to-body--4330v-2026-09-12) - context: Caelum Argenteum — Consolidated history
+- Lines 13768-13781 - [Real Shield and Rulo Guide — 4.33.0u, 2026-09-12](HISTORY.md#real-shield-and-rulo-guide--4330u-2026-09-12) - context: Caelum Argenteum — Consolidated history
+- Lines 13782-13800 - [El Loco and Tarot collection — 4.33.0t, 2026-09-11](HISTORY.md#el-loco-and-tarot-collection--4330t-2026-09-11) - context: Caelum Argenteum — Consolidated history
+- Lines 13801-13816 - [Palomo final and Box — 4.33.0s, 2026-09-11](HISTORY.md#palomo-final-and-box--4330s-2026-09-11) - context: Caelum Argenteum — Consolidated history
+- Lines 13817-13832 - [Rulo Survival and Closure — 4.33.0r, 2026-09-11](HISTORY.md#rulo-survival-and-closure--4330r-2026-09-11) - context: Caelum Argenteum — Consolidated history
+- Lines 13833-13851 - [Rulo/Bull corrections — 4.33.0q, 2026-09-11](HISTORY.md#rulobull-corrections--4330q-2026-09-11) - context: Caelum Argenteum — Consolidated history
+- Lines 13852-13871 - [Rulo — 4.33.0p, 2026-09-11](HISTORY.md#rulo--4330p-2026-09-11) - context: Caelum Argenteum — Consolidated history
+- Lines 13872-13880 - [4.33.0n approval and 4.33.0o correction — 2026-09-11](HISTORY.md#4330n-approval-and-4330o-correction--2026-09-11) - context: Caelum Argenteum — Consolidated history
+- Lines 13881-13905 - [Decisions and corrections 4.33.0n](HISTORY.md#decisions-and-corrections-4330n) - context: Caelum Argenteum — Consolidated history
+- Lines 13906-13938 - [Decisions and corrections 4.33.0m](HISTORY.md#decisions-and-corrections-4330m) - context: Caelum Argenteum — Consolidated history
+- Lines 13939-13979 - [Archived technical record of 4.33.0l](HISTORY.md#archived-technical-record-of-4330l) - context: Caelum Argenteum — Consolidated history > Decisions and corrections 4.33.0m
+- Lines 13980-14001 - [Decisions and corrections 4.33.0l](HISTORY.md#decisions-and-corrections-4330l) - context: Caelum Argenteum — Consolidated history
+- Lines 14002-14021 - [Decisions and corrections 4.33.0k](HISTORY.md#decisions-and-corrections-4330k) - context: Caelum Argenteum — Consolidated history
+- Lines 14022-14041 - [Decisions and corrections 4.33.0j](HISTORY.md#decisions-and-corrections-4330j) - context: Caelum Argenteum — Consolidated history
+- Lines 14042-14057 - [Current registration of recent versions](HISTORY.md#current-registration-of-recent-versions) - context: Caelum Argenteum — Consolidated history
+- Lines 14058-14071 - [Decisions 4.33.0i](HISTORY.md#decisions-4330i) - context: Caelum Argenteum — Consolidated history
+- Lines 14072-14086 - [Decisions 4.33.0h](HISTORY.md#decisions-4330h) - context: Caelum Argenteum — Consolidated history
+- Lines 14087-14092 - [0i–0k validation file moved from PROJECT](HISTORY.md#0i0k-validation-file-moved-from-project) - context: Caelum Argenteum — Consolidated history
+- Lines 14093-14125 - [Scope and decisions of Caella 4.33.0i](HISTORY.md#scope-and-decisions-of-caella-4330i) - context: Caelum Argenteum — Consolidated history
+- Lines 14126-14158 - [4.33.0i Validation Record (previous)](HISTORY.md#4330i-validation-record-previous) - context: Caelum Argenteum — Consolidated history
+- Lines 14159-14187 - [Validation of 4.33.0j (previous)](HISTORY.md#validation-of-4330j-previous) - context: Caelum Argenteum — Consolidated history
+- Lines 14188-14251 - [4.33.0k Changes and Validation](HISTORY.md#4330k-changes-and-validation) - context: Caelum Argenteum — Consolidated history
+- Lines 14252-14268 - [How to read the file](HISTORY.md#how-to-read-the-file) - context: Caelum Argenteum — Consolidated history
+- Lines 14269-14468 - `Archived record: README.md` - context: Caelum Argenteum — Consolidated history
+- Lines 14469-14652 - `Archived record: README.md [part 2]` - context: Caelum Argenteum — Consolidated history
+- Lines 14653-14852 - `Archived record: legacy/ASSET_REGISTER.md` - context: Caelum Argenteum — Consolidated history
+- Lines 14853-14884 - `Archived record: legacy/ASSET_REGISTER.md [part 2]` - context: Caelum Argenteum — Consolidated history
+- Lines 14885-15084 - `Archived record: legacy/CHANGELOG.md` - context: Caelum Argenteum — Consolidated history
+- Lines 15085-15284 - `Archived record: legacy/CHANGELOG.md [part 2]` - context: Caelum Argenteum — Consolidated history
+- Lines 15285-15484 - `Archived record: legacy/CHANGELOG.md [part 3]` - context: Caelum Argenteum — Consolidated history
+- Lines 15485-15684 - `Archived record: legacy/CHANGELOG.md [part 4]` - context: Caelum Argenteum — Consolidated history
+- Lines 15685-15884 - `Archived record: legacy/CHANGELOG.md [part 5]` - context: Caelum Argenteum — Consolidated history
+- Lines 15885-16084 - `Archived record: legacy/CHANGELOG.md [part 6]` - context: Caelum Argenteum — Consolidated history
+- Lines 16085-16284 - `Archived record: legacy/CHANGELOG.md [part 7]` - context: Caelum Argenteum — Consolidated history
+- Lines 16285-16484 - `Archived record: legacy/CHANGELOG.md [part 8]` - context: Caelum Argenteum — Consolidated history
+- Lines 16485-16684 - `Archived record: legacy/CHANGELOG.md [part 9]` - context: Caelum Argenteum — Consolidated history
+- Lines 16685-16884 - `Archived record: legacy/CHANGELOG.md [part 10]` - context: Caelum Argenteum — Consolidated history
+- Lines 16885-16994 - `Archived record: legacy/CHANGELOG.md [part 11]` - context: Caelum Argenteum — Consolidated history
+- Lines 16995-17194 - `Archived record: legacy/IMPLEMENTATION_STATUS.md` - context: Caelum Argenteum — Consolidated history
+- Lines 17195-17394 - `Archived record: legacy/IMPLEMENTATION_STATUS.md [part 2]` - context: Caelum Argenteum — Consolidated history
+- Lines 17395-17594 - `Archived record: legacy/IMPLEMENTATION_STATUS.md [part 3]` - context: Caelum Argenteum — Consolidated history
+- Lines 17595-17794 - `Archived record: legacy/IMPLEMENTATION_STATUS.md [part 4]` - context: Caelum Argenteum — Consolidated history
+- Lines 17795-17994 - `Archived record: legacy/IMPLEMENTATION_STATUS.md [part 5]` - context: Caelum Argenteum — Consolidated history
+- Lines 17995-18194 - `Archived record: legacy/IMPLEMENTATION_STATUS.md [part 6]` - context: Caelum Argenteum — Consolidated history
+- Lines 18195-18394 - `Archived record: legacy/IMPLEMENTATION_STATUS.md [part 7]` - context: Caelum Argenteum — Consolidated history
+- Lines 18395-18594 - `Archived record: legacy/IMPLEMENTATION_STATUS.md [part 8]` - context: Caelum Argenteum — Consolidated history
+- Lines 18595-18794 - `Archived record: legacy/IMPLEMENTATION_STATUS.md [part 9]` - context: Caelum Argenteum — Consolidated history
+- Lines 18795-18889 - `Archived record: legacy/IMPLEMENTATION_STATUS.md [part 10]` - context: Caelum Argenteum — Consolidated history
+- Lines 18890-19089 - `Archived record: legacy/PHYSICS_COLLISION_SYSTEM.md` - context: Caelum Argenteum — Consolidated history
+- Lines 19090-19289 - `Archived record: legacy/PHYSICS_COLLISION_SYSTEM.md [part 2]` - context: Caelum Argenteum — Consolidated history
+- Lines 19290-19489 - `Archived record: legacy/PHYSICS_COLLISION_SYSTEM.md [part 3]` - context: Caelum Argenteum — Consolidated history
+- Lines 19490-19689 - `Archived record: legacy/PHYSICS_COLLISION_SYSTEM.md [part 4]` - context: Caelum Argenteum — Consolidated history
+- Lines 19690-19889 - `Archived record: legacy/PHYSICS_COLLISION_SYSTEM.md [part 5]` - context: Caelum Argenteum — Consolidated history
+- Lines 19890-19894 - `Archived record: legacy/PHYSICS_COLLISION_SYSTEM.md [part 6]` - context: Caelum Argenteum — Consolidated history
+- Lines 19895-20094 - `Archived record: legacy/ROADMAP.md` - context: Caelum Argenteum — Consolidated history
+- Lines 20095-20096 - `Archived record: legacy/ROADMAP.md [part 2]` - context: Caelum Argenteum — Consolidated history
+- Lines 20097-20161 - [Archived record: legacy/TYPOGRAPHY.md](HISTORY.md#archived-record-legacytypographymd) - context: Caelum Argenteum — Consolidated history
+- Lines 20162-20246 - [Archived record: legacy/WEAPON_INPUT_MATRIX.md](HISTORY.md#archived-record-legacyweapon_input_matrixmd) - context: Caelum Argenteum — Consolidated history
+- Lines 20247-20387 - [Archived record: before_4.33.0g/DIALOGUE.md](HISTORY.md#archived-record-before_4330gdialoguemd) - context: Caelum Argenteum — Consolidated history
+- Lines 20388-20577 - [Archived record: before_4.33.0g/ECONOMY.md](HISTORY.md#archived-record-before_4330geconomymd) - context: Caelum Argenteum — Consolidated history
+- Lines 20578-20606 - [Archived record: before_4.33.0g/EQUIPMENT_ICONS_4_33_0d.md](HISTORY.md#archived-record-before_4330gequipment_icons_4_33_0dmd) - context: Caelum Argenteum — Consolidated history
+- Lines 20607-20758 - [Archived record: before_4.33.0g/FIRST_PERSON.md](HISTORY.md#archived-record-before_4330gfirst_personmd) - context: Caelum Argenteum — Consolidated history
+- Lines 20759-20958 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md` - context: Caelum Argenteum — Consolidated history
+- Lines 20959-21158 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 2]` - context: Caelum Argenteum — Consolidated history
+- Lines 21159-21358 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 3]` - context: Caelum Argenteum — Consolidated history
+- Lines 21359-21558 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 4]` - context: Caelum Argenteum — Consolidated history
+- Lines 21559-21758 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 5]` - context: Caelum Argenteum — Consolidated history
+- Lines 21759-21958 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 6]` - context: Caelum Argenteum — Consolidated history
+- Lines 21959-22158 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 7]` - context: Caelum Argenteum — Consolidated history
+- Lines 22159-22358 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 8]` - context: Caelum Argenteum — Consolidated history
+- Lines 22359-22558 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 9]` - context: Caelum Argenteum — Consolidated history
+- Lines 22559-22758 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 10]` - context: Caelum Argenteum — Consolidated history
+- Lines 22759-22958 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 11]` - context: Caelum Argenteum — Consolidated history
+- Lines 22959-23158 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 12]` - context: Caelum Argenteum — Consolidated history
+- Lines 23159-23358 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 13]` - context: Caelum Argenteum — Consolidated history
+- Lines 23359-23558 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 14]` - context: Caelum Argenteum — Consolidated history
+- Lines 23559-23758 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 15]` - context: Caelum Argenteum — Consolidated history
+- Lines 23759-23958 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 16]` - context: Caelum Argenteum — Consolidated history
+- Lines 23959-24158 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 17]` - context: Caelum Argenteum — Consolidated history
+- Lines 24159-24358 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 18]` - context: Caelum Argenteum — Consolidated history
+- Lines 24359-24558 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 19]` - context: Caelum Argenteum — Consolidated history
+- Lines 24559-24758 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 20]` - context: Caelum Argenteum — Consolidated history
+- Lines 24759-24958 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 21]` - context: Caelum Argenteum — Consolidated history
+- Lines 24959-25158 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 22]` - context: Caelum Argenteum — Consolidated history
+- Lines 25159-25358 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 23]` - context: Caelum Argenteum — Consolidated history
+- Lines 25359-25558 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 24]` - context: Caelum Argenteum — Consolidated history
+- Lines 25559-25758 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 25]` - context: Caelum Argenteum — Consolidated history
+- Lines 25759-25958 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 26]` - context: Caelum Argenteum — Consolidated history
+- Lines 25959-26158 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 27]` - context: Caelum Argenteum — Consolidated history
+- Lines 26159-26358 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 28]` - context: Caelum Argenteum — Consolidated history
+- Lines 26359-26445 - `Archived record: before_4.33.0g/IMPLEMENTATION_STATUS.md [part 29]` - context: Caelum Argenteum — Consolidated history
+- Lines 26446-26564 - [Archived record: before_4.33.0g/MAGIC_BOX.md](HISTORY.md#archived-record-before_4330gmagic_boxmd) - context: Caelum Argenteum — Consolidated history
+- Lines 26565-26617 - [Archived record: before_4.33.0g/MAP01_ARGENTO_4_33_0f.md](HISTORY.md#archived-record-before_4330gmap01_argento_4_33_0fmd) - context: Caelum Argenteum — Consolidated history
+- Lines 26618-26817 - `Archived record: before_4.33.0g/MAP01_HISTORIA_Y_PROGRAMACION_v1_0.txt` - context: Caelum Argenteum — Consolidated history
+- Lines 26818-27017 - `Archived record: before_4.33.0g/MAP01_HISTORIA_Y_PROGRAMACION_v1_0.txt [part 2]` - context: Caelum Argenteum — Consolidated history
+- Lines 27018-27217 - `Archived record: before_4.33.0g/MAP01_HISTORIA_Y_PROGRAMACION_v1_0.txt [part 3]` - context: Caelum Argenteum — Consolidated history
+- Lines 27218-27417 - `Archived record: before_4.33.0g/MAP01_HISTORIA_Y_PROGRAMACION_v1_0.txt [part 4]` - context: Caelum Argenteum — Consolidated history
+- Lines 27418-27617 - `Archived record: before_4.33.0g/MAP01_HISTORIA_Y_PROGRAMACION_v1_0.txt [part 5]` - context: Caelum Argenteum — Consolidated history
+- Lines 27618-27817 - `Archived record: before_4.33.0g/MAP01_HISTORIA_Y_PROGRAMACION_v1_0.txt [part 6]` - context: Caelum Argenteum — Consolidated history
+- Lines 27818-28017 - `Archived record: before_4.33.0g/MAP01_HISTORIA_Y_PROGRAMACION_v1_0.txt [part 7]` - context: Caelum Argenteum — Consolidated history
+- Lines 28018-28217 - `Archived record: before_4.33.0g/MAP01_HISTORIA_Y_PROGRAMACION_v1_0.txt [part 8]` - context: Caelum Argenteum — Consolidated history
+- Lines 28218-28417 - `Archived record: before_4.33.0g/MAP01_HISTORIA_Y_PROGRAMACION_v1_0.txt [part 9]` - context: Caelum Argenteum — Consolidated history
+- Lines 28418-28617 - `Archived record: before_4.33.0g/MAP01_HISTORIA_Y_PROGRAMACION_v1_0.txt [part 10]` - context: Caelum Argenteum — Consolidated history
+- Lines 28618-28757 - `Archived record: before_4.33.0g/MAP01_HISTORIA_Y_PROGRAMACION_v1_0.txt [part 11]` - context: Caelum Argenteum — Consolidated history
+- Lines 28758-28825 - [Archived record: before_4.33.0g/MAP01_SECRET_PASSAGE_4_33_0c.md](HISTORY.md#archived-record-before_4330gmap01_secret_passage_4_33_0cmd) - context: Caelum Argenteum — Consolidated history
+- Lines 28826-28905 - [Archived record: before_4.33.0g/MAP01_SECRET_PASSAGE_4_33_0d.md](HISTORY.md#archived-record-before_4330gmap01_secret_passage_4_33_0dmd) - context: Caelum Argenteum — Consolidated history
+- Lines 28906-29091 - [Archived record: before_4.33.0g/QUESTS_REPUTATION_FACTIONS.md](HISTORY.md#archived-record-before_4330gquests_reputation_factionsmd) - context: Caelum Argenteum — Consolidated history
+- Lines 29092-29291 - `Archived record: before_4.33.0g/ROADMAP.md` - context: Caelum Argenteum — Consolidated history
+- Lines 29292-29491 - `Archived record: before_4.33.0g/ROADMAP.md [part 2]` - context: Caelum Argenteum — Consolidated history
+- Lines 29492-29691 - `Archived record: before_4.33.0g/ROADMAP.md [part 3]` - context: Caelum Argenteum — Consolidated history
+- Lines 29692-29891 - `Archived record: before_4.33.0g/ROADMAP.md [part 4]` - context: Caelum Argenteum — Consolidated history
+- Lines 29892-30091 - `Archived record: before_4.33.0g/ROADMAP.md [part 5]` - context: Caelum Argenteum — Consolidated history
+- Lines 30092-30128 - `Archived record: before_4.33.0g/ROADMAP.md [part 6]` - context: Caelum Argenteum — Consolidated history
+- Lines 30129-30161 - [Archived record: before_4.33.0g/VALIDACION_4_33_0e.txt](HISTORY.md#archived-record-before_4330gvalidacion_4_33_0etxt) - context: Caelum Argenteum — Consolidated history
+- Lines 30162-30215 - [Archived record: before_4.33.0g/VALIDACION_4_33_0f.txt](HISTORY.md#archived-record-before_4330gvalidacion_4_33_0ftxt) - context: Caelum Argenteum — Consolidated history
+- Lines 30216-30247 - [Archived record: release_4.33.0f/APLICAR_4_33_0f.txt](HISTORY.md#archived-record-release_4330faplicar_4_33_0ftxt) - context: Caelum Argenteum — Consolidated history
+- Lines 30248-30298 - [Registration: release_4.33.0f/PRUEBAS_4_33_0f.txt](HISTORY.md#registration-release_4330fpruebas_4_33_0ftxt) - context: Caelum Argenteum — Consolidated history
+- Lines 30299-30356 - [Archived record: release_4.33.0f/README_4_33_0f.md](HISTORY.md#archived-record-release_4330freadme_4_33_0fmd) - context: Caelum Argenteum — Consolidated history
+- Lines 30357-30358 - [Historical validation of 0h (record preserved)](HISTORY.md#historical-validation-of-0h-record-preserved) - context: Caelum Argenteum — Consolidated history
+- Lines 30359-30416 - [Technical result of 4.33.0h](HISTORY.md#technical-result-of-4330h) - context: Caelum Argenteum — Consolidated history > Historical validation of 0h (record preserved)
 
 ## [KNOWN_PITFALLS.md](KNOWN_PITFALLS.md) - 51720 words
 
@@ -1068,522 +1068,522 @@ SHA-256: `a6d05f943c9550b9e05518137427ebb7745c6a72f5f8d288352358117030a386`
 - Lines 6095-6111 - [CA-KP-204 follow-up: prediction cannot satisfy a shared time barrier](KNOWN_PITFALLS.md#ca-kp-204-follow-up-prediction-cannot-satisfy-a-shared-time-barrier) - context: Known pitfalls and verified lessons â€” Caelum Argenteum > CA-KP-204 - Native checksum warnings can survive without console errors
 - Lines 6112-6133 - [CA-KP-205 - Dead spirits need the dialogue page authority exception](KNOWN_PITFALLS.md#ca-kp-205---dead-spirits-need-the-dialogue-page-authority-exception) - context: Known pitfalls and verified lessons â€” Caelum Argenteum
 
-## [MAP01.txt](MAP01.txt) - 37361 words
+## [MAP01.txt](MAP01.txt) - 37381 words
 
-SHA-256: `1b0e86d95d7197b5b08ae3167ac94fed051390c43b882ae91448164391bc0dc8`
+SHA-256: `d590cff571f900b27df0ccd1334483cd73d20c7def239c550f5464f2d1049691`
 
 - Lines 1-4 - [(Preamble)](MAP01.txt#preamble) - context: -
-- Lines 5-32 - [5.13.3 - Tarot example annex geometry (#440)](MAP01.txt#5133---tarot-example-annex-geometry-440) - context: -
-- Lines 33-38 - [5.13.2 - Equipment awakening integration (#442)](MAP01.txt#5132---equipment-awakening-integration-442) - context: -
-- Lines 39-52 - [5.9.5 / #422 - Central house and siege investigation](MAP01.txt#595--422---central-house-and-siege-investigation) - context: -
-- Lines 53-62 - [5.9.4 / #421 - Barracas conversation outline implemented](MAP01.txt#594--421---barracas-conversation-outline-implemented) - context: -
-- Lines 63-69 - [5.9.3 / #420 - Representative access](MAP01.txt#593--420---representative-access) - context: -
-- Lines 70-78 - [5.9.2 / #419 - Port emotional readings](MAP01.txt#592--419---port-emotional-readings) - context: -
-- Lines 79-87 - [5.9.1 / #420 - Confirmed representatives after rescue](MAP01.txt#591--420---confirmed-representatives-after-rescue) - context: -
-- Lines 88-98 - [5.8.29 - Reading-room sofas (#410)](MAP01.txt#5829---reading-room-sofas-410) - context: -
-- Lines 99-108 - [5.8.26 - Existing library and adjacent reading desk (#410)](MAP01.txt#5826---existing-library-and-adjacent-reading-desk-410) - context: -
-- Lines 109-119 - [5.8.25 - South garden water installation (#410)](MAP01.txt#5825---south-garden-water-installation-410) - context: -
-- Lines 120-207 - [5.8.24 - Northwest bedroom wardrobe (#410)](MAP01.txt#5824---northwest-bedroom-wardrobe-410) - context: -
-- Lines 208-221 - `5.8.22 - Shared-water mansion bathroom fixtures (#410)` - context: -
-- Lines 222-334 - [5.8.6 boundary ? Central property (#411)](MAP01.txt#586-boundary--central-property-411) - context: -
-- Lines 335-362 - [5.3.7 - Discovered mansion rooms and services (#234)](MAP01.txt#537---discovered-mansion-rooms-and-services-234) - context: -
-- Lines 363-368 - [5.2.20 - Resource HUD placement (#213)](MAP01.txt#5220---resource-hud-placement-213) - context: -
-- Lines 369-375 - [5.2.19 - Shared horizontal cushioning (#211)](MAP01.txt#5219---shared-horizontal-cushioning-211) - context: -
-- Lines 376-384 - [5.2.18 - Player presentation and dining repair (#209)](MAP01.txt#5218---player-presentation-and-dining-repair-209) - context: -
-- Lines 385-393 - [5.2.14 - Tutorial control hints (#149)](MAP01.txt#5214---tutorial-control-hints-149) - context: -
-- Lines 394-404 - [5.2.13 - Character appearance boundary (#148)](MAP01.txt#5213---character-appearance-boundary-148) - context: -
-- Lines 405-417 - [5.2.12 - Bull and resident combat (#195)](MAP01.txt#5212---bull-and-resident-combat-195) - context: -
-- Lines 418-424 - [5.2.11 - Shared collision energy (#194)](MAP01.txt#5211---shared-collision-energy-194) - context: -
-- Lines 425-432 - [5.2.10 - Ranged equipment terminology (#192 amendment)](MAP01.txt#5210---ranged-equipment-terminology-192-amendment) - context: -
-- Lines 433-441 - [5.2.9 - Personality selection before the tutorial (#192)](MAP01.txt#529---personality-selection-before-the-tutorial-192) - context: -
-- Lines 442-448 - [5.2.8 - Shared combat resistance (#188)](MAP01.txt#528---shared-combat-resistance-188) - context: -
-- Lines 449-459 - [5.2.7 - Native resident interactions and live rest (#189)](MAP01.txt#527---native-resident-interactions-and-live-rest-189) - context: -
-- Lines 460-467 - [5.2.6 - Resident game and workshop controls (#184)](MAP01.txt#526---resident-game-and-workshop-controls-184) - context: -
-- Lines 468-477 - [5.2.5 - NPC source ownership (#185)](MAP01.txt#525---npc-source-ownership-185) - context: -
-- Lines 478-498 - [5.2.4 - Profession gifts and three crafting lessons (#183)](MAP01.txt#524---profession-gifts-and-three-crafting-lessons-183) - context: -
-- Lines 499-506 - [5.2.3 - Mandinga reaction rule (#180)](MAP01.txt#523---mandinga-reaction-rule-180) - context: -
-- Lines 507-515 - [5.2.2 - Time-skip execution (#178)](MAP01.txt#522---time-skip-execution-178) - context: -
-- Lines 516-536 - [5.2.1 - Tutorial equipment, chest and rest corrections (#177)](MAP01.txt#521---tutorial-equipment-chest-and-rest-corrections-177) - context: -
-- Lines 537-569 - [5.2.0 - Creator and saved identity (#147)](MAP01.txt#520---creator-and-saved-identity-147) - context: -
-- Lines 570-608 - [5.1.18 - Permanent gifts, optional crafting and Bull checkpoint (#164)](MAP01.txt#5118---permanent-gifts-optional-crafting-and-bull-checkpoint-164) - context: -
-- Lines 609-615 - [5.1.17 - Health-kit terminology (#169)](MAP01.txt#5117---health-kit-terminology-169) - context: -
-- Lines 616-626 - [5.1.16 - Bolas tutorial boundary (#163 / #164)](MAP01.txt#5116---bolas-tutorial-boundary-163--164) - context: -
-- Lines 627-638 - [5.1.15 - Utility tool integration boundary (#162 / #164)](MAP01.txt#5115---utility-tool-integration-boundary-162--164) - context: -
-- Lines 639-648 - [5.1.10 — Physics and traversal integration (#154)](MAP01.txt#5110--physics-and-traversal-integration-154) - context: -
-- Lines 649-657 - [5.1.9 - Existing-save shotgun correction (#152)](MAP01.txt#519---existing-save-shotgun-correction-152) - context: -
-- Lines 658-669 - [5.1.8 - Shared elemental presentation (#137)](MAP01.txt#518---shared-elemental-presentation-137) - context: -
-- Lines 670-681 - [5.1.7 - Shotgun tutorial and MAP02 supplies (#136)](MAP01.txt#517---shotgun-tutorial-and-map02-supplies-136) - context: -
-- Lines 682-690 - [5.1.6 - Soldier posture integration (#143)](MAP01.txt#516---soldier-posture-integration-143) - context: -
-- Lines 691-699 - [5.1.5 - Demon behavior integration (#135)](MAP01.txt#515---demon-behavior-integration-135) - context: -
-- Lines 700-709 - [5.1.4 - Shared thermal physiology (#140)](MAP01.txt#514---shared-thermal-physiology-140) - context: -
-- Lines 710-718 - [5.1.3 - Port city revision (#133)](MAP01.txt#513---port-city-revision-133) - context: -
-- Lines 719-725 - [5.1.2 - Optional port reinforcement experiment (#132)](MAP01.txt#512---optional-port-reinforcement-experiment-132) - context: -
-- Lines 726-732 - [5.1.1 - Attribute and thermal HUD integration (#131)](MAP01.txt#511---attribute-and-thermal-hud-integration-131) - context: -
-- Lines 733-744 - [5.1.0 — Thermal integration boundary (#130)](MAP01.txt#510--thermal-integration-boundary-130) - context: -
-- Lines 745-756 - [4.37.24 — Closing campaign route (#82)](MAP01.txt#43724--closing-campaign-route-82) - context: -
-- Lines 757-764 - `4.37.23 - Contextual character creation (#112)` - context: -
-- Lines 765-772 - [4.37.22 - First-person shields (#106)](MAP01.txt#43722---first-person-shields-106) - context: -
-- Lines 773-790 - [4.37.21 - Author-requested introductory text (#103)](MAP01.txt#43721---author-requested-introductory-text-103) - context: -
-- Lines 791-801 - [4.37.20 - Existing practice dummy in 3D (#98)](MAP01.txt#43720---existing-practice-dummy-in-3d-98) - context: -
-- Lines 802-852 - [4.37.19 - Palomo gives the chosen necklace; Caella teaches it (#96)](MAP01.txt#43719---palomo-gives-the-chosen-necklace-caella-teaches-it-96) - context: -
-- Lines 853-873 - [4.37.11 — Guard captain with amnesia (#79)](MAP01.txt#43711--guard-captain-with-amnesia-79) - context: -
-- Lines 874-908 - [4.37.10 — Post-payment siege briefing and concealed allegiance (#78)](MAP01.txt#43710--post-payment-siege-briefing-and-concealed-allegiance-78) - context: -
-- Lines 909-943 - [4.37.9 — Expanded Barracas al Sud campaign layout (#77)](MAP01.txt#4379--expanded-barracas-al-sud-campaign-layout-77) - context: -
-- Lines 944-950 - [4.37.8 — MAP02 supplies audit (#75)](MAP01.txt#4378--map02-supplies-audit-75) - context: -
-- Lines 951-957 - [4.37.7 — MAP02 flooded-return destination (#74)](MAP01.txt#4377--map02-flooded-return-destination-74) - context: -
-- Lines 958-965 - [4.37.6 — MAP02 destination revision (#73)](MAP01.txt#4376--map02-destination-revision-73) - context: -
-- Lines 966-981 - [4.37.5 — Palomo replenishes the tables each local midnight (#65)](MAP01.txt#4375--palomo-replenishes-the-tables-each-local-midnight-65) - context: -
-- Lines 982-997 - [4.37.4 — Limbo-local time and automatic care (#64)](MAP01.txt#4374--limbo-local-time-and-automatic-care-64) - context: -
-- Lines 998-1022 - [4.37.3 — Palomo guides equipment; Ronnie teaches crafting (#63)](MAP01.txt#4373--palomo-guides-equipment-ronnie-teaches-crafting-63) - context: -
-- Lines 1023-1033 - [4.37.2 — Cheaper magic implements during the tutorial (#68)](MAP01.txt#4372--cheaper-magic-implements-during-the-tutorial-68) - context: -
-- Lines 1034-1051 - [4.37.1 — Caella practices on the mansion dummy (#62)](MAP01.txt#4371--caella-practices-on-the-mansion-dummy-62) - context: -
-- Lines 1052-1130 - [4.37.0 — Exterior relief, scattered vegetation and door tympana (#61)](MAP01.txt#4370--exterior-relief-scattered-vegetation-and-door-tympana-61) - context: -
-- Lines 1131-1152 - [4.36.27 — Port campaign endpoint (#16)](MAP01.txt#43627--port-campaign-endpoint-16) - context: -
-- Lines 1153-1165 - [4.36.26 — Combat controls preserved (#37)](MAP01.txt#43626--combat-controls-preserved-37) - context: -
-- Lines 1166-1231 - [4.36.25 — Mansion roof, guards and period detail (#36)](MAP01.txt#43625--mansion-roof-guards-and-period-detail-36) - context: -
-- Lines 1232-1242 - [4.36.24 — Journal classification (#35)](MAP01.txt#43624--journal-classification-35) - context: -
-- Lines 1243-1252 - [4.36.23 — Body defense identities (#52)](MAP01.txt#43623--body-defense-identities-52) - context: -
-- Lines 1253-1301 - [4.36.22 — Demo dialogue and quest roles (#34)](MAP01.txt#43622--demo-dialogue-and-quest-roles-34) - context: -
-- Lines 1302-1325 - [4.36.20 — Lair, siege test room and port (#33)](MAP01.txt#43620--lair-siege-test-room-and-port-33) - context: -
-- Lines 1326-1342 - [4.36.17 — Opt-in cannon lanes (#21)](MAP01.txt#43617--opt-in-cannon-lanes-21) - context: -
-- Lines 1343-1360 - [4.36.16 — Optional operational ram lanes (#20)](MAP01.txt#43616--optional-operational-ram-lanes-20) - context: -
-- Lines 1361-1372 - [4.36.15 — Optional executable gate trial (#19)](MAP01.txt#43615--optional-executable-gate-trial-19) - context: -
-- Lines 1373-1384 - [4.36.14a — MAP03 material/state gallery (#18 correction)](MAP01.txt#43614a--map03-materialstate-gallery-18-correction) - context: -
-- Lines 1385-1394 - [4.36.10 — MAP03 siege preview gallery (#18)](MAP01.txt#43610--map03-siege-preview-gallery-18) - context: -
-- Lines 1395-1408 - [4.36.8 — Prisoner rescue dialogue and port thanks (#14)](MAP01.txt#4368--prisoner-rescue-dialogue-and-port-thanks-14) - context: -
-- Lines 1409-1438 - [4.36.7 — Prisoner identities and shared ambush history (#13)](MAP01.txt#4367--prisoner-identities-and-shared-ambush-history-13) - context: -
-- Lines 1439-1447 - `4.36.1 — Documentation scope` - context: -
-- Lines 1448-1465 - [4.36.0i — fully stocked tables and prologue destination](MAP01.txt#4360i--fully-stocked-tables-and-prologue-destination) - context: -
-- Lines 1466-1665 - `4.36.0e — corrections requested after testing 0d` - context: -
-- Lines 1666-1865 - `4.36.0e — corrections requested after testing 0d [part 2]` - context: -
-- Lines 1866-2065 - `4.36.0e — corrections requested after testing 0d [part 3]` - context: -
-- Lines 2066-2265 - `4.36.0e — corrections requested after testing 0d [part 4]` - context: -
-- Lines 2266-2434 - `4.36.0e — corrections requested after testing 0d [part 5]` - context: -
-- Lines 2435-2436 - [Caelum Argenteum — Missions, Reputation and Factions V4.33.0f](MAP01.txt#caelum-argenteum--missions-reputation-and-factions-v4330f) - context: -
-- Lines 2437-2459 - [Status of review](MAP01.txt#status-of-review) - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
-- Lines 2460-2491 - [Actors and spaces prepared in MAP01](MAP01.txt#actors-and-spaces-prepared-in-map01) - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
-- Lines 2492-2506 - [Separation of responsibilities](MAP01.txt#separation-of-responsibilities) - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
-- Lines 2507-2526 - [Reserved main states](MAP01.txt#reserved-main-states) - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
-- Lines 2527-2556 - [Objectives and flags](MAP01.txt#objectives-and-flags) - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
-- Lines 2557-2575 - [Migration from V4.33.0a](MAP01.txt#migration-from-v4330a) - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
-- Lines 2576-2593 - [Authoritative location of Palomo](MAP01.txt#authoritative-location-of-palomo) - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
-- Lines 2594-2611 - [Factions and reputation](MAP01.txt#factions-and-reputation) - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
-- Lines 2612-2811 - `Narrative source` - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
-- Lines 2812-3011 - `Narrative source [part 2]` - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
-- Lines 3012-3211 - `Narrative source [part 3]` - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
-- Lines 3212-3411 - `Narrative source [part 4]` - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
-- Lines 3412-3611 - `Narrative source [part 5]` - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
-- Lines 3612-3811 - `Narrative source [part 6]` - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
-- Lines 3812-4011 - `Narrative source [part 7]` - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
-- Lines 4012-4211 - `Narrative source [part 8]` - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
-- Lines 4212-4411 - `Narrative source [part 9]` - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
-- Lines 4412-4611 - `Narrative source [part 10]` - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
-- Lines 4612-4811 - `Narrative source [part 11]` - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
-- Lines 4812-4852 - `Narrative source [part 12]` - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
+- Lines 5-34 - [5.13.3 - Tarot example annex geometry (#440)](MAP01.txt#5133---tarot-example-annex-geometry-440) - context: -
+- Lines 35-40 - [5.13.2 - Equipment awakening integration (#442)](MAP01.txt#5132---equipment-awakening-integration-442) - context: -
+- Lines 41-54 - [5.9.5 / #422 - Central house and siege investigation](MAP01.txt#595--422---central-house-and-siege-investigation) - context: -
+- Lines 55-64 - [5.9.4 / #421 - Barracas conversation outline implemented](MAP01.txt#594--421---barracas-conversation-outline-implemented) - context: -
+- Lines 65-71 - [5.9.3 / #420 - Representative access](MAP01.txt#593--420---representative-access) - context: -
+- Lines 72-80 - [5.9.2 / #419 - Port emotional readings](MAP01.txt#592--419---port-emotional-readings) - context: -
+- Lines 81-89 - [5.9.1 / #420 - Confirmed representatives after rescue](MAP01.txt#591--420---confirmed-representatives-after-rescue) - context: -
+- Lines 90-100 - [5.8.29 - Reading-room sofas (#410)](MAP01.txt#5829---reading-room-sofas-410) - context: -
+- Lines 101-110 - [5.8.26 - Existing library and adjacent reading desk (#410)](MAP01.txt#5826---existing-library-and-adjacent-reading-desk-410) - context: -
+- Lines 111-121 - [5.8.25 - South garden water installation (#410)](MAP01.txt#5825---south-garden-water-installation-410) - context: -
+- Lines 122-209 - [5.8.24 - Northwest bedroom wardrobe (#410)](MAP01.txt#5824---northwest-bedroom-wardrobe-410) - context: -
+- Lines 210-223 - `5.8.22 - Shared-water mansion bathroom fixtures (#410)` - context: -
+- Lines 224-336 - [5.8.6 boundary ? Central property (#411)](MAP01.txt#586-boundary--central-property-411) - context: -
+- Lines 337-364 - [5.3.7 - Discovered mansion rooms and services (#234)](MAP01.txt#537---discovered-mansion-rooms-and-services-234) - context: -
+- Lines 365-370 - [5.2.20 - Resource HUD placement (#213)](MAP01.txt#5220---resource-hud-placement-213) - context: -
+- Lines 371-377 - [5.2.19 - Shared horizontal cushioning (#211)](MAP01.txt#5219---shared-horizontal-cushioning-211) - context: -
+- Lines 378-386 - [5.2.18 - Player presentation and dining repair (#209)](MAP01.txt#5218---player-presentation-and-dining-repair-209) - context: -
+- Lines 387-395 - [5.2.14 - Tutorial control hints (#149)](MAP01.txt#5214---tutorial-control-hints-149) - context: -
+- Lines 396-406 - [5.2.13 - Character appearance boundary (#148)](MAP01.txt#5213---character-appearance-boundary-148) - context: -
+- Lines 407-419 - [5.2.12 - Bull and resident combat (#195)](MAP01.txt#5212---bull-and-resident-combat-195) - context: -
+- Lines 420-426 - [5.2.11 - Shared collision energy (#194)](MAP01.txt#5211---shared-collision-energy-194) - context: -
+- Lines 427-434 - [5.2.10 - Ranged equipment terminology (#192 amendment)](MAP01.txt#5210---ranged-equipment-terminology-192-amendment) - context: -
+- Lines 435-443 - [5.2.9 - Personality selection before the tutorial (#192)](MAP01.txt#529---personality-selection-before-the-tutorial-192) - context: -
+- Lines 444-450 - [5.2.8 - Shared combat resistance (#188)](MAP01.txt#528---shared-combat-resistance-188) - context: -
+- Lines 451-461 - [5.2.7 - Native resident interactions and live rest (#189)](MAP01.txt#527---native-resident-interactions-and-live-rest-189) - context: -
+- Lines 462-469 - [5.2.6 - Resident game and workshop controls (#184)](MAP01.txt#526---resident-game-and-workshop-controls-184) - context: -
+- Lines 470-479 - [5.2.5 - NPC source ownership (#185)](MAP01.txt#525---npc-source-ownership-185) - context: -
+- Lines 480-500 - [5.2.4 - Profession gifts and three crafting lessons (#183)](MAP01.txt#524---profession-gifts-and-three-crafting-lessons-183) - context: -
+- Lines 501-508 - [5.2.3 - Mandinga reaction rule (#180)](MAP01.txt#523---mandinga-reaction-rule-180) - context: -
+- Lines 509-517 - [5.2.2 - Time-skip execution (#178)](MAP01.txt#522---time-skip-execution-178) - context: -
+- Lines 518-538 - [5.2.1 - Tutorial equipment, chest and rest corrections (#177)](MAP01.txt#521---tutorial-equipment-chest-and-rest-corrections-177) - context: -
+- Lines 539-571 - [5.2.0 - Creator and saved identity (#147)](MAP01.txt#520---creator-and-saved-identity-147) - context: -
+- Lines 572-610 - [5.1.18 - Permanent gifts, optional crafting and Bull checkpoint (#164)](MAP01.txt#5118---permanent-gifts-optional-crafting-and-bull-checkpoint-164) - context: -
+- Lines 611-617 - [5.1.17 - Health-kit terminology (#169)](MAP01.txt#5117---health-kit-terminology-169) - context: -
+- Lines 618-628 - [5.1.16 - Bolas tutorial boundary (#163 / #164)](MAP01.txt#5116---bolas-tutorial-boundary-163--164) - context: -
+- Lines 629-640 - [5.1.15 - Utility tool integration boundary (#162 / #164)](MAP01.txt#5115---utility-tool-integration-boundary-162--164) - context: -
+- Lines 641-650 - [5.1.10 — Physics and traversal integration (#154)](MAP01.txt#5110--physics-and-traversal-integration-154) - context: -
+- Lines 651-659 - [5.1.9 - Existing-save shotgun correction (#152)](MAP01.txt#519---existing-save-shotgun-correction-152) - context: -
+- Lines 660-671 - [5.1.8 - Shared elemental presentation (#137)](MAP01.txt#518---shared-elemental-presentation-137) - context: -
+- Lines 672-683 - [5.1.7 - Shotgun tutorial and MAP02 supplies (#136)](MAP01.txt#517---shotgun-tutorial-and-map02-supplies-136) - context: -
+- Lines 684-692 - [5.1.6 - Soldier posture integration (#143)](MAP01.txt#516---soldier-posture-integration-143) - context: -
+- Lines 693-701 - [5.1.5 - Demon behavior integration (#135)](MAP01.txt#515---demon-behavior-integration-135) - context: -
+- Lines 702-711 - [5.1.4 - Shared thermal physiology (#140)](MAP01.txt#514---shared-thermal-physiology-140) - context: -
+- Lines 712-720 - [5.1.3 - Port city revision (#133)](MAP01.txt#513---port-city-revision-133) - context: -
+- Lines 721-727 - [5.1.2 - Optional port reinforcement experiment (#132)](MAP01.txt#512---optional-port-reinforcement-experiment-132) - context: -
+- Lines 728-734 - [5.1.1 - Attribute and thermal HUD integration (#131)](MAP01.txt#511---attribute-and-thermal-hud-integration-131) - context: -
+- Lines 735-746 - [5.1.0 — Thermal integration boundary (#130)](MAP01.txt#510--thermal-integration-boundary-130) - context: -
+- Lines 747-758 - [4.37.24 — Closing campaign route (#82)](MAP01.txt#43724--closing-campaign-route-82) - context: -
+- Lines 759-766 - `4.37.23 - Contextual character creation (#112)` - context: -
+- Lines 767-774 - [4.37.22 - First-person shields (#106)](MAP01.txt#43722---first-person-shields-106) - context: -
+- Lines 775-792 - [4.37.21 - Author-requested introductory text (#103)](MAP01.txt#43721---author-requested-introductory-text-103) - context: -
+- Lines 793-803 - [4.37.20 - Existing practice dummy in 3D (#98)](MAP01.txt#43720---existing-practice-dummy-in-3d-98) - context: -
+- Lines 804-854 - [4.37.19 - Palomo gives the chosen necklace; Caella teaches it (#96)](MAP01.txt#43719---palomo-gives-the-chosen-necklace-caella-teaches-it-96) - context: -
+- Lines 855-875 - [4.37.11 — Guard captain with amnesia (#79)](MAP01.txt#43711--guard-captain-with-amnesia-79) - context: -
+- Lines 876-910 - [4.37.10 — Post-payment siege briefing and concealed allegiance (#78)](MAP01.txt#43710--post-payment-siege-briefing-and-concealed-allegiance-78) - context: -
+- Lines 911-945 - [4.37.9 — Expanded Barracas al Sud campaign layout (#77)](MAP01.txt#4379--expanded-barracas-al-sud-campaign-layout-77) - context: -
+- Lines 946-952 - [4.37.8 — MAP02 supplies audit (#75)](MAP01.txt#4378--map02-supplies-audit-75) - context: -
+- Lines 953-959 - [4.37.7 — MAP02 flooded-return destination (#74)](MAP01.txt#4377--map02-flooded-return-destination-74) - context: -
+- Lines 960-967 - [4.37.6 — MAP02 destination revision (#73)](MAP01.txt#4376--map02-destination-revision-73) - context: -
+- Lines 968-983 - [4.37.5 — Palomo replenishes the tables each local midnight (#65)](MAP01.txt#4375--palomo-replenishes-the-tables-each-local-midnight-65) - context: -
+- Lines 984-999 - [4.37.4 — Limbo-local time and automatic care (#64)](MAP01.txt#4374--limbo-local-time-and-automatic-care-64) - context: -
+- Lines 1000-1024 - [4.37.3 — Palomo guides equipment; Ronnie teaches crafting (#63)](MAP01.txt#4373--palomo-guides-equipment-ronnie-teaches-crafting-63) - context: -
+- Lines 1025-1035 - [4.37.2 — Cheaper magic implements during the tutorial (#68)](MAP01.txt#4372--cheaper-magic-implements-during-the-tutorial-68) - context: -
+- Lines 1036-1053 - [4.37.1 — Caella practices on the mansion dummy (#62)](MAP01.txt#4371--caella-practices-on-the-mansion-dummy-62) - context: -
+- Lines 1054-1132 - [4.37.0 — Exterior relief, scattered vegetation and door tympana (#61)](MAP01.txt#4370--exterior-relief-scattered-vegetation-and-door-tympana-61) - context: -
+- Lines 1133-1154 - [4.36.27 — Port campaign endpoint (#16)](MAP01.txt#43627--port-campaign-endpoint-16) - context: -
+- Lines 1155-1167 - [4.36.26 — Combat controls preserved (#37)](MAP01.txt#43626--combat-controls-preserved-37) - context: -
+- Lines 1168-1233 - [4.36.25 — Mansion roof, guards and period detail (#36)](MAP01.txt#43625--mansion-roof-guards-and-period-detail-36) - context: -
+- Lines 1234-1244 - [4.36.24 — Journal classification (#35)](MAP01.txt#43624--journal-classification-35) - context: -
+- Lines 1245-1254 - [4.36.23 — Body defense identities (#52)](MAP01.txt#43623--body-defense-identities-52) - context: -
+- Lines 1255-1303 - [4.36.22 — Demo dialogue and quest roles (#34)](MAP01.txt#43622--demo-dialogue-and-quest-roles-34) - context: -
+- Lines 1304-1327 - [4.36.20 — Lair, siege test room and port (#33)](MAP01.txt#43620--lair-siege-test-room-and-port-33) - context: -
+- Lines 1328-1344 - [4.36.17 — Opt-in cannon lanes (#21)](MAP01.txt#43617--opt-in-cannon-lanes-21) - context: -
+- Lines 1345-1362 - [4.36.16 — Optional operational ram lanes (#20)](MAP01.txt#43616--optional-operational-ram-lanes-20) - context: -
+- Lines 1363-1374 - [4.36.15 — Optional executable gate trial (#19)](MAP01.txt#43615--optional-executable-gate-trial-19) - context: -
+- Lines 1375-1386 - [4.36.14a — MAP03 material/state gallery (#18 correction)](MAP01.txt#43614a--map03-materialstate-gallery-18-correction) - context: -
+- Lines 1387-1396 - [4.36.10 — MAP03 siege preview gallery (#18)](MAP01.txt#43610--map03-siege-preview-gallery-18) - context: -
+- Lines 1397-1410 - [4.36.8 — Prisoner rescue dialogue and port thanks (#14)](MAP01.txt#4368--prisoner-rescue-dialogue-and-port-thanks-14) - context: -
+- Lines 1411-1440 - [4.36.7 — Prisoner identities and shared ambush history (#13)](MAP01.txt#4367--prisoner-identities-and-shared-ambush-history-13) - context: -
+- Lines 1441-1449 - `4.36.1 — Documentation scope` - context: -
+- Lines 1450-1467 - [4.36.0i — fully stocked tables and prologue destination](MAP01.txt#4360i--fully-stocked-tables-and-prologue-destination) - context: -
+- Lines 1468-1667 - `4.36.0e — corrections requested after testing 0d` - context: -
+- Lines 1668-1867 - `4.36.0e — corrections requested after testing 0d [part 2]` - context: -
+- Lines 1868-2067 - `4.36.0e — corrections requested after testing 0d [part 3]` - context: -
+- Lines 2068-2267 - `4.36.0e — corrections requested after testing 0d [part 4]` - context: -
+- Lines 2268-2436 - `4.36.0e — corrections requested after testing 0d [part 5]` - context: -
+- Lines 2437-2438 - [Caelum Argenteum — Missions, Reputation and Factions V4.33.0f](MAP01.txt#caelum-argenteum--missions-reputation-and-factions-v4330f) - context: -
+- Lines 2439-2461 - [Status of review](MAP01.txt#status-of-review) - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
+- Lines 2462-2493 - [Actors and spaces prepared in MAP01](MAP01.txt#actors-and-spaces-prepared-in-map01) - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
+- Lines 2494-2508 - [Separation of responsibilities](MAP01.txt#separation-of-responsibilities) - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
+- Lines 2509-2528 - [Reserved main states](MAP01.txt#reserved-main-states) - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
+- Lines 2529-2558 - [Objectives and flags](MAP01.txt#objectives-and-flags) - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
+- Lines 2559-2577 - [Migration from V4.33.0a](MAP01.txt#migration-from-v4330a) - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
+- Lines 2578-2595 - [Authoritative location of Palomo](MAP01.txt#authoritative-location-of-palomo) - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
+- Lines 2596-2613 - [Factions and reputation](MAP01.txt#factions-and-reputation) - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
+- Lines 2614-2813 - `Narrative source` - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
+- Lines 2814-3013 - `Narrative source [part 2]` - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
+- Lines 3014-3213 - `Narrative source [part 3]` - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
+- Lines 3214-3413 - `Narrative source [part 4]` - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
+- Lines 3414-3613 - `Narrative source [part 5]` - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
+- Lines 3614-3813 - `Narrative source [part 6]` - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
+- Lines 3814-4013 - `Narrative source [part 7]` - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
+- Lines 4014-4213 - `Narrative source [part 8]` - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
+- Lines 4214-4413 - `Narrative source [part 9]` - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
+- Lines 4414-4613 - `Narrative source [part 10]` - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
+- Lines 4614-4813 - `Narrative source [part 11]` - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
+- Lines 4814-4854 - `Narrative source [part 12]` - context: Caelum Argenteum — Missions, Reputation and Factions V4.33.0f
 
-## [PROJECT.md](PROJECT.md) - 75088 words
+## [PROJECT.md](PROJECT.md) - 75107 words
 
-SHA-256: `03368a1b1797011b6b93ea504e9fccb212e5e1b95817ecafd3c7e683cd234b64`
+SHA-256: `8ac444311a0e7b51a0695f49b1081f73a921144ab719e0d0da2651437b0fb1e1`
 
 - Lines 1-4 - [Caelum Argenteum — Project, status and roadmap](PROJECT.md#caelum-argenteum--project-status-and-roadmap) - context: -
-- Lines 5-31 - [5.13.3 - Ordered Tarot foundation (#440, partial)](PROJECT.md#5133---ordered-tarot-foundation-440-partial) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 32-40 - `5.13.2 - Reversible equipment awakening (#442)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 41-49 - `5.13.1 - Capture sources and unified Tarot (#441)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 50-65 - `5.13.0 - Major Arcana specification audit (#439)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 66-77 - `5.12.7a - Death-interface correction (#602)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 78-117 - `Earlier V5.12 integration handoff - 2026-10-31` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 118-207 - `Earlier 5.12.7 integration checkpoints - #435` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 208-223 - [V5.12 profile integration (#434, 5.12.6, in progress)](PROJECT.md#v512-profile-integration-434-5126-in-progress) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 224-233 - [5.12.5 - Human card-table PvP preparation (#590)](PROJECT.md#5125---human-card-table-pvp-preparation-590) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 234-243 - [5.12.4 - Organized combat venues (#438, in progress)](PROJECT.md#5124---organized-combat-venues-438-in-progress) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 244-254 - [5.12.3 - Cooperative lifecycle guards (#437, in progress)](PROJECT.md#5123---cooperative-lifecycle-guards-437-in-progress) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 255-277 - [5.12.2 - Cooperative clock/rest and time consent (#436, in progress)](PROJECT.md#5122---cooperative-clockrest-and-time-consent-436-in-progress) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 278-287 - [V5.12 preparation - native multiplayer baseline (#435)](PROJECT.md#v512-preparation---native-multiplayer-baseline-435) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 288-306 - [5.11.8 - Mandinga and Zupay disease immunity (#586)](PROJECT.md#5118---mandinga-and-zupay-disease-immunity-586) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 307-310 - [5.11.7 - Household placement correction (#581)](PROJECT.md#5117---household-placement-correction-581) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 311-314 - [5.11.6 - Rat disease correction (#582)](PROJECT.md#5116---rat-disease-correction-582) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 315-324 - [5.11.5 - Rental dialogue refresh (#580)](PROJECT.md#5115---rental-dialogue-refresh-580) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 325-336 - [V5.11 implementation - 5.11.4 (#430, 2026-10-30)](PROJECT.md#v511-implementation---5114-430-2026-10-30) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 337-352 - [V5.10 complete and author-accepted - 5.10.3 (2026-10-30, #403)](PROJECT.md#v510-complete-and-author-accepted---5103-2026-10-30-403) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 353-364 - [V5.9 completion - 5.9.7 (2026-10-30, #403)](PROJECT.md#v59-completion---597-2026-10-30-403) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 365-389 - `V5.8 completion - 2026-10-29 (#403)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 390-394 - `5.8.56 / #416 - Original Ciudad theme for Buenos Aires` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 395-401 - `5.8.55 / #415 - Remove repeated global Rally lookups` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 402-417 - `5.8.53 / #417 - Final V5.8 implementation handoff - 2026-10-29` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 418-428 - `5.8.52 / #416 - Network implementation ready - 2026-10-29` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 429-449 - [5.8.51 / #415 - Unloaded calendar resolution](PROJECT.md#5851--415---unloaded-calendar-resolution) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 450-464 - [5.8.50 / #502 - Contact completion pass](PROJECT.md#5850--502---contact-completion-pass) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 465-474 - [5.8.49 / #502 - Physical materials and food integration](PROJECT.md#5849--502---physical-materials-and-food-integration) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 475-487 - [5.8.48 / #502 - Vessel exposure and interrupted test recovery](PROJECT.md#5848--502---vessel-exposure-and-interrupted-test-recovery) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 488-499 - [5.8.47 / #502 - Abstract stack contamination](PROJECT.md#5847--502---abstract-stack-contamination) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 500-511 - [5.8.46 / #502 - Native NPC absence physiology](PROJECT.md#5846--502---native-npc-absence-physiology) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 512-520 - [5.8.45 / #502 - Canonical dining-table contamination](PROJECT.md#5845--502---canonical-dining-table-contamination) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 521-530 - [5.8.44 / #410 - Decorative catalogue completion](PROJECT.md#5844--410---decorative-catalogue-completion) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 531-540 - [5.8.43 / #502 - Household cleaning during absence](PROJECT.md#5843--502---household-cleaning-during-absence) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 541-549 - [5.8.42 / #502 - Furnishing history across map absence](PROJECT.md#5842--502---furnishing-history-across-map-absence) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 550-560 - [5.8.41 / #502 - Household storage across map absence](PROJECT.md#5841--502---household-storage-across-map-absence) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 561-571 - [5.8.40 / #410 - Complete dining sets](PROJECT.md#5840--410---complete-dining-sets) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 572-580 - [5.8.39 / #415 - Mean-hit prerequisite](PROJECT.md#5839--415---mean-hit-prerequisite) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 581-589 - [5.8.38 / #502 - Loaded NPC illness](PROJECT.md#5838--502---loaded-npc-illness) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 590-598 - [5.8.37 / #502 - Temporary climate history](PROJECT.md#5837--502---temporary-climate-history) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 599-607 - [5.8.36 / #410 - Portable study furniture](PROJECT.md#5836--410---portable-study-furniture) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 608-616 - [5.8.35 / #410 - Sofa supply and transport](PROJECT.md#5835--410---sofa-supply-and-transport) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 617-624 - `5.8.34 / #410 - Ordinary rest furniture acquisition` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 625-633 - [5.8.33 / #410 - Ordinary rest furniture correction](PROJECT.md#5833--410---ordinary-rest-furniture-correction) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 634-641 - [5.8.32 - Luxury rest furniture acquisition (#410)](PROJECT.md#5832---luxury-rest-furniture-acquisition-410) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 642-652 - [5.8.31 - Storage furniture acquisition (#410)](PROJECT.md#5831---storage-furniture-acquisition-410) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 653-672 - [5.8.30 - Luxury furniture catalogue (#410, integration in progress)](PROJECT.md#5830---luxury-furniture-catalogue-410-integration-in-progress) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 673-687 - [5.8.29 - Usable sofas (#410)](PROJECT.md#5829---usable-sofas-410) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 688-710 - `5.8.28 - Regional weather history for objects (#502)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 711-726 - `5.8.27 - Indoor furniture placement (#411)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 727-740 - `5.8.26 - Stored-book reading (#410)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 741-754 - `5.8.25 - Garden water furniture (#410)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 755-773 - `5.8.24 - Native wardrobe storage (#410)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 774-788 - `5.8.23 - Constant Limbo exposure across absence (#502)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 789-803 - `5.8.22 - Shared-water mansion bathroom fixtures (#410)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 804-819 - `5.8.21 - Attended camp cooking and fuel interruption (#411)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 820-832 - `5.8.20 - Mansion kitchen sink and wall cupboard (#410)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 833-848 - `5.8.19 - Attended cooking and shared bread proofing (#410)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 849-864 - `5.8.18 - Prepared meal items and consumption (#410)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 865-881 - `5.8.17 - Kitchen ingredients (#410)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 882-899 - `5.8.16 - Non-solid physical scenery exposure (#502)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 900-918 - `5.8.15 - Usable sleeping bag inside the tent (#412, in progress)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 919-933 - `5.8.14 - Native ration lots (#410, in progress)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 934-945 - [5.8.13 - Campfire and mounted pot (#411, in progress)](PROJECT.md#5813---campfire-and-mounted-pot-411-in-progress) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 946-1128 - `5.8.12 - Metabolic toilet sessions (#502, in progress)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1129-1149 - [5.8.11 - Domestic bathrooms (#410, in progress)](PROJECT.md#5811---domestic-bathrooms-410-in-progress) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1150-1168 - `5.8.10 - Protect resting tent occupants (#412, in progress)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1169-1256 - [5.8.9 - Severe contamination (#502, in progress)](PROJECT.md#589---severe-contamination-502-in-progress) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1257-1296 - [5.8.8 - Safe placement and persistent tents (#411, in progress)](PROJECT.md#588---safe-placement-and-persistent-tents-411-in-progress) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1297-1306 - [5.8.7 - Food illness in travel and waiting forecasts (#410, in progress)](PROJECT.md#587---food-illness-in-travel-and-waiting-forecasts-410-in-progress) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1307-1312 - [5.8.6 - Central property access (#411, in progress)](PROJECT.md#586---central-property-access-411-in-progress) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1313-1316 - [5.8.5 - Regional event discovery (#415, in progress)](PROJECT.md#585---regional-event-discovery-415-in-progress) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1317-1320 - `5.8.4 - Second map soundtrack (#496)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1321-1333 - [5.8.3 - Food/furniture work in progress (#410)](PROJECT.md#583---foodfurniture-work-in-progress-410) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1334-1346 - [5.8.2 - Mansion connected water (#414)](PROJECT.md#582---mansion-connected-water-414) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1347-1356 - [5.8.1 - Altitude and acclimatization (#413)](PROJECT.md#581---altitude-and-acclimatization-413) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1357-1377 - [5.8.0 - Connected-water feasibility (#414)](PROJECT.md#580---connected-water-feasibility-414) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1378-1391 - [5.7.14 - Reusable mates (#472)](PROJECT.md#5714---reusable-mates-472) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1392-1404 - [5.7.13 - Chemistry batches (#471)](PROJECT.md#5713---chemistry-batches-471) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1405-1416 - [5.7.12 - Fermentation Barrel infrastructure (#487)](PROJECT.md#5712---fermentation-barrel-infrastructure-487) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1417-1428 - [5.7.11 - Chemistry station terminology (#486)](PROJECT.md#5711---chemistry-station-terminology-486) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1429-1452 - [5.7.10 - Cartridge assembly at Alchemy (#471)](PROJECT.md#5710---cartridge-assembly-at-alchemy-471) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1453-1475 - [5.7.9 - Water boiling and temperature (#409)](PROJECT.md#579---water-boiling-and-temperature-409) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1476-1499 - [5.7.8 - Support implements (#479, author accepted)](PROJECT.md#578---support-implements-479-author-accepted) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1500-1510 - [5.7.7 - Centered target information (#481)](PROJECT.md#577---centered-target-information-481) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1511-1522 - `5.7.6 - Alchemy art stage (#471)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1523-1541 - `5.7.5 - Marine imports and iodine (#407)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1542-1564 - `5.7.4 - Fixed Alchemy station (#470)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1565-1578 - `5.7.3 - Monotonic source recovery (#406)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1579-1591 - `5.7.2 - Land resources and owned 3D objects (#405)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1592-1602 - [5.7.1 - Reviewed regional resource data (#404)](PROJECT.md#571---reviewed-regional-resource-data-404) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1603-1612 - [5.7.0 - Water quality foundation (#408)](PROJECT.md#570---water-quality-foundation-408) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1613-1623 - [5.6.11a status — accepted batch and 3D clothing handoff (#387)](PROJECT.md#5611a-status--accepted-batch-and-3d-clothing-handoff-387) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1624-1633 - [5.6.11 status — calendar replenishment (#385)](PROJECT.md#5611-status--calendar-replenishment-385) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1634-1643 - [5.6.10 status — city catalogues (#383)](PROJECT.md#5610-status--city-catalogues-383) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1644-1651 - `5.6.9 - Native cartridge assembly (#380)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1652-1659 - `5.6.8 - Approved sealed cartridge kits (#379)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1660-1671 - `5.6.7 - Individual clothing object sprites (#387)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1672-1686 - `5.6.6 - Native ordinary clothing (#386)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1687-1700 - [5.6.4 - One-time death loot, existing tables (#384)](PROJECT.md#564---one-time-death-loot-existing-tables-384) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1701-1708 - [5.6.3b - Ordinary-clothing catalogue proposal (#386)](PROJECT.md#563b---ordinary-clothing-catalogue-proposal-386) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1709-1717 - [5.6.3a - Lock-tool proposal requested by the author (#382)](PROJECT.md#563a---lock-tool-proposal-requested-by-the-author-382) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1718-1728 - [5.6.3 - Physical recipe learning (#378)](PROJECT.md#563---physical-recipe-learning-378) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1729-1741 - [5.6.2 - Ordinary native storage (#381)](PROJECT.md#562---ordinary-native-storage-381) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1742-1757 - `5.6.1 - Merchant coordination (#377)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1758-1774 - [5.6.0 - Crafting planning and session extraction (#376)](PROJECT.md#560---crafting-planning-and-session-extraction-376) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1775-1785 - [5.5.8a - Close the deferred avalanche issue (#316)](PROJECT.md#558a---close-the-deferred-avalanche-issue-316) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1786-1801 - [5.5.8 - Cleaned animated bull presentation (#369)](PROJECT.md#558---cleaned-animated-bull-presentation-369) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1802-1820 - `5.5.7 - Future melee energy contract; conversion deferred (#315)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1821-1842 - `5.5.6 - Ice and lava ground contact (#314)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1843-1856 - `5.5.5 - Equipped-Seal input while unarmed (#363)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1857-1874 - `5.5.4 - Ammunition mass and finished-component contract (#313)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1875-1889 - `5.5.3 - Sustained pressure lifecycle and native descent (#312)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1890-1899 - [5.5.2 - Persistent multiple-contact audit (#311)](PROJECT.md#552---persistent-multiple-contact-audit-311) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1900-1912 - [5.5.1 - Bounded combat dispatch extraction (#310)](PROJECT.md#551---bounded-combat-dispatch-extraction-310) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1913-1922 - `5.5.0 - Weapon/input audit (#309)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1923-1935 - [5.4.47 - Maximum siege adrenaline (#361)](PROJECT.md#5447---maximum-siege-adrenaline-361) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1936-1945 - [5.4.46 - Symmetric house-door Melt (#334)](PROJECT.md#5446---symmetric-house-door-melt-334) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1946-1954 - [5.4.45 - Navigation markers are not breath targets (#357)](PROJECT.md#5445---navigation-markers-are-not-breath-targets-357) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1955-1965 - [5.4.44 - Structural-cache research completed (#354)](PROJECT.md#5444---structural-cache-research-completed-354) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1966-1981 - [5.4.43 - Production actor maintenance (#353)](PROJECT.md#5443---production-actor-maintenance-353) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1982-1996 - [5.4.42 - Distributed actor maintenance experiment (#318)](PROJECT.md#5442---distributed-actor-maintenance-experiment-318) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 1997-2008 - `5.4.41 - Isolated siege update costs (#318)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2009-2015 - `5.4.40 - Shared rest safety (#325)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2016-2023 - `5.4.39 - Voluntary-jump wall cushioning (#339)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2024-2030 - `5.4.38 - Complete top-aligned map legend (#321)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2031-2042 - `5.4.37 - Current MAP03 attribution supplement (#318)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2043-2056 - `5.4.36 - House-door presentation isolation (#334)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2057-2070 - [5.4.35 - Replace competing prisoner escort movement (#322)](PROJECT.md#5435---replace-competing-prisoner-escort-movement-322) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2071-2083 - `5.4.34 - Active-play autosaving (#324)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2084-2095 - [5.4.33 - Isolate the western sewer crusher (#323)](PROJECT.md#5433---isolate-the-western-sewer-crusher-323) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2096-2103 - `5.4.32 - Direct demon projectile aim (#320)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2104-2110 - [5.4.31 - Collapsible automap help (#321)](PROJECT.md#5431---collapsible-automap-help-321) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2111-2117 - `5.4.30 - Sleeping bag quick-item access (#319)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2118-2142 - [5.4.29 - Adopt low-sky MAP03 and normal bounded reinforcements (#327)](PROJECT.md#5429---adopt-low-sky-map03-and-normal-bounded-reinforcements-327) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2143-2224 - [5.4.28 - MAP06 audit, contact-only breath and scan policy (#318)](PROJECT.md#5428---map06-audit-contact-only-breath-and-scan-policy-318) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2225-2237 - [5.4.27 - Prisoner escort speed (#307)](PROJECT.md#5427---prisoner-escort-speed-307) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2238-2251 - [5.4.26 - Active seal registry (#305)](PROJECT.md#5426---active-seal-registry-305) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2252-2268 - [5.4.25 - MAP06 performance diagnosis and corpse retention (#304)](PROJECT.md#5425---map06-performance-diagnosis-and-corpse-retention-304) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2269-2278 - [V5.4 accepted batch delivery - PR303](PROJECT.md#v54-accepted-batch-delivery---pr303) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2279-2289 - [5.4.24 - Demon combat and cosmetic rock (#284, accepted)](PROJECT.md#5424---demon-combat-and-cosmetic-rock-284-accepted) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2290-2305 - [5.4.23 - Domingo native 3D prototype (#283, accepted)](PROJECT.md#5423---domingo-native-3d-prototype-283-accepted) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2306-2314 - [5.4.22 - Quick-use inventory HUD (#282)](PROJECT.md#5422---quick-use-inventory-hud-282) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2315-2339 - [5.4.21 - Local Seal climate and channel presentation (#252)](PROJECT.md#5421---local-seal-climate-and-channel-presentation-252) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2340-2350 - [5.4.20 - Investigator Arcane Cloud (#251, accepted)](PROJECT.md#5420---investigator-arcane-cloud-251-accepted) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2351-2361 - [5.4.19 - Pilgrim Redemption (#250)](PROJECT.md#5419---pilgrim-redemption-250) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2362-2372 - [5.4.18 - Battle Mage Summoning (#249)](PROJECT.md#5418---battle-mage-summoning-249) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2373-2382 - [5.4.17 - Cleric Rally (#248)](PROJECT.md#5417---cleric-rally-248) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2383-2395 - [5.4.16 - Mercenary Formation Breaker (#247)](PROJECT.md#5416---mercenary-formation-breaker-247) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2396-2406 - [5.4.15 - Player acceleration and directional impulse (#260)](PROJECT.md#5415---player-acceleration-and-directional-impulse-260) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2407-2417 - [5.4.14 - Mansion residents keep participating (#253)](PROJECT.md#5414---mansion-residents-keep-participating-253) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2418-2427 - [5.4.13 - Mage Arcane Sun (#246)](PROJECT.md#5413---mage-arcane-sun-246) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2428-2437 - [5.4.12 - Priest Miracle (#245)](PROJECT.md#5412---priest-miracle-245) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2438-2448 - [5.4.11 - Explorer Survival Instinct (#244)](PROJECT.md#5411---explorer-survival-instinct-244) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2449-2459 - [5.4.10 - Warrior Battle Cry (#243)](PROJECT.md#5410---warrior-battle-cry-243) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2460-2471 - [5.4.9 - Beast Man Hunter's Instinct (#239)](PROJECT.md#549---beast-man-hunters-instinct-239) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2472-2482 - [5.4.8 - Human Socialization (#240)](PROJECT.md#548---human-socialization-240) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2483-2493 - [5.4.7 - Duende Telekinesis (#241)](PROJECT.md#547---duende-telekinesis-241) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2494-2505 - [5.4.6 - Caelith Supernatural Breathing (#242)](PROJECT.md#546---caelith-supernatural-breathing-242) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2506-2516 - [5.4.5 - Reusable rain-cloud asset (#251, in progress)](PROJECT.md#545---reusable-rain-cloud-asset-251-in-progress) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2517-2542 - [5.4.4 - Shared class casting, ability HUD and Sleep (#238)](PROJECT.md#544---shared-class-casting-ability-hud-and-sleep-238) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2543-2552 - `5.4.3 - MAP02 rat movement and audio (#254)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2553-2563 - `5.4.2 - Equipped-Seal resistances (#261)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2564-2573 - `5.4.1 - Weapon dispersion tiers (#259)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2574-2587 - [5.4.0 - Attribute implementation audit (#237)](PROJECT.md#540---attribute-implementation-audit-237) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2588-2597 - [5.3.9 - Connected exploration screens (#236)](PROJECT.md#539---connected-exploration-screens-236) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2598-2619 - [5.3.8 - Saved independent mission tracking (#235)](PROJECT.md#538---saved-independent-mission-tracking-235) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2620-2639 - [5.3.7 - Existing-map exploration catalogue (#234)](PROJECT.md#537---existing-map-exploration-catalogue-234) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2640-2650 - [5.3.6 - Named manual map notes (#233)](PROJECT.md#536---named-manual-map-notes-233) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2651-2661 - [5.3.5 - Known local services (#232)](PROJECT.md#535---known-local-services-232) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2662-2670 - [5.3.4 - Local cartography (#231)](PROJECT.md#534---local-cartography-231) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2671-2678 - `5.3.3 - Exhaustion sleep (#258)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2679-2688 - `5.3.2 - Automatic provisions (#257)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2689-2698 - [5.3.1 - Character survival, chances and resistances (#256)](PROJECT.md#531---character-survival-chances-and-resistances-256) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2699-2706 - [5.3.0 - Power HUD layout (#255)](PROJECT.md#530---power-hud-layout-255) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2707-2714 - [5.2.27 - Magic Box empty mass (#229)](PROJECT.md#5227---magic-box-empty-mass-229) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2715-2727 - [5.2.26 - Rest controls feedback (#227)](PROJECT.md#5226---rest-controls-feedback-227) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2728-2735 - [5.2.25 - Magical staff precision (#222)](PROJECT.md#5225---magical-staff-precision-222) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2736-2745 - [5.2.24 - Mandinga potion fallback (#220)](PROJECT.md#5224---mandinga-potion-fallback-220) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2746-2755 - [5.2.23 - Sleeping-bag acceleration in MAP02 (#219)](PROJECT.md#5223---sleeping-bag-acceleration-in-map02-219) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2756-2765 - [5.2.22 - Current controls beside menu options (#215)](PROJECT.md#5222---current-controls-beside-menu-options-215) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2766-2773 - `5.2.21 - Visible tutorial gold (#216)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2774-2788 - [5.2.20 - Resource bars at screen edges (#213)](PROJECT.md#5220---resource-bars-at-screen-edges-213) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2789-2801 - [5.2.19 - Horizontal landing capacity (#211)](PROJECT.md#5219---horizontal-landing-capacity-211) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2802-2815 - [5.2.18 - Modular pose, furniture and hand repairs (#209)](PROJECT.md#5218---modular-pose-furniture-and-hand-repairs-209) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2816-2827 - [5.2.17 - MAP01 player health floor (#207)](PROJECT.md#5217---map01-player-health-floor-207) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2828-2837 - [5.2.16 - Fullscreen native cursor workaround (#204)](PROJECT.md#5216---fullscreen-native-cursor-workaround-204) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2838-2851 - [5.2.15 - Native readability and comfort (#150)](PROJECT.md#5215---native-readability-and-comfort-150) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2852-2862 - [5.2.14 - Grouped native controls and current hints (#149)](PROJECT.md#5214---grouped-native-controls-and-current-hints-149) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2863-2881 - [5.2.13 - Native saved cosmetics and character preview (#148)](PROJECT.md#5213---native-saved-cosmetics-and-character-preview-148) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2882-2893 - [5.2.12 - Bull balance and finite resident tools (#195)](PROJECT.md#5212---bull-balance-and-finite-resident-tools-195) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2894-2908 - [5.2.11 - Bilateral collision energy (#194)](PROJECT.md#5211---bilateral-collision-energy-194) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2909-2920 - [5.2.10 - Ranged penetration and shotgun naming (#192 amendment)](PROJECT.md#5210---ranged-penetration-and-shotgun-naming-192-amendment) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2921-2934 - [5.2.9 - Four personality layers and twelve-projectile bell (#192)](PROJECT.md#529---four-personality-layers-and-twelve-projectile-bell-192) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2935-2948 - `5.2.8 - Mass-based Toughness and status resistance (#188)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2949-2961 - [5.2.7 - Native ownership for all interactive screens (#189)](PROJECT.md#527---native-ownership-for-all-interactive-screens-189) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2962-2970 - [5.2.6 - Mouse interaction in game menus (#184)](PROJECT.md#526---mouse-interaction-in-game-menus-184) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2971-2982 - [5.2.5 - Indexed NPC dialogue sources (#185)](PROJECT.md#525---indexed-npc-dialogue-sources-185) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 2983-2999 - [5.2.4 - Simplified onboarding and MAP02 supplies (#183)](PROJECT.md#524---simplified-onboarding-and-map02-supplies-183) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 3000-3009 - [5.2.3 - Allied Mandinga retaliation (#180)](PROJECT.md#523---allied-mandinga-retaliation-180) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 3010-3018 - [5.2.2 - Faster time skipping (#178)](PROJECT.md#522---faster-time-skipping-178) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 3019-3032 - [5.2.1 - Tutorial usability and portable rest (#177)](PROJECT.md#521---tutorial-usability-and-portable-rest-177) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 3033-3052 - [5.2.0 - Unified character identity (#147)](PROJECT.md#520---unified-character-identity-147) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 3053-3061 - [5.1.20 - MAP06 doors and peaceful time skip (#173)](PROJECT.md#5120---map06-doors-and-peaceful-time-skip-173) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 3062-3071 - [5.1.19 - NPC dialogue history (#172)](PROJECT.md#5119---npc-dialogue-history-172) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 3072-3084 - [5.1.18 - MAP01 permanent gifts and checkpoint (#164)](PROJECT.md#5118---map01-permanent-gifts-and-checkpoint-164) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 3085-3093 - [5.1.17 - Medikit names (#169)](PROJECT.md#5117---medikit-names-169) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 3094-3107 - [5.1.16 - Recoverable bolas (#163)](PROJECT.md#5116---recoverable-bolas-163) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 3108-3120 - [5.1.15 - Bronze utility staff and wand names (#162)](PROJECT.md#5115---bronze-utility-staff-and-wand-names-162) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 3121-3134 - [5.1.14 - Damage flash across map travel (#165)](PROJECT.md#5114---damage-flash-across-map-travel-165) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 3135-3144 - [5.1.13 - Argento silver-key handoff (#160)](PROJECT.md#5113---argento-silver-key-handoff-160) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 3145-3154 - [5.1.12 - Preserve crafting equipment size (#158)](PROJECT.md#5112---preserve-crafting-equipment-size-158) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 3155-3164 - [5.1.11 - Time-skip letter controls (#156)](PROJECT.md#5111---time-skip-letter-controls-156) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 3165-3179 - [5.1.10 — SI physics and growth migration (#154)](PROJECT.md#5110--si-physics-and-growth-migration-154) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 3180-3196 - [5.1.9 - Shotgun pickup, grip and alternate aim follow-up (#152)](PROJECT.md#519---shotgun-pickup-grip-and-alternate-aim-follow-up-152) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 3197-3213 - [5.1.8 - Elemental presentation and proportional screen feedback (#137)](PROJECT.md#518---elemental-presentation-and-proportional-screen-feedback-137) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 3214-3241 - [5.1.7 - Shortbow replacement and firearm armor bypass (#136)](PROJECT.md#517---shortbow-replacement-and-firearm-armor-bypass-136) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 3242-3259 - [5.1.6 - Crouched and aimed soldiers (#143)](PROJECT.md#516---crouched-and-aimed-soldiers-143) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 3260-3279 - [5.1.5 - Demon supplies and fire breath (#135)](PROJECT.md#515---demon-supplies-and-fire-breath-135) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 3280-3305 - [5.1.4 - Thermal coefficients, breathing and recovery (#140)](PROJECT.md#514---thermal-coefficients-breathing-and-recovery-140) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 3306-3334 - [5.1.3 - Functional port city (#133, closure and merge authorized)](PROJECT.md#513---functional-port-city-133-closure-and-merge-authorized) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 3335-3351 - [5.1.2 - Staged siege performance experiment (#132)](PROJECT.md#512---staged-siege-performance-experiment-132) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 3352-3372 - [5.1.1 - Thermal HUD and climate adaptation (#131)](PROJECT.md#511---thermal-hud-and-climate-adaptation-131) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 3373-3429 - [5.1.0 — Thermal exposure and energy transfer (#130)](PROJECT.md#510--thermal-exposure-and-energy-transfer-130) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 3430-3512 - [5.0.6 — Automatic high-density AI and shared work (#128)](PROJECT.md#506--automatic-high-density-ai-and-shared-work-128) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 3513-3712 - `5.0.5 — Siege subsystem diagnosis and shared-group experiments (#121)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 3713-3717 - `5.0.5 — Siege subsystem diagnosis and shared-group experiments (#121) [part 2]` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 3718-3756 - [5.0.4 — Per-player authority and bounded V5.0 closure (#120)](PROJECT.md#504--per-player-authority-and-bounded-v50-closure-120) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 3757-3775 - [5.0.3 — Authoritative Tarot service (#119)](PROJECT.md#503--authoritative-tarot-service-119) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 3776-3815 - [5.0.2 — Authoritative inventory/equipment service (#118)](PROJECT.md#502--authoritative-inventoryequipment-service-118) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 3816-3864 - [5.0.1 — Player character/resource adapters (#117)](PROJECT.md#501--player-characterresource-adapters-117) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 3865-3883 - [5.0.0 — Architecture audit and first presentation extraction (#116)](PROJECT.md#500--architecture-audit-and-first-presentation-extraction-116) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 3884-3915 - [Responsibility and dependency map](PROJECT.md#responsibility-and-dependency-map) - context: Caelum Argenteum — Project, status and roadmap > 5.0.0 — Architecture audit and first presentation extraction (#116)
-- Lines 3916-3937 - [Ordered extraction plan and gates](PROJECT.md#ordered-extraction-plan-and-gates) - context: Caelum Argenteum — Project, status and roadmap > 5.0.0 — Architecture audit and first presentation extraction (#116)
-- Lines 3938-4002 - [Audit findings and measurement boundary](PROJECT.md#audit-findings-and-measurement-boundary) - context: Caelum Argenteum — Project, status and roadmap > 5.0.0 — Architecture audit and first presentation extraction (#116)
-- Lines 4003-4031 - [4.37.24 — Final V4.37 integration and export (#82)](PROJECT.md#43724--final-v437-integration-and-export-82) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4032-4052 - `4.37.23 - Contextual character creation (#112)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4053-4071 - [4.37.22 - Distinct playable first-person shields (#106)](PROJECT.md#43722---distinct-playable-first-person-shields-106) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4072-4092 - [4.37.21 - Approved narrative artwork and introduction (#103)](PROJECT.md#43721---approved-narrative-artwork-and-introduction-103) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4093-4103 - [4.37.20 - Training dummy model (#98)](PROJECT.md#43720---training-dummy-model-98) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4104-4119 - [4.37.19 - Palomo necklace reward and shield names (#96)](PROJECT.md#43719---palomo-necklace-reward-and-shield-names-96) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4120-4141 - [4.37.18 - Crafting sections and complete Tarot descriptions (#91)](PROJECT.md#43718---crafting-sections-and-complete-tarot-descriptions-91) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4142-4162 - [4.37.17 - Owned Pickaxe and resource feedback (#89)](PROJECT.md#43717---owned-pickaxe-and-resource-feedback-89) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4163-4174 - [4.37.16 - Navigation HUD and project menu identity (#87)](PROJECT.md#43716---navigation-hud-and-project-menu-identity-87) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4175-4184 - `4.37.15 - Traditional Truco ranked mode (#101)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4185-4191 - [4.37.14a - Argento practice choice near the end (#99)](PROJECT.md#43714a---argento-practice-choice-near-the-end-99) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4192-4201 - [4.37.14 - Palomo gives the deck upstairs (#97)](PROJECT.md#43714---palomo-gives-the-deck-upstairs-97) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4202-4209 - [4.37.13a - Visible crafting time shortcut (#93)](PROJECT.md#43713a---visible-crafting-time-shortcut-93) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4210-4233 - [4.37.13 — Trucazo practice against Argento (#81)](PROJECT.md#43713--trucazo-practice-against-argento-81) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4234-4267 - `4.37.12 — Campaign Tarot powers and physical deck (#80)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4268-4292 - [4.37.11 — The amnesiac captain of Barracas al Sud (#79)](PROJECT.md#43711--the-amnesiac-captain-of-barracas-al-sud-79) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4293-4313 - [4.37.10 — Post-payment prisoner siege intelligence (#78)](PROJECT.md#43710--post-payment-prisoner-siege-intelligence-78) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4314-4374 - [4.37.9 — Expanded southern Barracas al Sud (#77)](PROJECT.md#4379--expanded-southern-barracas-al-sud-77) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4375-4398 - [4.37.8 — MAP02 material ledger and finite-supply audit (#75)](PROJECT.md#4378--map02-material-ledger-and-finite-supply-audit-75) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4399-4414 - [4.37.7 — Flooded MAP02 return (#74)](PROJECT.md#4377--flooded-map02-return-74) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4415-4430 - [4.37.6 — Cardinal MAP02 (#73, coordinated #75 loot)](PROJECT.md#4376--cardinal-map02-73-coordinated-75-loot) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4431-4446 - [4.37.5 — Daily food and water on mansion tables (#65)](PROJECT.md#4375--daily-food-and-water-on-mansion-tables-65) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4447-4463 - [4.37.4 — Time skipping with automatic care (#64)](PROJECT.md#4374--time-skipping-with-automatic-care-64) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4464-4488 - [4.37.3 — Palomo's equipment plan and owned equipment departure (#63)](PROJECT.md#4373--palomos-equipment-plan-and-owned-equipment-departure-63) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4489-4504 - [4.37.2 — Reduced magic-weapon Anima costs (#68)](PROJECT.md#4372--reduced-magic-weapon-anima-costs-68) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4505-4524 - [4.37.1 — Caella's practical exercises on the shared dummy (#62)](PROJECT.md#4371--caellas-practical-exercises-on-the-shared-dummy-62) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4525-4569 - [4.37.0 — MAP01 rolling grounds and filled tympana (#61)](PROJECT.md#4370--map01-rolling-grounds-and-filled-tympana-61) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4570-4599 - [4.36.28 — Reproducible three-map playtest export (#17)](PROJECT.md#43628--reproducible-three-map-playtest-export-17) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4600-4617 - [4.36.27 — Third campaign map: port siege (#16)](PROJECT.md#43627--third-campaign-map-port-siege-16) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4618-4631 - [4.36.26 — Attack cadence and thrust presentation (#37)](PROJECT.md#43626--attack-cadence-and-thrust-presentation-37) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4632-4665 - [4.36.25 — Mansion architecture and enclosure (#36)](PROJECT.md#43625--mansion-architecture-and-enclosure-36) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4666-4673 - `4.36.24a — Proprietary rights notice (#55)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4674-4691 - [4.36.24 — Quest journal categories and history (#35)](PROJECT.md#43624--quest-journal-categories-and-history-35) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4692-4723 - [4.36.23 — Final armor absorption (#52)](PROJECT.md#43623--final-armor-absorption-52) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4724-4759 - [4.36.22 — Demo quest narrative (#34)](PROJECT.md#43622--demo-quest-narrative-34) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4760-4769 - [4.36.21 — Scenery impact correction (#49)](PROJECT.md#43621--scenery-impact-correction-49) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4770-4789 - [4.36.20 — Shared Arcana capture and the playable route (#33)](PROJECT.md#43620--shared-arcana-capture-and-the-playable-route-33) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4790-4805 - [4.36.19 — Approved final cannon/gate balance (#21)](PROJECT.md#43619--approved-final-cannongate-balance-21) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4806-4817 - [4.36.18 — Walking wall-impact absorption (issue #43)](PROJECT.md#43618--walking-wall-impact-absorption-issue-43) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4818-4837 - [4.36.17 — Controlled cannon firing (issue #21)](PROJECT.md#43617--controlled-cannon-firing-issue-21) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4838-4860 - [4.36.16 — Usable battering rams (issue #20)](PROJECT.md#43616--usable-battering-rams-issue-20) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4861-4883 - [4.36.15 — Breakable actor gates (issue #19)](PROJECT.md#43615--breakable-actor-gates-issue-19) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4884-4896 - [4.36.14a — Author-requested siege asset correction (#18)](PROJECT.md#43614a--author-requested-siege-asset-correction-18) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4897-4913 - [4.36.10 — Reusable siege preview assets (issue #18)](PROJECT.md#43610--reusable-siege-preview-assets-issue-18) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4914-4933 - [4.36.8 — Prisoner rescue, escort and port rewards (issue #14)](PROJECT.md#4368--prisoner-rescue-escort-and-port-rewards-issue-14) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4934-4958 - [4.36.7 — Recolored prisoner appearances (issue #13)](PROJECT.md#4367--recolored-prisoner-appearances-issue-13) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4959-4973 - [4.36.6 — Hostile sewer rats (issue #12)](PROJECT.md#4366--hostile-sewer-rats-issue-12) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4974-4983 - `4.36.5a — Selective file reading for agents (#29)` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 4984-5015 - [4.36.5 — Four-section sewer layout (issue #11)](PROJECT.md#4365--four-section-sewer-layout-issue-11) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5016-5038 - [4.36.4 — T1 acquisition, recipient sizes and feedback](PROJECT.md#4364--t1-acquisition-recipient-sizes-and-feedback) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5039-5050 - [4.36.3 — Additional first-person flail rotation](PROJECT.md#4363--additional-first-person-flail-rotation) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5051-5067 - [4.36.2 — Bow first-use stall and environmental scope](PROJECT.md#4362--bow-first-use-stall-and-environmental-scope) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5068-5089 - [4.36.1 — Documentation and contribution workflow](PROJECT.md#4361--documentation-and-contribution-workflow) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5090-5099 - `4.36.1b — Engineering guides and long-document index` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5100-5174 - [Author roadmap update — 2026-09-23](PROJECT.md#author-roadmap-update--2026-09-23) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5175-5191 - [Usage measurement for this batch](PROJECT.md#usage-measurement-for-this-batch) - context: Caelum Argenteum — Project, status and roadmap > Author roadmap update — 2026-09-23
-- Lines 5192-5217 - [4.36.0i — maze, flail, rations and approved weight](PROJECT.md#4360i--maze-flail-rations-and-approved-weight) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5218-5231 - [Major Arcana and block closure](PROJECT.md#major-arcana-and-block-closure) - context: Caelum Argenteum — Project, status and roadmap > 4.36.0i — maze, flail, rations and approved weight
-- Lines 5232-5257 - [Historical 4.36.0h — bow reference, clockwise rotation and served tables](PROJECT.md#historical-4360h--bow-reference-clockwise-rotation-and-served-tables) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5258-5274 - [What is needed to close 4.36](PROJECT.md#what-is-needed-to-close-436) - context: Caelum Argenteum — Project, status and roadmap > Historical 4.36.0h — bow reference, clockwise rotation and served tables
-- Lines 5275-5294 - [4.36.0g — proportions, flail and palette](PROJECT.md#4360g--proportions-flail-and-palette) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5295-5319 - [4.36.0f — corrections after the author's test](PROJECT.md#4360f--corrections-after-the-authors-test) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5320-5346 - `4.36.0e — corrections requested after testing 0d` - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5347-5383 - [Previous base: 4.36.0d — grips, fists and visible mechanisms](PROJECT.md#previous-base-4360d--grips-fists-and-visible-mechanisms) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5384-5418 - [History: 4.36.0c — first person, audio and corrections](PROJECT.md#history-4360c--first-person-audio-and-corrections) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5419-5443 - [History: 4.36.0b — traps, levers and presentation](PROJECT.md#history-4360b--traps-levers-and-presentation) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5444-5469 - [Approved base: 4.36.0a — trapdoor and first physical hazards](PROJECT.md#approved-base-4360a--trapdoor-and-first-physical-hazards) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5470-5485 - [Approved base: 4.35.0q — sprites v4 and seated consumption](PROJECT.md#approved-base-4350q--sprites-v4-and-seated-consumption) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5486-5513 - [Approved base: 4.35.0p — reserves and first vehicles](PROJECT.md#approved-base-4350p--reserves-and-first-vehicles) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5514-5520 - [Historical closure of 4.35 (completed)](PROJECT.md#historical-closure-of-435-completed) - context: Caelum Argenteum — Project, status and roadmap > Approved base: 4.35.0p — reserves and first vehicles
-- Lines 5521-5550 - [Base delivered: 4.35.0o — agenda and persistent events](PROJECT.md#base-delivered-4350o--agenda-and-persistent-events) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5551-5558 - [4.35 closure](PROJECT.md#435-closure) - context: Caelum Argenteum — Project, status and roadmap > Base delivered: 4.35.0o — agenda and persistent events
-- Lines 5559-5590 - [Base delivered: 4.35.0n — measured travel and provisions](PROJECT.md#base-delivered-4350n--measured-travel-and-provisions) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5591-5597 - [Base delivered: 4.35.0m — food by mass and coast](PROJECT.md#base-delivered-4350m--food-by-mass-and-coast) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5598-5639 - [Base delivered: 4.35.0l — chairs, water and regional climate](PROJECT.md#base-delivered-4350l--chairs-water-and-regional-climate) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5640-5674 - [Base delivered: 4.35.0j — local rhythm, interaction and class areas](PROJECT.md#base-delivered-4350j--local-rhythm-interaction-and-class-areas) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5675-5695 - [Base delivered: 4.35.0i — accesses, plates and advancement in Limbo](PROJECT.md#base-delivered-4350i--accesses-plates-and-advancement-in-limbo) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5696-5721 - [Base delivered: 4.35.0h — meals and furniture of the mansion](PROJECT.md#base-delivered-4350h--meals-and-furniture-of-the-mansion) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5722-5745 - [Base accepted: 4.35.0g — safe advance, tables and sleep](PROJECT.md#base-accepted-4350g--safe-advance-tables-and-sleep) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5746-5777 - [Base accepted: 4.35.0f — sleeping bag and comfort](PROJECT.md#base-accepted-4350f--sleeping-bag-and-comfort) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5778-5782 - [0f time-advance proposal adopted in 0g](PROJECT.md#0f-time-advance-proposal-adopted-in-0g) - context: Caelum Argenteum — Project, status and roadmap > Base accepted: 4.35.0f — sleeping bag and comfort
-- Lines 5783-5813 - [Base accepted: 4.35.0e — chairs, cots and rest camera](PROJECT.md#base-accepted-4350e--chairs-cots-and-rest-camera) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5814-5835 - [Base accepted: 4.35.0d1 — compilation correction](PROJECT.md#base-accepted-4350d1--compilation-correction) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5836-5872 - [Functional base accepted with 0d1: 4.35.0d — rest and wait](PROJECT.md#functional-base-accepted-with-0d1-4350d--rest-and-wait) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5873-5887 - [Previous verification of 0d](PROJECT.md#previous-verification-of-0d) - context: Caelum Argenteum — Project, status and roadmap > Functional base accepted with 0d1: 4.35.0d — rest and wait
-- Lines 5888-5910 - [Pending work to move from 4.35 to 4.36](PROJECT.md#pending-work-to-move-from-435-to-436) - context: Caelum Argenteum — Project, status and roadmap > Functional base accepted with 0d1: 4.35.0d — rest and wait
-- Lines 5911-5943 - [Base accepted: 4.35.0c — campaign start and Limbo time](PROJECT.md#base-accepted-4350c--campaign-start-and-limbo-time) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5944-5961 - [0c Verification](PROJECT.md#0c-verification) - context: Caelum Argenteum — Project, status and roadmap > Base accepted: 4.35.0c — campaign start and Limbo time
-- Lines 5962-5996 - [Base accepted: 4.35.0b — calendar and unpaused conversations](PROJECT.md#base-accepted-4350b--calendar-and-unpaused-conversations) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 5997-6014 - [0b verification and delivery limit](PROJECT.md#0b-verification-and-delivery-limit) - context: Caelum Argenteum — Project, status and roadmap > Base accepted: 4.35.0b — calendar and unpaused conversations
-- Lines 6015-6052 - [Accepted base: 4.35.0a — persistent global clock](PROJECT.md#accepted-base-4350a--persistent-global-clock) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 6053-6084 - [Native 0a Verification](PROJECT.md#native-0a-verification) - context: Caelum Argenteum — Project, status and roadmap > Accepted base: 4.35.0a — persistent global clock
-- Lines 6085-6119 - [Base accepted: 4.34.0e — means to check activities and travel](PROJECT.md#base-accepted-4340e--means-to-check-activities-and-travel) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 6120-6154 - [Native 0e Verification](PROJECT.md#native-0e-verification) - context: Caelum Argenteum — Project, status and roadmap > Base accepted: 4.34.0e — means to check activities and travel
-- Lines 6155-6190 - [Previous increase: 4.34.0d — caravans and travel registration](PROJECT.md#previous-increase-4340d--caravans-and-travel-registration) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 6191-6212 - [Verification of 0d and limits](PROJECT.md#verification-of-0d-and-limits) - context: Caelum Argenteum — Project, status and roadmap > Previous increase: 4.34.0d — caravans and travel registration
-- Lines 6213-6255 - [Base accepted: 4.34.0c — Test sewer network](PROJECT.md#base-accepted-4340c--test-sewer-network) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 6256-6288 - [Verification and 0c limits](PROJECT.md#verification-and-0c-limits) - context: Caelum Argenteum — Project, status and roadmap > Base accepted: 4.34.0c — Test sewer network
-- Lines 6289-6310 - [Base accepted: 4.34.0b — doors and accesses by group](PROJECT.md#base-accepted-4340b--doors-and-accesses-by-group) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 6311-6328 - [Optional test accessible](PROJECT.md#optional-test-accessible) - context: Caelum Argenteum — Project, status and roadmap > Base accepted: 4.34.0b — doors and accesses by group
-- Lines 6329-6360 - [Evidence and limits](PROJECT.md#evidence-and-limits) - context: Caelum Argenteum — Project, status and roadmap > Base accepted: 4.34.0b — doors and accesses by group
-- Lines 6361-6391 - [Base accepted: 4.34.0a — locations and connections](PROJECT.md#base-accepted-4340a--locations-and-connections) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 6392-6425 - [4.34.0a Verification](PROJECT.md#4340a-verification) - context: Caelum Argenteum — Project, status and roadmap > Base accepted: 4.34.0a — locations and connections
-- Lines 6426-6439 - [Technical base: 4.33.0ao — integration closure](PROJECT.md#technical-base-4330ao--integration-closure) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 6440-6452 - [Active conversation when loading](PROJECT.md#active-conversation-when-loading) - context: Caelum Argenteum — Project, status and roadmap > Technical base: 4.33.0ao — integration closure
-- Lines 6453-6492 - [Joint verification and limits](PROJECT.md#joint-verification-and-limits) - context: Caelum Argenteum — Project, status and roadmap > Technical base: 4.33.0ao — integration closure
-- Lines 6493-6504 - [Base accepted: 4.33.0an — Reputation conditions](PROJECT.md#base-accepted-4330an--reputation-conditions) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 6505-6530 - [Accessible test and scope](PROJECT.md#accessible-test-and-scope) - context: Caelum Argenteum — Project, status and roadmap > Base accepted: 4.33.0an — Reputation conditions
-- Lines 6531-6559 - [Evidence and validation of 0an](PROJECT.md#evidence-and-validation-of-0an) - context: Caelum Argenteum — Project, status and roadmap > Base accepted: 4.33.0an — Reputation conditions
-- Lines 6560-6575 - [Base accepted: 4.33.0am — inactive conversation and Journal boundaries](PROJECT.md#base-accepted-4330am--inactive-conversation-and-journal-boundaries) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 6576-6606 - [Evidence and validation of 0am](PROJECT.md#evidence-and-validation-of-0am) - context: Caelum Argenteum — Project, status and roadmap > Base accepted: 4.33.0am — inactive conversation and Journal boundaries
-- Lines 6607-6629 - [Base 4.33.0ak — Observed capture; revised controls in 0al](PROJECT.md#base-4330ak--observed-capture-revised-controls-in-0al) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 6630-6654 - [0ak Technical Validation](PROJECT.md#0ak-technical-validation) - context: Caelum Argenteum — Project, status and roadmap > Base 4.33.0ak — Observed capture; revised controls in 0al
-- Lines 6655-6676 - [Base 4.33.0aj — comments corrected by 0ak](PROJECT.md#base-4330aj--comments-corrected-by-0ak) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 6677-6711 - [0aj Technical Validation](PROJECT.md#0aj-technical-validation) - context: Caelum Argenteum — Project, status and roadmap > Base 4.33.0aj — comments corrected by 0ak
-- Lines 6712-6730 - [Base 4.33.0ai — approved by the author](PROJECT.md#base-4330ai--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 6731-6748 - [0ai Technical Validation](PROJECT.md#0ai-technical-validation) - context: Caelum Argenteum — Project, status and roadmap > Base 4.33.0ai — approved by the author
-- Lines 6749-6763 - [0ah Technical Validation](PROJECT.md#0ah-technical-validation) - context: Caelum Argenteum — Project, status and roadmap > Base 4.33.0ai — approved by the author
-- Lines 6764-6775 - [0ag Technical Validation](PROJECT.md#0ag-technical-validation) - context: Caelum Argenteum — Project, status and roadmap > Base 4.33.0ai — approved by the author
-- Lines 6776-6785 - [0af Technical Validation](PROJECT.md#0af-technical-validation) - context: Caelum Argenteum — Project, status and roadmap > Base 4.33.0ai — approved by the author
-- Lines 6786-6812 - [Base 4.33.0ae — approved by the author](PROJECT.md#base-4330ae--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 6813-6840 - [Base 4.33.0ad — approved by the author](PROJECT.md#base-4330ad--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 6841-6859 - [Base 4.33.0ac — approved by the author](PROJECT.md#base-4330ac--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 6860-6874 - [Base 4.33.0ab — approved by the author](PROJECT.md#base-4330ab--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 6875-6888 - [Base 4.33.0aa — approved by the author](PROJECT.md#base-4330aa--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 6889-6903 - [4.33.0z base — included in approved 0aa base](PROJECT.md#4330z-base--included-in-approved-0aa-base) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 6904-6922 - [Base 4.33.0y — approved by the author](PROJECT.md#base-4330y--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 6923-6939 - [Base 4.33.0x — approved by the author](PROJECT.md#base-4330x--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 6940-6963 - [Base 4.33.0w — approved by the author](PROJECT.md#base-4330w--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 6964-7028 - [4.33.0v changes included and approved by the author: exit and return to body](PROJECT.md#4330v-changes-included-and-approved-by-the-author-exit-and-return-to-body) - context: Caelum Argenteum — Project, status and roadmap > Base 4.33.0w — approved by the author
-- Lines 7029-7096 - [Permanent premises](PROJECT.md#permanent-premises) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 7097-7111 - [Document map](PROJECT.md#document-map) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 7112-7143 - [Immediate Roadmap: Close systems and tests on MAP01](PROJECT.md#immediate-roadmap-close-systems-and-tests-on-map01) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 7144-7177 - [General roadmap by version](PROJECT.md#general-roadmap-by-version) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 7178-7213 - [Numbered V5 delivery sequence — author request 2026-10-07](PROJECT.md#numbered-v5-delivery-sequence--author-request-2026-10-07) - context: Caelum Argenteum — Project, status and roadmap > General roadmap by version
-- Lines 7214-7258 - [Modular 3D character migration - author handoff from #283](PROJECT.md#modular-3d-character-migration---author-handoff-from-283) - context: Caelum Argenteum — Project, status and roadmap > General roadmap by version
-- Lines 7259-7314 - [V5 native menus, character setup and exploration — approved 2026-10-05](PROJECT.md#v5-native-menus-character-setup-and-exploration--approved-2026-10-05) - context: Caelum Argenteum — Project, status and roadmap > General roadmap by version
-- Lines 7315-7351 - [Inherited and cross-cutting work: V5, after export](PROJECT.md#inherited-and-cross-cutting-work-v5-after-export) - context: Caelum Argenteum — Project, status and roadmap > General roadmap by version
-- Lines 7352-7362 - [Decisions that still require author design](PROJECT.md#decisions-that-still-require-author-design) - context: Caelum Argenteum — Project, status and roadmap > General roadmap by version
-- Lines 7363-7403 - [4.33.0h Folder Audit](PROJECT.md#4330h-folder-audit) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 7404-7418 - [Historical implementation and maintenance — 4.33.0ao](PROJECT.md#historical-implementation-and-maintenance--4330ao) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 7419-7461 - [4.33.0ae Validation](PROJECT.md#4330ae-validation) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 7462-7497 - [Validation of 4.33.0ad — approved by the author](PROJECT.md#validation-of-4330ad--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 7498-7530 - [Validation of 4.33.0ac — approved by the author](PROJECT.md#validation-of-4330ac--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 7531-7561 - [Validation of 4.33.0ab — approved by the author](PROJECT.md#validation-of-4330ab--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 7562-7596 - [Validation of 4.33.0aa — approved by the author](PROJECT.md#validation-of-4330aa--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 7597-7610 - [4.33.0z Validation](PROJECT.md#4330z-validation) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 7611-7624 - [Validation of 4.33.0y — approved by the author](PROJECT.md#validation-of-4330y--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 7625-7639 - [Validation of 4.33.0x — approved by the author](PROJECT.md#validation-of-4330x--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 7640-7667 - [Validation of 4.33.0w — approved by the author](PROJECT.md#validation-of-4330w--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 7668-7700 - [4.33.0v Validation — Approved within Cumulative 0w](PROJECT.md#4330v-validation--approved-within-cumulative-0w) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 7701-7727 - [Validation of 4.33.0u — approved by the author](PROJECT.md#validation-of-4330u--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 7728-7758 - [4.33.0t Validation — remaining tests approved by author](PROJECT.md#4330t-validation--remaining-tests-approved-by-author) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 7759-7791 - [Validation of 4.33.0s — approved by the author](PROJECT.md#validation-of-4330s--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 7792-7815 - [Validation of 4.33.0r — approved by the author](PROJECT.md#validation-of-4330r--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 7816-7840 - [4.33.0q Validation — remaining tests approved by author](PROJECT.md#4330q-validation--remaining-tests-approved-by-author) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 7841-7863 - [4.33.0p Validation — remaining tests approved by author](PROJECT.md#4330p-validation--remaining-tests-approved-by-author) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 7864-7878 - [4.33.0o Validation](PROJECT.md#4330o-validation) - context: Caelum Argenteum — Project, status and roadmap
-- Lines 7879-7907 - [Validation of 4.33.0n — accepted on 2026-09-11](PROJECT.md#validation-of-4330n--accepted-on-2026-09-11) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5-33 - [5.13.3 - Ordered Tarot foundation (#440, partial)](PROJECT.md#5133---ordered-tarot-foundation-440-partial) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 34-42 - `5.13.2 - Reversible equipment awakening (#442)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 43-51 - `5.13.1 - Capture sources and unified Tarot (#441)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 52-67 - `5.13.0 - Major Arcana specification audit (#439)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 68-79 - `5.12.7a - Death-interface correction (#602)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 80-119 - `Earlier V5.12 integration handoff - 2026-10-31` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 120-209 - `Earlier 5.12.7 integration checkpoints - #435` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 210-225 - [V5.12 profile integration (#434, 5.12.6, in progress)](PROJECT.md#v512-profile-integration-434-5126-in-progress) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 226-235 - [5.12.5 - Human card-table PvP preparation (#590)](PROJECT.md#5125---human-card-table-pvp-preparation-590) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 236-245 - [5.12.4 - Organized combat venues (#438, in progress)](PROJECT.md#5124---organized-combat-venues-438-in-progress) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 246-256 - [5.12.3 - Cooperative lifecycle guards (#437, in progress)](PROJECT.md#5123---cooperative-lifecycle-guards-437-in-progress) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 257-279 - [5.12.2 - Cooperative clock/rest and time consent (#436, in progress)](PROJECT.md#5122---cooperative-clockrest-and-time-consent-436-in-progress) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 280-289 - [V5.12 preparation - native multiplayer baseline (#435)](PROJECT.md#v512-preparation---native-multiplayer-baseline-435) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 290-308 - [5.11.8 - Mandinga and Zupay disease immunity (#586)](PROJECT.md#5118---mandinga-and-zupay-disease-immunity-586) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 309-312 - [5.11.7 - Household placement correction (#581)](PROJECT.md#5117---household-placement-correction-581) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 313-316 - [5.11.6 - Rat disease correction (#582)](PROJECT.md#5116---rat-disease-correction-582) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 317-326 - [5.11.5 - Rental dialogue refresh (#580)](PROJECT.md#5115---rental-dialogue-refresh-580) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 327-338 - [V5.11 implementation - 5.11.4 (#430, 2026-10-30)](PROJECT.md#v511-implementation---5114-430-2026-10-30) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 339-354 - [V5.10 complete and author-accepted - 5.10.3 (2026-10-30, #403)](PROJECT.md#v510-complete-and-author-accepted---5103-2026-10-30-403) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 355-366 - [V5.9 completion - 5.9.7 (2026-10-30, #403)](PROJECT.md#v59-completion---597-2026-10-30-403) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 367-391 - `V5.8 completion - 2026-10-29 (#403)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 392-396 - `5.8.56 / #416 - Original Ciudad theme for Buenos Aires` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 397-403 - `5.8.55 / #415 - Remove repeated global Rally lookups` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 404-419 - `5.8.53 / #417 - Final V5.8 implementation handoff - 2026-10-29` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 420-430 - `5.8.52 / #416 - Network implementation ready - 2026-10-29` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 431-451 - [5.8.51 / #415 - Unloaded calendar resolution](PROJECT.md#5851--415---unloaded-calendar-resolution) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 452-466 - [5.8.50 / #502 - Contact completion pass](PROJECT.md#5850--502---contact-completion-pass) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 467-476 - [5.8.49 / #502 - Physical materials and food integration](PROJECT.md#5849--502---physical-materials-and-food-integration) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 477-489 - [5.8.48 / #502 - Vessel exposure and interrupted test recovery](PROJECT.md#5848--502---vessel-exposure-and-interrupted-test-recovery) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 490-501 - [5.8.47 / #502 - Abstract stack contamination](PROJECT.md#5847--502---abstract-stack-contamination) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 502-513 - [5.8.46 / #502 - Native NPC absence physiology](PROJECT.md#5846--502---native-npc-absence-physiology) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 514-522 - [5.8.45 / #502 - Canonical dining-table contamination](PROJECT.md#5845--502---canonical-dining-table-contamination) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 523-532 - [5.8.44 / #410 - Decorative catalogue completion](PROJECT.md#5844--410---decorative-catalogue-completion) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 533-542 - [5.8.43 / #502 - Household cleaning during absence](PROJECT.md#5843--502---household-cleaning-during-absence) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 543-551 - [5.8.42 / #502 - Furnishing history across map absence](PROJECT.md#5842--502---furnishing-history-across-map-absence) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 552-562 - [5.8.41 / #502 - Household storage across map absence](PROJECT.md#5841--502---household-storage-across-map-absence) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 563-573 - [5.8.40 / #410 - Complete dining sets](PROJECT.md#5840--410---complete-dining-sets) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 574-582 - [5.8.39 / #415 - Mean-hit prerequisite](PROJECT.md#5839--415---mean-hit-prerequisite) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 583-591 - [5.8.38 / #502 - Loaded NPC illness](PROJECT.md#5838--502---loaded-npc-illness) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 592-600 - [5.8.37 / #502 - Temporary climate history](PROJECT.md#5837--502---temporary-climate-history) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 601-609 - [5.8.36 / #410 - Portable study furniture](PROJECT.md#5836--410---portable-study-furniture) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 610-618 - [5.8.35 / #410 - Sofa supply and transport](PROJECT.md#5835--410---sofa-supply-and-transport) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 619-626 - `5.8.34 / #410 - Ordinary rest furniture acquisition` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 627-635 - [5.8.33 / #410 - Ordinary rest furniture correction](PROJECT.md#5833--410---ordinary-rest-furniture-correction) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 636-643 - [5.8.32 - Luxury rest furniture acquisition (#410)](PROJECT.md#5832---luxury-rest-furniture-acquisition-410) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 644-654 - [5.8.31 - Storage furniture acquisition (#410)](PROJECT.md#5831---storage-furniture-acquisition-410) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 655-674 - [5.8.30 - Luxury furniture catalogue (#410, integration in progress)](PROJECT.md#5830---luxury-furniture-catalogue-410-integration-in-progress) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 675-689 - [5.8.29 - Usable sofas (#410)](PROJECT.md#5829---usable-sofas-410) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 690-712 - `5.8.28 - Regional weather history for objects (#502)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 713-728 - `5.8.27 - Indoor furniture placement (#411)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 729-742 - `5.8.26 - Stored-book reading (#410)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 743-756 - `5.8.25 - Garden water furniture (#410)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 757-775 - `5.8.24 - Native wardrobe storage (#410)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 776-790 - `5.8.23 - Constant Limbo exposure across absence (#502)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 791-805 - `5.8.22 - Shared-water mansion bathroom fixtures (#410)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 806-821 - `5.8.21 - Attended camp cooking and fuel interruption (#411)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 822-834 - `5.8.20 - Mansion kitchen sink and wall cupboard (#410)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 835-850 - `5.8.19 - Attended cooking and shared bread proofing (#410)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 851-866 - `5.8.18 - Prepared meal items and consumption (#410)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 867-883 - `5.8.17 - Kitchen ingredients (#410)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 884-901 - `5.8.16 - Non-solid physical scenery exposure (#502)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 902-920 - `5.8.15 - Usable sleeping bag inside the tent (#412, in progress)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 921-935 - `5.8.14 - Native ration lots (#410, in progress)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 936-947 - [5.8.13 - Campfire and mounted pot (#411, in progress)](PROJECT.md#5813---campfire-and-mounted-pot-411-in-progress) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 948-1130 - `5.8.12 - Metabolic toilet sessions (#502, in progress)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1131-1151 - [5.8.11 - Domestic bathrooms (#410, in progress)](PROJECT.md#5811---domestic-bathrooms-410-in-progress) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1152-1170 - `5.8.10 - Protect resting tent occupants (#412, in progress)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1171-1258 - [5.8.9 - Severe contamination (#502, in progress)](PROJECT.md#589---severe-contamination-502-in-progress) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1259-1298 - [5.8.8 - Safe placement and persistent tents (#411, in progress)](PROJECT.md#588---safe-placement-and-persistent-tents-411-in-progress) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1299-1308 - [5.8.7 - Food illness in travel and waiting forecasts (#410, in progress)](PROJECT.md#587---food-illness-in-travel-and-waiting-forecasts-410-in-progress) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1309-1314 - [5.8.6 - Central property access (#411, in progress)](PROJECT.md#586---central-property-access-411-in-progress) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1315-1318 - [5.8.5 - Regional event discovery (#415, in progress)](PROJECT.md#585---regional-event-discovery-415-in-progress) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1319-1322 - `5.8.4 - Second map soundtrack (#496)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1323-1335 - [5.8.3 - Food/furniture work in progress (#410)](PROJECT.md#583---foodfurniture-work-in-progress-410) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1336-1348 - [5.8.2 - Mansion connected water (#414)](PROJECT.md#582---mansion-connected-water-414) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1349-1358 - [5.8.1 - Altitude and acclimatization (#413)](PROJECT.md#581---altitude-and-acclimatization-413) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1359-1379 - [5.8.0 - Connected-water feasibility (#414)](PROJECT.md#580---connected-water-feasibility-414) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1380-1393 - [5.7.14 - Reusable mates (#472)](PROJECT.md#5714---reusable-mates-472) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1394-1406 - [5.7.13 - Chemistry batches (#471)](PROJECT.md#5713---chemistry-batches-471) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1407-1418 - [5.7.12 - Fermentation Barrel infrastructure (#487)](PROJECT.md#5712---fermentation-barrel-infrastructure-487) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1419-1430 - [5.7.11 - Chemistry station terminology (#486)](PROJECT.md#5711---chemistry-station-terminology-486) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1431-1454 - [5.7.10 - Cartridge assembly at Alchemy (#471)](PROJECT.md#5710---cartridge-assembly-at-alchemy-471) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1455-1477 - [5.7.9 - Water boiling and temperature (#409)](PROJECT.md#579---water-boiling-and-temperature-409) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1478-1501 - [5.7.8 - Support implements (#479, author accepted)](PROJECT.md#578---support-implements-479-author-accepted) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1502-1512 - [5.7.7 - Centered target information (#481)](PROJECT.md#577---centered-target-information-481) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1513-1524 - `5.7.6 - Alchemy art stage (#471)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1525-1543 - `5.7.5 - Marine imports and iodine (#407)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1544-1566 - `5.7.4 - Fixed Alchemy station (#470)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1567-1580 - `5.7.3 - Monotonic source recovery (#406)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1581-1593 - `5.7.2 - Land resources and owned 3D objects (#405)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1594-1604 - [5.7.1 - Reviewed regional resource data (#404)](PROJECT.md#571---reviewed-regional-resource-data-404) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1605-1614 - [5.7.0 - Water quality foundation (#408)](PROJECT.md#570---water-quality-foundation-408) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1615-1625 - [5.6.11a status — accepted batch and 3D clothing handoff (#387)](PROJECT.md#5611a-status--accepted-batch-and-3d-clothing-handoff-387) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1626-1635 - [5.6.11 status — calendar replenishment (#385)](PROJECT.md#5611-status--calendar-replenishment-385) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1636-1645 - [5.6.10 status — city catalogues (#383)](PROJECT.md#5610-status--city-catalogues-383) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1646-1653 - `5.6.9 - Native cartridge assembly (#380)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1654-1661 - `5.6.8 - Approved sealed cartridge kits (#379)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1662-1673 - `5.6.7 - Individual clothing object sprites (#387)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1674-1688 - `5.6.6 - Native ordinary clothing (#386)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1689-1702 - [5.6.4 - One-time death loot, existing tables (#384)](PROJECT.md#564---one-time-death-loot-existing-tables-384) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1703-1710 - [5.6.3b - Ordinary-clothing catalogue proposal (#386)](PROJECT.md#563b---ordinary-clothing-catalogue-proposal-386) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1711-1719 - [5.6.3a - Lock-tool proposal requested by the author (#382)](PROJECT.md#563a---lock-tool-proposal-requested-by-the-author-382) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1720-1730 - [5.6.3 - Physical recipe learning (#378)](PROJECT.md#563---physical-recipe-learning-378) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1731-1743 - [5.6.2 - Ordinary native storage (#381)](PROJECT.md#562---ordinary-native-storage-381) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1744-1759 - `5.6.1 - Merchant coordination (#377)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1760-1776 - [5.6.0 - Crafting planning and session extraction (#376)](PROJECT.md#560---crafting-planning-and-session-extraction-376) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1777-1787 - [5.5.8a - Close the deferred avalanche issue (#316)](PROJECT.md#558a---close-the-deferred-avalanche-issue-316) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1788-1803 - [5.5.8 - Cleaned animated bull presentation (#369)](PROJECT.md#558---cleaned-animated-bull-presentation-369) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1804-1822 - `5.5.7 - Future melee energy contract; conversion deferred (#315)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1823-1844 - `5.5.6 - Ice and lava ground contact (#314)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1845-1858 - `5.5.5 - Equipped-Seal input while unarmed (#363)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1859-1876 - `5.5.4 - Ammunition mass and finished-component contract (#313)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1877-1891 - `5.5.3 - Sustained pressure lifecycle and native descent (#312)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1892-1901 - [5.5.2 - Persistent multiple-contact audit (#311)](PROJECT.md#552---persistent-multiple-contact-audit-311) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1902-1914 - [5.5.1 - Bounded combat dispatch extraction (#310)](PROJECT.md#551---bounded-combat-dispatch-extraction-310) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1915-1924 - `5.5.0 - Weapon/input audit (#309)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1925-1937 - [5.4.47 - Maximum siege adrenaline (#361)](PROJECT.md#5447---maximum-siege-adrenaline-361) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1938-1947 - [5.4.46 - Symmetric house-door Melt (#334)](PROJECT.md#5446---symmetric-house-door-melt-334) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1948-1956 - [5.4.45 - Navigation markers are not breath targets (#357)](PROJECT.md#5445---navigation-markers-are-not-breath-targets-357) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1957-1967 - [5.4.44 - Structural-cache research completed (#354)](PROJECT.md#5444---structural-cache-research-completed-354) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1968-1983 - [5.4.43 - Production actor maintenance (#353)](PROJECT.md#5443---production-actor-maintenance-353) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1984-1998 - [5.4.42 - Distributed actor maintenance experiment (#318)](PROJECT.md#5442---distributed-actor-maintenance-experiment-318) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 1999-2010 - `5.4.41 - Isolated siege update costs (#318)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2011-2017 - `5.4.40 - Shared rest safety (#325)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2018-2025 - `5.4.39 - Voluntary-jump wall cushioning (#339)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2026-2032 - `5.4.38 - Complete top-aligned map legend (#321)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2033-2044 - `5.4.37 - Current MAP03 attribution supplement (#318)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2045-2058 - `5.4.36 - House-door presentation isolation (#334)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2059-2072 - [5.4.35 - Replace competing prisoner escort movement (#322)](PROJECT.md#5435---replace-competing-prisoner-escort-movement-322) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2073-2085 - `5.4.34 - Active-play autosaving (#324)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2086-2097 - [5.4.33 - Isolate the western sewer crusher (#323)](PROJECT.md#5433---isolate-the-western-sewer-crusher-323) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2098-2105 - `5.4.32 - Direct demon projectile aim (#320)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2106-2112 - [5.4.31 - Collapsible automap help (#321)](PROJECT.md#5431---collapsible-automap-help-321) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2113-2119 - `5.4.30 - Sleeping bag quick-item access (#319)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2120-2144 - [5.4.29 - Adopt low-sky MAP03 and normal bounded reinforcements (#327)](PROJECT.md#5429---adopt-low-sky-map03-and-normal-bounded-reinforcements-327) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2145-2226 - [5.4.28 - MAP06 audit, contact-only breath and scan policy (#318)](PROJECT.md#5428---map06-audit-contact-only-breath-and-scan-policy-318) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2227-2239 - [5.4.27 - Prisoner escort speed (#307)](PROJECT.md#5427---prisoner-escort-speed-307) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2240-2253 - [5.4.26 - Active seal registry (#305)](PROJECT.md#5426---active-seal-registry-305) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2254-2270 - [5.4.25 - MAP06 performance diagnosis and corpse retention (#304)](PROJECT.md#5425---map06-performance-diagnosis-and-corpse-retention-304) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2271-2280 - [V5.4 accepted batch delivery - PR303](PROJECT.md#v54-accepted-batch-delivery---pr303) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2281-2291 - [5.4.24 - Demon combat and cosmetic rock (#284, accepted)](PROJECT.md#5424---demon-combat-and-cosmetic-rock-284-accepted) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2292-2307 - [5.4.23 - Domingo native 3D prototype (#283, accepted)](PROJECT.md#5423---domingo-native-3d-prototype-283-accepted) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2308-2316 - [5.4.22 - Quick-use inventory HUD (#282)](PROJECT.md#5422---quick-use-inventory-hud-282) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2317-2341 - [5.4.21 - Local Seal climate and channel presentation (#252)](PROJECT.md#5421---local-seal-climate-and-channel-presentation-252) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2342-2352 - [5.4.20 - Investigator Arcane Cloud (#251, accepted)](PROJECT.md#5420---investigator-arcane-cloud-251-accepted) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2353-2363 - [5.4.19 - Pilgrim Redemption (#250)](PROJECT.md#5419---pilgrim-redemption-250) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2364-2374 - [5.4.18 - Battle Mage Summoning (#249)](PROJECT.md#5418---battle-mage-summoning-249) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2375-2384 - [5.4.17 - Cleric Rally (#248)](PROJECT.md#5417---cleric-rally-248) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2385-2397 - [5.4.16 - Mercenary Formation Breaker (#247)](PROJECT.md#5416---mercenary-formation-breaker-247) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2398-2408 - [5.4.15 - Player acceleration and directional impulse (#260)](PROJECT.md#5415---player-acceleration-and-directional-impulse-260) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2409-2419 - [5.4.14 - Mansion residents keep participating (#253)](PROJECT.md#5414---mansion-residents-keep-participating-253) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2420-2429 - [5.4.13 - Mage Arcane Sun (#246)](PROJECT.md#5413---mage-arcane-sun-246) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2430-2439 - [5.4.12 - Priest Miracle (#245)](PROJECT.md#5412---priest-miracle-245) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2440-2450 - [5.4.11 - Explorer Survival Instinct (#244)](PROJECT.md#5411---explorer-survival-instinct-244) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2451-2461 - [5.4.10 - Warrior Battle Cry (#243)](PROJECT.md#5410---warrior-battle-cry-243) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2462-2473 - [5.4.9 - Beast Man Hunter's Instinct (#239)](PROJECT.md#549---beast-man-hunters-instinct-239) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2474-2484 - [5.4.8 - Human Socialization (#240)](PROJECT.md#548---human-socialization-240) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2485-2495 - [5.4.7 - Duende Telekinesis (#241)](PROJECT.md#547---duende-telekinesis-241) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2496-2507 - [5.4.6 - Caelith Supernatural Breathing (#242)](PROJECT.md#546---caelith-supernatural-breathing-242) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2508-2518 - [5.4.5 - Reusable rain-cloud asset (#251, in progress)](PROJECT.md#545---reusable-rain-cloud-asset-251-in-progress) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2519-2544 - [5.4.4 - Shared class casting, ability HUD and Sleep (#238)](PROJECT.md#544---shared-class-casting-ability-hud-and-sleep-238) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2545-2554 - `5.4.3 - MAP02 rat movement and audio (#254)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2555-2565 - `5.4.2 - Equipped-Seal resistances (#261)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2566-2575 - `5.4.1 - Weapon dispersion tiers (#259)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2576-2589 - [5.4.0 - Attribute implementation audit (#237)](PROJECT.md#540---attribute-implementation-audit-237) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2590-2599 - [5.3.9 - Connected exploration screens (#236)](PROJECT.md#539---connected-exploration-screens-236) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2600-2621 - [5.3.8 - Saved independent mission tracking (#235)](PROJECT.md#538---saved-independent-mission-tracking-235) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2622-2641 - [5.3.7 - Existing-map exploration catalogue (#234)](PROJECT.md#537---existing-map-exploration-catalogue-234) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2642-2652 - [5.3.6 - Named manual map notes (#233)](PROJECT.md#536---named-manual-map-notes-233) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2653-2663 - [5.3.5 - Known local services (#232)](PROJECT.md#535---known-local-services-232) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2664-2672 - [5.3.4 - Local cartography (#231)](PROJECT.md#534---local-cartography-231) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2673-2680 - `5.3.3 - Exhaustion sleep (#258)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2681-2690 - `5.3.2 - Automatic provisions (#257)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2691-2700 - [5.3.1 - Character survival, chances and resistances (#256)](PROJECT.md#531---character-survival-chances-and-resistances-256) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2701-2708 - [5.3.0 - Power HUD layout (#255)](PROJECT.md#530---power-hud-layout-255) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2709-2716 - [5.2.27 - Magic Box empty mass (#229)](PROJECT.md#5227---magic-box-empty-mass-229) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2717-2729 - [5.2.26 - Rest controls feedback (#227)](PROJECT.md#5226---rest-controls-feedback-227) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2730-2737 - [5.2.25 - Magical staff precision (#222)](PROJECT.md#5225---magical-staff-precision-222) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2738-2747 - [5.2.24 - Mandinga potion fallback (#220)](PROJECT.md#5224---mandinga-potion-fallback-220) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2748-2757 - [5.2.23 - Sleeping-bag acceleration in MAP02 (#219)](PROJECT.md#5223---sleeping-bag-acceleration-in-map02-219) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2758-2767 - [5.2.22 - Current controls beside menu options (#215)](PROJECT.md#5222---current-controls-beside-menu-options-215) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2768-2775 - `5.2.21 - Visible tutorial gold (#216)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2776-2790 - [5.2.20 - Resource bars at screen edges (#213)](PROJECT.md#5220---resource-bars-at-screen-edges-213) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2791-2803 - [5.2.19 - Horizontal landing capacity (#211)](PROJECT.md#5219---horizontal-landing-capacity-211) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2804-2817 - [5.2.18 - Modular pose, furniture and hand repairs (#209)](PROJECT.md#5218---modular-pose-furniture-and-hand-repairs-209) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2818-2829 - [5.2.17 - MAP01 player health floor (#207)](PROJECT.md#5217---map01-player-health-floor-207) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2830-2839 - [5.2.16 - Fullscreen native cursor workaround (#204)](PROJECT.md#5216---fullscreen-native-cursor-workaround-204) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2840-2853 - [5.2.15 - Native readability and comfort (#150)](PROJECT.md#5215---native-readability-and-comfort-150) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2854-2864 - [5.2.14 - Grouped native controls and current hints (#149)](PROJECT.md#5214---grouped-native-controls-and-current-hints-149) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2865-2883 - [5.2.13 - Native saved cosmetics and character preview (#148)](PROJECT.md#5213---native-saved-cosmetics-and-character-preview-148) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2884-2895 - [5.2.12 - Bull balance and finite resident tools (#195)](PROJECT.md#5212---bull-balance-and-finite-resident-tools-195) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2896-2910 - [5.2.11 - Bilateral collision energy (#194)](PROJECT.md#5211---bilateral-collision-energy-194) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2911-2922 - [5.2.10 - Ranged penetration and shotgun naming (#192 amendment)](PROJECT.md#5210---ranged-penetration-and-shotgun-naming-192-amendment) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2923-2936 - [5.2.9 - Four personality layers and twelve-projectile bell (#192)](PROJECT.md#529---four-personality-layers-and-twelve-projectile-bell-192) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2937-2950 - `5.2.8 - Mass-based Toughness and status resistance (#188)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2951-2963 - [5.2.7 - Native ownership for all interactive screens (#189)](PROJECT.md#527---native-ownership-for-all-interactive-screens-189) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2964-2972 - [5.2.6 - Mouse interaction in game menus (#184)](PROJECT.md#526---mouse-interaction-in-game-menus-184) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2973-2984 - [5.2.5 - Indexed NPC dialogue sources (#185)](PROJECT.md#525---indexed-npc-dialogue-sources-185) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 2985-3001 - [5.2.4 - Simplified onboarding and MAP02 supplies (#183)](PROJECT.md#524---simplified-onboarding-and-map02-supplies-183) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 3002-3011 - [5.2.3 - Allied Mandinga retaliation (#180)](PROJECT.md#523---allied-mandinga-retaliation-180) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 3012-3020 - [5.2.2 - Faster time skipping (#178)](PROJECT.md#522---faster-time-skipping-178) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 3021-3034 - [5.2.1 - Tutorial usability and portable rest (#177)](PROJECT.md#521---tutorial-usability-and-portable-rest-177) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 3035-3054 - [5.2.0 - Unified character identity (#147)](PROJECT.md#520---unified-character-identity-147) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 3055-3063 - [5.1.20 - MAP06 doors and peaceful time skip (#173)](PROJECT.md#5120---map06-doors-and-peaceful-time-skip-173) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 3064-3073 - [5.1.19 - NPC dialogue history (#172)](PROJECT.md#5119---npc-dialogue-history-172) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 3074-3086 - [5.1.18 - MAP01 permanent gifts and checkpoint (#164)](PROJECT.md#5118---map01-permanent-gifts-and-checkpoint-164) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 3087-3095 - [5.1.17 - Medikit names (#169)](PROJECT.md#5117---medikit-names-169) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 3096-3109 - [5.1.16 - Recoverable bolas (#163)](PROJECT.md#5116---recoverable-bolas-163) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 3110-3122 - [5.1.15 - Bronze utility staff and wand names (#162)](PROJECT.md#5115---bronze-utility-staff-and-wand-names-162) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 3123-3136 - [5.1.14 - Damage flash across map travel (#165)](PROJECT.md#5114---damage-flash-across-map-travel-165) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 3137-3146 - [5.1.13 - Argento silver-key handoff (#160)](PROJECT.md#5113---argento-silver-key-handoff-160) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 3147-3156 - [5.1.12 - Preserve crafting equipment size (#158)](PROJECT.md#5112---preserve-crafting-equipment-size-158) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 3157-3166 - [5.1.11 - Time-skip letter controls (#156)](PROJECT.md#5111---time-skip-letter-controls-156) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 3167-3181 - [5.1.10 — SI physics and growth migration (#154)](PROJECT.md#5110--si-physics-and-growth-migration-154) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 3182-3198 - [5.1.9 - Shotgun pickup, grip and alternate aim follow-up (#152)](PROJECT.md#519---shotgun-pickup-grip-and-alternate-aim-follow-up-152) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 3199-3215 - [5.1.8 - Elemental presentation and proportional screen feedback (#137)](PROJECT.md#518---elemental-presentation-and-proportional-screen-feedback-137) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 3216-3243 - [5.1.7 - Shortbow replacement and firearm armor bypass (#136)](PROJECT.md#517---shortbow-replacement-and-firearm-armor-bypass-136) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 3244-3261 - [5.1.6 - Crouched and aimed soldiers (#143)](PROJECT.md#516---crouched-and-aimed-soldiers-143) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 3262-3281 - [5.1.5 - Demon supplies and fire breath (#135)](PROJECT.md#515---demon-supplies-and-fire-breath-135) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 3282-3307 - [5.1.4 - Thermal coefficients, breathing and recovery (#140)](PROJECT.md#514---thermal-coefficients-breathing-and-recovery-140) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 3308-3336 - [5.1.3 - Functional port city (#133, closure and merge authorized)](PROJECT.md#513---functional-port-city-133-closure-and-merge-authorized) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 3337-3353 - [5.1.2 - Staged siege performance experiment (#132)](PROJECT.md#512---staged-siege-performance-experiment-132) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 3354-3374 - [5.1.1 - Thermal HUD and climate adaptation (#131)](PROJECT.md#511---thermal-hud-and-climate-adaptation-131) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 3375-3431 - [5.1.0 — Thermal exposure and energy transfer (#130)](PROJECT.md#510--thermal-exposure-and-energy-transfer-130) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 3432-3514 - [5.0.6 — Automatic high-density AI and shared work (#128)](PROJECT.md#506--automatic-high-density-ai-and-shared-work-128) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 3515-3714 - `5.0.5 — Siege subsystem diagnosis and shared-group experiments (#121)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 3715-3719 - `5.0.5 — Siege subsystem diagnosis and shared-group experiments (#121) [part 2]` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 3720-3758 - [5.0.4 — Per-player authority and bounded V5.0 closure (#120)](PROJECT.md#504--per-player-authority-and-bounded-v50-closure-120) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 3759-3777 - [5.0.3 — Authoritative Tarot service (#119)](PROJECT.md#503--authoritative-tarot-service-119) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 3778-3817 - [5.0.2 — Authoritative inventory/equipment service (#118)](PROJECT.md#502--authoritative-inventoryequipment-service-118) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 3818-3866 - [5.0.1 — Player character/resource adapters (#117)](PROJECT.md#501--player-characterresource-adapters-117) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 3867-3885 - [5.0.0 — Architecture audit and first presentation extraction (#116)](PROJECT.md#500--architecture-audit-and-first-presentation-extraction-116) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 3886-3917 - [Responsibility and dependency map](PROJECT.md#responsibility-and-dependency-map) - context: Caelum Argenteum — Project, status and roadmap > 5.0.0 — Architecture audit and first presentation extraction (#116)
+- Lines 3918-3939 - [Ordered extraction plan and gates](PROJECT.md#ordered-extraction-plan-and-gates) - context: Caelum Argenteum — Project, status and roadmap > 5.0.0 — Architecture audit and first presentation extraction (#116)
+- Lines 3940-4004 - [Audit findings and measurement boundary](PROJECT.md#audit-findings-and-measurement-boundary) - context: Caelum Argenteum — Project, status and roadmap > 5.0.0 — Architecture audit and first presentation extraction (#116)
+- Lines 4005-4033 - [4.37.24 — Final V4.37 integration and export (#82)](PROJECT.md#43724--final-v437-integration-and-export-82) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4034-4054 - `4.37.23 - Contextual character creation (#112)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4055-4073 - [4.37.22 - Distinct playable first-person shields (#106)](PROJECT.md#43722---distinct-playable-first-person-shields-106) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4074-4094 - [4.37.21 - Approved narrative artwork and introduction (#103)](PROJECT.md#43721---approved-narrative-artwork-and-introduction-103) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4095-4105 - [4.37.20 - Training dummy model (#98)](PROJECT.md#43720---training-dummy-model-98) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4106-4121 - [4.37.19 - Palomo necklace reward and shield names (#96)](PROJECT.md#43719---palomo-necklace-reward-and-shield-names-96) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4122-4143 - [4.37.18 - Crafting sections and complete Tarot descriptions (#91)](PROJECT.md#43718---crafting-sections-and-complete-tarot-descriptions-91) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4144-4164 - [4.37.17 - Owned Pickaxe and resource feedback (#89)](PROJECT.md#43717---owned-pickaxe-and-resource-feedback-89) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4165-4176 - [4.37.16 - Navigation HUD and project menu identity (#87)](PROJECT.md#43716---navigation-hud-and-project-menu-identity-87) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4177-4186 - `4.37.15 - Traditional Truco ranked mode (#101)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4187-4193 - [4.37.14a - Argento practice choice near the end (#99)](PROJECT.md#43714a---argento-practice-choice-near-the-end-99) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4194-4203 - [4.37.14 - Palomo gives the deck upstairs (#97)](PROJECT.md#43714---palomo-gives-the-deck-upstairs-97) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4204-4211 - [4.37.13a - Visible crafting time shortcut (#93)](PROJECT.md#43713a---visible-crafting-time-shortcut-93) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4212-4235 - [4.37.13 — Trucazo practice against Argento (#81)](PROJECT.md#43713--trucazo-practice-against-argento-81) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4236-4269 - `4.37.12 — Campaign Tarot powers and physical deck (#80)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4270-4294 - [4.37.11 — The amnesiac captain of Barracas al Sud (#79)](PROJECT.md#43711--the-amnesiac-captain-of-barracas-al-sud-79) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4295-4315 - [4.37.10 — Post-payment prisoner siege intelligence (#78)](PROJECT.md#43710--post-payment-prisoner-siege-intelligence-78) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4316-4376 - [4.37.9 — Expanded southern Barracas al Sud (#77)](PROJECT.md#4379--expanded-southern-barracas-al-sud-77) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4377-4400 - [4.37.8 — MAP02 material ledger and finite-supply audit (#75)](PROJECT.md#4378--map02-material-ledger-and-finite-supply-audit-75) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4401-4416 - [4.37.7 — Flooded MAP02 return (#74)](PROJECT.md#4377--flooded-map02-return-74) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4417-4432 - [4.37.6 — Cardinal MAP02 (#73, coordinated #75 loot)](PROJECT.md#4376--cardinal-map02-73-coordinated-75-loot) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4433-4448 - [4.37.5 — Daily food and water on mansion tables (#65)](PROJECT.md#4375--daily-food-and-water-on-mansion-tables-65) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4449-4465 - [4.37.4 — Time skipping with automatic care (#64)](PROJECT.md#4374--time-skipping-with-automatic-care-64) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4466-4490 - [4.37.3 — Palomo's equipment plan and owned equipment departure (#63)](PROJECT.md#4373--palomos-equipment-plan-and-owned-equipment-departure-63) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4491-4506 - [4.37.2 — Reduced magic-weapon Anima costs (#68)](PROJECT.md#4372--reduced-magic-weapon-anima-costs-68) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4507-4526 - [4.37.1 — Caella's practical exercises on the shared dummy (#62)](PROJECT.md#4371--caellas-practical-exercises-on-the-shared-dummy-62) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4527-4571 - [4.37.0 — MAP01 rolling grounds and filled tympana (#61)](PROJECT.md#4370--map01-rolling-grounds-and-filled-tympana-61) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4572-4601 - [4.36.28 — Reproducible three-map playtest export (#17)](PROJECT.md#43628--reproducible-three-map-playtest-export-17) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4602-4619 - [4.36.27 — Third campaign map: port siege (#16)](PROJECT.md#43627--third-campaign-map-port-siege-16) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4620-4633 - [4.36.26 — Attack cadence and thrust presentation (#37)](PROJECT.md#43626--attack-cadence-and-thrust-presentation-37) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4634-4667 - [4.36.25 — Mansion architecture and enclosure (#36)](PROJECT.md#43625--mansion-architecture-and-enclosure-36) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4668-4675 - `4.36.24a — Proprietary rights notice (#55)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4676-4693 - [4.36.24 — Quest journal categories and history (#35)](PROJECT.md#43624--quest-journal-categories-and-history-35) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4694-4725 - [4.36.23 — Final armor absorption (#52)](PROJECT.md#43623--final-armor-absorption-52) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4726-4761 - [4.36.22 — Demo quest narrative (#34)](PROJECT.md#43622--demo-quest-narrative-34) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4762-4771 - [4.36.21 — Scenery impact correction (#49)](PROJECT.md#43621--scenery-impact-correction-49) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4772-4791 - [4.36.20 — Shared Arcana capture and the playable route (#33)](PROJECT.md#43620--shared-arcana-capture-and-the-playable-route-33) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4792-4807 - [4.36.19 — Approved final cannon/gate balance (#21)](PROJECT.md#43619--approved-final-cannongate-balance-21) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4808-4819 - [4.36.18 — Walking wall-impact absorption (issue #43)](PROJECT.md#43618--walking-wall-impact-absorption-issue-43) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4820-4839 - [4.36.17 — Controlled cannon firing (issue #21)](PROJECT.md#43617--controlled-cannon-firing-issue-21) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4840-4862 - [4.36.16 — Usable battering rams (issue #20)](PROJECT.md#43616--usable-battering-rams-issue-20) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4863-4885 - [4.36.15 — Breakable actor gates (issue #19)](PROJECT.md#43615--breakable-actor-gates-issue-19) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4886-4898 - [4.36.14a — Author-requested siege asset correction (#18)](PROJECT.md#43614a--author-requested-siege-asset-correction-18) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4899-4915 - [4.36.10 — Reusable siege preview assets (issue #18)](PROJECT.md#43610--reusable-siege-preview-assets-issue-18) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4916-4935 - [4.36.8 — Prisoner rescue, escort and port rewards (issue #14)](PROJECT.md#4368--prisoner-rescue-escort-and-port-rewards-issue-14) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4936-4960 - [4.36.7 — Recolored prisoner appearances (issue #13)](PROJECT.md#4367--recolored-prisoner-appearances-issue-13) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4961-4975 - [4.36.6 — Hostile sewer rats (issue #12)](PROJECT.md#4366--hostile-sewer-rats-issue-12) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4976-4985 - `4.36.5a — Selective file reading for agents (#29)` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 4986-5017 - [4.36.5 — Four-section sewer layout (issue #11)](PROJECT.md#4365--four-section-sewer-layout-issue-11) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5018-5040 - [4.36.4 — T1 acquisition, recipient sizes and feedback](PROJECT.md#4364--t1-acquisition-recipient-sizes-and-feedback) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5041-5052 - [4.36.3 — Additional first-person flail rotation](PROJECT.md#4363--additional-first-person-flail-rotation) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5053-5069 - [4.36.2 — Bow first-use stall and environmental scope](PROJECT.md#4362--bow-first-use-stall-and-environmental-scope) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5070-5091 - [4.36.1 — Documentation and contribution workflow](PROJECT.md#4361--documentation-and-contribution-workflow) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5092-5101 - `4.36.1b — Engineering guides and long-document index` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5102-5176 - [Author roadmap update — 2026-09-23](PROJECT.md#author-roadmap-update--2026-09-23) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5177-5193 - [Usage measurement for this batch](PROJECT.md#usage-measurement-for-this-batch) - context: Caelum Argenteum — Project, status and roadmap > Author roadmap update — 2026-09-23
+- Lines 5194-5219 - [4.36.0i — maze, flail, rations and approved weight](PROJECT.md#4360i--maze-flail-rations-and-approved-weight) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5220-5233 - [Major Arcana and block closure](PROJECT.md#major-arcana-and-block-closure) - context: Caelum Argenteum — Project, status and roadmap > 4.36.0i — maze, flail, rations and approved weight
+- Lines 5234-5259 - [Historical 4.36.0h — bow reference, clockwise rotation and served tables](PROJECT.md#historical-4360h--bow-reference-clockwise-rotation-and-served-tables) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5260-5276 - [What is needed to close 4.36](PROJECT.md#what-is-needed-to-close-436) - context: Caelum Argenteum — Project, status and roadmap > Historical 4.36.0h — bow reference, clockwise rotation and served tables
+- Lines 5277-5296 - [4.36.0g — proportions, flail and palette](PROJECT.md#4360g--proportions-flail-and-palette) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5297-5321 - [4.36.0f — corrections after the author's test](PROJECT.md#4360f--corrections-after-the-authors-test) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5322-5348 - `4.36.0e — corrections requested after testing 0d` - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5349-5385 - [Previous base: 4.36.0d — grips, fists and visible mechanisms](PROJECT.md#previous-base-4360d--grips-fists-and-visible-mechanisms) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5386-5420 - [History: 4.36.0c — first person, audio and corrections](PROJECT.md#history-4360c--first-person-audio-and-corrections) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5421-5445 - [History: 4.36.0b — traps, levers and presentation](PROJECT.md#history-4360b--traps-levers-and-presentation) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5446-5471 - [Approved base: 4.36.0a — trapdoor and first physical hazards](PROJECT.md#approved-base-4360a--trapdoor-and-first-physical-hazards) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5472-5487 - [Approved base: 4.35.0q — sprites v4 and seated consumption](PROJECT.md#approved-base-4350q--sprites-v4-and-seated-consumption) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5488-5515 - [Approved base: 4.35.0p — reserves and first vehicles](PROJECT.md#approved-base-4350p--reserves-and-first-vehicles) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5516-5522 - [Historical closure of 4.35 (completed)](PROJECT.md#historical-closure-of-435-completed) - context: Caelum Argenteum — Project, status and roadmap > Approved base: 4.35.0p — reserves and first vehicles
+- Lines 5523-5552 - [Base delivered: 4.35.0o — agenda and persistent events](PROJECT.md#base-delivered-4350o--agenda-and-persistent-events) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5553-5560 - [4.35 closure](PROJECT.md#435-closure) - context: Caelum Argenteum — Project, status and roadmap > Base delivered: 4.35.0o — agenda and persistent events
+- Lines 5561-5592 - [Base delivered: 4.35.0n — measured travel and provisions](PROJECT.md#base-delivered-4350n--measured-travel-and-provisions) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5593-5599 - [Base delivered: 4.35.0m — food by mass and coast](PROJECT.md#base-delivered-4350m--food-by-mass-and-coast) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5600-5641 - [Base delivered: 4.35.0l — chairs, water and regional climate](PROJECT.md#base-delivered-4350l--chairs-water-and-regional-climate) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5642-5676 - [Base delivered: 4.35.0j — local rhythm, interaction and class areas](PROJECT.md#base-delivered-4350j--local-rhythm-interaction-and-class-areas) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5677-5697 - [Base delivered: 4.35.0i — accesses, plates and advancement in Limbo](PROJECT.md#base-delivered-4350i--accesses-plates-and-advancement-in-limbo) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5698-5723 - [Base delivered: 4.35.0h — meals and furniture of the mansion](PROJECT.md#base-delivered-4350h--meals-and-furniture-of-the-mansion) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5724-5747 - [Base accepted: 4.35.0g — safe advance, tables and sleep](PROJECT.md#base-accepted-4350g--safe-advance-tables-and-sleep) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5748-5779 - [Base accepted: 4.35.0f — sleeping bag and comfort](PROJECT.md#base-accepted-4350f--sleeping-bag-and-comfort) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5780-5784 - [0f time-advance proposal adopted in 0g](PROJECT.md#0f-time-advance-proposal-adopted-in-0g) - context: Caelum Argenteum — Project, status and roadmap > Base accepted: 4.35.0f — sleeping bag and comfort
+- Lines 5785-5815 - [Base accepted: 4.35.0e — chairs, cots and rest camera](PROJECT.md#base-accepted-4350e--chairs-cots-and-rest-camera) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5816-5837 - [Base accepted: 4.35.0d1 — compilation correction](PROJECT.md#base-accepted-4350d1--compilation-correction) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5838-5874 - [Functional base accepted with 0d1: 4.35.0d — rest and wait](PROJECT.md#functional-base-accepted-with-0d1-4350d--rest-and-wait) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5875-5889 - [Previous verification of 0d](PROJECT.md#previous-verification-of-0d) - context: Caelum Argenteum — Project, status and roadmap > Functional base accepted with 0d1: 4.35.0d — rest and wait
+- Lines 5890-5912 - [Pending work to move from 4.35 to 4.36](PROJECT.md#pending-work-to-move-from-435-to-436) - context: Caelum Argenteum — Project, status and roadmap > Functional base accepted with 0d1: 4.35.0d — rest and wait
+- Lines 5913-5945 - [Base accepted: 4.35.0c — campaign start and Limbo time](PROJECT.md#base-accepted-4350c--campaign-start-and-limbo-time) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5946-5963 - [0c Verification](PROJECT.md#0c-verification) - context: Caelum Argenteum — Project, status and roadmap > Base accepted: 4.35.0c — campaign start and Limbo time
+- Lines 5964-5998 - [Base accepted: 4.35.0b — calendar and unpaused conversations](PROJECT.md#base-accepted-4350b--calendar-and-unpaused-conversations) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 5999-6016 - [0b verification and delivery limit](PROJECT.md#0b-verification-and-delivery-limit) - context: Caelum Argenteum — Project, status and roadmap > Base accepted: 4.35.0b — calendar and unpaused conversations
+- Lines 6017-6054 - [Accepted base: 4.35.0a — persistent global clock](PROJECT.md#accepted-base-4350a--persistent-global-clock) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 6055-6086 - [Native 0a Verification](PROJECT.md#native-0a-verification) - context: Caelum Argenteum — Project, status and roadmap > Accepted base: 4.35.0a — persistent global clock
+- Lines 6087-6121 - [Base accepted: 4.34.0e — means to check activities and travel](PROJECT.md#base-accepted-4340e--means-to-check-activities-and-travel) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 6122-6156 - [Native 0e Verification](PROJECT.md#native-0e-verification) - context: Caelum Argenteum — Project, status and roadmap > Base accepted: 4.34.0e — means to check activities and travel
+- Lines 6157-6192 - [Previous increase: 4.34.0d — caravans and travel registration](PROJECT.md#previous-increase-4340d--caravans-and-travel-registration) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 6193-6214 - [Verification of 0d and limits](PROJECT.md#verification-of-0d-and-limits) - context: Caelum Argenteum — Project, status and roadmap > Previous increase: 4.34.0d — caravans and travel registration
+- Lines 6215-6257 - [Base accepted: 4.34.0c — Test sewer network](PROJECT.md#base-accepted-4340c--test-sewer-network) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 6258-6290 - [Verification and 0c limits](PROJECT.md#verification-and-0c-limits) - context: Caelum Argenteum — Project, status and roadmap > Base accepted: 4.34.0c — Test sewer network
+- Lines 6291-6312 - [Base accepted: 4.34.0b — doors and accesses by group](PROJECT.md#base-accepted-4340b--doors-and-accesses-by-group) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 6313-6330 - [Optional test accessible](PROJECT.md#optional-test-accessible) - context: Caelum Argenteum — Project, status and roadmap > Base accepted: 4.34.0b — doors and accesses by group
+- Lines 6331-6362 - [Evidence and limits](PROJECT.md#evidence-and-limits) - context: Caelum Argenteum — Project, status and roadmap > Base accepted: 4.34.0b — doors and accesses by group
+- Lines 6363-6393 - [Base accepted: 4.34.0a — locations and connections](PROJECT.md#base-accepted-4340a--locations-and-connections) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 6394-6427 - [4.34.0a Verification](PROJECT.md#4340a-verification) - context: Caelum Argenteum — Project, status and roadmap > Base accepted: 4.34.0a — locations and connections
+- Lines 6428-6441 - [Technical base: 4.33.0ao — integration closure](PROJECT.md#technical-base-4330ao--integration-closure) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 6442-6454 - [Active conversation when loading](PROJECT.md#active-conversation-when-loading) - context: Caelum Argenteum — Project, status and roadmap > Technical base: 4.33.0ao — integration closure
+- Lines 6455-6494 - [Joint verification and limits](PROJECT.md#joint-verification-and-limits) - context: Caelum Argenteum — Project, status and roadmap > Technical base: 4.33.0ao — integration closure
+- Lines 6495-6506 - [Base accepted: 4.33.0an — Reputation conditions](PROJECT.md#base-accepted-4330an--reputation-conditions) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 6507-6532 - [Accessible test and scope](PROJECT.md#accessible-test-and-scope) - context: Caelum Argenteum — Project, status and roadmap > Base accepted: 4.33.0an — Reputation conditions
+- Lines 6533-6561 - [Evidence and validation of 0an](PROJECT.md#evidence-and-validation-of-0an) - context: Caelum Argenteum — Project, status and roadmap > Base accepted: 4.33.0an — Reputation conditions
+- Lines 6562-6577 - [Base accepted: 4.33.0am — inactive conversation and Journal boundaries](PROJECT.md#base-accepted-4330am--inactive-conversation-and-journal-boundaries) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 6578-6608 - [Evidence and validation of 0am](PROJECT.md#evidence-and-validation-of-0am) - context: Caelum Argenteum — Project, status and roadmap > Base accepted: 4.33.0am — inactive conversation and Journal boundaries
+- Lines 6609-6631 - [Base 4.33.0ak — Observed capture; revised controls in 0al](PROJECT.md#base-4330ak--observed-capture-revised-controls-in-0al) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 6632-6656 - [0ak Technical Validation](PROJECT.md#0ak-technical-validation) - context: Caelum Argenteum — Project, status and roadmap > Base 4.33.0ak — Observed capture; revised controls in 0al
+- Lines 6657-6678 - [Base 4.33.0aj — comments corrected by 0ak](PROJECT.md#base-4330aj--comments-corrected-by-0ak) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 6679-6713 - [0aj Technical Validation](PROJECT.md#0aj-technical-validation) - context: Caelum Argenteum — Project, status and roadmap > Base 4.33.0aj — comments corrected by 0ak
+- Lines 6714-6732 - [Base 4.33.0ai — approved by the author](PROJECT.md#base-4330ai--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 6733-6750 - [0ai Technical Validation](PROJECT.md#0ai-technical-validation) - context: Caelum Argenteum — Project, status and roadmap > Base 4.33.0ai — approved by the author
+- Lines 6751-6765 - [0ah Technical Validation](PROJECT.md#0ah-technical-validation) - context: Caelum Argenteum — Project, status and roadmap > Base 4.33.0ai — approved by the author
+- Lines 6766-6777 - [0ag Technical Validation](PROJECT.md#0ag-technical-validation) - context: Caelum Argenteum — Project, status and roadmap > Base 4.33.0ai — approved by the author
+- Lines 6778-6787 - [0af Technical Validation](PROJECT.md#0af-technical-validation) - context: Caelum Argenteum — Project, status and roadmap > Base 4.33.0ai — approved by the author
+- Lines 6788-6814 - [Base 4.33.0ae — approved by the author](PROJECT.md#base-4330ae--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 6815-6842 - [Base 4.33.0ad — approved by the author](PROJECT.md#base-4330ad--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 6843-6861 - [Base 4.33.0ac — approved by the author](PROJECT.md#base-4330ac--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 6862-6876 - [Base 4.33.0ab — approved by the author](PROJECT.md#base-4330ab--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 6877-6890 - [Base 4.33.0aa — approved by the author](PROJECT.md#base-4330aa--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 6891-6905 - [4.33.0z base — included in approved 0aa base](PROJECT.md#4330z-base--included-in-approved-0aa-base) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 6906-6924 - [Base 4.33.0y — approved by the author](PROJECT.md#base-4330y--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 6925-6941 - [Base 4.33.0x — approved by the author](PROJECT.md#base-4330x--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 6942-6965 - [Base 4.33.0w — approved by the author](PROJECT.md#base-4330w--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 6966-7030 - [4.33.0v changes included and approved by the author: exit and return to body](PROJECT.md#4330v-changes-included-and-approved-by-the-author-exit-and-return-to-body) - context: Caelum Argenteum — Project, status and roadmap > Base 4.33.0w — approved by the author
+- Lines 7031-7098 - [Permanent premises](PROJECT.md#permanent-premises) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 7099-7113 - [Document map](PROJECT.md#document-map) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 7114-7145 - [Immediate Roadmap: Close systems and tests on MAP01](PROJECT.md#immediate-roadmap-close-systems-and-tests-on-map01) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 7146-7179 - [General roadmap by version](PROJECT.md#general-roadmap-by-version) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 7180-7215 - [Numbered V5 delivery sequence — author request 2026-10-07](PROJECT.md#numbered-v5-delivery-sequence--author-request-2026-10-07) - context: Caelum Argenteum — Project, status and roadmap > General roadmap by version
+- Lines 7216-7260 - [Modular 3D character migration - author handoff from #283](PROJECT.md#modular-3d-character-migration---author-handoff-from-283) - context: Caelum Argenteum — Project, status and roadmap > General roadmap by version
+- Lines 7261-7316 - [V5 native menus, character setup and exploration — approved 2026-10-05](PROJECT.md#v5-native-menus-character-setup-and-exploration--approved-2026-10-05) - context: Caelum Argenteum — Project, status and roadmap > General roadmap by version
+- Lines 7317-7353 - [Inherited and cross-cutting work: V5, after export](PROJECT.md#inherited-and-cross-cutting-work-v5-after-export) - context: Caelum Argenteum — Project, status and roadmap > General roadmap by version
+- Lines 7354-7364 - [Decisions that still require author design](PROJECT.md#decisions-that-still-require-author-design) - context: Caelum Argenteum — Project, status and roadmap > General roadmap by version
+- Lines 7365-7405 - [4.33.0h Folder Audit](PROJECT.md#4330h-folder-audit) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 7406-7420 - [Historical implementation and maintenance — 4.33.0ao](PROJECT.md#historical-implementation-and-maintenance--4330ao) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 7421-7463 - [4.33.0ae Validation](PROJECT.md#4330ae-validation) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 7464-7499 - [Validation of 4.33.0ad — approved by the author](PROJECT.md#validation-of-4330ad--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 7500-7532 - [Validation of 4.33.0ac — approved by the author](PROJECT.md#validation-of-4330ac--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 7533-7563 - [Validation of 4.33.0ab — approved by the author](PROJECT.md#validation-of-4330ab--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 7564-7598 - [Validation of 4.33.0aa — approved by the author](PROJECT.md#validation-of-4330aa--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 7599-7612 - [4.33.0z Validation](PROJECT.md#4330z-validation) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 7613-7626 - [Validation of 4.33.0y — approved by the author](PROJECT.md#validation-of-4330y--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 7627-7641 - [Validation of 4.33.0x — approved by the author](PROJECT.md#validation-of-4330x--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 7642-7669 - [Validation of 4.33.0w — approved by the author](PROJECT.md#validation-of-4330w--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 7670-7702 - [4.33.0v Validation — Approved within Cumulative 0w](PROJECT.md#4330v-validation--approved-within-cumulative-0w) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 7703-7729 - [Validation of 4.33.0u — approved by the author](PROJECT.md#validation-of-4330u--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 7730-7760 - [4.33.0t Validation — remaining tests approved by author](PROJECT.md#4330t-validation--remaining-tests-approved-by-author) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 7761-7793 - [Validation of 4.33.0s — approved by the author](PROJECT.md#validation-of-4330s--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 7794-7817 - [Validation of 4.33.0r — approved by the author](PROJECT.md#validation-of-4330r--approved-by-the-author) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 7818-7842 - [4.33.0q Validation — remaining tests approved by author](PROJECT.md#4330q-validation--remaining-tests-approved-by-author) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 7843-7865 - [4.33.0p Validation — remaining tests approved by author](PROJECT.md#4330p-validation--remaining-tests-approved-by-author) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 7866-7880 - [4.33.0o Validation](PROJECT.md#4330o-validation) - context: Caelum Argenteum — Project, status and roadmap
+- Lines 7881-7909 - [Validation of 4.33.0n — accepted on 2026-09-11](PROJECT.md#validation-of-4330n--accepted-on-2026-09-11) - context: Caelum Argenteum — Project, status and roadmap
 
-## [SYSTEMS.md](SYSTEMS.md) - 161468 words
+## [SYSTEMS.md](SYSTEMS.md) - 161510 words
 
-SHA-256: `bf9c56f77d52a87c4d700277e46f88cb4a1cbc1a04833277a0b02625d112956a`
+SHA-256: `c5da4d832ea3d8a3667e310cdf845239bc93d181d05ae5a6a13fd6ad1a93e065`
 
 - Lines 1-4 - [Caelum Argenteum — Current systems and rules](SYSTEMS.md#caelum-argenteum--current-systems-and-rules) - context: -
 - Lines 5-34 - [5.13.3 - Ordered Tarot runtime foundation (#440, partial)](SYSTEMS.md#5133---ordered-tarot-runtime-foundation-440-partial) - context: Caelum Argenteum — Current systems and rules
@@ -1605,740 +1605,740 @@ SHA-256: `bf9c56f77d52a87c4d700277e46f88cb4a1cbc1a04833277a0b02625d112956a`
 - Lines 413-427 - [Strength object movement and lifting](SYSTEMS.md#strength-object-movement-and-lifting) - context: Caelum Argenteum — Current systems and rules > 5.13.3 - Ordered Tarot runtime foundation (#440, partial)
 - Lines 428-443 - [Hanged Man and borrowed racial lifecycle](SYSTEMS.md#hanged-man-and-borrowed-racial-lifecycle) - context: Caelum Argenteum — Current systems and rules > 5.13.3 - Ordered Tarot runtime foundation (#440, partial)
 - Lines 444-461 - [Accelerated world-effect clocks](SYSTEMS.md#accelerated-world-effect-clocks) - context: Caelum Argenteum — Current systems and rules > 5.13.3 - Ordered Tarot runtime foundation (#440, partial)
-- Lines 462-558 - [Confirmed follow-up contract for the remaining handlers](SYSTEMS.md#confirmed-follow-up-contract-for-the-remaining-handlers) - context: Caelum Argenteum — Current systems and rules > 5.13.3 - Ordered Tarot runtime foundation (#440, partial)
-- Lines 559-590 - `5.13.2 - Reversible equipment awakening (#442)` - context: Caelum Argenteum — Current systems and rules
-- Lines 591-622 - `5.13.1 - Capture sources and unified Tarot (#441)` - context: Caelum Argenteum — Current systems and rules
-- Lines 623-629 - [V5.13 authored Tarot contract and implementation audit (#439)](SYSTEMS.md#v513-authored-tarot-contract-and-implementation-audit-439) - context: Caelum Argenteum — Current systems and rules
-- Lines 630-665 - [Delivery order and shared ownership](SYSTEMS.md#delivery-order-and-shared-ownership) - context: Caelum Argenteum — Current systems and rules > V5.13 authored Tarot contract and implementation audit (#439)
-- Lines 666-697 - [All 22 approved rows](SYSTEMS.md#all-22-approved-rows) - context: Caelum Argenteum — Current systems and rules > V5.13 authored Tarot contract and implementation audit (#439)
-- Lines 698-741 - [Pre-5.13 runtime and migration audit (historical baseline)](SYSTEMS.md#pre-513-runtime-and-migration-audit-historical-baseline) - context: Caelum Argenteum — Current systems and rules > V5.13 authored Tarot contract and implementation audit (#439)
-- Lines 742-752 - [Evidence and outstanding work](SYSTEMS.md#evidence-and-outstanding-work) - context: Caelum Argenteum — Current systems and rules > V5.13 authored Tarot contract and implementation audit (#439)
-- Lines 753-766 - [V5.12 final authority and UI integration - #435](SYSTEMS.md#v512-final-authority-and-ui-integration---435) - context: Caelum Argenteum — Current systems and rules
-- Lines 767-860 - `Earlier 5.12.7 integration checkpoints - #435` - context: Caelum Argenteum — Current systems and rules
-- Lines 861-934 - [External character profile boundary (#434, 5.12.6, in progress)](SYSTEMS.md#external-character-profile-boundary-434-5126-in-progress) - context: Caelum Argenteum — Current systems and rules
-- Lines 935-973 - [5.12.5 - Seated human card matches (#590, implementation in progress)](SYSTEMS.md#5125---seated-human-card-matches-590-implementation-in-progress) - context: Caelum Argenteum — Current systems and rules
-- Lines 974-1008 - [Organized PvP sessions (5.12.4, #438, in progress)](SYSTEMS.md#organized-pvp-sessions-5124-438-in-progress) - context: Caelum Argenteum — Current systems and rules
-- Lines 1009-1047 - [Cooperative death and recovery (5.12.3, #437, in progress)](SYSTEMS.md#cooperative-death-and-recovery-5123-437-in-progress) - context: Caelum Argenteum — Current systems and rules
-- Lines 1048-1184 - [Shared clock and unanimous time (5.12.2, #436)](SYSTEMS.md#shared-clock-and-unanimous-time-5122-436) - context: Caelum Argenteum — Current systems and rules
-- Lines 1185-1195 - [V5.12 network boundary under implementation (#435)](SYSTEMS.md#v512-network-boundary-under-implementation-435) - context: Caelum Argenteum — Current systems and rules
-- Lines 1196-1203 - [Demon disease immunity (#586, 5.11.8)](SYSTEMS.md#demon-disease-immunity-586-5118) - context: Caelum Argenteum — Current systems and rules
-- Lines 1204-1207 - [Arrival household relocation (#581, 5.11.7)](SYSTEMS.md#arrival-household-relocation-581-5117) - context: Caelum Argenteum — Current systems and rules
-- Lines 1208-1211 - [Rat disease immunity (#582, 5.11.6)](SYSTEMS.md#rat-disease-immunity-582-5116) - context: Caelum Argenteum — Current systems and rules
-- Lines 1212-1237 - [House dialogue refresh (#580, 5.11.5)](SYSTEMS.md#house-dialogue-refresh-580-5115) - context: Caelum Argenteum — Current systems and rules
-- Lines 1238-1316 - [Companion contract and implementation (5.11.4, #430)](SYSTEMS.md#companion-contract-and-implementation-5114-430) - context: Caelum Argenteum — Current systems and rules
-- Lines 1317-1322 - [Distant visual search evaluation (5.11.3, #433)](SYSTEMS.md#distant-visual-search-evaluation-5113-433) - context: Caelum Argenteum — Current systems and rules > Companion contract and implementation (5.11.4, #430)
-- Lines 1323-1338 - [Deterministic NPC derived caches (5.11.2, #432)](SYSTEMS.md#deterministic-npc-derived-caches-5112-432) - context: Caelum Argenteum — Current systems and rules > Companion contract and implementation (5.11.4, #430)
-- Lines 1339-1369 - [5.11.1 / #429 - Persistent formations and admission](SYSTEMS.md#5111--429---persistent-formations-and-admission) - context: Caelum Argenteum — Current systems and rules
-- Lines 1370-1381 - [5.11.0 / #431 - Measured runtime baseline](SYSTEMS.md#5110--431---measured-runtime-baseline) - context: Caelum Argenteum — Current systems and rules
-- Lines 1382-1425 - [5.10.3 / #428 - Audible reports and leader orders](SYSTEMS.md#5103--428---audible-reports-and-leader-orders) - context: Caelum Argenteum — Current systems and rules
-- Lines 1426-1457 - [5.10.2 / #427 - Private memory and point investigation](SYSTEMS.md#5102--427---private-memory-and-point-investigation) - context: Caelum Argenteum — Current systems and rules
-- Lines 1458-1495 - [5.10.1 / #426 - Anonymous action noise](SYSTEMS.md#5101--426---anonymous-action-noise) - context: Caelum Argenteum — Current systems and rules
-- Lines 1496-1538 - [5.10.0 / #425 - Visual observation and private recognition](SYSTEMS.md#5100--425---visual-observation-and-private-recognition) - context: Caelum Argenteum — Current systems and rules
-- Lines 1539-1553 - [5.9.7 / #423 - Cosmetic port wardrobe ownership](SYSTEMS.md#597--423---cosmetic-port-wardrobe-ownership) - context: Caelum Argenteum — Current systems and rules
-- Lines 1554-1577 - [5.9.6 / #424 - Faction service consequences](SYSTEMS.md#596--424---faction-service-consequences) - context: Caelum Argenteum — Current systems and rules
-- Lines 1578-1610 - [5.9.5 / #422 - House and siege investigations](SYSTEMS.md#595--422---house-and-siege-investigations) - context: Caelum Argenteum — Current systems and rules
-- Lines 1611-1631 - [5.9.4 / #421 - Barracas story and heard accounts](SYSTEMS.md#594--421---barracas-story-and-heard-accounts) - context: Caelum Argenteum — Current systems and rules
-- Lines 1632-1642 - [5.9.3 / #420 - Campaign membership](SYSTEMS.md#593--420---campaign-membership) - context: Caelum Argenteum — Current systems and rules
-- Lines 1643-1680 - [5.9.2 / #419 - Private port emotions and explicit reports](SYSTEMS.md#592--419---private-port-emotions-and-explicit-reports) - context: Caelum Argenteum — Current systems and rules
-- Lines 1681-1719 - [5.9.1 / #420 - Faction ranks and recorded consequences](SYSTEMS.md#591--420---faction-ranks-and-recorded-consequences) - context: Caelum Argenteum — Current systems and rules
-- Lines 1720-1747 - [5.9.0 / #418 - Shared quest requirements and narrative observations](SYSTEMS.md#590--418---shared-quest-requirements-and-narrative-observations) - context: Caelum Argenteum — Current systems and rules
-- Lines 1748-1752 - `5.8.55 / #415 - Remove repeated global Rally lookups` - context: Caelum Argenteum — Current systems and rules
-- Lines 1753-1758 - [5.8.54 furniture review corrections (#410)](SYSTEMS.md#5854-furniture-review-corrections-410) - context: Caelum Argenteum — Current systems and rules
-- Lines 1759-1766 - [5.8.53 incident delivery status (#417)](SYSTEMS.md#5853-incident-delivery-status-417) - context: Caelum Argenteum — Current systems and rules
-- Lines 1767-1773 - [5.8.52 transport delivery status (#416)](SYSTEMS.md#5852-transport-delivery-status-416) - context: Caelum Argenteum — Current systems and rules
-- Lines 1774-1794 - [5.8.51 - Final absent-dispatch contract (#415)](SYSTEMS.md#5851---final-absent-dispatch-contract-415) - context: Caelum Argenteum — Current systems and rules
-- Lines 1795-1819 - [Unreleased #417 travel incidents - 2026-10-29](SYSTEMS.md#unreleased-417-travel-incidents---2026-10-29) - context: Caelum Argenteum — Current systems and rules
-- Lines 1820-1903 - `Unreleased #416 transport catalogue - 2026-10-29` - context: Caelum Argenteum — Current systems and rules
-- Lines 1904-1997 - [Unreleased #415 integration](SYSTEMS.md#unreleased-415-integration) - context: Caelum Argenteum — Current systems and rules
-- Lines 1998-2025 - [5.8.50 - Physical contact coverage (#502)](SYSTEMS.md#5850---physical-contact-coverage-502) - context: Caelum Argenteum — Current systems and rules
-- Lines 2026-2064 - [5.8.49 - Physical inventory surfaces and shared food lots (#502)](SYSTEMS.md#5849---physical-inventory-surfaces-and-shared-food-lots-502) - context: Caelum Argenteum — Current systems and rules
-- Lines 2065-2090 - [5.8.48 - Vessel exterior surfaces (#502)](SYSTEMS.md#5848---vessel-exterior-surfaces-502) - context: Caelum Argenteum — Current systems and rules
-- Lines 2091-2132 - [5.8.47 - Abstract stack surfaces and exposure (#502)](SYSTEMS.md#5847---abstract-stack-surfaces-and-exposure-502) - context: Caelum Argenteum — Current systems and rules
-- Lines 2133-2175 - [5.8.46 - NPC physiology during map absence (#502)](SYSTEMS.md#5846---npc-physiology-during-map-absence-502) - context: Caelum Argenteum — Current systems and rules
-- Lines 2176-2198 - [5.8.45 - Dining-table contact ownership (#502)](SYSTEMS.md#5845---dining-table-contact-ownership-502) - context: Caelum Argenteum — Current systems and rules
-- Lines 2199-2228 - [5.8.44 - Decorative paintings and statues (#410)](SYSTEMS.md#5844---decorative-paintings-and-statues-410) - context: Caelum Argenteum — Current systems and rules
-- Lines 2229-2271 - [5.8.43 - Unloaded household cleaning (#502)](SYSTEMS.md#5843---unloaded-household-cleaning-502) - context: Caelum Argenteum — Current systems and rules
-- Lines 2272-2297 - [5.8.42 - Household furnishing contamination across absence (#502)](SYSTEMS.md#5842---household-furnishing-contamination-across-absence-502) - context: Caelum Argenteum — Current systems and rules
-- Lines 2298-2332 - [5.8.41 - Household storage persistence (#502)](SYSTEMS.md#5841---household-storage-persistence-502) - context: Caelum Argenteum — Current systems and rules
-- Lines 2333-2384 - [5.8.40 - Portable complete dining sets (#410)](SYSTEMS.md#5840---portable-complete-dining-sets-410) - context: Caelum Argenteum — Current systems and rules
-- Lines 2385-2411 - [5.8.39 - Shared aim and mean-hit estimates (#415)](SYSTEMS.md#5839---shared-aim-and-mean-hit-estimates-415) - context: Caelum Argenteum — Current systems and rules
-- Lines 2412-2438 - [5.8.38 - Loaded NPC illness and natural depuration (#502)](SYSTEMS.md#5838---loaded-npc-illness-and-natural-depuration-502) - context: Caelum Argenteum — Current systems and rules
-- Lines 2439-2461 - [5.8.37 - Temporary climate and object exposure (#502)](SYSTEMS.md#5837---temporary-climate-and-object-exposure-502) - context: Caelum Argenteum — Current systems and rules
-- Lines 2462-2495 - [5.8.36 - Study furniture acquisition (#410)](SYSTEMS.md#5836---study-furniture-acquisition-410) - context: Caelum Argenteum — Current systems and rules
-- Lines 2496-2519 - [5.8.35 / #410 - Sofa acquisition and assembly transport](SYSTEMS.md#5835--410---sofa-acquisition-and-assembly-transport) - context: Caelum Argenteum — Current systems and rules
-- Lines 2520-2539 - [5.8.34 / #410 - Ordinary furniture acquisition](SYSTEMS.md#5834--410---ordinary-furniture-acquisition) - context: Caelum Argenteum — Current systems and rules
-- Lines 2540-2570 - [5.8.33 / #410 - Ordinary chair and raised cot scale](SYSTEMS.md#5833--410---ordinary-chair-and-raised-cot-scale) - context: Caelum Argenteum — Current systems and rules
-- Lines 2571-2597 - [5.8.32 / #410 - Luxury rest furniture acquisition](SYSTEMS.md#5832--410---luxury-rest-furniture-acquisition) - context: Caelum Argenteum — Current systems and rules
-- Lines 2598-2630 - [Storage furniture supply - 5.8.31 (#410)](SYSTEMS.md#storage-furniture-supply---5831-410) - context: Caelum Argenteum — Current systems and rules
-- Lines 2631-2661 - [5.8.30 - Luxury furniture and movable supply decision (#410)](SYSTEMS.md#5830---luxury-furniture-and-movable-supply-decision-410) - context: Caelum Argenteum — Current systems and rules
-- Lines 2662-2689 - [5.8.29 - Sofa seats (#410)](SYSTEMS.md#5829---sofa-seats-410) - context: Caelum Argenteum — Current systems and rules
-- Lines 2690-2712 - `5.8.28 - Regional weather history for objects (#502)` - context: Caelum Argenteum — Current systems and rules
-- Lines 2713-2728 - `5.8.27 - Indoor furniture placement (#411)` - context: Caelum Argenteum — Current systems and rules
-- Lines 2729-2749 - [5.8.26 - Actual bookcase contents and desk reading (#410)](SYSTEMS.md#5826---actual-bookcase-contents-and-desk-reading-410) - context: Caelum Argenteum — Current systems and rules
-- Lines 2750-2795 - [5.8.25 - Independent fountain and cistern (#410)](SYSTEMS.md#5825---independent-fountain-and-cistern-410) - context: Caelum Argenteum — Current systems and rules
-- Lines 2796-2827 - [5.8.24 - Wardrobe storage and delegated physical specification (#410)](SYSTEMS.md#5824---wardrobe-storage-and-delegated-physical-specification-410) - context: Caelum Argenteum — Current systems and rules
-- Lines 2828-2853 - `5.8.23 - Constant Limbo exposure across absence (#502)` - context: Caelum Argenteum — Current systems and rules
-- Lines 2854-2888 - `5.8.22 - Shared-water mansion bathroom fixtures (#410)` - context: Caelum Argenteum — Current systems and rules
-- Lines 2889-2931 - `5.8.21 - Attended camp cooking and fuel interruption (#411)` - context: Caelum Argenteum — Current systems and rules
-- Lines 2932-2963 - `5.8.20 - Mansion kitchen sink and wall cupboard (#410)` - context: Caelum Argenteum — Current systems and rules
-- Lines 2964-3013 - `5.8.19 - Attended cooking and shared bread proofing (#410)` - context: Caelum Argenteum — Current systems and rules
-- Lines 3014-3046 - `5.8.18 - Prepared meal items and consumption (#410)` - context: Caelum Argenteum — Current systems and rules
-- Lines 3047-3086 - `5.8.17 - Kitchen ingredients (#410)` - context: Caelum Argenteum — Current systems and rules
-- Lines 3087-3104 - `5.8.16 - Non-solid physical scenery exposure (#502)` - context: Caelum Argenteum — Current systems and rules
-- Lines 3105-3152 - [5.8.15 - Bag footprint and tent clearance (#412)](SYSTEMS.md#5815---bag-footprint-and-tent-clearance-412) - context: Caelum Argenteum — Current systems and rules
-- Lines 3153-3352 - `5.8.12 - Metabolic toilet sessions (#502, in progress)` - context: Caelum Argenteum — Current systems and rules
-- Lines 3353-3498 - `5.8.12 - Metabolic toilet sessions (#502, in progress) [part 2]` - context: Caelum Argenteum — Current systems and rules
-- Lines 3499-3502 - [5.8.11 - Household bathroom installation (#410)](SYSTEMS.md#5811---household-bathroom-installation-410) - context: Caelum Argenteum — Current systems and rules
-- Lines 3503-3525 - [5.8.10 - Tent rest integration (#412)](SYSTEMS.md#5810---tent-rest-integration-412) - context: Caelum Argenteum — Current systems and rules
-- Lines 3526-3725 - `5.8.9 - Contamination and hygiene contract (#502)` - context: Caelum Argenteum — Current systems and rules
-- Lines 3726-3731 - `5.8.9 - Contamination and hygiene contract (#502) [part 2]` - context: Caelum Argenteum — Current systems and rules
-- Lines 3732-3901 - [Central property contracts (#411, 5.8.6 in progress)](SYSTEMS.md#central-property-contracts-411-586-in-progress) - context: Caelum Argenteum — Current systems and rules
-- Lines 3902-3911 - [Regional event discovery (#415, 5.8.5 in progress)](SYSTEMS.md#regional-event-discovery-415-585-in-progress) - context: Caelum Argenteum — Current systems and rules
-- Lines 3912-4030 - [Food contamination and cooking contract (#410, 5.8.3 in progress)](SYSTEMS.md#food-contamination-and-cooking-contract-410-583-in-progress) - context: Caelum Argenteum — Current systems and rules
-- Lines 4031-4073 - [Connected-water production (#414, 5.8.2)](SYSTEMS.md#connected-water-production-414-582) - context: Caelum Argenteum — Current systems and rules
-- Lines 4074-4123 - [Altitude and acclimatization (#413, 5.8.1)](SYSTEMS.md#altitude-and-acclimatization-413-581) - context: Caelum Argenteum — Current systems and rules
-- Lines 4124-4154 - [Connected-water feasibility boundary (#414, 5.8.0)](SYSTEMS.md#connected-water-feasibility-boundary-414-580) - context: Caelum Argenteum — Current systems and rules
-- Lines 4155-4210 - [Reusable mates (#472, 5.7.14)](SYSTEMS.md#reusable-mates-472-5714) - context: Caelum Argenteum — Current systems and rules
-- Lines 4211-4256 - [Chemistry batches (#471, 5.7.13)](SYSTEMS.md#chemistry-batches-471-5713) - context: Caelum Argenteum — Current systems and rules
-- Lines 4257-4287 - [Abstract ammunition supplies and transaction rules](SYSTEMS.md#abstract-ammunition-supplies-and-transaction-rules) - context: Caelum Argenteum — Current systems and rules
-- Lines 4288-4318 - [Fermentation Barrel (#487, 5.7.12)](SYSTEMS.md#fermentation-barrel-487-5712) - context: Caelum Argenteum — Current systems and rules
-- Lines 4319-4335 - [#471 approved fermentation lifecycle](SYSTEMS.md#471-approved-fermentation-lifecycle) - context: Caelum Argenteum — Current systems and rules
-- Lines 4336-4403 - [#479 support implements and 5.7.8 integration](SYSTEMS.md#479-support-implements-and-578-integration) - context: Caelum Argenteum — Current systems and rules
-- Lines 4404-4431 - [Aimed-target panel (#481, 5.7.7)](SYSTEMS.md#aimed-target-panel-481-577) - context: Caelum Argenteum — Current systems and rules
-- Lines 4432-4446 - [Chemistry art and regional source decision (#471, 5.7.6)](SYSTEMS.md#chemistry-art-and-regional-source-decision-471-576) - context: Caelum Argenteum — Current systems and rules
-- Lines 4447-4478 - [Marine imports and iodine (#407, 5.7.5)](SYSTEMS.md#marine-imports-and-iodine-407-575) - context: Caelum Argenteum — Current systems and rules
-- Lines 4479-4502 - [Chemistry station infrastructure (#470, 5.7.4)](SYSTEMS.md#chemistry-station-infrastructure-470-574) - context: Caelum Argenteum — Current systems and rules
-- Lines 4503-4525 - [Source recovery (#406, 5.7.3)](SYSTEMS.md#source-recovery-406-573) - context: Caelum Argenteum — Current systems and rules
-- Lines 4526-4534 - [Regional resource contract (#404, 5.7.1)](SYSTEMS.md#regional-resource-contract-404-571) - context: Caelum Argenteum — Current systems and rules
-- Lines 4535-4595 - [Existing sources and consumers: preserve these values](SYSTEMS.md#existing-sources-and-consumers-preserve-these-values) - context: Caelum Argenteum — Current systems and rules > Regional resource contract (#404, 5.7.1)
-- Lines 4596-4627 - [Approved sources: #405 integration; #406 recovery verification](SYSTEMS.md#approved-sources-405-integration-406-recovery-verification) - context: Caelum Argenteum — Current systems and rules > Regional resource contract (#404, 5.7.1)
-- Lines 4628-4667 - [Marine and processing audit: approved chains, unresolved numbers](SYSTEMS.md#marine-and-processing-audit-approved-chains-unresolved-numbers) - context: Caelum Argenteum — Current systems and rules > Regional resource contract (#404, 5.7.1)
-- Lines 4668-4727 - [Related approved boundaries for subsequent issues](SYSTEMS.md#related-approved-boundaries-for-subsequent-issues) - context: Caelum Argenteum — Current systems and rules > Regional resource contract (#404, 5.7.1)
-- Lines 4728-4776 - [Land source integration (#405, 5.7.2)](SYSTEMS.md#land-source-integration-405-572) - context: Caelum Argenteum — Current systems and rules
-- Lines 4777-4827 - [Water quality and native containers (#408, 5.7.0)](SYSTEMS.md#water-quality-and-native-containers-408-570) - context: Caelum Argenteum — Current systems and rules
-- Lines 4828-4871 - [City replenishment and source policy (#385, 5.6.11)](SYSTEMS.md#city-replenishment-and-source-policy-385-5611) - context: Caelum Argenteum — Current systems and rules
-- Lines 4872-4912 - [City catalogue extension (#383, 5.6.10)](SYSTEMS.md#city-catalogue-extension-383-5610) - context: Caelum Argenteum — Current systems and rules
-- Lines 4913-4932 - [Cartridge assembly (#380, 5.6.9)](SYSTEMS.md#cartridge-assembly-380-569) - context: Caelum Argenteum — Current systems and rules
-- Lines 4933-4976 - [Approved cartridge kits and assembly handoff (#379, 5.6.8)](SYSTEMS.md#approved-cartridge-kits-and-assembly-handoff-379-568) - context: Caelum Argenteum — Current systems and rules
-- Lines 4977-5015 - [One-time loot with existing tables (#384, 5.6.4)](SYSTEMS.md#one-time-loot-with-existing-tables-384-564) - context: Caelum Argenteum — Current systems and rules
-- Lines 5016-5024 - [Ordinary clothing: approved native catalogue (#386, 5.6.6)](SYSTEMS.md#ordinary-clothing-approved-native-catalogue-386-566) - context: Caelum Argenteum — Current systems and rules
-- Lines 5025-5049 - [Authorities and native item boundary](SYSTEMS.md#authorities-and-native-item-boundary) - context: Caelum Argenteum — Current systems and rules > Ordinary clothing: approved native catalogue (#386, 5.6.6)
-- Lines 5050-5109 - [Garments, recipes, price and work](SYSTEMS.md#garments-recipes-price-and-work) - context: Caelum Argenteum — Current systems and rules > Ordinary clothing: approved native catalogue (#386, 5.6.6)
-- Lines 5110-5133 - [Proposed complete combinations and condition](SYSTEMS.md#proposed-complete-combinations-and-condition) - context: Caelum Argenteum — Current systems and rules > Ordinary clothing: approved native catalogue (#386, 5.6.6)
-- Lines 5134-5160 - [Proposed thermal and wetness contract](SYSTEMS.md#proposed-thermal-and-wetness-contract) - context: Caelum Argenteum — Current systems and rules > Ordinary clothing: approved native catalogue (#386, 5.6.6)
-- Lines 5161-5183 - [Proposed initial/legacy entitlement and acquisition](SYSTEMS.md#proposed-initiallegacy-entitlement-and-acquisition) - context: Caelum Argenteum — Current systems and rules > Ordinary clothing: approved native catalogue (#386, 5.6.6)
-- Lines 5184-5215 - [Review boundary and handoff to #387](SYSTEMS.md#review-boundary-and-handoff-to-387) - context: Caelum Argenteum — Current systems and rules > Ordinary clothing: approved native catalogue (#386, 5.6.6)
-- Lines 5216-5240 - [Lock tools, lawful access and theft witnesses (#382, 5.6.5)](SYSTEMS.md#lock-tools-lawful-access-and-theft-witnesses-382-565) - context: Caelum Argenteum — Current systems and rules
-- Lines 5241-5270 - [Approved tools and sources](SYSTEMS.md#approved-tools-and-sources) - context: Caelum Argenteum — Current systems and rules > Lock tools, lawful access and theft witnesses (#382, 5.6.5)
-- Lines 5271-5294 - [Approved ownership and alert matrix](SYSTEMS.md#approved-ownership-and-alert-matrix) - context: Caelum Argenteum — Current systems and rules > Lock tools, lawful access and theft witnesses (#382, 5.6.5)
-- Lines 5295-5311 - [Household placement and delivery boundaries](SYSTEMS.md#household-placement-and-delivery-boundaries) - context: Caelum Argenteum — Current systems and rules > Lock tools, lawful access and theft witnesses (#382, 5.6.5)
-- Lines 5312-5388 - [Recipe sheets, reading and practice (#378, 5.6.3)](SYSTEMS.md#recipe-sheets-reading-and-practice-378-563) - context: Caelum Argenteum — Current systems and rules
-- Lines 5389-5458 - [Ordinary native containers (#381, 5.6.2)](SYSTEMS.md#ordinary-native-containers-381-562) - context: Caelum Argenteum — Current systems and rules
-- Lines 5459-5485 - [Merchant coordination and commit ownership (#377, 5.6.1)](SYSTEMS.md#merchant-coordination-and-commit-ownership-377-561) - context: Caelum Argenteum — Current systems and rules
-- Lines 5486-5523 - [Crafting coordinator and unchanged state ownership (#376, 5.6.0)](SYSTEMS.md#crafting-coordinator-and-unchanged-state-ownership-376-560) - context: Caelum Argenteum — Current systems and rules
-- Lines 5524-5559 - [Bull presentation and reversible saves (#369, 5.5.8)](SYSTEMS.md#bull-presentation-and-reversible-saves-369-558) - context: Caelum Argenteum — Current systems and rules
-- Lines 5560-5584 - [Maximum siege adrenaline in production (#361, 5.4.47)](SYSTEMS.md#maximum-siege-adrenaline-in-production-361-5447) - context: Caelum Argenteum — Current systems and rules
-- Lines 5585-5595 - [Demon breath excludes navigation markers (#357, 5.4.45)](SYSTEMS.md#demon-breath-excludes-navigation-markers-357-5445) - context: Caelum Argenteum — Current systems and rules
-- Lines 5596-5607 - [Structural-cache research outcome (#354, 5.4.44)](SYSTEMS.md#structural-cache-research-outcome-354-5444) - context: Caelum Argenteum — Current systems and rules
-- Lines 5608-5632 - [Production actor maintenance (#353, 5.4.43)](SYSTEMS.md#production-actor-maintenance-353-5443) - context: Caelum Argenteum — Current systems and rules
-- Lines 5633-5665 - [Actor-local maintenance experiment and siege focus (#318, 5.4.42)](SYSTEMS.md#actor-local-maintenance-experiment-and-siege-focus-318-5442) - context: Caelum Argenteum — Current systems and rules
-- Lines 5666-5678 - [Isolated performance controls (#318, 5.4.41)](SYSTEMS.md#isolated-performance-controls-318-5441) - context: Caelum Argenteum — Current systems and rules
-- Lines 5679-5713 - [Shared rest and acceleration safety (#325, 5.4.40)](SYSTEMS.md#shared-rest-and-acceleration-safety-325-5440) - context: Caelum Argenteum — Current systems and rules
-- Lines 5714-5732 - [Voluntary-jump wall cushioning (#339, 5.4.39)](SYSTEMS.md#voluntary-jump-wall-cushioning-339-5439) - context: Caelum Argenteum — Current systems and rules
-- Lines 5733-5741 - [Complete map-legend collapse (#321, 5.4.38)](SYSTEMS.md#complete-map-legend-collapse-321-5438) - context: Caelum Argenteum — Current systems and rules
-- Lines 5742-5758 - [House doors do not inherit vehicle presentation (#334)](SYSTEMS.md#house-doors-do-not-inherit-vehicle-presentation-334) - context: Caelum Argenteum — Current systems and rules
-- Lines 5759-5791 - [5.4.35 - Coherent prisoner escort movement (#322)](SYSTEMS.md#5435---coherent-prisoner-escort-movement-322) - context: Caelum Argenteum — Current systems and rules
-- Lines 5792-5827 - [Automatic saves after five minutes of active play (#324)](SYSTEMS.md#automatic-saves-after-five-minutes-of-active-play-324) - context: Caelum Argenteum — Current systems and rules
-- Lines 5828-5844 - [5.4.31 - Collapsible automap legend (#321)](SYSTEMS.md#5431---collapsible-automap-legend-321) - context: Caelum Argenteum — Current systems and rules
-- Lines 5845-5856 - [5.4.30 - Sleeping bag in quick items (#319)](SYSTEMS.md#5430---sleeping-bag-in-quick-items-319) - context: Caelum Argenteum — Current systems and rules
-- Lines 5857-5924 - [5.4.29 - Current map catalogue and staged city siege (#327)](SYSTEMS.md#5429---current-map-catalogue-and-staged-city-siege-327) - context: Caelum Argenteum — Current systems and rules
-- Lines 5925-6082 - [5.4.28 - Contact-only breath and performance boundaries (#318)](SYSTEMS.md#5428---contact-only-breath-and-performance-boundaries-318) - context: Caelum Argenteum — Current systems and rules
-- Lines 6083-6097 - `5.4.27 - Normal-speed prisoner following (#307)` - context: Caelum Argenteum — Current systems and rules
-- Lines 6098-6111 - [5.4.26 - Seal-query index (#305)](SYSTEMS.md#5426---seal-query-index-305) - context: Caelum Argenteum — Current systems and rules
-- Lines 6112-6132 - [5.4.25 - MAP06 corpse archive and diagnostic boundaries (#304)](SYSTEMS.md#5425---map06-corpse-archive-and-diagnostic-boundaries-304) - context: Caelum Argenteum — Current systems and rules
-- Lines 6133-6163 - [5.4.24 - Demon machete, personality and projectile presentation (#284)](SYSTEMS.md#5424---demon-machete-personality-and-projectile-presentation-284) - context: Caelum Argenteum — Current systems and rules
-- Lines 6164-6217 - [5.4.23 - Opt-in Domingo model presentation (#283, accepted prototype)](SYSTEMS.md#5423---opt-in-domingo-model-presentation-283-accepted-prototype) - context: Caelum Argenteum — Current systems and rules
-- Lines 6218-6248 - [5.4.22 - Gameplay quick-use selector (#282)](SYSTEMS.md#5422---gameplay-quick-use-selector-282) - context: Caelum Argenteum — Current systems and rules
-- Lines 6249-6300 - [5.4.21 - Seal climate extensions (#252, accepted)](SYSTEMS.md#5421---seal-climate-extensions-252-accepted) - context: Caelum Argenteum — Current systems and rules
-- Lines 6301-6359 - [Arcane Cloud implementation decisions (#251, in progress)](SYSTEMS.md#arcane-cloud-implementation-decisions-251-in-progress) - context: Caelum Argenteum — Current systems and rules
-- Lines 6360-6366 - [Arcane Cloud asset checkpoint (#251 / 5.4.5, historical scope)](SYSTEMS.md#arcane-cloud-asset-checkpoint-251--545-historical-scope) - context: Caelum Argenteum — Current systems and rules
-- Lines 6367-6409 - [Pilgrim Redemption - 5.4.19 / #250](SYSTEMS.md#pilgrim-redemption---5419--250) - context: Caelum Argenteum — Current systems and rules
-- Lines 6410-6449 - [Battle Mage Summoning - 5.4.18 / #249](SYSTEMS.md#battle-mage-summoning---5418--249) - context: Caelum Argenteum — Current systems and rules
-- Lines 6450-6498 - [Rally - 5.4.17 / #248](SYSTEMS.md#rally---5417--248) - context: Caelum Argenteum — Current systems and rules
-- Lines 6499-6544 - [Mercenary Formation Breaker - 5.4.16 / #247](SYSTEMS.md#mercenary-formation-breaker---5416--247) - context: Caelum Argenteum — Current systems and rules
-- Lines 6545-6597 - [Player constant acceleration and directional impulse - 5.4.15 / #260](SYSTEMS.md#player-constant-acceleration-and-directional-impulse---5415--260) - context: Caelum Argenteum — Current systems and rules
-- Lines 6598-6617 - [MAP01 resident movement repair - 5.4.14 / #253](SYSTEMS.md#map01-resident-movement-repair---5414--253) - context: Caelum Argenteum — Current systems and rules
-- Lines 6618-6667 - [Arcane Sun - 5.4.13 / #246](SYSTEMS.md#arcane-sun---5413--246) - context: Caelum Argenteum — Current systems and rules
-- Lines 6668-6704 - [Miracle - 5.4.12 / #245](SYSTEMS.md#miracle---5412--245) - context: Caelum Argenteum — Current systems and rules
-- Lines 6705-6742 - [Survival Instinct - 5.4.11 / #244](SYSTEMS.md#survival-instinct---5411--244) - context: Caelum Argenteum — Current systems and rules
-- Lines 6743-6775 - [Battle Cry - 5.4.10 / #243](SYSTEMS.md#battle-cry---5410--243) - context: Caelum Argenteum — Current systems and rules
-- Lines 6776-6814 - [Hunter's Instinct - 5.4.9 / #239](SYSTEMS.md#hunters-instinct---549--239) - context: Caelum Argenteum — Current systems and rules
-- Lines 6815-6846 - [Socialization - 5.4.8 / #240](SYSTEMS.md#socialization---548--240) - context: Caelum Argenteum — Current systems and rules
-- Lines 6847-6887 - [Telekinesis - 5.4.7 / #241](SYSTEMS.md#telekinesis---547--241) - context: Caelum Argenteum — Current systems and rules
-- Lines 6888-6918 - [Supernatural Breathing - 5.4.6 / #242](SYSTEMS.md#supernatural-breathing---546--242) - context: Caelum Argenteum — Current systems and rules
-- Lines 6919-7019 - [Class preparation and revised Sleep (#238)](SYSTEMS.md#class-preparation-and-revised-sleep-238) - context: Caelum Argenteum — Current systems and rules
-- Lines 7020-7037 - [MAP02 rat movement and sound - 5.4.3 / #254](SYSTEMS.md#map02-rat-movement-and-sound---543--254) - context: Caelum Argenteum — Current systems and rules
-- Lines 7038-7091 - [Equipped-Seal elemental resistance - 5.4.2 / #261](SYSTEMS.md#equipped-seal-elemental-resistance---542--261) - context: Caelum Argenteum — Current systems and rules
-- Lines 7092-7138 - [5.3.9 - Exploration navigation and owned documents (#236)](SYSTEMS.md#539---exploration-navigation-and-owned-documents-236) - context: Caelum Argenteum — Current systems and rules
-- Lines 7139-7213 - [5.3.8 - Multiple tracked missions (#235)](SYSTEMS.md#538---multiple-tracked-missions-235) - context: Caelum Argenteum — Current systems and rules
-- Lines 7214-7289 - [5.3.7 - Authored local exploration (#234)](SYSTEMS.md#537---authored-local-exploration-234) - context: Caelum Argenteum — Current systems and rules
-- Lines 7290-7340 - [5.3.6 - Personal manual map notes (#233)](SYSTEMS.md#536---personal-manual-map-notes-233) - context: Caelum Argenteum — Current systems and rules
-- Lines 7341-7393 - [5.3.5 - Personal local POI knowledge (#232)](SYSTEMS.md#535---personal-local-poi-knowledge-232) - context: Caelum Argenteum — Current systems and rules
-- Lines 7394-7442 - `5.3.4 - Native local cartography (#231)` - context: Caelum Argenteum — Current systems and rules
-- Lines 7443-7482 - [5.3.3 - Involuntary exhaustion sleep (#258)](SYSTEMS.md#533---involuntary-exhaustion-sleep-258) - context: Caelum Argenteum — Current systems and rules
-- Lines 7483-7525 - [5.3.2 - Automatic food and water (#257)](SYSTEMS.md#532---automatic-food-and-water-257) - context: Caelum Argenteum — Current systems and rules
-- Lines 7526-7566 - [5.3.1 - Character resources and combat readouts (#256)](SYSTEMS.md#531---character-resources-and-combat-readouts-256) - context: Caelum Argenteum — Current systems and rules
-- Lines 7567-7581 - [5.3.0 - Right-edge power indicators (#255)](SYSTEMS.md#530---right-edge-power-indicators-255) - context: Caelum Argenteum — Current systems and rules
-- Lines 7582-7591 - [5.2.27 - One-gram empty Magic Box (#229)](SYSTEMS.md#5227---one-gram-empty-magic-box-229) - context: Caelum Argenteum — Current systems and rules
-- Lines 7592-7610 - [5.2.26 - Visible rest action feedback (#227)](SYSTEMS.md#5226---visible-rest-action-feedback-227) - context: Caelum Argenteum — Current systems and rules
-- Lines 7611-7633 - [5.2.22 - Parenthesized menu controls (#215)](SYSTEMS.md#5222---parenthesized-menu-controls-215) - context: Caelum Argenteum — Current systems and rules
-- Lines 7634-7641 - `5.2.21 - Visible tutorial gold (#216)` - context: Caelum Argenteum — Current systems and rules
-- Lines 7642-7667 - [5.2.20 - Edge-anchored resource bars (#213)](SYSTEMS.md#5220---edge-anchored-resource-bars-213) - context: Caelum Argenteum — Current systems and rules
-- Lines 7668-7713 - [5.2.19 - Landing capacity for horizontal cushioning (#211)](SYSTEMS.md#5219---landing-capacity-for-horizontal-cushioning-211) - context: Caelum Argenteum — Current systems and rules
-- Lines 7714-7735 - [5.2.18 - Rest presentation and contextual input (#209)](SYSTEMS.md#5218---rest-presentation-and-contextual-input-209) - context: Caelum Argenteum — Current systems and rules
-- Lines 7736-7757 - [5.2.17 - MAP01 minimum player health (#207)](SYSTEMS.md#5217---map01-minimum-player-health-207) - context: Caelum Argenteum — Current systems and rules
-- Lines 7758-7769 - [5.2.16 - Native fullscreen cursor preference (#204)](SYSTEMS.md#5216---native-fullscreen-cursor-preference-204) - context: Caelum Argenteum — Current systems and rules
-- Lines 7770-7825 - [5.2.15 - Readability, native crosshair and comfort (#150)](SYSTEMS.md#5215---readability-native-crosshair-and-comfort-150) - context: Caelum Argenteum — Current systems and rules
-- Lines 7826-7880 - [5.2.14 - Native input ownership, groups and hints (#149)](SYSTEMS.md#5214---native-input-ownership-groups-and-hints-149) - context: Caelum Argenteum — Current systems and rules
-- Lines 7881-7919 - [Saved cosmetics and native preview - 5.2.13 / #148](SYSTEMS.md#saved-cosmetics-and-native-preview---5213--148) - context: Caelum Argenteum — Current systems and rules
-- Lines 7920-8005 - [Bull charge, resident tools and personality - 5.2.12 / #195](SYSTEMS.md#bull-charge-resident-tools-and-personality---5212--195) - context: Caelum Argenteum — Current systems and rules
-- Lines 8006-8082 - [Collision energy and contact area - 5.2.11 / #194](SYSTEMS.md#collision-energy-and-contact-area---5211--194) - context: Caelum Argenteum — Current systems and rules
-- Lines 8083-8151 - [Continuous pressure, static load and crushing ceilings](SYSTEMS.md#continuous-pressure-static-load-and-crushing-ceilings) - context: Caelum Argenteum — Current systems and rules > Collision energy and contact area - 5.2.11 / #194
-- Lines 8152-8171 - [Reference values and evidence](SYSTEMS.md#reference-values-and-evidence) - context: Caelum Argenteum — Current systems and rules > Collision energy and contact area - 5.2.11 / #194
-- Lines 8172-8259 - [Personality, magical power and ranged penetration - 5.2.10 / #192](SYSTEMS.md#personality-magical-power-and-ranged-penetration---5210--192) - context: Caelum Argenteum — Current systems and rules
-- Lines 8260-8332 - [Mass-based Toughness and sustained resistance - 5.2.8 / #188](SYSTEMS.md#mass-based-toughness-and-sustained-resistance---528--188) - context: Caelum Argenteum — Current systems and rules
-- Lines 8333-8369 - [Native interactive menus - 5.2.7 / #189](SYSTEMS.md#native-interactive-menus---527--189) - context: Caelum Argenteum — Current systems and rules
-- Lines 8370-8400 - [Mouse interaction contract - 5.2.6 / #184](SYSTEMS.md#mouse-interaction-contract---526--184) - context: Caelum Argenteum — Current systems and rules
-- Lines 8401-8420 - [Dialogue and localization source navigation - 5.2.5 / #185](SYSTEMS.md#dialogue-and-localization-source-navigation---525--185) - context: Caelum Argenteum — Current systems and rules
-- Lines 8421-8525 - [Onboarding and MAP02 initial supplies - 5.2.4 / #183](SYSTEMS.md#onboarding-and-map02-initial-supplies---524--183) - context: Caelum Argenteum — Current systems and rules
-- Lines 8526-8544 - [Allied Mandinga retaliation - 5.2.3 / #180](SYSTEMS.md#allied-mandinga-retaliation---523--180) - context: Caelum Argenteum — Current systems and rules
-- Lines 8545-8563 - [Time-skip processing - 5.2.2 / #178](SYSTEMS.md#time-skip-processing---522--178) - context: Caelum Argenteum — Current systems and rules
-- Lines 8564-8617 - [Tutorial equipment, supplies and portable rest - 5.2.1 / #177](SYSTEMS.md#tutorial-equipment-supplies-and-portable-rest---521--177) - context: Caelum Argenteum — Current systems and rules
-- Lines 8618-8682 - [5.2.0 - Authoritative character identity and native settings (#147)](SYSTEMS.md#520---authoritative-character-identity-and-native-settings-147) - context: Caelum Argenteum — Current systems and rules
-- Lines 8683-8712 - [5.1.20 - Interior doors and peaceful city time skipping (#173)](SYSTEMS.md#5120---interior-doors-and-peaceful-city-time-skipping-173) - context: Caelum Argenteum — Current systems and rules
-- Lines 8713-8738 - [5.1.19 - Seen NPC information and replay (#172)](SYSTEMS.md#5119---seen-npc-information-and-replay-172) - context: Caelum Argenteum — Current systems and rules
-- Lines 8739-8801 - [Permanent MAP01 gifts and assisted checkpoint - 5.1.18 / #164](SYSTEMS.md#permanent-map01-gifts-and-assisted-checkpoint---5118--164) - context: Caelum Argenteum — Current systems and rules
-- Lines 8802-8813 - [Medikit terminology - 5.1.17 / #169](SYSTEMS.md#medikit-terminology---5117--169) - context: Caelum Argenteum — Current systems and rules
-- Lines 8814-8907 - [Recoverable bolas - 5.1.16 / #163](SYSTEMS.md#recoverable-bolas---5116--163) - context: Caelum Argenteum — Current systems and rules
-- Lines 8908-8960 - [Utility staff and wand terminology - 5.1.15 / #162](SYSTEMS.md#utility-staff-and-wand-terminology---5115--162) - context: Caelum Argenteum — Current systems and rules
-- Lines 8961-8971 - [Damage-flash lifetime across maps - 5.1.14 / #165](SYSTEMS.md#damage-flash-lifetime-across-maps---5114--165) - context: Caelum Argenteum — Current systems and rules
-- Lines 8972-9059 - [SI physics and attribute growth — 5.1.10 / #154](SYSTEMS.md#si-physics-and-attribute-growth--5110--154) - context: Caelum Argenteum — Current systems and rules
-- Lines 9060-9136 - [Weapon dispersion — 5.4.1 / #259](SYSTEMS.md#weapon-dispersion--541--259) - context: Caelum Argenteum — Current systems and rules > SI physics and attribute growth — 5.1.10 / #154
-- Lines 9137-9165 - [Shotgun follow-up: ownership, presentation and aim (#152)](SYSTEMS.md#shotgun-follow-up-ownership-presentation-and-aim-152) - context: Caelum Argenteum — Current systems and rules
-- Lines 9166-9219 - [Elemental presentation and proportional damage feedback (#137)](SYSTEMS.md#elemental-presentation-and-proportional-damage-feedback-137) - context: Caelum Argenteum — Current systems and rules
-- Lines 9220-9297 - [Double-barrel shotgun and equipped-armor bypass (#136)](SYSTEMS.md#double-barrel-shotgun-and-equipped-armor-bypass-136) - context: Caelum Argenteum — Current systems and rules
-- Lines 9298-9329 - [Soldier crouched carbine aim (#143)](SYSTEMS.md#soldier-crouched-carbine-aim-143) - context: Caelum Argenteum — Current systems and rules
-- Lines 9330-9384 - [Demon racial ability and finite supplies (#135)](SYSTEMS.md#demon-racial-ability-and-finite-supplies-135) - context: Caelum Argenteum — Current systems and rules
-- Lines 9385-9453 - [Functional port city contract (#133)](SYSTEMS.md#functional-port-city-contract-133) - context: Caelum Argenteum — Current systems and rules
-- Lines 9454-9506 - [Thermal exposure and energy transfer (#130)](SYSTEMS.md#thermal-exposure-and-energy-transfer-130) - context: Caelum Argenteum — Current systems and rules
-- Lines 9507-9552 - [Regulated sweating (#133, 2026-10-08)](SYSTEMS.md#regulated-sweating-133-2026-10-08) - context: Caelum Argenteum — Current systems and rules > Thermal exposure and energy transfer (#130)
-- Lines 9553-9597 - [Breathing and thermal coefficient cache (#140)](SYSTEMS.md#breathing-and-thermal-coefficient-cache-140) - context: Caelum Argenteum — Current systems and rules > Thermal exposure and energy transfer (#130)
-- Lines 9598-9620 - [Carbine muscular effort (#140, author decision 2026-10-08)](SYSTEMS.md#carbine-muscular-effort-140-author-decision-2026-10-08) - context: Caelum Argenteum — Current systems and rules > Thermal exposure and energy transfer (#130)
-- Lines 9621-9652 - [Cold regulation by shivering (#140, author decision 2026-10-08)](SYSTEMS.md#cold-regulation-by-shivering-140-author-decision-2026-10-08) - context: Caelum Argenteum — Current systems and rules > Thermal exposure and energy transfer (#130)
-- Lines 9653-9709 - [Clothing, water and shelter](SYSTEMS.md#clothing-water-and-shelter) - context: Caelum Argenteum — Current systems and rules > Thermal exposure and energy transfer (#130)
-- Lines 9710-9754 - [Solid thermal surfaces (#314, 5.5.6)](SYSTEMS.md#solid-thermal-surfaces-314-556) - context: Caelum Argenteum — Current systems and rules > Thermal exposure and energy transfer (#130)
-- Lines 9755-9899 - [Energy, effort and clocks](SYSTEMS.md#energy-effort-and-clocks) - context: Caelum Argenteum — Current systems and rules > Thermal exposure and energy transfer (#130)
-- Lines 9900-9956 - [Persistence, presentation and evidence](SYSTEMS.md#persistence-presentation-and-evidence) - context: Caelum Argenteum — Current systems and rules > Thermal exposure and energy transfer (#130)
-- Lines 9957-10016 - [Staged siege reinforcement test (#132)](SYSTEMS.md#staged-siege-reinforcement-test-132) - context: Caelum Argenteum — Current systems and rules
-- Lines 10017-10075 - [Automatic high-density AI (#128)](SYSTEMS.md#automatic-high-density-ai-128) - context: Caelum Argenteum — Current systems and rules
-- Lines 10076-10117 - [Siege profiling and group experiment boundary (#121)](SYSTEMS.md#siege-profiling-and-group-experiment-boundary-121) - context: Caelum Argenteum — Current systems and rules
-- Lines 10118-10150 - [Per-player authority and modular migration boundary (#120)](SYSTEMS.md#per-player-authority-and-modular-migration-boundary-120) - context: Caelum Argenteum — Current systems and rules
-- Lines 10151-10179 - [Tarot service and retained save contract (#119)](SYSTEMS.md#tarot-service-and-retained-save-contract-119) - context: Caelum Argenteum — Current systems and rules
-- Lines 10180-10213 - [Inventory and equipment service (#118)](SYSTEMS.md#inventory-and-equipment-service-118) - context: Caelum Argenteum — Current systems and rules
-- Lines 10214-10251 - [Player character and resource adapters (#117)](SYSTEMS.md#player-character-and-resource-adapters-117) - context: Caelum Argenteum — Current systems and rules
-- Lines 10252-10261 - [V5.0 state ownership and compatibility contract (#116)](SYSTEMS.md#v50-state-ownership-and-compatibility-contract-116) - context: Caelum Argenteum — Current systems and rules
-- Lines 10262-10288 - [Single-owner state table](SYSTEMS.md#single-owner-state-table) - context: Caelum Argenteum — Current systems and rules > V5.0 state ownership and compatibility contract (#116)
-- Lines 10289-10325 - [Lifecycle and input/selector boundary](SYSTEMS.md#lifecycle-and-inputselector-boundary) - context: Caelum Argenteum — Current systems and rules > V5.0 state ownership and compatibility contract (#116)
-- Lines 10326-10344 - [Migration, reversibility and rollback](SYSTEMS.md#migration-reversibility-and-rollback) - context: Caelum Argenteum — Current systems and rules > V5.0 state ownership and compatibility contract (#116)
-- Lines 10345-10372 - [4.37.24 — Export defaults and final integration contract (#82)](SYSTEMS.md#43724--export-defaults-and-final-integration-contract-82) - context: Caelum Argenteum — Current systems and rules
-- Lines 10373-10401 - [4.37.23 - Creation descriptions and authoritative preview (#112)](SYSTEMS.md#43723---creation-descriptions-and-authoritative-preview-112) - context: Caelum Argenteum — Current systems and rules
-- Lines 10402-10421 - [4.37.22 - Shield presentation follows the equipped item (#106)](SYSTEMS.md#43722---shield-presentation-follows-the-equipped-item-106) - context: Caelum Argenteum — Current systems and rules
-- Lines 10422-10451 - [4.37.21 - New-character introduction and exit (#103)](SYSTEMS.md#43721---new-character-introduction-and-exit-103) - context: Caelum Argenteum — Current systems and rules
-- Lines 10452-10463 - [4.37.20 - Training target presentation (#98)](SYSTEMS.md#43720---training-target-presentation-98) - context: Caelum Argenteum — Current systems and rules
-- Lines 10464-10516 - [4.37.19 - Palomo's necklace and canonical shield names (#96)](SYSTEMS.md#43719---palomos-necklace-and-canonical-shield-names-96) - context: Caelum Argenteum — Current systems and rules
-- Lines 10517-10563 - [4.37.18 - Craft, Repair, Dismantle and Tarot details (#91)](SYSTEMS.md#43718---craft-repair-dismantle-and-tarot-details-91) - context: Caelum Argenteum — Current systems and rules
-- Lines 10564-10619 - [4.37.17 - Pickaxe, gathering sounds and success notice (#89)](SYSTEMS.md#43717---pickaxe-gathering-sounds-and-success-notice-89) - context: Caelum Argenteum — Current systems and rules
-- Lines 10620-10643 - [4.37.16 - Compass and menu pointers (#87)](SYSTEMS.md#43716---compass-and-menu-pointers-87) - context: Caelum Argenteum — Current systems and rules
-- Lines 10644-10689 - `4.37.15 - Traditional Truco ranked mode (#101)` - context: Caelum Argenteum — Current systems and rules
-- Lines 10690-10696 - [4.37.14a - Argento dialogue order (#99)](SYSTEMS.md#43714a---argento-dialogue-order-99) - context: Caelum Argenteum — Current systems and rules
-- Lines 10697-10716 - [4.37.14 - Early physical deck delivery (#97)](SYSTEMS.md#43714---early-physical-deck-delivery-97) - context: Caelum Argenteum — Current systems and rules
-- Lines 10717-10724 - [4.37.13a - Crafting time help (#93)](SYSTEMS.md#43713a---crafting-time-help-93) - context: Caelum Argenteum — Current systems and rules
-- Lines 10725-10752 - [4.37.11 — Guard recognition as a persistent Journal clue (#79)](SYSTEMS.md#43711--guard-recognition-as-a-persistent-journal-clue-79) - context: Caelum Argenteum — Current systems and rules
-- Lines 10753-10792 - [4.37.10 — Prisoner siege intelligence after payment (#78)](SYSTEMS.md#43710--prisoner-siege-intelligence-after-payment-78) - context: Caelum Argenteum — Current systems and rules
-- Lines 10793-10896 - [4.37.9 — Expanded city, southern siege and campaign route (#77)](SYSTEMS.md#4379--expanded-city-southern-siege-and-campaign-route-77) - context: Caelum Argenteum — Current systems and rules
-- Lines 10897-10915 - [4.37.8 — Corrected MAP02 material accounting (#75)](SYSTEMS.md#4378--corrected-map02-material-accounting-75) - context: Caelum Argenteum — Current systems and rules
-- Lines 10916-10953 - [4.37.7 — Floor traps, flooded return and central lift (#74)](SYSTEMS.md#4377--floor-traps-flooded-return-and-central-lift-74) - context: Caelum Argenteum — Current systems and rules
-- Lines 10954-11009 - [4.37.6 — Central hub, cardinal keys and finite supplies (#73/#75)](SYSTEMS.md#4376--central-hub-cardinal-keys-and-finite-supplies-7375) - context: Caelum Argenteum — Current systems and rules
-- Lines 11010-11043 - [4.37.5 — Daily mansion provisions (#65)](SYSTEMS.md#4375--daily-mansion-provisions-65) - context: Caelum Argenteum — Current systems and rules
-- Lines 11044-11113 - [4.37.4 — Explicit time skipping and separate Limbo clock (#64)](SYSTEMS.md#4374--explicit-time-skipping-and-separate-limbo-clock-64) - context: Caelum Argenteum — Current systems and rules
-- Lines 11114-11181 - [4.37.3 — Palomo choices, Ronnie crafting and Limbo departure (#63)](SYSTEMS.md#4373--palomo-choices-ronnie-crafting-and-limbo-departure-63) - context: Caelum Argenteum — Current systems and rules
-- Lines 11182-11212 - [4.37.2 — Magic-weapon Anima bases divided by ten (#68)](SYSTEMS.md#4372--magic-weapon-anima-bases-divided-by-ten-68) - context: Caelum Argenteum — Current systems and rules
-- Lines 11213-11261 - [4.37.0 — MAP01 exterior and door presentation (#61)](SYSTEMS.md#4370--map01-exterior-and-door-presentation-61) - context: Caelum Argenteum — Current systems and rules
-- Lines 11262-11352 - [4.36.27 — Complete port siege (#16)](SYSTEMS.md#43627--complete-port-siege-16) - context: Caelum Argenteum — Current systems and rules
-- Lines 11353-11431 - [4.36.26 — Shared attack clock and durability (#37)](SYSTEMS.md#43626--shared-attack-clock-and-durability-37) - context: Caelum Argenteum — Current systems and rules
-- Lines 11432-11468 - [4.36.25 — Rebuilt MAP01 geometry (#36)](SYSTEMS.md#43625--rebuilt-map01-geometry-36) - context: Caelum Argenteum — Current systems and rules
-- Lines 11469-11516 - [4.36.24 — Persistent quest journal (#35)](SYSTEMS.md#43624--persistent-quest-journal-35) - context: Caelum Argenteum — Current systems and rules
-- Lines 11517-11648 - [4.36.23 — Armor last, body absorption and gate defense (#52)](SYSTEMS.md#43623--armor-last-body-absorption-and-gate-defense-52) - context: Caelum Argenteum — Current systems and rules
-- Lines 11649-11710 - [4.36.22 — Quest ownership and persistent narrative events (#34)](SYSTEMS.md#43622--quest-ownership-and-persistent-narrative-events-34) - context: Caelum Argenteum — Current systems and rules
-- Lines 11711-11734 - [4.36.21 — Environmental collisions and running absorption (#49)](SYSTEMS.md#43621--environmental-collisions-and-running-absorption-49) - context: Caelum Argenteum — Current systems and rules
-- Lines 11735-11776 - [4.36.20 — Arcana availability and sewer retreat (#33)](SYSTEMS.md#43620--arcana-availability-and-sewer-retreat-33) - context: Caelum Argenteum — Current systems and rules
-- Lines 11777-11832 - [4.36.19 — Final siege impact balance (#21)](SYSTEMS.md#43619--final-siege-impact-balance-21) - context: Caelum Argenteum — Current systems and rules
-- Lines 11833-11862 - `4.36.18 — Walking wall-impact absorption (#43)` - context: Caelum Argenteum — Current systems and rules
-- Lines 11863-11943 - [4.36.17 — Controlled cannon fire (#21; planned label 4.36.13)](SYSTEMS.md#43617--controlled-cannon-fire-21-planned-label-43613) - context: Caelum Argenteum — Current systems and rules
-- Lines 11944-12005 - [4.36.16 — Mobile demonic rams (#20; planned label 4.36.12)](SYSTEMS.md#43616--mobile-demonic-rams-20-planned-label-43612) - context: Caelum Argenteum — Current systems and rules
-- Lines 12006-12049 - [Encounter/control contract for #16 and #21](SYSTEMS.md#encountercontrol-contract-for-16-and-21) - context: Caelum Argenteum — Current systems and rules > 4.36.16 — Mobile demonic rams (#20; planned label 4.36.12)
-- Lines 12050-12117 - `4.36.15 — Breakable actor gates (#19; planned label 4.36.11)` - context: Caelum Argenteum — Current systems and rules
-- Lines 12118-12131 - [4.36.14a — Distinct siege materials and visual states (#18 correction)](SYSTEMS.md#43614a--distinct-siege-materials-and-visual-states-18-correction) - context: Caelum Argenteum — Current systems and rules
-- Lines 12132-12140 - [4.36.10 — Siege assets are visual-only (#18)](SYSTEMS.md#43610--siege-assets-are-visual-only-18) - context: Caelum Argenteum — Current systems and rules
-- Lines 12141-12155 - `4.36.8 — Prisoner rescue, escort and port rewards (#14)` - context: Caelum Argenteum — Current systems and rules
-- Lines 12156-12178 - [4.36.7 — Inert prisoner appearances (#13)](SYSTEMS.md#4367--inert-prisoner-appearances-13) - context: Caelum Argenteum — Current systems and rules
-- Lines 12179-12192 - `4.36.6 — Hostile sewer rats (#12)` - context: Caelum Argenteum — Current systems and rules
-- Lines 12193-12229 - [4.36.5 — Sewer gates, refuges and known-recipe repair (#11)](SYSTEMS.md#4365--sewer-gates-refuges-and-known-recipe-repair-11) - context: Caelum Argenteum — Current systems and rules
-- Lines 12230-12252 - [Key dependency graph and ordinary-player route](SYSTEMS.md#key-dependency-graph-and-ordinary-player-route) - context: Caelum Argenteum — Current systems and rules > 4.36.5 — Sewer gates, refuges and known-recipe repair (#11)
-- Lines 12253-12298 - [4.36.4 — Acquisition and chest contract (issue #10)](SYSTEMS.md#4364--acquisition-and-chest-contract-issue-10) - context: Caelum Argenteum — Current systems and rules
-- Lines 12299-12308 - [4.36.2 — Bow presentation performance](SYSTEMS.md#4362--bow-presentation-performance) - context: Caelum Argenteum — Current systems and rules
-- Lines 12309-12324 - `4.36.1 — Documentation scope` - context: Caelum Argenteum — Current systems and rules
-- Lines 12325-12326 - [4.36.0i — active rules and maze](SYSTEMS.md#4360i--active-rules-and-maze) - context: Caelum Argenteum — Current systems and rules
-- Lines 12327-12350 - [Resting weight: approved and active formula](SYSTEMS.md#resting-weight-approved-and-active-formula) - context: Caelum Argenteum — Current systems and rules > 4.36.0i — active rules and maze
-- Lines 12351-12367 - [Food, water and tables](SYSTEMS.md#food-water-and-tables) - context: Caelum Argenteum — Current systems and rules > 4.36.0i — active rules and maze
-- Lines 12368-12408 - [MAP02 and rewards](SYSTEMS.md#map02-and-rewards) - context: Caelum Argenteum — Current systems and rules > 4.36.0i — active rules and maze
-- Lines 12409-12417 - [Check](SYSTEMS.md#check) - context: Caelum Argenteum — Current systems and rules > 4.36.0i — active rules and maze
-- Lines 12418-12419 - [History 4.36.0h — percentage ceiling, starting meal and weight proposal](SYSTEMS.md#history-4360h--percentage-ceiling-starting-meal-and-weight-proposal) - context: Caelum Argenteum — Current systems and rules
-- Lines 12420-12445 - [Native ceiling: implemented in source](SYSTEMS.md#native-ceiling-implemented-in-source) - context: Caelum Argenteum — Current systems and rules > History 4.36.0h — percentage ceiling, starting meal and weight proposal
-- Lines 12446-12481 - [Supported mass: proposal pending the author's decision](SYSTEMS.md#supported-mass-proposal-pending-the-authors-decision) - context: Caelum Argenteum — Current systems and rules > History 4.36.0h — percentage ceiling, starting meal and weight proposal
-- Lines 12482-12502 - [Table food: persistent initialization](SYSTEMS.md#table-food-persistent-initialization) - context: Caelum Argenteum — Current systems and rules > History 4.36.0h — percentage ceiling, starting meal and weight proposal
-- Lines 12503-12543 - [4.36.0g — segmented presentation and axe attack](SYSTEMS.md#4360g--segmented-presentation-and-axe-attack) - context: Caelum Argenteum — Current systems and rules
-- Lines 12544-12552 - [4.36.0f — audit of crushing and impact](SYSTEMS.md#4360f--audit-of-crushing-and-impact) - context: Caelum Argenteum — Current systems and rules
-- Lines 12553-12567 - [1. Rock collision: mass, impulse and speed received](SYSTEMS.md#1-rock-collision-mass-impulse-and-speed-received) - context: Caelum Argenteum — Current systems and rules > 4.36.0f — audit of crushing and impact
-- Lines 12568-12608 - [2. Damage conversion](SYSTEMS.md#2-damage-conversion) - context: Caelum Argenteum — Current systems and rules > 4.36.0f — audit of crushing and impact
-- Lines 12609-12626 - [3. Sustained contact and native ceiling](SYSTEMS.md#3-sustained-contact-and-native-ceiling) - context: Caelum Argenteum — Current systems and rules > 4.36.0f — audit of crushing and impact
-- Lines 12627-12642 - [4. MAP08 fast rock in 0f](SYSTEMS.md#4-map08-fast-rock-in-0f) - context: Caelum Argenteum — Current systems and rules > 4.36.0f — audit of crushing and impact
-- Lines 12643-12650 - [5. Presentation of weapons](SYSTEMS.md#5-presentation-of-weapons) - context: Caelum Argenteum — Current systems and rules > 4.36.0f — audit of crushing and impact
-- Lines 12651-12678 - `4.36.0e — corrections requested after testing 0d` - context: Caelum Argenteum — Current systems and rules
-- Lines 12679-12751 - [Current corrections 4.36.0d](SYSTEMS.md#current-corrections-4360d) - context: Caelum Argenteum — Current systems and rules
-- Lines 12752-12825 - [Integration and fixes 4.36.0c](SYSTEMS.md#integration-and-fixes-4360c) - context: Caelum Argenteum — Current systems and rules
-- Lines 12826-12890 - [Mines, teleport, crushing and presentation (4.36.0b)](SYSTEMS.md#mines-teleport-crushing-and-presentation-4360b) - context: Caelum Argenteum — Current systems and rules
-- Lines 12891-12949 - [Physical hazards and traps (4.36.0a, updated in 0b)](SYSTEMS.md#physical-hazards-and-traps-4360a-updated-in-0b) - context: Caelum Argenteum — Current systems and rules
-- Lines 12950-12973 - [Animations and sitting consumption (4.35.0q)](SYSTEMS.md#animations-and-sitting-consumption-4350q) - context: Caelum Argenteum — Current systems and rules
-- Lines 12974-13017 - [Reserves, controls and vehicles (4.35.0p)](SYSTEMS.md#reserves-controls-and-vehicles-4350p) - context: Caelum Argenteum — Current systems and rules
-- Lines 13018-13084 - [Scheduled agenda and events (4.35.0o)](SYSTEMS.md#scheduled-agenda-and-events-4350o) - context: Caelum Argenteum — Current systems and rules
-- Lines 13085-13152 - [Travel with duration and provisions (4.35.0n)](SYSTEMS.md#travel-with-duration-and-provisions-4350n) - context: Caelum Argenteum — Current systems and rules
-- Lines 13153-13178 - [Food by body mass and riverside expansion (4.35.0m)](SYSTEMS.md#food-by-body-mass-and-riverside-expansion-4350m) - context: Caelum Argenteum — Current systems and rules
-- Lines 13179-13213 - [Identities and routes](SYSTEMS.md#identities-and-routes) - context: Caelum Argenteum — Current systems and rules > Food by body mass and riverside expansion (4.35.0m)
-- Lines 13214-13220 - [Regional climate, shelter, water and chairs (4.35.0l)](SYSTEMS.md#regional-climate-shelter-water-and-chairs-4350l) - context: Caelum Argenteum — Current systems and rules
-- Lines 13221-13258 - [Contemporary data and geographical reference](SYSTEMS.md#contemporary-data-and-geographical-reference) - context: Caelum Argenteum — Current systems and rules > Regional climate, shelter, water and chairs (4.35.0l)
-- Lines 13259-13287 - [Temporal synthesis](SYSTEMS.md#temporal-synthesis) - context: Caelum Argenteum — Current systems and rules > Regional climate, shelter, water and chairs (4.35.0l)
-- Lines 13288-13310 - [Shelter and local microclimate](SYSTEMS.md#shelter-and-local-microclimate) - context: Caelum Argenteum — Current systems and rules > Regional climate, shelter, water and chairs (4.35.0l)
-- Lines 13311-13333 - [Status, saves and consultations](SYSTEMS.md#status-saves-and-consultations) - context: Caelum Argenteum — Current systems and rules > Regional climate, shelter, water and chairs (4.35.0l)
-- Lines 13334-13350 - [Water by volume and chair repair](SYSTEMS.md#water-by-volume-and-chair-repair) - context: Caelum Argenteum — Current systems and rules > Regional climate, shelter, water and chairs (4.35.0l)
-- Lines 13351-13356 - [Current Time, Consumption, Use and Area Rules (4.35.0j)](SYSTEMS.md#current-time-consumption-use-and-area-rules-4350j) - context: Caelum Argenteum — Current systems and rules
-- Lines 13357-13375 - [Local time and sleep](SYSTEMS.md#local-time-and-sleep) - context: Caelum Argenteum — Current systems and rules > Current Time, Consumption, Use and Area Rules (4.35.0j)
-- Lines 13376-13391 - [Food and water while sitting](SYSTEMS.md#food-and-water-while-sitting) - context: Caelum Argenteum — Current systems and rules > Current Time, Consumption, Use and Area Rules (4.35.0j)
-- Lines 13392-13406 - [Interaction and station size](SYSTEMS.md#interaction-and-station-size) - context: Caelum Argenteum — Current systems and rules > Current Time, Consumption, Use and Area Rules (4.35.0j)
-- Lines 13407-13430 - [Approved base radii](SYSTEMS.md#approved-base-radii) - context: Caelum Argenteum — Current systems and rules > Current Time, Consumption, Use and Area Rules (4.35.0j)
-- Lines 13431-13467 - [Access and personal advancement corrections in Limbo (4.35.0i)](SYSTEMS.md#access-and-personal-advancement-corrections-in-limbo-4350i) - context: Caelum Argenteum — Current systems and rules
-- Lines 13468-13502 - [Automatic meals and furniture of Limbo (4.35.0h)](SYSTEMS.md#automatic-meals-and-furniture-of-limbo-4350h) - context: Caelum Argenteum — Current systems and rules
-- Lines 13503-13511 - [Fast advance, tables and sleep (4.35.0g)](SYSTEMS.md#fast-advance-tables-and-sleep-4350g) - context: Caelum Argenteum — Current systems and rules
-- Lines 13512-13552 - [Common time for substeps](SYSTEMS.md#common-time-for-substeps) - context: Caelum Argenteum — Current systems and rules > Fast advance, tables and sleep (4.35.0g)
-- Lines 13553-13583 - [Tables and belongings](SYSTEMS.md#tables-and-belongings) - context: Caelum Argenteum — Current systems and rules > Fast advance, tables and sleep (4.35.0g)
-- Lines 13584-13607 - [Lucidity, Sleep Skill and Orientation](SYSTEMS.md#lucidity-sleep-skill-and-orientation) - context: Caelum Argenteum — Current systems and rules > Fast advance, tables and sleep (4.35.0g)
-- Lines 13608-13672 - [Sleep bag and rest factors (4.35.0f)](SYSTEMS.md#sleep-bag-and-rest-factors-4350f) - context: Caelum Argenteum — Current systems and rules
-- Lines 13673-13724 - [Furniture and rest camera (4.35.0e)](SYSTEMS.md#furniture-and-rest-camera-4350e) - context: Caelum Argenteum — Current systems and rules
-- Lines 13725-13734 - [Rest Compatibility (4.35.0d1)](SYSTEMS.md#rest-compatibility-4350d1) - context: Caelum Argenteum — Current systems and rules
-- Lines 13735-13812 - [Rest and wait: normal scale session (4.35.0d)](SYSTEMS.md#rest-and-wait-normal-scale-session-4350d) - context: Caelum Argenteum — Current systems and rules
-- Lines 13813-13889 - [Civil calendar, campaign and Limbo (4.35.0b–0c)](SYSTEMS.md#civil-calendar-campaign-and-limbo-4350b0c) - context: Caelum Argenteum — Current systems and rules
-- Lines 13890-13944 - [Historical ability catalog and focused V5.4 revisions](SYSTEMS.md#historical-ability-catalog-and-focused-v54-revisions) - context: Caelum Argenteum — Current systems and rules
-- Lines 13945-13991 - [Global clock and travel timestamps (4.35.0a)](SYSTEMS.md#global-clock-and-travel-timestamps-4350a) - context: Caelum Argenteum — Current systems and rules
-- Lines 13992-14029 - [Activity testing support (4.34.0e)](SYSTEMS.md#activity-testing-support-4340e) - context: Caelum Argenteum — Current systems and rules
-- Lines 14030-14076 - [Test caravans and movement cycle (4.34.0d)](SYSTEMS.md#test-caravans-and-movement-cycle-4340d) - context: Caelum Argenteum — Current systems and rules
-- Lines 14077-14135 - [Sewer and test travel network (4.34.0c)](SYSTEMS.md#sewer-and-test-travel-network-4340c) - context: Caelum Argenteum — Current systems and rules
-- Lines 14136-14169 - [Grouped doors and accesses (4.34.0b)](SYSTEMS.md#grouped-doors-and-accesses-4340b) - context: Caelum Argenteum — Current systems and rules
-- Lines 14170-14194 - [Access test](SYSTEMS.md#access-test) - context: Caelum Argenteum — Current systems and rules > Grouped doors and accesses (4.34.0b)
-- Lines 14195-14243 - [World and persistent journey (4.34.0a)](SYSTEMS.md#world-and-persistent-journey-4340a) - context: Caelum Argenteum — Current systems and rules
-- Lines 14244-14281 - [Integration and consultation contract (4.33.0ao)](SYSTEMS.md#integration-and-consultation-contract-4330ao) - context: Caelum Argenteum — Current systems and rules
-- Lines 14282-14340 - [Reputation and service conditions (4.33.0an)](SYSTEMS.md#reputation-and-service-conditions-4330an) - context: Caelum Argenteum — Current systems and rules
-- Lines 14341-14400 - [Seals and interaction (0ak), conversation and navigation (0am)](SYSTEMS.md#seals-and-interaction-0ak-conversation-and-navigation-0am) - context: Caelum Argenteum — Current systems and rules
-- Lines 14401-14459 - [Optional missions — current in 4.33.0aj](SYSTEMS.md#optional-missions--current-in-4330aj) - context: Caelum Argenteum — Current systems and rules
-- Lines 14460-14529 - [Survival consumption and regeneration - current in 5.1.4 (#131/#133/#140)](SYSTEMS.md#survival-consumption-and-regeneration---current-in-514-131133140) - context: Caelum Argenteum — Current systems and rules
-- Lines 14530-14540 - [Audit of the twelve attributes - 5.4.0 (#237)](SYSTEMS.md#audit-of-the-twelve-attributes---540-237) - context: Caelum Argenteum — Current systems and rules
-- Lines 14541-14568 - [Source, ownership and order](SYSTEMS.md#source-ownership-and-order) - context: Caelum Argenteum — Current systems and rules > Audit of the twelve attributes - 5.4.0 (#237)
-- Lines 14569-14593 - [Curves, units and boundaries](SYSTEMS.md#curves-units-and-boundaries) - context: Caelum Argenteum — Current systems and rules > Audit of the twelve attributes - 5.4.0 (#237)
-- Lines 14594-14615 - [Twelve source-to-consumer rows](SYSTEMS.md#twelve-source-to-consumer-rows) - context: Caelum Argenteum — Current systems and rules > Audit of the twelve attributes - 5.4.0 (#237)
-- Lines 14616-14641 - [Pending decisions and roadmap ownership](SYSTEMS.md#pending-decisions-and-roadmap-ownership) - context: Caelum Argenteum — Current systems and rules > Audit of the twelve attributes - 5.4.0 (#237)
-- Lines 14642-14686 - [Evidence and continuation references](SYSTEMS.md#evidence-and-continuation-references) - context: Caelum Argenteum — Current systems and rules > Audit of the twelve attributes - 5.4.0 (#237)
-- Lines 14687-14764 - [Water containers and accessories chosen — valid in 4.33.0ai](SYSTEMS.md#water-containers-and-accessories-chosen--valid-in-4330ai) - context: Caelum Argenteum — Current systems and rules
-- Lines 14765-14810 - [T1 seals: instruction and supply — 4.33.0ae](SYSTEMS.md#t1-seals-instruction-and-supply--4330ae) - context: Caelum Argenteum — Current systems and rules
-- Lines 14811-14879 - [Choice of MAP01 armor and quotas (4.33.0ad)](SYSTEMS.md#choice-of-map01-armor-and-quotas-4330ad) - context: Caelum Argenteum — Current systems and rules
-- Lines 14880-14925 - [Bolts and ammunition knowledge (4.33.0ac)](SYSTEMS.md#bolts-and-ammunition-knowledge-4330ac) - context: Caelum Argenteum — Current systems and rules
-- Lines 14926-14954 - [Breathing: optional Ronnie practice (4.33.0ab)](SYSTEMS.md#breathing-optional-ronnie-practice-4330ab) - context: Caelum Argenteum — Current systems and rules
-- Lines 14955-14983 - [Load: optional Ronnie practice (4.33.0z)](SYSTEMS.md#load-optional-ronnie-practice-4330z) - context: Caelum Argenteum — Current systems and rules
-- Lines 14984-15007 - [Air and motion: optional practice (4.33.0y)](SYSTEMS.md#air-and-motion-optional-practice-4330y) - context: Caelum Argenteum — Current systems and rules
-- Lines 15008-15036 - [Needs: optional Ronnie practice (4.33.0x)](SYSTEMS.md#needs-optional-ronnie-practice-4330x) - context: Caelum Argenteum — Current systems and rules
-- Lines 15037-15056 - [Optional maintenance with Ronnie (4.33.0w)](SYSTEMS.md#optional-maintenance-with-ronnie-4330w) - context: Caelum Argenteum — Current systems and rules
-- Lines 15057-15100 - [T1 Material Coverage — 4.33.0w Audit](SYSTEMS.md#t1-material-coverage--4330w-audit) - context: Caelum Argenteum — Current systems and rules
-- Lines 15101-15141 - [Narrative exit, inventory and arrival (4.33.0v)](SYSTEMS.md#narrative-exit-inventory-and-arrival-4330v) - context: Caelum Argenteum — Current systems and rules
-- Lines 15142-15217 - [Trucazo — Argento practice (4.37.13 / #81)](SYSTEMS.md#trucazo--argento-practice-43713--81) - context: Caelum Argenteum — Current systems and rules
-- Lines 15218-15219 - [Tarot: collection and capture of El Loco (4.33.0t)](SYSTEMS.md#tarot-collection-and-capture-of-el-loco-4330t) - context: Caelum Argenteum — Current systems and rules
-- Lines 15220-15276 - [Issue #80 approved power contract — author decision, 2026-10-04](SYSTEMS.md#issue-80-approved-power-contract--author-decision-2026-10-04) - context: Caelum Argenteum — Current systems and rules > Tarot: collection and capture of El Loco (4.33.0t)
-- Lines 15277-15348 - [Existing collection rules](SYSTEMS.md#existing-collection-rules) - context: Caelum Argenteum — Current systems and rules > Tarot: collection and capture of El Loco (4.33.0t)
-- Lines 15349-15382 - [Palomo final and single box (4.33.0s)](SYSTEMS.md#palomo-final-and-single-box-4330s) - context: Caelum Argenteum — Current systems and rules
-- Lines 15383-15409 - [Essential residents and post-combat dialogue (4.33.0r)](SYSTEMS.md#essential-residents-and-post-combat-dialogue-4330r) - context: Caelum Argenteum — Current systems and rules
-- Lines 15410-15455 - [Accompanied combat and Bull performance (4.33.0q)](SYSTEMS.md#accompanied-combat-and-bull-performance-4330q) - context: Caelum Argenteum — Current systems and rules
-- Lines 15456-15470 - [Real Shield and Sword View (4.33.0u)](SYSTEMS.md#real-shield-and-sword-view-4330u) - context: Caelum Argenteum — Current systems and rules
-- Lines 15471-15518 - [Rulo combat test (4.33.0p; updated 0u guide)](SYSTEMS.md#rulo-combat-test-4330p-updated-0u-guide) - context: Caelum Argenteum — Current systems and rules
-- Lines 15519-15526 - [Knowledge of recipes and manual removal (4.33.0o)](SYSTEMS.md#knowledge-of-recipes-and-manual-removal-4330o) - context: Caelum Argenteum — Current systems and rules
-- Lines 15527-15569 - [Historical cost and supply reference (4.33.0n–0ac)](SYSTEMS.md#historical-cost-and-supply-reference-4330n0ac) - context: Caelum Argenteum — Current systems and rules
-- Lines 15570-15607 - [Caella test (4.33.0i–0m; impact checks updated in 4.37.1 / #62)](SYSTEMS.md#caella-test-4330i0m-impact-checks-updated-in-4371--62) - context: Caelum Argenteum — Current systems and rules
-- Lines 15608-15676 - [Ronnie: choice, materials and first weapon (4.33.0l)](SYSTEMS.md#ronnie-choice-materials-and-first-weapon-4330l) - context: Caelum Argenteum — Current systems and rules
-- Lines 15677-15696 - [Crafts arrows and controls (4.33.0n)](SYSTEMS.md#crafts-arrows-and-controls-4330n) - context: Caelum Argenteum — Current systems and rules > Ronnie: choice, materials and first weapon (4.33.0l)
-- Lines 15697-15719 - [Key, Bull and Palomo’s departure (4.33.0n)](SYSTEMS.md#key-bull-and-palomos-departure-4330n) - context: Caelum Argenteum — Current systems and rules > Ronnie: choice, materials and first weapon (4.33.0l)
-- Lines 15720-15744 - [Mass of shrubs and garden migration (4.33.0m)](SYSTEMS.md#mass-of-shrubs-and-garden-migration-4330m) - context: Caelum Argenteum — Current systems and rules
-- Lines 15745-15769 - [MAP01 workshops (4.33.0m–0n)](SYSTEMS.md#map01-workshops-4330m0n) - context: Caelum Argenteum — Current systems and rules
-- Lines 15770-15782 - [Character Poses (4.33.0m)](SYSTEMS.md#character-poses-4330m) - context: Caelum Argenteum — Current systems and rules
-- Lines 15783-15827 - [Social probability](SYSTEMS.md#social-probability) - context: Caelum Argenteum — Current systems and rules
-- Lines 15828-15843 - [Resources, persistence and physics](SYSTEMS.md#resources-persistence-and-physics) - context: Caelum Argenteum — Current systems and rules
-- Lines 15844-15870 - [Mission detail (4.33.0k–0l)](SYSTEMS.md#mission-detail-4330k0l) - context: Caelum Argenteum — Current systems and rules
-- Lines 15871-15893 - [Presentation of Seal and Runes (4.33.0j)](SYSTEMS.md#presentation-of-seal-and-runes-4330j) - context: Caelum Argenteum — Current systems and rules
-- Lines 15894-15912 - [Crafting and repair](SYSTEMS.md#crafting-and-repair) - context: Caelum Argenteum — Current systems and rules
-- Lines 15913-15914 - [Common controls](SYSTEMS.md#common-controls) - context: Caelum Argenteum — Current systems and rules
-- Lines 15915-15936 - [Combat dispatch ownership (#310, 5.5.1)](SYSTEMS.md#combat-dispatch-ownership-310-551) - context: Caelum Argenteum — Current systems and rules > Common controls
-- Lines 15937-15947 - [Unarmed Seal input (#363, 5.5.5)](SYSTEMS.md#unarmed-seal-input-363-555) - context: Caelum Argenteum — Current systems and rules > Common controls
-- Lines 15948-15976 - [Input bindings](SYSTEMS.md#input-bindings) - context: Caelum Argenteum — Current systems and rules > Common controls
-- Lines 15977-16006 - [Damage and Anima cost: Type 4 divisor (4.33.0aa)](SYSTEMS.md#damage-and-anima-cost-type-4-divisor-4330aa) - context: Caelum Argenteum — Current systems and rules
-- Lines 16007-16022 - [Heavy-weapon sweep (4.33.0aa)](SYSTEMS.md#heavy-weapon-sweep-4330aa) - context: Caelum Argenteum — Current systems and rules
-- Lines 16023-16029 - [Future melee energy contract - design only (#315, 5.5.7)](SYSTEMS.md#future-melee-energy-contract---design-only-315-557) - context: Caelum Argenteum — Current systems and rules
-- Lines 16030-16057 - [Current authority and proposed replacement boundary](SYSTEMS.md#current-authority-and-proposed-replacement-boundary) - context: Caelum Argenteum — Current systems and rules > Future melee energy contract - design only (#315, 5.5.7)
-- Lines 16058-16075 - [Field, source and unit inventory](SYSTEMS.md#field-source-and-unit-inventory) - context: Caelum Argenteum — Current systems and rules > Future melee energy contract - design only (#315, 5.5.7)
-- Lines 16076-16133 - [Worked comparisons and gameplay implications](SYSTEMS.md#worked-comparisons-and-gameplay-implications) - context: Caelum Argenteum — Current systems and rules > Future melee energy contract - design only (#315, 5.5.7)
-- Lines 16134-16166 - [Required integration and approval gate](SYSTEMS.md#required-integration-and-approval-gate) - context: Caelum Argenteum — Current systems and rules > Future melee energy contract - design only (#315, 5.5.7)
-- Lines 16167-16171 - [Detailed matrix of weapons](SYSTEMS.md#detailed-matrix-of-weapons) - context: Caelum Argenteum — Current systems and rules
-- Lines 16172-16189 - [Physical melee weapons](SYSTEMS.md#physical-melee-weapons) - context: Caelum Argenteum — Current systems and rules > Detailed matrix of weapons
-- Lines 16190-16198 - [Ranged weapons](SYSTEMS.md#ranged-weapons) - context: Caelum Argenteum — Current systems and rules > Detailed matrix of weapons
-- Lines 16199-16253 - [Ammunition composition and mass contract (#313, 2026-10-19)](SYSTEMS.md#ammunition-composition-and-mass-contract-313-2026-10-19) - context: Caelum Argenteum — Current systems and rules > Detailed matrix of weapons
-- Lines 16254-16263 - [Utility tools](SYSTEMS.md#utility-tools) - context: Caelum Argenteum — Current systems and rules > Detailed matrix of weapons
-- Lines 16264-16276 - [Magical implements](SYSTEMS.md#magical-implements) - context: Caelum Argenteum — Current systems and rules > Detailed matrix of weapons
-- Lines 16277-16286 - [Essence function used by every magical implement](SYSTEMS.md#essence-function-used-by-every-magical-implement) - context: Caelum Argenteum — Current systems and rules > Detailed matrix of weapons
-- Lines 16287-16299 - [Complete magical variant list](SYSTEMS.md#complete-magical-variant-list) - context: Caelum Argenteum — Current systems and rules > Detailed matrix of weapons
-- Lines 16300-16332 - [V5.5.0 audit ownership and evidence (#309)](SYSTEMS.md#v550-audit-ownership-and-evidence-309) - context: Caelum Argenteum — Current systems and rules > Detailed matrix of weapons
-- Lines 16333-16336 - [Economy](SYSTEMS.md#economy) - context: Caelum Argenteum — Current systems and rules
-- Lines 16337-16380 - [1. Monetary unit](SYSTEMS.md#1-monetary-unit) - context: Caelum Argenteum — Current systems and rules > Economy
-- Lines 16381-16422 - [2. Base values of raw materials and consumables](SYSTEMS.md#2-base-values-of-raw-materials-and-consumables) - context: Caelum Argenteum — Current systems and rules > Economy
-- Lines 16423-16429 - [3. Recursive value of manufacture](SYSTEMS.md#3-recursive-value-of-manufacture) - context: Caelum Argenteum — Current systems and rules > Economy
-- Lines 16430-16442 - [3.1 Basic processing](SYSTEMS.md#31-basic-processing) - context: Caelum Argenteum — Current systems and rules > Economy > 3. Recursive value of manufacture
-- Lines 16443-16457 - [3.2 Components](SYSTEMS.md#32-components) - context: Caelum Argenteum — Current systems and rules > Economy > 3. Recursive value of manufacture
-- Lines 16458-16473 - [3.3 Final items](SYSTEMS.md#33-final-items) - context: Caelum Argenteum — Current systems and rules > Economy > 3. Recursive value of manufacture
-- Lines 16474-16496 - [4. Trader Margins](SYSTEMS.md#4-trader-margins) - context: Caelum Argenteum — Current systems and rules > Economy
-- Lines 16497-16516 - [5. Presentation in inventory](SYSTEMS.md#5-presentation-in-inventory) - context: Caelum Argenteum — Current systems and rules > Economy
-- Lines 16517-16534 - [6. Prisoner coin reward](SYSTEMS.md#6-prisoner-coin-reward) - context: Caelum Argenteum — Current systems and rules > Economy
-- Lines 16535-16547 - [1. Nature and Own Weight](SYSTEMS.md#1-nature-and-own-weight) - context: Caelum Argenteum — Current systems and rules > Economy
-- Lines 16548-16567 - [2. Weight reduction](SYSTEMS.md#2-weight-reduction) - context: Caelum Argenteum — Current systems and rules > Economy
-- Lines 16568-16580 - [3. Content and restrictions](SYSTEMS.md#3-content-and-restrictions) - context: Caelum Argenteum — Current systems and rules > Economy
-- Lines 16581-16592 - [4. Transactions and capacity changes](SYSTEMS.md#4-transactions-and-capacity-changes) - context: Caelum Argenteum — Current systems and rules > Economy
-- Lines 16593-16601 - [5. Interface](SYSTEMS.md#5-interface) - context: Caelum Argenteum — Current systems and rules > Economy
-- Lines 16602-16617 - [6. Acquisition and save compatibility](SYSTEMS.md#6-acquisition-and-save-compatibility) - context: Caelum Argenteum — Current systems and rules > Economy
-- Lines 16618-16642 - [7. Integration with Mission Log](SYSTEMS.md#7-integration-with-mission-log) - context: Caelum Argenteum — Current systems and rules > Economy
-- Lines 16643-16681 - [Native dialogues and audio](SYSTEMS.md#native-dialogues-and-audio) - context: Caelum Argenteum — Current systems and rules
+- Lines 462-562 - [Confirmed follow-up contract for the remaining handlers](SYSTEMS.md#confirmed-follow-up-contract-for-the-remaining-handlers) - context: Caelum Argenteum — Current systems and rules > 5.13.3 - Ordered Tarot runtime foundation (#440, partial)
+- Lines 563-594 - `5.13.2 - Reversible equipment awakening (#442)` - context: Caelum Argenteum — Current systems and rules
+- Lines 595-626 - `5.13.1 - Capture sources and unified Tarot (#441)` - context: Caelum Argenteum — Current systems and rules
+- Lines 627-633 - [V5.13 authored Tarot contract and implementation audit (#439)](SYSTEMS.md#v513-authored-tarot-contract-and-implementation-audit-439) - context: Caelum Argenteum — Current systems and rules
+- Lines 634-669 - [Delivery order and shared ownership](SYSTEMS.md#delivery-order-and-shared-ownership) - context: Caelum Argenteum — Current systems and rules > V5.13 authored Tarot contract and implementation audit (#439)
+- Lines 670-701 - [All 22 approved rows](SYSTEMS.md#all-22-approved-rows) - context: Caelum Argenteum — Current systems and rules > V5.13 authored Tarot contract and implementation audit (#439)
+- Lines 702-745 - [Pre-5.13 runtime and migration audit (historical baseline)](SYSTEMS.md#pre-513-runtime-and-migration-audit-historical-baseline) - context: Caelum Argenteum — Current systems and rules > V5.13 authored Tarot contract and implementation audit (#439)
+- Lines 746-756 - [Evidence and outstanding work](SYSTEMS.md#evidence-and-outstanding-work) - context: Caelum Argenteum — Current systems and rules > V5.13 authored Tarot contract and implementation audit (#439)
+- Lines 757-770 - [V5.12 final authority and UI integration - #435](SYSTEMS.md#v512-final-authority-and-ui-integration---435) - context: Caelum Argenteum — Current systems and rules
+- Lines 771-864 - `Earlier 5.12.7 integration checkpoints - #435` - context: Caelum Argenteum — Current systems and rules
+- Lines 865-938 - [External character profile boundary (#434, 5.12.6, in progress)](SYSTEMS.md#external-character-profile-boundary-434-5126-in-progress) - context: Caelum Argenteum — Current systems and rules
+- Lines 939-977 - [5.12.5 - Seated human card matches (#590, implementation in progress)](SYSTEMS.md#5125---seated-human-card-matches-590-implementation-in-progress) - context: Caelum Argenteum — Current systems and rules
+- Lines 978-1012 - [Organized PvP sessions (5.12.4, #438, in progress)](SYSTEMS.md#organized-pvp-sessions-5124-438-in-progress) - context: Caelum Argenteum — Current systems and rules
+- Lines 1013-1051 - [Cooperative death and recovery (5.12.3, #437, in progress)](SYSTEMS.md#cooperative-death-and-recovery-5123-437-in-progress) - context: Caelum Argenteum — Current systems and rules
+- Lines 1052-1188 - [Shared clock and unanimous time (5.12.2, #436)](SYSTEMS.md#shared-clock-and-unanimous-time-5122-436) - context: Caelum Argenteum — Current systems and rules
+- Lines 1189-1199 - [V5.12 network boundary under implementation (#435)](SYSTEMS.md#v512-network-boundary-under-implementation-435) - context: Caelum Argenteum — Current systems and rules
+- Lines 1200-1207 - [Demon disease immunity (#586, 5.11.8)](SYSTEMS.md#demon-disease-immunity-586-5118) - context: Caelum Argenteum — Current systems and rules
+- Lines 1208-1211 - [Arrival household relocation (#581, 5.11.7)](SYSTEMS.md#arrival-household-relocation-581-5117) - context: Caelum Argenteum — Current systems and rules
+- Lines 1212-1215 - [Rat disease immunity (#582, 5.11.6)](SYSTEMS.md#rat-disease-immunity-582-5116) - context: Caelum Argenteum — Current systems and rules
+- Lines 1216-1241 - [House dialogue refresh (#580, 5.11.5)](SYSTEMS.md#house-dialogue-refresh-580-5115) - context: Caelum Argenteum — Current systems and rules
+- Lines 1242-1320 - [Companion contract and implementation (5.11.4, #430)](SYSTEMS.md#companion-contract-and-implementation-5114-430) - context: Caelum Argenteum — Current systems and rules
+- Lines 1321-1326 - [Distant visual search evaluation (5.11.3, #433)](SYSTEMS.md#distant-visual-search-evaluation-5113-433) - context: Caelum Argenteum — Current systems and rules > Companion contract and implementation (5.11.4, #430)
+- Lines 1327-1342 - [Deterministic NPC derived caches (5.11.2, #432)](SYSTEMS.md#deterministic-npc-derived-caches-5112-432) - context: Caelum Argenteum — Current systems and rules > Companion contract and implementation (5.11.4, #430)
+- Lines 1343-1373 - [5.11.1 / #429 - Persistent formations and admission](SYSTEMS.md#5111--429---persistent-formations-and-admission) - context: Caelum Argenteum — Current systems and rules
+- Lines 1374-1385 - [5.11.0 / #431 - Measured runtime baseline](SYSTEMS.md#5110--431---measured-runtime-baseline) - context: Caelum Argenteum — Current systems and rules
+- Lines 1386-1429 - [5.10.3 / #428 - Audible reports and leader orders](SYSTEMS.md#5103--428---audible-reports-and-leader-orders) - context: Caelum Argenteum — Current systems and rules
+- Lines 1430-1461 - [5.10.2 / #427 - Private memory and point investigation](SYSTEMS.md#5102--427---private-memory-and-point-investigation) - context: Caelum Argenteum — Current systems and rules
+- Lines 1462-1499 - [5.10.1 / #426 - Anonymous action noise](SYSTEMS.md#5101--426---anonymous-action-noise) - context: Caelum Argenteum — Current systems and rules
+- Lines 1500-1542 - [5.10.0 / #425 - Visual observation and private recognition](SYSTEMS.md#5100--425---visual-observation-and-private-recognition) - context: Caelum Argenteum — Current systems and rules
+- Lines 1543-1557 - [5.9.7 / #423 - Cosmetic port wardrobe ownership](SYSTEMS.md#597--423---cosmetic-port-wardrobe-ownership) - context: Caelum Argenteum — Current systems and rules
+- Lines 1558-1581 - [5.9.6 / #424 - Faction service consequences](SYSTEMS.md#596--424---faction-service-consequences) - context: Caelum Argenteum — Current systems and rules
+- Lines 1582-1614 - [5.9.5 / #422 - House and siege investigations](SYSTEMS.md#595--422---house-and-siege-investigations) - context: Caelum Argenteum — Current systems and rules
+- Lines 1615-1635 - [5.9.4 / #421 - Barracas story and heard accounts](SYSTEMS.md#594--421---barracas-story-and-heard-accounts) - context: Caelum Argenteum — Current systems and rules
+- Lines 1636-1646 - [5.9.3 / #420 - Campaign membership](SYSTEMS.md#593--420---campaign-membership) - context: Caelum Argenteum — Current systems and rules
+- Lines 1647-1684 - [5.9.2 / #419 - Private port emotions and explicit reports](SYSTEMS.md#592--419---private-port-emotions-and-explicit-reports) - context: Caelum Argenteum — Current systems and rules
+- Lines 1685-1723 - [5.9.1 / #420 - Faction ranks and recorded consequences](SYSTEMS.md#591--420---faction-ranks-and-recorded-consequences) - context: Caelum Argenteum — Current systems and rules
+- Lines 1724-1751 - [5.9.0 / #418 - Shared quest requirements and narrative observations](SYSTEMS.md#590--418---shared-quest-requirements-and-narrative-observations) - context: Caelum Argenteum — Current systems and rules
+- Lines 1752-1756 - `5.8.55 / #415 - Remove repeated global Rally lookups` - context: Caelum Argenteum — Current systems and rules
+- Lines 1757-1762 - [5.8.54 furniture review corrections (#410)](SYSTEMS.md#5854-furniture-review-corrections-410) - context: Caelum Argenteum — Current systems and rules
+- Lines 1763-1770 - [5.8.53 incident delivery status (#417)](SYSTEMS.md#5853-incident-delivery-status-417) - context: Caelum Argenteum — Current systems and rules
+- Lines 1771-1777 - [5.8.52 transport delivery status (#416)](SYSTEMS.md#5852-transport-delivery-status-416) - context: Caelum Argenteum — Current systems and rules
+- Lines 1778-1798 - [5.8.51 - Final absent-dispatch contract (#415)](SYSTEMS.md#5851---final-absent-dispatch-contract-415) - context: Caelum Argenteum — Current systems and rules
+- Lines 1799-1823 - [Unreleased #417 travel incidents - 2026-10-29](SYSTEMS.md#unreleased-417-travel-incidents---2026-10-29) - context: Caelum Argenteum — Current systems and rules
+- Lines 1824-1907 - `Unreleased #416 transport catalogue - 2026-10-29` - context: Caelum Argenteum — Current systems and rules
+- Lines 1908-2001 - [Unreleased #415 integration](SYSTEMS.md#unreleased-415-integration) - context: Caelum Argenteum — Current systems and rules
+- Lines 2002-2029 - [5.8.50 - Physical contact coverage (#502)](SYSTEMS.md#5850---physical-contact-coverage-502) - context: Caelum Argenteum — Current systems and rules
+- Lines 2030-2068 - [5.8.49 - Physical inventory surfaces and shared food lots (#502)](SYSTEMS.md#5849---physical-inventory-surfaces-and-shared-food-lots-502) - context: Caelum Argenteum — Current systems and rules
+- Lines 2069-2094 - [5.8.48 - Vessel exterior surfaces (#502)](SYSTEMS.md#5848---vessel-exterior-surfaces-502) - context: Caelum Argenteum — Current systems and rules
+- Lines 2095-2136 - [5.8.47 - Abstract stack surfaces and exposure (#502)](SYSTEMS.md#5847---abstract-stack-surfaces-and-exposure-502) - context: Caelum Argenteum — Current systems and rules
+- Lines 2137-2179 - [5.8.46 - NPC physiology during map absence (#502)](SYSTEMS.md#5846---npc-physiology-during-map-absence-502) - context: Caelum Argenteum — Current systems and rules
+- Lines 2180-2202 - [5.8.45 - Dining-table contact ownership (#502)](SYSTEMS.md#5845---dining-table-contact-ownership-502) - context: Caelum Argenteum — Current systems and rules
+- Lines 2203-2232 - [5.8.44 - Decorative paintings and statues (#410)](SYSTEMS.md#5844---decorative-paintings-and-statues-410) - context: Caelum Argenteum — Current systems and rules
+- Lines 2233-2275 - [5.8.43 - Unloaded household cleaning (#502)](SYSTEMS.md#5843---unloaded-household-cleaning-502) - context: Caelum Argenteum — Current systems and rules
+- Lines 2276-2301 - [5.8.42 - Household furnishing contamination across absence (#502)](SYSTEMS.md#5842---household-furnishing-contamination-across-absence-502) - context: Caelum Argenteum — Current systems and rules
+- Lines 2302-2336 - [5.8.41 - Household storage persistence (#502)](SYSTEMS.md#5841---household-storage-persistence-502) - context: Caelum Argenteum — Current systems and rules
+- Lines 2337-2388 - [5.8.40 - Portable complete dining sets (#410)](SYSTEMS.md#5840---portable-complete-dining-sets-410) - context: Caelum Argenteum — Current systems and rules
+- Lines 2389-2415 - [5.8.39 - Shared aim and mean-hit estimates (#415)](SYSTEMS.md#5839---shared-aim-and-mean-hit-estimates-415) - context: Caelum Argenteum — Current systems and rules
+- Lines 2416-2442 - [5.8.38 - Loaded NPC illness and natural depuration (#502)](SYSTEMS.md#5838---loaded-npc-illness-and-natural-depuration-502) - context: Caelum Argenteum — Current systems and rules
+- Lines 2443-2465 - [5.8.37 - Temporary climate and object exposure (#502)](SYSTEMS.md#5837---temporary-climate-and-object-exposure-502) - context: Caelum Argenteum — Current systems and rules
+- Lines 2466-2499 - [5.8.36 - Study furniture acquisition (#410)](SYSTEMS.md#5836---study-furniture-acquisition-410) - context: Caelum Argenteum — Current systems and rules
+- Lines 2500-2523 - [5.8.35 / #410 - Sofa acquisition and assembly transport](SYSTEMS.md#5835--410---sofa-acquisition-and-assembly-transport) - context: Caelum Argenteum — Current systems and rules
+- Lines 2524-2543 - [5.8.34 / #410 - Ordinary furniture acquisition](SYSTEMS.md#5834--410---ordinary-furniture-acquisition) - context: Caelum Argenteum — Current systems and rules
+- Lines 2544-2574 - [5.8.33 / #410 - Ordinary chair and raised cot scale](SYSTEMS.md#5833--410---ordinary-chair-and-raised-cot-scale) - context: Caelum Argenteum — Current systems and rules
+- Lines 2575-2601 - [5.8.32 / #410 - Luxury rest furniture acquisition](SYSTEMS.md#5832--410---luxury-rest-furniture-acquisition) - context: Caelum Argenteum — Current systems and rules
+- Lines 2602-2634 - [Storage furniture supply - 5.8.31 (#410)](SYSTEMS.md#storage-furniture-supply---5831-410) - context: Caelum Argenteum — Current systems and rules
+- Lines 2635-2665 - [5.8.30 - Luxury furniture and movable supply decision (#410)](SYSTEMS.md#5830---luxury-furniture-and-movable-supply-decision-410) - context: Caelum Argenteum — Current systems and rules
+- Lines 2666-2693 - [5.8.29 - Sofa seats (#410)](SYSTEMS.md#5829---sofa-seats-410) - context: Caelum Argenteum — Current systems and rules
+- Lines 2694-2716 - `5.8.28 - Regional weather history for objects (#502)` - context: Caelum Argenteum — Current systems and rules
+- Lines 2717-2732 - `5.8.27 - Indoor furniture placement (#411)` - context: Caelum Argenteum — Current systems and rules
+- Lines 2733-2753 - [5.8.26 - Actual bookcase contents and desk reading (#410)](SYSTEMS.md#5826---actual-bookcase-contents-and-desk-reading-410) - context: Caelum Argenteum — Current systems and rules
+- Lines 2754-2799 - [5.8.25 - Independent fountain and cistern (#410)](SYSTEMS.md#5825---independent-fountain-and-cistern-410) - context: Caelum Argenteum — Current systems and rules
+- Lines 2800-2831 - [5.8.24 - Wardrobe storage and delegated physical specification (#410)](SYSTEMS.md#5824---wardrobe-storage-and-delegated-physical-specification-410) - context: Caelum Argenteum — Current systems and rules
+- Lines 2832-2857 - `5.8.23 - Constant Limbo exposure across absence (#502)` - context: Caelum Argenteum — Current systems and rules
+- Lines 2858-2892 - `5.8.22 - Shared-water mansion bathroom fixtures (#410)` - context: Caelum Argenteum — Current systems and rules
+- Lines 2893-2935 - `5.8.21 - Attended camp cooking and fuel interruption (#411)` - context: Caelum Argenteum — Current systems and rules
+- Lines 2936-2967 - `5.8.20 - Mansion kitchen sink and wall cupboard (#410)` - context: Caelum Argenteum — Current systems and rules
+- Lines 2968-3017 - `5.8.19 - Attended cooking and shared bread proofing (#410)` - context: Caelum Argenteum — Current systems and rules
+- Lines 3018-3050 - `5.8.18 - Prepared meal items and consumption (#410)` - context: Caelum Argenteum — Current systems and rules
+- Lines 3051-3090 - `5.8.17 - Kitchen ingredients (#410)` - context: Caelum Argenteum — Current systems and rules
+- Lines 3091-3108 - `5.8.16 - Non-solid physical scenery exposure (#502)` - context: Caelum Argenteum — Current systems and rules
+- Lines 3109-3156 - [5.8.15 - Bag footprint and tent clearance (#412)](SYSTEMS.md#5815---bag-footprint-and-tent-clearance-412) - context: Caelum Argenteum — Current systems and rules
+- Lines 3157-3356 - `5.8.12 - Metabolic toilet sessions (#502, in progress)` - context: Caelum Argenteum — Current systems and rules
+- Lines 3357-3502 - `5.8.12 - Metabolic toilet sessions (#502, in progress) [part 2]` - context: Caelum Argenteum — Current systems and rules
+- Lines 3503-3506 - [5.8.11 - Household bathroom installation (#410)](SYSTEMS.md#5811---household-bathroom-installation-410) - context: Caelum Argenteum — Current systems and rules
+- Lines 3507-3529 - [5.8.10 - Tent rest integration (#412)](SYSTEMS.md#5810---tent-rest-integration-412) - context: Caelum Argenteum — Current systems and rules
+- Lines 3530-3729 - `5.8.9 - Contamination and hygiene contract (#502)` - context: Caelum Argenteum — Current systems and rules
+- Lines 3730-3735 - `5.8.9 - Contamination and hygiene contract (#502) [part 2]` - context: Caelum Argenteum — Current systems and rules
+- Lines 3736-3905 - [Central property contracts (#411, 5.8.6 in progress)](SYSTEMS.md#central-property-contracts-411-586-in-progress) - context: Caelum Argenteum — Current systems and rules
+- Lines 3906-3915 - [Regional event discovery (#415, 5.8.5 in progress)](SYSTEMS.md#regional-event-discovery-415-585-in-progress) - context: Caelum Argenteum — Current systems and rules
+- Lines 3916-4034 - [Food contamination and cooking contract (#410, 5.8.3 in progress)](SYSTEMS.md#food-contamination-and-cooking-contract-410-583-in-progress) - context: Caelum Argenteum — Current systems and rules
+- Lines 4035-4077 - [Connected-water production (#414, 5.8.2)](SYSTEMS.md#connected-water-production-414-582) - context: Caelum Argenteum — Current systems and rules
+- Lines 4078-4127 - [Altitude and acclimatization (#413, 5.8.1)](SYSTEMS.md#altitude-and-acclimatization-413-581) - context: Caelum Argenteum — Current systems and rules
+- Lines 4128-4158 - [Connected-water feasibility boundary (#414, 5.8.0)](SYSTEMS.md#connected-water-feasibility-boundary-414-580) - context: Caelum Argenteum — Current systems and rules
+- Lines 4159-4214 - [Reusable mates (#472, 5.7.14)](SYSTEMS.md#reusable-mates-472-5714) - context: Caelum Argenteum — Current systems and rules
+- Lines 4215-4260 - [Chemistry batches (#471, 5.7.13)](SYSTEMS.md#chemistry-batches-471-5713) - context: Caelum Argenteum — Current systems and rules
+- Lines 4261-4291 - [Abstract ammunition supplies and transaction rules](SYSTEMS.md#abstract-ammunition-supplies-and-transaction-rules) - context: Caelum Argenteum — Current systems and rules
+- Lines 4292-4322 - [Fermentation Barrel (#487, 5.7.12)](SYSTEMS.md#fermentation-barrel-487-5712) - context: Caelum Argenteum — Current systems and rules
+- Lines 4323-4339 - [#471 approved fermentation lifecycle](SYSTEMS.md#471-approved-fermentation-lifecycle) - context: Caelum Argenteum — Current systems and rules
+- Lines 4340-4407 - [#479 support implements and 5.7.8 integration](SYSTEMS.md#479-support-implements-and-578-integration) - context: Caelum Argenteum — Current systems and rules
+- Lines 4408-4435 - [Aimed-target panel (#481, 5.7.7)](SYSTEMS.md#aimed-target-panel-481-577) - context: Caelum Argenteum — Current systems and rules
+- Lines 4436-4450 - [Chemistry art and regional source decision (#471, 5.7.6)](SYSTEMS.md#chemistry-art-and-regional-source-decision-471-576) - context: Caelum Argenteum — Current systems and rules
+- Lines 4451-4482 - [Marine imports and iodine (#407, 5.7.5)](SYSTEMS.md#marine-imports-and-iodine-407-575) - context: Caelum Argenteum — Current systems and rules
+- Lines 4483-4506 - [Chemistry station infrastructure (#470, 5.7.4)](SYSTEMS.md#chemistry-station-infrastructure-470-574) - context: Caelum Argenteum — Current systems and rules
+- Lines 4507-4529 - [Source recovery (#406, 5.7.3)](SYSTEMS.md#source-recovery-406-573) - context: Caelum Argenteum — Current systems and rules
+- Lines 4530-4538 - [Regional resource contract (#404, 5.7.1)](SYSTEMS.md#regional-resource-contract-404-571) - context: Caelum Argenteum — Current systems and rules
+- Lines 4539-4599 - [Existing sources and consumers: preserve these values](SYSTEMS.md#existing-sources-and-consumers-preserve-these-values) - context: Caelum Argenteum — Current systems and rules > Regional resource contract (#404, 5.7.1)
+- Lines 4600-4631 - [Approved sources: #405 integration; #406 recovery verification](SYSTEMS.md#approved-sources-405-integration-406-recovery-verification) - context: Caelum Argenteum — Current systems and rules > Regional resource contract (#404, 5.7.1)
+- Lines 4632-4671 - [Marine and processing audit: approved chains, unresolved numbers](SYSTEMS.md#marine-and-processing-audit-approved-chains-unresolved-numbers) - context: Caelum Argenteum — Current systems and rules > Regional resource contract (#404, 5.7.1)
+- Lines 4672-4731 - [Related approved boundaries for subsequent issues](SYSTEMS.md#related-approved-boundaries-for-subsequent-issues) - context: Caelum Argenteum — Current systems and rules > Regional resource contract (#404, 5.7.1)
+- Lines 4732-4780 - [Land source integration (#405, 5.7.2)](SYSTEMS.md#land-source-integration-405-572) - context: Caelum Argenteum — Current systems and rules
+- Lines 4781-4831 - [Water quality and native containers (#408, 5.7.0)](SYSTEMS.md#water-quality-and-native-containers-408-570) - context: Caelum Argenteum — Current systems and rules
+- Lines 4832-4875 - [City replenishment and source policy (#385, 5.6.11)](SYSTEMS.md#city-replenishment-and-source-policy-385-5611) - context: Caelum Argenteum — Current systems and rules
+- Lines 4876-4916 - [City catalogue extension (#383, 5.6.10)](SYSTEMS.md#city-catalogue-extension-383-5610) - context: Caelum Argenteum — Current systems and rules
+- Lines 4917-4936 - [Cartridge assembly (#380, 5.6.9)](SYSTEMS.md#cartridge-assembly-380-569) - context: Caelum Argenteum — Current systems and rules
+- Lines 4937-4980 - [Approved cartridge kits and assembly handoff (#379, 5.6.8)](SYSTEMS.md#approved-cartridge-kits-and-assembly-handoff-379-568) - context: Caelum Argenteum — Current systems and rules
+- Lines 4981-5019 - [One-time loot with existing tables (#384, 5.6.4)](SYSTEMS.md#one-time-loot-with-existing-tables-384-564) - context: Caelum Argenteum — Current systems and rules
+- Lines 5020-5028 - [Ordinary clothing: approved native catalogue (#386, 5.6.6)](SYSTEMS.md#ordinary-clothing-approved-native-catalogue-386-566) - context: Caelum Argenteum — Current systems and rules
+- Lines 5029-5053 - [Authorities and native item boundary](SYSTEMS.md#authorities-and-native-item-boundary) - context: Caelum Argenteum — Current systems and rules > Ordinary clothing: approved native catalogue (#386, 5.6.6)
+- Lines 5054-5113 - [Garments, recipes, price and work](SYSTEMS.md#garments-recipes-price-and-work) - context: Caelum Argenteum — Current systems and rules > Ordinary clothing: approved native catalogue (#386, 5.6.6)
+- Lines 5114-5137 - [Proposed complete combinations and condition](SYSTEMS.md#proposed-complete-combinations-and-condition) - context: Caelum Argenteum — Current systems and rules > Ordinary clothing: approved native catalogue (#386, 5.6.6)
+- Lines 5138-5164 - [Proposed thermal and wetness contract](SYSTEMS.md#proposed-thermal-and-wetness-contract) - context: Caelum Argenteum — Current systems and rules > Ordinary clothing: approved native catalogue (#386, 5.6.6)
+- Lines 5165-5187 - [Proposed initial/legacy entitlement and acquisition](SYSTEMS.md#proposed-initiallegacy-entitlement-and-acquisition) - context: Caelum Argenteum — Current systems and rules > Ordinary clothing: approved native catalogue (#386, 5.6.6)
+- Lines 5188-5219 - [Review boundary and handoff to #387](SYSTEMS.md#review-boundary-and-handoff-to-387) - context: Caelum Argenteum — Current systems and rules > Ordinary clothing: approved native catalogue (#386, 5.6.6)
+- Lines 5220-5244 - [Lock tools, lawful access and theft witnesses (#382, 5.6.5)](SYSTEMS.md#lock-tools-lawful-access-and-theft-witnesses-382-565) - context: Caelum Argenteum — Current systems and rules
+- Lines 5245-5274 - [Approved tools and sources](SYSTEMS.md#approved-tools-and-sources) - context: Caelum Argenteum — Current systems and rules > Lock tools, lawful access and theft witnesses (#382, 5.6.5)
+- Lines 5275-5298 - [Approved ownership and alert matrix](SYSTEMS.md#approved-ownership-and-alert-matrix) - context: Caelum Argenteum — Current systems and rules > Lock tools, lawful access and theft witnesses (#382, 5.6.5)
+- Lines 5299-5315 - [Household placement and delivery boundaries](SYSTEMS.md#household-placement-and-delivery-boundaries) - context: Caelum Argenteum — Current systems and rules > Lock tools, lawful access and theft witnesses (#382, 5.6.5)
+- Lines 5316-5392 - [Recipe sheets, reading and practice (#378, 5.6.3)](SYSTEMS.md#recipe-sheets-reading-and-practice-378-563) - context: Caelum Argenteum — Current systems and rules
+- Lines 5393-5462 - [Ordinary native containers (#381, 5.6.2)](SYSTEMS.md#ordinary-native-containers-381-562) - context: Caelum Argenteum — Current systems and rules
+- Lines 5463-5489 - [Merchant coordination and commit ownership (#377, 5.6.1)](SYSTEMS.md#merchant-coordination-and-commit-ownership-377-561) - context: Caelum Argenteum — Current systems and rules
+- Lines 5490-5527 - [Crafting coordinator and unchanged state ownership (#376, 5.6.0)](SYSTEMS.md#crafting-coordinator-and-unchanged-state-ownership-376-560) - context: Caelum Argenteum — Current systems and rules
+- Lines 5528-5563 - [Bull presentation and reversible saves (#369, 5.5.8)](SYSTEMS.md#bull-presentation-and-reversible-saves-369-558) - context: Caelum Argenteum — Current systems and rules
+- Lines 5564-5588 - [Maximum siege adrenaline in production (#361, 5.4.47)](SYSTEMS.md#maximum-siege-adrenaline-in-production-361-5447) - context: Caelum Argenteum — Current systems and rules
+- Lines 5589-5599 - [Demon breath excludes navigation markers (#357, 5.4.45)](SYSTEMS.md#demon-breath-excludes-navigation-markers-357-5445) - context: Caelum Argenteum — Current systems and rules
+- Lines 5600-5611 - [Structural-cache research outcome (#354, 5.4.44)](SYSTEMS.md#structural-cache-research-outcome-354-5444) - context: Caelum Argenteum — Current systems and rules
+- Lines 5612-5636 - [Production actor maintenance (#353, 5.4.43)](SYSTEMS.md#production-actor-maintenance-353-5443) - context: Caelum Argenteum — Current systems and rules
+- Lines 5637-5669 - [Actor-local maintenance experiment and siege focus (#318, 5.4.42)](SYSTEMS.md#actor-local-maintenance-experiment-and-siege-focus-318-5442) - context: Caelum Argenteum — Current systems and rules
+- Lines 5670-5682 - [Isolated performance controls (#318, 5.4.41)](SYSTEMS.md#isolated-performance-controls-318-5441) - context: Caelum Argenteum — Current systems and rules
+- Lines 5683-5717 - [Shared rest and acceleration safety (#325, 5.4.40)](SYSTEMS.md#shared-rest-and-acceleration-safety-325-5440) - context: Caelum Argenteum — Current systems and rules
+- Lines 5718-5736 - [Voluntary-jump wall cushioning (#339, 5.4.39)](SYSTEMS.md#voluntary-jump-wall-cushioning-339-5439) - context: Caelum Argenteum — Current systems and rules
+- Lines 5737-5745 - [Complete map-legend collapse (#321, 5.4.38)](SYSTEMS.md#complete-map-legend-collapse-321-5438) - context: Caelum Argenteum — Current systems and rules
+- Lines 5746-5762 - [House doors do not inherit vehicle presentation (#334)](SYSTEMS.md#house-doors-do-not-inherit-vehicle-presentation-334) - context: Caelum Argenteum — Current systems and rules
+- Lines 5763-5795 - [5.4.35 - Coherent prisoner escort movement (#322)](SYSTEMS.md#5435---coherent-prisoner-escort-movement-322) - context: Caelum Argenteum — Current systems and rules
+- Lines 5796-5831 - [Automatic saves after five minutes of active play (#324)](SYSTEMS.md#automatic-saves-after-five-minutes-of-active-play-324) - context: Caelum Argenteum — Current systems and rules
+- Lines 5832-5848 - [5.4.31 - Collapsible automap legend (#321)](SYSTEMS.md#5431---collapsible-automap-legend-321) - context: Caelum Argenteum — Current systems and rules
+- Lines 5849-5860 - [5.4.30 - Sleeping bag in quick items (#319)](SYSTEMS.md#5430---sleeping-bag-in-quick-items-319) - context: Caelum Argenteum — Current systems and rules
+- Lines 5861-5928 - [5.4.29 - Current map catalogue and staged city siege (#327)](SYSTEMS.md#5429---current-map-catalogue-and-staged-city-siege-327) - context: Caelum Argenteum — Current systems and rules
+- Lines 5929-6086 - [5.4.28 - Contact-only breath and performance boundaries (#318)](SYSTEMS.md#5428---contact-only-breath-and-performance-boundaries-318) - context: Caelum Argenteum — Current systems and rules
+- Lines 6087-6101 - `5.4.27 - Normal-speed prisoner following (#307)` - context: Caelum Argenteum — Current systems and rules
+- Lines 6102-6115 - [5.4.26 - Seal-query index (#305)](SYSTEMS.md#5426---seal-query-index-305) - context: Caelum Argenteum — Current systems and rules
+- Lines 6116-6136 - [5.4.25 - MAP06 corpse archive and diagnostic boundaries (#304)](SYSTEMS.md#5425---map06-corpse-archive-and-diagnostic-boundaries-304) - context: Caelum Argenteum — Current systems and rules
+- Lines 6137-6167 - [5.4.24 - Demon machete, personality and projectile presentation (#284)](SYSTEMS.md#5424---demon-machete-personality-and-projectile-presentation-284) - context: Caelum Argenteum — Current systems and rules
+- Lines 6168-6221 - [5.4.23 - Opt-in Domingo model presentation (#283, accepted prototype)](SYSTEMS.md#5423---opt-in-domingo-model-presentation-283-accepted-prototype) - context: Caelum Argenteum — Current systems and rules
+- Lines 6222-6252 - [5.4.22 - Gameplay quick-use selector (#282)](SYSTEMS.md#5422---gameplay-quick-use-selector-282) - context: Caelum Argenteum — Current systems and rules
+- Lines 6253-6304 - [5.4.21 - Seal climate extensions (#252, accepted)](SYSTEMS.md#5421---seal-climate-extensions-252-accepted) - context: Caelum Argenteum — Current systems and rules
+- Lines 6305-6363 - [Arcane Cloud implementation decisions (#251, in progress)](SYSTEMS.md#arcane-cloud-implementation-decisions-251-in-progress) - context: Caelum Argenteum — Current systems and rules
+- Lines 6364-6370 - [Arcane Cloud asset checkpoint (#251 / 5.4.5, historical scope)](SYSTEMS.md#arcane-cloud-asset-checkpoint-251--545-historical-scope) - context: Caelum Argenteum — Current systems and rules
+- Lines 6371-6413 - [Pilgrim Redemption - 5.4.19 / #250](SYSTEMS.md#pilgrim-redemption---5419--250) - context: Caelum Argenteum — Current systems and rules
+- Lines 6414-6453 - [Battle Mage Summoning - 5.4.18 / #249](SYSTEMS.md#battle-mage-summoning---5418--249) - context: Caelum Argenteum — Current systems and rules
+- Lines 6454-6502 - [Rally - 5.4.17 / #248](SYSTEMS.md#rally---5417--248) - context: Caelum Argenteum — Current systems and rules
+- Lines 6503-6548 - [Mercenary Formation Breaker - 5.4.16 / #247](SYSTEMS.md#mercenary-formation-breaker---5416--247) - context: Caelum Argenteum — Current systems and rules
+- Lines 6549-6601 - [Player constant acceleration and directional impulse - 5.4.15 / #260](SYSTEMS.md#player-constant-acceleration-and-directional-impulse---5415--260) - context: Caelum Argenteum — Current systems and rules
+- Lines 6602-6621 - [MAP01 resident movement repair - 5.4.14 / #253](SYSTEMS.md#map01-resident-movement-repair---5414--253) - context: Caelum Argenteum — Current systems and rules
+- Lines 6622-6671 - [Arcane Sun - 5.4.13 / #246](SYSTEMS.md#arcane-sun---5413--246) - context: Caelum Argenteum — Current systems and rules
+- Lines 6672-6708 - [Miracle - 5.4.12 / #245](SYSTEMS.md#miracle---5412--245) - context: Caelum Argenteum — Current systems and rules
+- Lines 6709-6746 - [Survival Instinct - 5.4.11 / #244](SYSTEMS.md#survival-instinct---5411--244) - context: Caelum Argenteum — Current systems and rules
+- Lines 6747-6779 - [Battle Cry - 5.4.10 / #243](SYSTEMS.md#battle-cry---5410--243) - context: Caelum Argenteum — Current systems and rules
+- Lines 6780-6818 - [Hunter's Instinct - 5.4.9 / #239](SYSTEMS.md#hunters-instinct---549--239) - context: Caelum Argenteum — Current systems and rules
+- Lines 6819-6850 - [Socialization - 5.4.8 / #240](SYSTEMS.md#socialization---548--240) - context: Caelum Argenteum — Current systems and rules
+- Lines 6851-6891 - [Telekinesis - 5.4.7 / #241](SYSTEMS.md#telekinesis---547--241) - context: Caelum Argenteum — Current systems and rules
+- Lines 6892-6922 - [Supernatural Breathing - 5.4.6 / #242](SYSTEMS.md#supernatural-breathing---546--242) - context: Caelum Argenteum — Current systems and rules
+- Lines 6923-7023 - [Class preparation and revised Sleep (#238)](SYSTEMS.md#class-preparation-and-revised-sleep-238) - context: Caelum Argenteum — Current systems and rules
+- Lines 7024-7041 - [MAP02 rat movement and sound - 5.4.3 / #254](SYSTEMS.md#map02-rat-movement-and-sound---543--254) - context: Caelum Argenteum — Current systems and rules
+- Lines 7042-7095 - [Equipped-Seal elemental resistance - 5.4.2 / #261](SYSTEMS.md#equipped-seal-elemental-resistance---542--261) - context: Caelum Argenteum — Current systems and rules
+- Lines 7096-7142 - [5.3.9 - Exploration navigation and owned documents (#236)](SYSTEMS.md#539---exploration-navigation-and-owned-documents-236) - context: Caelum Argenteum — Current systems and rules
+- Lines 7143-7217 - [5.3.8 - Multiple tracked missions (#235)](SYSTEMS.md#538---multiple-tracked-missions-235) - context: Caelum Argenteum — Current systems and rules
+- Lines 7218-7293 - [5.3.7 - Authored local exploration (#234)](SYSTEMS.md#537---authored-local-exploration-234) - context: Caelum Argenteum — Current systems and rules
+- Lines 7294-7344 - [5.3.6 - Personal manual map notes (#233)](SYSTEMS.md#536---personal-manual-map-notes-233) - context: Caelum Argenteum — Current systems and rules
+- Lines 7345-7397 - [5.3.5 - Personal local POI knowledge (#232)](SYSTEMS.md#535---personal-local-poi-knowledge-232) - context: Caelum Argenteum — Current systems and rules
+- Lines 7398-7446 - `5.3.4 - Native local cartography (#231)` - context: Caelum Argenteum — Current systems and rules
+- Lines 7447-7486 - [5.3.3 - Involuntary exhaustion sleep (#258)](SYSTEMS.md#533---involuntary-exhaustion-sleep-258) - context: Caelum Argenteum — Current systems and rules
+- Lines 7487-7529 - [5.3.2 - Automatic food and water (#257)](SYSTEMS.md#532---automatic-food-and-water-257) - context: Caelum Argenteum — Current systems and rules
+- Lines 7530-7570 - [5.3.1 - Character resources and combat readouts (#256)](SYSTEMS.md#531---character-resources-and-combat-readouts-256) - context: Caelum Argenteum — Current systems and rules
+- Lines 7571-7585 - [5.3.0 - Right-edge power indicators (#255)](SYSTEMS.md#530---right-edge-power-indicators-255) - context: Caelum Argenteum — Current systems and rules
+- Lines 7586-7595 - [5.2.27 - One-gram empty Magic Box (#229)](SYSTEMS.md#5227---one-gram-empty-magic-box-229) - context: Caelum Argenteum — Current systems and rules
+- Lines 7596-7614 - [5.2.26 - Visible rest action feedback (#227)](SYSTEMS.md#5226---visible-rest-action-feedback-227) - context: Caelum Argenteum — Current systems and rules
+- Lines 7615-7637 - [5.2.22 - Parenthesized menu controls (#215)](SYSTEMS.md#5222---parenthesized-menu-controls-215) - context: Caelum Argenteum — Current systems and rules
+- Lines 7638-7645 - `5.2.21 - Visible tutorial gold (#216)` - context: Caelum Argenteum — Current systems and rules
+- Lines 7646-7671 - [5.2.20 - Edge-anchored resource bars (#213)](SYSTEMS.md#5220---edge-anchored-resource-bars-213) - context: Caelum Argenteum — Current systems and rules
+- Lines 7672-7717 - [5.2.19 - Landing capacity for horizontal cushioning (#211)](SYSTEMS.md#5219---landing-capacity-for-horizontal-cushioning-211) - context: Caelum Argenteum — Current systems and rules
+- Lines 7718-7739 - [5.2.18 - Rest presentation and contextual input (#209)](SYSTEMS.md#5218---rest-presentation-and-contextual-input-209) - context: Caelum Argenteum — Current systems and rules
+- Lines 7740-7761 - [5.2.17 - MAP01 minimum player health (#207)](SYSTEMS.md#5217---map01-minimum-player-health-207) - context: Caelum Argenteum — Current systems and rules
+- Lines 7762-7773 - [5.2.16 - Native fullscreen cursor preference (#204)](SYSTEMS.md#5216---native-fullscreen-cursor-preference-204) - context: Caelum Argenteum — Current systems and rules
+- Lines 7774-7829 - [5.2.15 - Readability, native crosshair and comfort (#150)](SYSTEMS.md#5215---readability-native-crosshair-and-comfort-150) - context: Caelum Argenteum — Current systems and rules
+- Lines 7830-7884 - [5.2.14 - Native input ownership, groups and hints (#149)](SYSTEMS.md#5214---native-input-ownership-groups-and-hints-149) - context: Caelum Argenteum — Current systems and rules
+- Lines 7885-7923 - [Saved cosmetics and native preview - 5.2.13 / #148](SYSTEMS.md#saved-cosmetics-and-native-preview---5213--148) - context: Caelum Argenteum — Current systems and rules
+- Lines 7924-8009 - [Bull charge, resident tools and personality - 5.2.12 / #195](SYSTEMS.md#bull-charge-resident-tools-and-personality---5212--195) - context: Caelum Argenteum — Current systems and rules
+- Lines 8010-8086 - [Collision energy and contact area - 5.2.11 / #194](SYSTEMS.md#collision-energy-and-contact-area---5211--194) - context: Caelum Argenteum — Current systems and rules
+- Lines 8087-8155 - [Continuous pressure, static load and crushing ceilings](SYSTEMS.md#continuous-pressure-static-load-and-crushing-ceilings) - context: Caelum Argenteum — Current systems and rules > Collision energy and contact area - 5.2.11 / #194
+- Lines 8156-8175 - [Reference values and evidence](SYSTEMS.md#reference-values-and-evidence) - context: Caelum Argenteum — Current systems and rules > Collision energy and contact area - 5.2.11 / #194
+- Lines 8176-8263 - [Personality, magical power and ranged penetration - 5.2.10 / #192](SYSTEMS.md#personality-magical-power-and-ranged-penetration---5210--192) - context: Caelum Argenteum — Current systems and rules
+- Lines 8264-8336 - [Mass-based Toughness and sustained resistance - 5.2.8 / #188](SYSTEMS.md#mass-based-toughness-and-sustained-resistance---528--188) - context: Caelum Argenteum — Current systems and rules
+- Lines 8337-8373 - [Native interactive menus - 5.2.7 / #189](SYSTEMS.md#native-interactive-menus---527--189) - context: Caelum Argenteum — Current systems and rules
+- Lines 8374-8404 - [Mouse interaction contract - 5.2.6 / #184](SYSTEMS.md#mouse-interaction-contract---526--184) - context: Caelum Argenteum — Current systems and rules
+- Lines 8405-8424 - [Dialogue and localization source navigation - 5.2.5 / #185](SYSTEMS.md#dialogue-and-localization-source-navigation---525--185) - context: Caelum Argenteum — Current systems and rules
+- Lines 8425-8529 - [Onboarding and MAP02 initial supplies - 5.2.4 / #183](SYSTEMS.md#onboarding-and-map02-initial-supplies---524--183) - context: Caelum Argenteum — Current systems and rules
+- Lines 8530-8548 - [Allied Mandinga retaliation - 5.2.3 / #180](SYSTEMS.md#allied-mandinga-retaliation---523--180) - context: Caelum Argenteum — Current systems and rules
+- Lines 8549-8567 - [Time-skip processing - 5.2.2 / #178](SYSTEMS.md#time-skip-processing---522--178) - context: Caelum Argenteum — Current systems and rules
+- Lines 8568-8621 - [Tutorial equipment, supplies and portable rest - 5.2.1 / #177](SYSTEMS.md#tutorial-equipment-supplies-and-portable-rest---521--177) - context: Caelum Argenteum — Current systems and rules
+- Lines 8622-8686 - [5.2.0 - Authoritative character identity and native settings (#147)](SYSTEMS.md#520---authoritative-character-identity-and-native-settings-147) - context: Caelum Argenteum — Current systems and rules
+- Lines 8687-8716 - [5.1.20 - Interior doors and peaceful city time skipping (#173)](SYSTEMS.md#5120---interior-doors-and-peaceful-city-time-skipping-173) - context: Caelum Argenteum — Current systems and rules
+- Lines 8717-8742 - [5.1.19 - Seen NPC information and replay (#172)](SYSTEMS.md#5119---seen-npc-information-and-replay-172) - context: Caelum Argenteum — Current systems and rules
+- Lines 8743-8805 - [Permanent MAP01 gifts and assisted checkpoint - 5.1.18 / #164](SYSTEMS.md#permanent-map01-gifts-and-assisted-checkpoint---5118--164) - context: Caelum Argenteum — Current systems and rules
+- Lines 8806-8817 - [Medikit terminology - 5.1.17 / #169](SYSTEMS.md#medikit-terminology---5117--169) - context: Caelum Argenteum — Current systems and rules
+- Lines 8818-8911 - [Recoverable bolas - 5.1.16 / #163](SYSTEMS.md#recoverable-bolas---5116--163) - context: Caelum Argenteum — Current systems and rules
+- Lines 8912-8964 - [Utility staff and wand terminology - 5.1.15 / #162](SYSTEMS.md#utility-staff-and-wand-terminology---5115--162) - context: Caelum Argenteum — Current systems and rules
+- Lines 8965-8975 - [Damage-flash lifetime across maps - 5.1.14 / #165](SYSTEMS.md#damage-flash-lifetime-across-maps---5114--165) - context: Caelum Argenteum — Current systems and rules
+- Lines 8976-9063 - [SI physics and attribute growth — 5.1.10 / #154](SYSTEMS.md#si-physics-and-attribute-growth--5110--154) - context: Caelum Argenteum — Current systems and rules
+- Lines 9064-9140 - [Weapon dispersion — 5.4.1 / #259](SYSTEMS.md#weapon-dispersion--541--259) - context: Caelum Argenteum — Current systems and rules > SI physics and attribute growth — 5.1.10 / #154
+- Lines 9141-9169 - [Shotgun follow-up: ownership, presentation and aim (#152)](SYSTEMS.md#shotgun-follow-up-ownership-presentation-and-aim-152) - context: Caelum Argenteum — Current systems and rules
+- Lines 9170-9223 - [Elemental presentation and proportional damage feedback (#137)](SYSTEMS.md#elemental-presentation-and-proportional-damage-feedback-137) - context: Caelum Argenteum — Current systems and rules
+- Lines 9224-9301 - [Double-barrel shotgun and equipped-armor bypass (#136)](SYSTEMS.md#double-barrel-shotgun-and-equipped-armor-bypass-136) - context: Caelum Argenteum — Current systems and rules
+- Lines 9302-9333 - [Soldier crouched carbine aim (#143)](SYSTEMS.md#soldier-crouched-carbine-aim-143) - context: Caelum Argenteum — Current systems and rules
+- Lines 9334-9388 - [Demon racial ability and finite supplies (#135)](SYSTEMS.md#demon-racial-ability-and-finite-supplies-135) - context: Caelum Argenteum — Current systems and rules
+- Lines 9389-9457 - [Functional port city contract (#133)](SYSTEMS.md#functional-port-city-contract-133) - context: Caelum Argenteum — Current systems and rules
+- Lines 9458-9510 - [Thermal exposure and energy transfer (#130)](SYSTEMS.md#thermal-exposure-and-energy-transfer-130) - context: Caelum Argenteum — Current systems and rules
+- Lines 9511-9556 - [Regulated sweating (#133, 2026-10-08)](SYSTEMS.md#regulated-sweating-133-2026-10-08) - context: Caelum Argenteum — Current systems and rules > Thermal exposure and energy transfer (#130)
+- Lines 9557-9601 - [Breathing and thermal coefficient cache (#140)](SYSTEMS.md#breathing-and-thermal-coefficient-cache-140) - context: Caelum Argenteum — Current systems and rules > Thermal exposure and energy transfer (#130)
+- Lines 9602-9624 - [Carbine muscular effort (#140, author decision 2026-10-08)](SYSTEMS.md#carbine-muscular-effort-140-author-decision-2026-10-08) - context: Caelum Argenteum — Current systems and rules > Thermal exposure and energy transfer (#130)
+- Lines 9625-9656 - [Cold regulation by shivering (#140, author decision 2026-10-08)](SYSTEMS.md#cold-regulation-by-shivering-140-author-decision-2026-10-08) - context: Caelum Argenteum — Current systems and rules > Thermal exposure and energy transfer (#130)
+- Lines 9657-9713 - [Clothing, water and shelter](SYSTEMS.md#clothing-water-and-shelter) - context: Caelum Argenteum — Current systems and rules > Thermal exposure and energy transfer (#130)
+- Lines 9714-9758 - [Solid thermal surfaces (#314, 5.5.6)](SYSTEMS.md#solid-thermal-surfaces-314-556) - context: Caelum Argenteum — Current systems and rules > Thermal exposure and energy transfer (#130)
+- Lines 9759-9903 - [Energy, effort and clocks](SYSTEMS.md#energy-effort-and-clocks) - context: Caelum Argenteum — Current systems and rules > Thermal exposure and energy transfer (#130)
+- Lines 9904-9960 - [Persistence, presentation and evidence](SYSTEMS.md#persistence-presentation-and-evidence) - context: Caelum Argenteum — Current systems and rules > Thermal exposure and energy transfer (#130)
+- Lines 9961-10020 - [Staged siege reinforcement test (#132)](SYSTEMS.md#staged-siege-reinforcement-test-132) - context: Caelum Argenteum — Current systems and rules
+- Lines 10021-10079 - [Automatic high-density AI (#128)](SYSTEMS.md#automatic-high-density-ai-128) - context: Caelum Argenteum — Current systems and rules
+- Lines 10080-10121 - [Siege profiling and group experiment boundary (#121)](SYSTEMS.md#siege-profiling-and-group-experiment-boundary-121) - context: Caelum Argenteum — Current systems and rules
+- Lines 10122-10154 - [Per-player authority and modular migration boundary (#120)](SYSTEMS.md#per-player-authority-and-modular-migration-boundary-120) - context: Caelum Argenteum — Current systems and rules
+- Lines 10155-10183 - [Tarot service and retained save contract (#119)](SYSTEMS.md#tarot-service-and-retained-save-contract-119) - context: Caelum Argenteum — Current systems and rules
+- Lines 10184-10217 - [Inventory and equipment service (#118)](SYSTEMS.md#inventory-and-equipment-service-118) - context: Caelum Argenteum — Current systems and rules
+- Lines 10218-10255 - [Player character and resource adapters (#117)](SYSTEMS.md#player-character-and-resource-adapters-117) - context: Caelum Argenteum — Current systems and rules
+- Lines 10256-10265 - [V5.0 state ownership and compatibility contract (#116)](SYSTEMS.md#v50-state-ownership-and-compatibility-contract-116) - context: Caelum Argenteum — Current systems and rules
+- Lines 10266-10292 - [Single-owner state table](SYSTEMS.md#single-owner-state-table) - context: Caelum Argenteum — Current systems and rules > V5.0 state ownership and compatibility contract (#116)
+- Lines 10293-10329 - [Lifecycle and input/selector boundary](SYSTEMS.md#lifecycle-and-inputselector-boundary) - context: Caelum Argenteum — Current systems and rules > V5.0 state ownership and compatibility contract (#116)
+- Lines 10330-10348 - [Migration, reversibility and rollback](SYSTEMS.md#migration-reversibility-and-rollback) - context: Caelum Argenteum — Current systems and rules > V5.0 state ownership and compatibility contract (#116)
+- Lines 10349-10376 - [4.37.24 — Export defaults and final integration contract (#82)](SYSTEMS.md#43724--export-defaults-and-final-integration-contract-82) - context: Caelum Argenteum — Current systems and rules
+- Lines 10377-10405 - [4.37.23 - Creation descriptions and authoritative preview (#112)](SYSTEMS.md#43723---creation-descriptions-and-authoritative-preview-112) - context: Caelum Argenteum — Current systems and rules
+- Lines 10406-10425 - [4.37.22 - Shield presentation follows the equipped item (#106)](SYSTEMS.md#43722---shield-presentation-follows-the-equipped-item-106) - context: Caelum Argenteum — Current systems and rules
+- Lines 10426-10455 - [4.37.21 - New-character introduction and exit (#103)](SYSTEMS.md#43721---new-character-introduction-and-exit-103) - context: Caelum Argenteum — Current systems and rules
+- Lines 10456-10467 - [4.37.20 - Training target presentation (#98)](SYSTEMS.md#43720---training-target-presentation-98) - context: Caelum Argenteum — Current systems and rules
+- Lines 10468-10520 - [4.37.19 - Palomo's necklace and canonical shield names (#96)](SYSTEMS.md#43719---palomos-necklace-and-canonical-shield-names-96) - context: Caelum Argenteum — Current systems and rules
+- Lines 10521-10567 - [4.37.18 - Craft, Repair, Dismantle and Tarot details (#91)](SYSTEMS.md#43718---craft-repair-dismantle-and-tarot-details-91) - context: Caelum Argenteum — Current systems and rules
+- Lines 10568-10623 - [4.37.17 - Pickaxe, gathering sounds and success notice (#89)](SYSTEMS.md#43717---pickaxe-gathering-sounds-and-success-notice-89) - context: Caelum Argenteum — Current systems and rules
+- Lines 10624-10647 - [4.37.16 - Compass and menu pointers (#87)](SYSTEMS.md#43716---compass-and-menu-pointers-87) - context: Caelum Argenteum — Current systems and rules
+- Lines 10648-10693 - `4.37.15 - Traditional Truco ranked mode (#101)` - context: Caelum Argenteum — Current systems and rules
+- Lines 10694-10700 - [4.37.14a - Argento dialogue order (#99)](SYSTEMS.md#43714a---argento-dialogue-order-99) - context: Caelum Argenteum — Current systems and rules
+- Lines 10701-10720 - [4.37.14 - Early physical deck delivery (#97)](SYSTEMS.md#43714---early-physical-deck-delivery-97) - context: Caelum Argenteum — Current systems and rules
+- Lines 10721-10728 - [4.37.13a - Crafting time help (#93)](SYSTEMS.md#43713a---crafting-time-help-93) - context: Caelum Argenteum — Current systems and rules
+- Lines 10729-10756 - [4.37.11 — Guard recognition as a persistent Journal clue (#79)](SYSTEMS.md#43711--guard-recognition-as-a-persistent-journal-clue-79) - context: Caelum Argenteum — Current systems and rules
+- Lines 10757-10796 - [4.37.10 — Prisoner siege intelligence after payment (#78)](SYSTEMS.md#43710--prisoner-siege-intelligence-after-payment-78) - context: Caelum Argenteum — Current systems and rules
+- Lines 10797-10900 - [4.37.9 — Expanded city, southern siege and campaign route (#77)](SYSTEMS.md#4379--expanded-city-southern-siege-and-campaign-route-77) - context: Caelum Argenteum — Current systems and rules
+- Lines 10901-10919 - [4.37.8 — Corrected MAP02 material accounting (#75)](SYSTEMS.md#4378--corrected-map02-material-accounting-75) - context: Caelum Argenteum — Current systems and rules
+- Lines 10920-10957 - [4.37.7 — Floor traps, flooded return and central lift (#74)](SYSTEMS.md#4377--floor-traps-flooded-return-and-central-lift-74) - context: Caelum Argenteum — Current systems and rules
+- Lines 10958-11013 - [4.37.6 — Central hub, cardinal keys and finite supplies (#73/#75)](SYSTEMS.md#4376--central-hub-cardinal-keys-and-finite-supplies-7375) - context: Caelum Argenteum — Current systems and rules
+- Lines 11014-11047 - [4.37.5 — Daily mansion provisions (#65)](SYSTEMS.md#4375--daily-mansion-provisions-65) - context: Caelum Argenteum — Current systems and rules
+- Lines 11048-11117 - [4.37.4 — Explicit time skipping and separate Limbo clock (#64)](SYSTEMS.md#4374--explicit-time-skipping-and-separate-limbo-clock-64) - context: Caelum Argenteum — Current systems and rules
+- Lines 11118-11185 - [4.37.3 — Palomo choices, Ronnie crafting and Limbo departure (#63)](SYSTEMS.md#4373--palomo-choices-ronnie-crafting-and-limbo-departure-63) - context: Caelum Argenteum — Current systems and rules
+- Lines 11186-11216 - [4.37.2 — Magic-weapon Anima bases divided by ten (#68)](SYSTEMS.md#4372--magic-weapon-anima-bases-divided-by-ten-68) - context: Caelum Argenteum — Current systems and rules
+- Lines 11217-11265 - [4.37.0 — MAP01 exterior and door presentation (#61)](SYSTEMS.md#4370--map01-exterior-and-door-presentation-61) - context: Caelum Argenteum — Current systems and rules
+- Lines 11266-11356 - [4.36.27 — Complete port siege (#16)](SYSTEMS.md#43627--complete-port-siege-16) - context: Caelum Argenteum — Current systems and rules
+- Lines 11357-11435 - [4.36.26 — Shared attack clock and durability (#37)](SYSTEMS.md#43626--shared-attack-clock-and-durability-37) - context: Caelum Argenteum — Current systems and rules
+- Lines 11436-11472 - [4.36.25 — Rebuilt MAP01 geometry (#36)](SYSTEMS.md#43625--rebuilt-map01-geometry-36) - context: Caelum Argenteum — Current systems and rules
+- Lines 11473-11520 - [4.36.24 — Persistent quest journal (#35)](SYSTEMS.md#43624--persistent-quest-journal-35) - context: Caelum Argenteum — Current systems and rules
+- Lines 11521-11652 - [4.36.23 — Armor last, body absorption and gate defense (#52)](SYSTEMS.md#43623--armor-last-body-absorption-and-gate-defense-52) - context: Caelum Argenteum — Current systems and rules
+- Lines 11653-11714 - [4.36.22 — Quest ownership and persistent narrative events (#34)](SYSTEMS.md#43622--quest-ownership-and-persistent-narrative-events-34) - context: Caelum Argenteum — Current systems and rules
+- Lines 11715-11738 - [4.36.21 — Environmental collisions and running absorption (#49)](SYSTEMS.md#43621--environmental-collisions-and-running-absorption-49) - context: Caelum Argenteum — Current systems and rules
+- Lines 11739-11780 - [4.36.20 — Arcana availability and sewer retreat (#33)](SYSTEMS.md#43620--arcana-availability-and-sewer-retreat-33) - context: Caelum Argenteum — Current systems and rules
+- Lines 11781-11836 - [4.36.19 — Final siege impact balance (#21)](SYSTEMS.md#43619--final-siege-impact-balance-21) - context: Caelum Argenteum — Current systems and rules
+- Lines 11837-11866 - `4.36.18 — Walking wall-impact absorption (#43)` - context: Caelum Argenteum — Current systems and rules
+- Lines 11867-11947 - [4.36.17 — Controlled cannon fire (#21; planned label 4.36.13)](SYSTEMS.md#43617--controlled-cannon-fire-21-planned-label-43613) - context: Caelum Argenteum — Current systems and rules
+- Lines 11948-12009 - [4.36.16 — Mobile demonic rams (#20; planned label 4.36.12)](SYSTEMS.md#43616--mobile-demonic-rams-20-planned-label-43612) - context: Caelum Argenteum — Current systems and rules
+- Lines 12010-12053 - [Encounter/control contract for #16 and #21](SYSTEMS.md#encountercontrol-contract-for-16-and-21) - context: Caelum Argenteum — Current systems and rules > 4.36.16 — Mobile demonic rams (#20; planned label 4.36.12)
+- Lines 12054-12121 - `4.36.15 — Breakable actor gates (#19; planned label 4.36.11)` - context: Caelum Argenteum — Current systems and rules
+- Lines 12122-12135 - [4.36.14a — Distinct siege materials and visual states (#18 correction)](SYSTEMS.md#43614a--distinct-siege-materials-and-visual-states-18-correction) - context: Caelum Argenteum — Current systems and rules
+- Lines 12136-12144 - [4.36.10 — Siege assets are visual-only (#18)](SYSTEMS.md#43610--siege-assets-are-visual-only-18) - context: Caelum Argenteum — Current systems and rules
+- Lines 12145-12159 - `4.36.8 — Prisoner rescue, escort and port rewards (#14)` - context: Caelum Argenteum — Current systems and rules
+- Lines 12160-12182 - [4.36.7 — Inert prisoner appearances (#13)](SYSTEMS.md#4367--inert-prisoner-appearances-13) - context: Caelum Argenteum — Current systems and rules
+- Lines 12183-12196 - `4.36.6 — Hostile sewer rats (#12)` - context: Caelum Argenteum — Current systems and rules
+- Lines 12197-12233 - [4.36.5 — Sewer gates, refuges and known-recipe repair (#11)](SYSTEMS.md#4365--sewer-gates-refuges-and-known-recipe-repair-11) - context: Caelum Argenteum — Current systems and rules
+- Lines 12234-12256 - [Key dependency graph and ordinary-player route](SYSTEMS.md#key-dependency-graph-and-ordinary-player-route) - context: Caelum Argenteum — Current systems and rules > 4.36.5 — Sewer gates, refuges and known-recipe repair (#11)
+- Lines 12257-12302 - [4.36.4 — Acquisition and chest contract (issue #10)](SYSTEMS.md#4364--acquisition-and-chest-contract-issue-10) - context: Caelum Argenteum — Current systems and rules
+- Lines 12303-12312 - [4.36.2 — Bow presentation performance](SYSTEMS.md#4362--bow-presentation-performance) - context: Caelum Argenteum — Current systems and rules
+- Lines 12313-12328 - `4.36.1 — Documentation scope` - context: Caelum Argenteum — Current systems and rules
+- Lines 12329-12330 - [4.36.0i — active rules and maze](SYSTEMS.md#4360i--active-rules-and-maze) - context: Caelum Argenteum — Current systems and rules
+- Lines 12331-12354 - [Resting weight: approved and active formula](SYSTEMS.md#resting-weight-approved-and-active-formula) - context: Caelum Argenteum — Current systems and rules > 4.36.0i — active rules and maze
+- Lines 12355-12371 - [Food, water and tables](SYSTEMS.md#food-water-and-tables) - context: Caelum Argenteum — Current systems and rules > 4.36.0i — active rules and maze
+- Lines 12372-12412 - [MAP02 and rewards](SYSTEMS.md#map02-and-rewards) - context: Caelum Argenteum — Current systems and rules > 4.36.0i — active rules and maze
+- Lines 12413-12421 - [Check](SYSTEMS.md#check) - context: Caelum Argenteum — Current systems and rules > 4.36.0i — active rules and maze
+- Lines 12422-12423 - [History 4.36.0h — percentage ceiling, starting meal and weight proposal](SYSTEMS.md#history-4360h--percentage-ceiling-starting-meal-and-weight-proposal) - context: Caelum Argenteum — Current systems and rules
+- Lines 12424-12449 - [Native ceiling: implemented in source](SYSTEMS.md#native-ceiling-implemented-in-source) - context: Caelum Argenteum — Current systems and rules > History 4.36.0h — percentage ceiling, starting meal and weight proposal
+- Lines 12450-12485 - [Supported mass: proposal pending the author's decision](SYSTEMS.md#supported-mass-proposal-pending-the-authors-decision) - context: Caelum Argenteum — Current systems and rules > History 4.36.0h — percentage ceiling, starting meal and weight proposal
+- Lines 12486-12506 - [Table food: persistent initialization](SYSTEMS.md#table-food-persistent-initialization) - context: Caelum Argenteum — Current systems and rules > History 4.36.0h — percentage ceiling, starting meal and weight proposal
+- Lines 12507-12547 - [4.36.0g — segmented presentation and axe attack](SYSTEMS.md#4360g--segmented-presentation-and-axe-attack) - context: Caelum Argenteum — Current systems and rules
+- Lines 12548-12556 - [4.36.0f — audit of crushing and impact](SYSTEMS.md#4360f--audit-of-crushing-and-impact) - context: Caelum Argenteum — Current systems and rules
+- Lines 12557-12571 - [1. Rock collision: mass, impulse and speed received](SYSTEMS.md#1-rock-collision-mass-impulse-and-speed-received) - context: Caelum Argenteum — Current systems and rules > 4.36.0f — audit of crushing and impact
+- Lines 12572-12612 - [2. Damage conversion](SYSTEMS.md#2-damage-conversion) - context: Caelum Argenteum — Current systems and rules > 4.36.0f — audit of crushing and impact
+- Lines 12613-12630 - [3. Sustained contact and native ceiling](SYSTEMS.md#3-sustained-contact-and-native-ceiling) - context: Caelum Argenteum — Current systems and rules > 4.36.0f — audit of crushing and impact
+- Lines 12631-12646 - [4. MAP08 fast rock in 0f](SYSTEMS.md#4-map08-fast-rock-in-0f) - context: Caelum Argenteum — Current systems and rules > 4.36.0f — audit of crushing and impact
+- Lines 12647-12654 - [5. Presentation of weapons](SYSTEMS.md#5-presentation-of-weapons) - context: Caelum Argenteum — Current systems and rules > 4.36.0f — audit of crushing and impact
+- Lines 12655-12682 - `4.36.0e — corrections requested after testing 0d` - context: Caelum Argenteum — Current systems and rules
+- Lines 12683-12755 - [Current corrections 4.36.0d](SYSTEMS.md#current-corrections-4360d) - context: Caelum Argenteum — Current systems and rules
+- Lines 12756-12829 - [Integration and fixes 4.36.0c](SYSTEMS.md#integration-and-fixes-4360c) - context: Caelum Argenteum — Current systems and rules
+- Lines 12830-12894 - [Mines, teleport, crushing and presentation (4.36.0b)](SYSTEMS.md#mines-teleport-crushing-and-presentation-4360b) - context: Caelum Argenteum — Current systems and rules
+- Lines 12895-12953 - [Physical hazards and traps (4.36.0a, updated in 0b)](SYSTEMS.md#physical-hazards-and-traps-4360a-updated-in-0b) - context: Caelum Argenteum — Current systems and rules
+- Lines 12954-12977 - [Animations and sitting consumption (4.35.0q)](SYSTEMS.md#animations-and-sitting-consumption-4350q) - context: Caelum Argenteum — Current systems and rules
+- Lines 12978-13021 - [Reserves, controls and vehicles (4.35.0p)](SYSTEMS.md#reserves-controls-and-vehicles-4350p) - context: Caelum Argenteum — Current systems and rules
+- Lines 13022-13088 - [Scheduled agenda and events (4.35.0o)](SYSTEMS.md#scheduled-agenda-and-events-4350o) - context: Caelum Argenteum — Current systems and rules
+- Lines 13089-13156 - [Travel with duration and provisions (4.35.0n)](SYSTEMS.md#travel-with-duration-and-provisions-4350n) - context: Caelum Argenteum — Current systems and rules
+- Lines 13157-13182 - [Food by body mass and riverside expansion (4.35.0m)](SYSTEMS.md#food-by-body-mass-and-riverside-expansion-4350m) - context: Caelum Argenteum — Current systems and rules
+- Lines 13183-13217 - [Identities and routes](SYSTEMS.md#identities-and-routes) - context: Caelum Argenteum — Current systems and rules > Food by body mass and riverside expansion (4.35.0m)
+- Lines 13218-13224 - [Regional climate, shelter, water and chairs (4.35.0l)](SYSTEMS.md#regional-climate-shelter-water-and-chairs-4350l) - context: Caelum Argenteum — Current systems and rules
+- Lines 13225-13262 - [Contemporary data and geographical reference](SYSTEMS.md#contemporary-data-and-geographical-reference) - context: Caelum Argenteum — Current systems and rules > Regional climate, shelter, water and chairs (4.35.0l)
+- Lines 13263-13291 - [Temporal synthesis](SYSTEMS.md#temporal-synthesis) - context: Caelum Argenteum — Current systems and rules > Regional climate, shelter, water and chairs (4.35.0l)
+- Lines 13292-13314 - [Shelter and local microclimate](SYSTEMS.md#shelter-and-local-microclimate) - context: Caelum Argenteum — Current systems and rules > Regional climate, shelter, water and chairs (4.35.0l)
+- Lines 13315-13337 - [Status, saves and consultations](SYSTEMS.md#status-saves-and-consultations) - context: Caelum Argenteum — Current systems and rules > Regional climate, shelter, water and chairs (4.35.0l)
+- Lines 13338-13354 - [Water by volume and chair repair](SYSTEMS.md#water-by-volume-and-chair-repair) - context: Caelum Argenteum — Current systems and rules > Regional climate, shelter, water and chairs (4.35.0l)
+- Lines 13355-13360 - [Current Time, Consumption, Use and Area Rules (4.35.0j)](SYSTEMS.md#current-time-consumption-use-and-area-rules-4350j) - context: Caelum Argenteum — Current systems and rules
+- Lines 13361-13379 - [Local time and sleep](SYSTEMS.md#local-time-and-sleep) - context: Caelum Argenteum — Current systems and rules > Current Time, Consumption, Use and Area Rules (4.35.0j)
+- Lines 13380-13395 - [Food and water while sitting](SYSTEMS.md#food-and-water-while-sitting) - context: Caelum Argenteum — Current systems and rules > Current Time, Consumption, Use and Area Rules (4.35.0j)
+- Lines 13396-13410 - [Interaction and station size](SYSTEMS.md#interaction-and-station-size) - context: Caelum Argenteum — Current systems and rules > Current Time, Consumption, Use and Area Rules (4.35.0j)
+- Lines 13411-13434 - [Approved base radii](SYSTEMS.md#approved-base-radii) - context: Caelum Argenteum — Current systems and rules > Current Time, Consumption, Use and Area Rules (4.35.0j)
+- Lines 13435-13471 - [Access and personal advancement corrections in Limbo (4.35.0i)](SYSTEMS.md#access-and-personal-advancement-corrections-in-limbo-4350i) - context: Caelum Argenteum — Current systems and rules
+- Lines 13472-13506 - [Automatic meals and furniture of Limbo (4.35.0h)](SYSTEMS.md#automatic-meals-and-furniture-of-limbo-4350h) - context: Caelum Argenteum — Current systems and rules
+- Lines 13507-13515 - [Fast advance, tables and sleep (4.35.0g)](SYSTEMS.md#fast-advance-tables-and-sleep-4350g) - context: Caelum Argenteum — Current systems and rules
+- Lines 13516-13556 - [Common time for substeps](SYSTEMS.md#common-time-for-substeps) - context: Caelum Argenteum — Current systems and rules > Fast advance, tables and sleep (4.35.0g)
+- Lines 13557-13587 - [Tables and belongings](SYSTEMS.md#tables-and-belongings) - context: Caelum Argenteum — Current systems and rules > Fast advance, tables and sleep (4.35.0g)
+- Lines 13588-13611 - [Lucidity, Sleep Skill and Orientation](SYSTEMS.md#lucidity-sleep-skill-and-orientation) - context: Caelum Argenteum — Current systems and rules > Fast advance, tables and sleep (4.35.0g)
+- Lines 13612-13676 - [Sleep bag and rest factors (4.35.0f)](SYSTEMS.md#sleep-bag-and-rest-factors-4350f) - context: Caelum Argenteum — Current systems and rules
+- Lines 13677-13728 - [Furniture and rest camera (4.35.0e)](SYSTEMS.md#furniture-and-rest-camera-4350e) - context: Caelum Argenteum — Current systems and rules
+- Lines 13729-13738 - [Rest Compatibility (4.35.0d1)](SYSTEMS.md#rest-compatibility-4350d1) - context: Caelum Argenteum — Current systems and rules
+- Lines 13739-13816 - [Rest and wait: normal scale session (4.35.0d)](SYSTEMS.md#rest-and-wait-normal-scale-session-4350d) - context: Caelum Argenteum — Current systems and rules
+- Lines 13817-13893 - [Civil calendar, campaign and Limbo (4.35.0b–0c)](SYSTEMS.md#civil-calendar-campaign-and-limbo-4350b0c) - context: Caelum Argenteum — Current systems and rules
+- Lines 13894-13948 - [Historical ability catalog and focused V5.4 revisions](SYSTEMS.md#historical-ability-catalog-and-focused-v54-revisions) - context: Caelum Argenteum — Current systems and rules
+- Lines 13949-13995 - [Global clock and travel timestamps (4.35.0a)](SYSTEMS.md#global-clock-and-travel-timestamps-4350a) - context: Caelum Argenteum — Current systems and rules
+- Lines 13996-14033 - [Activity testing support (4.34.0e)](SYSTEMS.md#activity-testing-support-4340e) - context: Caelum Argenteum — Current systems and rules
+- Lines 14034-14080 - [Test caravans and movement cycle (4.34.0d)](SYSTEMS.md#test-caravans-and-movement-cycle-4340d) - context: Caelum Argenteum — Current systems and rules
+- Lines 14081-14139 - [Sewer and test travel network (4.34.0c)](SYSTEMS.md#sewer-and-test-travel-network-4340c) - context: Caelum Argenteum — Current systems and rules
+- Lines 14140-14173 - [Grouped doors and accesses (4.34.0b)](SYSTEMS.md#grouped-doors-and-accesses-4340b) - context: Caelum Argenteum — Current systems and rules
+- Lines 14174-14198 - [Access test](SYSTEMS.md#access-test) - context: Caelum Argenteum — Current systems and rules > Grouped doors and accesses (4.34.0b)
+- Lines 14199-14247 - [World and persistent journey (4.34.0a)](SYSTEMS.md#world-and-persistent-journey-4340a) - context: Caelum Argenteum — Current systems and rules
+- Lines 14248-14285 - [Integration and consultation contract (4.33.0ao)](SYSTEMS.md#integration-and-consultation-contract-4330ao) - context: Caelum Argenteum — Current systems and rules
+- Lines 14286-14344 - [Reputation and service conditions (4.33.0an)](SYSTEMS.md#reputation-and-service-conditions-4330an) - context: Caelum Argenteum — Current systems and rules
+- Lines 14345-14404 - [Seals and interaction (0ak), conversation and navigation (0am)](SYSTEMS.md#seals-and-interaction-0ak-conversation-and-navigation-0am) - context: Caelum Argenteum — Current systems and rules
+- Lines 14405-14463 - [Optional missions — current in 4.33.0aj](SYSTEMS.md#optional-missions--current-in-4330aj) - context: Caelum Argenteum — Current systems and rules
+- Lines 14464-14533 - [Survival consumption and regeneration - current in 5.1.4 (#131/#133/#140)](SYSTEMS.md#survival-consumption-and-regeneration---current-in-514-131133140) - context: Caelum Argenteum — Current systems and rules
+- Lines 14534-14544 - [Audit of the twelve attributes - 5.4.0 (#237)](SYSTEMS.md#audit-of-the-twelve-attributes---540-237) - context: Caelum Argenteum — Current systems and rules
+- Lines 14545-14572 - [Source, ownership and order](SYSTEMS.md#source-ownership-and-order) - context: Caelum Argenteum — Current systems and rules > Audit of the twelve attributes - 5.4.0 (#237)
+- Lines 14573-14597 - [Curves, units and boundaries](SYSTEMS.md#curves-units-and-boundaries) - context: Caelum Argenteum — Current systems and rules > Audit of the twelve attributes - 5.4.0 (#237)
+- Lines 14598-14619 - [Twelve source-to-consumer rows](SYSTEMS.md#twelve-source-to-consumer-rows) - context: Caelum Argenteum — Current systems and rules > Audit of the twelve attributes - 5.4.0 (#237)
+- Lines 14620-14645 - [Pending decisions and roadmap ownership](SYSTEMS.md#pending-decisions-and-roadmap-ownership) - context: Caelum Argenteum — Current systems and rules > Audit of the twelve attributes - 5.4.0 (#237)
+- Lines 14646-14690 - [Evidence and continuation references](SYSTEMS.md#evidence-and-continuation-references) - context: Caelum Argenteum — Current systems and rules > Audit of the twelve attributes - 5.4.0 (#237)
+- Lines 14691-14768 - [Water containers and accessories chosen — valid in 4.33.0ai](SYSTEMS.md#water-containers-and-accessories-chosen--valid-in-4330ai) - context: Caelum Argenteum — Current systems and rules
+- Lines 14769-14814 - [T1 seals: instruction and supply — 4.33.0ae](SYSTEMS.md#t1-seals-instruction-and-supply--4330ae) - context: Caelum Argenteum — Current systems and rules
+- Lines 14815-14883 - [Choice of MAP01 armor and quotas (4.33.0ad)](SYSTEMS.md#choice-of-map01-armor-and-quotas-4330ad) - context: Caelum Argenteum — Current systems and rules
+- Lines 14884-14929 - [Bolts and ammunition knowledge (4.33.0ac)](SYSTEMS.md#bolts-and-ammunition-knowledge-4330ac) - context: Caelum Argenteum — Current systems and rules
+- Lines 14930-14958 - [Breathing: optional Ronnie practice (4.33.0ab)](SYSTEMS.md#breathing-optional-ronnie-practice-4330ab) - context: Caelum Argenteum — Current systems and rules
+- Lines 14959-14987 - [Load: optional Ronnie practice (4.33.0z)](SYSTEMS.md#load-optional-ronnie-practice-4330z) - context: Caelum Argenteum — Current systems and rules
+- Lines 14988-15011 - [Air and motion: optional practice (4.33.0y)](SYSTEMS.md#air-and-motion-optional-practice-4330y) - context: Caelum Argenteum — Current systems and rules
+- Lines 15012-15040 - [Needs: optional Ronnie practice (4.33.0x)](SYSTEMS.md#needs-optional-ronnie-practice-4330x) - context: Caelum Argenteum — Current systems and rules
+- Lines 15041-15060 - [Optional maintenance with Ronnie (4.33.0w)](SYSTEMS.md#optional-maintenance-with-ronnie-4330w) - context: Caelum Argenteum — Current systems and rules
+- Lines 15061-15104 - [T1 Material Coverage — 4.33.0w Audit](SYSTEMS.md#t1-material-coverage--4330w-audit) - context: Caelum Argenteum — Current systems and rules
+- Lines 15105-15145 - [Narrative exit, inventory and arrival (4.33.0v)](SYSTEMS.md#narrative-exit-inventory-and-arrival-4330v) - context: Caelum Argenteum — Current systems and rules
+- Lines 15146-15221 - [Trucazo — Argento practice (4.37.13 / #81)](SYSTEMS.md#trucazo--argento-practice-43713--81) - context: Caelum Argenteum — Current systems and rules
+- Lines 15222-15223 - [Tarot: collection and capture of El Loco (4.33.0t)](SYSTEMS.md#tarot-collection-and-capture-of-el-loco-4330t) - context: Caelum Argenteum — Current systems and rules
+- Lines 15224-15280 - [Issue #80 approved power contract — author decision, 2026-10-04](SYSTEMS.md#issue-80-approved-power-contract--author-decision-2026-10-04) - context: Caelum Argenteum — Current systems and rules > Tarot: collection and capture of El Loco (4.33.0t)
+- Lines 15281-15352 - [Existing collection rules](SYSTEMS.md#existing-collection-rules) - context: Caelum Argenteum — Current systems and rules > Tarot: collection and capture of El Loco (4.33.0t)
+- Lines 15353-15386 - [Palomo final and single box (4.33.0s)](SYSTEMS.md#palomo-final-and-single-box-4330s) - context: Caelum Argenteum — Current systems and rules
+- Lines 15387-15413 - [Essential residents and post-combat dialogue (4.33.0r)](SYSTEMS.md#essential-residents-and-post-combat-dialogue-4330r) - context: Caelum Argenteum — Current systems and rules
+- Lines 15414-15459 - [Accompanied combat and Bull performance (4.33.0q)](SYSTEMS.md#accompanied-combat-and-bull-performance-4330q) - context: Caelum Argenteum — Current systems and rules
+- Lines 15460-15474 - [Real Shield and Sword View (4.33.0u)](SYSTEMS.md#real-shield-and-sword-view-4330u) - context: Caelum Argenteum — Current systems and rules
+- Lines 15475-15522 - [Rulo combat test (4.33.0p; updated 0u guide)](SYSTEMS.md#rulo-combat-test-4330p-updated-0u-guide) - context: Caelum Argenteum — Current systems and rules
+- Lines 15523-15530 - [Knowledge of recipes and manual removal (4.33.0o)](SYSTEMS.md#knowledge-of-recipes-and-manual-removal-4330o) - context: Caelum Argenteum — Current systems and rules
+- Lines 15531-15573 - [Historical cost and supply reference (4.33.0n–0ac)](SYSTEMS.md#historical-cost-and-supply-reference-4330n0ac) - context: Caelum Argenteum — Current systems and rules
+- Lines 15574-15611 - [Caella test (4.33.0i–0m; impact checks updated in 4.37.1 / #62)](SYSTEMS.md#caella-test-4330i0m-impact-checks-updated-in-4371--62) - context: Caelum Argenteum — Current systems and rules
+- Lines 15612-15680 - [Ronnie: choice, materials and first weapon (4.33.0l)](SYSTEMS.md#ronnie-choice-materials-and-first-weapon-4330l) - context: Caelum Argenteum — Current systems and rules
+- Lines 15681-15700 - [Crafts arrows and controls (4.33.0n)](SYSTEMS.md#crafts-arrows-and-controls-4330n) - context: Caelum Argenteum — Current systems and rules > Ronnie: choice, materials and first weapon (4.33.0l)
+- Lines 15701-15723 - [Key, Bull and Palomo’s departure (4.33.0n)](SYSTEMS.md#key-bull-and-palomos-departure-4330n) - context: Caelum Argenteum — Current systems and rules > Ronnie: choice, materials and first weapon (4.33.0l)
+- Lines 15724-15748 - [Mass of shrubs and garden migration (4.33.0m)](SYSTEMS.md#mass-of-shrubs-and-garden-migration-4330m) - context: Caelum Argenteum — Current systems and rules
+- Lines 15749-15773 - [MAP01 workshops (4.33.0m–0n)](SYSTEMS.md#map01-workshops-4330m0n) - context: Caelum Argenteum — Current systems and rules
+- Lines 15774-15786 - [Character Poses (4.33.0m)](SYSTEMS.md#character-poses-4330m) - context: Caelum Argenteum — Current systems and rules
+- Lines 15787-15831 - [Social probability](SYSTEMS.md#social-probability) - context: Caelum Argenteum — Current systems and rules
+- Lines 15832-15847 - [Resources, persistence and physics](SYSTEMS.md#resources-persistence-and-physics) - context: Caelum Argenteum — Current systems and rules
+- Lines 15848-15874 - [Mission detail (4.33.0k–0l)](SYSTEMS.md#mission-detail-4330k0l) - context: Caelum Argenteum — Current systems and rules
+- Lines 15875-15897 - [Presentation of Seal and Runes (4.33.0j)](SYSTEMS.md#presentation-of-seal-and-runes-4330j) - context: Caelum Argenteum — Current systems and rules
+- Lines 15898-15916 - [Crafting and repair](SYSTEMS.md#crafting-and-repair) - context: Caelum Argenteum — Current systems and rules
+- Lines 15917-15918 - [Common controls](SYSTEMS.md#common-controls) - context: Caelum Argenteum — Current systems and rules
+- Lines 15919-15940 - [Combat dispatch ownership (#310, 5.5.1)](SYSTEMS.md#combat-dispatch-ownership-310-551) - context: Caelum Argenteum — Current systems and rules > Common controls
+- Lines 15941-15951 - [Unarmed Seal input (#363, 5.5.5)](SYSTEMS.md#unarmed-seal-input-363-555) - context: Caelum Argenteum — Current systems and rules > Common controls
+- Lines 15952-15980 - [Input bindings](SYSTEMS.md#input-bindings) - context: Caelum Argenteum — Current systems and rules > Common controls
+- Lines 15981-16010 - [Damage and Anima cost: Type 4 divisor (4.33.0aa)](SYSTEMS.md#damage-and-anima-cost-type-4-divisor-4330aa) - context: Caelum Argenteum — Current systems and rules
+- Lines 16011-16026 - [Heavy-weapon sweep (4.33.0aa)](SYSTEMS.md#heavy-weapon-sweep-4330aa) - context: Caelum Argenteum — Current systems and rules
+- Lines 16027-16033 - [Future melee energy contract - design only (#315, 5.5.7)](SYSTEMS.md#future-melee-energy-contract---design-only-315-557) - context: Caelum Argenteum — Current systems and rules
+- Lines 16034-16061 - [Current authority and proposed replacement boundary](SYSTEMS.md#current-authority-and-proposed-replacement-boundary) - context: Caelum Argenteum — Current systems and rules > Future melee energy contract - design only (#315, 5.5.7)
+- Lines 16062-16079 - [Field, source and unit inventory](SYSTEMS.md#field-source-and-unit-inventory) - context: Caelum Argenteum — Current systems and rules > Future melee energy contract - design only (#315, 5.5.7)
+- Lines 16080-16137 - [Worked comparisons and gameplay implications](SYSTEMS.md#worked-comparisons-and-gameplay-implications) - context: Caelum Argenteum — Current systems and rules > Future melee energy contract - design only (#315, 5.5.7)
+- Lines 16138-16170 - [Required integration and approval gate](SYSTEMS.md#required-integration-and-approval-gate) - context: Caelum Argenteum — Current systems and rules > Future melee energy contract - design only (#315, 5.5.7)
+- Lines 16171-16175 - [Detailed matrix of weapons](SYSTEMS.md#detailed-matrix-of-weapons) - context: Caelum Argenteum — Current systems and rules
+- Lines 16176-16193 - [Physical melee weapons](SYSTEMS.md#physical-melee-weapons) - context: Caelum Argenteum — Current systems and rules > Detailed matrix of weapons
+- Lines 16194-16202 - [Ranged weapons](SYSTEMS.md#ranged-weapons) - context: Caelum Argenteum — Current systems and rules > Detailed matrix of weapons
+- Lines 16203-16257 - [Ammunition composition and mass contract (#313, 2026-10-19)](SYSTEMS.md#ammunition-composition-and-mass-contract-313-2026-10-19) - context: Caelum Argenteum — Current systems and rules > Detailed matrix of weapons
+- Lines 16258-16267 - [Utility tools](SYSTEMS.md#utility-tools) - context: Caelum Argenteum — Current systems and rules > Detailed matrix of weapons
+- Lines 16268-16280 - [Magical implements](SYSTEMS.md#magical-implements) - context: Caelum Argenteum — Current systems and rules > Detailed matrix of weapons
+- Lines 16281-16290 - [Essence function used by every magical implement](SYSTEMS.md#essence-function-used-by-every-magical-implement) - context: Caelum Argenteum — Current systems and rules > Detailed matrix of weapons
+- Lines 16291-16303 - [Complete magical variant list](SYSTEMS.md#complete-magical-variant-list) - context: Caelum Argenteum — Current systems and rules > Detailed matrix of weapons
+- Lines 16304-16336 - [V5.5.0 audit ownership and evidence (#309)](SYSTEMS.md#v550-audit-ownership-and-evidence-309) - context: Caelum Argenteum — Current systems and rules > Detailed matrix of weapons
+- Lines 16337-16340 - [Economy](SYSTEMS.md#economy) - context: Caelum Argenteum — Current systems and rules
+- Lines 16341-16384 - [1. Monetary unit](SYSTEMS.md#1-monetary-unit) - context: Caelum Argenteum — Current systems and rules > Economy
+- Lines 16385-16426 - [2. Base values of raw materials and consumables](SYSTEMS.md#2-base-values-of-raw-materials-and-consumables) - context: Caelum Argenteum — Current systems and rules > Economy
+- Lines 16427-16433 - [3. Recursive value of manufacture](SYSTEMS.md#3-recursive-value-of-manufacture) - context: Caelum Argenteum — Current systems and rules > Economy
+- Lines 16434-16446 - [3.1 Basic processing](SYSTEMS.md#31-basic-processing) - context: Caelum Argenteum — Current systems and rules > Economy > 3. Recursive value of manufacture
+- Lines 16447-16461 - [3.2 Components](SYSTEMS.md#32-components) - context: Caelum Argenteum — Current systems and rules > Economy > 3. Recursive value of manufacture
+- Lines 16462-16477 - [3.3 Final items](SYSTEMS.md#33-final-items) - context: Caelum Argenteum — Current systems and rules > Economy > 3. Recursive value of manufacture
+- Lines 16478-16500 - [4. Trader Margins](SYSTEMS.md#4-trader-margins) - context: Caelum Argenteum — Current systems and rules > Economy
+- Lines 16501-16520 - [5. Presentation in inventory](SYSTEMS.md#5-presentation-in-inventory) - context: Caelum Argenteum — Current systems and rules > Economy
+- Lines 16521-16538 - [6. Prisoner coin reward](SYSTEMS.md#6-prisoner-coin-reward) - context: Caelum Argenteum — Current systems and rules > Economy
+- Lines 16539-16551 - [1. Nature and Own Weight](SYSTEMS.md#1-nature-and-own-weight) - context: Caelum Argenteum — Current systems and rules > Economy
+- Lines 16552-16571 - [2. Weight reduction](SYSTEMS.md#2-weight-reduction) - context: Caelum Argenteum — Current systems and rules > Economy
+- Lines 16572-16584 - [3. Content and restrictions](SYSTEMS.md#3-content-and-restrictions) - context: Caelum Argenteum — Current systems and rules > Economy
+- Lines 16585-16596 - [4. Transactions and capacity changes](SYSTEMS.md#4-transactions-and-capacity-changes) - context: Caelum Argenteum — Current systems and rules > Economy
+- Lines 16597-16605 - [5. Interface](SYSTEMS.md#5-interface) - context: Caelum Argenteum — Current systems and rules > Economy
+- Lines 16606-16621 - [6. Acquisition and save compatibility](SYSTEMS.md#6-acquisition-and-save-compatibility) - context: Caelum Argenteum — Current systems and rules > Economy
+- Lines 16622-16646 - [7. Integration with Mission Log](SYSTEMS.md#7-integration-with-mission-log) - context: Caelum Argenteum — Current systems and rules > Economy
+- Lines 16647-16685 - [Native dialogues and audio](SYSTEMS.md#native-dialogues-and-audio) - context: Caelum Argenteum — Current systems and rules
 
-## [TASKS.md](TASKS.md) - 39456 words
+## [TASKS.md](TASKS.md) - 39467 words
 
-SHA-256: `83affd97513949094cd1de2347a323af506758b6aad1be29c3a4b1bd4b77bc78`
+SHA-256: `f01882d148060b3a5d7dab9f7f3644464dbcfd0ebfccadebfc1231ebd7865eff`
 
 - Lines 1-4 - [TASKS.md — Active tasks](TASKS.md#tasksmd--active-tasks) - context: -
-- Lines 5-36 - [5.13.3 - Continue Major handlers (#440)](TASKS.md#5133---continue-major-handlers-440) - context: TASKS.md — Active tasks
-- Lines 37-44 - `5.13.2 - Reversible equipment awakening (#442)` - context: TASKS.md — Active tasks
-- Lines 45-52 - `5.13.1 - Capture sources and unified Tarot (#441)` - context: TASKS.md — Active tasks
-- Lines 53-68 - `5.13.0 - Major Arcana specification audit (#439)` - context: TASKS.md — Active tasks
-- Lines 69-80 - `5.12.7a - Death-interface correction (#602)` - context: TASKS.md — Active tasks
-- Lines 81-120 - `Earlier V5.12 integration handoff - 2026-10-31` - context: TASKS.md — Active tasks
-- Lines 121-220 - `Earlier 5.12.7 integration checkpoints - #435` - context: TASKS.md — Active tasks
-- Lines 221-236 - [V5.12 profiles - #434 / 5.12.6 in progress](TASKS.md#v512-profiles---434--5126-in-progress) - context: TASKS.md — Active tasks
-- Lines 237-254 - [V5.12 in progress - #590 seated 1v1 cards (5.12.5)](TASKS.md#v512-in-progress---590-seated-1v1-cards-5125) - context: TASKS.md — Active tasks
-- Lines 255-263 - [V5.12 organized combat - #438 / 5.12.4](TASKS.md#v512-organized-combat---438--5124) - context: TASKS.md — Active tasks
-- Lines 264-277 - [V5.12 lifecycle work - #437 / 5.12.3](TASKS.md#v512-lifecycle-work---437--5123) - context: TASKS.md — Active tasks
-- Lines 278-303 - [V5.12 work in progress - #436 / 5.12.2](TASKS.md#v512-work-in-progress---436--5122) - context: TASKS.md — Active tasks
-- Lines 304-319 - [V5.12 preparation - #434-438 (unreleased, 2026-10-30)](TASKS.md#v512-preparation---434-438-unreleased-2026-10-30) - context: TASKS.md — Active tasks
-- Lines 320-346 - [V5.11 complete - 5.11.8 (#429-433, #580-582, #586, 2026-10-30)](TASKS.md#v511-complete---5118-429-433-580-582-586-2026-10-30) - context: TASKS.md — Active tasks
-- Lines 347-373 - [V5.10 complete - author-accepted 2026-10-30 (5.10.3, #425-428)](TASKS.md#v510-complete---author-accepted-2026-10-30-5103-425-428) - context: TASKS.md — Active tasks
-- Lines 374-393 - [V5.9 complete - author-accepted 2026-10-30 (5.9.7, #403)](TASKS.md#v59-complete---author-accepted-2026-10-30-597-403) - context: TASKS.md — Active tasks
-- Lines 394-427 - `V5.8 completion - 2026-10-29 (#403)` - context: TASKS.md — Active tasks
-- Lines 428-434 - `5.8.56 / #416 - Original Ciudad theme for Buenos Aires` - context: TASKS.md — Active tasks
-- Lines 435-439 - `5.8.55 / #415 - Remove repeated global Rally lookups` - context: TASKS.md — Active tasks
-- Lines 440-445 - [5.8.54 / #410 - Author review corrections](TASKS.md#5854--410---author-review-corrections) - context: TASKS.md — Active tasks
-- Lines 446-461 - `5.8.53 / #417 - Final V5.8 implementation handoff - 2026-10-29` - context: TASKS.md — Active tasks
-- Lines 462-472 - `5.8.52 / #416 - Network implementation ready - 2026-10-29` - context: TASKS.md — Active tasks
-- Lines 473-490 - [5.8.51 / #415 - Implementation ready for grouped corroboration](TASKS.md#5851--415---implementation-ready-for-grouped-corroboration) - context: TASKS.md — Active tasks
-- Lines 491-504 - [Unreleased #417 incidents - 2026-10-29](TASKS.md#unreleased-417-incidents---2026-10-29) - context: TASKS.md — Active tasks
-- Lines 505-520 - [Unreleased #416 transport integration - 2026-10-29](TASKS.md#unreleased-416-transport-integration---2026-10-29) - context: TASKS.md — Active tasks
-- Lines 521-659 - [Unreleased #415 integration work](TASKS.md#unreleased-415-integration-work) - context: TASKS.md — Active tasks
-- Lines 660-669 - [5.8.50 / #502 - Contact adapters verified](TASKS.md#5850--502---contact-adapters-verified) - context: TASKS.md — Active tasks
-- Lines 670-679 - [5.8.49 / #502 - Physical stacks and food](TASKS.md#5849--502---physical-stacks-and-food) - context: TASKS.md — Active tasks
-- Lines 680-691 - [5.8.48 / #502 - Vessel exposure and test lifecycle](TASKS.md#5848--502---vessel-exposure-and-test-lifecycle) - context: TASKS.md — Active tasks
-- Lines 692-701 - [5.8.47 / #502 - Abstract stack contact](TASKS.md#5847--502---abstract-stack-contact) - context: TASKS.md — Active tasks
-- Lines 702-712 - [5.8.46 / #502 - Absent native NPC physiology](TASKS.md#5846--502---absent-native-npc-physiology) - context: TASKS.md — Active tasks
-- Lines 713-723 - [5.8.45 / #502 - Dining contact integration](TASKS.md#5845--502---dining-contact-integration) - context: TASKS.md — Active tasks
-- Lines 724-733 - [5.8.44 / #410 - Landscapes and ornamental statues](TASKS.md#5844--410---landscapes-and-ornamental-statues) - context: TASKS.md — Active tasks
-- Lines 734-745 - [5.8.43 / #502 - Unloaded household work](TASKS.md#5843--502---unloaded-household-work) - context: TASKS.md — Active tasks
-- Lines 746-757 - [5.8.42 / #502 - Furnishing contamination persistence](TASKS.md#5842--502---furnishing-contamination-persistence) - context: TASKS.md — Active tasks
-- Lines 758-769 - [5.8.41 / #502 - Household persistence prerequisite](TASKS.md#5841--502---household-persistence-prerequisite) - context: TASKS.md — Active tasks
-- Lines 770-781 - [5.8.40 / #410 - Dining set acquisition and transport](TASKS.md#5840--410---dining-set-acquisition-and-transport) - context: TASKS.md — Active tasks
-- Lines 782-795 - [5.8.39 / #415 - Shared aim and mean-hit calculation](TASKS.md#5839--415---shared-aim-and-mean-hit-calculation) - context: TASKS.md — Active tasks
-- Lines 796-806 - [5.8.38 / #502 - Loaded NPC physiology](TASKS.md#5838--502---loaded-npc-physiology) - context: TASKS.md — Active tasks
-- Lines 807-816 - [5.8.37 / #502 - Seal object history](TASKS.md#5837--502---seal-object-history) - context: TASKS.md — Active tasks
-- Lines 817-827 - [5.8.36 / #410 - Study acquisition](TASKS.md#5836--410---study-acquisition) - context: TASKS.md — Active tasks
-- Lines 828-837 - [5.8.35 / #410 - Sofa acquisition](TASKS.md#5835--410---sofa-acquisition) - context: TASKS.md — Active tasks
-- Lines 838-846 - `5.8.34 / #410 - Ordinary rest furniture acquisition` - context: TASKS.md — Active tasks
-- Lines 847-856 - [5.8.33 / #410 - Ordinary rest furniture scale](TASKS.md#5833--410---ordinary-rest-furniture-scale) - context: TASKS.md — Active tasks
-- Lines 857-864 - [5.8.32 / #410 - Luxury rest furniture supply and transport](TASKS.md#5832--410---luxury-rest-furniture-supply-and-transport) - context: TASKS.md — Active tasks
-- Lines 865-874 - [5.8.31 / #410 - Storage furniture acquisition](TASKS.md#5831--410---storage-furniture-acquisition) - context: TASKS.md — Active tasks
-- Lines 875-890 - [5.8.30 / #410 - Luxury furniture catalogue](TASKS.md#5830--410---luxury-furniture-catalogue) - context: TASKS.md — Active tasks
-- Lines 891-905 - [5.8.29 - Sofa seating stage (#410)](TASKS.md#5829---sofa-seating-stage-410) - context: TASKS.md — Active tasks
-- Lines 906-928 - `5.8.28 - Regional weather history for objects (#502)` - context: TASKS.md — Active tasks
-- Lines 929-944 - `5.8.27 - Indoor furniture placement (#411)` - context: TASKS.md — Active tasks
-- Lines 945-963 - `5.8.26 - Stored-book reading (#410)` - context: TASKS.md — Active tasks
-- Lines 964-977 - `5.8.25 - Garden water furniture (#410)` - context: TASKS.md — Active tasks
-- Lines 978-996 - `5.8.24 - Native wardrobe storage (#410)` - context: TASKS.md — Active tasks
-- Lines 997-1011 - `5.8.23 - Constant Limbo exposure across absence (#502)` - context: TASKS.md — Active tasks
-- Lines 1012-1026 - `5.8.22 - Shared-water mansion bathroom fixtures (#410)` - context: TASKS.md — Active tasks
-- Lines 1027-1042 - `5.8.21 - Attended camp cooking and fuel interruption (#411)` - context: TASKS.md — Active tasks
-- Lines 1043-1055 - `5.8.20 - Mansion kitchen sink and wall cupboard (#410)` - context: TASKS.md — Active tasks
-- Lines 1056-1076 - `5.8.19 - Attended cooking and shared bread proofing (#410)` - context: TASKS.md — Active tasks
-- Lines 1077-1092 - `5.8.18 - Prepared meal items and consumption (#410)` - context: TASKS.md — Active tasks
-- Lines 1093-1109 - `5.8.17 - Kitchen ingredients (#410)` - context: TASKS.md — Active tasks
-- Lines 1110-1127 - `5.8.16 - Non-solid physical scenery exposure (#502)` - context: TASKS.md — Active tasks
-- Lines 1128-1146 - `5.8.15 - Usable sleeping bag inside the tent (#412, in progress)` - context: TASKS.md — Active tasks
-- Lines 1147-1161 - `5.8.14 - Native ration lots (#410, in progress)` - context: TASKS.md — Active tasks
-- Lines 1162-1171 - [5.8.13 / #411 - Campfire and mounted pot](TASKS.md#5813--411---campfire-and-mounted-pot) - context: TASKS.md — Active tasks
-- Lines 1172-1354 - `5.8.12 - Metabolic toilet sessions (#502, in progress)` - context: TASKS.md — Active tasks
-- Lines 1355-1375 - [5.8.11 / #410 - Domestic bathrooms](TASKS.md#5811--410---domestic-bathrooms) - context: TASKS.md — Active tasks
-- Lines 1376-1397 - `5.8.10 - Protect resting tent occupants (#412, in progress)` - context: TASKS.md — Active tasks
-- Lines 1398-1471 - [5.8.9 - Contamination expansion (#502, in progress)](TASKS.md#589---contamination-expansion-502-in-progress) - context: TASKS.md — Active tasks
-- Lines 1472-1481 - [5.8.8 / #411 - Placement and persistent tents](TASKS.md#588--411---placement-and-persistent-tents) - context: TASKS.md — Active tasks
-- Lines 1482-1490 - [5.8.7 / #410 - Forecast contamination integration](TASKS.md#587--410---forecast-contamination-integration) - context: TASKS.md — Active tasks
-- Lines 1491-1494 - [5.8.6 / #411 - Central property access](TASKS.md#586--411---central-property-access) - context: TASKS.md — Active tasks
-- Lines 1495-1498 - [5.8.5 / #415 - Regional discovery](TASKS.md#585--415---regional-discovery) - context: TASKS.md — Active tasks
-- Lines 1499-1502 - [5.8.4 / #496 - Map soundtrack](TASKS.md#584--496---map-soundtrack) - context: TASKS.md — Active tasks
-- Lines 1503-1521 - [#410 / 5.8.3 - Food and furniture in progress](TASKS.md#410--583---food-and-furniture-in-progress) - context: TASKS.md — Active tasks
-- Lines 1522-1530 - [#414 / 5.8.2 - Production connected water](TASKS.md#414--582---production-connected-water) - context: TASKS.md — Active tasks
-- Lines 1531-1542 - [#413 / 5.8.1 - Altitude and acclimatization](TASKS.md#413--581---altitude-and-acclimatization) - context: TASKS.md — Active tasks
-- Lines 1543-1559 - [#414 / 5.8.0 - Native connected-water feasibility](TASKS.md#414--580---native-connected-water-feasibility) - context: TASKS.md — Active tasks
-- Lines 1560-1574 - [#472 / 5.7.14 - Reusable mates](TASKS.md#472--5714---reusable-mates) - context: TASKS.md — Active tasks
-- Lines 1575-1586 - [#471 / 5.7.13 - Chemistry recipes and fermentation batches](TASKS.md#471--5713---chemistry-recipes-and-fermentation-batches) - context: TASKS.md — Active tasks
-- Lines 1587-1597 - [#487 / 5.7.12 - Fermentation Barrel](TASKS.md#487--5712---fermentation-barrel) - context: TASKS.md — Active tasks
-- Lines 1598-1606 - [#486 / 5.7.11 - Chemistry station name](TASKS.md#486--5711---chemistry-station-name) - context: TASKS.md — Active tasks
-- Lines 1607-1636 - [#471 / 5.7.10 - Cartridge station migration](TASKS.md#471--5710---cartridge-station-migration) - context: TASKS.md — Active tasks
-- Lines 1637-1657 - [#409 / 5.7.9 - Boiling and stored-water temperature](TASKS.md#409--579---boiling-and-stored-water-temperature) - context: TASKS.md — Active tasks
-- Lines 1658-1685 - [#479 / 5.7.8 - Implemented and author accepted](TASKS.md#479--578---implemented-and-author-accepted) - context: TASKS.md — Active tasks
-- Lines 1686-1693 - [5.7.7 - Target-panel delivery (#481)](TASKS.md#577---target-panel-delivery-481) - context: TASKS.md — Active tasks
-- Lines 1694-1708 - `5.7.6 - Alchemy art stage (#471)` - context: TASKS.md — Active tasks
-- Lines 1709-1727 - `5.7.5 - Marine imports and iodine (#407)` - context: TASKS.md — Active tasks
-- Lines 1728-1750 - `5.7.4 - Fixed Alchemy station (#470)` - context: TASKS.md — Active tasks
-- Lines 1751-1764 - `5.7.3 - Monotonic source recovery (#406)` - context: TASKS.md — Active tasks
-- Lines 1765-1777 - `5.7.2 - Land resources and owned 3D objects (#405)` - context: TASKS.md — Active tasks
-- Lines 1778-1788 - [5.7.1 - Regional resource contract (#404)](TASKS.md#571---regional-resource-contract-404) - context: TASKS.md — Active tasks
-- Lines 1789-1798 - [5.7.0 - Persistent water quality (#408)](TASKS.md#570---persistent-water-quality-408) - context: TASKS.md — Active tasks
-- Lines 1799-1813 - [5.6.11a — close accepted V5.6 scope; defer clothing appearance (#387)](TASKS.md#5611a--close-accepted-v56-scope-defer-clothing-appearance-387) - context: TASKS.md — Active tasks
-- Lines 1814-1822 - [5.6.11 — calendar replenishment (#385)](TASKS.md#5611--calendar-replenishment-385) - context: TASKS.md — Active tasks
-- Lines 1823-1831 - [5.6.10 — city catalogue extension (#383)](TASKS.md#5610--city-catalogue-extension-383) - context: TASKS.md — Active tasks
-- Lines 1832-1839 - `5.6.9 - Native cartridge assembly (#380)` - context: TASKS.md — Active tasks
-- Lines 1840-1848 - `5.6.8 - Approved sealed cartridge kits (#379)` - context: TASKS.md — Active tasks
-- Lines 1849-1862 - `5.6.7 - Individual clothing object sprites (#387)` - context: TASKS.md — Active tasks
-- Lines 1863-1877 - `5.6.6 - Native ordinary clothing (#386)` - context: TASKS.md — Active tasks
-- Lines 1878-1888 - [5.6.4 - Review one-time death loot (#384)](TASKS.md#564---review-one-time-death-loot-384) - context: TASKS.md — Active tasks
-- Lines 1889-1896 - [5.6.3b - Review ordinary-clothing data before implementation (#386)](TASKS.md#563b---review-ordinary-clothing-data-before-implementation-386) - context: TASKS.md — Active tasks
-- Lines 1897-1909 - [5.6.5 - Implement approved locks and ownership (#382)](TASKS.md#565---implement-approved-locks-and-ownership-382) - context: TASKS.md — Active tasks
-- Lines 1910-1921 - [5.6.3 - Recipe acquisition and study (#378)](TASKS.md#563---recipe-acquisition-and-study-378) - context: TASKS.md — Active tasks
-- Lines 1922-1931 - [5.6.2 - Native ordinary containers (#381)](TASKS.md#562---native-ordinary-containers-381) - context: TASKS.md — Active tasks
-- Lines 1932-1941 - `5.6.1 - Merchant coordination (#377)` - context: TASKS.md — Active tasks
-- Lines 1942-1954 - [5.6.0 - Crafting coordination (#376)](TASKS.md#560---crafting-coordination-376) - context: TASKS.md — Active tasks
-- Lines 1955-1963 - [5.5.8a - Deferred issue closed at author request (#316)](TASKS.md#558a---deferred-issue-closed-at-author-request-316) - context: TASKS.md — Active tasks
-- Lines 1964-1975 - [5.5.8 - Bull visual replacement (#369)](TASKS.md#558---bull-visual-replacement-369) - context: TASKS.md — Active tasks
-- Lines 1976-1994 - `5.5.7 - Future melee energy contract; conversion deferred (#315)` - context: TASKS.md — Active tasks
-- Lines 1995-2016 - `5.5.6 - Ice and lava ground contact (#314)` - context: TASKS.md — Active tasks
-- Lines 2017-2030 - `5.5.5 - Equipped-Seal input while unarmed (#363)` - context: TASKS.md — Active tasks
-- Lines 2031-2048 - `5.5.4 - Ammunition mass and finished-component contract (#313)` - context: TASKS.md — Active tasks
-- Lines 2049-2063 - `5.5.3 - Sustained pressure lifecycle and native descent (#312)` - context: TASKS.md — Active tasks
-- Lines 2064-2078 - [5.5.2 - Multiple-contact identity and armor (#311)](TASKS.md#552---multiple-contact-identity-and-armor-311) - context: TASKS.md — Active tasks
-- Lines 2079-2089 - [5.5.1 - Combat dispatch extraction (#310)](TASKS.md#551---combat-dispatch-extraction-310) - context: TASKS.md — Active tasks
-- Lines 2090-2098 - `5.5.0 - Weapon/input audit (#309)` - context: TASKS.md — Active tasks
-- Lines 2099-2111 - [5.4.47 - Production siege adrenaline (#361)](TASKS.md#5447---production-siege-adrenaline-361) - context: TASKS.md — Active tasks
-- Lines 2112-2120 - [5.4.46 - Revised house transition (#334)](TASKS.md#5446---revised-house-transition-334) - context: TASKS.md — Active tasks
-- Lines 2121-2129 - [5.4.45 - Artillery navigation breath fixed (#357)](TASKS.md#5445---artillery-navigation-breath-fixed-357) - context: TASKS.md — Active tasks
-- Lines 2130-2140 - [5.4.44 - Structural-cache investigation delivered (#354)](TASKS.md#5444---structural-cache-investigation-delivered-354) - context: TASKS.md — Active tasks
-- Lines 2141-2154 - [5.4.43 - Adopted production caches and group targeting (#353)](TASKS.md#5443---adopted-production-caches-and-group-targeting-353) - context: TASKS.md — Active tasks
-- Lines 2155-2171 - [5.4.42 - Actor-local 100-tic maintenance trial (#318)](TASKS.md#5442---actor-local-100-tic-maintenance-trial-318) - context: TASKS.md — Active tasks
-- Lines 2172-2184 - `5.4.41 - Isolated siege update costs (#318)` - context: TASKS.md — Active tasks
-- Lines 2185-2193 - `5.4.40 - Shared rest safety (#325)` - context: TASKS.md — Active tasks
-- Lines 2194-2202 - `5.4.39 - Voluntary-jump wall cushioning (#339)` - context: TASKS.md — Active tasks
-- Lines 2203-2210 - `5.4.38 - Complete top-aligned map legend (#321)` - context: TASKS.md — Active tasks
-- Lines 2211-2220 - `5.4.37 - Current MAP03 attribution supplement (#318)` - context: TASKS.md — Active tasks
-- Lines 2221-2230 - `5.4.36 - House-door presentation isolation (#334)` - context: TASKS.md — Active tasks
-- Lines 2231-2245 - [5.4.35 - Prisoner escort replacement (#322)](TASKS.md#5435---prisoner-escort-replacement-322) - context: TASKS.md — Active tasks
-- Lines 2246-2257 - `5.4.34 - Active-play autosaving (#324)` - context: TASKS.md — Active tasks
-- Lines 2258-2266 - [5.4.33 - Western crusher sector isolation (#323)](TASKS.md#5433---western-crusher-sector-isolation-323) - context: TASKS.md — Active tasks
-- Lines 2267-2275 - `5.4.32 - Direct demon projectile aim (#320)` - context: TASKS.md — Active tasks
-- Lines 2276-2282 - [5.4.31 - Collapsible map legend (#321)](TASKS.md#5431---collapsible-map-legend-321) - context: TASKS.md — Active tasks
-- Lines 2283-2289 - `5.4.30 - Sleeping bag quick-item access (#319)` - context: TASKS.md — Active tasks
-- Lines 2290-2304 - [5.4.29 - Adopted MAP03 city (#327)](TASKS.md#5429---adopted-map03-city-327) - context: TASKS.md — Active tasks
-- Lines 2305-2396 - [5.4.28 - MAP06 issue #318 (contact heat implemented; map performance unresolved)](TASKS.md#5428---map06-issue-318-contact-heat-implemented-map-performance-unresolved) - context: TASKS.md — Active tasks
-- Lines 2397-2408 - [5.4.27 - Normal prisoner escort speed (#307, accepted)](TASKS.md#5427---normal-prisoner-escort-speed-307-accepted) - context: TASKS.md — Active tasks
-- Lines 2409-2420 - [5.4.26 - Active seal lookup optimization (#305, accepted)](TASKS.md#5426---active-seal-lookup-optimization-305-accepted) - context: TASKS.md — Active tasks
-- Lines 2421-2435 - [5.4.25 - Performance issue #304 (accepted)](TASKS.md#5425---performance-issue-304-accepted) - context: TASKS.md — Active tasks
-- Lines 2436-2445 - [Current V5.4 batch completion](TASKS.md#current-v54-batch-completion) - context: TASKS.md — Active tasks
-- Lines 2446-2459 - [5.4.24 - Demon combat and rock (#284, accepted)](TASKS.md#5424---demon-combat-and-rock-284-accepted) - context: TASKS.md — Active tasks
-- Lines 2460-2476 - [5.4.23 - Domingo 3D prototype (#283, accepted)](TASKS.md#5423---domingo-3d-prototype-283-accepted) - context: TASKS.md — Active tasks
-- Lines 2477-2487 - [5.4.22 - Quick-use HUD (#282, accepted)](TASKS.md#5422---quick-use-hud-282-accepted) - context: TASKS.md — Active tasks
-- Lines 2488-2508 - [5.4.21 - Seal extensions (#252, accepted)](TASKS.md#5421---seal-extensions-252-accepted) - context: TASKS.md — Active tasks
-- Lines 2509-2519 - [5.4.20 - Arcane Cloud (#251, accepted)](TASKS.md#5420---arcane-cloud-251-accepted) - context: TASKS.md — Active tasks
-- Lines 2520-2531 - [5.4.19 - Redemption (#250, accepted)](TASKS.md#5419---redemption-250-accepted) - context: TASKS.md — Active tasks
-- Lines 2532-2541 - [5.4.18 - Summoning (#249, accepted)](TASKS.md#5418---summoning-249-accepted) - context: TASKS.md — Active tasks
-- Lines 2542-2553 - [5.4.17 - Rally (#248, accepted)](TASKS.md#5417---rally-248-accepted) - context: TASKS.md — Active tasks
-- Lines 2554-2563 - [5.4.16 - Formation Breaker (#247, accepted)](TASKS.md#5416---formation-breaker-247-accepted) - context: TASKS.md — Active tasks
-- Lines 2564-2572 - [5.4.15 - Player acceleration and impulse (#260, accepted)](TASKS.md#5415---player-acceleration-and-impulse-260-accepted) - context: TASKS.md — Active tasks
-- Lines 2573-2584 - [5.4.14 - Resident participation at the protected floor (#253)](TASKS.md#5414---resident-participation-at-the-protected-floor-253) - context: TASKS.md — Active tasks
-- Lines 2585-2595 - [5.4.13 - Arcane Sun (#246)](TASKS.md#5413---arcane-sun-246) - context: TASKS.md — Active tasks
-- Lines 2596-2606 - [5.4.12 - Miracle (#245)](TASKS.md#5412---miracle-245) - context: TASKS.md — Active tasks
-- Lines 2607-2616 - [5.4.11 - Survival Instinct (#244)](TASKS.md#5411---survival-instinct-244) - context: TASKS.md — Active tasks
-- Lines 2617-2625 - [5.4.10 - Battle Cry (#243)](TASKS.md#5410---battle-cry-243) - context: TASKS.md — Active tasks
-- Lines 2626-2634 - [5.4.9 - Hunter's Instinct (#239)](TASKS.md#549---hunters-instinct-239) - context: TASKS.md — Active tasks
-- Lines 2635-2643 - [5.4.8 - Socialization (#240)](TASKS.md#548---socialization-240) - context: TASKS.md — Active tasks
-- Lines 2644-2651 - [5.4.7 - Telekinesis (#241)](TASKS.md#547---telekinesis-241) - context: TASKS.md — Active tasks
-- Lines 2652-2664 - [5.4.6 - Supernatural Breathing (#242)](TASKS.md#546---supernatural-breathing-242) - context: TASKS.md — Active tasks
-- Lines 2665-2698 - [5.4.4 - Shared class preparation (#238)](TASKS.md#544---shared-class-preparation-238) - context: TASKS.md — Active tasks
-- Lines 2699-2707 - `5.4.3 - MAP02 rat movement and audio (#254)` - context: TASKS.md — Active tasks
-- Lines 2708-2717 - `5.4.2 - Equipped-Seal resistances (#261)` - context: TASKS.md — Active tasks
-- Lines 2718-2727 - `5.4.1 - Weapon dispersion tiers (#259)` - context: TASKS.md — Active tasks
-- Lines 2728-2740 - [5.4.0 - Attribute audit (#237)](TASKS.md#540---attribute-audit-237) - context: TASKS.md — Active tasks
-- Lines 2741-2752 - [5.3.9 - Exploration entry points (#236)](TASKS.md#539---exploration-entry-points-236) - context: TASKS.md — Active tasks
-- Lines 2753-2775 - [5.3.8 - Multiple mission tracking (#235)](TASKS.md#538---multiple-mission-tracking-235) - context: TASKS.md — Active tasks
-- Lines 2776-2807 - [5.3.7 - Existing-map exploration (#234)](TASKS.md#537---existing-map-exploration-234) - context: TASKS.md — Active tasks
-- Lines 2808-2818 - [5.3.6 - Manual map notes (#233)](TASKS.md#536---manual-map-notes-233) - context: TASKS.md — Active tasks
-- Lines 2819-2831 - [5.3.5 - Personal POI knowledge (#232)](TASKS.md#535---personal-poi-knowledge-232) - context: TASKS.md — Active tasks
-- Lines 2832-2843 - `5.3.4 - Native local cartography (#231)` - context: TASKS.md — Active tasks
-- Lines 2844-2850 - `5.3.3 - Exhaustion sleep (#258)` - context: TASKS.md — Active tasks
-- Lines 2851-2860 - `5.3.2 - Automatic provisions (#257)` - context: TASKS.md — Active tasks
-- Lines 2861-2870 - [5.3.1 - Survival and combat presentation (#256)](TASKS.md#531---survival-and-combat-presentation-256) - context: TASKS.md — Active tasks
-- Lines 2871-2878 - [5.3.0 - Power indicators (#255)](TASKS.md#530---power-indicators-255) - context: TASKS.md — Active tasks
-- Lines 2879-2886 - [5.2.27 - Empty Magic Box weighs one gram (#229)](TASKS.md#5227---empty-magic-box-weighs-one-gram-229) - context: TASKS.md — Active tasks
-- Lines 2887-2896 - [5.2.26 - Rest control diagnosis and feedback (#227)](TASKS.md#5226---rest-control-diagnosis-and-feedback-227) - context: TASKS.md — Active tasks
-- Lines 2897-2905 - [5.2.25 - Staff matches statuette dispersion (#222)](TASKS.md#5225---staff-matches-statuette-dispersion-222) - context: TASKS.md — Active tasks
-- Lines 2906-2913 - [5.2.24 - MAP02 Mandinga drops (#220)](TASKS.md#5224---map02-mandinga-drops-220) - context: TASKS.md — Active tasks
-- Lines 2914-2922 - [5.2.23 - Sewer sleeping-bag acceleration (#219)](TASKS.md#5223---sewer-sleeping-bag-acceleration-219) - context: TASKS.md — Active tasks
-- Lines 2923-2937 - [5.2.22 - Current menu controls (#215)](TASKS.md#5222---current-menu-controls-215) - context: TASKS.md — Active tasks
-- Lines 2938-2948 - `5.2.21 - Visible tutorial gold (#216)` - context: TASKS.md — Active tasks
-- Lines 2949-2962 - [Issue #213 - Resource bar layout (5.2.20)](TASKS.md#issue-213---resource-bar-layout-5220) - context: TASKS.md — Active tasks
-- Lines 2963-2974 - [Issue #211 - Horizontal landing capacity (5.2.19)](TASKS.md#issue-211---horizontal-landing-capacity-5219) - context: TASKS.md — Active tasks
-- Lines 2975-2984 - [Issue #209 - Modular animation and rest repair (5.2.18)](TASKS.md#issue-209---modular-animation-and-rest-repair-5218) - context: TASKS.md — Active tasks
-- Lines 2985-2994 - [Issue #207 - MAP01 player stays alive at 1 HP (5.2.17)](TASKS.md#issue-207---map01-player-stays-alive-at-1-hp-5217) - context: TASKS.md — Active tasks
-- Lines 2995-3009 - [Issue #204 - Fullscreen native cursor (5.2.16)](TASKS.md#issue-204---fullscreen-native-cursor-5216) - context: TASKS.md — Active tasks
-- Lines 3010-3020 - [Issue #150 - Readability and comfort (5.2.15)](TASKS.md#issue-150---readability-and-comfort-5215) - context: TASKS.md — Active tasks
-- Lines 3021-3031 - [Issue #149 - Controls and synchronized hints (5.2.14)](TASKS.md#issue-149---controls-and-synchronized-hints-5214) - context: TASKS.md — Active tasks
-- Lines 3032-3053 - [Issue #148 - Native cosmetics and preview (5.2.13)](TASKS.md#issue-148---native-cosmetics-and-preview-5213) - context: TASKS.md — Active tasks
-- Lines 3054-3064 - [Issue #195 - Bull balance and resident actions (5.2.12)](TASKS.md#issue-195---bull-balance-and-resident-actions-5212) - context: TASKS.md — Active tasks
-- Lines 3065-3076 - [Issue #194 - Collision energy and contact area (5.2.11)](TASKS.md#issue-194---collision-energy-and-contact-area-5211) - context: TASKS.md — Active tasks
-- Lines 3077-3084 - [Issue #192 - Ranged amendment and shotgun naming (5.2.10)](TASKS.md#issue-192---ranged-amendment-and-shotgun-naming-5210) - context: TASKS.md — Active tasks
-- Lines 3085-3095 - [Issue #192 - Personality and magical bell (5.2.9)](TASKS.md#issue-192---personality-and-magical-bell-529) - context: TASKS.md — Active tasks
-- Lines 3096-3103 - [Issue #188 - Toughness (5.2.8)](TASKS.md#issue-188---toughness-528) - context: TASKS.md — Active tasks
-- Lines 3104-3110 - [Issue #184 - Mouse interaction (5.2.6)](TASKS.md#issue-184---mouse-interaction-526) - context: TASKS.md — Active tasks
-- Lines 3111-3120 - [Issue #189 - Native interactive menus (5.2.7)](TASKS.md#issue-189---native-interactive-menus-527) - context: TASKS.md — Active tasks
-- Lines 3121-3131 - [Issue #183 - Profession onboarding and MAP02 supplies (5.2.4)](TASKS.md#issue-183---profession-onboarding-and-map02-supplies-524) - context: TASKS.md — Active tasks
-- Lines 3132-3142 - [Issue #185 - Indexed NPC dialogue and localization sources (5.2.5)](TASKS.md#issue-185---indexed-npc-dialogue-and-localization-sources-525) - context: TASKS.md — Active tasks
-- Lines 3143-3151 - [Issue #180 - Allied Mandinga retaliation (5.2.3)](TASKS.md#issue-180---allied-mandinga-retaliation-523) - context: TASKS.md — Active tasks
-- Lines 3152-3159 - [Issue #178 - Faster multi-day time skipping (5.2.2)](TASKS.md#issue-178---faster-multi-day-time-skipping-522) - context: TASKS.md — Active tasks
-- Lines 3160-3171 - [Issue #177 - Tutorial equipment, provisions and portable rest (5.2.1)](TASKS.md#issue-177---tutorial-equipment-provisions-and-portable-rest-521) - context: TASKS.md — Active tasks
-- Lines 3172-3183 - [Issue #147 - Unified identity and native settings (5.2.0)](TASKS.md#issue-147---unified-identity-and-native-settings-520) - context: TASKS.md — Active tasks
-- Lines 3184-3193 - [Issue #173 - MAP06 interior doors and time skip (5.1.20)](TASKS.md#issue-173---map06-interior-doors-and-time-skip-5120) - context: TASKS.md — Active tasks
-- Lines 3194-3201 - [Issue #172 - Shared NPC dialogue history (5.1.19)](TASKS.md#issue-172---shared-npc-dialogue-history-5119) - context: TASKS.md — Active tasks
-- Lines 3202-3212 - [Issue #164 - Permanent gifts and assisted Bull checkpoint (5.1.18)](TASKS.md#issue-164---permanent-gifts-and-assisted-bull-checkpoint-5118) - context: TASKS.md — Active tasks
-- Lines 3213-3219 - [Issue #169 - Medikit names (5.1.17)](TASKS.md#issue-169---medikit-names-5117) - context: TASKS.md — Active tasks
-- Lines 3220-3233 - [Issue #163 - Recoverable bolas (5.1.16)](TASKS.md#issue-163---recoverable-bolas-5116) - context: TASKS.md — Active tasks
-- Lines 3234-3243 - [Issue #162 - Bronze utility staff (5.1.15)](TASKS.md#issue-162---bronze-utility-staff-5115) - context: TASKS.md — Active tasks
-- Lines 3244-3254 - [Issue #165 - Damage flash across map travel (5.1.14)](TASKS.md#issue-165---damage-flash-across-map-travel-5114) - context: TASKS.md — Active tasks
-- Lines 3255-3263 - [Issue #160 - Argento silver-key handoff (5.1.13)](TASKS.md#issue-160---argento-silver-key-handoff-5113) - context: TASKS.md — Active tasks
-- Lines 3264-3274 - [Issue #158 - Preserve crafting equipment size (5.1.12)](TASKS.md#issue-158---preserve-crafting-equipment-size-5112) - context: TASKS.md — Active tasks
-- Lines 3275-3285 - [Issue #156 - Time-skip letter controls (5.1.11)](TASKS.md#issue-156---time-skip-letter-controls-5111) - context: TASKS.md — Active tasks
-- Lines 3286-3299 - [Issue #154 — SI physics and growth (5.1.10)](TASKS.md#issue-154--si-physics-and-growth-5110) - context: TASKS.md — Active tasks
-- Lines 3300-3317 - [Issue #152 - Shotgun follow-up (5.1.9)](TASKS.md#issue-152---shotgun-follow-up-519) - context: TASKS.md — Active tasks
-- Lines 3318-3337 - [Issue #137 - Elemental VFX and screen feedback (5.1.8)](TASKS.md#issue-137---elemental-vfx-and-screen-feedback-518) - context: TASKS.md — Active tasks
-- Lines 3338-3366 - [Issue #136 - Shortbow shotgun and armor bypass (5.1.7)](TASKS.md#issue-136---shortbow-shotgun-and-armor-bypass-517) - context: TASKS.md — Active tasks
-- Lines 3367-3382 - [Issue #143 - Crouched aimed soldiers (5.1.6)](TASKS.md#issue-143---crouched-aimed-soldiers-516) - context: TASKS.md — Active tasks
-- Lines 3383-3404 - [Issue #135 - Demon breath and potions (5.1.5)](TASKS.md#issue-135---demon-breath-and-potions-515) - context: TASKS.md — Active tasks
-- Lines 3405-3433 - [Issue #133 - City interiors and deployment (5.1.3, closure and merge authorized)](TASKS.md#issue-133---city-interiors-and-deployment-513-closure-and-merge-authorized) - context: TASKS.md — Active tasks
-- Lines 3434-3450 - [Issue #140 - Thermal cache and physiology (5.1.4, implemented)](TASKS.md#issue-140---thermal-cache-and-physiology-514-implemented) - context: TASKS.md — Active tasks
-- Lines 3451-3462 - [Issue #132 - Staged siege performance test (5.1.2)](TASKS.md#issue-132---staged-siege-performance-test-512) - context: TASKS.md — Active tasks
-- Lines 3463-3477 - [Issue #131 - Thermal HUD and attribute adaptation (5.1.1)](TASKS.md#issue-131---thermal-hud-and-attribute-adaptation-511) - context: TASKS.md — Active tasks
-- Lines 3478-3501 - [Issue #130 — Thermal survival (5.1.0)](TASKS.md#issue-130--thermal-survival-510) - context: TASKS.md — Active tasks
-- Lines 3502-3534 - [Issue #128 — Automatic normal high-density AI (5.0.6)](TASKS.md#issue-128--automatic-normal-high-density-ai-506) - context: TASKS.md — Active tasks
-- Lines 3535-3571 - [Issue #121 — Siege subsystem diagnosis and combined experiments (5.0.5)](TASKS.md#issue-121--siege-subsystem-diagnosis-and-combined-experiments-505) - context: TASKS.md — Active tasks
-- Lines 3572-3609 - [Issue #120 — Per-player authority and integrated closure (5.0.4)](TASKS.md#issue-120--per-player-authority-and-integrated-closure-504) - context: TASKS.md — Active tasks
-- Lines 3610-3628 - [Issue #119 — Tarot consolidation (5.0.3)](TASKS.md#issue-119--tarot-consolidation-503) - context: TASKS.md — Active tasks
-- Lines 3629-3653 - [Issue #118 — Inventory/equipment consolidation (5.0.2)](TASKS.md#issue-118--inventoryequipment-consolidation-502) - context: TASKS.md — Active tasks
-- Lines 3654-3678 - [Issue #117 — Compatible player domain adapters (5.0.1)](TASKS.md#issue-117--compatible-player-domain-adapters-501) - context: TASKS.md — Active tasks
-- Lines 3679-3701 - [Issue #116 — Architecture audit and first extraction (5.0.0)](TASKS.md#issue-116--architecture-audit-and-first-extraction-500) - context: TASKS.md — Active tasks
-- Lines 3702-3719 - [Issue #82 — V4.37 closing delivery (4.37.24)](TASKS.md#issue-82--v437-closing-delivery-43724) - context: TASKS.md — Active tasks
-- Lines 3720-3737 - [Issue #112 - Contextual character creation (4.37.23)](TASKS.md#issue-112---contextual-character-creation-43723) - context: TASKS.md — Active tasks
-- Lines 3738-3754 - [Historical release-status reconciliation before #82 — 2026-10-05](TASKS.md#historical-release-status-reconciliation-before-82--2026-10-05) - context: TASKS.md — Active tasks
-- Lines 3755-3776 - [Issue #106 - First-person shield sets (4.37.22)](TASKS.md#issue-106---first-person-shield-sets-43722) - context: TASKS.md — Active tasks
-- Lines 3777-3793 - [Issue #103 - Narrative artwork and introductory page (4.37.21)](TASKS.md#issue-103---narrative-artwork-and-introductory-page-43721) - context: TASKS.md — Active tasks
-- Lines 3794-3806 - [Issue #98 - Textured training dummy model (4.37.20)](TASKS.md#issue-98---textured-training-dummy-model-43720) - context: TASKS.md — Active tasks
-- Lines 3807-3820 - [Issue #96 - Palomo necklace and shield names (4.37.19)](TASKS.md#issue-96---palomo-necklace-and-shield-names-43719) - context: TASKS.md — Active tasks
-- Lines 3821-3835 - [Issue #91 - Crafting sections and Tarot fields (4.37.18)](TASKS.md#issue-91---crafting-sections-and-tarot-fields-43718) - context: TASKS.md — Active tasks
-- Lines 3836-3848 - [Issue #89 - Pickaxe and gathering feedback (4.37.17)](TASKS.md#issue-89---pickaxe-and-gathering-feedback-43717) - context: TASKS.md — Active tasks
-- Lines 3849-3859 - [Issue #87 - Compass and project menu pointers (4.37.16)](TASKS.md#issue-87---compass-and-project-menu-pointers-43716) - context: TASKS.md — Active tasks
-- Lines 3860-3867 - [Issue #101 - Traditional ranked Truco (4.37.15)](TASKS.md#issue-101---traditional-ranked-truco-43715) - context: TASKS.md — Active tasks
-- Lines 3868-3874 - [Issue #99 - Argento practice choice order (4.37.14a)](TASKS.md#issue-99---argento-practice-choice-order-43714a) - context: TASKS.md — Active tasks
-- Lines 3875-3883 - [Issue #97 - Palomo's first upstairs deck handoff (4.37.14)](TASKS.md#issue-97---palomos-first-upstairs-deck-handoff-43714) - context: TASKS.md — Active tasks
-- Lines 3884-3890 - [Issue #93 - Crafting time help (4.37.13a)](TASKS.md#issue-93---crafting-time-help-43713a) - context: TASKS.md — Active tasks
-- Lines 3891-3916 - [Issue #81 — Trucazo against Argento (4.37.13)](TASKS.md#issue-81--trucazo-against-argento-43713) - context: TASKS.md — Active tasks
-- Lines 3917-3938 - [Issue #80 — Campaign Tarot activation (4.37.12)](TASKS.md#issue-80--campaign-tarot-activation-43712) - context: TASKS.md — Active tasks
-- Lines 3939-3958 - [Issue #79 — The amnesiac guard captain (4.37.11)](TASKS.md#issue-79--the-amnesiac-guard-captain-43711) - context: TASKS.md — Active tasks
-- Lines 3959-3975 - [Issue #78 — Prisoner siege intelligence (4.37.10)](TASKS.md#issue-78--prisoner-siege-intelligence-43710) - context: TASKS.md — Active tasks
-- Lines 3976-4012 - [Issue #77 — Expanded southern Barracas al Sud (4.37.9)](TASKS.md#issue-77--expanded-southern-barracas-al-sud-4379) - context: TASKS.md — Active tasks
-- Lines 4013-4029 - [Issue #75 — Material supplies and corrected audit (4.37.8)](TASKS.md#issue-75--material-supplies-and-corrected-audit-4378) - context: TASKS.md — Active tasks
-- Lines 4030-4043 - [Issue #74 — Flooded pit returns (4.37.7)](TASKS.md#issue-74--flooded-pit-returns-4377) - context: TASKS.md — Active tasks
-- Lines 4044-4055 - [Issue #73 — Cardinal MAP02 (4.37.6)](TASKS.md#issue-73--cardinal-map02-4376) - context: TASKS.md — Active tasks
-- Lines 4056-4070 - [Issue #65 — Daily mansion food/water (4.37.5)](TASKS.md#issue-65--daily-mansion-foodwater-4375) - context: TASKS.md — Active tasks
-- Lines 4071-4086 - [Issue #64 — Date/time skip and automatic care (4.37.4)](TASKS.md#issue-64--datetime-skip-and-automatic-care-4374) - context: TASKS.md — Active tasks
-- Lines 4087-4103 - [Issue #63 — Move equipment guidance to Palomo (4.37.3)](TASKS.md#issue-63--move-equipment-guidance-to-palomo-4373) - context: TASKS.md — Active tasks
-- Lines 4104-4115 - [Issue #68 — Magic-weapon Anima base costs divided by ten (4.37.2)](TASKS.md#issue-68--magic-weapon-anima-base-costs-divided-by-ten-4372) - context: TASKS.md — Active tasks
-- Lines 4116-4132 - [Issue #62 — Caella's exercises against the training dummy (4.37.1)](TASKS.md#issue-62--caellas-exercises-against-the-training-dummy-4371) - context: TASKS.md — Active tasks
-- Lines 4133-4172 - [Issue #61 — MAP01 terrain, vegetation and filled tympana (4.37.0)](TASKS.md#issue-61--map01-terrain-vegetation-and-filled-tympana-4370) - context: TASKS.md — Active tasks
-- Lines 4173-4196 - [Issue #17 — Verify and export the complete three-map test build (4.36.28)](TASKS.md#issue-17--verify-and-export-the-complete-three-map-test-build-43628) - context: TASKS.md — Active tasks
-- Lines 4197-4219 - [Issue #16 — Complete port siege (4.36.27)](TASKS.md#issue-16--complete-port-siege-43627) - context: TASKS.md — Active tasks
-- Lines 4220-4237 - [Issue #37 — Attack cadence, durability and thrusts (4.36.26)](TASKS.md#issue-37--attack-cadence-durability-and-thrusts-43626) - context: TASKS.md — Active tasks
-- Lines 4238-4266 - [Issue #36 — Mansion enclosure and architectural detail (4.36.25)](TASKS.md#issue-36--mansion-enclosure-and-architectural-detail-43625) - context: TASKS.md — Active tasks
-- Lines 4267-4273 - [Issue #55 — Proprietary rights notice (4.36.24a)](TASKS.md#issue-55--proprietary-rights-notice-43624a) - context: TASKS.md — Active tasks
-- Lines 4274-4285 - [Issue #35 — Quest journal (4.36.24)](TASKS.md#issue-35--quest-journal-43624) - context: TASKS.md — Active tasks
-- Lines 4286-4316 - [Issue #52 — Final armor absorption (4.36.23)](TASKS.md#issue-52--final-armor-absorption-43623) - context: TASKS.md — Active tasks
-- Lines 4317-4340 - [Issue #34 — Demo quest narrative (4.36.22)](TASKS.md#issue-34--demo-quest-narrative-43622) - context: TASKS.md — Active tasks
-- Lines 4341-4352 - [Issue #49 — Scenery collisions and running (4.36.21)](TASKS.md#issue-49--scenery-collisions-and-running-43621) - context: TASKS.md — Active tasks
-- Lines 4353-4369 - [Issue #33 — Arcana capture, wounded Zupay and forward route (4.36.20)](TASKS.md#issue-33--arcana-capture-wounded-zupay-and-forward-route-43620) - context: TASKS.md — Active tasks
-- Lines 4370-4379 - [Issue #43 — Walking wall-impact absorption (4.36.18)](TASKS.md#issue-43--walking-wall-impact-absorption-43618) - context: TASKS.md — Active tasks
-- Lines 4380-4396 - [Issue #21 — Controlled cannon ballistics (4.36.17, final balance 4.36.19)](TASKS.md#issue-21--controlled-cannon-ballistics-43617-final-balance-43619) - context: TASKS.md — Active tasks
-- Lines 4397-4412 - [Issue #20 — Operational demonic rams (4.36.16; planned label 4.36.12)](TASKS.md#issue-20--operational-demonic-rams-43616-planned-label-43612) - context: TASKS.md — Active tasks
-- Lines 4413-4429 - [Issue #19 — Breakable actor gates (4.36.15; planned label 4.36.11)](TASKS.md#issue-19--breakable-actor-gates-43615-planned-label-43611) - context: TASKS.md — Active tasks
-- Lines 4430-4445 - [Issue #18 follow-up — Siege art correction (4.36.14a)](TASKS.md#issue-18-follow-up--siege-art-correction-43614a) - context: TASKS.md — Active tasks
-- Lines 4446-4463 - [Issue #31 — Pain sounds, dialogue cue, map music and story intermissions (4.36.14)](TASKS.md#issue-31--pain-sounds-dialogue-cue-map-music-and-story-intermissions-43614) - context: TASKS.md — Active tasks
-- Lines 4464-4479 - [Issue #18 — Reusable siege preview assets (4.36.10)](TASKS.md#issue-18--reusable-siege-preview-assets-43610) - context: TASKS.md — Active tasks
-- Lines 4480-4496 - [Issue #15 — Approved Tarot fronts and collection bindings (4.36.9)](TASKS.md#issue-15--approved-tarot-fronts-and-collection-bindings-4369) - context: TASKS.md — Active tasks
-- Lines 4497-4517 - [Issue #14 — Prisoner rescue, escort and port rewards (4.36.8)](TASKS.md#issue-14--prisoner-rescue-escort-and-port-rewards-4368) - context: TASKS.md — Active tasks
-- Lines 4518-4534 - [Issue #13 — Recolored prisoner appearances (4.36.7)](TASKS.md#issue-13--recolored-prisoner-appearances-4367) - context: TASKS.md — Active tasks
-- Lines 4535-4550 - [Issue #12 — Hostile sewer rats (4.36.6)](TASKS.md#issue-12--hostile-sewer-rats-4366) - context: TASKS.md — Active tasks
-- Lines 4551-4566 - [Issue #29 — Selective file reading for agents (4.36.5a)](TASKS.md#issue-29--selective-file-reading-for-agents-4365a) - context: TASKS.md — Active tasks
-- Lines 4567-4582 - [Issue #11 — Four-section sewer, cells and repair refuges (4.36.5)](TASKS.md#issue-11--four-section-sewer-cells-and-repair-refuges-4365) - context: TASKS.md — Active tasks
-- Lines 4583-4603 - [Issue #10 — T1 loot, default sizing and pickup feedback (4.36.4)](TASKS.md#issue-10--t1-loot-default-sizing-and-pickup-feedback-4364) - context: TASKS.md — Active tasks
-- Lines 4604-4622 - [Issue #22 — Engineering guides and document index (4.36.1b)](TASKS.md#issue-22--engineering-guides-and-document-index-4361b) - context: TASKS.md — Active tasks
-- Lines 4623-4651 - [Issue #6 — Documentation and validation workflow (4.36.1)](TASKS.md#issue-6--documentation-and-validation-workflow-4361) - context: TASKS.md — Active tasks
-- Lines 4652-4670 - [Focused corrections after the author's 4.36.0i tests](TASKS.md#focused-corrections-after-the-authors-4360i-tests) - context: TASKS.md — Active tasks
-- Lines 4671-4707 - [Author-requested sewer and playtest batch — 2026-09-23](TASKS.md#author-requested-sewer-and-playtest-batch--2026-09-23) - context: TASKS.md — Active tasks
-- Lines 4708-4715 - [Environmental scope — closed 4.36 and deferred work](TASKS.md#environmental-scope--closed-436-and-deferred-work) - context: TASKS.md — Active tasks
-- Lines 4716-4725 - [CA-436-01 — Damaging surfaces](TASKS.md#ca-436-01--damaging-surfaces) - context: TASKS.md — Active tasks > Environmental scope — closed 4.36 and deferred work
-- Lines 4726-4732 - [CA-436-02 — Avalanches](TASKS.md#ca-436-02--avalanches) - context: TASKS.md — Active tasks > Environmental scope — closed 4.36 and deferred work
-- Lines 4733-4741 - [CA-436-03 — Rams](TASKS.md#ca-436-03--rams) - context: TASKS.md — Active tasks > Environmental scope — closed 4.36 and deferred work
-- Lines 4742-4750 - [CA-436-04 — Cannons (historical catapult task ID)](TASKS.md#ca-436-04--cannons-historical-catapult-task-id) - context: TASKS.md — Active tasks > Environmental scope — closed 4.36 and deferred work
-- Lines 4751-4758 - [CA-436-05 — Moving sectors](TASKS.md#ca-436-05--moving-sectors) - context: TASKS.md — Active tasks > Environmental scope — closed 4.36 and deferred work
-- Lines 4759-4771 - [Integration and closing of 4.36](TASKS.md#integration-and-closing-of-436) - context: TASKS.md — Active tasks
+- Lines 5-37 - [5.13.3 - Continue Major handlers (#440)](TASKS.md#5133---continue-major-handlers-440) - context: TASKS.md — Active tasks
+- Lines 38-45 - `5.13.2 - Reversible equipment awakening (#442)` - context: TASKS.md — Active tasks
+- Lines 46-53 - `5.13.1 - Capture sources and unified Tarot (#441)` - context: TASKS.md — Active tasks
+- Lines 54-69 - `5.13.0 - Major Arcana specification audit (#439)` - context: TASKS.md — Active tasks
+- Lines 70-81 - `5.12.7a - Death-interface correction (#602)` - context: TASKS.md — Active tasks
+- Lines 82-121 - `Earlier V5.12 integration handoff - 2026-10-31` - context: TASKS.md — Active tasks
+- Lines 122-221 - `Earlier 5.12.7 integration checkpoints - #435` - context: TASKS.md — Active tasks
+- Lines 222-237 - [V5.12 profiles - #434 / 5.12.6 in progress](TASKS.md#v512-profiles---434--5126-in-progress) - context: TASKS.md — Active tasks
+- Lines 238-255 - [V5.12 in progress - #590 seated 1v1 cards (5.12.5)](TASKS.md#v512-in-progress---590-seated-1v1-cards-5125) - context: TASKS.md — Active tasks
+- Lines 256-264 - [V5.12 organized combat - #438 / 5.12.4](TASKS.md#v512-organized-combat---438--5124) - context: TASKS.md — Active tasks
+- Lines 265-278 - [V5.12 lifecycle work - #437 / 5.12.3](TASKS.md#v512-lifecycle-work---437--5123) - context: TASKS.md — Active tasks
+- Lines 279-304 - [V5.12 work in progress - #436 / 5.12.2](TASKS.md#v512-work-in-progress---436--5122) - context: TASKS.md — Active tasks
+- Lines 305-320 - [V5.12 preparation - #434-438 (unreleased, 2026-10-30)](TASKS.md#v512-preparation---434-438-unreleased-2026-10-30) - context: TASKS.md — Active tasks
+- Lines 321-347 - [V5.11 complete - 5.11.8 (#429-433, #580-582, #586, 2026-10-30)](TASKS.md#v511-complete---5118-429-433-580-582-586-2026-10-30) - context: TASKS.md — Active tasks
+- Lines 348-374 - [V5.10 complete - author-accepted 2026-10-30 (5.10.3, #425-428)](TASKS.md#v510-complete---author-accepted-2026-10-30-5103-425-428) - context: TASKS.md — Active tasks
+- Lines 375-394 - [V5.9 complete - author-accepted 2026-10-30 (5.9.7, #403)](TASKS.md#v59-complete---author-accepted-2026-10-30-597-403) - context: TASKS.md — Active tasks
+- Lines 395-428 - `V5.8 completion - 2026-10-29 (#403)` - context: TASKS.md — Active tasks
+- Lines 429-435 - `5.8.56 / #416 - Original Ciudad theme for Buenos Aires` - context: TASKS.md — Active tasks
+- Lines 436-440 - `5.8.55 / #415 - Remove repeated global Rally lookups` - context: TASKS.md — Active tasks
+- Lines 441-446 - [5.8.54 / #410 - Author review corrections](TASKS.md#5854--410---author-review-corrections) - context: TASKS.md — Active tasks
+- Lines 447-462 - `5.8.53 / #417 - Final V5.8 implementation handoff - 2026-10-29` - context: TASKS.md — Active tasks
+- Lines 463-473 - `5.8.52 / #416 - Network implementation ready - 2026-10-29` - context: TASKS.md — Active tasks
+- Lines 474-491 - [5.8.51 / #415 - Implementation ready for grouped corroboration](TASKS.md#5851--415---implementation-ready-for-grouped-corroboration) - context: TASKS.md — Active tasks
+- Lines 492-505 - [Unreleased #417 incidents - 2026-10-29](TASKS.md#unreleased-417-incidents---2026-10-29) - context: TASKS.md — Active tasks
+- Lines 506-521 - [Unreleased #416 transport integration - 2026-10-29](TASKS.md#unreleased-416-transport-integration---2026-10-29) - context: TASKS.md — Active tasks
+- Lines 522-660 - [Unreleased #415 integration work](TASKS.md#unreleased-415-integration-work) - context: TASKS.md — Active tasks
+- Lines 661-670 - [5.8.50 / #502 - Contact adapters verified](TASKS.md#5850--502---contact-adapters-verified) - context: TASKS.md — Active tasks
+- Lines 671-680 - [5.8.49 / #502 - Physical stacks and food](TASKS.md#5849--502---physical-stacks-and-food) - context: TASKS.md — Active tasks
+- Lines 681-692 - [5.8.48 / #502 - Vessel exposure and test lifecycle](TASKS.md#5848--502---vessel-exposure-and-test-lifecycle) - context: TASKS.md — Active tasks
+- Lines 693-702 - [5.8.47 / #502 - Abstract stack contact](TASKS.md#5847--502---abstract-stack-contact) - context: TASKS.md — Active tasks
+- Lines 703-713 - [5.8.46 / #502 - Absent native NPC physiology](TASKS.md#5846--502---absent-native-npc-physiology) - context: TASKS.md — Active tasks
+- Lines 714-724 - [5.8.45 / #502 - Dining contact integration](TASKS.md#5845--502---dining-contact-integration) - context: TASKS.md — Active tasks
+- Lines 725-734 - [5.8.44 / #410 - Landscapes and ornamental statues](TASKS.md#5844--410---landscapes-and-ornamental-statues) - context: TASKS.md — Active tasks
+- Lines 735-746 - [5.8.43 / #502 - Unloaded household work](TASKS.md#5843--502---unloaded-household-work) - context: TASKS.md — Active tasks
+- Lines 747-758 - [5.8.42 / #502 - Furnishing contamination persistence](TASKS.md#5842--502---furnishing-contamination-persistence) - context: TASKS.md — Active tasks
+- Lines 759-770 - [5.8.41 / #502 - Household persistence prerequisite](TASKS.md#5841--502---household-persistence-prerequisite) - context: TASKS.md — Active tasks
+- Lines 771-782 - [5.8.40 / #410 - Dining set acquisition and transport](TASKS.md#5840--410---dining-set-acquisition-and-transport) - context: TASKS.md — Active tasks
+- Lines 783-796 - [5.8.39 / #415 - Shared aim and mean-hit calculation](TASKS.md#5839--415---shared-aim-and-mean-hit-calculation) - context: TASKS.md — Active tasks
+- Lines 797-807 - [5.8.38 / #502 - Loaded NPC physiology](TASKS.md#5838--502---loaded-npc-physiology) - context: TASKS.md — Active tasks
+- Lines 808-817 - [5.8.37 / #502 - Seal object history](TASKS.md#5837--502---seal-object-history) - context: TASKS.md — Active tasks
+- Lines 818-828 - [5.8.36 / #410 - Study acquisition](TASKS.md#5836--410---study-acquisition) - context: TASKS.md — Active tasks
+- Lines 829-838 - [5.8.35 / #410 - Sofa acquisition](TASKS.md#5835--410---sofa-acquisition) - context: TASKS.md — Active tasks
+- Lines 839-847 - `5.8.34 / #410 - Ordinary rest furniture acquisition` - context: TASKS.md — Active tasks
+- Lines 848-857 - [5.8.33 / #410 - Ordinary rest furniture scale](TASKS.md#5833--410---ordinary-rest-furniture-scale) - context: TASKS.md — Active tasks
+- Lines 858-865 - [5.8.32 / #410 - Luxury rest furniture supply and transport](TASKS.md#5832--410---luxury-rest-furniture-supply-and-transport) - context: TASKS.md — Active tasks
+- Lines 866-875 - [5.8.31 / #410 - Storage furniture acquisition](TASKS.md#5831--410---storage-furniture-acquisition) - context: TASKS.md — Active tasks
+- Lines 876-891 - [5.8.30 / #410 - Luxury furniture catalogue](TASKS.md#5830--410---luxury-furniture-catalogue) - context: TASKS.md — Active tasks
+- Lines 892-906 - [5.8.29 - Sofa seating stage (#410)](TASKS.md#5829---sofa-seating-stage-410) - context: TASKS.md — Active tasks
+- Lines 907-929 - `5.8.28 - Regional weather history for objects (#502)` - context: TASKS.md — Active tasks
+- Lines 930-945 - `5.8.27 - Indoor furniture placement (#411)` - context: TASKS.md — Active tasks
+- Lines 946-964 - `5.8.26 - Stored-book reading (#410)` - context: TASKS.md — Active tasks
+- Lines 965-978 - `5.8.25 - Garden water furniture (#410)` - context: TASKS.md — Active tasks
+- Lines 979-997 - `5.8.24 - Native wardrobe storage (#410)` - context: TASKS.md — Active tasks
+- Lines 998-1012 - `5.8.23 - Constant Limbo exposure across absence (#502)` - context: TASKS.md — Active tasks
+- Lines 1013-1027 - `5.8.22 - Shared-water mansion bathroom fixtures (#410)` - context: TASKS.md — Active tasks
+- Lines 1028-1043 - `5.8.21 - Attended camp cooking and fuel interruption (#411)` - context: TASKS.md — Active tasks
+- Lines 1044-1056 - `5.8.20 - Mansion kitchen sink and wall cupboard (#410)` - context: TASKS.md — Active tasks
+- Lines 1057-1077 - `5.8.19 - Attended cooking and shared bread proofing (#410)` - context: TASKS.md — Active tasks
+- Lines 1078-1093 - `5.8.18 - Prepared meal items and consumption (#410)` - context: TASKS.md — Active tasks
+- Lines 1094-1110 - `5.8.17 - Kitchen ingredients (#410)` - context: TASKS.md — Active tasks
+- Lines 1111-1128 - `5.8.16 - Non-solid physical scenery exposure (#502)` - context: TASKS.md — Active tasks
+- Lines 1129-1147 - `5.8.15 - Usable sleeping bag inside the tent (#412, in progress)` - context: TASKS.md — Active tasks
+- Lines 1148-1162 - `5.8.14 - Native ration lots (#410, in progress)` - context: TASKS.md — Active tasks
+- Lines 1163-1172 - [5.8.13 / #411 - Campfire and mounted pot](TASKS.md#5813--411---campfire-and-mounted-pot) - context: TASKS.md — Active tasks
+- Lines 1173-1355 - `5.8.12 - Metabolic toilet sessions (#502, in progress)` - context: TASKS.md — Active tasks
+- Lines 1356-1376 - [5.8.11 / #410 - Domestic bathrooms](TASKS.md#5811--410---domestic-bathrooms) - context: TASKS.md — Active tasks
+- Lines 1377-1398 - `5.8.10 - Protect resting tent occupants (#412, in progress)` - context: TASKS.md — Active tasks
+- Lines 1399-1472 - [5.8.9 - Contamination expansion (#502, in progress)](TASKS.md#589---contamination-expansion-502-in-progress) - context: TASKS.md — Active tasks
+- Lines 1473-1482 - [5.8.8 / #411 - Placement and persistent tents](TASKS.md#588--411---placement-and-persistent-tents) - context: TASKS.md — Active tasks
+- Lines 1483-1491 - [5.8.7 / #410 - Forecast contamination integration](TASKS.md#587--410---forecast-contamination-integration) - context: TASKS.md — Active tasks
+- Lines 1492-1495 - [5.8.6 / #411 - Central property access](TASKS.md#586--411---central-property-access) - context: TASKS.md — Active tasks
+- Lines 1496-1499 - [5.8.5 / #415 - Regional discovery](TASKS.md#585--415---regional-discovery) - context: TASKS.md — Active tasks
+- Lines 1500-1503 - [5.8.4 / #496 - Map soundtrack](TASKS.md#584--496---map-soundtrack) - context: TASKS.md — Active tasks
+- Lines 1504-1522 - [#410 / 5.8.3 - Food and furniture in progress](TASKS.md#410--583---food-and-furniture-in-progress) - context: TASKS.md — Active tasks
+- Lines 1523-1531 - [#414 / 5.8.2 - Production connected water](TASKS.md#414--582---production-connected-water) - context: TASKS.md — Active tasks
+- Lines 1532-1543 - [#413 / 5.8.1 - Altitude and acclimatization](TASKS.md#413--581---altitude-and-acclimatization) - context: TASKS.md — Active tasks
+- Lines 1544-1560 - [#414 / 5.8.0 - Native connected-water feasibility](TASKS.md#414--580---native-connected-water-feasibility) - context: TASKS.md — Active tasks
+- Lines 1561-1575 - [#472 / 5.7.14 - Reusable mates](TASKS.md#472--5714---reusable-mates) - context: TASKS.md — Active tasks
+- Lines 1576-1587 - [#471 / 5.7.13 - Chemistry recipes and fermentation batches](TASKS.md#471--5713---chemistry-recipes-and-fermentation-batches) - context: TASKS.md — Active tasks
+- Lines 1588-1598 - [#487 / 5.7.12 - Fermentation Barrel](TASKS.md#487--5712---fermentation-barrel) - context: TASKS.md — Active tasks
+- Lines 1599-1607 - [#486 / 5.7.11 - Chemistry station name](TASKS.md#486--5711---chemistry-station-name) - context: TASKS.md — Active tasks
+- Lines 1608-1637 - [#471 / 5.7.10 - Cartridge station migration](TASKS.md#471--5710---cartridge-station-migration) - context: TASKS.md — Active tasks
+- Lines 1638-1658 - [#409 / 5.7.9 - Boiling and stored-water temperature](TASKS.md#409--579---boiling-and-stored-water-temperature) - context: TASKS.md — Active tasks
+- Lines 1659-1686 - [#479 / 5.7.8 - Implemented and author accepted](TASKS.md#479--578---implemented-and-author-accepted) - context: TASKS.md — Active tasks
+- Lines 1687-1694 - [5.7.7 - Target-panel delivery (#481)](TASKS.md#577---target-panel-delivery-481) - context: TASKS.md — Active tasks
+- Lines 1695-1709 - `5.7.6 - Alchemy art stage (#471)` - context: TASKS.md — Active tasks
+- Lines 1710-1728 - `5.7.5 - Marine imports and iodine (#407)` - context: TASKS.md — Active tasks
+- Lines 1729-1751 - `5.7.4 - Fixed Alchemy station (#470)` - context: TASKS.md — Active tasks
+- Lines 1752-1765 - `5.7.3 - Monotonic source recovery (#406)` - context: TASKS.md — Active tasks
+- Lines 1766-1778 - `5.7.2 - Land resources and owned 3D objects (#405)` - context: TASKS.md — Active tasks
+- Lines 1779-1789 - [5.7.1 - Regional resource contract (#404)](TASKS.md#571---regional-resource-contract-404) - context: TASKS.md — Active tasks
+- Lines 1790-1799 - [5.7.0 - Persistent water quality (#408)](TASKS.md#570---persistent-water-quality-408) - context: TASKS.md — Active tasks
+- Lines 1800-1814 - [5.6.11a — close accepted V5.6 scope; defer clothing appearance (#387)](TASKS.md#5611a--close-accepted-v56-scope-defer-clothing-appearance-387) - context: TASKS.md — Active tasks
+- Lines 1815-1823 - [5.6.11 — calendar replenishment (#385)](TASKS.md#5611--calendar-replenishment-385) - context: TASKS.md — Active tasks
+- Lines 1824-1832 - [5.6.10 — city catalogue extension (#383)](TASKS.md#5610--city-catalogue-extension-383) - context: TASKS.md — Active tasks
+- Lines 1833-1840 - `5.6.9 - Native cartridge assembly (#380)` - context: TASKS.md — Active tasks
+- Lines 1841-1849 - `5.6.8 - Approved sealed cartridge kits (#379)` - context: TASKS.md — Active tasks
+- Lines 1850-1863 - `5.6.7 - Individual clothing object sprites (#387)` - context: TASKS.md — Active tasks
+- Lines 1864-1878 - `5.6.6 - Native ordinary clothing (#386)` - context: TASKS.md — Active tasks
+- Lines 1879-1889 - [5.6.4 - Review one-time death loot (#384)](TASKS.md#564---review-one-time-death-loot-384) - context: TASKS.md — Active tasks
+- Lines 1890-1897 - [5.6.3b - Review ordinary-clothing data before implementation (#386)](TASKS.md#563b---review-ordinary-clothing-data-before-implementation-386) - context: TASKS.md — Active tasks
+- Lines 1898-1910 - [5.6.5 - Implement approved locks and ownership (#382)](TASKS.md#565---implement-approved-locks-and-ownership-382) - context: TASKS.md — Active tasks
+- Lines 1911-1922 - [5.6.3 - Recipe acquisition and study (#378)](TASKS.md#563---recipe-acquisition-and-study-378) - context: TASKS.md — Active tasks
+- Lines 1923-1932 - [5.6.2 - Native ordinary containers (#381)](TASKS.md#562---native-ordinary-containers-381) - context: TASKS.md — Active tasks
+- Lines 1933-1942 - `5.6.1 - Merchant coordination (#377)` - context: TASKS.md — Active tasks
+- Lines 1943-1955 - [5.6.0 - Crafting coordination (#376)](TASKS.md#560---crafting-coordination-376) - context: TASKS.md — Active tasks
+- Lines 1956-1964 - [5.5.8a - Deferred issue closed at author request (#316)](TASKS.md#558a---deferred-issue-closed-at-author-request-316) - context: TASKS.md — Active tasks
+- Lines 1965-1976 - [5.5.8 - Bull visual replacement (#369)](TASKS.md#558---bull-visual-replacement-369) - context: TASKS.md — Active tasks
+- Lines 1977-1995 - `5.5.7 - Future melee energy contract; conversion deferred (#315)` - context: TASKS.md — Active tasks
+- Lines 1996-2017 - `5.5.6 - Ice and lava ground contact (#314)` - context: TASKS.md — Active tasks
+- Lines 2018-2031 - `5.5.5 - Equipped-Seal input while unarmed (#363)` - context: TASKS.md — Active tasks
+- Lines 2032-2049 - `5.5.4 - Ammunition mass and finished-component contract (#313)` - context: TASKS.md — Active tasks
+- Lines 2050-2064 - `5.5.3 - Sustained pressure lifecycle and native descent (#312)` - context: TASKS.md — Active tasks
+- Lines 2065-2079 - [5.5.2 - Multiple-contact identity and armor (#311)](TASKS.md#552---multiple-contact-identity-and-armor-311) - context: TASKS.md — Active tasks
+- Lines 2080-2090 - [5.5.1 - Combat dispatch extraction (#310)](TASKS.md#551---combat-dispatch-extraction-310) - context: TASKS.md — Active tasks
+- Lines 2091-2099 - `5.5.0 - Weapon/input audit (#309)` - context: TASKS.md — Active tasks
+- Lines 2100-2112 - [5.4.47 - Production siege adrenaline (#361)](TASKS.md#5447---production-siege-adrenaline-361) - context: TASKS.md — Active tasks
+- Lines 2113-2121 - [5.4.46 - Revised house transition (#334)](TASKS.md#5446---revised-house-transition-334) - context: TASKS.md — Active tasks
+- Lines 2122-2130 - [5.4.45 - Artillery navigation breath fixed (#357)](TASKS.md#5445---artillery-navigation-breath-fixed-357) - context: TASKS.md — Active tasks
+- Lines 2131-2141 - [5.4.44 - Structural-cache investigation delivered (#354)](TASKS.md#5444---structural-cache-investigation-delivered-354) - context: TASKS.md — Active tasks
+- Lines 2142-2155 - [5.4.43 - Adopted production caches and group targeting (#353)](TASKS.md#5443---adopted-production-caches-and-group-targeting-353) - context: TASKS.md — Active tasks
+- Lines 2156-2172 - [5.4.42 - Actor-local 100-tic maintenance trial (#318)](TASKS.md#5442---actor-local-100-tic-maintenance-trial-318) - context: TASKS.md — Active tasks
+- Lines 2173-2185 - `5.4.41 - Isolated siege update costs (#318)` - context: TASKS.md — Active tasks
+- Lines 2186-2194 - `5.4.40 - Shared rest safety (#325)` - context: TASKS.md — Active tasks
+- Lines 2195-2203 - `5.4.39 - Voluntary-jump wall cushioning (#339)` - context: TASKS.md — Active tasks
+- Lines 2204-2211 - `5.4.38 - Complete top-aligned map legend (#321)` - context: TASKS.md — Active tasks
+- Lines 2212-2221 - `5.4.37 - Current MAP03 attribution supplement (#318)` - context: TASKS.md — Active tasks
+- Lines 2222-2231 - `5.4.36 - House-door presentation isolation (#334)` - context: TASKS.md — Active tasks
+- Lines 2232-2246 - [5.4.35 - Prisoner escort replacement (#322)](TASKS.md#5435---prisoner-escort-replacement-322) - context: TASKS.md — Active tasks
+- Lines 2247-2258 - `5.4.34 - Active-play autosaving (#324)` - context: TASKS.md — Active tasks
+- Lines 2259-2267 - [5.4.33 - Western crusher sector isolation (#323)](TASKS.md#5433---western-crusher-sector-isolation-323) - context: TASKS.md — Active tasks
+- Lines 2268-2276 - `5.4.32 - Direct demon projectile aim (#320)` - context: TASKS.md — Active tasks
+- Lines 2277-2283 - [5.4.31 - Collapsible map legend (#321)](TASKS.md#5431---collapsible-map-legend-321) - context: TASKS.md — Active tasks
+- Lines 2284-2290 - `5.4.30 - Sleeping bag quick-item access (#319)` - context: TASKS.md — Active tasks
+- Lines 2291-2305 - [5.4.29 - Adopted MAP03 city (#327)](TASKS.md#5429---adopted-map03-city-327) - context: TASKS.md — Active tasks
+- Lines 2306-2397 - [5.4.28 - MAP06 issue #318 (contact heat implemented; map performance unresolved)](TASKS.md#5428---map06-issue-318-contact-heat-implemented-map-performance-unresolved) - context: TASKS.md — Active tasks
+- Lines 2398-2409 - [5.4.27 - Normal prisoner escort speed (#307, accepted)](TASKS.md#5427---normal-prisoner-escort-speed-307-accepted) - context: TASKS.md — Active tasks
+- Lines 2410-2421 - [5.4.26 - Active seal lookup optimization (#305, accepted)](TASKS.md#5426---active-seal-lookup-optimization-305-accepted) - context: TASKS.md — Active tasks
+- Lines 2422-2436 - [5.4.25 - Performance issue #304 (accepted)](TASKS.md#5425---performance-issue-304-accepted) - context: TASKS.md — Active tasks
+- Lines 2437-2446 - [Current V5.4 batch completion](TASKS.md#current-v54-batch-completion) - context: TASKS.md — Active tasks
+- Lines 2447-2460 - [5.4.24 - Demon combat and rock (#284, accepted)](TASKS.md#5424---demon-combat-and-rock-284-accepted) - context: TASKS.md — Active tasks
+- Lines 2461-2477 - [5.4.23 - Domingo 3D prototype (#283, accepted)](TASKS.md#5423---domingo-3d-prototype-283-accepted) - context: TASKS.md — Active tasks
+- Lines 2478-2488 - [5.4.22 - Quick-use HUD (#282, accepted)](TASKS.md#5422---quick-use-hud-282-accepted) - context: TASKS.md — Active tasks
+- Lines 2489-2509 - [5.4.21 - Seal extensions (#252, accepted)](TASKS.md#5421---seal-extensions-252-accepted) - context: TASKS.md — Active tasks
+- Lines 2510-2520 - [5.4.20 - Arcane Cloud (#251, accepted)](TASKS.md#5420---arcane-cloud-251-accepted) - context: TASKS.md — Active tasks
+- Lines 2521-2532 - [5.4.19 - Redemption (#250, accepted)](TASKS.md#5419---redemption-250-accepted) - context: TASKS.md — Active tasks
+- Lines 2533-2542 - [5.4.18 - Summoning (#249, accepted)](TASKS.md#5418---summoning-249-accepted) - context: TASKS.md — Active tasks
+- Lines 2543-2554 - [5.4.17 - Rally (#248, accepted)](TASKS.md#5417---rally-248-accepted) - context: TASKS.md — Active tasks
+- Lines 2555-2564 - [5.4.16 - Formation Breaker (#247, accepted)](TASKS.md#5416---formation-breaker-247-accepted) - context: TASKS.md — Active tasks
+- Lines 2565-2573 - [5.4.15 - Player acceleration and impulse (#260, accepted)](TASKS.md#5415---player-acceleration-and-impulse-260-accepted) - context: TASKS.md — Active tasks
+- Lines 2574-2585 - [5.4.14 - Resident participation at the protected floor (#253)](TASKS.md#5414---resident-participation-at-the-protected-floor-253) - context: TASKS.md — Active tasks
+- Lines 2586-2596 - [5.4.13 - Arcane Sun (#246)](TASKS.md#5413---arcane-sun-246) - context: TASKS.md — Active tasks
+- Lines 2597-2607 - [5.4.12 - Miracle (#245)](TASKS.md#5412---miracle-245) - context: TASKS.md — Active tasks
+- Lines 2608-2617 - [5.4.11 - Survival Instinct (#244)](TASKS.md#5411---survival-instinct-244) - context: TASKS.md — Active tasks
+- Lines 2618-2626 - [5.4.10 - Battle Cry (#243)](TASKS.md#5410---battle-cry-243) - context: TASKS.md — Active tasks
+- Lines 2627-2635 - [5.4.9 - Hunter's Instinct (#239)](TASKS.md#549---hunters-instinct-239) - context: TASKS.md — Active tasks
+- Lines 2636-2644 - [5.4.8 - Socialization (#240)](TASKS.md#548---socialization-240) - context: TASKS.md — Active tasks
+- Lines 2645-2652 - [5.4.7 - Telekinesis (#241)](TASKS.md#547---telekinesis-241) - context: TASKS.md — Active tasks
+- Lines 2653-2665 - [5.4.6 - Supernatural Breathing (#242)](TASKS.md#546---supernatural-breathing-242) - context: TASKS.md — Active tasks
+- Lines 2666-2699 - [5.4.4 - Shared class preparation (#238)](TASKS.md#544---shared-class-preparation-238) - context: TASKS.md — Active tasks
+- Lines 2700-2708 - `5.4.3 - MAP02 rat movement and audio (#254)` - context: TASKS.md — Active tasks
+- Lines 2709-2718 - `5.4.2 - Equipped-Seal resistances (#261)` - context: TASKS.md — Active tasks
+- Lines 2719-2728 - `5.4.1 - Weapon dispersion tiers (#259)` - context: TASKS.md — Active tasks
+- Lines 2729-2741 - [5.4.0 - Attribute audit (#237)](TASKS.md#540---attribute-audit-237) - context: TASKS.md — Active tasks
+- Lines 2742-2753 - [5.3.9 - Exploration entry points (#236)](TASKS.md#539---exploration-entry-points-236) - context: TASKS.md — Active tasks
+- Lines 2754-2776 - [5.3.8 - Multiple mission tracking (#235)](TASKS.md#538---multiple-mission-tracking-235) - context: TASKS.md — Active tasks
+- Lines 2777-2808 - [5.3.7 - Existing-map exploration (#234)](TASKS.md#537---existing-map-exploration-234) - context: TASKS.md — Active tasks
+- Lines 2809-2819 - [5.3.6 - Manual map notes (#233)](TASKS.md#536---manual-map-notes-233) - context: TASKS.md — Active tasks
+- Lines 2820-2832 - [5.3.5 - Personal POI knowledge (#232)](TASKS.md#535---personal-poi-knowledge-232) - context: TASKS.md — Active tasks
+- Lines 2833-2844 - `5.3.4 - Native local cartography (#231)` - context: TASKS.md — Active tasks
+- Lines 2845-2851 - `5.3.3 - Exhaustion sleep (#258)` - context: TASKS.md — Active tasks
+- Lines 2852-2861 - `5.3.2 - Automatic provisions (#257)` - context: TASKS.md — Active tasks
+- Lines 2862-2871 - [5.3.1 - Survival and combat presentation (#256)](TASKS.md#531---survival-and-combat-presentation-256) - context: TASKS.md — Active tasks
+- Lines 2872-2879 - [5.3.0 - Power indicators (#255)](TASKS.md#530---power-indicators-255) - context: TASKS.md — Active tasks
+- Lines 2880-2887 - [5.2.27 - Empty Magic Box weighs one gram (#229)](TASKS.md#5227---empty-magic-box-weighs-one-gram-229) - context: TASKS.md — Active tasks
+- Lines 2888-2897 - [5.2.26 - Rest control diagnosis and feedback (#227)](TASKS.md#5226---rest-control-diagnosis-and-feedback-227) - context: TASKS.md — Active tasks
+- Lines 2898-2906 - [5.2.25 - Staff matches statuette dispersion (#222)](TASKS.md#5225---staff-matches-statuette-dispersion-222) - context: TASKS.md — Active tasks
+- Lines 2907-2914 - [5.2.24 - MAP02 Mandinga drops (#220)](TASKS.md#5224---map02-mandinga-drops-220) - context: TASKS.md — Active tasks
+- Lines 2915-2923 - [5.2.23 - Sewer sleeping-bag acceleration (#219)](TASKS.md#5223---sewer-sleeping-bag-acceleration-219) - context: TASKS.md — Active tasks
+- Lines 2924-2938 - [5.2.22 - Current menu controls (#215)](TASKS.md#5222---current-menu-controls-215) - context: TASKS.md — Active tasks
+- Lines 2939-2949 - `5.2.21 - Visible tutorial gold (#216)` - context: TASKS.md — Active tasks
+- Lines 2950-2963 - [Issue #213 - Resource bar layout (5.2.20)](TASKS.md#issue-213---resource-bar-layout-5220) - context: TASKS.md — Active tasks
+- Lines 2964-2975 - [Issue #211 - Horizontal landing capacity (5.2.19)](TASKS.md#issue-211---horizontal-landing-capacity-5219) - context: TASKS.md — Active tasks
+- Lines 2976-2985 - [Issue #209 - Modular animation and rest repair (5.2.18)](TASKS.md#issue-209---modular-animation-and-rest-repair-5218) - context: TASKS.md — Active tasks
+- Lines 2986-2995 - [Issue #207 - MAP01 player stays alive at 1 HP (5.2.17)](TASKS.md#issue-207---map01-player-stays-alive-at-1-hp-5217) - context: TASKS.md — Active tasks
+- Lines 2996-3010 - [Issue #204 - Fullscreen native cursor (5.2.16)](TASKS.md#issue-204---fullscreen-native-cursor-5216) - context: TASKS.md — Active tasks
+- Lines 3011-3021 - [Issue #150 - Readability and comfort (5.2.15)](TASKS.md#issue-150---readability-and-comfort-5215) - context: TASKS.md — Active tasks
+- Lines 3022-3032 - [Issue #149 - Controls and synchronized hints (5.2.14)](TASKS.md#issue-149---controls-and-synchronized-hints-5214) - context: TASKS.md — Active tasks
+- Lines 3033-3054 - [Issue #148 - Native cosmetics and preview (5.2.13)](TASKS.md#issue-148---native-cosmetics-and-preview-5213) - context: TASKS.md — Active tasks
+- Lines 3055-3065 - [Issue #195 - Bull balance and resident actions (5.2.12)](TASKS.md#issue-195---bull-balance-and-resident-actions-5212) - context: TASKS.md — Active tasks
+- Lines 3066-3077 - [Issue #194 - Collision energy and contact area (5.2.11)](TASKS.md#issue-194---collision-energy-and-contact-area-5211) - context: TASKS.md — Active tasks
+- Lines 3078-3085 - [Issue #192 - Ranged amendment and shotgun naming (5.2.10)](TASKS.md#issue-192---ranged-amendment-and-shotgun-naming-5210) - context: TASKS.md — Active tasks
+- Lines 3086-3096 - [Issue #192 - Personality and magical bell (5.2.9)](TASKS.md#issue-192---personality-and-magical-bell-529) - context: TASKS.md — Active tasks
+- Lines 3097-3104 - [Issue #188 - Toughness (5.2.8)](TASKS.md#issue-188---toughness-528) - context: TASKS.md — Active tasks
+- Lines 3105-3111 - [Issue #184 - Mouse interaction (5.2.6)](TASKS.md#issue-184---mouse-interaction-526) - context: TASKS.md — Active tasks
+- Lines 3112-3121 - [Issue #189 - Native interactive menus (5.2.7)](TASKS.md#issue-189---native-interactive-menus-527) - context: TASKS.md — Active tasks
+- Lines 3122-3132 - [Issue #183 - Profession onboarding and MAP02 supplies (5.2.4)](TASKS.md#issue-183---profession-onboarding-and-map02-supplies-524) - context: TASKS.md — Active tasks
+- Lines 3133-3143 - [Issue #185 - Indexed NPC dialogue and localization sources (5.2.5)](TASKS.md#issue-185---indexed-npc-dialogue-and-localization-sources-525) - context: TASKS.md — Active tasks
+- Lines 3144-3152 - [Issue #180 - Allied Mandinga retaliation (5.2.3)](TASKS.md#issue-180---allied-mandinga-retaliation-523) - context: TASKS.md — Active tasks
+- Lines 3153-3160 - [Issue #178 - Faster multi-day time skipping (5.2.2)](TASKS.md#issue-178---faster-multi-day-time-skipping-522) - context: TASKS.md — Active tasks
+- Lines 3161-3172 - [Issue #177 - Tutorial equipment, provisions and portable rest (5.2.1)](TASKS.md#issue-177---tutorial-equipment-provisions-and-portable-rest-521) - context: TASKS.md — Active tasks
+- Lines 3173-3184 - [Issue #147 - Unified identity and native settings (5.2.0)](TASKS.md#issue-147---unified-identity-and-native-settings-520) - context: TASKS.md — Active tasks
+- Lines 3185-3194 - [Issue #173 - MAP06 interior doors and time skip (5.1.20)](TASKS.md#issue-173---map06-interior-doors-and-time-skip-5120) - context: TASKS.md — Active tasks
+- Lines 3195-3202 - [Issue #172 - Shared NPC dialogue history (5.1.19)](TASKS.md#issue-172---shared-npc-dialogue-history-5119) - context: TASKS.md — Active tasks
+- Lines 3203-3213 - [Issue #164 - Permanent gifts and assisted Bull checkpoint (5.1.18)](TASKS.md#issue-164---permanent-gifts-and-assisted-bull-checkpoint-5118) - context: TASKS.md — Active tasks
+- Lines 3214-3220 - [Issue #169 - Medikit names (5.1.17)](TASKS.md#issue-169---medikit-names-5117) - context: TASKS.md — Active tasks
+- Lines 3221-3234 - [Issue #163 - Recoverable bolas (5.1.16)](TASKS.md#issue-163---recoverable-bolas-5116) - context: TASKS.md — Active tasks
+- Lines 3235-3244 - [Issue #162 - Bronze utility staff (5.1.15)](TASKS.md#issue-162---bronze-utility-staff-5115) - context: TASKS.md — Active tasks
+- Lines 3245-3255 - [Issue #165 - Damage flash across map travel (5.1.14)](TASKS.md#issue-165---damage-flash-across-map-travel-5114) - context: TASKS.md — Active tasks
+- Lines 3256-3264 - [Issue #160 - Argento silver-key handoff (5.1.13)](TASKS.md#issue-160---argento-silver-key-handoff-5113) - context: TASKS.md — Active tasks
+- Lines 3265-3275 - [Issue #158 - Preserve crafting equipment size (5.1.12)](TASKS.md#issue-158---preserve-crafting-equipment-size-5112) - context: TASKS.md — Active tasks
+- Lines 3276-3286 - [Issue #156 - Time-skip letter controls (5.1.11)](TASKS.md#issue-156---time-skip-letter-controls-5111) - context: TASKS.md — Active tasks
+- Lines 3287-3300 - [Issue #154 — SI physics and growth (5.1.10)](TASKS.md#issue-154--si-physics-and-growth-5110) - context: TASKS.md — Active tasks
+- Lines 3301-3318 - [Issue #152 - Shotgun follow-up (5.1.9)](TASKS.md#issue-152---shotgun-follow-up-519) - context: TASKS.md — Active tasks
+- Lines 3319-3338 - [Issue #137 - Elemental VFX and screen feedback (5.1.8)](TASKS.md#issue-137---elemental-vfx-and-screen-feedback-518) - context: TASKS.md — Active tasks
+- Lines 3339-3367 - [Issue #136 - Shortbow shotgun and armor bypass (5.1.7)](TASKS.md#issue-136---shortbow-shotgun-and-armor-bypass-517) - context: TASKS.md — Active tasks
+- Lines 3368-3383 - [Issue #143 - Crouched aimed soldiers (5.1.6)](TASKS.md#issue-143---crouched-aimed-soldiers-516) - context: TASKS.md — Active tasks
+- Lines 3384-3405 - [Issue #135 - Demon breath and potions (5.1.5)](TASKS.md#issue-135---demon-breath-and-potions-515) - context: TASKS.md — Active tasks
+- Lines 3406-3434 - [Issue #133 - City interiors and deployment (5.1.3, closure and merge authorized)](TASKS.md#issue-133---city-interiors-and-deployment-513-closure-and-merge-authorized) - context: TASKS.md — Active tasks
+- Lines 3435-3451 - [Issue #140 - Thermal cache and physiology (5.1.4, implemented)](TASKS.md#issue-140---thermal-cache-and-physiology-514-implemented) - context: TASKS.md — Active tasks
+- Lines 3452-3463 - [Issue #132 - Staged siege performance test (5.1.2)](TASKS.md#issue-132---staged-siege-performance-test-512) - context: TASKS.md — Active tasks
+- Lines 3464-3478 - [Issue #131 - Thermal HUD and attribute adaptation (5.1.1)](TASKS.md#issue-131---thermal-hud-and-attribute-adaptation-511) - context: TASKS.md — Active tasks
+- Lines 3479-3502 - [Issue #130 — Thermal survival (5.1.0)](TASKS.md#issue-130--thermal-survival-510) - context: TASKS.md — Active tasks
+- Lines 3503-3535 - [Issue #128 — Automatic normal high-density AI (5.0.6)](TASKS.md#issue-128--automatic-normal-high-density-ai-506) - context: TASKS.md — Active tasks
+- Lines 3536-3572 - [Issue #121 — Siege subsystem diagnosis and combined experiments (5.0.5)](TASKS.md#issue-121--siege-subsystem-diagnosis-and-combined-experiments-505) - context: TASKS.md — Active tasks
+- Lines 3573-3610 - [Issue #120 — Per-player authority and integrated closure (5.0.4)](TASKS.md#issue-120--per-player-authority-and-integrated-closure-504) - context: TASKS.md — Active tasks
+- Lines 3611-3629 - [Issue #119 — Tarot consolidation (5.0.3)](TASKS.md#issue-119--tarot-consolidation-503) - context: TASKS.md — Active tasks
+- Lines 3630-3654 - [Issue #118 — Inventory/equipment consolidation (5.0.2)](TASKS.md#issue-118--inventoryequipment-consolidation-502) - context: TASKS.md — Active tasks
+- Lines 3655-3679 - [Issue #117 — Compatible player domain adapters (5.0.1)](TASKS.md#issue-117--compatible-player-domain-adapters-501) - context: TASKS.md — Active tasks
+- Lines 3680-3702 - [Issue #116 — Architecture audit and first extraction (5.0.0)](TASKS.md#issue-116--architecture-audit-and-first-extraction-500) - context: TASKS.md — Active tasks
+- Lines 3703-3720 - [Issue #82 — V4.37 closing delivery (4.37.24)](TASKS.md#issue-82--v437-closing-delivery-43724) - context: TASKS.md — Active tasks
+- Lines 3721-3738 - [Issue #112 - Contextual character creation (4.37.23)](TASKS.md#issue-112---contextual-character-creation-43723) - context: TASKS.md — Active tasks
+- Lines 3739-3755 - [Historical release-status reconciliation before #82 — 2026-10-05](TASKS.md#historical-release-status-reconciliation-before-82--2026-10-05) - context: TASKS.md — Active tasks
+- Lines 3756-3777 - [Issue #106 - First-person shield sets (4.37.22)](TASKS.md#issue-106---first-person-shield-sets-43722) - context: TASKS.md — Active tasks
+- Lines 3778-3794 - [Issue #103 - Narrative artwork and introductory page (4.37.21)](TASKS.md#issue-103---narrative-artwork-and-introductory-page-43721) - context: TASKS.md — Active tasks
+- Lines 3795-3807 - [Issue #98 - Textured training dummy model (4.37.20)](TASKS.md#issue-98---textured-training-dummy-model-43720) - context: TASKS.md — Active tasks
+- Lines 3808-3821 - [Issue #96 - Palomo necklace and shield names (4.37.19)](TASKS.md#issue-96---palomo-necklace-and-shield-names-43719) - context: TASKS.md — Active tasks
+- Lines 3822-3836 - [Issue #91 - Crafting sections and Tarot fields (4.37.18)](TASKS.md#issue-91---crafting-sections-and-tarot-fields-43718) - context: TASKS.md — Active tasks
+- Lines 3837-3849 - [Issue #89 - Pickaxe and gathering feedback (4.37.17)](TASKS.md#issue-89---pickaxe-and-gathering-feedback-43717) - context: TASKS.md — Active tasks
+- Lines 3850-3860 - [Issue #87 - Compass and project menu pointers (4.37.16)](TASKS.md#issue-87---compass-and-project-menu-pointers-43716) - context: TASKS.md — Active tasks
+- Lines 3861-3868 - [Issue #101 - Traditional ranked Truco (4.37.15)](TASKS.md#issue-101---traditional-ranked-truco-43715) - context: TASKS.md — Active tasks
+- Lines 3869-3875 - [Issue #99 - Argento practice choice order (4.37.14a)](TASKS.md#issue-99---argento-practice-choice-order-43714a) - context: TASKS.md — Active tasks
+- Lines 3876-3884 - [Issue #97 - Palomo's first upstairs deck handoff (4.37.14)](TASKS.md#issue-97---palomos-first-upstairs-deck-handoff-43714) - context: TASKS.md — Active tasks
+- Lines 3885-3891 - [Issue #93 - Crafting time help (4.37.13a)](TASKS.md#issue-93---crafting-time-help-43713a) - context: TASKS.md — Active tasks
+- Lines 3892-3917 - [Issue #81 — Trucazo against Argento (4.37.13)](TASKS.md#issue-81--trucazo-against-argento-43713) - context: TASKS.md — Active tasks
+- Lines 3918-3939 - [Issue #80 — Campaign Tarot activation (4.37.12)](TASKS.md#issue-80--campaign-tarot-activation-43712) - context: TASKS.md — Active tasks
+- Lines 3940-3959 - [Issue #79 — The amnesiac guard captain (4.37.11)](TASKS.md#issue-79--the-amnesiac-guard-captain-43711) - context: TASKS.md — Active tasks
+- Lines 3960-3976 - [Issue #78 — Prisoner siege intelligence (4.37.10)](TASKS.md#issue-78--prisoner-siege-intelligence-43710) - context: TASKS.md — Active tasks
+- Lines 3977-4013 - [Issue #77 — Expanded southern Barracas al Sud (4.37.9)](TASKS.md#issue-77--expanded-southern-barracas-al-sud-4379) - context: TASKS.md — Active tasks
+- Lines 4014-4030 - [Issue #75 — Material supplies and corrected audit (4.37.8)](TASKS.md#issue-75--material-supplies-and-corrected-audit-4378) - context: TASKS.md — Active tasks
+- Lines 4031-4044 - [Issue #74 — Flooded pit returns (4.37.7)](TASKS.md#issue-74--flooded-pit-returns-4377) - context: TASKS.md — Active tasks
+- Lines 4045-4056 - [Issue #73 — Cardinal MAP02 (4.37.6)](TASKS.md#issue-73--cardinal-map02-4376) - context: TASKS.md — Active tasks
+- Lines 4057-4071 - [Issue #65 — Daily mansion food/water (4.37.5)](TASKS.md#issue-65--daily-mansion-foodwater-4375) - context: TASKS.md — Active tasks
+- Lines 4072-4087 - [Issue #64 — Date/time skip and automatic care (4.37.4)](TASKS.md#issue-64--datetime-skip-and-automatic-care-4374) - context: TASKS.md — Active tasks
+- Lines 4088-4104 - [Issue #63 — Move equipment guidance to Palomo (4.37.3)](TASKS.md#issue-63--move-equipment-guidance-to-palomo-4373) - context: TASKS.md — Active tasks
+- Lines 4105-4116 - [Issue #68 — Magic-weapon Anima base costs divided by ten (4.37.2)](TASKS.md#issue-68--magic-weapon-anima-base-costs-divided-by-ten-4372) - context: TASKS.md — Active tasks
+- Lines 4117-4133 - [Issue #62 — Caella's exercises against the training dummy (4.37.1)](TASKS.md#issue-62--caellas-exercises-against-the-training-dummy-4371) - context: TASKS.md — Active tasks
+- Lines 4134-4173 - [Issue #61 — MAP01 terrain, vegetation and filled tympana (4.37.0)](TASKS.md#issue-61--map01-terrain-vegetation-and-filled-tympana-4370) - context: TASKS.md — Active tasks
+- Lines 4174-4197 - [Issue #17 — Verify and export the complete three-map test build (4.36.28)](TASKS.md#issue-17--verify-and-export-the-complete-three-map-test-build-43628) - context: TASKS.md — Active tasks
+- Lines 4198-4220 - [Issue #16 — Complete port siege (4.36.27)](TASKS.md#issue-16--complete-port-siege-43627) - context: TASKS.md — Active tasks
+- Lines 4221-4238 - [Issue #37 — Attack cadence, durability and thrusts (4.36.26)](TASKS.md#issue-37--attack-cadence-durability-and-thrusts-43626) - context: TASKS.md — Active tasks
+- Lines 4239-4267 - [Issue #36 — Mansion enclosure and architectural detail (4.36.25)](TASKS.md#issue-36--mansion-enclosure-and-architectural-detail-43625) - context: TASKS.md — Active tasks
+- Lines 4268-4274 - [Issue #55 — Proprietary rights notice (4.36.24a)](TASKS.md#issue-55--proprietary-rights-notice-43624a) - context: TASKS.md — Active tasks
+- Lines 4275-4286 - [Issue #35 — Quest journal (4.36.24)](TASKS.md#issue-35--quest-journal-43624) - context: TASKS.md — Active tasks
+- Lines 4287-4317 - [Issue #52 — Final armor absorption (4.36.23)](TASKS.md#issue-52--final-armor-absorption-43623) - context: TASKS.md — Active tasks
+- Lines 4318-4341 - [Issue #34 — Demo quest narrative (4.36.22)](TASKS.md#issue-34--demo-quest-narrative-43622) - context: TASKS.md — Active tasks
+- Lines 4342-4353 - [Issue #49 — Scenery collisions and running (4.36.21)](TASKS.md#issue-49--scenery-collisions-and-running-43621) - context: TASKS.md — Active tasks
+- Lines 4354-4370 - [Issue #33 — Arcana capture, wounded Zupay and forward route (4.36.20)](TASKS.md#issue-33--arcana-capture-wounded-zupay-and-forward-route-43620) - context: TASKS.md — Active tasks
+- Lines 4371-4380 - [Issue #43 — Walking wall-impact absorption (4.36.18)](TASKS.md#issue-43--walking-wall-impact-absorption-43618) - context: TASKS.md — Active tasks
+- Lines 4381-4397 - [Issue #21 — Controlled cannon ballistics (4.36.17, final balance 4.36.19)](TASKS.md#issue-21--controlled-cannon-ballistics-43617-final-balance-43619) - context: TASKS.md — Active tasks
+- Lines 4398-4413 - [Issue #20 — Operational demonic rams (4.36.16; planned label 4.36.12)](TASKS.md#issue-20--operational-demonic-rams-43616-planned-label-43612) - context: TASKS.md — Active tasks
+- Lines 4414-4430 - [Issue #19 — Breakable actor gates (4.36.15; planned label 4.36.11)](TASKS.md#issue-19--breakable-actor-gates-43615-planned-label-43611) - context: TASKS.md — Active tasks
+- Lines 4431-4446 - [Issue #18 follow-up — Siege art correction (4.36.14a)](TASKS.md#issue-18-follow-up--siege-art-correction-43614a) - context: TASKS.md — Active tasks
+- Lines 4447-4464 - [Issue #31 — Pain sounds, dialogue cue, map music and story intermissions (4.36.14)](TASKS.md#issue-31--pain-sounds-dialogue-cue-map-music-and-story-intermissions-43614) - context: TASKS.md — Active tasks
+- Lines 4465-4480 - [Issue #18 — Reusable siege preview assets (4.36.10)](TASKS.md#issue-18--reusable-siege-preview-assets-43610) - context: TASKS.md — Active tasks
+- Lines 4481-4497 - [Issue #15 — Approved Tarot fronts and collection bindings (4.36.9)](TASKS.md#issue-15--approved-tarot-fronts-and-collection-bindings-4369) - context: TASKS.md — Active tasks
+- Lines 4498-4518 - [Issue #14 — Prisoner rescue, escort and port rewards (4.36.8)](TASKS.md#issue-14--prisoner-rescue-escort-and-port-rewards-4368) - context: TASKS.md — Active tasks
+- Lines 4519-4535 - [Issue #13 — Recolored prisoner appearances (4.36.7)](TASKS.md#issue-13--recolored-prisoner-appearances-4367) - context: TASKS.md — Active tasks
+- Lines 4536-4551 - [Issue #12 — Hostile sewer rats (4.36.6)](TASKS.md#issue-12--hostile-sewer-rats-4366) - context: TASKS.md — Active tasks
+- Lines 4552-4567 - [Issue #29 — Selective file reading for agents (4.36.5a)](TASKS.md#issue-29--selective-file-reading-for-agents-4365a) - context: TASKS.md — Active tasks
+- Lines 4568-4583 - [Issue #11 — Four-section sewer, cells and repair refuges (4.36.5)](TASKS.md#issue-11--four-section-sewer-cells-and-repair-refuges-4365) - context: TASKS.md — Active tasks
+- Lines 4584-4604 - [Issue #10 — T1 loot, default sizing and pickup feedback (4.36.4)](TASKS.md#issue-10--t1-loot-default-sizing-and-pickup-feedback-4364) - context: TASKS.md — Active tasks
+- Lines 4605-4623 - [Issue #22 — Engineering guides and document index (4.36.1b)](TASKS.md#issue-22--engineering-guides-and-document-index-4361b) - context: TASKS.md — Active tasks
+- Lines 4624-4652 - [Issue #6 — Documentation and validation workflow (4.36.1)](TASKS.md#issue-6--documentation-and-validation-workflow-4361) - context: TASKS.md — Active tasks
+- Lines 4653-4671 - [Focused corrections after the author's 4.36.0i tests](TASKS.md#focused-corrections-after-the-authors-4360i-tests) - context: TASKS.md — Active tasks
+- Lines 4672-4708 - [Author-requested sewer and playtest batch — 2026-09-23](TASKS.md#author-requested-sewer-and-playtest-batch--2026-09-23) - context: TASKS.md — Active tasks
+- Lines 4709-4716 - [Environmental scope — closed 4.36 and deferred work](TASKS.md#environmental-scope--closed-436-and-deferred-work) - context: TASKS.md — Active tasks
+- Lines 4717-4726 - [CA-436-01 — Damaging surfaces](TASKS.md#ca-436-01--damaging-surfaces) - context: TASKS.md — Active tasks > Environmental scope — closed 4.36 and deferred work
+- Lines 4727-4733 - [CA-436-02 — Avalanches](TASKS.md#ca-436-02--avalanches) - context: TASKS.md — Active tasks > Environmental scope — closed 4.36 and deferred work
+- Lines 4734-4742 - [CA-436-03 — Rams](TASKS.md#ca-436-03--rams) - context: TASKS.md — Active tasks > Environmental scope — closed 4.36 and deferred work
+- Lines 4743-4751 - [CA-436-04 — Cannons (historical catapult task ID)](TASKS.md#ca-436-04--cannons-historical-catapult-task-id) - context: TASKS.md — Active tasks > Environmental scope — closed 4.36 and deferred work
+- Lines 4752-4759 - [CA-436-05 — Moving sectors](TASKS.md#ca-436-05--moving-sectors) - context: TASKS.md — Active tasks > Environmental scope — closed 4.36 and deferred work
+- Lines 4760-4772 - [Integration and closing of 4.36](TASKS.md#integration-and-closing-of-436) - context: TASKS.md — Active tasks
 
 <!-- DOCUMENT_INDEX_META
-{"documents": [{"path": "ASSETS.md", "sha256": "bc18d1d23e941e348b4b0b4279bfef3b179552323898f6c376a6549e6342d2df", "words": 40000}, {"path": "GZDOOM_DEVELOPMENT.md", "sha256": "56e479e3893e27831a42d1dfe6ac0d5fcc80b556d6235ac8b9a076bb118376bb", "words": 5089}, {"path": "HISTORY.md", "sha256": "39c5625181613ff1a1e20a50a4b9cd1a4ffe7e1f24065b51cad589bacf17ee0c", "words": 269037}, {"path": "KNOWN_PITFALLS.md", "sha256": "a6d05f943c9550b9e05518137427ebb7745c6a72f5f8d288352358117030a386", "words": 51720}, {"path": "MAP01.txt", "sha256": "1b0e86d95d7197b5b08ae3167ac94fed051390c43b882ae91448164391bc0dc8", "words": 37361}, {"path": "PROJECT.md", "sha256": "03368a1b1797011b6b93ea504e9fccb212e5e1b95817ecafd3c7e683cd234b64", "words": 75088}, {"path": "SYSTEMS.md", "sha256": "bf9c56f77d52a87c4d700277e46f88cb4a1cbc1a04833277a0b02625d112956a", "words": 161468}, {"path": "TASKS.md", "sha256": "83affd97513949094cd1de2347a323af506758b6aad1be29c3a4b1bd4b77bc78", "words": 39456}], "generated_by": "build_document_index.py", "threshold_words": 5000}
+{"documents": [{"path": "ASSETS.md", "sha256": "c3ae027a02f901b2d296a9bf9ccee7211db787aff9d75021945d9f0d4ad26f04", "words": 40012}, {"path": "GZDOOM_DEVELOPMENT.md", "sha256": "56e479e3893e27831a42d1dfe6ac0d5fcc80b556d6235ac8b9a076bb118376bb", "words": 5089}, {"path": "HISTORY.md", "sha256": "a470b90f1121648a3d61a50b5eac2039ef3c39d09b21fa8ed457437cf42ad745", "words": 269228}, {"path": "KNOWN_PITFALLS.md", "sha256": "a6d05f943c9550b9e05518137427ebb7745c6a72f5f8d288352358117030a386", "words": 51720}, {"path": "MAP01.txt", "sha256": "d590cff571f900b27df0ccd1334483cd73d20c7def239c550f5464f2d1049691", "words": 37381}, {"path": "PROJECT.md", "sha256": "8ac444311a0e7b51a0695f49b1081f73a921144ab719e0d0da2651437b0fb1e1", "words": 75107}, {"path": "SYSTEMS.md", "sha256": "c5da4d832ea3d8a3667e310cdf845239bc93d181d05ae5a6a13fd6ad1a93e065", "words": 161510}, {"path": "TASKS.md", "sha256": "f01882d148060b3a5d7dab9f7f3644464dbcfd0ebfccadebfc1231ebd7865eff", "words": 39467}], "generated_by": "build_document_index.py", "threshold_words": 5000}
 DOCUMENT_INDEX_META -->
 

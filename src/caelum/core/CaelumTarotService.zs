@@ -47,7 +47,7 @@ class CaelumTarotService : Object play
     static clearscope bool Implemented(int card)
     {
         return card == CaelumConstants.TAROT_THE_FOOL
-            || card==2 || card==3 || card==4 || card==5 || card==6 || card==7 || card==8 || card==9 || card==10 || card==11 || card==12 || card==13 || card==14 || card==15 || card==16 || card==17 || card==18 || card==19 || card==20 || card==21
+            || card==1 || card==2 || card==3 || card==4 || card==5 || card==6 || card==7 || card==8 || card==9 || card==10 || card==11 || card==12 || card==13 || card==14 || card==15 || card==16 || card==17 || card==18 || card==19 || card==20 || card==21
             || (card >= CaelumConstants.TAROT_MAJOR_COUNT && card < CaelumConstants.TAROT_CARD_COUNT);
     }
 
@@ -123,7 +123,7 @@ class CaelumTarotService : Object play
             || (record.TarotSelected[21] && record.HasTarotCard(CaelumConstants.TAROT_THE_FOOL)
                 && CaelumFoolTravel.JourneyAvailable(user)))
             return CaelumFoolTravel.Propose(user);
-        Actor aimed=(record.TarotSelected[3] || record.TarotSelected[4] || record.TarotSelected[8] || record.TarotSelected[13] || record.TarotSelected[16] || record.TarotSelected[21])
+        Actor aimed=(record.TarotSelected[1] || record.TarotSelected[3] || record.TarotSelected[4] || record.TarotSelected[8] || record.TarotSelected[13] || record.TarotSelected[16] || record.TarotSelected[21])
             ? CaelumMajorTargets.Aim(user) : null;
         let ground=(record.TarotSelected[2] || record.TarotSelected[3] || record.TarotSelected[5] || record.TarotSelected[13] || record.TarotSelected[21])?CaelumTarotGroundAim.Capture(user):null;
         CaelumTarotSequence.Pay(user,record,devil);

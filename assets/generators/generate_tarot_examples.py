@@ -30,6 +30,7 @@ def render(root=ROOT):
              f'    const LIGHT_WET={room["wet_light"]};',
              f'    const DOOR_VISUAL_ANGLE={apparatus["door_visual_angle"]};',
              f'    static vector3 Living(){{return {vector(offset(apparatus["living_obstacle_offset"]))};}}',
+             f'    static vector3 Automaton(){{return {vector(offset(apparatus["automaton_offset"]))};}}',
              f'    static vector3 Controller(){{return {vector(offset(apparatus["controller_offset"]))};}}',
              '    static vector3 Door(int index) {']
     for i, point in enumerate(apparatus['door_offsets']):

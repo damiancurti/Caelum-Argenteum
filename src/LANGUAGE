@@ -7601,10 +7601,19 @@ CA_TAROT_SUN_OCCUPIED = "Only one giant object can occupy the Box; release any c
 CA_TAROT_SUN_CAPACITY = "The Box needs a free slot and enough carrying capacity.";
 CA_TAROT_SUN_CAPTURED = "The original rock is contained until The Sun expires.";
 CA_TAROT_SUN_RELEASE_WAIT = "The rock needs free space within 4 m. Travel waits until it can be released safely.";
-[esp]
+[es]
 CA_TAROT_HAZARD_ROCK = "Roca gigante peligrosa";
 CA_TAROT_SUN_STAR = "Equipa La Estrella para guardar esta roca gigante.";
-CA_TAROT_SUN_OCCUPIED = "La Caja admite un solo objeto gigante; suelta primero lo que est?s sosteniendo.";
+CA_TAROT_SUN_OCCUPIED = "La Caja admite un solo objeto gigante; soltá primero lo que estás sosteniendo.";
 CA_TAROT_SUN_CAPACITY = "La Caja necesita un espacio libre y capacidad de carga suficiente.";
-CA_TAROT_SUN_CAPTURED = "La roca original est? guardada hasta que termine El Sol.";
+CA_TAROT_SUN_CAPTURED = "La roca original está guardada hasta que termine El Sol.";
 CA_TAROT_SUN_RELEASE_WAIT = "La roca necesita espacio libre a hasta 4 m. El viaje espera hasta poder soltarla de forma segura.";
+
+[enu default]
+CA_TAROT_AUTOMATON = "Tarot automaton";
+CA_TAROT_AUTOMATON_TARGET = "Aim at a dormant living automaton. You can control only one at a time.";
+CA_TAROT_AUTOMATON_ORDER = "The automaton received the target's observed position.";
+[es]
+CA_TAROT_AUTOMATON = "Autómata del Tarot";
+CA_TAROT_AUTOMATON_TARGET = "Apuntá a un autómata inactivo que siga vivo. Solo podés controlar uno a la vez.";
+CA_TAROT_AUTOMATON_ORDER = "El autómata recibió la posición observada del objetivo.";

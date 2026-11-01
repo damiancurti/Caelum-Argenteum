@@ -19,10 +19,12 @@ The false-wall and cursed-passage rooms have their authored door classes.
 The false wall uses existing mansion stone; all leaves face their openings,
 including when restoring saves made before the visual correction.
 The Wheel room's two doors alternate with its dry/wet state, and an occupied
-closing doorway prevents the whole change. Its saved revision2 controller
+closing doorway prevents the whole change. Its saved revision3 controller
 restores water/light and door ownership, adding a marked espinillo once to the
 display room. Destruction through Death remains permanent across recovery.
-The remaining display space is reserved for subsequent automaton/object examples;
+Revision3 also adds one persistent automaton at its authored apparatus offset.
+Its destruction does not respawn it on load. Remaining space is reserved for
+the demonstration spirit and hazardous objects;
 this annex adds no mission or reward.
 
 `build_dev.ps1 -LegacyTarotExamples` keeps the exact Justice-era mansion before
