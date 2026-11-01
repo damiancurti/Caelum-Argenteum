@@ -1,0 +1,11 @@
+{
+  "issue": 616,
+  "revision": 1,
+  "room_half_cells": 2,
+  "centres_x": [6, 16, 26],
+  "centres_y": [5, 17],
+  "water_tags": [61610, 61612, 61605],
+  "room_tag_base": 61700,
+  "basis": "Author-approved 22 opportunities, four sectors and alternate routes. Chambers reuse the existing hunt trap chamber's 8 m footprint; coordinates are deterministic layout choices. Wheel water/light reuse the approved 2 m and 192/32. The underwater passage uses that same depth. Obstacles reuse existing bodies, masses, art and effects. The freezing plate uses the ordinary base ice control effect and the hunt's approved 60-second rearm. No new combat calibration.",
+  "uses": ["captive rescue", "automaton", "false-wall shortcut", "vegetation passage", "summoned guardian", "cursed passage and dirty basin", "shared trap crossing", "fragile barricade", "immortal spirit", "extended-power loop", "two-state water room", "heavy movable rock", "underwater passage", "living obstacle", "freezing plate", "consecutive powers", "siege machine", "giant cargo", "clone-return fork", "hazardous rocks", "informative spirit", "combined obstacles"]
+}

@@ -9,6 +9,7 @@ sys.dont_write_bytecode = True
 from generate_arenas import maze_cells
 from generate_coastal_trials import CoastalMap
 from generate_tarot_justice import append_arena
+from hunt_arcana_geometry import ArcanaGeometry
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -31,9 +32,12 @@ def generate():
     # Small opposite foyers hold eight non-overlapping starts/captivity places.
     for ox,oy in ((0,0),(size-4,size-4)):
         cells.update((x,y) for x in range(ox,ox+4) for y in range(oy,oy+4))
+    arcana=ArcanaGeometry(half,cell)
+    arcana.expand(cells)
     ordered=sorted(cells)
     ids={p:i for i,p in enumerate(ordered)}
     blocked={ (x,y) for t in traps for x in range(t['cell'][0]-1,t['cell'][0]+1) for y in range(t['cell'][1]-1,t['cell'][1]+1) }
+    blocked.update(arcana.reserved)
     # Spread objectives by farthest-point selection, independently per quarter.
     essences=[]
     for quarter,count in enumerate(settings['essences_per_sector']):
@@ -60,14 +64,15 @@ def generate():
             for y in range(cy-1,cy+1):
                 # Tag only: no control volume. The native plane mover owns it.
                 layout.room(x*cell,y*cell,(x+1)*cell,(y+1)*cell,flat=settings['floor'],wall=settings['wall'],light=settings['light'],volume=t['tag'])
+    arcana.apply(layout)
     starts=[(cell*(x+.5),cell*(y+.5),0) for y in (1,2) for x in range(4)]
     for slot,(x,y,z) in enumerate(starts):layout.prop(slot+1 if slot<4 else 4001+slot-4,x,y,45)
     def finish(groups):
-        for sector in groups['sector']:
-            sector['heightceiling']=str(settings['headroom_mu']);sector['textureceiling']=json.dumps(settings['ceiling'])
+        arcana.finish(groups)
         for line in groups['linedef']:
             if line.get('special')=='9':line.pop('special')
     layout.transform_groups=finish;layout.write(ROOT/'src/maps')
+    arcana.write()
     path=ROOT/'src/maps'/f'{settings["map"]}.wad'
     arena=json.loads((ROOT/'assets/tarot_justice/ARENA.json').read_text())
     blob,justice=append_arena(path.read_bytes(),arena);path.write_bytes(blob)
@@ -104,7 +109,7 @@ def generate():
     (ROOT/'src/caelum/data/CaelumHuntData.zs').write_text('\n'.join(lines)+'\n',encoding='utf-8',newline='\n')
     info=f'map {settings["map"]} "$CA_HUNT_MAP" {{ cluster=0 nointermission teamdamage=0 UnFreezeSinglePlayerConversations music="{settings["music"]}" }}\n'
     (ROOT/'src/caelum/data/hunt.mapinfo').write_text(info,encoding='utf-8',newline='\n')
-    report=dict(issue=601,nodes=len(ordered),reachable_without_traps=len(seen),essences=[list(p) for p in essences],traps=traps,justice=justice,map_sha256=hashlib.sha256(blob).hexdigest())
+    report=dict(issue=616,nodes=len(ordered),reachable_without_traps=len(seen),essences=[list(p) for p in essences],traps=traps,arcana=arcana.rooms,justice=justice,map_sha256=hashlib.sha256(blob).hexdigest())
     (ROOT/'assets/hunt/GENERATED.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8',newline='\n')
     print('Hunt:',len(ordered),'nodes;',len(seen),'reachable with traps blocked;',len(traps),'traps')
 

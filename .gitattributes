@@ -408,3 +408,12 @@
 
 # Unified patch context includes a leading space before tabs and blank lines.
 /assets/validation_v5_12_7/engine_timer.patch text eol=lf whitespace=-blank-at-eol,-space-before-tab
+
+# Preserve the reversible hunt baseline and deterministic Arcana data (#616).
+/assets/hunt/legacy_51311/* -text
+/assets/hunt/*.json text eol=lf
+/assets/generators/hunt_arcana_geometry.py text eol=lf
+/src/caelum/data/CaelumHunt*.zs text eol=lf
+/assets/validation_v5_13_12/*.py text eol=lf
+/assets/validation_v5_13_12/*.zs text eol=lf
+/assets/validation_v5_13_12/*.json text eol=lf
