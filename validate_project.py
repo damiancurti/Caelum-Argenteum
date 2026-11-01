@@ -8,6 +8,7 @@ import struct
 from build_dialogue_index import validate as dialogue_problems
 from assets.generators.generate_cartography_catalogue import render as cartography_catalogue
 from assets.generators.generate_siege_reinforcements import render as reinforcement_data
+from assets.generators.generate_tarot_justice import validate as justice_geometry_problems
 
 from build_document_index import (
     INDEX_NAME as DOC_INDEX_NAME,
@@ -65,6 +66,10 @@ def index_problems(root):
 
 def validate(root):
     errors = dialogue_problems(root)
+    try:
+        errors.extend(justice_geometry_problems(root))
+    except (OSError, ValueError, KeyError) as error:
+        errors.append(f'Justice geometry: {error}')
     try:
         if (root/'src/caelum/data/CaelumReinforcementData.zs').read_bytes() != reinforcement_data(root):
             errors.append('Stale reinforcement policy; run python assets/generators/generate_siege_reinforcements.py')

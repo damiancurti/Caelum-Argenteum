@@ -167,6 +167,24 @@ measured0.2015-0.44863ms for cold index construction/destruction and
 not a rendering/FPS claim. Remaining handlers, authored examples and final author
 acceptance are still pending.
 
+Justice geometry passed45 initial assertions per native client across nine
+representative real map families, then three common-save recovery assertions
+per client. The legacy package also recovered a pre-arena real MAP01 save:
+six assertions per client verify the7,749 original sectors, absent arena,
+saved ledger, both original characters and old/new cartography compatibility.
+Static validation initially rejected the changed MAP01 checksum; review confirmed
+unchanged room bounds, then the catalogue added both exact geometry versions.
+All237 maps reproduce byte-for-byte;
+both18,025-member packages match their expected current or preserved sources.
+The generator refuses unrelated map edits before writing. The native screenshot
+shows the enclosed owned-stone arena without missing surfaces. Evidence:
+validation_v5_13_3/justice-geometry-results.json. Retained failures were a String
+switch rejected by ZScript and a Sector/null ternary in the fixture, both fixed
+before the successful runs. These are geometry/compatibility tests, not duel,
+travel, rendering-performance or author acceptance. The author approved safe
+returns within4m and ending duels/returning survivors before map travel; blocked
+returns must defer travel while still allowing cancellation.
+
 ## 5.13.2 - Reversible equipment awakening (#442)
 
 Author-approved +25% damage/defense and half wear are implemented on the exact

@@ -1,0 +1,4987 @@
+{
+  "issue": 440,
+  "revision": 1,
+  "baseline_commit": "3bd162e33",
+  "archive_sha256": "2acaa3bf2d0c50343d0f257c709ee1a8285d6ebb6f993065005a0e3f5f92f785",
+  "maps": [
+    {
+      "file": "CABAIRES.wad",
+      "legacy_sha256": "17c011b6f08938a887750b3a3249223da0a0ae3921e84b29a33bd8a97907f6d2",
+      "sha256": "cc031512b1e77f864377ddf2fb59dfd1c544f6194a1e168e64b737665c7b1916",
+      "geometry": {
+        "sector": 59,
+        "origin": [
+          6464,
+          3776,
+          0
+        ],
+        "center": [
+          6848.0,
+          4160.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 1542,
+        "original_sectors": 59
+      }
+    },
+    {
+      "file": "CAH000.wad",
+      "legacy_sha256": "9a2b183435fb94c8bdbc4b2066c3a1144b76f396daeb507cc906c32e7cad89a7",
+      "sha256": "0cf1e5a3d21ae3cbe1dc4c61d3e27ff2bc515ff39136e7c364d4606a37acaea3",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -20224,
+          -11520,
+          0
+        ],
+        "center": [
+          -19840.0,
+          -11136.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH001.wad",
+      "legacy_sha256": "be39cd13040c9b05fb6b45297f3161333da19b6be0abb743bb40209f7294ab6f",
+      "sha256": "8dd1ddb49552f7fd33c99ed8bc612211564711f47c88c93433fdbf3018761f10",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -18688,
+          -11520,
+          0
+        ],
+        "center": [
+          -18304.0,
+          -11136.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH002.wad",
+      "legacy_sha256": "ec30a083582fe0ae3e67efb4458b1887c01378b62cc15e27e04474df3e6040e9",
+      "sha256": "18a50680a49c18c651d9485744c8820b065eaf29b46c357013b5ba5ea71293d3",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -17152,
+          -11520,
+          0
+        ],
+        "center": [
+          -16768.0,
+          -11136.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH003.wad",
+      "legacy_sha256": "44705277d366d3403f2a30e5f487a61732d8f5b2db8c4b9416271672d8641b7a",
+      "sha256": "4cfe6c71efc459b1f809fe42328c92ccc0e53c302ccda5c3dea24412136041a2",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -11008,
+          -11520,
+          0
+        ],
+        "center": [
+          -10624.0,
+          -11136.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH004.wad",
+      "legacy_sha256": "b521b3d0a8ab5f443c22b67259afae341f5015faa320eca6dc4580af754989da",
+      "sha256": "a08a426b25ae7aa714e544dadfc112e785b545b1966387ffe1eece46315ba820",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -9472,
+          -11520,
+          0
+        ],
+        "center": [
+          -9088.0,
+          -11136.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH005.wad",
+      "legacy_sha256": "4eaf889bcb86d19095080600cfd5ad4c97cd0e76542790bad78d0c413c2f13c6",
+      "sha256": "785eccb7b3d80ff4b45396ff7b5ddac57839a8e50fa2222e8b679c78a9c41fd9",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -7936,
+          -11520,
+          0
+        ],
+        "center": [
+          -7552.0,
+          -11136.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH006.wad",
+      "legacy_sha256": "fc1e7bf5cc305e94c83bfcb9d369a0da9e492fdb482b14fe6804885e233c40dc",
+      "sha256": "183d99157bc873a5c7294dc86e81d0e3aac351d8fddfaf9eb18912a932b6dec4",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -6400,
+          -11520,
+          0
+        ],
+        "center": [
+          -6016.0,
+          -11136.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH007.wad",
+      "legacy_sha256": "3645ca923ace46294fc1accc70dec79b07a7fd76a73c199b382fe90b79e5dce0",
+      "sha256": "962f06ada20f6e855acfb6c8a118a320e62ab3579102c8e2ed0801d7cb5f2dbe",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -4864,
+          -11520,
+          0
+        ],
+        "center": [
+          -4480.0,
+          -11136.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH008.wad",
+      "legacy_sha256": "81799b32b9ef8df53643cc5ddc6b6d4d36405dc74420cdb56e19f8d75cf065cb",
+      "sha256": "32bcaaebeb8c530ef46c244ff09259b7897c55098924a96b3e8aa552005d358c",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -3328,
+          -11520,
+          0
+        ],
+        "center": [
+          -2944.0,
+          -11136.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH009.wad",
+      "legacy_sha256": "c3d49800347bc382fd9a1f75495dcef98bb03cd88790a82fa12a33c2b4207394",
+      "sha256": "d0750ceeaf673acf4db955e4eeb8470b32b85d790847ba638b0e8aa87ac49919",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -1792,
+          -11520,
+          0
+        ],
+        "center": [
+          -1408.0,
+          -11136.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH010.wad",
+      "legacy_sha256": "0ca9de6b75e96e8a542e92841f898c61b54bbf3e9ece5a218a59770523017657",
+      "sha256": "08e8e87eb6f54a21256b38e98e29681640d423a46dda3eb961cd13e42ff876e6",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -256,
+          -11520,
+          0
+        ],
+        "center": [
+          128.0,
+          -11136.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH011.wad",
+      "legacy_sha256": "dfb6b0cab24e66c94942c6f85767764751c7afc1196014384a8f58578e1bf648",
+      "sha256": "650f47b470e0c152bc72da50c44090681a3e3a580b7054082b9b5de438d318c7",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -20224,
+          -9792,
+          0
+        ],
+        "center": [
+          -19840.0,
+          -9408.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH012.wad",
+      "legacy_sha256": "01aaef6406cdd2cbce09c1b5a0007ac1d8d34061196878c33d203622d313ec99",
+      "sha256": "9c7e5b957def5373f9ec75af9e2cff59fcab330408e486dd1af1adc7218c8228",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -18688,
+          -9792,
+          0
+        ],
+        "center": [
+          -18304.0,
+          -9408.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH013.wad",
+      "legacy_sha256": "7f5eddd827913df74ab4e4ec405e4a2a05b8a2d23c42439151fc3a2f03eba4cd",
+      "sha256": "dfc713191c4c9ce4cc165ad1f74027586ec07a060229ab92f49b5c9a2aff02c8",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -17152,
+          -9792,
+          0
+        ],
+        "center": [
+          -16768.0,
+          -9408.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH014.wad",
+      "legacy_sha256": "8bb7558dc119155799f27e636fd7021398e81e4039c306b387d1c68ea5292919",
+      "sha256": "cb83e74b032f8f2d3f5894c2c4754c5374702b032437f97c60ccd4535c0798a1",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -11008,
+          -9792,
+          0
+        ],
+        "center": [
+          -10624.0,
+          -9408.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH015.wad",
+      "legacy_sha256": "b549fcd63e7827d00ae5f2d3b2527c615d35a335b4b40a74d231c2641dbb30ba",
+      "sha256": "628adae583d8f6f6438a05a2450b10f4f7b91262b15d02345f10e11c32cc1722",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -9472,
+          -9792,
+          0
+        ],
+        "center": [
+          -9088.0,
+          -9408.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH016.wad",
+      "legacy_sha256": "abb75ebc20fcc79bf7b260f1b74035cb32f1da68e8d00e18cf7d60fed8ee64a9",
+      "sha256": "6b846d5e497909e611ff7fa63629f8f1249988647c27086294b8335945adf42c",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -7936,
+          -9792,
+          0
+        ],
+        "center": [
+          -7552.0,
+          -9408.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH017.wad",
+      "legacy_sha256": "f17b9987c50727cfa3fee6b1554cfa745a554d6b15e87dd0e350119416b14eac",
+      "sha256": "be0ff123c620c7164f64cdd7492f204f9ae00511e26784d6b34326708319efd9",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -6400,
+          -9792,
+          0
+        ],
+        "center": [
+          -6016.0,
+          -9408.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH018.wad",
+      "legacy_sha256": "16373d0ea0fadb1010aa2ead9002fe17b36a117c829f4f29d4db6789521653f9",
+      "sha256": "77687ac8242be435689c9a97da159113af5295a475ac10ae003c43467c49ede5",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -4864,
+          -9792,
+          0
+        ],
+        "center": [
+          -4480.0,
+          -9408.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH019.wad",
+      "legacy_sha256": "52577c43683752ef00a3b4a06bbc54b2ebdb1cf2bec8fbd5ffde4f8b750ae6f8",
+      "sha256": "25fdec6230a28efb8c9f32730018c41180bc89f30c4a69f0290bbc5d3a377a98",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -3328,
+          -9792,
+          0
+        ],
+        "center": [
+          -2944.0,
+          -9408.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH020.wad",
+      "legacy_sha256": "4f0e731e7446d0d852e68d5e26f8b3f7fc4b65ac4dcc18e9bcf4d1714edba771",
+      "sha256": "e564a8e471a91d9492c5bf0146d09e30752a247b557027cae8ab32370cea6856",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -1792,
+          -9792,
+          0
+        ],
+        "center": [
+          -1408.0,
+          -9408.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH021.wad",
+      "legacy_sha256": "d144d6597ffa093d279101aa48642084c414e8267c4209d38bd6220e515f5b7e",
+      "sha256": "bb1bd45c748a57d25c2af5065c654a4ed090e177d9be863b1360338a5cc83464",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -256,
+          -9792,
+          0
+        ],
+        "center": [
+          128.0,
+          -9408.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH022.wad",
+      "legacy_sha256": "832799cc2a29e88a77823c6c89ad6f7408a871087b062d0d0e3b690d2fd05701",
+      "sha256": "46feb88aa7f03f093ec7fbccf9d3bf71bb17b2242bbf485ec551a82e3acc7830",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -20224,
+          -8064,
+          0
+        ],
+        "center": [
+          -19840.0,
+          -7680.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH023.wad",
+      "legacy_sha256": "1fff7c5e4f4047a034d6cdfe97c0ae28db7206752fc3a9dbe5142078eefc4316",
+      "sha256": "ed0f508addb897c60e93f8b03c455c60fa4008c5189ef80049cab94d74b688f2",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -18688,
+          -8064,
+          0
+        ],
+        "center": [
+          -18304.0,
+          -7680.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH024.wad",
+      "legacy_sha256": "10c15a5a9dc6e57e1b6e72154dcb4f3abcd5a22c2e9c84b70769f8e75f018511",
+      "sha256": "72ce38ffdacab1669f8c84db3b06cb751ee4382b7ffe35fbe7da907e99078cf5",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -17152,
+          -8064,
+          0
+        ],
+        "center": [
+          -16768.0,
+          -7680.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH025.wad",
+      "legacy_sha256": "39a65bb01b741cc296f6f018ffe9408be885bfaee3cc49cc255d517f6d8fe472",
+      "sha256": "e2ab37f64f22b5bd8e615823ca85baf4e1ac350023511a93374747a464278898",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -11008,
+          -8064,
+          0
+        ],
+        "center": [
+          -10624.0,
+          -7680.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH026.wad",
+      "legacy_sha256": "03bc8ec17dc02651787f70001dc06467c309925aea05a20c106457e3c092fcee",
+      "sha256": "ef1149b41b04433c7d43dd0bd97da1e41fd6ff0d5fd9246273349f458b2989bf",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -9472,
+          -8064,
+          0
+        ],
+        "center": [
+          -9088.0,
+          -7680.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH027.wad",
+      "legacy_sha256": "bf8caff030cdef702d0c1e8d9485c2e647e344d4ac3e5bbaa47ee8067cadffa2",
+      "sha256": "3accc4b2a08a59bf3ce7c89ee37e4214e89e1c6d5c7a623beacb61587ecc2380",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -7936,
+          -8064,
+          0
+        ],
+        "center": [
+          -7552.0,
+          -7680.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH028.wad",
+      "legacy_sha256": "c906c05e8a364567f730833130645ab19e0f9eb8370575dd45fdef8d38678911",
+      "sha256": "3fb27f0cabfab0946e4741d8f35a453113f2fa9587e340b18c43cf8ad35f51ec",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -6400,
+          -8064,
+          0
+        ],
+        "center": [
+          -6016.0,
+          -7680.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH029.wad",
+      "legacy_sha256": "d64c956bbd57906725335d5c51746b3de2d3321f92dcef5dfd700efb31aca44f",
+      "sha256": "0af6e6781179b1134f1bbcf5a0006bb7ee373bf50437b4dea4c3641d91e0b2dc",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -4864,
+          -8064,
+          0
+        ],
+        "center": [
+          -4480.0,
+          -7680.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH030.wad",
+      "legacy_sha256": "efa20c920b09698f698daab1153359a1837eef0dd98112e82338d8ef6d55c552",
+      "sha256": "68b320d06f5b951bf9249952f13b02a4ea5f3f27956dfb22ab4e4f2f4e555a89",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -3328,
+          -8064,
+          0
+        ],
+        "center": [
+          -2944.0,
+          -7680.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH031.wad",
+      "legacy_sha256": "4014f74b333eb3439f525fa3659e7a810162978e64ecda0ad01fd69bbf657abb",
+      "sha256": "5796c3236741ca1ff4e5c49b76711a9afb828f162d59575fdd7a0061e3b50851",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -1792,
+          -8064,
+          0
+        ],
+        "center": [
+          -1408.0,
+          -7680.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH032.wad",
+      "legacy_sha256": "0fc36b0dea7dd2eb0d4143586ea12a2e4770ef080813ff2f0b71f44beb873299",
+      "sha256": "b1d66f0820f22644d2b8e2fbb2d00d4f6d71bfdd55c4c148543f4986b2b4b771",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -256,
+          -8064,
+          0
+        ],
+        "center": [
+          128.0,
+          -7680.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH033.wad",
+      "legacy_sha256": "517c31629f74b0b74b33dbbce298533374d71a526ecafa5fc330f094289ef49d",
+      "sha256": "60affc40f09a9db1e8c5892719250dd27608d01bc05e9b56176ef34f7a3759ba",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -20224,
+          -6336,
+          0
+        ],
+        "center": [
+          -19840.0,
+          -5952.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH034.wad",
+      "legacy_sha256": "fb24d78d26ef03828b5db6b8fcd33223c5af8a719930d752ff176d82ffad15e1",
+      "sha256": "8ff3b1b874806161ae9430bcf273e08adb02c482ea5ab22c74d00351425e9064",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -18688,
+          -6336,
+          0
+        ],
+        "center": [
+          -18304.0,
+          -5952.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH035.wad",
+      "legacy_sha256": "fa79580b211350183469fc4b9cbfb1034ef0fc6a4bbaf9980730481bc6273aba",
+      "sha256": "e0ed8e1aba97a464a9181306c894a0213539d54cdaaf59b5f39113f3d4e42547",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -17152,
+          -6336,
+          0
+        ],
+        "center": [
+          -16768.0,
+          -5952.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH036.wad",
+      "legacy_sha256": "2a7ab59aea26437f99c4797b9d823bc067ba65340db176655838241cfd8a4afe",
+      "sha256": "547f2a1d5f277efa6f4e574ec19bd90fc913e9a5b043fca13752c7df85ecc6f0",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -11008,
+          -6336,
+          0
+        ],
+        "center": [
+          -10624.0,
+          -5952.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH037.wad",
+      "legacy_sha256": "59d06abac88dc95af02c8f7b572820b7fbf30d4c52e7f2e9acce6808d3b0cfb2",
+      "sha256": "46813915d62e484fd82f24075f1e13727c83d7c9e4e8b2c057ed60350b7c0037",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -9472,
+          -6336,
+          0
+        ],
+        "center": [
+          -9088.0,
+          -5952.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH038.wad",
+      "legacy_sha256": "993bfa00fbee1138b0428d0404b8a0a336d1b8772335fe87c4091f106d57d47d",
+      "sha256": "958652308142509eb736a7e41fbff7f4cd2128bd3eeb648baa51f46d0eb97627",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -7936,
+          -6336,
+          0
+        ],
+        "center": [
+          -7552.0,
+          -5952.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH039.wad",
+      "legacy_sha256": "77467353ab030fbd79d09ef95374bd47cfec0a0af31971ebc238d5bb1a460f90",
+      "sha256": "c8403ad52d93076d3adfe2d16192dfae51b9854e0184f2621e35755e86d834f9",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -6400,
+          -6336,
+          0
+        ],
+        "center": [
+          -6016.0,
+          -5952.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH040.wad",
+      "legacy_sha256": "5114ad77280dc127b278a2f8ab572918774c061a3db4860cd1eea31af8c3676b",
+      "sha256": "43eb2dc268d11b7211e4dcb92ac64d41034fc6697073c119d508c1983b80cb97",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -4864,
+          -6336,
+          0
+        ],
+        "center": [
+          -4480.0,
+          -5952.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH041.wad",
+      "legacy_sha256": "c6c2a93268fb8f0870c14bfeaed905a5b190e2a648e1461f0df93759b3fe166d",
+      "sha256": "02198100859d78237a0f1c942892d60996059d480b8c4c5eeb5d888bb5d0389e",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -3328,
+          -6336,
+          0
+        ],
+        "center": [
+          -2944.0,
+          -5952.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH042.wad",
+      "legacy_sha256": "30160f198f701375bf5edc954841cb78af826347c75b2e6c2c618c40446e63de",
+      "sha256": "bb86ae5e40b54ae9d3b70ceb7ffacdeb7f46be97f6b7a4f1f4625b6ed084a6a7",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -1792,
+          -6336,
+          0
+        ],
+        "center": [
+          -1408.0,
+          -5952.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH043.wad",
+      "legacy_sha256": "c9affcedad04b5bf1218e899b4e8da3cb8ce1f2c734c8352c99d92cbb0464144",
+      "sha256": "62391b6e82ef0e6a289e5ecbce95236e7c779b6c0392fc6add8c1b349ffb4374",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -256,
+          -6336,
+          0
+        ],
+        "center": [
+          128.0,
+          -5952.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH044.wad",
+      "legacy_sha256": "749bf5a4b09df7448ea1eadc97a2c598a4622c06a8921a463a1869d175c03db2",
+      "sha256": "292e2cb43f93d9554678b48403e5fae80eb6f746f3d59b48baef4513b41d9336",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -20224,
+          -4608,
+          0
+        ],
+        "center": [
+          -19840.0,
+          -4224.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH045.wad",
+      "legacy_sha256": "8f8176fcc69bad9812439b3e62e8179afbca6bf26bacab2f680c470e753c9988",
+      "sha256": "16d11b36bd82f6dae882d6b7c777862cff3be856f119663842b24ab0c2f10551",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -18688,
+          -4608,
+          0
+        ],
+        "center": [
+          -18304.0,
+          -4224.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH046.wad",
+      "legacy_sha256": "4a2f4c8ae9dd2a9a17c0b8c7276a3b833e089bd3220762fcb99032e018f55834",
+      "sha256": "2018997e736ee35a1436fab8471e2c99bdfcda3fbf4933d5dab2296ca186de21",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -17152,
+          -4608,
+          0
+        ],
+        "center": [
+          -16768.0,
+          -4224.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH047.wad",
+      "legacy_sha256": "e4e272bfad23d655be7703f9947ba41468c25c5b777f8570b49d336ab676928c",
+      "sha256": "d80b3a3d212401592a38b9fb2fa9137bdd70d723415cc8262d7fff1432bd7fd2",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -11008,
+          -4608,
+          0
+        ],
+        "center": [
+          -10624.0,
+          -4224.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH048.wad",
+      "legacy_sha256": "c5bb257a44e94239f32dcd0a8f653e6463406332f621de9dc52312c612a47df0",
+      "sha256": "79fd380f7a426d385c42c9b941f6ebea738125554eb8335524817e63af70383e",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -9472,
+          -4608,
+          0
+        ],
+        "center": [
+          -9088.0,
+          -4224.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH049.wad",
+      "legacy_sha256": "364ef524f0f71a5659e16ca23296509981586b01a66463ee1de8aaba44c9c2ea",
+      "sha256": "d6013c98a3a81a0e519a43a9f637668cbf45c11ef82f3320c21203c79435946e",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -7936,
+          -4608,
+          0
+        ],
+        "center": [
+          -7552.0,
+          -4224.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH050.wad",
+      "legacy_sha256": "30b6ba187a58a7e82da8607300aa562f2bd21c26bd52462e567bea1eec5ad54f",
+      "sha256": "8c4ad7aad3c6d6636bbee859ada023bfc748d3a4026ece46181d5f6a486abace",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -6400,
+          -4608,
+          0
+        ],
+        "center": [
+          -6016.0,
+          -4224.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH051.wad",
+      "legacy_sha256": "00140f7dc8583b062886f12d3fc932a9b4800bd0a74f1e04fce9f815af96a48c",
+      "sha256": "fbfbd1b33716e0d1e83765c73f8118889812b81f377739ffa3f9cea5f2923947",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -4864,
+          -4608,
+          0
+        ],
+        "center": [
+          -4480.0,
+          -4224.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH052.wad",
+      "legacy_sha256": "6927f45e04f076aed1a2a4007c6a65fa0ece1435b166b493e479e7ebeeee4912",
+      "sha256": "927605f13bc741d2de3952da47b2a768094a7714f427a92c5f3def24be6fc209",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -3328,
+          -4608,
+          0
+        ],
+        "center": [
+          -2944.0,
+          -4224.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH053.wad",
+      "legacy_sha256": "ee9af0e3cb0b6ee25ed15d22beee304f74c1246922a2b971823017ed9ec2fb15",
+      "sha256": "5897bfad594cebfff2105c4a20cf75d416e20c88a97f88b6e3144ab98cf8407a",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -1792,
+          -4608,
+          0
+        ],
+        "center": [
+          -1408.0,
+          -4224.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH054.wad",
+      "legacy_sha256": "0002a2f0db568126d8abb99764d6d0d4d8a4887213c52c0dc4a2ffe021935dff",
+      "sha256": "dfc999dee3b11aaaf828ae503d857dbbddfd02eb51f10179a0d9c573338173ff",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -256,
+          -4608,
+          0
+        ],
+        "center": [
+          128.0,
+          -4224.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH055.wad",
+      "legacy_sha256": "33b85d803d5cc76d58bba1bc6330f24b765decb6172f86e67fa92d4f83fe40af",
+      "sha256": "17b3e335cd34a92bd2e6b75af32f88771c88e92e214cb6334c91b68f14276787",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -20224,
+          -2880,
+          0
+        ],
+        "center": [
+          -19840.0,
+          -2496.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH056.wad",
+      "legacy_sha256": "9f1dde8469832c458e666b3e5b130879daf2bd71b22b8061ed010fb238a01f7f",
+      "sha256": "fccb361f4fd3bb1fecfead3a2132a89fe476325d92c0fc2eea455eecf230dcd0",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -18688,
+          -2880,
+          0
+        ],
+        "center": [
+          -18304.0,
+          -2496.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH057.wad",
+      "legacy_sha256": "5dae9ab679928be2fb0a70c606c3517d5ee3d798e0cc231559cf769520c63c4b",
+      "sha256": "ab3c7e5f0879678984c3b23fa56254a8b5a004d1d09ebc124ace2fc48e5d8599",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -17152,
+          -2880,
+          0
+        ],
+        "center": [
+          -16768.0,
+          -2496.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH058.wad",
+      "legacy_sha256": "96bee4e83a5a9d4e580c2e58851f996471890e18e934de548a7f7e06155c6215",
+      "sha256": "7f48bdba82bb2fba00c6d437378ae4cd0b03e58bd5edfcdac212d6ba16fbe4f9",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -11008,
+          -2880,
+          0
+        ],
+        "center": [
+          -10624.0,
+          -2496.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH059.wad",
+      "legacy_sha256": "07d895730b639c5a305e28d13999c9871f195cf2e51ff60059477d6e1fd0e596",
+      "sha256": "158bb878cb32d06a6e264dde1fd416df040667027cf5a9659682d7b8da4ba68d",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -9472,
+          -2880,
+          0
+        ],
+        "center": [
+          -9088.0,
+          -2496.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH060.wad",
+      "legacy_sha256": "3515fc6286042b9ceab1c1c50bd83f63ee9db8f8ae6dce9943d80980cc5a2020",
+      "sha256": "36f8390ab80ceac0718acf7a173e22ea34ff13513be090806a0f20bcfd41be54",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -7936,
+          -2880,
+          0
+        ],
+        "center": [
+          -7552.0,
+          -2496.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH061.wad",
+      "legacy_sha256": "ca99248970a9f6f91c496b51ca881b86d4ef3d813aaeca260c3d40ca07bcf4dd",
+      "sha256": "5813b493c79cd22c5825ec202a131a30274cdb8e8699199625e74e6db59a3e7c",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -6400,
+          -2880,
+          0
+        ],
+        "center": [
+          -6016.0,
+          -2496.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH062.wad",
+      "legacy_sha256": "6163a15ca7924c7fbf50eb4496c1fb4381fc0aa171bb297610eee40ea3eb7983",
+      "sha256": "3fd0dcad10afe62cc3d3d4488224217a14e553215608813ebb0043d6e8716989",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -4864,
+          -2880,
+          0
+        ],
+        "center": [
+          -4480.0,
+          -2496.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH063.wad",
+      "legacy_sha256": "609f7c93d0a2cda640fa74e17a67ea9d7b0e83fa0347b63697a05fcc11da6723",
+      "sha256": "42e3f12afa5fc250ed2b732716991371a084e44d45210bf21185846f0af085d7",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -3328,
+          -2880,
+          0
+        ],
+        "center": [
+          -2944.0,
+          -2496.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH064.wad",
+      "legacy_sha256": "940b0d6197c39ae7c5397315423b1638e32a3445306f9df8a209208ffdf91057",
+      "sha256": "09c669e2baa2189a3b9b5db11189cdca256d0fd270860ecbd0bb16c9d358aab6",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -1792,
+          -2880,
+          0
+        ],
+        "center": [
+          -1408.0,
+          -2496.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH065.wad",
+      "legacy_sha256": "9923548401418d7ba1c1ce8266b62980a8f5f2759faeba7a1daabe5f5af015f8",
+      "sha256": "90a0c88a6e470317f8b4fad0189240aa97edaea492f2500e632a9e6bb9ad0a81",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -256,
+          -2880,
+          0
+        ],
+        "center": [
+          128.0,
+          -2496.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH066.wad",
+      "legacy_sha256": "afc16f61fdb81c6ceb20888283a91f20956af97c6331a3bd3ac154f19debf7c9",
+      "sha256": "a7e6bd6611f789e9db4ade23162d312dc181d35effb805eea64daf6e65bdb3f2",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -18688,
+          2304,
+          0
+        ],
+        "center": [
+          -18304.0,
+          2688.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH067.wad",
+      "legacy_sha256": "5597e34f0f46df2a4278a352080d5028daed3d15c55a8525fef607725087d4d5",
+      "sha256": "495a4d511968c688e6502ccee5069a399af0a152ede745dd0c2673996d4eca12",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -17152,
+          2304,
+          0
+        ],
+        "center": [
+          -16768.0,
+          2688.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH068.wad",
+      "legacy_sha256": "5905ebc440b7ec5a4913e6d4b85895bdfb277136bbddaeb3274f24ee770e8232",
+      "sha256": "4179737545750d063b61a4e36e2e75e5eca3cc79bc2848472bb1aad19d4596d8",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -15616,
+          2304,
+          0
+        ],
+        "center": [
+          -15232.0,
+          2688.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH069.wad",
+      "legacy_sha256": "304e7ca828dbb98ed2b71d1161c16641f4c7e6b8be230bb3a1ebfcbc5e101e08",
+      "sha256": "f4a3660fdcf0ea98c16758a4b96e06199c2ab6d2941d6b9dc0ea96df2ebaa0a8",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -12544,
+          2304,
+          0
+        ],
+        "center": [
+          -12160.0,
+          2688.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH070.wad",
+      "legacy_sha256": "a67762b2fec48008cbfabaf7201bd32aaf4404bae99bc9dbb760c0ba0a85e56c",
+      "sha256": "e76b3c43a3c028dba97e8f5d77d29535df3b57539a41c88ef8dc0205a6bbf13f",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -11008,
+          2304,
+          0
+        ],
+        "center": [
+          -10624.0,
+          2688.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH071.wad",
+      "legacy_sha256": "b91508947101a8161f19c736d32635bedd970003813c02e5f63a4a176bb72187",
+      "sha256": "15c3c83859d1e2f54bdcea725486b58f6957070fe9cf47391911fbe3830bbe10",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -9472,
+          2304,
+          0
+        ],
+        "center": [
+          -9088.0,
+          2688.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH072.wad",
+      "legacy_sha256": "63cabb12a3e72bdef2040973b5c038ddf8a56a409b162f47a40e8ed0c846e813",
+      "sha256": "9d8a841caf34cf1ad01610ab66867ce637414899ccb85845c0d80d2e2266699a",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -7936,
+          2304,
+          0
+        ],
+        "center": [
+          -7552.0,
+          2688.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH073.wad",
+      "legacy_sha256": "39f2c4a0212d58b41e2c32cad01f14fb8a4cf83ff1b50ac158ce8cf17343ebc4",
+      "sha256": "eb2ca0a26080c90aee125dbaa78b525d7e8fadbcfb3271e20e5caa1b5dd64303",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -6400,
+          2304,
+          0
+        ],
+        "center": [
+          -6016.0,
+          2688.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH074.wad",
+      "legacy_sha256": "91465d95704a96e47e3b609605896e9788db3237b05b413dda175ce34f83d57c",
+      "sha256": "de8526c48b079624c448df5b6b205b27a07af92d2c351f341a6ef986341509c5",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -4864,
+          2304,
+          0
+        ],
+        "center": [
+          -4480.0,
+          2688.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH075.wad",
+      "legacy_sha256": "57c868b132053096fbf18c05e39ec0bc5f586ec85ab1abdb72fab2eba20f5d6f",
+      "sha256": "cb699dfc7365c71c7d69751725dded1afa0b3e3c42c12f99e3888de5c14e912f",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -3328,
+          2304,
+          0
+        ],
+        "center": [
+          -2944.0,
+          2688.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH076.wad",
+      "legacy_sha256": "0d671627df8412bbb1df40c11533e89c58105495468f384c54caad618c232374",
+      "sha256": "5f10ec3feb906ae28121e58615aadc5d8cfeeabe77a93e90487437ff357d79c2",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -1792,
+          2304,
+          0
+        ],
+        "center": [
+          -1408.0,
+          2688.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH077.wad",
+      "legacy_sha256": "166ab8b3ee88d20a3bd5a88748464b3707e06e53da6c7fa951ffb2ece46f1959",
+      "sha256": "7ceb4403995aef898311030f9da185d837741b5731f0c6a189de1e1db4d487a2",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -26368,
+          4032,
+          0
+        ],
+        "center": [
+          -25984.0,
+          4416.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH078.wad",
+      "legacy_sha256": "a40d90ecbb8f9feaf2c19a705675c97ba94088f06b4786d653d49ff0c4ae019c",
+      "sha256": "e8cf778ba389de281ccc7b130313211485f8b9d2822430677b5112d6cc3ef8b7",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -24832,
+          4032,
+          0
+        ],
+        "center": [
+          -24448.0,
+          4416.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH079.wad",
+      "legacy_sha256": "5874ddd5e9b40ea4c546ec1a4733b41c190436a2a324fc527294bf7ef77bd4bf",
+      "sha256": "dfc86caafed229e0ed2960368c9c5019093a0b22f1f180b01a999e2a050d8aeb",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -23296,
+          4032,
+          0
+        ],
+        "center": [
+          -22912.0,
+          4416.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH080.wad",
+      "legacy_sha256": "6b672443e1c3737cf0ec8a99c95b9897339d92488f8e7729127b20e62dd2cfc7",
+      "sha256": "0bf10db0a1c5c84bd10e36a53b370a2f52fadc8dfd81c5ce20a6e648b7f5befa",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -21760,
+          4032,
+          0
+        ],
+        "center": [
+          -21376.0,
+          4416.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH081.wad",
+      "legacy_sha256": "80bbb2f5a64aeeaefeaaa6d43bbb481abc2e75c49340c5f8677fa58eb10a4cf4",
+      "sha256": "2aaabe25a117199c801d8081491a09b4692cd999cffd838e8e172d37e79368df",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -20224,
+          4032,
+          0
+        ],
+        "center": [
+          -19840.0,
+          4416.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH082.wad",
+      "legacy_sha256": "5a9d076f259750973609cdd88673794fb21d7b9679775ccccb68da5ac4a3a7d3",
+      "sha256": "63de7067275122c1a588044f4a1e79c7bb1fc43e4e01f4754a670cd7d9c0829e",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -18688,
+          4032,
+          0
+        ],
+        "center": [
+          -18304.0,
+          4416.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH083.wad",
+      "legacy_sha256": "5c12eb51bf815c89eb98c52fd0058247e3fa1097eea02c42b3628c1ecae5ae00",
+      "sha256": "fcc86a2ed488c3c9c5e01468b1f8e263da0f6435702d154deda40c5ceb353f24",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -17152,
+          4032,
+          0
+        ],
+        "center": [
+          -16768.0,
+          4416.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH084.wad",
+      "legacy_sha256": "16ee6c3a840010aed83bb56e2b725258470679742c570388462209ade04b3a79",
+      "sha256": "7de1556e58e9b030294890e709b4beefa68b0fb76c0a4fba873bc9a33d2fc51f",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -15616,
+          4032,
+          0
+        ],
+        "center": [
+          -15232.0,
+          4416.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH085.wad",
+      "legacy_sha256": "4599d2ebdf1cf76e55ce8ea0c25adf4200a09a1494fdd5a3639e4a5b6350451f",
+      "sha256": "4864e089ec60368e4dfa24d6f95a64b7dcf1902e1664e479ced9d8e32c4e416d",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -12544,
+          4032,
+          0
+        ],
+        "center": [
+          -12160.0,
+          4416.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH086.wad",
+      "legacy_sha256": "8902ad7933c47f3af189431e7d9e27a72ce5b398d33d32211b5905d918b1b5ec",
+      "sha256": "63cf08c5d9b83fe788729f8e038b1b197a2ca54a0277830b9e6e7b70eed48660",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -11008,
+          4032,
+          0
+        ],
+        "center": [
+          -10624.0,
+          4416.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH087.wad",
+      "legacy_sha256": "86e211bbc473f262b25c482e94cdd6b2a96bfe3a37be0470ade0be9314fb6aaf",
+      "sha256": "2ffef3a2cc99f0dc5e76bf6234fd1fdb988a46fdd15b885cdaabed38c36ec693",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -9472,
+          4032,
+          0
+        ],
+        "center": [
+          -9088.0,
+          4416.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH088.wad",
+      "legacy_sha256": "270f1731b398ed2a2750abfee1ad5c59de2aca0025f0fad59ed523a60da939be",
+      "sha256": "c03babeeb6d3be5cc2c0dabaf625c089d0766763750f9afd70819e990f2706bf",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -7936,
+          4032,
+          0
+        ],
+        "center": [
+          -7552.0,
+          4416.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH089.wad",
+      "legacy_sha256": "c15dee7e35940ff560b2dc414415a78b16515d1648c625b6816583905a53a4c7",
+      "sha256": "b651b6a90976fd38e9ecd0b7d24fbfd802f2f5be89dc37e7e5a558fe0236abea",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -6400,
+          4032,
+          0
+        ],
+        "center": [
+          -6016.0,
+          4416.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH090.wad",
+      "legacy_sha256": "f5aae3c763bbf98078a853d6700d3203473b91da68b3c6600fe47c71ed4bbb05",
+      "sha256": "1aa59db3a8d4a429b39768363e2e731e55797a2a285a279d2a91588b2837a64d",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -4864,
+          4032,
+          0
+        ],
+        "center": [
+          -4480.0,
+          4416.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH091.wad",
+      "legacy_sha256": "c5fe2faefcee48035354c1c0b782ff0c10d918a9ad306fe0f5fca470d73dd53a",
+      "sha256": "a8277fa5b22c4cc41a33be393dc0493a0bf254f55bd14ff50750935c8300b2d3",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -3328,
+          4032,
+          0
+        ],
+        "center": [
+          -2944.0,
+          4416.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH092.wad",
+      "legacy_sha256": "b8d4385530f4b6d14dbc3a84b4c2cfcfa4f6bb284f669917a8f24a86b5ec5f80",
+      "sha256": "d8ad3d729af3d722f525e315829f8b7e611b3b3c72033b8d7cfad7f4258a4fa2",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -1792,
+          4032,
+          0
+        ],
+        "center": [
+          -1408.0,
+          4416.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH093.wad",
+      "legacy_sha256": "d13b4ccf45d5dda3dabc71ef8011b8a4ab6fc958a24393ffd88c4179c28549c8",
+      "sha256": "2b180530eb1cefe2bfccfb21076b98d9bfc96f90b896b7126c6d4bd7ff6b82ed",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -256,
+          4032,
+          0
+        ],
+        "center": [
+          128.0,
+          4416.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH094.wad",
+      "legacy_sha256": "a12a76c9de92415a2af298f53e061b64307df37eae3188d6ea231cc692c68572",
+      "sha256": "c7dd484b262ef5fa7ce719db825e1dbe2f5279d9cc8f32447747b525a69b96ea",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -26368,
+          5760,
+          0
+        ],
+        "center": [
+          -25984.0,
+          6144.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH095.wad",
+      "legacy_sha256": "de2f418cbdc732a51654e3865f079a9ed8e2813fb50f6507d1c5fc99b0d4417a",
+      "sha256": "335d07f82824b235813636aa2b705e9a1f1a27703301e2ad66ad8ef645cb9f8b",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -24832,
+          5760,
+          0
+        ],
+        "center": [
+          -24448.0,
+          6144.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH096.wad",
+      "legacy_sha256": "acddd17c908044267c67e857841388d85f49454786aa56bfe36cb87a27395e2b",
+      "sha256": "ebbad84798f5fd68aa209bda2d93efbb47654e3293e8c9b9136a06ce63ab85b2",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -23296,
+          5760,
+          0
+        ],
+        "center": [
+          -22912.0,
+          6144.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH097.wad",
+      "legacy_sha256": "5a4e53242d752cf3f55ec256953f76f8ba73c80ddfeafa262d14a1b4a319dfdd",
+      "sha256": "f1eddc6e5b662d18ff0fc3ba2b0869cc11b14d79a1b441cbd1078ef544449386",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -21760,
+          5760,
+          0
+        ],
+        "center": [
+          -21376.0,
+          6144.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH098.wad",
+      "legacy_sha256": "fc8bb70f9add50a46f7187f0747ca91e62c83346f46cb8a6fb5b1f34a7056bde",
+      "sha256": "d1a5dd10052a969d2dadee2d73284a34034ce6e2b5c3130ccd03810aa4cf832f",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -20224,
+          5760,
+          0
+        ],
+        "center": [
+          -19840.0,
+          6144.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH099.wad",
+      "legacy_sha256": "551d4202d6b69d309d1216caff00b9456943cfbc7bbce1077b6fb60830add280",
+      "sha256": "929490fcf1bd45c0366306afeddd29a4ce32b240000d02c18751e496540c481c",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -18688,
+          5760,
+          0
+        ],
+        "center": [
+          -18304.0,
+          6144.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH100.wad",
+      "legacy_sha256": "2c45b693e842ad61f6c79753b5a719e8affeb371d805b9774b8103d8f89c8fd4",
+      "sha256": "e025c15845e11d79e2636d5b841a138b4f506fae851aa998ab98332027b27f94",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -17152,
+          5760,
+          0
+        ],
+        "center": [
+          -16768.0,
+          6144.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH101.wad",
+      "legacy_sha256": "3fde5f94a5d748c77a8777aafa5d3d8050dba411f39c14d06d38c4d4eb7103cf",
+      "sha256": "9dd0e7cb97274a9bacdd0112de3ac44ee2968a72586a8a69c7c51ac969cbf7d8",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -15616,
+          5760,
+          0
+        ],
+        "center": [
+          -15232.0,
+          6144.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH102.wad",
+      "legacy_sha256": "18e1fe24c6b2bff7edf84c80a0d6dd2f8b9aa83fe4cf2c17eca57794713aca73",
+      "sha256": "bb812ad895d967f6b16fcc8a35a9973cc9c43bb549ae134905e6605254f0d82a",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -12544,
+          5760,
+          0
+        ],
+        "center": [
+          -12160.0,
+          6144.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH103.wad",
+      "legacy_sha256": "20df2f03fa4a688964167ed6a054f2e60bf0d14a091c910987cdfec4d155a51c",
+      "sha256": "005555f11475d674080d0b0d0e209f981c2e3b871d5f3781ded8d42b175a5fb7",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -11008,
+          5760,
+          0
+        ],
+        "center": [
+          -10624.0,
+          6144.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH104.wad",
+      "legacy_sha256": "cdd85fb9f341309e7ee8b8300bc17cce2af82cfa8f40142a85eb71f749fd2b73",
+      "sha256": "ab1412baa905058bd0f751a064276df30c8a89abf926544bbd4ca01b4f3b868f",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -9472,
+          5760,
+          0
+        ],
+        "center": [
+          -9088.0,
+          6144.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH105.wad",
+      "legacy_sha256": "c8f6586e77a5c05f5778319a70315789215fae87ab76a21d4740baab29462226",
+      "sha256": "d9ed95fbb01523e9a9a3ecfc4d68551a28f4b810d4dc8078c86145ab944ac6b5",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -7936,
+          5760,
+          0
+        ],
+        "center": [
+          -7552.0,
+          6144.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH106.wad",
+      "legacy_sha256": "67d7712ad26ed3285af48ac919038493a0b8e1515728c68bea5db8209b0acdfa",
+      "sha256": "5c9da1297b71d3642801d076a9ad32ce1d28d470185ba8ee5c1506874e700144",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -6400,
+          5760,
+          0
+        ],
+        "center": [
+          -6016.0,
+          6144.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH107.wad",
+      "legacy_sha256": "2b8ff74bf476a6b4d450519eaabedf1038ea3e9696fcdfac0434a35b4fb66817",
+      "sha256": "fa04e7766ebd25fec33bf476a3cfbb42b186cea8500d62a8328d1dac8cddc05b",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -4864,
+          5760,
+          0
+        ],
+        "center": [
+          -4480.0,
+          6144.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH108.wad",
+      "legacy_sha256": "b87d0b9a0cd670478fa1a5c12b5f6aef04f908342b6e0f3db4ceb8b1c2fa56e5",
+      "sha256": "cdfe762762e28dd3e1f1a845a0faf40eea1e67b3d6a0d8b1caaeae68eea2ba0a",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -3328,
+          5760,
+          0
+        ],
+        "center": [
+          -2944.0,
+          6144.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH109.wad",
+      "legacy_sha256": "ab5cf2880e13e5f6cd3cc65a7f84f141bc95bc8935e4c7ebd138c440fcc3b845",
+      "sha256": "431bcc8dcbbfe6f44b2bba1cdab049dfd982185ec64b7b71ee2d6af3a9f7be2b",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -1792,
+          5760,
+          0
+        ],
+        "center": [
+          -1408.0,
+          6144.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH110.wad",
+      "legacy_sha256": "3662e188f8c4440d047f9eb7d538ffc8d84122418079ac933f71c83a5b922010",
+      "sha256": "f1b97faba7a1afc91919e2b4217c56b66d224209bce17cc7a8b112ffceffaa14",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -256,
+          5760,
+          0
+        ],
+        "center": [
+          128.0,
+          6144.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH111.wad",
+      "legacy_sha256": "39aabdf7b7ab070a6d857a52f9cea8df814ab2d959b9aff44ca40e4dade592c1",
+      "sha256": "7617ad84a9c65ff182b7f89406b2d6e009f7003a61d39ab543646c3ef346f8f3",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -26368,
+          7488,
+          0
+        ],
+        "center": [
+          -25984.0,
+          7872.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH112.wad",
+      "legacy_sha256": "1f9487c6b98d20380f3b6ffa8edd019e530ed0b5281b9523406c7010695515a9",
+      "sha256": "b4278486f95a315cc23260fb6d3dd42eb8d8b149ee1f7ff9e75d344884e28af2",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -24832,
+          7488,
+          0
+        ],
+        "center": [
+          -24448.0,
+          7872.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH113.wad",
+      "legacy_sha256": "a343613fde60c036520084a0b023d1bcf814456ca9647fcbb09570c9b686ff96",
+      "sha256": "1a4e544cdb810ca6f8f9609faa4f482bed59a3f92f878180b61727152fb1ffed",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -23296,
+          7488,
+          0
+        ],
+        "center": [
+          -22912.0,
+          7872.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH114.wad",
+      "legacy_sha256": "1dfd45cfbcc2effa8ebb06a663326f6aae14be76f66af41dff6e663f7ac114c9",
+      "sha256": "9dcd114d5d82df0090ef4517271a67506df50d7431b30889b32402a823e2e5bf",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -21760,
+          7488,
+          0
+        ],
+        "center": [
+          -21376.0,
+          7872.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH115.wad",
+      "legacy_sha256": "184dc3771b8daaeb10abb15de39886db6bbd9bab97c0286b132e89d9d02c02e1",
+      "sha256": "a2b8cf0a00862b4af2357af3614fd6047212f05eb0b5b10bd5332d04c2105752",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -20224,
+          7488,
+          0
+        ],
+        "center": [
+          -19840.0,
+          7872.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH116.wad",
+      "legacy_sha256": "ad56d3c1d4ab9ad88feeff1aeda5401eb039931323939c74ac67a429370a466f",
+      "sha256": "aa98bb3a7a1f700a7ea560259582a9455f867553ba955602a1d189a0988541ca",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -18688,
+          7488,
+          0
+        ],
+        "center": [
+          -18304.0,
+          7872.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH117.wad",
+      "legacy_sha256": "90af2975a5e99c54812dc020887838c97ac847a752bf55c84ffdd29326f7cbda",
+      "sha256": "bf603929b2d6336d0c54ee5162dfefb686865c1d1d65a0f4fb8bcaa45c01d9af",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -17152,
+          7488,
+          0
+        ],
+        "center": [
+          -16768.0,
+          7872.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH118.wad",
+      "legacy_sha256": "d7b64dc19170c71dc14929eaa5f6891d8f7ff642febcec5813d8c9ddeef8ee67",
+      "sha256": "77147acfab27c33d1478d92eeae51b96865dd8fc2d21ea2732909ae2a9b65fb2",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -15616,
+          7488,
+          0
+        ],
+        "center": [
+          -15232.0,
+          7872.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH119.wad",
+      "legacy_sha256": "6bdbd05759cfb1e33ed2f459b72084bb605113993508792af7a78833449cdde6",
+      "sha256": "247ab3b20600d5b8b467efc42e70aaf74a777276fb6265ac7d84cf2c315ee922",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -12544,
+          7488,
+          0
+        ],
+        "center": [
+          -12160.0,
+          7872.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH120.wad",
+      "legacy_sha256": "13e26535166d8ba29819657b80144d478e0be0604c2003253968492085fe23e2",
+      "sha256": "cda3526644f65d09da3bf324238d8d84da81184deb66cb078da43eddfc31ef8e",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -11008,
+          7488,
+          0
+        ],
+        "center": [
+          -10624.0,
+          7872.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH121.wad",
+      "legacy_sha256": "713e1d45bbd33751cf7cb93105047daf124c69813a615795ff847d0d4cff3107",
+      "sha256": "7090b15e27f683a98f852d2ce7a66fdd38101f8f694ce319ccd543d76f1edf79",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -9472,
+          7488,
+          0
+        ],
+        "center": [
+          -9088.0,
+          7872.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH122.wad",
+      "legacy_sha256": "dfd14307465c5f8598ba029520b4514d00ba5695c7cbaa0d95ec16855e1ff0ab",
+      "sha256": "3030925e1f1d04dc132effb111d6314016f8adb6114246cd43c9d4f9aed472d8",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -7936,
+          7488,
+          0
+        ],
+        "center": [
+          -7552.0,
+          7872.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH123.wad",
+      "legacy_sha256": "1ad3d24d75c53f706a200b659ec8fd15091fc65412861f203f6fe98014ea9290",
+      "sha256": "c64d66cdc324656b0f4ae2b85f21a373d772362b8d01033856feb68141e7ca85",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -6400,
+          7488,
+          0
+        ],
+        "center": [
+          -6016.0,
+          7872.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH124.wad",
+      "legacy_sha256": "11f07136332cdf7a80d0addb04ad061b3f85c395af5b37c8eccf71267b90074d",
+      "sha256": "332db65548f3e4209bf769b4e159eeea7f8f41816c03341c6808e14f45ed967d",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -4864,
+          7488,
+          0
+        ],
+        "center": [
+          -4480.0,
+          7872.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH125.wad",
+      "legacy_sha256": "4b3c1d460a4fb4dfe8f9398cbd9fb498242bef4613f07197a70f7ee85eea349c",
+      "sha256": "3d3c749ab9d9a220909f67ba0039880ecb8a6f9f375af597442909221ba3630b",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -3328,
+          7488,
+          0
+        ],
+        "center": [
+          -2944.0,
+          7872.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH126.wad",
+      "legacy_sha256": "5b2a0fcc9a5e6c6f886a455b0bb0b49572f4c33e8217fc68737759cc60ddbd34",
+      "sha256": "5ef7b773d1beae0641519c7410cde07bcd9a9bf5eba8fd8bbcff559e1c2ab227",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -1792,
+          7488,
+          0
+        ],
+        "center": [
+          -1408.0,
+          7872.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH127.wad",
+      "legacy_sha256": "efd3b8cd456e6fd9e180bca47913fd7eaac52269ea1836474e5c2e4c687e5b8e",
+      "sha256": "eaeaf25c790192eee110b8d21b7ab8664c67398a2d9325cd4b8d1b8c4da86ab8",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -256,
+          7488,
+          0
+        ],
+        "center": [
+          128.0,
+          7872.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH128.wad",
+      "legacy_sha256": "5c9e833cd82b3adae597053674257e0f8d952b2e8c8e212a4f8a2fbab4d0a0ea",
+      "sha256": "2b85d09c4d26546f6a1bf4b474b536470f65299b93d9236b0d675131360782a5",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -26368,
+          9216,
+          0
+        ],
+        "center": [
+          -25984.0,
+          9600.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH129.wad",
+      "legacy_sha256": "7b8f377d1160a36bd942f00c7897e8c10895c0982605977c5e218780d40001e0",
+      "sha256": "2e6ac01fc07c0a483edf35e634be6a885049e0f06e3ab720a44cf6716b9056f9",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -24832,
+          9216,
+          0
+        ],
+        "center": [
+          -24448.0,
+          9600.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH130.wad",
+      "legacy_sha256": "3bc531e6dcc323f7041c91adf23a26c44b69456f079d535aa2b4dc43aecdfbd8",
+      "sha256": "3208f2e6a4aa6134f25de82877398ac41e4d5fb842f5325ecf3183895bd4459a",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -23296,
+          9216,
+          0
+        ],
+        "center": [
+          -22912.0,
+          9600.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH131.wad",
+      "legacy_sha256": "4d35f33b492b1ac2a90fd33b2511e417ee5f50109977ccb9ea171b14b883e0db",
+      "sha256": "c824f36accb45c91e29ef536ddc7588e6ef70270a73b27f06166221007375661",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -21760,
+          9216,
+          0
+        ],
+        "center": [
+          -21376.0,
+          9600.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH132.wad",
+      "legacy_sha256": "263aa6ebcc12dd91ab505ffae028e430edecdeef06e249ac1497b9adcfd50675",
+      "sha256": "28dfba888ba637dba67663190591c5ea550955500bd70f371f1deaa1fc69f8a0",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -20224,
+          9216,
+          0
+        ],
+        "center": [
+          -19840.0,
+          9600.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH133.wad",
+      "legacy_sha256": "af1449b9c509b4678efa28375a1ef2417ca1a26f74777d39c984210def71bfb3",
+      "sha256": "19fef433bdbb1056ccb6dee729c6483d34cd4ffe2d0aacb6965575bff776f15d",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -18688,
+          9216,
+          0
+        ],
+        "center": [
+          -18304.0,
+          9600.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH134.wad",
+      "legacy_sha256": "2b7f935dfed0e736838edea6cc0d09a6c48deaf9ae9fbfc1f55ab2b8f499a999",
+      "sha256": "ea9fe7b54a80d0e0ad99c65481d9d89457fca3ef818f3e95f01c65e874cc498d",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -17152,
+          9216,
+          0
+        ],
+        "center": [
+          -16768.0,
+          9600.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH135.wad",
+      "legacy_sha256": "ff741fc7447512f5a3561b6eb10f034ed8ec6742b714d31bc5e16d98ebe97525",
+      "sha256": "c2f1b31d816046189e72cf833c5d0d85c570516bc22be7a2b1d6895ed2b1a6f1",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -15616,
+          9216,
+          0
+        ],
+        "center": [
+          -15232.0,
+          9600.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH136.wad",
+      "legacy_sha256": "07b3211287428c5c6ea3491bde50be121426ab1a0393a7dd35e251b6a7adff08",
+      "sha256": "a364db613dbe9c4b3a52078a737bb59040642a84f8b4bb676e7e3a2cbcefceb6",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -12544,
+          9216,
+          0
+        ],
+        "center": [
+          -12160.0,
+          9600.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH137.wad",
+      "legacy_sha256": "e86cb70e40f3c63bbbf1f3f0c6584fac41a3f20b22e9bd59ad9cbdb4314f687b",
+      "sha256": "bb24fabdf4e96a1e96e57c490cf040366e3d1dfc8876b1267be6051da1b7363c",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -11008,
+          9216,
+          0
+        ],
+        "center": [
+          -10624.0,
+          9600.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH138.wad",
+      "legacy_sha256": "5b86b9de9a2241aa8dce21c2ccd7c72d592e32e8ed6dfe86d740d9fc3612bd00",
+      "sha256": "17acbb02a3fd594e59957e02406adf67ddc598abca2fc749fc7e8d95fccc8532",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -9472,
+          9216,
+          0
+        ],
+        "center": [
+          -9088.0,
+          9600.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH139.wad",
+      "legacy_sha256": "84b0f4360e4a86b013bbd7f1390292205fb3ec66b1212ad06eb5928a13b31b59",
+      "sha256": "78dbcc77fa7ee4b218df158c4fd0aadabb29ecea5f60054ec677ecd8b9aaace8",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -7936,
+          9216,
+          0
+        ],
+        "center": [
+          -7552.0,
+          9600.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH140.wad",
+      "legacy_sha256": "a5a837a852172d7df355af775cce587d7520f27d30d076f2c5c7846c7d8cf9f2",
+      "sha256": "65a23a25c7da4379d2e97cd215276d675cf152e4f7f27b8787b2f2277c4e7724",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -6400,
+          9216,
+          0
+        ],
+        "center": [
+          -6016.0,
+          9600.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH141.wad",
+      "legacy_sha256": "1a4e11571e8948e5c118d267e1b2cc3b19cce93a1e0e445d3fbd1a44370d7c7f",
+      "sha256": "328ccc48d6a4231215588531a93bbeff28de546967692714743cc9107c697dc1",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -4864,
+          9216,
+          0
+        ],
+        "center": [
+          -4480.0,
+          9600.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH142.wad",
+      "legacy_sha256": "d3a6828163f24df2f933d17888f06fa25f7069001b329c35105e20ea5c60e8ee",
+      "sha256": "c530b287bf8995b1e987a1596aa44534eccb550505f39f881289d18bd3457739",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -3328,
+          9216,
+          0
+        ],
+        "center": [
+          -2944.0,
+          9600.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH143.wad",
+      "legacy_sha256": "a5c72ea734dd439bf805d108dbbd93e982f330ed5613d2c26eccf909aff41721",
+      "sha256": "808c0d770f1d3391e5afee33bdc9a818bdf50b304dbdec0ae1434980a4cb4127",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -1792,
+          9216,
+          0
+        ],
+        "center": [
+          -1408.0,
+          9600.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH144.wad",
+      "legacy_sha256": "bb98eb4ba7f97b0537834a0a76d3b20df45ddec91eb557e7720c83325c016b81",
+      "sha256": "58de278211f5eb40f48405de5ad86777df80b99124142140e73cd4e5c3aa6837",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -256,
+          9216,
+          0
+        ],
+        "center": [
+          128.0,
+          9600.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH145.wad",
+      "legacy_sha256": "6e396b4a79f3381ed499985214982bf5763fe0a855c893c851d41ccef1fb25a3",
+      "sha256": "993a246284b928f9ea6baead5e5eb69c27ce7234af88e643fb9fb89d3d05c4da",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -20224,
+          10944,
+          0
+        ],
+        "center": [
+          -19840.0,
+          11328.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH146.wad",
+      "legacy_sha256": "d1fdf2dff22430f1137c4a1ddef81963a4e7bf73dc9b93d0fbff0c788bcf7cdd",
+      "sha256": "0da7353f5efdf5fb7488c753afa68faf51f43e806afdbe24ed2800d6e26f487d",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -18688,
+          10944,
+          0
+        ],
+        "center": [
+          -18304.0,
+          11328.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH147.wad",
+      "legacy_sha256": "f882c8d12baa41bc74d9b0c5baec82d601a52c6e5c8ddd31ed776ad8b36dd9d7",
+      "sha256": "b4a18bc9c9b18bbb64146294c42fcc42bbb0e86cf9b7e34b7b7730db13ed0a03",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -17152,
+          10944,
+          0
+        ],
+        "center": [
+          -16768.0,
+          11328.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH148.wad",
+      "legacy_sha256": "81b7c87ecb9fd4a8ab51d3d4487b8b452e1081b8091d0d34bdb1cbd26ffba9de",
+      "sha256": "867fd87cc59c5b76bf31d5570a79f786510c06fd93043e76b291af1276968a7d",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -15616,
+          10944,
+          0
+        ],
+        "center": [
+          -15232.0,
+          11328.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH149.wad",
+      "legacy_sha256": "3d03f41c0f2370fe2f36401c8fcddb09def2d7306f176c0dbef1bea69062f487",
+      "sha256": "7f06b53cbc3c89fb140a6963a78f96b2ad72d47fdb62c0f1d336dcd86d59dc21",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -12544,
+          10944,
+          0
+        ],
+        "center": [
+          -12160.0,
+          11328.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH150.wad",
+      "legacy_sha256": "5f35b0430bb53b42b9c1b2688e0df9c8278f6fd372ef84e43ff4a9544bf77a8d",
+      "sha256": "097438a376a90167d14065a42cf14e47b98e1dd386f5d336174647a7c050f924",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -11008,
+          10944,
+          0
+        ],
+        "center": [
+          -10624.0,
+          11328.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH151.wad",
+      "legacy_sha256": "6625cff76d7964544db11cbc4d1a31ba299a899e2b1f2883ace7916a90e27109",
+      "sha256": "7427a2e160b4dd8f2ff9cdc270ae1757f80c04eda522a261a2bdb3b5fc8c0377",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -9472,
+          10944,
+          0
+        ],
+        "center": [
+          -9088.0,
+          11328.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH152.wad",
+      "legacy_sha256": "79037f22c5dc2c63de2cacf4e85d25b8e2ef11ef381d3dad52890d10d700d967",
+      "sha256": "b7e3ccc959049fbc60fc0f3e72eeaa8b48bb18f608d687304a5b954da24f66cc",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -7936,
+          10944,
+          0
+        ],
+        "center": [
+          -7552.0,
+          11328.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH153.wad",
+      "legacy_sha256": "11e6301bf35ea32eb9a2a6f9d090cb3a43518c3c9c3095b9c592c81c0f3cda55",
+      "sha256": "6033a87cb7efbbfb978dbc3266fdaf3e46a0f6ff6aca3ef1c0b7bad85834323f",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -6400,
+          10944,
+          0
+        ],
+        "center": [
+          -6016.0,
+          11328.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH154.wad",
+      "legacy_sha256": "519a7c14001956b1111a8db6914da18c1e60f7e67f5a94a435dc4a88dee02783",
+      "sha256": "b08f2f54b3a452ed88e956ea9adc6cacd7bf6efc5d9dfaa3163c53bce33bd3d3",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -4864,
+          10944,
+          0
+        ],
+        "center": [
+          -4480.0,
+          11328.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH155.wad",
+      "legacy_sha256": "b854bd86655e787941995e487965db421247dcef5e06ad3deb922ad9bd000aa3",
+      "sha256": "5de625c930ce06154b576078e3d32df87052fefae89cea0df761fcebf6abc512",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -3328,
+          10944,
+          0
+        ],
+        "center": [
+          -2944.0,
+          11328.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH156.wad",
+      "legacy_sha256": "eecb386882822a2355bc6d7eebf9d8ae23d3de1e35af914a5df8874705eaa991",
+      "sha256": "e1ee38bdeab2a7ef38128bcc824421e69767e8037218ce6cd902050bd0a8d369",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -1792,
+          10944,
+          0
+        ],
+        "center": [
+          -1408.0,
+          11328.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH157.wad",
+      "legacy_sha256": "38c35003da04967bd432062bb64b80ef2b7d5ff866429687e98e9c613603a35f",
+      "sha256": "bc67098be1806e2700fa419485957ed4534ac6aa7d94dd916e2d3223fd040789",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -256,
+          10944,
+          0
+        ],
+        "center": [
+          128.0,
+          11328.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH158.wad",
+      "legacy_sha256": "f89c8d0a420613312c9768a9a600baaa50ae18dc153549e044a222c43d5a17f1",
+      "sha256": "803acffe50cffb6aff3cf41e37aec3830e66f90973c50d025e2fb3094fa7055a",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -384,
+          1280,
+          0
+        ],
+        "center": [
+          0.0,
+          1664.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAH159.wad",
+      "legacy_sha256": "179875d76e05cb3f0ec8e26222a2760a08aa0598005b80de462b2bdcc88a404f",
+      "sha256": "350e1691ccbb013d3b7fb1c210d6963c9c7002404662638678a94baf5b3bdfe0",
+      "geometry": {
+        "sector": 5,
+        "origin": [
+          -384,
+          2560,
+          0
+        ],
+        "center": [
+          0.0,
+          2944.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 183,
+        "original_sectors": 5
+      }
+    },
+    {
+      "file": "CAR00.wad",
+      "legacy_sha256": "c3790c58096f0d449706379eb34e05a7426551632b31b505f52afe8d09138b3f",
+      "sha256": "123a9b3b3b5f17444d4f745bc991c3b461bb677cb374b9bc5037a4e3cb591383",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR01.wad",
+      "legacy_sha256": "d57b252e1e811facace12e218ee683575604d247ebc4a8ffef786619243a5b07",
+      "sha256": "f94f570adfe90ae62c4b5562750f5169e494a6ab4648430661debb86117a21f2",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR02.wad",
+      "legacy_sha256": "a9e12e0e3d5c66a31487aa034b793949b4adab71b8086be3189b991f47df7d99",
+      "sha256": "c4077032a329ea8854db48cbf4780fe45e552256b5957b00658787418b3e754a",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR03.wad",
+      "legacy_sha256": "ccf2d539214e37f6a230447b3b7a548fd71c526ac2878e3c0950363078a50805",
+      "sha256": "c679cde7cf2edb8b9069e96383e34432dea9e9da6e96c356e99644df7bfda448",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR04.wad",
+      "legacy_sha256": "478c88383b76b86f8c16514e43ff8e827a32d6ddf6da8a559b9774cbf5c010d1",
+      "sha256": "c2cc05a578bc9b681b9420a1ae9b6783fda4be20bd0f7953741c1928f54bfa07",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR05.wad",
+      "legacy_sha256": "7a745790711b05818ca734207ddfa837532ddf97c676c971de16eaffd92c7999",
+      "sha256": "40143a27dee4eed640071b5167632e77f2bef404b12ffacd2002265616797717",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR06.wad",
+      "legacy_sha256": "871f7017fee9af706cb72b5acac3deb09e45945f792817a2a43981c4a3514aa3",
+      "sha256": "f877ac3ea84d5171019f0a0c85c85fbc6f59e0281f9a3759e774d36a7169c1d4",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR07.wad",
+      "legacy_sha256": "5d033161d656f6acd6bc6ece12e39b65b969cd155b51f8c02424bd6d5e9316d5",
+      "sha256": "d4bd8964efbdc191a2dff6ce41a3c6e5c26e9502f9994b83fe2fb15e8d9e6f5f",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR08.wad",
+      "legacy_sha256": "8c3f3654b4f13e43a31a51649de48cee2eec308d68030d28ea00cd3f941f35b1",
+      "sha256": "0691dfcdd0f271e56b9389b637d4e5fe7fbfca98f8619c5b1b34492668f30dad",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR09.wad",
+      "legacy_sha256": "e14e8e6b25a4ee607dcf1ebe9bf167c84942c089c280e03521931832fc031aeb",
+      "sha256": "0c09601d575952f41a3f65e96bfd94d2596b87c0b3c00c6f161bd31b0e5907d1",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR10.wad",
+      "legacy_sha256": "72dfc87d92e1545d30cd9374eac9010f496a7aafe9a4da7da7e57b087d956eda",
+      "sha256": "d1bce9c569b92c95ed9293fa9720983ddba2fe7bc3e3f9c41181e2abd52b96dd",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR11.wad",
+      "legacy_sha256": "db848db42f728fe5e34222412bea58db7f98d60e6d217bc23cca6571fa6817c3",
+      "sha256": "529d56e7c9351cef8695fd6fd3eddf2975f7ef821ded08c4c31a787a5e4c1b2c",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR12.wad",
+      "legacy_sha256": "a0b016ee19c41dd2d4ad73b2402d2825b9561fdd8ec9ece6d4f2684ae890a7ab",
+      "sha256": "1ba2220b5e8c1cba696d2aa779e591c7e5020228c0f56e87c5cc43152beaf49c",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR13.wad",
+      "legacy_sha256": "a5d5c951d78d23b1c8307531b29ff2a66f25ce662d806324b952069d7dbecc7d",
+      "sha256": "3b626d9f4fbbf60d4bba832c3dd5d3b216fd2c49b3afe1d96e14497e61500f4e",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR14.wad",
+      "legacy_sha256": "7b5bef83ee4c5b819442f8969fcc6591869a92ecd7b701fa266dbc5412f1b84b",
+      "sha256": "f64ea70548040053d473e72861619cd48dc7df17b4e3b3ea2e7c3eff364966ba",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR15.wad",
+      "legacy_sha256": "7195d64be8046935fb4cabae399b0a6f3c90ae28aa442c883c93c8af95aacc03",
+      "sha256": "23960cdafb7386862a02c497c3cedf0da8569a77e56ca3e855287d16aa2ce898",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR16.wad",
+      "legacy_sha256": "99606844d220c471d72614578b11a142b695cd4253bda7e2e11c2d096fdac241",
+      "sha256": "a2c203024fabba03d2baa223f265c9db90c0924499fd5f5ec662fcffe032d937",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR17.wad",
+      "legacy_sha256": "e6a867dcdde8c5e976cef120da5682dc03523bc16f11f91a70147528ce2ef813",
+      "sha256": "d9dd1b3c2c139429307755ba74765905adcbb999b41f88904b7e2e387d5e6033",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR18.wad",
+      "legacy_sha256": "1a8a6d8bf8f6da76deee3688f1aed1f63e831b7129a5e20878882e0e103f1e6a",
+      "sha256": "6b56bf00f974e837bd5c8c55ce6c19bd74fbd18cfe7bd78422b6bb74f49c5a95",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR19.wad",
+      "legacy_sha256": "caae1887ba3a34a9af22e6bca8e4a773138766fae5e0bc6eb44d76fc92b8ed86",
+      "sha256": "e76bf125cbcd5bb8c5b50fc2275304ee5fb1afd90b7bcde508fe6e9d440105e0",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR20.wad",
+      "legacy_sha256": "54a8d016f234ae413dc9772f1031642a6236e32a15a44636f79ef2445dbf06ad",
+      "sha256": "30521c6de70fd9ce758c26781f99d992aff3f70bbc56cea678371f22d26a22e6",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR21.wad",
+      "legacy_sha256": "a4f3189f67aacfcf6304ebc55b94e36ca59ff45017c2181fdb738ba38e1f6251",
+      "sha256": "616e7a17ca5730b10995b1a19c59bcc4d340a9869e71ff6575370a7d79301d29",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR22.wad",
+      "legacy_sha256": "1956efe81a7a6e90d5d2d3a198b038a871fd1958caeb21888393d5e2071bb13b",
+      "sha256": "f064e750dda710d777ab6e235878ba6f61b146baf8efaba71e2adc47ad198064",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR23.wad",
+      "legacy_sha256": "1ed578cac25fca7ec4c4b1b1099467938b8a4af900b6dbd3922cc86520c0f53d",
+      "sha256": "05b379b10b1a6ae908246251861059ae1c4bcb64fa52b7ebd13acbaa021c0c43",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR24.wad",
+      "legacy_sha256": "30ceed169b74814eb13b7f8006343d7fc2ea8dc8ad36a580b93088eb078dd47c",
+      "sha256": "ab558469467a17df90c3faaf407ed0e3ab5b76fa1a91bafebd17d1d32ef0e269",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR25.wad",
+      "legacy_sha256": "7b8a20d5418493e03264b152b37a15f12ef0df966150b3606436fb6d24ef4c1c",
+      "sha256": "60cb4e4bf5ddb826a8a7489dc693da2926278ca18298e987a9c3b76260d74e3c",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR26.wad",
+      "legacy_sha256": "231a0a7f200bf1fc92f0421f026888e70daa3756dafba2b6a747b670f02263fc",
+      "sha256": "411d41b3b8aed243030ec3f3ed2dda4af04943c601749163f491d66313e706c2",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR27.wad",
+      "legacy_sha256": "797e89c03938f1183a631db794d3e9ad4a9123df5c06ae107f64249f982a081d",
+      "sha256": "5b8b2d69fa4deba734ee104397e239a6d7e8c5bb3695fb4e33696b207ce5bbff",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR28.wad",
+      "legacy_sha256": "52d6eee95a64943fdaf9cc2f5dbf5bcd01c6217126a80f6961a63afd29ab8b2c",
+      "sha256": "36cf1450069b854599b4d58175f171d7e7674132ab8e525ec059fd86240b8767",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR29.wad",
+      "legacy_sha256": "96b37905a3560e902cacf82538f7dbb1c493940690eba2c753eac8b2ad24a780",
+      "sha256": "3c07f500b73d2a87252e80001bb1a624be3bae98e81e195a0a6425eef731d094",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR30.wad",
+      "legacy_sha256": "214c03a322102ab4e0e50b504262b6f0542664e16144a8c7784cca4fabcbf229",
+      "sha256": "60a14c18c18f169087187aaa2b0edf62ac267f75e8222fca50f477191888b9ea",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR31.wad",
+      "legacy_sha256": "bf230815d5dcfac9452ff704b641e9512d8c2a7d38e02e0dd1d70b7e38902ce3",
+      "sha256": "992d3da1ba864e869fba3bcf7206e372de5bedf1b26f5e9801748544f85c61c6",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR32.wad",
+      "legacy_sha256": "8c0a39e37725da66f457c3de5cc9df7d1d8cf3438aba9dc750a64afed1438a3e",
+      "sha256": "63028500844d057d7196cfb6aea8426d64865757ffbc0d431e52857ce8586693",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR33.wad",
+      "legacy_sha256": "bf6cb9821553795c50096673036a45015a63fae6f76a369e7a299de2206fa4bb",
+      "sha256": "43f0888a781b0015e8a5aafc746922a366e3cc0e3892d1f0e9b3090c3c1d42df",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR34.wad",
+      "legacy_sha256": "de56787d286a5ae8839b88ac2b841809ec408616d2c846f1f3868df71d5c5769",
+      "sha256": "ba92582976bcb06399d864bb9b5a9296138626c791052c31c8fe4dc3cda8fceb",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR35.wad",
+      "legacy_sha256": "b177ddb4f1f8eeaf841bc557d9ebb8ae65ec91c1923bdee4019bc3ef228b6907",
+      "sha256": "6b9712bb8092a58b4d7df1c404a22bceeca48349912c39169a2113359730d5c2",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR36.wad",
+      "legacy_sha256": "87f11feb1aee19ef92b208b5ee88af49a1e0b391753485e94b4c988baa0c59e8",
+      "sha256": "3622d380a0d74f7ef4c905c82d94e26669a1570f1d8b968d8f6767e8bff914f8",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR37.wad",
+      "legacy_sha256": "5d9bee6ca996fdb8c1bd32a5165168e36230871370d49f9055d6936796fcb0df",
+      "sha256": "2bc85d51b51c8be8ff29b62d1585625bc208e13808b0eb8329e126894164520e",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR38.wad",
+      "legacy_sha256": "672acf9b196c7827824e7f1833ef8899f8d1238ebadfb73cd40047ca5e50e693",
+      "sha256": "e922dbf95b55f1df9564ebd629ecef8d5feafcaf6a4b2bc0b3c211fff12f8344",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR39.wad",
+      "legacy_sha256": "6285026538bdbc7d542d70bdc1970696c7543565c955a41fe4f4c718e1f3a6a8",
+      "sha256": "54be7893988d42cdb16867d7e375852b8af347c4f7a685e54da288c3e2385707",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAR40.wad",
+      "legacy_sha256": "775fc5ca90f8d7a202d7fda2003a2ee0d8f044830427b0a82743038075092e45",
+      "sha256": "0ff7f2921aafbef2fbb4bf35a218330923756c5b2eb576e7cb54460576c6f0b6",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          1152,
+          1152,
+          0
+        ],
+        "center": [
+          1536.0,
+          1536.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 264,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CARING.wad",
+      "legacy_sha256": "427f079c98d2c9076d2c46d88bad9351e08f07bc17e77e5d8d71868c3d8c6ac8",
+      "sha256": "518cbdc854b78f4aaf50960cf21f08d43ab01c4420401c192a51ed45bb52ca2c",
+      "geometry": {
+        "sector": 1,
+        "origin": [
+          448,
+          448,
+          0
+        ],
+        "center": [
+          832.0,
+          832.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 24,
+        "original_sectors": 1
+      }
+    },
+    {
+      "file": "CASEWER.wad",
+      "legacy_sha256": "5f9f67ea0ffe92da0c7683ef66454817954ac77eaf08d951891f2de0a422db1d",
+      "sha256": "badfd12aad019d07166b406002c1fc4457342bab5c76e14322d948b649e5deff",
+      "geometry": {
+        "sector": 1,
+        "origin": [
+          2112,
+          2112,
+          0
+        ],
+        "center": [
+          2496.0,
+          2496.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 1044,
+        "original_sectors": 1
+      }
+    },
+    {
+      "file": "CAT310.wad",
+      "legacy_sha256": "926ffb23e1cb04e7c8ce1f4b459ffe2d6a7b9926860b04a6d3fe90f53acb6575",
+      "sha256": "472ae8830ae46b2a99c7695006434ee7dce55f06986b8531ffa3b55dc26e1fea",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          192,
+          192,
+          0
+        ],
+        "center": [
+          576.0,
+          576.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 28,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAT311.wad",
+      "legacy_sha256": "3a90bd4f5d4110f2380c1b8ef5849994219563ff66fa4e5c4814ffb79b852589",
+      "sha256": "a7d55e5cb8ff345d7150276d3d9bd4ed696a35a2d3a1a004d005ec9de183c73d",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          192,
+          192,
+          0
+        ],
+        "center": [
+          576.0,
+          576.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 28,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAT317.wad",
+      "legacy_sha256": "453cfb6472af3eb68db0d38589264d9e264de630d045798814eddd050ade08cf",
+      "sha256": "fc9a5c2b4e4a4358166acc20f3c221e05174e037bbc8159691093a4d7fd5f2d7",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          192,
+          192,
+          0
+        ],
+        "center": [
+          576.0,
+          576.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 28,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAT318.wad",
+      "legacy_sha256": "91ef3fb31a6469928646702fcc50cfabffe991808e19c783f7c51ad5a1d6b043",
+      "sha256": "50baaf0242d23031c64fa96e76375fec44f89a78e09f9e37f9d23ff159c92d03",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          192,
+          192,
+          0
+        ],
+        "center": [
+          576.0,
+          576.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 28,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAT319.wad",
+      "legacy_sha256": "90cf9356d335ab9a2faa949b9cfd98c04629b726a8a9e204783683173c3d88e8",
+      "sha256": "9f0e9ae1b3bf499b166ac871531a261ff48388fc4cad93794d1ca7bb1341c8ae",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          192,
+          192,
+          0
+        ],
+        "center": [
+          576.0,
+          576.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 28,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAT320.wad",
+      "legacy_sha256": "275a0ebb0581dc7033dee21ed0750d20727f0247478d5af6e288a45832cd183c",
+      "sha256": "cfe9cc85ee340d10fd1829e4825e5db8e4d7054da3077046ec02bdeab5e761a4",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          192,
+          192,
+          0
+        ],
+        "center": [
+          576.0,
+          576.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 28,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAT410.wad",
+      "legacy_sha256": "f2ccea3f2896eaf6a167407e1a587c8c056fb4227de72a9df4e093a59958bc33",
+      "sha256": "c042165b3ff3869f7ef8ec4edc6d213f2022512aae4c6562a74cbc74acef8302",
+      "geometry": {
+        "sector": 2,
+        "origin": [
+          320,
+          192,
+          0
+        ],
+        "center": [
+          704.0,
+          576.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 40,
+        "original_sectors": 2
+      }
+    },
+    {
+      "file": "CAT411.wad",
+      "legacy_sha256": "9b5b3ea992f54fe7cbd24dee5fd03791d950de635099971ae60636aad2a6c71d",
+      "sha256": "79f79fe136eed8e4268c4331d7d733d52b731af5df43045c5fe6cd57acdf3f48",
+      "geometry": {
+        "sector": 2,
+        "origin": [
+          320,
+          192,
+          0
+        ],
+        "center": [
+          704.0,
+          576.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 40,
+        "original_sectors": 2
+      }
+    },
+    {
+      "file": "CAT417.wad",
+      "legacy_sha256": "8461f712f4284be3fdc30875b55535941389fedb301e0b5841061f0d77dcc6e5",
+      "sha256": "c3558443e23fe34725a77cf3c3ef52b3b52d69aec08889e6b67852d73b87628b",
+      "geometry": {
+        "sector": 2,
+        "origin": [
+          320,
+          192,
+          0
+        ],
+        "center": [
+          704.0,
+          576.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 40,
+        "original_sectors": 2
+      }
+    },
+    {
+      "file": "CAT418.wad",
+      "legacy_sha256": "977b6076225a63a8a8e6a332fdc676e07047ccd53d62439f69195289d84757af",
+      "sha256": "7708d238f8ec8ffe7294d0c920c124a8672d16e6aa146b5d550505892a50de87",
+      "geometry": {
+        "sector": 2,
+        "origin": [
+          320,
+          192,
+          0
+        ],
+        "center": [
+          704.0,
+          576.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 40,
+        "original_sectors": 2
+      }
+    },
+    {
+      "file": "CAT419.wad",
+      "legacy_sha256": "1d2bb0cedd1b8e7abbef89388071bfe06a8c28789b7819988c05b93d038f06fa",
+      "sha256": "b9a199d999cf929095e42de66f455905de7e183db5a109cc82c3fb1bce3ed1b6",
+      "geometry": {
+        "sector": 2,
+        "origin": [
+          320,
+          192,
+          0
+        ],
+        "center": [
+          704.0,
+          576.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 40,
+        "original_sectors": 2
+      }
+    },
+    {
+      "file": "CAT420.wad",
+      "legacy_sha256": "c2bc8f8843bdc7e47c7080eac486b994a2ce479ae06f327c4042f3ce95aa2e87",
+      "sha256": "147aa95c5e1d7c87411d2dc82522ecfd620eefaa783fd7079a65ab9d471d425e",
+      "geometry": {
+        "sector": 2,
+        "origin": [
+          320,
+          192,
+          0
+        ],
+        "center": [
+          704.0,
+          576.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 40,
+        "original_sectors": 2
+      }
+    },
+    {
+      "file": "CAT510.wad",
+      "legacy_sha256": "7e46add67ad920d7422eee33f7e5972b8ccd5a93f5df2b8c888312b4a6fec82f",
+      "sha256": "205f5cf8f27669f21422da1f05c9c8c04ca7c720eeadbdfca82ac3905c01fb92",
+      "geometry": {
+        "sector": 2,
+        "origin": [
+          192,
+          192,
+          0
+        ],
+        "center": [
+          576.0,
+          576.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 24,
+        "original_sectors": 2
+      }
+    },
+    {
+      "file": "CAT511.wad",
+      "legacy_sha256": "441af4e5cf7348ffa88647d7eabf869634b8446d7a94518769f930ea3bb78783",
+      "sha256": "3b09b9a8f4c66844ad49e3a5427237005f7d3cbbeaa4fd0ba46416d4ccfb4cf4",
+      "geometry": {
+        "sector": 2,
+        "origin": [
+          192,
+          192,
+          0
+        ],
+        "center": [
+          576.0,
+          576.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 24,
+        "original_sectors": 2
+      }
+    },
+    {
+      "file": "CAT517.wad",
+      "legacy_sha256": "540a0e84f2a88ace74ae0e318a1921857139027428be7c9146b6993163ba982d",
+      "sha256": "3d34bf37d3a2283ad8b59f1b5bd02edd6eeec35bdd887c4025d06ec5ee1e6922",
+      "geometry": {
+        "sector": 2,
+        "origin": [
+          192,
+          192,
+          0
+        ],
+        "center": [
+          576.0,
+          576.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 24,
+        "original_sectors": 2
+      }
+    },
+    {
+      "file": "CAT518.wad",
+      "legacy_sha256": "b30024efe4f67979c18a3d668c7f6304617c9879b9a9c2723d092d19c986a2ea",
+      "sha256": "31dc06acf36a802c11119793a7963b7bc0b27ed5dc51447f72e52046d3340402",
+      "geometry": {
+        "sector": 2,
+        "origin": [
+          192,
+          192,
+          0
+        ],
+        "center": [
+          576.0,
+          576.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 24,
+        "original_sectors": 2
+      }
+    },
+    {
+      "file": "CAT519.wad",
+      "legacy_sha256": "107d5ccbe296f83a323c40b06b6228c968cb58e01c15e6508dab1112f33927ea",
+      "sha256": "7d8d7e8d5981e33688ad5f93bc481d6c34f8ceaab07938f9eb6d3afc6b198ccf",
+      "geometry": {
+        "sector": 2,
+        "origin": [
+          192,
+          192,
+          0
+        ],
+        "center": [
+          576.0,
+          576.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 24,
+        "original_sectors": 2
+      }
+    },
+    {
+      "file": "CAT520.wad",
+      "legacy_sha256": "e6545778c93bf31118677f1ab7e2eb2280160c5a17ac8c5b77d8a6742c715fb7",
+      "sha256": "ecf906854ffcaf93468b9159b73d256d83b7ed68dba4f106dd6f0eeeb0125541",
+      "geometry": {
+        "sector": 2,
+        "origin": [
+          192,
+          192,
+          0
+        ],
+        "center": [
+          576.0,
+          576.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 24,
+        "original_sectors": 2
+      }
+    },
+    {
+      "file": "CAT610.wad",
+      "legacy_sha256": "4197e865e038e582fe5bc2fec6c3e1e70a248f3b8bd28ac997dad80cbcde24ca",
+      "sha256": "0f5b75177a214b035d2ba0d53ece83f79807e99b0635bba40a93d227226dad43",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          320,
+          192,
+          0
+        ],
+        "center": [
+          704.0,
+          576.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 44,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAT611.wad",
+      "legacy_sha256": "030a4df4c0dcade5865bb5ebc0e82ff54f043acb7f8a2c596e645b19b5bf8755",
+      "sha256": "fe5c884338c1d4092afb90f16f448cb73847f0562d20b6e5937df32f443a7a51",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          320,
+          192,
+          0
+        ],
+        "center": [
+          704.0,
+          576.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 44,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAT617.wad",
+      "legacy_sha256": "94b037d09cf8bc8e71ca263053afef92f39d379246f79b24d81f7eaa534dad9d",
+      "sha256": "57ff9e6066abd108a536e56565c36cbfd3ab3f2267fbb3b54b37c6fd8d9269e7",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          320,
+          192,
+          0
+        ],
+        "center": [
+          704.0,
+          576.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 44,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAT618.wad",
+      "legacy_sha256": "e9bd5701c1c9821b18a76d77263fa7c434c167ed9693fe8ab3e1cfcafd2d3ad3",
+      "sha256": "799bd09373ec243979d1adc3e50b06e47eefaad2a5e0cc9740b84912ca1df2ab",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          320,
+          192,
+          0
+        ],
+        "center": [
+          704.0,
+          576.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 44,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAT619.wad",
+      "legacy_sha256": "9272d717ad5ee75c9a5078e804aa8dce23dc33f07daccf86fdd15558ae1127fd",
+      "sha256": "8bf717adaca0d063e5b38846c18fdb08ab8bb12df47a6cbf2cb37136b7b48021",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          320,
+          192,
+          0
+        ],
+        "center": [
+          704.0,
+          576.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 44,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "CAT620.wad",
+      "legacy_sha256": "e05f27c449c4ae8cb4999dab24348d0059925c4d6e9570964592c7862dff413a",
+      "sha256": "3d6d4c4fb750f664eaf40df3feb64cd7e098d60ca28527db2d8646aff2cc5095",
+      "geometry": {
+        "sector": 3,
+        "origin": [
+          320,
+          192,
+          0
+        ],
+        "center": [
+          704.0,
+          576.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 44,
+        "original_sectors": 3
+      }
+    },
+    {
+      "file": "MAP01.wad",
+      "legacy_sha256": "15156f89b6526e72d26a6fe726c4d3f84943fb161061556492e588d1e3b1a334",
+      "sha256": "a33c53f67840cede1dca4d0064219dd9c82f40b475742458f762a58965df1e2a",
+      "geometry": {
+        "sector": 7749,
+        "origin": [
+          -30848,
+          -30848,
+          0
+        ],
+        "center": [
+          -30464.0,
+          -30464.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 5945,
+        "original_sectors": 7749
+      }
+    },
+    {
+      "file": "MAP02.wad",
+      "legacy_sha256": "617c4c5718bd2fc0f375390842cb4284a263f515dc326edf6a90310fb4e7f527",
+      "sha256": "96c3cf7055231de6e7f89a5cfdb119f28be42d7129e691d6470b00f4e37e1d6f",
+      "geometry": {
+        "sector": 85,
+        "origin": [
+          6720,
+          8576,
+          0
+        ],
+        "center": [
+          7104.0,
+          8960.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 11402,
+        "original_sectors": 85
+      }
+    },
+    {
+      "file": "MAP03.wad",
+      "legacy_sha256": "6231f69a398d0ec4dbe3878a46bca0756480e3034100994c62f6949465f4fed6",
+      "sha256": "85f0a1c00d80354c9899bf4289e1cf47fd2bae45313816ad939dccbe75c12151",
+      "geometry": {
+        "sector": 767,
+        "origin": [
+          2368,
+          16704,
+          0
+        ],
+        "center": [
+          2752.0,
+          17088.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 40293,
+        "original_sectors": 767
+      }
+    },
+    {
+      "file": "TACTORS.wad",
+      "legacy_sha256": "d00c658ac44d36372c378df30b6ab2518792996c934e08cb53e217ccea680e19",
+      "sha256": "224b2cf67a207f65b78a1600fc028159246ac952b5508d6472a6f99128a7f83b",
+      "geometry": {
+        "sector": 9,
+        "origin": [
+          24640,
+          19008,
+          0
+        ],
+        "center": [
+          25024.0,
+          19392.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 112,
+        "original_sectors": 9
+      }
+    },
+    {
+      "file": "TCOAST.wad",
+      "legacy_sha256": "1bd7ed2eef3960e3c32f0fb4a60467eee6f6e8fc2aaa606b334422892db6400e",
+      "sha256": "3d847da24a53bc69400cd0ac17986dc5e753707342f19871a0614abf4bd3b5dc",
+      "geometry": {
+        "sector": 19,
+        "origin": [
+          2368,
+          2368,
+          0
+        ],
+        "center": [
+          2752.0,
+          2752.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 1997,
+        "original_sectors": 19
+      }
+    },
+    {
+      "file": "THAZARD.wad",
+      "legacy_sha256": "8d509f6dcb5ed1ae8891bc33aef36f8e18a178650353f7c5bc9a998e8ffa022a",
+      "sha256": "e93a3ac04b90262b6c889b10b403d273bcd1a96fde23b06d1810950e064ee814",
+      "geometry": {
+        "sector": 968,
+        "origin": [
+          2496,
+          2112,
+          0
+        ],
+        "center": [
+          2880.0,
+          2496.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 1090,
+        "original_sectors": 968
+      }
+    },
+    {
+      "file": "TMAINT.wad",
+      "legacy_sha256": "18d2629146eb6d1c3e2b6a50631274bf94a25e545c76e134e7cb1c528e47000e",
+      "sha256": "36f500839101b3363d461eb6bde6025d0c6f4e549af1b16cf7820a05ca8df7ac",
+      "geometry": {
+        "sector": 512,
+        "origin": [
+          832,
+          2112,
+          0
+        ],
+        "center": [
+          1216.0,
+          2496.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 592,
+        "original_sectors": 512
+      }
+    },
+    {
+      "file": "TRESERV.wad",
+      "legacy_sha256": "8302671acc7459c4405117d7b1ee3d46cbbd68004867a977ddcea29af8c97f0a",
+      "sha256": "585efd1c35957e83d4e1316c27a236cdd544a0a72168ad5fa0b97e47d65ca89e",
+      "geometry": {
+        "sector": 776,
+        "origin": [
+          2112,
+          3648,
+          0
+        ],
+        "center": [
+          2496.0,
+          4032.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 845,
+        "original_sectors": 776
+      }
+    },
+    {
+      "file": "TTAROT.wad",
+      "legacy_sha256": "81c8c9cd59159e73b14975e44750e7381f04effa4db3079c6fffc57884979b85",
+      "sha256": "cb608c1706d97a09d89f3de2f240035d75a42543e60e681c1c0e372edb619836",
+      "geometry": {
+        "sector": 216,
+        "origin": [
+          1600,
+          2624,
+          0
+        ],
+        "center": [
+          1984.0,
+          3008.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 273,
+        "original_sectors": 216
+      }
+    }
+  ],
+  "settings_sha256": "885f1ddb374b3204bfef51c92224700cf75dc1bff7af0e40a7344c33bf03a3d5",
+  "index_sha256": "509a7476a653587f11e10a04f0abd65d98e0f19fab851019bb8c61d51321f954"
+}

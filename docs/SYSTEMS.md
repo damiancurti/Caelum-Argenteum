@@ -152,6 +152,24 @@ between floors. Candidate sectors come from local linedefs, not a map census.
 The pulse has no recurring Tick or new saved ledger; existing body/item/tile
 state persists it. Hierophant reuses the same body/item/surface pulse at zero.
 
+### Justice map geometry and reversible compatibility
+
+All237 packaged UDMF maps have an appended24x24m room using owned CMST01/02
+materials and the existing arena's160-unit headroom. Existing TEXTMAP bytes and
+indices remain unchanged. A generated per-map sector index and marker identify
+the room without recurring sector/actor scans. Runtime duels/returns are still
+pending at this geometry checkpoint.
+
+The deterministic generator reads the immutable pre-arena archive in
+assets/tarot_justice. It refuses unrelated map edits before writing anything.
+Future map revisions require an explicit preserved-baseline update; rerunning
+an older map generator alone is rejected by project validation. The archive
+keeps all237 original WADs byte-for-byte, with manifest checksums.
+`build_dev.ps1 -LegacyTarotMaps` packages those maps with current code for existing
+visited-map saves. Older explicit legacy-MAP01/MAP02 options take precedence.
+New arenas are available only in new geometry campaigns; compatibility maps
+return no arena. Keep the original save and prior checkout for rollback.
+
 ### Hierophant purification and complete water volumes
 
 The instantaneous4m pulse is centered on the caster and uses the same range and
@@ -270,6 +288,9 @@ The aimed-action priority for the remaining powers is still to be integrated.
   line of sight; equipped passive shares post-defense damage equally; active
   also shares healing. No second defense or recursive sharing; own health caps
   remain and excess healing is lost.
+  Overlapping auras that reach the original receiver form one union of eligible
+  group members, each counted once. Secondary recipients do not propagate the
+  effect into further auras (author approval 2026-11-01).
 - Temperance: half duration for burn/cut/poison/freeze/dazzle/electric stun,
   temporary disease, magical sleep and mind control. Active removes/prevents
   those states. Contamination, hunger, thirst, natural sleep and scenes remain.
@@ -292,8 +313,14 @@ The aimed-action priority for the remaining powers is still to be integrated.
 - Justice: shared24x24m arena in every playable map. Each pair returns survivors
   on its own60s expiry or either member's death, without ending other pairs;
   no actor may belong to two simultaneous pairs. New campaigns receive the new
-  geometry; approved reversible legacy packages preserve visited-map saves and
-  report unavailable arenas. Compatibility still requires native recovery tests.
+  geometry. A blocked return tries a reachable free point within4m of the origin,
+  without crossing walls or telefragging; otherwise it remains pending and retries.
+  Before changing maps, end active duels and return their survivors. A blocked
+  return keeps travel pending; cancelling travel remains possible. These return
+  rules were approved2026-11-01. The
+  approved reversible legacy packages preserve visited-map saves and
+  report unavailable arenas. Native geometry/recovery evidence is in HISTORY;
+  duel and travel integration remain pending at this checkpoint.
 - Moon: two60s clones, caster appearance/attributes,25%maximumHealth/damage,
   perceived enemies, no transferable loot. Judgement: one4m pulse breaks recognized
   magical mind control/illusions, preserving narrative scenes.

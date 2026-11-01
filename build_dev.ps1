@@ -2,6 +2,7 @@ param(
     [string]$Source = "src",
     [string]$Destination = "build/caelum_argenteum_dev.pk3",
     [switch]$LegacyMap01,
+    [switch]$LegacyTarotMaps,
     [switch]$LegacyMap02,
     [switch]$LegacyMap02Revision4,
     [switch]$LegacyMap06,
@@ -44,6 +45,33 @@ if ($Files.Count -eq 0) {
 
 # Keep the established package name so GZDoom can restore existing saves.
 # Compatibility replaces only selected map lumps; runtime code stays current.
+$LegacyTarotBytes = @{}
+if ($LegacyTarotMaps) {
+    Add-Type -AssemblyName System.IO.Compression.FileSystem
+    $TarotData = Join-Path $ProjectRoot 'assets/tarot_justice'
+    $TarotManifest = Get-Content -LiteralPath (Join-Path $TarotData 'MAPS.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+    $TarotArchivePath = Join-Path $TarotData 'legacy_5133.zip'
+    if ((Get-FileHash -LiteralPath $TarotArchivePath -Algorithm SHA256).Hash -ine $TarotManifest.archive_sha256) {
+        throw 'Pre-Justice map archive checksum mismatch; existing output was not changed.'
+    }
+    $TarotArchive = [IO.Compression.ZipFile]::OpenRead($TarotArchivePath)
+    try {
+        foreach ($Map in $TarotManifest.maps) {
+            $MapEntry = $TarotArchive.GetEntry($Map.file)
+            if ($null -eq $MapEntry) { throw "Missing pre-Justice map: $($Map.file)" }
+            $MapStream = $MapEntry.Open()
+            $MapBuffer = [IO.MemoryStream]::new()
+            try { $MapStream.CopyTo($MapBuffer); $MapBytes = $MapBuffer.ToArray() }
+            finally { $MapStream.Dispose(); $MapBuffer.Dispose() }
+            $MapHasher = [Security.Cryptography.SHA256]::Create()
+            try { $MapHash = [BitConverter]::ToString($MapHasher.ComputeHash($MapBytes)).Replace('-', '') }
+            finally { $MapHasher.Dispose() }
+            if ($MapHash -ine $Map.legacy_sha256) { throw "Pre-Justice map checksum mismatch: $($Map.file)" }
+            $LegacyTarotBytes["maps/$($Map.file)"] = $MapBytes
+        }
+    }
+    finally { $TarotArchive.Dispose() }
+}
 $LegacyMap01Bytes = $null
 if ($LegacyMap01) {
     $LegacyMansionPath = Join-Path $ProjectRoot 'assets/map01_mansion/legacy_581/MAP01.wad'
@@ -179,11 +207,13 @@ try {
             $LegacyReplacementCount = 0
             $LegacyMansionReplacementCount = 0
             $LegacyPortReplacementCount = 0
+            $LegacyTarotReplacementCount = 0
             foreach ($File in $Files) {
                 $RelativePath = $File.FullName.Substring($SourcePath.Length).TrimStart(
                     [char[]]@('\', '/')
                 )
                 $EntryName = $RelativePath.Replace('\', '/')
+                if ($LegacyTarotMaps -and $LegacyTarotBytes.ContainsKey($EntryName)) { $LegacyTarotReplacementCount++ }
                 $Entry = $Archive.CreateEntry(
                     $EntryName,
                     [System.IO.Compression.CompressionLevel]::Optimal
@@ -202,6 +232,10 @@ try {
                         $EntryStream.Write($LegacyMap06Bytes, 0, $LegacyMap06Bytes.Length)
                         $LegacyPortReplacementCount++
                     }
+                    elseif ($LegacyTarotMaps -and $LegacyTarotBytes.ContainsKey($EntryName)) {
+                        $MapBytes = $LegacyTarotBytes[$EntryName]
+                        $EntryStream.Write($MapBytes, 0, $MapBytes.Length)
+                    }
                     else {
                         $InputStream = [System.IO.File]::OpenRead($File.FullName)
                         try {
@@ -218,6 +252,9 @@ try {
             }
             if (($LegacyMap02 -or $LegacyMap02Revision4) -and $LegacyReplacementCount -ne 1) {
                 throw "Legacy compatibility requires exactly one maps/MAP02.wad entry in the source."
+            }
+            if ($LegacyTarotMaps -and $LegacyTarotReplacementCount -ne $LegacyTarotBytes.Count) {
+                throw 'Pre-Justice compatibility requires every preserved map in the package.'
             }
             if ($LegacyMap01 -and $LegacyMansionReplacementCount -ne 1) {
                 throw 'Legacy compatibility requires exactly one maps/MAP01.wad entry in the source.'
@@ -266,11 +303,16 @@ try {
         [System.IO.File]::Move($TemporaryPath, $DestinationPath)
     }
     Write-Host "PK3 created successfully: $DestinationPath"
+    if ($LegacyTarotMaps) {
+        Write-Host 'Justice compatibility: byte-identical pre-arena maps; newer arena effects are unavailable. Explicit older per-map switches take precedence.'
+    } else {
+        Write-Host 'Justice geometry: new campaigns. Existing visited-map saves require -LegacyTarotMaps.'
+    }
     if ($LegacyMap01) {
         Write-Host 'MAP01 layout: byte-identical pre-5.8.2 mansion for existing campaigns; connected deposits inactive.'
     }
     else {
-        Write-Host 'MAP01 layout: current source. Saves that visited the pre-5.8.2 mansion need -LegacyMap01.'
+        Write-Host 'MAP01 layout: follows the Justice mode above. Pre-5.8.2 mansion saves additionally need -LegacyMap01.'
     }
     if ($LegacyMap02Revision4) {
         Write-Host "MAP02 compatibility: exact pre-5.4.33 revision 4 for existing visited-map saves."
@@ -281,7 +323,7 @@ try {
         Write-Host "New four-section MAP02 is not active in this build. Rebuild without -LegacyMap02 to restore it."
     }
     else {
-        Write-Host "MAP02 layout: current source. Visited-map saves need their exact revision: -LegacyMap02Revision4 (pre-5.4.33) or -LegacyMap02 (original 4.36.4)."
+        Write-Host "MAP02 layout: follows the Justice mode above. Older visited-map saves additionally need -LegacyMap02Revision4 (pre-5.4.33) or -LegacyMap02 (original 4.36.4)."
     }
     Write-Host "Files included: $($Files.Count)"
     if ($LegacyMap06) { Write-Host 'MAP06 layout: byte-identical 4.36.26 compatibility port; no new siege geometry.' }

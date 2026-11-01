@@ -2,6 +2,16 @@
 
 Documentation version: **5.13.3** - 2026-10-31.
 
+## Justice arena geometry (#440, 5.13.3)
+
+The24x24m room appended to every packaged map reuses owned CMST01 wall/ceiling
+and CMST02 floor materials. No external or Doom texture is introduced. Its
+160-unit headroom and light176 follow the existing arena envelope. Sources and
+exact pre-arena map archive: assets/tarot_justice; deterministic generator:
+assets/generators/generate_tarot_justice.py. The room is isolated from existing
+campaign geometry; it adds no public entrance, narrative or reward. Its runtime
+Tarot entry/return implementation remains pending at this checkpoint.
+
 ## Tarot Empress roots (#440, 5.13.3)
 
 `assets/generators/generate_tarot_roots.py` builds five thorned stems around a
