@@ -1,0 +1,49 @@
+{
+  "issue": 440,
+  "release": "5.13.3",
+  "scope": "Owned Chariot model registration and native views",
+  "author_acceptance": false,
+  "runtime_members_matching_source": 18018,
+  "native_run": {
+    "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32305-20261101-004913-691392",
+    "runtime_sha256": "2f1e9ce05ea4bb8b2b0a4c8a9635332369efd2559980e35625e04b13e17da6f4",
+    "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+    "error": null,
+    "peers": [
+      {
+        "slot": 0,
+        "exit": 0,
+        "errors": [],
+        "checks": [
+          "CA440V PASS native model display spawned",
+          "CA440V RESULT capture"
+        ],
+        "passed": true
+      },
+      {
+        "slot": 1,
+        "exit": 0,
+        "errors": [],
+        "checks": [
+          "CA440V PASS native model display spawned",
+          "CA440V RESULT capture"
+        ],
+        "passed": true
+      }
+    ],
+    "passed": true
+  },
+  "captures": [
+    {
+      "path": "build\\issue440\\native-32305-20261101-004913-691392\\bundle\\peer0\\chariot-front.png",
+      "sha256": "09236d3cc7fcbb1775906050fed43ab9fc8d79f466b1b73a532013d1f418f89c",
+      "inspected": true
+    },
+    {
+      "path": "build\\issue440\\native-32305-20261101-004913-691392\\bundle\\peer0\\chariot-rear.png",
+      "sha256": "6cd6a4e98c56e2ca44026d1f901d96434c11317c9fbf2df956b5a7875689d49f",
+      "inspected": true
+    }
+  ],
+  "qualification": "Static visual fixture holds the actual production model for inspection; gameplay movement is covered by chariot-results.json. No frame-rate claim."
+}

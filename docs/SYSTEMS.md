@@ -102,8 +102,9 @@ blockmap queries cover contacts. Stationary guards without blockmap are filtered
 from the existing shared typed registry once at launch. Late encounter registration
 notifies only the fixed player slots and their active projections; no actor-global
 per-tic scan is introduced. The contact list grows only during this2s/12m traversal.
-Artwork and final frame-presentation/author checks remain separate from this
-behavior checkpoint. Native evidence is in validation_v5_13_3/chariot-results.json.
+The owned-model adaptation has native front/rear visual evidence separate from
+behavior checks. Final frame-presentation/author checks remain pending. Evidence
+is in validation_v5_13_3/chariot-results.json and chariot-art-results.json.
 
 ### Strength object movement and lifting
 
@@ -171,6 +172,9 @@ The aimed-action priority for the remaining powers is still to be integrated.
   Fixed obstacles break only when explicitly marked fragile.
   Each actor receives one impulse per launch. The approved appearance reuses the
   original covered cart at2m width.
+- Changing map ends the caster's traps, plants, clones and automaton control.
+  Temporary creations disappear; the automaton remains inactive in its original
+  location with Health/equipment preserved. The paid cooldown continues.
 - Strength lifting: Use picks up/releases movable scenery only, excluding people
   and fixed installations. Its mass counts toward carried load. The limit uses
   existing carrying capacity, evaluating Strength x10 only while the active lasts.

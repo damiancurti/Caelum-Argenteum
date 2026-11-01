@@ -2,6 +2,19 @@
 
 Documentation version: **5.13.3** - 2026-10-31.
 
+## Tarot Chariot adaptation (#440, 5.13.3)
+
+The author approved reuse of the original covered cart at2m width on2026-11-01.
+`assets/generators/derive_tarot_chariot.py` uniformly scales that owned OBJ,
+centers its horizontal bounds and aligns its lowest vertex with the ground.
+Topology, normals, UVs and the original station/stash material references remain.
+No raster image, third-party source or development-IWAD asset is added.
+The source/output hashes, dimensions and provenance are recorded in
+`assets/source/art/tarot_chariot/manifest.json`; `--check` verifies deterministic
+outputs. The normal travel vehicle remains unchanged. Native front/rear captures
+show the actual production actor with its model registration; see
+`assets/validation_v5_13_3/chariot-art-results.json`. Final author review is pending.
+
 ## Equipment awakening panel (#442, 5.13.2)
 
 The inventory association panel reuses the owned Tarot front references already

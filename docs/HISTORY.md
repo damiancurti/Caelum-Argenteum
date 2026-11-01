@@ -79,6 +79,15 @@ identifier collision with `state`; the local holder name resolves it. No accepte
 save was discarded. Model adaptation, frame-presentation and author checks follow
 separately from this behavior checkpoint.
 
+The separate Chariot art adaptation reuses the owned original cart, centered and
+uniformly scaled to2m width without changing its materials or the normal vehicle.
+Deterministic output checks pass; all18,018 packaged members match source. Front
+and rear views of the actual production actor were inspected in two native
+clients on2026-11-01. The first visual fixture used an unregistered diagnostic
+subclass and player-predicted camera; the corrected fixture uses the actual class
+and a separate native camera. Evidence: chariot-art-results.json. This establishes
+rendering/registration, not author acceptance or an overall frame-rate benchmark.
+
 ## 5.13.2 - Reversible equipment awakening (#442)
 
 Author-approved +25% damage/defense and half wear are implemented on the exact

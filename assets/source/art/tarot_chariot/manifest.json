@@ -1,0 +1,39 @@
+{
+  "issue": 440,
+  "approved": "2026-11-01",
+  "source": "src/models/caelum/vehicles/ca_covered_cart.obj",
+  "source_sha256": "dfeddd3af421dd14cec97493394bb1f9557b4b42cdb6c47a8b7b99fc00c44be9",
+  "output": "src/models/caelum/vehicles/ca_tarot_chariot.obj",
+  "output_sha256": "32b268ca379212152af8814a3249250a113ac217e3930091c1da6a63971928e5",
+  "provenance": "Original project geometry and existing owned station/stash materials; no external artwork.",
+  "operation": "Uniform width scaling; center horizontal bounds; align lowest point to ground.",
+  "width_map_units": 64.0,
+  "source_bounds_obj_xyz": [
+    [
+      -41.0,
+      41.0
+    ],
+    [
+      -0.24,
+      115.315785
+    ],
+    [
+      -58.6,
+      124.0
+    ]
+  ],
+  "scale": 0.7804878048780488,
+  "dimensions_map_units_width_height_length": [
+    64.0,
+    90.18988097560975,
+    142.51707317073172
+  ],
+  "materials_unchanged": [
+    "models/caelum/props/stash/ca_stash_wood.png",
+    "models/caelum/props/stations/ca_station_iron.png",
+    "models/caelum/props/stations/ca_station_leather.png",
+    "models/caelum/props/stations/ca_station_paper.png"
+  ],
+  "vertices": 13728,
+  "author_visual_acceptance": false
+}
