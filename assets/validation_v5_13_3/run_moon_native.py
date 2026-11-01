@@ -11,7 +11,7 @@ from caelum_campaigns import Campaigns
 from caelum_sessions import Sessions,manifest,command,watch,digest
 
 
-def main():
+def main(fixture_name='moon.zs',prefix='CA440MOON',save_stem='moon',title='CA440 Moon persistence',wait_tics=800):
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--runtime',type=Path,required=True);p.add_argument('--anchor',type=Path,required=True)
     p.add_argument('--engine',type=Path,required=True);p.add_argument('--reload',type=Path)
@@ -24,18 +24,18 @@ def main():
         matching=[]
         for candidate in (previous/'bundle/peer0').glob('*.zds'):
             with zipfile.ZipFile(candidate) as saved:
-                if json.loads(saved.read('info.json'))['Title']=='CA440 Moon persistence':matching.append(candidate)
+                if json.loads(saved.read('info.json'))['Title']==title:matching.append(candidate)
         if len(matching)!=1:raise RuntimeError(f'Expected one completed-sequence save, found {len(matching)}')
         seed=matching[0]
     else:
         author.fixture(addon,args.anchor,-1)
         with zipfile.ZipFile(addon) as z:members={n:z.read(n) for n in z.namelist()}
         members.setdefault('ZSCRIPT',b'version "4.14.2"\n')
-        members['ZSCRIPT']+=b'\n#include "moon.zs"\n'
+        members['ZSCRIPT']+=f'\n#include "{fixture_name}"\n'.encode()
         members['MAPINFO']=members.get('MAPINFO',b'')+b'\ngameinfo { AddEventHandlers="CA440Probe" }\n'
-        members['moon.zs']=Path(__file__).with_name('moon.zs').read_bytes()
+        members[fixture_name]=Path(__file__).with_name(fixture_name).read_bytes()
         handlers=re.findall(rb'AddEventHandlers\s*=\s*"([^"]+)"',members['MAPINFO'])
-        classes=set(re.findall(rb'\bclass\s+(\w+)',members['moon.zs']))
+        classes=set(re.findall(rb'\bclass\s+(\w+)',members[fixture_name]))
         if not handlers or handlers[-1] not in classes:
             raise RuntimeError('Fixture event handler is not declared in its ZScript source')
         with zipfile.ZipFile(addon,'w') as z:
@@ -67,8 +67,8 @@ def main():
             with (peer/'session.ini').open('a') as f:f.write('vid_fullscreen=false\nvid_defwidth=800\nvid_defheight=600\nwin_w=816\nwin_h=639\nvid_maxfps=60\nvid_vsync=false\nlanguage=es\n')
             with (peer/'start.cfg').open('a') as f:
                 # Wait for the operator profile and pending narrative checkpoint.
-                save='; save moon-persistence.zds \"CA440 Moon persistence\"' if slot==0 and not args.reload else ''
-                f.write(f'wait 800; screenshot sequence.png; wait 50{save}; wait {150+(2-slot)*35}; quit\n')
+                save=f'; save {save_stem}-persistence.zds "{title}"' if slot==0 and not args.reload else ''
+                f.write(f'wait {wait_tics}; screenshot sequence.png; wait 50{save}; wait {150+(2-slot)*35}; quit\n')
             cmd+=['-window','-width','800','-height','600'];commands.append(cmd)
             stream=(peer/'process.log').open('wb');streams.append(stream);sessions.claim(token,slot)
             process=subprocess.Popen(cmd,cwd=peer,startupinfo=startup,stdout=stream,stderr=stream)
@@ -84,13 +84,13 @@ def main():
             if process.poll() is None:process.terminate()
         for process in processes:process.wait(timeout=15)
         for stream in streams:stream.close()
-    if not error and not args.reload and not (peers[0]/'moon-persistence.zds').exists():error='Native capture save was not created'
+    if not error and not args.reload and not (peers[0]/f'{save_stem}-persistence.zds').exists():error='Native capture save was not created'
     reports=[]
     for slot,(process,peer) in enumerate(zip(processes,peers)):
         log=(peer/'engine.log').read_text(errors='replace') if (peer/'engine.log').exists() else ''
         errors=[line for line in log.splitlines() if any(mark in line for mark in (' FAIL ','Execution could not continue','VM execution aborted','Script error','CA_SESSION REJECT','out of sync'))]
-        marker='CA440MOON RESULT reload' if args.reload else 'CA440MOON RESULT capture'
-        reports.append(dict(slot=slot,exit=process.returncode,errors=errors,checks=[l for l in log.splitlines() if l.startswith('CA440MOON ')],passed=process.returncode==0 and not errors and author.native_sync.clean(log) and 'CA_SESSION READY' in log and marker in log))
+        marker=f'{prefix} RESULT '+('reload' if args.reload else 'capture')
+        reports.append(dict(slot=slot,exit=process.returncode,errors=errors,checks=[l for l in log.splitlines() if l.startswith(prefix+' ')],passed=process.returncode==0 and not errors and author.native_sync.clean(log) and 'CA_SESSION READY' in log and marker in log))
         sessions.finished(token,slot)
     watch(processes[0],peers[0],sessions,token,0);sessions.close(token);store.close()
     result=dict(directory=str(out),runtime_sha256=digest(args.runtime),engine_sha256=digest(args.engine),commands=commands,error=error,peers=reports,passed=not error and all(r['passed'] for r in reports))

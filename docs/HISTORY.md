@@ -4,6 +4,17 @@ Documentation version: **5.13.3** - 2026-10-31.
 
 ## 5.13.3 - Ordered Tarot foundation (#440, implementation checkpoint)
 
+The Judgement active checkpoint (2026-11-01) dispels nearby Emperor effects and
+Moon illusions through their existing lifecycle adapters. It preserves original
+summon allegiance/lifetime, ordinary friendship, unrelated disease and protected
+scenes. Local candidates are collected and deduplicated before destroying any
+illusion. The pulse is instantaneous even with Hermit and is not repeated by
+accelerated time. Its native two-client capture/recovery passes44 assertions
+(34 initial and10 common-save checks); all18,039 package members match src.
+Evidence: assets/validation_v5_13_3/judgement-results.json. The runner reuses the
+Moon batch preflight/session orchestrator. Spirit passives/examples, final author
+review and remaining #440/V5.13 work remain outstanding.
+
 The Moon checkpoint (2026-11-01) implements two temporary clones, independent
 appearance/equipment/ammunition/resources, native ranged/magic/melee/unarmed
 combat, equipped collision-checked swapping and no-loot expiry/departure.

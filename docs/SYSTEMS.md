@@ -32,6 +32,23 @@ recalculation does not accumulate capacity. New loops are bounded by the78-card
 catalogue or the acting player's inventory; no actor-global scan is added.
 Validation: assets/validation_v5_13_3; final author acceptance remains deferred.
 
+### Judgement pulse
+
+Judgement is an instantaneous caster-centered pulse using the approved4m radius,
+magic-range modifier and line of sight. Its explicit adapters dispel Emperor
+control/pacification and Moon illusions, including eligible effects on the caster.
+Dispelled summons retain their original summoning owner and lifetime, and restore
+their original allegiance through Emperor's existing cleanup. Destroyed illusions
+use Moon's normal no-loot cleanup. Ordinary friendship, resurrection, unrelated
+status ailments and narrative protections are not interpreted as mind control.
+
+The pulse first collects eligible bodies using the blockmap, existing local
+contact grid and fixed player slots; deduplication precedes any actor destruction.
+It adds no ticker or global actor search. Shared sequence cost/cooldown applies
+once; Hermit does not repeat an instantaneous pulse. Native saves retain the
+resulting body state, with no new migration or retroactive effects.
+Spirit conversation/immortal-target examples remain separate pending content.
+
 ### Moon illusions
 
 Moon creates up to two bodies in free adjacent positions for its approved duration.

@@ -24,6 +24,8 @@ The marked living-obstacle example is placed; finish the remaining display objec
 Emperor pacification, control arbitration and departure restoration are implemented;
 Moon clones, independent resources and equipped swaps are implemented;
 these native checkpoints do not complete the remaining Major handlers.
+Judgement's local dispel is implemented; its spirit interaction/example remains
+separate from this active-effect checkpoint.
 The confirmed per-power
 contract is consolidated in SYSTEMS; unresolved fields must still be asked.
 Only then integrate standalone modes #596-601 and issue final author scenarios.

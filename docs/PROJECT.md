@@ -20,6 +20,8 @@ The display room now includes the existing espinillo as Death's marked obstacle.
 Emperor integrates local pacification, reversible summon control and shared
 effect clocks. Moon copies appearances/equipment/resources into temporary combat
 illusions with safe swaps and no loot; remaining powers are tracked in TASKS.
+Judgement's local instantaneous pulse uses those control/illusion adapters;
+spirit passives and the remaining display content still need completion.
 SYSTEMS distinguishes these handlers from the remaining powers and map targets.
 #439/441/442 have separate draft PRs605/606/607; #440 is draft PR608, in progress;
 standalone modes #596-601 remain last. No full V5.13 acceptance is claimed.
