@@ -6,7 +6,7 @@ Documentation version: **5.13.3** - 2026-10-31.
 
 Native order/capacity/timer/sequence foundation is implemented and checked.
 Temperance, Tower, voted Fool sequences, borrowed racial abilities and Strength
-object lifting, Chariot movement and local Death contamination pulses extend it.
+object lifting, Chariot movement and Death's local pulse/marked-obstacle passive extend it.
 SYSTEMS distinguishes these handlers from the remaining powers and map targets.
 #439/441/442 have separate draft PRs605/606/607; #440 is draft PR608, in progress;
 standalone modes #596-601 remain last. No full V5.13 acceptance is claimed.

@@ -150,8 +150,16 @@ line traces determine reachability. Sloped planes retain their physical cell
 coordinates; solid3D support tops use their model sector and block effects
 between floors. Candidate sectors come from local linedefs, not a map census.
 The pulse has no recurring Tick or new saved ledger; existing body/item/tile
-state persists it. Marked-obstacle destruction and Hierophant water purification
-remain separate work at this checkpoint.
+state persists it. Hierophant water purification remains separate work.
+
+The equipped Death passive also accepts Use on the explicitly typed
+CaelumTarotLivingObstacle family, within normal interaction range and sight.
+It sets that obstacle's contamination to100 and destroys the exact actor through
+the native hub-persistent lifecycle, without generating a harvest or reward.
+Ownership or an active flag without equipping the card grants no permission;
+other players, ordinary trees and characters keep their rules. The type reuses
+the existing owned espinillo geometry/materials. Authored mansion placement is
+still pending; no ordinary campaign vegetation is reclassified by this patch.
 
 ### Chariot movement and fragile obstacles
 

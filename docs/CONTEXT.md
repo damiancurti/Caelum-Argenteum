@@ -4,7 +4,7 @@ Documentation version: **5.13.3** - 2026-10-31.
 
 **V5.13:** PR605/606/607 cover #439/441/442; PR608 covers #440.
 Order/capacity/timers/Temperance/Tower/Fool/Hanged Man/Strength/Chariot/Priestess trap/Empress restraint implemented;
-Empress art/traversal tested; Death pulse implemented; other handlers/examples next.
+Empress art/traversal tested; Death pulse/passive implemented; other handlers/examples next.
 #596-601 last. Author suite deferred.
 Approved rules: SYSTEMS; native evidence: validation_v5_13_1/2/3.
 

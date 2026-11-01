@@ -144,6 +144,15 @@ passes; rendering benchmarks, remaining handlers and author acceptance remain
 pending. The author also approved Hierophant purification only for wholly
 contained water volumes; that water handler is not implemented by this commit.
 
+Death's marked living-obstacle passive then passed10 initial and three save
+recovery assertions per native client. Native Use reaches only the explicit
+obstacle family; equipped ownership, normal interaction range, unequip and
+another player's lack of permission are checked. Destruction preserves no
+harvest/reward path and does not replay on recovery. Ordinary trees remain
+intact. All18,023 package members match source; evidence is recorded in
+living-obstacle-results.json. The class reuses the existing owned espinillo;
+authored mansion placement and author acceptance remain pending.
+
 ## 5.13.2 - Reversible equipment awakening (#442)
 
 Author-approved +25% damage/defense and half wear are implemented on the exact
