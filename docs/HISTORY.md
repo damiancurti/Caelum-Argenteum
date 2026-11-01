@@ -110,6 +110,13 @@ accepted save needed renaming. Review also covered the escort's separate velocit
 path before the final native checks. Plant artwork, vegetation traversal, final
 frame measurements and author acceptance remain pending.
 
+The separate Empress art commit adds deterministic thorned stems using the owned
+plains-bark material and existing geometry helper. Native front/rear views around
+a real player were inspected on2026-11-01; both clients load/render the production
+class without errors or desynchronization. The generator's deterministic check
+passes and all18,021 package members match source. See empress-art-results.json.
+This is visual registration evidence, not author acceptance or a frame-rate claim.
+
 ## 5.13.2 - Reversible equipment awakening (#442)
 
 Author-approved +25% damage/defense and half wear are implemented on the exact

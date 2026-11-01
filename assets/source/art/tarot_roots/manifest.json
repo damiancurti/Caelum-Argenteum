@@ -1,0 +1,15 @@
+{
+  "issue": 440,
+  "release": "5.13.3",
+  "provenance": "Original deterministic geometry; unchanged owned environment bark texture.",
+  "generator": "assets/generators/generate_tarot_roots.py",
+  "geometry_helper": "assets/generators/generate_environment_models.py:Mesh",
+  "material": "src/models/caelum/world/environment/bark_plains.png",
+  "material_sha256": "46319278ca7d5ab92b90658d2654d793858ae84ed2d170e032ec3b080e0b85a8",
+  "output": "src/models/caelum/world/environment/ca_tarot_roots.obj",
+  "output_sha256": "18fd7cf7928af666ecb3dffbbd29617dd2a38fe49eb2ff0d77a2e66cb93511d1",
+  "vertices": 3210,
+  "faces": 840,
+  "visual_only": "Five intertwined thorned stems; dimensions follow the victim. No collision or damage comes from the model.",
+  "author_visual_acceptance": false
+}

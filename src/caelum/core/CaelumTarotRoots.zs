@@ -68,6 +68,7 @@ class CaelumTarotRoots : Actor
         root.RemainingTics=duration;
         root.DamagePerSecond=Max(0.0,snapshot.Damage)/CaelumConstants.TAROT_EFFECT_SECONDS;
         root.Binding=CaelumTarotRooted.Get(victim);root.Binding.Sources.Push(root);
+        root.UpdateAppearance();
         if(holder.Roots!=null)holder.Roots.Destroy();holder.Roots=root;
         victim.Vel.X=0;victim.Vel.Y=0;
         let player=CaelumPlayer(victim);
@@ -80,7 +81,7 @@ class CaelumTarotRoots : Actor
         if((Caster!=null && Caster.SessionIdentityPending) || (player!=null && player.SessionIdentityPending))return;
         if(Caster==null || Victim==null || Victim.bDestroyed || Victim.health<=0 || RemainingTics<=0)
         {Destroy();return;}
-        Super.Tick();SetOrigin(Victim.Pos,false);
+        Super.Tick();UpdateAppearance();
         RemainingTics--;PulseTics++;DamageRemainder+=DamagePerSecond/TICRATE;
         if(PulseTics>=TICRATE || RemainingTics==0)
         {
@@ -95,6 +96,12 @@ class CaelumTarotRoots : Actor
         if(Binding!=null)Binding.Remove(self);
         Super.OnDestroy();
     }
+    void UpdateAppearance()
+    {
+        // La geometría normalizada nace del suelo y rodea el cuerpo real.
+        SetOrigin((Victim.Pos.X,Victim.Pos.Y,Victim.FloorZ),false);
+        Scale=(Victim.Radius,Max(1.0,Victim.Pos.Z-Victim.FloorZ+Victim.Height));
+    }
     Default {+NOINTERACTION +NOGRAVITY +NODAMAGETHRUST}
-    States {Spawn:TNT1 A -1;Stop;}
+    States {Spawn:CAHC A -1;Stop;}
 }

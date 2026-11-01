@@ -117,8 +117,9 @@ releases the target. Leaving the map removes the plant and its active window.
 Revision1 saves exact caster/victim references, lifetime and fractional damage.
 Network identity admission pauses evaluation. Direct cached body references avoid
 inventory or global actor scans during movement; the source list is bounded by
-the fixed player population. Plant artwork and vegetation-passive examples remain
-pending, separately from these native behavior checks.
+the fixed player population. Thorned plant artwork scales to the actual victim;
+its native visual evidence is separate from these behavior checks. Vegetation
+traversal and final author review remain pending.
 
 ### Chariot movement and fragile obstacles
 

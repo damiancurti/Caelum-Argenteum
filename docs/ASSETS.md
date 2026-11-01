@@ -2,6 +2,18 @@
 
 Documentation version: **5.13.3** - 2026-10-31.
 
+## Tarot Empress roots (#440, 5.13.3)
+
+`assets/generators/generate_tarot_roots.py` builds five thorned stems around a
+normalized target body, using the existing environment mesh helper and unchanged
+owned plains-bark texture. The model starts at the victim's floor and scales to
+its actual radius and height; geometry has no independent damage or collision.
+It contains840 faces/3,210 vertices and no new raster or external artwork.
+`assets/source/art/tarot_roots/manifest.json` records provenance and hashes;
+the generator's `--check` verifies deterministic output. Native front/rear views
+show the production effect around a player in two-client play. Evidence:
+`assets/validation_v5_13_3/empress-art-results.json`. Author review remains pending.
+
 ## Tarot Chariot adaptation (#440, 5.13.3)
 
 The author approved reuse of the original covered cart at2m width on2026-11-01.
