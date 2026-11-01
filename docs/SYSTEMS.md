@@ -264,8 +264,28 @@ census runs for an aura: queries visit the fixed player slots and bounded actual
 companion rosters only. The affected Miracle pulse now uses local blockmap and
 the existing spatial grid for unlinked bodies; strongest-source checks use fixed
 player slots, replacing its previous global scans. Active-map native and common
-save checks are recorded in lovers-results.json. Abstract overland journey
-simulation and final author/frame-presentation acceptance remain pending.
+save checks are recorded in lovers-results.json.
+
+Abstract journeys retain the existing prohibition on active Tarot effects, so
+only the equipped damage passive applies there. Previews capture departure
+range/line of sight among the actual travelling players and following companions;
+waiting/parked companions stay outside that journey. The thermal/supply cursors
+advance players in stable slot order at one common tic, sharing each resolved
+survival/disease hit immediately, with deduplicated recipients, native protection
+policy and persistent fractional shares. Dead recipients and dead aura owners
+stop contributing; the first player death stops the party at the same elapsed,
+walking and sleeping time. Natural recovery and needs remain individual.
+Companions retain their previous abstract-travel physiology; this adapter adds
+their received damage without introducing new recovery or resource rules.
+
+Both unlimited-supply and available-supply forecasts use isolated projections.
+Only confirmation commits damage fractions, individual player outcomes and the
+companions' native damage/death once. Changed participant/visibility/protection
+or predicted-death membership requires renewed confirmation. Closed plans release
+the cross-player projection links. Thermal weather samples retain the original
+minute boundaries; the previous accepted implementation remains a native parity
+oracle in the fixture. Evidence: `lovers-journey-results.json`. Full-version
+endpoint/UI and frame-presentation acceptance remain pending.
 
 ### Justice map geometry and reversible compatibility
 
@@ -756,7 +776,7 @@ new effect's quantitative behavior.
 | 3 | The Empress (La Emperatriz) | Allows moving over and through vegetation with ease. | Grows plants from the ground that trap the target and grow spikes dealing piercing damage. | Vegetation classification and traversal; target range, root movement policy, spikes, damage and population limit. |
 | 4 | The Emperor (El Emperador) | Allows changing the allegiance of summoned beings. | Stops hostility toward the user; while active, summoned units attack the target. | Eligible summons, allegiance ownership/restoration, hostility recipients and command lifecycle. |
 | 5 | The Hierophant (El Hierofante) | Allows purifying cursed passages. | Reduces contamination in the area to zero. | Authored cursed passages; purification radius/targets, pulse versus continuous application and stored-surface coverage. |
-| 6 | The Lovers (Los Enamorados) | Allows damage to be shared among team members. | Those under the effect share damage and healing equally. | Active-map group/radius/LOS, attribution, fractional persistence and single redistribution implemented; abstract journey integration remains pending. |
+| 6 | The Lovers (Los Enamorados) | Allows damage to be shared among team members. | Those under the effect share damage and healing equally. | Active-map group/radius/LOS, attribution, fractional persistence and single redistribution implemented; coupled abstract-journey damage also integrated. |
 | 7 | The Chariot (El Carro) | Allows breaking specific fragile objects. | Launches a chariot that pushes everything in its path. | Fragile-object allowlist; chariot geometry, velocity, range, collision, pushing and damage. |
 | 8 | Justice (La Justicia) | Allows killing immortal enemies, such as spirits. | Takes the user and target to a separate arena. | Active duel admission/return/travel implemented with native evidence; passive admits only the explicit Tarot spirit actor family. |
 | 9 | The Hermit (El Ermitaño) | Adds two Tarot equipment slots. | Doubles the effect duration of the first Tarot card activated. | Capacity known (+2); instantaneous first effects, position after first card and own-duration eligibility. |

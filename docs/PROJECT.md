@@ -12,8 +12,8 @@ Its native two-peer/common-save checkpoints are recorded in HISTORY.
 Temperance, Tower, voted Fool sequences, borrowed racial abilities and Strength
 object lifting, Chariot movement, Death's pulse/marked-obstacle passive and
 Hierophant purification extend it. Justice pairs, safe returns, travel waits and
-legacy geometry compatibility have isolated native evidence. Lovers has active-map
-damage/healing integration; abstract journey sharing still needs integration.
+legacy geometry compatibility have isolated native evidence. Lovers now includes
+active-map Health sharing and coupled abstract-journey damage forecasts.
 The automaton now links its owned model to a persistent combat body, timed
 Tarot control and inseparable equipment. Native two-peer/save evidence covers
 that integration; it does not constitute full-version acceptance.

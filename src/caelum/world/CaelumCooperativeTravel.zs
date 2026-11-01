@@ -137,7 +137,8 @@ class CaelumCooperativeTravel : Inventory
     static bool SameCosts(CaelumJourneyPlan a,CaelumJourneyPlan b)
     {
         if(a==null || b==null)return a==b;
-        return a.PlannedWalkTics==b.PlannedWalkTics && a.Available.ElapsedTics==b.Available.ElapsedTics
+        return CaelumLoversJourney.SameParticipants(a.Available.Lovers,b.Available.Lovers)
+            && a.PlannedWalkTics==b.PlannedWalkTics && a.Available.ElapsedTics==b.Available.ElapsedTics
             && a.Available.FoodSpent==b.Available.FoodSpent && a.Available.WaterSpent==b.Available.WaterSpent
             && Abs(a.Available.ContainerSpent-b.Available.ContainerSpent)<0.000001
             && (a.Available.Health<=0)==(b.Available.Health<=0)
@@ -149,10 +150,11 @@ class CaelumCooperativeTravel : Inventory
         if(IsTransport()){bool okay,changed;[okay,changed]=CaelumCooperativeTransport.Prepare(self,compare);return okay,changed;}
         if(Kind==TUTORIAL)return CaelumCooperativeReturn.Prepare(self),false;
         if(Kind!=JOURNEY)return true,false;
-        double speed=0;
+        double speed=0;bool lovers=false;
         for(int i=0;i<MAXPLAYERS;i++)if((AliveMask&(1<<i))!=0)
         {
             let member=Members[i];if(!CaelumTravelService.CanDepart(member,Connection))return false,false;
+            lovers=lovers || CaelumLoversJourney.Equipped(member);
             if(CaelumJourneyRules.DistanceKm(Connection)<=0)continue;
             String reason=CaelumJourneyRules.BlockReason(member);
             if(reason!=""){CaelumNotifications.Notify(member,StringTable.Localize(reason,false));return false,false;}
@@ -166,12 +168,21 @@ class CaelumCooperativeTravel : Inventory
         for(int i=0;i<MAXPLAYERS;i++)if((AliveMask&(1<<i))!=0)
         {
             fresh[i]=CaelumJourneyPlan(Actor.Spawn('CaelumJourneyPlan',Members[i].Pos,NO_REPLACE));
-            if(fresh[i]==null || !fresh[i].Calculate(Members[i],Connection,Mode,speed)){failed=true;break;}
-            elapsed=Min(elapsed,fresh[i].Available.ElapsedTics);
+            if(fresh[i]==null){failed=true;break;}
+            bool okay=lovers?fresh[i].Parameters(Members[i],Connection,Mode,speed):fresh[i].Calculate(Members[i],Connection,Mode,speed);
+            if(!okay){failed=true;break;}
+            if(!lovers)elapsed=Min(elapsed,fresh[i].Available.ElapsedTics);
         }
         // Si alguien muere en marcha, todos llegan al mismo instante, sin adelantar
         // al superviviente hasta el destino ni consumir su siguiente tramo.
-        if(!failed)for(int i=0;i<MAXPLAYERS;i++)if(fresh[i]!=null && fresh[i].Available.ElapsedTics!=elapsed)
+        if(!failed && lovers)
+        {
+            let needed=new('CaelumLoversJourney');let available=new('CaelumLoversJourney');
+            for(int i=0;i<MAXPLAYERS;i++)if(fresh[i]!=null){needed.Add(Members[i],fresh[i]);available.Add(Members[i],fresh[i]);}
+            if(!needed.Run(true) || !available.Run(false))failed=true;
+            if(!failed)for(int i=0;i<MAXPLAYERS;i++)if(fresh[i]!=null)elapsed=Min(elapsed,fresh[i].Available.ElapsedTics);
+        }
+        if(!failed && !lovers)for(int i=0;i<MAXPLAYERS;i++)if(fresh[i]!=null && fresh[i].Available.ElapsedTics!=elapsed)
             if(!fresh[i].Calculate(Members[i],Connection,Mode,speed,elapsed)){failed=true;break;}
         if(failed){for(int i=0;i<MAXPLAYERS;i++)if(fresh[i]!=null)fresh[i].Destroy();return false,false;}
         bool changed=false;Interrupted=false;

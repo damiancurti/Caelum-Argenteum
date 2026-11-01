@@ -14,7 +14,8 @@ Star volume admission, direct furniture collection, original storage contents an
 per-card timers, Hermit duration, Devil payment, Temperance, Tower, voted Fool sequences,
 borrowed racial abilities, Strength object lifting, Chariot movement, Priestess traps,
 Empress restraint, local Death contamination and Hierophant purification pulses
-and World dispatch. This is an
+and World dispatch. Lovers also shares damage in coupled, read-only journey
+forecasts before committing individual costs and results. This is an
 implementation checkpoint; Chariot reuses the original cart at its approved width,
 and Empress plants have native visual evidence using owned vegetation materials.
 Its equipped passive also enables individual vegetation traversal.

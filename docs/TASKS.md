@@ -12,8 +12,9 @@ plant art has native front/rear evidence; equipped vegetation traversal is imple
 Death's contamination pulse/marked-obstacle passive and Hierophant purification
 are implemented; authored passage passives are implemented. Justice pairs/returns/travel
 waits and legacy maps are checked.
-Lovers active-map damage/healing is checked; integrate its passive in abstract
-journey simulation before claiming completion. Finish remaining handlers/passives,
+Lovers active-map damage/healing and coupled abstract-journey damage are implemented;
+thermal parity, common-time death and saved fractions have isolated evidence.
+Finish the combined handler/passive audit,
 giant/harmful objects and display-room examples on the appended annex geometry,
 the remaining input integration. The demonstration spirit now exposes equipped
 Justice/Judgement with native dialogue recovery evidence. Automaton
@@ -40,6 +41,9 @@ Non-furniture world capture remains separate from the hazardous-rock carrier.
 The confirmed per-power
 contract is consolidated in SYSTEMS; unresolved fields must still be asked.
 Only then integrate standalone modes #596-601 and issue final author scenarios.
+PresentMon availability probe on2026-11-01 was denied ETW access (exit6);
+frame-presentation capture needs the Windows privilege prompt when the author
+returns. No FPS claim follows from native functional checks.
 
 ## 5.13.2 - Reversible equipment awakening (#442)
 

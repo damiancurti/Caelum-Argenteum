@@ -1,0 +1,126 @@
+{
+  "issue": 440,
+  "version": "5.13.3",
+  "date": "2026-11-01",
+  "package": "build/issue440/lovers-journey/r4/caelum_argenteum_dev.pk3",
+  "sha256": "3962914a9c6168208953b450830589b73fe078da758ccb2f0c19f6cdcdcb3324",
+  "source_files": 18047,
+  "exact_source_match": true,
+  "native_assertions": 46,
+  "runs": [
+    {
+      "directory": "build/issue440/native-32465-20261101-155023-553101",
+      "runtime_sha256": "3962914a9c6168208953b450830589b73fe078da758ccb2f0c19f6cdcdcb3324",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440LJ DIAG old= new= elapsed=900/900 health=1923/1923 exposure=-3.995239290617/-3.995239290617 thirst=78.811966395973/78.811966395973",
+            "CA440LJ PASS old and cursor thermal forecasts complete the same route segment",
+            "CA440LJ PASS cursor preserves accepted resource trajectory without an aura",
+            "CA440LJ PASS cursor preserves thermal state across minute sample boundaries",
+            "CA440LJ PASS journey uses only travelling players and their enlisted following roster",
+            "CA440LJ PASS overlapping auras retain fractional equal damage without recursion",
+            "CA440LJ PASS forecast sharing does not mutate real bodies",
+            "CA440LJ PASS dead recipients leave the next simulated share",
+            "CA440LJ PASS immune secondary keeps its discarded share without new defenses",
+            "CA440LJ PASS commit preserves the NPC fraction once without rounding a duplicate hit",
+            "CA440LJ PASS waiting companion does not accompany the abstract journey",
+            "CA440LJ PASS native journey parameters retain route and common pace",
+            "CA440LJ PASS coupled disease and thermal forecast completes",
+            "CA440LJ DIAG coupled=/ elapsed=350/350 health=1102/1102",
+            "CA440LJ PASS shared damage changes the peer during the same forecast clock",
+            "CA440LJ PASS complete preview leaves real health and disease unchanged",
+            "CA440LJ PASS confirmation applies both modeled health outcomes once",
+            "CA440LJ PASS closed plans release cross-player projection ownership",
+            "CA440LJ PASS a changed aura recipient requires a new confirmation",
+            "CA440LJ PASS first simulated death stops all travellers at one common tic",
+            "CA440LJ PASS public solo planner selects the isolated Lovers forecast",
+            "CA440LJ PASS public planner remains read-only",
+            "CA440LJ RESULT capture"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440LJ DIAG old= new= elapsed=900/900 health=1923/1923 exposure=-3.995239290617/-3.995239290617 thirst=78.811966395973/78.811966395973",
+            "CA440LJ PASS old and cursor thermal forecasts complete the same route segment",
+            "CA440LJ PASS cursor preserves accepted resource trajectory without an aura",
+            "CA440LJ PASS cursor preserves thermal state across minute sample boundaries",
+            "CA440LJ PASS journey uses only travelling players and their enlisted following roster",
+            "CA440LJ PASS overlapping auras retain fractional equal damage without recursion",
+            "CA440LJ PASS forecast sharing does not mutate real bodies",
+            "CA440LJ PASS dead recipients leave the next simulated share",
+            "CA440LJ PASS immune secondary keeps its discarded share without new defenses",
+            "CA440LJ PASS commit preserves the NPC fraction once without rounding a duplicate hit",
+            "CA440LJ PASS waiting companion does not accompany the abstract journey",
+            "CA440LJ PASS native journey parameters retain route and common pace",
+            "CA440LJ PASS coupled disease and thermal forecast completes",
+            "CA440LJ DIAG coupled=/ elapsed=350/350 health=1102/1102",
+            "CA440LJ PASS shared damage changes the peer during the same forecast clock",
+            "CA440LJ PASS complete preview leaves real health and disease unchanged",
+            "CA440LJ PASS confirmation applies both modeled health outcomes once",
+            "CA440LJ PASS closed plans release cross-player projection ownership",
+            "CA440LJ PASS a changed aura recipient requires a new confirmation",
+            "CA440LJ PASS first simulated death stops all travellers at one common tic",
+            "CA440LJ PASS public solo planner selects the isolated Lovers forecast",
+            "CA440LJ PASS public planner remains read-only",
+            "CA440LJ RESULT capture"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "directory": "build/issue440/native-32466-20261101-155234-730415",
+      "runtime_sha256": "3962914a9c6168208953b450830589b73fe078da758ccb2f0c19f6cdcdcb3324",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440LJ PASS common save restores both share fractions",
+            "CA440LJ PASS saved projection remembers its committed transaction",
+            "CA440LJ PASS recovery cannot replay the projection commit",
+            "CA440LJ RESULT reload"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440LJ PASS common save restores both share fractions",
+            "CA440LJ PASS saved projection remembers its committed transaction",
+            "CA440LJ PASS recovery cannot replay the projection commit",
+            "CA440LJ RESULT reload"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "author_acceptance": false,
+  "retained_failures": {
+    "32459/32460": "Case-insensitive ZScript parameters shadowed cursor fields. Diagnostics identified uninitialized destination; explicit self assignments corrected before r2.",
+    "32461/32462": "Earlier passing r2 capture/recovery; r3 aligns death-tic walk/sleep counters.",
+    "32463/32464": "Earlier passing r3 capture/recovery; r4 adds explicit projection revision and ignores damage to already-dead projection rows."
+  },
+  "limits": [
+    "Tests use private two-client fixtures; final campaign endpoints/UI remain pending.",
+    "No frame-presentation acceptance."
+  ]
+}

@@ -4,6 +4,26 @@ Documentation version: **5.13.3** - 2026-10-31.
 
 ## 5.13.3 - Ordered Tarot foundation (#440, implementation checkpoint)
 
+Lovers journey checkpoint (2026-11-01): equipped damage sharing now participates
+in isolated solo/cooperative journey projections. Players advance on a common
+thermal/supply cursor; following companions receive their share without changing
+their previous abstract-travel physiology. Fractional damage, immunity/nonlethal
+protection, deduplicated auras and first-player-death interruption are retained.
+Changed recipients require renewed confirmation; committing is idempotent and
+closed plans release cross-player projection links. Revision1 projection metadata
+uses the existing Lovers remainder schema.
+
+Final `lovers-journey/r4` matches18047 source entries; SHA-256
+`3962914a9c6168208953b450830589b73fe078da758ccb2f0c19f6cdcdcb3324`.
+Two-peer capture32465/recovery32466 passed46 assertions, including an independent
+pre-cursor thermal oracle, read-only previews, the public solo planner, shared
+disease, common elapsed/walk/sleep death counters and saved commit/fractions.
+Retained32459/32460 diagnosed case-insensitive parameter/field shadowing; explicit
+self assignments fixed the cursor destination/mode/speed. Earlier32461-32464 passed
+their narrower revisions. Evidence: `assets/validation_v5_13_3/lovers-journey-results.json`.
+Project validation and diff checks passed. Final endpoint/UI and frame-presentation
+review remain separate; no author acceptance is inferred.
+
 Star direct-collection checkpoint (2026-11-01): placed heavy furniture can
 enter the Box without first passing through personal inventory. Existing
 wardrobe/cupboard/bookcase carriers preserve their original body, contents,
