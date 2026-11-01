@@ -41,6 +41,7 @@ class CaelumMajorTargets : Object play
                     && (match.Mode==0 || match.Teams[a]!=match.Teams[b]);
             }
         }
+        let image=CaelumTarotClone(body);if(image!=null)return Enemy(user,image.Caster);
         if(CaelumRedemption.Commander(body)!=null)return !CaelumRedemption.Allied(user,body);
         let controller=CaelumTarotEmperor.Commander(body);
         if(controller!=null)return Enemy(user,controller);

@@ -21,6 +21,7 @@ class CaelumTarotSequence : Object play
         if(card==CaelumHangedMan.CARD && !CaelumHangedMan.Prepare(user,record))return;
         if(card==14)CaelumTemperance.Cleanse(user);
         if(card==4)CaelumTarotEmperor.Pulse(user,duration,aimed);
+        if(card==18 && !CaelumTarotMoon.Start(user,duration))return;
         if(card==5)CaelumTarotContamination.Hierophant(user,ground);
         if(card==13 && !CaelumTarotContamination.Death(user,aimed,ground))
         {if(report)CaelumTarotService.Feedback(user,"CA_TAROT_CONTAMINATION_TARGET");return;}

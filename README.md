@@ -26,6 +26,9 @@ A placed living obstacle also exposes Death's equipped Use action without a new 
 Emperor now pacifies reached actors and temporarily controls existing summons,
 restoring original allegiance on expiry, cleansing or departure. Validation is
 recorded separately from the still-pending full-version author suite.
+Moon adds two temporary clones with existing character sprites, independent gear
+and resources, native combat and a collision-checked swap. Its native checkpoint
+and retained failures are recorded in HISTORY; it is not full-version acceptance.
 For existing saves, `build_dev.ps1 -LegacyTarotMaps` preserves pre-Justice maps;
 `-LegacyTarotExamples` preserves the Justice-era mansion before the annex.
 Justice now supports simultaneous pairs, safe returns and cancellable travel waits,

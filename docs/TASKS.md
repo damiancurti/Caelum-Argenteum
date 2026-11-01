@@ -22,7 +22,8 @@ owner index. Annex access, passage examples and Wheel state changes are checked.
 Stone-wall presentation and saved orientation are checked; final author review waits.
 The marked living-obstacle example is placed; finish the remaining display objects.
 Emperor pacification, control arbitration and departure restoration are implemented;
-its native checkpoint does not complete the remaining Major handlers.
+Moon clones, independent resources and equipped swaps are implemented;
+these native checkpoints do not complete the remaining Major handlers.
 The confirmed per-power
 contract is consolidated in SYSTEMS; unresolved fields must still be asked.
 Only then integrate standalone modes #596-601 and issue final author scenarios.

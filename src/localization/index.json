@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "4c1691dd1df0a496eb12f46b8bc50972faed5a8c3c3c7c4fa8bd4826c618cd68",
+  "sha256": "18b8dc7785ee1ab60939e6ff621102000720fb6a297f143d2b65d5ecde316564",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[534,534]],"default":[[534,534]],"es":[[1229,1229]]},
     "CA_ABSENT_THEFT_FOUND": {"enu":[[6957,6957]],"default":[[6957,6957]],"es":[[6959,6959]]},
@@ -2867,6 +2867,7 @@
     "CA_TAROT_MAJOR_21": {"enu":[[7484,7484]],"default":[[7484,7484]],"es":[[7510,7510]]},
     "CA_TAROT_MINE_GROUND": {"enu":[[40,40]],"default":[[40,40]],"es":[[42,42]]},
     "CA_TAROT_MINOR_ORDER": {"enu":[[3460,3460]],"default":[[3460,3460]],"es":[[3468,3468]]},
+    "CA_TAROT_MOON_CLONE": {"enu":[[7593,7593]],"default":[[7593,7593]],"es":[[7595,7595]]},
     "CA_TAROT_ORDER": {"enu":[[7546,7546]],"default":[[7546,7546]],"esp":[[7549,7549]]},
     "CA_TAROT_PASSAGE_CURSED": {"enu":[[18,18]],"default":[[18,18]],"es":[[25,25]]},
     "CA_TAROT_PASSAGE_PURIFIED": {"enu":[[19,19]],"default":[[19,19]],"es":[[26,26]]},

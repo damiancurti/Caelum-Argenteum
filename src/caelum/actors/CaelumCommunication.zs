@@ -92,6 +92,7 @@ class CaelumCommunication : Object play
     static CaelumPlayer Principal(CaelumCombatActor body)
     {
         if(body!=null && body.Companion!=null && body.Companion.Enlisted)return body.Companion.Leader();
+        let image=CaelumTarotClone(body);if(image!=null)return image.Caster;
         let user=CaelumRedemption.Commander(body);if(user!=null)return user;
         let summoned=CaelumSummonedZupay(body);
         if(summoned!=null && summoned.Binding!=null)return summoned.Commander();

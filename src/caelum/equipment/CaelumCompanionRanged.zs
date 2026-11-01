@@ -64,7 +64,7 @@ class CaelumCompanionRanged : Object play
             || item==null || item.Owner!=body || item.Durability<=0 || body.target==null
             || !CaelumVisualPerception.Identify(body,body.target) || CaelumBattleCry.Active(body))return false;
         if(Weapon==null){Weapon=new("CaelumWeaponModel");Weapon.InitializeDefaults();}
-        Weapon.WeaponType=item.ItemType;Weapon.Tier=item.Tier;Weapon.Size=item.EquipmentSize;
+        Weapon.SourceItem=item;Weapon.WeaponType=item.ItemType;Weapon.Tier=item.Tier;Weapon.Size=item.EquipmentSize;
         Weapon.Durability=item.Durability;Weapon.ContaminationState=item.ContaminationState;
         if(body.Distance3D(body.target)>Weapon.GetRangedRangeFor(item.ItemType) || !body.CheckSight(body.target))return false;
         let ammo=Ammunition();if(ammo==null)return false;

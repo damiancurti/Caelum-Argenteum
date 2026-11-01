@@ -4,6 +4,24 @@ Documentation version: **5.13.3** - 2026-10-31.
 
 ## 5.13.3 - Ordered Tarot foundation (#440, implementation checkpoint)
 
+The Moon checkpoint (2026-11-01) implements two temporary clones, independent
+appearance/equipment/ammunition/resources, native ranged/magic/melee/unarmed
+combat, equipped collision-checked swapping and no-loot expiry/departure.
+Final moon/r10 passes84 assertions across two real local clients:66 initial
+checks and18 common-save/recovery/actual-travel checks. Its18,038 package members
+match src byte-for-byte. Source, commands, hashes and retained failures are in
+assets/validation_v5_13_3/moon-results.json. The final native image shows the
+existing body/head and carbine poses with the localized illusion label.
+
+The reported startup failure used unsupported DONTCOUNTKILL; -COUNTKILL fixes
+native compilation. Subsequent checks found a shadowed Binding assignment,
+native attachment resetting fractional copied wear, and a stale search point
+interrupting recognition. The final clone finishes its visible observation before
+following an old clue, preserving normal recognition and hidden-target rules.
+The runner now performs batch native compilation before opening any clients
+(CA-KP-210); CA-KP-209 includes the new recognition evidence. Static validation
+passes. No author acceptance, full-release completion or FPS result is inferred.
+
 The Emperor checkpoint (2026-11-01) implements local pacification, reversible
 control of existing summoned Zupay, last-cast arbitration, Temperance resistance
 and cleanup, native/shared accelerated clocks and departure restoration. Final

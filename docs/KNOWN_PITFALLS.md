@@ -4,6 +4,22 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-210 - Preflight native fixtures before launching an interactive session
+
+Status/evidence: ENGINE-VERIFIED, #440 / 5.13.3, 2026-11-01; private native
+4.14.2-ca435-timer build. The author's Moon startup failed because DONTCOUNTKILL
+is not an actor flag in this engine. Clear COUNTKILL instead. Static source checks
+cannot replace native compilation of both the runtime and the actual fixture.
+
+run_moon_native.py first invokes the selected engine with -norun and -errorlog,
+the same IWAD/runtime/addon, and isolated configuration. This engine returns1337
+on successful batch initialization. -errorlog enables native batch error handling;
+do not replace it with +logfile, which can re-enable an error window. Only start
+the two-client interactive check after successful compilation. Preserve full logs
+and distinguish compile success from gameplay and author acceptance. Retained
+Moon runs32408/32409 exercise fixture compilation failures before desktop launch;
+moon-results.json records the final runtime and evidence.
+
 ## CA-KP-209 - A stale search goal can prevent a commanded target from being recognized
 
 Status/evidence: ENGINE-VERIFIED, #440 / 5.13.3, 2026-11-01; two local native
@@ -25,6 +41,14 @@ Evidence: assets/validation_v5_13_3/emperor-results.json, including the failing
 command assertions and diagnostic run32401, followed by final run32405's native
 engagement and run32406's saved-state/map-travel checks. This finding does not
 establish rendering performance or a general-purpose navigation change.
+
+Moon follow-up (same issue/date): native run32419 shows a new close-range clone
+circling a visible target while a search point repeatedly turns it away before
+the two-second recognition threshold. Its chase now finishes the current visible
+observation before resuming an older search. It does not force identification,
+change other actors' chase logic or follow an occluded body. The final Moon native
+fixture tests ranged, magic, melee-to-player and unarmed combat sequentially;
+moon-results.json preserves the failing traces and corrected package evidence.
 
 ## CA-KP-208 - Wall-sprite facing is independent of doorway collision
 

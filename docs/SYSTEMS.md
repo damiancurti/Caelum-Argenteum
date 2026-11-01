@@ -32,6 +32,36 @@ recalculation does not accumulate capacity. New loops are bounded by the78-card
 catalogue or the acting player's inventory; no actor-global scan is added.
 Validation: assets/validation_v5_13_3; final author acceptance remains deferred.
 
+### Moon illusions
+
+Moon creates up to two bodies in free adjacent positions for its approved duration.
+Each snapshots the caster's appearance, attributes, equipped gear, selected weapon
+and available matching ammunition/current resources. The original inventory is not
+transferred. Maximum Health and native outgoing damage use the approved25% factor;
+copied equipment keeps its ordinary defense, wear and awakening strength without
+binding another essence. Jewellery already included in the copied attributes is
+not applied again. Native gun, magic and melee paths spend the clone's own resources.
+Unarmed attacks reuse the existing fist timing and damage rolls.
+
+Each clone uses its caster's real enemy relation with ordinary perception and
+recognition. It does not inherit omniscient targets.
+Completing a currently visible observation takes priority over an older search
+point, without bypassing recognition or tracking an occluded target.
+Its private body/head profile uses existing owned appearance sprites, including
+firearm poses. The equipped
+Moon passive permits swapping with one's own visible clone through Tarot input;
+native fit tests exclude only those two bodies, reject blocked destinations and
+do not telefrag. Justice-bound bodies cannot swap. This action precedes Hanged Man's
+racial toggle when a valid clone is aimed at.
+
+Revision1 stores each clone, source and inventory copy in native saves. Existing
+saves create no clones retroactively. Native and shared accelerated ticks advance
+the same duration; recasting replaces old bodies. Death, expiry and departure
+remove the illusion, its copied inventory and registered in-flight projectiles,
+without loot or restoring the original player's spent resources. Paid cooldown
+continues. Work is bounded by two bodies per caster, their actual inventory and
+their own projectile lists; no global actor discovery is added.
+
 ### Emperor control and pacification
 
 The sequence applies Emperor once to eligible living actors within the approved

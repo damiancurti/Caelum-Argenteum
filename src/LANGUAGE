@@ -7588,3 +7588,8 @@ CA_TAROT_LIVING_REQUIRES = "Equip Death to destroy this living obstacle.";
 [es]
 CA_TAROT_LIVING_BREAK = "{bind:+use}: destruir este obstáculo vivo con La Muerte";
 CA_TAROT_LIVING_REQUIRES = "Equipá La Muerte para destruir este obstáculo vivo.";
+
+[enu default]
+CA_TAROT_MOON_CLONE = "Moon illusion";
+[es]
+CA_TAROT_MOON_CLONE = "Ilusión de La Luna";

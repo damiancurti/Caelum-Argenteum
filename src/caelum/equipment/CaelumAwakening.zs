@@ -24,7 +24,11 @@ class CaelumAwakening : Object play
     }
 
     static clearscope double Factor(CaelumEquipmentItem item)
-    {return Card(item)>=0?CaelumAwakeningData.POWER:1;}
+    {
+        let image=CaelumMoonEquipment(item);
+        return Card(item)>=0 || (image!=null && image.Awakened && image.Illusion!=null)
+            ?CaelumAwakeningData.POWER:1;
+    }
 
     static clearscope double ActiveFactor(CaelumEquipmentItem item,int kind,int itemType,int tier,int size,int slot=-1)
     {
@@ -39,7 +43,7 @@ class CaelumAwakening : Object play
     {
         if(item==null || loss<=0)return Max(0,loss);
         Ensure(item);
-        if(Card(item)<0)return loss;
+        if(Factor(item)<=1)return loss;
         int halves=loss+item.AwakeningHalfWear;
         item.AwakeningHalfWear=halves%CaelumAwakeningData.WEAR_DIVISOR;
         return halves/CaelumAwakeningData.WEAR_DIVISOR;

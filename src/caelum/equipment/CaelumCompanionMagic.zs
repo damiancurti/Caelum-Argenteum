@@ -51,7 +51,7 @@ class CaelumCompanionMagic : Object play
         if(CaelumSupportImplementData.ValidRole(role) && CaelumSupportImplementData.Beneficial(role))receiver=body;
         if(!ValidRecipient(receiver,item.ItemType))return false;
         if(Weapon==null){Weapon=new("CaelumWeaponModel");Weapon.InitializeDefaults();}
-        Weapon.WeaponType=item.ItemType;Weapon.Tier=item.Tier;Weapon.Size=item.EquipmentSize;
+        Weapon.SourceItem=item;Weapon.WeaponType=item.ItemType;Weapon.Tier=item.Tier;Weapon.Size=item.EquipmentSize;
         Weapon.EssenceType=item.EssenceType;Weapon.Durability=item.Durability;Weapon.ContaminationState=item.ContaminationState;
         double tierCost=item.Tier<=1 ? 1 : item.Tier==2 ? CaelumSupportImplementData.TIER_TWO_COST : CaelumSupportImplementData.TIER_THREE_COST;
         double price=body.GetMagicAnimaCost(Weapon.GetAnimaCostFor(item.ItemType)*tierCost);

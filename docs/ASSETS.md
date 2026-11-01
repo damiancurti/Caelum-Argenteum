@@ -2,6 +2,14 @@
 
 Documentation version: **5.13.3** - 2026-10-31.
 
+## Moon clone appearance reuse (#440, 5.13.3)
+
+Moon illusions reuse the existing owned player body/head appearance registry and
+firearm poses. Each native body keeps a separate profile copy; no generated art,
+new third-party material or rendering substitution is introduced. Native screenshots
+and code checks are recorded in validation_v5_13_3/moon-results.json; final author
+review remains part of the complete V5.13 suite.
+
 ## Tarot example annex geometry (#440, 5.13.3)
 
 `assets/tarot_examples/ROOM.json` owns the implementation layout. The annex

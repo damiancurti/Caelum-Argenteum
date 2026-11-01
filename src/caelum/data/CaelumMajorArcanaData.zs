@@ -27,6 +27,8 @@ class CaelumMajorArcanaData : Object
     const LOVERS_REVISION=1;
     const PASSAGE_REVISION=1;
     const EMPEROR_REVISION=1;
+    const MOON_REVISION=1;
+    const MOON_POWER=0.25;
     const JUSTICE_RETURN_MU=128.0;
     // Presupuesto técnico por cuerpo/tic; no altera el radio autorizado.
     const JUSTICE_SEARCH_BUDGET=8;

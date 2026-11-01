@@ -1,0 +1,426 @@
+{
+  "issue": 440,
+  "version": "5.13.3",
+  "date": "2026-11-01",
+  "scope": "Moon clones, independent native combat/resources, equipped safe swap, save recovery and map departure",
+  "runtime": "build\\issue440\\moon\\r10\\caelum_argenteum_dev.pk3",
+  "runtime_sha256": "511174da3ae35f77974bac0d8e539a38c893e58921a6bcc68fcf32322546fc1d",
+  "members": 18038,
+  "source_equivalence": true,
+  "native_assertions": 84,
+  "runs": [
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32420-20261101-124432-590690",
+      "runtime_sha256": "511174da3ae35f77974bac0d8e539a38c893e58921a6bcc68fcf32322546fc1d",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "commands": [
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\moon\\r10\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32420-20261101-124432-590690\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32420-20261101-124432-590690\\bundle\\peer0\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32420-20261101-124432-590690\\bundle\\peer0",
+          "-host",
+          "2",
+          "-port",
+          "32420",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32420-20261101-124432-590690\\bundle\\peer0\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32420-20261101-124432-590690\\bundle\\peer0\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ],
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\moon\\r10\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32420-20261101-124432-590690\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32420-20261101-124432-590690\\bundle\\peer1\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32420-20261101-124432-590690\\bundle\\peer1",
+          "-join",
+          "127.0.0.1:32420",
+          "-port",
+          "32421",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32420-20261101-124432-590690\\bundle\\peer1\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32420-20261101-124432-590690\\bundle\\peer1\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ]
+      ],
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440MOON PASS Moon sequence activates",
+            "CA440MOON PASS two bodies occupy free positions",
+            "CA440MOON PASS Hermit extends each clone once",
+            "CA440MOON PASS one shared Anima payment",
+            "CA440MOON PASS appearance is an independent snapshot",
+            "CA440MOON PASS existing body and head sprites are registered",
+            "CA440MOON PASS caster attributes copied",
+            "CA440MOON PASS quarter maximum Health",
+            "CA440MOON PASS quarter outgoing native damage multiplier",
+            "CA440MOON PASS independent selected weapons",
+            "CA440MOON PASS ammunition copied without consuming source",
+            "CA440MOON PASS copied awakening has power without binding an essence",
+            "CA440MOON PASS copied wear remainder is independent",
+            "CA440MOON PASS independent current Air and Anima snapshot",
+            "CA440MOON PASS caster and sibling are allies",
+            "CA440MOON PASS other player cannot swap this clone",
+            "CA440MOON PASS safe native swap succeeds",
+            "CA440MOON PASS hostile recipient remains a perceived candidate",
+            "CA440MOON PASS native impact applies quarter damage exactly once",
+            "CA440MOON PASS clone sees and fires through native combat",
+            "CA440MOON PASS shots spend only clone ammunition",
+            "CA440MOON PASS wear belongs to copied weapon",
+            "CA440MOON PASS death removes clone and copied loot",
+            "CA440MOON PASS shared accelerated clock advances clone once",
+            "CA440MOON PASS clone casts through native magic preparation",
+            "CA440MOON PASS casting spends clone Anima only",
+            "CA440MOON PASS projectiles have a local clone-owned registry",
+            "CA440MOON PASS illusion expiry removes its outstanding projectile",
+            "CA440MOON PASS clone uses caster's PvP relation",
+            "CA440MOON PASS copied melee weapon attacks a perceived player",
+            "CA440MOON PASS native melee damage reaches player defenses",
+            "CA440MOON PASS unarmed clone uses the existing fist cycle",
+            "CA440MOON PASS unarmed clone pays its own Air",
+            "CA440MOON RESULT capture"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440MOON PASS Moon sequence activates",
+            "CA440MOON PASS two bodies occupy free positions",
+            "CA440MOON PASS Hermit extends each clone once",
+            "CA440MOON PASS one shared Anima payment",
+            "CA440MOON PASS appearance is an independent snapshot",
+            "CA440MOON PASS existing body and head sprites are registered",
+            "CA440MOON PASS caster attributes copied",
+            "CA440MOON PASS quarter maximum Health",
+            "CA440MOON PASS quarter outgoing native damage multiplier",
+            "CA440MOON PASS independent selected weapons",
+            "CA440MOON PASS ammunition copied without consuming source",
+            "CA440MOON PASS copied awakening has power without binding an essence",
+            "CA440MOON PASS copied wear remainder is independent",
+            "CA440MOON PASS independent current Air and Anima snapshot",
+            "CA440MOON PASS caster and sibling are allies",
+            "CA440MOON PASS other player cannot swap this clone",
+            "CA440MOON PASS safe native swap succeeds",
+            "CA440MOON PASS hostile recipient remains a perceived candidate",
+            "CA440MOON PASS native impact applies quarter damage exactly once",
+            "CA440MOON PASS clone sees and fires through native combat",
+            "CA440MOON PASS shots spend only clone ammunition",
+            "CA440MOON PASS wear belongs to copied weapon",
+            "CA440MOON PASS death removes clone and copied loot",
+            "CA440MOON PASS shared accelerated clock advances clone once",
+            "CA440MOON PASS clone casts through native magic preparation",
+            "CA440MOON PASS casting spends clone Anima only",
+            "CA440MOON PASS projectiles have a local clone-owned registry",
+            "CA440MOON PASS illusion expiry removes its outstanding projectile",
+            "CA440MOON PASS clone uses caster's PvP relation",
+            "CA440MOON PASS copied melee weapon attacks a perceived player",
+            "CA440MOON PASS native melee damage reaches player defenses",
+            "CA440MOON PASS unarmed clone uses the existing fist cycle",
+            "CA440MOON PASS unarmed clone pays its own Air",
+            "CA440MOON RESULT capture"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32421-20261101-124540-735533",
+      "runtime_sha256": "511174da3ae35f77974bac0d8e539a38c893e58921a6bcc68fcf32322546fc1d",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "commands": [
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\moon\\r10\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32421-20261101-124540-735533\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32421-20261101-124540-735533\\bundle\\peer0\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32421-20261101-124540-735533\\bundle\\peer0",
+          "-host",
+          "2",
+          "-port",
+          "32421",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32421-20261101-124540-735533\\bundle\\peer0\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32421-20261101-124540-735533\\bundle\\peer0\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ],
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\moon\\r10\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32421-20261101-124540-735533\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32421-20261101-124540-735533\\bundle\\peer1\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32421-20261101-124540-735533\\bundle\\peer1",
+          "-join",
+          "127.0.0.1:32421",
+          "-port",
+          "32422",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32421-20261101-124540-735533\\bundle\\peer1\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32421-20261101-124540-735533\\bundle\\peer1\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ]
+      ],
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440MOON PASS common save restores caster and clone",
+            "CA440MOON PASS save retains independent equipment and ammo ownership",
+            "CA440MOON PASS save retains private appearance and head",
+            "CA440MOON PASS owner index rebuilds after recovery",
+            "CA440MOON PASS expiry removes remaining clone",
+            "CA440MOON PASS new cast after expiry",
+            "CA440MOON PASS recast replaces previous bodies",
+            "CA440MOON PASS travel removes all origin-map clones",
+            "CA440MOON PASS travel ends effect while preserving cooldown",
+            "CA440MOON RESULT reload"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440MOON PASS common save restores caster and clone",
+            "CA440MOON PASS save retains independent equipment and ammo ownership",
+            "CA440MOON PASS save retains private appearance and head",
+            "CA440MOON PASS owner index rebuilds after recovery",
+            "CA440MOON PASS expiry removes remaining clone",
+            "CA440MOON PASS new cast after expiry",
+            "CA440MOON PASS recast replaces previous bodies",
+            "CA440MOON PASS travel removes all origin-map clones",
+            "CA440MOON PASS travel ends effect while preserving cooldown",
+            "CA440MOON RESULT reload"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "retained_attempts": [
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32407-20261101-120744-395162",
+      "passed": false,
+      "error": "Native capture save was not created",
+      "failed": []
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32408-20261101-121145-688435",
+      "compile_log": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32408-20261101-121145-688435\\compile.log"
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32409-20261101-121202-259678",
+      "compile_log": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32409-20261101-121202-259678\\compile.log"
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32410-20261101-121216-382248",
+      "passed": false,
+      "error": null,
+      "failed": [
+        "CA440MOON FAIL clone sees and fires through native combat",
+        "CA440MOON FAIL shots spend only clone ammunition",
+        "CA440MOON FAIL wear belongs to copied weapon",
+        "CA440MOON FAIL shared accelerated clock advances clone once",
+        "CA440MOON FAIL clone sees and fires through native combat",
+        "CA440MOON FAIL shots spend only clone ammunition",
+        "CA440MOON FAIL wear belongs to copied weapon",
+        "CA440MOON FAIL shared accelerated clock advances clone once"
+      ]
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32411-20261101-121343-085543",
+      "passed": false,
+      "error": null,
+      "failed": [
+        "CA440MOON FAIL clone sees and fires through native combat",
+        "CA440MOON FAIL shots spend only clone ammunition",
+        "CA440MOON FAIL wear belongs to copied weapon",
+        "CA440MOON FAIL shared accelerated clock advances clone once",
+        "CA440MOON FAIL clone sees and fires through native combat",
+        "CA440MOON FAIL shots spend only clone ammunition",
+        "CA440MOON FAIL wear belongs to copied weapon",
+        "CA440MOON FAIL shared accelerated clock advances clone once"
+      ]
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32412-20261101-121548-789461",
+      "passed": false,
+      "error": null,
+      "failed": [
+        "CA440MOON FAIL clone sees and fires through native combat",
+        "CA440MOON FAIL shots spend only clone ammunition",
+        "CA440MOON FAIL wear belongs to copied weapon",
+        "CA440MOON FAIL shared accelerated clock advances clone once",
+        "CA440MOON FAIL clone sees and fires through native combat",
+        "CA440MOON FAIL shots spend only clone ammunition",
+        "CA440MOON FAIL wear belongs to copied weapon",
+        "CA440MOON FAIL shared accelerated clock advances clone once"
+      ]
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32413-20261101-121737-579004",
+      "passed": true,
+      "error": null,
+      "failed": []
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32414-20261101-122417-885349",
+      "passed": false,
+      "error": null,
+      "failed": [
+        "CA440MOON FAIL copied wear remainder is independent",
+        "CA440MOON FAIL copied wear remainder is independent"
+      ]
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32415-20261101-122954-526908",
+      "passed": false,
+      "error": null,
+      "failed": [
+        "CA440MOON FAIL unarmed clone uses the existing fist cycle",
+        "CA440MOON FAIL unarmed clone pays its own Air",
+        "CA440MOON FAIL unarmed clone uses the existing fist cycle",
+        "CA440MOON FAIL unarmed clone pays its own Air"
+      ]
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32416-20261101-123156-964647",
+      "passed": false,
+      "error": null,
+      "failed": [
+        "CA440MOON FAIL copied melee weapon attacks a perceived player",
+        "CA440MOON FAIL native melee damage reaches player defenses",
+        "CA440MOON FAIL copied melee weapon attacks a perceived player",
+        "CA440MOON FAIL native melee damage reaches player defenses"
+      ]
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32417-20261101-123826-385176",
+      "passed": false,
+      "error": null,
+      "failed": [
+        "CA440MOON FAIL copied melee weapon attacks a perceived player",
+        "CA440MOON FAIL native melee damage reaches player defenses",
+        "CA440MOON FAIL unarmed clone uses the existing fist cycle",
+        "CA440MOON FAIL unarmed clone pays its own Air",
+        "CA440MOON FAIL copied melee weapon attacks a perceived player",
+        "CA440MOON FAIL native melee damage reaches player defenses",
+        "CA440MOON FAIL unarmed clone uses the existing fist cycle",
+        "CA440MOON FAIL unarmed clone pays its own Air"
+      ]
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32418-20261101-124046-466410",
+      "passed": false,
+      "error": null,
+      "failed": [
+        "CA440MOON FAIL copied melee weapon attacks a perceived player",
+        "CA440MOON FAIL native melee damage reaches player defenses",
+        "CA440MOON FAIL unarmed clone uses the existing fist cycle",
+        "CA440MOON FAIL unarmed clone pays its own Air",
+        "CA440MOON FAIL copied melee weapon attacks a perceived player",
+        "CA440MOON FAIL native melee damage reaches player defenses",
+        "CA440MOON FAIL unarmed clone uses the existing fist cycle",
+        "CA440MOON FAIL unarmed clone pays its own Air"
+      ]
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32419-20261101-124233-560971",
+      "passed": false,
+      "error": null,
+      "failed": [
+        "CA440MOON FAIL copied melee weapon attacks a perceived player",
+        "CA440MOON FAIL native melee damage reaches player defenses",
+        "CA440MOON FAIL unarmed clone uses the existing fist cycle",
+        "CA440MOON FAIL unarmed clone pays its own Air",
+        "CA440MOON FAIL copied melee weapon attacks a perceived player",
+        "CA440MOON FAIL native melee damage reaches player defenses",
+        "CA440MOON FAIL unarmed clone uses the existing fist cycle",
+        "CA440MOON FAIL unarmed clone pays its own Air"
+      ]
+    }
+  ],
+  "failure_resolution": "Replace unsupported DONTCOUNTKILL with -COUNTKILL; explicitly assign the shadowed Binding field; copy fractional awakening wear after native attachment; retain visible recognition before pursuing an older search point. Native batch preflight now compiles both runtime and fixture before launching peers.",
+  "visual_review": "Final peer0 sequence.png shows an existing body/head appearance with carbine pose and localized clone label. No new artwork. Author review pending.",
+  "static_checks": [
+    "validate_project.py: no errors, context2499 words",
+    "git -c core.whitespace=cr-at-eol diff --check: no errors"
+  ],
+  "author_acceptance": false,
+  "limitations": [
+    "No full-version completion or author acceptance.",
+    "No frame-presentation or siege performance claim.",
+    "Other Major powers, object interactions and standalone modes remain unfinished."
+  ]
+}
