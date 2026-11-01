@@ -4,6 +4,14 @@ Documentation version: **5.13.3** - 2026-10-31.
 
 ## 5.13.3 - Ordered Tarot foundation (#440, implementation checkpoint)
 
+Author decisions (2026-11-01): the last valid Emperor cast controls a summon;
+expiry restores its original allegiance, not an earlier controller. Both control
+and pacification end on map departure without refunding cooldown. Moon clones
+copy the selected weapon, equipment and available resources, spend their own
+ammunition/Air/Anima and leave no loot. Sun releases captured harmful rocks in
+the origin map before travel. These approvals define behavior; they do not
+constitute implementation or manual-test acceptance.
+
 The living-example checkpoint (2026-11-01) adds the owned espinillo to the annex
 display room, with contextual Death/Use instructions. Controller revision2 adds
 the example once to a prior saved controller while preserving its room state,

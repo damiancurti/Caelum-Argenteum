@@ -420,6 +420,9 @@ Lovers passive redistribution in the abstract journey model remains separate wor
   those states. Contamination, hunger, thirst, natural sleep and scenes remain.
 - Emperor:4m plus range/LOS,60s cessation of attacks against caster; reached
   summons obey its target, then recover prior allegiance. Protect scenes/residents.
+  The last valid cast takes control; expiration restores the original allegiance,
+  never an earlier temporary controller. Leaving the map ends both control and
+  pacification before travel, retaining the paid cooldown (approved2026-11-01).
 - Chariot:12m straight at6m/s,2m wide,maximum2s; object-movement Strength pushes
   movable actors, including active Strength; stops at walls, no direct damage.
   Fixed obstacles break only when explicitly marked fragile.
@@ -448,6 +451,9 @@ Lovers passive redistribution in the abstract journey model remains separate wor
 - Moon: two60s clones, caster appearance/attributes,25%maximumHealth/damage,
   perceived enemies, no transferable loot. Judgement: one4m pulse breaks recognized
   magical mind control/illusions, preserving narrative scenes.
+  Clones copy the selected weapon, equipment and available resources at creation.
+  Each spends its own ammunition, Air and Anima under normal rules, without
+  consuming the original's resources or leaving loot (approved2026-11-01).
 - Magician: Zupay-sized3D automaton, body1,000kg/all attributes30. T1/XL armor60kg,
   tower shield24kg/current defense and wear; mace12kg,base blunt130,2.5m reach,
   native14-tic preparation modified by attributes/load. Total1,096kg. Tarot wakes
@@ -459,6 +465,8 @@ Lovers passive redistribution in the abstract journey model remains separate wor
   two1.2m-diameter rocks at2,500kg/m3 (about2,262kg): one8kW thermal source and
   one environmental contamination100 source within4m/LOS. Temporary Box containment
   blocks emissions outside and releases the same rock on expiry.
+  Captured harmful rocks are released in the origin map before travel, rather
+  than transported to the destination (approved2026-11-01).
 - Giant classification compares exterior geometric volume: the character's
   collision cylinder and the documented object shape, including spherical rocks.
   It does not infer volume from mass; the threshold remains at least twice the
