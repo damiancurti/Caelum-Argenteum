@@ -21,7 +21,7 @@ class CaelumTarotExampleRoom : Actor
             if(Doors[i]!=null)
             {
                 Doors[i].args[1]=CaelumTarotExampleData.Slide(i);
-                Doors[i].Angle=0;
+                Doors[i].Angle=CaelumTarotExampleData.DOOR_VISUAL_ANGLE;
                 let route=CaelumTarotExampleRoute(Doors[i]);
                 if(route!=null){route.Room=self;route.WetRoute=i==3;}
             }
@@ -37,6 +37,8 @@ class CaelumTarotExampleRoom : Actor
     void Apply()
     {
         if(!CaelumTarotExampleData.Present())return;
+        // La cara del sprite sigue la abertura; los bloqueadores conservan su eje.
+        for(int i=0;i<4;i++)if(Doors[i]!=null)Doors[i].Angle=CaelumTarotExampleData.DOOR_VISUAL_ANGLE;
         let water=level.Sectors[CaelumTarotExampleData.WATER];
         double targetZ=Wet?CaelumTarotExampleData.DEPTH:0,current=water.CenterCeiling();
         if(Abs(targetZ-current)>0.001)

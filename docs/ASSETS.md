@@ -11,8 +11,12 @@ Justice through the existing deterministic map generator. The previous mansion
 bytes remain in `pre_examples_MAP01.wad`, with SHA-256/provenance in BASELINE.json.
 GEOMETRY.json records the appended indices/counts. APPARATUS.json and
 generate_tarot_examples.py own the generated runtime placements. Portals reuse
-the owned pressure-trap floor visual; door artwork is still the existing leaf.
-Final false-wall styling and author visual review remain pending.
+the owned pressure-trap floor visual. The false-wall leaf now reuses CMST01
+unchanged through a 64x128 TEXTURES alias at the existing door scale; no new
+raster source or external attribution is introduced. All four annex leaves
+face their doorways at90 degrees; native collision/sliding axes stay unchanged.
+Front/rear native images and save migration are recorded in
+assets/validation_v5_13_3/example-wall-art-results.json. Author review is pending.
 
 ## Tarot automaton model (#440, 5.13.3)
 

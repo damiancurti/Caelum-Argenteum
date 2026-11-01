@@ -4,6 +4,15 @@ Documentation version: **5.13.3** - 2026-10-31.
 
 ## 5.13.3 - Ordered Tarot foundation (#440, implementation checkpoint)
 
+The annex-door visual checkpoint (2026-11-01) replaces the false wall's wood
+image with the unchanged owned mansion stone and aligns all four wall sprites
+with their openings. The first live front/rear capture exposed the old edge-on
+orientation despite passing collision checks; the final images show a closed
+stone surface from both sides. An actual prior apparatus save retains its
+controller and collision while adopting visual revision1. Native recovery is
+idempotent. Evidence, fixture failures and final package verification:
+assets/validation_v5_13_3/example-wall-art-results.json. Author review is pending.
+
 The example-apparatus checkpoint (2026-11-01) connects the practice room and
 annex with usable same-map portals, places the authored passage types, and
 implements Wheel's instantaneous dry/wet room transaction. Native two-client

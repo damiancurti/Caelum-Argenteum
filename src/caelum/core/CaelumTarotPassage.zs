@@ -2,8 +2,17 @@
 // decorativas ni se recorren todos los sectores al equipar una carta.
 class CaelumTarotFalseWall : CaelumSlidingDoorLeaf
 {
+    int VisualRevision;
+    override void Tick()
+    {
+        // La primera actualización conserva los bloqueadores y el recorrido
+        // guardados, reemplazando sólo la imagen heredada de puerta de madera.
+        if(VisualRevision<1){VisualRevision=1;SetStateLabel('Spawn');}
+        Super.Tick();
+    }
     static bool Revealed(CaelumPlayer user)
     {return user!=null && CaelumTarotLoadout.Passive(user.GetPersistentCharacterState(false),2);}
+    States {Spawn:CTFW A -1;Stop;}
 }
 
 class CaelumTarotCursedPassage : CaelumSlidingDoorLeaf

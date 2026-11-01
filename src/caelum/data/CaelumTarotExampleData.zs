@@ -8,6 +8,7 @@ class CaelumTarotExampleData : Object
     const DEPTH=64;
     const LIGHT_DRY=192;
     const LIGHT_WET=32;
+    const DOOR_VISUAL_ANGLE=90;
     static vector3 Controller(){return (-27776,-30448,0);}
     static vector3 Door(int index) {
         if(index==0)return (-28736,-30712,0);

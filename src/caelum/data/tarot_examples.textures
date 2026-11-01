@@ -1,0 +1,6 @@
+// La pared móvil reutiliza sin modificar la piedra propia de la mansión.
+Sprite "CTFWA0", 64, 128
+{
+    Offset 32, 128
+    Patch "graphics/caelum/textures/mansion/CMST01.png", 0, 0
+}

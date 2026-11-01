@@ -16,6 +16,8 @@ positions belong to assets/tarot_examples/APPARATUS.json. Both arrival points
 have native collision evidence and reject occupied destinations.
 
 The false-wall and cursed-passage rooms have their authored door classes.
+The false wall uses existing mansion stone; all leaves face their openings,
+including when restoring saves made before the visual correction.
 The Wheel room's two doors alternate with its dry/wet state, and an occupied
 closing doorway prevents the whole change. Its saved revision1 controller
 restores water/light and door ownership. The display room remains reserved

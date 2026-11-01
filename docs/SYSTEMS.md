@@ -288,6 +288,11 @@ default to their prior access rules. Both passives use the current aim/native
 door group, without polling the map for secrets or curses. Current maps have no
 implicit conversion to these classes; only authored examples opt in.
 
+The false wall uses the mansion's original stone texture. Its saved visual
+revision1 replaces the inherited wood sprite once on first update after loading,
+without resetting its position, opening progress or collision. The annex
+controller reapplies authored facing on load; this changes only presentation.
+
 The equipped Death passive also accepts Use on the explicitly typed
 CaelumTarotLivingObstacle family, within normal interaction range and sight.
 It sets that obstacle's contamination to100 and destroys the exact actor through
@@ -417,7 +422,7 @@ Lovers passive redistribution in the abstract journey model remains separate wor
   existing carrying capacity, evaluating Strength x10 only while the active lasts.
 - Wheel's mansion example has two linked states: dry/lit/inactive mechanisms or
   flooded/dark/active mechanisms, opening one exit and closing the other. Approved
-  water depth2m and sector light192/32. Implementation remains pending.
+  water depth2m and sector light192/32. Native implementation is checked above.
 - Justice: shared24x24m arena in every playable map. Each pair returns survivors
   on its own60s expiry or either member's death, without ending other pairs;
   no actor may belong to two simultaneous pairs. New campaigns receive the new
