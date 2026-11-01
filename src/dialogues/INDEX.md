@@ -40,6 +40,7 @@ Runtime-generated text keys are also discoverable with `find TERM` in the comple
 | guards | [guards.usdf](npc/guards.usdf) | 43631, 43632, 43654, 43655 |
 | rental_agent | [rental_agent.usdf](npc/rental_agent.usdf) | 43660 |
 | companions | [companions.usdf](shared/companions.usdf) | 43890 |
+| arcana_capture | [arcana_capture.usdf](shared/arcana_capture.usdf) | 43622 |
 
 Source SHA-256 fingerprints:
 
@@ -64,4 +65,5 @@ Source SHA-256 fingerprints:
 - `dialogues/npc/guards.usdf`: `8fea805fc5c840d714f04bc151b53c03d3c080dbafd644b536602ffdba1d2a51`
 - `dialogues/npc/rental_agent.usdf`: `41f0f8696a70290e98c38bf1952824bc7a53eb106d55a47783cfc59f8c0d7b53`
 - `dialogues/shared/companions.usdf`: `8f0fe3747a879e7ce156c26425f9fb8106363c18c25babf9c3a3cdfab425fa5f`
-- `dialogues/index.json`: `2452aa0d5fbd429a8085d8ca47f140cd98b709028b096fcef143caffb2bafe88`
+- `dialogues/shared/arcana_capture.usdf`: `586a7630d487a5ea7febd28d04ac88601573632ae915521cfa22275e033d58a8`
+- `dialogues/index.json`: `2aafbda4c6f85ae46c6db0cce412504d899617ce8326f11e7ff8cb8d8db4e332`

@@ -101,7 +101,9 @@ class CaelumArcanaProgress : Object play
                 record.ArcanaAvailable[CaelumConstants.TAROT_WANDS_KNIGHT] = true;
             knightNeeded = knightNeeded || CanCapture(record, CaelumConstants.TAROT_WANDS_KNIGHT);
         }
-        if (knightNeeded && ThinkerIterator.Create("CaelumWandsKnightEssence").Next() == null)
-            Actor.Spawn("CaelumWandsKnightEssence", CaelumArcanaPlacement.PortSpot(), NO_REPLACE);
+        if (knightNeeded && CaelumArcanaSources.Ready()
+            && CaelumArcanaSources.Find(CaelumConstants.TAROT_WANDS_KNIGHT) == null)
+            CaelumArcanaSources.Register(CaelumM00FoolEssence(Actor.Spawn(
+                "CaelumWandsKnightEssence", CaelumArcanaPlacement.PortSpot(), NO_REPLACE)));
     }
 }

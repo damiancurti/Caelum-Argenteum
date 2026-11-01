@@ -1188,6 +1188,9 @@ class CaelumJournalOverlay : EventHandler
 
     ui void DrawInventoryPage(CaelumPlayer localPlayer)
     {
+        if(localPlayer.TarotOwnedCountSnapshot==CaelumConstants.TAROT_CARD_COUNT)
+            DrawTextLine(SmallFont,Font.CR_GOLD,414,151,
+                StringTable.Localize("CA_TAROT_UNIFIED_ACTION",false));
         for (int index = 0;
             index < CaelumPlayer.FORMAL_INVENTORY_FILTER_COUNT; index++)
         {
@@ -1547,10 +1550,8 @@ class CaelumJournalOverlay : EventHandler
         double cardHeight = 156 * Min(1.0, ratio);
         DrawTexture(CaelumTarotArt.FrontPath(selected),
             76 + (104-cardWidth)*0.5, 151 + (156-cardHeight)*0.5, cardWidth, cardHeight);
-        String nameKey = CaelumTarotArt.NameKey(selected);
         DrawTextLine(TextFont, Font.CR_GOLD, 210, 151,
-            nameKey != "" ? StringTable.Localize(nameKey, false)
-                : String.Format(StringTable.Localize("CA_TAROT_CARD_NUMBER", false), selected));
+            CaelumTarotArt.DisplayName(selected));
         bool captured = localPlayer.TarotOwnedSnapshot[selected];
         int selectedCount = 0;
         for (int card = 0; card < CaelumConstants.TAROT_CARD_COUNT; card++)
@@ -2812,6 +2813,10 @@ class CaelumJournalOverlay : EventHandler
             SendNetworkEvent("ca_inventory_filter");
             SendNetworkEvent("ca_journal_menu_move_sound");
         }
+        else if(currentPage==0 && (character==117 || character==85 || keyString~=="u"))
+        {
+            SendNetworkEvent("ca_tarot_unified");
+        }
         else if (currentPage == 0
             && (scan == InputEvent.Key_Enter
                 || scan == InputEvent.Key_Pad_A))
@@ -2902,6 +2907,7 @@ class CaelumJournalOverlay : EventHandler
         if (e.Name == "ca_crafting_browser_confirm")
         { CaelumCraftingBrowser.Get(requestingPlayer).Confirm(requestingPlayer,e.Args[0],e.Args[1],e.Args[2]); return; }
         if (e.Name == "ca_tarot_select") { CaelumTarotService.Select(requestingPlayer, e.Args[0]); }
+        else if(e.Name=="ca_tarot_unified")CaelumUnifiedTarot.Activate(requestingPlayer);
         else if (e.Name == "ca_event_action") { CaelumScheduleState.Act(requestingPlayer, e.Args[0]); }
         else if (e.Name == "ca_debug_events_report") { CaelumScheduleState.Report(requestingPlayer); }
         else if (e.Name == "ca_debug_events_trial") { CaelumScheduleTrial.Enable(requestingPlayer); }

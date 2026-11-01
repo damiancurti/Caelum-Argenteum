@@ -1,6 +1,15 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.13.0** - 2026-10-31.
+Documentation version: **5.13.1** - 2026-10-31.
+
+## Tarot capture fronts (#441, 5.13.1)
+
+The deterministic `assets/generators/tarot_world_fronts.py` registers the 75
+additional world-front aliases and actor states from the owned #15 catalogue.
+It does not alter any image pixels, palette, dimensions or provenance. Existing
+Fool/Ace/Knight aliases and saved state offsets are retained. Generated outputs
+are packaged under caelum/data and caelum/quests; all actual front PNGs remain
+those recorded in assets/manifests/tarot_78_v4369.json.
 
 ## Native diagnostics and local presentation (#435, 5.12.7)
 

@@ -1,6 +1,38 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.13.0** - 2026-10-31.
+Documentation version: **5.13.1** - 2026-10-31.
+
+## 5.13.1 - Capture sources and unified Tarot (#441)
+
+Mission rewards place an essence on the floor at a caller-authored position;
+only the existing reveal/Box/deck capture transaction grants ownership. The
+original Fool, Ace of Cups and Knight of Wands gates remain unchanged. The other
+75 placements belong to V5.16. Repeated reward calls share a world source while
+eligibility and collection remain personal. Interrupted/duplicate captures do
+not grant or consume cards. All 78 fronts reuse the owned #15 illustrations.
+
+Collecting all 78 without consuming them enables the unified essence. Inventory
+U activates it only with World equipped: 1,000 Anima, 60 active seconds and the
+shared 600-second Tarot cooldown. It permits damage to deities, without adding
+a damage multiplier; ordinary defenses and narrative scene protections remain.
+Palomo implements the deity contract; Selene has no actor in this delivery.
+The effect ends on death/expiry; ownership persists. Revision 1 initializes only
+the new timer, leaving prior collection/progress unchanged. Retain original
+saves and the previous checkout for rollback.
+
+Sources use a fixed 78-slot map registry: creation/destruction update it, and each
+essence's O(1) tick registers itself after load. Creation waits for one full map
+tick so legacy/hub sources register before a reward retries. There is no new
+global actor scan, including on save migration. The old per-tic Knight thinker
+search is removed; the existing unique sewer-boss TID query remains unchanged.
+
+The final official package passed two-client native capture and reload runs:
+106 assertions per client for capture/activation and 7 per client for recovery,
+plus completion markers and matching native synchronization checks. All 18,006
+package members match source; front generation is byte-identical on repeated
+runs. Evidence: assets/validation_v5_13_1/results.json. #440 still supplies normal
+World equipment selection; tests prepare that selection diagnostically. Final
+author scenarios wait for all V5.13 work; no author acceptance is claimed.
 
 ## V5.13 authored Tarot contract and implementation audit (#439)
 
@@ -75,7 +107,7 @@ new effect's quantitative behavior.
 | 18 | The Moon (La Luna) | Allows swapping places with clones. | Creates clones of the player. | Clone count/geometry, behavior, damage, lifetime, swap targeting and safe placement. |
 | 19 | The Sun (El Sol) | Adds ten Magic Box slots and prevents damage from objects inside the Box. | Captures one harmful object while the effect is active; it is automatically dropped when the effect ends. | Capacity (+10), stored-object damage prevention and one temporary capture known; eligible harmful objects, capture/drop behavior. |
 | 20 | Judgement (El Juicio) | Allows talking to spirits. | Breaks mind control and illusions within the area. | Eligible spirits, mind controls/illusions, radius, restoration and quest protections. |
-| 21 | The World (El Mundo) | Allows activating the unified Tarot essence. | Activates the effects of all unequipped Arcana, both Major and Minor; skips invalid targets. | Unified essence damages deities (author clarification); formation/activation still open. Active needs internal order, ownership, target selection and recursion/cost rules. |
+| 21 | The World (El Mundo) | Allows activating the unified Tarot essence. | Activates the effects of all unequipped Arcana, both Major and Minor; skips invalid targets. | Unified essence damages deities (author clarification); formed by all 78; activation defined in #441 above. Active needs internal order, ownership, target selection and recursion/cost rules. |
 
 ### Existing runtime and migration audit
 
@@ -89,8 +121,9 @@ new effect's quantitative behavior.
   sequence is recoverable without inventing a previous preference.
 - Existing constants are 3 selected slots, 1,000 total Anima, 60 effect seconds
   and 600 cooldown seconds. Minor actives add their existing fixed contribution
-  once more. Extension of this cost/timer baseline to all new effects is awaiting
-  explicit approval; immediate effects still need their own settled semantics.
+  once more. The author approved this shared baseline for new effects. Instant
+  effects occur once; applicable active effects support an additional Tarot-key
+  action, whose per-power interaction remains to be specified.
 - `CaelumFoolTravel` already preserves the original dead body, exceptional
   all-dead activation, spirit restrictions and Palomo's return. Current travel
   does not require a dead participant, votes include dead participants and
@@ -105,8 +138,8 @@ new effect's quantitative behavior.
   #441 adds reusable hooks and once-only feedback; the other 75 geographic
   placements remain V5.16. The author clarified that the unified essence is a
   power allowing damage to deities such as Selene and Palomo. The author approved
-  formation by collecting all 78 essences without consuming them; duration,
-  activation and exact damage-gate semantics remain unresolved.
+  formation by collecting all 78 essences without consuming them; #441 above
+  records the subsequently approved inventory activation and scene protection.
 - Existing elemental essence crafting is separate from Tarot equipment
   awakening. #442 permits any weapon, direct character action, reversible
   association and retained essence ownership. Armor/seal unlocks are in scope;

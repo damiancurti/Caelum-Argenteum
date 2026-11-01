@@ -89,6 +89,8 @@ class CaelumPersistentCharacterState : Inventory
     bool TarotActive[CaelumConstants.TAROT_CARD_COUNT];
     int TarotEffectTics;
     int TarotCooldownTics;
+    int UnifiedTarotRevision;
+    int UnifiedTarotTics;
     int TarotDeckRevision;
     bool TarotDeckGranted;
     // #34: registro aditivo; nunca sustituye progreso ni recompensas anteriores.

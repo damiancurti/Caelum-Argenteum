@@ -1,0 +1,10 @@
+namespace="GZDoom";
+conversation {
+ id=43622; class="CaelumFoolConversationMenu";
+ page {
+  pagename="arcana_revealed"; userstring="fool_revealed";
+  name="$CA_ARCANA_SOURCE_NAME"; dialog="$CA_ARCANA_SOURCE_REVEAL";
+  goodbye="$CA_M01_FOOL_LATER";
+  choice { text="$CA_M01_FOOL_CAPTURE"; giveitem="CaelumM00CaptureFoolAction"; closedialog=true; }
+ }
+}

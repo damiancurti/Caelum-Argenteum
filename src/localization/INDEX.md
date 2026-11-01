@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `63276acf05bbd4a98f9980e52bb9a071c55f8d2ead958405a7dd06025008b66a`. Locations include every definition; the last one per language wins.
+SHA-256: `4e01db7b613c922e7c34f6d388670f73b102cab670acada7e30393ea1648c01d`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -22,7 +22,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_AMMUNITION | 1 | CA_AMMUNITION_SHOTGUN | CA_AMMUNITION_SHOTGUN |
 | CA_AMULET | 4 | CA_AMULET_EMERALD | CA_AMULET_TOPAZ |
 | CA_APPEARANCE | 37 | CA_APPEARANCE_FACE | CA_APPEARANCE_WALK |
-| CA_ARCANA | 3 | CA_ARCANA_CUPS_REVEAL | CA_ARCANA_WANDS_REVEAL |
+| CA_ARCANA | 5 | CA_ARCANA_CUPS_REVEAL | CA_ARCANA_WANDS_REVEAL |
 | CA_ARCANE | 2 | CA_ARCANE_CLOUD_CAST | CA_ARCANE_SUN_CAST |
 | CA_ARENA | 20 | CA_ARENA_ASK | CA_ARENA_YOUR_TEAM |
 | CA_ARGENTO | 1 | CA_ARGENTO_NAME | CA_ARGENTO_NAME |
@@ -196,7 +196,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_SURVIVAL | 11 | CA_SURVIVAL_COLD_WARNING | CA_SURVIVAL_THIRST_WARNING |
 | CA_TABLE | 17 | CA_TABLE_AUTO_HELP | CA_TABLE_TAKE_FOOD |
 | CA_TARGET | 22 | CA_TARGET_APPROACH | CA_TARGET_USE |
-| CA_TAROT | 66 | CA_TAROT_BONUS | CA_TAROT_WANDS_KNIGHT_NAME |
+| CA_TAROT | 91 | CA_TAROT_BONUS | CA_TAROT_WANDS_KNIGHT_NAME |
 | CA_TC | 79 | CA_TC_ABANDONED | CA_TC_YOUR_HAND |
 | CA_TELEKINESIS | 1 | CA_TELEKINESIS_TARGET | CA_TELEKINESIS_TARGET |
 | CA_TELEPORT | 1 | CA_TELEPORT_TRAP | CA_TELEPORT_TRAP |

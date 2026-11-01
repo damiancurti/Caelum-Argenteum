@@ -55,7 +55,7 @@ class CaelumContaminationAbsence : Object play
     {
         // Equivale a la entrada nativa de daÃ±o sostenido sin inflictor. Capturar
         // antes de que Suspend quite SHOOTABLE para aparcar al residente.
-        Immune=npc.bInvulnerable || npc.bNoDamage || npc.bSpectral || (!npc.bShootable && !npc.bVulnerable)
+        Immune=npc.IsTarotDeity() || npc.bInvulnerable || npc.bNoDamage || npc.bSpectral || (!npc.bShootable && !npc.bVulnerable)
             || !CaelumRedemption.AllowsDamage(null,npc,'CaelumDiseaseDOT');
         Nonlethal=npc.bBuddha;
         let resident=CaelumAnchoredResident(npc);

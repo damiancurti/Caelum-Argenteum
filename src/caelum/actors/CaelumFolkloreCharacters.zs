@@ -64,6 +64,19 @@ class CaelumInteractiveFolkloreActor : CaelumFolkloreCombatActor abstract
 
 class CaelumPalomo : CaelumInteractiveFolkloreActor
 {
+    override bool IsTarotDeity(){return true;}
+
+    override int DamageMobj(Actor inflictor,Actor source,int damage,Name mod,int flags,double angle)
+    {
+        if(!CaelumUnifiedTarot.Active(CaelumPlayer(source)))return 0;
+        // Las escenas conservan protección aunque el atacante tenga el poder.
+        if(bInvisible || bInConversation || (NarrativeRevealRequired && !NarrativeRevealed)
+            || (DepartureStarted && !DepartureDone))return 0;
+        bool protectedBefore=bInvulnerable;bInvulnerable=false;
+        int result=Super.DamageMobj(inflictor,source,damage,mod,flags,angle);
+        bInvulnerable=protectedBefore;
+        return result;
+    }
     override double GetInnateArmorDefense(bool magical)
     {
         return CaelumArmorRules.PALOMO_DEFENSE;
