@@ -1,7 +1,7 @@
 {
   "issue": 234,
   "revision": 1,
-  "map_checksum": "29bb6860a3907ef34978201f1a81a9b6",
+  "map_checksum": "81ef3d115f0b73f3d21fcf7ca8004d67",
   "source": "src/maps/MAP01.wad; REPAIR.json; PRACTICE.json; CaelumMainM00QuestController.PlaceRoomStations; CaelumMansionFurniture.Prepare",
   "discovery": "Player feet inside the room's authored interior and storey; no sight radius. Secret spaces and connections are deliberately absent.",
   "rooms": [
@@ -128,5 +128,6 @@
   ],
   "geometry_audit": "Native LineTracer at Z=48 confirms workshop side walls X=32/704 and front walls Y=+/-100; the original sector bounds omit the adjoining side-door strips. Upper-room bounds retain REPAIR.json interiors.",
   "geometry_review": "Issue #440: appended isolated Justice arena only; original TEXTMAP prefix, room IDs and bounds unchanged.",
-  "pre_justice_checksum": "b9e3c740a85b8532c362d36113f882ae"
+  "pre_justice_checksum": "b9e3c740a85b8532c362d36113f882ae",
+  "pre_examples_checksum": "29bb6860a3907ef34978201f1a81a9b6"
 }

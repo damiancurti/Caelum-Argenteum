@@ -47,8 +47,9 @@ def render(root=ROOT):
     legacy_mansion = wad_checksum(root/'assets/map01_mansion/legacy_581/MAP01.wad')
     lines += [f'    const MAP01_LEGACY_CHECKSUM = "{legacy_mansion}";',
               f'    const MAP01_PREJUSTICE_CHECKSUM = "{mansion["pre_justice_checksum"]}";',
+              f'    const MAP01_PREEXAMPLES_CHECKSUM = "{mansion["pre_examples_checksum"]}";',
               '    static bool MatchesMansionGeometry(String checksum)', '    {',
-              '        return checksum==MAP01_CHECKSUM || checksum==MAP01_LEGACY_CHECKSUM || checksum==MAP01_PREJUSTICE_CHECKSUM;',
+              '        return checksum==MAP01_CHECKSUM || checksum==MAP01_LEGACY_CHECKSUM || checksum==MAP01_PREJUSTICE_CHECKSUM || checksum==MAP01_PREEXAMPLES_CHECKSUM;',
               '    }']
     # Both layouts share exactly the same authored POI coordinates and IDs.
     furnished = wad_checksum(root/'assets/map06_port/legacy_5427/MAP06.wad')

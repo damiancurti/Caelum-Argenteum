@@ -4,6 +4,17 @@ Documentation version: **5.13.3** - 2026-10-31.
 
 ## 5.13.3 - Ordered Tarot foundation (#440, implementation checkpoint)
 
+The mansion example geometry checkpoint (2026-11-01) appends ten sectors,
+92 linedefs and82 vertices after the existing Justice arena, preserving the
+entire earlier TEXTMAP prefix and all actor placements. Native two-client tests
+check four room identities, real-body/large-body clearance, the separating
+partition and lintel, native two-metre water and32 light, plus common recovery.
+The retained pre-example WAD and `-LegacyTarotExamples` provide an exact reversible
+baseline; cartography accepts it and earlier layouts. Evidence and final counts:
+assets/validation_v5_13_3/example-geometry-results.json. The incidental opening
+conversation obscures the diagnostic screenshot, so it is not presented as full
+visual acceptance. Runtime access/apparatus and final author review remain pending.
+
 The authored-passage checkpoint (2026-11-01) adds viewer-specific Priestess
 identification and persistent Hierophant purification. Door groups validate
 scene/key/faction/passive permissions before committing any leaf. Native tests

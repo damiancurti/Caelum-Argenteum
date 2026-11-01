@@ -1,0 +1,31 @@
+{
+  "sectors": [
+    7750,
+    7751,
+    7752,
+    7753,
+    7754
+  ],
+  "thresholds": [
+    7755,
+    7756,
+    7757,
+    7758
+  ],
+  "water_control": 7759,
+  "settings_sha256": "ad6d759a8d9a32f08c6da1eaf7f23849d38e14521e6ed1e2e74942cc8ed0d450",
+  "original_counts": {
+    "vertex": 5949,
+    "sector": 7750,
+    "sidedef": 26190,
+    "linedef": 13514,
+    "thing": 408
+  },
+  "added_counts": {
+    "vertex": 82,
+    "sector": 10,
+    "sidedef": 102,
+    "linedef": 92,
+    "thing": 0
+  }
+}

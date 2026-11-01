@@ -4795,7 +4795,7 @@
     {
       "file": "MAP01.wad",
       "legacy_sha256": "15156f89b6526e72d26a6fe726c4d3f84943fb161061556492e588d1e3b1a334",
-      "sha256": "a33c53f67840cede1dca4d0064219dd9c82f40b475742458f762a58965df1e2a",
+      "sha256": "fe7adb9480353fd8faf06d7e09d967836f45ba2fde8748e2fca356226e577de0",
       "geometry": {
         "sector": 7749,
         "origin": [
@@ -4810,7 +4810,38 @@
         ],
         "width_mu": 768,
         "original_vertices": 5945,
-        "original_sectors": 7749
+        "original_sectors": 7749,
+        "examples": {
+          "sectors": [
+            7750,
+            7751,
+            7752,
+            7753,
+            7754
+          ],
+          "thresholds": [
+            7755,
+            7756,
+            7757,
+            7758
+          ],
+          "water_control": 7759,
+          "settings_sha256": "ad6d759a8d9a32f08c6da1eaf7f23849d38e14521e6ed1e2e74942cc8ed0d450",
+          "original_counts": {
+            "vertex": 5949,
+            "sector": 7750,
+            "sidedef": 26190,
+            "linedef": 13514,
+            "thing": 408
+          },
+          "added_counts": {
+            "vertex": 82,
+            "sector": 10,
+            "sidedef": 102,
+            "linedef": 92,
+            "thing": 0
+          }
+        }
       }
     },
     {
@@ -4983,5 +5014,6 @@
     }
   ],
   "settings_sha256": "885f1ddb374b3204bfef51c92224700cf75dc1bff7af0e40a7344c33bf03a3d5",
-  "index_sha256": "509a7476a653587f11e10a04f0abd65d98e0f19fab851019bb8c61d51321f954"
+  "index_sha256": "509a7476a653587f11e10a04f0abd65d98e0f19fab851019bb8c61d51321f954",
+  "examples_settings_sha256": "ad6d759a8d9a32f08c6da1eaf7f23849d38e14521e6ed1e2e74942cc8ed0d450"
 }

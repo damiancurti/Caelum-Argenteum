@@ -2,6 +2,16 @@
 
 Documentation version: **5.13.3** - 2026-10-31.
 
+## Tarot example annex geometry (#440, 5.13.3)
+
+`assets/tarot_examples/ROOM.json` owns the implementation layout. The annex
+reuses original mansion stone/pool textures (CMST01/CMST02/CAPOOL01), adding no
+external assets or narrative. `tarot_example_geometry.py` appends it after
+Justice through the existing deterministic map generator. The previous mansion
+bytes remain in `pre_examples_MAP01.wad`, with SHA-256/provenance in BASELINE.json.
+GEOMETRY.json records the appended indices/counts. Runtime apparatus and final
+visual review remain separate from this geometry checkpoint.
+
 ## Tarot automaton model (#440, 5.13.3)
 
 The author explicitly requested a Zupay-sized 3D automaton with heavy armor,

@@ -245,8 +245,10 @@ controller lookup; ordinary quality queries are constant-time. Eight diagnostic
 native MAP01 samples (7,749 sectors/30 water parts) measured0.2015-0.44863ms for
 constructing/indexing/destroying a cold controller and0.00018-0.00046ms for an
 already-indexed call. These are CPU samples, not frame-presentation evidence.
-The cursed-passage passive is implemented below; authored mansion examples still
-need placement in the final gallery.
+The cursed-passage passive is implemented below; mansion examples still need
+runtime placement/access in the appended gallery. Its data and reversible
+geometry are described in MAP01. The native water floor has been checked at
+the approved dry/wet levels; the Wheel power/controller is not yet integrated.
 
 ### Authored passage passives
 

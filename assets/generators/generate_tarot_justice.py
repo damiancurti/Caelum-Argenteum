@@ -11,6 +11,10 @@ import math
 import re
 import struct
 import zipfile
+try:
+    from .tarot_example_geometry import append_examples
+except ImportError:
+    from tarot_example_geometry import append_examples
 
 ROOT = Path(__file__).resolve().parents[2]
 DATA = ROOT / 'assets/tarot_justice'
@@ -58,6 +62,11 @@ def validate(root):
         problems.append('Pre-Justice map archive checksum mismatch')
     if digest((root/'src/caelum/data/CaelumJusticeGeometry.zs').read_bytes())!=manifest['index_sha256']:
         problems.append('Stale Justice geometry index')
+    if digest((root/'assets/tarot_examples/ROOM.json').read_bytes())!=manifest.get('examples_settings_sha256'):
+        problems.append('Stale Tarot example geometry settings')
+    baseline=json.loads((root/'assets/tarot_examples/BASELINE.json').read_text(encoding='utf-8'))
+    if digest((root/'assets/tarot_examples'/baseline['baseline_file']).read_bytes())!=baseline['baseline_sha256']:
+        problems.append('Pre-example mansion baseline checksum mismatch')
     for row in manifest['maps']:
         if digest((root/'src/maps'/row['file']).read_bytes())!=row['sha256']:
             problems.append(f'Stale Justice arena geometry: {row["file"]}')
@@ -130,6 +139,8 @@ def main():
         for row in manifest['maps']:
             old=baseline.read(row['file']);assert digest(old)==row['legacy_sha256']
             new,geometry=append_arena(old,data)
+            new,examples=append_examples(new)
+            if examples is not None:geometry['examples']=examples
             path=ROOT/'src/maps'/row['file']
             if args.check:
                 assert path.read_bytes()==new, f'Stale Justice map: {path.name}'
@@ -137,6 +148,11 @@ def main():
             else:
                 if path.read_bytes()!=new:path.write_bytes(new);changed+=1
                 row.update(sha256=digest(new),geometry=geometry)
+            if examples is not None:
+                example_report=(json.dumps(examples,indent=2)+'\n').encode()
+                example_path=ROOT/'assets/tarot_examples/GEOMETRY.json'
+                if args.check:assert example_path.read_bytes()==example_report,'Stale Tarot example geometry report'
+                else:example_path.write_bytes(example_report)
     native=['// #440: generado desde assets/tarot_justice; sin buscar sectores por tic.',
             'class CaelumJusticeGeometry : Object', '{',
             f'    const REVISION={data["revision"]};',
@@ -162,6 +178,7 @@ def main():
     if not args.check:
         manifest['settings_sha256']=digest((DATA/'ARENA.json').read_bytes())
         manifest['index_sha256']=digest(output)
+        manifest['examples_settings_sha256']=digest((ROOT/'assets/tarot_examples/ROOM.json').read_bytes())
         manifest_path.write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf-8',newline='\n')
     print(json.dumps({'maps':len(manifest['maps']),'changed':changed,'checked':args.check,'legacy_archive_sha256':manifest['archive_sha256']}))
 

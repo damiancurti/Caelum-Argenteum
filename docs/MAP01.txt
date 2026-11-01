@@ -2,6 +2,22 @@ CAELUM ARGENTEUM — STORY AND MAP01
 
 Documentation version: **5.13.3** - 2026-10-31.
 
+## 5.13.3 - Tarot example annex geometry (#440)
+
+An appended teaching annex reserves a display room, separate false-wall and
+cursed-passage rooms, and the Wheel room. It is south of all original mansion
+geometry and east of the separate Justice arena. All prior TEXTMAP bytes,
+indices, things and room discovery bounds remain unchanged. Ten sectors and
+92 linedefs are appended; partitions prevent bypassing the special doorways.
+The Wheel room has a native nonsolid swimmable floor, initially dry, supporting
+the approved two-metre depth and sector lights192/32. Runtime access/apparatus
+placement follows this geometry checkpoint; it adds no mission or reward.
+
+`build_dev.ps1 -LegacyTarotExamples` keeps the exact Justice-era mansion before
+this annex. Older campaigns use the existing `-LegacyTarotMaps` or `-LegacyMap01`
+baseline appropriate to their geometry. These options replace map data only;
+original saves remain untouched. Cartography recognizes all retained revisions.
+
 ## 5.13.2 - Equipment awakening integration (#442)
 
 This patch changes the character inventory and combat equipment only. It adds

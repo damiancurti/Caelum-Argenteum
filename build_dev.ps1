@@ -3,6 +3,7 @@ param(
     [string]$Destination = "build/caelum_argenteum_dev.pk3",
     [switch]$LegacyMap01,
     [switch]$LegacyTarotMaps,
+    [switch]$LegacyTarotExamples,
     [switch]$LegacyMap02,
     [switch]$LegacyMap02Revision4,
     [switch]$LegacyMap06,
@@ -13,6 +14,9 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
+if ($LegacyTarotExamples -and ($LegacyTarotMaps -or $LegacyMap01)) {
+    throw 'Select one mansion baseline: -LegacyTarotExamples, -LegacyTarotMaps or -LegacyMap01.'
+}
 if ($LegacyMap02 -and $LegacyMap02Revision4) {
     throw 'Select only one MAP02 compatibility revision: -LegacyMap02 or -LegacyMap02Revision4.'
 }
@@ -73,6 +77,15 @@ if ($LegacyTarotMaps) {
     finally { $TarotArchive.Dispose() }
 }
 $LegacyMap01Bytes = $null
+if ($LegacyTarotExamples) {
+    $ExampleDirectory = Join-Path $ProjectRoot 'assets/tarot_examples'
+    $ExampleBaseline = Get-Content -LiteralPath (Join-Path $ExampleDirectory 'BASELINE.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+    $ExampleMapPath = Join-Path $ExampleDirectory $ExampleBaseline.baseline_file
+    if ((Get-FileHash -LiteralPath $ExampleMapPath -Algorithm SHA256).Hash -ine $ExampleBaseline.baseline_sha256) {
+        throw 'Pre-example mansion checksum mismatch; existing output was not changed.'
+    }
+    $LegacyMap01Bytes = [IO.File]::ReadAllBytes($ExampleMapPath)
+}
 if ($LegacyMap01) {
     $LegacyMansionPath = Join-Path $ProjectRoot 'assets/map01_mansion/legacy_581/MAP01.wad'
     if ((Get-FileHash -LiteralPath $LegacyMansionPath -Algorithm SHA256).Hash -ne '866A25A3ADAD62A742F3A1E65FA9C029852450B99E372B63CAF57321B15F408A') {
@@ -220,7 +233,7 @@ try {
                 )
                 $EntryStream = $Entry.Open()
                 try {
-                    if ($LegacyMap01 -and $EntryName -ieq 'maps/MAP01.wad') {
+                    if (($LegacyMap01 -or $LegacyTarotExamples) -and $EntryName -ieq 'maps/MAP01.wad') {
                         $EntryStream.Write($LegacyMap01Bytes, 0, $LegacyMap01Bytes.Length)
                         $LegacyMansionReplacementCount++
                     }
@@ -256,7 +269,7 @@ try {
             if ($LegacyTarotMaps -and $LegacyTarotReplacementCount -ne $LegacyTarotBytes.Count) {
                 throw 'Pre-Justice compatibility requires every preserved map in the package.'
             }
-            if ($LegacyMap01 -and $LegacyMansionReplacementCount -ne 1) {
+            if (($LegacyMap01 -or $LegacyTarotExamples) -and $LegacyMansionReplacementCount -ne 1) {
                 throw 'Legacy compatibility requires exactly one maps/MAP01.wad entry in the source.'
             }
             if (($LegacyMap06 -or $LegacyMap06Siege -or $LegacyMap06NorthCity -or $LegacyMap06SouthCity -or $LegacyMap06Furnished) -and $LegacyPortReplacementCount -ne 1) {
@@ -306,9 +319,12 @@ try {
     if ($LegacyTarotMaps) {
         Write-Host 'Justice compatibility: byte-identical pre-arena maps; newer arena effects are unavailable. Explicit older per-map switches take precedence.'
     } else {
-        Write-Host 'Justice geometry: new campaigns. Existing visited-map saves require -LegacyTarotMaps.'
+        Write-Host 'Justice geometry: new campaigns. Pre-Justice visited-map saves require -LegacyTarotMaps.'
     }
-    if ($LegacyMap01) {
+    if ($LegacyTarotExamples) {
+        Write-Host 'MAP01 layout: byte-identical Justice-era mansion before the Tarot example annex.'
+    }
+    elseif ($LegacyMap01) {
         Write-Host 'MAP01 layout: byte-identical pre-5.8.2 mansion for existing campaigns; connected deposits inactive.'
     }
     else {
