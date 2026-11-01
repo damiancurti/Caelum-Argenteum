@@ -11,9 +11,13 @@ class CaelumInventoryService : Object play
         chest.EnsureStorage();user.RefreshCarriedInventorySummary();
         let maze=CaelumMazeChest(chest);
         if(maze!=null)maze.UsesMaterialStoragePolicy();
-        if(!user.CanAddWeightToPersonalInventory(chest.TotalStorageWeight(user)))return false;
         let cargo=CaelumChestCargo(Actor.Spawn(chest.CargoClass(),user.Pos,NO_REPLACE));
         if(cargo==null)return false;
+        cargo.Chest=chest;
+        int route=CaelumTarotStar.StorageFurniture(chest)?CaelumTarotStar.CarryRoute(user,cargo,chest.TotalStorageWeight(user)):
+            user.CanAddWeightToPersonalInventory(chest.TotalStorageWeight(user))?0:-1;
+        if(route<0){cargo.Chest=null;cargo.Destroy();return false;}
+        cargo.InMagicBox=route==1;cargo.BoxRevision=1;
         let session=CaelumContainerSession.Get(user);if(session!=null)session.Close();
         let preview=CaelumChestPreviewState.Get(user);if(preview!=null)preview.Close();
         cargo.Chest=chest;cargo.AttachToOwner(user);chest.Cargo=cargo;
@@ -769,6 +773,7 @@ class CaelumInventoryService : Object play
         {
             CaelumEquipmentItem item = CaelumEquipmentItem(cursor);
             if (item != null && item.InMagicBox) { total++; }
+            let cargo=CaelumChestCargo(cursor);if(cargo!=null && cargo.InMagicBox && cargo.Chest!=null)total++;
         }
         for (Inventory cursor = user.Inv; cursor != null; cursor = cursor.Inv)
         {
@@ -2266,11 +2271,13 @@ class CaelumInventoryService : Object play
         soapCreditWeight+=CaelumCampFuelCredit.Weight(user);
         personalInventoryWeight+=soapCreditWeight;carriedItemWeight+=soapCreditWeight;
 
-        // Los cofres cargados no reciben la compresión de la Caja Mágica.
+        // Los cofres comunes siguen fuera de la Caja. Los muebles catalogados
+        // conservan el cuerpo y contenido real al guardarse, con una sola masa.
         for(Inventory cursor=user.Inv;cursor!=null;cursor=cursor.Inv)
         {
             let cargo=CaelumChestCargo(cursor);if(cargo==null || cargo.Chest==null)continue;
             double weight=cargo.CarriedWeight(user);
+            if(cargo.InMagicBox){user.MagicBoxUsedSlots++;magicBoxRawContentWeight+=weight;continue;}
             user.PersonalInventoryItemCount++;personalInventoryWeight+=weight;carriedItemWeight+=weight;
         }
         if(CaelumSunCargo.Occupied(user))
@@ -2538,7 +2545,7 @@ class CaelumInventoryService : Object play
         if(cargo!=null)
         {
             user.FormalInventoryRowType[row]=cargo.Chest!=null ? cargo.Chest.StorageDisplayType() : CaelumContainerRules.MEDIUM;
-            user.FormalInventoryRowAmount[row]=1;return;
+            user.FormalInventoryRowAmount[row]=1;user.FormalInventoryRowInMagicBox[row]=cargo.InMagicBox;return;
         }
 
         CaelumEquipmentItem equipment = CaelumEquipmentItem(entry);
@@ -2760,7 +2767,7 @@ class CaelumInventoryService : Object play
         if (entry == null) { return; }
         if(CaelumSunCargo.ReleaseSelection(user,entry))return;
         let cargo=CaelumChestCargo(entry);
-        if(cargo!=null){CaelumContainerSession.Open(user,cargo.Chest);return;}
+        if(cargo!=null){if(cargo.InMagicBox)cargo.ToggleBox(user);else CaelumContainerSession.Open(user,cargo.Chest);return;}
         let book=CaelumRecipeBook(entry);
         if(book!=null){CaelumRecipeSession.OpenBook(user,book);return;}
         let lockItem=CaelumLockItem(entry);
@@ -2829,7 +2836,7 @@ class CaelumInventoryService : Object play
         if(lockItem!=null){lockItem.ToggleBox(user);return;}
         if(CaelumStorageFurnitureData.IsItem(entry)){CaelumStorageFurnitureInventory.ToggleBox(user,entry);return;}
         if(CaelumCampData.IsItem(entry)){CaelumCampInventory.ToggleBox(user,entry);return;}
-        if(entry is "CaelumChestCargo")return;
+        let cargo=CaelumChestCargo(entry);if(cargo!=null){cargo.ToggleBox(user);return;}
         user.ApplyFormalInventorySelection(entry);
         user.ToggleSelectedMagicBox();
         user.RefreshFormalInventorySnapshot();
@@ -2844,6 +2851,7 @@ class CaelumInventoryService : Object play
             user.GetFormalInventoryEntryAt(user.FormalInventorySelectionIndex);
         if (entry == null) { return; }
         if(CaelumSunCargo.ReleaseSelection(user,entry))return;
+        if(CaelumTarotStar.RequestDrop(user,entry))return;
         let lockItem=CaelumLockItem(entry);
         if(lockItem!=null){lockItem.DropInstance(user);return;}
         let restItem=CaelumRestFurnitureItem(entry);

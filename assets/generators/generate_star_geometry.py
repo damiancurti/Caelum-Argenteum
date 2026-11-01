@@ -19,7 +19,7 @@ def generate():
         'CUPBOARD_VOLUME': cupboard['width_m'] * cupboard['depth_m'] * cupboard['height_m'],
     }
     lines = ['// #440: volúmenes exteriores derivados de las dimensiones de #410.',
-             'class CaelumStarData : Object', '{', '    const REVISION=1;']
+             'class CaelumStarData : Object', '{', '    const REVISION=2;']
     lines += [f'    const {key}={value:.12f};' for key, value in values.items()]
     lines += ['}', '']
     (ROOT / 'src/caelum/data/CaelumStarData.zs').write_text('\n'.join(lines), encoding='utf-8', newline='\n')

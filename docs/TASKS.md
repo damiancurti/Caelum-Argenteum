@@ -33,8 +33,10 @@ gating are implemented. The8kW adapter, owned boulder and hot-rock placement are
 implemented and native-checked. Its inventory row/release commands and the
 local contamination source/example are integrated;
 Star furniture volume admission and saved safe removal are native-checked.
-Finish direct collection into the Box and audit placed storage furniture;
-non-furniture world capture remains separate from the hazardous-rock carrier.
+Direct furniture collection and placed wardrobe/cupboard/bookcase cargo now
+share the admission rule, preserve contents and support collision-safe Drop;
+two-peer capture/recovery and revision1 queue migration are checked.
+Non-furniture world capture remains separate from the hazardous-rock carrier.
 The confirmed per-power
 contract is consolidated in SYSTEMS; unresolved fields must still be asked.
 Only then integrate standalone modes #596-601 and issue final author scenarios.

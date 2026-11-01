@@ -1,6 +1,13 @@
 // El volumen exterior no se deduce del peso ni de los materiales macizos.
 class CaelumTarotStar : Object play
 {
+    static clearscope bool StorageFurniture(CaelumStashChest chest)
+    {
+        if(chest==null)return false;
+        int type=chest.StorageDisplayType();
+        return type==CaelumWardrobeData.DISPLAY_TYPE || type==CaelumStoredReadingData.DISPLAY_TYPE
+            || type==CaelumStorageFurnitureData.CUPBOARD_DISPLAY;
+    }
     static clearscope double Cuboid(double width,double depth,double height)
     {return width*depth*height/(CaelumPhysicsUnits.MAP_UNITS_PER_METER**3);}
     static clearscope double FurnitureVolume(CaelumStorageFurnitureItem item)
@@ -25,7 +32,16 @@ class CaelumTarotStar : Object play
     {
         if(user==null)return false;
         double units=CaelumPhysicsUnits.MAP_UNITS_PER_METER;
-        return FurnitureVolume(CaelumStorageFurnitureItem(item))>=
+        double volume=FurnitureVolume(CaelumStorageFurnitureItem(item));
+        let cargo=CaelumChestCargo(item);
+        if(cargo!=null && StorageFurniture(cargo.Chest))
+        {
+            int type=cargo.Chest.StorageDisplayType();
+            volume=type==CaelumWardrobeData.DISPLAY_TYPE?CaelumStarData.WARDROBE_VOLUME:
+                type==CaelumStorageFurnitureData.CUPBOARD_DISPLAY?CaelumStarData.CUPBOARD_VOLUME:
+                Cuboid(CaelumStudyData.Width(1),CaelumStudyData.Depth(1),CaelumStudyData.Height(1));
+        }
+        return volume>=
             2*CaelumThermalData.CIRCLE_PI*(user.Radius/units)**2*(user.Height/units);
     }
     static int Count(CaelumPlayer user,Inventory except=null)
@@ -42,6 +58,13 @@ class CaelumTarotStar : Object play
         return quantity==1 && CaelumTarotLoadout.Passive(user.GetPersistentCharacterState(false),17)
             && Count(user,item)==0;
     }
+    static int CarryRoute(CaelumPlayer user,Inventory item,double weight)
+    {
+        user.RefreshCarriedInventorySummary();
+        if(user.CanAddWeightToPersonalInventory(weight))return 0;
+        if(CanBox(user,item) && user.HasNativeMagicBoxSlotAvailable() && user.CanAddRawWeightToMagicBox(weight))return 1;
+        return -1;
+    }
     static clearscope CaelumStarCargo View(CaelumPlayer user)
     {return user!=null?CaelumStarCargo(user.FindInventory('CaelumStarCargo')):null;}
     static bool Dropping(CaelumPlayer user)
@@ -56,6 +79,15 @@ class CaelumTarotStar : Object play
         let cargo=View(user);
         if(cargo==null)cargo=CaelumStarCargo(user.GiveInventoryType('CaelumStarCargo'));
         if(cargo!=null && !cargo.Placing)cargo.Audit(user);
+    }
+    static bool RequestDrop(CaelumPlayer user,Inventory item)
+    {
+        let storage=CaelumChestCargo(item);
+        if(item==null || item.Owner!=user || !CaelumContainerRules.Boxed(item)
+            || (!(item is 'CaelumStorageFurnitureItem') && (storage==null || !StorageFurniture(storage.Chest))))return false;
+        Changed(user);let cargo=View(user);if(cargo==null)return false;
+        if(cargo.Pending.Find(item)>=cargo.Pending.Size())cargo.Pending.Push(item);
+        cargo.PendingDrop=true;return true;
     }
     static bool PrepareTravel()
     {
@@ -77,7 +109,7 @@ class CaelumStarCargo : Inventory
     double BodyRadius,BodyHeight;
     bool Placing,Warned,PendingDrop;
     vector3 Point,SearchOrigin;
-    Array<CaelumStorageFurnitureItem> Pending;
+    Array<Inventory> Pending;
 
     void Audit(CaelumPlayer user)
     {
@@ -86,10 +118,9 @@ class CaelumStarCargo : Inventory
         int occupied=CaelumSunCargo.Occupied(user)?1:0;
         for(Inventory item=user.Inv;item!=null;item=item.Inv)
         {
-            let furniture=CaelumStorageFurnitureItem(item);
-            if(furniture==null || !furniture.InMagicBox || !CaelumTarotStar.Giant(user,item))continue;
+            if(!CaelumContainerRules.Boxed(item) || !CaelumTarotStar.Giant(user,item))continue;
             if(allowed && occupied==0 && item.Amount==1){occupied++;continue;}
-            if(Pending.Find(furniture)>=Pending.Size())Pending.Push(furniture);
+            if(Pending.Find(item)>=Pending.Size())Pending.Push(item);
         }
         PendingDrop=Pending.Size()>0;
     }
@@ -97,13 +128,15 @@ class CaelumStarCargo : Inventory
     {
         if(Pending.Size()==0)return;
         let item=Pending[0];
-        if(item==null || item.bDestroyed || item.Owner!=user || !item.InMagicBox)
+        if(item==null || item.bDestroyed || item.Owner!=user || !CaelumContainerRules.Boxed(item))
         {Pending.Delete(0);PendingDrop=Pending.Size()>0;SearchIndex=0;RetryTics=0;return;}
         if((SearchOrigin-user.Pos).Length()>0.01){SearchOrigin=user.Pos;SearchIndex=0;RetryTics=0;}
         if(RetryTics>0){RetryTics--;return;}
         let rest=CaelumRestFurnitureItem(item);
-        double radius=rest!=null?CaelumRestFurnitureData.Radius(item.Variant()):CaelumStorageFurnitureData.Radius(item.Variant());
-        double height=rest!=null?CaelumRestFurnitureData.Height(item.Variant()):CaelumStorageFurnitureData.Height(item.Variant());
+        let furniture=CaelumStorageFurnitureItem(item);let stored=CaelumChestCargo(item);
+        if(stored!=null && stored.Chest==null){Pending.Delete(0);PendingDrop=Pending.Size()>0;return;}
+        double radius=stored!=null?stored.Chest.Radius:rest!=null?CaelumRestFurnitureData.Radius(furniture.Variant()):CaelumStorageFurnitureData.Radius(furniture.Variant());
+        double height=stored!=null?stored.Chest.Height:rest!=null?CaelumRestFurnitureData.Height(furniture.Variant()):CaelumStorageFurnitureData.Height(furniture.Variant());
         double step=Clamp(radius/2,4.0,16.0);
         // El borde del mueble, no su centro, debe quedar cerca: un conjunto
         // de comedor puede ser más ancho que el radio de búsqueda de una roca.
@@ -127,10 +160,12 @@ class CaelumStarCargo : Inventory
             if(!clear)continue;
             // Place conserva el cuerpo/mesa/contenido real; únicamente se omite
             // el permiso de instalar para una caída obligatoria, nunca la colisión.
-            Placing=true;item.InMagicBox=false;bool released=item.Place(user);Placing=false;
+            Placing=true;CaelumContainerRules.SetBoxed(item,false);
+            bool released=stored!=null?stored.Chest.TryPlaceStorage(user):furniture.Place(user);
+            Placing=false;
             if(released)
             {Pending.Delete(0);PendingDrop=Pending.Size()>0;SearchIndex=0;RetryTics=0;Warned=false;user.OnNativeInventoryChanged();return;}
-            if(item!=null && !item.bDestroyed && item.Owner==user)item.InMagicBox=true;
+            if(item!=null && !item.bDestroyed && item.Owner==user)CaelumContainerRules.SetBoxed(item,true);
         }
         if(!Warned){Warned=true;CaelumTarotService.Feedback(user,"CA_TAROT_STAR_RELEASE_WAIT");}
     }

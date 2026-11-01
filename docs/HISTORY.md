@@ -4,6 +4,22 @@ Documentation version: **5.13.3** - 2026-10-31.
 
 ## 5.13.3 - Ordered Tarot foundation (#440, implementation checkpoint)
 
+Star direct-collection checkpoint (2026-11-01): placed heavy furniture can
+enter the Box without first passing through personal inventory. Existing
+wardrobe/cupboard/bookcase carriers preserve their original body, contents,
+water and one complete raw mass/slot; boxed contents remain inaccessible.
+Ordinary chests retain their no-Box/no-nesting rules. Manual Drop uses the
+same collision-safe placement queue, now revision2 with generic item references.
+
+Final `star-collection/r1` matches18046 source entries; SHA-256
+`0bda414ce336d92dc39601386aec2634ce32f8091734fc32ba399c6152e31a7a`.
+Two-peer capture32456/recovery32457 and revision1-save migration32458 passed
+60 assertions. The older queue survives and releases the same original
+furniture. Evidence: `assets/validation_v5_13_3/star-collection-results.json`.
+Existing cargo travel hooks are unchanged; this checkpoint does not claim
+a new map-transition or frame-presentation measurement. Final author acceptance
+remains pending.
+
 Star furniture checkpoint (2026-11-01): the author explicitly extended the
 one-giant rule to furniture. Exterior dimensions now gate Box entry through
 manual storage, pickups, trade and chest withdrawal, sharing the allowance

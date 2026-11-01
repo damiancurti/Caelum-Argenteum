@@ -151,9 +151,9 @@ class CaelumDiningSetItem : CaelumRestFurnitureItem abstract
     override bool Carry(CaelumPlayer user)
     {
         if(!CanCarry(user))return false;
-        user.RefreshCarriedInventorySummary();if(!user.CanAddWeightToPersonalInventory(GetUnitWeight()))return false;
+        int route=CaelumTarotStar.CarryRoute(user,self,GetUnitWeight());if(route<0)return false;
         // Cerrar la exposición mientras las piezas aún pertenecen al mundo.
-        AdvanceFood();Park();DetachFromOwner();AttachToOwner(user);InMagicBox=false;AdvanceFood();
+        AdvanceFood();Park();DetachFromOwner();AttachToOwner(user);InMagicBox=route==1;AdvanceFood();
         user.OnNativeInventoryChanged();user.RefreshFormalInventorySnapshot();return true;
     }
     override bool Place(CaelumPlayer user)

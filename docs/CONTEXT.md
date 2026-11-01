@@ -6,7 +6,7 @@ Documentation version: **5.13.3** - 2026-10-31.
 Order/capacity/timers/Temperance/Tower/Fool/Hanged Man/Strength/Chariot/Priestess trap/Empress restraint implemented;
 Empress/Death/Hierophant/Justice/Lovers/Emperor/Moon/Judgement/spirit/Sun-cargo implemented; native-checked; automaton control/3D checked.
 Timed creations support waits; stone-passages/vegetation/Wheel/Sun-rocks checked.
-Star furniture checked; #596-601 last; author deferred.
+Star collection checked; #596-601 last; author deferred.
 Rules: SYSTEMS; evidence: validation_v5_13_1/2/3.
 
 **V5.12 accepted/merged:** HISTORY; validation_v5_12_7/7a; timer-fixed4.14.2.

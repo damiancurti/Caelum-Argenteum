@@ -54,8 +54,8 @@ class CaelumDeskItem : CaelumRestFurnitureItem
     override bool Carry(CaelumPlayer user)
     {
         if(!CanCarry(user))return false;
-        user.RefreshCarriedInventorySummary();if(!user.CanAddWeightToPersonalInventory(GetUnitWeight()))return false;
-        CaelumContaminationObject.LeavingWorld(Desk);DetachFromOwner();AttachToOwner(user);InMagicBox=false;Park();
+        int route=CaelumTarotStar.CarryRoute(user,self,GetUnitWeight());if(route<0)return false;
+        CaelumContaminationObject.LeavingWorld(Desk);DetachFromOwner();AttachToOwner(user);InMagicBox=route==1;Park();
         user.OnNativeInventoryChanged();user.RefreshFormalInventorySnapshot();return true;
     }
     override bool Place(CaelumPlayer user)

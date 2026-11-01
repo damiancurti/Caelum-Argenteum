@@ -193,7 +193,7 @@ class CaelumStashChest : Actor
     }
     virtual bool CanStore(CaelumPlayer user)
     {
-        return CanReachStorage(user) && !IsChestLocked();
+        return (Cargo==null || !Cargo.InMagicBox) && CanReachStorage(user) && !IsChestLocked();
     }
     virtual Name CargoClass(){return 'CaelumChestCargo';}
     virtual void HideCarriedStorage()

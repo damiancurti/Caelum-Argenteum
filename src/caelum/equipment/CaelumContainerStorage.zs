@@ -48,11 +48,13 @@ class CaelumContainerRules : Object play
     }
     static bool Boxed(Inventory item)
     {
+        let cargo=CaelumChestCargo(item);if(cargo!=null)return cargo.InMagicBox;
         let special=CaelumSpecialInventoryItem(item);
         return special!=null ? special.InMagicBox : CaelumCityTradeSession.Boxed(item);
     }
     static void SetBoxed(Inventory item,bool boxed)
     {
+        let cargo=CaelumChestCargo(item);if(cargo!=null){cargo.InMagicBox=boxed;return;}
         let special=CaelumSpecialInventoryItem(item);
         if(special!=null)special.InMagicBox=boxed;
         else CaelumCityTradeSession.SetBoxed(item,boxed);
@@ -119,8 +121,26 @@ class CaelumContainerRules : Object play
 class CaelumChestCargo : Inventory
 {
     CaelumStashChest Chest;
+    bool InMagicBox;
+    int BoxRevision;
     int TravelTID;
     Array<int> ContentTravelTIDs;
+
+    void ToggleBox(CaelumPlayer user)
+    {
+        if(!CaelumPlayerAuthority.CanMutate(user) || Owner!=user || !CaelumTarotStar.StorageFurniture(Chest))return;
+        user.SyncLiveMagicBoxOwnershipFromPersistentState();if(!user.MagicBoxOwned)return;
+        user.RefreshCarriedInventorySummary();double weight=CarriedWeight(user);
+        if(InMagicBox){if(!user.CanMoveRawWeightFromMagicBoxToPersonal(weight))return;}
+        else
+        {
+            if(!CaelumTarotStar.CanBox(user,self)){CaelumTarotService.Feedback(user,"CA_TAROT_STAR_LIMIT");return;}
+            if(!user.HasNativeMagicBoxSlotAvailable() || !user.CanMovePersonalStackWithIncomingToMagicBox(weight,0))return;
+        }
+        let session=CaelumContainerSession.Get(user);if(session!=null && session.Chest==Chest)session.Close();
+        InMagicBox=!InMagicBox;BoxRevision=1;
+        user.OnNativeInventoryChanged();user.RefreshFormalInventorySnapshot();
+    }
 
     double CarriedWeight(CaelumPlayer user)
     {

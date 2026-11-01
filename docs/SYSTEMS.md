@@ -497,9 +497,18 @@ and gives no permission to collect someone else's furniture. A blocked release
 retains the boxed object and prevents map/profile departure until resolved.
 Ordinary valid boxed furniture retains its existing travel lifecycle.
 
-Native evidence: `validation_v5_13_3/star-results.json`. Direct collection and
-already-placed storage-furniture paths remain under the follow-up audit; this
-checkpoint does not claim all generic scenery is capturable.
+Placed furniture can enter the Box directly when personal carrying capacity
+is insufficient and Box admission succeeds. Wardrobes, cupboards and bookcases
+retain their original storage body and contents, counting one slot and their
+full raw mass exactly once. Their contents cannot be accessed while boxed;
+ordinary chests retain their no-Box/no-nesting rule. Manual Drop can release
+boxed furniture without first fitting its weight in personal inventory.
+Revision2 extends the saved release queue to storage furniture; revision1
+pending queues migrate without item replacement.
+
+Native evidence: `validation_v5_13_3/star-results.json` and
+`star-collection-results.json`. These checkpoints do not claim all generic
+scenery is capturable.
 
 ### Confirmed follow-up contract for the remaining handlers
 
