@@ -1,6 +1,39 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.13.9** - 2026-11-01.
+Documentation version: **5.13.10** - 2026-11-01.
+
+## Standalone labyrinth power-ups (#614)
+
+Only CASEWER and CAHUNT have shared power-ups: eight and sixteen points,
+respectively, distributed over four quarters outside starts/captivity. The first
+eligible touching player consumes the point. It returns after 60 active seconds,
+then rolls again: 90% common, 10% rare, uniform within each category (22.5% for
+each common, 5% for each rare). The saved registry retains kind and deadline.
+An equipment pickup without any compatible equipped item stays available;
+compatible full/repaired equipment may consume it. Captives cannot collect.
+
+| Type | Effect |
+| --- | --- |
+| Common seated rest | 180 active seconds of personal table recovery, supplied food/water and native metabolic toilet depuration. |
+| Common replenishment | 50% maximum Anima, capped; fill the selected ranged magazine, retaining existing reserve but adding none. |
+| Common weapons | Repair equipped weapons/shields fully and awaken them. |
+| Common armor | Repair equipped armor fully and awaken it. |
+| Rare bed rest | 360 active seconds of personal bed recovery, supplied food/water, toilet and full bath. |
+| Rare upgrade | Choose one equipped weapon/shield/armor, prioritizing below T3; raise one tier, awaken and repair. At all-T3, repair/awaken one. |
+
+Awakening uses the existing +25% damage/defense and half wear, without essence
+association or stacking. Temporary tier/awakening end on death or match completion.
+Preset respawn/rematch retains its original equipment rules. Rest advances only
+the collector's physiology, digestion and personal ability/Tarot timers, not the
+shared calendar or another player's resources. Supplies belong to the effect;
+owned supplies are not consumed. Normal disease/critical-need damage is retained
+and can cause native death/capture; the rare bath is applied on surviving the
+simulation. No campaign profile or map geometry is changed.
+
+The match owns one saved 8/16-point registry. Native collision handles collection;
+equipment checks traverse only the collector's inventory on collection. A rest
+performs at most 12,600 arithmetic steps, without per-step actor/world queries.
+Technical validation is in assets/validation_v5_13_10; author acceptance is pending.
 
 ## Cooperative standalone Tarot hunt (#601)
 

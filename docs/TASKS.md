@@ -1,14 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.13.9** - 2026-11-01.
+Documentation version: **5.13.10** - 2026-11-01.
 
-## 5.13.9 - Remaining final integration (#596/#614)
+## 5.13.10 - Remaining final integration (#616/#617/#596)
 
-Keep #614 power-ups in a separate branch/PR. Complete their native checks, add
-manual scenarios, finish the two-client menu walkthrough and common-save smoke,
-then populate pending_test.txt and open the final terminal for the author.
-Ten current author-scene startup/synchronization checks passed; those do not
-replace manual gameplay or physical input verification.
+#614 implements the six labyrinth power-ups; native evidence is in validation_v5_13_10.
+Keep #616's shared Tarot unlocks and 22 distributed opportunities in a separate PR.
+Keep #617's optional human Palomo (at least four participants) separate as well.
+Then extend #596's author scenarios, complete menu launch/common-save verification,
+populate pending_test.txt and open the single final terminal. Ten earlier startup
+checks passed; physical input and the new functionality require final author review.
 
 ## 5.13.8 - Cooperative hunt (#601)
 

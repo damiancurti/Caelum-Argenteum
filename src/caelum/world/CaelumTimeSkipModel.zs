@@ -270,7 +270,7 @@ class CaelumTimeSkipModel : CaelumJourneyModel
     // El motor sirve despuÃ©s de consumir recursos y avanzar los poderes.
     // El viaje conserva su propio orden; sÃ³lo este modelo cambia de fase.
     override void BeginServings() {}
-    void ServeSupplies()
+    virtual void ServeSupplies()
     {
         double target=Sleeping || HasChair?CaelumDiningSession.REST_TARGET:CaelumDiningSession.ORDINARY_TARGET;
         if(!((FoodEffectTics<=0 && Hunger<Min(target,FoodTrigger))

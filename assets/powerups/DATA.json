@@ -1,0 +1,35 @@
+{
+  "issue": 614,
+  "revision": 1,
+  "respawn_seconds": 60,
+  "common_percent": 90,
+  "common_count": 4,
+  "rare_count": 2,
+  "seated_seconds": 180,
+  "sleep_seconds": 360,
+  "anima_fraction": 0.5,
+  "max_tier": 3,
+  "maps": {
+    "CASEWER": 8,
+    "CAHUNT": 16
+  },
+  "visual": {
+    "radius_mu": 14,
+    "center_height_mu": 28,
+    "alpha": 0.32,
+    "rings": 12,
+    "segments": 24,
+    "silver": "models/caelum/world/mate/silver_shade4.png",
+    "gold": "models/caelum/world/mate/gold_shade4.png",
+    "emblem": "models/caelum/tarot/automaton/iron-painted-ramp.png"
+  },
+  "names": [
+    "REST",
+    "REPLENISH",
+    "WEAPONS",
+    "ARMOR",
+    "SLEEP",
+    "UPGRADE"
+  ],
+  "provenance": "Author approved six types, category split, equal probabilities, shared first-touch pickup, equipped-only match-duration improvements, native personal rest including damage, and full magazine. New original code-native 3D geometry: translucent silver/gold shells with distinct opaque emblems; reuses owned texture swatches unchanged."
+}

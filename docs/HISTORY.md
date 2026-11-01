@@ -1,6 +1,28 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.13.9** - 2026-11-01.
+Documentation version: **5.13.10** - 2026-11-01.
+
+## 5.13.10 - Labyrinth power-ups (#614, 2026-11-01)
+
+The author requested six effects, the 90/10 split, shared native touch, eight/sixteen
+points, 60-second reappearance, equipped-only match improvements, full magazines
+and personal 180/360-second recovery. The author explicitly retained normal
+damage during that simulation. Silver/gold translucent 3D spheres and distinct
+emblems are original deterministic geometry using existing owned texture swatches.
+
+Early native checks exposed a rest-supply trigger that stopped serving after the
+first portion; replenishing the abstract serving now refreshes its thresholds.
+A stationary teleport did not invoke native pickup, so the fixture now uses
+ordinary motion into contact. Preflight also caught a mixed actor-subtype ternary
+in the expiry guard; an explicit common actor type corrected compilation.
+All failed runs remain local evidence. Final technical results and limitations
+are recorded in assets/validation_v5_13_10. Author acceptance remains outstanding;
+the requested single final handoff awaits #616, #617 and #596.
+Four four-peer runs passed effects, full-minute reappearance, save recovery and
+ring exclusion. Final gallery inspection corrected overlapping MODELDEF slots
+and edge-on emblems. Per-collector rest costs were 3.04-3.36 ms seated and
+4.08-4.64 ms in bed. Short frame-callback samples and tails are retained in
+results.json; they are not ETW presentation measurements or a 60-FPS claim.
 
 ## 5.13.9 - Author-suite preparation (#596, checkpoint, 2026-11-01)
 
