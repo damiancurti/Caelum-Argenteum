@@ -5,6 +5,9 @@ class CaelumContaminationTile : Object play
     double Concentration,Stamp,Reference;
     int Profile,Region,Seed,Shelter;
     bool Covered;
+    int RockSources;
+    bool RockTouched;
+    double EffectiveReference(){return RockSources>0?CaelumMajorArcanaData.ROCK_FIXED_REFERENCE:Reference;}
     transient bool WeatherReady;
     transient int WeatherDay,WeatherMinute;
     transient double Ambient,Rain;
@@ -13,7 +16,7 @@ class CaelumContaminationTile : Object play
     {
         let c=new('CaelumContaminationTile');
         c.Kind=Kind;c.Surface=Surface;c.Side=Side;c.X=X;c.Y=Y;c.Next=Next;
-        c.Concentration=Concentration;c.Stamp=Stamp;c.Reference=Reference;
+        c.Concentration=Concentration;c.Stamp=Stamp;c.Reference=Reference;c.RockSources=RockSources;c.RockTouched=RockTouched;
         c.Profile=Profile;c.Region=Region;c.Seed=Seed;c.Shelter=Shelter;c.Covered=Covered;
         return c;
     }
@@ -70,7 +73,7 @@ class CaelumContaminationTile : Object play
         if(Profile==CaelumWeatherRules.PROFILE_LIMBO)
         {
             local.Evaluate(Profile,CaelumCalendarRules.DaysBeforeYear(CaelumCalendarRules.CAMPAIGN_START_YEAR),0,Seed);
-            Concentration=Evolve(Concentration,CaelumContaminationRules.Ambient(Reference,
+            Concentration=Evolve(Concentration,CaelumContaminationRules.Ambient(EffectiveReference(),
                 local.AirTemperatureC,local.RelativeHumidityPercent,0,!Covered),0,now-Stamp);
             Stamp=now;return;
         }
@@ -100,7 +103,7 @@ class CaelumContaminationTile : Object play
                     outside.EvaluateRegion(Region,day,minute*(CaelumWorldClock.TicsPerHour()/60),Seed);
                     local.ApplyShelter(outside,Shelter,Profile);
                     Rain=Covered?0:local.PrecipitationMmPerHour;
-                    Ambient=local.Available?CaelumContaminationRules.Ambient(Reference,
+                    Ambient=local.Available?CaelumContaminationRules.Ambient(EffectiveReference(),
                         local.AirTemperatureC,local.RelativeHumidityPercent,Rain,!Covered):-1;
                 }
                 WeatherDay=day;WeatherMinute=minute;WeatherReady=true;
@@ -206,7 +209,7 @@ class CaelumContaminationMap : Object play
     void Sync(CaelumContaminationTile tile,double now)
     {
         if(now<=tile.Stamp)return;
-        bool freshTile=tile.Stamp==Epoch && tile.Concentration==0;
+        bool freshTile=!tile.RockTouched && tile.Stamp==Epoch && tile.Concentration==0;
         if(freshTile)
         {
             if(!PristineReady || PristineTic!=level.time)
@@ -214,9 +217,9 @@ class CaelumContaminationMap : Object play
             for(int i=0;i<Pristine.Size();i++)
             {
                 let sample=Pristine[i];
-                if(sample.Stamp!=now || sample.Profile!=tile.Profile || sample.Region!=tile.Region
+                if(sample.RockTouched || sample.Stamp!=now || sample.Profile!=tile.Profile || sample.Region!=tile.Region
                     || sample.Seed!=tile.Seed || sample.Shelter!=tile.Shelter
-                    || sample.Reference!=tile.Reference || sample.Covered!=tile.Covered)continue;
+                    || sample.EffectiveReference()!=tile.EffectiveReference() || sample.Covered!=tile.Covered)continue;
                 // Copia de un resultado determinista desde el mismo origen
                 // limpio; nunca comparte concentraciones vivas ni contactos.
                 tile.Stamp=sample.Stamp;tile.Concentration=sample.Concentration;
@@ -336,7 +339,7 @@ class CaelumContaminationSurfaceContact : Object play
     {
         if(tile==null || (tile.Profile!=0 && !refresh))return;
         let weather=CaelumWeatherState.Get(user);if(weather==null)return;
-        double reference=CaelumContaminationEnvironment.ReferenceAt(user);
+        double reference=CaelumContaminationEnvironment.BaseReferenceAt(user);
         int shelter=CaelumThermalEnvironment.ClimateShelter(weather.Profile,thermal.Roof,thermal.WindSheltered);
         if(tile.Reference!=reference || tile.Profile!=weather.Profile || tile.Region!=weather.Region
             || tile.Seed!=weather.Seed || tile.Covered!=thermal.Roof || tile.Shelter!=shelter)tile.WeatherReady=false;
@@ -351,7 +354,7 @@ class CaelumContaminationSurfaceContact : Object play
         let weather=world.ReferenceWeather;if(weather==null)return;
         bool roof=CaelumThermalShelter.Roof(body);
         int shelter=CaelumThermalEnvironment.ClimateShelter(weather.Profile,roof,CaelumThermalShelter.WindBlocked(body));
-        double reference=CaelumContaminationEnvironment.ReferenceAt(body);
+        double reference=CaelumContaminationEnvironment.BaseReferenceAt(body);
         if(tile.Reference!=reference || tile.Profile!=weather.Profile || tile.Region!=weather.Region
             || tile.Seed!=weather.Seed || tile.Covered!=roof || tile.Shelter!=shelter)tile.WeatherReady=false;
         tile.Reference=reference;tile.Profile=weather.Profile;tile.Region=weather.Region;

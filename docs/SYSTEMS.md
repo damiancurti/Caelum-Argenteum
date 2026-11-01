@@ -559,7 +559,19 @@ Lovers passive redistribution in the abstract journey model remains separate wor
   emission center/radius follow the body; Watts becomes0 while contained.
   Revision1 component preparation retains the same source/owned visual through
   common saves and removes both on body destruction. Annex revision5 places
-  the hot example once. The contamination-source adapter remains pending.
+  the hot example once; annex revision6 adds the contamination example.
+  That field fixes environmental concentration at100 within4m and native line
+  of sight, independently of climate multipliers. Existing body/equipment,
+  object, surface, wait and absence adapters consume that explicit reference.
+  The field closes prior recipient/tile intervals before capture, movement or
+  destruction, then resumes ordinary environmental exposure without cleaning
+  acquired contamination. Overlapping sources are counted independently.
+  Source revision1 and its saved tile/recipient references prevent duplicate
+  application after loading. Geometry refresh uses the existing one-second
+  environmental cadence; capture/release forces the state transition.
+  A typed source registry is rebuilt within the existing one-time load census.
+  Only declared sources are queried, one in the campaign annex; surface geometry
+  queries stay within their4m radius. No per-NPC global actor census is added.
   Captured harmful rocks are released in the origin map before travel, rather
   than transported to the destination (approved2026-11-01).
   These giant rocks also require Star equipped and occupy its one giant-object

@@ -32,6 +32,7 @@ def render(root=ROOT):
              f'    static vector3 Living(){{return {vector(offset(apparatus["living_obstacle_offset"]))};}}',
              f'    static vector3 Spirit(){{return {vector(offset(apparatus["spirit_offset"]))};}}',
              f'    static vector3 HotRock(){{return {vector(offset(apparatus["hot_rock_offset"]))};}}',
+             f'    static vector3 DirtyRock(){{return {vector(offset(apparatus["dirty_rock_offset"]))};}}',
              f'    static vector3 Automaton(){{return {vector(offset(apparatus["automaton_offset"]))};}}',
              f'    static vector3 Controller(){{return {vector(offset(apparatus["controller_offset"]))};}}',
              '    static vector3 Door(int index) {']

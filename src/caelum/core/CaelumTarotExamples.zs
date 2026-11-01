@@ -8,6 +8,7 @@ class CaelumTarotExampleRoom : Actor
     CaelumTarotAutomaton Automaton;
     CaelumTarotExampleSpirit Spirit;
     CaelumTarotHeatRock HotRock;
+    CaelumTarotDirtyRock DirtyRock;
     CaelumSlidingDoorLeaf Doors[4];
     CaelumTarotExamplePortal Portals[2];
 
@@ -58,6 +59,11 @@ class CaelumTarotExampleRoom : Actor
         {
             HotRock=CaelumTarotHeatRock(Actor.Spawn('CaelumTarotHeatRock',CaelumTarotExampleData.HotRock(),NO_REPLACE));
             Revision=5;
+        }
+        if(Revision<6)
+        {
+            DirtyRock=CaelumTarotDirtyRock(Actor.Spawn('CaelumTarotDirtyRock',CaelumTarotExampleData.DirtyRock(),NO_REPLACE));
+            Revision=6;
         }
         Apply();
     }

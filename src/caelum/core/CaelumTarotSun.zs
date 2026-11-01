@@ -11,7 +11,8 @@ class CaelumTarotRock : CaelumMovableProp
     virtual double PhysicalMass()
     {return ExteriorVolume()*CaelumMajorArcanaData.ROCK_DENSITY;}
     virtual double HeatWatts(){return 0;}
-    void UpdateComponents()
+    virtual void StopEmissions(){}
+    virtual void UpdateComponents()
     {
         // La revisión evita recrear partes en cada tic; los punteros se guardan.
         if(ComponentRevision<1)
@@ -33,6 +34,7 @@ class CaelumTarotRock : CaelumMovableProp
     {if(!Contained)Super.Tick();UpdateComponents();}
     override void OnDestroy()
     {
+        StopEmissions();
         if(Visual!=null)Visual.Destroy();if(Heat!=null)Heat.Destroy();
         Super.OnDestroy();
     }
@@ -75,9 +77,9 @@ class CaelumSunCargo : Inventory
     static clearscope bool Occupied(CaelumPlayer user)
     {let cargo=View(user);return cargo!=null && cargo.Body!=null && !cargo.Body.bDestroyed;}
     static clearscope bool Display(int itemType)
-    {return itemType==CaelumMajorArcanaData.SUN_CARGO_DISPLAY || itemType==CaelumMajorArcanaData.SUN_HEAT_DISPLAY;}
+    {return itemType==CaelumMajorArcanaData.SUN_CARGO_DISPLAY || itemType==CaelumMajorArcanaData.SUN_HEAT_DISPLAY || itemType==CaelumMajorArcanaData.SUN_DIRTY_DISPLAY;}
     static clearscope String NameKey(int itemType)
-    {return itemType==CaelumMajorArcanaData.SUN_HEAT_DISPLAY?"CA_TAROT_HEAT_ROCK":"CA_TAROT_HAZARD_ROCK";}
+    {return itemType==CaelumMajorArcanaData.SUN_DIRTY_DISPLAY?"CA_TAROT_DIRTY_ROCK":itemType==CaelumMajorArcanaData.SUN_HEAT_DISPLAY?"CA_TAROT_HEAT_ROCK":"CA_TAROT_HAZARD_ROCK";}
     static bool ReleaseSelection(CaelumPlayer user,Inventory entry)
     {
         let cargo=CaelumSunCargo(entry);
@@ -113,6 +115,7 @@ class CaelumSunCargo : Inventory
             if(cargo!=null)cargo.AttachToOwner(user);
         }
         if(cargo==null)return false;
+        body.StopEmissions();
         CaelumContaminationObject.LeavingWorld(body);
         cargo.Revision=CaelumMajorArcanaData.SUN_REVISION;cargo.Body=body;cargo.OriginMap=level.MapName;
         cargo.CaptureOrigin=body.Pos;cargo.Pending=false;cargo.Warned=false;cargo.SearchIndex=0;cargo.RetryTics=0;

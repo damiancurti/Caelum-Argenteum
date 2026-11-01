@@ -5,9 +5,9 @@ Documentation version: **5.13.3** - 2026-10-31.
 Sun rocks reuse the unchanged owned `models/caelum/world/hazards/ca_hazard_boulder.obj`
 through `CaelumHazardRockVisual`, at radius19.2MU (nominal diameter1.2m).
 No raster/model source is added. The separate visual follows the persistent
-body and hides during containment. Annex apparatus revision5 places the hot
-example clear of the display entrance. Native checks/screenshot are recorded
-in sun-heat-results.json; this is not author visual acceptance.
+body and hides during containment. Annex apparatus revision6 places hot and
+contaminating examples clear of the display entrance. Native checks/screenshot are recorded
+in sun-heat-results.json and sun-pollution-results.json; this is not author visual acceptance.
 The inventory carrier reuses the existing Magic Box icon and the ordinary
 inventory layout; no raster asset is generated. The native Spanish capture
 was reviewed for row width and release-hint clearance.

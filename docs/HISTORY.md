@@ -4,6 +4,26 @@ Documentation version: **5.13.3** - 2026-10-31.
 
 ## 5.13.3 - Ordered Tarot foundation (#440, implementation checkpoint)
 
+Sun pollution checkpoint (2026-11-01): annex revision6 adds the owned-model
+rock with fixed environmental concentration100 within4m and native line of
+sight. Bodies/equipment and object histories use the existing exposure rules;
+local surface tiles retain independent overlapping-source references. Capture,
+movement and destruction close prior intervals without cleaning acquired
+contamination. Saved revision1 records are idempotent and retained NPC recipients
+are settled even between their ordinary environmental samples. Source-touched
+tiles are excluded from pristine-climate cohorts, including forecast copies.
+
+Final `sun-pollution/r2` matches18044 source entries; SHA-256
+`b66ffa152955186d3e994dd0b6c51dd4504d7a7675787d1d6c59924fe28ea16b`.
+Two-peer capture32450/recovery32451 passed62 assertions: climate independence,
+object/NPC exposure, overlap, historical closure, cache isolation, save recovery,
+relocation, actual wall occlusion and destruction cleanup. Earlier32449 passed
+the narrower initial capture. God mode protects fixture players while exposure
+is measured; this does not revalidate disease damage. Evidence:
+`assets/validation_v5_13_3/sun-pollution-results.json`. No new global actor scan;
+typed registry reconstruction joins the existing load census and surface work
+is local. Full-annex author review and frame-presentation checks remain pending.
+
 Sun inventory checkpoint (2026-11-01): one contained original is visible in
 the native inventory with its name, Box marker and raw physical mass. Use,
 Box and Drop request the same safe placement; blocked placement keeps the

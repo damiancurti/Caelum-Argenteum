@@ -35,7 +35,7 @@ class CaelumTarotContamination : Object play
         if(set!=null && set.Table!=null && set.Table.Packed())
             for(int i=0;i<set.Table.Capacity();i++)Item(set.Table.Items[i]);
     }
-    void Body(Actor candidate)
+    virtual void Body(Actor candidate)
     {
         if(!CaelumContaminationContacts.Eligible(candidate))return;
         Actor body=CaelumDiningContamination.Owner(candidate);
@@ -89,7 +89,7 @@ class CaelumTarotContamination : Object play
         for(int i=0;i<Sectors.Size();i++)if(Sectors[i]==sector)return;
         Sectors.Push(sector);
     }
-    void Paint(CaelumContaminationTile tile,vector3 point)
+    virtual void Paint(CaelumContaminationTile tile,vector3 point)
     {
         if(tile==null)return;
         Probe.SetOrigin(point+(0,0,0.01),false);

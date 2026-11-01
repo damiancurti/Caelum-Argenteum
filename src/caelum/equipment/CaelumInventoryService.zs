@@ -2527,7 +2527,7 @@ class CaelumInventoryService : Object play
         let sun=CaelumSunCargo(entry);
         if(sun!=null)
         {
-            user.FormalInventoryRowType[row]=sun.Body is 'CaelumTarotHeatRock'
+            user.FormalInventoryRowType[row]=sun.Body is 'CaelumTarotDirtyRock'?CaelumMajorArcanaData.SUN_DIRTY_DISPLAY:sun.Body is 'CaelumTarotHeatRock'
                 ?CaelumMajorArcanaData.SUN_HEAT_DISPLAY:CaelumMajorArcanaData.SUN_CARGO_DISPLAY;
             user.FormalInventoryRowAmount[row]=1;user.FormalInventoryRowInMagicBox[row]=true;return;
         }

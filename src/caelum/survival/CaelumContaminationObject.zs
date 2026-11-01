@@ -240,7 +240,7 @@ class CaelumContaminationWeatherCache : Object play
     CaelumContaminationWeatherDay GetDay(CaelumContaminationObject n,int date)
     {return FindDay(n.HistoryProfile,n.HistoryRegion,n.HistorySeed,n.HistoryShelter,n.HistoryReference,n.HistoryCovered,date);}
     CaelumContaminationWeatherDay GetTileDay(CaelumContaminationTile tile,int date)
-    {return FindDay(tile.Profile,tile.Region,tile.Seed,tile.Shelter,tile.Reference,tile.Covered,date);}
+    {return FindDay(tile.Profile,tile.Region,tile.Seed,tile.Shelter,tile.EffectiveReference(),tile.Covered,date);}
     CaelumContaminationWeatherDay FindDay(int profile,int region,int seed,int shelter,double reference,bool covered,int date)
     {
         int oldest=0;

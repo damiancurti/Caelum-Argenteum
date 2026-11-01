@@ -24,10 +24,10 @@ effect clocks. Moon copies appearances/equipment/resources into temporary combat
 illusions with safe swaps and no loot; remaining powers are tracked in TASKS.
 Sun containment now preserves one rock identity, requires Star, accounts for
 Box mass/slots and delays travel until a collision-safe release succeeds.
-Annex revision5 places the8kW rock, using the owned boulder and existing thermal
-registry; its native containment/recovery evidence is recorded separately.
+Annex revision6 places the8kW and environmental-contamination rocks, using the
+owned boulder, native thermal registry and bounded local pollution field.
 The contained rock has a native inventory row and safe release actions; empty
-metadata is hidden after release. The environmental-contamination rock remains pending.
+metadata is hidden after release. Native checks remain distinct from author acceptance.
 Judgement's local instantaneous pulse uses those control/illusion adapters;
 the approved demonstration spirit now exposes its equipped hearing/damage
 passives. Remaining display content still needs completion.

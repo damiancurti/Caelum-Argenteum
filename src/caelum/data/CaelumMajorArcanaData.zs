@@ -43,6 +43,9 @@ class CaelumMajorArcanaData : Object
     const ROCK_RADIUS_METERS=0.6;
     const ROCK_DENSITY=2500.0;
     const ROCK_WATTS=8000.0;
+    const ROCK_FIXED_REFERENCE=10000.0; // Identificador técnico fuera de las referencias ambientales.
+    const ROCK_CONTAMINATION_RADIUS=4.0;
+    const SUN_DIRTY_DISPLAY=44021;
     const SUN_CARGO_DISPLAY=44019;
     const SUN_HEAT_DISPLAY=44020;
     const SUN_RELEASE_MU=128.0;

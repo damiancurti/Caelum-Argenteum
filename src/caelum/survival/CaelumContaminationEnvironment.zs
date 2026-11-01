@@ -2,6 +2,11 @@
 class CaelumContaminationWorld : StaticEventHandler
 {
     Array<bool> Industrial;
+    Array<CaelumTarotDirtyRock> RockSources;
+    void RegisterRock(CaelumTarotDirtyRock rock)
+    {if(rock!=null && RockSources.Find(rock)==RockSources.Size())RockSources.Push(rock);}
+    void ForgetRock(CaelumTarotDirtyRock rock)
+    {int i=RockSources.Find(rock);if(i<RockSources.Size())RockSources.Delete(i);}
     transient CaelumContaminationWeatherCache HistoryWeather;
     transient CaelumContaminationGrid Grid;
     CaelumContaminationGrid ContactGrid()
@@ -19,7 +24,7 @@ class CaelumContaminationWorld : StaticEventHandler
     }
     override void WorldLoaded(WorldEvent e)
     {
-        HistoryWeather=null;Grid=null;
+        HistoryWeather=null;Grid=null;RockSources.Clear();
         Industrial.Clear();Industrial.Resize(level.Sectors.Size());
         // Censo tipado único al cargar: reconstruye sectores de talleres ya existentes.
         let stations=ThinkerIterator.Create('CaelumCraftingStation');Actor station;
@@ -28,7 +33,8 @@ class CaelumContaminationWorld : StaticEventHandler
         // conjunto está acotado a actores nativos del mapa cargado; sólo los
         // objetos físicos elegibles reciben un nodo, nunca jugadores ni NPC.
         let objects=ThinkerIterator.Create('Actor');Actor object;
-        while((object=Actor(objects.Next()))!=null){CaelumContaminationObject.Register(object);ContactGrid().Track(object);}
+        while((object=Actor(objects.Next()))!=null)
+        {CaelumContaminationObject.Register(object);ContactGrid().Track(object);RegisterRock(CaelumTarotDirtyRock(object));}
     }
     override void WorldThingSpawned(WorldEvent e){Observe(e.Thing);CaelumContaminationObject.Register(e.Thing);ContactGrid().Track(e.Thing);}
     override void WorldThingDestroyed(WorldEvent e)
@@ -48,6 +54,19 @@ class CaelumContaminationWorld : StaticEventHandler
 class CaelumContaminationEnvironment : Object play
 {
     static double ReferenceAt(Actor body)
+    {
+        if(body==null)return -1;
+        let world=CaelumContaminationWorld.Get();
+        // Sólo las fuentes declaradas, una en el anexo; nunca actores del mapa.
+        if(world!=null)for(int i=0;i<world.RockSources.Size();i++)
+        {
+            let source=world.RockSources[i];
+            if(source!=null && source.Affects(body))
+            {source.Remember(body);return CaelumMajorArcanaData.ROCK_FIXED_REFERENCE;}
+        }
+        return BaseReferenceAt(body);
+    }
+    static double BaseReferenceAt(Actor body)
     {
         if(body==null || body.CurSector==null)return -1;
         let sector=body.CurSector;

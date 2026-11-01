@@ -30,8 +30,8 @@ Judgement's local dispel and the explicit demonstration-spirit interaction are
 implemented; their native evidence is separate from final author acceptance.
 Sun rock containment, Star requirement, Box mass/slots and safe-release travel
 gating are implemented. The8kW adapter, owned boulder and hot-rock placement are
-implemented and native-checked. Its inventory row/release commands are integrated.
-Finish the contamination emitter/example;
+implemented and native-checked. Its inventory row/release commands and the
+local contamination source/example are integrated;
 generic giant-object capture remains separate from the hazardous-rock carrier.
 The confirmed per-power
 contract is consolidated in SYSTEMS; unresolved fields must still be asked.

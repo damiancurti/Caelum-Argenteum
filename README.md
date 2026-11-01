@@ -34,11 +34,12 @@ existing cleanup paths, preserving protected scenes and unrelated effects.
 Its equipped passive opens the demonstration spirit's bilingual dialogue; equipped
 Justice permits damage to that explicitly marked immortal spirit.
 Sun now has identity-preserving rock containment, Star gating, Box mass/slots
-and bounded safe release. Its hot-rock example uses the owned boulder model and
-the existing thermal system at8kW; containment suppresses that source. The
+and bounded safe release. Its two rock examples reuse the owned boulder:8kW
+through the thermal system, or environmental contamination100 within4m/LOS.
+Containment suppresses their emissions without cleaning existing contamination. The
 contained original also appears in the inventory with its raw mass and release
-status. Use, Box and Drop request the same safe release. The contamination-source
-adapter and generic giant objects remain unfinished.
+status. Use, Box and Drop request the same safe release. Generic giant-object
+integration remains unfinished.
 For existing saves, `build_dev.ps1 -LegacyTarotMaps` preserves pre-Justice maps;
 `-LegacyTarotExamples` preserves the Justice-era mansion before the annex.
 Justice now supports simultaneous pairs, safe returns and cancellable travel waits,

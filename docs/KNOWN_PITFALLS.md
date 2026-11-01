@@ -4,6 +4,25 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-211 - A changing source invalidates pristine environmental cohorts
+
+Status/evidence: ENGINE-VERIFIED, #440 /5.13.3, 2026-11-01; native two-peer
+capture32450 and recovery32451, `validation_v5_13_3/sun-pollution-results.json`.
+
+A tile's current reference climate does not prove it has shared the same history
+as a pristine tile. After adding/removing a local source, reusing the old
+pristine-climate cohort can copy contamination into unrelated surfaces. Mark
+source-touched tiles and exclude both their reads and their cached results from
+that cohort. Forecast copies must retain the marker. A native regression seeds
+a touched cached result and compares an unrelated tile against uncached evolution.
+
+Close each source's recorded recipient/tile intervals before changing its state,
+then reopen ordinary exposure. Retain NPC recipients between scheduled samples;
+clearing them immediately after a geometry refresh can lose the next partial
+interval. Overlap counts must remove only the departing source. None of these
+operations requires scanning all actors per tic; use source-owned recipients and
+local geometry. This evidence does not establish frame-presentation performance.
+
 ## CA-KP-210 - Preflight native fixtures before launching an interactive session
 
 Status/evidence: ENGINE-VERIFIED, #440 / 5.13.3, 2026-11-01; private native
