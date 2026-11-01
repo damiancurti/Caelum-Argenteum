@@ -97,6 +97,7 @@ class CaelumTarotSequence : Object play
         }
         if(changed && user.RacialAbility!=null && user.RacialAbility.TarotBorrowed)
             CaelumRacialAbilityRules.Guard(user);
+        if(changed)CaelumSunCargo.Guard(user);
         return changed;
     }
 }

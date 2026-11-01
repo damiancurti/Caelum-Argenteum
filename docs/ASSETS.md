@@ -2,6 +2,10 @@
 
 Documentation version: **5.13.3** - 2026-10-31.
 
+The Sun containment checkpoint adds no raster/model sources. Its diagnostic
+rock still uses the existing CARK fallback; sized owned-model presentation and
+thermal/contamination examples remain pending. It is not a visual acceptance.
+
 ## Moon clone appearance reuse (#440, 5.13.3)
 
 Moon illusions reuse the existing owned player body/head appearance registry and

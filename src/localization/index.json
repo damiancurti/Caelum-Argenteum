@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "18b8dc7785ee1ab60939e6ff621102000720fb6a297f143d2b65d5ecde316564",
+  "sha256": "3422b95bb9e93ac51c76c3b872086393195c90b9c0a60ee96e6c4bc400e6e4c4",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[534,534]],"default":[[534,534]],"es":[[1229,1229]]},
     "CA_ABSENT_THEFT_FOUND": {"enu":[[6957,6957]],"default":[[6957,6957]],"es":[[6959,6959]]},
@@ -2838,6 +2838,7 @@
     "CA_TAROT_FALSE_WALL": {"enu":[[16,16]],"default":[[16,16]],"es":[[23,23]]},
     "CA_TAROT_FOOL_DESCRIPTION": {"enu":[[3260,3260]],"default":[[3260,3260]],"es":[[3286,3286]]},
     "CA_TAROT_FOOL_NAME": {"enu":[[3259,3259]],"default":[[3259,3259]],"es":[[3285,3285]]},
+    "CA_TAROT_HAZARD_ROCK": {"enu":[[7598,7598]],"default":[[7598,7598]],"esp":[[7605,7605]]},
     "CA_TAROT_HUD_COOLDOWN": {"enu":[[5027,5027]],"default":[[5027,5027]],"es":[[5031,5031]]},
     "CA_TAROT_HUD_DURATION": {"enu":[[5026,5026]],"default":[[5026,5026]],"es":[[5030,5030]]},
     "CA_TAROT_LIFT_HEAVY": {"enu":[[7579,7579]],"default":[[7579,7579]],"es":[[7582,7582]]},
@@ -2905,6 +2906,11 @@
     "CA_TAROT_ROOM_REQUIRED": {"enu":[[6,6]],"default":[[6,6]],"es":[[13,13]]},
     "CA_TAROT_ROOM_ROUTE": {"enu":[[5,5]],"default":[[5,5]],"es":[[12,12]]},
     "CA_TAROT_ROOTS_TARGET": {"enu":[[33,33]],"default":[[33,33]],"es":[[38,38]]},
+    "CA_TAROT_SUN_CAPACITY": {"enu":[[7601,7601]],"default":[[7601,7601]],"esp":[[7608,7608]]},
+    "CA_TAROT_SUN_CAPTURED": {"enu":[[7602,7602]],"default":[[7602,7602]],"esp":[[7609,7609]]},
+    "CA_TAROT_SUN_OCCUPIED": {"enu":[[7600,7600]],"default":[[7600,7600]],"esp":[[7607,7607]]},
+    "CA_TAROT_SUN_RELEASE_WAIT": {"enu":[[7603,7603]],"default":[[7603,7603]],"esp":[[7610,7610]]},
+    "CA_TAROT_SUN_STAR": {"enu":[[7599,7599]],"default":[[7599,7599]],"esp":[[7606,7606]]},
     "CA_TAROT_TOWER_DONE": {"enu":[[7552,7552]],"default":[[7552,7552]],"es":[[7555,7555]]},
     "CA_TAROT_TOWER_TARGET": {"enu":[[7553,7553]],"default":[[7553,7553]],"es":[[7556,7556]]},
     "CA_TAROT_UNIFIED_ACTION": {"enu":[[7513,7513]],"default":[[7513,7513]],"es":[[7517,7517]]},

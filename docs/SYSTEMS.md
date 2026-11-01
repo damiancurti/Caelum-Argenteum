@@ -542,10 +542,19 @@ Lovers passive redistribution in the abstract journey model remains separate wor
   blocks emissions outside and releases the same rock on expiry.
   Captured harmful rocks are released in the origin map before travel, rather
   than transported to the destination (approved2026-11-01).
+  These giant rocks also require Star equipped and occupy its one giant-object
+  allowance (approved2026-11-01). Release searches free space within4m without
+  crossing walls or telefragging. When no safe space exists, retain the same
+  contained rock, report the pending release and block travel until resolved.
+  The explicit Star requirement applies to these rocks even when a larger
+  character's collision cylinder makes their volume fall below the giant
+  threshold. Their approved1.2m diameter and physical mass remain unchanged.
 - Giant classification compares exterior geometric volume: the character's
   collision cylinder and the documented object shape, including spherical rocks.
   It does not infer volume from mass; the threshold remains at least twice the
   character's volume.
+  A profile cannot leave its campaign while holding a world rock: release it
+  first. Ordinary common saves still retain the cargo and pending safe release.
 
 ## 5.13.2 - Reversible equipment awakening (#442)
 

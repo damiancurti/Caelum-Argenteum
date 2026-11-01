@@ -25,6 +25,9 @@
     "CaelumFoolJourney": {"Active": [1]},
     "CaelumTarotLift": {"Holding": [1]}
   },
+  "transfer_blocked_inventory_references": {
+    "CaelumSunCargo": ["Body"]
+  },
   "owned_actor_edges": {
     "CaelumChestCargo": ["Chest"],
     "CaelumRestFurnitureItem": ["Body"],

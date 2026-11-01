@@ -26,6 +26,10 @@ Moon clones, independent resources and equipped swaps are implemented;
 these native checkpoints do not complete the remaining Major handlers.
 Judgement's local dispel is implemented; its spirit interaction/example remains
 separate from this active-effect checkpoint.
+Sun rock containment, Star requirement, Box mass/slots and safe-release travel
+gating are implemented. Finish the actual heat/contamination emitter adapters,
+owned visual registration, example placements and inventory presentation;
+generic giant-object capture remains separate from the hazardous-rock carrier.
 The confirmed per-power
 contract is consolidated in SYSTEMS; unresolved fields must still be asked.
 Only then integrate standalone modes #596-601 and issue final author scenarios.

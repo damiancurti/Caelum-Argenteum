@@ -121,7 +121,7 @@ class CaelumTarotJustice : Actor
         CaelumMajorWorldEvents.TimeSourcesChanged();
         return true;
     }
-    bool Segment(Actor body,vector3 from,vector3 point)
+    static bool Segment(Actor body,vector3 from,vector3 point)
     {
         vector3 ray=point-from;if(ray.Length()<0.01)return true;
         FLineTraceData hit;
@@ -180,7 +180,7 @@ class CaelumTarotJustice : Actor
     }
     static bool PrepareTravel()
     {
-        bool ready=true;
+        bool ready=CaelumSunCargo.PrepareTravel();
         // A lo sumo un duelo por personaje: sólo los ocho enlaces de sesión.
         for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i])
         {

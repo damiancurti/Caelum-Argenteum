@@ -24,6 +24,7 @@ class CaelumContaminationObject : Thinker
 
     static bool Eligible(Actor body)
     {
+        let rock=CaelumTarotRock(body);if(rock!=null && rock.Contained)return false;
         if(body==null || body.bDestroyed || body is 'CaelumPlayer' || body is 'CaelumCombatActor' || body.bMissile)return false;
         let proxy=CaelumDiningBlock(body);
         if(proxy!=null)return proxy.Table!=null && proxy.Table.ContaminationMigrating;

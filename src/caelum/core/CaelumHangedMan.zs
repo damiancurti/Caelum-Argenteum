@@ -82,5 +82,5 @@ class CaelumHangedMan : Object play
 class CaelumTarotFollowup : Object play
 {
     static bool Input(CaelumPlayer user)
-    {return CaelumTarotMoon.Input(user) || CaelumHangedMan.Input(user);}
+    {return CaelumTarotMoon.Input(user) || CaelumSunCargo.Input(user) || CaelumHangedMan.Input(user);}
 }

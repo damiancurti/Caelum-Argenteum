@@ -29,6 +29,11 @@ class CaelumMajorArcanaData : Object
     const EMPEROR_REVISION=1;
     const MOON_REVISION=1;
     const MOON_POWER=0.25;
+    const SUN_REVISION=1;
+    const ROCK_RADIUS_METERS=0.6;
+    const ROCK_DENSITY=2500.0;
+    const ROCK_WATTS=8000.0;
+    const SUN_RELEASE_MU=128.0;
     const JUSTICE_RETURN_MU=128.0;
     // Presupuesto técnico por cuerpo/tic; no altera el radio autorizado.
     const JUSTICE_SEARCH_BUDGET=8;

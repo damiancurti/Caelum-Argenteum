@@ -36,7 +36,8 @@ class CaelumTarotLoadout : Object play
         int boxCapacity=CaelumEquipmentRules.MagicBoxSlots(user.Attributes.Intelligence)+BoxBonus(record);
         record.TarotSelected[card]=true;
         if(CaelumTarotService.SelectedCount(record)-1>capacity)return false;
-        if((card==17 || card==19) && user.CountNativeMagicBoxSlots()+user.CraftingTaskReservedBoxSlots>boxCapacity)return false;
+        int releaseSlot=card==17 && CaelumSunCargo.Occupied(user)?1:0;
+        if((card==17 || card==19) && user.CountNativeMagicBoxSlots()-releaseSlot+user.CraftingTaskReservedBoxSlots>boxCapacity)return false;
         return true;
     }
 

@@ -20,6 +20,9 @@ The display room now includes the existing espinillo as Death's marked obstacle.
 Emperor integrates local pacification, reversible summon control and shared
 effect clocks. Moon copies appearances/equipment/resources into temporary combat
 illusions with safe swaps and no loot; remaining powers are tracked in TASKS.
+Sun containment now preserves one rock identity, requires Star, accounts for
+Box mass/slots and delays travel until a collision-safe release succeeds.
+This checkpoint does not yet place the harmful emitters in the campaign.
 Judgement's local instantaneous pulse uses those control/illusion adapters;
 spirit passives and the remaining display content still need completion.
 SYSTEMS distinguishes these handlers from the remaining powers and map targets.

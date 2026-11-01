@@ -31,6 +31,9 @@ and resources, native combat and a collision-checked swap. Its native checkpoint
 and retained failures are recorded in HISTORY; it is not full-version acceptance.
 Judgement now dispels nearby Emperor control and Moon illusions through their
 existing cleanup paths, preserving protected scenes and unrelated effects.
+Sun now has identity-preserving rock containment, Star gating, Box mass/slots
+and bounded safe release; its source emissions, artwork placement and full
+player-facing presentation remain part of the unfinished #440 integration.
 For existing saves, `build_dev.ps1 -LegacyTarotMaps` preserves pre-Justice maps;
 `-LegacyTarotExamples` preserves the Justice-era mansion before the annex.
 Justice now supports simultaneous pairs, safe returns and cancellable travel waits,

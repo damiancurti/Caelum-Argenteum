@@ -4,6 +4,30 @@ Documentation version: **5.13.3** - 2026-10-31.
 
 ## 5.13.3 - Ordered Tarot foundation (#440, implementation checkpoint)
 
+On2026-11-01 the author required Star equipped for the giant hazardous rocks
+captured by Sun, and approved safe release within4m, pending containment and a
+travel block when no unobstructed free location exists. These decisions do not
+constitute author acceptance of their implementation.
+
+Sun containment checkpoint (2026-11-01): one original rock is retained in the
+Box, requires equipped Star, occupies one slot and contributes its physical
+mass. Star's paid weightlessness uses the existing Box path. Expiry, Star removal
+and travel request bounded safe release; blocked release survives common-save
+recovery and prevents travel. Orphaned ownership preserves a world-owned release
+job. Contained bodies are excluded from contamination contacts/exposure, including
+reconstruction. Schema1 is initialized only on new capture; old saves acquire no
+cargo. Native private4.14.2-ca435-timer checks:19+17 assertions per peer,72 total,
+ports32429/32430, r5 package18040 members exactly matching src. Earlier failures
+are retained and described in assets/validation_v5_13_3/sun-results.json.
+A local body/Body collision caused the failed release; explicit self.Body fixes
+it. A non-pickup bookkeeping inventory must use AttachToOwner, not a rejected
+GiveInventoryType pickup. Static project validation passes. No presentation/FPS
+or author-acceptance claim. Three additional profile-boundary checks use a native cargo save: both active
+and pending containment block campaign transfer, while a released reference
+permits it. The original save is unchanged. Source emissions, owned model placement, full item
+presentation and generic giant objects remain pending; no manual suite is handed
+off before the complete version, as requested.
+
 The Judgement active checkpoint (2026-11-01) dispels nearby Emperor effects and
 Moon illusions through their existing lifecycle adapters. It preserves original
 summon allegiance/lifetime, ordinary friendship, unrelated disease and protected

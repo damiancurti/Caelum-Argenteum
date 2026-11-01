@@ -763,7 +763,7 @@ class CaelumInventoryService : Object play
     {
         if (!CaelumPlayerAuthority.CanRead(user)) return 0;
         if (!user.MagicBoxOwned) { return 0; }
-        int total = 0;
+        int total = CaelumSunCargo.Occupied(user)?1:0;
         for (Inventory cursor = user.Inv; cursor != null; cursor = cursor.Inv)
         {
             CaelumEquipmentItem item = CaelumEquipmentItem(cursor);
@@ -2270,6 +2270,8 @@ class CaelumInventoryService : Object play
             double weight=cargo.CarriedWeight(user);
             user.PersonalInventoryItemCount++;personalInventoryWeight+=weight;carriedItemWeight+=weight;
         }
+        if(CaelumSunCargo.Occupied(user))
+        {user.MagicBoxUsedSlots++;magicBoxRawContentWeight+=CaelumSunCargo.Weight(user);}
         user.HUDMagicBoxRawContentWeight = Max(0.0, magicBoxRawContentWeight);
         user.HUDMagicBoxReducedContentWeight =
             user.CalculateMagicBoxReducedContentWeight(
