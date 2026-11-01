@@ -1,6 +1,18 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.13.11** - 2026-11-01.
+Documentation version: **5.13.12** - 2026-11-01.
+
+## Distributed hunt opportunities (#616)
+
+assets/hunt/ARCANA.json owns the 22 locations and reuse basis. The deterministic
+hunt_arcana_geometry.py extension retains the original maze materials and adds
+ordinary eight-metre chambers, with a twelve-metre Wheel footprint including its
+outer bypass. Native water uses existing CAPOOL01. Props reuse the automaton,
+espinillo, rocks, canopy bed, cannon, spirits, doorways and Tarot art; no new raster
+art or third-party source is introduced. hunt_arcana.modeldef explicitly maps
+the derived bed/fragile-rock classes to those unchanged owned meshes.
+assets/hunt/legacy_51311 preserves the original map/navigation and provenance.
+Native visual and functional evidence is in assets/validation_v5_13_12.
 
 ## Human Palomo presentation (#617)
 

@@ -1,0 +1,20 @@
+// #616: las clases derivadas conservan explícitamente las mallas existentes.
+Model CaelumHuntGiantBed
+{
+    Path "models/caelum/props/luxury"
+    Model 0 "ca_luxury_bed.obj"
+    Scale 1 1 1
+    AngleOffset -90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+Model CaelumHuntFragileRock
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_rock_granite.obj"
+    Scale 0.5 0.5 0.5
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CARK A 0 0
+}

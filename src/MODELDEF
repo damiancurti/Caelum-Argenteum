@@ -5092,3 +5092,4 @@ Model CaelumLargeLandscapePainting
 #include "caelum/data/transport_vehicles.modeldef"
 
 #include "caelum/data/powerups.modeldef"
+#include "caelum/data/hunt_arcana.modeldef"
