@@ -131,3 +131,5 @@ nosave string ca_match_host = "127.0.0.1";
 nosave string ca_match_session = "";
 nosave noarchive server int ca_standalone_mode = 0;
 user int ca_standalone_preset = 0;
+nosave int ca_match_palomo = 0;
+nosave noarchive server int ca_standalone_palomo = 0;

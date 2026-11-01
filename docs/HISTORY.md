@@ -1,6 +1,22 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.13.10** - 2026-11-01.
+Documentation version: **5.13.11** - 2026-11-01.
+
+## 5.13.11 - Player-controlled Palomo (#617, 2026-11-01)
+
+The author approved optional human Palomo with the native body, attributes, speed
+and immunity, no weapons/Tarot/power-ups, and required at least four participants.
+The host assigns at most one numbered participant before launch. The saved role
+survives recovery/rematch; seeker eligibility, collection, rescue and victory
+exclude the hunter. NPC mode and previous saves retain their existing behavior.
+Technical evidence is in assets/validation_v5_13_11; author acceptance remains
+pending in the final #596 handoff. #616 Arcana opportunities remain separate.
+Five native runs passed with 19 local peer processes in total: host hunter,
+client hunter, saved recovery, three-player fallback and the final client build.
+They verify contact capture, action exclusions, both victories and rematch role
+retention. The production sprite and localized Palomo tag were inspected.
+The launcher accepts legacy NPC requests and rejects invalid human-role requests.
+These fixtures do not establish Internet latency or physical-input acceptance.
 
 ## 5.13.10 - Labyrinth power-ups (#614, 2026-11-01)
 

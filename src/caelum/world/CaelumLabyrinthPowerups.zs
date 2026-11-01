@@ -79,7 +79,7 @@ class CaelumLabyrinthPowerups : Object play
     static bool Apply(CaelumPlayer user,int kind)
     {
         let match=CaelumStandaloneMatch.View();
-        if(!CaelumCaptureArcana.Eligible(match,user) || CaelumTarotHunt.Held(user) || user.DerivedStats==null)return false;
+        if(!CaelumCaptureArcana.Eligible(match,user) || CaelumTarotHunt.Held(user) || CaelumTarotHunt.HumanHunter(user) || user.DerivedStats==null)return false;
         if(kind==CaelumPowerupData.REST || kind==CaelumPowerupData.SLEEP)
         {CaelumPowerupRestModel.Apply(user,kind==CaelumPowerupData.SLEEP);return true;}
         if(kind==CaelumPowerupData.REPLENISH)

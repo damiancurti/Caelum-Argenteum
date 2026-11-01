@@ -1,6 +1,23 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.13.10** - 2026-11-01.
+Documentation version: **5.13.11** - 2026-11-01.
+
+## Optional player Palomo (#617)
+
+Standalone hunt setup lets the host choose NPC Palomo (default) or one numbered
+participant as Palomo. Human control requires at least four total participants;
+two or three retain the NPC. The session manifest, native admission and saved
+match agree on the role. Recovery uses the saved role, and unanimous rematches
+preserve it. Existing saves default to NPC, without replacing their hunter.
+
+The human hunter reuses Palomo's existing body, all twelve attributes, speed and
+immunity. Only movement and view are controlled; no weapons, Tarot, power-ups,
+material inventory actions, essence collection or rescues. Movement normalizes
+input to the NPC's speed, including diagonals, without another running multiplier.
+Normal player survival does not replace the existing NPC physiology.
+The role replaces the AI hunter. The other participants are seekers, retain their
+capture/rescue rules and win at 78 distinct essences; Palomo wins when all seekers
+are captive. Contact checks traverse only the at-most-eight session slots.
 
 ## Standalone labyrinth power-ups (#614)
 

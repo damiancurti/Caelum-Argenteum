@@ -1,6 +1,12 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.13.10** - 2026-11-01.
+Documentation version: **5.13.11** - 2026-11-01.
+
+## Human Palomo presentation (#617)
+
+Player Palomo reuses the original owned PAID/PAWK frames, scale and native body.
+No new texture, sprite or model is generated. The same two-frame walk is driven
+by actual player velocity. All six #614 power-up models remain unchanged.
 
 ## Labyrinth power-up models (#614)
 

@@ -3,6 +3,10 @@ class CaelumStandalonePlayer : CaelumPlayer
 {
     int StandaloneRevision,StandalonePreset;
     CaelumAnchoredResident StandaloneTemplate;
+    CaelumHuntPalomo PalomoTemplate;
+    bool StandaloneHunter;
+    double HunterSpeed;
+    int HunterHealth;
     bool StandaloneDeathRecorded,StandaloneInventoryCleared;
     void ClearMatchInventory()
     {DestroyAllInventory();StandaloneInventoryCleared=true;}
@@ -14,6 +18,7 @@ class CaelumStandalonePlayer : CaelumPlayer
     }
     override void Die(Actor source,Actor inflictor,int dmgflags,Name meansOfDeath)
     {
+        if(StandaloneHunter){health=HunterHealth;player.health=health;return;}
         let hunt=CaelumTarotHunt.View();
         if(hunt!=null){hunt.CapturePlayer(self,true);return;}
         Super.Die(source,inflictor,dmgflags,meansOfDeath);
@@ -22,6 +27,7 @@ class CaelumStandalonePlayer : CaelumPlayer
     }
     override int DamageMobj(Actor inflictor,Actor source,int damage,Name mod,int flags,double angle)
     {
+        if(StandaloneHunter)return 0;
         let match=CaelumStandaloneMatch.View();
         if(match!=null && (!match.Started || match.Finished))return 0;
         if(match!=null && match.Hunt!=null && (CaelumTarotHunt.Held(self) || (source!=self && source is 'CaelumStandalonePlayer')))return 0;
@@ -34,17 +40,44 @@ class CaelumStandalonePlayer : CaelumPlayer
         if(StandaloneRevision<1 && CaelumPlayerAuthority.CanMutate(self))
         {
             if(!CaelumStandalonePresets.Initialize(self,true))return;
-            CaelumMaximumHealth=Max(1,int(DerivedStats.MaximumHealth));
+            CaelumMaximumHealth=StandaloneHunter?HunterHealth:Max(1,int(DerivedStats.MaximumHealth));
             health=CaelumMaximumHealth;if(player!=null)player.health=health;
             RefillAir();RefillAnima();RefillSurvivalResources();
             UpdateWorldCarbineVisual();RefreshEquipmentSelectionPreview();
             RefreshFormalInventorySnapshot();PersistCharacterState();
         }
         Super.Tick();
+        if(StandaloneHunter)ApplyCustomWorldVisual();
+    }
+    override void PlayerThink()
+    {
+        if(!StandaloneHunter){Super.PlayerThink();return;}
+        // Palomo sólo controla movimiento y vista, sin arma ni acciones de PJ.
+        player.cmd.buttons&=BT_SPEED|BT_STRAFE;player.cmd.upmove=0;
+        CheckPitch();HandleMovement();CalcHeight();
+    }
+    override void MovePlayer()
+    {
+        if(!StandaloneHunter){Super.MovePlayer();return;}
+        if((player.cheats&CF_TOTALLYFROZEN)!=0){Vel.X=Vel.Y=0;return;}
+        vector2 input=(player.cmd.forwardmove,-player.cmd.sidemove);
+        double size=input.Length();
+        if(size<=0){Vel.X=Vel.Y=0;return;}
+        input/=size;
+        vector2 direction=(Cos(Angle)*input.X-Sin(Angle)*input.Y,Sin(Angle)*input.X+Cos(Angle)*input.Y);
+        Vel.X=direction.X*HunterSpeed;Vel.Y=direction.Y*HunterSpeed;
     }
     override bool ApplyCustomWorldVisual()
     {
         if(StandaloneRevision<1)return false;
+        if(StandaloneHunter)
+        {
+            bool moving=Vel.X*Vel.X+Vel.Y*Vel.Y>0.01;
+            sprite=Actor.GetSpriteIndex(moving?'PAWK':'PAID');frame=moving?(level.time/4)%2:0;
+            Scale=GetDefaultByType('CaelumPalomo').Scale;bNoSkin=true;crouchsprite=0;
+            if(AppearanceHead!=null){AppearanceHead.Destroy();AppearanceHead=null;}
+            return true;
+        }
         let source=GetDefaultByType(CaelumStandaloneData.Resident(StandalonePreset));
         int pose=CaelumAppearance.PoseFor(sprite,frame);
         String label="CompanionIdle";int offset=0;
@@ -73,7 +106,9 @@ class CaelumStandalonePresets : Object play
         let body=CaelumStandalonePlayer(user);if(body==null)return false;
         if(!worldReady)return true;
         let match=CaelumStandaloneMatch.View();
+        if(match==null)return false;
         int slot=user.PlayerNumber();
+        if(match.HunterPlayer(slot))return InitializePalomo(body);
         int preset=match!=null && match.Member(slot)?match.Preset[slot]:Clamp(user.ReadNewCharacterDraft('ca_standalone_preset',0),0,3);
         // Spawn programa PostBeginPlay para el primer tic propio del actor.
         // Conservar el único prototipo hasta entonces, sin colisión ni botín.
@@ -135,5 +170,33 @@ class CaelumStandalonePresets : Object play
             user.ApplyCharacterProfile();
         Console.Printf("CA_MATCH PRESET player=%d preset=%d",user.PlayerNumber(),preset);
         return true;
+    }
+    static bool InitializePalomo(CaelumStandalonePlayer body)
+    {
+        let source=body.PalomoTemplate;
+        if(source==null)
+        {
+            source=CaelumHuntPalomo(Actor.Spawn('CaelumHuntPalomo',body.Pos,NO_REPLACE));
+            body.PalomoTemplate=source;
+            if(source!=null){source.bSolid=false;source.bShootable=false;source.bInvisible=true;source.bDormant=true;}
+            return false;
+        }
+        if(!source.CombatProfileInitialized)return false;
+        let shape=GetDefaultByType('CaelumPalomo');
+        let snapshot=new('CaelumStandaloneProfile');snapshot.Revision=CaelumStandaloneData.REVISION;
+        snapshot.BodyMass=shape.Mass;snapshot.BodyHeight=shape.Height;snapshot.BodyRadius=shape.Radius;
+        snapshot.Base[0]=source.CombatStrength;snapshot.Base[1]=source.CombatToughness;snapshot.Base[2]=source.CombatConstitution;
+        snapshot.Base[3]=source.CombatAgility;snapshot.Base[4]=source.CombatDexterity;snapshot.Base[5]=source.CombatResilience;
+        snapshot.Base[6]=source.CombatCharisma;snapshot.Base[7]=source.CombatEmpathy;snapshot.Base[8]=source.CombatEloquence;
+        snapshot.Base[9]=source.CombatIntelligence;snapshot.Base[10]=source.CombatPatience;snapshot.Base[11]=source.CombatInsight;
+        body.CharacterProfile.InitializeDefaultTestProfile();body.CharacterProfile.Standalone=snapshot;
+        body.CharacterAllocation.ResetAllocations();body.WeaponModel.Equipped=false;body.ShieldModel.Equipped=false;
+        body.CharacterCreationComplete=true;body.CreationWizardOpen=false;
+        body.DebugAttributesAt100=body.DebugAttributesAt75=false;
+        body.ApplyCharacterProfile();body.HunterSpeed=source.Speed;body.HunterHealth=source.health;
+        body.StandaloneRevision=CaelumStandaloneData.REVISION;body.StandaloneHunter=true;
+        body.bPickup=false;body.player.ReadyWeapon=null;body.player.PendingWeapon=null;body.SetTag("$CA_PALOMO_NAME");
+        source.Destroy();body.PalomoTemplate=null;body.ApplyCustomWorldVisual();
+        Console.Printf("CA_MATCH PALOMO player=%d",body.PlayerNumber());return true;
     }
 }

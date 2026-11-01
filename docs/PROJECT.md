@@ -1,6 +1,13 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.13.10** - 2026-11-01.
+Documentation version: **5.13.11** - 2026-11-01.
+
+## 5.13.11 - Optional human Palomo (#617)
+
+Hunt setup, native role admission, player body/control and saved seeker/hunter
+outcomes are implemented. Evidence: assets/validation_v5_13_11. #616 remains the
+last gameplay extension before #596 final author validation; no acceptance or
+merge/closure is inferred. #614 is delivered separately in PR618.
 
 ## 5.13.10 - Labyrinth power-ups (#614)
 

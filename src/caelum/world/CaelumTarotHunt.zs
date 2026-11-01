@@ -31,6 +31,8 @@ class CaelumTarotHunt : Object play
     {let m=CaelumStandaloneMatch.View();return m!=null?m.Hunt:null;}
     static clearscope bool Held(CaelumPlayer p)
     {let h=View();return p is 'CaelumStandalonePlayer' && h!=null && h.Captive(p.PlayerNumber());}
+    static clearscope bool HumanHunter(CaelumPlayer p)
+    {let body=CaelumStandalonePlayer(p);return body!=null && body.StandaloneHunter;}
     clearscope bool Captive(int slot){return slot>=0 && slot<MAXPLAYERS && (CaptiveMask&(1<<slot))!=0;}
     void Initialize()
     {
@@ -49,12 +51,15 @@ class CaelumTarotHunt : Object play
             trap.args[2]=0;Traps[i]=trap;
             trap.SetTag(trap.Kind==0?"$CA_HUNT_DOOR":trap.Kind==1?"$CA_HUNT_FLOOR":"$CA_CRUSHER_TRAP");
         }
-        Hunter=CaelumHuntPalomo(Actor.Spawn('CaelumHuntPalomo',CaelumHuntData.HunterStart(),NO_REPLACE));
+        let match=CaelumStandaloneMatch.View();
+        if(match.PlayerPalomo==0)Hunter=CaelumHuntPalomo(Actor.Spawn('CaelumHuntPalomo',CaelumHuntData.HunterStart(),NO_REPLACE));
+        else
+        {let body=CaelumPlayer(players[match.PlayerPalomo-1].mo);body.TeleportMove(CaelumHuntData.HunterStart(),false);body.ClearInterpolation();}
     }
     void Collect(CaelumPlayer p,int card)
     {
         let m=CaelumStandaloneMatch.View();
-        if(card<0 || card>=78 || Found[card] || m==null || m.Finished || !m.Member(p.PlayerNumber())
+        if(card<0 || card>=78 || Found[card] || m==null || m.Finished || !m.Seeker(p.PlayerNumber())
             || Captive(p.PlayerNumber()) || !CaelumCaptureArcana.Touches(p,Essences[card]))return;
         Found[card]=true;Collected++;m.Score[p.PlayerNumber()]++;
         Essences[card].bSpecial=false;Essences[card].bInvisible=true;
@@ -63,7 +68,7 @@ class CaelumTarotHunt : Object play
     void BeginTrap(int index)
     {
         let m=CaelumStandaloneMatch.View();
-        for(int slot=0;slot<MAXPLAYERS;slot++)if(m.Member(slot) && !Captive(slot))
+        for(int slot=0;slot<MAXPLAYERS;slot++)if(m.Seeker(slot) && !Captive(slot))
         {
             let p=CaelumPlayer(players[slot].mo);if(p==null || !Traps[index].Contains(p))continue;
             BeforeTrap[slot]=new('CaelumHuntResources');BeforeTrap[slot].Capture(p);TrapFor[slot]=index;
@@ -72,7 +77,7 @@ class CaelumTarotHunt : Object play
     void CapturePlayer(CaelumPlayer p,bool fatal=false)
     {
         let m=CaelumStandaloneMatch.View();int slot=p.PlayerNumber();
-        if(m==null || m.Finished || !m.Member(slot) || Captive(slot))return;
+        if(m==null || m.Finished || !m.Seeker(slot) || Captive(slot))return;
         let saved=fatal?BeforeTrap[slot]:null;
         if(saved==null){saved=new('CaelumHuntResources');saved.Capture(p);}
         Resources[slot]=saved;BeforeTrap[slot]=null;TrapFor[slot]=-1;
@@ -97,9 +102,12 @@ class CaelumTarotHunt : Object play
     }
     void Tick(CaelumStandaloneMatch m)
     {
-        for(int slot=0;slot<MAXPLAYERS;slot++)if(m.Member(slot))
+        // La consulta sólo recorre los ocho puestos de la sesión.
+        let human=m.PlayerPalomo>0?CaelumPlayer(players[m.PlayerPalomo-1].mo):null;
+        for(int slot=0;slot<MAXPLAYERS;slot++)if(m.Seeker(slot))
         {
             let p=CaelumPlayer(players[slot].mo);if(p==null)continue;
+            if(human!=null && !Captive(slot) && CaelumVisualPerception.Touching(human,p))CapturePlayer(p);
             if(Captive(slot))
             {Resources[slot].Restore(p);p.player.cheats|=CF_TOTALLYFROZEN;p.Vel=(0,0,0);continue;}
             if(TrapFor[slot]>=0 && !Traps[TrapFor[slot]].Contains(p))
@@ -118,7 +126,7 @@ class CaelumTarotHunt : Object play
             if(RescueProgress[slot]>=CaelumHuntData.RESCUE_TICS)
             {Rescue(nearby);RescueTarget[slot]=-1;RescueProgress[slot]=0;}
         }
-        if(Collected>=CaelumConstants.TAROT_CARD_COUNT || (CaptiveMask&m.Members)==m.Members)
+        if(Collected>=CaelumConstants.TAROT_CARD_COUNT || (CaptiveMask&m.Seekers())==m.Seekers())
         {m.Finished=true;m.Winner=Collected>=CaelumConstants.TAROT_CARD_COUNT?0:-1;}
     }
 }
