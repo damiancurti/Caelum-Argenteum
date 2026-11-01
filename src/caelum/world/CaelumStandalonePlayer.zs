@@ -3,6 +3,27 @@ class CaelumStandalonePlayer : CaelumPlayer
 {
     int StandaloneRevision,StandalonePreset;
     CaelumAnchoredResident StandaloneTemplate;
+    bool StandaloneDeathRecorded,StandaloneInventoryCleared;
+    void ClearMatchInventory()
+    {DestroyAllInventory();StandaloneInventoryCleared=true;}
+    override void DeathThink()
+    {
+        Super.DeathThink();
+        let match=CaelumStandaloneMatch.View();
+        if(player!=null && match!=null && match.RespawnAllowed(PlayerNumber()))player.playerstate=PST_REBORN;
+    }
+    override void Die(Actor source,Actor inflictor,int dmgflags,Name meansOfDeath)
+    {
+        Super.Die(source,inflictor,dmgflags,meansOfDeath);
+        let match=CaelumStandaloneMatch.View();
+        if(health<=0 && match!=null)match.RecordDeath(self,source);
+    }
+    override int DamageMobj(Actor inflictor,Actor source,int damage,Name mod,int flags,double angle)
+    {
+        let match=CaelumStandaloneMatch.View();
+        if(match!=null && (!match.Started || match.Finished))return 0;
+        return Super.DamageMobj(inflictor,source,damage,mod,flags,angle);
+    }
     override void Tick()
     {
         // PostBeginPlay del jugador puede preceder al de actores creados allí.
@@ -48,7 +69,9 @@ class CaelumStandalonePresets : Object play
     {
         let body=CaelumStandalonePlayer(user);if(body==null)return false;
         if(!worldReady)return true;
-        int preset=Clamp(user.ReadNewCharacterDraft('ca_standalone_preset',0),0,3);
+        let match=CaelumStandaloneMatch.View();
+        int slot=user.PlayerNumber();
+        int preset=match!=null && match.Member(slot)?match.Preset[slot]:Clamp(user.ReadNewCharacterDraft('ca_standalone_preset',0),0,3);
         // Spawn programa PostBeginPlay para el primer tic propio del actor.
         // Conservar el único prototipo hasta entonces, sin colisión ni botín.
         let source=body.StandaloneTemplate;

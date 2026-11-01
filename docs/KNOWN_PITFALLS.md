@@ -4,6 +4,20 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-212 - Native respawn substitutes stored player references
+
+Status/evidence: ENGINE-VERIFIED, #598 /5.13.5, 2026-11-01; two native
+4.14.2-ca435-timer peers, validation_v5_13_5, runs32506/32508.
+
+A probe retained a reference to the dead player and expected it to differ from
+players[slot].mo after respawn. GZDoom substituted that reference with the new
+body: equality remained true although PlayerRespawned fired and the resident
+initializer restored health and equipment. Do not use actor-reference inequality
+as a life-generation marker. Observe the native respawn event or explicit saved
+life/death state. The independent match ledger is owned by a map store, so score
+and deadlines survive body replacement. This does not validate campaign death,
+remote Internet play, frame pacing or author acceptance.
+
 ## CA-KP-211 - A changing source invalidates pristine environmental cohorts
 
 Status/evidence: ENGINE-VERIFIED, #440 /5.13.3, 2026-11-01; native two-peer

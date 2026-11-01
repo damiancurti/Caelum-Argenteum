@@ -2,6 +2,10 @@
 class CaelumStandaloneData : Object
 {
     const REVISION=1;
+    const DEATHMATCH=1;
+    const FRAG_LIMIT=20;
+    const TIME_LIMIT_TICS=10*60*35;
+    const RESPAWN_TICS=3*35;
     static clearscope class<CaelumAnchoredResident> Resident(int preset)
     {
         switch(preset)

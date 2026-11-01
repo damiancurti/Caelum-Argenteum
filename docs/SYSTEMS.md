@@ -1,6 +1,31 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.13.4** - 2026-11-01.
+Documentation version: **5.13.5** - 2026-11-01.
+
+## Standalone individual Deathmatch (#598)
+
+Mode1 uses the isolated resident process from #597. All participants oppose one
+another. Offensive/support targeting consults this match relation instead of
+treating native-network peers as cooperative allies. A player kill grants one frag; suicide/environmental death subtracts
+one from the victim. One saved death marker prevents duplicate awards. Scores,
+roster, selected presets, active time and respawn deadlines belong to the match,
+not the replaceable body. Twenty frags wins; at ten active minutes the sole
+leader wins, while tied standings continue until the next lead. Resolution
+stops further damage/scoring. The localized standings menu shows all scores. Its clock reserves space above
+the aim panel rather than overlapping the target information.
+
+Native respawn waits three active seconds and restores the initial resident's
+resources and equipment. Death removes equipment loot, and the isolated process
+uses native coop inventory-loss and weapon-drop settings without changing the
+campaign configuration. Campaign waiting/El Loco rules do not apply here.
+The standalone activation makes arena maps non-hub: unanimous rematch consent
+reloads the arena, resetting projectiles, score, clock and equipment. These map
+metadata overrides do not change campaign geometry or its hub behavior.
+
+One serialized map store is located by a typed query once per load (population
+bound one). Thereafter the event bridge uses its reference and at most eight
+native player slots. No recurring global actor scan is introduced. Evidence is
+kept in assets/validation_v5_13_5; author acceptance remains deferred.
 
 ## Standalone match setup (#597, implementation checkpoint)
 

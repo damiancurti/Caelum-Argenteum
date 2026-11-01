@@ -33,7 +33,7 @@ class CaelumSessionLifecycleEvents : StaticEventHandler
         {
             if(!playeringame[i]){DeadFoolHeld[i]=false;continue;}
             let user=CaelumPlayer(players[i].mo);
-            if(user==null || user.player==null)continue;
+            if(user==null || user.player==null || user is 'CaelumStandalonePlayer')continue;
             bool pressed=(user.player.cmd.buttons&BT_USER3)!=0;
             if(user.health<=0 && pressed && !DeadFoolHeld[i] && CaelumFoolTravel.AllDead())
                 CaelumFoolTravel.Propose(user,true);
@@ -45,7 +45,12 @@ class CaelumSessionLifecycleEvents : StaticEventHandler
     override void PlayerDisconnected(PlayerEvent e)
     {if(multiplayer)CaelumSessionLifecycle.CancelConsent();}
     override bool PlayerRespawning(PlayerEvent e)
-    {return !CaelumSessionLifecycle.Waiting(CaelumPlayer(players[e.PlayerNumber].mo));}
+    {
+        let user=CaelumPlayer(players[e.PlayerNumber].mo);
+        if(user is 'CaelumStandalonePlayer')
+        {let match=CaelumStandaloneMatch.View();return match!=null && match.RespawnAllowed(e.PlayerNumber);}
+        return !CaelumSessionLifecycle.Waiting(user);
+    }
     override void NetworkProcess(ConsoleEvent e)
     {
         // El lanzador de recuperación común invalida consentimientos del

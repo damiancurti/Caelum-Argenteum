@@ -1,8 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.13.4** - 2026-11-01.
+Documentation version: **5.13.5** - 2026-11-01.
 
-## 5.13.4 - Standalone session foundation (#597, in progress)
+## 5.13.5 - Individual standalone Deathmatch (#598)
+
+The focused implementation adds match-local scoring, timed native respawn,
+overtime and unanimous rematch to the resident foundation (#597, PR609).
+Native scoring, recovery and rematch checks pass. Team, capture and hunt rules
+remain separate #599–601 work; the final V5.13 author suite is not ready yet.
+
+## 5.13.4 - Standalone session foundation (#597, PR609)
 
 The localized title menu and isolated native launcher are implemented with four
 resident presets and pinned session files. Native preset initialization and common-save recovery passed on two clients;

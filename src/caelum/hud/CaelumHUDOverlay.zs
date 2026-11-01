@@ -826,6 +826,18 @@ class CaelumHUDOverlay : EventHandler
                 && localPlayer.player.playerstate==PST_DEAD)
             {
                 CaelumScreenFeedback.Damage(localPlayer,event.FracTic);
+                if(localPlayer is 'CaelumStandalonePlayer')
+                {
+                    double bottom=CaelumStandaloneScoreHUD.Draw(HUDFont);
+                    let match=CaelumStandaloneMatch.View();
+                    if(match!=null && !match.Finished)
+                    {
+                        int seconds=Max(0,(match.RespawnAt[localPlayer.PlayerNumber()]-level.time+TICRATE-1)/TICRATE);
+                        CaelumPresentation.CenterMessage(HUDFont,Font.CR_WHITE,
+                            String.Format(StringTable.Localize("CA_MATCH_RESPAWN",false),seconds),bottom);
+                    }
+                    return;
+                }
                 String message=StringTable.Localize(CaelumSpirit.Active(localPlayer)
                     ? "CA_SPIRIT_CONTROLS" : "CA_FOOL_JOURNEY_DEAD",false);
                 CaelumTrucoMenu.Wrap(22,36,730,CaelumInputHints.Resolve(message));
@@ -1017,7 +1029,9 @@ class CaelumHUDOverlay : EventHandler
         CaelumPresentation.End();
         CaelumQuickUseHUD.Draw(localPlayer,HUDFont,resourceScale);
         double noticeBottom=Max(12,CaelumCartography.Draw(localPlayer,resourceScale,debuffWidth));
-        noticeBottom=Max(noticeBottom,CaelumTargetPanel.Draw(localPlayer,HUDFont));
+        double matchBottom=CaelumStandaloneScoreHUD.Draw(HUDFont);
+        noticeBottom=Max(noticeBottom,matchBottom);
+        noticeBottom=Max(noticeBottom,CaelumTargetPanel.Draw(localPlayer,HUDFont,matchBottom));
         if(menuactive==Menu.Off)
         {
             if(localPlayer.HUDActiveWeaponNoticeRemaining>0)
