@@ -53,6 +53,18 @@ unlinked-guard registry and fixed player slots, preserving offscreen recipients
 without its former actor-global traversal. Native evidence: temperance-results.json
 in assets/validation_v5_13_3; 20 initial and seven recovery assertions per client.
 
+### Tower machine destruction
+
+A single native aim trace resolves a cannon/ram collision part to its owning
+machine, within100m scaled by current magic range. Solid intervening geometry
+blocks targeting. Destruction revision1 marks the machine destroyed, removes its
+visual/collision parts and releases living operators without damage or inventory
+changes. The nonphysical controller remains in the encounter's objective ledger;
+its resolution is idempotent and contributes to the existing victory condition.
+Save recovery does not rebuild destroyed components or rearm the machine.
+Old machines initialize the new flag false without changing prior neutralization.
+Released projectiles and individual operator combat retain their existing rules.
+
 ### Confirmed follow-up contract for the remaining handlers
 
 - World order0..77, same target where applicable, skip invalid targets; selected
@@ -88,8 +100,12 @@ in assets/validation_v5_13_3; 20 initial and seven recovery assertions per clien
   no actor may belong to two simultaneous pairs. New campaigns receive the new
   geometry; approved reversible legacy packages preserve visited-map saves and
   report unavailable arenas. Compatibility still requires native recovery tests.
-- Tower: destroy one visible siege machine within100m plus magic range via its
-  ordinary destruction path, preserving existing operator consequences.
+- Fool: execute the complete ordered sequence in the origin map only after the
+  required consent, then travel. Refusal costs nothing. World skips the journey
+  when no player is dead or the group is already in the mansion, while executing
+  other valid effects. Palomo return requires the requester to equip Fool. When
+  all players are dead, spiritual UI may equip/remove cards under the same
+  capacity and essence-binding restrictions. These integrations are pending.
 - Moon: two60s clones, caster appearance/attributes,25%maximumHealth/damage,
   perceived enemies, no transferable loot. Judgement: one4m pulse breaks recognized
   magical mind control/illusions, preserving narrative scenes.

@@ -46,7 +46,7 @@ class CaelumTarotService : Object play
     static clearscope bool Implemented(int card)
     {
         return card == CaelumConstants.TAROT_THE_FOOL
-            || card==9 || card==14 || card==15 || card==17 || card==21
+            || card==9 || card==14 || card==15 || card==16 || card==17 || card==21
             || (card >= CaelumConstants.TAROT_MAJOR_COUNT && card < CaelumConstants.TAROT_CARD_COUNT);
     }
 
@@ -112,8 +112,10 @@ class CaelumTarotService : Object play
         { Feedback(user, "CA_TAROT_POWER_ANIMA"); return false; }
         if (record.TarotSelected[CaelumConstants.TAROT_THE_FOOL])
             return CaelumFoolTravel.Propose(user);
+        Actor aimed=(record.TarotSelected[16] || record.TarotSelected[21])
+            ? CaelumMajorTargets.Aim(user) : null;
         CaelumTarotSequence.Pay(user,record,devil);
-        CaelumTarotSequence.Apply(user,record);
+        CaelumTarotSequence.Apply(user,record,aimed);
         if(user.health>0)user.ApplyCharacterProfile();
         user.RefreshSocialJournalSnapshot();
         user.PersistCharacterState();

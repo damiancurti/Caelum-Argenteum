@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "fdfa855a57c4cb0e11f6f427abefe62afd57f9f479a9c14a9c9b738d0227d707",
+  "sha256": "e564b3db3ab8e5a2899570bfb34016928c9bab4dcf26fadb4e34f0d160d8dac9",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[492,492]],"default":[[492,492]],"es":[[1187,1187]]},
     "CA_ABSENT_THEFT_FOUND": {"enu":[[6915,6915]],"default":[[6915,6915]],"es":[[6917,6917]]},
@@ -2877,6 +2877,8 @@
     "CA_TAROT_POWER_WANDS": {"enu":[[4929,4929]],"default":[[4929,4929]],"es":[[4964,4964]]},
     "CA_TAROT_PREVIEW_HINT": {"enu":[[3421,3421]],"default":[[3421,3421]],"es":[[3429,3429]]},
     "CA_TAROT_PREVIEW_LABEL": {"enu":[[3420,3420]],"default":[[3420,3420]],"es":[[3428,3428]]},
+    "CA_TAROT_TOWER_DONE": {"enu":[[7510,7510]],"default":[[7510,7510]],"es":[[7513,7513]]},
+    "CA_TAROT_TOWER_TARGET": {"enu":[[7511,7511]],"default":[[7511,7511]],"es":[[7514,7514]]},
     "CA_TAROT_UNIFIED_ACTION": {"enu":[[7471,7471]],"default":[[7471,7471]],"es":[[7475,7475]]},
     "CA_TAROT_UNIFIED_ACTIVE": {"enu":[[7473,7473]],"default":[[7473,7473]],"es":[[7477,7477]]},
     "CA_TAROT_UNIFIED_OBTAINED": {"enu":[[7421,7421]],"default":[[7421,7421]],"es":[[7447,7447]]},

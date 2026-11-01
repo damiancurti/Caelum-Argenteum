@@ -28,6 +28,14 @@ beneficial Toughness inversion. The affected sleep pulse now uses local queries
 and the existing unlinked-guard registry. See temperance-results.json beside the
 foundation evidence; frame-presentation and author acceptance remain pending.
 
+Tower now removes cannon/ram parts while retaining the exact objective ledger,
+releases living operators without damage and prevents reconstruction after load.
+Both native clients pass15 initial and seven recovery assertions; all18,013 package
+members match source. Evidence: validation_v5_13_3/tower-results.json. Fixture
+corrections wait for the operator's native profile recalculation and save explicitly
+after pending checkpoints, rather than depending on background rendering. Production
+save behavior is unchanged. Author acceptance and remaining #440 work stay pending.
+
 ## 5.13.2 - Reversible equipment awakening (#442)
 
 Author-approved +25% damage/defense and half wear are implemented on the exact

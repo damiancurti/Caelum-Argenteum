@@ -3,7 +3,7 @@
 Documentation version: **5.13.3** - 2026-10-31.
 
 **V5.13:** PR605/606/607 cover #439/441/442; PR608 covers #440.
-Order/capacity/timers/Temperance verified; remaining powers/maps/art next.
+Order/capacity/timers/Temperance/Tower verified; more powers/maps/art next.
 #596-601 last. Author suite deferred.
 Approved rules: SYSTEMS; native evidence: validation_v5_13_1/2/3.
 

@@ -7505,3 +7505,10 @@ CA_TAROT_ORDER = "Sequence position: %d. Equipping a card places it last.";
 [esp]
 CA_TAROT_CAPACITY_REMOVE = "Liberá los espacios adicionales de cartas o de la Caja antes de quitar este Arcano.";
 CA_TAROT_ORDER = "Lugar en la secuencia: %d. Equipar una carta la coloca al final.";
+
+[enu default]
+CA_TAROT_TOWER_DONE = "The Tower destroyed the siege machine.";
+CA_TAROT_TOWER_TARGET = "The Tower needs a visible siege machine under the reticle.";
+[es]
+CA_TAROT_TOWER_DONE = "La Torre destruyó la máquina de asedio.";
+CA_TAROT_TOWER_TARGET = "La Torre requiere una máquina de asedio visible en la mira.";

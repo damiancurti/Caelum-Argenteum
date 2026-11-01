@@ -7,4 +7,6 @@ class CaelumMajorArcanaData : Object
     const HERMIT_DURATION=2;
     const DEVIL_COST=2;
     const TEMPERANCE_DURATION=0.5;
+    const TARGET_METERS=100.0;
+    const MACHINE_REVISION=1;
 }

@@ -10,7 +10,7 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 it, then rebuild with `run_dev.bat` as described below.
 
 V5.13 is in progress. #440 now has ordered Tarot loadouts, additive capacities,
-per-card timers, Hermit duration, Devil payment, Temperance and World dispatch. This is an
+per-card timers, Hermit duration, Devil payment, Temperance, Tower and World dispatch. This is an
 implementation checkpoint: remaining Major targets/effects and standalone modes
 #596-601 are unfinished. #441 capture/unified power and #442 equipment awakening
 have separate tested PRs. Author scenarios remain deferred until all work is ready.

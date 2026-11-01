@@ -1,0 +1,108 @@
+{
+  "issue": 440,
+  "release": "5.13.3",
+  "scope": "Tower siege-machine destruction and save recovery",
+  "author_acceptance": false,
+  "runtime_members_matching_source": 18013,
+  "native_runs": [
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32275-20261031-234201-215966",
+      "runtime_sha256": "a3a6d0cbb47032b9ecd7f0b55d64dd91e5e164aeaeb30fa8da0a515e16fa1016",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440R PASS native cannon accepts real living operator",
+            "CA440R PASS native reticle resolves collision part to exact machine",
+            "CA440R PASS target beyond scaled range is omitted",
+            "CA440R PASS solid obstacle blocks machine targeting",
+            "CA440R PASS ordinary character cannot be destroyed by Tower",
+            "CA440R PASS native Tower sequence activates",
+            "CA440R PASS destruction records one resolved objective",
+            "CA440R PASS cannon visual and collision parts are removed",
+            "CA440R PASS operator keeps Health and leaves machine assignment",
+            "CA440R PASS objective identity remains and unfinished ram blocks victory",
+            "CA440R PASS instant Tower is not repeated by Hermit and pays once",
+            "CA440R PASS repeat invocation cannot count same machine twice",
+            "CA440R PASS ram head resolves to its machine",
+            "CA440R PASS ram removes all collision and suspension parts",
+            "CA440R PASS twelve resolved machines and defeated commander complete encounter",
+            "CA440R RESULT capture"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440R PASS native cannon accepts real living operator",
+            "CA440R PASS native reticle resolves collision part to exact machine",
+            "CA440R PASS target beyond scaled range is omitted",
+            "CA440R PASS solid obstacle blocks machine targeting",
+            "CA440R PASS ordinary character cannot be destroyed by Tower",
+            "CA440R PASS native Tower sequence activates",
+            "CA440R PASS destruction records one resolved objective",
+            "CA440R PASS cannon visual and collision parts are removed",
+            "CA440R PASS operator keeps Health and leaves machine assignment",
+            "CA440R PASS objective identity remains and unfinished ram blocks victory",
+            "CA440R PASS instant Tower is not repeated by Hermit and pays once",
+            "CA440R PASS repeat invocation cannot count same machine twice",
+            "CA440R PASS ram head resolves to its machine",
+            "CA440R PASS ram removes all collision and suspension parts",
+            "CA440R PASS twelve resolved machines and defeated commander complete encounter",
+            "CA440R RESULT capture"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32276-20261031-234242-428598",
+      "runtime_sha256": "a3a6d0cbb47032b9ecd7f0b55d64dd91e5e164aeaeb30fa8da0a515e16fa1016",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440R PASS load retains exact objective records",
+            "CA440R PASS load retains destroyed flags",
+            "CA440R PASS load does not recreate collision parts",
+            "CA440R PASS destroyed machines cannot rearm",
+            "CA440R PASS operator remains alive and released after load",
+            "CA440R PASS load does not repeat encounter victory",
+            "CA440R PASS repeat destruction is rejected",
+            "CA440R RESULT reload"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440R PASS load retains exact objective records",
+            "CA440R PASS load retains destroyed flags",
+            "CA440R PASS load does not recreate collision parts",
+            "CA440R PASS destroyed machines cannot rearm",
+            "CA440R PASS operator remains alive and released after load",
+            "CA440R PASS load does not repeat encounter victory",
+            "CA440R PASS repeat destruction is rejected",
+            "CA440R RESULT reload"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "fixture_corrections": "Stabilized native operator profile before saving; explicit delayed host save replaces render-dependent fixture save. Production save code unchanged."
+}

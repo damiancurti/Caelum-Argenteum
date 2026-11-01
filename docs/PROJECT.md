@@ -5,7 +5,7 @@ Documentation version: **5.13.3** - 2026-10-31.
 ## 5.13.3 - Ordered Tarot foundation (#440, partial)
 
 Native order/capacity/timer/sequence foundation is implemented and checked.
-Temperance's existing elemental/sleep integration also has native recovery checks.
+Temperance status handling and Tower machine destruction have native recovery checks.
 SYSTEMS distinguishes these handlers from the remaining powers and map targets.
 #439/441/442 have separate draft PRs605/606/607; #440 is draft PR608, in progress;
 standalone modes #596-601 remain last. No full V5.13 acceptance is claimed.
