@@ -17,6 +17,8 @@ raster source or external attribution is introduced. All four annex leaves
 face their doorways at90 degrees; native collision/sliding axes stay unchanged.
 Front/rear native images and save migration are recorded in
 assets/validation_v5_13_3/example-wall-art-results.json. Author review is pending.
+The living-obstacle example reuses the existing CAVT O espinillo artwork and
+physical profile unchanged; APPARATUS.json records its clear display-room location.
 
 ## Tarot automaton model (#440, 5.13.3)
 

@@ -101,6 +101,11 @@ class CaelumTargetInfo : Object play
         }
         if(Title=="")Title=L(Subject is 'CaelumCombatActor'?"CA_TARGET_CHARACTER":"CA_TARGET_OBJECT");
         bool reachable=Distance<=user.UseRange;
+        if(Subject is 'CaelumTarotLivingObstacle')
+        {
+            Actions=L(!reachable?"CA_TARGET_APPROACH":CaelumTarotLoadout.Passive(user.GetPersistentCharacterState(false),13)
+                ?"CA_TAROT_LIVING_BREAK":"CA_TAROT_LIVING_REQUIRES");return;
+        }
         let portal=CaelumTarotExamplePortal(Subject);
         if(portal!=null)
         {

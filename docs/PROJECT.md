@@ -16,6 +16,7 @@ Authored false-wall identification and cursed-passage purification are implement
 The reversible mansion annex has usable return portals and passage examples;
 Wheel changes native water, lighting and routes, with saved state and safe closure.
 Its stone false wall has front/rear native evidence and an idempotent visual migration.
+The display room now includes the existing espinillo as Death's marked obstacle.
 SYSTEMS distinguishes these handlers from the remaining powers and map targets.
 #439/441/442 have separate draft PRs605/606/607; #440 is draft PR608, in progress;
 standalone modes #596-601 remain last. No full V5.13 acceptance is claimed.

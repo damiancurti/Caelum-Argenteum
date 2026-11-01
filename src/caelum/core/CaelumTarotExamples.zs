@@ -4,32 +4,42 @@ class CaelumTarotExampleRoom : Actor
 {
     int Revision;
     bool Wet;
+    CaelumTarotLivingObstacle LivingObstacle;
     CaelumSlidingDoorLeaf Doors[4];
     CaelumTarotExamplePortal Portals[2];
 
     void Prepare()
     {
         if(Revision>=CaelumTarotExampleData.REVISION)return;
-        Revision=CaelumTarotExampleData.REVISION;
-        for(int i=0;i<4;i++)
+        if(Revision<1)
         {
-            class<Actor> kind;
-            if(i==0)kind='CaelumTarotFalseWall';
-            else if(i==1)kind='CaelumTarotCursedPassage';
-            else kind='CaelumTarotExampleRoute';
-            Doors[i]=CaelumSlidingDoorLeaf(Actor.Spawn(kind,CaelumTarotExampleData.Door(i),NO_REPLACE));
-            if(Doors[i]!=null)
+            Revision=1;
+            for(int i=0;i<4;i++)
             {
-                Doors[i].args[1]=CaelumTarotExampleData.Slide(i);
-                Doors[i].Angle=CaelumTarotExampleData.DOOR_VISUAL_ANGLE;
-                let route=CaelumTarotExampleRoute(Doors[i]);
-                if(route!=null){route.Room=self;route.WetRoute=i==3;}
+                class<Actor> kind;
+                if(i==0)kind='CaelumTarotFalseWall';
+                else if(i==1)kind='CaelumTarotCursedPassage';
+                else kind='CaelumTarotExampleRoute';
+                Doors[i]=CaelumSlidingDoorLeaf(Actor.Spawn(kind,CaelumTarotExampleData.Door(i),NO_REPLACE));
+                if(Doors[i]!=null)
+                {
+                    Doors[i].args[1]=CaelumTarotExampleData.Slide(i);
+                    Doors[i].Angle=CaelumTarotExampleData.DOOR_VISUAL_ANGLE;
+                    let route=CaelumTarotExampleRoute(Doors[i]);
+                    if(route!=null){route.Room=self;route.WetRoute=i==3;}
+                }
+            }
+            for(int i=0;i<2;i++)
+            {
+                Portals[i]=CaelumTarotExamplePortal(Actor.Spawn('CaelumTarotExamplePortal',CaelumTarotExampleData.Portal(i),NO_REPLACE));
+                if(Portals[i]!=null){Portals[i].Room=self;Portals[i].Route=i;}
             }
         }
-        for(int i=0;i<2;i++)
+        // La revisión se guarda aunque el árbol se destruya después. No reaparece.
+        if(Revision<2)
         {
-            Portals[i]=CaelumTarotExamplePortal(Actor.Spawn('CaelumTarotExamplePortal',CaelumTarotExampleData.Portal(i),NO_REPLACE));
-            if(Portals[i]!=null){Portals[i].Room=self;Portals[i].Route=i;}
+            LivingObstacle=CaelumTarotLivingObstacle(Actor.Spawn('CaelumTarotLivingObstacle',CaelumTarotExampleData.Living(),NO_REPLACE));
+            Revision=2;
         }
         Apply();
     }

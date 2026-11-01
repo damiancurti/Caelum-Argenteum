@@ -7581,3 +7581,10 @@ CA_TAROT_LIFT_STARTED = "Object lifted. Use again to release it; its mass counts
 [es]
 CA_TAROT_LIFT_HEAVY = "Este objeto supera tu capacidad para levantarlo, contando la carga que ya llevás.";
 CA_TAROT_LIFT_STARTED = "Objeto levantado. Volvé a usar para soltarlo; su masa cuenta como carga.";
+
+[enu default]
+CA_TAROT_LIVING_BREAK = "{bind:+use}: destroy this living obstacle with Death";
+CA_TAROT_LIVING_REQUIRES = "Equip Death to destroy this living obstacle.";
+[es]
+CA_TAROT_LIVING_BREAK = "{bind:+use}: destruir este obstáculo vivo con La Muerte";
+CA_TAROT_LIVING_REQUIRES = "Equipá La Muerte para destruir este obstáculo vivo.";

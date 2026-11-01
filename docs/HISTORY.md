@@ -4,6 +4,18 @@ Documentation version: **5.13.3** - 2026-10-31.
 
 ## 5.13.3 - Ordered Tarot foundation (#440, implementation checkpoint)
 
+The living-example checkpoint (2026-11-01) adds the owned espinillo to the annex
+display room, with contextual Death/Use instructions. Controller revision2 adds
+the example once to a prior saved controller while preserving its room state,
+doors and purification. Destroying the obstacle through the player's native Use
+path spends no Anima or cooldown and remains destroyed after common recovery.
+Evidence: assets/validation_v5_13_3/living-example-results.json. Its artwork and
+physical profile are unchanged. The remaining display objects and full author
+suite are still pending.
+The same package records eight initialization/cached-getter CPU samples per
+operation:0.01111-0.01533ms/0.00044-0.00072ms in the real peaceful mansion. This
+documents the one-controller load lookup, not gameplay FPS or siege performance.
+
 The annex-door visual checkpoint (2026-11-01) replaces the false wall's wood
 image with the unchanged owned mansion stone and aligns all four wall sprites
 with their openings. The first live front/rear capture exposed the old edge-on

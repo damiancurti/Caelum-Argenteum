@@ -263,12 +263,18 @@ anything, eight local native collision probes check the doorway that will close;
 an occupied doorway postpones the change without altering the room. This does
 not refund an otherwise valid paid sequence, just like other invalid targets.
 
-A saved revision1 controller owns four doors and two portals. One typed lookup
+A saved revision2 controller owns four doors, two portals and one living obstacle. One typed lookup
 per map load restores that controller; normal use consults the retained reference
 and authored sector marker. No per-tic map census is used. Legacy geometry lacks
 the marker/indices and creates no apparatus; Wheel reports no compatible room.
 APPARATUS.json owns placements and the generated runtime data. Save recovery
 retains room state, purification, doors and portal identities.
+The typed lookup is owned by this handler and runs only when loading a compatible
+MAP01; it seeks at most its single saved controller. Eight native peaceful-mansion
+samples measured0.01111-0.01533ms per reference reconstruction plus unchanged-state
+application, versus0.00044-0.00072ms for the cached getter. The diagnostic repeats
+these calls only to measure them; production does not. This is CPU evidence for
+the narrow load exception, not a siege bound or frame-presentation claim.
 
 ### Authored passage passives
 
@@ -299,8 +305,13 @@ It sets that obstacle's contamination to100 and destroys the exact actor through
 the native hub-persistent lifecycle, without generating a harvest or reward.
 Ownership or an active flag without equipping the card grants no permission;
 other players, ordinary trees and characters keep their rules. The type reuses
-the existing owned espinillo geometry/materials. Authored mansion placement is
-still pending; no ordinary campaign vegetation is reclassified by this patch.
+the existing owned espinillo geometry/materials. One example is placed in the
+mansion annex display room, with its existing radius16/height106MU and mass2211kg.
+The aim panel explains the equipped requirement or exposes the bound Use action.
+Controller migration from revision1 adds it once without rebuilding doors/portals
+or resetting Wheel/purification. Destroying it does not reset that revision, so
+loading or preparing the controller cannot regenerate it. No ordinary campaign
+vegetation is reclassified by this patch.
 
 ### Chariot movement and fragile obstacles
 

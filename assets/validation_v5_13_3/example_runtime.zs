@@ -44,7 +44,7 @@ class CA440Probe : StaticEventHandler
                 ledger.Phase=9;Console.Printf("CA440Y RESULT capture");return;
             }
             let room=CaelumTarotExamples.Get();ledger.Room=room;
-            Check(room!=null && room.Revision==1,"new mansion initializes its saved bounded controller");
+            Check(room!=null && room.Revision==CaelumTarotExampleData.REVISION,"new mansion initializes its saved bounded controller");
             if(room==null)return;
             Check(room.Doors[0] is 'CaelumTarotFalseWall' && room.Doors[1] is 'CaelumTarotCursedPassage',"authored passives have real placed door targets");
             Check(!room.Wet && CaelumTarotExampleRoute(room.Doors[2]).OpenRoute()
