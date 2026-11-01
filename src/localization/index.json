@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "e564b3db3ab8e5a2899570bfb34016928c9bab4dcf26fadb4e34f0d160d8dac9",
+  "sha256": "07c8eeb613fd43498ea5d83802dadd9801029aa91d52c4022bc3811045bd4a12",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[492,492]],"default":[[492,492]],"es":[[1187,1187]]},
     "CA_ABSENT_THEFT_FOUND": {"enu":[[6915,6915]],"default":[[6915,6915]],"es":[[6917,6917]]},
@@ -1148,8 +1148,10 @@
     "CA_FOOL_JOURNEY_COST": {"enu":[[7348,7348]],"default":[[7348,7348]],"es":[[7354,7354]]},
     "CA_FOOL_JOURNEY_DEAD": {"enu":[[7349,7349]],"default":[[7349,7349]],"es":[[7355,7355]]},
     "CA_FOOL_JOURNEY_DESTINATION": {"enu":[[7346,7346]],"default":[[7346,7346]],"es":[[7352,7352]]},
+    "CA_FOOL_JOURNEY_HEALTH": {"enu":[[7518,7518]],"default":[[7518,7518]],"es":[[7521,7521]]},
     "CA_FOOL_JOURNEY_RETURN": {"enu":[[7347,7347]],"default":[[7347,7347]],"es":[[7353,7353]]},
     "CA_FOOL_JOURNEY_RULE": {"enu":[[7350,7350]],"default":[[7350,7350]],"es":[[7356,7356]]},
+    "CA_FOOL_RETURN_EQUIP": {"enu":[[7517,7517]],"default":[[7517,7517]],"es":[[7520,7520]]},
     "CA_FOOL_VISIT_HELP": {"enu":[[7359,7359]],"default":[[7359,7359]],"es":[[7363,7363]]},
     "CA_FOOL_VISIT_TALK": {"enu":[[7360,7360]],"default":[[7360,7360]],"es":[[7364,7364]]},
     "CA_FORMATION_BREAKER_CAST": {"default":[[4037,4037]],"es":[[4074,4074]]},

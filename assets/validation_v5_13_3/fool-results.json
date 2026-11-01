@@ -1,0 +1,153 @@
+{
+  "issue": 440,
+  "release": "5.13.3",
+  "scope": "Fool ordered consent, lethal sequence, spiritual loadout and native round trips",
+  "author_acceptance": false,
+  "runtime_members_matching_source": 18013,
+  "native_runs": [
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32289-20261101-000743-668874",
+      "runtime_sha256": "922d10ce96483faf777420230b2227392a670443be4c315a39018cb6d1e7d712",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440F PASS World skips Fool when no player is dead",
+            "CA440F PASS World still executes other powers with one payment",
+            "CA440F PASS direct Fool requires a dead participant",
+            "CA440F PASS dead loadout editing is denied while a living player remains",
+            "CA440F PASS ordered Fool sequence creates consent proposal",
+            "CA440F PASS normal Fool requires only living votes",
+            "CA440F PASS proposal has no cost or premature power",
+            "CA440F PASS rejection cancels the complete sequence without cost",
+            "CA440F PASS changed order invalidates pending consent",
+            "CA440F PASS legacy unsnapshotted vote cancels without payment",
+            "CA440F PASS new proposal retains selected order and complete sequence",
+            "CA440F CHECKPOINT proposal",
+            "CA440F PASS Tower executes in origin before Fool map transfer",
+            "CA440F PASS later Temperance executes before map transfer",
+            "CA440F PASS living consent commits without requiring dead vote",
+            "CA440F PASS arrival preserves living caster and dead spirit",
+            "CA440F PASS accepted journey charges activator exactly once",
+            "CA440F PASS instant and temporal results survive travel",
+            "CA440F PASS World in mansion skips only Fool journey",
+            "CA440F PASS Palomo return requires equipped Fool on requester",
+            "CA440F PASS equipped requester can propose group return",
+            "CA440F PASS return retains full group unanimity",
+            "CA440F PASS one return vote leaves destination pending",
+            "CA440F PASS return does not resurrect the dead traveller",
+            "CA440F PASS Devil permits voted Fool sequence during cooldown",
+            "CA440F PASS lethal Health payment is deferred until consent",
+            "CA440F DIAG spirit=1 allDead=1 editable=1 input=1",
+            "CA440F UI unequip",
+            "CA440F INPUT slot=0 body=1 editable=1 pending=0 departed=0 predicting=0 number=0",
+            "CA440F PASS lethal Devil payment still delivers both spirits",
+            "CA440F PASS paid sequence continues after caster death",
+            "CA440F PASS native network action unequips a card without resurrection",
+            "CA440F PASS dead requester still needs equipped Fool to return",
+            "CA440F UI equip",
+            "CA440F INPUT slot=0 body=1 editable=1 pending=0 departed=0 predicting=0 number=0",
+            "CA440F PASS native network action equips Fool while whole group stays dead",
+            "CA440F PASS dead group can propose return after equipping Fool",
+            "CA440F RETURN roster=1 source=1 owner=1 equipped=1 active=1 origin=MAP03 destination=MAP03 destroyed=0 gap=48.00 dz=0.00 sight=1 ready=1/1",
+            "CA440F PASS dead return has a visible speaker and admitted roster",
+            "CA440F PASS first dead traveller accepts return",
+            "CA440F PASS second dead traveller accepts return",
+            "CA440F PASS second return preserves normal death in campaign",
+            "CA440F PASS spiritual loadout and paid cooldown survive return",
+            "CA440F RESULT capture"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440F PASS World skips Fool when no player is dead",
+            "CA440F PASS World still executes other powers with one payment",
+            "CA440F PASS direct Fool requires a dead participant",
+            "CA440F PASS dead loadout editing is denied while a living player remains",
+            "CA440F PASS ordered Fool sequence creates consent proposal",
+            "CA440F PASS normal Fool requires only living votes",
+            "CA440F PASS proposal has no cost or premature power",
+            "CA440F PASS rejection cancels the complete sequence without cost",
+            "CA440F PASS changed order invalidates pending consent",
+            "CA440F PASS legacy unsnapshotted vote cancels without payment",
+            "CA440F PASS new proposal retains selected order and complete sequence",
+            "CA440F CHECKPOINT proposal",
+            "CA440F PASS Tower executes in origin before Fool map transfer",
+            "CA440F PASS later Temperance executes before map transfer",
+            "CA440F PASS living consent commits without requiring dead vote",
+            "CA440F PASS arrival preserves living caster and dead spirit",
+            "CA440F PASS accepted journey charges activator exactly once",
+            "CA440F PASS instant and temporal results survive travel",
+            "CA440F PASS World in mansion skips only Fool journey",
+            "CA440F PASS Palomo return requires equipped Fool on requester",
+            "CA440F PASS equipped requester can propose group return",
+            "CA440F PASS return retains full group unanimity",
+            "CA440F PASS one return vote leaves destination pending",
+            "CA440F PASS return does not resurrect the dead traveller",
+            "CA440F PASS Devil permits voted Fool sequence during cooldown",
+            "CA440F PASS lethal Health payment is deferred until consent",
+            "CA440F DIAG spirit=1 allDead=1 editable=1 input=1",
+            "CA440F INPUT slot=0 body=1 editable=1 pending=0 departed=0 predicting=0 number=0",
+            "CA440F PASS lethal Devil payment still delivers both spirits",
+            "CA440F PASS paid sequence continues after caster death",
+            "CA440F PASS native network action unequips a card without resurrection",
+            "CA440F PASS dead requester still needs equipped Fool to return",
+            "CA440F INPUT slot=0 body=1 editable=1 pending=0 departed=0 predicting=0 number=0",
+            "CA440F PASS native network action equips Fool while whole group stays dead",
+            "CA440F PASS dead group can propose return after equipping Fool",
+            "CA440F RETURN roster=1 source=1 owner=1 equipped=1 active=1 origin=MAP03 destination=MAP03 destroyed=0 gap=48.00 dz=0.00 sight=1 ready=1/1",
+            "CA440F PASS dead return has a visible speaker and admitted roster",
+            "CA440F PASS first dead traveller accepts return",
+            "CA440F PASS second dead traveller accepts return",
+            "CA440F PASS second return preserves normal death in campaign",
+            "CA440F PASS spiritual loadout and paid cooldown survive return",
+            "CA440F RESULT capture"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32290-20261101-000903-825134",
+      "runtime_sha256": "922d10ce96483faf777420230b2227392a670443be4c315a39018cb6d1e7d712",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440F PASS common save keeps both dead participants",
+            "CA440F PASS common save keeps spiritual choice and paid recharge",
+            "CA440F PASS common save cannot repeat committed travel",
+            "CA440F RESULT reload"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440F PASS common save keeps both dead participants",
+            "CA440F PASS common save keeps spiritual choice and paid recharge",
+            "CA440F PASS common save cannot repeat committed travel",
+            "CA440F RESULT reload"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ]
+}

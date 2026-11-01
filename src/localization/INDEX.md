@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `e564b3db3ab8e5a2899570bfb34016928c9bab4dcf26fadb4e34f0d160d8dac9`. Locations include every definition; the last one per language wins.
+SHA-256: `07c8eeb613fd43498ea5d83802dadd9801029aa91d52c4022bc3811045bd4a12`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -90,7 +90,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_FERMENT | 17 | CA_FERMENT_ACTION_OK | CA_FERMENT_WITHDRAW_UNITS |
 | CA_FERMENTATION | 2 | CA_FERMENTATION_MISSING_CHEMISTRY | CA_FERMENTATION_TITLE |
 | CA_FOOD | 5 | CA_FOOD_CLEAN | CA_FOOD_LOTS_DETAIL |
-| CA_FOOL | 7 | CA_FOOL_JOURNEY_COST | CA_FOOL_VISIT_TALK |
+| CA_FOOL | 9 | CA_FOOL_JOURNEY_COST | CA_FOOL_VISIT_TALK |
 | CA_FORMATION | 1 | CA_FORMATION_BREAKER_CAST | CA_FORMATION_BREAKER_CAST |
 | CA_FOUNTAIN | 1 | CA_FOUNTAIN_HINT | CA_FOUNTAIN_HINT |
 | CA_FURNITURE | 4 | CA_FURNITURE_CISTERN | CA_FURNITURE_WARDROBE |

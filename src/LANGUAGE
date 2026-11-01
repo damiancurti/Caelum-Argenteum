@@ -7512,3 +7512,10 @@ CA_TAROT_TOWER_TARGET = "The Tower needs a visible siege machine under the retic
 [es]
 CA_TAROT_TOWER_DONE = "La Torre destruyó la máquina de asedio.";
 CA_TAROT_TOWER_TARGET = "La Torre requiere una máquina de asedio visible en la mira.";
+
+[enu default]
+CA_FOOL_RETURN_EQUIP = "Equip The Fool to ask Palomo to return the group.";
+CA_FOOL_JOURNEY_HEALTH = "The activator pays %d Health and receives %d seconds of recharge only after consent. The complete sequence runs here before travelling.";
+[es]
+CA_FOOL_RETURN_EQUIP = "Equipa El Loco para pedir a Palomo el regreso del grupo.";
+CA_FOOL_JOURNEY_HEALTH = "El activador paga %d de Vida y recibe %d segundos de recarga solo tras el acuerdo. La secuencia completa se ejecuta aquí antes de viajar.";

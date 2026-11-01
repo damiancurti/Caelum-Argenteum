@@ -36,6 +36,17 @@ corrections wait for the operator's native profile recalculation and save explic
 after pending checkpoints, rather than depending on background rendering. Production
 save behavior is unchanged. Author acceptance and remaining #440 work stay pending.
 
+On 2026-11-01 the Fool integration passed36 assertions on each of two native
+clients, followed by three common-save recovery assertions per client. The test
+includes two complete round trips, deferred consent/payment, lethal Devil
+continuation, real network input for dead-player card changes and equipped return.
+All18,013 packaged members match source. Evidence: validation_v5_13_3/fool-results.json.
+Initial fixture failures were caused by input before identity admission and a
+diagnostic Palomo whose deferred PostBeginPlay restored his narrative invisibility;
+the fixture now waits for admission and initializes its speaker after that callback.
+Production identity and visibility guards remain intact. This is isolated native
+evidence, not author acceptance or completion of the remaining Major powers.
+
 ## 5.13.2 - Reversible equipment awakening (#442)
 
 Author-approved +25% damage/defense and half wear are implemented on the exact

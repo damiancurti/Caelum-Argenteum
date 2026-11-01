@@ -61,7 +61,7 @@ class CaelumTarotService : Object play
 
     static bool Select(CaelumPlayer user, int card)
     {
-        if (!ValidUser(user)) return false;
+        if (!ValidUser(user) && !CaelumFoolTravel.CanEditDeadLoadout(user)) return false;
         let record = user.GetPersistentCharacterState(false);
         EnsureRevision(record);
         if (record == null || !HasTarotCard(record, card))
@@ -73,7 +73,7 @@ class CaelumTarotService : Object play
         if(record.TarotSelected[card] && !CaelumTarotLoadout.CanRemove(user,record,card))
         {Feedback(user,"CA_TAROT_CAPACITY_REMOVE");return false;}
         CaelumTarotLoadout.Toggle(record,card);
-        user.ApplyCharacterProfile();
+        if(user.health>0)user.ApplyCharacterProfile();
         user.RefreshSocialJournalSnapshot();
         user.PersistCharacterState();
         Feedback(user, record.TarotSelected[card] ? "CA_TAROT_POWER_SELECTED" : "CA_TAROT_POWER_REMOVED");
@@ -110,7 +110,9 @@ class CaelumTarotService : Object play
         { Feedback(user, "CA_TAROT_POWER_COOLDOWN"); return false; }
         if (!devil && user.CurrentAnima < CaelumConstants.TAROT_ACTIVATION_ANIMA)
         { Feedback(user, "CA_TAROT_POWER_ANIMA"); return false; }
-        if (record.TarotSelected[CaelumConstants.TAROT_THE_FOOL])
+        if (record.TarotSelected[CaelumConstants.TAROT_THE_FOOL]
+            || (record.TarotSelected[21] && record.HasTarotCard(CaelumConstants.TAROT_THE_FOOL)
+                && CaelumFoolTravel.JourneyAvailable(user)))
             return CaelumFoolTravel.Propose(user);
         Actor aimed=(record.TarotSelected[16] || record.TarotSelected[21])
             ? CaelumMajorTargets.Aim(user) : null;

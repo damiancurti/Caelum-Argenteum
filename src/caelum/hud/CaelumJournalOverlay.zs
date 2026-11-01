@@ -2922,6 +2922,9 @@ class CaelumJournalOverlay : EventHandler
 
     override void NetworkProcess(ConsoleEvent e)
     {
+        // Única excepción materialmente inocua para el Tarot del grupo muerto.
+        if(e.Name=="ca_tarot_select")
+        {CaelumTarotService.Select(CaelumPlayerAuthority.FromNetworkPlayer(e.Player,true),e.Args[0]);return;}
         CaelumPlayer requestingPlayer = CaelumPlayerAuthority.FromNetworkPlayer(e.Player);
         if (requestingPlayer == null) { return; }
         if(e.Name=="ca_transport_action")
@@ -2938,8 +2941,7 @@ class CaelumJournalOverlay : EventHandler
         { CaelumCraftingBrowser.Get(requestingPlayer).Select(requestingPlayer,e.Args[0],e.Args[1]); return; }
         if (e.Name == "ca_crafting_browser_confirm")
         { CaelumCraftingBrowser.Get(requestingPlayer).Confirm(requestingPlayer,e.Args[0],e.Args[1],e.Args[2]); return; }
-        if (e.Name == "ca_tarot_select") { CaelumTarotService.Select(requestingPlayer, e.Args[0]); }
-        else if(e.Name=="ca_tarot_unified")CaelumUnifiedTarot.Activate(requestingPlayer);
+        if(e.Name=="ca_tarot_unified")CaelumUnifiedTarot.Activate(requestingPlayer);
         else if(e.Name=="ca_awaken_open")CaelumAwakeningMenu.Open(requestingPlayer);
         else if(e.Name=="ca_awaken_action")CaelumAwakeningMenu.HandleCommand(requestingPlayer,e.Args[0]);
         else if (e.Name == "ca_event_action") { CaelumScheduleState.Act(requestingPlayer, e.Args[0]); }

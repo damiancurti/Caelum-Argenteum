@@ -17,6 +17,13 @@ class CaelumMajorTargets : Object play
         return hit.HitActor;
     }
 
+    static bool Visible(CaelumPlayer user,Actor target)
+    {
+        return target!=null && !target.bDestroyed && user!=null
+            && (target.Pos+(0,0,target.Height/2)-CaelumTelekinesisRules.Eye(user)).Length()
+                <=Range(user)+target.Radius && user.CheckSight(target);
+    }
+
     static CaelumHostileMachine Machine(Actor hit)
     {
         if(hit==null)return null;

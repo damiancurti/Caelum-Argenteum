@@ -66,8 +66,8 @@ class CaelumCooperativeTravelMenu : ListMenu
         }
         CaelumTrucoMenu.Text(22,125,String.Format(L("CA_COOP_TRAVEL_TARGET"),target));
         if(vote.Kind==CaelumCooperativeTravel.LIMBO)
-            CaelumTrucoMenu.Wrap(22,155,730,String.Format(L("CA_FOOL_JOURNEY_COST"),
-                CaelumConstants.TAROT_ACTIVATION_ANIMA,CaelumConstants.TAROT_COOLDOWN_SECONDS));
+            CaelumTrucoMenu.Wrap(22,155,730,String.Format(L(vote.FoolDevilPayment?"CA_FOOL_JOURNEY_HEALTH":"CA_FOOL_JOURNEY_COST"),
+                CaelumConstants.TAROT_ACTIVATION_ANIMA*(vote.FoolDevilPayment?CaelumMajorArcanaData.DEVIL_COST:1),CaelumConstants.TAROT_COOLDOWN_SECONDS));
         if(vote.Kind==CaelumCooperativeTravel.ARENA)
         {
             CaelumTrucoMenu.Wrap(22,155,730,L(vote.ArenaMode==0?"CA_ARENA_INDIVIDUAL":"CA_ARENA_TEAMS_HELP"));
@@ -92,7 +92,7 @@ class CaelumCooperativeTravelMenu : ListMenu
         }
         if(vote.Interrupted)CaelumTrucoMenu.Wrap(22,215,730,L("CA_COOP_TRAVEL_RISK"));
         int yes=0,total=0;
-        for(int i=0;i<MAXPLAYERS;i++){if((vote.Mask&(1<<i))!=0)total++;if((vote.Accepted&(1<<i))!=0)yes++;}
+        for(int i=0;i<MAXPLAYERS;i++){if((vote.RequiredMask()&(1<<i))!=0)total++;if((vote.Accepted&vote.RequiredMask()&(1<<i))!=0)yes++;}
         CaelumTrucoMenu.Text(22,270,String.Format(L("CA_COOP_TIME_VOTES"),yes,total));
         CaelumTrucoMenu.Text(22,310,(Focus==0?"> ":"  ")..L("CA_COOP_TRAVEL_ACCEPT"));
         CaelumTrucoMenu.Text(22,340,(Focus==1?"> ":"  ")..L("CA_COOP_TIME_REJECT"));

@@ -14,6 +14,10 @@ class CaelumCooperativeTravel : Inventory
     Actor ArenaOrganizer;
     bool ExceptionalFool;
     bool TarotSelection[CaelumConstants.TAROT_CARD_COUNT];
+    bool TarotAcquired[CaelumConstants.TAROT_CARD_COUNT];
+    int TarotOrder[CaelumConstants.TAROT_CARD_COUNT],TarotOrderCount,FoolSequenceRevision;
+    bool FoolDevilPayment;
+    Actor TarotTarget;
     CaelumPalomo FoolSpeaker;
     int Mask,AliveMask,Accepted,Serial,Kind,Connection,Mode,Entry,Elapsed;
     bool Opened,Committed,Interrupted;
@@ -22,6 +26,11 @@ class CaelumCooperativeTravel : Inventory
     vector3 OriginPosition;
 
     clearscope bool IsTransport() const { return Kind>=BOARD && Kind<=ABANDON; }
+
+    // El viaje de El Loco consulta a los vivos; la excepción de todos muertos
+    // y los demás traslados conservan la unanimidad de participantes.
+    clearscope int RequiredMask() const {return Kind==LIMBO && AliveMask!=0?AliveMask:Mask;}
+    clearscope bool Consented() const {return (Accepted&RequiredMask())==RequiredMask();}
 
     static clearscope CaelumCooperativeTravel View(CaelumPlayer user)
     {
@@ -83,6 +92,7 @@ class CaelumCooperativeTravel : Inventory
         vote.ReleasePlans();vote.Mask=vote.AliveMask=vote.Accepted=0;
         vote.Opened=vote.Committed=vote.Interrupted=false;vote.Portal=null;vote.TutorialDoor=null;vote.Vehicle=null;vote.Ride=null;
         vote.Elapsed=0;vote.Pace=0;vote.Fare=0;
+        vote.FoolSequenceRevision=0;vote.FoolDevilPayment=false;vote.TarotTarget=null;
         vote.OriginMap=level.MapName;vote.OriginPosition=user.Pos;
         for(int i=0;i<MAXPLAYERS;i++)
         {
@@ -180,7 +190,7 @@ class CaelumCooperativeTravel : Inventory
         if(operation!=ACCEPT || (Accepted&(1<<slot))!=0 || !BodyReady(user))return false;
         if(!SourceValid()){Finish("CA_COOP_TRAVEL_CANCELLED");return false;}
         Accepted|=1<<slot;
-        if(Accepted!=Mask)return true;
+        if(!Consented())return true;
         for(int i=0;i<MAXPLAYERS;i++)if(Members[i]!=null && !BodyReady(Members[i]))
         {Finish("CA_COOP_TRAVEL_CANCELLED");return false;}
         bool okay,changed;[okay,changed]=PreparePlans(true);
@@ -208,7 +218,7 @@ class CaelumCooperativeTravel : Inventory
     }
     void Commit()
     {
-        if(!Opened || Accepted!=Mask || !RosterValid() || !SourceValid())return;
+        if(!Opened || !Consented() || !RosterValid() || !SourceValid())return;
         if(Kind==ARENA || Kind==ARENA_RETURN)
         {
             if(!CaelumArena.Commit(self)){Finish("CA_ARENA_NOT_READY");return;}

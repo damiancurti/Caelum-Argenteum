@@ -144,29 +144,61 @@ class CaelumFoolTravel : Object play
         }
         return found;
     }
+    static bool AnyDead()
+    {
+        for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i])
+        {
+            let user=CaelumPlayer(players[i].mo);
+            if(CaelumWorldClockTicker.Ready(user) && !CaelumCooperativeTime.Living(user))return true;
+        }
+        return false;
+    }
+    static bool CanEditDeadLoadout(CaelumPlayer user)
+    {
+        return CaelumPlayerAuthority.CanMutate(user) && user.health<=0
+            && CaelumWorldClockTicker.Ready(user) && AllDead();
+    }
+    static bool JourneyAvailable(CaelumPlayer user,bool exceptional=false)
+    {
+        if(!CaelumWorldClockTicker.Ready(user) || level.MapName=="MAP01" || !AnyDead())return false;
+        if(exceptional ? !AllDead() : !CaelumCooperativeTime.Living(user))return false;
+        let visit=CaelumFoolJourney.View(user);
+        return visit==null || !visit.Active;
+    }
+    static bool DevilPayment(CaelumPersistentCharacterState record,bool exceptional)
+    {return !exceptional && record.TarotCooldownTics>0 && CaelumTarotLoadout.Passive(record,15);}
     static bool CanPay(CaelumPlayer user,bool exceptional)
     {
-        if(!CaelumWorldClockTicker.Ready(user) || level.MapName=="MAP01")return false;
-        if(exceptional ? !AllDead() : !CaelumCooperativeTime.Living(user))return false;
-        let visit=CaelumFoolJourney.View(user);if(visit!=null && visit.Active)return false;
+        if(!JourneyAvailable(user,exceptional))return false;
         let record=user.GetPersistentCharacterState(false);
-        return record!=null && CaelumTarotService.HasTarotCard(record,CaelumConstants.TAROT_THE_FOOL)
-            && record.TarotCooldownTics==0 && record.TarotEffectTics==0
-            && user.CurrentAnima>=CaelumConstants.TAROT_ACTIVATION_ANIMA;
+        if(!CaelumTarotService.HasTarotCard(record,CaelumConstants.TAROT_THE_FOOL))return false;
+        bool devil=DevilPayment(record,exceptional);
+        return devil || (record.TarotCooldownTics==0 && record.TarotEffectTics==0
+            && user.CurrentAnima>=CaelumConstants.TAROT_ACTIVATION_ANIMA);
     }
+    static bool ReturnEquipped(CaelumPlayer user)
+    {return user!=null && CaelumTarotLoadout.Passive(user.GetPersistentCharacterState(false),CaelumConstants.TAROT_THE_FOOL);}
     static bool Valid(CaelumCooperativeTravel vote)
     {
         let user=CaelumPlayer(vote.Owner);if(!CaelumPlayerAuthority.CanMutate(user))return false;
         if(vote.Kind==CaelumCooperativeTravel.LIMBO)
         {
-            if(!CanPay(user,vote.ExceptionalFool))return false;
+            if(vote.FoolSequenceRevision!=CaelumMajorArcanaData.FOOL_VOTE_REVISION
+                || !CanPay(user,vote.ExceptionalFool))return false;
             let record=user.GetPersistentCharacterState(false);
-            for(int card=0;card<CaelumConstants.TAROT_CARD_COUNT;card++)
-                if(vote.TarotSelection[card] && !CaelumTarotService.HasTarotCard(record,card))return false;
+            if(vote.FoolDevilPayment!=DevilPayment(record,vote.ExceptionalFool))return false;
+            if(!vote.ExceptionalFool)
+            {
+                if(vote.TarotOrderCount!=record.TarotOrderCount)return false;
+                for(int i=0;i<vote.TarotOrderCount;i++)if(vote.TarotOrder[i]!=record.TarotOrder[i])return false;
+                for(int card=0;card<CaelumConstants.TAROT_CARD_COUNT;card++)
+                    if(vote.TarotSelection[card]!=record.TarotSelected[card]
+                        || vote.TarotAcquired[card]!=record.TarotOwned[card])return false;
+            }
             return (user.Pos-vote.OriginPosition).Length()<=64;
         }
         let visit=CaelumFoolJourney.View(user);
-        return level.MapName=="MAP01" && visit!=null && visit.Active
+        return ReturnEquipped(user) && level.MapName=="MAP01" && visit!=null && visit.Active
             && visit.OriginMap==vote.Destination && vote.FoolSpeaker!=null
             && !vote.FoolSpeaker.bDestroyed
             && user.Distance2D(vote.FoolSpeaker)<=CaelumConstants.PALOMO_MERCHANT_SESSION_DISTANCE
@@ -180,8 +212,17 @@ class CaelumFoolTravel : Object play
         vote.Kind=CaelumCooperativeTravel.LIMBO;vote.Destination="MAP01";vote.Entry=0;
         vote.ExceptionalFool=exceptional;vote.FoolSpeaker=null;
         let record=user.GetPersistentCharacterState(false);
+        CaelumTarotService.EnsureRevision(record);
+        vote.FoolSequenceRevision=CaelumMajorArcanaData.FOOL_VOTE_REVISION;
+        vote.FoolDevilPayment=DevilPayment(record,exceptional);
+        vote.TarotOrderCount=record.TarotOrderCount;
+        vote.TarotTarget=exceptional?null:CaelumMajorTargets.Aim(user);
         for(int card=0;card<CaelumConstants.TAROT_CARD_COUNT;card++)
-            vote.TarotSelection[card]=exceptional?card==CaelumConstants.TAROT_THE_FOOL:record.TarotSelected[card];
+        {
+            vote.TarotSelection[card]=record.TarotSelected[card];
+            vote.TarotAcquired[card]=record.TarotOwned[card];
+            vote.TarotOrder[card]=record.TarotOrder[card];
+        }
         if(!vote.Publish())return false;
         if(!multiplayer)vote.Request(user,CaelumCooperativeTravel.ACCEPT,vote.Serial);
         return true;
@@ -189,6 +230,8 @@ class CaelumFoolTravel : Object play
     static bool ProposeReturn(CaelumPlayer user,CaelumPalomo speaker)
     {
         let visit=CaelumFoolJourney.View(user);
+        if(!ReturnEquipped(user))
+        {CaelumTarotService.Feedback(user,"CA_FOOL_RETURN_EQUIP");return false;}
         if(visit==null || !visit.Active || level.MapName!="MAP01" || speaker==null
             || !CaelumUseGeometry.AimedAt(user,speaker))return false;
         let vote=CaelumCooperativeTravel.Draft(user,true,true);if(vote==null)return false;
@@ -211,16 +254,11 @@ class CaelumFoolTravel : Object play
         if(vote.Kind==CaelumCooperativeTravel.LIMBO)
         {
             let user=CaelumPlayer(vote.Owner);let record=user.GetPersistentCharacterState(false);
-            user.CurrentAnima-=CaelumConstants.TAROT_ACTIVATION_ANIMA;
-            record.TarotCooldownTics=CaelumConstants.TAROT_COOLDOWN_SECONDS*TICRATE;
-            bool minor=false;
-            for(int card=0;card<CaelumConstants.TAROT_CARD_COUNT;card++)
-            {
-                record.TarotActive[card]=vote.TarotSelection[card] && card!=CaelumConstants.TAROT_THE_FOOL;
-                record.TarotRemaining[card]=record.TarotActive[card]?CaelumConstants.TAROT_EFFECT_SECONDS*TICRATE:0;
-                minor=minor || record.TarotActive[card];
-            }
-            record.TarotEffectTics=minor?CaelumConstants.TAROT_EFFECT_SECONDS*TICRATE:0;
+            // La votación fija orden y tipo de pago. Toda la secuencia sucede
+            // aún en origen; incluso la muerte por El Diablo conserva el viaje.
+            Actor aimed=CaelumMajorTargets.Visible(user,vote.TarotTarget)?vote.TarotTarget:null;
+            CaelumTarotSequence.Pay(user,record,vote.FoolDevilPayment);
+            if(!vote.ExceptionalFool)CaelumTarotSequence.Apply(user,record,aimed);
             if(user.health>0)user.ApplyCharacterProfile();
             user.RefreshSocialJournalSnapshot();user.PersistCharacterState();
         }

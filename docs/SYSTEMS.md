@@ -25,8 +25,7 @@ World dispatches acquired unequipped cards once in ascending ID order, without
 recursion, another charge or passive equipment. The author explicitly allows
 World to activate essences bound to equipment; the binding remains intact.
 This dispatch currently runs only implemented effect handlers. Remaining Major
-handlers, map targets, active input arbitration and combined Fool travel still
-need integration; this checkpoint is not completion of #440.
+handlers, map targets and active input arbitration still need integration; this checkpoint is not completion of #440.
 
 Loadout revision1 preserves old ownership/selection and paid durations. Profile
 recalculation does not accumulate capacity. New loops are bounded by the78-card
@@ -65,12 +64,35 @@ Save recovery does not rebuild destroyed components or rearm the machine.
 Old machines initialize the new flag false without changing prior neutralization.
 Released projectiles and individual operator combat retain their existing rules.
 
+### Fool sequence and spiritual loadout
+
+Fool requires at least one dead participant outside the mansion. Living players
+approve the outbound journey; if everyone is dead, the existing exceptional
+Fool-only activation still requires all participants. Palomo's return also keeps
+full unanimity and requires Fool equipped by its requester. When everybody is
+dead, the Tarot journal can equip/remove owned cards, preserving capacity and
+bound-essence restrictions, without recalculating a dead body into a living one.
+Other material inventory actions retain their restrictions.
+
+A normal proposal snapshots card order, ownership, selection, target and payment
+kind. Changing those card choices or the required payment invalidates consent.
+The whole sequence executes once in the origin map after acceptance, then the
+group travels. Devil may pay Health and die without stopping subsequent powers
+or the journey. World skips the journey when no participant is dead or when
+already in the mansion, continuing other valid handlers. A target that ceased
+to be visible/in range is omitted. Refusal costs nothing. Pending legacy proposals
+without revision1 snapshots are cancelled without payment; session recovery also
+cancels pending votes under the existing reconnection policy and needs new consent.
+
 ### Confirmed follow-up contract for the remaining handlers
 
 - World order0..77, same target where applicable, skip invalid targets; selected
   card order is separate. Equipped-only passives do not alter Minor collection.
 - Hanged Man chooses another playable race on equip, reusing its existing ability
-  costs/requirements with Tarot-key toggling during the effect.
+  costs/requirements with Tarot-key toggling during the effect. The chosen race
+  survives unequipping; World skips this effect until a choice exists.
+- Active Tarot input first resolves an aimed clone swap, harmful-rock capture
+  or automaton command; without a valid aimed action it toggles Hanged Man.
 - Calibrated area powers use current magic-range scaling and line of sight.
   D means current T1 staff magic damage before ordinary defenses/resistances.
   Priestess: one trap/caster, visible ground within100m,60s, enemy contact,
@@ -100,12 +122,6 @@ Released projectiles and individual operator combat retain their existing rules.
   no actor may belong to two simultaneous pairs. New campaigns receive the new
   geometry; approved reversible legacy packages preserve visited-map saves and
   report unavailable arenas. Compatibility still requires native recovery tests.
-- Fool: execute the complete ordered sequence in the origin map only after the
-  required consent, then travel. Refusal costs nothing. World skips the journey
-  when no player is dead or the group is already in the mansion, while executing
-  other valid effects. Palomo return requires the requester to equip Fool. When
-  all players are dead, spiritual UI may equip/remove cards under the same
-  capacity and essence-binding restrictions. These integrations are pending.
 - Moon: two60s clones, caster appearance/attributes,25%maximumHealth/damage,
   perceived enemies, no transferable loot. Judgement: one4m pulse breaks recognized
   magical mind control/illusions, preserving narrative scenes.
@@ -239,7 +255,7 @@ new effect's quantitative behavior.
 
 | ID | Major | Equipped passive | Active | Audit / unresolved fields |
 | --- | --- | --- | --- | --- |
-| 0 | The Fool (El Loco) | Allows returning from Limbo. | Transports the entire player group to Limbo when at least one player is dead; requires agreement of the living players. | Existing Fool travel; new dead-player prerequisite, living-only vote and equipped return gate still need integration. Return eligibility and combined sequence timing remain open. |
+| 0 | The Fool (El Loco) | Allows returning from Limbo. | Transports the entire player group to Limbo when at least one player is dead; requires agreement of the living players. | Implemented #440 consent snapshot, origin-map sequence, living-only outbound vote and equipped return gate; isolated validation below. |
 | 1 | The Magician (El Mago) | Allows awakening automatons using Anima. | Awakens an automaton or orders it to attack a target. | Automaton types, activation/command targets, awakening Anima payment and control lifecycle. |
 | 2 | The High Priestess (La Sacerdotisa) | Allows identifying false walls. | Places an explosive trap. | Authored false-wall markers; trap placement, trigger eligibility, damage, radius, lifetime and count. |
 | 3 | The Empress (La Emperatriz) | Allows moving over and through vegetation with ease. | Grows plants from the ground that trap the target and grow spikes dealing piercing damage. | Vegetation classification and traversal; target range, root movement policy, spikes, damage and population limit. |
@@ -262,7 +278,10 @@ new effect's quantitative behavior.
 | 20 | Judgement (El Juicio) | Allows talking to spirits. | Breaks mind control and illusions within the area. | Eligible spirits, mind controls/illusions, radius, restoration and quest protections. |
 | 21 | The World (El Mundo) | Allows activating the unified Tarot essence. | Activates the effects of all unequipped Arcana, both Major and Minor; skips invalid targets. | Unified essence damages deities (author clarification); formed by all 78; activation defined in #441 above. Active needs internal order, ownership, target selection and recursion/cost rules. |
 
-### Existing runtime and migration audit
+### Pre-5.13 runtime and migration audit (historical baseline)
+
+This is the baseline inspected for #439. Current implementation checkpoints above
+supersede its statements about unsupported powers, voting and selection order.
 
 - `CaelumTarotService` revision 2 supports The Fool and the 56 Minor actives;
   it rejects Major IDs 1-21. Its selection is a 78-element boolean set and its

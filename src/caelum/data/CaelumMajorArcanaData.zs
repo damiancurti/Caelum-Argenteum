@@ -9,4 +9,5 @@ class CaelumMajorArcanaData : Object
     const TEMPERANCE_DURATION=0.5;
     const TARGET_METERS=100.0;
     const MACHINE_REVISION=1;
+    const FOOL_VOTE_REVISION=1;
 }
