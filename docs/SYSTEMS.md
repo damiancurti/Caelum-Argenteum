@@ -131,6 +131,28 @@ existing outward-overlap movement lets a player already inside leave. Derived
 permission is recomputed from the saved loadout on admission. Final author review
 and authored mansion examples remain pending.
 
+### Death contamination pulse
+
+Death is an instantaneous, aimed4m pulse with the existing magic-range multiplier.
+It sets bodies, exposed carried equipment and reachable floor/wall cells to100,
+including allies and its caster. Native model-backed NPC armor/sidearms use the
+same contamination endpoints as ordinary exposure. The Box and closed chest
+contents retain their concentrations; opening a chest exposes its contents.
+It does not change contained water quality or create a continuing contaminant
+source. Hermit does not repeat the pulse; subsequent environmental contact and
+physiology continue normally. Invalid aimed targets are skipped.
+
+Bodies come from a local blockmap query, the existing spatial grid for unlinked
+bodies and the fixed player slots. Only affected owners' inventories are read;
+duplicate dining proxies resolve to their physical owner. Surfaces use the
+existing1m2 tile authority: cell centers within the sphere and native geometry
+line traces determine reachability. Sloped planes retain their physical cell
+coordinates; solid3D support tops use their model sector and block effects
+between floors. Candidate sectors come from local linedefs, not a map census.
+The pulse has no recurring Tick or new saved ledger; existing body/item/tile
+state persists it. Marked-obstacle destruction and Hierophant water purification
+remain separate work at this checkpoint.
+
 ### Chariot movement and fragile obstacles
 
 Activation launches one projection at6m/s for12m, at most2s. Each reached actor
@@ -201,7 +223,10 @@ The aimed-action priority for the remaining powers is still to be integrated.
   preserving damage rate if Hermit extends duration.
 - Hierophant: one4m pulse clears body, exposed equipment and accessible surfaces;
   water loses biological/chemical contamination but retains salt. Closed storage
-  stays excluded. Death: one4m pulse around a visible target within100m sets those
+  stays excluded. Only containers or connected water volumes entirely within
+  the radius are purified; larger pools/rivers retain their quality, without
+  partial purification (author approval 2026-11-01).
+  Death: one4m pulse around a visible target within100m sets those
   contaminants to100, including allies/caster in range. Its equipped passive
   directly destroys marked living tree/vine obstacles through contamination,
   not decorative plants or characters.

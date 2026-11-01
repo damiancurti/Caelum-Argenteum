@@ -128,6 +128,22 @@ Evidence: vegetation-results.json. The retained first fixture incorrectly used
 an endpoint-only TryMove beyond a wall; the final test uses an ordinary step into
 the wall. Production wall collision was unchanged. Author acceptance is pending.
 
+Death's local contamination pulse passed22 initial and six common-save recovery
+assertions per native client on2026-11-01. Coverage includes the actual Tarot
+service/payment, Hermit's instantaneous behavior, allied/caster bodies, unlinked
+combatants, NPC model armor, exposed equipment, Box/closed/open chest behavior,
+native walls, solid3D floors, sloped surface coordinates and no repeated pulse.
+The package's18,022 members match source. Evidence: contamination-results.json.
+The native run exposed an unsupported NPC class with no thermal adapter; the
+pulse now derives temporary dimensions for initialized combatants without
+attaching a physiological scheduler. Retained fixture failures cover a missing
+real Box, an invalid link API and a cross-map actor reference; the final recovery
+uses a current-map chest. The first compiler failure was a helper shadowing the
+numeric Floor function. No accepted save geometry was changed. Static validation
+passes; rendering benchmarks, remaining handlers and author acceptance remain
+pending. The author also approved Hierophant purification only for wholly
+contained water volumes; that water handler is not implemented by this commit.
+
 ## 5.13.2 - Reversible equipment awakening (#442)
 
 Author-approved +25% damage/defense and half wear are implemented on the exact

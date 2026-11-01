@@ -18,6 +18,8 @@ class CaelumTarotSequence : Object play
         {if(report)CaelumTarotService.Feedback(user,"CA_TAROT_ROOTS_TARGET");return;}
         if(card==CaelumHangedMan.CARD && !CaelumHangedMan.Prepare(user,record))return;
         if(card==14)CaelumTemperance.Cleanse(user);
+        if(card==13 && !CaelumTarotContamination.Death(user,aimed,ground))
+        {if(report)CaelumTarotService.Feedback(user,"CA_TAROT_CONTAMINATION_TARGET");return;}
         if(card==7)CaelumTarotChariot.Launch(user);
         if(card==16)
         {
