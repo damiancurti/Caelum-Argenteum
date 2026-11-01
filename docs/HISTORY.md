@@ -98,6 +98,18 @@ before cleanup without moving session initialization earlier. These were fixture
 errors; the production ground checks were preserved. False-wall examples, final
 frame measurements and author acceptance remain pending.
 
+Empress restraint then passed21 initial and five common-save recovery assertions
+per native client on2026-11-01. Tests cover native aimed activation, shared cost,
+Hermit duration, ordinary physical defense, uninterrupted actor actions, player
+input, companion/escort motion, independent casters and exact saved fractional
+damage/lifetime. All18,020 packaged members match source. Evidence:
+validation_v5_13_3/empress-results.json. The author's reported startup failure
+was a diagnostic MAPINFO typo (`CA440Erobe` instead of `CA440Probe`) introduced
+while adapting the runner; both failed runs remain recorded. No runtime class or
+accepted save needed renaming. Review also covered the escort's separate velocity
+path before the final native checks. Plant artwork, vegetation traversal, final
+frame measurements and author acceptance remain pending.
+
 ## 5.13.2 - Reversible equipment awakening (#442)
 
 Author-approved +25% damage/defense and half wear are implemented on the exact

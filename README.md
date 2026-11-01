@@ -11,7 +11,8 @@ it, then rebuild with `run_dev.bat` as described below.
 
 V5.13 is in progress. #440 now has ordered Tarot loadouts, additive capacities,
 per-card timers, Hermit duration, Devil payment, Temperance, Tower, voted Fool sequences,
-borrowed racial abilities, Strength object lifting, Chariot movement, Priestess traps
+borrowed racial abilities, Strength object lifting, Chariot movement, Priestess traps,
+Empress restraint
 and World dispatch. This is an
 implementation checkpoint; Chariot reuses the original cart at its approved width.
 Remaining Major targets/effects and standalone modes

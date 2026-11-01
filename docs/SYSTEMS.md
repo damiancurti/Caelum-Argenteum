@@ -103,6 +103,23 @@ retaining the paid cooldown. World-bound automaton/plant/clone windows follow th
 same departure rule as their handlers are integrated. Queries remain local;
 no global actor traversal is introduced. False-wall examples remain pending.
 
+### Empress restraint
+
+One visible living target within the normal100m magic range receives a rooted
+plant for60 active seconds. It prevents walking, running, jumping and controlled
+vertical movement, including companion/escort velocity paths; attacks and actor
+state actions continue. Physical spikes deliver the current T1 staff damage over
+60s through ordinary defenses. Hermit extends lifetime without lowering that rate.
+Each caster owns one creation; replacing it releases only that caster's binding.
+Different casters can bind the same victim independently. The last creation ending
+releases the target. Leaving the map removes the plant and its active window.
+
+Revision1 saves exact caster/victim references, lifetime and fractional damage.
+Network identity admission pauses evaluation. Direct cached body references avoid
+inventory or global actor scans during movement; the source list is bounded by
+the fixed player population. Plant artwork and vegetation-passive examples remain
+pending, separately from these native behavior checks.
+
 ### Chariot movement and fragile obstacles
 
 Activation launches one projection at6m/s for12m, at most2s. Each reached actor

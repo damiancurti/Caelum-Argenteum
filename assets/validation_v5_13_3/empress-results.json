@@ -1,0 +1,121 @@
+{
+  "issue": 440,
+  "release": "5.13.3",
+  "scope": "Empress restraint, physical damage, companion movement and common-save recovery",
+  "author_acceptance": false,
+  "runtime_members_matching_source": 18020,
+  "native_runs": [
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32319-20261101-012518-942992",
+      "runtime_sha256": "a0ba3bcfba4b570cdb927fe7a4d74649c5a4d82512236acb5b99388185a66dfb",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440E PASS native selected sequence casts Empress on its aimed target",
+            "CA440E PASS root creation binds the exact victim and caster",
+            "CA440E PASS Empress uses one shared payment",
+            "CA440E PASS Hermit doubles the plant lifetime",
+            "CA440E PASS Hermit preserves approved damage per second",
+            "CA440E PASS roots prevent ordinary NPC locomotion",
+            "CA440E PASS companion and escort velocity movement cannot bypass roots",
+            "CA440E PASS roots do not suspend attack state progression",
+            "CA440E PASS native actor actions continue while rooted",
+            "CA440E PASS one native second delivers the approved piercing dose",
+            "CA440E PASS spikes use normal physical defenses",
+            "CA440E PASS world ticks reduce the stored remaining duration",
+            "CA440E PASS another living visible target is valid",
+            "CA440E PASS recast releases only the caster's old victim",
+            "CA440E PASS player roots preserve attack authority without whole-body stun",
+            "CA440E PASS rooted player movement input adds no locomotion",
+            "CA440E PASS rooted player cannot initiate a jump",
+            "CA440E PASS release restores normal player movement eligibility",
+            "CA440E PASS different casters retain independent creations",
+            "CA440E PASS one caster ending does not release another caster's roots",
+            "CA440E PASS last creation ending releases the victim",
+            "CA440E RESULT capture"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440E PASS native selected sequence casts Empress on its aimed target",
+            "CA440E PASS root creation binds the exact victim and caster",
+            "CA440E PASS Empress uses one shared payment",
+            "CA440E PASS Hermit doubles the plant lifetime",
+            "CA440E PASS Hermit preserves approved damage per second",
+            "CA440E PASS roots prevent ordinary NPC locomotion",
+            "CA440E PASS companion and escort velocity movement cannot bypass roots",
+            "CA440E PASS roots do not suspend attack state progression",
+            "CA440E PASS native actor actions continue while rooted",
+            "CA440E PASS one native second delivers the approved piercing dose",
+            "CA440E PASS spikes use normal physical defenses",
+            "CA440E PASS world ticks reduce the stored remaining duration",
+            "CA440E PASS another living visible target is valid",
+            "CA440E PASS recast releases only the caster's old victim",
+            "CA440E PASS player roots preserve attack authority without whole-body stun",
+            "CA440E PASS rooted player movement input adds no locomotion",
+            "CA440E PASS rooted player cannot initiate a jump",
+            "CA440E PASS release restores normal player movement eligibility",
+            "CA440E PASS different casters retain independent creations",
+            "CA440E PASS one caster ending does not release another caster's roots",
+            "CA440E PASS last creation ending releases the victim",
+            "CA440E RESULT capture"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32320-20261101-012600-923147",
+      "runtime_sha256": "a0ba3bcfba4b570cdb927fe7a4d74649c5a4d82512236acb5b99388185a66dfb",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440E PASS save recovery retains exact reciprocal roots",
+            "CA440E PASS recovery preserves remaining duration without restarting",
+            "CA440E PASS recovery retains fractional damage instead of replaying it",
+            "CA440E PASS recovered binding still blocks locomotion",
+            "CA440E PASS expiry releases recovered victim and owner",
+            "CA440E RESULT reload"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440E PASS save recovery retains exact reciprocal roots",
+            "CA440E PASS recovery preserves remaining duration without restarting",
+            "CA440E PASS recovery retains fractional damage instead of replaying it",
+            "CA440E PASS recovered binding still blocks locomotion",
+            "CA440E PASS expiry releases recovered victim and owner",
+            "CA440E RESULT reload"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "qualification": "Plant art and vegetation traversal remain pending. Isolated two-client native tests; no frame-presentation claim.",
+  "retained_fixture_failures": [
+    "native-32315-20261101-011603-774179",
+    "native-32316-20261101-011812-886591"
+  ],
+  "failure_correction": "MAPINFO named CA440Erobe after an overbroad runner substitution; the actual fixture class is CA440Probe. The corrected launcher passes native capture and recovery."
+}

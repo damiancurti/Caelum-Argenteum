@@ -129,6 +129,8 @@ class CaelumMajorWorldEvents : StaticEventHandler
             if(cart!=null && cart.Projection!=null)cart.Projection.Destroy();
             let mine=user!=null?CaelumTarotMineState(user.FindInventory('CaelumTarotMineState')):null;
             if(mine!=null && mine.Mine!=null)mine.Mine.Destroy();
+            let plant=user!=null?CaelumTarotPlantState(user.FindInventory('CaelumTarotPlantState')):null;
+            if(plant!=null && plant.Roots!=null)plant.Roots.Destroy();
             if(user!=null)
             {
                 let record=user.GetPersistentCharacterState(false);

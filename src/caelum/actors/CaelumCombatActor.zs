@@ -258,6 +258,7 @@ class CaelumCombatActor : Actor
     double CombatAdrenalineGainMultiplier;
     double CurrentCombatLucidity;
     CaelumTelekinesisEffect TelekinesisBinding;
+    CaelumTarotRooted TarotRoots;
     int ForcedSleepTics;
     CaelumSpellSleepState SpellSleep;
     int SleepSavedTics;
@@ -3996,6 +3997,7 @@ class CaelumCombatActor : Actor
     void ThermalChase(statelabel melee='_a_chase_default',statelabel missile='_a_chase_default',int flags=0)
     {
         if((CaelumBolas.Restrained(self) || CaelumTelekinesisRules.Held(self)))return;
+        if(CaelumTarotRooted.Active(self))flags|=CHF_DONTMOVE;
         bool perceptionUpdated=false;
         if(CaelumCommunication.NeedsOrder(self)
             && (target is "CaelumCombatActor" || target is "CaelumPlayer" || target is "CaelumSearchPoint"))
@@ -4044,7 +4046,7 @@ class CaelumCombatActor : Actor
 
     bool ThermalTryMove(vector2 destination)
     {
-        if((CaelumBolas.Restrained(self) || CaelumTelekinesisRules.Held(self)))return false;
+        if((CaelumBolas.Restrained(self) || CaelumTelekinesisRules.Held(self)) || CaelumTarotRooted.Active(self))return false;
         vector3 before=Pos;
         bool moved=TryMove(destination,0);
         if(moved && Pos.Z<=FloorZ+0.01)CaelumThermalMotion.Path(self,before,Pos,false);

@@ -25,6 +25,7 @@ class CaelumPlayer : DoomPlayer
 
     CaelumBolasFlight BolasBinding;
     CaelumTelekinesisEffect TelekinesisBinding;
+    CaelumTarotRooted TarotRoots;
     int BolasPreparedTics,BolasPreparedItem,BolasReleaseUntil;
     Actor UtilityStaffStream;
     int UtilityStaffRequestedMode;
@@ -7128,6 +7129,7 @@ class CaelumPlayer : DoomPlayer
     override void MovePlayer()
     {
         if(CaelumSpirit.Active(self)){Super.MovePlayer();return;}
+        if(CaelumTarotRooted.Active(self))return;
         bool impulse=CaelumMovementImpulse.Begin(self);
         CaelumFormationBreaker.PrepareMove(self);
         vector3 before=Vel;
@@ -9700,6 +9702,7 @@ class CaelumPlayer : DoomPlayer
     // persistent resource in addition to the authoritative game tic.
     override void CheckMoveUpDown()
     {
+        if(CaelumTarotRooted.Active(self))return;
         Super.CheckMoveUpDown();
         // El motor asigna la propulsión vertical por separado de ForwardMove.
         // Se escala sólo el comando nuevo, nunca una caída o un empuje recibido.
@@ -9709,6 +9712,7 @@ class CaelumPlayer : DoomPlayer
 
     override void CheckJump()
     {
+        if(CaelumTarotRooted.Active(self))return;
         double before=Vel.Z;
         bool eligible=player!=null && player.onground && player.jumpTics==0
             && WaterLevel<2 && !bNoGravity && !(player.cheats & CF_PREDICTING);

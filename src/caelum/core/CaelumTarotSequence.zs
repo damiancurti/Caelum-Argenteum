@@ -14,6 +14,8 @@ class CaelumTarotSequence : Object play
         if(!CaelumTarotService.Implemented(card))return;
         if(card==2 && !CaelumTarotMine.Place(user,ground,duration))
         {if(report)CaelumTarotService.Feedback(user,"CA_TAROT_MINE_GROUND");return;}
+        if(card==3 && !CaelumTarotRoots.Place(user,aimed,duration,ground))
+        {if(report)CaelumTarotService.Feedback(user,"CA_TAROT_ROOTS_TARGET");return;}
         if(card==CaelumHangedMan.CARD && !CaelumHangedMan.Prepare(user,record))return;
         if(card==14)CaelumTemperance.Cleanse(user);
         if(card==7)CaelumTarotChariot.Launch(user);
