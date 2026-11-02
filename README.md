@@ -6,7 +6,12 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.13.15.** Obtain and update the complete repository, validate
+**Current release: 5.13.16.** Obtain and update the complete repository, validate
+
+## 5.13.16 — Per-character essence dialogue admission (#441)
+
+Closing an essence conversation now detaches its native node, so the next speaker passes through Used and reveals their own card before capture. This follows the existing Palomo interaction pattern and retains each collection, capture progress and reward uniqueness. No new fields or geometry; old loaded conversation nodes are cleaned when idle. Native two-client Use/capture and final menu/fixture verification are recorded with this patch; author acceptance remains pending.
+
 
 ## 5.13.15 — Reachable author fixtures and observable checks (#596)
 

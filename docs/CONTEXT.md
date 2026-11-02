@@ -1,6 +1,6 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.13.15** - 2026-11-01.
+Documentation version: **5.13.16** - 2026-11-01.
 
 **V5.13:** PR605/606/607 cover #439/441/442; PR608 covers #440.
 Order/capacity/timers/Temperance/Tower/Fool/Hanged/Strength/Chariot/Priestess/Empress implemented;
