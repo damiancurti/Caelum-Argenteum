@@ -1,11 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.13.4** - 2026-11-01.
+Documentation version: **5.13.5** - 2026-11-01.
 
-## 5.13.4 - Standalone setup (#597, in progress)
+## 5.13.5 - Individual Deathmatch (#598)
 
-Complete native preset/recovery checks and menu-to-process verification, retain
-campaign isolation, and open a focused PR before the separate #598–601 rules.
+Native scoring, three-second respawn, recovery, overtime and rematch checks pass.
+Keep evidence in assets/validation_v5_13_5, including the tested runtime hash.
+Keep #598 separate from team play (#599), capture (#600) and hunt (#601).
+No author acceptance or presentation-performance claim is inferred.
+
+## 5.13.4 - Standalone setup (#597, PR609)
+
+Native preset/recovery, campaign isolation and menu protocol checks passed.
+PR609 contains the focused foundation for the separate #598–601 rules.
 The Windows Computer Use helper currently reports a missing native pipe, so
 physical menu-button input is not yet verified. Do not treat programmatic menu
 selection as that acceptance. The final author suite remains deferred until all

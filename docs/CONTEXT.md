@@ -1,13 +1,13 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.13.4** - 2026-11-01.
+Documentation version: **5.13.5** - 2026-11-01.
 
 **V5.13:** PR605/606/607 cover #439/441/442; PR608 covers #440.
 Order/capacity/timers/Temperance/Tower/Fool/Hanged Man/Strength/Chariot/Priestess trap/Empress restraint implemented;
 Empress/Death/Hierophant/Justice/Lovers/Emperor/Moon/Judgement/spirit/Sun-cargo implemented; native-checked; automaton control/3D checked.
 Timed creations support waits; stone-passages/vegetation/Wheel/Sun-rocks checked.
-Star collection/journeys checked; #597 underway; #598-601 last; author deferred.
-Rules: SYSTEMS; evidence: validation_v5_13_1/2/3.
+Star collection/journeys checked; #597 done; #598 done; #599-601 pending; author-deferred.
+SYSTEMS; validation_v5_13_1/2/3.
 
 **V5.12 accepted/merged:** HISTORY; validation_v5_12_7/7a; timer-fixed4.14.2.
 Siege1.33-6.48FPS/sharedGPU; no Internet claim; LF indexes#604.

@@ -1,6 +1,37 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.13.4** - 2026-11-01.
+Documentation version: **5.13.5** - 2026-11-01.
+
+## 5.13.5 - Individual Deathmatch (#598, 2026-11-01)
+
+Implementation: bounded match store, scoring and duplicate-death guard,
+three-second native respawn with fresh resident equipment, ten-minute overtime,
+localized standings, and unanimous arena reset. Campaign profile isolation and
+hub metadata remain separate. Validation: assets/validation_v5_13_5.
+
+Native development caught a protected DestroyAllInventory call, moved into the
+player subclass. The first probe also incorrectly assumed native respawn would
+leave its old actor reference unchanged; GZDoom substitutes those references.
+The corrected probe observes PlayerRespawned and restored state instead. Dead
+bodies may recreate their ordinary persistent-state item, but have no equipment
+loot. These failed diagnostics are retained; final evidence is recorded below.
+
+The native cooperative transport initially supplied inappropriate alliance and
+death presentation rules. Match-aware targeting now separates opponents from
+allies for offensive/support abilities. The match HUD reserves vertical space
+for the aim panel, shows the dead participant's respawn countdown, and replaces
+the campaign Fool hint and native cooperative score overlay in isolated matches.
+Spanish text encoding was corrected before final native visual review.
+
+Final evidence: `assets/validation_v5_13_5/results.json` records 64 passing
+native assertions across two real peers, both venues, recovery and rematch.
+Runtime SHA256: `335df2497629c84af1b7fe09b9a74ee1454b31342a33976ec66d3fde956e2666`;
+every packaged member matches src. Four launcher tests and four campaign-profile
+rejection checks pass. Native ES/EN standings and respawn captures are retained.
+These are local network checks, not Internet or presentation-performance evidence;
+physical menu input remains unverified because the desktop helper was unavailable.
+
+Author acceptance remains pending for the final V5.13 suite.
 
 
 ## 5.13.4 - Standalone menu and resident presets (#597, 2026-11-01)

@@ -4,14 +4,14 @@ class CaelumTargetPanel : Object ui
     static String Resource(String key,double value,double maximum)
     {return String.Format("%s: %.0f / %.0f",StringTable.Localize(key,false),Max(0,value),Max(0,maximum));}
 
-    static double Draw(CaelumPlayer user,Font font)
+    static double Draw(CaelumPlayer user,Font font,double minimumTop=0)
     {
         if(user==null || user.TargetInfo==null || user.TargetInfo.Title=="" || !CaelumPresentation.CrosshairVisible())return 0;
         let info=user.TargetInfo;let enemy=CaelumCombatActor(info.Subject);let other=CaelumPlayer(info.Subject);
         Vector2 scale=CaelumPresentation.MessageScale();
         double width=Min(CaelumTargetPanelData.WIDTH,Screen.GetWidth()/scale.X-2*CaelumTargetPanelData.PADDING);
         double x=(Screen.GetWidth()-width*scale.X)/2;
-        double y=CaelumTargetPanelData.TOP*scale.Y;
+        double y=Max(CaelumTargetPanelData.TOP*scale.Y,minimumTop);
         double row=(font.GetHeight()+CaelumTargetPanelData.ROW_GAP)*scale.Y;
         bool stats=enemy!=null || (other!=null && other.DerivedStats!=null);
         String actions=CaelumInputHints.Resolve(info.Actions);

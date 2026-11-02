@@ -7677,3 +7677,32 @@ CA_MATCH_ADDRESS = "Dirección del anfitrión (invitado)";
 CA_MATCH_SESSION = "Archivo de sesión (invitado)";
 CA_MATCH_MENU_HELP = "Entrá desde la portada con run_dev. Los invitados usan el archivo del anfitrión.";
 CA_MATCH_LAUNCH = "Conectar e iniciar una partida nueva";
+
+[enu default]
+CA_MATCH_STANDINGS = "Match standings";
+CA_MATCH_WINNER = "Winner: %s";
+CA_MATCH_OVERTIME = "Overtime: next lead wins";
+CA_MATCH_NOT_ACTIVE = "No standalone match is active.";
+CA_MATCH_REMATCH = "A new match resets the arena, equipment and score. Everyone must agree.";
+CA_MATCH_WAIT_VOTES = "Accepted. Waiting for the other players.";
+CA_MATCH_ENTER_REMATCH = "Enter: accept a new match. Esc: close.";
+[es]
+CA_MATCH_STANDINGS = "Clasificación de la partida";
+CA_MATCH_WINNER = "Ganador: %s";
+CA_MATCH_OVERTIME = "Desempate: gana la próxima ventaja";
+CA_MATCH_NOT_ACTIVE = "No hay una partida independiente activa.";
+CA_MATCH_REMATCH = "Una nueva partida reinicia la arena, el equipo y los puntos. Todos deben aceptar.";
+CA_MATCH_WAIT_VOTES = "Aceptado. Esperando a los demás jugadores.";
+CA_MATCH_ENTER_REMATCH = "Entrar: aceptar otra partida. Esc: cerrar.";
+
+[enu default]
+CA_MATCH_KILL = "%s defeated %s.";
+CA_MATCH_SELF_DEATH = "%s lost one point.";
+[es]
+CA_MATCH_KILL = "%s derrotó a %s.";
+CA_MATCH_SELF_DEATH = "%s perdió un punto.";
+
+[enu default]
+CA_MATCH_RESPAWN = "Respawning in %d s";
+[es]
+CA_MATCH_RESPAWN = "Reaparición en %d s";

@@ -36,6 +36,7 @@ class CaelumTarotLovers : Object play
     {
         if(first==null || second==null)return false;
         if(first==second)return true;
+        int relation=CaelumStandaloneMatch.Relation(first,second);if(relation>=0)return relation==0;
         let entry=CaelumArenaState.View(first),other=CaelumArenaState.View(second);
         let match=entry!=null?entry.MatchState:null;
         if(match!=null && match.Status==CaelumArenaMatch.FIGHTING)

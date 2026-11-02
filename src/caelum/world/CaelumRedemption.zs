@@ -200,7 +200,12 @@ class CaelumRedemption : Object play
         if(caster==null || body==null)return false;
         if(body==caster)return true;
         let principal=Commander(body);
-        if(principal!=null)return principal==caster || !deathmatch || principal.IsTeammate(caster);
+        if(principal!=null)
+        {
+            int relation=CaelumStandaloneMatch.Relation(caster,principal);
+            return relation>=0?relation==0:principal==caster || !deathmatch || principal.IsTeammate(caster);
+        }
+        int relation=CaelumStandaloneMatch.Relation(caster,CaelumPlayer(body));if(relation>=0)return relation==0;
         return body.player!=null ? (!deathmatch || body.IsTeammate(caster))
             : body.bIsMonster && body.bFriendly && body.IsFriend(caster);
     }

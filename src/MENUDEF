@@ -23,6 +23,7 @@ ListMenu "MainMenu"
     TextItem "$CA_NAV_TITLE", "e", "CaelumNavigationMenu"
     TextItem "$CA_NOTE_TITLE", "m", "CaelumMapNoteMenu"
     TextItem "$CA_ARENA_TITLE", "c", "CaelumArenaMenu"
+    TextItem "$CA_MATCH_STANDINGS", "p", "CaelumStandaloneScoreMenu"
     TextItem "$MNU_OPTIONS", "o", "OptionsMenu"
     TextItem "$MNU_QUITGAME", "s", "CaelumExitMenu"
 }
@@ -267,5 +268,6 @@ ListMenu "CaelumCooperativeTravelMenu"
 }
 
 ListMenu "CaelumArenaMenu" { Class "CaelumArenaMenu" }
+ListMenu "CaelumStandaloneScoreMenu" { Class "CaelumStandaloneScoreMenu" }
 ListMenu "CaelumTarotRaceMenu" { Class "CaelumTarotRaceMenu" }
 ListMenu "CaelumJusticeTravelMenu" { Class "CaelumJusticeTravelMenu" }

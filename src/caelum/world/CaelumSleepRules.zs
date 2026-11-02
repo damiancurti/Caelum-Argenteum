@@ -86,6 +86,7 @@ class CaelumSleepRules : Object play
         // No inferir hostilidad de una facción narrativa aún sin relaciones.
         if(victim.player!=null)
         {
+            int relation=CaelumStandaloneMatch.Relation(caster,CaelumPlayer(victim));if(relation>=0)return relation==1;
             if(CaelumRedemption.Commander(victim)!=null)return !CaelumRedemption.Allied(caster,victim);
             return deathmatch && !victim.IsTeammate(caster);
         }

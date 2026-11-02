@@ -92,6 +92,8 @@ def prepare(selection: dict, directory: Path, engine: Path, iwad: Path,
            '-config', str(directory/'game.ini'), '-savedir', str(directory), *network,
            '+logfile', str(directory/'engine.log'), '+exec', str(directory/'controls.cfg'),
            '+ca_standalone_mode', str(session['mode']+1),
+           '+sv_cooploseinventory', '1', '+sv_weapondrop', '0', '+show_obituaries', '0',
+           '+sb_cooperative_enable', '0',
            '+ca_standalone_preset', str(selection['preset'])]
     if selection['role'] == 0:
         cmd += ['+map', 'CARING' if session['venue'] == 0 else 'CASEWER']
