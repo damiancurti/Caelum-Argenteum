@@ -1,0 +1,770 @@
+[
+  {
+    "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue596\\author-suite-20261101-182802-457173\\scene0-20261101-182802-457173",
+    "scene": 0,
+    "runtime_sha256": "a0353152ef802123736f5d93bc20838f0b9f8f3e754ed590ff5f2522a3440a9f",
+    "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+    "peers": [
+      {
+        "slot": 0,
+        "exit": 0,
+        "errors": [],
+        "ready": true,
+        "synchronized": true,
+        "status": [
+          "CA513 READY scene=0 player=0",
+          "CA513 player=0 map=MAP01 life=5657 anima=1248.64 owned=78 selected=0 cooldown=0.00s",
+          "CA513 READY scene=0 player=1",
+          "CA513 player=1 map=MAP01 life=3960 anima=1504.00 owned=78 selected=0 cooldown=0.00s",
+          "CA513 player=0 map=MAP01 life=5657 anima=1248.64 owned=78 selected=0 cooldown=0.00s",
+          "CA513 player=1 map=MAP01 life=3960 anima=1504.00 owned=78 selected=0 cooldown=0.00s"
+        ]
+      },
+      {
+        "slot": 1,
+        "exit": 0,
+        "errors": [],
+        "ready": true,
+        "synchronized": true,
+        "status": [
+          "CA513 READY scene=0 player=0",
+          "CA513 player=0 map=MAP01 life=5657 anima=1248.64 owned=78 selected=0 cooldown=0.00s",
+          "CA513 READY scene=0 player=1",
+          "CA513 player=1 map=MAP01 life=3960 anima=1504.00 owned=78 selected=0 cooldown=0.00s",
+          "CA513 player=0 map=MAP01 life=5657 anima=1248.64 owned=78 selected=0 cooldown=0.00s",
+          "CA513 player=1 map=MAP01 life=3960 anima=1504.00 owned=78 selected=0 cooldown=0.00s"
+        ]
+      }
+    ],
+    "passed": true,
+    "author_accepted": false
+  },
+  {
+    "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue596\\author-suite-20261101-182835-221504\\scene1-20261101-182835-221504",
+    "scene": 1,
+    "runtime_sha256": "a0353152ef802123736f5d93bc20838f0b9f8f3e754ed590ff5f2522a3440a9f",
+    "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+    "peers": [
+      {
+        "slot": 0,
+        "exit": 0,
+        "errors": [],
+        "ready": true,
+        "synchronized": true,
+        "status": [
+          "CA513 READY scene=1 player=0",
+          "CA513 player=0 map=CARING life=5627 anima=1247.00 owned=77 selected=1 cooldown=0.00s",
+          "CA513 sequence[0]=El mundo",
+          "CA513 READY scene=1 player=1",
+          "CA513 player=1 map=CARING life=3939 anima=1500.37 owned=77 selected=1 cooldown=0.00s",
+          "CA513 sequence[0]=El mundo",
+          "CA513 player=0 map=CARING life=5627 anima=1247.00 owned=77 selected=1 cooldown=0.00s",
+          "CA513 sequence[0]=El mundo",
+          "CA513 player=1 map=CARING life=3939 anima=1500.37 owned=77 selected=1 cooldown=0.00s",
+          "CA513 sequence[0]=El mundo"
+        ]
+      },
+      {
+        "slot": 1,
+        "exit": 0,
+        "errors": [],
+        "ready": true,
+        "synchronized": true,
+        "status": [
+          "CA513 READY scene=1 player=0",
+          "CA513 player=0 map=CARING life=5627 anima=1247.00 owned=77 selected=1 cooldown=0.00s",
+          "CA513 sequence[0]=El mundo",
+          "CA513 READY scene=1 player=1",
+          "CA513 player=1 map=CARING life=3939 anima=1500.37 owned=77 selected=1 cooldown=0.00s",
+          "CA513 sequence[0]=El mundo",
+          "CA513 player=0 map=CARING life=5627 anima=1247.00 owned=77 selected=1 cooldown=0.00s",
+          "CA513 sequence[0]=El mundo",
+          "CA513 player=1 map=CARING life=3939 anima=1500.37 owned=77 selected=1 cooldown=0.00s",
+          "CA513 sequence[0]=El mundo"
+        ]
+      }
+    ],
+    "passed": true,
+    "author_accepted": false
+  },
+  {
+    "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue596\\author-suite-20261101-182907-013830\\scene2-20261101-182907-014836",
+    "scene": 2,
+    "runtime_sha256": "a0353152ef802123736f5d93bc20838f0b9f8f3e754ed590ff5f2522a3440a9f",
+    "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+    "peers": [
+      {
+        "slot": 0,
+        "exit": 0,
+        "errors": [],
+        "ready": true,
+        "synchronized": true,
+        "status": [
+          "CA513 READY scene=2 player=0",
+          "CA513 player=0 map=CARING life=5657 anima=1248.64 owned=78 selected=0 cooldown=0.00s",
+          "CA513 READY scene=2 player=1",
+          "CA513 player=1 map=CARING life=3960 anima=1504.00 owned=78 selected=0 cooldown=0.00s",
+          "CA513 player=0 map=CARING life=5657 anima=1248.64 owned=78 selected=0 cooldown=0.00s",
+          "CA513 player=1 map=CARING life=3960 anima=1504.00 owned=78 selected=0 cooldown=0.00s"
+        ]
+      },
+      {
+        "slot": 1,
+        "exit": 0,
+        "errors": [],
+        "ready": true,
+        "synchronized": true,
+        "status": [
+          "CA513 READY scene=2 player=0",
+          "CA513 player=0 map=CARING life=5657 anima=1248.64 owned=78 selected=0 cooldown=0.00s",
+          "CA513 READY scene=2 player=1",
+          "CA513 player=1 map=CARING life=3960 anima=1504.00 owned=78 selected=0 cooldown=0.00s",
+          "CA513 player=0 map=CARING life=5657 anima=1248.64 owned=78 selected=0 cooldown=0.00s",
+          "CA513 player=1 map=CARING life=3960 anima=1504.00 owned=78 selected=0 cooldown=0.00s"
+        ]
+      }
+    ],
+    "passed": true,
+    "author_accepted": false
+  },
+  {
+    "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue596\\author-suite-20261101-182939-653269\\scene3-20261101-182939-653269",
+    "scene": 3,
+    "runtime_sha256": "a0353152ef802123736f5d93bc20838f0b9f8f3e754ed590ff5f2522a3440a9f",
+    "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+    "peers": [
+      {
+        "slot": 0,
+        "exit": 0,
+        "errors": [],
+        "ready": true,
+        "synchronized": true,
+        "status": [
+          "CA513 READY scene=3 player=0",
+          "CA513 player=0 map=MAP01 life=5657 anima=1248.64 owned=78 selected=0 cooldown=0.00s",
+          "CA513 READY scene=3 player=1",
+          "CA513 player=1 map=MAP01 life=3960 anima=1504.00 owned=78 selected=0 cooldown=0.00s",
+          "CA513 player=0 map=MAP01 life=5657 anima=1248.64 owned=78 selected=0 cooldown=0.00s",
+          "CA513 player=1 map=MAP01 life=3960 anima=1504.00 owned=78 selected=0 cooldown=0.00s"
+        ]
+      },
+      {
+        "slot": 1,
+        "exit": 0,
+        "errors": [],
+        "ready": true,
+        "synchronized": true,
+        "status": [
+          "CA513 READY scene=3 player=0",
+          "CA513 player=0 map=MAP01 life=5657 anima=1248.64 owned=78 selected=0 cooldown=0.00s",
+          "CA513 READY scene=3 player=1",
+          "CA513 player=1 map=MAP01 life=3960 anima=1504.00 owned=78 selected=0 cooldown=0.00s",
+          "CA513 player=0 map=MAP01 life=5657 anima=1248.64 owned=78 selected=0 cooldown=0.00s",
+          "CA513 player=1 map=MAP01 life=3960 anima=1504.00 owned=78 selected=0 cooldown=0.00s"
+        ]
+      }
+    ],
+    "passed": true,
+    "author_accepted": false
+  },
+  {
+    "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue596\\author-suite-20261101-183014-149615\\scene4-20261101-183014-150616",
+    "scene": 4,
+    "runtime_sha256": "a0353152ef802123736f5d93bc20838f0b9f8f3e754ed590ff5f2522a3440a9f",
+    "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+    "peers": [
+      {
+        "slot": 0,
+        "exit": 0,
+        "errors": [],
+        "ready": true,
+        "synchronized": true,
+        "status": [
+          "CA513 READY scene=4 player=0",
+          "CA513 player=0 map=CARING life=3008 anima=1047.04 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=1 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=4 player=1",
+          "CA513 player=1 map=CARING life=2105 anima=1125.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=1 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=0 map=CARING life=3008 anima=1047.04 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=1 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=1 map=CARING life=2105 anima=1125.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=1 score=0 team=1 finished=0 winner=-1 captive=0 collected=0"
+        ]
+      },
+      {
+        "slot": 1,
+        "exit": 0,
+        "errors": [],
+        "ready": true,
+        "synchronized": true,
+        "status": [
+          "CA513 READY scene=4 player=0",
+          "CA513 player=0 map=CARING life=3008 anima=1047.04 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=1 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=4 player=1",
+          "CA513 player=1 map=CARING life=2105 anima=1125.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=1 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=0 map=CARING life=3008 anima=1047.04 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=1 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=1 map=CARING life=2105 anima=1125.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=1 score=0 team=1 finished=0 winner=-1 captive=0 collected=0"
+        ]
+      }
+    ],
+    "passed": true,
+    "author_accepted": false
+  },
+  {
+    "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue596\\author-suite-20261101-183046-425850\\scene5-20261101-183046-425850",
+    "scene": 5,
+    "runtime_sha256": "a0353152ef802123736f5d93bc20838f0b9f8f3e754ed590ff5f2522a3440a9f",
+    "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+    "peers": [
+      {
+        "slot": 0,
+        "exit": 0,
+        "errors": [],
+        "ready": true,
+        "synchronized": true,
+        "status": [
+          "CA513 READY scene=5 player=0",
+          "CA513 player=0 map=CARING life=3008 anima=1047.04 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=2 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=5 player=1",
+          "CA513 player=1 map=CARING life=2105 anima=1125.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=2 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=5 player=2",
+          "CA513 player=2 map=CARING life=1405 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=2 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=5 player=3",
+          "CA513 player=3 map=CARING life=937 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=2 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=0 map=CARING life=3008 anima=1047.04 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=2 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=1 map=CARING life=2105 anima=1125.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=2 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=2 map=CARING life=1405 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=2 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=3 map=CARING life=937 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=2 score=0 team=1 finished=0 winner=-1 captive=0 collected=0"
+        ]
+      },
+      {
+        "slot": 1,
+        "exit": 0,
+        "errors": [],
+        "ready": true,
+        "synchronized": true,
+        "status": [
+          "CA513 READY scene=5 player=0",
+          "CA513 player=0 map=CARING life=3008 anima=1047.04 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=2 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=5 player=1",
+          "CA513 player=1 map=CARING life=2105 anima=1125.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=2 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=5 player=2",
+          "CA513 player=2 map=CARING life=1405 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=2 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=5 player=3",
+          "CA513 player=3 map=CARING life=937 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=2 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=0 map=CARING life=3008 anima=1047.04 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=2 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=1 map=CARING life=2105 anima=1125.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=2 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=2 map=CARING life=1405 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=2 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=3 map=CARING life=937 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=2 score=0 team=1 finished=0 winner=-1 captive=0 collected=0"
+        ]
+      },
+      {
+        "slot": 2,
+        "exit": 0,
+        "errors": [],
+        "ready": true,
+        "synchronized": true,
+        "status": [
+          "CA513 READY scene=5 player=0",
+          "CA513 player=0 map=CARING life=3008 anima=1047.04 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=2 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=5 player=1",
+          "CA513 player=1 map=CARING life=2105 anima=1125.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=2 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=5 player=2",
+          "CA513 player=2 map=CARING life=1405 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=2 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=5 player=3",
+          "CA513 player=3 map=CARING life=937 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=2 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=0 map=CARING life=3008 anima=1047.04 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=2 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=1 map=CARING life=2105 anima=1125.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=2 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=2 map=CARING life=1405 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=2 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=3 map=CARING life=937 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=2 score=0 team=1 finished=0 winner=-1 captive=0 collected=0"
+        ]
+      },
+      {
+        "slot": 3,
+        "exit": 0,
+        "errors": [],
+        "ready": true,
+        "synchronized": true,
+        "status": [
+          "CA513 READY scene=5 player=0",
+          "CA513 player=0 map=CARING life=3008 anima=1047.04 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=2 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=5 player=1",
+          "CA513 player=1 map=CARING life=2105 anima=1125.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=2 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=5 player=2",
+          "CA513 player=2 map=CARING life=1405 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=2 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=5 player=3",
+          "CA513 player=3 map=CARING life=937 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=2 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=0 map=CARING life=3008 anima=1047.04 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=2 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=1 map=CARING life=2105 anima=1125.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=2 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=2 map=CARING life=1405 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=2 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=3 map=CARING life=937 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=2 score=0 team=1 finished=0 winner=-1 captive=0 collected=0"
+        ]
+      }
+    ],
+    "passed": true,
+    "author_accepted": false
+  },
+  {
+    "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue596\\author-suite-20261101-183124-336221\\scene6-20261101-183124-336221",
+    "scene": 6,
+    "runtime_sha256": "a0353152ef802123736f5d93bc20838f0b9f8f3e754ed590ff5f2522a3440a9f",
+    "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+    "peers": [
+      {
+        "slot": 0,
+        "exit": 0,
+        "errors": [],
+        "ready": true,
+        "synchronized": true,
+        "status": [
+          "CA513 READY scene=6 player=0",
+          "CA513 player=0 map=CARING life=3008 anima=1047.04 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=6 player=1",
+          "CA513 player=1 map=CARING life=2105 anima=1125.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=6 player=2",
+          "CA513 player=2 map=CARING life=1405 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=6 player=3",
+          "CA513 player=3 map=CARING life=937 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=0 map=CARING life=3008 anima=1047.04 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=1 map=CARING life=2105 anima=1125.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=2 map=CARING life=1405 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=3 map=CARING life=937 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=1 finished=0 winner=-1 captive=0 collected=0"
+        ]
+      },
+      {
+        "slot": 1,
+        "exit": 0,
+        "errors": [],
+        "ready": true,
+        "synchronized": true,
+        "status": [
+          "CA513 READY scene=6 player=0",
+          "CA513 player=0 map=CARING life=3008 anima=1047.04 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=6 player=1",
+          "CA513 player=1 map=CARING life=2105 anima=1125.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=6 player=2",
+          "CA513 player=2 map=CARING life=1405 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=6 player=3",
+          "CA513 player=3 map=CARING life=937 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=0 map=CARING life=3008 anima=1047.04 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=1 map=CARING life=2105 anima=1125.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=2 map=CARING life=1405 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=3 map=CARING life=937 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=1 finished=0 winner=-1 captive=0 collected=0"
+        ]
+      },
+      {
+        "slot": 2,
+        "exit": 0,
+        "errors": [],
+        "ready": true,
+        "synchronized": true,
+        "status": [
+          "CA513 READY scene=6 player=0",
+          "CA513 player=0 map=CARING life=3008 anima=1047.04 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=6 player=1",
+          "CA513 player=1 map=CARING life=2105 anima=1125.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=6 player=2",
+          "CA513 player=2 map=CARING life=1405 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=6 player=3",
+          "CA513 player=3 map=CARING life=937 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=0 map=CARING life=3008 anima=1047.04 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=1 map=CARING life=2105 anima=1125.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=2 map=CARING life=1405 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=3 map=CARING life=937 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=1 finished=0 winner=-1 captive=0 collected=0"
+        ]
+      },
+      {
+        "slot": 3,
+        "exit": 0,
+        "errors": [],
+        "ready": true,
+        "synchronized": true,
+        "status": [
+          "CA513 READY scene=6 player=0",
+          "CA513 player=0 map=CARING life=3008 anima=1047.04 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=6 player=1",
+          "CA513 player=1 map=CARING life=2105 anima=1125.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=6 player=2",
+          "CA513 player=2 map=CARING life=1405 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=6 player=3",
+          "CA513 player=3 map=CARING life=937 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=0 map=CARING life=3008 anima=1047.04 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=1 map=CARING life=2105 anima=1125.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=2 map=CARING life=1405 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=3 map=CARING life=937 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=1 finished=0 winner=-1 captive=0 collected=0"
+        ]
+      }
+    ],
+    "passed": true,
+    "author_accepted": false
+  },
+  {
+    "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue596\\author-suite-20261101-183201-373456\\scene7-20261101-183201-374461",
+    "scene": 7,
+    "runtime_sha256": "a0353152ef802123736f5d93bc20838f0b9f8f3e754ed590ff5f2522a3440a9f",
+    "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+    "peers": [
+      {
+        "slot": 0,
+        "exit": 0,
+        "errors": [],
+        "ready": true,
+        "synchronized": true,
+        "status": [
+          "CA513 READY scene=7 player=0",
+          "CA513 player=0 map=CASEWER life=3008 anima=1047.04 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=7 player=1",
+          "CA513 player=1 map=CASEWER life=2105 anima=1125.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=7 player=2",
+          "CA513 player=2 map=CASEWER life=1405 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=7 player=3",
+          "CA513 player=3 map=CASEWER life=937 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=0 map=CASEWER life=3008 anima=1047.04 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=1 map=CASEWER life=2105 anima=1125.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=2 map=CASEWER life=1405 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=3 map=CASEWER life=937 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=1 finished=0 winner=-1 captive=0 collected=0"
+        ]
+      },
+      {
+        "slot": 1,
+        "exit": 0,
+        "errors": [],
+        "ready": true,
+        "synchronized": true,
+        "status": [
+          "CA513 READY scene=7 player=0",
+          "CA513 player=0 map=CASEWER life=3008 anima=1047.04 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=7 player=1",
+          "CA513 player=1 map=CASEWER life=2105 anima=1125.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=7 player=2",
+          "CA513 player=2 map=CASEWER life=1405 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=7 player=3",
+          "CA513 player=3 map=CASEWER life=937 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=0 map=CASEWER life=3008 anima=1047.04 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=1 map=CASEWER life=2105 anima=1125.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=2 map=CASEWER life=1405 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=3 map=CASEWER life=937 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=1 finished=0 winner=-1 captive=0 collected=0"
+        ]
+      },
+      {
+        "slot": 2,
+        "exit": 0,
+        "errors": [],
+        "ready": true,
+        "synchronized": true,
+        "status": [
+          "CA513 READY scene=7 player=0",
+          "CA513 player=0 map=CASEWER life=3008 anima=1047.04 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=7 player=1",
+          "CA513 player=1 map=CASEWER life=2105 anima=1125.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=7 player=2",
+          "CA513 player=2 map=CASEWER life=1405 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=7 player=3",
+          "CA513 player=3 map=CASEWER life=937 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=0 map=CASEWER life=3008 anima=1047.04 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=1 map=CASEWER life=2105 anima=1125.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=2 map=CASEWER life=1405 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=3 map=CASEWER life=937 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=1 finished=0 winner=-1 captive=0 collected=0"
+        ]
+      },
+      {
+        "slot": 3,
+        "exit": 0,
+        "errors": [],
+        "ready": true,
+        "synchronized": true,
+        "status": [
+          "CA513 READY scene=7 player=0",
+          "CA513 player=0 map=CASEWER life=3008 anima=1047.04 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=7 player=1",
+          "CA513 player=1 map=CASEWER life=2105 anima=1125.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=7 player=2",
+          "CA513 player=2 map=CASEWER life=1405 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=7 player=3",
+          "CA513 player=3 map=CASEWER life=937 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=0 map=CASEWER life=3008 anima=1047.04 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=1 map=CASEWER life=2105 anima=1125.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=2 map=CASEWER life=1405 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=3 map=CASEWER life=937 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=3 score=0 team=1 finished=0 winner=-1 captive=0 collected=0"
+        ]
+      }
+    ],
+    "passed": true,
+    "author_accepted": false
+  },
+  {
+    "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue596\\author-suite-20261101-183238-981083\\scene8-20261101-183238-981083",
+    "scene": 8,
+    "runtime_sha256": "a0353152ef802123736f5d93bc20838f0b9f8f3e754ed590ff5f2522a3440a9f",
+    "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+    "peers": [
+      {
+        "slot": 0,
+        "exit": 0,
+        "errors": [],
+        "ready": true,
+        "synchronized": true,
+        "status": [
+          "CA513 READY scene=8 player=0",
+          "CA513 player=0 map=CAHUNT life=3008 anima=1047.04 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=4 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=8 player=1",
+          "CA513 player=1 map=CAHUNT life=2105 anima=1125.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=4 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=8 player=2",
+          "CA513 player=2 map=CAHUNT life=1405 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=4 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=8 player=3",
+          "CA513 player=3 map=CAHUNT life=937 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=4 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=0 map=CAHUNT life=3008 anima=1047.04 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=4 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=1 map=CAHUNT life=2105 anima=1125.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=4 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=2 map=CAHUNT life=1405 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=4 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=3 map=CAHUNT life=937 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=4 score=0 team=1 finished=0 winner=-1 captive=0 collected=0"
+        ]
+      },
+      {
+        "slot": 1,
+        "exit": 0,
+        "errors": [],
+        "ready": true,
+        "synchronized": true,
+        "status": [
+          "CA513 READY scene=8 player=0",
+          "CA513 player=0 map=CAHUNT life=3008 anima=1047.04 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=4 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=8 player=1",
+          "CA513 player=1 map=CAHUNT life=2105 anima=1125.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=4 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=8 player=2",
+          "CA513 player=2 map=CAHUNT life=1405 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=4 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=8 player=3",
+          "CA513 player=3 map=CAHUNT life=937 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=4 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=0 map=CAHUNT life=3008 anima=1047.04 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=4 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=1 map=CAHUNT life=2105 anima=1125.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=4 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=2 map=CAHUNT life=1405 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=4 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=3 map=CAHUNT life=937 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=4 score=0 team=1 finished=0 winner=-1 captive=0 collected=0"
+        ]
+      },
+      {
+        "slot": 2,
+        "exit": 0,
+        "errors": [],
+        "ready": true,
+        "synchronized": true,
+        "status": [
+          "CA513 READY scene=8 player=0",
+          "CA513 player=0 map=CAHUNT life=3008 anima=1047.04 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=4 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=8 player=1",
+          "CA513 player=1 map=CAHUNT life=2105 anima=1125.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=4 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=8 player=2",
+          "CA513 player=2 map=CAHUNT life=1405 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=4 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=8 player=3",
+          "CA513 player=3 map=CAHUNT life=937 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=4 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=0 map=CAHUNT life=3008 anima=1047.04 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=4 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=1 map=CAHUNT life=2105 anima=1125.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=4 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=2 map=CAHUNT life=1405 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=4 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=3 map=CAHUNT life=937 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=4 score=0 team=1 finished=0 winner=-1 captive=0 collected=0"
+        ]
+      },
+      {
+        "slot": 3,
+        "exit": 0,
+        "errors": [],
+        "ready": true,
+        "synchronized": true,
+        "status": [
+          "CA513 READY scene=8 player=0",
+          "CA513 player=0 map=CAHUNT life=3008 anima=1047.04 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=4 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=8 player=1",
+          "CA513 player=1 map=CAHUNT life=2105 anima=1125.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=4 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=8 player=2",
+          "CA513 player=2 map=CAHUNT life=1405 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=4 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 READY scene=8 player=3",
+          "CA513 player=3 map=CAHUNT life=937 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=4 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=0 map=CAHUNT life=3008 anima=1047.04 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=4 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=1 map=CAHUNT life=2105 anima=1125.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=4 score=0 team=1 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=2 map=CAHUNT life=1405 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=4 score=0 team=0 finished=0 winner=-1 captive=0 collected=0",
+          "CA513 player=3 map=CAHUNT life=937 anima=1433.44 owned=0 selected=0 cooldown=0.00s",
+          "CA513 mode=4 score=0 team=1 finished=0 winner=-1 captive=0 collected=0"
+        ]
+      }
+    ],
+    "passed": true,
+    "author_accepted": false
+  },
+  {
+    "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue596\\author-suite-20261101-183324-055075\\scene9-20261101-183324-055075",
+    "scene": 9,
+    "runtime_sha256": "a0353152ef802123736f5d93bc20838f0b9f8f3e754ed590ff5f2522a3440a9f",
+    "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+    "peers": [
+      {
+        "slot": 0,
+        "exit": 0,
+        "errors": [],
+        "ready": true,
+        "synchronized": true,
+        "status": [
+          "CA513 READY scene=9 player=0",
+          "CA513 player=0 map=CARING life=5657 anima=1248.64 owned=78 selected=1 cooldown=0.00s",
+          "CA513 sequence[0]=El loco",
+          "CA513 READY scene=9 player=1",
+          "CA513 player=1 map=CARING life=3960 anima=1504.00 owned=78 selected=1 cooldown=0.00s",
+          "CA513 sequence[0]=El loco",
+          "CA513 player=0 map=CARING life=5657 anima=1248.64 owned=78 selected=1 cooldown=0.00s",
+          "CA513 sequence[0]=El loco",
+          "CA513 player=1 map=CARING life=3960 anima=1504.00 owned=78 selected=1 cooldown=0.00s",
+          "CA513 sequence[0]=El loco"
+        ]
+      },
+      {
+        "slot": 1,
+        "exit": 0,
+        "errors": [],
+        "ready": true,
+        "synchronized": true,
+        "status": [
+          "CA513 READY scene=9 player=0",
+          "CA513 player=0 map=CARING life=5657 anima=1248.64 owned=78 selected=1 cooldown=0.00s",
+          "CA513 sequence[0]=El loco",
+          "CA513 READY scene=9 player=1",
+          "CA513 player=1 map=CARING life=3960 anima=1504.00 owned=78 selected=1 cooldown=0.00s",
+          "CA513 sequence[0]=El loco",
+          "CA513 player=0 map=CARING life=5657 anima=1248.64 owned=78 selected=1 cooldown=0.00s",
+          "CA513 sequence[0]=El loco",
+          "CA513 player=1 map=CARING life=3960 anima=1504.00 owned=78 selected=1 cooldown=0.00s",
+          "CA513 sequence[0]=El loco"
+        ]
+      }
+    ],
+    "passed": true,
+    "author_accepted": false
+  }
+]

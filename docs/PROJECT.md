@@ -1,6 +1,12 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.13.8** - 2026-11-01.
+Documentation version: **5.13.9** - 2026-11-01.
+
+## 5.13.9 - V5.13 validation checkpoint (#596)
+
+The ten-scene native startup/synchronization sweep passed. The numbered manual
+launcher is prepared, but final handoff awaits the newly requested #614 power-ups
+and the menu-launch review. No V5.13 author acceptance, closure or merge is inferred.
 
 ## 5.13.8 - Cooperative hunt (#601)
 

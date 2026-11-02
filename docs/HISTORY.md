@@ -1,6 +1,20 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.13.8** - 2026-11-01.
+Documentation version: **5.13.9** - 2026-11-01.
+
+## 5.13.9 - Author-suite preparation (#596, checkpoint, 2026-11-01)
+
+Ten isolated author scenarios now start through one numbered launcher, with
+fresh private configurations, two/four native peers and common-save reopening.
+All ten native startup/synchronization checks pass on the recorded runtime.
+The first preflight rejected a reserved fixture identifier; a first screenshot
+also exposed the prologue dialog obstructing the annex. Both fixture defects
+were corrected before the ten-scene run. These are technical checks, not author
+acceptance or exhaustive manual interaction. Physical menu operation remains
+unverified because the Computer Use native pipe is unavailable.
+The author then added #614 labyrinth power-ups; final delivery and the author
+queue remain deferred until that separate issue and menu-launch usability are ready.
+Evidence: assets/validation_v5_13_9/startup-results.json.
 
 ## 5.13.8 - Cooperative hunt (#601, 2026-11-01)
 

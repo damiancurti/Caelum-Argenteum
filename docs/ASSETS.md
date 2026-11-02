@@ -1,6 +1,12 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.13.8** - 2026-11-01.
+Documentation version: **5.13.9** - 2026-11-01.
+
+## Author-suite scene preparation (#596)
+
+The isolated fixtures reuse existing owned assets and private native captures;
+no new artwork is packaged. The prologue overlay seen in the first annex capture
+was suppressed only in the test fixture before the final startup sweep.
 
 ## Cooperative hunt maze (#601)
 
