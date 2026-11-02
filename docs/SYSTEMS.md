@@ -2,6 +2,19 @@
 
 Documentation version: **5.13.17** - 2026-11-01.
 
+## V5.13 author acceptance — 2026-11-01 (#596)
+
+The author confirmed that all tests passed, including the equipment-awakening
+recheck, and explicitly requested merging the PRs and closing the issues.
+The accepted candidate is 5.13.17; acceptance does not increment the patch version.
+All 13 outstanding checks are recorded in HISTORY and pending_test.txt is empty.
+Scopes #439–442, #596–601, #614, #616 and #617 are complete. Integration preserves
+their focused commits and PRs; this acceptance record accompanies their ordered merge.
+Earlier implementation checkpoints below retain their original test observations;
+their pending-author and next-work statements are superseded by this acceptance.
+Existing ETW/frame-presentation and Internet-testing limitations remain explicit;
+author acceptance does not establish a new performance or Internet benchmark.
+
 ## 5.13.17 — Tarot review guidance and final candidate (#440)
 
 The shared Tarot help now states the three base slots plus acquired Hermit/Devil bonuses, avoiding the obsolete three-card maximum. Acquired passives, native essence capture, clean four-entry menus and observable awakening/rock fixtures form the review candidate. Ring and sewer remain selectable for Capture Arcana. Final targeted native results and captures are in assets/validation_v5_13_17; all author checks remain pending.
