@@ -6,7 +6,12 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.13.13.** Obtain and update the complete repository, validate
+**Current release: 5.13.14.** Obtain and update the complete repository, validate
+
+## 5.13.14 — Four-entry main menu (#597)
+
+Main menu now contains Single player, Multiplayer, Options and Quit. Campaign creation/load/save, exploration and map notes are under Single player; standalone matches, organized arenas and standings are under Multiplayer. Native menus retain clean labels without appended key hints; in-world interaction help is preserved. No rules, maps or save schema change. Author visual recheck pending.
+
 
 ## 5.13.13 — Acquired Major passives and card descriptions (#440)
 

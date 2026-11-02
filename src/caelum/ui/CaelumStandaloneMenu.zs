@@ -1,6 +1,6 @@
 // El motor conecta la red al arrancar. El menú entrega sólo datos al puente;
 // nunca carga, exporta ni transforma un personaje de campaña.
-class CaelumStandaloneMenu : CaelumHintOptionMenu
+class CaelumStandaloneMenu : OptionMenu
 {
     static bool Available()
     {return gamestate!=GS_LEVEL && CVar.GetCVar('ca_standalone_bridge').GetBool();}
