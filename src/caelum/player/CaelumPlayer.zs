@@ -7312,7 +7312,7 @@ class CaelumPlayer : DoomPlayer
     override void Tick()
     {
         if(ProfileDeparted || SessionIdentityPending)return;
-        if(CaelumTarotHunt.Held(self)){Super.Tick();return;}
+        if(CaelumTarotHunt.Held(self) || CaelumTarotHunt.HumanHunter(self)){Super.Tick();return;}
         if(CaelumSpirit.Active(self)){Super.Tick();CaelumTarotService.Advance(self);return;}
         // También repara flags/selección de saves anteriores sin duplicar stock.
         CaelumQuickUse.Reconcile(self);

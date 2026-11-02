@@ -4,6 +4,7 @@ class CaelumStandaloneMatch : Object play
     int Revision,Mode,Members,Elapsed,Winner,RematchVotes;
     int Score[MAXPLAYERS],Deaths[MAXPLAYERS],RespawnAt[MAXPLAYERS],Preset[MAXPLAYERS];
     int Team[MAXPLAYERS];
+    int PlayerPalomo; // 0 = NPC; 1..8 = puesto humano, guardado por partida.
     bool Started,Finished,Restarting;
     CaelumCaptureArcana Capture;
     CaelumTarotHunt Hunt;
@@ -20,7 +21,8 @@ class CaelumStandaloneMatch : Object play
         if(!(first is 'CaelumStandalonePlayer') || !(second is 'CaelumStandalonePlayer'))return -1;
         let match=View();if(match==null || !match.Started || match.Finished)return 0;
         if(!match.Member(first.PlayerNumber()) || !match.Member(second.PlayerNumber()))return 0;
-        if(first==second || match.Mode==CaelumStandaloneData.TAROT_HUNT)return 0;
+        if(first==second)return 0;
+        if(match.Mode==CaelumStandaloneData.TAROT_HUNT)return match.HunterPlayer(first.PlayerNumber())!=match.HunterPlayer(second.PlayerNumber())?1:0;
         return !match.TeamsEnabled() || match.Team[first.PlayerNumber()]!=match.Team[second.PlayerNumber()]?1:0;
     }
     clearscope bool TeamsEnabled(){return Mode==CaelumStandaloneData.TEAM_DEATHMATCH || Mode==CaelumStandaloneData.CAPTURE_ARCANA;}
@@ -37,6 +39,9 @@ class CaelumStandaloneMatch : Object play
         int order=0;for(int i=0;i<MAXPLAYERS;i++)if(Member(i)){Team[i]=order%2;order++;}
     }
     clearscope bool Member(int slot){return slot>=0 && slot<MAXPLAYERS && (Members&(1<<slot))!=0;}
+    clearscope bool HunterPlayer(int slot){return Mode==CaelumStandaloneData.TAROT_HUNT && PlayerPalomo>0 && slot==PlayerPalomo-1;}
+    clearscope bool Seeker(int slot){return Member(slot) && !HunterPlayer(slot);}
+    clearscope int Seekers(){return PlayerPalomo>0?Members&~(1<<(PlayerPalomo-1)):Members;}
     clearscope bool RespawnAllowed(int slot)
     {return Member(slot) && (Restarting || (Started && !Finished && RespawnAt[slot]>0 && level.time>=RespawnAt[slot]));}
 
@@ -130,12 +135,12 @@ class CaelumStandaloneMatch : Object play
         Restarting=true;
         // El modo guardado manda también tras recuperar con un CVar diferente.
         let events=CaelumStandaloneMatchEvents(StaticEventHandler.Find('CaelumStandaloneMatchEvents'));
-        if(events!=null)events.NextMode=Mode;
+        if(events!=null){events.NextMode=Mode;events.NextPalomo=PlayerPalomo;}
         // Nueva instancia del mapa: elimina proyectiles y estado de la ronda.
         for(int i=0;i<MAXPLAYERS;i++)if(Member(i))
         {
             let body=CaelumStandalonePlayer(players[i].mo);if(body==null)continue;
-            body.StandaloneRevision=0;body.StandaloneDeathRecorded=false;body.StandaloneInventoryCleared=false;
+            body.StandaloneRevision=0;body.StandaloneHunter=false;body.StandaloneDeathRecorded=false;body.StandaloneInventoryCleared=false;
             body.player.cheats&=~CF_TOTALLYFROZEN;
         }
         Level.ChangeLevel(level.MapName,0,CHANGELEVEL_NOINTERMISSION|CHANGELEVEL_RESETINVENTORY|CHANGELEVEL_RESETHEALTH);
@@ -153,7 +158,7 @@ class CaelumStandaloneMatchEvents : StaticEventHandler
 {
     CaelumStandaloneMatchStore Store;
     bool Located;
-    int NextMode;
+    int NextMode,NextPalomo;
     override void WorldLoaded(WorldEvent e){Store=null;Located=false;}
     override void WorldTick()
     {
@@ -170,7 +175,12 @@ class CaelumStandaloneMatchEvents : StaticEventHandler
                 || !(players[0].mo is 'CaelumStandalonePlayer'))return;
             Store=CaelumStandaloneMatchStore(Actor.Spawn('CaelumStandaloneMatchStore',(0,0,0),NO_REPLACE));
             Store.Match=new('CaelumStandaloneMatch');Store.Match.Revision=1;
-            Store.Match.Mode=mode;NextMode=0;
+            Store.Match.Mode=mode;
+            int selected=NextMode>0?NextPalomo:CVar.GetCVar('ca_standalone_palomo').GetInt();
+            int count=0;for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i])count++;
+            if(mode==CaelumStandaloneData.TAROT_HUNT && count>=CaelumStandaloneData.HUMAN_PALOMO_MIN_PLAYERS
+                && selected>0 && selected<=MAXPLAYERS && playeringame[selected-1])Store.Match.PlayerPalomo=selected;
+            NextMode=0;NextPalomo=0;
         }
         Store.Match.Tick();
     }
@@ -190,6 +200,8 @@ class CaelumStandaloneScoreHUD : Object ui
             :seconds>0?String.Format("%02d:%02d",seconds/60,seconds%60):StringTable.Localize('CA_MATCH_OVERTIME',false);
         if(match.Hunt!=null && !match.Finished)
             line=String.Format(StringTable.Localize('CA_HUNT_COUNT',false),match.Hunt.Collected) .. " | " .. StringTable.Localize(match.Hunt.Captive(consoleplayer)?'CA_HUNT_WAIT_RESCUE':'CA_HUNT_HELP',false);
+        if(match.Hunt!=null && match.HunterPlayer(consoleplayer) && !match.Finished)
+            line=String.Format(StringTable.Localize('CA_HUNT_COUNT',false),match.Hunt.Collected).." | "..StringTable.Localize('CA_HUNT_PLAYER_HELP',false);
         if(match.TeamsEnabled() && match.Member(consoleplayer))
             line=String.Format("%s | %s: %d - %s: %d | %s",CaelumStandaloneMatch.TeamName(match.Team[consoleplayer]),CaelumStandaloneMatch.TeamName(0),match.TeamScore(0),CaelumStandaloneMatch.TeamName(1),match.TeamScore(1),line);
         if(match.Capture!=null && match.Capture.Carrying(consoleplayer)>=0)
@@ -224,6 +236,7 @@ class CaelumStandaloneScoreMenu : ListMenu
             for(int i=0;i<MAXPLAYERS;i++)if(match.Member(i) && !(shown&(1<<i)) && (best<0 || match.Score[i]>match.Score[best]))best=i;
             if(best<0)break;shown|=1<<best;
             String participantLabel=players[best].GetUserName();
+            if(match.HunterPlayer(best))participantLabel=StringTable.Localize('CA_HUNT_PALOMO',false).." - "..participantLabel;
             if(match.TeamsEnabled())participantLabel=CaelumStandaloneMatch.TeamName(match.Team[best]).." - "..participantLabel;
             CaelumTrucoMenu.Text(22,(match.TeamsEnabled()?105:75)+row*30,String.Format("%d. %s: %d",row+1,participantLabel,match.Score[best]),match.TeamsEnabled()?(match.Team[best]==0?Font.CR_RED:Font.CR_LIGHTBLUE):Font.CR_WHITE);
         }

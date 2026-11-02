@@ -25,9 +25,9 @@ class CaelumStandaloneMenuEvents : StaticEventHandler
         if(host.IndexOf('|')>=0 || session.IndexOf('|')>=0
             || host.IndexOf('\n')>=0 || session.IndexOf('\n')>=0
             || host.IndexOf('\r')>=0 || session.IndexOf('\r')>=0)return;
-        Console.Printf("CA_STANDALONE_REQUEST %d|%d|%d|%d|%d|%d|%s|%s",
+        Console.Printf("CA_STANDALONE_REQUEST %d|%d|%d|%d|%d|%d|%s|%s|%d",
             CVar.GetCVar('ca_match_role').GetInt(),CVar.GetCVar('ca_match_mode').GetInt(),
             CVar.GetCVar('ca_match_preset').GetInt(),CVar.GetCVar('ca_match_players').GetInt(),
-            CVar.GetCVar('ca_match_port').GetInt(),CVar.GetCVar('ca_match_venue').GetInt(),host,session);
+            CVar.GetCVar('ca_match_port').GetInt(),CVar.GetCVar('ca_match_venue').GetInt(),host,session,CVar.GetCVar('ca_match_palomo').GetInt());
     }
 }

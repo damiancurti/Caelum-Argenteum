@@ -39,15 +39,22 @@ def request(line: str) -> dict:
     if not line.startswith(MARKER):
         raise ValueError('Not a standalone menu request.')
     fields = line[len(MARKER):].split('|')
-    if len(fields) != 8 or any('\r' in x or '\n' in x for x in fields):
+    if len(fields) not in (8,9) or any('\r' in x or '\n' in x for x in fields):
         raise ValueError('Malformed standalone menu request.')
     role, mode, preset, count, port, venue = map(int, fields[:6])
     if role not in (0, 1) or mode not in range(4) or preset not in range(4):
         raise ValueError('Unknown standalone selection.')
     if not 2 <= count <= 8 or not 1024 <= port <= 65527 or venue not in (0, 1):
         raise ValueError('Invalid session size, port or venue.')
-    return dict(role=role, mode=mode, preset=preset, players=count, port=port,
+    palomo = int(fields[8]) if len(fields)==9 else 0
+    validate_palomo(mode, count, palomo if role==0 else 0)
+    return dict(role=role, mode=mode, preset=preset, players=count, port=port, palomo=palomo,
                 venue=venue, host=endpoint(fields[6]), session=fields[7].strip())
+
+
+def validate_palomo(mode: int, count: int, palomo: int) -> None:
+    if palomo < 0 or palomo > count or (palomo and (mode!=3 or count<4)):
+        raise ValueError('Player Palomo requires Tarot hunt, at least four participants and an existing player slot.')
 
 
 def isolated_config() -> bytes:
@@ -60,20 +67,21 @@ def prepare(selection: dict, directory: Path, engine: Path, iwad: Path,
     """Create a fresh local participant directory; never reuse a campaign INI."""
     # Validate even callers that did not originate in the native menu.
     selection = request(MARKER + '|'.join(str(selection[k]) for k in
-        ('role', 'mode', 'preset', 'players', 'port', 'venue', 'host', 'session')))
+        ('role', 'mode', 'preset', 'players', 'port', 'venue', 'host', 'session'))+'|'+str(selection.get('palomo',0)))
     directory.mkdir(parents=True, exist_ok=False)
     if selection['role'] == 0:
-        session = dict(revision=1, token=str(uuid.uuid4()), mode=selection['mode'],
+        session = dict(revision=2, token=str(uuid.uuid4()), mode=selection['mode'], palomo=selection['palomo'],
                        venue=selection['venue'], players=selection['players'],
                        port=selection['port'], manifest=manifest(engine, iwad, packages))
         write_new(directory/'session.json', (json.dumps(session, indent=2)+'\n').encode())
         network = ['-host', str(session['players']), '-port', str(session['port']), '-netmode', '0']
     else:
         session = json.loads(Path(selection['session']).resolve(strict=True).read_text(encoding='utf-8'))
-        if (session.get('revision') != 1 or session.get('mode') not in range(4)
+        if (session.get('revision') not in (1,2) or session.get('mode') not in range(4)
                 or session.get('venue') not in (0, 1) or not 2 <= session.get('players', 0) <= 8
                 or not 1024 <= session.get('port', 0) <= 65527):
             raise ValueError('Invalid standalone session file.')
+        validate_palomo(session['mode'],session['players'],session.get('palomo',0))
         verify_manifest(session['manifest'], engine, iwad, packages)
         # Native joining assigns the slot; no campaign identity is claimed.
         host=selection['host'];host=f'[{host}]' if ':' in host else host
@@ -92,6 +100,7 @@ def prepare(selection: dict, directory: Path, engine: Path, iwad: Path,
            '-config', str(directory/'game.ini'), '-savedir', str(directory), *network,
            '+logfile', str(directory/'engine.log'), '+exec', str(directory/'controls.cfg'),
            '+ca_standalone_mode', str(session['mode']+1),
+           '+ca_standalone_palomo', str(session.get('palomo',0)),
            '+sv_cooploseinventory', '1', '+sv_weapondrop', '0', '+show_obituaries', '0',
            '+sb_cooperative_enable', '0',
            '+ca_standalone_preset', str(selection['preset'])]

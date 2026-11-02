@@ -44,6 +44,7 @@ OptionValue "CaelumMatchPresets"
     3, "$CA_CAELLA_NAME"
 }
 OptionValue "CaelumMatchVenues" { 0, "$CA_ARENA_RING" 1, "$CA_ARENA_MAZE" }
+OptionValue "CaelumMatchPalomo" { 0, "$CA_HUNT_AI_PALOMO" 1, "1 (host)" 2, "2" 3, "3" 4, "4" 5, "5" 6, "6" 7, "7" 8, "8" }
 OptionMenu "CaelumStandaloneMenu"
 {
     Class "CaelumStandaloneMenu"
@@ -54,6 +55,7 @@ OptionMenu "CaelumStandaloneMenu"
     Option "$CA_MATCH_CHARACTER", "ca_match_preset", "CaelumMatchPresets"
     Option "$CA_MATCH_VENUE", "ca_match_venue", "CaelumMatchVenues"
     TextField "$CA_MATCH_PLAYERS", "ca_match_players"
+    Option "$CA_HUNT_PLAYER_PALOMO", "ca_match_palomo", "CaelumMatchPalomo"
     TextField "$CA_MATCH_PORT", "ca_match_port"
     TextField "$CA_MATCH_ADDRESS", "ca_match_host"
     TextField "$CA_MATCH_SESSION", "ca_match_session"

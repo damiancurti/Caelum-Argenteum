@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.13.10** - 2026-11-01.
+Documentation version: **5.13.11** - 2026-11-01.
+
+## 5.13.11 - Remaining V5.13 work (#616/#596)
+
+Finish the approved 22 distributed Arcana opportunities, shared essence unlocks
+and selected-captive Fool rescue in #616. Then extend and verify #596's single
+manual terminal, including human Palomo and power-ups; populate pending_test.txt
+only when the whole version is ready. #617 native evidence and limitations are
+in validation_v5_13_11; author acceptance is still outstanding.
 
 ## 5.13.10 - Remaining final integration (#616/#617/#596)
 

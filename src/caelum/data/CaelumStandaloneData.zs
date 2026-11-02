@@ -6,6 +6,7 @@ class CaelumStandaloneData : Object
     const TEAM_DEATHMATCH=2;
     const CAPTURE_ARCANA=3;
     const TAROT_HUNT=4;
+    const HUMAN_PALOMO_MIN_PLAYERS=4;
     const CAPTURE_LIMIT=3;
     const OBJECTIVE_CARD=21; // El Mundo, catálogo existente.
     const OBJECTIVE_RETURN_TICS=30*35;

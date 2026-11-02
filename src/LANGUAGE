@@ -1,4 +1,12 @@
 [enu default]
+CA_HUNT_AI_PALOMO = "NPC Palomo";
+CA_HUNT_PLAYER_PALOMO = "Palomo controller (hunt, 4+ players)";
+CA_HUNT_PLAYER_HELP = "You are Palomo. Catch every seeker by touching them.";
+[es]
+CA_HUNT_AI_PALOMO = "Palomo NPC";
+CA_HUNT_PLAYER_PALOMO = "Control de Palomo (búsqueda, 4+ jugadores)";
+CA_HUNT_PLAYER_HELP = "Sos Palomo. Capturá a todos los buscadores al tocarlos.";
+[enu default]
 CA_POWERUP_REST = "Common: three-minute rest";
 CA_POWERUP_REPLENISH = "Common: Anima and ammunition";
 CA_POWERUP_WEAPONS = "Common: awaken weapons and shields";
