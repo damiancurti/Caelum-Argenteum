@@ -21,7 +21,7 @@ CA_POWERUP_ARMOR = "Común: despertar armadura";
 CA_POWERUP_SLEEP = "Raro: descanso de seis minutos";
 CA_POWERUP_UPGRADE = "Raro: mejorar equipo";
 [enu default]
-CA_TAROT_STAR_LIMIT = "This giant object requires The Star equipped and its one giant-object space free.";
+CA_TAROT_STAR_LIMIT = "This giant object requires The Star acquired and its one giant-object space free.";
 CA_TAROT_STAR_RELEASE_WAIT = "Giant furniture is waiting for a safe release. Clear nearby space.";
 CA_TAROT_EXAMPLES = "Tarot examples";
 CA_TAROT_EXAMPLES_RETURN = "Return to the mansion practice room";
@@ -30,7 +30,7 @@ CA_TAROT_ROOM_ROUTE = "Wheel of Fortune route";
 CA_TAROT_ROOM_REQUIRED = "Activate the Wheel of Fortune inside its special room.";
 CA_TAROT_ROOM_BLOCKED = "Clear the closing doorway before changing the room.";
 [es]
-CA_TAROT_STAR_LIMIT = "Este objeto gigante requiere La Estrella equipada y su único espacio gigante libre.";
+CA_TAROT_STAR_LIMIT = "Este objeto gigante requiere La Estrella adquirida y su único espacio gigante libre.";
 CA_TAROT_STAR_RELEASE_WAIT = "Un mueble gigante espera una salida segura. Despejá espacio cercano.";
 CA_TAROT_EXAMPLES = "Ejemplos del Tarot";
 CA_TAROT_EXAMPLES_RETURN = "Volver a la sala de práctica de la mansión";
@@ -44,14 +44,14 @@ CA_TAROT_UNMARKED_WALL = "Wall";
 CA_TAROT_PASSAGE_CURSED = "Cursed passage";
 CA_TAROT_PASSAGE_PURIFIED = "Purified passage";
 CA_TAROT_PASSAGE_PURIFY = "Use: purify and open";
-CA_TAROT_PASSAGE_REQUIRES = "Equip The Hierophant to purify this passage.";
+CA_TAROT_PASSAGE_REQUIRES = "Acquire The Hierophant to purify this passage.";
 [es]
 CA_TAROT_FALSE_WALL = "Pared falsa";
 CA_TAROT_UNMARKED_WALL = "Pared";
 CA_TAROT_PASSAGE_CURSED = "Paso maldito";
 CA_TAROT_PASSAGE_PURIFIED = "Paso purificado";
 CA_TAROT_PASSAGE_PURIFY = "Usar: purificar y abrir";
-CA_TAROT_PASSAGE_REQUIRES = "Equipa El Hierofante para purificar este paso.";
+CA_TAROT_PASSAGE_REQUIRES = "Adquirí El Hierofante para purificar este paso.";
 [enu default]
 CA_JUSTICE_UNAVAILABLE = "Justice needs a free arena and a visible living target who is not already duelling.";
 CA_JUSTICE_RETURN_WAIT = "Justice is returning the survivors. A return point is blocked; travel will wait. You can still cancel travel.";
@@ -7486,7 +7486,7 @@ CA_ARENA_CLOSE = "Cerrar";
 [enu default]
 CA_ARCANA_SOURCE_NAME = "Tarot essence";
 CA_ARCANA_SOURCE_REVEAL = "An essence awaits capture in your Box. Your physical deck must be inside.";
-CA_TAROT_UNIFIED_OBTAINED = "All 78 essences collected. The unified Tarot essence is available with The World equipped.";
+CA_TAROT_UNIFIED_OBTAINED = "All 78 essences collected. The unified Tarot essence is available with The World acquired.";
 CA_TAROT_MAJOR_01 = "The Magician";
 CA_TAROT_MAJOR_02 = "The High Priestess";
 CA_TAROT_MAJOR_03 = "The Empress";
@@ -7512,7 +7512,7 @@ CA_TAROT_MAJOR_21 = "The World";
 [es]
 CA_ARCANA_SOURCE_NAME = "Esencia del Tarot";
 CA_ARCANA_SOURCE_REVEAL = "Una esencia espera ser capturada en tu Caja. Tu mazo físico debe estar dentro.";
-CA_TAROT_UNIFIED_OBTAINED = "Reuniste las 78 esencias. La esencia unificada del Tarot está disponible con El Mundo equipado.";
+CA_TAROT_UNIFIED_OBTAINED = "Reuniste las 78 esencias. La esencia unificada del Tarot está disponible con El Mundo adquirido.";
 CA_TAROT_MAJOR_01 = "El mago";
 CA_TAROT_MAJOR_02 = "La sacerdotisa";
 CA_TAROT_MAJOR_03 = "La emperatriz";
@@ -7537,11 +7537,11 @@ CA_TAROT_MAJOR_21 = "El mundo";
 
 [enu default]
 CA_TAROT_UNIFIED_ACTION = "U: Unified essence";
-CA_TAROT_UNIFIED_REQUIRES = "Requires all 78 essences and The World equipped.";
+CA_TAROT_UNIFIED_REQUIRES = "Requires all 78 essences and The World acquired.";
 CA_TAROT_UNIFIED_ACTIVE = "Unified Tarot active: deity damage allowed for 60 s. Cost: 1,000 Anima.";
 [es]
 CA_TAROT_UNIFIED_ACTION = "U: Esencia unificada";
-CA_TAROT_UNIFIED_REQUIRES = "Requiere las 78 esencias y El Mundo equipado.";
+CA_TAROT_UNIFIED_REQUIRES = "Requiere las 78 esencias y El Mundo adquirido.";
 CA_TAROT_UNIFIED_ACTIVE = "Tarot unificado activo: permite herir deidades durante 60 s. Coste: 1.000 Ánima.";
 
 [enu default]
@@ -7610,10 +7610,10 @@ CA_TAROT_LIFT_STARTED = "Objeto levantado. Volvé a usar para soltarlo; su masa 
 
 [enu default]
 CA_TAROT_LIVING_BREAK = "{bind:+use}: destroy this living obstacle with Death";
-CA_TAROT_LIVING_REQUIRES = "Equip Death to destroy this living obstacle.";
+CA_TAROT_LIVING_REQUIRES = "Acquire Death to destroy this living obstacle.";
 [es]
 CA_TAROT_LIVING_BREAK = "{bind:+use}: destruir este obstáculo vivo con La Muerte";
-CA_TAROT_LIVING_REQUIRES = "Equipá La Muerte para destruir este obstáculo vivo.";
+CA_TAROT_LIVING_REQUIRES = "Adquirí La Muerte para destruir este obstáculo vivo.";
 
 [enu default]
 CA_TAROT_MOON_CLONE = "Moon illusion";
@@ -7626,7 +7626,7 @@ CA_TAROT_HEAT_ROCK = "Heat-emitting giant rock";
 CA_TAROT_DIRTY_ROCK = "Contaminating giant rock";
 CA_TAROT_SUN_INVENTORY = "Emissions blocked. Use, Box or Drop: release safely.";
 CA_TAROT_SUN_PENDING_SHORT = "Release pending: clear nearby space.";
-CA_TAROT_SUN_STAR = "Equip The Star to contain this giant rock.";
+CA_TAROT_SUN_STAR = "Acquire The Star to contain this giant rock.";
 CA_TAROT_SUN_OCCUPIED = "Only one giant object can occupy the Box; release any current hold first.";
 CA_TAROT_SUN_CAPACITY = "The Box needs a free slot and enough carrying capacity.";
 CA_TAROT_SUN_CAPTURED = "The original rock is contained until The Sun expires.";
@@ -7637,7 +7637,7 @@ CA_TAROT_HEAT_ROCK = "Roca gigante que irradia calor";
 CA_TAROT_DIRTY_ROCK = "Roca gigante contaminante";
 CA_TAROT_SUN_INVENTORY = "Emisión bloqueada. Usar, Caja o Soltar: liberar.";
 CA_TAROT_SUN_PENDING_SHORT = "Salida pendiente: despejá espacio cercano.";
-CA_TAROT_SUN_STAR = "Equipa La Estrella para guardar esta roca gigante.";
+CA_TAROT_SUN_STAR = "Adquirí La Estrella para guardar esta roca gigante.";
 CA_TAROT_SUN_OCCUPIED = "La Caja admite un solo objeto gigante; soltá primero lo que estás sosteniendo.";
 CA_TAROT_SUN_CAPACITY = "La Caja necesita un espacio libre y capacidad de carga suficiente.";
 CA_TAROT_SUN_CAPTURED = "La roca original está guardada hasta que termine El Sol.";
@@ -7654,12 +7654,12 @@ CA_TAROT_AUTOMATON_ORDER = "El autómata recibió la posición observada del obj
 
 [enu default]
 CA_TAROT_EXAMPLE_SPIRIT = "Demonstration spirit";
-CA_TAROT_SPIRIT_REQUIRES = "Equip Judgement to hear this spirit.";
-CA_TAROT_SPIRIT_DEMONSTRATION = "You can hear this demonstration spirit while Judgement is equipped. Justice allows your attacks to harm it. This example grants no quest or reward.";
+CA_TAROT_SPIRIT_REQUIRES = "Acquire Judgement to hear this spirit.";
+CA_TAROT_SPIRIT_DEMONSTRATION = "You can hear this demonstration spirit after acquiring Judgement. Justice allows your attacks to harm it. This example grants no quest or reward.";
 [es]
 CA_TAROT_EXAMPLE_SPIRIT = "Espíritu de demostración";
-CA_TAROT_SPIRIT_REQUIRES = "Equipá El Juicio para escuchar a este espíritu.";
-CA_TAROT_SPIRIT_DEMONSTRATION = "Podés escuchar a este espíritu de demostración mientras tengas equipado El Juicio. La Justicia permite que tus ataques lo dañen. Este ejemplo no concede misiones ni recompensas.";
+CA_TAROT_SPIRIT_REQUIRES = "Adquirí El Juicio para escuchar a este espíritu.";
+CA_TAROT_SPIRIT_DEMONSTRATION = "Podés escuchar a este espíritu de demostración después de adquirir El Juicio. La Justicia permite que tus ataques lo dañen. Este ejemplo no concede misiones ni recompensas.";
 [enu default]
 CA_STANDALONE_TITLE = "Multiplayer";
 CA_MATCH_HOST = "Host";
@@ -7846,3 +7846,97 @@ CA_HUNT_USE_18 = "The Moon allows you to leave a clone and return from the fork.
 CA_HUNT_USE_19 = "The Sun and the Star allow temporary containment of hazardous rocks.";
 CA_HUNT_USE_20 = "Judgement allows you to hear the spirit.";
 CA_HUNT_USE_21 = "The World activates acquired Arcana that are not equipped.";
+
+[enu default]
+CA_TAROT_MAJOR_PASSIVE_0 = "Allows asking Palomo to return from the mansion";
+CA_TAROT_MAJOR_ACTIVE_0 = "Proposes a unanimous journey to Limbo when someone is dead. In Palomo's hunt, rescues the chosen captive.";
+CA_TAROT_MAJOR_PASSIVE_1 = "Allows awakening automatons";
+CA_TAROT_MAJOR_ACTIVE_1 = "Awakens one automaton for 60 s. While controlling it, aim at an enemy and press Tarot to order an attack.";
+CA_TAROT_MAJOR_PASSIVE_2 = "Reveals false walls";
+CA_TAROT_MAJOR_ACTIVE_2 = "Places one trap on visible ground within 100 m. Lasts 60 s; enemy contact triggers a 4 m blast dealing twice magical damage.";
+CA_TAROT_MAJOR_PASSIVE_3 = "Allows crossing marked vegetation";
+CA_TAROT_MAJOR_ACTIVE_3 = "Roots one visible target within 100 m for 60 s; thorns deal piercing damage.";
+CA_TAROT_MAJOR_PASSIVE_4 = "Enables control of summoned creatures";
+CA_TAROT_MAJOR_ACTIVE_4 = "For 60 s, pacifies targets within 4 m and controls affected summons. Requires line of sight.";
+CA_TAROT_MAJOR_PASSIVE_5 = "Allows purifying cursed passages";
+CA_TAROT_MAJOR_ACTIVE_5 = "Purifies contamination in a 4 m radius. Water must fit entirely within the area; salt remains.";
+CA_TAROT_MAJOR_PASSIVE_6 = "Shares damage among living group members within 4 m and line of sight, after defenses";
+CA_TAROT_MAJOR_ACTIVE_6 = "Also shares healing for 60 s. Each recipient counts once, even when auras overlap.";
+CA_TAROT_MAJOR_PASSIVE_7 = "Allows breaking marked fragile obstacles with Use";
+CA_TAROT_MAJOR_ACTIVE_7 = "Projects a cart 12 m at 6 m/s: pushes each actor once without direct damage and stops at walls.";
+CA_TAROT_MAJOR_PASSIVE_8 = "Allows harming marked immortal spirits";
+CA_TAROT_MAJOR_ACTIVE_8 = "Takes caster and target to this map's arena. They return after 60 s or a death; return must be safe.";
+CA_TAROT_MAJOR_PASSIVE_9 = "Adds two card equipment slots";
+CA_TAROT_MAJOR_ACTIVE_9 = "Doubles the first Arcana's duration in the sequence. An instant effect is not repeated and does not pass the bonus onward.";
+CA_TAROT_MAJOR_PASSIVE_10 = "Allows altering rooms prepared for The Wheel";
+CA_TAROT_MAJOR_ACTIVE_10 = "Alternates the room's authored water, lighting, mechanisms and exits.";
+CA_TAROT_MAJOR_PASSIVE_11 = "Allows lifting and releasing movable objects with Use within carrying capacity";
+CA_TAROT_MAJOR_ACTIVE_11 = "For 60 s multiplies object-moving Strength by ten. Lifted objects add their real mass to carried load.";
+CA_TAROT_MAJOR_PASSIVE_12 = "Allows choosing another playable race when equipping this card; the choice is retained";
+CA_TAROT_MAJOR_ACTIVE_12 = "For 60 s, the Tarot key toggles that race's ability with its requirements and costs. Your body does not change.";
+CA_TAROT_MAJOR_PASSIVE_13 = "Allows destroying trees and vines marked as obstacles with Use";
+CA_TAROT_MAJOR_ACTIVE_13 = "Applies contamination 100 within 4 m of the aimed target or visible ground, up to 100 m away. Also affects allies.";
+CA_TAROT_MAJOR_PASSIVE_14 = "Halves temporary negative status durations";
+CA_TAROT_MAJOR_ACTIVE_14 = "Removes those statuses and prevents new applications for 60 s. Does not remove bodily contamination, hunger, thirst or natural sleep.";
+CA_TAROT_MAJOR_PASSIVE_15 = "Adds two card equipment slots";
+CA_TAROT_MAJOR_ACTIVE_15 = "Allows activation during cooldown by paying 2,000 Health instead of Anima. Can kill the caster; the sequence still executes.";
+CA_TAROT_MAJOR_PASSIVE_16 = "Enables destroying siege machines through its power";
+CA_TAROT_MAJOR_ACTIVE_16 = "Destroys one aimed visible machine within 100 m and resolves that siege objective. Living operators keep fighting.";
+CA_TAROT_MAJOR_PASSIVE_17 = "Adds ten Box slots and permits one giant object";
+CA_TAROT_MAJOR_ACTIVE_17 = "For 60 s the Box contents are weightless; the Box retains its own weight. Does not push objects.";
+CA_TAROT_MAJOR_PASSIVE_18 = "Allows swapping position with your own clone";
+CA_TAROT_MAJOR_ACTIVE_18 = "Creates two clones for 60 s with 25% Health and damage. Aim at one and press Tarot to swap positions.";
+CA_TAROT_MAJOR_PASSIVE_19 = "Adds ten Box slots and protects from contained hazardous objects";
+CA_TAROT_MAJOR_ACTIVE_19 = "For 60 s, aim at a hazardous rock and press Tarot to contain it. Requires acquired Star and a free giant-object space.";
+CA_TAROT_MAJOR_PASSIVE_20 = "Allows speaking with spirits";
+CA_TAROT_MAJOR_ACTIVE_20 = "Dispels mind control and illusions within 4 m, respecting narrative protections.";
+CA_TAROT_MAJOR_PASSIVE_21 = "Enables the unified essence after collecting all 78 essences";
+CA_TAROT_MAJOR_ACTIVE_21 = "Executes acquired unequipped Arcana once in order from 0 to 77. Skips invalid targets without recursion or extra cost.";
+CA_TAROT_ROCK_ACTIONS = "Tarot: contain with active Sun and acquired Star. Use: lift with Strength; carrying capacity applies.";
+
+[es]
+CA_TAROT_MAJOR_PASSIVE_0 = "Permite pedir a Palomo el regreso desde la mansión";
+CA_TAROT_MAJOR_ACTIVE_0 = "Propone viajar al Limbo si hay fallecidos, por unanimidad. En la búsqueda de Palomo rescata al cautivo elegido.";
+CA_TAROT_MAJOR_PASSIVE_1 = "Permite despertar autómatas";
+CA_TAROT_MAJOR_ACTIVE_1 = "Despierta un autómata durante 60 s. Durante el control, apuntá a un enemigo y pulsá Tarot para ordenarle atacar.";
+CA_TAROT_MAJOR_PASSIVE_2 = "Revela paredes falsas";
+CA_TAROT_MAJOR_ACTIVE_2 = "Coloca una trampa en suelo visible hasta 100 m. Dura 60 s y explota al contacto enemigo: radio 4 m, daño mágico ×2.";
+CA_TAROT_MAJOR_PASSIVE_3 = "Permite atravesar vegetación marcada";
+CA_TAROT_MAJOR_ACTIVE_3 = "Atrapa un objetivo visible hasta 100 m con plantas durante 60 s; las espinas infligen daño perforante.";
+CA_TAROT_MAJOR_PASSIVE_4 = "Habilita el control de criaturas invocadas";
+CA_TAROT_MAJOR_ACTIVE_4 = "Durante 60 s, pacifica a quienes alcance en 4 m y dirige las invocaciones afectadas. Requiere línea de visión.";
+CA_TAROT_MAJOR_PASSIVE_5 = "Permite purificar pasos malditos";
+CA_TAROT_MAJOR_ACTIVE_5 = "Purifica contaminación en un radio de 4 m. El agua debe estar completamente contenida en el área; conserva la sal.";
+CA_TAROT_MAJOR_PASSIVE_6 = "Reparte el daño entre miembros vivos del grupo a 4 m con línea de visión, después de defensas";
+CA_TAROT_MAJOR_ACTIVE_6 = "Durante 60 s también reparte la curación. Cada receptor cuenta una sola vez, aunque se superpongan auras.";
+CA_TAROT_MAJOR_PASSIVE_7 = "Permite romper obstáculos marcados como frágiles con Usar";
+CA_TAROT_MAJOR_ACTIVE_7 = "Proyecta una carreta 12 m a 6 m/s: empuja una vez a cada actor, sin daño directo, y se detiene ante paredes.";
+CA_TAROT_MAJOR_PASSIVE_8 = "Permite dañar espíritus inmortales marcados";
+CA_TAROT_MAJOR_ACTIVE_8 = "Lleva al lanzador y a su objetivo a la arena del mapa. Vuelven al terminar 60 s o morir uno; el retorno debe ser seguro.";
+CA_TAROT_MAJOR_PASSIVE_9 = "Añade dos espacios para equipar cartas";
+CA_TAROT_MAJOR_ACTIVE_9 = "Duplica la duración del primer Arcano de la secuencia. Un efecto instantáneo no se repite ni pasa la bonificación al siguiente.";
+CA_TAROT_MAJOR_PASSIVE_10 = "Permite alterar habitaciones preparadas para La Rueda";
+CA_TAROT_MAJOR_ACTIVE_10 = "Alterna el estado de la habitación: agua, iluminación, mecanismos y salidas según su configuración.";
+CA_TAROT_MAJOR_PASSIVE_11 = "Permite levantar y soltar objetos móviles con Usar si alcanza la capacidad de carga";
+CA_TAROT_MAJOR_ACTIVE_11 = "Durante 60 s multiplica por diez la Fuerza usada para mover objetos. El objeto levantado suma su masa real a la carga.";
+CA_TAROT_MAJOR_PASSIVE_12 = "Permite elegir otra raza jugable al equipar esta carta; conserva la elección";
+CA_TAROT_MAJOR_ACTIVE_12 = "Durante 60 s, la tecla Tarot alterna la habilidad de la raza elegida, con sus requisitos y costes. No cambia tu cuerpo.";
+CA_TAROT_MAJOR_PASSIVE_13 = "Permite destruir árboles y enredaderas marcados como obstáculos con Usar";
+CA_TAROT_MAJOR_ACTIVE_13 = "Aplica contaminación 100 en un radio de 4 m sobre el objetivo o suelo visible, hasta 100 m. También afecta a aliados.";
+CA_TAROT_MAJOR_PASSIVE_14 = "Reduce a la mitad la duración de estados temporales negativos";
+CA_TAROT_MAJOR_ACTIVE_14 = "Elimina esos estados e impide nuevas aplicaciones durante 60 s. No elimina contaminación corporal, hambre, sed ni sueño natural.";
+CA_TAROT_MAJOR_PASSIVE_15 = "Añade dos espacios para equipar cartas";
+CA_TAROT_MAJOR_ACTIVE_15 = "Permite activar la secuencia durante la recarga pagando 2.000 de Vida en lugar de Ánima. Puede matar; la secuencia se ejecuta igualmente.";
+CA_TAROT_MAJOR_PASSIVE_16 = "Habilita destruir máquinas de asedio mediante su poder";
+CA_TAROT_MAJOR_ACTIVE_16 = "Destruye una máquina visible en la mira hasta 100 m y resuelve ese objetivo del asedio. Los operadores vivos siguen combatiendo.";
+CA_TAROT_MAJOR_PASSIVE_17 = "Añade diez espacios a la Caja y permite guardar un único objeto gigante";
+CA_TAROT_MAJOR_ACTIVE_17 = "Durante 60 s el contenido de la Caja no pesa; la Caja conserva su propio peso. No empuja objetos.";
+CA_TAROT_MAJOR_PASSIVE_18 = "Permite intercambiar posición con un clon propio";
+CA_TAROT_MAJOR_ACTIVE_18 = "Crea dos clones durante 60 s con el 25 % de Vida y daño. Apuntá a uno y pulsá Tarot para intercambiar posiciones.";
+CA_TAROT_MAJOR_PASSIVE_19 = "Añade diez espacios a la Caja y protege del efecto de los objetos peligrosos contenidos";
+CA_TAROT_MAJOR_ACTIVE_19 = "Durante 60 s, apuntá a una roca peligrosa y pulsá Tarot para guardarla. Requiere La Estrella adquirida y espacio gigante libre.";
+CA_TAROT_MAJOR_PASSIVE_20 = "Permite hablar con espíritus";
+CA_TAROT_MAJOR_ACTIVE_20 = "Disipa control mental e ilusiones en un radio de 4 m, respetando las protecciones narrativas.";
+CA_TAROT_MAJOR_PASSIVE_21 = "Habilita la esencia unificada al reunir las 78 esencias";
+CA_TAROT_MAJOR_ACTIVE_21 = "Ejecuta una vez los Arcanos adquiridos no equipados, en orden del 0 al 77. Omite objetivos inválidos, sin recursión ni coste extra.";
+CA_TAROT_ROCK_ACTIONS = "Tarot: guardar con Sol activo y Estrella adquirida. Usar: levantar con La Fuerza; requiere capacidad de carga.";

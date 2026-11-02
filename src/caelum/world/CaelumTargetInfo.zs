@@ -14,6 +14,7 @@ class CaelumTargetInfo : Object play
     static clearscope Actor CanonicalActor(Actor object)
     {
         if(object is 'CaelumSlidingDoorBlocker' || object is 'CaelumGateBlocker')return object.master;
+        if(object is 'CaelumHazardRockVisual')return object.master;
         let block=CaelumDiningBlock(object);if(block!=null)return block.Table;
         let seat=CaelumSofaSeat(object);if(seat!=null)return seat.Sofa;
         let campPart=CaelumCampTentPart(object);if(campPart!=null)return campPart.Structure;
@@ -101,6 +102,10 @@ class CaelumTargetInfo : Object play
         }
         if(Title=="")Title=L(Subject is 'CaelumCombatActor'?"CA_TARGET_CHARACTER":"CA_TARGET_OBJECT");
         bool reachable=Distance<=user.UseRange;
+        if(Subject is 'CaelumTarotRock')
+        {
+            Actions=L("CA_TAROT_ROCK_ACTIONS");return;
+        }
         if(Subject is 'CaelumTarotLivingObstacle')
         {
             Actions=L(!reachable?"CA_TARGET_APPROACH":CaelumTarotLoadout.Passive(user.GetPersistentCharacterState(false),13)
