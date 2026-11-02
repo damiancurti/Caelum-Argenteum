@@ -166,7 +166,7 @@ class CaelumFoolTravel : Object play
         return visit==null || !visit.Active;
     }
     static bool DevilPayment(CaelumPersistentCharacterState record,bool exceptional)
-    {return !exceptional && record.TarotCooldownTics>0 && CaelumTarotLoadout.Passive(record,15);}
+    {return !exceptional && record.TarotCooldownTics>0 && CaelumTarotLoadout.InSequence(record,15);}
     static bool CanPay(CaelumPlayer user,bool exceptional)
     {
         if(!JourneyAvailable(user,exceptional))return false;

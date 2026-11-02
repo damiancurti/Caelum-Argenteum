@@ -20,7 +20,6 @@ class CaelumTemperance : Object play
 
     static bool SelectedForSequence(CaelumPersistentCharacterState record)
     {
-        return CaelumTarotLoadout.Passive(record,14)
-            || (CaelumTarotLoadout.Passive(record,21) && record.HasTarotCard(14));
+        return CaelumTarotLoadout.InSequence(record,14);
     }
 }

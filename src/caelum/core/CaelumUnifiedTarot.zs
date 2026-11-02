@@ -28,7 +28,7 @@ class CaelumUnifiedTarot : Object play
     {
         if(!CaelumTarotService.ValidUser(user) || CaelumBolas.Restrained(user))return false;
         let record=user.GetPersistentCharacterState(false);Ensure(record);
-        if(!Owned(record) || !CaelumTarotService.IsSelected(record,WORLD_CARD))
+        if(!Owned(record))
         {CaelumTarotService.Feedback(user,"CA_TAROT_UNIFIED_REQUIRES");return false;}
         if(user.HasActiveConversation() || user.CraftingMenuOpen || user.PalomoMerchantMenuOpen
             || user.CraftingTaskActive || user.CombatChannelModeActive || user.StaffCastPending

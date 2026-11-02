@@ -7,11 +7,11 @@ the list. Helpers prepare a test and are not campaign features. Native automated
 checks are recorded separately; only the author can confirm these entries.
 
 CA439-01 | origin 5.13.0 | #439 | scene 1
-Steps: Select and reorder Major cards in Tab > Tarot; compare equipped/unequipped passives and Minor collection bonuses. Equip Hermit/Devil with filled basic slots, then try removing them while over capacity.
-Expected: Only Major capability passives require equipment; order persists; expanded capacity and removal guards match the approved rules.
+Steps: Select and reorder Major cards in Tab > Tarot; compare the distinct active/passive descriptions. Deselect all cards: acquired passives, seven slots with Hermit/Devil and Minor bonuses remain. Right/Left wrap between first/last cards.
+Expected: All acquired Major passives persist unequipped; only selected/fanout active powers execute. Card descriptions and cyclic navigation match the displayed card.
 
 CA441-01 | origin 5.13.1 | #441 | scene 2
-Steps: Use the last world essence with E in both clients; finish capture. With World equipped, activate unified essence from inventory; attack the test Palomo before/during/after its duration.
+Steps: Use the last world essence with E in both clients; finish capture. With all cards unequipped, activate unified essence from inventory; attack the test Palomo before/during/after its duration.
 Expected: Each character captures once; 78 cards enable the paid timed deity-damage effect; scene protections and normal defenses remain.
 
 CA442-01 | origin 5.13.2 | #442 | scene 3

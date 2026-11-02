@@ -114,7 +114,7 @@ class CaelumTarotService : Object play
             || CaelumRestState.IsActive(user)
             || CaelumTimeSkipState.IsOpen(user) || (user.player.cheats & CF_TOTALLYFROZEN))
         { Feedback(user, "CA_TAROT_POWER_CONTEXT"); return false; }
-        bool devil=record.TarotCooldownTics>0 && CaelumTarotLoadout.Passive(record,15);
+        bool devil=record.TarotCooldownTics>0 && CaelumTarotLoadout.InSequence(record,15);
         if ((record.TarotCooldownTics > 0 || record.TarotEffectTics > 0) && !devil)
         { Feedback(user, "CA_TAROT_POWER_COOLDOWN"); return false; }
         if (!devil && user.CurrentAnima < CaelumConstants.TAROT_ACTIVATION_ANIMA)

@@ -6,7 +6,12 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.13.12.** Obtain and update the complete repository, validate
+**Current release: 5.13.13.** Obtain and update the complete repository, validate
+
+## 5.13.13 — Acquired Major passives and card descriptions (#440)
+
+The author corrected Major passives to remain available after acquisition, independent of selection. Active sequence gates remain separate; unified essence no longer needs World selected. All 22 cards have individual bilingual effects, cyclic navigation and a rock-action hint. No stored fields or map geometry change; existing ownership/order/timers remain intact. Native verification: assets/validation_v5_13_13; author recheck remains pending.
+
 it, then rebuild with `run_dev.bat` as described below.
 
 The six #614 labyrinth power-ups and optional #617 human Palomo are implemented.
@@ -34,8 +39,8 @@ and World dispatch. Lovers also shares damage in coupled, read-only journey
 forecasts before committing individual costs and results. This is an
 implementation summary; Chariot reuses the original cart at its approved width,
 and Empress plants have native visual evidence using owned vegetation materials.
-Its equipped passive also enables individual vegetation traversal.
-Death's equipped passive destroys explicitly marked living obstacles through Use.
+Its acquired passive also enables individual vegetation traversal.
+Death's acquired passive destroys explicitly marked living obstacles through Use.
 Priestess identifies authored false walls; Hierophant purifies permitted cursed passages.
 The mansion example annex has reversible geometry, usable return portals and placed
 passage examples. Wheel changes its room's water, light and routes persistently.
@@ -49,7 +54,7 @@ and resources, native combat and a collision-checked swap. Its native checkpoint
 and retained failures are recorded in HISTORY; it is not full-version acceptance.
 Judgement now dispels nearby Emperor control and Moon illusions through their
 existing cleanup paths, preserving protected scenes and unrelated effects.
-Its equipped passive opens the demonstration spirit's bilingual dialogue; equipped
+Its acquired passive opens the demonstration spirit's bilingual dialogue; acquired
 Justice permits damage to that explicitly marked immortal spirit.
 Sun now has identity-preserving rock containment, Star gating, Box mass/slots
 and bounded safe release. Its two rock examples reuse the owned boulder:8kW

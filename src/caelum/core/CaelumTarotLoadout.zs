@@ -16,14 +16,21 @@ class CaelumTarotLoadout : Object play
     static clearscope bool Passive(CaelumPersistentCharacterState record,int card)
     {
         return card>=0 && card<CaelumConstants.TAROT_MAJOR_COUNT
-            && CaelumTarotService.HasTarotCard(record,card) && CaelumTarotService.IsSelected(record,card);
+            && CaelumTarotService.HasTarotCard(record,card);
+    }
+
+    // Los activos siguen dependiendo de la secuencia; El Mundo puede incluirlos.
+    static clearscope bool InSequence(CaelumPersistentCharacterState record,int card)
+    {
+        return Passive(record,card) && (CaelumTarotService.IsSelected(record,card)
+            || CaelumTarotService.IsSelected(record,21));
     }
 
     static clearscope int Capacity(CaelumPersistentCharacterState record,int adding=-1)
     {
         return CaelumConstants.TAROT_SELECTED_LIMIT
-            +CaelumMajorArcanaData.EXTRA_TAROT_SLOTS*((Passive(record,9) || adding==9?1:0)
-                +(Passive(record,15) || adding==15?1:0));
+            +CaelumMajorArcanaData.EXTRA_TAROT_SLOTS*((Passive(record,9)?1:0)
+                +(Passive(record,15)?1:0));
     }
 
     static clearscope int BoxBonus(CaelumPersistentCharacterState record)
@@ -31,13 +38,7 @@ class CaelumTarotLoadout : Object play
 
     static bool CanRemove(CaelumPlayer user,CaelumPersistentCharacterState record,int card)
     {
-        record.TarotSelected[card]=false;
-        int capacity=Capacity(record);
-        int boxCapacity=CaelumEquipmentRules.MagicBoxSlots(user.Attributes.Intelligence)+BoxBonus(record);
-        record.TarotSelected[card]=true;
-        if(CaelumTarotService.SelectedCount(record)-1>capacity)return false;
-        int releaseSlot=card==17?CaelumTarotStar.Count(user):0;
-        if((card==17 || card==19) && user.CountNativeMagicBoxSlots()-releaseSlot+user.CraftingTaskReservedBoxSlots>boxCapacity)return false;
+        // Quitar una carta de la secuencia no retira una esencia adquirida.
         return true;
     }
 
