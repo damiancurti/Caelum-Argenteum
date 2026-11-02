@@ -23,7 +23,7 @@ Steps: Use Tab > Tarot, T and the printed F2-F4 helpers to review all Major powe
 Expected: Approved power effects, targets, shared cost/cooldown and follow-up actions work. Justice returns safely; giant/dangerous cargo obeys Star/Sun; Fool retains unanimous payment and spirit return rules.
 
 CA597-01 | origin 5.13.4 | #597 | scene 15
-Steps: Open both production menus. Create a two-person match in one; copy its printed session.json path into Join in the other using 127.0.0.1. Choose different residents, play, close the match and menus.
+Steps: Check the four main entries and absence of parenthetical key hints. Under Single player, check exploration and map notes; under Multiplayer, open standalone setup. Open both production menus. Create a two-person match in one; copy its printed session.json path into Join in the other using 127.0.0.1. Choose different residents, play, close the match and menus.
 Expected: All four presets are selectable; host/join launches matching isolated clients and returns to the title without changing campaign files.
 
 CA598-01 | origin 5.13.5 | #598 | scene 5

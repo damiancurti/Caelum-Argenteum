@@ -1,6 +1,11 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.13.13** - 2026-11-01.
+Documentation version: **5.13.14** - 2026-11-01.
+
+## 5.13.14 — Four-entry main menu (#597)
+
+Main menu now contains Single player, Multiplayer, Options and Quit. Campaign creation/load/save, exploration and map notes are under Single player; standalone matches, organized arenas and standings are under Multiplayer. Native menus retain clean labels without appended key hints; in-world interaction help is preserved. No rules, maps or save schema change. Native menu startup and four captures passed; evidence: assets/validation_v5_13_14. Final label-only refinements await the final package capture. Author visual recheck pending.
+
 
 ## 5.13.13 — Acquired Major passives and card descriptions (#440)
 

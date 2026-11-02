@@ -7940,3 +7940,15 @@ CA_TAROT_MAJOR_ACTIVE_20 = "Disipa control mental e ilusiones en un radio de 4 m
 CA_TAROT_MAJOR_PASSIVE_21 = "Habilita la esencia unificada al reunir las 78 esencias";
 CA_TAROT_MAJOR_ACTIVE_21 = "Ejecuta una vez los Arcanos adquiridos no equipados, en orden del 0 al 77. Omite objetivos inválidos, sin recursión ni coste extra.";
 CA_TAROT_ROCK_ACTIONS = "Tarot: guardar con Sol activo y Estrella adquirida. Usar: levantar con La Fuerza; requiere capacidad de carga.";
+
+[enu default]
+CA_MENU_SINGLE_PLAYER = "Single player";
+CA_MENU_MULTIPLAYER = "Multiplayer";
+CA_MENU_STANDALONE = "Standalone matches";
+CA_MENU_QUIT = "Quit";
+[es]
+CA_MENU_SINGLE_PLAYER = "Un jugador";
+CA_MENU_MULTIPLAYER = "Multijugador";
+CA_MENU_STANDALONE = "Partidas independientes";
+CA_MENU_QUIT = "Salir";
+CA_NOTE_TITLE = "Notas en el mapa";

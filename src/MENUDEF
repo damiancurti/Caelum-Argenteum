@@ -16,16 +16,30 @@ ListMenu "MainMenu"
     Font "CaelumText", "Gold"
     Linespacing 16
 
+    TextItem "$CA_MENU_SINGLE_PLAYER", "u", "CaelumSinglePlayerMenu"
+    TextItem "$CA_MENU_MULTIPLAYER", "m", "CaelumMultiplayerMenu"
+    TextItem "$MNU_OPTIONS", "o", "OptionsMenu"
+    TextItem "$CA_MENU_QUIT", "s", "CaelumExitMenu"
+}
+
+ListMenu "CaelumSinglePlayerMenu"
+{
+    CaptionItem "$CA_MENU_SINGLE_PLAYER"
+    Position 70, 54
     TextItem "$CA_MENU_NEW_CHARACTER", "n", "CaelumNewCharacterMenu"
     TextItem "$CA_MENU_LOAD_CHARACTER", "l", "LoadGameMenu"
-    TextItem "$CA_STANDALONE_TITLE", "u", "CaelumStandaloneMenu"
     TextItem "$CA_MENU_SAVE_CHARACTER", "g", "SaveGameMenu"
     TextItem "$CA_NAV_TITLE", "e", "CaelumNavigationMenu"
     TextItem "$CA_NOTE_TITLE", "m", "CaelumMapNoteMenu"
+}
+
+ListMenu "CaelumMultiplayerMenu"
+{
+    CaptionItem "$CA_MENU_MULTIPLAYER"
+    Position 70, 54
+    TextItem "$CA_MENU_STANDALONE", "i", "CaelumStandaloneMenu"
     TextItem "$CA_ARENA_TITLE", "c", "CaelumArenaMenu"
     TextItem "$CA_MATCH_STANDINGS", "p", "CaelumStandaloneScoreMenu"
-    TextItem "$MNU_OPTIONS", "o", "OptionsMenu"
-    TextItem "$MNU_QUITGAME", "s", "CaelumExitMenu"
 }
 
 OptionValue "CaelumMatchRoles" { 0, "$CA_MATCH_HOST" 1, "$CA_MATCH_JOIN" }

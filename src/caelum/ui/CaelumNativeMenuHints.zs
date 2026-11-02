@@ -34,43 +34,7 @@ class CaelumNativeMenuHints : Object ui
     // Recorre los destinos reales: conserva las clases especializadas del motor.
     static void Install()
     {
-        Array<Name> names;
-        names.Push('MainMenu');names.Push('OptionsMenu');names.Push('OptionsMenuSimple');names.Push('Colorpickermenu');
-        names.Push('JoystickConfigMenu');names.Push('ReverbEdit');names.Push('ReverbSelect');names.Push('ReverbSave');
-        names.Push('VideoModeMenu');
-        for(int n=0;n<names.Size();n++)
-        {
-            let desc=MenuDescriptor.GetDescriptor(names[n]);if(desc==null)continue;
-            let options=OptionMenuDescriptor(desc);let list=ListMenuDescriptor(desc);
-            int count=options!=null?options.mItems.Size():list!=null?list.mItems.Size():0;
-            for(int i=0;i<count;i++)
-            {
-                Name destination=options!=null?options.mItems[i].GetAction():list.mItems[i].GetAction();
-                bool seen=false;for(int j=0;j<names.Size();j++)if(names[j]==destination){seen=true;break;}
-                if(!seen && destination!='None')names.Push(destination);
-            }
-            if(options!=null)
-            {
-                if(names[n]=='Colorpickermenu' && desc.mClass==null)desc.mClass="CaelumHintColorpickerMenu";
-                else if(desc.mClass==null || desc.mClass=="OptionMenu")desc.mClass="CaelumHintOptionMenu";
-                else if(desc.mClass=="GLTextureGLOptions")desc.mClass="CaelumHintGLTextureGLOptions";
-                else if(desc.mClass=="JoystickConfigMenu")desc.mClass="CaelumHintJoystickConfigMenu";
-                else if(desc.mClass=="GameplayMenu")desc.mClass="CaelumHintGameplayMenu";
-                else if(desc.mClass=="CompatibilityMenu")desc.mClass="CaelumHintCompatibilityMenu";
-                else if(desc.mClass=="VideoModeMenu")desc.mClass="CaelumHintVideoModeMenu";
-                else if(desc.mClass=="ColorpickerMenu")desc.mClass="CaelumHintColorpickerMenu";
-                else if(desc.mClass=="ReverbEdit")desc.mClass="CaelumHintReverbEdit";
-                else if(desc.mClass=="ReverbSelect")desc.mClass="CaelumHintReverbSelect";
-                else if(desc.mClass=="ReverbSave")desc.mClass="CaelumHintReverbSave";
-                else if(desc.mClass=="os_Menu")desc.mClass="CaelumHintos_Menu";
-            }
-            else if(list!=null)
-            {
-                if(desc.mClass==null || desc.mClass=="ListMenu")desc.mClass="CaelumHintListMenu";
-                else if(desc.mClass=="LoadMenu")desc.mClass="CaelumHintLoadMenu";
-                else if(desc.mClass=="SaveMenu")desc.mClass="CaelumHintSaveMenu";
-            }
-        }
+        // Menús principales sin sufijos; las ayudas dentro del juego son independientes.
     }
     static void SavedRows(LoadSaveMenu menu)
     {
