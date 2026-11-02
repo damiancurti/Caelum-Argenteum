@@ -14,6 +14,9 @@ including the final Tarot, capture, awakening and menu corrections. The focused
 implementation PRs are merged; #439–442, #596–601, #614, #616 and #617 are closed. `pending_test.txt` is empty. [HISTORY](docs/HISTORY.md) retains the original
 release/check IDs, intermediate failures, corrections and native evidence.
 
+Integration metadata uses LF source hashes and pins the Tarot geometry inputs
+and generated data to LF, so validation also works after a Windows checkout.
+
 The six #614 labyrinth power-ups and optional #617 human Palomo are implemented.
 Human Palomo also preserves a normal full-Air HUD state on fresh and restored matches.
 The accepted #596 terminal covers 14 numbered scenarios, production host/join

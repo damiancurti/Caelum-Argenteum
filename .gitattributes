@@ -417,3 +417,9 @@
 /assets/validation_v5_13_12/*.py text eol=lf
 /assets/validation_v5_13_12/*.zs text eol=lf
 /assets/validation_v5_13_12/*.json text eol=lf
+
+# Keep V5.13 exact-byte geometry checks reproducible after Windows checkout.
+/assets/tarot_justice/*.json text eol=lf
+/assets/tarot_examples/*.json text eol=lf
+/src/caelum/data/CaelumJusticeGeometry.zs text eol=lf
+/src/caelum/data/CaelumTarotExampleData.zs text eol=lf

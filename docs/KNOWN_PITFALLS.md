@@ -5272,6 +5272,13 @@ index is regenerated from LF sources. An isolated core.autocrlf=true checkout
 matches the source hashes; static validation passes. Keep exact-byte freshness
 checks and UTF-8 sources. This is tooling evidence, not gameplay acceptance.
 
+2026-11-01 follow-up, #596 / 5.13.17: an implementation worktree can still contain
+CRLF after an editor writes a file despite its LF Git attribute. Generating hashes
+there can pass locally and fail after checkout normalizes the source. Regenerate
+document/localization indexes from committed LF sources and verify a separate
+checkout. Pin exact-byte Tarot geometry JSON and generated ZScript to LF as well;
+do not rebuild or replace accepted map geometry to repair a text-only mismatch.
+
 2026-10-01 extension, #17 / 4.36.28: `git archive` at `9323b156` also applied
 checkout conversions to runtime text under `core.autocrlf=true`; independently
 comparing exported ANIMDEFS to its Git blob detected the mismatch. Repeated
