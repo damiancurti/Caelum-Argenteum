@@ -1,6 +1,18 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.13.9** - 2026-11-01.
+Documentation version: **5.13.10** - 2026-11-01.
+
+## Labyrinth power-up models (#614)
+
+The author explicitly requested translucent 3D spheres: silver common, gold rare,
+with six distinct central emblems (table/cup, cartridges/crystal, sword/shield,
+armor, bed/pillow, anvil/star). Original meshes are deterministically generated
+by assets/generators/generate_powerups.py from assets/powerups/DATA.json.
+The generator reuses owned mate metal swatches and the automaton's painted iron
+ramp unchanged; it does not edit raster sources or distribute third-party art.
+Placements, provenance and SHA-256 values are in assets/powerups/GENERATED.json.
+Native screenshots and functional evidence are in validation_v5_13_10; final
+visual approval belongs to the author's consolidated V5.13 check.
 
 ## Author-suite scene preparation (#596)
 

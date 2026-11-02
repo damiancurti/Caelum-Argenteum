@@ -1,4 +1,18 @@
 [enu default]
+CA_POWERUP_REST = "Common: three-minute rest";
+CA_POWERUP_REPLENISH = "Common: Anima and ammunition";
+CA_POWERUP_WEAPONS = "Common: awaken weapons and shields";
+CA_POWERUP_ARMOR = "Common: awaken armor";
+CA_POWERUP_SLEEP = "Rare: six-minute sleep";
+CA_POWERUP_UPGRADE = "Rare: improve equipment";
+[es]
+CA_POWERUP_REST = "Común: descanso de tres minutos";
+CA_POWERUP_REPLENISH = "Común: reposición de Ánima y munición";
+CA_POWERUP_WEAPONS = "Común: despertar armas y escudos";
+CA_POWERUP_ARMOR = "Común: despertar armadura";
+CA_POWERUP_SLEEP = "Raro: descanso de seis minutos";
+CA_POWERUP_UPGRADE = "Raro: mejorar equipo";
+[enu default]
 CA_TAROT_STAR_LIMIT = "This giant object requires The Star equipped and its one giant-object space free.";
 CA_TAROT_STAR_RELEASE_WAIT = "Giant furniture is waiting for a safe release. Clear nearby space.";
 CA_TAROT_EXAMPLES = "Tarot examples";

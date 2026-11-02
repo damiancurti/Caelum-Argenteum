@@ -132,16 +132,16 @@ class CaelumJourneyModel : Object play
     CaelumLoversJourney Lovers;
     int LoversIndex;
 
-    void Capture(CaelumPlayer user, bool useUnlimitedSupplies)
+    void Capture(CaelumPlayer user, bool useUnlimitedSupplies, bool captureEnvironment = true)
     {
         Unlimited = useUnlimitedSupplies;
         let foodRecord=user.GetPersistentCharacterState(false);
         FoodIllness=foodRecord!=null && foodRecord.FoodIllness!=null
             ? foodRecord.FoodIllness.Copy() : new('CaelumFoodIllness');
         FoodIllness.Ensure();FoodToughness=user.Attributes.Toughness;
-        FoodInventory=new('CaelumJourneyFood');FoodInventory.Capture(user);
+        if(captureEnvironment){FoodInventory=new('CaelumJourneyFood');FoodInventory.Capture(user);}
         let contactThermal=CaelumThermalService.CaptureForecast(user);
-        if(contactThermal!=null)
+        if(captureEnvironment && contactThermal!=null)
         {Contamination=new('CaelumContaminationExposure');Contamination.Capture(user,contactThermal);Contamination.BindFood(FoodInventory);}
         let observedAltitude=CaelumAltitudeService.Update(user);
         Altitude=observedAltitude!=null ? observedAltitude.Copy() : null;

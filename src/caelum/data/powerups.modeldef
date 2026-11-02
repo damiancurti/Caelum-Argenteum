@@ -1,0 +1,60 @@
+Model CaelumLabyrinthPowerup
+{
+    Path "models/caelum/powerups"
+    CorrectPixelStretch
+    AngleOffset 0
+    Model 0 "silver.obj"
+    Model 1 "gold.obj"
+    FrameIndex CPU0 A 0 0
+    FrameIndex CPU0 A 1 -1
+    FrameIndex CPU0 B 0 -1
+    FrameIndex CPU0 B 1 0
+}
+Model CaelumPowerupEmblem
+{
+    Path "models/caelum/powerups"
+    CorrectPixelStretch
+    AngleOffset 0
+    Model 0 "emblem0.obj"
+    Model 1 "emblem1.obj"
+    Model 2 "emblem2.obj"
+    Model 3 "emblem3.obj"
+    Model 4 "emblem4.obj"
+    Model 5 "emblem5.obj"
+    FrameIndex CPU1 A 0 0
+    FrameIndex CPU1 A 1 -1
+    FrameIndex CPU1 A 2 -1
+    FrameIndex CPU1 A 3 -1
+    FrameIndex CPU1 A 4 -1
+    FrameIndex CPU1 A 5 -1
+    FrameIndex CPU1 B 0 -1
+    FrameIndex CPU1 B 1 0
+    FrameIndex CPU1 B 2 -1
+    FrameIndex CPU1 B 3 -1
+    FrameIndex CPU1 B 4 -1
+    FrameIndex CPU1 B 5 -1
+    FrameIndex CPU1 C 0 -1
+    FrameIndex CPU1 C 1 -1
+    FrameIndex CPU1 C 2 0
+    FrameIndex CPU1 C 3 -1
+    FrameIndex CPU1 C 4 -1
+    FrameIndex CPU1 C 5 -1
+    FrameIndex CPU1 D 0 -1
+    FrameIndex CPU1 D 1 -1
+    FrameIndex CPU1 D 2 -1
+    FrameIndex CPU1 D 3 0
+    FrameIndex CPU1 D 4 -1
+    FrameIndex CPU1 D 5 -1
+    FrameIndex CPU1 E 0 -1
+    FrameIndex CPU1 E 1 -1
+    FrameIndex CPU1 E 2 -1
+    FrameIndex CPU1 E 3 -1
+    FrameIndex CPU1 E 4 0
+    FrameIndex CPU1 E 5 -1
+    FrameIndex CPU1 F 0 -1
+    FrameIndex CPU1 F 1 -1
+    FrameIndex CPU1 F 2 -1
+    FrameIndex CPU1 F 3 -1
+    FrameIndex CPU1 F 4 -1
+    FrameIndex CPU1 F 5 0
+}

@@ -130,6 +130,9 @@ class CaelumEquipmentItem : Inventory
     // del personaje; cero queda reservado para objetos todavía no adquiridos.
     int ItemId;
     int AwakeningRevision,AwakeningCard,AwakeningHalfWear;
+    bool MatchAwakened;
+    CaelumStandalonePlayer MatchPowerOwner;
+    int MatchOriginalTier;
     CaelumPlayer AwakeningOwner;
     int ItemFlags;
 
@@ -449,6 +452,7 @@ class CaelumEquipmentItem : Inventory
             copy.CompanionHistory=CompanionHistory!=null?CompanionHistory.Copy():null;
             copy.ItemFlags = ItemFlags;
             copy.AwakeningHalfWear=AwakeningHalfWear;
+            copy.MatchAwakened=MatchAwakened;copy.MatchPowerOwner=MatchPowerOwner;copy.MatchOriginalTier=MatchOriginalTier;
             copy.ItemType = ItemType;
             copy.ArmorSlot = ArmorSlot;
             copy.Tier = Tier;
@@ -485,6 +489,7 @@ class CaelumEquipmentItem : Inventory
             copy.CompanionHistory=CompanionHistory!=null?CompanionHistory.Copy():null;
             copy.ItemFlags = ItemFlags;
             copy.AwakeningHalfWear=AwakeningHalfWear;
+            copy.MatchAwakened=MatchAwakened;copy.MatchPowerOwner=MatchPowerOwner;copy.MatchOriginalTier=MatchOriginalTier;
             copy.EquipmentKind = EquipmentKind;
             copy.ItemType = ItemType;
             copy.ArmorSlot = ArmorSlot;
@@ -549,6 +554,7 @@ class CaelumEquipmentItem : Inventory
         if(!MigrateSupportImplement())return;
         CaelumAwakening.Ensure(self);
         if(AwakeningOwner!=null && Owner!=AwakeningOwner)CaelumAwakening.Clear(self);
+        if(MatchPowerOwner!=null)CaelumLabyrinthPowerups.GuardEquipment(self);
         MigrateWeaponDurability();
         if (Owner == null)
         {

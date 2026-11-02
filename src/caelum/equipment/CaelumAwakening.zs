@@ -26,7 +26,7 @@ class CaelumAwakening : Object play
     static clearscope double Factor(CaelumEquipmentItem item)
     {
         let image=CaelumMoonEquipment(item);
-        return Card(item)>=0 || (image!=null && image.Awakened && image.Illusion!=null)
+        return Card(item)>=0 || CaelumLabyrinthPowerups.Awakened(item) || (image!=null && image.Awakened && image.Illusion!=null)
             ?CaelumAwakeningData.POWER:1;
     }
 

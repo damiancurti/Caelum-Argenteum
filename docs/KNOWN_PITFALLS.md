@@ -5637,6 +5637,12 @@ Follow-up #411, 5.8.8, 2026-10-25: the same multi-slot mistake rendered the
 legacy 2x2 m tent inside its enlarged replacement. An isolated gallery subclass
 with its own MODELDEF passed but could not exercise the production binding.
 Use the actual deployed class and both saved geometry states for visual QA.
+
+Follow-up #614, 5.13.10, 2026-11-01: alternative power-up emblems also inherited
+previous model-slot frames. Explicit `FrameIndex ... -1` for every inactive slot
+corrected the overlay. Check the production frames together, not six separate
+fixture subclasses. `assets/validation_v5_13_10/six-powerups.png` records the
+corrected six-frame gallery; native multi-peer functional checks also passed.
 Separate single-slot blocks resolve the overlay; before/after native evidence is
 in assets/validation_588/binding. Final author confirmation is still pending.
 

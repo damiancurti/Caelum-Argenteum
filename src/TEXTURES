@@ -5815,3 +5815,5 @@ Graphic "CA518_DOMIZ0_1", 142, 88 { Patch "graphics/caelum/death_repair/domingo-
 #include "graphics/caelum/port-wardrobe.textures"
 
 #include "caelum/data/tarot_fronts.textures"
+
+#include "caelum/data/powerups.textures"

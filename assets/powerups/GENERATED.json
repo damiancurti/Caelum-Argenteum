@@ -1,0 +1,138 @@
+{
+  "points": {
+    "CASEWER": [
+      [
+        992,
+        992,
+        0
+      ],
+      [
+        224,
+        32,
+        0
+      ],
+      [
+        2016,
+        928,
+        0
+      ],
+      [
+        1120,
+        32,
+        0
+      ],
+      [
+        992,
+        1632,
+        0
+      ],
+      [
+        32,
+        1120,
+        0
+      ],
+      [
+        2016,
+        2016,
+        0
+      ],
+      [
+        1120,
+        1120,
+        0
+      ]
+    ],
+    "CAHUNT": [
+      [
+        2016,
+        1824,
+        0
+      ],
+      [
+        480,
+        32,
+        0
+      ],
+      [
+        96,
+        1888,
+        0
+      ],
+      [
+        1888,
+        352,
+        0
+      ],
+      [
+        4064,
+        1824,
+        0
+      ],
+      [
+        2144,
+        160,
+        0
+      ],
+      [
+        2272,
+        2016,
+        0
+      ],
+      [
+        3936,
+        96,
+        0
+      ],
+      [
+        2016,
+        3872,
+        0
+      ],
+      [
+        32,
+        2272,
+        0
+      ],
+      [
+        1824,
+        2080,
+        0
+      ],
+      [
+        224,
+        4064,
+        0
+      ],
+      [
+        4064,
+        3616,
+        0
+      ],
+      [
+        2080,
+        2272,
+        0
+      ],
+      [
+        2272,
+        4064,
+        0
+      ],
+      [
+        3680,
+        2080,
+        0
+      ]
+    ]
+  },
+  "sha256": {
+    "src\\models\\caelum\\powerups\\emblem0.obj": "15e2fa0b1e8815b31482d28f993d9a5b45e5fd0886fd9a82af7e10645903b5e6",
+    "src\\models\\caelum\\powerups\\emblem1.obj": "a6db8a5354fd0aa49904850221b64b0d07ecae19c405d7ac3f468bf6b83c89e7",
+    "src\\models\\caelum\\powerups\\emblem2.obj": "dc70eda0edae5aa7b28263fe14000e5cb632be0beb5c2b2417ff274271361b9b",
+    "src\\models\\caelum\\powerups\\emblem3.obj": "f4462b8dfa4f79aadab44db7a38343c21c6551ac8b3ce37bd6131875a507a308",
+    "src\\models\\caelum\\powerups\\emblem4.obj": "6de1f40d00e059704b5c52c2595f44e2fea0fa62eb0c748b74ebd4244875b7ba",
+    "src\\models\\caelum\\powerups\\emblem5.obj": "f0015866f4546540b0e146411a8984d18f658c3634b69208f638961a99691060",
+    "src\\models\\caelum\\powerups\\gold.obj": "f8d1b349d7d3a67cac85a2d6c16f816048fcc3e4816ac49f7fe8b64dd83dd765",
+    "src\\models\\caelum\\powerups\\silver.obj": "25abcb15e84cfb79d0f2e5a6c09421855e8e77a30cea660d4b88d4eed93562ce"
+  }
+}

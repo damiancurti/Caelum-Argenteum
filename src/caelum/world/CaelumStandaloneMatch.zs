@@ -7,6 +7,7 @@ class CaelumStandaloneMatch : Object play
     bool Started,Finished,Restarting;
     CaelumCaptureArcana Capture;
     CaelumTarotHunt Hunt;
+    CaelumLabyrinthPowerups Powerups;
 
     static clearscope CaelumStandaloneMatch View()
     {
@@ -66,6 +67,9 @@ class CaelumStandaloneMatch : Object play
             if(Finished)body.player.cheats|=CF_TOTALLYFROZEN;
         }
         if(Finished)return;
+        if(Powerups==null && CaelumPowerupData.PointCount()>0)
+        {Powerups=new('CaelumLabyrinthPowerups');Powerups.Initialize();}
+        if(Powerups!=null)Powerups.Tick(self);
         if(Mode==CaelumStandaloneData.CAPTURE_ARCANA)
         {
             if(Capture==null){Capture=new('CaelumCaptureArcana');Capture.Initialize(self);}

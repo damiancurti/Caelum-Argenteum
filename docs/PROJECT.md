@@ -1,6 +1,14 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.13.9** - 2026-11-01.
+Documentation version: **5.13.10** - 2026-11-01.
+
+## 5.13.10 - Labyrinth power-ups (#614)
+
+Six shared power-ups are implemented with saved respawn, native equipment effects
+and personal rest simulation retaining normal damage. Deterministic original 3D
+shells/emblems follow the author's silver/gold brief. Native checks are recorded
+in assets/validation_v5_13_10. The separate #616 Arcana opportunities and #596
+final suite, plus #617 human Palomo, remain in progress; no author acceptance, merge or closure is inferred.
 
 ## 5.13.9 - V5.13 validation checkpoint (#596)
 
