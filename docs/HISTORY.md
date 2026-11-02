@@ -2,7 +2,44 @@
 
 Documentation version: **5.13.17** - 2026-11-01.
 
+## V5.13 author acceptance — 2026-11-01 (#596)
+
+The author confirmed that all tests passed, including the equipment-awakening
+recheck, and explicitly requested merging the PRs and closing the issues.
+The accepted candidate is 5.13.17; acceptance does not increment the patch version.
+All 13 outstanding checks are recorded in HISTORY and pending_test.txt is empty.
+Scopes #439–442, #596–601, #614, #616 and #617 are complete and their issues closed.
+The 20 focused implementation/fix PRs (#605–613, #615, #618–627) are merged into
+main with their original commit ancestry. PR #628 integrates this acceptance ledger.
+Earlier implementation checkpoints below retain their original test observations;
+their pending-author and next-work statements are superseded by this acceptance.
+Existing ETW/frame-presentation and Internet-testing limitations remain explicit;
+author acceptance does not establish a new performance or Internet benchmark.
+
+| Check | Origin version | Issue | Author result |
+| --- | --- | --- | --- |
+| CA439-01 | 5.13.0 | #439 | Passed, 2026-11-01 |
+| CA441-01 | 5.13.1 | #441 | Passed, 2026-11-01 |
+| CA442-01 | 5.13.2 | #442 | Passed, 2026-11-01 |
+| CA440-01 | 5.13.3 | #440 | Passed, 2026-11-01 |
+| CA597-01 | 5.13.4 | #597 | Passed, 2026-11-01 |
+| CA598-01 | 5.13.5 | #598 | Passed, 2026-11-01 |
+| CA599-01 | 5.13.6 | #599 | Passed, 2026-11-01 |
+| CA600-01 | 5.13.7 | #600 | Passed, 2026-11-01 |
+| CA601-01 | 5.13.8 | #601 | Passed, 2026-11-01 |
+| CA614-01 | 5.13.10 | #614 | Passed, 2026-11-01 |
+| CA616-01 | 5.13.12 | #616 | Passed, 2026-11-01 |
+| CA617-01 | 5.13.11 | #617 | Passed, 2026-11-01 |
+| CA596-01 | 5.13.9 | #596 | Passed, 2026-11-01 |
+
+The author personally completed the awakening test after remote keyboard input
+prevented the agent-led demonstration. The author confirmation, rather than that
+interrupted demonstration, is the acceptance evidence. Native automated evidence
+remains separately recorded under assets/validation_v5_13_1 through _17.
+
 ## 5.13.17 — Tarot review guidance and final candidate (#440)
+
+Author confirmation, 2026-11-01: **CA441-01 passed** (origin 5.13.1, #441, scene 2), including the final 5.13.17 corrections. Earlier pending notes in this entry describe its implementation checkpoint.
 
 The shared Tarot help now states the three base slots plus acquired Hermit/Devil bonuses, avoiding the obsolete three-card maximum. Acquired passives, native essence capture, clean four-entry menus and observable awakening/rock fixtures form the review candidate. Ring and sewer remain selectable for Capture Arcana. Final targeted native results and captures are in assets/validation_v5_13_17; all author checks remain pending.
 
@@ -74,6 +111,8 @@ or merged by this delivery.
 
 ## 5.13.12 - Distributed hunt Arcana (#616, 2026-11-01)
 
+Author confirmation, 2026-11-01: **CA616-01 passed** (origin 5.13.12, #616, scene 13), including the final 5.13.17 corrections. Earlier pending notes in this entry describe its implementation checkpoint.
+
 Implemented the author's approved 22 opportunities, shared discovered cards,
 initial Box/deck and chosen-captive Fool rescue. The existing four-quarter hunt
 keeps all 78 objectives and 24 traps reachable with alternate routes. Existing
@@ -97,6 +136,8 @@ remains deferred to #596. These checks do not establish Internet performance.
 
 ## 5.13.11 - Player-controlled Palomo (#617, 2026-11-01)
 
+Author confirmation, 2026-11-01: **CA617-01 passed** (origin 5.13.11, #617, scene 14 and 15), including the final 5.13.17 corrections. Earlier pending notes in this entry describe its implementation checkpoint.
+
 The author approved optional human Palomo with the native body, attributes, speed
 and immunity, no weapons/Tarot/power-ups, and required at least four participants.
 The host assigns at most one numbered participant before launch. The saved role
@@ -112,6 +153,8 @@ The launcher accepts legacy NPC requests and rejects invalid human-role requests
 These fixtures do not establish Internet latency or physical-input acceptance.
 
 ## 5.13.10 - Labyrinth power-ups (#614, 2026-11-01)
+
+Author confirmation, 2026-11-01: **CA614-01 passed** (origin 5.13.10, #614, scene 11 and 12), including the final 5.13.17 corrections. Earlier pending notes in this entry describe its implementation checkpoint.
 
 The author requested six effects, the 90/10 split, shared native touch, eight/sixteen
 points, 60-second reappearance, equipped-only match improvements, full magazines
@@ -137,6 +180,8 @@ dialogue/localization builder validates their generated index.
 
 ## 5.13.9 - Author-suite preparation (#596, checkpoint, 2026-11-01)
 
+Author confirmation, 2026-11-01: **CA596-01 passed** (origin 5.13.9, #596, scene 16 after any scene), including the final 5.13.17 corrections. Earlier pending notes in this entry describe its implementation checkpoint.
+
 Ten isolated author scenarios now start through one numbered launcher, with
 fresh private configurations, two/four native peers and common-save reopening.
 All ten native startup/synchronization checks pass on the recorded runtime.
@@ -150,6 +195,8 @@ queue remain deferred until that separate issue and menu-launch usability are re
 Evidence: assets/validation_v5_13_9/startup-results.json.
 
 ## 5.13.8 - Cooperative hunt (#601, 2026-11-01)
+
+Author confirmation, 2026-11-01: **CA601-01 passed** (origin 5.13.8, #601, scene 9), including the final 5.13.17 corrections. Earlier pending notes in this entry describe its implementation checkpoint.
 
 The author approved the large distributed maze, Palomo's existing physical and
 perception rules, no teammate damage, rescue, pre-trap resource preservation,
@@ -176,6 +223,8 @@ No author acceptance is claimed. #600 was committed/pushed as cf00beda2, PR612.
 
 ## 5.13.7 - Capture the Arcana (#600, 2026-11-01)
 
+Author confirmation, 2026-11-01: **CA600-01 passed** (origin 5.13.7, #600, scene 7 and 8), including the final 5.13.17 corrections. Earlier pending notes in this entry describe its implementation checkpoint.
+
 Approved opposite existing starts are the bases in both arenas. This patch adds
 only the capture objective lifecycle, shared capture scores and bilingual
 feedback. Owned Tarot art is reused without raster modification. Native fixtures
@@ -188,6 +237,8 @@ Runtime `ebddae74fa227093fb43a8fa6b469859db509e28a05151a3c068bbea94023d22` match
 Project validation passes; no Internet, physical-input or FPS acceptance claim.
 
 ## 5.13.6 - Standalone Team Deathmatch (#599, 2026-11-01)
+
+Author confirmation, 2026-11-01: **CA599-01 passed** (origin 5.13.6, #599, scene 6), including the final 5.13.17 corrections. Earlier pending notes in this entry describe its implementation checkpoint.
 
 The author approved automatic balanced team assignment by entry order for #599
 and #600. This patch implements only Team Deathmatch: saved teams, team-aware
@@ -210,6 +261,8 @@ diagnostic saves retain saved map metadata until the next fresh round. No
 Internet, physical-input or frame-performance claim is made.
 
 ## 5.13.5 - Individual Deathmatch (#598, 2026-11-01)
+
+Author confirmation, 2026-11-01: **CA598-01 passed** (origin 5.13.5, #598, scene 5), including the final 5.13.17 corrections. Earlier pending notes in this entry describe its implementation checkpoint.
 
 Implementation: bounded match store, scoring and duplicate-death guard,
 three-second native respawn with fresh resident equipment, ten-minute overtime,
@@ -242,6 +295,8 @@ Author acceptance remains pending for the final V5.13 suite.
 
 
 ## 5.13.4 - Standalone menu and resident presets (#597, 2026-11-01)
+
+Author confirmation, 2026-11-01: **CA597-01 passed** (origin 5.13.4, #597, scene 15), including the final 5.13.17 corrections. Earlier pending notes in this entry describe its implementation checkpoint.
 
 Implementation checkpoint, not full-version acceptance. The native title menu
 collects host/join, mode, preset and venue; the Python bridge validates a fresh
@@ -290,6 +345,8 @@ issued: the author suite remains deferred to the completed version. #598?601
 retain their separate mode rules and PRs. No issue was merged or closed.
 
 ## 5.13.3 - Ordered Tarot foundation (#440, implementation checkpoint)
+
+Author confirmation, 2026-11-01: **CA440-01 passed** (origin 5.13.3, #440, scene 4 and 10), including the final 5.13.17 corrections. Earlier pending notes in this entry describe its implementation checkpoint.
 
 Integrated audit checkpoint (2026-11-01): all22 Major rows now map to their
 source and focused evidence in SYSTEMS. No gameplay changed in this checkpoint.
@@ -812,6 +869,8 @@ frame-presentation checks remain pending; this is not completion of #440.
 
 ## 5.13.2 - Reversible equipment awakening (#442)
 
+Author confirmation, 2026-11-01: **CA442-01 passed** (origin 5.13.2, #442, scene 3), including the final 5.13.17 corrections. Earlier pending notes in this entry describe its implementation checkpoint.
+
 Author-approved +25% damage/defense and half wear are implemented on the exact
 native weapon/armor/shield. Inventory A associates/removes an acquired inactive,
 unequipped essence, without cost or repair. One essence per item/one item per
@@ -861,6 +920,8 @@ World equipment selection; tests prepare that selection diagnostically. Final
 author scenarios wait for all V5.13 work; no author acceptance is claimed.
 
 ## 5.13.0 - Major Arcana specification audit (#439), 2026-10-31
+
+Author confirmation, 2026-11-01: **CA439-01 passed** (origin 5.13.0, #439, scene 1), including the final 5.13.17 corrections. Earlier pending notes in this entry describe its implementation checkpoint.
 
 Implementation started at accepted V5.12 main 4cbcf60fd. The author requested
 all V5.13 issues with separate commits/PRs and final grouped manual scenarios.

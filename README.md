@@ -6,38 +6,18 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.13.17.** Obtain and update the complete repository, validate
+**Current release: 5.13.17.** Obtain and update the complete repository,
+validate it, then rebuild with `run_dev.bat` as described below.
 
-## 5.13.17 — Tarot review guidance and final candidate (#440)
-
-The shared Tarot help now states the three base slots plus acquired Hermit/Devil bonuses, avoiding the obsolete three-card maximum. Acquired passives, native essence capture, clean four-entry menus and observable awakening/rock fixtures form the review candidate. Ring and sewer remain selectable for Capture Arcana. Final targeted native results and captures are in assets/validation_v5_13_17; all author checks remain pending.
-
-
-## 5.13.16 — Per-character essence dialogue admission (#441)
-
-Closing an essence conversation now detaches its native node, so the next speaker passes through Used and reveals their own card before capture. This follows the existing Palomo interaction pattern and retains each collection, capture progress and reward uniqueness. No new fields or geometry; old loaded conversation nodes are cleaned when idle. Native two-client Use/capture and final menu/fixture verification are recorded with this patch; author acceptance remains pending.
-
-
-## 5.13.15 — Reachable author fixtures and observable checks (#596)
-
-Review fixtures now place both capture clients and the essence inside the real ring, with an immobile Palomo target. Scene 3 reports awakening factors and durability via F1; scene 4 includes aimed rock stops and distinguishes Tarot containment from Strength Use. Capture Arcana retains both approved ring and sewer venues, as clarified by the author. Native Use opens the essence for both clients; this exposed a separate second-speaker revelation defect tracked under #441. Capture completion remains pending that correction; assets/validation_v5_13_15 records the failed intermediate run. No campaign geometry changes.
-
-
-## 5.13.14 — Four-entry main menu (#597)
-
-Main menu now contains Single player, Multiplayer, Options and Quit. Campaign creation/load/save, exploration and map notes are under Single player; standalone matches, organized arenas and standings are under Multiplayer. Native menus retain clean labels without appended key hints; in-world interaction help is preserved. No rules, maps or save schema change. Author visual recheck pending.
-
-
-## 5.13.13 — Acquired Major passives and card descriptions (#440)
-
-The author corrected Major passives to remain available after acquisition, independent of selection. Active sequence gates remain separate; unified essence no longer needs World selected. All 22 cards have individual bilingual effects, cyclic navigation and a rock-action hint. No stored fields or map geometry change; existing ownership/order/timers remain intact. Native verification: assets/validation_v5_13_13; author recheck remains pending.
-
-it, then rebuild with `run_dev.bat` as described below.
+V5.13 is complete and author-accepted on 2026-11-01. All 13 manual checks passed,
+including the final Tarot, capture, awakening and menu corrections. The focused
+implementation PRs are merged; #439–442, #596–601, #614, #616 and #617 are closed. `pending_test.txt` is empty. [HISTORY](docs/HISTORY.md) retains the original
+release/check IDs, intermediate failures, corrections and native evidence.
 
 The six #614 labyrinth power-ups and optional #617 human Palomo are implemented.
 Human Palomo also preserves a normal full-Air HUD state on fresh and restored matches.
-V5.13 implementation is ready for author review. The #596 final terminal has 14 numbered
-scenarios, production host/join menus and common-save recovery; acceptance remains pending.
+The accepted #596 terminal covers 14 numbered scenarios, production host/join
+menus and common-save recovery.
 Pre-5.13.12 hunt saves use `build_dev.ps1 -LegacyHunt` to retain their original geometry.
 See `docs/TASKS.md`.
 
@@ -50,7 +30,7 @@ evidence. The cooperative hunt (#601) now has its distributed 128 m maze,
 All standalone modes are implemented. Outstanding author checks are listed only in
 `pending_test.txt`; the final launcher is `assets/validation_v5_13_9/run_author_suite.py`.
 
-V5.13 awaits author acceptance. #440 has ordered Tarot loadouts, additive capacities,
+The accepted #440 implementation has ordered Tarot loadouts, additive capacities,
 Star volume admission, direct furniture collection, original storage contents and saved safe-drop queues,
 per-card timers, Hermit duration, Devil payment, Temperance, Tower, voted Fool sequences,
 borrowed racial abilities, Strength object lifting, Chariot movement, Priestess traps,
@@ -65,10 +45,10 @@ Priestess identifies authored false walls; Hierophant purifies permitted cursed 
 The mansion example annex has reversible geometry, usable return portals and placed
 passage examples. Wheel changes its room's water, light and routes persistently.
 The false-wall example has the mansion's original stone surface and native visual checks.
-A placed living obstacle also exposes Death's equipped Use action without a new charge.
+A placed living obstacle also exposes Death's acquired Use action without a new charge.
 Emperor now pacifies reached actors and temporarily controls existing summons,
 restoring original allegiance on expiry, cleansing or departure. Validation is
-recorded separately from the still-pending full-version author suite.
+recorded separately from the author-confirmed full-version suite.
 Moon adds two temporary clones with existing character sprites, independent gear
 and resources, native combat and a collision-checked swap. Its native checkpoint
 and retained failures are recorded in HISTORY; it is not full-version acceptance.
@@ -97,7 +77,7 @@ All22 Major handlers and their approved examples are integrated; combined native
 sequence/recovery/annex regression passed118 assertions on the final package.
 Frame-presentation review remains pending after Windows denied ETW access.
 Standalone modes #597-601 have separate native evidence. #441 capture/unified power and #442 equipment awakening
-have separate tested PRs. The final numbered author terminal is ready; manual acceptance remains outstanding.
+have separate tested PRs. All final numbered author checks passed on 2026-11-01.
 
 The 5.12.7a correction (#602) lets valid mansion spirits confirm and restore
 native dialogue pages. New multiplayer session configurations initialize controls

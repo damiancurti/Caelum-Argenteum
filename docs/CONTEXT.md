@@ -2,12 +2,11 @@
 
 Documentation version: **5.13.17** - 2026-11-01.
 
-**V5.13:** PR605/606/607 cover #439/441/442; PR608 covers #440.
-Order/capacity/timers/Temperance/Tower/Fool/Hanged/Strength/Chariot/Priestess/Empress implemented;
-Empress/Death/Hierophant/Justice/Lovers/Emperor/Moon/Judgement/spirit/Sun-cargo implemented; native-checked; automaton control/3D checked.
-Timed creations support waits; stone-passages/vegetation/Wheel/Sun-rocks checked.
-Author review fixes #440: 5.13.13; SYSTEMS/TASKS. Native evidence separate; author-pending.
-SYSTEMS; validation_v5_13_1-12.
+**V5.13 accepted2026-11-01:** all13 checks passed, including awakening.
+#439–442/#596–601/#614/#616/#617 merged; issues closed.
+Release5.13.17; pending_test.txt empty. HISTORY: original check IDs/versions.
+Owned passives, descriptions, navigation, capture and menus accepted.
+Existing ETW/Internet limits remain; no new FPS claim.
 
 **V5.12 accepted/merged:** HISTORY; validation_v5_12_7/7a; timer-fixed4.14.2.
 Siege1.33-6.48FPS/sharedGPU; no Internet claim; LF indexes#604.
