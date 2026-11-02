@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.12.7a** - 2026-10-31.
+Documentation version: **5.13.0** - 2026-10-31.
 
 ## Native diagnostics and local presentation (#435, 5.12.7)
 

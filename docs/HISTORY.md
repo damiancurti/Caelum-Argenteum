@@ -1,6 +1,30 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.12.7a** - 2026-10-31.
+Documentation version: **5.13.0** - 2026-10-31.
+
+## 5.13.0 - Major Arcana specification audit (#439), 2026-10-31
+
+Implementation started at accepted V5.12 main 4cbcf60fd. The author requested
+all V5.13 issues with separate commits/PRs and final grouped manual scenarios.
+The #439 approved definitions are now consolidated in SYSTEMS with all 22 IDs,
+source entry points and explicit unresolved fields. Existing Fool/Minor behavior
+was inspected; remaining Major powers are not represented as implemented.
+
+The author clarified: change only Major capability passives, preserving Minor
+bonuses and collection percentage; reject capacity-card removal while ordinary
+overflow remains, retaining Star's explicit giant drop. The unified essence is
+a power that permits damage to deities such as Selene or Palomo, obtained by
+collecting all 78 essences without consuming them. Awakening increases equipment
+damage/defense and halves durability loss; the increase and association rules
+remain open. The four mansion residents supply the approved #597 presets.
+#440-442 precede the #596-601 finale; the
+V5.14 Trucazo magical rules are not included.
+
+Evidence level: source/static audit and document validation only. No runtime
+gameplay changed; only diagnostic release labels advance. No new native/manual
+acceptance is claimed. pending_test.txt
+remains empty until complete actionable scenarios exist. V5.12 acceptance below
+is preserved; it does not imply acceptance of newly specified V5.13 abilities.
 
 ## 5.12.7a - Dead-player interface repair (#602), 2026-10-31
 
