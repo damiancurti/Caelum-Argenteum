@@ -1,0 +1,13 @@
+{
+  "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue597\\menus-20261101-213902",
+  "runtime_sha256": "8e5dff757aa12ade2ebaa39e85a3c27dbf37ca158b6da829756232a94cad869b",
+  "exit": 0,
+  "errors": [],
+  "images": [
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue597\\menus-20261101-213902\\MainMenu.png",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue597\\menus-20261101-213902\\CaelumSinglePlayerMenu.png",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue597\\menus-20261101-213902\\CaelumMultiplayerMenu.png",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue597\\menus-20261101-213902\\CaelumStandaloneMenu.png"
+  ],
+  "passed": true
+}

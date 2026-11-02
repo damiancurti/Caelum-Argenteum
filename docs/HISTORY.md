@@ -1,6 +1,19 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.13.16** - 2026-11-01.
+Documentation version: **5.13.17** - 2026-11-01.
+
+## 5.13.17 — Tarot review guidance and final candidate (#440)
+
+The shared Tarot help now states the three base slots plus acquired Hermit/Devil bonuses, avoiding the obsolete three-card maximum. Acquired passives, native essence capture, clean four-entry menus and observable awakening/rock fixtures form the review candidate. Ring and sewer remain selectable for Capture Arcana. Final targeted native results and captures are in assets/validation_v5_13_17; all author checks remain pending.
+
+Final candidate SHA-256: `8e5dff757aa12ade2ebaa39e85a3c27dbf37ca158b6da829756232a94cad869b`.
+Native two-client rock containment passed with two actual User3 inputs and matching
+state in both peers. Sun and Hermit panels were inspected in the production
+Journal; their distinct active/passive descriptions and seven acquired slots are
+visible. The four production menu captures confirm clean labels. Static validation
+passes; unchanged passive/capture behavior retains the preceding targeted evidence.
+These are agent checks, not author acceptance. Manual rechecks are scenes 1–4 and 15.
+
 
 ## 5.13.16 — Per-character essence dialogue admission (#441)
 

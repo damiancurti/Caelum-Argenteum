@@ -1,6 +1,11 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.13.16** - 2026-11-01.
+Documentation version: **5.13.17** - 2026-11-01.
+
+## 5.13.17 — Tarot review guidance and final candidate (#440)
+
+The shared Tarot help now states the three base slots plus acquired Hermit/Devil bonuses, avoiding the obsolete three-card maximum. Acquired passives, native essence capture, clean four-entry menus and observable awakening/rock fixtures form the review candidate. Ring and sewer remain selectable for Capture Arcana. Final targeted native results and captures are in assets/validation_v5_13_17; all author checks remain pending.
+
 
 ## 5.13.16 — Per-character essence dialogue admission (#441)
 
@@ -7954,6 +7959,10 @@ now say x105, matching the existing simulation; its rate and safety rules do not
 change. Meal support participates in pointer revision so a click cannot cross layouts.
 
 ## 5.2.22 - Parenthesized menu controls (#215)
+
+The V5.13.14 author correction supersedes the native main-menu decoration below:
+main menus and their native submenus now have no appended keyboard hints. In-game
+Journal and interaction controls retain their contextual hints.
 
 Each interactive menu caption identifies its existing keyboard control in
 parentheses. Navigation-only lists show arrows/Enter; this does not create
