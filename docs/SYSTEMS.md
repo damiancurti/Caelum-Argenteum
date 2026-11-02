@@ -2,6 +2,12 @@
 
 Documentation version: **5.13.12** - 2026-11-01.
 
+## Human hunter presentation (#617 follow-up)
+
+Human Palomo does not run seeker physiology. His displayed Air state stays normal,
+including after save recovery; this display correction does not change his fixed
+native movement, immunity, resources or capture-only role.
+
 ## Final V5.13 review workflow (#596)
 
 The isolated author terminal offers 14 numbered scenes and returns to its list

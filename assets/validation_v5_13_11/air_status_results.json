@@ -1,0 +1,208 @@
+{
+  "issue": 617,
+  "release": "5.13.12",
+  "author_accepted": false,
+  "passed": true,
+  "runs": {
+    "fresh": {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue617\\hunt-32842-20261101-203206-535258",
+      "runtime_sha256": "b1094de41cd45bb41b7184358b7ab17ac13c532502084474918bfbea1a5a8594",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "scenario": "hunter",
+      "venue": 0,
+      "reload": false,
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "checks": [
+            "CA617 PASS one human role selected by host",
+            "CA617 PASS human replaces NPC hunter",
+            "CA617 PASS full Palomo Air is displayed as normal",
+            "CA617 PASS native Palomo body dimensions and mass",
+            "CA617 PASS native Palomo attributes",
+            "CA617 PASS hunter cannot act as a seeker or acquire inventory",
+            "CA617 PASS Tarot and power-ups rejected",
+            "CA617 PASS normal damage retains divine immunity",
+            "CA617 PASS diagonal movement matches NPC speed without extra run multiplier",
+            "CA617 PASS hunter cannot collect a quest essence",
+            "CA617 PASS native touching captures only a seeker",
+            "CA617 PASS hunter cannot be captured by a fatal trap callback",
+            "CA617 PASS hunter cannot perform a rescue",
+            "CA617 PASS seekers win at 78 without counting hunter",
+            "CA617 PASS rematch preserves human role",
+            "CA617 PASS rematch resets seekers without a duplicate NPC",
+            "CA617 PASS rematch reapplies Palomo body",
+            "CA617 RESULT hunter"
+          ],
+          "errors": [],
+          "synchronized": true,
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "checks": [
+            "CA617 PASS one human role selected by host",
+            "CA617 PASS human replaces NPC hunter",
+            "CA617 PASS full Palomo Air is displayed as normal",
+            "CA617 PASS native Palomo body dimensions and mass",
+            "CA617 PASS native Palomo attributes",
+            "CA617 PASS hunter cannot act as a seeker or acquire inventory",
+            "CA617 PASS Tarot and power-ups rejected",
+            "CA617 PASS normal damage retains divine immunity",
+            "CA617 PASS diagonal movement matches NPC speed without extra run multiplier",
+            "CA617 PASS hunter cannot collect a quest essence",
+            "CA617 PASS native touching captures only a seeker",
+            "CA617 PASS hunter cannot be captured by a fatal trap callback",
+            "CA617 PASS hunter cannot perform a rescue",
+            "CA617 PASS seekers win at 78 without counting hunter",
+            "CA617 PASS rematch preserves human role",
+            "CA617 PASS rematch resets seekers without a duplicate NPC",
+            "CA617 PASS rematch reapplies Palomo body",
+            "CA617 RESULT hunter"
+          ],
+          "errors": [],
+          "synchronized": true,
+          "passed": true
+        },
+        {
+          "slot": 2,
+          "exit": 0,
+          "checks": [
+            "CA617 PASS one human role selected by host",
+            "CA617 PASS human replaces NPC hunter",
+            "CA617 PASS full Palomo Air is displayed as normal",
+            "CA617 PASS native Palomo body dimensions and mass",
+            "CA617 PASS native Palomo attributes",
+            "CA617 PASS hunter cannot act as a seeker or acquire inventory",
+            "CA617 PASS Tarot and power-ups rejected",
+            "CA617 PASS normal damage retains divine immunity",
+            "CA617 PASS diagonal movement matches NPC speed without extra run multiplier",
+            "CA617 PASS hunter cannot collect a quest essence",
+            "CA617 PASS native touching captures only a seeker",
+            "CA617 PASS hunter cannot be captured by a fatal trap callback",
+            "CA617 PASS hunter cannot perform a rescue",
+            "CA617 PASS seekers win at 78 without counting hunter",
+            "CA617 PASS rematch preserves human role",
+            "CA617 PASS rematch resets seekers without a duplicate NPC",
+            "CA617 PASS rematch reapplies Palomo body",
+            "CA617 RESULT hunter"
+          ],
+          "errors": [],
+          "synchronized": true,
+          "passed": true
+        },
+        {
+          "slot": 3,
+          "exit": 0,
+          "checks": [
+            "CA617 PASS one human role selected by host",
+            "CA617 PASS human replaces NPC hunter",
+            "CA617 PASS full Palomo Air is displayed as normal",
+            "CA617 PASS native Palomo body dimensions and mass",
+            "CA617 PASS native Palomo attributes",
+            "CA617 PASS hunter cannot act as a seeker or acquire inventory",
+            "CA617 PASS Tarot and power-ups rejected",
+            "CA617 PASS normal damage retains divine immunity",
+            "CA617 PASS diagonal movement matches NPC speed without extra run multiplier",
+            "CA617 PASS hunter cannot collect a quest essence",
+            "CA617 PASS native touching captures only a seeker",
+            "CA617 PASS hunter cannot be captured by a fatal trap callback",
+            "CA617 PASS hunter cannot perform a rescue",
+            "CA617 PASS seekers win at 78 without counting hunter",
+            "CA617 PASS rematch preserves human role",
+            "CA617 PASS rematch resets seekers without a duplicate NPC",
+            "CA617 PASS rematch reapplies Palomo body",
+            "CA617 RESULT hunter"
+          ],
+          "errors": [],
+          "synchronized": true,
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    "recovery": {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue617\\hunt-32844-20261101-203312-887435",
+      "runtime_sha256": "b1094de41cd45bb41b7184358b7ab17ac13c532502084474918bfbea1a5a8594",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "scenario": "hunter",
+      "venue": 0,
+      "reload": true,
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "checks": [
+            "CA617 PASS saved role survives launch CVar reset",
+            "CA617 PASS saved body and no AI duplicate",
+            "CA617 PASS saved Palomo Air is displayed as normal",
+            "CA617 PASS saved capture mask excludes hunter",
+            "CA617 PASS hunter wins when every seeker is captive",
+            "CA617 RESULT hunter"
+          ],
+          "errors": [],
+          "synchronized": true,
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "checks": [
+            "CA617 PASS saved role survives launch CVar reset",
+            "CA617 PASS saved body and no AI duplicate",
+            "CA617 PASS saved Palomo Air is displayed as normal",
+            "CA617 PASS saved capture mask excludes hunter",
+            "CA617 PASS hunter wins when every seeker is captive",
+            "CA617 RESULT hunter"
+          ],
+          "errors": [],
+          "synchronized": true,
+          "passed": true
+        },
+        {
+          "slot": 2,
+          "exit": 0,
+          "checks": [
+            "CA617 PASS saved role survives launch CVar reset",
+            "CA617 PASS saved body and no AI duplicate",
+            "CA617 PASS saved Palomo Air is displayed as normal",
+            "CA617 PASS saved capture mask excludes hunter",
+            "CA617 PASS hunter wins when every seeker is captive",
+            "CA617 RESULT hunter"
+          ],
+          "errors": [],
+          "synchronized": true,
+          "passed": true
+        },
+        {
+          "slot": 3,
+          "exit": 0,
+          "checks": [
+            "CA617 PASS saved role survives launch CVar reset",
+            "CA617 PASS saved body and no AI duplicate",
+            "CA617 PASS saved Palomo Air is displayed as normal",
+            "CA617 PASS saved capture mask excludes hunter",
+            "CA617 PASS hunter wins when every seeker is captive",
+            "CA617 RESULT hunter"
+          ],
+          "errors": [],
+          "synchronized": true,
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  },
+  "changed_package_members": [
+    "caelum/world/CaelumStandalonePlayer.zs"
+  ],
+  "source_sha256": "ef12891ffa123c571b71c814239d451920a11439330ebfcdbc18d7f6231a05eb",
+  "limits": [
+    "Native local-client functional checks and HUD inspection; author acceptance remains pending.",
+    "The earlier #596 sweep applies to unchanged gameplay; this follow-up checks the human-hunter branch and common recovery on the final package."
+  ]
+}

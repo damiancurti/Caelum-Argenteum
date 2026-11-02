@@ -2,6 +2,22 @@
 
 Documentation version: **5.13.12** - 2026-11-01.
 
+## Human Palomo Air display follow-up (#617, 2026-11-01)
+
+Final author-suite captures exposed a full Air bar labelled breathless for the
+human hunter. Palomo bypasses player physiology, so the normal physiology update
+never corrected the initial Air display state. The hunter tick now normalizes
+that state without changing Air, movement, immunity or available actions. It
+also corrects restored bodies without a new save field.
+
+Four native clients passed the existing role, contact-capture, restrictions,
+immunity, movement and rematch probe, including a new normal-Air assertion;
+four-client common-save recovery passed the matching Air assertion. The final
+package differs from the #596 sweep only in CaelumStandalonePlayer.zs. Earlier
+unaffected evidence remains applicable. Logs, package hashes and a native HUD
+capture are in assets/validation_v5_13_11/air_status_results.json. The author
+check remains CA617-01; no author acceptance or merge is inferred.
+
 ## Final V5.13 author handoff (#596, 2026-11-01)
 
 Extended the single manual launcher to 14 scenarios plus two independent
