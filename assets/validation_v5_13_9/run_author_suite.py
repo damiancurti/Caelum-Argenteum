@@ -17,25 +17,35 @@ from caelum_sessions import digest
 SCENES={
 0:("#439 - Colección, selección y pasivos",2,0,0,
    "Tab > Tarot: seleccioná cartas y comprobá el orden indicado. Los Mayores\n"
-   "requieren estar equipados; los bonos de Menores adquiridos se conservan.\n"
-   "Ermitaño/Diablo amplían los espacios. No deben poder quitarse si sobran cartas."),
+   "conservan sus pasivos al adquirirlos, sin equiparlos. Los activos sí usan\n"
+   "la secuencia elegida. Con Ermitaño y Diablo adquiridos tenés siete espacios.\n"
+   "Derecha en la última carta vuelve a la primera; Izquierda hace lo inverso.\n"
+   "Leé las descripciones distintas de activo y pasivo de varios Mayores."),
 1:("#441 - Captura y esencia unificada",2,0,0,
-   "Tenés 77 esencias y El Mundo equipado. Usá la esencia delante tuyo con E,\n"
+   "Tenés 77 esencias y ninguna equipada. Usá la esencia delante tuyo con E,\n"
    "aceptá capturarla y permanecé cerca hasta terminar. Cada jugador la captura\n"
    "por separado. Con las 78, activá la esencia unificada desde el inventario.\n"
    "Durante su efecto podés dañar al Palomo de prueba; antes no."),
 2:("#442 - Despertar equipo",2,0,0,
-   "B: inventario. Elegí un arma, armadura o escudo y pulsá A para asociar una\n"
-   "esencia. Comprobá +25 % de daño/defensa, exclusividad y retirada reversible.\n"
-   "Soltar o transferir la pieza debe quitar la asociación, conservando desgaste."),
+   "F1 muestra cada pieza equipada: daño/defensa x1,00 y desgaste x1,00.\n"
+   "Cerrá la consola con F1. B: inventario; elegí una pieza equipada y pulsá A.\n"
+   "Elegí una esencia disponible con las flechas y confirmá con Enter.\n"
+   "Cerrá el inventario y pulsá F1: ESA pieza debe mostrar x1,25 y x0,50,\n"
+   "con la misma durabilidad. El resto conserva sus valores. No cambia su arte.\n"
+   "Retirá la asociación desde A: vuelven x1,00/x1,00. La esencia asociada\n"
+   "no puede equiparse; soltar/transferir la pieza también la desvincula."),
 3:("#440 - Poderes y anexo de la mansión",2,0,0,
    "Tab > Tarot permite elegir las cartas; T activa la secuencia por 1.000 Ánima.\n"
    "Probá el autómata 3D con El Mago, las rocas con Estrella+Sol, el obstáculo\n"
    "vivo con Muerte, el espíritu con Juicio/Justicia y las puertas especiales.\n"
-   "F3 recorre anexo, pared falsa, paso maldito, habitación de Rueda y autómata.\n"
+   "F3 recorre pared falsa, paso maldito, Rueda, autómata, ambas rocas y anexo.\n"
    "F4 crea un bandido inmóvil; pulsándolo otra vez lo activa o inmoviliza.\n"
    "Con él podés probar Emperatriz, Justicia, Emperador, Luna y los efectos\n"
-   "de área. Los demás poderes se eligen desde la misma colección completa."),
+   "de área. Roca: activá Estrella+Sol con T, apuntá al centro de la roca\n"
+   "(mirando un poco hacia abajo) y pulsá T otra vez para guardarla.\n"
+   "Debe desaparecer y figurar en la Caja; al vencer el activo se suelta.\n"
+   "E intenta levantar con La Fuerza y requiere suficiente carga disponible;\n"
+   "Estrella y Sol no dan fuerza de empuje. Los pasivos ya están adquiridos."),
 4:("#598 - Deathmatch",2,0,0,
    "Combatí entre las dos ventanas: baja rival +1; suicidio -1. F2 causa una\n"
    "muerte de prueba. Reaparece tras 3 s con el residente y equipo iniciales.\n"
@@ -64,7 +74,7 @@ SCENES={
    "El Loco ya está equipado. F6 mata solo al personaje de esa ventana.\n"
    "T propone el viaje: deben aceptar ambos antes del cobro. El fallecido\n"
    "controla su espíritu en la mansión. Palomo permite regresar con El Loco\n"
-   "equipado y unanimidad; volver no resucita. Repetí muriendo ambos con F6.")}
+   "adquirido y unanimidad; volver no resucita. Repetí muriendo ambos con F6.")}
 
 
 SCENES.update({

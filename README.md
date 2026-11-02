@@ -6,7 +6,12 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.13.14.** Obtain and update the complete repository, validate
+**Current release: 5.13.15.** Obtain and update the complete repository, validate
+
+## 5.13.15 — Reachable author fixtures and observable checks (#596)
+
+Review fixtures now place both capture clients and the essence inside the real ring, with an immobile Palomo target. Scene 3 reports awakening factors and durability via F1; scene 4 includes aimed rock stops and distinguishes Tarot containment from Strength Use. Capture Arcana retains both approved ring and sewer venues, as clarified by the author. Native Use opens the essence for both clients; this exposed a separate second-speaker revelation defect tracked under #441. Capture completion remains pending that correction; assets/validation_v5_13_15 records the failed intermediate run. No campaign geometry changes.
+
 
 ## 5.13.14 — Four-entry main menu (#597)
 

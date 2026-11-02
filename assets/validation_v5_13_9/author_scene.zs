@@ -8,6 +8,13 @@ class CA513ManualState : Inventory
     States {Spawn:TNT1 A -1;Stop;}
 }
 
+// Blanco de inmunidad: conserva defensas/daño real de Palomo sin deambular.
+class CA513DeityTarget : CaelumPalomo
+{
+    override void Tick(){Vel=(0,0,0);}
+    Default {+DORMANT}
+}
+
 class CA513ManualScene : StaticEventHandler
 {
     const SCENE=0;
@@ -32,10 +39,13 @@ class CA513ManualScene : StaticEventHandler
             p.PlayerNumber(),level.MapName,p.health,p.CurrentAnima,CaelumTarotService.CountTarotCards(r),
             CaelumTarotService.SelectedCount(r),r!=null?r.TarotCooldownTics/double(TICRATE):0);
         Console.Printf("CA513 hunger=%.2f thirst=%.2f sleep=%.2f",p.CurrentHunger,p.CurrentThirst,p.CurrentSleep);
-        if(SCENE==10 || SCENE==11)for(Inventory cursor=p.Inv;cursor!=null;cursor=cursor.Inv)
+        if(SCENE==2 || SCENE==10 || SCENE==11)for(Inventory cursor=p.Inv;cursor!=null;cursor=cursor.Inv)
         {
             let item=CaelumEquipmentItem(cursor);if(item==null || !item.Equipped)continue;
             Console.Printf("CA513 equipped tier=%d durability=%.2f awakened=%d",item.Tier,item.Durability,CaelumLabyrinthPowerups.Awakened(item));
+            if(SCENE==2)Console.Printf("CA513 DESPERTAR id=%d arcano=%d dano/defensa=x%.2f desgaste=x%.2f durabilidad=%.2f",
+                item.ItemId,CaelumAwakening.Card(item),CaelumAwakening.Factor(item),
+                CaelumAwakening.Factor(item)>1?1.0/CaelumAwakeningData.WEAR_DIVISOR:1.0,item.Durability);
         }
         if(m!=null)Console.Printf("CA513 mode=%d score=%d team=%d finished=%d winner=%d captive=%d collected=%d",
             m.Mode,m.Score[p.PlayerNumber()],m.Team[p.PlayerNumber()],m.Finished,m.Winner,
@@ -138,12 +148,14 @@ class CA513ManualScene : StaticEventHandler
                     CaelumTarotDeckRules.Owned(p).InMagicBox=true;
                     p.ApplyCharacterProfile();p.RefillAir();p.RefillAnima();p.RefillSurvivalResources();
                     p.health=p.CaelumMaximumHealth;p.player.health=p.health;
-                    Move(p,SCENE==0 || SCENE==3?CaelumTarotExampleData.Arrival(0)+(i*64,0,0):(-128,i*96,0));
+                    if(SCENE==0 || SCENE==3)Move(p,CaelumTarotExampleData.Arrival(0)+(i*64,0,0));
+                    else Move(p,CaelumArenaData.Start(0,i),CaelumArenaData.Facing(0,i));
                     if(SCENE==1)
                     {
-                        CaelumTarotService.Select(p,21);
-                        CaelumArcanaSources.PlaceReward(p,77,(-128,48,0));
-                        if(i==0)ledger.Deity=CaelumPalomo(Actor.Spawn('CaelumPalomo',(128,0,0),NO_REPLACE));
+                        // Dentro del ring real, a ambos lados de la misma esencia.
+                        Move(p,(128+i*128,144,0),i==0?0:180);
+                        CaelumArcanaSources.PlaceReward(p,77,(192,144,0));
+                        if(i==0)ledger.Deity=CaelumPalomo(Actor.Spawn('CA513DeityTarget',(192,300,0),NO_REPLACE));
                     }
                     if(SCENE==9)CaelumTarotService.Select(p,0);
                     p.RefreshSocialJournalSnapshot();p.RefreshFormalInventorySnapshot();p.PersistCharacterState();
@@ -236,7 +248,19 @@ class CA513ManualScene : StaticEventHandler
             }
             else if(CaelumTarotExampleData.Present())
             {
-                ledger.Place=(ledger.Place+1)%5;
+                ledger.Place=(ledger.Place+1)%7;
+                if(ledger.Place>=5)
+                {
+                    let room=CaelumTarotExamples.Get();
+                    let rock=room==null?null:ledger.Place==5?CaelumTarotRock(room.HotRock):CaelumTarotRock(room.DirtyRock);
+                    if(rock==null || rock.Contained)return;
+                    if(!MoveFree(p,rock.Pos-(0,96,0)))return;
+                    vector3 delta=rock.Pos+(0,0,rock.Height/2)-CaelumTelekinesisRules.Eye(p);
+                    p.Angle=VectorAngle(delta.X,delta.Y);
+                    p.Pitch=-atan2(delta.Z,Max(1.0,delta.XY.Length()));
+                    Console.Printf("CA513 roca: activa Estrella+Sol con Tarot; pulsa Tarot otra vez mirando la roca para guardarla.");
+                    return;
+                }
                 vector3 point=ledger.Place==0?CaelumTarotExampleData.Arrival(0):ledger.Place==1?CaelumTarotExampleData.Door(0)-(0,96,0)
                     :ledger.Place==2?CaelumTarotExampleData.Door(1)-(0,96,0):ledger.Place==3?CaelumTarotExampleData.Controller()-(0,96,0)
                     :CaelumTarotExampleData.Automaton()-(0,128,0);

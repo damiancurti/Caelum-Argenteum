@@ -1,4 +1,4 @@
-V5.13 outstanding author checks — final package 5.13.12
+V5.13 outstanding author checks — candidate 5.13.15
 
 Prerequisite for every check: the numbered V5.13 terminal, matching private native
 engine/runtime and its local client windows. Enter the listed scene number and
@@ -15,8 +15,8 @@ Steps: Use the last world essence with E in both clients; finish capture. With a
 Expected: Each character captures once; 78 cards enable the paid timed deity-damage effect; scene protections and normal defenses remain.
 
 CA442-01 | origin 5.13.2 | #442 | scene 3
-Steps: Use inventory A to associate an acquired unequipped inactive essence with equipped gear; remove it, store in own Box, and transfer/drop the gear.
-Expected: One-to-one association gives +25% damage/defense and half wear without repair; blocks equipping its card and releases on transfer.
+Steps: F1 reports equipped-item factors and durability. Use inventory A to associate an acquired unequipped inactive essence with equipped gear; remove it, store in own Box, and transfer/drop the gear.
+Expected: Only the associated piece changes from x1/x1 to x1.25/x0.5 in F1, with unchanged durability. One-to-one association gives +25% damage/defense and half wear without repair; blocks equipping its card and releases on transfer.
 
 CA440-01 | origin 5.13.3 | #440 | scene 4 and 10
 Steps: Use Tab > Tarot, T and the printed F2-F4 helpers to review all Major powers, ordered sequences, duration/cost and map objects. In scene10 kill one/both players with F6, activate Fool and accept from both windows; return via Palomo.
