@@ -3,7 +3,7 @@
 Documentation version: **5.13.17** - 2026-11-01.
 
 **V5.13 accepted2026-11-01:** all13 checks passed, including awakening.
-#439–442/#596–601/#614/#616/#617 complete; ordered PR merges authorized.
+#439–442/#596–601/#614/#616/#617 merged; issues closed.
 Release5.13.17; pending_test.txt empty. HISTORY: original check IDs/versions.
 Owned passives, descriptions, navigation, capture and menus accepted.
 Existing ETW/Internet limits remain; no new FPS claim.

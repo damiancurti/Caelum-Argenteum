@@ -8,8 +8,9 @@ The author confirmed that all tests passed, including the equipment-awakening
 recheck, and explicitly requested merging the PRs and closing the issues.
 The accepted candidate is 5.13.17; acceptance does not increment the patch version.
 All 13 outstanding checks are recorded in HISTORY and pending_test.txt is empty.
-Scopes #439–442, #596–601, #614, #616 and #617 are complete. Integration preserves
-their focused commits and PRs; this acceptance record accompanies their ordered merge.
+Scopes #439–442, #596–601, #614, #616 and #617 are complete and their issues closed.
+The 20 focused implementation/fix PRs (#605–613, #615, #618–627) are merged into
+main with their original commit ancestry. PR #628 integrates this acceptance ledger.
 Earlier implementation checkpoints below retain their original test observations;
 their pending-author and next-work statements are superseded by this acceptance.
 Existing ETW/frame-presentation and Internet-testing limitations remain explicit;

@@ -10,9 +10,8 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 validate it, then rebuild with `run_dev.bat` as described below.
 
 V5.13 is complete and author-accepted on 2026-11-01. All 13 manual checks passed,
-including the final Tarot, capture, awakening and menu corrections. The author
-authorized merging the focused PRs and closing #439–442, #596–601, #614, #616 and
-#617. `pending_test.txt` is empty. [HISTORY](docs/HISTORY.md) retains the original
+including the final Tarot, capture, awakening and menu corrections. The focused
+implementation PRs are merged; #439–442, #596–601, #614, #616 and #617 are closed. `pending_test.txt` is empty. [HISTORY](docs/HISTORY.md) retains the original
 release/check IDs, intermediate failures, corrections and native evidence.
 
 The six #614 labyrinth power-ups and optional #617 human Palomo are implemented.
