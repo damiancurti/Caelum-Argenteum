@@ -1,0 +1,59 @@
+V5.13 outstanding author checks — final package 5.13.12
+
+Prerequisite for every check: the numbered V5.13 terminal, matching private native
+engine/runtime and its local client windows. Enter the listed scene number and
+follow its printed setup. Alt+Tab changes client; close all clients to return to
+the list. Helpers prepare a test and are not campaign features. Native automated
+checks are recorded separately; only the author can confirm these entries.
+
+CA439-01 | origin 5.13.0 | #439 | scene 1
+Steps: Select and reorder Major cards in Tab > Tarot; compare equipped/unequipped passives and Minor collection bonuses. Equip Hermit/Devil with filled basic slots, then try removing them while over capacity.
+Expected: Only Major capability passives require equipment; order persists; expanded capacity and removal guards match the approved rules.
+
+CA441-01 | origin 5.13.1 | #441 | scene 2
+Steps: Use the last world essence with E in both clients; finish capture. With World equipped, activate unified essence from inventory; attack the test Palomo before/during/after its duration.
+Expected: Each character captures once; 78 cards enable the paid timed deity-damage effect; scene protections and normal defenses remain.
+
+CA442-01 | origin 5.13.2 | #442 | scene 3
+Steps: Use inventory A to associate an acquired unequipped inactive essence with equipped gear; remove it, store in own Box, and transfer/drop the gear.
+Expected: One-to-one association gives +25% damage/defense and half wear without repair; blocks equipping its card and releases on transfer.
+
+CA440-01 | origin 5.13.3 | #440 | scene 4 and 10
+Steps: Use Tab > Tarot, T and the printed F2-F4 helpers to review all Major powers, ordered sequences, duration/cost and map objects. In scene10 kill one/both players with F6, activate Fool and accept from both windows; return via Palomo.
+Expected: Approved power effects, targets, shared cost/cooldown and follow-up actions work. Justice returns safely; giant/dangerous cargo obeys Star/Sun; Fool retains unanimous payment and spirit return rules.
+
+CA597-01 | origin 5.13.4 | #597 | scene 15
+Steps: Open both production menus. Create a two-person match in one; copy its printed session.json path into Join in the other using 127.0.0.1. Choose different residents, play, close the match and menus.
+Expected: All four presets are selectable; host/join launches matching isolated clients and returns to the title without changing campaign files.
+
+CA598-01 | origin 5.13.5 | #598 | scene 5
+Steps: Fight between the two windows, use F2 to test death, then check respawn, score and the final result (F6 may prepare the score threshold).
+Expected: Opposing kills add one, suicides subtract one; three-second preset respawn and 20-kill/10-minute/overtime rules agree in both clients.
+
+CA599-01 | origin 5.13.6 | #599 | scene 6
+Steps: Check automatic teams 1/3 versus 2/4, opposing kills and friendly fire; finish the match and inspect Q in every window.
+Expected: Team scores, teammate-kill penalties, result and unanimous rematch agree; presets reset.
+
+CA600-01 | origin 5.13.7 | #600 | scene 7 and 8
+Steps: Use F3/F4 to approach opposing/own bases, carry the opposing Arcana, die as carrier, retrieve/return it and wait for its automatic return. Complete three captures.
+Expected: Capture requires own token home; drops/defender return/30-second return and three-capture result are shared without duplicate awards.
+
+CA601-01 | origin 5.13.8 | #601 | scene 9
+Steps: Collect distinct cards, evade Palomo, capture a seeker with F2 and rescue by holding E for three seconds in another window. Use F4 for traps and wait a full minute for rearming; F6 prepares the final essence.
+Expected: Collection is shared and unique; capture/rescue preserves resources; 24 traps rearm; all-captive loss and 78-card win agree.
+
+CA614-01 | origin 5.13.10 | #614 | scene 11 and 12
+Steps: F2 prepares worn gear/resources; F3 cycles six native pickups. Walk into each and compare F1/inventory. Wait 60 seconds without F3 to observe random reappearance.
+Expected: Silver common/gold rare spheres have distinct emblems; rest/replenishment/awakening/upgrade match approved effects and remain personal/match-local. Normal damage during rest is retained; ring has no power-ups.
+
+CA616-01 | origin 5.13.12 | #616 | scene 13
+Steps: F3 visits 22 opportunities; equip/activate their Major cards. F7 captures one window; another chooses that captive using Fool. F4 resumes NPC pursuit when ready. Review shared discoveries in scene9 as well.
+Expected: Every Major has a useful existing object/route; cards unlock for all seekers; safe rescue stays local, preserves captivity when blocked and respects Justice. Wheel water/doors and all props remain usable.
+
+CA617-01 | origin 5.13.11 | #617 | scene 14 and 15
+Steps: Control Palomo in the first window; approach seekers, try weapons/Tarot/power-ups, rescue from a seeker and complete both possible results/rematch. Inspect setup below four participants.
+Expected: Human Palomo requires at least four total players, uses native body/speed/immunity and contact capture only; other slots are seekers. Role and outcomes persist; fewer participants use NPC Palomo.
+
+CA596-01 | origin 5.13.9 | #596 | scene 16 after any scene
+Steps: Make a meaningful change, save F5 in the host, close all clients and choose16. Resume with the same windows/roles. Repeat for hunt and human Palomo.
+Expected: The common save restores collection, equipment, objectives, roles and progress without resetting or duplicating rewards; no missing-save path or synchronization error.

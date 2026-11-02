@@ -11,7 +11,7 @@ import zipfile
 ROOT=Path(__file__).resolve().parents[2]
 sys.path[:0]=[str(ROOT),str(ROOT/'assets/validation_v5_12_7')]
 import native_sync
-from caelum_standalone import prepare,run_menu,isolated_config
+from caelum_standalone import prepare,isolated_config
 from caelum_sessions import digest
 
 SCENES={
@@ -66,6 +66,56 @@ SCENES={
    "controla su espíritu en la mansión. Palomo permite regresar con El Loco\n"
    "equipado y unanimidad; volver no resucita. Repetí muriendo ambos con F6.")}
 
+
+SCENES.update({
+10:("#614 - Seis power ups en alcantarillas",2,0,1,
+    "F2 prepara recursos y equipo dañados. F3 te deja ante un power up; cada\n"
+    "pulsación prepara el tipo siguiente (los seis). Caminá hacia la esfera para\n"
+    "recogerla. Comunes plateadas, raras doradas; emblemas distintos. F1 muestra\n"
+    "el antes/después. Sin volver a pulsar F3, esperá 60 s para su reaparición\n"
+    "aleatoria. El descanso afecta solo a ese jugador; conserva el daño normal."),
+11:("#614 - Power ups en la búsqueda",4,3,0,
+    "Mismas ayudas F2/F3 para los seis efectos. Palomo empieza inmóvil solo en\n"
+    "esta preparación; F4 alterna su persecución. Hay 16 puntos en el laberinto.\n"
+    "Un cautivo no puede recogerlos. F6 prepara la última esencia para terminar."),
+12:("#616 - Arcanos en el laberinto de Palomo",4,3,0,
+    "Los 22 Mayores encontrados se comparten como preparación. F3 recorre sus\n"
+    "22 lugares y muestra el nombre. Tab > Tarot equipa; T activa. F2 repone\n"
+    "recursos y limpia la recarga cuando no hay poderes activos. F4 alterna\n"
+    "la persecución de Palomo (inicialmente inmóvil para revisar los lugares).\n"
+    "F7 captura solo a ese personaje: en otra ventana, equipá El Loco y pulsá T;\n"
+    "elegí al cautivo y comprobá que aparece cerca, sin atravesar paredes.\n"
+    "En Estrella, agachate y usá la cama para transportarla; guardala en la Caja.\n"
+    "Probá también Mago, Emperador, Rueda, Muerte, Templanza, Torre, Sol y Juicio."),
+13:("#617 - Un jugador controla a Palomo",4,3,0,
+    "La primera ventana es Palomo; las otras tres son buscadores. Palomo se\n"
+    "mueve y captura por contacto, pero no usa armas, Tarot ni power ups.\n"
+    "F3 acerca al jugador junto a un cautivo; F4 acerca a Palomo a un buscador\n"
+    "libre (solo preparación). Buscadores: mantené E durante 3 s para rescatar.\n"
+    "Palomo gana al capturar a los tres; ellos ganan reuniendo las 78 esencias.\n"
+    "F6 prepara 77 para probar esa victoria; Q permite votar la revancha.")})
+
+def menu_pair(args,home):
+    """Open two independent production menu bridges so host/join can coexist."""
+    folder=home/datetime.datetime.now().strftime('menu-pair-%Y%m%d-%H%M%S-%f');folder.mkdir()
+    print('Dos menús independientes: en uno creá una partida para 2 jugadores.\n'
+          'La terminal imprimirá su archivo session.json. En el otro elegí Unirse,\n'
+          'dirección 127.0.0.1 y ese archivo de sesión. Elegí residentes distintos.\n'
+          'Cerrá ambos menús al terminar para volver a la lista.',flush=True)
+    processes=[]
+    try:
+        for slot in range(2):
+            config=folder/f'menu{slot}.ini';config.write_bytes(isolated_config())
+            command=[sys.executable,str(ROOT/'caelum_standalone.py'),'--engine',str(args.engine),
+                     '--iwad',str(args.iwad),'--package',str(args.runtime),'--config',str(config),
+                     '--root',str(folder/f'player{slot}')]
+            processes.append(subprocess.Popen(command,cwd=ROOT))
+        for process in processes:process.wait()
+    finally:
+        for process in processes:
+            if process.poll() is None:process.terminate()
+
+
 def fixture(path,scene):
     source=Path(__file__).with_name('author_scene.zs').read_bytes().replace(b'const SCENE=0;',f'const SCENE={scene};'.encode())
     members=native_sync.instrument({'ZSCRIPT':b'version "4.14.2"\n#include "author_scene.zs"\n',
@@ -99,7 +149,7 @@ def launch(args,home,scene,previous=None):
         for slot in range(count):
             peer=out/f'peer{slot}';peers.append(peer)
             selection=dict(role=min(slot,1),mode=mode,preset=slot%4,players=count,port=args.port,
-                           venue=venue,host='127.0.0.1',session=str(out/'peer0/session.json'))
+                           venue=venue,host='127.0.0.1',session=str(out/'peer0/session.json'),palomo=1 if scene==13 else 0)
             cmd,_=prepare(selection,peer,args.engine,args.iwad,packages)
             if scene<4 or scene==9:
                 cmd[cmd.index('+ca_standalone_mode')+1]='0'
@@ -117,9 +167,12 @@ def launch(args,home,scene,previous=None):
                         'bind f3 "netevent ca513_place"\nbind f4 "netevent ca513_target"\n'
                         'bind f5 "save ca513-manual"\nbind f6 "netevent ca513_finish_setup"\n'
                         'bind q "openmenu CaelumStandaloneScoreMenu"\n'
+                        'bind f7 "netevent ca513_capture"\n'
                         'bind w "+forward"\nbind s "+back"\nbind a "+moveleft"\nbind d "+moveright"\n'
                         'bind e "+use"\nbind mouse1 "+attack"\nbind space "+jump"\n')
                 if args.smoke:
+                    if slot==0 and scene in (10,11):f.write('wait 120; netevent ca513_reset; netevent ca513_place; wait 10; ')
+                    if slot==0 and scene==12:f.write('wait 120; netevent ca513_place; netevent ca513_reset; wait 10; ')
                     f.write('wait 160; netevent ca513_status; wait 10; screenshot author-scene.png; ')
                     if slot==0:f.write('save ca513-manual; ')
                     f.write(f'wait {150+(count-slot)*35}; quit\n')
@@ -158,7 +211,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--runtime',type=Path,required=True);p.add_argument('--engine',type=Path,required=True)
     p.add_argument('--iwad',type=Path,required=True);p.add_argument('--port',type=int,default=32620)
-    p.add_argument('--scene',type=int,choices=range(10));p.add_argument('--smoke',action='store_true')
+    p.add_argument('--scene',type=int,choices=range(14));p.add_argument('--smoke',action='store_true')
     p.add_argument('--reload',type=Path)
     args=p.parse_args()
     for field in ('runtime','engine','iwad'):setattr(args,field,getattr(args,field).resolve(strict=True))
@@ -168,14 +221,13 @@ def main():
     while True:
         print('\nCAELUM ARGENTEUM — PRUEBAS V5.13\n')
         for scene,row in SCENES.items():print(f'{scene+1}. {row[0]}')
-        print('11. #597 — Menú Multijugador y selección de residentes\n12. Reabrir último guardado F5\n0. Salir')
+        print('15. #597 — Dos menús Multijugador (crear/unirse)\n16. Reabrir último guardado F5\n0. Salir')
         selected=input('Escenario: ').strip()
         if selected=='0':return 0
         try:
-            if selected=='11':
-                config=home/'menu.ini';config.write_bytes(isolated_config())
-                run_menu(args.engine,args.iwad,[args.runtime],config,home/'menu');continue
-            if selected=='12':
+            if selected=='15':
+                menu_pair(args,home);continue
+            if selected=='16':
                 if previous is None:print('Primero abrí un escenario y guardá con F5.');continue
                 previous=launch(args,home,previous['scene'],previous);continue
             scene=int(selected)-1

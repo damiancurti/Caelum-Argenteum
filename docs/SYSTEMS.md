@@ -2,6 +2,16 @@
 
 Documentation version: **5.13.12** - 2026-11-01.
 
+## Final V5.13 review workflow (#596)
+
+The isolated author terminal offers 14 numbered scenes and returns to its list
+after all client windows close. Its hints identify fixture-only F1-F7 controls;
+normal Tarot/inventory controls remain unchanged. F5 saves the host; option 16
+recovers that common save with all matching local participants and the same
+fixture/package. Option 15 opens two production menu bridges, so creating a host
+does not prevent starting a joining client. Neither path reads campaign profiles.
+Outstanding manual checks are tracked only in pending_test.txt.
+
 ## Hunt Arcana opportunities (#616)
 
 CAHUNT has 22 distributed opportunities using the existing Major Arcana rules.

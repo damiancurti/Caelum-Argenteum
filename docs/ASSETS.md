@@ -2,6 +2,13 @@
 
 Documentation version: **5.13.12** - 2026-11-01.
 
+## Final V5.13 manual scenes (#596)
+
+The final author launcher reuses the packaged artwork without replacements.
+Native captures in validation_v5_13_9/final document prepared scenes and model
+visibility. The author still owns visual acceptance; automated preparation is
+not recorded as physical-input approval.
+
 ## Distributed hunt opportunities (#616)
 
 assets/hunt/ARCANA.json owns the 22 locations and reuse basis. The deterministic

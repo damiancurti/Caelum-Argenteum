@@ -4,10 +4,11 @@ Documentation version: **5.13.12** - 2026-11-01.
 
 ## 5.13.12 - Final V5.13 handoff (#596)
 
-#616 implements the last gameplay extension. Finish #596's combined terminal:
-include #614 power-ups, #617 human Palomo and #616 shared cards/rescue/22 rooms;
-verify final startup and common-save recovery, then populate pending_test.txt.
-Keep technical fixture success separate from physical-input/visual acceptance.
+Implementation and final native startup/recovery checks are complete. The single
+#596 terminal covers #439-442, #597-601 and #614/#616/#617. Await the author checks
+in pending_test.txt; fix reported failures in their originating issue. Technical
+fixture success is separate from physical-input/visual acceptance. Earlier
+checkpoint sections below are retained history, not additional current backlog.
 Do not merge or close V5.13 issues before the author's confirmation.
 
 ## 5.13.11 - Remaining V5.13 work (#616/#596)
