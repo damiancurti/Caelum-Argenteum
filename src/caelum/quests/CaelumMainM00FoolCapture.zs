@@ -178,6 +178,7 @@ class CaelumM00FoolEssence : Actor
     override void Tick()
     {
         Super.Tick();
+        CaelumArcanaSources.Register(self);
         if (CaptureUser == null) return;
         let record = CaptureUser.GetPersistentCharacterState(false);
         if (!CaelumMainM00FoolCapture.CanApproach(CaptureUser, self)

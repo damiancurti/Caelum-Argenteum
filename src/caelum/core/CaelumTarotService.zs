@@ -7,6 +7,7 @@ class CaelumTarotService : Object play
     static void EnsureRevision(CaelumPersistentCharacterState record)
     {
         if (record == null || !CaelumPlayerAuthority.OwnsRecord(CaelumPlayer(record.Owner), record)) return;
+        CaelumUnifiedTarot.Ensure(record);
         if (record == null || record.TarotPowerRevision >= REVISION) return;
         // Los saves anteriores no tenían carta equipada: no interpretar el
         // cero predeterminado ni el cursor local como una elección de El loco.
@@ -122,6 +123,7 @@ class CaelumTarotService : Object play
             || (user.player != null && (user.player.cheats & CF_PREDICTING))) return;
         EnsureRevision(record);
         record.TarotCooldownTics = Max(0, record.TarotCooldownTics - elapsedTics);
+        CaelumUnifiedTarot.Advance(user,record,elapsedTics);
         if (record.TarotEffectTics > 0)
         {
             record.TarotEffectTics = Max(0, record.TarotEffectTics - elapsedTics);
@@ -237,13 +239,14 @@ class CaelumTarotService : Object play
 
     static bool CanCaptureArcana(CaelumPersistentCharacterState record, int card)
     {
-        if (record == null || HasTarotCard(record, card)) return false;
+        if (record == null || card < 0 || card >= CaelumConstants.TAROT_CARD_COUNT
+            || HasTarotCard(record, card)) return false;
         if (card == CaelumConstants.TAROT_CUPS_ACE)
             return level.MapName == "MAP02" && record.SewerZupayDefeated;
         if (card == CaelumConstants.TAROT_WANDS_KNIGHT)
             return level.MapName == "MAP03" && record.ArcanaAvailable[card]
                 && CaelumDemoNarrative.PortCardReady(record);
-        return false;
+        return CaelumArcanaSources.AdditionalCard(card) && record.ArcanaAvailable[card];
     }
 
     static bool CanApproach(CaelumPlayer user, CaelumM00FoolEssence essence)
@@ -273,7 +276,9 @@ class CaelumTarotService : Object play
         user.PersistCharacterState();
         EventHandler.SendInterfaceEvent(user.PlayerNumber(), "ca_tarot_capture");
         CaelumNotifications.Notify(user, String.Format(StringTable.Localize("CA_ARCANA_OBTAINED", false),
-            StringTable.Localize(CaelumTarotArt.NameKey(essence.CardId()), false)));
+            CaelumTarotArt.DisplayName(essence.CardId())));
+        if(CountTarotCards(record)==CaelumConstants.TAROT_CARD_COUNT)
+            Feedback(user,"CA_TAROT_UNIFIED_OBTAINED");
         return true;
     }
 
@@ -282,15 +287,18 @@ class CaelumTarotService : Object play
         if (essence == null || !CaelumPlayerAuthority.CanRead(user)) return false;
         if (user == null) return false;
         let record = user.GetPersistentCharacterState(false);
-        if (record == null || HasTarotCard(record, essence.CardId())) return false;
+        if (record == null || essence.CardId()<0 || essence.CardId()>=CaelumConstants.TAROT_CARD_COUNT
+            || HasTarotCard(record, essence.CardId())) return false;
         if (essence.CardId() == CaelumConstants.TAROT_THE_FOOL)
             return level.MapName == "MAP01" && essence.StoryPlaced && CanCaptureMainM00Fool(record);
+        if(CaelumArcanaSources.AdditionalCard(essence.CardId()) && !(essence is 'CaelumRewardEssence'))return false;
         return CanCaptureArcana(record, essence.CardId());
     }
 
     static bool IsRevealedFor(CaelumM00FoolEssence essence, CaelumPersistentCharacterState record)
     {
-        if (essence == null || record == null) return false;
+        if (essence == null || record == null || essence.CardId()<0
+            || essence.CardId()>=CaelumConstants.TAROT_CARD_COUNT) return false;
         return essence.CardId() == CaelumConstants.TAROT_THE_FOOL
             ? record.MainM00FoolRevealed : record.ArcanaRevealed[essence.CardId()];
     }

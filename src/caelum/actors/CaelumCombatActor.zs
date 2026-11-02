@@ -3020,8 +3020,11 @@ class CaelumCombatActor : Actor
             CaelumSleepRules.ScaleDamage(self,Super.TakeSpecialDamage(inflictor,source,damage,mod)));
     }
 
+    virtual bool IsTarotDeity(){return false;}
+
     override int DamageMobj(Actor inflictor,Actor source,int damage,Name mod,int flags,double angle)
     {
+        if(IsTarotDeity() && !CaelumUnifiedTarot.Active(CaelumPlayer(source)))return 0;
         if(!CaelumArcaneSun.AllowsDamage(inflictor,self)
             || (!(flags & DMG_FORCED) && !CaelumRedemption.AllowsDamage(source,self,mod)))return 0;
         EnsureCombatPersonality();

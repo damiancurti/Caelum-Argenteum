@@ -6,13 +6,15 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.13.0.** Obtain and update the complete repository, validate
+**Current release: 5.13.1.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-V5.13 is in progress. The #439 specification checkpoint records all 22 approved
-Major powers, their current implementation and unresolved design fields in SYSTEMS.
-This documentation patch adds no gameplay. #440-442 precede the standalone
-multiplayer finale #596-601. V5.12 remains the last fully accepted gameplay delivery.
+V5.13 is in progress. #441 adds capture-only reward sources for the remaining
+75 essences, full-collection feedback and the unified Tarot activation. The
+World equipment implementation is still delivered by #440; final author checks
+wait for the complete release. #439 records the Major specification; #440/442
+and the standalone multiplayer finale #596-601 remain in progress. V5.12 is the
+last fully accepted gameplay delivery.
 
 The 5.12.7a correction (#602) lets valid mansion spirits confirm and restore
 native dialogue pages. New multiplayer session configurations initialize controls

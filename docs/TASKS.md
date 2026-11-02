@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.13.0** - 2026-10-31.
+Documentation version: **5.13.1** - 2026-10-31.
+
+## 5.13.1 - Capture sources and unified Tarot (#441)
+
+#441: native verification and official-package checks completed; focused PR
+ready for review. World selection remains in #440.
+Continue approved #440/#442 changes and resolve per-power design fields in
+SYSTEMS. Only after those issues, implement standalone #596-601. Keep the final
+author suite deferred until the full version is ready.
 
 ## 5.13.0 - Major Arcana specification audit (#439)
 

@@ -1,6 +1,32 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.13.0** - 2026-10-31.
+Documentation version: **5.13.1** - 2026-10-31.
+
+## 5.13.1 - Capture sources and unified Tarot (#441)
+
+Mission rewards place an essence on the floor at a caller-authored position;
+only the existing reveal/Box/deck capture transaction grants ownership. The
+original Fool, Ace of Cups and Knight of Wands gates remain unchanged. The other
+75 placements belong to V5.16. Repeated reward calls share a world source while
+eligibility and collection remain personal. Interrupted/duplicate captures do
+not grant or consume cards. All 78 fronts reuse the owned #15 illustrations.
+
+Collecting all 78 without consuming them enables the unified essence. Inventory
+U activates it only with World equipped: 1,000 Anima, 60 active seconds and the
+shared 600-second Tarot cooldown. It permits damage to deities, without adding
+a damage multiplier; ordinary defenses and narrative scene protections remain.
+Palomo implements the deity contract; Selene has no actor in this delivery.
+The effect ends on death/expiry; ownership persists. Revision 1 initializes only
+the new timer, leaving prior collection/progress unchanged. Retain original
+saves and the previous checkout for rollback.
+
+The final official package passed two-client native capture and reload runs:
+106 assertions per client for capture/activation and 7 per client for recovery,
+plus completion markers and matching native synchronization checks. All 18,006
+package members match source; front generation is byte-identical on repeated
+runs. Evidence: assets/validation_v5_13_1/results.json. #440 still supplies normal
+World equipment selection; tests prepare that selection diagnostically. Final
+author scenarios wait for all V5.13 work; no author acceptance is claimed.
 
 ## 5.13.0 - Major Arcana specification audit (#439), 2026-10-31
 

@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.13.0** - 2026-10-31.
+Documentation version: **5.13.1** - 2026-10-31.
+
+## 5.13.1 - Capture sources and unified Tarot (#441)
+
+#441 implements capture-only reward hooks, collection completion and the unified
+Tarot power. Rules and migration are in SYSTEMS; source/visual provenance is in
+ASSETS. Native capture, interruption, recovery, expiry and death checks pass on two
+clients with matching synchronization checks; the official package matches src.
+Normal World equipment integration (#440) and author acceptance remain pending.
+V5.13 is incomplete.
 
 ## 5.13.0 - Major Arcana specification audit (#439)
 

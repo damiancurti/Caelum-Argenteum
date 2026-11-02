@@ -169,6 +169,8 @@ class CaelumWorldClock : Inventory
 // No conserva una copia del reloj: siempre consulta el Inventory viajero.
 class CaelumWorldClockTicker : StaticEventHandler
 {
+    CaelumM00FoolEssence ArcanaSources[CaelumConstants.TAROT_CARD_COUNT];
+    int ArcanaSourcesReadyAfter;
     CaelumPhysicsMapState AltitudeMap;
     CaelumConnectedWaterMap WaterMap;
     Array<CaelumClimateRegion> ClimateMarkers;
@@ -176,6 +178,10 @@ class CaelumWorldClockTicker : StaticEventHandler
     // alcanza también esos mapas sin depender de registrar otro handler.
     override void WorldLoaded(WorldEvent e)
     {
+        // Cada esencia se registra en su propio Tick tras cargar. Esperar un
+        // ciclo completo impide crear un duplicado antes de recibir ese registro.
+        for(int card=0;card<CaelumConstants.TAROT_CARD_COUNT;card++)ArcanaSources[card]=null;
+        ArcanaSourcesReadyAfter=level.time+1;
         CaelumPhysicsWorld.Initialize();CaelumConnectedWaterMap.Initialize();
         // Un censo tipado por carga restaura marcadores de mapas/save antiguos.
         // El coste posterior es O(1) por consulta y altas/bajas por evento.
@@ -186,12 +192,14 @@ class CaelumWorldClockTicker : StaticEventHandler
 
     override void WorldThingSpawned(WorldEvent e)
     {
+        CaelumArcanaSources.Register(CaelumM00FoolEssence(e.Thing));
         let marker=CaelumClimateRegion(e.Thing);if(marker==null)return;
         for(int i=0;i<ClimateMarkers.Size();i++)if(ClimateMarkers[i]==marker)return;
         ClimateMarkers.Push(marker);
     }
     override void WorldThingDestroyed(WorldEvent e)
     {
+        CaelumArcanaSources.Forget(CaelumM00FoolEssence(e.Thing));
         if(!(e.Thing is 'CaelumClimateRegion'))return;
         for(int i=0;i<ClimateMarkers.Size();i++)if(ClimateMarkers[i]==e.Thing)
         {ClimateMarkers.Delete(i);return;}

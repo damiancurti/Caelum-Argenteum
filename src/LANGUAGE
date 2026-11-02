@@ -7412,3 +7412,66 @@ CA_ARENA_TEAM_WINNER = "Equipo ganador: %d";
 CA_ARENA_SURRENDER = "Rendirse y abandonar el combate";
 CA_ARENA_RETURN = "Proponer el regreso al lugar de salida";
 CA_ARENA_CLOSE = "Cerrar";
+
+// #441: capture-only sources and full collection.
+
+[enu default]
+CA_ARCANA_SOURCE_NAME = "Tarot essence";
+CA_ARCANA_SOURCE_REVEAL = "An essence awaits capture in your Box. Your physical deck must be inside.";
+CA_TAROT_UNIFIED_OBTAINED = "All 78 essences collected. The unified Tarot essence is available with The World equipped.";
+CA_TAROT_MAJOR_01 = "The Magician";
+CA_TAROT_MAJOR_02 = "The High Priestess";
+CA_TAROT_MAJOR_03 = "The Empress";
+CA_TAROT_MAJOR_04 = "The Emperor";
+CA_TAROT_MAJOR_05 = "The Hierophant";
+CA_TAROT_MAJOR_06 = "The Lovers";
+CA_TAROT_MAJOR_07 = "The Chariot";
+CA_TAROT_MAJOR_08 = "Justice";
+CA_TAROT_MAJOR_09 = "The Hermit";
+CA_TAROT_MAJOR_10 = "Wheel of Fortune";
+CA_TAROT_MAJOR_11 = "Strength";
+CA_TAROT_MAJOR_12 = "The Hanged Man";
+CA_TAROT_MAJOR_13 = "Death";
+CA_TAROT_MAJOR_14 = "Temperance";
+CA_TAROT_MAJOR_15 = "The Devil";
+CA_TAROT_MAJOR_16 = "The Tower";
+CA_TAROT_MAJOR_17 = "The Star";
+CA_TAROT_MAJOR_18 = "The Moon";
+CA_TAROT_MAJOR_19 = "The Sun";
+CA_TAROT_MAJOR_20 = "Judgement";
+CA_TAROT_MAJOR_21 = "The World";
+
+[es]
+CA_ARCANA_SOURCE_NAME = "Esencia del Tarot";
+CA_ARCANA_SOURCE_REVEAL = "Una esencia espera ser capturada en tu Caja. Tu mazo físico debe estar dentro.";
+CA_TAROT_UNIFIED_OBTAINED = "Reuniste las 78 esencias. La esencia unificada del Tarot está disponible con El Mundo equipado.";
+CA_TAROT_MAJOR_01 = "El mago";
+CA_TAROT_MAJOR_02 = "La sacerdotisa";
+CA_TAROT_MAJOR_03 = "La emperatriz";
+CA_TAROT_MAJOR_04 = "El emperador";
+CA_TAROT_MAJOR_05 = "El sumo sacerdote";
+CA_TAROT_MAJOR_06 = "Los enamorados";
+CA_TAROT_MAJOR_07 = "El carro";
+CA_TAROT_MAJOR_08 = "La justicia";
+CA_TAROT_MAJOR_09 = "El ermitaño";
+CA_TAROT_MAJOR_10 = "la rueda de la fortuna";
+CA_TAROT_MAJOR_11 = "La fuerza";
+CA_TAROT_MAJOR_12 = "El colgado";
+CA_TAROT_MAJOR_13 = "La muerte";
+CA_TAROT_MAJOR_14 = "La templanza";
+CA_TAROT_MAJOR_15 = "El diablo";
+CA_TAROT_MAJOR_16 = "La torre";
+CA_TAROT_MAJOR_17 = "La estrella";
+CA_TAROT_MAJOR_18 = "La luna";
+CA_TAROT_MAJOR_19 = "El Sol";
+CA_TAROT_MAJOR_20 = "El juicio";
+CA_TAROT_MAJOR_21 = "El mundo";
+
+[enu default]
+CA_TAROT_UNIFIED_ACTION = "U: Unified essence";
+CA_TAROT_UNIFIED_REQUIRES = "Requires all 78 essences and The World equipped.";
+CA_TAROT_UNIFIED_ACTIVE = "Unified Tarot active: deity damage allowed for 60 s. Cost: 1,000 Anima.";
+[es]
+CA_TAROT_UNIFIED_ACTION = "U: Esencia unificada";
+CA_TAROT_UNIFIED_REQUIRES = "Requiere las 78 esencias y El Mundo equipado.";
+CA_TAROT_UNIFIED_ACTIVE = "Tarot unificado activo: permite herir deidades durante 60 s. Coste: 1.000 Ánima.";

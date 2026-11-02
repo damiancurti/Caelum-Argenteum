@@ -5925,6 +5925,8 @@ class CaelumPlayer : DoomPlayer
             return;
         }
         CaelumUtilityStaff.EndEmission(self);
+        let tarotDeathRecord=GetPersistentCharacterState(false);
+        if(tarotDeathRecord!=null)tarotDeathRecord.UnifiedTarotTics=0;
         VoluntaryJumpActive = false;
         let dyingRest=CaelumRestState.Get(self);
         if(dyingRest!=null)dyingRest.Exhaustion=false;

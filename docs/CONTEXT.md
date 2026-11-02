@@ -1,11 +1,11 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.13.0** - 2026-10-31.
+Documentation version: **5.13.1** - 2026-10-31.
 
-**V5.13:** #439 specification audited in SYSTEMS; #440-442 next, #596-601 last.
-Approved: only Major passives need equipping; block ordinary overflow on unequip.
-Unified essence allows deity damage. Other fields await replies.
-Manual suite deferred.
+**V5.13:** #439 specification PR605; #441 capture/unified native checks passed.
+Captures grant ownership; missions place sources. All78 enable unified
+power; World equipped,1000 Anima/60s/600s. #440/#442 next; #596-601 last.
+Author suite deferred; SYSTEMS and validation_v5_13_1.
 
 **V5.12 accepted/merged:** HISTORY; validation_v5_12_7/7a. Private timer-fixed4.14.2.
 Siege1.33-6.48FPS/sharedGPU; no Internet claim. Canonical LF indexes (#604).

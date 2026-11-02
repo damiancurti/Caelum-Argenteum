@@ -78,7 +78,8 @@ class CaelumAbsentDamage : Object play
 
     static int NativeDamage(CaelumCombatActor victim,Actor source,int damage,Name mod)
     {
-        if(damage<=0 || victim.bInvulnerable || victim.bNoDamage || victim.bSpectral
+        if(damage<=0 || (victim.IsTarotDeity() && !CaelumUnifiedTarot.Active(CaelumPlayer(source)))
+            || victim.bInvulnerable || victim.bNoDamage || victim.bSpectral
             || (!victim.bShootable && !victim.bVulnerable)
             || !CaelumRedemption.AllowsDamage(source,victim,mod))return 0;
         int retained=victim.GetModifiedDamage(mod,damage,true,source,source,DMG_NO_ARMOR);
