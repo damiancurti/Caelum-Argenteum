@@ -1,6 +1,11 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.13.14** - 2026-11-01.
+Documentation version: **5.13.15** - 2026-11-01.
+
+## 5.13.15 — Reachable author fixtures and observable checks (#596)
+
+Review fixtures now place both capture clients and the essence inside the real ring, with an immobile Palomo target. Scene 3 reports awakening factors and durability via F1; scene 4 includes aimed rock stops and distinguishes Tarot containment from Strength Use. Capture Arcana retains both approved ring and sewer venues, as clarified by the author. Native Use opens the essence for both clients; this exposed a separate second-speaker revelation defect tracked under #441. Capture completion remains pending that correction; assets/validation_v5_13_15 records the failed intermediate run. No campaign geometry changes.
+
 
 ## 5.13.14 — Four-entry main menu (#597)
 
