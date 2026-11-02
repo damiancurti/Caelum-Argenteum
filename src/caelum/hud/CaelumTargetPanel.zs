@@ -20,7 +20,14 @@ class CaelumTargetPanel : Object ui
         double height=(1+(stats?6:0)+actionRows)*row+2*CaelumTargetPanelData.PADDING*scale.Y;
         Screen.Dim(CaelumTargetPanelData.BACKGROUND,CaelumTargetPanelData.OPACITY,int(x),int(y),int(width*scale.X),int(height));
         double textY=y+CaelumTargetPanelData.PADDING*scale.Y;
-        Text(font,Font.CR_GOLD,info.Title,Screen.GetWidth()/2,textY,width-16,scale);textY+=row;
+        String title=info.Title;int titleColor=Font.CR_GOLD;
+        let match=CaelumStandaloneMatch.View();
+        if(other!=null && match!=null && match.TeamsEnabled() && match.Member(other.PlayerNumber()))
+        {
+            int team=match.Team[other.PlayerNumber()];
+            title=CaelumStandaloneMatch.TeamName(team).." - "..title;titleColor=team==0?Font.CR_RED:Font.CR_LIGHTBLUE;
+        }
+        Text(font,titleColor,title,Screen.GetWidth()/2,textY,width-16,scale);textY+=row;
         if(stats)
         {
             String resources[4];

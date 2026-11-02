@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `cb95f687bca90fc8c74078cee005893ac72649c4feb21066fcb0adae06c9a3a1`. Locations include every definition; the last one per language wins.
+SHA-256: `0e502504101bb00f32dfd87887fe31db9dfe5a3c1ef3fa157ed872f6b6918f29`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -132,7 +132,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_MAP07 | 1 | CA_MAP07_NAME | CA_MAP07_NAME |
 | CA_MAP08 | 1 | CA_MAP08_NAME | CA_MAP08_NAME |
 | CA_MAR | 1 | CA_MAR_DEL_PLATA_NAME | CA_MAR_DEL_PLATA_NAME |
-| CA_MATCH | 27 | CA_MATCH_ADDRESS | CA_MATCH_WINNER |
+| CA_MATCH | 30 | CA_MATCH_ADDRESS | CA_MATCH_WINNER |
 | CA_MATE | 20 | CA_MATE_CONFIRM_DISCARD | CA_MATE_WASHED |
 | CA_MATERIAL | 126 | CA_MATERIAL_ALCOHOL | CA_MATERIAL_YERBA_MATE |
 | CA_MAZE | 26 | CA_MAZE_CARD_GUARD | CA_MAZE_ZUPAY_GUARD |

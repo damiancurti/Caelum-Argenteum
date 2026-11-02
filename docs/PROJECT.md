@@ -1,6 +1,13 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.13.5** - 2026-11-01.
+Documentation version: **5.13.6** - 2026-11-01.
+
+## 5.13.6 - Standalone Team Deathmatch (#599)
+
+Automatic saved teams, shared score/victory and teammate penalties extend the
+isolated match lifecycle. Four-peer native validation is tracked separately in
+assets/validation_v5_13_6. Capture and hunt remain #600/#601; final author
+acceptance and PR integration are still outstanding.
 
 ## 5.13.5 - Individual standalone Deathmatch (#598)
 

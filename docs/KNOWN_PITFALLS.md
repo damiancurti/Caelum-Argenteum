@@ -4,6 +4,20 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-213 - Repeating MAPINFO map definitions resets omitted properties
+
+Status/evidence: ENGINE-VERIFIED, #599 /5.13.6, 2026-11-01; four local
+4.14.2-ca435-timer peers, validation_v5_13_6, runs32534/32536.
+
+A standalone override containing only cluster=0 removed the venue's teamdamage
+and music. Forced diagnostic kills still worked, masking the missing normal
+friendly fire. The saved level confirmed teamdamage0. Preserve the full authored
+map properties when changing hub membership; generate campaign and standalone
+definitions from the same venue source. Test at least one unforced damage path.
+The corrected native run permits teammate damage and applies the approved score
+penalty. No campaign geometry changed. This is functional evidence, not Internet
+latency, frame-presentation performance or author acceptance.
+
 ## CA-KP-212 - Native respawn substitutes stored player references
 
 Status/evidence: ENGINE-VERIFIED, #598 /5.13.5, 2026-11-01; two native

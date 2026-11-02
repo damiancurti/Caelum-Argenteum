@@ -103,6 +103,11 @@ def generate() -> None:
     model.write_text(model.read_text(encoding='utf-8'),encoding='utf-8',newline='\n')
     info.append(f'DoomEdNums {{ {art["editor_number"]}=CaelumArenaRingFrame }}')
     (ROOT / "src/caelum/data/arenas.mapinfo").write_text("\n".join(info)+"\n", encoding="utf-8", newline="\n")
+    # A MAPINFO redefinition resets omitted properties, not just the cluster.
+    standalone=['// Datos compartidos con las arenas; cambia solamente el hub.',
+                'gameinfo { PlayerClasses = "CaelumStandalonePlayer" }']
+    standalone.extend(line.replace('cluster=434','cluster=0') for line in info if line.startswith('map '))
+    (ROOT / "src/caelum/data/standalone.mapinfo").write_text("\n".join(standalone)+"\n",encoding="utf-8",newline="\n")
 
 
 if __name__ == "__main__":

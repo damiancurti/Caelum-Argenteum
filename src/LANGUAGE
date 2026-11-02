@@ -7706,3 +7706,13 @@ CA_MATCH_SELF_DEATH = "%s perdió un punto.";
 CA_MATCH_RESPAWN = "Respawning in %d s";
 [es]
 CA_MATCH_RESPAWN = "Reaparición en %d s";
+
+[enu default]
+CA_MATCH_TEAM_RED = "Red team";
+CA_MATCH_TEAM_BLUE = "Blue team";
+CA_MATCH_TEAM_KILL = "%s eliminated teammate %s (-1).";
+
+[es]
+CA_MATCH_TEAM_RED = "Equipo rojo";
+CA_MATCH_TEAM_BLUE = "Equipo azul";
+CA_MATCH_TEAM_KILL = "%s eliminó a su compañero %s (-1).";
