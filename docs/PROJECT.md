@@ -1,6 +1,11 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.13.16** - 2026-11-01.
+Documentation version: **5.13.17** - 2026-11-01.
+
+## 5.13.17 — Tarot review guidance and final candidate (#440)
+
+The shared Tarot help now states the three base slots plus acquired Hermit/Devil bonuses, avoiding the obsolete three-card maximum. Acquired passives, native essence capture, clean four-entry menus and observable awakening/rock fixtures form the review candidate. Ring and sewer remain selectable for Capture Arcana. Final targeted native results and captures are in assets/validation_v5_13_17; all author checks remain pending.
+
 
 ## 5.13.16 — Per-character essence dialogue admission (#441)
 
