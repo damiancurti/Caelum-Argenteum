@@ -4,6 +4,7 @@ class CaelumJusticeGeometry : Object
     const REVISION=1;
     const WIDTH=768;
     static clearscope int SectorIndex(String map) {
+        if(map==CaelumHuntData.Map())return CaelumHuntData.JUSTICE_SECTOR;
         if(map=="CABAIRES")return 59;
         if(map=="CAH000")return 5;
         if(map=="CAH001")return 5;
@@ -243,6 +244,7 @@ class CaelumJusticeGeometry : Object
         if(map=="TTAROT")return 216;
         return -1; }
     static clearscope vector3 Center(String map) {
+        if(map==CaelumHuntData.Map())return CaelumHuntData.JusticeCenter();
         if(map=="CABAIRES")return (6848,4160,0);
         if(map=="CAH000")return (-19840,-11136,0);
         if(map=="CAH001")return (-18304,-11136,0);

@@ -7736,3 +7736,28 @@ CA_CAPTURE_CARRYING = "Llevas el arcano enemigo";
 CA_CAPTURE_TAKEN = "%s tomó el arcano de %s.";
 CA_CAPTURE_DROPPED = "El arcano de %s cayó al suelo.";
 CA_CAPTURE_SCORED = "%s capturó un arcano (%d).";
+
+[es]
+CA_HUNT_MAP = "Laberinto de Palomo";
+CA_HUNT_FOUND = "%s: %d / 78 esencias";
+CA_HUNT_CAPTURED = "%s fue capturado por Palomo.";
+CA_HUNT_RESCUED = "%s ha sido rescatado.";
+CA_HUNT_COUNT = "Esencias: %d / 78";
+CA_HUNT_WAIT_RESCUE = "Cautivo: espera el rescate de un compañero.";
+CA_HUNT_HELP = "Mantén Usar 3 s junto a un cautivo para rescatarlo.";
+CA_HUNT_DOOR = "Puerta temporizada";
+CA_HUNT_FLOOR = "Suelo que cae";
+CA_HUNT_TEAM = "El equipo";
+CA_HUNT_PALOMO = "Palomo";
+[enu default]
+CA_HUNT_MAP = "Palomo's labyrinth";
+CA_HUNT_FOUND = "%s: %d / 78 essences";
+CA_HUNT_CAPTURED = "%s was captured by Palomo.";
+CA_HUNT_RESCUED = "%s has been rescued.";
+CA_HUNT_COUNT = "Essences: %d / 78";
+CA_HUNT_WAIT_RESCUE = "Captured: wait for a teammate to rescue you.";
+CA_HUNT_HELP = "Hold Use for 3 s beside a captive to rescue them.";
+CA_HUNT_DOOR = "Timed door";
+CA_HUNT_FLOOR = "Falling floor";
+CA_HUNT_TEAM = "The team";
+CA_HUNT_PALOMO = "Palomo";

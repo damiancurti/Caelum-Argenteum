@@ -21,6 +21,8 @@ class CaelumTargetPanel : Object ui
         Screen.Dim(CaelumTargetPanelData.BACKGROUND,CaelumTargetPanelData.OPACITY,int(x),int(y),int(width*scale.X),int(height));
         double textY=y+CaelumTargetPanelData.PADDING*scale.Y;
         String title=info.Title;int titleColor=Font.CR_GOLD;
+        let essence=CaelumHuntEssence(info.Subject);
+        if(essence!=null)title=CaelumTarotArt.DisplayName(essence.Card);
         let match=CaelumStandaloneMatch.View();
         let captureBase=CaelumCaptureBase(info.Subject);let objective=CaelumCaptureObjective(info.Subject);
         if(captureBase!=null || objective!=null)

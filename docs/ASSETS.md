@@ -1,6 +1,16 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.13.7** - 2026-11-01.
+Documentation version: **5.13.8** - 2026-11-01.
+
+## Cooperative hunt maze (#601)
+
+assets/hunt/LAYOUT.json and generate_hunt.py deterministically create CAHUNT,
+its navigation index and placement manifest. It reuses owned sewer textures,
+Tarot card art, trap sprites and Palomo's sprites without raster modification.
+The appended Justice room uses the existing approved geometry. No campaign map
+or archived legacy geometry is changed. This map is an authored game labyrinth,
+not a historical site. Generated output and repeatability are checked separately
+from native appearance and author acceptance.
 
 Standalone resident presets (#597) reuse the four existing residents' owned
 sprite banks and scale for idle, walking, crouching, attacks, rest and death.

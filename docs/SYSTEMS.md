@@ -1,6 +1,33 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.13.7** - 2026-11-01.
+Documentation version: **5.13.8** - 2026-11-01.
+
+## Cooperative standalone Tarot hunt (#601)
+
+The author approved a separate 128 by128 metre maze with four connected quarters,
+minimum2 metre passages, shortcuts, 78 distributed distinct essences and24 traps:
+six per quarter, eight each of timed doors, falling floors and crushers. Traps
+rearm after60 active seconds. The existing sewer textures/headroom/light and
+native trap mechanisms are reused; geometry/data come from assets/hunt/LAYOUT.json.
+Every quarter remains reachable when all trap footprints are unavailable.
+
+The saved match owns its78-card collection,24 traps and one Palomo. Native
+contacts collect once for everyone, without adding campaign Tarot ownership.
+Palomo uses his existing body/profile/speed/immunity and the current visual
+range, identification and30-second memory. A generated walkable-cell graph
+serves bounded cached routes; no global actor scan tracks players. The eight
+participants are the only perception candidates. Contact captures without damage.
+
+A captive remains in the opposite starting/captivity foyer, retaining equipment
+and captured resources, unable to act. A free teammate holds Use within its
+existing use range and sight for3 active seconds; release/range loss resets
+progress. Trap fatal outcomes capture instead of creating a corpse, retaining
+the resource snapshot from trap entry. Teammate damage is disabled. Collecting
+all78 distinct essences wins once; all participants captured loses; there is no
+time limit. Native common saves preserve collection, captivity, traps and memory;
+a unanimous rematch recreates the map and resident presets. Campaign files are
+not touched. Falling sectors return to their upper position when they rearm,
+so survivors can wait for that return; surrounding routes bypass every trap.
 
 ## Standalone Capture the Arcana (#600)
 

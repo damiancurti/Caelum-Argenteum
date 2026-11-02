@@ -14,6 +14,8 @@ class CaelumStandalonePlayer : CaelumPlayer
     }
     override void Die(Actor source,Actor inflictor,int dmgflags,Name meansOfDeath)
     {
+        let hunt=CaelumTarotHunt.View();
+        if(hunt!=null){hunt.CapturePlayer(self,true);return;}
         Super.Die(source,inflictor,dmgflags,meansOfDeath);
         let match=CaelumStandaloneMatch.View();
         if(health<=0 && match!=null)match.RecordDeath(self,source);
@@ -22,6 +24,7 @@ class CaelumStandalonePlayer : CaelumPlayer
     {
         let match=CaelumStandaloneMatch.View();
         if(match!=null && (!match.Started || match.Finished))return 0;
+        if(match!=null && match.Hunt!=null && (CaelumTarotHunt.Held(self) || (source!=self && source is 'CaelumStandalonePlayer')))return 0;
         return Super.DamageMobj(inflictor,source,damage,mod,flags,angle);
     }
     override void Tick()

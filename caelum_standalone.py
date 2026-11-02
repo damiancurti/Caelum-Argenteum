@@ -96,7 +96,7 @@ def prepare(selection: dict, directory: Path, engine: Path, iwad: Path,
            '+sb_cooperative_enable', '0',
            '+ca_standalone_preset', str(selection['preset'])]
     if selection['role'] == 0:
-        cmd += ['+map', 'CARING' if session['venue'] == 0 else 'CASEWER']
+        cmd += ['+map', 'CAHUNT' if session['mode']==3 else 'CARING' if session['venue'] == 0 else 'CASEWER']
     write_new(directory/'command.json', (json.dumps(cmd, indent=2)+'\n').encode())
     return cmd, session
 

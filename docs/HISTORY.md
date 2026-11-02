@@ -1,6 +1,31 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.13.7** - 2026-11-01.
+Documentation version: **5.13.8** - 2026-11-01.
+
+## 5.13.8 - Cooperative hunt (#601, 2026-11-01)
+
+The author approved the large distributed maze, Palomo's existing physical and
+perception rules, no teammate damage, rescue, pre-trap resource preservation,
+and24 traps rearming every60 active seconds. Implementation and its216 native
+assertions are recorded in assets/validation_v5_13_8. Four real local clients
+verified distinct collection, native contact capture, pre-trap resources,
+continuous Use rescue, pursuit/last-position memory, all three trap mechanisms,
+the full60-second door cycle, shared results, common recovery and clean rematch.
+The rescue fixture uses native console +use/-use commands, not physical keyboard
+input. Earlier diagnostics are retained: native compilation rejected vector
+constant arrays, then pursuit exposed blocked approach steps. Scalar generated
+tables, bounded route collision checks and movement-to-contact corrected those
+failures. Final pursuit checks include reaching a solid player without teleport.
+
+Final runtime: a6e66af1309b98945321cab51eb157cedd58b53498641e80a0b2d606822e15ca.
+All packaged members equal src. Map/data regeneration is byte-identical; all2395
+non-trap nodes remain connected when every trap footprint is blocked. Four
+launcher isolation checks and project validation pass. Native ES/EN HUD and
+map captures are inspected. The20 rescue assertions use r3; r4 changes only
+Palomo's approach movement, which that fixture disables. Other final assertions
+use r4. Computer Use still reports a missing native pipe; no physical-input,
+Internet or frame-presentation performance acceptance is inferred.
+No author acceptance is claimed. #600 was committed/pushed as cf00beda2, PR612.
 
 ## 5.13.7 - Capture the Arcana (#600, 2026-11-01)
 

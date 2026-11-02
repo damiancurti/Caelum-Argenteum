@@ -6,6 +6,7 @@ class CaelumStandaloneMatch : Object play
     int Team[MAXPLAYERS];
     bool Started,Finished,Restarting;
     CaelumCaptureArcana Capture;
+    CaelumTarotHunt Hunt;
 
     static clearscope CaelumStandaloneMatch View()
     {
@@ -18,7 +19,7 @@ class CaelumStandaloneMatch : Object play
         if(!(first is 'CaelumStandalonePlayer') || !(second is 'CaelumStandalonePlayer'))return -1;
         let match=View();if(match==null || !match.Started || match.Finished)return 0;
         if(!match.Member(first.PlayerNumber()) || !match.Member(second.PlayerNumber()))return 0;
-        if(first==second)return 0;
+        if(first==second || match.Mode==CaelumStandaloneData.TAROT_HUNT)return 0;
         return !match.TeamsEnabled() || match.Team[first.PlayerNumber()]!=match.Team[second.PlayerNumber()]?1:0;
     }
     clearscope bool TeamsEnabled(){return Mode==CaelumStandaloneData.TEAM_DEATHMATCH || Mode==CaelumStandaloneData.CAPTURE_ARCANA;}
@@ -29,7 +30,7 @@ class CaelumStandaloneMatch : Object play
     }
     static clearscope String TeamName(int team)
     {return StringTable.Localize(team==0?'CA_MATCH_TEAM_RED':'CA_MATCH_TEAM_BLUE',false);}
-    clearscope String WinnerName(){return TeamsEnabled()?TeamName(Winner):players[Winner].GetUserName();}
+    clearscope String WinnerName(){if(Hunt!=null)return StringTable.Localize(Winner==0?'CA_HUNT_TEAM':'CA_HUNT_PALOMO',false);return TeamsEnabled()?TeamName(Winner):players[Winner].GetUserName();}
     void AssignTeams()
     {
         int order=0;for(int i=0;i<MAXPLAYERS;i++)if(Member(i)){Team[i]=order%2;order++;}
@@ -70,7 +71,10 @@ class CaelumStandaloneMatch : Object play
             if(Capture==null){Capture=new('CaelumCaptureArcana');Capture.Initialize(self);}
             Capture.Tick(self);
         }
-        Elapsed++;Evaluate();
+        Elapsed++;
+        if(Mode==CaelumStandaloneData.TAROT_HUNT)
+        {if(Hunt==null){Hunt=new('CaelumTarotHunt');Hunt.Initialize();}Hunt.Tick(self);return;}
+        Evaluate();
     }
     void RecordDeath(CaelumStandalonePlayer victim,Actor source)
     {
@@ -158,7 +162,7 @@ class CaelumStandaloneMatchEvents : StaticEventHandler
         if(Store==null)
         {
             int mode=NextMode>0?NextMode:CVar.GetCVar('ca_standalone_mode').GetInt();
-            if((mode!=CaelumStandaloneData.DEATHMATCH && mode!=CaelumStandaloneData.TEAM_DEATHMATCH && mode!=CaelumStandaloneData.CAPTURE_ARCANA)
+            if((mode!=CaelumStandaloneData.DEATHMATCH && mode!=CaelumStandaloneData.TEAM_DEATHMATCH && mode!=CaelumStandaloneData.CAPTURE_ARCANA && mode!=CaelumStandaloneData.TAROT_HUNT)
                 || !(players[0].mo is 'CaelumStandalonePlayer'))return;
             Store=CaelumStandaloneMatchStore(Actor.Spawn('CaelumStandaloneMatchStore',(0,0,0),NO_REPLACE));
             Store.Match=new('CaelumStandaloneMatch');Store.Match.Revision=1;
@@ -180,6 +184,8 @@ class CaelumStandaloneScoreHUD : Object ui
         int seconds=Max(0,(CaelumStandaloneData.TIME_LIMIT_TICS-match.Elapsed+TICRATE-1)/TICRATE);
         String line=match.Finished?String.Format(StringTable.Localize('CA_MATCH_WINNER',false),match.WinnerName())
             :seconds>0?String.Format("%02d:%02d",seconds/60,seconds%60):StringTable.Localize('CA_MATCH_OVERTIME',false);
+        if(match.Hunt!=null && !match.Finished)
+            line=String.Format(StringTable.Localize('CA_HUNT_COUNT',false),match.Hunt.Collected) .. " | " .. StringTable.Localize(match.Hunt.Captive(consoleplayer)?'CA_HUNT_WAIT_RESCUE':'CA_HUNT_HELP',false);
         if(match.TeamsEnabled() && match.Member(consoleplayer))
             line=String.Format("%s | %s: %d - %s: %d | %s",CaelumStandaloneMatch.TeamName(match.Team[consoleplayer]),CaelumStandaloneMatch.TeamName(0),match.TeamScore(0),CaelumStandaloneMatch.TeamName(1),match.TeamScore(1),line);
         if(match.Capture!=null && match.Capture.Carrying(consoleplayer)>=0)
