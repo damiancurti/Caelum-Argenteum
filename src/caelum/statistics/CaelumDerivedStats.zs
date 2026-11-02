@@ -223,6 +223,12 @@ class CaelumDerivedStats : Object
         double sizeFactor = BodyHeightMeters / 1.8;
         ActorHeight = GetActorHeightForTier(SizeTier);
         ActorRadius = 16.0 * sizeFactor;
+        if(profile.Standalone!=null)
+        {
+            BaseMass=profile.Standalone.BodyMass;BaseMassMultiplier=BaseMass/100.0;
+            ActorHeight=profile.Standalone.BodyHeight;ActorRadius=profile.Standalone.BodyRadius;
+            BodyHeightMeters=ActorHeight/CaelumPhysicsUnits.MAP_UNITS_PER_METER;
+        }
 
         MaximumHealth = CaelumConstants.HEALTH_ANIMA_DAMAGE_SCALE
             * CalculateType1Percent(attributes.Constitution)

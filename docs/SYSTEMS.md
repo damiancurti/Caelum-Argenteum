@@ -1,6 +1,35 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.13.3** - 2026-10-31.
+Documentation version: **5.13.4** - 2026-11-01.
+
+## Standalone match setup (#597, implementation checkpoint)
+
+The localized Multiplayer title-menu entry selects host/join, game, resident and
+the existing ring/sewer venue. GZDoom establishes its native network at process
+startup: `run_dev.bat` uses `caelum_standalone.py` to validate the explicit menu
+request and launch a fresh process. Direct engine launches cannot submit this
+request. The host shares a session manifest with guests; matching engine,
+development IWAD and ordered runtime hashes are required. The host's mode,
+venue and participant count are authoritative; each guest chooses their resident.
+
+These processes use separate configuration/save directories and no external
+profile registry, campaign anchor or custody transaction. The original title
+configuration is restored by starting a new title process after the match exits.
+The runtime-owned activation package selects `CaelumStandalonePlayer` only for
+that process. Personal-graph export and native profile registration reject those
+bodies. A match save cannot become a campaign profile through either path.
+
+The four presets reuse Rulo, Ronnie, Argento and Caella's existing bodies,
+attributes, personality, armor and finite tools; roles follow MAP01's Warrior,
+Explorer, Priest and Mage respectively. No campaign resident is moved or copied
+from a save. A fresh temporary resident supplies the authoritative equipment and
+profile once; revision1 retains that snapshot in the match's personal record.
+The ordinary player's four basic undergarments are materialized by the existing
+clothing migration; no second armor or weapon set is granted.
+Recalculation and native recovery preserve it without granting equipment again.
+Existing campaign profiles have no standalone snapshot and retain their rules.
+The menu foundation does not implement victory or respawn rules: #598–601 own
+those separately. Full-version author acceptance remains outstanding.
 
 ## 5.13.3 - Ordered Tarot runtime foundation (#440, partial)
 

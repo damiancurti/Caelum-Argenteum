@@ -1,6 +1,11 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.13.3** - 2026-10-31.
+Documentation version: **5.13.4** - 2026-11-01.
+
+Standalone resident presets (#597) reuse the four existing residents' owned
+sprite banks and scale for idle, walking, crouching, attacks, rest and death.
+No new artwork, external resource or change to the campaign residents is added.
+Visual verification remains separate from native profile/equipment assertions.
 
 Star furniture volumes reuse the owned furniture envelopes and placed chair
 layouts. `generate_star_geometry.py` deterministically derives the missing

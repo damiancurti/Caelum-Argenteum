@@ -1,0 +1,31 @@
+{
+  "save_sha256": "f29c9b12d034c745479dc8f3168e9eb1b92bfaabaf663e9946a1e5f4d73a3df3",
+  "runtime_sha256": "98e66ebb62ca72188deff3717e4968f099a317423d51b4a60f1f98b42f63a899",
+  "checks": [
+    {
+      "slot": 0,
+      "boundary": "personal_graph",
+      "rejected": true,
+      "reason": "Standalone match characters cannot become campaign profiles."
+    },
+    {
+      "slot": 0,
+      "boundary": "profile_registry",
+      "rejected": true,
+      "reason": "The selected slot has no Caelum character."
+    },
+    {
+      "slot": 1,
+      "boundary": "personal_graph",
+      "rejected": true,
+      "reason": "Standalone match characters cannot become campaign profiles."
+    },
+    {
+      "slot": 1,
+      "boundary": "profile_registry",
+      "rejected": true,
+      "reason": "The selected slot has no Caelum character."
+    }
+  ],
+  "passed": true
+}

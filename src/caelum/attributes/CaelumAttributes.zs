@@ -70,6 +70,7 @@ class CaelumAttributes : Object
         Intelligence = mental + allocation.AttributeBonus[CaelumConstants.ATTRIBUTE_INTELLIGENCE];
         Patience = mental + allocation.AttributeBonus[CaelumConstants.ATTRIBUTE_PATIENCE];
         Insight = mental + allocation.AttributeBonus[CaelumConstants.ATTRIBUTE_INSIGHT];
+        if(profile.Standalone!=null)profile.Standalone.Apply(self);
     }
 
     // Las pasivas menores suman base antes del porcentaje de colección.

@@ -173,6 +173,7 @@ class CaelumPlayerCharacter : Object play
     static void InitializeDirectMapCharacter(CaelumPlayer user)
     {
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
+        if(CaelumStandalonePresets.Initialize(user))return;
         user.CharacterProfile.InitializeDefaultTestProfile();
         user.CharacterAllocation.ResetAllocations();
         for (int layer = 0; layer < CaelumConstants.ATTRIBUTE_LAYER_COUNT; layer++)

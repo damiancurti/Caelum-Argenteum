@@ -1,6 +1,55 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.13.3** - 2026-10-31.
+Documentation version: **5.13.4** - 2026-11-01.
+
+
+## 5.13.4 - Standalone menu and resident presets (#597, 2026-11-01)
+
+Implementation checkpoint, not full-version acceptance. The native title menu
+collects host/join, mode, preset and venue; the Python bridge validates a fresh
+session manifest and starts GZDoom's network in a separate process/config/save
+directory. It does not open a campaign store or profile anchor. Four resident
+presets reuse their original combat attributes, body dimensions, armor, tools
+and sprite banks. Existing player underclothing migration adds its ordinary four
+pieces once. Native weapon selection uses the same inventory activation path.
+Revision1 stores the resident snapshot in the personal record; the campaign's
+null snapshot preserves its prior initialization. Native recovery does not
+regenerate belongings. Both personal graph export and profile registration reject
+standalone bodies.
+
+Corrections retained in local evidence: r1/r2 rejected an invalid dynamic state
+lookup/cast; r3 exposed the deferred PostBeginPlay of a temporary resident. The
+adapter now retains one noncolliding invisible prototype until its native profile
+is initialized, then transfers that fresh equipment and destroys the prototype.
+No campaign resident is involved. The initial equipment assertion omitted normal
+player underclothing; the corrected assertion checks those four existing types
+separately. Visual inspection found fists still selected despite the real item
+being equipped; r6 routes the selection through native inventory activation.
+Recovery32492 passed an absolute filename to -loadgame, which this engine prefixes
+with -savedir; the author reported the resulting duplicated path. Recovery32496
+uses a relative filename and passed on both clients without replacing the source.
+
+Final evidence: `assets/validation_v5_13_4/preset-results.json` records180 native
+assertions across four two-client runs: all four presets, recovery without
+item duplication and an ordinary campaign control. Both peers reported the
+native synchronization flag clear in every successful run. Four Python
+launcher tests preserve sentinel campaign files and reject changed packages,
+invalid requests and existing participant directories. Four native-save
+boundary checks reject standalone profiles; menu ES/EN selection/handshake
+adds12 assertions. Full project validation and diff checks passed.
+The final18051-entry package exactly matches src; SHA-256
+`98e66ebb62ca72188deff3717e4968f099a317423d51b4a60f1f98b42f63a899`.
+Earlier preset evidence uses identical gameplay code: comparison against the
+final package differs only in two diagnostic version strings, LANGUAGE's final
+newline and its generated localization index. Those differences were checked
+explicitly; final-package native campaign/menu checks passed. No FPS, latency,
+Internet or author-acceptance result is inferred.
+
+Windows Computer Use could not connect to its native pipe. Programmatic menu
+selection and the explicit console-event handshake were verified separately;
+they do not establish a physical button click. No request for author checks was
+issued: the author suite remains deferred to the completed version. #598?601
+retain their separate mode rules and PRs. No issue was merged or closed.
 
 ## 5.13.3 - Ordered Tarot foundation (#440, implementation checkpoint)
 

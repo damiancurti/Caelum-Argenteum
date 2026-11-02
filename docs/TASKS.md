@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.13.3** - 2026-10-31.
+Documentation version: **5.13.4** - 2026-11-01.
+
+## 5.13.4 - Standalone setup (#597, in progress)
+
+Complete native preset/recovery checks and menu-to-process verification, retain
+campaign isolation, and open a focused PR before the separate #598–601 rules.
+The Windows Computer Use helper currently reports a missing native pipe, so
+physical menu-button input is not yet verified. Do not treat programmatic menu
+selection as that acceptance. The final author suite remains deferred until all
+V5.13 work is ready; no new author checks have been issued.
 
 ## 5.13.3 - Integrated Major handlers (#440)
 

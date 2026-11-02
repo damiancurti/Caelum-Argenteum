@@ -67,11 +67,9 @@ if not "!BUILD_EXIT!"=="0" (
     exit /b 1
 )
 
-REM Start GZDoom with the newly rebuilt PK3. The -config below avoids the GZDoom 4.14.2 startup crash on this Windows build and keeps the INI writable.
-REM Apply the accepted preset only when this launcher's INI does not exist.
-set "FIRST_CONTROL_PRESET="
-if not exist "!PROJECT_ROOT!build\gzdoom.ini" set "FIRST_CONTROL_PRESET=+exec "!PROJECT_ROOT!assets\playtest\default_controls.cfg""
-"!GZDOOM_EXE!" -iwad "!DOOM2_IWAD!" -file "!PROJECT_PK3!" -config "!PROJECT_ROOT!build\gzdoom.ini" !FIRST_CONTROL_PRESET!
+REM Start the native game through the standalone-menu bridge, retaining this
+REM writable campaign configuration. The bridge applies first-run controls.
+python "!PROJECT_ROOT!caelum_standalone.py" --engine "!GZDOOM_EXE!" --iwad "!DOOM2_IWAD!" --package "!PROJECT_PK3!" --config "!PROJECT_ROOT!build\gzdoom.ini"
 
 endlocal
 exit /b
