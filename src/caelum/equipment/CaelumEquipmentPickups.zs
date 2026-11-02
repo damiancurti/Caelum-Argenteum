@@ -129,6 +129,8 @@ class CaelumEquipmentItem : Inventory
     // soltar, equipar y guardar. El contador vive en el estado persistente
     // del personaje; cero queda reservado para objetos todavía no adquiridos.
     int ItemId;
+    int AwakeningRevision,AwakeningCard,AwakeningHalfWear;
+    CaelumPlayer AwakeningOwner;
     int ItemFlags;
 
     bool IsLimboTemporary() { return (ItemFlags & CaelumConstants.CA_ITEMFLAG_LIMBO_TEMP) != 0; }
@@ -153,6 +155,7 @@ class CaelumEquipmentItem : Inventory
     override void PostBeginPlay()
     {
         Super.PostBeginPlay();
+        CaelumAwakening.Ensure(self);
         WeaponDurabilityRevision = CaelumAttackRules.DURABILITY_REVISION;
         ShotgunRevision=CaelumShotgunRules.REVISION;
     }
@@ -445,6 +448,7 @@ class CaelumEquipmentItem : Inventory
             copy.ItemId = ItemId;
             copy.CompanionHistory=CompanionHistory!=null?CompanionHistory.Copy():null;
             copy.ItemFlags = ItemFlags;
+            copy.AwakeningHalfWear=AwakeningHalfWear;
             copy.ItemType = ItemType;
             copy.ArmorSlot = ArmorSlot;
             copy.Tier = Tier;
@@ -480,6 +484,7 @@ class CaelumEquipmentItem : Inventory
             copy.ItemId = ItemId;
             copy.CompanionHistory=CompanionHistory!=null?CompanionHistory.Copy():null;
             copy.ItemFlags = ItemFlags;
+            copy.AwakeningHalfWear=AwakeningHalfWear;
             copy.EquipmentKind = EquipmentKind;
             copy.ItemType = ItemType;
             copy.ArmorSlot = ArmorSlot;
@@ -501,6 +506,7 @@ class CaelumEquipmentItem : Inventory
             copy.AcquisitionResolved = HasAcquiredIdentity();
             TransferProjectileWearIdentity(copy);
         }
+        if(copy!=null){CaelumAwakening.Clear(self);CaelumAwakening.Clear(copy);}
         CaelumActorMaintenance.InventoryChanged(previousOwner);
         CaelumContaminationObject.Register(copy);
         return copy;
@@ -509,6 +515,7 @@ class CaelumEquipmentItem : Inventory
     override void AttachToOwner(Actor other)
     {
         CaelumContaminationObject.LeavingWorld(self);
+        if(AwakeningOwner!=other)CaelumAwakening.Clear(self);
         Super.AttachToOwner(other);
     }
 
@@ -540,6 +547,8 @@ class CaelumEquipmentItem : Inventory
     {
         Super.Tick();
         if(!MigrateSupportImplement())return;
+        CaelumAwakening.Ensure(self);
+        if(AwakeningOwner!=null && Owner!=AwakeningOwner)CaelumAwakening.Clear(self);
         MigrateWeaponDurability();
         if (Owner == null)
         {

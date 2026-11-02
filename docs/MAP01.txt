@@ -1,6 +1,12 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.13.1** - 2026-10-31.
+Documentation version: **5.13.2** - 2026-10-31.
+
+## 5.13.2 - Equipment awakening integration (#442)
+
+This patch changes the character inventory and combat equipment only. It adds
+no mansion geometry, placements or narrative rewards; existing map save
+compatibility is unchanged. See SYSTEMS for the revisioned item association.
 
 ## 5.9.5 / #422 - Central house and siege investigation
 

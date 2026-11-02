@@ -1,6 +1,12 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.13.1** - 2026-10-31.
+Documentation version: **5.13.2** - 2026-10-31.
+
+## Equipment awakening panel (#442, 5.13.2)
+
+The inventory association panel reuses the owned Tarot front references already
+packaged for #441. Native menu controls and ES/EN text are code/UI changes; no
+new image, model, third-party asset or attribution change is introduced.
 
 ## Tarot capture fronts (#441, 5.13.1)
 

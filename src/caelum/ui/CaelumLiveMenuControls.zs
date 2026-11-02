@@ -45,6 +45,15 @@ class CaelumLiveMenuControls : Object ui
     {
         OwnerMenu=host;Drawing=draw;Scans.Clear();Characters.Clear();Keys.Clear();host.Pointer.Clear();
         let user=host.Subject;let view=host.Journal();int context=host.Context;
+        if(context==host.CTX_AWAKENING)
+        {
+            Row(326);
+            Button("CA_UI_PREVIOUS",InputEvent.Key_LeftArrow,0,"",138);
+            Button("CA_UI_NEXT",InputEvent.Key_RightArrow,0,"",138);
+            Button("CA_UI_CONFIRM",InputEvent.Key_Enter,0,"",138);
+            Button("CA_UI_BACK",InputEvent.Key_Tab,0,"",138);
+            return;
+        }
         if(context>=1 && context<=7)
         {
             host.Pointer.Button(view,9001,32,15,104,CaelumInputHints.Context(StringTable.Localize("CA_NAV_TITLE",false),0,110),true,false,draw);

@@ -1188,6 +1188,7 @@ class CaelumJournalOverlay : EventHandler
 
     ui void DrawInventoryPage(CaelumPlayer localPlayer)
     {
+        DrawTextLine(SmallFont,Font.CR_GOLD,52,309,StringTable.Localize("CA_AWAKEN_HINT",false));
         if(localPlayer.TarotOwnedCountSnapshot==CaelumConstants.TAROT_CARD_COUNT)
             DrawTextLine(SmallFont,Font.CR_GOLD,414,151,
                 StringTable.Localize("CA_TAROT_UNIFIED_ACTION",false));
@@ -1522,6 +1523,20 @@ class CaelumJournalOverlay : EventHandler
         DrawTextLine(SmallFont, Font.CR_WHITE, 56, y,
             StringTable.Localize(key, false) .. ": " .. (applies ? String.Format("%.2f%%", chance)
                 : StringTable.Localize("CA_CHARACTER_NOT_APPLICABLE", false)));
+    }
+
+    ui void DrawAwakening(CaelumPlayer user,CaelumAwakeningMenu state)
+    {
+        CaelumPresentation.MenuBackground(0x05070A,0.92);
+        DrawPanel(16,12,608,336);
+        DrawCenteredText(TitleFont,Font.CR_GOLD,320,28,StringTable.Localize("CA_AWAKEN_TITLE",false));
+        DrawTextLine(TextFont,Font.CR_WHITE,50,78,FormatInventoryEntryName(state.ItemKind,
+            state.ItemType,state.ItemSlot,state.ItemTier,state.ItemSize,state.ItemEssence));
+        DrawParagraph(TextFont,Font.CR_WHITE,50,105,530,StringTable.Localize("CA_AWAKEN_RULES",false));
+        if(state.SelectedCard>=0)DrawTexture(CaelumTarotArt.FrontPath(state.SelectedCard),60,186,76,113);
+        DrawTextLine(TextFont,Font.CR_GOLD,158,190,state.SelectedCard<0
+            ?StringTable.Localize("CA_AWAKEN_NONE",false):CaelumTarotArt.DisplayName(state.SelectedCard));
+        DrawParagraph(SmallFont,Font.CR_GRAY,158,228,390,StringTable.Localize("CA_AWAKEN_KEYS",false));
     }
 
     ui void DrawTarotPage(CaelumPlayer localPlayer)
@@ -2463,10 +2478,24 @@ class CaelumJournalOverlay : EventHandler
         return PanelKey(e.Type,e.KeyScan,e.KeyChar,e.KeyString);
     }
 
+    ui bool AwakeningKey(CaelumPlayer user,int type,int scan,String keyString)
+    {
+        let awakening=CaelumAwakeningMenu.Read(user);
+        if(awakening==null || !awakening.Opened)return false;
+        if(type!=InputEvent.Type_KeyDown)return true;
+        if(scan==InputEvent.Key_Enter || scan==InputEvent.Key_Pad_A)SendNetworkEvent("ca_awaken_action",1);
+        else if(scan==InputEvent.Key_RightArrow || scan==InputEvent.Key_DownArrow)SendNetworkEvent("ca_awaken_action",2);
+        else if(scan==InputEvent.Key_LeftArrow || scan==InputEvent.Key_UpArrow)SendNetworkEvent("ca_awaken_action",3);
+        else if(scan==InputEvent.Key_Tab || scan==InputEvent.Key_Pad_B || keyString~=="q")SendNetworkEvent("ca_awaken_action",0);
+        return true;
+    }
+
     ui bool PanelKey(int type,int scan,int character,String keyString,bool physical=true)
     {
         CaelumPlayer localPlayer = consoleplayer >= 0
             ? CaelumPlayer(players[consoleplayer].mo) : null;
+        if(scan!=InputEvent.Key_Grave && scan!=InputEvent.Key_Escape && scan!=InputEvent.Key_Pad_Start
+            && AwakeningKey(localPlayer,type,scan,keyString))return true;
         let plan = localPlayer == null ? null : CaelumJourneyPlan(localPlayer.FindInventory("CaelumJourneyPlan"));
         if (plan != null && plan.Open && CaelumLiveMenu.InputAllowed())
         {
@@ -2660,6 +2689,8 @@ class CaelumJournalOverlay : EventHandler
         }
 
         int currentPage = GetJournalPage();
+        if(currentPage==0 && (keyString~=="a" || character==97 || character==65))
+        {SendNetworkEvent("ca_awaken_open");return true;}
         if((currentPage==1 || currentPage==2) && (keyString ~== "t" || character==116 || character==84))
         {ThermalDetailsOpen=!ThermalDetailsOpen;return true;}
         bool craftingSession = currentPage == 3
@@ -2908,6 +2939,8 @@ class CaelumJournalOverlay : EventHandler
         { CaelumCraftingBrowser.Get(requestingPlayer).Confirm(requestingPlayer,e.Args[0],e.Args[1],e.Args[2]); return; }
         if (e.Name == "ca_tarot_select") { CaelumTarotService.Select(requestingPlayer, e.Args[0]); }
         else if(e.Name=="ca_tarot_unified")CaelumUnifiedTarot.Activate(requestingPlayer);
+        else if(e.Name=="ca_awaken_open")CaelumAwakeningMenu.Open(requestingPlayer);
+        else if(e.Name=="ca_awaken_action")CaelumAwakeningMenu.HandleCommand(requestingPlayer,e.Args[0]);
         else if (e.Name == "ca_event_action") { CaelumScheduleState.Act(requestingPlayer, e.Args[0]); }
         else if (e.Name == "ca_debug_events_report") { CaelumScheduleState.Report(requestingPlayer); }
         else if (e.Name == "ca_debug_events_trial") { CaelumScheduleTrial.Enable(requestingPlayer); }
@@ -3240,6 +3273,8 @@ class CaelumJournalOverlay : EventHandler
             return;
         }
         if (!IsJournalOpen()) { return; }
+        let awakening=CaelumAwakeningMenu.Read(localPlayer);
+        if(awakening!=null && awakening.Opened){DrawAwakening(localPlayer,awakening);return;}
         int currentPage = GetJournalPage();
         if (currentPage == 2 && CaelumScheduleCalendar.IsOpen())
         { CaelumScheduleCalendar.Draw(self, localPlayer); return; }

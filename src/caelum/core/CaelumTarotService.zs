@@ -63,6 +63,8 @@ class CaelumTarotService : Object play
         EnsureRevision(record);
         if (record == null || !HasTarotCard(record, card))
         { Feedback(user, "CA_TAROT_POWER_UNOWNED"); return false; }
+        if(!record.TarotSelected[card] && CaelumAwakening.Bound(user,card)!=null)
+        {Feedback(user,"CA_AWAKEN_BOUND");return false;}
         if (!record.TarotSelected[card] && !Implemented(card))
         { Feedback(user, "CA_TAROT_POWER_UNIMPLEMENTED"); return false; }
         if (!record.TarotSelected[card] && SelectedCount(record) >= CaelumConstants.TAROT_SELECTED_LIMIT)

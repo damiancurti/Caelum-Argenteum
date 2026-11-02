@@ -3,6 +3,7 @@
 class CaelumWeaponModel : Object
 {
     CaelumContaminationState ContaminationState;
+    CaelumEquipmentItem SourceItem;
     int WeaponType;
     int Tier;
     int Size;
@@ -149,7 +150,8 @@ class CaelumWeaponModel : Object
 
     double GetDamage()
     {
-        return GetDamageFor(WeaponType, Tier);
+        return GetDamageFor(WeaponType, Tier)*CaelumAwakening.ActiveFactor(SourceItem,
+            CaelumConstants.EQUIPMENT_KIND_WEAPON,WeaponType,Tier,Size);
     }
 
     int GetBaseDurabilityFor(int weaponType)

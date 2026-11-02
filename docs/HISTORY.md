@@ -1,6 +1,30 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.13.1** - 2026-10-31.
+Documentation version: **5.13.2** - 2026-10-31.
+
+## 5.13.2 - Reversible equipment awakening (#442)
+
+Author-approved +25% damage/defense and half wear are implemented on the exact
+native weapon/armor/shield. Inventory A associates/removes an acquired inactive,
+unequipped essence, without cost or repair. One essence per item/one item per
+essence, transfer release and same-owner Box retention follow the author rules.
+Revision1 initializes old items unbound and preserves the half-wear remainder
+through save recovery and later transfers. Seals remain unchanged.
+
+The native menu has its own input context and footer, so inventory drop/clean
+controls cannot act behind the association panel. Reuses owned Tarot fronts;
+there is no new raster art or provenance change.
+
+Static validation passed; all18,008 package members match source. Two clients
+passed29 assertions each through the native menu and8 each on save recovery,
+with matching native synchronization checks and normal exits. Results and
+visual evidence are recorded in assets/validation_v5_13_2/results.json. Initial fixture
+failures were isolated to a synthetic base Inventory without a spawn state and
+to omitted legacy durability revision, then corrected using actual pickup
+classes. The final fixture uses native menu input and exact item transfers.
+Original saves and failed diagnostic logs remain retained under build/issue442.
+These are isolated checks, not manual author acceptance or a rendering benchmark.
+The final V5.13 author scenarios remain deferred as requested.
 
 ## 5.13.1 - Capture sources and unified Tarot (#441)
 

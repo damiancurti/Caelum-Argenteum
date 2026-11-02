@@ -1,6 +1,38 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.13.1** - 2026-10-31.
+Documentation version: **5.13.2** - 2026-10-31.
+
+## 5.13.2 - Reversible equipment awakening (#442)
+
+Inventory A opens a native, non-pausing association panel for the selected
+weapon, armor piece or shield. An acquired essence must be unequipped and
+inactive; a unified World effect also reserves its World essence. One essence
+can occupy one item, and each item one essence. Select Remove association to
+release it. These actions cost no resources or time; they preserve tier,
+materials, item identity, wear and contamination. Crafting reservations and
+incompatible active tasks block changes. Seals retain their existing effects.
+
+An awakened weapon deals 1.25 times its normal damage; awakened armor/shields
+have 1.25 times normal defense, before the existing defense caps. Wear is halved
+in the native weapon, armor and shield pipelines. Because durability is integral,
+the item retains the pending half-point, including across save/load, removal,
+reassociation and transfer. A lethal wear amount is halved before clamping to
+remaining durability; awakening does not make almost-broken equipment immortal.
+
+Binding prevents equipping that essence on the character. Moving the item into
+the same owner's Box preserves binding. Dropping, selling, lending or otherwise
+transferring ownership removes it; the original character retains the essence.
+Revision1 initializes legacy items as unbound, without treating default card0
+as The Fool. Exact item/owner references and fractional wear are serialized.
+Keep original saves and the prior checkout as the reversible migration path.
+
+Association queries only the requesting character's inventory, at action time.
+Combat reads the active native item reference in O(1); it adds no global scan.
+The pre-existing projectile-wear identity transfer lookup remains confined to
+native item copy/toss; this patch does not increase its frequency or scope.
+
+Validation and its limits are recorded in HISTORY and assets/validation_v5_13_2.
+The final author suite remains deferred until all V5.13 issues are ready.
 
 ## 5.13.1 - Capture sources and unified Tarot (#441)
 

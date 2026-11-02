@@ -3,6 +3,7 @@
 class CaelumShieldModel : Object
 {
     CaelumContaminationState ContaminationState;
+    CaelumEquipmentItem SourceItem;
     int ShieldType;
     int Tier;
     int Size;
@@ -82,13 +83,14 @@ class CaelumShieldModel : Object
         return GetBasePhysicalDefense();
     }
 
-    int GetDefense(int damageKind)
+    double GetDefense(int damageKind)
     {
         if (!Equipped || Durability <= 0) { return 0; }
         int tierTwoDefense = damageKind == CaelumConstants.SHIELD_DAMAGE_MAGICAL
             ? GetBaseMagicalDefense() : GetBasePhysicalDefense();
         int tierOffset = (Clamp(Tier, 1, 3) - 2) * 10;
-        return Max(0, tierTwoDefense + tierOffset);
+        return Max(0, tierTwoDefense + tierOffset)*CaelumAwakening.ActiveFactor(SourceItem,
+            CaelumConstants.EQUIPMENT_KIND_SHIELD,ShieldType,Tier,Size);
     }
 
     int GetBaseDurability()

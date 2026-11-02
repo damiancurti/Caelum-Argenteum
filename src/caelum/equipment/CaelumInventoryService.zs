@@ -586,6 +586,7 @@ class CaelumInventoryService : Object play
                     user.EquippedArmorItemId[slot] =
                         armor != null ? armor.ItemId : 0;
                 }
+                user.ArmorModel.SourceItem[slot]=armor;
             }
         }
 
@@ -611,6 +612,8 @@ class CaelumInventoryService : Object play
                 ) : null;
             user.ActiveWeaponItemId = weapon != null ? weapon.ItemId : 0;
         }
+
+        if(user.WeaponModel!=null)user.WeaponModel.SourceItem=weapon;
 
         CaelumEquipmentItem amulet =
             user.FindNativeEquipmentItemById(user.EquippedAmuletItemId);
@@ -741,6 +744,7 @@ class CaelumInventoryService : Object play
                 user.WeaponModel.Tier = tier;
                 user.WeaponModel.Size = item.EquipmentSize;
                 user.WeaponModel.Durability = item.Durability;
+                user.WeaponModel.SourceItem=item;
                 user.WeaponModel.EssenceType = essenceType;
                 user.SelectedEssenceType = essenceType;
                 user.WeaponModel.Equipped = true;
@@ -1969,6 +1973,7 @@ class CaelumInventoryService : Object play
                 user.WeaponModel.Tier = item.Tier;
                 user.WeaponModel.Size = item.EquipmentSize;
                 user.WeaponModel.Durability = item.Durability;
+                user.WeaponModel.SourceItem=item;
                 user.WeaponModel.EssenceType = Clamp(
                     item.EssenceType,
                     0,
@@ -2010,6 +2015,7 @@ class CaelumInventoryService : Object play
         user.WeaponModel.Tier = item.Tier;
         user.WeaponModel.Size = item.EquipmentSize;
         user.WeaponModel.Durability = item.Durability;
+        user.WeaponModel.SourceItem=item;
         user.WeaponModel.EssenceType = Clamp(
             item.EssenceType, 0, CaelumConstants.ESSENCE_TYPE_COUNT - 1
         );
@@ -4847,6 +4853,7 @@ class CaelumInventoryService : Object play
             user.ArmorModel.Tier[item.ArmorSlot] = item.Tier;
             user.ArmorModel.Size[item.ArmorSlot] = item.EquipmentSize;
             user.ArmorModel.Durability[item.ArmorSlot] = item.Durability;
+            user.ArmorModel.SourceItem[item.ArmorSlot]=item;
             user.ArmorModel.SelectedSlot = item.ArmorSlot;
         }
         else if (item.EquipmentKind == CaelumConstants.EQUIPMENT_KIND_SHIELD)
@@ -4866,6 +4873,7 @@ class CaelumInventoryService : Object play
             user.ShieldModel.Tier = item.Tier;
             user.ShieldModel.Size = item.EquipmentSize;
             user.ShieldModel.Durability = item.Durability;
+            user.ShieldModel.SourceItem=item;
             user.ShieldModel.Equipped = true;
             user.DebugShieldBlocking = false;
         }
@@ -4893,6 +4901,7 @@ class CaelumInventoryService : Object play
             user.WeaponModel.Tier = item.Tier;
             user.WeaponModel.Size = item.EquipmentSize;
             user.WeaponModel.Durability = item.Durability;
+            user.WeaponModel.SourceItem=item;
             user.WeaponModel.EssenceType = Clamp(
                 item.EssenceType,
                 0,
