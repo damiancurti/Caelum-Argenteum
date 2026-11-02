@@ -34,6 +34,7 @@ class CaelumTarotJustice : Actor
         if(!Alive(body) || !body.bShootable || body.bNoInteraction || body.bDormant
             || body.bInConversation || CaelumJusticeLink.Bound(body))return false;
         if(!(body is 'CaelumPlayer') && !(body is 'CaelumCombatActor'))return false;
+        if(body is 'CaelumPlayer' && CaelumTarotHunt.Held(CaelumPlayer(body)))return false;
         let resident=CaelumAnchoredResident(body);
         if(resident!=null && resident.IsProtectedStoryResident())return false;
         let palomo=CaelumPalomo(body);
@@ -129,9 +130,8 @@ class CaelumTarotJustice : Actor
             TRF_ABSPOSITION|TRF_THRUACTORS,from.Z,from.X,from.Y,hit)
             || (hit.HitLocation-from).Length()+0.01>=ray.Length();
     }
-    bool Reachable(int side,vector3 point)
+    static bool ClearSegment(Actor body,vector3 from,vector3 point)
     {
-        let body=Bodies[side];vector3 from=Origins[side];
         // Volumen barrido conservador: centro y contorno en tres alturas.
         for(int h=0;h<3;h++)for(int edge=0;edge<9;edge++)
         {
@@ -142,6 +142,7 @@ class CaelumTarotJustice : Actor
         }
         return true;
     }
+    bool Reachable(int side,vector3 point){return ClearSegment(Bodies[side],Origins[side],point);}
     bool ReturnSide(int side)
     {
         if(Returned[side])return true;

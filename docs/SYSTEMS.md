@@ -1,6 +1,53 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.13.11** - 2026-11-01.
+Documentation version: **5.13.12** - 2026-11-01.
+
+## Hunt Arcana opportunities (#616)
+
+CAHUNT has 22 distributed opportunities using the existing Major Arcana rules.
+Finding a card unlocks it for every seeker, including captives; human Palomo is
+excluded. Each seeker starts with the Box and deck. Match ownership is isolated
+from campaigns and resets on rematch. Old saved collections migrate once.
+
+| Arcana | Existing opportunity |
+| --- | --- |
+| Fool | Choose a captive before paying; rescue beside the caster. |
+| Magician / Priestess / Empress | Automaton, false wall and vegetation. |
+| Emperor / Hierophant | Map-owned invocation; cursed passage and dirty basin. |
+| Lovers / Chariot / Justice | Shared trap crossing, fragile rock, immortal spirit. |
+| Hermit / Wheel | Longer-effect route; alternating dry/lit and wet/dark chamber. |
+| Strength / Hanged / Death | Heavy rock, underwater passage, marked living obstacle. |
+| Temperance / Devil / Tower | Ordinary freezing, consecutive obstacles, siege cannon. |
+| Star / Moon / Sun | Giant canopy bed, clone-return fork, heat/contamination rocks. |
+| Judgement / World | Informative spirit and combined obstacles. |
+
+All have alternate routes. Hermit and Devil retain their systemic benefits;
+there are no new exclusive locks, combat stats or resource bonuses. Wheel uses
+the approved 2 m water depth and 192/32 sector lighting. Freezing reuses the
+ordinary 3-second/50% effect and the hunt's 60-second rearm. Fatal guardian or
+hazard damage captures with the pre-hit resource snapshot; trap-entry snapshots
+retain priority. Teammate damage remains disabled.
+
+Fool's private choice uses the usual shared sequence cost/cooldown. Its saved
+search checks at most eight candidates per tic within 4 m, real body clearance
+and the swept line of sight; no telefrag or wall crossing. Failure keeps the
+target captive. A Justice-bound caster waits until returning before rescuing.
+Captives cannot enter another duel; capture terminates their current pair while
+keeping captivity. Their Tarot timers continue normally; no material actions
+are enabled. Overlapping Lovers auras exclude captives.
+
+Palomo routes use the existing generated graph and a bounded registry of placed
+props. Each route rebuild marks current prop positions and connecting-edge
+clearance, including moved rocks and opening leaves; no global actor scan.
+The giant bed uses the existing dimensions, mass, storage and title rules; the
+first successful carrier claims it. Star's active weight suppression also helps
+carry the existing heavy Sun rocks, without changing their approved mass.
+
+New geometry requires a new hunt. For pre-5.13.12 hunt saves, build with
+`-LegacyHunt`: both original WAD and matching navigation data are hash-checked
+and packaged together. Such matches retain their old geometry and gain shared
+unlocks/Fool rescue, without spawning the new rooms or props. Original saves
+remain untouched. Technical evidence: assets/validation_v5_13_12.
 
 ## Optional player Palomo (#617)
 

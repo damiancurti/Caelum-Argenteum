@@ -271,5 +271,6 @@ ListMenu "CaelumCooperativeTravelMenu"
 
 ListMenu "CaelumArenaMenu" { Class "CaelumArenaMenu" }
 ListMenu "CaelumStandaloneScoreMenu" { Class "CaelumStandaloneScoreMenu" }
+ListMenu "CaelumHuntRescueMenu" { Class "CaelumHuntRescueMenu" }
 ListMenu "CaelumTarotRaceMenu" { Class "CaelumTarotRaceMenu" }
 ListMenu "CaelumJusticeTravelMenu" { Class "CaelumJusticeTravelMenu" }

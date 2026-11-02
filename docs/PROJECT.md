@@ -1,6 +1,14 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.13.11** - 2026-11-01.
+Documentation version: **5.13.12** - 2026-11-01.
+
+## 5.13.12 - Hunt opportunities (#616)
+
+The 22 distributed Arcana opportunities, shared match collection and selected
+captive rescue are implemented. Existing art, bodies and approved effects are
+reused. Native four-peer checks and reversible original-map recovery are recorded
+in assets/validation_v5_13_12. #596 remains the consolidated manual handoff;
+author acceptance and all V5.13 merges/closures remain outstanding.
 
 ## 5.13.11 - Optional human Palomo (#617)
 

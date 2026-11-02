@@ -1,0 +1,14 @@
+{
+  "source": "5.13.11 / commit 12f0c7b60",
+  "issue": 616,
+  "files": {
+    "maps/CAHUNT.wad": {
+      "file": "CAHUNT.wad",
+      "sha256": "e304ef9682dd833f5f2a5f6bc329c5ec1da4796c8f11c2dd439d2dea7bfde513"
+    },
+    "caelum/data/CaelumHuntData.zs": {
+      "file": "CaelumHuntData.zs",
+      "sha256": "d8e0db6167365fbfe1394b820acd0040031f69b9b38fe6fc696fccfb3d812c6f"
+    }
+  }
+}

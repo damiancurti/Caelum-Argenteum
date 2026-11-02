@@ -68,7 +68,7 @@ class CaelumTarotExampleRoom : Actor
         Apply();
     }
 
-    void Apply()
+    virtual void Apply()
     {
         if(!CaelumTarotExampleData.Present())return;
         // La cara del sprite sigue la abertura; los bloqueadores conservan su eje.
@@ -82,7 +82,7 @@ class CaelumTarotExampleRoom : Actor
         level.Sectors[CaelumTarotExampleData.THRESHOLD].SetLightLevel(light);
     }
 
-    bool Toggle(CaelumPlayer user,bool report=true)
+    virtual bool Toggle(CaelumPlayer user,bool report=true)
     {
         if(!CaelumPlayerAuthority.CanMutate(user) || !CaelumTarotExampleData.Present()
             || user.CurSector==null || user.CurSector.GetUDMFInt("user_ca_tarot_room")!=1)return false;
@@ -169,6 +169,9 @@ class CaelumTarotExamples : Object play
     }
     static bool Wheel(CaelumPlayer user,bool report=true)
     {
+        let hunt=CaelumTarotHunt.View();
+        if(hunt!=null && hunt.Arcana!=null && hunt.Arcana.Places!=null && hunt.Arcana.Places.WheelRoom!=null)
+            return hunt.Arcana.Places.WheelRoom.Toggle(user,report);
         let room=Get();
         if(room==null || user==null || user.CurSector==null || user.CurSector.GetUDMFInt("user_ca_tarot_room")!=1)
         {if(report)CaelumTarotService.Feedback(user,"CA_TAROT_ROOM_REQUIRED");return false;}

@@ -4,6 +4,7 @@ param(
     [switch]$LegacyMap01,
     [switch]$LegacyTarotMaps,
     [switch]$LegacyTarotExamples,
+    [switch]$LegacyHunt,
     [switch]$LegacyMap02,
     [switch]$LegacyMap02Revision4,
     [switch]$LegacyMap06,
@@ -25,6 +26,18 @@ if (([int]$LegacyMap06.IsPresent + [int]$LegacyMap06Siege.IsPresent + [int]$Lega
 }
 
 $ProjectRoot = $PSScriptRoot
+$LegacyHuntBytes = @{}
+if ($LegacyHunt) {
+    $HuntRoot = Join-Path $ProjectRoot 'assets/hunt/legacy_51311'
+    $HuntManifest = Get-Content -LiteralPath (Join-Path $HuntRoot 'manifest.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+    foreach ($Member in $HuntManifest.files.PSObject.Properties) {
+        $HuntFile = Join-Path $HuntRoot $Member.Value.file
+        if ((Get-FileHash -LiteralPath $HuntFile -Algorithm SHA256).Hash -ne $Member.Value.sha256) {
+            throw "Legacy hunt checksum mismatch: $($Member.Name)"
+        }
+        $LegacyHuntBytes[$Member.Name] = [IO.File]::ReadAllBytes($HuntFile)
+    }
+}
 $SourcePath = [System.IO.Path]::GetFullPath((Join-Path $ProjectRoot $Source))
 $DestinationPath = [System.IO.Path]::GetFullPath((Join-Path $ProjectRoot $Destination))
 
@@ -221,6 +234,7 @@ try {
             $LegacyMansionReplacementCount = 0
             $LegacyPortReplacementCount = 0
             $LegacyTarotReplacementCount = 0
+            $LegacyHuntReplacementCount = 0
             foreach ($File in $Files) {
                 $RelativePath = $File.FullName.Substring($SourcePath.Length).TrimStart(
                     [char[]]@('\', '/')
@@ -233,7 +247,12 @@ try {
                 )
                 $EntryStream = $Entry.Open()
                 try {
-                    if (($LegacyMap01 -or $LegacyTarotExamples) -and $EntryName -ieq 'maps/MAP01.wad') {
+                    if ($LegacyHunt -and $LegacyHuntBytes.ContainsKey($EntryName)) {
+                        $LegacyHuntReplacementCount++
+                        $HuntBytes = $LegacyHuntBytes[$EntryName]
+                        $EntryStream.Write($HuntBytes, 0, $HuntBytes.Length)
+                    }
+                    elseif (($LegacyMap01 -or $LegacyTarotExamples) -and $EntryName -ieq 'maps/MAP01.wad') {
                         $EntryStream.Write($LegacyMap01Bytes, 0, $LegacyMap01Bytes.Length)
                         $LegacyMansionReplacementCount++
                     }
@@ -262,6 +281,9 @@ try {
                 finally {
                     $EntryStream.Dispose()
                 }
+            }
+            if ($LegacyHunt -and $LegacyHuntReplacementCount -ne 2) {
+                throw 'Legacy hunt requires both the original map and its matching navigation data.'
             }
             if (($LegacyMap02 -or $LegacyMap02Revision4) -and $LegacyReplacementCount -ne 1) {
                 throw "Legacy compatibility requires exactly one maps/MAP02.wad entry in the source."
@@ -316,6 +338,7 @@ try {
         [System.IO.File]::Move($TemporaryPath, $DestinationPath)
     }
     Write-Host "PK3 created successfully: $DestinationPath"
+    if ($LegacyHunt) { Write-Host 'Hunt compatibility: original pre-5.13.12 CAHUNT and navigation; new Arcana rooms unavailable.' }
     if ($LegacyTarotMaps) {
         Write-Host 'Justice compatibility: byte-identical pre-arena maps; newer arena effects are unavailable. Explicit older per-map switches take precedence.'
     } else {

@@ -7783,3 +7783,66 @@ CA_HUNT_DOOR = "Timed door";
 CA_HUNT_FLOOR = "Falling floor";
 CA_HUNT_TEAM = "The team";
 CA_HUNT_PALOMO = "Palomo";
+
+[esp]
+CA_HUNT_RESCUE_NONE = "No hay compañeros cautivos para rescatar.";
+CA_HUNT_RESCUE_BLOCKED = "No hay espacio seguro junto a vos para el rescate.";
+CA_HUNT_RESCUE_TITLE = "El Loco: elegir a quién rescatar";
+[enu default]
+CA_HUNT_RESCUE_NONE = "There are no captive teammates to rescue.";
+CA_HUNT_RESCUE_BLOCKED = "There is no safe space beside you for the rescue.";
+CA_HUNT_RESCUE_TITLE = "The Fool: choose whom to rescue";
+
+[esp]
+CA_HUNT_FRAGILE = "Roca resquebrajada";
+CA_HUNT_FREEZE = "Placa de congelación";
+CA_HUNT_SPIRIT_HINT = "Los cuatro sectores se conectan por varios caminos. Rodeá los obstáculos; el cautiverio está al sudoeste.";
+CA_HUNT_USE_00 = "Rescatá a un compañero cautivo junto a vos.";
+CA_HUNT_USE_01 = "Despertá al autómata al activar el Tarot.";
+CA_HUNT_USE_02 = "La Sacerdotisa revela este paso oculto.";
+CA_HUNT_USE_03 = "La Emperatriz permite atravesar la vegetación.";
+CA_HUNT_USE_04 = "El Emperador puede controlar al guardián invocado.";
+CA_HUNT_USE_05 = "El Hierofante abre el paso maldito y purifica el depósito.";
+CA_HUNT_USE_06 = "Los Enamorados permiten compartir los daños de este cruce.";
+CA_HUNT_USE_07 = "El Carro puede romper la roca resquebrajada.";
+CA_HUNT_USE_08 = "Justicia permite dañar al espíritu.";
+CA_HUNT_USE_09 = "El Ermitaño prolonga el primer poder para recorrer estos caminos.";
+CA_HUNT_USE_10 = "La Rueda cambia el agua, la luz y las salidas de la habitación.";
+CA_HUNT_USE_11 = "La Fuerza permite levantar esta roca si tu capacidad alcanza.";
+CA_HUNT_USE_12 = "El Colgado permite usar otra habilidad racial bajo el agua.";
+CA_HUNT_USE_13 = "La Muerte permite destruir el obstáculo vivo.";
+CA_HUNT_USE_14 = "La Templanza protege de la congelación.";
+CA_HUNT_USE_15 = "El Diablo permite usar varios poderes pagando su coste de Vida.";
+CA_HUNT_USE_16 = "La Torre destruye la máquina de asedio.";
+CA_HUNT_USE_17 = "La Estrella permite guardar un objeto gigante en la Caja.";
+CA_HUNT_USE_18 = "La Luna permite dejar un clon y regresar a él desde la bifurcación.";
+CA_HUNT_USE_19 = "El Sol y La Estrella permiten guardar temporalmente las rocas peligrosas.";
+CA_HUNT_USE_20 = "El Juicio permite escuchar al espíritu.";
+CA_HUNT_USE_21 = "El Mundo activa los arcanos adquiridos que no están equipados.";
+
+[enu default]
+CA_HUNT_FRAGILE = "Cracked rock";
+CA_HUNT_FREEZE = "Freezing plate";
+CA_HUNT_SPIRIT_HINT = "Several paths connect the four sectors. Go around obstacles; the captives are held in the southwest.";
+CA_HUNT_USE_00 = "Rescue a captive teammate beside you.";
+CA_HUNT_USE_01 = "Awaken the automaton by activating Tarot.";
+CA_HUNT_USE_02 = "The High Priestess reveals this hidden passage.";
+CA_HUNT_USE_03 = "The Empress lets you pass through vegetation.";
+CA_HUNT_USE_04 = "The Emperor can control the summoned guardian.";
+CA_HUNT_USE_05 = "The Hierophant opens the cursed passage and purifies the basin.";
+CA_HUNT_USE_06 = "The Lovers can share damage at this crossing.";
+CA_HUNT_USE_07 = "The Chariot can break the cracked rock.";
+CA_HUNT_USE_08 = "Justice allows you to harm the spirit.";
+CA_HUNT_USE_09 = "The Hermit extends the first power for these winding paths.";
+CA_HUNT_USE_10 = "The Wheel changes the room water, light and exits.";
+CA_HUNT_USE_11 = "Strength lets you lift this rock if your capacity is sufficient.";
+CA_HUNT_USE_12 = "The Hanged Man allows another racial ability underwater.";
+CA_HUNT_USE_13 = "Death allows you to destroy the living obstacle.";
+CA_HUNT_USE_14 = "Temperance protects against freezing.";
+CA_HUNT_USE_15 = "The Devil allows consecutive powers at its Life cost.";
+CA_HUNT_USE_16 = "The Tower destroys the siege machine.";
+CA_HUNT_USE_17 = "The Star allows one giant object in the Box.";
+CA_HUNT_USE_18 = "The Moon allows you to leave a clone and return from the fork.";
+CA_HUNT_USE_19 = "The Sun and the Star allow temporary containment of hazardous rocks.";
+CA_HUNT_USE_20 = "Judgement allows you to hear the spirit.";
+CA_HUNT_USE_21 = "The World activates acquired Arcana that are not equipped.";

@@ -12,6 +12,7 @@ class CaelumTarotSequence : Object play
     static void ApplyCard(CaelumPlayer user,CaelumPersistentCharacterState record,int card,int duration,Actor aimed=null,bool report=true,CaelumTarotGroundAim ground=null)
     {
         if(!CaelumTarotService.Implemented(card))return;
+        if(card==0)CaelumHuntArcana.Fool(user);
         if(card==1 && !CaelumTarotAutomata.Start(user,aimed,duration))
         {if(report)CaelumTarotService.Feedback(user,"CA_TAROT_AUTOMATON_TARGET");return;}
         if(card==2 && !CaelumTarotMine.Place(user,ground,duration))

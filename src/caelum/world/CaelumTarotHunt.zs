@@ -24,6 +24,7 @@ class CaelumTarotHunt : Object play
     CaelumHuntEssence Essences[78];
     CaelumHuntTrap Traps[24];
     CaelumHuntPalomo Hunter;
+    CaelumHuntArcana Arcana;
     CaelumHuntResources Resources[MAXPLAYERS],BeforeTrap[MAXPLAYERS];
     int TrapFor[MAXPLAYERS],RescueTarget[MAXPLAYERS],RescueProgress[MAXPLAYERS];
 
@@ -62,6 +63,7 @@ class CaelumTarotHunt : Object play
         if(card<0 || card>=78 || Found[card] || m==null || m.Finished || !m.Seeker(p.PlayerNumber())
             || Captive(p.PlayerNumber()) || !CaelumCaptureArcana.Touches(p,Essences[card]))return;
         Found[card]=true;Collected++;m.Score[p.PlayerNumber()]++;
+        if(Arcana!=null)Arcana.Grant(m,card);
         Essences[card].bSpecial=false;Essences[card].bInvisible=true;
         Console.Printf("%s",String.Format(StringTable.Localize('CA_HUNT_FOUND',false),CaelumTarotArt.DisplayName(card),Collected));
     }
@@ -82,6 +84,15 @@ class CaelumTarotHunt : Object play
         if(saved==null){saved=new('CaelumHuntResources');saved.Capture(p);}
         Resources[slot]=saved;BeforeTrap[slot]=null;TrapFor[slot]=-1;
         CaptiveMask|=1<<slot;saved.Restore(p);
+        // Capturar termina su participación en Justicia sin devolver al cautivo
+        // desde la celda cuando expire la arena. El otro conserva retorno seguro.
+        let link=CaelumJusticeLink.View(p);
+        if(link!=null && link.Duel!=null)
+        {
+            let duel=link.Duel;
+            for(int side=0;side<2;side++)if(duel.Bodies[side]==p)duel.Returned[side]=true;
+            link.Duel=null;duel.ReturnNow();
+        }
         p.player.cheats|=CF_TOTALLYFROZEN;p.Vel=(0,0,0);
         PlaceCaptive(p);p.LastImpactFallingVelocityZ=0;p.ImpactGroundTrackingInitialized=false;
         Console.Printf("%s",String.Format(StringTable.Localize('CA_HUNT_CAPTURED',false),players[slot].GetUserName()));
@@ -98,10 +109,13 @@ class CaelumTarotHunt : Object play
         Resources[slot].Restore(p);Resources[slot]=null;CaptiveMask&=~(1<<slot);
         p.player.cheats&=~CF_TOTALLYFROZEN;p.PainImmobilizationRemaining=0;
         p.LastImpactFallingVelocityZ=0;p.ImpactGroundTrackingInitialized=false;
+        CaelumHuntArcana.Supply(p);CaelumHuntArcana.Refresh(p);
         Console.Printf("%s",String.Format(StringTable.Localize('CA_HUNT_RESCUED',false),players[slot].GetUserName()));
     }
     void Tick(CaelumStandaloneMatch m)
     {
+        if(Arcana==null){Arcana=new('CaelumHuntArcana');Arcana.Initialize(self,m);}
+        Arcana.Tick(self,m);
         // La consulta sólo recorre los ocho puestos de la sesión.
         let human=m.PlayerPalomo>0?CaelumPlayer(players[m.PlayerPalomo-1].mo):null;
         for(int slot=0;slot<MAXPLAYERS;slot++)if(m.Seeker(slot))
@@ -188,6 +202,8 @@ class CaelumHuntPalomo : CaelumPalomo
     {
         int from=CaelumHuntData.At(Pos.XY),to=CaelumHuntData.At(goal);
         if(from<0 || to<0)return;
+        let hunt=CaelumTarotHunt.View();
+        if(hunt.Arcana!=null && hunt.Arcana.Places!=null)hunt.Arcana.Places.BuildNavigation(Radius,Height);
         Route.Clear();RouteCursor=0;RouteGoal=to;NextRoute=level.time+CaelumHuntData.PATH_RETRY_TICS;
         Array<int> parent,queue;parent.Resize(CaelumHuntData.NODE_COUNT);
         for(int i=0;i<parent.Size();i++)parent[i]=-1;
@@ -200,6 +216,7 @@ class CaelumHuntPalomo : CaelumPalomo
                 vector2 step=d==0?(CaelumHuntData.CELL,0):d==1?(-CaelumHuntData.CELL,0):d==2?(0,CaelumHuntData.CELL):(0,-CaelumHuntData.CELL);
                 int next=CaelumHuntData.At(p+step);
                 if(next<0 || parent[next]>=0)continue;
+                if(hunt.Arcana!=null && hunt.Arcana.Places!=null && hunt.Arcana.Places.Blocks(p+step))continue;
                 // El resto del suelo es estático y está indexado al generar.
                 // Sólo las 24 trampas tienen planos que cambian en esta malla.
                 int trap=CaelumHuntData.NodeTrap(next);

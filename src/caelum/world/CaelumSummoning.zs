@@ -17,9 +17,10 @@ class CaelumSummonedZupay : CaelumZupayColossus
         ConfigureCombatMagicalRange();
     }
 
+    virtual bool HasValidBinding(){return Binding!=null && Binding.Body==self && Binding.Alive();}
     override void Tick()
     {
-        if(Binding==null || Binding.Body!=self || !Binding.Alive())
+        if(!HasValidBinding())
         {Destroy();return;}
         if(AwaitingPlacement)return;
         if(target!=null && IsFriend(target)){target=null;LastEnemy=null;}
@@ -38,7 +39,7 @@ class CaelumSummonedZupay : CaelumZupayColossus
         Destroy();
     }
 
-    bool CanAffect(Actor victim)
+    virtual bool CanAffect(Actor victim)
     {return Binding!=null && !CaelumTarotEmperor.Blocks(self,victim)
         && (CaelumTarotEmperor.Commander(self)!=null?CaelumMajorTargets.Enemy(Commander(),victim)
             : CaelumSummoning.Enemy(CaelumPlayer(Binding.Owner),victim));}

@@ -29,6 +29,7 @@ class CaelumTarotLovers : Object play
     {
         if(body==null || body.bDestroyed || body.health<=0 || body.bNoInteraction)return false;
         let user=CaelumPlayer(body);
+        if(user!=null && CaelumTarotHunt.Held(user))return false;
         return user==null || (user.player!=null && user.player.mo==user
             && !user.SessionIdentityPending && !user.ProfileDeparted);
     }
