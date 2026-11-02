@@ -1,0 +1,216 @@
+{
+  "issue": 440,
+  "version": "5.13.3",
+  "date": "2026-11-01",
+  "feature": "Death marked living obstacle passive",
+  "runtime": "build\\issue440\\living-obstacle\\caelum_argenteum_dev.pk3",
+  "runtime_sha256": "fafe4d2574e1eaa8ba37d2bac7e4b74024e992d0c613ad634ed47eeace0b874c",
+  "package_members": 18023,
+  "source_equivalence": true,
+  "runs": [
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32334-20261101-015903-554178",
+      "runtime_sha256": "fafe4d2574e1eaa8ba37d2bac7e4b74024e992d0c613ad634ed47eeace0b874c",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "commands": [
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\living-obstacle\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32334-20261101-015903-554178\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32334-20261101-015903-554178\\bundle\\peer0\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32334-20261101-015903-554178\\bundle\\peer0",
+          "-host",
+          "2",
+          "-port",
+          "32334",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32334-20261101-015903-554178\\bundle\\peer0\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32334-20261101-015903-554178\\bundle\\peer0\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ],
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\living-obstacle\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32334-20261101-015903-554178\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32334-20261101-015903-554178\\bundle\\peer1\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32334-20261101-015903-554178\\bundle\\peer1",
+          "-join",
+          "127.0.0.1:32334",
+          "-port",
+          "32335",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32334-20261101-015903-554178\\bundle\\peer1\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32334-20261101-015903-554178\\bundle\\peer1\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ]
+      ],
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440O PASS owning Death without equipping it cannot destroy an obstacle",
+            "CA440O PASS an active flag alone does not grant the passive",
+            "CA440O PASS equipped permission is not shared with another player",
+            "CA440O PASS interaction cannot destroy a distant marked obstacle",
+            "CA440O PASS ordinary native Use trace invokes the equipped Death passive",
+            "CA440O PASS marked obstacle leaves the world through native destruction",
+            "CA440O PASS the exact obstacle record is contaminated before destruction",
+            "CA440O PASS passive destruction does not charge an active sequence",
+            "CA440O PASS ordinary vegetation keeps its collision and harvesting identity",
+            "CA440O PASS unequipping immediately removes permission",
+            "CA440O RESULT capture"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440O PASS owning Death without equipping it cannot destroy an obstacle",
+            "CA440O PASS an active flag alone does not grant the passive",
+            "CA440O PASS equipped permission is not shared with another player",
+            "CA440O PASS interaction cannot destroy a distant marked obstacle",
+            "CA440O PASS ordinary native Use trace invokes the equipped Death passive",
+            "CA440O PASS marked obstacle leaves the world through native destruction",
+            "CA440O PASS the exact obstacle record is contaminated before destruction",
+            "CA440O PASS passive destruction does not charge an active sequence",
+            "CA440O PASS ordinary vegetation keeps its collision and harvesting identity",
+            "CA440O PASS unequipping immediately removes permission",
+            "CA440O RESULT capture"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32335-20261101-020027-098988",
+      "runtime_sha256": "fafe4d2574e1eaa8ba37d2bac7e4b74024e992d0c613ad634ed47eeace0b874c",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "commands": [
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\living-obstacle\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32335-20261101-020027-098988\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32335-20261101-020027-098988\\bundle\\peer0\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32335-20261101-020027-098988\\bundle\\peer0",
+          "-host",
+          "2",
+          "-port",
+          "32335",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32335-20261101-020027-098988\\bundle\\peer0\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32335-20261101-020027-098988\\bundle\\peer0\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ],
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\living-obstacle\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32335-20261101-020027-098988\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32335-20261101-020027-098988\\bundle\\peer1\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32335-20261101-020027-098988\\bundle\\peer1",
+          "-join",
+          "127.0.0.1:32335",
+          "-port",
+          "32336",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32335-20261101-020027-098988\\bundle\\peer1\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32335-20261101-020027-098988\\bundle\\peer1\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ]
+      ],
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440O PASS save recovery does not recreate the destroyed obstacle",
+            "CA440O PASS save recovery preserves untouched marked and ordinary trees",
+            "CA440O PASS recovery preserves contamination evidence and the unequipped loadout",
+            "CA440O RESULT reload"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440O PASS save recovery does not recreate the destroyed obstacle",
+            "CA440O PASS save recovery preserves untouched marked and ordinary trees",
+            "CA440O PASS recovery preserves contamination evidence and the unequipped loadout",
+            "CA440O RESULT reload"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "limits": [
+    "Author acceptance and mansion placement are pending.",
+    "No new art or rendering-performance claim."
+  ]
+}

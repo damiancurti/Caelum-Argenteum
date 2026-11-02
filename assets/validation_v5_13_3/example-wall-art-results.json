@@ -1,0 +1,265 @@
+{
+  "issue": 440,
+  "version": "5.13.3",
+  "date": "2026-11-01",
+  "scope": "Stone false-wall surface, doorway-facing sprites and idempotent old-save visual migration",
+  "package": {
+    "path": "build/issue440/examples/wall-art-r2/caelum_argenteum_dev.pk3",
+    "sha256": "641b7b29d04b6370acce9f505b57e5f87b4d0b48f2f2723b458cf4a70ff70a25",
+    "members": 18036,
+    "source_equivalence": true
+  },
+  "native_assertions": 44,
+  "runs": [
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32391-20261101-045358-042489",
+      "runtime_sha256": "641b7b29d04b6370acce9f505b57e5f87b4d0b48f2f2723b458cf4a70ff70a25",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "commands": [
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\examples\\wall-art-r2\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32391-20261101-045358-042489\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32391-20261101-045358-042489\\bundle\\peer0\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32391-20261101-045358-042489\\bundle\\peer0",
+          "-host",
+          "2",
+          "-port",
+          "32391",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32391-20261101-045358-042489\\bundle\\peer0\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32391-20261101-045358-042489\\bundle\\peer0\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ],
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\examples\\wall-art-r2\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32391-20261101-045358-042489\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32391-20261101-045358-042489\\bundle\\peer1\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32391-20261101-045358-042489\\bundle\\peer1",
+          "-join",
+          "127.0.0.1:32391",
+          "-port",
+          "32392",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32391-20261101-045358-042489\\bundle\\peer1\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32391-20261101-045358-042489\\bundle\\peer1\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ]
+      ],
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440V PASS common recovery keeps the exact stone leaf",
+            "CA440V PASS visual migration is idempotent on recovery",
+            "CA440V RESULT reload"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440V PASS common recovery keeps the exact stone leaf",
+            "CA440V PASS visual migration is idempotent on recovery",
+            "CA440V RESULT reload"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32392-20261101-045546-410919",
+      "runtime_sha256": "641b7b29d04b6370acce9f505b57e5f87b4d0b48f2f2723b458cf4a70ff70a25",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "commands": [
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\examples\\wall-art-r2\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32392-20261101-045546-410919\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32392-20261101-045546-410919\\bundle\\peer0\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32392-20261101-045546-410919\\bundle\\peer0",
+          "-host",
+          "2",
+          "-port",
+          "32392",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32392-20261101-045546-410919\\bundle\\peer0\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32392-20261101-045546-410919\\bundle\\peer0\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ],
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\examples\\wall-art-r2\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32392-20261101-045546-410919\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32392-20261101-045546-410919\\bundle\\peer1\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32392-20261101-045546-410919\\bundle\\peer1",
+          "-join",
+          "127.0.0.1:32392",
+          "-port",
+          "32393",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32392-20261101-045546-410919\\bundle\\peer1\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32392-20261101-045546-410919\\bundle\\peer1\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ]
+      ],
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440Y PASS new mansion initializes its saved bounded controller",
+            "CA440Y PASS authored passives have real placed door targets",
+            "CA440Y PASS dry state opens only its intended route",
+            "CA440Y PASS occupied portal destination is not telefragged or bypassed",
+            "CA440Y PASS mansion Use enters the annex without changing maps",
+            "CA440Y PASS native arrival point is clear in the authored corridor",
+            "CA440Y PASS annex Use returns to the practice room",
+            "CA440Y PASS mansion return clears its real furnishings",
+            "CA440Y PASS ordinary mansion rooms cannot be altered",
+            "CA440Y PASS placed cursed passage supports actual passive Use",
+            "CA440Y PASS real equipped sequence toggles the Wheel room",
+            "CA440Y PASS Wheel uses one ordinary shared payment and cooldown",
+            "CA440Y PASS instantaneous room change has no repeating timer",
+            "CA440Y PASS wet state uses native water and darkness for both players",
+            "CA440Y PASS wet state swaps the two routes",
+            "CA440Y PASS native leaf collisions match the selected routes",
+            "CA440Y PASS a body in the closing doorway prevents the whole state change",
+            "CA440Y PASS clearing the doorway permits the dry state",
+            "CA440Y PASS dry state restores air and light without moving the players",
+            "CA440Y PASS Hermit duration still executes only one instantaneous room change",
+            "CA440Y RESULT capture"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440Y PASS new mansion initializes its saved bounded controller",
+            "CA440Y PASS authored passives have real placed door targets",
+            "CA440Y PASS dry state opens only its intended route",
+            "CA440Y PASS occupied portal destination is not telefragged or bypassed",
+            "CA440Y PASS mansion Use enters the annex without changing maps",
+            "CA440Y PASS native arrival point is clear in the authored corridor",
+            "CA440Y PASS annex Use returns to the practice room",
+            "CA440Y PASS mansion return clears its real furnishings",
+            "CA440Y PASS ordinary mansion rooms cannot be altered",
+            "CA440Y PASS placed cursed passage supports actual passive Use",
+            "CA440Y PASS real equipped sequence toggles the Wheel room",
+            "CA440Y PASS Wheel uses one ordinary shared payment and cooldown",
+            "CA440Y PASS instantaneous room change has no repeating timer",
+            "CA440Y PASS wet state uses native water and darkness for both players",
+            "CA440Y PASS wet state swaps the two routes",
+            "CA440Y PASS native leaf collisions match the selected routes",
+            "CA440Y PASS a body in the closing doorway prevents the whole state change",
+            "CA440Y PASS clearing the doorway permits the dry state",
+            "CA440Y PASS dry state restores air and light without moving the players",
+            "CA440Y PASS Hermit duration still executes only one instantaneous room change",
+            "CA440Y RESULT capture"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "images": [
+    {
+      "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32391-20261101-045358-042489\\bundle\\peer0\\sequence.png",
+      "sha256": "75e9172b0fbcfbbce3f095e48665f4181c02b1a0ef681eb5aabb88fbac9150c5",
+      "review": "Closed original mansion stone is visible from this side; no transparent doorway."
+    },
+    {
+      "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32391-20261101-045358-042489\\bundle\\peer1\\sequence.png",
+      "sha256": "aa6583a26b484274c3b234d0a39ce1270f9f97337259beb6533f887b0e42dbbc",
+      "review": "Closed original mansion stone is visible from this side; no transparent doorway."
+    }
+  ],
+  "static_validation_passed": true,
+  "author_acceptance": false,
+  "retained_attempts": [
+    {
+      "port": 32387,
+      "reason": "Fixture builder expected its original MAP03 anchor, not a nested managed save."
+    },
+    {
+      "port": 32388,
+      "reason": "Campaign guard correctly refused enrolling already managed characters into another world; runner now reuses the existing store."
+    },
+    {
+      "port": 32389,
+      "reason": "Diagnostic used an unavailable GetSpriteIndex function and incorrect Progress field; changed to native state sprite and SlideProgress."
+    },
+    {
+      "port": 32390,
+      "reason": "Ten migration/identity assertions passed, but front/rear images exposed edge-on door sprites. Final data-driven facing is verified at32391 and runtime regression at32392."
+    }
+  ]
+}

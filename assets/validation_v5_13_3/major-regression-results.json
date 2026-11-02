@@ -1,0 +1,347 @@
+{
+  "issue": 440,
+  "version": "5.13.3",
+  "date": "2026-11-01",
+  "package": "build/issue440/lovers-journey/r4/caelum_argenteum_dev.pk3",
+  "runtime_sha256": "3962914a9c6168208953b450830589b73fe078da758ccb2f0c19f6cdcdcb3324",
+  "native_assertions": 118,
+  "runs": [
+    {
+      "runtime_sha256": "3962914a9c6168208953b450830589b73fe078da758ccb2f0c19f6cdcdcb3324",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440 PASS legacy selection migrates in previous ID order",
+            "CA440 PASS legacy paid duration preserved",
+            "CA440 PASS migration is idempotent",
+            "CA440 PASS base three slots accept three cards",
+            "CA440 PASS ordinary fourth card rejected",
+            "CA440 PASS Hermit equips into its own extra capacity",
+            "CA440 PASS fifth card accepted",
+            "CA440 PASS Devil adds capacity even at previous limit",
+            "CA440 PASS seventh card accepted",
+            "CA440 PASS cannot remove capacity with overflowing cards",
+            "CA440 PASS free slots then remove Hermit",
+            "CA440 PASS Star and Sun can be equipped together",
+            "CA440 PASS both Box capacities add once",
+            "CA440 PASS profile recalculation is idempotent",
+            "CA440 PASS cannot remove Sun while ordinary Box contents overflow",
+            "CA440 PASS removal restores capacity after freeing contents",
+            "CA440 PASS Star activation accepted",
+            "CA440 PASS Star makes only contents weightless",
+            "CA440 PASS Star expiry restores contents weight",
+            "CA440 PASS ordered sequence activates",
+            "CA440 PASS later Hermit doubles only first duration",
+            "CA440 PASS instant Hermit is not repeated or timed",
+            "CA440 PASS whole sequence charges once",
+            "CA440 PASS repeat input cannot charge ordinary sequence twice",
+            "CA440 PASS individual expiry leaves only extended first effect",
+            "CA440 PASS instantaneous first card does not transfer Hermit bonus",
+            "CA440 PASS prepare bound acquired essence for World",
+            "CA440 PASS World activation accepted",
+            "CA440 PASS World activates a bound essence without releasing equipment",
+            "CA440 PASS World fan-out charges once and does not equip passives",
+            "CA440 PASS World visits every acquired unequipped Minor once",
+            "CA440 PASS Devil allows lethal health-only cooldown bypass",
+            "CA440 PASS Devil uses normal death without Anima payment",
+            "CA440 PASS sequence continues after lethal payment",
+            "CA440 RESULT capture"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440 PASS legacy selection migrates in previous ID order",
+            "CA440 PASS legacy paid duration preserved",
+            "CA440 PASS migration is idempotent",
+            "CA440 PASS base three slots accept three cards",
+            "CA440 PASS ordinary fourth card rejected",
+            "CA440 PASS Hermit equips into its own extra capacity",
+            "CA440 PASS fifth card accepted",
+            "CA440 PASS Devil adds capacity even at previous limit",
+            "CA440 PASS seventh card accepted",
+            "CA440 PASS cannot remove capacity with overflowing cards",
+            "CA440 PASS free slots then remove Hermit",
+            "CA440 PASS Star and Sun can be equipped together",
+            "CA440 PASS both Box capacities add once",
+            "CA440 PASS profile recalculation is idempotent",
+            "CA440 PASS cannot remove Sun while ordinary Box contents overflow",
+            "CA440 PASS removal restores capacity after freeing contents",
+            "CA440 PASS Star activation accepted",
+            "CA440 PASS Star makes only contents weightless",
+            "CA440 PASS Star expiry restores contents weight",
+            "CA440 PASS ordered sequence activates",
+            "CA440 PASS later Hermit doubles only first duration",
+            "CA440 PASS instant Hermit is not repeated or timed",
+            "CA440 PASS whole sequence charges once",
+            "CA440 PASS repeat input cannot charge ordinary sequence twice",
+            "CA440 PASS individual expiry leaves only extended first effect",
+            "CA440 PASS instantaneous first card does not transfer Hermit bonus",
+            "CA440 PASS prepare bound acquired essence for World",
+            "CA440 PASS World activation accepted",
+            "CA440 PASS World activates a bound essence without releasing equipment",
+            "CA440 PASS World fan-out charges once and does not equip passives",
+            "CA440 PASS World visits every acquired unequipped Minor once",
+            "CA440 PASS Devil allows lethal health-only cooldown bypass",
+            "CA440 PASS Devil uses normal death without Anima payment",
+            "CA440 PASS sequence continues after lethal payment",
+            "CA440 RESULT capture"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "directory": "build/issue440/native-32467-20261101-155755-875794"
+    },
+    {
+      "runtime_sha256": "3962914a9c6168208953b450830589b73fe078da758ccb2f0c19f6cdcdcb3324",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440 PASS reload preserves chosen activation order",
+            "CA440 PASS reload preserves distinct durations",
+            "CA440 PASS reload does not duplicate Hermit capacity",
+            "CA440 PASS reload retains paid Minor effects",
+            "CA440 PASS reload retains shared cooldown",
+            "CA440 RESULT reload"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440 PASS reload preserves chosen activation order",
+            "CA440 PASS reload preserves distinct durations",
+            "CA440 PASS reload does not duplicate Hermit capacity",
+            "CA440 PASS reload retains paid Minor effects",
+            "CA440 PASS reload retains shared cooldown",
+            "CA440 RESULT reload"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "directory": "build/issue440/native-32468-20261101-155942-400873"
+    },
+    {
+      "runtime_sha256": "3962914a9c6168208953b450830589b73fe078da758ccb2f0c19f6cdcdcb3324",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440Y PASS new mansion initializes its saved bounded controller",
+            "CA440Y PASS authored passives have real placed door targets",
+            "CA440Y PASS dry state opens only its intended route",
+            "CA440Y PASS occupied portal destination is not telefragged or bypassed",
+            "CA440Y PASS mansion Use enters the annex without changing maps",
+            "CA440Y PASS native arrival point is clear in the authored corridor",
+            "CA440Y PASS annex Use returns to the practice room",
+            "CA440Y PASS mansion return clears its real furnishings",
+            "CA440Y PASS ordinary mansion rooms cannot be altered",
+            "CA440Y PASS placed cursed passage supports actual passive Use",
+            "CA440Y PASS real equipped sequence toggles the Wheel room",
+            "CA440Y PASS Wheel uses one ordinary shared payment and cooldown",
+            "CA440Y PASS instantaneous room change has no repeating timer",
+            "CA440Y PASS wet state uses native water and darkness for both players",
+            "CA440Y PASS wet state swaps the two routes",
+            "CA440Y PASS native leaf collisions match the selected routes",
+            "CA440Y PASS a body in the closing doorway prevents the whole state change",
+            "CA440Y PASS clearing the doorway permits the dry state",
+            "CA440Y PASS dry state restores air and light without moving the players",
+            "CA440Y PASS Hermit duration still executes only one instantaneous room change",
+            "CA440Y RESULT capture"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440Y PASS new mansion initializes its saved bounded controller",
+            "CA440Y PASS authored passives have real placed door targets",
+            "CA440Y PASS dry state opens only its intended route",
+            "CA440Y PASS occupied portal destination is not telefragged or bypassed",
+            "CA440Y PASS mansion Use enters the annex without changing maps",
+            "CA440Y PASS native arrival point is clear in the authored corridor",
+            "CA440Y PASS annex Use returns to the practice room",
+            "CA440Y PASS mansion return clears its real furnishings",
+            "CA440Y PASS ordinary mansion rooms cannot be altered",
+            "CA440Y PASS placed cursed passage supports actual passive Use",
+            "CA440Y PASS real equipped sequence toggles the Wheel room",
+            "CA440Y PASS Wheel uses one ordinary shared payment and cooldown",
+            "CA440Y PASS instantaneous room change has no repeating timer",
+            "CA440Y PASS wet state uses native water and darkness for both players",
+            "CA440Y PASS wet state swaps the two routes",
+            "CA440Y PASS native leaf collisions match the selected routes",
+            "CA440Y PASS a body in the closing doorway prevents the whole state change",
+            "CA440Y PASS clearing the doorway permits the dry state",
+            "CA440Y PASS dry state restores air and light without moving the players",
+            "CA440Y PASS Hermit duration still executes only one instantaneous room change",
+            "CA440Y RESULT capture"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "directory": "build/issue440/native-32470-20261101-160228-421626"
+    }
+  ],
+  "coverage": [
+    {
+      "card": 0,
+      "implementation": "CaelumFoolJourney",
+      "focused_evidence": "fool-results.json",
+      "scope": "Living-player consent; origin sequence and equipped return gate."
+    },
+    {
+      "card": 1,
+      "implementation": "CaelumTarotAutomaton",
+      "focused_evidence": "automaton-results.json",
+      "scope": "One persistent automaton, native commands, expiry/departure and inseparable equipment."
+    },
+    {
+      "card": 2,
+      "implementation": "CaelumTarotPassage / CaelumTarotMine",
+      "focused_evidence": "priestess-results.json",
+      "scope": "Marked false walls and one bounded trap per caster."
+    },
+    {
+      "card": 3,
+      "implementation": "CaelumTarotRoots / CaelumPlayerCharacter",
+      "focused_evidence": "empress-results.json",
+      "scope": "Vegetation traversal and timed restraint with piercing damage."
+    },
+    {
+      "card": 4,
+      "implementation": "CaelumTarotEmperor",
+      "focused_evidence": "emperor-results.json",
+      "scope": "Local pacification and last-cast summon control; original allegiance restored."
+    },
+    {
+      "card": 5,
+      "implementation": "CaelumTarotPassage / CaelumTarotContamination",
+      "focused_evidence": "hierophant-results.json",
+      "scope": "Marked passages; local purification with complete-water-volume containment."
+    },
+    {
+      "card": 6,
+      "implementation": "CaelumTarotLovers / CaelumLoversJourney",
+      "focused_evidence": "lovers-journey-results.json",
+      "scope": "Unique recipients, saved fractions, active-map healing and coupled journey damage."
+    },
+    {
+      "card": 7,
+      "implementation": "CaelumTarotChariot / CaelumTarotFragileObstacle",
+      "focused_evidence": "chariot-results.json",
+      "scope": "Authored fragile targets, one impulse per actor and bounded cart movement."
+    },
+    {
+      "card": 8,
+      "implementation": "CaelumTarotJustice / CaelumTarotSpirit",
+      "focused_evidence": "justice-runtime-results.json",
+      "scope": "Shared arenas, independent pairs, safe return/travel and explicit immortal spirits."
+    },
+    {
+      "card": 9,
+      "implementation": "CaelumTarotLoadout / CaelumTarotSequence",
+      "focused_evidence": "major-regression-results.json",
+      "scope": "Additive capacity; first duration doubled without repeating instantaneous effects."
+    },
+    {
+      "card": 10,
+      "implementation": "CaelumTarotExamples",
+      "focused_evidence": "example-runtime-results.json",
+      "scope": "Persistent dry/wet room, real routes and safe occupied-door rejection."
+    },
+    {
+      "card": 11,
+      "implementation": "CaelumTarotObjectMovement",
+      "focused_evidence": "strength-results.json",
+      "scope": "Movable scenery only; real carried mass and movement-only Strength multiplier."
+    },
+    {
+      "card": 12,
+      "implementation": "CaelumHangedMan",
+      "focused_evidence": "hanged-results.json",
+      "scope": "Saved other-race choice, existing ability costs and shared-key arbitration."
+    },
+    {
+      "card": 13,
+      "implementation": "CaelumTarotLivingObstacle / CaelumTarotContamination",
+      "focused_evidence": "contamination-results.json",
+      "scope": "Marked living obstacles and bounded contamination pulse."
+    },
+    {
+      "card": 14,
+      "implementation": "CaelumTemperance",
+      "focused_evidence": "temperance-results.json",
+      "scope": "Authored temporary statuses only, passive duration and active cleanse/immunity."
+    },
+    {
+      "card": 15,
+      "implementation": "CaelumTarotLoadout / CaelumTarotSequence",
+      "focused_evidence": "major-regression-results.json",
+      "scope": "Additive capacity, lethal Health bypass and continuation of paid sequence."
+    },
+    {
+      "card": 16,
+      "implementation": "CaelumMajorTargets",
+      "focused_evidence": "tower-results.json",
+      "scope": "Explicit siege-machine destruction without destroying living operators."
+    },
+    {
+      "card": 17,
+      "implementation": "CaelumTarotStar / CaelumStarCargo",
+      "focused_evidence": "star-collection-results.json",
+      "scope": "Documented furniture volumes, one giant, direct collection and safe saved release."
+    },
+    {
+      "card": 18,
+      "implementation": "CaelumTarotMoon",
+      "focused_evidence": "moon-results.json",
+      "scope": "Two combat clones with private resources, no loot and safe swaps."
+    },
+    {
+      "card": 19,
+      "implementation": "CaelumTarotSun / CaelumSunCargo",
+      "focused_evidence": "sun-inventory-results.json",
+      "scope": "Original hazardous rocks, suppressed emissions, Box accounting and safe origin release."
+    },
+    {
+      "card": 20,
+      "implementation": "CaelumTarotJudgement / CaelumTarotSpirit",
+      "focused_evidence": "judgement-results.json",
+      "scope": "Local recognized control/illusion dispel and bilingual spirit dialogue."
+    },
+    {
+      "card": 21,
+      "implementation": "CaelumTarotSequence / CaelumUnifiedTarot",
+      "focused_evidence": "major-regression-results.json",
+      "scope": "One ascending-ID fanout including bound essences; unified power remains #441."
+    }
+  ],
+  "scope": "Integrated sequence/common-save and mansion apparatus regression. Focused power evidence remains separately versioned; this does not rerun every endpoint or establish author acceptance.",
+  "presentation": "ETW denied, exit6; see presentation-availability.json. No frame-rate claim.",
+  "queries": "World is bounded by 78 IDs; one mine/plant/automaton and two clones per caster; area queries use local blockmap/typed registries. Annex controller is recovered once on map load, not scanned per tic.",
+  "author_acceptance": false
+}

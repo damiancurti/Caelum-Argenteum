@@ -4,11 +4,17 @@ class CaelumCooperativeTravelEvents : StaticEventHandler
     override void UiTick()
     {
         if(consoleplayer<0 || gamestate!=GS_LEVEL || menuactive!=0)return;
+        if(CaelumJusticeTransit.Active()){Menu.SetMenu('CaelumJusticeTravelMenu');return;}
         let vote=CaelumCooperativeTravel.View(CaelumPlayer(players[consoleplayer].mo));
         if(vote!=null && vote.Opened)Menu.SetMenu('CaelumCooperativeTravelMenu');
     }
     override void NetworkProcess(ConsoleEvent e)
     {
+        if(e.Name=="ca_justice_cancel")
+        {
+            let user=CaelumPlayerAuthority.FromNetworkPlayer(e.Player,true);
+            let pending=CaelumJusticeTransit.View();if(user!=null && pending!=null)pending.Cancel();return;
+        }
         if(e.Name!="ca_cooperative_travel")return;
         let user=CaelumPlayerAuthority.FromNetworkPlayer(e.Player,true);
         let vote=CaelumCooperativeTravel.View(user);
@@ -66,8 +72,8 @@ class CaelumCooperativeTravelMenu : ListMenu
         }
         CaelumTrucoMenu.Text(22,125,String.Format(L("CA_COOP_TRAVEL_TARGET"),target));
         if(vote.Kind==CaelumCooperativeTravel.LIMBO)
-            CaelumTrucoMenu.Wrap(22,155,730,String.Format(L("CA_FOOL_JOURNEY_COST"),
-                CaelumConstants.TAROT_ACTIVATION_ANIMA,CaelumConstants.TAROT_COOLDOWN_SECONDS));
+            CaelumTrucoMenu.Wrap(22,155,730,String.Format(L(vote.FoolDevilPayment?"CA_FOOL_JOURNEY_HEALTH":"CA_FOOL_JOURNEY_COST"),
+                CaelumConstants.TAROT_ACTIVATION_ANIMA*(vote.FoolDevilPayment?CaelumMajorArcanaData.DEVIL_COST:1),CaelumConstants.TAROT_COOLDOWN_SECONDS));
         if(vote.Kind==CaelumCooperativeTravel.ARENA)
         {
             CaelumTrucoMenu.Wrap(22,155,730,L(vote.ArenaMode==0?"CA_ARENA_INDIVIDUAL":"CA_ARENA_TEAMS_HELP"));
@@ -91,10 +97,29 @@ class CaelumCooperativeTravelMenu : ListMenu
                 plan.Available.FoodSpent,plan.Available.WaterSpent,plan.Available.ContainerSpent));
         }
         if(vote.Interrupted)CaelumTrucoMenu.Wrap(22,215,730,L("CA_COOP_TRAVEL_RISK"));
+        if(vote.JusticeWaiting)CaelumTrucoMenu.Wrap(22,215,730,L("CA_JUSTICE_RETURN_WAIT"));
         int yes=0,total=0;
-        for(int i=0;i<MAXPLAYERS;i++){if((vote.Mask&(1<<i))!=0)total++;if((vote.Accepted&(1<<i))!=0)yes++;}
+        for(int i=0;i<MAXPLAYERS;i++){if((vote.RequiredMask()&(1<<i))!=0)total++;if((vote.Accepted&vote.RequiredMask()&(1<<i))!=0)yes++;}
         CaelumTrucoMenu.Text(22,270,String.Format(L("CA_COOP_TIME_VOTES"),yes,total));
         CaelumTrucoMenu.Text(22,310,(Focus==0?"> ":"  ")..L("CA_COOP_TRAVEL_ACCEPT"));
         CaelumTrucoMenu.Text(22,340,(Focus==1?"> ":"  ")..L("CA_COOP_TIME_REJECT"));
+    }
+}
+
+class CaelumJusticeTravelMenu : ListMenu
+{
+    override void Init(Menu parent,ListMenuDescriptor desc)
+    {Super.Init(parent,desc);DontDim=true;DontBlur=true;mParentMenu=null;}
+    override void Ticker(){if(!CaelumJusticeTransit.Active())Close();}
+    override bool MenuEvent(int key,bool fromcontroller)
+    {
+        if(key==MKEY_Enter || key==MKEY_Back)EventHandler.SendNetworkEvent("ca_justice_cancel");
+        return true;
+    }
+    override void Drawer()
+    {
+        Screen.Dim(0x080E12,0.92,0,0,Screen.GetWidth(),Screen.GetHeight());
+        CaelumTrucoMenu.Wrap(22,60,730,StringTable.Localize("CA_JUSTICE_RETURN_WAIT",false));
+        CaelumTrucoMenu.Text(22,180,"> "..StringTable.Localize("CA_COOP_TIME_REJECT",false));
     }
 }

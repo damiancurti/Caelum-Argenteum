@@ -1,6 +1,45 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.13.2** - 2026-10-31.
+Documentation version: **5.13.3** - 2026-10-31.
+
+## 5.13.3 - Ordered Tarot foundation (#440, partial)
+
+Native order/capacity/timer/sequence foundation is implemented and checked.
+Star now checks furniture exterior volume before Box transfers and releases
+invalidated furniture through a saved, collision-checked placement queue.
+Direct collection also preserves original storage furniture and contents.
+Its native two-peer/common-save checkpoints are recorded in HISTORY.
+Temperance, Tower, voted Fool sequences, borrowed racial abilities and Strength
+object lifting, Chariot movement, Death's pulse/marked-obstacle passive and
+Hierophant purification extend it. Justice pairs, safe returns, travel waits and
+legacy geometry compatibility have isolated native evidence. Lovers now includes
+active-map Health sharing and coupled abstract-journey damage forecasts.
+The automaton now links its owned model to a persistent combat body, timed
+Tarot control and inseparable equipment. Native two-peer/save evidence covers
+that integration; it does not constitute full-version acceptance.
+Shared accelerated waiting now advances existing Tarot creations and duel deadlines.
+Authored false-wall identification and cursed-passage purification are implemented.
+The reversible mansion annex has usable return portals and passage examples;
+Wheel changes native water, lighting and routes, with saved state and safe closure.
+Its stone false wall has front/rear native evidence and an idempotent visual migration.
+The display room now includes the existing espinillo as Death's marked obstacle.
+Emperor integrates local pacification, reversible summon control and shared
+effect clocks. Moon copies appearances/equipment/resources into temporary combat
+illusions with safe swaps and no loot; all22 handlers now have focused evidence.
+Sun containment now preserves one rock identity, requires Star, accounts for
+Box mass/slots and delays travel until a collision-safe release succeeds.
+Annex revision6 places the8kW and environmental-contamination rocks, using the
+owned boulder, native thermal registry and bounded local pollution field.
+The contained rock has a native inventory row and safe release actions; empty
+metadata is hidden after release. Native checks remain distinct from author acceptance.
+Judgement's local instantaneous pulse uses those control/illusion adapters;
+the approved demonstration spirit now exposes its equipped hearing/damage
+passives. All approved annex examples are placed and the integrated native
+sequence/recovery/annex regression passed118 assertions. SYSTEMS maps the22
+handlers to source/evidence. ETW capture remains denied; presentation and final
+author review are pending.
+#439/441/442 have separate draft PRs605/606/607; #440 is draft PR608, in progress;
+standalone modes #596-601 remain last. No full V5.13 acceptance is claimed.
 
 ## 5.13.2 - Reversible equipment awakening (#442)
 

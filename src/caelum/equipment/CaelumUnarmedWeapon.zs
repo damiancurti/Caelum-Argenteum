@@ -2,6 +2,10 @@
 // anteriores; no importa imágenes, puffs visibles ni sonidos de Doom.
 class CaelumUnarmedWeapon : Weapon
 {
+    const WINDUP_TICS=4;
+    const RECOVERY_TICS=5;
+    static int RollDamage(bool strong){return Random[Punch](1,10)*2*(strong?10:1);}
+    static double DirectionOffset(){return Random2[Punch]()*(5.625/256);}
     int PunchFrame;
     bool Punching;
     bool LeftPunch;
@@ -40,9 +44,8 @@ class CaelumUnarmedWeapon : Weapon
         let user=CaelumPlayer(invoker.Owner);
         if(user==null || user.health<=0 || user.IsPhysicallyImmobilized()
             || CaelumClassCastView.Active(user) || CaelumBattleCry.Active(user))return;
-        int damage=Random[Punch](1,10)*2;
-        if(user.FindInventory("PowerStrength")!=null)damage*=10;
-        double direction=user.Angle+Random2[Punch]()*(5.625/256);
+        int damage=RollDamage(user.FindInventory("PowerStrength")!=null);
+        double direction=user.Angle+DirectionOffset();
         double distance=user.MeleeRange+MELEEDELTA;
         double aim=user.AimLineAttack(direction,distance,null,0,ALF_CHECK3D);
         FTranslatedLineTarget hit;
@@ -138,11 +141,11 @@ class CaelumUnarmedWeapon : Weapon
         Loop;
     Fire:
         TNT1 A 0 A_CaelumFistStart;
-        TNT1 A 4;
-        TNT1 A 4 A_CaelumFistImpact;
-        TNT1 A 5;
-        TNT1 A 4;
-        TNT1 A 5 A_ReFire;
+        TNT1 A WINDUP_TICS;
+        TNT1 A WINDUP_TICS A_CaelumFistImpact;
+        TNT1 A RECOVERY_TICS;
+        TNT1 A WINDUP_TICS;
+        TNT1 A RECOVERY_TICS A_ReFire;
         Goto Ready;
     User3:
         TNT1 A 0 A_CaelumTarotInput;

@@ -94,7 +94,7 @@ class CaelumCombatActor : Actor
         MiracleHealthRemainder+=Max(0,CombatMaximumHealth)*ratio;
         int healing=int(MiracleHealthRemainder+1e-8);
         MiracleHealthRemainder=Max(0.0,MiracleHealthRemainder-healing);
-        health=Min(CombatMaximumHealth,health+healing);
+        CaelumTarotLovers.Heal(self,healing);
         if(health>=CombatMaximumHealth)MiracleHealthRemainder=0;
         CurrentCombatLucidity=Min(CaelumConstants.MAXIMUM_LUCIDITY,
             CurrentCombatLucidity+CaelumConstants.MAXIMUM_LUCIDITY*ratio);
@@ -136,6 +136,7 @@ class CaelumCombatActor : Actor
         UpdateActorOffensiveStatistics();UpdateCombatHealthEffects();
     }
     virtual CaelumWeaponModel GetPossessedSidearm(){return null;}
+    virtual bool EquipmentCanWear(){return true;}
     int CombatStrength;
     int CombatConstitution;
     int CombatIntelligence;
@@ -258,6 +259,8 @@ class CaelumCombatActor : Actor
     double CombatAdrenalineGainMultiplier;
     double CurrentCombatLucidity;
     CaelumTelekinesisEffect TelekinesisBinding;
+    CaelumTarotRooted TarotRoots;
+    CaelumTarotEmperorBody TarotEmperor;
     int ForcedSleepTics;
     CaelumSpellSleepState SpellSleep;
     int SleepSavedTics;
@@ -2355,7 +2358,7 @@ class CaelumCombatActor : Actor
         bool armorPieceBroken=false;
         for (int slot=0;slot<CaelumConstants.ARMOR_SLOT_COUNT;slot++)
         {
-            int loss=CaelumToughnessRules.ImpactWear(CombatArmor,slot,wearBySlot[slot]);
+            int loss=EquipmentCanWear()?CaelumToughnessRules.ImpactWear(CombatArmor,slot,wearBySlot[slot]):0;
             if (loss>0 && CombatArmor.Durability[slot]<=0) armorPieceBroken=true;
         }
         if (LastImpactFinalDamage <= 0) { return; }
@@ -3007,17 +3010,27 @@ class CaelumCombatActor : Actor
     int ApplyNativeHealthDamage(Actor inflictor,Actor source,double damage,Name mod,int flags,double angle)
     {
         int retained=CaelumSealResistance.HealthDamage(self,inflictor,damage,mod);
-        if(flags & DMG_FORCED)retained=CaelumRally.ScaleDamage(self,CaelumSleepRules.ScaleDamage(self,retained));
+        if(flags & DMG_FORCED)retained=CaelumTarotLovers.Damage(self,inflictor,source,
+            CaelumRally.ScaleDamage(self,CaelumSleepRules.ScaleDamage(self,retained)),mod);
         int before=health;
         int result=Super.DamageMobj(inflictor,source,retained,mod,flags,angle);
         CaelumSleepRules.HealthLost(self,before);
         return result;
     }
 
+    void ApplyLoversDamage(Actor inflictor,Actor source,int damage,Name mod)
+    {
+        if(CaelumTarotLovers.Immune(self,damage))return;
+        int before=health;
+        Super.DamageMobj(inflictor,source,damage,mod,DMG_FORCED|DMG_NO_ARMOR|DMG_THRUSTLESS,0);
+        CaelumSleepRules.HealthLost(self,before);
+        if(health<before)UpdateCombatHealthEffects();
+    }
+
     override int TakeSpecialDamage(Actor inflictor,Actor source,int damage,Name mod)
     {
-        return CaelumRally.ScaleDamage(self,
-            CaelumSleepRules.ScaleDamage(self,Super.TakeSpecialDamage(inflictor,source,damage,mod)));
+        return CaelumTarotLovers.Damage(self,inflictor,source,CaelumRally.ScaleDamage(self,
+            CaelumSleepRules.ScaleDamage(self,Super.TakeSpecialDamage(inflictor,source,damage,mod))),mod);
     }
 
     virtual bool IsTarotDeity(){return false;}
@@ -3355,7 +3368,7 @@ class CaelumCombatActor : Actor
                 lucidityDefensePercent = defensePercent;
             }
 
-            if (CombatArmor != null
+            if (EquipmentCanWear() && CombatArmor != null
                 && CombatArmor.Durability[slot] > 0
                 && absorbedDamage > 0.0)
             {
@@ -3594,7 +3607,7 @@ class CaelumCombatActor : Actor
         LastCombatToughnessDamageMultiplier=CaelumToughnessRules.RetainedFraction(
             LastCombatArmorPostDefenseDamage,LastCombatPostToughnessDamage);
 
-        if (CombatArmor == null
+        if (!EquipmentCanWear() || CombatArmor == null
             || CombatArmor.Durability[LastCombatArmorSlot] <= 0
             || LastCombatArmorAbsorbedDamage <= 0.0)
         {
@@ -3996,6 +4009,7 @@ class CaelumCombatActor : Actor
     void ThermalChase(statelabel melee='_a_chase_default',statelabel missile='_a_chase_default',int flags=0)
     {
         if((CaelumBolas.Restrained(self) || CaelumTelekinesisRules.Held(self)))return;
+        if(CaelumTarotRooted.Active(self))flags|=CHF_DONTMOVE;
         bool perceptionUpdated=false;
         if(CaelumCommunication.NeedsOrder(self)
             && (target is "CaelumCombatActor" || target is "CaelumPlayer" || target is "CaelumSearchPoint"))
@@ -4044,7 +4058,7 @@ class CaelumCombatActor : Actor
 
     bool ThermalTryMove(vector2 destination)
     {
-        if((CaelumBolas.Restrained(self) || CaelumTelekinesisRules.Held(self)))return false;
+        if((CaelumBolas.Restrained(self) || CaelumTelekinesisRules.Held(self)) || CaelumTarotRooted.Active(self))return false;
         vector3 before=Pos;
         bool moved=TryMove(destination,0);
         if(moved && Pos.Z<=FloorZ+0.01)CaelumThermalMotion.Path(self,before,Pos,false);
@@ -4072,7 +4086,7 @@ class CaelumCombatActor : Actor
         {
             IdleHealthAccumulator+=CaelumContaminationNPC.HealthRate(self)/TICRATE;
             int recovered=int(IdleHealthAccumulator+0.0000001);
-            IdleHealthAccumulator=Max(0.0,IdleHealthAccumulator-recovered);health=Min(CombatMaximumHealth,health+recovered);
+            IdleHealthAccumulator=Max(0.0,IdleHealthAccumulator-recovered);CaelumTarotLovers.Heal(self,recovered);
             // El mismo esfuerzo natural depura incluso con Vida llena; se
             // conservan las condiciones y el presupuesto de recuperación NPC.
             CaelumContaminationNPC.Recover(self,recovered);

@@ -88,6 +88,10 @@
     {
       "name": "arcana_capture",
       "path": "dialogues/shared/arcana_capture.usdf"
+    },
+    {
+      "name": "tarot_spirit",
+      "path": "dialogues/shared/tarot_spirit.usdf"
     }
   ],
   "order": [
@@ -157,6 +161,7 @@
     43660,
     43890,
     43700,
-    43622
+    43622,
+    44020
   ]
 }

@@ -1,0 +1,8 @@
+{
+  "issue": 440,
+  "version": "5.13.3",
+  "baseline_commit": "324e5408f",
+  "baseline_file": "pre_examples_MAP01.wad",
+  "baseline_sha256": "a33c53f67840cede1dca4d0064219dd9c82f40b475742458f762a58965df1e2a",
+  "provenance": "Exact MAP01 with Justice arena before adding the author-requested Tarot example rooms. Kept for reversible compatibility; not a new gameplay source."
+}

@@ -29,9 +29,9 @@ class CaelumSofaItem : CaelumRestFurnitureItem abstract
     override bool Carry(CaelumPlayer user)
     {
         if(!CanCarry(user))return false;
-        user.RefreshCarriedInventorySummary();if(!user.CanAddWeightToPersonalInventory(GetUnitWeight()))return false;
+        int route=CaelumTarotStar.CarryRoute(user,self,GetUnitWeight());if(route<0)return false;
         CaelumContaminationObject.LeavingWorld(Sofa);
-        DetachFromOwner();AttachToOwner(user);InMagicBox=false;Park();
+        DetachFromOwner();AttachToOwner(user);InMagicBox=route==1;Park();
         user.OnNativeInventoryChanged();user.RefreshFormalInventorySnapshot();return true;
     }
     override bool Place(CaelumPlayer user)
@@ -39,7 +39,8 @@ class CaelumSofaItem : CaelumRestFurnitureItem abstract
         if(!CaelumPlayerAuthority.CanMutate(user) || Owner!=user || InMagicBox || Amount!=1)return false;
         double radius=CaelumRestFurnitureData.Radius(Variant()),height=CaelumRestFurnitureData.Height(Variant());
         vector3 point=user.Pos+(Cos(user.Angle),Sin(user.Angle),0)*(user.Radius+radius+1);
-        if(!CaelumCampLand.AllowsFurniture(user,point,radius)
+        point=CaelumTarotStar.Point(user,point);
+        if(!CaelumTarotStar.Land(user,point,radius)
             || !CaelumPlacementGeometry.Fits(user,point,radius,height,Sofa))return false;
         bool fresh=Sofa==null;
         if(fresh)Sofa=CaelumSofa(Actor.Spawn(CaelumRestFurnitureData.BodyClass(Variant()),point,NO_REPLACE));
@@ -48,7 +49,7 @@ class CaelumSofaItem : CaelumRestFurnitureItem abstract
         Sofa.Configure();Sofa.Angle=user.Angle;Sofa.A_ChangeLinkFlags(0,0);Sofa.SetOrigin(point,false);
         bool fits=CaelumMansionSofas.Fits(Sofa) && user.CheckSight(Sofa,SF_IGNOREVISIBILITY);
         for(int i=0;i<CaelumSofaData.Seats(Sofa.Kind()) && fits;i++)
-            fits=CaelumCampLand.AllowsFurniture(user,Sofa.SeatPosition(i),CaelumSofaData.SEAT_RADIUS)
+            fits=CaelumTarotStar.Land(user,Sofa.SeatPosition(i),CaelumSofaData.SEAT_RADIUS)
                 && CaelumPlacementGeometry.Fits(user,Sofa.SeatPosition(i),CaelumSofaData.SEAT_RADIUS,height,Sofa);
         if(!fits){if(fresh){Sofa.Destroy();Sofa=null;}else Park();return false;}
         Sofa.SeatsReady=false;Sofa.PrepareSeats();

@@ -23,9 +23,10 @@ class CaelumElementalStatus : Object
 
     bool HasBurnHeat(){return BurnHeatRemaining>0 || PendingBurnHeatJoules>0;}
 
-    play void ApplyBurnHeat(double duration,double power,double absorbedWatts)
+    play void ApplyBurnHeat(double duration,double power,double absorbedWatts,Actor receiver=null)
     {
         EnsureBurnHeat();
+        duration=CaelumTemperance.Duration(receiver,duration);
         duration=Max(0.0,duration);power=Max(0.0,power);absorbedWatts=Max(0.0,absorbedWatts);
         if(duration<=0 || absorbedWatts<=0)return;
         // La misma prioridad no acumulativa del estado; Dureza sólo altera vida.
@@ -151,6 +152,11 @@ class CaelumElementalStatus : Object
     )
     {
         RefreshResistance(receiver);
+        // Dureza puede convertir quemadura/veneno/enfermedad en curación.
+        // La Templanza no suprime ese beneficio; el corte siempre es negativo.
+        if(effect==CaelumConstants.ELEMENTAL_EFFECT_CUT || ResponseFactors[0]>=0)
+            duration=CaelumTemperance.Duration(receiver,duration);
+        if(duration<=0)return;
         duration=Max(0.0,duration);power=Max(0.0,power);damagePerSecond=Max(1,damagePerSecond);
         if(effect==CaelumConstants.ELEMENTAL_EFFECT_CUT)
         {
@@ -174,9 +180,10 @@ class CaelumElementalStatus : Object
         else {DiseasePower=power;DiseaseDamagePerSecond=damagePerSecond;DiseaseSource=source;}
     }
 
-    void ApplyControlEffect(int effect, double duration, double power)
+    play void ApplyControlEffect(int effect, double duration, double power,Actor receiver=null)
     {
-        duration = Max(0.0, duration);
+        duration = CaelumTemperance.Duration(receiver,duration);
+        if(duration<=0)return;
         power = Max(0.0, power);
         if (effect == CaelumConstants.ELEMENTAL_EFFECT_FREEZE)
         {
@@ -216,6 +223,23 @@ class CaelumElementalStatus : Object
         EarthPenaltyPowerPercent = power;
     }
 
+    // Sólo estados temporales aprobados. Tierra, necesidades, contaminación y
+    // sueño natural conservan sus dueños y reglas; no se recalculan al limpiar.
+    play void ClearTemporaryStates(Actor owner)
+    {
+        RefreshResistance(owner);
+        ClearBurnHeat();
+        for(int i=0;i<3;i++)if(ResponseFactors[i]>=0)
+        {BaseRemaining[i]=0;SetRemaining(i,0);HealthFraction[i]=0;PulseSeconds[i]=0;}
+        CutPower=0;
+        BurnTickAccumulator=PoisonTickAccumulator=DiseaseTickAccumulator=CutTickAccumulator=0;
+        CutRemaining=BurnVisualRemaining=PoisonVisualRemaining=0;
+        FreezeRemaining=DazzleRemaining=LightningStunRemaining=0;
+        FreezePowerPercent=DazzlePowerPercent=0;
+        CutSource=null;
+        UpdateVisualEffects(owner);
+    }
+
     // DamageMobj pertenece al alcance jugable del motor. Declarar toda la
     // cadena de actualización como play evita que Object la ejecute desde
     // el alcance de datos en GZDoom 4.14.2.
@@ -248,7 +272,7 @@ class CaelumElementalStatus : Object
         if(owner==null || owner.health<=0 || amount<=0)return;
         let user=CaelumPlayer(owner);let npc=CaelumCombatActor(owner);
         int maximum=user!=null ? user.CaelumMaximumHealth : npc!=null ? npc.CombatMaximumHealth : owner.GetMaxHealth();
-        owner.health=Min(maximum,owner.health+amount);
+        CaelumTarotLovers.Heal(owner,amount);
         if(user!=null){user.player.health=user.health;user.UpdateHealthStateEffects();}
         else if(npc!=null)npc.UpdateCombatHealthEffects();
     }

@@ -163,6 +163,7 @@ class CaelumSiegeEncounter : Actor
         {
             let population=CaelumPopulationState.Get();
             if(population!=null)population.UnlinkedGuards.Push(entry);
+            CaelumTarotChariot.RegisteredUnlinked(body);
         }
         return entry;
     }
@@ -226,6 +227,33 @@ class CaelumSiegeEncounter : Actor
 // Base reutilizable por los seis arietes y los seis cañones atacantes (#21).
 class CaelumHostileMachine : Actor
 {
+    int TarotMachineRevision;
+    bool TarotDestroyed;
+
+    void EnsureTarotMachine()
+    {
+        if(TarotMachineRevision>=CaelumMajorArcanaData.MACHINE_REVISION)return;
+        TarotDestroyed=false;
+        TarotMachineRevision=CaelumMajorArcanaData.MACHINE_REVISION;
+    }
+
+    virtual void RemoveMachineParts() {}
+
+    bool DestroyByTarot()
+    {
+        EnsureTarotMachine();
+        if(TarotDestroyed)return false;
+        TarotDestroyed=true;
+        // El registro de objetivo permanece: null nunca equivale a victoria.
+        if(!Neutralized){Neutralized=true;NeutralizationCount++;}
+        Armed=false;health=0;Vel=(0,0,0);
+        for(int i=0;i<Crew.Size();i++)
+            if(Crew[i]!=null && Crew[i].CrewMachine==self)Crew[i].CrewMachine=null;
+        Crew.Clear();RemoveMachineParts();
+        if(Encounter!=null)Encounter.ResolveVictory();
+        return true;
+    }
+
     CaelumAbsentMachine AbsentMachine;
     virtual bool CountsAsHostileObjective() { return true; }
     CaelumSiegeEncounter Encounter;
@@ -300,6 +328,7 @@ class CaelumHostileMachine : Actor
 
     void ObserveGuards()
     {
+        EnsureTarotMachine();
         if (!Armed || Neutralized || Encounter == null) return;
         let population=CaelumPopulationState.Get();
         if(population!=null && population.HighDensity)

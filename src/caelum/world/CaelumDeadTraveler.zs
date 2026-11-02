@@ -60,6 +60,8 @@ class CaelumDeadTraveler : Inventory
     static void ChangeMap(String destination,int entry,int flags)
     {
         if(!LevelInfo.MapExists(destination))return;
+        if(!CaelumTarotJustice.PrepareTravel())
+        {CaelumJusticeTransit.Queue(destination,entry,flags);return;}
         for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i])Prepare(CaelumPlayer(players[i].mo));
         Level.ChangeLevel(destination,entry,flags);
     }

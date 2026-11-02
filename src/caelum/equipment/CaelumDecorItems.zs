@@ -128,8 +128,8 @@ class CaelumDecorItem : CaelumRestFurnitureItem abstract
     override bool Carry(CaelumPlayer user)
     {
         if(!CanCarry(user))return false;
-        user.RefreshCarriedInventorySummary();if(!user.CanAddWeightToPersonalInventory(GetUnitWeight()))return false;
-        CaelumContaminationObject.LeavingWorld(Decoration);DetachFromOwner();AttachToOwner(user);InMagicBox=false;Park();
+        int route=CaelumTarotStar.CarryRoute(user,self,GetUnitWeight());if(route<0)return false;
+        CaelumContaminationObject.LeavingWorld(Decoration);DetachFromOwner();AttachToOwner(user);InMagicBox=route==1;Park();
         user.OnNativeInventoryChanged();user.RefreshFormalInventorySnapshot();return true;
     }
     override bool Place(CaelumPlayer user)
@@ -137,8 +137,9 @@ class CaelumDecorItem : CaelumRestFurnitureItem abstract
         if(!CaelumPlayerAuthority.CanMutate(user) || Owner!=user || InMagicBox || Amount!=1)return false;
         int k=Kind();double radius=CaelumDecorData.Radius(k),height=CaelumDecorData.Height(k),facing=user.Angle;
         vector3 point=user.Pos+(Cos(user.Angle),Sin(user.Angle),0)*(user.Radius+radius+1);
-        if(CaelumDecorData.WallMounted(k)){let mount=new('CaelumDecorPlacement');if(!mount.Wall(user,Decoration,k))return false;point=mount.ResultPoint;facing=mount.ResultAngle;}
-        else if(!CaelumCampLand.AllowsFurniture(user,point,radius) || !CaelumPlacementGeometry.Fits(user,point,radius,height,Decoration))return false;
+        point=CaelumTarotStar.Point(user,point);
+        if(CaelumDecorData.WallMounted(k) && !CaelumTarotStar.Dropping(user)){let mount=new('CaelumDecorPlacement');if(!mount.Wall(user,Decoration,k))return false;point=mount.ResultPoint;facing=mount.ResultAngle;}
+        else if(!CaelumTarotStar.Land(user,point,radius) || !CaelumPlacementGeometry.Fits(user,point,radius,height,Decoration))return false;
         bool fresh=Decoration==null;
         if(fresh)Decoration=CaelumDecorBody(Actor.Spawn(CaelumDecorData.BodyClass(k),point,NO_REPLACE));
         if(Decoration==null)return false;

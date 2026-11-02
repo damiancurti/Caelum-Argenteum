@@ -48,9 +48,10 @@ class CaelumTelekinesisRules : Object play
         if(body==null || body==user || body.health<=0 || body.bDORMANT
             || body.bNOCLIP || body.bNOINTERACTION || MassKg(body)<=0)return false;
         if(body is "CaelumPlayer" || body is "CaelumCombatActor")return body.bSHOOTABLE;
+        let prop=CaelumMovableProp(body);
+        if(prop!=null && prop.TarotLift!=null)return false;
         let environment=CaelumEnvironmentProp(body);
         if(environment!=null)return environment.IsEnvironmentMovable();
-        let prop=CaelumMovableProp(body);
         return prop!=null && prop.GetRequiredPhysicalPower()>0;
     }
 

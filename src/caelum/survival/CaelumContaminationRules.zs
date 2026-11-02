@@ -68,6 +68,8 @@ class CaelumContaminationRules : Object
     }
     static clearscope double Ambient(double reference,double celsius,double humidity,double rain,bool uncovered)
     {
+        // Marcador de una concentración fijada por un emisor, no por el clima.
+        if(reference==CaelumMajorArcanaData.ROCK_FIXED_REFERENCE)return CaelumFoodData.MAX_CONTAMINATION;
         double value=Environment(reference,celsius,humidity);
         if(uncovered && reference==CaelumContaminationData.URBAN_REFERENCE)
             value=Max(0.0,value-RainReduction(rain));

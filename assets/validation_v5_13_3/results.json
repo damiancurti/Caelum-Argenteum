@@ -1,0 +1,147 @@
+{
+  "issue": 440,
+  "release": "5.13.3",
+  "scope": "Ordered loadout and sequence foundation; remaining Major powers are incomplete",
+  "author_acceptance": false,
+  "static_validation": "validate_project.py: no errors; git diff --check: clean",
+  "runtime_members_matching_source": 18011,
+  "native_runs": [
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32264-20261031-231851-426051",
+      "runtime_sha256": "52710e279e5a73b6bca703e9c9284ee6d0593a5861700ed75bdf3b629461b188",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440 PASS legacy selection migrates in previous ID order",
+            "CA440 PASS legacy paid duration preserved",
+            "CA440 PASS migration is idempotent",
+            "CA440 PASS base three slots accept three cards",
+            "CA440 PASS ordinary fourth card rejected",
+            "CA440 PASS Hermit equips into its own extra capacity",
+            "CA440 PASS fifth card accepted",
+            "CA440 PASS Devil adds capacity even at previous limit",
+            "CA440 PASS seventh card accepted",
+            "CA440 PASS cannot remove capacity with overflowing cards",
+            "CA440 PASS free slots then remove Hermit",
+            "CA440 PASS Star and Sun can be equipped together",
+            "CA440 PASS both Box capacities add once",
+            "CA440 PASS profile recalculation is idempotent",
+            "CA440 PASS cannot remove Sun while ordinary Box contents overflow",
+            "CA440 PASS removal restores capacity after freeing contents",
+            "CA440 PASS Star activation accepted",
+            "CA440 PASS Star makes only contents weightless",
+            "CA440 PASS Star expiry restores contents weight",
+            "CA440 PASS ordered sequence activates",
+            "CA440 PASS later Hermit doubles only first duration",
+            "CA440 PASS instant Hermit is not repeated or timed",
+            "CA440 PASS whole sequence charges once",
+            "CA440 PASS repeat input cannot charge ordinary sequence twice",
+            "CA440 PASS individual expiry leaves only extended first effect",
+            "CA440 PASS instantaneous first card does not transfer Hermit bonus",
+            "CA440 PASS prepare bound acquired essence for World",
+            "CA440 PASS World activation accepted",
+            "CA440 PASS World activates a bound essence without releasing equipment",
+            "CA440 PASS World fan-out charges once and does not equip passives",
+            "CA440 PASS World visits every acquired unequipped Minor once",
+            "CA440 PASS Devil allows lethal health-only cooldown bypass",
+            "CA440 PASS Devil uses normal death without Anima payment",
+            "CA440 PASS sequence continues after lethal payment",
+            "CA440 RESULT capture"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440 PASS legacy selection migrates in previous ID order",
+            "CA440 PASS legacy paid duration preserved",
+            "CA440 PASS migration is idempotent",
+            "CA440 PASS base three slots accept three cards",
+            "CA440 PASS ordinary fourth card rejected",
+            "CA440 PASS Hermit equips into its own extra capacity",
+            "CA440 PASS fifth card accepted",
+            "CA440 PASS Devil adds capacity even at previous limit",
+            "CA440 PASS seventh card accepted",
+            "CA440 PASS cannot remove capacity with overflowing cards",
+            "CA440 PASS free slots then remove Hermit",
+            "CA440 PASS Star and Sun can be equipped together",
+            "CA440 PASS both Box capacities add once",
+            "CA440 PASS profile recalculation is idempotent",
+            "CA440 PASS cannot remove Sun while ordinary Box contents overflow",
+            "CA440 PASS removal restores capacity after freeing contents",
+            "CA440 PASS Star activation accepted",
+            "CA440 PASS Star makes only contents weightless",
+            "CA440 PASS Star expiry restores contents weight",
+            "CA440 PASS ordered sequence activates",
+            "CA440 PASS later Hermit doubles only first duration",
+            "CA440 PASS instant Hermit is not repeated or timed",
+            "CA440 PASS whole sequence charges once",
+            "CA440 PASS repeat input cannot charge ordinary sequence twice",
+            "CA440 PASS individual expiry leaves only extended first effect",
+            "CA440 PASS instantaneous first card does not transfer Hermit bonus",
+            "CA440 PASS prepare bound acquired essence for World",
+            "CA440 PASS World activation accepted",
+            "CA440 PASS World activates a bound essence without releasing equipment",
+            "CA440 PASS World fan-out charges once and does not equip passives",
+            "CA440 PASS World visits every acquired unequipped Minor once",
+            "CA440 PASS Devil allows lethal health-only cooldown bypass",
+            "CA440 PASS Devil uses normal death without Anima payment",
+            "CA440 PASS sequence continues after lethal payment",
+            "CA440 RESULT capture"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32265-20261031-231950-453054",
+      "runtime_sha256": "52710e279e5a73b6bca703e9c9284ee6d0593a5861700ed75bdf3b629461b188",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440 PASS reload preserves chosen activation order",
+            "CA440 PASS reload preserves distinct durations",
+            "CA440 PASS reload does not duplicate Hermit capacity",
+            "CA440 PASS reload retains paid Minor effects",
+            "CA440 PASS reload retains shared cooldown",
+            "CA440 RESULT reload"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440 PASS reload preserves chosen activation order",
+            "CA440 PASS reload preserves distinct durations",
+            "CA440 PASS reload does not duplicate Hermit capacity",
+            "CA440 PASS reload retains paid Minor effects",
+            "CA440 PASS reload retains shared cooldown",
+            "CA440 RESULT reload"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "limitations": [
+    "No author acceptance; no final manual suite handed off.",
+    "New spatial powers, map arenas, automaton and giant/hazardous containment remain unimplemented.",
+    "Frame presentation and final combined-power lifecycle still require validation."
+  ]
+}

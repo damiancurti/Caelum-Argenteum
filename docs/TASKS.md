@@ -1,6 +1,22 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.13.2** - 2026-10-31.
+Documentation version: **5.13.3** - 2026-10-31.
+
+## 5.13.3 - Integrated Major handlers (#440)
+
+All22 Major handlers, approved annex targets, saved lifecycle adapters and shared
+key arbitration are implemented. SYSTEMS contains the source/evidence matrix;
+HISTORY records focused failures and corrections. Final-package native regression
+passed118 assertions across two clients for sequence/payment, common-save recovery
+and actual mansion portals/Wheel mechanisms. Star includes furniture and original
+storage contents; Lovers includes coupled abstract journeys. Arbitrary scenery
+does not gain a new capture capability.
+
+Continue standalone #597-601 in separate branches/PRs. The final author suite
+remains deferred until the whole version is ready. Complete frame-presentation
+review when Windows permits ETW: the2026-11-01 availability probe failed with
+access denied/exit6. Native functional checks do not establish FPS. Keep all
+unaccepted issue PRs open; no manual acceptance is inferred.
 
 ## 5.13.2 - Reversible equipment awakening (#442)
 

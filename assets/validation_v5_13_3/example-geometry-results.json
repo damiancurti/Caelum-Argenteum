@@ -1,0 +1,430 @@
+{
+  "issue": 440,
+  "version": "5.13.3",
+  "date": "2026-11-01",
+  "scope": "Reversible mansion example annex geometry, not runtime apparatus",
+  "packages": [
+    {
+      "path": "build\\issue440\\examples\\geometry\\caelum_argenteum_dev.pk3",
+      "sha256": "659a8f0583f388f623fc780748c35bd5463144e2be764cc4aa1ed8aae737171f",
+      "members": 18033,
+      "expected_source_equivalence": true
+    },
+    {
+      "path": "build\\issue440\\examples\\pre-examples\\caelum_argenteum_dev.pk3",
+      "sha256": "e4217dd7b4a22f2aff434c035dbcca387ad18fe0e06ff61ba72f6fcabfe6010a",
+      "members": 18033,
+      "expected_source_equivalence": true
+    }
+  ],
+  "prior_textmap_prefix_unchanged": true,
+  "native_assertions": 52,
+  "runs": [
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32379-20261101-042703-326611",
+      "runtime_sha256": "659a8f0583f388f623fc780748c35bd5463144e2be764cc4aa1ed8aae737171f",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "commands": [
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\examples\\geometry\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32379-20261101-042703-326611\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32379-20261101-042703-326611\\bundle\\peer0\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32379-20261101-042703-326611\\bundle\\peer0",
+          "-host",
+          "2",
+          "-port",
+          "32379",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32379-20261101-042703-326611\\bundle\\peer0\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32379-20261101-042703-326611\\bundle\\peer0\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ],
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\examples\\geometry\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32379-20261101-042703-326611\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32379-20261101-042703-326611\\bundle\\peer1\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32379-20261101-042703-326611\\bundle\\peer1",
+          "-join",
+          "127.0.0.1:32379",
+          "-port",
+          "32380",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32379-20261101-042703-326611\\bundle\\peer1\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32379-20261101-042703-326611\\bundle\\peer1\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ]
+      ],
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440X PASS real mansion loaded with all previous content",
+            "CA440X PASS separate Justice arena still resolves its original sector",
+            "CA440X PASS authored cartography accepts the loaded mansion revision",
+            "CA440X PASS annex appends ten sectors without renumbering the mansion",
+            "CA440X PASS room 1 has native walkable floor and correct identity",
+            "CA440X PASS room 2 has native walkable floor and correct identity",
+            "CA440X PASS room 3 has native walkable floor and correct identity",
+            "CA440X PASS room 4 has native walkable floor and correct identity",
+            "CA440X PASS display room admits the approved automaton collision envelope",
+            "CA440X PASS full partition prevents walking around the secret doorway",
+            "CA440X PASS 64-wide authored doorway fits the real player with its lintel",
+            "CA440X PASS dry Wheel room has no water above its floor",
+            "CA440X PASS raising the native swimmable floor submerges both players",
+            "CA440X PASS wet state reaches the approved two-metre depth",
+            "CA440X PASS native Wheel sector supports the approved dark state",
+            "CA440X RESULT capture"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440X PASS real mansion loaded with all previous content",
+            "CA440X PASS separate Justice arena still resolves its original sector",
+            "CA440X PASS authored cartography accepts the loaded mansion revision",
+            "CA440X PASS annex appends ten sectors without renumbering the mansion",
+            "CA440X PASS room 1 has native walkable floor and correct identity",
+            "CA440X PASS room 2 has native walkable floor and correct identity",
+            "CA440X PASS room 3 has native walkable floor and correct identity",
+            "CA440X PASS room 4 has native walkable floor and correct identity",
+            "CA440X PASS display room admits the approved automaton collision envelope",
+            "CA440X PASS full partition prevents walking around the secret doorway",
+            "CA440X PASS 64-wide authored doorway fits the real player with its lintel",
+            "CA440X PASS dry Wheel room has no water above its floor",
+            "CA440X PASS raising the native swimmable floor submerges both players",
+            "CA440X PASS wet state reaches the approved two-metre depth",
+            "CA440X PASS native Wheel sector supports the approved dark state",
+            "CA440X RESULT capture"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32380-20261101-042808-486522",
+      "runtime_sha256": "659a8f0583f388f623fc780748c35bd5463144e2be764cc4aa1ed8aae737171f",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "commands": [
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\examples\\geometry\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32380-20261101-042808-486522\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32380-20261101-042808-486522\\bundle\\peer0\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32380-20261101-042808-486522\\bundle\\peer0",
+          "-host",
+          "2",
+          "-port",
+          "32380",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32380-20261101-042808-486522\\bundle\\peer0\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32380-20261101-042808-486522\\bundle\\peer0\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ],
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\examples\\geometry\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32380-20261101-042808-486522\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32380-20261101-042808-486522\\bundle\\peer1\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32380-20261101-042808-486522\\bundle\\peer1",
+          "-join",
+          "127.0.0.1:32380",
+          "-port",
+          "32381",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32380-20261101-042808-486522\\bundle\\peer1\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32380-20261101-042808-486522\\bundle\\peer1\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ]
+      ],
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440X PASS common recovery retains compatible authored cartography",
+            "CA440X PASS common recovery retains both bodies in the annex",
+            "CA440X PASS native wet geometry and lighting persist without reset",
+            "CA440X PASS recovery preserves the existing Justice arena",
+            "CA440X RESULT reload"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440X PASS common recovery retains compatible authored cartography",
+            "CA440X PASS common recovery retains both bodies in the annex",
+            "CA440X PASS native wet geometry and lighting persist without reset",
+            "CA440X PASS recovery preserves the existing Justice arena",
+            "CA440X RESULT reload"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32381-20261101-042925-388492",
+      "runtime_sha256": "e4217dd7b4a22f2aff434c035dbcca387ad18fe0e06ff61ba72f6fcabfe6010a",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "commands": [
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\examples\\pre-examples\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32381-20261101-042925-388492\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32381-20261101-042925-388492\\bundle\\peer0\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32381-20261101-042925-388492\\bundle\\peer0",
+          "-host",
+          "2",
+          "-port",
+          "32381",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32381-20261101-042925-388492\\bundle\\peer0\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32381-20261101-042925-388492\\bundle\\peer0\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ],
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\examples\\pre-examples\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32381-20261101-042925-388492\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32381-20261101-042925-388492\\bundle\\peer1\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32381-20261101-042925-388492\\bundle\\peer1",
+          "-join",
+          "127.0.0.1:32381",
+          "-port",
+          "32382",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32381-20261101-042925-388492\\bundle\\peer1\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32381-20261101-042925-388492\\bundle\\peer1\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ]
+      ],
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440X PASS real mansion loaded with all previous content",
+            "CA440X PASS separate Justice arena still resolves its original sector",
+            "CA440X PASS authored cartography accepts the loaded mansion revision",
+            "CA440X PASS compatibility retains exact pre-example sector count",
+            "CA440X RESULT capture"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440X PASS real mansion loaded with all previous content",
+            "CA440X PASS separate Justice arena still resolves its original sector",
+            "CA440X PASS authored cartography accepts the loaded mansion revision",
+            "CA440X PASS compatibility retains exact pre-example sector count",
+            "CA440X RESULT capture"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32382-20261101-043111-396316",
+      "runtime_sha256": "e4217dd7b4a22f2aff434c035dbcca387ad18fe0e06ff61ba72f6fcabfe6010a",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "commands": [
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\examples\\pre-examples\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32382-20261101-043111-396316\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32382-20261101-043111-396316\\bundle\\peer0\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32382-20261101-043111-396316\\bundle\\peer0",
+          "-host",
+          "2",
+          "-port",
+          "32382",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32382-20261101-043111-396316\\bundle\\peer0\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32382-20261101-043111-396316\\bundle\\peer0\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ],
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\examples\\pre-examples\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32382-20261101-043111-396316\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32382-20261101-043111-396316\\bundle\\peer1\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32382-20261101-043111-396316\\bundle\\peer1",
+          "-join",
+          "127.0.0.1:32382",
+          "-port",
+          "32383",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32382-20261101-043111-396316\\bundle\\peer1\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32382-20261101-043111-396316\\bundle\\peer1\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ]
+      ],
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440X PASS common recovery retains compatible authored cartography",
+            "CA440X PASS pre-example common save stays on its original geometry",
+            "CA440X PASS recovery preserves the existing Justice arena",
+            "CA440X RESULT reload"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440X PASS common recovery retains compatible authored cartography",
+            "CA440X PASS pre-example common save stays on its original geometry",
+            "CA440X PASS recovery preserves the existing Justice arena",
+            "CA440X RESULT reload"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "author_acceptance": "Pending final V5.13 suite",
+  "limitations": [
+    "No runtime portal or Wheel controller yet",
+    "Opening dialogue obscures diagnostic screenshot; no full visual acceptance",
+    "No frame-presentation claim"
+  ]
+}

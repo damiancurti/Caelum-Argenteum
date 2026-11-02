@@ -1,6 +1,113 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.13.2** - 2026-10-31.
+Documentation version: **5.13.3** - 2026-10-31.
+
+Star furniture volumes reuse the owned furniture envelopes and placed chair
+layouts. `generate_star_geometry.py` deterministically derives the missing
+basic-chair/cot/wardrobe/cupboard volume adapters from their existing DATA.json
+dimensions; it does not alter art, masses or recipes. Other envelopes read the
+existing runtime dimensions directly. No new exterior sizes are inferred.
+
+Sun rocks reuse the unchanged owned `models/caelum/world/hazards/ca_hazard_boulder.obj`
+through `CaelumHazardRockVisual`, at radius19.2MU (nominal diameter1.2m).
+No raster/model source is added. The separate visual follows the persistent
+body and hides during containment. Annex apparatus revision6 places hot and
+contaminating examples clear of the display entrance. Native checks/screenshot are recorded
+in sun-heat-results.json and sun-pollution-results.json; this is not author visual acceptance.
+The inventory carrier reuses the existing Magic Box icon and the ordinary
+inventory layout; no raster asset is generated. The native Spanish capture
+was reviewed for row width and release-hint clearance.
+
+The demonstration spirit reuses the unchanged V9G0 guard sprite and native
+body scale. No new art or third-party resource is introduced. Its bilingual
+native conversation capture is recorded in spirit-results.json.
+
+## Moon clone appearance reuse (#440, 5.13.3)
+
+Moon illusions reuse the existing owned player body/head appearance registry and
+firearm poses. Each native body keeps a separate profile copy; no generated art,
+new third-party material or rendering substitution is introduced. Native screenshots
+and code checks are recorded in validation_v5_13_3/moon-results.json; final author
+review remains part of the complete V5.13 suite.
+
+## Tarot example annex geometry (#440, 5.13.3)
+
+`assets/tarot_examples/ROOM.json` owns the implementation layout. The annex
+reuses original mansion stone/pool textures (CMST01/CMST02/CAPOOL01), adding no
+external assets or narrative. `tarot_example_geometry.py` appends it after
+Justice through the existing deterministic map generator. The previous mansion
+bytes remain in `pre_examples_MAP01.wad`, with SHA-256/provenance in BASELINE.json.
+GEOMETRY.json records the appended indices/counts. APPARATUS.json and
+generate_tarot_examples.py own the generated runtime placements. Portals reuse
+the owned pressure-trap floor visual. The false-wall leaf now reuses CMST01
+unchanged through a 64x128 TEXTURES alias at the existing door scale; no new
+raster source or external attribution is introduced. All four annex leaves
+face their doorways at90 degrees; native collision/sliding axes stay unchanged.
+Front/rear native images and save migration are recorded in
+assets/validation_v5_13_3/example-wall-art-results.json. Author review is pending.
+The living-obstacle example reuses the existing CAVT O espinillo artwork and
+physical profile unchanged; APPARATUS.json records its clear display-room location.
+
+## Tarot automaton model (#440, 5.13.3)
+
+The author explicitly requested a Zupay-sized 3D automaton with heavy armor,
+tower shield and mace. `assets/source/art/tarot_automaton/DESIGN.json` and the
+neutral modular OBJ are editable art sources. The deterministic generator
+`assets/generators/generate_tarot_automaton.py` produces20 MD3 frames: inactive,
+idle, eight walking, six attack, guard and three fallen poses. Its93.333333-MU
+height follows the existing Zupay; visual geometry does not recalculate the
+approved1,000kg body or96kg equipment. The model has3,232 triangles/7,816 vertices
+in four material batches; individual joints do not become separate draw calls.
+`CaelumAutomatonModelBody` is a noninteracting visual body. The persistent
+`CaelumTarotAutomaton` now drives it from actual displacement and the shared
+melee cycle, without editing the accepted source mesh or materials.
+
+The iron uses a new opaque built-in image_gen painted value ramp, copied without
+raster editing from the retained source. Neutral-pose face UVs select its values
+so flat native sector lighting still shows the plates. `PROMPT.json` records the
+complete prompt, tool mode and original output. Brass, wood and dark joints reuse
+unchanged owned station/stash textures. No third-party or development-IWAD art is
+introduced. `manifest.json` records source/material/output hashes. `--check` is
+read-only; the binary validator also checks MD3 offsets, triangles and planted
+legs during stationary attacks/guard. Native captures verify front/rear, walking,
+attack, guard and fallen poses; common-save recovery preserves the visual body.
+Evidence is in `assets/validation_v5_13_3/automaton-art-results.json`.
+Author review and frame-presentation measurements remain pending.
+
+## Justice arena geometry (#440, 5.13.3)
+
+The24x24m room appended to every packaged map reuses owned CMST01 wall/ceiling
+and CMST02 floor materials. No external or Doom texture is introduced. Its
+160-unit headroom and light176 follow the existing arena envelope. Sources and
+exact pre-arena map archive: assets/tarot_justice; deterministic generator:
+assets/generators/generate_tarot_justice.py. The room is isolated from existing
+campaign geometry; it adds no public entrance, narrative or reward. Its runtime
+Tarot entry/return now has separate runtime evidence in HISTORY.
+
+## Tarot Empress roots (#440, 5.13.3)
+
+`assets/generators/generate_tarot_roots.py` builds five thorned stems around a
+normalized target body, using the existing environment mesh helper and unchanged
+owned plains-bark texture. The model starts at the victim's floor and scales to
+its actual radius and height; geometry has no independent damage or collision.
+It contains840 faces/3,210 vertices and no new raster or external artwork.
+`assets/source/art/tarot_roots/manifest.json` records provenance and hashes;
+the generator's `--check` verifies deterministic output. Native front/rear views
+show the production effect around a player in two-client play. Evidence:
+`assets/validation_v5_13_3/empress-art-results.json`. Author review remains pending.
+
+## Tarot Chariot adaptation (#440, 5.13.3)
+
+The author approved reuse of the original covered cart at2m width on2026-11-01.
+`assets/generators/derive_tarot_chariot.py` uniformly scales that owned OBJ,
+centers its horizontal bounds and aligns its lowest vertex with the ground.
+Topology, normals, UVs and the original station/stash material references remain.
+No raster image, third-party source or development-IWAD asset is added.
+The source/output hashes, dimensions and provenance are recorded in
+`assets/source/art/tarot_chariot/manifest.json`; `--check` verifies deterministic
+outputs. The normal travel vehicle remains unchanged. Native front/rear captures
+show the actual production actor with its model registration; see
+`assets/validation_v5_13_3/chariot-art-results.json`. Final author review is pending.
 
 ## Equipment awakening panel (#442, 5.13.2)
 

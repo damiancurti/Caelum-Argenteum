@@ -101,6 +101,38 @@ class CaelumTargetInfo : Object play
         }
         if(Title=="")Title=L(Subject is 'CaelumCombatActor'?"CA_TARGET_CHARACTER":"CA_TARGET_OBJECT");
         bool reachable=Distance<=user.UseRange;
+        if(Subject is 'CaelumTarotLivingObstacle')
+        {
+            Actions=L(!reachable?"CA_TARGET_APPROACH":CaelumTarotLoadout.Passive(user.GetPersistentCharacterState(false),13)
+                ?"CA_TAROT_LIVING_BREAK":"CA_TAROT_LIVING_REQUIRES");return;
+        }
+        let portal=CaelumTarotExamplePortal(Subject);
+        if(portal!=null)
+        {
+            Title=L(portal.Route==0?"CA_TAROT_EXAMPLES":"CA_TAROT_EXAMPLES_RETURN");
+            Actions=L(reachable?"CA_TARGET_TRAVEL":"CA_TARGET_APPROACH");return;
+        }
+        let route=CaelumTarotExampleRoute(Subject);
+        if(route!=null)
+        {
+            Title=L("CA_TAROT_ROOM_ROUTE");
+            Actions=L(route.OpenRoute()?"CA_TARGET_CROSS":"CA_TAROT_ROOM_REQUIRED");return;
+        }
+        if(Subject is 'CaelumTarotFalseWall')
+        {
+            bool known=CaelumTarotFalseWall.Revealed(user);
+            Title=L(known?"CA_TAROT_FALSE_WALL":"CA_TAROT_UNMARKED_WALL");
+            Actions=known?L(reachable?"CA_TARGET_OPEN":"CA_TARGET_APPROACH"):"";
+            return;
+        }
+        let cursed=CaelumTarotCursedPassage(Subject);
+        if(cursed!=null)
+        {
+            Title=L(cursed.Purified?"CA_TAROT_PASSAGE_PURIFIED":"CA_TAROT_PASSAGE_CURSED");
+            Actions=L(!reachable?"CA_TARGET_APPROACH":cursed.Purified?"CA_TARGET_OPEN"
+                :CaelumTarotCursedPassage.CanPurify(user)?"CA_TAROT_PASSAGE_PURIFY":"CA_TAROT_PASSAGE_REQUIRES");
+            return;
+        }
         if(Subject is 'CaelumDecorBody'){Actions=L(reachable?"CA_DECOR_HINT":"CA_TARGET_APPROACH");return;}
         let chest=CaelumStashChest(Subject);
         let door=CaelumSlidingDoorLeaf(Subject);

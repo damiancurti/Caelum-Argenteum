@@ -1,0 +1,340 @@
+{
+  "issue": 440,
+  "version": "5.13.3",
+  "date": "2026-11-01",
+  "scope": "Emperor pacification, reversible summons, perception command arbitration, timers and native recovery/travel",
+  "runtime": "build\\issue440\\emperor\\r8\\caelum_argenteum_dev.pk3",
+  "runtime_sha256": "f8557fa827b04cd59e8185b4603cef69e8f7e627f6c0b0545481d900b5f37901",
+  "members": 18037,
+  "source_equivalence": true,
+  "native_assertions": 70,
+  "runs": [
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32405-20261101-115315-747214",
+      "runtime_sha256": "f8557fa827b04cd59e8185b4603cef69e8f7e627f6c0b0545481d900b5f37901",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "commands": [
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\emperor\\r8\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32405-20261101-115315-747214\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32405-20261101-115315-747214\\bundle\\peer0\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32405-20261101-115315-747214\\bundle\\peer0",
+          "-host",
+          "2",
+          "-port",
+          "32405",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32405-20261101-115315-747214\\bundle\\peer0\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32405-20261101-115315-747214\\bundle\\peer0\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ],
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\emperor\\r8\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32405-20261101-115315-747214\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32405-20261101-115315-747214\\bundle\\peer1\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32405-20261101-115315-747214\\bundle\\peer1",
+          "-join",
+          "127.0.0.1:32405",
+          "-port",
+          "32406",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32405-20261101-115315-747214\\bundle\\peer1\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32405-20261101-115315-747214\\bundle\\peer1\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ]
+      ],
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440EMP PASS enemy is hostile before the spell",
+            "CA440EMP PASS legacy body starts without new effects",
+            "CA440EMP PASS selected Emperor sequence activates",
+            "CA440EMP PASS one shared sequence payment",
+            "CA440EMP PASS Hermit extends native recipient duration",
+            "CA440EMP PASS hostility and existing target stop toward the caster",
+            "CA440EMP PASS pacification does not protect unrelated players",
+            "CA440EMP PASS range and protected scene eligibility exclude bodies",
+            "CA440EMP PASS summon changes current allegiance",
+            "CA440EMP PASS original lifetime owner and allegiance are preserved",
+            "CA440EMP PASS native aimed sequence captures its command target",
+            "CA440EMP PASS communication uses the current controller",
+            "CA440EMP PASS attacks from pacified actors cannot damage the caster",
+            "CA440EMP PASS self disease and physiology are not made immune",
+            "CA440EMP PASS last valid cast replaces control without overwriting original allegiance",
+            "CA440EMP PASS latest expiry restores original owner instead of the earlier controller",
+            "CA440EMP PASS shared accelerated steps advance each source exactly once",
+            "CA440EMP PASS equipped Temperance halves mind-control duration",
+            "CA440EMP PASS active Temperance cleanses and prevents renewed pacification",
+            "CA440EMP PASS repeated pulse does not duplicate recipient ownership",
+            "CA440EMP PASS expiry tolerates stale null entries while removing recipients",
+            "CA440EMP PASS cleansing restores the living summon without killing it",
+            "CA440EMP PASS lost native controller references restore original allegiance",
+            "CA440EMP PASS native world ticks advance stored control duration",
+            "CA440EMP PASS summon engages the commanded enemy through native perception",
+            "CA440EMP RESULT capture"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440EMP PASS enemy is hostile before the spell",
+            "CA440EMP PASS legacy body starts without new effects",
+            "CA440EMP PASS selected Emperor sequence activates",
+            "CA440EMP PASS one shared sequence payment",
+            "CA440EMP PASS Hermit extends native recipient duration",
+            "CA440EMP PASS hostility and existing target stop toward the caster",
+            "CA440EMP PASS pacification does not protect unrelated players",
+            "CA440EMP PASS range and protected scene eligibility exclude bodies",
+            "CA440EMP PASS summon changes current allegiance",
+            "CA440EMP PASS original lifetime owner and allegiance are preserved",
+            "CA440EMP PASS native aimed sequence captures its command target",
+            "CA440EMP PASS communication uses the current controller",
+            "CA440EMP PASS attacks from pacified actors cannot damage the caster",
+            "CA440EMP PASS self disease and physiology are not made immune",
+            "CA440EMP PASS last valid cast replaces control without overwriting original allegiance",
+            "CA440EMP PASS latest expiry restores original owner instead of the earlier controller",
+            "CA440EMP PASS shared accelerated steps advance each source exactly once",
+            "CA440EMP PASS equipped Temperance halves mind-control duration",
+            "CA440EMP PASS active Temperance cleanses and prevents renewed pacification",
+            "CA440EMP PASS repeated pulse does not duplicate recipient ownership",
+            "CA440EMP PASS expiry tolerates stale null entries while removing recipients",
+            "CA440EMP PASS cleansing restores the living summon without killing it",
+            "CA440EMP PASS lost native controller references restore original allegiance",
+            "CA440EMP PASS native world ticks advance stored control duration",
+            "CA440EMP PASS summon engages the commanded enemy through native perception",
+            "CA440EMP RESULT capture"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32406-20261101-115405-186088",
+      "runtime_sha256": "f8557fa827b04cd59e8185b4603cef69e8f7e627f6c0b0545481d900b5f37901",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "commands": [
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\emperor\\r8\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32406-20261101-115405-186088\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32406-20261101-115405-186088\\bundle\\peer0\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32406-20261101-115405-186088\\bundle\\peer0",
+          "-host",
+          "2",
+          "-port",
+          "32406",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32406-20261101-115405-186088\\bundle\\peer0\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32406-20261101-115405-186088\\bundle\\peer0\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ],
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\emperor\\r8\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32406-20261101-115405-186088\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32406-20261101-115405-186088\\bundle\\peer1\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32406-20261101-115405-186088\\bundle\\peer1",
+          "-join",
+          "127.0.0.1:32406",
+          "-port",
+          "32407",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32406-20261101-115405-186088\\bundle\\peer1\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32406-20261101-115405-186088\\bundle\\peer1\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ]
+      ],
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440EMP PASS common save restores exact current controller",
+            "CA440EMP PASS common save preserves original ownership separately",
+            "CA440EMP PASS loading does not renew the effect duration",
+            "CA440EMP PASS saved recipient index reconnects to the same body",
+            "CA440EMP PASS departure restores original allegiance and removes source effects",
+            "CA440EMP PASS departure does not refund the paid cooldown",
+            "CA440EMP PASS repeated departure cleanup is idempotent and nonlethal",
+            "CA440EMP PASS actual map travel keeps the summon with its original lifetime owner",
+            "CA440EMP PASS actual departure leaves no control or pacification references",
+            "CA440EMP PASS actual travel ends Emperor duration while retaining cooldown",
+            "CA440EMP RESULT reload"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440EMP PASS common save restores exact current controller",
+            "CA440EMP PASS common save preserves original ownership separately",
+            "CA440EMP PASS loading does not renew the effect duration",
+            "CA440EMP PASS saved recipient index reconnects to the same body",
+            "CA440EMP PASS departure restores original allegiance and removes source effects",
+            "CA440EMP PASS departure does not refund the paid cooldown",
+            "CA440EMP PASS repeated departure cleanup is idempotent and nonlethal",
+            "CA440EMP PASS actual map travel keeps the summon with its original lifetime owner",
+            "CA440EMP PASS actual departure leaves no control or pacification references",
+            "CA440EMP PASS actual travel ends Emperor duration while retaining cooldown",
+            "CA440EMP RESULT reload"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "retained_attempts": [
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32396-20261101-113225-557523",
+      "passed": false,
+      "errors": "Native error; full logs retained",
+      "checks_failed": [
+        "Script error, \"checks.pk3:emperor.zs\" line 10:",
+        "Script error, \"checks.pk3:emperor.zs\" line 43:",
+        "Script error, \"checks.pk3:emperor.zs\" line 66:"
+      ]
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32397-20261101-113459-394168",
+      "passed": true,
+      "errors": null,
+      "checks_failed": []
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32398-20261101-113815-811125",
+      "passed": false,
+      "errors": null,
+      "checks_failed": [
+        "CA440EMP FAIL summon engages the commanded enemy through native perception",
+        "CA440EMP FAIL summon engages the commanded enemy through native perception"
+      ]
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32399-20261101-114139-129857",
+      "passed": false,
+      "errors": null,
+      "checks_failed": [
+        "CA440EMP FAIL summon engages the commanded enemy through native perception",
+        "CA440EMP FAIL summon engages the commanded enemy through native perception"
+      ]
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32400-20261101-114307-552467",
+      "passed": false,
+      "errors": null,
+      "checks_failed": [
+        "CA440EMP FAIL summon engages the commanded enemy through native perception",
+        "CA440EMP FAIL summon engages the commanded enemy through native perception"
+      ]
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32401-20261101-114459-809031",
+      "passed": false,
+      "errors": null,
+      "checks_failed": [
+        "CA440EMP FAIL summon engages the commanded enemy through native perception",
+        "CA440EMP FAIL summon engages the commanded enemy through native perception"
+      ]
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32402-20261101-114649-024032",
+      "passed": true,
+      "errors": null,
+      "checks_failed": []
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32403-20261101-114904-043748",
+      "passed": true,
+      "errors": null,
+      "checks_failed": []
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32404-20261101-115010-602040",
+      "passed": true,
+      "errors": null,
+      "checks_failed": []
+    }
+  ],
+  "failure_resolution": "First fixture used the reserved identifier Protected. Later command assertions exposed competing perception samples and an old search point; command prioritization and stale-goal suppression fixed native engagement. Final source-reference restoration guard was then verified.",
+  "static_checks": [
+    "validate_project.py: no errors, context2499 words",
+    "git -c core.whitespace=cr-at-eol diff --check: no whitespace errors"
+  ],
+  "author_acceptance": false,
+  "limitations": [
+    "Full V5.13 author suite remains deferred.",
+    "No frame-presentation or siege-performance acceptance is inferred.",
+    "Remaining Major handlers and standalone modes are incomplete."
+  ]
+}

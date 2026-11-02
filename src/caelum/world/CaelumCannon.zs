@@ -42,7 +42,7 @@ class CaelumCannon : CaelumHostileMachine
 
     void InitializeCannon(bool defender=false)
     {
-        if(Initialized)return;
+        if(Initialized || TarotDestroyed)return;
         Initialized=true; Defending=defender; bFriendly=defender; CycleRevision=1;
         Mass=CaelumCannonData.MACHINE_MASS;
         GuardRadius=CaelumCannonData.GUARD_RADIUS;
@@ -180,6 +180,7 @@ class CaelumCannon : CaelumHostileMachine
 
     void PlaceComponents()
     {
+        if(TarotDestroyed)return;
         if(Frame==null || Barrel==null)return;
         double recoil=Phase==LAUNCH ? CaelumCannonData.RECOIL : 0;
         vector3 base=Pos-(Cos(Angle)*recoil,Sin(Angle)*recoil,0);
@@ -282,10 +283,23 @@ class CaelumCannon : CaelumHostileMachine
         { Phase=LOADED; Work=0; PlaceComponents(); if(Requested)Fire(); }
     }
 
-    override void OnDestroy()
+    override void RemoveMachineParts()
     {
         if(Frame!=null)Frame.Destroy(); if(Barrel!=null)Barrel.Destroy();
         for(int i=0;i<Blocks.Size();i++)if(Blocks[i]!=null)Blocks[i].Destroy();
+        Frame=null;Barrel=null;Blocks.Clear();
+        for(int i=0;i<Operators.Size();i++)
+        {
+            let body=Operators[i];
+            if(body!=null && body.SiegeCombatant!=null && body.SiegeCombatant.CrewMachine==self)
+                body.SiegeCombatant.CrewMachine=null;
+        }
+        Operators.Clear();OperatorPerception.Clear();Requested=false;IntendedTarget=null;
+    }
+
+    override void OnDestroy()
+    {
+        RemoveMachineParts();
         // Un proyectil liberado continúa aunque desaparezca su lanzador.
         Super.OnDestroy();
     }

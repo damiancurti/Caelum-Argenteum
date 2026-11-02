@@ -157,6 +157,7 @@ class CaelumContaminationStorage : Object play
     }
     static bool IsShielded(Actor body)
     {
+        let rock=CaelumTarotRock(body);if(rock!=null && rock.Contained)return true;
         let item=Inventory(body);
         if(item==null)return false;
         if(CaelumContainerRules.Boxed(item))return true;

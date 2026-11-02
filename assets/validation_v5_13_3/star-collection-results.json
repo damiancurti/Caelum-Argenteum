@@ -1,0 +1,158 @@
+{
+  "issue": 440,
+  "version": "5.13.3",
+  "date": "2026-11-01",
+  "package": "build/issue440/star-collection/r1/caelum_argenteum_dev.pk3",
+  "sha256": "0bda414ce336d92dc39601386aec2634ce32f8091734fc32ba399c6152e31a7a",
+  "source_files": 18046,
+  "exact_source_match": true,
+  "native_assertions": 60,
+  "runs": [
+    {
+      "directory": "build/issue440/native-32456-20261101-152358-432136",
+      "runtime_sha256": "0bda414ce336d92dc39601386aec2634ce32f8091734fc32ba399c6152e31a7a",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440COLLECT PASS fixture uses native physical bed placement",
+            "CA440COLLECT PASS heavy placed bed can enter the Box directly",
+            "CA440COLLECT PASS collection parks the original bed with one boxed item",
+            "CA440COLLECT PASS placed wardrobe uses its real storage carrier",
+            "CA440COLLECT PASS heavy storage furniture enters Box without recreating its chest",
+            "CA440COLLECT PASS stored wardrobe uses exactly one Box slot",
+            "CA440COLLECT PASS raw weight includes wardrobe and actual contents once",
+            "CA440COLLECT PASS collection preserves original filled bottle",
+            "CA440COLLECT PASS Boxed furniture cannot be opened as an exposed chest",
+            "CA440COLLECT PASS storage carrier cannot nest inside another chest",
+            "CA440COLLECT PASS ordinary heavy chest retains its no-Box rule",
+            "CA440COLLECT PASS refused ordinary chest stays intact in the world",
+            "CA440COLLECT RESULT capture"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440COLLECT PASS fixture uses native physical bed placement",
+            "CA440COLLECT PASS heavy placed bed can enter the Box directly",
+            "CA440COLLECT PASS collection parks the original bed with one boxed item",
+            "CA440COLLECT PASS placed wardrobe uses its real storage carrier",
+            "CA440COLLECT PASS heavy storage furniture enters Box without recreating its chest",
+            "CA440COLLECT PASS stored wardrobe uses exactly one Box slot",
+            "CA440COLLECT PASS raw weight includes wardrobe and actual contents once",
+            "CA440COLLECT PASS collection preserves original filled bottle",
+            "CA440COLLECT PASS Boxed furniture cannot be opened as an exposed chest",
+            "CA440COLLECT PASS storage carrier cannot nest inside another chest",
+            "CA440COLLECT PASS ordinary heavy chest retains its no-Box rule",
+            "CA440COLLECT PASS refused ordinary chest stays intact in the world",
+            "CA440COLLECT RESULT capture"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "directory": "build/issue440/native-32457-20261101-152508-276784",
+      "runtime_sha256": "0bda414ce336d92dc39601386aec2634ce32f8091734fc32ba399c6152e31a7a",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440COLLECT PASS native save restores original boxed bed",
+            "CA440COLLECT PASS native save restores boxed wardrobe state",
+            "CA440COLLECT PASS native save preserves stored liquid and identity",
+            "CA440COLLECT PASS Drop requests collision-safe placement without a personal-weight prerequisite",
+            "CA440COLLECT PASS original wardrobe returns to world geometry",
+            "CA440COLLECT PASS release preserves original contents",
+            "CA440COLLECT PASS released wardrobe frees exactly one slot",
+            "CA440COLLECT PASS release removes complete wardrobe weight exactly once",
+            "CA440COLLECT PASS unrelated giant bed remains boxed",
+            "CA440COLLECT RESULT reload"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440COLLECT PASS native save restores original boxed bed",
+            "CA440COLLECT PASS native save restores boxed wardrobe state",
+            "CA440COLLECT PASS native save preserves stored liquid and identity",
+            "CA440COLLECT PASS Drop requests collision-safe placement without a personal-weight prerequisite",
+            "CA440COLLECT PASS original wardrobe returns to world geometry",
+            "CA440COLLECT PASS release preserves original contents",
+            "CA440COLLECT PASS released wardrobe frees exactly one slot",
+            "CA440COLLECT PASS release removes complete wardrobe weight exactly once",
+            "CA440COLLECT PASS unrelated giant bed remains boxed",
+            "CA440COLLECT RESULT reload"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "directory": "build/issue440/native-32458-20261101-152900-497254",
+      "runtime_sha256": "0bda414ce336d92dc39601386aec2634ce32f8091734fc32ba399c6152e31a7a",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440STAR PASS save restores original pending furniture",
+            "CA440STAR PASS blocked release loses no item",
+            "CA440STAR PASS clearing geometry completes automatic drop",
+            "CA440STAR PASS drop preserves inventory identity and physical bed",
+            "CA440STAR PASS released bed renders with normal collision",
+            "CA440STAR PASS release frees allowance and travel",
+            "CA440STAR PASS legacy excess is queued idempotently without deleting items",
+            "CA440STAR PASS large dining set releases even when wider than rock search radius",
+            "CA440STAR PASS legacy queue drains without repeated furniture creation",
+            "CA440STAR RESULT reload"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440STAR PASS save restores original pending furniture",
+            "CA440STAR PASS blocked release loses no item",
+            "CA440STAR PASS clearing geometry completes automatic drop",
+            "CA440STAR PASS drop preserves inventory identity and physical bed",
+            "CA440STAR PASS released bed renders with normal collision",
+            "CA440STAR PASS release frees allowance and travel",
+            "CA440STAR PASS legacy excess is queued idempotently without deleting items",
+            "CA440STAR PASS large dining set releases even when wider than rock search radius",
+            "CA440STAR PASS legacy queue drains without repeated furniture creation",
+            "CA440STAR RESULT reload"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "author_acceptance": false,
+  "limits": [
+    "No new map-transition or frame-presentation claim; existing cargo travel lifecycle retained.",
+    "Final annex and whole-version author suite remain pending."
+  ]
+}

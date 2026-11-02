@@ -61,7 +61,7 @@ class CaelumElementalStream : Object play
         {
             status.ApplyControlEffect(CaelumConstants.ELEMENTAL_EFFECT_FREEZE,
                 CaelumConstants.ELEMENTAL_BASE_DURATION_SECONDS*power,
-                CaelumConstants.ELEMENTAL_BASE_CONTROL_POWER_PERCENT*power);
+                CaelumConstants.ELEMENTAL_BASE_CONTROL_POWER_PERCENT*power,body);
             return;
         }
         CaelumBolas.FireContact(body);

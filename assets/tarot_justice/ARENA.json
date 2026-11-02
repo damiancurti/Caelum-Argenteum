@@ -1,0 +1,13 @@
+{
+  "issue": 440,
+  "revision": 1,
+  "width_m": 24,
+  "units_per_metre": 32,
+  "headroom_mu": 160,
+  "light": 176,
+  "grid_mu": 64,
+  "floor": "CMST02",
+  "wall": "CMST01",
+  "ceiling": "CMST01",
+  "provenance": "Author-approved shared 24 by 24 metre Justice arena. Headroom and lighting reuse the existing #438 arena references. Original owned stone textures; no rewards, narrative or public door. Placement is derived outside the original map bounds. Prior WAD bytes are preserved in legacy_5133.zip before appending geometry."
+}

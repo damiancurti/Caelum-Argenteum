@@ -25,6 +25,8 @@ class CaelumPlayer : DoomPlayer
 
     CaelumBolasFlight BolasBinding;
     CaelumTelekinesisEffect TelekinesisBinding;
+    CaelumTarotRooted TarotRoots;
+    CaelumTarotEmperorBody TarotEmperor;
     int BolasPreparedTics,BolasPreparedItem,BolasReleaseUntil;
     Actor UtilityStaffStream;
     int UtilityStaffRequestedMode;
@@ -4693,7 +4695,7 @@ class CaelumPlayer : DoomPlayer
                 ElementalStatus.ApplyControlEffect(
                     CaelumConstants.ELEMENTAL_EFFECT_DAZZLE,
                     duration,
-                    controlPower
+                    controlPower, self
                 );
             }
             else
@@ -4709,7 +4711,7 @@ class CaelumPlayer : DoomPlayer
             ElementalStatus.ApplyControlEffect(
                 CaelumConstants.ELEMENTAL_EFFECT_FREEZE,
                 duration,
-                controlPower
+                controlPower, self
             );
         }
         else if (essenceType == CaelumConstants.ESSENCE_EARTH)
@@ -4734,7 +4736,7 @@ class CaelumPlayer : DoomPlayer
                     CaelumConstants.ELEMENTAL_EFFECT_LIGHTNING_STUN,
                     CaelumConstants.ELEMENTAL_LIGHTNING_STUN_SECONDS
                         * debuffScale,
-                    1.0
+                    1.0, self
                 );
             }
             else
@@ -4756,7 +4758,7 @@ class CaelumPlayer : DoomPlayer
             if (RollQuintessenceEffect())
                 ElementalStatus.ApplyControlEffect(
                     CaelumConstants.ELEMENTAL_EFFECT_DAZZLE,
-                    duration, controlPower
+                    duration, controlPower, self
                 );
             if (RollQuintessenceEffect())
                 ApplyAttackPushToTarget(
@@ -4766,7 +4768,7 @@ class CaelumPlayer : DoomPlayer
             if (RollQuintessenceEffect())
                 ElementalStatus.ApplyControlEffect(
                     CaelumConstants.ELEMENTAL_EFFECT_FREEZE,
-                    duration, controlPower
+                    duration, controlPower, self
                 );
             if (RollQuintessenceEffect())
                 ApplyElementalLucidityLoss(debuffScale);
@@ -4790,7 +4792,7 @@ class CaelumPlayer : DoomPlayer
                     CaelumConstants.ELEMENTAL_EFFECT_LIGHTNING_STUN,
                     CaelumConstants.ELEMENTAL_LIGHTNING_STUN_SECONDS
                         * debuffScale,
-                    1.0
+                    1.0, self
                 );
         }
     }
@@ -5952,7 +5954,8 @@ class CaelumPlayer : DoomPlayer
     int ApplyNativeHealthDamage(Actor inflictor,Actor source,double preciseDamage,Name mod,int flags,double damageAngle)
     {
         int damage=CaelumSealResistance.HealthDamage(self,inflictor,preciseDamage,mod);
-        if(flags & DMG_FORCED)damage=CaelumRally.ScaleDamage(self,CaelumSleepRules.ScaleDamage(self,damage));
+        if(flags & DMG_FORCED)damage=CaelumTarotLovers.Damage(self,inflictor,source,
+            CaelumRally.ScaleDamage(self,CaelumSleepRules.ScaleDamage(self,damage)),mod);
         // Buddha2 nativo impide la rama letal incluso ante telefrag/daño forzado,
         // después de las defensas. La bandera existe sólo durante esta llamada.
         bool protect=health>0 && damage>0 && CaelumTutorialSafety.Protects(self);
@@ -5966,11 +5969,31 @@ class CaelumPlayer : DoomPlayer
         return protect ? Max(0,Min(result,before-health)) : result;
     }
 
+    // El reparto ya resolvi? defensas, escalas y aura. Conservar muerte/atribuci?n
+    // nativas sin repetir armadura, efectos ofensivos ni el propio reparto.
+    void ApplyLoversDamage(Actor inflictor,Actor source,int damage,Name mod)
+    {
+        if(CaelumTarotLovers.Immune(self,damage))return;
+        int before=health;
+        bool introduced=CaelumTutorialSafety.Protects(self) && !(player.cheats&CF_BUDDHA2);
+        if(introduced)player.cheats|=CF_BUDDHA2;
+        Super.DamageMobj(inflictor,source,damage,mod,DMG_FORCED|DMG_NO_ARMOR|DMG_THRUSTLESS,0);
+        if(introduced)player.cheats&=~CF_BUDDHA2;
+        CaelumSleepRules.HealthLost(self,before);
+        if(health<before)
+        {
+            if(!CaelumToughnessRules.IsSustained(mod))CaelumRestSafety.Interrupt(self,"CA_REST_DAMAGE");
+            if(mod!='CaelumDiseaseDOT')CaelumHygienePose.Cancel(self);
+            CaelumDamageFeedback.Record(self,inflictor,mod,Max(0,before)-Max(0,health));
+            UpdateHealthStateEffects();
+        }
+    }
+
     override int TakeSpecialDamage(Actor inflictor,Actor source,int damage,Name mod)
     {
         // Tras las defensas propias y los factores nativos; antes de perder HP.
-        return CaelumRally.ScaleDamage(self,
-            CaelumSleepRules.ScaleDamage(self,Super.TakeSpecialDamage(inflictor,source,damage,mod)));
+        return CaelumTarotLovers.Damage(self,inflictor,source,CaelumRally.ScaleDamage(self,
+            CaelumSleepRules.ScaleDamage(self,Super.TakeSpecialDamage(inflictor,source,damage,mod))),mod);
     }
 
     override int DamageMobj(Actor inflictor,Actor source,int damage,Name mod,int flags,double angle)
@@ -7085,11 +7108,15 @@ class CaelumPlayer : DoomPlayer
         );
 
         CaelumMovableProp movable = CaelumMovableProp(targetData.linetarget);
+        let livingObstacle=CaelumTarotLivingObstacle(movable);
+        if(livingObstacle!=null && livingObstacle.DestroyByTarot(self))return true;
+        let fragile=CaelumTarotFragileObstacle(movable);
+        if(fragile!=null && CaelumTarotLoadout.Passive(GetPersistentCharacterState(false),7))
+            return fragile.BreakByTarot();
+        if(CaelumTarotObjectMovement.Use(self,movable))return true;
         if (movable == null) { return false; }
 
-        double physicalPower = Max(
-            0.0, DerivedStats.PhysicalPushMultiplier
-        );
+        double physicalPower = CaelumTarotObjectMovement.Push(self);
         double pushForce = CaelumConstants.BASE_ATTACK_PUSH_FORCE
             * physicalPower;
         return movable.TryPushFrom(self, physicalPower, pushForce);
@@ -7126,6 +7153,7 @@ class CaelumPlayer : DoomPlayer
     override void MovePlayer()
     {
         if(CaelumSpirit.Active(self)){Super.MovePlayer();return;}
+        if(CaelumTarotRooted.Active(self))return;
         bool impulse=CaelumMovementImpulse.Begin(self);
         CaelumFormationBreaker.PrepareMove(self);
         vector3 before=Vel;
@@ -9540,6 +9568,7 @@ class CaelumPlayer : DoomPlayer
         if(CaelumClassCastView.Active(self))return;
         if (CombatTarotInputReserved) return;
         CombatTarotInputReserved = true;
+        if(CaelumTarotFollowup.Input(self))return;
         CaelumTarotService.Activate(self);
     }
 
@@ -9697,6 +9726,7 @@ class CaelumPlayer : DoomPlayer
     // persistent resource in addition to the authoritative game tic.
     override void CheckMoveUpDown()
     {
+        if(CaelumTarotRooted.Active(self))return;
         Super.CheckMoveUpDown();
         // El motor asigna la propulsión vertical por separado de ForwardMove.
         // Se escala sólo el comando nuevo, nunca una caída o un empuje recibido.
@@ -9706,6 +9736,7 @@ class CaelumPlayer : DoomPlayer
 
     override void CheckJump()
     {
+        if(CaelumTarotRooted.Active(self))return;
         double before=Vel.Z;
         bool eligible=player!=null && player.onground && player.jumpTics==0
             && WaterLevel<2 && !bNoGravity && !(player.cheats & CF_PREDICTING);

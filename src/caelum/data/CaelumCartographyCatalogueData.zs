@@ -2,18 +2,21 @@
 // La suma nativa identifica la geometrÃ­a cargada, tambiÃ©n en hubs antiguos.
 class CaelumCartographyCatalogueData : Object
 {
-    const MAP01_CHECKSUM = "b9e3c740a85b8532c362d36113f882ae";
-    const MAP02_CHECKSUM = "49135418d62184a8b76ec6ab426a95f2";
-    const MAP06_CHECKSUM = "bfbf3d4ac39f36e7d61a450dbb47b1a2";
+    const MAP01_CHECKSUM = "81ef3d115f0b73f3d21fcf7ca8004d67";
+    const MAP02_CHECKSUM = "860e3e47c2b89449073b0d27f0b4940b";
+    const MAP06_CHECKSUM = "03f80198bfae8ba82cc435775001ba91";
     const MAP01_LEGACY_CHECKSUM = "359c5aa1daa71a0fb91bba6848818f46";
+    const MAP01_PREJUSTICE_CHECKSUM = "b9e3c740a85b8532c362d36113f882ae";
+    const MAP01_PREEXAMPLES_CHECKSUM = "29bb6860a3907ef34978201f1a81a9b6";
     static bool MatchesMansionGeometry(String checksum)
     {
-        return checksum==MAP01_CHECKSUM || checksum==MAP01_LEGACY_CHECKSUM;
+        return checksum==MAP01_CHECKSUM || checksum==MAP01_LEGACY_CHECKSUM || checksum==MAP01_PREJUSTICE_CHECKSUM || checksum==MAP01_PREEXAMPLES_CHECKSUM;
     }
     const MAP06_FURNISHED_CHECKSUM = "26eb59c84f2028e436acaa4914b42727";
+    const MAP06_PREJUSTICE_CHECKSUM = "bfbf3d4ac39f36e7d61a450dbb47b1a2";
     static bool MatchesCityGeometry(String checksum)
     {
-        return checksum==MAP06_CHECKSUM || checksum==MAP06_FURNISHED_CHECKSUM;
+        return checksum==MAP06_CHECKSUM || checksum==MAP06_FURNISHED_CHECKSUM || checksum==MAP06_PREJUSTICE_CHECKSUM;
     }
     const MANSION_ROOMS = 10;
     static bool MansionContains(int index,Vector3 point)

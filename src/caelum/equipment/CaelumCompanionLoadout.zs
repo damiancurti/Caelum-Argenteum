@@ -323,7 +323,7 @@ class CaelumActorShield : Object play
             damage=Max(0,damage-absorbed);
             let mixed=CaelumMixedMeleeDamage.ForHit(holder,inflictor,source,mod);
             if(mixed!=null)absorbed+=mixed.BlockFire(holder,shield.GetDefense(CaelumConstants.SHIELD_DAMAGE_MAGICAL),inflictor,source);
-            double wear=absorbed;
+            double wear=holder.EquipmentCanWear()?absorbed:0;
             int loss=int(wear/CaelumConstants.ARMOR_ABSORBED_DAMAGE_PER_GUARANTEED_DURABILITY);
             double remainder=wear-loss*CaelumConstants.ARMOR_ABSORBED_DAMAGE_PER_GUARANTEED_DURABILITY;
             if(Random[CaelumShieldDurability](0,999999)/10000.0

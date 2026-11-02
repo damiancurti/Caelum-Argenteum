@@ -51,7 +51,7 @@ class CaelumPrisonerEscort : Object play
     bool Immobilized(CaelumCombatActor body)
     {
         return body.ForcedSleepTics>0 || body.CombatLucidityPhysicalStunRemaining>0
-            || CaelumBolas.Restrained(body) || CaelumTelekinesisRules.Held(body)
+            || CaelumBolas.Restrained(body) || CaelumTelekinesisRules.Held(body) || CaelumTarotRooted.Active(body)
             || (body.ElementalStatus!=null && body.ElementalStatus.GetMovementMultiplier()<=0);
     }
 
@@ -121,6 +121,7 @@ class CaelumPrisonerEscort : Object play
 
     bool MoveTowards(CaelumCombatActor body,vector2 destination,double speed,double limit)
     {
+        if(CaelumTarotRooted.Active(body)){Hold(body,false);return false;}
         vector2 delta=destination-body.Pos.XY;double distance=delta.Length();
         if(distance<=0.001)return false;
         double mass=Max(1.0,body.Mass+body.GetAttackCarriedWeight());

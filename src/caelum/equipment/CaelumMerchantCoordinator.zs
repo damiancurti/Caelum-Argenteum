@@ -462,6 +462,7 @@ class CaelumMerchantCoordinator : Object play
             {
                 bool box=oldBox || productRoute==1;
                 if(box && !user.MagicBoxOwned)continue;
+                if(!session.Selling && box && !CaelumTarotStar.CanBox(user,item,quantity))continue;
                 double personal=user.GetPalomoCurrencyPlanPersonalWeightDelta(),raw=user.GetPalomoCurrencyPlanBoxRawWeightDelta();
                 int slots=user.GetPalomoCurrencyPlanBoxSlotDelta();
                 double weight=quantity*unit;

@@ -36,6 +36,8 @@ class CaelumDerivedStats : Object
     double SleepLossMultiplier;
     double CarryCapacity;
     int MagicBoxCapacity;
+    int TarotBoxBonus;
+    bool TarotVegetationPassage;
 
     int MassTier;
     int SizeTier;
@@ -295,7 +297,7 @@ class CaelumDerivedStats : Object
         // a x4 en nivel 100: masa 200 produce capacidad 200 y luego 800.
         CarryCapacity = BaseMass
             * CalculateType4Percent(attributes.Strength) / 100.0;
-        MagicBoxCapacity = CaelumEquipmentRules.MagicBoxSlots(attributes.Intelligence);
+        MagicBoxCapacity = CaelumEquipmentRules.MagicBoxSlots(attributes.Intelligence)+TarotBoxBonus;
         RefreshCarriedWeightTotals();
         PushResistance = TotalMass / 100.0;
         KnockbackMultiplier = 100.0 / (TotalMass + 50.0);

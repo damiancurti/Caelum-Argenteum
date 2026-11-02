@@ -24,9 +24,9 @@ class CaelumRestFurnitureItem : CaelumStorageFurnitureItem abstract
     virtual bool Carry(CaelumPlayer user)
     {
         if(!CanCarry(user))return false;
-        user.RefreshCarriedInventorySummary();if(!user.CanAddWeightToPersonalInventory(GetUnitWeight()))return false;
+        int route=CaelumTarotStar.CarryRoute(user,self,GetUnitWeight());if(route<0)return false;
         CaelumContaminationObject.LeavingWorld(Body);
-        DetachFromOwner();AttachToOwner(user);InMagicBox=false;Park();
+        DetachFromOwner();AttachToOwner(user);InMagicBox=route==1;Park();
         user.OnNativeInventoryChanged();user.RefreshFormalInventorySnapshot();return true;
     }
     override bool Place(CaelumPlayer user)
@@ -35,7 +35,8 @@ class CaelumRestFurnitureItem : CaelumStorageFurnitureItem abstract
         double radius=CaelumRestFurnitureData.Radius(Variant()),height=CaelumRestFurnitureData.Height(Variant());
         double offset=user.Radius+radius+1;
         vector3 point=user.Pos+(Cos(user.Angle)*offset,Sin(user.Angle)*offset,0);
-        if(!CaelumCampLand.AllowsFurniture(user,point,radius) || !CaelumPlacementGeometry.Fits(user,point,radius,height,Body))return false;
+        point=CaelumTarotStar.Point(user,point);
+        if(!CaelumTarotStar.Land(user,point,radius) || !CaelumPlacementGeometry.Fits(user,point,radius,height,Body))return false;
         bool fresh=Body==null;
         if(fresh)Body=CaelumRestFurniture(Actor.Spawn(CaelumRestFurnitureData.BodyClass(Variant()),point,NO_REPLACE));
         if(Body==null)return false;

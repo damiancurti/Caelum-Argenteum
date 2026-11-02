@@ -1,6 +1,660 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.13.2** - 2026-10-31.
+Documentation version: **5.13.3** - 2026-10-31.
+
+## 5.13.3 - Ordered Tarot runtime foundation (#440, partial)
+
+Equipping appends a card to the saved activation order; removing/re-equipping
+moves it to the end. Legacy selections migrate once in their previous ascending
+ID order. Minor collection/passive bonuses remain unchanged. Major capability
+passives use actual acquired/equipped state, never the illustration cursor.
+Hermit and Devil each add two slots, including during their own equip transaction.
+Star and Sun each add ten Box slots. Removing a capacity card is blocked while
+ordinary selections/contents or reserved crafting slots would overflow.
+
+Each temporal card has its own persisted remaining time. Hermit doubles only
+the first applicable duration, even when selected later; an instantaneous first
+card does not pass the bonus onward. The shared effect timer remains the maximum
+for compatibility. One sequence pays1,000 Anima and600s recharge; temporary
+powers use60s before Hermit. Devil bypass pays2,000 Health instead of Anima and
+uses normal death. Payment does not abort the already-authorized sequence.
+Star's implemented active makes Box contents weightless, preserving the Box's
+own mass and restoring content weight when its timer expires.
+
+World dispatches acquired unequipped cards once in ascending ID order, without
+recursion, another charge or passive equipment. The author explicitly allows
+World to activate essences bound to equipment; the binding remains intact.
+All22 Major handlers and their approved example targets are integrated.
+The shared Tarot key resolves clone swap, Sun capture, automaton command and
+then the chosen Hanged Man ability. The current implementation matrix below
+links every row to its focused evidence; author and presentation review remain pending.
+
+Loadout revision1 preserves old ownership/selection and paid durations. Profile
+recalculation does not accumulate capacity. New loops are bounded by the78-card
+catalogue or the acting player's inventory; no actor-global scan is added.
+Validation: assets/validation_v5_13_3; final author acceptance remains deferred.
+
+### Judgement pulse
+
+Judgement is an instantaneous caster-centered pulse using the approved4m radius,
+magic-range modifier and line of sight. Its explicit adapters dispel Emperor
+control/pacification and Moon illusions, including eligible effects on the caster.
+Dispelled summons retain their original summoning owner and lifetime, and restore
+their original allegiance through Emperor's existing cleanup. Destroyed illusions
+use Moon's normal no-loot cleanup. Ordinary friendship, resurrection, unrelated
+status ailments and narrative protections are not interpreted as mind control.
+
+The pulse first collects eligible bodies using the blockmap, existing local
+contact grid and fixed player slots; deduplication precedes any actor destruction.
+It adds no ticker or global actor search. Shared sequence cost/cooldown applies
+once; Hermit does not repeat an instantaneous pulse. Native saves retain the
+resulting body state, with no new migration or retroactive effects.
+Spirit passives use the explicit `CaelumTarotSpirit` actor family. Equipped
+Justice allows the attacking player to damage these otherwise immortal bodies;
+acquisition alone and another player's selected card do not qualify. Equipped
+Judgement permits native conversation with the living demonstration body. Without
+it, Use only gives feedback and never opens an invisible conversation. The node
+is removed after closing so every new speaker is checked again.
+
+Annex apparatus revision4 adds one non-narrative example with the existing guard
+appearance and base attributes/body references, without equipment or rewards.
+Its saved identity, Health/death and native conversation survive common-save
+recovery. It does not classify ordinary NPCs or divine story actors as spirits.
+
+### Moon illusions
+
+Moon creates up to two bodies in free adjacent positions for its approved duration.
+Each snapshots the caster's appearance, attributes, equipped gear, selected weapon
+and available matching ammunition/current resources. The original inventory is not
+transferred. Maximum Health and native outgoing damage use the approved25% factor;
+copied equipment keeps its ordinary defense, wear and awakening strength without
+binding another essence. Jewellery already included in the copied attributes is
+not applied again. Native gun, magic and melee paths spend the clone's own resources.
+Unarmed attacks reuse the existing fist timing and damage rolls.
+
+Each clone uses its caster's real enemy relation with ordinary perception and
+recognition. It does not inherit omniscient targets.
+Completing a currently visible observation takes priority over an older search
+point, without bypassing recognition or tracking an occluded target.
+Its private body/head profile uses existing owned appearance sprites, including
+firearm poses. The equipped
+Moon passive permits swapping with one's own visible clone through Tarot input;
+native fit tests exclude only those two bodies, reject blocked destinations and
+do not telefrag. Justice-bound bodies cannot swap. This action precedes Hanged Man's
+racial toggle when a valid clone is aimed at.
+
+Revision1 stores each clone, source and inventory copy in native saves. Existing
+saves create no clones retroactively. Native and shared accelerated ticks advance
+the same duration; recasting replaces old bodies. Death, expiry and departure
+remove the illusion, its copied inventory and registered in-flight projectiles,
+without loot or restoring the original player's spent resources. Paid cooldown
+continues. Work is bounded by two bodies per caster, their actual inventory and
+their own projectile lists; no global actor discovery is added.
+
+### Emperor control and pacification
+
+The sequence applies Emperor once to eligible living actors within the approved
+caster-centered radius and line of sight. Scene-hidden/dormant bodies and protected
+residents are excluded. Each reached body stores revision1, at most MAXPLAYERS
+source slots and separate durations; Hermit extends the applicable cast and
+Temperance halves, prevents or removes received mind-control state.
+
+Pacification suppresses targeting/attacks toward its own caster without changing
+the receiver's underlying faction or protecting unrelated characters. Ordinary
+self-inflicted physiology remains active. The current controllable summon type is
+CaelumSummonedZupay: control changes master, friendly-player identity, communication
+principal and command target, retaining its original summoning lifetime owner.
+The last valid cast wins. Ending that control restores the original allegiance,
+without killing the body or returning control to an earlier temporary source.
+Native perception prioritizes a visible command candidate in its existing sampling
+path, preserving recognition time and avoiding continuous hidden-target tracking.
+
+State lives on the native body and is saved; legacy actors have no new effect until
+reached by a cast. Native ticks and shared accelerated steps advance each source
+once. Departure clears source bindings before summons follow their original
+owners; paid cooldown remains. Blockmap and the existing local contact grid serve
+one cast; cached body references and caster-owned recipient lists serve updates.
+No global actor scan is introduced. Existing Redemption world scans are neither
+reused nor expanded; only its shared damage permission hook gains a cached
+pacification check. Full-version author and frame-presentation acceptance remain
+pending; HISTORY records the isolated native checkpoint and its exact package.
+
+### Temperance status integration
+
+Temperance now halves new negative status durations at their existing application
+boundaries, not repeatedly during ticking. Its active cleanses burning (including
+stored burn heat), cut, poison, temporary disease, freeze, dazzle, lightning stun
+and magical sleep, then prevents those applications until expiry. A sequence that
+includes Temperance can wake its caster from magical sleep; natural rest and
+narrative freezes retain their restrictions. Hermit extends this protection.
+Existing beneficial Health doses produced by Toughness inversion are preserved,
+as in resurrection cleansing. Body contamination, hunger, thirst, natural sleep
+and the mechanical Earth-seal penalty remain unchanged.
+
+Status state keeps its existing save schema; protection uses the per-card timer.
+Future recognized mind-control handlers must call this same resistance/cleanse
+contract when integrated; this checkpoint does not claim those handlers exist.
+The affected sleep pulse now uses local blockmap queries plus the existing typed
+unlinked-guard registry and fixed player slots, preserving offscreen recipients
+without its former actor-global traversal. Native evidence: temperance-results.json
+in assets/validation_v5_13_3; 20 initial and seven recovery assertions per client.
+
+### Tower machine destruction
+
+A single native aim trace resolves a cannon/ram collision part to its owning
+machine, within100m scaled by current magic range. Solid intervening geometry
+blocks targeting. Destruction revision1 marks the machine destroyed, removes its
+visual/collision parts and releases living operators without damage or inventory
+changes. The nonphysical controller remains in the encounter's objective ledger;
+its resolution is idempotent and contributes to the existing victory condition.
+Save recovery does not rebuild destroyed components or rearm the machine.
+Old machines initialize the new flag false without changing prior neutralization.
+Released projectiles and individual operator combat retain their existing rules.
+
+### Fool sequence and spiritual loadout
+
+Fool requires at least one dead participant outside the mansion. Living players
+approve the outbound journey; if everyone is dead, the existing exceptional
+Fool-only activation still requires all participants. Palomo's return also keeps
+full unanimity and requires Fool equipped by its requester. When everybody is
+dead, the Tarot journal can equip/remove owned cards, preserving capacity and
+bound-essence restrictions, without recalculating a dead body into a living one.
+Other material inventory actions retain their restrictions.
+
+A normal proposal snapshots card order, ownership, selection, target, ground point,
+spell damage/range and payment
+kind. Changing those card choices or the required payment invalidates consent.
+The whole sequence executes once in the origin map after acceptance, then the
+group travels. Devil may pay Health and die without stopping subsequent powers
+or the journey. World skips the journey when no participant is dead or when
+already in the mansion, continuing other valid handlers. A target that ceased
+to be visible/in range is omitted. Refusal costs nothing. Pending legacy proposals
+without revision2 ground snapshots are cancelled without payment; session recovery also
+cancels pending votes under the existing reconnection policy and needs new consent.
+
+### Priestess ground trap
+
+One trap per caster uses a visible floor point captured before payment. It lasts
+60 active seconds, doubled when it is the first effect with Hermit. Recasting
+replaces the previous trap. Its damage is twice the current T1 staff damage before
+defenses; its4m explosion radius uses current magical range. Only grounded enemy
+contact triggers it, using actual faction/theft relations and campaign-arena teams.
+The resulting ordinary magical explosion can damage the caster and allies too.
+Existing environmental mines keep their original contact rule.
+
+The save stores the exact trap, caster, damage, radius and remaining lifetime.
+Pending network identity admission pauses that lifetime. A voted Fool sequence
+retains its ground point even if the caster looks away; geometry/range are checked
+again on execution. Leaving the map removes the trap and its active window while
+retaining the paid cooldown. World-bound automaton/plant/clone windows follow the
+same departure rule as their handlers are integrated. Queries remain local;
+no global actor traversal is introduced. False-wall examples remain pending.
+
+### Empress restraint
+
+One visible living target within the normal100m magic range receives a rooted
+plant for60 active seconds. It prevents walking, running, jumping and controlled
+vertical movement, including companion/escort velocity paths; attacks and actor
+state actions continue. Physical spikes deliver the current T1 staff damage over
+60s through ordinary defenses. Hermit extends lifetime without lowering that rate.
+Each caster owns one creation; replacing it releases only that caster's binding.
+Different casters can bind the same victim independently. The last creation ending
+releases the target. Leaving the map removes the plant and its active window.
+
+Revision1 saves exact caster/victim references, lifetime and fractional damage.
+Network identity admission pauses evaluation. Direct cached body references avoid
+inventory or global actor scans during movement; the source list is bounded by
+the fixed player population. Thorned plant artwork scales to the actual victim;
+its native visual evidence is separate from these behavior checks.
+
+The equipped passive lets that player cross the existing typed vegetation family
+(`CaelumTreeEnvironmentProp`, including its age/biome variants). A collision-local
+callback reads the permission cached during character recalculation; it performs
+no actor or inventory search. Trees remain solid/shootable for other players and
+retain their resource state. Stone, buildings and map geometry keep normal collision.
+Ownership without equipment, or World activating the card, does not grant this
+passive. Removing the card restores normal collision immediately; the engine's
+existing outward-overlap movement lets a player already inside leave. Derived
+permission is recomputed from the saved loadout on admission. Final author review
+and authored mansion examples remain pending.
+
+### Death contamination pulse
+
+Death is an instantaneous, aimed4m pulse with the existing magic-range multiplier.
+It sets bodies, exposed carried equipment and reachable floor/wall cells to100,
+including allies and its caster. Native model-backed NPC armor/sidearms use the
+same contamination endpoints as ordinary exposure. The Box and closed chest
+contents retain their concentrations; opening a chest exposes its contents.
+It does not change contained water quality or create a continuing contaminant
+source. Hermit does not repeat the pulse; subsequent environmental contact and
+physiology continue normally. Invalid aimed targets are skipped.
+
+Bodies come from a local blockmap query, the existing spatial grid for unlinked
+bodies and the fixed player slots. Only affected owners' inventories are read;
+duplicate dining proxies resolve to their physical owner. Surfaces use the
+existing1m2 tile authority: cell centers within the sphere and native geometry
+line traces determine reachability. Sloped planes retain their physical cell
+coordinates; solid3D support tops use their model sector and block effects
+between floors. Candidate sectors come from local linedefs, not a map census.
+The pulse has no recurring Tick or new saved ledger; existing body/item/tile
+state persists it. Hierophant reuses the same body/item/surface pulse at zero.
+
+### Lovers active-map Health redistribution
+
+The equipped passive or active effect shares resolved Health damage; only the
+active shares healing. The union contains living players in the real cooperative
+session/team and their enlisted, present companions within4m scaled by the aura
+owner's magic range and line of sight. Nearby friendly civilians are not members.
+Only auras reaching the original receiver contribute recipients, without chaining
+from a secondary receiver. Each body occurs once, including in overlapping auras.
+Campaign-arena enemies, released/dead companions and blocked/out-of-range bodies
+are excluded; standalone-mode team adapters remain part of their later delivery.
+
+Damage enters after the original recipient's defenses and resolves secondary
+Health shares through native damage/death attribution without repeating armor,
+resistances, offensive modifiers or this distribution. Native immunity and
+mansion death protection remain intact. Healing shares the Health that the
+original source would actually restore, then applies each recipient's own cap;
+excess is lost. Anima/Air restoration, food/water costs and treatment of bodily
+contamination remain properties of their original effects. Regeneration,
+medkits, mate, support magic, resistance healing and Miracle use this boundary.
+
+Revision1 inventory state stores separate fractional damage/healing shares,
+preventing repeated small hits from rounding up per recipient. Full Health drops
+fractional excess healing; immune receivers accrue no deferred damage. No actor
+census runs for an aura: queries visit the fixed player slots and bounded actual
+companion rosters only. The affected Miracle pulse now uses local blockmap and
+the existing spatial grid for unlinked bodies; strongest-source checks use fixed
+player slots, replacing its previous global scans. Active-map native and common
+save checks are recorded in lovers-results.json.
+
+Abstract journeys retain the existing prohibition on active Tarot effects, so
+only the equipped damage passive applies there. Previews capture departure
+range/line of sight among the actual travelling players and following companions;
+waiting/parked companions stay outside that journey. The thermal/supply cursors
+advance players in stable slot order at one common tic, sharing each resolved
+survival/disease hit immediately, with deduplicated recipients, native protection
+policy and persistent fractional shares. Dead recipients and dead aura owners
+stop contributing; the first player death stops the party at the same elapsed,
+walking and sleeping time. Natural recovery and needs remain individual.
+Companions retain their previous abstract-travel physiology; this adapter adds
+their received damage without introducing new recovery or resource rules.
+
+Both unlimited-supply and available-supply forecasts use isolated projections.
+Only confirmation commits damage fractions, individual player outcomes and the
+companions' native damage/death once. Changed participant/visibility/protection
+or predicted-death membership requires renewed confirmation. Closed plans release
+the cross-player projection links. Thermal weather samples retain the original
+minute boundaries; the previous accepted implementation remains a native parity
+oracle in the fixture. Evidence: `lovers-journey-results.json`. Full-version
+endpoint/UI and frame-presentation acceptance remain pending.
+
+### Justice map geometry and reversible compatibility
+
+All237 packaged UDMF maps have an appended24x24m room using owned CMST01/02
+materials and the existing arena's160-unit headroom. Existing TEXTMAP bytes and
+indices remain unchanged. A generated per-map sector index and marker identify
+the room without recurring sector/actor scans. Each player may bind one visible
+living player/NPC target that is not already paired or protected by a scene.
+Simultaneous casts share the room; each pair retains its own native active-time
+deadline, doubled only by the applicable Hermit rule. Expiry or either death
+returns surviving members independently; a corpse is not resurrected or moved.
+
+Return first tries the exact origin, then reachable free space within4m. Native
+collision and the existing unlinked-body grid prevent telefragging; swept-volume
+geometry rays prevent returning through walls. Search work is bounded to eight
+candidates per body/tic, with no global actor census. If blocked, the return
+remains pending and retries. Revision1 saves bodies, origins, timer and search
+progress; session identity admission pauses the controller.
+
+A confirmed map journey ends duels before paying ordinary travel costs or saving
+the old map. Blocked returns hold the request, and participants can cancel it.
+Deferred plans are revalidated before commit; changed costs require new consent.
+The single-player paths and central map dispatcher retain equivalent pending
+callbacks. If an accepted Fool sequence itself creates a duel, its already-paid
+powers are not replayed while waiting. The eventual Fool return records the
+campaign origin, never the arena; cancelling that pending journey preserves the
+executed sequence and its recharge. Final author UI review remains deferred.
+
+The deterministic generator reads the immutable pre-arena archive in
+assets/tarot_justice. It refuses unrelated map edits before writing anything.
+Future map revisions require an explicit preserved-baseline update; rerunning
+an older map generator alone is rejected by project validation. The archive
+keeps all237 original WADs byte-for-byte, with manifest checksums.
+`build_dev.ps1 -LegacyTarotMaps` packages those maps with current code for existing
+visited-map saves. Older explicit legacy-MAP01/MAP02 options take precedence.
+New arenas are available only in new geometry campaigns; compatibility maps
+return no arena. Keep the original save and prior checkout for rollback.
+
+### Hierophant purification and complete water volumes
+
+The instantaneous4m pulse is centered on the caster and uses the same range and
+occlusion rules. It clears accessible contamination and removes biological and
+chemical water flags while retaining salt, quantity and temperature. Closed
+storage remains shielded. A container must fit entirely: existing thermal sphere
+for bottles/canteens, approved cylinder for the pot, documented collision envelope
+for fixed reservoirs. These carried-container envelopes use their owner's center.
+
+Static map water has a revision1 map-local purification overlay, initially absent
+for legacy saves. The original UDMF quality remains unchanged; save recovery
+restores the overlay. Connected reservoirs instead change their mutable quality,
+so later mixing can contaminate them again; unsettled catch-up volumes remain
+unavailable under their existing rule. All hosts sharing the authoritative water
+model must fit inside the radius and pass geometry visibility. Sloped hosts use
+a conservative full envelope, including dry boundary vertices. No partial large
+pool/river purification is performed.
+
+The first water pulse after loading builds a sector-to-water-model index once,
+because remote hosts must also be checked. It scans sector metadata, not actors;
+subsequent casts use locally found candidate sectors and cached host lists. Live
+water heights remain authoritative. World-load restoration uses one typed
+controller lookup; ordinary quality queries are constant-time. Eight diagnostic
+native MAP01 samples (7,749 sectors/30 water parts) measured0.2015-0.44863ms for
+constructing/indexing/destroying a cold controller and0.00018-0.00046ms for an
+already-indexed call. These are CPU samples, not frame-presentation evidence.
+The cursed-passage passive and Wheel example are implemented below. MAP01
+describes their placements, same-map access and reversible geometry.
+
+### Wheel room and example access
+
+The practice-room portal opens the mansion teaching annex through normal Use;
+its counterpart returns to the practice room. Both preserve the active map,
+require range/sight and a living material actor, and reject occupied arrivals
+without telefragging. A Justice participant cannot leave through them.
+
+Wheel is an instantaneous sequence effect in the authored Wheel room only.
+It alternates dry/light192/first route and two-metre water/light32/second route.
+It uses the ordinary shared sequence payment and cooldown, creates no timer,
+and does not repeat when Hermit supplies a longer duration. Before changing
+anything, eight local native collision probes check the doorway that will close;
+an occupied doorway postpones the change without altering the room. This does
+not refund an otherwise valid paid sequence, just like other invalid targets.
+
+A saved revision2 controller owns four doors, two portals and one living obstacle. One typed lookup
+per map load restores that controller; normal use consults the retained reference
+and authored sector marker. No per-tic map census is used. Legacy geometry lacks
+the marker/indices and creates no apparatus; Wheel reports no compatible room.
+APPARATUS.json owns placements and the generated runtime data. Save recovery
+retains room state, purification, doors and portal identities.
+The typed lookup is owned by this handler and runs only when loading a compatible
+MAP01; it seeks at most its single saved controller. Eight native peaceful-mansion
+samples measured0.01111-0.01533ms per reference reconstruction plus unchanged-state
+application, versus0.00044-0.00072ms for the cached getter. The diagnostic repeats
+these calls only to measure them; production does not. This is CPU evidence for
+the narrow load exception, not a siege bound or frame-presentation claim.
+
+### Authored passage passives
+
+Only `CaelumTarotFalseWall` leaves reveal their false-wall title and opening hint
+to a character with The High Priestess equipped. Collection alone does not reveal
+them, and another player's selection does not reveal them to the viewer. This
+identification does not add a new key requirement to an already discovered door.
+Decorative walls and unmarked doors retain their current behavior.
+
+`CaelumTarotCursedPassage` starts unpurified. Using its door with The Hierophant
+equipped purifies it and opens it without an active-sequence charge. Native group
+prevalidation first checks every leaf's scene locks, keys, faction access and
+passage permission. A blocked peer prevents partial purification. The saved
+revision1/Purified fields retain that world result after unequipping, loading or
+another character's use; an unrelated passage is unaffected. Existing doors
+default to their prior access rules. Both passives use the current aim/native
+door group, without polling the map for secrets or curses. Current maps have no
+implicit conversion to these classes; only authored examples opt in.
+
+The false wall uses the mansion's original stone texture. Its saved visual
+revision1 replaces the inherited wood sprite once on first update after loading,
+without resetting its position, opening progress or collision. The annex
+controller reapplies authored facing on load; this changes only presentation.
+
+The equipped Death passive also accepts Use on the explicitly typed
+CaelumTarotLivingObstacle family, within normal interaction range and sight.
+It sets that obstacle's contamination to100 and destroys the exact actor through
+the native hub-persistent lifecycle, without generating a harvest or reward.
+Ownership or an active flag without equipping the card grants no permission;
+other players, ordinary trees and characters keep their rules. The type reuses
+the existing owned espinillo geometry/materials. One example is placed in the
+mansion annex display room, with its existing radius16/height106MU and mass2211kg.
+The aim panel explains the equipped requirement or exposes the bound Use action.
+Controller migration from revision1 adds it once without rebuilding doors/portals
+or resetting Wheel/purification. Destroying it does not reset that revision, so
+loading or preparing the controller cannot regenerate it. No ordinary campaign
+vegetation is reclassified by this patch.
+
+### Chariot movement and fragile obstacles
+
+Activation launches one projection at6m/s for12m, at most2s. Each reached actor
+receives one existing movement-force impulse per launch, never direct damage;
+its normal knockback resistance or scenery force threshold applies. Active Strength
+is evaluated when this ordered effect launches. Walls and immovable unmarked bodies
+stop it. Only explicitly typed fragile obstacles break; the equipped passive also
+permits aimed Use on them. Ordinary scenery and characters are not made fragile.
+Saved projection state includes distance, age, contacts, caster and geometry probe;
+recasting replaces only that caster's projection. Map departure releases it.
+
+The author approved reusing the owned covered-cart model, uniformly scaled to2m
+width and centered on its footprint. Derived length is4.4536585m and height2.8184338m.
+Three overlapping native geometry probes cover that length and width; local
+blockmap queries cover contacts. Stationary guards without blockmap are filtered
+from the existing shared typed registry once at launch. Late encounter registration
+notifies only the fixed player slots and their active projections; no actor-global
+per-tic scan is introduced. The contact list grows only during this2s/12m traversal.
+The owned-model adaptation has native front/rear visual evidence separate from
+behavior checks. Final frame-presentation/author checks remain pending. Evidence
+is in validation_v5_13_3/chariot-results.json and chariot-art-results.json.
+
+### Strength object movement and lifting
+
+Equipped Strength permits Use to lift/release configured movable scenery, never
+characters or fixed installations. The real actor retains identity, contamination,
+gravity flags and collision. Its mass counts once in carried load; ordinary
+inventory capacity, personal attributes and combat damage remain unchanged.
+During the active window, object push and lifting capacity evaluate the existing
+curves at Strength times ten. Losing permission/capacity releases the object.
+Local native collision checks stop movement at obstacles; map departure releases
+the object in its original map. Common saves preserve the binding. Network identity
+admission pauses its lifecycle rather than interpreting the pending owner as lost.
+Cross-campaign profile transfer requires releasing it first. Revision1 stores the
+original actor reference and gravity state; old saves start without a held object.
+Evidence: validation_v5_13_3/strength-results.json; final author checks deferred.
+
+### Hanged Man and borrowed racial lifecycle
+
+Equipping Hanged Man opens a synchronized choice of the other three playable
+races. Cancelling does not equip the card. The saved choice survives removal;
+revision1 initializes previous saves with no choice. The character's race, body
+and attributes remain unchanged. World omits this handler until a choice exists.
+
+Activation opens the paid duration window; subsequent Tarot presses start/stop
+the chosen existing racial effect. Its native prerequisites, per-tic/effort Anima
+costs, interruption and target cleanup apply. Only one racial effect runs at once.
+The native racial control retains its original function. A separate activation
+snapshot prevents re-equipping with another choice from changing an already paid
+effect. Expiry releases the borrowed effect without stopping an unrelated native
+racial ability. The choice menu and journal details are localized in ES/EN.
+The aimed-action priority for the remaining powers is still to be integrated.
+
+### Accelerated world-effect clocks
+
+Priestess traps, Empress plants, Chariot projections and Justice duels now advance
+on each shared accelerated step as well as ordinary native tics. Existing pressure,
+movement/contact, piercing damage and safe-return rules are reused. A two-player
+duel advances once; personal-only cooperative steps never advance world effects.
+This does not run unrelated NPC AI or accelerate all map physics. A transient
+snapshot reads only the eight session owners and deduplicates their effect links,
+at most once per native tic unless a completed creation invalidates it. Substeps
+reuse that bounded list. Save recovery rebuilds it from the existing saved links;
+no global actor scan or saved-schema migration is added. Pending Justice return
+searches retain their per-native-tic geometry budget.
+
+An abstract wait forecast declines active world creations, as it already does
+for unsupported changing contacts/fire; actual accelerated waiting still resolves
+them. Overland journeys retain their existing rejection of active Tarot effects.
+Lovers passive redistribution in the abstract journey model remains separate work.
+
+### Star furniture volume and safe removal
+
+The author confirmed on2026-11-01 that the one-giant rule also applies to
+furniture. Existing documented exterior dimensions determine volume, never
+mass or the amount of solid material. Cuboid envelopes cover furniture;
+table sets include their complete chair layout. Compare against twice the
+current character collision-cylinder volume. Ordinary furniture retains its
+existing storage rules. Hazardous rocks share this one allowance and still
+explicitly require Star regardless of the user's size.
+
+Manual Box storage, direct pickups, shop purchases and chest withdrawals check
+the same admission rule before transferring goods or charging. A batch of
+multiple giant objects cannot enter a single free giant allowance. Moving
+furniture into the Box subtracts its personal weight in the same transaction.
+Manufactured furniture still enters personal inventory through its existing
+crafting path; this does not grant automatic giant storage.
+
+Unequipping Star queues the original giant furniture for release, preserving
+its physical body and table contents. Saved revision1 also audits old boxed
+furniture and size changes idempotently: retain one permitted giant, queue
+the rest without deleting anything. Eight candidate positions per tic preserve
+collision and straight unobstructed access. The furniture's nearest edge stays
+within4m; its radius extends the center search so wide dining sets can fit.
+Mandatory dropping bypasses only installation land permission, not geometry,
+and gives no permission to collect someone else's furniture. A blocked release
+retains the boxed object and prevents map/profile departure until resolved.
+Ordinary valid boxed furniture retains its existing travel lifecycle.
+
+Placed furniture can enter the Box directly when personal carrying capacity
+is insufficient and Box admission succeeds. Wardrobes, cupboards and bookcases
+retain their original storage body and contents, counting one slot and their
+full raw mass exactly once. Their contents cannot be accessed while boxed;
+ordinary chests retain their no-Box/no-nesting rule. Manual Drop can release
+boxed furniture without first fitting its weight in personal inventory.
+Revision2 extends the saved release queue to storage furniture; revision1
+pending queues migrate without item replacement.
+
+Native evidence: `validation_v5_13_3/star-results.json` and
+`star-collection-results.json`. These checkpoints do not claim all generic
+scenery is capturable.
+
+### Confirmed follow-up contract for the remaining handlers
+
+- World order0..77, same target where applicable, skip invalid targets; selected
+  card order is separate. Equipped-only passives do not alter Minor collection.
+- Hanged Man chooses another playable race on equip, reusing its existing ability
+  costs/requirements with Tarot-key toggling during the effect. The chosen race
+  survives unequipping; World skips this effect until a choice exists.
+- Active Tarot input first resolves an aimed clone swap, harmful-rock capture
+  or automaton command; without a valid aimed action it toggles Hanged Man.
+- Calibrated area powers use current magic-range scaling and line of sight.
+  D means current T1 staff magic damage before ordinary defenses/resistances.
+  Priestess: one trap/caster, visible ground within100m,60s, enemy contact,
+  radius4m and2D damage to anyone reached. Empress: one visible target within100m,
+  roots for60s prevent movement but not attacks; piercing damage totalsD over60s,
+  preserving damage rate if Hermit extends duration.
+- Hierophant: one4m pulse clears body, exposed equipment and accessible surfaces;
+  water loses biological/chemical contamination but retains salt. Closed storage
+  stays excluded. Only containers or connected water volumes entirely within
+  the radius are purified; larger pools/rivers retain their quality, without
+  partial purification (author approval 2026-11-01).
+  Death: one4m pulse around a visible target within100m sets those
+  contaminants to100, including allies/caster in range. Its equipped passive
+  directly destroys marked living tree/vine obstacles through contamination,
+  not decorative plants or characters.
+- Lovers: living caster/group (players and companions),4m plus range modifier,
+  line of sight; equipped passive shares post-defense damage equally; active
+  also shares healing. No second defense or recursive sharing; own health caps
+  remain and excess healing is lost.
+  Overlapping auras that reach the original receiver form one union of eligible
+  group members, each counted once. Secondary recipients do not propagate the
+  effect into further auras (author approval 2026-11-01).
+- Temperance: half duration for burn/cut/poison/freeze/dazzle/electric stun,
+  temporary disease, magical sleep and mind control. Active removes/prevents
+  those states. Contamination, hunger, thirst, natural sleep and scenes remain.
+- Emperor:4m plus range/LOS,60s cessation of attacks against caster; reached
+  summons obey its target, then recover prior allegiance. Protect scenes/residents.
+  The last valid cast takes control; expiration restores the original allegiance,
+  never an earlier temporary controller. Leaving the map ends both control and
+  pacification before travel, retaining the paid cooldown (approved2026-11-01).
+- Chariot:12m straight at6m/s,2m wide,maximum2s; object-movement Strength pushes
+  movable actors, including active Strength; stops at walls, no direct damage.
+  Fixed obstacles break only when explicitly marked fragile.
+  Each actor receives one impulse per launch. The approved appearance reuses the
+  original covered cart at2m width.
+- Changing map ends the caster's traps, plants, clones and automaton control.
+  Temporary creations disappear; the automaton remains inactive in its original
+  location with Health/equipment preserved. The paid cooldown continues.
+- Strength lifting: Use picks up/releases movable scenery only, excluding people
+  and fixed installations. Its mass counts toward carried load. The limit uses
+  existing carrying capacity, evaluating Strength x10 only while the active lasts.
+- Wheel's mansion example has two linked states: dry/lit/inactive mechanisms or
+  flooded/dark/active mechanisms, opening one exit and closing the other. Approved
+  water depth2m and sector light192/32. Native implementation is checked above.
+- Justice: shared24x24m arena in every playable map. Each pair returns survivors
+  on its own60s expiry or either member's death, without ending other pairs;
+  no actor may belong to two simultaneous pairs. New campaigns receive the new
+  geometry. A blocked return tries a reachable free point within4m of the origin,
+  without crossing walls or telefragging; otherwise it remains pending and retries.
+  Before changing maps, end active duels and return their survivors. A blocked
+  return keeps travel pending; cancelling travel remains possible. These return
+  rules were approved2026-11-01. The
+  approved reversible legacy packages preserve visited-map saves and
+  report unavailable arenas. Native geometry/recovery evidence is in HISTORY;
+  duel/return/travel integration now has native and common-save evidence.
+- Moon: two60s clones, caster appearance/attributes,25%maximumHealth/damage,
+  perceived enemies, no transferable loot. Judgement: one4m pulse breaks recognized
+  magical mind control/illusions, preserving narrative scenes.
+  Clones copy the selected weapon, equipment and available resources at creation.
+  Each spends its own ammunition, Air and Anima under normal rules, without
+  consuming the original's resources or leaving loot (approved2026-11-01).
+- Magician: Zupay-sized3D automaton, body1,000kg/all attributes30. T1/XL armor60kg,
+  tower shield24kg/current defense; mace12kg,base blunt130,2.5m reach,
+  native14-tic preparation modified by attributes/load, base Air6, critical5%,
+  ordinary melee dispersion and no separate secondary attack. The author
+  superseded normal wear: all three equipment components are indestructible and
+  inseparable, including after body death; the body remains damageable. Total1,096kg. Tarot wakes
+  at most one per character for60s, then it becomes inactive preserving Health,
+  equipment and contamination. Tarot key commands a visible enemy while controlled.
+  Its separate animated visual body follows the persistent combat actor. Revision3
+  of the annex apparatus places one example without recreating a destroyed body.
+  Control expires on the shared active/accelerated clock and ends before departure.
+- Sun harmful objects mean large rocks, not projectiles. Approved examples are
+  two1.2m-diameter rocks at2,500kg/m3 (about2,262kg): one8kW thermal source and
+  one environmental contamination100 source within4m/LOS. Temporary Box containment
+  blocks emissions outside and releases the same rock on expiry.
+  The heat adapter now uses the existing typed thermal-source registry, native
+  obstruction checks and normal environmental sampling cadence. Its spherical
+  emission center/radius follow the body; Watts becomes0 while contained.
+  Revision1 component preparation retains the same source/owned visual through
+  common saves and removes both on body destruction. Annex revision5 places
+  the hot example once; annex revision6 adds the contamination example.
+  That field fixes environmental concentration at100 within4m and native line
+  of sight, independently of climate multipliers. Existing body/equipment,
+  object, surface, wait and absence adapters consume that explicit reference.
+  The field closes prior recipient/tile intervals before capture, movement or
+  destruction, then resumes ordinary environmental exposure without cleaning
+  acquired contamination. Overlapping sources are counted independently.
+  Source revision1 and its saved tile/recipient references prevent duplicate
+  application after loading. Geometry refresh uses the existing one-second
+  environmental cadence; capture/release forces the state transition.
+  A typed source registry is rebuilt within the existing one-time load census.
+  Only declared sources are queried, one in the campaign annex; surface geometry
+  queries stay within their4m radius. No per-NPC global actor census is added.
+  Captured harmful rocks are released in the origin map before travel, rather
+  than transported to the destination (approved2026-11-01).
+  These giant rocks also require Star equipped and occupy its one giant-object
+  allowance (approved2026-11-01). Release searches free space within4m without
+  crossing walls or telefragging. When no safe space exists, retain the same
+  contained rock, report the pending release and block travel until resolved.
+  The explicit Star requirement applies to these rocks even when a larger
+  character's collision cylinder makes their volume fall below the giant
+  threshold. Their approved1.2m diameter and physical mass remain unchanged.
+- Giant classification compares exterior geometric volume: the character's
+  collision cylinder and the documented object shape, including spherical rocks.
+  It does not infer volume from mass; the threshold remains at least twice the
+  character's volume.
+  A profile cannot leave its campaign while holding a world rock: release it
+  first. Ordinary common saves still retain the cargo and pending safe release.
+  The original contained rock appears once in the ordinary inventory, showing
+  its name, one Box slot and raw mass; Star's active still controls the separate
+  effective carried weight. Use, Box and Drop all request the same collision-safe
+  release. A blocked release keeps the row and shows a pending hint. Empty
+  carrier metadata is hidden and cannot create a transferable duplicate.
 
 ## 5.13.2 - Reversible equipment awakening (#442)
 
@@ -68,9 +722,10 @@ author scenarios wait for all V5.13 work; no author acceptance is claimed.
 
 ## V5.13 authored Tarot contract and implementation audit (#439)
 
-Status: specification checkpoint on 2026-10-31, baseline `4cbcf60fd` (5.12.7a).
-This section records approved design and explicit open fields. It does not claim
-that the remaining powers or the V5.13 finale are implemented. The issue's
+Specification baseline:2026-10-31, `4cbcf60fd` (5.12.7a). Implementation matrix
+updated2026-11-01 for #440. Approved definitions remain intact; quantitative
+follow-ups and lifecycle rules are consolidated in the current sections above.
+The standalone V5.13 finale and final author acceptance remain outstanding. The issue's
 2026-11-01 UTC decision label corresponds to the author's 2026-10-31 local date.
 
 ### Delivery order and shared ownership
@@ -98,8 +753,8 @@ slots, additively (+4 together) above the existing base of 3. Star and Sun each
 grant +10 Magic Box slots (+20 together). The author approved rejecting
 deselection when ordinary contents/selected cards would exceed the resulting
 capacity; free space first. Star's explicitly approved giant-object drop remains
-an exception, not permission to discard ordinary contents. Whether a capacity
-card can fill its own newly granted slot is still awaiting the author's reply.
+an exception, not permission to discard ordinary contents. The author approved
+a capacity card filling its own newly granted slot in the same equip operation.
 
 Devil bypass pays health only, twice the applicable normal Anima cost, and may
 kill the user. Strength's x10 affects object movement, not combat attributes.
@@ -107,41 +762,46 @@ A giant object's volume is at least twice the user's; Star supports only one
 and drops it on unequip. Sun's captured harmful object drops when its active
 ends, preserving exact identity. World activates unequipped Major and Minor
 effects, skips invalid targets and does not equip their passives. Its internal
-ordering, ownership, nested activation and target rules remain open.
+ordering is ascending acquired ID, with one shared target, no recursion and
+no second payment; equipment-bound essences remain eligible by author decision.
 
 ### All 22 approved rows
 
-The two ability columns are the author's definitions in #439. The last column
-separates integration work from fields still requiring decisions. Existing shared
-cost/timer constants are audited below; they are not assumed to settle every
-new effect's quantitative behavior.
+The two ability columns preserve the author's definitions in #439. The final
+column maps the integrated behavior to source and focused evidence under
+`assets/validation_v5_13_3/`; each named stem denotes its `-results.json`.
+These are engineering checks, not author acceptance. The historical baseline
+following the table is retained as migration context.
 
-| ID | Major | Equipped passive | Active | Audit / unresolved fields |
+| ID | Major | Equipped passive | Active | Implementation / focused evidence |
 | --- | --- | --- | --- | --- |
-| 0 | The Fool (El Loco) | Allows returning from Limbo. | Transports the entire player group to Limbo when at least one player is dead; requires agreement of the living players. | Existing Fool travel; new dead-player prerequisite, living-only vote and equipped return gate still need integration. Return eligibility and combined sequence timing remain open. |
-| 1 | The Magician (El Mago) | Allows awakening automatons using Anima. | Awakens an automaton or orders it to attack a target. | Automaton types, activation/command targets, awakening Anima payment and control lifecycle. |
-| 2 | The High Priestess (La Sacerdotisa) | Allows identifying false walls. | Places an explosive trap. | Authored false-wall markers; trap placement, trigger eligibility, damage, radius, lifetime and count. |
-| 3 | The Empress (La Emperatriz) | Allows moving over and through vegetation with ease. | Grows plants from the ground that trap the target and grow spikes dealing piercing damage. | Vegetation classification and traversal; target range, root movement policy, spikes, damage and population limit. |
-| 4 | The Emperor (El Emperador) | Allows changing the allegiance of summoned beings. | Stops hostility toward the user; while active, summoned units attack the target. | Eligible summons, allegiance ownership/restoration, hostility recipients and command lifecycle. |
-| 5 | The Hierophant (El Hierofante) | Allows purifying cursed passages. | Reduces contamination in the area to zero. | Authored cursed passages; purification radius/targets, pulse versus continuous application and stored-surface coverage. |
-| 6 | The Lovers (Los Enamorados) | Allows damage to be shared among team members. | Those under the effect share damage and healing equally. | Team membership, recipient radius/consent, attribution, rounding and damage/healing redistribution timing. |
-| 7 | The Chariot (El Carro) | Allows breaking specific fragile objects. | Launches a chariot that pushes everything in its path. | Fragile-object allowlist; chariot geometry, velocity, range, collision, pushing and damage. |
-| 8 | Justice (La Justicia) | Allows killing immortal enemies, such as spirits. | Takes the user and target to a separate arena. | Immortal-target allowlist; duel location, admission/exit, protected targets, multiple duels and native map constraints. |
-| 9 | The Hermit (El Ermitaño) | Adds two Tarot equipment slots. | Doubles the effect duration of the first Tarot card activated. | Capacity known (+2); instantaneous first effects, position after first card and own-duration eligibility. |
-| 10 | Wheel of Fortune (La Rueda de la Fortuna) | Allows altering rooms. | Alternates the conditions of a special room: flooded/dry, lit/dark, active/inactive. Each state opens a different route and closes another. | Authored special rooms, state cycles, route changes and safe/persistent occupation. |
-| 11 | Strength (La Fuerza) | Allows lifting heavy objects using Strength. | Multiplies Strength by ten for object-movement calculations. | Object eligibility, lifting/movement interaction and application of x10 to object movement only. |
-| 12 | The Hanged Man (El Colgado) | Allows using abilities of another race; choose that race when equipping the card. | While active, the Tarot control toggles the racial ability on/off. | Selectable races, chosen-race persistence, racial ability prerequisites/costs and shared-control lifecycle. |
-| 13 | Death (La Muerte) | Allows contamination to destroy a target. | Contaminates an area. | Area/targets, contamination amount, pulse/timing and destruction threshold/eligibility. |
-| 14 | Temperance (La Templanza) | Allows resisting status effects. | Cleanses status effects and resists them while active. | Covered statuses, cleansing semantics, passive resistance magnitude and active resistance magnitude. |
-| 15 | The Devil (El Diablo) | Adds two Tarot equipment slots. | Allows activating Tarot during its cooldown by paying health only, equal to twice the normal Anima cost. This payment can kill the user. | Capacity and payment ratio known; lethal payment sequence outcome and repeated bypass timing. |
-| 16 | The Tower (La Torre) | Allows destroying siege weapons. | Destroys one siege weapon. | Eligible siege machines, targeting/range and operator/quest protection. |
-| 17 | The Star (La Estrella) | Adds ten Magic Box slots and allows storing one giant object. An object is giant when its volume is at least twice the user's volume. | All objects inside the Magic Box weigh zero for the effect's duration. | Capacity (+10), one >=2x-volume giant and zero contents mass known; volume representation and safe giant drop. |
-| 18 | The Moon (La Luna) | Allows swapping places with clones. | Creates clones of the player. | Clone count/geometry, behavior, damage, lifetime, swap targeting and safe placement. |
-| 19 | The Sun (El Sol) | Adds ten Magic Box slots and prevents damage from objects inside the Box. | Captures one harmful object while the effect is active; it is automatically dropped when the effect ends. | Capacity (+10), stored-object damage prevention and one temporary capture known; eligible harmful objects, capture/drop behavior. |
-| 20 | Judgement (El Juicio) | Allows talking to spirits. | Breaks mind control and illusions within the area. | Eligible spirits, mind controls/illusions, radius, restoration and quest protections. |
-| 21 | The World (El Mundo) | Allows activating the unified Tarot essence. | Activates the effects of all unequipped Arcana, both Major and Minor; skips invalid targets. | Unified essence damages deities (author clarification); formed by all 78; activation defined in #441 above. Active needs internal order, ownership, target selection and recursion/cost rules. |
+| 0 | The Fool (El Loco) | Allows returning from Limbo. | Transports the entire player group to Limbo when at least one player is dead; requires agreement of the living players. | `CaelumFoolJourney`; `fool`. Living-player consent; origin sequence and equipped return gate. |
+| 1 | The Magician (El Mago) | Allows awakening automatons using Anima. | Awakens an automaton or orders it to attack a target. | `CaelumTarotAutomaton`; `automaton`. One persistent automaton, native commands, expiry/departure and inseparable equipment. |
+| 2 | The High Priestess (La Sacerdotisa) | Allows identifying false walls. | Places an explosive trap. | `CaelumTarotPassage / CaelumTarotMine`; `priestess`. Marked false walls and one bounded trap per caster. |
+| 3 | The Empress (La Emperatriz) | Allows moving over and through vegetation with ease. | Grows plants from the ground that trap the target and grow spikes dealing piercing damage. | `CaelumTarotRoots / CaelumPlayerCharacter`; `empress`. Vegetation traversal and timed restraint with piercing damage. |
+| 4 | The Emperor (El Emperador) | Allows changing the allegiance of summoned beings. | Stops hostility toward the user; while active, summoned units attack the target. | `CaelumTarotEmperor`; `emperor`. Local pacification and last-cast summon control; original allegiance restored. |
+| 5 | The Hierophant (El Hierofante) | Allows purifying cursed passages. | Reduces contamination in the area to zero. | `CaelumTarotPassage / CaelumTarotContamination`; `hierophant`. Marked passages; local purification with complete-water-volume containment. |
+| 6 | The Lovers (Los Enamorados) | Allows damage to be shared among team members. | Those under the effect share damage and healing equally. | `CaelumTarotLovers / CaelumLoversJourney`; `lovers-journey`. Unique recipients, saved fractions, active-map healing and coupled journey damage. |
+| 7 | The Chariot (El Carro) | Allows breaking specific fragile objects. | Launches a chariot that pushes everything in its path. | `CaelumTarotChariot / CaelumTarotFragileObstacle`; `chariot`. Authored fragile targets, one impulse per actor and bounded cart movement. |
+| 8 | Justice (La Justicia) | Allows killing immortal enemies, such as spirits. | Takes the user and target to a separate arena. | `CaelumTarotJustice / CaelumTarotSpirit`; `justice-runtime`. Shared arenas, independent pairs, safe return/travel and explicit immortal spirits. |
+| 9 | The Hermit (El Ermitaño) | Adds two Tarot equipment slots. | Doubles the effect duration of the first Tarot card activated. | `CaelumTarotLoadout / CaelumTarotSequence`; `major-regression`. Additive capacity; first duration doubled without repeating instantaneous effects. |
+| 10 | Wheel of Fortune (La Rueda de la Fortuna) | Allows altering rooms. | Alternates the conditions of a special room: flooded/dry, lit/dark, active/inactive. Each state opens a different route and closes another. | `CaelumTarotExamples`; `example-runtime`. Persistent dry/wet room, real routes and safe occupied-door rejection. |
+| 11 | Strength (La Fuerza) | Allows lifting heavy objects using Strength. | Multiplies Strength by ten for object-movement calculations. | `CaelumTarotObjectMovement`; `strength`. Movable scenery only; real carried mass and movement-only Strength multiplier. |
+| 12 | The Hanged Man (El Colgado) | Allows using abilities of another race; choose that race when equipping the card. | While active, the Tarot control toggles the racial ability on/off. | `CaelumHangedMan`; `hanged`. Saved other-race choice, existing ability costs and shared-key arbitration. |
+| 13 | Death (La Muerte) | Allows contamination to destroy a target. | Contaminates an area. | `CaelumTarotLivingObstacle / CaelumTarotContamination`; `contamination`. Marked living obstacles and bounded contamination pulse. |
+| 14 | Temperance (La Templanza) | Allows resisting status effects. | Cleanses status effects and resists them while active. | `CaelumTemperance`; `temperance`. Authored temporary statuses only, passive duration and active cleanse/immunity. |
+| 15 | The Devil (El Diablo) | Adds two Tarot equipment slots. | Allows activating Tarot during its cooldown by paying health only, equal to twice the normal Anima cost. This payment can kill the user. | `CaelumTarotLoadout / CaelumTarotSequence`; `major-regression`. Additive capacity, lethal Health bypass and continuation of paid sequence. |
+| 16 | The Tower (La Torre) | Allows destroying siege weapons. | Destroys one siege weapon. | `CaelumMajorTargets`; `tower`. Explicit siege-machine destruction without destroying living operators. |
+| 17 | The Star (La Estrella) | Adds ten Magic Box slots and allows storing one giant object. An object is giant when its volume is at least twice the user's volume. | All objects inside the Magic Box weigh zero for the effect's duration. | `CaelumTarotStar / CaelumStarCargo`; `star-collection`. Documented furniture volumes, one giant, direct collection and safe saved release. |
+| 18 | The Moon (La Luna) | Allows swapping places with clones. | Creates clones of the player. | `CaelumTarotMoon`; `moon`. Two combat clones with private resources, no loot and safe swaps. |
+| 19 | The Sun (El Sol) | Adds ten Magic Box slots and prevents damage from objects inside the Box. | Captures one harmful object while the effect is active; it is automatically dropped when the effect ends. | `CaelumTarotSun / CaelumSunCargo`; `sun-inventory`. Original hazardous rocks, suppressed emissions, Box accounting and safe origin release. |
+| 20 | Judgement (El Juicio) | Allows talking to spirits. | Breaks mind control and illusions within the area. | `CaelumTarotJudgement / CaelumTarotSpirit`; `judgement`. Local recognized control/illusion dispel and bilingual spirit dialogue. |
+| 21 | The World (El Mundo) | Allows activating the unified Tarot essence. | Activates the effects of all unequipped Arcana, both Major and Minor; skips invalid targets. | `CaelumTarotSequence / CaelumUnifiedTarot`; `major-regression`. One ascending-ID fanout including bound essences; unified power remains #441. |
 
-### Existing runtime and migration audit
+### Pre-5.13 runtime and migration audit (historical baseline)
+
+This is the baseline inspected for #439. Current implementation checkpoints above
+supersede its statements about unsupported powers, voting and selection order.
 
 - `CaelumTarotService` revision 2 supports The Fool and the 56 Minor actives;
   it rejects Major IDs 1-21. Its selection is a 78-element boolean set and its
@@ -184,12 +844,15 @@ new effect's quantitative behavior.
 
 ### Evidence and outstanding work
 
-Static audit only: the source entry points, 22 IDs and current capture/activation
-contracts above were inspected against baseline 5.12.7a. This checkpoint changes
-documentation only, so it introduces no native gameplay or manual acceptance
-claim. Outstanding design fields are the last table column and the explicit
-questions above; #440-442 cannot treat those fields as defaults. Final V5.13
-manual scenarios will be supplied together when implementation is complete.
+The original #439 audit was documentation-only. #440 now supplies all22
+handlers, approved targets and saved lifecycle adapters. Integrated regression
+on the final package passed118 assertions across two native clients: sequence
+ordering/capacity/payment, common-save recovery and the actual mansion apparatus.
+Focused reports retain their own exact package hashes and limits. No global
+per-tic search was introduced; World iterates78 IDs, creation counts are bounded,
+and area powers use local queries or typed registries. ETW presentation capture
+was denied by Windows; frame-time review and author acceptance remain pending.
+Final V5.13 manual scenarios will be supplied together after #597-601.
 The author selected the four mansion residents' existing profiles/equipment as
 the standalone presets for #597; match-local progress never changes campaign data.
 

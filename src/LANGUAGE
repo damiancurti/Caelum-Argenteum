@@ -1,4 +1,50 @@
 [enu default]
+CA_TAROT_STAR_LIMIT = "This giant object requires The Star equipped and its one giant-object space free.";
+CA_TAROT_STAR_RELEASE_WAIT = "Giant furniture is waiting for a safe release. Clear nearby space.";
+CA_TAROT_EXAMPLES = "Tarot examples";
+CA_TAROT_EXAMPLES_RETURN = "Return to the mansion practice room";
+CA_TAROT_EXAMPLES_BLOCKED = "The arrival point is occupied. Clear it before using the passage.";
+CA_TAROT_ROOM_ROUTE = "Wheel of Fortune route";
+CA_TAROT_ROOM_REQUIRED = "Activate the Wheel of Fortune inside its special room.";
+CA_TAROT_ROOM_BLOCKED = "Clear the closing doorway before changing the room.";
+[es]
+CA_TAROT_STAR_LIMIT = "Este objeto gigante requiere La Estrella equipada y su único espacio gigante libre.";
+CA_TAROT_STAR_RELEASE_WAIT = "Un mueble gigante espera una salida segura. Despejá espacio cercano.";
+CA_TAROT_EXAMPLES = "Ejemplos del Tarot";
+CA_TAROT_EXAMPLES_RETURN = "Volver a la sala de práctica de la mansión";
+CA_TAROT_EXAMPLES_BLOCKED = "El punto de llegada está ocupado. Debe quedar libre para usar el paso.";
+CA_TAROT_ROOM_ROUTE = "Paso de La Rueda de la Fortuna";
+CA_TAROT_ROOM_REQUIRED = "Activa La Rueda de la Fortuna dentro de su habitación especial.";
+CA_TAROT_ROOM_BLOCKED = "Despeja la puerta que va a cerrarse antes de cambiar la habitación.";
+[enu default]
+CA_TAROT_FALSE_WALL = "False wall";
+CA_TAROT_UNMARKED_WALL = "Wall";
+CA_TAROT_PASSAGE_CURSED = "Cursed passage";
+CA_TAROT_PASSAGE_PURIFIED = "Purified passage";
+CA_TAROT_PASSAGE_PURIFY = "Use: purify and open";
+CA_TAROT_PASSAGE_REQUIRES = "Equip The Hierophant to purify this passage.";
+[es]
+CA_TAROT_FALSE_WALL = "Pared falsa";
+CA_TAROT_UNMARKED_WALL = "Pared";
+CA_TAROT_PASSAGE_CURSED = "Paso maldito";
+CA_TAROT_PASSAGE_PURIFIED = "Paso purificado";
+CA_TAROT_PASSAGE_PURIFY = "Usar: purificar y abrir";
+CA_TAROT_PASSAGE_REQUIRES = "Equipa El Hierofante para purificar este paso.";
+[enu default]
+CA_JUSTICE_UNAVAILABLE = "Justice needs a free arena and a visible living target who is not already duelling.";
+CA_JUSTICE_RETURN_WAIT = "Justice is returning the survivors. A return point is blocked; travel will wait. You can still cancel travel.";
+CA_TAROT_CONTAMINATION_TARGET = "Death needs a visible target within range.";
+CA_TAROT_ROOTS_TARGET = "The Empress needs a visible living target within range.";
+[es]
+CA_JUSTICE_UNAVAILABLE = "Justicia necesita una arena disponible y un objetivo vivo y visible que no esté ya en duelo.";
+CA_JUSTICE_RETURN_WAIT = "Justicia está devolviendo a los supervivientes. Un punto de regreso está bloqueado; el viaje esperará. Aún puedes cancelar el viaje.";
+CA_TAROT_CONTAMINATION_TARGET = "La Muerte necesita un objetivo visible dentro de su alcance.";
+CA_TAROT_ROOTS_TARGET = "La Emperatriz necesita un objetivo vivo y visible dentro de su alcance.";
+[enu default]
+CA_TAROT_MINE_GROUND = "The High Priestess needs visible ground within range.";
+[es]
+CA_TAROT_MINE_GROUND = "La Sacerdotisa necesita suelo visible dentro de su alcance.";
+[enu default]
 CA_SESSION_IDENTITY_WAIT = "Waiting for the session to confirm every character. Open managed campaigns through the session launcher.";
 CA_SESSION_IDENTITY_REJECT = "The selected character does not match this session. Close the session and recover with the agreed player order.";
 [es]
@@ -4917,7 +4963,7 @@ CA_TAROT_POWER_EQUIPPED = "Selected | Enter / A: remove";
 CA_TAROT_POWER_SELECT_HINT = "Enter / A: select this card";
 CA_TAROT_POWER_REMOVED = "Card removed from the next activation.";
 CA_TAROT_POWER_UNIMPLEMENTED = "This card has no implemented active power.";
-CA_TAROT_POWER_LIMIT = "You may select up to three captured essences.";
+CA_TAROT_POWER_LIMIT = "All available Tarot slots are occupied.";
 CA_TAROT_POWER_NONE = "Choose up to three captured essences in the Tarot Journal.";
 CA_TAROT_POWER_CONTEXT = "You cannot activate Tarot during this activity.";
 CA_TAROT_POWER_COOLDOWN = "Tarot is recharging. See the remaining time in the Journal.";
@@ -4952,7 +4998,7 @@ CA_TAROT_POWER_EQUIPPED = "Elegida | Enter / A: quitar";
 CA_TAROT_POWER_SELECT_HINT = "Enter / A: seleccionar esta carta";
 CA_TAROT_POWER_REMOVED = "Carta quitada de la próxima activación.";
 CA_TAROT_POWER_UNIMPLEMENTED = "Esta carta todavía no tiene poder activo implementado.";
-CA_TAROT_POWER_LIMIT = "Podés elegir hasta tres esencias capturadas.";
+CA_TAROT_POWER_LIMIT = "Todos los espacios disponibles del Tarot están ocupados.";
 CA_TAROT_POWER_NONE = "Elegí hasta tres esencias capturadas en Tarot, dentro del Diario.";
 CA_TAROT_POWER_CONTEXT = "No podés activar el Tarot durante esta actividad.";
 CA_TAROT_POWER_COOLDOWN = "El Tarot se está recargando. Consultá el tiempo restante en el Diario.";
@@ -7498,3 +7544,97 @@ CA_AWAKEN_UNAVAILABLE = "La esencia debe estar adquirida, desequipada e inactiva
 CA_AWAKEN_BOUND = "Esta esencia ya está asociada con equipo. Retirá primero esa asociación.";
 CA_AWAKEN_DONE = "Equipo despertado. Conservás la esencia, pero no podés equiparla.";
 CA_AWAKEN_REMOVED = "Asociación retirada. La esencia vuelve a estar disponible.";
+
+[enu default]
+CA_TAROT_CAPACITY_REMOVE = "Free the extra card or Box slots before removing this Major.";
+CA_TAROT_ORDER = "Sequence position: %d. Equipping a card places it last.";
+[esp]
+CA_TAROT_CAPACITY_REMOVE = "Liberá los espacios adicionales de cartas o de la Caja antes de quitar este Arcano.";
+CA_TAROT_ORDER = "Lugar en la secuencia: %d. Equipar una carta la coloca al final.";
+
+[enu default]
+CA_TAROT_TOWER_DONE = "The Tower destroyed the siege machine.";
+CA_TAROT_TOWER_TARGET = "The Tower needs a visible siege machine under the reticle.";
+[es]
+CA_TAROT_TOWER_DONE = "La Torre destruyó la máquina de asedio.";
+CA_TAROT_TOWER_TARGET = "La Torre requiere una máquina de asedio visible en la mira.";
+
+[enu default]
+CA_FOOL_RETURN_EQUIP = "Equip The Fool to ask Palomo to return the group.";
+CA_FOOL_JOURNEY_HEALTH = "The activator pays %d Health and receives %d seconds of recharge only after consent. The complete sequence runs here before travelling.";
+[es]
+CA_FOOL_RETURN_EQUIP = "Equipa El Loco para pedir a Palomo el regreso del grupo.";
+CA_FOOL_JOURNEY_HEALTH = "El activador paga %d de Vida y recibe %d segundos de recarga solo tras el acuerdo. La secuencia completa se ejecuta aquí antes de viajar.";
+
+[enu default]
+CA_TAROT_RACE_TITLE = "The Hanged Man — borrowed racial ability";
+CA_TAROT_RACE_HELP = "Choose another race when equipping this card. Your body and race stay unchanged. The choice remains saved after unequipping.";
+CA_TAROT_RACE_CONTROLS = "Arrows: choose. Enter: equip. Escape: cancel. During the active power, the Tarot control toggles the borrowed ability, using its normal requirements and Anima costs.";
+CA_TAROT_RACE_EFFECT = "The Tarot control toggles your chosen racial ability while this power lasts. Normal ability requirements and Anima costs apply.";
+CA_TAROT_RACE_CHOSEN = "Chosen ability: %s.";
+[es]
+CA_TAROT_RACE_TITLE = "El Colgado — habilidad racial prestada";
+CA_TAROT_RACE_HELP = "Elegí otra raza al equipar esta carta. Tu cuerpo y tu raza se conservan. La elección queda guardada aunque desequipes la carta.";
+CA_TAROT_RACE_CONTROLS = "Flechas: elegir. Enter: equipar. Escape: cancelar. Mientras dure el poder activo, la tecla del Tarot alterna la habilidad prestada, con sus requisitos y costes de Ánima habituales.";
+CA_TAROT_RACE_EFFECT = "La tecla del Tarot alterna la habilidad racial elegida mientras dura este poder. Se aplican los requisitos y costes de Ánima habituales de esa habilidad.";
+CA_TAROT_RACE_CHOSEN = "Habilidad elegida: %s.";
+
+[enu default]
+CA_TAROT_LIFT_HEAVY = "This object exceeds your lifting capacity, including your current load.";
+CA_TAROT_LIFT_STARTED = "Object lifted. Use again to release it; its mass counts toward your load.";
+[es]
+CA_TAROT_LIFT_HEAVY = "Este objeto supera tu capacidad para levantarlo, contando la carga que ya llevás.";
+CA_TAROT_LIFT_STARTED = "Objeto levantado. Volvé a usar para soltarlo; su masa cuenta como carga.";
+
+[enu default]
+CA_TAROT_LIVING_BREAK = "{bind:+use}: destroy this living obstacle with Death";
+CA_TAROT_LIVING_REQUIRES = "Equip Death to destroy this living obstacle.";
+[es]
+CA_TAROT_LIVING_BREAK = "{bind:+use}: destruir este obstáculo vivo con La Muerte";
+CA_TAROT_LIVING_REQUIRES = "Equipá La Muerte para destruir este obstáculo vivo.";
+
+[enu default]
+CA_TAROT_MOON_CLONE = "Moon illusion";
+[es]
+CA_TAROT_MOON_CLONE = "Ilusión de La Luna";
+
+[enu default]
+CA_TAROT_HAZARD_ROCK = "Hazardous giant rock";
+CA_TAROT_HEAT_ROCK = "Heat-emitting giant rock";
+CA_TAROT_DIRTY_ROCK = "Contaminating giant rock";
+CA_TAROT_SUN_INVENTORY = "Emissions blocked. Use, Box or Drop: release safely.";
+CA_TAROT_SUN_PENDING_SHORT = "Release pending: clear nearby space.";
+CA_TAROT_SUN_STAR = "Equip The Star to contain this giant rock.";
+CA_TAROT_SUN_OCCUPIED = "Only one giant object can occupy the Box; release any current hold first.";
+CA_TAROT_SUN_CAPACITY = "The Box needs a free slot and enough carrying capacity.";
+CA_TAROT_SUN_CAPTURED = "The original rock is contained until The Sun expires.";
+CA_TAROT_SUN_RELEASE_WAIT = "The rock needs free space within 4 m. Travel waits until it can be released safely.";
+[es]
+CA_TAROT_HAZARD_ROCK = "Roca gigante peligrosa";
+CA_TAROT_HEAT_ROCK = "Roca gigante que irradia calor";
+CA_TAROT_DIRTY_ROCK = "Roca gigante contaminante";
+CA_TAROT_SUN_INVENTORY = "Emisión bloqueada. Usar, Caja o Soltar: liberar.";
+CA_TAROT_SUN_PENDING_SHORT = "Salida pendiente: despejá espacio cercano.";
+CA_TAROT_SUN_STAR = "Equipa La Estrella para guardar esta roca gigante.";
+CA_TAROT_SUN_OCCUPIED = "La Caja admite un solo objeto gigante; soltá primero lo que estás sosteniendo.";
+CA_TAROT_SUN_CAPACITY = "La Caja necesita un espacio libre y capacidad de carga suficiente.";
+CA_TAROT_SUN_CAPTURED = "La roca original está guardada hasta que termine El Sol.";
+CA_TAROT_SUN_RELEASE_WAIT = "La roca necesita espacio libre a hasta 4 m. El viaje espera hasta poder soltarla de forma segura.";
+
+[enu default]
+CA_TAROT_AUTOMATON = "Tarot automaton";
+CA_TAROT_AUTOMATON_TARGET = "Aim at a dormant living automaton. You can control only one at a time.";
+CA_TAROT_AUTOMATON_ORDER = "The automaton received the target's observed position.";
+[es]
+CA_TAROT_AUTOMATON = "Autómata del Tarot";
+CA_TAROT_AUTOMATON_TARGET = "Apuntá a un autómata inactivo que siga vivo. Solo podés controlar uno a la vez.";
+CA_TAROT_AUTOMATON_ORDER = "El autómata recibió la posición observada del objetivo.";
+
+[enu default]
+CA_TAROT_EXAMPLE_SPIRIT = "Demonstration spirit";
+CA_TAROT_SPIRIT_REQUIRES = "Equip Judgement to hear this spirit.";
+CA_TAROT_SPIRIT_DEMONSTRATION = "You can hear this demonstration spirit while Judgement is equipped. Justice allows your attacks to harm it. This example grants no quest or reward.";
+[es]
+CA_TAROT_EXAMPLE_SPIRIT = "Espíritu de demostración";
+CA_TAROT_SPIRIT_REQUIRES = "Equipá El Juicio para escuchar a este espíritu.";
+CA_TAROT_SPIRIT_DEMONSTRATION = "Podés escuchar a este espíritu de demostración mientras tengas equipado El Juicio. La Justicia permite que tus ataques lo dañen. Este ejemplo no concede misiones ni recompensas.";

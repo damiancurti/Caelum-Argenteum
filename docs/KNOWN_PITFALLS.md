@@ -4,6 +4,112 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-211 - A changing source invalidates pristine environmental cohorts
+
+Status/evidence: ENGINE-VERIFIED, #440 /5.13.3, 2026-11-01; native two-peer
+capture32450 and recovery32451, `validation_v5_13_3/sun-pollution-results.json`.
+
+A tile's current reference climate does not prove it has shared the same history
+as a pristine tile. After adding/removing a local source, reusing the old
+pristine-climate cohort can copy contamination into unrelated surfaces. Mark
+source-touched tiles and exclude both their reads and their cached results from
+that cohort. Forecast copies must retain the marker. A native regression seeds
+a touched cached result and compares an unrelated tile against uncached evolution.
+
+Close each source's recorded recipient/tile intervals before changing its state,
+then reopen ordinary exposure. Retain NPC recipients between scheduled samples;
+clearing them immediately after a geometry refresh can lose the next partial
+interval. Overlap counts must remove only the departing source. None of these
+operations requires scanning all actors per tic; use source-owned recipients and
+local geometry. This evidence does not establish frame-presentation performance.
+
+## CA-KP-210 - Preflight native fixtures before launching an interactive session
+
+Status/evidence: ENGINE-VERIFIED, #440 / 5.13.3, 2026-11-01; private native
+4.14.2-ca435-timer build. The author's Moon startup failed because DONTCOUNTKILL
+is not an actor flag in this engine. Clear COUNTKILL instead. Static source checks
+cannot replace native compilation of both the runtime and the actual fixture.
+
+run_moon_native.py first invokes the selected engine with -norun and -errorlog,
+the same IWAD/runtime/addon, and isolated configuration. This engine returns1337
+on successful batch initialization. -errorlog enables native batch error handling;
+do not replace it with +logfile, which can re-enable an error window. Only start
+the two-client interactive check after successful compilation. Preserve full logs
+and distinguish compile success from gameplay and author acceptance. Retained
+Moon runs32408/32409 exercise fixture compilation failures before desktop launch;
+moon-results.json records the final runtime and evidence.
+
+## CA-KP-209 - A stale search goal can prevent a commanded target from being recognized
+
+Status/evidence: ENGINE-VERIFIED, #440 / 5.13.3, 2026-11-01; two local native
+4.14.2-ca435-timer clients. Author acceptance remains pending.
+
+An Emperor-controlled summon initially held the correct command reference but
+never engaged it. Native traces showed a visible candidate accumulating only a
+few recognition tics while an older CaelumSearchPoint rotated the body away.
+Calling a second observation routine from the control inventory also allowed
+different candidates to overwrite the same observer's continuous-sight state.
+
+Use one candidate-selection path for the command and normal perception. Clear
+obsolete search goals when allegiance changes and do not resume an old search
+while the visible command is still being recognized. Preserve the normal field
+of view, recognition delay and hidden-target memory; widening vision or testing
+only that an evidence object exists does not verify obedience.
+
+Evidence: assets/validation_v5_13_3/emperor-results.json, including the failing
+command assertions and diagnostic run32401, followed by final run32405's native
+engagement and run32406's saved-state/map-travel checks. This finding does not
+establish rendering performance or a general-purpose navigation change.
+
+Moon follow-up (same issue/date): native run32419 shows a new close-range clone
+circling a visible target while a search point repeatedly turns it away before
+the two-second recognition threshold. Its chase now finishes the current visible
+observation before resuming an older search. It does not force identification,
+change other actors' chase logic or follow an occluded body. The final Moon native
+fixture tests ranged, magic, melee-to-player and unarmed combat sequentially;
+moon-results.json preserves the failing traces and corrected package evidence.
+
+## CA-KP-208 - Wall-sprite facing is independent of doorway collision
+
+Status/evidence: ENGINE-VERIFIED, #440, 2026-11-01, private GZDoom4.14.2 timer build.
+The annex's native blockers correctly closed its X-axis openings while the
+WALLSPRITE leaves at angle0 rendered edge-on from the approach. Collision and
+state assertions passed, but both front/rear captures showed an empty doorway.
+Setting the authored visual angle to90 made the stone/door surfaces visible;
+the blocker axis and sliding progress did not change. Do not infer visibility
+from TestMobjLocation, sprite identity or a successful state transition. Inspect
+both approach directions, and reapply authored facing when loading prior saves.
+The false-wall visual revision changes its inherited state only once without
+recreating the actor. Final evidence: example-wall-art-results.json under
+assets/validation_v5_13_3,44 final-build assertions and reviewed native images.
+The earlier edge-on captures remain as failure evidence, not author acceptance.
+
+## CA-KP-207 - World departure callbacks run in reverse handler order
+
+VERIFIED, #440, 2026-11-01. Native4.14.2 events.cpp dispatches WorldUnloaded
+from LastEventHandler through prev, reversing ordinary WorldTick order. A fixture
+that verifies an effect before production cleanup must use a later SetOrder for
+that observer. Keep its startup logic separate: moving all fixture callbacks
+earlier can create a vote before session admission resets pending transactions.
+ChangeMap also dispatches departure synchronously, so inspecting an effect after
+the request returns may already observe its correct cleanup. The Priestess/Fool
+round trip passes39 assertions per native client with a separate departure
+observer; retained failures and exact packages are in priestess-results.json.
+This is lifecycle evidence, not a gameplay timing or rendering claim.
+
+## CA-KP-206 - Pending session admission is not loss of an effect owner
+
+Status/evidence: ENGINE-VERIFIED, #440, 2026-11-01, private GZDoom4.14.2 timer build.
+The Strength save contained the exact held actor and reciprocal binding, but its
+inventory Tick released them before SessionIdentityPending cleared during common
+recovery. Defer that lifecycle while identity admission is pending; do not weaken
+input authority or treat an unvalidated player as eligible to act. Once admitted,
+normal permission, capacity and collision guards resume. Both native clients pass
+five recovery assertions after this correction; evidence and retained failed run
+are indexed by assets/validation_v5_13_3/strength-results.json. Author acceptance
+and cross-map release remain pending. Apply this lesson to affected lifecycles,
+not as permission to skip their normal death/departure rules.
+
 ## CA-KP-195 - Native inventory pickup may deliberately reject an NPC
 
 Status/evidence: RESOLVED-VERIFIED, #430/PR579, 2026-10-30, GZDoom 4.14.2/Windows11.

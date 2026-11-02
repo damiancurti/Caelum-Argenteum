@@ -85,7 +85,7 @@ class CaelumWeaponModel : Object
         }
     }
 
-    double GetWeightFor(int weaponType, int tier, int equipmentSize)
+    virtual double GetWeightFor(int weaponType, int tier, int equipmentSize)
     {
         return CaelumEquipmentRules.CalculateTieredEquipmentWeight(
             GetTierOneWeightFor(weaponType), ResolveTierFor(weaponType, tier), equipmentSize
@@ -98,7 +98,7 @@ class CaelumWeaponModel : Object
         return GetWeightFor(WeaponType, Tier, Size);
     }
 
-    double GetTierOneDamageFor(int weaponType)
+    virtual double GetTierOneDamageFor(int weaponType)
     {
         int catalogueWeapon = CaelumCraftingRules.GetCatalogueWeaponForPlayableType(
             weaponType
@@ -227,7 +227,7 @@ class CaelumWeaponModel : Object
         }
     }
 
-    double GetBaseCriticalChanceFor(int weaponType)
+    virtual double GetBaseCriticalChanceFor(int weaponType)
     {
         if(CaelumSupportImplementData.IsSupport(weaponType))return 0;
         switch (weaponType)

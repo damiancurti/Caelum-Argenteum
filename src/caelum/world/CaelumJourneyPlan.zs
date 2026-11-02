@@ -129,6 +129,8 @@ class CaelumJourneyModel : Object play
     CaelumJourneyFood FoodInventory;
     double FoodToughness;
     CaelumContaminationExposure Contamination;
+    CaelumLoversJourney Lovers;
+    int LoversIndex;
 
     void Capture(CaelumPlayer user, bool useUnlimitedSupplies)
     {
@@ -247,6 +249,9 @@ class CaelumJourneyModel : Object play
     virtual void ThirstStep(double comfort)
     {Thirst=Max(0.0,Thirst-ThirstLoss/comfort);}
 
+    void ReceiveJourneyDamage(int amount)
+    {if(Lovers!=null)Lovers.Damage(LoversIndex,amount);else Health=Max(0,Health-amount);}
+
     virtual void Step(bool sleeping)
     {
         if(Altitude!=null && Health>0){Altitude.Advance(AltitudeSecondsPerTic);Altitude.RefreshFactors();}
@@ -277,10 +282,10 @@ class CaelumJourneyModel : Object play
         else
         {
             DamageFraction += double(MaxHealth) / CaelumConstants.HEALTH_BASE_RECOVERY_REAL_SECONDS / TICRATE * critical;
-            int damage = int(DamageFraction); DamageFraction -= damage; Health = Max(0, Health - damage);
+            int damage = int(DamageFraction); DamageFraction -= damage; ReceiveJourneyDamage(damage);
         }
         if(Health>0 && FoodIllness!=null)
-            Health=Max(0,Health-FoodIllness.Damage(1.0/TICRATE,MaxHealth,FoodToughness));
+            ReceiveJourneyDamage(FoodIllness.Damage(1.0/TICRATE,MaxHealth,FoodToughness));
         if (Health <= 0) { ElapsedTics++; return; }
         double costs = Consumption / (comfort * comfort);
         double contamination=FoodIllness!=null ? FoodIllness.Contamination : 0;
@@ -368,7 +373,7 @@ class CaelumJourneyPlan : Inventory
         return plan;
     }
 
-    bool Calculate(CaelumPlayer user, int id, int mode, double sharedSpeed = 0, int limitTics = 0)
+    bool Parameters(CaelumPlayer user, int id, int mode, double sharedSpeed = 0)
     {
         if(!CaelumJourneyRules.ValidMode(id,mode))return false;
         double speed = sharedSpeed > 0 ? sharedSpeed : CaelumJourneyRules.SpeedForMode(user,mode);
@@ -380,7 +385,20 @@ class CaelumJourneyPlan : Inventory
         PlannedWalkTics = Max(1, int(Ceil(hours * CaelumWorldClock.TicsPerHour() - 0.0000001)));
         PlannedSleepTics = mode == CaelumJourneyState.MODE_SHIP ? CaelumJourneyRules.ShipSleepTics(PlannedWalkTics)
             : CaelumJourneyRules.SleepCount(PlannedWalkTics) * 8 * CaelumWorldClock.TicsPerHour();
+        return true;
+    }
+    bool Calculate(CaelumPlayer user, int id, int mode, double sharedSpeed = 0, int limitTics = 0)
+    {
+        if(!Parameters(user,id,mode,sharedSpeed))return false;
+        if(CaelumLoversJourney.Equipped(user))
+        {
+            let needed=new('CaelumLoversJourney');needed.Add(user,self);
+            if(!needed.Run(true,limitTics))return false;
+            let available=new('CaelumLoversJourney');available.Add(user,self);
+            return available.Run(false,limitTics);
+        }
         ThermalForecast=new("CaelumThermalJourney");
+        double speed=SpeedKmh;
         int destinationRegion=CaelumWeatherRules.RegionForLocation(CaelumWorldCatalogue.ConnectionDestination(id));
         Needed = new("CaelumJourneyModel"); Needed.Capture(user, true);
         let neededThermal=new("CaelumThermalJourney");
@@ -420,7 +438,8 @@ class CaelumJourneyPlan : Inventory
         let fresh = CaelumJourneyPlan(Actor.Spawn("CaelumJourneyPlan", user.Pos, NO_REPLACE));
         if (fresh == null) return false;
         if (!fresh.Calculate(user, plan.ConnectionId, plan.TravelMode)) { fresh.Destroy(); Cancel(user); return false; }
-        bool changed = fresh.PlannedWalkTics != plan.PlannedWalkTics
+        bool changed = !CaelumLoversJourney.SameParticipants(fresh.Available.Lovers,plan.Available.Lovers)
+            || fresh.PlannedWalkTics != plan.PlannedWalkTics
             || fresh.Available.FoodSpent != plan.Available.FoodSpent
             || fresh.Available.WaterSpent != plan.Available.WaterSpent
             || Abs(fresh.Available.ContainerSpent - plan.Available.ContainerSpent) > 0.000001
@@ -438,6 +457,7 @@ class CaelumJourneyPlan : Inventory
     {
         Open = false; SourceVehicle = null;
         let model = Available;
+        if(model.Lovers!=null){model.Lovers.Commit();Needed=null;}
         int food = model.FoodSpent, water = model.WaterSpent;
         double liters = model.ContainerSpent;
         Inventory item = user.Inv;
@@ -511,6 +531,7 @@ class CaelumJourneyPlan : Inventory
         if(model.FoodInventory!=null){model.FoodInventory.Commit(user);user.OnNativeInventoryChanged();}
         CaelumAltitudeService.CommitForecast(user,model.Altitude);
         CaelumWeatherState.Sync(user, CaelumWorldClock.Get(user), CaelumCalendarState.Get(user));
+        model.Lovers=null;
     }
 
     Default

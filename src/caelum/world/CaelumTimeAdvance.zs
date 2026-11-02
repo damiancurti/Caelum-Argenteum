@@ -105,7 +105,8 @@ class CaelumTimeAdvanceState : Inventory
         advance.Pumping=false;
     }
 
-    // Un paso compartido por los dos avances; no ejecuta IA ni física ajenas.
+    // Un paso compartido por los avances. No ejecuta IA general; sí resuelve
+    // las creaciones temporales del Tarot con sus propios pasos acotados.
     static void SimulatePersonalTic(CaelumPlayer user,bool advanceWorld=true)
     {
         let advance=Get(user,true);
@@ -114,7 +115,7 @@ class CaelumTimeAdvanceState : Inventory
         if(advanceWorld)clock.AdvanceOnMap(level.MapName);
         CaelumWeatherState.Sync(user,clock,CaelumCalendarState.Get(user));
         if(advanceWorld)
-        {CaelumHousekeepingWork.AdvanceSkippedTic(user);CaelumCampWorld.AdvanceFires();}
+        {CaelumHousekeepingWork.AdvanceSkippedTic(user);CaelumCampWorld.AdvanceFires();CaelumMajorWorldEvents.AdvanceSkippedTic();}
         AdvancePowers(user);
         user.UpdateCraftingTask();
         let reading=CaelumRecipeSession.Get(user);if(reading!=null)reading.Advance();

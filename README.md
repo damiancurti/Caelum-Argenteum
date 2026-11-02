@@ -6,15 +6,57 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.13.2.** Obtain and update the complete repository, validate
+**Current release: 5.13.3.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
-V5.13 is in progress. #442 adds reversible equipment awakening through inventory
-A: +25% weapon damage or armor/shield defense and half wear, with one inactive,
-unequipped acquired essence per item. Transfer/drop releases the essence.
-#439 records the specification; #441 supplies capture/unified power. #440 and
-standalone modes #596-601 remain in progress. Final author checks wait for the
-complete release; no new author acceptance is claimed.
+V5.13 is in progress. #440 now has ordered Tarot loadouts, additive capacities,
+Star volume admission, direct furniture collection, original storage contents and saved safe-drop queues,
+per-card timers, Hermit duration, Devil payment, Temperance, Tower, voted Fool sequences,
+borrowed racial abilities, Strength object lifting, Chariot movement, Priestess traps,
+Empress restraint, local Death contamination and Hierophant purification pulses
+and World dispatch. Lovers also shares damage in coupled, read-only journey
+forecasts before committing individual costs and results. This is an
+implementation checkpoint; Chariot reuses the original cart at its approved width,
+and Empress plants have native visual evidence using owned vegetation materials.
+Its equipped passive also enables individual vegetation traversal.
+Death's equipped passive destroys explicitly marked living obstacles through Use.
+Priestess identifies authored false walls; Hierophant purifies permitted cursed passages.
+The mansion example annex has reversible geometry, usable return portals and placed
+passage examples. Wheel changes its room's water, light and routes persistently.
+The false-wall example has the mansion's original stone surface and native visual checks.
+A placed living obstacle also exposes Death's equipped Use action without a new charge.
+Emperor now pacifies reached actors and temporarily controls existing summons,
+restoring original allegiance on expiry, cleansing or departure. Validation is
+recorded separately from the still-pending full-version author suite.
+Moon adds two temporary clones with existing character sprites, independent gear
+and resources, native combat and a collision-checked swap. Its native checkpoint
+and retained failures are recorded in HISTORY; it is not full-version acceptance.
+Judgement now dispels nearby Emperor control and Moon illusions through their
+existing cleanup paths, preserving protected scenes and unrelated effects.
+Its equipped passive opens the demonstration spirit's bilingual dialogue; equipped
+Justice permits damage to that explicitly marked immortal spirit.
+Sun now has identity-preserving rock containment, Star gating, Box mass/slots
+and bounded safe release. Its two rock examples reuse the owned boulder:8kW
+through the thermal system, or environmental contamination100 within4m/LOS.
+Containment suppresses their emissions without cleaning existing contamination. The
+contained original also appears in the inventory with its raw mass and release
+status. Use, Box and Drop request the same safe release. Star also applies to
+supported furniture cargo, preserving original contents and documented volume;
+it does not make arbitrary fixed scenery portable.
+For existing saves, `build_dev.ps1 -LegacyTarotMaps` preserves pre-Justice maps;
+`-LegacyTarotExamples` preserves the Justice-era mansion before the annex.
+Justice now supports simultaneous pairs, safe returns and cancellable travel waits,
+with an explicit legacy-map package for prior saves. Lovers now shares active-map
+Health damage/healing through real group membership and overlapping-aura deduplication.
+The automaton now uses its owned 3D model in native combat: one controlled body per
+caster, timed commands, inseparable equipment and persistent Health. Its control
+ends before travel; body destruction remains possible.
+Accelerated waiting advances existing Tarot world effects once per shared step.
+All22 Major handlers and their approved examples are integrated; combined native
+sequence/recovery/annex regression passed118 assertions on the final package.
+Frame-presentation review remains pending after Windows denied ETW access.
+Standalone modes #596-601 remain unfinished. #441 capture/unified power and #442 equipment awakening
+have separate tested PRs. Author scenarios remain deferred until all work is ready.
 
 The 5.12.7a correction (#602) lets valid mansion spirits confirm and restore
 native dialogue pages. New multiplayer session configurations initialize controls

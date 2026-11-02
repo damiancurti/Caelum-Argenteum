@@ -259,6 +259,10 @@ class PersonalGraph:
                 values = obj.get('class:' + kind, {})
                 if any(values.get(field) in prohibited for field, prohibited in fields.items()):
                     raise ProfileError(f'Finish or cancel the campaign activity before transfer: {kind}')
+            for kind, fields in self.policy.get('transfer_blocked_inventory_references', {}).items():
+                values = obj.get('class:' + kind, {})
+                if any(values.get(field) is not None for field in fields):
+                    raise ProfileError(f'Release the campaign object before transfer: {kind}')
             seat = obj.get('class:CaelumCardSeat', {})
             if seat.get('Duel') is not None:
                 raise ProfileError('Leave the card session before transferring.')

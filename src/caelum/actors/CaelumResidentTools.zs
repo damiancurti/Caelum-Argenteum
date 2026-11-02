@@ -22,7 +22,7 @@ class CaelumResidentTools : Object play
     bool BattleActive()
     {
         let resident=CaelumAnchoredResident(Owner);
-        return (resident!=null && resident.IsRuloPartyFighting()) || CaelumCompanions.Controlled(Owner);
+        return (resident!=null && resident.IsRuloPartyFighting()) || CaelumCompanions.Controlled(Owner) || Owner is 'CaelumTarotClone';
     }
 
     CaelumEquipmentItem Grant(int type,int size)
@@ -66,7 +66,7 @@ class CaelumResidentTools : Object play
     {
         if(!Available(Melee))return null;
         if(Sidearm==null)Sidearm=new("CaelumWeaponModel");
-        Sidearm.WeaponType=Melee.ItemType;Sidearm.Tier=Melee.Tier;Sidearm.Size=Melee.EquipmentSize;
+        Sidearm.SourceItem=Melee;Sidearm.WeaponType=Melee.ItemType;Sidearm.Tier=Melee.Tier;Sidearm.Size=Melee.EquipmentSize;
         Sidearm.Durability=Melee.Durability;Sidearm.DurabilityRevision=CaelumAttackRules.DURABILITY_REVISION;
         Sidearm.Equipped=true;Sidearm.Initialized=true;return Sidearm;
     }
@@ -136,7 +136,8 @@ class CaelumResidentTools : Object play
             if(chosen.ItemType==CaelumConstants.WEAPON_TYPE_UTILITY_STAFF)
             {Staff=chosen;return victim!=null && Owner.Distance2D(victim)<=CaelumDemonBreathRules.Range()+victim.Radius && BeginIce();}
             Melee=chosen;
-            return victim!=null && Owner.Distance2D(victim)<=MeleeRange(false)+victim.Radius && BeginMelee(false,false);
+            return (victim!=null || Owner is 'CaelumTarotClone')
+                && Owner.Distance2D(Owner.target)<=MeleeRange(false)+Owner.target.Radius && BeginMelee(false,false);
         }
         bool bound=CaelumBolas.Restrained(victim);
         if(victim!=null && Available(Bolas) && !bound && Owner.Distance2D(victim)<=Owner.MaxTargetRange && AimBolas() && BeginBolas())return true;
@@ -246,28 +247,37 @@ class CaelumResidentTools : Object play
             origin.Z,origin.X,origin.Y,hit) || hit.HitActor==null)return;
         CaelumNoise.Emit(Owner,CaelumNoiseData.IMPACT);
         let victim=CaelumCombatActor(hit.HitActor);
-        if(victim==null || victim==Owner || victim.IsFriend(Owner))return;
+        let playerVictim=Owner is 'CaelumTarotClone'?CaelumPlayer(hit.HitActor):null;
+        if((victim==null && playerVictim==null) || hit.HitActor==Owner
+            || (Owner is 'CaelumTarotClone'? !CaelumVisualPerception.Opponent(Owner,hit.HitActor):victim.IsFriend(Owner)))return;
         double chance=Clamp((CaelumWeaponCatalogue.GetCriticalChancePercent(catalogue)
             +CaelumGrowthRules.Bonus(Owner.CombatEffectiveDexterity))*CaelumPersonalityRules.Critical(Owner),0.0,100.0);
         LastStrikeCritical=Random[CaelumPhysicalCritical](0,999999)/10000.0<chance;
-        LastStrikeGrade=victim.RegisterDirectionalAnatomyImpact(Owner,
-            (hit.HitLocation.Z-victim.Pos.Z)/Max(0.0001,victim.Height));
-        victim.RegisterPendingCriticalHit(LastStrikeCritical);
-        double anatomy=victim.GetActorVulnerabilityMultiplier(LastStrikeGrade);
-        if(LastStrikeCritical)anatomy*=anatomy+1;
+        double anatomy=1;
+        if(victim!=null)
+        {
+            LastStrikeGrade=victim.RegisterDirectionalAnatomyImpact(Owner,
+                (hit.HitLocation.Z-victim.Pos.Z)/Max(0.0001,victim.Height));
+            victim.RegisterPendingCriticalHit(LastStrikeCritical);
+            anatomy=victim.GetActorVulnerabilityMultiplier(LastStrikeGrade);
+            if(LastStrikeCritical)anatomy*=anatomy+1;
+        }
+        else Owner.PendingCombatCriticalDelivery=LastStrikeCritical;
         let model=new("CaelumWeaponModel");
         double raw=CaelumWeaponUseRules.PhysicalDamage(Secondary ? CaelumWeaponCatalogue.GetSecondaryDamage(catalogue)
             : CaelumWeaponCatalogue.GetPrimaryDamage(catalogue),model.GetTierDamageMultiplierFor(ActiveItem.Tier),
             Owner.CombatPhysicalPushMultiplier*Owner.CombatHealthPerformanceMultiplier,Charged);
+        raw*=CaelumAwakening.Factor(ActiveItem);
         LastStrikeRawDamage=int(raw+0.5);
         Owner.ThermalBluntDelivery=(Secondary ? CaelumWeaponCatalogue.GetSecondaryDamageType(catalogue)
             : CaelumWeaponCatalogue.GetPrimaryDamageType(catalogue))==CaelumConstants.CATALOGUE_DAMAGE_BLUNT;
-        LastStrikeDamage=victim.DamageMobj(Owner,Owner,Max(1,int(raw*anatomy+0.5)),'Melee',DMG_THRUSTLESS,yaw);
+        LastStrikeDamage=hit.HitActor.DamageMobj(Owner,Owner,Max(1,int(raw*anatomy+0.5)),'Melee',DMG_THRUSTLESS,yaw);
+        if(playerVictim!=null)Owner.PendingCombatCriticalDelivery=false;
         Owner.ThermalBluntDelivery=false;
         if(LastStrikeDamage>0)
         {
             Owner.AddActorCombatAdrenaline(CaelumConstants.ADRENALINE_GAIN_ON_MELEE_DAMAGE);
-            Owner.ApplyActorAttackPush(victim,yaw,Owner.CombatPhysicalPushMultiplier);
+            Owner.ApplyActorAttackPush(hit.HitActor,yaw,Owner.CombatPhysicalPushMultiplier);
             CaelumWeaponUseRules.Wear(ActiveItem,LastStrikeDamage);
             Owner.A_StartSound("weapons/swordhit",CHAN_WEAPON);
         }

@@ -41,6 +41,7 @@ Runtime-generated text keys are also discoverable with `find TERM` in the comple
 | rental_agent | [rental_agent.usdf](npc/rental_agent.usdf) | 43660 |
 | companions | [companions.usdf](shared/companions.usdf) | 43890 |
 | arcana_capture | [arcana_capture.usdf](shared/arcana_capture.usdf) | 43622 |
+| tarot_spirit | [tarot_spirit.usdf](shared/tarot_spirit.usdf) | 44020 |
 
 Source SHA-256 fingerprints:
 
@@ -66,4 +67,5 @@ Source SHA-256 fingerprints:
 - `dialogues/npc/rental_agent.usdf`: `41f0f8696a70290e98c38bf1952824bc7a53eb106d55a47783cfc59f8c0d7b53`
 - `dialogues/shared/companions.usdf`: `8f0fe3747a879e7ce156c26425f9fb8106363c18c25babf9c3a3cdfab425fa5f`
 - `dialogues/shared/arcana_capture.usdf`: `586a7630d487a5ea7febd28d04ac88601573632ae915521cfa22275e033d58a8`
-- `dialogues/index.json`: `2aafbda4c6f85ae46c6db0cce412504d899617ce8326f11e7ff8cb8d8db4e332`
+- `dialogues/shared/tarot_spirit.usdf`: `3bc3be6ffce3a6ff64db108ebfeb96db2f1674a60e9896a0885756888458b466`
+- `dialogues/index.json`: `2a72c7fee6c5da68a23f0aa54754a79fd0f2ed6bfc498c57125a8e3c22f08a14`

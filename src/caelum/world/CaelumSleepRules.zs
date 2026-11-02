@@ -122,6 +122,8 @@ class CaelumSleepRules : Object play
     static bool Apply(Actor victim, int duration = 350, bool enemy=false,double power=1.0)
     {
         if (victim == null || victim.health <= 0 || duration <= 0) return false;
+        duration=int(Ceil(CaelumTemperance.Duration(victim,duration)));
+        if(duration<=0)return false;
         let user = CaelumPlayer(victim);
         let combat = CaelumCombatActor(victim);
         if(user==null && combat==null)return false;
@@ -164,21 +166,34 @@ class CaelumSleepRules : Object play
         return CaelumClassAbilityRules.Begin(user);
     }
 
+    static int ReleaseOn(CaelumPlayer user,Actor victim,double radius,double power)
+    {
+        if(victim==null || victim==user || victim.health<=0
+            || (victim.Pos-user.Pos).Length()>radius
+            || !user.CheckSight(victim,SF_IGNOREVISIBILITY))return 0;
+        return Apply(victim,int(CaelumClassAbilityRules.EFFECT_SECONDS*power*TICRATE+0.5),
+            Enemy(user,victim),power)?1:0;
+    }
+
     static bool Release(CaelumPlayer user)
     {
         // Las habilidades de clase comparten el radio base de los sellos.
         double radius = CaelumClassAbilityRules.Radius(user);
-        let it = ThinkerIterator.Create("Actor"); Actor victim;
+        double power=CaelumClassAbilityRules.HarmfulPower(user);
+        let nearby=BlockThingsIterator.Create(user,radius);
         int count = 0;
-        while ((victim = Actor(it.Next())) != null)
+        while(nearby.Next())count+=ReleaseOn(user,nearby.thing,radius,power);
+        // El registro compartido mantiene a los guardias sin blockmap, incluso
+        // fuera de cámara; la consulta espacial nunca los enumera por duplicado.
+        let population=CaelumPopulationState.Get();
+        if(population!=null)for(int i=0;i<population.UnlinkedGuards.Size();i++)
         {
-            if (victim == user || victim.health <= 0
-                || (victim.Pos-user.Pos).Length() > radius
-                || !user.CheckSight(victim, SF_IGNOREVISIBILITY)) continue;
-            double power=CaelumClassAbilityRules.HarmfulPower(user);
-            if (Apply(victim, int(CaelumClassAbilityRules.EFFECT_SECONDS*power*TICRATE+0.5),
-                Enemy(user,victim),power)) count++;
+            let entry=population.UnlinkedGuards[i];let body=entry!=null?entry.Body:null;
+            if(body!=null && body.bNoBlockmap)count+=ReleaseOn(user,body,radius,power);
         }
+        for(int p=0;p<MAXPLAYERS;p++)
+            if(playeringame[p] && players[p].mo!=null && players[p].mo.bNoBlockmap)
+                count+=ReleaseOn(user,players[p].mo,radius,power);
         CaelumNotifications.Notify(user,String.Format(StringTable.Localize("CA_SLEEP_CAST", false), count));
         user.PersistCharacterState();
         return true;

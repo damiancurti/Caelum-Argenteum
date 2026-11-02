@@ -1,0 +1,79 @@
+{
+  "revision": 6,
+  "dirty_rock_offset": [640, 256, 0],
+  "hot_rock_offset": [128, 256, 0],
+  "mansion_portal": [
+    368,
+    112,
+    0.5
+  ],
+  "mansion_arrival": [
+    368,
+    176,
+    0
+  ],
+  "lab_portal_offset": [
+    128,
+    64,
+    0.5
+  ],
+  "lab_arrival_offset": [
+    256,
+    64,
+    0
+  ],
+  "controller_offset": [
+    1920,
+    400,
+    0
+  ],
+  "door_offsets": [
+    [
+      960,
+      136,
+      0
+    ],
+    [
+      1344,
+      136,
+      0
+    ],
+    [
+      1664,
+      136,
+      0
+    ],
+    [
+      2176,
+      136,
+      0
+    ]
+  ],
+  "slide_direction": [
+    1,
+    1,
+    -1,
+    1
+  ],
+  "door_visual_angle": 90,
+  "arrival_angles": [
+    90,
+    90
+  ],
+  "provenance": "Technical placement inside the author-approved example annex and the existing mansion practice room. Portals reuse the owned magic-trap visual and only connect positions in MAP01; no new reward or story. Doors use the existing 64-by-120-MU leaf and its collision. Dry state opens the first Wheel doorway; wet state opens the second. A blocked closing doorway prevents changing state until clear. The living-obstacle example reuses the existing espinillo with its unchanged geometry, mass and owned artwork, clear of the display-room entrance.",
+  "living_obstacle_offset": [
+    480,
+    528,
+    0
+  ],
+  "automaton_offset": [
+    256,
+    528,
+    0
+  ],
+  "spirit_offset": [
+    640,
+    528,
+    0
+  ]
+}

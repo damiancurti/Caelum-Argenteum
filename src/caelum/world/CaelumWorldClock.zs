@@ -173,6 +173,7 @@ class CaelumWorldClockTicker : StaticEventHandler
     int ArcanaSourcesReadyAfter;
     CaelumPhysicsMapState AltitudeMap;
     CaelumConnectedWaterMap WaterMap;
+    CaelumTarotWaterMap TarotWaterMap;
     Array<CaelumClimateRegion> ClimateMarkers;
     // El handler ya existe en saves anteriores; su nueva implementación
     // alcanza también esos mapas sin depender de registrar otro handler.
@@ -183,6 +184,7 @@ class CaelumWorldClockTicker : StaticEventHandler
         for(int card=0;card<CaelumConstants.TAROT_CARD_COUNT;card++)ArcanaSources[card]=null;
         ArcanaSourcesReadyAfter=level.time+1;
         CaelumPhysicsWorld.Initialize();CaelumConnectedWaterMap.Initialize();
+        CaelumTarotWaterMap.Initialize();
         // Un censo tipado por carga restaura marcadores de mapas/save antiguos.
         // El coste posterior es O(1) por consulta y altas/bajas por evento.
         ClimateMarkers.Clear();

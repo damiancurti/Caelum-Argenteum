@@ -54,8 +54,8 @@ class CaelumDeskItem : CaelumRestFurnitureItem
     override bool Carry(CaelumPlayer user)
     {
         if(!CanCarry(user))return false;
-        user.RefreshCarriedInventorySummary();if(!user.CanAddWeightToPersonalInventory(GetUnitWeight()))return false;
-        CaelumContaminationObject.LeavingWorld(Desk);DetachFromOwner();AttachToOwner(user);InMagicBox=false;Park();
+        int route=CaelumTarotStar.CarryRoute(user,self,GetUnitWeight());if(route<0)return false;
+        CaelumContaminationObject.LeavingWorld(Desk);DetachFromOwner();AttachToOwner(user);InMagicBox=route==1;Park();
         user.OnNativeInventoryChanged();user.RefreshFormalInventorySnapshot();return true;
     }
     override bool Place(CaelumPlayer user)
@@ -63,7 +63,8 @@ class CaelumDeskItem : CaelumRestFurnitureItem
         if(!CaelumPlayerAuthority.CanMutate(user) || Owner!=user || InMagicBox || Amount!=1)return false;
         double radius=CaelumStudyData.Radius(0),height=CaelumStudyData.Height(0);
         vector3 point=user.Pos+(Cos(user.Angle),Sin(user.Angle),0)*(user.Radius+radius+1);
-        if(!CaelumCampLand.AllowsFurniture(user,point,radius) || !CaelumPlacementGeometry.Fits(user,point,radius,height,Desk))return false;
+        point=CaelumTarotStar.Point(user,point);
+        if(!CaelumTarotStar.Land(user,point,radius) || !CaelumPlacementGeometry.Fits(user,point,radius,height,Desk))return false;
         bool fresh=Desk==null;if(fresh)Desk=CaelumPortableReadingDesk(Actor.Spawn('CaelumPortableReadingDesk',point,NO_REPLACE));
         if(Desk==null)return false;
         CaelumContaminationObject.LeavingWorld(Desk);Desk.A_SetSize(radius,height,false);Desk.Mass=CaelumStudyData.Mass(0);Desk.Angle=user.Angle;

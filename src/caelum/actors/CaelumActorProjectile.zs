@@ -153,6 +153,7 @@ class CaelumActorProjectile : Actor
     )
     {
         CaelumAttackPrepared = true;
+        let image=CaelumTarotClone(Target);if(image!=null)image.RegisterShot(self);
         let summoned=CaelumSummonedZupay(Target);
         if(summoned!=null)
         {

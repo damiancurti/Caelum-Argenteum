@@ -1002,6 +1002,8 @@ class CaelumJournalOverlay : EventHandler
         int essenceType
     )
     {
+        if(kind==CaelumConstants.EQUIPMENT_KIND_CONTAINER && CaelumSunCargo.Display(itemType))
+            return StringTable.Localize(CaelumSunCargo.NameKey(itemType),false);
         if(kind==CaelumConstants.EQUIPMENT_KIND_CONTAINER)
             return StringTable.Localize(CaelumContainerRules.NameKey(itemType),false);
         String sizeName = StringTable.Localize(
@@ -1263,7 +1265,9 @@ class CaelumJournalOverlay : EventHandler
                     localPlayer.FormalInventoryRowReservedUnits[row]
                 );
             }
-            if(kind==CaelumConstants.EQUIPMENT_KIND_KEY_ITEM && CaelumRestFurnitureData.IsKey(localPlayer.FormalInventoryRowType[row]))
+            if(kind==CaelumConstants.EQUIPMENT_KIND_CONTAINER && CaelumSunCargo.Display(localPlayer.FormalInventoryRowType[row]))
+                DrawTexture("graphics/caelum/ui/journal/icons/ca_ui_magic_box.png",30.0,165.0+row*21.0,20.0,20.0);
+            else if(kind==CaelumConstants.EQUIPMENT_KIND_KEY_ITEM && CaelumRestFurnitureData.IsKey(localPlayer.FormalInventoryRowType[row]))
                 DrawTexture(CaelumRestFurnitureData.Icon(localPlayer.FormalInventoryRowType[row]-CaelumRestFurnitureData.FIRST_KEY),30.0,165.0+row*21.0,20.0,20.0);
             else if(kind==CaelumConstants.EQUIPMENT_KIND_KEY_ITEM && CaelumStorageFurnitureData.IsKey(localPlayer.FormalInventoryRowType[row]))
                 DrawTexture(CaelumStorageFurnitureData.Icon(localPlayer.FormalInventoryRowType[row]-CaelumStorageFurnitureData.FIRST_KEY),30.0,165.0+row*21.0,20.0,20.0);
@@ -1397,6 +1401,13 @@ class CaelumJournalOverlay : EventHandler
                         ]));
             }
             let mate=CaelumMateSession.Selected(localPlayer);
+            if(localPlayer.FormalInventoryRowKind[selectedRow]==CaelumConstants.EQUIPMENT_KIND_CONTAINER
+                && CaelumSunCargo.Display(localPlayer.FormalInventoryRowType[selectedRow]))
+            {
+                let cargo=CaelumSunCargo.View(localPlayer);
+                CaelumCraftingUI.Paragraph(self,StringTable.Localize(cargo!=null && cargo.Pending
+                    ?"CA_TAROT_SUN_PENDING_SHORT":"CA_TAROT_SUN_INVENTORY",false),414,270,192,3,"ca_journal_inventory_scroll");
+            }
             if(localPlayer.FormalInventoryRowFoodContamination[selectedRow]>=0)
                 CaelumCraftingUI.Paragraph(self,String.Format(StringTable.Localize("CA_FOOD_LOTS_DETAIL",false),
                     localPlayer.FormalInventoryRowFoodContamination[selectedRow],localPlayer.FormalInventoryRowFoodLots[selectedRow]),
@@ -1583,15 +1594,19 @@ class CaelumJournalOverlay : EventHandler
             .. CaelumTarotDetails.Active(selected,captured)
             .. "\n\n\c[Gold]" .. CaelumTarotDetails.L("CA_TAROT_DETAIL_TRUCAZO_LABEL") .. "\c-: "
             .. CaelumTarotDetails.Trucazo(selected,captured);
+        details=details.."\n\n"..String.Format(StringTable.Localize("CA_TAROT_ORDER",false),CaelumTarotLoadout.Position(record,selected));
+        if(selected==CaelumHangedMan.CARD && CaelumHangedMan.Chosen(localPlayer,record))
+            details=details.."\n"..String.Format(StringTable.Localize("CA_TAROT_RACE_CHOSEN",false),
+                StringTable.Localize(CaelumHangedMan.RaceKey(record.TarotHangedRace),false));
         CaelumCraftingUI.Paragraph(self,details,210,189,358,7,"ca_journal_tarot_scroll");
         bool active = record != null && CaelumTarotService.EffectTics(record) > 0 && CaelumTarotService.IsActive(record, selected);
         DrawTextLine(SmallFont, active ? Font.CR_CYAN : Font.CR_GRAY, 210, 282,
             active ? String.Format(StringTable.Localize("CA_TAROT_POWER_ACTIVE_TIME", false),
-                (CaelumTarotService.EffectTics(record) + TICRATE - 1) / TICRATE)
+                (CaelumTarotService.EffectTics(record,selected) + TICRATE - 1) / TICRATE)
                 : StringTable.Localize("CA_TAROT_POWER_INACTIVE", false));
         DrawTextLine(SmallFont, Font.CR_GOLD, 210, 297,
             String.Format(StringTable.Localize("CA_TAROT_POWER_GROUP_STATUS", false),
-                selectedCount, CaelumConstants.TAROT_SELECTED_LIMIT,
+                selectedCount, CaelumTarotLoadout.Capacity(record),
                 record == null ? 0 : (CaelumTarotService.CooldownTics(record) + TICRATE - 1) / TICRATE));
 
     }
@@ -2921,6 +2936,9 @@ class CaelumJournalOverlay : EventHandler
 
     override void NetworkProcess(ConsoleEvent e)
     {
+        // Única excepción materialmente inocua para el Tarot del grupo muerto.
+        if(e.Name=="ca_tarot_select")
+        {CaelumTarotService.Select(CaelumPlayerAuthority.FromNetworkPlayer(e.Player,true),e.Args[0]);return;}
         CaelumPlayer requestingPlayer = CaelumPlayerAuthority.FromNetworkPlayer(e.Player);
         if (requestingPlayer == null) { return; }
         if(e.Name=="ca_transport_action")
@@ -2937,8 +2955,7 @@ class CaelumJournalOverlay : EventHandler
         { CaelumCraftingBrowser.Get(requestingPlayer).Select(requestingPlayer,e.Args[0],e.Args[1]); return; }
         if (e.Name == "ca_crafting_browser_confirm")
         { CaelumCraftingBrowser.Get(requestingPlayer).Confirm(requestingPlayer,e.Args[0],e.Args[1],e.Args[2]); return; }
-        if (e.Name == "ca_tarot_select") { CaelumTarotService.Select(requestingPlayer, e.Args[0]); }
-        else if(e.Name=="ca_tarot_unified")CaelumUnifiedTarot.Activate(requestingPlayer);
+        if(e.Name=="ca_tarot_unified")CaelumUnifiedTarot.Activate(requestingPlayer);
         else if(e.Name=="ca_awaken_open")CaelumAwakeningMenu.Open(requestingPlayer);
         else if(e.Name=="ca_awaken_action")CaelumAwakeningMenu.HandleCommand(requestingPlayer,e.Args[0]);
         else if (e.Name == "ca_event_action") { CaelumScheduleState.Act(requestingPlayer, e.Args[0]); }

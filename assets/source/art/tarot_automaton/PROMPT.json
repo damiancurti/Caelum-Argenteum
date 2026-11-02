@@ -1,0 +1,8 @@
+{
+  "issue": 440,
+  "mode": "Built-in image_gen, new opaque material swatch",
+  "prompt": "Use case: stylized-concept. Asset type: opaque square diffuse texture for the original 3D iron automaton in Caelum Argenteum, a dark fantasy game inspired by nineteenth-century Argentina. Create a hand-painted iron material shading atlas, not a picture of a robot. The entire square is an uninterrupted swatch of finely hammered aged iron with subtle irregular small scratches and restrained warm oxidation. Across the width, its value varies smoothly and monotonically from almost black charcoal at the left edge to muted light steel gray at the right edge; vertically it stays broadly uniform, with fine material grain. This horizontal value ramp will provide painted light and shadow on the model's curved armor. Preserve a matte, sober, readable game-art finish with broad tonal grouping. No glossy chrome, reflections of scenery, objects, borders, labels, text, seams, panels, rivets or transparency. Edge-to-edge texture only.",
+  "source": "C:/Users/dcc70/.codex/generated_images/01a163e9-52c8-7551-86d9-f4a1d49a50d1/exec-ea5da1df-784d-4544-8289-714a8dd75267.png",
+  "runtime": "src/models/caelum/tarot/automaton/iron-painted-ramp.png",
+  "processing": "Byte-exact copy; mesh UVs select paint values by neutral-pose face orientation. No raster editing."
+}

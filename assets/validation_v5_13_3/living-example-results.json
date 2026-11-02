@@ -1,0 +1,338 @@
+{
+  "issue": 440,
+  "version": "5.13.3",
+  "date": "2026-11-01",
+  "scope": "Revision2 placed living-obstacle example and private native Use guidance",
+  "package": {
+    "path": "build/issue440/examples/living-r2/caelum_argenteum_dev.pk3",
+    "sha256": "8a9e391b7ebbc528a7f8a5dda5465af23c553da4a7f53d3da59eaf19c5e08d33",
+    "members": 18036,
+    "source_equivalence": true
+  },
+  "native_assertions": 32,
+  "runs": [
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32393-20261101-050438-401361",
+      "runtime_sha256": "8a9e391b7ebbc528a7f8a5dda5465af23c553da4a7f53d3da59eaf19c5e08d33",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "commands": [
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\examples\\living-r2\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32393-20261101-050438-401361\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32393-20261101-050438-401361\\bundle\\peer0\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32393-20261101-050438-401361\\bundle\\peer0",
+          "-host",
+          "2",
+          "-port",
+          "32393",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32393-20261101-050438-401361\\bundle\\peer0\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32393-20261101-050438-401361\\bundle\\peer0\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ],
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\examples\\living-r2\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32393-20261101-050438-401361\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32393-20261101-050438-401361\\bundle\\peer1\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32393-20261101-050438-401361\\bundle\\peer1",
+          "-join",
+          "127.0.0.1:32393",
+          "-port",
+          "32394",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32393-20261101-050438-401361\\bundle\\peer1\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32393-20261101-050438-401361\\bundle\\peer1\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ]
+      ],
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440B PASS prior apparatus save upgrades its original controller to revision2",
+            "CA440B PASS upgrade preserves Wheel state and purified passage",
+            "CA440B PASS living obstacle occupies the authored display position",
+            "CA440B PASS example retains the existing espinillo physical profile",
+            "CA440B PASS native tree collision fits the display room",
+            "CA440B PASS repeated preparation does not duplicate the live example",
+            "CA440B PASS mere ownership cannot destroy the example through native Use",
+            "CA440B PASS aim panel explains the missing equipped passive",
+            "CA440B PASS aim panel exposes the bound Use action when equipped",
+            "CA440B PASS equipped Death destroys the actual placed obstacle through native Use",
+            "CA440B PASS passive interaction adds no payment or cooldown",
+            "CA440B PASS preparation does not regenerate a destroyed example",
+            "CA440B RESULT capture"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440B PASS prior apparatus save upgrades its original controller to revision2",
+            "CA440B PASS upgrade preserves Wheel state and purified passage",
+            "CA440B PASS living obstacle occupies the authored display position",
+            "CA440B PASS example retains the existing espinillo physical profile",
+            "CA440B PASS native tree collision fits the display room",
+            "CA440B PASS repeated preparation does not duplicate the live example",
+            "CA440B PASS mere ownership cannot destroy the example through native Use",
+            "CA440B PASS aim panel explains the missing equipped passive",
+            "CA440B PASS aim panel exposes the bound Use action when equipped",
+            "CA440B PASS equipped Death destroys the actual placed obstacle through native Use",
+            "CA440B PASS passive interaction adds no payment or cooldown",
+            "CA440B PASS preparation does not regenerate a destroyed example",
+            "CA440B RESULT capture"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32394-20261101-050544-696890",
+      "runtime_sha256": "8a9e391b7ebbc528a7f8a5dda5465af23c553da4a7f53d3da59eaf19c5e08d33",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "commands": [
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\examples\\living-r2\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32394-20261101-050544-696890\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32394-20261101-050544-696890\\bundle\\peer0\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32394-20261101-050544-696890\\bundle\\peer0",
+          "-host",
+          "2",
+          "-port",
+          "32394",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32394-20261101-050544-696890\\bundle\\peer0\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32394-20261101-050544-696890\\bundle\\peer0\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ],
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\examples\\living-r2\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32394-20261101-050544-696890\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32394-20261101-050544-696890\\bundle\\peer1\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32394-20261101-050544-696890\\bundle\\peer1",
+          "-join",
+          "127.0.0.1:32394",
+          "-port",
+          "32395",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32394-20261101-050544-696890\\bundle\\peer1\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32394-20261101-050544-696890\\bundle\\peer1\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ]
+      ],
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440B PASS common recovery preserves the upgraded controller",
+            "CA440B PASS destroyed example remains absent after recovery",
+            "CA440B PASS recovery migration remains idempotent after destruction",
+            "CA440B PASS unrelated saved room results remain intact",
+            "CA440B RESULT reload"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440B PASS common recovery preserves the upgraded controller",
+            "CA440B PASS destroyed example remains absent after recovery",
+            "CA440B PASS recovery migration remains idempotent after destruction",
+            "CA440B PASS unrelated saved room results remain intact",
+            "CA440B RESULT reload"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "initialization_profile": {
+    "results": {
+      "directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32395-20261101-050727-777997",
+      "runtime_sha256": "8a9e391b7ebbc528a7f8a5dda5465af23c553da4a7f53d3da59eaf19c5e08d33",
+      "engine_sha256": "f53c8db6e6326ac43f919a724316f536183d988d33d2b36fa664a41b39c03a0a",
+      "commands": [
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\examples\\living-r2\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32395-20261101-050727-777997\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32395-20261101-050727-777997\\bundle\\peer0\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32395-20261101-050727-777997\\bundle\\peer0",
+          "-host",
+          "2",
+          "-port",
+          "32395",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32395-20261101-050727-777997\\bundle\\peer0\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32395-20261101-050727-777997\\bundle\\peer0\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ],
+        [
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\engine435\\candidate\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Ultimate Doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\examples\\living-r2\\caelum_argenteum_dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32395-20261101-050727-777997\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32395-20261101-050727-777997\\bundle\\peer1\\session.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32395-20261101-050727-777997\\bundle\\peer1",
+          "-join",
+          "127.0.0.1:32395",
+          "-port",
+          "32396",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32395-20261101-050727-777997\\bundle\\peer1\\engine.log",
+          "-loadgame",
+          "recovery.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\issue439-work\\build\\issue440\\native-32395-20261101-050727-777997\\bundle\\peer1\\start.cfg",
+          "-window",
+          "-width",
+          "800",
+          "-height",
+          "600"
+        ]
+      ],
+      "error": null,
+      "peers": [
+        {
+          "slot": 0,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440B PASS native mansion controller exists with current apparatus",
+            "CA440B RESULT capture"
+          ],
+          "passed": true
+        },
+        {
+          "slot": 1,
+          "exit": 0,
+          "errors": [],
+          "checks": [
+            "CA440B PASS native mansion controller exists with current apparatus",
+            "CA440B RESULT capture"
+          ],
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    "samples": {
+      "cold_ms": [
+        0.01196,
+        0.01392,
+        0.01188,
+        0.01303,
+        0.01533,
+        0.01146,
+        0.01111,
+        0.01204
+      ],
+      "warm_ms": [
+        0.00072,
+        0.00052,
+        0.00053,
+        0.00044,
+        0.00047,
+        0.00049,
+        0.00045,
+        0.00049
+      ]
+    },
+    "note": "Eight per-call CPU samples on the real peaceful mansion. Cold means rebuilding the handler reference via the one controller lookup and reapplying unchanged apparatus; warm means the retained-reference getter. Diagnostic repetition is not production behavior or frame-presentation evidence."
+  },
+  "generator_byte_identical": true,
+  "static_validation_passed": true,
+  "author_acceptance": false
+}

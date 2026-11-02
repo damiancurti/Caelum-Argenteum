@@ -3,6 +3,7 @@
 class CaelumMovableProp : Actor
 {
     CaelumTelekinesisEffect TelekinesisBinding;
+    CaelumTarotLift TarotLift;
 
     override void Tick()
     {

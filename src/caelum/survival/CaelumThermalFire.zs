@@ -20,6 +20,9 @@ class CaelumThermalFireSource : Actor
         if(args[0]<1 || args[0]>4 || args[1]<=0 || args[2]<=0)return 0;
         return CaelumThermalData.FireWatts(args[0]);
     }
+    virtual vector3 EmissionCenter(){return Pos+(0,0,args[2]/2.0);}
+    virtual double EmissionRadiusMeters()
+    {return Max(args[1],args[2]/2.0)/CaelumJourneyRules.MAP_UNITS_PER_METER;}
     States { Spawn: TNT1 A -1; Stop; }
 }
 
@@ -28,9 +31,7 @@ class CaelumThermalFire : Object play
     static double Absorbed(Actor body,CaelumThermalState thermal,CaelumThermalFireSource source)
     {
         if(source==null || source.Watts()<=0)return 0;
-        double units=CaelumJourneyRules.MAP_UNITS_PER_METER;
-        vector3 origin=source.Pos+(0,0,source.args[2]/2.0);
-        return AbsorbedAt(body,thermal,source,origin,source.Watts(),Max(source.args[1],source.args[2]/2.0)/units);
+        return AbsorbedAt(body,thermal,source,source.EmissionCenter(),source.Watts(),source.EmissionRadiusMeters());
     }
 
     // La misma proyección y oclusión sirve a llamas con origen orientable.

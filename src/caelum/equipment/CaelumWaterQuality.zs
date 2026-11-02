@@ -48,8 +48,9 @@ class CaelumWaterQuality : Object
         if(index>=0)return water.Quality(index);
         // Una calidad explícita del volumen prevalece. Las piscinas anteriores
         // sin metadatos en el modelo conservan la identidad de su sector huésped.
-        if(source.GetUDMFInt('user_ca_water_quality')!=0 || source.GetUDMFInt('user_ca_potable_water')!=0)return Metadata(source);
-        return Metadata(host);
+        int quality=source.GetUDMFInt('user_ca_water_quality')!=0 || source.GetUDMFInt('user_ca_potable_water')!=0
+            ?Metadata(source):Metadata(host);
+        return CaelumTarotWaterMap.Quality(source,quality);
     }
     static clearscope String Label(int quality)
     {

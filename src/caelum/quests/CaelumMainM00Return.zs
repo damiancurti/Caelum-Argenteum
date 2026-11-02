@@ -195,6 +195,7 @@ class CaelumMainM00Return : Object play
             user.Vel = (0,0,0);
             if (r.MainM00ReturnTics == FADE_TICS) user.A_SetBlend("Black", 0.0, 1);
             if (r.MainM00ReturnTics > 0) { r.MainM00ReturnTics--; return; }
+            if(CaelumJusticeTransit.Defer(user,CaelumJusticeTransit.TUTORIAL))return;
             if (!Commit(user)) { Cancel(user); return; }
             CaelumWorldProgress.RecordReturnDeparture(user);
             // El quemado nativo necesita ambos mapas visibles; una pantalla

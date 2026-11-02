@@ -2,6 +2,7 @@
 class CaelumRacialAbilityEffect : Object play
 {
     int Revision, Race;
+    bool TarotBorrowed;
     virtual bool CanStart(CaelumPlayer user) { return true; }
     virtual bool CanContinue(CaelumPlayer user) { return true; }
     virtual double BaseAnimaPerSecond(CaelumPlayer user) { return 0; }
@@ -48,7 +49,9 @@ class CaelumRacialAbilityRules : Object play
     {
         Ensure(user);
         if(user.RacialAbility!=null && (Interrupted(user)
-            || user.RacialAbility.Race!=user.CharacterProfile.Race
+            || (user.RacialAbility.TarotBorrowed
+                ? !CaelumHangedMan.Allows(user,user.RacialAbility.Race)
+                : user.RacialAbility.Race!=user.CharacterProfile.Race)
             || !user.RacialAbility.CanContinue(user)))Deactivate(user);
     }
 
@@ -80,14 +83,16 @@ class CaelumRacialAbilityRules : Object play
     static double TicCost(CaelumPlayer user,CaelumRacialAbilityEffect effect)
     {return ModifiedCost(user,effect.BaseAnimaPerSecond(user))/TICRATE;}
 
-    static bool Begin(CaelumPlayer user)
+    static bool Begin(CaelumPlayer user,int race=-1,bool borrowed=false)
     {
         Ensure(user);
         if(user.RacialAbility!=null || Interrupted(user) || MenuBlocked(user))return false;
-        let effect=user.CreateRacialAbilityEffect(user.CharacterProfile.Race);
+        if(!borrowed)race=user.CharacterProfile.Race;
+        else if(!CaelumHangedMan.Allows(user,race))return false;
+        let effect=user.CreateRacialAbilityEffect(race);
         if(effect==null)
         {CaelumNotifications.Notify(user,StringTable.Localize("CA_RACIAL_UNAVAILABLE",false));return false;}
-        effect.Revision=SCHEMA_REVISION;effect.Race=user.CharacterProfile.Race;
+        effect.Revision=SCHEMA_REVISION;effect.Race=race;effect.TarotBorrowed=borrowed;
         if(!effect.CanStart(user))return false;
         if(user.CurrentAnima<=0 || user.CurrentAnima+1e-8<TicCost(user,effect))
         {CaelumNotifications.Notify(user,StringTable.Localize("CA_RACIAL_ANIMA",false));return false;}

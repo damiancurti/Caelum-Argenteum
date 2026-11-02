@@ -1,6 +1,527 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.13.2** - 2026-10-31.
+Documentation version: **5.13.3** - 2026-10-31.
+
+## 5.13.3 - Ordered Tarot foundation (#440, implementation checkpoint)
+
+Integrated audit checkpoint (2026-11-01): all22 Major rows now map to their
+source and focused evidence in SYSTEMS. No gameplay changed in this checkpoint.
+The exact `lovers-journey/r4` package passed118 assertions in native two-client
+runs32467/32468/32470: ordered sequence/payment including World and lethal Devil,
+common-save recovery, and real mansion annex portals/water/light/door safety.
+Evidence: `assets/validation_v5_13_3/major-regression-results.json`.
+The snapshot shows the actual dry room and synchronized peer state; it is not
+a whole-annex visual acceptance claim. Focused earlier reports remain intact.
+Routine queries are local/typed; World has78 IDs and creations have per-caster
+limits. ETW access is still denied, so presentation review remains outstanding.
+Standalone #597-601 follow this integrated implementation; author tests stay
+deferred until the full version is ready. No issue was closed or merged.
+
+
+Lovers journey checkpoint (2026-11-01): equipped damage sharing now participates
+in isolated solo/cooperative journey projections. Players advance on a common
+thermal/supply cursor; following companions receive their share without changing
+their previous abstract-travel physiology. Fractional damage, immunity/nonlethal
+protection, deduplicated auras and first-player-death interruption are retained.
+Changed recipients require renewed confirmation; committing is idempotent and
+closed plans release cross-player projection links. Revision1 projection metadata
+uses the existing Lovers remainder schema.
+
+Final `lovers-journey/r4` matches18047 source entries; SHA-256
+`3962914a9c6168208953b450830589b73fe078da758ccb2f0c19f6cdcdcb3324`.
+Two-peer capture32465/recovery32466 passed46 assertions, including an independent
+pre-cursor thermal oracle, read-only previews, the public solo planner, shared
+disease, common elapsed/walk/sleep death counters and saved commit/fractions.
+Retained32459/32460 diagnosed case-insensitive parameter/field shadowing; explicit
+self assignments fixed the cursor destination/mode/speed. Earlier32461-32464 passed
+their narrower revisions. Evidence: `assets/validation_v5_13_3/lovers-journey-results.json`.
+Project validation and diff checks passed. Final endpoint/UI and frame-presentation
+review remain separate; no author acceptance is inferred.
+
+Star direct-collection checkpoint (2026-11-01): placed heavy furniture can
+enter the Box without first passing through personal inventory. Existing
+wardrobe/cupboard/bookcase carriers preserve their original body, contents,
+water and one complete raw mass/slot; boxed contents remain inaccessible.
+Ordinary chests retain their no-Box/no-nesting rules. Manual Drop uses the
+same collision-safe placement queue, now revision2 with generic item references.
+
+Final `star-collection/r1` matches18046 source entries; SHA-256
+`0bda414ce336d92dc39601386aec2634ce32f8091734fc32ba399c6152e31a7a`.
+Two-peer capture32456/recovery32457 and revision1-save migration32458 passed
+60 assertions. The older queue survives and releases the same original
+furniture. Evidence: `assets/validation_v5_13_3/star-collection-results.json`.
+Existing cargo travel hooks are unchanged; this checkpoint does not claim
+a new map-transition or frame-presentation measurement. Final author acceptance
+remains pending.
+
+Star furniture checkpoint (2026-11-01): the author explicitly extended the
+one-giant rule to furniture. Exterior dimensions now gate Box entry through
+manual storage, pickups, trade and chest withdrawal, sharing the allowance
+with Sun rocks. Furniture toggling correctly removes its former personal weight
+in the same transaction. Star removal/legacy excess use a saved revision1
+release queue, with bounded collision/obstruction checks and exact item/body
+identity. Blocked release prevents travel and external-profile transfer.
+
+Final `star/r3` matches18046 source entries; SHA-256
+`be9f7d77927bc7975f5c7350071ee56108dbf922e6e07cab740a8f13c01b22fb`.
+Two-peer capture32454/recovery32455 passed46 assertions; two profile-boundary
+checks passed against the actual common save. Evidence:
+`assets/validation_v5_13_3/star-results.json`. Retained32452 caught a reserved
+identifier;32453 exposed the missing personal-weight subtraction and an
+overloaded fixture setup, both corrected before the final capture. Direct
+collection/storage-furniture audit, full-annex tests and author acceptance
+remain pending. No new global actor scan or rendering-performance claim.
+
+Sun pollution checkpoint (2026-11-01): annex revision6 adds the owned-model
+rock with fixed environmental concentration100 within4m and native line of
+sight. Bodies/equipment and object histories use the existing exposure rules;
+local surface tiles retain independent overlapping-source references. Capture,
+movement and destruction close prior intervals without cleaning acquired
+contamination. Saved revision1 records are idempotent and retained NPC recipients
+are settled even between their ordinary environmental samples. Source-touched
+tiles are excluded from pristine-climate cohorts, including forecast copies.
+
+Final `sun-pollution/r2` matches18044 source entries; SHA-256
+`b66ffa152955186d3e994dd0b6c51dd4504d7a7675787d1d6c59924fe28ea16b`.
+Two-peer capture32450/recovery32451 passed62 assertions: climate independence,
+object/NPC exposure, overlap, historical closure, cache isolation, save recovery,
+relocation, actual wall occlusion and destruction cleanup. Earlier32449 passed
+the narrower initial capture. God mode protects fixture players while exposure
+is measured; this does not revalidate disease damage. Evidence:
+`assets/validation_v5_13_3/sun-pollution-results.json`. No new global actor scan;
+typed registry reconstruction joins the existing load census and surface work
+is local. Full-annex author review and frame-presentation checks remain pending.
+
+Sun inventory checkpoint (2026-11-01): one contained original is visible in
+the native inventory with its name, Box marker and raw physical mass. Use,
+Box and Drop request the same safe placement; blocked placement keeps the
+item/pending hint, and successful release hides the empty metadata. The carrier
+cannot become a duplicate pickup or another player's inventory entry.
+
+Final `sun-inventory/r2` matches18043 source entries; SHA-256
+`b448272766e851a2b6094e8952febb36c27cf7ecc17110f378041678389ab8c6`.
+Two-peer capture32447/recovery32448 passed30 assertions, including release
+after a blocked saved request. The Spanish800x600 inventory was inspected;
+the final shorter hint clears the lower controls. Earlier r1 gameplay passed
+32445/32446 but its hint was too long. Evidence is in
+`assets/validation_v5_13_3/sun-inventory-results.json`. Author review remains deferred.
+
+Sun heat checkpoint (2026-11-01): the approved8kW spherical rock uses the
+existing typed thermal-source registry and owned boulder visual. Capture hides
+the visual and suppresses emission without replacing either component; release
+restores both. Saved component revision1 is idempotent, destruction unregisters
+the source, and ordinary fire geometry/power are unchanged. Annex revision5
+places the hot example once. Environmental contamination remains separate work.
+
+Native capture32443/recovery32444 passed52 assertions across two peers.
+`sun-heat/r1` matches all18043 source entries; SHA-256
+`643dd5494484668550511acdfc907fa4157b6fd4616d1b48e9f952eccd547d81`.
+The retained32442 failure was premature fixture access before PostBeginPlay;
+the fixture now waits for native initialization. The owned-model screenshot
+was inspected. Evidence: `assets/validation_v5_13_3/sun-heat-results.json`.
+These are agent checks, not author acceptance or rendering-performance evidence.
+
+Spirit checkpoint (2026-11-01): the explicit Tarot-spirit family admits damage
+only from a player with equipped Justice. Equipped Judgement opens the approved
+demonstration dialogue; unauthorised Use gives feedback without acquiring a
+conversation/cursor lock. The example reuses the guard's base body/profile and
+unchanged sprite, adds no narrative identity or reward, and is placed once by
+annex apparatus revision4. Existing conversation order is unchanged; its new
+ID44020 is appended through the authoritative dialogue manifest.
+
+Native two-peer capture32440 and common-save dialogue recovery32441 passed
+32 assertions. The Spanish dialogue was visually inspected. Package
+`spirit/r1` matches all 18043 source entries; SHA-256
+`dad38f79124a9114c7b7dcfca9fa8c9243067af9737202a9f591c59a9fd91cb9`. See
+`assets/validation_v5_13_3/spirit-results.json`. Static validation and generated
+indexes/apparatus pass. These agent checks do not establish author acceptance.
+
+2026-11-01 author decisions: automaton mace base Air6, critical5%, ordinary
+melee dispersion and no separate secondary attack. Its armor, tower shield and
+mace are indestructible and inseparable, overriding previously normal wear;
+the 1,000kg body remains vulnerable. A non-narrative demonstration spirit using
+the existing guard profile/appearance is authorized for Justice/Judgement, with
+no rewards. This decision does not claim that spirit integration is complete.
+
+Automaton control checkpoint: a persistent damageable body now drives the owned
+model, follows perceived enemy orders and uses the native fourteen-tic melee
+cycle, Air, armor and tower blocking. Equipment cannot be removed or worn;
+expiry/departure leaves the same body in its map. Shared acceleration indexes
+only active owner links. External profile transfer rejects a live control link;
+ordinary common saves retain it. Annex apparatus revision3 adds one body once.
+
+Final package `automaton/r6` matches all 18041 source entries, SHA-256
+`45367d2419c5dd661d5dfe995b60d1531477f1a491eaa482b88eb27393f8c81c`. Native two-peer capture32438
+and common-save reload32439 passed 78 assertions; profile boundary passed2.
+`automaton-results.json` retains paths, hashes and earlier failures. The final
+Spanish native capture was visually inspected. Static validation and deterministic
+apparatus generation passed. These are agent checks, not author acceptance;
+the whole-version suite stays deferred. No frame-presentation claim is made.
+
+On2026-11-01 the author required Star equipped for the giant hazardous rocks
+captured by Sun, and approved safe release within4m, pending containment and a
+travel block when no unobstructed free location exists. These decisions do not
+constitute author acceptance of their implementation.
+
+Sun containment checkpoint (2026-11-01): one original rock is retained in the
+Box, requires equipped Star, occupies one slot and contributes its physical
+mass. Star's paid weightlessness uses the existing Box path. Expiry, Star removal
+and travel request bounded safe release; blocked release survives common-save
+recovery and prevents travel. Orphaned ownership preserves a world-owned release
+job. Contained bodies are excluded from contamination contacts/exposure, including
+reconstruction. Schema1 is initialized only on new capture; old saves acquire no
+cargo. Native private4.14.2-ca435-timer checks:19+17 assertions per peer,72 total,
+ports32429/32430, r5 package18040 members exactly matching src. Earlier failures
+are retained and described in assets/validation_v5_13_3/sun-results.json.
+A local body/Body collision caused the failed release; explicit self.Body fixes
+it. A non-pickup bookkeeping inventory must use AttachToOwner, not a rejected
+GiveInventoryType pickup. Static project validation passes. No presentation/FPS
+or author-acceptance claim. Three additional profile-boundary checks use a native cargo save: both active
+and pending containment block campaign transfer, while a released reference
+permits it. The original save is unchanged. Source emissions, owned model placement, full item
+presentation and generic giant objects remain pending; no manual suite is handed
+off before the complete version, as requested.
+
+The Judgement active checkpoint (2026-11-01) dispels nearby Emperor effects and
+Moon illusions through their existing lifecycle adapters. It preserves original
+summon allegiance/lifetime, ordinary friendship, unrelated disease and protected
+scenes. Local candidates are collected and deduplicated before destroying any
+illusion. The pulse is instantaneous even with Hermit and is not repeated by
+accelerated time. Its native two-client capture/recovery passes44 assertions
+(34 initial and10 common-save checks); all18,039 package members match src.
+Evidence: assets/validation_v5_13_3/judgement-results.json. The runner reuses the
+Moon batch preflight/session orchestrator. Spirit passives/examples, final author
+review and remaining #440/V5.13 work remain outstanding.
+
+The Moon checkpoint (2026-11-01) implements two temporary clones, independent
+appearance/equipment/ammunition/resources, native ranged/magic/melee/unarmed
+combat, equipped collision-checked swapping and no-loot expiry/departure.
+Final moon/r10 passes84 assertions across two real local clients:66 initial
+checks and18 common-save/recovery/actual-travel checks. Its18,038 package members
+match src byte-for-byte. Source, commands, hashes and retained failures are in
+assets/validation_v5_13_3/moon-results.json. The final native image shows the
+existing body/head and carbine poses with the localized illusion label.
+
+The reported startup failure used unsupported DONTCOUNTKILL; -COUNTKILL fixes
+native compilation. Subsequent checks found a shadowed Binding assignment,
+native attachment resetting fractional copied wear, and a stale search point
+interrupting recognition. The final clone finishes its visible observation before
+following an old clue, preserving normal recognition and hidden-target rules.
+The runner now performs batch native compilation before opening any clients
+(CA-KP-210); CA-KP-209 includes the new recognition evidence. Static validation
+passes. No author acceptance, full-release completion or FPS result is inferred.
+
+The Emperor checkpoint (2026-11-01) implements local pacification, reversible
+control of existing summoned Zupay, last-cast arbitration, Temperance resistance
+and cleanup, native/shared accelerated clocks and departure restoration. Final
+package emperor/r8 passes70 assertions across two real local clients:50 initial
+checks and20 common-save/recovery/actual-map-travel checks. The package's18,037
+members match current src byte-for-byte. Evidence and retained failed attempts:
+assets/validation_v5_13_3/emperor-results.json. Project validation passes.
+
+The native command test exposed interference between a new visual order and
+an old search point. The final implementation prioritizes the visible order
+through the normal recognition path and prevents that stale search from turning
+the observer away during recognition; it does not widen vision or track hidden
+targets. Loss of a native controller reference restores original allegiance.
+Author acceptance and final frame-presentation checks remain deferred; #440 and
+the full V5.13 release remain incomplete. This is a focused #440 code checkpoint,
+without artwork or balance changes.
+
+Author decisions (2026-11-01): the last valid Emperor cast controls a summon;
+expiry restores its original allegiance, not an earlier controller. Both control
+and pacification end on map departure without refunding cooldown. Moon clones
+copy the selected weapon, equipment and available resources, spend their own
+ammunition/Air/Anima and leave no loot. Sun releases captured harmful rocks in
+the origin map before travel. These approvals define behavior; they do not
+constitute implementation or manual-test acceptance.
+
+The living-example checkpoint (2026-11-01) adds the owned espinillo to the annex
+display room, with contextual Death/Use instructions. Controller revision2 adds
+the example once to a prior saved controller while preserving its room state,
+doors and purification. Destroying the obstacle through the player's native Use
+path spends no Anima or cooldown and remains destroyed after common recovery.
+Evidence: assets/validation_v5_13_3/living-example-results.json. Its artwork and
+physical profile are unchanged. The remaining display objects and full author
+suite are still pending.
+The same package records eight initialization/cached-getter CPU samples per
+operation:0.01111-0.01533ms/0.00044-0.00072ms in the real peaceful mansion. This
+documents the one-controller load lookup, not gameplay FPS or siege performance.
+
+The annex-door visual checkpoint (2026-11-01) replaces the false wall's wood
+image with the unchanged owned mansion stone and aligns all four wall sprites
+with their openings. The first live front/rear capture exposed the old edge-on
+orientation despite passing collision checks; the final images show a closed
+stone surface from both sides. An actual prior apparatus save retains its
+controller and collision while adopting visual revision1. Native recovery is
+idempotent. Evidence, fixture failures and final package verification:
+assets/validation_v5_13_3/example-wall-art-results.json. Author review is pending.
+The independent visual/collision check is preserved as CA-KP-208.
+
+The example-apparatus checkpoint (2026-11-01) connects the practice room and
+annex with usable same-map portals, places the authored passage types, and
+implements Wheel's instantaneous dry/wet room transaction. Native two-client
+checks cover blocked arrivals, real furnishings, exact shared cost/cooldown,
+water/light, alternate routes, occupied closure, Hermit non-repetition and
+common-save identities. The same runtime on pre-annex geometry creates no
+apparatus. Evidence: assets/validation_v5_13_3/example-runtime-results.json.
+Final display objects, false-wall styling and author review remain pending.
+
+The mansion example geometry checkpoint (2026-11-01) appends ten sectors,
+92 linedefs and82 vertices after the existing Justice arena, preserving the
+entire earlier TEXTMAP prefix and all actor placements. Native two-client tests
+check four room identities, real-body/large-body clearance, the separating
+partition and lintel, native two-metre water and32 light, plus common recovery.
+The retained pre-example WAD and `-LegacyTarotExamples` provide an exact reversible
+baseline; cartography accepts it and earlier layouts. Evidence and final counts:
+assets/validation_v5_13_3/example-geometry-results.json. The incidental opening
+conversation obscures the diagnostic screenshot, so it is not presented as full
+visual acceptance. Runtime access/apparatus and final author review remain pending.
+
+The authored-passage checkpoint (2026-11-01) adds viewer-specific Priestess
+identification and persistent Hierophant purification. Door groups validate
+scene/key/faction/passive permissions before committing any leaf. Native tests
+exercise the actual aim panel, unequipped ownership, separate player selections,
+group failures, shared persistent results and ordinary-door compatibility.
+Evidence: assets/validation_v5_13_3/passages-results.json. The initial fixture
+renaming accidentally altered its event-handler name; desktop inspection exposed
+the fatal message and the explicit handler identifier was restored. Failed
+attempts remain recorded. Mansion placement and final author review remain pending.
+
+The accelerated world-clock correction (2026-11-01) advances existing traps,
+plants, Chariot projections and Justice pairs once per shared skipped tic.
+A bounded owner index avoids per-substep map or inventory scans; personal-only
+cooperative steps do not duplicate world work. Forecasts decline these changing
+world effects rather than predict an incomplete result. Native two-client
+waiting, actual unanimous acceleration and common-save recovery pass56 assertions.
+The first diagnostic run exposed a deferred spawn notification; completed
+factories now invalidate the same-frame cache explicitly. Normal-tick trap
+regression also exposed an obsolete fixture ticking an already expired actor;
+the fixture now verifies exact-boundary removal. These failed runs are retained.
+Final regression counts and package identity are recorded in
+assets/validation_v5_13_3/effect-clock-results.json. No new balance, actor AI,
+author acceptance or frame-presentation result is claimed by this correction.
+
+The focused automaton artwork checkpoint (2026-11-01) adds an original modular
+mesh and20 native MD3 frames at the approved Zupay height. Four material batches
+carry3,232 triangles; new built-in image_gen iron paint is recorded byte-exactly
+with its prompt and existing owned brass/wood/dark materials. Native two-client
+runs pass nine initial and three common-save recovery assertions per client
+(24 total); all18,032 packaged members match source. Front/rear and animated
+poses were inspected. Earlier diagnostic fixtures needed literal StateLabels;
+visual review then caught a selector rotating a leg with the attacking arm.
+The final model corrects that and statically verifies planted legs in all seven
+attack/guard poses. The original failing evidence remains. Deterministic output,
+MD3 structure and project validation pass. Evidence:
+assets/validation_v5_13_3/automaton-art-results.json. This is artwork only: actual
+Tarot wake/control, AI, equipment wear, author review and frame-presentation
+measurements remain pending. No campaign automaton or balance change is claimed.
+
+Adds saved equipment order, additive/self-granting card capacities, Box capacity
+removal guards, individual timers, Hermit duration, Devil lethal payment,
+Star content weight and bounded World dispatch. Bound equipment essences remain
+eligible for World by the author's explicit answer. Loadout revision1 migrates
+previous ID-order selections and paid effects without changing acquired cards.
+
+Both native clients pass 34 assertions plus five save-recovery assertions.
+All 18,011 packaged members match source. Isolated checks cover migration, capacity transactions, weight restore,
+per-card expiry, single payment, bound-essence World dispatch and completion after
+normal lethal Devil payment. Recovery checks preserve order, durations and shared
+cooldown. Evidence is in assets/validation_v5_13_3/results.json. Initial fixture
+corrections used a real granted Box and resource values within current maxima;
+the checkpoint now waits for pending narrative saves and inserts its own new save
+node. No production autosave change was needed. This checkpoint is partial #440;
+remaining powers, targets and full manual acceptance are explicitly outstanding.
+
+The next focused #440 commit integrates Temperance with existing elemental and
+magical-sleep application paths. Both native clients pass 20 assertions and seven
+save-recovery assertions, including no repeated halving, no cross-player benefit,
+single payment, Hermit duration, expiry, preserved needs/contamination and
+beneficial Toughness inversion. The affected sleep pulse now uses local queries
+and the existing unlinked-guard registry. See temperance-results.json beside the
+foundation evidence; frame-presentation and author acceptance remain pending.
+
+Tower now removes cannon/ram parts while retaining the exact objective ledger,
+releases living operators without damage and prevents reconstruction after load.
+Both native clients pass15 initial and seven recovery assertions; all18,013 package
+members match source. Evidence: validation_v5_13_3/tower-results.json. Fixture
+corrections wait for the operator's native profile recalculation and save explicitly
+after pending checkpoints, rather than depending on background rendering. Production
+save behavior is unchanged. Author acceptance and remaining #440 work stay pending.
+
+On 2026-11-01 the Fool integration passed36 assertions on each of two native
+clients, followed by three common-save recovery assertions per client. The test
+includes two complete round trips, deferred consent/payment, lethal Devil
+continuation, real network input for dead-player card changes and equipped return.
+All18,013 packaged members match source. Evidence: validation_v5_13_3/fool-results.json.
+Initial fixture failures were caused by input before identity admission and a
+diagnostic Palomo whose deferred PostBeginPlay restored his narrative invisibility;
+the fixture now waits for admission and initializes its speaker after that callback.
+Production identity and visibility guards remain intact. This is isolated native
+evidence, not author acceptance or completion of the remaining Major powers.
+
+Hanged Man then passed41 initial assertions and four common-save recovery
+assertions per native client. Each of the four existing racial effects retains
+its real cost/behavior, toggles off cleanly and leaves character identity unchanged.
+The tests cover migration, network choice/cancel, retained choice after removal,
+Hermit duration, World activation, Anima exhaustion and recovered expiry.
+The Spanish choice screen was inspected at800x600; all18,015 package members
+match source. Initial compilation exposed UI/read-only calls to a play-scoped
+record accessor; these now use read-only inventory lookup. Evidence is in
+validation_v5_13_3/hanged-results.json. Final author checks remain deferred.
+
+Strength lifting then passed20 initial assertions and five common-save recovery
+assertions per native client. The exact object remains collidable and counts once
+as carried mass; ordinary attributes/combat/capacity stay unchanged. Collision,
+telekinesis exclusion, active heavier lifting, removal, gravity and contamination
+checks pass. All18,016 packaged members match source. Profile transfer explicitly
+rejects the active hold. An initial recovery failure exposed lifecycle evaluation
+before session identity admission; the binding now waits for admission before
+resuming. Failed evidence is retained. See strength-results.json. These are isolated
+checks; map-departure release and final author presentation remain to be exercised.
+
+Chariot behavior passed19 initial and four recovery assertions on each native
+client. Tests cover equipped fragile Use, one impulse per body, unchanged Health,
+force thresholds, Strength integration, replacement, late unlinked registration,
+wall stopping, six meters per second and automatic expiry. Common recovery keeps
+distance/age/contact history and destroyed obstacles. All18,017 package members
+match source. Evidence: validation_v5_13_3/chariot-results.json. The first recovery
+fixture saved after its short-lived projection had expired; capture is now timed
+relative to the loaded world's start. A later native compile caught an Actor-scope
+identifier collision with `state`; the local holder name resolves it. No accepted
+save was discarded. Model adaptation, frame-presentation and author checks follow
+separately from this behavior checkpoint.
+
+The separate Chariot art adaptation reuses the owned original cart, centered and
+uniformly scaled to2m width without changing its materials or the normal vehicle.
+Deterministic output checks pass; all18,018 packaged members match source. Front
+and rear views of the actual production actor were inspected in two native
+clients on2026-11-01. The first visual fixture used an unregistered diagnostic
+subclass and player-predicted camera; the corrected fixture uses the actual class
+and a separate native camera. Evidence: chariot-art-results.json. This establishes
+rendering/registration, not author acceptance or an overall frame-rate benchmark.
+
+Priestess traps passed23 initial and five common-save recovery assertions per
+native client on2026-11-01. The extended Fool round trip passed39 per client,
+including saved aim, revision2 consent, departure cleanup and retained cooldown.
+All18,019 runtime members match source. Evidence: priestess-results.json.
+The retained failed fixtures first aimed above the floor, then inspected the
+trap after synchronous map cleanup. The final fixture observes WorldUnloaded
+before cleanup without moving session initialization earlier. These were fixture
+errors; the production ground checks were preserved. False-wall examples, final
+frame measurements and author acceptance remain pending.
+
+Empress restraint then passed21 initial and five common-save recovery assertions
+per native client on2026-11-01. Tests cover native aimed activation, shared cost,
+Hermit duration, ordinary physical defense, uninterrupted actor actions, player
+input, companion/escort motion, independent casters and exact saved fractional
+damage/lifetime. All18,020 packaged members match source. Evidence:
+validation_v5_13_3/empress-results.json. The author's reported startup failure
+was a diagnostic MAPINFO typo (`CA440Erobe` instead of `CA440Probe`) introduced
+while adapting the runner; both failed runs remain recorded. No runtime class or
+accepted save needed renaming. Review also covered the escort's separate velocity
+path before the final native checks. Plant artwork, vegetation traversal, final
+frame measurements and author acceptance remain pending.
+
+The separate Empress art commit adds deterministic thorned stems using the owned
+plains-bark material and existing geometry helper. Native front/rear views around
+a real player were inspected on2026-11-01; both clients load/render the production
+class without errors or desynchronization. The generator's deterministic check
+passes and all18,021 package members match source. See empress-art-results.json.
+This is visual registration evidence, not author acceptance or a frame-rate claim.
+
+The Empress vegetation passive then passed13 initial and three common-save
+recovery assertions per native client. Equipped ownership changes only that
+player's collision with the existing typed tree family; rocks, walls, other
+players and harvesting flags retain their rules. Unequipping while inside allows
+ordinary outward steps through GZDoom's existing overlap recovery. The permission
+is cached during profile calculation, not searched per collision. Generator and
+runtime vegetation bases match, and all18,021 package members match source.
+Evidence: vegetation-results.json. The retained first fixture incorrectly used
+an endpoint-only TryMove beyond a wall; the final test uses an ordinary step into
+the wall. Production wall collision was unchanged. Author acceptance is pending.
+
+Death's local contamination pulse passed22 initial and six common-save recovery
+assertions per native client on2026-11-01. Coverage includes the actual Tarot
+service/payment, Hermit's instantaneous behavior, allied/caster bodies, unlinked
+combatants, NPC model armor, exposed equipment, Box/closed/open chest behavior,
+native walls, solid3D floors, sloped surface coordinates and no repeated pulse.
+The package's18,022 members match source. Evidence: contamination-results.json.
+The native run exposed an unsupported NPC class with no thermal adapter; the
+pulse now derives temporary dimensions for initialized combatants without
+attaching a physiological scheduler. Retained fixture failures cover a missing
+real Box, an invalid link API and a cross-map actor reference; the final recovery
+uses a current-map chest. The first compiler failure was a helper shadowing the
+numeric Floor function. No accepted save geometry was changed. Static validation
+passes; rendering benchmarks, remaining handlers and author acceptance remain
+pending. The author also approved Hierophant purification only for wholly
+contained water volumes; that water handler is not implemented by this commit.
+
+Death's marked living-obstacle passive then passed10 initial and three save
+recovery assertions per native client. Native Use reaches only the explicit
+obstacle family; equipped ownership, normal interaction range, unequip and
+another player's lack of permission are checked. Destruction preserves no
+harvest/reward path and does not replay on recovery. Ordinary trees remain
+intact. All18,023 package members match source; evidence is recorded in
+living-obstacle-results.json. The class reuses the existing owned espinillo;
+authored mansion placement and author acceptance remain pending.
+
+Hierophant purification passed20 initial and six common-save recovery assertions
+per native client on2026-11-01, including ordered Death/Hierophant combinations,
+body/equipment/storage, container bounds, salt retention, fixed cisterns, full
+connected water-model bounds and later contamination of mutable reservoirs.
+The revision1 static-water overlay preserves authored metadata and old saves.
+All18,024 runtime members match source. Evidence: hierophant-results.json.
+The retained first compilation failure was an incompatible Actor/Inventory
+ternary; explicit assignment corrected it before successful native runs.
+Eight native profiler samples on real MAP01 (7,749 sectors/30 water parts)
+measured0.2015-0.44863ms for cold index construction/destruction and
+0.00018-0.00046ms for cached access. This supports the one-time metadata index,
+not a rendering/FPS claim. Remaining handlers, authored examples and final author
+acceptance are still pending.
+
+Justice geometry passed45 initial assertions per native client across nine
+representative real map families, then three common-save recovery assertions
+per client. The legacy package also recovered a pre-arena real MAP01 save:
+six assertions per client verify the7,749 original sectors, absent arena,
+saved ledger, both original characters and old/new cartography compatibility.
+Static validation initially rejected the changed MAP01 checksum; review confirmed
+unchanged room bounds, then the catalogue added both exact geometry versions.
+All237 maps reproduce byte-for-byte;
+both18,025-member packages match their expected current or preserved sources.
+The generator refuses unrelated map edits before writing. The native screenshot
+shows the enclosed owned-stone arena without missing surfaces. Evidence:
+validation_v5_13_3/justice-geometry-results.json. Retained failures were a String
+switch rejected by ZScript and a Sector/null ternary in the fixture, both fixed
+before the successful runs. These are geometry/compatibility tests, not duel,
+travel, rendering-performance or author acceptance. The author approved safe
+returns within4m and ending duels/returning survivors before map travel; blocked
+returns must defer travel while still allowing cancellation.
+
+Justice runtime then passed24 pair/return checks,16 cooperative-travel checks
+and14 combined Fool/pending-input checks per native client, followed by5/2/3
+respective common-save checks. Both clients preserve independent deadlines,
+blocked returns, native/unlinked collision, cancellation and safe pre-unload
+placement. A Fool sequence that creates Justice records the original campaign
+position and charges once. All18,026 final package members match source;
+justice-runtime-results.json records128 assertions across six runs. Source
+revision1 stores exact bodies/origins/timers/search progress; legacy maps reject
+arena admission without rewriting old saves. Searches use native local collision,
+the existing unlinked spatial grid and fixed player slots, with bounded fallback
+work. Internal screenshots do not establish native menu rendering; final author
+UI and frame-presentation checks remain deferred. No V5.13 completion is claimed.
+
+Lovers active-map integration passed29 initial and five common-save assertions
+per native client on2026-11-01. Both exact final-package runs preserve one-time
+post-defense damage, cooperative companions, overlapping unions, range/occlusion,
+native immunity, capped healing and persistent fractional shares. Real medkit,
+support and Miracle healing use the same boundary. The affected Miracle pulse
+now reaches unlinked actors through the existing local grid and resolves source
+precedence through fixed player slots, without global actor scans. All18,027
+members match source. The initial compiler rejected the reserved identifier
+`Protected`; the corrected `Immune` method and all retained failures are documented
+in lovers-results.json. Abstract overland sharing, final author acceptance and
+frame-presentation checks remain pending; this is not completion of #440.
 
 ## 5.13.2 - Reversible equipment awakening (#442)
 

@@ -4,6 +4,7 @@ import hashlib
 import json
 import struct
 import argparse
+import zipfile
 try:
     from .map_catalogue import map_name
 except ImportError:
@@ -17,7 +18,10 @@ def map_checksum(name, root=ROOT):
 
 
 def wad_checksum(path):
-    data = path.read_bytes()
+    return blob_checksum(path.read_bytes())
+
+
+def blob_checksum(data):
     _, count, directory = struct.unpack_from('<4sii', data)
     for i in range(count):
         start, size, lump = struct.unpack_from('<ii8s', data, directory + i * 16)
@@ -42,14 +46,20 @@ def render(root=ROOT):
     # The water installation changes only exterior geometry; room IDs/bounds stay valid.
     legacy_mansion = wad_checksum(root/'assets/map01_mansion/legacy_581/MAP01.wad')
     lines += [f'    const MAP01_LEGACY_CHECKSUM = "{legacy_mansion}";',
+              f'    const MAP01_PREJUSTICE_CHECKSUM = "{mansion["pre_justice_checksum"]}";',
+              f'    const MAP01_PREEXAMPLES_CHECKSUM = "{mansion["pre_examples_checksum"]}";',
               '    static bool MatchesMansionGeometry(String checksum)', '    {',
-              '        return checksum==MAP01_CHECKSUM || checksum==MAP01_LEGACY_CHECKSUM;',
+              '        return checksum==MAP01_CHECKSUM || checksum==MAP01_LEGACY_CHECKSUM || checksum==MAP01_PREJUSTICE_CHECKSUM || checksum==MAP01_PREEXAMPLES_CHECKSUM;',
               '    }']
     # Both layouts share exactly the same authored POI coordinates and IDs.
     furnished = wad_checksum(root/'assets/map06_port/legacy_5427/MAP06.wad')
+    with zipfile.ZipFile(root/'assets/tarot_justice/legacy_5133.zip') as legacy:
+        prejustice_city=blob_checksum(legacy.read(map_name('port',root)+'.wad'))
+        assert blob_checksum(legacy.read('MAP01.wad'))==mansion['pre_justice_checksum']
     lines += [f'    const MAP06_FURNISHED_CHECKSUM = "{furnished}";',
+              f'    const MAP06_PREJUSTICE_CHECKSUM = "{prejustice_city}";',
               '    static bool MatchesCityGeometry(String checksum)', '    {',
-              '        return checksum==MAP06_CHECKSUM || checksum==MAP06_FURNISHED_CHECKSUM;',
+              '        return checksum==MAP06_CHECKSUM || checksum==MAP06_FURNISHED_CHECKSUM || checksum==MAP06_PREJUSTICE_CHECKSUM;',
               '    }']
     lines += [f'    const MANSION_ROOMS = {len(rooms)};',
               '    static bool MansionContains(int index,Vector3 point)', '    {',

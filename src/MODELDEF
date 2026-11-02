@@ -1,4 +1,27 @@
+#include "caelum/data/tarot_automaton.modeldef"
 Model CaelumArenaRingFrame { Path "models/caelum/world/arenas" Model 0 "ring_frame.obj" Scale 1 1 1 CorrectPixelStretch DontCullBackFaces FrameIndex CPTN A 0 0 }
+
+Model CaelumTarotRoots
+{
+    Path "models/caelum/world/environment"
+    Model 0 "ca_tarot_roots.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
+
+// Original covered cart, centered and scaled deterministically for #440.
+Model CaelumTarotChariot
+{
+    Path "models/caelum/vehicles"
+    Model 0 "ca_tarot_chariot.obj"
+    Scale 1 1 1
+    AngleOffset 90
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAHC A 0 0
+}
 
 Model CaelumStashChestClosedVisual
 {

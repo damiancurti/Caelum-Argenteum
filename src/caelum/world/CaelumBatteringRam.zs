@@ -55,7 +55,7 @@ class CaelumBatteringRam : CaelumHostileMachine
 
     void InitializeRam()
     {
-        if (Initialized) return;
+        if (Initialized || TarotDestroyed) return;
         Initialized = true;
         SizeFactor = Large ? CaelumRamData.LARGE_SCALE : 1.0;
         RequiredCrew = Large ? CaelumRamData.LARGE_CREW : CaelumRamData.SMALL_CREW;
@@ -102,6 +102,7 @@ class CaelumBatteringRam : CaelumHostileMachine
 
     void PlaceComponents()
     {
+        if(TarotDestroyed)return;
         FrameVisual.SetOrigin(Pos, false); FrameVisual.Angle = Angle;
         Head.SetOrigin(LocalPosition(Pos, Angle,
             (CaelumRamData.HEAD_X+StrokeOffset, 0, CaelumRamData.HEAD_Z)), false);
@@ -178,6 +179,7 @@ class CaelumBatteringRam : CaelumHostileMachine
 
     bool ActivateRam()
     {
+        if(TarotDestroyed)return false;
         InitializeRam();
         if (!ArmMachine()) return false;
         Enabled = true;
@@ -283,6 +285,7 @@ class CaelumBatteringRam : CaelumHostileMachine
     {
         InitializeRam();
         Super.Tick();
+        if(TarotDestroyed)return;
         Head.Vel=(0,0,0);
         if(Phase==STRIKE && HasIntimidatedCrew())
         {Phase=RECOVERY;RecoveryLeft=CaelumRamData.RECOVERY_TICS;}
@@ -337,6 +340,20 @@ class CaelumBatteringRam : CaelumHostileMachine
         if(!FullCrewPresent(true))return;
         StrikeSerial++; SpentImpact=false; Phase=STRIKE;
     }
+
+    override void RemoveMachineParts()
+    {
+        Enabled=false;
+        if(FrameVisual!=null)FrameVisual.Destroy();
+        if(Head!=null)Head.Destroy();
+        for(int i=0;i<FrameBlocks.Size();i++)if(FrameBlocks[i]!=null)FrameBlocks[i].Destroy();
+        for(int i=0;i<FaceBlocks.Size();i++)if(FaceBlocks[i]!=null)FaceBlocks[i].Destroy();
+        for(int i=0;i<Rods.Size();i++)if(Rods[i]!=null)Rods[i].Destroy();
+        FrameVisual=null;Head=null;FrameBlocks.Clear();FaceBlocks.Clear();Rods.Clear();FrameOffsets.Clear();
+    }
+
+    override void OnDestroy()
+    {RemoveMachineParts();Super.OnDestroy();}
 
     Default { +NOBLOCKMAP }
 }

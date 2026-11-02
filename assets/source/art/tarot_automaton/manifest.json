@@ -1,0 +1,362 @@
+{
+  "issue": 440,
+  "author": "Damián Curti",
+  "provenance": "Original project geometry. Unmodified owned station/stash textures and built-in image_gen iron swatch recorded in PROMPT.json. No third-party or development-IWAD art.",
+  "design_sha256": "33b3fa09d74f3440f8e68648c7a6ec9018bbfc5f30845da3196150f359a5e78f",
+  "frames": [
+    {
+      "action": "inactive",
+      "sample": 0,
+      "min": [
+        -9.398502806653413,
+        -30.0,
+        0
+      ],
+      "max": [
+        15.299038105676658,
+        39.65,
+        93.50991724929835
+      ]
+    },
+    {
+      "action": "idle",
+      "sample": 0,
+      "min": [
+        -9.398502806653413,
+        -30.0,
+        0
+      ],
+      "max": [
+        15.299038105676658,
+        39.65,
+        93.333333
+      ]
+    },
+    {
+      "action": "walk",
+      "sample": 0,
+      "min": [
+        -9.398502806653413,
+        -30.0,
+        0.0
+      ],
+      "max": [
+        15.299038105676658,
+        39.65,
+        93.333333
+      ]
+    },
+    {
+      "action": "walk",
+      "sample": 1,
+      "min": [
+        -25.40640268431052,
+        -30.0,
+        0.0
+      ],
+      "max": [
+        24.028312691609834,
+        39.65,
+        93.87429703179292
+      ]
+    },
+    {
+      "action": "walk",
+      "sample": 2,
+      "min": [
+        -31.701319831919065,
+        -30.0,
+        0.0
+      ],
+      "max": [
+        28.758885615555418,
+        39.65,
+        91.39010726693863
+      ]
+    },
+    {
+      "action": "walk",
+      "sample": 3,
+      "min": [
+        -25.40640268431052,
+        -30.0,
+        0.0
+      ],
+      "max": [
+        24.028312691609834,
+        39.65,
+        93.8742970317929
+      ]
+    },
+    {
+      "action": "walk",
+      "sample": 4,
+      "min": [
+        -9.398502806653413,
+        -30.0,
+        0.0
+      ],
+      "max": [
+        15.299038105676658,
+        39.65,
+        93.333333
+      ]
+    },
+    {
+      "action": "walk",
+      "sample": 5,
+      "min": [
+        -25.406402684310518,
+        -30.0,
+        0.0
+      ],
+      "max": [
+        24.028312691609834,
+        39.65,
+        93.87429703179292
+      ]
+    },
+    {
+      "action": "walk",
+      "sample": 6,
+      "min": [
+        -31.701319831919065,
+        -30.0,
+        0.0
+      ],
+      "max": [
+        28.758885615555418,
+        39.65,
+        91.39010726693863
+      ]
+    },
+    {
+      "action": "walk",
+      "sample": 7,
+      "min": [
+        -25.40640268431052,
+        -30.0,
+        0.0
+      ],
+      "max": [
+        24.028312691609834,
+        39.65,
+        93.8742970317929
+      ]
+    },
+    {
+      "action": "attack",
+      "sample": 0,
+      "min": [
+        -9.398502806653413,
+        -30.0,
+        0
+      ],
+      "max": [
+        15.299038105676658,
+        39.65,
+        93.333333
+      ]
+    },
+    {
+      "action": "attack",
+      "sample": 1,
+      "min": [
+        -9.398502806653413,
+        -30.0,
+        0
+      ],
+      "max": [
+        46.691147028320536,
+        39.65,
+        93.333333
+      ]
+    },
+    {
+      "action": "attack",
+      "sample": 2,
+      "min": [
+        -9.398502806653413,
+        -30.0,
+        0
+      ],
+      "max": [
+        43.988415536313575,
+        39.65,
+        98.8417944892077
+      ]
+    },
+    {
+      "action": "attack",
+      "sample": 3,
+      "min": [
+        -9.398502806653413,
+        -30.0,
+        0
+      ],
+      "max": [
+        25.16052622583519,
+        39.65,
+        115.69114702832054
+      ]
+    },
+    {
+      "action": "attack",
+      "sample": 4,
+      "min": [
+        -9.398502806653413,
+        -30.0,
+        0
+      ],
+      "max": [
+        36.62865484588109,
+        39.65,
+        93.333333
+      ]
+    },
+    {
+      "action": "attack",
+      "sample": 5,
+      "min": [
+        -9.398502806653413,
+        -30.0,
+        0
+      ],
+      "max": [
+        15.299038105676658,
+        39.65,
+        93.333333
+      ]
+    },
+    {
+      "action": "guard",
+      "sample": 0,
+      "min": [
+        -9.398502806653413,
+        -30.0,
+        0
+      ],
+      "max": [
+        31.912529183972474,
+        39.65,
+        93.333333
+      ]
+    },
+    {
+      "action": "fallen",
+      "sample": 0,
+      "min": [
+        -4.531538935183249,
+        -30.0,
+        0.0
+      ],
+      "max": [
+        44.19902456682677,
+        39.65,
+        90.50538215235453
+      ]
+    },
+    {
+      "action": "fallen",
+      "sample": 1,
+      "min": [
+        -2.6495963211660243,
+        -30.0,
+        0.0
+      ],
+      "max": [
+        80.74091315128335,
+        39.65,
+        62.10955141564769
+      ]
+    },
+    {
+      "action": "fallen",
+      "sample": 2,
+      "min": [
+        -0.4357787137382907,
+        -30.0,
+        0.0
+      ],
+      "max": [
+        93.23963871807433,
+        39.65,
+        27.962937377241712
+      ]
+    }
+  ],
+  "surfaces": [
+    {
+      "modules": [
+        "head",
+        "left_arm",
+        "left_forearm",
+        "left_shin",
+        "left_thigh",
+        "mace",
+        "right_arm",
+        "right_forearm",
+        "right_shin",
+        "right_thigh",
+        "shield",
+        "torso"
+      ],
+      "material": "iron",
+      "vertices": 3056,
+      "triangles": 1312
+    },
+    {
+      "modules": [
+        "head",
+        "left_arm",
+        "left_forearm",
+        "left_shin",
+        "left_thigh",
+        "mace",
+        "right_arm",
+        "right_forearm",
+        "right_shin",
+        "right_thigh",
+        "shield",
+        "torso"
+      ],
+      "material": "brass",
+      "vertices": 3896,
+      "triangles": 1564
+    },
+    {
+      "modules": [
+        "head",
+        "left_thigh",
+        "mace",
+        "right_thigh",
+        "torso"
+      ],
+      "material": "dark",
+      "vertices": 840,
+      "triangles": 348
+    },
+    {
+      "modules": [
+        "shield"
+      ],
+      "material": "wood",
+      "vertices": 24,
+      "triangles": 8
+    }
+  ],
+  "materials": {
+    "models/caelum/tarot/automaton/iron-painted-ramp.png": "8898f3d9ebd4962af50be3b5f0816101dccfc5ac006080392aa737d201e4dae9",
+    "models/caelum/props/stations/ca_station_brass.png": "8b231a9556f30af1b2c3d11ee5e4e4d6b63f7336a5301d225bb7f4f43c5639cc",
+    "models/caelum/props/stash/ca_stash_inside.png": "6573658a5e61c4c8f75046435e8e8d1f1e85e6348007c69fc911483fe579fac4",
+    "models/caelum/props/stations/ca_station_wood.png": "cf58e22246c9521ffc1a389f9dd1ea37cecfeaf95a632836b28a9e893c806d3b"
+  },
+  "outputs": {
+    "src/models/caelum/tarot/automaton/automaton.md3": "158de4f30ab1dffb3afa21d56e9644a1a7dc734637e0b3f4039f7abb240ca801",
+    "src/models/caelum/tarot/automaton/iron-painted-ramp.png": "8898f3d9ebd4962af50be3b5f0816101dccfc5ac006080392aa737d201e4dae9",
+    "src/caelum/data/tarot_automaton.modeldef": "8b83d58136b6955260bcb93ac6391098ebca68ea4563b1f74431bd1268c51092",
+    "src/caelum/data/tarot_automaton.textures": "b31a3075a4cfa937d2fb5c9a536dd042f3758227c4cda6b891474c0c09bb08b6",
+    "src/caelum/core/CaelumAutomatonModelBody.zs": "b809d0ec8851fbbeb3e8e0b7a9cbf04a1c11b8f2b16d9e1b83b499577dc90f82",
+    "assets/source/art/tarot_automaton/automaton.obj": "0e562bb5c34de6170a79e8a8e9ceda1350e13f1a6dfcfe75f2ca23a0aaedbd42"
+  }
+}

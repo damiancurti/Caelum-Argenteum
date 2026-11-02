@@ -284,6 +284,13 @@ class CaelumRockEnvironmentProp : CaelumEnvironmentProp
 
 class CaelumTreeEnvironmentProp : CaelumEnvironmentProp
 {
+    override bool CanCollideWith(Actor other,bool passive)
+    {
+        let user=CaelumPlayer(other);
+        if(user!=null && user.health>0 && user.DerivedStats!=null
+            && user.DerivedStats.TarotVegetationPassage)return false;
+        return Super.CanCollideWith(other,passive);
+    }
     override bool IsEnvironmentMovable() { return false; }
     override bool IsNaturalResource() { return true; }
     override int GetResourceMaterialType()

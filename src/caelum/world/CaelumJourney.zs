@@ -167,6 +167,7 @@ class CaelumTravelService : Object play
         if (CaelumJourneyRules.DistanceKm(id) > 0
             && (plan == null || !plan.Open || plan.ConnectionId != id || plan.TravelMode != travelMode
                 || plan.Available == null || !plan.VehicleAvailable(user))) return false;
+        if(CaelumJusticeTransit.Defer(user,CaelumJusticeTransit.JOURNEY,null,id,travelMode,plan))return true;
         let journey = CaelumJourneyState.Get(user, true);
         if (journey == null) return false;
         let record = user.GetPersistentCharacterState(false);

@@ -6,7 +6,7 @@ class CaelumPressureTrap : Actor
     int ActivationCount;
     int RetryTics;
 
-    bool IsPressedBy(Actor body)
+    virtual bool IsPressedBy(Actor body)
     {
         if (Spent || body == null || body.health <= 0 || !body.bSolid
             || body.bNoClip || body.bNoGravity || body.Vel.Z > 0
@@ -32,6 +32,11 @@ class CaelumPressureTrap : Actor
     override void Tick()
     {
         Super.Tick();
+        CheckPressure();
+    }
+
+    void CheckPressure()
+    {
         if (Spent) return;
         if (RetryTics > 0) { RetryTics--; return; }
         let nearby = BlockThingsIterator.Create(self, Radius);
@@ -52,6 +57,7 @@ class CaelumMagicMine : CaelumPressureTrap
 {
     // args[0]=daño base; args[1]=radio de explosión MU. Cero deshabilita.
     double BlastRadius() { return Max(0, args[1]); }
+    virtual int ExplosionFlags(){return XF_THRUSTLESS;}
 
     override bool Trigger(Actor body)
     {
@@ -64,7 +70,7 @@ class CaelumMagicMine : CaelumPressureTrap
         let flash = Spawn("CaelumMineBurst", Pos + (0,0,16), NO_REPLACE);
         // El inflictor es la mina: no atribuir al jugador el ataque ambiental.
         CaelumNoise.Emit(self,CaelumNoiseData.EXPLOSION);
-        A_Explode(args[0], BlastRadius(), XF_THRUSTLESS, false);
+        A_Explode(args[0], BlastRadius(), ExplosionFlags(), false);
         return true;
     }
     Default { Tag "$CA_MAGIC_MINE"; DamageType "CaelumTrapMagic"; }

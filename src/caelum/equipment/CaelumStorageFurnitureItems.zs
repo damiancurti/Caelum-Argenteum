@@ -73,7 +73,9 @@ class CaelumStorageFurnitureInventory : Object play
         user.RefreshCarriedInventorySummary();bool boxed=CaelumContainerRules.Boxed(item);
         double weight=user.GetFormalInventoryEntryWeight(item);
         if(boxed){if(!user.CanMoveRawWeightFromMagicBoxToPersonal(weight))return;}
-        else if(!user.HasNativeMagicBoxSlotAvailable() || !user.CanAddRawWeightToMagicBox(weight))return;
+        else if(!CaelumTarotStar.CanBox(user,item,item.Amount))
+        {CaelumTarotService.Feedback(user,"CA_TAROT_STAR_LIMIT");return;}
+        else if(!user.HasNativeMagicBoxSlotAvailable() || !user.CanMovePersonalStackWithIncomingToMagicBox(weight,0))return;
         CaelumContainerRules.SetBoxed(item,!boxed);
         user.LastEquipmentAction=boxed?CaelumConstants.EQUIPMENT_ACTION_RETRIEVED_FROM_MAGIC_BOX:CaelumConstants.EQUIPMENT_ACTION_STORED_IN_MAGIC_BOX;
         user.OnNativeInventoryChanged();user.RefreshFormalInventorySnapshot();
