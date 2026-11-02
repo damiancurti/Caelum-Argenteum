@@ -1,6 +1,11 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.13.12** - 2026-11-01.
+Documentation version: **5.13.13** - 2026-11-01.
+
+## 5.13.13 — Acquired Major passives and card descriptions (#440)
+
+The author corrected Major passives to remain available after acquisition, independent of selection. Active sequence gates remain separate; unified essence no longer needs World selected. All 22 cards have individual bilingual effects, cyclic navigation and a rock-action hint. No stored fields or map geometry change; existing ownership/order/timers remain intact. Validation passed: static validator and 26 native assertions in each of two synchronized peers (13 per character). Evidence: assets/validation_v5_13_13/results.json. Author recheck remains pending.
+
 
 ## Human Palomo Air display follow-up (#617, 2026-11-01)
 

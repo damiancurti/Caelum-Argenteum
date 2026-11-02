@@ -28,7 +28,9 @@ class CaelumTarotDetails : Object
     {
         if (!captured) return L("CA_TAROT_DETAIL_UNREVEALED");
         String fixed = FixedBonus(card);
-        return (fixed == "" ? L("CA_TAROT_DETAIL_NO_FIXED") : fixed) .. ". "
+        return (card<CaelumConstants.TAROT_MAJOR_COUNT
+            ? L(String.Format("CA_TAROT_MAJOR_PASSIVE_%d",card))
+            : fixed == "" ? L("CA_TAROT_DETAIL_NO_FIXED") : fixed) .. ". "
             .. String.Format(L("CA_TAROT_DETAIL_COLLECTION"), card < CaelumConstants.TAROT_MAJOR_COUNT
                 ? CaelumConstants.TAROT_MAJOR_ATTRIBUTE_PERCENT : CaelumConstants.TAROT_MINOR_ATTRIBUTE_PERCENT);
     }
@@ -36,10 +38,8 @@ class CaelumTarotDetails : Object
     {
         if (!captured) return L("CA_TAROT_DETAIL_UNREVEALED");
         if (!CaelumTarotPowers.Implemented(card)) return L("CA_TAROT_DETAIL_PENDING");
-        if(card==CaelumConstants.TAROT_THE_FOOL)return String.Format(L("CA_FOOL_JOURNEY_RULE"),
-            CaelumConstants.TAROT_ACTIVATION_ANIMA,CaelumConstants.TAROT_COOLDOWN_SECONDS);
-        String effect = card == CaelumConstants.TAROT_THE_FOOL ? L("CA_TAROT_DETAIL_FOOL")
-            : card==CaelumHangedMan.CARD ? L("CA_TAROT_RACE_EFFECT")
+        String effect = card<CaelumConstants.TAROT_MAJOR_COUNT
+            ? L(String.Format("CA_TAROT_MAJOR_ACTIVE_%d",card))
             : String.Format(L("CA_TAROT_DETAIL_DOUBLE"), FixedBonus(card, 2));
         return effect .. " " .. String.Format(L("CA_TAROT_POWER_RULE"),
             CaelumConstants.TAROT_ACTIVATION_ANIMA, CaelumConstants.TAROT_EFFECT_SECONDS, CaelumConstants.TAROT_COOLDOWN_SECONDS)

@@ -326,7 +326,7 @@ class CaelumJournalOverlay : EventHandler
                 if (CycleTarotPreview(next ? 1 : -1))
                     SendNetworkEvent("ca_journal_menu_move_sound");
             }
-            else if (CycleTarot(user, next ? 1 : -1, true))
+            else if (CycleTarot(user, next ? 1 : -1))
                 SendNetworkEvent("ca_journal_menu_move_sound");
         }
         else CycleJournalPage(next ? 1 : -1);

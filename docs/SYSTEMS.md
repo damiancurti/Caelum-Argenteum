@@ -1,6 +1,11 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.13.12** - 2026-11-01.
+Documentation version: **5.13.13** - 2026-11-01.
+
+## 5.13.13 — Acquired Major passives and card descriptions (#440)
+
+The author corrected Major passives to remain available after acquisition, independent of selection. Active sequence gates remain separate; unified essence no longer needs World selected. All 22 cards have individual bilingual effects, cyclic navigation and a rock-action hint. No stored fields or map geometry change; existing ownership/order/timers remain intact. Native verification: assets/validation_v5_13_13; author recheck remains pending.
+
 
 ## Human hunter presentation (#617 follow-up)
 
@@ -234,10 +239,9 @@ those separately. Full-version author acceptance remains outstanding.
 Equipping appends a card to the saved activation order; removing/re-equipping
 moves it to the end. Legacy selections migrate once in their previous ascending
 ID order. Minor collection/passive bonuses remain unchanged. Major capability
-passives use actual acquired/equipped state, never the illustration cursor.
-Hermit and Devil each add two slots, including during their own equip transaction.
-Star and Sun each add ten Box slots. Removing a capacity card is blocked while
-ordinary selections/contents or reserved crafting slots would overflow.
+passives use acquired ownership, never the illustration cursor or selection.
+Hermit and Devil each add two slots; Star and Sun each add ten Box slots.
+Removing a card from the sequence preserves these capacities.
 
 Each temporal card has its own persisted remaining time. Hermit doubles only
 the first applicable duration, even when selected later; an instantaneous first
@@ -276,9 +280,9 @@ contact grid and fixed player slots; deduplication precedes any actor destructio
 It adds no ticker or global actor search. Shared sequence cost/cooldown applies
 once; Hermit does not repeat an instantaneous pulse. Native saves retain the
 resulting body state, with no new migration or retroactive effects.
-Spirit passives use the explicit `CaelumTarotSpirit` actor family. Equipped
+Spirit passives use the explicit `CaelumTarotSpirit` actor family. Acquired
 Justice allows the attacking player to damage these otherwise immortal bodies;
-acquisition alone and another player's selected card do not qualify. Equipped
+another player's collection does not qualify. Acquired
 Judgement permits native conversation with the living demonstration body. Without
 it, Use only gives feedback and never opens an invisible conversation. The node
 is removed after closing so every new speaker is checked again.
@@ -434,15 +438,14 @@ inventory or global actor scans during movement; the source list is bounded by
 the fixed player population. Thorned plant artwork scales to the actual victim;
 its native visual evidence is separate from these behavior checks.
 
-The equipped passive lets that player cross the existing typed vegetation family
+The acquired passive lets that player cross the existing typed vegetation family
 (`CaelumTreeEnvironmentProp`, including its age/biome variants). A collision-local
 callback reads the permission cached during character recalculation; it performs
 no actor or inventory search. Trees remain solid/shootable for other players and
 retain their resource state. Stone, buildings and map geometry keep normal collision.
-Ownership without equipment, or World activating the card, does not grant this
-passive. Removing the card restores normal collision immediately; the engine's
-existing outward-overlap movement lets a player already inside leave. Derived
-permission is recomputed from the saved loadout on admission. Final author review
+Acquired ownership grants this passive even without selection; activation alone
+does not grant ownership. Derived permission is recomputed from the saved
+collection on admission. Final author review
 and authored mansion examples remain pending.
 
 ### Death contamination pulse
@@ -468,7 +471,7 @@ state persists it. Hierophant reuses the same body/item/surface pulse at zero.
 
 ### Lovers active-map Health redistribution
 
-The equipped passive or active effect shares resolved Health damage; only the
+The acquired passive or active effect shares resolved Health damage; only the
 active shares healing. The union contains living players in the real cooperative
 session/team and their enlisted, present companions within4m scaled by the aura
 owner's magic range and line of sight. Nearby friendly civilians are not members.
@@ -496,7 +499,7 @@ player slots, replacing its previous global scans. Active-map native and common
 save checks are recorded in lovers-results.json.
 
 Abstract journeys retain the existing prohibition on active Tarot effects, so
-only the equipped damage passive applies there. Previews capture departure
+only the acquired damage passive applies there. Previews capture departure
 range/line of sight among the actual travelling players and following companions;
 waiting/parked companions stay outside that journey. The thermal/supply cursors
 advance players in stable slot order at one common tic, sharing each resolved
@@ -633,15 +636,15 @@ revision1 replaces the inherited wood sprite once on first update after loading,
 without resetting its position, opening progress or collision. The annex
 controller reapplies authored facing on load; this changes only presentation.
 
-The equipped Death passive also accepts Use on the explicitly typed
+The acquired Death passive also accepts Use on the explicitly typed
 CaelumTarotLivingObstacle family, within normal interaction range and sight.
 It sets that obstacle's contamination to100 and destroys the exact actor through
 the native hub-persistent lifecycle, without generating a harvest or reward.
-Ownership or an active flag without equipping the card grants no permission;
+Acquired ownership grants this permission; an active flag alone does not;
 other players, ordinary trees and characters keep their rules. The type reuses
 the existing owned espinillo geometry/materials. One example is placed in the
 mansion annex display room, with its existing radius16/height106MU and mass2211kg.
-The aim panel explains the equipped requirement or exposes the bound Use action.
+The aim panel explains the ownership requirement or exposes the bound Use action.
 Controller migration from revision1 adds it once without rebuilding doors/portals
 or resetting Wheel/purification. Destroying it does not reset that revision, so
 loading or preparing the controller cannot regenerate it. No ordinary campaign
@@ -653,7 +656,7 @@ Activation launches one projection at6m/s for12m, at most2s. Each reached actor
 receives one existing movement-force impulse per launch, never direct damage;
 its normal knockback resistance or scenery force threshold applies. Active Strength
 is evaluated when this ordered effect launches. Walls and immovable unmarked bodies
-stop it. Only explicitly typed fragile obstacles break; the equipped passive also
+stop it. Only explicitly typed fragile obstacles break; the acquired passive also
 permits aimed Use on them. Ordinary scenery and characters are not made fragile.
 Saved projection state includes distance, age, contacts, caster and geometry probe;
 recasting replaces only that caster's projection. Map departure releases it.
@@ -671,7 +674,7 @@ is in validation_v5_13_3/chariot-results.json and chariot-art-results.json.
 
 ### Strength object movement and lifting
 
-Equipped Strength permits Use to lift/release configured movable scenery, never
+Acquired Strength permits Use to lift/release configured movable scenery, never
 characters or fixed installations. The real actor retains identity, contamination,
 gravity flags and collision. Its mass counts once in carried load; ordinary
 inventory capacity, personal attributes and combat damage remain unchanged.
@@ -735,8 +738,8 @@ furniture into the Box subtracts its personal weight in the same transaction.
 Manufactured furniture still enters personal inventory through its existing
 crafting path; this does not grant automatic giant storage.
 
-Unequipping Star queues the original giant furniture for release, preserving
-its physical body and table contents. Saved revision1 also audits old boxed
+Deselecting Star retains permission and the original giant furniture.
+Saved revision1 audits old boxed
 furniture and size changes idempotently: retain one permitted giant, queue
 the rest without deleting anything. Eight candidate positions per tic preserve
 collision and straight unobstructed access. The furniture's nearest edge stays
@@ -762,7 +765,7 @@ scenery is capturable.
 ### Confirmed follow-up contract for the remaining handlers
 
 - World order0..77, same target where applicable, skip invalid targets; selected
-  card order is separate. Equipped-only passives do not alter Minor collection.
+  card order is separate. Acquired passives do not alter Minor collection rules.
 - Hanged Man chooses another playable race on equip, reusing its existing ability
   costs/requirements with Tarot-key toggling during the effect. The chosen race
   survives unequipping; World skips this effect until a choice exists.
@@ -780,11 +783,11 @@ scenery is capturable.
   the radius are purified; larger pools/rivers retain their quality, without
   partial purification (author approval 2026-11-01).
   Death: one4m pulse around a visible target within100m sets those
-  contaminants to100, including allies/caster in range. Its equipped passive
+  contaminants to100, including allies/caster in range. Its acquired passive
   directly destroys marked living tree/vine obstacles through contamination,
   not decorative plants or characters.
 - Lovers: living caster/group (players and companions),4m plus range modifier,
-  line of sight; equipped passive shares post-defense damage equally; active
+  line of sight; acquired passive shares post-defense damage equally; active
   also shares healing. No second defense or recursive sharing; own health caps
   remain and excess healing is lost.
   Overlapping auras that reach the original receiver form one union of eligible
@@ -864,7 +867,7 @@ scenery is capturable.
   queries stay within their4m radius. No per-NPC global actor census is added.
   Captured harmful rocks are released in the origin map before travel, rather
   than transported to the destination (approved2026-11-01).
-  These giant rocks also require Star equipped and occupy its one giant-object
+  These giant rocks also require Star acquired and occupy its one giant-object
   allowance (approved2026-11-01). Release searches free space within4m without
   crossing walls or telefragging. When no safe space exists, retain the same
   contained rock, report the pending release and block travel until resolved.
@@ -925,7 +928,7 @@ eligibility and collection remain personal. Interrupted/duplicate captures do
 not grant or consume cards. All 78 fronts reuse the owned #15 illustrations.
 
 Collecting all 78 without consuming them enables the unified essence. Inventory
-U activates it only with World equipped: 1,000 Anima, 60 active seconds and the
+U activates it after acquiring all 78 essences: 1,000 Anima, 60 active seconds and the
 shared 600-second Tarot cooldown. It permits damage to deities, without adding
 a damage multiplier; ordinary defenses and narrative scene protections remain.
 Palomo implements the deity contract; Selene has no actor in this delivery.
@@ -969,24 +972,18 @@ The 78 stable IDs, Marseille ordering and owned card fronts are retained from
 Justice is 8 and Strength is 11. The Hierophant is the existing card 5 (its
 art manifest calls it El sumo sacerdote); names do not create a new card.
 
-Author clarification on 2026-10-31: **only Major capability passives require
-equipping**. Minor fixed bonuses and the acquired-essence collection percentage
-(+2% per Major, +1% per Minor) retain their accepted rules. A physical card is
-not an acquired essence. Selection cannot grant ownership or replay rewards.
-
-Equipment order chosen in the inventory is activation order, persisted and
-shared by native authority. Hermit and Devil each grant +2 Tarot equipment
-slots, additively (+4 together) above the existing base of 3. Star and Sun each
-grant +10 Magic Box slots (+20 together). The author approved rejecting
-deselection when ordinary contents/selected cards would exceed the resulting
-capacity; free space first. Star's explicitly approved giant-object drop remains
-an exception, not permission to discard ordinary contents. The author approved
-a capacity card filling its own newly granted slot in the same equip operation.
+Author correction on 2026-11-01 supersedes the equipped-only interpretation:
+all acquired Major capability passives remain available without equipping.
+Minor fixed bonuses and collection percentages (+2% Major/+1% Minor) are unchanged.
+Hermit and Devil each add two Tarot slots; Star and Sun each add ten Box slots.
+Removing cards from the active sequence does not remove these capacities or
+drop Star's giant cargo. Physical cards do not grant acquired ownership.
+Active effects still require inclusion in the chosen sequence or World's fanout.
 
 Devil bypass pays health only, twice the applicable normal Anima cost, and may
 kill the user. Strength's x10 affects object movement, not combat attributes.
 A giant object's volume is at least twice the user's; Star supports only one
-and drops it on unequip. Sun's captured harmful object drops when its active
+and retains it when deselected. Sun's captured harmful object drops when its active
 ends, preserving exact identity. World activates unequipped Major and Minor
 effects, skips invalid targets and does not equip their passives. Its internal
 ordering is ascending acquired ID, with one shared target, no recursion and

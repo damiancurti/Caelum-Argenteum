@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.13.12** - 2026-11-01.
+Documentation version: **5.13.13** - 2026-11-01.
 
 ## Human Palomo HUD evidence (#617 follow-up)
 

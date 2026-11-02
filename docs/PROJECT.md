@@ -1,6 +1,11 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.13.12** - 2026-11-01.
+Documentation version: **5.13.13** - 2026-11-01.
+
+## 5.13.13 — Acquired Major passives and card descriptions (#440)
+
+The author corrected Major passives to remain available after acquisition, independent of selection. Active sequence gates remain separate; unified essence no longer needs World selected. All 22 cards have individual bilingual effects, cyclic navigation and a rock-action hint. No stored fields or map geometry change; existing ownership/order/timers remain intact. Native verification: assets/validation_v5_13_13; author recheck remains pending.
+
 
 ## 5.13.12 - Hunt opportunities (#616)
 
