@@ -68,4 +68,4 @@ Source SHA-256 fingerprints:
 - `dialogues/shared/companions.usdf`: `8f0fe3747a879e7ce156c26425f9fb8106363c18c25babf9c3a3cdfab425fa5f`
 - `dialogues/shared/arcana_capture.usdf`: `586a7630d487a5ea7febd28d04ac88601573632ae915521cfa22275e033d58a8`
 - `dialogues/shared/tarot_spirit.usdf`: `3bc3be6ffce3a6ff64db108ebfeb96db2f1674a60e9896a0885756888458b466`
-- `dialogues/index.json`: `2a72c7fee6c5da68a23f0aa54754a79fd0f2ed6bfc498c57125a8e3c22f08a14`
+- `dialogues/index.json`: `e71726c3a575fe8da2434cd80e3f56ea0c9948acc8185092a71ead3f45666dff`

@@ -16,6 +16,13 @@ their pending-author and next-work statements are superseded by this acceptance.
 Existing ETW/frame-presentation and Internet-testing limitations remain explicit;
 author acceptance does not establish a new performance or Internet benchmark.
 
+Final #596 integration verification found byte-hash differences between the
+implementation worktree and a fresh Windows checkout. Document/localization
+indexes are regenerated from the committed LF sources; Tarot geometry JSON and
+generated data now have explicit LF checkout attributes. No gameplay, map bytes,
+balance or accepted test behavior changes. This remains release 5.13.17 acceptance
+bookkeeping. Static validation and a separate Windows checkout verify freshness.
+
 | Check | Origin version | Issue | Author result |
 | --- | --- | --- | --- |
 | CA439-01 | 5.13.0 | #439 | Passed, 2026-11-01 |
