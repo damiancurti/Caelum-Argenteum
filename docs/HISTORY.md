@@ -1,6 +1,11 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.13.15** - 2026-11-01.
+Documentation version: **5.13.16** - 2026-11-01.
+
+## 5.13.16 — Per-character essence dialogue admission (#441)
+
+Closing an essence conversation now detaches its native node, so the next speaker passes through Used and reveals their own card before capture. This follows the existing Palomo interaction pattern and retains each collection, capture progress and reward uniqueness. No new fields or geometry; old loaded conversation nodes are cleaned when idle. Native two-client Use/capture passes: both clients open the dialogue, accept and reach 78 independently. Six assertions agree in both peers; assets/validation_v5_13_15/capture_results.json and screenshots. Final menu wording and fixture presentation continue in the next review patch. Author acceptance remains pending.
+
 
 ## 5.13.15 — Reachable author fixtures and observable checks (#596)
 

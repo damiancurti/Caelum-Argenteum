@@ -179,6 +179,11 @@ class CaelumM00FoolEssence : Actor
     {
         Super.Tick();
         CaelumArcanaSources.Register(self);
+        // Cada interlocutor debe pasar por Used y revelar su propia colección.
+        // Un nodo nativo retenido abriría el diálogo del anterior sin esa validación.
+        if(!bInConversation && HasConversation())
+            Level.ExecuteSpecial(CaelumConstants.GZDOOM_THING_SET_CONVERSATION_SPECIAL,
+                self,null,false,0,0);
         if (CaptureUser == null) return;
         let record = CaptureUser.GetPersistentCharacterState(false);
         if (!CaelumMainM00FoolCapture.CanApproach(CaptureUser, self)
