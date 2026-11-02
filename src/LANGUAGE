@@ -7716,3 +7716,23 @@ CA_MATCH_TEAM_KILL = "%s eliminated teammate %s (-1).";
 CA_MATCH_TEAM_RED = "Equipo rojo";
 CA_MATCH_TEAM_BLUE = "Equipo azul";
 CA_MATCH_TEAM_KILL = "%s eliminó a su compañero %s (-1).";
+
+[enu default]
+CA_CAPTURE_RED_BASE = "Red base";
+CA_CAPTURE_BLUE_BASE = "Blue base";
+CA_CAPTURE_RED_OBJECTIVE = "Red Arcana";
+CA_CAPTURE_BLUE_OBJECTIVE = "Blue Arcana";
+CA_CAPTURE_CARRYING = "Carrying enemy Arcana";
+CA_CAPTURE_TAKEN = "%s took the Arcana of %s.";
+CA_CAPTURE_DROPPED = "The Arcana of %s was dropped.";
+CA_CAPTURE_SCORED = "%s captured an Arcana (%d).";
+
+[es]
+CA_CAPTURE_RED_BASE = "Base roja";
+CA_CAPTURE_BLUE_BASE = "Base azul";
+CA_CAPTURE_RED_OBJECTIVE = "Arcano rojo";
+CA_CAPTURE_BLUE_OBJECTIVE = "Arcano azul";
+CA_CAPTURE_CARRYING = "Llevas el arcano enemigo";
+CA_CAPTURE_TAKEN = "%s tomó el arcano de %s.";
+CA_CAPTURE_DROPPED = "El arcano de %s cayó al suelo.";
+CA_CAPTURE_SCORED = "%s capturó un arcano (%d).";

@@ -6,13 +6,13 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.13.6.** Obtain and update the complete repository, validate
+**Current release: 5.13.7.** Obtain and update the complete repository, validate
 it, then rebuild with `run_dev.bat` as described below.
 
 #597's standalone setup is in PR609: a localized Multiplayer menu, separate
 match configuration/saves and the four resident presets. The launcher uses Python
 to start GZDoom's native host/join process and returns to the title afterward.
-Individual Deathmatch (#598) and Team Deathmatch (#599) have native scoring, respawn, recovery and rematch
+Deathmatch (#598), Team Deathmatch (#599) and Capture the Arcana (#600) have native scoring, respawn, recovery and rematch
 evidence. Team/capture/hunt #599–601 and final author acceptance remain pending.
 
 V5.13 is in progress. #440 now has ordered Tarot loadouts, additive capacities,

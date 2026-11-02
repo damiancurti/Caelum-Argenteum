@@ -22,6 +22,9 @@ class CaelumTargetPanel : Object ui
         double textY=y+CaelumTargetPanelData.PADDING*scale.Y;
         String title=info.Title;int titleColor=Font.CR_GOLD;
         let match=CaelumStandaloneMatch.View();
+        let captureBase=CaelumCaptureBase(info.Subject);let objective=CaelumCaptureObjective(info.Subject);
+        if(captureBase!=null || objective!=null)
+            titleColor=(captureBase!=null?captureBase.Side:objective.Side)==0?Font.CR_RED:Font.CR_LIGHTBLUE;
         if(other!=null && match!=null && match.TeamsEnabled() && match.Member(other.PlayerNumber()))
         {
             int team=match.Team[other.PlayerNumber()];

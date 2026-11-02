@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "0e502504101bb00f32dfd87887fe31db9dfe5a3c1ef3fa157ed872f6b6918f29",
+  "sha256": "7f6b380e4ea41a67d73b90cf71dc62927cd7f468cd1e1296a12babdc1adc39bc",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[538,538]],"default":[[538,538]],"es":[[1233,1233]]},
     "CA_ABSENT_THEFT_FOUND": {"enu":[[6961,6961]],"default":[[6961,6961]],"es":[[6963,6963]]},
@@ -254,6 +254,14 @@
     "CA_CAMP_SETTING_UP": {"enu":[[6593,6593]],"default":[[6593,6593]],"esn":[[6599,6599]]},
     "CA_CAMP_SITE_FAILED": {"enu":[[6592,6592]],"default":[[6592,6592]],"esn":[[6598,6598]]},
     "CA_CAMP_TENT": {"enu":[[6585,6585]],"default":[[6585,6585]],"es":[[6588,6588]]},
+    "CA_CAPTURE_BLUE_BASE": {"enu":[[7722,7722]],"default":[[7722,7722]],"es":[[7732,7732]]},
+    "CA_CAPTURE_BLUE_OBJECTIVE": {"enu":[[7724,7724]],"default":[[7724,7724]],"es":[[7734,7734]]},
+    "CA_CAPTURE_CARRYING": {"enu":[[7725,7725]],"default":[[7725,7725]],"es":[[7735,7735]]},
+    "CA_CAPTURE_DROPPED": {"enu":[[7727,7727]],"default":[[7727,7727]],"es":[[7737,7737]]},
+    "CA_CAPTURE_RED_BASE": {"enu":[[7721,7721]],"default":[[7721,7721]],"es":[[7731,7731]]},
+    "CA_CAPTURE_RED_OBJECTIVE": {"enu":[[7723,7723]],"default":[[7723,7723]],"es":[[7733,7733]]},
+    "CA_CAPTURE_SCORED": {"enu":[[7728,7728]],"default":[[7728,7728]],"es":[[7738,7738]]},
+    "CA_CAPTURE_TAKEN": {"enu":[[7726,7726]],"default":[[7726,7726]],"es":[[7736,7736]]},
     "CA_CARAVAN_BACK": {"enu":[[3869,3869]],"default":[[3869,3869]],"es":[[3890,3890]]},
     "CA_CARAVAN_CANCEL": {"enu":[[3867,3867]],"default":[[3867,3867]],"es":[[3888,3888]]},
     "CA_CARAVAN_COAST_OFFER": {"default":[[4260,4260]],"es":[[4263,4263]]},
