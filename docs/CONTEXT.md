@@ -1,10 +1,10 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.14.1** - 2026-11-09.
+Documentation version: **5.14.2** - 2026-11-09.
 
-**V5.14:** #443/5.14.0 published PR630; static/native/save passed.
-#445/5.14.1 teams/native checks passed; #444/#446 next.
-Rules approved 2026-11-08; use Insight.
+**V5.14:** #443/5.14.0 PR630; #445/5.14.1 PR631; native/save passed.
+#444/5.14.2 passed; teardown:HISTORY. #446 next.
+Rules approved Nov8; Insight; copper-value change approved Nov9.
 Acceptance/terminal pending.
 
 **V5.13/5.13.17 accepted2026-11-01:** all13 checks, including awakening.

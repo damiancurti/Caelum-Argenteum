@@ -1,6 +1,42 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.14.1** - 2026-11-09.
+Documentation version: **5.14.2** - 2026-11-09.
+
+## 5.14.2 — Native Trucazo stakes and personal claims (#444)
+
+The author approved copper-value division with native change on 2026-11-09,
+completing the wager/reputation proposal approved on 2026-11-08. This patch adds
+unanimous exact offers/allocation, preflight before any debit, actual native
+item custody, once-only settlement, winner reputation and persistent prizes
+when inventory capacity is insufficient. Active custody blocks profile transfer;
+completed claims belong to the character's personal ownership graph. Existing
+ordinary matches/practice and rollback saves are preserved.
+
+Static validation, fresh native stakes/consent, common recovery, settlement,
+capacity claims and map travel passed; assets/validation_v5_14_2/results.json
+records per-peer assertions and hashes. Four offline profile-boundary checks
+against actual native checkpoints passed, including active-reservation refusal,
+nested equipment/food capture and installation without changing world data.
+Native sync diagnostics stayed enabled and were clean in the passing runs. Tests used isolated GZDoom
+4.14.2 peers at5% audio, unpaused in the background. Author visual/ES-EN and
+acceptance remain pending the complete V5.14 terminal after #446.
+
+Retained failures: early fixtures selected an equipped starter weapon, allowed
+automatic meal consumption to change an unreserved offer, omitted the current
+durability revision on a synthesized piece, and requested an invalid native
+save-menu index. Equipped/stale-stack protection rejected correctly; fixtures
+were corrected. One attempted overlapping test failed to bind its port and was
+excluded. Native travel then exposed a real hidden-vault world-link crash;
+CA-KP-206 records the corrected no-sector travel lifecycle and passing recovery
+from the earlier checkpoint. An eight-peer run passed all gameplay/sync checks
+but its host exited0xC0000005 at teardown after the other peers left. That run
+is retained as failed. Another run recorded a native checksum warning during
+successive teardown disconnects; it is also rejected. The same eight-player
+scenario without wagers passed. Vault following now requires the real connected
+body outside prediction and only relinks after actual movement; subsequent
+stake/disconnect checks passed. This does not establish a general fix for the
+existing intermittent-engine limitation CA-KP-200.
+No Internet, presentation-performance or author-acceptance claim is made.
 
 ## 5.14.1 — Fixed Trucazo teams and unanimous pause (#445)
 

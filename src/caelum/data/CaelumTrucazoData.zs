@@ -4,6 +4,11 @@ class CaelumTrucazoData : Object
     const REVISION=1;
     const ROSTER_REVISION=1;
     const MAX_SEATS=8;
+    const WAGER_REVISION=1;
+    const REPUTATION_WIN=5;
+    const REPUTATION_MAX=1000;
+    // Límite técnico de las transacciones enteras nativas, no tope de saldo.
+    const MAX_COPPER_OPERATION=2147483647;
     const EMPRESS_HEAL=10;
     const EMPEROR_STRENGTH=1;
     const LOVERS_ENVIDO=2;

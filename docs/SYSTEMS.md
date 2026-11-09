@@ -1,6 +1,60 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.14.1** - 2026-11-09.
+Documentation version: **5.14.2** - 2026-11-09.
+
+## Trucazo stakes and reputation (5.14.2, #444)
+
+Approved on 2026-11-08; the author clarified on 2026-11-09 that coin winnings
+are divided by copper value, with change through the existing currency system.
+The human Trucazo lobby has a consequences option. Every member reviews and
+accepts the exact coin offers, native item quantities and winning recipients.
+Any offer, recipient or lobby-option change clears everyone's acceptance.
+No stakes are taken until all fixed members accept and the entire transaction
+passes ownership, funds, quantity and capacity checks. Invalid/stale requests
+cannot commit another member's offer or repeat a transaction.
+
+Eligible stakes are owned, transferable native items and coins. The Box,
+physical deck, essences, quest keys, temporary/quest supplies, equipped or
+crafting-reserved pieces and carried world bodies are protected. Currency
+offers use copper value; native denominations are debited with change.
+The per-operation limit is the existing native signed-integer currency API;
+the claim ledger can hold a larger combined award and pay it in safe chunks.
+An item offer identifies its actual instance, quantity and pre-reservation
+stack size. A changed stack requires renewed review. Normal food aging remains
+active; reserving an item does not create a fresh replacement.
+
+Reservation moves whole items to private native custody without replacing
+their identity, size, wear, contents or other properties. Partial stack stakes
+use the existing lot-transfer functions, preserving food/contamination and
+ammunition provenance. Reserved objects leave the player's usable inventory
+and cannot also be spent, sold or staked. Custody belongs to the original
+character and serializes with the common match checkpoint.
+
+At the final result, winners recover their own stakes. Opposing coin value is
+divided equally among winning members; remaining copper goes in mano order.
+Opposing indivisible items and offered stack portions go to the recipients
+approved before play. The default cycles through opposing seats, and any member
+can propose another recipient before everyone accepts. Settlement is guarded
+once. A winner's separate personal Trucazo reputation rises by5, capped at1000;
+it begins at0. Defeat grants0 and subtracts nothing. Existing faction reputation
+is unchanged. Argento practice and human play without consequences grant no
+reputation or stake changes.
+
+Awards first enter persistent personal claims. Items/money that fit are delivered
+through the native capacity rules; remaining prizes stay claimable without loss.
+The Trucazo reputation/prizes menu is available from the single-player and
+multiplayer menus. Free personal or Box capacity and claim again. Actual nested
+items and lots travel with their personal custody; transferring a profile is
+blocked while its match reservation remains active. Finished claims and personal
+reputation are included in the existing personal-profile ownership boundary.
+
+The explicit abandonment confirmation defeats the entire team and awards its
+agreed stakes. Disconnecting, losing a seat or closing a paused view does not
+forfeit; the full match and custody remain suspended. An unsettled pot cannot
+be released. Resume from the common checkpoint with the original members;
+abrupt host loss recovers the last complete checkpoint, without invented server
+replacement, timeout or automatic penalty. Revision1 fields and claims are
+additive; previous matches and original rollback saves remain intact.
 
 ## Trucazo fixed teams (5.14.1, #445)
 
