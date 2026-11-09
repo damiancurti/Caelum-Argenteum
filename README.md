@@ -6,8 +6,14 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.13.17.** Obtain and update the complete repository,
+**Current release: 5.14.0.** Obtain and update the complete repository,
 validate it, then rebuild with `run_dev.bat` as described below.
+
+V5.14 is in progress. The optional magical Trucazo ruleset (#443) now has
+22 approved Major effects, ordered responses and Insight-based queries.
+Static, native rules and save/recovery checks passed; agent UI inspection is
+recorded in HISTORY. Author acceptance remains pending. Teams (#445), wagers (#444) and ranked/tournaments (#446) remain
+separate deliveries. See SYSTEMS for the approved rules and TASKS for status.
 
 V5.13 is complete and author-accepted on 2026-11-01. All 13 manual checks passed,
 including the final Tarot, capture, awakening and menu corrections. The focused

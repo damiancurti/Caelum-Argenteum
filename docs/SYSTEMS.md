@@ -1,6 +1,81 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.13.17** - 2026-11-01.
+Documentation version: **5.14.0** - 2026-11-08.
+
+## Magical Trucazo ruleset (5.14.0, #443)
+
+The author approved the replacement rules on 2026-11-08. They supersede the
+historical Major table in trucazo_v2_original.docx for this ruleset only.
+Argento practice and previously saved ordinary human duels keep their accepted
+contract. The table lobby separately enables Majors and Magic Senses; everybody
+accepts the exact options and changing them clears consent. Personal Major
+choices are separate from the world Tarot sequence, require acquired essences,
+and use the character's existing slot capacity. No world Tarot activation runs
+inside an active card match. The native physical deck is retained.
+
+A trick is one card per participant; a hand has up to three tricks; a match
+continues until one team has no match health. Effects below are once per hand,
+except World (once per match), cost no Anima, and expire at hand end unless a
+single play/trick is stated. Initial health is not restored between hands.
+
+| Major | Approved effect |
+| --- | --- |
+| 0 Fool | Preparation: discard one own playable card and replace it with the first playable draw from the shared deck. Intervening nonplayable draws enter the owner's second row. |
+| 1 Magician | Preparation: exchange one card from the owner's first row with one from their second row. |
+| 2 High Priestess | Block Magic Senses and Hermit queries targeting the owner's hand. |
+| 3 Empress | After winning the hand and surviving simultaneous damage, recover 10% of team initial maximum health. |
+| 4 Emperor | The owner's next card improves one strength rank, without exceeding the strongest rank; Envido identity/value is unchanged. |
+| 5 Hierophant | Cancel one pending opposing Major effect, consuming its attempted use; no reversal of resolved effects. |
+| 6 Lovers | Add 2 to the owner's individual Envido value. |
+| 7 Chariot | If the owner's next card wins its trick, add 1 team hand point. |
+| 8 Justice | All cards in the current trick use ordinary strength without magical rank improvements. |
+| 9 Hermit | Learn whether a chosen opponent still holds one specific playable card; disclose only that answer to the requester. |
+| 10 Wheel | Preparation: exchange the owner's complete first and second rows. |
+| 11 Strength | Increase the owner's first-row value by 25%. |
+| 12 Hanged Man | Preparation: move one chosen first-row card into the owner's second row. |
+| 13 Death | If the owner's team loses the hand, reduce its incoming hand damage by 25%. |
+| 14 Temperance | Reduce the opposing team's points from accepted Truco/Retruco/Vale 4 by 1, minimum 1; Envido is unaffected. |
+| 15 Devil | Pay 5% of team initial maximum health for +25% outgoing hand damage. Payment must leave positive health; minimum payment 1. |
+| 16 Tower | Reduce the opposing team's combined second-row value by 25%. |
+| 17 Star | Preparation: recover 5% of team initial maximum health without exceeding it. |
+| 18 Moon | The owner's next card remains face down until everybody commits a card to that trick, then reveals before adjudication. |
+| 19 Sun | Winning Envido grants the owner's team 1 additional Envido point. |
+| 20 Judgement | Dispel one ongoing opposing Major effect; retain already applied payments, draws, disclosures and damage. |
+| 21 World | Once per match: +20% outgoing and -20% incoming damage for one chosen hand. |
+
+Preparation completes before the initial Envido hand is frozen. Ordinary legal
+calls and pending plays expose an ordered response window beginning with mano;
+each participant uses an effect or passes. An optional personal automatic pass
+avoids repeated confirmations. No real-time deadline or click-race arbitration
+is introduced. Pending effects resolve in reverse response order, then the
+original action commits once. Saved priority, passes, queued action, effects,
+uses, shuffle, discards and private query state are authoritative.
+
+The same effect does not stack on the same target. Different percentages on
+the same calculation add; results cannot be negative. Round final damage,
+healing and percentage costs to the nearest integer. Healing cannot revive a
+defeated team or exceed its initial maximum. No card is duplicated: invalid
+targets, depleted draws and unaffordable costs reject without consuming a use.
+Targets and indices are checked again after responses; a cancelled valid
+attempt remains spent, while an action that became invalid is refunded.
+
+Magic Senses is the old name for Insight (Perspicacia), explicitly clarified
+by the author on 2026-11-08. Snapshot effective Insight at match start. Once per
+player per hand, ask an opponent about one specific still-available playable
+card. The public yes/no answer may be a lie. The private detection probability
+is min(100%, 50% * requester Insight / target Insight). Both zero gives 50%;
+only the target zero gives 100%. Success reports truth/lie; failure reports
+inconclusive. A reply cannot be supplied by another seat or rerolled by replay.
+Neither teammate hands nor full opponent hands are exposed by supported UI.
+Native lockstep still replicates simulation state, as documented for #590;
+this is not a new cryptographic anti-cheat claim.
+
+Compatibility is additive: CaelumTrucazoGame/Choice revision 1 is created only
+for the new ruleset; existing CaelumTrucazoMatch instances are not converted.
+Retain original saves/packages for rollback. Per-issue native evidence and
+outstanding author acceptance remain distinct. Teams, wagers and ranking are
+owned separately by #445, #444 and #446.
+
 
 ## V5.13 author acceptance — 2026-11-01 (#596)
 

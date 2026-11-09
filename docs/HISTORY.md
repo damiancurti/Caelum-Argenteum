@@ -1,6 +1,41 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.13.17** - 2026-11-01.
+Documentation version: **5.14.0** - 2026-11-08.
+
+## 5.14.0 — Approved magical Trucazo implementation (#443)
+
+On 2026-11-08 the author approved all four V5.14 design proposals and identified
+Magic Senses as Insight's former name. This focused patch implements #443's
+22 replacement Majors, ordered responses, private queries and separate agreed
+ruleset. The exact approved values are in SYSTEMS and CaelumTrucazoData.
+No gameplay acceptance has yet been given. Validation on 2026-11-08/09:
+
+- Static: project validator, dialogue/localization freshness, document index,
+  diff whitespace and PK3 build passed. New state is additive/revisioned;
+  original saves and legacy match inventories remain available for rollback.
+- Native GZDoom 4.14.2: 92 rules checks per peer cover all22 effects, counters,
+  invalid use, Insight privacy and automatic-pass suspension. Real production
+  lobby/events passed13 fresh checks per peer; common-checkpoint recovery
+  reached20 cumulative checks (13 fresh plus7 after load), preserving the deck, private hands, Moon response and unanswered
+  Insight query. Native sync diagnostics remained enabled and clean.
+- Regression: Argento12 checks; a pre-patch5.13.17 common checkpoint restored
+  with9 checks per peer. The final gameplay edit only affects automatic passing
+  in the new magical ruleset; the earlier legacy evidence remains applicable.
+- Agent UI: the actual native menu was inspected, including mouse opening of
+  public rows, own-hand visibility and keyboard return. This is not author
+  acceptance or a measured rendering/Internet benchmark. ES/EN strings and
+  the complete author scenes will be checked with the assembled V5.14 delivery.
+
+Evidence and reproducible runners: assets/validation_v5_14_0/results.json.
+Retained local failures include obsolete fixture assumptions, missing menu
+registration (fixed), an absolute save-path fixture error and omitted native
+session recovery (fixed). No failed run is relabelled as passing. A late review
+found automatic passing could advance a pending Insight query; the guard and
+two new assertions now verify suspension until the target answers.
+The accepted 5.13.17 baseline passed validator/build, 12 Argento checks,
+17 checks per native duel peer and 9 per restored peer, with native sync clean.
+Do not count those baseline runs as verification of newly implemented effects.
+
 
 ## V5.13 author acceptance — 2026-11-01 (#596)
 
