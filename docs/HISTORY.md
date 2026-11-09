@@ -4,6 +4,14 @@ Documentation version: **5.14.3** - 2026-11-09.
 
 ## 5.14.3 — Ranked Trucazo and local tournaments (#446)
 
+**Author acceptance — 2026-11-09:** CA446-01 (origin5.14.3, #446): ranked normalization, rating/results and casual exclusion; CA446-02 (origin5.14.3, #446): four/eight-player brackets, advancement, championship, recovery and ES/EN controls.
+Result: **passed**, explicitly confirmed by Damián as part of his statement
+that all V5.14 tests were correct, with no exceptions reported. He requested
+issue closure and PR merging. This accepts the assembled5.14.3 delivery;
+the original check/version IDs are retained here and removed from the
+outstanding queue. Acceptance does not increment the release. Earlier
+static/native evidence and its recorded limitations remain separate.
+
 Implements the 2026-11-08 approved casual/ranked proposal: match-only minimum
 attributes, equal personal Major counts, disabled ranked Minor bonuses, personal
 Elo/ranks and unanimous4/8-person individual brackets. SYSTEMS owns exact rules.
@@ -31,8 +39,10 @@ and its native between-round recovery passed after these UI changes.
 
 The isolated author terminal supplies separate scenarios and a common checkpoint
 after changes (at most once per10 seconds). Native card menus consume F5, so the
-launcher selects the latest saved file instead. Five outstanding checks remain
-in pending_test.txt, with their original issue/version IDs; no acceptance is claimed.
+launcher selects the latest saved file instead. All five author checks were
+accepted on2026-11-09 and recorded in their originating release entries;
+pending_test.txt is now empty. PR630/631/632/633 are merged into main with
+the original implementation commits, and issues #443–446 are closed.
 
 The lobby now permits retrying a rejected request without requiring a state
 revision change; insufficient tournament enrollment must not trap menu controls.
@@ -44,6 +54,14 @@ between-round state before any resumed action. No failed evidence is discarded.
 No Internet or presentation-performance claim is made.
 
 ## 5.14.2 — Native Trucazo stakes and personal claims (#444)
+
+**Author acceptance — 2026-11-09:** CA444-01 (origin5.14.2, #444): exact offers/consent, copper-value change/allocation, native item properties, protected holdings, reputation and once-only claims.
+Result: **passed**, explicitly confirmed by Damián as part of his statement
+that all V5.14 tests were correct, with no exceptions reported. He requested
+issue closure and PR merging. This accepts the assembled5.14.3 delivery;
+the original check/version IDs are retained here and removed from the
+outstanding queue. Acceptance does not increment the release. Earlier
+static/native evidence and its recorded limitations remain separate.
 
 The author approved copper-value division with native change on 2026-11-09,
 completing the wager/reputation proposal approved on 2026-11-08. This patch adds
@@ -60,7 +78,7 @@ against actual native checkpoints passed, including active-reservation refusal,
 nested equipment/food capture and installation without changing world data.
 Native sync diagnostics stayed enabled and were clean in the passing runs. Tests used isolated GZDoom
 4.14.2 peers at5% audio, unpaused in the background. Author visual/ES-EN and
-acceptance remain pending the complete V5.14 terminal after #446.
+acceptance were pending at the initial delivery; subsequent acceptance is recorded above.
 
 Retained failures: early fixtures selected an equipped starter weapon, allowed
 automatic meal consumption to change an unreserved offer, omitted the current
@@ -77,9 +95,18 @@ scenario without wagers passed. Vault following now requires the real connected
 body outside prediction and only relinks after actual movement; subsequent
 stake/disconnect checks passed. This does not establish a general fix for the
 existing intermittent-engine limitation CA-KP-200.
-No Internet, presentation-performance or author-acceptance claim is made.
+These native runs establish neither Internet nor presentation-performance
+acceptance; the later author result is recorded separately above.
 
 ## 5.14.1 — Fixed Trucazo teams and unanimous pause (#445)
+
+**Author acceptance — 2026-11-09:** CA445-01 (origin5.14.1, #445): eight-player teams, independent turns/private hands, shared reserves, unanimous pause/resume and common recovery.
+Result: **passed**, explicitly confirmed by Damián as part of his statement
+that all V5.14 tests were correct, with no exceptions reported. He requested
+issue closure and PR merging. This accepts the assembled5.14.3 delivery;
+the original check/version IDs are retained here and removed from the
+outstanding queue. Acceptance does not increment the release. Earlier
+static/native evidence and its recorded limitations remain separate.
 
 Implements the author-approved1v1 through4v4 contract with visible alternating
 team seats, individual authority, shared Patience-squared reserves and
@@ -96,7 +123,8 @@ roster migration. Native sync diagnostics stayed enabled and clean.
 Evidence/runners: assets/validation_v5_14_1/results.json. A held run and recovery
 matrix were interrupted by the author's Escape; incomplete runs are excluded
 and remaining cases were repeated after explicit resumption. Visual/ES-EN and
-author acceptance remain pending the complete V5.14 delivery. #443 was published separately as
+author acceptance were pending at delivery; the later confirmation is recorded
+above. #443 was published separately as
 commit d9ccebc and draft PR630.
 
 An initial test exposed physical overlap between adjacent seats on the compact
@@ -106,11 +134,20 @@ collision factory; nominal furniture capacity is not a promise of body fit.
 
 ## 5.14.0 — Approved magical Trucazo implementation (#443)
 
+**Author acceptance — 2026-11-09:** CA443-01 (origin5.14.0, #443): magical effects/Insight, private views and ES/EN mouse/keyboard usability.
+Result: **passed**, explicitly confirmed by Damián as part of his statement
+that all V5.14 tests were correct, with no exceptions reported. He requested
+issue closure and PR merging. This accepts the assembled5.14.3 delivery;
+the original check/version IDs are retained here and removed from the
+outstanding queue. Acceptance does not increment the release. Earlier
+static/native evidence and its recorded limitations remain separate.
+
 On 2026-11-08 the author approved all four V5.14 design proposals and identified
 Magic Senses as Insight's former name. This focused patch implements #443's
 22 replacement Majors, ordered responses, private queries and separate agreed
 ruleset. The exact approved values are in SYSTEMS and CaelumTrucazoData.
-No gameplay acceptance has yet been given. Validation on 2026-11-08/09:
+Gameplay acceptance was pending at initial delivery; the later author result
+is recorded above. Validation on 2026-11-08/09:
 
 - Static: project validator, dialogue/localization freshness, document index,
   diff whitespace and PK3 build passed. New state is additive/revisioned;
@@ -126,7 +163,8 @@ No gameplay acceptance has yet been given. Validation on 2026-11-08/09:
 - Agent UI: the actual native menu was inspected, including mouse opening of
   public rows, own-hand visibility and keyboard return. This is not author
   acceptance or a measured rendering/Internet benchmark. ES/EN strings and
-  the complete author scenes will be checked with the assembled V5.14 delivery.
+  the complete author scenes were subsequently accepted with the assembled
+  V5.14 delivery, as recorded above.
 
 Evidence and reproducible runners: assets/validation_v5_14_0/results.json.
 Retained local failures include obsolete fixture assumptions, missing menu
