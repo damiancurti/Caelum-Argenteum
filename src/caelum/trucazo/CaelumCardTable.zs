@@ -57,7 +57,7 @@ class CaelumCardSeat : Inventory
 
 class CaelumCardDuel : Inventory
 {
-    enum LobbyAction { SELECT_GAME, SELECT_FLOR, CONSENT, CANCEL };
+    enum LobbyAction { SELECT_GAME, SELECT_FLOR, CONSENT, CANCEL, SELECT_MAJORS, SELECT_SENSES, SELECT_MAJOR };
     enum GameKind { GAME_TRUCO, GAME_TRUCAZO };
     CaelumPlayer Participants[2];
     CaelumDiningTable Table;
@@ -65,6 +65,10 @@ class CaelumCardDuel : Inventory
     CaelumTrucazoMatch Trucazo;
     int Game;
     bool Flor;
+    bool Majors,Senses;
+    CaelumTrucazoGame Advanced;
+    clearscope int Count() const {return 2;}
+    clearscope CaelumPlayer Member(int seat) const {return seat>=0 && seat<2?Participants[seat]:null;}
     int Accepted;
     int Serial;
     bool Started;
@@ -73,7 +77,7 @@ class CaelumCardDuel : Inventory
     clearscope int Side(CaelumPlayer user) const
     { return user==Participants[0]?0:user==Participants[1]?1:-1; }
     clearscope bool Finished() const
-    { return Started && (Game==GAME_TRUCO?Truco!=null && !Truco.Active():Trucazo!=null && !Trucazo.Active()); }
+    { return Started && (Advanced!=null?Advanced.Finished():Game==GAME_TRUCO?Truco!=null && !Truco.Active():Trucazo!=null && !Trucazo.Active()); }
     bool Connected() const
     {
         for(int i=0;i<2;i++)
@@ -115,6 +119,7 @@ class CaelumCardDuel : Inventory
         }
         if(Truco!=null)Truco.Serial=Serial;
         if(Trucazo!=null)Trucazo.Serial=Serial;
+        if(Advanced!=null)Advanced.Serial=Serial;
     }
     void Release()
     {
@@ -128,7 +133,7 @@ class CaelumCardDuel : Inventory
         if(Trucazo!=null){Trucazo.Visible=false;Trucazo.Duel=null;}
         Destroy();
     }
-    bool Lobby(CaelumPlayer user,int operation,int expectedSerial)
+    bool Lobby(CaelumPlayer user,int operation,int expectedSerial,int argument=0)
     {
         int side=Side(user);
         if(side<0 || Started || expectedSerial!=Serial || !Connected() || Suspended)return false;
@@ -136,6 +141,10 @@ class CaelumCardDuel : Inventory
         if(!Seated(0) || !Seated(1)){Release();return false;}
         if(operation==SELECT_GAME && side==0){Game=1-Game;Accepted=0;}
         else if(operation==SELECT_FLOR && side==0 && Game==GAME_TRUCO){Flor=!Flor;Accepted=0;}
+        else if(operation==SELECT_MAJORS && side==0 && Game==GAME_TRUCAZO){Majors=!Majors;Accepted=0;}
+        else if(operation==SELECT_SENSES && side==0 && Game==GAME_TRUCAZO){Senses=!Senses;Accepted=0;}
+        else if(operation==SELECT_MAJOR && Game==GAME_TRUCAZO)
+        {let choice=CaelumTrucazoChoice.Get(user);if(choice==null || !choice.Toggle(user,argument))return false;Accepted=0;}
         else if(operation==CONSENT)
         {
             if((Accepted & (1<<side))!=0)return false;
@@ -161,6 +170,7 @@ class CaelumCardDuel : Inventory
             Truco=CaelumTrucoMatch.Get(Participants[0],true);
             Truco.Duel=self;Truco.Opponent=null;Truco.WithFlor=Flor;Truco.Visible=true;Truco.Start();
         }
+        else if(Majors || Senses)Advanced=CaelumTrucazoGame.Create(self);
         else
         {
             Trucazo=CaelumTrucazoMatch.Get(Participants[0],true);
@@ -193,6 +203,19 @@ class CaelumCardDuel : Inventory
         if(changed)AdvanceSerial();
         return changed;
     }
+    bool DispatchAdvanced(CaelumPlayer user,int operation,int argument,int expectedSerial)
+    {
+        int side=Side(user);let link=CaelumCardSeat.Read(user);
+        if(side<0 || Advanced==null || !Started || expectedSerial!=Serial || link==null || link.Duel!=self || !link.Open)return false;
+        if(!Connected())Suspended=true;
+        if(operation==CaelumTrucazoRules.CLOSE && (Suspended || Finished()))
+        {
+            link.Open=false;AdvanceSerial();
+            if(Finished() && !CaelumCardSeat.Read(Participants[1-side]).Open)Release();return true;
+        }
+        if(Suspended || !Seated(0) || !Seated(1))return false;
+        bool changed=Advanced.Act(side,operation,argument);if(changed)AdvanceSerial();return changed;
+    }
     override void Tick()
     {
         Super.Tick();
@@ -202,7 +225,8 @@ class CaelumCardDuel : Inventory
         for(int side=0;side<2;side++)if(!Seated(side))
         {
             if(!Started){Release();return;}
-            if(Game==GAME_TRUCO)Truco.Act(side,CaelumTrucoRules.FORFEIT);
+            if(Advanced!=null)Advanced.Act(side,CaelumTrucazoRules.FORFEIT);
+            else if(Game==GAME_TRUCO)Truco.Act(side,CaelumTrucoRules.FORFEIT);
             else Trucazo.Act(side,CaelumTrucazoRules.FORFEIT);
             AdvanceSerial();return;
         }

@@ -129,6 +129,11 @@ ListMenu "CaelumTrucazoMenu"
     Class "CaelumTrucazoMenu"
 }
 
+ListMenu "CaelumTrucazoGameMenu"
+{
+    Class "CaelumTrucazoGameMenu"
+}
+
 ListMenu "CaelumTrucoMenu"
 {
     Class "CaelumTrucoMenu"

@@ -111,6 +111,7 @@ class CaelumTarotService : Object play
             || user.PalomoMerchantMenuOpen || user.CraftingTaskActive || user.CombatChannelModeActive
             || user.StaffCastPending
             || (user.ForcedSleepTics > 0 && !CaelumTemperance.SelectedForSequence(record))
+            || (CaelumCardSeat.Session(user)!=null && CaelumCardSeat.Session(user).Started && !CaelumCardSeat.Session(user).Finished())
             || CaelumRestState.IsActive(user)
             || CaelumTimeSkipState.IsOpen(user) || (user.player.cheats & CF_TOTALLYFROZEN))
         { Feedback(user, "CA_TAROT_POWER_CONTEXT"); return false; }

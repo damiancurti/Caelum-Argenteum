@@ -6,6 +6,8 @@ class CaelumCardTableEvents : StaticEventHandler
         if(consoleplayer<0 || gamestate!=GS_LEVEL || menuactive!=0)return;
         let user=CaelumPlayer(players[consoleplayer].mo);
         let link=CaelumCardSeat.Read(user);
+        if(link!=null && link.Open && link.Duel!=null && link.Duel.Started && link.Duel.Advanced!=null)
+        {Menu.SetMenu("CaelumTrucazoGameMenu");return;}
         if(link!=null && link.Open && (link.Duel==null || !link.Duel.Started))
             Menu.SetMenu("CaelumCardTableMenu");
     }
@@ -17,11 +19,16 @@ class CaelumCardTableEvents : StaticEventHandler
             CaelumCardSeat.Interact(CaelumPlayerAuthority.FromNetworkPlayer(e.Player));
             return;
         }
+        if(e.Name=="ca_tc2")
+        {
+            let user=CaelumPlayerAuthority.FromNetworkPlayer(e.Player);let duel=CaelumCardSeat.Session(user);
+            if(duel!=null)duel.DispatchAdvanced(user,e.Args[0],e.Args[1],e.Args[2]);return;
+        }
         if(e.Name!="ca_card_table")return;
         let user=CaelumPlayerAuthority.FromNetworkPlayer(e.Player);
         let link=CaelumCardSeat.Read(user);
         if(link==null || !link.Open)return;
-        if(link.Duel!=null){link.Duel.Lobby(user,e.Args[0],e.Args[2]);return;}
+        if(link.Duel!=null){link.Duel.Lobby(user,e.Args[0],e.Args[2],e.Args[1]);return;}
         if(link.LastSerial!=e.Args[2])return;
         if(e.Args[0]==CaelumCardDuel.CANCEL){link.Open=false;link.LastSerial++;return;}
         if(e.Args[0]==CaelumCardDuel.CONSENT)
@@ -32,6 +39,7 @@ class CaelumCardTableEvents : StaticEventHandler
 class CaelumCardTableMenu : ListMenu
 {
     int Focus;
+    int MajorCursor;
     int SentSerial;
     Array<int> Actions;
     Array<int> Targets;
@@ -69,6 +77,16 @@ class CaelumCardTableMenu : ListMenu
             {
                 Add(CaelumCardDuel.SELECT_GAME,L(duel.Game==CaelumCardDuel.GAME_TRUCO?"CA_CARD_SELECT_TRUCO":"CA_CARD_SELECT_TRUCAZO"));
                 if(duel.Game==CaelumCardDuel.GAME_TRUCO)Add(CaelumCardDuel.SELECT_FLOR,L(duel.Flor?"CA_TT_FLOR_ON":"CA_TT_FLOR_OFF"));
+                else
+                {Add(CaelumCardDuel.SELECT_MAJORS,L(duel.Majors?"CA_TC2_MAJORS_ON":"CA_TC2_MAJORS_OFF"));Add(CaelumCardDuel.SELECT_SENSES,L(duel.Senses?"CA_TC2_SENSES_ON":"CA_TC2_SENSES_OFF"));}
+            }
+            if(duel.Game==CaelumCardDuel.GAME_TRUCAZO && duel.Majors)
+            {
+                let record=CaelumPersistentCharacterState(user.FindInventory('CaelumPersistentCharacterState'));let choice=CaelumTrucazoChoice.Read(user);
+                bool selected=choice!=null && choice.Selected[MajorCursor];
+                if(CaelumTarotService.HasTarotCard(record,MajorCursor)
+                    && (selected || (choice==null?0:choice.Count())<CaelumTarotLoadout.Capacity(record)))
+                    Add(CaelumCardDuel.SELECT_MAJOR,(selected?"- ":"+ ")..CaelumTarotArt.DisplayName(MajorCursor),MajorCursor);
             }
             if((duel.Accepted & (1<<duel.Side(user)))==0)Add(CaelumCardDuel.CONSENT,L("CA_CARD_CONSENT"));
         }
@@ -93,7 +111,9 @@ class CaelumCardTableMenu : ListMenu
     override bool MenuEvent(int key,bool fromcontroller)
     {
         Choices();
-        if(key==MKEY_Up)Focus=(Focus-1+Actions.Size())%Max(1,int(Actions.Size()));
+        if(key==MKEY_Left)MajorCursor=(MajorCursor+21)%22;
+        else if(key==MKEY_Right)MajorCursor=(MajorCursor+1)%22;
+        else if(key==MKEY_Up)Focus=(Focus-1+Actions.Size())%Max(1,int(Actions.Size()));
         else if(key==MKEY_Down)Focus=(Focus+1)%Max(1,int(Actions.Size()));
         else if(key==MKEY_Enter && Actions.Size()>0)Send(Actions[Focus],Targets[Focus]);
         else if(key==MKEY_Back)Send(CaelumCardDuel.CANCEL);
@@ -113,6 +133,20 @@ class CaelumCardTableMenu : ListMenu
             if(duel.Game==CaelumCardDuel.GAME_TRUCO)CaelumTrucoMenu.Text(22,154,L(duel.Flor?"CA_CARD_WITH_FLOR":"CA_CARD_WITHOUT_FLOR"));
             CaelumTrucoMenu.Text(22,180,String.Format(L("CA_CARD_ACCEPTED"),int((duel.Accepted&1)!=0)+int((duel.Accepted&2)!=0)));
         }
+        if(duel!=null && duel.Game==CaelumCardDuel.GAME_TRUCAZO && duel.Majors)
+        {
+            CaelumTrucoMenu.Wrap(300,180,450,L("CA_TC2_SELECT_HELP"));
+            CaelumTrucoMenu.Wrap(300,230,450,L(String.Format("CA_TC2_EFFECT_%d",MajorCursor)));
+            for(int i=0;i<duel.Count();i++)
+            {
+                let choice=CaelumTrucazoChoice.Read(duel.Member(i));
+                String chosen=CaelumTrucazoGameMenu.Person(i)..": ";
+                for(int c=0;c<22;c++)if(choice!=null && choice.Selected[c])chosen=chosen..CaelumTarotArt.DisplayName(c).." / ";
+                CaelumTrucoMenu.Wrap(300,350+i*70,450,chosen,Font.CR_GOLD);
+            }
+        }
+        if(duel!=null && duel.Game==CaelumCardDuel.GAME_TRUCAZO)
+        {CaelumTrucoMenu.Text(300,130,L(duel.Majors?"CA_TC2_MAJORS_ON":"CA_TC2_MAJORS_OFF"));CaelumTrucoMenu.Text(300,154,L(duel.Senses?"CA_TC2_SENSES_ON":"CA_TC2_SENSES_OFF"));}
         Choices();
         if(duel==null && Actions.Size()==1)CaelumTrucoMenu.Text(22,180,L("CA_CARD_NO_PARTNER"));
         for(int i=0;i<Actions.Size();i++)

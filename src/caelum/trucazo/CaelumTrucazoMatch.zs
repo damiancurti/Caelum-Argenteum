@@ -55,7 +55,7 @@ class CaelumTrucazoMatch : Inventory
     {
         let link=CaelumCardSeat.Read(user);
         if(link!=null && link.Duel!=null)
-            return !link.Open || !link.Duel.Started?null:link.Duel.Trucazo;
+            return !link.Open || !link.Duel.Started || link.Duel.Advanced!=null?null:link.Duel.Trucazo;
         return user==null?null:CaelumTrucazoMatch(user.FindInventory("CaelumTrucazoMatch"));
     }
     clearscope bool Active() const

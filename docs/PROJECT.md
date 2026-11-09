@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.13.17** - 2026-11-01.
+Documentation version: **5.14.0** - 2026-11-08.
+
+## V5.14 in progress — magical Trucazo (#443)
+
+5.14.0 adds the separately agreed magical table ruleset with 22 authored Major
+effects and Insight-based private queries. SYSTEMS owns the approved contract.
+Static/native checks and agent UI inspection are recorded in HISTORY; author acceptance is
+pending. Teams, wagers and ranked/tournament services retain separate issues
+#445, #444 and #446. V5.13 remains the previously accepted baseline below.
+
 
 ## V5.13 author acceptance — 2026-11-01 (#596)
 

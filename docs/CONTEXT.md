@@ -1,12 +1,15 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.13.17** - 2026-11-01.
+Documentation version: **5.14.0** - 2026-11-08.
 
-**V5.13 accepted2026-11-01:** all13 checks passed, including awakening.
-#439–442/#596–601/#614/#616/#617 merged; issues closed.
-Release5.13.17; pending_test.txt empty. HISTORY: original check IDs/versions.
-Owned passives, descriptions, navigation, capture and menus accepted.
-Existing ETW/Internet limits remain; no new FPS claim.
+**V5.14 in progress:** #443/5.14.0 magical Trucazo; static/native/save checks passed.
+UI inspected. Approved rules 2026-11-08; Magic Senses = Insight.
+#445/#444/#446 follow separately. Acceptance/terminal pending.
+
+**V5.13/5.13.17 accepted2026-11-01:** all13 checks, including awakening.
+#439-442/#596-601/#614/#616/#617 merged/closed. HISTORY retains original
+checks/versions and accepted passives, descriptions, navigation, capture, menus.
+ETW/Internet/FPS limitations unchanged; queue was empty.
 
 **V5.12 accepted/merged:** HISTORY; validation_v5_12_7/7a; timer-fixed4.14.2.
 Siege1.33-6.48FPS/sharedGPU; no Internet claim; LF indexes#604.
@@ -17,13 +20,10 @@ Siege1.33-6.48FPS/sharedGPU; no Internet claim; LF indexes#604.
 confirmed 2026-10-30 in HISTORY. validation_590-597; pending_test.txt empty.
 
 **V5.8 accepted/integrated:** #410-417/#496/#502, 5.8.56, 2026-10-29.
-Acceptance IDs/dates: HISTORY. No outstanding author checks at that closure.
-Final corrections/evidence: validation_5854-56. Multiplayer rest authority and
-verification stay deferred to V5.12 (#435-437). Long-absence loading remains
-expensive; render callbacks improved 1125.93 to28.34ms, not a60FPS claim.
-No routine global scans; preserve local queries and shared typed registries.
-
-
+Acceptance: HISTORY; evidence: validation_5854-56. No pending checks at closure.
+Multiplayer rest deferred to V5.12 (#435-437). Long-absence loading remains
+expensive; render callbacks 1125.93?28.34ms, not60FPS. Preserve local queries,
+shared typed registries and offscreen gameplay; no routine global scans.
 
 **5.7.0/#408:**water-quality;validation_570;CA408-01:accepted2026-10-21.
 
