@@ -1,6 +1,13 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.14.2** - 2026-11-09.
+Documentation version: **5.14.3** - 2026-11-09.
+
+## V5.14 card services (#443–446)
+
+The four patches reuse existing Tarot art, fonts and native menu presentation.
+Validation generators create local-only fixtures under build/; no development
+IWAD, executable or generated test map is distributed. No new asset attribution
+or replacement is introduced.
 
 ## Human Palomo HUD evidence (#617 follow-up)
 

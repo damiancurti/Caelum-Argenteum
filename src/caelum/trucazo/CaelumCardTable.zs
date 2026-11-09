@@ -2,6 +2,7 @@
 class CaelumCardSeat : Inventory
 {
     CaelumCardDuel Duel;
+    CaelumTrucazoTournament Tournament;
     bool Open;
     int LastSerial;
 
@@ -57,7 +58,7 @@ class CaelumCardSeat : Inventory
 
 class CaelumCardDuel : Inventory
 {
-    enum LobbyAction { SELECT_GAME, SELECT_FLOR, CONSENT, CANCEL, SELECT_MAJORS, SELECT_SENSES, SELECT_MAJOR, SELECT_TEAM_SIZE, SELECT_CONSEQUENCES };
+    enum LobbyAction { SELECT_GAME, SELECT_FLOR, CONSENT, CANCEL, SELECT_MAJORS, SELECT_SENSES, SELECT_MAJOR, SELECT_TEAM_SIZE, SELECT_CONSEQUENCES, SELECT_RANKED, CREATE_TOURNAMENT };
     enum GameKind { GAME_TRUCO, GAME_TRUCAZO };
     CaelumPlayer Participants[2];
     // Las referencias originales se conservan para guardados y partidas previas.
@@ -68,6 +69,9 @@ class CaelumCardDuel : Inventory
     bool TeamMode,Paused;
     bool Consequences;
     CaelumTrucazoWagers Wagers;
+    bool Ranked;
+    CaelumTrucazoCompetitive Competitive;
+    CaelumTrucazoTournament Tournament;
     CaelumDiningTable Table;
     CaelumTrucoMatch Truco;
     CaelumTrucazoMatch Trucazo;
@@ -126,6 +130,7 @@ class CaelumCardDuel : Inventory
     {
         if(user==null || user.player==null || !playeringame[user.PlayerNumber()] || CaelumCardSeat.Table(user)!=Table)return false;
         let session=CaelumCardSeat.Session(user);if(session!=null && session!=self)return false;
+        let seat=CaelumCardSeat.Read(user);if(seat!=null && seat.Tournament!=null && seat.Tournament!=Tournament)return false;
         let a=CaelumTrucoMatch(user.FindInventory('CaelumTrucoMatch'));let b=CaelumTrucazoMatch(user.FindInventory('CaelumTrucazoMatch'));
         return (a==null || !a.Active()) && (b==null || !b.Active());
     }
@@ -133,7 +138,7 @@ class CaelumCardDuel : Inventory
     {int n=0;for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i] && Candidate(CaelumPlayer(players[i].mo)))n++;return n;}
     bool SetTeamSize(int count)
     {
-        if(Started || Game!=GAME_TRUCAZO || count<2 || count>CaelumTrucazoData.MAX_SEATS || count%2!=0 || count>Available())return false;
+        if(Started || Tournament!=null || Game!=GAME_TRUCAZO || count<2 || count>CaelumTrucazoData.MAX_SEATS || count%2!=0 || count>Available())return false;
         Array<CaelumPlayer> chosen;chosen.Push(Participants[0]);chosen.Push(Participants[1]);
         for(int i=0;i<MAXPLAYERS && int(chosen.Size())<count;i++)if(playeringame[i])
         {let user=CaelumPlayer(players[i].mo);if(user!=Participants[0] && user!=Participants[1] && Candidate(user))chosen.Push(user);}
@@ -154,20 +159,22 @@ class CaelumCardDuel : Inventory
         {PauseVotes^=1<<side;if(PauseVotes==FullMask()){Paused=true;PauseVotes=0;ResumeVotes=0;}}
         AdvanceSerial();return true;
     }
-    static bool Invite(CaelumPlayer user,CaelumPlayer other,int expectedSerial)
+    static bool Invite(CaelumPlayer user,CaelumPlayer other,int expectedSerial,CaelumTrucazoTournament tournament=null)
     {
         if(user==other || !multiplayer || !CaelumPlayerAuthority.CanMutate(other))return false;
         let own=CaelumCardSeat.Get(user);let guest=CaelumCardSeat.Get(other);
         let table=CaelumCardSeat.Table(user);
         if(own==null || guest==null || own.LastSerial!=expectedSerial || own.Duel!=null || guest.Duel!=null
             || table==null || CaelumCardSeat.Table(other)!=table)return false;
+        if(tournament==null && (own.Tournament!=null || guest.Tournament!=null))return false;
+        if(tournament!=null && (own.Tournament!=tournament || guest.Tournament!=tournament || !tournament.Pair(user,other)))return false;
         let a=CaelumTrucoMatch.Get(user);let b=CaelumTrucazoMatch.Get(user);
         let c=CaelumTrucoMatch.Get(other);let d=CaelumTrucazoMatch.Get(other);
         if((a!=null && a.Active()) || (b!=null && b.Active())
             || (c!=null && c.Active()) || (d!=null && d.Active()))return false;
         let duel=CaelumCardDuel(Actor.Spawn("CaelumCardDuel",user.Pos,NO_REPLACE));
         if(duel==null)return false;
-        duel.AttachToOwner(user);duel.Participants[0]=user;duel.Participants[1]=other;
+        duel.AttachToOwner(user);duel.Participants[0]=user;duel.Participants[1]=other;duel.Tournament=tournament;
         duel.Table=table;duel.Serial=Max(own.LastSerial,guest.LastSerial);
         own.Duel=duel;guest.Duel=duel;own.Open=true;guest.Open=true;duel.AdvanceSerial();
         return true;
@@ -191,7 +198,7 @@ class CaelumCardDuel : Inventory
         for(int i=0;i<Count();i++)
         {
             let link=CaelumCardSeat.Read(Member(i));
-            if(link!=null && link.Duel==self){link.Duel=null;link.Open=false;}
+            if(link!=null && link.Duel==self){link.Duel=null;link.Open=Tournament!=null;}
         }
         if(Truco!=null){Truco.Visible=false;Truco.Duel=null;}
         if(Trucazo!=null){Trucazo.Visible=false;Trucazo.Duel=null;}
@@ -204,8 +211,10 @@ class CaelumCardDuel : Inventory
         if(operation==CANCEL){Release();return true;}
         if(!AllSeated()){Release();return false;}
         if(operation==SELECT_TEAM_SIZE && side==0){if(!SetTeamSize(argument))return false;}
-        else if(operation==SELECT_GAME && side==0 && Count()==2){Game=1-Game;TeamMode=false;Consequences=false;Wagers=null;Accepted=0;}
-        else if(operation==SELECT_CONSEQUENCES && side==0 && Game==GAME_TRUCAZO)
+        else if(operation==SELECT_GAME && side==0 && Count()==2 && Tournament==null){Game=1-Game;TeamMode=false;Ranked=false;Consequences=false;Wagers=null;Accepted=0;}
+        else if(operation==SELECT_RANKED && side==0 && Game==GAME_TRUCAZO && Tournament==null)
+        {Ranked=!Ranked;if(Ranked){Consequences=true;if(Wagers==null)Wagers=CaelumTrucazoWagers.Create(self);}Accepted=0;}
+        else if(operation==SELECT_CONSEQUENCES && side==0 && Game==GAME_TRUCAZO && !Ranked)
         {Consequences=!Consequences;if(Consequences && Wagers==null)Wagers=CaelumTrucazoWagers.Create(self);Accepted=0;}
         else if(operation==SELECT_FLOR && side==0 && Game==GAME_TRUCO){Flor=!Flor;Accepted=0;}
         else if(operation==SELECT_MAJORS && side==0 && Game==GAME_TRUCAZO){Majors=!Majors;Accepted=0;}
@@ -219,12 +228,13 @@ class CaelumCardDuel : Inventory
             if(Accepted==FullMask())
             {
                 bool deck=false;for(int i=0;i<Count();i++)if(CaelumTarotService.HasPhysicalDeck(Member(i)))deck=true;
+                if(Tournament!=null && Tournament.HasDeck())deck=true;
                 if(!deck)
                 {
                     Accepted=0;
                     for(int i=0;i<Count();i++)CaelumTarotService.Feedback(Member(i),"CA_TC_NEED_DECK");
                 }
-                else if(!Start()){Accepted=0;for(int i=0;i<Count();i++)CaelumTarotService.Feedback(Member(i),"CA_TC3_CHANGED");}
+                else if(!Start()){Accepted=0;String key=Ranked && !CaelumTrucazoCompetitive.Eligible(self)?"CA_TC4_LOADOUT_INVALID":"CA_TC3_CHANGED";for(int i=0;i<Count();i++)CaelumTarotService.Feedback(Member(i),key);}
             }
         }
         else return false;
@@ -232,6 +242,7 @@ class CaelumCardDuel : Inventory
     }
     bool Start()
     {
+        if(Ranked && !CaelumTrucazoCompetitive.Eligible(self))return false;
         if(Consequences && (Wagers==null || !Wagers.Reserve()))return false;
         if(Game==GAME_TRUCO)
         {
@@ -244,6 +255,7 @@ class CaelumCardDuel : Inventory
             Trucazo=CaelumTrucazoMatch.Get(Participants[0],true);
             Trucazo.Duel=self;Trucazo.Opponent=null;Trucazo.Visible=true;Trucazo.Start();
         }
+        if(Ranked)Competitive=CaelumTrucazoCompetitive.Create(self);
         Started=true;return true;
     }
     bool WagerRequest(CaelumPlayer user,int operation,int argument,int expectedSerial,int quantity=0)
@@ -293,13 +305,19 @@ class CaelumCardDuel : Inventory
             if(Finished() && AllClosed())Release();return true;
         }
         if(Suspended || Paused || !AllSeated())return false;
-        bool changed=Advanced.Act(side,operation,argument);if(changed){if(Wagers!=null)Wagers.Settle();AdvanceSerial();}return changed;
+        bool changed=Advanced.Act(side,operation,argument);if(changed){SettleResults();AdvanceSerial();}return changed;
+    }
+    void SettleResults()
+    {
+        if(Competitive!=null)Competitive.Settle();
+        if(Wagers!=null)Wagers.Settle();
+        if(Tournament!=null && Competitive!=null && Competitive.Applied && Wagers!=null && Wagers.Settled)Tournament.MatchEnded(self);
     }
     override void Tick()
     {
         Super.Tick();
         if(Advanced!=null)EnsureRoster();
-        if(Wagers!=null)Wagers.Settle();
+        SettleResults();
         // La desconexión conserva la mano para recuperación común, no es una derrota.
         if(!Connected()){if(!Started)Release();else if(!Suspended){Suspended=true;ResumeVotes=0;AdvanceSerial();}return;}
         if(Suspended || Finished())return;

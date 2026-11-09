@@ -153,7 +153,9 @@ class CaelumTrucazoGameMenu : ListMenu
         int votes=0,mask=g.Duel.Paused || g.Duel.Suspended?g.Duel.ResumeVotes:g.Duel.PauseVotes;
         for(int i=0;i<g.Count();i++)if((mask&(1<<i))!=0)votes++;
         if(votes>0)CaelumTrucazoMenu.Text(566,80,String.Format(L("CA_TC2_VOTES"),votes,g.Count()),Font.CR_GOLD);
-        if(Details==4)CaelumTrucazoMenu.Wrap(22,125,510,L(g.Duel.Consequences?"CA_TC3_FORFEIT":"CA_TC2_FORFEIT"));
+        if(g.Finished() && g.Duel.Competitive!=null && g.Duel.Competitive.Applied)
+            CaelumTrucazoMenu.Wrap(22,125,510,String.Format(L("CA_TC4_RATING_RESULT"),g.Duel.Competitive.Before[s],g.Duel.Competitive.Delta[s],CaelumTrucazoCompetitive.Rating(User())),Font.CR_GOLD);
+        else if(Details==4)CaelumTrucazoMenu.Wrap(22,125,510,L(g.Duel.Consequences?"CA_TC3_FORFEIT":"CA_TC2_FORFEIT"));
         else if(Details==2)CaelumTrucazoMenu.Wrap(22,125,510,L(String.Format("CA_TC2_EFFECT_%d",SelectedMajor)));
         else if(Details==5)
         {

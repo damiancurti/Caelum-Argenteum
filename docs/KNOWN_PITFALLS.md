@@ -6213,3 +6213,22 @@ from the verified runtime's KEYCONF instead, retaining one authoritative mapping
 The focused diagnostic uses two real admitted peers, native +user3 input,
 per-viewer page acknowledgements and native checksum checks. Physical-key author
 acceptance remains separate. See assets/validation_v5_12_7a.
+
+## CA-KP-207 - Verify which native checkpoint is actually loaded
+
+Status/evidence: VERIFIED, #446, 2026-11-09. Native profile autosave used save00
+before a tournament probe saved its between-round checkpoint in save01. Loading
+the first file recovered a valid earlier mid-round state; later reaching the
+expected round did not prove that round had been restored. Inspect native
+info.json title and saved phase before resuming actions, and retain the exact
+file hash/suffix. The strengthened eight-player test asserts the loaded phase,
+round and absent duel immediately on recovery, then advances to the champion.
+See assets/validation_v5_14_3/results.json; earlier mid-round runs remain labelled.
+
+SavegameManager.DoSave(0, title) can create successive numbered files; zero is
+the new-save menu entry, not a promise to overwrite save00. A fixture's latest
+common recovery must choose its latest complete native file. Card ListMenus
+consume F5 before its gameplay binding executes, so the author fixture uses
+host UiTick checkpoints after changes, at most once per10 seconds, and the
+launcher selects the newest file. This is isolated fixture behavior, not a
+change to campaign autosave or a claim of author acceptance.

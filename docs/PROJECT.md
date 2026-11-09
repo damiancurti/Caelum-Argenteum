@@ -1,6 +1,14 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.14.2** - 2026-11-09.
+Documentation version: **5.14.3** - 2026-11-09.
+
+## V5.14 candidate — ranked Trucazo (#446)
+
+5.14.3 implements casual/ranked modes, personal rating/ranks and local individual
+knockout tournaments. #443/#445/#444 remain separate commits and draft PR630/631/632.
+Focused native/profile/UI checks passed; SYSTEMS owns approved rules and
+HISTORY records evidence. The isolated author launcher and five pending checks
+are ready. Acceptance, integration and issue closure remain pending.
 
 ## V5.14.2 in progress — Trucazo stakes (#444)
 

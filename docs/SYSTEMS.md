@@ -1,6 +1,68 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.14.2** - 2026-11-09.
+Documentation version: **5.14.3** - 2026-11-09.
+
+## Trucazo casual, ranked and tournaments (5.14.3, #446)
+
+The author approved this proposal on 2026-11-08. The human table lobby offers
+practice (no consequences), casual (optional stakes and normal winner reputation)
+and ranked play. Argento practice remains unchanged. Every member explicitly
+accepts the mode, magic options, roster and any stakes before the match starts.
+Changing any of these clears consent. Ranked teams support1v1 through4v4.
+
+Casual retains each character's effective attributes and awakened Minor bonuses;
+its result never changes rating. Ranked snapshots the lowest effective
+Intelligence, Patience and Insight across all participants and uses those three
+values for every match seat. Team health remains the sum of these normalized
+Patience-squared contributions. World character attributes are never changed.
+Ranked disables awakened Minor bonuses. If Majors are enabled, every participant
+must select the same number, with the displayed limit equal to the lowest
+selected count. Each player chooses which owned Majors to retain within their
+personal capacity; unequal selections reject start before any stake debit.
+There is no silent truncation of another player's selection. Major effects,
+Insight questions and their consent rules otherwise retain #443's contract.
+
+The ranked lobby always offers a full rules view, including while Majors are
+selected. Persistent campaign characters are eligible; disposable standalone
+arena/hunt presets do not create a second personal ranking service.
+
+Personal rating is separate from Trucazo reputation and faction reputation.
+It starts at1000 and uses Elo K32, scale400 against the opposing team's mean
+pre-match rating. A winner receives round(32*(1-expected)), minimum1; each
+loser loses the same award, floored at0. Every teammate receives the same
+nominal delta; the displayed actual loss may be smaller at the floor. There is
+no design cap, season reset or repeated-opponent exclusion. Rating is stored
+as an integral-valued double to avoid the native signed-integer ceiling.
+An exactly-once saved ledger snapshots ratings at start and commits only a
+completed connected match. Explicit abandonment is defeat; disconnect is not.
+Native checkpoint recovery retains the ledger and cannot award a result twice.
+
+Ranks are Apprentice below1000, Player from1000, Expert from1200, Master from1400,
+and Grandmaster from1600. They grant recognition and tournament access only;
+there are no rank money/item prizes. The existing account/prizes view displays
+rating and rank. Revision1 initialization preserves an existing initialized
+rating. Old saves keep their old unranked mode. Rating and personal Major choices
+travel in the existing character profile, while an active duel or tournament
+blocks profile export and remains owned by the campaign checkpoint.
+
+Local individual knockout tournaments support4 or8 human entrants. Open requires
+rating1200; Masters requires1600. The proposal lists the initiator followed by
+eligible seated native slots, paired adjacently. Everybody approves the entire
+visible bracket before it begins; no random seed, fee or team tournament is
+introduced. Each current pair separately accepts its ranked match and optional
+stakes. Ranked minima apply to that pair, and each match starts with fresh full
+Trucazo health. A seated original entrant may supply the shared physical deck.
+After a result is settled, a member of the next pair opens its lobby. One winner
+advances per pairing until there is one champion; only actual match results
+grant normal rating/reputation. Closing a view does not cancel an active place.
+Eliminated entrants may detach; survivors preserve the bracket. A missing next
+participant or physical deck requires returning to the table, without an
+automatic walkover, substitute or timeout. The bracket, roster, results and
+next round serialize with the common checkpoint; transfer to another campaign
+requires first leaving the completed/eliminated tournament view.
+
+All roster/deck checks are bounded by eight native players. No world actor scan,
+external ranking service, new story NPC, art asset or campaign map is added.
 
 ## Trucazo stakes and reputation (5.14.2, #444)
 

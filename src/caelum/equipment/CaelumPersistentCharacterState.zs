@@ -9,6 +9,10 @@ class CaelumPersistentCharacterState : Inventory
     int ExternalProfileRevision,ProfileImportSerial,ProfileImportApplied;
     int ProfileVacancyRevision;
     int TrucazoRevision,TrucazoReputation;
+    int TrucazoRatingRevision;
+    double TrucazoRating;
+    void EnsureTrucazoRating()
+    {if(TrucazoRatingRevision<CaelumTrucazoData.RATING_REVISION){TrucazoRating=CaelumTrucazoData.RATING_INITIAL;TrucazoRatingRevision=CaelumTrucazoData.RATING_REVISION;}}
     void EnsureTrucazo()
     {if(TrucazoRevision<CaelumTrucazoData.WAGER_REVISION){TrucazoReputation=Clamp(TrucazoReputation,0,CaelumTrucazoData.REPUTATION_MAX);TrucazoRevision=CaelumTrucazoData.WAGER_REVISION;}}
     CaelumNarrativeCheckpoint NarrativeCheckpoint;

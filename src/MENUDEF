@@ -137,6 +137,7 @@ ListMenu "CaelumTrucazoGameMenu"
 }
 ListMenu "CaelumTrucazoWagerMenu" {Class "CaelumTrucazoWagerMenu"}
 ListMenu "CaelumTrucazoAccountMenu" {Class "CaelumTrucazoAccountMenu"}
+ListMenu "CaelumTrucazoTournamentMenu" {Class "CaelumTrucazoTournamentMenu"}
 
 ListMenu "CaelumTrucoMenu"
 {
@@ -297,3 +298,4 @@ ListMenu "CaelumStandaloneScoreMenu" { Class "CaelumStandaloneScoreMenu" }
 ListMenu "CaelumHuntRescueMenu" { Class "CaelumHuntRescueMenu" }
 ListMenu "CaelumTarotRaceMenu" { Class "CaelumTarotRaceMenu" }
 ListMenu "CaelumJusticeTravelMenu" { Class "CaelumJusticeTravelMenu" }
+ListMenu "CaelumTrucazoRankedMenu" { Class "CaelumTrucazoRankedMenu" }

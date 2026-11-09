@@ -6,19 +6,20 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.14.2.** Obtain and update the complete repository,
+**Current release: 5.14.3.** Obtain and update the complete repository,
 validate it, then rebuild with `run_dev.bat` as described below.
 
-V5.14 is in progress. Magical rules (#443) and teams up to4v4 (#445) are
-published separately in draft PR630/631. Native stakes, copper-value awards,
-personal reputation and persistent claims (#444) passed focused checks; HISTORY
-records the retained native teardown limitation.
-Ranked play/tournaments (#446) follow separately. The requested test terminal
-and author acceptance follow the complete version. See SYSTEMS and TASKS.
+V5.14 candidate: magical rules (#443), teams up to4v4 (#445), native stakes and
+persistent prizes (#444), and casual/ranked play with individual tournaments
+(#446). Earlier scopes are separate draft PR630/631/632. Focused native,
+profile and agent UI checks passed; SYSTEMS owns the rules and HISTORY records
+evidence/limitations. Author acceptance and integration remain pending.
+Run `powershell -NoProfile -ExecutionPolicy Bypass -File assets/validation_v5_14_3/author_terminal.ps1` for the isolated author scenes;
+[the author queue](pending_test.txt) keeps five checks with their originating issues.
 
 V5.13 is complete and author-accepted on 2026-11-01. All 13 manual checks passed,
 including the final Tarot, capture, awakening and menu corrections. The focused
-implementation PRs are merged; #439–442, #596–601, #614, #616 and #617 are closed. `pending_test.txt` is empty. [HISTORY](docs/HISTORY.md) retains the original
+implementation PRs are merged; #439–442, #596–601, #614, #616 and #617 are closed. The V5.13 author queue was cleared. [HISTORY](docs/HISTORY.md) retains the original
 release/check IDs, intermediate failures, corrections and native evidence.
 
 Integration metadata uses LF source hashes and pins the Tarot geometry inputs

@@ -1,6 +1,47 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.14.2** - 2026-11-09.
+Documentation version: **5.14.3** - 2026-11-09.
+
+## 5.14.3 — Ranked Trucazo and local tournaments (#446)
+
+Implements the 2026-11-08 approved casual/ranked proposal: match-only minimum
+attributes, equal personal Major counts, disabled ranked Minor bonuses, personal
+Elo/ranks and unanimous4/8-person individual brackets. SYSTEMS owns exact rules.
+Old unranked saves and Argento practice retain their prior contract. Personal
+rating/choices travel; active shared tournaments remain checkpoint-owned.
+
+assets/validation_v5_14_3/results.json records static validation, native hashes,
+per-peer assertions and four profile-boundary checks. Native practice/casual
+leave rating unchanged; ranked2/8-player checks cover initialization, consent,
+normalization, world-attribute isolation, team deltas, zero floor and once-only
+results. Common recovery and a completed-result reload preserve the ledger.
+Open4/Masters8 brackets cover threshold, all-human consent, each fresh match,
+fixed advancement, championship and no prizes. The exact between-round checkpoint
+is asserted before resumed play. A pre-#446 staked checkpoint stays unranked and
+settles/claims correctly. Argento's unchanged native regression passes12 checks.
+
+Native sync checks were clean in the passing runs. Tests used local GZDoom4.14.2
+at5% audio, unpaused in the background. Agent UI review exercised Spanish lobby,
+rules, stakes/wear, mouse acceptance and private-hand display; English tournament
+proposal/keyboard acceptance and common-checkpoint recovery were inspected.
+Final UI changes are limited to help, an always-accessible ranked-rules view and
+its localization/menu metadata; all authority, game, ranking, tournament and
+stake source bytes match the functional-test package. The final package compiled
+and its native between-round recovery passed after these UI changes.
+
+The isolated author terminal supplies separate scenarios and a common checkpoint
+after changes (at most once per10 seconds). Native card menus consume F5, so the
+launcher selects the latest saved file instead. Five outstanding checks remain
+in pending_test.txt, with their original issue/version IDs; no acceptance is claimed.
+
+The lobby now permits retrying a rejected request without requiring a state
+revision change; insufficient tournament enrollment must not trap menu controls.
+Early development compile/fixture failures remain in local build/issue446 logs.
+Native profile autosave occupied save00 before the requested tournament snapshot
+in save01. Earlier runs consequently recovered mid-round, and remain labelled
+as such; a strengthened check and explicit save01 recovery verify the intended
+between-round state before any resumed action. No failed evidence is discarded.
+No Internet or presentation-performance claim is made.
 
 ## 5.14.2 — Native Trucazo stakes and personal claims (#444)
 
