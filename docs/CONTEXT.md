@@ -1,11 +1,11 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.14.2** - 2026-11-09.
+Documentation version: **5.14.3** - 2026-11-09.
 
 **V5.14:** #443/5.14.0 PR630; #445/5.14.1 PR631; native/save passed.
-#444/5.14.2 passed; teardown:HISTORY. #446 next.
-Rules approved Nov8; Insight; copper-value change approved Nov9.
-Acceptance/terminal pending.
+#444/5.14.2 PR632; #446/5.14.3 passed. Evidence/limitations:HISTORY.
+Approved Nov8; Insight; Nov9 copper-change.
+Five checks pending; terminal ready.
 
 **V5.13/5.13.17 accepted2026-11-01:** all13 checks, including awakening.
 #439-442/#596-601/#614/#616/#617 merged/closed. HISTORY retains original

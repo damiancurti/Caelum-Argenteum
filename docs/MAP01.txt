@@ -1,6 +1,13 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.14.2** - 2026-11-09.
+Documentation version: **5.14.3** - 2026-11-09.
+
+## V5.14 card-service boundary (#443–446)
+
+Magical/team/staked/ranked human games and local tournaments use existing dining
+tables. They add no story characters, campaign map geometry or dialogue branch.
+The accepted Argento practice remains available through its existing dialogue.
+Isolated validation tables and seeded test holdings are not campaign content.
 
 ## Final author review boundary (#596)
 

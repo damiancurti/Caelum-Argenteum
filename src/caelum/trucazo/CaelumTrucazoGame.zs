@@ -89,6 +89,7 @@ class CaelumTrucazoGame : Object play
             for(int c=22;c<78;c++)seat.Cards.Awake[c]=CaelumTarotService.HasTarotCard(record,c);
             game.Seats.Push(seat);game.Maximum[i%2]+=seat.Cards.MaximumHealth;
         }
+        CaelumTrucazoCompetitive.Normalize(game);
         for(int t=0;t<2;t++)game.Health[t]=game.Maximum[t];
         game.Mano=Random[CaelumTrucazo](0,game.Count()-1);game.Deal();game.CheckEnd();return game;
     }

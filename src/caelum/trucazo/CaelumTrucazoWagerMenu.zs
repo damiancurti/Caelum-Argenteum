@@ -141,6 +141,8 @@ class CaelumTrucazoAccountMenu : ListMenu
         let record=user==null?null:CaelumPersistentCharacterState(user.FindInventory('CaelumPersistentCharacterState'));
         CaelumTrucazoMenu.Text(22,24,CaelumCardTableMenu.L("CA_TC3_ACCOUNT"),Font.CR_GOLD);
         CaelumTrucazoMenu.Wrap(22,90,730,String.Format(CaelumCardTableMenu.L("CA_TC3_BALANCE"),record==null?0:record.TrucazoReputation,claim==null?0:claim.Copper,claim==null?0:claim.Pending()));
+        double rating=CaelumTrucazoCompetitive.Rating(user);
+        CaelumTrucazoMenu.Wrap(22,130,730,String.Format(CaelumCardTableMenu.L("CA_TC4_RATING"),rating,CaelumCardTableMenu.L(String.Format("CA_TC4_RANK_%d",CaelumTrucazoData.Rank(rating)))),Font.CR_GOLD);
         CaelumTrucazoMenu.Wrap(22,170,730,CaelumCardTableMenu.L(user==null?"CA_TC3_LOAD":"CA_TC3_CLAIM_HELP"));
         if(claim!=null && claim.Status!="")CaelumTrucazoMenu.Wrap(22,260,730,CaelumCardTableMenu.L(claim.Status),Font.CR_YELLOW);
         if(claim!=null)

@@ -9,6 +9,20 @@ class CaelumTrucazoData : Object
     const REPUTATION_MAX=1000;
     // Límite técnico de las transacciones enteras nativas, no tope de saldo.
     const MAX_COPPER_OPERATION=2147483647;
+    const RATING_REVISION=1;
+    const RATING_INITIAL=1000;
+    const RATING_K=32;
+    const RATING_SCALE=400;
+    const RATING_MIN_DELTA=1;
+    const RATING_FLOOR=0;
+    const RATING_EXPERT=1200;
+    const RATING_MASTER=1400;
+    const RATING_GRANDMASTER=1600;
+    const TOURNAMENT_REVISION=1;
+    static clearscope int Rank(double rating)
+    {return rating<RATING_INITIAL?0:rating<RATING_EXPERT?1:rating<RATING_MASTER?2:rating<RATING_GRANDMASTER?3:4;}
+    static clearscope int TournamentThreshold(int tier)
+    {return tier==0?RATING_EXPERT:RATING_GRANDMASTER;}
     const EMPRESS_HEAL=10;
     const EMPEROR_STRENGTH=1;
     const LOVERS_ENVIDO=2;
