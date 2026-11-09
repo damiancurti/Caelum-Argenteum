@@ -9,13 +9,15 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 **Current release: 5.14.3.** Obtain and update the complete repository,
 validate it, then rebuild with `run_dev.bat` as described below.
 
-V5.14 candidate: magical rules (#443), teams up to4v4 (#445), native stakes and
+V5.14 is complete and author-accepted on2026-11-09. All five manual checks
+passed: magical rules/Insight (#443), teams up to4v4 (#445), native stakes and
 persistent prizes (#444), and casual/ranked play with individual tournaments
-(#446). Earlier scopes are separate draft PR630/631/632. Focused native,
-profile and agent UI checks passed; SYSTEMS owns the rules and HISTORY records
-evidence/limitations. Author acceptance and integration remain pending.
-Run `powershell -NoProfile -ExecutionPolicy Bypass -File assets/validation_v5_14_3/author_terminal.ps1` for the isolated author scenes;
-[the author queue](pending_test.txt) keeps five checks with their originating issues.
+(#446). PR630–633 are merged into main with their original commits; issues
+#443–446 are closed. The release remains5.14.3 and `pending_test.txt` is empty.
+[HISTORY](docs/HISTORY.md) retains each accepted check's original version/issue,
+confirmation date and prior native evidence/limitations. SYSTEMS owns the rules.
+The isolated scenes remain reproducible with
+`powershell -NoProfile -ExecutionPolicy Bypass -File assets/validation_v5_14_3/author_terminal.ps1`.
 
 V5.13 is complete and author-accepted on 2026-11-01. All 13 manual checks passed,
 including the final Tarot, capture, awakening and menu corrections. The focused

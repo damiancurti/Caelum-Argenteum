@@ -2,10 +2,9 @@
 
 Documentation version: **5.14.3** - 2026-11-09.
 
-**V5.14:** #443/5.14.0 PR630; #445/5.14.1 PR631; native/save passed.
-#444/5.14.2 PR632; #446/5.14.3 passed. Evidence/limitations:HISTORY.
-Approved Nov8; Insight; Nov9 copper-change.
-Five checks pending; terminal ready.
+**V5.14/5.14.3 accepted2026-11-09:** all5 checks passed.
+#443–446 closed; PR630–633 merged into main with original commits.
+HISTORY retains IDs/versions, confirmation and native limitations. Queue empty.
 
 **V5.13/5.13.17 accepted2026-11-01:** all13 checks, including awakening.
 #439-442/#596-601/#614/#616/#617 merged/closed. HISTORY retains original

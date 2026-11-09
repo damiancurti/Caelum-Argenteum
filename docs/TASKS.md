@@ -2,23 +2,19 @@
 
 Documentation version: **5.14.3** - 2026-11-09.
 
-## V5.14 implementation — #443 through #446
+## V5.14 accepted and integrated — 2026-11-09 (#443–446)
 
-The author approved the complete proposed rules on 2026-11-08, including
-redefined Majors and Insight queries; fixed equal teams, shared Patience-squared
-health, individual turns/calls and unanimous pause; wagers/reputation; and
-casual/ranked services and individual tournaments. Implementation stays in
-separate issue branches, commits, tests and PRs. #443 (5.14.0) passed static,
-native rules/integration/save checks and agent UI inspection; see HISTORY and
-assets/validation_v5_14_0/results.json. #445 (5.14.1) passed team/native checks;
-assets/validation_v5_14_1/results.json retains its separate evidence. #444 (5.14.2) passed focused native stakes/claims/save/travel and profile checks;
-assets/validation_v5_14_2 and HISTORY retain results and native limitations. #446 (5.14.3)
-implements casual/ranked modes and local tournaments; native/profile/UI evidence
-is in assets/validation_v5_14_3. PR630/631/632 preserve the earlier issue boundaries.
-Only the final actionable author scenes belong in pending_test.txt. The requested
-visible test terminal is delivered when all four scopes are implemented/tested;
-author acceptance, merge and closure are not implied by this design approval.
+The author confirmed every outstanding test passed and explicitly requested
+merging and issue closure. CA443-01, CA445-01, CA444-01, CA446-01 and CA446-02
+are accepted with their originating versions/issues recorded in HISTORY.
+PR630/631/632/633 are merged into main with the four implementation commits
+preserved; issues #443–446 are closed. Release5.14.3 is unchanged.
 
+Separate static/native evidence remains in assets/validation_v5_14_0 through
+assets/validation_v5_14_3, including retained failures and native limitations.
+This closure changes documentation only; it reuses the tested/accepted runtime.
+The author queue is empty. No V5.14 implementation, review or acceptance remains;
+future work follows the existing roadmap.
 
 ## V5.13 author acceptance — 2026-11-01 (#596)
 

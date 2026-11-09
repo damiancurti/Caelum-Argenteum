@@ -2,37 +2,25 @@
 
 Documentation version: **5.14.3** - 2026-11-09.
 
-## V5.14 candidate — ranked Trucazo (#446)
+## V5.14 author acceptance — 2026-11-09 (#443–446)
 
-5.14.3 implements casual/ranked modes, personal rating/ranks and local individual
-knockout tournaments. #443/#445/#444 remain separate commits and draft PR630/631/632.
-Focused native/profile/UI checks passed; SYSTEMS owns approved rules and
-HISTORY records evidence. The isolated author launcher and five pending checks
-are ready. Acceptance, integration and issue closure remain pending.
+The author confirmed all five outstanding checks passed and requested merging
+the PRs and closing the issues. The accepted assembled release is5.14.3; this
+acceptance does not increment its version. All four implementation PRs are
+merged into main with their original commit ancestry, and all four issues are closed.
 
-## V5.14.2 in progress — Trucazo stakes (#444)
+| Issue / original version | Accepted scope | Merged PR | Author checks |
+| --- | --- | --- | --- |
+| #443 / 5.14.0 | 22 Major effects, Insight queries and private views | #630 | CA443-01 |
+| #445 / 5.14.1 | Fixed1v1–4v4 teams, shared health, individual authority and unanimous pause/recovery | #631 | CA445-01 |
+| #444 / 5.14.2 | Native stakes, copper-value change/allocation, reputation and persistent claims | #632 | CA444-01 |
+| #446 / 5.14.3 | Casual/ranked normalization, personal rating and individual tournaments | #633 | CA446-01, CA446-02 |
 
-Native custody, unanimous stake/allocation approval, copper-value settlement,
-personal reputation and persistent capacity-limited claims implement the
-approved #444 rules. #443 and #445 are published separately in PR630/631.
-Focused static/native/save/travel/profile checks passed; #446 follows separately.
-The final author terminal and acceptance remain pending the complete version.
-
-## V5.14.1 in progress — Trucazo teams (#445)
-
-The approved team rules passed native size, authority, damage, pause/save and
-disconnect checks for1v1 through4v4; see HISTORY. #443 is separately
-published in draft PR630. #444 and #446 follow as focused patches. Author
-acceptance remains pending the complete V5.14 test terminal.
-
-## V5.14 in progress — magical Trucazo (#443)
-
-5.14.0 adds the separately agreed magical table ruleset with 22 authored Major
-effects and Insight-based private queries. SYSTEMS owns the approved contract.
-Static/native checks and agent UI inspection are recorded in HISTORY; author acceptance is
-pending. Teams, wagers and ranked/tournament services retain separate issues
-#445, #444 and #446. V5.13 remains the previously accepted baseline below.
-
+SYSTEMS retains the approved contracts. HISTORY records each original check ID,
+version/issue, result and confirmation date. `pending_test.txt` is empty; no
+V5.14 implementation or acceptance task remains. Earlier isolated engine evidence
+and CA-KP-200/206 limitations remain distinct from this manual acceptance.
+The established later-version roadmap is unchanged.
 
 ## V5.13 author acceptance — 2026-11-01 (#596)
 
