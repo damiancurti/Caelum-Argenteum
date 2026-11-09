@@ -1,6 +1,13 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.14.0** - 2026-11-08.
+Documentation version: **5.14.1** - 2026-11-09.
+
+## V5.14.1 in progress — Trucazo teams (#445)
+
+The approved team rules passed native size, authority, damage, pause/save and
+disconnect checks for1v1 through4v4; see HISTORY. #443 is separately
+published in draft PR630. #444 and #446 follow as focused patches. Author
+acceptance remains pending the complete V5.14 test terminal.
 
 ## V5.14 in progress — magical Trucazo (#443)
 

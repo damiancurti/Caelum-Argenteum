@@ -2,6 +2,8 @@
 class CaelumTrucazoData : Object
 {
     const REVISION=1;
+    const ROSTER_REVISION=1;
+    const MAX_SEATS=8;
     const EMPRESS_HEAL=10;
     const EMPEROR_STRENGTH=1;
     const LOVERS_ENVIDO=2;

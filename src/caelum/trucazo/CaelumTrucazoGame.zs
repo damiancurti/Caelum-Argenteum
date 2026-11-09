@@ -48,7 +48,7 @@ class CaelumTrucazoChoice : Inventory
 class CaelumTrucazoGame : Object play
 {
     enum PhaseKind { PREPARATION, PLAYING, TRICK_RESULT, HAND_RESULT, MATCH_DONE }
-    enum ExtraAction { PASS=100, AUTO_PASS, SENSE, ANSWER_YES, ANSWER_NO, MAJOR_BASE=200 }
+    enum ExtraAction { PASS=100, AUTO_PASS, SENSE, ANSWER_YES, ANSWER_NO, MAJOR_BASE=200, PAUSE_VOTE=300 }
     int Revision,Serial,Phase,Mano,Turn,Trick,HandNumber,Winner,HandWinner;
     CaelumCardDuel Duel;
     Array<CaelumTrucazoSeatState> Seats;
@@ -315,6 +315,7 @@ class CaelumTrucazoGame : Object play
     {double n=0,total=0;for(int i=0;i<Count();i++)if(Team(i)==team){n++;total+=Seats[i].Cards.Intelligence;}return total/Max(1.0,n);}
     void FinishHand(int victor,int award)
     {
+        if(Phase==HAND_RESULT || Phase==MATCH_DONE)return;
         if(TrucoValue>1 && HasEffect(1-victor,14))award=Max(1,award-CaelumTrucazoData.TEMPERANCE_POINTS);
         Points[victor]+=award;HandWinner=victor;
         for(int t=0;t<2;t++)

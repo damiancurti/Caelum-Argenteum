@@ -75,10 +75,15 @@ class CaelumCardTableMenu : ListMenu
         {
             if(duel.Side(user)==0)
             {
-                Add(CaelumCardDuel.SELECT_GAME,L(duel.Game==CaelumCardDuel.GAME_TRUCO?"CA_CARD_SELECT_TRUCO":"CA_CARD_SELECT_TRUCAZO"));
+                if(duel.Count()==2)Add(CaelumCardDuel.SELECT_GAME,L(duel.Game==CaelumCardDuel.GAME_TRUCO?"CA_CARD_SELECT_TRUCO":"CA_CARD_SELECT_TRUCAZO"));
                 if(duel.Game==CaelumCardDuel.GAME_TRUCO)Add(CaelumCardDuel.SELECT_FLOR,L(duel.Flor?"CA_TT_FLOR_ON":"CA_TT_FLOR_OFF"));
                 else
-                {Add(CaelumCardDuel.SELECT_MAJORS,L(duel.Majors?"CA_TC2_MAJORS_ON":"CA_TC2_MAJORS_OFF"));Add(CaelumCardDuel.SELECT_SENSES,L(duel.Senses?"CA_TC2_SENSES_ON":"CA_TC2_SENSES_OFF"));}
+                {
+                    Add(CaelumCardDuel.SELECT_MAJORS,L(duel.Majors?"CA_TC2_MAJORS_ON":"CA_TC2_MAJORS_OFF"));Add(CaelumCardDuel.SELECT_SENSES,L(duel.Senses?"CA_TC2_SENSES_ON":"CA_TC2_SENSES_OFF"));
+                    int available=duel.Available();
+                    for(int n=2;n<=Min(CaelumTrucazoData.MAX_SEATS,available);n+=2)
+                        if(!duel.TeamMode || duel.Count()!=n)Add(CaelumCardDuel.SELECT_TEAM_SIZE,String.Format(L("CA_TC2_SIZE"),n/2,n/2),n);
+                }
             }
             if(duel.Game==CaelumCardDuel.GAME_TRUCAZO && duel.Majors)
             {
@@ -131,25 +136,32 @@ class CaelumCardTableMenu : ListMenu
         {
             CaelumTrucoMenu.Text(22,130,L(duel.Game==CaelumCardDuel.GAME_TRUCO?"CA_CARD_TRUCO":"CA_CARD_TRUCAZO"),Font.CR_GOLD);
             if(duel.Game==CaelumCardDuel.GAME_TRUCO)CaelumTrucoMenu.Text(22,154,L(duel.Flor?"CA_CARD_WITH_FLOR":"CA_CARD_WITHOUT_FLOR"));
-            CaelumTrucoMenu.Text(22,180,String.Format(L("CA_CARD_ACCEPTED"),int((duel.Accepted&1)!=0)+int((duel.Accepted&2)!=0)));
+            int accepted=0;for(int i=0;i<duel.Count();i++)if((duel.Accepted&(1<<i))!=0)accepted++;
+            CaelumTrucoMenu.Text(22,180,String.Format(L("CA_TC2_CONSENTS"),accepted,duel.Count()));
+            if(duel.Game==CaelumCardDuel.GAME_TRUCAZO)CaelumTrucoMenu.Text(22,154,String.Format(L("CA_TC2_SIZE"),duel.Count()/2,duel.Count()/2));
         }
         if(duel!=null && duel.Game==CaelumCardDuel.GAME_TRUCAZO && duel.Majors)
         {
             CaelumTrucoMenu.Wrap(300,180,450,L("CA_TC2_SELECT_HELP"));
             CaelumTrucoMenu.Wrap(300,230,450,L(String.Format("CA_TC2_EFFECT_%d",MajorCursor)));
+        }
+        if(duel!=null)
+        {
             for(int i=0;i<duel.Count();i++)
             {
                 let choice=CaelumTrucazoChoice.Read(duel.Member(i));
-                String chosen=CaelumTrucazoGameMenu.Person(i)..": ";
-                for(int c=0;c<22;c++)if(choice!=null && choice.Selected[c])chosen=chosen..CaelumTarotArt.DisplayName(c).." / ";
-                CaelumTrucoMenu.Wrap(300,350+i*70,450,chosen,Font.CR_GOLD);
+                String chosen=String.Format(L("CA_TC2_MEMBER"),i+1,duel.MemberSlot(i)+1,i%2==0?"A":"B");
+                if(duel.Game==CaelumCardDuel.GAME_TRUCAZO && duel.Majors)
+                    for(int c=0;c<22;c++)if(choice!=null && choice.Selected[c])chosen=chosen.." / "..CaelumTarotArt.DisplayName(c);
+                CaelumTrucoMenu.Wrap(300,310+i*34,450,chosen,Font.CR_GOLD);
             }
         }
         if(duel!=null && duel.Game==CaelumCardDuel.GAME_TRUCAZO)
         {CaelumTrucoMenu.Text(300,130,L(duel.Majors?"CA_TC2_MAJORS_ON":"CA_TC2_MAJORS_OFF"));CaelumTrucoMenu.Text(300,154,L(duel.Senses?"CA_TC2_SENSES_ON":"CA_TC2_SENSES_OFF"));}
         Choices();
         if(duel==null && Actions.Size()==1)CaelumTrucoMenu.Text(22,180,L("CA_CARD_NO_PARTNER"));
-        for(int i=0;i<Actions.Size();i++)
-            CaelumTrucoMenu.Text(22,230+i*27,(i==Focus?"> ":"  ")..Labels[i],i==Focus?Font.CR_GOLD:Font.CR_WHITE);
+        int first=(Focus/11)*11;
+        for(int i=first;i<Min(first+11,int(Actions.Size()));i++)
+            CaelumTrucoMenu.Text(22,230+(i-first)*27,(i==Focus?"> ":"  ")..Labels[i],i==Focus?Font.CR_GOLD:Font.CR_WHITE);
     }
 }

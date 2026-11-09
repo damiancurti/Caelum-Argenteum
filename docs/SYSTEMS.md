@@ -1,6 +1,60 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.14.0** - 2026-11-08.
+Documentation version: **5.14.1** - 2026-11-09.
+
+## Trucazo fixed teams (5.14.1, #445)
+
+The author approved these rules on 2026-11-08. Human Trucazo supports1v1,
+2v2,3v3 and4v4 through the table's team option. Ordinary Truco and existing
+legacy matches retain their two-seat contract. A team lobby must have enough
+actual seated players at the same table; physical furniture collision remains
+authoritative. The existing full-size large table supports the eight-player
+validation scene. A portable table's nominal chair count alone does not prove
+that eight player bodies fit simultaneously.
+
+The proposed ordered roster keeps the initiator and invited rival first, then
+adds eligible seated native player slots in ascending order. Visible logical
+seats alternate A/B. Everybody sees the roster, team assignment, magic options
+and Major selections before consenting. Changing size or any option clears all
+consent. A participant can leave an unstarted proposal; nobody is committed by
+an invitation alone. Once started, the roster is fixed until the match ends:
+no substitutes, captain or team-only communication. Teammates' hands and private
+Insight/Hermit answers remain inaccessible through supported UI. Native
+lockstep's existing privacy limitations still apply.
+
+Each member plays their own card in circular seat order, beginning with mano;
+the strongest card wins the trick for its team and leads the next trick.
+Equal strength follows mano priority. Two tricks win the hand. The team's
+Envido is its best individual value; equal team values favor mano's team.
+The next opposing seat answers a call; nobody selects a teammate's card.
+The right to raise accepted Truco belongs to the responding team, subject to
+the current individual turn. Existing Envido/Truco response precedence remains.
+
+Initial shared health is the sum of each member's effective Patience squared,
+snapshotted at start. Each hand preserves remaining health and this maximum.
+Attack and defense are sums of each member's row value; the existing damage
+formula uses the attacking team's mean effective Intelligence. Both team's
+damage applies simultaneously once at hand closure. The #443 modifiers apply
+at their documented individual/team scope, with the same rounding and
+no-duplicate-effect rules. A repeated hand-result request cannot apply damage
+again. Team health never damages world HP.
+
+Pause and resume each require every fixed member's vote, which can be
+withdrawn until unanimous. Partial votes do not change the current hand.
+Pause freezes card actions, calls and effects; it does not pause the world.
+Closing the paused view preserves the match; use the same table to reopen it.
+Disconnect or loss of a valid occupied seat suspends the match and clears
+incomplete resume votes without settling a loss. Native rejoin uses the common
+checkpoint and existing profile/slot identity checks. Once all original members
+are connected and seated at the same table, unanimous resume preserves the
+exact reserve, hands, deck, turn, pending responses and saved votes. Abrupt host
+loss still rolls back to the last complete common checkpoint; there is no
+live-server replacement or automatic forfeit. Wagers are a separate #444 patch.
+
+Roster schema1 is additive: the original two participant fields remain intact,
+and old magical two-seat saves initialize the roster idempotently without
+redealing or changing health. Old ordinary matches are not converted. Runtime
+checks inspect at most eight typed members/player slots, never global actors.
 
 ## Magical Trucazo ruleset (5.14.0, #443)
 
