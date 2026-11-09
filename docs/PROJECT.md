@@ -1,6 +1,14 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.14.1** - 2026-11-09.
+Documentation version: **5.14.2** - 2026-11-09.
+
+## V5.14.2 in progress — Trucazo stakes (#444)
+
+Native custody, unanimous stake/allocation approval, copper-value settlement,
+personal reputation and persistent capacity-limited claims implement the
+approved #444 rules. #443 and #445 are published separately in PR630/631.
+Focused static/native/save/travel/profile checks passed; #446 follows separately.
+The final author terminal and acceptance remain pending the complete version.
 
 ## V5.14.1 in progress — Trucazo teams (#445)
 

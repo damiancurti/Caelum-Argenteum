@@ -6169,6 +6169,28 @@ owner's shared Visible field: one participant closing a result must regain their
 rest/movement controls while the other still sees the result. Table availability
 is a read-only prediction-safe query; Interact remains authority-checked.
 
+## CA-KP-206 - Hidden inventory custody still needs safe native travel links
+
+Status/evidence: VERIFIED, #444, 2026-11-09. A hidden native actor holding
+claimable items passed save/reload and same-map claims, but retaining
+NOINTERACTION without NOSECTOR across STAT_TRAVELLING produced a native
+C0000005 write to freed-marker address0xbeefcafe when entering another map.
+The crash dialog was inspected; the console log ended at the destination title
+without a script error. A zero error count is therefore insufficient evidence.
+
+The corrected vault uses NOBLOCKMAP/NOSECTOR, clears the old NOINTERACTION flag
+and applies A_ChangeLinkFlags(1,1) before unlinking and transferring. Its owned
+inventory follows the existing chest-cargo travel pattern, including child
+PreTravelled/Travelled callbacks and saved TIDs. Native four-peer recovery from
+the earlier checkpoint then reached the destination, retained the exact
+equipment reference/size/wear and food lots, and claimed the awards once.
+Vault following also checks actual connected ownership, rejects prediction and
+avoids unchanged-position relinks. Later eight-peer shutdown/access-violation
+and checksum failures are retained separately; a passing retry is not proof
+that the underlying intermittent engine limitation CA-KP-200 is resolved.
+See assets/validation_v5_14_2. This is an isolated engine result, not author
+acceptance or a general claim that every nested container combination was tested.
+
 ## CA-KP-205 - Dead spirits need the dialogue page authority exception
 
 Status/evidence: VERIFIED, #602, 2026-10-31. Palomo can start a native

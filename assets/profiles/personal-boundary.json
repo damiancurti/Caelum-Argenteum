@@ -4,6 +4,7 @@
   "native_conversation": {"reference": "conversionnpc", "flags": "flags5", "active_mask": 536870912},
   "author_scope": "Identity, attributes, abilities, Tarot, inventory, money and personal progress travel. Maps, NPCs, shops and property ownership remain campaign-owned.",
   "root_bases": [
+    "CaelumTrucazoClaims",
     "CaelumPersistentCharacterState", "CaelumEquipmentItem", "CaelumConsumableItem",
     "CaelumSpecialInventoryItem", "CaelumChestCargo", "CaelumCarbineAmmo",
     "CaelumArrowAmmo", "CaelumBoltAmmo", "CaelumWeightedKey", "Weapon", "BasicArmor", "HexenArmor",
@@ -27,10 +28,13 @@
     "CaelumStarCargo": {"PendingDrop": [1]}
   },
   "transfer_blocked_inventory_references": {
+    "CaelumCardSeat": ["Duel"],
+    "CaelumTrucazoClaims": ["Reservation"],
     "CaelumSunCargo": ["Body"],
     "CaelumAutomatonLink": ["Body"]
   },
   "owned_actor_edges": {
+    "CaelumTrucazoClaims": ["Vault"],
     "CaelumChestCargo": ["Chest"],
     "CaelumRestFurnitureItem": ["Body"],
     "CaelumDiningSetItem": ["Table"],

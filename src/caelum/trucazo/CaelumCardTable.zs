@@ -57,7 +57,7 @@ class CaelumCardSeat : Inventory
 
 class CaelumCardDuel : Inventory
 {
-    enum LobbyAction { SELECT_GAME, SELECT_FLOR, CONSENT, CANCEL, SELECT_MAJORS, SELECT_SENSES, SELECT_MAJOR, SELECT_TEAM_SIZE };
+    enum LobbyAction { SELECT_GAME, SELECT_FLOR, CONSENT, CANCEL, SELECT_MAJORS, SELECT_SENSES, SELECT_MAJOR, SELECT_TEAM_SIZE, SELECT_CONSEQUENCES };
     enum GameKind { GAME_TRUCO, GAME_TRUCAZO };
     CaelumPlayer Participants[2];
     // Las referencias originales se conservan para guardados y partidas previas.
@@ -66,6 +66,8 @@ class CaelumCardDuel : Inventory
     Array<String> RosterProfiles;
     int RosterRevision,PauseVotes,ResumeVotes;
     bool TeamMode,Paused;
+    bool Consequences;
+    CaelumTrucazoWagers Wagers;
     CaelumDiningTable Table;
     CaelumTrucoMatch Truco;
     CaelumTrucazoMatch Trucazo;
@@ -139,6 +141,7 @@ class CaelumCardDuel : Inventory
         for(int i=0;i<Count();i++)
         {let link=CaelumCardSeat.Read(Member(i));if(link!=null && link.Duel==self){link.LastSerial=Max(link.LastSerial,Serial)+1;link.Duel=null;link.Open=false;}}
         Roster.Copy(chosen);RosterSlots.Clear();RosterProfiles.Clear();RosterRevision=CaelumTrucazoData.ROSTER_REVISION;EnsureRoster();TeamMode=true;Accepted=0;
+        if(Wagers!=null)Wagers=CaelumTrucazoWagers.Create(self);
         for(int i=0;i<Count();i++){let link=CaelumCardSeat.Get(Member(i));Serial=Max(Serial,link.LastSerial);link.Duel=self;link.Open=true;}
         return true;
     }
@@ -183,6 +186,7 @@ class CaelumCardDuel : Inventory
     }
     void Release()
     {
+        if(Wagers!=null && Wagers.Reserved && !Wagers.Settled)return;
         AdvanceSerial();
         for(int i=0;i<Count();i++)
         {
@@ -200,7 +204,9 @@ class CaelumCardDuel : Inventory
         if(operation==CANCEL){Release();return true;}
         if(!AllSeated()){Release();return false;}
         if(operation==SELECT_TEAM_SIZE && side==0){if(!SetTeamSize(argument))return false;}
-        else if(operation==SELECT_GAME && side==0 && Count()==2){Game=1-Game;TeamMode=false;Accepted=0;}
+        else if(operation==SELECT_GAME && side==0 && Count()==2){Game=1-Game;TeamMode=false;Consequences=false;Wagers=null;Accepted=0;}
+        else if(operation==SELECT_CONSEQUENCES && side==0 && Game==GAME_TRUCAZO)
+        {Consequences=!Consequences;if(Consequences && Wagers==null)Wagers=CaelumTrucazoWagers.Create(self);Accepted=0;}
         else if(operation==SELECT_FLOR && side==0 && Game==GAME_TRUCO){Flor=!Flor;Accepted=0;}
         else if(operation==SELECT_MAJORS && side==0 && Game==GAME_TRUCAZO){Majors=!Majors;Accepted=0;}
         else if(operation==SELECT_SENSES && side==0 && Game==GAME_TRUCAZO){Senses=!Senses;Accepted=0;}
@@ -218,26 +224,37 @@ class CaelumCardDuel : Inventory
                     Accepted=0;
                     for(int i=0;i<Count();i++)CaelumTarotService.Feedback(Member(i),"CA_TC_NEED_DECK");
                 }
-                else Start();
+                else if(!Start()){Accepted=0;for(int i=0;i<Count();i++)CaelumTarotService.Feedback(Member(i),"CA_TC3_CHANGED");}
             }
         }
         else return false;
         AdvanceSerial();return true;
     }
-    void Start()
+    bool Start()
     {
+        if(Consequences && (Wagers==null || !Wagers.Reserve()))return false;
         if(Game==GAME_TRUCO)
         {
             Truco=CaelumTrucoMatch.Get(Participants[0],true);
             Truco.Duel=self;Truco.Opponent=null;Truco.WithFlor=Flor;Truco.Visible=true;Truco.Start();
         }
-        else if(TeamMode || Majors || Senses){EnsureRoster();Advanced=CaelumTrucazoGame.Create(self);}
+        else if(Consequences || TeamMode || Majors || Senses){EnsureRoster();Advanced=CaelumTrucazoGame.Create(self);}
         else
         {
             Trucazo=CaelumTrucazoMatch.Get(Participants[0],true);
             Trucazo.Duel=self;Trucazo.Opponent=null;Trucazo.Visible=true;Trucazo.Start();
         }
-        Started=true;
+        Started=true;return true;
+    }
+    bool WagerRequest(CaelumPlayer user,int operation,int argument,int expectedSerial,int quantity=0)
+    {
+        int side=Side(user);let link=CaelumCardSeat.Read(user);
+        if(side<0 || link==null || !link.Open || link.Duel!=self || Started || !Consequences || Wagers==null
+            || expectedSerial!=Serial || Suspended || !Connected() || !AllSeated())return false;
+        bool changed=Wagers.Edit(side,operation,argument,quantity);
+        if(changed && operation!=CaelumTrucazoWagers.REFRESH)Accepted=0;
+        let view=CaelumTrucazoWagerView.Refresh(user);if(view!=null)view.Status=changed?"":"CA_TC3_CHANGED";
+        AdvanceSerial();return changed;
     }
     bool Dispatch(CaelumPlayer user,int requestedGame,int operation,int index,int expectedSerial)
     {
@@ -276,12 +293,13 @@ class CaelumCardDuel : Inventory
             if(Finished() && AllClosed())Release();return true;
         }
         if(Suspended || Paused || !AllSeated())return false;
-        bool changed=Advanced.Act(side,operation,argument);if(changed)AdvanceSerial();return changed;
+        bool changed=Advanced.Act(side,operation,argument);if(changed){if(Wagers!=null)Wagers.Settle();AdvanceSerial();}return changed;
     }
     override void Tick()
     {
         Super.Tick();
         if(Advanced!=null)EnsureRoster();
+        if(Wagers!=null)Wagers.Settle();
         // La desconexión conserva la mano para recuperación común, no es una derrota.
         if(!Connected()){if(!Started)Release();else if(!Suspended){Suspended=true;ResumeVotes=0;AdvanceSerial();}return;}
         if(Suspended || Finished())return;

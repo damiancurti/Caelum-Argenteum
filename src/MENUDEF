@@ -31,6 +31,7 @@ ListMenu "CaelumSinglePlayerMenu"
     TextItem "$CA_MENU_SAVE_CHARACTER", "g", "SaveGameMenu"
     TextItem "$CA_NAV_TITLE", "e", "CaelumNavigationMenu"
     TextItem "$CA_NOTE_TITLE", "m", "CaelumMapNoteMenu"
+    TextItem "$CA_TC3_ACCOUNT", "t", "CaelumTrucazoAccountMenu"
 }
 
 ListMenu "CaelumMultiplayerMenu"
@@ -40,6 +41,7 @@ ListMenu "CaelumMultiplayerMenu"
     TextItem "$CA_MENU_STANDALONE", "i", "CaelumStandaloneMenu"
     TextItem "$CA_ARENA_TITLE", "c", "CaelumArenaMenu"
     TextItem "$CA_MATCH_STANDINGS", "p", "CaelumStandaloneScoreMenu"
+    TextItem "$CA_TC3_ACCOUNT", "t", "CaelumTrucazoAccountMenu"
 }
 
 OptionValue "CaelumMatchRoles" { 0, "$CA_MATCH_HOST" 1, "$CA_MATCH_JOIN" }
@@ -133,6 +135,8 @@ ListMenu "CaelumTrucazoGameMenu"
 {
     Class "CaelumTrucazoGameMenu"
 }
+ListMenu "CaelumTrucazoWagerMenu" {Class "CaelumTrucazoWagerMenu"}
+ListMenu "CaelumTrucazoAccountMenu" {Class "CaelumTrucazoAccountMenu"}
 
 ListMenu "CaelumTrucoMenu"
 {

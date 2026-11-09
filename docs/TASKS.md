@@ -1,6 +1,6 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.14.1** - 2026-11-09.
+Documentation version: **5.14.2** - 2026-11-09.
 
 ## V5.14 implementation — #443 through #446
 
@@ -11,7 +11,8 @@ casual/ranked services and individual tournaments. Implementation stays in
 separate issue branches, commits, tests and PRs. #443 (5.14.0) passed static,
 native rules/integration/save checks and agent UI inspection; see HISTORY and
 assets/validation_v5_14_0/results.json. #445 (5.14.1) passed team/native checks;
-assets/validation_v5_14_1/results.json retains its separate evidence. #444 and #446 follow separately.
+assets/validation_v5_14_1/results.json retains its separate evidence. #444 (5.14.2) passed focused native stakes/claims/save/travel and profile checks;
+assets/validation_v5_14_2 and HISTORY retain results and native limitations. #446 follows separately.
 Only the final actionable author scenes belong in pending_test.txt. The requested
 visible test terminal is delivered when all four scopes are implemented/tested;
 author acceptance, merge and closure are not implied by this design approval.
