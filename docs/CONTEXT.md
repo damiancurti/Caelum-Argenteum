@@ -1,10 +1,11 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.14.0** - 2026-11-08.
+Documentation version: **5.14.1** - 2026-11-09.
 
-**V5.14 in progress:** #443/5.14.0 magical Trucazo; static/native/save checks passed.
-UI inspected. Approved rules 2026-11-08; Magic Senses = Insight.
-#445/#444/#446 follow separately. Acceptance/terminal pending.
+**V5.14:** #443/5.14.0 published PR630; static/native/save passed.
+#445/5.14.1 teams/native checks passed; #444/#446 next.
+Rules approved 2026-11-08; use Insight.
+Acceptance/terminal pending.
 
 **V5.13/5.13.17 accepted2026-11-01:** all13 checks, including awakening.
 #439-442/#596-601/#614/#616/#617 merged/closed. HISTORY retains original

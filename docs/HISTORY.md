@@ -1,6 +1,31 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.14.0** - 2026-11-08.
+Documentation version: **5.14.1** - 2026-11-09.
+
+## 5.14.1 — Fixed Trucazo teams and unanimous pause (#445)
+
+Implements the author-approved1v1 through4v4 contract with visible alternating
+team seats, individual authority, shared Patience-squared reserves and
+simultaneous damage. Membership is fixed after unanimous lobby consent.
+Pause/resume votes and complete state are saved; disconnect never settles a
+team defeat. The original two participant fields remain for additive,
+idempotent roster migration. Static validation/build/index checks passed.
+Native GZDoom4.14.2 fresh team checks passed26/36/46/59 per peer for2/4/6/8
+players. Four-player teams also passed native disconnect preservation (60).
+Every supported size restored its checkpoint, retained partial resume votes,
+and completed a hand after the last member consented (four additional checks).
+The pre-team #443 checkpoint passed21 cumulative checks, including idempotent
+roster migration. Native sync diagnostics stayed enabled and clean.
+Evidence/runners: assets/validation_v5_14_1/results.json. A held run and recovery
+matrix were interrupted by the author's Escape; incomplete runs are excluded
+and remaining cases were repeated after explicit resumption. Visual/ES-EN and
+author acceptance remain pending the complete V5.14 delivery. #443 was published separately as
+commit d9ccebc and draft PR630.
+
+An initial test exposed physical overlap between adjacent seats on the compact
+portable large set. The accepted furniture dimensions were preserved. Team
+validation now uses the existing full-size large table and its native seating/
+collision factory; nominal furniture capacity is not a promise of body fit.
 
 ## 5.14.0 — Approved magical Trucazo implementation (#443)
 

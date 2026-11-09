@@ -1,6 +1,6 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.14.0** - 2026-11-08.
+Documentation version: **5.14.1** - 2026-11-09.
 
 ## V5.14 implementation — #443 through #446
 
@@ -10,7 +10,8 @@ health, individual turns/calls and unanimous pause; wagers/reputation; and
 casual/ranked services and individual tournaments. Implementation stays in
 separate issue branches, commits, tests and PRs. #443 (5.14.0) passed static,
 native rules/integration/save checks and agent UI inspection; see HISTORY and
-assets/validation_v5_14_0/results.json. #445, #444 and #446 follow separately.
+assets/validation_v5_14_0/results.json. #445 (5.14.1) passed team/native checks;
+assets/validation_v5_14_1/results.json retains its separate evidence. #444 and #446 follow separately.
 Only the final actionable author scenes belong in pending_test.txt. The requested
 visible test terminal is delivered when all four scopes are implemented/tested;
 author acceptance, merge and closure are not implied by this design approval.

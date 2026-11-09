@@ -10,7 +10,7 @@ class CaelumTrucazoGameMenu : ListMenu
     static CaelumTrucazoGame Game()
     {let link=CaelumCardSeat.Read(User());return link==null || !link.Open || link.Duel==null?null:link.Duel.Advanced;}
     static int Seat(){let game=Game();return game==null?-1:game.Duel.Side(User());}
-    static String Person(int seat){return String.Format(L("CA_TC2_PLAYER"),seat+1);}
+    static String Person(int seat){return String.Format(L("CA_TC2_SEAT_TEAM"),seat+1,seat%2==0?"A":"B");}
     override void Init(Menu parent,ListMenuDescriptor desc)
     {Super.Init(parent,desc);DontDim=true;DontBlur=true;mParentMenu=null;SentSerial=-1;CachedSerial=-1;Pointer=new('CaelumMenuPointer');}
     void Add(int operation,int argument,String text){Actions.Push(operation);Arguments.Push(argument);Labels.Push(text);}
@@ -19,8 +19,14 @@ class CaelumTrucazoGameMenu : ListMenu
         let g=Game();int s=Seat();if(g==null || s<0)return;
         if(CachedSerial==g.Serial)return;CachedSerial=g.Serial;
         Actions.Clear();Arguments.Clear();Labels.Clear();
-        if(g.Duel.Suspended || g.Finished())
+        if(g.Finished())
         {Details=0;Add(CaelumTrucazoRules.CLOSE,0,L("CA_CARD_CLOSE"));return;}
+        if(g.Duel.Suspended || g.Duel.Paused)
+        {
+            Details=0;
+            if(g.Duel.Connected() && g.Duel.AllSeated())Add(CaelumTrucazoGame.PAUSE_VOTE,0,L((g.Duel.ResumeVotes&(1<<s))!=0?"CA_TC2_UNVOTE":"CA_TC2_RESUME"));
+            Add(CaelumTrucazoRules.CLOSE,0,L("CA_CARD_CLOSE"));return;
+        }
         if(Details==4)
         {Add(CaelumTrucazoRules.FORFEIT,0,L("CA_TC_CONFIRM"));Add(-1,0,L("CA_TC_RETURN"));return;}
         if(Details==5)
@@ -73,7 +79,9 @@ class CaelumTrucazoGameMenu : ListMenu
         if(g.MagicEnabled && g.MayUseMagic(s))Add(-2,0,L("CA_TC2_MAJORS"));
         if(g.SensesEnabled && g.MayUseMagic(s) && !g.Seats[s].SenseSpent && g.Phase==CaelumTrucazoGame.PLAYING)Add(-3,0,L("CA_TC2_SENSES"));
         if(g.MagicEnabled)Add(CaelumTrucazoGame.AUTO_PASS,0,L(g.Seats[s].AutoPass?"CA_TC2_AUTO_ON":"CA_TC2_AUTO_OFF"));
-        Add(-5,0,L("CA_TC2_PUBLIC_ROWS"));Add(-4,0,L("CA_TC_FORFEIT"));Focus=Clamp(Focus,0,Max(0,int(Actions.Size())-1));
+        Add(-5,0,L("CA_TC2_PUBLIC_ROWS"));
+        Add(CaelumTrucazoGame.PAUSE_VOTE,0,L((g.Duel.PauseVotes&(1<<s))!=0?"CA_TC2_UNVOTE":"CA_TC2_PAUSE"));
+        Add(-4,0,L("CA_TC_FORFEIT"));Focus=Clamp(Focus,0,Max(0,int(Actions.Size())-1));
     }
     void Choose()
     {
@@ -124,7 +132,8 @@ class CaelumTrucazoGameMenu : ListMenu
     }
     String Status(CaelumTrucazoGame g)
     {
-        if(g.Duel.Suspended)return L("CA_CARD_RECOVERY");
+        if(g.Duel.Suspended)return L("CA_TC2_SUSPENDED");
+        if(g.Duel.Paused)return L("CA_TC2_PAUSED");
         if(g.Finished())return L(g.Winner==g.Team(Seat())?"CA_TC_WIN":"CA_TC_LOSS");
         if(g.QuerySeat>=0)return String.Format(L("CA_TC2_QUESTION"),Person(g.QuerySeat),Person(g.QueryTarget),CaelumTrucazoRules.CardName(g.QueryCard));
         if(g.Stack.Size()>0){let effect=g.Stack[g.Stack.Size()-1];return String.Format(L("CA_TC2_RESPONSE"),Person(g.Priority),Person(effect.Seat),CaelumTrucazoData.Name(effect.Card));}
@@ -141,6 +150,9 @@ class CaelumTrucazoGameMenu : ListMenu
         CaelumTrucazoMenu.Text(22,18,L("CA_CARD_TRUCAZO").." — "..Person(s),Font.CR_GOLD);
         CaelumTrucazoMenu.Text(22,42,String.Format(L("CA_TC2_HEALTH"),g.Health[0],g.Maximum[0],g.Health[1],g.Maximum[1]));
         CaelumTrucazoMenu.Wrap(22,66,750,Status(g),Font.CR_YELLOW);
+        int votes=0,mask=g.Duel.Paused || g.Duel.Suspended?g.Duel.ResumeVotes:g.Duel.PauseVotes;
+        for(int i=0;i<g.Count();i++)if((mask&(1<<i))!=0)votes++;
+        if(votes>0)CaelumTrucazoMenu.Text(566,80,String.Format(L("CA_TC2_VOTES"),votes,g.Count()),Font.CR_GOLD);
         if(Details==4)CaelumTrucazoMenu.Wrap(22,125,510,L("CA_TC2_FORFEIT"));
         else if(Details==2)CaelumTrucazoMenu.Wrap(22,125,510,L(String.Format("CA_TC2_EFFECT_%d",SelectedMajor)));
         else if(Details==5)
@@ -173,7 +185,8 @@ class CaelumTrucazoGameMenu : ListMenu
         }
         for(int i=0;Details!=5 && i<g.Count();i++)
         {
-            double x=22+i*(510.0/g.Count());CaelumTrucazoMenu.Text(x,218,Person(i),Font.CR_GRAY);
+            double x=22+i*(510.0/g.Count());
+            CaelumTrucazoMenu.Text(x,218,g.Count()>4?String.Format("%d %s",i+1,g.Team(i)==0?"A":"B"):Person(i),Font.CR_GRAY);
             if(g.Seats[i].Played>=0)CaelumTrucazoMenu.Card(g.HiddenPlayed(i)&&i!=s?-1:g.Seats[i].Played,x,238,55,75);
         }
         let own=g.Seats[s].Cards;
