@@ -108,3 +108,13 @@ separate. The earlier timed keep-awake request has finished and released.
 
 Follow-up static validation passes with zero errors and2485 context words;
 Python compilation, document-index regeneration and diff checks pass.
+
+
+## Author acceptance ? 2026-11-10
+
+CA451-01 (origin5.15.4, #451) passed by explicit author confirmation of
+all V5.15 tests. The author requested merge/closure; PR639 is merged and
+#451 is closed. HISTORY records the acceptance separately from the original
+native evidence above. Earlier pending labels describe the delivery state.
+This documentation-only acceptance update adds no native/performance measurement;
+recorded limitations and the shared laboratory contamination follow-up remain.

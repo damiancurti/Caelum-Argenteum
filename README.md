@@ -14,12 +14,13 @@ V5.15 includes the [battle director](assets/validation_v5_15_0/RESULTS.md)
 (#448, PR636), and [machine construction, repair and capture](assets/validation_v5_15_2/RESULTS.md)
 (#449, PR637), and [tactical routes and reports](assets/validation_v5_15_3/RESULTS.md)
 (#450, PR638), and [persistent siege consequences](assets/validation_v5_15_4/RESULTS.md)
-(#451). Crouch + Use opens guard orders; Use on machine parts opens their work
+(#451, PR639). Crouch + Use opens guard orders; Use on machine parts opens their work
 panel. Original enemy machines require capture or destruction to be neutralized.
 Construction requires learned recipes, the existing workshops/materials
 and a current faction. Guard dialogue receives pre-battle prisoner intelligence
-and reports of intact captured machines. Route markers appear only after visiting. Native tests and author acceptance remain separate:
-CA447-01/CA448-01/CA449-01/CA450-01/CA451-01 are pending.
+and reports of intact captured machines. Route markers appear only after visiting. On2026-11-10 the author confirmed all five checks passed and requested integration.
+Issues#447-451 are closed and PR635-639 merged, preserving each focused commit.
+HISTORY records CA447-01/CA448-01/CA449-01/CA450-01/CA451-01; pending_test.txt is empty.
 Occupation closes civilian services; liberation reopens survivors after24 world
 hours. Start the isolated manual scenes with
 `powershell -NoProfile -ExecutionPolicy Bypass -File assets/validation_v5_15_4/author_terminal.ps1`.
@@ -27,6 +28,9 @@ The terminal starts one player with all twelve attributes at100. Only the machin
 scene supplies materials, stored in the Magic Box for one barricade and one cannon
 at100% efficiency; F4 replenishes missing stock at the selected efficiency.
 Use `author_terminal.py --players 2` only for optional cooperative reward checks.
+Known laboratory limitation: its single sector contains a forge in every scene,
+classifying the entire floor as industrial. TASKS retains the isolation follow-up;
+this acceptance update does not change contamination or the test geometry.
 Active-siege rendering remains severely slow in the recorded environment;
 a successful native check does not establish playable frame presentation.
 

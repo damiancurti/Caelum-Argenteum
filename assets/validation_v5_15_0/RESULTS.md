@@ -79,3 +79,13 @@ Use a new label for every run; evidence is never overwritten. Saves and
 private maps stay in build/. Shared fixture source and sync instrumentation
 retain their original ownership; the new assertions do not replace native
 sync diagnostics.
+
+
+## Author acceptance ? 2026-11-10
+
+CA447-01 (origin5.15.0, #447) passed by explicit author confirmation of
+all V5.15 tests. The author requested merge/closure; PR635 is merged and
+#447 is closed. HISTORY records the acceptance separately from the original
+native evidence above. Earlier pending labels describe the delivery state.
+This documentation-only acceptance update adds no native/performance measurement;
+recorded limitations and the shared laboratory contamination follow-up remain.

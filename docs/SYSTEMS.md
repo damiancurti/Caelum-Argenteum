@@ -146,7 +146,8 @@ save/hub state. Work schema2 keeps a serial-owned map anchor because traveling
 inventories lose references to unloaded world parts; return restores those same
 references without recreating equipment. Native prediction only filters operator
 input and cannot mutate the saved bond or emit another shot.
-Evidence: assets/validation_v5_15_2; author check CA449-01 pending.
+Evidence: assets/validation_v5_15_2; CA449-01 passed by author confirmation
+on2026-11-10 (PR637 merged).
 
 
 ## 5.15.1 / #448 - Guard command and succession
@@ -197,8 +198,8 @@ the hostile finite ledger is never spent, enlarged or reset by this order.
 
 Saved command schema2 also migrates the locally tested schema1 prototype
 without losing its order or hold positions. Pre-command saves enroll the same
-owned bodies idempotently. Evidence: assets/validation_v5_15_1. CA448-01 remains
-pending; rule approval does not establish author gameplay acceptance.
+owned bodies idempotently. Evidence: assets/validation_v5_15_1. CA448-01 passed
+by author confirmation on2026-11-10 (PR636 merged).
 
 ## 5.15.0 / #447 - Persistent battle director
 
@@ -235,8 +236,8 @@ The Journal calendar records the dated defeat with ES/EN text. Occupation
 services, command UI, construction and route rewards belong to #448-451.
 
 Validation evidence is kept separately in assets/validation_v5_15_0 and
-build/v515/issue447. Engine evidence is not author acceptance; CA447-01 remains
-in pending_test.txt until explicit confirmation.
+build/v515/issue447. CA447-01 passed by explicit author confirmation on2026-11-10
+(PR635 merged); native evidence remains a separate validation level.
 
 ## Trucazo casual, ranked and tournaments (5.14.3, #446)
 
