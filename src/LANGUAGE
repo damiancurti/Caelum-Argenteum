@@ -4945,7 +4945,7 @@ CA_LOADOUT_STATS = "Peso, costes y confirmación";
 
 [enu default]
 CA_PRISONER_SIEGE_PENDING = "%PLACE% is threatened by an assault. I have no confirmed date or hour. Stop the Zupay commander and neutralize all twelve attacking machines; both are necessary.";
-CA_PRISONER_SIEGE_ACTIVE = "%PLACE% is under siege now. Force the Zupay commander to retreat and neutralize all twelve attacking machines by defeating their guards. Both objectives are required; the port cannons defend us.";
+CA_PRISONER_SIEGE_ACTIVE = "%PLACE% is under siege now. Force the Zupay commander to retreat and neutralize all twelve attacking machines by capturing or destroying them. Both objectives are required; the port cannons defend us.";
 CA_PRISONER_SIEGE_COMPLETE = "The assault on %PLACE% has ended. The commander was stopped and all twelve attacking machines were neutralized. Let the withdrawing survivors go.";
 CA_PRISONER_SIEGE_STARTED_AT = "Recorded start:";
 CA_PRISONER_SIEGE_ENDED_AT = "Recorded end:";
@@ -4953,7 +4953,7 @@ CA_PRISONER_SIEGE_AWAITING = "Assault timing unconfirmed";
 
 [es]
 CA_PRISONER_SIEGE_PENDING = "%PLACE% está amenazada por un asalto. No tengo fecha ni hora confirmadas. Frená al Zupay comandante y neutralizá las doce máquinas atacantes: hacen falta ambas cosas.";
-CA_PRISONER_SIEGE_ACTIVE = "%PLACE% está bajo asedio ahora. Obligá al Zupay comandante a retirarse y neutralizá las doce máquinas atacantes derrotando a sus custodios. Hacen falta ambos objetivos; los cañones del puerto nos defienden.";
+CA_PRISONER_SIEGE_ACTIVE = "%PLACE% está bajo asedio ahora. Obligá al Zupay comandante a retirarse y neutralizá las doce máquinas atacantes capturándolas o destruyéndolas. Hacen falta ambos objetivos; los cañones del puerto nos defienden.";
 CA_PRISONER_SIEGE_COMPLETE = "El asalto a %PLACE% terminó. El comandante fue detenido y las doce máquinas atacantes quedaron neutralizadas. Dejá ir a los sobrevivientes que se retiran.";
 CA_PRISONER_SIEGE_STARTED_AT = "Inicio registrado:";
 CA_PRISONER_SIEGE_ENDED_AT = "Fin registrado:";

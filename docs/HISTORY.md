@@ -10,6 +10,11 @@ ammunition and physical resistance. A later explicit decision replaced the old
 guard-death objective with capture/destruction only. Approved sabotage remains a
 temporary disable. All rules are consolidated in SYSTEMS.
 
+Review follow-up: the shared ES/EN siege introduction still described the retired
+guard-death objective. It now says capture or destruction, matching the author's
+approved rule. Dialogue/localization and document indexes were regenerated and
+checked; this text-only correction does not alter gameplay or manual acceptance.
+
 Native work uses one existing task/reservation ledger per character; schema1 binds
 the original physical pieces to one structural owner. Construction creates world
 equipment, not an850kg inventory item. Capture preserves damage and disabled state;
