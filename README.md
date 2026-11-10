@@ -6,18 +6,22 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.14.3.** Obtain and update the complete repository,
+**Current release: 5.15.0.** Obtain and update the complete repository,
 validate it, then rebuild with `run_dev.bat` as described below.
 
-V5.14 is complete and author-accepted on2026-11-09. All five manual checks
-passed: magical rules/Insight (#443), teams up to4v4 (#445), native stakes and
-persistent prizes (#444), and casual/ranked play with individual tournaments
-(#446). PR630–633 are merged into main with their original commits; issues
-#443–446 are closed. The release remains5.14.3 and `pending_test.txt` is empty.
-[HISTORY](docs/HISTORY.md) retains each accepted check's original version/issue,
-confirmation date and prior native evidence/limitations. SYSTEMS owns the rules.
-The isolated scenes remain reproducible with
-`powershell -NoProfile -ExecutionPolicy Bypass -File assets/validation_v5_14_3/author_terminal.ps1`.
+V5.15 begins with the dynamic siege director (#447): saved battle phases,
+finite reinforcement deadlines on shared world time and the approved defeat
+when all defending soldiers fall. A surviving player can continue; the existing
+twelve-machine/Zupay victory remains. Native checks are documented in
+[validation_v5_15_0](assets/validation_v5_15_0/RESULTS.md); CA447-01 awaits
+author acceptance. Command, machines, routes and occupation services follow in
+separate #448-451 patches. The final V5.15 author terminal is prepared after
+those deliveries. SYSTEMS owns the rules; pending_test.txt owns outstanding checks.
+
+V5.14/5.14.3 was accepted on2026-11-09: all five checks passed, #443-446 are
+closed and PR630-633 are merged with original ancestry. HISTORY retains each
+check's original version/issue and native limitations. Its isolated scenes remain
+available through assets/validation_v5_14_3/author_terminal.ps1.
 
 V5.13 is complete and author-accepted on 2026-11-01. All 13 manual checks passed,
 including the final Tarot, capture, awakening and menu corrections. The focused

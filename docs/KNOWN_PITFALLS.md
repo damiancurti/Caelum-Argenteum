@@ -4,6 +4,36 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-214 - Idempotent initialization still needs a cheap hot-path guard
+
+Status/evidence: RESOLVED-VERIFIED for the measured MAP03 view; not a general
+performance acceptance. First recorded / last checked: 2026-11-09 / 2026-11-09.
+Issue: [#447](https://github.com/damiancurti/Caelum-Argenteum/issues/447).
+Affected baseline: c3dd9c918ea83400d6dd0c277c2581a2ef208a1c plus the uncommitted
+5.15.0 director patch; exact runtime hashes are in validation_v5_15_0/results.json.
+Environment: Windows, GZDoom4.14.2, Vulkan, local development Doom II IWAD,
+1280x720, one unpaused native peer, fixed ground-facing city reference.
+Scope: CaelumPortSiege.EnsureDirector and its normal preparing/active callers.
+
+Symptom/reproduction: run the shared campaign observer with --map MAP03
+--ground. The first implementation repeatedly entered the initializer even
+after its saved revision was current. Two windows measured61.17/61.97 actual
+presentation requests/s versus baseline76.66/74.22. Omitting only the peaceful
+initializer call in a diagnostic overlay measured71.88. An early revision
+guard, before registry/clock lookup and repeated ownership assignment,
+restored74.77 with p95/p99 intervals17.86/19.19ms; the worst interval was39.09ms.
+
+Cause: repeated work before the inner idempotence guard is code-verified;
+which lookup/write/engine cost dominates is UNCONFIRMED. Fix/prevention:
+return at the outer hot-path boundary once the saved revision is current.
+Do not remove the initial migration or retain the diagnostic omission as
+production behavior. Evidence: [issue results](../assets/validation_v5_15_0/RESULTS.md),
+separate native logs and normally completed vkQueuePresentKHR traces.
+Regression check: repeat the fixed-view comparison and native legacy/save
+migration checks. Author acceptance: CA447-01 PENDING. Limitations: these
+are application presentation requests, not monitor scanout; city-view recovery
+does not fix the independently poor active-siege or mansion performance.
+
 ## CA-KP-213 - Repeating MAPINFO map definitions resets omitted properties
 
 Status/evidence: ENGINE-VERIFIED, #599 /5.13.6, 2026-11-01; four local

@@ -1,15 +1,14 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.14.3** - 2026-11-09.
+Documentation version: **5.15.0** - 2026-11-09.
 
-**V5.14/5.14.3 accepted2026-11-09:** all5 checks passed.
-#443–446 closed; PR630–633 merged into main with original commits.
-HISTORY retains IDs/versions, confirmation and native limitations. Queue empty.
+**5.15.0/#447:** saved director; shared-clock finite reserves; all-defenders-dead
+defeat, no time limit. CA447-01 pending; evidence:validation_v5_15_0.
+#448-451 remain separate deliveries. Approved rules and status: SYSTEMS/TASKS.
 
-**V5.13/5.13.17 accepted2026-11-01:** all13 checks, including awakening.
-#439-442/#596-601/#614/#616/#617 merged/closed. HISTORY retains original
-checks/versions and accepted passives, descriptions, navigation, capture, menus.
-ETW/Internet/FPS limitations unchanged; queue was empty.
+**V5.14 accepted2026-11-09:** 5checks;#443-446 closed;PR630-633 merged.
+**V5.13 accepted2026-11-01:**13checks, awakening included; implementation merged.
+HISTORY preserves IDs/versions, corrections and ETW/Internet/FPS limitations.
 
 **V5.12 accepted/merged:** HISTORY; validation_v5_12_7/7a; timer-fixed4.14.2.
 Siege1.33-6.48FPS/sharedGPU; no Internet claim; LF indexes#604.

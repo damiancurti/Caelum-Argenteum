@@ -3,6 +3,7 @@
 class CaelumPortDefender : CaelumFolkloreCombatActor
 {
     CaelumPortSiege Port;
+    CaelumBattleDefender BattleDefender;
     CaelumHouseResident Residence;
     CaelumCannon Gun;
     Actor NavigationTarget;

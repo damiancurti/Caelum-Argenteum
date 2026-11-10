@@ -73,6 +73,7 @@ class CaelumAbsentWork : Object play
             bool won=Battle.Encounter!=null && Battle.Encounter.Victory;
             if(Battle.Encounter!=null)Battle.Encounter.ResolveVictory(true);
             let port=CaelumPortSiege(Battle.Encounter);
+            if(port!=null)port.ObserveBattle(Battle.SimulationTime);
             if(port!=null && port.Victory && !won && Battle.SourceMap=="MAP03")port.Calendar(Battle.Observer,Battle.SimulationTime);
             Next();break;
         case 15:
@@ -90,7 +91,13 @@ class CaelumAbsentWork : Object play
                 row.Opponent=null;row.Recover(ActiveSeconds);row.FinishRound();row.Body.target=null;
                 if(row.Body.ContaminationAbsence!=null)row.Body.ContaminationAbsence.Idle=true;
             }
-            if(Index>=count)Complete=true;break;
+            if(Index>=count)
+            {
+                let quietPort=CaelumPortSiege(Battle.Encounter);
+                if(quietPort!=null)quietPort.ObserveBattle(Battle.SimulationTime);
+                Complete=true;
+            }
+            break;
         }
         return Complete;
     }

@@ -1,6 +1,21 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.14.3** - 2026-11-09.
+Documentation version: **5.15.0** - 2026-11-09.
+
+## 5.15.0 / #447 - Dynamic siege director
+
+V5.15 begins with the saved, event-driven director for the existing Barracas
+scenario. The author approved its retained army/start schedule and defeat when
+all defending soldiers are dead, with surviving players continuing the story.
+The shared clock now owns reinforcement deadlines across native saves and
+unloaded-world catch-up, preserving finite arrivals and #429 admission limits.
+Initial outcomes are idempotent; a later liberation retains the earlier defeat.
+
+Focused native checks cover state migration, exact deadlines, final reserve
+consumption, cooperative save/reload, actual machine/commander victory and
+calendar catch-up. Final evidence and limits: assets/validation_v5_15_0.
+Author acceptance CA447-01 is pending. #448, #449, #450 and #451 remain separate
+deliveries with their own implementation, validation, commits and PRs.
 
 ## V5.14 author acceptance — 2026-11-09 (#443–446)
 

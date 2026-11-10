@@ -1,6 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.14.3** - 2026-11-09.
+Documentation version: **5.15.0** - 2026-11-09.
+
+## 5.15.0 / #447 - Director delivery and author check
+
+Implemented scope: revisioned battle state, approved Barracas schedule and
+all-defenders-dead defeat, finite reserve deadlines on shared civil time,
+native/catch-up coordination and dated ES/EN outcome entry. Preserve the
+existing twelve-machine plus commander victory and Zupay retreat canon.
+
+Validation is recorded under assets/validation_v5_15_0; author test CA447-01
+remains pending. Keep #448 command, #449 machines, #450 routes/objectives and
+#451 world consequences in separate patches. Do not close #447 or merge its
+PR based only on agent-native checks.
 
 ## V5.14 accepted and integrated — 2026-11-09 (#443–446)
 

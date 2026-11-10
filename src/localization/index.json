@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "951dab2ed36e8f091d6b03716a4683c68699b896187c8ebc442606689f448e72",
+  "sha256": "a764756607a96eaaa2855a7fea3f2789651f0a1059c430a3d1ffef7362f743bb",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[560,560]],"default":[[560,560]],"es":[[1255,1255]]},
     "CA_ABSENT_THEFT_FOUND": {"enu":[[6983,6983]],"default":[[6983,6983]],"es":[[6985,6985]]},
@@ -193,6 +193,7 @@
     "CA_BATH_TITLE": {"enu":[[6700,6700]],"default":[[6700,6700]],"es":[[6717,6717]]},
     "CA_BATTLE_CRY_BLOCKED": {"default":[[4108,4108]],"es":[[4145,4145]]},
     "CA_BATTLE_CRY_CAST": {"default":[[4099,4099]],"es":[[4136,4136]]},
+    "CA_BATTLE_DEFEAT": {"enu":[[8237,8237]],"default":[[8237,8237]],"es":[[8240,8240]]},
     "CA_BA_DOCK": {"enu":[[6992,6992]],"default":[[6992,6992]],"es":[[7001,7001]]},
     "CA_BA_HOMES": {"enu":[[6994,6994]],"default":[[6994,6994]],"es":[[7003,7003]]},
     "CA_BA_MARKET": {"enu":[[6993,6993]],"default":[[6993,6993]],"es":[[7002,7002]]},

@@ -1,6 +1,17 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.14.3** - 2026-11-09.
+Documentation version: **5.15.0** - 2026-11-09.
+
+## 5.15.0 / #447 - Barracas battle outcomes
+
+The 2026-11-09 author decision retains the existing MAP03 geometry and siege
+start at 13:00 on 1889-11-15. All defending soldiers falling now records a
+defeat; a surviving player continues under occupation instead of being forced
+to reload. No time-limit loss is added. The twelve-machine objective and
+confirmed Zupay retreat remain the victory contract and Chapter I canon.
+Later occupation, service recovery and optional routes are separate #450/451
+deliveries. No mansion/sewer geometry, new character or allegiance is authored
+by #447. Pending acceptance: CA447-01.
 
 ## V5.14 card-service boundary (#443–446)
 
