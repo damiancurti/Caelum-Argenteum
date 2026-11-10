@@ -4,6 +4,17 @@ Documentation version: **5.15.4** - 2026-11-10.
 
 ## 5.15.4 - Persistent siege consequences (#451, 2026-11-10)
 
+**Author acceptance ? 2026-11-10:** CA451-01 (origin5.15.4, #451):
+occupation, liberation, recovery, casualties and once-only rewards.
+Result: **passed**, explicitly confirmed by Dami?n with all V5.15 tests; he also
+requested merge/closure. PR639 is merged with original commits and #451 is
+closed. Its pending_test.txt entry was removed only after that confirmation.
+This records author acceptance; existing native/performance qualifications remain
+and no additional measurements or unreported test details are inferred.
+Acceptance-only validation: project checks report0 errors and2487 context words;
+document-index regeneration and diff checks pass. Every original issue branch
+tip is an ancestor of main. No runtime member changed or engine test was rerun.
+
 The author approved occupation without ending a survivor's campaign, closure of
 civilian shops and departing transport, actual deaths without replacements,
 liberation through the existing original-machine/Zupay objective, and recovery
@@ -12,8 +23,8 @@ eligible identity, without a defeat penalty or unrelated faction changes.
 Revision1 shared consequences preserve those events, casualties and payments
 through saves and unloaded returns; legacy victories gain no invented date or
 eligibility. SYSTEMS consolidates the contract. Evidence and intermediate test
-failures remain in assets/validation_v5_15_4. CA451-01 (origin5.15.4/#451) and
-CA447-01/448-01/449-01/450-01 remain unconfirmed author checks.
+failures remain in assets/validation_v5_15_4. The five accepted checks retain
+their original versions and issue-specific records in this history.
 
 Two-peer native checks cover occupied save/reload, exact recovery boundaries,
 unloaded return, once-per-identity awards, normal victory and previous-save
@@ -37,10 +48,22 @@ hub travel and save recovery. Machine-scene effective load is10.811kg of400kg
 capacity; other scenes carry no supplied wood/iron. The runtime PK3 is unchanged.
 The first helper compile failure and successful follow-ups are retained in
 validation_v5_15_4/author-usability-results.json and compressed native logs.
-All five author acceptance checks remain pending.
+The author subsequently accepted all five checks on2026-11-10. Before acceptance
+he also reported excessive laboratory contamination. Inspection found that the
+shared single-sector floor contains a forge in every scene, so the existing
+industrial classification applies throughout. This diagnosis remains a TASKS
+follow-up; acceptance and branch consolidation did not modify that fixture.
 
 
 ## 5.15.3 - Tactical routes and reports (#450, 2026-11-10)
+
+**Author acceptance ? 2026-11-10:** CA450-01 (origin5.15.3, #450):
+routes, intelligence preparation and captured-machine reporting.
+Result: **passed**, explicitly confirmed by Dami?n with all V5.15 tests; he also
+requested merge/closure. PR638 is merged with original commits and #450 is
+closed. Its pending_test.txt entry was removed only after that confirmation.
+This records author acceptance; existing native/performance qualifications remain
+and no additional measurements or unreported test details are inferred.
 
 The author approved the west exterior and elevated wallwalk routes, existing
 prisoner intelligence withholding100 reserves once, and+50 individual cooperative
@@ -48,8 +71,8 @@ reputation for reporting an intact operational original machine captured for
 Unitarios. Delivery leaves the machine where it is. SYSTEMS consolidates those
 rules and persistence. Geometry remains the already-authored city; no underground
 connection or reward was invented. Native evidence and intermediate failures are
-retained in assets/validation_v5_15_3. CA450-01 (origin5.15.3/#450) is pending;
-design approval and native checks do not constitute author gameplay acceptance.
+retained in assets/validation_v5_15_3. Native checks and the later explicit
+author acceptance above remain separate evidence levels.
 Native two-peer functional/reload/hub, original #449 save migration, real city
 walking and ES/EN native guard dialogue pass. Final siege presentation remains
 1.4434FPS (p95/p99/max752.5932/756.9568/756.9568ms); ground control77.1021FPS.
@@ -58,6 +81,14 @@ The prior severe siege renderer limit remains; no Internet or general60FPS claim
 
 
 ## 5.15.2 - Siege machines (#449, 2026-11-10)
+
+**Author acceptance ? 2026-11-10:** CA449-01 (origin5.15.2, #449):
+construction, repair, sabotage, capture and faction operation.
+Result: **passed**, explicitly confirmed by Dami?n with all V5.15 tests; he also
+requested merge/closure. PR637 is merged with original commits and #449 is
+closed. Its pending_test.txt entry was removed only after that confirmation.
+This records author acceptance; existing native/performance qualifications remain
+and no additional measurements or unreported test details are inferred.
 
 The author approved the catalogue, nominal costs/world times, existing efficiency
 and learning modifiers, repair references, faction selection, unlimited cannon
@@ -85,11 +116,19 @@ migration and original-package rollback pass. ES/EN panels and the owned barrica
 were visually inspected. One NVIDIA-driver crash on an intermediate reload is
 retained; exact retry and final reload pass. Paired siege presentation remains
 1.38/1.42FPS(base/delivery), so the existing rendering limitation remains unresolved.
-CA449-01 (origin5.15.2/#449) remains pending; approval of rules is not gameplay
-acceptance. Internet multiplayer and whole-game60FPS are not established here.
+The later CA449-01 author acceptance is recorded above. Internet multiplayer
+and whole-game60FPS are not established by these native measurements.
 
 
 ## 5.15.1 - Military command (#448, 2026-11-09)
+
+**Author acceptance ? 2026-11-10:** CA448-01 (origin5.15.1, #448):
+military access, orders, succession and physical withdrawal.
+Result: **passed**, explicitly confirmed by Dami?n with all V5.15 tests; he also
+requested merge/closure. PR636 is merged with original commits and #448 is
+closed. Its pending_test.txt entry was removed only after that confirmation.
+This records author acceptance; existing native/performance qualifications remain
+and no additional measurements or unreported test details are inferred.
 
 The author approved Unitarian guard membership, recognized captaincy plus
 reputation50 access, hold/known advance/regroup/withdraw/pending-reserve orders,
@@ -124,10 +163,18 @@ reproduce the initial slower #448 observation, nor establish a speedup. The
 existing active siege remains far below playable frame rates and is not
 performance-accepted. Ground references and all intermediate measurements are
 retained in the evidence. Scoped keep-awake ownership was released.
-Author acceptance is pending: CA448-01, origin5.15.1/#448. The native evidence
-does not establish Internet multiplayer, whole-game60FPS or author acceptance.
+The later CA448-01 author acceptance is recorded above. The native evidence
+does not establish Internet multiplayer or whole-game60FPS.
 
 ## 5.15.0 - Dynamic battle director (#447, 2026-11-09)
+
+**Author acceptance ? 2026-11-10:** CA447-01 (origin5.15.0, #447):
+battle progression, finite reinforcements and persistent defeat/victory.
+Result: **passed**, explicitly confirmed by Dami?n with all V5.15 tests; he also
+requested merge/closure. PR635 is merged with original commits and #447 is
+closed. Its pending_test.txt entry was removed only after that confirmation.
+This records author acceptance; existing native/performance qualifications remain
+and no additional measurements or unreported test details are inferred.
 
 The author approved the existing Barracas scenario (1889-11-15 13:00,
 6,600 cumulative Mandingas, groups <=100, 350-tic opportunities), the #429
@@ -158,9 +205,9 @@ native logs and presentation/frame-time tails are in the issue evidence.
 The baseline mansion and siege remain below the author's performance target;
 passing simulation or synchronization is not rendering acceptance.
 
-Author acceptance remains pending: CA447-01 (origin 5.15.0, #447). Rule
-approval is not a reported manual gameplay result. Other V5.15 issues retain
-separate branches, test evidence, commits and linked PRs.
+CA447-01 author acceptance is recorded above. V5.15 retains separate test
+evidence, original commits and linked PRs; merged branches are consolidated
+into main only after preserving their complete ancestry.
 
 ## 5.14.3 — Ranked Trucazo and local tournaments (#446)
 

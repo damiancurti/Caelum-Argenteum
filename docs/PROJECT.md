@@ -7,9 +7,12 @@ Documentation version: **5.15.4** - 2026-11-10.
 Barracas now carries occupation, service closure, actual merchant casualties,
 dated recovery and the approved individual victory/liberation reward across
 campaign saves and travel. #447-451 remain separate patches and PRs; their native
-evidence is in assets/validation_v5_15_0 through validation_v5_15_4. All five
-author checks remain pending. The combined terminal groups isolated manual
-scenes by issue; native checks do not imply author acceptance or authorize merge.
+evidence is in assets/validation_v5_15_0 through validation_v5_15_4. On2026-11-10
+the author confirmed all five checks passed and requested merge/closure.
+PR635-639 are merged with original ancestry; #447-451 are closed. HISTORY retains
+the original check IDs/versions; pending_test.txt is empty. The combined terminal
+keeps scenes separate. Its known single-sector forge contamination is tracked in
+TASKS and was not changed by this acceptance update.
 The previously measured severe active-siege rendering limitation remains open.
 
 
@@ -19,8 +22,8 @@ Existing west-flank and wallwalk entries now have private discovery markers;
 prisoner intelligence prepares the finite reserve and an intact captured-machine
 report grants the approved optional individual reward. No city/sewer geometry is
 invented. SYSTEMS contains the approved rules; evidence is kept separately under
-assets/validation_v5_15_3. CA450-01 awaits author acceptance. #451 occupation,
-recovery and the combined author terminal remain the next delivery.
+assets/validation_v5_15_3. CA450-01 passed by author confirmation on2026-11-10;
+PR638 is merged. #451 occupation/recovery and the combined terminal are delivered.
 
 
 ## 5.15.2 / #449 - Siege equipment delivery
@@ -30,7 +33,8 @@ capture, physical destruction and faction-only operation extend the accepted
 machines. Native material reservations and persistent world identities are reused.
 Only capture/destruction now neutralizes original machines; existing won saves
 remain won. SYSTEMS contains the author-approved rules. Validation is recorded
-separately in assets/validation_v5_15_2; CA449-01 awaits author acceptance.
+separately in assets/validation_v5_15_2; CA449-01 passed by author confirmation
+on2026-11-10 and PR637 is merged.
 #450 routes/objectives and #451 consequences remain separate patches.
 
 
@@ -42,7 +46,8 @@ bounded communication, existing succession, original friendly deployment
 requests and physical return routes retain native authority and saved identities.
 This patch depends on #447 (PR635) and remains separate from #449-451.
 Native evidence and limitations: assets/validation_v5_15_1. Author acceptance
-CA448-01 is pending; the final V5.15 terminal follows the remaining deliveries.
+CA448-01 passed by author confirmation on2026-11-10; PR636 is merged and the
+final V5.15 terminal is available.
 
 ## 5.15.0 / #447 - Dynamic siege director
 
@@ -56,7 +61,7 @@ Initial outcomes are idempotent; a later liberation retains the earlier defeat.
 Focused native checks cover state migration, exact deadlines, final reserve
 consumption, cooperative save/reload, actual machine/commander victory and
 calendar catch-up. Final evidence and limits: assets/validation_v5_15_0.
-Author acceptance CA447-01 is pending. #448, #449, #450 and #451 remain separate
+CA447-01 passed by author confirmation on2026-11-10; PR635 is merged. #448, #449, #450 and #451 remain separate
 deliveries with their own implementation, validation, commits and PRs.
 
 ## V5.14 author acceptance — 2026-11-09 (#443–446)

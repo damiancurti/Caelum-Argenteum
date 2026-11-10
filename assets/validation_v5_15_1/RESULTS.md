@@ -64,3 +64,13 @@ Use run_native.py with a fresh label, --runtime and --players1/2. The shared
 harness supplies --load-directory, --legacy-fixture, --runtime-name and
 --suite travel. Final reporting must distinguish static checks, native evidence,
 presentation/frame-time measurements and explicit author acceptance.
+
+
+## Author acceptance ? 2026-11-10
+
+CA448-01 (origin5.15.1, #448) passed by explicit author confirmation of
+all V5.15 tests. The author requested merge/closure; PR636 is merged and
+#448 is closed. HISTORY records the acceptance separately from the original
+native evidence above. Earlier pending labels describe the delivery state.
+This documentation-only acceptance update adds no native/performance measurement;
+recorded limitations and the shared laboratory contamination follow-up remain.

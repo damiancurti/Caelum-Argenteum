@@ -9,7 +9,9 @@ transport and Journal text use the existing owned presentation. Native evidence
 and the shared author-scene launcher live in assets/validation_v5_15_4, with
 issue-specific scene choices and results kept separate. Isolated profiles,
 temporary fixture packages, saves, engine and development IWAD remain private
-under build/ and are not distributable game assets.
+under build/ and are not distributable game assets. The five V5.15 author checks
+passed by explicit confirmation on2026-11-10; HISTORY preserves their original
+IDs/versions and TASKS records the remaining laboratory contamination limitation.
 
 
 ## 5.15.3 / #450 - Derived tactical route data

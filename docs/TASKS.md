@@ -2,61 +2,31 @@
 
 Documentation version: **5.15.4** - 2026-11-10.
 
-## 5.15.4 / #451 - Persistent consequences delivery
+## V5.15 accepted and integrated ? 2026-11-10 (#447?451)
 
-Implement the approved occupation, real-casualty persistence,24-world-hour
-recovery and once-per-identity+100 Unitarian reward. Preserve #447-450 behavior,
-spent reserves, historical purchase/departure boundaries and original saves for
-rollback. Keep this commit/PR and native evidence separate. Complete static,
-native save/travel/reconnect/migration, ES/EN presentation and author-launcher
-checks; record results in assets/validation_v5_15_4. CA451-01 joins the four
-earlier outstanding checks. Leave the author terminal open after validation;
-V5.15 merge/closure and gameplay acceptance still await the author.
+The author confirmed all five checks passed and requested merge/closure.
+PR635-639 are merged; #447-451 are closed. The original branch-tip commits and
+separate evidence remain in main. HISTORY records each check's originating
+version, issue, confirmation date and qualifications; pending_test.txt is empty.
+This later acceptance does not increment5.15.4 or introduce a new measurement.
 
+| Issue / release | Delivered scope | Author check / PR | Native evidence |
+| --- | --- | --- | --- |
+| #447 /5.15.0 | Revisioned battle director, finite deadlines and surviving-player defeat | CA447-01 passed; PR635 merged | assets/validation_v5_15_0 |
+| #448 /5.15.1 | Unitarian command, bounded orders, original reserves and physical withdrawal | CA448-01 passed; PR636 merged | assets/validation_v5_15_1 |
+| #449 /5.15.2 | Construction, repair, timed sabotage/capture and faction operation | CA449-01 passed; PR637 merged | assets/validation_v5_15_2 |
+| #450 /5.15.3 | Existing routes, intelligence preparation and intact-machine reports | CA450-01 passed; PR638 merged | assets/validation_v5_15_3 |
+| #451 /5.15.4 | Occupation, actual casualties,24-world-hour recovery and once-only rewards | CA451-01 passed; PR639 merged | assets/validation_v5_15_4 |
 
-## 5.15.3 / #450 - Tactical routes delivery
-
-Implemented approved existing-geometry entry discovery, one-time pre-battle reserve
-preparation and the intact-machine report/reward. Native two-peer/save/hub, old-save
-migration, real city walking and ES/EN dialogue pass; active-siege FPS remains poor. Keep the #450 branch, commit,
-PR and native evidence separate from #447-449 and #451. Validation is recorded in
-assets/validation_v5_15_3; CA450-01 is the outstanding author check. Complete #451
-occupation/recovery next, then leave the combined author terminal open. No V5.15
-merge, issue closure or manual acceptance follows from automated checks alone.
-
-
-## 5.15.2 / #449 - Machine delivery and author check
-
-Construction, repair, timed sabotage/capture and faction operation are implemented.
-Keep #449 commits/evidence/PR separate from #447/#448 and the remaining #450/#451.
-Native save/hub, old-save migration/rollback, timed operations, allied ram movement
-and ES/EN visual checks pass; exact hashes and performance limits are recorded in
-assets/validation_v5_15_2. CA449-01 remains outstanding. Prepare the combined author
-terminal only after #451; no V5.15 merge/closure or author acceptance is inferred.
-
-
-## 5.15.1 / #448 - Command delivery and author check
-
-Scope: mandatory Unitarian membership, recognized captaincy and reputation50;
-bounded hold/known advance/regroup/withdraw orders; existing100-member military
-formations and succession; original pending defenders only. The author approved
-returning physically to the original barracks without disappearance/healing.
-Per-soldier receipt and migration preserve orders and original identities.
-Evidence: assets/validation_v5_15_1. CA448-01 is outstanding alongside CA447-01.
-#449 machines, #450 routes/objectives and #451 consequences remain separate
-deliveries. No V5.15 merge or issue closure is authorized by agent-only tests.
-
-## 5.15.0 / #447 - Director delivery and author check
-
-Implemented scope: revisioned battle state, approved Barracas schedule and
-all-defenders-dead defeat, finite reserve deadlines on shared civil time,
-native/catch-up coordination and dated ES/EN outcome entry. Preserve the
-existing twelve-machine plus commander victory and Zupay retreat canon.
-
-Validation is recorded under assets/validation_v5_15_0; author test CA447-01
-remains pending. Keep #448 command, #449 machines, #450 routes/objectives and
-#451 world consequences in separate patches. Do not close #447 or merge its
-PR based only on agent-native checks.
+Known follow-ups remain engineering work, not outstanding author checks.
+Active-siege rendering retains the measured severe limitation. The shared #451
+laboratory also creates a forge for every isolated scene on a single sector;
+the existing station classification therefore makes its entire floor industrial.
+The author reported this before acceptance. A future focused correction should
+isolate the workshop sector and spawn its stations only for machine checks,
+then verify environmental classification outside/inside and unaffected production
+maps. This closure records the diagnosis; no contamination fix or new test result
+is claimed. Preserve original disposable saves/packages and native failures.
 
 ## V5.14 accepted and integrated — 2026-11-09 (#443–446)
 

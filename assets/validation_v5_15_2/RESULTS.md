@@ -71,3 +71,13 @@ severe siege presentation limitation remains, and performance acceptance is fals
 
 
 The ground-facing control measures75.78768FPS with p95/p99/max17.61/18.67/20.69ms; simulation mean/p95/p99/max28.58/38.62/42.91/46.46ms. Application presentation requests are not monitor scanout.
+
+
+## Author acceptance ? 2026-11-10
+
+CA449-01 (origin5.15.2, #449) passed by explicit author confirmation of
+all V5.15 tests. The author requested merge/closure; PR637 is merged and
+#449 is closed. HISTORY records the acceptance separately from the original
+native evidence above. Earlier pending labels describe the delivery state.
+This documentation-only acceptance update adds no native/performance measurement;
+recorded limitations and the shared laboratory contamination follow-up remain.

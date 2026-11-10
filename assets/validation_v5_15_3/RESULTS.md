@@ -73,3 +73,13 @@ claimed speedup. Severe pre-existing active-siege rendering remains unacceptable
 New runtime work is bounded to37 geometric entry checks per active city character,
 one owned campaign record, at most8 cooperative identities and the original12
 machine roster only on explicit reporting. No new global actor census is added.
+
+
+## Author acceptance ? 2026-11-10
+
+CA450-01 (origin5.15.3, #450) passed by explicit author confirmation of
+all V5.15 tests. The author requested merge/closure; PR638 is merged and
+#450 is closed. HISTORY records the acceptance separately from the original
+native evidence above. Earlier pending labels describe the delivery state.
+This documentation-only acceptance update adds no native/performance measurement;
+recorded limitations and the shared laboratory contamination follow-up remain.

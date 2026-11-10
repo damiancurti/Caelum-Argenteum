@@ -46,7 +46,7 @@ remains a clue, not recovered memory or automatic membership/reputation.
 Command combines all three approved conditions and uses the existing guards,
 formation rules, streets, stairs and home/barracks return points. There are no
 new defenders, invented reserve pool, map edits or new character identities.
-Command access and native/save boundaries are owned by SYSTEMS. CA448-01 pending.
+Command access and native/save boundaries are owned by SYSTEMS. CA448-01 passed by author confirmation on2026-11-10.
 
 ## 5.15.0 / #447 - Barracas battle outcomes
 
@@ -57,7 +57,7 @@ to reload. No time-limit loss is added. The twelve-machine objective and
 confirmed Zupay retreat remain the victory contract and Chapter I canon.
 Later occupation, service recovery and optional routes are separate #450/451
 deliveries. No mansion/sewer geometry, new character or allegiance is authored
-by #447. Pending acceptance: CA447-01.
+by #447. CA447-01 passed by author confirmation on2026-11-10.
 
 ## V5.14 card-service boundary (#443–446)
 
