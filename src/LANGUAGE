@@ -8378,3 +8378,31 @@ CA_MACHINE_RESUME = "Reanudar trabajo";
 CA_MACHINE_CANCEL = "Cancelar trabajo";
 CA_MACHINE_PREVIOUS = "Facción anterior";
 CA_MACHINE_NEXT = "Facción siguiente";
+
+[enu default]
+CA_TACTICS_ROUTE = "Tactical route";
+CA_TACTICS_WEST = "West exterior flank";
+CA_TACTICS_STAIRS = "Stairs to the wallwalk";
+CA_TACTICS_PREPARE_CHOICE = "Deliver the prisoners' siege intelligence.";
+CA_TACTICS_DELIVER_CHOICE = "Report an intact machine captured for the Unitarians.";
+CA_TACTICS_UNAVAILABLE = "The report cannot be received now.";
+CA_TACTICS_NO_INTELLIGENCE = "First hear the rescued prisoners' siege accounts after collecting their reward.";
+CA_TACTICS_PREPARED = "Intelligence received. One group of 100 is withheld from the enemy reserve, once.";
+CA_TACTICS_TOO_LATE = "The siege has begun. This preparation is no longer possible.";
+CA_TACTICS_CITY_REPORT = "Report the machine to the guard command outside in Barracas, where its condition can be confirmed.";
+CA_TACTICS_NO_MACHINE = "Capture an original enemy machine intact for the Unitarians and keep it undamaged and operational. It can remain where it stands.";
+CA_TACTICS_DELIVERED = "Machine delivery recorded. Each eligible cooperative participant receives +50 Unitarian reputation once.";
+
+[es]
+CA_TACTICS_ROUTE = "Ruta táctica";
+CA_TACTICS_WEST = "Flanqueo exterior oeste";
+CA_TACTICS_STAIRS = "Escalera al adarve";
+CA_TACTICS_PREPARE_CHOICE = "Entregar la información de los prisioneros sobre el asedio.";
+CA_TACTICS_DELIVER_CHOICE = "Informar de una máquina intacta capturada para los Unitarios.";
+CA_TACTICS_UNAVAILABLE = "No se puede recibir el informe ahora.";
+CA_TACTICS_NO_INTELLIGENCE = "Primero escucha los relatos del asedio de los prisioneros rescatados después de cobrar su recompensa.";
+CA_TACTICS_PREPARED = "Información recibida. Se descuenta una tanda de 100 de la reserva enemiga, una sola vez.";
+CA_TACTICS_TOO_LATE = "El asedio ya comenzó. Esta preparación ya no es posible.";
+CA_TACTICS_CITY_REPORT = "Informa al mando de la guardia en el exterior de Barracas, donde se puede confirmar el estado de la máquina.";
+CA_TACTICS_NO_MACHINE = "Captura intacta una máquina enemiga original para los Unitarios y consérvala sin daños y operativa. Puede quedarse donde está.";
+CA_TACTICS_DELIVERED = "Entrega registrada. Cada participante cooperativo elegible recibe +50 de reputación con los Unitarios una sola vez.";

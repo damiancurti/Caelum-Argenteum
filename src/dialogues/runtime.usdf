@@ -6877,6 +6877,8 @@ conversation
         name = "$CA_PORT_SOLDIER";
         dialog = "$CA_GUARD_CAPTAIN_FIRST";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_TACTICS_PREPARE_CHOICE"; giveitem = "CaelumBattlePreparationAction"; closedialog = true; }
+        choice { text = "$CA_TACTICS_DELIVER_CHOICE"; giveitem = "CaelumBattleDeliveryAction"; closedialog = true; }
         choice
         {
             text = "$CA_PORT_STORY_CHOICE";
@@ -6899,6 +6901,8 @@ conversation
         name = "$CA_PORT_SOLDIER";
         dialog = "$CA_GUARD_CAPTAIN_ANSWER";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_TACTICS_PREPARE_CHOICE"; giveitem = "CaelumBattlePreparationAction"; closedialog = true; }
+        choice { text = "$CA_TACTICS_DELIVER_CHOICE"; giveitem = "CaelumBattleDeliveryAction"; closedialog = true; }
         choice
         {
             text = "$CA_PORT_STORY_CHOICE";
@@ -6936,6 +6940,8 @@ conversation
         name = "$CA_PORT_SOLDIER";
         dialog = "$CA_GUARD_CAPTAIN_REPEAT";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_TACTICS_PREPARE_CHOICE"; giveitem = "CaelumBattlePreparationAction"; closedialog = true; }
+        choice { text = "$CA_TACTICS_DELIVER_CHOICE"; giveitem = "CaelumBattleDeliveryAction"; closedialog = true; }
         choice
         {
             text = "$CA_PORT_STORY_CHOICE";
@@ -6958,6 +6964,8 @@ conversation
         name = "$CA_PORT_SOLDIER";
         dialog = "$CA_GUARD_CAPTAIN_ANSWER";
         goodbye = "$CA_DLG_M01_SOCIAL_LEAVE";
+        choice { text = "$CA_TACTICS_PREPARE_CHOICE"; giveitem = "CaelumBattlePreparationAction"; closedialog = true; }
+        choice { text = "$CA_TACTICS_DELIVER_CHOICE"; giveitem = "CaelumBattleDeliveryAction"; closedialog = true; }
         choice
         {
             text = "$CA_PORT_STORY_CHOICE";

@@ -1,6 +1,23 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.15.2** - 2026-11-10.
+Documentation version: **5.15.3** - 2026-11-10.
+
+## 5.15.3 - Tactical routes and reports (#450, 2026-11-10)
+
+The author approved the west exterior and elevated wallwalk routes, existing
+prisoner intelligence withholding100 reserves once, and+50 individual cooperative
+reputation for reporting an intact operational original machine captured for
+Unitarios. Delivery leaves the machine where it is. SYSTEMS consolidates those
+rules and persistence. Geometry remains the already-authored city; no underground
+connection or reward was invented. Native evidence and intermediate failures are
+retained in assets/validation_v5_15_3. CA450-01 (origin5.15.3/#450) is pending;
+design approval and native checks do not constitute author gameplay acceptance.
+Native two-peer functional/reload/hub, original #449 save migration, real city
+walking and ES/EN native guard dialogue pass. Final siege presentation remains
+1.4434FPS (p95/p99/max752.5932/756.9568/756.9568ms); ground control77.1021FPS.
+The prior severe siege renderer limit remains; no Internet or general60FPS claim.
+
+
 
 ## 5.15.2 - Siege machines (#449, 2026-11-10)
 

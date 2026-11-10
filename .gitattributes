@@ -423,3 +423,11 @@
 /assets/tarot_examples/*.json text eol=lf
 /src/caelum/data/CaelumJusticeGeometry.zs text eol=lf
 /src/caelum/data/CaelumTarotExampleData.zs text eol=lf
+
+# #450 deterministic route data and isolated native evidence.
+/src/caelum/data/CaelumBattleRouteData.zs text eol=lf
+/generate_battle_routes.py text eol=lf
+/assets/validation_v5_15_3/*.py text eol=lf
+/assets/validation_v5_15_3/*.zs text eol=lf
+/assets/validation_v5_15_3/*.md text eol=lf
+/assets/validation_v5_15_3/*.json text eol=lf

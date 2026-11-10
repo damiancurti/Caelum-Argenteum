@@ -19,6 +19,7 @@ class CaelumWorldProgress : Object play
             || user.CreationWizardOpen || (user.player.cheats & CF_PREDICTING)) return;
         let record = user.GetPersistentCharacterState(false);
         if (record == null || !record.ProfileCommitted) return;
+        CaelumBattleTactics.Claim(user);
         CaelumPoiKnowledge.Ensure(record);
         CaelumAuthoredCartography.Update(user,record);
         CaelumQuestTracking.Ensure(record);

@@ -1,6 +1,44 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.15.2** - 2026-11-10.
+Documentation version: **5.15.3** - 2026-11-10.
+
+## 5.15.3 / #450 - Barracas tactical routes and optional delivery
+
+The author's approved alternatives reuse the existing west exterior ground and
+stairs/wallwalk network. Walking onto a stair's first step or the west exterior
+records only that character's observed entry point. No remote endpoint, undiscovered
+route, new sewer connection or access privilege is revealed. Existing gates,
+physical collision, faction services, crew and machine interactions remain in force.
+The route catalogue is generated from CITY.json and checked against the actual
+city geometry checksum. Knowledge revision3 preserves old observations without
+inferring visits. Multiplayer retains the existing private Journal/known-point
+policy; native map markers remain disabled when they cannot filter recipients.
+
+After hearing an already-rescued prisoner's paid siege account, report the
+intelligence through a guard's ordinary dialogue before the scheduled battle.
+Reporting works inside the original barracks and outside; it does not require
+membership, captaincy or reputation, which apply only to military orders.
+The shared campaign records this preparation once. It withholds one group of100
+from the finite6600 enemy reserve, leaving6500, without consuming an arrival,
+changing the350-tic cadence or manufacturing allies. Repetition, reload, travel
+and reserve schema migration preserve both spent arrivals and the withheld group.
+A report after the battle starts is too late. An old conversation is evidence;
+rescue/payment alone never substitutes for actually hearing the account.
+
+Optional delivery: capture one of the original twelve enemy machines intact for
+the Unitarians, keep it undamaged and operational, and report it through the guard
+dialogue in the city exterior, where the machine's current body can be verified.
+It remains physically where captured. Construction, another owning faction,
+sabotage, destruction or damage at capture do not satisfy this objective. Repair
+can restore later damage, but cannot retroactively make a damaged capture intact.
+The first successful report captures cooperative eligibility with #436's existing
+ready-participant identity policy. Each eligible identity receives+50 Unitarian
+reputation exactly once; a reused player slot or late arrival is not eligible.
+The shared delivery/payment records travel with the campaign clock and survive
+save/load. Repeated reports and personal-profile reloads cannot pay again.
+The main twelve-machine plus commander objective is unchanged; no further
+casualty modifier, reward or later consequence is introduced by this patch.
+
 
 ## 5.15.2 / #449 - Construction and persistent machine ownership
 

@@ -1,7 +1,7 @@
 // Identidades de categoría y presentación; no definen reglas de descubrimiento.
 class CaelumPoiData : Object
 {
-    const REVISION = 2;
+    const REVISION = 3;
     const BED = 1;
     const STATION = 2;
     const MERCHANT = 3;
@@ -10,12 +10,13 @@ class CaelumPoiData : Object
     const ROOM = 6;
     const TOWER = 7;
     const GRATE = 8;
+    const TACTICAL_ROUTE = 9;
     const ACCESS_UNKNOWN = 0;
     const ACCESS_CLOSED = 1;
     const ACCESS_OPEN = 2;
     const ICON_SIZE = 12.0;
 
-    static bool ValidCategory(int category) { return category>=BED && category<=GRATE; }
+    static bool ValidCategory(int category) { return category>=BED && category<=TACTICAL_ROUTE; }
     static String CategoryKey(int category)
     {
         switch(category)
@@ -28,6 +29,7 @@ class CaelumPoiData : Object
         case ROOM: return "CA_POI_ROOM";
         case TOWER: return "CA_POI_TOWER";
         case GRATE: return "CA_POI_GRATE";
+        case TACTICAL_ROUTE:return "CA_TACTICS_ROUTE";
         }
         return "";
     }
@@ -48,6 +50,7 @@ class CaelumPoiData : Object
         case ROOM: return "graphics/caelum/ui/journal/icons/ca_ui_nav_reputation.png";
         case TOWER: return "graphics/caelum/ui/journal/icons/ca_ui_category_shields.png";
         case GRATE: return "graphics/caelum/ui/journal/icons/ca_ui_action_locked.png";
+        case TACTICAL_ROUTE:return "graphics/caelum/ui/journal/icons/ca_ui_action_use.png";
         }
         return "";
     }

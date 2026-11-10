@@ -9,6 +9,7 @@ class CaelumSiegeCrewSlot : Object play
 class CaelumSiegeReinforcements : Object play
 {
     int Revision, Successful, Living, Remaining, Pending, GroupStart;
+    int TacticsRevision,Withheld;
     int NextOpportunity, PlacementCursor, PlacementFailures, Opportunities;
     bool Enabled, Stopped, Registering;
     bool Placed[CaelumReinforcementData.GROUP_SIZE];
@@ -20,7 +21,7 @@ class CaelumSiegeReinforcements : Object play
         if(Revision>0)
         {
             // Revisión idempotente: conservar identidades, tanda y plazo.
-            if(Enabled)Remaining=Max(0,CaelumReinforcementData.TOTAL-Successful);
+            if(Enabled)Remaining=Max(0,CaelumReinforcementData.TOTAL-Successful-Withheld);
             Revision=CaelumReinforcementData.REVISION;
             RefreshLiving(port);
             return;

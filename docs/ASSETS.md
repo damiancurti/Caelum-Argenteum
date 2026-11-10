@@ -1,6 +1,17 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.15.2** - 2026-11-10.
+Documentation version: **5.15.3** - 2026-11-10.
+
+## 5.15.3 / #450 - Derived tactical route data
+
+`generate_battle_routes.py` deterministically derives entry regions from the
+existing `assets/map06_port/CITY.json`; it adds no map or visual asset. Route
+markers reuse the owned action icon and known-only cartography presentation.
+Guard dialogue source edits are in `src/dialogues/npc/guards.usdf`; runtime and
+localization indexes are regenerated. ES/EN reporting text has no new voice asset.
+Native fixtures, scripts and evidence are in assets/validation_v5_15_3. Private
+packages/saves, engine and development IWAD are not distributed game assets.
+
 
 ## 5.15.2 / #449 - Owned barricade and machine data
 
