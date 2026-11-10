@@ -108,8 +108,15 @@ class CaelumSiegeReinforcements : Object play
     {
         if(!Enabled)return;
         if(Stopped)return;
-        if(port.Victory){Stopped=true;return;}
-        if(Remaining==0 || level.time<NextOpportunity)return;
+        if(port.BattleResolved()){Stopped=true;return;}
+        if(Remaining==0)return;
+        double now=CaelumBattleDirector.CivilNow(port);
+        if(port.Director!=null && now>=0)
+        {
+            if(!port.Director.WaveDue(now))return;
+            port.Director.RecordWave(now);
+        }
+        else if(level.time<NextOpportunity)return;
         // Censo sólo al admitir una tanda: incluye cuerpos fuera de cámara,
         // revividos y referencias destruidas, sin recorrer el mapa cada tic.
         RefreshLiving(port);
@@ -121,7 +128,7 @@ class CaelumSiegeReinforcements : Object play
     void Opportunity(CaelumPortSiege port)
     {
         if(!Enabled || Stopped || Remaining==0)return;
-        if(port.Victory){Stopped=true;return;}
+        if(port.BattleResolved()){Stopped=true;return;}
         RefreshLiving(port);Opportunities++;Admit(port);
     }
 

@@ -1,0 +1,8 @@
+CA447-01 | Origin: 5.15.0 | Issue: #447 | Barracas director
+Prerequisites: final V5.15 package; use disposable saves and the delivered author terminal.
+1. Start the Barracas siege and inspect the dated Journal entry and reinforcements.
+2. Save/reload during the battle; confirm already arrived troops and casualties stay unchanged.
+3. In the supplied defeat scene, let the last defending soldier die while your character survives.
+4. Reload that outcome and later finish the original twelve-machine/commander objectives.
+Expected: defeat is recorded once without forcing a reload; unused reserves stop; later victory
+retains the earlier defeat and never recreates spent troops. Zupay's confirmed retreat remains valid.

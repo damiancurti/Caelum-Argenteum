@@ -1,6 +1,41 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.14.3** - 2026-11-09.
+Documentation version: **5.15.0** - 2026-11-09.
+
+## 5.15.0 - Dynamic battle director (#447, 2026-11-09)
+
+The author approved the existing Barracas scenario (1889-11-15 13:00,
+6,600 cumulative Mandingas, groups <=100, 350-tic opportunities), the #429
+1,000-per-side admission census including machines/commanders/operators, and
+the resurrection exception. He approved defeat when every defending soldier
+has died, without an automatic deadline; players may survive and continue.
+The twelve-machine plus confirmed commander defeat/retreat victory remains.
+
+The revision-1 director persists outcomes, actual defender identities and
+shared civil-time reserve deadlines. Native and unloaded simulation reuse the
+existing finite arrival ledger. Death/resurrection/binding events invalidate
+status; no new routine world scan is introduced. Repeated loads and later
+calendar boundaries cannot duplicate arrivals or outcomes. Later liberation
+retains the initial defeat and spent reserves for #451.
+
+Validation: assets/validation_v5_15_0; raw outputs in build/v515/issue447.
+The first restore fixture lacked the six native exit nodes and aborted during
+reinforcement placement; restore-01 is retained. Correcting only the fixture
+produced passing two-client checkpoint/reload runs with 21 checks per peer.
+The reviewed package passed native two-client checkpoint/reload (21 checks
+per peer), protected-witness hub travel, calendar catch-up and five original
+V5.14-save migration checks. The original package/save rollback passed.
+Unprotected travel fixtures correctly lost their final defender in the real
+offscreen battle; the persistence-only fixture now protects that witness.
+The early director revision guard recovered a measured ground-facing city
+regression; CA-KP-214 records the controlled comparison. Final package hashes,
+native logs and presentation/frame-time tails are in the issue evidence.
+The baseline mansion and siege remain below the author's performance target;
+passing simulation or synchronization is not rendering acceptance.
+
+Author acceptance remains pending: CA447-01 (origin 5.15.0, #447). Rule
+approval is not a reported manual gameplay result. Other V5.15 issues retain
+separate branches, test evidence, commits and linked PRs.
 
 ## 5.14.3 — Ranked Trucazo and local tournaments (#446)
 

@@ -8232,3 +8232,9 @@ CA_TC4_NEXT_PAIR = "Ronda %d: %s contra %s";
 CA_TC4_RESULT_PAIR = "%s contra %s: gana %s";
 CA_TC4_CHAMPION = "Campeón del torneo: %s";
 CA_TC4_TOURNAMENT_WAIT = "Cierren cada partida terminada antes del próximo cruce. Quienes esperan conservan su lugar; cerrar esta vista no abandona. Usá la mesa para volver. La recuperación usa el guardado común.";
+
+[enu default]
+CA_BATTLE_DEFEAT = "Barracas al Sud has fallen. The defending soldiers are dead; the survivors can continue under occupation.";
+
+[es]
+CA_BATTLE_DEFEAT = "Barracas al Sud ha caído. Los soldados defensores murieron; los supervivientes pueden continuar bajo ocupación.";

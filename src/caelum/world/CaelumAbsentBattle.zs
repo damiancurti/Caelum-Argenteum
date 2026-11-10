@@ -662,7 +662,12 @@ class CaelumAbsentBattle : Object play
         if(port!=null)for(int i=0;i<port.Defenders.Size();i++)
         {let row=Add(port.Defenders[i]);if(row!=null){row.RosterKind=2;row.RosterIndex=i;}}
         if(port!=null && port.Reinforcements!=null)
+        {
+            port.EnsureDirector(Stamp);
             ReinforcementDelay=Max(0,port.Reinforcements.NextOpportunity-level.time)/double(TICRATE);
+            if(port.Director!=null && port.Director.ClockReady)
+                ReinforcementDelay=Max(0,port.Director.NextWaveCivil-Stamp)*ActiveScale;
+        }
         Machines.Clear();
         for(int i=0;i<encounter.Machines.Size();i++)AddMachine(encounter.Machines[i]);
         if(port!=null)for(int i=0;i<port.Guns.Size();i++)AddMachine(port.Guns[i]);
@@ -719,9 +724,16 @@ class CaelumAbsentBattle : Object play
         if(port==null || !port.SiegeStarted || port.Reinforcements==null)return;
         let reserve=port.Reinforcements;
         if(!reserve.Enabled || reserve.Stopped || reserve.Remaining==0)return;
-        if(port.Victory){reserve.Stopped=true;return;}
+        port.ObserveBattle(SimulationTime);
+        if(port.BattleResolved()){reserve.Stopped=true;return;}
         ReinforcementDelay-=seconds;
-        if(ReinforcementDelay>0)return;
+        if(port.Director!=null)
+        {
+            if(!port.Director.WaveDue(SimulationTime))return;
+            port.Director.RecordWave(SimulationTime);
+            ReinforcementDelay=0;
+        }
+        else if(ReinforcementDelay>0)return;
         int first=port.Attackers.Size();reserve.Opportunity(port);
         ReinforcementDelay+=double(CaelumReinforcementData.INTERVAL)/TICRATE;
         for(int i=first;i<port.Attackers.Size();i++)
@@ -921,7 +933,11 @@ class CaelumAbsentBattle : Object play
         Busy=false;
         let port=CaelumPortSiege(Encounter);
         if(port!=null && port.Reinforcements!=null)
+        {
+            if(port.Director!=null && port.Director.ClockReady)
+                ReinforcementDelay=Max(0,port.Director.NextWaveCivil-Stamp)*ActiveScale;
             port.Reinforcements.NextOpportunity=level.time+int(Ceil(Max(0,ReinforcementDelay)*TICRATE));
+        }
         for(int i=0;i<Rows.Size();i++)
         {
             let row=Rows[i];let resident=CaelumPortDefender(row.Body);

@@ -96,7 +96,9 @@ class CaelumPortSiege : CaelumSiegeEncounter
             if(!place.Found)return;
             Subcaptain=CaelumCompanionSubcaptain(Spawn("CaelumCompanionSubcaptain",place.Point,NO_REPLACE));
             if(Subcaptain==null)return;
-            Subcaptain.Port=self;Subcaptain.Station=place.Point;Defenders.Push(Subcaptain);SubcaptainCreated=true;return;
+            Subcaptain.Port=self;Subcaptain.Station=place.Point;Defenders.Push(Subcaptain);SubcaptainCreated=true;
+            if(Director!=null)Director.RegisterDefender(Subcaptain);
+            return;
         }
     }
     int InteriorDoorRevision;
@@ -104,6 +106,26 @@ class CaelumPortSiege : CaelumSiegeEncounter
     CaelumRentalAgent RentalAgent;
     Array<CaelumPortDefender> CityPathQueue;
     CaelumSiegeReinforcements Reinforcements;
+    CaelumBattleDirector Director;
+
+    void EnsureDirector(double civil=-1)
+    {
+        // Una revisión vigente no necesita resolver otra vez reloj ni registros.
+        if(Director!=null && Director.Revision>=CaelumBattleData.REVISION)return;
+        if(!CaelumCityData.Enabled())return;
+        if(civil<0)civil=CaelumBattleDirector.CivilNow(self);
+        if(Director==null)Director=new('CaelumBattleDirector');
+        Director.Initialize(self,civil);
+    }
+
+    void ObserveBattle(double civil=-1)
+    {
+        if(civil<0)civil=CaelumBattleDirector.CivilNow(self);
+        EnsureDirector(civil);
+        if(Director!=null)Director.Observe(civil);
+    }
+
+    bool BattleResolved(){return Victory || (Director!=null && Director.Resolved());}
 
     override bool AllowLateRegistration()
     { return Reinforcements!=null && Reinforcements.Enabled && !Victory && Reinforcements.Registering; }
@@ -242,6 +264,8 @@ class CaelumPortSiege : CaelumSiegeEncounter
             return;
         }
         SiegeStarted=true;
+        EnsureDirector(civil);
+        if(Director!=null)Director.ObserveStart(civil>=0?civil:CaelumBattleDirector.CivilNow(self));
         if(separateHomes)CaelumHouseResidents.Get(true).BeginDeployment(self,civil);
         let commander=CaelumPortCommander(Spawn("CaelumPortCommander",CaelumPortData.BossPosition()));
         Boss=RegisterAttacker(commander);Boss.Lane=NearestLane(commander.Pos.X);Boss.ExitNode=Exits[Boss.Lane];
@@ -775,24 +799,27 @@ class CaelumPortSiege : CaelumSiegeEncounter
     void Calendar(CaelumPlayer user,double actualCivil=-1)
     {
         let agenda=CaelumScheduleState.Get(user,true);if(agenda==null)return;
-        if(CaelumCityData.Enabled() && !Victory)
+        bool lost=Director!=null && Director.Defeated && !Victory;
+        if(CaelumCityData.Enabled() && !Victory && !lost)
         {
             let scheduled=agenda.Add("port16_siege_start",CaelumScheduleRules.SIEGE,"CA_PORT_OBJECTIVES","MAP03",
                 CaelumCityWorld.SiegeDay(),CaelumCityData.SIEGE_HOUR*CaelumWorldClock.TicsPerHour(),0,1,"port16_siege");
             if(scheduled!=null)scheduled.Value=1;
             CaelumScheduleState.Sync(user);return;
         }
-        String key=Victory ? "port16_siege_end" : "port16_siege_start";
+        String key=lost?"port447_siege_defeat":Victory ? "port16_siege_end" : "port16_siege_start";
+        String title=lost?"CA_BATTLE_DEFEAT":Victory ? "CA_PORT_AFTER" : "CA_PORT_OBJECTIVES";
+        if(lost && actualCivil<0)actualCivil=Director.DefeatCivil;
         if(agenda.FindKey(key)!=null)return;
         CaelumScheduledEvent e;
-        if(actualCivil<0)e=agenda.AddAfter(user,key,CaelumScheduleRules.SIEGE,Victory ? "CA_PORT_AFTER" : "CA_PORT_OBJECTIVES","MAP03",0,0,1,"port16_siege");
+        if(actualCivil<0)e=agenda.AddAfter(user,key,CaelumScheduleRules.SIEGE,title,"MAP03",0,0,1,"port16_siege");
         else
         {
             int day=int(Floor(actualCivil/86400));
             int tic=int((actualCivil-double(day)*86400)*CaelumWorldClock.TicsPerHour()/3600);
-            e=agenda.Add(key,CaelumScheduleRules.SIEGE,Victory ? "CA_PORT_AFTER" : "CA_PORT_OBJECTIVES","MAP03",day,tic,0,1,"port16_siege",false);
+            e=agenda.Add(key,CaelumScheduleRules.SIEGE,title,"MAP03",day,tic,0,1,"port16_siege",false);
         }
-        if(e!=null)e.Value=Victory ? 0 : 1;
+        if(e!=null)e.Value=Victory || lost ? 0 : 1;
         CaelumScheduleState.Sync(user);
     }
 
@@ -827,6 +854,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
         }
         if(CaelumCityData.Enabled() && !SiegeStarted)
         {
+            EnsureDirector();
             for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i] && players[i].mo!=null)Calendar(CaelumPlayer(players[i].mo));
             RefreshDensity();
             if(CaelumCityWorld.SiegeDue())Deploy(true);
@@ -837,6 +865,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
         RefreshDensity();
         if(!RosterSealed && !ActivateDeployment())return;
         Super.Tick();
+        ObserveBattle();
         Reinforcements.Tick(self);
         if(Victory && !Aftermath)
         {

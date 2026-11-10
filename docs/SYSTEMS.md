@@ -1,6 +1,44 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.14.3** - 2026-11-09.
+Documentation version: **5.15.0** - 2026-11-09.
+
+## 5.15.0 / #447 - Persistent battle director
+
+Author-approved on 2026-11-09: the initial scenario is Barracas al Sud at
+13:00 on 1889-11-15. Retain 6,600 cumulative Mandinga arrivals, groups of up
+to 100 and the existing 350-tic cadence. The #429 living admission limit is
+1,000 participants per side, including the commander, machines and their
+operators; offscreen bodies count, partial batches remain allowed and genuine
+resurrection can temporarily exceed admission capacity. The original #327
+Mandinga-only census description is superseded by #429, not reinstated here.
+
+The saved revision-1 director observes preparation, active battle, defeat,
+victory and later liberation. Victory still requires all twelve original
+hostile machines neutralized and the commander confirmed dead or retreated;
+Chapter I Zupay retreat remains canonical. Defeat occurs once no defending
+soldier remains alive. Wait for pending resident deployment before evaluating
+that condition; an absent actor reference does not prove a death. The player
+can remain alive and continue. There is no automatic time-limit defeat.
+
+Successful/remaining arrivals and partially placed batches remain owned by
+CaelumSiegeReinforcements. The director stores the next opportunity on shared
+civil time: 350 native tics retain their existing world-time equivalent.
+Live simulation and unloaded-world catch-up consume the same deadline. Failed
+placement consumes no reserve; blocked opportunities do not accumulate. Both
+victory and defeat stop unused reserves permanently. Later liberation retains
+the original defeat identity and never replenishes the army.
+
+Legacy state is initialized once from the encounter-owned defender roster,
+retaining actual bodies, casualty identities, counters and the pending delay.
+Native death/resurrection and resident binding invalidate defender status;
+normal ticks do not scan the world or recount the entire army. Missing
+references remain unresolved rather than becoming inferred casualties.
+The Journal calendar records the dated defeat with ES/EN text. Occupation
+services, command UI, construction and route rewards belong to #448-451.
+
+Validation evidence is kept separately in assets/validation_v5_15_0 and
+build/v515/issue447. Engine evidence is not author acceptance; CA447-01 remains
+in pending_test.txt until explicit confirmation.
 
 ## Trucazo casual, ranked and tournaments (5.14.3, #446)
 

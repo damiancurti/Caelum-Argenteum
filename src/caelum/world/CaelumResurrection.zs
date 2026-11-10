@@ -139,6 +139,7 @@ class CaelumResurrection : Object play
             npc.UpdateCombatHealthEffects();npc.UpdateActorLucidityState();
         }
         body.target=null;body.LastEnemy=null;body.SetState(body.SpawnState);
+        CaelumBattleDirector.DefenderChanged(CaelumPortDefender(body));
         return true;
     }
 }

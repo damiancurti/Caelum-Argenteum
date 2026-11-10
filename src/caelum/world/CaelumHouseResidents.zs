@@ -255,6 +255,7 @@ class CaelumHouseResidents : Inventory
         let entry=Residents[identity];let body=entry.Body;
         if(body==null || port==null || entry.ExcludedFromDeployment)return;
         body.Port=port;port.Defenders[identity]=body;
+        if(port.Director!=null)port.Director.RegisterDefender(body);
         if(!entry.AssignmentInitialized)
         {
             entry.GunIndex=-1;entry.GunSlot=-1;

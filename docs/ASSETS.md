@@ -1,6 +1,16 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.14.3** - 2026-11-09.
+Documentation version: **5.15.0** - 2026-11-09.
+
+## 5.15.0 / #447 - Director validation sources
+
+No new art, audio or campaign geometry is introduced. The existing Barracas
+actors, machines, models and formation positions keep their provenance.
+assets/validation_v5_15_0 contains deterministic private-room fixture sources
+and focused native runners, reusing the #435 sync instrumentation and #431
+campaign observer. Generated WAD/PK3 files, development IWADs, native executables
+and local saves are not distributed; outputs stay in build/v515/issue447.
+The original V5.14 package/save remain available for migration and rollback.
 
 ## V5.14 card services (#443–446)
 

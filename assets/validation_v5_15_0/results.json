@@ -1,0 +1,2780 @@
+{
+  "issue": 447,
+  "version": "5.15.0",
+  "author_accepted": false,
+  "runtime_sha256": "d7d0620bd6e5703aef471d500933bac24adc034d96dc636b4a095b4136ff96dc",
+  "qualification": "Native isolated checks and application vkQueuePresentKHR requests; no display scanout, Internet or author acceptance claim.",
+  "failed_fixtures": {
+    "restore-01": "Missing native exit nodes in the fixture; corrected before successful checkpoint/restore.",
+    "reviewed-travel": "Unprotected final defender died in real offscreen combat; early guest departure also corrected in runner.",
+    "travel-diagnostic-02": "Both peers confirmed actual last-defender death and defeat. Persistence-only fixture protects that defender."
+  },
+  "functional": [
+    {
+      "issue": 447,
+      "restored": false,
+      "runtime_sha256": "d7d0620bd6e5703aef471d500933bac24adc034d96dc636b4a095b4136ff96dc",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "fixture_sha256": "61488e17a085fdf175fac5c03aba6252a454469a7887995a49a30314a8e96b50",
+      "commands": [
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447-reviewed.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-checkpoint\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-checkpoint\\peer0\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-checkpoint\\peer0",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "-host",
+          "2",
+          "-port",
+          "16047",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-checkpoint\\peer0\\engine.log",
+          "+map",
+          "MAP03",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-checkpoint\\peer0\\commands.cfg"
+        ],
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447-reviewed.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-checkpoint\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-checkpoint\\peer1\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-checkpoint\\peer1",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "-join",
+          "127.0.0.1:16047",
+          "-port",
+          "16048",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-checkpoint\\peer1\\engine.log",
+          "+map",
+          "MAP03",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-checkpoint\\peer1\\commands.cfg"
+        ]
+      ],
+      "peers": [
+        {
+          "peer": 0,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA447 SEEDED",
+            "CA447 PASS native defenders initialized",
+            "CA447 PASS director anchored to shared civil time",
+            "CA447 PASS legacy roster migrated once",
+            "CA447 PASS migration preserves spent finite reserve",
+            "CA447 PASS idempotent migration preserves deadline and identities",
+            "CA447 PASS civil deadline exact boundary",
+            "CA447 PASS same opportunity cannot repeat",
+            "CA447 PASS one living defender prevents defeat",
+            "CA447 CHECKPOINT READY failures=0"
+          ],
+          "errors": [],
+          "native_sync": true
+        },
+        {
+          "peer": 1,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA447 SEEDED",
+            "CA447 PASS native defenders initialized",
+            "CA447 PASS director anchored to shared civil time",
+            "CA447 PASS legacy roster migrated once",
+            "CA447 PASS migration preserves spent finite reserve",
+            "CA447 PASS idempotent migration preserves deadline and identities",
+            "CA447 PASS civil deadline exact boundary",
+            "CA447 PASS same opportunity cannot repeat",
+            "CA447 PASS one living defender prevents defeat",
+            "CA447 CHECKPOINT READY failures=0"
+          ],
+          "errors": [],
+          "native_sync": true
+        }
+      ],
+      "timed_out": false,
+      "passed": true,
+      "label": "reviewed-checkpoint"
+    },
+    {
+      "issue": 447,
+      "restored": true,
+      "runtime_sha256": "d7d0620bd6e5703aef471d500933bac24adc034d96dc636b4a095b4136ff96dc",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "fixture_sha256": "61488e17a085fdf175fac5c03aba6252a454469a7887995a49a30314a8e96b50",
+      "commands": [
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447-reviewed.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-restored\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-restored\\peer0\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-restored\\peer0",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "-host",
+          "2",
+          "-port",
+          "16047",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-restored\\peer0\\engine.log",
+          "-loadgame",
+          "restore.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-restored\\peer0\\commands.cfg"
+        ],
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447-reviewed.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-restored\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-restored\\peer1\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-restored\\peer1",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "-join",
+          "127.0.0.1:16047",
+          "-port",
+          "16048",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-restored\\peer1\\engine.log",
+          "-loadgame",
+          "restore.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-restored\\peer1\\commands.cfg"
+        ]
+      ],
+      "peers": [
+        {
+          "peer": 0,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA447 PASS restored intended pre-outcome checkpoint",
+            "CA447 PASS save preserves deadline and final reserve",
+            "CA447 PASS save preserves exact casualty identity",
+            "CA447 PASS last real arrival consumes final finite slot",
+            "CA447 PASS spent reserves never replenish",
+            "CA447 PASS last defender commits defeat and stops reserves",
+            "CA447 PASS calendar replay cannot repeat defeat",
+            "CA447 PASS defeat retains a living playable survivor",
+            "CA447 PASS living commander retreat is confirmed at its actual exit",
+            "CA447 PASS eleven machines cannot finish the authored battle",
+            "CA447 PASS all original objectives produce actual victory",
+            "CA447 PASS later victory retains original defeat identity",
+            "CA447 PASS later world updates cannot repeat outcome or reserves",
+            "CA447 RESULT PASS checks=21 failures=0"
+          ],
+          "errors": [],
+          "native_sync": true
+        },
+        {
+          "peer": 1,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA447 PASS restored intended pre-outcome checkpoint",
+            "CA447 PASS save preserves deadline and final reserve",
+            "CA447 PASS save preserves exact casualty identity",
+            "CA447 PASS last real arrival consumes final finite slot",
+            "CA447 PASS spent reserves never replenish",
+            "CA447 PASS last defender commits defeat and stops reserves",
+            "CA447 PASS calendar replay cannot repeat defeat",
+            "CA447 PASS defeat retains a living playable survivor",
+            "CA447 PASS living commander retreat is confirmed at its actual exit",
+            "CA447 PASS eleven machines cannot finish the authored battle",
+            "CA447 PASS all original objectives produce actual victory",
+            "CA447 PASS later victory retains original defeat identity",
+            "CA447 PASS later world updates cannot repeat outcome or reserves",
+            "CA447 RESULT PASS checks=21 failures=0"
+          ],
+          "errors": [],
+          "native_sync": true
+        }
+      ],
+      "timed_out": false,
+      "passed": true,
+      "label": "reviewed-restored"
+    },
+    {
+      "issue": 447,
+      "restored": false,
+      "runtime_sha256": "d7d0620bd6e5703aef471d500933bac24adc034d96dc636b4a095b4136ff96dc",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "fixture_sha256": "476a9d9377f35cc0447dda4d9c13cd9e7ce6825bcacec4ed87c544303bedff47",
+      "commands": [
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447-reviewed.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-catchup\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-catchup\\peer0\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-catchup\\peer0",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-catchup\\peer0\\engine.log",
+          "+map",
+          "MAP03",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-catchup\\peer0\\commands.cfg"
+        ]
+      ],
+      "peers": [
+        {
+          "peer": 0,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA447 SEEDED",
+            "CA447 PASS native defenders initialized",
+            "CA447 PASS director anchored to shared civil time",
+            "CA447 PASS legacy roster migrated once",
+            "CA447 PASS migration preserves spent finite reserve",
+            "CA447 PASS idempotent migration preserves deadline and identities",
+            "CA447 PASS civil deadline exact boundary",
+            "CA447 PASS same opportunity cannot repeat",
+            "CA447 PASS one living defender prevents defeat",
+            "CA447 CHECKPOINT READY failures=0",
+            "CA447 PASS unloaded calendar consumes the final reserve once",
+            "CA447 PASS same calendar boundary cannot replay arrivals",
+            "CA447 PASS catch-up resumes native ownership",
+            "CA447 CATCHUP PASS failures=0"
+          ],
+          "errors": [],
+          "native_sync": true
+        }
+      ],
+      "timed_out": false,
+      "passed": true,
+      "label": "reviewed-catchup"
+    },
+    {
+      "issue": 447,
+      "restored": true,
+      "runtime_sha256": "d7d0620bd6e5703aef471d500933bac24adc034d96dc636b4a095b4136ff96dc",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "fixture_sha256": "476a9d9377f35cc0447dda4d9c13cd9e7ce6825bcacec4ed87c544303bedff47",
+      "commands": [
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-legacy\\issue446-final.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-legacy\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-legacy\\peer0\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-legacy\\peer0",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-legacy\\peer0\\engine.log",
+          "-loadgame",
+          "restore.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-legacy\\peer0\\commands.cfg"
+        ]
+      ],
+      "peers": [
+        {
+          "peer": 0,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA447 PASS pre-director save has no synthesized outcome",
+            "CA447 PASS native old-save migration creates revision one",
+            "CA447 PASS native migration retains exact bodies",
+            "CA447 PASS native migration retains spent reserves",
+            "CA447 PASS native old-save migration is idempotent",
+            "CA447 LEGACY PASS failures=0"
+          ],
+          "errors": [],
+          "native_sync": true
+        }
+      ],
+      "timed_out": false,
+      "passed": true,
+      "label": "reviewed-legacy"
+    },
+    {
+      "issue": 447,
+      "restored": false,
+      "runtime_sha256": "d7d0620bd6e5703aef471d500933bac24adc034d96dc636b4a095b4136ff96dc",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "fixture_sha256": "518203ee0116a080a103ecea8c04822934535c430464d58822566d72c5610caf",
+      "commands": [
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447-reviewed.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-travel-isolated\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-travel-isolated\\peer0\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-travel-isolated\\peer0",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "-host",
+          "2",
+          "-port",
+          "16047",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-travel-isolated\\peer0\\engine.log",
+          "+map",
+          "MAP03",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-travel-isolated\\peer0\\commands.cfg"
+        ],
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447-reviewed.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-travel-isolated\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-travel-isolated\\peer1\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-travel-isolated\\peer1",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "-join",
+          "127.0.0.1:16047",
+          "-port",
+          "16048",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-travel-isolated\\peer1\\engine.log",
+          "+map",
+          "MAP03",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-travel-isolated\\peer1\\commands.cfg"
+        ]
+      ],
+      "peers": [
+        {
+          "peer": 0,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA447 SEEDED",
+            "CA447 PASS native defenders initialized",
+            "CA447 PASS director anchored to shared civil time",
+            "CA447 PASS legacy roster migrated once",
+            "CA447 PASS migration preserves spent finite reserve",
+            "CA447 PASS idempotent migration preserves deadline and identities",
+            "CA447 PASS civil deadline exact boundary",
+            "CA447 PASS same opportunity cannot repeat",
+            "CA447 PASS one living defender prevents defeat",
+            "CA447 CHECKPOINT READY failures=0",
+            "CA447 TRAVEL STATE stage=2 firstHealth=0 secondHealth=1146 dead=1 phase=1 defeated=0",
+            "CA447 PASS hub return retains the original director and checkpoint",
+            "CA447 PASS hub return retains exact defender identities",
+            "CA447 PASS hub return retains casualty without inventing defeat",
+            "CA447 PASS hub return does not restart the reserve deadline or budget",
+            "CA447 TRAVEL PASS failures=0"
+          ],
+          "errors": [],
+          "native_sync": true
+        },
+        {
+          "peer": 1,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA447 SEEDED",
+            "CA447 PASS native defenders initialized",
+            "CA447 PASS director anchored to shared civil time",
+            "CA447 PASS legacy roster migrated once",
+            "CA447 PASS migration preserves spent finite reserve",
+            "CA447 PASS idempotent migration preserves deadline and identities",
+            "CA447 PASS civil deadline exact boundary",
+            "CA447 PASS same opportunity cannot repeat",
+            "CA447 PASS one living defender prevents defeat",
+            "CA447 CHECKPOINT READY failures=0",
+            "CA447 TRAVEL STATE stage=2 firstHealth=0 secondHealth=1146 dead=1 phase=1 defeated=0",
+            "CA447 PASS hub return retains the original director and checkpoint",
+            "CA447 PASS hub return retains exact defender identities",
+            "CA447 PASS hub return retains casualty without inventing defeat",
+            "CA447 PASS hub return does not restart the reserve deadline or budget",
+            "CA447 TRAVEL PASS failures=0"
+          ],
+          "errors": [],
+          "native_sync": true
+        }
+      ],
+      "timed_out": false,
+      "passed": true,
+      "label": "reviewed-travel-isolated"
+    },
+    {
+      "issue": 447,
+      "restored": true,
+      "runtime_sha256": "8cfe60cf50cfe46230d53511ef88fe96436b389c903139feb51de267bfba7847",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "fixture_sha256": "ee3e82a35e7eb76ac411f4382a274ba09718fcf289844d3e7ea44f74e42f0a38",
+      "commands": [
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v514\\issue446-final.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\original-rollback\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\original-rollback\\peer0\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\original-rollback\\peer0",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\original-rollback\\peer0\\engine.log",
+          "-loadgame",
+          "restore.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\original-rollback\\peer0\\commands.cfg"
+        ]
+      ],
+      "peers": [
+        {
+          "peer": 0,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA447 PASS original save still loads under original runtime",
+            "CA447 PASS rollback preserves original roster and finite reserve",
+            "CA447 RESULT PASS failures=0"
+          ],
+          "errors": [],
+          "native_sync": true
+        }
+      ],
+      "timed_out": false,
+      "passed": true,
+      "label": "original-rollback"
+    },
+    {
+      "issue": 447,
+      "restored": true,
+      "runtime_sha256": "46e74849fb4d65f2b31bd603bdc76d17ca9b7c8f891a4f07d77fcd86a0077189",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "fixture_sha256": "79757c3308950d580dd3228926b82b4f6730e0a76c6edf2c3f8cb8ec133079e9",
+      "commands": [
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447-dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\restore-01\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\restore-01\\peer0\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\restore-01\\peer0",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\restore-01\\peer0\\engine.log",
+          "-loadgame",
+          "restore.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\restore-01\\peer0\\commands.cfg"
+        ]
+      ],
+      "peers": [
+        {
+          "peer": 0,
+          "exit": 1,
+          "passed": false,
+          "checks": [
+            "CA447 PASS restored intended pre-outcome checkpoint",
+            "CA447 PASS save preserves deadline and final reserve",
+            "CA447 PASS save preserves exact casualty identity"
+          ],
+          "errors": [
+            "VM execution aborted: array access out of bounds. Size = 0, current index = 0"
+          ],
+          "native_sync": true
+        }
+      ],
+      "timed_out": true,
+      "passed": false,
+      "label": "restore-01"
+    },
+    {
+      "issue": 447,
+      "restored": false,
+      "runtime_sha256": "d7d0620bd6e5703aef471d500933bac24adc034d96dc636b4a095b4136ff96dc",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "fixture_sha256": "ffdc66c75017847b0a567c5a0d3f6f009c24d7a0a6c8bb6295f1207dae4ecf01",
+      "commands": [
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447-reviewed.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-travel\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-travel\\peer0\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-travel\\peer0",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "-host",
+          "2",
+          "-port",
+          "16047",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-travel\\peer0\\engine.log",
+          "+map",
+          "MAP03",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-travel\\peer0\\commands.cfg"
+        ],
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447-reviewed.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-travel\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-travel\\peer1\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-travel\\peer1",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "-join",
+          "127.0.0.1:16047",
+          "-port",
+          "16048",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-travel\\peer1\\engine.log",
+          "+map",
+          "MAP03",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\reviewed-travel\\peer1\\commands.cfg"
+        ]
+      ],
+      "peers": [
+        {
+          "peer": 0,
+          "exit": 0,
+          "passed": false,
+          "checks": [
+            "CA447 SEEDED",
+            "CA447 PASS native defenders initialized",
+            "CA447 PASS director anchored to shared civil time",
+            "CA447 PASS legacy roster migrated once",
+            "CA447 PASS migration preserves spent finite reserve",
+            "CA447 PASS idempotent migration preserves deadline and identities",
+            "CA447 PASS civil deadline exact boundary",
+            "CA447 PASS same opportunity cannot repeat",
+            "CA447 PASS one living defender prevents defeat",
+            "CA447 CHECKPOINT READY failures=0",
+            "CA447 PASS hub return retains the original director and checkpoint",
+            "CA447 PASS hub return retains exact defender identities",
+            "CA447 FAIL hub return retains casualty without inventing defeat",
+            "CA447 PASS hub return does not restart the reserve deadline or budget",
+            "CA447 TRAVEL FAIL failures=1"
+          ],
+          "errors": [
+            "CA447 FAIL hub return retains casualty without inventing defeat",
+            "CA447 TRAVEL FAIL failures=1"
+          ],
+          "native_sync": true
+        },
+        {
+          "peer": 1,
+          "exit": 0,
+          "passed": false,
+          "checks": [
+            "CA447 SEEDED",
+            "CA447 PASS native defenders initialized",
+            "CA447 PASS director anchored to shared civil time",
+            "CA447 PASS legacy roster migrated once",
+            "CA447 PASS migration preserves spent finite reserve",
+            "CA447 PASS idempotent migration preserves deadline and identities",
+            "CA447 PASS civil deadline exact boundary",
+            "CA447 PASS same opportunity cannot repeat",
+            "CA447 PASS one living defender prevents defeat",
+            "CA447 CHECKPOINT READY failures=0"
+          ],
+          "errors": [],
+          "native_sync": true
+        }
+      ],
+      "timed_out": false,
+      "passed": false,
+      "label": "reviewed-travel"
+    },
+    {
+      "issue": 447,
+      "restored": false,
+      "runtime_sha256": "d7d0620bd6e5703aef471d500933bac24adc034d96dc636b4a095b4136ff96dc",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "fixture_sha256": "b982b6973897e43c0e21e650012e405d7fe8ded3550921925e8ed5a278a1a864",
+      "commands": [
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447-reviewed.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\travel-diagnostic-02\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\travel-diagnostic-02\\peer0\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\travel-diagnostic-02\\peer0",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "-host",
+          "2",
+          "-port",
+          "16047",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\travel-diagnostic-02\\peer0\\engine.log",
+          "+map",
+          "MAP03",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\travel-diagnostic-02\\peer0\\commands.cfg"
+        ],
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447-reviewed.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\travel-diagnostic-02\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\travel-diagnostic-02\\peer1\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\travel-diagnostic-02\\peer1",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "-join",
+          "127.0.0.1:16047",
+          "-port",
+          "16048",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\travel-diagnostic-02\\peer1\\engine.log",
+          "+map",
+          "MAP03",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\travel-diagnostic-02\\peer1\\commands.cfg"
+        ]
+      ],
+      "peers": [
+        {
+          "peer": 0,
+          "exit": 0,
+          "passed": false,
+          "checks": [
+            "CA447 SEEDED",
+            "CA447 PASS native defenders initialized",
+            "CA447 PASS director anchored to shared civil time",
+            "CA447 PASS legacy roster migrated once",
+            "CA447 PASS migration preserves spent finite reserve",
+            "CA447 PASS idempotent migration preserves deadline and identities",
+            "CA447 PASS civil deadline exact boundary",
+            "CA447 PASS same opportunity cannot repeat",
+            "CA447 PASS one living defender prevents defeat",
+            "CA447 CHECKPOINT READY failures=0",
+            "CA447 TRAVEL STATE stage=2 firstHealth=0 secondHealth=0 dead=1 phase=3 defeated=1",
+            "CA447 PASS hub return retains the original director and checkpoint",
+            "CA447 PASS hub return retains exact defender identities",
+            "CA447 FAIL hub return retains casualty without inventing defeat",
+            "CA447 PASS hub return does not restart the reserve deadline or budget",
+            "CA447 TRAVEL FAIL failures=1"
+          ],
+          "errors": [
+            "CA447 FAIL hub return retains casualty without inventing defeat",
+            "CA447 TRAVEL FAIL failures=1"
+          ],
+          "native_sync": true
+        },
+        {
+          "peer": 1,
+          "exit": 0,
+          "passed": false,
+          "checks": [
+            "CA447 SEEDED",
+            "CA447 PASS native defenders initialized",
+            "CA447 PASS director anchored to shared civil time",
+            "CA447 PASS legacy roster migrated once",
+            "CA447 PASS migration preserves spent finite reserve",
+            "CA447 PASS idempotent migration preserves deadline and identities",
+            "CA447 PASS civil deadline exact boundary",
+            "CA447 PASS same opportunity cannot repeat",
+            "CA447 PASS one living defender prevents defeat",
+            "CA447 CHECKPOINT READY failures=0",
+            "CA447 TRAVEL STATE stage=2 firstHealth=0 secondHealth=0 dead=1 phase=3 defeated=1",
+            "CA447 PASS hub return retains the original director and checkpoint",
+            "CA447 PASS hub return retains exact defender identities",
+            "CA447 FAIL hub return retains casualty without inventing defeat",
+            "CA447 PASS hub return does not restart the reserve deadline or budget",
+            "CA447 TRAVEL FAIL failures=1"
+          ],
+          "errors": [
+            "CA447 FAIL hub return retains casualty without inventing defeat",
+            "CA447 TRAVEL FAIL failures=1"
+          ],
+          "native_sync": true
+        }
+      ],
+      "timed_out": false,
+      "passed": false,
+      "label": "travel-diagnostic-02"
+    }
+  ],
+  "performance": [
+    {
+      "label": "baseline-city-present",
+      "run": {
+        "issue": 447,
+        "started_utc": "2026-11-10T00:25:28.278139+00:00",
+        "ended_utc": "2026-11-10T00:26:10.174193+00:00",
+        "environment_overrides": {
+          "VK_LAYER_PATH": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "VK_INSTANCE_LAYERS": "VK_LAYER_CA_presentation"
+        },
+        "engine": {
+          "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+        },
+        "presentation_layer": {
+          "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+        },
+        "runtime_sha256": "8cfe60cf50cfe46230d53511ef88fe96436b389c903139feb51de267bfba7847",
+        "commands": [
+          [
+            "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+            "-noautoload",
+            "-nomouse",
+            "-iwad",
+            "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+            "-file",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v514\\issue446-final.pk3",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\baseline-city-present\\observer.pk3",
+            "-config",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\baseline-city-present\\peer0\\session.ini",
+            "-savedir",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\baseline-city-present\\peer0",
+            "-rngseed",
+            "428",
+            "-warp",
+            "3",
+            "+logfile",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\baseline-city-present\\peer0\\engine.log",
+            "+exec",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\baseline-city-present\\peer0\\start.cfg"
+          ]
+        ],
+        "observed_before_cleanup": [
+          0
+        ],
+        "observer_sha256": "43f67e76efc270141386115f896aa3c934b526735691bb34420e48a2b42ef793",
+        "overlays": [],
+        "map": "MAP03",
+        "siege": false,
+        "direct_deployment": false,
+        "ground": false,
+        "players": 1,
+        "peers": [
+          {
+            "slot": 0,
+            "pid": 59776,
+            "exit_code": 0,
+            "window": {
+              "BEGIN": {
+                "utc": "2026-11-10T00:25:47.071752+00:00",
+                "qpc_ms": 2128283519.2559
+              },
+              "END": {
+                "utc": "2026-11-10T00:26:07.155805+00:00",
+                "qpc_ms": 2128303603.1896002
+              }
+            },
+            "simulation": {
+              "samples": 700,
+              "mean_ms": 28.572068714285717,
+              "p95_ms": 36.5424,
+              "p99_ms": 38.4366,
+              "max_ms": 41.6606
+            },
+            "render_callbacks": {
+              "samples": 1621,
+              "mean_ms": 11.116350771128932,
+              "p95_ms": 13.8421,
+              "p99_ms": 16.9492,
+              "max_ms": 22.846
+            },
+            "states": [
+              "CA435PERF STATE tic=349 defenders=0 attackers=0 registered_health=0 parked=0 population=1 dense=0",
+              "CA435PERF STATE slot=0 health=1248 pos=0.000000,320.000000,-0.000000",
+              "CA435PERF STATE tic=1049 defenders=0 attackers=0 registered_health=0 parked=0 population=1 dense=0",
+              "CA435PERF STATE slot=0 health=1248 pos=0.000000,320.000000,-0.000000"
+            ],
+            "census": [
+              "CA510 CENSUS start registered_defenders=0 registered_attackers=0 parked=0",
+              "CA510 CENSUS end registered_defenders=0 registered_attackers=0 parked=0"
+            ],
+            "scopes": [],
+            "native_sync": true,
+            "passed": true,
+            "complete_window": true
+          }
+        ],
+        "same_state": true,
+        "scenario_valid": true,
+        "error": null,
+        "passed": true,
+        "performance_accepted": false,
+        "author_accepted": false,
+        "qualification": "Actual campaign geometry on one Windows machine. A one-player control is not network evidence. Observed callback/tic gaps include lockstep waiting and shared hardware contention where applicable. They are not displayed-frame or separate-machine performance."
+      },
+      "presentation": {
+        "issue": 435,
+        "map": "MAP03",
+        "siege": false,
+        "ground": false,
+        "peers": [
+          {
+            "pid": 59776,
+            "trace_sha256": "a414f1f5a22870806faf5bdc03bf34c5fea09c8ffd2e39f4be431bc6b2710e9b",
+            "rows": 2758,
+            "scene_presents": 1581,
+            "mean_present_fps": 89.87481996149657,
+            "present_intervals": {
+              "samples": 1580,
+              "mean_ms": 11.12658696204801,
+              "p50_ms": 10.884200096130371,
+              "p95_ms": 13.859899997711182,
+              "p99_ms": 17.064500093460083,
+              "max_ms": 22.846800088882446
+            },
+            "native_call_duration": {
+              "samples": 1581,
+              "mean_ms": 0.20656394928335617,
+              "p50_ms": 0.1868000030517578,
+              "p95_ms": 0.3427999019622803,
+              "p99_ms": 0.49899983406066895,
+              "max_ms": 0.6171998977661133
+            }
+          }
+        ],
+        "qualification": "Actual vkQueuePresentKHR calls on one shared Windows machine; no display-scanout, Internet-latency or author acceptance claim."
+      }
+    },
+    {
+      "label": "baseline-ground-present",
+      "run": {
+        "issue": 447,
+        "started_utc": "2026-11-10T00:26:54.331340+00:00",
+        "ended_utc": "2026-11-10T00:27:35.465948+00:00",
+        "environment_overrides": {
+          "VK_LAYER_PATH": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "VK_INSTANCE_LAYERS": "VK_LAYER_CA_presentation"
+        },
+        "engine": {
+          "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+        },
+        "presentation_layer": {
+          "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+        },
+        "runtime_sha256": "8cfe60cf50cfe46230d53511ef88fe96436b389c903139feb51de267bfba7847",
+        "commands": [
+          [
+            "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+            "-noautoload",
+            "-nomouse",
+            "-iwad",
+            "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+            "-file",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v514\\issue446-final.pk3",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\baseline-ground-present\\observer.pk3",
+            "-config",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\baseline-ground-present\\peer0\\session.ini",
+            "-savedir",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\baseline-ground-present\\peer0",
+            "-rngseed",
+            "428",
+            "-warp",
+            "3",
+            "+logfile",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\baseline-ground-present\\peer0\\engine.log",
+            "+exec",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\baseline-ground-present\\peer0\\start.cfg"
+          ]
+        ],
+        "observed_before_cleanup": [
+          0
+        ],
+        "observer_sha256": "e06221a5faedada50b27d126d99c2dcbb49c0ee78f797803bfcf90b6bb34356d",
+        "overlays": [],
+        "map": "MAP03",
+        "siege": false,
+        "direct_deployment": false,
+        "ground": true,
+        "players": 1,
+        "peers": [
+          {
+            "slot": 0,
+            "pid": 45064,
+            "exit_code": 0,
+            "window": {
+              "BEGIN": {
+                "utc": "2026-11-10T00:27:12.611705+00:00",
+                "qpc_ms": 2128369059.2509
+              },
+              "END": {
+                "utc": "2026-11-10T00:27:32.697626+00:00",
+                "qpc_ms": 2128389145.2306
+              }
+            },
+            "simulation": {
+              "samples": 700,
+              "mean_ms": 28.559527857142857,
+              "p95_ms": 38.9551,
+              "p99_ms": 41.4608,
+              "max_ms": 43.9226
+            },
+            "render_callbacks": {
+              "samples": 1382,
+              "mean_ms": 13.034364688856728,
+              "p95_ms": 16.5458,
+              "p99_ms": 18.711,
+              "max_ms": 22.4743
+            },
+            "states": [
+              "CA435PERF STATE tic=349 defenders=0 attackers=0 registered_health=0 parked=0 population=1 dense=0",
+              "CA435PERF STATE slot=0 health=1248 pos=0.000000,320.000000,-0.000000",
+              "CA435PERF STATE tic=1049 defenders=0 attackers=0 registered_health=0 parked=0 population=1 dense=0",
+              "CA435PERF STATE slot=0 health=1248 pos=0.000000,320.000000,-0.000000"
+            ],
+            "census": [
+              "CA510 CENSUS start registered_defenders=0 registered_attackers=0 parked=0",
+              "CA510 CENSUS end registered_defenders=0 registered_attackers=0 parked=0"
+            ],
+            "scopes": [],
+            "native_sync": true,
+            "passed": true,
+            "complete_window": true
+          }
+        ],
+        "same_state": true,
+        "scenario_valid": true,
+        "error": null,
+        "passed": true,
+        "performance_accepted": false,
+        "author_accepted": false,
+        "qualification": "Actual campaign geometry on one Windows machine. A one-player control is not network evidence. Observed callback/tic gaps include lockstep waiting and shared hardware contention where applicable. They are not displayed-frame or separate-machine performance."
+      },
+      "presentation": {
+        "issue": 435,
+        "map": "MAP03",
+        "siege": false,
+        "ground": true,
+        "peers": [
+          {
+            "pid": 45064,
+            "trace_sha256": "d666f763a5565ab60d34f0951baeaef2846036fbab67e110e523931919527568",
+            "rows": 2487,
+            "scene_presents": 1348,
+            "mean_present_fps": 76.65766131699408,
+            "present_intervals": {
+              "samples": 1347,
+              "mean_ms": 13.04501054193147,
+              "p50_ms": 12.911099910736084,
+              "p95_ms": 16.633699893951416,
+              "p99_ms": 18.80430006980896,
+              "max_ms": 22.48640012741089
+            },
+            "native_call_duration": {
+              "samples": 1348,
+              "mean_ms": 0.1727874611534775,
+              "p50_ms": 0.16160011291503906,
+              "p95_ms": 0.24110007286071777,
+              "p99_ms": 0.3201000690460205,
+              "max_ms": 0.6110999584197998
+            }
+          }
+        ],
+        "qualification": "Actual vkQueuePresentKHR calls on one shared Windows machine; no display-scanout, Internet-latency or author acceptance claim."
+      }
+    },
+    {
+      "label": "baseline-ground-repeat",
+      "run": {
+        "issue": 447,
+        "started_utc": "2026-11-10T00:36:49.816966+00:00",
+        "ended_utc": "2026-11-10T00:37:31.469292+00:00",
+        "environment_overrides": {
+          "VK_LAYER_PATH": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "VK_INSTANCE_LAYERS": "VK_LAYER_CA_presentation"
+        },
+        "engine": {
+          "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+        },
+        "presentation_layer": {
+          "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+        },
+        "runtime_sha256": "8cfe60cf50cfe46230d53511ef88fe96436b389c903139feb51de267bfba7847",
+        "commands": [
+          [
+            "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+            "-noautoload",
+            "-nomouse",
+            "-iwad",
+            "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+            "-file",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v514\\issue446-final.pk3",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\baseline-ground-repeat\\observer.pk3",
+            "-config",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\baseline-ground-repeat\\peer0\\session.ini",
+            "-savedir",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\baseline-ground-repeat\\peer0",
+            "-rngseed",
+            "428",
+            "-warp",
+            "3",
+            "+logfile",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\baseline-ground-repeat\\peer0\\engine.log",
+            "+exec",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\baseline-ground-repeat\\peer0\\start.cfg"
+          ]
+        ],
+        "observed_before_cleanup": [
+          0
+        ],
+        "observer_sha256": "e06221a5faedada50b27d126d99c2dcbb49c0ee78f797803bfcf90b6bb34356d",
+        "overlays": [],
+        "map": "MAP03",
+        "siege": false,
+        "direct_deployment": false,
+        "ground": true,
+        "players": 1,
+        "peers": [
+          {
+            "slot": 0,
+            "pid": 52516,
+            "exit_code": 0,
+            "window": {
+              "BEGIN": {
+                "utc": "2026-11-10T00:37:08.608176+00:00",
+                "qpc_ms": 2128965056.0918999
+              },
+              "END": {
+                "utc": "2026-11-10T00:37:28.442757+00:00",
+                "qpc_ms": 2128984890.977
+              }
+            },
+            "simulation": {
+              "samples": 700,
+              "mean_ms": 28.559000142857144,
+              "p95_ms": 37.6146,
+              "p99_ms": 41.3707,
+              "max_ms": 45.0582
+            },
+            "render_callbacks": {
+              "samples": 1328,
+              "mean_ms": 13.562104894578312,
+              "p95_ms": 18.0507,
+              "p99_ms": 19.7801,
+              "max_ms": 31.4354
+            },
+            "states": [
+              "CA435PERF STATE tic=349 defenders=0 attackers=0 registered_health=0 parked=0 population=1 dense=0",
+              "CA435PERF STATE slot=0 health=1248 pos=0.000000,320.000000,-0.000000",
+              "CA435PERF STATE tic=1049 defenders=0 attackers=0 registered_health=0 parked=0 population=1 dense=0",
+              "CA435PERF STATE slot=0 health=1248 pos=0.000000,320.000000,-0.000000"
+            ],
+            "census": [
+              "CA510 CENSUS start registered_defenders=0 registered_attackers=0 parked=0",
+              "CA510 CENSUS end registered_defenders=0 registered_attackers=0 parked=0"
+            ],
+            "scopes": [],
+            "native_sync": true,
+            "passed": true,
+            "complete_window": true
+          }
+        ],
+        "same_state": true,
+        "scenario_valid": true,
+        "error": null,
+        "passed": true,
+        "performance_accepted": false,
+        "author_accepted": false,
+        "qualification": "Actual campaign geometry on one Windows machine. A one-player control is not network evidence. Observed callback/tic gaps include lockstep waiting and shared hardware contention where applicable. They are not displayed-frame or separate-machine performance."
+      },
+      "presentation": {
+        "issue": 435,
+        "map": "MAP03",
+        "siege": false,
+        "ground": true,
+        "peers": [
+          {
+            "pid": 52516,
+            "trace_sha256": "b442155ac8104be0b1f48f096d9b37ca68579358e416da86ea35c093b7c28cf6",
+            "rows": 2409,
+            "scene_presents": 1287,
+            "mean_present_fps": 74.21987438075543,
+            "present_intervals": {
+              "samples": 1286,
+              "mean_ms": 13.47348009334938,
+              "p50_ms": 12.88349986076355,
+              "p95_ms": 17.96589994430542,
+              "p99_ms": 19.678799867630005,
+              "max_ms": 31.30649995803833
+            },
+            "native_call_duration": {
+              "samples": 1287,
+              "mean_ms": 0.19530038955884102,
+              "p50_ms": 0.17290019989013672,
+              "p95_ms": 0.3166999816894531,
+              "p99_ms": 0.42309999465942383,
+              "max_ms": 0.7790999412536621
+            }
+          }
+        ],
+        "qualification": "Actual vkQueuePresentKHR calls on one shared Windows machine; no display-scanout, Internet-latency or author acceptance claim."
+      }
+    },
+    {
+      "label": "baseline-mansion-present",
+      "run": {
+        "issue": 447,
+        "started_utc": "2026-11-10T00:37:32.594913+00:00",
+        "ended_utc": "2026-11-10T00:38:14.012918+00:00",
+        "environment_overrides": {
+          "VK_LAYER_PATH": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "VK_INSTANCE_LAYERS": "VK_LAYER_CA_presentation"
+        },
+        "engine": {
+          "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+        },
+        "presentation_layer": {
+          "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+        },
+        "runtime_sha256": "8cfe60cf50cfe46230d53511ef88fe96436b389c903139feb51de267bfba7847",
+        "commands": [
+          [
+            "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+            "-noautoload",
+            "-nomouse",
+            "-iwad",
+            "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+            "-file",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v514\\issue446-final.pk3",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\baseline-mansion-present\\observer.pk3",
+            "-config",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\baseline-mansion-present\\peer0\\session.ini",
+            "-savedir",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\baseline-mansion-present\\peer0",
+            "-rngseed",
+            "428",
+            "-warp",
+            "1",
+            "+logfile",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\baseline-mansion-present\\peer0\\engine.log",
+            "+exec",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\baseline-mansion-present\\peer0\\start.cfg"
+          ]
+        ],
+        "observed_before_cleanup": [
+          0
+        ],
+        "observer_sha256": "43f67e76efc270141386115f896aa3c934b526735691bb34420e48a2b42ef793",
+        "overlays": [],
+        "map": "MAP01",
+        "siege": false,
+        "direct_deployment": false,
+        "ground": false,
+        "players": 1,
+        "peers": [
+          {
+            "slot": 0,
+            "pid": 55944,
+            "exit_code": 0,
+            "window": {
+              "BEGIN": {
+                "utc": "2026-11-10T00:37:50.897247+00:00",
+                "qpc_ms": 2129007345.1450002
+              },
+              "END": {
+                "utc": "2026-11-10T00:38:10.991850+00:00",
+                "qpc_ms": 2129027439.6242
+              }
+            },
+            "simulation": {
+              "samples": 700,
+              "mean_ms": 28.563143142857143,
+              "p95_ms": 46.3966,
+              "p99_ms": 49.053,
+              "max_ms": 56.4025
+            },
+            "render_callbacks": {
+              "samples": 814,
+              "mean_ms": 22.10202272727273,
+              "p95_ms": 25.7565,
+              "p99_ms": 27.6335,
+              "max_ms": 33.2026
+            },
+            "states": [
+              "CA435PERF STATE tic=349 defenders=0 attackers=0 registered_health=0 parked=0 population=8 dense=0",
+              "CA435PERF STATE slot=0 health=1248 pos=-1600.000000,0.000000,-0.000000",
+              "CA435PERF STATE tic=1049 defenders=0 attackers=0 registered_health=0 parked=0 population=8 dense=0",
+              "CA435PERF STATE slot=0 health=1248 pos=-1600.000000,0.000000,-0.000000"
+            ],
+            "census": [
+              "CA510 CENSUS start registered_defenders=0 registered_attackers=0 parked=0",
+              "CA510 CENSUS end registered_defenders=0 registered_attackers=0 parked=0"
+            ],
+            "scopes": [],
+            "native_sync": true,
+            "passed": true,
+            "complete_window": true
+          }
+        ],
+        "same_state": true,
+        "scenario_valid": true,
+        "error": null,
+        "passed": true,
+        "performance_accepted": false,
+        "author_accepted": false,
+        "qualification": "Actual campaign geometry on one Windows machine. A one-player control is not network evidence. Observed callback/tic gaps include lockstep waiting and shared hardware contention where applicable. They are not displayed-frame or separate-machine performance."
+      },
+      "presentation": {
+        "issue": 435,
+        "map": "MAP01",
+        "siege": false,
+        "ground": false,
+        "peers": [
+          {
+            "pid": 55944,
+            "trace_sha256": "21f3b1a64fca65c9f881790b3468ce3be8f235207d6d2ef0003fb3cbdf002523",
+            "rows": 1476,
+            "scene_presents": 797,
+            "mean_present_fps": 45.27458750031882,
+            "present_intervals": {
+              "samples": 796,
+              "mean_ms": 22.087445854541645,
+              "p50_ms": 21.874799966812134,
+              "p95_ms": 25.683900117874146,
+              "p99_ms": 27.751699924468994,
+              "max_ms": 33.362799882888794
+            },
+            "native_call_duration": {
+              "samples": 797,
+              "mean_ms": 0.3344210818540796,
+              "p50_ms": 0.2962000370025635,
+              "p95_ms": 0.5594000816345215,
+              "p99_ms": 0.8004000186920166,
+              "max_ms": 1.0115997791290283
+            }
+          }
+        ],
+        "qualification": "Actual vkQueuePresentKHR calls on one shared Windows machine; no display-scanout, Internet-latency or author acceptance claim."
+      }
+    },
+    {
+      "label": "baseline-siege-present",
+      "run": {
+        "issue": 447,
+        "started_utc": "2026-11-10T00:29:43.672724+00:00",
+        "ended_utc": "2026-11-10T00:32:31.993211+00:00",
+        "environment_overrides": {
+          "VK_LAYER_PATH": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "VK_INSTANCE_LAYERS": "VK_LAYER_CA_presentation"
+        },
+        "engine": {
+          "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+        },
+        "presentation_layer": {
+          "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+        },
+        "runtime_sha256": "8cfe60cf50cfe46230d53511ef88fe96436b389c903139feb51de267bfba7847",
+        "commands": [
+          [
+            "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+            "-noautoload",
+            "-nomouse",
+            "-iwad",
+            "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+            "-file",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v514\\issue446-final.pk3",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\baseline-siege-present\\observer.pk3",
+            "-config",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\baseline-siege-present\\peer0\\session.ini",
+            "-savedir",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\baseline-siege-present\\peer0",
+            "-rngseed",
+            "428",
+            "-warp",
+            "3",
+            "+logfile",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\baseline-siege-present\\peer0\\engine.log",
+            "+exec",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\baseline-siege-present\\peer0\\start.cfg"
+          ]
+        ],
+        "observed_before_cleanup": [
+          0
+        ],
+        "observer_sha256": "5738b9de9c7fc88d3445347cf33c6322d2acc14d62cd566d6f49e1c3e1b29325",
+        "overlays": [],
+        "map": "MAP03",
+        "siege": true,
+        "direct_deployment": false,
+        "ground": false,
+        "players": 1,
+        "peers": [
+          {
+            "slot": 0,
+            "pid": 50684,
+            "exit_code": 0,
+            "window": {
+              "BEGIN": {
+                "utc": "2026-11-10T00:31:54.843987+00:00",
+                "qpc_ms": 2128651292.3422
+              },
+              "END": {
+                "utc": "2026-11-10T00:32:26.458615+00:00",
+                "qpc_ms": 2128682905.9708002
+              }
+            },
+            "simulation": {
+              "samples": 700,
+              "mean_ms": 45.31040414285714,
+              "p95_ms": 79.5283,
+              "p99_ms": 85.3256,
+              "max_ms": 92.3082
+            },
+            "render_callbacks": {
+              "samples": 36,
+              "mean_ms": 769.1724777777778,
+              "p95_ms": 866.3333,
+              "p99_ms": 889.0831,
+              "max_ms": 900.8357
+            },
+            "states": [
+              "CA435PERF STATE tic=3599 defenders=601 attackers=797 registered_health=1268691 parked=0 population=1399 dense=1",
+              "CA435PERF STATE slot=0 health=1248 pos=-14464.000000,-14000.000000,0.000000",
+              "CA435PERF STATE tic=4299 defenders=601 attackers=898 registered_health=1334008 parked=0 population=1500 dense=1",
+              "CA435PERF STATE slot=0 health=1248 pos=-14464.000000,-14000.000000,0.000000"
+            ],
+            "census": [
+              "CA510 CENSUS start registered_defenders=601 registered_attackers=797 parked=0",
+              "CA510 CENSUS end registered_defenders=601 registered_attackers=898 parked=0"
+            ],
+            "scopes": [],
+            "native_sync": true,
+            "passed": true,
+            "complete_window": true
+          }
+        ],
+        "same_state": true,
+        "scenario_valid": true,
+        "error": null,
+        "passed": true,
+        "performance_accepted": false,
+        "author_accepted": false,
+        "qualification": "Actual campaign geometry on one Windows machine. A one-player control is not network evidence. Observed callback/tic gaps include lockstep waiting and shared hardware contention where applicable. They are not displayed-frame or separate-machine performance."
+      },
+      "presentation": {
+        "issue": 435,
+        "map": "MAP03",
+        "siege": true,
+        "ground": false,
+        "peers": [
+          {
+            "pid": 50684,
+            "trace_sha256": "6d65da3483fe92ea80b957eff4641968971a28ef88009bbc07165a25f756101b",
+            "rows": 1380,
+            "scene_presents": 38,
+            "mean_present_fps": 1.3018520410997694,
+            "present_intervals": {
+              "samples": 37,
+              "mean_ms": 768.1364459475956,
+              "p50_ms": 763.3538000583649,
+              "p95_ms": 891.4500999450684,
+              "p99_ms": 900.7825000286102,
+              "max_ms": 900.7825000286102
+            },
+            "native_call_duration": {
+              "samples": 38,
+              "mean_ms": 0.24790262548547043,
+              "p50_ms": 0.23060011863708496,
+              "p95_ms": 0.3290998935699463,
+              "p99_ms": 0.33299994468688965,
+              "max_ms": 0.33299994468688965
+            }
+          }
+        ],
+        "qualification": "Actual vkQueuePresentKHR calls on one shared Windows machine; no display-scanout, Internet-latency or author acceptance claim."
+      }
+    },
+    {
+      "label": "final-city-present",
+      "run": {
+        "issue": 447,
+        "started_utc": "2026-11-10T00:26:11.324465+00:00",
+        "ended_utc": "2026-11-10T00:26:53.224724+00:00",
+        "environment_overrides": {
+          "VK_LAYER_PATH": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "VK_INSTANCE_LAYERS": "VK_LAYER_CA_presentation"
+        },
+        "engine": {
+          "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+        },
+        "presentation_layer": {
+          "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+        },
+        "runtime_sha256": "9a7783ef349c53b48c9c3bf4a4153f5e30f452deffbeb6961c881c8d34cec6d9",
+        "commands": [
+          [
+            "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+            "-noautoload",
+            "-nomouse",
+            "-iwad",
+            "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+            "-file",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447-final.pk3",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\final-city-present\\observer.pk3",
+            "-config",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\final-city-present\\peer0\\session.ini",
+            "-savedir",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\final-city-present\\peer0",
+            "-rngseed",
+            "428",
+            "-warp",
+            "3",
+            "+logfile",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\final-city-present\\peer0\\engine.log",
+            "+exec",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\final-city-present\\peer0\\start.cfg"
+          ]
+        ],
+        "observed_before_cleanup": [
+          0
+        ],
+        "observer_sha256": "43f67e76efc270141386115f896aa3c934b526735691bb34420e48a2b42ef793",
+        "overlays": [],
+        "map": "MAP03",
+        "siege": false,
+        "direct_deployment": false,
+        "ground": false,
+        "players": 1,
+        "peers": [
+          {
+            "slot": 0,
+            "pid": 44556,
+            "exit_code": 0,
+            "window": {
+              "BEGIN": {
+                "utc": "2026-11-10T00:26:30.115896+00:00",
+                "qpc_ms": 2128326563.2568998
+              },
+              "END": {
+                "utc": "2026-11-10T00:26:50.205627+00:00",
+                "qpc_ms": 2128346653.6633
+              }
+            },
+            "simulation": {
+              "samples": 700,
+              "mean_ms": 28.56403214285714,
+              "p95_ms": 36.229,
+              "p99_ms": 39.1827,
+              "max_ms": 43.7049
+            },
+            "render_callbacks": {
+              "samples": 1712,
+              "mean_ms": 10.518246436915888,
+              "p95_ms": 13.5259,
+              "p99_ms": 15.77,
+              "max_ms": 20.189
+            },
+            "states": [
+              "CA435PERF STATE tic=349 defenders=0 attackers=0 registered_health=0 parked=0 population=1 dense=0",
+              "CA435PERF STATE slot=0 health=1248 pos=0.000000,320.000000,-0.000000",
+              "CA435PERF STATE tic=1049 defenders=0 attackers=0 registered_health=0 parked=0 population=1 dense=0",
+              "CA435PERF STATE slot=0 health=1248 pos=0.000000,320.000000,-0.000000"
+            ],
+            "census": [
+              "CA510 CENSUS start registered_defenders=0 registered_attackers=0 parked=0",
+              "CA510 CENSUS end registered_defenders=0 registered_attackers=0 parked=0"
+            ],
+            "scopes": [],
+            "native_sync": true,
+            "passed": true,
+            "complete_window": true
+          }
+        ],
+        "same_state": true,
+        "scenario_valid": true,
+        "error": null,
+        "passed": true,
+        "performance_accepted": false,
+        "author_accepted": false,
+        "qualification": "Actual campaign geometry on one Windows machine. A one-player control is not network evidence. Observed callback/tic gaps include lockstep waiting and shared hardware contention where applicable. They are not displayed-frame or separate-machine performance."
+      },
+      "presentation": {
+        "issue": 435,
+        "map": "MAP03",
+        "siege": false,
+        "ground": false,
+        "peers": [
+          {
+            "pid": 44556,
+            "trace_sha256": "437939171d5aadac2862b1b8949ce22c344577316a94927083f3f85a0b8df0f6",
+            "rows": 2844,
+            "scene_presents": 1667,
+            "mean_present_fps": 94.78044434339263,
+            "present_intervals": {
+              "samples": 1666,
+              "mean_ms": 10.550699639864185,
+              "p50_ms": 10.354300022125244,
+              "p95_ms": 13.57860016822815,
+              "p99_ms": 15.963099956512451,
+              "max_ms": 19.937099933624268
+            },
+            "native_call_duration": {
+              "samples": 1667,
+              "mean_ms": 0.20609873715602645,
+              "p50_ms": 0.19050002098083496,
+              "p95_ms": 0.3554999828338623,
+              "p99_ms": 0.4811999797821045,
+              "max_ms": 1.1624000072479248
+            }
+          }
+        ],
+        "qualification": "Actual vkQueuePresentKHR calls on one shared Windows machine; no display-scanout, Internet-latency or author acceptance claim."
+      }
+    },
+    {
+      "label": "final-ground-ablation",
+      "run": {
+        "issue": 447,
+        "started_utc": "2026-11-10T00:38:52.458675+00:00",
+        "ended_utc": "2026-11-10T00:39:33.567783+00:00",
+        "environment_overrides": {
+          "VK_LAYER_PATH": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "VK_INSTANCE_LAYERS": "VK_LAYER_CA_presentation"
+        },
+        "engine": {
+          "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+        },
+        "presentation_layer": {
+          "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+        },
+        "runtime_sha256": "9a7783ef349c53b48c9c3bf4a4153f5e30f452deffbeb6961c881c8d34cec6d9",
+        "commands": [
+          [
+            "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+            "-noautoload",
+            "-nomouse",
+            "-iwad",
+            "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+            "-file",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447-final.pk3",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\peaceful-director-ablation.pk3",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\final-ground-ablation\\observer.pk3",
+            "-config",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\final-ground-ablation\\peer0\\session.ini",
+            "-savedir",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\final-ground-ablation\\peer0",
+            "-rngseed",
+            "428",
+            "-warp",
+            "3",
+            "+logfile",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\final-ground-ablation\\peer0\\engine.log",
+            "+exec",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\final-ground-ablation\\peer0\\start.cfg"
+          ]
+        ],
+        "observed_before_cleanup": [
+          0
+        ],
+        "observer_sha256": "e06221a5faedada50b27d126d99c2dcbb49c0ee78f797803bfcf90b6bb34356d",
+        "overlays": [
+          {
+            "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\peaceful-director-ablation.pk3",
+            "sha256": "b6b551ada4eb360dd23e4154b86db193f691b6b78fb1d77bb7349b3d99d2554f"
+          }
+        ],
+        "map": "MAP03",
+        "siege": false,
+        "direct_deployment": false,
+        "ground": true,
+        "players": 1,
+        "peers": [
+          {
+            "slot": 0,
+            "pid": 11108,
+            "exit_code": 0,
+            "window": {
+              "BEGIN": {
+                "utc": "2026-11-10T00:39:10.480403+00:00",
+                "qpc_ms": 2129086927.9002
+              },
+              "END": {
+                "utc": "2026-11-10T00:39:30.552391+00:00",
+                "qpc_ms": 2129106999.8615003
+              }
+            },
+            "simulation": {
+              "samples": 700,
+              "mean_ms": 28.569491571428575,
+              "p95_ms": 39.8387,
+              "p99_ms": 43.6038,
+              "max_ms": 45.8068
+            },
+            "render_callbacks": {
+              "samples": 1296,
+              "mean_ms": 13.900255787037038,
+              "p95_ms": 18.2126,
+              "p99_ms": 19.243,
+              "max_ms": 20.1116
+            },
+            "states": [
+              "CA435PERF STATE tic=349 defenders=0 attackers=0 registered_health=0 parked=0 population=1 dense=0",
+              "CA435PERF STATE slot=0 health=1248 pos=0.000000,320.000000,-0.000000",
+              "CA435PERF STATE tic=1049 defenders=0 attackers=0 registered_health=0 parked=0 population=1 dense=0",
+              "CA435PERF STATE slot=0 health=1248 pos=0.000000,320.000000,-0.000000"
+            ],
+            "census": [
+              "CA510 CENSUS start registered_defenders=0 registered_attackers=0 parked=0",
+              "CA510 CENSUS end registered_defenders=0 registered_attackers=0 parked=0"
+            ],
+            "scopes": [],
+            "native_sync": true,
+            "passed": true,
+            "complete_window": true
+          }
+        ],
+        "same_state": true,
+        "scenario_valid": true,
+        "error": null,
+        "passed": true,
+        "performance_accepted": false,
+        "author_accepted": false,
+        "qualification": "Actual campaign geometry on one Windows machine. A one-player control is not network evidence. Observed callback/tic gaps include lockstep waiting and shared hardware contention where applicable. They are not displayed-frame or separate-machine performance."
+      },
+      "presentation": {
+        "issue": 435,
+        "map": "MAP03",
+        "siege": false,
+        "ground": true,
+        "peers": [
+          {
+            "pid": 11108,
+            "trace_sha256": "7ea52c407b48c787b2cc18955027bf5c61344a8803f0d4bae196b61f3ddeff16",
+            "rows": 2509,
+            "scene_presents": 1263,
+            "mean_present_fps": 71.8796598250303,
+            "present_intervals": {
+              "samples": 1262,
+              "mean_ms": 13.91214152145688,
+              "p50_ms": 13.281300067901611,
+              "p95_ms": 18.213900089263916,
+              "p99_ms": 19.270299911499023,
+              "max_ms": 20.0246000289917
+            },
+            "native_call_duration": {
+              "samples": 1263,
+              "mean_ms": 0.17631227160292964,
+              "p50_ms": 0.16680002212524414,
+              "p95_ms": 0.24650001525878906,
+              "p99_ms": 0.31080007553100586,
+              "max_ms": 0.4976999759674072
+            }
+          }
+        ],
+        "qualification": "Actual vkQueuePresentKHR calls on one shared Windows machine; no display-scanout, Internet-latency or author acceptance claim."
+      }
+    },
+    {
+      "label": "final-ground-present",
+      "run": {
+        "issue": 447,
+        "started_utc": "2026-11-10T00:27:36.594693+00:00",
+        "ended_utc": "2026-11-10T00:28:18.585780+00:00",
+        "environment_overrides": {
+          "VK_LAYER_PATH": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "VK_INSTANCE_LAYERS": "VK_LAYER_CA_presentation"
+        },
+        "engine": {
+          "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+        },
+        "presentation_layer": {
+          "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+        },
+        "runtime_sha256": "9a7783ef349c53b48c9c3bf4a4153f5e30f452deffbeb6961c881c8d34cec6d9",
+        "commands": [
+          [
+            "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+            "-noautoload",
+            "-nomouse",
+            "-iwad",
+            "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+            "-file",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447-final.pk3",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\final-ground-present\\observer.pk3",
+            "-config",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\final-ground-present\\peer0\\session.ini",
+            "-savedir",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\final-ground-present\\peer0",
+            "-rngseed",
+            "428",
+            "-warp",
+            "3",
+            "+logfile",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\final-ground-present\\peer0\\engine.log",
+            "+exec",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\final-ground-present\\peer0\\start.cfg"
+          ]
+        ],
+        "observed_before_cleanup": [
+          0
+        ],
+        "observer_sha256": "e06221a5faedada50b27d126d99c2dcbb49c0ee78f797803bfcf90b6bb34356d",
+        "overlays": [],
+        "map": "MAP03",
+        "siege": false,
+        "direct_deployment": false,
+        "ground": true,
+        "players": 1,
+        "peers": [
+          {
+            "slot": 0,
+            "pid": 57180,
+            "exit_code": 0,
+            "window": {
+              "BEGIN": {
+                "utc": "2026-11-10T00:27:55.720648+00:00",
+                "qpc_ms": 2128412168.2350001
+              },
+              "END": {
+                "utc": "2026-11-10T00:28:15.558673+00:00",
+                "qpc_ms": 2128432006.0037003
+              }
+            },
+            "simulation": {
+              "samples": 700,
+              "mean_ms": 28.570861999999998,
+              "p95_ms": 35.4978,
+              "p99_ms": 38.5652,
+              "max_ms": 44.3159
+            },
+            "render_callbacks": {
+              "samples": 1103,
+              "mean_ms": 16.334523481414326,
+              "p95_ms": 18.995,
+              "p99_ms": 20.1893,
+              "max_ms": 21.8924
+            },
+            "states": [
+              "CA435PERF STATE tic=349 defenders=0 attackers=0 registered_health=0 parked=0 population=1 dense=0",
+              "CA435PERF STATE slot=0 health=1248 pos=0.000000,320.000000,-0.000000",
+              "CA435PERF STATE tic=1049 defenders=0 attackers=0 registered_health=0 parked=0 population=1 dense=0",
+              "CA435PERF STATE slot=0 health=1248 pos=0.000000,320.000000,-0.000000"
+            ],
+            "census": [
+              "CA510 CENSUS start registered_defenders=0 registered_attackers=0 parked=0",
+              "CA510 CENSUS end registered_defenders=0 registered_attackers=0 parked=0"
+            ],
+            "scopes": [],
+            "native_sync": true,
+            "passed": true,
+            "complete_window": true
+          }
+        ],
+        "same_state": true,
+        "scenario_valid": true,
+        "error": null,
+        "passed": true,
+        "performance_accepted": false,
+        "author_accepted": false,
+        "qualification": "Actual campaign geometry on one Windows machine. A one-player control is not network evidence. Observed callback/tic gaps include lockstep waiting and shared hardware contention where applicable. They are not displayed-frame or separate-machine performance."
+      },
+      "presentation": {
+        "issue": 435,
+        "map": "MAP03",
+        "siege": false,
+        "ground": true,
+        "peers": [
+          {
+            "pid": 57180,
+            "trace_sha256": "3d7c668b91d81150fc0b8fd5b6c1d9fc665b8176f7932c8e2a012af7bc4ab8ef",
+            "rows": 2093,
+            "scene_presents": 1061,
+            "mean_present_fps": 61.1706513780976,
+            "present_intervals": {
+              "samples": 1060,
+              "mean_ms": 16.347708868080716,
+              "p50_ms": 16.337300062179565,
+              "p95_ms": 19.070499897003174,
+              "p99_ms": 20.29830002784729,
+              "max_ms": 21.6395001411438
+            },
+            "native_call_duration": {
+              "samples": 1061,
+              "mean_ms": 0.2511152686317724,
+              "p50_ms": 0.23259997367858887,
+              "p95_ms": 0.37470006942749023,
+              "p99_ms": 0.5471999645233154,
+              "max_ms": 0.6958000659942627
+            }
+          }
+        ],
+        "qualification": "Actual vkQueuePresentKHR calls on one shared Windows machine; no display-scanout, Internet-latency or author acceptance claim."
+      }
+    },
+    {
+      "label": "final-ground-repeat",
+      "run": {
+        "issue": 447,
+        "started_utc": "2026-11-10T00:36:06.775261+00:00",
+        "ended_utc": "2026-11-10T00:36:48.677354+00:00",
+        "environment_overrides": {
+          "VK_LAYER_PATH": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "VK_INSTANCE_LAYERS": "VK_LAYER_CA_presentation"
+        },
+        "engine": {
+          "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+        },
+        "presentation_layer": {
+          "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+        },
+        "runtime_sha256": "9a7783ef349c53b48c9c3bf4a4153f5e30f452deffbeb6961c881c8d34cec6d9",
+        "commands": [
+          [
+            "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+            "-noautoload",
+            "-nomouse",
+            "-iwad",
+            "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+            "-file",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447-final.pk3",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\final-ground-repeat\\observer.pk3",
+            "-config",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\final-ground-repeat\\peer0\\session.ini",
+            "-savedir",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\final-ground-repeat\\peer0",
+            "-rngseed",
+            "428",
+            "-warp",
+            "3",
+            "+logfile",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\final-ground-repeat\\peer0\\engine.log",
+            "+exec",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\final-ground-repeat\\peer0\\start.cfg"
+          ]
+        ],
+        "observed_before_cleanup": [
+          0
+        ],
+        "observer_sha256": "e06221a5faedada50b27d126d99c2dcbb49c0ee78f797803bfcf90b6bb34356d",
+        "overlays": [],
+        "map": "MAP03",
+        "siege": false,
+        "direct_deployment": false,
+        "ground": true,
+        "players": 1,
+        "peers": [
+          {
+            "slot": 0,
+            "pid": 49764,
+            "exit_code": 0,
+            "window": {
+              "BEGIN": {
+                "utc": "2026-11-10T00:36:25.568221+00:00",
+                "qpc_ms": 2128922016.4147
+              },
+              "END": {
+                "utc": "2026-11-10T00:36:45.658381+00:00",
+                "qpc_ms": 2128942106.2063003
+              }
+            },
+            "simulation": {
+              "samples": 700,
+              "mean_ms": 28.567023142857142,
+              "p95_ms": 35.1655,
+              "p99_ms": 37.9379,
+              "max_ms": 41.2912
+            },
+            "render_callbacks": {
+              "samples": 1116,
+              "mean_ms": 16.14232795698925,
+              "p95_ms": 18.8079,
+              "p99_ms": 19.9525,
+              "max_ms": 21.9543
+            },
+            "states": [
+              "CA435PERF STATE tic=349 defenders=0 attackers=0 registered_health=0 parked=0 population=1 dense=0",
+              "CA435PERF STATE slot=0 health=1248 pos=0.000000,320.000000,-0.000000",
+              "CA435PERF STATE tic=1049 defenders=0 attackers=0 registered_health=0 parked=0 population=1 dense=0",
+              "CA435PERF STATE slot=0 health=1248 pos=0.000000,320.000000,-0.000000"
+            ],
+            "census": [
+              "CA510 CENSUS start registered_defenders=0 registered_attackers=0 parked=0",
+              "CA510 CENSUS end registered_defenders=0 registered_attackers=0 parked=0"
+            ],
+            "scopes": [],
+            "native_sync": true,
+            "passed": true,
+            "complete_window": true
+          }
+        ],
+        "same_state": true,
+        "scenario_valid": true,
+        "error": null,
+        "passed": true,
+        "performance_accepted": false,
+        "author_accepted": false,
+        "qualification": "Actual campaign geometry on one Windows machine. A one-player control is not network evidence. Observed callback/tic gaps include lockstep waiting and shared hardware contention where applicable. They are not displayed-frame or separate-machine performance."
+      },
+      "presentation": {
+        "issue": 435,
+        "map": "MAP03",
+        "siege": false,
+        "ground": true,
+        "peers": [
+          {
+            "pid": 49764,
+            "trace_sha256": "f5bd2fef0a88f42d0adcb1b4f429981858dad77176152c22b5e36c8c7f89ae4d",
+            "rows": 2131,
+            "scene_presents": 1090,
+            "mean_present_fps": 61.971559436389335,
+            "present_intervals": {
+              "samples": 1089,
+              "mean_ms": 16.13643434334502,
+              "p50_ms": 16.055299997329712,
+              "p95_ms": 18.806400060653687,
+              "p99_ms": 20.173499822616577,
+              "max_ms": 21.865999937057495
+            },
+            "native_call_duration": {
+              "samples": 1090,
+              "mean_ms": 0.2625864236726673,
+              "p50_ms": 0.23720002174377441,
+              "p95_ms": 0.4567999839782715,
+              "p99_ms": 0.5834000110626221,
+              "max_ms": 0.8083000183105469
+            }
+          }
+        ],
+        "qualification": "Actual vkQueuePresentKHR calls on one shared Windows machine; no display-scanout, Internet-latency or author acceptance claim."
+      }
+    },
+    {
+      "label": "final-mansion-present",
+      "run": {
+        "issue": 447,
+        "started_utc": "2026-11-10T00:28:19.728511+00:00",
+        "ended_utc": "2026-11-10T00:29:00.882026+00:00",
+        "environment_overrides": {
+          "VK_LAYER_PATH": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "VK_INSTANCE_LAYERS": "VK_LAYER_CA_presentation"
+        },
+        "engine": {
+          "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+        },
+        "presentation_layer": {
+          "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+        },
+        "runtime_sha256": "9a7783ef349c53b48c9c3bf4a4153f5e30f452deffbeb6961c881c8d34cec6d9",
+        "commands": [
+          [
+            "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+            "-noautoload",
+            "-nomouse",
+            "-iwad",
+            "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+            "-file",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447-final.pk3",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\final-mansion-present\\observer.pk3",
+            "-config",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\final-mansion-present\\peer0\\session.ini",
+            "-savedir",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\final-mansion-present\\peer0",
+            "-rngseed",
+            "428",
+            "-warp",
+            "1",
+            "+logfile",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\final-mansion-present\\peer0\\engine.log",
+            "+exec",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\final-mansion-present\\peer0\\start.cfg"
+          ]
+        ],
+        "observed_before_cleanup": [
+          0
+        ],
+        "observer_sha256": "43f67e76efc270141386115f896aa3c934b526735691bb34420e48a2b42ef793",
+        "overlays": [],
+        "map": "MAP01",
+        "siege": false,
+        "direct_deployment": false,
+        "ground": false,
+        "players": 1,
+        "peers": [
+          {
+            "slot": 0,
+            "pid": 25628,
+            "exit_code": 0,
+            "window": {
+              "BEGIN": {
+                "utc": "2026-11-10T00:28:38.026794+00:00",
+                "qpc_ms": 2128454474.8426
+              },
+              "END": {
+                "utc": "2026-11-10T00:28:58.113026+00:00",
+                "qpc_ms": 2128474561.0747
+              }
+            },
+            "simulation": {
+              "samples": 700,
+              "mean_ms": 28.589071857142855,
+              "p95_ms": 46.2381,
+              "p99_ms": 48.2724,
+              "max_ms": 50.1715
+            },
+            "render_callbacks": {
+              "samples": 824,
+              "mean_ms": 21.864777305825243,
+              "p95_ms": 25.1954,
+              "p99_ms": 26.7222,
+              "max_ms": 29.8582
+            },
+            "states": [
+              "CA435PERF STATE tic=349 defenders=0 attackers=0 registered_health=0 parked=0 population=8 dense=0",
+              "CA435PERF STATE slot=0 health=1248 pos=-1600.000000,0.000000,-0.000000",
+              "CA435PERF STATE tic=1049 defenders=0 attackers=0 registered_health=0 parked=0 population=8 dense=0",
+              "CA435PERF STATE slot=0 health=1248 pos=-1600.000000,0.000000,-0.000000"
+            ],
+            "census": [
+              "CA510 CENSUS start registered_defenders=0 registered_attackers=0 parked=0",
+              "CA510 CENSUS end registered_defenders=0 registered_attackers=0 parked=0"
+            ],
+            "scopes": [],
+            "native_sync": true,
+            "passed": true,
+            "complete_window": true
+          }
+        ],
+        "same_state": true,
+        "scenario_valid": true,
+        "error": null,
+        "passed": true,
+        "performance_accepted": false,
+        "author_accepted": false,
+        "qualification": "Actual campaign geometry on one Windows machine. A one-player control is not network evidence. Observed callback/tic gaps include lockstep waiting and shared hardware contention where applicable. They are not displayed-frame or separate-machine performance."
+      },
+      "presentation": {
+        "issue": 435,
+        "map": "MAP01",
+        "siege": false,
+        "ground": false,
+        "peers": [
+          {
+            "pid": 25628,
+            "trace_sha256": "3e67020beac83256e10becda39cdd67a9be6554129ce04a9ec70e6943cabb6ca",
+            "rows": 1466,
+            "scene_presents": 804,
+            "mean_present_fps": 45.73781257471835,
+            "present_intervals": {
+              "samples": 803,
+              "mean_ms": 21.863747820610723,
+              "p50_ms": 21.691500186920166,
+              "p95_ms": 25.20389986038208,
+              "p99_ms": 26.77519989013672,
+              "max_ms": 29.67490005493164
+            },
+            "native_call_duration": {
+              "samples": 804,
+              "mean_ms": 0.3077033627685623,
+              "p50_ms": 0.2802000045776367,
+              "p95_ms": 0.49699997901916504,
+              "p99_ms": 0.6697001457214355,
+              "max_ms": 0.7656002044677734
+            }
+          }
+        ],
+        "qualification": "Actual vkQueuePresentKHR calls on one shared Windows machine; no display-scanout, Internet-latency or author acceptance claim."
+      }
+    },
+    {
+      "label": "final-sewers-present",
+      "run": {
+        "issue": 447,
+        "started_utc": "2026-11-10T00:29:02.017840+00:00",
+        "ended_utc": "2026-11-10T00:29:42.646650+00:00",
+        "environment_overrides": {
+          "VK_LAYER_PATH": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "VK_INSTANCE_LAYERS": "VK_LAYER_CA_presentation"
+        },
+        "engine": {
+          "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+        },
+        "presentation_layer": {
+          "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+        },
+        "runtime_sha256": "9a7783ef349c53b48c9c3bf4a4153f5e30f452deffbeb6961c881c8d34cec6d9",
+        "commands": [
+          [
+            "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+            "-noautoload",
+            "-nomouse",
+            "-iwad",
+            "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+            "-file",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447-final.pk3",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\final-sewers-present\\observer.pk3",
+            "-config",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\final-sewers-present\\peer0\\session.ini",
+            "-savedir",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\final-sewers-present\\peer0",
+            "-rngseed",
+            "428",
+            "-warp",
+            "2",
+            "+logfile",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\final-sewers-present\\peer0\\engine.log",
+            "+exec",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\final-sewers-present\\peer0\\start.cfg"
+          ]
+        ],
+        "observed_before_cleanup": [
+          0
+        ],
+        "observer_sha256": "43f67e76efc270141386115f896aa3c934b526735691bb34420e48a2b42ef793",
+        "overlays": [],
+        "map": "MAP02",
+        "siege": false,
+        "direct_deployment": false,
+        "ground": false,
+        "players": 1,
+        "peers": [
+          {
+            "slot": 0,
+            "pid": 35300,
+            "exit_code": 0,
+            "window": {
+              "BEGIN": {
+                "utc": "2026-11-10T00:29:19.804192+00:00",
+                "qpc_ms": 2128496252.1072998
+              },
+              "END": {
+                "utc": "2026-11-10T00:29:39.627658+00:00",
+                "qpc_ms": 2128516075.0556002
+              }
+            },
+            "simulation": {
+              "samples": 700,
+              "mean_ms": 28.57117357142857,
+              "p95_ms": 32.8217,
+              "p99_ms": 34.6712,
+              "max_ms": 43.3732
+            },
+            "render_callbacks": {
+              "samples": 3039,
+              "mean_ms": 5.929471997367556,
+              "p95_ms": 7.9551,
+              "p99_ms": 9.581,
+              "max_ms": 39.6997
+            },
+            "states": [
+              "CA435PERF STATE tic=349 defenders=0 attackers=0 registered_health=0 parked=0 population=294 dense=0",
+              "CA435PERF STATE slot=0 health=1248 pos=0.000000,0.000000,-0.000000",
+              "CA435PERF STATE tic=1049 defenders=0 attackers=0 registered_health=0 parked=0 population=294 dense=0",
+              "CA435PERF STATE slot=0 health=1248 pos=0.000000,0.000000,-0.000000"
+            ],
+            "census": [
+              "CA510 CENSUS start registered_defenders=0 registered_attackers=0 parked=0",
+              "CA510 CENSUS end registered_defenders=0 registered_attackers=0 parked=0"
+            ],
+            "scopes": [],
+            "native_sync": true,
+            "passed": true,
+            "complete_window": true
+          }
+        ],
+        "same_state": true,
+        "scenario_valid": true,
+        "error": null,
+        "passed": true,
+        "performance_accepted": false,
+        "author_accepted": false,
+        "qualification": "Actual campaign geometry on one Windows machine. A one-player control is not network evidence. Observed callback/tic gaps include lockstep waiting and shared hardware contention where applicable. They are not displayed-frame or separate-machine performance."
+      },
+      "presentation": {
+        "issue": 435,
+        "map": "MAP02",
+        "siege": false,
+        "ground": false,
+        "peers": [
+          {
+            "pid": 35300,
+            "trace_sha256": "d39bdc910c0f4de8d79c7900e59dc99718501bd8de02504a24b35c1f400a7be7",
+            "rows": 5340,
+            "scene_presents": 2926,
+            "mean_present_fps": 168.91252763404486,
+            "present_intervals": {
+              "samples": 2925,
+              "mean_ms": 5.920224000001565,
+              "p50_ms": 5.581099987030029,
+              "p95_ms": 7.8815999031066895,
+              "p99_ms": 9.595099925994873,
+              "max_ms": 43.896399974823
+            },
+            "native_call_duration": {
+              "samples": 2926,
+              "mean_ms": 0.1296998307220918,
+              "p50_ms": 0.11080002784729004,
+              "p95_ms": 0.22030019760131836,
+              "p99_ms": 0.32539987564086914,
+              "max_ms": 1.14739990234375
+            }
+          }
+        ],
+        "qualification": "Actual vkQueuePresentKHR calls on one shared Windows machine; no display-scanout, Internet-latency or author acceptance claim."
+      }
+    },
+    {
+      "label": "final-siege-present",
+      "run": {
+        "issue": 447,
+        "started_utc": "2026-11-10T00:32:33.219949+00:00",
+        "ended_utc": "2026-11-10T00:35:29.115550+00:00",
+        "environment_overrides": {
+          "VK_LAYER_PATH": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "VK_INSTANCE_LAYERS": "VK_LAYER_CA_presentation"
+        },
+        "engine": {
+          "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+        },
+        "presentation_layer": {
+          "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+        },
+        "runtime_sha256": "9a7783ef349c53b48c9c3bf4a4153f5e30f452deffbeb6961c881c8d34cec6d9",
+        "commands": [
+          [
+            "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+            "-noautoload",
+            "-nomouse",
+            "-iwad",
+            "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+            "-file",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447-final.pk3",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\final-siege-present\\observer.pk3",
+            "-config",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\final-siege-present\\peer0\\session.ini",
+            "-savedir",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\final-siege-present\\peer0",
+            "-rngseed",
+            "428",
+            "-warp",
+            "3",
+            "+logfile",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\final-siege-present\\peer0\\engine.log",
+            "+exec",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\final-siege-present\\peer0\\start.cfg"
+          ]
+        ],
+        "observed_before_cleanup": [
+          0
+        ],
+        "observer_sha256": "5738b9de9c7fc88d3445347cf33c6322d2acc14d62cd566d6f49e1c3e1b29325",
+        "overlays": [],
+        "map": "MAP03",
+        "siege": true,
+        "direct_deployment": false,
+        "ground": false,
+        "players": 1,
+        "peers": [
+          {
+            "slot": 0,
+            "pid": 34768,
+            "exit_code": 0,
+            "window": {
+              "BEGIN": {
+                "utc": "2026-11-10T00:34:50.462061+00:00",
+                "qpc_ms": 2128826909.7982
+              },
+              "END": {
+                "utc": "2026-11-10T00:35:23.583378+00:00",
+                "qpc_ms": 2128860031.6852
+              }
+            },
+            "simulation": {
+              "samples": 700,
+              "mean_ms": 47.18930642857143,
+              "p95_ms": 85.99,
+              "p99_ms": 92.8742,
+              "max_ms": 111.1623
+            },
+            "render_callbacks": {
+              "samples": 36,
+              "mean_ms": 808.0605055555556,
+              "p95_ms": 962.5368,
+              "p99_ms": 988.6427,
+              "max_ms": 1005.6638
+            },
+            "states": [
+              "CA435PERF STATE tic=3599 defenders=601 attackers=797 registered_health=1268691 parked=0 population=1399 dense=1",
+              "CA435PERF STATE slot=0 health=1248 pos=-14464.000000,-14000.000000,0.000000",
+              "CA435PERF STATE tic=4299 defenders=601 attackers=898 registered_health=1334008 parked=0 population=1500 dense=1",
+              "CA435PERF STATE slot=0 health=1248 pos=-14464.000000,-14000.000000,0.000000"
+            ],
+            "census": [
+              "CA510 CENSUS start registered_defenders=601 registered_attackers=797 parked=0",
+              "CA510 CENSUS end registered_defenders=601 registered_attackers=898 parked=0"
+            ],
+            "scopes": [],
+            "native_sync": true,
+            "passed": true,
+            "complete_window": true
+          }
+        ],
+        "same_state": true,
+        "scenario_valid": true,
+        "error": null,
+        "passed": true,
+        "performance_accepted": false,
+        "author_accepted": false,
+        "qualification": "Actual campaign geometry on one Windows machine. A one-player control is not network evidence. Observed callback/tic gaps include lockstep waiting and shared hardware contention where applicable. They are not displayed-frame or separate-machine performance."
+      },
+      "presentation": {
+        "issue": 435,
+        "map": "MAP03",
+        "siege": true,
+        "ground": false,
+        "peers": [
+          {
+            "pid": 34768,
+            "trace_sha256": "3ec0289fdb5df6f0317ed42b6ca48fd568bfc81bc560aab64d2a09d01968ecc8",
+            "rows": 1023,
+            "scene_presents": 38,
+            "mean_present_fps": 1.2409872546042646,
+            "present_intervals": {
+              "samples": 37,
+              "mean_ms": 805.8100486446071,
+              "p50_ms": 780.0741000175476,
+              "p95_ms": 986.8914999961853,
+              "p99_ms": 1006.2555000782013,
+              "max_ms": 1006.2555000782013
+            },
+            "native_call_duration": {
+              "samples": 38,
+              "mean_ms": 0.24428683205654747,
+              "p50_ms": 0.23129987716674805,
+              "p95_ms": 0.3543999195098877,
+              "p99_ms": 0.3584001064300537,
+              "max_ms": 0.3584001064300537
+            }
+          }
+        ],
+        "qualification": "Actual vkQueuePresentKHR calls on one shared Windows machine; no display-scanout, Internet-latency or author acceptance claim."
+      }
+    },
+    {
+      "label": "reviewed-ground-present",
+      "run": {
+        "issue": 447,
+        "started_utc": "2026-11-10T00:41:41.305575+00:00",
+        "ended_utc": "2026-11-10T00:42:22.432321+00:00",
+        "environment_overrides": {
+          "VK_LAYER_PATH": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "VK_INSTANCE_LAYERS": "VK_LAYER_CA_presentation"
+        },
+        "engine": {
+          "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+        },
+        "presentation_layer": {
+          "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+        },
+        "runtime_sha256": "d7d0620bd6e5703aef471d500933bac24adc034d96dc636b4a095b4136ff96dc",
+        "commands": [
+          [
+            "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+            "-noautoload",
+            "-nomouse",
+            "-iwad",
+            "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+            "-file",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447-reviewed.pk3",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\reviewed-ground-present\\observer.pk3",
+            "-config",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\reviewed-ground-present\\peer0\\session.ini",
+            "-savedir",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\reviewed-ground-present\\peer0",
+            "-rngseed",
+            "428",
+            "-warp",
+            "3",
+            "+logfile",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\reviewed-ground-present\\peer0\\engine.log",
+            "+exec",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\reviewed-ground-present\\peer0\\start.cfg"
+          ]
+        ],
+        "observed_before_cleanup": [
+          0
+        ],
+        "observer_sha256": "e06221a5faedada50b27d126d99c2dcbb49c0ee78f797803bfcf90b6bb34356d",
+        "overlays": [],
+        "map": "MAP03",
+        "siege": false,
+        "direct_deployment": false,
+        "ground": true,
+        "players": 1,
+        "peers": [
+          {
+            "slot": 0,
+            "pid": 11000,
+            "exit_code": 0,
+            "window": {
+              "BEGIN": {
+                "utc": "2026-11-10T00:41:59.331961+00:00",
+                "qpc_ms": 2129255780.0277002
+              },
+              "END": {
+                "utc": "2026-11-10T00:42:19.417892+00:00",
+                "qpc_ms": 2129275865.1931002
+              }
+            },
+            "simulation": {
+              "samples": 700,
+              "mean_ms": 28.568713142857142,
+              "p95_ms": 38.9456,
+              "p99_ms": 43.0236,
+              "max_ms": 46.7696
+            },
+            "render_callbacks": {
+              "samples": 1352,
+              "mean_ms": 13.330247633136095,
+              "p95_ms": 17.847,
+              "p99_ms": 19.2067,
+              "max_ms": 39.0342
+            },
+            "states": [
+              "CA435PERF STATE tic=349 defenders=0 attackers=0 registered_health=0 parked=0 population=1 dense=0",
+              "CA435PERF STATE slot=0 health=1248 pos=0.000000,320.000000,-0.000000",
+              "CA435PERF STATE tic=1049 defenders=0 attackers=0 registered_health=0 parked=0 population=1 dense=0",
+              "CA435PERF STATE slot=0 health=1248 pos=0.000000,320.000000,-0.000000"
+            ],
+            "census": [
+              "CA510 CENSUS start registered_defenders=0 registered_attackers=0 parked=0",
+              "CA510 CENSUS end registered_defenders=0 registered_attackers=0 parked=0"
+            ],
+            "scopes": [],
+            "native_sync": true,
+            "passed": true,
+            "complete_window": true
+          }
+        ],
+        "same_state": true,
+        "scenario_valid": true,
+        "error": null,
+        "passed": true,
+        "performance_accepted": false,
+        "author_accepted": false,
+        "qualification": "Actual campaign geometry on one Windows machine. A one-player control is not network evidence. Observed callback/tic gaps include lockstep waiting and shared hardware contention where applicable. They are not displayed-frame or separate-machine performance."
+      },
+      "presentation": {
+        "issue": 435,
+        "map": "MAP03",
+        "siege": false,
+        "ground": true,
+        "peers": [
+          {
+            "pid": 11000,
+            "trace_sha256": "fdd73746474f7a7fcf0879870f9b70a6f60230486967b6ec59171e383aa1e30e",
+            "rows": 2590,
+            "scene_presents": 1315,
+            "mean_present_fps": 74.77109886490263,
+            "present_intervals": {
+              "samples": 1314,
+              "mean_ms": 13.374151445959257,
+              "p50_ms": 12.950599908828735,
+              "p95_ms": 17.86269998550415,
+              "p99_ms": 19.191800117492676,
+              "max_ms": 39.089200019836426
+            },
+            "native_call_duration": {
+              "samples": 1315,
+              "mean_ms": 0.17165506348410486,
+              "p50_ms": 0.16459989547729492,
+              "p95_ms": 0.2325000762939453,
+              "p99_ms": 0.28770017623901367,
+              "max_ms": 0.4391000270843506
+            }
+          }
+        ],
+        "qualification": "Actual vkQueuePresentKHR calls on one shared Windows machine; no display-scanout, Internet-latency or author acceptance claim."
+      }
+    },
+    {
+      "label": "reviewed-siege-present",
+      "run": {
+        "issue": 447,
+        "started_utc": "2026-11-10T00:52:08.950101+00:00",
+        "ended_utc": "2026-11-10T00:54:50.755740+00:00",
+        "environment_overrides": {
+          "VK_LAYER_PATH": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "VK_INSTANCE_LAYERS": "VK_LAYER_CA_presentation"
+        },
+        "engine": {
+          "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+        },
+        "presentation_layer": {
+          "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+        },
+        "runtime_sha256": "d7d0620bd6e5703aef471d500933bac24adc034d96dc636b4a095b4136ff96dc",
+        "commands": [
+          [
+            "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+            "-noautoload",
+            "-nomouse",
+            "-iwad",
+            "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+            "-file",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447-reviewed.pk3",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\reviewed-siege-present\\observer.pk3",
+            "-config",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\reviewed-siege-present\\peer0\\session.ini",
+            "-savedir",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\reviewed-siege-present\\peer0",
+            "-rngseed",
+            "428",
+            "-warp",
+            "3",
+            "+logfile",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\reviewed-siege-present\\peer0\\engine.log",
+            "+exec",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447\\performance\\reviewed-siege-present\\peer0\\start.cfg"
+          ]
+        ],
+        "observed_before_cleanup": [
+          0
+        ],
+        "observer_sha256": "5738b9de9c7fc88d3445347cf33c6322d2acc14d62cd566d6f49e1c3e1b29325",
+        "overlays": [],
+        "map": "MAP03",
+        "siege": true,
+        "direct_deployment": false,
+        "ground": false,
+        "players": 1,
+        "peers": [
+          {
+            "slot": 0,
+            "pid": 61636,
+            "exit_code": 0,
+            "window": {
+              "BEGIN": {
+                "utc": "2026-11-10T00:54:16.628057+00:00",
+                "qpc_ms": 2129993076.0885003
+              },
+              "END": {
+                "utc": "2026-11-10T00:54:46.230889+00:00",
+                "qpc_ms": 2130022678.5793002
+              }
+            },
+            "simulation": {
+              "samples": 700,
+              "mean_ms": 42.548761285714285,
+              "p95_ms": 73.9907,
+              "p99_ms": 78.7393,
+              "max_ms": 89.6052
+            },
+            "render_callbacks": {
+              "samples": 36,
+              "mean_ms": 722.7693611111112,
+              "p95_ms": 783.2202,
+              "p99_ms": 783.8992,
+              "max_ms": 832.3658
+            },
+            "states": [
+              "CA435PERF STATE tic=3599 defenders=601 attackers=797 registered_health=1268691 parked=0 population=1399 dense=1",
+              "CA435PERF STATE slot=0 health=1248 pos=-14464.000000,-14000.000000,0.000000",
+              "CA435PERF STATE tic=4299 defenders=601 attackers=898 registered_health=1334008 parked=0 population=1500 dense=1",
+              "CA435PERF STATE slot=0 health=1248 pos=-14464.000000,-14000.000000,0.000000"
+            ],
+            "census": [
+              "CA510 CENSUS start registered_defenders=601 registered_attackers=797 parked=0",
+              "CA510 CENSUS end registered_defenders=601 registered_attackers=898 parked=0"
+            ],
+            "scopes": [],
+            "native_sync": true,
+            "passed": true,
+            "complete_window": true
+          }
+        ],
+        "same_state": true,
+        "scenario_valid": true,
+        "error": null,
+        "passed": true,
+        "performance_accepted": false,
+        "author_accepted": false,
+        "qualification": "Actual campaign geometry on one Windows machine. A one-player control is not network evidence. Observed callback/tic gaps include lockstep waiting and shared hardware contention where applicable. They are not displayed-frame or separate-machine performance."
+      },
+      "presentation": {
+        "issue": 435,
+        "map": "MAP03",
+        "siege": true,
+        "ground": false,
+        "peers": [
+          {
+            "pid": 61636,
+            "trace_sha256": "71c90398610a718b72f5b0266b630ff7afb6a573cc05ae299c18ffcf6daa4080",
+            "rows": 1465,
+            "scene_presents": 38,
+            "mean_present_fps": 1.3838408721826534,
+            "present_intervals": {
+              "samples": 37,
+              "mean_ms": 722.6264378380131,
+              "p50_ms": 722.5421998500824,
+              "p95_ms": 783.6080000400543,
+              "p99_ms": 832.5371000766754,
+              "max_ms": 832.5371000766754
+            },
+            "native_call_duration": {
+              "samples": 38,
+              "mean_ms": 0.2300816209692704,
+              "p50_ms": 0.22909998893737793,
+              "p95_ms": 0.2642998695373535,
+              "p99_ms": 0.2809000015258789,
+              "max_ms": 0.2809000015258789
+            }
+          }
+        ],
+        "qualification": "Actual vkQueuePresentKHR calls on one shared Windows machine; no display-scanout, Internet-latency or author acceptance claim."
+      }
+    }
+  ]
+}
