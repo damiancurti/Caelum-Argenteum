@@ -23,6 +23,10 @@ CA447-01/CA448-01/CA449-01/CA450-01/CA451-01 are pending.
 Occupation closes civilian services; liberation reopens survivors after24 world
 hours. Start the isolated manual scenes with
 `powershell -NoProfile -ExecutionPolicy Bypass -File assets/validation_v5_15_4/author_terminal.ps1`.
+The terminal starts one player with all twelve attributes at100. Only the machine
+scene supplies materials, stored in the Magic Box for one barricade and one cannon
+at100% efficiency; F4 replenishes missing stock at the selected efficiency.
+Use `author_terminal.py --players 2` only for optional cooperative reward checks.
 Active-siege rendering remains severely slow in the recorded environment;
 a successful native check does not establish playable frame presentation.
 

@@ -10,6 +10,7 @@ class CA515Author : EventHandler
     CaelumCannon Gun;
     bool Seeded,Ready;
     int NextMachine;
+    vector3 WalkStart;
     void ClockTo(double civil)
     {
         int day=int(Floor(civil/86400));int tic=int((civil-double(day)*86400)*CaelumWorldClock.TicsPerHour()/3600);
@@ -18,11 +19,6 @@ class CA515Author : EventHandler
             let user=CaelumPlayer(players[p].mo);
             CaelumCalendarState.Get(user,true).SetAnchor(CaelumWorldClock.Get(user,true),day,tic,false);
         }
-    }
-    void Materials(CaelumPlayer user,int kind)
-    {
-        let stack=user.CreateDetachedMaterialStack(kind,1,2000000);
-        stack.InMagicBox=true;stack.AttachToOwner(user);
     }
     void Seed()
     {
@@ -37,13 +33,14 @@ class CA515Author : EventHandler
             r.PortPrisonerAccountMask=SCENE==3?1:0;
             r.PortSiegeNarrativeStarted=false;
             user.MagicBoxOwned=true;r.MagicBoxOwned=true;
+            CA515AuthorSetup.Prepare(user);
             for(int recipe=CaelumMachineData.FIRST_RECIPE;recipe<CaelumMachineData.FIRST_RECIPE+2;recipe++)
             {
                 r.LearnCraftingRecipe(recipe);
                 r.RecipeRereadings[CaelumRecipeLearning.Slot(recipe,1)]=CaelumRecipeLearning.MAX_READINGS;
                 r.RecipePractice[CaelumRecipeLearning.Slot(recipe,1)]=CaelumRecipeLearning.PracticeLimit(recipe);
             }
-            Materials(user,CaelumConstants.MATERIAL_WOOD);Materials(user,CaelumConstants.MATERIAL_IRON_INGOT);
+            if(SCENE==2){user.CraftingEfficiencyIndex=2;CA515AuthorSetup.Materials(user);}
             user.RefreshSocialJournalSnapshot();user.PersistCharacterState();
         }
         ClockTo(CaelumCityWorld.SiegeCivilSeconds()-3600);
@@ -86,6 +83,7 @@ class CA515Author : EventHandler
             vector3 start=SCENE==2?Gun.Pos+(0,64,0):SCENE==4?(-448,0,0):First.Pos-(64,0,0);
             user.SetOrigin(start+(0,p*96,0),false);user.Angle=SCENE==2?270:0;user.Pitch=0;
             CaelumPoiKnowledge.Record(user,"ca515_review_point",CaelumPoiData.ROOM,"CA_MILITARY_HERE",(512,256,0));
+            CA515AuthorSetup.Report(user);
         }
         Ready=true;Console.Printf("CA515 AUTHOR READY issue=%d scene=%d",SCENE==0?447:SCENE==1?448:SCENE==2?449:SCENE==3?450:451,SCENE);
     }
@@ -105,6 +103,21 @@ class CA515Author : EventHandler
         let user=CaelumPlayerAuthority.FromNetworkPlayer(e.Player);if(user==null)return;
         if(e.Name=="ca515_return"){Level.ChangeLevel('MAP03',0,CHANGELEVEL_NOINTERMISSION);return;}
         if(!Ready)return;let record=user.GetPersistentCharacterState(false);
+        if(e.Name=="ca515_setup"){CA515AuthorSetup.Report(user);return;}
+        if(e.Name=="ca515_materials" && SCENE==2){CA515AuthorSetup.Materials(user);CA515AuthorSetup.Report(user);return;}
+        if(e.Name=="ca515_refill_probe" && SCENE==2)
+        {
+            let wood=user.FindNativeSpecialItem(CaelumConstants.EQUIPMENT_KIND_MATERIAL,CaelumConstants.MATERIAL_WOOD,1);
+            int before=wood.Amount;wood.Amount-=1;
+            CA515AuthorSetup.Materials(user);CA515AuthorSetup.Materials(user);
+            Console.Printf("CA515 AUTHOR REFILL %s",wood.Amount==before?"PASS":"FAIL");return;
+        }
+        if(e.Name=="ca515_walk_start"){WalkStart=user.Pos;return;}
+        if(e.Name=="ca515_walk_end")
+        {
+            double distance=(user.Pos-WalkStart).Length();
+            Console.Printf("CA515 AUTHOR WALK %s distance=%.4f",distance>1?"PASS":"FAIL",distance);return;
+        }
         if(e.Name=="ca515_probe")
         {
             bool okay=true;

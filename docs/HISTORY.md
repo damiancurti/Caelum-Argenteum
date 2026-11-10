@@ -25,6 +25,21 @@ than declaring performance accepted. Full evidence and failed fixture attempts
 are in assets/validation_v5_15_4; original saves/packages remain for rollback.
 
 
+Author launcher correction (2026-11-10, same #451 delivery): the author reported
+unwanted multiplayer defaults and excessive material load. Manual scenes now
+start one character with all twelve attributes at100, using the existing debug
+override only in disposable fixtures. Only machines receive materials: catalog
+costs for one barricade and cannon at100% efficiency, stored in the Magic Box.
+F4 replenishes missing stock at the selected efficiency, updating existing stacks
+without repeated accumulation. Cooperative checks require an explicit option.
+Native single-player checks pass all seven choices, actual movement and refill,
+hub travel and save recovery. Machine-scene effective load is10.811kg of400kg
+capacity; other scenes carry no supplied wood/iron. The runtime PK3 is unchanged.
+The first helper compile failure and successful follow-ups are retained in
+validation_v5_15_4/author-usability-results.json and compressed native logs.
+All five author acceptance checks remain pending.
+
+
 ## 5.15.3 - Tactical routes and reports (#450, 2026-11-10)
 
 The author approved the west exterior and elevated wallwalk routes, existing

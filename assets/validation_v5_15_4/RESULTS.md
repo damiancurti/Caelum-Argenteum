@@ -80,3 +80,31 @@ dialogue/localization/document indexes and git diff --check pass. An initial
 static failure identified two diagnostic release labels still saying5.15.3;
 both now say5.15.4. The final delivery package's equivalence record identifies
 those two print-only changes separately from gameplay and geometry evidence.
+
+
+## Author launcher usability correction (2026-11-10)
+
+The author reported that the manual tests unexpectedly opened multiplayer and
+supplied more materials than the prepared character could carry. The launcher
+now defaults to one player and all twelve attributes at100 through the existing
+reversible debug override. This applies to both isolated laboratories and the
+actual city. Only the machine scene supplies materials:150,000g wood and755,000g
+iron, the catalog costs of one barricade and one cannon at100% efficiency. F4
+replenishes the missing stock at the selected efficiency; it updates an existing
+stack and repeated presses do not accumulate additional stock. Other scenes
+supply no wood/iron. Cooperative reward checks remain available explicitly with
+`python assets/validation_v5_15_4/author_terminal.py --players 2`.
+
+All seven single-player scenes pass native startup/setup checks. The machine
+scene also passes actual backward movement and refill after partial depletion;
+its effective carried load is10.811kg against400kg capacity. Consequences pass
+hub travel and recovery from the new single-player save, retaining attributes100.
+The default launches contain neither `-host` nor `-join`. The initial helper
+compile failed for missing `play` scope; its log is retained with the corrected
+runs in author-usability-results.json and author-usability-logs.txt.gz.
+The runtime PK3/hash remains unchanged. These are fixture usability checks;
+original gameplay/performance evidence and pending author acceptance remain
+separate. The earlier timed keep-awake request has finished and released.
+
+Follow-up static validation passes with zero errors and2485 context words;
+Python compilation, document-index regeneration and diff checks pass.

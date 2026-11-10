@@ -18,13 +18,15 @@ class CA515Author : EventHandler
             record.FactionMember[0]=true;record.FactionReputation[0]=50;
             record.QuestState[CaelumConstants.QUEST_GUARD_CAPTAIN]=CaelumConstants.QUEST_STATE_COMPLETED;
             record.DemoNarrativeDelivered=(1<<CaelumDemoNarrative.EVENT_COUNT)-1;record.DemoNarrativePending=0;
-            user.MagicBoxOwned=true;record.MagicBoxOwned=true;user.PersistCharacterState();Locate(user,false);
+            user.MagicBoxOwned=true;record.MagicBoxOwned=true;CA515AuthorSetup.Prepare(user);
+            user.PersistCharacterState();Locate(user,false);CA515AuthorSetup.Report(user);
         }
         Ready=true;Console.Printf("CA515 AUTHOR READY city geometry");
     }
     override void NetworkProcess(ConsoleEvent e)
     {
         let user=CaelumPlayerAuthority.FromNetworkPlayer(e.Player);if(user==null || !Ready)return;
+        if(e.Name=="ca515_setup"){CA515AuthorSetup.Report(user);return;}
         if(e.Name=="ca515_a")Locate(user,false);
         if(e.Name=="ca515_b")Locate(user,true);
         if(e.Name=="ca515_c")

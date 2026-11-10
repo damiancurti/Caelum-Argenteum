@@ -9,7 +9,7 @@ SCENES={'director':0,'command':1,'machines':2,'reports':3,'outcomes':4,'routes':
 HELP={
  'director':'#447: F5 cae un defensor; F6 retirada confirmada de Zupay; F7 destruye una maquina; F8 solicita una tanda real disponible. Dos defensores en esta escena aislada; no representa el ejercito de produccion.',
  'command':'#448: agachate y usa al guardia. F5 alterna pertenencia; F6 cargo reconocido; F7 reputacion49/50; F8 cae el primer guardia. Retirada de laboratorio al puesto original; el cuartel real se revisa en Ciudad.',
- 'machines':'#449: usa una pieza del canon para reparar, sabotear, capturar u operar. F5 prepara10% de dano; F6 ubica junto al banco; F7 completa trabajo activo SOLO como ayuda de prueba; F8 vuelve al canon. Recetas aprendidas, estaciones y materiales de prueba disponibles. Sabotaje/captura duran30 segundos si no usas F7.',
+ 'machines':'#449: usa una pieza del canon para reparar, sabotear, capturar u operar. F5 prepara10% de dano; F6 ubica junto al banco; F7 completa trabajo activo SOLO como ayuda de prueba; F8 vuelve al canon. Atributos100 y eficiencia inicial100%. Caja con materiales para una barricada y un canon. F4 repone lo faltante segun la eficiencia seleccionada, sin acumular al repetir. Recetas aprendidas y estaciones disponibles. Sabotaje/captura duran30 segundos si no usas F7.',
  'reports':'#450: cuenta de prisionero oida y una hora antes del asedio. F5 abre el dialogo real del guardia; F6 inicia el asedio; F7 prepara captura intacta para Unitarios; F8 vuelve al guardia. Informa por el dialogo y compara reputacion/reserva. Rutas fisicas: opcion6.',
  'outcomes':'#451: F5 caen ambos defensores; F6 neutraliza las doce maquinas y confirma retirada; F7 adelanta hasta la reapertura; F8 intenta comerciar; F12 prepara la muerte del segundo comerciante. Repite F6/F7 y revisa reputacion y Diario. Para victoria sin derrota, F6 antes de F5. F9 sale al hub; F10 regresa.',
  'routes':'#450: geometria real, sin ejercitos. F5 coloca al pie de la escalera oeste; F6 en el exterior oeste. Camina y revisa solo los puntos descubiertos; no hay movimiento automatico.',
@@ -26,7 +26,7 @@ def launch(runtime,scene,players,language,hidden=False,recovery=None,smoke=False
  if SCENES[scene]>=5:
   with zipfile.ZipFile(runtime) as z:members['maps/MAP03.wad']=z.read(next(n for n in z.namelist() if n.lower()=='maps/map03.wad'))
  if scene=='city':source=source.replace('class CA515QuietPort : CaelumPortSiege replaces CaelumPortSiege { override void Tick(){} }','')
- members['checks.zs']=source.encode('utf-8')
+ members['checks.zs']=((HERE/'author_setup.zs').read_text(encoding='utf-8')+'\n'+source).encode('utf-8')
  with zipfile.ZipFile(package,'w',compression=zipfile.ZIP_STORED) as z:
   for name,data in sorted(members.items()):z.writestr(zipfile.ZipInfo(name,(2026,11,10,0,0,0)),data)
  startup=subprocess.STARTUPINFO();startup.dwFlags|=subprocess.STARTF_USESHOWWINDOW;startup.wShowWindow=0 if hidden else 1
@@ -35,11 +35,13 @@ def launch(runtime,scene,players,language,hidden=False,recovery=None,smoke=False
  for i in range(players):
   peer=out/f'peer{i}';peer.mkdir();config=peer/'isolated.ini';cfg=peer/'controls.cfg'
   config.write_text(f'[GlobalSettings]\nvid_fullscreen=false\nvid_preferbackend=1\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nsnd_mastervolume=0.05\nvid_maxfps=60\nlanguage={language}\n[Player]\nname=Review{i+1}\n',encoding='utf-8')
-  bindings='\n'.join(f'bind F{key} "netevent ca515_{event}"' for key,event in [(5,'a'),(6,'b'),(7,'c'),(8,'d'),(9,'hub'),(10,'return'),(12,'e')])
+  bindings='\n'.join(f'bind F{key} "netevent ca515_{event}"' for key,event in [(4,'materials'),(5,'a'),(6,'b'),(7,'c'),(8,'d'),(9,'hub'),(10,'return'),(12,'e')])
   actions={'director':'a;a;b;c;d','command':'a;a;b;b;c;c;d','machines':'a;b;d','reports':'c;a','outcomes':'a;b;c;d;e','routes':'a;b','city':''}
   exercise=''.join('netevent ca515_'+event+'; wait 5; ' for event in actions[scene].split(';') if event) if smoke else ''
+  if smoke and scene=='machines':exercise+='netevent ca515_refill_probe; wait 5; netevent ca515_materials; wait 5; netevent ca515_materials; wait 5; netevent ca515_walk_start; +back; wait 10; -back; netevent ca515_walk_end; wait 5; '
   if smoke and scene=='outcomes':exercise+='netevent ca515_hub; wait 70; netevent ca515_return; wait 70; '
   if smoke and SCENES[scene]<5:exercise+='netevent ca515_probe; wait 5; '
+  if smoke:exercise+='netevent ca515_setup; wait 5; '
   host='wait 160; '+exercise+'save author; ' if not recovery else 'wait 100; netevent ca_session_recover; wait 5; '+exercise+'save author; '
   cfg.write_text(controls+'\n'+bindings+'\nbind F11 "save author"\n'+(host if i==0 else '')+(f'wait {400+i*35}; quit' if smoke else '')+'\n',encoding='utf-8')
   entry=['+map','MAP03']
@@ -53,20 +55,22 @@ def launch(runtime,scene,players,language,hidden=False,recovery=None,smoke=False
  return processes,out
 
 def main():
- p=argparse.ArgumentParser(description=__doc__);p.add_argument('--runtime',type=Path,default=ROOT/'build/v515/issue451-release.pk3');p.add_argument('--scene',choices=SCENES);p.add_argument('--players',type=int,choices=(1,2),default=2);p.add_argument('--language',choices=('es','en'),default='es');p.add_argument('--hidden',action='store_true');p.add_argument('--detach',action='store_true');p.add_argument('--smoke',action='store_true');p.add_argument('--recover',type=Path);a=p.parse_args()
+ p=argparse.ArgumentParser(description=__doc__);p.add_argument('--runtime',type=Path,default=ROOT/'build/v515/issue451-release.pk3');p.add_argument('--scene',choices=SCENES);p.add_argument('--players',type=int,choices=(1,2),default=1,help='Single-player by default; use 2 only for cooperative checks');p.add_argument('--language',choices=('es','en'),default='es');p.add_argument('--hidden',action='store_true');p.add_argument('--detach',action='store_true');p.add_argument('--smoke',action='store_true');p.add_argument('--recover',type=Path);a=p.parse_args()
  if a.scene:
   processes,out=launch(a.runtime,a.scene,a.players,a.language,a.hidden,recovery=a.recover,smoke=a.smoke)
   if not a.detach:
    for process in processes:process.wait()
   if a.smoke:
    logs=[(out/f'peer{i}/engine.log').read_text(errors='replace') for i in range(a.players)]
-   okay=all(proc.returncode==0 and ('CA515 AUTHOR READY' in log or a.recover) and 'CA435SYNC OK' in log and (SCENES[a.scene]>=5 or 'CA515 AUTHOR CHECK PASS' in log) and not any(s in log for s in ('VM execution aborted','Script error','CA435SYNC FAIL','CA515 AUTHOR CHECK FAIL')) for proc,log in zip(processes,logs))
+   okay=all(proc.returncode==0 and ('CA515 AUTHOR READY' in log or a.recover) and 'CA435SYNC OK' in log and 'CA515 AUTHOR SETUP PASS' in log and (SCENES[a.scene]>=5 or 'CA515 AUTHOR CHECK PASS' in log) and (a.scene!='machines' or ('CA515 AUTHOR WALK PASS' in log and 'CA515 AUTHOR REFILL PASS' in log)) and not any(s in log for s in ('VM execution aborted','Script error','CA435SYNC FAIL','CA515 AUTHOR CHECK FAIL','CA515 AUTHOR SETUP FAIL','CA515 AUTHOR WALK FAIL','CA515 AUTHOR REFILL FAIL')) for proc,log in zip(processes,logs))
    (out/'smoke.json').write_text(json.dumps(dict(passed=okay,scene=a.scene),indent=2));print('Smoke:',okay)
    if not okay:raise SystemExit(1)
   return
  active=[];last=None
  while True:
-  print('\nV5.15 - Pruebas aisladas por issue. No modifican tus partidas habituales.\n1 Director #447\n2 Mando #448\n3 Maquinas #449\n4 Informes #450\n5 Consecuencias #451\n6 Rutas reales #450\n7 Ciudad real #447/#448\n8 Cambiar ES/EN\n9 Cerrar solo las escenas de esta terminal\n10 Recuperar guardado comun de la ultima escena\n0 Salir\nF11 guarda. F9/F10 salen/regresan en los laboratorios. Lee pending_test.txt. Cambia de ventana para controlar cada jugador.')
+  print('\nV5.15 - Pruebas aisladas por issue. No modifican tus partidas habituales.\n1 Director #447\n2 Mando #448\n3 Maquinas #449\n4 Informes #450\n5 Consecuencias #451\n6 Rutas reales #450\n7 Ciudad real #447/#448\n8 Cambiar ES/EN\n9 Cerrar solo las escenas de esta terminal\n10 Recuperar guardado comun de la ultima escena\n0 Salir\nF11 guarda. F9/F10 salen/regresan en los laboratorios. Lee pending_test.txt. Todos los atributos al100. Un jugador por defecto; --players 2 solo para comprobaciones cooperativas.')
+  print('Jugadores:',a.players)
+
   choice=input('Opcion: ').strip()
   if choice=='8':a.language='en' if a.language=='es' else 'es';print('Idioma:',a.language);continue
   if choice in ('9','0'):
@@ -80,7 +84,7 @@ def main():
   if any(proc.poll() is None for proc in active):print('Cierra la escena anterior con9 antes de abrir otra.');continue
   if choice=='10':
    checkpoint=None if last is None else last[1]/'peer0/author.zds'
-   if checkpoint is None or not checkpoint.exists():print('No hay guardado comun. Usa F11 en el anfitrion.');continue
+   if checkpoint is None or not checkpoint.exists():print('No hay guardado. Usa F11 en la partida.');continue
    scene=last[0];active,out=launch(a.runtime,scene,a.players,a.language,recovery=checkpoint)
   else:scene=options[choice];active,out=launch(a.runtime,scene,a.players,a.language)
   last=(scene,out)
