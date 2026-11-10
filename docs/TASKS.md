@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.15.2** - 2026-11-10.
+Documentation version: **5.15.3** - 2026-11-10.
+
+## 5.15.3 / #450 - Tactical routes delivery
+
+Implemented approved existing-geometry entry discovery, one-time pre-battle reserve
+preparation and the intact-machine report/reward. Native two-peer/save/hub, old-save
+migration, real city walking and ES/EN dialogue pass; active-siege FPS remains poor. Keep the #450 branch, commit,
+PR and native evidence separate from #447-449 and #451. Validation is recorded in
+assets/validation_v5_15_3; CA450-01 is the outstanding author check. Complete #451
+occupation/recovery next, then leave the combined author terminal open. No V5.15
+merge, issue closure or manual acceptance follows from automated checks alone.
+
 
 ## 5.15.2 / #449 - Machine delivery and author check
 

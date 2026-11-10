@@ -7,6 +7,7 @@ import re
 import struct
 from build_dialogue_index import validate as dialogue_problems
 from assets.generators.generate_cartography_catalogue import render as cartography_catalogue
+from generate_battle_routes import render as battle_route_data
 from assets.generators.generate_siege_reinforcements import render as reinforcement_data
 from assets.generators.generate_tarot_justice import validate as justice_geometry_problems
 from assets.generators.generate_tarot_examples import render as tarot_example_data
@@ -86,6 +87,8 @@ def validate(root):
         output = root/'src/caelum/data/CaelumCartographyCatalogueData.zs'
         if output.read_bytes() != cartography_catalogue(root):
             errors.append('Stale cartography catalogue; run python assets/generators/generate_cartography_catalogue.py')
+        if (root/'src/caelum/data/CaelumBattleRouteData.zs').read_bytes() != battle_route_data(root):
+            errors.append('Stale tactical route data; run python generate_battle_routes.py')
     except (OSError, ValueError, KeyError) as error:
         errors.append(f'Cartography catalogue: {error}')
     def check(condition, message):

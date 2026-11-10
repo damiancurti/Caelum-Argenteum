@@ -63,7 +63,7 @@ Source SHA-256 fingerprints:
 - `dialogues/npc/prisoner_tarot.usdf`: `e34526cddacb1c2ff2b15793dabe9c774a9e4c13b76b0cde1616ae5079abb23a`
 - `dialogues/npc/cups_ace.usdf`: `914303f65c6cc2f81a13c673852889f0c52d28ca7a2b389c7cd1d9b8644f1145`
 - `dialogues/npc/wands_knight.usdf`: `53fcc360073bce30f82f7168a6cb64a224fe2303c38cd01841439bb448a8b894`
-- `dialogues/npc/guards.usdf`: `8fea805fc5c840d714f04bc151b53c03d3c080dbafd644b536602ffdba1d2a51`
+- `dialogues/npc/guards.usdf`: `245dcee3afb1b1da4e48fde13bb2b373f40908f8e334711de381432e3d539fe2`
 - `dialogues/npc/rental_agent.usdf`: `41f0f8696a70290e98c38bf1952824bc7a53eb106d55a47783cfc59f8c0d7b53`
 - `dialogues/shared/companions.usdf`: `8f0fe3747a879e7ce156c26425f9fb8106363c18c25babf9c3a3cdfab425fa5f`
 - `dialogues/shared/arcana_capture.usdf`: `586a7630d487a5ea7febd28d04ac88601573632ae915521cfa22275e033d58a8`

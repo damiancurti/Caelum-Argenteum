@@ -100,6 +100,12 @@ class CaelumAuthoredCartography : Object play
         else if(level.MapName=="MAP03" && CaelumCityData.Enabled()
             && CaelumCartographyCatalogueData.MatchesCityGeometry(record.CartographyChecksum))
         {
+            // Registra solamente el punto pisado; nunca el extremo aún oculto.
+            for(int i=0;i<CaelumBattleRouteData.COUNT;i++)
+                if(CaelumBattleRouteData.Contains(i,user.Pos)
+                    && CaelumPoiKnowledge.Find(record,level.MapName,CaelumBattleRouteData.Id(i))==null)
+                    CaelumPoiKnowledge.Record(user,CaelumBattleRouteData.Id(i),CaelumPoiData.TACTICAL_ROUTE,
+                        CaelumBattleRouteData.NameKey(i),user.Pos);
             for(int i=0;i<4;i++)if(CaelumCartographyCatalogueData.TowerContains(i,user.Pos))
                 CaelumPoiKnowledge.Record(user,String.Format("city-tower-%d",i),CaelumPoiData.TOWER,
                     String.Format("CA_POI_TOWER_%d",i),CaelumCartographyCatalogueData.TowerPosition(i));

@@ -1,9 +1,9 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.15.2** - 2026-11-10.
+Documentation version: **5.15.3** - 2026-11-10.
 
-**5.15.2/#449:** machine construction/repair/capture; #447 director/#448 command.
-CA447-01/448-01/449-01 pending; validation_v5_15_0/1/2. #450-451 remain.
+**5.15.3/#450:** tactical routes/reports; #447 director/#448 command/#449 machines.
+CA447-01/448-01/449-01/450-01 pending; validation_v5_15_0/1/2/3. #451 remains.
 Rules/next steps: SYSTEMS/TASKS.
 
 **V5.14 accepted2026-11-09:** 5checks;#443-446 closed;PR630-633 merged.

@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.15.2** - 2026-11-10.
+Documentation version: **5.15.3** - 2026-11-10.
+
+## 5.15.3 / #450 - Tactical alternatives
+
+Existing west-flank and wallwalk entries now have private discovery markers;
+prisoner intelligence prepares the finite reserve and an intact captured-machine
+report grants the approved optional individual reward. No city/sewer geometry is
+invented. SYSTEMS contains the approved rules; evidence is kept separately under
+assets/validation_v5_15_3. CA450-01 awaits author acceptance. #451 occupation,
+recovery and the combined author terminal remain the next delivery.
+
 
 ## 5.15.2 / #449 - Siege equipment delivery
 

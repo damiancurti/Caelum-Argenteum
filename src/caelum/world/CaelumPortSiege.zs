@@ -149,6 +149,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
     {
         if(Reinforcements==null)Reinforcements=new("CaelumSiegeReinforcements");
         Reinforcements.Initialize(self,fresh);
+        CaelumBattleTactics.ApplyPreparation(self);
     }
     bool CommandDirty, Aftermath;
     bool HighDensity;

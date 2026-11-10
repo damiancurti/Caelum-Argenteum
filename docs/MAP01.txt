@@ -1,6 +1,19 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.15.2** - 2026-11-10.
+Documentation version: **5.15.3** - 2026-11-10.
+
+## 5.15.3 / #450 - Existing Barracas routes and preparation
+
+The approved west exterior flank and stairs/wallwalk alternative use the existing
+CITY.json geometry, with no new sewer access or map replacement. Only physically
+visited entry points become known. Existing interior gate controls and #449
+machine interactions provide the tactical actions; the main #447 victory remains.
+Paid prisoner accounts can be reported to the guard before the scheduled siege
+to withhold one100-member enemy wave once. An intact operational original machine
+captured for Unitarios can be reported to the guard in the city exterior without
+transporting it. The optional+50 reward uses individual cooperative eligibility.
+SYSTEMS defines persistence, exclusions and the exact reporting prerequisites.
+
 
 ## 5.15.2 / #449 - Barracas machine ownership
 
