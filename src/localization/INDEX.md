@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `a764756607a96eaaa2855a7fea3f2789651f0a1059c430a3d1ffef7362f743bb`. Locations include every definition; the last one per language wins.
+SHA-256: `3ba241fc91c969b427ca8e76fe19621d0ba5aab34e62271ed8510d9612f84d6f`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -142,6 +142,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_MENU | 8 | CA_MENU_LOAD_CHARACTER | CA_MENU_STANDALONE |
 | CA_MERCHANT | 4 | CA_MERCHANT_CASH | CA_MERCHANT_MODE_SELL |
 | CA_MESSAGES | 5 | CA_MESSAGES_EMPTY | CA_MESSAGES_TITLE |
+| CA_MILITARY | 28 | CA_MILITARY_ADVANCE | CA_MILITARY_WITHDRAW |
 | CA_MIRACLE | 1 | CA_MIRACLE_CAST | CA_MIRACLE_CAST |
 | CA_MONTH | 12 | CA_MONTH_01 | CA_MONTH_12 |
 | CA_NAV | 10 | CA_NAV_CARRIED | CA_NAV_TITLE |

@@ -6,3 +6,8 @@ Prerequisites: final V5.15 package; use disposable saves and the delivered autho
 4. Reload that outcome and later finish the original twelve-machine/commander objectives.
 Expected: defeat is recorded once without forcing a reload; unused reserves stop; later victory
 retains the earlier defeat and never recreates spent troops. Zupay's confirmed retreat remains valid.
+
+CA448-01 | Origin 5.15.1 | Issue #448 | Military command
+Prerequisite: final V5.15 #448 terminal scenario (prepared after #451), with the original package/save retained; use the provided Unitarian captain with reputation50.
+Steps: Crouch + Use on a guard. Hold, advance to own/known position, regroup and withdraw; observe native collision, stairs/home route and cannon crews. Change each access prerequisite independently and verify orders are denied. Remove the commander and observe capable succession; with none capable, verify withdrawal. Request pending original defenders and repeat when exhausted. Save/reload and travel out/back with an issued order.
+Expected: bounded100-member military groups, eight-member player party unchanged; known destinations only; distant members retain their last received order; no new soldiers, reserve reset, healing or vanished retreating bodies. Orders and exact identities persist. Report performance and routing problems separately; automated checks are not this acceptance.

@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.15.0** - 2026-11-09.
+Documentation version: **5.15.1** - 2026-11-09.
+
+## 5.15.1 / #448 - Command delivery and author check
+
+Scope: mandatory Unitarian membership, recognized captaincy and reputation50;
+bounded hold/known advance/regroup/withdraw orders; existing100-member military
+formations and succession; original pending defenders only. The author approved
+returning physically to the original barracks without disappearance/healing.
+Per-soldier receipt and migration preserve orders and original identities.
+Evidence: assets/validation_v5_15_1. CA448-01 is outstanding alongside CA447-01.
+#449 machines, #450 routes/objectives and #451 consequences remain separate
+deliveries. No V5.15 merge or issue closure is authorized by agent-only tests.
 
 ## 5.15.0 / #447 - Director delivery and author check
 

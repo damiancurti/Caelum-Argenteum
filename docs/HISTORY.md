@@ -1,6 +1,44 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.15.0** - 2026-11-09.
+Documentation version: **5.15.1** - 2026-11-09.
+
+## 5.15.1 - Military command (#448, 2026-11-09)
+
+The author approved Unitarian guard membership, recognized captaincy plus
+reputation50 access, hold/known advance/regroup/withdraw/pending-reserve orders,
+existing succession and military formations. He additionally approved original
+pending defenders only (no new friendly reserve) and physical return to original
+barracks without disappearance, healing or removing living bodies from the census.
+
+The command panel shares native menu/input ownership. Authoritative execution
+rechecks access and personal destination knowledge. Per-soldier receipt bounds
+new instructions to the existing command radius; distant members retain earlier
+orders. Existing deployment, native movement/collision, crew posts and individual
+combat/resources remain authoritative. Schema2 preserves the locally tested
+schema1 command saves as well as idempotently enrolling pre-command bodies.
+
+Native checkpoint/reload passed34 checks per actual lockstep peer, including
+the final Crouch+Use input, exact orders, bounded receipt, succession, physical
+movement and same-tic resurrection. Original #447 saves and the schema1
+prototype migrate; two-peer hub travel retains identities; the original package
+still loads its original save. Actual MAP03 geometry checks confirmed descent
+from a cannon post and physical return to the original barracks entrance,
+remaining visible, collidable and counted. The Spanish menu was inspected.
+
+Intermediate native checks caught reserved identifiers and case-insensitive
+parameter shadowing. Later movement failures were harness errors: a deadline
+shorter than native state cadence and an early guest exit. Retained displacement
+evidence and corrected runs distinguish those failures from production behavior.
+Package hashes, logs and presentation measurements are in assets/validation_v5_15_1.
+The fresh paired siege comparison at identical population/health measured
+1.351 presents/s for #447 and1.418 for #448, p95 intervals812.79/780.88ms,
+p99 and worst823.72/797.79ms; mean simulation tics43.53/41.65ms. This does not
+reproduce the initial slower #448 observation, nor establish a speedup. The
+existing active siege remains far below playable frame rates and is not
+performance-accepted. Ground references and all intermediate measurements are
+retained in the evidence. Scoped keep-awake ownership was released.
+Author acceptance is pending: CA448-01, origin5.15.1/#448. The native evidence
+does not establish Internet multiplayer, whole-game60FPS or author acceptance.
 
 ## 5.15.0 - Dynamic battle director (#447, 2026-11-09)
 

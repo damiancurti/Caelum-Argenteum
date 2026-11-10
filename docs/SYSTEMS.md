@@ -1,6 +1,57 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.15.0** - 2026-11-09.
+Documentation version: **5.15.1** - 2026-11-09.
+
+## 5.15.1 / #448 - Guard command and succession
+
+Author-approved on 2026-11-09: Barracas guards belong to the Unitarians.
+Command requires all three conditions together: membership of that faction,
+the recognized captaincy (completed guard-captain clue), and Friendly or
+higher reputation (50). Recognition still grants no automatic membership,
+reputation or personal memory. Execution rechecks the current character,
+living capable contact and access; an open menu cannot bypass revocation.
+
+Crouch + Use on a guard opens the unpaused ES/EN command panel during the siege.
+It resolves the group's capable commander and uses the existing 1,024-MU
+command link. Groups retain at most100 actual soldiers; player parties remain8.
+The existing formation capability, commander priority then stable joining
+order determine succession. No capable replacement causes withdrawal.
+Military formations do not acquire the player-party anchor or hostile target
+subscriptions. The army-owned registry is initialized once, extended by
+resident binding and refreshed on the existing command cadence, not by world scans.
+
+Orders: hold each recipient's current position; advance to the issuing
+character's current position or a personally known POI on the same map;
+regroup at the commander's observed position; withdraw; request pending
+original defenders. New orders reach only members within the existing command
+radius of their commander. Others retain their last received instruction.
+The menu reports recipients. Destination execution checks the actual personal
+knowledge record; no hidden target positions are synthesized. Movement uses
+native collision, the existing city path queue and formation narrowing/recovery.
+Existing deployment and crew routes remain prerequisites; gunners retain their
+posts except during withdrawal. Ordinary perception and individual resources
+remain authoritative. Orders and their per-soldier receipt survive saves/travel;
+physical routes resume with native map simulation, while the existing unloaded
+battle model retains real combatants and casualties.
+
+Withdrawal follows the existing stairs and reversed home routes to each
+soldier's original barracks entrance, using the existing transit-waypoint reach.
+Private interiors remain separate hubs; returning troops stay visible in the
+city instead of crossing a sealed footprint. This does not destroy, heal or remove the
+soldier from the living census. Older nonresident bodies retain their original
+post as the only authored return point. Genuine resurrection and enlisted
+companions are not returned to historical military orders.
+
+There is no additional friendly reserve. A request only retries an original
+pending defender's deployment, respecting the siege start and side capacity.
+The normal one-attempt-per-native-tic queue remains bounded; elapsed-world
+deployment retains its existing separate budget. Empty reserves are reported;
+the hostile finite ledger is never spent, enlarged or reset by this order.
+
+Saved command schema2 also migrates the locally tested schema1 prototype
+without losing its order or hold positions. Pre-command saves enroll the same
+owned bodies idempotently. Evidence: assets/validation_v5_15_1. CA448-01 remains
+pending; rule approval does not establish author gameplay acceptance.
 
 ## 5.15.0 / #447 - Persistent battle director
 

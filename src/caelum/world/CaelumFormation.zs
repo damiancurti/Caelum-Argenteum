@@ -194,7 +194,11 @@ class CaelumFormation : Object play
         for(int i=Members.Size()-1;i>=0;i--)
         {
             let member=Members[i];let body=member.Body;
+            let guard=CaelumPortDefender(body);
+            bool dismissed=guard!=null && guard.MilitaryGroup!=null && guard.MilitaryGroup.Formation==self
+                && CaelumMilitaryGroup.Find(guard)==null;
             if(body==null || body.bDestroyed || body.health<=0
+                || dismissed
                 || (body.SiegeCombatant!=null && (body.SiegeCombatant.Exited || body.SiegeCombatant.Withdrawing))
                 || (CommandOwner!=null && (!CommandOwner.ActiveEntry(body.SiegeCombatant)
                     || CaelumRedemption.PreviouslyRaised(body))))Remove(member);

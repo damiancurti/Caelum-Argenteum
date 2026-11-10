@@ -1,0 +1,2552 @@
+{
+  "issue": 448,
+  "version": "5.15.1",
+  "author_accepted": false,
+  "performance_accepted": false,
+  "runtime_sha256": "2749a49409add6f16f6c1a2a8f905964282442001bfc37b9da4d241220a39ef2",
+  "qualification": "Native isolated lockstep peers and application vkQueuePresentKHR requests; no monitor scanout, Internet or author acceptance claim.",
+  "failed_runs": {
+    "compile-01": "Reserved ZScript identifiers corrected.",
+    "compile-02": "Case-insensitive parameter/field shadowing corrected with explicit self.",
+    "reviewed-restored": "Fixture deadline ignored four-tic native See cadence; guest exited before movement assertion. Both runner errors corrected.",
+    "motion-diagnostic": "Retains the short deadline failure and actual displacement proving native motion before the corrected deadline."
+  },
+  "evidence_reuse": "Delivery differs from final only in native return target/door restoration and Crouch+Use/localized instructions. Actual MAP03 route checks cover return changes; delivery Spanish checkpoint and two-peer restore cover final input, persistence, movement and resurrection. Earlier migration, hub and rollback evidence retains its exact package hash.",
+  "functional": [
+    {
+      "label": "compile-01",
+      "issue": 448,
+      "restored": false,
+      "runtime_sha256": "6597abbb719db24f876c16ddbd477ee14c178120b06f9f093b6642da7f8c24f3",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "fixture_sha256": "3a2f031af33bc6a32cd6fbfa38a0432fd2de1875cd16f23887140507cf7de6b1",
+      "commands": [
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448-dev.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\compile-01\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\compile-01\\peer0\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\compile-01\\peer0",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\compile-01\\peer0\\engine.log",
+          "+map",
+          "MAP03",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\compile-01\\peer0\\commands.cfg"
+        ]
+      ],
+      "peers": [
+        {
+          "peer": 0,
+          "exit": 1,
+          "passed": false,
+          "checks": [],
+          "errors": [
+            "Script error, \"issue448-dev.pk3:caelum/world/caelummilitarycommand.zs\" line 25:",
+            "Script error, \"issue448-dev.pk3:caelum/world/caelummilitarysession.zs\" line 28:",
+            "Script error, \"issue448-dev.pk3:caelum/world/caelummilitarysession.zs\" line 50:",
+            "Script error, \"issue448-dev.pk3:caelum/world/caelummilitarysession.zs\" line 51:",
+            "Script error, \"issue448-dev.pk3:caelum/ui/caelummilitaryui.zs\" line 36:"
+          ],
+          "native_sync": false
+        }
+      ],
+      "timed_out": true,
+      "passed": false
+    },
+    {
+      "label": "compile-02",
+      "issue": 448,
+      "restored": false,
+      "runtime_sha256": "ddda73c98eb6364c820774fa7fdee5d9ba6863e65b7609e97aa7fe6b8810b95e",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "fixture_sha256": "edf495ddf56481bace24cf95319b7c66253578f58a21a56b3b65f2775dfb2a70",
+      "commands": [
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448-dev02.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\compile-02\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\compile-02\\peer0\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\compile-02\\peer0",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\compile-02\\peer0\\engine.log",
+          "+map",
+          "MAP03",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\compile-02\\peer0\\commands.cfg"
+        ]
+      ],
+      "peers": [
+        {
+          "peer": 0,
+          "exit": 0,
+          "passed": false,
+          "checks": [
+            "CA448 SEEDED",
+            "CA448 PASS rank and reputation cannot bypass membership",
+            "CA448 PASS membership cannot bypass recognized office",
+            "CA448 PASS 49 reputation fails the approved boundary",
+            "CA448 PASS all three approved conditions permit command",
+            "CA448 PASS revision-one migration enrolls 101 actual bodies",
+            "CA448 PASS military groups enforce 100 members independently",
+            "CA448 PASS recognized NPC priority leads without a player-party anchor",
+            "CA448 PASS migration does not duplicate identities",
+            "CA448 PASS native command session opens on a nearby guard",
+            "CA448 FAIL session resolves the capable commander of the contacted group",
+            "CA448 FAIL hold preserves individual current positions",
+            "CA448 PASS live revocation prevents a stale menu order",
+            "CA448 FAIL advance captures the current known player position",
+            "CA448 PASS menu contains only current-map personal knowledge and own position",
+            "CA448 FAIL known destination uses the saved observation",
+            "CA448 PASS friendly request cannot spend or create hostile reserves",
+            "CA448 FAIL empty friendly reserve is reported without creating soldiers",
+            "CA448 CHECKPOINT READY failures=5"
+          ],
+          "errors": [
+            "CA448 FAIL session resolves the capable commander of the contacted group",
+            "CA448 FAIL hold preserves individual current positions",
+            "CA448 FAIL advance captures the current known player position",
+            "CA448 FAIL known destination uses the saved observation",
+            "CA448 FAIL empty friendly reserve is reported without creating soldiers"
+          ],
+          "native_sync": true
+        }
+      ],
+      "timed_out": false,
+      "passed": false
+    },
+    {
+      "label": "checkpoint-03",
+      "issue": 448,
+      "restored": false,
+      "runtime_sha256": "18f23a31690cfec028a2bffa8674a9880024c6c5ba7a03a08f5af4a7e5a96741",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "fixture_sha256": "5ad00344d962648ce047fac831cf031ee6725742e3122dc336e1ba0490ba4cdc",
+      "commands": [
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448-dev03.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\checkpoint-03\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\checkpoint-03\\peer0\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\checkpoint-03\\peer0",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "-host",
+          "2",
+          "-port",
+          "16047",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\checkpoint-03\\peer0\\engine.log",
+          "+map",
+          "MAP03",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\checkpoint-03\\peer0\\commands.cfg"
+        ],
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448-dev03.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\checkpoint-03\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\checkpoint-03\\peer1\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\checkpoint-03\\peer1",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "-join",
+          "127.0.0.1:16047",
+          "-port",
+          "16048",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\checkpoint-03\\peer1\\engine.log",
+          "+map",
+          "MAP03",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\checkpoint-03\\peer1\\commands.cfg"
+        ]
+      ],
+      "peers": [
+        {
+          "peer": 0,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA448 SEEDED",
+            "CA448 PASS rank and reputation cannot bypass membership",
+            "CA448 PASS membership cannot bypass recognized office",
+            "CA448 PASS 49 reputation fails the approved boundary",
+            "CA448 PASS all three approved conditions permit command",
+            "CA448 PASS revision-one migration enrolls 101 actual bodies",
+            "CA448 PASS military groups enforce 100 members independently",
+            "CA448 PASS recognized NPC priority leads without a player-party anchor",
+            "CA448 PASS migration does not duplicate identities",
+            "CA448 PASS native command session opens on a nearby guard",
+            "CA448 PASS session resolves the capable commander of the contacted group",
+            "CA448 PASS hold preserves individual current positions",
+            "CA448 PASS live revocation prevents a stale menu order",
+            "CA448 PASS advance captures the current known player position",
+            "CA448 PASS menu contains only current-map personal knowledge and own position",
+            "CA448 PASS known destination uses the saved observation",
+            "CA448 PASS friendly request cannot spend or create hostile reserves",
+            "CA448 PASS empty friendly reserve is reported without creating soldiers",
+            "CA448 CHECKPOINT READY failures=0"
+          ],
+          "errors": [],
+          "native_sync": true
+        },
+        {
+          "peer": 1,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA448 SEEDED",
+            "CA448 PASS rank and reputation cannot bypass membership",
+            "CA448 PASS membership cannot bypass recognized office",
+            "CA448 PASS 49 reputation fails the approved boundary",
+            "CA448 PASS all three approved conditions permit command",
+            "CA448 PASS revision-one migration enrolls 101 actual bodies",
+            "CA448 PASS military groups enforce 100 members independently",
+            "CA448 PASS recognized NPC priority leads without a player-party anchor",
+            "CA448 PASS migration does not duplicate identities",
+            "CA448 PASS native command session opens on a nearby guard",
+            "CA448 PASS session resolves the capable commander of the contacted group",
+            "CA448 PASS hold preserves individual current positions",
+            "CA448 PASS live revocation prevents a stale menu order",
+            "CA448 PASS advance captures the current known player position",
+            "CA448 PASS menu contains only current-map personal knowledge and own position",
+            "CA448 PASS known destination uses the saved observation",
+            "CA448 PASS friendly request cannot spend or create hostile reserves",
+            "CA448 PASS empty friendly reserve is reported without creating soldiers",
+            "CA448 CHECKPOINT READY failures=0"
+          ],
+          "errors": [],
+          "native_sync": true
+        }
+      ],
+      "timed_out": false,
+      "passed": true
+    },
+    {
+      "label": "restored-03",
+      "issue": 448,
+      "restored": true,
+      "runtime_sha256": "18f23a31690cfec028a2bffa8674a9880024c6c5ba7a03a08f5af4a7e5a96741",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "fixture_sha256": "5ad00344d962648ce047fac831cf031ee6725742e3122dc336e1ba0490ba4cdc",
+      "commands": [
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448-dev03.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\restored-03\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\restored-03\\peer0\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\restored-03\\peer0",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "-host",
+          "2",
+          "-port",
+          "16047",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\restored-03\\peer0\\engine.log",
+          "-loadgame",
+          "restore.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\restored-03\\peer0\\commands.cfg"
+        ],
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448-dev03.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\restored-03\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\restored-03\\peer1\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\restored-03\\peer1",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "-join",
+          "127.0.0.1:16047",
+          "-port",
+          "16048",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\restored-03\\peer1\\engine.log",
+          "-loadgame",
+          "restore.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\restored-03\\peer1\\commands.cfg"
+        ]
+      ],
+      "peers": [
+        {
+          "peer": 0,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA448 PASS common save retains the intended command checkpoint",
+            "CA448 PASS save retains exact destination and order serial",
+            "CA448 PASS save retains exact membership and formation identity",
+            "CA448 PASS commander death elects the earliest capable remaining member",
+            "CA448 PASS succession preserves the prior known order",
+            "CA448 PASS no capable successor orders withdrawal",
+            "CA448 PASS withdrawal uses bounded native movement without healing",
+            "CA448 PASS withdrawing soldier remains a living registered identity",
+            "CA448 RESULT PASS checks=25 failures=0"
+          ],
+          "errors": [],
+          "native_sync": true
+        },
+        {
+          "peer": 1,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA448 PASS common save retains the intended command checkpoint",
+            "CA448 PASS save retains exact destination and order serial",
+            "CA448 PASS save retains exact membership and formation identity",
+            "CA448 PASS commander death elects the earliest capable remaining member",
+            "CA448 PASS succession preserves the prior known order",
+            "CA448 PASS no capable successor orders withdrawal",
+            "CA448 PASS withdrawal uses bounded native movement without healing",
+            "CA448 PASS withdrawing soldier remains a living registered identity",
+            "CA448 RESULT PASS checks=25 failures=0"
+          ],
+          "errors": [],
+          "native_sync": true
+        }
+      ],
+      "timed_out": false,
+      "passed": true
+    },
+    {
+      "label": "checkpoint-04",
+      "issue": 448,
+      "restored": false,
+      "runtime_sha256": "d561ecff27996e24da91c04186b1a1ffc7db8d5277305825a4458048504a5717",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "fixture_sha256": "e714e15905e7b61f3e44ac1e276078e1c9053e94f17a29f5bf257fddb4a26448",
+      "commands": [
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448-dev04.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\checkpoint-04\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\checkpoint-04\\peer0\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\checkpoint-04\\peer0",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "-host",
+          "2",
+          "-port",
+          "16047",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\checkpoint-04\\peer0\\engine.log",
+          "+map",
+          "MAP03",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\checkpoint-04\\peer0\\commands.cfg"
+        ],
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448-dev04.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\checkpoint-04\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\checkpoint-04\\peer1\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\checkpoint-04\\peer1",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "-join",
+          "127.0.0.1:16047",
+          "-port",
+          "16048",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\checkpoint-04\\peer1\\engine.log",
+          "+map",
+          "MAP03",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\checkpoint-04\\peer1\\commands.cfg"
+        ]
+      ],
+      "peers": [
+        {
+          "peer": 0,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA448 SEEDED",
+            "CA448 PASS rank and reputation cannot bypass membership",
+            "CA448 PASS membership cannot bypass recognized office",
+            "CA448 PASS 49 reputation fails the approved boundary",
+            "CA448 PASS all three approved conditions permit command",
+            "CA448 PASS revisioned migration enrolls 101 actual bodies",
+            "CA448 PASS military groups enforce 100 members independently",
+            "CA448 PASS recognized NPC priority leads without a player-party anchor",
+            "CA448 PASS migration does not duplicate identities",
+            "CA448 PASS native command session opens on a nearby guard",
+            "CA448 PASS session resolves the capable commander of the contacted group",
+            "CA448 PASS hold preserves individual current positions",
+            "CA448 PASS out-of-range soldier retains the last received order",
+            "CA448 PASS command recipients respect the existing communication radius",
+            "CA448 PASS military command cannot expand or replace the player party",
+            "CA448 PASS live revocation prevents a stale menu order",
+            "CA448 PASS advance captures the current known player position",
+            "CA448 PASS menu contains only current-map personal knowledge and own position",
+            "CA448 PASS known destination uses the saved observation",
+            "CA448 PASS unrecorded destination fails closed at authoritative execution",
+            "CA448 PASS friendly request cannot spend or create hostile reserves",
+            "CA448 PASS empty friendly reserve is reported without creating soldiers",
+            "CA448 CHECKPOINT READY failures=0"
+          ],
+          "errors": [],
+          "native_sync": true
+        },
+        {
+          "peer": 1,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA448 SEEDED",
+            "CA448 PASS rank and reputation cannot bypass membership",
+            "CA448 PASS membership cannot bypass recognized office",
+            "CA448 PASS 49 reputation fails the approved boundary",
+            "CA448 PASS all three approved conditions permit command",
+            "CA448 PASS revisioned migration enrolls 101 actual bodies",
+            "CA448 PASS military groups enforce 100 members independently",
+            "CA448 PASS recognized NPC priority leads without a player-party anchor",
+            "CA448 PASS migration does not duplicate identities",
+            "CA448 PASS native command session opens on a nearby guard",
+            "CA448 PASS session resolves the capable commander of the contacted group",
+            "CA448 PASS hold preserves individual current positions",
+            "CA448 PASS out-of-range soldier retains the last received order",
+            "CA448 PASS command recipients respect the existing communication radius",
+            "CA448 PASS military command cannot expand or replace the player party",
+            "CA448 PASS live revocation prevents a stale menu order",
+            "CA448 PASS advance captures the current known player position",
+            "CA448 PASS menu contains only current-map personal knowledge and own position",
+            "CA448 PASS known destination uses the saved observation",
+            "CA448 PASS unrecorded destination fails closed at authoritative execution",
+            "CA448 PASS friendly request cannot spend or create hostile reserves",
+            "CA448 PASS empty friendly reserve is reported without creating soldiers",
+            "CA448 CHECKPOINT READY failures=0"
+          ],
+          "errors": [],
+          "native_sync": true
+        }
+      ],
+      "timed_out": false,
+      "passed": true
+    },
+    {
+      "label": "reviewed-checkpoint",
+      "issue": 448,
+      "restored": false,
+      "runtime_sha256": "6e606397a7cddb229c22abfabf2b11b47cb6387d7c41eaed7a5a347f1a1f1afb",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "fixture_sha256": "c1d283e4ce1fc156192151001428eb35649bd77a791808f308705de2cbb7a363",
+      "commands": [
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448-reviewed.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\reviewed-checkpoint\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\reviewed-checkpoint\\peer0\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\reviewed-checkpoint\\peer0",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "-host",
+          "2",
+          "-port",
+          "16047",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\reviewed-checkpoint\\peer0\\engine.log",
+          "+map",
+          "MAP03",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\reviewed-checkpoint\\peer0\\commands.cfg"
+        ],
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448-reviewed.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\reviewed-checkpoint\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\reviewed-checkpoint\\peer1\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\reviewed-checkpoint\\peer1",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "-join",
+          "127.0.0.1:16047",
+          "-port",
+          "16048",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\reviewed-checkpoint\\peer1\\engine.log",
+          "+map",
+          "MAP03",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\reviewed-checkpoint\\peer1\\commands.cfg"
+        ]
+      ],
+      "peers": [
+        {
+          "peer": 0,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA448 SEEDED",
+            "CA448 PASS rank and reputation cannot bypass membership",
+            "CA448 PASS membership cannot bypass recognized office",
+            "CA448 PASS 49 reputation fails the approved boundary",
+            "CA448 PASS all three approved conditions permit command",
+            "CA448 PASS revisioned migration enrolls 101 actual bodies",
+            "CA448 PASS military groups enforce 100 members independently",
+            "CA448 PASS recognized NPC priority leads without a player-party anchor",
+            "CA448 PASS migration does not duplicate identities",
+            "CA448 PASS native command session opens on a nearby guard",
+            "CA448 PASS session resolves the capable commander of the contacted group",
+            "CA448 PASS hold preserves individual current positions",
+            "CA448 PASS out-of-range soldier retains the last received order",
+            "CA448 PASS command recipients respect the existing communication radius",
+            "CA448 PASS military command cannot expand or replace the player party",
+            "CA448 PASS live revocation prevents a stale menu order",
+            "CA448 PASS advance captures the current known player position",
+            "CA448 PASS menu contains only current-map personal knowledge and own position",
+            "CA448 PASS known destination uses the saved observation",
+            "CA448 PASS unrecorded destination fails closed at authoritative execution",
+            "CA448 PASS friendly request cannot spend or create hostile reserves",
+            "CA448 PASS empty friendly reserve is reported without creating soldiers",
+            "CA448 CHECKPOINT READY failures=0"
+          ],
+          "errors": [],
+          "native_sync": true
+        },
+        {
+          "peer": 1,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA448 SEEDED",
+            "CA448 PASS rank and reputation cannot bypass membership",
+            "CA448 PASS membership cannot bypass recognized office",
+            "CA448 PASS 49 reputation fails the approved boundary",
+            "CA448 PASS all three approved conditions permit command",
+            "CA448 PASS revisioned migration enrolls 101 actual bodies",
+            "CA448 PASS military groups enforce 100 members independently",
+            "CA448 PASS recognized NPC priority leads without a player-party anchor",
+            "CA448 PASS migration does not duplicate identities",
+            "CA448 PASS native command session opens on a nearby guard",
+            "CA448 PASS session resolves the capable commander of the contacted group",
+            "CA448 PASS hold preserves individual current positions",
+            "CA448 PASS out-of-range soldier retains the last received order",
+            "CA448 PASS command recipients respect the existing communication radius",
+            "CA448 PASS military command cannot expand or replace the player party",
+            "CA448 PASS live revocation prevents a stale menu order",
+            "CA448 PASS advance captures the current known player position",
+            "CA448 PASS menu contains only current-map personal knowledge and own position",
+            "CA448 PASS known destination uses the saved observation",
+            "CA448 PASS unrecorded destination fails closed at authoritative execution",
+            "CA448 PASS friendly request cannot spend or create hostile reserves",
+            "CA448 PASS empty friendly reserve is reported without creating soldiers",
+            "CA448 CHECKPOINT READY failures=0"
+          ],
+          "errors": [],
+          "native_sync": true
+        }
+      ],
+      "timed_out": false,
+      "passed": true
+    },
+    {
+      "label": "reviewed-restored",
+      "issue": 448,
+      "restored": true,
+      "runtime_sha256": "6e606397a7cddb229c22abfabf2b11b47cb6387d7c41eaed7a5a347f1a1f1afb",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "fixture_sha256": "c1d283e4ce1fc156192151001428eb35649bd77a791808f308705de2cbb7a363",
+      "commands": [
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448-reviewed.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\reviewed-restored\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\reviewed-restored\\peer0\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\reviewed-restored\\peer0",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "-host",
+          "2",
+          "-port",
+          "16047",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\reviewed-restored\\peer0\\engine.log",
+          "-loadgame",
+          "restore.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\reviewed-restored\\peer0\\commands.cfg"
+        ],
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448-reviewed.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\reviewed-restored\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\reviewed-restored\\peer1\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\reviewed-restored\\peer1",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "-join",
+          "127.0.0.1:16047",
+          "-port",
+          "16048",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\reviewed-restored\\peer1\\engine.log",
+          "-loadgame",
+          "restore.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\reviewed-restored\\peer1\\commands.cfg"
+        ]
+      ],
+      "peers": [
+        {
+          "peer": 0,
+          "exit": 0,
+          "passed": false,
+          "checks": [
+            "CA448 PASS common save retains the intended command checkpoint",
+            "CA448 PASS save retains exact destination and order serial",
+            "CA448 PASS save retains exact membership and formation identity",
+            "CA448 PASS commander death elects the earliest capable remaining member",
+            "CA448 PASS succession preserves the prior known order",
+            "CA448 PASS no capable successor orders withdrawal",
+            "CA448 PASS withdrawal uses bounded native movement without healing",
+            "CA448 PASS withdrawing soldier remains a living registered identity",
+            "CA448 PASS native moving soldier remains alive and owned",
+            "CA448 FAIL real native actor states execute the received advance order",
+            "CA448 PASS native movement preserves formation identity",
+            "CA448 RESULT FAIL checks=32 failures=1"
+          ],
+          "errors": [
+            "CA448 FAIL real native actor states execute the received advance order",
+            "CA448 RESULT FAIL checks=32 failures=1"
+          ],
+          "native_sync": true
+        },
+        {
+          "peer": 1,
+          "exit": 0,
+          "passed": false,
+          "checks": [
+            "CA448 PASS common save retains the intended command checkpoint",
+            "CA448 PASS save retains exact destination and order serial",
+            "CA448 PASS save retains exact membership and formation identity",
+            "CA448 PASS commander death elects the earliest capable remaining member",
+            "CA448 PASS succession preserves the prior known order",
+            "CA448 PASS no capable successor orders withdrawal",
+            "CA448 PASS withdrawal uses bounded native movement without healing",
+            "CA448 PASS withdrawing soldier remains a living registered identity"
+          ],
+          "errors": [],
+          "native_sync": true
+        }
+      ],
+      "timed_out": false,
+      "passed": false
+    },
+    {
+      "label": "motion-diagnostic",
+      "issue": 448,
+      "restored": true,
+      "runtime_sha256": "6e606397a7cddb229c22abfabf2b11b47cb6387d7c41eaed7a5a347f1a1f1afb",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "fixture_sha256": "82dcef979614fcbabfa5bda64aa85fa22303998ce2316db979d8bb712d5767cb",
+      "commands": [
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448-reviewed.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\motion-diagnostic\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\motion-diagnostic\\peer0\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\motion-diagnostic\\peer0",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "-host",
+          "2",
+          "-port",
+          "16047",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\motion-diagnostic\\peer0\\engine.log",
+          "-loadgame",
+          "restore.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\motion-diagnostic\\peer0\\commands.cfg"
+        ],
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448-reviewed.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\motion-diagnostic\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\motion-diagnostic\\peer1\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\motion-diagnostic\\peer1",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "-join",
+          "127.0.0.1:16047",
+          "-port",
+          "16048",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\motion-diagnostic\\peer1\\engine.log",
+          "-loadgame",
+          "restore.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\motion-diagnostic\\peer1\\commands.cfg"
+        ]
+      ],
+      "peers": [
+        {
+          "peer": 0,
+          "exit": 0,
+          "passed": false,
+          "checks": [
+            "CA448 PASS common save retains the intended command checkpoint",
+            "CA448 PASS save retains exact destination and order serial",
+            "CA448 PASS save retains exact membership and formation identity",
+            "CA448 PASS commander death elects the earliest capable remaining member",
+            "CA448 PASS succession preserves the prior known order",
+            "CA448 PASS no capable successor orders withdrawal",
+            "CA448 PASS withdrawal uses bounded native movement without healing",
+            "CA448 PASS withdrawing soldier remains a living registered identity",
+            "CA448 MOTION pos=-368.895707,-512.000000,0.000000 goal=-256.000000,-512.000000 speed=4.336494 order=2 serial=1 leader=1 capable=1 birth=1 see=1",
+            "CA448 PASS native moving soldier remains alive and owned",
+            "CA448 FAIL real native actor states execute the received advance order",
+            "CA448 PASS native movement preserves formation identity",
+            "CA448 RESULT FAIL checks=32 failures=1"
+          ],
+          "errors": [
+            "CA448 FAIL real native actor states execute the received advance order",
+            "CA448 RESULT FAIL checks=32 failures=1"
+          ],
+          "native_sync": true
+        },
+        {
+          "peer": 1,
+          "exit": 0,
+          "passed": false,
+          "checks": [
+            "CA448 PASS common save retains the intended command checkpoint",
+            "CA448 PASS save retains exact destination and order serial",
+            "CA448 PASS save retains exact membership and formation identity",
+            "CA448 PASS commander death elects the earliest capable remaining member",
+            "CA448 PASS succession preserves the prior known order",
+            "CA448 PASS no capable successor orders withdrawal",
+            "CA448 PASS withdrawal uses bounded native movement without healing",
+            "CA448 PASS withdrawing soldier remains a living registered identity",
+            "CA448 MOTION pos=-368.895707,-512.000000,0.000000 goal=-256.000000,-512.000000 speed=4.336494 order=2 serial=1 leader=1 capable=1 birth=1 see=1",
+            "CA448 PASS native moving soldier remains alive and owned",
+            "CA448 FAIL real native actor states execute the received advance order",
+            "CA448 PASS native movement preserves formation identity",
+            "CA448 RESULT FAIL checks=32 failures=1"
+          ],
+          "errors": [
+            "CA448 FAIL real native actor states execute the received advance order",
+            "CA448 RESULT FAIL checks=32 failures=1"
+          ],
+          "native_sync": true
+        }
+      ],
+      "timed_out": false,
+      "passed": false
+    },
+    {
+      "label": "final-checkpoint",
+      "issue": 448,
+      "restored": false,
+      "runtime_sha256": "301c71baf0d4cfd8c9720798b9c91ebb6fb0c90bdbb17589000bdee8776d333a",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "fixture_sha256": "31463812607a67e029c2638d0695c6c8ae0fc3bc089fc6f1bd348a03f5987b05",
+      "commands": [
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448-final.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-checkpoint\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-checkpoint\\peer0\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-checkpoint\\peer0",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "-host",
+          "2",
+          "-port",
+          "16047",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-checkpoint\\peer0\\engine.log",
+          "+map",
+          "MAP03",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-checkpoint\\peer0\\commands.cfg"
+        ],
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448-final.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-checkpoint\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-checkpoint\\peer1\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-checkpoint\\peer1",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "-join",
+          "127.0.0.1:16047",
+          "-port",
+          "16048",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-checkpoint\\peer1\\engine.log",
+          "+map",
+          "MAP03",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-checkpoint\\peer1\\commands.cfg"
+        ]
+      ],
+      "peers": [
+        {
+          "peer": 0,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA448 SEEDED",
+            "CA448 PASS rank and reputation cannot bypass membership",
+            "CA448 PASS membership cannot bypass recognized office",
+            "CA448 PASS 49 reputation fails the approved boundary",
+            "CA448 PASS all three approved conditions permit command",
+            "CA448 PASS revisioned migration enrolls 101 actual bodies",
+            "CA448 PASS military groups enforce 100 members independently",
+            "CA448 PASS recognized NPC priority leads without a player-party anchor",
+            "CA448 PASS migration does not duplicate identities",
+            "CA448 PASS native command session opens on a nearby guard",
+            "CA448 PASS session resolves the capable commander of the contacted group",
+            "CA448 PASS hold preserves individual current positions",
+            "CA448 PASS out-of-range soldier retains the last received order",
+            "CA448 PASS command recipients respect the existing communication radius",
+            "CA448 PASS military command cannot expand or replace the player party",
+            "CA448 PASS live revocation prevents a stale menu order",
+            "CA448 PASS advance captures the current known player position",
+            "CA448 PASS menu contains only current-map personal knowledge and own position",
+            "CA448 PASS known destination uses the saved observation",
+            "CA448 PASS unrecorded destination fails closed at authoritative execution",
+            "CA448 PASS friendly request cannot spend or create hostile reserves",
+            "CA448 PASS empty friendly reserve is reported without creating soldiers",
+            "CA448 CHECKPOINT READY failures=0"
+          ],
+          "errors": [],
+          "native_sync": true
+        },
+        {
+          "peer": 1,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA448 SEEDED",
+            "CA448 PASS rank and reputation cannot bypass membership",
+            "CA448 PASS membership cannot bypass recognized office",
+            "CA448 PASS 49 reputation fails the approved boundary",
+            "CA448 PASS all three approved conditions permit command",
+            "CA448 PASS revisioned migration enrolls 101 actual bodies",
+            "CA448 PASS military groups enforce 100 members independently",
+            "CA448 PASS recognized NPC priority leads without a player-party anchor",
+            "CA448 PASS migration does not duplicate identities",
+            "CA448 PASS native command session opens on a nearby guard",
+            "CA448 PASS session resolves the capable commander of the contacted group",
+            "CA448 PASS hold preserves individual current positions",
+            "CA448 PASS out-of-range soldier retains the last received order",
+            "CA448 PASS command recipients respect the existing communication radius",
+            "CA448 PASS military command cannot expand or replace the player party",
+            "CA448 PASS live revocation prevents a stale menu order",
+            "CA448 PASS advance captures the current known player position",
+            "CA448 PASS menu contains only current-map personal knowledge and own position",
+            "CA448 PASS known destination uses the saved observation",
+            "CA448 PASS unrecorded destination fails closed at authoritative execution",
+            "CA448 PASS friendly request cannot spend or create hostile reserves",
+            "CA448 PASS empty friendly reserve is reported without creating soldiers",
+            "CA448 CHECKPOINT READY failures=0"
+          ],
+          "errors": [],
+          "native_sync": true
+        }
+      ],
+      "timed_out": false,
+      "passed": true
+    },
+    {
+      "label": "final-restored",
+      "issue": 448,
+      "restored": true,
+      "runtime_sha256": "301c71baf0d4cfd8c9720798b9c91ebb6fb0c90bdbb17589000bdee8776d333a",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "fixture_sha256": "31463812607a67e029c2638d0695c6c8ae0fc3bc089fc6f1bd348a03f5987b05",
+      "commands": [
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448-final.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-restored\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-restored\\peer0\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-restored\\peer0",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "-host",
+          "2",
+          "-port",
+          "16047",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-restored\\peer0\\engine.log",
+          "-loadgame",
+          "restore.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-restored\\peer0\\commands.cfg"
+        ],
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448-final.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-restored\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-restored\\peer1\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-restored\\peer1",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "-join",
+          "127.0.0.1:16047",
+          "-port",
+          "16048",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-restored\\peer1\\engine.log",
+          "-loadgame",
+          "restore.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-restored\\peer1\\commands.cfg"
+        ]
+      ],
+      "peers": [
+        {
+          "peer": 0,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA448 PASS common save retains the intended command checkpoint",
+            "CA448 PASS save retains exact destination and order serial",
+            "CA448 PASS save retains exact membership and formation identity",
+            "CA448 PASS commander death elects the earliest capable remaining member",
+            "CA448 PASS succession preserves the prior known order",
+            "CA448 PASS no capable successor orders withdrawal",
+            "CA448 PASS withdrawal uses bounded native movement without healing",
+            "CA448 PASS withdrawing soldier remains a living registered identity",
+            "CA448 MOTION pos=-269.156352,-512.000000,0.000000 goal=-256.000000,-512.000000 speed=4.336494 order=2 serial=1 leader=1 capable=1 birth=1 see=1",
+            "CA448 PASS native moving soldier remains alive and owned",
+            "CA448 PASS real native actor states execute the received advance order",
+            "CA448 PASS native movement preserves formation identity",
+            "CA448 PASS same-tic native resurrection retains the real moving body",
+            "CA448 PASS raised body cannot remain a historical military commander",
+            "CA448 RESULT PASS checks=34 failures=0"
+          ],
+          "errors": [],
+          "native_sync": true
+        },
+        {
+          "peer": 1,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA448 PASS common save retains the intended command checkpoint",
+            "CA448 PASS save retains exact destination and order serial",
+            "CA448 PASS save retains exact membership and formation identity",
+            "CA448 PASS commander death elects the earliest capable remaining member",
+            "CA448 PASS succession preserves the prior known order",
+            "CA448 PASS no capable successor orders withdrawal",
+            "CA448 PASS withdrawal uses bounded native movement without healing",
+            "CA448 PASS withdrawing soldier remains a living registered identity",
+            "CA448 MOTION pos=-269.156352,-512.000000,0.000000 goal=-256.000000,-512.000000 speed=4.336494 order=2 serial=1 leader=1 capable=1 birth=1 see=1",
+            "CA448 PASS native moving soldier remains alive and owned",
+            "CA448 PASS real native actor states execute the received advance order",
+            "CA448 PASS native movement preserves formation identity",
+            "CA448 PASS same-tic native resurrection retains the real moving body",
+            "CA448 PASS raised body cannot remain a historical military commander",
+            "CA448 RESULT PASS checks=34 failures=0"
+          ],
+          "errors": [],
+          "native_sync": true
+        }
+      ],
+      "timed_out": false,
+      "passed": true
+    },
+    {
+      "label": "final-legacy",
+      "issue": 448,
+      "restored": true,
+      "runtime_sha256": "301c71baf0d4cfd8c9720798b9c91ebb6fb0c90bdbb17589000bdee8776d333a",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "fixture_sha256": "0d53df57efb9bb1ce3092d12bf3690ca47ea8686986883fa8755b366ebbbabdc",
+      "commands": [
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-legacy\\issue447-reviewed.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-legacy\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-legacy\\peer0\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-legacy\\peer0",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-legacy\\peer0\\engine.log",
+          "-loadgame",
+          "restore.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-legacy\\peer0\\commands.cfg"
+        ]
+      ],
+      "peers": [
+        {
+          "peer": 0,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA448 PASS original pre-command save has no synthesized order",
+            "CA448 PASS old native save creates revisioned command groups",
+            "CA448 PASS migration retains original defender identities",
+            "CA448 PASS command migration does not reset finite reserves",
+            "CA448 PASS repeated old-save migration is idempotent",
+            "CA448 LEGACY PASS failures=0"
+          ],
+          "errors": [],
+          "native_sync": true
+        }
+      ],
+      "timed_out": false,
+      "passed": true
+    },
+    {
+      "label": "final-prototype",
+      "issue": 448,
+      "restored": true,
+      "runtime_sha256": "301c71baf0d4cfd8c9720798b9c91ebb6fb0c90bdbb17589000bdee8776d333a",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "fixture_sha256": "31463812607a67e029c2638d0695c6c8ae0fc3bc089fc6f1bd348a03f5987b05",
+      "commands": [
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-prototype\\issue448-dev03.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-prototype\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-prototype\\peer0\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-prototype\\peer0",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "-host",
+          "2",
+          "-port",
+          "16047",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-prototype\\peer0\\engine.log",
+          "-loadgame",
+          "restore.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-prototype\\peer0\\commands.cfg"
+        ],
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-prototype\\issue448-dev03.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-prototype\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-prototype\\peer1\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-prototype\\peer1",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "-join",
+          "127.0.0.1:16047",
+          "-port",
+          "16048",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-prototype\\peer1\\engine.log",
+          "-loadgame",
+          "restore.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-prototype\\peer1\\commands.cfg"
+        ]
+      ],
+      "peers": [
+        {
+          "peer": 0,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA448 PASS common save retains the intended command checkpoint",
+            "CA448 PASS save retains exact destination and order serial",
+            "CA448 PASS save retains exact membership and formation identity",
+            "CA448 PASS commander death elects the earliest capable remaining member",
+            "CA448 PASS succession preserves the prior known order",
+            "CA448 PASS no capable successor orders withdrawal",
+            "CA448 PASS withdrawal uses bounded native movement without healing",
+            "CA448 PASS withdrawing soldier remains a living registered identity",
+            "CA448 MOTION pos=-269.156352,-512.000000,0.000000 goal=-256.000000,-512.000000 speed=4.336494 order=2 serial=1 leader=1 capable=1 birth=1 see=1",
+            "CA448 PASS native moving soldier remains alive and owned",
+            "CA448 PASS real native actor states execute the received advance order",
+            "CA448 PASS native movement preserves formation identity",
+            "CA448 PASS same-tic native resurrection retains the real moving body",
+            "CA448 PASS raised body cannot remain a historical military commander",
+            "CA448 RESULT PASS checks=30 failures=0"
+          ],
+          "errors": [],
+          "native_sync": true
+        },
+        {
+          "peer": 1,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA448 PASS common save retains the intended command checkpoint",
+            "CA448 PASS save retains exact destination and order serial",
+            "CA448 PASS save retains exact membership and formation identity",
+            "CA448 PASS commander death elects the earliest capable remaining member",
+            "CA448 PASS succession preserves the prior known order",
+            "CA448 PASS no capable successor orders withdrawal",
+            "CA448 PASS withdrawal uses bounded native movement without healing",
+            "CA448 PASS withdrawing soldier remains a living registered identity",
+            "CA448 MOTION pos=-269.156352,-512.000000,0.000000 goal=-256.000000,-512.000000 speed=4.336494 order=2 serial=1 leader=1 capable=1 birth=1 see=1",
+            "CA448 PASS native moving soldier remains alive and owned",
+            "CA448 PASS real native actor states execute the received advance order",
+            "CA448 PASS native movement preserves formation identity",
+            "CA448 PASS same-tic native resurrection retains the real moving body",
+            "CA448 PASS raised body cannot remain a historical military commander",
+            "CA448 RESULT PASS checks=30 failures=0"
+          ],
+          "errors": [],
+          "native_sync": true
+        }
+      ],
+      "timed_out": false,
+      "passed": true
+    },
+    {
+      "label": "final-travel",
+      "issue": 448,
+      "restored": false,
+      "runtime_sha256": "301c71baf0d4cfd8c9720798b9c91ebb6fb0c90bdbb17589000bdee8776d333a",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "fixture_sha256": "1f1c92b55d55985ed4e17f5c24f7d6ee2eaa57508b606425fa00cbaa65020320",
+      "commands": [
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448-final.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-travel\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-travel\\peer0\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-travel\\peer0",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "-host",
+          "2",
+          "-port",
+          "16047",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-travel\\peer0\\engine.log",
+          "+map",
+          "MAP03",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-travel\\peer0\\commands.cfg"
+        ],
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448-final.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-travel\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-travel\\peer1\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-travel\\peer1",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "-join",
+          "127.0.0.1:16047",
+          "-port",
+          "16048",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-travel\\peer1\\engine.log",
+          "+map",
+          "MAP03",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-travel\\peer1\\commands.cfg"
+        ]
+      ],
+      "peers": [
+        {
+          "peer": 0,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA448 SEEDED",
+            "CA448 PASS rank and reputation cannot bypass membership",
+            "CA448 PASS membership cannot bypass recognized office",
+            "CA448 PASS 49 reputation fails the approved boundary",
+            "CA448 PASS all three approved conditions permit command",
+            "CA448 PASS revisioned migration enrolls 101 actual bodies",
+            "CA448 PASS military groups enforce 100 members independently",
+            "CA448 PASS recognized NPC priority leads without a player-party anchor",
+            "CA448 PASS migration does not duplicate identities",
+            "CA448 PASS native command session opens on a nearby guard",
+            "CA448 PASS session resolves the capable commander of the contacted group",
+            "CA448 PASS hold preserves individual current positions",
+            "CA448 PASS out-of-range soldier retains the last received order",
+            "CA448 PASS command recipients respect the existing communication radius",
+            "CA448 PASS military command cannot expand or replace the player party",
+            "CA448 PASS live revocation prevents a stale menu order",
+            "CA448 PASS advance captures the current known player position",
+            "CA448 PASS menu contains only current-map personal knowledge and own position",
+            "CA448 PASS known destination uses the saved observation",
+            "CA448 PASS unrecorded destination fails closed at authoritative execution",
+            "CA448 PASS friendly request cannot spend or create hostile reserves",
+            "CA448 PASS empty friendly reserve is reported without creating soldiers",
+            "CA448 CHECKPOINT READY failures=0",
+            "CA448 PASS hub return retains known destination and exact command serial",
+            "CA448 PASS hub return retains group and commander identities",
+            "CA448 PASS hub return creates no troops or reserves",
+            "CA448 TRAVEL PASS failures=0"
+          ],
+          "errors": [],
+          "native_sync": true
+        },
+        {
+          "peer": 1,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA448 SEEDED",
+            "CA448 PASS rank and reputation cannot bypass membership",
+            "CA448 PASS membership cannot bypass recognized office",
+            "CA448 PASS 49 reputation fails the approved boundary",
+            "CA448 PASS all three approved conditions permit command",
+            "CA448 PASS revisioned migration enrolls 101 actual bodies",
+            "CA448 PASS military groups enforce 100 members independently",
+            "CA448 PASS recognized NPC priority leads without a player-party anchor",
+            "CA448 PASS migration does not duplicate identities",
+            "CA448 PASS native command session opens on a nearby guard",
+            "CA448 PASS session resolves the capable commander of the contacted group",
+            "CA448 PASS hold preserves individual current positions",
+            "CA448 PASS out-of-range soldier retains the last received order",
+            "CA448 PASS command recipients respect the existing communication radius",
+            "CA448 PASS military command cannot expand or replace the player party",
+            "CA448 PASS live revocation prevents a stale menu order",
+            "CA448 PASS advance captures the current known player position",
+            "CA448 PASS menu contains only current-map personal knowledge and own position",
+            "CA448 PASS known destination uses the saved observation",
+            "CA448 PASS unrecorded destination fails closed at authoritative execution",
+            "CA448 PASS friendly request cannot spend or create hostile reserves",
+            "CA448 PASS empty friendly reserve is reported without creating soldiers",
+            "CA448 CHECKPOINT READY failures=0",
+            "CA448 PASS hub return retains known destination and exact command serial",
+            "CA448 PASS hub return retains group and commander identities",
+            "CA448 PASS hub return creates no troops or reserves",
+            "CA448 TRAVEL PASS failures=0"
+          ],
+          "errors": [],
+          "native_sync": true
+        }
+      ],
+      "timed_out": false,
+      "passed": true
+    },
+    {
+      "label": "final-original-rollback",
+      "issue": 448,
+      "restored": true,
+      "runtime_sha256": "d7d0620bd6e5703aef471d500933bac24adc034d96dc636b4a095b4136ff96dc",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "fixture_sha256": "0c10a93555b3a7ac39f0e862cd8520dca7e13feb5fdd668b921e5cdaa40fdd23",
+      "commands": [
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447-reviewed.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-original-rollback\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-original-rollback\\peer0\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-original-rollback\\peer0",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-original-rollback\\peer0\\engine.log",
+          "-loadgame",
+          "restore.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\final-original-rollback\\peer0\\commands.cfg"
+        ]
+      ],
+      "peers": [
+        {
+          "peer": 0,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA448 PASS original save still loads under original runtime",
+            "CA448 PASS rollback preserves original roster and finite reserve",
+            "CA448 RESULT PASS failures=0"
+          ],
+          "errors": [],
+          "native_sync": true
+        }
+      ],
+      "timed_out": false,
+      "passed": true
+    },
+    {
+      "label": "real-routes",
+      "issue": 448,
+      "restored": false,
+      "runtime_sha256": "16f9e45daca90ae9a80052a848ecc77baa3733880afda67669f67a8f883c746a",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "fixture_sha256": "cca523306601e97053863e4dc75d2de9028b64c4e0f851b55a6c757b5fb3a53a",
+      "commands": [
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448-routes.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\real-routes\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\real-routes\\peer0\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\real-routes\\peer0",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\real-routes\\peer0\\engine.log",
+          "+map",
+          "MAP03",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\real-routes\\peer0\\commands.cfg"
+        ]
+      ],
+      "peers": [
+        {
+          "peer": 0,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA448 PASS real city loads the isolated native port controller",
+            "CA448 SEEDED",
+            "CA448 PASS operator begins at the real elevated cannon post",
+            "CA448 ROUTE START crew=-27866.000000,-14560.000000,256.000000 guard=-17536.000000,-8960.000000,0.000000",
+            "CA448 ROUTE tic=0 crew=-27866.000000,-14560.000000,256.000000 step=0 return=0 guard=-17536.000000,-8960.000000 return=-1",
+            "CA448 ROUTE tic=35 crew=-27846.045997,-14531.620974,256.000000 step=17 return=5 guard=-17562.018962,-8960.000000 return=-2",
+            "CA448 ROUTE tic=70 crew=-27823.597744,-14499.694569,256.000000 step=17 return=5 guard=-17596.710912,-8960.000000 return=-2",
+            "CA448 ROUTE tic=105 crew=-27801.149490,-14467.768164,256.000000 step=17 return=5 guard=-17635.739355,-8960.000000 return=-2",
+            "CA448 ROUTE tic=140 crew=-27783.689738,-14442.936516,256.000000 step=16 return=5 guard=-17674.767799,-8960.000000 return=-2",
+            "CA448 PASS barracks arrival remains visible, alive and collidable in the city",
+            "CA448 ROUTE tic=175 crew=-27779.705689,-14404.111952,256.000000 step=16 return=5 guard=-17696.450267,-8960.000000 return=-2",
+            "CA448 ROUTE tic=210 crew=-27777.245191,-14369.535617,256.000000 step=15 return=5 guard=-17696.450267,-8960.000000 return=-2",
+            "CA448 ROUTE tic=245 crew=-27776.503776,-14330.514216,256.000000 step=15 return=5 guard=-17696.450267,-8960.000000 return=-2",
+            "CA448 ROUTE tic=280 crew=-27776.199203,-14300.161203,240.000000 step=14 return=5 guard=-17696.450267,-8960.000000 return=-2",
+            "CA448 ROUTE tic=315 crew=-27776.069974,-14261.132973,240.000000 step=14 return=5 guard=-17696.450267,-8960.000000 return=-2",
+            "CA448 ROUTE tic=350 crew=-27776.027217,-14226.441075,224.000000 step=13 return=5 guard=-17696.450267,-8960.000000 return=-2",
+            "CA448 ROUTE tic=385 crew=-27776.008498,-14191.749130,222.462433 step=12 return=5 guard=-17696.450267,-8960.000000 return=-2",
+            "CA448 ROUTE tic=420 crew=-27776.004801,-14157.057181,208.000000 step=12 return=5 guard=-17696.450267,-8960.000000 return=-2",
+            "CA448 ROUTE tic=455 crew=-27776.001480,-14122.365231,196.468245 step=11 return=5 guard=-17696.450267,-8960.000000 return=-2",
+            "CA448 ROUTE tic=490 crew=-27776.000703,-14083.336788,192.000000 step=11 return=5 guard=-17696.450267,-8960.000000 return=-2",
+            "CA448 ROUTE tic=525 crew=-27776.000226,-14048.644838,176.000000 step=10 return=5 guard=-17696.450267,-8960.000000 return=-2",
+            "CA448 ROUTE tic=560 crew=-27776.000105,-14013.952888,176.000000 step=10 return=5 guard=-17696.450267,-8960.000000 return=-2",
+            "CA448 ROUTE tic=595 crew=-27776.000034,-13979.260939,160.000000 step=9 return=5 guard=-17696.450267,-8960.000000 return=-2",
+            "CA448 ROUTE tic=630 crew=-27776.000012,-13940.232495,160.000000 step=9 return=5 guard=-17696.450267,-8960.000000 return=-2",
+            "CA448 ROUTE tic=665 crew=-27776.000006,-13905.540545,144.000000 step=8 return=5 guard=-17696.450267,-8960.000000 return=-2",
+            "CA448 ROUTE tic=700 crew=-27776.000002,-13870.848596,143.231216 step=8 return=5 guard=-17696.450267,-8960.000000 return=-2",
+            "CA448 ROUTE tic=735 crew=-27776.000001,-13836.156646,128.000000 step=7 return=5 guard=-17696.450267,-8960.000000 return=-2",
+            "CA448 ROUTE tic=770 crew=-27776.000000,-13801.464696,118.774596 step=6 return=5 guard=-17696.450267,-8960.000000 return=-2",
+            "CA448 ROUTE tic=805 crew=-27776.000000,-13762.436253,112.000000 step=6 return=5 guard=-17696.450267,-8960.000000 return=-2",
+            "CA448 ROUTE tic=840 crew=-27776.000000,-13732.080797,96.000000 step=5 return=5 guard=-17696.450267,-8960.000000 return=-2",
+            "CA448 ROUTE tic=875 crew=-27776.000000,-13693.052353,96.000000 step=5 return=5 guard=-17696.450267,-8960.000000 return=-2",
+            "CA448 ROUTE tic=910 crew=-27776.000000,-13658.360404,80.000000 step=4 return=5 guard=-17696.450267,-8960.000000 return=-2",
+            "CA448 ROUTE tic=945 crew=-27776.000000,-13619.331960,80.000000 step=4 return=5 guard=-17696.450267,-8960.000000 return=-2",
+            "CA448 ROUTE tic=980 crew=-27776.000000,-13588.976504,64.000000 step=3 return=5 guard=-17696.450267,-8960.000000 return=-2",
+            "CA448 ROUTE tic=1015 crew=-27776.000000,-13549.948061,63.743739 step=3 return=5 guard=-17696.450267,-8960.000000 return=-2",
+            "CA448 ROUTE tic=1050 crew=-27776.000000,-13515.256111,48.000000 step=2 return=5 guard=-17696.450267,-8960.000000 return=-2",
+            "CA448 ROUTE tic=1085 crew=-27776.000000,-13480.564161,40.824686 step=1 return=5 guard=-17696.450267,-8960.000000 return=-2",
+            "CA448 ROUTE tic=1120 crew=-27776.000000,-13445.872212,32.000000 step=1 return=5 guard=-17696.450267,-8960.000000 return=-2",
+            "CA448 ROUTE tic=1155 crew=-27776.000000,-13411.180262,16.000000 step=0 return=5 guard=-17696.450267,-8960.000000 return=-2",
+            "CA448 ROUTE tic=1190 crew=-27776.000000,-13372.151819,16.000000 step=0 return=5 guard=-17696.450267,-8960.000000 return=-2",
+            "CA448 ROUTE tic=1225 crew=-27776.000000,-13333.123375,0.000000 step=0 return=5 guard=-17696.450267,-8960.000000 return=-2",
+            "CA448 PASS operator descends the actual staircase as a living collidable body",
+            "CA448 PASS real routes contain no teleport-sized movement",
+            "CA448 PASS both returned soldiers remain in the living side census",
+            "CA448 ROUTES PASS failures=0"
+          ],
+          "errors": [],
+          "native_sync": true
+        }
+      ],
+      "timed_out": false,
+      "passed": true
+    },
+    {
+      "label": "delivery-spanish",
+      "issue": 448,
+      "restored": false,
+      "runtime_sha256": "2749a49409add6f16f6c1a2a8f905964282442001bfc37b9da4d241220a39ef2",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "fixture_sha256": "f5a489f700e7cae18574e2d343d7a8ccae9e3629a9e49ffba8552a2086ea8398",
+      "commands": [
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448-delivery.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\delivery-spanish\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\delivery-spanish\\peer0\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\delivery-spanish\\peer0",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "-host",
+          "2",
+          "-port",
+          "16047",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\delivery-spanish\\peer0\\engine.log",
+          "+map",
+          "MAP03",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\delivery-spanish\\peer0\\commands.cfg"
+        ],
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448-delivery.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\delivery-spanish\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\delivery-spanish\\peer1\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\delivery-spanish\\peer1",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "-join",
+          "127.0.0.1:16047",
+          "-port",
+          "16048",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\delivery-spanish\\peer1\\engine.log",
+          "+map",
+          "MAP03",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\delivery-spanish\\peer1\\commands.cfg"
+        ]
+      ],
+      "peers": [
+        {
+          "peer": 0,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA448 SEEDED",
+            "CA448 PASS rank and reputation cannot bypass membership",
+            "CA448 PASS membership cannot bypass recognized office",
+            "CA448 PASS 49 reputation fails the approved boundary",
+            "CA448 PASS all three approved conditions permit command",
+            "CA448 PASS revisioned migration enrolls 101 actual bodies",
+            "CA448 PASS military groups enforce 100 members independently",
+            "CA448 PASS recognized NPC priority leads without a player-party anchor",
+            "CA448 PASS migration does not duplicate identities",
+            "CA448 PASS crouch and native Use open command on the aimed nearby guard",
+            "CA448 PASS session resolves the capable commander of the contacted group",
+            "CA448 PASS hold preserves individual current positions",
+            "CA448 PASS out-of-range soldier retains the last received order",
+            "CA448 PASS command recipients respect the existing communication radius",
+            "CA448 PASS military command cannot expand or replace the player party",
+            "CA448 PASS live revocation prevents a stale menu order",
+            "CA448 PASS advance captures the current known player position",
+            "CA448 PASS menu contains only current-map personal knowledge and own position",
+            "CA448 PASS known destination uses the saved observation",
+            "CA448 PASS unrecorded destination fails closed at authoritative execution",
+            "CA448 PASS friendly request cannot spend or create hostile reserves",
+            "CA448 PASS empty friendly reserve is reported without creating soldiers",
+            "CA448 CHECKPOINT READY failures=0"
+          ],
+          "errors": [],
+          "native_sync": true
+        },
+        {
+          "peer": 1,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA448 SEEDED",
+            "CA448 PASS rank and reputation cannot bypass membership",
+            "CA448 PASS membership cannot bypass recognized office",
+            "CA448 PASS 49 reputation fails the approved boundary",
+            "CA448 PASS all three approved conditions permit command",
+            "CA448 PASS revisioned migration enrolls 101 actual bodies",
+            "CA448 PASS military groups enforce 100 members independently",
+            "CA448 PASS recognized NPC priority leads without a player-party anchor",
+            "CA448 PASS migration does not duplicate identities",
+            "CA448 PASS crouch and native Use open command on the aimed nearby guard",
+            "CA448 PASS session resolves the capable commander of the contacted group",
+            "CA448 PASS hold preserves individual current positions",
+            "CA448 PASS out-of-range soldier retains the last received order",
+            "CA448 PASS command recipients respect the existing communication radius",
+            "CA448 PASS military command cannot expand or replace the player party",
+            "CA448 PASS live revocation prevents a stale menu order",
+            "CA448 PASS advance captures the current known player position",
+            "CA448 PASS menu contains only current-map personal knowledge and own position",
+            "CA448 PASS known destination uses the saved observation",
+            "CA448 PASS unrecorded destination fails closed at authoritative execution",
+            "CA448 PASS friendly request cannot spend or create hostile reserves",
+            "CA448 PASS empty friendly reserve is reported without creating soldiers",
+            "CA448 CHECKPOINT READY failures=0"
+          ],
+          "errors": [],
+          "native_sync": true
+        }
+      ],
+      "timed_out": false,
+      "passed": true
+    },
+    {
+      "label": "delivery-restored",
+      "issue": 448,
+      "restored": true,
+      "runtime_sha256": "2749a49409add6f16f6c1a2a8f905964282442001bfc37b9da4d241220a39ef2",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "fixture_sha256": "f5a489f700e7cae18574e2d343d7a8ccae9e3629a9e49ffba8552a2086ea8398",
+      "commands": [
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448-delivery.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\delivery-restored\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\delivery-restored\\peer0\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\delivery-restored\\peer0",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "-host",
+          "2",
+          "-port",
+          "16047",
+          "-netmode",
+          "0",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\delivery-restored\\peer0\\engine.log",
+          "-loadgame",
+          "restore.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\delivery-restored\\peer0\\commands.cfg"
+        ],
+        [
+          "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "-noautoload",
+          "-iwad",
+          "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+          "-file",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448-delivery.pk3",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\delivery-restored\\checks.pk3",
+          "-config",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\delivery-restored\\peer1\\isolated.ini",
+          "-savedir",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\delivery-restored\\peer1",
+          "-window",
+          "-width",
+          "960",
+          "-height",
+          "720",
+          "-join",
+          "127.0.0.1:16047",
+          "-port",
+          "16048",
+          "+logfile",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\delivery-restored\\peer1\\engine.log",
+          "-loadgame",
+          "restore.zds",
+          "+exec",
+          "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\delivery-restored\\peer1\\commands.cfg"
+        ]
+      ],
+      "peers": [
+        {
+          "peer": 0,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA448 PASS common save retains the intended command checkpoint",
+            "CA448 PASS save retains exact destination and order serial",
+            "CA448 PASS save retains exact membership and formation identity",
+            "CA448 PASS commander death elects the earliest capable remaining member",
+            "CA448 PASS succession preserves the prior known order",
+            "CA448 PASS no capable successor orders withdrawal",
+            "CA448 PASS withdrawal uses bounded native movement without healing",
+            "CA448 PASS withdrawing soldier remains a living registered identity",
+            "CA448 MOTION pos=-269.156352,-512.000000,0.000000 goal=-256.000000,-512.000000 speed=4.336494 order=2 serial=1 leader=1 capable=1 birth=1 see=1",
+            "CA448 PASS native moving soldier remains alive and owned",
+            "CA448 PASS real native actor states execute the received advance order",
+            "CA448 PASS native movement preserves formation identity",
+            "CA448 PASS same-tic native resurrection retains the real moving body",
+            "CA448 PASS raised body cannot remain a historical military commander",
+            "CA448 RESULT PASS checks=34 failures=0"
+          ],
+          "errors": [],
+          "native_sync": true
+        },
+        {
+          "peer": 1,
+          "exit": 0,
+          "passed": true,
+          "checks": [
+            "CA448 PASS common save retains the intended command checkpoint",
+            "CA448 PASS save retains exact destination and order serial",
+            "CA448 PASS save retains exact membership and formation identity",
+            "CA448 PASS commander death elects the earliest capable remaining member",
+            "CA448 PASS succession preserves the prior known order",
+            "CA448 PASS no capable successor orders withdrawal",
+            "CA448 PASS withdrawal uses bounded native movement without healing",
+            "CA448 PASS withdrawing soldier remains a living registered identity",
+            "CA448 MOTION pos=-269.156352,-512.000000,0.000000 goal=-256.000000,-512.000000 speed=4.336494 order=2 serial=1 leader=1 capable=1 birth=1 see=1",
+            "CA448 PASS native moving soldier remains alive and owned",
+            "CA448 PASS real native actor states execute the received advance order",
+            "CA448 PASS native movement preserves formation identity",
+            "CA448 PASS same-tic native resurrection retains the real moving body",
+            "CA448 PASS raised body cannot remain a historical military commander",
+            "CA448 RESULT PASS checks=34 failures=0"
+          ],
+          "errors": [],
+          "native_sync": true
+        }
+      ],
+      "timed_out": false,
+      "passed": true
+    }
+  ],
+  "performance": [
+    {
+      "label": "baseline-ground",
+      "run": {
+        "issue": 448,
+        "started_utc": "2026-11-10T01:35:41.986697+00:00",
+        "ended_utc": "2026-11-10T01:36:23.643447+00:00",
+        "environment_overrides": {
+          "VK_LAYER_PATH": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "VK_INSTANCE_LAYERS": "VK_LAYER_CA_presentation"
+        },
+        "engine": {
+          "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+        },
+        "presentation_layer": {
+          "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+        },
+        "runtime_sha256": "d7d0620bd6e5703aef471d500933bac24adc034d96dc636b4a095b4136ff96dc",
+        "commands": [
+          [
+            "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+            "-noautoload",
+            "-nomouse",
+            "-iwad",
+            "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+            "-file",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447-reviewed.pk3",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\performance\\baseline-ground\\observer.pk3",
+            "-config",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\performance\\baseline-ground\\peer0\\session.ini",
+            "-savedir",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\performance\\baseline-ground\\peer0",
+            "-rngseed",
+            "428",
+            "-warp",
+            "3",
+            "+logfile",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\performance\\baseline-ground\\peer0\\engine.log",
+            "+exec",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\performance\\baseline-ground\\peer0\\start.cfg"
+          ]
+        ],
+        "observed_before_cleanup": [
+          0
+        ],
+        "observer_sha256": "e06221a5faedada50b27d126d99c2dcbb49c0ee78f797803bfcf90b6bb34356d",
+        "overlays": [],
+        "map": "MAP03",
+        "siege": false,
+        "direct_deployment": false,
+        "ground": true,
+        "players": 1,
+        "peers": [
+          {
+            "slot": 0,
+            "pid": 8704,
+            "exit_code": 0,
+            "window": {
+              "BEGIN": {
+                "utc": "2026-11-10T01:36:00.780609+00:00",
+                "qpc_ms": 2132497228.2983
+              },
+              "END": {
+                "utc": "2026-11-10T01:36:20.877001+00:00",
+                "qpc_ms": 2132517325.0351999
+              }
+            },
+            "simulation": {
+              "samples": 700,
+              "mean_ms": 28.57799814285714,
+              "p95_ms": 35.5372,
+              "p99_ms": 39.6199,
+              "max_ms": 42.0788
+            },
+            "render_callbacks": {
+              "samples": 1129,
+              "mean_ms": 15.95778573959256,
+              "p95_ms": 18.7157,
+              "p99_ms": 20.271,
+              "max_ms": 23.2173
+            },
+            "states": [
+              "CA435PERF STATE tic=349 defenders=0 attackers=0 registered_health=0 parked=0 population=1 dense=0",
+              "CA435PERF STATE slot=0 health=1248 pos=0.000000,320.000000,-0.000000",
+              "CA435PERF STATE tic=1049 defenders=0 attackers=0 registered_health=0 parked=0 population=1 dense=0",
+              "CA435PERF STATE slot=0 health=1248 pos=0.000000,320.000000,-0.000000"
+            ],
+            "census": [
+              "CA510 CENSUS start registered_defenders=0 registered_attackers=0 parked=0",
+              "CA510 CENSUS end registered_defenders=0 registered_attackers=0 parked=0"
+            ],
+            "scopes": [],
+            "native_sync": true,
+            "passed": true,
+            "complete_window": true
+          }
+        ],
+        "same_state": true,
+        "scenario_valid": true,
+        "error": null,
+        "passed": true,
+        "performance_accepted": false,
+        "author_accepted": false,
+        "qualification": "Actual campaign geometry on one Windows machine. A one-player control is not network evidence. Observed callback/tic gaps include lockstep waiting and shared hardware contention where applicable. They are not displayed-frame or separate-machine performance."
+      },
+      "presentation": {
+        "issue": 435,
+        "map": "MAP03",
+        "siege": false,
+        "ground": true,
+        "peers": [
+          {
+            "pid": 8704,
+            "trace_sha256": "b1d7e0253a193c2d7e2c2be76763e1797fe03ffeb1ddcb1c85c602b41536955e",
+            "rows": 2154,
+            "scene_presents": 1103,
+            "mean_present_fps": 62.709942088801704,
+            "present_intervals": {
+              "samples": 1102,
+              "mean_ms": 15.946434754858,
+              "p50_ms": 15.877500057220459,
+              "p95_ms": 18.71269989013672,
+              "p99_ms": 20.43559980392456,
+              "max_ms": 23.40619993209839
+            },
+            "native_call_duration": {
+              "samples": 1103,
+              "mean_ms": 0.27711160444500005,
+              "p50_ms": 0.2480001449584961,
+              "p95_ms": 0.47190022468566895,
+              "p99_ms": 0.6549999713897705,
+              "max_ms": 1.196199893951416
+            }
+          }
+        ],
+        "qualification": "Actual vkQueuePresentKHR calls on one shared Windows machine; no display-scanout, Internet-latency or author acceptance claim."
+      }
+    },
+    {
+      "label": "baseline-siege-paired",
+      "run": {
+        "issue": 448,
+        "started_utc": "2026-11-10T01:57:23.029143+00:00",
+        "ended_utc": "2026-11-10T02:00:08.140752+00:00",
+        "environment_overrides": {
+          "VK_LAYER_PATH": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "VK_INSTANCE_LAYERS": "VK_LAYER_CA_presentation"
+        },
+        "engine": {
+          "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+        },
+        "presentation_layer": {
+          "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+        },
+        "runtime_sha256": "d7d0620bd6e5703aef471d500933bac24adc034d96dc636b4a095b4136ff96dc",
+        "commands": [
+          [
+            "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+            "-noautoload",
+            "-nomouse",
+            "-iwad",
+            "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+            "-file",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue447-reviewed.pk3",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\performance\\baseline-siege-paired\\observer.pk3",
+            "-config",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\performance\\baseline-siege-paired\\peer0\\session.ini",
+            "-savedir",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\performance\\baseline-siege-paired\\peer0",
+            "-rngseed",
+            "428",
+            "-warp",
+            "3",
+            "+logfile",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\performance\\baseline-siege-paired\\peer0\\engine.log",
+            "+exec",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\performance\\baseline-siege-paired\\peer0\\start.cfg"
+          ]
+        ],
+        "observed_before_cleanup": [
+          0
+        ],
+        "observer_sha256": "5738b9de9c7fc88d3445347cf33c6322d2acc14d62cd566d6f49e1c3e1b29325",
+        "overlays": [],
+        "map": "MAP03",
+        "siege": true,
+        "direct_deployment": false,
+        "ground": false,
+        "players": 1,
+        "peers": [
+          {
+            "slot": 0,
+            "pid": 44080,
+            "exit_code": 0,
+            "window": {
+              "BEGIN": {
+                "utc": "2026-11-10T01:59:33.002070+00:00",
+                "qpc_ms": 2133909449.529
+              },
+              "END": {
+                "utc": "2026-11-10T02:00:03.612976+00:00",
+                "qpc_ms": 2133940061.0767002
+              }
+            },
+            "simulation": {
+              "samples": 700,
+              "mean_ms": 43.532399285714284,
+              "p95_ms": 76.3576,
+              "p99_ms": 81.7088,
+              "max_ms": 91.8002
+            },
+            "render_callbacks": {
+              "samples": 36,
+              "mean_ms": 739.7266722222222,
+              "p95_ms": 798.4866,
+              "p99_ms": 812.774,
+              "max_ms": 823.4841
+            },
+            "states": [
+              "CA435PERF STATE tic=3599 defenders=601 attackers=797 registered_health=1268691 parked=0 population=1399 dense=1",
+              "CA435PERF STATE slot=0 health=1248 pos=-14464.000000,-14000.000000,0.000000",
+              "CA435PERF STATE tic=4299 defenders=601 attackers=898 registered_health=1334008 parked=0 population=1500 dense=1",
+              "CA435PERF STATE slot=0 health=1248 pos=-14464.000000,-14000.000000,0.000000"
+            ],
+            "census": [
+              "CA510 CENSUS start registered_defenders=601 registered_attackers=797 parked=0",
+              "CA510 CENSUS end registered_defenders=601 registered_attackers=898 parked=0"
+            ],
+            "scopes": [],
+            "native_sync": true,
+            "passed": true,
+            "complete_window": true
+          }
+        ],
+        "same_state": true,
+        "scenario_valid": true,
+        "error": null,
+        "passed": true,
+        "performance_accepted": false,
+        "author_accepted": false,
+        "qualification": "Actual campaign geometry on one Windows machine. A one-player control is not network evidence. Observed callback/tic gaps include lockstep waiting and shared hardware contention where applicable. They are not displayed-frame or separate-machine performance."
+      },
+      "presentation": {
+        "issue": 435,
+        "map": "MAP03",
+        "siege": true,
+        "ground": false,
+        "peers": [
+          {
+            "pid": 44080,
+            "trace_sha256": "3d9f87ae1c96cc9a9d1851e79016cd0fade95be02662c2d63ffa018050c8c838",
+            "rows": 1392,
+            "scene_presents": 38,
+            "mean_present_fps": 1.350705124289638,
+            "present_intervals": {
+              "samples": 37,
+              "mean_ms": 740.3540432453156,
+              "p50_ms": 741.9651000499725,
+              "p95_ms": 812.7908999919891,
+              "p99_ms": 823.7151999473572,
+              "max_ms": 823.7151999473572
+            },
+            "native_call_duration": {
+              "samples": 38,
+              "mean_ms": 0.24214472268757067,
+              "p50_ms": 0.23259997367858887,
+              "p95_ms": 0.29269981384277344,
+              "p99_ms": 0.4340999126434326,
+              "max_ms": 0.4340999126434326
+            }
+          }
+        ],
+        "qualification": "Actual vkQueuePresentKHR calls on one shared Windows machine; no display-scanout, Internet-latency or author acceptance claim."
+      }
+    },
+    {
+      "label": "delivery-siege-paired",
+      "run": {
+        "issue": 448,
+        "started_utc": "2026-11-10T02:00:09.253820+00:00",
+        "ended_utc": "2026-11-10T02:02:48.839253+00:00",
+        "environment_overrides": {
+          "VK_LAYER_PATH": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "VK_INSTANCE_LAYERS": "VK_LAYER_CA_presentation"
+        },
+        "engine": {
+          "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+        },
+        "presentation_layer": {
+          "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+        },
+        "runtime_sha256": "2749a49409add6f16f6c1a2a8f905964282442001bfc37b9da4d241220a39ef2",
+        "commands": [
+          [
+            "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+            "-noautoload",
+            "-nomouse",
+            "-iwad",
+            "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+            "-file",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448-delivery.pk3",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\performance\\delivery-siege-paired\\observer.pk3",
+            "-config",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\performance\\delivery-siege-paired\\peer0\\session.ini",
+            "-savedir",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\performance\\delivery-siege-paired\\peer0",
+            "-rngseed",
+            "428",
+            "-warp",
+            "3",
+            "+logfile",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\performance\\delivery-siege-paired\\peer0\\engine.log",
+            "+exec",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\performance\\delivery-siege-paired\\peer0\\start.cfg"
+          ]
+        ],
+        "observed_before_cleanup": [
+          0
+        ],
+        "observer_sha256": "5738b9de9c7fc88d3445347cf33c6322d2acc14d62cd566d6f49e1c3e1b29325",
+        "overlays": [],
+        "map": "MAP03",
+        "siege": true,
+        "direct_deployment": false,
+        "ground": false,
+        "players": 1,
+        "peers": [
+          {
+            "slot": 0,
+            "pid": 32692,
+            "exit_code": 0,
+            "window": {
+              "BEGIN": {
+                "utc": "2026-11-10T02:02:15.452700+00:00",
+                "qpc_ms": 2134071900.0758998
+              },
+              "END": {
+                "utc": "2026-11-10T02:02:44.562679+00:00",
+                "qpc_ms": 2134101010.7022998
+              }
+            },
+            "simulation": {
+              "samples": 700,
+              "mean_ms": 41.648638857142856,
+              "p95_ms": 72.0003,
+              "p99_ms": 80.8012,
+              "max_ms": 88.2729
+            },
+            "render_callbacks": {
+              "samples": 36,
+              "mean_ms": 706.4214972222222,
+              "p95_ms": 766.0401,
+              "p99_ms": 778.3885,
+              "max_ms": 797.7391
+            },
+            "states": [
+              "CA435PERF STATE tic=3599 defenders=601 attackers=797 registered_health=1268691 parked=0 population=1399 dense=1",
+              "CA435PERF STATE slot=0 health=1248 pos=-14464.000000,-14000.000000,0.000000",
+              "CA435PERF STATE tic=4299 defenders=601 attackers=898 registered_health=1334008 parked=0 population=1500 dense=1",
+              "CA435PERF STATE slot=0 health=1248 pos=-14464.000000,-14000.000000,0.000000"
+            ],
+            "census": [
+              "CA510 CENSUS start registered_defenders=601 registered_attackers=797 parked=0",
+              "CA510 CENSUS end registered_defenders=601 registered_attackers=898 parked=0"
+            ],
+            "scopes": [],
+            "native_sync": true,
+            "passed": true,
+            "complete_window": true
+          }
+        ],
+        "same_state": true,
+        "scenario_valid": true,
+        "error": null,
+        "passed": true,
+        "performance_accepted": false,
+        "author_accepted": false,
+        "qualification": "Actual campaign geometry on one Windows machine. A one-player control is not network evidence. Observed callback/tic gaps include lockstep waiting and shared hardware contention where applicable. They are not displayed-frame or separate-machine performance."
+      },
+      "presentation": {
+        "issue": 435,
+        "map": "MAP03",
+        "siege": true,
+        "ground": false,
+        "peers": [
+          {
+            "pid": 32692,
+            "trace_sha256": "f11ca238e519067fd1baceb3c8a3aa7feba9b45eb96067b345de380c65257638",
+            "rows": 1426,
+            "scene_presents": 38,
+            "mean_present_fps": 1.4181325874553279,
+            "present_intervals": {
+              "samples": 37,
+              "mean_ms": 705.15268378,
+              "p50_ms": 697.614000082016,
+              "p95_ms": 780.8757998943329,
+              "p99_ms": 797.7921001911163,
+              "max_ms": 797.7921001911163
+            },
+            "native_call_duration": {
+              "samples": 38,
+              "mean_ms": 0.23651843321950813,
+              "p50_ms": 0.22699999809265137,
+              "p95_ms": 0.30299997329711914,
+              "p99_ms": 0.44069981575012207,
+              "max_ms": 0.44069981575012207
+            }
+          }
+        ],
+        "qualification": "Actual vkQueuePresentKHR calls on one shared Windows machine; no display-scanout, Internet-latency or author acceptance claim."
+      }
+    },
+    {
+      "label": "final-ground",
+      "run": {
+        "issue": 448,
+        "started_utc": "2026-11-10T01:36:24.824195+00:00",
+        "ended_utc": "2026-11-10T01:37:06.202816+00:00",
+        "environment_overrides": {
+          "VK_LAYER_PATH": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "VK_INSTANCE_LAYERS": "VK_LAYER_CA_presentation"
+        },
+        "engine": {
+          "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+        },
+        "presentation_layer": {
+          "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+        },
+        "runtime_sha256": "301c71baf0d4cfd8c9720798b9c91ebb6fb0c90bdbb17589000bdee8776d333a",
+        "commands": [
+          [
+            "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+            "-noautoload",
+            "-nomouse",
+            "-iwad",
+            "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+            "-file",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448-final.pk3",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\performance\\final-ground\\observer.pk3",
+            "-config",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\performance\\final-ground\\peer0\\session.ini",
+            "-savedir",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\performance\\final-ground\\peer0",
+            "-rngseed",
+            "428",
+            "-warp",
+            "3",
+            "+logfile",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\performance\\final-ground\\peer0\\engine.log",
+            "+exec",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\performance\\final-ground\\peer0\\start.cfg"
+          ]
+        ],
+        "observed_before_cleanup": [
+          0
+        ],
+        "observer_sha256": "e06221a5faedada50b27d126d99c2dcbb49c0ee78f797803bfcf90b6bb34356d",
+        "overlays": [],
+        "map": "MAP03",
+        "siege": false,
+        "direct_deployment": false,
+        "ground": true,
+        "players": 1,
+        "peers": [
+          {
+            "slot": 0,
+            "pid": 39060,
+            "exit_code": 0,
+            "window": {
+              "BEGIN": {
+                "utc": "2026-11-10T01:36:43.356335+00:00",
+                "qpc_ms": 2132539803.661
+              },
+              "END": {
+                "utc": "2026-11-10T01:37:03.178463+00:00",
+                "qpc_ms": 2132559626.6493
+              }
+            },
+            "simulation": {
+              "samples": 700,
+              "mean_ms": 28.574098714285714,
+              "p95_ms": 39.3584,
+              "p99_ms": 41.2831,
+              "max_ms": 45.3719
+            },
+            "render_callbacks": {
+              "samples": 1301,
+              "mean_ms": 13.84666948501153,
+              "p95_ms": 18.0753,
+              "p99_ms": 19.4035,
+              "max_ms": 20.968
+            },
+            "states": [
+              "CA435PERF STATE tic=349 defenders=0 attackers=0 registered_health=0 parked=0 population=1 dense=0",
+              "CA435PERF STATE slot=0 health=1248 pos=0.000000,320.000000,-0.000000",
+              "CA435PERF STATE tic=1049 defenders=0 attackers=0 registered_health=0 parked=0 population=1 dense=0",
+              "CA435PERF STATE slot=0 health=1248 pos=0.000000,320.000000,-0.000000"
+            ],
+            "census": [
+              "CA510 CENSUS start registered_defenders=0 registered_attackers=0 parked=0",
+              "CA510 CENSUS end registered_defenders=0 registered_attackers=0 parked=0"
+            ],
+            "scopes": [],
+            "native_sync": true,
+            "passed": true,
+            "complete_window": true
+          }
+        ],
+        "same_state": true,
+        "scenario_valid": true,
+        "error": null,
+        "passed": true,
+        "performance_accepted": false,
+        "author_accepted": false,
+        "qualification": "Actual campaign geometry on one Windows machine. A one-player control is not network evidence. Observed callback/tic gaps include lockstep waiting and shared hardware contention where applicable. They are not displayed-frame or separate-machine performance."
+      },
+      "presentation": {
+        "issue": 435,
+        "map": "MAP03",
+        "siege": false,
+        "ground": true,
+        "peers": [
+          {
+            "pid": 39060,
+            "trace_sha256": "86b19c918c40c998a7782f00c37738d94e89f07de6b03e40378b7dc127f7cc09",
+            "rows": 2513,
+            "scene_presents": 1251,
+            "mean_present_fps": 72.2032892040217,
+            "present_intervals": {
+              "samples": 1250,
+              "mean_ms": 13.849784560012818,
+              "p50_ms": 13.244999885559082,
+              "p95_ms": 18.085299968719482,
+              "p99_ms": 19.349499940872192,
+              "max_ms": 20.950200080871582
+            },
+            "native_call_duration": {
+              "samples": 1251,
+              "mean_ms": 0.17889200888282294,
+              "p50_ms": 0.17170000076293945,
+              "p95_ms": 0.23600006103515625,
+              "p99_ms": 0.2750999927520752,
+              "max_ms": 0.3980998992919922
+            }
+          }
+        ],
+        "qualification": "Actual vkQueuePresentKHR calls on one shared Windows machine; no display-scanout, Internet-latency or author acceptance claim."
+      }
+    },
+    {
+      "label": "final-siege",
+      "run": {
+        "issue": 448,
+        "started_utc": "2026-11-10T01:37:07.364539+00:00",
+        "ended_utc": "2026-11-10T01:40:13.266189+00:00",
+        "environment_overrides": {
+          "VK_LAYER_PATH": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "VK_INSTANCE_LAYERS": "VK_LAYER_CA_presentation"
+        },
+        "engine": {
+          "path": "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+          "sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa"
+        },
+        "presentation_layer": {
+          "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\tools\\presentation",
+          "sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2"
+        },
+        "runtime_sha256": "301c71baf0d4cfd8c9720798b9c91ebb6fb0c90bdbb17589000bdee8776d333a",
+        "commands": [
+          [
+            "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+            "-noautoload",
+            "-nomouse",
+            "-iwad",
+            "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+            "-file",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448-final.pk3",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\performance\\final-siege\\observer.pk3",
+            "-config",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\performance\\final-siege\\peer0\\session.ini",
+            "-savedir",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\performance\\final-siege\\peer0",
+            "-rngseed",
+            "428",
+            "-warp",
+            "3",
+            "+logfile",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\performance\\final-siege\\peer0\\engine.log",
+            "+exec",
+            "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v515\\issue448\\performance\\final-siege\\peer0\\start.cfg"
+          ]
+        ],
+        "observed_before_cleanup": [
+          0
+        ],
+        "observer_sha256": "5738b9de9c7fc88d3445347cf33c6322d2acc14d62cd566d6f49e1c3e1b29325",
+        "overlays": [],
+        "map": "MAP03",
+        "siege": true,
+        "direct_deployment": false,
+        "ground": false,
+        "players": 1,
+        "peers": [
+          {
+            "slot": 0,
+            "pid": 18852,
+            "exit_code": 0,
+            "window": {
+              "BEGIN": {
+                "utc": "2026-11-10T01:39:35.374044+00:00",
+                "qpc_ms": 2132711822.2818003
+              },
+              "END": {
+                "utc": "2026-11-10T01:40:08.239846+00:00",
+                "qpc_ms": 2132744687.4652998
+              }
+            },
+            "simulation": {
+              "samples": 700,
+              "mean_ms": 47.01538371428572,
+              "p95_ms": 82.2902,
+              "p99_ms": 89.7688,
+              "max_ms": 99.8946
+            },
+            "render_callbacks": {
+              "samples": 36,
+              "mean_ms": 796.7305027777778,
+              "p95_ms": 873.7479,
+              "p99_ms": 899.5418,
+              "max_ms": 908.2584
+            },
+            "states": [
+              "CA435PERF STATE tic=3599 defenders=601 attackers=797 registered_health=1268691 parked=0 population=1399 dense=1",
+              "CA435PERF STATE slot=0 health=1248 pos=-14464.000000,-14000.000000,0.000000",
+              "CA435PERF STATE tic=4299 defenders=601 attackers=898 registered_health=1334008 parked=0 population=1500 dense=1",
+              "CA435PERF STATE slot=0 health=1248 pos=-14464.000000,-14000.000000,0.000000"
+            ],
+            "census": [
+              "CA510 CENSUS start registered_defenders=601 registered_attackers=797 parked=0",
+              "CA510 CENSUS end registered_defenders=601 registered_attackers=898 parked=0"
+            ],
+            "scopes": [],
+            "native_sync": true,
+            "passed": true,
+            "complete_window": true
+          }
+        ],
+        "same_state": true,
+        "scenario_valid": true,
+        "error": null,
+        "passed": true,
+        "performance_accepted": false,
+        "author_accepted": false,
+        "qualification": "Actual campaign geometry on one Windows machine. A one-player control is not network evidence. Observed callback/tic gaps include lockstep waiting and shared hardware contention where applicable. They are not displayed-frame or separate-machine performance."
+      },
+      "presentation": {
+        "issue": 435,
+        "map": "MAP03",
+        "siege": true,
+        "ground": false,
+        "peers": [
+          {
+            "pid": 18852,
+            "trace_sha256": "c40f28ece354ef8745df7b086abf7b2792757e7bd2cea336de09122110e6fdb0",
+            "rows": 1415,
+            "scene_presents": 38,
+            "mean_present_fps": 1.2559057056430252,
+            "present_intervals": {
+              "samples": 37,
+              "mean_ms": 796.2381216255394,
+              "p50_ms": 792.6865999698639,
+              "p95_ms": 898.9770998954773,
+              "p99_ms": 905.9307000637054,
+              "max_ms": 905.9307000637054
+            },
+            "native_call_duration": {
+              "samples": 38,
+              "mean_ms": 0.26336314803675603,
+              "p50_ms": 0.2519998550415039,
+              "p95_ms": 0.35360002517700195,
+              "p99_ms": 0.45060014724731445,
+              "max_ms": 0.45060014724731445
+            }
+          }
+        ],
+        "qualification": "Actual vkQueuePresentKHR calls on one shared Windows machine; no display-scanout, Internet-latency or author acceptance claim."
+      }
+    }
+  ]
+}

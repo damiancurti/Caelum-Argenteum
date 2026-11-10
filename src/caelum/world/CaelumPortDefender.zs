@@ -4,6 +4,12 @@ class CaelumPortDefender : CaelumFolkloreCombatActor
 {
     CaelumPortSiege Port;
     CaelumBattleDefender BattleDefender;
+    CaelumMilitaryGroup MilitaryGroup;
+    int MilitarySerial,MilitaryReturnStep,MilitaryCrewStep;
+    bool MilitaryMoving;
+    vector3 MilitaryHoldPoint;
+    int MilitaryOrderKind,MilitaryOrderSerial;
+    vector3 MilitaryOrderPoint;
     CaelumHouseResident Residence;
     CaelumCannon Gun;
     Actor NavigationTarget;
@@ -176,6 +182,7 @@ class CaelumPortDefender : CaelumFolkloreCombatActor
             return true;
         user.FolkloreInteractionUseLatched = true;
         user.FolkloreInteractionReleaseGuardTics = 0;
+        if((user.player.cmd.buttons & BT_CROUCH)!=0)return CaelumMilitarySession.Show(user,self);
         return CaelumGuardCaptainDialogue.Open(user, self);
     }
 

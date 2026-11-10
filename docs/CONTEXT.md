@@ -1,10 +1,10 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.15.0** - 2026-11-09.
+Documentation version: **5.15.1** - 2026-11-09.
 
-**5.15.0/#447:** saved director; shared-clock finite reserves; all-defenders-dead
-defeat, no time limit. CA447-01 pending; evidence:validation_v5_15_0.
-#448-451 remain separate deliveries. Approved rules and status: SYSTEMS/TASKS.
+**5.15.1/#448:** Unitarian command; membership+captaincy+reputation50;
+bounded orders/succession. CA447-01/CA448-01 pending; validation_v5_15_0/1.
+#447 director retained. #449-451 remain separate. Rules: SYSTEMS/TASKS.
 
 **V5.14 accepted2026-11-09:** 5checks;#443-446 closed;PR630-633 merged.
 **V5.13 accepted2026-11-01:**13checks, awakening included; implementation merged.

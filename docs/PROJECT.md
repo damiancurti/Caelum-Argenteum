@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.15.0** - 2026-11-09.
+Documentation version: **5.15.1** - 2026-11-09.
+
+## 5.15.1 / #448 - Military command
+
+The approved Unitarian guard now exposes an unpaused command panel with
+membership + recognized captaincy + Friendly reputation checks. Group orders,
+bounded communication, existing succession, original friendly deployment
+requests and physical return routes retain native authority and saved identities.
+This patch depends on #447 (PR635) and remains separate from #449-451.
+Native evidence and limitations: assets/validation_v5_15_1. Author acceptance
+CA448-01 is pending; the final V5.15 terminal follows the remaining deliveries.
 
 ## 5.15.0 / #447 - Dynamic siege director
 
