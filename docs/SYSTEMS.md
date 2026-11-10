@@ -1,6 +1,69 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.15.1** - 2026-11-09.
+Documentation version: **5.15.2** - 2026-11-10.
+
+## 5.15.2 / #449 - Construction and persistent machine ownership
+
+Author-approved catalogue: a 3m by1.5m barricade uses50kg wood +5kg iron,
+30 world minutes and carpentry; the existing850kg cannon uses100kg wood
++750kg iron,8 world hours, carpentry and smithing. These are100% efficiency
+inputs;50% doubles and25% quadruples them. Existing recipe learning, practice
+and Dexterity modify construction time. Learn the recipe and use the existing
+workbench network (cannon also requires forge/anvil). The preview reserves native
+materials. Construction places a physical world object in clear supported space
+in front of the builder; existing placement rules protect passages and fixtures.
+Choose one current faction before starting; unaffiliated characters must join
+first. Construction checks membership, infrastructure, placement and the living
+side admission limit again at completion. Cannons retain unlimited ammunition.
+Rams are repairable/capturable, not additional construction recipes.
+
+Barricades weigh55kg, derive their thickness from50kg timber at the existing
+oak density, and use wooden-gate defense10/toughness25. Cannons use armored-gate
+defense30/toughness75; rams reinforced-gate20/50. All use Constitution0 and the
+existing mass-based structural health formula. Physical components forward damage
+to one structural owner; explosion/impact deduplication remains native. Existing
+machine motion, projectile mass/speed and crew requirements are preserved.
+
+Use a physical component to open the unpaused ES/EN panel. Repair reserves the
+proportion of nominal materials and world work represented by missing structural
+health. Ram inputs come from their existing wood/iron physical model; complete
+repair takes12 world hours for the small ram and64 for the large one. Repair is
+allowed during combat. Damage to the worker or structure interrupts it, retaining
+paid progress and reservations; explicitly resume beside the same structure.
+Additional damage does not receive free repair from an older reservation.
+Cancellation releases unused reservations. One worker owns an operation; a stale
+dead/disconnected owner cannot permanently lock it. Leaving the map pauses work.
+
+Sabotage and capture each require30 real seconds beside an enemy machine without
+active enemy operators. Time advance cannot skip either operation. Sabotage
+disables operation; repair costs an additional10% of nominal materials/time to
+remove it. Capture chooses one current membership, changes ownership and never
+repairs health or removes sabotage. An intact capture records full health and no
+sabotage at capture time. Operation requires current membership only, without a
+Technical gate. Attack aims/orders a shot or a ram approach to the aimed gate;
+alternate attack releases control. Existing staffing remains authoritative:
+cannons work proportionally with one/two operators; rams need their full crew.
+An authorized military captain may assign nearby available Unitarian guards;
+native movement retains their posts and withdrawal still takes precedence.
+
+This decision explicitly supersedes guard-death neutralization: only capture or
+physical/Tarot destruction of one of the twelve original hostile machines satisfies
+its battle objective. Temporary sabotage and dead nearby guards do not. Constructed
+equipment never enlarges that objective. Captured machines leave the enemy side
+and count on the defending side; construction respects the same existing admission
+limit. Original hostile refills/automatic targeting cannot retake a captured gun.
+
+Schema1 lazily adds one structural owner to each existing machine and binds the
+same physical pieces. Previously destroyed equipment stays destroyed; obsolete
+guard-death flags on surviving machines are cleared without revoking an already
+won encounter. Existing original saves/packages remain the rollback route. Work,
+reservations, constructed identities and faction ownership serialize with native
+save/hub state. Work schema2 keeps a serial-owned map anchor because traveling
+inventories lose references to unloaded world parts; return restores those same
+references without recreating equipment. Native prediction only filters operator
+input and cannot mutate the saved bond or emit another shot.
+Evidence: assets/validation_v5_15_2; author check CA449-01 pending.
+
 
 ## 5.15.1 / #448 - Guard command and succession
 

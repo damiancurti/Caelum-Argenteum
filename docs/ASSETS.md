@@ -1,6 +1,20 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.15.1** - 2026-11-09.
+Documentation version: **5.15.2** - 2026-11-10.
+
+## 5.15.2 / #449 - Owned barricade and machine data
+
+assets/generators/machine_work.json records the approved catalogue and timings.
+generate_machine_runtime.py deterministically emits CaelumMachineMaterials.zs,
+the ca_barricade.obj model and its owned MODELDEF block. The panel reuses the
+project's existing owned wood/iron station textures and Mesh/add_box generator;
+no external art or Doom assets are introduced. Its dimensions and timber volume
+derive from the approved recipe. Existing cannon/ram visuals remain unchanged.
+Ram repair masses reuse component_volumes from the original ram physics generator;
+the refactor preserves its original volume calculation and physical model values.
+Source fixtures and validation records live in assets/validation_v5_15_2; generated
+PK3s, private engine/IWAD, test maps and saves remain untracked under build.
+
 
 ## 5.15.1 / #448 - Command UI and validation sources
 

@@ -151,10 +151,10 @@ class CaelumImpactEnergy : Object
         let area=AreaFor(receiver,null,low,high,normal);
         if (area==null) return null;
         let user=CaelumPlayer(receiver); let npc=CaelumCombatActor(receiver);
-        double x=0.5*(CaelumGateData.WIDTH*Abs(Cos(gate.Angle))+CaelumGateData.THICKNESS*Abs(Sin(gate.Angle)));
-        double y=0.5*(CaelumGateData.WIDTH*Abs(Sin(gate.Angle))+CaelumGateData.THICKNESS*Abs(Cos(gate.Angle)));
+        double x=0.5*(gate.StructureWidth()*Abs(Cos(gate.Angle))+gate.StructureThickness()*Abs(Sin(gate.Angle)));
+        double y=0.5*(gate.StructureWidth()*Abs(Sin(gate.Angle))+gate.StructureThickness()*Abs(Cos(gate.Angle)));
         area.Build(receiver,null,user!=null ? user.AnatomyProfile : npc.AnatomyProfile,
-            low,high,normal,true,gate.Pos-(x,y,0),gate.Pos+(x,y,CaelumGateData.HEIGHT));
+            low,high,normal,true,gate.Pos-(x,y,0),gate.Pos+(x,y,gate.StructureHeight()));
         return area;
     }
 

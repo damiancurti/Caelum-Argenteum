@@ -1,0 +1,10 @@
+{
+  "provenance": "Issue #449 author decisions, 2026-11-09: material costs at 100% efficiency, existing learning/Dexterity modifiers and world-work times. Physical ram materials derive from the unchanged #20 model and ram_physics.json. Capture/sabotage use native real time.",
+  "barricade": {"width_m": 3, "height_m": 1.5, "wood_kg": 50, "iron_kg": 5, "work_seconds": 1800},
+  "cannon": {"wood_kg": 100, "iron_kg": 750, "work_seconds": 28800},
+  "small_ram_repair_seconds": 43200,
+  "large_ram_repair_seconds": 230400,
+  "capture_seconds": 30,
+  "sabotage_seconds": 30,
+  "sabotage_repair_fraction": 0.1
+}

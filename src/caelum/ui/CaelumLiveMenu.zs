@@ -1,7 +1,7 @@
 // Un único propietario nativo para las vistas que mantienen viva la simulación.
 class CaelumLiveMenu : ListMenu
 {
-    enum ContextType { CTX_SKIP=100, CTX_JOURNEY, CTX_REST, CTX_MERCHANT, CTX_CALENDAR, CTX_EQUIPMENT, CTX_CHEST, CTX_CREATION, CTX_RECIPES, CTX_MATE, CTX_PROPERTY, CTX_BATH, CTX_CLEAN, CTX_CAMP_FIRE, CTX_CAMP_TENT, CTX_TRANSPORT, CTX_COMPANION, CTX_AWAKENING, CTX_MILITARY };
+    enum ContextType { CTX_SKIP=100, CTX_JOURNEY, CTX_REST, CTX_MERCHANT, CTX_CALENDAR, CTX_EQUIPMENT, CTX_CHEST, CTX_CREATION, CTX_RECIPES, CTX_MATE, CTX_PROPERTY, CTX_BATH, CTX_CLEAN, CTX_CAMP_FIRE, CTX_CAMP_TENT, CTX_TRANSPORT, CTX_COMPANION, CTX_AWAKENING, CTX_MILITARY, CTX_MACHINE };
     CaelumPlayer Subject;
     String OriginMap;
     int Context;
@@ -43,6 +43,8 @@ class CaelumLiveMenu : ListMenu
         if(companion!=null && companion.Open)return CTX_COMPANION;
         let military=CaelumMilitarySession(user.FindInventory('CaelumMilitarySession'));
         if(military!=null && military.Open)return CTX_MILITARY;
+        let machine=CaelumMachineSession(user.FindInventory('CaelumMachineSession'));
+        if(machine!=null && machine.Open)return CTX_MACHINE;
         let property=CaelumPropertySession(user.FindInventory("CaelumPropertySession"));
         if(property!=null && property.Portal!=null)return CTX_PROPERTY;
         let cleaning=CaelumCleaningSession.Find(user);if(cleaning!=null && cleaning.Open)return CTX_CLEAN;
@@ -142,6 +144,7 @@ class CaelumLiveMenu : ListMenu
         else if(Context==CTX_PROPERTY)CaelumPropertyUI.Draw(Journal(),Subject);
         else if(Context==CTX_COMPANION)CaelumCompanionUI.Draw(Journal(),Subject);
         else if(Context==CTX_MILITARY)CaelumMilitaryUI.Draw(Journal(),Subject);
+        else if(Context==CTX_MACHINE)CaelumMachineUI.Draw(Journal(),Subject);
         else if(Context==CTX_CLEAN)CaelumCleaningUI.Draw(Journal(),Subject);
         else if(Context==CTX_BATH)CaelumBathUI.Draw(Journal(),Subject);
         else if(Context==CTX_CAMP_FIRE)CaelumCampFireUI.Draw(Journal(),Subject);
@@ -182,6 +185,7 @@ class CaelumLiveMenu : ListMenu
         if(Context==CTX_PROPERTY)return CaelumPropertyUI.Key(Subject,type,scan,keyString);
         if(Context==CTX_COMPANION)return CaelumCompanionUI.Key(type,scan,keyString);
         if(Context==CTX_MILITARY)return CaelumMilitaryUI.Key(type,scan,keyString);
+        if(Context==CTX_MACHINE)return CaelumMachineUI.Key(type,scan,keyString);
         if(Context==CTX_CLEAN)return CaelumCleaningUI.Key(type,scan,keyString);
         if(Context==CTX_BATH)return CaelumBathUI.Key(Subject,type,scan,keyString);
         if(Context==CTX_CAMP_FIRE)return CaelumCampFireUI.Key(type,scan,keyString);

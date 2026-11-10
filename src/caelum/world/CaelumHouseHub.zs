@@ -45,6 +45,8 @@ class CaelumHouseHubEvents : EventHandler
         if (CaelumPlayerAuthority.FromNetworkPlayer(e.Player) == null) return;
         if(e.Name=="ca_military_action")
         {let session=CaelumMilitarySession.Find(CaelumPlayer(players[e.Player].mo));if(session!=null)session.Act(e.Args[0]);return;}
+        if(e.Name=="ca_machine_action")
+        {let session=CaelumMachineSession.Find(CaelumPlayer(players[e.Player].mo));if(session!=null)session.Act(e.Args[0]);return;}
         if(e.Name=="ca_companion_action" && e.Player>=0 && e.Player<MAXPLAYERS && playeringame[e.Player])
         {let user=CaelumPlayer(players[e.Player].mo);let session=CaelumCompanionSession.Find(user);if(session!=null)session.Act(e.Args[0]);return;}
         if(e.Name=="ca_clean_open" && e.Player>=0 && e.Player<MAXPLAYERS && playeringame[e.Player])

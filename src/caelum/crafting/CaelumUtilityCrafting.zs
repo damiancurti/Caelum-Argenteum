@@ -2,16 +2,18 @@
 class CaelumUtilityCrafting : Object
 {
     static bool IsRecipe(int recipe)
-    { return CaelumRestFurnitureData.IsRecipe(recipe) || CaelumStorageFurnitureData.IsRecipe(recipe) || recipe==CaelumHygieneData.CLOTH_RECIPE || CaelumCampData.IsRecipe(recipe) || CaelumMateData.IsRecipe(recipe) || CaelumLockRules.IsRecipe(recipe) || recipe == CaelumConstants.CRAFTING_SLEEPING_BAG_RECIPE || recipe == CaelumConstants.CRAFTING_LARGE_CANTEEN_RECIPE; }
+    { return CaelumMachineData.IsRecipe(recipe) || CaelumRestFurnitureData.IsRecipe(recipe) || CaelumStorageFurnitureData.IsRecipe(recipe) || recipe==CaelumHygieneData.CLOTH_RECIPE || CaelumCampData.IsRecipe(recipe) || CaelumMateData.IsRecipe(recipe) || CaelumLockRules.IsRecipe(recipe) || recipe == CaelumConstants.CRAFTING_SLEEPING_BAG_RECIPE || recipe == CaelumConstants.CRAFTING_LARGE_CANTEEN_RECIPE; }
     static Name ItemClass(int recipe)
-    { if(CaelumStorageFurnitureData.IsRecipe(recipe))return CaelumStorageFurnitureData.ItemClass(recipe-CaelumStorageFurnitureData.FIRST_RECIPE);
+    { if(CaelumMachineData.IsRecipe(recipe))return 'None';
+        if(CaelumStorageFurnitureData.IsRecipe(recipe))return CaelumStorageFurnitureData.ItemClass(recipe-CaelumStorageFurnitureData.FIRST_RECIPE);
         if(CaelumRestFurnitureData.IsRecipe(recipe))return CaelumRestFurnitureData.ItemClass(recipe-CaelumRestFurnitureData.FIRST_RECIPE);
         if(recipe==CaelumHygieneData.CLOTH_RECIPE)return 'CaelumCleaningCloth';
         if(CaelumCampData.IsRecipe(recipe))return CaelumCampData.ItemClass(recipe-CaelumCampData.FIRST_RECIPE);
         if(CaelumMateData.IsRecipe(recipe))return CaelumMateData.ItemClass(recipe-CaelumMateData.FIRST_RECIPE);
         return CaelumLockRules.IsRecipe(recipe) ? 'CaelumLockItem' : recipe == CaelumConstants.CRAFTING_SLEEPING_BAG_RECIPE ? 'CaelumSleepingBag' : 'CaelumCanteenLarge'; }
     static clearscope String NameKey(int recipe)
-    { if(CaelumStorageFurnitureData.IsRecipe(recipe))return CaelumStorageFurnitureData.NameKey(recipe-CaelumStorageFurnitureData.FIRST_RECIPE);
+    { if(CaelumMachineData.IsRecipe(recipe))return CaelumMachineData.NameKey(recipe-CaelumMachineData.FIRST_RECIPE);
+        if(CaelumStorageFurnitureData.IsRecipe(recipe))return CaelumStorageFurnitureData.NameKey(recipe-CaelumStorageFurnitureData.FIRST_RECIPE);
         if(CaelumRestFurnitureData.IsRecipe(recipe))return CaelumRestFurnitureData.NameKey(recipe-CaelumRestFurnitureData.FIRST_RECIPE);
         if(recipe==CaelumHygieneData.CLOTH_RECIPE)return "CA_HYGIENE_CLOTH";
         if(CaelumCampData.IsRecipe(recipe))return CaelumCampData.NameKey(recipe-CaelumCampData.FIRST_RECIPE);
@@ -19,6 +21,7 @@ class CaelumUtilityCrafting : Object
         return CaelumLockRules.IsRecipe(recipe) ? CaelumLockRules.NameKey(CaelumLockRules.RecipeItem(recipe)) : recipe == CaelumConstants.CRAFTING_SLEEPING_BAG_RECIPE ? "CA_SLEEPING_BAG_NAME" : "CA_WATER_CANTEEN_LARGE"; }
     static play double Weight(int recipe)
     {
+        if(CaelumMachineData.IsRecipe(recipe))return CaelumMachineData.Mass(recipe-CaelumMachineData.FIRST_RECIPE);
         if(CaelumStorageFurnitureData.IsRecipe(recipe))return CaelumStorageFurnitureData.Mass(recipe-CaelumStorageFurnitureData.FIRST_RECIPE);
         if(CaelumRestFurnitureData.IsRecipe(recipe))return CaelumRestFurnitureData.Mass(recipe-CaelumRestFurnitureData.FIRST_RECIPE);
         if(recipe==CaelumHygieneData.CLOTH_RECIPE)return CaelumHygieneData.CLOTH_KG;
@@ -31,6 +34,7 @@ class CaelumUtilityCrafting : Object
     }
     static play void Complete(CaelumPlayer user)
     {
+        if(CaelumMachineData.IsRecipe(user.CraftingSelectionRecipe))return;
         if (CaelumLockRules.IsRecipe(user.CraftingSelectionRecipe))
         { CaelumLockRules.Complete(user); return; }
         if (user.CraftingSelectionRecipe!=CaelumHygieneData.CLOTH_RECIPE && !CaelumCampData.IsRecipe(user.CraftingSelectionRecipe) && !CaelumRestFurnitureData.IsRecipe(user.CraftingSelectionRecipe) && !CaelumStorageFurnitureData.IsRecipe(user.CraftingSelectionRecipe) && user.FindInventory(ItemClass(user.CraftingSelectionRecipe)) != null)

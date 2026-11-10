@@ -32,27 +32,33 @@ class CaelumBreakableGate : Actor
         ExplosionTick = -1;
     }
 
-    void InitializeGate()
+    virtual double StructureWidth() { return CaelumGateData.WIDTH; }
+    virtual double StructureHeight() { return CaelumGateData.HEIGHT; }
+    virtual double StructureThickness() { return CaelumGateData.THICKNESS; }
+    virtual int StructureMass() { return CaelumGateData.MovingMass(args[1]); }
+    virtual class<Actor> StructureVisual() { return CaelumGateData.VisualClass(args[1]); }
+
+    virtual void InitializeGate()
     {
         if (Initialized) { EnsureGateBalance(); return; }
         Initialized = true;
-        Mass = CaelumGateData.MovingMass(args[1]);
+        Mass = StructureMass();
         EnsureGateBalance();
-        GateVisual = Spawn(CaelumGateData.VisualClass(args[1]), Pos, NO_REPLACE);
+        GateVisual = Spawn(StructureVisual(), Pos, NO_REPLACE);
         if (GateVisual != null) { GateVisual.master = self; GateVisual.Angle = Angle; }
         // Espaciado menor que el diámetro: cobertura continua aun en diagonal.
-        double radius = CaelumGateData.THICKNESS / 2.0;
-        int count = int(Ceil(CaelumGateData.WIDTH / radius));
+        double radius = StructureThickness() / 2.0;
+        int count = int(Ceil(StructureWidth() / radius));
         for (int i = 0; i < count; i++)
         {
-            double along = -CaelumGateData.WIDTH / 2.0 + radius
-                + i * (CaelumGateData.WIDTH - 2.0 * radius) / (count - 1);
+            double along = -StructureWidth() / 2.0 + radius
+                + i * (StructureWidth() - 2.0 * radius) / (count - 1);
             vector3 position = Pos + (Cos(Angle) * along, Sin(Angle) * along, 0);
             let block = CaelumGateBlocker(Spawn("CaelumGateBlocker", position, NO_REPLACE));
             if (block == null) continue;
             block.master = self;
             block.Mass = Mass;
-            block.A_SetSize(radius, CaelumGateData.HEIGHT);
+            block.A_SetSize(radius, StructureHeight());
             Blocks.Push(block);
         }
     }
@@ -105,7 +111,7 @@ class CaelumBreakableGate : Actor
         return Initialized ? StructuralMaximum : Super.GetMaxHealth(withupgrades);
     }
 
-    void RefreshPassage()
+    virtual void RefreshPassage()
     {
         bool closed = !Broken && !Opened;
         for (int i = 0; i < Blocks.Size(); i++)
@@ -125,19 +131,19 @@ class CaelumBreakableGate : Actor
     bool PassageOccupied()
     {
         // Incluye NPC, cadáveres sólidos y objetos, no solamente jugadores.
-        let it = BlockThingsIterator.Create(self, CaelumGateData.WIDTH);
+        let it = BlockThingsIterator.Create(self, StructureWidth());
         while (it.Next())
         {
             Actor body = it.thing;
             if (body == self || body.master == self || !body.bSolid || body.bNoClip) continue;
-            if (body.Pos.Z >= Pos.Z + CaelumGateData.HEIGHT || body.Pos.Z + body.Height <= Pos.Z) continue;
+            if (body.Pos.Z >= Pos.Z + StructureHeight() || body.Pos.Z + body.Height <= Pos.Z) continue;
             vector2 offset = body.Pos.XY - Pos.XY;
             double along = Abs(offset.X * Cos(Angle) + offset.Y * Sin(Angle));
             double across = Abs(-offset.X * Sin(Angle) + offset.Y * Cos(Angle));
             // La proyección de una caja nativa depende del ángulo de la puerta.
             double extent = body.Radius * (Abs(Cos(Angle)) + Abs(Sin(Angle)));
-            if (along <= CaelumGateData.WIDTH / 2.0 + extent
-                && across <= CaelumGateData.THICKNESS / 2.0 + extent) return true;
+            if (along <= StructureWidth() / 2.0 + extent
+                && across <= StructureThickness() / 2.0 + extent) return true;
         }
         return false;
     }
@@ -147,7 +153,7 @@ class CaelumBreakableGate : Actor
         InitializeGate();
         if (Broken || user == null || user.health <= 0
             || (user.player != null && (user.player.cheats & CF_PREDICTING))
-            || user.Pos.Z >= Pos.Z + CaelumGateData.HEIGHT
+            || user.Pos.Z >= Pos.Z + StructureHeight()
             || user.Pos.Z + user.Height <= Pos.Z || !user.CheckSight(self, SF_IGNOREVISIBILITY)) return false;
         CaelumPoiKnowledge.RecordUse(CaelumPlayer(user),self,CaelumPoiData.EXIT);
         let check = ThinkerIterator.Create("CaelumBreakableGate");
@@ -174,7 +180,7 @@ class CaelumBreakableGate : Actor
         return true;
     }
 
-    void BreakGroup()
+    virtual void BreakGroup()
     {
         if (Broken) return;
         let it = ThinkerIterator.Create("CaelumBreakableGate");
@@ -278,7 +284,7 @@ class CaelumBreakableGate : Actor
         let user = CaelumPlayer(movingBody);
         let npc = CaelumCombatActor(movingBody);
         if (user == null && (npc == null || npc.DisableCaelumImpactContacts)) return;
-        if (movingBody.Pos.Z >= Pos.Z + CaelumGateData.HEIGHT
+        if (movingBody.Pos.Z >= Pos.Z + StructureHeight()
             || movingBody.Pos.Z + movingBody.Height <= Pos.Z) return;
 
         ImpactContactState contact = user != null ? user.GetImpactContactState(self)
@@ -296,7 +302,7 @@ class CaelumBreakableGate : Actor
         if (side > 0) normal = -normal;
         let sourceBody = user != null ? user.BuildImpactPhysicsBody() : npc.BuildImpactPhysicsBody();
         let gateBody = new("ImpactBody");
-        gateBody.Mass = Mass; gateBody.Height = CaelumGateData.HEIGHT;
+        gateBody.Mass = Mass; gateBody.Height = StructureHeight();
         gateBody.Position = Pos; gateBody.Velocity = (0, 0, 0);
         gateBody.Restitution = CaelumConstants.IMPACT_RESTITUTION;
         gateBody.SurfaceMultiplier = 1.0;
@@ -309,9 +315,9 @@ class CaelumBreakableGate : Actor
         // El radio técnico del controlador es 1: el rearme debe abarcar toda
         // la anchura real, incluso contactos en el extremo de ambas hojas.
         contact.ReleaseDistance = movingBody.Radius
-            + Sqrt(CaelumGateData.WIDTH * CaelumGateData.WIDTH
-                + CaelumGateData.THICKNESS * CaelumGateData.THICKNESS) / 2.0
-            + Min(movingBody.Height, CaelumGateData.HEIGHT)
+            + Sqrt(StructureWidth() * StructureWidth()
+                + StructureThickness() * StructureThickness()) / 2.0
+            + Min(movingBody.Height, StructureHeight())
                 * CaelumConstants.IMPACT_CONTACT_REARM_HEIGHT_FRACTION
             + CaelumConstants.IMPACT_CONTACT_RELEASE_MARGIN;
         contact.BeginResolutionTick(level.time);
@@ -393,6 +399,7 @@ class CaelumGateBlocker : Actor
     override bool Used(Actor user)
     {
         let gate = CaelumBreakableGate(master);
+        if(gate is 'CaelumBarricade')return CaelumMachineSession.Show(CaelumPlayer(user),gate,self);
         return gate != null && gate.Used(user);
     }
     override int DamageMobj(Actor inflictor, Actor source, int damage, Name mod, int flags, double hitAngle)

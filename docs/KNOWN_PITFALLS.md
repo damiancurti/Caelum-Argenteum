@@ -802,6 +802,11 @@ assets/validation_5812/domestic. Author check CA502-HOUSEKEEPING-01 passed2026-1
 
 ZScript names are case-insensitive: local `chest`/`day` shadowed saved `Chest`/
 `Day`, silently losing the selected coffer and repeatedly zeroing elapsed work.
+#449 (5.15.2, assets/validation_v5_15_2) also found that a local `repair`
+shadows the enum `REPAIR`: the action still completed but skipped its proportional
+cost/time branch. Use `missingHealth` and assert reservations and initial duration,
+then run the actual native clock; forced completion alone cannot establish costs.
+
 Use distinct candidate/civil-date identifiers and test the actual scheduler,
 not only direct arithmetic calls. Household targets are initialized after the
 spawned fixtures receive their native initialization/linking.

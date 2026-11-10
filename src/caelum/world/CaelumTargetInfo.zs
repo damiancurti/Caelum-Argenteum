@@ -13,6 +13,8 @@ class CaelumTargetInfo : Object play
 
     static clearscope Actor CanonicalActor(Actor object)
     {
+        let hull=CaelumMachineStructure(object is 'CaelumMachineBlock'?object.master:object);
+        if(hull!=null)return hull.Machine;
         if(object is 'CaelumSlidingDoorBlocker' || object is 'CaelumGateBlocker')return object.master;
         if(object is 'CaelumHazardRockVisual')return object.master;
         let block=CaelumDiningBlock(object);if(block!=null)return block.Table;
@@ -26,7 +28,7 @@ class CaelumTargetInfo : Object play
     {
         if(object==null || (object is "Inventory" && Inventory(object).Owner!=null))return false;
         // Estas puertas son disparadores invisibles frente a su geometría real.
-        if(object is 'CaelumHousePortal' || object is 'CaelumWaterGateSwitch')return true;
+        if(object is 'CaelumHousePortal' || object is 'CaelumWaterGateSwitch' || object is 'CaelumHostileMachine' || object is 'CaelumBarricade')return true;
         if(object.bInvisible || object.GetRenderStyle()==STYLE_None)return false;
         return object.Height>0 && object.Radius>0;
     }
@@ -102,6 +104,12 @@ class CaelumTargetInfo : Object play
         }
         if(Title=="")Title=L(Subject is 'CaelumCombatActor'?"CA_TARGET_CHARACTER":"CA_TARGET_OBJECT");
         bool reachable=Distance<=user.UseRange;
+        let machine=CaelumHostileMachine(Subject);
+        if(machine!=null || Subject is 'CaelumBarricade')
+        {
+            Title=L(CaelumMachineData.NameKey(machine!=null?machine.MachineKind():CaelumMachineData.BARRICADE));
+            Actions=L(reachable?"CA_TARGET_USE":"CA_TARGET_APPROACH");return;
+        }
         if(Subject is 'CaelumTarotRock')
         {
             Actions=L("CA_TAROT_ROCK_ACTIONS");return;

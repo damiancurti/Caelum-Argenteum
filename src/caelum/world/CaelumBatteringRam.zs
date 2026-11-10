@@ -10,7 +10,7 @@ class CaelumRamSuspension : Actor
     Default { +NOBLOCKMAP +NOGRAVITY }
     States { Spawn: CRSP A -1; Stop; }
 }
-class CaelumRamBlock : Actor
+class CaelumRamBlock : CaelumMachineBlock
 {
     Default { Radius 10; Height 30; +SOLID +NOGRAVITY +NODAMAGETHRUST }
     States { Spawn: TNT1 A -1; Stop; }
@@ -98,6 +98,14 @@ class CaelumBatteringRam : CaelumHostileMachine
             rod.master = self; Rods.Push(rod);
         }
         PlaceComponents();
+        EnsureMachine();
+    }
+
+    override void BindStructure()
+    {
+        if(Head!=null)Head.master=Structure;
+        for(int i=0;i<FrameBlocks.Size();i++)if(FrameBlocks[i]!=null)FrameBlocks[i].master=Structure;
+        for(int i=0;i<FaceBlocks.Size();i++)if(FaceBlocks[i]!=null)FaceBlocks[i].master=Structure;
     }
 
     void PlaceComponents()
@@ -172,7 +180,7 @@ class CaelumBatteringRam : CaelumHostileMachine
     bool SetRoute(CaelumBreakableGate gate, double facing)
     {
         InitializeRam();
-        if (Neutralized || Phase == STRIKE || Phase == CONTACT || Phase == RECOVERY) return false;
+        if (!Operational() || Phase == STRIKE || Phase == CONTACT || Phase == RECOVERY) return false;
         TargetGate = gate; FinalAngle = facing; Route.Clear(); RouteIndex = 0;
         return true;
     }
@@ -289,7 +297,7 @@ class CaelumBatteringRam : CaelumHostileMachine
         Head.Vel=(0,0,0);
         if(Phase==STRIKE && HasIntimidatedCrew())
         {Phase=RECOVERY;RecoveryLeft=CaelumRamData.RECOVERY_TICS;}
-        if (Neutralized || !Enabled || !FullCrewPresent()) return;
+        if (!Operational() || !Enabled || !FullCrewPresent()) return;
         if (Phase == CONTACT)
         {
             Phase=RECOVERY; RecoveryLeft=CaelumRamData.RECOVERY_TICS;

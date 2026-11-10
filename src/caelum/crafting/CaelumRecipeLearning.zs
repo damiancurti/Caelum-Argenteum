@@ -66,6 +66,7 @@ class CaelumRecipeLearning : Object play
     static double WorkSeconds(CaelumPlayer user, int recipe, int tier,
         int employedUnits, int complexityTics, int efficiency, int outputUnits=0, int fixedBatch=-1)
     {
+        if(CaelumMachineData.IsRecipe(recipe))return CaelumMachineCrafting.Seconds(user,recipe,efficiency);
         if(CaelumMealData.IsRecipe(recipe))return CaelumCookingData.Seconds(recipe);
         if(CaelumChemistryData.IsRecipe(recipe))return CaelumChemistryData.Seconds(recipe)
             *(CaelumChemistryData.IsFermentation(recipe)?1:Ceil(Max(1,outputUnits)/double(CaelumChemistryData.OutputUnits(recipe))))
@@ -122,6 +123,7 @@ class CaelumRecipeLearning : Object play
     {
         let record=user.GetPersistentCharacterState(true);
         record.RecipeClaimSlots.Clear();record.RecipeClaimAmounts.Clear();
+        if(CaelumMachineWork.Active(user) && CaelumMachineWork.Find(user).WorkKind!=CaelumMachineWork.BUILD)return;
         if(user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_REPAIR
             || user.CraftingTaskKind==CaelumConstants.CRAFTING_TASK_DISMANTLE)return;
         int recipe=user.CraftingTaskRecipeIndex;

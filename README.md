@@ -6,17 +6,17 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.15.1.** Obtain and update the complete repository,
+**Current release: 5.15.2.** Obtain and update the complete repository,
 validate it, then rebuild with `run_dev.bat` as described below.
 
-V5.15 now includes the saved battle director (#447, PR635) and Unitarian guard
-command (#448). Crouch + Use on a guard opens its unpaused orders panel during the
-siege. Membership, recognized captaincy and Friendly reputation are all required.
-Military groups stay bounded; known destinations, succession, original reserves
-and physical return routes retain native ownership. Evidence:
-[director](assets/validation_v5_15_0/RESULTS.md) and
-[command](assets/validation_v5_15_1/RESULTS.md). CA447-01/CA448-01 await author
-acceptance. #449-451 and the final V5.15 test terminal remain pending.
+V5.15 includes the [battle director](assets/validation_v5_15_0/RESULTS.md)
+(#447, PR635), [Unitarian command](assets/validation_v5_15_1/RESULTS.md)
+(#448, PR636), and [machine construction, repair and capture](assets/validation_v5_15_2/RESULTS.md)
+(#449). Crouch + Use opens guard orders; Use on machine parts opens their work
+panel. Construction requires learned recipes, the existing workshops/materials
+and a current faction. Native tests and author acceptance remain separate:
+CA447-01/CA448-01/CA449-01 are pending. #450-451 and the final V5.15 author terminal
+remain to be completed.
 
 V5.14/5.14.3 was accepted on2026-11-09: all five checks passed, #443-446 are
 closed and PR630-633 are merged with original ancestry. HISTORY retains each
