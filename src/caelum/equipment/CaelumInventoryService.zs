@@ -3528,6 +3528,7 @@ class CaelumInventoryService : Object play
     static void ClearCraftingTaskData(CaelumPlayer user)
     {
         if (!CaelumPlayerAuthority.CanMutate(user)) return;
+        CaelumMachineWork.Clear(user);
         let recipeRecord=user.GetPersistentCharacterState(false);
         if(recipeRecord!=null){recipeRecord.RecipeClaimSlots.Clear();recipeRecord.RecipeClaimAmounts.Clear();}
         CaelumWaterBoiling.Clear(user);CaelumChemistryCrafting.Clear(user);CaelumCookingCrafting.Clear(user);CaelumCampTask.Clear(user);CaelumHygieneTask.Clear(user);CaelumBathTask.Clear(user);CaelumCleaningTask.Clear(user);
@@ -6332,7 +6333,14 @@ class CaelumInventoryService : Object play
         int oldCapabilities = user.CraftingNetworkCapabilities;
         bool menuWasOpen = user.CraftingMenuOpen;
 
-        if(completedKind==CaelumConstants.CRAFTING_TASK_CLEAN)
+        if(completedKind==CaelumConstants.CRAFTING_TASK_MACHINE)
+        {
+            user.CraftingTaskCompleting=true;
+            bool completed=CaelumMachineWork.Complete(user);
+            user.CraftingTaskCompleting=false;
+            if(!completed)return;
+        }
+        else if(completedKind==CaelumConstants.CRAFTING_TASK_CLEAN)
         {user.LastCraftingAction=CaelumCleaningTask.Complete(user)?CaelumConstants.CRAFTING_ACTION_PROCESSED:CaelumConstants.CRAFTING_ACTION_FAILED_TARGET;}
         else if(completedKind==CaelumConstants.CRAFTING_TASK_BATH)
         {

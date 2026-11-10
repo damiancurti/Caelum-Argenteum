@@ -55,13 +55,18 @@ class CaelumAbsentMachine : Object play
             for(int i=0;i<cannon.Operators.Size();i++)
             {
                 let body=cannon.Operators[i];
-                if(CrewAlive(body) && body.bFriendly==cannon.Defending && (!attack || !CaelumBattleCry.Active(body)))count++;
+                if(CrewAlive(body) && CaelumMachineOwnership.Reserved(Machine,body) && (!attack || !CaelumBattleCry.Active(body)))count++;
             }
         }
         else for(int i=0;i<Machine.Crew.Size();i++)
         {
             let entry=Machine.Crew[i];let body=entry!=null?entry.Body:null;
-            if(CrewAlive(body) && !body.bFriendly && (!attack || !CaelumBattleCry.Active(body)))count++;
+            if(CrewAlive(body) && CaelumMachineOwnership.Reserved(Machine,body) && (!attack || !CaelumBattleCry.Active(body)))count++;
+        }
+        for(int i=0;i<Machine.ControlledCrew.Size();i++)
+        {
+            let body=CaelumCombatActor(Machine.ControlledCrew[i]);
+            if(CrewAlive(body) && CaelumMachineOwnership.Reserved(Machine,body) && (!attack || !CaelumBattleCry.Active(body)))count++;
         }
         return count;
     }
@@ -78,6 +83,7 @@ class CaelumAbsentMachine : Object play
     Actor Choose(CaelumCannon cannon)
     {
         if(Eligible(cannon,cannon.IntendedTarget))return cannon.IntendedTarget;
+        if(cannon.Captured || cannon.Encounter==null)return null;
         for(int i=0;i<Battle.Rows.Size();i++)if(Eligible(cannon,Battle.Rows[i].Body))return Battle.Rows[i].Body;
         let port=CaelumPortSiege(Battle.Encounter);
         if(!cannon.Defending && port!=null)
@@ -129,7 +135,7 @@ class CaelumAbsentMachine : Object play
             if(!InFlight.Spent)CannonContact(cannon,cannon.IntendedTarget,InFlight.Serial,InFlight.FlightVelocity);
             InFlight.Spent=true;InFlight.Destroy();InFlight=null;cannon.ActiveShot=null;
         }
-        if(!cannon.Armed || cannon.Neutralized)return;
+        if(!cannon.Armed || !cannon.Operational())return;
         int staff=Staffing();if(staff<=0)return;
         double ticks=seconds*TICRATE;
         while(ticks>0)
@@ -159,7 +165,7 @@ class CaelumAbsentMachine : Object play
 
     void RamAdvance(CaelumBatteringRam ram,double seconds)
     {
-        if(!ram.Enabled || !ram.Armed || ram.Neutralized || Staffing()<ram.RequiredCrew)return;
+        if(!ram.Enabled || !ram.Armed || !ram.Operational() || Staffing()<ram.RequiredCrew)return;
         let gate=ram.TargetGate;if(gate==null || gate.Opened || gate.Broken)return;
         double budget=seconds;
         while(budget>0)
@@ -188,7 +194,7 @@ class CaelumAbsentMachine : Object play
     {
         if(Machine==null || Machine.bDestroyed)return false;
         if(InFlight!=null && !InFlight.Spent)return true;
-        if(!Machine.Armed || Machine.Neutralized || Staffing()<=0)return false;
+        if(!Machine.Armed || !Machine.Operational() || Staffing()<=0)return false;
         let cannon=CaelumCannon(Machine);let ram=CaelumBatteringRam(Machine);
         if(cannon!=null)return (cannon.UnlimitedAmmunition || cannon.Ammunition>0) && Choose(cannon)!=null;
         return ram!=null && ram.Enabled && ram.TargetGate!=null && !ram.TargetGate.Broken
@@ -197,12 +203,6 @@ class CaelumAbsentMachine : Object play
 
     void Observe()
     {
-        if(Machine==null || !Machine.Armed || Machine.Neutralized || Machine.LocalGuards.Size()==0)return;
-        for(int i=0;i<Machine.LocalGuards.Size();i++)
-        {
-            let entry=Machine.LocalGuards[i];
-            if(entry!=null && !entry.ConfirmedDead && !(entry==Battle.Encounter.Boss && Battle.Encounter.BossRetreated))return;
-        }
-        Machine.Neutralized=true;Machine.NeutralizationCount++;Machine.Vel=(0,0,0);
+        if(Machine!=null)Machine.EnsureMachine();
     }
 }

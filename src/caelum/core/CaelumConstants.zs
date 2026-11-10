@@ -735,7 +735,7 @@ class CaelumConstants : Object
         CRAFTING_NETWORK_LEGACY_RECIPE_COUNT
         + CRAFTING_NETWORK_SHIELD_RECIPE_COUNT
         + CRAFTING_NETWORK_PROCESSING_RECIPE_COUNT
-        + CRAFTING_NETWORK_COMPONENT_RECIPE_COUNT + 15 + CaelumClothingData.COUNT + 7 + CaelumChemistryData.RECIPE_COUNT + CaelumMateData.COUNT + CaelumCampData.COUNT + CaelumHygieneData.RECIPE_COUNT + CaelumMealData.COUNT + CaelumStorageFurnitureData.COUNT + CaelumRestFurnitureData.COUNT;
+        + CRAFTING_NETWORK_COMPONENT_RECIPE_COUNT + 15 + CaelumClothingData.COUNT + 7 + CaelumChemistryData.RECIPE_COUNT + CaelumMateData.COUNT + CaelumCampData.COUNT + CaelumHygieneData.RECIPE_COUNT + CaelumMealData.COUNT + CaelumStorageFurnitureData.COUNT + CaelumRestFurnitureData.COUNT + CaelumMachineData.RECIPE_COUNT;
     // Se anexa sin mover ninguna receta aprendida (0..130).
     const CRAFTING_PICKAXE_RECIPE = 131;
     const CRAFTING_UTILITY_STAFF_RECIPE = 132;
@@ -830,6 +830,7 @@ class CaelumConstants : Object
     const CRAFTING_TASK_BATH = 10;
     const CRAFTING_TASK_CLEAN = 11;
     const CRAFTING_TASK_COOKING = 12;
+    const CRAFTING_TASK_MACHINE = 13;
     const CARTRIDGE_STATION_REVISION = 1;
     const CRAFTING_ACTIVE_STATION_DISTANCE = 96.0;
     const CRAFTING_SIMPLE_TICS_PER_MATERIAL = 1;

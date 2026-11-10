@@ -1,6 +1,38 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.15.1** - 2026-11-09.
+Documentation version: **5.15.2** - 2026-11-10.
+
+## 5.15.2 - Siege machines (#449, 2026-11-10)
+
+The author approved the catalogue, nominal costs/world times, existing efficiency
+and learning modifiers, repair references, faction selection, unlimited cannon
+ammunition and physical resistance. A later explicit decision replaced the old
+guard-death objective with capture/destruction only. Approved sabotage remains a
+temporary disable. All rules are consolidated in SYSTEMS.
+
+Review follow-up: the shared ES/EN siege introduction still described the retired
+guard-death objective. It now says capture or destruction, matching the author's
+approved rule. Dialogue/localization and document indexes were regenerated and
+checked; this text-only correction does not alter gameplay or manual acceptance.
+
+Native work uses one existing task/reservation ledger per character; schema1 binds
+the original physical pieces to one structural owner. Construction creates world
+equipment, not an850kg inventory item. Capture preserves damage and disabled state;
+won saves and actual destruction remain preserved on migration. Native tests and
+failed intermediate attempts are retained in assets/validation_v5_15_2. In particular,
+an enum/local name collision skipped proportional repair calculation; renaming the
+local and checking reserved inputs/duration caught and corrected the error. Tests
+must exercise real timed progression as well as direct invariant checks.
+Final native checks pass with two lockstep peers for task progression, real
+thirty-second operations, Attack/alternate Attack, save/reload and hub return.
+The captured ram moves with six real allied operators and damages a gate; old-save
+migration and original-package rollback pass. ES/EN panels and the owned barricade
+were visually inspected. One NVIDIA-driver crash on an intermediate reload is
+retained; exact retry and final reload pass. Paired siege presentation remains
+1.38/1.42FPS(base/delivery), so the existing rendering limitation remains unresolved.
+CA449-01 (origin5.15.2/#449) remains pending; approval of rules is not gameplay
+acceptance. Internet multiplayer and whole-game60FPS are not established here.
+
 
 ## 5.15.1 - Military command (#448, 2026-11-09)
 

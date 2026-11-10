@@ -226,6 +226,19 @@ class CaelumLiveMenuControls : Object ui
             Row(302);Button("CA_COMPANION_TRANSFER",InputEvent.Key_Enter,0,"",180);Button("CA_COMPANION_LOAN",0,108,"l",180);Button("CA_COMPANION_EQUIP",0,101,"e",180);
             Row(326);Button("CA_COMPANION_PREVIOUS",InputEvent.Key_UpArrow,0,"",180);Button("CA_COMPANION_NEXT",InputEvent.Key_DownArrow,0,"",180);Button("CA_UI_BACK",InputEvent.Key_Tab,0,"",180);
         }
+        else if(context==host.CTX_MACHINE)
+        {
+            let session=CaelumMachineSession(user.FindInventory('CaelumMachineSession'));
+            if(session!=null && session.Building)
+            {Row(274);Button("CA_MACHINE_BUILD",0,49,"1",560);}
+            else
+            {
+                Row(226);Button("CA_MACHINE_REPAIR",0,49,"1",180);Button("CA_MACHINE_SABOTAGE",0,50,"2",180);Button("CA_MACHINE_CAPTURE",0,51,"3",180);
+                Row(252);Button("CA_MACHINE_OPERATE",0,52,"4",280);Button("CA_MACHINE_ASSIGN_CREW",0,53,"5",280);
+                Row(278);Button("CA_MACHINE_RESUME",0,54,"6",280);Button("CA_MACHINE_CANCEL",0,55,"7",280);
+            }
+            Row(326);Button("CA_MACHINE_PREVIOUS",InputEvent.Key_LeftArrow,0,"",180);Button("CA_MACHINE_NEXT",InputEvent.Key_RightArrow,0,"",180);Button("CA_UI_BACK",InputEvent.Key_Tab,0,"",180);
+        }
         else if(context==host.CTX_MILITARY)
         {
             let session=CaelumMilitarySession(user.FindInventory('CaelumMilitarySession'));

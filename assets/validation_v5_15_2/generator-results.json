@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "hashes": {
+    "src/MODELDEF": "05fe48a0ddf914c8f2b4d4b329df495cacf22f745783ce0979d8f5a1bf0b0692",
+    "src/caelum/data/CaelumMachineMaterials.zs": "dc8ca4822010996cd092616f9b7b8bf870e4dcaee81ff844dbb81cc9d69552d7",
+    "src/models/caelum/siege/ca_barricade.obj": "9ed221cb4572603596fb7c2e3174130c4653c5f9f5c49432eac238eb3b078106"
+  },
+  "moving_mass": 2874.9907009909484,
+  "frame_mass": 2250.645505735003,
+  "original_masses_preserved": true
+}

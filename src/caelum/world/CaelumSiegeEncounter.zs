@@ -206,7 +206,7 @@ class CaelumSiegeEncounter : Actor
         for (int i = 0; i < Machines.Size(); i++)
         {
             if (Machines[i] == null) return; // Ausencia no implica neutralización.
-            if (Machines[i].Neutralized) NeutralizedCount++;
+            if (Machines[i].ObjectiveNeutralized()) NeutralizedCount++;
         }
         if (NeutralizedCount != 12 || !BossDefeated()) return;
         Victory = true; VictoryCount++;
@@ -227,6 +227,43 @@ class CaelumSiegeEncounter : Actor
 // Base reutilizable por los seis arietes y los seis cañones atacantes (#21).
 class CaelumHostileMachine : Actor
 {
+    int MachineRevision,OwnerFaction,DamageSerial;
+    bool Captured,Sabotaged,CapturedIntact;
+    CaelumMachineStructure Structure;
+    CaelumPlayer Worker;
+    Array<Actor> ControlledCrew;
+
+    int MachineKind()
+    {let ram=CaelumBatteringRam(self);return ram==null?CaelumMachineData.CANNON:ram.Large?CaelumMachineData.LARGE_RAM:CaelumMachineData.SMALL_RAM;}
+
+    void EnsureMachine()
+    {
+        if(MachineRevision>=CaelumMachineData.REVISION)return;
+        let cannon=CaelumCannon(self);let ram=CaelumBatteringRam(self);
+        if((cannon!=null && !cannon.Initialized) || (ram!=null && !ram.Initialized))return;
+        MachineRevision=CaelumMachineData.REVISION;
+        OwnerFaction=cannon!=null && cannon.Defending?CaelumMilitaryData.GUARD_FACTION:CaelumMachineData.ENEMY_OWNER;
+        // La victoria ya ganada no se revoca. Una máquina intacta no se vuelve
+        // destruida por las bajas de sus antiguos guardias al migrar.
+        if(!TarotDestroyed){Neutralized=false;NeutralizationCount=0;}
+        Structure=CaelumMachineStructure(Spawn('CaelumMachineStructure',Pos,NO_REPLACE));
+        if(Structure!=null)
+        {
+            Structure.Machine=self;Structure.Angle=Angle;Structure.InitializeGate();
+            if(TarotDestroyed){Structure.Broken=true;Structure.Opened=true;Structure.health=0;}
+            health=Structure.health;
+        }
+        BindStructure();
+        let gun=CaelumCannon(self);
+        if(gun!=null)for(int i=0;i<gun.Operators.Size();i++)CaelumMachineOperator.Assign(gun.Operators[i],self);
+        for(int i=0;i<Crew.Size();i++)if(Crew[i]!=null)CaelumMachineOperator.Assign(Crew[i].Body,self);
+    }
+    virtual void BindStructure() {}
+    bool ObjectiveNeutralized()
+    {EnsureMachine();return TarotDestroyed || Captured;}
+    bool Operational()
+    {return !TarotDestroyed && !Neutralized && !Sabotaged && health>0;}
+
     int TarotMachineRevision;
     bool TarotDestroyed;
 
@@ -247,9 +284,10 @@ class CaelumHostileMachine : Actor
         // El registro de objetivo permanece: null nunca equivale a victoria.
         if(!Neutralized){Neutralized=true;NeutralizationCount++;}
         Armed=false;health=0;Vel=(0,0,0);
+        if(Structure!=null){Structure.Broken=true;Structure.Opened=true;Structure.health=0;}
         for(int i=0;i<Crew.Size();i++)
             if(Crew[i]!=null && Crew[i].CrewMachine==self)Crew[i].CrewMachine=null;
-        Crew.Clear();RemoveMachineParts();
+        CaelumMachineOwnership.ReleaseCrew(self);RemoveMachineParts();
         if(Encounter!=null)Encounter.ResolveVictory();
         return true;
     }
@@ -277,7 +315,8 @@ class CaelumHostileMachine : Actor
     bool AssignCrew(CaelumSiegeCombatant entry)
     {
         if (entry == null || entry.Encounter != Encounter || entry.Body == null
-            || !(entry.Body is "CaelumMandinga") || entry.ConfirmedDead || Neutralized) return false;
+            || !(entry.Body is "CaelumMandinga") || entry.ConfirmedDead || Neutralized
+            || OwnerFaction!=CaelumMachineData.ENEMY_OWNER) return false;
         for (int i = 0; i < Crew.Size(); i++) if (Crew[i] == entry) return true;
         if (entry.Body.health <= 0 || entry.Body.bFriendly || entry.CrewMachine != null) return false;
         int vacancy=-1;
@@ -285,6 +324,7 @@ class CaelumHostileMachine : Actor
             if(Crew[i]==null || Crew[i].ConfirmedDead || Crew[i].Body==null || Crew[i].Body.health<=0)
             {vacancy=i;break;}
         if(vacancy<0 && Crew.Size()>=RequiredCrew)return false;
+        if(!CaelumMachineOperator.Assign(entry.Body,self))return false;
         entry.CrewMachine = self;
         if(vacancy<0)Crew.Push(entry);
         else
@@ -305,6 +345,7 @@ class CaelumHostileMachine : Actor
 
     bool FullCrewPresent(bool attacking=false)
     {
+        if(OwnerFaction>=0)return CaelumMachineOwnership.Staffing(self,attacking)>=RequiredCrew;
         if (RequiredCrew <= 0 || Crew.Size() != RequiredCrew) return false;
         for (int i = 0; i < Crew.Size(); i++)
             if (!IsNearby(Crew[i]) || (attacking && CaelumBattleCry.Active(Crew[i].Body))) return false;
@@ -313,6 +354,8 @@ class CaelumHostileMachine : Actor
 
     bool HasIntimidatedCrew()
     {
+        for(int i=0;i<ControlledCrew.Size();i++)
+            if(CaelumMachineOwnership.Reserved(self,ControlledCrew[i]) && CaelumBattleCry.Active(ControlledCrew[i]))return true;
         for(int i=0;i<Crew.Size();i++)
             if(Crew[i]!=null && CaelumBattleCry.Active(Crew[i].Body))return true;
         return false;
@@ -320,7 +363,7 @@ class CaelumHostileMachine : Actor
 
     bool ArmMachine()
     {
-        if (Neutralized || Encounter == null || !Encounter.RosterSealed) return false;
+        if (!Operational() || Encounter == null || !Encounter.RosterSealed) return false;
         Armed = true;
         ObserveGuards();
         return true;
@@ -329,41 +372,9 @@ class CaelumHostileMachine : Actor
     void ObserveGuards()
     {
         EnsureTarotMachine();
-        if (!Armed || Neutralized || Encounter == null) return;
-        let population=CaelumPopulationState.Get();
-        if(population!=null && population.HighDensity)
-        {
-            let nearby=BlockThingsIterator.Create(self,GuardRadius);
-            while(nearby.Next())
-            {
-                let body=CaelumCombatActor(nearby.thing);
-                if(body==null || body.SiegeCombatant==null)continue;
-                let entry=body.SiegeCombatant;
-                if(entry.Encounter==Encounter && IsNearby(entry))RememberGuard(entry);
-            }
-            // Los actores excluidos de la blockmap conservan el mismo radio
-            // tridimensional y la misma memoria de guardias que los demás.
-            for(int i=0;i<population.UnlinkedGuards.Size();i++)
-            {
-                let entry=population.UnlinkedGuards[i];
-                if(entry.Encounter==Encounter && IsNearby(entry))RememberGuard(entry);
-            }
-        }
-        else
-        {
-            for (int i = 0; i < Encounter.Attackers.Size(); i++)
-            {
-                let entry = Encounter.Attackers[i];
-                if (IsNearby(entry)) RememberGuard(entry);
-            }
-        }
-        if (LocalGuards.Size() == 0) return;
-        for (int i = 0; i < LocalGuards.Size(); i++)
-            if (!LocalGuards[i].ConfirmedDead
-                && !(LocalGuards[i] == Encounter.Boss && Encounter.BossRetreated)) return;
-        Neutralized = true;
-        NeutralizationCount++;
-        Vel = (0, 0, 0);
+        EnsureMachine();
+        // #449 reemplaza expresamente la neutralización por bajas. Se retienen
+        // los registros históricos, pero sólo capturar o destruir completa el objetivo.
     }
 
     override void Tick() { Super.Tick(); ObserveGuards(); }

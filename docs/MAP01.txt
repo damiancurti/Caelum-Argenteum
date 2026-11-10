@@ -1,6 +1,17 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.15.1** - 2026-11-09.
+Documentation version: **5.15.2** - 2026-11-10.
+
+## 5.15.2 / #449 - Barracas machine ownership
+
+The original twelve hostile machines retain their physical identities. Capture
+or destruction neutralizes them; sabotage and nearby casualties do not. Captured
+equipment stays where it is and belongs to one selected current faction. New
+barricades/cannons are world constructions and never add victory objectives.
+Guard assignment uses the approved Unitarian command access; operation itself
+requires ownership-faction membership only. No map geometry, army reserve or
+sewer connection is introduced. #450 defines the separate delivery objective.
+
 
 ## 5.15.1 / #448 - Barracas guard allegiance and command
 

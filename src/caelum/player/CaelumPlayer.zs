@@ -5965,6 +5965,7 @@ class CaelumPlayer : DoomPlayer
         int result=Super.DamageMobj(inflictor,source,damage,mod,flags,damageAngle);
         if(introduced)player.cheats&=~CF_BUDDHA2;
         CaelumSleepRules.HealthLost(self,before);
+        if(health<before)CaelumMachineWork.Interrupt(self);
         // No contar HP bloqueado por el piso ni atribuir daño anidado a este golpe.
         return protect ? Max(0,Min(result,before-health)) : result;
     }
@@ -5982,6 +5983,7 @@ class CaelumPlayer : DoomPlayer
         CaelumSleepRules.HealthLost(self,before);
         if(health<before)
         {
+            CaelumMachineWork.Interrupt(self);
             if(!CaelumToughnessRules.IsSustained(mod))CaelumRestSafety.Interrupt(self,"CA_REST_DAMAGE");
             if(mod!='CaelumDiseaseDOT')CaelumHygienePose.Cancel(self);
             CaelumDamageFeedback.Record(self,inflictor,mod,Max(0,before)-Max(0,health));
@@ -7217,6 +7219,7 @@ class CaelumPlayer : DoomPlayer
         if(CaelumCleaningTask.Active(self) && player!=null && (player.cmd.buttons&(BT_ATTACK|BT_ALTATTACK))!=0)CaelumCleaningTask.Cancel(self);
         if (player != null && (player.cmd.buttons & BT_USER4) == 0) ClassSleepInputLatched = false;
         CaelumClassAbilityRules.FilterInput(self);
+        CaelumMachineOperator.FilterInput(self);
         if(CaelumBattleCry.Active(self) && player!=null)
             player.cmd.buttons &= ~(BT_ATTACK|BT_ALTATTACK);
         if (player != null && (player.cmd.buttons & BT_USER3) == 0) CombatTarotInputReserved = false;

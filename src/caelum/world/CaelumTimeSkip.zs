@@ -126,6 +126,8 @@ class CaelumTimeSkipState : Inventory
         let reading=CaelumRecipeSession.Get(user);return user.CraftingTaskActive?user.ActiveCraftingStationActor:reading!=null?reading.Anchor:null;}
     static double TaskSeconds(CaelumPlayer user)
     {
+        if(CaelumMachineWork.Active(user) && !CaelumMachineWork.RealTime(user))
+            return user.CraftingTaskRemainingSeconds/(CaelumThermalRuntime.WorldTicSeconds()*TICRATE);
         if(CaelumCampCooking.Active(user))return (user.CraftingTaskRemainingSeconds+CaelumCookingTaskState.FindCooking(user).IgnitionSeconds)
             /(CaelumThermalRuntime.WorldTicSeconds()*TICRATE);
         let reading=CaelumRecipeSession.Get(user);

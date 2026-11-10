@@ -11,21 +11,27 @@ DATA = json.loads(Path(__file__).with_name('ram_physics.json').read_text(encodin
 U = SPEC['map_units_per_metre']
 
 
-def generate():
+def component_volumes():
+    """Return the authoritative moving/frame wood and iron volumes in MU cubed."""
     # Match the existing sixteen-sided solid log/head, three hollow bands,
     # six handles and end plate. No frame, wheels or crew enter this mass.
     polygon = 8 * math.sin(math.tau / 16)
     wood_volume = polygon * 11**2 * 112 + 6 * 4 * 4 * 17
     iron_volume = polygon * (12**2 + 12*14 + 14**2) * 10 / 3
     iron_volume += 4 * 25 * 25 + 3 * polygon * (11.7**2 - 11**2) * 4
-    moving_mass = (wood_volume * DATA['oak_kg_m3'] + iron_volume * DATA['iron_kg_m3']) / U**3
-    scale = (DATA['large_crew'] / DATA['small_crew'])**(1/3)
     # Coarse transport-only estimate: beams/wheels/axles; overlaps and voids
     # imply uncertainty. Never used by the striking assembly's damage path.
     frame_wood = 2*150*8*8 + 2*8*8*70 + 4*70*6*6 + 2*9*7*38 + 2*110*4*4
     frame_wood += 4 * math.pi * 15**2 * 7
     frame_iron = 2 * math.pi * 2**2 * 84 + 4*7*8*7
+    return wood_volume, iron_volume, frame_wood, frame_iron
+
+
+def generate():
+    wood_volume, iron_volume, frame_wood, frame_iron = component_volumes()
+    moving_mass = (wood_volume * DATA['oak_kg_m3'] + iron_volume * DATA['iron_kg_m3']) / U**3
     frame_mass = (frame_wood*DATA['oak_kg_m3'] + frame_iron*DATA['iron_kg_m3']) / U**3
+    scale = (DATA['large_crew'] / DATA['small_crew'])**(1/3)
 
     def threshold(reduction, gate_mass):
         toughness = (math.sqrt(1 + 20200 * reduction / (1-reduction)) - 1) / 2

@@ -5093,3 +5093,16 @@ Model CaelumLargeLandscapePainting
 
 #include "caelum/data/powerups.modeldef"
 #include "caelum/data/hunt_arcana.modeldef"
+
+// BEGIN GENERATED BARRICADE
+Model CaelumBarricadeVisual
+{
+    Path "models/caelum/siege"
+    Model 0 "ca_barricade.obj"
+    Scale 1 1 1
+    CorrectPixelStretch
+    DontCullBackFaces
+    FrameIndex CAGT A 0 0
+    FrameIndex CAGT B 0 0
+}
+// END GENERATED BARRICADE

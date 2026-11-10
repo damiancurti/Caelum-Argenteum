@@ -55,6 +55,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
     bool SubcaptainCreated;
     CaelumCompanionSubcaptain Subcaptain;
     CaelumMilitaryCommand Military;
+    Array<Actor> ConstructedDefenses;
 
     void EnsureMilitary()
     {
@@ -67,7 +68,12 @@ class CaelumPortSiege : CaelumSiegeEncounter
     {
         int living=0;
         for(int i=0;i<Defenders.Size();i++)if(Defenders[i]!=null && Defenders[i].health>0)living++;
-        for(int i=0;i<Guns.Size();i++)if(Guns[i]!=null && Guns[i].health>0)living++;
+        for(int i=0;i<Guns.Size();i++)if(Guns[i]!=null && Guns[i].health>0)
+        {Guns[i].EnsureMachine();if(Guns[i].OwnerFaction>=0)living++;}
+        for(int i=0;i<Machines.Size();i++)if(Machines[i] is 'CaelumBatteringRam' && Machines[i].health>0)
+        {Machines[i].EnsureMachine();if(Machines[i].OwnerFaction>=0)living++;}
+        for(int i=0;i<ConstructedDefenses.Size();i++)
+            if(ConstructedDefenses[i]!=null && !ConstructedDefenses[i].bDestroyed && ConstructedDefenses[i].health>0)living++;
         // Solo al intentar el alta del subcapitan; planteles tipados y nueve identidades por jugador.
         for(int n=0;n<MAXPLAYERS;n++)
         {
@@ -174,7 +180,8 @@ class CaelumPortSiege : CaelumSiegeEncounter
         }
         // Las dotaciones ya estan en Attackers; las maquinas se cuentan una vez.
         for(int i=0;i<Machines.Size();i++)
-            if(Machines[i]!=null && !Machines[i].bDestroyed && Machines[i].health>0)result++;
+            if(Machines[i]!=null && !Machines[i].bDestroyed && Machines[i].health>0)
+            {Machines[i].EnsureMachine();if(Machines[i].OwnerFaction<0)result++;}
         return result;
     }
 
@@ -506,7 +513,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
         // conserva su asignación; las máquinas neutralizadas no se reactivan.
         for(int i=0;i<Machines.Size();i++)
         {
-            let ram=CaelumBatteringRam(Machines[i]);if(ram==null || ram.Neutralized)continue;
+            let ram=CaelumBatteringRam(Machines[i]);if(ram==null || ram.Neutralized || ram.OwnerFaction>=0)continue;
             for(int slot=0;slot<ram.Crew.Size();slot++)
             {
                 let old=ram.Crew[slot];
@@ -520,7 +527,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
         }
         for(int i=0;i<Guns.Size();i++)
         {
-            let gun=Guns[i];if(gun==null || gun.Neutralized)continue;
+            let gun=Guns[i];if(gun==null || gun.Neutralized || gun.Captured)continue;
             for(int slot=0;slot<gun.Operators.Size();slot++)
             {
                 if(gun.Operators[slot]!=null && gun.Operators[slot].health>0)continue;
@@ -603,7 +610,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
     {
         for(int i=0;i<Guns.Size();i++)
         {
-            let gun=Guns[i];if(gun==null || gun.Neutralized || !gun.Armed)continue;
+            let gun=Guns[i];if(gun==null || !gun.Operational() || !gun.Armed || gun.Captured)continue;
             if(gun.Phase!=CaelumCannon.LOADED)continue;
             if(gun.Requested && gun.EligibleTarget(gun.IntendedTarget))continue;
             if(HighDensity && level.time<gun.NextTargetQuery)continue;
@@ -708,7 +715,8 @@ class CaelumPortSiege : CaelumSiegeEncounter
             if(!port.Victory && !immediate && soldier.Carbine!=null && soldier.Carbine.Attack(soldier,threat))return true;
             if(!immediate && soldier.AdvanceDeployment())return true;
         }
-        if(port.Victory && (military==null || soldier.MilitaryOrderKind==CaelumMilitaryData.NONE))
+        bool playerCrew=CaelumMachineOwnership.HasPost(soldier);
+        if(port.Victory && !playerCrew && (military==null || soldier.MilitaryOrderKind==CaelumMilitaryData.NONE))
         {
             // Ganar antes de llegar no cancela la salida física ni deja a los
             // operadores a mitad de la escalera. Los cañones siguen desarmados.
@@ -730,8 +738,9 @@ class CaelumPortSiege : CaelumSiegeEncounter
                 && Abs(soldier.Pos.Z-soldier.Station.Z)>soldier.MaxStepHeight)
                 for(int i=6;i<port.Guns.Size();i++)if(port.Guns[i]==soldier.Gun){soldier.BeginCrewRoute(i-6);break;}
             victim=port.Victory?null:CaelumVisualPerception.Acquire(soldier);post=soldier.CrewPost();
-            if(military!=null && soldier.MilitaryOrderKind!=CaelumMilitaryData.NONE && soldier.Gun==null)post=military.Post(soldier);
-            hasPost=soldier.Gun!=null || victim==null
+            if(playerCrew)post=CaelumMachineOwnership.Post(soldier);
+            else if(military!=null && soldier.MilitaryOrderKind!=CaelumMilitaryData.NONE && soldier.Gun==null)post=military.Post(soldier);
+            hasPost=playerCrew || soldier.Gun!=null || victim==null
                 || (military!=null && soldier.MilitaryOrderKind!=CaelumMilitaryData.NONE)
                 || (victim.Pos-post).Length()>CaelumPortData.COMMAND_LINK_RADIUS;
             if(soldier.NavigationTarget==null)soldier.NavigationTarget=Actor.Spawn("CaelumSewerEscapeTarget",post);
@@ -746,7 +755,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
             goal=entry.NavigationTarget;
         }
         // Un operador conserva su puesto; el resto busca dentro del sector de defensa ya autorizado.
-        if(soldier!=null && soldier.Gun==null && victim==null && (military==null || soldier.MilitaryOrderKind==CaelumMilitaryData.NONE))
+        if(soldier!=null && !playerCrew && soldier.Gun==null && victim==null && (military==null || soldier.MilitaryOrderKind==CaelumMilitaryData.NONE))
         {
             let search=CaelumVisualPerception.SearchGoal(body);
             if(search!=null && (search.Pos-post).Length()<=CaelumPortData.COMMAND_LINK_RADIUS)
@@ -757,7 +766,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
         if(soldier!=null && soldier.Carbine!=null)soldier.Carbine.Select(!nearEnemy);
         if(hasPost && !nearEnemy && (body.Pos-post).Length()>body.Radius)
         {
-            if(soldier!=null && military!=null && soldier.MilitaryOrderKind!=CaelumMilitaryData.NONE && soldier.Gun==null)
+            if(soldier!=null && !playerCrew && military!=null && soldier.MilitaryOrderKind!=CaelumMilitaryData.NONE && soldier.Gun==null)
             {
                 if(!body.InStateSequence(body.CurState,body.SeeState)){body.SetState(body.SeeState);return true;}
                 soldier.MilitaryMoving=true;soldier.MilitaryCrewStep=-1;

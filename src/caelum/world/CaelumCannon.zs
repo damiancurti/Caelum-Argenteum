@@ -9,7 +9,7 @@ class CaelumCannonBarrel : Actor
     Default { +NOBLOCKMAP +NOGRAVITY }
     States { Spawn: CCBR A -1; Stop; Loading: CCBR B -1; Stop; }
 }
-class CaelumCannonBlock : Actor
+class CaelumCannonBlock : CaelumMachineBlock
 {
     Default { Radius 4; Height 12; +SOLID +NOGRAVITY +NOBLOOD +NODAMAGETHRUST }
     States { Spawn: TNT1 A -1; Stop; }
@@ -58,22 +58,25 @@ class CaelumCannon : CaelumHostileMachine
             block.master=self; Blocks.Push(block);
         }
         PlaceComponents();
+        EnsureMachine();
     }
+
+    override void BindStructure()
+    {for(int i=0;i<Blocks.Size();i++)if(Blocks[i]!=null)Blocks[i].master=Structure;}
 
     bool AssignOperator(CaelumCombatActor body)
     {
-        if(!Initialized || body==null || body.health<=0 || Neutralized)return false;
-        if(body.bFriendly!=Defending)return false;
+        if(!Initialized || body==null || body.health<=0 || !Operational())return false;
+        if(!CaelumMachineOwnership.Eligible(self,body))return false;
+        CaelumMachineOwnership.PruneControlled(self);
         if(!Defending && (body.SiegeCombatant==null || body.SiegeCombatant.Encounter!=Encounter))return false;
-        for(int i=0;i<Operators.Size();i++)if(Operators[i]==body)return true;
+        for(int i=0;i<Operators.Size();i++)if(Operators[i]==body)return CaelumMachineOperator.Assign(body,self);
         int vacancy=-1;
-        for(int i=0;i<Operators.Size();i++)if(Operators[i]==null || Operators[i].health<=0){vacancy=i;break;}
-        if(vacancy<0 && Operators.Size()>=CaelumCannonData.CREW)return false;
+        for(int i=0;i<Operators.Size();i++)if(!CaelumMachineOwnership.Reserved(self,Operators[i])){vacancy=i;break;}
+        if(CaelumMachineOwnership.Assigned(self)>=CaelumCannonData.CREW)return false;
         // Un mismo operador no abastece dos máquinas a la vez.
-        let it=ThinkerIterator.Create("CaelumCannon"); CaelumCannon other;
-        while((other=CaelumCannon(it.Next()))!=null)
-            for(int i=0;other!=self && i<other.Operators.Size();i++)if(other.Operators[i]==body)return false;
         if(body.SiegeCombatant!=null && body.SiegeCombatant.CrewMachine!=null)return false;
+        if(!CaelumMachineOperator.Assign(body,self))return false;
         if(vacancy<0)Operators.Push(body);
         else
         {
@@ -127,15 +130,13 @@ class CaelumCannon : CaelumHostileMachine
 
     int OperatorsPresent(bool attacking=false)
     {
-        int count=0;
+        int count=CaelumMachineOwnership.Staffing(self,attacking);
         for(int i=0;i<Operators.Size();i++)
         {
             let body=Operators[i];
             let resident=CaelumPortDefender(body);
             if(resident!=null && resident.Residence!=null && resident.Residence.Suspended)continue;
-            if(body!=null && body.health>0 && body.bFriendly==Defending
-                && (body.Pos-Pos).Length()<=GuardRadius
-                && (!attacking || !CaelumBattleCry.Active(body)))count++;
+            if(CaelumMachineOwnership.Present(self,body,attacking))count++;
         }
         return count;
     }
@@ -154,6 +155,8 @@ class CaelumCannon : CaelumHostileMachine
     {
         if(victim==null)return true; // Punto de mira explícito del escenario.
         if(victim.health<=0)return false;
+        let machine=CaelumMajorTargets.Machine(victim);
+        if(machine!=null)return machine!=self && machine.Operational() && (machine.OwnerFaction<0)==Defending;
         if(victim is "CaelumGateBlocker" || victim is "CaelumBreakableGate")return !Defending;
         if(victim is "CaelumPlayer")return !Defending;
         let npc=CaelumCombatActor(victim);
@@ -164,7 +167,7 @@ class CaelumCannon : CaelumHostileMachine
 
     bool RequestShot(vector3 point, Actor intended=null)
     {
-        if(!Armed || Neutralized || !EligibleTarget(intended))return false;
+        if(!Armed || !Operational() || !EligibleTarget(intended))return false;
         if(OperatorsPresent()>0 && OperatorsPresent(true)==0)return false;
         // El tiro pendiente conserva su punto y blanco; no se reasigna a mitad de carga.
         if(Requested)return true;
@@ -216,7 +219,7 @@ class CaelumCannon : CaelumHostileMachine
 
     void Fire()
     {
-        if(!Armed || Neutralized || Phase!=LOADED || OperatorsPresent(true)==0)return;
+        if(!Armed || !Operational() || Phase!=LOADED || OperatorsPresent(true)==0)return;
         if(!EligibleTarget(IntendedTarget)){CancelShot();return;}
         if(ActiveShot!=null || (!UnlimitedAmmunition && Ammunition<=0))return;
         vector3 pivot=Pos+(0,0,CaelumCannonData.PIVOT_Z);
@@ -236,6 +239,7 @@ class CaelumCannon : CaelumHostileMachine
         shot.Launcher=self; shot.target=self; shot.master=self;
         shot.Defending=Defending; shot.Serial=ShotSerial;
         for(int i=0;i<Operators.Size();i++)if(Operators[i]!=null && Operators[i].health>0)LastOperator=Operators[i];
+        for(int i=0;i<ControlledCrew.Size();i++)if(CaelumMachineOwnership.Present(self,ControlledCrew[i],true))LastOperator=ControlledCrew[i];
         shot.Operator=LastOperator;
         shot.Vel=direction*CaelumCannonData.SPEED;
         if(IntendedTarget!=null && CaelumBallistics.AimProjectile(shot,AimPoint,0,0,true))
@@ -266,7 +270,7 @@ class CaelumCannon : CaelumHostileMachine
             Work=int(double(Work)*CaelumCannonData.CYCLE/CaelumCannonData.LEGACY_CYCLE);
             CycleRevision=1;
         }
-        if(!Initialized || !Armed || Neutralized)return;
+        if(!Initialized || !Armed || !Operational())return;
         if(OperatorsPresent()>0 && OperatorsPresent(true)==0)CancelShot();
         int staffing=OperatorsPresent();
         if(staffing==0)return;
@@ -322,6 +326,8 @@ class CaelumCannonProjectile : FastProjectile
 
     bool Eligible(Actor victim)
     {
+        let machine=CaelumMajorTargets.Machine(victim);
+        if(machine!=null)return !machine.TarotDestroyed && (machine.OwnerFaction<0)==Defending;
         if(victim is "CaelumGateBlocker")return !Defending;
         if(victim is "CaelumPlayer")return !Defending;
         let npc=CaelumCombatActor(victim);
@@ -384,7 +390,7 @@ class CaelumCannonProjectile : FastProjectile
 
     override int SpecialMissileHit(Actor victim)
     {
-        if(victim==Launcher || (victim is "CaelumCannonBlock" && victim.master==Launcher))return MHIT_PASS;
+        if(victim==Launcher || (Launcher!=null && CaelumMajorTargets.Machine(victim)==Launcher))return MHIT_PASS;
         if(!victim.bSolid && !victim.bShootable)return MHIT_PASS;
         ResolveContact(victim);
         return 0; // Bloqueo; daño ya resuelto, sin DamageMobj nativo adicional.

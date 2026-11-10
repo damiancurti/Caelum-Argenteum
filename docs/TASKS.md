@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.15.1** - 2026-11-09.
+Documentation version: **5.15.2** - 2026-11-10.
+
+## 5.15.2 / #449 - Machine delivery and author check
+
+Construction, repair, timed sabotage/capture and faction operation are implemented.
+Keep #449 commits/evidence/PR separate from #447/#448 and the remaining #450/#451.
+Native save/hub, old-save migration/rollback, timed operations, allied ram movement
+and ES/EN visual checks pass; exact hashes and performance limits are recorded in
+assets/validation_v5_15_2. CA449-01 remains outstanding. Prepare the combined author
+terminal only after #451; no V5.15 merge/closure or author acceptance is inferred.
+
 
 ## 5.15.1 / #448 - Command delivery and author check
 

@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.15.1** - 2026-11-09.
+Documentation version: **5.15.2** - 2026-11-10.
+
+## 5.15.2 / #449 - Siege equipment delivery
+
+Approved barricade/cannon construction, proportional repairs, timed sabotage,
+capture, physical destruction and faction-only operation extend the accepted
+machines. Native material reservations and persistent world identities are reused.
+Only capture/destruction now neutralizes original machines; existing won saves
+remain won. SYSTEMS contains the author-approved rules. Validation is recorded
+separately in assets/validation_v5_15_2; CA449-01 awaits author acceptance.
+#450 routes/objectives and #451 consequences remain separate patches.
+
 
 ## 5.15.1 / #448 - Military command
 

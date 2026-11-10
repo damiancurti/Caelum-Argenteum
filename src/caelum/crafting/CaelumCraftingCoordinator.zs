@@ -861,6 +861,8 @@ class CaelumCraftingCoordinator : Object play
             return;
         }
         if (!user.CanStartCraftingTask()) { return; }
+        if(CaelumMachineData.IsRecipe(user.CraftingSelectionRecipe))
+        {CaelumMachineSession.BuildMenu(user);return;}
         if (CaelumUtilityCrafting.IsRecipe(user.CraftingSelectionRecipe)
             && !CaelumLockRules.IsRecipe(user.CraftingSelectionRecipe)
             && !CaelumCampData.IsRecipe(user.CraftingSelectionRecipe)
@@ -1482,6 +1484,7 @@ class CaelumCraftingCoordinator : Object play
             if(CaelumRestFurnitureData.IsRecipe(user.CraftingSelectionRecipe))CaelumRestFurnitureCrafting.Preview(user);
             if(CaelumStorageFurnitureData.IsRecipe(user.CraftingSelectionRecipe))CaelumStorageFurnitureCrafting.Preview(user);
             if(CaelumCampData.IsRecipe(user.CraftingSelectionRecipe))CaelumCampCrafting.Preview(user);
+            if(CaelumMachineData.IsRecipe(user.CraftingSelectionRecipe))CaelumMachineCrafting.Preview(user);
             if(user.CraftingSelectionRecipe==CaelumHygieneData.CLOTH_RECIPE)CaelumHygieneCrafting.Preview(user);
 
             // El montaje y la reparación producen un objeto indivisible. Una
@@ -1659,6 +1662,7 @@ class CaelumCraftingCoordinator : Object play
 
     static bool RefreshActiveCraftingStationSession(CaelumPlayer user, bool recipeInfrastructure = true)
     {
+        if(CaelumMachineWork.Active(user))return CaelumMachineWork.Attended(user);
         if(CaelumCampCooking.Active(user))
         {
             let task=CaelumCookingTaskState.FindCooking(user);
@@ -1945,6 +1949,7 @@ class CaelumCraftingCoordinator : Object play
         if (!user.RefreshActiveCraftingStationSession()) { return; }
         user.CraftingTaskProgressing = true;
         CaelumTimeSkipState.RecordWork(user);
+        if(CaelumMachineWork.Active(user)){CaelumMachineWork.Advance(user);return;}
         if(CaelumCampCooking.Active(user)){CaelumCampCooking.Advance(user);return;}
         if(CaelumCleaningTask.Active(user)){CaelumCleaningTask.Advance(user,CaelumThermalRuntime.WorldTicSeconds());return;}
         if(CaelumBathTask.Active(user)){CaelumBathTask.Advance(user,CaelumThermalRuntime.WorldTicSeconds());return;}

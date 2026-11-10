@@ -50,10 +50,11 @@ class CaelumMajorTargets : Object play
         return combat!=null?CaelumVisualPerception.RelatedOpponent(combat,user):CaelumSummoning.Enemy(user,body);
     }
 
-    static CaelumHostileMachine Machine(Actor hit)
+    static clearscope CaelumHostileMachine Machine(Actor hit)
     {
         if(hit==null)return null;
         if(hit is 'CaelumCannonBlock' || hit is 'CaelumRamBlock')hit=hit.master;
+        if(hit is 'CaelumMachineStructure')hit=CaelumMachineStructure(hit).Machine;
         return hit is 'CaelumCannon' || hit is 'CaelumBatteringRam'
             ? CaelumHostileMachine(hit) : null;
     }
