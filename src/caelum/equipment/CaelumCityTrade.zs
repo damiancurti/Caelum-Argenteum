@@ -36,7 +36,9 @@ class CaelumCityMerchant : Actor
     {
         for(int i=0;i<CaelumCityData.SHOP_COUNT;i++)
         {
+            if(CaelumBattleConsequences.MerchantDead(i))continue;
             let vendor=Find(i);
+            if(vendor!=null && vendor.health<=0){CaelumBattleConsequences.MerchantDied(vendor);continue;}
             if(vendor==null)
             {
                 vendor=CaelumCityMerchant(Actor.Spawn("CaelumCityMerchant",CaelumCityData.ShopPosition(i),NO_REPLACE));

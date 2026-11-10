@@ -1,6 +1,44 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.15.3** - 2026-11-10.
+Documentation version: **5.15.4** - 2026-11-10.
+
+## 5.15.4 - Persistent siege consequences (#451, 2026-11-10)
+
+The author approved occupation without ending a survivor's campaign, closure of
+civilian shops and departing transport, actual deaths without replacements,
+liberation through the existing original-machine/Zupay objective, and recovery
+after24 world hours. Victory or liberation awards+100 Unitarians once per
+eligible identity, without a defeat penalty or unrelated faction changes.
+Revision1 shared consequences preserve those events, casualties and payments
+through saves and unloaded returns; legacy victories gain no invented date or
+eligibility. SYSTEMS consolidates the contract. Evidence and intermediate test
+failures remain in assets/validation_v5_15_4. CA451-01 (origin5.15.4/#451) and
+CA447-01/448-01/449-01/450-01 remain unconfirmed author checks.
+
+Two-peer native checks cover occupied save/reload, exact recovery boundaries,
+unloaded return, once-per-identity awards, normal victory and previous-save
+migration. Actual ES/EN transport/Journal pages were visually inspected. Static
+validation reports0 errors; the combined author launcher keeps separate scenes.
+Recorded siege presentation is1.4065FPS (p95/p99/max770.22/805.22/805.22ms), with
+76.5401FPS ground control. This preserves the known rendering limitation rather
+than declaring performance accepted. Full evidence and failed fixture attempts
+are in assets/validation_v5_15_4; original saves/packages remain for rollback.
+
+
+Author launcher correction (2026-11-10, same #451 delivery): the author reported
+unwanted multiplayer defaults and excessive material load. Manual scenes now
+start one character with all twelve attributes at100, using the existing debug
+override only in disposable fixtures. Only machines receive materials: catalog
+costs for one barricade and cannon at100% efficiency, stored in the Magic Box.
+F4 replenishes missing stock at the selected efficiency, updating existing stacks
+without repeated accumulation. Cooperative checks require an explicit option.
+Native single-player checks pass all seven choices, actual movement and refill,
+hub travel and save recovery. Machine-scene effective load is10.811kg of400kg
+capacity; other scenes carry no supplied wood/iron. The runtime PK3 is unchanged.
+The first helper compile failure and successful follow-ups are retained in
+validation_v5_15_4/author-usability-results.json and compressed native logs.
+All five author acceptance checks remain pending.
+
 
 ## 5.15.3 - Tactical routes and reports (#450, 2026-11-10)
 

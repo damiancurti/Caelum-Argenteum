@@ -1,6 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.15.3** - 2026-11-10.
+Documentation version: **5.15.4** - 2026-11-10.
+
+## 5.15.4 / #451 - Persistent consequences delivery
+
+Implement the approved occupation, real-casualty persistence,24-world-hour
+recovery and once-per-identity+100 Unitarian reward. Preserve #447-450 behavior,
+spent reserves, historical purchase/departure boundaries and original saves for
+rollback. Keep this commit/PR and native evidence separate. Complete static,
+native save/travel/reconnect/migration, ES/EN presentation and author-launcher
+checks; record results in assets/validation_v5_15_4. CA451-01 joins the four
+earlier outstanding checks. Leave the author terminal open after validation;
+V5.15 merge/closure and gameplay acceptance still await the author.
+
 
 ## 5.15.3 / #450 - Tactical routes delivery
 

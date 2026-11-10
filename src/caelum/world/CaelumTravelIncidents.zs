@@ -43,6 +43,7 @@ class CaelumTravelIncidents : Object play
     static void Observe(CaelumPlayer user,CaelumTransportBooking booking,double now)
     {
         let incidents=Get(booking);if(incidents==null || !booking.Onboard)return;
+        if(CaelumBattleConsequences.HoldDeparture(user,booking.Ticket,now))return;
         let weather=CaelumWeatherState.Get(user);let outside=weather==null?null:weather.Outside;
         incidents.Advance(booking.Ticket,now,outside!=null && outside.Available?outside.WindSpeedKmh:0,
             outside!=null && outside.Available?outside.PrecipitationMmPerHour:0);
@@ -93,6 +94,7 @@ class CaelumTravelIncidents : Object play
     }
     static bool MayResume(CaelumPlayer user,CaelumTransportBooking booking)
     {
+        if(!CaelumBattleConsequences.AllowDeparture(user))return false;
         String reason=CaelumRestSafety.BlockReason(user,false,false,true,multiplayer);
         let incidents=Get(booking);
         return reason.Length()==0 || (reason=="CA_REST_ENEMY" && incidents!=null && incidents.AmbushActive

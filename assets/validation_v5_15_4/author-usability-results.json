@@ -1,0 +1,192 @@
+{
+  "issue": 451,
+  "version": "5.15.4",
+  "date": "2026-11-10",
+  "purpose": "Author launcher: single-player defaults, attributes100 and bounded scene-specific materials",
+  "runtime_sha256": "7040ceb4c01c9e447750a61f9bd57121f6369d92cc22c6f5d2098514c85ae0ad",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "sources": {
+    "author_terminal.py": "c3654ed1bdddd7a47c667c9bdaf721570174deb02083e09200e540c2da6e58fc",
+    "author_probe.zs": "719145d7dae82465a87130edbbb0ac06e21d7389f5560a76ae08ecc630fc284b",
+    "author_setup.zs": "36eecf910aa233151839c8b7af3b7cf8c5090a0cfc811ba9c6d57294aada0aab",
+    "city_author.zs": "317acbacb01eb8a632d648823e9031a7c8101bd09ed09a71732ca2ca477d9d20"
+  },
+  "sessions": [
+    {
+      "directory": "build/v515/author/20261110-103051-064113",
+      "scene": "machines",
+      "players": 1,
+      "passed": false,
+      "restored": false,
+      "native_network_arguments": false,
+      "fixture_sha256": "597ffb8d73fd9cb454dc6dadc8865ab032af9ce07c03f46fbc261cc7d7b309b2",
+      "checks": [
+        "Script error, \"scene.pk3:checks.zs\" line 6:",
+        "Script error, \"scene.pk3:checks.zs\" line 7:",
+        "Script error, \"scene.pk3:checks.zs\" line 19:",
+        "Script error, \"scene.pk3:checks.zs\" line 20:",
+        "Script error, \"scene.pk3:checks.zs\" line 21:",
+        "Script error, \"scene.pk3:checks.zs\" line 22:",
+        "Script error, \"scene.pk3:checks.zs\" line 22:",
+        "Script error, \"scene.pk3:checks.zs\" line 24:",
+        "Script error, \"scene.pk3:checks.zs\" line 25:",
+        "Script error, \"scene.pk3:checks.zs\" line 38:",
+        "Script error, \"scene.pk3:checks.zs\" line 39:"
+      ]
+    },
+    {
+      "directory": "build/v515/author/20261110-103125-275863",
+      "scene": "machines",
+      "players": 1,
+      "passed": true,
+      "restored": false,
+      "native_network_arguments": false,
+      "fixture_sha256": "c15d97a32669b829dcaeb5fe32452b9f6188ab6e9631ad7a79e9e19e81e610a8",
+      "checks": [
+        "CA515 AUTHOR SETUP PASS attributes100=1 load=10.8110 capacity=400.0000 ratio=0.027027 wood=150000 iron=755000",
+        "CA515 AUTHOR READY issue=449 scene=2",
+        "CA515 AUTHOR CHECK PASS scene=2",
+        "CA515 AUTHOR SETUP PASS attributes100=1 load=10.8110 capacity=400.0000 ratio=0.027027 wood=150000 iron=755000"
+      ]
+    },
+    {
+      "directory": "build/v515/author/20261110-103217-410688",
+      "scene": "machines",
+      "players": 1,
+      "passed": true,
+      "restored": false,
+      "native_network_arguments": false,
+      "fixture_sha256": "deb14cfd10372d6588ab6251e5edf1575d3eb9ab44fd4fd829812daea09a0884",
+      "checks": [
+        "CA515 AUTHOR SETUP PASS attributes100=1 load=10.8110 capacity=400.0000 ratio=0.027027 wood=150000 iron=755000",
+        "CA515 AUTHOR READY issue=449 scene=2",
+        "CA515 AUTHOR SETUP PASS attributes100=1 load=10.8110 capacity=400.0000 ratio=0.027027 wood=150000 iron=755000",
+        "CA515 AUTHOR SETUP PASS attributes100=1 load=10.8110 capacity=400.0000 ratio=0.027027 wood=150000 iron=755000",
+        "CA515 AUTHOR WALK PASS distance=4.1286",
+        "CA515 AUTHOR CHECK PASS scene=2",
+        "CA515 AUTHOR SETUP PASS attributes100=1 load=10.8110 capacity=400.0000 ratio=0.027027 wood=150000 iron=755000"
+      ]
+    },
+    {
+      "directory": "build/v515/author/20261110-103258-509532",
+      "scene": "director",
+      "players": 1,
+      "passed": true,
+      "restored": false,
+      "native_network_arguments": false,
+      "fixture_sha256": "859cd18ea1895e58bf5168d4aea873d823f6e1473641dc2f8b55aa5dadae4b74",
+      "checks": [
+        "CA515 AUTHOR SETUP PASS attributes100=1 load=1.7610 capacity=400.0000 ratio=0.004403 wood=0 iron=0",
+        "CA515 AUTHOR READY issue=447 scene=0",
+        "CA515 AUTHOR CHECK PASS scene=0",
+        "CA515 AUTHOR SETUP PASS attributes100=1 load=1.7610 capacity=400.0000 ratio=0.004403 wood=0 iron=0"
+      ]
+    },
+    {
+      "directory": "build/v515/author/20261110-103326-811665",
+      "scene": "command",
+      "players": 1,
+      "passed": true,
+      "restored": false,
+      "native_network_arguments": false,
+      "fixture_sha256": "4f92fe532fbc9cc0090864eeda5f33cb9ce93ed203ea9f1b24461c063f9c550e",
+      "checks": [
+        "CA515 AUTHOR SETUP PASS attributes100=1 load=1.7610 capacity=400.0000 ratio=0.004403 wood=0 iron=0",
+        "CA515 AUTHOR READY issue=448 scene=1",
+        "CA515 AUTHOR CHECK PASS scene=1",
+        "CA515 AUTHOR SETUP PASS attributes100=1 load=1.7610 capacity=400.0000 ratio=0.004403 wood=0 iron=0"
+      ]
+    },
+    {
+      "directory": "build/v515/author/20261110-103354-666358",
+      "scene": "reports",
+      "players": 1,
+      "passed": true,
+      "restored": false,
+      "native_network_arguments": false,
+      "fixture_sha256": "098e5dfc8dff84fbf5490b810f81d361a87085faee35b73faeeacc140d11e4d8",
+      "checks": [
+        "CA515 AUTHOR SETUP PASS attributes100=1 load=1.7610 capacity=400.0000 ratio=0.004403 wood=0 iron=0",
+        "CA515 AUTHOR READY issue=450 scene=3",
+        "CA515 AUTHOR CHECK PASS scene=3",
+        "CA515 AUTHOR SETUP PASS attributes100=1 load=1.7610 capacity=400.0000 ratio=0.004403 wood=0 iron=0"
+      ]
+    },
+    {
+      "directory": "build/v515/author/20261110-103421-961298",
+      "scene": "outcomes",
+      "players": 1,
+      "passed": true,
+      "restored": false,
+      "native_network_arguments": false,
+      "fixture_sha256": "f11ab6b87f50f7e0a8a03bec4e59d7d0913e6e39c952b064f41021020cb801ab",
+      "checks": [
+        "CA515 AUTHOR SETUP PASS attributes100=1 load=1.7610 capacity=400.0000 ratio=0.004403 wood=0 iron=0",
+        "CA515 AUTHOR READY issue=451 scene=4",
+        "CA515 AUTHOR CHECK PASS scene=4",
+        "CA515 AUTHOR SETUP PASS attributes100=1 load=1.7610 capacity=400.0000 ratio=0.004403 wood=0 iron=0"
+      ]
+    },
+    {
+      "directory": "build/v515/author/20261110-103454-234642",
+      "scene": "routes",
+      "players": 1,
+      "passed": true,
+      "restored": false,
+      "native_network_arguments": false,
+      "fixture_sha256": "1e89583167eff5bf06bfebdf2d382f875831fbc9597d19543222eff6b58aef70",
+      "checks": [
+        "CA515 AUTHOR SETUP PASS attributes100=1 load=1.7610 capacity=400.0000 ratio=0.004403 wood=0 iron=0",
+        "CA515 AUTHOR READY city geometry",
+        "CA515 AUTHOR SETUP PASS attributes100=1 load=1.7610 capacity=400.0000 ratio=0.004403 wood=0 iron=0"
+      ]
+    },
+    {
+      "directory": "build/v515/author/20261110-103522-857679",
+      "scene": "city",
+      "players": 1,
+      "passed": true,
+      "restored": false,
+      "native_network_arguments": false,
+      "fixture_sha256": "3fad0e087aa113522352e9fa9e797e7640e9edee98f36ff816049a8ad72687bf",
+      "checks": [
+        "CA515 AUTHOR SETUP PASS attributes100=1 load=1.7610 capacity=400.0000 ratio=0.004403 wood=0 iron=0",
+        "CA515 AUTHOR READY city geometry",
+        "CA515 AUTHOR SETUP PASS attributes100=1 load=1.7610 capacity=400.0000 ratio=0.004403 wood=0 iron=0"
+      ]
+    },
+    {
+      "directory": "build/v515/author/20261110-103559-396895",
+      "scene": "machines",
+      "players": 1,
+      "passed": true,
+      "restored": false,
+      "native_network_arguments": false,
+      "fixture_sha256": "6053c417a3072fe512f5f236428b8596e6e0d1b1e754a255ca1bc9afc86fa48f",
+      "checks": [
+        "CA515 AUTHOR SETUP PASS attributes100=1 load=10.8110 capacity=400.0000 ratio=0.027027 wood=150000 iron=755000",
+        "CA515 AUTHOR READY issue=449 scene=2",
+        "CA515 AUTHOR REFILL PASS",
+        "CA515 AUTHOR SETUP PASS attributes100=1 load=10.8110 capacity=400.0000 ratio=0.027027 wood=150000 iron=755000",
+        "CA515 AUTHOR SETUP PASS attributes100=1 load=10.8110 capacity=400.0000 ratio=0.027027 wood=150000 iron=755000",
+        "CA515 AUTHOR WALK PASS distance=4.1286",
+        "CA515 AUTHOR CHECK PASS scene=2",
+        "CA515 AUTHOR SETUP PASS attributes100=1 load=10.8110 capacity=400.0000 ratio=0.027027 wood=150000 iron=755000"
+      ]
+    },
+    {
+      "directory": "build/v515/author/20261110-103627-830849",
+      "scene": "outcomes",
+      "players": 1,
+      "passed": true,
+      "restored": true,
+      "native_network_arguments": false,
+      "fixture_sha256": "f11ab6b87f50f7e0a8a03bec4e59d7d0913e6e39c952b064f41021020cb801ab",
+      "checks": [
+        "CA515 AUTHOR CHECK PASS scene=4",
+        "CA515 AUTHOR SETUP PASS attributes100=1 load=1.7610 capacity=400.0000 ratio=0.004403 wood=0 iron=0"
+      ]
+    }
+  ],
+  "qualification": "Native fixture checks, not author acceptance or a new performance measurement. The first attempt failed compilation because the helper omitted play scope; retained here. Early successful scenes used the initial refill helper; the final machine run exercises the corrected in-place refill. Runtime PK3 is unchanged."
+}

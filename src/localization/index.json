@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "source": "LANGUAGE",
-  "sha256": "6ac1bc33fcdf26fe457749d74543d525527629435e29ce9e0abb452dd2a8515b",
+  "sha256": "bbe8b9149fee4ddacde3b6ccda549bd303cd79c2b6c55415eecfadfea5d69a51",
   "entries": {
     "CA_ABILITY_USED_SUCCESSFULLY": {"enu":[[560,560]],"default":[[560,560]],"es":[[1255,1255]]},
     "CA_ABSENT_THEFT_FOUND": {"enu":[[6983,6983]],"default":[[6983,6983]],"es":[[6985,6985]]},
@@ -354,6 +354,11 @@
     "CA_CHEST_PREVIEW_UNCLAIMED": {"enu":[[4609,4609]],"default":[[4609,4609]],"es":[[4619,4619]]},
     "CA_CHEST_TUTORIAL_PLAN": {"enu":[[5500,5500]],"default":[[5500,5500]],"es":[[5503,5503]]},
     "CA_CISTERN_HINT": {"enu":[[6930,6930]],"default":[[6930,6930]],"es":[[6941,6941]]},
+    "CA_CITY_OCCUPIED": {"enu":[[8412,8412]],"default":[[8412,8412]],"es":[[8420,8420]]},
+    "CA_CITY_RECOVERED": {"enu":[[8414,8414]],"default":[[8414,8414]],"es":[[8422,8422]]},
+    "CA_CITY_RECOVERING": {"enu":[[8413,8413]],"default":[[8413,8413]],"es":[[8421,8421]]},
+    "CA_CITY_RECOVERY_DATE": {"enu":[[8416,8416]],"default":[[8416,8416]],"es":[[8424,8424]]},
+    "CA_CITY_SERVICES_CLOSED": {"enu":[[8411,8411]],"default":[[8411,8411]],"es":[[8419,8419]]},
     "CA_CITY_SHOPKEEPER": {"enu":[[244,244]],"default":[[244,244]],"es":[[347,347]]},
     "CA_CITY_SHOP_0": {"enu":[[245,245]],"default":[[245,245]],"es":[[348,348]]},
     "CA_CITY_SHOP_1": {"enu":[[246,246]],"default":[[246,246]],"es":[[349,349]]},
@@ -363,6 +368,7 @@
     "CA_CITY_SHOP_5": {"enu":[[250,250]],"default":[[250,250]],"es":[[353,353]]},
     "CA_CITY_SHOP_6": {"enu":[[251,251]],"default":[[251,251]],"es":[[354,354]]},
     "CA_CITY_SHOP_7": {"enu":[[252,252]],"default":[[252,252]],"es":[[355,355]]},
+    "CA_CITY_VICTORY": {"enu":[[8415,8415]],"default":[[8415,8415]],"es":[[8423,8423]]},
     "CA_CLASS_EXPLORER": {"enu":[[585,585]],"default":[[585,585]],"es":[[1280,1280]]},
     "CA_CLASS_MAGE": {"enu":[[587,587]],"default":[[587,587]],"es":[[1282,1282]]},
     "CA_CLASS_PRIEST": {"enu":[[586,586]],"default":[[586,586]],"es":[[1281,1281]]},

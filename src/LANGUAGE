@@ -8406,3 +8406,19 @@ CA_TACTICS_TOO_LATE = "El asedio ya comenzó. Esta preparación ya no es posible
 CA_TACTICS_CITY_REPORT = "Informa al mando de la guardia en el exterior de Barracas, donde se puede confirmar el estado de la máquina.";
 CA_TACTICS_NO_MACHINE = "Captura intacta una máquina enemiga original para los Unitarios y consérvala sin daños y operativa. Puede quedarse donde está.";
 CA_TACTICS_DELIVERED = "Entrega registrada. Cada participante cooperativo elegible recibe +50 de reputación con los Unitarios una sola vez.";
+
+[enu default]
+CA_CITY_SERVICES_CLOSED = "Barracas: services closed until recovery.";
+CA_CITY_OCCUPIED = "Barracas is occupied. Civilian shops and departures are closed; escape on foot remains possible. Neutralize the original twelve machines and confirm Zupay's defeat or retreat to liberate the city.";
+CA_CITY_RECOVERING = "Barracas is liberated. Surviving shops and departures reopen 24 world hours after liberation. Real deaths and spent reserves persist.";
+CA_CITY_RECOVERED = "Barracas services have recovered. Surviving shops and departures are available; dead merchants are not replaced.";
+CA_CITY_VICTORY = "Barracas is victorious. Eligible cooperative participants receive +100 Unitarian reputation once for victory or liberation.";
+CA_CITY_RECOVERY_DATE = "Barracas: surviving services reopen";
+
+[es]
+CA_CITY_SERVICES_CLOSED = "Barracas: servicios cerrados hasta recuperarse.";
+CA_CITY_OCCUPIED = "Barracas está ocupada. Los comercios civiles y las salidas de transportes están cerrados; puedes escapar a pie. Neutraliza las doce máquinas originales y confirma la derrota o retirada de Zupay para liberar la ciudad.";
+CA_CITY_RECOVERING = "Barracas está liberada. Los comercios supervivientes y los transportes reabren 24 horas del mundo después de la liberación. Las muertes reales y las reservas gastadas persisten.";
+CA_CITY_RECOVERED = "Los servicios de Barracas se han recuperado. Los comercios supervivientes y los transportes están disponibles; los comerciantes muertos no tienen reemplazos.";
+CA_CITY_VICTORY = "Barracas ha vencido. Los participantes cooperativos elegibles reciben +100 de reputación con los Unitarios una sola vez por victoria o liberación.";
+CA_CITY_RECOVERY_DATE = "Barracas: reapertura de servicios supervivientes";

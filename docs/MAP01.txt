@@ -1,6 +1,19 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.15.3** - 2026-11-10.
+Documentation version: **5.15.4** - 2026-11-10.
+
+## 5.15.4 / #451 - Barracas occupation and recovery
+
+A lost siege continues under occupation: civilian shops and departing transports
+close, while walking through existing city/exterior geometry remains possible.
+There is no new underground or walking inter-map connection. Actual deaths and
+finite reserves persist. Neutralizing the original twelve machines and confirming
+Zupay's retreat liberates Barracas under the existing Chapter I rules. Surviving
+services reopen24 world hours later; dead merchants receive no automatic
+replacement. Normal victory avoids occupation. The approved+100 Unitarian award
+is once per eligible cooperative identity for victory or liberation. SYSTEMS
+defines the chronological closure, migration and individual reward contract.
+
 
 ## 5.15.3 / #450 - Existing Barracas routes and preparation
 

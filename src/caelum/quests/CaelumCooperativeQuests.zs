@@ -45,6 +45,7 @@ class CaelumCooperativeQuests : Object play
 {
     int Revision;
     CaelumBattleTactics BattleTactics;
+    CaelumBattleConsequences BattleConsequences;
     int PrisonerState[CaelumConstants.PRISONER_COUNT];
     CaelumCooperativeObjective Rescue[CaelumConstants.PRISONER_COUNT];
     CaelumPropertyRecord House;

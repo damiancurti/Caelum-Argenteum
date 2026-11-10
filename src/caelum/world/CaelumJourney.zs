@@ -135,6 +135,7 @@ class CaelumTravelService : Object play
             || (user.player.cheats & CF_PREDICTING)
             || !(transport?CaelumWorldCatalogue.IsTravelConnection(id):CaelumWorldCatalogue.IsSewerConnection(id))
             || CaelumWorldCatalogue.ConnectionOrigin(id) != CaelumWorldCatalogue.LocationForMap(level.MapName)) return false;
+        if(transport && !CaelumBattleConsequences.AllowDeparture(user))return false;
         if (!CaelumSewerMaze.CanLeave(user)) return false;
         if (user.HasActiveConversation() || user.PalomoMerchantMenuOpen || user.CraftingMenuOpen
             || user.CraftingTaskActive || user.EquipmentMenuOpen || user.CombatChannelModeActive

@@ -1,6 +1,16 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.15.3** - 2026-11-10.
+Documentation version: **5.15.4** - 2026-11-10.
+
+## 5.15.4 / #451 - Consequence evidence and author launcher
+
+No new art, audio or map asset is introduced. ES/EN occupation, recovery,
+transport and Journal text use the existing owned presentation. Native evidence
+and the shared author-scene launcher live in assets/validation_v5_15_4, with
+issue-specific scene choices and results kept separate. Isolated profiles,
+temporary fixture packages, saves, engine and development IWAD remain private
+under build/ and are not distributable game assets.
+
 
 ## 5.15.3 / #450 - Derived tactical route data
 
