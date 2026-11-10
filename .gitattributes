@@ -431,3 +431,10 @@
 /assets/validation_v5_15_3/*.zs text eol=lf
 /assets/validation_v5_15_3/*.md text eol=lf
 /assets/validation_v5_15_3/*.json text eol=lf
+
+# #451 isolated consequence evidence and author launcher.
+/assets/validation_v5_15_4/*.py text eol=lf
+/assets/validation_v5_15_4/*.zs text eol=lf
+/assets/validation_v5_15_4/*.md text eol=lf
+/assets/validation_v5_15_4/*.json text eol=lf
+/assets/validation_v5_15_4/*.ps1 text eol=lf

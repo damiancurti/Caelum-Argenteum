@@ -67,6 +67,8 @@ class CaelumCooperativeTransport : Object play
     {
         if(!SourceValid(vote))return false;
         let ride=vote.Ride;if(ride==null)return false;
+        if((vote.Kind==CaelumCooperativeTravel.BOARD || vote.Kind==CaelumCooperativeTravel.RESUME)
+            && !CaelumBattleConsequences.AllowDeparture(CaelumPlayer(vote.Owner)))return false;
         CaelumCooperativeFare payments[MAXPLAYERS];CaelumTransportBooking bookings[MAXPLAYERS];
         bool valid=true;
         for(int i=0;i<MAXPLAYERS;i++)if(vote.Members[i]!=null)

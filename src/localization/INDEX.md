@@ -1,7 +1,7 @@
 # LANGUAGE index
 
 Generated from [../LANGUAGE](../LANGUAGE); shared bilingual text remains authoritative there.
-SHA-256: `6ac1bc33fcdf26fe457749d74543d525527629435e29ce9e0abb452dd2a8515b`. Locations include every definition; the last one per language wins.
+SHA-256: `bbe8b9149fee4ddacde3b6ccda549bd303cd79c2b6c55415eecfadfea5d69a51`. Locations include every definition; the last one per language wins.
 Run `python build_dialogue_index.py check` before using locations.
 
 Use `python build_dialogue_index.py find TERM` to locate keys, then
@@ -48,7 +48,7 @@ including shared UI/system keys and dynamically selected text.
 | CA_CHEMISTRY | 27 | CA_CHEMISTRY_ALCOHOL | CA_CHEMISTRY_WATER |
 | CA_CHEST | 11 | CA_CHEST_MATERIAL_ADAPTIVE | CA_CHEST_TUTORIAL_PLAN |
 | CA_CISTERN | 1 | CA_CISTERN_HINT | CA_CISTERN_HINT |
-| CA_CITY | 9 | CA_CITY_SHOPKEEPER | CA_CITY_SHOP_7 |
+| CA_CITY | 15 | CA_CITY_OCCUPIED | CA_CITY_VICTORY |
 | CA_CLASS | 4 | CA_CLASS_EXPLORER | CA_CLASS_WARRIOR |
 | CA_CLEAN | 13 | CA_CLEAN_AREA | CA_CLEAN_TITLE |
 | CA_CLIMATE | 12 | CA_CLIMATE_CANOPY | CA_CLIMATE_REGION_9 |

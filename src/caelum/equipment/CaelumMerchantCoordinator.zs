@@ -139,6 +139,8 @@ class CaelumMerchantCoordinator : Object play
     {
         if (!user.PalomoMerchantMenuOpen || user.ActivePalomoMerchant == null
             || user.ActivePalomoMerchant.health <= 0 || user.health <= 0) { return false; }
+        if(user.ActivePalomoMerchant is "CaelumCityMerchant"
+            && !CaelumBattleConsequences.MerchantAvailable(user,CaelumCityMerchant(user.ActivePalomoMerchant)))return false;
         return user.Distance3D(user.ActivePalomoMerchant)
             <= CaelumConstants.PALOMO_MERCHANT_SESSION_DISTANCE
             && CaelumFactionServices.Check(user, ServiceCondition(user))
@@ -387,6 +389,8 @@ class CaelumMerchantCoordinator : Object play
     static void OpenCityTrade(CaelumPlayer user,CaelumCityMerchant vendor)
     {
         if(!CaelumPlayerAuthority.CanMutate(user) || vendor==null || user.CreationWizardOpen || !user.MagicBoxOwned)return;
+        if(!CaelumBattleConsequences.MerchantAvailable(user,vendor))
+        {CaelumNotifications.Notify(user,StringTable.Localize("CA_CITY_SERVICES_CLOSED",false));return;}
         if(!CaelumFactionServices.Require(user,vendor.AccessCondition))return;
         if(user.StaffCastPending)user.CancelPendingStaffCast(false);
         user.EquipmentMenuOpen=false;user.CloseCraftingStationSession();user.SetCraftingJournalState(false);

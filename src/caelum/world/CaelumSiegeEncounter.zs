@@ -497,6 +497,7 @@ class CaelumSiegeEvents : EventHandler
     }
     override void WorldThingDied(WorldEvent e)
     {
+        CaelumBattleConsequences.MerchantDied(CaelumCityMerchant(e.Thing));
         CaelumBattleDirector.DefenderChanged(CaelumPortDefender(e.Thing));
         if(e.Thing is "CaelumAnchoredResident")SyncPortSurvivors();
         CaelumTargetSubscriptions.Retire(e.Thing);

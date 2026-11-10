@@ -252,6 +252,9 @@ class CaelumTransportUI : Object ui
                 if(incident.Storm)status="CA_TRAVEL_STORM";
             }
             else if(incident!=null && incident.AmbushActive && incident.AmbushMap==level.MapName && t.Status==CaelumTransportTicket.STOPPED)status="CA_TRAVEL_AMBUSH";
+            if(CaelumBattleConsequences.Closed(user)
+                && (level.MapName=="MAP03" || (t.Status==CaelumTransportTicket.WAITING
+                    && CaelumTransportData.Map(CaelumTransportData.Origin(t.Route))=="MAP03")))status="CA_CITY_SERVICES_CLOSED";
             view.DrawParagraph(view.TextFont,Font.CR_GOLD,40,156,560,StringTable.Localize(status,false));
             if(incident!=null && b.Onboard && incident.RepairUntil>t.Stamp)
                 view.DrawParagraph(view.TextFont,Font.CR_WHITE,40,182,560,String.Format(StringTable.Localize("CA_TRAVEL_REPAIR_TIME",false),(incident.RepairUntil-t.Stamp)/3600));

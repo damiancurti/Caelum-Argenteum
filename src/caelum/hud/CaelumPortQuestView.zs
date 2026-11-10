@@ -23,6 +23,8 @@ class CaelumPortQuestView : Object ui
         if(quest==CaelumConstants.QUEST_INVESTIGATE_SIEGE)
         {
             text=text.."\n\n"..CaelumPortStory.Accounts(user);
+            String outcome=CaelumBattleConsequences.Text(user);
+            if(outcome!="")text=text.."\n\n"..outcome;
             if(record.QuestState[quest]==CaelumConstants.QUEST_STATE_COMPLETED
                 && CaelumPortQuestData.Count(record.PortInvestigationRequiredMask)<CaelumConstants.PRISONER_COUNT)
                 text=text.."\n\n"..StringTable.Localize("CA_Q_PORT_MISSING",false);

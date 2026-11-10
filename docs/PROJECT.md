@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.15.3** - 2026-11-10.
+Documentation version: **5.15.4** - 2026-11-10.
+
+## 5.15.4 / #451 - Persistent siege outcomes
+
+Barracas now carries occupation, service closure, actual merchant casualties,
+dated recovery and the approved individual victory/liberation reward across
+campaign saves and travel. #447-451 remain separate patches and PRs; their native
+evidence is in assets/validation_v5_15_0 through validation_v5_15_4. All five
+author checks remain pending. The combined terminal groups isolated manual
+scenes by issue; native checks do not imply author acceptance or authorize merge.
+The previously measured severe active-siege rendering limitation remains open.
+
 
 ## 5.15.3 / #450 - Tactical alternatives
 

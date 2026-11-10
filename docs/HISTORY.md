@@ -1,6 +1,29 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.15.3** - 2026-11-10.
+Documentation version: **5.15.4** - 2026-11-10.
+
+## 5.15.4 - Persistent siege consequences (#451, 2026-11-10)
+
+The author approved occupation without ending a survivor's campaign, closure of
+civilian shops and departing transport, actual deaths without replacements,
+liberation through the existing original-machine/Zupay objective, and recovery
+after24 world hours. Victory or liberation awards+100 Unitarians once per
+eligible identity, without a defeat penalty or unrelated faction changes.
+Revision1 shared consequences preserve those events, casualties and payments
+through saves and unloaded returns; legacy victories gain no invented date or
+eligibility. SYSTEMS consolidates the contract. Evidence and intermediate test
+failures remain in assets/validation_v5_15_4. CA451-01 (origin5.15.4/#451) and
+CA447-01/448-01/449-01/450-01 remain unconfirmed author checks.
+
+Two-peer native checks cover occupied save/reload, exact recovery boundaries,
+unloaded return, once-per-identity awards, normal victory and previous-save
+migration. Actual ES/EN transport/Journal pages were visually inspected. Static
+validation reports0 errors; the combined author launcher keeps separate scenes.
+Recorded siege presentation is1.4065FPS (p95/p99/max770.22/805.22/805.22ms), with
+76.5401FPS ground control. This preserves the known rendering limitation rather
+than declaring performance accepted. Full evidence and failed fixture attempts
+are in assets/validation_v5_15_4; original saves/packages remain for rollback.
+
 
 ## 5.15.3 - Tactical routes and reports (#450, 2026-11-10)
 

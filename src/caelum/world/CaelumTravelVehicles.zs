@@ -38,7 +38,7 @@ class CaelumTravelVehicle : Actor
     }
     bool Board(CaelumPlayer user)
     {
-        if(!CanBoard(user))return false;
+        if(!CaelumBattleConsequences.AllowDeparture(user) || !CanBoard(user))return false;
         CaelumPoiKnowledge.RecordUse(user,self,CaelumPoiData.TRANSPORT);
         return CaelumTransportSession.Show(user,self);
     }

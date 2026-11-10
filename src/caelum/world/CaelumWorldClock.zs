@@ -201,6 +201,7 @@ class CaelumWorldClockTicker : StaticEventHandler
     }
     override void WorldThingDestroyed(WorldEvent e)
     {
+        CaelumBattleConsequences.MerchantDied(CaelumCityMerchant(e.Thing));
         CaelumArcanaSources.Forget(CaelumM00FoolEssence(e.Thing));
         if(!(e.Thing is 'CaelumClimateRegion'))return;
         for(int i=0;i<ClimateMarkers.Size();i++)if(ClimateMarkers[i]==e.Thing)

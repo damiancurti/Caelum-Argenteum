@@ -20,6 +20,7 @@ class CaelumWorldProgress : Object play
         let record = user.GetPersistentCharacterState(false);
         if (record == null || !record.ProfileCommitted) return;
         CaelumBattleTactics.Claim(user);
+        CaelumBattleConsequences.Update(user);
         CaelumPoiKnowledge.Ensure(record);
         CaelumAuthoredCartography.Update(user,record);
         CaelumQuestTracking.Ensure(record);

@@ -126,11 +126,13 @@ class CaelumPortSiege : CaelumSiegeEncounter
     void EnsureDirector(double civil=-1)
     {
         // Una revisión vigente no necesita resolver otra vez reloj ni registros.
-        if(Director!=null && Director.Revision>=CaelumBattleData.REVISION)return;
+        if(Director!=null && Director.Revision>=CaelumBattleData.REVISION)
+        {CaelumBattleConsequences.Initialize(self);return;}
         if(!CaelumCityData.Enabled())return;
         if(civil<0)civil=CaelumBattleDirector.CivilNow(self);
         if(Director==null)Director=new('CaelumBattleDirector');
         Director.Initialize(self,civil);
+        CaelumBattleConsequences.Initialize(self);
     }
 
     void ObserveBattle(double civil=-1)
@@ -138,6 +140,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
         if(civil<0)civil=CaelumBattleDirector.CivilNow(self);
         EnsureDirector(civil);
         if(Director!=null)Director.Observe(civil);
+        CaelumBattleConsequences.Observe(self,civil);
     }
 
     bool BattleResolved(){return Victory || (Director!=null && Director.Resolved());}
@@ -835,6 +838,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
 
     void Calendar(CaelumPlayer user,double actualCivil=-1)
     {
+        CaelumBattleConsequences.Calendar(user);
         let agenda=CaelumScheduleState.Get(user,true);if(agenda==null)return;
         bool lost=Director!=null && Director.Defeated && !Victory;
         if(CaelumCityData.Enabled() && !Victory && !lost)

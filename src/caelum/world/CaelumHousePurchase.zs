@@ -101,7 +101,7 @@ class CaelumHousePurchase : Object play
     static bool BuyAt(CaelumPlayer user,CaelumStashChest chest,int house,CaelumCityMerchant vendor,Inventory stock,int quantity,double at)
     {
         if(!CaelumPlayerAuthority.CanMutate(user) || !OwnChest(chest,house) || vendor==null
-            || vendor.bDestroyed || vendor.Category!=0 || stock==null || stock.Owner!=vendor
+            || vendor.bDestroyed || vendor.health<=0 || CaelumBattleConsequences.HistoricalMarketClosed(user,at) || vendor.Category!=0 || stock==null || stock.Owner!=vendor
             || quantity<=0 || quantity>stock.Amount || Supply(stock)==0 || at<0 || at<vendor.RestockLastSeen)return false;
         int price=CaelumEconomyRules.GetPriceChargedByMerchant(CaelumEconomyRules.GetInventoryUnitBaseValue(stock),quantity);
         if(price<=0 || vendor.WalletCopper>2147483647-price)return false;
@@ -129,11 +129,12 @@ class CaelumHousePurchase : Object play
     static void ReplenishAt(CaelumPlayer user,CaelumStashChest chest,int house,double at)
     {
         if(!CaelumPlayerAuthority.CanMutate(user) || !OwnChest(chest,house) || at<0)return;
+        if(CaelumBattleConsequences.HistoricalMarketClosed(user,at))return;
         let market=CaelumDomesticMarket.Get();if(market==null)return;
         // El orden persistente es el de los comercios, sin escaneos de actores.
         for(int i=0;i<market.Vendors.Size();i++)
         {
-            let vendor=market.Vendors[i].Body;if(vendor==null || vendor.bDestroyed || at<vendor.RestockLastSeen)continue;
+            let vendor=market.Vendors[i].Body;if(vendor==null || vendor.bDestroyed || vendor.health<=0 || at<vendor.RestockLastSeen)continue;
             vendor.EnsureStockAt(user,at);
             for(int kind=1;kind<=2;kind++)
             {
