@@ -14,7 +14,8 @@ V5.15 includes the [battle director](assets/validation_v5_15_0/RESULTS.md)
 (#448, PR636), and [machine construction, repair and capture](assets/validation_v5_15_2/RESULTS.md)
 (#449, PR637), and [tactical routes and reports](assets/validation_v5_15_3/RESULTS.md)
 (#450). Crouch + Use opens guard orders; Use on machine parts opens their work
-panel. Construction requires learned recipes, the existing workshops/materials
+panel. Original enemy machines require capture or destruction to be neutralized.
+Construction requires learned recipes, the existing workshops/materials
 and a current faction. Guard dialogue receives pre-battle prisoner intelligence
 and reports of intact captured machines. Route markers appear only after visiting. Native tests and author acceptance remain separate:
 CA447-01/CA448-01/CA449-01/CA450-01 are pending. #451 and the final V5.15 author terminal

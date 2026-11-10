@@ -3,6 +3,12 @@
 Author rules are consolidated in SYSTEMS5.15.2. CA449-01 remains outstanding;
 this evidence does not authorize merging V5.15 or substitute for author tests.
 
+Text review follow-up: both CA_PRISONER_SIEGE_ACTIVE translations now describe
+capture/destruction instead of the retired guard-death rule. The localized source
+and generated indexes pass their freshness check; document index generation and
+git diff --check pass. Gameplay files and the functional evidence below are
+unchanged. This correction does not claim a new author acceptance.
+
 The isolated harness reuses validation_v5_15_0 and the native sync observer from
 validation_v5_12_7. GZDoom4.14.2 runs unpaused in the background at5% audio with
 isolated configurations/saves. Private engine/IWAD, generated fixture maps, saves
