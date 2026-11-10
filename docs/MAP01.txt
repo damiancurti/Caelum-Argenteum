@@ -1,6 +1,15 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.15.0** - 2026-11-09.
+Documentation version: **5.15.1** - 2026-11-09.
+
+## 5.15.1 / #448 - Barracas guard allegiance and command
+
+The author identifies the existing guard as Unitarian. Captaincy recognition
+remains a clue, not recovered memory or automatic membership/reputation.
+Command combines all three approved conditions and uses the existing guards,
+formation rules, streets, stairs and home/barracks return points. There are no
+new defenders, invented reserve pool, map edits or new character identities.
+Command access and native/save boundaries are owned by SYSTEMS. CA448-01 pending.
 
 ## 5.15.0 / #447 - Barracas battle outcomes
 

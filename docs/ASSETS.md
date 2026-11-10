@@ -1,6 +1,16 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.15.0** - 2026-11-09.
+Documentation version: **5.15.1** - 2026-11-09.
+
+## 5.15.1 / #448 - Command UI and validation sources
+
+The ES/EN panel reuses the owned live-menu presentation, pointer and keyboard
+controls. Existing guard sprites, military formations, city routes and cannon
+crew routes retain provenance. No art, audio or map geometry is added.
+assets/validation_v5_15_1 contains the separate command fixture and thin runner
+over #447's native save/peer harness and #435 sync instrumentation. Private
+engine/IWAD/fixture/save outputs remain under build/v515/issue448. The original
+#447 package/save and intermediate schema1 save are retained for migration.
 
 ## 5.15.0 / #447 - Director validation sources
 

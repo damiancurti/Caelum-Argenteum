@@ -1,6 +1,6 @@
 # Caelum Argenteum - Sprite art direction
 
-Documentation version: **5.15.0** - 2026-11-09.
+Documentation version: **5.15.1** - 2026-11-09.
 
 ## Port wardrobe brief for #423 (2026-10-29)
 

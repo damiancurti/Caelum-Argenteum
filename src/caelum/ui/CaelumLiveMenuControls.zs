@@ -226,6 +226,15 @@ class CaelumLiveMenuControls : Object ui
             Row(302);Button("CA_COMPANION_TRANSFER",InputEvent.Key_Enter,0,"",180);Button("CA_COMPANION_LOAN",0,108,"l",180);Button("CA_COMPANION_EQUIP",0,101,"e",180);
             Row(326);Button("CA_COMPANION_PREVIOUS",InputEvent.Key_UpArrow,0,"",180);Button("CA_COMPANION_NEXT",InputEvent.Key_DownArrow,0,"",180);Button("CA_UI_BACK",InputEvent.Key_Tab,0,"",180);
         }
+        else if(context==host.CTX_MILITARY)
+        {
+            let session=CaelumMilitarySession(user.FindInventory('CaelumMilitarySession'));
+            bool ready=session!=null && session.Ready;
+            Row(250);Button("CA_MILITARY_HOLD",0,49,"1",280,ready);Button("CA_MILITARY_ADVANCE",0,50,"2",280,ready);
+            Row(276);Button("CA_MILITARY_REGROUP",0,51,"3",280,ready);Button("CA_MILITARY_WITHDRAW",0,52,"4",280,ready);
+            Row(302);Button("CA_MILITARY_RESERVES",0,53,"5",560,ready);
+            Row(326);Button("CA_MILITARY_PREVIOUS",InputEvent.Key_LeftArrow,0,"",180);Button("CA_MILITARY_NEXT",InputEvent.Key_RightArrow,0,"",180);Button("CA_UI_BACK",InputEvent.Key_Tab,0,"",180);
+        }
         else if(context==host.CTX_CLEAN)
         {
             let session=CaelumCleaningSession.Find(user);

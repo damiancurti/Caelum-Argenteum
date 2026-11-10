@@ -33,6 +33,7 @@ class CaelumBattleDirector : Object play
     void RegisterDefender(CaelumPortDefender body)
     {
         if(body==null)return;
+        if(body.MilitaryGroup!=null)body.MilitaryGroup.Formation.PulseReady=false;
         let row=body.BattleDefender;
         if(row==null || row.Director!=self)
         {
@@ -55,6 +56,7 @@ class CaelumBattleDirector : Object play
     static void DefenderChanged(CaelumPortDefender body)
     {
         if(body==null)return;
+        if(body.MilitaryGroup!=null)body.MilitaryGroup.Formation.PulseReady=false;
         let row=body.BattleDefender;
         if(row==null && body.Port!=null && body.Port.Director!=null)
         {body.Port.Director.RegisterDefender(body);row=body.BattleDefender;}

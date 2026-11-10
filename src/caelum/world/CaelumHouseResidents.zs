@@ -125,6 +125,8 @@ class CaelumHouseResidents : Inventory
     const PARKED_STAT=Thinker.STAT_FIRST_THINKING-2;
     int Revision, PendingCursor, Unresolved;
     bool Ready, DeploymentPending;
+    transient bool DeploymentAttemptReady;
+    transient int DeploymentAttemptTic;
     Array<CaelumHouseResident> Residents;
     Array<int> PlacementPending;
 
@@ -279,6 +281,7 @@ class CaelumHouseResidents : Inventory
             if(body.Gun.Operators.Size()<=entry.GunSlot)body.Gun.Operators.Resize(entry.GunSlot+1);
             body.Gun.Operators[entry.GunSlot]=body;
         }
+        if(port.Military!=null)port.Military.Register(body);
     }
 
     void PrepareCity(CaelumPortSiege port)
@@ -383,6 +386,11 @@ class CaelumHouseResidents : Inventory
     CaelumPortDefender DeploymentOpportunity(CaelumPortSiege port,double civil,bool summarized=false)
     {
         if(!DeploymentPending || Residents.Size()==0 || port==null)return null;
+        if(!summarized)
+        {
+            if(DeploymentAttemptReady && DeploymentAttemptTic==level.time)return null;
+            DeploymentAttemptReady=true;DeploymentAttemptTic=level.time;
+        }
         // Un intento por tic: presupuesto fijo independiente del total de actores.
         int identity=PendingCursor;PendingCursor=(PendingCursor+1)%Residents.Size();
         let entry=Residents[identity];
