@@ -1,6 +1,6 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.16.0** - 2026-11-12.
+Documentation version: **5.16.1** - 2026-11-12.
 
 ## 5.16.0 / #452 - Regional campaign allocation (in progress)
 

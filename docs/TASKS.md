@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.16.0** - 2026-11-12.
+Documentation version: **5.16.1** - 2026-11-12.
+
+## 5.16.1 - Bestiary source import (#453)
+
+58 images, source metadata/checksums and deterministic catalogue generation are
+verified. See ASSETS and assets/validation_v5_16_1. AUTHORING.json remains the
+only project override source; REGION_PROPOSAL.json is unapproved. Review those
+58 proposed regional assignments before promoting them. Do not infer axes,
+creature stats, drops, numerical populations, encounters or rewards from art.
+The requested 3D handoff needs real meshes/materials/animation and native evidence;
+this import has none. Existing Rulo, Mandinga and Zupay behavior stays accepted.
+There is no new actionable gameplay test for pending_test.txt in this delivery.
 
 ## V5.16 in progress - Separate campaign issues (#452-457)
 

@@ -1,0 +1,440 @@
+{
+  "schema_revision": 1,
+  "issue": 453,
+  "status": "proposal_awaiting_author_approval",
+  "basis": "Creative campaign allocation within approved chapter regions; these are proposed game homes, not recovered regional data or a historical folklore atlas.",
+  "placement_contract": "Region assignment does not approve map coordinates, encounters, stats, rewards or spawns. Unique identities remain unique across travel; repeatable references do not receive population counts.",
+  "entries": [
+    {
+      "id": "CA-FOLK-001",
+      "reference_name": "Brujas y brujos",
+      "proposed_campaign_regions": [
+        "Buenos Aires",
+        "Pampa",
+        "Litoral",
+        "Cuyo",
+        "Northwest Argentina",
+        "Chaco",
+        "Selva",
+        "Patagonia"
+      ]
+    },
+    {
+      "id": "CA-FOLK-002",
+      "reference_name": "Brujas y brujos de la Salamanca",
+      "proposed_campaign_regions": [
+        "Northwest Argentina",
+        "Supernatural domains"
+      ]
+    },
+    {
+      "id": "CA-FOLK-003",
+      "reference_name": "Lobizón / Luisón",
+      "proposed_campaign_regions": [
+        "Pampa",
+        "Litoral"
+      ]
+    },
+    {
+      "id": "CA-FOLK-004",
+      "reference_name": "Runa Uturunco / Uturunco",
+      "proposed_campaign_regions": [
+        "Litoral",
+        "Selva"
+      ]
+    },
+    {
+      "id": "CA-FOLK-005",
+      "reference_name": "Ucumar / Ucumarí",
+      "proposed_campaign_regions": [
+        "Northwest Argentina"
+      ]
+    },
+    {
+      "id": "CA-FOLK-006",
+      "reference_name": "Pombero",
+      "proposed_campaign_regions": [
+        "Litoral",
+        "Selva"
+      ]
+    },
+    {
+      "id": "CA-FOLK-007",
+      "reference_name": "Yasí Yateré / Jasy Jaterê",
+      "proposed_campaign_regions": [
+        "Litoral"
+      ]
+    },
+    {
+      "id": "CA-FOLK-008",
+      "reference_name": "Curupí / Kurupí",
+      "proposed_campaign_regions": [
+        "Selva"
+      ]
+    },
+    {
+      "id": "CA-FOLK-009",
+      "reference_name": "Mikilo",
+      "proposed_campaign_regions": [
+        "Northwest Argentina"
+      ]
+    },
+    {
+      "id": "CA-FOLK-010",
+      "reference_name": "Coquena",
+      "proposed_campaign_regions": [
+        "Northwest Argentina"
+      ]
+    },
+    {
+      "id": "CA-FOLK-011",
+      "reference_name": "Yastay / Llastay",
+      "proposed_campaign_regions": [
+        "Cuyo",
+        "Northwest Argentina"
+      ]
+    },
+    {
+      "id": "CA-FOLK-012",
+      "reference_name": "Sachayoj",
+      "proposed_campaign_regions": [
+        "Chaco"
+      ]
+    },
+    {
+      "id": "CA-FOLK-013",
+      "reference_name": "Caá Porá",
+      "proposed_campaign_regions": [
+        "Selva"
+      ]
+    },
+    {
+      "id": "CA-FOLK-014",
+      "reference_name": "Caá Yarí",
+      "proposed_campaign_regions": [
+        "Selva"
+      ]
+    },
+    {
+      "id": "CA-FOLK-015",
+      "reference_name": "Zapam Zucum",
+      "proposed_campaign_regions": [
+        "Cuyo"
+      ]
+    },
+    {
+      "id": "CA-FOLK-016",
+      "reference_name": "Pericana",
+      "proposed_campaign_regions": [
+        "Cuyo"
+      ]
+    },
+    {
+      "id": "CA-FOLK-017",
+      "reference_name": "Solapa",
+      "proposed_campaign_regions": [
+        "Pampa"
+      ]
+    },
+    {
+      "id": "CA-FOLK-018",
+      "reference_name": "Mandinga",
+      "proposed_campaign_regions": [
+        "Buenos Aires",
+        "Supernatural domains"
+      ]
+    },
+    {
+      "id": "CA-FOLK-019",
+      "reference_name": "Zupay / Supay",
+      "proposed_campaign_regions": [
+        "Buenos Aires",
+        "Northwest Argentina",
+        "Supernatural domains"
+      ]
+    },
+    {
+      "id": "CA-FOLK-020",
+      "reference_name": "Nóshtex / Nosjthej",
+      "proposed_campaign_regions": [
+        "Chaco"
+      ]
+    },
+    {
+      "id": "CA-FOLK-021",
+      "reference_name": "Xalpen",
+      "proposed_campaign_regions": [
+        "Patagonia"
+      ]
+    },
+    {
+      "id": "CA-FOLK-022",
+      "reference_name": "Shoort",
+      "proposed_campaign_regions": [
+        "Patagonia"
+      ]
+    },
+    {
+      "id": "CA-FOLK-023",
+      "reference_name": "Tanu",
+      "proposed_campaign_regions": [
+        "Patagonia"
+      ]
+    },
+    {
+      "id": "CA-FOLK-024",
+      "reference_name": "Halaháches / Kótaix",
+      "proposed_campaign_regions": [
+        "Patagonia"
+      ]
+    },
+    {
+      "id": "CA-FOLK-025",
+      "reference_name": "Matan",
+      "proposed_campaign_regions": [
+        "Patagonia"
+      ]
+    },
+    {
+      "id": "CA-FOLK-026",
+      "reference_name": "Ulen",
+      "proposed_campaign_regions": [
+        "Patagonia"
+      ]
+    },
+    {
+      "id": "CA-FOLK-027",
+      "reference_name": "Luz Mala",
+      "proposed_campaign_regions": [
+        "Pampa",
+        "Cuyo",
+        "Patagonia"
+      ]
+    },
+    {
+      "id": "CA-FOLK-028",
+      "reference_name": "Umita",
+      "proposed_campaign_regions": [
+        "Northwest Argentina"
+      ]
+    },
+    {
+      "id": "CA-FOLK-029",
+      "reference_name": "Mulánima / Almamula",
+      "proposed_campaign_regions": [
+        "Northwest Argentina"
+      ]
+    },
+    {
+      "id": "CA-FOLK-030",
+      "reference_name": "Chancho de Lata",
+      "proposed_campaign_regions": [
+        "Pampa",
+        "Litoral"
+      ]
+    },
+    {
+      "id": "CA-FOLK-031",
+      "reference_name": "La Viuda",
+      "proposed_campaign_regions": [
+        "Buenos Aires",
+        "Pampa",
+        "Litoral",
+        "Cuyo"
+      ]
+    },
+    {
+      "id": "CA-FOLK-032",
+      "reference_name": "La Llorona",
+      "proposed_campaign_regions": [
+        "Buenos Aires",
+        "Litoral"
+      ]
+    },
+    {
+      "id": "CA-FOLK-033",
+      "reference_name": "Futre",
+      "proposed_campaign_regions": [
+        "Cuyo"
+      ]
+    },
+    {
+      "id": "CA-FOLK-034",
+      "reference_name": "Anchimallén",
+      "proposed_campaign_regions": [
+        "Patagonia"
+      ]
+    },
+    {
+      "id": "CA-FOLK-035",
+      "reference_name": "Chonchón / Tué Tué",
+      "proposed_campaign_regions": [
+        "Patagonia"
+      ]
+    },
+    {
+      "id": "CA-FOLK-036",
+      "reference_name": "Gualicho",
+      "proposed_campaign_regions": [
+        "Patagonia"
+      ]
+    },
+    {
+      "id": "CA-FOLK-037",
+      "reference_name": "Pampayoj",
+      "proposed_campaign_regions": [
+        "Pampa"
+      ]
+    },
+    {
+      "id": "CA-FOLK-038",
+      "reference_name": "Mayu Maman",
+      "proposed_campaign_regions": [
+        "Northwest Argentina"
+      ]
+    },
+    {
+      "id": "CA-FOLK-039",
+      "reference_name": "Orko Maman",
+      "proposed_campaign_regions": [
+        "Northwest Argentina"
+      ]
+    },
+    {
+      "id": "CA-FOLK-040",
+      "reference_name": "Uritu Orko",
+      "proposed_campaign_regions": [
+        "Northwest Argentina"
+      ]
+    },
+    {
+      "id": "CA-FOLK-041",
+      "reference_name": "Nowet",
+      "proposed_campaign_regions": [
+        "Chaco"
+      ]
+    },
+    {
+      "id": "CA-FOLK-042",
+      "reference_name": "Máip",
+      "proposed_campaign_regions": [
+        "Patagonia"
+      ]
+    },
+    {
+      "id": "CA-FOLK-043",
+      "reference_name": "Familiar",
+      "proposed_campaign_regions": [
+        "Northwest Argentina"
+      ]
+    },
+    {
+      "id": "CA-FOLK-044",
+      "reference_name": "Basilisco criollo",
+      "proposed_campaign_regions": [
+        "Pampa",
+        "Litoral"
+      ]
+    },
+    {
+      "id": "CA-FOLK-045",
+      "reference_name": "Cachirú / Cachurú",
+      "proposed_campaign_regions": [
+        "Northwest Argentina"
+      ]
+    },
+    {
+      "id": "CA-FOLK-046",
+      "reference_name": "Kakuy / Cacuy",
+      "proposed_campaign_regions": [
+        "Northwest Argentina"
+      ]
+    },
+    {
+      "id": "CA-FOLK-047",
+      "reference_name": "Tejú Jaguá / Teyú Yaguá",
+      "proposed_campaign_regions": [
+        "Selva"
+      ]
+    },
+    {
+      "id": "CA-FOLK-048",
+      "reference_name": "Mbói Tu’ĩ",
+      "proposed_campaign_regions": [
+        "Litoral"
+      ]
+    },
+    {
+      "id": "CA-FOLK-049",
+      "reference_name": "Moñái",
+      "proposed_campaign_regions": [
+        "Selva"
+      ]
+    },
+    {
+      "id": "CA-FOLK-050",
+      "reference_name": "Ao Ao",
+      "proposed_campaign_regions": [
+        "Selva"
+      ]
+    },
+    {
+      "id": "CA-FOLK-051",
+      "reference_name": "Mbói Tatá",
+      "proposed_campaign_regions": [
+        "Litoral",
+        "Selva"
+      ]
+    },
+    {
+      "id": "CA-FOLK-052",
+      "reference_name": "Mbói Yaguá",
+      "proposed_campaign_regions": [
+        "Litoral",
+        "Selva"
+      ]
+    },
+    {
+      "id": "CA-FOLK-053",
+      "reference_name": "Cuero / Cuero Uñudo",
+      "proposed_campaign_regions": [
+        "Patagonia"
+      ]
+    },
+    {
+      "id": "CA-FOLK-054",
+      "reference_name": "Peuchén / Piuchén",
+      "proposed_campaign_regions": [
+        "Patagonia"
+      ]
+    },
+    {
+      "id": "CA-FOLK-055",
+      "reference_name": "Nahuelito",
+      "proposed_campaign_regions": [
+        "Patagonia"
+      ]
+    },
+    {
+      "id": "CA-FOLK-056",
+      "reference_name": "Huayrapuca",
+      "proposed_campaign_regions": [
+        "Northwest Argentina"
+      ]
+    },
+    {
+      "id": "CA-FOLK-057",
+      "reference_name": "Kasogonaga",
+      "proposed_campaign_regions": [
+        "Chaco"
+      ]
+    },
+    {
+      "id": "CA-FOLK-058",
+      "reference_name": "Kélenken",
+      "proposed_campaign_regions": [
+        "Patagonia"
+      ]
+    }
+  ]
+}

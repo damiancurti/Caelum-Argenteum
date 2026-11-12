@@ -1,0 +1,26 @@
+{
+  "schema_revision": 1,
+  "issue": 453,
+  "source_catalogue": "assets/source/bestiary_453/catalogo.json",
+  "presentation_preference": "3d_models_where_feasible",
+  "presentation_authority": "Author request, 2026-11-12: quisiera modelos 3d en lo posible de esas cosas",
+  "campaign_regions": {},
+  "region_authority": "No per-entry campaign regions were recovered; author decisions must populate this table before placement.",
+  "protected_existing_identities": {
+    "CA-FOLK-005": {"name": "Rulo", "class": "CaelumRulo", "contract": "Rulo remains the named Ucumar NPC; the repeatable species does not duplicate him."},
+    "CA-FOLK-018": {"class": "CaelumMandinga", "contract": "Preserve the accepted current-game size and existing actors until separately approved behavior/art delivery."},
+    "CA-FOLK-019": {"class": "CaelumZupayColossus", "contract": "Zupay is a unique narrative identity across Chapter I retreats; his death belongs to Chapter II. Preserve current-game size."}
+  },
+  "production_contract": {
+    "reference_role": "anatomy, silhouette, materials and identity",
+    "new_playable_races": false,
+    "runtime_enabled": false,
+    "meshes_delivered": 0,
+    "rigs_delivered": 0,
+    "animations_delivered": 0,
+    "preserve_teju_jagua_canine_heads": 7,
+    "model_handoff": "Produce actual editable meshes, UV/material sources, animations where needed, native bindings and engine/visual evidence in focused deliveries. A PNG on a plane is not a completed 3D creature.",
+    "native_format_basis": "The existing project has OBJ and MD3 models. Select and validate the appropriate native format per model; no new runtime/export dependency is assumed.",
+    "balance_scope": "No stats, attacks, allegiance, drops, spawn rates or population limit are inferred from concept art or folklore."
+  }
+}

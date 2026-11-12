@@ -11,6 +11,7 @@ from generate_battle_routes import render as battle_route_data
 from assets.generators.generate_siege_reinforcements import render as reinforcement_data
 from assets.generators.generate_tarot_justice import validate as justice_geometry_problems
 from assets.generators.generate_tarot_examples import render as tarot_example_data
+from assets.generators.build_bestiary_catalogue import assemble as bestiary_catalogue
 
 from build_document_index import (
     INDEX_NAME as DOC_INDEX_NAME,
@@ -245,6 +246,15 @@ def validate(root):
     count = re.search(AUDIO_INVENTORY_RE, assets)
     inventory = int(count.group(1) or count.group(2)) if count else None
     check(inventory == audio_count, 'ASSETS.md: update the runtime audio inventory count')
+
+    # Verify the authoring catalogue without interpreting missing regions as runtime content.
+    try:
+        catalogue, bestiary_audit = bestiary_catalogue(root)
+        expected = (json.dumps(catalogue, ensure_ascii=False, indent=2) + '\n').encode('utf-8')
+        check((root/'assets/bestiary/CATALOGUE.json').read_bytes() == expected,
+              'Bestiary catalogue is stale; run python assets/generators/build_bestiary_catalogue.py')
+    except (OSError, KeyError, ValueError) as exc:
+        check(False, f'Bestiary source/catalogue validation failed: {exc}')
 
     # Check contributor premises when the file can be read.
     agents = root/'AGENTS.md'

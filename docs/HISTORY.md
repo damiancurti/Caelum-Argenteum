@@ -1,6 +1,27 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.16.0** - 2026-11-12.
+Documentation version: **5.16.1** - 2026-11-12.
+
+## 5.16.1 - Verified folklore reference import (#453, in progress, 2026-11-12)
+
+The author directed the agent to the GitHub bestiary upload and requested 3D
+models where possible. Six #453 attachments yielded 58 original PNGs and seven
+supporting files. All original listed file hashes, image dimensions/modes and
+ordered package IDs are verified; original source bytes and reconstruction
+qualifications are retained. The catalogue does not contain recovered campaign
+regions. A separate 58-row regional proposal was prepared for author review.
+
+The normalized authoring catalogue preserves 2 Human, 3 Beast Man, 21
+Duende/Demon, 16 Apparition and 16 Magical Beast references: 33 unique,
+24 repeatable (four uncommon) and one limited Shoort group. Existing Rulo,
+Mandinga and Zupay identities are protected. The seven-canine-head Teju Jagua
+reference is retained. No new gameplay behavior, map, race, model, rig, animation
+or save migration is claimed. Only diagnostic release labels change at runtime.
+
+Reproducible static evidence is stored in assets/validation_v5_16_1. The source
+and catalogue checks join read-only project validation. Model visual review and
+native creature validation remain future work; #453 stays open for regional
+authoring. No manual acceptance entry is added or removed for reference import.
 
 ## 5.16.0 - Regional campaign planning (#452, in progress, 2026-11-12)
 
