@@ -1,6 +1,70 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.15.4** - 2026-11-10.
+Documentation version: **5.16.0** - 2026-11-12.
+
+## 5.16.0 / #452 - Regional campaign allocation (in progress)
+
+On 2026-11-12 the author approved this regional allocation as the base for V5.16:
+
+| Stage | Tier | Major essences | Approved regional allocation |
+| --- | --- | --- | --- |
+| Prologue | Existing tutorial | 1 | Limbo mansion, MAP01 |
+| Chapter I | 1 | 7 | Buenos Aires, Pampa, Litoral |
+| Chapter II | 2 | 7 | Cuyo, Northwest Argentina, Chaco, Selva, supernatural domains |
+| Chapter III | 3 | 7 | Patagonia, coasts, Antarctica, deep sea, aerial cities, Moon |
+
+This approves chapter placement as a base, not the order of every region,
+mandatory visits, exact geography, map layouts, encounters or ability locks.
+The existing three-chapter story in section 9 remains authoritative: Chapter II
+ends with the infernal prince's banishment; Chapter III culminates with Selene.
+The World remains the final card. The 56 Minor essences belong to secondary
+missions across the three chapters. One formal Tarot mission grants one essence.
+
+The machine-readable planning graph is [PROGRESSION.json](../assets/campaign/PROGRESSION.json).
+It records each chapter's systems, narrative endpoint, information boundaries,
+the implemented opening route and separately staged issues #452-457. Its schema
+revision is for authoring data, not a new save revision; runtime is not enabled.
+
+```mermaid
+flowchart LR
+  A[MAP01: mansion / Fool] -->|Existing return to body| B[MAP02: sewers / Ace of Cups]
+  B -->|Existing workshop exit| C[MAP03: Barracas / Knight of Wands]
+  C -. Regional routes and exit gate pending .-> D[Rest of Chapter I: Buenos Aires / Pampa / Litoral]
+  D -. Entry and routes pending .-> E[Chapter II: Cuyo / NOA / Chaco / Selva / supernatural]
+  E -. Entry and routes pending .-> F[Chapter III: Patagonia / coasts / Antarctica / deep sea / aerial / Moon]
+```
+
+Dashed edges denote authoring dependencies, not working travel links. Existing
+transport connections, optional returns, siege outcomes and private cooperative
+progress remain unchanged. The opening graph is not the complete travel graph.
+
+Guard recognition does not restore the captain's memories. The port briefing
+does not reveal Selene, implanted souls or the true residents remaining in Limbo.
+The earlier four resident-body boss/reintegration plan remains pending; chapter
+allocation does not authorize turning the rescued prisoners into those bosses.
+Zupay survives Chapter I; the specific Chapter II death encounter is unauthored.
+Main events and optional exploration both supply memories, but exact scripts,
+required revelations and their gates remain decisions for #457.
+
+Regions normally remain revisitable except for authored blocks. Story and Major
+abilities can open regions; specific assignments must prevent an essence from
+being locked behind its own ability. The full geographic/ability graph and its
+circular-lock audit are pending, not established by the opening-route audit.
+
+Finale access combines reputation AND acquired-essence count. The reputation
+track/minimum, essence count/mandatory identities and cooperative policy remain
+open. This entry gate is distinct from the accepted unified Tarot power, which
+requires all 78 essences to damage deities (SYSTEMS, 5.13.1). The Selene encounter
+must reconcile both rules explicitly; neither is silently replaced here.
+
+#454 includes reference-backed redesign of MAP02 and existing cities as well as
+new regional slices. Each layout needs review, ordinary traversal and preserved
+services/triggers. Replaced geometry requires exact old-WAD compatibility for
+both active-map and visited-hub saves before adoption. #453 requires the original
+approved bestiary manifest; concept references alone are not integrated actors.
+The 78-map target counts authored campaign content, not the catalogue's technical
+or standalone map entries. Prologue beta scope and full-campaign completion stay
+distinct. This planning increment does not complete any of #452-457.
 
 ## 5.15.4 / #451 - Barracas occupation and recovery
 

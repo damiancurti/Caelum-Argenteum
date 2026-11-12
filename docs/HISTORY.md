@@ -1,6 +1,32 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.15.4** - 2026-11-10.
+Documentation version: **5.16.0** - 2026-11-12.
+
+## 5.16.0 - Regional campaign planning (#452, in progress, 2026-11-12)
+
+The author requested implementation of #452-457 with shared exploration and
+separate scope, commits, tests and PRs, plus live checks and an eventual author
+terminal. They approved the proposed regional chapter allocation as a base:
+Buenos Aires/Pampa/Litoral in I; Cuyo/NOA/Chaco/Selva/supernatural domains in II;
+Patagonia/coasts/Antarctica/deep sea/aerial cities/Moon in III. This is design
+approval only, not gameplay acceptance, approval of every map or issue closure.
+
+The existing prologue/three chapters, 1+7+7+7 Major counts and 56 Minor target,
+opening acquisitions, narrative secrecy and Zupay boundary were retained in a
+machine-readable authoring graph and the canonical MAP01 section. Unresolved
+routes, finale values, bestiary source, placements and scripts remain explicit.
+The baseline audit in build/v516 was reused; no undocumented source was invented.
+
+Static evidence: both baseline 5.15.4 and planning 5.16.0 project validators pass
+with no errors. The repeatable graph audit passes opening-route/count checks and
+reports 75 unassigned acquisitions; --require-complete returns the expected
+failure while authoring is open. The official builder packages 18,103 files.
+Gameplay, maps and save schema are unchanged; only two diagnostic release labels
+advance. GZDoom 4.14.2 passes isolated MAP02 startup and new-save reload, including
+both diagnostic labels. Evidence: assets/validation_v5_16_0/RESULTS.json, complete
+logs and inspected captures. This is not new-content navigation, historical-save
+migration, performance evidence or V5.16 author gameplay acceptance. No manual
+test entry was removed and no issue is declared complete.
 
 ## 5.15.4 - Persistent siege consequences (#451, 2026-11-10)
 

@@ -1,10 +1,14 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.15.4** - 2026-11-10.
+Documentation version: **5.16.0** - 2026-11-12.
 
-**V5.15 accepted2026-11-10:** five checks;#447-451 closed;PR635-639 merged.
-HISTORY: CA447-01..451-01; validation_v5_15_0..4. Laboratory contamination: TASKS.
-Author terminal: validation_v5_15_4/author_terminal.ps1. Single-player/attributes100; rules/status: SYSTEMS/TASKS.
+**V5.16:** #452 regional allocation approved2026-11-12; graph:
+assets/campaign/PROGRESSION.json, canon: MAP01. #452-457 remain open;
+routes/finale/bestiary/placements/scripts pending. Gameplay remains V5.15.
+
+**V5.15 accepted2026-11-10:** CA447-01..451-01;#447-451 closed;PR635-639 merged.
+HISTORY/validation_v5_15_0..4. Single-player/attributes100 terminal:
+validation_v5_15_4/author_terminal.ps1; laboratory contamination: TASKS.
 
 **V5.14 accepted2026-11-09:** 5checks;#443-446 closed;PR630-633 merged.
 **V5.13 accepted2026-11-01:**13checks, awakening included; implementation merged.

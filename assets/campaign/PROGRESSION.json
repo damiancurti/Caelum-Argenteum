@@ -1,0 +1,90 @@
+{
+  "schema_revision": 1,
+  "issue": 452,
+  "status": "partially_authored",
+  "runtime_enabled": false,
+  "authority": [
+    {"source": "docs/MAP01.txt", "section": "9. COMPLETE CAMPAIGN STRUCTURE", "scope": "chapter order, tiers, Major counts and narrative endpoints"},
+    {"source": "https://github.com/damiancurti/Caelum-Argenteum/issues/452", "date": "2026-10-21", "scope": "story and ability gates, revisits, memories and conjunctive finale requirements"},
+    {"source": "author conversation", "date": "2026-11-12", "decision": "Aprobar esta distribución como base", "scope": "regional chapter allocation only"}
+  ],
+  "targets": {"major_essences": 22, "minor_essences": 56, "campaign_maps_minimum": 78},
+  "chapters": [
+    {
+      "id": "prologue", "tier": null, "major_essences": 1,
+      "regions": ["Limbo mansion"],
+      "narrative_endpoint": "Complete the four trials, receive the Magic Box and capture the Fool; return to the protagonist's body in the sewers.",
+      "required_systems": ["tutorial quests", "Magic Box", "essence capture", "hub travel"],
+      "player_knowledge": ["Unidentified female voice", "Palomo knows more than he admits", "Residents cannot use the same exit", "The protagonist's body was stripped in the sewers"],
+      "concealed_information": ["Limbo identity", "Selene is the voice", "Implanted prisoner souls", "Full Tarot plan"]
+    },
+    {
+      "id": "chapter_1", "tier": 1, "major_essences": 7,
+      "regions": ["Buenos Aires", "Pampa", "Litoral"],
+      "narrative_endpoint": "Discover the factions, the Caelith invasion and evidence of Cult infiltration; Zupay survives the Chapter I encounters.",
+      "required_systems": ["factions", "quests", "travel", "battle consequences", "essence capture"],
+      "player_knowledge": ["Guards recognize the amnesiac captain", "Paid rescued prisoners may disclose siege intelligence"],
+      "concealed_information": ["Prisoners serve Selene", "Their implanted souls differ from the authentic residents in Limbo"],
+      "unresolved": ["Major assignments", "Resident-body confrontations and reintegration timing", "Regional order and individual gates", "Chapter exit condition"]
+    },
+    {
+      "id": "chapter_2", "tier": 2, "major_essences": 7,
+      "regions": ["Cuyo", "Northwest Argentina", "Chaco", "Selva", "Supernatural domains"],
+      "narrative_endpoint": "Find and banish the infernal prince; reveal his lunar intervention, Selene's corruption and the Cult's function. Zupay's authored death belongs to this chapter.",
+      "required_systems": ["quests", "travel", "factions", "essence capture", "revelation gates"],
+      "player_knowledge": [], "concealed_information": [],
+      "unresolved": ["Major assignments", "Regional order and individual gates", "Zupay death encounter", "Exact revelation scenes", "Chapter entry and exit conditions"]
+    },
+    {
+      "id": "chapter_3", "tier": 3, "major_essences": 7,
+      "regions": ["Patagonia", "Coasts", "Antarctica", "Deep sea", "Aerial cities", "Moon"],
+      "narrative_endpoint": "Acquire the means to reach the Moon, confront the Caelith regime and the truth of the Dispersal, obtain the World as the final card and confront Selene.",
+      "required_systems": ["travel", "breathing", "water volumes", "quests", "essence capture", "deity damage", "revelation gates"],
+      "player_knowledge": [], "concealed_information": [],
+      "unresolved": ["Major assignments", "Regional order and individual gates", "Means of lunar travel", "Chapter entry condition", "Finale eligibility", "Final encounter and outcomes"]
+    }
+  ],
+  "chapter_order": ["prologue", "chapter_1", "chapter_2", "chapter_3"],
+  "regional_allocation_note": "Chapter placement is approved as a base. Region list order does not approve geographic connections, mandatory visits, map layouts or unlock conditions. Empty information lists are unauthored, not permission to reveal everything.",
+  "established_route": {
+    "entry": "mansion",
+    "nodes": [
+      {"id": "mansion", "map": "MAP01", "chapter": "prologue", "essence_id": 0, "entry": "New campaign or existing approved Limbo return", "exit": "Existing four trials, Box and Fool capture gate"},
+      {"id": "sewers", "map": "MAP02", "chapter": "chapter_1", "essence_id": 36, "entry": "Existing MAP01 departure", "exit": "Existing maze keys, Zupay retreat and workshop exit"},
+      {"id": "barracas", "map": "MAP03", "chapter": "chapter_1", "essence_id": 60, "entry": "Existing MAP02 workshop exit", "exit": "Existing authored transport; occupation and recovery restrictions remain authoritative"}
+    ],
+    "edges": [
+      {"from": "mansion", "to": "sewers", "status": "implemented"},
+      {"from": "sewers", "to": "barracas", "status": "implemented"}
+    ],
+    "scope_note": "Opening main route only. This is not a replacement for the existing transport graph or an assertion that these are the only playable maps."
+  },
+  "progression_policy": {
+    "story_and_major_ability_gates": true,
+    "region_main_story_required": false,
+    "revisit_default": "allowed_except_authored_blocks",
+    "memories_from": ["main_story", "optional_exploration"],
+    "minor_essences_from": "secondary_missions_across_three_chapters",
+    "essences_per_formal_tarot_mission": 1,
+    "required_ability_obtainable_before_its_gate": true,
+    "final_card_id": 21
+  },
+  "finale": {
+    "condition_operator": "AND",
+    "reputation_track": null,
+    "reputation_minimum": null,
+    "acquired_essence_minimum": null,
+    "mandatory_essence_ids": null,
+    "cooperative_eligibility": null,
+    "existing_deity_damage_power": {"required_acquired_essences": 78, "source": "docs/SYSTEMS.md, 5.13.1 - Capture sources and unified Tarot"},
+    "unresolved_interaction": "Finale entry and the existing all-78 deity-damage power are distinct gates. Author the Selene encounter without silently changing either rule."
+  },
+  "delivery_stages": [
+    {"issue": 452, "scope": "Review this progression graph and resolve route, ability and finale gates", "status": "in_progress"},
+    {"issue": 453, "scope": "Recover the exact approved bestiary manifest and provenance", "status": "awaiting_source"},
+    {"issue": 454, "scope": "Review and deliver existing sewer/city redesigns and regional map slices separately", "status": "awaiting_layouts"},
+    {"issue": 455, "scope": "Approve and integrate per-creature encounters, behavior and unique-instance persistence", "status": "awaiting_bestiary_and_encounters"},
+    {"issue": 456, "scope": "Author remaining 75 acquisitions without circular ability gates", "status": "awaiting_assignments"},
+    {"issue": 457, "scope": "Approve and integrate memories, revelations and chapter transitions", "status": "awaiting_scripts"}
+  ]
+}

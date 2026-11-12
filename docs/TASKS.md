@@ -1,6 +1,24 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.15.4** - 2026-11-10.
+Documentation version: **5.16.0** - 2026-11-12.
+
+## V5.16 in progress - Separate campaign issues (#452-457)
+
+| Issue | Current scope and remaining decision |
+| --- | --- |
+| #452 | Regional chapter allocation approved 2026-11-12; opening graph audited. Exact geographic/ability gates, finale eligibility and revelation timing remain open. |
+| #453 | Recover the exact approved 58-reference manifest, regions, sizes and provenance before enumerating the bestiary. |
+| #454 | Review existing sewer/city redesign layouts and regional slices individually; preserve services, ordinary routes, original geometry and active/hub saves. |
+| #455 | Approve per-creature behavior/stats/encounters after #453/#454; unique and repeatable populations remain distinct. |
+| #456 | Assign the remaining 75 essences; preserve IDs 0/36/60, personal acquisition, interruption recovery and ability-gate reachability. |
+| #457 | Author memories, revelations, chapter ends and Selene encounter; retain Zupay's Chapter I retreat/Chapter II death boundary. |
+
+The planning source is assets/campaign/PROGRESSION.json; canonical narrative
+constraints are in MAP01. Run assets/generators/validate_campaign_progression.py
+for the bounded audit. --require-complete intentionally fails while authoring is
+open. No new manual gameplay check exists yet, so pending_test.txt remains empty.
+The finale's undecided entry threshold and accepted all-78 deity-damage power
+must be reconciled by the author, not by an implicit balance change.
 
 ## V5.15 accepted and integrated ? 2026-11-10 (#447?451)
 
