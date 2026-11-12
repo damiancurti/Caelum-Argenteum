@@ -25,6 +25,11 @@ authoring. No manual acceptance entry is added or removed for reference import.
 
 ## 5.16.0 - Regional campaign planning (#452, in progress, 2026-11-12)
 
+Later on the same date the author explicitly approved cooperative finale entry
+when one participant satisfies both requirements. Group travel still requires
+consent; personal essence/reputation ownership is not transferred. This resolves
+the earlier aggregation question below, without implementing the encounter.
+
 The author requested implementation of #452-457 with shared exploration and
 separate scope, commits, tests and PRs, plus live checks and an eventual author
 terminal. They approved the proposed regional chapter allocation as a base:

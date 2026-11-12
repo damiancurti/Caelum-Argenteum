@@ -61,8 +61,10 @@ matches the existing all-78 deity-damage power without changing its costs or
 duration. The protagonist retains custody of the Tarot without consuming the
 essences. An epilogue reflects existing city/faction outcomes and exploration
 continues afterward. This does not resurrect casualties or reset consequences.
-Cooperative aggregation, encounter statistics, lunar transport and exact scripts
-remain unauthored. This is approved design, not implemented finale behavior.
+For cooperative entry, the author approved one participant meeting both
+requirements for the entire consenting group. This neither combines incomplete
+requirements from different players nor copies their personal essences or
+reputation. Encounter statistics, lunar transport and exact scripts remain unauthored. This is approved design, not implemented finale behavior.
 
 #454 includes reference-backed redesign of MAP02 and existing cities as well as
 new regional slices. The author supplied approved sewer-v2 and Barracas-v1 boards
