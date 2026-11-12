@@ -1,7 +1,7 @@
 {
   "schema_revision": 1,
   "issue": 453,
-  "status": "proposal_awaiting_author_approval",
+  "status": "author_approved_2026_11_12",
   "basis": "Creative campaign allocation within approved chapter regions; these are proposed game homes, not recovered regional data or a historical folklore atlas.",
   "placement_contract": "Region assignment does not approve map coordinates, encounters, stats, rewards or spawns. Unique identities remain unique across travel; repeatable references do not receive population counts.",
   "entries": [
@@ -436,5 +436,6 @@
         "Patagonia"
       ]
     }
-  ]
+  ],
+  "approval": "Author conversation: Aprobar la tabla regional propuesta"
 }

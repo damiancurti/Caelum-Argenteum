@@ -10,13 +10,14 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 validate it, then rebuild with `run_dev.bat` as described below.
 
 The [58-reference folklore catalogue](assets/bestiary/CATALOGUE.json) is imported
-under #453 with original images and verified provenance. Campaign regions are
-proposed for review; no new creatures or 3D models are yet implemented.
+under #453 with original images, verified provenance and all 58 regional
+assignments approved. No new creatures or 3D models are yet implemented.
 
 V5.16 is in campaign authoring, beginning with #452. The author approved the
 regional chapter allocation; [the planning graph](assets/campaign/PROGRESSION.json)
 and [canonical narrative](docs/MAP01.txt) distinguish existing routes from pending
-geography, creatures, essence placements and revelations. #452-457 remain open.
+geography, creatures, essence placements and revelations. #453 is ready for
+review; #452 and #454-457 remain in progress.
 This planning increment preserves the accepted V5.15 runtime and maps; the new
 campaign and its author test terminal are not yet implemented. The basic finale
 and its all-78-essence/Respected reputation requirements are author-approved;

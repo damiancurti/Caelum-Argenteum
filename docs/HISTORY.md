@@ -2,14 +2,16 @@
 
 Documentation version: **5.16.1** - 2026-11-12.
 
-## 5.16.1 - Verified folklore reference import (#453, in progress, 2026-11-12)
+## 5.16.1 - Verified folklore reference catalogue (#453, 2026-11-12)
 
 The author directed the agent to the GitHub bestiary upload and requested 3D
 models where possible. Six #453 attachments yielded 58 original PNGs and seven
 supporting files. All original listed file hashes, image dimensions/modes and
 ordered package IDs are verified; original source bytes and reconstruction
 qualifications are retained. The catalogue does not contain recovered campaign
-regions. A separate 58-row regional proposal was prepared for author review.
+regions. The author subsequently approved the separate 58-row regional table
+on the same date. Its assignments now populate AUTHORING.json and the generated
+catalogue; their provenance remains an explicit new campaign decision.
 
 The normalized authoring catalogue preserves 2 Human, 3 Beast Man, 21
 Duende/Demon, 16 Apparition and 16 Magical Beast references: 33 unique,
@@ -20,10 +22,15 @@ or save migration is claimed. Only diagnostic release labels change at runtime.
 
 Reproducible static evidence is stored in assets/validation_v5_16_1. The source
 and catalogue checks join read-only project validation. Model visual review and
-native creature validation remain future work; #453 stays open for regional
-authoring. No manual acceptance entry is added or removed for reference import.
+native creature validation remain future work under the creature/art issues.
+The #453 region-completeness gate now passes with zero missing rows. No manual acceptance entry is added or removed for reference import.
 
 ## 5.16.0 - Regional campaign planning (#452, in progress, 2026-11-12)
+
+Later on the same date the author explicitly approved cooperative finale entry
+when one participant satisfies both requirements. Group travel still requires
+consent; personal essence/reputation ownership is not transferred. This resolves
+the earlier aggregation question below, without implementing the encounter.
 
 The author requested implementation of #452-457 with shared exploration and
 separate scope, commits, tests and PRs, plus live checks and an eventual author

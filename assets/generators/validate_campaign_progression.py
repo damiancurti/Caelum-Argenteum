@@ -64,6 +64,12 @@ def audit(plan):
         check(finale["acquired_essence_minimum"] == finale["existing_deity_damage_power"]["required_acquired_essences"], "Finale and existing deity-damage requirements differ")
         check(finale.get("reputation_track_operator") == "ANY", "Finale reputation requires any one approved faction")
         check(finale.get("faction_membership_required") is False, "Finale must not add faction membership")
+    cooperative = finale["cooperative_eligibility"]
+    if cooperative is not None:
+        check(cooperative["operator"] == "ANY_PARTICIPANT", "Finale requires one eligible participant")
+        check(cooperative["same_participant_must_meet_both_requirements"] is True, "Do not aggregate partial requirements across players")
+        check(cooperative["group_travel_consent_required"] is True, "Finale travel retains group consent")
+        check(cooperative["copy_personal_essences_or_reputation"] is False, "Finale entry must not copy personal progress")
     unassigned = sorted(card_ids - set(placed))
     pending.append(f"Campaign acquisition assignments outside opening route: {len(unassigned)}")
     pending.append("Full regional geographic/ability graph and circular-lock audit remain unauthored")

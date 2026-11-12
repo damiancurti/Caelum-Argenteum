@@ -61,8 +61,10 @@ matches the existing all-78 deity-damage power without changing its costs or
 duration. The protagonist retains custody of the Tarot without consuming the
 essences. An epilogue reflects existing city/faction outcomes and exploration
 continues afterward. This does not resurrect casualties or reset consequences.
-Cooperative aggregation, encounter statistics, lunar transport and exact scripts
-remain unauthored. This is approved design, not implemented finale behavior.
+For cooperative entry, the author approved one participant meeting both
+requirements for the entire consenting group. This neither combines incomplete
+requirements from different players nor copies their personal essences or
+reputation. Encounter statistics, lunar transport and exact scripts remain unauthored. This is approved design, not implemented finale behavior.
 
 #454 includes reference-backed redesign of MAP02 and existing cities as well as
 new regional slices. The author supplied approved sewer-v2 and Barracas-v1 boards
@@ -73,7 +75,8 @@ services/triggers. Replaced geometry requires exact old-WAD compatibility for
 both active-map and visited-hub saves before adoption. #453 requires the original
 approved bestiary manifest. The author supplied six attachments in #453; all 58
 concept images pass catalogue SHA-256 checks. Their reconstructed catalogue
-leaves campaign regions unassigned. Concept references alone are not integrated
+did not recover original regions; the author approved a new 58-row campaign
+allocation on 2026-11-12, now preserved under #453. Concept references are not integrated
 actors; the author prefers 3D models where feasible.
 The 78-map target counts authored campaign content, not the catalogue's technical
 or standalone map entries. Prologue beta scope and full-campaign completion stay

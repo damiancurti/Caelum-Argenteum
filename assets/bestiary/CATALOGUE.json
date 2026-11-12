@@ -25,8 +25,17 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Buenos Aires",
+        "Pampa",
+        "Litoral",
+        "Cuyo",
+        "Northwest Argentina",
+        "Chaco",
+        "Selva",
+        "Patagonia"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/01_Humanos/01_brujas_brujos.png",
         "sha256": "8013d7ab5bd966e1f098e683356d77289784fc50bfbdf0fa674d4de557fce2ec",
@@ -56,8 +65,11 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Northwest Argentina",
+        "Supernatural domains"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/01_Humanos/02_salamanca.png",
         "sha256": "72bbb072494873b55220e3c11c903897711afcdb964c4fb26a5899eb6e76296c",
@@ -87,8 +99,11 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Pampa",
+        "Litoral"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/02_Hombres_bestia/03_lobizon.png",
         "sha256": "b3800911466d406a2257ffde20695640984754299e5bd5f6814677d1b48af863",
@@ -118,8 +133,11 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Litoral",
+        "Selva"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/02_Hombres_bestia/04_uturunco.png",
         "sha256": "91e144d2f2d8e59a49ef73b74d75e623caaee958ee6df6c8a43386533236b393",
@@ -149,8 +167,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Northwest Argentina"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/02_Hombres_bestia/05_ucumar.png",
         "sha256": "61b8e8eaea6206c44c7c52a42e912439b692f06fa219d8d521ea837a78ca61d0",
@@ -184,8 +204,11 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Litoral",
+        "Selva"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/06_pombero.png",
         "sha256": "1dd178b9759cc92c00318c6d8f36e5192d42a1cc26f4357a1c0f6355406f39ae",
@@ -215,8 +238,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Litoral"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/07_yasi_yatere.png",
         "sha256": "55aae2de72a91d55d946661ef249883a25fd05e548305a1ae80b50b1ec957845",
@@ -246,8 +271,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Selva"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/08_curupi.png",
         "sha256": "be0f78746b0cb2900b2cca0e48e2be81b96210cf2708993f710b416c326090f0",
@@ -277,8 +304,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Northwest Argentina"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/09_mikilo.png",
         "sha256": "18533e3cfa0da8054c27a94597499f333c651dee57c5297e39888beab1e0e9d9",
@@ -308,8 +337,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Northwest Argentina"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/10_coquena.png",
         "sha256": "800fb9b2c93846341e84fa72c370c46382781a8201e5c5e269c86d906b062029",
@@ -339,8 +370,11 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Cuyo",
+        "Northwest Argentina"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/11_yastay.png",
         "sha256": "0be77caebce561fff1b6a11ab22d19b28195330cfe7672b77c23a6d8bd04bb45",
@@ -370,8 +404,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Chaco"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/12_sachayoj.png",
         "sha256": "fbea4f6bceb121bc7b828fb7ab1a9fa360e5836870df8b854cd575c4a6a1db12",
@@ -401,8 +437,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Selva"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/13_caa_pora.png",
         "sha256": "4cff72140077b4e8663fe7603504cd13cafcbc4e6ae89edcb8f60022da816ee9",
@@ -432,8 +470,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Selva"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/14_caa_yari.png",
         "sha256": "a20e1a16cf0c33f138d7dcd1d5772d252d0124a17fe1e77d95af8069d9cdf639",
@@ -463,8 +503,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Cuyo"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/15_zapam_zucum.png",
         "sha256": "9323cf2b081117cb8c1a4030e445e40f8a87f3155c520d6eb6beacd80cae0083",
@@ -494,8 +536,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Cuyo"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/16_pericana.png",
         "sha256": "f859b4c8bb3f0da9f6f39e55f8a097d4c8fc5d5bf0c240f257e90eb4b3908982",
@@ -525,8 +569,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Pampa"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/17_solapa.png",
         "sha256": "ee6b02e50e58b6bc31752f5c107ef24417d6b28cdd39d3b78f8e1751624d97ea",
@@ -556,8 +602,11 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Buenos Aires",
+        "Supernatural domains"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/18_mandinga.png",
         "sha256": "f6e382d1627d4027a5c097179ea92b3e56a1d884be64bb70a0a2cc61190383d4",
@@ -590,8 +639,12 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Buenos Aires",
+        "Northwest Argentina",
+        "Supernatural domains"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/19_zupay.png",
         "sha256": "9d09ad068df3a89c2c6571ddcac527ca8274801be4adbfe820d310029c6b7bc4",
@@ -624,8 +677,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Chaco"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/20_noshtex.png",
         "sha256": "183b24a05f6122e22c23e335dfe294858b03a9e3682165cfbba688b1b4b446ac",
@@ -655,8 +710,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Patagonia"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/21_xalpen.png",
         "sha256": "867c21e64a44b6e5ca291ec797afecdd7f6fa9bab69b217020c0e5174a9f530d",
@@ -686,8 +743,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Patagonia"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/22_shoort.png",
         "sha256": "2a52ffc0f8f7d68363042f8cbb0b147afc4232aace9a17793b7adbc5394b27a9",
@@ -717,8 +776,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Patagonia"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/23_tanu.png",
         "sha256": "ce7aa91769b1bf6342d467789ae54ff59e5295682942bcdb26ca00119a603ab3",
@@ -748,8 +809,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Patagonia"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/24_halahaches.png",
         "sha256": "3035a2925243086a40d32b916d92c8fd27a7c5327eb28e9b985177da8cd1d1c2",
@@ -779,8 +842,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Patagonia"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/25_matan.png",
         "sha256": "86477b201fc402ef1809d2de9a75a9b06f8f2edcc75571f467be53a764ca2398",
@@ -810,8 +875,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Patagonia"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/26_ulen.png",
         "sha256": "a4deb7e4db3ab372bdce95c23613201c2ebeb812c5f7dca735d56ddf43bd70ba",
@@ -841,8 +908,12 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Pampa",
+        "Cuyo",
+        "Patagonia"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/04_Apariciones/27_luz_mala.png",
         "sha256": "4bb8caddad781c58658bbc62ffd6998e1f27abc7d936d8e1b88a2349083065d5",
@@ -872,8 +943,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Northwest Argentina"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/04_Apariciones/28_umita.png",
         "sha256": "9222a320c0aa7934ab45f13fb9ab44fd868be2e901672840dc82b26c59e3ef3b",
@@ -903,8 +976,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Northwest Argentina"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/04_Apariciones/29_mulanima.png",
         "sha256": "88b6b3baf05a8a2301a55872c9a5cb324b48e343c90bf47871b289871de12974",
@@ -934,8 +1009,11 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Pampa",
+        "Litoral"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/04_Apariciones/30_chancho_lata.png",
         "sha256": "1327f3492e5341888d436286d93d78d2bd4aaf1a5e5f0cecc135ac0cb4e32933",
@@ -965,8 +1043,13 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Buenos Aires",
+        "Pampa",
+        "Litoral",
+        "Cuyo"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/04_Apariciones/31_viuda.png",
         "sha256": "20056af4424bdabfebc4027aa3a3ac4e5e32b627405d9754ab1b4dde7468c19c",
@@ -996,8 +1079,11 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Buenos Aires",
+        "Litoral"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/04_Apariciones/32_llorona.png",
         "sha256": "a061df9b00fcf7e51d2331cd0fd23c5bbd38ed8b450ccbb643de3c67a7d3f9e3",
@@ -1027,8 +1113,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Cuyo"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/04_Apariciones/33_futre.png",
         "sha256": "b7b16e44dd3b6c8eeabbc2916fe69d2b8ee9093f209a42f77e9b3c4e2592be3b",
@@ -1058,8 +1146,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Patagonia"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/04_Apariciones/34_anchimallen.png",
         "sha256": "1ca9bd0898e0e99086dea8f498e5da9d289d08c2f0b12bac523313e808c5e5ad",
@@ -1089,8 +1179,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Patagonia"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/04_Apariciones/35_chonchon.png",
         "sha256": "f28cdc5af4c27783de753cac1bfe4ef438f57f51dd2fcbe101b98987681dbeb1",
@@ -1120,8 +1212,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Patagonia"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/04_Apariciones/36_gualicho.png",
         "sha256": "2698d606ffe37a6f8238e74c706f431923ad8347ebf69e0e071410ef5bf4e565",
@@ -1151,8 +1245,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Pampa"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/04_Apariciones/37_pampayoj.png",
         "sha256": "931d3fde9784c62237caab683e59042bc0a4d0fe2753b1e8a2a7219eb32b3fbe",
@@ -1182,8 +1278,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Northwest Argentina"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/04_Apariciones/38_mayu_maman.png",
         "sha256": "80dcafc49471d2f256ef4e266c080f66308854fa7cfce5bc703ca972956fe1b8",
@@ -1213,8 +1311,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Northwest Argentina"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/04_Apariciones/39_orko_maman.png",
         "sha256": "40f742d696623ffa3fea6d68491b19fe66a97d7b318c6c5f81b354e82e6349a1",
@@ -1244,8 +1344,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Northwest Argentina"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/04_Apariciones/40_uritu_orko.png",
         "sha256": "49884fa7680e9524c09c44c07ef28bc79a23c00ca56013bfbbee2b7618fc092b",
@@ -1275,8 +1377,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Chaco"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/04_Apariciones/41_nowet.png",
         "sha256": "a41be78385d3354008913c522fa58e245892401ec58624fb4501c5e1b909b68c",
@@ -1306,8 +1410,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Patagonia"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/04_Apariciones/42_maip.png",
         "sha256": "5af7918077c697dfde9974acc7182e1ab9a4a3b09a339cf04ef9cf7009e70d1f",
@@ -1337,8 +1443,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Northwest Argentina"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/43_familiar.png",
         "sha256": "8d051140b6e03ea69da2e08efa626fbdd5d2130d49c0671abfc79122b2c3b8e1",
@@ -1368,8 +1476,11 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Pampa",
+        "Litoral"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/44_basilisco.png",
         "sha256": "64c37a58f3b2cfd521eaa65cbe7492ba8ff9a2d4304f277a4c911c0769866382",
@@ -1399,8 +1510,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Northwest Argentina"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/45_cachiru.png",
         "sha256": "a4ffc47561bbf59ae27f9475df049c637f4d42b8cc472718adc3ab4c5a000932",
@@ -1430,8 +1543,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Northwest Argentina"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/46_kakuy.png",
         "sha256": "fbda2ce6d5b436375b731acd720aba64b97b8b3361c202260549e6109dd89c10",
@@ -1461,8 +1576,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Selva"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/47_teju_jagua.png",
         "sha256": "587792dd828295a4109dd91ad4808983963f58b307061e3f3b7bf1aa94a7bf54",
@@ -1492,8 +1609,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Litoral"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/48_mboi_tui.png",
         "sha256": "30068e43bef04cd9a08c184fea47f390c9bbd6e09a39b41abd7c80a69bc05df0",
@@ -1523,8 +1642,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Selva"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/49_monai.png",
         "sha256": "7aed494d3c1c5032df15ba4846ed6160fca76a0993621e1a7b237a558deaf167",
@@ -1554,8 +1675,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Selva"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/50_ao_ao.png",
         "sha256": "dbd5d81273e6970420b92da45db5d6bd3fa00f0461164b944d328681d0d30308",
@@ -1585,8 +1708,11 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Litoral",
+        "Selva"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/51_mboi_tata.png",
         "sha256": "283f5938090cf58dddac3d9695d1a394186a85b6c82742a42c9a3c76ff123d62",
@@ -1616,8 +1742,11 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Litoral",
+        "Selva"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/52_mboi_yagua.png",
         "sha256": "ebec130cb9bea23848ba0a58f77a648c6632fc8fb71d2072745a32818ca77ad8",
@@ -1647,8 +1776,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Patagonia"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/53_cuero.png",
         "sha256": "b29fb54921994e886bce33af145e8c48c4265706e10208ddf190eed8b9cce10d",
@@ -1678,8 +1809,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Patagonia"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/54_peuchen.png",
         "sha256": "a4c8ec40a4c10909dd162c523f07833263a60c51356cacc760e3e7165951ce7e",
@@ -1709,8 +1842,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Patagonia"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/55_nahuelito.png",
         "sha256": "ad3ae00225ff1fd7cbf4ee858f1ad72ed312c4f6783088491f17c9335bc452c6",
@@ -1740,8 +1875,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Northwest Argentina"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/56_huayrapuca.png",
         "sha256": "444534f6c5fa56e6c6f8f639f56a39111fd1ef010fe1184eeb3753dcaf07e4ec",
@@ -1771,8 +1908,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Chaco"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/57_kasogonaga.png",
         "sha256": "e18edcee3802d75dd9f88c51a7397789454e5be32501b099e359b33c303f7b72",
@@ -1802,8 +1941,10 @@
         "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
         "runtime_scale_authorized": false
       },
-      "campaign_regions": null,
-      "region_status": "unassigned",
+      "campaign_regions": [
+        "Patagonia"
+      ],
+      "region_status": "authored",
       "reference": {
         "path": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/58_kelenken.png",
         "sha256": "98a879aa33fc48c044abf7fe00bf5d33ca9311aa774e032d8db881413fe59da2",
