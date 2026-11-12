@@ -2,7 +2,7 @@
 
 Documentation version: **5.16.1** - 2026-11-12.
 
-## 5.16.1 - Recovered folklore reference catalogue (#453, in progress)
+## 5.16.1 - Recovered folklore reference catalogue (#453, catalogue approved)
 
 The author supplied six ZIP attachments in issue #453 on 2026-11-12. All 58 PNGs
 are preserved byte-for-byte under [the original source directory](../assets/source/bestiary_453).
@@ -27,10 +27,11 @@ Chapter I encounters or moving his Chapter II death into the opening campaign.
 
 Approximate size wording and explicit axes remain intact. A source range without
 a recovered axis is not silently converted into height, collision dimensions or
-runtime scaling. All 58 campaign-region assignments are still null in canonical
-data. [REGION_PROPOSAL.json](../assets/bestiary/REGION_PROPOSAL.json) and the table
-below are a separate creative campaign proposal for author review, not recovered
-folklore geography or an approved spawn/encounter table.
+runtime scaling. The author approved all 58 campaign-region assignments on 2026-11-12.
+AUTHORING.json now owns those decisions; CATALOGUE.json includes every region.
+[REGION_PROPOSAL.json](../assets/bestiary/REGION_PROPOSAL.json) preserves the reviewed
+table. These are creative campaign placements, not recovered folklore geography
+or an approved spawn/encounter table.
 
 The author prefers actual 3D models where feasible. These PNGs define anatomy,
 silhouette, materials and identity. The Teju Jagua reference has seven canine
@@ -43,18 +44,18 @@ functional creature/art handoff; races are not automatically made playable.
 
 Rebuild with `python assets/generators/build_bestiary_catalogue.py`; `--check`
 verifies freshness and all original checksums read-only. `--require-regions`
-intentionally fails until regional assignments are authored. Normal project
-validation checks integrity without claiming that outstanding design is finished.
+now passes for all 58 approved entries. Normal project validation checks
+integrity; catalogue completion does not claim integrated creatures or models.
 Static evidence is in assets/validation_v5_16_1; native gameplay and author model
 acceptance do not apply to this source-only delivery.
 
-### Regional allocation proposal for review
+### Approved regional allocation
 
-The following rows are proposals only. Unique entries crossing regions represent
+The author approved the following rows on 2026-11-12. Unique entries crossing regions represent
 one travelling identity, never one copy per region. Existing MAP01/MAP02/MAP03
-roles remain protected. These regional suggestions do not create new missions.
+roles remain protected. These regional assignments do not create new missions.
 
-| Stable key | Reference | Proposed campaign regions |
+| Stable key | Reference | Approved campaign regions |
 | --- | --- | --- |
 | CA-FOLK-001 | Brujas y brujos | Buenos Aires, Pampa, Litoral, Cuyo, Northwest Argentina, Chaco, Selva, Patagonia |
 | CA-FOLK-002 | Brujas y brujos de la Salamanca | Northwest Argentina, Supernatural domains |

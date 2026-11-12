@@ -2,7 +2,7 @@
 
 Documentation version: **5.16.1** - 2026-11-12.
 
-## 5.16.1 - Folklore reference recovery (#453, in progress)
+## 5.16.1 - Folklore reference recovery (#453, catalogue approved)
 
 All 58 author-supplied concept PNGs and their source documents are verified and
 preserved. The generated catalogue keeps stable package keys, five represented
@@ -10,7 +10,8 @@ categories, unique/repeatable/limited populations, approximate-size qualifiers
 and provenance. No runtime actors, new playable races or models are added.
 ASSETS owns the source/production contract and proposed regional table. The
 author's 3D preference is recorded; actual model production stays a separate
-delivery. Region assignments await author review, so #453 remains open.
+delivery. All 58 regional assignments were approved on 2026-11-12 and are
+recorded in canonical data; the catalogue scope is complete for PR review.
 
 ## 5.16.0 / #452 - Approved regional allocation; campaign authoring in progress
 

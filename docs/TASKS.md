@@ -6,8 +6,8 @@ Documentation version: **5.16.1** - 2026-11-12.
 
 58 images, source metadata/checksums and deterministic catalogue generation are
 verified. See ASSETS and assets/validation_v5_16_1. AUTHORING.json remains the
-only project override source; REGION_PROPOSAL.json is unapproved. Review those
-58 proposed regional assignments before promoting them. Do not infer axes,
+only project override source; all 58 regional assignments were approved on
+2026-11-12 and promoted into the catalogue. Do not infer axes,
 creature stats, drops, numerical populations, encounters or rewards from art.
 The requested 3D handoff needs real meshes/materials/animation and native evidence;
 this import has none. Existing Rulo, Mandinga and Zupay behavior stays accepted.
@@ -18,7 +18,7 @@ There is no new actionable gameplay test for pending_test.txt in this delivery.
 | Issue | Current scope and remaining decision |
 | --- | --- |
 | #452 | Regional chapter allocation approved 2026-11-12; opening graph audited. Basic finale and all-78/+250 requirements approved; one eligible participant admits the consenting group. Geographic/ability gates and exact revelations remain open. |
-| #453 | Six source archives recovered; 58 images/hash checks pass. Import the reconstructed catalogue and author missing regional assignments; prefer 3D production where feasible. |
+| #453 | Catalogue complete for review: 58 verified references, all regional assignments approved; source/size qualifications retained. Actual 3D production belongs to the separate creature/art delivery. |
 | #454 | Approved sewer v2/Barracas v1 references recovered; four city gates and siege adaptation explicitly selected. Implement separately with ordinary routes, services and active/hub-save compatibility. |
 | #455 | Approve per-creature behavior/stats/encounters after #453/#454; unique and repeatable populations remain distinct. |
 | #456 | Assign the remaining 75 essences; preserve IDs 0/36/60, personal acquisition, interruption recovery and ability-gate reachability. |
