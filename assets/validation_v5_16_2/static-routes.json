@@ -1,0 +1,1321 @@
+{
+  "issue": 454,
+  "scope": "Audit #454's generated collision graph, lock ordering and retained content.\n\nThis is static map evidence, not a native physics/escort or performance test.",
+  "checks": [
+    {
+      "check": "revision 6 is active",
+      "passed": true
+    },
+    {
+      "check": "approved 3 m corridor headroom",
+      "passed": true
+    },
+    {
+      "check": "96 MU dry shelf fits two maximum players",
+      "passed": true
+    },
+    {
+      "check": "headroom fits the tallest supported actor",
+      "passed": true
+    },
+    {
+      "check": "native model-independent collision dimensions retained",
+      "passed": true
+    },
+    {
+      "check": "all accepted content counts retained",
+      "passed": true
+    },
+    {
+      "check": "actual placed populations and chests agree with retained counts",
+      "passed": true
+    },
+    {
+      "check": "every old carrier retains its exact drop identity",
+      "passed": true
+    },
+    {
+      "check": "all 65 loot identities and chest assignments retained",
+      "passed": true
+    },
+    {
+      "check": "all 45 trap identities/types retained",
+      "passed": true
+    },
+    {
+      "check": "one keyless internal shortcut per sector",
+      "passed": true
+    },
+    {
+      "check": "south principal graph connected",
+      "passed": true
+    },
+    {
+      "check": "south has three main circuits",
+      "passed": true
+    },
+    {
+      "check": "west principal graph connected",
+      "passed": true
+    },
+    {
+      "check": "west has three main circuits",
+      "passed": true
+    },
+    {
+      "check": "east principal graph connected",
+      "passed": true
+    },
+    {
+      "check": "east has three main circuits",
+      "passed": true
+    },
+    {
+      "check": "north principal graph connected",
+      "passed": true
+    },
+    {
+      "check": "north has three main circuits",
+      "passed": true
+    },
+    {
+      "check": "stage 0: CaelumMazeSouthCellKey reachable",
+      "passed": true
+    },
+    {
+      "check": "stage 0: CaelumMazeSluiceKey reachable",
+      "passed": true
+    },
+    {
+      "check": "stage 0: future section 1 remains locked",
+      "passed": true
+    },
+    {
+      "check": "stage 0: future section 2 remains locked",
+      "passed": true
+    },
+    {
+      "check": "stage 0: future section 3 remains locked",
+      "passed": true
+    },
+    {
+      "check": "stage 0: boss remains behind P4",
+      "passed": true
+    },
+    {
+      "check": "stage 0: freed prisoner is reachable",
+      "passed": true
+    },
+    {
+      "check": "stage 1: CaelumMazeCryptKey reachable",
+      "passed": true
+    },
+    {
+      "check": "stage 1: CaelumMazeWestCellKey reachable",
+      "passed": true
+    },
+    {
+      "check": "stage 1: future section 2 remains locked",
+      "passed": true
+    },
+    {
+      "check": "stage 1: future section 3 remains locked",
+      "passed": true
+    },
+    {
+      "check": "stage 1: boss remains behind P4",
+      "passed": true
+    },
+    {
+      "check": "stage 1: freed prisoner is reachable",
+      "passed": true
+    },
+    {
+      "check": "stage 2: CaelumMazeSanctumKey reachable",
+      "passed": true
+    },
+    {
+      "check": "stage 2: CaelumMazeEastCellKey reachable",
+      "passed": true
+    },
+    {
+      "check": "stage 2: future section 3 remains locked",
+      "passed": true
+    },
+    {
+      "check": "stage 2: boss remains behind P4",
+      "passed": true
+    },
+    {
+      "check": "stage 2: freed prisoner is reachable",
+      "passed": true
+    },
+    {
+      "check": "stage 3: CaelumMazeNorthKey reachable",
+      "passed": true
+    },
+    {
+      "check": "stage 3: CaelumMazeNorthCellKey reachable",
+      "passed": true
+    },
+    {
+      "check": "stage 3: boss remains behind P4",
+      "passed": true
+    },
+    {
+      "check": "stage 3: freed prisoner is reachable",
+      "passed": true
+    },
+    {
+      "check": "prisoner extraction reachable before P4",
+      "passed": true
+    },
+    {
+      "check": "service exit 2 reachable before P4 geometry",
+      "passed": true
+    },
+    {
+      "check": "service exit 4 reachable before P4 geometry",
+      "passed": true
+    },
+    {
+      "check": "service exit 6 reachable before P4 geometry",
+      "passed": true
+    },
+    {
+      "check": "service exit 14 reachable before P4 geometry",
+      "passed": true
+    },
+    {
+      "check": "boss and card reachable after final key",
+      "passed": true
+    },
+    {
+      "check": "all four refuges reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47000 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48000 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48001 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47001 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48002 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48003 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47002 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48004 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48005 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47003 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48006 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48007 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47004 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48008 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48009 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47005 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48010 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48011 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47006 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48012 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48013 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47007 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48014 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48015 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47008 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48016 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48017 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48018 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48019 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48020 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48021 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48022 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48023 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48024 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48025 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48026 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48027 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48028 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48029 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48030 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48031 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48032 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48033 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48034 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48035 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48036 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48037 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48038 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48039 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48040 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48041 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48042 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48043 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47022 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48044 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48045 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48046 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48047 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47024 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48048 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48049 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47025 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48050 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48051 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47026 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48052 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48053 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47027 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48054 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48055 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47028 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48056 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48057 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47029 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48058 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48059 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47030 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48060 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48061 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48062 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48063 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48064 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48065 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48066 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48067 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48068 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48069 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48070 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48071 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48072 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48073 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48074 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48075 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47038 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48076 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48077 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48078 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48079 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48080 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48081 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48082 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48083 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48084 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48085 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47043 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48086 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48087 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48088 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48089 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48090 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48091 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48092 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48093 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48094 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48095 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47048 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48096 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48097 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47049 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48098 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48099 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47050 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48100 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48101 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47051 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48102 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48103 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47052 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48104 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48105 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47053 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48106 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48107 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47054 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48108 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48109 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47055 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48110 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48111 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48112 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48113 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48114 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48115 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48116 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48117 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48118 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48119 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48120 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48121 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48122 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48123 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47062 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48124 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48125 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47063 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48126 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48127 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48128 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48129 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48130 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48131 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48132 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48133 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48134 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48135 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48136 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48137 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48138 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48139 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48140 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48141 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48142 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48143 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47072 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48144 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48145 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47073 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48146 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48147 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47074 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48148 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48149 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47075 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48150 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48151 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47076 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48152 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48153 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47077 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48154 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48155 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47078 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48156 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48157 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48158 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48159 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48160 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48161 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48162 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48163 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48164 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48165 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48166 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48167 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48168 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48169 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48170 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48171 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47086 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48172 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48173 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 47087 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48174 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48175 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48176 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48177 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48178 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48179 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48180 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48181 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48182 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48183 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48184 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48185 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48186 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48187 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48188 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48189 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48190 is reachable",
+      "passed": true
+    },
+    {
+      "check": "drop carrier 48191 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43800 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43801 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43802 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43803 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43804 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43805 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43806 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43807 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43808 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43809 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43810 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43811 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43812 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43813 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43814 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43815 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43816 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43817 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43818 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43819 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43820 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43821 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43822 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43823 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43824 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43825 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43826 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43827 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43828 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43829 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43830 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43831 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43832 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43833 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43834 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43835 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43836 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43837 is reachable",
+      "passed": true
+    },
+    {
+      "check": "chest 43838 is reachable",
+      "passed": true
+    },
+    {
+      "check": "pit 43905 has a recovery branch",
+      "passed": true
+    },
+    {
+      "check": "pit 43916 has a recovery branch",
+      "passed": true
+    },
+    {
+      "check": "pit 43925 has a recovery branch",
+      "passed": true
+    },
+    {
+      "check": "pit 43929 has a recovery branch",
+      "passed": true
+    },
+    {
+      "check": "pit 43930 has a recovery branch",
+      "passed": true
+    },
+    {
+      "check": "pit 43933 has a recovery branch",
+      "passed": true
+    },
+    {
+      "check": "preserved source checksum: MAP02.wad",
+      "passed": true
+    },
+    {
+      "check": "preserved source checksum: LAYOUT.json",
+      "passed": true
+    },
+    {
+      "check": "preserved source checksum: MAP02_MANIFEST.json",
+      "passed": true
+    },
+    {
+      "check": "preserved source checksum: CaelumMazeLayout.zs",
+      "passed": true
+    },
+    {
+      "check": "preserved source checksum: generate_map02_maze.py",
+      "passed": true
+    }
+  ],
+  "failures": 0,
+  "walkable_upper_cells": 124002,
+  "reachable_after_all_keys": 124002
+}

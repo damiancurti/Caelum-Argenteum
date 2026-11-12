@@ -3,7 +3,7 @@
 class CaelumCartographyCatalogueData : Object
 {
     const MAP01_CHECKSUM = "81ef3d115f0b73f3d21fcf7ca8004d67";
-    const MAP02_CHECKSUM = "860e3e47c2b89449073b0d27f0b4940b";
+    const MAP02_CHECKSUM = "2ca0c699b54924a6b516d30e1fd63548";
     const MAP06_CHECKSUM = "03f80198bfae8ba82cc435775001ba91";
     const MAP01_LEGACY_CHECKSUM = "359c5aa1daa71a0fb91bba6848818f46";
     const MAP01_PREJUSTICE_CHECKSUM = "b9e3c740a85b8532c362d36113f882ae";

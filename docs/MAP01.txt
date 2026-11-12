@@ -1,6 +1,64 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.16.1** - 2026-11-12.
+Documentation version: **5.16.2** - 2026-11-12.
+
+## 5.16.2 / #454 - Approved sewer redesign, revision 6
+
+Fresh MAP02 uses the author's November 12 sewer-v2 board. LAYOUT.json owns the
+rectilinear implementation: three connected principal circuits in each of the
+south, west, east and north sectors, plus one internal keyless maintenance
+shortcut per sector. These shortcuts never cross a keyed sector boundary.
+The south entrance and arrival services lead to the central maintenance junction;
+the northern collector leads west to Zupay's cistern. Four cells retain separate
+keys and four refuges retain their finite-service contract. Prisoner extraction
+and player service exits are outside P4; the existing defeated-Zupay AND acquired
+Ace of Cups requirement still guards player departure. Zupay's retreat target
+moves to the cistern's northern drain, reachable inside the chamber.
+
+At 32 MU/metre, normal passages are 160 MU wide with a continuous 96-MU dry
+shelf beside the 64-MU, 16-deep harmless channel. Normal headroom is 96 MU;
+inspection chambers use 128 MU and the boss cistern 224 MU. Dry escort/service
+links are 128 MU wide; optional maintenance shortcuts are 64 MU wide. Level
+inspection crossings connect shelves. This replaces the old 384-MU passages,
+160-MU twin shelves and 320-MU normal ceiling only in revision 6. It does not
+claim twice the current map's route length: the board's comparison was against
+the earlier concept sketch. No fluid simulation, environmental damage, actor
+collision size or balance changes are introduced.
+
+The accepted 39 chests/65 historical T1 identities, finite material budgets,
+96 Mandingas, 192 rats, 45 traps, ammunition/food/water totals, four original
+prisoners, independent cell keys and boss/card identities remain. Carrier TIDs
+retain their exact drop identities. Six pit recovery branches reuse the flooded
+lower network, central lift, four independent grates and closed-sector pit guards.
+Generation routes those branches around moving panels; native solid slabs keep
+the two levels separate. The shared Justice arena remains present and indexed.
+
+Geometry compatibility: preserve original saves. assets/map02_maze/legacy_5161
+contains exact revision-5 WAD/source bytes with checksums. Build with
+`-LegacyMap02Revision5` to keep that geometry for an active old MAP02 or an old
+MAP02 stored in a hub. Coordinate-sensitive helpers and the Justice lookup
+dispatch by the loaded revision/checksum. That mode deliberately retains the old
+sewer; a fresh campaign uses revision 6. It does not migrate a visited map into
+different geometry. Historical revision-4/original compatibility options remain.
+
+Static route/lock/content checks, 547 finite-supply checks and byte-identical
+regeneration pass. The final package passes native fresh/save/reload/stored-hub
+checks, all four escorts through cleared corridors, two maximum bodies passing,
+keyed P4 opening, Zupay's surviving retreat, card approach, all six lower return
+clearances, independent keyless grates and actual lift transport. Old active/hub
+saves load through the compatibility build; these are isolated baseline saves,
+not the author's full campaign inventory. Fixtures qualify their setup/teleports
+and exclude ordinary combat/hazard escort acceptance.
+
+Before/after chamber views were inspected. In the final southern combat sample,
+Vulkan presentation calls average 162.23/s (p95 7.66 ms, p99 8.59 ms, maximum
+11.48 ms); the original chamber gives 156.82/s (p95 7.57, p99 9.28, maximum
+165.87 ms). These are single shared-machine samples, not monitor scanout or a
+general speedup claim. See assets/validation_v5_16_2/RESULTS.json for hardware,
+raw traces, earlier entry samples and intermediate fixture failures. Ordinary
+progression, combat/hazards, route readability and author acceptance remain
+pending under CA454-MAP02-01.
+This slice does not complete Barracas, other regional maps or the V5.16 campaign.
 
 ## 5.16.0 / #452 - Regional campaign allocation (in progress)
 

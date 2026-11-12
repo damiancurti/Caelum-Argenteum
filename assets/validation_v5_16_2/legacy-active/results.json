@@ -1,0 +1,71 @@
+{
+  "issue": 454,
+  "runtime_sha256": "e171879bce6c618f6a85c25d7a977b82ce706bba28c0339a04e3defab7818670",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "fixture_sha256": "55d5766d8fad5c3e7d8fae26dbf8ecfed34b2678cf1e97c109ac50940b600aa0",
+  "scope": "Run bounded native sewer startup/save checks in disposable profiles.\n\nThis probe reports compilation, map-marker dispatch, clearance and Justice arena\nlookup. It does not claim ordinary traversal or author acceptance.",
+  "runs": [
+    {
+      "phase": "fresh",
+      "passed": true,
+      "timed_out": false,
+      "errors": [],
+      "exit_code": 0,
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue454-compat-runtime\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue454-legacy-active\\probe.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue454-legacy-active\\fresh\\isolated.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue454-legacy-active\\fresh",
+        "-window",
+        "-width",
+        "960",
+        "-height",
+        "720",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue454-legacy-active\\fresh\\engine.log",
+        "-loadgame",
+        "input.zds",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue454-legacy-active\\fresh\\commands.cfg"
+      ]
+    },
+    {
+      "phase": "reload",
+      "passed": true,
+      "timed_out": false,
+      "errors": [],
+      "exit_code": 0,
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue454-compat-runtime\\caelum_argenteum_dev.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue454-legacy-active\\probe.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue454-legacy-active\\reload\\isolated.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue454-legacy-active\\reload",
+        "-window",
+        "-width",
+        "960",
+        "-height",
+        "720",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue454-legacy-active\\reload\\engine.log",
+        "-loadgame",
+        "input.zds",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue454-legacy-active\\reload\\commands.cfg"
+      ]
+    }
+  ]
+}

@@ -5651,6 +5651,15 @@ IDs and bounds. Do not enable an old catalogue without that coordinate audit.
 Native room-discovery/compatibility evidence: assets/validation_582/RESULTS.md.
 Author acceptance CA414-01 passed all terminal checks on 2026-10-24.
 
+Rechecked for #454 / 5.16.2 on 2026-11-12: LegacyMap02Revision5 preserves the
+exact pre-redesign sewer WAD while revision-sensitive travel/drop/furniture
+helpers and checksum-sensitive Justice sector lookup keep current code usable.
+Native old active-map and stored-hub saves both pass, alongside fresh/reload/hub
+revision-6 saves. These are isolated fresh baseline saves, not the earlier
+49/48-check inventory fixtures. See assets/validation_v5_16_2/RESULTS.json.
+The mode continues old geometry; it does not transplant a visited save into the
+redesigned sewer. Author acceptance remains separate under CA454-MAP02-01.
+
 ## CA-KP-009 â€” MODELDEF slots overlay state meshes
 
 Status/evidence: ENGINE-VERIFIED, 2026-09-26; #18 follow-up, 4.36.14a.

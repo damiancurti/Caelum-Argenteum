@@ -1,0 +1,84 @@
+{
+  "issue": 454,
+  "scope": "Capture actual before/after southern inspection-chamber geometry.",
+  "cameras": [
+    [
+      -1664,
+      -5344,
+      0
+    ],
+    [
+      -3200,
+      -4160,
+      0
+    ]
+  ],
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "fixture_sha256": "06d3f9f1bdbb77813de6d9d768f30f5e57179a29d37acb20822187f8b6cf5e9c",
+  "runs": [
+    {
+      "phase": "before",
+      "passed": true,
+      "timed_out": false,
+      "errors": [],
+      "exit_code": 0,
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue452-release.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue454-scenes-01\\scene.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue454-scenes-01\\before\\isolated.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue454-scenes-01\\before",
+        "-window",
+        "-width",
+        "960",
+        "-height",
+        "720",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue454-scenes-01\\before\\engine.log",
+        "+map",
+        "MAP02",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue454-scenes-01\\before\\commands.cfg"
+      ],
+      "runtime_sha256": "dd5a8ef8e25ae25bfe77e65873e8e293b89ccba20dd4e9ba6dfbd2f17344be6c"
+    },
+    {
+      "phase": "after",
+      "passed": true,
+      "timed_out": false,
+      "errors": [],
+      "exit_code": 0,
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue454-final-map02.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue454-scenes-01\\scene.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue454-scenes-01\\after\\isolated.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue454-scenes-01\\after",
+        "-window",
+        "-width",
+        "960",
+        "-height",
+        "720",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue454-scenes-01\\after\\engine.log",
+        "+map",
+        "MAP02",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue454-scenes-01\\after\\commands.cfg"
+      ],
+      "runtime_sha256": "2b98fa4a15e931a83786831aaaa0dab67d8ffb5ed7030cb90c7946bf709afc95"
+    }
+  ]
+}

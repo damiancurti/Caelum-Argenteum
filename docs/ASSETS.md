@@ -1,6 +1,26 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.16.1** - 2026-11-12.
+Documentation version: **5.16.2** - 2026-11-12.
+
+## 5.16.2 - Approved map references and preserved sewer sources (#454)
+
+The reference branch's ancestry and original PDF/PNGs are preserved under
+assets/references/issue_454_maps_20261112. MAP01 owns their implementation
+interpretation. Revision 6 reuses existing owned sewer/stone/water/bar textures;
+it adds no third-party art or new creature models. LAYOUT.json is the editable
+geometry source; BASE_MAP02.wad is its generated pre-Justice output. The normal
+map generator reapplies the existing Justice arena from that explicit current
+source without changing the immutable historical Justice archive.
+
+assets/map02_maze/legacy_5161 preserves the exact previous WAD, layout, manifest,
+helper and generator with source hashes. These are rollback evidence, not current
+generation inputs except for the retained content identities and compatibility
+helper. Do not regenerate or normalize those archived bytes.
+
+assets/validation_v5_16_2 contains the reproducible isolated probes, static
+audits, original/new chamber captures, full native logs and Vulkan presentation
+traces. RESULTS.json separates agent evidence from CA454-MAP02-01 acceptance;
+no engine, IWAD, disposable fixture package or save is distributed.
 
 ## 5.16.1 - Recovered folklore reference catalogue (#453, catalogue approved)
 

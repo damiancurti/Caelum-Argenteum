@@ -1,6 +1,47 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.16.1** - 2026-11-12.
+Documentation version: **5.16.2** - 2026-11-12.
+
+## 5.16.2 - Sewer redesign slice (#454, in progress, 2026-11-12)
+
+The author supplied approved sewer-v2/Barracas-v1 boards and selected four city
+gates with siege adaptation. Their source commit is preserved by merge ancestry.
+This slice implements MAP02 only. It replaces the random cardinal grid with
+twelve authored main circuits and four internal shortcuts, reduces normal
+headroom to three metres, retains all accepted content/supply identities and
+keeps extraction before P4. The boss retreats toward the cistern drain; departure
+still requires the existing boss and Ace of Cups flags.
+
+Exact prior geometry/source bytes were preserved before editing. A dedicated
+revision-5 build and loaded-map coordinate/Justice dispatch preserve old active
+and stored-hub saves. Native new/fresh/reload/hub and legacy active/hub checks
+pass for the candidate. Static route/content checks and 547 supply checks pass.
+The first reload attempt exposed an absolute-save-path mistake in the test
+harness; it was corrected to a local copied save name. The first escort fixture
+left hazards active and lost a follower; the separate cleared-corridor fixture
+tests escort transit without claiming hazard or combat acceptance. Ordinary
+combat/hazard and author review remain open. Final isolated checks now
+pass for all four native escorts, two maximum-size bodies passing, P4 and the
+250-tic surviving retreat, six lower branches, four independent keyless grates,
+lift transport and fresh/reload/stored-hub saves. Before/after views were inspected.
+Repeated generation is byte-identical. Additional fixture corrections moved the
+leader past the extraction marker, fixed temporary-vector syntax, opened lower
+grates before querying routes and waited the full native lift travel duration.
+Those attempts are retained as qualified evidence, not hidden production fixes.
+
+Actual Vulkan presentation calls in the final southern combat sample average
+162.23/s, p95 7.66 ms, p99 8.59 ms, maximum 11.48 ms; original chamber 156.82/s,
+p95 7.57 ms, p99 9.28 ms, maximum 165.87 ms. Shared Windows 11/RTX 3070 Ti/Ryzen
+5950X, 1280x720, uncapped and unpaused background at 5% audio. These single samples
+are descriptive, not monitor scanout or general performance acceptance. Raw
+reports/traces and earlier entry samples live in assets/validation_v5_16_2.
+CA454-MAP02-01 remains pending; no author acceptance is inferred.
+
+The author requested prevention of system sleep while away for several hours.
+A temporary system-only execution-state request is active during work, with a
+12-hour failsafe; it does not change the power plan or require the display on.
+Release the request when the work ends. This operational request is not gameplay
+acceptance and adds no production dependency.
 
 ## 5.16.1 - Verified folklore reference catalogue (#453, 2026-11-12)
 

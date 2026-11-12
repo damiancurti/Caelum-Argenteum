@@ -7,6 +7,7 @@ param(
     [switch]$LegacyHunt,
     [switch]$LegacyMap02,
     [switch]$LegacyMap02Revision4,
+    [switch]$LegacyMap02Revision5,
     [switch]$LegacyMap06,
     [switch]$LegacyMap06Siege,
     [switch]$LegacyMap06NorthCity,
@@ -18,8 +19,8 @@ $ErrorActionPreference = "Stop"
 if ($LegacyTarotExamples -and ($LegacyTarotMaps -or $LegacyMap01)) {
     throw 'Select one mansion baseline: -LegacyTarotExamples, -LegacyTarotMaps or -LegacyMap01.'
 }
-if ($LegacyMap02 -and $LegacyMap02Revision4) {
-    throw 'Select only one MAP02 compatibility revision: -LegacyMap02 or -LegacyMap02Revision4.'
+if (([int]$LegacyMap02.IsPresent + [int]$LegacyMap02Revision4.IsPresent + [int]$LegacyMap02Revision5.IsPresent) -gt 1) {
+    throw 'Select only one MAP02 compatibility revision: -LegacyMap02, -LegacyMap02Revision4 or -LegacyMap02Revision5.'
 }
 if (([int]$LegacyMap06.IsPresent + [int]$LegacyMap06Siege.IsPresent + [int]$LegacyMap06NorthCity.IsPresent + [int]$LegacyMap06SouthCity.IsPresent + [int]$LegacyMap06Furnished.IsPresent) -gt 1) {
     throw 'Select only one MAP06 compatibility revision: -LegacyMap06, -LegacyMap06Siege, -LegacyMap06NorthCity, -LegacyMap06SouthCity or -LegacyMap06Furnished.'
@@ -107,8 +108,13 @@ if ($LegacyMap01) {
     $LegacyMap01Bytes = [IO.File]::ReadAllBytes($LegacyMansionPath)
 }
 $LegacyMap02Bytes = $null
-if ($LegacyMap02 -or $LegacyMap02Revision4) {
-    if ($LegacyMap02Revision4) {
+if ($LegacyMap02 -or $LegacyMap02Revision4 -or $LegacyMap02Revision5) {
+    if ($LegacyMap02Revision5) {
+        $LegacyMap02Path = Join-Path $ProjectRoot 'assets/map02_maze/legacy_5161/MAP02.wad'
+        $LegacyMap02Manifest = Get-Content -LiteralPath (Join-Path $ProjectRoot 'assets/map02_maze/legacy_5161/PROVENANCE.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+        $LegacyMap02Hash = $LegacyMap02Manifest.files.'MAP02.wad'.sha256
+    }
+    elseif ($LegacyMap02Revision4) {
         $LegacyMap02Path = Join-Path $ProjectRoot "assets/map02_maze/legacy_5432/MAP02.wad"
         $LegacyMap02Hash = "6337BC73CA32BB9DB9936052AC341D34ACE75B3C66858DFC4EAA0E6833CE55F1"
     }
@@ -256,7 +262,7 @@ try {
                         $EntryStream.Write($LegacyMap01Bytes, 0, $LegacyMap01Bytes.Length)
                         $LegacyMansionReplacementCount++
                     }
-                    elseif (($LegacyMap02 -or $LegacyMap02Revision4) -and $EntryName -ieq "maps/MAP02.wad") {
+                    elseif (($LegacyMap02 -or $LegacyMap02Revision4 -or $LegacyMap02Revision5) -and $EntryName -ieq "maps/MAP02.wad") {
                         $EntryStream.Write($LegacyMap02Bytes, 0, $LegacyMap02Bytes.Length)
                         $LegacyReplacementCount++
                     }
@@ -285,7 +291,7 @@ try {
             if ($LegacyHunt -and $LegacyHuntReplacementCount -ne 2) {
                 throw 'Legacy hunt requires both the original map and its matching navigation data.'
             }
-            if (($LegacyMap02 -or $LegacyMap02Revision4) -and $LegacyReplacementCount -ne 1) {
+            if (($LegacyMap02 -or $LegacyMap02Revision4 -or $LegacyMap02Revision5) -and $LegacyReplacementCount -ne 1) {
                 throw "Legacy compatibility requires exactly one maps/MAP02.wad entry in the source."
             }
             if ($LegacyTarotMaps -and $LegacyTarotReplacementCount -ne $LegacyTarotBytes.Count) {
@@ -353,7 +359,11 @@ try {
     else {
         Write-Host 'MAP01 layout: follows the Justice mode above. Pre-5.8.2 mansion saves additionally need -LegacyMap01.'
     }
-    if ($LegacyMap02Revision4) {
+    if ($LegacyMap02Revision5) {
+        Write-Host 'MAP02 compatibility: exact pre-redesign revision 5, including its Justice arena, for active maps and stored hubs.'
+        Write-Host 'Keep original saves. A fresh campaign is required to use the redesigned geometry; this mode retains the old sewer.'
+    }
+    elseif ($LegacyMap02Revision4) {
         Write-Host "MAP02 compatibility: exact pre-5.4.33 revision 4 for existing visited-map saves."
         Write-Host "The old western crusher defect remains in that geometry. Rebuild without -LegacyMap02Revision4 and start a fresh MAP02 to use the corrected panel."
     }

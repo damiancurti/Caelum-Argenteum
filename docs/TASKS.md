@@ -1,6 +1,20 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.16.1** - 2026-11-12.
+Documentation version: **5.16.2** - 2026-11-12.
+
+## 5.16.2 - Sewer redesign validation (#454)
+
+The approved MAP02 board is implemented as geometry revision 6. Static principal
+circuits, staged key reachability, prisoner extraction, all drop/chest locations,
+retained supply identities and exact rollback-source hashes pass. Native fresh,
+new-save reload and stored-hub return pass; old active/hub saves load with the
+revision-5 compatibility package. All four cleared-corridor escorts, maximum-body
+passing, boss retreat, lower-return clearances/grates/lift and final fresh/hub
+checks pass. Before/after views and actual Vulkan presentation measurements are
+recorded in assets/validation_v5_16_2/RESULTS.json, with fixture qualifications.
+Ordinary combat/hazard navigation and author review remain outstanding. Agent checks do
+not close the author's CA454-MAP02-01 test. Barracas remains the next approved
+map slice: four perimeter gates, siege adaptation and independent save support.
 
 ## 5.16.1 - Bestiary source import (#453)
 
@@ -27,7 +41,7 @@ There is no new actionable gameplay test for pending_test.txt in this delivery.
 The planning source is assets/campaign/PROGRESSION.json; canonical narrative
 constraints are in MAP01. Run assets/generators/validate_campaign_progression.py
 for the bounded audit. --require-complete intentionally fails while authoring is
-open. No new manual gameplay check exists yet, so pending_test.txt remains empty.
+open. CA454-MAP02-01 now tracks the outstanding author sewer review.
 The author selected all 78 acquired essences and Respected (+250) with any one
 of four resistance factions for the finale. This matches the existing deity
 power. One eligible participant admits the consenting group; scripts and encounter statistics remain pending.

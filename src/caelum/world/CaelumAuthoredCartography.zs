@@ -24,7 +24,7 @@ class CaelumAuthoredCartography : Object play
         else if(level.MapName=="MAP02")
         {
             if(category==CaelumPoiData.GRATE && subject is "CaelumMazeBarredGate"
-                && subject.args[0]>=44700 && subject.args[0]<=44723)
+                && subject.args[0]>=44700 && subject.args[0]<=44727)
             {id=String.Format("maze-grate-%d",subject.args[0]);nameKey="CA_POI_MAZE_GRATE";}
             else if(category==CaelumPoiData.GRATE && subject is "CaelumMazeReturnGrate"
                 && CaelumMazeLayout.IsReturnGrate(subject.args[0]))

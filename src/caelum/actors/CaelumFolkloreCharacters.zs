@@ -661,6 +661,7 @@ class CaelumZupayColossus : CaelumFolkloreCombatActor
     virtual bool IsRetreatBoss() { return IsSewerBoss(); }
     virtual vector3 EscapePosition()
     {
+        if(CaelumMazeLayout.IsRedesigned())return CaelumMazeLayout6.BossEscapePosition();
         return CaelumSewerTravel.GatePosition(CaelumWorldCatalogue.CONNECTION_TO_RESERVOIR);
     }
     virtual bool ReachedEscape()

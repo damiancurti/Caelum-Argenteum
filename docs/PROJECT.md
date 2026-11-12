@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.16.1** - 2026-11-12.
+Documentation version: **5.16.2** - 2026-11-12.
+
+## 5.16.2 - Sewer geometry slice (#454, in progress)
+
+MAP02 revision 6 implements the approved sewer board with twelve main circuits,
+four internal shortcuts, human-scale headroom and retained gameplay content.
+MAP01 owns the map specification and explicit old-active/stored-hub compatibility
+mode. Static/deterministic and isolated native fresh/save/hub, escort, boss and
+lower-recovery checks pass. Before/after views and native presentation evidence
+are recorded; ordinary combat/hazard traversal and author acceptance remain in
+TASKS. Barracas and regional slices remain separate #454 work. No new folklore
+models, campaign essence placements or memory scripts are claimed.
 
 ## 5.16.1 - Folklore reference recovery (#453, catalogue approved)
 

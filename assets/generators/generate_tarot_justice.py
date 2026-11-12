@@ -68,6 +68,8 @@ def validate(root):
     if digest((root/'assets/tarot_examples'/baseline['baseline_file']).read_bytes())!=baseline['baseline_sha256']:
         problems.append('Pre-example mansion baseline checksum mismatch')
     for row in manifest['maps']:
+        if row.get('source_override') and digest((root/row['source_override']).read_bytes())!=row['source_sha256']:
+            problems.append(f'Stale current map source: {row["file"]}')
         if digest((root/'src/maps'/row['file']).read_bytes())!=row['sha256']:
             problems.append(f'Stale Justice arena geometry: {row["file"]}')
     return problems
@@ -138,6 +140,9 @@ def main():
     with zipfile.ZipFile(archive) as baseline:
         for row in manifest['maps']:
             old=baseline.read(row['file']);assert digest(old)==row['legacy_sha256']
+            if row.get('source_override'):
+                old=(ROOT/row['source_override']).read_bytes()
+                assert digest(old)==row['source_sha256'], f"Current source mismatch: {row['file']}"
             new,geometry=append_arena(old,data)
             new,examples=append_examples(new)
             if examples is not None:geometry['examples']=examples
@@ -160,10 +165,16 @@ def main():
             '    static clearscope int SectorIndex(String map) {',
             '        if(map==CaelumHuntData.Map())return CaelumHuntData.JUSTICE_SECTOR;']
     for row in manifest['maps']:
+        if row.get('compatibility_geometry'):
+            previous=row['compatibility_geometry']
+            native.append(f'        if(map=="{Path(row["file"]).stem}" && level.GetChecksum()=="{previous["checksum"]}")return {previous["sector"]};')
         native.append(f'        if(map=="{Path(row["file"]).stem}")return {row["geometry"]["sector"]};')
     native+=['        return -1; }', '    static clearscope vector3 Center(String map) {',
              '        if(map==CaelumHuntData.Map())return CaelumHuntData.JusticeCenter();']
     for row in manifest['maps']:
+        if row.get('compatibility_geometry'):
+            previous=row['compatibility_geometry'];xyz=','.join(f'{v:g}' for v in previous['center'])
+            native.append(f'        if(map=="{Path(row["file"]).stem}" && level.GetChecksum()=="{previous["checksum"]}")return ({xyz});')
         xyz=','.join(f'{v:g}' for v in row['geometry']['center'])
         native.append(f'        if(map=="{Path(row["file"]).stem}")return ({xyz});')
     native+=['        return (0,0,0); }',
