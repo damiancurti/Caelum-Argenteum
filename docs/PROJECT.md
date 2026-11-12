@@ -8,8 +8,11 @@ The author approved the regional chapter allocation on 2026-11-12. MAP01's new
 V5.16 section and assets/campaign/PROGRESSION.json retain the 1+7+7+7 Major
 structure, existing opening route, concealed information and staged #452-457
 deliveries. Exact routes, ability locks, encounters, memories, remaining essence
-locations and finale eligibility are still unauthored. #453 also requires the
-approved bestiary source. No campaign expansion is claimed implemented.
+locations and exact finale encounters are still unauthored. The author approved
+the basic finale and its all-78/+250 reputation conditions; MAP01 owns the full
+contract. The 58-image bestiary source and approved sewer/city plans are now
+recovered and verified; import and implementation stay in #453/#454. No campaign
+expansion is claimed implemented.
 
 Static authoring audit passes for the opening graph and 22/56 counts. Its explicit
 completion mode rejects unresolved authoring. Gameplay remains the accepted V5.15

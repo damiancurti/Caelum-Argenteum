@@ -6,9 +6,9 @@ Documentation version: **5.16.0** - 2026-11-12.
 
 | Issue | Current scope and remaining decision |
 | --- | --- |
-| #452 | Regional chapter allocation approved 2026-11-12; opening graph audited. Exact geographic/ability gates, finale eligibility and revelation timing remain open. |
-| #453 | Recover the exact approved 58-reference manifest, regions, sizes and provenance before enumerating the bestiary. |
-| #454 | Review existing sewer/city redesign layouts and regional slices individually; preserve services, ordinary routes, original geometry and active/hub saves. |
+| #452 | Regional chapter allocation approved 2026-11-12; opening graph audited. Basic finale and all-78/+250 requirements approved; geographic/ability gates, cooperative aggregation and exact revelations remain open. |
+| #453 | Six source archives recovered; 58 images/hash checks pass. Import the reconstructed catalogue and author missing regional assignments; prefer 3D production where feasible. |
+| #454 | Approved sewer v2/Barracas v1 references recovered; four city gates and siege adaptation explicitly selected. Implement separately with ordinary routes, services and active/hub-save compatibility. |
 | #455 | Approve per-creature behavior/stats/encounters after #453/#454; unique and repeatable populations remain distinct. |
 | #456 | Assign the remaining 75 essences; preserve IDs 0/36/60, personal acquisition, interruption recovery and ability-gate reachability. |
 | #457 | Author memories, revelations, chapter ends and Selene encounter; retain Zupay's Chapter I retreat/Chapter II death boundary. |
@@ -17,8 +17,9 @@ The planning source is assets/campaign/PROGRESSION.json; canonical narrative
 constraints are in MAP01. Run assets/generators/validate_campaign_progression.py
 for the bounded audit. --require-complete intentionally fails while authoring is
 open. No new manual gameplay check exists yet, so pending_test.txt remains empty.
-The finale's undecided entry threshold and accepted all-78 deity-damage power
-must be reconciled by the author, not by an implicit balance change.
+The author selected all 78 acquired essences and Respected (+250) with any one
+of four resistance factions for the finale. This matches the existing deity
+power; scripts, encounter statistics and cooperative aggregation remain pending.
 
 ## V5.15 accepted and integrated ? 2026-11-10 (#447?451)
 

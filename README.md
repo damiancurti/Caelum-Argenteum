@@ -14,7 +14,9 @@ regional chapter allocation; [the planning graph](assets/campaign/PROGRESSION.js
 and [canonical narrative](docs/MAP01.txt) distinguish existing routes from pending
 geography, creatures, essence placements and revelations. #452-457 remain open.
 This planning increment preserves the accepted V5.15 runtime and maps; the new
-campaign and its author test terminal are not yet implemented.
+campaign and its author test terminal are not yet implemented. The basic finale
+and its all-78-essence/Respected reputation requirements are author-approved;
+the recovered bestiary and map references proceed through separate issues.
 
 V5.15 includes the [battle director](assets/validation_v5_15_0/RESULTS.md)
 (#447, PR635), [Unitarian command](assets/validation_v5_15_1/RESULTS.md)

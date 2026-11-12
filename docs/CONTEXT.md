@@ -2,9 +2,9 @@
 
 Documentation version: **5.16.0** - 2026-11-12.
 
-**V5.16:** #452 regional allocation approved2026-11-12; graph:
-assets/campaign/PROGRESSION.json, canon: MAP01. #452-457 remain open;
-routes/finale/bestiary/placements/scripts pending. Gameplay remains V5.15.
+**V5.16:** #452 regions/finale approved2026-11-12; graph:
+assets/campaign/PROGRESSION.json; canon: MAP01. #452-457 open.
+Sources recovered; routes/placements/scripts pending; gameplay V5.15.
 
 **V5.15 accepted2026-11-10:** CA447-01..451-01;#447-451 closed;PR635-639 merged.
 HISTORY/validation_v5_15_0..4. Single-player/attributes100 terminal:

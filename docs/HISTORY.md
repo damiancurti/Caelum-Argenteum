@@ -17,6 +17,19 @@ machine-readable authoring graph and the canonical MAP01 section. Unresolved
 routes, finale values, bestiary source, placements and scripts remain explicit.
 The baseline audit in build/v516 was reused; no undocumented source was invented.
 
+Later on 2026-11-12 the author approved the proposed basic finale: all 78 acquired
+essences, Respected (+250) with Unitarians/Federals/Free Peoples/Sun Warriors
+(any one, no membership requirement), World last, Selene defeated with unified
+Tarot, retained Tarot custody, consequence-based epilogue and continued
+exploration. Cooperative aggregation was not included in the returned approval
+text and remains open. The author also supplied the six-part #453 reference pack
+and the approved #454 map-reference branch, then explicitly selected four city
+gates with siege adaptation. Source verification finds 58 matching PNG hashes;
+the reconstructed catalogue has no campaign-region assignments. These are
+authoring/source decisions, not new runtime delivery or gameplay acceptance.
+The author requested 3D creatures where feasible; meshes are not supplied by
+the concept pack. PR641 remains the focused #452 draft.
+
 Static evidence: both baseline 5.15.4 and planning 5.16.0 project validators pass
 with no errors. The repeatable graph audit passes opening-route/count checks and
 reports 75 unassigned acquisitions; --require-complete returns the expected

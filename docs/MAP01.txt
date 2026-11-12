@@ -51,17 +51,30 @@ abilities can open regions; specific assignments must prevent an essence from
 being locked behind its own ability. The full geographic/ability graph and its
 circular-lock audit are pending, not established by the opening-route audit.
 
-Finale access combines reputation AND acquired-essence count. The reputation
-track/minimum, essence count/mandatory identities and cooperative policy remain
-open. This entry gate is distinct from the accepted unified Tarot power, which
-requires all 78 essences to damage deities (SYSTEMS, 5.13.1). The Selene encounter
-must reconcile both rules explicitly; neither is silently replaced here.
+Finale base approved by the author on 2026-11-12: after the Chapter II banishment,
+the protagonist gains lunar travel in Chapter III, obtains the World as the last
+card and defeats Selene with the unified Tarot. Entry requires all 78 acquired
+essences AND at least +250 reputation (existing Respected rank) with any one of
+Unitarians, Federals, Free Peoples or Sun Warriors. Faction membership is not
+required; physical deck possession alone does not satisfy acquisition. This
+matches the existing all-78 deity-damage power without changing its costs or
+duration. The protagonist retains custody of the Tarot without consuming the
+essences. An epilogue reflects existing city/faction outcomes and exploration
+continues afterward. This does not resurrect casualties or reset consequences.
+Cooperative aggregation, encounter statistics, lunar transport and exact scripts
+remain unauthored. This is approved design, not implemented finale behavior.
 
 #454 includes reference-backed redesign of MAP02 and existing cities as well as
-new regional slices. Each layout needs review, ordinary traversal and preserved
+new regional slices. The author supplied approved sewer-v2 and Barracas-v1 boards
+on branch references/issue-454-maps-20261112 (f7c9a1d4) and explicitly chose four
+city gates with corresponding siege adaptation on 2026-11-12. These supersede
+the preliminary local topology proposal, not the need for native validation. Each layout needs review, ordinary traversal and preserved
 services/triggers. Replaced geometry requires exact old-WAD compatibility for
 both active-map and visited-hub saves before adoption. #453 requires the original
-approved bestiary manifest; concept references alone are not integrated actors.
+approved bestiary manifest. The author supplied six attachments in #453; all 58
+concept images pass catalogue SHA-256 checks. Their reconstructed catalogue
+leaves campaign regions unassigned. Concept references alone are not integrated
+actors; the author prefers 3D models where feasible.
 The 78-map target counts authored campaign content, not the catalogue's technical
 or standalone map entries. Prologue beta scope and full-campaign completion stay
 distinct. This planning increment does not complete any of #452-457.

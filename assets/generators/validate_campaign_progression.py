@@ -58,6 +58,12 @@ def audit(plan):
     for field in ("reputation_track", "reputation_minimum", "acquired_essence_minimum", "mandatory_essence_ids", "cooperative_eligibility"):
         if finale[field] is None:
             pending.append("finale: " + field)
+    if finale["acquired_essence_minimum"] is not None:
+        check(finale["acquired_essence_minimum"] == len(card_ids), "Approved finale requires all acquired essences")
+        check(set(finale["mandatory_essence_ids"]) == card_ids, "Finale mandatory identities do not cover the catalogue")
+        check(finale["acquired_essence_minimum"] == finale["existing_deity_damage_power"]["required_acquired_essences"], "Finale and existing deity-damage requirements differ")
+        check(finale.get("reputation_track_operator") == "ANY", "Finale reputation requires any one approved faction")
+        check(finale.get("faction_membership_required") is False, "Finale must not add faction membership")
     unassigned = sorted(card_ids - set(placed))
     pending.append(f"Campaign acquisition assignments outside opening route: {len(unassigned)}")
     pending.append("Full regional geographic/ability graph and circular-lock audit remain unauthored")
