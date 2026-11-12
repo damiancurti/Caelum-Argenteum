@@ -25,6 +25,12 @@
       "date": "2026-11-12",
       "decision": "Aprobar esta base y requisitos",
       "scope": "Basic Selene finale, retained Tarot/exploration, all 78 acquired essences and Respected reputation with one of four resistance factions; cooperative aggregation not explicitly included in the returned answer"
+    },
+    {
+      "source": "author conversation",
+      "date": "2026-11-12",
+      "decision": "Basta con un participante elegible",
+      "scope": "One participant satisfying both finale requirements admits the consenting group; personal acquisition remains personal."
     }
   ],
   "targets": {
@@ -58,7 +64,8 @@
         "Selene is the voice",
         "Implanted prisoner souls",
         "Full Tarot plan"
-      ]
+      ],
+      "unresolved": []
     },
     {
       "id": "chapter_1",
@@ -150,8 +157,7 @@
         "Regional order and individual gates",
         "Means of lunar travel",
         "Chapter entry condition",
-        "Final encounter statistics and scripts",
-        "Cooperative finale aggregation"
+        "Final encounter statistics and scripts"
       ]
     }
   ],
@@ -307,12 +313,17 @@
       76,
       77
     ],
-    "cooperative_eligibility": null,
+    "cooperative_eligibility": {
+      "operator": "ANY_PARTICIPANT",
+      "same_participant_must_meet_both_requirements": true,
+      "group_travel_consent_required": true,
+      "copy_personal_essences_or_reputation": false
+    },
     "existing_deity_damage_power": {
       "required_acquired_essences": 78,
       "source": "docs/SYSTEMS.md, 5.13.1 - Capture sources and unified Tarot"
     },
-    "unresolved_interaction": "The author selected all 78 acquired essences for entry, matching the existing deity-damage power. Encounter statistics, scripts, lunar travel and cooperative aggregation remain to be authored.",
+    "unresolved_interaction": "The author selected all 78 acquired essences for entry, matching the existing deity-damage power. Encounter statistics, scripts, lunar travel remain to be authored.",
     "reputation_track_operator": "ANY",
     "faction_membership_required": false,
     "story_sequence": [
