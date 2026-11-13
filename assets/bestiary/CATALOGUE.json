@@ -242,9 +242,27 @@
       "protected_existing_identity": null,
       "production_status": "provisional_combat_unplaced",
       "engine_id": null,
-      "mesh": null,
-      "rig": null,
-      "animations": [],
+      "mesh": "assets/bestiary/models/pombero/models/caelum/folklore/pombero/pombero.md3",
+      "rig": "15 hierarchical procedural mesh parts in DESIGN.json; no skeleton/armature delivered",
+      "animations": [
+        "idle:16 samples",
+        "walk:24 samples"
+      ],
+      "visual_pilot": {
+        "issue": 455,
+        "source": "assets/source/art/pombero_455/DESIGN.json",
+        "mesh": "assets/bestiary/models/pombero/models/caelum/folklore/pombero/pombero.md3",
+        "manifest": "assets/bestiary/models/pombero/manifest.json",
+        "rig": "15 hierarchical procedural mesh parts in DESIGN.json; no skeleton/armature delivered",
+        "animations": [
+          "idle:16 samples",
+          "walk:24 samples"
+        ],
+        "runtime_enabled": false,
+        "author_accepted": false,
+        "limits": "Technical visual pilot. Face, hair and clothing fidelity require further art review. No combat animation set, collision, encounters, population or campaign ownership.",
+        "generator": "assets/generators/generate_pombero_model.py"
+      },
       "actor_class": "CaelumBestiary006",
       "combat_template": "CaelumMandinga",
       "combat_art": "inherited_Mandinga_placeholder",

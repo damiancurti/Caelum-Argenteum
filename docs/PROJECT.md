@@ -24,6 +24,11 @@ the author is away; no pending design was inferred.
 
 ## 5.16.3 - Folklore combat classes and model pilot (#455, in progress)
 
+Pombero also has an unintegrated 40-frame technical mesh/OBJ/MD3. Native playback,
+save/reload and deterministic binary checks pass; face/hair/clothing refinement,
+production animation coverage and author acceptance remain outstanding. See
+ASSETS and validation_v5_16_3/pombero; no production actor appearance is replaced.
+
 Nahuelito (CA-FOLK-055) has an editable real 3D visual pilot, a native 40-frame
 idle/swim export and reproducible native fresh/reload evidence. ASSETS records
 sources, generation and limits. It is unintegrated: no new statistics, encounters,

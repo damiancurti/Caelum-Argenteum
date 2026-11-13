@@ -1,7 +1,7 @@
 """Capture native orientation/animation and save continuation of the #455 pilot.
 
-Only the generated visual actor and a temporary flat viewing map are loaded.
-This is not an encounter, aquatic AI, collision or author-acceptance test.
+The generated visual actor uses a temporary flat viewing map and optional studio
+lighting. This is not an encounter, gameplay AI, collision or author-acceptance test.
 """
 from pathlib import Path
 import argparse
@@ -13,12 +13,14 @@ import subprocess
 import time
 import zipfile
 
+ROOT=Path(__file__).resolve().parents[2]
 
-def wad():
+
+def wad(ambient=224):
     text=['namespace="ZDoom";']
     points=[(1024,-1024),(-1024,-1024),(-1024,1024),(1024,1024)]
     for x,y in points:text.append(f'vertex {{ x={x}; y={y}; }}')
-    text.append('sector { heightfloor=0; heightceiling=768; texturefloor="CMST01"; textureceiling="F_SKY1"; lightlevel=224; }')
+    text.append('sector { heightfloor=0; heightceiling=768; texturefloor="CMST01"; textureceiling="F_SKY1"; lightlevel='+str(ambient)+'; }')
     for i in range(4):
         text.append('sidedef { sector=0; texturemiddle="CMST01"; }')
         text.append(f'linedef {{ v1={i}; v2={(i+1)%4}; sidefront={i}; blocking=true; }}')
@@ -35,12 +37,18 @@ def main():
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--model',type=Path,required=True)
     parser.add_argument('--runtime',type=Path,required=True)
+    parser.add_argument('--kind',choices=('nahuelito','pombero'),default='nahuelito')
     parser.add_argument('--interactive',action='store_true',help='Leave the visual scene open for author review, without reporting an automatic pass.')
     args=parser.parse_args();out=args.output.resolve();out.mkdir(parents=True,exist_ok=True)
     views=[('three-quarter',(300,-330,190),8,0),('front',(400,0,160),4,0),
            ('side',(0,-400,160),4,0),('rear',(-440,0,160),4,0),
            ('rotated',(300,-330,190),8,90),('swim-down',(300,-330,190),8,0),
            ('swim-up',(300,-330,190),8,0),('head',(200,-125,190),0,0)]
+    head_target=(110,0,229);body_target=(0,0,120);lighting={'ambient':224,'lights':[]}
+    if args.kind=='pombero':
+        preview=json.loads((ROOT/'assets/source/art/pombero_455/DESIGN.json').read_text(encoding='utf-8'))['preview']
+        views=preview['views'];head_target=preview['head_target'];body_target=preview['body_target']
+        lighting=preview['lighting']
     source='''class CA455Camera : Actor { Default { +NOINTERACTION +NOGRAVITY } States { Spawn: TNT1 A -1; Stop; } }
 class CA455VisualDriver : Actor
 {
@@ -62,8 +70,8 @@ class CA455VisualDriver : Actor
         Sample=0; Subject.Angle=0;
 '''
     for i,(name,p,pitch,angle) in enumerate(views):
-        target=(110,0,229) if name=='head' else (0,0,120)
-        camera_angle=math.degrees(math.atan2(target[1]-p[1],target[0]-p[0]));sample=22 if name=='swim-down' else 34 if name=='swim-up' else 0
+        target=head_target if name=='head' else body_target
+        camera_angle=math.degrees(math.atan2(target[1]-p[1],target[0]-p[0]));sample=22 if name.endswith('-down') else 34 if name.endswith('-up') else 0
         source+=f'if(index=={i}){{View.SetOrigin(({p[0]},{p[1]},{p[2]}),false);View.Angle={camera_angle};View.Pitch={pitch};Subject.Angle={angle};Sample={sample};}}\n'
     source+='''View.ClearInterpolation(); Subject.ClearInterpolation(); players[0].camera=View;
         Console.Printf("CA455 VIEW index=%d sample=%d angle=%.1f",ViewIndex,Sample,Subject.Angle);
@@ -94,12 +102,23 @@ class CA455VisualEvents : EventHandler
     }
 }'''
     fixture=out/'fixture.pk3'
+    if args.kind=='pombero':
+        source=source.replace('CA455NahuelitoPreview','CA455PomberoPreview').replace('"Swim"','"Walk"')
+        source=source.replace('class CA455Camera : Actor { Default {','class CA455Camera : Actor { Default { CameraHeight 0; Height 0; Radius 0;')
+        # Preview-only studio lights persist with the driver; never respawn on load.
+        source=source.replace('Actor Subject; Actor View;','Actor Subject; Actor View; bool LightingReady;')
+        light_source='if(!LightingReady) { LightingReady=true;'
+        for light in lighting['lights']:
+            x,y,z=light['position'];red,green,blue=light['color'];radius=light['radius']
+            light_source+=f'{{let lamp=Actor.Spawn("CA455Camera",({x},{y},{z}),NO_REPLACE);lamp.A_AttachLight(\'Pilot\',DynamicLight.PointLight,( {red} << 16 ) | ( {green} << 8 ) | {blue},{radius},0,DynamicLight.LF_ATTENUATE|DynamicLight.LF_NOSHADOWMAP);}}'
+        source=source.replace('ViewIndex=index;',light_source+'} ViewIndex=index;')
     with zipfile.ZipFile(fixture,'w',zipfile.ZIP_DEFLATED) as package:
-        for name,value in {'maps/CA455V.wad':wad(),'ZSCRIPT':('version "4.14.2"\n'+source).encode(),
-                           'MAPINFO':b'map CA455V "Nahuelito visual pilot" { sky1="CABASKY",0 nointermission }\ngameinfo { AddEventHandlers="CA455VisualEvents" }'}.items():
+        for name,value in {'maps/CA455V.wad':wad(lighting['ambient']),'ZSCRIPT':('version "4.14.2"\n'+source).encode(),
+                           'MAPINFO':('map CA455V "'+args.kind.title()+' visual pilot" { sky1="CABASKY",0 nointermission }\ngameinfo { AddEventHandlers="CA455VisualEvents" }').encode()}.items():
             info=zipfile.ZipInfo(name,(2026,11,12,0,0,0));package.writestr(info,value)
     config=out/'isolated.ini';config.write_text('[GlobalSettings]\nvid_fullscreen=false\nvid_preferbackend=1\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nsnd_mastervolume=0.05\nvid_maxfps=60\nlanguage=en\n')
     commands='wait 140; '+ '; '.join(f'netevent ca455view{i}; wait 10; screenshot {name}.png' for i,(name,_,_,_) in enumerate(views))
+    if args.kind=='pombero':commands='screenblocks 12; crosshair 0; con_notifytime 0; '+commands
     commands+='; netevent ca455view0; wait 10; netevent ca455animate; wait 2; netevent ca455motion_a; screenshot animate-a.png; wait 30; netevent ca455motion_b; screenshot animate-b.png; netevent ca455verify; save pilot.zds; wait 35; quit\n'
     (out/'commands.cfg').write_text(commands)
     engine=Path('C:/Program Files (x86)/GZDoom/gzdoom.exe');iwad=Path('C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD')
@@ -108,9 +127,9 @@ class CA455VisualEvents : EventHandler
     if args.interactive:
         script='wait 140; netevent ca455view0; netevent ca455animate; '
         script+='; '.join(f'bind F{i+1} "netevent ca455view{i}"' for i in range(len(views)))
-        script+='; bind F9 "netevent ca455animate"; echo "F1-F8: viewpoints and poses. F9: animated swimming. Close the game to finish review."\n'
+        script+='; bind F9 "netevent ca455animate"; echo "F1-F8: viewpoints and poses. F9: animation. Close the game to finish review."\n'
         (out/'interactive.cfg').write_text(script)
-        print('Nahuelito visual review: F1-F8 viewpoints/poses, F9 swim. Close the game to finish. No automatic acceptance.')
+        print(args.kind.title()+' visual review: F1-F8 viewpoints/poses, F9 animation. Close the game to finish. No automatic acceptance.')
         startup.wShowWindow=1
         subprocess.run(common+['+logfile',str(out/'interactive.log'),'+map','CA455V','+exec',str(out/'interactive.cfg')],cwd=out,startupinfo=startup,check=True)
         return
@@ -120,7 +139,7 @@ class CA455VisualEvents : EventHandler
             proc=subprocess.Popen(command,cwd=out,stdout=log,stderr=log,startupinfo=startup)
             try:code=proc.wait(timeout=120)
             except subprocess.TimeoutExpired:proc.terminate();proc.wait(timeout=10);raise
-        text=(out/(label+'.log')).read_text(errors='replace')
+        text=(out/(label+'.log')).read_text(encoding='utf-8',errors='replace')
         errors=[key for key in ['Script error','Execution could not continue','VM execution aborted','Unknown type','Unable to load model','result=FAIL'] if key in text]
         return {'exit_code':code,'errors':errors,'verify_pass':'CA455 VERIFY subjects=1' in text and 'result=PASS' in text,
                 'native_state_advanced':'CA455 MOTION result=PASS' in text}
@@ -131,7 +150,7 @@ class CA455VisualEvents : EventHandler
     (out/'reload.cfg').write_text('wait 140; netevent ca455verify; screenshot reload.png; wait 10; quit\n')
     reload=run('reload',['-loadgame','pilot.zds','+exec',str(out/'reload.cfg')])
     captures=[name for name,_,_,_ in views]+['animate-a','animate-b','reload']
-    report={'issue':455,'scope':__doc__,'engine_sha256':hashlib.sha256(engine.read_bytes()).hexdigest(),
+    report={'issue':455,'subject':args.kind,'scope':__doc__,'engine_sha256':hashlib.sha256(engine.read_bytes()).hexdigest(),
             'runtime_sha256':hashlib.sha256(args.runtime.read_bytes()).hexdigest(),
             'model_sha256':hashlib.sha256((args.model/'preview.pk3').read_bytes()).hexdigest(),
             'fresh':result,'reload':reload,'captures':{name:hashlib.sha256((out/(name+'.png')).read_bytes()).hexdigest() for name in captures if (out/(name+'.png')).is_file()},

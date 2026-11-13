@@ -1,0 +1,82 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-13 09:34:37
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v516/work-455/build/issue455-combat02.pk3, 18118 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v516/work-455/build/pombero03/preview.pk3, 6 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v516/work-455/build/pombero-native04/fixture.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on G27F (NVIDIA High Definition Audio)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1520 x 825
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 3287.87 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+CA455V - Pombero visual pilot
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA455 VIEW index=0 sample=0 angle=0.0
+Captured three-quarter.png
+CA455 VIEW index=1 sample=0 angle=0.0
+Captured front.png
+CA455 VIEW index=2 sample=0 angle=0.0
+Captured side.png
+CA455 VIEW index=3 sample=0 angle=0.0
+Captured rear.png
+CA455 VIEW index=4 sample=0 angle=90.0
+Captured rotated.png
+CA455 VIEW index=5 sample=22 angle=0.0
+Captured walk-down.png
+CA455 VIEW index=6 sample=34 angle=0.0
+Captured walk-up.png
+CA455 VIEW index=7 sample=0 angle=0.0
+Captured head.png
+CA455 VIEW index=0 sample=0 angle=0.0
+CA455 ANIMATION running
+Captured animate-a.png
+Captured animate-b.png
+CA455 MOTION result=PASS
+CA455 VERIFY subjects=1 state=-1 view=0 result=PASS
+Game saved.
