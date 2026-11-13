@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.13** - 2026-11-13.
+Documentation version: **5.17.14** - 2026-11-13.
+
+## 5.17.14 - Existing key model for lock inventory (#672)
+
+One new binding reuses original #656 key art for the eight native lock/key/tool
+types and preserves their current shared icon. Final save/rollback/access checks
+pass 1,646 assertions; three exports repeat exactly and all 18,223 source/package
+entries match. A visible sixteen-object presentation pair and final views are
+recorded. Retain CA672-LOCKS-01 and earlier author checks; broader work is unfinished.
 
 ## 5.17.13 - Closed mate inventory models (#670)
 

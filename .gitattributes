@@ -683,3 +683,10 @@
 /assets/validation_v5_17_13/*.py text eol=lf
 /assets/validation_v5_17_13/*.zs text eol=lf
 /assets/validation_v5_17_13/evidence/** -text -whitespace
+
+/assets/generators/*inventory_lock_model.py text eol=lf
+/assets/source/art/inventory_models_647/locks/** text eol=lf
+/src/caelum/data/inventory_locks.modeldef text eol=lf
+/assets/validation_v5_17_14/*.py text eol=lf
+/assets/validation_v5_17_14/*.zs text eol=lf
+/assets/validation_v5_17_14/evidence/** -text -whitespace

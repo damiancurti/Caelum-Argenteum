@@ -1,0 +1,90 @@
+{
+  "schema_revision": 1,
+  "issue": 672,
+  "parent_issue": 647,
+  "status": "native_candidate_pending_author_review",
+  "variants": {
+    "key": {
+      "class": "CaelumLockItem",
+      "parts": [
+        "key shaft",
+        "bit crosspiece",
+        "outer tooth",
+        "inner tooth",
+        "open bow joined at collar",
+        "bow collar",
+        "bow scroll -1",
+        "bow scroll 1",
+        "blue ribbon tail",
+        "second ribbon tail"
+      ],
+      "closed_outward_components": 10,
+      "vertices": 2974,
+      "triangles": 2840,
+      "surfaces": [
+        {
+          "material": "gold",
+          "vertices": 2853,
+          "triangles": 2624
+        },
+        {
+          "material": "blue",
+          "vertices": 121,
+          "triangles": 216
+        }
+      ],
+      "reference_opaque_bounds": [
+        20,
+        8,
+        107,
+        120
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 87.0,
+      "native_bounds": [
+        {
+          "min": [
+            -41.8446088794926,
+            -15.71847543533141,
+            0.0
+          ],
+          "max": [
+            45.155391120507396,
+            28.675800718538756,
+            4.88640402171436
+          ]
+        }
+      ]
+    }
+  },
+  "source_sha256": {
+    "DESIGN.json": "c00ab6743042f49d453a0b393927d6c890df36a5614ad810da845d82b4f2d6cd",
+    "PROVENANCE.json": "11f065f722558861a5e39014c2c0464ad4994f4567c26f1cebcb635f426d27da"
+  },
+  "external_source_sha256": {
+    "assets/generators/generate_inventory_document_models.py": "f62ccbf2f7812fc91efda5a0cf8fffb89e7fb239aaef72b659a564b80bea8541",
+    "assets/source/art/inventory_models_647/documents/DESIGN.json": "33e580db7c01373d75dfd0b5b5ac526d73519841cf2a0f174a28fab2c6db55b5",
+    "assets/source/art/inventory_models_647/documents/EXPORT.json": "49c58fc3c63d335c569ed8e358fb6e23130b12ba8dddbb5b3c76fc4aea9f153d",
+    "assets/source/art/inventory_models_647/documents/PROVENANCE.json": "a394355d8dc359d1d82cf281b2d008a0ca3df7de64090c3c1e864c0deac7d071",
+    "src/caelum/equipment/CaelumLocks.zs": "836bc9d5871355226f1289c1892130683f15b8dea2e38304ad109d09820a4be4",
+    "src/caelum/equipment/CaelumSpecialItems.zs": "17e80ee4c5f210dd7336c6ff874c96e38a34974c6be00e03135446444a8b3d04",
+    "src/graphics/caelum/icons/ca_key.png": "fdb427311193fc58482ce8c0dbf06c955783759d08b21a7b08dcfe2662fa03c8",
+    "src/models/caelum/actors/training/ca_training_dummy.png": "4ae89bf07aaab273bb9bcafad283ab2e56fb3d87d6dd2f86e6a1329855dd8cff",
+    "src/models/caelum/equipment/support_implements/paper_0.png": "bd21c6ec26062a3346df51e76b4d2769725487f53cc71742347b863d67cb6df2",
+    "src/models/caelum/folklore/pombero461/materials.png": "6d72eeb0a43b98a279fb3119f28b06bffd5d353e9e39da0ab8036559e06f62cc",
+    "src/models/caelum/inventory/consumables/materials.png": "eb8f019510c63601c9e25c8ed05142fbe7b97fe06eb444c32685def6e664416e",
+    "src/models/caelum/inventory/documents/key.md3": "32c974458449cd3ac4fcbc873b8b622fba1f001f20d405ad590217461e361904",
+    "src/models/caelum/props/stations/ca_station_cloth.png": "0e1d06ccc24a99753bcce3653856ba6477b7ee2bf5342d2680272e901bcd523e"
+  },
+  "generator_sha256": {
+    "generate_inventory_lock_model.py": "c4fd72ee2e4006b8262f96e4543d6b0f4437dbbfbed161e034422a9186376062"
+  },
+  "sha256": {
+    "caelum/data/inventory_locks.modeldef": "a892cfcf0343550082d21e56268581b55f4fc16ea3d65117b12ff67ee45ee461"
+  },
+  "reuse_note": "Native geometry/material bytes and editable sources remain owned by #656; only a model binding is exported."
+}
