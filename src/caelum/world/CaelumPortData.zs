@@ -38,9 +38,10 @@ class CaelumPortData : Object play
     static int GunCount(){return IsSouth()?42:18;}
     static bool ActiveGun(int i){if(CaelumBarracasData.IsCurrent())return i<6 || CaelumBarracasSiegeData.ActiveGun(i-6);return !IsSouth() || i<6 || i==6 || i==7 || i==8 || i==9 || i==10 || i==11 || i==12 || i==13 || i==14 || i==15 || i==16 || i==17;}
     static vector3 OperatorOffset(int i,int slot){double side=(slot==0?-1:1)*OPERATOR_SIDE;
+        if(CaelumBarracasData.IsCurrent() && i<6){double a=GunAngle(i);return (-Sin(a)*side,Cos(a)*side,0);}
         if(IsSouth() && (i==26 || i==27 || i==28 || i==29 || i==30 || i==31 || i==32 || i==33 || i==34 || i==35 || i==36 || i==37 || i==38 || i==39 || i==40 || i==41))return (0,side,0);
         return (side,0,0);}
-    static double GunAngle(int i){if(CaelumBarracasData.IsCurrent() && i>=6)return CaelumBarracasSiegeData.GunAngle(i-6);if(IsSouth()){
+    static double GunAngle(int i){if(CaelumBarracasData.IsCurrent())return i<6?CaelumBarracasFrontData.GunAngle(i):CaelumBarracasSiegeData.GunAngle(i-6);if(IsSouth()){
         if(i==6)return 270;
         if(i==7)return 270;
         if(i==8)return 270;
@@ -109,7 +110,7 @@ class CaelumPortData : Object play
     static vector3 CompletionPosition(){return CaelumBarracasData.CurrentPortPoint((128,1856,0));}
     static vector3 GunPosition(int i)
     {
-        if(CaelumBarracasData.IsCurrent() && i>=6)return CaelumBarracasSiegeData.GunPosition(i-6);
+        if(CaelumBarracasData.IsCurrent())return i<6?CaelumBarracasFrontData.GunPoint(i):CaelumBarracasSiegeData.GunPosition(i-6);
         if(IsSouth())
         {
             if(i==0)return (-30464,-15744,0);

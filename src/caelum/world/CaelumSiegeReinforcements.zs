@@ -92,7 +92,8 @@ class CaelumSiegeReinforcements : Object play
         let entry=port.RegisterAttacker(body);
         Registering=false;
         if(entry==null){body.ClearCounters();body.Destroy();PlacementFailures++;return false;}
-        entry.Lane=crew!=null ? crew.Lane : port.NearestLane(position.X);
+        entry.Lane=crew!=null ? crew.Lane : CaelumBarracasData.IsCurrent()
+            ? (ordinal/CaelumReinforcementData.GROUP_SIZE)%CaelumBarracasFrontData.RAM_COUNT : port.NearestLane(position.X);
         entry.ExitNode=port.Exits[entry.Lane];
         if(crew!=null)
         {
@@ -100,6 +101,7 @@ class CaelumSiegeReinforcements : Object play
             if(crew.Machine is "CaelumBatteringRam")CaelumBatteringRam(crew.Machine).AssignCrew(entry);
             else if(crew.Machine is "CaelumCannon")CaelumCannon(crew.Machine).AssignOperator(body);
         }
+        if(CaelumBarracasData.IsCurrent())CaelumBarracasMarch.Pending(entry);
         Placed[slot]=true;Successful++;Living++;Remaining--;Pending--;
         port.CommandDirty=true;
         return true;

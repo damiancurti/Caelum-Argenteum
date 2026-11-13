@@ -43,9 +43,10 @@ def runtime():
     code += '    static bool ActiveGun(int i){if(CaelumBarracasData.IsCurrent())return i<6 || CaelumBarracasSiegeData.ActiveGun(i-6);return !IsSouth() || i<6'
     code += ''.join(f' || i=={i+6}' for i in S['active_defending_guns'])+';}\n'
     code += '    static vector3 OperatorOffset(int i,int slot){double side=(slot==0?-1:1)*OPERATOR_SIDE;\n'
+    code += '        if(CaelumBarracasData.IsCurrent() && i<6){double a=GunAngle(i);return (-Sin(a)*side,Cos(a)*side,0);}'+'\n'
     code += '        if(IsSouth() && ('+' || '.join(f'i=={i+6}' for i,a in enumerate(S['operator_axes']) if a=='y')+'))return (0,side,0);\n'
     code += '        return (side,0,0);}\n'
-    code += '    static double GunAngle(int i){if(CaelumBarracasData.IsCurrent() && i>=6)return CaelumBarracasSiegeData.GunAngle(i-6);if(IsSouth()){\n'
+    code += '    static double GunAngle(int i){if(CaelumBarracasData.IsCurrent())return i<6?CaelumBarracasFrontData.GunAngle(i):CaelumBarracasSiegeData.GunAngle(i-6);if(IsSouth()){\n'
     code += ''.join(f'        if(i=={i+6})return {a};\n' for i,a in enumerate(S['defending_angles']))
     code += '        }return i<6?AttackAngle():DefendAngle();}\n'
     for name,key,old in [('GateY','gate_y','GATE_Y'),('ExitY','exit_y','EXIT_Y'),('RamY','ram_start_y','RAM_START_Y'),('OutsideSign','outside_sign','1'),('AttackAngle','attack_angle','270'),('DefendAngle','defend_angle','90'),('LayoutRevision','revision','REVISION')]:
@@ -62,7 +63,7 @@ def runtime():
         code += f'    static vector3 {name}(){{{south}return {point};}}\n'
     code += '''    static vector3 GunPosition(int i)
     {
-        if(CaelumBarracasData.IsCurrent() && i>=6)return CaelumBarracasSiegeData.GunPosition(i-6);
+        if(CaelumBarracasData.IsCurrent())return i<6?CaelumBarracasFrontData.GunPoint(i):CaelumBarracasSiegeData.GunPosition(i-6);
         if(IsSouth())
         {
 '''

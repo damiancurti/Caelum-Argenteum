@@ -1,0 +1,1 @@
+{"forecourt_width": 512, "profiles": [{"large": false, "count": 6, "columns": 2, "spacing": 61, "minimum_separation": 61.0}, {"large": true, "count": 32, "columns": 4, "spacing": 61, "minimum_separation": 60.999999999999986}]}

@@ -1,0 +1,2 @@
+gameinfo { AddEventHandlers="CA454HouseUseProbe" }
+doomednums {31050=CA454HouseUseCity}

@@ -1,0 +1,17 @@
+{
+  "base_commit": "7bc1094b5ad8647b224b0f999b13746026634d8c",
+  "base_runtime_sha256": "6efffa2932be0333debccfa727ae471826a84e3916f077fd0fb47802273a6d73",
+  "runtime": "issue454-retreat-cells01.pk3",
+  "runtime_sha256": "78e89a9516496ab8368774376ddbeadc8dfaf3b07c571984e69888f99b36cf16",
+  "changed_sources": {
+    "caelum/world/CaelumBarracasRetreat.zs": {
+      "sha256": "dd9b42ab7e7b2ea23c1cea59160aa39abd266db75bb02c73da3a825b5208e35e",
+      "source": "../runtime-sources/dd9b42ab7e7b2ea23c1cea59160aa39abd266db75bb02c73da3a825b5208e35e.zs"
+    },
+    "caelum/world/CaelumBarracasRetreatData.zs": {
+      "sha256": "88c1f544a2c92a5d9803752e98af1b7524cb079e111e13e34a9d30bfa808630c",
+      "source": "../runtime-sources/88c1f544a2c92a5d9803752e98af1b7524cb079e111e13e34a9d30bfa808630c.zs"
+    }
+  },
+  "scope": "Exact owned ZScript differences for the interrupted diagnostic iteration. No packaged runtime, test PK3, engine, IWAD or save."
+}

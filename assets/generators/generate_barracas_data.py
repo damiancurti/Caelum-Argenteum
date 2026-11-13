@@ -46,7 +46,7 @@ def outputs():
                       'vendor':[ *local_point(building,*interior['vendor_offset']),0],
                       'angle':building['angle']})
     result={'schema_revision':1,'issue':454,'geometry_revision':data['geometry_revision'],
-            'status':'Generated exterior coordinates; production activation requires the completed revision4 map and native verification.',
+            'status':'Generated revision4 exterior coordinates; LAYOUT.json owns production activation.',
             'private_interior_contract':'HouseOrigin/Table/Bed/Chest/DoorInside/HomePosition retain original CAH coordinates, including calls made from MAP03.',
             'public_approach_contract':'Use the already audited exterior doorstep as the deployment route origin; the legacy1280-MU local offset can land in a neighboring rotated lot.',
             'source_sha256':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in INPUTS},

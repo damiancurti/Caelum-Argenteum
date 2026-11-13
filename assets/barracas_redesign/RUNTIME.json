@@ -2,11 +2,11 @@
   "schema_revision": 1,
   "issue": 454,
   "geometry_revision": 4,
-  "status": "Generated exterior coordinates; production activation requires the completed revision4 map and native verification.",
+  "status": "Generated revision4 exterior coordinates; LAYOUT.json owns production activation.",
   "private_interior_contract": "HouseOrigin/Table/Bed/Chest/DoorInside/HomePosition retain original CAH coordinates, including calls made from MAP03.",
   "public_approach_contract": "Use the already audited exterior doorstep as the deployment route origin; the legacy1280-MU local offset can land in a neighboring rotated lot.",
   "source_sha256": {
-    "assets/barracas_redesign/LAYOUT.json": "6698de7680e7bcdd2dd923de5fa04380312c703609e9d52194e10508a5ade29b",
+    "assets/barracas_redesign/LAYOUT.json": "4ac292be6105b2926669a7f93b43fe5f0643f73e8610ef18c02bfdc0aa3f4aed",
     "assets/map06_port/CITY.json": "d251e8aff3fb4f7c30c94e176b10eb95cd1a00e888c1a53f3846160d7e0e6d35",
     "assets/map06_port/INTERIORS.json": "340df2d2f9a5df6e2e7e7d05d1adf8528b3a0b18e4f47783783e32dcf95913ef",
     "assets/map06_port/HOUSE_HUBS.json": "d1fa5c729046e3324bb6de98650052a87b4b7591a85760b73f240e9da660f9d9",

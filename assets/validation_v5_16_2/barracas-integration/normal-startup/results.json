@@ -1,0 +1,32 @@
+{
+  "issue": 454,
+  "runtime_sha256": "8671e633e41059d2875e4b5f6f2c392732185b0c060117899f865d51e2265e28",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "command": [
+    "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+    "-noautoload",
+    "-iwad",
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+    "-file",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue454-integrated01.pk3",
+    "-config",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\barracas-installed-smoke01\\session.ini",
+    "-savedir",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\barracas-installed-smoke01",
+    "-window",
+    "-width",
+    "1280",
+    "-height",
+    "720",
+    "+logfile",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\barracas-installed-smoke01\\engine.log",
+    "+map",
+    "MAP03",
+    "+exec",
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\barracas-installed-smoke01\\commands.cfg"
+  ],
+  "passed": true,
+  "errors": [],
+  "exit_code": 0,
+  "scope": "Normal packaged MAP03 startup without any diagnostic map, class or event-handler overlay; native save/screenshot. No battle or performance acceptance."
+}

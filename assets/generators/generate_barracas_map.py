@@ -1,8 +1,8 @@
-"""Assemble the unactivated revision-4 MAP03 candidate under build/.
+"""Assemble the reviewed revision-4 MAP03 base under build/.
 
 Reuse the reviewed shell, existing port content, private house identities,
-factory services and residential sky policy. Siege data/routes are a separate
-remaining integration step; this command never replaces src/maps.
+factory services, generated siege data and residential sky policy. This command
+never replaces src/maps; install_barracas_map.py owns reviewed installation.
 """
 from pathlib import Path
 import argparse

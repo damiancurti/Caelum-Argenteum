@@ -29,26 +29,54 @@ and its all-78-essence/Respected reputation requirements are author-approved;
 the checkpoint is before Selene on the Moon, after obtaining the World last.
 The seven named Majors per chapter are also approved as an allocation base;
 the recovered bestiary and map references proceed through separate issues.
-Barracas also has an [isolated architectural preview](assets/barracas_redesign/LAYOUT.json)
-with 288 retained building identities; it is not activated in MAP03. City services,
-four-gate siege integration remain unfinished. For visited original Barracas saves,
+Barracas revision4 is now packaged in MAP03 from the [approved layout](assets/barracas_redesign/LAYOUT.json),
+retaining288 building identities and160 private interiors. Fresh and saved
+crowded aftermaths and early-checkpoint replay complete all 1,000 physical exits.
+Native presentation measures about 76–100/s in peaceful views but only 1.50/s
+in the full-cap siege; siege fluency remains unresolved. The existing Knight
+essence follows the relocated quay; original-city sources remain compatible.
+For visited original Barracas saves,
 `run_dev.bat --legacy-map03-revision3` retains exact geometry and private-house
 identities. Active/stored-hub continuation passed with current code; repeat
-verification after the redesigned city is integrated.
+verification is recorded with the integrated runtime.
+Known-only map discovery also follows the relocated stations, towers and stairs,
+retaining their IDs and original-city compatibility.
 The rotated-door/coordinate slice passes 224 native service endpoint checks and
 160 portals/320 leaf placements; private interior coordinates are retained.
 The four-gate prototype also passes 160 native closed/open samples and four
 Used-handler checks; the closed-perimeter grid audit finds no exterior bypass.
 A separate candidate also passes service placement and private-house hub return:64
 merchants,96 factory stations,four vehicles and four relocated household objects.
-Its siege is suppressed by a disposable test controller; it is not the production city.
+The service fixture suppresses siege deployment; it is not the production city.
+A separate fixture now exercises real four-gate/machine deployment and persistent
+active/reserve handling. Six full ram routes pass fresh/reload clearance; infantry
+approaches and withdrawal now have staged routes. Six final exits and36 stair descents pass
+fresh/reloaded native checks. Full15-body approaches, six city withdrawals and five
+wounded-commander escape routes now pass fresh/reload. Four native ram captures
+preserve reserve ownership; the full controller reaches its1000 living cap and
+refills five fixture casualties without resetting the finite6600 ledger.
+See [continuation evidence](assets/validation_v5_16_2/barracas-continuation/SUMMARY.json)
+for runtime hashes, thermal/gate isolation and remaining battle/performance work.
 The artillery candidate passes 72 isolated operator walks,528 guard posts and648
-cannon-component clearances. Real deployment, crowd movement and siege remain pending.
+cannon-component clearances. A native save now confirms all600 retained residents
+completed deployment, including72 operators; replay from the early checkpoint
+also completes all600 at45,093tics with collision and native AI retained.
 The 600 exterior deployment paths also pass continuous native collision sampling
 in fresh/reloaded saves; old geometry retains its original route tables.
 Both ram sizes pass isolated corner movement and contact with all four gates.
 Two live crews (6+32 Mandingas) also reach their gates at normal cadence after
-fresh start and mid-turn reload. Full three-front integration remains pending.
+fresh start and mid-turn reload. All three fronts are integrated in revision4.
+The separate city candidate now retains the existing Justice arena. Native duel
+placement, active-save recovery and exact survivor return pass, as does original
+city/hub continuation. [Justice evidence](assets/validation_v5_16_2/barracas-justice/SUMMARY.json)
+records the unchanged candidate geometry prefix; the installed map matches that tested candidate.
+Four house orientations also pass normal Used/capture/renderer-ACK round trips;
+all64 shopkeepers open with native Use, and a purchase preserves stock and money
+accounting, in fresh/reloaded runs. All96 factory stations and four vehicle
+boarding sessions also pass native Use checks. Recipe completion and ticket/journey
+transactions are outside these access checks. Fresh/saved crowded withdrawal passes;
+[actual presentation measurements](assets/validation_v5_16_2/barracas-presentation/SUMMARY.json)
+retain the severe siege limitation. Author checks remain pending.
 
 V5.15 includes the [battle director](assets/validation_v5_15_0/RESULTS.md)
 (#447, PR635), [Unitarian command](assets/validation_v5_15_1/RESULTS.md)

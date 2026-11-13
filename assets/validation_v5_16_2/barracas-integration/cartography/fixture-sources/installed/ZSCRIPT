@@ -1,0 +1,94 @@
+version "4.14.2"
+class CA454DiscoveryExpected : Object { const REVISED=1;const STATIONS=96;const STAIRS=36;static vector3 Station(int i){switch(i){case 0:return (-4288,9920,0);case 1:return (-4192,9920,0);case 2:return (-4096,9920,0);case 3:return (-4000,9920,0);case 4:return (-26752,10816,0);case 5:return (-26848,10816,0);case 6:return (-26944,10816,0);case 7:return (-27040,10816,0);case 8:return (-27136,10816,0);case 9:return (-21184,10304,0);case 10:return (-21088,10304,0);case 11:return (-20992,10304,0);case 12:return (-25216,10816,0);case 13:return (-25312,10816,0);case 14:return (-25408,10816,0);case 15:return (-5824,9920,0);case 16:return (-5728,9920,0);case 17:return (-5632,9920,0);case 18:return (-5536,9920,0);case 19:return (-5440,9920,0);case 20:return (-2752,10688,0);case 21:return (-2848,10688,0);case 22:return (-2944,10688,0);case 23:return (-3040,10688,0);case 24:return (-28288,10048,0);case 25:return (-28192,10048,0);case 26:return (-28096,10048,0);case 27:return (-28000,10048,0);case 28:return (-21568,12288,0);case 29:return (-21568,12192,0);case 30:return (-21568,12096,0);case 31:return (-21568,12000,0);case 32:return (-21568,11904,0);case 33:return (-26368,12032,0);case 34:return (-26368,12128,0);case 35:return (-26368,12224,0);case 36:return (-4672,8704,0);case 37:return (-4672,8608,0);case 38:return (-4672,8512,0);case 39:return (-3904,11904,0);case 40:return (-3904,12000,0);case 41:return (-3904,12096,0);case 42:return (-3904,12192,0);case 43:return (-3904,12288,0);case 44:return (-27136,8832,0);case 45:return (-27136,8736,0);case 46:return (-27136,8640,0);case 47:return (-27136,8544,0);case 48:return (-20800,9088,0);case 49:return (-20800,9184,0);case 50:return (-20800,9280,0);case 51:return (-20800,9376,0);case 52:return (-25152,12480,0);case 53:return (-25248,12480,0);case 54:return (-25344,12480,0);case 55:return (-25440,12480,0);case 56:return (-25536,12480,0);case 57:return (-24704,8832,0);case 58:return (-24704,8928,0);case 59:return (-24704,9024,0);case 60:return (-28352,12480,0);case 61:return (-28448,12480,0);case 62:return (-28544,12480,0);case 63:return (-5888,8256,0);case 64:return (-5792,8256,0);case 65:return (-5696,8256,0);case 66:return (-5600,8256,0);case 67:return (-5504,8256,0);case 68:return (-2688,9024,0);case 69:return (-2784,9024,0);case 70:return (-2880,9024,0);case 71:return (-2976,9024,0);case 72:return (-5568,11904,0);case 73:return (-5568,12000,0);case 74:return (-5568,12096,0);case 75:return (-5568,12192,0);case 76:return (-28352,9152,0);case 77:return (-28448,9152,0);case 78:return (-28544,9152,0);case 79:return (-28640,9152,0);case 80:return (-28736,9152,0);case 81:return (-19584,12416,0);case 82:return (-19488,12416,0);case 83:return (-19392,12416,0);case 84:return (-7360,10688,0);case 85:return (-7456,10688,0);case 86:return (-7552,10688,0);case 87:return (-3008,7040,0);case 88:return (-3008,7136,0);case 89:return (-3008,7232,0);case 90:return (-3008,7328,0);case 91:return (-3008,7424,0);case 92:return (-1152,9280,0);case 93:return (-1248,9280,0);case 94:return (-1344,9280,0);case 95:return (-1440,9280,0);}return (0,0,0);}static vector3 Stair(int i){switch(i){case 0:return (-25920,-11680,16);case 1:return (-22592,-13344,16);case 2:return (-19648,-13856,16);case 3:return (-16512,-14048,16);case 4:return (-13376,-14176,16);case 5:return (-10368,-13984,16);case 6:return (-6016,-13280,16);case 7:return (-5376,-13216,16);case 8:return (-29248,11936,16);case 9:return (-1152,11936,16);case 10:return (-27296,-10656,16);case 11:return (-2048,-12576,16);case 12:return (-26496,13024,16);case 13:return (-23936,13856,16);case 14:return (-21472,14720,16);case 15:return (-16960,13984,16);case 16:return (-14976,15008,16);case 17:return (-8384,14880,16);case 18:return (-6464,14112,16);case 19:return (-2944,12704,16);case 20:return (-27648,-11296,16);case 21:return (-27552,-6464,16);case 22:return (-27936,-4544,16);case 23:return (-28640,-832,16);case 24:return (-29568,3296,16);case 25:return (-28448,5696,16);case 26:return (-29440,7648,16);case 27:return (-29312,10784,16);case 28:return (-1408,-11104,16);case 29:return (-1120,-8064,16);case 30:return (192,-4320,16);case 31:return (256,-2912,16);case 32:return (576,3680,16);case 33:return (-352,5184,16);case 34:return (-1120,8000,16);case 35:return (-768,10656,16);}return (0,0,0);}static vector3 Tower(int i){switch(i){case 0:return (-29312,13248,384);case 1:return (-1344,13248,384);case 2:return (-27584,-11968,384);case 3:return (-2496,-13888,384);}return (0,0,0);}static String StationId(int i){switch(i){case 0:return "city-factory-0-workbench";case 1:return "city-factory-0-forge";case 2:return "city-factory-0-anvil";case 3:return "city-factory-0-fine_tools";case 4:return "city-factory-1-workbench";case 5:return "city-factory-1-ranged";case 6:return "city-factory-1-sawmill";case 7:return "city-factory-1-forge";case 8:return "city-factory-1-fine_tools";case 9:return "city-factory-2-workbench";case 10:return "city-factory-2-armor";case 11:return "city-factory-2-sewing";case 12:return "city-factory-3-workbench";case 13:return "city-factory-3-altar";case 14:return "city-factory-3-jeweler";case 15:return "city-factory-18-workbench";case 16:return "city-factory-18-jeweler";case 17:return "city-factory-18-fine_tools";case 18:return "city-factory-18-forge";case 19:return "city-factory-18-altar";case 20:return "city-factory-19-workbench";case 21:return "city-factory-19-sawmill";case 22:return "city-factory-19-sewing";case 23:return "city-factory-19-forge";case 24:return "city-factory-20-workbench";case 25:return "city-factory-20-forge";case 26:return "city-factory-20-anvil";case 27:return "city-factory-20-fine_tools";case 28:return "city-factory-21-workbench";case 29:return "city-factory-21-ranged";case 30:return "city-factory-21-sawmill";case 31:return "city-factory-21-forge";case 32:return "city-factory-21-fine_tools";case 33:return "city-factory-36-workbench";case 34:return "city-factory-36-armor";case 35:return "city-factory-36-sewing";case 36:return "city-factory-37-workbench";case 37:return "city-factory-37-altar";case 38:return "city-factory-37-jeweler";case 39:return "city-factory-38-workbench";case 40:return "city-factory-38-jeweler";case 41:return "city-factory-38-fine_tools";case 42:return "city-factory-38-forge";case 43:return "city-factory-38-altar";case 44:return "city-factory-39-workbench";case 45:return "city-factory-39-sawmill";case 46:return "city-factory-39-sewing";case 47:return "city-factory-39-forge";case 48:return "city-factory-54-workbench";case 49:return "city-factory-54-forge";case 50:return "city-factory-54-anvil";case 51:return "city-factory-54-fine_tools";case 52:return "city-factory-55-workbench";case 53:return "city-factory-55-ranged";case 54:return "city-factory-55-sawmill";case 55:return "city-factory-55-forge";case 56:return "city-factory-55-fine_tools";case 57:return "city-factory-56-workbench";case 58:return "city-factory-56-armor";case 59:return "city-factory-56-sewing";case 60:return "city-factory-57-workbench";case 61:return "city-factory-57-altar";case 62:return "city-factory-57-jeweler";case 63:return "city-factory-72-workbench";case 64:return "city-factory-72-jeweler";case 65:return "city-factory-72-fine_tools";case 66:return "city-factory-72-forge";case 67:return "city-factory-72-altar";case 68:return "city-factory-73-workbench";case 69:return "city-factory-73-sawmill";case 70:return "city-factory-73-sewing";case 71:return "city-factory-73-forge";case 72:return "city-factory-74-workbench";case 73:return "city-factory-74-forge";case 74:return "city-factory-74-anvil";case 75:return "city-factory-74-fine_tools";case 76:return "city-factory-75-workbench";case 77:return "city-factory-75-ranged";case 78:return "city-factory-75-sawmill";case 79:return "city-factory-75-forge";case 80:return "city-factory-75-fine_tools";case 81:return "city-factory-90-workbench";case 82:return "city-factory-90-armor";case 83:return "city-factory-90-sewing";case 84:return "city-factory-91-workbench";case 85:return "city-factory-91-altar";case 86:return "city-factory-91-jeweler";case 87:return "city-factory-92-workbench";case 88:return "city-factory-92-jeweler";case 89:return "city-factory-92-fine_tools";case 90:return "city-factory-92-forge";case 91:return "city-factory-92-altar";case 92:return "city-factory-93-workbench";case 93:return "city-factory-93-sawmill";case 94:return "city-factory-93-sewing";case 95:return "city-factory-93-forge";}return "";}static vector3 East(){return (384,-1472,0);}}
+// Diagnostico de los registros nativos; la colocacion sustituye el recorrido.
+class CA454CartographyProbe : EventHandler
+{
+    int Failures;
+    bool Completed;
+    void Check(bool okay,String label)
+    {
+        if(!okay){Failures++;Console.Printf("CA454 CARTOGRAPHY FAIL %s",label);}
+    }
+    CaelumPoiRegistration Bound(Actor subject)
+    {
+        let it=ThinkerIterator.Create("CaelumPoiRegistration");CaelumPoiRegistration entry;
+        while((entry=CaelumPoiRegistration(it.Next()))!=null)if(entry.Subject==subject)return entry;
+        return null;
+    }
+    void Observe(CaelumPlayer user,vector3 point)
+    {
+        user.SetOrigin(point,false);user.Vel=(0,0,0);user.FindFloorCeiling();
+        CaelumAuthoredCartography.Update(user,user.GetPersistentCharacterState(true));
+    }
+    void Verify(CaelumPlayer user)
+    {
+        let record=user.GetPersistentCharacterState(true);
+        Check(Completed,"saved completion");
+        Check(CaelumCartographyCatalogueData.MatchesCityGeometry(level.GetChecksum()),"loaded geometry admitted");
+        for(int i=0;i<CA454DiscoveryExpected.STATIONS;i++)
+        {
+            let fact=CaelumPoiKnowledge.Find(record,level.MapName,CA454DiscoveryExpected.StationId(i));
+            Check(i==0?fact!=null:fact==null,"only used station known");
+            if(i==0 && fact!=null)Check(fact.ObservedPosition==CA454DiscoveryExpected.Station(i),"station position persists");
+        }
+        for(int i=0;i<CA454DiscoveryExpected.STAIRS;i++)
+            Check(CaelumPoiKnowledge.Find(record,level.MapName,CaelumBattleRouteData.Id(i+1))!=null,"visited stair persists");
+        for(int i=0;i<4;i++)
+        {
+            let fact=CaelumPoiKnowledge.Find(record,level.MapName,String.Format("city-tower-%d",i));
+            Check(fact!=null && fact.ObservedPosition==CA454DiscoveryExpected.Tower(i),"tower identity/position persists");
+        }
+        let east=CaelumPoiKnowledge.Find(record,level.MapName,"city-east-exit");
+        Check(east!=null && east.ObservedPosition==CA454DiscoveryExpected.East(),"east crossing persists");
+    }
+    override void NetworkProcess(ConsoleEvent e)
+    {
+        if(e.Name!="ca454_discovery_start" && e.Name!="ca454_discovery_resume")return;
+        let user=CaelumPlayer(players[0].mo);let record=user.GetPersistentCharacterState(true);
+        if(e.Name=="ca454_discovery_start")
+        {
+            user.CharacterCreationComplete=true;user.CreationWizardOpen=false;record.ProfileCommitted=true;user.bInvulnerable=true;
+            Check(CaelumBarracasData.IsCurrent()==CA454DiscoveryExpected.REVISED,"geometry revision");
+            Check(CaelumCartographyCatalogueData.MatchesCityGeometry(level.GetChecksum()),"fresh geometry admitted");
+            int before=record.KnownPois.Size();CaelumCraftingStation first;
+            for(int i=0;i<CA454DiscoveryExpected.STATIONS;i++)
+            {
+                CaelumCraftingStation found;let it=ThinkerIterator.Create("CaelumCraftingStation");CaelumCraftingStation station;
+                while((station=CaelumCraftingStation(it.Next()))!=null)
+                    if(station.SpawnPoint==CA454DiscoveryExpected.Station(i)){found=station;break;}
+                Check(found!=null,"map station exists");if(found==null)continue;
+                if(i==0)first=found;
+                CaelumAuthoredCartography.BindSubject(found,CaelumPoiData.STATION);
+                let binding=Bound(found);
+                Check(binding!=null && binding.PoiId==CA454DiscoveryExpected.StationId(i),"native binding retains station ID");
+                CaelumAuthoredCartography.BindSubject(found,CaelumPoiData.STATION);
+                Check(Bound(found)==binding,"binding idempotence");
+                Check(CaelumPoiKnowledge.Find(record,level.MapName,CA454DiscoveryExpected.StationId(i))==null,"binding does not discover station");
+            }
+            Check(before==record.KnownPois.Size(),"registration reveals no locations");
+            Check(first!=null && CaelumPoiKnowledge.RecordUse(user,first,CaelumPoiData.STATION),"one native use record");
+            for(int i=0;i<CA454DiscoveryExpected.STAIRS;i++)
+            {
+                Check(CaelumPoiKnowledge.Find(record,level.MapName,CaelumBattleRouteData.Id(i+1))==null,"stair unknown before visit");
+                Observe(user,CA454DiscoveryExpected.Stair(i));
+                Check(CaelumPoiKnowledge.Find(record,level.MapName,CaelumBattleRouteData.Id(i+1))!=null,"stair records visited step");
+            }
+            for(int i=0;i<4;i++)
+            {
+                Check(CaelumPoiKnowledge.Find(record,level.MapName,String.Format("city-tower-%d",i))==null,"tower unknown before visit");
+                Observe(user,CA454DiscoveryExpected.Tower(i));
+            }
+            vector3 east=CA454DiscoveryExpected.East();
+            Observe(user,east-(CaelumPortData.ROUTE_RADIUS,0,0));
+            Check(CaelumPoiKnowledge.Find(record,level.MapName,"city-east-exit")==null,"east unknown before crossing");
+            Observe(user,east+(CaelumPortData.ROUTE_RADIUS,0,0));
+            Completed=true;
+        }
+        Verify(user);
+        int before=record.KnownPois.Size();
+        CaelumAuthoredCartography.Update(user,record);
+        Check(before==record.KnownPois.Size(),"repeat observation does not duplicate");
+        Console.Printf("CA454 CARTOGRAPHY %s phase=%s revised=%d stations=%d stairs=%d towers=4 failures=%d known=%d",
+            Failures==0?"PASS":"FAIL",e.Name,CA454DiscoveryExpected.REVISED,CA454DiscoveryExpected.STATIONS,CA454DiscoveryExpected.STAIRS,Failures,record.KnownPois.Size());
+    }
+}

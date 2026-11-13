@@ -2,12 +2,12 @@
   "schema_revision": 1,
   "geometry_revision": 4,
   "issue": 454,
-  "runtime_enabled": false,
-  "status": "static_candidate_routes_require_native_deployment",
+  "runtime_enabled": true,
+  "status": "generated_revision4_resident_routes",
   "source_sha256": {
-    "assets/barracas_redesign/LAYOUT.json": "6698de7680e7bcdd2dd923de5fa04380312c703609e9d52194e10508a5ade29b",
-    "assets/barracas_redesign/RUNTIME.json": "e70d510bfbf5403364acaed0b973a2da707b46790d8cbd589debee8ec51dbb9d",
-    "assets/barracas_redesign/SIEGE.json": "67ffca19204b1fd0ad4cf736b2003c488e7166e5fcc598d0e2ac55e33f39206e",
+    "assets/barracas_redesign/LAYOUT.json": "4ac292be6105b2926669a7f93b43fe5f0643f73e8610ef18c02bfdc0aa3f4aed",
+    "assets/barracas_redesign/RUNTIME.json": "5bc3198f05f956ea23f5baede58fb90c2df7bb811ea180be2794d36035974289",
+    "assets/barracas_redesign/SIEGE.json": "aa106eb246577f2d45a0f1d0a027d70b91ea0cc735a19ebe6a726006ddab6115",
     "src/caelum/data/CaelumPropertyData.zs": "3d99697b20d32c613c0553c0d78c5b59e295fb0c8ab2acd67c6665f6e6c7a89b",
     "assets/map06_port/LAYOUT.json": "56bc2e815b46e78d4f141f97d21e15d038a6d991e4be376a2fa8022f818c7a86"
   },

@@ -1,7 +1,7 @@
 {
   "issue": 454,
   "revision": 1,
-  "runtime_enabled": false,
+  "runtime_enabled": true,
   "scope": "Fit retained ram crew counts to collision-safe local posts for revision4.\n\nPositions are geometry, not new combat statistics. Derive clearance from the\naccepted maximum human body and original machine constants. Choose the smallest\neven column count that fits the existing guard radius and stops outside the gate.",
   "body_source": "assets/map02_maze/LAYOUT.json",
   "clearance_radius": 21.333333,

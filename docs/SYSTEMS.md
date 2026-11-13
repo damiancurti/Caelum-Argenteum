@@ -2,7 +2,70 @@
 
 Documentation version: **5.16.3** - 2026-11-12.
 
-## 5.16.2 / #454 - Approved Barracas siege adaptation (candidate)
+## 5.16.2 / #454 - Approved Barracas siege adaptation
+
+Known-only cartography selects revision4 factory/tower/stair/east-gate coordinates
+while retaining the original IDs and legacy geometry checksums. Bindings alone
+do not reveal points. The native knowledge API fixture records one used station,
+36 visited stair entries, four towers and one eastern crossing;42 facts persist
+without duplicates after reload on both layouts. Positioning is supplied by the
+fixture; normal service Use and traversal have separate evidence.
+
+The existing Knight of Wands essence follows the relocated quay through the
+same CurrentPortPoint transform as its surroundings. Original-city positioning
+and acquisition requirements remain unchanged. PlacementRevision1 moves only
+the known preceding candidate source; an active capture completes or cancels
+before relocation. Native Use, interrupted/retried capture, mid-capture reload,
+duplicate rejection and inactive/active old-source migration pass in isolation.
+The fixture supplies completed narrative/victory and an owned Box/deck; it
+automates the response after native Use. See barracas-arcana/SUMMARY.json.
+
+The unactivated city now has its existing Justice arena appended independently.
+Checksum-qualified sector/centre dispatch selects the candidate or original city.
+Arena dimensions, pairing, duration and safe-return rules are unchanged; native
+active-save/expiry checks pass. This is not a new card or payment implementation.
+
+The staged pedestrian controller retains per-entry revisioned lane, route cursor
+and withdrawal state. Assigned approaches take precedence over anonymous search
+points while preserving perception evidence and normal visible-enemy combat.
+Groups stay within their assigned front. Infantry/gun crews share the existing
+one-local-search-per-tic budget with defenders; native speed, collision and
+resource accounting remain. After victory, withdrawal uses static ground fields
+and reversed artillery stairs. Revision4 chooses the nearest existing legal
+southern exit by precomputed ground distance, without changing the saved assault
+front. Entering an equally near cell advances the route; a valid local detour
+survives queueing. A blocked body waits behind an eligible withdrawing ally
+physically ahead in the same flow direction. This uses only a local next-step
+volume query; corners, immobilized bodies and other obstacles retain local
+avoidance. Native collision, speed, resources and shared search budgets remain.
+A nearby closed gate receives its normal Used
+interaction, since the original closing timer still runs after victory opening.
+Legacy geometry keeps its former tables/behavior. Isolated navigation evidence
+is qualified in barracas-navigation/SUMMARY.json; revision4 is now packaged.
+
+The wounded commander now follows the same revision-4 ground withdrawal fields
+through a virtual escape-step hook. His existing half-health trigger, native
+flee-speed multiplier, collision and final-exit confirmation remain authoritative.
+This does not grant permission to open hostile gates before victory. The default
+hook retains the original sewer/legacy chase; native regression passes there.
+Five candidate origins pass fresh/reload with open diagnostic gates. Capture and
+full-controller refill checks also pass: the existing1000 living-side census
+includes hostile machines and commander, leaving987 initial Mandingas when all12
+machines survive. Five native fixture deaths admit five replacements; the ledger
+is992 admitted plus5608 remaining, without changing the6600 cumulative total.
+These are qualified isolated checks, not battle or climate-survival acceptance.
+See barracas-continuation/SUMMARY.json.
+
+The combined aftermath fixture retains600 residents and the full1000-cap
+controller, then supplies12 native objective destructions and the commander wound.
+A saved congested aftermath completes all1000 surviving exits at48,300tics,
+15,118 additional tics after recovery, preserving five fixture casualties,
+1004 admissions,5596 unused reserves, one victory and no automatic essence grant.
+A fresh run and early-checkpoint replay complete all1000 exits at30,205tics
+with the same ledger. Presentation measurements separately confirm severe siege
+stalls (about1.50 requests/s); movement success is not fluency. Thermal isolation
+and supplied objective completion prevent a full-fight or climate-survival claim.
+See barracas-withdrawal/SUMMARY.json for exact packages and incomplete iterations.
 
 The author approved four gates: north reinforced, south wooden, east reinforced
 and west armored, retaining existing resistance profiles. Attackers arrive from
@@ -13,24 +76,38 @@ Of 36 installed defensive cannons, 12 are active: four towers, four south-wall,
 two east-wall and two west-wall guns. There are 72 operators and 528 guards;
 guard identities retain 14 per first 12 posts and15 per last 24. No combat statistic,
 resource, ownership, offscreen-census or occupation rule changes are authorized
-by this map revision. Artillery geometry/isolated access is tested; production
-three-front deployment and reserve activation remain unfinished. MAP01/TASKS
+by this map revision. Artillery geometry/isolated access is tested; full
+three-front battle integration remains unfinished. MAP01/TASKS
 and barracas-forts/SUMMARY.json distinguish these stages from acceptance.
 Revision4 now selects generated ground routes and artillery/formation coordinates
 without changing the original data tables for earlier geometry. All 600 resident
 identities and the existing central-house relocation are retained. Isolated
-fresh/reloaded geometric traversal passes; real crowd/AI deployment, machine
-ownership and battle outcomes remain part of the unfinished siege integration.
+fresh/reloaded geometric traversal passes. A fresh native save confirms600 living,
+unique residents completed their actual routes, including72 operator ascents;
+the early-checkpoint replay completes all600 at45,093tics. Guards retain their accepted search
+behavior after arrival; simultaneous stationary occupation is not a new rule.
+Machine ownership checks pass; complete battle outcomes remain unfinished.
 Ram routes now support opt-in physical turns before each segment, using the
 existing approach/rotation rates. Legacy routes retain fixed-heading translation;
 saved zero defaults preserve that behavior. This is geometry support only, not
-completed reserve handling or a change to machine statistics.
+a change to machine statistics.
 Opt-in crew layouts retain6/32 operators and their original guard radii, with
 local rotating posts derived from native collision boxes. The new crews keep
 their assigned station ahead of remembered search movement, while visible
-enemies retain normal combat handling. Two isolated live crews pass; production
-front deployment, capture/refill and active/reserve handling still require
-integration. Earlier machine/crew layouts retain their original behavior.
+enemies retain normal combat handling. Two isolated live crews, pedestrian routes,
+capture ownership, refill admission and crowded aftermath pass. A fully played
+battle and author review remain pending. Earlier layouts retain their behavior.
+
+The revision-4 controller now owns four gate instances shared by six machine
+slots: south/south/east/east/west/west, with slot5 retaining the large ram.
+One ram per pair activates initially; its reserve activates after permanent
+Tarot destruction or capture of the principal machine. Temporary sabotage or
+crew absence leaves the reserve waiting. Saved reserve-release flags persist
+idempotently; existing ownership and restoration mechanics remain authoritative.
+Twelve hostile objectives and the original reinforcement/defender counts remain.
+Native isolated deployment/reload verifies these identities and reserve behavior;
+production MAP03 now uses revision4. Infantry approaches/retreats and capture/refill
+pass; full-play battle acceptance remains separate from these diagnostic fixtures.
 
 ## 5.15.4 / #451 - Occupation, recovery and persistent consequences
 

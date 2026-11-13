@@ -1,0 +1,42 @@
+{
+  "issue": 454,
+  "scope": "Native +use input at64 retained merchants and one actual finite-stock purchase; fixture places user and provides Box/currency. Native price, stock and wallet transfer retained. No walking, full catalogue, siege, multiplayer or author acceptance.",
+  "runtime_sha256": "6efffa2932be0333debccfa727ae471826a84e3916f077fd0fb47802273a6d73",
+  "candidate_sha256": "7b4d8aa16035607bba6feb4bed7dc7df46143b230560b08acbc2669c51204b63",
+  "fixture_sha256": "9b887cb2a2e40f512164066dc8b228d0230a92ab14207fc76c41db8cdcbdce0f",
+  "runs": [
+    {
+      "phase": "fresh",
+      "passed": false,
+      "exit_code": 0,
+      "timeout": false,
+      "checks": [
+        "CA454 SHOP FAIL native Use id=43",
+        "CA454 SHOP OPEN PASS id=44 category=2 rows=26",
+        "CA454 SHOP FAIL native Use id=45",
+        "CA454 SHOP FAIL native Use id=46",
+        "CA454 SHOP FAIL native Use id=47",
+        "CA454 SHOP FAIL native Use id=48",
+        "CA454 SHOP FAIL native Use id=49",
+        "CA454 SHOP FAIL native Use id=50",
+        "CA454 SHOP FAIL native Use id=51",
+        "CA454 SHOP FAIL native Use id=52",
+        "CA454 SHOP FAIL native Use id=53",
+        "CA454 SHOP FAIL native Use id=54",
+        "CA454 SHOP FAIL native Use id=55",
+        "CA454 SHOP FAIL native Use id=56",
+        "CA454 SHOP FAIL native Use id=57",
+        "CA454 SHOP FAIL native Use id=58",
+        "CA454 SHOP FAIL native Use id=59",
+        "CA454 SHOP FAIL native Use id=60",
+        "CA454 SHOP FAIL native Use id=61",
+        "CA454 SHOP FAIL native Use id=0",
+        "CA454 SHOP FAIL native Use id=62",
+        "CA454 SHOP FAIL native Use id=1",
+        "CA454 SHOP FAIL native Use id=63",
+        "CA454 SHOP COMPLETE FAIL opened=1 bought=0 failures=22",
+        "CA454 SHOP FAIL native Use id=2"
+      ]
+    }
+  ]
+}

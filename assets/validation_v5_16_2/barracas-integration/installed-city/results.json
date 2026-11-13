@@ -1,0 +1,28 @@
+{
+  "issue": 454,
+  "scope": "Test candidate city services and private-house native hub routing.\n\nA passive fixture controller suppresses obsolete six-lane siege deployment.\nThis is not a production siege, ordinary house Use/ACK or author acceptance.",
+  "runtime_sha256": "8671e633e41059d2875e4b5f6f2c392732185b0c060117899f865d51e2265e28",
+  "candidate_sha256": null,
+  "runs": [
+    {
+      "phase": "fresh",
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "checks": [
+        "CA454 CANDIDATE PASS map=MAP03 failures=0 vendors=64 vehicles=4 factory_stations=96 return_distance=19622.0",
+        "CA454 CANDIDATE PASS map=CAH069 failures=0",
+        "CA454 CANDIDATE PASS map=MAP03 failures=0 vendors=64 vehicles=4 factory_stations=96 return_distance=0.0"
+      ]
+    },
+    {
+      "phase": "reload",
+      "passed": true,
+      "exit_code": 0,
+      "timed_out": false,
+      "checks": [
+        "CA454 CANDIDATE PASS map=MAP03 failures=0 vendors=64 vehicles=4 factory_stations=96 return_distance=19622.0"
+      ]
+    }
+  ]
+}

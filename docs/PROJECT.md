@@ -18,33 +18,52 @@ BEHAVIOR.json records this decision without activating new actors; species and
 protected Rulo/Mandinga/Zupay profiles remain distinct. The shared template still
 needs implementation and does not supply encounter rosters or visual acceptance.
 
-## 5.16.2 - Sewer geometry slice (#454, in progress)
+## 5.16.2 - Approved map redesign slices (#454, in progress)
 
-MAP02 revision 6 implements the approved sewer board with twelve main circuits,
-four internal shortcuts, human-scale headroom and retained gameplay content.
-MAP01 owns the map specification and explicit old-active/stored-hub compatibility
-mode. Static/deterministic and isolated native fresh/save/hub, escort, boss and
-lower-recovery checks pass. Before/after views and native presentation evidence
-are recorded; ordinary combat/hazard traversal and author acceptance remain in
-TASKS. Barracas and regional slices remain separate #454 work. No new folklore
-models, campaign essence placements or memory scripts are claimed.
+MAP02 revision6 implements the approved sewer board with twelve main circuits,
+four shortcuts, maintenance/recovery branches and retained gameplay content.
+Static and native fresh/reload/hub, old-save compatibility, cleared escorts,
+maximum-body passage, boss retreat and lower branches/grates/lift pass. Qualified
+before/after Vulkan evidence is recorded; ordinary combat/hazard traversal and
+author acceptance remain pending. MAP01 owns geometry and compatibility modes;
+assets/validation_v5_16_2/RESULTS.json owns the evidence.
 
-Barracas now has an unactivated architectural source/preview with 288 retained
-construction identities, the approved street/plaza/perimeter structure, rotated
-house facades and 424 static/native clearance targets passing. MAP03 and CAH maps
-are unchanged. The author approved three siege fronts, four gate materials and
-the 12-active-gun distribution. Service placement/private-house return and exact
-old-city continuation pass; the artillery candidate also passes 72 isolated crew
-walks and all 528 guard posts. Ordinary transport, deployment, siege and final
-architecture remain to integrate. See MAP01/TASKS.
-The 600 exterior deployment routes are also generated and pass native continuous
-collision sampling in fresh/reloaded saves. This verifies geometry and dispatch,
-not 600-body AI/crowds; the production city remains unchanged.
-Both existing ram sizes now pass isolated corner approaches and impacts against
-all four gates, with mid-turn reload and fixed-heading regression controls. Crew
-movement with6/32 real Mandingas also passes in two isolated normal-cadence
-fresh/reload cases. Production integration, reserve activation and full
-three-front behavior are still unfinished.
+Barracas revision4 is installed in production MAP03. Its approved
+street/plaza/perimeter structure retains288 building identities,160 private
+interiors, four gates and three siege fronts. Native geometry, services, gates,
+artillery access, six complete ram routes and600 deployment paths pass. Actual
+600-resident deployment also passes a fresh-save audit and early-checkpoint
+replay, retaining collision,72 operators and the automatic>=500 census policy.
+
+Long infantry routes, isolated withdrawals, five wounded-commander origins,
+ram capture ownership and the full-controller1000-cap refill pass. Four house
+orientations retain normal Used/rendered-ACK travel,64 shops open and a purchase
+preserves stock/money;96 factory stations and four vehicle sessions also pass
+native Use. Recipe completion and ticket/journey transactions are separate.
+Justice placement/save/return and original active/stored-hub saves pass.
+The existing Knight essence now follows the relocated quay. Native Use/capture,
+interrupted retry, mid-capture reload and inactive/active preceding-source
+migration pass; original-city behavior remains compatible. The fixture supplies
+completed narrative/victory and the Box/deck; barracas-arcana/SUMMARY.json records
+that boundary separately from playing the battle or selecting the UI response.
+
+Combined aftermath testing exposed opposing assigned-exit streams and repeated
+local detours among bodies moving in the same direction. Revision4 separates
+retreat exit from assault front and retains physical progress/queued routes.
+Fresh and saved congested aftermaths now complete all1000 surviving physical exits,
+preserving reserve/victory accounting and no automatic essence grant. Fresh and
+early-checkpoint replay both finish at30,205tics. Native presentation measures
+100.07/s at the revised quay,75.63/s facing ground and1.50/s during full-cap siege.
+The original city with the same code measures106.95,76.68 and1.28/s respectively;
+these are corresponding views, not identical rendered workloads or an accepted-main
+runtime comparison. Severe siege stalls remain unresolved. Integrated
+new/legacy evidence is recorded in barracas-integration/SUMMARY.json. Thermal-isolated
+navigation does not establish climate survival or a fully played battle.
+Architectural readability/author review remain pending; final art completion is
+coordinated with #463. No new folklore actors, regional maps, essence placements
+or memory scripts are claimed here. See TASKS and
+assets/validation_v5_16_2/barracas-continuation/SUMMARY.json.
+The focused crowd correction is recorded in barracas-withdrawal/SUMMARY.json.
 
 ## 5.16.1 - Folklore reference recovery (#453, catalogue approved)
 

@@ -46,6 +46,172 @@ needs implementation and does not supply encounter rosters or visual acceptance.
 
 ## 5.16.2 - Sewer redesign slice (#454, in progress, 2026-11-12)
 
+2026-11-13 city installation: the approved Barracas revision4 is packaged as
+MAP03 with its tested geometric facade model and bindings. The installed WAD
+matches the earlier native-tested Justice candidate exactly; all237 other WADs
+and seven generated route/coordinate code files retain their bytes. The owned
+pre-Justice source and INSTALLATION.json preserve provenance and deterministic
+regeneration; project validation rejects stale inputs/assets/bindings read-only.
+The independent LegacyMap03Revision3 package retains original active/stored-hub
+geometry. Native installed/legacy results are in barracas-integration/SUMMARY.json;
+CA454-MAP03-01 remains an author check. This installation does not resolve the
+measured severe siege presentation stalls or complete the other regional slices.
+
+The installation validator caught an additional cartography dependency: changing
+only the city checksum would still use old station/tower/stair/east coordinates
+and omit the exact original Justice-era checksum. Generated revision selectors
+now retain old IDs/coordinates for legacy saves and use approved relocated data
+for revision4. Native discovery evidence covers96 bindings without automatic
+revelation and42 used/visited facts across fresh/reloaded new and legacy layouts.
+An initial test-runner failure concatenated an integer building ID before launch;
+the fixture now formats the preserved ID explicitly. The production map did not
+cause that tooling failure. Later package changes are limited to the three
+cartography source/data entries; earlier unaffected integration checks are reused
+with exact entry comparisons, not claimed to have run on a different hash.
+
+2026-11-13 presentation follow-up: eight sequential native runs preserve actual
+vkQueuePresentKHR traces,1280x720 captures, exact runtime hashes and observers.
+Original/revised peaceful quay106.95/100.07 requests/s; ground76.68/75.63;
+full-cap siege1.28/1.50, with revised p95/p99788.78/791.28ms. The first original
+siege sample was still refilling and is retained separately. The full-cap pair
+records988 attacker NPCs and601 defenders each; machines are outside this census.
+Both layouts use current code, so this is neither an accepted-main runtime
+comparison nor proof of an inherited cause. Severe siege stalls remain unresolved.
+An isolated timing overlay records navigation112.50ms/375 calls (~0.4% of its
+700-tic window), Acquire6897.89ms and Candidate6847.46ms (overlapping), Noise370.86ms
+and Communication1433.56ms. Instrumentation overhead and differing visible geometry
+limit interpretation. No navigation optimization or performance acceptance follows.
+See assets/validation_v5_16_2/barracas-presentation/SUMMARY.json.
+
+
+2026-11-13 quay essence correction: the Knight source still used the original
+absolute location after the quay rotated/moved. Reuse CurrentPortPoint on that
+authored location, leaving original MAP03 unchanged. PlacementRevision1 relocates
+only the exact known preceding candidate source and defers while capture is
+active. Eight isolated phases pass: original/candidate capture and mid-capture
+reload, old inactive-source seed/migration, and old active-capture seed/migration.
+Native Use opens the source; interrupted capture keeps it available, completion
+adds exactly one essence and repeat commit is rejected. Saved-source inspection
+finds one source in each case. Original active/stored-hub compatibility also passes.
+All238 production WADs remain identical; the city is still unactivated.
+
+Fixtures supply narrative victory, owned Box/deck and automated capture response.
+An undelivered native narrative initially consumed Use; the fixture now marks
+that narrative delivered. A direct nested startup exec was lost around loading;
+an initial wait preserves it. Quitting immediately after save omitted the native
+checkpoint; the fixture waits and verifies its presence. These harness corrections
+do not alter gameplay or establish UI-response/author acceptance. Exact artifacts,
+failed iterations and source migration evidence: barracas-arcana/SUMMARY.json.
+
+2026-11-13 crowd withdrawal: revision4 keeps assault Lane separate from the
+nearest legal exit, caches offline shortest-path costs and recognizes physical
+progress through an equally near cell. Queued requests retain their valid local
+detour. Same-direction ground bodies wait behind an eligible ally physically
+ahead, using only the next-step spatial volume. A saved congested aftermath
+completes all1000 surviving exits at48,300tics (15,118 additional), with five
+fixture casualties,1004 admitted/5596 remaining and exactly one victory. The
+existing essence is not granted automatically. All238 production WADs remain
+identical. Independent static/native-save audits verify costs, exit choices,
+1005 stable identities and idempotent revision4 migration with882 living bodies.
+
+Earlier iterations are retained: changing equal-length BFS ordering, exact-cell
+arrival, distance progress or queued-detour retention alone did not establish
+fresh army completion. Nearest-only run08 was interrupted by daemon restart at
+52,500tics with462 still pending; six full individual routes and five commander
+origins had completed their fresh phases, but not reload. The final fresh run completes all1000 exits at30,205tics with the same ledger;
+early-checkpoint replay matches30,205tics. Six full-route replays finish41,340tics
+and five commander origins26,335tics. Objective destruction,
+commander wound and neutralized thermal exposure are fixture conditions, not a
+fully won battle or survival/FPS evidence. See barracas-withdrawal/SUMMARY.json.
+
+2026-11-13 deployment/access follow-up: the corrected observer replays the
+original35-tic checkpoint and records600 resident completions at45,093tics,
+including all72 operator ascents, with no death/identity error. This complements
+the fresh native-save audit; it does not require guards to stop their existing
+search behavior. Native Use also opens all96 retained factory crafting networks
+and all four source-specific transport sessions, fresh/reloaded. Recipe execution,
+ticket payment and journeys are outside these access tests. The station fixture
+needed to close both its prior session and journal; an explicit Actor assignment
+fixed the vehicle fixture's mixed-type conditional. No production service changes
+were necessary. Combined aftermath and presentation checks remain pending;
+barracas-continuation/SUMMARY.json records exact artifacts and qualifications.
+
+2026-11-13 continuation: full15-body approaches complete43607tics and six complete
+city withdrawals60732tics, fresh/reloaded. The commander now uses revision-4
+withdrawal streets through an escape-step hook, retaining half-health trigger,
+speed, body and final-exit rules. Five origins complete30667tics per run. Original
+active/stored-house-hub saves pass, and the MAP02 boss still retreats, exposes the
+card and retains the departure guard (254tics). All238 production maps are unchanged.
+
+Four native ram captures preserve enemy/captured reserve handling after reload.
+The full inherited controller reaches1000 living attackers (987 Mandingas,
+commander and12 machines), then replaces five fixture deaths. At4235tics it retains
+992 admitted plus5608 remaining,1000 living and the original600 residents plus
+the existing subcaptain. Fresh/early-reloaded results match; this is not full
+battle completion or a rendering measurement. Movement tests neutralize thermal
+exposure; commander/approach fixtures hold gates open and do not grant permissions.
+
+Four house orientations pass8 normal Used/capture/renderer-ACK requests and4 exact
+returns per fresh/reloaded run. Native Use opens all64 merchants; one purchase
+transfers116485 copper and decrements native stock3-to2. The shop fixture seeds
+the Box in persistent state; an actor-only flag was correctly restored by gameplay.
+Bounded console scripts fix an earlier overlong script's lost/reordered events.
+The first commander fixture wounded before deferred PostBeginPlay; it now waits
+for the native profile. No production balance or shop change was needed.
+
+A native save at52347tics confirms600 unique living residents,72 operators, all
+deployment/crew-route completion flags and the automatic601-combatant high-density
+census. The initial arrival recorder incorrectly demanded simultaneous positions,
+then sampled distance after guards could already begin their permitted searches.
+The independent saved-state audit passes; an early-checkpoint replay with native
+completion recording is running. Battle, climate, remaining services, performance,
+production activation and author acceptance remain open. Exact evidence and
+qualifications: assets/validation_v5_16_2/barracas-continuation/SUMMARY.json.
+
+2026-11-13 Justice preservation: append the existing768-MU/160-MU arena to the
+isolated city candidate, retaining every previous TEXTMAP byte as a prefix.
+Two generated candidates are identical; checksum-qualified lookup selects
+sector391 at(2560,20672,0). Native direct duel placement, exact pair references,
+active-save/timer continuation and exact survivor return pass. Original active
+and stored-house-hub continuation still selects Justice767 and its original
+eight gates. All238 packaged maps remain unchanged. No card dispatch/payment,
+performance, city activation or author acceptance is claimed by this isolation.
+Evidence: assets/validation_v5_16_2/barracas-justice/SUMMARY.json.
+
+2026-11-13 pedestrian candidate: generated southern approaches and static ground
+withdrawal fields, revisioned cursors, front-preserving formations and a shared
+local-navigation queue. Six final exits and36 actual stair descents pass fresh
+and reloaded native checks at normal speed. A41893-tic approach checkpoint
+completes all15 pedestrians by43607tics after correcting the diagnostic gate hold.
+Those long fresh/early-reloaded runs were active at this intermediate stage;
+the continuation entry above records their completion.
+All238 packaged maps remain byte-identical; no battle/performance or author
+acceptance is claimed.
+
+Preserved failures distinguish causes: anonymous footsteps displaced approach
+orders; an opened-once fixture gate closed before arrival; large generated string
+switches exceeded native registers. Three city walkers in the unmodified-weather
+withdrawal fixture died at2628tics with728 thermal damage and nearly100% wetness.
+Movement isolation now neutralizes thermal exposure each fixture tick without
+changing health, speed or collision; this does not validate climate survival.
+Old active/stored-hub continuation passes runtime02; runtime03 adds a gate request
+only for the new geometry after victory. Evidence: barracas-navigation/SUMMARY.json.
+
+2026-11-13 machine-front slice: generated four gate identities and six paired
+ram routes; new-controller dispatch retains12 hostile objectives,42 guns,74
+operators and600 defender identities. Three active rams and one reserve per
+front preserve the five-small/one-large roster. Tarot destruction releases the
+paired reserve; temporary sabotage does not, and release survives reload.
+Six complete routes pass fresh/reload native impacts and2,005,906 crew-post
+clearance samples per run. The first controller run emitted two harmless empty
+switch warnings; the generator now omits those empty cases. Full infantry
+approach/withdrawal, ordinary capture/refill and performance remain unfinished.
+Production MAP03/CAH geometry remains unchanged.
+The final full-route runs also retain all six attacking cannons and waiting ram
+frames as physical obstacles. Fresh/reload pass; old active/stored-hub
+continuation retains the original eight gates and private interiors. Evidence and exact tested
+runtimes: assets/validation_v5_16_2/barracas-fronts/SUMMARY.json.
+
 The author supplied approved sewer-v2/Barracas-v1 boards and selected four city
 gates with siege adaptation. Their source commit is preserved by merge ancestry.
 This slice implements MAP02 only. It replaces the random cardinal grid with

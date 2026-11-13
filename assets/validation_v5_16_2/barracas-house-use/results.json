@@ -1,0 +1,49 @@
+{
+  "issue": 454,
+  "scope": "Exercise house Used/rendered capture/ACK round trips in four orientations.\n\nPlace the user at each door to isolate interaction. Keep native collision,\ncamera capture, renderer ACK, map travel and return coordinates. No walking to\nthe door, property purchase, siege, multiplayer or author acceptance claim.",
+  "runtime_sha256": "6efffa2932be0333debccfa727ae471826a84e3916f077fd0fb47802273a6d73",
+  "candidate_sha256": "7b4d8aa16035607bba6feb4bed7dc7df46143b230560b08acbc2669c51204b63",
+  "fixture_sha256": "44773b37d59c2a8611989124f937bae2ca6b43b92aa662268b91b676ff68f30a",
+  "runs": [
+    {
+      "phase": "fresh",
+      "passed": true,
+      "exit_code": 0,
+      "timeout": false,
+      "checks": [
+        "CA454 HOUSE USE PASS house=0 inside=0 angle=0.0 fit=1 request=1",
+        "CA454 HOUSE USE PASS house=0 inside=1 angle=0.0 fit=1 request=2",
+        "CA454 HOUSE RETURN PASS house=0 distance=0.000",
+        "CA454 HOUSE USE PASS house=20 inside=0 angle=90.0 fit=1 request=3",
+        "CA454 HOUSE USE PASS house=20 inside=1 angle=0.0 fit=1 request=4",
+        "CA454 HOUSE RETURN PASS house=20 distance=0.000",
+        "CA454 HOUSE USE PASS house=1 inside=0 angle=180.0 fit=1 request=5",
+        "CA454 HOUSE USE PASS house=1 inside=1 angle=0.0 fit=1 request=6",
+        "CA454 HOUSE RETURN PASS house=1 distance=0.000",
+        "CA454 HOUSE USE PASS house=19 inside=0 angle=270.0 fit=1 request=7",
+        "CA454 HOUSE USE PASS house=19 inside=1 angle=0.0 fit=1 request=8",
+        "CA454 HOUSE RETURN PASS house=19 distance=0.000"
+      ]
+    },
+    {
+      "phase": "reload",
+      "passed": true,
+      "exit_code": 0,
+      "timeout": false,
+      "checks": [
+        "CA454 HOUSE USE PASS house=0 inside=0 angle=0.0 fit=1 request=1",
+        "CA454 HOUSE USE PASS house=0 inside=1 angle=0.0 fit=1 request=2",
+        "CA454 HOUSE RETURN PASS house=0 distance=0.000",
+        "CA454 HOUSE USE PASS house=20 inside=0 angle=90.0 fit=1 request=3",
+        "CA454 HOUSE USE PASS house=20 inside=1 angle=0.0 fit=1 request=4",
+        "CA454 HOUSE RETURN PASS house=20 distance=0.000",
+        "CA454 HOUSE USE PASS house=1 inside=0 angle=180.0 fit=1 request=5",
+        "CA454 HOUSE USE PASS house=1 inside=1 angle=0.0 fit=1 request=6",
+        "CA454 HOUSE RETURN PASS house=1 distance=0.000",
+        "CA454 HOUSE USE PASS house=19 inside=0 angle=270.0 fit=1 request=7",
+        "CA454 HOUSE USE PASS house=19 inside=1 angle=0.0 fit=1 request=8",
+        "CA454 HOUSE RETURN PASS house=19 distance=0.000"
+      ]
+    }
+  ]
+}

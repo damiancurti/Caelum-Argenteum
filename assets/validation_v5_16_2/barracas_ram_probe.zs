@@ -12,10 +12,12 @@ class CA454RamProbe : EventHandler
     bool Running;
     Actor CrewFit;
     int CrewSamples;
+    Array<CaelumBatteringRam> WaitingRams;
+    Array<CaelumCannon> FrontGuns;
 
     void StartCase()
     {
-        if(CaseIndex>=10)
+        if(CaseIndex>=CA454RamData.CASE_COUNT)
         {
             Running=false;
             Console.Printf("CA454 RAM COMPLETE passed=%d failures=%d",Passed,Failures);
@@ -23,16 +25,18 @@ class CA454RamProbe : EventHandler
             if(CrewFit!=null)CrewFit.Destroy();
             return;
         }
-        bool legacy=CaseIndex>=8;
-        int index=legacy?3:CaseIndex/2;
+        bool legacy=!CA454RamData.FRONT_ROUTES && CaseIndex>=8;
+        int index=CA454RamData.FRONT_ROUTES?CaelumBarracasFrontData.GateForLane(CaseIndex):legacy?3:CaseIndex/2;
         vector3 p=CA454RamData.GatePoint(index);
         double outward=CA454RamData.GateAngle(index);
         vector3 normal=(Cos(outward),Sin(outward),0);
         vector3 tangent=(-Sin(outward),Cos(outward),0);
         Gate=CaelumBreakableGate(Actor.Spawn("CaelumBreakableGate",p,NO_REPLACE));
         Gate.Angle=outward+90;Gate.args[1]=CA454RamData.GateMaterial(index);Gate.args[2]=1;Gate.InitializeGate();
-        Ram=CaelumBatteringRam(Actor.Spawn("CaelumBatteringRam",p+normal*512+tangent*256,NO_REPLACE));
-        Ram.Angle=outward+180;Ram.Large=CaseIndex%2==1;Ram.InitializeRam();
+        vector3 start=CA454RamData.FRONT_ROUTES?CaelumBarracasFrontData.RamStart(CaseIndex):p+normal*512+tangent*256;
+        Ram=CA454RamData.FRONT_ROUTES?WaitingRams[CaseIndex]:CaelumBatteringRam(Actor.Spawn("CaelumBatteringRam",start,NO_REPLACE));
+        Ram.Angle=CA454RamData.FRONT_ROUTES?CaelumBarracasFrontData.RamStartAngle(CaseIndex):outward+180;
+        Ram.Large=CA454RamData.FRONT_ROUTES?CaelumBarracasFrontData.RamLarge(CaseIndex):CaseIndex%2==1;Ram.InitializeRam();
         if(CA454RamData.CREW_CLEARANCE && !legacy)
         {
             Ram.UseBarracasCrewLayout();
@@ -40,7 +44,9 @@ class CA454RamProbe : EventHandler
             {let entry=new("CaelumSiegeCombatant");entry.CrewMachine=Ram;entry.CrewSlot=i;Ram.Crew.Push(entry);}
         }
         Ram.SetRoute(Gate,outward+180,!legacy);
-        Ram.AddRoutePoint(p+normal*512);
+        if(CA454RamData.FRONT_ROUTES)
+            for(int i=0;i<CaelumBarracasFrontData.RamPointCount(CaseIndex);i++)Ram.AddRoutePoint(CaelumBarracasFrontData.RamPoint(CaseIndex,i));
+        else Ram.AddRoutePoint(p+normal*512);
         Ram.AddRoutePoint(p+normal*CaelumRamData.TRIAL_CONTACT_DISTANCE*Ram.SizeFactor);
         Steps=0;
         Console.Printf("CA454 RAM START case=%d large=%d legacy=%d",CaseIndex,Ram.Large,legacy);
@@ -58,6 +64,16 @@ class CA454RamProbe : EventHandler
         if(e.Name=="ca454_ram_start")
         {
             let user=players[0].mo;user.bInvulnerable=true;
+            if(CA454RamData.FRONT_ROUTES)
+                for(int lane=0;lane<CaelumBarracasFrontData.RAM_COUNT;lane++)
+                {
+                    // Las otras maquinas y las reservas tienen sus componentes
+                    // solidos reales durante todo el barrido; no son solo puntos.
+                    let waiting=CaelumBatteringRam(Actor.Spawn("CaelumBatteringRam",CaelumBarracasFrontData.RamStart(lane),NO_REPLACE));
+                    waiting.Large=CaelumBarracasFrontData.RamLarge(lane);waiting.Angle=CaelumBarracasFrontData.RamStartAngle(lane);waiting.InitializeRam();WaitingRams.Push(waiting);
+                    let gun=CaelumCannon(Actor.Spawn("CaelumCannon",CaelumBarracasFrontData.GunPoint(lane),NO_REPLACE));
+                    gun.Angle=CaelumBarracasFrontData.GunAngle(lane);gun.InitializeCannon(false);FrontGuns.Push(gun);
+                }
             if(CA454RamData.CREW_CLEARANCE)
             {CrewFit=Actor.Spawn("CA454RamCrewFit",user.Pos,NO_REPLACE);CrewFit.A_SetSize(CA454RamData.CREW_RADIUS,CA454RamData.CREW_HEIGHT);CrewFit.bSolid=false;}
             Running=true;StartCase();
@@ -85,7 +101,7 @@ class CA454RamProbe : EventHandler
                 CrewFit.bSolid=false;CrewSamples++;
                 if(!fits){ok=false;Console.Printf("CA454 RAM CREW FAIL case=%d slot=%d step=%d at=(%.2f,%.2f) floor=%.1f ceiling=%.1f",CaseIndex,i,Steps,q.X,q.Y,check.floorz,check.ceilingz);break;}
             }
-            if(Ram.Obstructed || !ok || Steps>10000){FinishCase(false);continue;}
+            if(Ram.Obstructed || !ok || Steps>CA454RamData.MAX_STEPS){FinishCase(false);continue;}
             if(moving)continue;
             Ram.StrikeSerial++;Ram.SpentImpact=false;
             Ram.Head.Vel=(Cos(Ram.Angle),Sin(Ram.Angle),0)*CaelumRamData.STRIKE_SPEED;

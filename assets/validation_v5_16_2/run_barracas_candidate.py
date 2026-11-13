@@ -37,11 +37,11 @@ def factory_data():
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--runtime',type=Path,required=True)
-    parser.add_argument('--candidate',type=Path,required=True)
+    parser.add_argument('--candidate',type=Path,help='Optional map overlay; omit for installed runtime')
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--fresh-only',action='store_true',help='Repeat changed fresh/hub checks without repeating an unchanged reload')
     args=parser.parse_args();out=args.output.resolve();out.relative_to(ROOT/'build');out.mkdir(exist_ok=False)
-    runtime=args.runtime.resolve();candidate=args.candidate.resolve()
+    runtime=args.runtime.resolve();candidate=args.candidate.resolve() if args.candidate else None
     fixture=out/'candidate-probe.pk3'
     with zipfile.ZipFile(fixture,'w') as archive:
         files={'ZSCRIPT':b'version "4.14.2"\n#include "factory.zs"\n#include "probe.zs"',
@@ -49,7 +49,7 @@ def main():
                'probe.zs':(Path(__file__).parent/'barracas_candidate_probe.zs').read_bytes(),
                'MAPINFO':b'gameinfo { AddEventHandlers="CA454CandidateProbe" }\ndoomednums {31050=CA454PassiveCity}\n'}
         for name,data in files.items():archive.writestr(zipfile.ZipInfo(name,(2026,11,12,0,0,0)),data)
-    report={'issue':454,'scope':__doc__.strip(),'runtime_sha256':digest(runtime),'candidate_sha256':digest(candidate),'runs':[]}
+    report={'issue':454,'scope':__doc__.strip(),'runtime_sha256':digest(runtime),'candidate_sha256':digest(candidate) if candidate else None,'runs':[]}
     fatal=('Script error','Execution could not continue','VM execution aborted','Unknown type','CANDIDATE FAIL','CANDIDATE VENDOR FAIL','CANDIDATE ARRIVAL FAIL','CANDIDATE VEHICLE FAIL')
     for phase in (('fresh',) if args.fresh_only else ('fresh','reload')):
         folder=out/phase;folder.mkdir()
@@ -60,7 +60,7 @@ def main():
         (folder/'commands.cfg').write_text(commands+'wait 10; quit\n',encoding='utf-8')
         entry=['+map','MAP03']
         if phase=='reload':shutil.copyfile(out/'fresh/checkpoint.zds',folder/'input.zds');entry=['-loadgame','input.zds']
-        command=[str(ENGINE),'-noautoload','-iwad',str(IWAD),'-file',str(package),str(candidate),str(fixture),'-config',str(folder/'isolated.ini'),'-savedir',str(folder),'-window','-width','1280','-height','720','+logfile',str(folder/'engine.log'),*entry,'+exec',str(folder/'commands.cfg')]
+        command=[str(ENGINE),'-noautoload','-iwad',str(IWAD),'-file',str(package),*([str(candidate)] if candidate else []),str(fixture),'-config',str(folder/'isolated.ini'),'-savedir',str(folder),'-window','-width','1280','-height','720','+logfile',str(folder/'engine.log'),*entry,'+exec',str(folder/'commands.cfg')]
         startup=subprocess.STARTUPINFO();startup.dwFlags|=subprocess.STARTF_USESHOWWINDOW;startup.wShowWindow=0
         with (folder/'process.log').open('wb') as stream:
             process=subprocess.Popen(command,cwd=folder,stdout=stream,stderr=stream,startupinfo=startup);deadline=time.monotonic()+180;timeout=False

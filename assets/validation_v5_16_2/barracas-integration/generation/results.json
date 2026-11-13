@@ -1,0 +1,79 @@
+[
+  {
+    "command": [
+      "python",
+      "assets/generators/generate_barracas_ram_crews.py",
+      "--check"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "python",
+      "assets/generators/generate_barracas_data.py",
+      "--check"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "python",
+      "assets/generators/generate_barracas_siege.py",
+      "--check"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "python",
+      "assets/generators/generate_barracas_fronts.py",
+      "--check"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "python",
+      "assets/generators/generate_barracas_march.py",
+      "--check"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "python",
+      "assets/generators/generate_barracas_routes.py",
+      "--check",
+      "--output",
+      "build/v516/barracas-install-routes-check01"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "python",
+      "assets/generators/generate_barracas_retreat.py",
+      "--check",
+      "--output",
+      "build/v516/barracas-install-retreat-check01"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "python",
+      "assets/generators/generate_barracas_map.py",
+      "--output",
+      "build/v516/barracas-install-map-check01"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "python",
+      "assets/generators/generate_tarot_justice.py",
+      "--check"
+    ],
+    "exit_code": 0
+  }
+]

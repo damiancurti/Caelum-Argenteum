@@ -1,0 +1,9 @@
+{
+  "status": "interrupted_by_daemon_restart",
+  "completed": false,
+  "runtime_sha256": "fd95d6be6a83492df11bd139fe765a485b29ee1c95e45ed674560f31a122e170",
+  "last_recorded_elapsed": 52500,
+  "last_recorded_pending": 462,
+  "last_recorded_exited": 538,
+  "qualification": "Severe congestion, with ongoing progress. No completed withdrawal, fresh/reload pair, permanent-deadlock or FPS claim. The retained native checkpoint was used for the next focused correction."
+}

@@ -4,6 +4,96 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-223 - Map installation must migrate geometry-dependent catalogues
+
+Status/evidence: ENGINE-VERIFIED,2026-11-13. Issue/PR: #454/#643.
+Environment: GZDoom4.14.2 on Windows11, unpaused background at5% audio.
+Evidence: assets/validation_v5_16_2/barracas-integration/SUMMARY.json.
+
+A tested overlay can compile and preserve services while production cartography
+still uses the original checksum and coordinates. Replacing the checksum alone
+would recognize the new map with old station/tower/stair/exit positions and drop
+the original Justice-era map from the compatibility whitelist. Keep exact legacy
+checksums and select relocated coordinates by the loaded geometry revision;
+preserve IDs and private maps. Installation regenerates the dependent catalogues.
+Verify native bindings without granting knowledge, then use/visit and reload.
+The revised and original layouts each pass96 bindings and retain42 observed
+facts without revealing the other95 stations. Fixture positioning/API calls
+are not walking or normal UI acceptance. Check the final packaged assets as
+well as the isolated overlay; preserve the earlier evidence with its own hash.
+
+## CA-KP-222 - Individual routes do not prove crowded withdrawal
+
+Status/evidence: ENGINE-VERIFIED for fresh/saved/early-replayed crowd recovery;
+separate frame evidence retains severe siege stalls. Recorded / checked: 2026-11-13.
+Issue / PR: #454 / #643. Baseline: d2bf6f1c6 plus the unactivated city candidate.
+Environment: Windows11, GZDoom4.14.2, Vulkan, background unpaused at5% audio.
+Evidence: assets/validation_v5_16_2/barracas-withdrawal/SUMMARY.json and raw logs.
+
+Six isolated city routes passed while the combined army developed severe
+congestion. Forcing every survivor back to its assault front created opposing
+streams across the southern approach. Choose an existing legal exit by offline
+ground distance while preserving the saved assault assignment. Advancing only
+at an exact cell centre also sent physically progressed detours backwards.
+Recognize equal-or-better ground cost, and retain a valid local detour while its
+shared-budget replacement is queued. Neither observation authorizes teleporting
+survivors, removing collision, ignoring offscreen bodies or changing speed.
+
+Even nearest-exit streams repeatedly requested side detours around allies moving
+in their own direction. A local next-step volume query can wait behind an eligible
+body strictly ahead on that same straight flow; corners, immobilized bodies and
+unrelated obstacles retain avoidance. Do not trust an old BlockingMobj when a
+failed CheckPosition bypassed TryMove. The saved native search queue fell from
+489 entries before this correction to1 in the subsequent snapshot; this is
+state evidence, not a paired frame-time benchmark. The recovered run physically
+exits all1000 survivors; supplied objective destruction/wound and neutralized
+thermal exposure limit its meaning. Keep incomplete iterations and precise
+runtime/seed hashes; do not infer60FPS from these movement results. A separate fresh run completes
+all1000 exits at30,205tics, matched by early-checkpoint replay. Six full-route
+and five commander-origin replays also pass. Independent presentation evidence
+still measures only1.50 requests/s in the revised full-cap siege. An inclusive
+timing overlay measures375 local navigation builds totaling112.50ms (about0.4%
+of its700-tic window); the route builder does not explain the frame gaps.
+Measure before changing it. See barracas-presentation/SUMMARY.json; overlapping
+perception scopes and observer overhead are explicitly qualified there.
+
+## CA-KP-221 - Long navigation probes must preserve their isolation conditions
+
+Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED for the stated fixture causes.
+First recorded / last checked: 2026-11-13 / 2026-11-13.
+Issue / PR: #454 / #643. Baseline: b477d5ed0 plus the navigation candidate;
+exact packages, logs and qualifications: barracas-navigation/SUMMARY.json.
+Environment: Windows11, GZDoom4.14.2, Vulkan, unpaused background at5% audio.
+Scope: isolated pedestrian approach/withdrawal; full integrated behavior pending.
+
+Opening a normal auto-closing gate once does not hold it open for a20-minute
+approach. The saved fixture showed closed blockers at the final destination;
+restoring a diagnostic hold completed all15 bodies. Production withdrawal now
+requests normal gate use nearby after victory instead of changing gate timers.
+Likewise, three exposed city walkers died from728 thermal damage at2628tics.
+A controlled movement fixture may neutralize exposure, but must retain that
+qualification and cannot stand in for survival or combined-battle validation.
+Save inspection separated those causes from formation membership and collisions.
+
+The generated ground field also exceeded the native return-register limit when
+one String-return switch held hundreds of rows. Splitting it into64-row functions
+compiled successfully; deterministic checks and native descent/exit tests pass.
+No frame-rate, crowd or author-acceptance conclusion follows from these results.
+
+The continuation suite in barracas-continuation/SUMMARY.json adds a600-resident
+native-save audit. Do not impose simultaneous stationary posts on guards whose
+accepted behavior includes investigating sounds after arrival. AdvanceDeployment
+confirms its final point within1 MU, but later native actions can move the guard
+before a fixture samples position; a speed-only distance tolerance can miss that
+completion. Audit the saved native completion/identity flags separately from the
+current position, and qualify an early-reload replay independently.
+The same suite found two other fixture prerequisites: wait for deferred native
+PostBeginPlay before setting a percentage-health wound, and seed persistent Box
+ownership before testing commerce rather than a temporary actor-only flag. A
+long single-line64-shop console sequence lost/reordered its first requests;
+bounded chained command files retained all64 in order. Keep the failed logs and
+do not present these harness corrections as changes to production balance.
+
 ## CA-KP-220 - Rotating crew posts need box clearance and live AI evidence
 
 Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED for isolated ram crews.

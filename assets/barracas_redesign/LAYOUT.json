@@ -2,8 +2,8 @@
   "schema_revision": 1,
   "issue": 454,
   "geometry_revision": 4,
-  "runtime_enabled": false,
-  "status": "approved_reference_and_three_front_siege_in_development",
+  "runtime_enabled": true,
+  "status": "approved_revision4_packaged_for_native_and_author_review",
   "reference": {
     "path": "assets/references/issue_454_maps_20261112/Barracas_al_Sud_Propuesta_v1.png",
     "sha256": "44a0afdcae469e552a3f98bebf4271623e7928caf2951e9bfbf8b06901ee89b6",

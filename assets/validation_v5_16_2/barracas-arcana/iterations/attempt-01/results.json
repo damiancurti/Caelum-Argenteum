@@ -1,0 +1,42 @@
+{
+  "issue": 454,
+  "scope": "Check quay essence placement, native Use/capture and saved-source migration.\n\nFixture victory and Box ownership isolate the map endpoint. The battle, menu\nresponse selection, cooperative capture and author acceptance are not tested.",
+  "runtime_sha256": "1cb2039081bd7ff9016954f59e01f4b8a0d7555275ee5d6303900ad55537a261",
+  "baseline_sha256": "ef5c0747a5136a719601a7c13b5cb8947245ab73217a227c77a15e4e1057e959",
+  "candidate_sha256": "7b4d8aa16035607bba6feb4bed7dc7df46143b230560b08acbc2669c51204b63",
+  "fixture_sha256": "a70640043200710f15638761d0ff16618035c1f6d06c191dbdbc8d4c438fc779",
+  "runs": [
+    {
+      "phase": "original",
+      "passed": false,
+      "exit_code": 0,
+      "errors": [
+        "CA454 ARCANA FAIL native source appeared",
+        "CA454 ARCANA FAIL same source identity",
+        "CA454 ARCANA FAIL native Use opens source",
+        "CA454 ARCANA FAIL capture response accepted",
+        "CA454 ARCANA FAIL interrupted capture leaves same essence available",
+        "CA454 ARCANA FAIL same source identity",
+        "CA454 ARCANA FAIL native Use opens source",
+        "CA454 ARCANA FAIL capture response accepted",
+        "CA454 ARCANA FAIL exactly one acquired essence",
+        "CA454 ARCANA FAIL repeat capture rejected"
+      ],
+      "checks": [
+        "CA454 ARCANA PASS physical deck in owned Box",
+        "CA454 ARCANA PASS no initial Knight",
+        "CA454 ARCANA FAIL native source appeared",
+        "CA454 ARCANA FAIL same source identity",
+        "CA454 ARCANA FAIL native Use opens source",
+        "CA454 ARCANA FAIL capture response accepted",
+        "CA454 ARCANA FAIL interrupted capture leaves same essence available",
+        "CA454 ARCANA FAIL same source identity",
+        "CA454 ARCANA FAIL native Use opens source",
+        "CA454 ARCANA FAIL capture response accepted",
+        "CA454 ARCANA FAIL exactly one acquired essence",
+        "CA454 ARCANA FAIL repeat capture rejected",
+        "CA454 ARCANA COMPLETE failures=10"
+      ]
+    }
+  ]
+}
