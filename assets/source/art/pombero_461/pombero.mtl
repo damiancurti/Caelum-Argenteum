@@ -1,0 +1,9 @@
+newmtl atlas
+Kd 1 1 1
+map_Kd src/models/caelum/folklore/pombero461/materials.png
+newmtl dark
+Kd 1 1 1
+map_Kd src/models/caelum/folklore/pombero461/dark.png
+newmtl face
+Kd 1 1 1
+map_Kd src/models/caelum/folklore/pombero461/face.png

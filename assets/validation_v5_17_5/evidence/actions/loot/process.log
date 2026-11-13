@@ -1,0 +1,91 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-13 16:34:42
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-461/build/issue461-pombero01.pk3, 18184 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-461/build/issue461-actions01/fixture.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1520 x 825
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2505.57 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+CA455V - Pombero action and loot diagnostic
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA461 ACTIONCHECK PASS native class spawn
+CA461 ACTIONCHECK PASS fixture exists
+CA461 ACTIONCHECK PASS one Pombero class
+CA461 ACTIONCHECK PASS protected Mandinga/Zupay excluded
+CA461 ACTIONCHECK PASS twelve current attributes
+CA461 ACTIONCHECK PASS derived maxima/speed
+CA461 ACTIONCHECK PASS temporary body inherited
+CA461 ACTIONCHECK PASS provisional defense adapter
+CA461 ACTIONCHECK PASS catalogue identity/taxonomy/population
+CA461 ACTIONCHECK PASS stable class/initialization
+CA461 ACTIONCHECK PASS shared action states
+CA461 ACTIONCHECK PASS shared hostility/alliance
+CA461 ACTIONCHECK PASS native resource service
+CA461 ACTIONCHECK PASS finite inventory persists
+CA461 ACTIONCHECK PASS finite inventory persists
+CA461 ACTIONCHECK PASS finite inventory persists
+CA455 PROFILE index=5 reference=CA-FOLK-006 taxonomy=duende_demon maximum_health=728 radius=14.755556 height=51.644444
+CA455 COMBAT PASS bodies=1 depleted=0 failures=0
+CA461 ACTIONCHECK PASS one available-family drop per death
+CA461 ACTIONCHECK PASS native death and loot guard
+CA461 ACTIONCHECK PASS drop debited from finite stock
+CA461 ACTIONCHECK PASS native world drop identity
+CA461 ACTIONCHECK PASS repeated death/service cannot duplicate loot
+CA461 ACTIONCHECK PASS no duplicate drops
+CA455 LOOT PASS bodies=1 drops=1 failures=0
+CA461 ACTIONCHECK PASS one available-family drop per death
+CA461 ACTIONCHECK PASS native death and loot guard
+CA461 ACTIONCHECK PASS drop debited from finite stock
+CA461 ACTIONCHECK PASS native world drop identity
+CA461 ACTIONCHECK PASS repeated death/service cannot duplicate loot
+CA461 ACTIONCHECK PASS no duplicate drops
+CA455 LOOT PASS bodies=1 drops=1 failures=0
+Game saved.

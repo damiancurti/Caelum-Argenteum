@@ -4736,3 +4736,6 @@ Model CaelumBarricadeVisual
 
 // #652: siete tipos de munición, sin cambios de reglas.
 #include "caelum/data/inventory_ammunition.modeldef"
+
+// #461: Pombero conserva estados, combate y cuerpo provisionales.
+#include "caelum/data/pombero_combat.modeldef"
