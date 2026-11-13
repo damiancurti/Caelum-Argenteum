@@ -3,42 +3,40 @@
   "issue": 455,
   "catalogue_id": "CA-FOLK-006",
   "status": "unintegrated_visual_pilot",
-  "generator_sha256": "04d6ce70aa23972660668c852f1fe11d98cd5adcb7a61fdb076862a735ee820c",
+  "generator_sha256": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
   "shared_writer_sha256": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
   "source_sha256": {
-    "DESIGN.json": "34d78897a0dafdf56da0706a778828c3daeeb2ffbc3f18657c7b53a6454677e6",
-    "materials-v2.png": "2922404ce006b6a5481a92bc548d640646e7237cc12627b3a068a92eb06242b7",
+    "DESIGN.json": "f66b4b190744155748aca7e92afaf8183c1acf6db8b64b295f3cf77b44eea025",
+    "materials-v3.png": "6d72eeb0a43b98a279fb3119f28b06bffd5d353e9e39da0ab8036559e06f62cc",
     "dark.png": "6573658a5e61c4c8f75046435e8e8d1f1e85e6348007c69fc911483fe579fac4",
     "PROMPT.json": "7204a460bfe5a20d4bf6877dc9cfaecaf7874e5a3c25c4f2468e4b779559f9a2",
-    "PROMPT-v2.json": "5521da7b95fac54dea6682b3b1fbdeba2264d7865a534d3872e3058aad7e7653"
+    "PROMPT-v2.json": "5521da7b95fac54dea6682b3b1fbdeba2264d7865a534d3872e3058aad7e7653",
+    "FACE-PROMPT.json": "b3bf9fc16fc25b2abb97925ad988c0208e99d3fee23f5539ae550e4978f484ff",
+    "PROMPT-v3.json": "14a93a3e824b30ecc827853dd273714bf32fd599dbfcd582da2731f7e96686fb",
+    "face-v1.png": "d342e4b31ec8da9f7933f216a14ca9fd92299ec8315ca72dd68cb857ff9b3a0c"
   },
-  "vertices": 15637,
-  "triangles": 27403,
+  "vertices": 13026,
+  "triangles": 22815,
   "surfaces": [
     {
       "material": "atlas",
       "vertices": 4096,
-      "triangles": 6955
+      "triangles": 6893
     },
     {
       "material": "atlas",
+      "vertices": 2100,
+      "triangles": 3554
+    },
+    {
+      "material": "face",
       "vertices": 4096,
-      "triangles": 7114
+      "triangles": 7204
     },
     {
-      "material": "atlas",
-      "vertices": 4095,
-      "triangles": 7462
-    },
-    {
-      "material": "atlas",
-      "vertices": 2788,
-      "triangles": 4728
-    },
-    {
-      "material": "dark",
-      "vertices": 679,
-      "triangles": 1144
+      "material": "face",
+      "vertices": 2823,
+      "triangles": 5164
     }
   ],
   "frames": [
@@ -726,13 +724,14 @@
     }
   ],
   "sha256": {
-    "models/caelum/folklore/pombero/pombero.md3": "48e3c0d26599dc3799d07efac084f0f6730dc47e8dabbadc3edb1b392caec645",
-    "models/caelum/folklore/pombero/materials.png": "2922404ce006b6a5481a92bc548d640646e7237cc12627b3a068a92eb06242b7",
+    "models/caelum/folklore/pombero/pombero.md3": "3150d7235c4093a899fa9d477006bfe6dcf3a1e9d91ab0c8ad9127383534ef5f",
+    "models/caelum/folklore/pombero/materials.png": "6d72eeb0a43b98a279fb3119f28b06bffd5d353e9e39da0ab8036559e06f62cc",
     "models/caelum/folklore/pombero/dark.png": "6573658a5e61c4c8f75046435e8e8d1f1e85e6348007c69fc911483fe579fac4",
     "ZSCRIPT": "08c00ac5339210125902599a2f72a6a132dd6e072258d1046645af362cb1576a",
     "MODELDEF": "e2554c35f8eb833de28978e9459fa65cd90cd3c170470918f698e7bb7985ec29",
     "TEXTURES": "a2f6e9c5da6439ca24cb83cb15511faaa4576aa42bb952d9520c8e7ec8ceeba6",
-    "pombero.obj": "f04e3669307e6e52fb80d54ae8437f7bac02901bcb9912bc61c1ac49f26c0de3",
-    "pombero.mtl": "df71034ed75d6424e0f259541e8fbb30103a3684211dcb0cf690d00c391c9772"
+    "models/caelum/folklore/pombero/face.png": "d342e4b31ec8da9f7933f216a14ca9fd92299ec8315ca72dd68cb857ff9b3a0c",
+    "pombero.obj": "cec6ae8a053ba83fc268e2e55247a6e392e2d7558b88fe06dfc76e6420884811",
+    "pombero.mtl": "3b97f21ba5a6dcde9e5f3b916c94112dfa412c9db2333318def5d87348b6295e"
   }
 }

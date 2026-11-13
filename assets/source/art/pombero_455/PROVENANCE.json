@@ -15,6 +15,32 @@
     "layout": "2 columns by 4 rows: skin/body hair, linen/burlap, straw/head hair, rope/leather."
   },
   "material_atlas": {
+    "file": "materials-v3.png",
+    "sha256": "6d72eeb0a43b98a279fb3119f28b06bffd5d353e9e39da0ab8036559e06f62cc",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "tool": "Built-in image_gen edit; original output bytes retained. Exact prompt in PROMPT-v3.json.",
+    "layout": "Same 2x4 material grid; finer fabric, straw and rope scale with subdued lighting."
+  },
+  "reused_owned_material": {
+    "file": "dark.png",
+    "original": "src/models/caelum/props/stash/ca_stash_inside.png",
+    "sha256": "6573658a5e61c4c8f75046435e8e8d1f1e85e6348007c69fc911483fe579fac4"
+  },
+  "geometry": "Original editable reference-led mesh/pose data by Codex; owned Nahuelito native writer reused. No concept pixels were edited or used as a billboard.",
+  "facial_material": {
+    "file": "face-v1.png",
+    "sha256": "d342e4b31ec8da9f7933f216a14ca9fd92299ec8315ca72dd68cb857ff9b3a0c",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "tool": "Built-in image_gen; original output bytes retained. Exact prompt in FACE-PROMPT.json.",
+    "mapping": "Frontal UV projection onto the continuous 3D head; skin/hair patches reuse bounded UV regions. No raster pixels were edited."
+  },
+  "material_atlas_previous": {
     "file": "materials-v2.png",
     "sha256": "2922404ce006b6a5481a92bc548d640646e7237cc12627b3a068a92eb06242b7",
     "dimensions": [
@@ -23,11 +49,5 @@
     ],
     "tool": "Built-in image_gen edit; original output bytes preserved. Exact edit prompt in PROMPT-v2.json.",
     "layout": "2 columns by 4 rows: skin/body hair, linen/burlap, straw/head hair, rope/leather."
-  },
-  "reused_owned_material": {
-    "file": "dark.png",
-    "original": "src/models/caelum/props/stash/ca_stash_inside.png",
-    "sha256": "6573658a5e61c4c8f75046435e8e8d1f1e85e6348007c69fc911483fe579fac4"
-  },
-  "geometry": "Original editable reference-led mesh/pose data by Codex; owned Nahuelito native writer reused. No concept pixels were edited or used as a billboard."
+  }
 }

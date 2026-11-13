@@ -1,0 +1,245 @@
+{
+  "issue": 455,
+  "date": "2026-11-13",
+  "catalogue_id": "CA-FOLK-006",
+  "scope": "Refine the unintegrated Pombero facial surface, material scale and ear/hair seams; preserve approved provisional combat behavior.",
+  "final_native": "pombero-native10",
+  "author_accepted": false,
+  "runtime_binding": false,
+  "static": {
+    "passed": true,
+    "subject": "pombero",
+    "frames": 40,
+    "surfaces": 4,
+    "vertices": 13115,
+    "triangles": 22815,
+    "distinct_frames_per_surface": [
+      40,
+      40,
+      40,
+      40
+    ],
+    "binary_coordinate_checks": 524600,
+    "scope": "Binary structure/materials/bounds and non-static animation only; not gameplay behavior or visual acceptance."
+  },
+  "determinism": {
+    "independent_output_files_compared": 11,
+    "differences": [],
+    "generator_check_passed": true,
+    "preview_sha256": "319758ec1102c8296a7b7acb5c01c13300d4f6e21ee2d32c12692de44c9ad02d"
+  },
+  "runtime": {
+    "sha256": "dc471fcbacdceaf0ea233ef10d72957860e9fb2ad445d7845bc9d04bb300304e",
+    "entries": 18118,
+    "source_mismatches": [],
+    "changed_from_combat02": [
+      "caelum/actors/CaelumVisualPerception.zs"
+    ],
+    "qualification": "The new package includes the separately tested #454 perception dependency. This visual follow-up changes no src entry; the final native run compiles and exercises the combined package."
+  },
+  "material_provenance": "assets/source/art/pombero_455/PROVENANCE.json",
+  "native": [
+    {
+      "label": "pombero-native06",
+      "result": "pombero-native06/RESULTS.json",
+      "fresh": {
+        "exit_code": 4294967295,
+        "errors": [
+          "Script error"
+        ],
+        "verify_pass": false,
+        "native_state_advanced": false
+      },
+      "reload": null
+    },
+    {
+      "label": "pombero-native07",
+      "result": "pombero-native07/RESULTS.json",
+      "fresh": {
+        "exit_code": 0,
+        "errors": [],
+        "verify_pass": true,
+        "native_state_advanced": true
+      },
+      "reload": {
+        "exit_code": 0,
+        "errors": [],
+        "verify_pass": true,
+        "native_state_advanced": false
+      }
+    },
+    {
+      "label": "pombero-native08",
+      "result": "pombero-native08/RESULTS.json",
+      "fresh": {
+        "exit_code": 0,
+        "errors": [],
+        "verify_pass": true,
+        "native_state_advanced": true
+      },
+      "reload": {
+        "exit_code": 0,
+        "errors": [],
+        "verify_pass": true,
+        "native_state_advanced": false
+      }
+    },
+    {
+      "label": "pombero-native09",
+      "result": "pombero-native09/RESULTS.json",
+      "fresh": {
+        "exit_code": 0,
+        "errors": [],
+        "verify_pass": true,
+        "native_state_advanced": true
+      },
+      "reload": {
+        "exit_code": 0,
+        "errors": [],
+        "verify_pass": true,
+        "native_state_advanced": false
+      }
+    },
+    {
+      "label": "pombero-native10",
+      "result": "pombero-native10/RESULTS.json",
+      "fresh": {
+        "exit_code": 0,
+        "errors": [],
+        "verify_pass": true,
+        "native_state_advanced": true
+      },
+      "reload": {
+        "exit_code": 0,
+        "errors": [],
+        "verify_pass": true,
+        "native_state_advanced": false
+      }
+    }
+  ],
+  "limits": [
+    "Four native MD3 surfaces and 22,815 triangles are prototype costs, not crowded-scene performance evidence.",
+    "No production model binding, combat/hurt/death animation set, ordinary encounter, species physiology, collision approval or campaign population.",
+    "Facial identity and material scale are closer to the supplied reference; hair/clothing geometry, seams and production style remain subject to author review.",
+    "The viewing fixture uses ambient128 and two studio lights; this is not ordinary map lighting acceptance. Requested1280x720 captures1520x825 on this desktop.",
+    "A false native_state_advanced value on reload means no second state comparison is performed there; the saved single subject/camera and animation frames are retained.",
+    "Native06 used a file instead of the required model directory and failed with an absent model class. Only that owned process was terminated. The retained CLI rejection now exits2 before launch or output-directory creation.",
+    "Native07 established the sculpted facial projection; native08 exposed hair piercing the revised ear recesses; native09 moves hair behind the ears; native10 uses the exact canonical export and combined runtime.",
+    "Earlier native02-05 and original source PNGs remain preserved in their original evidence directory and source history.",
+    "The three archived design-edit helpers record their original execution from build/v516 against work-455; they are not intended to run directly from the evidence archive."
+  ],
+  "project_validation": {
+    "exit_code": 0,
+    "context_words": 2498,
+    "document_index_regenerated": true,
+    "evidence": "project-validation.log"
+  },
+  "owned_evidence_sha256": {
+    "executed-helpers/clear_pombero_ear_intersections.py": "423d5bffb4764d982e3a7d8b7791155fd6b49f8b8b38f4c42bbdb20084a9bfe7",
+    "executed-helpers/refine_pombero_face.py": "7174293765318c33596c557bc02501725fe100cabc22ab9ac7d1ab2aa31482a7",
+    "executed-helpers/refine_pombero_materials.py": "f64cef5126b38d59d7d9160b9a274234370fc0f0ada0144bce00a875e119ffba",
+    "issue455-perception-build.log": "8a0b7bdc6bc8aa3a493ff2d826db4de217b2b8ccc6522a56db134a5fe9c0169f",
+    "iteration-manifests/pombero-face01/manifest.json": "0e7ae8d3604c040467a073cf45be543b376b09e263ba11fe9f3e5c9d65e53ae8",
+    "iteration-manifests/pombero-face02/manifest.json": "be6c93ae77d80775f8c9945f225e23e12b1b4b758f9cfea0cd14105d70b708c3",
+    "iteration-manifests/pombero-face03/manifest.json": "95dea604f2347c5a8b37cd41e94b9c149f4ee6286b5119aba9c92df78c7f7e1e",
+    "pombero-native06/commands.cfg": "a0292edf03b2ac25b86425905f5976eea47e8f0353295877934bc4ec18d519a8",
+    "pombero-native06/fixture/MAPINFO": "ba5d36575383d790d82f10b5d5e73979a5a22f91ff0c6505fda34c5fda8803c6",
+    "pombero-native06/fixture/maps/CA455V.wad": "3107d502ce4018a4e53b4081988d95660f95e734200a61adbb757824c27f3153",
+    "pombero-native06/fixture/ZSCRIPT": "1341ed38fd360f77eb68ea130013cc9701ed21a25e6cc0d68beab93ef088908f",
+    "pombero-native06/fresh-process.log": "767217ea6c8f7bc6ad5dbfa73c7db61436be04f6c8e8d61cb9a6033b4e144f22",
+    "pombero-native06/fresh.log": "a9e778edeb061aefef896139a2d65d47e3522f5d6afe6927b9d8d9e0d5f1ae68",
+    "pombero-native06/isolated.ini": "7cf97c37c8df29a93a61358c5d74639355fa79ce2ac3f9ecad100aac5fad03b8",
+    "pombero-native06/RESULTS.json": "f18392652c09472f2c9085c13e8c1537d48ff9b109631d17dd3fa6f90ec54858",
+    "pombero-native07/animate-a.png": "ec58b3e44ac8d97026dc84d14a77a28b8c15cbb03d597603e30c5bd8983906be",
+    "pombero-native07/animate-b.png": "9030eea27fe6205cbe207792f049830832ebe6e08ecd42d46a87b236f757eac9",
+    "pombero-native07/commands.cfg": "a0292edf03b2ac25b86425905f5976eea47e8f0353295877934bc4ec18d519a8",
+    "pombero-native07/fixture/MAPINFO": "ba5d36575383d790d82f10b5d5e73979a5a22f91ff0c6505fda34c5fda8803c6",
+    "pombero-native07/fixture/maps/CA455V.wad": "3107d502ce4018a4e53b4081988d95660f95e734200a61adbb757824c27f3153",
+    "pombero-native07/fixture/ZSCRIPT": "1341ed38fd360f77eb68ea130013cc9701ed21a25e6cc0d68beab93ef088908f",
+    "pombero-native07/fresh-process.log": "ae54ed3240597392c73b2d9e9f7724840b7ecc816464d7c953f801ab1e0ca09e",
+    "pombero-native07/fresh.log": "04368459da25fb714a994eba9226d94e57e3082c2537be961fb7ae91a9410af6",
+    "pombero-native07/front.png": "867b3e06253d7b2583a206064625e4549f80e41be0352c827d26d530d88e5605",
+    "pombero-native07/head.png": "4dcd6d27e5660d5d333d132e809adff8eeb9029bf4e5b40076750a790764ec86",
+    "pombero-native07/isolated.ini": "1de03cc380ab4e02eb4796447b3e19a88ca19d706aa43fd94c634ae628933efa",
+    "pombero-native07/rear.png": "f796d0842e6cf3413b4733cb41693d42d2ba4ad62aea97b9ab44085159aeab40",
+    "pombero-native07/reload-process.log": "1db3d154e273c8ffa1f2f0384d8e5e4fc05a903864e09167b7d31aff56970aee",
+    "pombero-native07/reload.cfg": "63ffb89d360df95486f4dbb71fe75238f73e7a077e4c753888ec53ac4f5306f8",
+    "pombero-native07/reload.log": "ff01ebbb86a5909fcf4ac67f39d0944c41e3da0a1772846d9b5d336e7044fd84",
+    "pombero-native07/reload.png": "890979a39d423e021bae830020bb234ba3aae790cb77f08a6d626d52fcd5cb87",
+    "pombero-native07/RESULTS.json": "d770a1fe8c1db5e44a8037818ae2d23ea10133c9401bc54d0c1bf45a235e1e5d",
+    "pombero-native07/rotated.png": "f46206492e3148c514ddad0d5e1849e28b153dbe0a182b3853c23a2887f2aaa6",
+    "pombero-native07/side.png": "9a56661dfbfa6a8607fc5bf9e1b87bab910bbfb58e2e9192762daa77772cc72d",
+    "pombero-native07/three-quarter.png": "3566d2cdf82c43d83115826367bf99149aeb5b0a3cae4cf5c06462eb15de9da1",
+    "pombero-native07/walk-down.png": "fac877dbeb87d50a5cb5859abdc513bf12003ca435c23b458617fc815643707a",
+    "pombero-native07/walk-up.png": "5a7166bc408e6db27c5de56fbdf907f978a4afd5f396489eb152a1fcf107c067",
+    "pombero-native08/animate-a.png": "55525ccb54336b20a135544c9b3f239d7943fbdf5d5d0a34d4bc61225d8bfb60",
+    "pombero-native08/animate-b.png": "ba90f47c08b0a57ef72fbfb221bd303042a1048c5477c90b964442c3b8c865e5",
+    "pombero-native08/commands.cfg": "a0292edf03b2ac25b86425905f5976eea47e8f0353295877934bc4ec18d519a8",
+    "pombero-native08/fixture/MAPINFO": "ba5d36575383d790d82f10b5d5e73979a5a22f91ff0c6505fda34c5fda8803c6",
+    "pombero-native08/fixture/maps/CA455V.wad": "3107d502ce4018a4e53b4081988d95660f95e734200a61adbb757824c27f3153",
+    "pombero-native08/fixture/ZSCRIPT": "1341ed38fd360f77eb68ea130013cc9701ed21a25e6cc0d68beab93ef088908f",
+    "pombero-native08/fresh-process.log": "32e9f552eab573b36577022a767d9ce221ebe182917c956254e61b629154e448",
+    "pombero-native08/fresh.log": "9b003e17979c4e39bd54c5013e2d97cc51a77b4fe4bdfa54b8dd4e688bac6aed",
+    "pombero-native08/front.png": "8855a925feb454b5552e3aac984711f77dbf8e1a41166096f77d2d0937989652",
+    "pombero-native08/head.png": "dc4ca6b16878613ebf1e173f3a726c12a6275f3058e8cc6f18de13cb9f760f5b",
+    "pombero-native08/isolated.ini": "7e8b7809934d61b3d564c955fdabc84786e318744ce9a1b44837fbd0f6f7366a",
+    "pombero-native08/rear.png": "b3b9f8b2e68f74195dec1f5b813a82e086e7e37d0cde7e5d95106201064b249d",
+    "pombero-native08/reload-process.log": "4e2969f1c616c26186fa9e903a05f0015de05ede120371635bc54f809ce51fba",
+    "pombero-native08/reload.cfg": "63ffb89d360df95486f4dbb71fe75238f73e7a077e4c753888ec53ac4f5306f8",
+    "pombero-native08/reload.log": "3af55c47d109aeffba52c9241f60df3b5bcdd98618633dea5c05c58cabbb677e",
+    "pombero-native08/reload.png": "5f041a3968d21fce3db978ab957252d2f00da0a2a55638e6a8be766c4ed0b944",
+    "pombero-native08/RESULTS.json": "0870f406b2bef92d83c07ee015a1361eeae144a927d87c797d7292d0c1cef873",
+    "pombero-native08/rotated.png": "fd1f3487cc5415f355856239ecab6eb7b3448dbe45f0982b9df517817f681b91",
+    "pombero-native08/side.png": "8b52022f6deff2623b3bb0302d0a1715ed932ed21af6c228c3f263deab21d352",
+    "pombero-native08/three-quarter.png": "f5d8a14329533cb78fa1d6bb3e029f20e3a14687008d3dde41e78eab5c34ffc0",
+    "pombero-native08/walk-down.png": "b660535ab30c1ad7915106bc2cef6ba66a8945ed51dc970b0cdaa5ea6637a99c",
+    "pombero-native08/walk-up.png": "8cc465f107a6613c107aaaeff0ba3e10d64363dcd166481b805cf3525c5f2c35",
+    "pombero-native09/animate-a.png": "30b67f42b5754eeabe98e4ae13d7fa60bb0f62fcbebd83f2ec64ff047d482e83",
+    "pombero-native09/animate-b.png": "f5e206d03f73ecd189f08013ec1d26b0ccc987646f6465e614756e86f04c8fe4",
+    "pombero-native09/commands.cfg": "a0292edf03b2ac25b86425905f5976eea47e8f0353295877934bc4ec18d519a8",
+    "pombero-native09/fixture/MAPINFO": "ba5d36575383d790d82f10b5d5e73979a5a22f91ff0c6505fda34c5fda8803c6",
+    "pombero-native09/fixture/maps/CA455V.wad": "3107d502ce4018a4e53b4081988d95660f95e734200a61adbb757824c27f3153",
+    "pombero-native09/fixture/ZSCRIPT": "1341ed38fd360f77eb68ea130013cc9701ed21a25e6cc0d68beab93ef088908f",
+    "pombero-native09/fresh-process.log": "d6a3bbd0c6d5144c2b3b84f605099255da99c914fa131b6aec05618d8f68a5bf",
+    "pombero-native09/fresh.log": "ee294bb3d12419a7958ea3ba340de3701cc6df3a0c5ce85be86dba50b2b7c95f",
+    "pombero-native09/front.png": "ce492799cefc9786ce78b1369c96344592409dce0aae8fd5d034fd47fad4c66f",
+    "pombero-native09/head.png": "dca6a6d9c750971bfa09e4d32779ebb1218a734dd5c8d6ab284659a3cb940eae",
+    "pombero-native09/isolated.ini": "5940ff3e8670a3b3174970b43bac7c0b0b91f2b676f24e9ff43ade8f5edd40df",
+    "pombero-native09/rear.png": "9325804bf7b3095b0321611bce260aae852f3870e187d30888eb2cc52a688b04",
+    "pombero-native09/reload-process.log": "96a5035eb4a30751427db2e5d8083b695cfc8570f1e9a2265ff60cdc1c7a32b5",
+    "pombero-native09/reload.cfg": "63ffb89d360df95486f4dbb71fe75238f73e7a077e4c753888ec53ac4f5306f8",
+    "pombero-native09/reload.log": "04015ad3d206f50194b941056bb66ba0c719cfad90752f4312f9d58863263c50",
+    "pombero-native09/reload.png": "b41504af0c44ff8979bdb5e4967bb43f1c1975db0f0b510fb37bb65366a28b7b",
+    "pombero-native09/RESULTS.json": "a2b6568f04603f73ed8a3c91bb4ecc6b98ae5ac8d3697587ed0ac27340a033d6",
+    "pombero-native09/rotated.png": "68fa2443bcf944779aae37e94fabaa4a2310dca1e610d93a312129bf25fe6b45",
+    "pombero-native09/side.png": "83c98ba7dbe46bef85b788d9ee4863989a813569086d263c976b9deb77e2b0e0",
+    "pombero-native09/three-quarter.png": "4b38d1b94b2f575067bbc4a558dc64e00a504845138b78844542d968c057d888",
+    "pombero-native09/walk-down.png": "e7414da1c925e61d0882cfb58c0aabbb3e92a85e3bc3f73c409831780a846b8e",
+    "pombero-native09/walk-up.png": "3bce1e97796bb08c5229d8a8026e2420fa104a4619e7c3b7e81ce4d7c08a27e3",
+    "pombero-native10/animate-a.png": "5cb28e5f7c503a6fddab03ebc35f03f899adaf985e6734322c6b30fc1efe46e5",
+    "pombero-native10/animate-b.png": "898131b79678d5d29f5753e5023349efa8e35f86acff50950b31db38985feaa1",
+    "pombero-native10/commands.cfg": "a0292edf03b2ac25b86425905f5976eea47e8f0353295877934bc4ec18d519a8",
+    "pombero-native10/fixture/MAPINFO": "ba5d36575383d790d82f10b5d5e73979a5a22f91ff0c6505fda34c5fda8803c6",
+    "pombero-native10/fixture/maps/CA455V.wad": "3107d502ce4018a4e53b4081988d95660f95e734200a61adbb757824c27f3153",
+    "pombero-native10/fixture/ZSCRIPT": "1341ed38fd360f77eb68ea130013cc9701ed21a25e6cc0d68beab93ef088908f",
+    "pombero-native10/fresh-process.log": "f154f5dfd7cf0bc0f9a24a7c82fc428a81ef3796a53e897fe8dfee21aef33d96",
+    "pombero-native10/fresh.log": "6bbf06e7d4c0e9474090ab61ae114937a445664ac01d56a2828e10be55173cc3",
+    "pombero-native10/front.png": "1f6aba4d6940c4c41fec4af15866ce7309dee507c35c698d25b5de84982dc601",
+    "pombero-native10/head.png": "422bc8e62a295857f20ec6711a5fdd649a3525ab860f02cfc6eb52c6a995e85c",
+    "pombero-native10/isolated.ini": "da0b6e8d84f61f4184224b9a0023a1d8fa394a4319449e131264478ef1950101",
+    "pombero-native10/rear.png": "f3df065f810ba6043aaf05afc5d865fb5383ad220e16b39e43d8511d742dc952",
+    "pombero-native10/reload-process.log": "109238dc5eaaddccc0f8f3b715fffb5733bd0662bf3796727fa4c059d0a769c6",
+    "pombero-native10/reload.cfg": "63ffb89d360df95486f4dbb71fe75238f73e7a077e4c753888ec53ac4f5306f8",
+    "pombero-native10/reload.log": "03befd9785e714879834743f5fe10457fed6da7623ee6070824df7b5c72c5808",
+    "pombero-native10/reload.png": "45176d2e6119863d978c507740691422cd204013cabddb6030b018348704bd03",
+    "pombero-native10/RESULTS.json": "cd6252e6a65df6ac72ebc2946d9589958b261e9dd4b56d161fee9e2601dc35d6",
+    "pombero-native10/rotated.png": "087c82d529d671f4dfd9e674a2fe25fa3246c22ec48148846cf931d3ef0212da",
+    "pombero-native10/side.png": "2036868e112114826e8a65919f24e611f9de7cccf3572ba754662939b83026ad",
+    "pombero-native10/three-quarter.png": "f2b1a567e39517398909c6ad06e677f76122bb28337f70edf7e92ed82d5d8e17",
+    "pombero-native10/walk-down.png": "b2696042d55da3db62ce168d92a6ecbd4152d7eca3c74bf4e70d2169e543bae3",
+    "pombero-native10/walk-up.png": "4af07926453f997d4a70c7c3e553021d213831965efdcfacad87408e37d89b92",
+    "pombero-path-rejection.log": "9e9dd5dd13c6a174d6e8ba31da6e0d5621ac2c795c9d46c5b8dc5077132bba07",
+    "project-validation.log": "4e678b60737cfc6b169a55d208d29ca0531cccc0bf35d30e92f3d828da49b87d",
+    "static-results.json": "2c634319022bdfd6e72fbc3de9a1e00b5b400dc3694a883b273b2332f6493eaa"
+  }
+}

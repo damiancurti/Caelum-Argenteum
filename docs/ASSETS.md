@@ -19,23 +19,29 @@ Pombero (CA-FOLK-006) adds a second technical visual pilot. Its editable DESIGN.
 in assets/source/art/pombero_455 describes 15 hierarchical parts, sculpted face,
 pointed ears, straw hat, shirt/waistcoat, rope belt and bare hands/feet. The owned
 generate_pombero_model.py reuses the Nahuelito MD3 writer and exports OBJ/MTL plus
-40 native frames (16 idle, 24 walk), 15,754 native vertices, 27,403 triangles and
-five surfaces. These are prototype costs, without encounter-scale performance
+40 native frames (16 idle, 24 walk), 13,115 native vertices, 22,815 triangles and
+four surfaces. These are prototype costs, without encounter-scale performance
 acceptance. The mesh's 32-MU neutral height uses the source's 1m lower bound only
 for preview; no final collision or production actor binding is supplied.
 
-Built-in image_gen produced the eight-panel material atlas and a muted-skin edit.
-Both original PNG outputs, exact PROMPT.json/PROMPT-v2.json and PROVENANCE.json are
-preserved unchanged. The existing owned stash dark material supplies tiny details.
-Source concept pixels remain untouched. Rebuild using
+Built-in image_gen produced the eight-panel atlas, its two material revisions,
+and a separate reference-led facial diffuse plate. All original PNG outputs,
+PROMPT.json/PROMPT-v2.json/PROMPT-v3.json, FACE-PROMPT.json and PROVENANCE.json
+remain in the source directory. The face follows a continuous sculpted head
+with separate front/rear material ownership; it is not a billboard. The refined
+cloth/straw scale retains the original UV grid. Ear rims are curved and recessed;
+side hair is moved behind them after native captures exposed intersections.
+The existing owned dark material and source concept remain preserved. Rebuild using
 `python assets/generators/generate_pombero_model.py --output build/pombero`.
 The shared native runner accepts `--kind pombero`; its optional `--interactive`
 mode remains a visual inspection fixture. Native fresh/reload, explicit state
 advancement, binary bounds/material checks and deterministic regeneration pass;
-assets/validation_v5_16_3/pombero/SUMMARY.json qualifies the exact evidence.
+assets/validation_v5_16_3/pombero-face/SUMMARY.json qualifies the follow-up evidence;
+the earlier pombero/SUMMARY.json retains its original model hashes and iterations.
 The camera uses explicit zero eye-height and this fixture adds two studio lights;
-captures do not establish normal map lighting. Face, hair and clothing still look
-more schematic than the supplied reference and need further production art work.
+captures do not establish normal map lighting. The facial surface now better
+matches the reference; hair/clothing geometry and seams still need production art
+review. The new runner rejects a model-file argument before opening the engine.
 This pilot is not final art or author acceptance, and supplies no combat animation
 set, ordinary encounters, species physiology or campaign population.
 

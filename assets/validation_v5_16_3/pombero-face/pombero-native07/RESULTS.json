@@ -1,0 +1,34 @@
+{
+  "issue": 455,
+  "subject": "pombero",
+  "scope": "Capture native orientation/animation and save continuation of the #455 pilot.\n\nThe generated visual actor uses a temporary flat viewing map and optional studio\nlighting. This is not an encounter, gameplay AI, collision or author-acceptance test.\n",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runtime_sha256": "d38d43816e045a869eb60f5d08fcabffd40b4a607e8db29ff9646ef8ceeafc1c",
+  "model_sha256": "923636be522030e2b5d90eca4b646771b4373ef713f7d3997c540b8cb081ed19",
+  "fresh": {
+    "exit_code": 0,
+    "errors": [],
+    "verify_pass": true,
+    "native_state_advanced": true
+  },
+  "reload": {
+    "exit_code": 0,
+    "errors": [],
+    "verify_pass": true,
+    "native_state_advanced": false
+  },
+  "captures": {
+    "three-quarter": "3566d2cdf82c43d83115826367bf99149aeb5b0a3cae4cf5c06462eb15de9da1",
+    "front": "867b3e06253d7b2583a206064625e4549f80e41be0352c827d26d530d88e5605",
+    "side": "9a56661dfbfa6a8607fc5bf9e1b87bab910bbfb58e2e9192762daa77772cc72d",
+    "rear": "f796d0842e6cf3413b4733cb41693d42d2ba4ad62aea97b9ab44085159aeab40",
+    "rotated": "f46206492e3148c514ddad0d5e1849e28b153dbe0a182b3853c23a2887f2aaa6",
+    "walk-down": "fac877dbeb87d50a5cb5859abdc513bf12003ca435c23b458617fc815643707a",
+    "walk-up": "5a7166bc408e6db27c5de56fbdf907f978a4afd5f396489eb152a1fcf107c067",
+    "head": "4dcd6d27e5660d5d333d132e809adff8eeb9029bf4e5b40076750a790764ec86",
+    "animate-a": "ec58b3e44ac8d97026dc84d14a77a28b8c15cbb03d597603e30c5bd8983906be",
+    "animate-b": "9030eea27fe6205cbe207792f049830832ebe6e08ecd42d46a87b236f757eac9",
+    "reload": "890979a39d423e021bae830020bb234ba3aae790cb77f08a6d626d52fcd5cb87"
+  },
+  "animation_capture_changed": true
+}
