@@ -4,6 +4,23 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-228 - Share native ammunition identity between lookup and creation
+
+Status/evidence: ENGINE-VERIFIED, 2026-11-13. Issue: #650.
+Environment: GZDoom 4.14.2, Windows 11; unpaused background, 5% audio.
+Evidence: assets/validation_v5_17_2/evidence/SUMMARY.json.
+
+AcquireDistinctAmmunition had a complete class map but its lookup omitted javelin
+tiers, so an existing carbine stack absorbed their units. A correct creation
+branch cannot repair a lookup that returns the wrong existing owner. Share the
+existing mapping and test simultaneous typed stacks in both acquisition orders.
+Check quantities and provenance after split/merge and loading, not only successful
+pickup return values. The baseline returns success while corrupting type identity.
+Seed a typed legacy save independently when the legacy acquisition itself is
+broken; qualify that fixture and rollback separately. Without original-type
+metadata, historical merged units cannot be reconstructed safely. Keep such a
+gameplay fix separate from the visual work that exposed it.
+
 ## CA-KP-227 - Inspect attached geometry and material mapping in native views
 
 Status/evidence: ENGINE-VERIFIED and source geometry checks, 2026-11-13. Issue: #647.
