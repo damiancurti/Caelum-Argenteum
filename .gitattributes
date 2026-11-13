@@ -517,6 +517,13 @@
 /assets/generators/build_essence_coverage.py text eol=lf
 /assets/validation_v5_16_4/check_essence_coverage.py text eol=lf
 /assets/validation_v5_16_4/evidence/** -text -whitespace
+/assets/validation_v5_16_4/essence_capture_probe.zs text eol=lf
+/assets/validation_v5_16_4/run_essence_capture.py text eol=lf
+/assets/validation_v5_16_4/capture/** -text -whitespace
+/src/caelum/data/CaelumEssenceAcquisitionData.zs text eol=lf
+/src/caelum/core/CaelumTarotService.zs text eol=crlf whitespace=cr-at-eol
+/src/ZSCRIPT text eol=crlf whitespace=cr-at-eol
+/assets/validation_v5_16_5/dependency-world-gate/** -text -whitespace
 
 /assets/generators/generate_campaign_finale_data.py text eol=lf
 /src/caelum/data/CaelumCampaignFinaleData.zs text eol=lf

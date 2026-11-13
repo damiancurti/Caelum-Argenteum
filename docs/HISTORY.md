@@ -2,6 +2,13 @@
 
 Documentation version: **5.16.5** - 2026-11-13.
 
+2026-11-13 #457 dependency refresh includes #456 commit3860858bb, enforcing
+the approved World-after-other-77 capture prerequisite while retaining old
+acquisitions. Finale eligibility remains unchanged. Combined project validation
+and two-peer eligibility fresh/reload checks are recorded separately under
+validation_v5_16_5/dependency-world-gate. This does not implement finale travel,
+consent, scenes or author acceptance.
+
 2026-11-13 #457 dependency refresh includes #455's Cuero visual pilot
 and its native/binary evidence, preserving this issue's runtime and authored data.
 Combined project validation passes in validation_v5_16_5/dependency-cuero.log;
@@ -44,6 +51,29 @@ acceptance or full campaign completion is claimed.
 The final package also verifies an actual guest disconnect after both fresh and
 reloaded checks: the host's eligible roster becomes empty immediately on query.
 Static validation, generated-data freshness and repeatable generation pass.
+
+2026-11-13 #456 capture follow-up: the shared service now enforces the approved
+World-after-other-77 personal acquisition requirement while retaining separate
+reward entitlement. Generated CaelumEssenceAcquisitionData derives the values
+from the approved graph; project validation checks freshness. No source placement,
+saved field, opening capture rule or previous acquisition is changed.
+
+The preceding runtime passed all75 generic native captures but failed78 early
+World boundary assertions (opening-only plus each missing identity). The new
+runtime passes those boundaries and all75 actual Use/full35-tic transactions.
+Native continuation loads the preceding runtime's interrupted/mid-capture and
+completed saves. A separate actual early World capture on the preceding runtime
+retains its4 acquired identities under the new gate, without replay. Original
+packages and saves remain local for rollback. Static and project checks pass.
+An initial document audit overlapped the archive/document update and rejected
+stale index hashes; its log is retained before the ordered regeneration/audit.
+
+Evidence: validation_v5_16_4/capture/SUMMARY.json. The first oversized console
+matrix lost its setup and exited early; its failed logs are retained. Bounded
+explicitly chained scripts follow CA-KP-098/CA-KP-134. The fixture prepares the
+three opening acquisitions, floor positions and response acceptance; source
+removal/reoffer is not an authored NPC-death route. No new campaign/cooperative
+reachability or author acceptance is claimed. All outstanding author checks stay.
 
 2026-11-13 #456 dependency refresh includes #455's Cuero visual pilot
 and its native/binary evidence, preserving this issue's runtime and authored data.
