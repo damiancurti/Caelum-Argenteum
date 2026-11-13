@@ -21,12 +21,13 @@ This coverage ledger adds no runtime placements or completed campaign routes.
 
 The [58-reference folklore catalogue](assets/bestiary/CATALOGUE.json) is imported
 under #453 with original images, verified provenance and all 58 regional
-assignments approved. #455 adds unintegrated Nahuelito and Pombero technical model
+assignments approved. #455 adds unintegrated Nahuelito, Pombero and Cuero technical model
 pilots, each with 40 frames and native save/reload evidence. It also adds 56 unplaced combat
 classes inheriting the approved provisional Mandinga profile, with bilingual names
 and source species identities. Pombero's facial surface and material scale are
 refined; hair/clothing geometry and combat animations remain provisional.
-The other 56 models, encounters and campaign
+Cuero includes a closed underside and curved marginal claws.
+The other 55 models, encounters and campaign
 uniqueness remain unfinished; [ASSETS](docs/ASSETS.md) records sources and limits.
 
 V5.16 is in campaign authoring, beginning with #452. The author approved the

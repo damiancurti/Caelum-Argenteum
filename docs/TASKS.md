@@ -24,6 +24,13 @@ recovery, cooperative ownership and full geographic/ability reachability.
 
 ## 5.16.3 - Folklore combat classes and model pilots (#455)
 
+Cuero (CA-FOLK-053) adds a third unintegrated editable OBJ/MD3 pilot with
+40 idle/swim frames, a closed underside and curved marginal claws. Deterministic
+generation, binary bounds/material coverage and native fresh/reload/state
+advancement pass; evidence and qualifications are in validation_v5_16_3/cuero.
+It supplies no production body, collision, aquatic/wrapping behavior or encounters.
+Art review and combat animations remain pending.
+
 Pombero has a second unintegrated technical mesh with 40 idle/walk frames,
 editable data, OBJ/MTL and native MD3. Binary checks, byte-identical regeneration
 and native fresh/reload/state advancement pass (validation_v5_16_3/pombero).
@@ -40,7 +47,7 @@ projectile/breath, hostility and available-potion loot for new creatures on
 protecting Rulo, existing Mandingas and Zupay. Its 56 unplaced classes now inherit
 that template without copied balance or new saved fields. Final appearance and
 encounters remain open; do not infer collision from visual scale.
-Remaining 56 models, action coverage required by approved behavior, aquatic AI,
+Remaining 55 models, action coverage required by approved behavior, aquatic AI,
 regional placement and campaign unique-instance persistence remain unfinished.
 All 56 profiles and finite inventories pass native fresh/reload checks; 18 forced
 action checks and 56 native death drops pass with the limits in combat/SUMMARY.json.
@@ -125,7 +132,7 @@ There is no new actionable gameplay test for pending_test.txt in this delivery.
 | #452 | Regional chapter allocation approved 2026-11-12; opening graph audited. Basic finale and all-78/+250 requirements approved; one eligible participant admits the consenting group. Geographic/ability gates and exact revelations remain open. |
 | #453 | Catalogue complete for review: 58 verified references, all regional assignments approved; source/size qualifications retained. Actual 3D production belongs to the separate creature/art delivery. |
 | #454 | Approved sewer v2/Barracas v1 references recovered; four city gates and siege adaptation explicitly selected. Implement separately with ordinary routes, services and active/hub-save compatibility. |
-| #455 | 56 unplaced classes inherit the approved Mandinga combat template, preserving taxonomy/protected profiles. Nahuelito visual pilot awaits review; remaining models, encounters and campaign uniqueness remain open. |
+| #455 | 56 unplaced classes inherit the approved Mandinga combat template, preserving taxonomy/protected profiles. Three visual pilots remain unintegrated; 55 models, encounters and campaign uniqueness remain open. |
 | #456 | Assign the remaining 75 essences; preserve IDs 0/36/60, personal acquisition, interruption recovery and ability-gate reachability. |
 | #457 | Author memories, revelations, chapter ends and Selene encounter; retain Zupay's Chapter I retreat/Chapter II death boundary. |
 

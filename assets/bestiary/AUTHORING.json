@@ -263,6 +263,21 @@
       "author_accepted": false,
       "limits": "Technical visual pilot. Face, hair and clothing fidelity require further art review. No combat animation set, collision, encounters, population or campaign ownership.",
       "generator": "assets/generators/generate_pombero_model.py"
+    },
+    "CA-FOLK-053": {
+      "issue": 455,
+      "source": "assets/source/art/cuero_455/DESIGN.json",
+      "mesh": "assets/bestiary/models/cuero/models/caelum/folklore/cuero/cuero.md3",
+      "manifest": "assets/bestiary/models/cuero/manifest.json",
+      "rig": "Procedural membrane deformation and articulated claws/eyes in DESIGN.json; no skeleton/armature delivered",
+      "animations": [
+        "idle:16 samples",
+        "swim:24 samples"
+      ],
+      "runtime_enabled": false,
+      "author_accepted": false,
+      "limits": "Technical visual pilot only. No actual swimming, wrapping behavior, collision, combat animation set, encounters or campaign ownership.",
+      "generator": "assets/generators/generate_cuero_model.py"
     }
   }
 }

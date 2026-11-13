@@ -1,0 +1,34 @@
+{
+  "issue": 455,
+  "subject": "cuero",
+  "scope": "Capture native orientation/animation and save continuation of the #455 pilot.\n\nThe generated visual actor uses a temporary flat viewing map and optional studio\nlighting. This is not an encounter, gameplay AI, collision or author-acceptance test.\n",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runtime_sha256": "dc471fcbacdceaf0ea233ef10d72957860e9fb2ad445d7845bc9d04bb300304e",
+  "model_sha256": "3081ee922c8b3d5dec348cd869e63deb83cf8899dd795df0b544044a8c2039db",
+  "fresh": {
+    "exit_code": 0,
+    "errors": [],
+    "verify_pass": true,
+    "native_state_advanced": true
+  },
+  "reload": {
+    "exit_code": 0,
+    "errors": [],
+    "verify_pass": true,
+    "native_state_advanced": false
+  },
+  "captures": {
+    "three-quarter": "b3978f49a53108b484687ed2b54c2a3422d82149d6260af5f64f23da0b77592c",
+    "front": "7749839ad320311f804210cbcd22d44f23b37d4e56c3144e5d7299f14c48ae4b",
+    "side": "b89686eb09252ee1f74ad00610371bea5146bf52ef571cf39b9b938178932c8b",
+    "rear": "7e8dca6cbf1fc968e38263556dd52bc97b04957011b93a540ecb8354adacad17",
+    "rotated": "857a6e1f07b27fa06cc1576d6d7009ca01ad3f618531b5dd455e7774a06b747d",
+    "swim-down": "c2681f28d83f8fd3ba695f29702bf9d25c30bdf395d2e440db64e67be646d8a3",
+    "swim-up": "7aee5a6bb647007da7bf54182ccb4e691693eeec70957e02f0af3abeafb2694b",
+    "head": "8a17226a93637791f26b877e1764a55985e6fa8b0059613357088d11d79cd674",
+    "animate-a": "28b2b92ab78b208129e6a2d098cf1a8c223630d48a234c411942dcd9ef04967b",
+    "animate-b": "4d1457929d15c57a1d554e363acb7186c4933179da3a79b0d6f56c1b633dda9d",
+    "reload": "c1e1eb44026ac1ea9cef2bbddb210f77119db91e2e1d184cd022482bd7af1ffa"
+  },
+  "animation_capture_changed": true
+}

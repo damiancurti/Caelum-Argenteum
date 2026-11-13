@@ -527,3 +527,7 @@
 
 # Preserve the native-tested #454 perception source bytes on checkout.
 /src/caelum/actors/CaelumVisualPerception.zs -text whitespace=cr-at-eol
+
+/assets/generators/generate_cuero_model.py text eol=lf
+/assets/source/art/cuero_455/*.json text eol=lf
+/assets/bestiary/models/cuero/** -text
