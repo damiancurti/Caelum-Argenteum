@@ -717,6 +717,72 @@ class CaelumBarracasData : Object play
         case 158:return 0;
         case 159:return 0;
         }return 0;}
+    static double ShopAngle(int i){switch(i){
+        case 0:return 0;
+        case 1:return 270;
+        case 2:return 90;
+        case 3:return 270;
+        case 4:return 90;
+        case 5:return 180;
+        case 6:return 0;
+        case 7:return 270;
+        case 8:return 90;
+        case 9:return 180;
+        case 10:return 90;
+        case 11:return 270;
+        case 12:return 90;
+        case 13:return 270;
+        case 14:return 0;
+        case 15:return 180;
+        case 16:return 90;
+        case 17:return 180;
+        case 18:return 90;
+        case 19:return 180;
+        case 20:return 90;
+        case 21:return 270;
+        case 22:return 0;
+        case 23:return 180;
+        case 24:return 90;
+        case 25:return 270;
+        case 26:return 90;
+        case 27:return 180;
+        case 28:return 90;
+        case 29:return 180;
+        case 30:return 90;
+        case 31:return 180;
+        case 32:return 90;
+        case 33:return 270;
+        case 34:return 90;
+        case 35:return 180;
+        case 36:return 0;
+        case 37:return 270;
+        case 38:return 0;
+        case 39:return 270;
+        case 40:return 0;
+        case 41:return 270;
+        case 42:return 90;
+        case 43:return 270;
+        case 44:return 90;
+        case 45:return 270;
+        case 46:return 0;
+        case 47:return 180;
+        case 48:return 90;
+        case 49:return 180;
+        case 50:return 90;
+        case 51:return 270;
+        case 52:return 90;
+        case 53:return 270;
+        case 54:return 90;
+        case 55:return 270;
+        case 56:return 90;
+        case 57:return 270;
+        case 58:return 90;
+        case 59:return 270;
+        case 60:return 0;
+        case 61:return 180;
+        case 62:return 90;
+        case 63:return 270;
+        }return 0;}
     static vector2 HouseMinimum(int i){switch(i){
         case 0:return (-2624,-4736);
         case 1:return (-23040,-3584);
@@ -1043,4 +1109,6 @@ class CaelumBarracasData : Object play
         }return (0,0);}
     static int HouseAt(vector3 point){if(Abs(point.Z)>16)return -1;for(int i=0;i<CaelumCityData.HOUSE_COUNT;i++){vector2 a=HouseMinimum(i),b=HouseMaximum(i);if(point.X>=a.X && point.Y>=a.Y && point.X<b.X && point.Y<b.Y)return i;}return -1;}
     static vector3 PortPoint(vector3 point){return (-256+(-point.Y),15488+(point.X),point.Z);}
+    static vector3 CurrentPortPoint(vector3 point){return IsCurrent()?PortPoint(point):point;}
+    static double CurrentPortAngle(double angle){return IsCurrent()?angle+90:angle;}
 }

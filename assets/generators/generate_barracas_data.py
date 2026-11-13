@@ -59,12 +59,15 @@ def outputs():
         code+=coordinate_method(name,rows,key)
     code+=coordinate_method('ShopPosition',shops,'vendor')
     code+='    static double HouseAngle(int i){switch(i){\n'+''.join(f'        case {i}:return {row["angle"]};\n' for i,row in enumerate(rows))+'        }return 0;}\n'
+    code+='    static double ShopAngle(int i){switch(i){\n'+''.join(f'        case {i}:return {row["angle"]};\n' for i,row in enumerate(shops))+'        }return 0;}\n'
     code+='    static vector2 HouseMinimum(int i){switch(i){\n'+''.join(f'        case {i}:return {vector(row["bounds"][:2])};\n' for i,row in enumerate(rows))+'        }return (0,0);}\n'
     code+='    static vector2 HouseMaximum(int i){switch(i){\n'+''.join(f'        case {i}:return {vector(row["bounds"][2:])};\n' for i,row in enumerate(rows))+'        }return (0,0);}\n'
     code+='    static int HouseAt(vector3 point){if(Abs(point.Z)>16)return -1;for(int i=0;i<CaelumCityData.HOUSE_COUNT;i++){vector2 a=HouseMinimum(i),b=HouseMaximum(i);if(point.X>=a.X && point.Y>=a.Y && point.X<b.X && point.Y<b.Y)return i;}return -1;}\n'
     turns=data['port_transform']['quarter_turns']%4;x,y=data['port_transform']['offset']
     expressions=[('point.X','point.Y'),('-point.Y','point.X'),('-point.X','-point.Y'),('point.Y','-point.X')]
     a,b=expressions[turns];code+=f'    static vector3 PortPoint(vector3 point){{return ({x}+({a}),{y}+({b}),point.Z);}}\n'
+    code+='    static vector3 CurrentPortPoint(vector3 point){return IsCurrent()?PortPoint(point):point;}\n'
+    code+=f'    static double CurrentPortAngle(double angle){{return IsCurrent()?angle+{turns*90}:angle;}}\n'
     code+='}\n'
     return {'assets/barracas_redesign/RUNTIME.json':(json.dumps(result,ensure_ascii=False,indent=2)+'\n').encode(),
             'src/caelum/world/CaelumBarracasData.zs':code.encode()}

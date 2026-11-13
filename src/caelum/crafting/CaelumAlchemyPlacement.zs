@@ -49,10 +49,10 @@ class CaelumAlchemyEvents : StaticEventHandler
         // todos los actores. El siguiente intento conserva la misma posición.
         if(level.Time%TICRATE!=0)return;
         station=CaelumAlchemyStation(Actor.Spawn("CaelumAlchemyStation",
-            CaelumAlchemyData.Position(level.MapName),NO_REPLACE));
+            CaelumBarracasData.CurrentPortPoint(CaelumAlchemyData.Position(level.MapName)),NO_REPLACE));
         if(station==null)return;
         station.CraftingRoomGroup=CaelumAlchemyData.Group(level.MapName);
-        station.Angle=CaelumAlchemyData.Angle(level.MapName);
+        station.Angle=CaelumBarracasData.CurrentPortAngle(CaelumAlchemyData.Angle(level.MapName));
         Roster.PendingStation=station;
     }
 }

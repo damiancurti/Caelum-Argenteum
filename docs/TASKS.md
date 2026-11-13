@@ -20,8 +20,11 @@ Barracas architectural source/preview is now in assets/barracas_redesign. Its
 288 identities and 424 static/native endpoint checks pass; source geometry and
 private house interiors remain unmodified in src. Rotated portal leaves and
 exterior coordinate helpers pass the isolated 224-endpoint/320-leaf native probe.
-Integrate ordinary house travel,
-services/travel, native gates and coordinate-sensitive helpers, complete visual
+The service candidate also passes64 merchants,96 factory stations,four vehicles
+and the four existing arrival-household identities through CAH069 placement and
+exact new doorstep return. Old saves pass with the new dispatch code. Integrate
+ordinary interactive house/service/transport flows, the Justice annex and the
+real siege controller; its passive test controller is disposable. Complete visual
 architecture and retain the accepted residential sky policy. Exact original
 MAP03 active/stored-hub continuation passes through -LegacyMap03Revision3 with
 current code; repeat against the eventual integrated new-city runtime. Three siege fronts with active/reserve

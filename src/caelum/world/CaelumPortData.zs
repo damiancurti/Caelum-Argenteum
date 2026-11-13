@@ -104,9 +104,9 @@ class CaelumPortData : Object play
         return 0;
     }
     static vector3 BossPosition(){if(IsSouth())return (-14464,-21248,0);return (0,9216,0);}
-    static vector3 BedPosition(){return (-768,1664,0);}
-    static vector3 WorkbenchPosition(){return (-768,1472,0);}
-    static vector3 CompletionPosition(){return (128,1856,0);}
+    static vector3 BedPosition(){return CaelumBarracasData.CurrentPortPoint((-768,1664,0));}
+    static vector3 WorkbenchPosition(){return CaelumBarracasData.CurrentPortPoint((-768,1472,0));}
+    static vector3 CompletionPosition(){return CaelumBarracasData.CurrentPortPoint((128,1856,0));}
     static vector3 GunPosition(int i)
     {
         if(IsSouth())

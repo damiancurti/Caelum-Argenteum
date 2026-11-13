@@ -57,7 +57,9 @@ def runtime():
     for name, key in [('BossPosition','boss_position'), ('BedPosition','resource_bed'),
                       ('WorkbenchPosition','resource_workbench'), ('CompletionPosition','completion_position')]:
         south=f'if(IsSouth())return ({",".join(map(str,S[key]))});' if key in S else ''
-        code += f'    static vector3 {name}(){{{south}return ({",".join(map(str,D[key]))});}}\n'
+        point=f'({",".join(map(str,D[key]))})'
+        if name!='BossPosition':point=f'CaelumBarracasData.CurrentPortPoint({point})'
+        code += f'    static vector3 {name}(){{{south}return {point};}}\n'
     code += '''    static vector3 GunPosition(int i)
     {
         if(IsSouth())

@@ -81,6 +81,19 @@ blockers; the corrected solid probe passed. The author approved north/east
 reinforced, south wooden and west armored gates using existing statistics.
 Production MAP03 remains unchanged; siege, full services and travel are unfinished.
 
+The subsequent unactivated city candidate connected original port content and
+services to the revised layout, retaining private CAH coordinates and low
+residential sky. Current helpers select positions/facing by loaded revision;
+existing old-city actors are not repositioned. Native fresh/reload and native
+MAP03/CAH069/return pass with64 merchants,96 factory stations,four ready vehicles
+and all four original household objects, with exact new doorstep return. Old
+active/stored-hub continuation also passes with that runtime. The first fixture
+looked for already-relocated objects at the quay; checking their actual registry
+and private placement corrected the assertion. The later runner waits for its
+queued screenshot before quitting and requires captures. No new siege, complete
+boarding interaction, ordinary door acknowledgement, final art or performance
+acceptance is claimed; a passive fixture suppresses obsolete siege deployment.
+
 The author requested prevention of system sleep while away for several hours.
 A temporary system-only execution-state request is active during work, with a
 12-hour failsafe; it does not change the power plan or require the display on.

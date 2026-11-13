@@ -39,6 +39,10 @@ validation_v5_16_2/run_barracas_services.py and barracas-services/. Its subseque
 barracas-gates/ evidence adds full-perimeter closure and physical native gate
 checks, preserving failed fixtures and final closed/open views. Existing gate
 materials and dimensions are reused; no new raster, mass or resistance is added.
+generate_barracas_map.py assembles a candidate only under build/, using the
+reviewed shell, original transformed quay, existing workshops and low residential
+sky policy. barracas-candidate/ preserves its native service/private-house proof
+and qualified fixtures; no preview package or save is distributed.
 
 ## 5.16.1 - Recovered folklore reference catalogue (#453, catalogue approved)
 

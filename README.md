@@ -35,6 +35,9 @@ The rotated-door/coordinate slice passes 224 native service endpoint checks and
 160 portals/320 leaf placements; private interior coordinates are retained.
 The four-gate prototype also passes 160 native closed/open samples and four
 Used-handler checks; the closed-perimeter grid audit finds no exterior bypass.
+A separate candidate also passes service placement and private-house hub return:64
+merchants,96 factory stations,four vehicles and four relocated household objects.
+Its siege is suppressed by a disposable test controller; it is not the production city.
 
 V5.15 includes the [battle director](assets/validation_v5_15_0/RESULTS.md)
 (#447, PR635), [Unitarian command](assets/validation_v5_15_1/RESULTS.md)

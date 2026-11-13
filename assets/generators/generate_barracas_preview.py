@@ -206,8 +206,9 @@ def generate(out,map_name=None,configure=None):
            'closed_gate_cell_audit':{'scope':'Block one grid row across each of the four gate centres; native 96-MU blocker collision still requires an engine test.','escaped_cells':len(unguarded),'escape_trace':escape_trace}}
     (out/'routes.json').write_text(json.dumps(audit,indent=2)+'\n',encoding='utf-8')
     with zipfile.ZipFile(out/'preview.pk3','w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as archive:
+        map_header=('map '+port.name+' "Barracas architectural preview" { sky1="CABASKY",0 nointermission }\n') if port.name==data['preview_map'] else ''
         files={'maps/'+port.name+'.wad':(out/(port.name+'.wad')).read_bytes(),
-               'MAPINFO':('map '+port.name+' "Barracas architectural preview" { sky1="CABASKY",0 nointermission }\ndoomednums { '+ '\n'.join(editors)+' }\n').encode(),
+               'MAPINFO':(map_header+'doomednums { '+ '\n'.join(editors)+' }\n').encode(),
                'ZSCRIPT':('version "4.14.2"\n'+'\n'.join(classes)).encode(),
                'MODELDEF':'\n'.join(bindings).encode()}
         files.update({'models/'+v['model']:(out/'models'/v['model']).read_bytes() for v in facades.values()})

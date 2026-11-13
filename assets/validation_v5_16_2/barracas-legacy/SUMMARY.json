@@ -11,12 +11,14 @@
   "runs": {
     "01": "Seed passed; continuation refused because fixture package basenames differed.",
     "02": "Stable caelum_argenteum_dev.pk3 basename: old seed, active continuation and stored-hub continuation passed.",
-    "03": "Final checksum-dispatch runtime: active and stored-hub continuations passed with verified run02 seeds."
+    "03": "Final checksum-dispatch runtime: active and stored-hub continuations passed with verified run02 seeds.",
+    "04": "Port-services dispatch runtime: old active and stored-hub continuation passed with run02 original seeds; production MAP03 still byte-identical."
   },
   "checks": [
     "Revision3 controller, eight original gates, Justice sector and all160 original doorstep/chest offsets retained.",
     "Native stamp persisted across save/reload and MAP03 -> CAH069 -> MAP03 hub travel.",
     "All160 private CAH WADs byte-identical; CAHUNT is separately named and is not a house."
   ],
-  "qualification": "Native changemap bypasses ordinary door use. No author saves, siege/performance or author acceptance. Fixture packages, executable, IWAD and saves remain untracked."
+  "qualification": "Native changemap bypasses ordinary door use. No author saves, siege/performance or author acceptance. Fixture packages, executable, IWAD and saves remain untracked.",
+  "services_runtime_sha256": "e0afb3b55f6611d42d09cc475c88821fb8938ccf0fa0795b11f575015f1a4629"
 }
