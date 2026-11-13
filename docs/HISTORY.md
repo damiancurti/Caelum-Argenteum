@@ -4,6 +4,20 @@ Documentation version: **5.16.0** - 2026-11-12.
 
 ## 5.16.0 - Regional campaign planning (#452, in progress, 2026-11-12)
 
+Recorded on2026-11-13: the author approved the proposed named Major allocation
+as a base, preserving Fool in the prologue and seven per chapter. The four
+resident anchors belong to ChapterI, Death to Zupay's definitive ChapterII
+encounter, Devil to the prince's banishment, and World remains last in ChapterIII.
+Existing canonical IDs, including Justice8/Strength11, are retained. The author
+also approved checking78/+250 immediately before Selene combat on the Moon;
+the lunar World acquisition requires the other77 essences. This resolves the
+circular final-card/travel gate without inventing lunar transport. Authoring
+schema2 records these decisions; runtime and save schemas remain unchanged.
+The bounded audit passes all22 Major identities and the77 prerequisites; negative
+controls reject a duplicated Major, World requiring itself and moving the finale
+requirement before lunar travel. Remaining geography/scripts still fail the
+completion gate. Evidence: validation_v5_16_0/approved-major-finale-audit.json.
+
 Later on the same date the author explicitly approved cooperative finale entry
 when one participant satisfies both requirements. Group travel still requires
 consent; personal essence/reputation ownership is not transferred. This resolves

@@ -29,6 +29,13 @@ def audit(plan):
     cards = json.loads((ROOT / "assets/manifests/tarot_78_v4369.json").read_text(encoding="utf-8-sig"))["cards"]
     card_ids = {row["card_id"] for row in cards}
     check(card_ids == set(range(78)), "Existing Tarot manifest must cover IDs 0..77")
+    majors = {row['card_id'] for row in cards if row['arcana'] == 'major'}
+    assigned_majors = [card for chapter in chapters for card in chapter['major_essence_ids']]
+    check(len(assigned_majors) == len(set(assigned_majors)) and set(assigned_majors) == majors,
+          "Chapter Major assignments must cover each canonical identity once")
+    for chapter in chapters:
+        check(len(chapter['major_essence_ids']) == chapter['major_essences'], "Chapter Major count differs from its assignments")
+        check(set(map(int, chapter['major_story_anchors'])) <= set(chapter['major_essence_ids']), "Story anchor belongs to a different chapter")
     check(plan["targets"]["minor_essences"] == sum(row["arcana"] == "minor" for row in cards), "Minor total differs from manifest")
     check(plan["progression_policy"]["final_card_id"] == 21, "Canonical final World card changed")
     route = plan["established_route"]
@@ -54,6 +61,12 @@ def audit(plan):
     for chapter in chapters:
         pending.extend(f"{chapter['id']}: {item}" for item in chapter.get("unresolved", []))
     finale = plan["finale"]
+    check(finale['requirement_checkpoint'] == 'before_selene_combat_on_moon', "Approved requirements belong before Selene, already on the Moon")
+    check(finale['lunar_travel_requires_finale_eligibility'] is False, "Do not require the lunar World essence before lunar travel")
+    world = finale['world_acquisition']
+    check(world['region'] == 'Moon', "World acquisition belongs on the Moon")
+    check(set(world['requires_acquired_essence_ids']) == card_ids - {plan['progression_policy']['final_card_id']}, "World must require the other77 essences without requiring itself")
+    check(world['grant_automatically'] is False, "Chapter allocation does not automatically grant an essence")
     check(finale["condition_operator"] == "AND", "Finale must combine reputation AND acquired essences")
     for field in ("reputation_track", "reputation_minimum", "acquired_essence_minimum", "mandatory_essence_ids", "cooperative_eligibility"):
         if finale[field] is None:

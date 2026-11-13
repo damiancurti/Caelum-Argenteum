@@ -2,7 +2,7 @@
 
 Documentation version: **5.16.0** - 2026-11-12.
 
-**V5.16:** #452 regions/finale approved2026-11-12; graph:
+**V5.16:** #452 regions/Majors/finale approved; graph:
 assets/campaign/PROGRESSION.json; canon: MAP01. #452-457 open.
 Sources recovered; routes/placements/scripts pending; gameplay V5.15.
 
