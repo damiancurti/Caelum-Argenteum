@@ -85,6 +85,12 @@ generate_barracas_ram_crews.py derives RAM_CREWS.json and the shared runtime
 post table from retained machine constants and accepted body bounds. It changes
 positions, not combat profiles, counts or models. Native physical/live-crew
 evidence and failed iterations are in validation_v5_16_2/barracas-ram-crews.
+Qualified long-route, commander, capture, full-controller refill and shop evidence
+now lives in validation_v5_16_2/barracas-continuation; house Used/rendered-ACK
+round trips are in barracas-house-use. Native saves and PK3s remain local. The
+read-only deployment-save auditor records600 retained identities and completion
+flags without copying a binary save into the repository. Its early-checkpoint
+replay remains pending. No new art or production map bytes belong to this slice.
 
 ## 5.16.1 - Recovered folklore reference catalogue (#453, catalogue approved)
 

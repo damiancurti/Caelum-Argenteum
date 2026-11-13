@@ -20,6 +20,19 @@ interaction, since the original closing timer still runs after victory opening.
 Legacy geometry keeps its former tables/behavior. Isolated navigation evidence
 is qualified in barracas-navigation/SUMMARY.json; the city is not activated.
 
+The wounded commander now follows the same revision-4 ground withdrawal fields
+through a virtual escape-step hook. His existing half-health trigger, native
+flee-speed multiplier, collision and final-exit confirmation remain authoritative.
+This does not grant permission to open hostile gates before victory. The default
+hook retains the original sewer/legacy chase; native regression passes there.
+Five candidate origins pass fresh/reload with open diagnostic gates. Capture and
+full-controller refill checks also pass: the existing1000 living-side census
+includes hostile machines and commander, leaving987 initial Mandingas when all12
+machines survive. Five native fixture deaths admit five replacements; the ledger
+is992 admitted plus5608 remaining, without changing the6600 cumulative total.
+These are qualified isolated checks, not battle or climate-survival acceptance.
+See barracas-continuation/SUMMARY.json.
+
 The author approved four gates: north reinforced, south wooden, east reinforced
 and west armored, retaining existing resistance profiles. Attackers arrive from
 the south and divide into south/east/west fronts; north serves the bridge.
@@ -35,8 +48,11 @@ and barracas-forts/SUMMARY.json distinguish these stages from acceptance.
 Revision4 now selects generated ground routes and artillery/formation coordinates
 without changing the original data tables for earlier geometry. All 600 resident
 identities and the existing central-house relocation are retained. Isolated
-fresh/reloaded geometric traversal passes; real crowd/AI deployment, machine
-ownership and battle outcomes remain part of the unfinished siege integration.
+fresh/reloaded geometric traversal passes. A fresh native save confirms600 living,
+unique residents completed their actual routes, including72 operator ascents;
+the early-checkpoint replay is still running. Guards retain their accepted search
+behavior after arrival; simultaneous stationary occupation is not a new rule.
+Machine ownership checks pass; complete battle outcomes remain unfinished.
 Ram routes now support opt-in physical turns before each segment, using the
 existing approach/rotation rates. Legacy routes retain fixed-heading translation;
 saved zero defaults preserve that behavior. This is geometry support only, not
@@ -44,8 +60,8 @@ a change to machine statistics.
 Opt-in crew layouts retain6/32 operators and their original guard radii, with
 local rotating posts derived from native collision boxes. The new crews keep
 their assigned station ahead of remembered search movement, while visible
-enemies retain normal combat handling. Two isolated live crews pass; production
-infantry routes, capture/refill and full battle handling still require
+enemies retain normal combat handling. Two isolated live crews, pedestrian routes,
+capture ownership and refill admission pass. Full battle handling still requires
 integration. Earlier machine/crew layouts retain their original behavior.
 
 The revision-4 controller now owns four gate instances shared by six machine

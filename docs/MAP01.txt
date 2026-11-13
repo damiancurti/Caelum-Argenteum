@@ -80,11 +80,18 @@ routes reversed for elevated bodies. After victory, nearby closed gates receive
 the normal Used interaction; their timers/permissions are retained.
 
 Six terminal exits and36 stair descents pass isolated native fresh/reload checks.
-A saved full-approach continuation completes15 pedestrians. Full fresh/reloaded
-routes are still running; no crowd, battle, climate-survival or author acceptance
-follows. The raw-weather city withdrawal loses three Mandingas to thermal
+Full15-body approaches complete43607tics; six city withdrawals complete60732tics,
+both fresh/reloaded. Five wounded-commander origins complete30667tics in each run,
+retaining the native profile and gate permissions. No battle, climate-survival or
+author acceptance follows. The raw-weather city withdrawal loses three Mandingas to thermal
 exposure; movement isolation neutralizes that exposure only in its fixture.
-See assets/validation_v5_16_2/barracas-navigation/SUMMARY.json for exact evidence.
+Four ordinary house orientations retain Used, rendered capture/ACK and exact
+exterior return. Native Use opens all64 merchants, and one real purchase per run
+preserves stock and wallet accounting. A native save confirms all600 residents
+and72 operators completed deployment by52347tics; early-checkpoint replay is
+running. Full-controller refill/capture checks pass, with the existing extra
+subcaptain alongside the600 resident defenders. Production MAP03 remains unchanged.
+See assets/validation_v5_16_2/barracas-continuation/SUMMARY.json for exact evidence.
 
 assets/barracas_redesign/LAYOUT.json traces the approved irregular perimeter,
 Mitre/Camino al Sud and Pavon axes, four plazas, western railway corridor and

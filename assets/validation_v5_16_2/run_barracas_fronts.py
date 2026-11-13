@@ -21,13 +21,17 @@ def main():
     parser.add_argument('--march', action='store_true', help='Run15 actual pedestrians at normal cadence on the complete southern approaches (up to30 minutes per phase)')
     parser.add_argument('--retreat', action='store_true', help='Test six terminal exits and36 elevated-route descents at normal cadence')
     parser.add_argument('--retreat-full', action='store_true', help='Test six complete city-to-south withdrawals at normal cadence')
+    parser.add_argument('--crowd', action='store_true', help='Deploy all600 retained residents with real collision and native AI; isolate thermal survival')
+    parser.add_argument('--commander', action='store_true', help='Test native wound-triggered commander escape from five origins')
+    parser.add_argument('--capture', action='store_true', help='Test capture ownership and paired reserve activation without enemy crews')
+    parser.add_argument('--refill', action='store_true', help='Run full native controller through1000-cap refill; thermal exposure isolated')
     parser.add_argument('--seed-save', type=Path, help='Resume one existing isolated checkpoint with the same package basenames')
     args = parser.parse_args()
     args.retreat = args.retreat or args.retreat_full
-    if args.march and args.retreat: parser.error('Select one navigation probe')
-    movement = args.march or args.retreat
-    prefix = 'RETREAT' if args.retreat else 'MARCH'
-    event = 'retreat' if args.retreat else 'march'
+    if sum((args.march, args.retreat, args.crowd, args.commander, args.capture, args.refill)) > 1: parser.error('Select one navigation probe')
+    movement = args.march or args.retreat or args.crowd or args.commander or args.capture or args.refill
+    prefix = 'REFILL' if args.refill else 'CAPTURE' if args.capture else 'COMMANDER' if args.commander else 'CROWD' if args.crowd else 'RETREAT' if args.retreat else 'MARCH'
+    event = prefix.lower()
     start_event = 'retreat_full' if args.retreat_full else event
     out = args.output.resolve(); out.relative_to(ROOT / 'build'); out.mkdir(exist_ok=False)
     runtime, candidate = args.runtime.resolve(), args.candidate.resolve()
@@ -35,6 +39,10 @@ def main():
     probe = 'barracas_march_probe.zs' if args.march else 'barracas_front_probe.zs'
     handler, controller = ('CA454MarchProbe', 'CA454MarchCity') if args.march else ('CA454FrontProbe', 'CA454FrontCity')
     if args.retreat: probe, handler, controller = 'barracas_retreat_probe.zs', 'CA454RetreatProbe', 'CA454RetreatCity'
+    if args.crowd: probe, handler, controller = 'barracas_crowd_probe.zs', 'CA454CrowdProbe', 'CA454CrowdCity'
+    if args.commander: probe, handler, controller = 'barracas_commander_probe.zs', 'CA454CommanderProbe', 'CA454CommanderCity'
+    if args.capture: probe, handler, controller = 'barracas_capture_probe.zs', 'CA454CaptureProbe', 'CA454CaptureCity'
+    if args.refill: probe, handler, controller = 'barracas_refill_probe.zs', 'CA454RefillProbe', 'CA454RefillCity'
     with zipfile.ZipFile(fixture, 'w') as archive:
         files = {'ZSCRIPT': 'version "4.14.2"\n' + (Path(__file__).parent / probe).read_text(encoding='utf-8'),
                  'MAPINFO': f'gameinfo {{ AddEventHandlers="{handler}" }}\ndoomednums {{31050={controller}}}\n'}
@@ -48,6 +56,14 @@ def main():
         report['scope'] = 'Six terminal exits and36 artillery-stair descents at normal native speed/cadence; no full-city withdrawal/crowds/performance/author acceptance.'
     if args.retreat_full:
         report['scope'] = 'Six complete withdrawals from three inner gate approaches and three residential road positions, native speed/collision, normal gate timers with victory passage requests, thermal exposure neutralized each fixture tick; no crowd/battle/FPS/survival/author acceptance.'
+    if args.crowd:
+        report['scope'] = 'All600 retained residents emitted by production house deployment,72 gun operators and528 guards, real collision/native AI and shared>=500 census. Automatic battle controller suppressed and thermal exposure neutralized each fixture tick. No attackers, firing, climate survival, full battle/FPS or author acceptance.'
+    if args.commander:
+        report['scope'] = 'Native wound-triggered commander escape from original southern spawn, three inner gates and house159 road, sequential identities, unchanged flee speed/collision. Fixture holds gates open and neutralizes thermal exposure. No combat, gate permissions, crowds, climate survival, FPS or author acceptance.'
+    if args.capture:
+        report['scope'] = 'Native capture of three active rams and one reserve; enemy reserve activation and captured reserve exclusion persist after reload. Empty enemy crews and fixture faction membership. No timed work, combat, refill or author acceptance.'
+    if args.refill:
+        report['scope'] = 'Full native city controller,600 defender records and1000 living attacker cap, finite6600 cumulative reserve, five fixture deaths through native Die followed by actual refill opportunities. Thermal exposure neutralized; no accelerated time or frozen combatants. Not full battle completion, FPS, climate survival or author acceptance.'
     fatal = ('Script error', 'Execution could not continue', 'VM execution aborted', 'Unknown type')
     if args.seed_save: report['seed_save_sha256'] = digest(args.seed_save.resolve())
     for phase in (('reload',) if args.seed_save else ('fresh', 'reload')):
@@ -73,7 +89,7 @@ def main():
         startup = subprocess.STARTUPINFO(); startup.dwFlags |= subprocess.STARTF_USESHOWWINDOW; startup.wShowWindow = 0
         with (folder / 'process.log').open('wb') as stream:
             process = subprocess.Popen(command, cwd=folder, stdout=stream, stderr=stream, startupinfo=startup)
-            deadline = time.monotonic() + (3000 if args.retreat_full else 2100 if args.march else 480 if args.retreat else 180); timeout = False
+            deadline = time.monotonic() + (6000 if args.commander else 3000 if args.retreat_full or args.crowd else 2100 if args.march else 900 if args.refill else 480 if args.retreat else 180); timeout = False
             try:
                 while process.poll() is None:
                     path = folder / 'engine.log'
@@ -91,7 +107,7 @@ def main():
         required = ['DEPLOY PASS', 'POLICY PASS'] if phase == 'fresh' else ['RESUME PASS', 'CONTINUATION PASS']
         passed = process.returncode == 0 and not timeout and not any(s in log for s in fatal) and all('CA454 FRONT ' + s in log for s in required) and not any('FAIL' in line for line in checks)
         if movement:
-            expected = 6 if args.retreat_full else 42 if args.retreat else 15
+            expected = 1 if args.refill else 4 if args.capture else 5 if args.commander else 600 if args.crowd else 6 if args.retreat_full else 42 if args.retreat else 15
             passed = process.returncode == 0 and not timeout and not any(s in log for s in fatal) and f'CA454 {prefix} COMPLETE passed={expected} failures=0' in log and not any('FAIL' in line for line in checks)
             if phase == 'reload': passed = passed and f'CA454 {prefix} RESUME PASS' in log
         report['runs'].append({'phase': phase, 'passed': passed, 'exit_code': process.returncode, 'timeout': timeout, 'checks': checks})

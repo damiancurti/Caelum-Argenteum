@@ -27,6 +27,20 @@ one String-return switch held hundreds of rows. Splitting it into64-row function
 compiled successfully; deterministic checks and native descent/exit tests pass.
 No frame-rate, crowd or author-acceptance conclusion follows from these results.
 
+The continuation suite in barracas-continuation/SUMMARY.json adds a600-resident
+native-save audit. Do not impose simultaneous stationary posts on guards whose
+accepted behavior includes investigating sounds after arrival. AdvanceDeployment
+confirms its final point within1 MU, but later native actions can move the guard
+before a fixture samples position; a speed-only distance tolerance can miss that
+completion. Audit the saved native completion/identity flags separately from the
+current position, and qualify an early-reload replay independently.
+The same suite found two other fixture prerequisites: wait for deferred native
+PostBeginPlay before setting a percentage-health wound, and seed persistent Box
+ownership before testing commerce rather than a temporary actor-only flag. A
+long single-line64-shop console sequence lost/reordered its first requests;
+bounded chained command files retained all64 in order. Keep the failed logs and
+do not present these harness corrections as changes to production balance.
+
 ## CA-KP-220 - Rotating crew posts need box clearance and live AI evidence
 
 Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED for isolated ram crews.

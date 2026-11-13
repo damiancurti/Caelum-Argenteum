@@ -1,0 +1,7814 @@
+{
+  "issue": 454,
+  "scope": "Verify native completion/identity flags from an isolated600-resident save.\n\nThis is a read-only end-state audit, not evidence of simultaneous stationary\nposts. Production AdvanceDeployment/CrewPost own their physical arrival checks.",
+  "save_sha256": "4f35b084b3c18f6e14061ec896f8bf30ae090bf73536714beaabdabc3fd5822c",
+  "elapsed": 52347,
+  "native_map_time": 52487,
+  "defenders": 600,
+  "operators": 72,
+  "living_census": 601,
+  "errors": [],
+  "passed": true,
+  "bodies": [
+    {
+      "identity": 0,
+      "saved_identity": 0,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -26008.63100605751,
+        -12818.31457407293,
+        256.0
+      ]
+    },
+    {
+      "identity": 1,
+      "saved_identity": 1,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -25831.332514381615,
+        -12818.52970085217,
+        256.0
+      ]
+    },
+    {
+      "identity": 2,
+      "saved_identity": 2,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -22680.71708520624,
+        -14482.834694166664,
+        256.0
+      ]
+    },
+    {
+      "identity": 3,
+      "saved_identity": 3,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -22503.382878602806,
+        -14482.234393786786,
+        256.0
+      ]
+    },
+    {
+      "identity": 4,
+      "saved_identity": 4,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -19736.70219087435,
+        -14994.741376437441,
+        256.0
+      ]
+    },
+    {
+      "identity": 5,
+      "saved_identity": 5,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -19559.326844562336,
+        -14994.563777949927,
+        256.0
+      ]
+    },
+    {
+      "identity": 6,
+      "saved_identity": 6,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -16600.668383318793,
+        -15186.53508397739,
+        256.0
+      ]
+    },
+    {
+      "identity": 7,
+      "saved_identity": 7,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -16423.33856401361,
+        -15186.493541757673,
+        256.0
+      ]
+    },
+    {
+      "identity": 8,
+      "saved_identity": 8,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -13464.722696467597,
+        -15314.87028184908,
+        256.0
+      ]
+    },
+    {
+      "identity": 9,
+      "saved_identity": 9,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -13287.314403562854,
+        -15314.639219592911,
+        256.0
+      ]
+    },
+    {
+      "identity": 10,
+      "saved_identity": 10,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -10456.67828416116,
+        -15122.594764803001,
+        256.0
+      ]
+    },
+    {
+      "identity": 11,
+      "saved_identity": 11,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -10279.296558709668,
+        -15122.749149318113,
+        256.0
+      ]
+    },
+    {
+      "identity": 12,
+      "saved_identity": 12,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -6104.724370891982,
+        -14418.880949336686,
+        256.0
+      ]
+    },
+    {
+      "identity": 13,
+      "saved_identity": 13,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -5927.281194454514,
+        -14418.845578883329,
+        256.0
+      ]
+    },
+    {
+      "identity": 14,
+      "saved_identity": 14,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -5464.712491695279,
+        -14354.80574085706,
+        256.0
+      ]
+    },
+    {
+      "identity": 15,
+      "saved_identity": 15,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -5287.302369396235,
+        -14354.713120226614,
+        256.0
+      ]
+    },
+    {
+      "identity": 16,
+      "saved_identity": 16,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -29592.612893326168,
+        12973.732632118972,
+        384.0
+      ]
+    },
+    {
+      "identity": 17,
+      "saved_identity": 17,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -29415.358403137285,
+        12973.681646074661,
+        384.0
+      ]
+    },
+    {
+      "identity": 18,
+      "saved_identity": 18,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -1240.6454691284528,
+        12973.658586755653,
+        384.0
+      ]
+    },
+    {
+      "identity": 19,
+      "saved_identity": 19,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -1063.3832965460751,
+        12973.711092683272,
+        384.0
+      ]
+    },
+    {
+      "identity": 20,
+      "saved_identity": 20,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -27864.32493112931,
+        -12242.120933487602,
+        384.0
+      ]
+    },
+    {
+      "identity": 21,
+      "saved_identity": 21,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -27687.462942582628,
+        -12242.393364625394,
+        384.0
+      ]
+    },
+    {
+      "identity": 22,
+      "saved_identity": 22,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -2392.5244700689295,
+        -14162.379087199186,
+        384.0
+      ]
+    },
+    {
+      "identity": 23,
+      "saved_identity": 23,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -2215.658649293051,
+        -14162.155034868674,
+        384.0
+      ]
+    },
+    {
+      "identity": 24,
+      "saved_identity": 24,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -26584.678499978196,
+        14162.596072174629,
+        256.0
+      ]
+    },
+    {
+      "identity": 25,
+      "saved_identity": 25,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -26407.305083307194,
+        14162.696371364216,
+        256.0
+      ]
+    },
+    {
+      "identity": 26,
+      "saved_identity": 26,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -24024.653340338118,
+        14994.445466134513,
+        256.0
+      ]
+    },
+    {
+      "identity": 27,
+      "saved_identity": 27,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -23847.33642070159,
+        14994.506329200878,
+        256.0
+      ]
+    },
+    {
+      "identity": 28,
+      "saved_identity": 28,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -20568.52244962937,
+        14737.666368138887,
+        256.0
+      ]
+    },
+    {
+      "identity": 29,
+      "saved_identity": 29,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -20391.851490178302,
+        14737.266329186537,
+        256.0
+      ]
+    },
+    {
+      "identity": 30,
+      "saved_identity": 30,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -17048.628206075784,
+        15122.298334444888,
+        256.0
+      ]
+    },
+    {
+      "identity": 31,
+      "saved_identity": 31,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -16871.393528414897,
+        15122.173466492997,
+        256.0
+      ]
+    },
+    {
+      "identity": 32,
+      "saved_identity": 32,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -15064.721638526458,
+        16146.86355335781,
+        256.0
+      ]
+    },
+    {
+      "identity": 33,
+      "saved_identity": 33,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -14887.301580183735,
+        16146.71800014949,
+        256.0
+      ]
+    },
+    {
+      "identity": 34,
+      "saved_identity": 34,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -8472.637558405373,
+        16018.352721022164,
+        256.0
+      ]
+    },
+    {
+      "identity": 35,
+      "saved_identity": 35,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -8295.34201749917,
+        16018.472990382877,
+        256.0
+      ]
+    },
+    {
+      "identity": 36,
+      "saved_identity": 36,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -6552.69788152658,
+        15250.714671295409,
+        256.0
+      ]
+    },
+    {
+      "identity": 37,
+      "saved_identity": 37,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -6375.30019190542,
+        15250.726594545971,
+        256.0
+      ]
+    },
+    {
+      "identity": 38,
+      "saved_identity": 38,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -3032.61588771901,
+        13842.227311113187,
+        256.0
+      ]
+    },
+    {
+      "identity": 39,
+      "saved_identity": 39,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -2855.3666583351014,
+        13842.328148350027,
+        256.0
+      ]
+    },
+    {
+      "identity": 40,
+      "saved_identity": 40,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -27921.285067456087,
+        -10392.601699532997,
+        256.0
+      ]
+    },
+    {
+      "identity": 41,
+      "saved_identity": 41,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -27920.92313512765,
+        -10215.843454574848,
+        256.0
+      ]
+    },
+    {
+      "identity": 42,
+      "saved_identity": 42,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -28690.472132485476,
+        -6552.657838102241,
+        256.0
+      ]
+    },
+    {
+      "identity": 43,
+      "saved_identity": 43,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -28690.425369997014,
+        -6375.350061147478,
+        256.0
+      ]
+    },
+    {
+      "identity": 44,
+      "saved_identity": 44,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -29074.49485603292,
+        -4632.661656468502,
+        256.0
+      ]
+    },
+    {
+      "identity": 45,
+      "saved_identity": 45,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -29074.61169818272,
+        -4455.318924124139,
+        256.0
+      ]
+    },
+    {
+      "identity": 46,
+      "saved_identity": 46,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -29778.44959689547,
+        -920.6540382498018,
+        256.0
+      ]
+    },
+    {
+      "identity": 47,
+      "saved_identity": 47,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -29778.7120331461,
+        -743.3025452988089,
+        256.0
+      ]
+    },
+    {
+      "identity": 48,
+      "saved_identity": 48,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -29713.10760680552,
+        2215.7369198221877,
+        256.0
+      ]
+    },
+    {
+      "identity": 49,
+      "saved_identity": 49,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -29713.4714056988,
+        2392.448740227837,
+        256.0
+      ]
+    },
+    {
+      "identity": 50,
+      "saved_identity": 50,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -29586.849068546617,
+        5607.280643672436,
+        256.0
+      ]
+    },
+    {
+      "identity": 51,
+      "saved_identity": 51,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -29586.830988741156,
+        5784.71649874104,
+        256.0
+      ]
+    },
+    {
+      "identity": 52,
+      "saved_identity": 52,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -29457.24268694008,
+        8551.805884525118,
+        256.0
+      ]
+    },
+    {
+      "identity": 53,
+      "saved_identity": 53,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -29457.051625913376,
+        8728.473518375997,
+        256.0
+      ]
+    },
+    {
+      "identity": 54,
+      "saved_identity": 54,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -29329.464120580542,
+        11687.562625599472,
+        256.0
+      ]
+    },
+    {
+      "identity": 55,
+      "saved_identity": 55,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -29329.307329734675,
+        11864.642073974612,
+        256.0
+      ]
+    },
+    {
+      "identity": 56,
+      "saved_identity": 56,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -1710.761120153023,
+        -12184.19467105123,
+        256.0
+      ]
+    },
+    {
+      "identity": 57,
+      "saved_identity": 57,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -1710.3855664764214,
+        -12007.531353077404,
+        256.0
+      ]
+    },
+    {
+      "identity": 58,
+      "saved_identity": 58,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        18.645806096403163,
+        -8152.686675212084,
+        256.0
+      ]
+    },
+    {
+      "identity": 59,
+      "saved_identity": 59,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        18.842943745050718,
+        -7975.281610610417,
+        256.0
+      ]
+    },
+    {
+      "identity": 60,
+      "saved_identity": 60,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        209.10191786683598,
+        -5400.288127694913,
+        256.0
+      ]
+    },
+    {
+      "identity": 61,
+      "saved_identity": 61,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        209.40566324791567,
+        -5223.634214211227,
+        256.0
+      ]
+    },
+    {
+      "identity": 62,
+      "saved_identity": 62,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        401.269771714186,
+        -2008.495488456981,
+        256.0
+      ]
+    },
+    {
+      "identity": 63,
+      "saved_identity": 63,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        400.9077739287467,
+        -1831.8815648945233,
+        256.0
+      ]
+    },
+    {
+      "identity": 64,
+      "saved_identity": 64,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        593.38182969212,
+        2599.3885242919478,
+        256.0
+      ]
+    },
+    {
+      "identity": 65,
+      "saved_identity": 65,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        593.2935634160366,
+        2776.171056798806,
+        256.0
+      ]
+    },
+    {
+      "identity": 66,
+      "saved_identity": 66,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        786.4375716950126,
+        5095.3479946658945,
+        256.0
+      ]
+    },
+    {
+      "identity": 67,
+      "saved_identity": 67,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        786.6213395699389,
+        5272.6826619021585,
+        256.0
+      ]
+    },
+    {
+      "identity": 68,
+      "saved_identity": 68,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        18.310962537286706,
+        7911.369616089089,
+        256.0
+      ]
+    },
+    {
+      "identity": 69,
+      "saved_identity": 69,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        18.337981513043207,
+        8088.635030811599,
+        256.0
+      ]
+    },
+    {
+      "identity": 70,
+      "saved_identity": 70,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -942.7054342580161,
+        11559.828186003971,
+        256.0
+      ]
+    },
+    {
+      "identity": 71,
+      "saved_identity": 71,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": true,
+      "position": [
+        -942.8950693829544,
+        11736.479139139577,
+        256.0
+      ]
+    },
+    {
+      "identity": 72,
+      "saved_identity": 72,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26786.24562170457,
+        -12167.089724934913,
+        0.0
+      ]
+    },
+    {
+      "identity": 73,
+      "saved_identity": 73,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26746.38237399691,
+        -12227.19514038978,
+        0.0
+      ]
+    },
+    {
+      "identity": 74,
+      "saved_identity": 74,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26818.280910256184,
+        -12235.768064165657,
+        0.0
+      ]
+    },
+    {
+      "identity": 75,
+      "saved_identity": 75,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26607.88155151447,
+        -12165.328689040763,
+        0.0
+      ]
+    },
+    {
+      "identity": 76,
+      "saved_identity": 76,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26640.018855165727,
+        -12155.20439346831,
+        0.0
+      ]
+    },
+    {
+      "identity": 77,
+      "saved_identity": 77,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26775.77243929412,
+        -12274.574211898442,
+        0.0
+      ]
+    },
+    {
+      "identity": 78,
+      "saved_identity": 78,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26677.33791788956,
+        -12250.071392258864,
+        0.0
+      ]
+    },
+    {
+      "identity": 79,
+      "saved_identity": 79,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26651.900508787417,
+        -12088.698214893362,
+        0.0
+      ]
+    },
+    {
+      "identity": 80,
+      "saved_identity": 80,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26715.57857881147,
+        -12195.112676127552,
+        0.0
+      ]
+    },
+    {
+      "identity": 81,
+      "saved_identity": 81,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26720.564596796907,
+        -12153.07189921101,
+        0.0
+      ]
+    },
+    {
+      "identity": 82,
+      "saved_identity": 82,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26667.515581855238,
+        -12307.75378015521,
+        0.0
+      ]
+    },
+    {
+      "identity": 83,
+      "saved_identity": 83,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26697.245703105353,
+        -12112.16608510724,
+        0.0
+      ]
+    },
+    {
+      "identity": 84,
+      "saved_identity": 84,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26789.014018026166,
+        -12202.29493244251,
+        0.0
+      ]
+    },
+    {
+      "identity": 85,
+      "saved_identity": 85,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26730.379789154846,
+        -12114.163006142262,
+        0.0
+      ]
+    },
+    {
+      "identity": 86,
+      "saved_identity": 86,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -22235.616165215783,
+        -13033.856906014003,
+        0.0
+      ]
+    },
+    {
+      "identity": 87,
+      "saved_identity": 87,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -22202.186683189822,
+        -13082.611400551219,
+        0.0
+      ]
+    },
+    {
+      "identity": 88,
+      "saved_identity": 88,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -22286.64216624745,
+        -13097.26267405877,
+        0.0
+      ]
+    },
+    {
+      "identity": 89,
+      "saved_identity": 89,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -22127.893712120247,
+        -12400.873050174712,
+        0.0
+      ]
+    },
+    {
+      "identity": 90,
+      "saved_identity": 90,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -22196.446673441333,
+        -13046.119530092057,
+        0.0
+      ]
+    },
+    {
+      "identity": 91,
+      "saved_identity": 91,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -22162.016670822304,
+        -13054.434131594648,
+        0.0
+      ]
+    },
+    {
+      "identity": 92,
+      "saved_identity": 92,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -22282.62936336753,
+        -13064.569225012392,
+        0.0
+      ]
+    },
+    {
+      "identity": 93,
+      "saved_identity": 93,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -22153.18904367429,
+        -13015.639290107825,
+        0.0
+      ]
+    },
+    {
+      "identity": 94,
+      "saved_identity": 94,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -22236.597841578878,
+        -13083.620400471073,
+        0.0
+      ]
+    },
+    {
+      "identity": 95,
+      "saved_identity": 95,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -22200.772213289223,
+        -13120.924148689652,
+        0.0
+      ]
+    },
+    {
+      "identity": 96,
+      "saved_identity": 96,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -22196.03238902801,
+        -13012.337544028822,
+        0.0
+      ]
+    },
+    {
+      "identity": 97,
+      "saved_identity": 97,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -22173.30633443322,
+        -13156.349937376635,
+        0.0
+      ]
+    },
+    {
+      "identity": 98,
+      "saved_identity": 98,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -22167.82492532614,
+        -13087.71440424555,
+        0.0
+      ]
+    },
+    {
+      "identity": 99,
+      "saved_identity": 99,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -22286.86066259313,
+        -13030.07673416365,
+        0.0
+      ]
+    },
+    {
+      "identity": 100,
+      "saved_identity": 100,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -20466.440046174364,
+        -13789.033202305276,
+        0.0
+      ]
+    },
+    {
+      "identity": 101,
+      "saved_identity": 101,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -20470.458955639846,
+        -13753.621035943752,
+        0.0
+      ]
+    },
+    {
+      "identity": 102,
+      "saved_identity": 102,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -20465.125474019434,
+        -13714.173506981711,
+        0.0
+      ]
+    },
+    {
+      "identity": 103,
+      "saved_identity": 103,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -20540.37660887789,
+        -13654.057399931035,
+        0.0
+      ]
+    },
+    {
+      "identity": 104,
+      "saved_identity": 104,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -20510.10593066653,
+        -13760.07527081641,
+        0.0
+      ]
+    },
+    {
+      "identity": 105,
+      "saved_identity": 105,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -20499.053437791114,
+        -13810.32187331001,
+        0.0
+      ]
+    },
+    {
+      "identity": 106,
+      "saved_identity": 106,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -20543.09404283977,
+        -13773.636928083954,
+        0.0
+      ]
+    },
+    {
+      "identity": 107,
+      "saved_identity": 107,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -20498.042890167202,
+        -13664.78383811826,
+        0.0
+      ]
+    },
+    {
+      "identity": 108,
+      "saved_identity": 108,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -20576.0283244761,
+        -13733.241465737712,
+        0.0
+      ]
+    },
+    {
+      "identity": 109,
+      "saved_identity": 109,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -20576.66079122674,
+        -13767.859165715734,
+        0.0
+      ]
+    },
+    {
+      "identity": 110,
+      "saved_identity": 110,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -20502.819526693896,
+        -13701.056442824245,
+        0.0
+      ]
+    },
+    {
+      "identity": 111,
+      "saved_identity": 111,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -20552.106837633462,
+        -13686.732065890574,
+        0.0
+      ]
+    },
+    {
+      "identity": 112,
+      "saved_identity": 112,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -20432.728559391628,
+        -13784.971037820507,
+        0.0
+      ]
+    },
+    {
+      "identity": 113,
+      "saved_identity": 113,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -20541.275748688196,
+        -13724.23273462442,
+        0.0
+      ]
+    },
+    {
+      "identity": 114,
+      "saved_identity": 114,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -17466.57864922691,
+        -13919.341159307494,
+        0.0
+      ]
+    },
+    {
+      "identity": 115,
+      "saved_identity": 115,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -17427.183647701157,
+        -13883.946031792777,
+        0.0
+      ]
+    },
+    {
+      "identity": 116,
+      "saved_identity": 116,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -17547.327994311632,
+        -13934.917315693787,
+        0.0
+      ]
+    },
+    {
+      "identity": 117,
+      "saved_identity": 117,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -17460.171239095438,
+        -13959.208186726886,
+        0.0
+      ]
+    },
+    {
+      "identity": 118,
+      "saved_identity": 118,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -17501.35767999063,
+        -13985.415676942652,
+        0.0
+      ]
+    },
+    {
+      "identity": 119,
+      "saved_identity": 119,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -17459.91145189936,
+        -13885.402016202826,
+        0.0
+      ]
+    },
+    {
+      "identity": 120,
+      "saved_identity": 120,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -17476.530357121766,
+        -14031.690937253497,
+        0.0
+      ]
+    },
+    {
+      "identity": 121,
+      "saved_identity": 121,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -17510.019406107876,
+        -14026.01213211998,
+        0.0
+      ]
+    },
+    {
+      "identity": 122,
+      "saved_identity": 122,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -17490.8180364076,
+        -13851.603397079,
+        0.0
+      ]
+    },
+    {
+      "identity": 123,
+      "saved_identity": 123,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -17502.45719913823,
+        -13903.327747229969,
+        0.0
+      ]
+    },
+    {
+      "identity": 124,
+      "saved_identity": 124,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -17428.08635457714,
+        -13961.931440829729,
+        0.0
+      ]
+    },
+    {
+      "identity": 125,
+      "saved_identity": 125,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -17506.164385262207,
+        -13941.487116936392,
+        0.0
+      ]
+    },
+    {
+      "identity": 126,
+      "saved_identity": 126,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -17464.88106376136,
+        -13994.604240951632,
+        0.0
+      ]
+    },
+    {
+      "identity": 127,
+      "saved_identity": 127,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -17441.19906531069,
+        -14028.569532471203,
+        0.0
+      ]
+    },
+    {
+      "identity": 128,
+      "saved_identity": 128,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -14515.382191246295,
+        -14402.198567563095,
+        0.0
+      ]
+    },
+    {
+      "identity": 129,
+      "saved_identity": 129,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -14411.597036145122,
+        -14356.147422719887,
+        0.0
+      ]
+    },
+    {
+      "identity": 130,
+      "saved_identity": 130,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -14410.795712201061,
+        -14400.372672631163,
+        0.0
+      ]
+    },
+    {
+      "identity": 131,
+      "saved_identity": 131,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -14357.40836393407,
+        -14327.729732673892,
+        0.0
+      ]
+    },
+    {
+      "identity": 132,
+      "saved_identity": 132,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -14430.043553309206,
+        -14323.384507148414,
+        0.0
+      ]
+    },
+    {
+      "identity": 133,
+      "saved_identity": 133,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -14552.284671927668,
+        -14378.818331215421,
+        0.0
+      ]
+    },
+    {
+      "identity": 134,
+      "saved_identity": 134,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -14480.070584922649,
+        -14322.503042226328,
+        0.0
+      ]
+    },
+    {
+      "identity": 135,
+      "saved_identity": 135,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -14362.805985113206,
+        -14283.395379378846,
+        0.0
+      ]
+    },
+    {
+      "identity": 136,
+      "saved_identity": 136,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -14390.994599946418,
+        -14316.801567752813,
+        0.0
+      ]
+    },
+    {
+      "identity": 137,
+      "saved_identity": 137,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -14480.439972893115,
+        -14394.92479913645,
+        0.0
+      ]
+    },
+    {
+      "identity": 138,
+      "saved_identity": 138,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -14489.511044965991,
+        -14356.396569424298,
+        0.0
+      ]
+    },
+    {
+      "identity": 139,
+      "saved_identity": 139,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -14447.83626745289,
+        -14366.140837497833,
+        0.0
+      ]
+    },
+    {
+      "identity": 140,
+      "saved_identity": 140,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -14525.905655129833,
+        -14345.289514705644,
+        0.0
+      ]
+    },
+    {
+      "identity": 141,
+      "saved_identity": 141,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -14371.633435699123,
+        -14384.368981308553,
+        0.0
+      ]
+    },
+    {
+      "identity": 142,
+      "saved_identity": 142,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -10270.459658686697,
+        -13823.08612882734,
+        0.0
+      ]
+    },
+    {
+      "identity": 143,
+      "saved_identity": 143,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -10263.366380496504,
+        -13855.746397530427,
+        0.0
+      ]
+    },
+    {
+      "identity": 144,
+      "saved_identity": 144,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -10388.552091830532,
+        -13820.939894929046,
+        0.0
+      ]
+    },
+    {
+      "identity": 145,
+      "saved_identity": 145,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -10327.309680845789,
+        -13822.58404098143,
+        0.0
+      ]
+    },
+    {
+      "identity": 146,
+      "saved_identity": 146,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -10356.446461875043,
+        -13865.497496686867,
+        0.0
+      ]
+    },
+    {
+      "identity": 147,
+      "saved_identity": 147,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -10366.668145520027,
+        -13732.424431558651,
+        0.0
+      ]
+    },
+    {
+      "identity": 148,
+      "saved_identity": 148,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -10342.862525978977,
+        -13787.921410569857,
+        0.0
+      ]
+    },
+    {
+      "identity": 149,
+      "saved_identity": 149,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -10381.615263056217,
+        -13774.50662908457,
+        0.0
+      ]
+    },
+    {
+      "identity": 150,
+      "saved_identity": 150,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -10327.730943847004,
+        -13746.61885338714,
+        0.0
+      ]
+    },
+    {
+      "identity": 151,
+      "saved_identity": 151,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -10310.832741057871,
+        -13783.358966602544,
+        0.0
+      ]
+    },
+    {
+      "identity": 152,
+      "saved_identity": 152,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -10307.031252299497,
+        -13887.522545802676,
+        0.0
+      ]
+    },
+    {
+      "identity": 153,
+      "saved_identity": 153,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -10339.056549407178,
+        -13903.656301283641,
+        0.0
+      ]
+    },
+    {
+      "identity": 154,
+      "saved_identity": 154,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -10278.791091760748,
+        -13785.37159215112,
+        0.0
+      ]
+    },
+    {
+      "identity": 155,
+      "saved_identity": 155,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -10389.129710369034,
+        -13856.513216838757,
+        0.0
+      ]
+    },
+    {
+      "identity": 156,
+      "saved_identity": 156,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -5577.004354739861,
+        -13092.714320218676,
+        0.0
+      ]
+    },
+    {
+      "identity": 157,
+      "saved_identity": 157,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -5691.599646327777,
+        -13129.468568981429,
+        0.0
+      ]
+    },
+    {
+      "identity": 158,
+      "saved_identity": 158,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -5614.775243970488,
+        -13101.82936680422,
+        0.0
+      ]
+    },
+    {
+      "identity": 159,
+      "saved_identity": 159,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -5586.958993140549,
+        -13032.795715921067,
+        0.0
+      ]
+    },
+    {
+      "identity": 160,
+      "saved_identity": 160,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -5571.329090629512,
+        -13174.340265117426,
+        0.0
+      ]
+    },
+    {
+      "identity": 161,
+      "saved_identity": 161,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -5595.633972671177,
+        -12948.241836769785,
+        0.0
+      ]
+    },
+    {
+      "identity": 162,
+      "saved_identity": 162,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -5698.18574127985,
+        -13059.857373448876,
+        0.0
+      ]
+    },
+    {
+      "identity": 163,
+      "saved_identity": 163,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -5623.905494936953,
+        -13025.78691785788,
+        0.0
+      ]
+    },
+    {
+      "identity": 164,
+      "saved_identity": 164,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -5616.079408761509,
+        -13068.705297390936,
+        0.0
+      ]
+    },
+    {
+      "identity": 165,
+      "saved_identity": 165,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -5561.2365727284305,
+        -12936.320688100057,
+        0.0
+      ]
+    },
+    {
+      "identity": 166,
+      "saved_identity": 166,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -5607.5100410436735,
+        -12992.478317912663,
+        0.0
+      ]
+    },
+    {
+      "identity": 167,
+      "saved_identity": 167,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -5573.546257564323,
+        -12986.305740856344,
+        0.0
+      ]
+    },
+    {
+      "identity": 168,
+      "saved_identity": 168,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -5766.399553315282,
+        -13123.376752965896,
+        0.0
+      ]
+    },
+    {
+      "identity": 169,
+      "saved_identity": 169,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -5665.798628213409,
+        -13011.817011803556,
+        0.0
+      ]
+    },
+    {
+      "identity": 170,
+      "saved_identity": 170,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -5709.82967176937,
+        -12987.71339426634,
+        0.0
+      ]
+    },
+    {
+      "identity": 171,
+      "saved_identity": 171,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -5604.115207687967,
+        -13138.371476164848,
+        0.0
+      ]
+    },
+    {
+      "identity": 172,
+      "saved_identity": 172,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -5744.214417917487,
+        -13086.830378293032,
+        0.0
+      ]
+    },
+    {
+      "identity": 173,
+      "saved_identity": 173,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -5607.29130124358,
+        -12899.730791919195,
+        0.0
+      ]
+    },
+    {
+      "identity": 174,
+      "saved_identity": 174,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -5672.41870522702,
+        -12979.812984858389,
+        0.0
+      ]
+    },
+    {
+      "identity": 175,
+      "saved_identity": 175,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -5687.14157916618,
+        -13171.979984781206,
+        0.0
+      ]
+    },
+    {
+      "identity": 176,
+      "saved_identity": 176,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -5651.813074851251,
+        -13187.13683518441,
+        0.0
+      ]
+    },
+    {
+      "identity": 177,
+      "saved_identity": 177,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -5653.148990628208,
+        -13078.798883399251,
+        0.0
+      ]
+    },
+    {
+      "identity": 178,
+      "saved_identity": 178,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -5631.882718143193,
+        -12959.877904225626,
+        0.0
+      ]
+    },
+    {
+      "identity": 179,
+      "saved_identity": 179,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -5651.3497665720815,
+        -13121.412141916635,
+        0.0
+      ]
+    },
+    {
+      "identity": 180,
+      "saved_identity": 180,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -5736.825218486187,
+        -13054.56205245919,
+        0.0
+      ]
+    },
+    {
+      "identity": 181,
+      "saved_identity": 181,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -5660.373073428655,
+        -13044.63690375049,
+        0.0
+      ]
+    },
+    {
+      "identity": 182,
+      "saved_identity": 182,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -5574.791486561853,
+        -12881.08554564093,
+        0.0
+      ]
+    },
+    {
+      "identity": 183,
+      "saved_identity": 183,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -5728.063656338085,
+        -13120.013269592553,
+        0.0
+      ]
+    },
+    {
+      "identity": 184,
+      "saved_identity": 184,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29171.6139979654,
+        10016.925358910341,
+        -0.0
+      ]
+    },
+    {
+      "identity": 185,
+      "saved_identity": 185,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29153.766457013266,
+        10152.291609170537,
+        -0.0
+      ]
+    },
+    {
+      "identity": 186,
+      "saved_identity": 186,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29178.06170978335,
+        10049.47961678017,
+        -0.0
+      ]
+    },
+    {
+      "identity": 187,
+      "saved_identity": 187,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29223.28518883854,
+        10121.493304052152,
+        -0.0
+      ]
+    },
+    {
+      "identity": 188,
+      "saved_identity": 188,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29085.62947595511,
+        10080.441102478968,
+        -0.0
+      ]
+    },
+    {
+      "identity": 189,
+      "saved_identity": 189,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29179.821311187075,
+        10086.86111145222,
+        -0.0
+      ]
+    },
+    {
+      "identity": 190,
+      "saved_identity": 190,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29101.086767209163,
+        10117.383579347912,
+        -0.0
+      ]
+    },
+    {
+      "identity": 191,
+      "saved_identity": 191,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29120.804275192128,
+        10157.074978660561,
+        -0.0
+      ]
+    },
+    {
+      "identity": 192,
+      "saved_identity": 192,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29128.643489708804,
+        10082.677488862959,
+        -0.0
+      ]
+    },
+    {
+      "identity": 193,
+      "saved_identity": 193,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29031.129195207108,
+        10120.599710551958,
+        -0.0
+      ]
+    },
+    {
+      "identity": 194,
+      "saved_identity": 194,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29008.494880846632,
+        10055.94965086055,
+        -0.0
+      ]
+    },
+    {
+      "identity": 195,
+      "saved_identity": 195,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29208.407737298126,
+        10161.460503879987,
+        -0.0
+      ]
+    },
+    {
+      "identity": 196,
+      "saved_identity": 196,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29047.406318701465,
+        10030.781479724286,
+        -0.0
+      ]
+    },
+    {
+      "identity": 197,
+      "saved_identity": 197,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29024.438818881234,
+        10087.983066507744,
+        -0.0
+      ]
+    },
+    {
+      "identity": 198,
+      "saved_identity": 198,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1126.228979139336,
+        11621.993289756425,
+        -0.0
+      ]
+    },
+    {
+      "identity": 199,
+      "saved_identity": 199,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1170.1276105309287,
+        11351.942024396687,
+        -0.0
+      ]
+    },
+    {
+      "identity": 200,
+      "saved_identity": 200,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1138.0250994135813,
+        11332.410023091525,
+        -0.0
+      ]
+    },
+    {
+      "identity": 201,
+      "saved_identity": 201,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1159.3678856165186,
+        11649.938540578363,
+        -0.0
+      ]
+    },
+    {
+      "identity": 202,
+      "saved_identity": 202,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1143.2205771490183,
+        11530.172156706089,
+        -0.0
+      ]
+    },
+    {
+      "identity": 203,
+      "saved_identity": 203,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1217.0288072755734,
+        11562.374277683102,
+        -0.0
+      ]
+    },
+    {
+      "identity": 204,
+      "saved_identity": 204,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1199.4728674280316,
+        11596.266953866225,
+        -0.0
+      ]
+    },
+    {
+      "identity": 205,
+      "saved_identity": 205,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1193.9976787255257,
+        11636.54522795643,
+        -0.0
+      ]
+    },
+    {
+      "identity": 206,
+      "saved_identity": 206,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1116.7496037324763,
+        11589.174101371025,
+        -0.0
+      ]
+    },
+    {
+      "identity": 207,
+      "saved_identity": 207,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1196.7811170846858,
+        11505.09734957678,
+        -0.0
+      ]
+    },
+    {
+      "identity": 208,
+      "saved_identity": 208,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1237.4010273888755,
+        11624.86804336849,
+        -0.0
+      ]
+    },
+    {
+      "identity": 209,
+      "saved_identity": 209,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1159.4311032544679,
+        11611.021125700774,
+        -0.0
+      ]
+    },
+    {
+      "identity": 210,
+      "saved_identity": 210,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1149.1166469203727,
+        11568.42843938545,
+        -0.0
+      ]
+    },
+    {
+      "identity": 211,
+      "saved_identity": 211,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1241.9524946597007,
+        11508.048260273003,
+        -0.0
+      ]
+    },
+    {
+      "identity": 212,
+      "saved_identity": 212,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27386.058350147803,
+        -10598.321576351349,
+        0.0
+      ]
+    },
+    {
+      "identity": 213,
+      "saved_identity": 213,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27391.106866272767,
+        -10526.783864311194,
+        0.0
+      ]
+    },
+    {
+      "identity": 214,
+      "saved_identity": 214,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27451.499584609082,
+        -10430.002017027757,
+        0.0
+      ]
+    },
+    {
+      "identity": 215,
+      "saved_identity": 215,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27439.476811592907,
+        -10505.784562969042,
+        0.0
+      ]
+    },
+    {
+      "identity": 216,
+      "saved_identity": 216,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27363.841603171808,
+        -10561.48365766925,
+        0.0
+      ]
+    },
+    {
+      "identity": 217,
+      "saved_identity": 217,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27405.780826442962,
+        -10493.797278616197,
+        0.0
+      ]
+    },
+    {
+      "identity": 218,
+      "saved_identity": 218,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27488.232786102795,
+        -10440.673272720778,
+        0.0
+      ]
+    },
+    {
+      "identity": 219,
+      "saved_identity": 219,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27475.31929966004,
+        -10473.08384600274,
+        0.0
+      ]
+    },
+    {
+      "identity": 220,
+      "saved_identity": 220,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27459.096704350657,
+        -10584.927551752384,
+        0.0
+      ]
+    },
+    {
+      "identity": 221,
+      "saved_identity": 221,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27432.56972811985,
+        -10393.225932325517,
+        0.0
+      ]
+    },
+    {
+      "identity": 222,
+      "saved_identity": 222,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27438.962019562834,
+        -10469.580141262488,
+        0.0
+      ]
+    },
+    {
+      "identity": 223,
+      "saved_identity": 223,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27597.061872288734,
+        -10832.270359000922,
+        256.0
+      ]
+    },
+    {
+      "identity": 224,
+      "saved_identity": 224,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27420.391244612296,
+        -10562.378717582133,
+        0.0
+      ]
+    },
+    {
+      "identity": 225,
+      "saved_identity": 225,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27401.938934494498,
+        -10461.663414595507,
+        0.0
+      ]
+    },
+    {
+      "identity": 226,
+      "saved_identity": 226,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -2031.4330558455456,
+        -11979.00458455468,
+        0.0
+      ]
+    },
+    {
+      "identity": 227,
+      "saved_identity": 227,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -2146.9421470638545,
+        -11868.48062320876,
+        0.0
+      ]
+    },
+    {
+      "identity": 228,
+      "saved_identity": 228,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -2048.413639929874,
+        -11896.049084397595,
+        0.0
+      ]
+    },
+    {
+      "identity": 229,
+      "saved_identity": 229,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -2031.256442528025,
+        -11945.631540013652,
+        0.0
+      ]
+    },
+    {
+      "identity": 230,
+      "saved_identity": 230,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -2153.7649651961206,
+        -11907.228148388414,
+        0.0
+      ]
+    },
+    {
+      "identity": 231,
+      "saved_identity": 231,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -2013.1597677243083,
+        -11911.089034099032,
+        0.0
+      ]
+    },
+    {
+      "identity": 232,
+      "saved_identity": 232,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -2085.569387430447,
+        -11908.71297546416,
+        0.0
+      ]
+    },
+    {
+      "identity": 233,
+      "saved_identity": 233,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -2119.2399845674486,
+        -11910.763740917606,
+        0.0
+      ]
+    },
+    {
+      "identity": 234,
+      "saved_identity": 234,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -2020.583174751085,
+        -11860.681022861969,
+        0.0
+      ]
+    },
+    {
+      "identity": 235,
+      "saved_identity": 235,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -2120.26134348239,
+        -11835.87087951792,
+        0.0
+      ]
+    },
+    {
+      "identity": 236,
+      "saved_identity": 236,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -2070.253251195876,
+        -11947.042042047986,
+        0.0
+      ]
+    },
+    {
+      "identity": 237,
+      "saved_identity": 237,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -2052.7132355349004,
+        -11836.294438185072,
+        0.0
+      ]
+    },
+    {
+      "identity": 238,
+      "saved_identity": 238,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -2084.7648995557865,
+        -11832.913340661942,
+        0.0
+      ]
+    },
+    {
+      "identity": 239,
+      "saved_identity": 239,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -2148.2544895057263,
+        -11947.285908167656,
+        0.0
+      ]
+    },
+    {
+      "identity": 240,
+      "saved_identity": 240,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27029.0299974858,
+        12974.85570371668,
+        -0.0
+      ]
+    },
+    {
+      "identity": 241,
+      "saved_identity": 241,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27053.155370687175,
+        13115.670745747075,
+        -0.0
+      ]
+    },
+    {
+      "identity": 242,
+      "saved_identity": 242,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26995.8463118016,
+        13190.75010169998,
+        -0.0
+      ]
+    },
+    {
+      "identity": 243,
+      "saved_identity": 243,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27054.050128158382,
+        13054.133464778519,
+        -0.0
+      ]
+    },
+    {
+      "identity": 244,
+      "saved_identity": 244,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27032.831909392666,
+        13209.806947770609,
+        -0.0
+      ]
+    },
+    {
+      "identity": 245,
+      "saved_identity": 245,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26996.769281097575,
+        12975.561472848049,
+        -0.0
+      ]
+    },
+    {
+      "identity": 246,
+      "saved_identity": 246,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27060.872665972325,
+        13156.980105301376,
+        -0.0
+      ]
+    },
+    {
+      "identity": 247,
+      "saved_identity": 247,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27007.76447036969,
+        13116.057855084973,
+        -0.0
+      ]
+    },
+    {
+      "identity": 248,
+      "saved_identity": 248,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27013.162199822265,
+        13149.147822030902,
+        -0.0
+      ]
+    },
+    {
+      "identity": 249,
+      "saved_identity": 249,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26979.693552165663,
+        13149.961922169536,
+        -0.0
+      ]
+    },
+    {
+      "identity": 250,
+      "saved_identity": 250,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27061.935721283953,
+        12986.376442559698,
+        -0.0
+      ]
+    },
+    {
+      "identity": 251,
+      "saved_identity": 251,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27021.06627869277,
+        13045.206994417935,
+        -0.0
+      ]
+    },
+    {
+      "identity": 252,
+      "saved_identity": 252,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27025.40079426356,
+        13248.896834764248,
+        -0.0
+      ]
+    },
+    {
+      "identity": 253,
+      "saved_identity": 253,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26967.498636510914,
+        13113.504194503503,
+        -0.0
+      ]
+    },
+    {
+      "identity": 254,
+      "saved_identity": 254,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27003.46759201942,
+        13081.175385834693,
+        -0.0
+      ]
+    },
+    {
+      "identity": 255,
+      "saved_identity": 255,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -23521.53211688876,
+        13547.818971105302,
+        -0.0
+      ]
+    },
+    {
+      "identity": 256,
+      "saved_identity": 256,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -23376.59912092166,
+        13575.002580114988,
+        -0.0
+      ]
+    },
+    {
+      "identity": 257,
+      "saved_identity": 257,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -23338.014979669933,
+        13521.104263043171,
+        -0.0
+      ]
+    },
+    {
+      "identity": 258,
+      "saved_identity": 258,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -23424.698319808813,
+        13463.039001352181,
+        -0.0
+      ]
+    },
+    {
+      "identity": 259,
+      "saved_identity": 259,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -23339.86554992851,
+        13598.059826005485,
+        -0.0
+      ]
+    },
+    {
+      "identity": 260,
+      "saved_identity": 260,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -23344.01310164424,
+        13554.031394192594,
+        -0.0
+      ]
+    },
+    {
+      "identity": 261,
+      "saved_identity": 261,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -23440.707722456067,
+        13507.648150825924,
+        -0.0
+      ]
+    },
+    {
+      "identity": 262,
+      "saved_identity": 262,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -23373.091030152387,
+        13495.354320876913,
+        -0.0
+      ]
+    },
+    {
+      "identity": 263,
+      "saved_identity": 263,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -23380.748024733814,
+        13530.826172412331,
+        -0.0
+      ]
+    },
+    {
+      "identity": 264,
+      "saved_identity": 264,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -23412.748983636964,
+        13573.734493216269,
+        -0.0
+      ]
+    },
+    {
+      "identity": 265,
+      "saved_identity": 265,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -23376.04939322437,
+        13458.063919488759,
+        -0.0
+      ]
+    },
+    {
+      "identity": 266,
+      "saved_identity": 266,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -23484.723163960698,
+        13547.699358803171,
+        -0.0
+      ]
+    },
+    {
+      "identity": 267,
+      "saved_identity": 267,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -23477.92228311622,
+        13509.913317293309,
+        -0.0
+      ]
+    },
+    {
+      "identity": 268,
+      "saved_identity": 268,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -23449.288171278255,
+        13590.176493613313,
+        -0.0
+      ]
+    },
+    {
+      "identity": 269,
+      "saved_identity": 269,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -23406.71262018955,
+        13498.18933846102,
+        -0.0
+      ]
+    },
+    {
+      "identity": 270,
+      "saved_identity": 270,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -21103.149122310486,
+        14411.67740962699,
+        -0.0
+      ]
+    },
+    {
+      "identity": 271,
+      "saved_identity": 271,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -21000.98583344786,
+        14476.375950182168,
+        -0.0
+      ]
+    },
+    {
+      "identity": 272,
+      "saved_identity": 272,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -20846.292643013177,
+        14481.978814360513,
+        -0.0
+      ]
+    },
+    {
+      "identity": 273,
+      "saved_identity": 273,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -20803.467686379146,
+        14446.035112158352,
+        -0.0
+      ]
+    },
+    {
+      "identity": 274,
+      "saved_identity": 274,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -21210.62067977995,
+        14599.19941400015,
+        -0.0
+      ]
+    },
+    {
+      "identity": 275,
+      "saved_identity": 275,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -20918.294248766328,
+        14483.053923657892,
+        -0.0
+      ]
+    },
+    {
+      "identity": 276,
+      "saved_identity": 276,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -20861.323222664065,
+        14566.932364762293,
+        -0.0
+      ]
+    },
+    {
+      "identity": 277,
+      "saved_identity": 277,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -20842.227816998253,
+        14529.736060026964,
+        -0.0
+      ]
+    },
+    {
+      "identity": 278,
+      "saved_identity": 278,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -21070.4692298687,
+        14421.50547620675,
+        -0.0
+      ]
+    },
+    {
+      "identity": 279,
+      "saved_identity": 279,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -20874.966618199516,
+        14525.384609854722,
+        -0.0
+      ]
+    },
+    {
+      "identity": 280,
+      "saved_identity": 280,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -20839.602093257377,
+        14441.048673604098,
+        -0.0
+      ]
+    },
+    {
+      "identity": 281,
+      "saved_identity": 281,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -20910.318836242,
+        14540.18619175987,
+        -0.0
+      ]
+    },
+    {
+      "identity": 282,
+      "saved_identity": 282,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -21108.19913981813,
+        14514.067942914146,
+        -0.0
+      ]
+    },
+    {
+      "identity": 283,
+      "saved_identity": 283,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -20743.553577991275,
+        14409.147408428993,
+        -0.0
+      ]
+    },
+    {
+      "identity": 284,
+      "saved_identity": 284,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -20797.586698884537,
+        14570.137117946042,
+        -0.0
+      ]
+    },
+    {
+      "identity": 285,
+      "saved_identity": 285,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -17851.577775872353,
+        13704.173371995872,
+        -0.0
+      ]
+    },
+    {
+      "identity": 286,
+      "saved_identity": 286,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -17991.311079335366,
+        13798.512566919237,
+        -0.0
+      ]
+    },
+    {
+      "identity": 287,
+      "saved_identity": 287,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -17829.718564243565,
+        13671.84207822009,
+        -0.0
+      ]
+    },
+    {
+      "identity": 288,
+      "saved_identity": 288,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -17961.007945481237,
+        13662.827571511129,
+        -0.0
+      ]
+    },
+    {
+      "identity": 289,
+      "saved_identity": 289,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -17894.302448286617,
+        13727.83356827746,
+        -0.0
+      ]
+    },
+    {
+      "identity": 290,
+      "saved_identity": 290,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -17965.83846967453,
+        13832.261678753954,
+        -0.0
+      ]
+    },
+    {
+      "identity": 291,
+      "saved_identity": 291,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -17983.062446141466,
+        13732.459686191389,
+        -0.0
+      ]
+    },
+    {
+      "identity": 292,
+      "saved_identity": 292,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -17993.44780767623,
+        13675.090224653824,
+        -0.0
+      ]
+    },
+    {
+      "identity": 293,
+      "saved_identity": 293,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -18019.627622700908,
+        13751.185521019534,
+        -0.0
+      ]
+    },
+    {
+      "identity": 294,
+      "saved_identity": 294,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -17952.70904570523,
+        13798.70081452229,
+        -0.0
+      ]
+    },
+    {
+      "identity": 295,
+      "saved_identity": 295,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -17948.07095431038,
+        13698.51354612723,
+        -0.0
+      ]
+    },
+    {
+      "identity": 296,
+      "saved_identity": 296,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -17984.350902442577,
+        13864.536626982173,
+        -0.0
+      ]
+    },
+    {
+      "identity": 297,
+      "saved_identity": 297,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -17973.286094383096,
+        13765.729674408281,
+        -0.0
+      ]
+    },
+    {
+      "identity": 298,
+      "saved_identity": 298,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -17936.86870753899,
+        13746.081566138133,
+        -0.0
+      ]
+    },
+    {
+      "identity": 299,
+      "saved_identity": 299,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -17999.131716464297,
+        13637.188648489637,
+        -0.0
+      ]
+    },
+    {
+      "identity": 300,
+      "saved_identity": 300,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -15722.750102870757,
+        15487.205726736458,
+        -0.0
+      ]
+    },
+    {
+      "identity": 301,
+      "saved_identity": 301,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -15760.848084679503,
+        15462.695012877557,
+        -0.0
+      ]
+    },
+    {
+      "identity": 302,
+      "saved_identity": 302,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -15685.963361170048,
+        15456.846171740788,
+        -0.0
+      ]
+    },
+    {
+      "identity": 303,
+      "saved_identity": 303,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -15770.695592357404,
+        15390.07367267153,
+        -0.0
+      ]
+    },
+    {
+      "identity": 304,
+      "saved_identity": 304,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -15736.325297797588,
+        15371.874350200304,
+        -0.0
+      ]
+    },
+    {
+      "identity": 305,
+      "saved_identity": 305,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -15728.49529031593,
+        15416.09426196986,
+        -0.0
+      ]
+    },
+    {
+      "identity": 306,
+      "saved_identity": 306,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -15699.1061406877,
+        15380.981316647018,
+        -0.0
+      ]
+    },
+    {
+      "identity": 307,
+      "saved_identity": 307,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -15797.769717468247,
+        15356.778943538933,
+        -0.0
+      ]
+    },
+    {
+      "identity": 308,
+      "saved_identity": 308,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -15921.651131540631,
+        15395.022950491633,
+        256.0
+      ]
+    },
+    {
+      "identity": 309,
+      "saved_identity": 309,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -15807.617425091936,
+        15427.241225821324,
+        -0.0
+      ]
+    },
+    {
+      "identity": 310,
+      "saved_identity": 310,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -15726.44263076393,
+        15448.694417337496,
+        -0.0
+      ]
+    },
+    {
+      "identity": 311,
+      "saved_identity": 311,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -15758.404855165267,
+        15331.701641238822,
+        -0.0
+      ]
+    },
+    {
+      "identity": 312,
+      "saved_identity": 312,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -15888.305055375144,
+        15408.226205539253,
+        256.0
+      ]
+    },
+    {
+      "identity": 313,
+      "saved_identity": 313,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -15686.552870848169,
+        15420.315042204558,
+        -0.0
+      ]
+    },
+    {
+      "identity": 314,
+      "saved_identity": 314,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -15767.489603530614,
+        15426.027166102489,
+        -0.0
+      ]
+    },
+    {
+      "identity": 315,
+      "saved_identity": 315,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -8777.039314671718,
+        14363.904906246775,
+        -0.0
+      ]
+    },
+    {
+      "identity": 316,
+      "saved_identity": 316,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -8901.694810486111,
+        14415.492071359222,
+        -0.0
+      ]
+    },
+    {
+      "identity": 317,
+      "saved_identity": 317,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -8812.099070320439,
+        14290.379220834318,
+        -0.0
+      ]
+    },
+    {
+      "identity": 318,
+      "saved_identity": 318,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -8920.956826570988,
+        14342.449975555943,
+        -0.0
+      ]
+    },
+    {
+      "identity": 319,
+      "saved_identity": 319,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -8848.935315058538,
+        14279.865935753356,
+        -0.0
+      ]
+    },
+    {
+      "identity": 320,
+      "saved_identity": 320,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -8883.428280597343,
+        14298.639851928223,
+        -0.0
+      ]
+    },
+    {
+      "identity": 321,
+      "saved_identity": 321,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -8809.560184464464,
+        14365.703059289663,
+        -0.0
+      ]
+    },
+    {
+      "identity": 322,
+      "saved_identity": 322,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -8851.853738185946,
+        14332.974997365505,
+        -0.0
+      ]
+    },
+    {
+      "identity": 323,
+      "saved_identity": 323,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -8797.192351989079,
+        14250.765185138758,
+        -0.0
+      ]
+    },
+    {
+      "identity": 324,
+      "saved_identity": 324,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -8894.788182405206,
+        14383.341343184145,
+        -0.0
+      ]
+    },
+    {
+      "identity": 325,
+      "saved_identity": 325,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -8851.550911180177,
+        14371.192633462108,
+        -0.0
+      ]
+    },
+    {
+      "identity": 326,
+      "saved_identity": 326,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -8886.544589443867,
+        14333.582298140409,
+        -0.0
+      ]
+    },
+    {
+      "identity": 327,
+      "saved_identity": 327,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -8827.948085755796,
+        14412.209460191134,
+        -0.0
+      ]
+    },
+    {
+      "identity": 328,
+      "saved_identity": 328,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -8799.29713502483,
+        14329.452125743794,
+        -0.0
+      ]
+    },
+    {
+      "identity": 329,
+      "saved_identity": 329,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -8860.162538364946,
+        14412.743480039806,
+        -0.0
+      ]
+    },
+    {
+      "identity": 330,
+      "saved_identity": 330,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -6779.623794785545,
+        14244.753904985186,
+        -0.0
+      ]
+    },
+    {
+      "identity": 331,
+      "saved_identity": 331,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -6760.967516519217,
+        14290.714189634158,
+        -0.0
+      ]
+    },
+    {
+      "identity": 332,
+      "saved_identity": 332,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -6733.989724455301,
+        14233.837734156541,
+        -0.0
+      ]
+    },
+    {
+      "identity": 333,
+      "saved_identity": 333,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -6720.5702043928795,
+        14149.305143124635,
+        -0.0
+      ]
+    },
+    {
+      "identity": 334,
+      "saved_identity": 334,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -6800.4971493861485,
+        14205.396420656338,
+        -0.0
+      ]
+    },
+    {
+      "identity": 335,
+      "saved_identity": 335,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -6758.681256046394,
+        14194.21828426844,
+        -0.0
+      ]
+    },
+    {
+      "identity": 336,
+      "saved_identity": 336,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -6675.293909690795,
+        14263.366937756502,
+        -0.0
+      ]
+    },
+    {
+      "identity": 337,
+      "saved_identity": 337,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -6688.268196443793,
+        14146.143066795781,
+        -0.0
+      ]
+    },
+    {
+      "identity": 338,
+      "saved_identity": 338,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -6728.663844488912,
+        14272.843734889308,
+        -0.0
+      ]
+    },
+    {
+      "identity": 339,
+      "saved_identity": 339,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -6768.273232414161,
+        14159.75885865325,
+        -0.0
+      ]
+    },
+    {
+      "identity": 340,
+      "saved_identity": 340,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -6662.675939606162,
+        14231.243889660396,
+        -0.0
+      ]
+    },
+    {
+      "identity": 341,
+      "saved_identity": 341,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -6775.141400137853,
+        14127.000586422733,
+        -0.0
+      ]
+    },
+    {
+      "identity": 342,
+      "saved_identity": 342,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -6701.590051480487,
+        14230.169681920028,
+        -0.0
+      ]
+    },
+    {
+      "identity": 343,
+      "saved_identity": 343,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -6722.254342641685,
+        14187.374607790054,
+        -0.0
+      ]
+    },
+    {
+      "identity": 344,
+      "saved_identity": 344,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -6685.8155118351315,
+        14194.801771415072,
+        -0.0
+      ]
+    },
+    {
+      "identity": 345,
+      "saved_identity": 345,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -3506.930519416521,
+        11782.781802522797,
+        -0.0
+      ]
+    },
+    {
+      "identity": 346,
+      "saved_identity": 346,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -3509.0589449496238,
+        11849.857958674154,
+        -0.0
+      ]
+    },
+    {
+      "identity": 347,
+      "saved_identity": 347,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -3467.5083033145493,
+        11969.776287826096,
+        -0.0
+      ]
+    },
+    {
+      "identity": 348,
+      "saved_identity": 348,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -3502.5667443002953,
+        11986.365847854418,
+        -0.0
+      ]
+    },
+    {
+      "identity": 349,
+      "saved_identity": 349,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -3513.799063628083,
+        11815.542972957379,
+        -0.0
+      ]
+    },
+    {
+      "identity": 350,
+      "saved_identity": 350,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -3480.2956916110124,
+        11887.845956400377,
+        -0.0
+      ]
+    },
+    {
+      "identity": 351,
+      "saved_identity": 351,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -3512.4000240381038,
+        12082.843799921111,
+        -0.0
+      ]
+    },
+    {
+      "identity": 352,
+      "saved_identity": 352,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -3458.9052200771694,
+        11931.095302807722,
+        -0.0
+      ]
+    },
+    {
+      "identity": 353,
+      "saved_identity": 353,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -3445.5457354973487,
+        12004.97213937782,
+        -0.0
+      ]
+    },
+    {
+      "identity": 354,
+      "saved_identity": 354,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -3547.7627619215577,
+        11875.963963123218,
+        -0.0
+      ]
+    },
+    {
+      "identity": 355,
+      "saved_identity": 355,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -3536.422231008316,
+        11924.192243865074,
+        -0.0
+      ]
+    },
+    {
+      "identity": 356,
+      "saved_identity": 356,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -3489.2243953496513,
+        12040.480392728188,
+        -0.0
+      ]
+    },
+    {
+      "identity": 357,
+      "saved_identity": 357,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -3471.7499485205267,
+        11843.326047080333,
+        -0.0
+      ]
+    },
+    {
+      "identity": 358,
+      "saved_identity": 358,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -3499.5624062159227,
+        11953.706922535168,
+        -0.0
+      ]
+    },
+    {
+      "identity": 359,
+      "saved_identity": 359,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -3514.322923865876,
+        11887.44860852951,
+        -0.0
+      ]
+    },
+    {
+      "identity": 360,
+      "saved_identity": 360,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26819.70159085244,
+        -12153.015084076433,
+        0.0
+      ]
+    },
+    {
+      "identity": 361,
+      "saved_identity": 361,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26747.67882798546,
+        -12193.395293051037,
+        0.0
+      ]
+    },
+    {
+      "identity": 362,
+      "saved_identity": 362,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26700.852557392027,
+        -12289.087594868239,
+        0.0
+      ]
+    },
+    {
+      "identity": 363,
+      "saved_identity": 363,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26650.576825174874,
+        -12121.016983527268,
+        0.0
+      ]
+    },
+    {
+      "identity": 364,
+      "saved_identity": 364,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26640.754876879495,
+        -12189.706521200686,
+        0.0
+      ]
+    },
+    {
+      "identity": 365,
+      "saved_identity": 365,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26763.688029072397,
+        -12113.697139571419,
+        0.0
+      ]
+    },
+    {
+      "identity": 366,
+      "saved_identity": 366,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26687.7243971681,
+        -12147.744198599512,
+        0.0
+      ]
+    },
+    {
+      "identity": 367,
+      "saved_identity": 367,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26683.555074729364,
+        -12215.930171373997,
+        0.0
+      ]
+    },
+    {
+      "identity": 368,
+      "saved_identity": 368,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26652.236327350984,
+        -12054.188476906384,
+        0.0
+      ]
+    },
+    {
+      "identity": 369,
+      "saved_identity": 369,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26709.694515539075,
+        -12249.348227725613,
+        0.0
+      ]
+    },
+    {
+      "identity": 370,
+      "saved_identity": 370,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26642.52171997661,
+        -12226.482991538409,
+        0.0
+      ]
+    },
+    {
+      "identity": 371,
+      "saved_identity": 371,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26676.41961250349,
+        -12179.774592884907,
+        0.0
+      ]
+    },
+    {
+      "identity": 372,
+      "saved_identity": 372,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26743.1143649633,
+        -12273.60033740192,
+        0.0
+      ]
+    },
+    {
+      "identity": 373,
+      "saved_identity": 373,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26826.227297149017,
+        -12201.512640979057,
+        0.0
+      ]
+    },
+    {
+      "identity": 374,
+      "saved_identity": 374,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26614.58132257121,
+        -12105.255788132048,
+        0.0
+      ]
+    },
+    {
+      "identity": 375,
+      "saved_identity": 375,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26457.840077494886,
+        -6814.77517973192,
+        0.0
+      ]
+    },
+    {
+      "identity": 376,
+      "saved_identity": 376,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26469.895328825987,
+        -6774.4156463152085,
+        0.0
+      ]
+    },
+    {
+      "identity": 377,
+      "saved_identity": 377,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26528.855147625494,
+        -6750.509192148303,
+        0.0
+      ]
+    },
+    {
+      "identity": 378,
+      "saved_identity": 378,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26499.43606457891,
+        -6694.413520151777,
+        0.0
+      ]
+    },
+    {
+      "identity": 379,
+      "saved_identity": 379,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26489.888181860537,
+        -6733.726640128481,
+        0.0
+      ]
+    },
+    {
+      "identity": 380,
+      "saved_identity": 380,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26389.649748520573,
+        -6703.146036402104,
+        0.0
+      ]
+    },
+    {
+      "identity": 381,
+      "saved_identity": 381,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26450.260926188108,
+        -6660.4273933529885,
+        0.0
+      ]
+    },
+    {
+      "identity": 382,
+      "saved_identity": 382,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26445.79145132601,
+        -6692.9242039863375,
+        0.0
+      ]
+    },
+    {
+      "identity": 383,
+      "saved_identity": 383,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26425.49866782431,
+        -6809.132838267624,
+        0.0
+      ]
+    },
+    {
+      "identity": 384,
+      "saved_identity": 384,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26437.33978218536,
+        -6736.003155552728,
+        0.0
+      ]
+    },
+    {
+      "identity": 385,
+      "saved_identity": 385,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26503.41373423492,
+        -6661.712879341145,
+        0.0
+      ]
+    },
+    {
+      "identity": 386,
+      "saved_identity": 386,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26418.5273718024,
+        -6776.027488233652,
+        0.0
+      ]
+    },
+    {
+      "identity": 387,
+      "saved_identity": 387,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26504.870903386673,
+        -6791.147352220035,
+        0.0
+      ]
+    },
+    {
+      "identity": 388,
+      "saved_identity": 388,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26402.16366462735,
+        -6736.409876782808,
+        0.0
+      ]
+    },
+    {
+      "identity": 389,
+      "saved_identity": 389,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -26407.861045229307,
+        -6669.790879732691,
+        0.0
+      ]
+    },
+    {
+      "identity": 390,
+      "saved_identity": 390,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27723.662932197818,
+        -4478.217793093519,
+        0.0
+      ]
+    },
+    {
+      "identity": 391,
+      "saved_identity": 391,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27689.421271921074,
+        -4493.152042934705,
+        0.0
+      ]
+    },
+    {
+      "identity": 392,
+      "saved_identity": 392,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27752.414860297707,
+        -4520.537022117781,
+        0.0
+      ]
+    },
+    {
+      "identity": 393,
+      "saved_identity": 393,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27681.43973744639,
+        -4526.483075993007,
+        0.0
+      ]
+    },
+    {
+      "identity": 394,
+      "saved_identity": 394,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27623.35802554444,
+        -4490.156344366714,
+        0.0
+      ]
+    },
+    {
+      "identity": 395,
+      "saved_identity": 395,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27605.916030166496,
+        -4522.564257351042,
+        0.0
+      ]
+    },
+    {
+      "identity": 396,
+      "saved_identity": 396,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27650.46001464764,
+        -4405.517575066792,
+        0.0
+      ]
+    },
+    {
+      "identity": 397,
+      "saved_identity": 397,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27659.625448323244,
+        -4451.662816999494,
+        0.0
+      ]
+    },
+    {
+      "identity": 398,
+      "saved_identity": 398,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27667.05605355147,
+        -4559.201855303028,
+        0.0
+      ]
+    },
+    {
+      "identity": 399,
+      "saved_identity": 399,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27713.872190201255,
+        -4550.4823622815475,
+        0.0
+      ]
+    },
+    {
+      "identity": 400,
+      "saved_identity": 400,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27649.27628314702,
+        -4526.113058870226,
+        0.0
+      ]
+    },
+    {
+      "identity": 401,
+      "saved_identity": 401,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27625.623239001477,
+        -4448.493262610246,
+        0.0
+      ]
+    },
+    {
+      "identity": 402,
+      "saved_identity": 402,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27684.80767133696,
+        -4417.2966327880395,
+        0.0
+      ]
+    },
+    {
+      "identity": 403,
+      "saved_identity": 403,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27657.124460304713,
+        -4489.260825836924,
+        0.0
+      ]
+    },
+    {
+      "identity": 404,
+      "saved_identity": 404,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27721.67199965805,
+        -4436.222171730148,
+        0.0
+      ]
+    },
+    {
+      "identity": 405,
+      "saved_identity": 405,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -28837.035934161682,
+        -1261.1769603168304,
+        0.0
+      ]
+    },
+    {
+      "identity": 406,
+      "saved_identity": 406,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -28978.257853635234,
+        -1181.195738328736,
+        0.0
+      ]
+    },
+    {
+      "identity": 407,
+      "saved_identity": 407,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -28923.76206569067,
+        -1249.291690686701,
+        0.0
+      ]
+    },
+    {
+      "identity": 408,
+      "saved_identity": 408,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -28936.253904860863,
+        -1200.5993997606176,
+        0.0
+      ]
+    },
+    {
+      "identity": 409,
+      "saved_identity": 409,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -28878.98346300915,
+        -1242.4210636677647,
+        0.0
+      ]
+    },
+    {
+      "identity": 410,
+      "saved_identity": 410,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -28897.3493811857,
+        -1182.332661450156,
+        0.0
+      ]
+    },
+    {
+      "identity": 411,
+      "saved_identity": 411,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -28899.851340228062,
+        -1282.0278885513387,
+        0.0
+      ]
+    },
+    {
+      "identity": 412,
+      "saved_identity": 412,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -28900.25540755845,
+        -1316.911470347369,
+        0.0
+      ]
+    },
+    {
+      "identity": 413,
+      "saved_identity": 413,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -28996.71558676343,
+        -1149.085453752671,
+        0.0
+      ]
+    },
+    {
+      "identity": 414,
+      "saved_identity": 414,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -28814.36522937278,
+        -1329.0037965195386,
+        0.0
+      ]
+    },
+    {
+      "identity": 415,
+      "saved_identity": 415,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29015.45632034576,
+        -1185.833436982351,
+        0.0
+      ]
+    },
+    {
+      "identity": 416,
+      "saved_identity": 416,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -28819.267961982747,
+        -1294.1469176076098,
+        0.0
+      ]
+    },
+    {
+      "identity": 417,
+      "saved_identity": 417,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -28901.474164831372,
+        -1147.8499199108833,
+        0.0
+      ]
+    },
+    {
+      "identity": 418,
+      "saved_identity": 418,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -28861.21993644746,
+        -1312.7117773437808,
+        0.0
+      ]
+    },
+    {
+      "identity": 419,
+      "saved_identity": 419,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -28969.288213626303,
+        -1218.923721005032,
+        0.0
+      ]
+    },
+    {
+      "identity": 420,
+      "saved_identity": 420,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29421.26274632328,
+        4415.313883035019,
+        -0.0
+      ]
+    },
+    {
+      "identity": 421,
+      "saved_identity": 421,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29439.694326354504,
+        4365.36774900047,
+        -0.0
+      ]
+    },
+    {
+      "identity": 422,
+      "saved_identity": 422,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29460.063883319566,
+        4487.913931224194,
+        -0.0
+      ]
+    },
+    {
+      "identity": 423,
+      "saved_identity": 423,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29509.384985834557,
+        4344.784347795894,
+        -0.0
+      ]
+    },
+    {
+      "identity": 424,
+      "saved_identity": 424,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29584.60410458187,
+        4397.894393283334,
+        -0.0
+      ]
+    },
+    {
+      "identity": 425,
+      "saved_identity": 425,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29471.990087710674,
+        4377.046094301213,
+        -0.0
+      ]
+    },
+    {
+      "identity": 426,
+      "saved_identity": 426,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29510.65443783344,
+        4398.7869786548445,
+        -0.0
+      ]
+    },
+    {
+      "identity": 427,
+      "saved_identity": 427,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29456.874410795772,
+        4451.062415428208,
+        -0.0
+      ]
+    },
+    {
+      "identity": 428,
+      "saved_identity": 428,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29549.670090287706,
+        4396.522639240391,
+        -0.0
+      ]
+    },
+    {
+      "identity": 429,
+      "saved_identity": 429,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29541.62617046886,
+        4332.288894550382,
+        -0.0
+      ]
+    },
+    {
+      "identity": 430,
+      "saved_identity": 430,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29465.493036546988,
+        4418.965537768438,
+        -0.0
+      ]
+    },
+    {
+      "identity": 431,
+      "saved_identity": 431,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29504.465102945796,
+        4442.432960018059,
+        -0.0
+      ]
+    },
+    {
+      "identity": 432,
+      "saved_identity": 432,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29407.413064743676,
+        4380.063074169808,
+        -0.0
+      ]
+    },
+    {
+      "identity": 433,
+      "saved_identity": 433,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29504.790076615962,
+        4477.517834675653,
+        -0.0
+      ]
+    },
+    {
+      "identity": 434,
+      "saved_identity": 434,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29544.311889350767,
+        4440.303853555148,
+        -0.0
+      ]
+    },
+    {
+      "identity": 435,
+      "saved_identity": 435,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27311.556013884958,
+        5109.899195559821,
+        -0.0
+      ]
+    },
+    {
+      "identity": 436,
+      "saved_identity": 436,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27375.006214655,
+        5197.098106229588,
+        -0.0
+      ]
+    },
+    {
+      "identity": 437,
+      "saved_identity": 437,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27409.468501835447,
+        5025.762415633758,
+        -0.0
+      ]
+    },
+    {
+      "identity": 438,
+      "saved_identity": 438,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27420.555314044097,
+        5135.164318221206,
+        -0.0
+      ]
+    },
+    {
+      "identity": 439,
+      "saved_identity": 439,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27374.406475645923,
+        5008.147030248704,
+        -0.0
+      ]
+    },
+    {
+      "identity": 440,
+      "saved_identity": 440,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27457.7975844552,
+        5153.053719724611,
+        -0.0
+      ]
+    },
+    {
+      "identity": 441,
+      "saved_identity": 441,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27475.2804584679,
+        5017.801870827009,
+        -0.0
+      ]
+    },
+    {
+      "identity": 442,
+      "saved_identity": 442,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27372.63113106687,
+        5106.18361213185,
+        -0.0
+      ]
+    },
+    {
+      "identity": 443,
+      "saved_identity": 443,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27335.924890086626,
+        5060.871861818986,
+        -0.0
+      ]
+    },
+    {
+      "identity": 444,
+      "saved_identity": 444,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27407.840815624626,
+        5176.495949869315,
+        -0.0
+      ]
+    },
+    {
+      "identity": 445,
+      "saved_identity": 445,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27439.56737488971,
+        5060.674470533953,
+        -0.0
+      ]
+    },
+    {
+      "identity": 446,
+      "saved_identity": 446,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27409.610818360998,
+        5098.483441259674,
+        -0.0
+      ]
+    },
+    {
+      "identity": 447,
+      "saved_identity": 447,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27368.785761445062,
+        5048.2708487602795,
+        -0.0
+      ]
+    },
+    {
+      "identity": 448,
+      "saved_identity": 448,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27441.74953673161,
+        5014.547841036542,
+        -0.0
+      ]
+    },
+    {
+      "identity": 449,
+      "saved_identity": 449,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -27450.488444896568,
+        5101.1295139449985,
+        -0.0
+      ]
+    },
+    {
+      "identity": 450,
+      "saved_identity": 450,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29357.908026316625,
+        7814.13177851064,
+        -0.0
+      ]
+    },
+    {
+      "identity": 451,
+      "saved_identity": 451,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29278.8065820388,
+        7715.979119332059,
+        -0.0
+      ]
+    },
+    {
+      "identity": 452,
+      "saved_identity": 452,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29342.323972909682,
+        7851.834690598869,
+        -0.0
+      ]
+    },
+    {
+      "identity": 453,
+      "saved_identity": 453,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29332.413157689352,
+        7725.439661466497,
+        -0.0
+      ]
+    },
+    {
+      "identity": 454,
+      "saved_identity": 454,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29298.393380145553,
+        7818.052101902185,
+        -0.0
+      ]
+    },
+    {
+      "identity": 455,
+      "saved_identity": 455,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29392.18226439717,
+        7917.488110309138,
+        80.0
+      ]
+    },
+    {
+      "identity": 456,
+      "saved_identity": 456,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29314.561067682454,
+        7785.998086169765,
+        -0.0
+      ]
+    },
+    {
+      "identity": 457,
+      "saved_identity": 457,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29283.021793956676,
+        7749.338081526052,
+        -0.0
+      ]
+    },
+    {
+      "identity": 458,
+      "saved_identity": 458,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29394.82184030391,
+        7885.282151245828,
+        80.0
+      ]
+    },
+    {
+      "identity": 459,
+      "saved_identity": 459,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29394.805252137,
+        7851.807271685005,
+        68.46824489795918
+      ]
+    },
+    {
+      "identity": 460,
+      "saved_identity": 460,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29358.068432429107,
+        7758.030961021805,
+        -0.0
+      ]
+    },
+    {
+      "identity": 461,
+      "saved_identity": 461,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29329.585507048603,
+        7958.067523931265,
+        96.0
+      ]
+    },
+    {
+      "identity": 462,
+      "saved_identity": 462,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29280.015104462393,
+        7783.101503467692,
+        -0.0
+      ]
+    },
+    {
+      "identity": 463,
+      "saved_identity": 463,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29358.12825159039,
+        7887.67033369642,
+        -0.0
+      ]
+    },
+    {
+      "identity": 464,
+      "saved_identity": 464,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29292.191315561806,
+        7852.976924055164,
+        -0.0
+      ]
+    },
+    {
+      "identity": 465,
+      "saved_identity": 465,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29183.903062110738,
+        10119.591991626787,
+        -0.0
+      ]
+    },
+    {
+      "identity": 466,
+      "saved_identity": 466,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29320.54973921204,
+        10104.841354882374,
+        -0.0
+      ]
+    },
+    {
+      "identity": 467,
+      "saved_identity": 467,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29214.546755681902,
+        10043.994285266743,
+        -0.0
+      ]
+    },
+    {
+      "identity": 468,
+      "saved_identity": 468,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29085.746516553885,
+        10012.733063998063,
+        -0.0
+      ]
+    },
+    {
+      "identity": 469,
+      "saved_identity": 469,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29213.922544509605,
+        10081.92091782597,
+        -0.0
+      ]
+    },
+    {
+      "identity": 470,
+      "saved_identity": 470,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29151.178673368162,
+        10119.055245426069,
+        -0.0
+      ]
+    },
+    {
+      "identity": 471,
+      "saved_identity": 471,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29089.30469503985,
+        10045.871055574842,
+        -0.0
+      ]
+    },
+    {
+      "identity": 472,
+      "saved_identity": 472,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29009.615803993573,
+        10153.486649013064,
+        -0.0
+      ]
+    },
+    {
+      "identity": 473,
+      "saved_identity": 473,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29248.79175229854,
+        10075.681835863335,
+        -0.0
+      ]
+    },
+    {
+      "identity": 474,
+      "saved_identity": 474,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29313.353823673307,
+        10137.094265607664,
+        -0.0
+      ]
+    },
+    {
+      "identity": 475,
+      "saved_identity": 475,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29297.338270192788,
+        10072.0828666751,
+        -0.0
+      ]
+    },
+    {
+      "identity": 476,
+      "saved_identity": 476,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29171.020484882436,
+        10218.71363724694,
+        -0.0
+      ]
+    },
+    {
+      "identity": 477,
+      "saved_identity": 477,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29072.397371536266,
+        10151.60417818812,
+        -0.0
+      ]
+    },
+    {
+      "identity": 478,
+      "saved_identity": 478,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29255.314869813974,
+        10118.905385399861,
+        -0.0
+      ]
+    },
+    {
+      "identity": 479,
+      "saved_identity": 479,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -29165.49842874785,
+        10186.43353586185,
+        -0.0
+      ]
+    },
+    {
+      "identity": 480,
+      "saved_identity": 480,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1320.33132478823,
+        -10125.506170732639,
+        0.0
+      ]
+    },
+    {
+      "identity": 481,
+      "saved_identity": 481,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1351.6989403726711,
+        -10041.569582323049,
+        0.0
+      ]
+    },
+    {
+      "identity": 482,
+      "saved_identity": 482,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1376.4651082151133,
+        -10003.114728090075,
+        0.0
+      ]
+    },
+    {
+      "identity": 483,
+      "saved_identity": 483,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -2115.0619374379617,
+        -9835.969530630517,
+        0.0
+      ]
+    },
+    {
+      "identity": 484,
+      "saved_identity": 484,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1276.7662477837794,
+        -10105.2719164698,
+        0.0
+      ]
+    },
+    {
+      "identity": 485,
+      "saved_identity": 485,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1327.5740385856018,
+        -9939.603924273164,
+        0.0
+      ]
+    },
+    {
+      "identity": 486,
+      "saved_identity": 486,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1400.1692360961829,
+        -10039.674842967548,
+        0.0
+      ]
+    },
+    {
+      "identity": 487,
+      "saved_identity": 487,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1371.6364826375898,
+        -9965.934161146504,
+        0.0
+      ]
+    },
+    {
+      "identity": 488,
+      "saved_identity": 488,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1311.0117216822562,
+        -10009.747064076333,
+        0.0
+      ]
+    },
+    {
+      "identity": 489,
+      "saved_identity": 489,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1395.8038003439333,
+        -10072.319935139327,
+        0.0
+      ]
+    },
+    {
+      "identity": 490,
+      "saved_identity": 490,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1300.4284047124886,
+        -9976.123878540597,
+        0.0
+      ]
+    },
+    {
+      "identity": 491,
+      "saved_identity": 491,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1262.0514431497245,
+        -10004.791368415996,
+        0.0
+      ]
+    },
+    {
+      "identity": 492,
+      "saved_identity": 492,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1377.9960281596943,
+        -10105.70880416132,
+        0.0
+      ]
+    },
+    {
+      "identity": 493,
+      "saved_identity": 493,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1274.7918503820026,
+        -10073.127083541705,
+        0.0
+      ]
+    },
+    {
+      "identity": 494,
+      "saved_identity": 494,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1262.0826923024936,
+        -10040.310640384305,
+        0.0
+      ]
+    },
+    {
+      "identity": 495,
+      "saved_identity": 495,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1078.3291386066062,
+        -7488.39667741779,
+        0.0
+      ]
+    },
+    {
+      "identity": 496,
+      "saved_identity": 496,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1109.7130031614604,
+        -7427.485910452599,
+        0.0
+      ]
+    },
+    {
+      "identity": 497,
+      "saved_identity": 497,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1034.4470782644084,
+        -7525.687067305489,
+        0.0
+      ]
+    },
+    {
+      "identity": 498,
+      "saved_identity": 498,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1146.6516504757872,
+        -7535.156429053037,
+        0.0
+      ]
+    },
+    {
+      "identity": 499,
+      "saved_identity": 499,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1147.3128380496164,
+        -7602.050568817529,
+        0.0
+      ]
+    },
+    {
+      "identity": 500,
+      "saved_identity": 500,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1022.7476579589462,
+        -7491.062926295988,
+        0.0
+      ]
+    },
+    {
+      "identity": 501,
+      "saved_identity": 501,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1147.3845812868399,
+        -7501.79179900751,
+        0.0
+      ]
+    },
+    {
+      "identity": 502,
+      "saved_identity": 502,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1121.645398241379,
+        -7466.4609409505765,
+        0.0
+      ]
+    },
+    {
+      "identity": 503,
+      "saved_identity": 503,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -933.3015280994175,
+        -7485.661503764669,
+        0.0
+      ]
+    },
+    {
+      "identity": 504,
+      "saved_identity": 504,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -972.3801324110309,
+        -7511.461112081897,
+        0.0
+      ]
+    },
+    {
+      "identity": 505,
+      "saved_identity": 505,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1042.5637326831522,
+        -7452.546337428083,
+        0.0
+      ]
+    },
+    {
+      "identity": 506,
+      "saved_identity": 506,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1091.7727041622657,
+        -7388.148417926382,
+        0.0
+      ]
+    },
+    {
+      "identity": 507,
+      "saved_identity": 507,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1076.787647469389,
+        -7454.69760776573,
+        0.0
+      ]
+    },
+    {
+      "identity": 508,
+      "saved_identity": 508,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1070.8311579721073,
+        -7520.787223407513,
+        0.0
+      ]
+    },
+    {
+      "identity": 509,
+      "saved_identity": 509,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1105.2758726726229,
+        -7525.88833920831,
+        0.0
+      ]
+    },
+    {
+      "identity": 510,
+      "saved_identity": 510,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -178.45214554161038,
+        -3808.3921023995913,
+        0.0
+      ]
+    },
+    {
+      "identity": 511,
+      "saved_identity": 511,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -241.12403199022893,
+        -3705.618463378895,
+        0.0
+      ]
+    },
+    {
+      "identity": 512,
+      "saved_identity": 512,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -156.36699454772418,
+        -3875.6234543617184,
+        0.0
+      ]
+    },
+    {
+      "identity": 513,
+      "saved_identity": 513,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -123.88747118764476,
+        -3876.6880961265433,
+        0.0
+      ]
+    },
+    {
+      "identity": 514,
+      "saved_identity": 514,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -96.11553328834258,
+        -3767.938953358372,
+        0.0
+      ]
+    },
+    {
+      "identity": 515,
+      "saved_identity": 515,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -237.8437754078311,
+        -3665.8387148978545,
+        0.0
+      ]
+    },
+    {
+      "identity": 516,
+      "saved_identity": 516,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -151.66491888434032,
+        -3911.2939792280235,
+        0.0
+      ]
+    },
+    {
+      "identity": 517,
+      "saved_identity": 517,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -49.09378217108829,
+        -3803.6858419510645,
+        0.0
+      ]
+    },
+    {
+      "identity": 518,
+      "saved_identity": 518,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -238.60497207688553,
+        -3596.8749960694445,
+        0.0
+      ]
+    },
+    {
+      "identity": 519,
+      "saved_identity": 519,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -234.46694351151316,
+        -3633.506554145544,
+        0.0
+      ]
+    },
+    {
+      "identity": 520,
+      "saved_identity": 520,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -112.2232708436564,
+        -3910.157742317619,
+        0.0
+      ]
+    },
+    {
+      "identity": 521,
+      "saved_identity": 521,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -60.2634114215326,
+        -3838.139937447136,
+        0.0
+      ]
+    },
+    {
+      "identity": 522,
+      "saved_identity": 522,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -235.063180424995,
+        -3906.9996744369782,
+        0.0
+      ]
+    },
+    {
+      "identity": 523,
+      "saved_identity": 523,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -200.30170891347387,
+        -3701.3731598398826,
+        0.0
+      ]
+    },
+    {
+      "identity": 524,
+      "saved_identity": 524,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -86.40434275333773,
+        -3877.40035391401,
+        0.0
+      ]
+    },
+    {
+      "identity": 525,
+      "saved_identity": 525,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -184.36965700550218,
+        -3771.7411338362936,
+        0.0
+      ]
+    },
+    {
+      "identity": 526,
+      "saved_identity": 526,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -216.93028436592334,
+        -3782.072772290707,
+        0.0
+      ]
+    },
+    {
+      "identity": 527,
+      "saved_identity": 527,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -198.01088425665284,
+        -3843.322521828483,
+        0.0
+      ]
+    },
+    {
+      "identity": 528,
+      "saved_identity": 528,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -53.68632129703448,
+        -3884.6387957617426,
+        0.0
+      ]
+    },
+    {
+      "identity": 529,
+      "saved_identity": 529,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -123.81890498229463,
+        -3728.039669064673,
+        0.0
+      ]
+    },
+    {
+      "identity": 530,
+      "saved_identity": 530,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -270.15759711430434,
+        -3659.413341196518,
+        0.0
+      ]
+    },
+    {
+      "identity": 531,
+      "saved_identity": 531,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -235.63850703933522,
+        -3819.984858409069,
+        0.0
+      ]
+    },
+    {
+      "identity": 532,
+      "saved_identity": 532,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -88.41018567760946,
+        -3801.662637932792,
+        0.0
+      ]
+    },
+    {
+      "identity": 533,
+      "saved_identity": 533,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -139.0415808302754,
+        -3772.3447150170828,
+        0.0
+      ]
+    },
+    {
+      "identity": 534,
+      "saved_identity": 534,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -218.1817129005497,
+        -3742.835692060913,
+        0.0
+      ]
+    },
+    {
+      "identity": 535,
+      "saved_identity": 535,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -142.34809952757146,
+        -3806.7659928530097,
+        0.0
+      ]
+    },
+    {
+      "identity": 536,
+      "saved_identity": 536,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -99.09142253569394,
+        -3839.6094732054635,
+        0.0
+      ]
+    },
+    {
+      "identity": 537,
+      "saved_identity": 537,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -153.98843765694596,
+        -3842.7664902238935,
+        0.0
+      ]
+    },
+    {
+      "identity": 538,
+      "saved_identity": 538,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -201.24852131756495,
+        -3663.0059678228067,
+        0.0
+      ]
+    },
+    {
+      "identity": 539,
+      "saved_identity": 539,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -201.89524969129778,
+        -3892.485590599101,
+        0.0
+      ]
+    },
+    {
+      "identity": 540,
+      "saved_identity": 540,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        299.8685679336407,
+        4446.740654106487,
+        -0.0
+      ]
+    },
+    {
+      "identity": 541,
+      "saved_identity": 541,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        367.6822826893008,
+        4373.970938896461,
+        -0.0
+      ]
+    },
+    {
+      "identity": 542,
+      "saved_identity": 542,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        364.50406644851404,
+        4225.406310785363,
+        -0.0
+      ]
+    },
+    {
+      "identity": 543,
+      "saved_identity": 543,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        332.48528467441383,
+        4194.402382391545,
+        -0.0
+      ]
+    },
+    {
+      "identity": 544,
+      "saved_identity": 544,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        299.0815443340175,
+        4195.802841348144,
+        -0.0
+      ]
+    },
+    {
+      "identity": 545,
+      "saved_identity": 545,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        400.35146395863325,
+        4400.0634384264695,
+        -0.0
+      ]
+    },
+    {
+      "identity": 546,
+      "saved_identity": 546,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        368.30597134161616,
+        4407.7888312746045,
+        -0.0
+      ]
+    },
+    {
+      "identity": 547,
+      "saved_identity": 547,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        396.84505203016505,
+        4229.630566904254,
+        -0.0
+      ]
+    },
+    {
+      "identity": 548,
+      "saved_identity": 548,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        303.2413410127979,
+        4308.7605648689605,
+        -0.0
+      ]
+    },
+    {
+      "identity": 549,
+      "saved_identity": 549,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        381.171628379812,
+        4446.501866579996,
+        -0.0
+      ]
+    },
+    {
+      "identity": 550,
+      "saved_identity": 550,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        335.11184073140106,
+        4375.223873532038,
+        -0.0
+      ]
+    },
+    {
+      "identity": 551,
+      "saved_identity": 551,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        332.8352072555693,
+        4412.452991910267,
+        -0.0
+      ]
+    },
+    {
+      "identity": 552,
+      "saved_identity": 552,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        336.0499944408089,
+        4320.625712761581,
+        -0.0
+      ]
+    },
+    {
+      "identity": 553,
+      "saved_identity": 553,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        366.2699499853499,
+        4279.153417077148,
+        -0.0
+      ]
+    },
+    {
+      "identity": 554,
+      "saved_identity": 554,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        348.92638670211835,
+        4444.561764316557,
+        -0.0
+      ]
+    },
+    {
+      "identity": 555,
+      "saved_identity": 555,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -920.6217598239175,
+        4844.983622063859,
+        -0.0
+      ]
+    },
+    {
+      "identity": 556,
+      "saved_identity": 556,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -917.2341380122881,
+        4877.926901904553,
+        -0.0
+      ]
+    },
+    {
+      "identity": 557,
+      "saved_identity": 557,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -933.6962060888758,
+        4766.032936113039,
+        -0.0
+      ]
+    },
+    {
+      "identity": 558,
+      "saved_identity": 558,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -815.4023171401,
+        4685.1808030847105,
+        -0.0
+      ]
+    },
+    {
+      "identity": 559,
+      "saved_identity": 559,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -832.9919067369709,
+        4842.278452170002,
+        -0.0
+      ]
+    },
+    {
+      "identity": 560,
+      "saved_identity": 560,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -799.3537337518718,
+        4857.744339977875,
+        -0.0
+      ]
+    },
+    {
+      "identity": 561,
+      "saved_identity": 561,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -971.3309562709186,
+        4765.493564989128,
+        -0.0
+      ]
+    },
+    {
+      "identity": 562,
+      "saved_identity": 562,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -971.0047250965541,
+        4830.369508681278,
+        -0.0
+      ]
+    },
+    {
+      "identity": 563,
+      "saved_identity": 563,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -801.095445937041,
+        4743.397186552215,
+        -0.0
+      ]
+    },
+    {
+      "identity": 564,
+      "saved_identity": 564,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -788.7680965731885,
+        4814.299372249818,
+        -0.0
+      ]
+    },
+    {
+      "identity": 565,
+      "saved_identity": 565,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -990.3556154798857,
+        4797.810805456893,
+        -0.0
+      ]
+    },
+    {
+      "identity": 566,
+      "saved_identity": 566,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -949.9507100673611,
+        4798.1390323542155,
+        -0.0
+      ]
+    },
+    {
+      "identity": 567,
+      "saved_identity": 567,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -782.2375952549255,
+        4684.256171335847,
+        -0.0
+      ]
+    },
+    {
+      "identity": 568,
+      "saved_identity": 568,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -840.6900566892641,
+        4766.573140034007,
+        -0.0
+      ]
+    },
+    {
+      "identity": 569,
+      "saved_identity": 569,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -847.9843922988298,
+        4802.38265401997,
+        -0.0
+      ]
+    },
+    {
+      "identity": 570,
+      "saved_identity": 570,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -738.1107062912956,
+        7904.708264250983,
+        -0.0
+      ]
+    },
+    {
+      "identity": 571,
+      "saved_identity": 571,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -804.8416161350209,
+        7915.644042185579,
+        -0.0
+      ]
+    },
+    {
+      "identity": 572,
+      "saved_identity": 572,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -634.5150111782576,
+        7896.572265080155,
+        -0.0
+      ]
+    },
+    {
+      "identity": 573,
+      "saved_identity": 573,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -530.4947143611037,
+        7952.242277049565,
+        160.0
+      ]
+    },
+    {
+      "identity": 574,
+      "saved_identity": 574,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -776.9054946721845,
+        7832.7686024453915,
+        -0.0
+      ]
+    },
+    {
+      "identity": 575,
+      "saved_identity": 575,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -1112.110254056142,
+        7952.092638557125,
+        16.0
+      ]
+    },
+    {
+      "identity": 576,
+      "saved_identity": 576,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -667.2202902291754,
+        7893.057092120037,
+        -0.0
+      ]
+    },
+    {
+      "identity": 577,
+      "saved_identity": 577,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -801.2796779749364,
+        7867.843370997517,
+        -0.0
+      ]
+    },
+    {
+      "identity": 578,
+      "saved_identity": 578,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -493.5969803196386,
+        7952.352803966308,
+        176.0
+      ]
+    },
+    {
+      "identity": 579,
+      "saved_identity": 579,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -447.9999083411198,
+        7952.230246801313,
+        192.0
+      ]
+    },
+    {
+      "identity": 580,
+      "saved_identity": 580,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -754.5995524298485,
+        7866.454165382189,
+        -0.0
+      ]
+    },
+    {
+      "identity": 581,
+      "saved_identity": 581,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -705.2581172845573,
+        7872.886247351961,
+        -0.0
+      ]
+    },
+    {
+      "identity": 582,
+      "saved_identity": 582,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -772.5876276587588,
+        7903.252318363424,
+        -0.0
+      ]
+    },
+    {
+      "identity": 583,
+      "saved_identity": 583,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -825.5571057153346,
+        7953.122594012359,
+        96.0
+      ]
+    },
+    {
+      "identity": 584,
+      "saved_identity": 584,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -840.6952574029164,
+        7863.902163408914,
+        -0.0
+      ]
+    },
+    {
+      "identity": 585,
+      "saved_identity": 585,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -864.4287702541138,
+        10318.09762664071,
+        -0.0
+      ]
+    },
+    {
+      "identity": 586,
+      "saved_identity": 586,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -740.014624792512,
+        10307.97486255859,
+        -0.0
+      ]
+    },
+    {
+      "identity": 587,
+      "saved_identity": 587,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -899.29426505756,
+        10306.351014768628,
+        -0.0
+      ]
+    },
+    {
+      "identity": 588,
+      "saved_identity": 588,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -873.5089876267338,
+        10226.405013595993,
+        -0.0
+      ]
+    },
+    {
+      "identity": 589,
+      "saved_identity": 589,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -765.8899651495916,
+        10207.354196239728,
+        -0.0
+      ]
+    },
+    {
+      "identity": 590,
+      "saved_identity": 590,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -760.7417939370994,
+        10344.178138122517,
+        -0.0
+      ]
+    },
+    {
+      "identity": 591,
+      "saved_identity": 591,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -908.7495087141795,
+        10341.389772898805,
+        -0.0
+      ]
+    },
+    {
+      "identity": 592,
+      "saved_identity": 592,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -867.1083103826236,
+        10271.752262515844,
+        -0.0
+      ]
+    },
+    {
+      "identity": 593,
+      "saved_identity": 593,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -768.4090794451571,
+        10247.75132005464,
+        -0.0
+      ]
+    },
+    {
+      "identity": 594,
+      "saved_identity": 594,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -719.4316003916846,
+        10272.989992573073,
+        -0.0
+      ]
+    },
+    {
+      "identity": 595,
+      "saved_identity": 595,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -826.6184831136546,
+        10319.453212734119,
+        -0.0
+      ]
+    },
+    {
+      "identity": 596,
+      "saved_identity": 596,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -832.7286373601643,
+        10274.322931548084,
+        -0.0
+      ]
+    },
+    {
+      "identity": 597,
+      "saved_identity": 597,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -802.078639950407,
+        10194.867343745542,
+        -0.0
+      ]
+    },
+    {
+      "identity": 598,
+      "saved_identity": 598,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -789.0592634973499,
+        10288.996171214689,
+        -0.0
+      ]
+    },
+    {
+      "identity": 599,
+      "saved_identity": 599,
+      "health": 1146,
+      "deployment_complete": true,
+      "crew_route_pending": false,
+      "gun_operator": false,
+      "position": [
+        -838.5165572414734,
+        10217.179436720724,
+        -0.0
+      ]
+    }
+  ]
+}

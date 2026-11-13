@@ -9,13 +9,14 @@ placement, active save and exact return. Old active/stored-hub compatibility als
 passes. Carry this independent annex into final city activation; it does not
 replace the remaining siege, service or performance checks. See barracas-justice/SUMMARY.json.
 
-Pedestrian routes/withdrawal are now staged, with six terminal exits and36 stair
-descents passing fresh/reload and a15-body saved approach continuation passing.
-Complete the long fresh/reloaded approach and six full city-to-south withdrawals
-currently running. Keep the raw-weather deaths separate from navigation-isolated
-results; integrated climate survival remains unverified. Finish wounded commander
-escape,600 real defender AI/crowds, capture/refill, services and rendering
-evidence before activation. See barracas-navigation/SUMMARY.json.
+Full approaches, withdrawals, wounded-commander escape, ram capture ownership and
+native capped refill now pass fresh/reload. Four house orientations and64 shop Use
+interactions also pass, including one finite-stock purchase per run. A native save
+confirms600 living resident deployment completions and72 operator ascents; finish
+the early-checkpoint replay in barracas-crowd-native03. Keep raw-weather deaths
+separate from movement isolation; integrated climate survival remains unverified.
+Finish full battle/outcome integration, factory/vehicle interactions and rendering
+evidence before activation. See barracas-continuation/SUMMARY.json.
 
 The approved MAP02 board is implemented as geometry revision 6. Static principal
 circuits, staged key reachability, prisoner extraction, all drop/chest locations,

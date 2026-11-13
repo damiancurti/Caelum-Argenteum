@@ -1,0 +1,63 @@
+{
+  "issue": 454,
+  "scope": "Native wound-triggered commander escape from original southern spawn, three inner gates and house159 road, sequential identities, unchanged flee speed/collision. Fixture holds gates open and neutralizes thermal exposure. No combat, gate permissions, crowds, climate survival, FPS or author acceptance.",
+  "runtime_sha256": "6efffa2932be0333debccfa727ae471826a84e3916f077fd0fb47802273a6d73",
+  "candidate_sha256": "7b4d8aa16035607bba6feb4bed7dc7df46143b230560b08acbc2669c51204b63",
+  "fixture_sha256": "5b640a298148d0f8beebba73d52cffa504128866b360b933bbbbace6351cccfc",
+  "runs": [
+    {
+      "phase": "fresh",
+      "passed": true,
+      "exit_code": 0,
+      "timeout": false,
+      "checks": [
+        "CA454 COMMANDER CASE index=0 lane=0 health=6899 maximum=13798.000 radius=26.667 height=93.333 base_speed=5.337",
+        "CA454 COMMANDER EXIT case=0 elapsed=2815 case_elapsed=2813",
+        "CA454 COMMANDER CASE index=1 lane=0 health=6899 maximum=13798.000 radius=26.667 height=93.333 base_speed=5.337",
+        "CA454 COMMANDER PROGRESS case=1 elapsed=3500 position=(-4320.0,-16752.0,0.0) health=6899 speed=16.011",
+        "CA454 COMMANDER EXIT case=1 elapsed=4925 case_elapsed=2109",
+        "CA454 COMMANDER CASE index=2 lane=2 health=6899 maximum=13798.000 radius=26.667 height=93.333 base_speed=5.337",
+        "CA454 COMMANDER PROGRESS case=2 elapsed=7000 position=(672.0,-9312.0,0.0) health=6899 speed=16.011",
+        "CA454 COMMANDER EXIT case=2 elapsed=10499 case_elapsed=5573",
+        "CA454 COMMANDER CASE index=3 lane=4 health=6899 maximum=13798.000 radius=26.667 height=93.333 base_speed=5.337",
+        "CA454 COMMANDER PROGRESS case=3 elapsed=10500 position=(-29568.0,-320.0,0.0) health=6899 speed=5.337",
+        "CA454 COMMANDER PROGRESS case=3 elapsed=14000 position=(-30048.0,-13808.0,0.0) health=6899 speed=16.011",
+        "CA454 COMMANDER EXIT case=3 elapsed=16377 case_elapsed=5877",
+        "CA454 COMMANDER CASE index=4 lane=4 health=6899 maximum=13798.000 radius=26.667 height=93.333 base_speed=5.337",
+        "CA454 COMMANDER PROGRESS case=4 elapsed=17500 position=(-10256.0,9568.0,0.0) health=6899 speed=16.011",
+        "CA454 COMMANDER PROGRESS case=4 elapsed=21000 position=(-15360.0,672.0,0.0) health=6899 speed=16.011",
+        "CA454 COMMANDER PROGRESS case=4 elapsed=24500 position=(-28336.0,-352.0,0.0) health=6899 speed=16.011",
+        "CA454 COMMANDER PROGRESS case=4 elapsed=28000 position=(-30048.0,-12640.0,0.0) health=6899 speed=16.011",
+        "CA454 COMMANDER EXIT case=4 elapsed=30667 case_elapsed=14289",
+        "CA454 COMMANDER COMPLETE passed=5 failures=0 elapsed=30667"
+      ]
+    },
+    {
+      "phase": "reload",
+      "passed": true,
+      "exit_code": 0,
+      "timeout": false,
+      "checks": [
+        "CA454 COMMANDER RESUME PASS elapsed=37 case=0",
+        "CA454 COMMANDER EXIT case=0 elapsed=2815 case_elapsed=2813",
+        "CA454 COMMANDER CASE index=1 lane=0 health=6899 maximum=13798.000 radius=26.667 height=93.333 base_speed=5.337",
+        "CA454 COMMANDER PROGRESS case=1 elapsed=3500 position=(-4320.0,-16752.0,0.0) health=6899 speed=16.011",
+        "CA454 COMMANDER EXIT case=1 elapsed=4925 case_elapsed=2109",
+        "CA454 COMMANDER CASE index=2 lane=2 health=6899 maximum=13798.000 radius=26.667 height=93.333 base_speed=5.337",
+        "CA454 COMMANDER PROGRESS case=2 elapsed=7000 position=(672.0,-9312.0,0.0) health=6899 speed=16.011",
+        "CA454 COMMANDER EXIT case=2 elapsed=10499 case_elapsed=5573",
+        "CA454 COMMANDER CASE index=3 lane=4 health=6899 maximum=13798.000 radius=26.667 height=93.333 base_speed=5.337",
+        "CA454 COMMANDER PROGRESS case=3 elapsed=10500 position=(-29568.0,-320.0,0.0) health=6899 speed=5.337",
+        "CA454 COMMANDER PROGRESS case=3 elapsed=14000 position=(-30048.0,-13808.0,0.0) health=6899 speed=16.011",
+        "CA454 COMMANDER EXIT case=3 elapsed=16377 case_elapsed=5877",
+        "CA454 COMMANDER CASE index=4 lane=4 health=6899 maximum=13798.000 radius=26.667 height=93.333 base_speed=5.337",
+        "CA454 COMMANDER PROGRESS case=4 elapsed=17500 position=(-10256.0,9568.0,0.0) health=6899 speed=16.011",
+        "CA454 COMMANDER PROGRESS case=4 elapsed=21000 position=(-15360.0,672.0,0.0) health=6899 speed=16.011",
+        "CA454 COMMANDER PROGRESS case=4 elapsed=24500 position=(-28336.0,-352.0,0.0) health=6899 speed=16.011",
+        "CA454 COMMANDER PROGRESS case=4 elapsed=28000 position=(-30048.0,-12640.0,0.0) health=6899 speed=16.011",
+        "CA454 COMMANDER EXIT case=4 elapsed=30667 case_elapsed=14289",
+        "CA454 COMMANDER COMPLETE passed=5 failures=0 elapsed=30667"
+      ]
+    }
+  ]
+}

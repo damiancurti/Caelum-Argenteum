@@ -4,6 +4,38 @@ Documentation version: **5.16.2** - 2026-11-12.
 
 ## 5.16.2 - Sewer redesign slice (#454, in progress, 2026-11-12)
 
+2026-11-13 continuation: full15-body approaches complete43607tics and six complete
+city withdrawals60732tics, fresh/reloaded. The commander now uses revision-4
+withdrawal streets through an escape-step hook, retaining half-health trigger,
+speed, body and final-exit rules. Five origins complete30667tics per run. Original
+active/stored-house-hub saves pass, and the MAP02 boss still retreats, exposes the
+card and retains the departure guard (254tics). All238 production maps are unchanged.
+
+Four native ram captures preserve enemy/captured reserve handling after reload.
+The full inherited controller reaches1000 living attackers (987 Mandingas,
+commander and12 machines), then replaces five fixture deaths. At4235tics it retains
+992 admitted plus5608 remaining,1000 living and the original600 residents plus
+the existing subcaptain. Fresh/early-reloaded results match; this is not full
+battle completion or a rendering measurement. Movement tests neutralize thermal
+exposure; commander/approach fixtures hold gates open and do not grant permissions.
+
+Four house orientations pass8 normal Used/capture/renderer-ACK requests and4 exact
+returns per fresh/reloaded run. Native Use opens all64 merchants; one purchase
+transfers116485 copper and decrements native stock3-to2. The shop fixture seeds
+the Box in persistent state; an actor-only flag was correctly restored by gameplay.
+Bounded console scripts fix an earlier overlong script's lost/reordered events.
+The first commander fixture wounded before deferred PostBeginPlay; it now waits
+for the native profile. No production balance or shop change was needed.
+
+A native save at52347tics confirms600 unique living residents,72 operators, all
+deployment/crew-route completion flags and the automatic601-combatant high-density
+census. The initial arrival recorder incorrectly demanded simultaneous positions,
+then sampled distance after guards could already begin their permitted searches.
+The independent saved-state audit passes; an early-checkpoint replay with native
+completion recording is running. Battle, climate, remaining services, performance,
+production activation and author acceptance remain open. Exact evidence and
+qualifications: assets/validation_v5_16_2/barracas-continuation/SUMMARY.json.
+
 2026-11-13 Justice preservation: append the existing768-MU/160-MU arena to the
 isolated city candidate, retaining every previous TEXTMAP byte as a prefix.
 Two generated candidates are identical; checksum-qualified lookup selects
@@ -19,7 +51,8 @@ withdrawal fields, revisioned cursors, front-preserving formations and a shared
 local-navigation queue. Six final exits and36 actual stair descents pass fresh
 and reloaded native checks at normal speed. A41893-tic approach checkpoint
 completes all15 pedestrians by43607tics after correcting the diagnostic gate hold.
-Long fresh/early-reloaded approach and full-city withdrawal runs are still active.
+Those long fresh/early-reloaded runs were active at this intermediate stage;
+the continuation entry above records their completion.
 All238 packaged maps remain byte-identical; no battle/performance or author
 acceptance is claimed.
 

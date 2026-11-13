@@ -13,8 +13,22 @@ class CaelumPortCommander : CaelumZupayColossus
 
     override vector3 EscapePosition()
     {
+        if(IsRetreatBoss() && CaelumBarracasData.IsCurrent())
+            return CaelumBarracasRetreat.Destination(SiegeCombatant);
         if (IsRetreatBoss()) return SiegeCombatant.ExitNode.Pos;
         return Pos;
+    }
+
+    override void EscapeStep()
+    {
+        if(IsRetreatBoss() && CaelumBarracasData.IsCurrent())
+        {
+            // Mantener la cadencia, velocidad de huida y permisos de portones.
+            // Solo la geometria nueva requiere seguir las calles hasta la salida.
+            CaelumPortSiege.WalkTo(self,SewerEscapeTarget,EscapePosition());
+            return;
+        }
+        Super.EscapeStep();
     }
 
     override double EscapeReach()
@@ -669,7 +683,8 @@ class CaelumPortSiege : CaelumSiegeEncounter
         let soldier=CaelumPortDefender(body);
         let movingRam=CrewRam(body);
         let entry=body.SiegeCombatant;
-        bool withdrawing=entry!=null && entry.Withdrawing;
+        let commander=CaelumPortCommander(body);
+        bool withdrawing=entry!=null && (entry.Withdrawing || (commander!=null && commander.SewerFleeing));
         bool ramCrew=movingRam!=null && movingRam.CrewLayoutRevision>0 && !withdrawing;
         bool frontRoute=CaelumBarracasData.IsCurrent() && entry!=null && entry.Encounter==CaelumPortSiege.Get() && !ramCrew;
         if((ramCrew || frontRoute) && !withdrawing && !body.InStateSequence(body.CurState,body.SeeState))

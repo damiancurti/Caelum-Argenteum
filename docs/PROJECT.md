@@ -11,15 +11,19 @@ assets/validation_v5_16_2/barracas-justice/SUMMARY.json.
 
 Pedestrian navigation is staged for the unactivated city: southern approaches,
 front-preserving groups, shared local avoidance and ground withdrawal fields.
-Six terminal exits/36 stair descents pass isolated fresh/reload checks; a saved
-approach continuation completes15 bodies. Long fresh/reloaded movement remains
-in progress, with climate survival, crowds and full-battle evidence still pending.
-See assets/validation_v5_16_2/barracas-navigation/SUMMARY.json.
+Full15-body approaches, six withdrawals and five wounded-commander origins pass
+fresh/reload. The complete native controller also passes its1000 living cap and
+five-casualty refill with the unchanged finite6600 ledger. Four ram captures retain
+reserve ownership. Four house orientations and64 merchant interactions pass;
+one purchase per run preserves stock and wallet accounting. All600 resident
+deployment flags pass a fresh native-save audit; early-checkpoint replay is running.
+Climate survival, full battle and presentation measurements remain pending.
+See assets/validation_v5_16_2/barracas-continuation/SUMMARY.json.
 
 The city candidate now has native four-gate machine deployment, six full ram
 approaches and persistent active/reserve handling. Fresh/reload checks retain
-force/objective counts. Infantry/gun-crew southern arrival, withdrawal, real
-crowds and frame-presentation measurements remain unfinished; production
+force/objective counts. Full-battle integration, crowd replay and
+frame-presentation measurements remain unfinished; production
 MAP03 is unchanged. See barracas-fronts/SUMMARY.json for qualified evidence.
 
 MAP02 revision 6 implements the approved sewer board with twelve main circuits,
