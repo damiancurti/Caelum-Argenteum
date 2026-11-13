@@ -1,6 +1,60 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.13** - 2026-11-13.
+Documentation version: **5.17.14** - 2026-11-13.
+
+## 5.17.14 - Native lock inventory model binding (#672, parent #647)
+
+One explicit CaelumLockItem/CKEY/A binding reuses the unchanged original #656
+key.md3 and materials. All eight native padlock/key/tool types already share
+ca_key.png and CKEY/A; this patch retains that shared gold-key/blue-ribbon
+representation. It does not introduce separate padlock or lockpick designs.
+Native LockItemType, PairIdentity tokens, per-instance ownership, tier, weight,
+Box/quest restrictions, recipes and saved fields remain unchanged. No installed
+lock, chest-opening, theft or witness logic changes; #382 acceptance is retained.
+
+CaelumLockItem keeps its original Actor.Scale 0.25 and collision; the existing
+CaelumSilverKey retains its own 0.125 scale. Both consume the same original
+image-fitted mesh without a new physical-size interpretation. The mesh has
+2,974 vertices / 2,840 triangles. Geometric editing controls remain in the #656
+documents/DESIGN.json; generate_inventory_document_models.py recreates key.obj
+and documents.mtl under its selected output directory. No redundant mesh or PNG
+copy is introduced. locks/DESIGN, PROVENANCE and EXPORT preserve exact reuse
+hashes, the original bounds/surfaces and the new binding. The deterministic
+generate_inventory_lock_model.py exports only that binding and its manifest;
+readonly validation checks the original bytes, records and class/sprite/scale.
+
+The isolated fixture sets up two independent copies of all eight types, with
+six matching pair values. It checks native pickup/toss, distinct same-class
+instances, metadata, mass, collision, icons, floor contact and Box/quest guards.
+Load phases also check matching tokens in independently reconstructed objects,
+wrong same-tier keys, Box exclusion and the existing picks/master-key access.
+These are direct native inventory/access calls, not a new chest/theft test.
+
+The final complete package passes 1,646 native checks, exact phase counts
+349/316/349/316/316 across baseline, previous-save/new-binding, fresh/new-binding,
+reload and rollback. All sixteen instances retain their original type and pair;
+matching serialized values permit access, wrong same-tier pairs fail, and Box,
+picks/master-key and temporary quest rules remain intact. The earlier visual
+run passes 349 checks with the same reused art. The first load probe set Box
+flags during successive pickups; native unowned-Box normalization cleared prior
+flags and caused twelve fixture access failures. Set those direct probe flags
+after the complete pickup batch, then repeat all five native phases. Production
+logic and runtime bytes remain unchanged. No hub journey or
+ordinary-menu acceptance is implied by reconstructed-token probes.
+
+Three export files repeat byte-for-byte. All 18,223 package entries match src;
+only the new binding, root MODELDEF include and two release diagnostics differ
+from #670. All mesh, PNG, gameplay and existing key-model bytes are unchanged.
+Project and focused validation pass. Final front/side/oblique/rear views and the
+sixteen-object scene were inspected.
+
+One isolated 700-tic sixteen-object pair records 1169.98/1127.44 queue presents/s
+for sprites/models, p95 1.0351/1.0713 ms and p99 1.2384/1.3079 ms. Both cohorts were
+visually checked. Environment: Windows 11 Pro 26200, Ryzen 9 5950X, 32 GB,
+RTX 3070 Ti, GZDoom 4.14.2, Vulkan 1280x720, uncapped, vsync off, background
+unpaused and 5% audio. Queue intervals are not GPU/display timing, repeatability
+or campaign/crowd acceptance. Evidence: assets/validation_v5_17_14/evidence/SUMMARY.json.
+Author appearance and ordinary-menu review remain pending as CA672-LOCKS-01.
 
 ## 5.17.13 - Closed mate drop models (#670, parent #647)
 
