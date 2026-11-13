@@ -482,3 +482,16 @@
 /src/caelum/world/CaelumBarracasFrontData.zs text eol=lf
 /assets/generators/generate_barracas_retreat.py text eol=lf
 /src/caelum/world/CaelumBarracasRetreatData.zs text eol=lf
+/assets/generators/install_barracas_map.py text eol=lf
+/assets/generators/generate_barracas_siege.py text eol=lf
+/assets/generators/generate_barracas_ram_crews.py text eol=lf
+/assets/generators/generate_barracas_routes.py text eol=lf
+/assets/generators/generate_barracas_march.py text eol=lf
+/src/caelum/world/CaelumBarracasFacades.zs text eol=lf
+/src/caelum/data/barracas_facades.mapinfo text eol=lf
+/src/caelum/data/barracas_facades.modeldef text eol=lf
+/src/models/caelum/architecture/barracas/*.obj -text whitespace=cr-at-eol
+/src/caelum/world/CaelumBarracasSiegeData.zs text eol=lf
+/src/caelum/world/CaelumBarracasDeployment.zs text eol=lf
+/src/caelum/world/CaelumBarracasRamCrewData.zs text eol=lf
+/src/caelum/world/CaelumBarracasMarchData.zs text eol=lf

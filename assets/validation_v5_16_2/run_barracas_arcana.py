@@ -15,24 +15,31 @@ from run_barracas_legacy import ROOT, ENGINE, IWAD, digest
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ('runtime', 'baseline', 'candidate', 'output'):
-        parser.add_argument('--' + name, type=Path, required=True)
+        parser.add_argument('--' + name, type=Path, required=name in ('runtime', 'output'))
     parser.add_argument('--active-migration-only', action='store_true', help='Retain an active capture at the preceding misplaced source, then migrate after completion')
+    parser.add_argument('--integrated-only', action='store_true', help='Fresh/reload capture using the packaged map without a candidate overlay')
     args = parser.parse_args()
+    if args.integrated_only and (args.active_migration_only or args.candidate or args.baseline):parser.error('Integrated checks use only the current runtime.')
+    if not args.integrated_only and (not args.baseline or not args.candidate):parser.error('Migration checks require baseline and candidate.')
     out = args.output.resolve(); out.relative_to(ROOT / 'build'); out.mkdir(exist_ok=False)
-    runtime, baseline, candidate = (getattr(args, n).resolve(strict=True) for n in ('runtime', 'baseline', 'candidate'))
+    runtime = args.runtime.resolve(strict=True)
+    baseline = args.baseline.resolve(strict=True) if args.baseline else None
+    candidate = args.candidate.resolve(strict=True) if args.candidate else None
     fixture = out / 'arcana-probe.pk3'
     with zipfile.ZipFile(fixture, 'w') as archive:
         for name, data in {'ZSCRIPT': 'version "4.14.2"\n' + Path(__file__).with_name('barracas_arcana_probe.zs').read_text(encoding='utf-8'),
                            'MAPINFO': 'gameinfo { AddEventHandlers="CA454ArcanaProbe" }\ndoomednums {31050=CA454ArcanaCity}\n'}.items():
             archive.writestr(zipfile.ZipInfo(name, (2026, 11, 13, 0, 0, 0)), data)
     report = {'issue': 454, 'scope': __doc__.strip(), 'runtime_sha256': digest(runtime),
-              'baseline_sha256': digest(baseline), 'candidate_sha256': digest(candidate),
+              'baseline_sha256': digest(baseline) if baseline else None, 'candidate_sha256': digest(candidate) if candidate else None,
               'fixture_sha256': digest(fixture), 'runs': []}
     plans = [('original', False, False, None), ('original-reload', False, False, 'original/midcapture.zds'),
              ('candidate', True, False, None), ('candidate-reload', True, False, 'candidate/midcapture.zds'),
              ('old-source', True, True, None), ('migrated-source', True, False, 'old-source/misplaced.zds')]
     if args.active_migration_only:
         plans = [('old-capture', True, True, None), ('migrated-capture', True, False, 'old-capture/midcapture.zds')]
+    if args.integrated_only:
+        plans = [('candidate', False, False, None), ('candidate-reload', False, False, 'candidate/midcapture.zds')]
     for name, overlay, old, seed in plans:
         folder = out / name; folder.mkdir()
         package = folder / 'caelum_argenteum_dev.pk3'; shutil.copyfile(baseline if old else runtime, package)

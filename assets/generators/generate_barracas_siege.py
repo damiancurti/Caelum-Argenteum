@@ -218,8 +218,8 @@ def outputs():
         gate=next(g for g in layout['gates'] if g['id']==side)
         candidates=[g for g in guns if g['side']==side]
         active.extend(g['identity'] for g in sorted(candidates,key=lambda g:sum((g['position'][a]-gate['position'][a])**2 for a in (0,1)))[:count])
-    result={'schema_revision':1,'issue':454,'geometry_revision':4,'runtime_enabled':False,
-            'status':'candidate_geometry_requires_native_clearance_and_routes',
+    result={'schema_revision':1,'issue':454,'geometry_revision':4,'runtime_enabled':layout['runtime_enabled'],
+            'status':'generated_revision4_defensive_placements',
             'authority':'LAYOUT.json approved four gates, three fronts and active artillery distribution; retained original counts/stats/guard spacing/stair profiles.',
             'source_sha256':{name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in INPUTS},
             'defending_guns':guns,'active_defending_guns':sorted(active),'towers':towers,

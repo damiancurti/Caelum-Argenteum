@@ -10,6 +10,23 @@ revision4 Barracas. It introduces no card art, new reward or new coordinate
 authority. The original location remains the legacy source and migration input.
 Native placement/capture evidence: barracas-arcana/SUMMARY.json.
 
+The reviewed city is installed by `generate_barracas_map.py --output <build/path>`
+followed by `install_barracas_map.py --compiled <build/path>`. The latter retains
+the owned pre-Justice geometry in barracas_redesign/BASE_MAP03.wad, packages the
+tested facade class/model/bindings, and delegates arena assembly to the existing
+Justice generator. INSTALLATION.json records canonical-LF text-input hashes and
+exact installed-asset hashes, preserving the tested model bytes across checkout.
+Project
+validation checks them and the three binding includes read-only. LAYOUT.json
+owns activation. Installation also regenerates cartography and tactical-entry
+catalogues, retaining identities and exact legacy geometry recognition. Repeated
+full compilation and installation preserve identical
+map/facade bytes; the final map matches the previously native-tested candidate.
+All160 CAH maps retain their bytes. The source WAD and generated facade OBJ are
+owned resources; engine binaries, IWADs, runtime packages and saves stay local.
+Native installed/legacy checks are in barracas-integration/SUMMARY.json; separate
+presentation traces retain severe siege stalls and do not imply author acceptance.
+
 `generate_barracas_justice.py --candidate <preview.pk3> --output <build/path>
 --register` appends the existing ARENA.json room without changing the input
 TEXTMAP prefix or any production map. Optional registration writes candidate

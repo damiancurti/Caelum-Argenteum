@@ -48,7 +48,7 @@ def outputs():
         fronts.append(front)
     data = {'schema_revision': 1, 'issue': 454, 'geometry_revision': layout['geometry_revision'],
             'authority': 'Author approved three assault fronts, six rams (one active/one reserve per front), existing force counts and four gate materials on 2026-11-12.',
-            'status': 'Candidate geometry; production MAP03 remains revision3 pending integrated native validation.',
+            'status': 'Generated revision4 fronts; LAYOUT.json owns production activation.',
             'source_sha256': {p: hashlib.sha256((ROOT / p).read_bytes()).hexdigest() for p in INPUTS},
             'gates': gates, 'fronts': fronts}
     code = '// Generado desde los tres frentes aprobados y distancias existentes.\nclass CaelumBarracasFrontData : Object play\n{\n    const REVISION=1;\n    const GATE_COUNT=4;\n    const RAM_COUNT=6;\n'

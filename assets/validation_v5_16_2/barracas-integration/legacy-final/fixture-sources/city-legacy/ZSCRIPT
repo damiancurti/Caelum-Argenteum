@@ -1,0 +1,44 @@
+version "4.14.2"
+
+class CA454CityStamp : Actor
+{
+    int Value;
+    Default { +NOINTERACTION +NOGRAVITY }
+    States { Spawn: TNT1 A -1; Stop; }
+}
+class CA454CityLegacyProbe : EventHandler
+{
+    override void NetworkProcess(ConsoleEvent e)
+    {
+        if(e.Name!="ca454_seed" && e.Name!="ca454_check")return;
+        let user=CaelumPlayerAuthority.FromNetworkPlayer(e.Player);
+        bool city=level.MapName=="MAP03";
+        bool ok=user!=null && user.health>0 && user.CharacterCreationComplete;
+        if(user!=null)user.bInvulnerable=true;
+        let stamp=CA454CityStamp(ActorIterator.Create(454904,"CA454CityStamp").Next());
+        if(e.Name=="ca454_seed" && stamp==null)
+        {
+            stamp=CA454CityStamp(Actor.Spawn("CA454CityStamp",user.Pos,NO_REPLACE));
+            stamp.ChangeTid(454904);stamp.Value=city?3:69;
+        }
+        ok=ok && stamp!=null && stamp.Value==(city?3:69) && CaelumJusticeGeometry.Get()!=null;
+        if(city)
+        {
+            let port=CaelumPortSiege.Get();
+            ok=ok && port!=null && port.args[0]==3 && port.SetupRevision>0 && port.Gates.Size()==8;
+            for(int i=0;i<160;i++)
+            {
+                vector3 origin=CaelumCityData.HouseOrigin(i);
+                ok=ok && (CaelumCityData.DoorOutside(i)-origin-(1056,384,0)).Length()<0.01;
+                ok=ok && (CaelumCityData.ChestPosition(i)-origin-(864,832,0)).Length()<0.01;
+            }
+            Console.Printf("CA454 LEGACY CITY checksum=%s justice=%d gates=%d",level.GetChecksum(),CaelumJusticeGeometry.SectorIndex(level.MapName),port!=null?port.Gates.Size():-1);
+        }
+        else
+        {
+            int house=CaelumHouseHubData.HouseForMap(level.MapName);
+            ok=ok && house==69 && (CaelumCityData.ChestPosition(house)-CaelumCityData.HouseOrigin(house)-(864,832,0)).Length()<0.01;
+        }
+        Console.Printf("CA454 LEGACY %s map=%s stamp=%d",ok?"PASS":"FAIL",level.MapName,stamp!=null?stamp.Value:-1);
+    }
+}

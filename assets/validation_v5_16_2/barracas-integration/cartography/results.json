@@ -1,0 +1,151 @@
+{
+  "issue": 454,
+  "scope": "Verify installed/legacy known-only discovery on native maps and saved records.\n\nThe fixture calls native binding/use-record/update APIs and supplies positions;\nit does not establish normal walking, service UI, siege fluency or acceptance.",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "layout": "installed",
+      "phase": "fresh",
+      "runtime_sha256": "0d534413b6c837388f85c1c74a9c0606bf0f541a65776e476d252dc8ef099fe2",
+      "fixture_sha256": "b8a3e815cb533eb05b083180159b276e41fb0670a39838af54b72efc92ff4907",
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue454-integrated02.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\barracas-cartography02\\installed.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\barracas-cartography02\\installed-fresh\\session.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\barracas-cartography02\\installed-fresh",
+        "-window",
+        "-width",
+        "960",
+        "-height",
+        "720",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\barracas-cartography02\\installed-fresh\\engine.log",
+        "+map",
+        "MAP03",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\barracas-cartography02\\installed-fresh\\commands.cfg"
+      ],
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "checks": [
+        "CA454 CARTOGRAPHY PASS phase=ca454_discovery_start revised=1 stations=96 stairs=36 towers=4 failures=0 known=42"
+      ]
+    },
+    {
+      "layout": "installed",
+      "phase": "reload",
+      "runtime_sha256": "0d534413b6c837388f85c1c74a9c0606bf0f541a65776e476d252dc8ef099fe2",
+      "fixture_sha256": "b8a3e815cb533eb05b083180159b276e41fb0670a39838af54b72efc92ff4907",
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue454-integrated02.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\barracas-cartography02\\installed.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\barracas-cartography02\\installed-reload\\session.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\barracas-cartography02\\installed-reload",
+        "-window",
+        "-width",
+        "960",
+        "-height",
+        "720",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\barracas-cartography02\\installed-reload\\engine.log",
+        "-loadgame",
+        "input.zds",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\barracas-cartography02\\installed-reload\\commands.cfg"
+      ],
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "checks": [
+        "CA454 CARTOGRAPHY PASS phase=ca454_discovery_resume revised=1 stations=96 stairs=36 towers=4 failures=0 known=42"
+      ]
+    },
+    {
+      "layout": "legacy",
+      "phase": "fresh",
+      "runtime_sha256": "e29a000c561e13141568acf34d9b3c9f86c6be349276e522cbecb6a9f075af06",
+      "fixture_sha256": "3e3056a006299a34be4c3107c7c3925fb3cc1b33a39d16dfca3467e016ad92b1",
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue454-integrated-legacy02.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\barracas-cartography02\\legacy.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\barracas-cartography02\\legacy-fresh\\session.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\barracas-cartography02\\legacy-fresh",
+        "-window",
+        "-width",
+        "960",
+        "-height",
+        "720",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\barracas-cartography02\\legacy-fresh\\engine.log",
+        "+map",
+        "MAP03",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\barracas-cartography02\\legacy-fresh\\commands.cfg"
+      ],
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "checks": [
+        "CA454 CARTOGRAPHY PASS phase=ca454_discovery_start revised=0 stations=96 stairs=36 towers=4 failures=0 known=42"
+      ]
+    },
+    {
+      "layout": "legacy",
+      "phase": "reload",
+      "runtime_sha256": "e29a000c561e13141568acf34d9b3c9f86c6be349276e522cbecb6a9f075af06",
+      "fixture_sha256": "3e3056a006299a34be4c3107c7c3925fb3cc1b33a39d16dfca3467e016ad92b1",
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\issue454-integrated-legacy02.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\barracas-cartography02\\legacy.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\barracas-cartography02\\legacy-reload\\session.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\barracas-cartography02\\legacy-reload",
+        "-window",
+        "-width",
+        "960",
+        "-height",
+        "720",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\barracas-cartography02\\legacy-reload\\engine.log",
+        "-loadgame",
+        "input.zds",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\barracas-cartography02\\legacy-reload\\commands.cfg"
+      ],
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "checks": [
+        "CA454 CARTOGRAPHY PASS phase=ca454_discovery_resume revised=0 stations=96 stairs=36 towers=4 failures=0 known=42"
+      ]
+    }
+  ]
+}

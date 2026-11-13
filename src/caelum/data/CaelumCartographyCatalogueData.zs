@@ -4,7 +4,7 @@ class CaelumCartographyCatalogueData : Object
 {
     const MAP01_CHECKSUM = "81ef3d115f0b73f3d21fcf7ca8004d67";
     const MAP02_CHECKSUM = "2ca0c699b54924a6b516d30e1fd63548";
-    const MAP06_CHECKSUM = "03f80198bfae8ba82cc435775001ba91";
+    const MAP06_CHECKSUM = "f552012c9d4d7a2ba59d0809894ad272";
     const MAP01_LEGACY_CHECKSUM = "359c5aa1daa71a0fb91bba6848818f46";
     const MAP01_PREJUSTICE_CHECKSUM = "b9e3c740a85b8532c362d36113f882ae";
     const MAP01_PREEXAMPLES_CHECKSUM = "29bb6860a3907ef34978201f1a81a9b6";
@@ -14,9 +14,10 @@ class CaelumCartographyCatalogueData : Object
     }
     const MAP06_FURNISHED_CHECKSUM = "26eb59c84f2028e436acaa4914b42727";
     const MAP06_PREJUSTICE_CHECKSUM = "bfbf3d4ac39f36e7d61a450dbb47b1a2";
+    const MAP06_REVISION3_CHECKSUM = "03f80198bfae8ba82cc435775001ba91";
     static bool MatchesCityGeometry(String checksum)
     {
-        return checksum==MAP06_CHECKSUM || checksum==MAP06_FURNISHED_CHECKSUM || checksum==MAP06_PREJUSTICE_CHECKSUM;
+        return checksum==MAP06_CHECKSUM || checksum==MAP06_FURNISHED_CHECKSUM || checksum==MAP06_PREJUSTICE_CHECKSUM || checksum==MAP06_REVISION3_CHECKSUM;
     }
     const MANSION_ROOMS = 10;
     static bool MansionContains(int index,Vector3 point)
@@ -87,8 +88,19 @@ class CaelumCartographyCatalogueData : Object
         }
         return (0,0,0);
     }
-    static bool TowerContains(int index,Vector3 point)
+    static bool TowerContains(int index,Vector3 point,bool revised=false)
     {
+        if(revised)
+        {
+            switch(index)
+            {
+            case 0: return point.X>-29632 && point.X<-28992 && point.Y>12928 && point.Y<13568 && point.Z>=256 && point.Z<=400;
+            case 1: return point.X>-1664 && point.X<-1024 && point.Y>12928 && point.Y<13568 && point.Z>=256 && point.Z<=400;
+            case 2: return point.X>-27904 && point.X<-27264 && point.Y>-12288 && point.Y<-11648 && point.Z>=256 && point.Z<=400;
+            case 3: return point.X>-2816 && point.X<-2176 && point.Y>-14208 && point.Y<-13568 && point.Z>=256 && point.Z<=400;
+            }
+            return false;
+        }
         switch(index)
         {
         case 0: return point.X>-30080 && point.X<-29440 && point.Y>15488 && point.Y<16128 && point.Z>=256 && point.Z<=400;
@@ -98,8 +110,19 @@ class CaelumCartographyCatalogueData : Object
         }
         return false;
     }
-    static Vector3 TowerPosition(int index)
+    static Vector3 TowerPosition(int index,bool revised=false)
     {
+        if(revised)
+        {
+            switch(index)
+            {
+            case 0: return (-29312,13248,384);
+            case 1: return (-1344,13248,384);
+            case 2: return (-27584,-11968,384);
+            case 3: return (-2496,-13888,384);
+            }
+            return (0,0,0);
+        }
         switch(index)
         {
         case 0: return (-29760,15808,384);
@@ -109,8 +132,108 @@ class CaelumCartographyCatalogueData : Object
         }
         return (0,0,0);
     }
-    static String CityStationId(Vector3 spawnPoint)
+    static String CityStationId(Vector3 spawnPoint,bool revised=false)
     {
+        if(revised)
+        {
+            if(spawnPoint==(-4288,9920,0))return "city-factory-0-workbench";
+            if(spawnPoint==(-4192,9920,0))return "city-factory-0-forge";
+            if(spawnPoint==(-4096,9920,0))return "city-factory-0-anvil";
+            if(spawnPoint==(-4000,9920,0))return "city-factory-0-fine_tools";
+            if(spawnPoint==(-26752,10816,0))return "city-factory-1-workbench";
+            if(spawnPoint==(-26848,10816,0))return "city-factory-1-ranged";
+            if(spawnPoint==(-26944,10816,0))return "city-factory-1-sawmill";
+            if(spawnPoint==(-27040,10816,0))return "city-factory-1-forge";
+            if(spawnPoint==(-27136,10816,0))return "city-factory-1-fine_tools";
+            if(spawnPoint==(-21184,10304,0))return "city-factory-2-workbench";
+            if(spawnPoint==(-21088,10304,0))return "city-factory-2-armor";
+            if(spawnPoint==(-20992,10304,0))return "city-factory-2-sewing";
+            if(spawnPoint==(-25216,10816,0))return "city-factory-3-workbench";
+            if(spawnPoint==(-25312,10816,0))return "city-factory-3-altar";
+            if(spawnPoint==(-25408,10816,0))return "city-factory-3-jeweler";
+            if(spawnPoint==(-5824,9920,0))return "city-factory-18-workbench";
+            if(spawnPoint==(-5728,9920,0))return "city-factory-18-jeweler";
+            if(spawnPoint==(-5632,9920,0))return "city-factory-18-fine_tools";
+            if(spawnPoint==(-5536,9920,0))return "city-factory-18-forge";
+            if(spawnPoint==(-5440,9920,0))return "city-factory-18-altar";
+            if(spawnPoint==(-2752,10688,0))return "city-factory-19-workbench";
+            if(spawnPoint==(-2848,10688,0))return "city-factory-19-sawmill";
+            if(spawnPoint==(-2944,10688,0))return "city-factory-19-sewing";
+            if(spawnPoint==(-3040,10688,0))return "city-factory-19-forge";
+            if(spawnPoint==(-28288,10048,0))return "city-factory-20-workbench";
+            if(spawnPoint==(-28192,10048,0))return "city-factory-20-forge";
+            if(spawnPoint==(-28096,10048,0))return "city-factory-20-anvil";
+            if(spawnPoint==(-28000,10048,0))return "city-factory-20-fine_tools";
+            if(spawnPoint==(-21568,12288,0))return "city-factory-21-workbench";
+            if(spawnPoint==(-21568,12192,0))return "city-factory-21-ranged";
+            if(spawnPoint==(-21568,12096,0))return "city-factory-21-sawmill";
+            if(spawnPoint==(-21568,12000,0))return "city-factory-21-forge";
+            if(spawnPoint==(-21568,11904,0))return "city-factory-21-fine_tools";
+            if(spawnPoint==(-26368,12032,0))return "city-factory-36-workbench";
+            if(spawnPoint==(-26368,12128,0))return "city-factory-36-armor";
+            if(spawnPoint==(-26368,12224,0))return "city-factory-36-sewing";
+            if(spawnPoint==(-4672,8704,0))return "city-factory-37-workbench";
+            if(spawnPoint==(-4672,8608,0))return "city-factory-37-altar";
+            if(spawnPoint==(-4672,8512,0))return "city-factory-37-jeweler";
+            if(spawnPoint==(-3904,11904,0))return "city-factory-38-workbench";
+            if(spawnPoint==(-3904,12000,0))return "city-factory-38-jeweler";
+            if(spawnPoint==(-3904,12096,0))return "city-factory-38-fine_tools";
+            if(spawnPoint==(-3904,12192,0))return "city-factory-38-forge";
+            if(spawnPoint==(-3904,12288,0))return "city-factory-38-altar";
+            if(spawnPoint==(-27136,8832,0))return "city-factory-39-workbench";
+            if(spawnPoint==(-27136,8736,0))return "city-factory-39-sawmill";
+            if(spawnPoint==(-27136,8640,0))return "city-factory-39-sewing";
+            if(spawnPoint==(-27136,8544,0))return "city-factory-39-forge";
+            if(spawnPoint==(-20800,9088,0))return "city-factory-54-workbench";
+            if(spawnPoint==(-20800,9184,0))return "city-factory-54-forge";
+            if(spawnPoint==(-20800,9280,0))return "city-factory-54-anvil";
+            if(spawnPoint==(-20800,9376,0))return "city-factory-54-fine_tools";
+            if(spawnPoint==(-25152,12480,0))return "city-factory-55-workbench";
+            if(spawnPoint==(-25248,12480,0))return "city-factory-55-ranged";
+            if(spawnPoint==(-25344,12480,0))return "city-factory-55-sawmill";
+            if(spawnPoint==(-25440,12480,0))return "city-factory-55-forge";
+            if(spawnPoint==(-25536,12480,0))return "city-factory-55-fine_tools";
+            if(spawnPoint==(-24704,8832,0))return "city-factory-56-workbench";
+            if(spawnPoint==(-24704,8928,0))return "city-factory-56-armor";
+            if(spawnPoint==(-24704,9024,0))return "city-factory-56-sewing";
+            if(spawnPoint==(-28352,12480,0))return "city-factory-57-workbench";
+            if(spawnPoint==(-28448,12480,0))return "city-factory-57-altar";
+            if(spawnPoint==(-28544,12480,0))return "city-factory-57-jeweler";
+            if(spawnPoint==(-5888,8256,0))return "city-factory-72-workbench";
+            if(spawnPoint==(-5792,8256,0))return "city-factory-72-jeweler";
+            if(spawnPoint==(-5696,8256,0))return "city-factory-72-fine_tools";
+            if(spawnPoint==(-5600,8256,0))return "city-factory-72-forge";
+            if(spawnPoint==(-5504,8256,0))return "city-factory-72-altar";
+            if(spawnPoint==(-2688,9024,0))return "city-factory-73-workbench";
+            if(spawnPoint==(-2784,9024,0))return "city-factory-73-sawmill";
+            if(spawnPoint==(-2880,9024,0))return "city-factory-73-sewing";
+            if(spawnPoint==(-2976,9024,0))return "city-factory-73-forge";
+            if(spawnPoint==(-5568,11904,0))return "city-factory-74-workbench";
+            if(spawnPoint==(-5568,12000,0))return "city-factory-74-forge";
+            if(spawnPoint==(-5568,12096,0))return "city-factory-74-anvil";
+            if(spawnPoint==(-5568,12192,0))return "city-factory-74-fine_tools";
+            if(spawnPoint==(-28352,9152,0))return "city-factory-75-workbench";
+            if(spawnPoint==(-28448,9152,0))return "city-factory-75-ranged";
+            if(spawnPoint==(-28544,9152,0))return "city-factory-75-sawmill";
+            if(spawnPoint==(-28640,9152,0))return "city-factory-75-forge";
+            if(spawnPoint==(-28736,9152,0))return "city-factory-75-fine_tools";
+            if(spawnPoint==(-19584,12416,0))return "city-factory-90-workbench";
+            if(spawnPoint==(-19488,12416,0))return "city-factory-90-armor";
+            if(spawnPoint==(-19392,12416,0))return "city-factory-90-sewing";
+            if(spawnPoint==(-7360,10688,0))return "city-factory-91-workbench";
+            if(spawnPoint==(-7456,10688,0))return "city-factory-91-altar";
+            if(spawnPoint==(-7552,10688,0))return "city-factory-91-jeweler";
+            if(spawnPoint==(-3008,7040,0))return "city-factory-92-workbench";
+            if(spawnPoint==(-3008,7136,0))return "city-factory-92-jeweler";
+            if(spawnPoint==(-3008,7232,0))return "city-factory-92-fine_tools";
+            if(spawnPoint==(-3008,7328,0))return "city-factory-92-forge";
+            if(spawnPoint==(-3008,7424,0))return "city-factory-92-altar";
+            if(spawnPoint==(-1152,9280,0))return "city-factory-93-workbench";
+            if(spawnPoint==(-1248,9280,0))return "city-factory-93-sawmill";
+            if(spawnPoint==(-1344,9280,0))return "city-factory-93-sewing";
+            if(spawnPoint==(-1440,9280,0))return "city-factory-93-forge";
+            return "";
+        }
         if(spawnPoint==(-27520,-12608,0))return "city-factory-0-workbench";
         if(spawnPoint==(-27424,-12608,0))return "city-factory-0-forge";
         if(spawnPoint==(-27328,-12608,0))return "city-factory-0-anvil";
@@ -209,9 +332,15 @@ class CaelumCartographyCatalogueData : Object
         if(spawnPoint==(-22624,-3968,0))return "city-factory-93-forge";
         return "";
     }
-    static Vector3 EastPosition() { return (768,576,0); }
-    static bool CrossesEast(Vector3 before,Vector3 after)
+    static Vector3 EastPosition(bool revised=false) { return revised?(384,-1472,0):(768,576,0); }
+    static bool CrossesEast(Vector3 before,Vector3 after,bool revised=false)
     {
+        if(revised)
+        {
+            if((before.X<384)==(after.X<384) || before.X==after.X)return false;
+            Vector3 crossing=before+(after-before)*((384-before.X)/(after.X-before.X));
+            return crossing.Y>-1536 && crossing.Y<-1408 && crossing.Z>=0 && crossing.Z<96;
+        }
         if((before.X<768)==(after.X<768) || before.X==after.X)return false;
         Vector3 crossing=before+(after-before)*((768-before.X)/(after.X-before.X));
         return crossing.Y>448 && crossing.Y<704 && crossing.Z>=0 && crossing.Z<96;

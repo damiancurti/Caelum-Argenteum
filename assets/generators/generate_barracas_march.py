@@ -50,7 +50,7 @@ def outputs():
                          'gun_approach': gun_path, 'gun_crew_start': starts,
                          'gun_final_approach_offset': [nx * old['operator_side'] * 2, ny * old['operator_side'] * 2, 0]})
     data = {'schema_revision': 1, 'issue': 454, 'geometry_revision': fronts['geometry_revision'],
-            'status': 'Southern pedestrian approach candidate; native movement and crowd checks required.',
+            'status': 'Generated revision4 southern pedestrian approaches; LAYOUT.json owns production activation.',
             'entry_line_y': south['formation_y'], 'lanes': rows,
             'source_sha256': {p: hashlib.sha256((ROOT / p).read_bytes()).hexdigest() for p in INPUTS}}
     code = '// Marchas desde el campo sur, derivadas de la geometria aprobada.\nclass CaelumBarracasMarchData : Object play\n{\n    const REVISION=1;\n'

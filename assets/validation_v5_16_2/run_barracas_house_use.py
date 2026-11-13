@@ -17,14 +17,14 @@ from run_barracas_legacy import ROOT, ENGINE, IWAD, digest
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ('runtime', 'candidate', 'output'):
-        parser.add_argument('--' + name, type=Path, required=True)
+        parser.add_argument('--' + name, type=Path, required=name != 'candidate')
     parser.add_argument('--shops', action='store_true', help='Instead exercise native Use at64 shops and one finite-stock purchase')
     parser.add_argument('--stations', action='store_true', help='Instead exercise native Use and existing crafting networks at96 factory stations')
     parser.add_argument('--vehicles', action='store_true', help='Instead exercise native Use at four parked vehicle boarding points')
     args = parser.parse_args()
     if sum((args.shops, args.stations, args.vehicles)) > 1: parser.error('Select one interaction suite')
     out = args.output.resolve(); out.relative_to(ROOT / 'build'); out.mkdir(exist_ok=False)
-    runtime, candidate = args.runtime.resolve(), args.candidate.resolve()
+    runtime, candidate = args.runtime.resolve(), args.candidate.resolve() if args.candidate else None
     fixture = out / 'house-use.pk3'
     with zipfile.ZipFile(fixture, 'w') as archive:
         name = 'vehicle' if args.vehicles else 'station' if args.stations else 'shop' if args.shops else 'house'
@@ -38,7 +38,7 @@ def main():
         for name, value in files.items():
             archive.writestr(zipfile.ZipInfo(name, (2026, 11, 13, 0, 0, 0)), value)
     report = {'issue': 454, 'scope': __doc__.strip(), 'runtime_sha256': digest(runtime),
-              'candidate_sha256': digest(candidate), 'fixture_sha256': digest(fixture), 'runs': []}
+              'candidate_sha256': digest(candidate) if candidate else None, 'fixture_sha256': digest(fixture), 'runs': []}
     if args.shops:
         report['scope'] = 'Native +use input at64 retained merchants and one actual finite-stock purchase; fixture places user and provides Box/currency. Native price, stock and wallet transfer retained. No walking, full catalogue, siege, multiplayer or author acceptance.'
     if args.stations:
@@ -68,7 +68,7 @@ def main():
         entry = ['+map', 'MAP03']
         if phase == 'reload':
             shutil.copyfile(out / 'fresh/checkpoint.zds', folder / 'input.zds'); entry = ['-loadgame', 'input.zds']
-        command = [str(ENGINE), '-noautoload', '-iwad', str(IWAD), '-file', str(package), str(candidate), str(fixture),
+        command = [str(ENGINE), '-noautoload', '-iwad', str(IWAD), '-file', str(package), *([str(candidate)] if candidate else []), str(fixture),
                    '-config', str(folder / 'isolated.ini'), '-savedir', str(folder), '-window', '-width', '960', '-height', '720',
                    '+logfile', str(folder / 'engine.log'), *entry, '+exec', str(folder / 'commands.cfg')]
         startup = subprocess.STARTUPINFO(); startup.dwFlags |= subprocess.STARTF_USESHOWWINDOW; startup.wShowWindow = 0

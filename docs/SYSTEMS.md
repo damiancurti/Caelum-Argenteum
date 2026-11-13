@@ -2,7 +2,14 @@
 
 Documentation version: **5.16.2** - 2026-11-12.
 
-## 5.16.2 / #454 - Approved Barracas siege adaptation (candidate)
+## 5.16.2 / #454 - Approved Barracas siege adaptation
+
+Known-only cartography selects revision4 factory/tower/stair/east-gate coordinates
+while retaining the original IDs and legacy geometry checksums. Bindings alone
+do not reveal points. The native knowledge API fixture records one used station,
+36 visited stair entries, four towers and one eastern crossing;42 facts persist
+without duplicates after reload on both layouts. Positioning is supplied by the
+fixture; normal service Use and traversal have separate evidence.
 
 The existing Knight of Wands essence follows the relocated quay through the
 same CurrentPortPoint transform as its surroundings. Original-city positioning
@@ -34,7 +41,7 @@ avoidance. Native collision, speed, resources and shared search budgets remain.
 A nearby closed gate receives its normal Used
 interaction, since the original closing timer still runs after victory opening.
 Legacy geometry keeps its former tables/behavior. Isolated navigation evidence
-is qualified in barracas-navigation/SUMMARY.json; the city is not activated.
+is qualified in barracas-navigation/SUMMARY.json; revision4 is now packaged.
 
 The wounded commander now follows the same revision-4 ground withdrawal fields
 through a virtual escape-step hook. His existing half-health trigger, native
@@ -88,8 +95,8 @@ Opt-in crew layouts retain6/32 operators and their original guard radii, with
 local rotating posts derived from native collision boxes. The new crews keep
 their assigned station ahead of remembered search movement, while visible
 enemies retain normal combat handling. Two isolated live crews, pedestrian routes,
-capture ownership and refill admission pass. Full battle handling still requires
-integration. Earlier machine/crew layouts retain their original behavior.
+capture ownership, refill admission and crowded aftermath pass. A fully played
+battle and author review remain pending. Earlier layouts retain their behavior.
 
 The revision-4 controller now owns four gate instances shared by six machine
 slots: south/south/east/east/west/west, with slot5 retaining the large ram.
@@ -99,8 +106,8 @@ crew absence leaves the reserve waiting. Saved reserve-release flags persist
 idempotently; existing ownership and restoration mechanics remain authoritative.
 Twelve hostile objectives and the original reinforcement/defender counts remain.
 Native isolated deployment/reload verifies these identities and reserve behavior;
-production MAP03 still uses revision3 while infantry approaches/retreats,
-capture/refill and integrated battle verification remain pending.
+production MAP03 now uses revision4. Infantry approaches/retreats and capture/refill
+pass; full-play battle acceptance remains separate from these diagnostic fixtures.
 
 ## 5.15.4 / #451 - Occupation, recovery and persistent consequences
 

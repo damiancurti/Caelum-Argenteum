@@ -2,11 +2,11 @@
   "schema_revision": 1,
   "issue": 454,
   "geometry_revision": 4,
-  "runtime_enabled": false,
-  "status": "candidate_geometry_requires_native_clearance_and_routes",
+  "runtime_enabled": true,
+  "status": "generated_revision4_defensive_placements",
   "authority": "LAYOUT.json approved four gates, three fronts and active artillery distribution; retained original counts/stats/guard spacing/stair profiles.",
   "source_sha256": {
-    "assets/barracas_redesign/LAYOUT.json": "6698de7680e7bcdd2dd923de5fa04380312c703609e9d52194e10508a5ade29b",
+    "assets/barracas_redesign/LAYOUT.json": "4ac292be6105b2926669a7f93b43fe5f0643f73e8610ef18c02bfdc0aa3f4aed",
     "assets/map06_port/CITY.json": "d251e8aff3fb4f7c30c94e176b10eb95cd1a00e888c1a53f3846160d7e0e6d35",
     "assets/map06_port/SOUTH.json": "81955e52444ca97baa9f47f385005d1f764e84ba5d6f42e12d3aa20bf3c935fa",
     "assets/map06_port/INTERIORS.json": "340df2d2f9a5df6e2e7e7d05d1adf8528b3a0b18e4f47783783e32dcf95913ef"

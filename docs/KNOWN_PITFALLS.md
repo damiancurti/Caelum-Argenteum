@@ -4,6 +4,24 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-223 - Map installation must migrate geometry-dependent catalogues
+
+Status/evidence: ENGINE-VERIFIED,2026-11-13. Issue/PR: #454/#643.
+Environment: GZDoom4.14.2 on Windows11, unpaused background at5% audio.
+Evidence: assets/validation_v5_16_2/barracas-integration/SUMMARY.json.
+
+A tested overlay can compile and preserve services while production cartography
+still uses the original checksum and coordinates. Replacing the checksum alone
+would recognize the new map with old station/tower/stair/exit positions and drop
+the original Justice-era map from the compatibility whitelist. Keep exact legacy
+checksums and select relocated coordinates by the loaded geometry revision;
+preserve IDs and private maps. Installation regenerates the dependent catalogues.
+Verify native bindings without granting knowledge, then use/visit and reload.
+The revised and original layouts each pass96 bindings and retain42 observed
+facts without revealing the other95 stations. Fixture positioning/API calls
+are not walking or normal UI acceptance. Check the final packaged assets as
+well as the isolated overlay; preserve the earlier evidence with its own hash.
+
 ## CA-KP-222 - Individual routes do not prove crowded withdrawal
 
 Status/evidence: ENGINE-VERIFIED for fresh/saved/early-replayed crowd recovery;

@@ -11,7 +11,7 @@ boss retreat, lower branches/grates/lift and qualified Vulkan measurements pass.
 Ordinary combat/hazard navigation and author review remain outstanding under
 CA454-MAP02-01. Evidence: assets/validation_v5_16_2/RESULTS.json.
 
-Barracas revision4 remains an isolated candidate. Approved street/plaza/perimeter
+Barracas revision4 is packaged in MAP03. Approved street/plaza/perimeter
 geometry retains288 building identities and160 private interiors. Native checks
 cover424 architectural endpoints,224 service endpoints,160 portals/320 leaves,
 four gate interactions and160 closed/open samples. The closed-perimeter grid
@@ -47,14 +47,14 @@ also pass replay. Retain failed/incomplete runs and original saves. Peaceful,
 ground-facing and full-cap siege presentation traces are recorded; the revised
 siege still measures only1.50 requests/s, with p99791.28ms. Local navigation is
 about0.4% of the separate timing window, so speculative pathfinding optimization
-is unsupported. Preserve this unresolved performance limitation. Finish final
-integrated new/legacy startup checks before activating production MAP03.
+is unsupported. Preserve this unresolved performance limitation. Integrated
+new/legacy evidence is recorded in barracas-integration/SUMMARY.json.
 Keep fixture thermal isolation separate from integrated climate survival.
 Architectural readability and author acceptance remain outstanding; final art
 completion belongs to #463 and is not claimed by this map slice.
 See barracas-continuation/SUMMARY.json and the focused geometry/navigation
-and barracas-withdrawal/SUMMARY.json under assets/validation_v5_16_2. Add a city author check only when the
-integrated candidate is ready. Other regional layouts still require authoring.
+and barracas-withdrawal/SUMMARY.json under assets/validation_v5_16_2.
+CA454-MAP03-01 covers the outstanding author review. Regional layouts still require authoring.
 
 ## 5.16.1 - Bestiary source import (#453)
 

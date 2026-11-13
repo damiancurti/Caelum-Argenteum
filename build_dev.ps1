@@ -401,7 +401,7 @@ try {
     elseif ($LegacyMap06NorthCity) { Write-Host 'MAP06 layout: byte-identical first 4.37.9 city with the northern siege.' }
     elseif ($LegacyMap06SouthCity) { Write-Host 'MAP06 layout: exact 5.1.2 southern city compatibility geometry.' }
     elseif ($LegacyMap06Furnished) { Write-Host 'MAP06 layout: exact pre-5.4.28 furnished city for existing campaigns; open geometry reduction inactive.' }
-    else { Write-Host 'MAP03: original house footprints, private hub interiors and roof-height district sky; taller exterior sky. Start a fresh campaign; the old catalogue remains recoverable at b9fd71ce.' }
+    else { Write-Host 'MAP03: Barracas revision 4, four gates and retained private interiors. For visited original-city saves use -LegacyMap03Revision3. Siege rendering remains limited; preserve original saves.' }
     Write-Host "Directory entries: 0"
 }
 finally {

@@ -3,9 +3,9 @@
   "issue": 454,
   "geometry_revision": 4,
   "authority": "Author approved three assault fronts, six rams (one active/one reserve per front), existing force counts and four gate materials on 2026-11-12.",
-  "status": "Candidate geometry; production MAP03 remains revision3 pending integrated native validation.",
+  "status": "Generated revision4 fronts; LAYOUT.json owns production activation.",
   "source_sha256": {
-    "assets/barracas_redesign/LAYOUT.json": "6698de7680e7bcdd2dd923de5fa04380312c703609e9d52194e10508a5ade29b",
+    "assets/barracas_redesign/LAYOUT.json": "4ac292be6105b2926669a7f93b43fe5f0643f73e8610ef18c02bfdc0aa3f4aed",
     "assets/map06_port/SOUTH.json": "81955e52444ca97baa9f47f385005d1f764e84ba5d6f42e12d3aa20bf3c935fa",
     "assets/map06_port/CITY.json": "d251e8aff3fb4f7c30c94e176b10eb95cd1a00e888c1a53f3846160d7e0e6d35",
     "assets/map06_port/LAYOUT.json": "56bc2e815b46e78d4f141f97d21e15d038a6d991e4be376a2fa8022f818c7a86"

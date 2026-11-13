@@ -4,6 +4,29 @@ Documentation version: **5.16.2** - 2026-11-12.
 
 ## 5.16.2 - Sewer redesign slice (#454, in progress, 2026-11-12)
 
+2026-11-13 city installation: the approved Barracas revision4 is packaged as
+MAP03 with its tested geometric facade model and bindings. The installed WAD
+matches the earlier native-tested Justice candidate exactly; all237 other WADs
+and seven generated route/coordinate code files retain their bytes. The owned
+pre-Justice source and INSTALLATION.json preserve provenance and deterministic
+regeneration; project validation rejects stale inputs/assets/bindings read-only.
+The independent LegacyMap03Revision3 package retains original active/stored-hub
+geometry. Native installed/legacy results are in barracas-integration/SUMMARY.json;
+CA454-MAP03-01 remains an author check. This installation does not resolve the
+measured severe siege presentation stalls or complete the other regional slices.
+
+The installation validator caught an additional cartography dependency: changing
+only the city checksum would still use old station/tower/stair/east coordinates
+and omit the exact original Justice-era checksum. Generated revision selectors
+now retain old IDs/coordinates for legacy saves and use approved relocated data
+for revision4. Native discovery evidence covers96 bindings without automatic
+revelation and42 used/visited facts across fresh/reloaded new and legacy layouts.
+An initial test-runner failure concatenated an integer building ID before launch;
+the fixture now formats the preserved ID explicitly. The production map did not
+cause that tooling failure. Later package changes are limited to the three
+cartography source/data entries; earlier unaffected integration checks are reused
+with exact entry comparisons, not claimed to have run on a different hash.
+
 2026-11-13 presentation follow-up: eight sequential native runs preserve actual
 vkQueuePresentKHR traces,1280x720 captures, exact runtime hashes and observers.
 Original/revised peaceful quay106.95/100.07 requests/s; ground76.68/75.63;

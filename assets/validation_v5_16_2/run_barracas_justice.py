@@ -12,15 +12,15 @@ from run_barracas_legacy import ROOT, ENGINE, IWAD, digest
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ('runtime', 'candidate', 'output'):
-        parser.add_argument('--' + name, type=Path, required=True)
+        parser.add_argument('--' + name, type=Path, required=name != 'candidate')
     args = parser.parse_args(); out = args.output.resolve(); out.relative_to(ROOT / 'build'); out.mkdir(exist_ok=False)
-    runtime, candidate = args.runtime.resolve(), args.candidate.resolve()
+    runtime, candidate = args.runtime.resolve(), args.candidate.resolve() if args.candidate else None
     fixture = out / 'justice-probe.pk3'
     with zipfile.ZipFile(fixture, 'w') as archive:
         for name, value in {'ZSCRIPT': 'version "4.14.2"\n' + Path(__file__).with_name('barracas_justice_probe.zs').read_text(encoding='utf-8'),
                             'MAPINFO': 'gameinfo { AddEventHandlers="CA454JusticeProbe" }\ndoomednums {31050=CA454JusticeCity}\n'}.items():
             archive.writestr(zipfile.ZipInfo(name, (2026, 11, 13, 0, 0, 0)), value)
-    report = {'issue': 454, 'scope': __doc__, 'runtime_sha256': digest(runtime), 'candidate_sha256': digest(candidate),
+    report = {'issue': 454, 'scope': __doc__, 'runtime_sha256': digest(runtime), 'candidate_sha256': digest(candidate) if candidate else None,
               'fixture_sha256': digest(fixture), 'runs': []}
     fatal = ('Script error', 'Execution could not continue', 'VM execution aborted', 'Unknown type')
     for phase in ('fresh', 'reload'):
@@ -31,7 +31,7 @@ def main():
         entry = ['+map', 'MAP03']
         if phase == 'reload':
             shutil.copyfile(out / 'fresh/checkpoint.zds', folder / 'input.zds'); entry = ['-loadgame', 'input.zds']
-        command = [str(ENGINE), '-noautoload', '-iwad', str(IWAD), '-file', str(package), str(candidate), str(fixture),
+        command = [str(ENGINE), '-noautoload', '-iwad', str(IWAD), '-file', str(package), *([str(candidate)] if candidate else []), str(fixture),
                    '-config', str(folder / 'isolated.ini'), '-savedir', str(folder), '-window', '-width', '960', '-height', '720',
                    '+logfile', str(folder / 'engine.log'), *entry, '+exec', str(folder / 'commands.cfg')]
         startup = subprocess.STARTUPINFO(); startup.dwFlags |= subprocess.STARTF_USESHOWWINDOW; startup.wShowWindow = 0

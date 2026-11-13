@@ -87,8 +87,8 @@ def main():
     port,layout,*_=assemble(out,False)
     result=routes(port,layout)
     inputs=['assets/barracas_redesign/'+n+'.json' for n in ('LAYOUT','RUNTIME','SIEGE')]+['src/caelum/data/CaelumPropertyData.zs','assets/map06_port/LAYOUT.json']
-    document={'schema_revision':1,'geometry_revision':4,'issue':454,'runtime_enabled':False,
-              'status':'static_candidate_routes_require_native_deployment','source_sha256':{p:hashlib.sha256((ROOT/p).read_bytes()).hexdigest() for p in inputs},
+    document={'schema_revision':1,'geometry_revision':4,'issue':454,'runtime_enabled':layout['runtime_enabled'],
+              'status':'generated_revision4_resident_routes','source_sha256':{p:hashlib.sha256((ROOT/p).read_bytes()).hexdigest() for p in inputs},
               'contract':'600 original identities,72 crew/528 guards. ResidentHouse relocation69->70 retained. Private-map origins unchanged; ground routes remain inside the perimeter and outside indoor building footprints, using native-clear streets/forecourts/service alleys.',
               'routes':result}
     files={'assets/barracas_redesign/DEPLOYMENT.json':(json.dumps(document,indent=2)+'\n').encode(),

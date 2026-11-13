@@ -13,6 +13,7 @@ from assets.generators.generate_tarot_justice import validate as justice_geometr
 from assets.generators.generate_tarot_examples import render as tarot_example_data
 from assets.generators.build_bestiary_catalogue import assemble as bestiary_catalogue
 from assets.generators.validate_map02_redesign import audit as sewer_redesign_audit
+from assets.generators.install_barracas_map import validate as barracas_installation_problems
 
 from build_document_index import (
     INDEX_NAME as DOC_INDEX_NAME,
@@ -70,6 +71,7 @@ def index_problems(root):
 
 def validate(root):
     errors = dialogue_problems(root)
+    errors.extend(barracas_installation_problems(root))
     try:
         errors.extend(justice_geometry_problems(root))
         if (root/'src/caelum/data/CaelumTarotExampleData.zs').read_bytes() != tarot_example_data(root):

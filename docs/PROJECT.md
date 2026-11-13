@@ -12,7 +12,7 @@ before/after Vulkan evidence is recorded; ordinary combat/hazard traversal and
 author acceptance remain pending. MAP01 owns geometry and compatibility modes;
 assets/validation_v5_16_2/RESULTS.json owns the evidence.
 
-Barracas revision4 is not yet installed in production MAP03. Its approved
+Barracas revision4 is installed in production MAP03. Its approved
 street/plaza/perimeter structure retains288 building identities,160 private
 interiors, four gates and three siege fronts. Native geometry, services, gates,
 artillery access, six complete ram routes and600 deployment paths pass. Actual
@@ -40,8 +40,8 @@ early-checkpoint replay both finish at30,205tics. Native presentation measures
 100.07/s at the revised quay,75.63/s facing ground and1.50/s during full-cap siege.
 The original city with the same code measures106.95,76.68 and1.28/s respectively;
 these are corresponding views, not identical rendered workloads or an accepted-main
-runtime comparison. Severe siege stalls remain unresolved. Final integrated
-new/legacy startup checks remain unfinished. Thermal-isolated
+runtime comparison. Severe siege stalls remain unresolved. Integrated
+new/legacy evidence is recorded in barracas-integration/SUMMARY.json. Thermal-isolated
 navigation does not establish climate survival or a fully played battle.
 Architectural readability/author review remain pending; final art completion is
 coordinated with #463. No new folklore actors, regional maps, essence placements

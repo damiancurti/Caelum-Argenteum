@@ -60,7 +60,28 @@ progression, combat/hazards, route readability and author acceptance remain
 pending under CA454-MAP02-01.
 This slice does not complete Barracas, other regional maps or the V5.16 campaign.
 
-### Barracas architectural source (intermediate, not activated)
+### Barracas revision4 installation and architectural sources
+
+Fresh campaigns now receive the reviewed four-gate MAP03. The source base and
+installation manifest live in assets/barracas_redesign; only MAP03 changes among
+the238 production WADs in this installation. The arena-appended map and facade
+model match the tested candidate byte-for-byte; seven generated runtime route
+tables remain unchanged. Native checks repeat against the installed package
+without a map overlay. Original active/stored-hub saves use the independent
+LegacyMap03Revision3 build, which retains their exact geometry. Never overwrite
+the original save while testing either package. CA454-MAP03-01 retains ordinary
+play, architectural readability and author review, including the measured severe
+siege presentation limitation. Final art remains coordinated with #463.
+
+Cartography retains the existing factory, tower, stair-route and eastern-exit
+identities at their revised positions. The original city checksum remains
+accepted alongside its earlier furnished/pre-Justice variants. Current geometry
+selects the relocated96 factory stations, four towers and36 first stair steps;
+the western exterior region retains its existing bounds. Registration alone
+reveals nothing. Native binding/use-record/update checks retain exactly the one
+used station and41 visited route/tower/exit facts after reload in either layout.
+The fixture supplies positions and invokes native knowledge APIs; it does not
+substitute for ordinary walking or the previous native service Use evidence.
 
 The candidate now includes the existing Justice arena as an independent appended
 room: width768, headroom160, sector391 and centre(2560,20672,0), derived from
@@ -68,7 +89,7 @@ the original ARENA.json settings and map bounds. The previous city TEXTMAP is
 an unchanged byte prefix. A checksum-qualified entry in the authoritative
 Justice manifest selects this room; original city saves retain sector767.
 Native direct duel/save/expiry returns and old active/stored-hub continuation
-pass. See barracas-justice/SUMMARY.json; production city activation remains pending.
+pass. See barracas-justice/SUMMARY.json; the installed MAP03 matches that tested candidate.
 
 The pedestrian candidate now uses generated southern approaches for three
 infantry fronts and12 cannon operators. Saved entry cursors retain progress;
@@ -147,15 +168,15 @@ cell audit; 160 native maximum-body closed/open samples and four Used-handler
 calls pass, with closed/open views inspected. This is isolated collision/use
 evidence, not ordinary siege travel; see barracas-gates/SUMMARY.json.
 
-The source is not runtime enabled. CABAPRV is a disposable geometry/model preview
-under build/, with no production MAP03 replacement or private CAH map change.
+LAYOUT.json now enables revision4 in production MAP03. CABAPRV remains a disposable
+geometry/model preview under build/; all private CAH map bytes are unchanged.
 Exact preceding MAP03 and relevant sources are preserved in
 assets/map06_port/legacy_5162. `-LegacyMap03Revision3` /
 `--legacy-map03-revision3` retains those bytes independently of the sewer flag.
 Current-code active/stored-hub continuation passes, including MAP03/CAH069 travel,
 original gate/coordinate identities and Justice lookup by loaded-map checksum.
-This retains the old city; it does not convert it. Repeat with the integrated
-new-city runtime before activating MAP03. Evidence is in
+This retains the old city; it does not convert it. Integrated-runtime repetition
+is recorded in barracas-integration/SUMMARY.json. Earlier evidence is in
 assets/validation_v5_16_2/barracas-legacy/SUMMARY.json.
 
 The preview passes 424 static route targets and 424 native maximum-body endpoint
@@ -164,8 +185,8 @@ four open gate arches. Generated WAD, model and preview package bytes repeat
 exactly. Evidence and intermediate rendering failures are qualified in
 assets/validation_v5_16_2/barracas-preview/SUMMARY.json. This does not test ordinary
 walking, native house travel, merchants, guards, dynamic gate collision or siege
-deployment. Later service/deployment checks are recorded above; combined aftermath,
-presentation and architectural review remain pending. Final art is coordinated
+deployment. Later service/deployment/aftermath and presentation checks are recorded
+above; architectural review remains pending. Final art is coordinated
 with #463. The subsequent MAP03 candidate reuses the original quay
 through the approved quarter-turn/offset, retains its cargo/water/prisoner props
 and adds160 private-house portals/return starts,64 shop signs and96 factory
@@ -209,8 +230,8 @@ real defender AI nor crowded deployment/firing coverage. Corrected exterior
 views were inspected after a fixture camera initially landed inside a building.
 Evidence: assets/validation_v5_16_2/barracas-forts/SUMMARY.json. The production
 MAP03 and private-house map bytes remain unchanged. The subsequent600-route,
-real-resident and service checks pass as recorded above; combined aftermath and
-performance remain pending.
+real-resident, service and combined aftermath checks pass as recorded above.
+Presentation is measured separately and retains severe siege stalls.
 
 DEPLOYMENT.json now derives all 600 ground paths from the same assembled candidate
 cells, starting at each actual ResidentHouse doorway, including 69->70 relocation.
@@ -227,8 +248,8 @@ Fresh and reloaded native candidates each pass 600 routes/9453 points with 86653
 continuous TryMove samples using the defender body and exact zero-floor support.
 The probe is bounded per tic and ignores actors; it verifies geometry/runtime
 dispatch rather than real AI, moving crowds, scheduling or doors used normally.
-Source regeneration repeats exactly. Actual 600-body deployment and the three
-assault fronts still require integration before production activation. Evidence:
+Source regeneration repeats exactly. Actual600-body deployment and three-front
+integration were subsequently verified as recorded above. Geometry evidence:
 assets/validation_v5_16_2/barracas-deployment/SUMMARY.json.
 Original active/stored-hub continuation also passes with this runtime; all 238
 packaged maps, including 160 private CAH interiors, remain byte-identical.
@@ -280,8 +301,8 @@ generator previously omitted the existing ChestPosition method; its accepted
 (864,832,0) local coordinate is now in INTERIORS.json and regenerated unchanged.
 The isolated native services fixture passes all 224 maximum-body endpoints and
 160 map-spawned portals/320 rotated leaves, plus the retained private chest offset.
-This fixture has no ordinary house travel or live city services; production MAP03
-and all 160 CAH WADs remain byte-identical. See barracas-services/SUMMARY.json.
+This earlier fixture has no ordinary house travel or live city services; at that
+checkpoint production MAP03 and all160 CAH WADs were unchanged. See barracas-services/SUMMARY.json.
 
 The author approved southern army arrival splitting toward south, east and west
 gates, one active and one reserve ram on each front; the northern gate serves
@@ -306,7 +327,7 @@ preserve this state. All six complete physical approaches produce native gate
 impacts and pass2,005,906 maximum-body crew-post samples per run. These tests
 isolate geometry/deployment. The continuation suite separately verifies long
 pedestrian routes, capture/refill and600-resident deployment. Combined aftermath
-and presentation still need verification before production MAP03 activation. Evidence is
+and qualified presentation evidence are now recorded above. Front evidence is
 assets/validation_v5_16_2/barracas-fronts/SUMMARY.json.
 The final full-route runs also retain all six attacking cannons and waiting ram
 frames as physical obstacles. Fresh/reload pass; old active/stored-hub

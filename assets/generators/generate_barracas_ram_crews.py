@@ -39,7 +39,7 @@ def generate():
         assert minimum/math.sqrt(2)>=2*radius
         profiles.append({'large':large,'count':count,'scale':scale,'columns':columns,'spacing':spacing,'minimum_separation':minimum,'posts':posts})
     half=math.ceil(max(abs(p[1])+radius for row in profiles for p in row['posts'])/layout['grid'])*layout['grid']
-    data={'issue':454,'revision':1,'runtime_enabled':False,'scope':__doc__.strip(),
+    data={'issue':454,'revision':1,'runtime_enabled':layout['runtime_enabled'],'scope':__doc__.strip(),
           'body_source':'assets/map02_maze/LAYOUT.json','clearance_radius':radius,'clearance_height':body['largest_supported_height'],
           'forecourt_width':max(city['walk_width'],half*2),'forecourt_depth':city['walk_width'],'profiles':profiles}
     source=['// Generado por generate_barracas_ram_crews.py; solo puestos, sin cambios de atributos.',
