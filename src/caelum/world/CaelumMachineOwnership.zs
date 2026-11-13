@@ -112,6 +112,7 @@ class CaelumMachineOwnership : Object play
         let ram=CaelumBatteringRam(machine);
         if(ram==null)return soldier.CrewPost();
         int slot=0;for(int i=0;i<machine.ControlledCrew.Size();i++)if(machine.ControlledCrew[i]==soldier){slot=i;break;}
+        if(ram.CrewLayoutRevision>0)return ram.CrewPosition(slot);
         vector3 offset=((slot%2==0?-1:1)*CaelumRamData.TRIAL_CREW_SIDE*ram.SizeFactor,
             ((slot/2)-(ram.RequiredCrew/2-1)/2.0)*CaelumRamData.TRIAL_CREW_STEP,0);
         double rotation=machine.Angle-90;

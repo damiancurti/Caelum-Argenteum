@@ -4,6 +4,30 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-220 - Rotating crew posts need box clearance and live AI evidence
+
+Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED for isolated ram crews.
+First recorded / last checked: 2026-11-13 / 2026-11-13.
+Issue / PR: #454 / #643. Baseline: afccdb299 plus the opt-in crew layout;
+exact runtime/map hashes and attempts are in barracas-ram-crews/SUMMARY.json.
+Environment: Windows11, GZDoom4.14.2, Vulkan, unpaused background at5% audio.
+Scope:6/32 real Mandingas and two rams, plus separate physical clearance probes.
+
+Empty-space sampling of desired posts did not prove live movement. Remembered
+search goals could outrank the assigned station; cached chase direction and
+idle cadence also differed from deliberate walking. Euclidean post separation
+did not account for axis-aligned actor boxes during turns or the arrival radius
+that allowed adjacent occupants to obstruct one another. Derive row spacing
+and arrival tolerance from the worst rotated box clearance. Keep the native
+body, movement speed and cadence; re-evaluate the moving post at each step.
+
+The combined correction passes fresh/reloaded hostile crew approaches in2176
+and2544 simulation tics, with all38 bodies and real gate impacts. Individual
+fix contributions were not isolated as performance ablations. This is not a
+full battle/capture/refill/FPS or author-acceptance result. Preserve original
+saved crew behavior behind explicit layout revisioning; do not apply the new
+station policy to unrelated AI merely because it shares a navigation helper.
+
 ## CA-KP-219 - Machine approaches need swept body clearance and ground support
 
 Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED for isolated ram access.

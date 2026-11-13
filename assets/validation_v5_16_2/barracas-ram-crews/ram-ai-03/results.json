@@ -1,0 +1,18 @@
+{
+  "issue": 454,
+  "scope": "Two isolated rams with38 real Mandingas following production crew AI at normal cadence; no teleports or accelerated movement. Not the full three-front siege, crowd/performance or author acceptance.",
+  "live_crews": true,
+  "crew_clearance": false,
+  "runtime_sha256": "d44c39d2df601f8807f47414440cc85fd85c82ddbc4e2858159500d12e655568",
+  "candidate_sha256": "1d2bb60078bbf390fed026f1985b14c54bcd2622f0e996d08c1254538f4b3d2b",
+  "fixture_sha256": "bbffaac64c2c20a055712f1b08339db144a65703772c0c474b2c63887503d645",
+  "runs": [
+    {
+      "phase": "fresh",
+      "passed": false,
+      "exit_code": 1,
+      "timeout": false,
+      "checks": []
+    }
+  ]
+}

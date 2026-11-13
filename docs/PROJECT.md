@@ -26,7 +26,9 @@ collision sampling in fresh/reloaded saves. This verifies geometry and dispatch,
 not 600-body AI/crowds; the production city remains unchanged.
 Both existing ram sizes now pass isolated corner approaches and impacts against
 all four gates, with mid-turn reload and fixed-heading regression controls. Crew
-movement, reserve activation and full three-front behavior are still unfinished.
+movement with6/32 real Mandingas also passes in two isolated normal-cadence
+fresh/reload cases. Production integration, reserve activation and full
+three-front behavior are still unfinished.
 
 ## 5.16.1 - Folklore reference recovery (#453, catalogue approved)
 

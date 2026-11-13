@@ -169,7 +169,7 @@ Original active/stored-hub continuation also passes with this runtime; all 238
 packaged maps, including 160 private CAH interiors, remain byte-identical.
 
 The ram-access candidate keeps the 128-MU inner gate throat and 96-MU native
-blocker, but opens the exterior half as a 256-MU-wide/deep unroofed forecourt.
+blocker, but opens the exterior half as a512-MU-wide/256-MU-deep unroofed forecourt.
 This accommodates the existing large frame without widening the closed passage
 or changing gate height/resistance. Missing east/west exterior ground is filled
 using the original hostile-artillery standoff plus two walkway widths, preserving
@@ -180,6 +180,32 @@ eight gate/size cases plus two legacy-route controls. It repeats the production
 physical step32 times per diagnostic tic without changing speed/turn constants;
 this is collision/contact evidence, not real-time combat or crew AI. The gate
 closure checks remain a separate control. Evidence: barracas-rams/SUMMARY.json.
+
+RAM_CREWS.json derives local posts for the original6/32 crew counts from the
+accepted maximum human body and existing frame/guard dimensions. Native actors
+use axis-aligned collision boxes:61-MU row spacing covers a45-degree turn, with
+arrival tolerance derived from the remaining clearance. Two columns fit the
+small crew; four fit the large crew inside its unchanged guard radius. The
+forecourt needs inner shoulders and outer flanks through the oblique wall;
+omitting those flanks reopened a closed-gate bypass during authoring.
+
+CrewLayoutRevision opts new machines into rotating posts; earlier saves retain
+zero/default layouts. Machine assignment preserves each saved crew slot, and
+hostile/captured post helpers share the same geometry. New crews use the existing
+native movement speed/cadence and collision, selecting the walking state when
+needed. A remembered search point does not override their assigned station;
+visible-enemy combat and memory ownership remain unchanged. The earlier probe
+passed empty geometry but live crews drifted away or obstructed each other.
+Combined post priority, direct collision-tested steps, box-safe spacing and
+arrival tolerance correct the observed failures. No production actor is moved
+by teleport, and no physical component is ignored.
+
+Two isolated live crews now pass fresh and mid-turn reload:6 Mandingas reach the
+wooden south gate in2176 simulation tics;32 reach the armored west gate in2544,
+with real native impacts and FullCrewPresent. The physical clearance probe also
+checks both sizes at all four gates. These are crew/machine checks, not the full
+three-front controller, reserve/ownership transactions, crowded battle, FPS or
+author acceptance. Evidence: barracas-ram-crews/SUMMARY.json.
 
 The exterior coordinate source now supplies 160 rotated portal/return points and
 64 shop positions, selected only by a loaded revision-4 MAP03 controller. Private

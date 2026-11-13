@@ -45,6 +45,7 @@ def generate(out,map_name=None,configure=None,compile_map=True):
     data=json.loads((ROOT/'assets/barracas_redesign/LAYOUT.json').read_text(encoding='utf-8'))
     city=json.loads((ROOT/'assets/map06_port/CITY.json').read_text(encoding='utf-8'))
     interior=json.loads((ROOT/'assets/map06_port/INTERIORS.json').read_text(encoding='utf-8'))
+    crew_data=json.loads((ROOT/'assets/barracas_redesign/RAM_CREWS.json').read_text(encoding='utf-8'))
     port=CoastalMap(map_name or data['preview_map']);port.compact=True;port.optimize_open_geometry=True;port.add_default_things=False
     port.control_origin=city['control_origin'];port.control_columns=city['control_columns']
     x1,y1,x2,y2=data['bounds'];cell=data['grid'];belt=city['walk_width']
@@ -142,14 +143,29 @@ def generate(out,map_name=None,configure=None,compile_map=True):
         for rect in jambs:port.room(*rect,floor=city['wall_height'],flat='CMST01',wall='CMST01')
         # The large original ram is wider/taller than the gate tunnel. Its frame
         # stops outside the gate plane: open only the exterior forecourt, using
-        # the existing walk width/depth. Keep the inner128-MU throat and96-MU
+        # the generated crew clearance and existing depth. Keep the inner128-MU throat and96-MU
         # blocker unchanged; widening both halves would permit a closed bypass.
-        outward=gate['outward_angle'];half=belt//2
+        outward=gate['outward_angle'];half=crew_data['forecourt_width']//2
         if outward==90:forecourt=(x-half,y,x+half,y+belt)
         elif outward==270:forecourt=(x-half,y-belt,x+half,y)
         elif outward==0:forecourt=(x,y-half,x+belt,y+half)
         else:forecourt=(x-belt,y-half,x,y+half)
         port.room(*forecourt,flat='CMST01',wall='CMST01')
+        # The wider crew forecourt needs matching inner shoulders. Otherwise
+        # an oblique wall lets walkers go around the old narrow jamb ends.
+        throat=width//2
+        if outward==90:shoulders=[(x-half,y-belt,x-throat,y),(x+throat,y-belt,x+half,y)]
+        elif outward==270:shoulders=[(x-half,y,x-throat,y+belt),(x+throat,y,x+half,y+belt)]
+        elif outward==0:shoulders=[(x-belt,y-half,x,y-throat),(x-belt,y+throat,x,y+half)]
+        else:shoulders=[(x,y-half,x+belt,y-throat),(x,y+throat,x+belt,y+half)]
+        for rect in shoulders:port.room(*rect,floor=city['wall_height'],flat='CMST01',wall='CMST01')
+        # A diagonal wall can run inside the forecourt's side edge. Carry the
+        # exterior flanks to its mouth so city ground cannot enter it sideways.
+        if outward==90:flanks=[(x-half-cell,y,x-half,y+belt),(x+half,y,x+half+cell,y+belt)]
+        elif outward==270:flanks=[(x-half-cell,y-belt,x-half,y),(x+half,y-belt,x+half+cell,y)]
+        elif outward==0:flanks=[(x,y-half-cell,x+belt,y-half),(x,y+half,x+belt,y+half+cell)]
+        else:flanks=[(x-belt,y-half-cell,x,y-half),(x-belt,y+half,x,y+half+cell)]
+        for rect in flanks:port.room(*rect,floor=city['wall_height'],flat='CMST01',wall='CMST01')
     bridge=data['bridge'];x=bridge['centre_x'];width=bridge['width']//2
     # The wide bridge begins outside the narrow gate passage, never through the
     # wall itself; otherwise its deck silently creates an unguarded extra gap.

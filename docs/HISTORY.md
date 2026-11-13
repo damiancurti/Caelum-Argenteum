@@ -140,6 +140,26 @@ This fixture repeats the physical step32 times per tic and has no live crew:
 it does not establish battle timing, crowd navigation, reserve activation,
 performance or author acceptance. See barracas-rams/SUMMARY.json.
 
+The following crew slice retains6/32 members, deriving rotating posts from
+accepted body bounds and the original machine/guard dimensions. Initial43/49-MU
+rows passed377424 isolated point samples but not live AI. Search movement
+overrode assigned posts; later native collision/arrival overlap still caused
+drift. The final layout uses61-MU rows for axis-aligned boxes at45 degrees and
+a clearance-derived arrival tolerance, with direct native steps, an explicit
+walking-state transition and station priority over remembered search points.
+No combat statistics, physical collisions or visible-target rules were removed.
+The wider outer forecourt initially opened a diagonal-wall bypass; inner
+shoulders plus full outer flanks restored closed-perimeter isolation.
+
+Final live tests pass with38 real Mandingas at normal cadence, without fixture
+teleports: small south-gate contact at2176 simulation tics and large west-gate
+contact at2544, identically after mid-turn reload. Earlier failures and the
+diagnostic Name/string compile correction are retained. Fresh exterior views
+were inspected. The common helper also supplies captured crew coordinates, but
+these live cases exercise hostile crews only. Production three-front/reserve,
+capture/refill, full crowd/performance and author acceptance remain pending.
+Evidence: barracas-ram-crews/SUMMARY.json.
+
 The author requested prevention of system sleep while away for several hours.
 A temporary system-only execution-state request is active during work, with a
 12-hour failsafe; it does not change the power plan or require the display on.

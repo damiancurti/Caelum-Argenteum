@@ -1,10 +1,17 @@
 // Sondas aisladas: se repite el paso fisico normal sin acelerar sus constantes.
+class CA454RamCrewFit : Actor
+{
+    Default { +SOLID +NOGRAVITY }
+    States { Spawn: TNT1 A -1; Stop; }
+}
 class CA454RamProbe : EventHandler
 {
     CaelumBatteringRam Ram;
     CaelumBreakableGate Gate;
     int CaseIndex,Steps,Failures,Passed;
     bool Running;
+    Actor CrewFit;
+    int CrewSamples;
 
     void StartCase()
     {
@@ -12,6 +19,8 @@ class CA454RamProbe : EventHandler
         {
             Running=false;
             Console.Printf("CA454 RAM COMPLETE passed=%d failures=%d",Passed,Failures);
+            if(CA454RamData.CREW_CLEARANCE)Console.Printf("CA454 RAM CREW samples=%d failures=%d",CrewSamples,Failures);
+            if(CrewFit!=null)CrewFit.Destroy();
             return;
         }
         bool legacy=CaseIndex>=8;
@@ -24,6 +33,12 @@ class CA454RamProbe : EventHandler
         Gate.Angle=outward+90;Gate.args[1]=CA454RamData.GateMaterial(index);Gate.args[2]=1;Gate.InitializeGate();
         Ram=CaelumBatteringRam(Actor.Spawn("CaelumBatteringRam",p+normal*512+tangent*256,NO_REPLACE));
         Ram.Angle=outward+180;Ram.Large=CaseIndex%2==1;Ram.InitializeRam();
+        if(CA454RamData.CREW_CLEARANCE && !legacy)
+        {
+            Ram.UseBarracasCrewLayout();
+            for(int i=0;i<Ram.RequiredCrew;i++)
+            {let entry=new("CaelumSiegeCombatant");entry.CrewMachine=Ram;entry.CrewSlot=i;Ram.Crew.Push(entry);}
+        }
         Ram.SetRoute(Gate,outward+180,!legacy);
         Ram.AddRoutePoint(p+normal*512);
         Ram.AddRoutePoint(p+normal*CaelumRamData.TRIAL_CONTACT_DISTANCE*Ram.SizeFactor);
@@ -43,6 +58,8 @@ class CA454RamProbe : EventHandler
         if(e.Name=="ca454_ram_start")
         {
             let user=players[0].mo;user.bInvulnerable=true;
+            if(CA454RamData.CREW_CLEARANCE)
+            {CrewFit=Actor.Spawn("CA454RamCrewFit",user.Pos,NO_REPLACE);CrewFit.A_SetSize(CA454RamData.CREW_RADIUS,CA454RamData.CREW_HEIGHT);CrewFit.bSolid=false;}
             Running=true;StartCase();
         }
         if(e.Name=="ca454_ram_resume")
@@ -61,6 +78,13 @@ class CA454RamProbe : EventHandler
                 && turn<=VectorAngle(-CaelumRamData.FRAME_REAR*Ram.SizeFactor,CaelumRamData.APPROACH_SPEED)+0.00001;
             if(Ram.FollowRouteHeading && turn>0.001 && (Ram.Pos-before).Length()>0.00001)ok=false;
             if(!Ram.FollowRouteHeading && Ram.RouteIndex<Ram.Route.Size() && turn>0.001)ok=false;
+            if(Ram.CrewLayoutRevision>0)for(int i=0;i<Ram.Crew.Size();i++)
+            {
+                vector3 q=Ram.Crew[i].CrewPost();CrewFit.bSolid=true;CrewFit.SetOrigin(q,false);CrewFit.FindFloorCeiling();FCheckPosition check;
+                bool fits=CrewFit.CheckPosition(q.XY,false,check) && check.floorz==0 && check.ceilingz-check.floorz>=CrewFit.Height;
+                CrewFit.bSolid=false;CrewSamples++;
+                if(!fits){ok=false;Console.Printf("CA454 RAM CREW FAIL case=%d slot=%d step=%d at=(%.2f,%.2f) floor=%.1f ceiling=%.1f",CaseIndex,i,Steps,q.X,q.Y,check.floorz,check.ceilingz);break;}
+            }
             if(Ram.Obstructed || !ok || Steps>10000){FinishCase(false);continue;}
             if(moving)continue;
             Ram.StrikeSerial++;Ram.SpentImpact=false;

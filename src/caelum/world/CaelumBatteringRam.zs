@@ -41,6 +41,7 @@ class CaelumBatteringRam : CaelumHostileMachine
     int RouteIndex;
     int RouteRevision;
     bool FollowRouteHeading;
+    int CrewLayoutRevision;
     CaelumBreakableGate TargetGate;
     CaelumRamFrameVisual FrameVisual;
     CaelumRamHead Head;
@@ -53,6 +54,30 @@ class CaelumBatteringRam : CaelumHostileMachine
     {
         return origin + ((Cos(facing)*local.X-Sin(facing)*local.Y)*SizeFactor,
             (Sin(facing)*local.X+Cos(facing)*local.Y)*SizeFactor, local.Z*SizeFactor);
+    }
+
+    void UseBarracasCrewLayout()
+    {
+        // Adhesion explicita; un save anterior mantiene revision cero y puestos
+        // anteriores hasta que un mapa nuevo configure esta dotacion.
+        if(CrewLayoutRevision>=CaelumBarracasRamCrewData.REVISION)return;
+        for(int i=0;i<Crew.Size();i++)if(Crew[i]!=null && Crew[i].CrewMachine==self)Crew[i].CrewSlot=i;
+        CrewLayoutRevision=CaelumBarracasRamCrewData.REVISION;
+    }
+
+    vector3 CrewPosition(int slot)
+    {
+        vector3 offset=CaelumBarracasRamCrewData.Offset(Large,slot);
+        return Pos+(Cos(Angle)*offset.X-Sin(Angle)*offset.Y,
+            Sin(Angle)*offset.X+Cos(Angle)*offset.Y,offset.Z);
+    }
+
+    double CrewPostReach()
+    {
+        // La tolerancia no puede consumir el espacio libre entre las cajas
+        // nativas de dos tripulantes, incluso durante un giro de45 grados.
+        return (CaelumBarracasRamCrewData.Spacing(Large)/Sqrt(2)
+            -2*CaelumBarracasRamCrewData.CLEARANCE_RADIUS)/2;
     }
 
     void InitializeRam()

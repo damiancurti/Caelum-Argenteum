@@ -24,7 +24,13 @@ ownership and battle outcomes remain part of the unfinished siege integration.
 Ram routes now support opt-in physical turns before each segment, using the
 existing approach/rotation rates. Legacy routes retain fixed-heading translation;
 saved zero defaults preserve that behavior. This is geometry support only, not
-completed crew/reserve handling or a change to machine statistics.
+completed reserve handling or a change to machine statistics.
+Opt-in crew layouts retain6/32 operators and their original guard radii, with
+local rotating posts derived from native collision boxes. The new crews keep
+their assigned station ahead of remembered search movement, while visible
+enemies retain normal combat handling. Two isolated live crews pass; production
+front deployment, capture/refill and active/reserve handling still require
+integration. Earlier machine/crew layouts retain their original behavior.
 
 ## 5.15.4 / #451 - Occupation, recovery and persistent consequences
 

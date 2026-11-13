@@ -47,9 +47,11 @@ Validate actual resident materialization, AI and crowd movement with the full
 siege controller; continuous geometric sampling is not that acceptance.
 Opt-in ram turns and widened exterior forecourts now pass physical route/contact
 tests for both sizes at all four gates, including saved in-progress turns and
-legacy fixed-heading routes. Integrate rotating crew stations, south-to-side
-approaches/retreats and one active/one reserve ram per front. These isolated
-geometry checks do not exercise actual crew AI or activate the production city.
+legacy fixed-heading routes. Rotating crew stations and two isolated6/32-Mandinga
+AI approaches now pass at normal cadence, including mid-turn reload. Connect
+those helpers to south-to-side approaches/retreats and one active/one reserve
+ram per front; verify production capture/refill, real600-body deployment and
+crowds. These tests do not activate the production city or establish FPS.
 
 ## 5.16.1 - Bestiary source import (#453)
 
