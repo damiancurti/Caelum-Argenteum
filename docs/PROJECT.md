@@ -4,6 +4,13 @@ Documentation version: **5.16.2** - 2026-11-12.
 
 ## 5.16.2 - Sewer geometry slice (#454, in progress)
 
+Pedestrian navigation is staged for the unactivated city: southern approaches,
+front-preserving groups, shared local avoidance and ground withdrawal fields.
+Six terminal exits/36 stair descents pass isolated fresh/reload checks; a saved
+approach continuation completes15 bodies. Long fresh/reloaded movement remains
+in progress, with climate survival, crowds and full-battle evidence still pending.
+See assets/validation_v5_16_2/barracas-navigation/SUMMARY.json.
+
 The city candidate now has native four-gate machine deployment, six full ram
 approaches and persistent active/reserve handling. Fresh/reload checks retain
 force/objective counts. Infantry/gun-crew southern arrival, withdrawal, real

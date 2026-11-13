@@ -4,6 +4,29 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-221 - Long navigation probes must preserve their isolation conditions
+
+Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED for the stated fixture causes.
+First recorded / last checked: 2026-11-13 / 2026-11-13.
+Issue / PR: #454 / #643. Baseline: b477d5ed0 plus the navigation candidate;
+exact packages, logs and qualifications: barracas-navigation/SUMMARY.json.
+Environment: Windows11, GZDoom4.14.2, Vulkan, unpaused background at5% audio.
+Scope: isolated pedestrian approach/withdrawal; full integrated behavior pending.
+
+Opening a normal auto-closing gate once does not hold it open for a20-minute
+approach. The saved fixture showed closed blockers at the final destination;
+restoring a diagnostic hold completed all15 bodies. Production withdrawal now
+requests normal gate use nearby after victory instead of changing gate timers.
+Likewise, three exposed city walkers died from728 thermal damage at2628tics.
+A controlled movement fixture may neutralize exposure, but must retain that
+qualification and cannot stand in for survival or combined-battle validation.
+Save inspection separated those causes from formation membership and collisions.
+
+The generated ground field also exceeded the native return-register limit when
+one String-return switch held hundreds of rows. Splitting it into64-row functions
+compiled successfully; deterministic checks and native descent/exit tests pass.
+No frame-rate, crowd or author-acceptance conclusion follows from these results.
+
 ## CA-KP-220 - Rotating crew posts need box clearance and live AI evidence
 
 Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED for isolated ram crews.

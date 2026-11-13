@@ -28,6 +28,12 @@ class CaelumSiegeCombatant : Object play
     vector3 CrewOffset;
     int CrewSlot;
     int Lane;
+    int FrontMarchRevision,FrontMarchLane,FrontMarchMode,FrontMarchCursor;
+    bool FrontMarchComplete;
+    CaelumCityNavigation FrontNavigation;
+    int RetreatRevision,RetreatGun,RetreatStep;
+    bool RetreatPointPending;
+    vector3 RetreatPoint;
 
     vector3 CrewPost()
     {

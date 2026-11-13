@@ -4,6 +4,17 @@ Documentation version: **5.16.2** - 2026-11-12.
 
 ## 5.16.2 / #454 - Approved Barracas siege adaptation (candidate)
 
+The staged pedestrian controller retains per-entry revisioned lane, route cursor
+and withdrawal state. Assigned approaches take precedence over anonymous search
+points while preserving perception evidence and normal visible-enemy combat.
+Groups stay within their assigned front. Infantry/gun crews share the existing
+one-local-search-per-tic budget with defenders; native speed, collision and
+resource accounting remain. After victory, withdrawal uses static ground fields
+and reversed artillery stairs. A nearby closed gate receives its normal Used
+interaction, since the original closing timer still runs after victory opening.
+Legacy geometry keeps its former tables/behavior. Isolated navigation evidence
+is qualified in barracas-navigation/SUMMARY.json; the city is not activated.
+
 The author approved four gates: north reinforced, south wooden, east reinforced
 and west armored, retaining existing resistance profiles. Attackers arrive from
 the south and divide into south/east/west fronts; north serves the bridge.

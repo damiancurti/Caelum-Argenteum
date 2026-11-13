@@ -42,7 +42,10 @@ merchants,96 factory stations,four vehicles and four relocated household objects
 The service fixture suppresses siege deployment; it is not the production city.
 A separate fixture now exercises real four-gate/machine deployment and persistent
 active/reserve handling. Six full ram routes pass fresh/reload clearance; infantry
-approaches, retreat, capture/refill and full-battle performance remain pending.
+approaches and withdrawal now have staged routes. Six final exits and36 stair descents pass
+fresh/reloaded native checks; a saved full-approach continuation completes15 pedestrians.
+Long fresh/reloaded city routes, capture/refill and full-battle performance remain pending.
+See [navigation evidence](assets/validation_v5_16_2/barracas-navigation/SUMMARY.json).
 The artillery candidate passes 72 isolated operator walks,528 guard posts and648
 cannon-component clearances. Real deployment, crowd movement and siege remain pending.
 The 600 exterior deployment paths also pass continuous native collision sampling

@@ -4,6 +4,14 @@ Documentation version: **5.16.2** - 2026-11-12.
 
 ## 5.16.2 - Sewer redesign validation (#454)
 
+Pedestrian routes/withdrawal are now staged, with six terminal exits and36 stair
+descents passing fresh/reload and a15-body saved approach continuation passing.
+Complete the long fresh/reloaded approach and six full city-to-south withdrawals
+currently running. Keep the raw-weather deaths separate from navigation-isolated
+results; integrated climate survival remains unverified. Finish wounded commander
+escape,600 real defender AI/crowds, capture/refill, Justice, services and rendering
+evidence before activation. See barracas-navigation/SUMMARY.json.
+
 The approved MAP02 board is implemented as geometry revision 6. Static principal
 circuits, staged key reachability, prisoner extraction, all drop/chest locations,
 retained supply identities and exact rollback-source hashes pass. Native fresh,

@@ -4,6 +4,15 @@ Documentation version: **5.16.2** - 2026-11-12.
 
 ## 5.16.2 - Approved map references and preserved sewer sources (#454)
 
+MARCH.json derives six infantry approaches and12 southern gun-crew starts from
+FRONTS/SOUTH/CITY and the retained operator offsets. RETREAT.json derives three
+64-MU ground flow fields from assembled geometry to the southern exits:257109
+connected cells per field;22 other ground cells require separate interpretation.
+These fields are not a claim of complete multilayer connectivity. Elevated
+withdrawal reverses the existing36 artillery routes. Both generators are
+deterministic; generated string-return switches are split into64-row functions
+to fit GZDoom registers. Navigation evidence is in barracas-navigation/SUMMARY.json.
+
 FRONTS.json and CaelumBarracasFrontData derive six machine slots/three fronts
 from the approved layout and original SOUTH/CITY/LAYOUT distances. The generator
 records source hashes, gate materials, initial/reserve positions and complete

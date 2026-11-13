@@ -62,6 +62,22 @@ This slice does not complete Barracas, other regional maps or the V5.16 campaign
 
 ### Barracas architectural source (intermediate, not activated)
 
+The pedestrian candidate now uses generated southern approaches for three
+infantry fronts and12 cannon operators. Saved entry cursors retain progress;
+formations cannot merge across fronts. Explicit approach orders retain their
+destination over anonymous investigation points, with actual visible threats
+unchanged. The shared local navigator still builds at most one path per tic.
+Ground withdrawal fields reach the three southern exits, with existing artillery
+routes reversed for elevated bodies. After victory, nearby closed gates receive
+the normal Used interaction; their timers/permissions are retained.
+
+Six terminal exits and36 stair descents pass isolated native fresh/reload checks.
+A saved full-approach continuation completes15 pedestrians. Full fresh/reloaded
+routes are still running; no crowd, battle, climate-survival or author acceptance
+follows. The raw-weather city withdrawal loses three Mandingas to thermal
+exposure; movement isolation neutralizes that exposure only in its fixture.
+See assets/validation_v5_16_2/barracas-navigation/SUMMARY.json for exact evidence.
+
 assets/barracas_redesign/LAYOUT.json traces the approved irregular perimeter,
 Mitre/Camino al Sud and Pavon axes, four plazas, western railway corridor and
 four gate positions into the existing 960-metre envelope. The board is conceptual:

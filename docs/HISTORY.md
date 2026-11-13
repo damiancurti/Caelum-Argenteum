@@ -4,6 +4,24 @@ Documentation version: **5.16.2** - 2026-11-12.
 
 ## 5.16.2 - Sewer redesign slice (#454, in progress, 2026-11-12)
 
+2026-11-13 pedestrian candidate: generated southern approaches and static ground
+withdrawal fields, revisioned cursors, front-preserving formations and a shared
+local-navigation queue. Six final exits and36 actual stair descents pass fresh
+and reloaded native checks at normal speed. A41893-tic approach checkpoint
+completes all15 pedestrians by43607tics after correcting the diagnostic gate hold.
+Long fresh/early-reloaded approach and full-city withdrawal runs are still active.
+All238 packaged maps remain byte-identical; no battle/performance or author
+acceptance is claimed.
+
+Preserved failures distinguish causes: anonymous footsteps displaced approach
+orders; an opened-once fixture gate closed before arrival; large generated string
+switches exceeded native registers. Three city walkers in the unmodified-weather
+withdrawal fixture died at2628tics with728 thermal damage and nearly100% wetness.
+Movement isolation now neutralizes thermal exposure each fixture tick without
+changing health, speed or collision; this does not validate climate survival.
+Old active/stored-hub continuation passes runtime02; runtime03 adds a gate request
+only for the new geometry after victory. Evidence: barracas-navigation/SUMMARY.json.
+
 2026-11-13 machine-front slice: generated four gate identities and six paired
 ram routes; new-controller dispatch retains12 hostile objectives,42 guns,74
 operators and600 defender identities. Three active rams and one reserve per
