@@ -6,8 +6,19 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.15.4.** Obtain and update the complete repository,
+**Current release: 5.16.0.** Obtain and update the complete repository,
 validate it, then rebuild with `run_dev.bat` as described below.
+
+V5.16 is in campaign authoring, beginning with #452. The author approved the
+regional chapter allocation; [the planning graph](assets/campaign/PROGRESSION.json)
+and [canonical narrative](docs/MAP01.txt) distinguish existing routes from pending
+geography, creatures, essence placements and revelations. #452-457 remain open.
+This planning increment preserves the accepted V5.15 runtime and maps; the new
+campaign and its author test terminal are not yet implemented. The basic finale
+and its all-78-essence/Respected reputation requirements are author-approved;
+the checkpoint is before Selene on the Moon, after obtaining the World last.
+The seven named Majors per chapter are also approved as an allocation base;
+the recovered bestiary and map references proceed through separate issues.
 
 V5.15 includes the [battle director](assets/validation_v5_15_0/RESULTS.md)
 (#447, PR635), [Unitarian command](assets/validation_v5_15_1/RESULTS.md)

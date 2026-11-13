@@ -1,6 +1,30 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.15.4** - 2026-11-10.
+Documentation version: **5.16.0** - 2026-11-12.
+
+## V5.16 in progress - Separate campaign issues (#452-457)
+
+| Issue | Current scope and remaining decision |
+| --- | --- |
+| #452 | Regional chapter allocation approved 2026-11-12; opening graph audited. Basic finale and all-78/+250 requirements approved; one eligible participant admits the consenting group. Geographic/ability gates and exact revelations remain open. |
+| #453 | Six source archives recovered; 58 images/hash checks pass. Import the reconstructed catalogue and author missing regional assignments; prefer 3D production where feasible. |
+| #454 | Approved sewer v2/Barracas v1 references recovered; four city gates and siege adaptation explicitly selected. Implement separately with ordinary routes, services and active/hub-save compatibility. |
+| #455 | Approve per-creature behavior/stats/encounters after #453/#454; unique and repeatable populations remain distinct. |
+| #456 | Assign the remaining 75 essences; preserve IDs 0/36/60, personal acquisition, interruption recovery and ability-gate reachability. |
+| #457 | Author memories, revelations, chapter ends and Selene encounter; retain Zupay's Chapter I retreat/Chapter II death boundary. |
+
+The planning source is assets/campaign/PROGRESSION.json; canonical narrative
+constraints are in MAP01. Run assets/generators/validate_campaign_progression.py
+for the bounded audit. --require-complete intentionally fails while authoring is
+open. No new manual gameplay check exists yet, so pending_test.txt remains empty.
+The author selected all 78 acquired essences and Respected (+250) with any one
+of four resistance factions for the finale. This matches the existing deity
+power. One eligible participant admits the consenting group; scripts and encounter statistics remain pending.
+The author has now approved the seven named Majors per chapter and the lunar
+ordering: travel first, obtain the World after the other77, then check78/+250
+before Selene combat. Use the canonical IDs in MAP01/PROGRESSION, retaining
+Justice8/Strength11 and opening0/36/60. Author exact maps, ability gates and
+scripts; allocation approval does not implement the remaining75 acquisitions.
 
 ## V5.15 accepted and integrated ? 2026-11-10 (#447?451)
 
