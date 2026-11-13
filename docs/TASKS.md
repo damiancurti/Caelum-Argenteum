@@ -12,10 +12,13 @@ replace the remaining siege, service or performance checks. See barracas-justice
 Full approaches, withdrawals, wounded-commander escape, ram capture ownership and
 native capped refill now pass fresh/reload. Four house orientations and64 shop Use
 interactions also pass, including one finite-stock purchase per run. A native save
-confirms600 living resident deployment completions and72 operator ascents; finish
-the early-checkpoint replay in barracas-crowd-native03. Keep raw-weather deaths
+confirms600 living resident deployment completions and72 operator ascents;
+the early-checkpoint replay in barracas-crowd-native03 passes at45,093tics.
+All96 factory stations and four vehicle boarding sessions pass native Use;
+recipe completion and ticket/journey transactions are outside these access tests.
+Keep raw-weather deaths
 separate from movement isolation; integrated climate survival remains unverified.
-Finish full battle/outcome integration, factory/vehicle interactions and rendering
+Finish full battle/outcome integration and rendering
 evidence before activation. See barracas-continuation/SUMMARY.json.
 
 The approved MAP02 board is implemented as geometry revision 6. Static principal

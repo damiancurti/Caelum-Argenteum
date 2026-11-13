@@ -90,7 +90,9 @@ now lives in validation_v5_16_2/barracas-continuation; house Used/rendered-ACK
 round trips are in barracas-house-use. Native saves and PK3s remain local. The
 read-only deployment-save auditor records600 retained identities and completion
 flags without copying a binary save into the repository. Its early-checkpoint
-replay remains pending. No new art or production map bytes belong to this slice.
+replay now passes, alongside native Use at96 factory stations and four vehicles;
+the access fixtures reuse the existing factory catalogue and live boarding parts.
+No new art or production map bytes belong to this slice.
 
 ## 5.16.1 - Recovered folklore reference catalogue (#453, catalogue approved)
 

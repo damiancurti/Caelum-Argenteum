@@ -50,7 +50,7 @@ without changing the original data tables for earlier geometry. All 600 resident
 identities and the existing central-house relocation are retained. Isolated
 fresh/reloaded geometric traversal passes. A fresh native save confirms600 living,
 unique residents completed their actual routes, including72 operator ascents;
-the early-checkpoint replay is still running. Guards retain their accepted search
+the early-checkpoint replay completes all600 at45,093tics. Guards retain their accepted search
 behavior after arrival; simultaneous stationary occupation is not a new rule.
 Machine ownership checks pass; complete battle outcomes remain unfinished.
 Ram routes now support opt-in physical turns before each segment, using the

@@ -16,13 +16,15 @@ fresh/reload. The complete native controller also passes its1000 living cap and
 five-casualty refill with the unchanged finite6600 ledger. Four ram captures retain
 reserve ownership. Four house orientations and64 merchant interactions pass;
 one purchase per run preserves stock and wallet accounting. All600 resident
-deployment flags pass a fresh native-save audit; early-checkpoint replay is running.
+deployment flags pass a fresh native-save audit; early-checkpoint replay completes
+all600 at45,093tics. All96 factory networks and four vehicle boarding sessions
+also open through native Use in fresh/reloaded runs, without claiming recipes or journeys.
 Climate survival, full battle and presentation measurements remain pending.
 See assets/validation_v5_16_2/barracas-continuation/SUMMARY.json.
 
 The city candidate now has native four-gate machine deployment, six full ram
 approaches and persistent active/reserve handling. Fresh/reload checks retain
-force/objective counts. Full-battle integration, crowd replay and
+force/objective counts. Full-battle integration and
 frame-presentation measurements remain unfinished; production
 MAP03 is unchanged. See barracas-fronts/SUMMARY.json for qualified evidence.
 

@@ -4,6 +4,18 @@ Documentation version: **5.16.2** - 2026-11-12.
 
 ## 5.16.2 - Sewer redesign slice (#454, in progress, 2026-11-12)
 
+2026-11-13 deployment/access follow-up: the corrected observer replays the
+original35-tic checkpoint and records600 resident completions at45,093tics,
+including all72 operator ascents, with no death/identity error. This complements
+the fresh native-save audit; it does not require guards to stop their existing
+search behavior. Native Use also opens all96 retained factory crafting networks
+and all four source-specific transport sessions, fresh/reloaded. Recipe execution,
+ticket payment and journeys are outside these access tests. The station fixture
+needed to close both its prior session and journal; an explicit Actor assignment
+fixed the vehicle fixture's mixed-type conditional. No production service changes
+were necessary. Combined aftermath and presentation checks remain pending;
+barracas-continuation/SUMMARY.json records exact artifacts and qualifications.
+
 2026-11-13 continuation: full15-body approaches complete43607tics and six complete
 city withdrawals60732tics, fresh/reloaded. The commander now uses revision-4
 withdrawal streets through an escape-step hook, retaining half-health trigger,

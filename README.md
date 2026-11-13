@@ -51,7 +51,8 @@ See [continuation evidence](assets/validation_v5_16_2/barracas-continuation/SUMM
 for runtime hashes, thermal/gate isolation and remaining battle/performance work.
 The artillery candidate passes 72 isolated operator walks,528 guard posts and648
 cannon-component clearances. A native save now confirms all600 retained residents
-completed deployment, including72 operators; early-checkpoint replay is still running.
+completed deployment, including72 operators; replay from the early checkpoint
+also completes all600 at45,093tics with collision and native AI retained.
 The 600 exterior deployment paths also pass continuous native collision sampling
 in fresh/reloaded saves; old geometry retains its original route tables.
 Both ram sizes pass isolated corner movement and contact with all four gates.
@@ -63,8 +64,10 @@ city/hub continuation. [Justice evidence](assets/validation_v5_16_2/barracas-jus
 records the unchanged city geometry prefix; production MAP03 is still unchanged.
 Four house orientations also pass normal Used/capture/renderer-ACK round trips;
 all64 shopkeepers open with native Use, and a purchase preserves stock and money
-accounting, in fresh/reloaded runs. Factory/vehicle interaction and full battle
-acceptance remain pending.
+accounting, in fresh/reloaded runs. All96 factory stations and four vehicle
+boarding sessions also pass native Use checks. Recipe completion and ticket/journey
+transactions are outside these access checks; combined aftermath and presentation
+measurements remain pending.
 
 V5.15 includes the [battle director](assets/validation_v5_15_0/RESULTS.md)
 (#447, PR635), [Unitarian command](assets/validation_v5_15_1/RESULTS.md)

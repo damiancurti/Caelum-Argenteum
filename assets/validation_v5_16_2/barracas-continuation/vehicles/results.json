@@ -1,0 +1,35 @@
+{
+  "issue": 454,
+  "scope": "Native +use input at four parked vehicles and their reachable physical boarding parts; validates source-specific transport sessions. Fixture places user. No ticket purchase, actual journey, siege, multiplayer or author acceptance.",
+  "runtime_sha256": "6efffa2932be0333debccfa727ae471826a84e3916f077fd0fb47802273a6d73",
+  "candidate_sha256": "7b4d8aa16035607bba6feb4bed7dc7df46143b230560b08acbc2669c51204b63",
+  "fixture_sha256": "0a7155b7b4a6e4d3d90d1f0220fd2c4f4bfe0d50d6ccfc7fffa2ba903ca6aff7",
+  "runs": [
+    {
+      "phase": "fresh",
+      "passed": true,
+      "exit_code": 0,
+      "timeout": false,
+      "checks": [
+        "CA454 VEHICLE USE PASS id=0 kind=CaelumCoveredCart distance=48.000 route=10",
+        "CA454 VEHICLE USE PASS id=1 kind=CaelumMerchantShip distance=48.000 route=10",
+        "CA454 VEHICLE USE PASS id=2 kind=CaelumRidingHorse distance=48.000 route=10",
+        "CA454 VEHICLE USE PASS id=3 kind=CaelumSteamTrain distance=48.000 route=10",
+        "CA454 VEHICLE COMPLETE PASS opened=4 failures=0"
+      ]
+    },
+    {
+      "phase": "reload",
+      "passed": true,
+      "exit_code": 0,
+      "timeout": false,
+      "checks": [
+        "CA454 VEHICLE USE PASS id=0 kind=CaelumCoveredCart distance=48.000 route=10",
+        "CA454 VEHICLE USE PASS id=1 kind=CaelumMerchantShip distance=48.000 route=10",
+        "CA454 VEHICLE USE PASS id=2 kind=CaelumRidingHorse distance=48.000 route=10",
+        "CA454 VEHICLE USE PASS id=3 kind=CaelumSteamTrain distance=48.000 route=10",
+        "CA454 VEHICLE COMPLETE PASS opened=4 failures=0"
+      ]
+    }
+  ]
+}

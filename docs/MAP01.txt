@@ -88,8 +88,10 @@ exposure; movement isolation neutralizes that exposure only in its fixture.
 Four ordinary house orientations retain Used, rendered capture/ACK and exact
 exterior return. Native Use opens all64 merchants, and one real purchase per run
 preserves stock and wallet accounting. A native save confirms all600 residents
-and72 operators completed deployment by52347tics; early-checkpoint replay is
-running. Full-controller refill/capture checks pass, with the existing extra
+and72 operators completed deployment by52347tics; early-checkpoint replay completes
+all600 at45093tics. Native Use opens all96 existing factory networks and four
+source-specific vehicle sessions in fresh/reloaded runs; these checks do not
+complete recipes, buy tickets or travel. Full-controller refill/capture checks pass, with the existing extra
 subcaptain alongside the600 resident defenders. Production MAP03 remains unchanged.
 See assets/validation_v5_16_2/barracas-continuation/SUMMARY.json for exact evidence.
 
