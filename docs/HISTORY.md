@@ -4,6 +4,20 @@ Documentation version: **5.17.1** - 2026-11-13.
 
 ## 5.17.1 - Initial inventory model coverage (#647, 2026-11-13, in progress)
 
+Added explicit 3D drops for the six existing bottle/canteen classes. Five new
+closed meshes follow the owned green/amber glass, leather and wicker references;
+the large canteen reuses existing dining geometry/UVs in a normalized copy.
+Built-in ImageGen source, exact prompt and provenance are retained under
+assets/source/art/inventory_models_647/water. Shared-exporter parameterization
+leaves prior consumable runtime bytes unchanged. No water rules or fields changed.
+The final 18,160-entry package passed 473 native assertions across fresh, old-save,
+reload and rollback runs. Exact native transfer fields and saved contents/quality
+are checked, with ordinary elapsed-time cooling preserved. A six-object pair
+observed 1,141.79/1,130.29 presents/s, p95/p99 1.0919/1.3261ms and
+1.1038/1.3150ms (sprites/models). Environment, limits and captures are in ASSETS
+and validation_v5_17_1/water-evidence/SUMMARY.json. CA647-WATER-01 remains pending;
+legacy rations/maze water, cooking vessels and other inventory art remain open.
+
 The same issue adds nine medikit/Anima/energy model variants. Owned built-in
 ImageGen atlas sources and both exact prompts are retained under
 assets/source/art/inventory_models_647/consumables. Deterministic geometry retains

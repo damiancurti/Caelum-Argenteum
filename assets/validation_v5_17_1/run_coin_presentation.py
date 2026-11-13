@@ -1,4 +1,4 @@
-"""Measure actual coin or consumable drop classes before/after model installation.
+"""Measure actual inventory drop classes before/after model installation.
 
 A single sequential baseline/candidate pair in an isolated room; this is not a
 crowd budget, campaign performance acceptance or repeatability estimate.
@@ -28,22 +28,22 @@ def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     for name in ['baseline','runtime','presentation-layer','output']:parser.add_argument('--'+name,type=Path,required=True)
-    parser.add_argument('--kind',choices=('coins','consumables'),default='coins')
+    parser.add_argument('--kind',choices=('coins','consumables','water'),default='coins')
     args=parser.parse_args();baseline=args.baseline.resolve(strict=True);runtime=args.runtime.resolve(strict=True);layer=args.presentation_layer.resolve(strict=True)
     existing=subprocess.check_output(['tasklist','/FI','IMAGENAME eq gzdoom.exe','/FO','CSV','/NH']).decode(errors='replace')
     if '"gzdoom.exe"' in existing.lower():parser.error('Another native engine is running.')
     out=args.output.resolve();out.relative_to(ROOT/'build');out.mkdir(parents=True,exist_ok=False)
     report={'issue':647,'kind':args.kind,'scope':__doc__.strip(),'baseline_sha256':digest(baseline),'runtime_sha256':digest(runtime),'engine_sha256':digest(ENGINE),
             'layer_sha256':digest(layer/'ca_presentation.dll'),'runs':[]}
-    count=15 if args.kind=='coins' else 9
+    count={'coins':15,'consumables':9,'water':6}[args.kind]
     for kind in ['sprites','models']:
         folder=out/f'{kind}-{count}';folder.mkdir()
         if args.kind=='coins':
             config=json.loads((ROOT/'assets/source/art/inventory_models_647/COINS.json').read_text())
             kinds=','.join("'%s'"%(item['class']+suffix) for item in config['variants'].values() for suffix in config['denomination_suffixes'])
         else:
-            config=json.loads((ROOT/'assets/source/art/inventory_models_647/consumables/DESIGN.json').read_text())
-            kinds=','.join("'%s'"%item['class'] for item in config['variants'].values())
+            config=json.loads((ROOT/'assets/source/art/inventory_models_647'/args.kind/'DESIGN.json').read_text())
+            kinds=','.join("'%s'"%item['class'] for item in [*config['variants'].values(),*config.get('reused_variants',[])])
         source="""class CA647BenchCamera : Actor
 {Default {+NOINTERACTION +NOGRAVITY CameraHeight 0;} States {Spawn:TNT1 A -1;Stop;}}
 class CA647Bench : EventHandler
@@ -73,7 +73,7 @@ class CA647Bench : EventHandler
         }
     }
 }""".replace('KINDS',kinds)
-        if args.kind=='consumables':
+        if args.kind!='coins':
             source=source.replace('(0,-100,110)','(0,-180,180)').replace('camera.Pitch=47','camera.Pitch=43')
             source=source.replace('(index%5-2)*20,(index/5-1)*20','(index%3-1)*55,(index/3-1)*55')
         fixture=folder/'fixture.pk3'

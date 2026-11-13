@@ -1,0 +1,498 @@
+{
+  "issue": 647,
+  "version": "5.17.1",
+  "date": "2026-11-13",
+  "author_accepted": false,
+  "scope": "Six actual water-container drops: five newly authored MD3 bodies and a normalized copy of the existing dining canteen; other inventory categories remain unfinished.",
+  "runtime": {
+    "local_path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-647\\build\\issue647-water01.pk3",
+    "sha256": "39fd816fccfac0c8c6ea48a30414138ed514dd7c4f73141034d69fdd4b99dca9",
+    "source_entries": 18160,
+    "source_mismatches": []
+  },
+  "static": {
+    "variants": {
+      "bottle_small": {
+        "class": "CaelumBottleSmall",
+        "family": "bottle_small",
+        "tier": "existing",
+        "parts": [
+          "green_glass",
+          "cork",
+          "neck_tie",
+          "tie_left",
+          "tie_right"
+        ],
+        "closed_outward_components": 5,
+        "vertices": 584,
+        "triangles": 640,
+        "surfaces": [
+          {
+            "material": "atlas",
+            "vertices": 584,
+            "triangles": 640
+          }
+        ],
+        "source_opaque_bounds": [
+          46,
+          10,
+          81,
+          117
+        ],
+        "model_height_art_pixels": 107,
+        "native_bounds": [
+          {
+            "min": [
+              -14.403846153846153,
+              -14.403846153846153,
+              0.0
+            ],
+            "max": [
+              14.403846153846153,
+              14.403846153846153,
+              106.99999999999999
+            ]
+          }
+        ]
+      },
+      "bottle_normal": {
+        "class": "CaelumBottleNormal",
+        "family": "bottle_normal",
+        "tier": "existing",
+        "parts": [
+          "amber_glass",
+          "leather_sleeve",
+          "cork",
+          "lower_binding",
+          "upper_binding",
+          "sleeve_front_seam"
+        ],
+        "closed_outward_components": 6,
+        "vertices": 1190,
+        "triangles": 896,
+        "surfaces": [
+          {
+            "material": "atlas",
+            "vertices": 1190,
+            "triangles": 896
+          }
+        ],
+        "source_opaque_bounds": [
+          35,
+          9,
+          94,
+          117
+        ],
+        "model_height_art_pixels": 108,
+        "native_bounds": [
+          {
+            "min": [
+              -25.305882352941175,
+              -26.152941176470588,
+              0.0
+            ],
+            "max": [
+              25.305882352941175,
+              25.305882352941175,
+              108.0
+            ]
+          }
+        ]
+      },
+      "bottle_large": {
+        "class": "CaelumBottleLarge",
+        "family": "bottle_large",
+        "tier": "existing",
+        "parts": [
+          "green_glass",
+          "wicker_basket",
+          "basket_rim",
+          "basket_foot",
+          "wicker_handle",
+          "cork"
+        ],
+        "closed_outward_components": 6,
+        "vertices": 1462,
+        "triangles": 1112,
+        "surfaces": [
+          {
+            "material": "atlas",
+            "vertices": 1462,
+            "triangles": 1112
+          }
+        ],
+        "source_opaque_bounds": [
+          29,
+          7,
+          102,
+          119
+        ],
+        "model_height_art_pixels": 112,
+        "native_bounds": [
+          {
+            "min": [
+              -33.26732673267327,
+              -33.26732673267327,
+              0.0
+            ],
+            "max": [
+              49.68713404719717,
+              33.26732673267327,
+              112.00000000000001
+            ]
+          }
+        ]
+      },
+      "canteen_small": {
+        "class": "CaelumCanteenSmall",
+        "family": "canteen_small",
+        "tier": "existing",
+        "parts": [
+          "round_leather_body",
+          "short_neck",
+          "cork",
+          "cross_front_left",
+          "cross_front_right",
+          "wrist_loop"
+        ],
+        "closed_outward_components": 6,
+        "vertices": 1974,
+        "triangles": 864,
+        "surfaces": [
+          {
+            "material": "atlas",
+            "vertices": 1974,
+            "triangles": 864
+          }
+        ],
+        "source_opaque_bounds": [
+          27,
+          13,
+          111,
+          111
+        ],
+        "model_height_art_pixels": 98,
+        "native_bounds": [
+          {
+            "min": [
+              -42.717948717948715,
+              -19.471295043855406,
+              0.0
+            ],
+            "max": [
+              60.93299579386148,
+              16.333333333333332,
+              98.0
+            ]
+          }
+        ]
+      },
+      "canteen_normal": {
+        "class": "CaelumCanteenNormal",
+        "family": "canteen_normal",
+        "tier": "existing",
+        "parts": [
+          "oval_leather_body",
+          "short_neck",
+          "cork",
+          "long_carry_strap",
+          "front_seam_left",
+          "front_seam_right"
+        ],
+        "closed_outward_components": 6,
+        "vertices": 2010,
+        "triangles": 928,
+        "surfaces": [
+          {
+            "material": "atlas",
+            "vertices": 2010,
+            "triangles": 928
+          }
+        ],
+        "source_opaque_bounds": [
+          21,
+          10,
+          112,
+          115
+        ],
+        "model_height_art_pixels": 105,
+        "native_bounds": [
+          {
+            "min": [
+              -36.67727238585983,
+              -12.501947945025057,
+              0.0
+            ],
+            "max": [
+              33.84508743192402,
+              12.501947945025057,
+              105.0
+            ]
+          }
+        ]
+      }
+    },
+    "reused_variants": [
+      {
+        "key": "canteen_large",
+        "class": "CaelumCanteenLarge",
+        "sprite": "CW5X",
+        "obj": "src/models/caelum/props/rest/ca_large_canteen.obj",
+        "icon": "src/graphics/caelum/icons/water/canteen_large.png",
+        "note": "Reuse the existing dining canteen topology, UVs and owned texture in a normalized drop copy matching the current opaque icon height. Dining binding/source remain unchanged.",
+        "source_sha256": {
+          "src/models/caelum/props/rest/ca_large_canteen.obj": "af8bfe1db1aabde9677969445e51ff37ee689cd9870ee90c309a6a68706a4715",
+          "src/graphics/caelum/icons/water/canteen_large.png": "953705175aeac528dec03387e6e4a1281f4f26b486484b1e5e601ba65a8b6241"
+        },
+        "vertices": 664,
+        "faces": 174,
+        "normalization_scale": 1.4285714285714286,
+        "source_floor_art_pixels": 2.0,
+        "source_opaque_bounds": [
+          26,
+          6,
+          103,
+          121
+        ],
+        "model_height_art_pixels": 115,
+        "topology_uv_texture_unchanged": true
+      }
+    ],
+    "repeat_export_install_check_passed": true,
+    "shared_exporter_prior_runtime_files_byte_identical": [
+      "models/caelum/inventory/consumables/materials.png",
+      "models/caelum/inventory/consumables/medikit_small.md3",
+      "models/caelum/inventory/consumables/medikit_medium.md3",
+      "models/caelum/inventory/consumables/medikit_large.md3",
+      "models/caelum/inventory/consumables/anima_small.md3",
+      "models/caelum/inventory/consumables/anima_medium.md3",
+      "models/caelum/inventory/consumables/anima_large.md3",
+      "models/caelum/inventory/consumables/energy_small.md3",
+      "models/caelum/inventory/consumables/energy_medium.md3",
+      "models/caelum/inventory/consumables/energy_large.md3",
+      "caelum/data/inventory_consumables.modeldef"
+    ],
+    "project_validation_passed": true
+  },
+  "native": {
+    "runs": [
+      {
+        "phase": "baseline",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 109
+      },
+      {
+        "phase": "old-save-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 85
+      },
+      {
+        "phase": "candidate-fresh",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 109
+      },
+      {
+        "phase": "candidate-reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 85
+      },
+      {
+        "phase": "rollback-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 85
+      }
+    ],
+    "assertions": 473,
+    "scope": "Native CallTryPickup/CreateTossable on six real classes; half-capacity contents, quality flags, individual ownership, weight, icons, collision and floor placement. Exact water/thermal/immersion fields compared at pickup/toss/repickup boundaries. Fresh, old-save load, new-save reload and rollback preserve contents/quality; temperature remains native and may cool over elapsed time. No normal-menu, drinking/boiling or author acceptance."
+  },
+  "presentation": [
+    {
+      "kind": "sprites",
+      "bodies": 6,
+      "pid": 29828,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 205284781.6806,
+        "END": 205304805.0733
+      },
+      "fixture_sha256": "08e17930a6355567094371b6678a18a39e3ca4b13b2b9b4d118479a492258f83",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.570722999999997,
+        "p50_ms": 28.5841,
+        "p95_ms": 29.2096,
+        "p99_ms": 29.391,
+        "max_ms": 29.6646
+      },
+      "presentation": {
+        "pid": 29828,
+        "trace_sha256": "9c4af98e4ef987e8c30f43899e6acc7945a6695fef04977c13309836a95572b8",
+        "rows": 29937,
+        "scene_presents": 20008,
+        "mean_present_fps": 1141.7852576952243,
+        "present_intervals": {
+          "samples": 20007,
+          "mean_ms": 0.875821432498237,
+          "p50_ms": 0.8380999863147736,
+          "p95_ms": 1.0919000208377838,
+          "p99_ms": 1.3260999917984009,
+          "max_ms": 1.805999994277954
+        },
+        "native_call_duration": {
+          "samples": 20008,
+          "mean_ms": 0.07620655737671314,
+          "p50_ms": 0.07620000839233398,
+          "p95_ms": 0.09960001707077026,
+          "p99_ms": 0.1274000108242035,
+          "max_ms": 0.43860000371932983
+        }
+      }
+    },
+    {
+      "kind": "models",
+      "bodies": 6,
+      "pid": 12716,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 205318570.9444,
+        "END": 205338594.3007
+      },
+      "fixture_sha256": "08e17930a6355567094371b6678a18a39e3ca4b13b2b9b4d118479a492258f83",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.571798,
+        "p50_ms": 28.5674,
+        "p95_ms": 29.2082,
+        "p99_ms": 29.4061,
+        "max_ms": 29.8701
+      },
+      "presentation": {
+        "pid": 12716,
+        "trace_sha256": "e045d18bd6e386b1dfbcd3c2aba18739ed8e4586de6839ed7a4d7af853c43c0d",
+        "rows": 29456,
+        "scene_presents": 19806,
+        "mean_present_fps": 1130.2906878216033,
+        "present_intervals": {
+          "samples": 19805,
+          "mean_ms": 0.884728159556272,
+          "p50_ms": 0.8513000011444092,
+          "p95_ms": 1.1037999987602234,
+          "p99_ms": 1.3149999976158142,
+          "max_ms": 2.112300008535385
+        },
+        "native_call_duration": {
+          "samples": 19806,
+          "mean_ms": 0.07507565882089678,
+          "p50_ms": 0.07240000367164612,
+          "p95_ms": 0.09870001673698425,
+          "p99_ms": 0.12389999628067017,
+          "max_ms": 0.6886000037193298
+        }
+      }
+    }
+  ],
+  "environment": {
+    "os": "Windows 11 Pro 26200",
+    "cpu": "Ryzen 9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX 3070 Ti",
+    "engine": "GZDoom 4.14.2",
+    "backend": "Vulkan",
+    "presentation_resolution": [
+      1280,
+      720
+    ],
+    "uncapped": true,
+    "vsync": false,
+    "background_unpaused": true,
+    "audio": 0.05
+  },
+  "art": {
+    "mode": "Built-in image_gen precise-object-edit",
+    "source": "assets/source/art/inventory_models_647/water",
+    "prompt": "PROMPT.txt",
+    "selected_texture": "materials-v1.png",
+    "all_original_icons_unchanged": true,
+    "existing_dining_mesh_unchanged": true,
+    "front_side_rear_close_captures_inspected": true
+  },
+  "qualifications": [
+    "One sequential 700-tic presentation pair with six visible containers; no repeatability or all-item/campaign budget.",
+    "Queue-present intervals are not GPU timing or display scanout; simulation tic spacing is not CPU cost.",
+    "No new gameplay fields, actors, scans, capacity, balance or water rules. Existing dining topology/UV/material retained; normalized copy changes art scale/floor only.",
+    "No PK3, WAD, executable, DLL or save distributed. Author review and severe existing siege presentation remain unresolved."
+  ],
+  "files": {
+    "build.log": "fbc3e1ed86fe978e8f33074c16f96d9f2bb274c48eada404fd4040dff683fcb0",
+    "export.json": "72d18772bbc86c15e99e609a805ce0c3784452f4b1a288059e65ddfcf080147e",
+    "native/baseline-process.log": "84a8b5e25df30593610f623bb5ddc7785dff382b913a4fd1426137a7b267c4f8",
+    "native/baseline.cfg": "3eba76c8f6ef39f16a0da639e5a5fa360f158948c1a9be02ff1ffc7927d21c6b",
+    "native/baseline.log": "65fa6da073dbb8bb340edf0ea5f04abbffd6b068b0bbaf05f89edd4b66ce4a99",
+    "native/baseline.png": "3e51dd9f9d1bd5cc734f26d2e3a5174af743938122ae33ef9d6ecc8a4a76a262",
+    "native/candidate-0.png": "fd529ee1a25b4e52dcd1f9af1495a6da1307a3015c62b987b90c740b5adfac94",
+    "native/candidate-1.png": "61ff7b067e6f2daad5e3d45a18afb6b1d56da975f7796f35b61f10a6ec2f4a1a",
+    "native/candidate-2.png": "ea95d5249701a5e86ee2ed1311215e058790270131ba451e984c609a6b3d96a2",
+    "native/candidate-3.png": "0d5b07b4df684e0c77e90fc51fc351007cb6dcb4fbbe9d8b709a1bfc07bd36d5",
+    "native/candidate-5.png": "d7f9d6424a5f72c835bf68d1b6dd62c312bd27713277582757051430727da797",
+    "native/candidate-6.png": "47aa735c15471e38f0ba50cdb7482e185ce0a43157aa934675848d62c42cad43",
+    "native/candidate-7.png": "f6d990351b9f50f05b12127874b8a1b14422ce059e01f4aba090f79f8f5372b5",
+    "native/candidate-fresh-process.log": "a082f4f989625aed65029a7ca006eb8aef260d1eced148b82b0550c2eaf3f915",
+    "native/candidate-fresh.cfg": "37394edc756ad971a656f44387747d92ba61e8494a24168c3d277b24d212028f",
+    "native/candidate-fresh.log": "45fa3188630f5593f741a0c1b946dbfaba569b3c5f09bf197b83537b25e57ddf",
+    "native/candidate-reload-process.log": "b1b1b6b1b1a6a422969533153d09626f6fa7eb088490f7892f175be21f901d73",
+    "native/candidate-reload.cfg": "c130a1220e0a78732a9bec676c71b2fad2e2279baeba33ab495b037cd68a04d3",
+    "native/candidate-reload.log": "41cb482cb6dbbfb10c83412b521e7b51c5681b3415611ee3fcf42b9c4a9996b1",
+    "native/fixture-source/MAPINFO.txt": "9843f63eec72f3859c240e7ab67380189b3f9c06e469a45fa8564d093d730ff1",
+    "native/fixture-source/ZSCRIPT.txt": "bc42fdeee33783f15ad9ddc0b6a9854771fde628f19f7b3b9387c57318a46a74",
+    "native/fixture.zs": "5186a50c954e8429871ea5c53280b3b6bc6239509bb3c475cbd02f4ed29268fa",
+    "native/old-save-load-process.log": "04ee2305396296d9d6ad47cfe21f23e4b35e62686d2025b742ab7c1a50607775",
+    "native/old-save-load.cfg": "878e1b9339d15d8e61a885878ceccff7d15eb1f1320f470860ba36c34b2096a6",
+    "native/old-save-load.log": "4525b6b2c34eda65e3312c983f1fa4a2e6f43277a534db619db79437e4ee680c",
+    "native/RESULTS.json": "257aafe53dba5e90b16dd0f973105043b4917916e085c3d4e8467b792374d1c5",
+    "native/rollback-load-process.log": "3dfcd9223518189bc1b5e24a9d2f02ae4d53ddd7c31acaef553b8bd56db3cab9",
+    "native/rollback-load.cfg": "c130a1220e0a78732a9bec676c71b2fad2e2279baeba33ab495b037cd68a04d3",
+    "native/rollback-load.log": "b5106059cd3af5128e458177548f803e549ad97f46eceda4dff78b40b36de999",
+    "native/session.ini": "df75679d171338b409b604b47a186fd4677870bb47992b85671e5844dd7e92b3",
+    "presentation/models-6/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/models-6/engine.log": "44e6f065d848dd4a501e0e86552a0e999b7435082d43be20efc9725705db291e",
+    "presentation/models-6/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/models-6/fixture-source/ZSCRIPT.txt": "897271e193b28f4ca57c0547ebad520fee988b9289533f8a849f462d5fd17be5",
+    "presentation/models-6/presents.csv": "e045d18bd6e386b1dfbcd3c2aba18739ed8e4586de6839ed7a4d7af853c43c0d",
+    "presentation/models-6/process.log": "5afdbd6c532ef9b2a82165d2258c3226379134dfe39176dc87afaf7d431cc367",
+    "presentation/models-6/scene.png": "4379002219253dcaf78e6513d69204a3975e0c66b9237bc59ebaa7f78302f463",
+    "presentation/models-6/session.ini": "419306e463cf47aa058506f6aa07ebe768bca8ebd341d733a2a5f43adb0f22ae",
+    "presentation/RESULTS.json": "42bb9ea95b6c16697cb4e59c5a21c743ba40061b9587cf35167f8b0352d01f38",
+    "presentation/sprites-6/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/sprites-6/engine.log": "3c90e085f31badfb92b82c632d3483098caf01c39075e8798ee150a52042ac2e",
+    "presentation/sprites-6/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/sprites-6/fixture-source/ZSCRIPT.txt": "897271e193b28f4ca57c0547ebad520fee988b9289533f8a849f462d5fd17be5",
+    "presentation/sprites-6/presents.csv": "9c4af98e4ef987e8c30f43899e6acc7945a6695fef04977c13309836a95572b8",
+    "presentation/sprites-6/process.log": "4c7bcaf1dd45ec9ee8dc554075dad70f6084e7c060ee2a1b0b7f5e28057ab882",
+    "presentation/sprites-6/scene.png": "b4c141581082d3a1050e2c3c55c90adbd1acf7ad89c23f608d1d9ac084a3c216",
+    "presentation/sprites-6/session.ini": "04728031fd96a6ce7bacd1004287269d68d283e7c8e19721f4af7c6abfd98c8b",
+    "shared-exporter-refactor.json": "25c2ef969186134e7b3cc2020e695ed9863a18d489b8d31d86288b04251ad714",
+    "visual/fixture-source/MAPINFO.txt": "9843f63eec72f3859c240e7ab67380189b3f9c06e469a45fa8564d093d730ff1",
+    "visual/fixture-source/ZSCRIPT.txt": "bc42fdeee33783f15ad9ddc0b6a9854771fde628f19f7b3b9387c57318a46a74",
+    "visual/fixture.zs": "5186a50c954e8429871ea5c53280b3b6bc6239509bb3c475cbd02f4ed29268fa",
+    "visual/RESULTS.json": "d75ee7bb896cfd8b072cf1db6bc02bd554b3f219930592266464415ae6a678ed",
+    "visual/session.ini": "6c3819724ddd3fe8fed8682cef970baa40ef310aa9a84fb8d7d3c6dc20c34561",
+    "visual/visual-process.log": "4a5587351949cd100e07a7786f2b6db81f3ee0452313eb619572c569721693c5",
+    "visual/visual.cfg": "69776412d0d7dc13edc3b9af8e904cd38875b1e36d87f0df77ccafbc99252354",
+    "visual/visual.log": "ac4d229376524bd4dcf075d6ffb6028de236454bbe390011a15b6b7e549a9c16",
+    "validation.log": "1e095366e5c1d31dd95a7b2429e2c6d0c2a8697d14404f6dc7f8163b4587a667"
+  }
+}

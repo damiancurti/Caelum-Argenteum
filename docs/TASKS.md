@@ -4,14 +4,17 @@ Documentation version: **5.17.1** - 2026-11-13.
 
 ## 5.17.1 - Dropped inventory models (#647, in progress)
 
-Implemented 15 denomination bindings using three closed coin meshes, plus nine
-medikit/Anima/energy models. Final consumable package checks pass;
+Implemented 15 denomination bindings using three closed coin meshes, nine
+medikit/Anima/energy models, and six bottle/canteen models. Water-container
+pickup/toss/content/quality and bidirectional-save checks pass in the complete
+package; CA647-WATER-01 author review remains pending. Legacy water rations,
+maze water and cooking vessels still need separate coverage. Consumable checks pass;
 CA647-CONSUMABLES-01 author review remains pending. Existing CAMDA0 collision
 between medium armor and medium Anima needs the intended armor resource in its
 future model binding; no sprite-state rename is authorized by this discovery. Complete
 package native/save checks pass; CA647-COINS-01 author review remains pending.
 Continue class-plus-variant coverage for equipment, clothing, ammunition,
-consumables, water containers, tools, materials and retained physical bodies.
+remaining consumables/containers, tools, materials and retained physical bodies.
 Respect existing custom drop policy and rejected legacy art; source files alone
 do not prove runtime coverage. No remaining category is marked complete.
 

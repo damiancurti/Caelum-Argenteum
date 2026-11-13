@@ -565,3 +565,11 @@
 /src/caelum/data/inventory_consumables.modeldef text eol=lf
 /src/models/caelum/inventory/consumables/** -text
 /assets/validation_v5_17_1/consumables-evidence/** -text -whitespace
+
+/assets/generators/*inventory_water_models.py text eol=lf
+/assets/source/art/inventory_models_647/water/*.json text eol=lf
+/assets/source/art/inventory_models_647/water/*.txt text eol=lf
+/assets/source/art/inventory_models_647/water/*.png -text
+/src/caelum/data/inventory_water.modeldef text eol=lf
+/src/models/caelum/inventory/water/** -text
+/assets/validation_v5_17_1/water-evidence/** -text -whitespace

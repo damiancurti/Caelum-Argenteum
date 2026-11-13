@@ -189,21 +189,21 @@ def geometry(config, family, tier):
     return mesh, volumes
 
 
-def output_files():
-    config = json.loads((SOURCE / 'DESIGN.json').read_text(encoding='utf-8'))
+def output_files(source=SOURCE, definition_name='inventory_consumables.modeldef'):
+    config = json.loads((source / 'DESIGN.json').read_text(encoding='utf-8'))
     outputs = {}
     definitions = []
     records = {}
     model_path = config['model_path']
-    texture = (SOURCE / config['atlas']['image']).read_bytes()
+    texture = (source / config['atlas']['image']).read_bytes()
     if digest(texture) != config['atlas']['sha256']:
         raise ValueError('Owned atlas changed; inspect and update its provenance first.')
     outputs[model_path + '/materials.png'] = texture
     for key, item in config['variants'].items():
-        source = ROOT / item['icon']
-        if digest(source.read_bytes()) != item['icon_sha256']:
+        icon_path = ROOT / item['icon']
+        if digest(icon_path.read_bytes()) != item['icon_sha256']:
             raise ValueError('Existing identity reference changed: ' + key)
-        image = Image.open(source).convert('RGBA')
+        image = Image.open(icon_path).convert('RGBA')
         bounds = image.getchannel('A').point(lambda value: 255 if value >= 128 else 0).getbbox()
         target_height = bounds[3] - bounds[1]
         mesh, volumes = geometry(config, config['families'][item['family']], item['tier'])
@@ -234,12 +234,12 @@ def output_files():
                         'surfaces': surfaces, 'source_opaque_bounds': bounds, 'model_height_art_pixels': target_height,
                         'native_bounds': native_bounds}
     outputs['editable/materials.mtl'] = ('newmtl atlas\nKd 1 1 1\nmap_Kd ../' + model_path + '/materials.png\n').encode()
-    outputs['caelum/data/inventory_consumables.modeldef'] = ('\n'.join(definitions) + '\n').encode()
+    outputs['caelum/data/' + definition_name] = ('\n'.join(definitions) + '\n').encode()
     manifest = {'schema_revision': 1, 'issue': 647, 'status': config['status'], 'variants': records,
                 'generator_sha256': digest(Path(__file__).read_bytes()),
                 'shared_generator_sha256': {name: digest(Path(__file__).with_name(name).read_bytes()) for name in
                                             ('generate_nahuelito_model.py', 'generate_pombero_model.py')},
-                'source_sha256': {name: digest((SOURCE / name).read_bytes()) for name in
+                'source_sha256': {name: digest((source / name).read_bytes()) for name in
                                   ('DESIGN.json', 'PROVENANCE.json', config['atlas']['image'], *config['prompt_files'])},
                 'sha256': {name: digest(blob) for name, blob in outputs.items()}}
     outputs['manifest.json'] = (json.dumps(manifest, indent=2) + '\n').encode()

@@ -1,0 +1,6 @@
+Model CaelumBottleSmall { Path "models/caelum/inventory/water" Model 0 "bottle_small.md3" Skin 0 "materials.png" Scale 1 1 1 CorrectPixelStretch FrameIndex CW0X A 0 0 }
+Model CaelumBottleNormal { Path "models/caelum/inventory/water" Model 0 "bottle_normal.md3" Skin 0 "materials.png" Scale 1 1 1 CorrectPixelStretch FrameIndex CW1X A 0 0 }
+Model CaelumBottleLarge { Path "models/caelum/inventory/water" Model 0 "bottle_large.md3" Skin 0 "materials.png" Scale 1 1 1 CorrectPixelStretch FrameIndex CW2X A 0 0 }
+Model CaelumCanteenSmall { Path "models/caelum/inventory/water" Model 0 "canteen_small.md3" Skin 0 "materials.png" Scale 1 1 1 CorrectPixelStretch FrameIndex CW3X A 0 0 }
+Model CaelumCanteenNormal { Path "models/caelum/inventory/water" Model 0 "canteen_normal.md3" Skin 0 "materials.png" Scale 1 1 1 CorrectPixelStretch FrameIndex CW4X A 0 0 }
+Model CaelumCanteenLarge { Path "models/caelum/inventory/water" Model 0 "canteen_large.obj" Scale 1 1 1 CorrectPixelStretch DontCullBackFaces FrameIndex CW5X A 0 0 }

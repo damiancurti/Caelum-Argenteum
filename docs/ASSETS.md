@@ -2,7 +2,42 @@
 
 Documentation version: **5.17.1** - 2026-11-13.
 
-## 5.17.1 - Closed coin drops (#647, inventory conversion in progress)
+## 5.17.1 - Inventory drops in 3D (#647, conversion in progress)
+
+Six bottle/canteen classes now have explicit production models. Small glass stays
+green, normal glass amber with a leather sleeve, and the large demijohn green
+inside a wicker basket with a solid handle. Small/normal canteens retain round/
+oval leather bodies and straps. Five new MD3 meshes contain 640-1,112 triangles
+and 5-6 closed outward components each. The large canteen reuses the existing
+dining OBJ topology, UVs and owned texture in a separate normalized drop copy;
+the dining source/binding remain unchanged. All six follow their original opaque
+icon heights, with native scale, collision, capacity, contents and mass retained.
+
+Sources are assets/source/art/inventory_models_647/water: DESIGN.json, EXPORT.json,
+PROMPT.txt, PROVENANCE.json and materials-v1.png. The built-in ImageGen edit used
+the selected consumable atlas and owned bottle references, requesting green/amber
+glass and wicker cells; original output bytes are retained. No pixel-equality
+claim is made for unrequested cells. No original icon/sprite was altered.
+`python assets/generators/generate_inventory_water_models.py --output build/water --install`
+exports native bindings, five MD3s, the normalized canteen OBJ, atlas and editable
+new-mesh OBJ/MTL files. Repeat with `--check --install`. Read-only project checks
+verify hashes, explicit class coverage, MD3 structure and reused topology/UVs.
+Shared-exporter parameterization leaves all eleven previous consumable runtime
+outputs byte-identical.
+
+The final complete package passed 473 assertions in five native fresh/old-save/
+reload/rollback runs, with all 18,160 source entries matching. Exact content,
+quality, thermal and immersion fields are compared at native pickup/toss/repickup
+boundaries. Saved contents/quality persist, with native cooling over elapsed time.
+Front/side/rear/close captures were inspected. Evidence:
+assets/validation_v5_17_1/water-evidence/SUMMARY.json. One sequential 700-tic pair
+for six visible containers observed 1,141.79/1,130.29 presents/s (sprites/models),
+p95/p99 1.0919/1.3261ms and 1.1038/1.3150ms; mean simulation spacing was 28.571ms.
+The environment and queue-present qualifications below apply. No crowd budget,
+normal-menu, drinking/boiling or author acceptance is inferred. Legacy water
+rations, maze water and cooking vessels remain. For the six-container author
+room, add `--kind water` to the inspection command below; F1-F4 and F6-F8 inspect
+the objects, F5 restores player control/HUD.
 
 The same issue now includes small/medium/large medikits, Anima flasks and energy
 vials. The medikit remains the accepted leather bag identity, with handle, straps,

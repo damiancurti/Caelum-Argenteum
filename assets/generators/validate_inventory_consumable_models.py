@@ -8,10 +8,10 @@ import struct
 ROOT = Path(__file__).resolve().parents[2]
 
 
-def validate(root=ROOT):
+def validate(root=ROOT, category='consumables', definition_name='inventory_consumables.modeldef'):
     errors = []
     try:
-        directory = root / 'assets/source/art/inventory_models_647/consumables'
+        directory = root / 'assets/source/art/inventory_models_647' / category
         config = json.loads((directory / 'DESIGN.json').read_text(encoding='utf-8'))
         report = json.loads((directory / 'EXPORT.json').read_text(encoding='utf-8'))
         sources = {directory / name: checksum for name, checksum in report['source_sha256'].items()}
@@ -27,9 +27,9 @@ def validate(root=ROOT):
             path = root / 'src' / name
             if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != checksum:
                 errors.append('Inventory consumables: missing or stale runtime ' + name)
-        definition = (root / 'src/caelum/data/inventory_consumables.modeldef').read_text(encoding='utf-8')
+        definition = (root / 'src/caelum/data' / definition_name).read_text(encoding='utf-8')
         actual = re.findall(r'\bModel\s+(\w+)\s*\{', definition)
-        expected = [item['class'] for item in config['variants'].values()]
+        expected = [item['class'] for item in config['variants'].values()] + [item['class'] for item in config.get('reused_variants', [])]
         if actual != expected or len(set(actual)) != len(expected):
             errors.append('Inventory consumables: explicit class coverage differs')
         for name, record in report['variants'].items():
@@ -45,12 +45,12 @@ def validate(root=ROOT):
                 offset += fields[-1]
             if offset != len(blob):
                 errors.append('Inventory consumables: invalid container end ' + name)
-        include = '#include "caelum/data/inventory_consumables.modeldef"'
+        include = '#include "caelum/data/' + definition_name + '"'
         if (root / 'src/MODELDEF').read_text(encoding='utf-8').count(include) != 1:
             errors.append('Inventory consumables: expected one production include')
     except (OSError, KeyError, ValueError, struct.error) as exc:
         errors.append('Inventory consumables: ' + str(exc))
-    return errors
+    return [error.replace('Inventory consumables:', 'Inventory ' + category + ':') for error in errors]
 
 
 if __name__ == '__main__':
