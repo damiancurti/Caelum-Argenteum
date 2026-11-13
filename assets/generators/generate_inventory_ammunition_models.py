@@ -1,7 +1,8 @@
-"""Export closed ammunition props using original owned textures without raster edits."""
+"""Export closed inventory props using original owned textures without raster edits."""
 from pathlib import Path
 import argparse
 import json
+import math
 import zipfile
 from PIL import Image
 try:
@@ -14,8 +15,9 @@ except ImportError:
 SOURCE=ROOT/'assets/source/art/inventory_models_647/ammunition'
 
 
-def output_files():
-    config=json.loads((SOURCE/'DESIGN.json').read_text(encoding='utf-8'))
+def output_files(source=SOURCE, definition_name='inventory_ammunition.modeldef', metadata_files=None, wrapper_name=None):
+    if metadata_files is None:metadata_files=('DESIGN.json','PROMPT.txt','GENERATION_STATUS.json')
+    config=json.loads((source/'DESIGN.json').read_text(encoding='utf-8'))
     for name,checksum in config['source_sha256'].items():
         if digest((ROOT/name).read_bytes())!=checksum:raise ValueError('Owned source changed: '+name)
     neutral={'tiers':list(config['tier_materials']),'tier_materials':config['tier_materials'],
@@ -33,6 +35,9 @@ def output_files():
             begin=len(mesh.vertices)
             for point,(u,v) in zip(component.vertices,component.uv):
                 transformed=tuple(sum(a*b for a,b in zip(row,point))+offset[axis] for axis,row in enumerate(matrix))
+                if 'surface_wave' in part:
+                    displacement=sum(wave['amplitude']*math.sin(transformed[wave['axis']]*wave['frequency']+wave.get('phase',0)) for wave in part['surface_wave'])
+                    transformed=(transformed[0],transformed[1],transformed[2]+displacement)
                 mesh.vertex(transformed,((left+(right-left)*u)/width,(top+(bottom-top)*v)/height),part['part'])
             mesh.faces.extend((material,tuple(begin+index for index in triangle)) for _,triangle in component.faces)
             parts.extend(volumes)
@@ -48,11 +53,14 @@ def output_files():
         frame=[(x*factor,y*factor,(z-low[2])*factor) for x,y,z in mesh.vertices]
         shaders={name:settings['texture'] for name,settings in config['materials'].items()}
         binary,surfaces,native_bounds=md3(mesh,[frame],shaders)
-        binary=binary[:8]+fixed('CA652 '+key,64)+binary[72:]
+        binary=binary[:8]+fixed('CA'+str(config['issue'])+' '+key,64)+binary[72:]
         name=config['model_path']+'/'+key+'.md3';files[name]=binary
         definitions.append(f'Model {item["class"]} {{ Path "{config["model_path"]}" Model 0 "{key}.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex {item["sprite"]} A 0 0 }}')
+        for binding in item.get('additional_bindings',[]):
+            definitions.append(f'Model {binding["class"]} {{ Path "{config["model_path"]}" Model 0 "{key}.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex {binding["sprite"]} A 0 0 }}')
         # Editable OBJ keeps the original shader images referenced by materials.
-        lines=['# Original inventory art; OBJ Y up. Existing raster sources remain unchanged.','mtllib ammunition.mtl']
+        material_file=config.get('editable_materials_name','ammunition.mtl')
+        lines=['# Original inventory art; OBJ Y up. Existing raster sources remain unchanged.','mtllib '+material_file]
         lines += [f'v {x:.6f} {z:.6f} {-y:.6f}' for x,y,z in frame]
         lines += [f'vt {u:.8f} {1-v:.8f}' for u,v in mesh.uv]
         previous=None
@@ -68,31 +76,34 @@ def output_files():
     mtl=[]
     for key,settings in config['materials'].items():
         mtl += ['newmtl '+key,'Kd 1 1 1','map_Kd '+'src/'+settings['texture']]
-    files['editable/ammunition.mtl']=('\n'.join(mtl)+'\n').encode()
-    files['caelum/data/inventory_ammunition.modeldef']=('\n'.join(definitions)+'\n').encode()
+    files['editable/'+config.get('editable_materials_name','ammunition.mtl')]=('\n'.join(mtl)+'\n').encode()
+    files['caelum/data/'+definition_name]=('\n'.join(definitions)+'\n').encode()
     report={'schema_revision':1,'issue':config['issue'],'parent_issue':config['parent_issue'],'status':config['status'],'variants':records,
-            'source_sha256':{name:digest((SOURCE/name).read_bytes()) for name in ('DESIGN.json','PROMPT.txt','GENERATION_STATUS.json')},
+            'source_sha256':{name:digest((source/name).read_bytes()) for name in metadata_files},
             'external_source_sha256':config['source_sha256'],
             'generator_sha256':{name:digest(Path(__file__).with_name(name).read_bytes()) for name in
                                 ('generate_inventory_ammunition_models.py','generate_inventory_consumable_models.py','generate_nahuelito_model.py','generate_pombero_model.py')},
             'sha256':{name:digest(blob) for name,blob in files.items()}}
     files['manifest.json']=(json.dumps(report,indent=2)+'\n').encode()
+    if wrapper_name:
+        report['generator_sha256'][wrapper_name]=digest(Path(__file__).with_name(wrapper_name).read_bytes())
+        files['manifest.json']=(json.dumps(report,indent=2)+'\n').encode()
     return files
 
 
-def main():
+def main(source=SOURCE, definition_name='inventory_ammunition.modeldef', metadata_files=None, wrapper_name=None):
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--check',action='store_true')
     parser.add_argument('--install',action='store_true')
-    args=parser.parse_args();files=output_files()
+    args=parser.parse_args();files=output_files(source,definition_name,metadata_files,wrapper_name)
     for name,blob in files.items():
         paths=[args.output/name]
         if args.install and not name.startswith('editable/'):
-            paths.append(SOURCE/'EXPORT.json' if name=='manifest.json' else ROOT/'src'/name)
+            paths.append(source/'EXPORT.json' if name=='manifest.json' else ROOT/'src'/name)
         for path in paths:
             if args.check:
-                if not path.is_file() or path.read_bytes()!=blob:raise ValueError('Stale ammunition export: '+str(path))
+                if not path.is_file() or path.read_bytes()!=blob:raise ValueError('Stale inventory export: '+str(path))
             else:path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(blob)
     if not args.check:
         with zipfile.ZipFile(args.output/'preview.pk3','w') as package:

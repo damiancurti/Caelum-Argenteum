@@ -1,0 +1,151 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-13 17:06:35
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-461/build/issue461-pombero01.pk3, 18184 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-656/build/issue656-native01/fixture.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2526.72 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+CA455V - Inventory drop inspection
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA656 PASS item 0 native pickup
+CA656 PASS item 0 owned
+CA656 PASS item 0 quest drop guard
+CA656 PASS item 0 native toss
+CA656 PASS manual offers processing recipe sheets
+CA656 PASS manual sheets delivered before independent book test
+CA656 PASS item 1 native pickup
+CA656 PASS item 1 owned
+CA656 PASS item 1 quest drop guard
+CA656 PASS item 1 native toss
+CA656 PASS item 2 native pickup
+CA656 PASS item 2 owned
+CA656 PASS item 2 native toss
+CA656 PASS item 3 native pickup
+CA656 PASS item 3 owned
+CA656 PASS item 3 quest drop guard
+CA656 PASS item 3 native toss
+CA656 PASS item 4 native pickup
+CA656 PASS item 4 owned
+CA656 PASS item 4 quest drop guard
+CA656 PASS item 4 native toss
+CA656 PASS item 5 native pickup
+CA656 PASS item 5 owned
+CA656 PASS item 5 quest drop guard
+CA656 PASS item 5 native toss
+Game saved.
+Captured baseline.png
+CA656 PASS six native inventory classes
+CA656 PASS item 0 saved reference
+CA656 PASS item 0 dropped quantity and ownership
+CA656 PASS item 0 unique item left inventory
+CA656 PASS item 0 native collision and scale
+CA656 PASS item 0 original icon and spawn state
+CA656 PASS item 0 floor contact
+CA656 PASS item 0 unit weight
+CA656 PASS item 0 provenance record
+CA656 PASS item 0 provenance markers
+CA656 PASS item 0 location and quest flags
+CA656 PASS item 0 contamination retained
+CA656 PASS item 1 saved reference
+CA656 PASS item 1 dropped quantity and ownership
+CA656 PASS item 1 unique item left inventory
+CA656 PASS item 1 native collision and scale
+CA656 PASS item 1 original icon and spawn state
+CA656 PASS item 1 floor contact
+CA656 PASS item 1 unit weight
+CA656 PASS item 1 provenance record
+CA656 PASS item 1 provenance markers
+CA656 PASS item 1 location and quest flags
+CA656 PASS item 1 contamination retained
+CA656 PASS item 2 saved reference
+CA656 PASS item 2 dropped quantity and ownership
+CA656 PASS item 2 unique item left inventory
+CA656 PASS item 2 native collision and scale
+CA656 PASS item 2 original icon and spawn state
+CA656 PASS item 2 floor contact
+CA656 PASS item 2 native key identity
+CA656 PASS item 3 saved reference
+CA656 PASS item 3 dropped quantity and ownership
+CA656 PASS item 3 held remainder
+CA656 PASS item 3 native collision and scale
+CA656 PASS item 3 original icon and spawn state
+CA656 PASS item 3 floor contact
+CA656 PASS item 3 unit weight
+CA656 PASS item 3 provenance record
+CA656 PASS item 3 provenance markers
+CA656 PASS item 3 location and quest flags
+CA656 PASS item 3 contamination retained
+CA656 PASS item 4 saved reference
+CA656 PASS item 4 dropped quantity and ownership
+CA656 PASS item 4 held remainder
+CA656 PASS item 4 native collision and scale
+CA656 PASS item 4 original icon and spawn state
+CA656 PASS item 4 floor contact
+CA656 PASS item 4 unit weight
+CA656 PASS item 4 provenance record
+CA656 PASS item 4 provenance markers
+CA656 PASS item 4 location and quest flags
+CA656 PASS item 4 contamination retained
+CA656 PASS item 5 saved reference
+CA656 PASS item 5 dropped quantity and ownership
+CA656 PASS item 5 unique item left inventory
+CA656 PASS item 5 native collision and scale
+CA656 PASS item 5 original icon and spawn state
+CA656 PASS item 5 floor contact
+CA656 PASS item 5 unit weight
+CA656 PASS item 5 provenance record
+CA656 PASS item 5 provenance markers
+CA656 PASS item 5 location and quest flags
+CA656 PASS item 5 contamination retained
+CA656 PASS item 5 recipe pages retained
+CA656 COMPLETE failures=0
+Game saved.

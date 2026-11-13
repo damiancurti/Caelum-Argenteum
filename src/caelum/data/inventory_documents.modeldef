@@ -1,0 +1,6 @@
+Model CaelumProcessingManual { Path "models/caelum/inventory/documents" Model 0 "book.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CBOO A 0 0 }
+Model CaelumRecipeBook { Path "models/caelum/inventory/documents" Model 0 "book.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CBOO A 0 0 }
+Model CaelumSealedLetter { Path "models/caelum/inventory/documents" Model 0 "letter.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CSEL A 0 0 }
+Model CaelumSilverKey { Path "models/caelum/inventory/documents" Model 0 "key.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CKEY A 0 0 }
+Model CaelumCleaningCloth { Path "models/caelum/inventory/documents" Model 0 "cloth.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex HYCL A 0 0 }
+Model CaelumIronIngot { Path "models/caelum/inventory/documents" Model 0 "ingot.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M000 A 0 0 }

@@ -1,0 +1,22 @@
+{
+  "issue": 656,
+  "kind": "documents",
+  "scope": "Native pickup/toss, quantity and saved ownership for documents; no normal menu or author acceptance.",
+  "baseline_sha256": "88c41b887676e7a186914506ef5863f0c24d67d9335c42682f66ff207324422f",
+  "runtime_sha256": "88c41b887676e7a186914506ef5863f0c24d67d9335c42682f66ff207324422f",
+  "model_sha256": "7bf3f542b188fbd2e96af8e02bbf1220bce55dbfa90de07660a1646f60095d2d",
+  "fixture_sha256": "304b1378d3442e4e17b3902d3c2af3c6f54619d145d425d14d820376b68c64ab",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "visual",
+      "exit_code": 1,
+      "passed": false,
+      "errors": [
+        "Script error, \"fixture.pk3:zscript\" line 103:"
+      ],
+      "assertions": 0
+    }
+  ],
+  "captures": {}
+}

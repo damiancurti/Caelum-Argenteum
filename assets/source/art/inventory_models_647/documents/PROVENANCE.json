@@ -1,0 +1,23 @@
+{
+  "issue": 656,
+  "parent_issue": 647,
+  "geometry": "Original editable closed geometry authored from existing project icons. Shared geometry/export tools preserve their existing ammunition defaults.",
+  "reference_icons": [
+    "src/graphics/caelum/icons/ca_book.png",
+    "src/graphics/caelum/icons/ca_sealed_letter.png",
+    "src/graphics/caelum/icons/ca_key.png",
+    "src/graphics/caelum/icons/hygiene/cloth.png",
+    "src/graphics/caelum/icons/materials/ca_material_iron_ingot.png"
+  ],
+  "material_sources": {
+    "gold": "models/caelum/inventory/consumables/materials.png",
+    "iron": "models/caelum/actors/training/ca_training_dummy.png",
+    "red": "models/caelum/inventory/consumables/materials.png",
+    "leather": "models/caelum/inventory/consumables/materials.png",
+    "blue": "models/caelum/props/stations/ca_station_cloth.png",
+    "paper": "models/caelum/equipment/support_implements/paper_0.png",
+    "linen": "models/caelum/folklore/pombero461/materials.png"
+  },
+  "image_generation": "None. Existing owned source PNG pixels remain unchanged. Prior inventory/Pombero ImageGen provenance remains in their original source folders.",
+  "exclusions": "No rejected mate art, external assets, executable, IWAD or packaged test fixture is added."
+}

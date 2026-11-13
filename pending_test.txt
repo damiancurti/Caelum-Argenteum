@@ -57,3 +57,8 @@ CA461-POMBERO-01 | Origin: 5.17.5 / #461
 Prerequisites: current package. Run python assets/validation_v5_17_5/run_pombero.py --runtime build/caelum_argenteum_dev.pk3 --output build/pombero-author-01 --interactive in an isolated configuration; do not use a campaign save.
 Steps: inspect F1 idle, F2 movement, F3 stun, F4 attack preparation, F5 release, F6 pain, F7 falling, F8 corpse, F9 breath and F10 lying rest. Judge face, silhouette, joints and contact with the floor; report the provisional body scale separately.
 Expected: actual volume through every inherited pose, original identity and readable motion. The existing provisional Mandinga combat and body rules remain unchanged; this inspection does not approve campaign encounters or the remaining creature roster.
+
+CA656-DOCUMENTS-01 | Origin: 5.17.6 / #656
+Prerequisites: current package. Run python assets/validation_v5_17_6/run_document_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/documents-author-01 --interactive in an isolated configuration; do not use a campaign save.
+Steps: inspect F1-F4 and F6-F8, F9 next object and F10 rotation. F5 restores player control; collect the six displayed native objects, inspect their original icons and discard them using the ordinary inventory UI. Inspect the recipe-book pages and the key's identity; compare scale, folded cloth, book binding, wax seal and metal silhouette.
+Expected: actual 3D volume and the original quantity, identity and icon after pickup/drop. Report appearance and ordinary-menu results separately; agent-only tests do not constitute author acceptance.
