@@ -1,0 +1,20 @@
+{
+  "issue": 461,
+  "runtime_sha256": "5e301d8bbe651d1f3d834b031ba3b505e0ea8c1fed963c215e4686f24613aa9f",
+  "baseline_sha256": "5e301d8bbe651d1f3d834b031ba3b505e0ea8c1fed963c215e4686f24613aa9f",
+  "fixture_sha256": "c0d10729b5e14579b3dbf00361d807adc13afd539914e8dde1ac56e8f9523747",
+  "model_overlay_sha256": "71cf947302eab9832fee7c9dff490914af5cd8e7f43c8bb0fabe450cfec58b73",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "visual",
+      "exit_code": 1,
+      "passed": false,
+      "assertions": 0,
+      "errors": [
+        "Script error, \"fixture.pk3:zscript\" line 55:"
+      ],
+      "captures": {}
+    }
+  ]
+}
