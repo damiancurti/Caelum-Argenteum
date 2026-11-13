@@ -1,0 +1,15 @@
+newmtl material_0
+Kd 1 1 1
+map_Kd materials/material_0.png
+newmtl material_1
+Kd 1 1 1
+map_Kd materials/material_1.png
+newmtl material_2
+Kd 1 1 1
+map_Kd materials/material_2.png
+newmtl material_3
+Kd 1 1 1
+map_Kd materials/material_3.png
+newmtl material_4
+Kd 1 1 1
+map_Kd materials/material_4.png

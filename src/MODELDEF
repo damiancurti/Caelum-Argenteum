@@ -4743,3 +4743,4 @@ Model CaelumBarricadeVisual
 #include "caelum/data/inventory_ingots.modeldef"
 #include "caelum/data/cuero_combat.modeldef"
 #include "caelum/data/nahuelito_combat.modeldef"
+#include "caelum/data/inventory_camp.modeldef"

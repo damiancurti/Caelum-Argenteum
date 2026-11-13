@@ -1,0 +1,2 @@
+Model CaelumCampTent { Path "models/caelum/world/camp" Model 0 "tent.obj" Scale 0.866318731211 0.866318731211 0.866318731211 AngleOffset 90 CorrectPixelStretch DontCullBackFaces FrameIndex CPTN A 0 0 }
+Model CaelumCampPot { Path "models/caelum/inventory/camp" Model 0 "pot.obj" Scale 2.49795661556 2.49795661556 2.49795661556 AngleOffset 0 CorrectPixelStretch DontCullBackFaces FrameIndex CPPT A 0 0 }

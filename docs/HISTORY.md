@@ -1,6 +1,23 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.9** - 2026-11-13.
+Documentation version: **5.17.10** - 2026-11-13.
+
+## 5.17.10 - Camp inventory drop models (#664, 2026-11-13)
+
+Reused the accepted enlarged tent and extracted only original iron pot/trivet
+geometry for class-specific native drop presentation. Original geometry, UVs,
+textures, icons, deployment/cooking rules and container ownership remain intact.
+The first width-only pot fitting was replaced by a uniform fit inside both
+sprite dimensions before native inspection. The visual run passes 110 checks;
+final native continuity/rollback passes 448 with exact counts per phase. Twelve
+exports repeat byte-for-byte; all 18,208 package entries match src. The first
+presentation pair was rejected because baseline sprites were hidden below the
+floor despite valid actor counts. Both cohorts/camera are raised equally in the
+final visible comparison; original failure evidence is retained (CA-KP-233). One isolated
+two-object pair records 1194.11/1158.65 queue presents/s, p95 1.0344/1.0690 ms,
+p99 1.2473/1.2862 ms. ASSETS records environment and measurement limits. Evidence:
+assets/validation_v5_17_10/evidence/SUMMARY.json. CA664-CAMP-01 remains pending;
+earlier deployed-pot visual acceptance and campaign/crowd performance are not implied.
 
 ## 5.17.9 - Nahuelito inherited combat model (#662, 2026-11-13)
 

@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.9** - 2026-11-13.
+Documentation version: **5.17.10** - 2026-11-13.
+
+## 5.17.10 - Camp inventory drop models (#664)
+
+Two native classes now have explicit 3D drop bindings from existing camp art.
+Native ownership and save continuity/rollback checks pass 448 assertions;
+the earlier visual run passes 110. Deterministic exports, exact source/package
+checks and bounded presentation evidence are retained. CA664-CAMP-01 remains
+an author check. Preserve the separate existing
+deployed-pot/trivet review and all remaining inventory work.
 
 ## 5.17.9 - Nahuelito inherited combat frames (#662)
 
