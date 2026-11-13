@@ -1,0 +1,33 @@
+newmtl skin
+Kd 1 1 1
+map_Kd models/caelum/folklore/pombero/materials.png
+newmtl bodyhair
+Kd 1 1 1
+map_Kd models/caelum/folklore/pombero/materials.png
+newmtl linen
+Kd 1 1 1
+map_Kd models/caelum/folklore/pombero/materials.png
+newmtl burlap
+Kd 1 1 1
+map_Kd models/caelum/folklore/pombero/materials.png
+newmtl straw
+Kd 1 1 1
+map_Kd models/caelum/folklore/pombero/materials.png
+newmtl hair
+Kd 1 1 1
+map_Kd models/caelum/folklore/pombero/materials.png
+newmtl rope
+Kd 1 1 1
+map_Kd models/caelum/folklore/pombero/materials.png
+newmtl leather
+Kd 1 1 1
+map_Kd models/caelum/folklore/pombero/materials.png
+newmtl sclera
+Kd 1 1 1
+map_Kd models/caelum/folklore/pombero/materials.png
+newmtl iris
+Kd 1 1 1
+map_Kd models/caelum/folklore/pombero/materials.png
+newmtl dark
+Kd 1 1 1
+map_Kd models/caelum/folklore/pombero/dark.png

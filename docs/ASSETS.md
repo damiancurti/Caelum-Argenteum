@@ -2,7 +2,31 @@
 
 Documentation version: **5.16.3** - 2026-11-12.
 
-## 5.16.3 - Nahuelito animated model pilot (#455, unintegrated)
+## 5.16.3 - Animated folklore model pilots (#455, unintegrated)
+
+Pombero (CA-FOLK-006) adds a second technical visual pilot. Its editable DESIGN.json
+in assets/source/art/pombero_455 describes 15 hierarchical parts, sculpted face,
+pointed ears, straw hat, shirt/waistcoat, rope belt and bare hands/feet. The owned
+generate_pombero_model.py reuses the Nahuelito MD3 writer and exports OBJ/MTL plus
+40 native frames (16 idle, 24 walk), 15,754 native vertices, 27,403 triangles and
+five surfaces. These are prototype costs, without encounter-scale performance
+acceptance. The mesh's 32-MU neutral height uses the source's 1m lower bound only
+for preview; no final collision or production actor binding is supplied.
+
+Built-in image_gen produced the eight-panel material atlas and a muted-skin edit.
+Both original PNG outputs, exact PROMPT.json/PROMPT-v2.json and PROVENANCE.json are
+preserved unchanged. The existing owned stash dark material supplies tiny details.
+Source concept pixels remain untouched. Rebuild using
+`python assets/generators/generate_pombero_model.py --output build/pombero`.
+The shared native runner accepts `--kind pombero`; its optional `--interactive`
+mode remains a visual inspection fixture. Native fresh/reload, explicit state
+advancement, binary bounds/material checks and deterministic regeneration pass;
+assets/validation_v5_16_3/pombero/SUMMARY.json qualifies the exact evidence.
+The camera uses explicit zero eye-height and this fixture adds two studio lights;
+captures do not establish normal map lighting. Face, hair and clothing still look
+more schematic than the supplied reference and need further production art work.
+This pilot is not final art or author acceptance, and supplies no combat animation
+set, ordinary encounters, species physiology or campaign population.
 
 CA-FOLK-055 now has a reference-led real 3D visual pilot: continuous neck/body/tail,
 four swept flippers, jaw, eyes, nostrils and dorsal scutes. The editable anatomy
@@ -27,7 +51,7 @@ failed fixture attempts and exact hashes. Native single-instance animation and
 save/reload pass; binary/material/frame coverage and deterministic regeneration
 pass. These checks do not establish ordinary aquatic gameplay, encounter-scale
 performance, uniqueness across campaign maps, or final visual acceptance.
-CA455-VIS-01 requests that separate author review. The other 57 references remain
+CA455-VIS-01 requests that separate Nahuelito author review. The other 56 references remain
 without new models; #455 is unfinished.
 
 The complete 5.16.3 project audit and package build pass. The final package's
@@ -47,7 +71,7 @@ and project validation rejects stale outputs. The source catalogue remains the
 identity authority, with only translated descriptive names in BEHAVIOR.json.
 
 The classes inherit Mandinga sprites, collision and armor/thermal/altitude adapter
-as development placeholders. They do not integrate the Nahuelito mesh, authorize
+as development placeholders. They do not integrate either pilot mesh, authorize
 species-specific physiology or add playable races. No encounters or campaign
 unique-instance ownership are supplied. Native evidence for profiles, actions and
 finite inventory is kept separately from the visual pilot under

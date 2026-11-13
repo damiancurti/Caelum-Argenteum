@@ -1,0 +1,33 @@
+{
+  "issue": 455,
+  "catalogue_id": "CA-FOLK-006",
+  "reference": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/06_pombero.png",
+  "reference_sha256": "1dd178b9759cc92c00318c6d8f36e5192d42a1cc26f4357a1c0f6355406f39ae",
+  "status": "Unintegrated technical visual pilot. Native playback/save checks pass; production art fidelity, behavior animation coverage and author acceptance remain outstanding.",
+  "material_atlas_original": {
+    "file": "materials.png",
+    "tool": "Built-in image_gen; original output bytes retained.",
+    "sha256": "10d521c4f0e9119cd93c1534b99c9cf5f2ab8691c11cf8d8d951b73c10e45a69",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "layout": "2 columns by 4 rows: skin/body hair, linen/burlap, straw/head hair, rope/leather."
+  },
+  "material_atlas": {
+    "file": "materials-v2.png",
+    "sha256": "2922404ce006b6a5481a92bc548d640646e7237cc12627b3a068a92eb06242b7",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "tool": "Built-in image_gen edit; original output bytes preserved. Exact edit prompt in PROMPT-v2.json.",
+    "layout": "2 columns by 4 rows: skin/body hair, linen/burlap, straw/head hair, rope/leather."
+  },
+  "reused_owned_material": {
+    "file": "dark.png",
+    "original": "src/models/caelum/props/stash/ca_stash_inside.png",
+    "sha256": "6573658a5e61c4c8f75046435e8e8d1f1e85e6348007c69fc911483fe579fac4"
+  },
+  "geometry": "Original editable reference-led mesh/pose data by Codex; owned Nahuelito native writer reused. No concept pixels were edited or used as a billboard."
+}

@@ -10,9 +10,12 @@ import zipfile
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--model',type=Path,required=True)
-    parser.add_argument('--runtime',type=Path,required=True);args=parser.parse_args()
-    root=args.model;manifest=json.loads((root/'manifest.json').read_text())
-    blob=(root/'models/caelum/folklore/nahuelito/nahuelito.md3').read_bytes()
+    parser.add_argument('--runtime',type=Path,required=True)
+    parser.add_argument('--kind',choices=('nahuelito','pombero'),default='nahuelito')
+    parser.add_argument('--report-output',type=Path)
+    args=parser.parse_args()
+    root=args.model;manifest=json.loads((root/'manifest.json').read_text(encoding='utf-8'))
+    blob=(root/f'models/caelum/folklore/{args.kind}/{args.kind}.md3').read_bytes()
     magic,version,_,flags,frames,tags,surfaces,skins,fo,to,so,end=struct.unpack_from('<4sI64s9I',blob)
     assert magic==b'IDP3' and version==15 and frames==40 and tags==0
     assert fo==108 and to==so==fo+frames*56 and end==len(blob)
@@ -42,17 +45,18 @@ def main():
                     assert all(bounds[frame][0][axis]-.02<=p[axis]/64<=bounds[frame][1][axis]+.02 for axis in range(3))
             distinct.append(len(set(hashes)))
             offset+=size;vertices+=nv;triangles+=nt
-    assert offset==end and surfaces==3 and triangles==manifest['triangles']
+    assert offset==end and surfaces==len(manifest['surfaces']) and triangles==manifest['triangles']
     assert min(distinct)>1 and max(distinct)==frames
-    definition=(root/'MODELDEF').read_text();states=(root/'ZSCRIPT').read_text()
+    definition=(root/'MODELDEF').read_text(encoding='utf-8');states=(root/'ZSCRIPT').read_text(encoding='utf-8')
     for index,frame in enumerate(manifest['frames']):
-        sprite='NHAI' if frame['action']=='idle' else 'NHAS';letter=chr(65+frame['sample'])
+        sprite=('PBMI' if frame['action']=='idle' else 'PBMW') if args.kind=='pombero' else ('NHAI' if frame['action']=='idle' else 'NHAS')
+        letter=chr(65+frame['sample'])
         assert f'FrameIndex {sprite} {letter} 0 {index}' in definition
         assert f'{sprite} {letter} {frame["tics"]};' in states
-    report={'passed':True,'frames':frames,'surfaces':surfaces,'vertices':vertices,'triangles':triangles,
+    report={'passed':True,'subject':args.kind,'frames':frames,'surfaces':surfaces,'vertices':vertices,'triangles':triangles,
             'distinct_frames_per_surface':distinct,'binary_coordinate_checks':vertices*frames,
-            'scope':'Binary structure/materials/bounds and non-static animation only; not aquatic behavior or visual acceptance.'}
-    (root/'static-results.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report))
+            'scope':'Binary structure/materials/bounds and non-static animation only; not gameplay behavior or visual acceptance.'}
+    (args.report_output or root/'static-results.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8');print(json.dumps(report))
 
 
 if __name__=='__main__':main()

@@ -1,0 +1,4569 @@
+{
+  "schema_revision": 1,
+  "issue": 455,
+  "catalogue_id": "CA-FOLK-006",
+  "status": "unintegrated_visual_pilot",
+  "reference_role": "Approved concept anatomy/silhouette/materials; no source pixel edits. Stocky hairy goblin, pointed ears, broad nose, straw hat, ivory shirt, brown waistcoat/trousers, rope belt, bare feet.",
+  "preview": {
+    "height_map_units": 32,
+    "render_radius": 40,
+    "scale_authority": "Neutral mesh height 32 map units, the source 1 m lower bound including this preview hat. Native MODELDEF has no pixel-stretch compensation. Visual scale only; no final collision or anatomy approval.",
+    "body_target": [
+      0,
+      0,
+      16
+    ],
+    "head_target": [
+      3,
+      0,
+      22.2
+    ],
+    "views": [
+      [
+        "three-quarter",
+        [
+          36,
+          -20,
+          18.3
+        ],
+        5.9,
+        0
+      ],
+      [
+        "front",
+        [
+          48,
+          0,
+          17.8
+        ],
+        4.8,
+        0
+      ],
+      [
+        "side",
+        [
+          0,
+          -48,
+          17.8
+        ],
+        4.8,
+        0
+      ],
+      [
+        "rear",
+        [
+          -48,
+          0,
+          17.8
+        ],
+        4.8,
+        0
+      ],
+      [
+        "rotated",
+        [
+          36,
+          -20,
+          18.3
+        ],
+        5.9,
+        90
+      ],
+      [
+        "walk-down",
+        [
+          36,
+          -20,
+          18.3
+        ],
+        5.9,
+        0
+      ],
+      [
+        "walk-up",
+        [
+          36,
+          -20,
+          18.3
+        ],
+        5.9,
+        0
+      ],
+      [
+        "head",
+        [
+          17,
+          -6,
+          22.2
+        ],
+        0,
+        0
+      ]
+    ],
+    "lighting": {
+      "ambient": 128,
+      "lights": [
+        {
+          "position": [
+            18,
+            -22,
+            32
+          ],
+          "color": [
+            220,
+            215,
+            210
+          ],
+          "radius": 36
+        },
+        {
+          "position": [
+            -22,
+            25,
+            25
+          ],
+          "color": [
+            190,
+            205,
+            235
+          ],
+          "radius": 32
+        }
+      ]
+    }
+  },
+  "atlas": {
+    "columns": 2,
+    "rows": 4,
+    "inset": 0.035,
+    "source_file": "materials-v2.png"
+  },
+  "materials": {
+    "skin": {
+      "path": "models/caelum/folklore/pombero/materials.png",
+      "tile": [
+        0,
+        0
+      ]
+    },
+    "bodyhair": {
+      "path": "models/caelum/folklore/pombero/materials.png",
+      "tile": [
+        1,
+        0
+      ]
+    },
+    "linen": {
+      "path": "models/caelum/folklore/pombero/materials.png",
+      "tile": [
+        0,
+        1
+      ]
+    },
+    "burlap": {
+      "path": "models/caelum/folklore/pombero/materials.png",
+      "tile": [
+        1,
+        1
+      ]
+    },
+    "straw": {
+      "path": "models/caelum/folklore/pombero/materials.png",
+      "tile": [
+        0,
+        2
+      ]
+    },
+    "hair": {
+      "path": "models/caelum/folklore/pombero/materials.png",
+      "tile": [
+        1,
+        2
+      ]
+    },
+    "rope": {
+      "path": "models/caelum/folklore/pombero/materials.png",
+      "tile": [
+        0,
+        3
+      ]
+    },
+    "leather": {
+      "path": "models/caelum/folklore/pombero/materials.png",
+      "tile": [
+        1,
+        3
+      ]
+    },
+    "sclera": {
+      "path": "models/caelum/folklore/pombero/materials.png",
+      "sample": [
+        0.23,
+        0.37
+      ]
+    },
+    "iris": {
+      "path": "models/caelum/folklore/pombero/materials.png",
+      "sample": [
+        0.72,
+        0.4
+      ]
+    },
+    "dark": {
+      "path": "models/caelum/folklore/pombero/dark.png",
+      "sample": [
+        0.5,
+        0.5
+      ]
+    }
+  },
+  "parts": {
+    "pelvis": {
+      "parent": null,
+      "pivot": [
+        0,
+        0.0,
+        36.0
+      ]
+    },
+    "torso": {
+      "parent": "pelvis",
+      "pivot": [
+        0,
+        0.0,
+        38.8
+      ]
+    },
+    "head": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        64.8
+      ]
+    },
+    "right_upper": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        -14.719999999999999,
+        59.8
+      ]
+    },
+    "right_fore": {
+      "parent": "right_upper",
+      "pivot": [
+        1.0,
+        -19.549999999999997,
+        44.8
+      ]
+    },
+    "right_hand": {
+      "parent": "right_fore",
+      "pivot": [
+        3.0,
+        -20.009999999999998,
+        32.0
+      ]
+    },
+    "right_thigh": {
+      "parent": "pelvis",
+      "pivot": [
+        -1,
+        -7.244999999999999,
+        34.4
+      ]
+    },
+    "right_shin": {
+      "parent": "right_thigh",
+      "pivot": [
+        -0.7,
+        -8.049999999999999,
+        20.8
+      ]
+    },
+    "right_foot": {
+      "parent": "right_shin",
+      "pivot": [
+        0,
+        -8.049999999999999,
+        6.4
+      ]
+    },
+    "left_upper": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        14.719999999999999,
+        59.8
+      ]
+    },
+    "left_fore": {
+      "parent": "left_upper",
+      "pivot": [
+        1.0,
+        19.549999999999997,
+        44.8
+      ]
+    },
+    "left_hand": {
+      "parent": "left_fore",
+      "pivot": [
+        3.0,
+        20.009999999999998,
+        32.0
+      ]
+    },
+    "left_thigh": {
+      "parent": "pelvis",
+      "pivot": [
+        -1,
+        7.244999999999999,
+        34.4
+      ]
+    },
+    "left_shin": {
+      "parent": "left_thigh",
+      "pivot": [
+        -0.7,
+        8.049999999999999,
+        20.8
+      ]
+    },
+    "left_foot": {
+      "parent": "left_shin",
+      "pivot": [
+        0,
+        8.049999999999999,
+        6.4
+      ]
+    }
+  },
+  "shapes": [
+    {
+      "kind": "ellipsoid",
+      "name": "trouser seat",
+      "center": [
+        -1,
+        0.0,
+        36.8
+      ],
+      "radii": [
+        8.5,
+        12.879999999999999,
+        7.5
+      ],
+      "part": "pelvis",
+      "material": "burlap"
+    },
+    {
+      "kind": "loft",
+      "name": "loose shirt",
+      "rows": [
+        [
+          38.8,
+          0,
+          0.0,
+          9,
+          13.225
+        ],
+        [
+          43.8,
+          0.2,
+          0.0,
+          10,
+          14.374999999999998
+        ],
+        [
+          51.8,
+          0,
+          0.0,
+          10.1,
+          15.295
+        ],
+        [
+          58.8,
+          -0.8,
+          0.0,
+          8.7,
+          13.915
+        ],
+        [
+          62.8,
+          -0.4,
+          0.0,
+          6,
+          9.429999999999998
+        ],
+        [
+          64.8,
+          0,
+          0.0,
+          4.5,
+          6.669999999999999
+        ]
+      ],
+      "part": "torso",
+      "material": "linen",
+      "segments": 32
+    },
+    {
+      "kind": "loft",
+      "name": "open waistcoat",
+      "rows": [
+        [
+          39.8,
+          -0.2,
+          0.0,
+          9.7,
+          13.799999999999999
+        ],
+        [
+          45.8,
+          0.1,
+          0.0,
+          10.7,
+          15.064999999999998
+        ],
+        [
+          52.8,
+          -0.1,
+          0.0,
+          10.7,
+          15.985
+        ],
+        [
+          58.8,
+          -0.8,
+          0.0,
+          9.3,
+          14.604999999999999
+        ],
+        [
+          61.8,
+          -0.5,
+          0.0,
+          6.6,
+          10.12
+        ]
+      ],
+      "part": "torso",
+      "material": "burlap",
+      "angles": [
+        25,
+        335
+      ],
+      "segments": 30,
+      "cap": false
+    },
+    {
+      "kind": "panel",
+      "name": "hairy shirt opening",
+      "part": "torso",
+      "material": "bodyhair",
+      "outline": [
+        [
+          5.7,
+          -4.8,
+          63.8
+        ],
+        [
+          9,
+          -4.3,
+          59.8
+        ],
+        [
+          10.3,
+          0,
+          53.3
+        ],
+        [
+          9,
+          4.3,
+          59.8
+        ],
+        [
+          5.7,
+          4.8,
+          63.8
+        ]
+      ]
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "neck",
+      "center": [
+        0,
+        0,
+        65.5
+      ],
+      "radii": [
+        4.9,
+        5.4,
+        6.0
+      ],
+      "part": "head",
+      "material": "bodyhair"
+    },
+    {
+      "kind": "tube",
+      "name": "right shirt sleeve",
+      "rows": [
+        [
+          -0.2,
+          -12.649999999999999,
+          58.8,
+          6.489999999999999,
+          6.489999999999999
+        ],
+        [
+          0,
+          -16.099999999999998,
+          54.8,
+          6.608,
+          6.726
+        ],
+        [
+          0.5,
+          -18.745,
+          48.8,
+          5.664,
+          5.8999999999999995
+        ],
+        [
+          1,
+          -19.549999999999997,
+          45.5,
+          4.72,
+          4.9559999999999995
+        ]
+      ],
+      "part": "right_upper",
+      "material": "linen",
+      "segments": 20
+    },
+    {
+      "kind": "tube",
+      "name": "right rolled cuff",
+      "rows": [
+        [
+          0.9,
+          -19.434999999999995,
+          47.5,
+          5.132999999999999,
+          5.31
+        ],
+        [
+          1.0,
+          -19.549999999999997,
+          46.0,
+          5.487,
+          5.664
+        ],
+        [
+          1.1,
+          -19.665,
+          44.599999999999994,
+          4.837999999999999,
+          5.074
+        ]
+      ],
+      "part": "right_fore",
+      "material": "linen",
+      "segments": 20
+    },
+    {
+      "kind": "tube",
+      "name": "right hairy forearm",
+      "rows": [
+        [
+          1.0,
+          -19.549999999999997,
+          46.3,
+          4.366,
+          4.484
+        ],
+        [
+          1.7,
+          -20.354999999999997,
+          40.3,
+          4.366,
+          4.366
+        ],
+        [
+          2.7,
+          -20.354999999999997,
+          34.26666666666667,
+          3.186,
+          3.54
+        ],
+        [
+          3.0,
+          -20.009999999999998,
+          31.6,
+          2.4779999999999998,
+          2.832
+        ]
+      ],
+      "part": "right_fore",
+      "material": "bodyhair",
+      "segments": 20
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "right hand",
+      "center": [
+        3.1180000000000003,
+        -20.417099999999998,
+        29.4512
+      ],
+      "radii": [
+        2.596,
+        4.2067,
+        3.776
+      ],
+      "part": "right_hand",
+      "material": "skin"
+    },
+    {
+      "kind": "tube",
+      "name": "right finger 0",
+      "rows": [
+        [
+          3.0,
+          -17.5674,
+          27.657600000000002,
+          1.003,
+          1.121
+        ],
+        [
+          3.472,
+          -17.225436,
+          25.47696,
+          0.944,
+          1.003
+        ],
+        [
+          4.298,
+          -17.082951,
+          23.6928,
+          0.7788,
+          0.8495999999999999
+        ],
+        [
+          4.829,
+          -17.082951,
+          23.8344,
+          0.28319999999999995,
+          0.413
+        ]
+      ],
+      "part": "right_hand",
+      "material": "skin"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "right nail 0",
+      "center": [
+        4.675599999999999,
+        -17.082951,
+        24.211999999999996
+      ],
+      "radii": [
+        0.295,
+        0.6784999999999999,
+        0.7552000000000001
+      ],
+      "part": "right_hand",
+      "material": "sclera",
+      "rings": 5,
+      "segments": 10
+    },
+    {
+      "kind": "tube",
+      "name": "right finger 1",
+      "rows": [
+        [
+          3.0,
+          -19.4672,
+          27.657600000000002,
+          1.003,
+          1.121
+        ],
+        [
+          3.472,
+          -19.353212,
+          24.802000000000003,
+          0.944,
+          1.003
+        ],
+        [
+          4.298,
+          -19.305716999999998,
+          22.465600000000002,
+          0.7788,
+          0.8495999999999999
+        ],
+        [
+          4.829,
+          -19.305716999999998,
+          22.6072,
+          0.28319999999999995,
+          0.413
+        ]
+      ],
+      "part": "right_hand",
+      "material": "skin"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "right nail 1",
+      "center": [
+        4.675599999999999,
+        -19.305716999999998,
+        22.9848
+      ],
+      "radii": [
+        0.295,
+        0.6784999999999999,
+        0.7552000000000001
+      ],
+      "part": "right_hand",
+      "material": "sclera",
+      "rings": 5,
+      "segments": 10
+    },
+    {
+      "kind": "tube",
+      "name": "right finger 2",
+      "rows": [
+        [
+          3.0,
+          -21.366999999999997,
+          27.657600000000002,
+          1.003,
+          1.121
+        ],
+        [
+          3.472,
+          -21.480987999999996,
+          24.69816,
+          0.944,
+          1.003
+        ],
+        [
+          4.298,
+          -21.528482999999994,
+          22.276799999999998,
+          0.7788,
+          0.8495999999999999
+        ],
+        [
+          4.829,
+          -21.528482999999994,
+          22.418399999999995,
+          0.28319999999999995,
+          0.413
+        ]
+      ],
+      "part": "right_hand",
+      "material": "skin"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "right nail 2",
+      "center": [
+        4.675599999999999,
+        -21.528482999999994,
+        22.795999999999996
+      ],
+      "radii": [
+        0.295,
+        0.6784999999999999,
+        0.7552000000000001
+      ],
+      "part": "right_hand",
+      "material": "sclera",
+      "rings": 5,
+      "segments": 10
+    },
+    {
+      "kind": "tube",
+      "name": "right finger 3",
+      "rows": [
+        [
+          3.0,
+          -23.2668,
+          27.657600000000002,
+          1.003,
+          1.121
+        ],
+        [
+          3.472,
+          -23.608764,
+          25.21736,
+          0.944,
+          1.003
+        ],
+        [
+          4.298,
+          -23.751248999999994,
+          23.220799999999997,
+          0.7788,
+          0.8495999999999999
+        ],
+        [
+          4.829,
+          -23.751248999999994,
+          23.362399999999994,
+          0.28319999999999995,
+          0.413
+        ]
+      ],
+      "part": "right_hand",
+      "material": "skin"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "right nail 3",
+      "center": [
+        4.675599999999999,
+        -23.751248999999994,
+        23.739999999999995
+      ],
+      "radii": [
+        0.295,
+        0.6784999999999999,
+        0.7552000000000001
+      ],
+      "part": "right_hand",
+      "material": "sclera",
+      "rings": 5,
+      "segments": 10
+    },
+    {
+      "kind": "tube",
+      "name": "right thumb",
+      "rows": [
+        [
+          4.416,
+          -17.1603,
+          30.584,
+          1.18,
+          1.416
+        ],
+        [
+          6.186,
+          -15.667599999999998,
+          28.9792,
+          1.18,
+          1.298
+        ],
+        [
+          6.6579999999999995,
+          -15.396199999999997,
+          27.1856,
+          1.003,
+          1.062
+        ],
+        [
+          6.304,
+          -15.8033,
+          26.524800000000003,
+          0.413,
+          0.531
+        ]
+      ],
+      "part": "right_hand",
+      "material": "skin"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "right thumb nail",
+      "center": [
+        7.0120000000000005,
+        -15.667599999999998,
+        27.3744
+      ],
+      "radii": [
+        0.2596,
+        0.8820499999999999,
+        0.6607999999999999
+      ],
+      "part": "right_hand",
+      "material": "sclera",
+      "rings": 5,
+      "segments": 10
+    },
+    {
+      "kind": "tube",
+      "name": "right trousers",
+      "rows": [
+        [
+          -1,
+          -7.13,
+          36.0,
+          5.6,
+          6.0
+        ],
+        [
+          -1.0,
+          -7.819999999999999,
+          29.6,
+          5.8,
+          6.2
+        ],
+        [
+          -0.7,
+          -8.049999999999999,
+          23.200000000000003,
+          5.5,
+          5.7
+        ],
+        [
+          -0.6,
+          -8.049999999999999,
+          17.6,
+          4.0,
+          4.5
+        ]
+      ],
+      "part": "right_thigh",
+      "material": "burlap",
+      "segments": 24
+    },
+    {
+      "kind": "tube",
+      "name": "right ragged trouser cuff",
+      "rows": [
+        [
+          -0.6,
+          -8.049999999999999,
+          19.28,
+          4.35,
+          4.7
+        ],
+        [
+          -0.6,
+          -8.049999999999999,
+          18.0,
+          4.5,
+          4.8
+        ],
+        [
+          -0.4,
+          -8.049999999999999,
+          16.880000000000003,
+          4.05,
+          4.35
+        ]
+      ],
+      "part": "right_shin",
+      "material": "burlap",
+      "segments": 20
+    },
+    {
+      "kind": "tube",
+      "name": "right hairy calf",
+      "rows": [
+        [
+          -0.6,
+          -8.049999999999999,
+          18.400000000000002,
+          3.5,
+          3.7
+        ],
+        [
+          -0.6,
+          -8.049999999999999,
+          14.4,
+          3.7,
+          3.9
+        ],
+        [
+          0,
+          -8.049999999999999,
+          8.0,
+          2.8,
+          2.9
+        ],
+        [
+          0.5,
+          -8.049999999999999,
+          5.6000000000000005,
+          2.6,
+          2.9
+        ]
+      ],
+      "part": "right_shin",
+      "material": "bodyhair",
+      "segments": 20
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "right broad bare foot",
+      "center": [
+        3.6,
+        -8.28,
+        3.04
+      ],
+      "radii": [
+        7.2,
+        5.0024999999999995,
+        2.8000000000000003
+      ],
+      "part": "right_foot",
+      "material": "bodyhair",
+      "rings": 12,
+      "segments": 24
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "right toe 0",
+      "center": [
+        8.65,
+        -4.829999999999999,
+        1.8399999999999999
+      ],
+      "radii": [
+        3.5,
+        1.38,
+        1.2400000000000002
+      ],
+      "part": "right_foot",
+      "material": "skin",
+      "rings": 8,
+      "segments": 14
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "right toenail 0",
+      "center": [
+        10.75,
+        -4.829999999999999,
+        2.7600000000000002
+      ],
+      "radii": [
+        1.295,
+        1.035,
+        0.128
+      ],
+      "part": "right_foot",
+      "material": "sclera",
+      "rings": 5,
+      "segments": 10
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "right toe 1",
+      "center": [
+        8.66,
+        -6.8999999999999995,
+        1.8399999999999999
+      ],
+      "radii": [
+        3.4,
+        1.15,
+        1.2400000000000002
+      ],
+      "part": "right_foot",
+      "material": "skin",
+      "rings": 8,
+      "segments": 14
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "right toenail 1",
+      "center": [
+        10.7,
+        -6.8999999999999995,
+        2.7600000000000002
+      ],
+      "radii": [
+        1.258,
+        0.8624999999999999,
+        0.128
+      ],
+      "part": "right_foot",
+      "material": "sclera",
+      "rings": 5,
+      "segments": 10
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "right toe 2",
+      "center": [
+        8.705,
+        -8.7975,
+        1.8399999999999999
+      ],
+      "radii": [
+        2.95,
+        0.9774999999999999,
+        1.2400000000000002
+      ],
+      "part": "right_foot",
+      "material": "skin",
+      "rings": 8,
+      "segments": 14
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "right toenail 2",
+      "center": [
+        10.475,
+        -8.7975,
+        2.7600000000000002
+      ],
+      "radii": [
+        1.0915000000000001,
+        0.7331249999999999,
+        0.128
+      ],
+      "part": "right_foot",
+      "material": "sclera",
+      "rings": 5,
+      "segments": 10
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "right toe 3",
+      "center": [
+        8.75,
+        -10.407499999999997,
+        1.8399999999999999
+      ],
+      "radii": [
+        2.5,
+        0.828,
+        1.2400000000000002
+      ],
+      "part": "right_foot",
+      "material": "skin",
+      "rings": 8,
+      "segments": 14
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "right toenail 3",
+      "center": [
+        10.25,
+        -10.407499999999997,
+        2.7600000000000002
+      ],
+      "radii": [
+        0.925,
+        0.621,
+        0.128
+      ],
+      "part": "right_foot",
+      "material": "sclera",
+      "rings": 5,
+      "segments": 10
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "right toe 4",
+      "center": [
+        8.8,
+        -11.7875,
+        1.8399999999999999
+      ],
+      "radii": [
+        2.0,
+        0.713,
+        1.2400000000000002
+      ],
+      "part": "right_foot",
+      "material": "skin",
+      "rings": 8,
+      "segments": 14
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "right toenail 4",
+      "center": [
+        10.0,
+        -11.7875,
+        2.7600000000000002
+      ],
+      "radii": [
+        0.74,
+        0.53475,
+        0.128
+      ],
+      "part": "right_foot",
+      "material": "sclera",
+      "rings": 5,
+      "segments": 10
+    },
+    {
+      "kind": "panel",
+      "name": "right shirt collar",
+      "part": "torso",
+      "material": "linen",
+      "outline": [
+        [
+          5.8,
+          -1.8,
+          65.6
+        ],
+        [
+          6,
+          -5.2,
+          64.8
+        ],
+        [
+          9.3,
+          -6.7,
+          58.3
+        ],
+        [
+          9.3,
+          -3.1,
+          60.8
+        ]
+      ]
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "right vest button55",
+      "center": [
+        9.1,
+        -6.21,
+        45.8
+      ],
+      "radii": [
+        0.48,
+        0.575,
+        0.5
+      ],
+      "part": "torso",
+      "material": "leather",
+      "rings": 6,
+      "segments": 12
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "right vest button61",
+      "center": [
+        9.1,
+        -6.21,
+        51.8
+      ],
+      "radii": [
+        0.48,
+        0.575,
+        0.5
+      ],
+      "part": "torso",
+      "material": "leather",
+      "rings": 6,
+      "segments": 12
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "right vest button66",
+      "center": [
+        9.1,
+        -6.21,
+        56.8
+      ],
+      "radii": [
+        0.48,
+        0.575,
+        0.5
+      ],
+      "part": "torso",
+      "material": "leather",
+      "rings": 6,
+      "segments": 12
+    },
+    {
+      "kind": "tube",
+      "name": "left shirt sleeve",
+      "rows": [
+        [
+          -0.2,
+          12.649999999999999,
+          58.8,
+          6.489999999999999,
+          6.489999999999999
+        ],
+        [
+          0,
+          16.099999999999998,
+          54.8,
+          6.608,
+          6.726
+        ],
+        [
+          0.5,
+          18.745,
+          48.8,
+          5.664,
+          5.8999999999999995
+        ],
+        [
+          1,
+          19.549999999999997,
+          45.5,
+          4.72,
+          4.9559999999999995
+        ]
+      ],
+      "part": "left_upper",
+      "material": "linen",
+      "segments": 20
+    },
+    {
+      "kind": "tube",
+      "name": "left rolled cuff",
+      "rows": [
+        [
+          0.9,
+          19.434999999999995,
+          47.5,
+          5.132999999999999,
+          5.31
+        ],
+        [
+          1.0,
+          19.549999999999997,
+          46.0,
+          5.487,
+          5.664
+        ],
+        [
+          1.1,
+          19.665,
+          44.599999999999994,
+          4.837999999999999,
+          5.074
+        ]
+      ],
+      "part": "left_fore",
+      "material": "linen",
+      "segments": 20
+    },
+    {
+      "kind": "tube",
+      "name": "left hairy forearm",
+      "rows": [
+        [
+          1.0,
+          19.549999999999997,
+          46.3,
+          4.366,
+          4.484
+        ],
+        [
+          1.7,
+          20.354999999999997,
+          40.3,
+          4.366,
+          4.366
+        ],
+        [
+          2.7,
+          20.354999999999997,
+          34.26666666666667,
+          3.186,
+          3.54
+        ],
+        [
+          3.0,
+          20.009999999999998,
+          31.6,
+          2.4779999999999998,
+          2.832
+        ]
+      ],
+      "part": "left_fore",
+      "material": "bodyhair",
+      "segments": 20
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "left hand",
+      "center": [
+        3.1180000000000003,
+        20.417099999999998,
+        29.4512
+      ],
+      "radii": [
+        2.596,
+        4.2067,
+        3.776
+      ],
+      "part": "left_hand",
+      "material": "skin"
+    },
+    {
+      "kind": "tube",
+      "name": "left finger 0",
+      "rows": [
+        [
+          3.0,
+          17.5674,
+          27.657600000000002,
+          1.003,
+          1.121
+        ],
+        [
+          3.472,
+          17.225436,
+          25.47696,
+          0.944,
+          1.003
+        ],
+        [
+          4.298,
+          17.082951,
+          23.6928,
+          0.7788,
+          0.8495999999999999
+        ],
+        [
+          4.829,
+          17.082951,
+          23.8344,
+          0.28319999999999995,
+          0.413
+        ]
+      ],
+      "part": "left_hand",
+      "material": "skin"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "left nail 0",
+      "center": [
+        4.675599999999999,
+        17.082951,
+        24.211999999999996
+      ],
+      "radii": [
+        0.295,
+        0.6784999999999999,
+        0.7552000000000001
+      ],
+      "part": "left_hand",
+      "material": "sclera",
+      "rings": 5,
+      "segments": 10
+    },
+    {
+      "kind": "tube",
+      "name": "left finger 1",
+      "rows": [
+        [
+          3.0,
+          19.4672,
+          27.657600000000002,
+          1.003,
+          1.121
+        ],
+        [
+          3.472,
+          19.353212,
+          24.802000000000003,
+          0.944,
+          1.003
+        ],
+        [
+          4.298,
+          19.305716999999998,
+          22.465600000000002,
+          0.7788,
+          0.8495999999999999
+        ],
+        [
+          4.829,
+          19.305716999999998,
+          22.6072,
+          0.28319999999999995,
+          0.413
+        ]
+      ],
+      "part": "left_hand",
+      "material": "skin"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "left nail 1",
+      "center": [
+        4.675599999999999,
+        19.305716999999998,
+        22.9848
+      ],
+      "radii": [
+        0.295,
+        0.6784999999999999,
+        0.7552000000000001
+      ],
+      "part": "left_hand",
+      "material": "sclera",
+      "rings": 5,
+      "segments": 10
+    },
+    {
+      "kind": "tube",
+      "name": "left finger 2",
+      "rows": [
+        [
+          3.0,
+          21.366999999999997,
+          27.657600000000002,
+          1.003,
+          1.121
+        ],
+        [
+          3.472,
+          21.480987999999996,
+          24.69816,
+          0.944,
+          1.003
+        ],
+        [
+          4.298,
+          21.528482999999994,
+          22.276799999999998,
+          0.7788,
+          0.8495999999999999
+        ],
+        [
+          4.829,
+          21.528482999999994,
+          22.418399999999995,
+          0.28319999999999995,
+          0.413
+        ]
+      ],
+      "part": "left_hand",
+      "material": "skin"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "left nail 2",
+      "center": [
+        4.675599999999999,
+        21.528482999999994,
+        22.795999999999996
+      ],
+      "radii": [
+        0.295,
+        0.6784999999999999,
+        0.7552000000000001
+      ],
+      "part": "left_hand",
+      "material": "sclera",
+      "rings": 5,
+      "segments": 10
+    },
+    {
+      "kind": "tube",
+      "name": "left finger 3",
+      "rows": [
+        [
+          3.0,
+          23.2668,
+          27.657600000000002,
+          1.003,
+          1.121
+        ],
+        [
+          3.472,
+          23.608764,
+          25.21736,
+          0.944,
+          1.003
+        ],
+        [
+          4.298,
+          23.751248999999994,
+          23.220799999999997,
+          0.7788,
+          0.8495999999999999
+        ],
+        [
+          4.829,
+          23.751248999999994,
+          23.362399999999994,
+          0.28319999999999995,
+          0.413
+        ]
+      ],
+      "part": "left_hand",
+      "material": "skin"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "left nail 3",
+      "center": [
+        4.675599999999999,
+        23.751248999999994,
+        23.739999999999995
+      ],
+      "radii": [
+        0.295,
+        0.6784999999999999,
+        0.7552000000000001
+      ],
+      "part": "left_hand",
+      "material": "sclera",
+      "rings": 5,
+      "segments": 10
+    },
+    {
+      "kind": "tube",
+      "name": "left thumb",
+      "rows": [
+        [
+          4.416,
+          17.1603,
+          30.584,
+          1.18,
+          1.416
+        ],
+        [
+          6.186,
+          15.667599999999998,
+          28.9792,
+          1.18,
+          1.298
+        ],
+        [
+          6.6579999999999995,
+          15.396199999999997,
+          27.1856,
+          1.003,
+          1.062
+        ],
+        [
+          6.304,
+          15.8033,
+          26.524800000000003,
+          0.413,
+          0.531
+        ]
+      ],
+      "part": "left_hand",
+      "material": "skin"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "left thumb nail",
+      "center": [
+        7.0120000000000005,
+        15.667599999999998,
+        27.3744
+      ],
+      "radii": [
+        0.2596,
+        0.8820499999999999,
+        0.6607999999999999
+      ],
+      "part": "left_hand",
+      "material": "sclera",
+      "rings": 5,
+      "segments": 10
+    },
+    {
+      "kind": "tube",
+      "name": "left trousers",
+      "rows": [
+        [
+          -1,
+          7.13,
+          36.0,
+          5.6,
+          6.0
+        ],
+        [
+          -1.0,
+          7.819999999999999,
+          29.6,
+          5.8,
+          6.2
+        ],
+        [
+          -0.7,
+          8.049999999999999,
+          23.200000000000003,
+          5.5,
+          5.7
+        ],
+        [
+          -0.6,
+          8.049999999999999,
+          17.6,
+          4.0,
+          4.5
+        ]
+      ],
+      "part": "left_thigh",
+      "material": "burlap",
+      "segments": 24
+    },
+    {
+      "kind": "tube",
+      "name": "left ragged trouser cuff",
+      "rows": [
+        [
+          -0.6,
+          8.049999999999999,
+          19.28,
+          4.35,
+          4.7
+        ],
+        [
+          -0.6,
+          8.049999999999999,
+          18.0,
+          4.5,
+          4.8
+        ],
+        [
+          -0.4,
+          8.049999999999999,
+          16.880000000000003,
+          4.05,
+          4.35
+        ]
+      ],
+      "part": "left_shin",
+      "material": "burlap",
+      "segments": 20
+    },
+    {
+      "kind": "tube",
+      "name": "left hairy calf",
+      "rows": [
+        [
+          -0.6,
+          8.049999999999999,
+          18.400000000000002,
+          3.5,
+          3.7
+        ],
+        [
+          -0.6,
+          8.049999999999999,
+          14.4,
+          3.7,
+          3.9
+        ],
+        [
+          0,
+          8.049999999999999,
+          8.0,
+          2.8,
+          2.9
+        ],
+        [
+          0.5,
+          8.049999999999999,
+          5.6000000000000005,
+          2.6,
+          2.9
+        ]
+      ],
+      "part": "left_shin",
+      "material": "bodyhair",
+      "segments": 20
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "left broad bare foot",
+      "center": [
+        3.6,
+        8.28,
+        3.04
+      ],
+      "radii": [
+        7.2,
+        5.0024999999999995,
+        2.8000000000000003
+      ],
+      "part": "left_foot",
+      "material": "bodyhair",
+      "rings": 12,
+      "segments": 24
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "left toe 0",
+      "center": [
+        8.65,
+        4.829999999999999,
+        1.8399999999999999
+      ],
+      "radii": [
+        3.5,
+        1.38,
+        1.2400000000000002
+      ],
+      "part": "left_foot",
+      "material": "skin",
+      "rings": 8,
+      "segments": 14
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "left toenail 0",
+      "center": [
+        10.75,
+        4.829999999999999,
+        2.7600000000000002
+      ],
+      "radii": [
+        1.295,
+        1.035,
+        0.128
+      ],
+      "part": "left_foot",
+      "material": "sclera",
+      "rings": 5,
+      "segments": 10
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "left toe 1",
+      "center": [
+        8.66,
+        6.8999999999999995,
+        1.8399999999999999
+      ],
+      "radii": [
+        3.4,
+        1.15,
+        1.2400000000000002
+      ],
+      "part": "left_foot",
+      "material": "skin",
+      "rings": 8,
+      "segments": 14
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "left toenail 1",
+      "center": [
+        10.7,
+        6.8999999999999995,
+        2.7600000000000002
+      ],
+      "radii": [
+        1.258,
+        0.8624999999999999,
+        0.128
+      ],
+      "part": "left_foot",
+      "material": "sclera",
+      "rings": 5,
+      "segments": 10
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "left toe 2",
+      "center": [
+        8.705,
+        8.7975,
+        1.8399999999999999
+      ],
+      "radii": [
+        2.95,
+        0.9774999999999999,
+        1.2400000000000002
+      ],
+      "part": "left_foot",
+      "material": "skin",
+      "rings": 8,
+      "segments": 14
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "left toenail 2",
+      "center": [
+        10.475,
+        8.7975,
+        2.7600000000000002
+      ],
+      "radii": [
+        1.0915000000000001,
+        0.7331249999999999,
+        0.128
+      ],
+      "part": "left_foot",
+      "material": "sclera",
+      "rings": 5,
+      "segments": 10
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "left toe 3",
+      "center": [
+        8.75,
+        10.407499999999997,
+        1.8399999999999999
+      ],
+      "radii": [
+        2.5,
+        0.828,
+        1.2400000000000002
+      ],
+      "part": "left_foot",
+      "material": "skin",
+      "rings": 8,
+      "segments": 14
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "left toenail 3",
+      "center": [
+        10.25,
+        10.407499999999997,
+        2.7600000000000002
+      ],
+      "radii": [
+        0.925,
+        0.621,
+        0.128
+      ],
+      "part": "left_foot",
+      "material": "sclera",
+      "rings": 5,
+      "segments": 10
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "left toe 4",
+      "center": [
+        8.8,
+        11.7875,
+        1.8399999999999999
+      ],
+      "radii": [
+        2.0,
+        0.713,
+        1.2400000000000002
+      ],
+      "part": "left_foot",
+      "material": "skin",
+      "rings": 8,
+      "segments": 14
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "left toenail 4",
+      "center": [
+        10.0,
+        11.7875,
+        2.7600000000000002
+      ],
+      "radii": [
+        0.74,
+        0.53475,
+        0.128
+      ],
+      "part": "left_foot",
+      "material": "sclera",
+      "rings": 5,
+      "segments": 10
+    },
+    {
+      "kind": "panel",
+      "name": "left shirt collar",
+      "part": "torso",
+      "material": "linen",
+      "outline": [
+        [
+          5.8,
+          1.8,
+          65.6
+        ],
+        [
+          6,
+          5.2,
+          64.8
+        ],
+        [
+          9.3,
+          6.7,
+          58.3
+        ],
+        [
+          9.3,
+          3.1,
+          60.8
+        ]
+      ]
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "left vest button55",
+      "center": [
+        9.1,
+        6.21,
+        45.8
+      ],
+      "radii": [
+        0.48,
+        0.575,
+        0.5
+      ],
+      "part": "torso",
+      "material": "leather",
+      "rings": 6,
+      "segments": 12
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "left vest button61",
+      "center": [
+        9.1,
+        6.21,
+        51.8
+      ],
+      "radii": [
+        0.48,
+        0.575,
+        0.5
+      ],
+      "part": "torso",
+      "material": "leather",
+      "rings": 6,
+      "segments": 12
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "left vest button66",
+      "center": [
+        9.1,
+        6.21,
+        56.8
+      ],
+      "radii": [
+        0.48,
+        0.575,
+        0.5
+      ],
+      "part": "torso",
+      "material": "leather",
+      "rings": 6,
+      "segments": 12
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "continuous face and cranium",
+      "center": [
+        0.1,
+        0,
+        73.8
+      ],
+      "radii": [
+        8.4,
+        8.5,
+        10.7
+      ],
+      "part": "head",
+      "material": "skin",
+      "rings": 48,
+      "segments": 72,
+      "front_deformation": [
+        {
+          "y": -4.5,
+          "z": 72.8,
+          "width_y": 3,
+          "width_z": 2.5,
+          "depth": 1.0
+        },
+        {
+          "y": 4.5,
+          "z": 72.8,
+          "width_y": 3,
+          "width_z": 2.5,
+          "depth": 1.0
+        },
+        {
+          "y": -4,
+          "z": 76.3,
+          "width_y": 2.2,
+          "width_z": 1.8,
+          "depth": -1.2
+        },
+        {
+          "y": 4,
+          "z": 76.3,
+          "width_y": 2.2,
+          "width_z": 1.8,
+          "depth": -1.2
+        },
+        {
+          "y": 0,
+          "z": 73.8,
+          "width_y": 2.5,
+          "width_z": 2,
+          "depth": 3.8
+        },
+        {
+          "y": 0,
+          "z": 76.8,
+          "width_y": 1.4,
+          "width_z": 3.4,
+          "depth": 1.5
+        },
+        {
+          "y": -3.7,
+          "z": 78.2,
+          "width_y": 2.8,
+          "width_z": 1.1,
+          "depth": 1.1
+        },
+        {
+          "y": 3.7,
+          "z": 78.2,
+          "width_y": 2.8,
+          "width_z": 1.1,
+          "depth": 1.1
+        }
+      ]
+    },
+    {
+      "kind": "loft",
+      "name": "back and side hair",
+      "rows": [
+        [
+          64.8,
+          -2.2,
+          0,
+          4.8,
+          8.1
+        ],
+        [
+          70.8,
+          -0.6,
+          0,
+          7.8,
+          9.2
+        ],
+        [
+          77.8,
+          -0.5,
+          0,
+          8.6,
+          9.6
+        ],
+        [
+          83.8,
+          -0.6,
+          0,
+          6.8,
+          8.0
+        ],
+        [
+          85.8,
+          -0.6,
+          0,
+          3.7,
+          5.0
+        ]
+      ],
+      "part": "head",
+      "material": "hair",
+      "angles": [
+        65,
+        295
+      ],
+      "segments": 32,
+      "cap": false
+    },
+    {
+      "kind": "ear",
+      "name": "pointed ear -1",
+      "part": "head",
+      "material": "skin",
+      "center": [
+        2.2,
+        -10.5,
+        75.8
+      ],
+      "outline": [
+        [
+          2.6,
+          -7.2,
+          79.3
+        ],
+        [
+          -0.8,
+          -18.7,
+          81.1
+        ],
+        [
+          0.4,
+          -15.5,
+          76.3
+        ],
+        [
+          2.5,
+          -11.3,
+          71.89999999999999
+        ],
+        [
+          3.2,
+          -7.3,
+          72.3
+        ]
+      ]
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "eye socket -1",
+      "center": [
+        7.5,
+        -3.9,
+        76.3
+      ],
+      "radii": [
+        0.85,
+        1.65,
+        1
+      ],
+      "part": "head",
+      "material": "skin",
+      "rings": 10,
+      "segments": 20
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "eye -1",
+      "center": [
+        8.1,
+        -3.9,
+        76.3
+      ],
+      "radii": [
+        0.6,
+        1.2,
+        0.75
+      ],
+      "part": "head",
+      "material": "sclera",
+      "rings": 12,
+      "segments": 20
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "iris -1",
+      "center": [
+        8.6,
+        -3.9,
+        76.3
+      ],
+      "radii": [
+        0.17,
+        0.6,
+        0.67
+      ],
+      "part": "head",
+      "material": "iris",
+      "rings": 12,
+      "segments": 20
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "pupil -1",
+      "center": [
+        8.76,
+        -3.9,
+        76.3
+      ],
+      "radii": [
+        0.08,
+        0.25,
+        0.35
+      ],
+      "part": "head",
+      "material": "dark",
+      "rings": 8,
+      "segments": 16
+    },
+    {
+      "kind": "tube",
+      "name": "bushy brow -1",
+      "rows": [
+        [
+          8.5,
+          -1.7,
+          77.39999999999999,
+          0.225,
+          0.25
+        ],
+        [
+          8.8,
+          -3.7,
+          77.94999999999999,
+          0.325,
+          0.3
+        ],
+        [
+          7.699999999999999,
+          -6.0,
+          77.6,
+          0.175,
+          0.175
+        ]
+      ],
+      "part": "head",
+      "material": "hair"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "nostril -1",
+      "center": [
+        10.4,
+        -1.7,
+        72.6
+      ],
+      "radii": [
+        0.25,
+        0.5,
+        0.25
+      ],
+      "part": "head",
+      "material": "dark",
+      "rings": 8,
+      "segments": 16
+    },
+    {
+      "kind": "tube",
+      "name": "side hair -1 0",
+      "rows": [
+        [
+          -3.2,
+          -5.760000000000001,
+          83.8,
+          0.95,
+          1.1
+        ],
+        [
+          -2.2,
+          -7.2,
+          77.8,
+          1.3,
+          1.3
+        ],
+        [
+          -3.6,
+          -8.0,
+          70.8,
+          0.9,
+          1
+        ],
+        [
+          -2.6,
+          -7.2,
+          64.8,
+          0.12,
+          0.18
+        ]
+      ],
+      "part": "head",
+      "material": "hair",
+      "segments": 10
+    },
+    {
+      "kind": "tube",
+      "name": "side hair -1 1",
+      "rows": [
+        [
+          -1.9000000000000001,
+          -6.4,
+          83.8,
+          0.95,
+          1.1
+        ],
+        [
+          -0.9000000000000001,
+          -8.0,
+          77.8,
+          1.3,
+          1.3
+        ],
+        [
+          -2.3000000000000003,
+          -8.8,
+          70.8,
+          0.9,
+          1
+        ],
+        [
+          -1.3000000000000003,
+          -8.0,
+          65.39999999999999,
+          0.12,
+          0.18
+        ]
+      ],
+      "part": "head",
+      "material": "hair",
+      "segments": 10
+    },
+    {
+      "kind": "tube",
+      "name": "side hair -1 2",
+      "rows": [
+        [
+          -0.6000000000000001,
+          -7.040000000000001,
+          83.8,
+          0.95,
+          1.1
+        ],
+        [
+          0.3999999999999999,
+          -8.8,
+          77.8,
+          1.3,
+          1.3
+        ],
+        [
+          -1.0,
+          -9.600000000000001,
+          70.8,
+          0.9,
+          1
+        ],
+        [
+          -1.1102230246251565e-16,
+          -8.8,
+          66.0,
+          0.12,
+          0.18
+        ]
+      ],
+      "part": "head",
+      "material": "hair",
+      "segments": 10
+    },
+    {
+      "kind": "tube",
+      "name": "side hair -1 3",
+      "rows": [
+        [
+          0.7000000000000002,
+          -7.6800000000000015,
+          83.8,
+          0.95,
+          1.1
+        ],
+        [
+          1.7000000000000002,
+          -9.600000000000001,
+          77.8,
+          1.3,
+          1.3
+        ],
+        [
+          0.30000000000000016,
+          -10.400000000000002,
+          70.8,
+          0.9,
+          1
+        ],
+        [
+          1.3000000000000003,
+          -9.600000000000001,
+          66.6,
+          0.12,
+          0.18
+        ]
+      ],
+      "part": "head",
+      "material": "hair",
+      "segments": 10
+    },
+    {
+      "kind": "ear",
+      "name": "pointed ear 1",
+      "part": "head",
+      "material": "skin",
+      "center": [
+        2.2,
+        10.5,
+        75.8
+      ],
+      "outline": [
+        [
+          2.6,
+          7.2,
+          79.3
+        ],
+        [
+          -0.8,
+          18.7,
+          81.1
+        ],
+        [
+          0.4,
+          15.5,
+          76.3
+        ],
+        [
+          2.5,
+          11.3,
+          71.89999999999999
+        ],
+        [
+          3.2,
+          7.3,
+          72.3
+        ]
+      ]
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "eye socket 1",
+      "center": [
+        7.5,
+        3.9,
+        76.3
+      ],
+      "radii": [
+        0.85,
+        1.65,
+        1
+      ],
+      "part": "head",
+      "material": "skin",
+      "rings": 10,
+      "segments": 20
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "eye 1",
+      "center": [
+        8.1,
+        3.9,
+        76.3
+      ],
+      "radii": [
+        0.6,
+        1.2,
+        0.75
+      ],
+      "part": "head",
+      "material": "sclera",
+      "rings": 12,
+      "segments": 20
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "iris 1",
+      "center": [
+        8.6,
+        3.9,
+        76.3
+      ],
+      "radii": [
+        0.17,
+        0.6,
+        0.67
+      ],
+      "part": "head",
+      "material": "iris",
+      "rings": 12,
+      "segments": 20
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "pupil 1",
+      "center": [
+        8.76,
+        3.9,
+        76.3
+      ],
+      "radii": [
+        0.08,
+        0.25,
+        0.35
+      ],
+      "part": "head",
+      "material": "dark",
+      "rings": 8,
+      "segments": 16
+    },
+    {
+      "kind": "tube",
+      "name": "bushy brow 1",
+      "rows": [
+        [
+          8.5,
+          1.7,
+          77.39999999999999,
+          0.225,
+          0.25
+        ],
+        [
+          8.8,
+          3.7,
+          77.94999999999999,
+          0.325,
+          0.3
+        ],
+        [
+          7.699999999999999,
+          6.0,
+          77.6,
+          0.175,
+          0.175
+        ]
+      ],
+      "part": "head",
+      "material": "hair"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "nostril 1",
+      "center": [
+        10.4,
+        1.7,
+        72.6
+      ],
+      "radii": [
+        0.25,
+        0.5,
+        0.25
+      ],
+      "part": "head",
+      "material": "dark",
+      "rings": 8,
+      "segments": 16
+    },
+    {
+      "kind": "tube",
+      "name": "side hair 1 0",
+      "rows": [
+        [
+          -3.2,
+          5.760000000000001,
+          83.8,
+          0.95,
+          1.1
+        ],
+        [
+          -2.2,
+          7.2,
+          77.8,
+          1.3,
+          1.3
+        ],
+        [
+          -3.6,
+          8.0,
+          70.8,
+          0.9,
+          1
+        ],
+        [
+          -2.6,
+          7.2,
+          64.8,
+          0.12,
+          0.18
+        ]
+      ],
+      "part": "head",
+      "material": "hair",
+      "segments": 10
+    },
+    {
+      "kind": "tube",
+      "name": "side hair 1 1",
+      "rows": [
+        [
+          -1.9000000000000001,
+          6.4,
+          83.8,
+          0.95,
+          1.1
+        ],
+        [
+          -0.9000000000000001,
+          8.0,
+          77.8,
+          1.3,
+          1.3
+        ],
+        [
+          -2.3000000000000003,
+          8.8,
+          70.8,
+          0.9,
+          1
+        ],
+        [
+          -1.3000000000000003,
+          8.0,
+          65.39999999999999,
+          0.12,
+          0.18
+        ]
+      ],
+      "part": "head",
+      "material": "hair",
+      "segments": 10
+    },
+    {
+      "kind": "tube",
+      "name": "side hair 1 2",
+      "rows": [
+        [
+          -0.6000000000000001,
+          7.040000000000001,
+          83.8,
+          0.95,
+          1.1
+        ],
+        [
+          0.3999999999999999,
+          8.8,
+          77.8,
+          1.3,
+          1.3
+        ],
+        [
+          -1.0,
+          9.600000000000001,
+          70.8,
+          0.9,
+          1
+        ],
+        [
+          -1.1102230246251565e-16,
+          8.8,
+          66.0,
+          0.12,
+          0.18
+        ]
+      ],
+      "part": "head",
+      "material": "hair",
+      "segments": 10
+    },
+    {
+      "kind": "tube",
+      "name": "side hair 1 3",
+      "rows": [
+        [
+          0.7000000000000002,
+          7.6800000000000015,
+          83.8,
+          0.95,
+          1.1
+        ],
+        [
+          1.7000000000000002,
+          9.600000000000001,
+          77.8,
+          1.3,
+          1.3
+        ],
+        [
+          0.30000000000000016,
+          10.400000000000002,
+          70.8,
+          0.9,
+          1
+        ],
+        [
+          1.3000000000000003,
+          9.600000000000001,
+          66.6,
+          0.12,
+          0.18
+        ]
+      ],
+      "part": "head",
+      "material": "hair",
+      "segments": 10
+    },
+    {
+      "kind": "tube",
+      "name": "closed smiling mouth",
+      "rows": [
+        [
+          7.9,
+          -3.6,
+          70.3,
+          0.08,
+          0.09
+        ],
+        [
+          8.5,
+          -1.6,
+          70.1,
+          0.08,
+          0.09
+        ],
+        [
+          8.6,
+          0,
+          70.0,
+          0.08,
+          0.09
+        ],
+        [
+          8.5,
+          1.6,
+          70.1,
+          0.08,
+          0.09
+        ],
+        [
+          7.9,
+          3.6,
+          70.39999999999999,
+          0.08,
+          0.09
+        ]
+      ],
+      "part": "head",
+      "material": "dark"
+    },
+    {
+      "kind": "tube",
+      "name": "lower lip",
+      "rows": [
+        [
+          7.8,
+          -2.8,
+          69.89999999999999,
+          0.13,
+          0.12
+        ],
+        [
+          8.5,
+          0,
+          69.7,
+          0.18,
+          0.13
+        ],
+        [
+          7.8,
+          2.8,
+          70.0,
+          0.13,
+          0.12
+        ]
+      ],
+      "part": "head",
+      "material": "skin"
+    },
+    {
+      "kind": "tube",
+      "name": "forehead fringe 0",
+      "rows": [
+        [
+          3.5,
+          -5.8,
+          85.3,
+          0.7,
+          0.77
+        ],
+        [
+          7.0,
+          -6.3,
+          82.89999999999999,
+          0.8049999999999999,
+          0.8049999999999999
+        ],
+        [
+          8.6,
+          -6.8,
+          80.8,
+          0.48999999999999994,
+          0.5599999999999999
+        ],
+        [
+          8.8,
+          -7.1,
+          80.17,
+          0.06999999999999999,
+          0.105
+        ]
+      ],
+      "part": "head",
+      "material": "hair",
+      "segments": 10
+    },
+    {
+      "kind": "tube",
+      "name": "forehead fringe 1",
+      "rows": [
+        [
+          3.5,
+          -4.0,
+          85.3,
+          0.7,
+          0.77
+        ],
+        [
+          7.0,
+          -4.5,
+          82.89999999999999,
+          0.8049999999999999,
+          0.8049999999999999
+        ],
+        [
+          8.6,
+          -5.0,
+          80.8,
+          0.48999999999999994,
+          0.5599999999999999
+        ],
+        [
+          8.8,
+          -5.3,
+          79.89999999999999,
+          0.06999999999999999,
+          0.105
+        ]
+      ],
+      "part": "head",
+      "material": "hair",
+      "segments": 10
+    },
+    {
+      "kind": "tube",
+      "name": "forehead fringe 2",
+      "rows": [
+        [
+          3.5,
+          -2.1999999999999997,
+          85.3,
+          0.7,
+          0.77
+        ],
+        [
+          7.0,
+          -2.6999999999999997,
+          82.89999999999999,
+          0.8049999999999999,
+          0.8049999999999999
+        ],
+        [
+          8.6,
+          -3.1999999999999997,
+          80.8,
+          0.48999999999999994,
+          0.5599999999999999
+        ],
+        [
+          8.8,
+          -3.5,
+          79.63,
+          0.06999999999999999,
+          0.105
+        ]
+      ],
+      "part": "head",
+      "material": "hair",
+      "segments": 10
+    },
+    {
+      "kind": "tube",
+      "name": "forehead fringe 3",
+      "rows": [
+        [
+          3.5,
+          -0.39999999999999947,
+          85.3,
+          0.7,
+          0.77
+        ],
+        [
+          7.0,
+          -0.8999999999999995,
+          82.89999999999999,
+          0.8049999999999999,
+          0.8049999999999999
+        ],
+        [
+          8.6,
+          -1.3999999999999995,
+          80.8,
+          0.48999999999999994,
+          0.5599999999999999
+        ],
+        [
+          8.8,
+          -1.6999999999999995,
+          79.36,
+          0.06999999999999999,
+          0.105
+        ]
+      ],
+      "part": "head",
+      "material": "hair",
+      "segments": 10
+    },
+    {
+      "kind": "tube",
+      "name": "forehead fringe 4",
+      "rows": [
+        [
+          3.5,
+          1.4000000000000004,
+          85.3,
+          0.7,
+          0.77
+        ],
+        [
+          7.0,
+          0.9000000000000004,
+          82.89999999999999,
+          0.8049999999999999,
+          0.8049999999999999
+        ],
+        [
+          8.6,
+          0.40000000000000036,
+          80.8,
+          0.48999999999999994,
+          0.5599999999999999
+        ],
+        [
+          8.8,
+          0.10000000000000031,
+          79.50999999999999,
+          0.06999999999999999,
+          0.105
+        ]
+      ],
+      "part": "head",
+      "material": "hair",
+      "segments": 10
+    },
+    {
+      "kind": "tube",
+      "name": "forehead fringe 5",
+      "rows": [
+        [
+          3.5,
+          3.2,
+          85.3,
+          0.7,
+          0.77
+        ],
+        [
+          7.0,
+          2.7,
+          82.89999999999999,
+          0.8049999999999999,
+          0.8049999999999999
+        ],
+        [
+          8.6,
+          2.2,
+          80.8,
+          0.48999999999999994,
+          0.5599999999999999
+        ],
+        [
+          8.8,
+          1.9000000000000001,
+          79.78,
+          0.06999999999999999,
+          0.105
+        ]
+      ],
+      "part": "head",
+      "material": "hair",
+      "segments": 10
+    },
+    {
+      "kind": "tube",
+      "name": "forehead fringe 6",
+      "rows": [
+        [
+          3.5,
+          5.000000000000001,
+          85.3,
+          0.7,
+          0.77
+        ],
+        [
+          7.0,
+          4.500000000000001,
+          82.89999999999999,
+          0.8049999999999999,
+          0.8049999999999999
+        ],
+        [
+          8.6,
+          4.000000000000001,
+          80.8,
+          0.48999999999999994,
+          0.5599999999999999
+        ],
+        [
+          8.8,
+          3.700000000000001,
+          80.05,
+          0.06999999999999999,
+          0.105
+        ]
+      ],
+      "part": "head",
+      "material": "hair",
+      "segments": 10
+    },
+    {
+      "kind": "loft",
+      "name": "thick irregular straw brim",
+      "rows": [
+        [
+          83.89999999999999,
+          -0.5,
+          0,
+          6.6,
+          8.0
+        ],
+        [
+          83.89999999999999,
+          -0.5,
+          0,
+          15.8,
+          20.7
+        ],
+        [
+          84.6,
+          -0.5,
+          0,
+          15.8,
+          20.7
+        ],
+        [
+          84.6,
+          -0.5,
+          0,
+          6.6,
+          8.0
+        ]
+      ],
+      "part": "head",
+      "material": "straw",
+      "segments": 64,
+      "cap": false,
+      "wave": 1.3
+    },
+    {
+      "kind": "loft",
+      "name": "tapering straw crown",
+      "rows": [
+        [
+          83.8,
+          -0.6,
+          0,
+          8.4,
+          9.9
+        ],
+        [
+          86.3,
+          -1,
+          0,
+          8.1,
+          9.5
+        ],
+        [
+          90.0,
+          -1.5,
+          0,
+          6.7,
+          8.0
+        ],
+        [
+          93.8,
+          -2.0,
+          0,
+          4.8,
+          5.8
+        ],
+        [
+          95.39999999999999,
+          -2.2,
+          0,
+          2.2,
+          2.7
+        ]
+      ],
+      "part": "head",
+      "material": "straw",
+      "segments": 40
+    },
+    {
+      "kind": "loft",
+      "name": "dark hat band",
+      "rows": [
+        [
+          84.8,
+          -0.7,
+          0,
+          8.5,
+          10.0
+        ],
+        [
+          86.8,
+          -1.0,
+          0,
+          8.1,
+          9.6
+        ]
+      ],
+      "part": "head",
+      "material": "leather",
+      "segments": 40,
+      "cap": false
+    },
+    {
+      "kind": "tube",
+      "name": "rope belt 49.8",
+      "rows": [
+        [
+          10.0,
+          0.0,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          9.95184726672197,
+          1.3751804788237352,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          9.807852804032304,
+          2.7371172178862793,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          9.569403357322088,
+          4.072694021880106,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          9.238795325112868,
+          5.369048556082209,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          8.819212643483551,
+          6.613696217668745,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          8.314696123025453,
+          7.7946503692650175,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          7.73010453362737,
+          8.900537776815945,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          7.0710678118654755,
+          9.920708140047262,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          6.343932841636455,
+          10.845336660679198,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          5.555702330196023,
+          11.66551866060471,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          4.713967368259978,
+          12.373355338807418,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          3.8268343236508984,
+          12.962029841133353,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          2.902846772544623,
+          13.425872910322889,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          1.9509032201612833,
+          13.76041748405732,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          0.9801714032956077,
+          13.962441715210918,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          6.123233995736766e-16,
+          14.029999999999998,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          -0.9801714032956065,
+          13.962441715210922,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          -1.950903220161282,
+          13.76041748405732,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          -2.9028467725446214,
+          13.425872910322889,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          -3.826834323650897,
+          12.962029841133353,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          -4.713967368259977,
+          12.373355338807421,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          -5.55570233019602,
+          11.665518660604711,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          -6.3439328416364535,
+          10.8453366606792,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          -7.071067811865475,
+          9.920708140047262,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          -7.73010453362737,
+          8.900537776815945,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          -8.314696123025453,
+          7.7946503692650175,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          -8.81921264348355,
+          6.613696217668749,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          -9.238795325112868,
+          5.369048556082211,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          -9.569403357322088,
+          4.072694021880107,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          -9.807852804032304,
+          2.737117217886284,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          -9.951847266721968,
+          1.3751804788237383,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          -10.0,
+          1.7181794592037364e-15,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          -9.95184726672197,
+          -1.375180478823735,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          -9.807852804032304,
+          -2.7371172178862806,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          -9.56940335732209,
+          -4.072694021880102,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          -9.238795325112868,
+          -5.369048556082207,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          -8.819212643483551,
+          -6.613696217668745,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          -8.314696123025454,
+          -7.794650369265015,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          -7.730104533627371,
+          -8.900537776815941,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          -7.071067811865477,
+          -9.92070814004726,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          -6.343932841636459,
+          -10.845336660679193,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          -5.555702330196022,
+          -11.66551866060471,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          -4.713967368259978,
+          -12.373355338807418,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          -3.8268343236509033,
+          -12.962029841133347,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          -2.9028467725446245,
+          -13.425872910322887,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          -1.9509032201612866,
+          -13.760417484057319,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          -0.9801714032956045,
+          -13.962441715210922,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          -1.8369701987210296e-15,
+          -14.029999999999998,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          0.9801714032956009,
+          -13.962441715210922,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          1.950903220161283,
+          -13.76041748405732,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          2.9028467725446205,
+          -13.425872910322889,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          3.8268343236509,
+          -12.96202984113335,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          4.713967368259976,
+          -12.373355338807421,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          5.555702330196018,
+          -11.665518660604711,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          6.343932841636456,
+          -10.845336660679198,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          7.071067811865474,
+          -9.920708140047262,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          7.730104533627365,
+          -8.900537776815952,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          8.314696123025453,
+          -7.7946503692650175,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          8.819212643483548,
+          -6.61369621766875,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          9.238795325112864,
+          -5.369048556082217,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          9.569403357322088,
+          -4.072694021880109,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          9.807852804032303,
+          -2.737117217886286,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          9.95184726672197,
+          -1.3751804788237336,
+          40.599999999999994,
+          0.65,
+          0.65
+        ],
+        [
+          10.0,
+          -3.4363589184074727e-15,
+          40.599999999999994,
+          0.65,
+          0.65
+        ]
+      ],
+      "part": "pelvis",
+      "material": "rope",
+      "segments": 8
+    },
+    {
+      "kind": "tube",
+      "name": "rope belt 51.1",
+      "rows": [
+        [
+          10.0,
+          0.0,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          9.95184726672197,
+          1.3751804788237352,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          9.807852804032304,
+          2.7371172178862793,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          9.569403357322088,
+          4.072694021880106,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          9.238795325112868,
+          5.369048556082209,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          8.819212643483551,
+          6.613696217668745,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          8.314696123025453,
+          7.7946503692650175,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          7.73010453362737,
+          8.900537776815945,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          7.0710678118654755,
+          9.920708140047262,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          6.343932841636455,
+          10.845336660679198,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          5.555702330196023,
+          11.66551866060471,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          4.713967368259978,
+          12.373355338807418,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          3.8268343236508984,
+          12.962029841133353,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          2.902846772544623,
+          13.425872910322889,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          1.9509032201612833,
+          13.76041748405732,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          0.9801714032956077,
+          13.962441715210918,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          6.123233995736766e-16,
+          14.029999999999998,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          -0.9801714032956065,
+          13.962441715210922,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          -1.950903220161282,
+          13.76041748405732,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          -2.9028467725446214,
+          13.425872910322889,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          -3.826834323650897,
+          12.962029841133353,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          -4.713967368259977,
+          12.373355338807421,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          -5.55570233019602,
+          11.665518660604711,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          -6.3439328416364535,
+          10.8453366606792,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          -7.071067811865475,
+          9.920708140047262,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          -7.73010453362737,
+          8.900537776815945,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          -8.314696123025453,
+          7.7946503692650175,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          -8.81921264348355,
+          6.613696217668749,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          -9.238795325112868,
+          5.369048556082211,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          -9.569403357322088,
+          4.072694021880107,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          -9.807852804032304,
+          2.737117217886284,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          -9.951847266721968,
+          1.3751804788237383,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          -10.0,
+          1.7181794592037364e-15,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          -9.95184726672197,
+          -1.375180478823735,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          -9.807852804032304,
+          -2.7371172178862806,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          -9.56940335732209,
+          -4.072694021880102,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          -9.238795325112868,
+          -5.369048556082207,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          -8.819212643483551,
+          -6.613696217668745,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          -8.314696123025454,
+          -7.794650369265015,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          -7.730104533627371,
+          -8.900537776815941,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          -7.071067811865477,
+          -9.92070814004726,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          -6.343932841636459,
+          -10.845336660679193,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          -5.555702330196022,
+          -11.66551866060471,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          -4.713967368259978,
+          -12.373355338807418,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          -3.8268343236509033,
+          -12.962029841133347,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          -2.9028467725446245,
+          -13.425872910322887,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          -1.9509032201612866,
+          -13.760417484057319,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          -0.9801714032956045,
+          -13.962441715210922,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          -1.8369701987210296e-15,
+          -14.029999999999998,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          0.9801714032956009,
+          -13.962441715210922,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          1.950903220161283,
+          -13.76041748405732,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          2.9028467725446205,
+          -13.425872910322889,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          3.8268343236509,
+          -12.96202984113335,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          4.713967368259976,
+          -12.373355338807421,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          5.555702330196018,
+          -11.665518660604711,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          6.343932841636456,
+          -10.845336660679198,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          7.071067811865474,
+          -9.920708140047262,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          7.730104533627365,
+          -8.900537776815952,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          8.314696123025453,
+          -7.7946503692650175,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          8.819212643483548,
+          -6.61369621766875,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          9.238795325112864,
+          -5.369048556082217,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          9.569403357322088,
+          -4.072694021880109,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          9.807852804032303,
+          -2.737117217886286,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          9.95184726672197,
+          -1.3751804788237336,
+          41.900000000000006,
+          0.65,
+          0.65
+        ],
+        [
+          10.0,
+          -3.4363589184074727e-15,
+          41.900000000000006,
+          0.65,
+          0.65
+        ]
+      ],
+      "part": "pelvis",
+      "material": "rope",
+      "segments": 8
+    },
+    {
+      "kind": "tube",
+      "name": "rope knot",
+      "rows": [
+        [
+          10.7,
+          -1.15,
+          41.5,
+          1.2,
+          1.0
+        ],
+        [
+          11.9,
+          0.575,
+          41.3,
+          1.2,
+          1.2
+        ],
+        [
+          11.2,
+          1.9549999999999998,
+          40.7,
+          0.9,
+          1.0
+        ]
+      ],
+      "part": "pelvis",
+      "material": "rope"
+    },
+    {
+      "kind": "tube",
+      "name": "rope end -1",
+      "rows": [
+        [
+          11.1,
+          -0.9199999999999999,
+          40.8,
+          0.65,
+          0.7
+        ],
+        [
+          11.9,
+          -1.7249999999999999,
+          35.2,
+          0.7,
+          0.7
+        ],
+        [
+          11.5,
+          -2.3,
+          30.400000000000002,
+          0.6,
+          0.65
+        ],
+        [
+          12.0,
+          -1.9549999999999998,
+          26.400000000000002,
+          0.18,
+          0.22
+        ]
+      ],
+      "part": "pelvis",
+      "material": "rope",
+      "segments": 10
+    },
+    {
+      "kind": "tube",
+      "name": "rope end 1",
+      "rows": [
+        [
+          11.1,
+          0.9199999999999999,
+          40.8,
+          0.65,
+          0.7
+        ],
+        [
+          11.9,
+          1.7249999999999999,
+          35.2,
+          0.7,
+          0.7
+        ],
+        [
+          11.5,
+          2.3,
+          30.400000000000002,
+          0.6,
+          0.65
+        ],
+        [
+          12.0,
+          1.9549999999999998,
+          26.400000000000002,
+          0.18,
+          0.22
+        ]
+      ],
+      "part": "pelvis",
+      "material": "rope",
+      "segments": 10
+    },
+    {
+      "name": "upper eyelid -1",
+      "kind": "tube",
+      "part": "head",
+      "material": "skin",
+      "segments": 8,
+      "rows": [
+        [
+          8.45,
+          -2.7,
+          76.3,
+          0.12,
+          0.12
+        ],
+        [
+          8.65,
+          -3.9,
+          76.89999999999999,
+          0.15,
+          0.15
+        ],
+        [
+          8.45,
+          -5.1,
+          76.3,
+          0.12,
+          0.12
+        ]
+      ]
+    },
+    {
+      "name": "lower eyelid -1",
+      "kind": "tube",
+      "part": "head",
+      "material": "skin",
+      "segments": 8,
+      "rows": [
+        [
+          8.45,
+          -2.7,
+          76.3,
+          0.12,
+          0.12
+        ],
+        [
+          8.65,
+          -3.9,
+          75.7,
+          0.15,
+          0.15
+        ],
+        [
+          8.45,
+          -5.1,
+          76.3,
+          0.12,
+          0.12
+        ]
+      ]
+    },
+    {
+      "name": "upper eyelid 1",
+      "kind": "tube",
+      "part": "head",
+      "material": "skin",
+      "segments": 8,
+      "rows": [
+        [
+          8.45,
+          2.7,
+          76.3,
+          0.12,
+          0.12
+        ],
+        [
+          8.65,
+          3.9,
+          76.89999999999999,
+          0.15,
+          0.15
+        ],
+        [
+          8.45,
+          5.1,
+          76.3,
+          0.12,
+          0.12
+        ]
+      ]
+    },
+    {
+      "name": "lower eyelid 1",
+      "kind": "tube",
+      "part": "head",
+      "material": "skin",
+      "segments": 8,
+      "rows": [
+        [
+          8.45,
+          2.7,
+          76.3,
+          0.12,
+          0.12
+        ],
+        [
+          8.65,
+          3.9,
+          75.7,
+          0.15,
+          0.15
+        ],
+        [
+          8.45,
+          5.1,
+          76.3,
+          0.12,
+          0.12
+        ]
+      ]
+    },
+    {
+      "kind": "loft",
+      "name": "jaw stubble",
+      "part": "head",
+      "material": "bodyhair",
+      "segments": 32,
+      "cap": false,
+      "angles": [
+        -77,
+        77
+      ],
+      "rows": [
+        [
+          63.89999999999999,
+          0.23,
+          0,
+          3.2251849501508656,
+          3.263580009081233
+        ],
+        [
+          65.3,
+          0.23,
+          0,
+          5.163426218327429,
+          5.224895578069423
+        ],
+        [
+          66.8,
+          0.23,
+          0,
+          6.42929741050389,
+          6.505836665390841
+        ],
+        [
+          68.8,
+          0.23,
+          0,
+          7.515593375052883,
+          7.605064724755893
+        ],
+        [
+          70.3,
+          0.23,
+          0,
+          8.033160447680478,
+          8.128793310152863
+        ]
+      ]
+    }
+  ],
+  "motion": {
+    "idle": {
+      "frames": 16,
+      "tics": 6,
+      "transforms": {
+        "torso": [
+          {
+            "kind": "scale_xy",
+            "amplitude": 0.014
+          }
+        ],
+        "head": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 0.65,
+            "phase": 0.5
+          }
+        ]
+      }
+    },
+    "walk": {
+      "frames": 24,
+      "tics": 2,
+      "transforms": {
+        "pelvis": [
+          {
+            "kind": "translate_z",
+            "amplitude": 0.8,
+            "frequency": 2
+          }
+        ],
+        "torso": [
+          {
+            "kind": "rotate",
+            "axis": "z",
+            "amplitude": 2.2
+          }
+        ],
+        "head": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 1.3,
+            "phase": 1.0
+          }
+        ],
+        "left_thigh": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -20,
+            "phase": 0
+          }
+        ],
+        "left_shin": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 32,
+            "phase": 3.141592653589793,
+            "positive_only": true
+          }
+        ],
+        "left_foot": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -8,
+            "phase": 0
+          }
+        ],
+        "left_upper": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 20,
+            "phase": 0
+          }
+        ],
+        "left_fore": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -6,
+            "phase": 0,
+            "offset": -4
+          }
+        ],
+        "right_thigh": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -20,
+            "phase": 3.141592653589793
+          }
+        ],
+        "right_shin": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 32,
+            "phase": 6.283185307179586,
+            "positive_only": true
+          }
+        ],
+        "right_foot": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -8,
+            "phase": 3.141592653589793
+          }
+        ],
+        "right_upper": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 20,
+            "phase": 3.141592653589793
+          }
+        ],
+        "right_fore": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -6,
+            "phase": 3.141592653589793,
+            "offset": -4
+          }
+        ]
+      }
+    }
+  },
+  "limits": [
+    "Procedural articulated mesh; no exported skeletal armature.",
+    "Idle/walk visual loops only; no attack, pain, death, AI, encounter or collision integration.",
+    "Derived model requires separate author visual review."
+  ]
+}

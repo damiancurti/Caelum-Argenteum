@@ -1,0 +1,62 @@
+version "4.14.2"
+class CA455Camera : Actor { Default { CameraHeight 0; Height 0; Radius 0; +NOINTERACTION +NOGRAVITY } States { Spawn: TNT1 A -1; Stop; } }
+class CA455VisualDriver : Actor
+{
+    Actor Subject; Actor View; bool LightingReady; int Sample; int ViewIndex; State MotionSnapshot;
+    Default { +NOINTERACTION +NOGRAVITY }
+    States { Spawn: TNT1 A -1; Stop; }
+    override void Tick()
+    {
+        Super.Tick();
+        if(Subject!=null && Sample==0)Subject.SetState(Subject.FindState("Frame0"),false);
+        if(Subject!=null && Sample==22)Subject.SetState(Subject.FindState("Frame22"),false);
+        if(Subject!=null && Sample==34)Subject.SetState(Subject.FindState("Frame34"),false);
+    }
+    void Configure(int index)
+    {
+        if(!LightingReady) { LightingReady=true;{let lamp=Actor.Spawn("CA455Camera",(18,-22,32),NO_REPLACE);lamp.A_AttachLight('Pilot',DynamicLight.PointLight,( 255 << 16 ) | ( 245 << 8 ) | 230,45,0,DynamicLight.LF_ATTENUATE|DynamicLight.LF_NOSHADOWMAP);}{let lamp=Actor.Spawn("CA455Camera",(-22,25,25),NO_REPLACE);lamp.A_AttachLight('Pilot',DynamicLight.PointLight,( 190 << 16 ) | ( 205 << 8 ) | 235,32,0,DynamicLight.LF_ATTENUATE|DynamicLight.LF_NOSHADOWMAP);}} ViewIndex=index;
+        if(Subject==null)Subject=Actor.Spawn("CA455PomberoPreview",(0,0,0),NO_REPLACE);
+        if(View==null)View=Actor.Spawn("CA455Camera",(0,0,160),NO_REPLACE);
+        Sample=0; Subject.Angle=0;
+if(index==0){View.SetOrigin((42,-24,21),false);View.Angle=150.25511870305778;View.Pitch=5.9;Subject.Angle=0;Sample=0;}
+if(index==1){View.SetOrigin((48,0,20),false);View.Angle=180.0;View.Pitch=4.8;Subject.Angle=0;Sample=0;}
+if(index==2){View.SetOrigin((0,-48,20),false);View.Angle=90.0;View.Pitch=4.8;Subject.Angle=0;Sample=0;}
+if(index==3){View.SetOrigin((-48,0,20),false);View.Angle=0.0;View.Pitch=4.8;Subject.Angle=0;Sample=0;}
+if(index==4){View.SetOrigin((42,-24,21),false);View.Angle=150.25511870305778;View.Pitch=5.9;Subject.Angle=90;Sample=0;}
+if(index==5){View.SetOrigin((42,-24,21),false);View.Angle=150.25511870305778;View.Pitch=5.9;Subject.Angle=0;Sample=22;}
+if(index==6){View.SetOrigin((42,-24,21),false);View.Angle=150.25511870305778;View.Pitch=5.9;Subject.Angle=0;Sample=34;}
+if(index==7){View.SetOrigin((20,-9,27),false);View.Angle=152.10272896905238;View.Pitch=1.8;Subject.Angle=0;Sample=0;}
+View.ClearInterpolation(); Subject.ClearInterpolation(); players[0].camera=View;
+        Console.Printf("CA455 VIEW index=%d sample=%d angle=%.1f",ViewIndex,Sample,Subject.Angle);
+    }
+}
+class CA455VisualEvents : EventHandler
+{
+    override void NetworkProcess(ConsoleEvent e)
+    {
+        let driver=CA455VisualDriver(ActorIterator.Create(455001,"CA455VisualDriver").Next());
+        if(driver==null)
+        {
+            driver=CA455VisualDriver(Actor.Spawn("CA455VisualDriver",(0,0,0),NO_REPLACE));
+            driver.ChangeTID(455001);
+        }
+if(e.Name=="ca455view0")driver.Configure(0);
+if(e.Name=="ca455view1")driver.Configure(1);
+if(e.Name=="ca455view2")driver.Configure(2);
+if(e.Name=="ca455view3")driver.Configure(3);
+if(e.Name=="ca455view4")driver.Configure(4);
+if(e.Name=="ca455view5")driver.Configure(5);
+if(e.Name=="ca455view6")driver.Configure(6);
+if(e.Name=="ca455view7")driver.Configure(7);
+if(e.Name=="ca455animate") { driver.Sample=-1;driver.Subject.SetStateLabel("Walk");Console.Printf("CA455 ANIMATION running"); }
+        if(e.Name=="ca455motion_a")driver.MotionSnapshot=driver.Subject.CurState;
+        if(e.Name=="ca455motion_b")Console.Printf("CA455 MOTION result=%s",driver.Subject.CurState!=driver.MotionSnapshot?"PASS":"FAIL");
+        if(e.Name=="ca455verify")
+        {
+            int subjects=0;let it=ThinkerIterator.Create("CA455PomberoPreview");
+            while(it.Next()!=null)subjects++;
+            bool ok=subjects==1 && driver.Subject!=null && driver.View!=null && players[0].camera==driver.View;
+            Console.Printf("CA455 VERIFY subjects=%d state=%d view=%d result=%s",subjects,driver.Sample,driver.ViewIndex,ok?"PASS":"FAIL");
+        }
+    }
+}
