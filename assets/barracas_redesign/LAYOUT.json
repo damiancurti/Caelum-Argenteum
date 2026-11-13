@@ -387,10 +387,12 @@
       "id": "north",
       "position": [
         -16832,
-        15552,
+        15232,
         0
       ],
-      "outward_angle": 90
+      "outward_angle": 90,
+      "geometry_note": "Align the approved northern bridge gate to the actual rasterized irregular perimeter; previous preview y15552 missed the wall band.",
+      "material": 1
     },
     {
       "id": "west",
@@ -399,7 +401,8 @@
         -320,
         0
       ],
-      "outward_angle": 180
+      "outward_angle": 180,
+      "material": 2
     },
     {
       "id": "east",
@@ -408,7 +411,8 @@
         -1472,
         0
       ],
-      "outward_angle": 0
+      "outward_angle": 0,
+      "material": 1
     },
     {
       "id": "south",
@@ -417,7 +421,8 @@
         -14208,
         0
       ],
-      "outward_angle": 270
+      "outward_angle": 270,
+      "material": 0
     }
   ],
   "railway": {
@@ -9424,6 +9429,13 @@
         "north_wall": 0
       },
       "authority": "Author approved: Aprobar 4 torres + 4 sur + 2 este + 2 oeste, 2026-11-12."
+    },
+    "gate_materials": {
+      "north": "reinforced",
+      "south": "wood",
+      "east": "reinforced",
+      "west": "armored",
+      "authority": "Author approved this assignment on 2026-11-12; existing gate statistics unchanged."
     }
   },
   "identity_anchors": {
@@ -9473,7 +9485,7 @@
   "bridge": {
     "width": 512,
     "centre_x": -16832,
-    "south_y": 15552,
+    "south_y": 15232,
     "north_y": 20224
   },
   "river": {

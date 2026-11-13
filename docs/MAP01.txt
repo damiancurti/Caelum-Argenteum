@@ -73,6 +73,17 @@ house 70 remain near central commerce and each other; original port households
 within the municipal building, rather than adding a 289th construction or new
 merchant/reward. No administrative gameplay is introduced.
 
+The author also approved existing gate materials: north reinforced, south wood,
+east reinforced and west armored, with unchanged resistance/statistics. The
+northern gate/bridge start is aligned at (-16832,15232); the original preview
+y15552 missed the irregular wall. The complete southern perimeter is retained
+beyond the nominal lot envelope. Original 128-MU masonry openings surround the
+96-MU native gates, with full-depth jambs and the wide bridge starting outside
+the wall. Closing four gate rows now isolates all exterior ground in the static
+cell audit; 160 native maximum-body closed/open samples and four Used-handler
+calls pass, with closed/open views inspected. This is isolated collision/use
+evidence, not ordinary siege travel; see barracas-gates/SUMMARY.json.
+
 The source is not runtime enabled. CABAPRV is a disposable geometry/model preview
 under build/, with no production MAP03 replacement or private CAH map change.
 Exact preceding MAP03 and relevant sources are preserved in

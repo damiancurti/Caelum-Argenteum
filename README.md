@@ -33,6 +33,8 @@ identities. Active/stored-hub continuation passed with current code; repeat
 verification after the redesigned city is integrated.
 The rotated-door/coordinate slice passes 224 native service endpoint checks and
 160 portals/320 leaf placements; private interior coordinates are retained.
+The four-gate prototype also passes 160 native closed/open samples and four
+Used-handler checks; the closed-perimeter grid audit finds no exterior bypass.
 
 V5.15 includes the [battle director](assets/validation_v5_15_0/RESULTS.md)
 (#447, PR635), [Unitarian command](assets/validation_v5_15_1/RESULTS.md)

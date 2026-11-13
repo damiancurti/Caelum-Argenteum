@@ -25,7 +25,8 @@ services/travel, native gates and coordinate-sensitive helpers, complete visual
 architecture and retain the accepted residential sky policy. Exact original
 MAP03 active/stored-hub continuation passes through -LegacyMap03Revision3 with
 current code; repeat against the eventual integrated new-city runtime. Three siege fronts with active/reserve
-ram pairs are approved. The 12 active defensive guns are four towers plus four
+ram pairs are approved. The four-gate shell now passes a closed-perimeter grid
+audit,160 physical native closed/open samples and four direct Used-handler checks. The 12 active defensive guns are four towers plus four
 south-wall, two east-wall and two west-wall guns; retain 36 installed guns. No city author test is added for
 the unintegrated preview. Existing MAP02 acceptance remains pending.
 

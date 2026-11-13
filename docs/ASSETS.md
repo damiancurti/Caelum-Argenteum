@@ -35,7 +35,10 @@ The city compatibility mode packages legacy_5162/MAP03.wad after verifying its
 provenance checksum. barracas-legacy/ holds native continuation logs; all 160 CAH
 map bytes match baseline. Loaded-map checksum selects the original Justice arena.
 The isolated native service/rotated-leaf fixture and results live under
-validation_v5_16_2/run_barracas_services.py and barracas-services/.
+validation_v5_16_2/run_barracas_services.py and barracas-services/. Its subsequent
+barracas-gates/ evidence adds full-perimeter closure and physical native gate
+checks, preserving failed fixtures and final closed/open views. Existing gate
+materials and dimensions are reused; no new raster, mass or resistance is added.
 
 ## 5.16.1 - Recovered folklore reference catalogue (#453, catalogue approved)
 

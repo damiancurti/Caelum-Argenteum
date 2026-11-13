@@ -42,12 +42,16 @@ def generate(out,map_name=None,configure=None):
     out=Path(out).resolve()
     if not out.is_relative_to(ROOT/'build'):raise ValueError('The isolated preview must be written under build/.')
     out.mkdir(parents=True,exist_ok=True)
-    data=json.loads((ROOT/'assets/barracas_redesign/LAYOUT.json').read_text())
-    city=json.loads((ROOT/'assets/map06_port/CITY.json').read_text())
-    interior=json.loads((ROOT/'assets/map06_port/INTERIORS.json').read_text())
+    data=json.loads((ROOT/'assets/barracas_redesign/LAYOUT.json').read_text(encoding='utf-8'))
+    city=json.loads((ROOT/'assets/map06_port/CITY.json').read_text(encoding='utf-8'))
+    interior=json.loads((ROOT/'assets/map06_port/INTERIORS.json').read_text(encoding='utf-8'))
     port=CoastalMap(map_name or data['preview_map']);port.compact=True;port.optimize_open_geometry=True;port.add_default_things=False
     port.control_origin=city['control_origin'];port.control_columns=city['control_columns']
     x1,y1,x2,y2=data['bounds'];cell=data['grid'];belt=city['walk_width']
+    # The conceptual perimeter extends beyond the nominal lot envelope in the
+    # south. Include the complete wall instead of clipping it to old city bounds.
+    x1=min(x1,min(p[0] for p in data['perimeter']));y1=min(y1,min(p[1] for p in data['perimeter']))
+    x2=max(x2,max(p[0] for p in data['perimeter']));y2=max(y2,max(p[1] for p in data['perimeter']))
     river=data['river'];port.volume(100,river['floor'],river['surface'],'CVPL06','CVPL06',water=True)
     port.room(x1-belt*2,y1-belt*2,x2+belt*4,river['north_y'],flat='CMGR03',wall='CMST01')
     port.room(x1-belt*2,river['south_y'],x2+belt*4,river['north_y'],floor=river['floor'],flat='CVPL02',volume=100)
@@ -60,7 +64,7 @@ def generate(out,map_name=None,configure=None):
             for y in range(min(p[1] for p in vertices),max(p[1] for p in vertices),cell):
                 if inside((x+cell/2,y+cell/2),vertices):port.room(x,y,x+cell,y+cell,flat='CMGR02')
     detail=city['detail'];facades={};bindings=[];classes=[];editors=[]
-    native_doors=json.loads((ROOT/'assets/map06_port/NATIVE_DOORS.json').read_text())
+    native_doors=json.loads((ROOT/'assets/map06_port/NATIVE_DOORS.json').read_text(encoding='utf-8'))
     import generate_barracas_facades
     for building in data['buildings']:
         kind=building['kind'];profile=city['profiles'][kind];tag=building['tag'];wall=building['wall'];flat=building['floor']
@@ -118,14 +122,28 @@ def generate(out,map_name=None,configure=None):
             floor,flat,wall,light,old=value
             if old==0 and floor==0:port.room(x,y,x+cell,y+cell,flat=flat,wall=wall,light=light,volume=walk)
     for i,gate in enumerate(data['gates']):
-        x,y,_=gate['position'];width=city['gate_headroom']//cell*cell*2
+        x,y,_=gate['position']
+        # Retain the existing 128-MU masonry opening around the 96-MU gate.
+        # The former wide art arch left walkable gaps beside native blockers.
+        old_gate=next(g for g in city['gates'] if g['name']=='north')
+        width=old_gate['bounds'][2]-old_gate['bounds'][0]
         # Cover the oblique raster wall band using the existing 256-MU gate roof
         # depth; the native blocker is deliberately absent from this art probe.
         a,b=(width//2,belt) if gate['outward_angle'] in (90,270) else (belt,width//2)
         tag=220+i;port.volume(tag,city['gate_headroom'],city['gate_headroom']+city['gate_roof_thickness'],'CMST01','CMST01')
         port.room(x-a,y-b,x+a,y+b,flat='CMST01',wall='CMST01',volume=tag)
+        # A cardinal passage through an oblique wall needs full-depth jambs;
+        # otherwise a walker can turn aside after crossing the wall but before
+        # reaching the gate actor in the middle of the passage.
+        if gate['outward_angle'] in (90,270):
+            jambs=[(x-a-cell,y-b,x-a,y+b),(x+a,y-b,x+a+cell,y+b)]
+        else:
+            jambs=[(x-a,y-b-cell,x+a,y-b),(x-a,y+b,x+a,y+b+cell)]
+        for rect in jambs:port.room(*rect,floor=city['wall_height'],flat='CMST01',wall='CMST01')
     bridge=data['bridge'];x=bridge['centre_x'];width=bridge['width']//2
-    port.room(x-width,bridge['south_y']-belt,x+width,bridge['north_y'],flat='CVPO01',wall='CVPO06')
+    # The wide bridge begins outside the narrow gate passage, never through the
+    # wall itself; otherwise its deck silently creates an unguarded extra gap.
+    port.room(x-width,bridge['south_y']+belt,x+width,bridge['north_y'],flat='CVPO01',wall='CVPO06')
     # Existing water texture and floor levels, with dry native wooden dock piers.
     for old_y,old_end in [(448,2048),(1536,1792)]:
         ox,oy=data['port_transform']['offset'];a=ox-old_y-256;c=ox-old_y
@@ -145,6 +163,24 @@ def generate(out,map_name=None,configure=None):
         x,y=queue.popleft()
         for nxt in [(x-cell,y),(x+cell,y),(x,y-cell),(x,y+cell)]:
             if nxt in walkable and nxt not in reachable:reachable.add(nxt);queue.append(nxt)
+    blocked=set()
+    for gate in data['gates']:
+        x,y,_=gate['position']
+        if gate['outward_angle'] in (90,270):blocked.update([(x-cell,y),(x,y)])
+        else:blocked.update([(x,y-cell),(x,y)])
+    closed_reachable={key(centre)};queue=deque(closed_reachable);parents={key(centre):None}
+    while queue:
+        x,y=queue.popleft()
+        for nxt in [(x-cell,y),(x+cell,y),(x,y-cell),(x,y+cell)]:
+            if nxt in walkable and nxt not in blocked and nxt not in closed_reachable:
+                closed_reachable.add(nxt);queue.append(nxt);parents[nxt]=(x,y)
+    unguarded=[p for p in closed_reachable if not inside((p[0]+cell/2,p[1]+cell/2),data['perimeter'])
+               and min(distance2((p[0]+cell/2,p[1]+cell/2),a,b) for a,b in edges)>(belt*2)**2]
+    escape_trace=[]
+    if unguarded:
+        p=min(unguarded)
+        while p is not None:escape_trace.append(p);p=parents[p]
+        escape_trace.reverse()
     targets=[]
     for building in data['buildings']:
         profile=city['profiles'][building['kind']]
@@ -166,7 +202,8 @@ def generate(out,map_name=None,configure=None):
             targets.append({'id':gate['id'],'kind':'gate_'+str(sign),'point':target,'reachable':key(target) in reachable})
     audit={'issue':454,'scope':'Static cell-centre routes from Plaza Alsina; opaque house shells end at external portal approaches. Not native collision/AI or siege evidence.',
            'clearance_source':'assets/map02_maze/LAYOUT.json accepted largest player radius/height','height':max_height,'radius':max_radius,
-           'walkable':len(walkable),'reachable':len(reachable),'targets':targets,'failures':[t for t in targets if not t['reachable']]}
+           'walkable':len(walkable),'reachable':len(reachable),'targets':targets,'failures':[t for t in targets if not t['reachable']],
+           'closed_gate_cell_audit':{'scope':'Block one grid row across each of the four gate centres; native 96-MU blocker collision still requires an engine test.','escaped_cells':len(unguarded),'escape_trace':escape_trace}}
     (out/'routes.json').write_text(json.dumps(audit,indent=2)+'\n',encoding='utf-8')
     with zipfile.ZipFile(out/'preview.pk3','w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as archive:
         files={'maps/'+port.name+'.wad':(out/(port.name+'.wad')).read_bytes(),
@@ -177,8 +214,8 @@ def generate(out,map_name=None,configure=None):
         for name,content in sorted(files.items()):
             info=zipfile.ZipInfo(name,(2026,11,12,0,0,0));info.compress_type=zipfile.ZIP_DEFLATED;archive.writestr(info,content,compresslevel=9)
     (out/'RESULTS.json').write_text(json.dumps({'issue':454,'scope':__doc__,'buildings':len(data['buildings']),'cells':len(port.cells),'geometry_reduction':port.geometry_reduction,'runtime_enabled':False,'static_route_failures':len(audit['failures'])},indent=2)+'\n')
-    print(json.dumps({'route_targets':len(targets),'unreachable':audit['failures']}))
-    if audit['failures']:raise SystemExit(1)
+    print(json.dumps({'route_targets':len(targets),'unreachable':audit['failures'],'unguarded_cells':len(unguarded)}))
+    if audit['failures'] or unguarded:raise SystemExit(1)
     return port,data,facades,classes,bindings,editors,audit
 
 

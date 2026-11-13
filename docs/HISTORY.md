@@ -70,6 +70,17 @@ caelum_argenteum_dev.pk3 basename passed without rewriting save metadata. Final
 checksum-dispatch runtime was checked with the verified old saves. Repeat after
 new-city integration; ordinary house use and author acceptance remain pending.
 
+The four-gate prototype was then made physically closed: its southern perimeter
+was no longer clipped to the old rectangular envelope, the northern gate was
+aligned to the wall, and full-depth jambs isolated its narrow opening from the
+wide bridge. The new closed-grid audit first exposed an exterior bypass, then
+passed with none. Native tests pass224 service endpoints,320 door leaves,160 gate
+collision/open samples and four direct Used-handler calls. All four closed/open
+views were inspected. The first gate probe had NOINTERACTION and ignored actor
+blockers; the corrected solid probe passed. The author approved north/east
+reinforced, south wooden and west armored gates using existing statistics.
+Production MAP03 remains unchanged; siege, full services and travel are unfinished.
+
 The author requested prevention of system sleep while away for several hours.
 A temporary system-only execution-state request is active during work, with a
 12-hour failsafe; it does not change the power plan or require the display on.

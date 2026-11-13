@@ -1,0 +1,23 @@
+{
+  "issue": 454,
+  "scope": "Isolated native endpoint clearance, map-spawned rotated leaves and private-interior coordinate retention. No ordinary travel/siege/author acceptance.",
+  "runtime_sha256": "33b0f43e2611442f8d1ea614ad2c4c5af4eb8e2c3697e24c5b99715641324680",
+  "exit_code": 0,
+  "passed": false,
+  "diagnostics": [
+    "CA454 SERVICES CLOSED GATE FAIL gate=0 side=-1",
+    "CA454 SERVICES CLOSED GATE FAIL gate=0 side=0",
+    "CA454 SERVICES CLOSED GATE FAIL gate=0 side=1",
+    "CA454 SERVICES CLOSED GATE FAIL gate=1 side=-1",
+    "CA454 SERVICES CLOSED GATE FAIL gate=1 side=0",
+    "CA454 SERVICES CLOSED GATE FAIL gate=1 side=1",
+    "CA454 SERVICES CLOSED GATE FAIL gate=2 side=-1",
+    "CA454 SERVICES CLOSED GATE FAIL gate=2 side=0",
+    "CA454 SERVICES CLOSED GATE FAIL gate=2 side=1",
+    "CA454 SERVICES CLOSED GATE FAIL gate=3 side=-1",
+    "CA454 SERVICES CLOSED GATE FAIL gate=3 side=0",
+    "CA454 SERVICES CLOSED GATE FAIL gate=3 side=1",
+    "CA454 SERVICES GATES checks=160 failures=12",
+    "CA454 SERVICES total=224 portals=160 leaves=320 failures=12"
+  ]
+}
