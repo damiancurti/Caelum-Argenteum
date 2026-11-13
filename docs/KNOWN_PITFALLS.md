@@ -4,6 +4,19 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-232 - Reserve opaque texels around reused icon material patches
+
+Status/evidence: STATIC-VERIFIED source sampling and NATIVE-VISUAL review,
+#658, 2026-11-13. A UV rectangle's right/bottom boundary can sample adjacent
+pixels under bilinear filtering even when every pixel in an exclusive image
+crop is opaque. The original iron/tin icon samples had adjacent alpha values
+211/66. Inset the final UV rectangle by one source pixel and validate the
+surrounding margin, rather than editing or silently flattening the original PNG.
+The seven metal patches retain alpha >=250 throughout that margin. Native
+before/after views and exact source/export hashes are retained in
+assets/validation_v5_17_7/evidence/SUMMARY.json. Small original samples remain
+limited in close-up resolution; the margin does not imply higher-detail art.
+
 ## CA-KP-231 - Isolate deferred recipe-sheet delivery in inventory fixtures
 
 Status/evidence: ENGINE-VERIFIED fixture correction, #656, 2026-11-13.
