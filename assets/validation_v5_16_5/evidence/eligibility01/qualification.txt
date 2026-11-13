@@ -1,0 +1,1 @@
+Initial two-peer predicate and reload checks passed before the explicit direct-participant connection check and disconnect case.

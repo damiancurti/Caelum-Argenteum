@@ -523,6 +523,14 @@
 /src/caelum/data/CaelumEssenceAcquisitionData.zs text eol=lf
 /src/caelum/core/CaelumTarotService.zs text eol=crlf whitespace=cr-at-eol
 /src/ZSCRIPT text eol=crlf whitespace=cr-at-eol
+/assets/validation_v5_16_5/dependency-world-gate/** -text -whitespace
+
+/assets/generators/generate_campaign_finale_data.py text eol=lf
+/src/caelum/data/CaelumCampaignFinaleData.zs text eol=lf
+/src/caelum/quests/CaelumCampaignEligibility.zs text eol=lf
+/assets/validation_v5_16_5/*.py text eol=lf
+/assets/validation_v5_16_5/*.zs text eol=lf
+/assets/validation_v5_16_5/evidence/** -text -whitespace
 
 # Preserve the native-tested #454 perception source bytes on checkout.
 /src/caelum/actors/CaelumVisualPerception.zs -text whitespace=cr-at-eol
