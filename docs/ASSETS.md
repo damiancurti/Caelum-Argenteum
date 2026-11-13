@@ -4,6 +4,38 @@ Documentation version: **5.17.1** - 2026-11-13.
 
 ## 5.17.1 - Inventory drops in 3D (#647, conversion in progress)
 
+Five closed food meshes now cover ration/maze ration, bread, roast beef, roast
+hake and puchero, with explicit bindings for six inventory classes and four
+prepared dining displays. The accepted #410 paintings remain unchanged. Owned
+built-in ImageGen atlas, exact prompt, reference hashes and editable controls
+are in assets/source/art/inventory_models_647/food. New models contain 296-960
+triangles and 3-9 closed components. Food footprint width follows the opaque
+reference silhouette; its perspective image height is not treated as object
+height. Plates/bowl remain presentation, not additional container inventory.
+
+`python assets/generators/generate_inventory_food_models.py --output build/food --install`
+uses the shared deterministic exporter; repeat with `--check --install`.
+Nineteen prior consumable/water runtime outputs remain byte-identical after
+adding width-based art scaling and explicit additional-class bindings. Native
+table RefreshDisplays already copies item scale: table MODELDEF applies no
+second .25 factor. No portions, recipes, food clocks, contamination or ownership
+rules changed. Raised bread-cut tubes looked like spikes in the first native
+view; the final model uses the painted crust scoring, with box UVs for slice sides.
+
+The full 18,167-entry package passed 608 assertions in five native fresh/old-save/
+reload/rollback runs. Six item classes split/recombine native quantities and
+preserve lot units, chronology and contamination; four table displays retain
+their real portions, native serving scale and table-surface position. Native
+front/side/rear/close/table captures were inspected. Evidence:
+assets/validation_v5_17_1/food-evidence/SUMMARY.json. No normal-menu, eating,
+cooking, table placement-menu or author acceptance is inferred. For the author
+room add `--kind food` below; F9 inspects the prepared meals on the table.
+
+One sequential 700-tic pair for six visible food drops observed 1,166.08/1,149.78
+presents/s (sprites/models), p95/p99 1.0599/1.2741ms and 1.0794/1.2929ms; mean
+simulation spacing was 28.571ms. The recorded environment and queue-present
+limits below apply; this is not a full dining-room or all-inventory budget.
+
 Six bottle/canteen classes now have explicit production models. Small glass stays
 green, normal glass amber with a leather sleeve, and the large demijohn green
 inside a wicker basket with a solid handle. Small/normal canteens retain round/

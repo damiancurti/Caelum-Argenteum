@@ -4732,3 +4732,4 @@ Model CaelumBarricadeVisual
 // #647: representaciones de botiquines y frascos, sin reglas nuevas.
 #include "caelum/data/inventory_consumables.modeldef"
 #include "caelum/data/inventory_water.modeldef"
+#include "caelum/data/inventory_food.modeldef"

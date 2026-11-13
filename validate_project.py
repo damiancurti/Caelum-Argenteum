@@ -19,6 +19,7 @@ from assets.generators.validate_character_modules import validate as character_m
 from assets.generators.validate_inventory_coin_models import validate as inventory_coin_problems
 from assets.generators.validate_inventory_consumable_models import validate as inventory_consumable_problems
 from assets.generators.validate_inventory_water_models import validate as inventory_water_problems
+from assets.generators.validate_inventory_food_models import validate as inventory_food_problems
 from assets.generators.validate_map02_redesign import audit as sewer_redesign_audit
 from assets.generators.install_barracas_map import validate as barracas_installation_problems
 
@@ -82,6 +83,7 @@ def validate(root):
     errors.extend(inventory_coin_problems(root))
     errors.extend(inventory_consumable_problems(root))
     errors.extend(inventory_water_problems(root))
+    errors.extend(inventory_food_problems(root))
     errors.extend(barracas_installation_problems(root))
     try:
         errors.extend(justice_geometry_problems(root))

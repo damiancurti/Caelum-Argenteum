@@ -209,7 +209,9 @@ def output_files(source=SOURCE, definition_name='inventory_consumables.modeldef'
         mesh, volumes = geometry(config, config['families'][item['family']], item['tier'])
         floor = min(p[2] for p in mesh.vertices)
         height = max(p[2] for p in mesh.vertices) - floor
-        factor = target_height / height
+        extent = max(p[0] for p in mesh.vertices) - min(p[0] for p in mesh.vertices)
+        width_scaled = config.get('reference_axis', 'height') == 'width'
+        factor = (bounds[2] - bounds[0]) / extent if width_scaled else target_height / height
         frame = [(x * factor, y * factor, (z - floor) * factor) for x, y, z in mesh.vertices]
         native = Mesh()
         native.vertices, native.uv, native.parts = mesh.vertices, mesh.uv, mesh.parts
@@ -218,6 +220,9 @@ def output_files(source=SOURCE, definition_name='inventory_consumables.modeldef'
         binary = binary[:8] + fixed('CA647 ' + key, 64) + binary[72:]
         outputs[model_path + '/' + key + '.md3'] = binary
         definitions.append(f'Model {item["class"]} {{ Path "{model_path}" Model 0 "{key}.md3" Skin 0 "materials.png" Scale 1 1 1 CorrectPixelStretch FrameIndex {item["sprite"]} A 0 0 }}')
+        for binding in item.get('additional_bindings', []):
+            scale = ' '.join(str(value) for value in binding['scale'])
+            definitions.append(f'Model {binding["class"]} {{ Path "{model_path}" Model 0 "{key}.md3" Skin 0 "materials.png" Scale {scale} CorrectPixelStretch FrameIndex {item["sprite"]} A 0 0 }}')
         obj = ['# Editable neutral mesh; OBJ Y up. Native item rules remain unchanged.', 'mtllib materials.mtl']
         obj += [f'v {x:.6f} {z:.6f} {-y:.6f}' for x, y, z in frame]
         obj += [f'vt {u:.8f} {1-v:.8f}' for u, v in mesh.uv]
@@ -231,14 +236,14 @@ def output_files(source=SOURCE, definition_name='inventory_consumables.modeldef'
         outputs['editable/' + key + '.obj'] = ('\n'.join(obj) + '\n').encode()
         records[key] = {'class': item['class'], 'family': item['family'], 'tier': item['tier'], 'parts': list(volumes),
                         'closed_outward_components': len(volumes), 'vertices': len(mesh.vertices), 'triangles': len(mesh.faces),
-                        'surfaces': surfaces, 'source_opaque_bounds': bounds, 'model_height_art_pixels': target_height,
+                        'surfaces': surfaces, 'source_opaque_bounds': bounds, 'model_height_art_pixels': height * factor if width_scaled else target_height,
                         'native_bounds': native_bounds}
     outputs['editable/materials.mtl'] = ('newmtl atlas\nKd 1 1 1\nmap_Kd ../' + model_path + '/materials.png\n').encode()
     outputs['caelum/data/' + definition_name] = ('\n'.join(definitions) + '\n').encode()
     manifest = {'schema_revision': 1, 'issue': 647, 'status': config['status'], 'variants': records,
                 'generator_sha256': digest(Path(__file__).read_bytes()),
                 'shared_generator_sha256': {name: digest(Path(__file__).with_name(name).read_bytes()) for name in
-                                            ('generate_nahuelito_model.py', 'generate_pombero_model.py')},
+                                            ('generate_nahuelito_model.py', 'generate_pombero_model.py', *config.get('generator_dependencies', []))},
                 'source_sha256': {name: digest((source / name).read_bytes()) for name in
                                   ('DESIGN.json', 'PROVENANCE.json', config['atlas']['image'], *config['prompt_files'])},
                 'sha256': {name: digest(blob) for name, blob in outputs.items()}}
@@ -246,13 +251,13 @@ def output_files(source=SOURCE, definition_name='inventory_consumables.modeldef'
     return outputs
 
 
-def main():
+def main(source=SOURCE, definition_name='inventory_consumables.modeldef'):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--check', action='store_true')
     parser.add_argument('--install', action='store_true', help='Install/check native files and the source export manifest; editable OBJ remains in the export directory.')
     args = parser.parse_args()
-    files = output_files()
+    files = output_files(source, definition_name)
     for name, blob in files.items():
         path = args.output / name
         if args.check:
@@ -262,7 +267,7 @@ def main():
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_bytes(blob)
         if args.install and not name.startswith('editable/'):
-            installed = SOURCE / 'EXPORT.json' if name == 'manifest.json' else ROOT / 'src' / name
+            installed = source / 'EXPORT.json' if name == 'manifest.json' else ROOT / 'src' / name
             if args.check:
                 if not installed.is_file() or installed.read_bytes() != blob:
                     raise ValueError('Stale installed consumable: ' + name)

@@ -9,8 +9,9 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 **Current release: 5.17.1.** Obtain and update the complete repository,
 validate it, then rebuild with `run_dev.bat` as described below.
 
-#647 adds 3D drops for 15 coin denominations, nine medikit/Anima/energy variants
-and six water containers. Native inventory rules, icons, weight and collision remain unchanged.
+#647 adds 3D drops for 15 coin denominations, nine medikit/Anima/energy variants,
+six water containers, and six food classes with four prepared table displays.
+Native inventory rules, icons, weight and collision remain unchanged.
 Other inventory categories are still in progress; [ASSETS](docs/ASSETS.md) records
 coverage, owned art sources, tests and remaining author review.
 

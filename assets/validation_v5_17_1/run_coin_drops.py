@@ -30,7 +30,7 @@ def main():
         parser.add_argument('--' + name, type=Path, required=True)
     parser.add_argument('--baseline', type=Path, help='Previous runtime, required for automated compatibility checks.')
     parser.add_argument('--model', type=Path, help='Optional candidate preview.pk3 overlay.')
-    parser.add_argument('--kind', choices=('coins', 'consumables', 'water'), default='coins', help='Select the issue-specific native inventory fixture.')
+    parser.add_argument('--kind', choices=('coins', 'consumables', 'water', 'food'), default='coins', help='Select the issue-specific native inventory fixture.')
     parser.add_argument('--interactive', action='store_true', help='Open the inspection room for author review; no automatic acceptance.')
     parser.add_argument('--visual-only', action='store_true', help='Inspect a changed art candidate in one fresh run; no save compatibility claim.')
     args = parser.parse_args()
@@ -55,9 +55,11 @@ def main():
     else:
         config = json.loads((ROOT / 'assets/source/art/inventory_models_647' / args.kind / 'DESIGN.json').read_text(encoding='utf-8'))
         classes = [item['class'] for item in config['variants'].values()] + [item['class'] for item in config.get('reused_variants', [])]
-        source = Path(__file__).with_name('water_drops.zs' if args.kind == 'water' else 'consumable_drops.zs').read_text(encoding='utf-8')
+        classes += [binding['class'] for item in config['variants'].values() for binding in item.get('additional_bindings', []) if binding.get('inventory')]
+        fixture_name = {'water': 'water_drops.zs', 'food': 'food_drops.zs', 'consumables': 'consumable_drops.zs'}[args.kind]
+        source = Path(__file__).with_name(fixture_name).read_text(encoding='utf-8')
         source = source.replace('ITEM_CLASSES', ','.join("'%s'" % kind for kind in classes))
-        event_class = 'CA647WaterEvents' if args.kind == 'water' else 'CA647ConsumableEvents'
+        event_class = {'water': 'CA647WaterEvents', 'food': 'CA647FoodEvents', 'consumables': 'CA647ConsumableEvents'}[args.kind]
     (out / 'fixture.zs').write_text(source, encoding='utf-8')
     fixture = out / 'fixture.pk3'
     with zipfile.ZipFile(fixture, 'w') as package:
@@ -74,19 +76,21 @@ def main():
     fresh = common + 'wait 140; netevent ca647_prepare; wait 35; netevent ca647_verify; '
     if args.interactive:
         commands = fresh + ''.join(f'bind F{index + 1} "netevent ca647_view {index}"; ' for index in
-                                   range(5 if args.kind == 'coins' else 8)) + '\n'
+                                   range(5 if args.kind == 'coins' else 9 if args.kind == 'food' else 8)) + '\n'
         cfg = out / 'interactive.cfg'
         cfg.write_text(commands)
         extras = [str(model)] if model else []
         command = [str(ENGINE), '-noautoload', '-iwad', str(IWAD), '-file', str(runtime), *extras,
                    str(fixture), '-config', str(out / 'session.ini'), '-savedir', str(out), '-window',
                    '+logfile', str(out / 'interactive.log'), '+map', 'CA455V', '+exec', str(cfg)]
-        print('F1 top / F2 low / F3 side / F4 close / F5 player control. F6/F7 additional close views / F8 rear for consumables and water. Close the game after review; no automatic acceptance.', flush=True)
+        print('F1 top / F2 low / F3 side / F4 close / F5 player control. F6/F7 additional close views / F8 rear for non-coin fixtures. Food: F9 table. Close the game after review; no automatic acceptance.', flush=True)
         subprocess.run(command, cwd=out, check=True)
         return
     load = common + 'wait 35; netevent ca647_verify; '
     views = ''.join(f'netevent ca647_view {index}; wait 20; screenshot candidate-{index}.png; wait 5; ' for index in
                     (range(4) if args.kind == 'coins' else (0, 1, 2, 3, 5, 6, 7)))
+    if args.kind == 'food':
+        views += 'netevent ca647_view 8; wait 20; screenshot candidate-8.png; wait 5; '
     runs = [
         ('baseline', baseline, False, ['+map', 'CA455V'], fresh + 'screenshot baseline.png; wait 5; save coin-old; wait 20; quit\n'),
         ('old-save-load', runtime, True, ['-loadgame', 'coin-old.zds'], load + views + 'netevent ca647_pickup; wait 20; quit\n'),

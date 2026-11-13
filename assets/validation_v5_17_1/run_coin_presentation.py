@@ -28,14 +28,14 @@ def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     for name in ['baseline','runtime','presentation-layer','output']:parser.add_argument('--'+name,type=Path,required=True)
-    parser.add_argument('--kind',choices=('coins','consumables','water'),default='coins')
+    parser.add_argument('--kind',choices=('coins','consumables','water','food'),default='coins')
     args=parser.parse_args();baseline=args.baseline.resolve(strict=True);runtime=args.runtime.resolve(strict=True);layer=args.presentation_layer.resolve(strict=True)
     existing=subprocess.check_output(['tasklist','/FI','IMAGENAME eq gzdoom.exe','/FO','CSV','/NH']).decode(errors='replace')
     if '"gzdoom.exe"' in existing.lower():parser.error('Another native engine is running.')
     out=args.output.resolve();out.relative_to(ROOT/'build');out.mkdir(parents=True,exist_ok=False)
     report={'issue':647,'kind':args.kind,'scope':__doc__.strip(),'baseline_sha256':digest(baseline),'runtime_sha256':digest(runtime),'engine_sha256':digest(ENGINE),
             'layer_sha256':digest(layer/'ca_presentation.dll'),'runs':[]}
-    count={'coins':15,'consumables':9,'water':6}[args.kind]
+    count={'coins':15,'consumables':9,'water':6,'food':6}[args.kind]
     for kind in ['sprites','models']:
         folder=out/f'{kind}-{count}';folder.mkdir()
         if args.kind=='coins':
@@ -43,7 +43,9 @@ def main():
             kinds=','.join("'%s'"%(item['class']+suffix) for item in config['variants'].values() for suffix in config['denomination_suffixes'])
         else:
             config=json.loads((ROOT/'assets/source/art/inventory_models_647'/args.kind/'DESIGN.json').read_text())
-            kinds=','.join("'%s'"%item['class'] for item in [*config['variants'].values(),*config.get('reused_variants',[])])
+            variants=[*config['variants'].values(),*config.get('reused_variants',[])]
+            extras=[binding for item in config['variants'].values() for binding in item.get('additional_bindings',[]) if binding.get('inventory')]
+            kinds=','.join("'%s'"%item['class'] for item in variants+extras)
         source="""class CA647BenchCamera : Actor
 {Default {+NOINTERACTION +NOGRAVITY CameraHeight 0;} States {Spawn:TNT1 A -1;Stop;}}
 class CA647Bench : EventHandler

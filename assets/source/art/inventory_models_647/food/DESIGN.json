@@ -1,0 +1,1208 @@
+{
+  "schema_revision": 1,
+  "issue": 647,
+  "status": "runtime_art_candidate_pending_author_acceptance",
+  "authority": "Author 2026-11-13: all inventory drops require actual3D. Preserve approved #410 food identities, portion/lot rules and owned icons.",
+  "dimensions_note": "Editable art controls only. Food footprint width follows the opaque icon silhouette; the model has physical depth/height rather than upright sprite height. Native actor scale, collision, portions, recipes, ownership and lot metadata are untouched. Depicted plates/bowl remain presentation, not new inventory.",
+  "reference_axis": "width",
+  "model_path": "models/caelum/inventory/food",
+  "tiers": [
+    "existing"
+  ],
+  "tier_materials": {
+    "existing": {}
+  },
+  "atlas": {
+    "image": "materials-v1.png",
+    "sha256": "134ab37377600dc1f1e74ef2fd81c74535b47d0c37414cc25f49ace0c769aaf1",
+    "columns": 4,
+    "rows": 4,
+    "inset": 0.025,
+    "tiles": {
+      "crust": [
+        0,
+        0
+      ],
+      "crumb": [
+        1,
+        0
+      ],
+      "beef_crust": [
+        2,
+        0
+      ],
+      "beef_inside": [
+        3,
+        0
+      ],
+      "fish": [
+        0,
+        1
+      ],
+      "fish_grill": [
+        1,
+        1
+      ],
+      "clay": [
+        2,
+        1
+      ],
+      "broth": [
+        3,
+        1
+      ],
+      "potato": [
+        0,
+        2
+      ],
+      "squash": [
+        1,
+        2
+      ],
+      "corn": [
+        2,
+        2
+      ],
+      "fat_meat": [
+        3,
+        2
+      ],
+      "nut": [
+        1,
+        3
+      ]
+    }
+  },
+  "prompt_files": [
+    "PROMPT.txt"
+  ],
+  "generator_dependencies": [
+    "generate_inventory_food_models.py"
+  ],
+  "families": {
+    "bread": {
+      "parts": [
+        {
+          "kind": "loft",
+          "part": "bread_crust",
+          "material": "crust",
+          "rows": [
+            [
+              0.0,
+              10,
+              7,
+              18.700000000000003,
+              13.200000000000001
+            ],
+            [
+              3.3000000000000003,
+              10,
+              7,
+              24.200000000000003,
+              16.5
+            ],
+            [
+              14.3,
+              10,
+              7,
+              23.1,
+              15.400000000000002
+            ],
+            [
+              25.3,
+              10,
+              7,
+              16.5,
+              12.100000000000001
+            ],
+            [
+              30.800000000000004,
+              10,
+              7,
+              5.5,
+              4.4
+            ]
+          ],
+          "segments": 24,
+          "exponent": 1,
+          "uv_projection": "box"
+        },
+        {
+          "kind": "prism",
+          "part": "cut_slice_crust",
+          "material": "crust",
+          "outline": [
+            [
+              -18,
+              -8
+            ],
+            [
+              -20,
+              1
+            ],
+            [
+              -14,
+              11
+            ],
+            [
+              0,
+              16
+            ],
+            [
+              15,
+              10
+            ],
+            [
+              19,
+              0
+            ],
+            [
+              16,
+              -9
+            ]
+          ],
+          "center": [
+            -19,
+            -15,
+            10
+          ],
+          "depth": 7,
+          "uv_projection": "box"
+        },
+        {
+          "kind": "prism",
+          "part": "cut_slice_crumb",
+          "material": "crumb",
+          "outline": [
+            [
+              -16,
+              -7
+            ],
+            [
+              -18,
+              1
+            ],
+            [
+              -12,
+              9
+            ],
+            [
+              0,
+              14
+            ],
+            [
+              13,
+              8
+            ],
+            [
+              17,
+              0
+            ],
+            [
+              14,
+              -7
+            ]
+          ],
+          "center": [
+            -19,
+            -18.7,
+            10
+          ],
+          "depth": 0.7,
+          "uv_projection": "box"
+        }
+      ]
+    },
+    "roast_beef": {
+      "parts": [
+        {
+          "kind": "loft",
+          "part": "earthenware_plate",
+          "material": "clay",
+          "rows": [
+            [
+              0,
+              0,
+              0,
+              28,
+              21
+            ],
+            [
+              1,
+              0,
+              0,
+              37,
+              28
+            ],
+            [
+              4,
+              0,
+              0,
+              42,
+              32
+            ],
+            [
+              5,
+              0,
+              0,
+              42,
+              32
+            ],
+            [
+              5,
+              0,
+              0,
+              38,
+              29
+            ],
+            [
+              2,
+              0,
+              0,
+              27,
+              20
+            ]
+          ],
+          "segments": 32,
+          "exponent": 1,
+          "uv_projection": "box"
+        },
+        {
+          "kind": "loft",
+          "part": "beef_crust",
+          "material": "beef_crust",
+          "rows": [
+            [
+              2.0,
+              0,
+              6,
+              21.849999999999998,
+              12.35
+            ],
+            [
+              4.85,
+              0,
+              6,
+              25.65,
+              14.25
+            ],
+            [
+              15.299999999999999,
+              0,
+              6,
+              23.75,
+              13.299999999999999
+            ],
+            [
+              22.9,
+              0,
+              6,
+              19.0,
+              9.5
+            ],
+            [
+              25.75,
+              0,
+              6,
+              9.5,
+              5.699999999999999
+            ]
+          ],
+          "segments": 24,
+          "exponent": 0.55,
+          "uv_projection": "box"
+        },
+        {
+          "kind": "prism",
+          "part": "beef_slice_0",
+          "material": "beef_inside",
+          "outline": [
+            [
+              -19.95,
+              -3.8
+            ],
+            [
+              -22.799999999999997,
+              0.0
+            ],
+            [
+              -19.0,
+              4.75
+            ],
+            [
+              -8.549999999999999,
+              6.6499999999999995
+            ],
+            [
+              11.399999999999999,
+              5.699999999999999
+            ],
+            [
+              20.9,
+              1.9
+            ],
+            [
+              19.95,
+              -3.8
+            ]
+          ],
+          "center": [
+            0.0,
+            -11.099999999999998,
+            10.549999999999999
+          ],
+          "depth": 3.8,
+          "uv_projection": "box"
+        },
+        {
+          "kind": "prism",
+          "part": "beef_slice_1",
+          "material": "beef_inside",
+          "outline": [
+            [
+              -19.95,
+              -3.8
+            ],
+            [
+              -22.799999999999997,
+              0.0
+            ],
+            [
+              -19.0,
+              4.75
+            ],
+            [
+              -8.549999999999999,
+              6.6499999999999995
+            ],
+            [
+              11.399999999999999,
+              5.699999999999999
+            ],
+            [
+              20.9,
+              1.9
+            ],
+            [
+              19.95,
+              -3.8
+            ]
+          ],
+          "center": [
+            2.8499999999999996,
+            -18.7,
+            9.6
+          ],
+          "depth": 3.8,
+          "uv_projection": "box"
+        }
+      ]
+    },
+    "roast_fish": {
+      "parts": [
+        {
+          "kind": "loft",
+          "part": "earthenware_plate",
+          "material": "clay",
+          "rows": [
+            [
+              0,
+              0,
+              0,
+              28,
+              21
+            ],
+            [
+              1,
+              0,
+              0,
+              37,
+              28
+            ],
+            [
+              4,
+              0,
+              0,
+              42,
+              32
+            ],
+            [
+              5,
+              0,
+              0,
+              42,
+              32
+            ],
+            [
+              5,
+              0,
+              0,
+              38,
+              29
+            ],
+            [
+              2,
+              0,
+              0,
+              27,
+              20
+            ]
+          ],
+          "segments": 32,
+          "exponent": 1,
+          "uv_projection": "box"
+        },
+        {
+          "kind": "loft",
+          "part": "hake_fillet",
+          "material": "fish",
+          "rows": [
+            [
+              2,
+              0,
+              0,
+              26,
+              11
+            ],
+            [
+              4,
+              0,
+              0,
+              32,
+              14
+            ],
+            [
+              10,
+              0,
+              0,
+              29,
+              12
+            ],
+            [
+              13,
+              0,
+              0,
+              18,
+              8
+            ]
+          ],
+          "segments": 24,
+          "exponent": 0.65,
+          "uv_projection": "box"
+        },
+        {
+          "kind": "loft",
+          "part": "grilled_top",
+          "material": "fish_grill",
+          "rows": [
+            [
+              11.5,
+              0,
+              0,
+              24,
+              10
+            ],
+            [
+              13.5,
+              0,
+              0,
+              18,
+              8
+            ],
+            [
+              14,
+              0,
+              0,
+              5,
+              2
+            ]
+          ],
+          "segments": 24,
+          "exponent": 1,
+          "uv_projection": "box"
+        }
+      ]
+    },
+    "puchero": {
+      "parts": [
+        {
+          "kind": "loft",
+          "part": "earthenware_bowl",
+          "material": "clay",
+          "rows": [
+            [
+              0,
+              0,
+              0,
+              24,
+              20
+            ],
+            [
+              2,
+              0,
+              0,
+              28,
+              24
+            ],
+            [
+              13,
+              0,
+              0,
+              37,
+              31
+            ],
+            [
+              16,
+              0,
+              0,
+              39,
+              33
+            ],
+            [
+              17,
+              0,
+              0,
+              38,
+              32
+            ],
+            [
+              16,
+              0,
+              0,
+              35,
+              29
+            ],
+            [
+              5,
+              0,
+              0,
+              26,
+              22
+            ]
+          ],
+          "segments": 32,
+          "exponent": 1,
+          "uv_projection": "box"
+        },
+        {
+          "kind": "loft",
+          "part": "broth",
+          "material": "broth",
+          "rows": [
+            [
+              5,
+              0,
+              0,
+              26,
+              22
+            ],
+            [
+              12,
+              0,
+              0,
+              33,
+              28
+            ]
+          ],
+          "segments": 32,
+          "exponent": 1,
+          "uv_projection": "box"
+        },
+        {
+          "kind": "loft",
+          "part": "stew_chunk_0",
+          "material": "potato",
+          "rows": [
+            [
+              12,
+              -15,
+              -12,
+              7.0,
+              5.6
+            ],
+            [
+              15,
+              -15,
+              -12,
+              10,
+              8
+            ],
+            [
+              21,
+              -14,
+              -13,
+              6.0,
+              4.0
+            ]
+          ],
+          "segments": 8,
+          "exponent": 0.8,
+          "uv_projection": "box"
+        },
+        {
+          "kind": "loft",
+          "part": "stew_chunk_1",
+          "material": "squash",
+          "rows": [
+            [
+              12,
+              12,
+              -15,
+              5.6,
+              4.199999999999999
+            ],
+            [
+              15,
+              12,
+              -15,
+              8,
+              6
+            ],
+            [
+              21,
+              13,
+              -16,
+              4.8,
+              3.0
+            ]
+          ],
+          "segments": 8,
+          "exponent": 0.8,
+          "uv_projection": "box"
+        },
+        {
+          "kind": "loft",
+          "part": "stew_chunk_2",
+          "material": "potato",
+          "rows": [
+            [
+              12,
+              20,
+              7,
+              4.8999999999999995,
+              5.6
+            ],
+            [
+              15,
+              20,
+              7,
+              7,
+              8
+            ],
+            [
+              21,
+              21,
+              6,
+              4.2,
+              4.0
+            ]
+          ],
+          "segments": 8,
+          "exponent": 0.8,
+          "uv_projection": "box"
+        },
+        {
+          "kind": "loft",
+          "part": "stew_chunk_3",
+          "material": "fat_meat",
+          "rows": [
+            [
+              12,
+              -19,
+              10,
+              6.3,
+              4.8999999999999995
+            ],
+            [
+              15,
+              -19,
+              10,
+              9,
+              7
+            ],
+            [
+              21,
+              -18,
+              9,
+              5.3999999999999995,
+              3.5
+            ]
+          ],
+          "segments": 8,
+          "exponent": 0.8,
+          "uv_projection": "box"
+        },
+        {
+          "kind": "loft",
+          "part": "stew_chunk_4",
+          "material": "squash",
+          "rows": [
+            [
+              12,
+              0,
+              -2,
+              5.6,
+              5.6
+            ],
+            [
+              15,
+              0,
+              -2,
+              8,
+              8
+            ],
+            [
+              21,
+              1,
+              -3,
+              4.8,
+              4.0
+            ]
+          ],
+          "segments": 8,
+          "exponent": 0.8,
+          "uv_projection": "box"
+        },
+        {
+          "kind": "loft",
+          "part": "stew_chunk_5",
+          "material": "fat_meat",
+          "rows": [
+            [
+              12,
+              2,
+              17,
+              4.8999999999999995,
+              4.199999999999999
+            ],
+            [
+              15,
+              2,
+              17,
+              7,
+              6
+            ],
+            [
+              21,
+              3,
+              16,
+              4.2,
+              3.0
+            ]
+          ],
+          "segments": 8,
+          "exponent": 0.8,
+          "uv_projection": "box"
+        },
+        {
+          "kind": "loft",
+          "part": "corn_piece",
+          "material": "corn",
+          "rows": [
+            [
+              11,
+              7,
+              8,
+              7,
+              6
+            ],
+            [
+              23,
+              7,
+              8,
+              7,
+              6
+            ],
+            [
+              24,
+              7,
+              8,
+              6,
+              5
+            ]
+          ],
+          "segments": 16,
+          "exponent": 1,
+          "uv_projection": "box"
+        }
+      ]
+    },
+    "ration": {
+      "parts": [
+        {
+          "kind": "loft",
+          "part": "ration_loaf_crust",
+          "material": "crust",
+          "rows": [
+            [
+              0.0,
+              16,
+              13,
+              14.45,
+              10.2
+            ],
+            [
+              2.55,
+              16,
+              13,
+              18.7,
+              12.75
+            ],
+            [
+              11.049999999999999,
+              16,
+              13,
+              17.849999999999998,
+              11.9
+            ],
+            [
+              19.55,
+              16,
+              13,
+              12.75,
+              9.35
+            ],
+            [
+              23.8,
+              16,
+              13,
+              4.25,
+              3.4
+            ]
+          ],
+          "segments": 24,
+          "exponent": 1,
+          "uv_projection": "box"
+        },
+        {
+          "kind": "prism",
+          "part": "ration_beef_crust",
+          "material": "beef_crust",
+          "outline": [
+            [
+              -25,
+              -4
+            ],
+            [
+              -28,
+              3
+            ],
+            [
+              -12,
+              9
+            ],
+            [
+              16,
+              8
+            ],
+            [
+              24,
+              2
+            ],
+            [
+              20,
+              -5
+            ]
+          ],
+          "center": [
+            -8,
+            -12,
+            5
+          ],
+          "depth": 8,
+          "uv_projection": "box"
+        },
+        {
+          "kind": "prism",
+          "part": "ration_beef_cut",
+          "material": "beef_inside",
+          "outline": [
+            [
+              -23,
+              -3
+            ],
+            [
+              -25,
+              2
+            ],
+            [
+              -11,
+              7
+            ],
+            [
+              15,
+              6
+            ],
+            [
+              21,
+              1
+            ],
+            [
+              18,
+              -3
+            ]
+          ],
+          "center": [
+            -8,
+            -16.3,
+            5
+          ],
+          "depth": 0.6,
+          "uv_projection": "box"
+        },
+        {
+          "kind": "loft",
+          "part": "ration_nut_0",
+          "material": "nut",
+          "rows": [
+            [
+              0,
+              -23,
+              7,
+              5,
+              4
+            ],
+            [
+              4,
+              -23,
+              7,
+              7,
+              5
+            ],
+            [
+              8,
+              -23,
+              7,
+              3,
+              2
+            ]
+          ],
+          "segments": 10,
+          "exponent": 1,
+          "uv_projection": "box"
+        },
+        {
+          "kind": "loft",
+          "part": "ration_nut_1",
+          "material": "nut",
+          "rows": [
+            [
+              0,
+              -16,
+              19,
+              4.0,
+              3.2
+            ],
+            [
+              3.2,
+              -16,
+              19,
+              5.6000000000000005,
+              4.0
+            ],
+            [
+              6.4,
+              -16,
+              19,
+              2.4000000000000004,
+              1.6
+            ]
+          ],
+          "segments": 10,
+          "exponent": 1,
+          "uv_projection": "box"
+        },
+        {
+          "kind": "loft",
+          "part": "ration_nut_2",
+          "material": "nut",
+          "rows": [
+            [
+              0,
+              -29,
+              -2,
+              3.75,
+              3.0
+            ],
+            [
+              3.0,
+              -29,
+              -2,
+              5.25,
+              3.75
+            ],
+            [
+              6.0,
+              -29,
+              -2,
+              2.25,
+              1.5
+            ]
+          ],
+          "segments": 10,
+          "exponent": 1,
+          "uv_projection": "box"
+        },
+        {
+          "kind": "loft",
+          "part": "ration_nut_3",
+          "material": "nut",
+          "rows": [
+            [
+              0,
+              -16,
+              -26,
+              3.75,
+              3.0
+            ],
+            [
+              3.0,
+              -16,
+              -26,
+              5.25,
+              3.75
+            ],
+            [
+              6.0,
+              -16,
+              -26,
+              2.25,
+              1.5
+            ]
+          ],
+          "segments": 10,
+          "exponent": 1,
+          "uv_projection": "box"
+        },
+        {
+          "kind": "loft",
+          "part": "ration_nut_4",
+          "material": "nut",
+          "rows": [
+            [
+              0,
+              -3,
+              -26,
+              3.25,
+              2.6
+            ],
+            [
+              2.6,
+              -3,
+              -26,
+              4.55,
+              3.25
+            ],
+            [
+              5.2,
+              -3,
+              -26,
+              1.9500000000000002,
+              1.3
+            ]
+          ],
+          "segments": 10,
+          "exponent": 1,
+          "uv_projection": "box"
+        }
+      ]
+    }
+  },
+  "variants": {
+    "ration": {
+      "family": "ration",
+      "tier": "existing",
+      "icon": "src/graphics/caelum/icons/ca_food_ration.png",
+      "icon_sha256": "43c6d9a1aeb38f49c255e08108d6ef3d77b5232bf65f42045eb686e9f2a1027a",
+      "additional_bindings": [
+        {
+          "class": "CaelumMazeFood",
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "inventory": true
+        }
+      ],
+      "class": "CaelumFoodRation",
+      "sprite": "CFOO"
+    },
+    "bread": {
+      "family": "bread",
+      "tier": "existing",
+      "icon": "src/graphics/caelum/icons/meals/bread.png",
+      "icon_sha256": "de1176bce9ec38a507a706ca7e9925f26cede260bea1982d057dc5ee4d2d6b87",
+      "additional_bindings": [
+        {
+          "class": "CaelumDiningBread",
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "inventory": false
+        }
+      ],
+      "class": "CaelumBread",
+      "sprite": "FBRD"
+    },
+    "roast_beef": {
+      "family": "roast_beef",
+      "tier": "existing",
+      "icon": "src/graphics/caelum/icons/meals/roast_beef.png",
+      "icon_sha256": "060c7276159eeb445144844abf4161eadfa174955a5dc1882ddbd184f4f163d3",
+      "additional_bindings": [
+        {
+          "class": "CaelumDiningRoastBeef",
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "inventory": false
+        }
+      ],
+      "class": "CaelumRoastBeef",
+      "sprite": "FRBF"
+    },
+    "roast_fish": {
+      "family": "roast_fish",
+      "tier": "existing",
+      "icon": "src/graphics/caelum/icons/meals/roast_fish.png",
+      "icon_sha256": "b6a6b988a16d43f7887e80b20320aeb95309dfcf0977ebe0467d2892f13d34d1",
+      "additional_bindings": [
+        {
+          "class": "CaelumDiningRoastFish",
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "inventory": false
+        }
+      ],
+      "class": "CaelumRoastFish",
+      "sprite": "FRFS"
+    },
+    "puchero": {
+      "family": "puchero",
+      "tier": "existing",
+      "icon": "src/graphics/caelum/icons/meals/puchero.png",
+      "icon_sha256": "ccf575b0cce0a8f4a84ef0b18afd17962219140bbf4b0b4a43f2013fdfff7b34",
+      "additional_bindings": [
+        {
+          "class": "CaelumDiningPuchero",
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "inventory": false
+        }
+      ],
+      "class": "CaelumPuchero",
+      "sprite": "FPCH"
+    }
+  }
+}

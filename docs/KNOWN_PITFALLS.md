@@ -26,6 +26,15 @@ paired edges, opposite directed edge use and positive volume, then inspect
 front/side/rear and close native captures. Pure geometry checks cannot detect an
 unattached ornament or unreadable material. Author art acceptance remains separate.
 
+Food follow-up: assets/validation_v5_17_1/food-evidence/SUMMARY.json records raised
+bread-cut tubes that look like spikes despite valid closed geometry; painted
+scoring suffices for shallow cuts. Inspect slice side UVs independently of their
+front faces. Flat dishes use a recorded icon-width footprint convention instead
+of upright icon height. Before binding a reused mesh to a display actor, inspect
+its native setup: Dining.RefreshDisplays already copies the item's actor scale,
+so applying another .25 in MODELDEF would shrink it twice. Native table captures
+and ownership/scale checks verify the actual path; ordinary author review stays pending.
+
 ## CA-KP-226 - Rebuild native model selections after loading
 
 Status/evidence: ENGINE-VERIFIED, 2026-11-13. Issue: #458.

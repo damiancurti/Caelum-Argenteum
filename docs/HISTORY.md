@@ -4,6 +4,16 @@ Documentation version: **5.17.1** - 2026-11-13.
 
 ## 5.17.1 - Initial inventory model coverage (#647, 2026-11-13, in progress)
 
+Added five closed food models for six inventory classes and four prepared table
+displays, preserving approved #410 icons, portions, recipes and native lots.
+Owned built-in ImageGen material source, prompt and references are retained under
+assets/source/art/inventory_models_647/food. Native visual revision removes
+raised bread-cut tubes and fixes stretched slice-side UVs. The 18,167-entry
+complete package passed 608 assertions across five fresh/old-save/reload/rollback
+runs, including food-lot chronology and actual table ownership/scale. ASSETS and
+validation_v5_17_1/food-evidence/SUMMARY.json retain measurements and limits.
+CA647-FOOD-01 remains pending; raw ingredients and other inventory art remain open.
+
 Added explicit 3D drops for the six existing bottle/canteen classes. Five new
 closed meshes follow the owned green/amber glass, leather and wicker references;
 the large canteen reuses existing dining geometry/UVs in a normalized copy.

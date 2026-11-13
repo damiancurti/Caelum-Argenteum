@@ -29,7 +29,9 @@ def validate(root=ROOT, category='consumables', definition_name='inventory_consu
                 errors.append('Inventory consumables: missing or stale runtime ' + name)
         definition = (root / 'src/caelum/data' / definition_name).read_text(encoding='utf-8')
         actual = re.findall(r'\bModel\s+(\w+)\s*\{', definition)
-        expected = [item['class'] for item in config['variants'].values()] + [item['class'] for item in config.get('reused_variants', [])]
+        expected = [kind for item in config['variants'].values() for kind in
+                    [item['class'], *[binding['class'] for binding in item.get('additional_bindings', [])]]]
+        expected += [item['class'] for item in config.get('reused_variants', [])]
         if actual != expected or len(set(actual)) != len(expected):
             errors.append('Inventory consumables: explicit class coverage differs')
         for name, record in report['variants'].items():
