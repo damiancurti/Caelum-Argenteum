@@ -2,17 +2,21 @@
 
 Documentation version: **5.16.3** - 2026-11-12.
 
-## 5.16.3 - Nahuelito model pilot (#455)
+## 5.16.3 - Folklore combat classes and Nahuelito pilot (#455)
 
 The first actual3D folklore pilot has40 idle/swim frames, editable geometry/motion
 controls and a neutral OBJ. Binary checks, repeatable generation and native
 single-instance fresh/reload pass. CA455-VIS-01 remains pending. The author approved provisional Mandinga statistics and current melee/fire
 projectile/breath, hostility and available-potion loot for new creatures on
 2026-11-12. assets/bestiary/BEHAVIOR.json records that shared template while
-protecting Rulo, existing Mandingas and Zupay. Implementation, final appearance
-and encounters remain open; do not infer collision from visual scale.
+protecting Rulo, existing Mandingas and Zupay. Its 56 unplaced classes now inherit
+that template without copied balance or new saved fields. Final appearance and
+encounters remain open; do not infer collision from visual scale.
 Remaining 57 models, action coverage required by approved behavior, aquatic AI,
 regional placement and campaign unique-instance persistence remain unfinished.
+All 56 profiles and finite inventories pass native fresh/reload checks; 18 forced
+action checks and 56 native death drops pass with the limits in combat/SUMMARY.json.
+Normal encounters, breath contact damage and visual acceptance remain separate.
 
 ## 5.16.2 - Approved sewer and Barracas redesign (#454)
 
@@ -86,7 +90,7 @@ There is no new actionable gameplay test for pending_test.txt in this delivery.
 | #452 | Regional chapter allocation approved 2026-11-12; opening graph audited. Basic finale and all-78/+250 requirements approved; one eligible participant admits the consenting group. Geographic/ability gates and exact revelations remain open. |
 | #453 | Catalogue complete for review: 58 verified references, all regional assignments approved; source/size qualifications retained. Actual 3D production belongs to the separate creature/art delivery. |
 | #454 | Approved sewer v2/Barracas v1 references recovered; four city gates and siege adaptation explicitly selected. Implement separately with ordinary routes, services and active/hub-save compatibility. |
-| #455 | Mandinga statistics/attacks/hostility/potion loot approved provisionally for new creatures; implement the shared template while preserving races/protected profiles. Nahuelito visual pilot awaits review; encounters and campaign uniqueness remain open. |
+| #455 | 56 unplaced classes inherit the approved Mandinga combat template, preserving taxonomy/protected profiles. Nahuelito visual pilot awaits review; remaining models, encounters and campaign uniqueness remain open. |
 | #456 | Assign the remaining 75 essences; preserve IDs 0/36/60, personal acquisition, interruption recovery and ability-gate reachability. |
 | #457 | Author memories, revelations, chapter ends and Selene encounter; retain Zupay's Chapter I retreat/Chapter II death boundary. |
 

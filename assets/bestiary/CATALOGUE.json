@@ -47,11 +47,15 @@
       },
       "source_notes": "Una referencia visual representativa del grupo.",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary001",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-002",
@@ -81,11 +85,15 @@
       },
       "source_notes": "Una referencia visual representativa del grupo.",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary002",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-003",
@@ -115,11 +123,15 @@
       },
       "source_notes": "",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary003",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-004",
@@ -149,11 +161,15 @@
       },
       "source_notes": "",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary004",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-005",
@@ -186,11 +202,15 @@
         "class": "CaelumRulo",
         "contract": "Rulo remains the named Ucumar NPC; the repeatable species does not duplicate him."
       },
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary005",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-006",
@@ -220,11 +240,15 @@
       },
       "source_notes": "",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary006",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-007",
@@ -253,11 +277,15 @@
       },
       "source_notes": "",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary007",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-008",
@@ -286,11 +314,15 @@
       },
       "source_notes": "",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary008",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-009",
@@ -319,11 +351,15 @@
       },
       "source_notes": "",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary009",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-010",
@@ -352,11 +388,15 @@
       },
       "source_notes": "",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary010",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-011",
@@ -386,11 +426,15 @@
       },
       "source_notes": "",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary011",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-012",
@@ -419,11 +463,15 @@
       },
       "source_notes": "",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary012",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-013",
@@ -452,11 +500,15 @@
       },
       "source_notes": "",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary013",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-014",
@@ -485,11 +537,15 @@
       },
       "source_notes": "",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary014",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-015",
@@ -518,11 +574,15 @@
       },
       "source_notes": "",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary015",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-016",
@@ -551,11 +611,15 @@
       },
       "source_notes": "",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary016",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-017",
@@ -584,11 +648,15 @@
       },
       "source_notes": "Seres de la siesta; variantes regionales.",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary017",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-018",
@@ -692,11 +760,15 @@
       },
       "source_notes": "Gigante.",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary020",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-021",
@@ -725,11 +797,15 @@
       },
       "source_notes": "Entidad subterránea con manifestación física.",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary021",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-022",
@@ -758,11 +834,15 @@
       },
       "source_notes": "Individuos diferenciados; no equivale a población ilimitada.",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary022",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-023",
@@ -791,11 +871,15 @@
       },
       "source_notes": "Figura corpulenta vinculada con Xalpen.",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary023",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-024",
@@ -824,11 +908,15 @@
       },
       "source_notes": "",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary024",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-025",
@@ -857,11 +945,15 @@
       },
       "source_notes": "Bailarín ritual.",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary025",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-026",
@@ -890,11 +982,15 @@
       },
       "source_notes": "Figura cómica o engañosa.",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary026",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-027",
@@ -925,11 +1021,15 @@
       },
       "source_notes": "Forma central definida; efectos luminosos pueden agregarse en producción.",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary027",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-028",
@@ -958,11 +1058,15 @@
       },
       "source_notes": "",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary028",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-029",
@@ -991,11 +1095,15 @@
       },
       "source_notes": "",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary029",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-030",
@@ -1025,11 +1133,15 @@
       },
       "source_notes": "",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary030",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-031",
@@ -1061,11 +1173,15 @@
       },
       "source_notes": "",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary031",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-032",
@@ -1095,11 +1211,15 @@
       },
       "source_notes": "",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary032",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-033",
@@ -1128,11 +1248,15 @@
       },
       "source_notes": "",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary033",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-034",
@@ -1161,11 +1285,15 @@
       },
       "source_notes": "",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary034",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-035",
@@ -1194,11 +1322,15 @@
       },
       "source_notes": "",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary035",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-036",
@@ -1227,11 +1359,15 @@
       },
       "source_notes": "",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary036",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-037",
@@ -1260,11 +1396,15 @@
       },
       "source_notes": "Guardián de fauna de llanuras; cambia de forma.",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary037",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-038",
@@ -1293,11 +1433,15 @@
       },
       "source_notes": "Espíritu fluvial con forma de sirena en la tabla original; conservar la referencia visual recuperada.",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary038",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-039",
@@ -1326,11 +1470,15 @@
       },
       "source_notes": "Asociación folclórica recuperada: sierras de Guasayán. No constituye una asignación a un mapa.",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary039",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-040",
@@ -1359,11 +1507,15 @@
       },
       "source_notes": "Asociación folclórica recuperada: Ojo de Agua. No constituye una asignación a un mapa.",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary040",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-041",
@@ -1392,11 +1544,15 @@
       },
       "source_notes": "Dueño espiritual de los animales en la tradición qom.",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary041",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-042",
@@ -1425,11 +1581,15 @@
       },
       "source_notes": "Espíritu tehuelche del frío.",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary042",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-043",
@@ -1458,11 +1618,15 @@
       },
       "source_notes": "",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary043",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-044",
@@ -1492,11 +1656,15 @@
       },
       "source_notes": "",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary044",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-045",
@@ -1525,11 +1693,15 @@
       },
       "source_notes": "",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary045",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-046",
@@ -1558,11 +1730,15 @@
       },
       "source_notes": "",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary046",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-047",
@@ -1591,11 +1767,15 @@
       },
       "source_notes": "Referencia corregida: siete cabezas caninas. Sustituye la imagen anterior de cabezas reptilianas.",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary047",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-048",
@@ -1624,11 +1804,15 @@
       },
       "source_notes": "",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary048",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-049",
@@ -1657,11 +1841,15 @@
       },
       "source_notes": "",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary049",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-050",
@@ -1690,11 +1878,15 @@
       },
       "source_notes": "",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary050",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-051",
@@ -1724,11 +1916,15 @@
       },
       "source_notes": "",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary051",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-052",
@@ -1758,11 +1954,15 @@
       },
       "source_notes": "Serpiente con cabeza de perro.",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary052",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-053",
@@ -1791,11 +1991,15 @@
       },
       "source_notes": "Depredador acuático que envuelve a sus presas.",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary053",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-054",
@@ -1824,11 +2028,15 @@
       },
       "source_notes": "Criatura voladora hematófaga, de anatomía serpentiforme.",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary054",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-055",
@@ -1857,7 +2065,7 @@
       },
       "source_notes": "Gran criatura lacustre.",
       "protected_existing_identity": null,
-      "production_status": "unintegrated_model_pilot",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": "assets/bestiary/models/nahuelito/models/caelum/folklore/nahuelito/nahuelito.md3",
       "rig": "Procedural articulated mesh controls in DESIGN.json and generate_nahuelito_model.py; no skeleton/armature delivered",
@@ -1879,7 +2087,11 @@
         "author_accepted": false,
         "limits": "Visual pilot only. No statistics, collision, aquatic AI, encounter or campaign unique-instance authority.",
         "generator": "assets/generators/generate_nahuelito_model.py"
-      }
+      },
+      "actor_class": "CaelumBestiary055",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-056",
@@ -1908,11 +2120,15 @@
       },
       "source_notes": "Manifestación monstruosa vinculada con el viento.",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary056",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-057",
@@ -1941,11 +2157,15 @@
       },
       "source_notes": "Forma animal de oso hormiguero vinculada a nubes y rayos.",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary057",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     },
     {
       "id": "CA-FOLK-058",
@@ -1974,11 +2194,15 @@
       },
       "source_notes": "Manifestación de gran ave sobrenatural.",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "provisional_combat_unplaced",
       "engine_id": null,
       "mesh": null,
       "rig": null,
-      "animations": []
+      "animations": [],
+      "actor_class": "CaelumBestiary058",
+      "combat_template": "CaelumMandinga",
+      "combat_art": "inherited_Mandinga_placeholder",
+      "campaign_spawning": false
     }
   ]
 }

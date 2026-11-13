@@ -2,6 +2,21 @@
 
 Documentation version: **5.16.3** - 2026-11-12.
 
+## 5.16.3 / #455 - Provisional folklore combat templates
+
+The 56 new folklore classes inherit the current Mandinga statistics, melee,
+fire projectile/breath, hostility and available-potion loot approved by the author.
+The existing shared combat and demon services own all balance and finite stocks;
+no parallel formulas or per-species rules are introduced. The catalogue preserves
+their original species and population categories. The inherited body, sprites and
+armor/physiology adapter are temporary development defaults, not final anatomy.
+Existing Rulo, Mandinga and Zupay retain their implementations and narrative roles.
+
+These classes have no campaign placements or automatic spawning. They add no saved
+fields: native class/inventory persistence applies. The campaign must still supply
+authored encounter ownership, unique-instance guards and any required migration
+before enabling populations. A summon diagnostic does not establish those rules.
+
 ## 5.16.2 / #454 - Approved Barracas siege adaptation
 
 Known-only cartography selects revision4 factory/tower/stair/east-gate coordinates

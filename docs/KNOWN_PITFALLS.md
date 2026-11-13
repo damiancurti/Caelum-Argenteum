@@ -4,6 +4,26 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-224 - Profile isolation is not an attack or spawn-event fixture
+
+Status/evidence: ENGINE-VERIFIED, 2026-11-13. Issue/PR: #455/#644.
+Environment: GZDoom 4.14.2 on Windows 11, unpaused background at 5% audio.
+Evidence: assets/validation_v5_16_3/combat/SUMMARY.json and retained failed runs.
+
+CaelumDiagnosticPassiveAI does not freeze native state actions and deliberately
+blocks demon breath. A crowded profile comparison therefore cannot count every
+spawned projectile as one selected actor's attack. Use a fresh isolated attacker,
+its own projectile counter and an unchanged native Mandinga control. Wait for
+native initialization before reading derived maxima, and for actual perception
+before forcing a ranged state. Look can discard an inert fixture target; that
+does not prove an attack-service failure. Report forced-state evidence separately
+from ordinary encounter AI and breath contact damage.
+
+WorldThingSpawned notifications can arrive after the synchronous death call. A
+collection flag scoped only to that call misses valid drops. Retain the observer
+through subsequent ticks, then verify world identity, finite stock and replay/load
+guards. The fixture observes 56 owned deaths; no production scan or rule changes.
+
 ## CA-KP-223 - Map installation must migrate geometry-dependent catalogues
 
 Status/evidence: ENGINE-VERIFIED,2026-11-13. Issue/PR: #454/#643.

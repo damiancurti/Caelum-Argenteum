@@ -37,9 +37,21 @@ or encounter-scale performance acceptance is inferred from this visual test.
 
 The author subsequently approved provisional Mandinga statistics and the current
 Mandinga attacks, hostility and available-potion loot for new folklore creatures.
-BEHAVIOR.json records this decision without activating new actors; species and
-protected Rulo/Mandinga/Zupay profiles remain distinct. The shared template still
-needs implementation and does not supply encounter rosters or visual acceptance.
+BEHAVIOR.json now generates 56 unplaced classes in CaelumBestiaryCombat.zs,
+excluding the existing Mandinga and Zupay references. Repeatable Ucumar is distinct
+from Rulo. Source names, taxonomy and population categories remain available;
+LANGUAGE contains generated ES/EN names, preserving folklore proper names.
+`python assets/generators/generate_bestiary_actors.py` rebuilds the classes/names;
+then run `python build_dialogue_index.py build`. Both generators support checks,
+and project validation rejects stale outputs. The source catalogue remains the
+identity authority, with only translated descriptive names in BEHAVIOR.json.
+
+The classes inherit Mandinga sprites, collision and armor/thermal/altitude adapter
+as development placeholders. They do not integrate the Nahuelito mesh, authorize
+species-specific physiology or add playable races. No encounters or campaign
+unique-instance ownership are supplied. Native evidence for profiles, actions and
+finite inventory is kept separately from the visual pilot under
+assets/validation_v5_16_3/combat; neither constitutes author visual acceptance.
 
 ## 5.16.2 - Approved map references and preserved sewer sources (#454)
 

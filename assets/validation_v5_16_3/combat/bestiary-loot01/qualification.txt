@@ -1,0 +1,1 @@
+Fixture observer missed deferred spawn notifications; native stock debit passed.

@@ -12,8 +12,10 @@ validate it, then rebuild with `run_dev.bat` as described below.
 The [58-reference folklore catalogue](assets/bestiary/CATALOGUE.json) is imported
 under #453 with original images, verified provenance and all 58 regional
 assignments approved. #455 adds an unintegrated Nahuelito model pilot with 40
-idle/swim frames and native save/reload evidence. The other 57 models and creature
-behavior remain unfinished; [ASSETS](docs/ASSETS.md) records sources and limits.
+idle/swim frames and native save/reload evidence. It also adds 56 unplaced combat
+classes inheriting the approved provisional Mandinga profile, with bilingual names
+and source species identities. The other 57 models, encounters and campaign
+uniqueness remain unfinished; [ASSETS](docs/ASSETS.md) records sources and limits.
 
 V5.16 is in campaign authoring, beginning with #452. The author approved the
 regional chapter allocation; [the planning graph](assets/campaign/PROGRESSION.json)

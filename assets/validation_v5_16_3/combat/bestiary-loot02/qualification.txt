@@ -1,0 +1,1 @@
+PASS: 56 native finite drops, repeated-call guards, fresh/reload.

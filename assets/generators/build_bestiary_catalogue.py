@@ -24,6 +24,9 @@ PRESENCE = {'Múltiples': ('repeatable', False), 'Único': ('unique', False),
 def assemble(root=ROOT):
     root = Path(root).resolve()
     decisions = json.loads((root / 'assets/bestiary/AUTHORING.json').read_text(encoding='utf-8'))
+    behavior_path = root / 'assets/bestiary/BEHAVIOR.json'
+    behavior = json.loads(behavior_path.read_text(encoding='utf-8')) if behavior_path.is_file() else {}
+    combat_ids = set(behavior.get('new_creature_reference_ids', [])) if behavior.get('runtime_enabled') else set()
     source = root / decisions['source_catalogue']
     original = json.loads(source.read_text(encoding='utf-8-sig'))
     source_root = source.parent.resolve()
@@ -39,6 +42,8 @@ def assemble(root=ROOT):
         raise ValueError('Source must preserve all 58 ordered package IDs')
     if set(decisions['campaign_regions']) - set(ids):
         raise ValueError('Region assignments contain unknown package IDs')
+    if combat_ids - set(ids) or combat_ids & {'CA-FOLK-018', 'CA-FOLK-019'}:
+        raise ValueError('Provisional actors contain unknown or protected reference IDs')
     pilots=decisions.get('model_pilots',{})
     if set(pilots)-set(ids):
         raise ValueError('Model pilots contain unknown package IDs')
@@ -98,6 +103,11 @@ def assemble(root=ROOT):
                     raise ValueError(f'Model pilot output checksum mismatch: {name}')
             rows[-1].update(production_status='unintegrated_model_pilot',mesh=pilot['mesh'],
                             rig=pilot['rig'],animations=pilot['animations'],visual_pilot=pilot)
+        if entry['id'] in combat_ids:
+            rows[-1].update(production_status='provisional_combat_unplaced',
+                            actor_class=behavior['class_prefix']+entry['id'].rsplit('-',1)[1],
+                            combat_template=behavior['template']['class'],
+                            combat_art='inherited_Mandinga_placeholder',campaign_spawning=False)
     result = {'schema_revision': 1, 'issue': 453, 'source_status': original['catalog_status'],
               'source_catalogue': decisions['source_catalogue'], 'source_sha256': hashlib.sha256(source.read_bytes()).hexdigest(),
               'missing_original_material': original['missing_original_material'],
@@ -107,7 +117,7 @@ def assemble(root=ROOT):
              'population_counts': dict(sorted(Counter(row['population'] for row in rows).items())),
              'rare_repeatable_references': sum(row['rare_reference'] for row in rows),
              'unassigned_regions': sum(row['campaign_regions'] is None for row in rows),
-             'runtime_actors_added': 0, 'meshes_delivered': len(pilots),
+             'runtime_actors_added': len(combat_ids), 'meshes_delivered': len(pilots),
              'unintegrated_visual_pilots': len(pilots)}
     return result, audit
 

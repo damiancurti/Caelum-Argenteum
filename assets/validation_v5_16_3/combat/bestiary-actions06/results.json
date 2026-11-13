@@ -1,0 +1,61 @@
+{
+  "issue": 455,
+  "scope": "Compare all approved provisional actors with the live Mandinga template.\n\nReuse the owned visual-pilot room, without a model overlay or campaign placement.\nPassive AI isolates profile/state/inventory equivalence; actual action execution\nand campaign population/visual acceptance require separate evidence.",
+  "runtime_sha256": "d38d43816e045a869eb60f5d08fcabffd40b4a607e8db29ff9646ef8ceeafc1c",
+  "fixture_sha256": "31824d8e73deb85cb48edf06ba30e83b3f2429d791b8678abc39a68f704b2f3e",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "actions",
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\work-455\\build\\issue455-combat02.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\work-455\\build\\bestiary-actions06\\profile-probe.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\work-455\\build\\bestiary-actions06\\actions\\session.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\work-455\\build\\bestiary-actions06\\actions",
+        "-window",
+        "-width",
+        "960",
+        "-height",
+        "720",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\work-455\\build\\bestiary-actions06\\actions\\engine.log",
+        "+map",
+        "CA455V",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\work-455\\build\\bestiary-actions06\\actions\\commands.cfg"
+      ],
+      "exit_code": 0,
+      "errors": [],
+      "passed": true,
+      "checks": [
+        "CA455 COMBAT PASS bodies=56 depleted=0 failures=0",
+        "CA455 ACTION PASS index=-1 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+        "CA455 ACTION PASS index=-1 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=0",
+        "CA455 ACTION PASS index=-1 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1",
+        "CA455 ACTION PASS index=0 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+        "CA455 ACTION PASS index=0 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=1",
+        "CA455 ACTION PASS index=0 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1",
+        "CA455 ACTION PASS index=2 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+        "CA455 ACTION PASS index=2 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=1",
+        "CA455 ACTION PASS index=2 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1",
+        "CA455 ACTION PASS index=5 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+        "CA455 ACTION PASS index=5 mode=1 damage=1 air=0 anima=1 projectiles=2 breath=0",
+        "CA455 ACTION PASS index=5 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1",
+        "CA455 ACTION PASS index=26 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+        "CA455 ACTION PASS index=26 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=1",
+        "CA455 ACTION PASS index=26 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1",
+        "CA455 ACTION PASS index=42 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+        "CA455 ACTION PASS index=42 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=1",
+        "CA455 ACTION PASS index=42 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1",
+        "CA455 ACTIONS PASS completed=18 failures=0"
+      ]
+    }
+  ]
+}

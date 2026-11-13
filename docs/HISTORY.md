@@ -2,7 +2,39 @@
 
 Documentation version: **5.16.3** - 2026-11-12.
 
-## 5.16.3 - Nahuelito visual model pilot (#455, 2026-11-12)
+## 5.16.3 - Folklore combat classes and model pilot (#455, 2026-11-12)
+
+2026-11-13 combat follow-up: 56 generated unplaced classes inherit the approved
+Mandinga template, preserving source species/population metadata and bilingual
+names. Existing Rulo/Mandinga/Zupay sources remain unchanged. There are no new
+saved fields, numeric balance copies, map placements or automatic spawners. The
+Mandinga body/art/physiology adapter remains a development placeholder; the
+Nahuelito model is still an independent visual pilot.
+
+Native profile checks cover all 56 classes and compare attributes, derived maxima,
+body, inherited action states, identity, hostility and finite potion inventories
+with an actual Mandinga. Eighteen isolated action checks cover five taxonomy
+representatives plus that control: melee damage/air, projectile emission/anima,
+and automatic breath initiation/anima pass. The fixture supplies targets, waits
+for native identification and invokes attack states. It does not establish normal
+encounter AI, breath contact damage, campaign population ownership or performance.
+
+Earlier action attempts exposed fixture defects: spectator projectile counts,
+passive AI blocking breath, attacks before native identification, a class/name
+ternary compile error, maxima read before the first native tick, and Look dropping
+the inert test target. The native Mandinga control reproduced the same failures.
+The final fixture isolates fresh attackers and uses each actor's projectile count;
+no production combat rule was changed. Failed runs and exact fixture sources are
+retained with the successful evidence under assets/validation_v5_16_3/combat.
+
+The final package also passes fresh/reload profile checks and 56 native death-drop
+checks: only the retained available potion family can drop, its finite stock is
+debited, and repeated death/service calls do not duplicate drops before or after
+load. The fixture deliberately supplies fatal health and removes the other two
+families; it does not claim a full combat encounter. The first loot observer missed
+deferred spawn notifications; keeping its collection window open fixed that test.
+Static validation, bilingual indexes and deterministic generation pass. No author
+acceptance was inferred and no outstanding manual test was removed.
 
 2026-11-13 dependency follow-up preserves the approved campaign decisions and
 city validation ancestry. Restored the two Spanish approval quotes in
@@ -40,9 +72,9 @@ or encounter-scale performance acceptance is inferred from this visual test.
 
 The author subsequently approved provisional Mandinga statistics and the current
 Mandinga attacks, hostility and available-potion loot for new folklore creatures.
-BEHAVIOR.json records this decision without activating new actors; species and
-protected Rulo/Mandinga/Zupay profiles remain distinct. The shared template still
-needs implementation and does not supply encounter rosters or visual acceptance.
+At that approval point BEHAVIOR.json recorded the decision without activating
+actors. The combat follow-up above implements the shared template; encounter
+rosters and visual acceptance remain outstanding.
 
 ## 5.16.2 - Sewer redesign slice (#454, in progress, 2026-11-12)
 

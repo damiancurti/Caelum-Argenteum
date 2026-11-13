@@ -1,8 +1,8 @@
 {
   "schema_revision": 1,
   "issue": 455,
-  "status": "author_approved_provisional_template",
-  "runtime_enabled": false,
+  "status": "approved_provisional_combat_classes_unplaced",
+  "runtime_enabled": true,
   "authority": [
     {
       "date": "2026-11-12",
@@ -92,5 +92,19 @@
     "Campaign unique-instance persistence and migration",
     "Final per-creature behavior replacing the provisional template",
     "Traversal/collision authoring appropriate to approved map geometry"
-  ]
+  ],
+  "campaign_spawning_enabled": false,
+  "class_prefix": "CaelumBestiary",
+  "implementation_contract": {
+    "statistics_and_actions": "Inherit the current CaelumMandinga implementation; no copied numerical balance.",
+    "taxonomy": "BestiaryReference/Taxonomy/Population retain source identities; no playable races are added.",
+    "temporary_body": "Inherited Mandinga collision, sprite states and armor/thermal/altitude adapter are development placeholders. Species-specific physiology, traversal, physical size and functional visual integration remain unauthored.",
+    "persistence": "No new saved fields or automatic spawner. Native actor persistence applies; campaign unique-instance/encounter ownership remains a separate pending integration.",
+    "protected": "No new actor for018 or019. Repeatable005 does not replace or spawn the named CaelumRulo."
+  },
+  "english_name_overrides": {
+    "CA-FOLK-001": "Witches and warlocks",
+    "CA-FOLK-002": "Witches and warlocks of the Salamanca",
+    "CA-FOLK-044": "Creole basilisk"
+  }
 }

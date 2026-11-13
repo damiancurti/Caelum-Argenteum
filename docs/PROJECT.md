@@ -2,7 +2,7 @@
 
 Documentation version: **5.16.3** - 2026-11-12.
 
-## 5.16.3 - First folklore model pilot (#455, in progress)
+## 5.16.3 - Folklore combat classes and model pilot (#455, in progress)
 
 Nahuelito (CA-FOLK-055) has an editable real 3D visual pilot, a native 40-frame
 idle/swim export and reproducible native fresh/reload evidence. ASSETS records
@@ -14,9 +14,11 @@ The V5.16 batch and final author terminal are not ready.
 
 The author subsequently approved provisional Mandinga statistics and the current
 Mandinga attacks, hostility and available-potion loot for new folklore creatures.
-BEHAVIOR.json records this decision without activating new actors; species and
-protected Rulo/Mandinga/Zupay profiles remain distinct. The shared template still
-needs implementation and does not supply encounter rosters or visual acceptance.
+BEHAVIOR.json now generates 56 unplaced classes inheriting that shared template;
+species and protected Rulo/Mandinga/Zupay profiles remain distinct. There are no
+new saved fields, automatic spawns or campaign placements. Source taxonomy is
+retained separately from the temporary Mandinga body and physiology adapter.
+Encounter rosters, campaign uniqueness and visual acceptance remain pending.
 
 ## 5.16.2 - Approved map redesign slices (#454, in progress)
 
