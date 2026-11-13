@@ -1,6 +1,74 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.16.5** - 2026-11-13.
+Documentation version: **5.17.0** - 2026-11-13.
+
+## 5.17.0 - Independent Domingo modules (#458, in progress)
+
+MODULES.json in assets/source/art/character_modules_458 assigns all 73 existing
+editable meshes exactly once to seven native slots: clothing, armor, cape, face,
+hair, weapon and shield. The authoritative accepted domingo.blend, its skin,
+MakeHuman CC0 provenance and original fixed MD3 remain unchanged. No new raster
+image or external artwork is introduced. All 24 actions and 375 poses reuse the
+existing rig and sampling; combinations are not baked into complete outfits.
+
+`blender -b --python assets/generators/export_character_modules.py -- --output build/modules --install`
+requires pinned Blender4.5.3. `--check --install` verifies export and installed
+bytes. The exporter compares all 4,008,375 quantized vertex/normal samples, UVs
+and 17,447 triangle indices against the accepted model. The seven surfaces total
+10,689 vertices and 17,447 triangles. EXPORT.json records inputs/output hashes;
+validate_character_modules.py checks source freshness, installed bindings and
+native containers during ordinary project validation without requiring Blender.
+
+src/caelum/data/domingo_modules.modeldef replaces only the opt-in pilot's fixed
+binding. CaelumDomingoModules exposes named slots and native hide/restore calls.
+The fixed source/runtime model remains for recovery and direct comparison.
+Hiding armor exposes the old model's incomplete underbody; it is a diagnostic,
+not a finished unequipped body. Other faces, hair, garments, equipment and species
+still need authored geometry and their own native/visual checks.
+
+The isolated preview compares fixed/modular frames, hides/restores equipment and
+checks a saved hair/shield selection. GZDoom4.14.2 resets the tested A_ChangeModel
+hide overrides on load: rebuild presentation once from saved authority using a transient
+readiness flag. Checking a saved selection integer alone missed this defect;
+the corrected fixture also compares rendered captures. Its state is not a new
+production character schema. Native evidence, performance and remaining limits
+are recorded under assets/validation_v5_17_0; author acceptance remains pending.
+
+The complete-package fixture also runs without a model overlay. For author review:
+`python assets/validation_v5_17_0/run_modular_preview.py --runtime build/caelum_argenteum_dev.pk3 --output build/modular-author-01 --interactive`.
+Use a fresh output directory for each run. F1/F2 compare fixed/modular, F3 hides
+sword/shield, F4 restores all, F5 hides hair/shield, F6 walks and F7 freezes.
+This permits focused inspection without installing Blender or changing equipment.
+
+Final package d4aa0aeb27ae9d37deb753f903a84e27937785f2fccb505fc30619283578b0e5
+contains18,131 source-identical entries. Repeat Blender export/check and the
+complete-runtime visual test pass. Reused native-player checks pass108 assertions
+across12 runs: movement/attack, rest, fallback, guard, saved jump, death, hub travel,
+old-save loading and rollback to the preceding package. These are fixture checks,
+not author acceptance. See evidence/SUMMARY.json for raw hashes and failed attempts.
+
+Recorded presentation requests on Windows11Pro26200, Ryzen95950X/32GB,
+RTX3070Ti, GZDoom4.14.2 Vulkan1280x720, uncapped/vsync-off, background5%audio:
+
+| Scene | Mean presents/s | p95 interval ms | p99 interval ms |
+| --- | ---: | ---: | ---: |
+| Studio,1 fixed figure | 1197.81 | 1.010 | 1.200 |
+| Studio,1 modular figure | 1168.09 | 1.053 | 1.258 |
+| Studio,64 fixed figures | 964.50 | 1.219 | 1.399 |
+| Studio,64 modular figures | 887.89 | 1.311 | 1.478 |
+| Mansion opening reference +1 modular figure | 62.51 | 18.342 | 20.132 |
+| Sewer reference +1 modular figure | 160.35 | 8.287 | 10.253 |
+| City ground view, added figure offscreen | 71.66 | 16.025 | 16.934 |
+| Approved siege view +1 modular figure | 1.54 | 775.549 | 800.396 |
+
+Each is one700-tic observation, not a repeatability estimate or GPU/display-scanout
+measurement. Studio figures have no combat or collision. Campaign NPCs retain
+their existing visuals; the extra figure is diagnostic only. Opening dialogue/HUD
+overlays remain, and the ground view leaves the figure outside the camera. The siege retains988 living
+attacker NPCs,601 defenders and the player; machines complete the approved attacker
+side cap. Severe siege rendering remains unresolved; this is not an all-3D crowd
+or completed production-budget acceptance. Native visual comparison captures use
+the separately recorded1520x825 inspection window.
 
 ## 5.16.5 - Finale condition data (#457)
 

@@ -1,0 +1,350 @@
+// Escenario del piloto sobre el jugador real.
+class CA283Probe : StaticEventHandler
+{
+    CaelumDomingoPilotPlayer User;
+    int Passed,Failed;
+    bool Ready;
+    CA283Camera Camera;
+    CaelumRestFurniture Furniture;
+    bool WalkSeen,RunSeen,AttackSeen;
+    Array<Actor> RenderProxies;
+    bool BenchActive;
+    int BenchSerial,BenchCount,BenchModel;
+    int ManualRest,ManualCamera;
+    bool Manual;
+    bool WatchingJump,SawPreparation,SawAir,SawLanding,SawMovingPreparation,SawGuardPreparation;
+    int JumpWatchStart,TakeoffDelay;
+    ui int SeenSerial,FrameCount;
+    ui double LastFrameMS,FrameSum,FrameMin,FrameMax;
+    void Check(bool ok,String text)
+    {if(ok)Passed++;else Failed++;Console.Printf("CA283 %s %s",ok?"PASS":"FAIL",text);}
+    override void UiTick()
+    {if(!Manual && Menu.GetCurrentMenu()!=null)Menu.GetCurrentMenu().Close();}
+    void Setup()
+    {
+        User=CaelumDomingoPilotPlayer(players[0].mo);
+        Check(User!=null,"opt-in native player subclass");if(User==null)return;
+        User.CharacterCreationComplete=true;User.CreationWizardOpen=false;
+        User.CharacterProfile.Race=CaelumConstants.RACE_HUMAN;
+        User.CharacterProfile.Sex=CaelumConstants.SEX_MALE;User.ApplyCharacterProfile();
+        User.CurrentSleep=User.CurrentLucidity=100;User.CurrentHunger=User.CurrentThirst=75;
+        User.bInvulnerable=true;User.Angle=180;
+        let session=new('CA259Session');session.Choice=4;session.Tier=1;session.Equip(User);
+        let item=CaelumEquipmentItem(Actor.Spawn('CaelumShieldPickup'));
+        item.EquipmentKind=CaelumConstants.EQUIPMENT_KIND_SHIELD;item.ItemType=CaelumConstants.SHIELD_TYPE_BUCKLER;item.Tier=1;
+        item.EquipmentSize=User.WeaponModel.Size;
+        item.Durability=User.ShieldModel.GetMaximumDurabilityFor(item.ItemType,item.Tier,item.EquipmentSize);
+        item.UnitWeight=User.ShieldModel.GetWeightFor(item.ItemType,item.Tier,item.EquipmentSize);
+        item.PickupDataInitialized=true;item.AcquisitionResolved=true;item.AttachToOwner(User);
+        User.EnsureEquipmentItemId(item);User.EquipmentSelectionItemId=item.ItemId;
+        User.EquipmentSelectionKind=CaelumConstants.EQUIPMENT_KIND_SHIELD;
+        User.RefreshEquipmentSelectionPreview();User.EquipSelectedNativeEquipment();
+        User.EquipmentMenuOpen=false;User.PersistCharacterState();
+        User.GetPersistentCharacterState(true).ProfileCommitted=true;
+        Check(item.Equipped && User.ShieldModel.Equipped,"native shield equipment");
+        Ready=true;User.UpdatePilotVisual();
+        Check(User.PilotBody!=null,"native MD3 body created");
+        Camera=CA283Camera(Actor.Spawn('CA283Camera',(180,0,User.Height*.55)));Camera.Angle=180;
+        User.Angle=0;players[0].camera=Camera;
+        Console.Printf("CA283 GEOMETRY height=%.4f scale=(%.4f,%.4f) sprite=%d",User.Height,User.Scale.X,User.Scale.Y,User.sprite);
+    }
+    override void WorldTick()
+    {
+        if(!Ready || User==null || User.PilotBody==null)return;
+        if(User.PilotBody.Pose==CaelumDomingoPilotFrames.WALK)WalkSeen=true;
+        if(User.PilotBody.Pose==CaelumDomingoPilotFrames.RUN)RunSeen=true;
+        if(User.PilotBody.Pose==CaelumDomingoPilotFrames.MELEE
+            || User.PilotBody.Pose==CaelumDomingoPilotFrames.MISSILE)AttackSeen=true;
+        if(WatchingJump)
+        {
+            if(User.PilotJumpPreparing)
+            {
+                SawPreparation=true;
+                if(User.Vel.XY.Length()>0)SawMovingPreparation=true;
+                if(User.CombatBlockModeActive)SawGuardPreparation=true;
+            }
+            if(User.Vel.Z>0 && !User.PilotJumpPreparing && !SawAir)
+            {SawAir=true;TakeoffDelay=level.time-User.PilotJumpStarted;}
+            if(User.PilotLanding)SawLanding=true;
+        }
+    }
+    void UpdateReviewCamera()
+    {
+        Camera.Subject=User;Camera.ReviewSlot=ManualCamera;Camera.FollowReview();
+    }
+    override void RenderOverlay(RenderEvent e)
+    {
+        if(BenchActive)
+        {
+            double now=MSTimeF();
+            if(SeenSerial!=BenchSerial)
+            {SeenSerial=BenchSerial;FrameCount=0;FrameSum=0;FrameMin=100000;FrameMax=0;LastFrameMS=0;}
+            if(LastFrameMS>0)
+            {
+                double ms=now-LastFrameMS;FrameCount++;FrameSum+=ms;
+                FrameMin=Min(FrameMin,ms);FrameMax=Max(FrameMax,ms);
+            }
+            LastFrameMS=now;
+        }
+        else if(LastFrameMS>0)
+        {
+            Console.Printf("CA283 RENDER count=%d model=%d frames=%d mean_ms=%.6f min_ms=%.6f max_ms=%.6f",
+                BenchCount,BenchModel,FrameCount,FrameSum/Max(1,FrameCount),FrameMin,FrameMax);
+            LastFrameMS=0;
+        }
+    }
+    void Benchmark(int count,bool model)
+    {
+        for(int i=0;i<RenderProxies.Size();i++)if(RenderProxies[i]!=null)RenderProxies[i].Destroy();
+        RenderProxies.Clear();BenchCount=count;BenchModel=int(model);
+        User.SetOrigin((-1024,0,0),false);User.bInvisible=true;
+        Camera.SetOrigin((0,0,65),false);Camera.Angle=0;Camera.Pitch=5;
+        int columns=int(Ceil(Sqrt(count)));
+        for(int i=0;i<count;i++)
+        {
+            let body=Actor.Spawn(model?'CA283ModelProxy':'CA283SpriteProxy',
+                (200+(i/columns)*45,(i%columns-(columns-1)*0.5)*40,0));
+            body.Angle=180;body.Scale=User.Scale;RenderProxies.Push(body);
+        }
+        Console.Printf("CA283 BENCH_SETUP count=%d model=%d",count,int(model));
+    }
+    void Audit()
+    {
+        int hp=User.health,weapon=User.WeaponModel.Durability,shield=User.ShieldModel.Durability;
+        double air=User.CurrentAir,anima=User.CurrentAnima,radius=User.Radius,height=User.Height;
+        vector3 pos=User.Pos,vel=User.Vel;State state=User.CurState;
+        for(int i=0;i<100;i++)User.UpdatePilotVisual();
+        Check(User.health==hp && User.CurrentAir==air && User.CurrentAnima==anima,"visual update preserves resources");
+        Check(User.WeaponModel.Durability==weapon && User.ShieldModel.Durability==shield,"visual update preserves equipment");
+        Check(User.Pos==pos && User.Vel==vel && User.Radius==radius && User.Height==height,"visual update preserves physical body");
+        Check(User.CurState==state,"native state remains authoritative");
+        Check(User.AppearanceHead==null,"no duplicate modular head");
+    }
+    void Fallback()
+    {
+        User.PilotOriginalSprites=true;User.UpdateWorldCarbineVisual();
+        Check(User.sprite==User.CurState.sprite && User.PilotBody.bInvisible,"explicit original sprite comparison");
+        User.PilotOriginalSprites=false;User.UpdateWorldCarbineVisual();
+        Check(User.sprite==User.GetSpriteIndex('TNT1') && !User.PilotBody.bInvisible,"model comparison restored");
+        let session=new('CA259Session');session.Choice=5;session.Tier=1;session.Equip(User);
+        User.UpdateWorldCarbineVisual();
+        Check(User.PilotBody.bInvisible && User.sprite!=User.GetSpriteIndex('TNT1'),"unsupported firearm uses existing appearance");
+        Check(User.AppearanceHead!=null,"normal modular head restored for fallback");
+    }
+    void Rest(bool sleep,bool ground)
+    {
+        CaelumRestState.Cancel(User);
+        if(Furniture!=null){Furniture.Destroy();Furniture=null;}
+        User.SetOrigin((70,0,0),false);User.Vel=(0,0,0);User.player.onground=true;
+        User.CombatTimeRemaining=0;
+        if(!ground)Furniture=CaelumRestFurniture(Actor.Spawn(sleep?'CaelumRestBed':'CaelumRestChair',(0,0,0)));
+        bool begun=CaelumRestState.Begin(User,sleep?CaelumRestRules.MODE_SLEEP:CaelumRestRules.MODE_WAIT,60,Furniture);
+        Check(begun,sleep?"native sleep begins":"native chair rest begins");
+        if(begun && Furniture!=null)Check(Furniture.Occupant==User,"native furniture occupancy");
+        if(begun)User.UpdateWorldCarbineVisual();
+        Camera.SetOrigin(User.Pos+(-160,-120,65),false);Camera.Angle=Camera.AngleTo(User);Camera.Pitch=0;
+        Console.Printf("CA283 REST result=%d reason=%s position=(%.2f,%.2f,%.2f) offset=(%.2f,%.2f,%.2f)",
+            begun,CaelumRestState.BlockReason(User),User.Pos.X,User.Pos.Y,User.Pos.Z,User.WorldOffset.X,User.WorldOffset.Y,User.WorldOffset.Z);
+    }
+    override void NetworkProcess(ConsoleEvent e)
+    {
+        if(e.Name=='c283_setup')Setup();
+        if(e.Name=='c283_manual')
+        {
+            Manual=true;ManualCamera=1;UpdateReviewCamera();
+            players[0].cheats&=~CF_CHASECAM;players[0].camera=Camera;
+        }
+        if(e.Name=='c283_compare')User.PilotOriginalSprites=!User.PilotOriginalSprites;
+        if(e.Name=='c283_next_rest')
+        {
+            ManualRest=(ManualRest+1)%4;
+            if(ManualRest==0)CaelumRestState.Cancel(User);
+            else Rest(ManualRest!=1,ManualRest==3);
+        }
+        if(e.Name=='c283_orbit')
+        {
+            ManualCamera=(ManualCamera+1)%5;
+            if(ManualCamera==0){players[0].camera=User;players[0].cheats|=CF_CHASECAM;}
+            else
+            {
+                UpdateReviewCamera();players[0].cheats&=~CF_CHASECAM;players[0].camera=Camera;
+            }
+        }
+        if(e.Name=='c283_camera_audit')
+        {
+            Check(Manual && ManualCamera>0 && players[0].camera==Camera,"review camera active");
+            Check((players[0].cheats&CF_CHASECAM)==0,"review angle independent of chase flag");
+            double yaw=User.Angle+(ManualCamera-1)*90;
+            double distance=Max(112.0,User.Height*2.4);
+            double delta=(Camera.Pos-(User.Pos+(Cos(yaw)*distance,Sin(yaw)*distance,User.Height*.55))).Length();
+            Console.Printf("CA283 CAMERA slot=%d delta=%.6f velocity=%.6f",ManualCamera,delta,User.Vel.Length());
+            Check(delta<.01,"review camera follows actual player position");
+        }
+        if(e.Name=='c283_gait')
+        {
+            int expected=e.Args[0]==0?CaelumDomingoPilotFrames.WALK:CaelumDomingoPilotFrames.RUN;
+            Check(User.PilotBody.Pose==expected,e.Args[0]==0?"walking input selects walk clip":"running input selects run clip");
+            Check(User.Vel.XY.Length()>0,"gait check uses moving native player");
+            Check(User.PilotBody.ModelFrame>=CaelumDomingoPilotFrames.Start(expected)
+                && User.PilotBody.ModelFrame<CaelumDomingoPilotFrames.Start(expected)+CaelumDomingoPilotFrames.Count(expected),"gait samples its own model frames");
+        }
+        if(e.Name=='c283_bench')Benchmark(e.Args[0],e.Args[1]!=0);
+        if(e.Name=='c283_record'){BenchSerial++;BenchActive=true;}
+        if(e.Name=='c283_record_end')BenchActive=false;
+        if(e.Name=='c283_hide')
+        {
+            let hud=EventHandler.Find('CaelumHUDOverlay');if(hud!=null)hud.Destroy();
+        }
+        if(e.Name=='c283_original')User.PilotOriginalSprites=true;
+        if(e.Name=='c283_model')User.PilotOriginalSprites=false;
+        if(e.Name=='c283_front')User.Angle=0;
+        if(e.Name=='c283_side')User.Angle=90;
+        if(e.Name=='c283_rear')User.Angle=180;
+        if(e.Name=='c283_audit')Audit();
+        if(e.Name=='c283_fallback')Fallback();
+        if(e.Name=='c283_kill')
+        {User.bInvulnerable=false;User.DamageMobj(Camera,Camera,10000000,'CaelumPhysicalTest',DMG_FORCED,0);}
+        if(e.Name=='c283_dead')
+        {
+            Check(User.health<=0,"native death resolved");
+            Check(User.PilotBody!=null && !User.PilotBody.bInvisible,"death retains model presentation");
+            if(User.PilotBody!=null)Check(User.PilotBody.Pose==CaelumDomingoPilotFrames.DEATH
+                && User.PilotBody.ModelFrame==CaelumDomingoPilotFrames.Start(CaelumDomingoPilotFrames.DEATH)
+                    +CaelumDomingoPilotFrames.Count(CaelumDomingoPilotFrames.DEATH)-1,"stable terminal corpse frame");
+            User.WeaponModel.Equipped=false;User.UpdatePilotVisual();
+            Check(User.PilotBody!=null && !User.PilotBody.bInvisible,"corpse presentation survives equipment cleanup");
+        }
+        if(e.Name=='c283_loaded')
+        {
+            User=CaelumDomingoPilotPlayer(players[0].mo);
+            Check(User!=null && User.PilotRevision==2,"pilot motion schema migrated/restored");
+            if(User!=null)
+            {
+                Check(User.PilotBody!=null && User.PilotBody.Master==User,"bound body after load or travel");
+                int bodies=0;let it=ThinkerIterator.Create('CaelumDomingoPilotBody');CaelumDomingoPilotBody body;
+                while((body=CaelumDomingoPilotBody(it.Next()))!=null)if(body.Master==User)bodies++;
+                Check(bodies==1,"exactly one local model body");Audit();
+            }
+        }
+        if(e.Name=='c283_moved'){Check(WalkSeen,"native walking selects model walk");Check(RunSeen,"native running selects model run");}
+        if(e.Name=='c283_guard')
+        {
+            Check(User.CombatBlockModeActive==bool(e.Args[0]),"native block toggle");
+            int expected=e.Args[0]==0?CaelumDomingoPilotFrames.IDLEBREATHING:
+                e.Args[1]==1?CaelumDomingoPilotFrames.GUARDWALK:
+                e.Args[1]==2?CaelumDomingoPilotFrames.GUARDRUN:CaelumDomingoPilotFrames.GUARDIDLEBREATHING;
+            Check(User.PilotBody.Pose==expected,"native block selects matching body/leg action");
+        }
+        if(e.Name=='c283_watch_jump')
+        {
+            WatchingJump=true;SawPreparation=SawAir=SawLanding=SawMovingPreparation=SawGuardPreparation=false;
+            TakeoffDelay=0;JumpWatchStart=level.time;
+            let motion=CA283MotionPlayer(User);if(motion!=null){motion.Takeoffs=0;motion.JumpAirSpent=0;}
+        }
+        if(e.Name=='c283_preparing')
+        {
+            Check(User.PilotJumpPreparing,"jump preparation remains queued after key release");
+            Check(User.player.onground && User.Vel.Z==0,"no takeoff before preparation completes");
+            let motion=CA283MotionPlayer(User);if(motion!=null)Check(motion.Takeoffs==0 && motion.JumpAirSpent==0,"preparation spends no jump Air");
+        }
+        if(e.Name=='c283_jump_result')
+        {
+            let motion=CA283MotionPlayer(User);
+            Check(SawPreparation && SawAir && SawLanding,"preparation, real takeoff and landing observed");
+            Check(TakeoffDelay>=10 && TakeoffDelay<=11,"takeoff follows ten tics of preparation");
+            Check(!User.PilotJumpPreparing && !User.PilotLanding,"jump and landing transitions finish");
+            if(motion!=null)Check(motion.Takeoffs==1 && motion.JumpAirSpent>0,"one native takeoff pays Air once");
+            if(e.Args[0])Check(SawMovingPreparation && SawGuardPreparation,"movement and blocking remain available during preparation");
+            Console.Printf("CA283 JUMP delay=%d takeoffs=%d air=%.6f",TakeoffDelay,motion!=null?motion.Takeoffs:-1,motion!=null?motion.JumpAirSpent:-1);
+            WatchingJump=false;
+        }
+        if(e.Name=='c283_hurt_preparation')
+        {
+            Check(User.PilotJumpPreparing,"damage scenario starts in preparation");
+            User.bInvulnerable=false;int before=User.health;
+            User.DamageMobj(Camera,Camera,500,'CaelumPhysicalTest',DMG_FORCED|DMG_NO_ARMOR,0);
+            User.bInvulnerable=true;
+            Check(User.health>0 && User.health<before,"real damage reaches health without killing player");
+            Check(!User.PilotJumpPreparing,"damage cancels queued jump immediately");
+        }
+        if(e.Name=='c283_manual_hurt' && User.health>500)
+        {
+            User.bInvulnerable=false;
+            User.DamageMobj(Camera,Camera,500,'CaelumPhysicalTest',DMG_FORCED|DMG_NO_ARMOR,0);
+            User.bInvulnerable=true;
+        }
+        if(e.Name=='c283_stun_preparation')
+        {
+            Check(User.PilotJumpPreparing,"stun scenario starts in preparation");
+            User.LucidityPhysicalStunRemaining=1;
+        }
+        if(e.Name=='c283_cancelled_result')
+        {
+            let motion=CA283MotionPlayer(User);
+            Check(!SawAir && !User.PilotJumpPreparing && motion!=null && motion.Takeoffs==0,"cancelled preparation cannot launch later");
+            WatchingJump=false;
+        }
+        if(e.Name=='c283_pending_loaded')
+        {
+            User=CaelumDomingoPilotPlayer(players[0].mo);Ready=true;
+            Check(User.PilotRevision==2 && User.PilotJumpPreparing,"save restores pending jump without restarting");
+            Check(level.time>User.PilotJumpStarted,"saved preparation retains elapsed time");
+            WatchingJump=true;SawPreparation=true;SawAir=SawLanding=false;
+        }
+        if(e.Name=='c283_attacked')Check(AttackSeen,"native weapon selects supported attack");
+        if(e.Name=='c283_chair')Rest(false,false);
+        if(e.Name=='c283_bed')Rest(true,false);
+        if(e.Name=='c283_ground')Rest(true,true);
+        if(e.Name=='c283_stand')
+        {
+            CaelumRestState.Cancel(User);User.UpdateWorldCarbineVisual();
+            Check(!CaelumRestState.IsActive(User),"native rest cancellation");
+            Check(Furniture==null || Furniture.Occupant==null,"native furniture released");
+        }
+        if(e.Name=='c283_done')Console.Printf("CA283 DONE passes=%d failures=%d",Passed,Failed);
+    }
+}
+
+// Observa el salto real sin sustituir su cálculo ni sus recursos.
+class CA283MotionPlayer : CaelumDomingoPilotPlayer
+{
+    int Takeoffs;
+    double JumpAirSpent;
+    override void CheckJump()
+    {
+        double beforeZ=Vel.Z,beforeAir=CurrentAir;
+        bool grounded=player!=null && player.onground && player.jumpTics==0;
+        Super.CheckJump();
+        if(grounded && player.jumpTics==-1 && Vel.Z>beforeZ && !(player.cheats&CF_PREDICTING))
+        {Takeoffs++;JumpAirSpent+=Max(0,beforeAir-CurrentAir);}
+    }
+}
+
+class CA283Camera : Actor
+{
+    CaelumDomingoPilotPlayer Subject;
+    int ReviewSlot;
+    void FollowReview()
+    {
+        if(Subject==null || ReviewSlot<=0)return;
+        double yaw=Subject.Angle+(ReviewSlot-1)*90;
+        double distance=Max(112.0,Subject.Height*2.4);
+        SetOrigin(Subject.Pos+(Cos(yaw)*distance,Sin(yaw)*distance,Subject.Height*.55),false);
+        Angle=AngleTo(Subject);Pitch=10;CameraFOV=55;
+    }
+    override void Tick()
+    {
+        Super.Tick();
+        if(Subject!=null && Subject.player!=null && Subject.player.camera==self)FollowReview();
+    }
+    Default { +NOINTERACTION +NOGRAVITY }
+    States { Spawn: TNT1 A -1; Stop; }
+}
+
+class CA283ModelProxy : CaelumDomingoPilotFrames
+{ Default { +NOINTERACTION +NOGRAVITY } }
+class CA283SpriteProxy : Actor
+{
+    Default { +NOINTERACTION +NOGRAVITY }
+    States { Spawn: DOID AAABBBB 10; Loop; }
+}

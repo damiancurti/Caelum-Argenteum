@@ -1,0 +1,331 @@
+{
+  "issue": 458,
+  "scope": "Reuse #283's real-player checks for the modular body and old-save continuity.\n\nEquipment and furniture are fixture setup. This does not convert other actors\nor establish author acceptance; it exercises unchanged native gameplay owners.",
+  "runtime_sha256": "d4aa0aeb27ae9d37deb753f903a84e27937785f2fccb505fc30619283578b0e5",
+  "baseline_sha256": "a4b3c5276f1ddd7f8bfb3314816a4e6aec33bbd6e036542268e13733b238177f",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "fixture_sha256": "60a51293a04ee513ffd760ffbf93b85f4f09ee505b64761269129f053c735367",
+  "runs": [
+    {
+      "phase": "baseline-save",
+      "passed": true,
+      "exit_code": 0,
+      "totals": [
+        [
+          "3",
+          "0"
+        ]
+      ],
+      "errors": [],
+      "checks": [
+        "CA283 PASS opt-in native player subclass",
+        "CA283 PASS native shield equipment",
+        "CA283 PASS native MD3 body created",
+        "CA283 GEOMETRY height=56.0000 scale=(0.3200,0.3200) sprite=0",
+        "CA283 DONE passes=3 failures=0"
+      ],
+      "captures": {}
+    },
+    {
+      "phase": "old-save-load",
+      "passed": true,
+      "exit_code": 0,
+      "totals": [
+        [
+          "8",
+          "0"
+        ]
+      ],
+      "errors": [],
+      "checks": [
+        "CA283 PASS pilot motion schema migrated/restored",
+        "CA283 PASS bound body after load or travel",
+        "CA283 PASS exactly one local model body",
+        "CA283 PASS visual update preserves resources",
+        "CA283 PASS visual update preserves equipment",
+        "CA283 PASS visual update preserves physical body",
+        "CA283 PASS native state remains authoritative",
+        "CA283 PASS no duplicate modular head",
+        "CA283 DONE passes=8 failures=0"
+      ],
+      "captures": {
+        "old-loaded.png": "495561e0db063c7c52e0b3e30da65b16c045c40d8720b920898f1a175ea9393d"
+      }
+    },
+    {
+      "phase": "actions",
+      "passed": true,
+      "exit_code": 0,
+      "totals": [
+        [
+          "11",
+          "0"
+        ]
+      ],
+      "errors": [],
+      "checks": [
+        "CA283 PASS opt-in native player subclass",
+        "CA283 PASS native shield equipment",
+        "CA283 PASS native MD3 body created",
+        "CA283 GEOMETRY height=56.0000 scale=(0.3200,0.3200) sprite=0",
+        "CA283 PASS visual update preserves resources",
+        "CA283 PASS visual update preserves equipment",
+        "CA283 PASS visual update preserves physical body",
+        "CA283 PASS native state remains authoritative",
+        "CA283 PASS no duplicate modular head",
+        "CA283 PASS native walking selects model walk",
+        "CA283 PASS native running selects model run",
+        "CA283 PASS native weapon selects supported attack",
+        "CA283 DONE passes=11 failures=0"
+      ],
+      "captures": {}
+    },
+    {
+      "phase": "rest",
+      "passed": true,
+      "exit_code": 0,
+      "totals": [
+        [
+          "14",
+          "0"
+        ]
+      ],
+      "errors": [],
+      "checks": [
+        "CA283 PASS opt-in native player subclass",
+        "CA283 PASS native shield equipment",
+        "CA283 PASS native MD3 body created",
+        "CA283 GEOMETRY height=56.0000 scale=(0.3200,0.3200) sprite=0",
+        "CA283 PASS native chair rest begins",
+        "CA283 PASS native furniture occupancy",
+        "CA283 REST result=1 reason= position=(0.00,0.00,0.00) offset=(0.00,0.00,-2.77)",
+        "CA283 PASS native rest cancellation",
+        "CA283 PASS native furniture released",
+        "CA283 PASS native sleep begins",
+        "CA283 PASS native furniture occupancy",
+        "CA283 REST result=1 reason= position=(0.00,0.00,0.00) offset=(0.00,0.00,12.27)",
+        "CA283 PASS native rest cancellation",
+        "CA283 PASS native furniture released",
+        "CA283 PASS native sleep begins",
+        "CA283 REST result=1 reason= position=(70.00,0.00,0.00) offset=(0.00,0.00,0.00)",
+        "CA283 PASS native rest cancellation",
+        "CA283 PASS native furniture released",
+        "CA283 DONE passes=14 failures=0"
+      ],
+      "captures": {
+        "bed.png": "9ada990a649ccff1bfc97641494f69e1f65c05a91e1912fb7925d8c060385bfb",
+        "chair.png": "e1cd3f52f4f253305c39cd84fbdb8c8c606eedb1cc5e28c429bfde0c3898e286"
+      }
+    },
+    {
+      "phase": "fallback",
+      "passed": true,
+      "exit_code": 0,
+      "totals": [
+        [
+          "7",
+          "0"
+        ]
+      ],
+      "errors": [],
+      "checks": [
+        "CA283 PASS opt-in native player subclass",
+        "CA283 PASS native shield equipment",
+        "CA283 PASS native MD3 body created",
+        "CA283 GEOMETRY height=56.0000 scale=(0.3200,0.3200) sprite=0",
+        "CA283 PASS explicit original sprite comparison",
+        "CA283 PASS model comparison restored",
+        "CA283 PASS unsupported firearm uses existing appearance",
+        "CA283 PASS normal modular head restored for fallback",
+        "CA283 DONE passes=7 failures=0"
+      ],
+      "captures": {}
+    },
+    {
+      "phase": "guard",
+      "passed": true,
+      "exit_code": 0,
+      "totals": [
+        [
+          "11",
+          "0"
+        ]
+      ],
+      "errors": [],
+      "checks": [
+        "CA283 PASS opt-in native player subclass",
+        "CA283 PASS native shield equipment",
+        "CA283 PASS native MD3 body created",
+        "CA283 GEOMETRY height=56.0000 scale=(0.3200,0.3200) sprite=0",
+        "CA283 PASS native block toggle",
+        "CA283 PASS native block selects matching body/leg action",
+        "CA283 PASS native block toggle",
+        "CA283 PASS native block selects matching body/leg action",
+        "CA283 PASS native block toggle",
+        "CA283 PASS native block selects matching body/leg action",
+        "CA283 PASS native block toggle",
+        "CA283 PASS native block selects matching body/leg action",
+        "CA283 DONE passes=11 failures=0"
+      ],
+      "captures": {
+        "guard.png": "6799e69a079e2c9d36bf4b78927720fdd1773995912471d515824d1c453de4c2"
+      }
+    },
+    {
+      "phase": "jump-save",
+      "passed": true,
+      "exit_code": 0,
+      "totals": [
+        [
+          "6",
+          "0"
+        ]
+      ],
+      "errors": [],
+      "checks": [
+        "CA283 PASS opt-in native player subclass",
+        "CA283 PASS native shield equipment",
+        "CA283 PASS native MD3 body created",
+        "CA283 GEOMETRY height=56.0000 scale=(0.3200,0.3200) sprite=0",
+        "CA283 PASS jump preparation remains queued after key release",
+        "CA283 PASS no takeoff before preparation completes",
+        "CA283 PASS preparation spends no jump Air",
+        "CA283 DONE passes=6 failures=0"
+      ],
+      "captures": {}
+    },
+    {
+      "phase": "jump-load",
+      "passed": true,
+      "exit_code": 0,
+      "totals": [
+        [
+          "6",
+          "0"
+        ]
+      ],
+      "errors": [],
+      "checks": [
+        "CA283 PASS save restores pending jump without restarting",
+        "CA283 PASS saved preparation retains elapsed time",
+        "CA283 PASS preparation, real takeoff and landing observed",
+        "CA283 PASS takeoff follows ten tics of preparation",
+        "CA283 PASS jump and landing transitions finish",
+        "CA283 PASS one native takeoff pays Air once",
+        "CA283 JUMP delay=10 takeoffs=1 air=5.704477",
+        "CA283 DONE passes=6 failures=0"
+      ],
+      "captures": {}
+    },
+    {
+      "phase": "hub-travel",
+      "passed": true,
+      "exit_code": 0,
+      "totals": [
+        [
+          "24",
+          "0"
+        ]
+      ],
+      "errors": [],
+      "checks": [
+        "CA283 PASS pilot motion schema migrated/restored",
+        "CA283 PASS bound body after load or travel",
+        "CA283 PASS exactly one local model body",
+        "CA283 PASS visual update preserves resources",
+        "CA283 PASS visual update preserves equipment",
+        "CA283 PASS visual update preserves physical body",
+        "CA283 PASS native state remains authoritative",
+        "CA283 PASS no duplicate modular head",
+        "CA283 PASS pilot motion schema migrated/restored",
+        "CA283 PASS bound body after load or travel",
+        "CA283 PASS exactly one local model body",
+        "CA283 PASS visual update preserves resources",
+        "CA283 PASS visual update preserves equipment",
+        "CA283 PASS visual update preserves physical body",
+        "CA283 PASS native state remains authoritative",
+        "CA283 PASS no duplicate modular head",
+        "CA283 PASS pilot motion schema migrated/restored",
+        "CA283 PASS bound body after load or travel",
+        "CA283 PASS exactly one local model body",
+        "CA283 PASS visual update preserves resources",
+        "CA283 PASS visual update preserves equipment",
+        "CA283 PASS visual update preserves physical body",
+        "CA283 PASS native state remains authoritative",
+        "CA283 PASS no duplicate modular head",
+        "CA283 DONE passes=24 failures=0"
+      ],
+      "captures": {}
+    },
+    {
+      "phase": "death",
+      "passed": true,
+      "exit_code": 0,
+      "totals": [
+        [
+          "7",
+          "0"
+        ]
+      ],
+      "errors": [],
+      "checks": [
+        "CA283 PASS opt-in native player subclass",
+        "CA283 PASS native shield equipment",
+        "CA283 PASS native MD3 body created",
+        "CA283 GEOMETRY height=56.0000 scale=(0.3200,0.3200) sprite=0",
+        "CA283 PASS native death resolved",
+        "CA283 PASS death retains model presentation",
+        "CA283 PASS stable terminal corpse frame",
+        "CA283 PASS corpse presentation survives equipment cleanup",
+        "CA283 DONE passes=7 failures=0"
+      ],
+      "captures": {
+        "death.png": "864333dc5707b5fd12675878cd27ffe888300d2894fa8043b388731125d89cb1"
+      }
+    },
+    {
+      "phase": "candidate-save",
+      "passed": true,
+      "exit_code": 0,
+      "totals": [
+        [
+          "3",
+          "0"
+        ]
+      ],
+      "errors": [],
+      "checks": [
+        "CA283 PASS opt-in native player subclass",
+        "CA283 PASS native shield equipment",
+        "CA283 PASS native MD3 body created",
+        "CA283 GEOMETRY height=56.0000 scale=(0.3200,0.3200) sprite=0",
+        "CA283 DONE passes=3 failures=0"
+      ],
+      "captures": {}
+    },
+    {
+      "phase": "rollback-load",
+      "passed": true,
+      "exit_code": 0,
+      "totals": [
+        [
+          "8",
+          "0"
+        ]
+      ],
+      "errors": [],
+      "checks": [
+        "CA283 PASS pilot motion schema migrated/restored",
+        "CA283 PASS bound body after load or travel",
+        "CA283 PASS exactly one local model body",
+        "CA283 PASS visual update preserves resources",
+        "CA283 PASS visual update preserves equipment",
+        "CA283 PASS visual update preserves physical body",
+        "CA283 PASS native state remains authoritative",
+        "CA283 PASS no duplicate modular head",
+        "CA283 DONE passes=8 failures=0"
+      ],
+      "captures": {}
+    }
+  ]
+}

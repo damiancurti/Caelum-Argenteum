@@ -1,6 +1,21 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.16.5** - 2026-11-13.
+Documentation version: **5.17.0** - 2026-11-13.
+
+## 5.17.0 - Modular character pipeline (#458, in progress)
+
+The author expanded the active batch on 2026-11-13: all characters must use actual
+3D; modular designs retain separate parts; dropped inventory objects also need
+models. Weapon visuals/sprites may be simplified as needed. Regional textures
+and small texture/monster inspection maps are authorized. Questions stay deferred.
+The related art issues retain their individual scopes and PRs; #647 tracks drops.
+This does not complete or replace the unfinished V5.16 campaign authoring.
+
+The first production binding splits the accepted Domingo pilot into clothing,
+armor, cape, face, hair, weapon and shield MD3 modules. All accepted geometry,
+UVs, 24 actions and 375 native frame identities are retained. Ordinary character
+conversion, underbody anatomy and alternative equipment/appearance remain open.
+Performance and author acceptance are separate gates; see ASSETS and HISTORY.
 
 ## 5.16.5 - Shared finale eligibility query (#457, in progress)
 

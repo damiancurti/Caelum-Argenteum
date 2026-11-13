@@ -538,3 +538,14 @@
 /assets/generators/generate_cuero_model.py text eol=lf
 /assets/source/art/cuero_455/*.json text eol=lf
 /assets/bestiary/models/cuero/** -text
+
+/assets/generators/export_character_modules.py text eol=lf
+/assets/generators/validate_character_modules.py text eol=lf
+/assets/source/art/character_modules_458/*.json text eol=lf
+/assets/validation_v5_17_0/*.py text eol=lf
+/assets/validation_v5_17_0/*.zs text eol=lf
+/assets/validation_v5_17_0/evidence/** -text -whitespace
+/src/caelum/data/CaelumDomingoModules.zs text eol=lf
+/src/caelum/data/domingo_modules.modeldef text eol=lf
+/src/models/caelum/characters/domingo/** -text
+/src/MODELDEF text eol=crlf whitespace=cr-at-eol

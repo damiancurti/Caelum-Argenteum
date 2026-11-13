@@ -1,0 +1,67 @@
+{
+  "issue": 458,
+  "scope": "Compare the accepted fixed model with separate native modules and save overrides.\n\nThis isolated art room does not change ordinary players, equipment or collision.",
+  "runtime_sha256": "a4b3c5276f1ddd7f8bfb3314816a4e6aec33bbd6e036542268e13733b238177f",
+  "model_sha256": "59607107f2c5c137c37ea15af78e438a82945c3500633c3005d6a9e5a149f08f",
+  "fixture_sha256": "d466c1d5e3fa1c63d513b6891efa29f7541e22dac1502cdce4d2eb2295b750a9",
+  "runs": [
+    {
+      "phase": "fresh",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "checks": [
+        "CA458 EVENT tic=140 name=ca458_prepare args=0,0",
+        "CA458 EVENT tic=165 name=ca458_select args=1,0",
+        "CA458 EVENT tic=191 name=ca458_module args=5,0",
+        "CA458 EVENT tic=191 name=ca458_module args=6,0",
+        "CA458 EVENT tic=215 name=ca458_restore args=0,0",
+        "CA458 PASS all module selections restored",
+        "CA458 EVENT tic=240 name=ca458_animate args=0,0",
+        "CA458 EVENT tic=251 name=ca458_motion args=0,0",
+        "CA458 MOTION live=1 tics=1 frame=17",
+        "CA458 PASS native walking state advances",
+        "CA458 EVENT tic=256 name=ca458_freeze args=0,0",
+        "CA458 EVENT tic=256 name=ca458_module args=4,0",
+        "CA458 EVENT tic=256 name=ca458_module args=6,0",
+        "CA458 EVENT tic=281 name=ca458_verify args=0,0",
+        "CA458 PASS exactly two saved preview bodies and camera",
+        "CA458 PASS hair/shield module selection retained",
+        "CA458 PASS saved frozen frame retained",
+        "CA458 COMPLETE failures=0"
+      ]
+    },
+    {
+      "phase": "reload",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "checks": [
+        "CA458 EVENT tic=317 name=ca458_verify args=0,0",
+        "CA458 PASS exactly two saved preview bodies and camera",
+        "CA458 PASS hair/shield module selection retained",
+        "CA458 PASS saved frozen frame retained",
+        "CA458 COMPLETE failures=0",
+        "CA458 EVENT tic=335 name=ca458_restore args=0,0",
+        "CA458 PASS all module selections restored"
+      ]
+    }
+  ],
+  "captures": {
+    "hidden.png": "3f0518c915d3ab18565b5f3f133fc011801deb9d21a0aec7113104e8df08b6c9",
+    "legacy.png": "7f3bb5f4ee980f658d7f5ccc7262ff51d14a8c6557baafb87e4c7d8979f97d37",
+    "modular.png": "7f3bb5f4ee980f658d7f5ccc7262ff51d14a8c6557baafb87e4c7d8979f97d37",
+    "reload-restored.png": "7f3bb5f4ee980f658d7f5ccc7262ff51d14a8c6557baafb87e4c7d8979f97d37",
+    "reloaded.png": "7f3bb5f4ee980f658d7f5ccc7262ff51d14a8c6557baafb87e4c7d8979f97d37",
+    "restored.png": "7f3bb5f4ee980f658d7f5ccc7262ff51d14a8c6557baafb87e4c7d8979f97d37",
+    "unarmed.png": "456cedec7590b8345db0f2a4b9097c722b4d4e40d146c4b728b7693a626e0d30",
+    "walk.png": "27b416669f98057c89513aaee786d15ab3cdf7a7877ad5d765565660b2d40fc1"
+  },
+  "visual_checks": {
+    "fixed_matches_modular": true,
+    "weapon_shield_hide_visible": true,
+    "restore_matches_fixed": true,
+    "saved_overrides_visible": false,
+    "reload_restore_matches_fixed": true
+  }
+}
