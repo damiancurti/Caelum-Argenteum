@@ -1,6 +1,53 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.2** - 2026-11-13.
+Documentation version: **5.17.3** - 2026-11-13.
+
+## 5.17.3 - Seven ammunition drop models (#652)
+
+The #647 inventory conversion continues in this focused art patch, based on the
+separate #650 native stack correction. Seven explicit models cover carbine rounds,
+arrows, bolts, three javelin tiers and shotgun shells. Red arrow fletching, blue
+bolt fletching, tiered metal fittings/red tassels, leather/brass cartridges and
+red paper/metal-base shotgun shells retain the owned reference identities.
+The implementation parent CaelumJavelinAmmo is not an eighth ammunition type.
+Decorative bundle counts do not encode Amount. Icons, in-flight projectiles,
+counts, provenance, weight, collision, actor scale and save fields are unchanged.
+
+The new atlas request was rejected by the built-in image tool and produced no
+image. Its exact original prompt and failure metadata remain in
+assets/source/art/inventory_models_647/ammunition/PROMPT.txt and
+GENERATION_STATUS.json. There was no retry. Geometry instead samples existing
+owned training-dummy, consumable-atlas and shotgun-icon pixels without editing
+those rasters. DESIGN.json identifies each material rectangle and source hash;
+EXPORT.json records deterministic native meshes, components and authoring output.
+The seven meshes contain 392-1,568 triangles. Every authored component is closed
+and outward-facing. Visual size follows the reference opaque extent; shotgun
+uses its world-sprite crop and scale, not the whole source sheet or icon scale.
+
+`python assets/generators/generate_inventory_ammunition_models.py --output build/ammunition --install`
+regenerates models and editable OBJ/MTL. Repeat with --check to compare bytes.
+Editable MTL uses repository-relative src/ texture paths, resolved from the
+repository root when importing; it never embeds a workstation path. The source
+shader rasters remain authoritative, rather than duplicated into the export.
+The production validator checks source hashes, seven explicit bindings, MD3
+surface/shader counts and UV confinement to the specified source rectangles.
+
+The final package passes 551 assertions in five native runs: original/fresh,
+old-save load, new-save reload and rollback. Five incoming rounds split into three
+held/two dropped, then recombine without changing type, provenance units/markers,
+icons, weight, collision or native scale. All 21 front/oblique/rear detail images
+match the inspected final overlay pixel for pixel. Evidence is preserved in
+assets/validation_v5_17_3/evidence/SUMMARY.json; the package has 18,175 exact src
+entries and changes only the new models/include plus two current-version labels.
+
+One sequential 700-tic pair with seven visible drops measures sprites/models at
+1126.81/1114.65 queue presents/s, p95 1.1122/1.1108 ms and p99 1.3244/1.3087 ms.
+Environment: Windows 11 Pro 26200, Ryzen 9 5950X, 32 GB, RTX 3070 Ti, GZDoom 4.14.2,
+Vulkan 1280x720, uncapped, vsync off, unpaused background and 5% audio. This is not
+GPU/display timing, a repeatability estimate or an all-item/campaign budget.
+No ordinary-menu, firing or multiplayer acceptance is claimed. Author review
+remains pending as CA652-AMMUNITION-01. This slice does not complete all dropped
+inventory or the campaign/regional art conversion.
 
 ## 5.17.1 - Inventory drops in 3D (#647, conversion in progress)
 

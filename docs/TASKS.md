@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.2** - 2026-11-13.
+Documentation version: **5.17.3** - 2026-11-13.
+
+## 5.17.3 - Ammunition models (#652)
+
+Seven native drop bindings, deterministic editable exports and installed-resource
+validation are implemented on the #650 base. Five final-package native runs pass
+551 assertions; 21 inspected detail views match the final overlay. One isolated
+700-tic presentation pair is recorded in ASSETS and the issue evidence.
+CA652-AMMUNITION-01 remains pending author review. Continue the other #647 item
+categories and the #458/#461/#463 character, creature and regional scopes.
 
 ## 5.17.2 - Javelin stack lookup (#650)
 
@@ -8,8 +17,8 @@ The shared existing class mapping now covers all seven ammunition identities in
 both lookup and acquisition. Baseline reproduces six expected ownership failures;
 six positive native runs pass 678 assertions, including reverse acquisition order
 and saved provenance. CA650-AMMO-01 remains pending author confirmation.
-The separate #647 ammunition art candidate remains uncommitted in its own worktree;
-resume that visual work after this focused gameplay correction is delivered.
+The separate ammunition art delivery continues under #652 on this corrected
+base; PR #649 retains its focused coin/consumable/water/food scope.
 
 ## 5.17.1 - Dropped inventory models (#647, in progress)
 
@@ -25,7 +34,7 @@ CA647-CONSUMABLES-01 author review remains pending. Existing CAMDA0 collision
 between medium armor and medium Anima needs the intended armor resource in its
 future model binding; no sprite-state rename is authorized by this discovery. Complete
 package native/save checks pass; CA647-COINS-01 author review remains pending.
-Continue class-plus-variant coverage for equipment, clothing, ammunition,
+Continue class-plus-variant coverage for equipment, clothing, materials,
 remaining consumables/containers, tools, materials and retained physical bodies.
 Respect existing custom drop policy and rejected legacy art; source files alone
 do not prove runtime coverage. No remaining category is marked complete.

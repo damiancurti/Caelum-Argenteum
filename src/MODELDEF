@@ -4733,3 +4733,6 @@ Model CaelumBarricadeVisual
 #include "caelum/data/inventory_consumables.modeldef"
 #include "caelum/data/inventory_water.modeldef"
 #include "caelum/data/inventory_food.modeldef"
+
+// #652: siete tipos de munición, sin cambios de reglas.
+#include "caelum/data/inventory_ammunition.modeldef"

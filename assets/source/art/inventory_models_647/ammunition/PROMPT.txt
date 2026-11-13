@@ -1,0 +1,9 @@
+Create one original opaque square 4-by-4 texture atlas for low-poly 3D ammunition inventory props in Caelum Argenteum. The five attached owned paintings establish the warm painterly nineteenth-century Argentine equipment style: red-fletched arrows, blue-fletched bolts, brass cartridges and leather, wood/steel/red-tassel javelin, and paper shotgun cartridges shown at the bottom-right of the shotgun sheet. Make material samples for real geometry, not silhouettes of the reference objects. Sixteen equal edge-to-edge cells, no gaps, borders, labels or text, no transparent pixels, neutral even lighting, no perspective objects or cast shadows. Match the dark warm leather, worn metal and vivid red/blue identity details in the references. Fine painted detail must remain useful on very small models, with broad restrained highlights.
+
+Exact cells, left to right:
+Row 1: warm medium-brown varnished straight-grain shaft wood; dark near-black polished shaft wood; supple worn brown leather; darker leather strap material.
+Row 2: warm worn cartridge brass; cool polished steel; warm decorative gold; dark gunmetal.
+Row 3: vivid deep red feather barbs with fine central grain direction; vivid cobalt-blue feather barbs with fine central grain direction; deep red woven tassel silk; aged brown binding cord.
+Row 4: red dyed fibrous paper cartridge casing, matte rather than plastic; warm brown leather cartridge pouch; subdued gray lead projectile metal; one flat circular red paper cartridge closure with a simple eight-fold inward star crimp, straight overhead view filling the cell, its corners filled with the same red paper material.
+
+All cells except the final crimp cell are uniform continuous material samples without recognizable full objects. Do not add modern packaging, lettering, recipes, diagrams or measurements. Deliver only the atlas.

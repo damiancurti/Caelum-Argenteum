@@ -1,6 +1,14 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.2** - 2026-11-13.
+Documentation version: **5.17.3** - 2026-11-13.
+
+## 5.17.3 - Ammunition world models (#652)
+
+Seven ammunition identities now have explicit volumetric drop models reusing
+owned material pixels. This focused continuation of #647 depends on the separate
+#650 stack correction. Art inspection and final-package evidence are tracked in
+ASSETS; author confirmation remains pending. Other inventory, character and
+regional conversion work remains unfinished.
 
 ## 5.17.2 - Native ammunition identity repair (#650)
 

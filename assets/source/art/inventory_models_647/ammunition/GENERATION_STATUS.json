@@ -1,0 +1,11 @@
+{
+  "issue": 647,
+  "date": "2026-11-13",
+  "method": "Built-in image_gen request rejected; no image produced. Continue with existing owned texture sources without further image-generation retries.",
+  "prompt": "PROMPT.txt",
+  "prompt_sha256": "5235b6fdf9d877915e3522da4a3d0f44b6eaf15dd01c780d8d553bf7f45a1c74",
+  "status": "rejected_by_image_tool",
+  "category": "violence",
+  "request_id": "3e2bd3b7-9b23-43f2-a09d-2a3dc60a512e",
+  "runtime_art_decision": "Reuse original project wood/metal/leather and owned ammo reference pixels as materials on real geometry; do not modify original rasters or in-flight projectile models."
+}

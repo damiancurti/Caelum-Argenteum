@@ -1,0 +1,78 @@
+{
+  "issue": 652,
+  "kind": "ammunition",
+  "scope": "Native pickup/toss, quantity and saved ownership for ammunition; no normal menu or author acceptance.",
+  "baseline_sha256": "23adb7917f961a41c33b9382873e9017abd4b2b1c46fdb5f789da1a871a59485",
+  "runtime_sha256": "462016cb0055538e1289d07debb3e01e891419bd4961eccdc8c9cd789fa3a24a",
+  "model_sha256": null,
+  "fixture_sha256": "94fd296bcd6e889e6810112c77ed01fc01faad62bebe69e14a610f1eff99fd57",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "baseline",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 106
+    },
+    {
+      "phase": "old-save-load",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 113
+    },
+    {
+      "phase": "candidate-fresh",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 106
+    },
+    {
+      "phase": "candidate-reload",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 113
+    },
+    {
+      "phase": "rollback-load",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 113
+    }
+  ],
+  "captures": {
+    "baseline.png": "d632a623305a942d1466cdb00d5ffa429bd6d3f0d46e71868b5181765519502f",
+    "candidate-0.png": "3a9b050da9b1280d97ae6962f5a51a2bde415ae1d92d73c6f65b22ee2d1d4e68",
+    "candidate-1.png": "2af429b15636ddfcbce91df767575c3732580285ef4baf7012bb57414db11328",
+    "candidate-2.png": "e0031bde43661f953365d5e2e7e3e56d80c682ed7756ab618453a59c7b6a7cf4",
+    "candidate-3.png": "ef4ad95b0ae0e401bf6081441e9da9d1dbd67eed8a9527a6e2420a67dcd76fe1",
+    "candidate-5.png": "0a01f1f4d314a4534ac557de2b9e3f0c0e6dcea8d88bcc8d916933fbe92978d6",
+    "candidate-6.png": "10de1bad8211678154728af3519c95aac99453e28e73dbd7e13e559d3105a0cf",
+    "candidate-7.png": "1192ea4384aaae3f305b0ff0e957b58e31b6222576a070effc046de0206ac49d",
+    "detail-0-160.png": "0c46fa98ac3a1bab2dfefabf6d86f9fd0f45d304a9327cc9df8299d85dbfb287",
+    "detail-0-270.png": "999c3a72c68911fb97d44e2acab178d6e0f537f6b628d879a6a4c399c2fdb7f6",
+    "detail-0-90.png": "9b24b5e6bd0c5eb144bbd601fd48e9ef1457b74ff6c02557c092205336a315f2",
+    "detail-1-160.png": "4953e22f02d09fc0e29101007adccc9ef45bfa9f473515884885544dc7ec0ead",
+    "detail-1-270.png": "3e423f1493cb32d1a1e93c756c9dd3a7790a3dc66569ff2a322eb2aafed7d50c",
+    "detail-1-90.png": "b86b3ce11f4c0d9cf1203c7d0428471e495101b652064ca6c55eeb44d9fabcac",
+    "detail-2-160.png": "823bab3dfd3a03b4ff33d376c645094309bdd1ea52f14222a0795bf96f4a91bb",
+    "detail-2-270.png": "5e0f39f4eb1d9abd14f6c7b396b24c348b58571f1ee9ca89e8ecbfbfb5eb0a43",
+    "detail-2-90.png": "7d8c2e69786f4d62a53d4c29a1eafaa748c28963b875346470d44aab4d17fdd0",
+    "detail-3-160.png": "badb5ad8455b3f2a9d422525eda0d7820616579eb29bccc1cf2dfeb39e8a8f37",
+    "detail-3-270.png": "2de490e04c8b6f93faa34240c09d69c48e542fad50de14f2fff0b0401068ba60",
+    "detail-3-90.png": "1de91d0ea227c339f7aa23abd22b084b8f5b076c2e5d862d01a6199f32550316",
+    "detail-4-160.png": "a5deef951f786cc2adbe210cfe33404f2b2869f70d31ae2a5a366c8af6f268d8",
+    "detail-4-270.png": "2ab92629a20960d47c7c0932f0f53415b342c4c3adfee59a2d25baaf9e814404",
+    "detail-4-90.png": "3f7cdde0f0c68e719dee3ea901a787c90c6a78301d5faecda3183ab1f5eef5a3",
+    "detail-5-160.png": "d49b6b22b435a9c32c4c7440d93be90a0e82346cbf86b9264a2ea56b62addf90",
+    "detail-5-270.png": "f2a523d85b29d785c09b82c778da518f6c71d3b630257988723a5bdb289c8e9b",
+    "detail-5-90.png": "1bc0be48eaa41cf7013ca56f122cf9554ac6d50ab307feee671bc5a41f977927",
+    "detail-6-160.png": "aeec32d0b8e942ebf4d3f764c9992c8bbb06c040b5340dbfc9458da995859d20",
+    "detail-6-270.png": "f6d8cc2170bef0ff5f89cbc8913207b9dcad562ae138422d78bc0349dc2f504a",
+    "detail-6-90.png": "7e1d4b063d257fdc10de80b7962fe8ea0e4533df625da506fe143d511163e885"
+  }
+}

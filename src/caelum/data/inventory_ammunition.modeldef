@@ -1,0 +1,7 @@
+Model CaelumCarbineAmmo { Path "models/caelum/inventory/ammunition" Model 0 "carbine.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CCAA A 0 0 }
+Model CaelumArrowAmmo { Path "models/caelum/inventory/ammunition" Model 0 "arrow.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CARR A 0 0 }
+Model CaelumBoltAmmo { Path "models/caelum/inventory/ammunition" Model 0 "bolt.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CBOL A 0 0 }
+Model CaelumJavelinTierOneAmmo { Path "models/caelum/inventory/ammunition" Model 0 "javelin_one.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CJAV A 0 0 }
+Model CaelumJavelinTierTwoAmmo { Path "models/caelum/inventory/ammunition" Model 0 "javelin_two.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CJAV A 0 0 }
+Model CaelumJavelinTierThreeAmmo { Path "models/caelum/inventory/ammunition" Model 0 "javelin_three.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CJAV A 0 0 }
+Model CaelumShotgunAmmo { Path "models/caelum/inventory/ammunition" Model 0 "shotgun.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CSAM A 0 0 }

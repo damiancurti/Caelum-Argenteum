@@ -1,0 +1,169 @@
+// #652: objetos reales en una sala aislada; no altera reglas de inventario.
+class CA652AmmoCamera : Actor
+{
+    Default { CameraHeight 0; Height 0; Radius 0; +NOINTERACTION +NOGRAVITY }
+    States { Spawn: TNT1 A -1; Stop; }
+}
+
+class CA652AmmoEvents : EventHandler
+{
+    Array<CaelumCarbineAmmo> Drops;
+    Array<CaelumCarbineAmmo> OwnedStacks;
+    CA652AmmoCamera Camera;
+    int Failures;
+    int DetailIndex;
+    int DetailAngle;
+
+    void Check(bool okay, String label)
+    {
+        if (!okay) Failures++;
+        Console.Printf("CA652 %s %s", okay ? "PASS" : "FAIL", label);
+    }
+
+    void Verify()
+    {
+        Check(Drops.Size() == 7 && OwnedStacks.Size() == 7, "all seven ammunition types retained");
+        for (int index = 0; index < Drops.Size(); index++)
+        {
+            let item = Drops[index];
+            let owned = OwnedStacks[index];
+            String label = String.Format("ammunition %d", index);
+            Check(item != null && owned != null, label .. " saved references");
+            if (item == null || owned == null) continue;
+            Check(item.Owner == null && owned.Owner == players[0].mo,
+                label .. " world/inventory ownership");
+            Check(item.Amount == 2 && owned.Amount == 3, label .. " split quantities");
+            Check(item.GetClass() == owned.GetClass()
+                && item.GetAmmoType() == owned.GetAmmoType(),
+                label .. " ammunition identity");
+            Check(item.CompanionLots != null && owned.CompanionLots != null, label .. " provenance books");
+            if(item.CompanionLots != null && owned.CompanionLots != null)
+            {
+                Check(item.CompanionLots.Units()==2 && owned.CompanionLots.Units()==3,
+                    label .. " split provenance units");
+                Check(item.CompanionLots.Lots.Size()==1 && owned.CompanionLots.Lots.Size()==2,
+                    label .. " retained provenance boundaries");
+                Check(item.CompanionLots.Lots[0].CreatedStamp==100 && owned.CompanionLots.Lots[0].CreatedStamp==100
+                    && owned.CompanionLots.Lots[1].CreatedStamp==200, label .. " retained provenance markers");
+            }
+            Check(item.GetUnitWeight() == owned.GetUnitWeight(),
+                label .. " unit weight");
+            let defaults = GetDefaultByType(item.GetClass());
+            Check(item.Radius == defaults.Radius && item.Height == defaults.Height
+                && abs(item.Scale.X - defaults.Scale.X) < 0.000001
+                && abs(item.Scale.Y - defaults.Scale.Y) < 0.000001, label .. " native collision and scale");
+            Check(item.Icon == owned.Icon && item.sprite == defaults.SpawnState.sprite,
+                label .. " original icon and state");
+            Check(abs(item.Pos.Z - item.floorz) < 0.01, label .. " rests on floor");
+        }
+        Console.Printf("CA652 COMPLETE failures=%d", Failures);
+    }
+
+    override void NetworkProcess(ConsoleEvent e)
+    {
+        if (e.Name == "ca652_prepare")
+        {
+            static const class<CaelumCarbineAmmo> kinds[] = { ITEM_CLASSES };
+            Actor user = players[0].mo;
+            CaelumPlayer(user).CharacterCreationComplete=true;
+            CaelumPlayer(user).CreationWizardOpen=false;
+            for (int index = 0; index < kinds.Size(); index++)
+            {
+                let incoming = CaelumCarbineAmmo(Actor.Spawn(kinds[index], (0,0,0), NO_REPLACE));
+                incoming.Amount = 5;
+                // Marcas diagnósticas: no alteran las reglas de procedencia.
+                let lots=new('CaelumFoodLots');lots.Ensure(CaelumFoodData.RATION,0,0);
+                lots.Add(3,0,100);lots.Add(2,0,200);incoming.CompanionLots=lots;
+                Check(incoming.CallTryPickup(user), String.Format("ammunition %d native pickup", index));
+                let owned = CaelumCarbineAmmo(user.FindInventory(kinds[index]));
+                Check(owned != null && owned.Amount == 5, String.Format("ammunition %d owned quantity", index));
+                if (owned == null) continue;
+                let dropped = CaelumCarbineAmmo(owned.CreateTossable(2));
+                Check(dropped != null, String.Format("ammunition %d native toss", index));
+                if (dropped == null) continue;
+                dropped.SetOrigin(((index % 3 - 1) * 55, (index / 3 - 1) * 55, 0), false);
+                Drops.Push(dropped);
+                OwnedStacks.Push(owned);
+            }
+            Camera = CA652AmmoCamera(Actor.Spawn('CA652AmmoCamera', (0,-180,180), NO_REPLACE));
+            Camera.Angle = 90;
+            Camera.Pitch = 43;
+            players[0].camera = Camera;
+            players[0].mo.bInvisible = true;
+            let hud = CaelumHUDOverlay(EventHandler.Find('CaelumHUDOverlay'));
+            if (hud != null) hud.HUDFont = null;
+        }
+        if (e.Name == "ca652_view")
+        {
+            if (e.Args[0] == 4) players[0].camera = players[0].mo;
+            else players[0].camera = Camera;
+            players[0].mo.bInvisible = e.Args[0] != 4;
+            let hud = CaelumHUDOverlay(EventHandler.Find('CaelumHUDOverlay'));
+            if (hud != null)
+            {
+                if (e.Args[0] == 4) hud.HUDFont = Font.GetFont("CaelumMono");
+                else hud.HUDFont = null;
+            }
+            if (e.Args[0] == 0) { Camera.SetOrigin((0,-180,180), false); Camera.Angle=90; Camera.Pitch=43; }
+            if (e.Args[0] == 1) { Camera.SetOrigin((0,-180,50), false); Camera.Angle=90; Camera.Pitch=10; }
+            if (e.Args[0] == 2) { Camera.SetOrigin((180,0,60), false); Camera.Angle=180; Camera.Pitch=14; }
+            if (e.Args[0] == 3) { Camera.SetOrigin((0,-108,35), false); Camera.Angle=90; Camera.Pitch=25; }
+            if (e.Args[0] == 5) { Camera.SetOrigin((0,-53,35), false); Camera.Angle=90; Camera.Pitch=22; }
+            if (e.Args[0] == 6) { Camera.SetOrigin((-55,38,5), false); Camera.Angle=90; Camera.Pitch=15; }
+            if (e.Args[0] == 7) { Camera.SetOrigin((0,180,60), false); Camera.Angle=270; Camera.Pitch=14; }
+            Camera.ClearInterpolation();
+        }
+        if (e.Name == "ca652_detail" || e.Name == "ca652_next" || e.Name == "ca652_rotate")
+        {
+            if (Drops.Size() == 0) return;
+            if (e.Name == "ca652_detail") { DetailIndex = e.Args[0]; DetailAngle = e.Args[1]; }
+            if (e.Name == "ca652_next") DetailIndex = (DetailIndex + 1) % Drops.Size();
+            if (e.Name == "ca652_rotate")
+            {
+                if (DetailAngle == 90) DetailAngle = 160;
+                else if (DetailAngle == 160) DetailAngle = 270;
+                else DetailAngle = 90;
+            }
+            if (DetailIndex < 0 || DetailIndex >= Drops.Size()) return;
+            if (DetailAngle == 0) DetailAngle = 90;
+            // Datos de encuadre derivados del manifiesto; no cambia los objetos.
+            static const double extents[] = { DETAIL_EXTENTS };
+            static const double heights[] = { DETAIL_HEIGHTS };
+            let item = Drops[DetailIndex];
+            double distance = max(9., extents[DetailIndex] * item.Scale.X * 1.4);
+            double angle = DetailAngle;
+            vector3 center = item.Pos + (0,0,heights[DetailIndex] * item.Scale.Y);
+            Camera.SetOrigin(center + (-cos(angle)*distance,-sin(angle)*distance,distance*0.5), false);
+            Camera.Angle = angle;
+            Camera.Pitch = 26.565051;
+            players[0].camera = Camera;
+            Camera.ClearInterpolation();
+        }
+        if (e.Name == "ca652_verify") Verify();
+        if (e.Name == "ca652_pickup")
+        {
+            Actor user = players[0].mo;
+            CaelumPlayer(user).CharacterCreationComplete=true;
+            CaelumPlayer(user).CreationWizardOpen=false;
+            for (int index = 0; index < Drops.Size(); index++)
+            {
+                Check(Drops[index].CallTryPickup(user), String.Format("ammunition %d repickup", index));
+                let lots=OwnedStacks[index].CompanionLots;
+                Check(lots != null && lots.Units()==5, String.Format("ammo %d recovered provenance units",index));
+                if(lots != null)
+                {
+                    int oldUnits=0,newUnits=0;
+                    for(int lot=0;lot<lots.Lots.Size();lot++)
+                    {
+                        if(lots.Lots[lot].CreatedStamp==100)oldUnits+=lots.Lots[lot].Units;
+                        if(lots.Lots[lot].CreatedStamp==200)newUnits+=lots.Lots[lot].Units;
+                    }
+                    Check(oldUnits==3 && newUnits==2,String.Format("ammo %d retained provenance markers",index));
+                }
+                Check(OwnedStacks[index].Amount == 5 && OwnedStacks[index].Owner == user,
+                    String.Format("ammunition %d combined native stack", index));
+            }
+            Console.Printf("CA652 COMPLETE failures=%d", Failures);
+        }
+    }
+}
