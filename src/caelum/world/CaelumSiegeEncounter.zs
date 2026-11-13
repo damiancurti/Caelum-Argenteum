@@ -34,6 +34,11 @@ class CaelumSiegeCombatant : Object play
     int RetreatRevision,RetreatGun,RetreatStep;
     bool RetreatPointPending;
     vector3 RetreatPoint;
+    int RetreatDistance,RetreatCellDistance;
+    bool RetreatCellKnown;
+    vector3 RetreatCell;
+    int RetreatLane;
+    bool RetreatExitChosen;
 
     vector3 CrewPost()
     {

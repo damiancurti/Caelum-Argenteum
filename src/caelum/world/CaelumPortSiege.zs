@@ -737,7 +737,11 @@ class CaelumPortSiege : CaelumSiegeEncounter
                     soldier.CityNavigation.Request(soldier,originalPoint);
                     return;
                 }
-                if(frontRoute){entry.FrontNavigation.RequestFront(entry,originalPoint);return;}
+                if(frontRoute)
+                {
+                    if(withdrawing && CaelumBarracasRetreat.FollowQueue(entry,originalPoint))return;
+                    entry.FrontNavigation.RequestFront(entry,originalPoint);return;
+                }
             }
             // En las calles, conservar un rumbo de esquiva indefinidamente
             // hace alejarse al último ocupante cuando otro cruza su waypoint.

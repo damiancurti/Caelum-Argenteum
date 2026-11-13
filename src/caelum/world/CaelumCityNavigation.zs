@@ -33,7 +33,11 @@ class CaelumCityNavigation : Object play
 
     void RequestFront(CaelumSiegeCombatant entry,vector3 goal)
     {
-        Clear();self.Goal=goal.XY;GoalHeight=goal.Z;
+        // Con muchos cuerpos la cola puede tardar varios cientos de tics.
+        // No descartar el desvio vigente por un bloqueo temporal: cada paso
+        // sigue comprobando colision y BuildFor lo reemplaza al llegar su turno.
+        // NextFor ya invalida una ruta cuando cambia su destino.
+        self.Goal=goal.XY;GoalHeight=goal.Z;
         let port=entry!=null?CaelumPortSiege(entry.Encounter):null;
         if(port==null || Queued || level.time<RetryTic)return;
         port.FrontPathQueue.Push(entry);Queued=true;

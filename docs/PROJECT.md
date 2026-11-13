@@ -2,57 +2,43 @@
 
 Documentation version: **5.16.2** - 2026-11-12.
 
-## 5.16.2 - Sewer geometry slice (#454, in progress)
+## 5.16.2 - Approved map redesign slices (#454, in progress)
 
-The candidate Justice annex now preserves the existing arena rules and exact
-city-geometry prefix. Native placement/save/return and old active/stored-hub
-continuation pass; all238 packaged maps remain unchanged. Evidence is in
-assets/validation_v5_16_2/barracas-justice/SUMMARY.json.
+MAP02 revision6 implements the approved sewer board with twelve main circuits,
+four shortcuts, maintenance/recovery branches and retained gameplay content.
+Static and native fresh/reload/hub, old-save compatibility, cleared escorts,
+maximum-body passage, boss retreat and lower branches/grates/lift pass. Qualified
+before/after Vulkan evidence is recorded; ordinary combat/hazard traversal and
+author acceptance remain pending. MAP01 owns geometry and compatibility modes;
+assets/validation_v5_16_2/RESULTS.json owns the evidence.
 
-Pedestrian navigation is staged for the unactivated city: southern approaches,
-front-preserving groups, shared local avoidance and ground withdrawal fields.
-Full15-body approaches, six withdrawals and five wounded-commander origins pass
-fresh/reload. The complete native controller also passes its1000 living cap and
-five-casualty refill with the unchanged finite6600 ledger. Four ram captures retain
-reserve ownership. Four house orientations and64 merchant interactions pass;
-one purchase per run preserves stock and wallet accounting. All600 resident
-deployment flags pass a fresh native-save audit; early-checkpoint replay completes
-all600 at45,093tics. All96 factory networks and four vehicle boarding sessions
-also open through native Use in fresh/reloaded runs, without claiming recipes or journeys.
-Climate survival, full battle and presentation measurements remain pending.
-See assets/validation_v5_16_2/barracas-continuation/SUMMARY.json.
+Barracas revision4 is not yet installed in production MAP03. Its approved
+street/plaza/perimeter structure retains288 building identities,160 private
+interiors, four gates and three siege fronts. Native geometry, services, gates,
+artillery access, six complete ram routes and600 deployment paths pass. Actual
+600-resident deployment also passes a fresh-save audit and early-checkpoint
+replay, retaining collision,72 operators and the automatic>=500 census policy.
 
-The city candidate now has native four-gate machine deployment, six full ram
-approaches and persistent active/reserve handling. Fresh/reload checks retain
-force/objective counts. Full-battle integration and
-frame-presentation measurements remain unfinished; production
-MAP03 is unchanged. See barracas-fronts/SUMMARY.json for qualified evidence.
+Long infantry routes, isolated withdrawals, five wounded-commander origins,
+ram capture ownership and the full-controller1000-cap refill pass. Four house
+orientations retain normal Used/rendered-ACK travel,64 shops open and a purchase
+preserves stock/money;96 factory stations and four vehicle sessions also pass
+native Use. Recipe completion and ticket/journey transactions are separate.
+Justice placement/save/return and original active/stored-hub saves pass.
 
-MAP02 revision 6 implements the approved sewer board with twelve main circuits,
-four internal shortcuts, human-scale headroom and retained gameplay content.
-MAP01 owns the map specification and explicit old-active/stored-hub compatibility
-mode. Static/deterministic and isolated native fresh/save/hub, escort, boss and
-lower-recovery checks pass. Before/after views and native presentation evidence
-are recorded; ordinary combat/hazard traversal and author acceptance remain in
-TASKS. Barracas and regional slices remain separate #454 work. No new folklore
-models, campaign essence placements or memory scripts are claimed.
-
-Barracas now has an unactivated architectural source/preview with 288 retained
-construction identities, the approved street/plaza/perimeter structure, rotated
-house facades and 424 static/native clearance targets passing. MAP03 and CAH maps
-are unchanged. The author approved three siege fronts, four gate materials and
-the 12-active-gun distribution. Service placement/private-house return and exact
-old-city continuation pass; the artillery candidate also passes 72 isolated crew
-walks and all 528 guard posts. Ordinary transport, deployment, siege and final
-architecture remain to integrate. See MAP01/TASKS.
-The 600 exterior deployment routes are also generated and pass native continuous
-collision sampling in fresh/reloaded saves. This verifies geometry and dispatch,
-not 600-body AI/crowds; the production city remains unchanged.
-Both existing ram sizes now pass isolated corner approaches and impacts against
-all four gates, with mid-turn reload and fixed-heading regression controls. Crew
-movement with6/32 real Mandingas also passes in two isolated normal-cadence
-fresh/reload cases. Production integration, reserve activation and full
-three-front behavior are still unfinished.
+Combined aftermath testing exposed opposing assigned-exit streams and repeated
+local detours among bodies moving in the same direction. Revision4 separates
+retreat exit from assault front and retains physical progress/queued routes.
+Fresh and saved congested aftermaths now complete all1000 surviving physical exits,
+preserving reserve/victory accounting and no automatic essence grant. Early-checkpoint
+replay, representative frame-presentation measurements and final integrated
+new/legacy startup checks remain unfinished. Thermal-isolated
+navigation does not establish climate survival or a fully played battle.
+Architectural readability/author review remain pending; final art completion is
+coordinated with #463. No new folklore actors, regional maps, essence placements
+or memory scripts are claimed here. See TASKS and
+assets/validation_v5_16_2/barracas-continuation/SUMMARY.json.
+The focused crowd correction is recorded in barracas-withdrawal/SUMMARY.json.
 
 ## 5.16.1 - Folklore reference recovery (#453, catalogue approved)
 

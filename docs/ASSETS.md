@@ -21,6 +21,13 @@ These fields are not a claim of complete multilayer connectivity. Elevated
 withdrawal reverses the existing36 artillery routes. Both generators are
 deterministic; generated string-return switches are split into64-row functions
 to fit GZDoom registers. Navigation evidence is in barracas-navigation/SUMMARY.json.
+Revision4 adds three-digit hexadecimal ground distances with an explicit
+unreachable sentinel, retaining the original row-first direction fields. The
+native helper decodes and caches costs by current/target cell. An independent
+audit checks771327 reachable costs and257106 nearest-exit basin edges; native
+save inspection also checks identity, original assault lane, selected exit and
+decoded caches. Generated source/generator LF attributes keep byte checks stable.
+See barracas-withdrawal/SUMMARY.json; no map/art asset changes accompany this fix.
 
 FRONTS.json and CaelumBarracasFrontData derive six machine slots/three fronts
 from the approved layout and original SOUTH/CITY/LAYOUT distances. The generator

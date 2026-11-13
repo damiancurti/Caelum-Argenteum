@@ -2,80 +2,51 @@
 
 Documentation version: **5.16.2** - 2026-11-12.
 
-## 5.16.2 - Sewer redesign validation (#454)
+## 5.16.2 - Approved sewer and Barracas redesign (#454)
 
-Candidate Justice preservation now passes deterministic/static checks and native
-placement, active save and exact return. Old active/stored-hub compatibility also
-passes. Carry this independent annex into final city activation; it does not
-replace the remaining siege, service or performance checks. See barracas-justice/SUMMARY.json.
+MAP02 revision6 is packaged. Static routes, retained supply identities,
+deterministic generation and rollback hashes pass. Native fresh/reload/hub,
+old active/stored-hub compatibility, four cleared escorts, maximum-body passage,
+boss retreat, lower branches/grates/lift and qualified Vulkan measurements pass.
+Ordinary combat/hazard navigation and author review remain outstanding under
+CA454-MAP02-01. Evidence: assets/validation_v5_16_2/RESULTS.json.
 
-Full approaches, withdrawals, wounded-commander escape, ram capture ownership and
-native capped refill now pass fresh/reload. Four house orientations and64 shop Use
-interactions also pass, including one finite-stock purchase per run. A native save
-confirms600 living resident deployment completions and72 operator ascents;
-the early-checkpoint replay in barracas-crowd-native03 passes at45,093tics.
-All96 factory stations and four vehicle boarding sessions pass native Use;
-recipe completion and ticket/journey transactions are outside these access tests.
-Keep raw-weather deaths
-separate from movement isolation; integrated climate survival remains unverified.
-Finish full battle/outcome integration and rendering
-evidence before activation. See barracas-continuation/SUMMARY.json.
+Barracas revision4 remains an isolated candidate. Approved street/plaza/perimeter
+geometry retains288 building identities and160 private interiors. Native checks
+cover424 architectural endpoints,224 service endpoints,160 portals/320 leaves,
+four gate interactions and160 closed/open samples. The closed-perimeter grid
+has no exterior bypass. Services and original-city active/stored-hub saves pass.
 
-The approved MAP02 board is implemented as geometry revision 6. Static principal
-circuits, staged key reachability, prisoner extraction, all drop/chest locations,
-retained supply identities and exact rollback-source hashes pass. Native fresh,
-new-save reload and stored-hub return pass; old active/hub saves load with the
-revision-5 compatibility package. All four cleared-corridor escorts, maximum-body
-passing, boss retreat, lower-return clearances/grates/lift and final fresh/hub
-checks pass. Before/after views and actual Vulkan presentation measurements are
-recorded in assets/validation_v5_16_2/RESULTS.json, with fixture qualifications.
-Ordinary combat/hazard navigation and author review remain outstanding. Agent checks do
-not close the author's CA454-MAP02-01 test. Barracas remains the next approved
-map slice: four perimeter gates, siege adaptation and independent save support.
+Completed candidate evidence:
+- 36 defensive guns,72 operator walks,528 guard posts and648 component clearances;
+  600 generated paths/9453 waypoints and866538 continuous collision samples.
+- Actual600-resident deployment,72 operators and automatic high-density mode:
+  fresh-save audit and early-checkpoint replay, preserving identities/collision.
+- Six complete ram approaches, both crew sizes and persistent active/reserve
+  ownership;15 long pedestrian approaches and five wounded-commander origins.
+- Four native ram captures and full-controller1000-cap refill, preserving the
+  finite6600 ledger and existing subcaptain alongside600 residents.
+- Four house orientations through Used/rendered capture-ACK/return;64 shops,
+  one finite-stock purchase per phase,96 crafting stations and four vehicles
+  through native Use. Recipe completion and ticket/journey transactions were
+  outside these access checks.
+- Existing Justice arena, active-save pair/timer and exact survivor return;
+  original city/hub saves retain their earlier arena and geometry.
 
-Barracas architectural source/preview is now in assets/barracas_redesign. Its
-288 identities and 424 static/native endpoint checks pass; source geometry and
-private house interiors remain unmodified in src. Rotated portal leaves and
-exterior coordinate helpers pass the isolated 224-endpoint/320-leaf native probe.
-The service candidate also passes64 merchants,96 factory stations,four vehicles
-and the four existing arrival-household identities through CAH069 placement and
-exact new doorstep return. Old saves pass with the new dispatch code. Integrate
-ordinary interactive house/service/transport flows and the
-real siege controller; its passive test controller is disposable. Complete visual
-architecture and retain the accepted residential sky policy. Exact original
-MAP03 active/stored-hub continuation passes through -LegacyMap03Revision3 with
-current code; repeat against the eventual integrated new-city runtime. Three siege fronts with active/reserve
-ram pairs are approved. The four-gate shell now passes a closed-perimeter grid
-audit,160 physical native closed/open samples and four direct Used-handler checks. The 12 active defensive guns are four towers plus four
-south-wall, two east-wall and two west-wall guns; retain 36 installed guns. No city author test is added for
-the unintegrated preview. Existing MAP02 acceptance remains pending.
-
-SIEGE.json now derives 36 artillery posts/four towers from the retained profiles.
-All 72 isolated native operator paths,698 route points,528 ground posts and648
-cannon-component clearances pass. The complete candidate still passes 424 static
-routes and closed-perimeter isolation. Complete real 600-body deployment and three-front
-infantry approaches/retreats before activating the city.
-These geometry checks do not establish crowded movement, firing coverage or
-performance. Evidence: validation_v5_16_2/barracas-forts/SUMMARY.json.
-The 600 ground paths are now generated/tested: 9453 waypoints and 866538 native
-TryMove samples pass in both fresh and reloaded candidates. Runtime helpers
-dispatch by revision, retaining old route bodies and private house coordinates.
-Validate actual resident materialization, AI and crowd movement with the full
-siege controller; continuous geometric sampling is not that acceptance.
-Opt-in ram turns and widened exterior forecourts now pass physical route/contact
-tests for both sizes at all four gates, including saved in-progress turns and
-legacy fixed-heading routes. Rotating crew stations and two isolated6/32-Mandinga
-AI approaches now pass at normal cadence, including mid-turn reload. All six full ram approaches and four-gate machine deployment now pass
-isolated native tests, including persistent reserve activation. Complete southern
-infantry/gun-crew arrival, front-specific march and withdrawal, capture/refill,
-real600-body deployment and crowds. These tests do not activate the production city or establish FPS.
-
-The current machine slice retains12 hostile objectives,42 guns and74 queued
-operators; fresh/reload native checks confirm four cardinal gate bindings,
-three initially active rams and release of a reserve after permanent destruction.
-A repairable sabotage does not release it. Full physical routes pass six cases
-and2,005,906 maximum-body crew-post samples per run; no real-time battle/FPS
-claim follows from accelerated diagnostic stepping. See barracas-fronts/SUMMARY.json.
+The combined aftermath probe exposed severe congestion from assigned-exit
+counterflow and repeated detours among same-direction bodies. The revised
+nearest-exit/progress/following policy completes all1000 survivors from fresh
+and saved congested aftermaths. Original assault lanes, five fixture deaths, the finite
+reserve and exactly one victory remain intact; no essence is granted. Early-checkpoint
+replay is running. Retain failed/incomplete runs and original saves. Finish this correction,
+representative peaceful/ground/siege frame-presentation measurements and final
+integrated new/legacy startup checks before activating production MAP03.
+Keep fixture thermal isolation separate from integrated climate survival.
+Architectural readability and author acceptance remain outstanding; final art
+completion belongs to #463 and is not claimed by this map slice.
+See barracas-continuation/SUMMARY.json and the focused geometry/navigation
+and barracas-withdrawal/SUMMARY.json under assets/validation_v5_16_2. Add a city author check only when the
+integrated candidate is ready. Other regional layouts still require authoring.
 
 ## 5.16.1 - Bestiary source import (#453)
 

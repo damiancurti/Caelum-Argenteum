@@ -25,9 +25,14 @@ def main():
     parser.add_argument('--commander', action='store_true', help='Test native wound-triggered commander escape from five origins')
     parser.add_argument('--capture', action='store_true', help='Test capture ownership and paired reserve activation without enemy crews')
     parser.add_argument('--refill', action='store_true', help='Run full native controller through1000-cap refill; thermal exposure isolated')
+    parser.add_argument('--aftermath', action='store_true', help='Continue refill test through native objective destruction, wounded escape and surviving army withdrawal')
+    parser.add_argument('--migration-only', action='store_true', help='Audit revised withdrawal state on a saved aftermath, without claiming army completion')
     parser.add_argument('--seed-save', type=Path, help='Resume one existing isolated checkpoint with the same package basenames')
     args = parser.parse_args()
+    if args.migration_only and not (args.aftermath and args.seed_save):
+        parser.error('--migration-only requires --aftermath and --seed-save')
     args.retreat = args.retreat or args.retreat_full
+    args.refill = args.refill or args.aftermath
     if sum((args.march, args.retreat, args.crowd, args.commander, args.capture, args.refill)) > 1: parser.error('Select one navigation probe')
     movement = args.march or args.retreat or args.crowd or args.commander or args.capture or args.refill
     prefix = 'REFILL' if args.refill else 'CAPTURE' if args.capture else 'COMMANDER' if args.commander else 'CROWD' if args.crowd else 'RETREAT' if args.retreat else 'MARCH'
@@ -44,7 +49,9 @@ def main():
     if args.capture: probe, handler, controller = 'barracas_capture_probe.zs', 'CA454CaptureProbe', 'CA454CaptureCity'
     if args.refill: probe, handler, controller = 'barracas_refill_probe.zs', 'CA454RefillProbe', 'CA454RefillCity'
     with zipfile.ZipFile(fixture, 'w') as archive:
-        files = {'ZSCRIPT': 'version "4.14.2"\n' + (Path(__file__).parent / probe).read_text(encoding='utf-8'),
+        source = (Path(__file__).parent / probe).read_text(encoding='utf-8')
+        if args.aftermath: source = source.replace('const FINISH_BATTLE=0;', 'const FINISH_BATTLE=1;')
+        files = {'ZSCRIPT': 'version "4.14.2"\n' + source,
                  'MAPINFO': f'gameinfo {{ AddEventHandlers="{handler}" }}\ndoomednums {{31050={controller}}}\n'}
         for name, data in files.items():
             archive.writestr(zipfile.ZipInfo(name, (2026, 11, 13, 0, 0, 0)), data)
@@ -64,6 +71,10 @@ def main():
         report['scope'] = 'Native capture of three active rams and one reserve; enemy reserve activation and captured reserve exclusion persist after reload. Empty enemy crews and fixture faction membership. No timed work, combat, refill or author acceptance.'
     if args.refill:
         report['scope'] = 'Full native city controller,600 defender records and1000 living attacker cap, finite6600 cumulative reserve, five fixture deaths through native Die followed by actual refill opportunities. Thermal exposure neutralized; no accelerated time or frozen combatants. Not full battle completion, FPS, climate survival or author acceptance.'
+    if args.aftermath:
+        report['scope'] += ' Then call native DestroyByTarot on12 objectives and wound the initialized commander at the accepted threshold. Require physical commander retreat, exactly one victory, stopped admissions and every surviving attacker physically exited. This simulates objective completion; it does not test winning the fight or card targeting/payment.'
+    if args.migration_only:
+        report['scope'] = 'Load a preceding-revision aftermath checkpoint, retain all saved actors and native withdrawal. After35 tics require every surviving withdrawing body to hold the current route revision; repeated initialization preserves its position, health and cached route. Save the migrated world. This checks continuation/idempotence, not completed army withdrawal.'
     fatal = ('Script error', 'Execution could not continue', 'VM execution aborted', 'Unknown type')
     if args.seed_save: report['seed_save_sha256'] = digest(args.seed_save.resolve())
     for phase in (('reload',) if args.seed_save else ('fresh', 'reload')):
@@ -73,6 +84,8 @@ def main():
         commands = 'wait 140; netevent ca454_front_start; wait 10; save checkpoint; ' if phase == 'fresh' else 'wait 10; netevent ca454_front_resume; '
         if movement:
             commands = f'wait 140; netevent ca454_{start_event}_start; wait 35; save checkpoint; ' if phase == 'fresh' else f'wait 1; netevent ca454_{event}_resume; '
+            if args.migration_only:
+                commands += 'wait 35; netevent ca454_refill_migration; save migrated; wait 35; '
             # Re-read a console file so a completed native probe exits normally.
             # No UI injection, simulation acceleration or guessed script API.
             (folder / 'poll.cfg').write_text('wait 35; exec poll.cfg\n')
@@ -89,7 +102,7 @@ def main():
         startup = subprocess.STARTUPINFO(); startup.dwFlags |= subprocess.STARTF_USESHOWWINDOW; startup.wShowWindow = 0
         with (folder / 'process.log').open('wb') as stream:
             process = subprocess.Popen(command, cwd=folder, stdout=stream, stderr=stream, startupinfo=startup)
-            deadline = time.monotonic() + (6000 if args.commander else 3000 if args.retreat_full or args.crowd else 2100 if args.march else 900 if args.refill else 480 if args.retreat else 180); timeout = False
+            deadline = time.monotonic() + (6000 if args.commander else 3000 if args.retreat_full or args.crowd or args.aftermath else 2100 if args.march else 900 if args.refill else 480 if args.retreat else 180); timeout = False
             try:
                 while process.poll() is None:
                     path = folder / 'engine.log'

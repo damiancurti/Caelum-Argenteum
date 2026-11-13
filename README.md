@@ -28,8 +28,9 @@ the checkpoint is before Selene on the Moon, after obtaining the World last.
 The seven named Majors per chapter are also approved as an allocation base;
 the recovered bestiary and map references proceed through separate issues.
 Barracas also has an [isolated architectural preview](assets/barracas_redesign/LAYOUT.json)
-with 288 retained building identities; it is not activated in MAP03. Ordinary services and complete
-three-front siege integration remain unfinished. For visited original Barracas saves,
+with 288 retained building identities; it is not activated in MAP03. Fresh and saved
+crowded aftermaths now complete all 1,000 physical exits; early-checkpoint replay
+and frame-presentation measurements remain unfinished. For visited original Barracas saves,
 `run_dev.bat --legacy-map03-revision3` retains exact geometry and private-house
 identities. Active/stored-hub continuation passed with current code; repeat
 verification after the redesigned city is integrated.
@@ -67,7 +68,8 @@ all64 shopkeepers open with native Use, and a purchase preserves stock and money
 accounting, in fresh/reloaded runs. All96 factory stations and four vehicle
 boarding sessions also pass native Use checks. Recipe completion and ticket/journey
 transactions are outside these access checks; combined aftermath and presentation
-measurements remain pending.
+measurements remain pending. The combined aftermath probe exposed crowd congestion
+at exact flow-cell centres; its correction is undergoing native verification.
 
 V5.15 includes the [battle director](assets/validation_v5_15_0/RESULTS.md)
 (#447, PR635), [Unitarian command](assets/validation_v5_15_1/RESULTS.md)

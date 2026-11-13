@@ -1,0 +1,3 @@
+{
+  "qualification": "Fresh phase completed before daemon restart; reload was interrupted. Results contain only the completed fresh phase. Later runtime has an additional following rule and must be tested separately."
+}

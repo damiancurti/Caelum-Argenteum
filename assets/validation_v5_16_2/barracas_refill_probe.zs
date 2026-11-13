@@ -3,15 +3,50 @@
 class CA454RefillCity : CaelumPortSiege {}
 class CA454RefillProbe : EventHandler
 {
+    const FINISH_BATTLE=0;
     bool Running;
-    int Elapsed,Stage,BeforeSuccessful,AfterOpportunity,PeakLiving;
+    bool InitialKnight;
+    int Elapsed,Stage,BeforeSuccessful,AfterOpportunity,PeakLiving,ResumeElapsed;
     Array<CaelumSiegeCombatant> Removed;
     override void NetworkProcess(ConsoleEvent e)
     {
         if(e.Name=="ca454_refill_resume")
-        {Console.Printf("CA454 REFILL RESUME %s elapsed=%d stage=%d",Running?"PASS":"FAIL",Elapsed,Stage);return;}
+        {ResumeElapsed=Elapsed;Console.Printf("CA454 REFILL RESUME %s elapsed=%d stage=%d",Running?"PASS":"FAIL",Elapsed,Stage);return;}
+        if(e.Name=="ca454_refill_migration")
+        {
+            let port=CaelumPortSiege.Get();int retained=0;
+            if(!Running || Stage!=4){Fail("migration requires saved aftermath");return;}
+            for(int i=0;i<port.Attackers.Size();i++)
+            {
+                let entry=port.Attackers[i];let body=entry.Body;
+                if(entry.Exited || entry.ConfirmedDead || body==null || body.health<=0)continue;
+                if(!entry.Withdrawing || entry.RetreatRevision!=CaelumBarracasRetreatData.REVISION)
+                {Fail("saved route did not migrate on native withdrawal");return;}
+                vector3 position=body.Pos,point=entry.RetreatPoint;int health=body.health;
+                int step=entry.RetreatStep,gun=entry.RetreatGun;
+                bool pending=entry.RetreatPointPending;
+                vector3 cell=entry.RetreatCell;
+                int distance=entry.RetreatDistance,cellDistance=entry.RetreatCellDistance;
+                bool known=entry.RetreatCellKnown;
+                int lane=entry.Lane,retreatLane=entry.RetreatLane;
+                bool chosen=entry.RetreatExitChosen;let exitNode=entry.ExitNode;
+                CaelumBarracasRetreat.Initialize(entry);CaelumBarracasRetreat.Initialize(entry);
+                if(body.Pos!=position || body.health!=health || entry.RetreatPoint!=point
+                    || entry.RetreatStep!=step || entry.RetreatGun!=gun || entry.RetreatPointPending!=pending
+                    || entry.RetreatCell!=cell || entry.RetreatDistance!=distance
+                    || entry.RetreatCellDistance!=cellDistance || entry.RetreatCellKnown!=known
+                    || entry.Lane!=lane || entry.RetreatLane!=retreatLane
+                    || entry.RetreatExitChosen!=chosen || entry.ExitNode!=exitNode)
+                {Fail("route migration not idempotent");return;}
+                retained++;
+            }
+            if(retained==0){Fail("migration has no surviving saved bodies");return;}
+            Running=false;
+            Console.Printf("CA454 REFILL COMPLETE passed=1 failures=0 mode=migration retained=%d revision=%d victory_count=%d",retained,CaelumBarracasRetreatData.REVISION,port.VictoryCount);return;
+        }
         if(e.Name!="ca454_refill_start")return;
         let port=CaelumPortSiege.Get();players[0].mo.bNoTarget=true;players[0].mo.bInvulnerable=true;
+        InitialKnight=CaelumPlayer(players[0].mo).GetPersistentCharacterState(true).HasTarotCard(CaelumConstants.TAROT_WANDS_KNIGHT);
         if(port.SetupRevision==0){CaelumCityWorld.Prepare();port.Deploy();}
         if(!port.SiegeStarted)port.Deploy(true);
         Running=true;Console.Printf("CA454 REFILL START defenders=%d",port.Defenders.Size());
@@ -50,9 +85,46 @@ class CA454RefillProbe : EventHandler
         {
             for(int i=0;i<Removed.Size();i++)if(!Removed[i].ConfirmedDead || Removed[i].Exited)
             {Fail("casualty identity lost");return;}
+            if(FINISH_BATTLE)
+            {
+                for(int i=0;i<port.Machines.Size();i++)if(!port.Machines[i].DestroyByTarot())
+                {Fail("native objective destruction rejected");return;}
+                if(port.Victory || port.Boss==null || port.Boss.Body==null || port.Boss.Body.health<=0)
+                {Fail("victory before commander defeat");return;}
+                let boss=port.Boss.Body;
+                boss.health=Max(1,int(Floor(boss.CombatMaximumHealth*CaelumConstants.HEALTH_WOUNDED_THRESHOLD)));
+                Stage=3;Console.Printf("CA454 REFILL OBJECTIVES neutralized=%d boss_health=%d",port.NeutralizedCount,boss.health);return;
+            }
             Running=false;Console.Printf("CA454 REFILL COMPLETE passed=1 failures=0 elapsed=%d successful=%d remaining=%d living=%d peak=%d opportunities=%d defenders=%d",Elapsed,pool.Successful,pool.Remaining,living,PeakLiving,pool.Opportunities,port.Defenders.Size());return;
         }
+        if(Stage==3 && port.Victory && port.Aftermath && pool.Stopped)
+        {
+            if(!port.BossRetreated || port.Boss.ConfirmedDead || port.VictoryCount!=1 || port.NeutralizedCount!=12)
+            {Fail("native victory accounting");return;}
+            BeforeSuccessful=pool.Successful;Stage=4;
+            Console.Printf("CA454 REFILL VICTORY elapsed=%d admitted=%d count=%d",Elapsed,BeforeSuccessful,port.VictoryCount);
+        }
+        if(Stage==4)
+        {
+            if(!pool.Stopped || pool.Successful!=BeforeSuccessful || port.VictoryCount!=1)
+            {Fail("victory restarted admissions or rewards");return;}
+            int pending=0,exited=0,dead=0;
+            for(int i=0;i<port.Attackers.Size();i++)
+            {
+                let entry=port.Attackers[i];
+                if(entry.ConfirmedDead)dead++;else if(entry.Exited)exited++;
+                else if(entry.Body!=null && entry.Body.health>0)pending++;
+            }
+            if(Elapsed%350==0)Console.Printf("CA454 REFILL WITHDRAWAL elapsed=%d pending=%d exited=%d dead=%d",Elapsed,pending,exited,dead);
+            if(pending==0)
+            {
+                let user=CaelumPlayer(players[0].mo);
+                if(user.GetPersistentCharacterState(true).HasTarotCard(CaelumConstants.TAROT_WANDS_KNIGHT)!=InitialKnight)
+                {Fail("victory automatically granted essence");return;}
+                Running=false;Console.Printf("CA454 REFILL COMPLETE passed=1 failures=0 elapsed=%d admitted=%d remaining=%d exited=%d dead=%d victory_count=%d",Elapsed,pool.Successful,pool.Remaining,exited,dead,port.VictoryCount);return;
+            }
+        }
         if(Elapsed%350==0)Console.Printf("CA454 REFILL PROGRESS elapsed=%d successful=%d living=%d remaining=%d pending=%d opportunities=%d",Elapsed,pool.Successful,living,pool.Remaining,pool.Pending,pool.Opportunities);
-        if(Elapsed>=14000)Fail("deadline");
+        if(Elapsed>=ResumeElapsed+(FINISH_BATTLE?60000:14000))Fail("deadline");
     }
 }

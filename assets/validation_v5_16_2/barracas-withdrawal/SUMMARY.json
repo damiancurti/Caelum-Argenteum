@@ -1,0 +1,75 @@
+{
+  "issue": 454,
+  "version": "5.16.2",
+  "status": "Fresh army and saved congested army complete. Early replay/full-route continuation running; rendering pending. City unactivated; no author acceptance.",
+  "runtime": "build/v516/issue454-retreat-follow01.pk3",
+  "runtime_sha256": "ef5c0747a5136a719601a7c13b5cb8947245ab73217a227c77a15e4e1057e959",
+  "candidate_sha256": "7b4d8aa16035607bba6feb4bed7dc7df46143b230560b08acbc2669c51204b63",
+  "changes": [
+    "Revision4 cached geodesic distances choose the nearest existing legal southern exit, separately from the immutable assault lane.",
+    "Physical progress into an equally near ground cell advances its waypoint. Existing local detours persist while queued.",
+    "A blocked ground withdrawal waits behind an eligible same-direction body physically ahead; local spatial query only, retaining collision."
+  ],
+  "static": {
+    "nearest_exit_audit": "nearest-exit-audit.json",
+    "native_saved_caches": "migration-following/saved-cache-audit.json",
+    "package_delta": "package-delta.json",
+    "generation": "Repeated generate_barracas_retreat.py --check passed; original row-first direction fields retained."
+  },
+  "native": {
+    "following_recovery": {
+      "path": "following-recovery/results.json",
+      "passed": true,
+      "resumed_elapsed": 33182,
+      "completed_elapsed": 48300,
+      "additional_native_tics": 15118,
+      "exited": 1000,
+      "fixture_dead": 5,
+      "admitted": 1004,
+      "remaining": 5596,
+      "victory_count": 1
+    },
+    "preceding_nearest_only_recovery": {
+      "path": "late-recovery/results.json",
+      "passed": true,
+      "qualification": "A different late seed; not a paired timing comparison."
+    },
+    "migration": {
+      "path": "migration/results.json",
+      "passed": true,
+      "qualification": "Identical revision4 migration code, before addition of the following rule;882 living actors and1005 stable identities. Original assault lanes unchanged."
+    },
+    "fresh_following": {
+      "path": "fresh-following/results.json",
+      "passed": true,
+      "elapsed": 30205,
+      "exited": 1000,
+      "fixture_dead": 5,
+      "admitted": 1004,
+      "remaining": 5596,
+      "victory_count": 1
+    },
+    "commander_following": {
+      "path": "commander-following/results.json",
+      "passed": true,
+      "qualification": "Early-checkpoint replay of all five native wounded commander origins."
+    },
+    "migration_following": {
+      "path": "migration-following/results.json",
+      "passed": true,
+      "qualification": "Final following runtime retains882 survivors and idempotent route revision4."
+    },
+    "legacy_following": {
+      "path": "legacy-following/results.json",
+      "passed": true,
+      "qualification": "Exact final following runtime; original-city active/stored-hub geometry and state retained."
+    }
+  },
+  "limitations": [
+    "Thermal exposure is neutralized each fixture tick; no climate-survival conclusion.",
+    "Native objective destruction and commander wound are supplied by the fixture; no complete won fight, card targeting/payment or rendering-FPS claim.",
+    "Fresh nearest-only run08 was interrupted by daemon restart with462 pending at52500; individual paths do not prove army completion.",
+    "Early-checkpoint army replay, full-route replay and frame-presentation checks remain pending.",
+    "No new author test is ready until integrated city activation."
+  ]
+}

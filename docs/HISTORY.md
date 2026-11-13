@@ -4,6 +4,26 @@ Documentation version: **5.16.2** - 2026-11-12.
 
 ## 5.16.2 - Sewer redesign slice (#454, in progress, 2026-11-12)
 
+2026-11-13 crowd withdrawal: revision4 keeps assault Lane separate from the
+nearest legal exit, caches offline shortest-path costs and recognizes physical
+progress through an equally near cell. Queued requests retain their valid local
+detour. Same-direction ground bodies wait behind an eligible ally physically
+ahead, using only the next-step spatial volume. A saved congested aftermath
+completes all1000 surviving exits at48,300tics (15,118 additional), with five
+fixture casualties,1004 admitted/5596 remaining and exactly one victory. The
+existing essence is not granted automatically. All238 production WADs remain
+identical. Independent static/native-save audits verify costs, exit choices,
+1005 stable identities and idempotent revision4 migration with882 living bodies.
+
+Earlier iterations are retained: changing equal-length BFS ordering, exact-cell
+arrival, distance progress or queued-detour retention alone did not establish
+fresh army completion. Nearest-only run08 was interrupted by daemon restart at
+52,500tics with462 still pending; six full individual routes and five commander
+origins had completed their fresh phases, but not reload. The final fresh run completes all1000 exits at30,205tics with the same ledger;
+early-checkpoint replay and frame-presentation checks remain pending. Objective destruction,
+commander wound and neutralized thermal exposure are fixture conditions, not a
+fully won battle or survival/FPS evidence. See barracas-withdrawal/SUMMARY.json.
+
 2026-11-13 deployment/access follow-up: the corrected observer replays the
 original35-tic checkpoint and records600 resident completions at45,093tics,
 including all72 operator ascents, with no death/identity error. This complements

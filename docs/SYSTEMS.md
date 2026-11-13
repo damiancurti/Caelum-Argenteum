@@ -15,7 +15,14 @@ points while preserving perception evidence and normal visible-enemy combat.
 Groups stay within their assigned front. Infantry/gun crews share the existing
 one-local-search-per-tic budget with defenders; native speed, collision and
 resource accounting remain. After victory, withdrawal uses static ground fields
-and reversed artillery stairs. A nearby closed gate receives its normal Used
+and reversed artillery stairs. Revision4 chooses the nearest existing legal
+southern exit by precomputed ground distance, without changing the saved assault
+front. Entering an equally near cell advances the route; a valid local detour
+survives queueing. A blocked body waits behind an eligible withdrawing ally
+physically ahead in the same flow direction. This uses only a local next-step
+volume query; corners, immobilized bodies and other obstacles retain local
+avoidance. Native collision, speed, resources and shared search budgets remain.
+A nearby closed gate receives its normal Used
 interaction, since the original closing timer still runs after victory opening.
 Legacy geometry keeps its former tables/behavior. Isolated navigation evidence
 is qualified in barracas-navigation/SUMMARY.json; the city is not activated.
@@ -32,6 +39,16 @@ machines survive. Five native fixture deaths admit five replacements; the ledger
 is992 admitted plus5608 remaining, without changing the6600 cumulative total.
 These are qualified isolated checks, not battle or climate-survival acceptance.
 See barracas-continuation/SUMMARY.json.
+
+The combined aftermath fixture retains600 residents and the full1000-cap
+controller, then supplies12 native objective destructions and the commander wound.
+A saved congested aftermath completes all1000 surviving exits at48,300tics,
+15,118 additional tics after recovery, preserving five fixture casualties,
+1004 admissions,5596 unused reserves, one victory and no automatic essence grant.
+A fresh run also completes all1000 exits at30,205tics with the same ledger.
+Early-checkpoint replay and rendering measurements remain pending. Thermal isolation
+and supplied objective completion prevent a full-fight or climate-survival claim.
+See barracas-withdrawal/SUMMARY.json for exact packages and incomplete iterations.
 
 The author approved four gates: north reinforced, south wooden, east reinforced
 and west armored, retaining existing resistance profiles. Attackers arrive from

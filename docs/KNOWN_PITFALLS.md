@@ -4,6 +4,35 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-222 - Individual routes do not prove crowded withdrawal
+
+Status/evidence: ENGINE-VERIFIED for fresh/saved crowd recovery; early replay
+and frame presentation remain pending. First recorded / checked: 2026-11-13.
+Issue / PR: #454 / #643. Baseline: d2bf6f1c6 plus the unactivated city candidate.
+Environment: Windows11, GZDoom4.14.2, Vulkan, background unpaused at5% audio.
+Evidence: assets/validation_v5_16_2/barracas-withdrawal/SUMMARY.json and raw logs.
+
+Six isolated city routes passed while the combined army developed severe
+congestion. Forcing every survivor back to its assault front created opposing
+streams across the southern approach. Choose an existing legal exit by offline
+ground distance while preserving the saved assault assignment. Advancing only
+at an exact cell centre also sent physically progressed detours backwards.
+Recognize equal-or-better ground cost, and retain a valid local detour while its
+shared-budget replacement is queued. Neither observation authorizes teleporting
+survivors, removing collision, ignoring offscreen bodies or changing speed.
+
+Even nearest-exit streams repeatedly requested side detours around allies moving
+in their own direction. A local next-step volume query can wait behind an eligible
+body strictly ahead on that same straight flow; corners, immobilized bodies and
+unrelated obstacles retain avoidance. Do not trust an old BlockingMobj when a
+failed CheckPosition bypassed TryMove. The saved native search queue fell from
+489 entries before this correction to1 in the subsequent snapshot; this is
+state evidence, not a paired frame-time benchmark. The recovered run physically
+exits all1000 survivors; supplied objective destruction/wound and neutralized
+thermal exposure limit its meaning. Keep incomplete iterations and precise
+runtime/seed hashes; do not infer60FPS from these movement results. A separate fresh run completes
+all1000 exits at30,205tics; early-checkpoint replay remains pending.
+
 ## CA-KP-221 - Long navigation probes must preserve their isolation conditions
 
 Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED for the stated fixture causes.

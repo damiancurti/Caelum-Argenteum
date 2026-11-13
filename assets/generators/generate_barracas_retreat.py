@@ -23,6 +23,7 @@ def outputs(out):
               max(p[0] for p in usable) + cell, max(p[1] for p in usable) + cell]
     rows = []
     fields = []
+    depths = []
     # Each direction points from a discovered cell back toward its BFS parent.
     adjacent = [(cell, 0, 'W'), (-cell, 0, 'E'), (0, cell, 'S'), (0, -cell, 'N')]
     for front in fronts['fronts']:
@@ -38,30 +39,41 @@ def outputs(out):
         field = [''.join(flow.get((x, y), '.') for x in range(bounds[0], bounds[2], cell))
                  for y in range(bounds[1], bounds[3], cell)]
         fields.append(field)
+        depths.append([[distance.get((x, y), -1) for x in range(bounds[0], bounds[2], cell)]
+                       for y in range(bounds[1], bounds[3], cell)])
         rows.append({'front': front['id'], 'gate_index': front['gate_index'], 'goal_cell': start,
                      'reachable_cells': len(flow), 'unreachable_cells': len(usable - flow.keys()),
                      'maximum_grid_steps': max(distance.values()), 'rows': field})
     assert all(r['reachable_cells'] == rows[0]['reachable_cells'] for r in rows)
-    data = {'schema_revision': 1, 'issue': 454, 'geometry_revision': layout['geometry_revision'],
+    digits = len(f"{max(r['maximum_grid_steps'] for r in rows) + 1:x}")
+    unreachable = 16 ** digits - 1
+    for row, depth in zip(rows, depths):
+        row['distance_rows'] = [''.join(f'{(n if n >= 0 else unreachable):0{digits}x}' for n in line) for line in depth]
+    data = {'schema_revision': 4, 'issue': 454, 'geometry_revision': layout['geometry_revision'],
             'scope': 'Static ground flow fields to southern exits after victory opens the gates; elevated layers require their existing descent routes. No automatic gate opening or dynamic collision exemption.',
             'cell': cell, 'bounds': bounds, 'clearance_height': body['largest_supported_height'],
+            'distance_digits': digits, 'distance_unreachable': unreachable,
             'usable_cells': len(usable), 'fields': rows,
             'source_sha256': {p: hashlib.sha256((ROOT / p).read_bytes()).hexdigest() for p in (
                 'assets/barracas_redesign/LAYOUT.json', 'assets/barracas_redesign/SIEGE.json',
                 'assets/barracas_redesign/RAM_CREWS.json', 'assets/barracas_redesign/FRONTS.json',
                 'assets/map02_maze/LAYOUT.json')}}
     code = '// Flujo de suelo generado; los cuerpos conservan su colision nativa.\nclass CaelumBarracasRetreatData : Object play\n{\n'
-    code += f'    const REVISION=1;\n    const CELL={cell};\n    const MIN_X={bounds[0]};\n    const MIN_Y={bounds[1]};\n    const COLUMNS={(bounds[2]-bounds[0])//cell};\n'
+    code += f'    const REVISION=4;\n    const CELL={cell};\n    const MIN_X={bounds[0]};\n    const MIN_Y={bounds[1]};\n    const COLUMNS={(bounds[2]-bounds[0])//cell};\n'
+    code += f'    const DISTANCE_DIGITS={digits};\n    const UNREACHABLE_DISTANCE={unreachable};\n'
     code += '    static String Row(int front,int row){switch(front){' + ''.join(f'case {i}:return F{i}(row);' for i in range(len(rows))) + '}return "";}\n'
-    for i, field in enumerate(fields):
+    code += '    static String DistanceRow(int front,int row){switch(front){' + ''.join(f'case {i}:return D{i}(row);' for i in range(len(rows))) + '}return "";}\n'
+    tables = [(f'F{i}', field) for i, field in enumerate(fields)]
+    tables += [(f'D{i}', row['distance_rows']) for i, row in enumerate(rows)]
+    for prefix, field in tables:
         # GZDoom allocates a return register per string switch case. Keep each
         # generated function below the native register limit.
         chunks = (len(field) + 63) // 64
-        code += f'    static String F{i}(int row){{switch(row/64){{'
-        code += ''.join(f'case {chunk}:return F{i}_{chunk}(row);' for chunk in range(chunks))
+        code += f'    static String {prefix}(int row){{switch(row/64){{'
+        code += ''.join(f'case {chunk}:return {prefix}_{chunk}(row);' for chunk in range(chunks))
         code += '}return "";}\n'
         for chunk in range(chunks):
-            code += f'    static String F{i}_{chunk}(int row){{switch(row){{\n'
+            code += f'    static String {prefix}_{chunk}(int row){{switch(row){{\n'
             code += ''.join(f'        case {n}:return "{field[n]}";\n'
                             for n in range(chunk * 64, min((chunk + 1) * 64, len(field))) if field[n].strip('.'))
             code += '        }return "";}\n'
@@ -74,6 +86,14 @@ def outputs(out):
     }
     static vector3 Centre(vector3 point)
     {return (MIN_X+Floor((point.X-MIN_X)/CELL)*CELL+CELL/2,MIN_Y+Floor((point.Y-MIN_Y)/CELL)*CELL+CELL/2,0);}
+    static int Distance(int lane,vector3 point)
+    {
+        int x=int(Floor((point.X-MIN_X)/CELL)),y=int(Floor((point.Y-MIN_Y)/CELL));
+        String row=DistanceRow(lane/2,y);
+        if(x<0 || (x+1)*DISTANCE_DIGITS>int(row.Length()))return -1;
+        int value=row.Mid(x*DISTANCE_DIGITS,DISTANCE_DIGITS).ToInt(16);
+        return value==UNREACHABLE_DISTANCE ? -1 : value;
+    }
     static vector3 Next(int lane,vector3 point)
     {
         String direction=Direction(lane,point);vector3 centre=Centre(point);
@@ -91,7 +111,7 @@ def outputs(out):
                      if b['bounds'][0] <= x < b['bounds'][2] and b['bounds'][1] <= y < b['bounds'][3]]
         islands.append({'cell': [x, y], 'buildings': buildings})
     report = {'usable_cells': len(usable), 'bounds': bounds, 'unreachable_ground': islands,
-              'fronts': [{k: v for k, v in row.items() if k != 'rows'} for row in rows]}
+              'fronts': [{k: v for k, v in row.items() if k not in ('rows', 'distance_rows')} for row in rows]}
     return {'assets/barracas_redesign/RETREAT.json': (json.dumps(data, indent=2) + '\n').encode(),
             'src/caelum/world/CaelumBarracasRetreatData.zs': code.encode()}, report
 

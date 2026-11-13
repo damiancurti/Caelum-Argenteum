@@ -79,6 +79,14 @@ Ground withdrawal fields reach the three southern exits, with existing artillery
 routes reversed for elevated bodies. After victory, nearby closed gates receive
 the normal Used interaction; their timers/permissions are retained.
 
+Withdrawal revision4 chooses the nearest existing legal ground exit independently
+of the preserved assault front. Cached ground costs recognize physical progress;
+queued detours and same-direction following retain native collision. Fresh and
+saved crowded aftermaths now complete all1000 surviving exits with one victory,
+unchanged reserve accounting and no automatic essence grant. Early-checkpoint
+replay and rendering checks remain pending; supplied objective destruction and
+thermal isolation are explicit limitations in barracas-withdrawal/SUMMARY.json.
+
 Six terminal exits and36 stair descents pass isolated native fresh/reload checks.
 Full15-body approaches complete43607tics; six city withdrawals complete60732tics,
 both fresh/reloaded. Five wounded-commander origins complete30667tics in each run,
@@ -134,8 +142,9 @@ four open gate arches. Generated WAD, model and preview package bytes repeat
 exactly. Evidence and intermediate rendering failures are qualified in
 assets/validation_v5_16_2/barracas-preview/SUMMARY.json. This does not test ordinary
 walking, native house travel, merchants, guards, dynamic gate collision or siege
-deployment. Integrated siege, ordinary service/travel interactions, landscaping and final
-architecture remain. The subsequent MAP03 candidate reuses the original quay
+deployment. Later service/deployment checks are recorded above; combined aftermath,
+presentation and architectural review remain pending. Final art is coordinated
+with #463. The subsequent MAP03 candidate reuses the original quay
 through the approved quarter-turn/offset, retains its cargo/water/prisoner props
 and adds160 private-house portals/return starts,64 shop signs and96 factory
 stations. Residential house/shop lots keep the accepted184-MU sky policy; the
@@ -157,7 +166,7 @@ ChangeMap and predates the separately tested Justice annex. It does not establis
 boarding transactions, interactive door acknowledgement or final city acceptance.
 Evidence: assets/validation_v5_16_2/barracas-candidate/SUMMARY.json.
 
-The next candidate adds 36 defensive artillery posts, four 640-MU towers and the
+The candidate includes36 defensive artillery posts, four640-MU towers and the
 retained southern battlefield without overwriting the irregular southern wall.
 SIEGE.json derives their placement from the approved layout and original CITY/
 SOUTH profiles:256-MU walks,384-MU tower decks,64-MU treads and16-MU rises.
@@ -177,8 +186,9 @@ the defender's body/step height. Test walkers ignore each other; this is neither
 real defender AI nor crowded deployment/firing coverage. Corrected exterior
 views were inspected after a fixture camera initially landed inside a building.
 Evidence: assets/validation_v5_16_2/barracas-forts/SUMMARY.json. The production
-map/controller and private house maps remain unchanged;600 deployment routes,
-three-front siege, ordinary interaction and performance remain.
+MAP03 and private-house map bytes remain unchanged. The subsequent600-route,
+real-resident and service checks pass as recorded above; combined aftermath and
+performance remain pending.
 
 DEPLOYMENT.json now derives all 600 ground paths from the same assembled candidate
 cells, starting at each actual ResidentHouse doorway, including 69->70 relocation.
@@ -272,9 +282,9 @@ objectives and74 crew slots. Three rams initially activate. Permanent destructio
 releases its paired reserve; temporary sabotage does not. Fresh/reload tests
 preserve this state. All six complete physical approaches produce native gate
 impacts and pass2,005,906 maximum-body crew-post samples per run. These tests
-isolate geometry/deployment: infantry arrival and retreat, real crew movement
-over the complete side routes, capture/refill, crowded battle and presentation
-still need verification before production MAP03 activation. Evidence is
+isolate geometry/deployment. The continuation suite separately verifies long
+pedestrian routes, capture/refill and600-resident deployment. Combined aftermath
+and presentation still need verification before production MAP03 activation. Evidence is
 assets/validation_v5_16_2/barracas-fronts/SUMMARY.json.
 The final full-route runs also retain all six attacking cannons and waiting ram
 frames as physical obstacles. Fresh/reload pass; old active/stored-hub
