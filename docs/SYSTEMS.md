@@ -4,6 +4,11 @@ Documentation version: **5.17.1** - 2026-11-13.
 
 ## 5.17.1 / #647 - Inventory presentation boundary
 
+The nine medikit/Anima/energy classes also receive explicit presentation models.
+Their existing pickup/toss, quantity, healing/regeneration effects, fullbright
+states, icons, carried weight and saved ownership are unchanged. No new charge,
+consumption, quality, durability or collision policy is introduced.
+
 Coin drops use explicit 3D bindings for all 15 nominal classes. Their existing
 native stack, denomination, metal, face value, 1g unit weight, pickup/toss methods,
 collision and sprite/icon identities are unchanged. One world stack still uses

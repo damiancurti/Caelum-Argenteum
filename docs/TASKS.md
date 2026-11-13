@@ -4,7 +4,11 @@ Documentation version: **5.17.1** - 2026-11-13.
 
 ## 5.17.1 - Dropped inventory models (#647, in progress)
 
-Implemented 15 denomination bindings using three closed coin meshes. Complete
+Implemented 15 denomination bindings using three closed coin meshes, plus nine
+medikit/Anima/energy models. Final consumable package checks pass;
+CA647-CONSUMABLES-01 author review remains pending. Existing CAMDA0 collision
+between medium armor and medium Anima needs the intended armor resource in its
+future model binding; no sprite-state rename is authorized by this discovery. Complete
 package native/save checks pass; CA647-COINS-01 author review remains pending.
 Continue class-plus-variant coverage for equipment, clothing, ammunition,
 consumables, water containers, tools, materials and retained physical bodies.

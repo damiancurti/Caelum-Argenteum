@@ -4,6 +4,55 @@ Documentation version: **5.17.1** - 2026-11-13.
 
 ## 5.17.1 - Closed coin drops (#647, inventory conversion in progress)
 
+The same issue now includes small/medium/large medikits, Anima flasks and energy
+vials. The medikit remains the accepted leather bag identity, with handle, straps,
+medical patch, fittings and bandage; it is not changed into a health bottle.
+Anima keeps its blue rounded body, cork, ribbons and star/filigree; energy keeps
+the yellow-green vial, leather sling and leaves. Small hardware is warm bronze,
+medium silver, and large silver plus gold. Each real class is bound explicitly.
+The nine meshes contain 1,324-3,888 triangles and 11-22 closed components each;
+outward winding, paired oriented edges and reproducible exports are checked.
+
+Owned editable controls, references and hashes live in
+assets/source/art/inventory_models_647/consumables/DESIGN.json and EXPORT.json.
+The built-in ImageGen tool generated materials-v1.png from the five owned
+references and edited only the requested leather/cork materials into the selected
+materials-v2.png. Exact prompts are PROMPT.txt and PROMPT-v2.txt; PROVENANCE.json
+retains both original generated outputs and reference hashes. No raster pixels
+are edited by the geometry exporter. Native bodies/caps/straps/ornaments are real
+geometry, not object silhouettes on planes. Their height follows the existing
+opaque reference silhouette; native scale, physics, item effects and icons stay.
+
+`python assets/generators/generate_inventory_consumable_models.py --output build/consumables --install`
+exports nine static MD3 files, one shared atlas, explicit bindings and editable
+OBJ/MTL geometry with named components. The OBJ files remain in the export folder;
+JSON controls and the deterministic generator are maintained sources. Repeat with
+`--check --install` to verify installed bytes. Project validation also checks
+native containers, nine-class coverage and source/dependency hashes without art tools.
+The first native candidate passed 473 assertions in five fresh/old/reload/rollback
+runs. Later visual revisions fix an amplified quadrant seam, handle-frame twisting,
+floating Anima ornaments and stretched leather UVs. The final complete package
+passed all 473 assertions without a model overlay, with 18,152 source entries
+matching exactly. Native front/side/rear/close views were inspected. Evidence is
+assets/validation_v5_17_1/consumables-evidence/SUMMARY.json; no manual acceptance
+or ordinary-menu/healing-use test is inferred. CA-KP-227 records the art checks.
+
+A single 700-tic presentation pair for nine visible consumables observed 1,135.71
+presents/s with sprites versus 1,108.42 with models; p95/p99 were
+1.0866/1.3089ms versus 1.1201/1.3445ms. Both averaged 28.571ms per simulation tic.
+The recorded Win11/Ryzen5950X/RTX3070Ti Vulkan1280x720 environment and qualifications
+below also apply: queue-present timing, no repeatability or campaign budget claim.
+
+For the nine-item author room, add `--kind consumables` to run_coin_drops.py's
+inspection command below. F1-F4 inspect the room/medikit; F5 restores player
+control and the normal HUD; F6/F7 inspect Anima/energy; F8 shows the rear. The
+fixture suppresses its HUD only during inspection, not in ordinary gameplay.
+
+The inventory audit also found a pre-existing duplicate CAMDA0 registration for
+medium armor and medium Anima in TEXTURES. This slice does not rename saved states
+or change that shared sprite registration. New per-class 3D bindings use their
+own intended resources; medium armor still needs explicit model coverage.
+
 COINS.json and COINS_EXPORT.json in assets/source/art/inventory_models_647 record
 owned source hashes, art geometry and deterministic outputs. Copper, silver and
 gold each use a closed bevelled disk (290 vertices, 384 triangles), with outward

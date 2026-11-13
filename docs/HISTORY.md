@@ -4,6 +4,19 @@ Documentation version: **5.17.1** - 2026-11-13.
 
 ## 5.17.1 - Initial inventory model coverage (#647, 2026-11-13, in progress)
 
+The same issue adds nine medikit/Anima/energy model variants. Owned built-in
+ImageGen atlas sources and both exact prompts are retained under
+assets/source/art/inventory_models_647/consumables. Deterministic geometry retains
+the reference identities and approved metal tiers without inventory-rule changes.
+Candidate native integration passed 473 assertions; further visual corrections
+addressed the handle, surface-conforming ornaments and leather material/UVs.
+The final complete package passed 473 assertions and matches all 18,152 source
+entries. A nine-object presentation pair recorded 1,135.71/1,108.42 presents/s
+(sprites/models), p95/p99 1.0866/1.3089ms and 1.1201/1.3445ms. ASSETS and
+validation_v5_17_1/consumables-evidence/SUMMARY.json retain environment, captures,
+qualifications and superseded visual candidates. CA-KP-227 records the reusable
+geometry/material lessons. CA647-CONSUMABLES-01 remains pending author review.
+
 Implemented closed copper/silver/gold coin meshes and explicit bindings for all
 15 denominations, using the unchanged owned sun artwork. No native inventory,
 physics, economy or saved state changed. Sources, deterministic exporter and

@@ -9,9 +9,10 @@ on Windows 11. The final game is intended to be independent of Doom assets.
 **Current release: 5.17.1.** Obtain and update the complete repository,
 validate it, then rebuild with `run_dev.bat` as described below.
 
-#647 adds closed 3D coin drops for all 15 denominations, retaining the existing
-face artwork, native stacks, weight and collision. The broader inventory model
-conversion is still in progress; [ASSETS](docs/ASSETS.md) records coverage/tests.
+#647 adds closed 3D drops for 15 coin denominations and nine medikit/Anima/energy
+variants. Native inventory rules, icons, weight and collision remain unchanged.
+Other inventory categories are still in progress; [ASSETS](docs/ASSETS.md) records
+coverage, owned art sources, tests and remaining author review.
 
 #458 begins the author-requested 3D expansion: the accepted Domingo pilot now
 renders as seven independent animated modules, sharing its existing rig and poses.

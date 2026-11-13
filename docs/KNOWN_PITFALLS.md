@@ -4,6 +4,28 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-227 - Inspect attached geometry and material mapping in native views
+
+Status/evidence: ENGINE-VERIFIED and source geometry checks, 2026-11-13. Issue: #647.
+Environment: GZDoom 4.14.2, Windows 11, Vulkan; unpaused background, 5% audio.
+Evidence: assets/validation_v5_17_1/consumables-evidence/SUMMARY.json.
+
+Closed triangles and correct item identity do not establish finished prop art.
+The first native Anima model had its flat star/scroll pieces separated from the
+curved bottle in side views. Project their editable controls onto the existing
+body profile and subdivide curved caps; keep physical item rules unchanged.
+An image atlas that looks like leather in isolation can stretch into wood-like
+lines on a rounded box. Inspect the actual mesh UVs; face-oriented projection
+retains the fine material grain without repainting inventory icons.
+
+For rounded rectangles, fractional powers amplify tiny sin/cos residue at axis
+seams. Snap numerical quadrant residue before applying the shape exponent.
+For handles/straps, preserve the cross-section basis along the path; choosing a
+fresh reference axis at each row can flip it abruptly. Check each component's
+paired edges, opposite directed edge use and positive volume, then inspect
+front/side/rear and close native captures. Pure geometry checks cannot detect an
+unattached ornament or unreadable material. Author art acceptance remains separate.
+
 ## CA-KP-226 - Rebuild native model selections after loading
 
 Status/evidence: ENGINE-VERIFIED, 2026-11-13. Issue: #458.
