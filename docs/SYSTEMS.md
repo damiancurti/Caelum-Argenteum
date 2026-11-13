@@ -2,6 +2,21 @@
 
 Documentation version: **5.16.2** - 2026-11-12.
 
+## 5.16.2 / #454 - Approved Barracas siege adaptation (candidate)
+
+The author approved four gates: north reinforced, south wooden, east reinforced
+and west armored, retaining existing resistance profiles. Attackers arrive from
+the south and divide into south/east/west fronts; north serves the bridge.
+Six original rams remain, one active and one reserve per assault front. Retain
+the 1000-living-attacker cap, 6600 cumulative reinforcement ledger and 600 defenders.
+Of 36 installed defensive cannons, 12 are active: four towers, four south-wall,
+two east-wall and two west-wall guns. There are 72 operators and 528 guards;
+guard identities retain 14 per first 12 posts and15 per last 24. No combat statistic,
+resource, ownership, offscreen-census or occupation rule changes are authorized
+by this map revision. Artillery geometry/isolated access is tested; production
+three-front deployment and reserve activation remain unfinished. MAP01/TASKS
+and barracas-forts/SUMMARY.json distinguish these stages from acceptance.
+
 ## 5.15.4 / #451 - Occupation, recovery and persistent consequences
 
 The author approved the following Barracas outcome cycle. Losing the #447 battle

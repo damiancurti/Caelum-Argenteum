@@ -4,6 +4,31 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-218 - Relocated stairs require a complete structure and support audit
+
+Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED for the isolated city candidate.
+First recorded / last checked: 2026-11-12 / 2026-11-12.
+Issue / PR: #454 / #643. Baseline: 33acaa333 with the candidate fortifications;
+exact runtime/map hashes are in barracas-forts/SUMMARY.json.
+Environment: Windows 11, GZDoom 4.14.2, Vulkan, unpaused background at 5% audio.
+Scope: authored geometry, ground posts and isolated native crew movement.
+
+Checking each translated flight only against buildings missed intersections
+with other flights, tower footprints and their landing/approach points. The
+first native attempt completed 33 of 36 routes. Cardinal operator offsets on
+oblique walls also left some posts unsupported. Rounded wall cells reached a
+guard whose continuous polygon distance appeared clear. A complete placement
+audit, level firing platforms and a raster-aware ground margin corrected these
+cases. Quantize flight geometry consistently inward; preserve guard formations
+as rigid grids instead of independently snapping their rows.
+
+Regression evidence: 698 authored points, 528 guard posts, 72 operator posts,
+648 actual cannon parts and 72 completed gravity/TryMove paths. Validate support
+height as well as empty headroom. Distinguish geometric path traversal from AI,
+crowd movement and firing coverage: these walkers intentionally ignore one
+another and the production siege is suppressed. No performance or author
+acceptance follows from these isolated results.
+
 ## CA-KP-217 - Physical collision probes must participate in actor collision
 
 Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED for the isolated gate probe.

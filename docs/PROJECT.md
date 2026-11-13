@@ -16,8 +16,11 @@ models, campaign essence placements or memory scripts are claimed.
 Barracas now has an unactivated architectural source/preview with 288 retained
 construction identities, the approved street/plaza/perimeter structure, rotated
 house facades and 424 static/native clearance targets passing. MAP03 and CAH maps
-are unchanged. The proposed siege disposition still awaits the author; services,
-transport and city save continuation remain to integrate. See MAP01/TASKS.
+are unchanged. The author approved three siege fronts, four gate materials and
+the 12-active-gun distribution. Service placement/private-house return and exact
+old-city continuation pass; the artillery candidate also passes 72 isolated crew
+walks and all 528 guard posts. Ordinary transport, deployment, siege and final
+architecture remain to integrate. See MAP01/TASKS.
 
 ## 5.16.1 - Folklore reference recovery (#453, catalogue approved)
 

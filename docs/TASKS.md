@@ -33,6 +33,14 @@ audit,160 physical native closed/open samples and four direct Used-handler check
 south-wall, two east-wall and two west-wall guns; retain 36 installed guns. No city author test is added for
 the unintegrated preview. Existing MAP02 acceptance remains pending.
 
+SIEGE.json now derives 36 artillery posts/four towers from the retained profiles.
+All 72 isolated native operator paths,698 route points,528 ground posts and648
+cannon-component clearances pass. The complete candidate still passes 424 static
+routes and closed-perimeter isolation. Connect 600 house deployments, three-front
+approaches/retreats and active/reserve ram handling before activating the city.
+These geometry checks do not establish crowded movement, firing coverage or
+performance. Evidence: validation_v5_16_2/barracas-forts/SUMMARY.json.
+
 ## 5.16.1 - Bestiary source import (#453)
 
 58 images, source metadata/checksums and deterministic catalogue generation are

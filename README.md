@@ -38,6 +38,8 @@ Used-handler checks; the closed-perimeter grid audit finds no exterior bypass.
 A separate candidate also passes service placement and private-house hub return:64
 merchants,96 factory stations,four vehicles and four relocated household objects.
 Its siege is suppressed by a disposable test controller; it is not the production city.
+The artillery candidate passes 72 isolated operator walks,528 guard posts and648
+cannon-component clearances. Real deployment, crowd movement and siege remain pending.
 
 V5.15 includes the [battle director](assets/validation_v5_15_0/RESULTS.md)
 (#447, PR635), [Unitarian command](assets/validation_v5_15_1/RESULTS.md)
@@ -626,7 +628,7 @@ ready. Remaining furniture/acquisition and other V5.8 issues stay open.
 
 The mansion garden now contains an iron drinking fountain and a cistern.
 The fountain holds200 L of potable water and replenishes1 L/world-minute;
-the1000-L cistern starts empty and accepts manual transfers, preserving water
+the 1000-L cistern starts empty and accepts manual transfers, preserving water
 quality and temperature. Both support ordinary container filling and the
 existing soap bath when potable. The kitchen/bathroom reserve remains separate.
 

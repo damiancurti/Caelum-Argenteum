@@ -94,6 +94,21 @@ queued screenshot before quitting and requires captures. No new siege, complete
 boarding interaction, ordinary door acknowledgement, final art or performance
 acceptance is claimed; a passive fixture suppresses obsolete siege deployment.
 
+The artillery geometry candidate then retained 36 guns/four towers and adapted
+their access flights to the irregular perimeter without moving accepted lots.
+The first native run walked 33/36 routes and exposed wall rounding, crossing
+flights and guard obstructions. Subsequent tests exposed overlapping approach
+points/towers and unsupported operator posts on oblique wall sections. Global
+placement exclusions, level slabs and a raster-aware guard margin corrected
+these failures. Final checks pass 72 isolated walks through 698 authored route
+points to both operator posts,528 guards and648 actual cannon components. The
+final map/package repeat identically;424 static targets and closed-perimeter
+isolation remain valid. The initial northwest camera was inside a building;
+exterior views were corrected and inspected without repeating unchanged walks.
+All attempts are retained in barracas-forts/SUMMARY.json. The fixture suppresses
+siege AI and ignores other test walkers; real deployment/crowds/firing coverage,
+performance, production activation and author acceptance remain unfinished.
+
 The author requested prevention of system sleep while away for several hours.
 A temporary system-only execution-state request is active during work, with a
 12-hour failsafe; it does not change the power plan or require the display on.

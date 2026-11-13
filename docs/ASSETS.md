@@ -43,6 +43,11 @@ generate_barracas_map.py assembles a candidate only under build/, using the
 reviewed shell, original transformed quay, existing workshops and low residential
 sky policy. barracas-candidate/ preserves its native service/private-house proof
 and qualified fixtures; no preview package or save is distributed.
+generate_barracas_siege.py derives SIEGE.json from the approved layout and
+retained city/siege profiles; it supplies 36 posts, existing tower geometry,
+access flights and 528 guard positions. The candidate generator reuses owned
+stone materials. Native geometry/crew evidence and failed iterations are in
+validation_v5_16_2/barracas-forts; this does not activate the production siege.
 
 ## 5.16.1 - Recovered folklore reference catalogue (#453, catalogue approved)
 

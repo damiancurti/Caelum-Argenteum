@@ -12,6 +12,7 @@ import generate_barracas_preview as shell
 import generate_coastal_trials as coastal
 import generate_city_ceilings as ceilings
 import generate_shop_catalogue as catalogue
+from generate_port_city import tower_rect
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -51,7 +52,64 @@ def add_port(port, layout, out):
         port.things.append(row)
 
 
-def apply_sky(port, layout, city, interior):
+def add_fortifications(port, layout, city):
+    """Retain the artillery structures while fitting the approved perimeter."""
+    siege = read('assets/barracas_redesign/SIEGE.json')
+    assert not siege['placement_conflicts'], siege['placement_conflicts']
+    south = read('assets/map06_port/SOUTH.json')
+    # Extend the original southern battlefield without erasing the wall bulge.
+    a,b,c,d = south['field_bounds']
+    for x in range(a,c,port.CELL):
+        for y in range(b,d,port.CELL):
+            if (x,y) not in port.cells:
+                port.room(x,y,x+port.CELL,y+port.CELL,flat='CMGR03',wall='CMST01')
+    port.room(*south['field_boundary'],floor=read('assets/map06_port/LAYOUT.json')['wall_height'],flat='CMST01')
+    for gun in siege['defending_guns']:
+        if gun['side']=='tower': continue
+        axis=0 if gun['side'] in ('north','south') else 1
+        for (x,y),cell in list(port.cells.items()):
+            centre=(x+port.CELL/2,y+port.CELL/2)
+            if cell[0]!=city['wall_height']:continue
+            if abs(centre[axis]-gun['position'][axis])>=128:continue
+            if abs(centre[1-axis]-gun['position'][1-axis])>city['walk_width']:continue
+            port.room(x,y,x+port.CELL,y+port.CELL,floor=city['walk_height'],flat='CMST01',wall='CMST01')
+        # A cardinal gun/crew pair needs a level footing on the oblique wall.
+        # Retain the256-MU notch width and the existing raised-walk slab; ground
+        # remains open underneath the small overhanging part of the platform.
+        centre=gun['position'];extents=[port.CELL,port.CELL];extents[axis]=128
+        a,b=[math.floor((centre[j]-extents[j])/port.CELL)*port.CELL for j in (0,1)]
+        c,d=[math.ceil((centre[j]+extents[j])/port.CELL)*port.CELL for j in (0,1)]
+        for x in range(a,c,port.CELL):
+            for y in range(b,d,port.CELL):
+                floor,flat,wall,light,volume=port.cells[x,y]
+                if floor>=city['walk_height']:floor=city['walk_height'];volume=0
+                else:volume=230
+                port.room(x,y,x+port.CELL,y+port.CELL,floor=floor,flat=flat,wall=wall,light=light,volume=volume)
+    for index,tower in enumerate(siege['towers']):
+        size=city['tower_size'];width=city['wall_thickness']
+        port.room(*tower_rect(tower,(0,0,size,size)),floor=city['walk_height'],flat='CMST01',wall='CMST01')
+        for rect in [(0,0,width,size),(0,size-width,size,size)]:
+            port.room(*tower_rect(tower,rect),floor=city['tower_deck_height']+city['tower_parapet'],flat='CMST01',wall='CMST01')
+        for *rect,step in city['tower_stairs_local']:
+            port.room(*tower_rect(tower,rect),floor=city['walk_height']+step*city['tower_step_rise'],flat='CMST01',wall='CMST01')
+        port.room(*tower_rect(tower,city['tower_deck_local']),floor=city['tower_deck_height'],flat='CMST01',wall='CMST01')
+        ox,oy=tower['origin'];a,b,c,d=city['tower_firing_ledge']
+        if tower['flip_x']:a,c=size-c,size-a
+        if tower['flip_y']:
+            port.room(ox+a,oy,ox+c,oy+d,floor=city['tower_deck_height'],flat='CMST01',wall='CMST01')
+        else:
+            tag=240+index
+            port.volume(tag,city['tower_deck_height']-city['walk_slab'],city['tower_deck_height'],'CMST01','CMST01')
+            port.room(ox+a,oy,ox+c,oy+d,floor=city['walk_height'],flat='CMST01',wall='CMST01',volume=tag)
+    sky_exclusions=[]
+    for gun in siege['defending_guns']:
+        for a,b,c,d,height in [*gun['stairs'],*gun['landing_rects']]:
+            port.room(a,b,c,d,floor=height,flat='CMST01',wall='CMST01')
+            sky_exclusions.append((a,b,c,d))
+    return sky_exclusions
+
+
+def apply_sky(port, layout, city, interior, exclusions):
     """Apply the accepted low residential sky without rectangular-wall clipping."""
     if not ceilings.DATA['enabled']: return
     margin = city['urban_grid']['road_width'] // 2
@@ -60,8 +118,10 @@ def apply_sky(port, layout, city, interior):
                   for a, b, c, d in [building['lot']]]
     edges = list(zip(layout['perimeter'], layout['perimeter'][1:] + layout['perimeter'][:1]))
     height = interior['height']
+    exempt_cells={(x,y) for a,b,c,d in exclusions for x in range(a,c,port.CELL) for y in range(b,d,port.CELL)}
     for (x, y), cell in list(port.cells.items()):
         centre = x+port.CELL/2, y+port.CELL/2
+        if (x,y) in exempt_cells:continue
         if not shell.inside(centre, layout['perimeter']) or min(shell.distance2(centre, a, b) for a, b in edges) < city['walk_width']**2: continue
         if not any(ceilings.contains(r, *centre) for r in rectangles): continue
         floor, flat, wall, light, volume = cell
@@ -112,7 +172,8 @@ def configure(port, layout, city, interior, out):
               args=(layout['geometry_revision'], 0, 0, hubs['city_marker_value']))
     for kind, key in [(30987, 'resource_bed'), (18004, 'resource_workbench'), (31051, 'completion_position')]:
         port.prop(kind, *point(layout, *old[key][:2]), angle=90*layout['port_transform']['quarter_turns'])
-    apply_sky(port, layout, city, interior)
+    exclusions=add_fortifications(port,layout,city)
+    apply_sky(port, layout, city, interior, exclusions)
 
 
 def main():
