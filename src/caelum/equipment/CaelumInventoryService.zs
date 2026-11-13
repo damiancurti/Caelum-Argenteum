@@ -904,16 +904,8 @@ class CaelumInventoryService : Object play
     static Inventory FindNativeAmmunition(CaelumPlayer user, int ammunitionType)
     {
         if (!CaelumPlayerAuthority.CanRead(user)) return null;
-        if (ammunitionType == CaelumConstants.AMMUNITION_ARROW)
-        {
-            return user.FindInventory("CaelumArrowAmmo");
-        }
-        if (ammunitionType == CaelumConstants.AMMUNITION_BOLT)
-        {
-            return user.FindInventory("CaelumBoltAmmo");
-        }
-        if(ammunitionType==CaelumConstants.AMMUNITION_SHOTGUN)return user.FindInventory("CaelumShotgunAmmo");
-        return user.FindInventory("CaelumCarbineAmmo");
+        // La consulta y la creación comparten la identidad nativa de cada tipo.
+        return user.FindInventory(GetAmmunitionClassName(user, ammunitionType));
     }
 
     static bool AcquireJavelinAmmunition(CaelumPlayer user, int ammunitionType, int incomingAmount)

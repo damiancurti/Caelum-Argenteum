@@ -1,0 +1,156 @@
+{
+  "issue": 650,
+  "version": "5.17.2",
+  "date": "2026-11-13",
+  "author_accepted": false,
+  "scope": "Reuse GetAmmunitionClassName for native lookup, preventing three javelin tiers from selecting an existing carbine stack. No art or save-schema changes.",
+  "runtime": {
+    "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-650\\build\\issue650-lookup01.pk3",
+    "sha256": "23adb7917f961a41c33b9382873e9017abd4b2b1c46fdb5f789da1a871a59485",
+    "source_entries": 18167,
+    "source_mismatches": []
+  },
+  "baseline_sha256": "68436c1245879efedd627771469252aaffe70978e4b3aadfbf4f2f8fd7cdc23a",
+  "native_runs": [
+    {
+      "phase": "baseline-regression",
+      "exit_code": 0,
+      "passed": true,
+      "expected_regression": true,
+      "engine_errors": [],
+      "failed_assertions": [
+        "CA650 FAIL all seven ammunition types retained",
+        "CA650 FAIL ammunition 0 split provenance units",
+        "CA650 FAIL ammunition 0 split quantities",
+        "CA650 FAIL ammunition 3 owned quantity",
+        "CA650 FAIL ammunition 4 owned quantity",
+        "CA650 FAIL ammunition 5 owned quantity"
+      ],
+      "passed_assertions": 65
+    },
+    {
+      "phase": "baseline-typed-save",
+      "exit_code": 0,
+      "passed": true,
+      "expected_regression": false,
+      "engine_errors": [],
+      "failed_assertions": [],
+      "passed_assertions": 99
+    },
+    {
+      "phase": "candidate-old-load",
+      "exit_code": 0,
+      "passed": true,
+      "expected_regression": false,
+      "engine_errors": [],
+      "failed_assertions": [],
+      "passed_assertions": 120
+    },
+    {
+      "phase": "candidate-fresh",
+      "exit_code": 0,
+      "passed": true,
+      "expected_regression": false,
+      "engine_errors": [],
+      "failed_assertions": [],
+      "passed_assertions": 113
+    },
+    {
+      "phase": "candidate-reload",
+      "exit_code": 0,
+      "passed": true,
+      "expected_regression": false,
+      "engine_errors": [],
+      "failed_assertions": [],
+      "passed_assertions": 120
+    },
+    {
+      "phase": "rollback-typed-load",
+      "exit_code": 0,
+      "passed": true,
+      "expected_regression": false,
+      "engine_errors": [],
+      "failed_assertions": [],
+      "passed_assertions": 85
+    },
+    {
+      "phase": "candidate-reverse-order",
+      "exit_code": 0,
+      "passed": true,
+      "expected_regression": false,
+      "engine_errors": [],
+      "failed_assertions": [],
+      "passed_assertions": 141
+    }
+  ],
+  "positive_assertions": 678,
+  "expected_baseline_failures": [
+    "CA650 FAIL all seven ammunition types retained",
+    "CA650 FAIL ammunition 0 split provenance units",
+    "CA650 FAIL ammunition 0 split quantities",
+    "CA650 FAIL ammunition 3 owned quantity",
+    "CA650 FAIL ammunition 4 owned quantity",
+    "CA650 FAIL ammunition 5 owned quantity"
+  ],
+  "environment": {
+    "engine": "GZDoom 4.14.2",
+    "os": "Windows 11 Pro 26200",
+    "cpu": "Ryzen 9 5950X",
+    "gpu": "RTX 3070 Ti",
+    "backend": "Vulkan",
+    "background_unpaused": true,
+    "audio": 0.05
+  },
+  "qualifications": [
+    "The old-runtime typed save is seeded by attaching native stacks directly, because old acquisition cannot reliably create all types together. Native toss and serialization remain real.",
+    "Rollback verifies retained typed data without repickup: returning to the old runtime restores its lookup defect. No historically merged rounds are inferred or redistributed.",
+    "The reverse-only extension adds a conditional reverse preparation order. Earlier six runs retain their exact archived fixture; the production runtime is identical across all seven runs.",
+    "Scale .10 differs by floating-point storage between a default and a Tick assignment; the fixture uses tolerance 1e-6. This is separate from the native ownership defect.",
+    "Native CallTryPickup/CreateTossable, all seven identities, split/recombined provenance and saved ownership are checked. Ordinary menus, weapon use, multiplayer and author acceptance remain pending.",
+    "No new scan, registry, periodic work, quantity, mass or projectile rule. Rendering art is byte-identical to the preceding slice; no new presentation-performance claim.",
+    "No engine, IWAD, PK3, DLL, executable or save is distributed."
+  ],
+  "files": {
+    "build.log": "8f4407d53344652e7425373a9287f121d9839ea99abb693e4dafa2c0df4176dc",
+    "native/baseline-regression-process.log": "733cfc059a4b6c309d18548b929d30d5ec665dbebff617c28fd3c18d81886d64",
+    "native/baseline-regression.cfg": "9c29bdc139bc5e756f4c9487fd8d79244cbb96b361779739e6a373528c556bfb",
+    "native/baseline-regression.log": "a276d9ae29f132ee3587312c4af128f5b479f8652dbfb2e96904209d20ebc910",
+    "native/baseline-regression.png": "dc92765e655128d62f75afec883c3c5bd2878af550a2c0ee1bd68277b3adabb8",
+    "native/baseline-typed-save-process.log": "362a9c671c23cb10fcc42a2eca1a6f123203b3616c0293ec528b3bbb93815688",
+    "native/baseline-typed-save.cfg": "70340ad246787cb650bb7e02d8a1b5280d8a47c527223c69f5ccbdb43f2b511b",
+    "native/baseline-typed-save.log": "beb1bbb7a305f30757733762b61d5c9e333cce1f862318ecd3f4a78f9b64bbd2",
+    "native/candidate-fresh-process.log": "88f2f772b71c0229641303063af016f2f0a6e151bb3c47f13e9730c30269efac",
+    "native/candidate-fresh.cfg": "8d096ec97464881e6e02cb52fa837eddd1cd6072ab4d8cff2cd56b2afc8b2566",
+    "native/candidate-fresh.log": "a015a25690b1ed516982224bbd4471fb0dfb3d9117b93f6456b1e9a3ccd2086e",
+    "native/candidate-old-load-process.log": "7fbc9abc9258b29ed49fcc7a7ec0ede9757df94865c7a7d8598109216f848b9f",
+    "native/candidate-old-load.cfg": "60b27807d0581e5b0ce953699f42ebaa381ca4e6e0e5e6f0aee414d3fdc053d1",
+    "native/candidate-old-load.log": "966be40b167348c4966e1545f19bddc3d431cb13cfe59b6151a8352a28e2966c",
+    "native/candidate-reload-process.log": "b2941407eacc7ce0d7c903c12134e639c9e4a924934a4e2de03ff61a4f505338",
+    "native/candidate-reload.cfg": "60b27807d0581e5b0ce953699f42ebaa381ca4e6e0e5e6f0aee414d3fdc053d1",
+    "native/candidate-reload.log": "ddcf6c7178d6e6ae397fb3e5261429fa1c9f160ce070d17cee22c51505ec4164",
+    "native/candidate.png": "f72bc054761114018dcc83930267c334b2ffe3de642228c73b7ca8ac3d196d2d",
+    "native/fixture-source/MAPINFO.txt": "dec9f04a2f1fcb87a3c4c3c51d1355ab37b1562ebacea4c3e9ac8e7299428ffa",
+    "native/fixture-source/ZSCRIPT.txt": "22056cb0b09b8845458469a959a0c83c0d5dacb69a87f5d3af0a79d8d3741837",
+    "native/fixture.zs": "e3bc64063cdc389b7dda5a348bbd71c81b5201fcb87aae2bf95a215908562af6",
+    "native/RESULTS.json": "05cb4d3a1ebd96876205eb7bf0ba4075021f7453cf5d98e3158a7f54f7a34476",
+    "native/rollback-typed-load-process.log": "c12e4668e769808610377243a531c6ffa8110ccfb90978ed1b03e7bb89bdbff0",
+    "native/rollback-typed-load.cfg": "a4db5f30fe7505fa09811b183a784ba4a31daaa92f2ec6a65fdc3a82b174daf3",
+    "native/rollback-typed-load.log": "22953f4adfea82d8b2642b03d8bb682ed8146142ebcba213c312effb037bf08d",
+    "native/session.ini": "9a43ba1aaaa001bf3d5d4cf9d757e2af42c8efc3f53e37f800981b3d9ed9eee3",
+    "reverse/candidate-reverse-order-process.log": "d334739be5a6f87d699d5ce47475e0a9e469e4c9db5a80f4e3d598e02fb1e562",
+    "reverse/candidate-reverse-order.cfg": "251007fd4e6f9b0084bec9fbf2e2b1aa415e395816db12119697e4bf66f5c863",
+    "reverse/candidate-reverse-order.log": "58f406d6b218db073a703072e1f03da7e703e5f0b18ccf6b085111e37a567372",
+    "reverse/fixture-source/MAPINFO.txt": "dec9f04a2f1fcb87a3c4c3c51d1355ab37b1562ebacea4c3e9ac8e7299428ffa",
+    "reverse/fixture-source/ZSCRIPT.txt": "474ce49927cb9d83da1ff2b49acb5ff57323978523c474b34be5ea54760cdfcf",
+    "reverse/fixture.zs": "e9fdbdb40ede2407c49aa3d21a4e7e7286dae7d55482d37d12d2d9071bfda65c",
+    "reverse/RESULTS.json": "2e7f932808a18211eb017b17f2ab6d2c2366aea3c6d9146d7c9794fb08c13124",
+    "reverse/session.ini": "32d8f2117c1bca07ca776712130a73af091f651404383a73180aa96b3d73629f",
+    "validation.log": "8950abaf744b3807888cb8e5c30cdb1d34b44a33f05f6caade727e94e67d8b89"
+  },
+  "project_validation_passed": true,
+  "changed_runtime_entries": [
+    "caelum/equipment/CaelumInventoryService.zs",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ]
+}

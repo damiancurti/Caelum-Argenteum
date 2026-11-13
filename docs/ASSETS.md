@@ -1,6 +1,6 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.1** - 2026-11-13.
+Documentation version: **5.17.2** - 2026-11-13.
 
 ## 5.17.1 - Inventory drops in 3D (#647, conversion in progress)
 

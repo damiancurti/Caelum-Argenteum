@@ -581,3 +581,7 @@
 /src/caelum/data/inventory_food.modeldef text eol=lf
 /src/models/caelum/inventory/food/** -text
 /assets/validation_v5_17_1/food-evidence/** -text -whitespace
+
+/assets/validation_v5_17_2/*.py text eol=lf
+/assets/validation_v5_17_2/*.zs text eol=lf
+/assets/validation_v5_17_2/evidence/** -text -whitespace

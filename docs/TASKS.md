@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.1** - 2026-11-13.
+Documentation version: **5.17.2** - 2026-11-13.
+
+## 5.17.2 - Javelin stack lookup (#650)
+
+The shared existing class mapping now covers all seven ammunition identities in
+both lookup and acquisition. Baseline reproduces six expected ownership failures;
+six positive native runs pass 678 assertions, including reverse acquisition order
+and saved provenance. CA650-AMMO-01 remains pending author confirmation.
+The separate #647 ammunition art candidate remains uncommitted in its own worktree;
+resume that visual work after this focused gameplay correction is delivered.
 
 ## 5.17.1 - Dropped inventory models (#647, in progress)
 
