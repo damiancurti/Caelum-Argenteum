@@ -1,0 +1,21 @@
+{
+  "issue": 647,
+  "scope": "Observe real coin drops, native stacking and bidirectional save compatibility.\n\nThe fixture invokes native pickup/toss methods on all 15 actual denominations.\nIt does not exercise ordinary menu selection or confer author acceptance.",
+  "baseline_sha256": "d4aa0aeb27ae9d37deb753f903a84e27937785f2fccb505fc30619283578b0e5",
+  "runtime_sha256": "193675cd5f64d8e51589656bebcf51148d0a45365065ecdc747ce20d60f8b0f3",
+  "model_sha256": null,
+  "fixture_sha256": "5ddd3ebf9aac3894a6bc2b31c3166545eb1f757703523b33237bc3515ad10e3f",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "baseline",
+      "exit_code": 1,
+      "passed": false,
+      "errors": [
+        "Script error, \"fixture.pk3:zscript\" line 81:"
+      ],
+      "assertions": 0
+    }
+  ],
+  "captures": {}
+}

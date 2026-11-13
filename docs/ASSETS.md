@@ -1,6 +1,53 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.0** - 2026-11-13.
+Documentation version: **5.17.1** - 2026-11-13.
+
+## 5.17.1 - Closed coin drops (#647, inventory conversion in progress)
+
+COINS.json and COINS_EXPORT.json in assets/source/art/inventory_models_647 record
+owned source hashes, art geometry and deterministic outputs. Copper, silver and
+gold each use a closed bevelled disk (290 vertices, 384 triangles), with outward
+winding and 576 paired geometric edges. Both faces reuse the existing 64x64 sun
+image unchanged; the edge samples its metal color. Original icons/sprites remain.
+The 23-art-pixel radius comes from the opaque silhouette; the 3-pixel thickness
+is display geometry. Actor Scale .25, Radius 12, Height 8 and unit mass do not change.
+
+`python assets/generators/generate_inventory_coin_models.py --output build/coins --install`
+exports OBJ/MTL/unchanged PNG and explicit MODELDEF bindings for all 15 classes.
+Repeat with `--check --install` to verify byte-identical output. Ordinary project
+validation checks sources, hashes and binding completeness without Pillow/Blender.
+Runtime files live under src/models/caelum/inventory/coins and
+src/caelum/data/inventory_coins.modeldef. Existing provenance is in
+assets/manifests/sprites_v4.json; no new raster image or external resource is used.
+
+The native read-only catalogue observation inspected 595 Inventory-derived types;
+87 have visible spawn states and no native undroppable/untossable flag. That is a
+candidate count, not a complete drop catalogue: custom policy and dynamic item
+variants still matter. Furniture and camps can restore existing physical bodies.
+Legacy rejected mate meshes and inactive support-implement bindings do not count
+as current 3D coverage. The rest of #647 remains open.
+
+The candidate-overlay fixture passed 785 assertions in five native runs: original
+save, loading that save with the models, fresh candidate, candidate reload, and
+rollback to the original runtime. Every denomination uses native pickup, splitting
+37 into 30 held plus 7 dropped, then recombining. Captures show volume and retained
+faces from above and near the floor. This is not ordinary menu or author acceptance.
+The final complete package repeats all 785 assertions without an overlay.
+Evidence: assets/validation_v5_17_1/evidence/SUMMARY.json.
+
+One sequential 700-tic comparison at Vulkan 1280x720, uncapped/vsync off, on
+Win11 Pro 26200 / Ryzen 9 5950X / 32GB / RTX 3070 Ti observed 950.75 presents/s
+for 15 sprites versus 942.38 for 15 models. Presentation p95/p99 were
+1.2991/1.5097ms versus 1.2992/1.5176ms; both averaged 28.571ms per simulation tic.
+All 15 models are visible in the inspected capture. These queue-present intervals
+are not GPU timing/display scanout; this single pair establishes no repeatability
+or all-inventory/campaign budget. Tests ran unpaused in the background at 5% audio.
+The severe existing siege rendering limitation remains unresolved.
+
+For author inspection after building the current package:
+`python assets/validation_v5_17_1/run_coin_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/coins-author-01 --interactive`.
+F1/F2/F3/F4 select top/low/side/close views; F5 returns player control. Use a fresh
+output directory, inspect actual drops, and save/reload. No automatic acceptance.
 
 ## 5.17.0 - Independent Domingo modules (#458, in progress)
 

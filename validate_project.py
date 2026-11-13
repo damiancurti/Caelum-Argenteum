@@ -16,6 +16,7 @@ from assets.generators.generate_bestiary_actors import render as bestiary_actor_
 from assets.generators.build_essence_coverage import build as essence_coverage, encoded as essence_coverage_bytes, native_data as essence_native_data
 from assets.generators.generate_campaign_finale_data import render as campaign_finale_data
 from assets.generators.validate_character_modules import validate as character_module_problems
+from assets.generators.validate_inventory_coin_models import validate as inventory_coin_problems
 from assets.generators.validate_map02_redesign import audit as sewer_redesign_audit
 from assets.generators.install_barracas_map import validate as barracas_installation_problems
 
@@ -76,6 +77,7 @@ def index_problems(root):
 def validate(root):
     errors = dialogue_problems(root)
     errors.extend(character_module_problems(root))
+    errors.extend(inventory_coin_problems(root))
     errors.extend(barracas_installation_problems(root))
     try:
         errors.extend(justice_geometry_problems(root))

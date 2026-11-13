@@ -1,0 +1,2 @@
+gameinfo { AddEventHandlers="CA647CoinEvents" }
+map CA455V "Coin drop inspection" { sky1="CABASKY",0 nointermission }

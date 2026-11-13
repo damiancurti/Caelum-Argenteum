@@ -1,0 +1,15 @@
+Model CaelumCopperCoin { Path "models/caelum/inventory/coins" Model 0 "copper.obj" Skin 0 "copper.png" Scale 1 1 1 CorrectPixelStretch FrameIndex CCOP A 0 0 }
+Model CaelumCopperCoin5 { Path "models/caelum/inventory/coins" Model 0 "copper.obj" Skin 0 "copper.png" Scale 1 1 1 CorrectPixelStretch FrameIndex CCOP A 0 0 }
+Model CaelumCopperCoin20 { Path "models/caelum/inventory/coins" Model 0 "copper.obj" Skin 0 "copper.png" Scale 1 1 1 CorrectPixelStretch FrameIndex CCOP A 0 0 }
+Model CaelumCopperCoin50 { Path "models/caelum/inventory/coins" Model 0 "copper.obj" Skin 0 "copper.png" Scale 1 1 1 CorrectPixelStretch FrameIndex CCOP A 0 0 }
+Model CaelumCopperCoin100 { Path "models/caelum/inventory/coins" Model 0 "copper.obj" Skin 0 "copper.png" Scale 1 1 1 CorrectPixelStretch FrameIndex CCOP A 0 0 }
+Model CaelumSilverCoin { Path "models/caelum/inventory/coins" Model 0 "silver.obj" Skin 0 "silver.png" Scale 1 1 1 CorrectPixelStretch FrameIndex CSIL A 0 0 }
+Model CaelumSilverCoin5 { Path "models/caelum/inventory/coins" Model 0 "silver.obj" Skin 0 "silver.png" Scale 1 1 1 CorrectPixelStretch FrameIndex CSIL A 0 0 }
+Model CaelumSilverCoin20 { Path "models/caelum/inventory/coins" Model 0 "silver.obj" Skin 0 "silver.png" Scale 1 1 1 CorrectPixelStretch FrameIndex CSIL A 0 0 }
+Model CaelumSilverCoin50 { Path "models/caelum/inventory/coins" Model 0 "silver.obj" Skin 0 "silver.png" Scale 1 1 1 CorrectPixelStretch FrameIndex CSIL A 0 0 }
+Model CaelumSilverCoin100 { Path "models/caelum/inventory/coins" Model 0 "silver.obj" Skin 0 "silver.png" Scale 1 1 1 CorrectPixelStretch FrameIndex CSIL A 0 0 }
+Model CaelumGoldCoin { Path "models/caelum/inventory/coins" Model 0 "gold.obj" Skin 0 "gold.png" Scale 1 1 1 CorrectPixelStretch FrameIndex CGOL A 0 0 }
+Model CaelumGoldCoin5 { Path "models/caelum/inventory/coins" Model 0 "gold.obj" Skin 0 "gold.png" Scale 1 1 1 CorrectPixelStretch FrameIndex CGOL A 0 0 }
+Model CaelumGoldCoin20 { Path "models/caelum/inventory/coins" Model 0 "gold.obj" Skin 0 "gold.png" Scale 1 1 1 CorrectPixelStretch FrameIndex CGOL A 0 0 }
+Model CaelumGoldCoin50 { Path "models/caelum/inventory/coins" Model 0 "gold.obj" Skin 0 "gold.png" Scale 1 1 1 CorrectPixelStretch FrameIndex CGOL A 0 0 }
+Model CaelumGoldCoin100 { Path "models/caelum/inventory/coins" Model 0 "gold.obj" Skin 0 "gold.png" Scale 1 1 1 CorrectPixelStretch FrameIndex CGOL A 0 0 }

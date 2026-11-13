@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.0** - 2026-11-13.
+Documentation version: **5.17.1** - 2026-11-13.
+
+## 5.17.1 - Dropped inventory models (#647, in progress)
+
+Implemented 15 denomination bindings using three closed coin meshes. Complete
+package native/save checks pass; CA647-COINS-01 author review remains pending.
+Continue class-plus-variant coverage for equipment, clothing, ammunition,
+consumables, water containers, tools, materials and retained physical bodies.
+Respect existing custom drop policy and rejected legacy art; source files alone
+do not prove runtime coverage. No remaining category is marked complete.
 
 ## 5.17.0 - Modular 3D expansion (#458 and related art issues)
 

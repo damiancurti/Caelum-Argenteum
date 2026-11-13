@@ -1,0 +1,22 @@
+{
+  "schema_revision": 1,
+  "issue": 647,
+  "scope": "Closed, bevelled world-drop coins. Reuse the accepted sun-face raster unchanged on both faces; retain all 15 denomination classes and their native mass/value/stack rules.",
+  "authority": "Author 2026-11-13 requests actual 3D for every droppable inventory object, with questions deferred.",
+  "geometry": {
+    "segments": 48,
+    "thickness_pixels": 3,
+    "profile": [[0.94,0],[1,0.18],[1,0.82],[0.94,1]],
+    "cap_uv_radius_fraction": 0.94,
+    "edge_uv": [0.5,0.25]
+  },
+  "dimensions_note": "Radius is measured from the existing opaque icon silhouette in art pixels. Mesh thickness/profile are display art coordinates, not new physical dimensions. Existing actor Radius, Height, Scale and 1g unit weight are unchanged.",
+  "model_path": "models/caelum/inventory/coins",
+  "denomination_suffixes": ["","5","20","50","100"],
+  "variants": {
+    "copper": {"class": "CaelumCopperCoin", "sprite": "CCOP", "image": "src/graphics/caelum/icons/currency/ca_coin_copper.png", "source_sha256": "1a9d5909ea825f1898424df7dcb14a660455904e0ba863ee503eabb3adddc1bb"},
+    "silver": {"class": "CaelumSilverCoin", "sprite": "CSIL", "image": "src/graphics/caelum/icons/currency/ca_coin_silver.png", "source_sha256": "58b3a04fd5ce8184e52bab7c69b899e3799bd53e7379b05ad11af902afa6760d"},
+    "gold": {"class": "CaelumGoldCoin", "sprite": "CGOL", "image": "src/graphics/caelum/icons/currency/ca_coin_gold.png", "source_sha256": "16d90390d480f92721c7c2c423e3c3ea4458c6d0d06ed288259da87f4d5b7066"}
+  },
+  "provenance": "Existing owned source pixels and hashes are retained in assets/manifests/sprites_v4.json. Original icons and world sprites are preserved. New geometry is generated deterministically from this data; no external artwork or Doom assets."
+}

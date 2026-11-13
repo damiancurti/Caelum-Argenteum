@@ -1,6 +1,28 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.0** - 2026-11-13.
+Documentation version: **5.17.1** - 2026-11-13.
+
+## 5.17.1 - Initial inventory model coverage (#647, 2026-11-13, in progress)
+
+Implemented closed copper/silver/gold coin meshes and explicit bindings for all
+15 denominations, using the unchanged owned sun artwork. No native inventory,
+physics, economy or saved state changed. Sources, deterministic exporter and
+read-only installation checks are retained. The native catalogue observation
+found 595 inventory-derived types and 87 initial visible-drop candidates; custom
+policies/dynamic variants prevent treating this as final coverage.
+
+Candidate inspection passed 785 native assertions across fresh, old-save,
+new-save reload and rollback cases. Initial fixture attempts were rejected for
+protected TryPickup access/local-name shadowing, then an invalid comparison of
+held and world sprite states. The corrected fixture uses CallTryPickup and the
+world class default state. These were fixture defects, not production changes.
+The final complete package passed the same 785 checks without an overlay.
+An interactive-fixture camera ternary type error was also fixed before that run.
+A one-pair 15-object presentation comparison observed 950.75 versus 942.38
+presents/s, p95/p99 1.2991/1.5097ms versus 1.2992/1.5176ms; environment, limits
+and owned evidence are in ASSETS and validation_v5_17_1/evidence/SUMMARY.json.
+Static generation/installation and all 18,141 packaged source entries match.
+CA647-COINS-01 remains an author check; no manual acceptance or removal of earlier pending tests is recorded.
 
 ## 5.17.0 - Modular Domingo export (#458, 2026-11-13, in progress)
 

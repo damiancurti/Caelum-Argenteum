@@ -1,0 +1,293 @@
+{
+  "issue": 647,
+  "version": "5.17.1",
+  "date": "2026-11-13",
+  "author_accepted": false,
+  "scope": "Initial inventory art slice: three closed coin meshes, all 15 explicit denomination bindings. Other inventory categories remain unfinished.",
+  "runtime": {
+    "local_path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-647\\build\\issue647-coins01.pk3",
+    "sha256": "193675cd5f64d8e51589656bebcf51148d0a45365065ecdc747ce20d60f8b0f3",
+    "source_entries": 18141,
+    "source_mismatches": []
+  },
+  "static": {
+    "meshes": 3,
+    "vertices_per_mesh": 290,
+    "triangles_per_mesh": 384,
+    "bindings": 15,
+    "closed_outward_geometry": true,
+    "unchanged_owned_face_bytes": true,
+    "repeat_export_check_passed": true,
+    "project_validation_passed": true
+  },
+  "catalogue": {
+    "native_inventory_defaults": 595,
+    "initial_visible_candidates": 87,
+    "qualification": "Native flags/state discovery only; custom policies and dynamic variants still need coverage."
+  },
+  "native": {
+    "runs": [
+      {
+        "phase": "baseline",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 166
+      },
+      {
+        "phase": "old-save-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 151
+      },
+      {
+        "phase": "candidate-fresh",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 166
+      },
+      {
+        "phase": "candidate-reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 151
+      },
+      {
+        "phase": "rollback-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 151
+      }
+    ],
+    "assertions": 785,
+    "scope": "Native CallTryPickup/CreateTossable/stack/save integration, all 15 real classes; no normal menu or author acceptance."
+  },
+  "presentation": [
+    {
+      "kind": "sprites",
+      "bodies": 15,
+      "pid": 17924,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 201862265.8432,
+        "END": 201882291.8727
+      },
+      "fixture_sha256": "0cb110ed26d8e137f6e4c4a05513cd3d33d13446c1e19ce61d6fa077555f383e",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.570576571428575,
+        "p50_ms": 28.5679,
+        "p95_ms": 29.3032,
+        "p99_ms": 29.4948,
+        "max_ms": 29.5992
+      },
+      "presentation": {
+        "pid": 17924,
+        "trace_sha256": "398dc40a84cdb6d0904f4176843304c51d3eabbb9878bec664d03c66b4c79fd4",
+        "rows": 24912,
+        "scene_presents": 16663,
+        "mean_present_fps": 950.748869083651,
+        "present_intervals": {
+          "samples": 16662,
+          "mean_ms": 1.0518024606895595,
+          "p50_ms": 1.0148999989032745,
+          "p95_ms": 1.2990999817848206,
+          "p99_ms": 1.5097000002861023,
+          "max_ms": 1.9842000007629395
+        },
+        "native_call_duration": {
+          "samples": 16663,
+          "mean_ms": 0.07644834653931863,
+          "p50_ms": 0.07660001516342163,
+          "p95_ms": 0.09989997744560242,
+          "p99_ms": 0.12950000166893005,
+          "max_ms": 0.4147000014781952
+        }
+      }
+    },
+    {
+      "kind": "models",
+      "bodies": 15,
+      "pid": 47448,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 201896250.273,
+        "END": 201916276.2692
+      },
+      "fixture_sha256": "0cb110ed26d8e137f6e4c4a05513cd3d33d13446c1e19ce61d6fa077555f383e",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.570626,
+        "p50_ms": 28.5831,
+        "p95_ms": 29.2794,
+        "p99_ms": 29.423,
+        "max_ms": 29.5059
+      },
+      "presentation": {
+        "pid": 47448,
+        "trace_sha256": "e5484bdd0ceb313513ed22f2a27ca82ec1a4e7620970aa8111060b0ea432e015",
+        "rows": 24699,
+        "scene_presents": 16516,
+        "mean_present_fps": 942.3845595604197,
+        "present_intervals": {
+          "samples": 16515,
+          "mean_ms": 1.0611379291554346,
+          "p50_ms": 1.0223999917507172,
+          "p95_ms": 1.2991999983787537,
+          "p99_ms": 1.5175999999046326,
+          "max_ms": 2.331499993801117
+        },
+        "native_call_duration": {
+          "samples": 16516,
+          "mean_ms": 0.07596184900646263,
+          "p50_ms": 0.07460001111030579,
+          "p95_ms": 0.10019999742507935,
+          "p99_ms": 0.1258000135421753,
+          "max_ms": 0.2924000024795532
+        }
+      }
+    }
+  ],
+  "environment": {
+    "os": "Windows 11 Pro 26200",
+    "cpu": "Ryzen 9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX 3070 Ti",
+    "engine": "GZDoom 4.14.2",
+    "backend": "Vulkan",
+    "presentation_resolution": [
+      1280,
+      720
+    ],
+    "uncapped": true,
+    "vsync": false,
+    "background_unpaused": true,
+    "audio": 0.05
+  },
+  "superseded": {
+    "native01": "Fixture compile failure: protected TryPickup and local Owned shadowing array.",
+    "native02": "Fixture compared held invisible state with dropped world sprite; incorrect assertion.",
+    "native03": "Candidate overlay passed 785 assertions; final complete-package case is native05.",
+    "native04": "New interactive fixture camera ternary mixed incompatible pointer types; corrected with branches."
+  },
+  "qualifications": [
+    "Final native05 uses the complete runtime without a model overlay.",
+    "Final native side/top/close and model performance capture were visually inspected; all 15 models are visible in the performance view.",
+    "Presentation is one sequential pair of 700-tic samples for 15 world coins. Queue-present intervals are not GPU timing or display scanout; tic spacing is not CPU cost. No repeatability/general crowd claim.",
+    "No new save fields, actors, loops, native drop rules, balance values, icons or original sprites are introduced.",
+    "No PK3, WAD, save, executable or DLL is distributed. Existing severe siege rendering remains unresolved.",
+    "Final source configuration uses LF checkout bytes; export04 changes source hashes only. Every runtime model/skin/binding byte remains identical to the tested package."
+  ],
+  "files": {
+    "audit/baseline/candidates.json": "40ace4447d2290ae79d253b96e6db7431fb143d6158c20f970b6e411189e0555",
+    "audit/final/candidates.json": "d20943762f07e8e5fc1ff4a23f6104d7d57d96b6be07f1eecd069adf1547a3eb",
+    "audit/native/audit.zs": "6d6848045c8e21aad0c36e51ac3bd5f45f7ddc3c4c3b320f192c667e2b3a1b7f",
+    "audit/native/commands.cfg": "560538093055a71975d69121e14f4143d92fdf22b903570e0d50413efe594e69",
+    "audit/native/engine.log": "199ddc35f348eb53df80e2827b787de2fd879c3dab8e4e2a6995dc3df9c2830b",
+    "audit/native/fixture-source/MAPINFO.txt": "84fbdf35f10e02181cd5623f8d772df4d3cce456467cd9cfdcb30e9782a26028",
+    "audit/native/fixture-source/ZSCRIPT.txt": "f079b25ffb095202b0e72ce423066509364f2c3a3f25ff1d24a78d5760de1c6c",
+    "audit/native/process.log": "35c245347bf8fb5b45a4e77fed65e13ce3207c1e3a5d895278f30f7e938bc39e",
+    "audit/native/RESULTS.json": "a2bcd0a5dd5d6a28c23411b19aaf48bf7cffa5c1b4cf8096e46c21ac884ca369",
+    "audit/native/session.ini": "19ef66a47fb14e0f14ffce92c01a96464089c2e6ff1d19a01ab87b203c48d434",
+    "build.log": "c1a154e3349a94c9b789d74cca237ea26316c7d52095cfcb80edad0778263418",
+    "exports/01.json": "c68e3cf5309ca3674a456fb6df50975fc57179afcc1bcca6231c780944e2c104",
+    "exports/02.json": "c649b52e61ff61ba886c0050cef283fb645e7402cef556a6b25a38e2f7f48fa5",
+    "exports/03.json": "0e8784d3f0793ce24fae785b2b2f47feb4c5b6c255c4b156ba5a2a0526108ff4",
+    "native/01/baseline-process.log": "bf80141b2bfbd31bfa881a14f0723fc5efc9aebd5cea0633f1c42b26e5ffdbcf",
+    "native/01/baseline.cfg": "3eba76c8f6ef39f16a0da639e5a5fa360f158948c1a9be02ff1ffc7927d21c6b",
+    "native/01/baseline.log": "4c51aa3c87eb56a7af18d9a568885f3ecdd9cc9d0e15b090b50b4967b6326789",
+    "native/01/fixture-source/MAPINFO.txt": "252d907d855fa8ba11f9f6293a793aa3ac1403aaa62921aa6c93371472027731",
+    "native/01/fixture-source/ZSCRIPT.txt": "4201b76917c0c724225d7b3d018d0eb8a54f04d3fe11eecbe6eacaa729ec009c",
+    "native/01/fixture.zs": "73d695bbf9a21110dc106aca64a494ec02cf3025cf57c4eab0e2cf597f9c67b8",
+    "native/01/RESULTS.json": "9219f93ff50fc8241263d0d25b8085da4cde4f7da497336fda7c473976c7c7b4",
+    "native/01/session.ini": "7cf97c37c8df29a93a61358c5d74639355fa79ce2ac3f9ecad100aac5fad03b8",
+    "native/02/baseline-process.log": "1a21f1644ad244fd239dce6f6950d7d3b492a5b091b42347f8c3980effc0c2fb",
+    "native/02/baseline.cfg": "3eba76c8f6ef39f16a0da639e5a5fa360f158948c1a9be02ff1ffc7927d21c6b",
+    "native/02/baseline.log": "7f10d1b19bfb3a9f5ec72a5d1b51c4224f5cb6df4d7d1225b34797e0ef729887",
+    "native/02/fixture-source/MAPINFO.txt": "252d907d855fa8ba11f9f6293a793aa3ac1403aaa62921aa6c93371472027731",
+    "native/02/fixture-source/ZSCRIPT.txt": "57e5827aa56eb43bbe4df2d1cdf56d4acab3e55c982a3f488281082b6a243380",
+    "native/02/fixture.zs": "a0abac019a8d2d322eaea328de84c37e3c0efce8f7c24cd57bca74d50961335a",
+    "native/02/RESULTS.json": "9ae885337f2ca57645fa28873c11135020cc633fa132e714d4e6448267843887",
+    "native/02/session.ini": "b5b6e662f6702f71b4f411867217dd981b3a32f1354096e34c4fabf20bb793d3",
+    "native/03/baseline-process.log": "0bcf8fb5f327cfb40ac6e9a81ac09b218f2c5ac9b6c4025ceb9c48021931c85c",
+    "native/03/baseline.cfg": "3eba76c8f6ef39f16a0da639e5a5fa360f158948c1a9be02ff1ffc7927d21c6b",
+    "native/03/baseline.log": "6cacd180c46a634ea190c718a64b033b31db356f9d4dd4176258f748f590636b",
+    "native/03/candidate-fresh-process.log": "8354a6722c42b4d4b1c959debf18338224745949afbd7f26491c721b93b42570",
+    "native/03/candidate-fresh.cfg": "37394edc756ad971a656f44387747d92ba61e8494a24168c3d277b24d212028f",
+    "native/03/candidate-fresh.log": "2489177bcb2b6581bed0e7b3aad3d89cd61268299846a579c80f53cb6b72dd84",
+    "native/03/candidate-reload-process.log": "2dcc796692ecc8f162ff2e1641d218d16c4aad8e79c505110994d22f9913725e",
+    "native/03/candidate-reload.cfg": "c130a1220e0a78732a9bec676c71b2fad2e2279baeba33ab495b037cd68a04d3",
+    "native/03/candidate-reload.log": "f6bfa8674f2372568b44317760be84df7d7b35c0358d9fab78affb4b7c09416c",
+    "native/03/fixture-source/MAPINFO.txt": "252d907d855fa8ba11f9f6293a793aa3ac1403aaa62921aa6c93371472027731",
+    "native/03/fixture-source/ZSCRIPT.txt": "c0676df64e1b46f6deef9353353293a163e52fe7ead3de90762bdcd4524a4e54",
+    "native/03/fixture.zs": "adcbff1db2eb83a709d8452cbb5f3620557d27422a07b487b203d901bfd42a18",
+    "native/03/old-save-load-process.log": "2e1b8f5e02b9e540e7d95b95209ab53f214dcd19cccc8f1499e99f508192a817",
+    "native/03/old-save-load.cfg": "37bf17cafa9d860bf543d393c347e605ffb998770f5fa131a2c2aca4ff8dc98a",
+    "native/03/old-save-load.log": "98e060d5d2f781c6dff28dbf5817fc0b27c19d00bd598c3a2a41307958d2d774",
+    "native/03/RESULTS.json": "1371930a5f9f3093018da9391a1c70c4224e33974eb83fd8827f546ce88f2d80",
+    "native/03/rollback-load-process.log": "e7bb475d4524ce31f6c4c507f36e916ef94107f9f90ce9a9f6f71515d30e6a2d",
+    "native/03/rollback-load.cfg": "c130a1220e0a78732a9bec676c71b2fad2e2279baeba33ab495b037cd68a04d3",
+    "native/03/rollback-load.log": "9a2d15c62ebf0f52d4018c217c7cf141a6637c556b4a188f3b465bbdcd8276cd",
+    "native/03/session.ini": "3f8856eff042b7da3404fdde3b5e2c2bc1fce21fa5e8712daa98c6af2ff314e9",
+    "native/04/baseline-process.log": "2a1e9017987828e05ae12cd8514ca3986b6142b75661d1c9dcd45d9e8140a091",
+    "native/04/baseline.cfg": "3eba76c8f6ef39f16a0da639e5a5fa360f158948c1a9be02ff1ffc7927d21c6b",
+    "native/04/baseline.log": "59277466a99f8e307a49ba7f76ae02725a071ea1c1b900f84fef448a9ad80c3c",
+    "native/04/fixture-source/MAPINFO.txt": "252d907d855fa8ba11f9f6293a793aa3ac1403aaa62921aa6c93371472027731",
+    "native/04/fixture-source/ZSCRIPT.txt": "d7d24752fbb204e95571d6c284c83bf148a7b718fd551dab156fc9596d9acf35",
+    "native/04/fixture.zs": "0df6b3599b3230e8a309ec6b7b2f1961ba90337af3f2ba13aedcd99487bbb222",
+    "native/04/RESULTS.json": "3a02d9a7bad4f6a9a264eff047085f1cd977b368d2f4342952d26ee4b174382d",
+    "native/04/session.ini": "7cf97c37c8df29a93a61358c5d74639355fa79ce2ac3f9ecad100aac5fad03b8",
+    "native/05/baseline-process.log": "335809cef937432204069b2977dddbaa6904eca818ccac0a5484c193d9b6e509",
+    "native/05/baseline.cfg": "3eba76c8f6ef39f16a0da639e5a5fa360f158948c1a9be02ff1ffc7927d21c6b",
+    "native/05/baseline.log": "310ce6704ecfeb6201f5cd8b370561a2baa649352b09801131bb87f1eb357fff",
+    "native/05/baseline.png": "2d0cb8617ef6f4731f6b6bd4d8ac7e6daa0f68215e568dce29ddd291d3d6cca1",
+    "native/05/candidate-0.png": "2ff5d7ddb846cc2b54481c9caaf522973e526234366ccd6952ab963f14cc462c",
+    "native/05/candidate-1.png": "f4e76102f3d13b98453aa6807d2b05be6be6ec3deaea5fa17a211d90ebb94af1",
+    "native/05/candidate-2.png": "ea47de858001404efe06d17cabf7a6fc844f13081464846d28afedabcf004cb9",
+    "native/05/candidate-3.png": "be6748279bc562911737e254382e69a946cdd38fc3a5d8612dff14eed6c6dc4c",
+    "native/05/candidate-fresh-process.log": "9235e1d8d7382554365f88580bd595413bebae80e8b2ee47f554b1504f17e788",
+    "native/05/candidate-fresh.cfg": "37394edc756ad971a656f44387747d92ba61e8494a24168c3d277b24d212028f",
+    "native/05/candidate-fresh.log": "35a4a05a2ef1927d814f6219148df17a6f167359f6e9bd9cf18a10a4113553b8",
+    "native/05/candidate-reload-process.log": "2db62bfae187533d05fc04452a616df27840c3275c531d83d54d21379a7b2017",
+    "native/05/candidate-reload.cfg": "c130a1220e0a78732a9bec676c71b2fad2e2279baeba33ab495b037cd68a04d3",
+    "native/05/candidate-reload.log": "63a3367abf3df19ddb7725f8ae8035e0f2f85761819c3172b9d66dce9830d32e",
+    "native/05/fixture-source/MAPINFO.txt": "252d907d855fa8ba11f9f6293a793aa3ac1403aaa62921aa6c93371472027731",
+    "native/05/fixture-source/ZSCRIPT.txt": "b4c98a043e60b84293f6d04498295012aaf5e574de53b3104d0ebf71258c3fc7",
+    "native/05/fixture.zs": "273d213d8ed425cb0c30c9b51d1ec57c9bac307244d5986416d7f954c01d5bd6",
+    "native/05/old-save-load-process.log": "bb50e1c460dc41e2074b74635e772da515df1241d531f65b46fb55dfd9831861",
+    "native/05/old-save-load.cfg": "37bf17cafa9d860bf543d393c347e605ffb998770f5fa131a2c2aca4ff8dc98a",
+    "native/05/old-save-load.log": "835869bdf9ce4b096def2a6983dfcc413c9ceb402a00a25f30978c2c28a5ac31",
+    "native/05/RESULTS.json": "8d8e86be2ddb0f218df1dc8f6e0c00a2cbd1e79799e581007f51fb1137614f23",
+    "native/05/rollback-load-process.log": "6f5dc435e864c331d752531e86289476f9536a93a7e3ffe31ac85df5db7b5c75",
+    "native/05/rollback-load.cfg": "c130a1220e0a78732a9bec676c71b2fad2e2279baeba33ab495b037cd68a04d3",
+    "native/05/rollback-load.log": "3d4db586d057fa181a3d357bc5d8a69b4d2c180b0042bc79e46f727886ece687",
+    "native/05/session.ini": "693cf65868f5258879833b6adafb83ea756598291cebe301702d930e70ebba50",
+    "presentation/models-15/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/models-15/engine.log": "61ccdc466133e606cc4516c3d7e6b5e03cf17ea43ba964e9a936ff78c85f5bd4",
+    "presentation/models-15/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/models-15/fixture-source/ZSCRIPT.txt": "aa017070f1570e830b7134f305584cff1c6f2bc28978088d1b0ceea0a3d39b83",
+    "presentation/models-15/presents.csv": "e5484bdd0ceb313513ed22f2a27ca82ec1a4e7620970aa8111060b0ea432e015",
+    "presentation/models-15/process.log": "b132ee7ae5c313df447be85f7550f563adcfc98dcd39b1bfa6163be0ab53b3a2",
+    "presentation/models-15/scene.png": "804a0de2da9ca1b97dbdd1f4132e7bd76aa46dc150b453d84419a6ac297ff93b",
+    "presentation/models-15/session.ini": "049abbd627607c724b04a994a1e27991728d31dfce9025571915b12410e13e8a",
+    "presentation/RESULTS.json": "e1e2e16434a5f6f6846155cb524a10c2e23ff52c084b6593cd06b89a458ea110",
+    "presentation/sprites-15/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/sprites-15/engine.log": "894ad32e3f802eaa6ff82cf67072ce244997bd2a42622a8b9a77d0d834f8eead",
+    "presentation/sprites-15/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/sprites-15/fixture-source/ZSCRIPT.txt": "aa017070f1570e830b7134f305584cff1c6f2bc28978088d1b0ceea0a3d39b83",
+    "presentation/sprites-15/presents.csv": "398dc40a84cdb6d0904f4176843304c51d3eabbb9878bec664d03c66b4c79fd4",
+    "presentation/sprites-15/process.log": "ae09c17ee8a275136182f3f22019f5bee8537a08b1caa81dad78c7eea7b1243b",
+    "presentation/sprites-15/scene.png": "44051b4e78a060c9b7d5f84c66f0d142d46b69c56ca704ca54eab01265406a9b",
+    "presentation/sprites-15/session.ini": "ee64bcf59eb854044d7ef63f7d1c182b9b9dd14dae38e0a3cb76a3380c40b1f3",
+    "validation-final.log": "1e095366e5c1d31dd95a7b2429e2c6d0c2a8697d14404f6dc7f8163b4587a667",
+    "exports/04.json": "41a07c1e839b91b5575ca5b10c41c2663a2de6f7d40cd09d520d9d374ea1beee"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "issue": 647,
+  "scope": "Observe real coin drops, native stacking and bidirectional save compatibility.\n\nThe fixture invokes native pickup/toss methods on all 15 actual denominations.\nIt does not exercise ordinary menu selection or confer author acceptance.",
+  "baseline_sha256": "d4aa0aeb27ae9d37deb753f903a84e27937785f2fccb505fc30619283578b0e5",
+  "runtime_sha256": "d4aa0aeb27ae9d37deb753f903a84e27937785f2fccb505fc30619283578b0e5",
+  "model_sha256": "5c060c17e4407fafdf906c75827e8fab57515d28a4ee17928313c95c5faa2adf",
+  "fixture_sha256": "0b5f97bf0fe56cef5f1bec72fcaf872e9ac5fefe4fdba9d953f6d178de2d0f05",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "baseline",
+      "exit_code": 0,
+      "passed": false,
+      "errors": [
+        "CA647 FAIL coin 0 original icon and state",
+        "CA647 FAIL coin 1 original icon and state",
+        "CA647 FAIL coin 2 original icon and state",
+        "CA647 FAIL coin 3 original icon and state",
+        "CA647 FAIL coin 4 original icon and state",
+        "CA647 FAIL coin 5 original icon and state",
+        "CA647 FAIL coin 6 original icon and state",
+        "CA647 FAIL coin 7 original icon and state",
+        "CA647 FAIL coin 8 original icon and state",
+        "CA647 FAIL coin 9 original icon and state",
+        "CA647 FAIL coin 10 original icon and state",
+        "CA647 FAIL coin 11 original icon and state",
+        "CA647 FAIL coin 12 original icon and state",
+        "CA647 FAIL coin 13 original icon and state",
+        "CA647 FAIL coin 14 original icon and state"
+      ],
+      "assertions": 151
+    }
+  ],
+  "captures": {
+    "baseline.png": "2d0cb8617ef6f4731f6b6bd4d8ac7e6daa0f68215e568dce29ddd291d3d6cca1"
+  }
+}

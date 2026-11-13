@@ -4725,3 +4725,6 @@ Model CaelumBarricadeVisual
     FrameIndex CAGT B 0 0
 }
 // END GENERATED BARRICADE
+
+// #647: explicit native denomination bindings.
+#include "caelum/data/inventory_coins.modeldef"
