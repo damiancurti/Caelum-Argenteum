@@ -236,6 +236,7 @@ class CaelumJusticeGeometry : Object
         if(map=="MAP01")return 7749;
         if(map=="MAP02" && level.GetChecksum()=="860e3e47c2b89449073b0d27f0b4940b")return 85;
         if(map=="MAP02")return 104;
+        if(map=="MAP03" && level.GetChecksum()=="f552012c9d4d7a2ba59d0809894ad272")return 391;
         if(map=="MAP03" && level.GetChecksum()=="03f80198bfae8ba82cc435775001ba91")return 767;
         if(map=="MAP03")return 767;
         if(map=="TACTORS")return 9;
@@ -478,6 +479,7 @@ class CaelumJusticeGeometry : Object
         if(map=="MAP01")return (-30464,-30464,0);
         if(map=="MAP02" && level.GetChecksum()=="860e3e47c2b89449073b0d27f0b4940b")return (7104,8960,0);
         if(map=="MAP02")return (8960,9984,0);
+        if(map=="MAP03" && level.GetChecksum()=="f552012c9d4d7a2ba59d0809894ad272")return (2560,20672,0);
         if(map=="MAP03" && level.GetChecksum()=="03f80198bfae8ba82cc435775001ba91")return (2752,17088,0);
         if(map=="MAP03")return (2752,17088,0);
         if(map=="TACTORS")return (25024,19392,0);

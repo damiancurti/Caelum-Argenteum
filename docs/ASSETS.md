@@ -4,6 +4,15 @@ Documentation version: **5.16.2** - 2026-11-12.
 
 ## 5.16.2 - Approved map references and preserved sewer sources (#454)
 
+`generate_barracas_justice.py --candidate <preview.pk3> --output <build/path>
+--register` appends the existing ARENA.json room without changing the input
+TEXTMAP prefix or any production map. Optional registration writes candidate
+geometry into the single assets/tarot_justice/MAPS.json manifest and regenerates
+its runtime index. Two outputs repeat byte-identically. The candidate room is
+sector391, centre(2560,20672,0), checksum f552012c9d4d7a2ba59d0809894ad272;
+original MAP03 retains its checksum-qualified sector767. Source, native and
+compatibility evidence: barracas-justice/SUMMARY.json.
+
 MARCH.json derives six infantry approaches and12 southern gun-crew starts from
 FRONTS/SOUTH/CITY and the retained operator offsets. RETREAT.json derives three
 64-MU ground flow fields from assembled geometry to the southern exits:257109

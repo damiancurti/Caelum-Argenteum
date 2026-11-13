@@ -4,12 +4,17 @@ Documentation version: **5.16.2** - 2026-11-12.
 
 ## 5.16.2 - Sewer redesign validation (#454)
 
+Candidate Justice preservation now passes deterministic/static checks and native
+placement, active save and exact return. Old active/stored-hub compatibility also
+passes. Carry this independent annex into final city activation; it does not
+replace the remaining siege, service or performance checks. See barracas-justice/SUMMARY.json.
+
 Pedestrian routes/withdrawal are now staged, with six terminal exits and36 stair
 descents passing fresh/reload and a15-body saved approach continuation passing.
 Complete the long fresh/reloaded approach and six full city-to-south withdrawals
 currently running. Keep the raw-weather deaths separate from navigation-isolated
 results; integrated climate survival remains unverified. Finish wounded commander
-escape,600 real defender AI/crowds, capture/refill, Justice, services and rendering
+escape,600 real defender AI/crowds, capture/refill, services and rendering
 evidence before activation. See barracas-navigation/SUMMARY.json.
 
 The approved MAP02 board is implemented as geometry revision 6. Static principal
@@ -31,7 +36,7 @@ exterior coordinate helpers pass the isolated 224-endpoint/320-leaf native probe
 The service candidate also passes64 merchants,96 factory stations,four vehicles
 and the four existing arrival-household identities through CAH069 placement and
 exact new doorstep return. Old saves pass with the new dispatch code. Integrate
-ordinary interactive house/service/transport flows, the Justice annex and the
+ordinary interactive house/service/transport flows and the
 real siege controller; its passive test controller is disposable. Complete visual
 architecture and retain the accepted residential sky policy. Exact original
 MAP03 active/stored-hub continuation passes through -LegacyMap03Revision3 with

@@ -4,6 +4,11 @@ Documentation version: **5.16.2** - 2026-11-12.
 
 ## 5.16.2 / #454 - Approved Barracas siege adaptation (candidate)
 
+The unactivated city now has its existing Justice arena appended independently.
+Checksum-qualified sector/centre dispatch selects the candidate or original city.
+Arena dimensions, pairing, duration and safe-return rules are unchanged; native
+active-save/expiry checks pass. This is not a new card or payment implementation.
+
 The staged pedestrian controller retains per-entry revisioned lane, route cursor
 and withdrawal state. Assigned approaches take precedence over anonymous search
 points while preserving perception evidence and normal visible-enemy combat.

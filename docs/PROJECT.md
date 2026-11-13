@@ -4,6 +4,11 @@ Documentation version: **5.16.2** - 2026-11-12.
 
 ## 5.16.2 - Sewer geometry slice (#454, in progress)
 
+The candidate Justice annex now preserves the existing arena rules and exact
+city-geometry prefix. Native placement/save/return and old active/stored-hub
+continuation pass; all238 packaged maps remain unchanged. Evidence is in
+assets/validation_v5_16_2/barracas-justice/SUMMARY.json.
+
 Pedestrian navigation is staged for the unactivated city: southern approaches,
 front-preserving groups, shared local avoidance and ground withdrawal fields.
 Six terminal exits/36 stair descents pass isolated fresh/reload checks; a saved

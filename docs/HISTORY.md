@@ -4,6 +4,16 @@ Documentation version: **5.16.2** - 2026-11-12.
 
 ## 5.16.2 - Sewer redesign slice (#454, in progress, 2026-11-12)
 
+2026-11-13 Justice preservation: append the existing768-MU/160-MU arena to the
+isolated city candidate, retaining every previous TEXTMAP byte as a prefix.
+Two generated candidates are identical; checksum-qualified lookup selects
+sector391 at(2560,20672,0). Native direct duel placement, exact pair references,
+active-save/timer continuation and exact survivor return pass. Original active
+and stored-house-hub continuation still selects Justice767 and its original
+eight gates. All238 packaged maps remain unchanged. No card dispatch/payment,
+performance, city activation or author acceptance is claimed by this isolation.
+Evidence: assets/validation_v5_16_2/barracas-justice/SUMMARY.json.
+
 2026-11-13 pedestrian candidate: generated southern approaches and static ground
 withdrawal fields, revisioned cursors, front-preserving formations and a shared
 local-navigation queue. Six final exits and36 actual stair descents pass fresh

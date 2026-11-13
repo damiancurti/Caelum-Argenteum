@@ -62,6 +62,14 @@ This slice does not complete Barracas, other regional maps or the V5.16 campaign
 
 ### Barracas architectural source (intermediate, not activated)
 
+The candidate now includes the existing Justice arena as an independent appended
+room: width768, headroom160, sector391 and centre(2560,20672,0), derived from
+the original ARENA.json settings and map bounds. The previous city TEXTMAP is
+an unchanged byte prefix. A checksum-qualified entry in the authoritative
+Justice manifest selects this room; original city saves retain sector767.
+Native direct duel/save/expiry returns and old active/stored-hub continuation
+pass. See barracas-justice/SUMMARY.json; production city activation remains pending.
+
 The pedestrian candidate now uses generated southern approaches for three
 infantry fronts and12 cannon operators. Saved entry cursors retain progress;
 formations cannot merge across fronts. Explicit approach orders retain their
@@ -136,7 +144,7 @@ The passive-controller candidate passes fresh/reload,64 merchant placements,
 items through parking/CAH069 placement/return. Native start70 returns exactly
 to the new doorstep. The same runtime passes old active/stored-hub saves. The
 probe deliberately suppresses the obsolete six-lane siege, directly calls native
-ChangeMap and has no candidate Justice annex yet. It does not establish full
+ChangeMap and predates the separately tested Justice annex. It does not establish full
 boarding transactions, interactive door acknowledgement or final city acceptance.
 Evidence: assets/validation_v5_16_2/barracas-candidate/SUMMARY.json.
 
@@ -161,7 +169,7 @@ real defender AI nor crowded deployment/firing coverage. Corrected exterior
 views were inspected after a fixture camera initially landed inside a building.
 Evidence: assets/validation_v5_16_2/barracas-forts/SUMMARY.json. The production
 map/controller and private house maps remain unchanged;600 deployment routes,
-three-front siege, Justice annex, ordinary interaction and performance remain.
+three-front siege, ordinary interaction and performance remain.
 
 DEPLOYMENT.json now derives all 600 ground paths from the same assembled candidate
 cells, starting at each actual ResidentHouse doorway, including 69->70 relocation.

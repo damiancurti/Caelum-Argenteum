@@ -53,6 +53,10 @@ in fresh/reloaded saves; old geometry retains its original route tables.
 Both ram sizes pass isolated corner movement and contact with all four gates.
 Two live crews (6+32 Mandingas) also reach their gates at normal cadence after
 fresh start and mid-turn reload. Full three-front integration remains pending.
+The separate city candidate now retains the existing Justice arena. Native duel
+placement, active-save recovery and exact survivor return pass, as does original
+city/hub continuation. [Justice evidence](assets/validation_v5_16_2/barracas-justice/SUMMARY.json)
+records the unchanged city geometry prefix; production MAP03 is still unchanged.
 
 V5.15 includes the [battle director](assets/validation_v5_15_0/RESULTS.md)
 (#447, PR635), [Unitarian command](assets/validation_v5_15_1/RESULTS.md)
