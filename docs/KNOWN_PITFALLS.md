@@ -6,8 +6,8 @@ Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
 ## CA-KP-222 - Individual routes do not prove crowded withdrawal
 
-Status/evidence: ENGINE-VERIFIED for fresh/saved crowd recovery; early replay
-and frame presentation remain pending. First recorded / checked: 2026-11-13.
+Status/evidence: ENGINE-VERIFIED for fresh/saved/early-replayed crowd recovery;
+separate frame evidence retains severe siege stalls. Recorded / checked: 2026-11-13.
 Issue / PR: #454 / #643. Baseline: d2bf6f1c6 plus the unactivated city candidate.
 Environment: Windows11, GZDoom4.14.2, Vulkan, background unpaused at5% audio.
 Evidence: assets/validation_v5_16_2/barracas-withdrawal/SUMMARY.json and raw logs.
@@ -31,7 +31,13 @@ state evidence, not a paired frame-time benchmark. The recovered run physically
 exits all1000 survivors; supplied objective destruction/wound and neutralized
 thermal exposure limit its meaning. Keep incomplete iterations and precise
 runtime/seed hashes; do not infer60FPS from these movement results. A separate fresh run completes
-all1000 exits at30,205tics; early-checkpoint replay remains pending.
+all1000 exits at30,205tics, matched by early-checkpoint replay. Six full-route
+and five commander-origin replays also pass. Independent presentation evidence
+still measures only1.50 requests/s in the revised full-cap siege. An inclusive
+timing overlay measures375 local navigation builds totaling112.50ms (about0.4%
+of its700-tic window); the route builder does not explain the frame gaps.
+Measure before changing it. See barracas-presentation/SUMMARY.json; overlapping
+perception scopes and observer overhead are explicitly qualified there.
 
 ## CA-KP-221 - Long navigation probes must preserve their isolation conditions
 

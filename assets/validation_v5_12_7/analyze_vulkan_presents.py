@@ -43,7 +43,7 @@ def main():
     reports=[]
     for p in run['peers']:
         reports.append(inspect(args.directory/f"peer{p['slot']}"/'presents.csv',p['pid'],p['window']['BEGIN']['qpc_ms'],p['window']['END']['qpc_ms']))
-    result=dict(issue=435,map=run['map'],siege=run['siege'],ground=run['ground'],peers=reports,
+    result=dict(issue=run.get('issue',435),map=run['map'],siege=run['siege'],ground=run['ground'],peers=reports,
                 qualification='Actual vkQueuePresentKHR calls on one shared Windows machine; no display-scanout, Internet-latency or author acceptance claim.')
     (args.directory/'presentation.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8');print(json.dumps(result,indent=2))
 

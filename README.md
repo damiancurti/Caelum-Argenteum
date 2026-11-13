@@ -29,8 +29,9 @@ The seven named Majors per chapter are also approved as an allocation base;
 the recovered bestiary and map references proceed through separate issues.
 Barracas also has an [isolated architectural preview](assets/barracas_redesign/LAYOUT.json)
 with 288 retained building identities; it is not activated in MAP03. Fresh and saved
-crowded aftermaths now complete all 1,000 physical exits; early-checkpoint replay
-and frame-presentation measurements remain unfinished. The existing Knight
+crowded aftermaths and early-checkpoint replay complete all 1,000 physical exits.
+Native presentation measures about 76–100/s in peaceful views but only 1.50/s
+in the full-cap siege; siege fluency remains unresolved. The existing Knight
 essence follows the relocated quay; original-city sources remain compatible.
 For visited original Barracas saves,
 `run_dev.bat --legacy-map03-revision3` retains exact geometry and private-house

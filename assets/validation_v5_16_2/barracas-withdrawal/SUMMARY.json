@@ -1,7 +1,7 @@
 {
   "issue": 454,
   "version": "5.16.2",
-  "status": "Fresh army and saved congested army complete. Early replay/full-route continuation running; rendering pending. City unactivated; no author acceptance.",
+  "status": "Fresh, early-checkpoint replay and congested-save army withdrawal pass. Final full-route/commander, migration and legacy checks pass. Rendering remains separate; city unactivated and no author acceptance.",
   "runtime": "build/v516/issue454-retreat-follow01.pk3",
   "runtime_sha256": "ef5c0747a5136a719601a7c13b5cb8947245ab73217a227c77a15e4e1057e959",
   "candidate_sha256": "7b4d8aa16035607bba6feb4bed7dc7df46143b230560b08acbc2669c51204b63",
@@ -47,7 +47,12 @@
       "fixture_dead": 5,
       "admitted": 1004,
       "remaining": 5596,
-      "victory_count": 1
+      "victory_count": 1,
+      "phases": [
+        "fresh",
+        "reload"
+      ],
+      "qualification": "Both phases complete at30205 native tics with the same reserve/death/victory ledger."
     },
     "commander_following": {
       "path": "commander-following/results.json",
@@ -63,13 +68,19 @@
       "path": "legacy-following/results.json",
       "passed": true,
       "qualification": "Exact final following runtime; original-city active/stored-hub geometry and state retained."
+    },
+    "full_route_following": {
+      "path": "full-route-following/results.json",
+      "passed": true,
+      "elapsed": 41340,
+      "qualification": "Six city-to-exit routes from the original early checkpoint; native collision/gate use and thermal isolation."
     }
   },
   "limitations": [
     "Thermal exposure is neutralized each fixture tick; no climate-survival conclusion.",
     "Native objective destruction and commander wound are supplied by the fixture; no complete won fight, card targeting/payment or rendering-FPS claim.",
     "Fresh nearest-only run08 was interrupted by daemon restart with462 pending at52500; individual paths do not prove army completion.",
-    "Early-checkpoint army replay, full-route replay and frame-presentation checks remain pending.",
+    "Frame presentation and final integrated city activation remain separate checks.",
     "No new author test is ready until integrated city activation."
   ]
 }

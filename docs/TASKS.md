@@ -41,9 +41,13 @@ The combined aftermath probe exposed severe congestion from assigned-exit
 counterflow and repeated detours among same-direction bodies. The revised
 nearest-exit/progress/following policy completes all1000 survivors from fresh
 and saved congested aftermaths. Original assault lanes, five fixture deaths, the finite
-reserve and exactly one victory remain intact; no essence is granted. Early-checkpoint
-replay is running. Retain failed/incomplete runs and original saves. Finish this correction,
-representative peaceful/ground/siege frame-presentation measurements and final
+reserve and exactly one victory remain intact; no essence is granted. Fresh and
+early replay both finish at30,205tics; six full routes and five commander origins
+also pass replay. Retain failed/incomplete runs and original saves. Peaceful,
+ground-facing and full-cap siege presentation traces are recorded; the revised
+siege still measures only1.50 requests/s, with p99791.28ms. Local navigation is
+about0.4% of the separate timing window, so speculative pathfinding optimization
+is unsupported. Preserve this unresolved performance limitation. Finish final
 integrated new/legacy startup checks before activating production MAP03.
 Keep fixture thermal isolation separate from integrated climate survival.
 Architectural readability and author acceptance remain outstanding; final art

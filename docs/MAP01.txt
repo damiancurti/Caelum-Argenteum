@@ -83,9 +83,23 @@ Withdrawal revision4 chooses the nearest existing legal ground exit independentl
 of the preserved assault front. Cached ground costs recognize physical progress;
 queued detours and same-direction following retain native collision. Fresh and
 saved crowded aftermaths now complete all1000 surviving exits with one victory,
-unchanged reserve accounting and no automatic essence grant. Early-checkpoint
-replay and rendering checks remain pending; supplied objective destruction and
+unchanged reserve accounting and no automatic essence grant. Fresh and early
+replay both complete at30,205tics; six full-route and five commander-origin
+replays also pass. Supplied objective destruction and
 thermal isolation are explicit limitations in barracas-withdrawal/SUMMARY.json.
+
+Native Vulkan presentation at1280x720 measures original/revised quay106.95/100.07
+requests per second, ground-facing76.68/75.63 and full-cap siege1.28/1.50.
+Revised siege p95/p99 intervals are788.78/791.28ms: it is not fluent. The first
+original siege sample was still refilling; a later5000-tic observation reaches
+the same988 registered attacker NPCs and601 defenders as the revised sample.
+Machines are outside that NPC census. Both geometries use current code, and
+the corresponding views expose different geometry. This does not prove a
+speedup or inherited cause. The isolated timing overlay attributes112.50ms
+across375 calls to local navigation (about0.4% of its700-tic window); perception
+is substantially more expensive, but inclusive Acquire/Candidate costs overlap.
+Preserve these limits and the unresolved siege stalls. Exact traces, screenshots,
+environment, observers and timing scopes are in barracas-presentation/SUMMARY.json.
 
 The Knight of Wands keeps its original place beside the rescued row relative to
 the quay: CurrentPortPoint transforms(0,640,14) to(-896,15488,14) for revision4.

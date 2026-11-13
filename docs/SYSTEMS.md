@@ -54,8 +54,9 @@ controller, then supplies12 native objective destructions and the commander woun
 A saved congested aftermath completes all1000 surviving exits at48,300tics,
 15,118 additional tics after recovery, preserving five fixture casualties,
 1004 admissions,5596 unused reserves, one victory and no automatic essence grant.
-A fresh run also completes all1000 exits at30,205tics with the same ledger.
-Early-checkpoint replay and rendering measurements remain pending. Thermal isolation
+A fresh run and early-checkpoint replay complete all1000 exits at30,205tics
+with the same ledger. Presentation measurements separately confirm severe siege
+stalls (about1.50 requests/s); movement success is not fluency. Thermal isolation
 and supplied objective completion prevent a full-fight or climate-survival claim.
 See barracas-withdrawal/SUMMARY.json for exact packages and incomplete iterations.
 

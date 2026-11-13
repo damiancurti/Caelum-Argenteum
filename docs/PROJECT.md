@@ -35,8 +35,12 @@ Combined aftermath testing exposed opposing assigned-exit streams and repeated
 local detours among bodies moving in the same direction. Revision4 separates
 retreat exit from assault front and retains physical progress/queued routes.
 Fresh and saved congested aftermaths now complete all1000 surviving physical exits,
-preserving reserve/victory accounting and no automatic essence grant. Early-checkpoint
-replay, representative frame-presentation measurements and final integrated
+preserving reserve/victory accounting and no automatic essence grant. Fresh and
+early-checkpoint replay both finish at30,205tics. Native presentation measures
+100.07/s at the revised quay,75.63/s facing ground and1.50/s during full-cap siege.
+The original city with the same code measures106.95,76.68 and1.28/s respectively;
+these are corresponding views, not identical rendered workloads or an accepted-main
+runtime comparison. Severe siege stalls remain unresolved. Final integrated
 new/legacy startup checks remain unfinished. Thermal-isolated
 navigation does not establish climate survival or a fully played battle.
 Architectural readability/author review remain pending; final art completion is

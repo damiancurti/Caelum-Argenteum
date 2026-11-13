@@ -4,6 +4,21 @@ Documentation version: **5.16.2** - 2026-11-12.
 
 ## 5.16.2 - Sewer redesign slice (#454, in progress, 2026-11-12)
 
+2026-11-13 presentation follow-up: eight sequential native runs preserve actual
+vkQueuePresentKHR traces,1280x720 captures, exact runtime hashes and observers.
+Original/revised peaceful quay106.95/100.07 requests/s; ground76.68/75.63;
+full-cap siege1.28/1.50, with revised p95/p99788.78/791.28ms. The first original
+siege sample was still refilling and is retained separately. The full-cap pair
+records988 attacker NPCs and601 defenders each; machines are outside this census.
+Both layouts use current code, so this is neither an accepted-main runtime
+comparison nor proof of an inherited cause. Severe siege stalls remain unresolved.
+An isolated timing overlay records navigation112.50ms/375 calls (~0.4% of its
+700-tic window), Acquire6897.89ms and Candidate6847.46ms (overlapping), Noise370.86ms
+and Communication1433.56ms. Instrumentation overhead and differing visible geometry
+limit interpretation. No navigation optimization or performance acceptance follows.
+See assets/validation_v5_16_2/barracas-presentation/SUMMARY.json.
+
+
 2026-11-13 quay essence correction: the Knight source still used the original
 absolute location after the quay rotated/moved. Reuse CurrentPortPoint on that
 authored location, leaving original MAP03 unchanged. PlacementRevision1 relocates
@@ -39,7 +54,8 @@ arrival, distance progress or queued-detour retention alone did not establish
 fresh army completion. Nearest-only run08 was interrupted by daemon restart at
 52,500tics with462 still pending; six full individual routes and five commander
 origins had completed their fresh phases, but not reload. The final fresh run completes all1000 exits at30,205tics with the same ledger;
-early-checkpoint replay and frame-presentation checks remain pending. Objective destruction,
+early-checkpoint replay matches30,205tics. Six full-route replays finish41,340tics
+and five commander origins26,335tics. Objective destruction,
 commander wound and neutralized thermal exposure are fixture conditions, not a
 fully won battle or survival/FPS evidence. See barracas-withdrawal/SUMMARY.json.
 
