@@ -1,6 +1,6 @@
 CAELUM ARGENTEUM — STORY AND MAP01
 
-Documentation version: **5.16.0** - 2026-11-12.
+Documentation version: **5.16.1** - 2026-11-12.
 
 ## 5.16.0 / #452 - Regional campaign allocation (in progress)
 
@@ -93,7 +93,8 @@ services/triggers. Replaced geometry requires exact old-WAD compatibility for
 both active-map and visited-hub saves before adoption. #453 requires the original
 approved bestiary manifest. The author supplied six attachments in #453; all 58
 concept images pass catalogue SHA-256 checks. Their reconstructed catalogue
-leaves campaign regions unassigned. Concept references alone are not integrated
+did not recover original regions; the author approved a new 58-row campaign
+allocation on 2026-11-12, now preserved under #453. Concept references are not integrated
 actors; the author prefers 3D models where feasible.
 The 78-map target counts authored campaign content, not the catalogue's technical
 or standalone map entries. Prologue beta scope and full-campaign completion stay

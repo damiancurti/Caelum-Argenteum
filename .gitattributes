@@ -1,4 +1,9 @@
 # Document index hashes use exact source bytes. Keep them stable on checkout.
+# #453 original author reference bytes and deterministic derived catalogue.
+/assets/source/bestiary_453/** -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+/assets/bestiary/*.json text eol=lf
+/assets/generators/build_bestiary_catalogue.py text eol=lf
+/assets/validation_v5_16_1/*.json text eol=lf
 # Keep #452 authoring/probe inputs and recorded native evidence reproducible.
 /assets/campaign/PROGRESSION.json text eol=lf
 /assets/generators/validate_campaign_progression.py text eol=lf

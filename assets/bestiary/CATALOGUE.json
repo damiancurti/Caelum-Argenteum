@@ -1,0 +1,1966 @@
+{
+  "schema_revision": 1,
+  "issue": 453,
+  "source_status": "Reconstructed catalogue, not a recovered original manifest",
+  "source_catalogue": "assets/source/bestiary_453/catalogo.json",
+  "source_sha256": "f47bbd169df9c35ca7fe3f86e41b83778242a25e5a7de9d4e39ecd717569b188",
+  "missing_original_material": [
+    "Original ZIP index",
+    "Original generation prompts",
+    "Verified per-entry campaign region assignments"
+  ],
+  "ids_are_engine_ids": false,
+  "caelith_new_references": 0,
+  "presentation_preference": "3d_models_where_feasible",
+  "entries": [
+    {
+      "id": "CA-FOLK-001",
+      "reference_name": "Brujas y brujos",
+      "race": "human",
+      "population": "repeatable",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "1,50–2 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Buenos Aires",
+        "Pampa",
+        "Litoral",
+        "Cuyo",
+        "Northwest Argentina",
+        "Chaco",
+        "Selva",
+        "Patagonia"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/01_Humanos/01_brujas_brujos.png",
+        "sha256": "8013d7ab5bd966e1f098e683356d77289784fc50bfbdf0fa674d4de557fce2ec",
+        "original_filename": "Bruja rural argentina de 1889.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1024,
+        "height": 1536
+      },
+      "source_notes": "Una referencia visual representativa del grupo.",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-002",
+      "reference_name": "Brujas y brujos de la Salamanca",
+      "race": "human",
+      "population": "repeatable",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "1,50–2 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Northwest Argentina",
+        "Supernatural domains"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/01_Humanos/02_salamanca.png",
+        "sha256": "72bbb072494873b55220e3c11c903897711afcdb964c4fb26a5899eb6e76296c",
+        "original_filename": "Hechicero rural argentino del siglo XIX.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1024,
+        "height": 1536
+      },
+      "source_notes": "Una referencia visual representativa del grupo.",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-003",
+      "reference_name": "Lobizón / Luisón",
+      "race": "beast_man",
+      "population": "repeatable",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "1,70–2,20 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Pampa",
+        "Litoral"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/02_Hombres_bestia/03_lobizon.png",
+        "sha256": "b3800911466d406a2257ffde20695640984754299e5bd5f6814677d1b48af863",
+        "original_filename": "Hombre lobo argentino de fantasía oscura.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1145,
+        "height": 1374
+      },
+      "source_notes": "",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-004",
+      "reference_name": "Runa Uturunco / Uturunco",
+      "race": "beast_man",
+      "population": "repeatable",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "1,70–2,20 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Litoral",
+        "Selva"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/02_Hombres_bestia/04_uturunco.png",
+        "sha256": "91e144d2f2d8e59a49ef73b74d75e623caaee958ee6df6c8a43386533236b393",
+        "original_filename": "Hombre jaguar de fantasía argentina.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1024,
+        "height": 1536
+      },
+      "source_notes": "",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-005",
+      "reference_name": "Ucumar / Ucumarí",
+      "race": "beast_man",
+      "population": "repeatable",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "2–2,80 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Northwest Argentina"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/02_Hombres_bestia/05_ucumar.png",
+        "sha256": "61b8e8eaea6206c44c7c52a42e912439b692f06fa219d8d521ea837a78ca61d0",
+        "original_filename": "Hombre oso de fantasía argentina.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1024,
+        "height": 1536
+      },
+      "source_notes": "Rulo conserva su identidad de NPC Ucumar; la especie puede ser múltiple.",
+      "protected_existing_identity": {
+        "name": "Rulo",
+        "class": "CaelumRulo",
+        "contract": "Rulo remains the named Ucumar NPC; the repeatable species does not duplicate him."
+      },
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-006",
+      "reference_name": "Pombero",
+      "race": "duende_demon",
+      "population": "repeatable",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "1–1,40 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Litoral",
+        "Selva"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/06_pombero.png",
+        "sha256": "1dd178b9759cc92c00318c6d8f36e5192d42a1cc26f4357a1c0f6355406f39ae",
+        "original_filename": "Duende del bosque pampeano.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1214,
+        "height": 1295
+      },
+      "source_notes": "",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-007",
+      "reference_name": "Yasí Yateré / Jasy Jaterê",
+      "race": "duende_demon",
+      "population": "unique",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "0,90–1,20 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Litoral"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/07_yasi_yatere.png",
+        "sha256": "55aae2de72a91d55d946661ef249883a25fd05e548305a1ae80b50b1ec957845",
+        "original_filename": "Duende del bosque con bastón dorado.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1024,
+        "height": 1536
+      },
+      "source_notes": "",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-008",
+      "reference_name": "Curupí / Kurupí",
+      "race": "duende_demon",
+      "population": "unique",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "1–1,40 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Selva"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/08_curupi.png",
+        "sha256": "be0f78746b0cb2900b2cca0e48e2be81b96210cf2708993f710b416c326090f0",
+        "original_filename": "Duende boscoso de fantasía argentina.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1224,
+        "height": 1285
+      },
+      "source_notes": "",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-009",
+      "reference_name": "Mikilo",
+      "race": "duende_demon",
+      "population": "repeatable",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "0,50–0,90 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Northwest Argentina"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/09_mikilo.png",
+        "sha256": "18533e3cfa0da8054c27a94597499f333c651dee57c5297e39888beab1e0e9d9",
+        "original_filename": "Duende montañés de sombrero gastado.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1222,
+        "height": 1287
+      },
+      "source_notes": "",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-010",
+      "reference_name": "Coquena",
+      "race": "duende_demon",
+      "population": "unique",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "0,80–1,10 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Northwest Argentina"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/10_coquena.png",
+        "sha256": "800fb9b2c93846341e84fa72c370c46382781a8201e5c5e269c86d906b062029",
+        "original_filename": "Guardián goblin de las tierras altas.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1024,
+        "height": 1536
+      },
+      "source_notes": "",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-011",
+      "reference_name": "Yastay / Llastay",
+      "race": "duende_demon",
+      "population": "unique",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "1,60–2 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Cuyo",
+        "Northwest Argentina"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/11_yastay.png",
+        "sha256": "0be77caebce561fff1b6a11ab22d19b28195330cfe7672b77c23a6d8bd04bb45",
+        "original_filename": "Guardián boscoso de fantasía argentina.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1024,
+        "height": 1536
+      },
+      "source_notes": "",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-012",
+      "reference_name": "Sachayoj",
+      "race": "duende_demon",
+      "population": "unique",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "2,50–3,50 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Chaco"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/12_sachayoj.png",
+        "sha256": "fbea4f6bceb121bc7b828fb7ab1a9fa360e5836870df8b854cd575c4a6a1db12",
+        "original_filename": "Guardián ancestral de corteza y musgo.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1024,
+        "height": 1536
+      },
+      "source_notes": "",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-013",
+      "reference_name": "Caá Porá",
+      "race": "duende_demon",
+      "population": "unique",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "3–4 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Selva"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/13_caa_pora.png",
+        "sha256": "4cff72140077b4e8663fe7603504cd13cafcbc4e6ae89edcb8f60022da816ee9",
+        "original_filename": "Demonio forestal de fantasía argentina.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1156,
+        "height": 1361
+      },
+      "source_notes": "",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-014",
+      "reference_name": "Caá Yarí",
+      "race": "duende_demon",
+      "population": "unique",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "1,60–1,90 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Selva"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/14_caa_yari.png",
+        "sha256": "a20e1a16cf0c33f138d7dcd1d5772d252d0124a17fe1e77d95af8069d9cdf639",
+        "original_filename": "Guardiana yerbatera del bosque.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1024,
+        "height": 1536
+      },
+      "source_notes": "",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-015",
+      "reference_name": "Zapam Zucum",
+      "race": "duende_demon",
+      "population": "unique",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "2,50–3,50 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Cuyo"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/15_zapam_zucum.png",
+        "sha256": "9323cf2b081117cb8c1a4030e445e40f8a87f3155c520d6eb6beacd80cae0083",
+        "original_filename": "Guardiana del bosque de algarrobo.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1024,
+        "height": 1536
+      },
+      "source_notes": "",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-016",
+      "reference_name": "Pericana",
+      "race": "duende_demon",
+      "population": "unique",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "1,80–2,30 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Cuyo"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/16_pericana.png",
+        "sha256": "f859b4c8bb3f0da9f6f39e55f8a097d4c8fc5d5bf0c240f257e90eb4b3908982",
+        "original_filename": "Duende anciana de fantasía argentina.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1199,
+        "height": 1312
+      },
+      "source_notes": "",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-017",
+      "reference_name": "Solapa",
+      "race": "duende_demon",
+      "population": "repeatable",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "1,20–1,80 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Pampa"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/17_solapa.png",
+        "sha256": "ee6b02e50e58b6bc31752f5c107ef24417d6b28cdd39d3b78f8e1751624d97ea",
+        "original_filename": "Duende anciana de la pampa.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1145,
+        "height": 1374
+      },
+      "source_notes": "Seres de la siesta; variantes regionales.",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-018",
+      "reference_name": "Mandinga",
+      "race": "duende_demon",
+      "population": "repeatable",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "Tamaño actual del juego",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Buenos Aires",
+        "Supernatural domains"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/18_mandinga.png",
+        "sha256": "f6e382d1627d4027a5c097179ea92b3e56a1d884be64bb70a0a2cc61190383d4",
+        "original_filename": "Demonio de cuernos y pezuñas.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1024,
+        "height": 1536
+      },
+      "source_notes": "Demonios ya incorporados. La nueva imagen es una referencia de arte.",
+      "protected_existing_identity": {
+        "class": "CaelumMandinga",
+        "contract": "Preserve the accepted current-game size and existing actors until separately approved behavior/art delivery."
+      },
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-019",
+      "reference_name": "Zupay / Supay",
+      "race": "duende_demon",
+      "population": "unique",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "Tamaño actual del juego",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Buenos Aires",
+        "Northwest Argentina",
+        "Supernatural domains"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/19_zupay.png",
+        "sha256": "9d09ad068df3a89c2c6571ddcac527ca8274801be4adbfe820d310029c6b7bc4",
+        "original_filename": "Rey demonio de fantasía argentina.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1024,
+        "height": 1536
+      },
+      "source_notes": "Rey demonio. Conservar los actores y roles ya existentes; no reinterpretar esta fila como una migración automática.",
+      "protected_existing_identity": {
+        "class": "CaelumZupayColossus",
+        "contract": "Zupay is a unique narrative identity across Chapter I retreats; his death belongs to Chapter II. Preserve current-game size."
+      },
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-020",
+      "reference_name": "Nóshtex / Nosjthej",
+      "race": "duende_demon",
+      "population": "unique",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "6–8 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Chaco"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/20_noshtex.png",
+        "sha256": "183b24a05f6122e22c23e335dfe294858b03a9e3682165cfbba688b1b4b446ac",
+        "original_filename": "Gigante de ceniza del sur.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1145,
+        "height": 1374
+      },
+      "source_notes": "Gigante.",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-021",
+      "reference_name": "Xalpen",
+      "race": "duende_demon",
+      "population": "unique",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "4–6 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Patagonia"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/21_xalpen.png",
+        "sha256": "867c21e64a44b6e5ca291ec797afecdd7f6fa9bab69b217020c0e5174a9f530d",
+        "original_filename": "Espíritu subterráneo de piedra.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1536,
+        "height": 1024
+      },
+      "source_notes": "Entidad subterránea con manifestación física.",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-022",
+      "reference_name": "Shoort",
+      "race": "duende_demon",
+      "population": "limited_group",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "2–2,50 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Patagonia"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/22_shoort.png",
+        "sha256": "2a52ffc0f8f7d68363042f8cbb0b147afc4232aace9a17793b7adbc5394b27a9",
+        "original_filename": "Espíritu escarlata de la pampa.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1024,
+        "height": 1536
+      },
+      "source_notes": "Individuos diferenciados; no equivale a población ilimitada.",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-023",
+      "reference_name": "Tanu",
+      "race": "duende_demon",
+      "population": "unique",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "3–4 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Patagonia"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/23_tanu.png",
+        "sha256": "ce7aa91769b1bf6342d467789ae54ff59e5295682942bcdb26ca00119a603ab3",
+        "original_filename": "Demonia austral de bandas blancas.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1024,
+        "height": 1536
+      },
+      "source_notes": "Figura corpulenta vinculada con Xalpen.",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-024",
+      "reference_name": "Halaháches / Kótaix",
+      "race": "duende_demon",
+      "population": "unique",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "3–4 m; hasta 5 m con cuernos",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Patagonia"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/24_halahaches.png",
+        "sha256": "3035a2925243086a40d32b916d92c8fd27a7c5327eb28e9b985177da8cd1d1c2",
+        "original_filename": "Demonio austral de bandas rojas.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1024,
+        "height": 1536
+      },
+      "source_notes": "",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-025",
+      "reference_name": "Matan",
+      "race": "duende_demon",
+      "population": "unique",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "1,70–2 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Patagonia"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/25_matan.png",
+        "sha256": "86477b201fc402ef1809d2de9a75a9b06f8f2edcc75571f467be53a764ca2398",
+        "original_filename": "Espíritu austral de fantasía oscura.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1024,
+        "height": 1536
+      },
+      "source_notes": "Bailarín ritual.",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-026",
+      "reference_name": "Ulen",
+      "race": "duende_demon",
+      "population": "unique",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "1,50–1,90 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Patagonia"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/03_Duendes_demonios/26_ulen.png",
+        "sha256": "a4deb7e4db3ab372bdce95c23613201c2ebeb812c5f7dca735d56ddf43bd70ba",
+        "original_filename": "Espíritu austral de marcas blancas.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1024,
+        "height": 1536
+      },
+      "source_notes": "Figura cómica o engañosa.",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-027",
+      "reference_name": "Luz Mala",
+      "race": "apparition",
+      "population": "repeatable",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "0,30–1 m de diámetro",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Pampa",
+        "Cuyo",
+        "Patagonia"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/04_Apariciones/27_luz_mala.png",
+        "sha256": "4bb8caddad781c58658bbc62ffd6998e1f27abc7d936d8e1b88a2349083065d5",
+        "original_filename": "Orbe fantasma de llamas verdes.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1312,
+        "height": 1199
+      },
+      "source_notes": "Forma central definida; efectos luminosos pueden agregarse en producción.",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-028",
+      "reference_name": "Umita",
+      "race": "apparition",
+      "population": "repeatable",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "0,30–0,60 m de diámetro",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Northwest Argentina"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/04_Apariciones/28_umita.png",
+        "sha256": "9222a320c0aa7934ab45f13fb9ab44fd868be2e901672840dc82b26c59e3ef3b",
+        "original_filename": "Cabeza espectral de fantasía argentina.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1024,
+        "height": 1536
+      },
+      "source_notes": "",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-029",
+      "reference_name": "Mulánima / Almamula",
+      "race": "apparition",
+      "population": "repeatable",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "2,20–3 m de longitud; 1,40–1,80 m al hombro",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Northwest Argentina"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/04_Apariciones/29_mulanima.png",
+        "sha256": "88b6b3baf05a8a2301a55872c9a5cb324b48e343c90bf47871b289871de12974",
+        "original_filename": "Mula espectral de crestas ígneas.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1374,
+        "height": 1145
+      },
+      "source_notes": "",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-030",
+      "reference_name": "Chancho de Lata",
+      "race": "apparition",
+      "population": "repeatable",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "1,20–1,80 m de longitud",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Pampa",
+        "Litoral"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/04_Apariciones/30_chancho_lata.png",
+        "sha256": "1327f3492e5341888d436286d93d78d2bd4aaf1a5e5f0cecc135ac0cb4e32933",
+        "original_filename": "Jabalí de hojalata espectral.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1536,
+        "height": 1024
+      },
+      "source_notes": "",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-031",
+      "reference_name": "La Viuda",
+      "race": "apparition",
+      "population": "repeatable",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "1,60–1,90 m de altura",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Buenos Aires",
+        "Pampa",
+        "Litoral",
+        "Cuyo"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/04_Apariciones/31_viuda.png",
+        "sha256": "20056af4424bdabfebc4027aa3a3ac4e5e32b627405d9754ab1b4dde7468c19c",
+        "original_filename": "Viuda espectral argentina.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1024,
+        "height": 1536
+      },
+      "source_notes": "",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-032",
+      "reference_name": "La Llorona",
+      "race": "apparition",
+      "population": "repeatable",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "1,60–1,90 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Buenos Aires",
+        "Litoral"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/04_Apariciones/32_llorona.png",
+        "sha256": "a061df9b00fcf7e51d2331cd0fd23c5bbd38ed8b450ccbb643de3c67a7d3f9e3",
+        "original_filename": "Aparición argentina con vestido decimonónico.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1024,
+        "height": 1536
+      },
+      "source_notes": "",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-033",
+      "reference_name": "Futre",
+      "race": "apparition",
+      "population": "unique",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "1,70–1,90 m equivalente",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Cuyo"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/04_Apariciones/33_futre.png",
+        "sha256": "b7b16e44dd3b6c8eeabbc2916fe69d2b8ee9093f209a42f77e9b3c4e2592be3b",
+        "original_filename": "Aparición argentina de cuello vacío.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1024,
+        "height": 1536
+      },
+      "source_notes": "",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-034",
+      "reference_name": "Anchimallén",
+      "race": "apparition",
+      "population": "repeatable",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "0,30–0,80 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Patagonia"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/04_Apariciones/34_anchimallen.png",
+        "sha256": "1ca9bd0898e0e99086dea8f498e5da9d289d08c2f0b12bac523313e808c5e5ad",
+        "original_filename": "Aparición ámbar del folclore argentino.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1024,
+        "height": 1536
+      },
+      "source_notes": "",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-035",
+      "reference_name": "Chonchón / Tué Tué",
+      "race": "apparition",
+      "population": "repeatable",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "Cabeza: 0,30–0,50 m; envergadura: 1–1,50 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Patagonia"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/04_Apariciones/35_chonchon.png",
+        "sha256": "f28cdc5af4c27783de753cac1bfe4ef438f57f51dd2fcbe101b98987681dbeb1",
+        "original_filename": "Cabeza alada de la pampa.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1536,
+        "height": 1024
+      },
+      "source_notes": "",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-036",
+      "reference_name": "Gualicho",
+      "race": "apparition",
+      "population": "unique",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "Manifestación de 2–4 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Patagonia"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/04_Apariciones/36_gualicho.png",
+        "sha256": "2698d606ffe37a6f8238e74c706f431923ad8347ebf69e0e071410ef5bf4e565",
+        "original_filename": "Espíritu de ceniza argentina.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1024,
+        "height": 1536
+      },
+      "source_notes": "",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-037",
+      "reference_name": "Pampayoj",
+      "race": "apparition",
+      "population": "unique",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "1,80–3 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Pampa"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/04_Apariciones/37_pampayoj.png",
+        "sha256": "931d3fde9784c62237caab683e59042bc0a4d0fe2753b1e8a2a7219eb32b3fbe",
+        "original_filename": "Guardián ancestral de las pampas.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1024,
+        "height": 1536
+      },
+      "source_notes": "Guardián de fauna de llanuras; cambia de forma.",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-038",
+      "reference_name": "Mayu Maman",
+      "race": "apparition",
+      "population": "unique",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "2,50–3,50 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Northwest Argentina"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/04_Apariciones/38_mayu_maman.png",
+        "sha256": "80dcafc49471d2f256ef4e266c080f66308854fa7cfce5bc703ca972956fe1b8",
+        "original_filename": "Madre del río de piedra.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1024,
+        "height": 1536
+      },
+      "source_notes": "Espíritu fluvial con forma de sirena en la tabla original; conservar la referencia visual recuperada.",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-039",
+      "reference_name": "Orko Maman",
+      "race": "apparition",
+      "population": "unique",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "2–3 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Northwest Argentina"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/04_Apariciones/39_orko_maman.png",
+        "sha256": "40f742d696623ffa3fea6d68491b19fe66a97d7b318c6c5f81b354e82e6349a1",
+        "original_filename": "Madre montañesa de piedra.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1024,
+        "height": 1536
+      },
+      "source_notes": "Asociación folclórica recuperada: sierras de Guasayán. No constituye una asignación a un mapa.",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-040",
+      "reference_name": "Uritu Orko",
+      "race": "apparition",
+      "population": "unique",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "1,70–2,20 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Northwest Argentina"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/04_Apariciones/40_uritu_orko.png",
+        "sha256": "49884fa7680e9524c09c44c07ef28bc79a23c00ca56013bfbbee2b7618fc092b",
+        "original_filename": "Espíritu aviar de montaña.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1024,
+        "height": 1536
+      },
+      "source_notes": "Asociación folclórica recuperada: Ojo de Agua. No constituye una asignación a un mapa.",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-041",
+      "reference_name": "Nowet",
+      "race": "apparition",
+      "population": "unique",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "Manifestación de 2–4 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Chaco"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/04_Apariciones/41_nowet.png",
+        "sha256": "a41be78385d3354008913c522fa58e245892401ec58624fb4501c5e1b909b68c",
+        "original_filename": "Espíritu guardián de la fauna salvaje.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1024,
+        "height": 1536
+      },
+      "source_notes": "Dueño espiritual de los animales en la tradición qom.",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-042",
+      "reference_name": "Máip",
+      "race": "apparition",
+      "population": "unique",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "Manifestación de 3–5 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Patagonia"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/04_Apariciones/42_maip.png",
+        "sha256": "5af7918077c697dfde9974acc7182e1ab9a4a3b09a339cf04ef9cf7009e70d1f",
+        "original_filename": "Espectro pétreo de la pampa.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1145,
+        "height": 1374
+      },
+      "source_notes": "Espíritu tehuelche del frío.",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-043",
+      "reference_name": "Familiar",
+      "race": "magical_beast",
+      "population": "repeatable",
+      "rare_reference": true,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "2,50–3,50 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Northwest Argentina"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/43_familiar.png",
+        "sha256": "8d051140b6e03ea69da2e08efa626fbdd5d2130d49c0671abfc79122b2c3b8e1",
+        "original_filename": "Sabueso negro de la Pampa.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1536,
+        "height": 1024
+      },
+      "source_notes": "",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-044",
+      "reference_name": "Basilisco criollo",
+      "race": "magical_beast",
+      "population": "repeatable",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "2–3 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Pampa",
+        "Litoral"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/44_basilisco.png",
+        "sha256": "64c37a58f3b2cfd521eaa65cbe7492ba8ff9a2d4304f277a4c911c0769866382",
+        "original_filename": "Gallo serpentino de fantasía oscura.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1312,
+        "height": 1199
+      },
+      "source_notes": "",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-045",
+      "reference_name": "Cachirú / Cachurú",
+      "race": "magical_beast",
+      "population": "repeatable",
+      "rare_reference": true,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "4–6 m de envergadura",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Northwest Argentina"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/45_cachiru.png",
+        "sha256": "a4ffc47561bbf59ae27f9475df049c637f4d42b8cc472718adc3ab4c5a000932",
+        "original_filename": "Búho siniestro de fantasía argentina.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1536,
+        "height": 1024
+      },
+      "source_notes": "",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-046",
+      "reference_name": "Kakuy / Cacuy",
+      "race": "magical_beast",
+      "population": "unique",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "2,50–3,50 m de envergadura",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Northwest Argentina"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/46_kakuy.png",
+        "sha256": "fbda2ce6d5b436375b731acd720aba64b97b8b3361c202260549e6109dd89c10",
+        "original_filename": "Ave espectral de la pampa.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1536,
+        "height": 1024
+      },
+      "source_notes": "",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-047",
+      "reference_name": "Tejú Jaguá / Teyú Yaguá",
+      "race": "magical_beast",
+      "population": "unique",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "5–7 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Selva"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/47_teju_jagua.png",
+        "sha256": "587792dd828295a4109dd91ad4808983963f58b307061e3f3b7bf1aa94a7bf54",
+        "original_filename": "Tejú Jaguá con siete cabezas caninas.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1536,
+        "height": 1024
+      },
+      "source_notes": "Referencia corregida: siete cabezas caninas. Sustituye la imagen anterior de cabezas reptilianas.",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-048",
+      "reference_name": "Mbói Tu’ĩ",
+      "race": "magical_beast",
+      "population": "unique",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "8–12 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Litoral"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/48_mboi_tui.png",
+        "sha256": "30068e43bef04cd9a08c184fea47f390c9bbd6e09a39b41abd7c80a69bc05df0",
+        "original_filename": "Serpiente esmeralda con cabeza de loro.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1536,
+        "height": 1024
+      },
+      "source_notes": "",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-049",
+      "reference_name": "Moñái",
+      "race": "magical_beast",
+      "population": "unique",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "10–15 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Selva"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/49_monai.png",
+        "sha256": "7aed494d3c1c5032df15ba4846ed6160fca76a0993621e1a7b237a558deaf167",
+        "original_filename": "Serpiente cornuda de fantasía argentina.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1536,
+        "height": 1024
+      },
+      "source_notes": "",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-050",
+      "reference_name": "Ao Ao",
+      "race": "magical_beast",
+      "population": "unique",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "3–4 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Selva"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/50_ao_ao.png",
+        "sha256": "dbd5d81273e6970420b92da45db5d6bd3fa00f0461164b944d328681d0d30308",
+        "original_filename": "Carnero sombrío de la pampa.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1448,
+        "height": 1086
+      },
+      "source_notes": "",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-051",
+      "reference_name": "Mbói Tatá",
+      "race": "magical_beast",
+      "population": "repeatable",
+      "rare_reference": true,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "6–10 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Litoral",
+        "Selva"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/51_mboi_tata.png",
+        "sha256": "283f5938090cf58dddac3d9695d1a394186a85b6c82742a42c9a3c76ff123d62",
+        "original_filename": "Serpiente ígnea de bronce.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1536,
+        "height": 1024
+      },
+      "source_notes": "",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-052",
+      "reference_name": "Mbói Yaguá",
+      "race": "magical_beast",
+      "population": "repeatable",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "4–6 m de longitud",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Litoral",
+        "Selva"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/52_mboi_yagua.png",
+        "sha256": "ebec130cb9bea23848ba0a58f77a648c6632fc8fb71d2072745a32818ca77ad8",
+        "original_filename": "Serpiente canina gigante, fantasía argentina.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1536,
+        "height": 1024
+      },
+      "source_notes": "Serpiente con cabeza de perro.",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-053",
+      "reference_name": "Cuero / Cuero Uñudo",
+      "race": "magical_beast",
+      "population": "repeatable",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "3–5 m de diámetro extendido",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Patagonia"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/53_cuero.png",
+        "sha256": "b29fb54921994e886bce33af145e8c48c4265706e10208ddf190eed8b9cce10d",
+        "original_filename": "Bestia acuática de garras curvas.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1536,
+        "height": 1024
+      },
+      "source_notes": "Depredador acuático que envuelve a sus presas.",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-054",
+      "reference_name": "Peuchén / Piuchén",
+      "race": "magical_beast",
+      "population": "repeatable",
+      "rare_reference": true,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "3–5 m de longitud; 5–7 m de envergadura",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Patagonia"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/54_peuchen.png",
+        "sha256": "a4c8ec40a4c10909dd162c523f07833263a60c51356cacc760e3e7165951ce7e",
+        "original_filename": "Serpiente alada de fantasía argentina.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1536,
+        "height": 1024
+      },
+      "source_notes": "Criatura voladora hematófaga, de anatomía serpentiforme.",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-055",
+      "reference_name": "Nahuelito",
+      "race": "magical_beast",
+      "population": "unique",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "12–18 m de longitud",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Patagonia"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/55_nahuelito.png",
+        "sha256": "ad3ae00225ff1fd7cbf4ee858f1ad72ed312c4f6783088491f17c9335bc452c6",
+        "original_filename": "Monstruo lacustre de fantasía argentina.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1536,
+        "height": 1024
+      },
+      "source_notes": "Gran criatura lacustre.",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-056",
+      "reference_name": "Huayrapuca",
+      "race": "magical_beast",
+      "population": "unique",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "8–12 m de longitud",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Northwest Argentina"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/56_huayrapuca.png",
+        "sha256": "444534f6c5fa56e6c6f8f639f56a39111fd1ef010fe1184eeb3753dcaf07e4ec",
+        "original_filename": "Dragona serpentina de alas emplumadas.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1536,
+        "height": 1024
+      },
+      "source_notes": "Manifestación monstruosa vinculada con el viento.",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-057",
+      "reference_name": "Kasogonaga",
+      "race": "magical_beast",
+      "population": "unique",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "Aproximadamente 3–5 m",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Chaco"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/57_kasogonaga.png",
+        "sha256": "e18edcee3802d75dd9f88c51a7397789454e5be32501b099e359b33c303f7b72",
+        "original_filename": "Bestia tormentosa de la pampa.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1536,
+        "height": 1024
+      },
+      "source_notes": "Forma animal de oso hormiguero vinculada a nubes y rayos.",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    },
+    {
+      "id": "CA-FOLK-058",
+      "reference_name": "Kélenken",
+      "race": "magical_beast",
+      "population": "unique",
+      "rare_reference": false,
+      "population_limit": null,
+      "size_reference": {
+        "source_text": "6–8 m de envergadura",
+        "measurement_axes": "As explicitly stated in source text only; otherwise unspecified",
+        "runtime_scale_authorized": false
+      },
+      "campaign_regions": [
+        "Patagonia"
+      ],
+      "region_status": "authored",
+      "reference": {
+        "path": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/58_kelenken.png",
+        "sha256": "98a879aa33fc48c044abf7fe00bf5d33ca9311aa774e032d8db881413fe59da2",
+        "original_filename": "Ave rapaz oscura de la pampa.png",
+        "source_date": "2026-10-20",
+        "association_status": "reconstructed_from_names_anatomy_and_sequence",
+        "width": 1536,
+        "height": 1024
+      },
+      "source_notes": "Manifestación de gran ave sobrenatural.",
+      "protected_existing_identity": null,
+      "production_status": "concept_reference_only",
+      "engine_id": null,
+      "mesh": null,
+      "rig": null,
+      "animations": []
+    }
+  ]
+}
