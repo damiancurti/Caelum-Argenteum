@@ -377,9 +377,17 @@ class CaelumCupsAceEssence : CaelumM00FoolEssence
 
 class CaelumWandsKnightEssence : CaelumM00FoolEssence
 {
+    int PlacementRevision;
     override int CardId() { return CaelumConstants.TAROT_WANDS_KNIGHT; }
     override void Tick()
     {
+        // #454: migrar solo el punto antiguo conocido del candidato. La ciudad
+        // original conserva su geometria; una captura activa termina primero.
+        if(PlacementRevision<1 && CaelumBarracasData.IsCurrent() && CaptureUser==null)
+        {
+            if(Pos==CaelumArcanaPlacement.LegacyPortSpot())SetOrigin(CaelumArcanaPlacement.PortSpot(),false);
+            PlacementRevision=1;
+        }
         CaelumArcanaProgress.UpdateEssence(self);
         Super.Tick();
     }

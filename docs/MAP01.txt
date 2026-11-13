@@ -87,6 +87,14 @@ unchanged reserve accounting and no automatic essence grant. Early-checkpoint
 replay and rendering checks remain pending; supplied objective destruction and
 thermal isolation are explicit limitations in barracas-withdrawal/SUMMARY.json.
 
+The Knight of Wands keeps its original place beside the rescued row relative to
+the quay: CurrentPortPoint transforms(0,640,14) to(-896,15488,14) for revision4.
+Original MAP03 retains(0,640,14). A revisioned, idempotent migration relocates only
+that exact preceding source; active captures finish or cancel before it moves.
+No essence is granted by relocation. Native standing space, Use and capture,
+interruption/reload and both saved-source states pass; barracas-arcana/SUMMARY.json
+qualifies fixture narrative/Box provisioning and automated response selection.
+
 Six terminal exits and36 stair descents pass isolated native fresh/reload checks.
 Full15-body approaches complete43607tics; six city withdrawals complete60732tics,
 both fresh/reloaded. Five wounded-commander origins complete30667tics in each run,

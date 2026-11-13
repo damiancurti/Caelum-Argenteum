@@ -32,6 +32,10 @@ Completed candidate evidence:
   outside these access checks.
 - Existing Justice arena, active-save pair/timer and exact survivor return;
   original city/hub saves retain their earlier arena and geometry.
+- Existing Knight source at the relocated quay: native Use/capture, interrupted
+  retry, mid-capture reload and inactive/active preceding-source migration.
+  Original city retains its source; no duplicate/granted essence. See
+  barracas-arcana/SUMMARY.json for fixture provisioning and response limits.
 
 The combined aftermath probe exposed severe congestion from assigned-exit
 counterflow and repeated detours among same-direction bodies. The revised

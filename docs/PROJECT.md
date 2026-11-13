@@ -25,6 +25,11 @@ orientations retain normal Used/rendered-ACK travel,64 shops open and a purchase
 preserves stock/money;96 factory stations and four vehicle sessions also pass
 native Use. Recipe completion and ticket/journey transactions are separate.
 Justice placement/save/return and original active/stored-hub saves pass.
+The existing Knight essence now follows the relocated quay. Native Use/capture,
+interrupted retry, mid-capture reload and inactive/active preceding-source
+migration pass; original-city behavior remains compatible. The fixture supplies
+completed narrative/victory and the Box/deck; barracas-arcana/SUMMARY.json records
+that boundary separately from playing the battle or selecting the UI response.
 
 Combined aftermath testing exposed opposing assigned-exit streams and repeated
 local detours among bodies moving in the same direction. Revision4 separates

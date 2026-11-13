@@ -4,6 +4,12 @@ Documentation version: **5.16.2** - 2026-11-12.
 
 ## 5.16.2 - Approved map references and preserved sewer sources (#454)
 
+The existing Knight source reuses the quay's authored quarter-turn/translation:
+CaelumArcanaPlacement resolves the original(0,640,14) to(-896,15488,14) only in
+revision4 Barracas. It introduces no card art, new reward or new coordinate
+authority. The original location remains the legacy source and migration input.
+Native placement/capture evidence: barracas-arcana/SUMMARY.json.
+
 `generate_barracas_justice.py --candidate <preview.pk3> --output <build/path>
 --register` appends the existing ARENA.json room without changing the input
 TEXTMAP prefix or any production map. Optional registration writes candidate

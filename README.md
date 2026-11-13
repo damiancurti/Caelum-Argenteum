@@ -30,7 +30,9 @@ the recovered bestiary and map references proceed through separate issues.
 Barracas also has an [isolated architectural preview](assets/barracas_redesign/LAYOUT.json)
 with 288 retained building identities; it is not activated in MAP03. Fresh and saved
 crowded aftermaths now complete all 1,000 physical exits; early-checkpoint replay
-and frame-presentation measurements remain unfinished. For visited original Barracas saves,
+and frame-presentation measurements remain unfinished. The existing Knight
+essence follows the relocated quay; original-city sources remain compatible.
+For visited original Barracas saves,
 `run_dev.bat --legacy-map03-revision3` retains exact geometry and private-house
 identities. Active/stored-hub continuation passed with current code; repeat
 verification after the redesigned city is integrated.

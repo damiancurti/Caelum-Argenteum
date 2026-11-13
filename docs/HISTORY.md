@@ -4,6 +4,25 @@ Documentation version: **5.16.2** - 2026-11-12.
 
 ## 5.16.2 - Sewer redesign slice (#454, in progress, 2026-11-12)
 
+2026-11-13 quay essence correction: the Knight source still used the original
+absolute location after the quay rotated/moved. Reuse CurrentPortPoint on that
+authored location, leaving original MAP03 unchanged. PlacementRevision1 relocates
+only the exact known preceding candidate source and defers while capture is
+active. Eight isolated phases pass: original/candidate capture and mid-capture
+reload, old inactive-source seed/migration, and old active-capture seed/migration.
+Native Use opens the source; interrupted capture keeps it available, completion
+adds exactly one essence and repeat commit is rejected. Saved-source inspection
+finds one source in each case. Original active/stored-hub compatibility also passes.
+All238 production WADs remain identical; the city is still unactivated.
+
+Fixtures supply narrative victory, owned Box/deck and automated capture response.
+An undelivered native narrative initially consumed Use; the fixture now marks
+that narrative delivered. A direct nested startup exec was lost around loading;
+an initial wait preserves it. Quitting immediately after save omitted the native
+checkpoint; the fixture waits and verifies its presence. These harness corrections
+do not alter gameplay or establish UI-response/author acceptance. Exact artifacts,
+failed iterations and source migration evidence: barracas-arcana/SUMMARY.json.
+
 2026-11-13 crowd withdrawal: revision4 keeps assault Lane separate from the
 nearest legal exit, caches offline shortest-path costs and recognizes physical
 progress through an equally near cell. Queued requests retain their valid local

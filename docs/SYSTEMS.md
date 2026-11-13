@@ -4,6 +4,15 @@ Documentation version: **5.16.2** - 2026-11-12.
 
 ## 5.16.2 / #454 - Approved Barracas siege adaptation (candidate)
 
+The existing Knight of Wands essence follows the relocated quay through the
+same CurrentPortPoint transform as its surroundings. Original-city positioning
+and acquisition requirements remain unchanged. PlacementRevision1 moves only
+the known preceding candidate source; an active capture completes or cancels
+before relocation. Native Use, interrupted/retried capture, mid-capture reload,
+duplicate rejection and inactive/active old-source migration pass in isolation.
+The fixture supplies completed narrative/victory and an owned Box/deck; it
+automates the response after native Use. See barracas-arcana/SUMMARY.json.
+
 The unactivated city now has its existing Justice arena appended independently.
 Checksum-qualified sector/centre dispatch selects the candidate or original city.
 Arena dimensions, pairing, duration and safe-return rules are unchanged; native

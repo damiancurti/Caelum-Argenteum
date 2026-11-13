@@ -1,0 +1,6 @@
+{
+  "attempt-01": "No completed narrative fixture state; source correctly unavailable.",
+  "attempt-02": "Pending native victory voice consumed Use; fixture now marks its narrative delivered.",
+  "attempt-03": "Direct nested startup exec was lost around native load; first wait10 preserves command continuation.",
+  "attempt-05": "Quit followed save too soon; required midcapture.zds was absent. Overall runner failed with FileNotFoundError before migration. A longer native wait and explicit checkpoint existence check fix the harness. No production gameplay workaround."
+}
