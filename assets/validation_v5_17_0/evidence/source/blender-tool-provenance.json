@@ -1,0 +1,7 @@
+{
+  "version": "4.5.3",
+  "url": "https://download.blender.org/release/Blender4.5/blender-4.5.3-windows-x64.zip",
+  "sha256": "6b657c8bdd3a7b65b07b9e1ae17eb4be7dd4aa23121da7f3d3354fc2551330a7",
+  "checksum_source": "https://download.blender.org/release/Blender4.5/blender-4.5.3.sha256",
+  "executable": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\tools\\blender-4.5.3-windows-x64\\blender.exe"
+}

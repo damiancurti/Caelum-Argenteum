@@ -6,8 +6,14 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.16.5.** Obtain and update the complete repository,
+**Current release: 5.17.0.** Obtain and update the complete repository,
 validate it, then rebuild with `run_dev.bat` as described below.
+
+#458 begins the author-requested 3D expansion: the accepted Domingo pilot now
+renders as seven independent animated modules, sharing its existing rig and poses.
+The pipeline preserves the original model and source; other characters, equipment
+variants and dropped-item models remain in progress. V5.16 campaign authoring is
+still unfinished. Current tests and limitations are recorded in [ASSETS](docs/ASSETS.md).
 
 #457 adds the approved finale eligibility query: one admitted participant must
 personally own all 78 essences and have at least +250 with an approved resistance

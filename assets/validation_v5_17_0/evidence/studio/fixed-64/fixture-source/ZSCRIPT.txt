@@ -1,0 +1,34 @@
+version "4.14.2"
+class CA458BenchBody : CaelumDomingoPilotFrames
+{Default {+NOINTERACTION +NOGRAVITY +NOBLOCKMAP RenderRadius 240;}}
+class CA458BenchCamera : Actor
+{Default {+NOINTERACTION +NOGRAVITY CameraHeight 0;} States {Spawn:TNT1 A -1;Stop;}}
+class CA458Bench : EventHandler
+{
+    int Age;double Previous;Array<double> Tics;Array<Actor> Bodies;
+    override bool InputProcess(InputEvent e){return true;}
+    override void WorldTick()
+    {
+        Age++;
+        if(Age==5)
+        {
+            let user=CaelumPlayer(players[0].mo);user.CharacterCreationComplete=true;user.CreationWizardOpen=false;user.bInvisible=true;
+            let camera=Actor.Spawn('CA458BenchCamera',(900,-900,750),NO_REPLACE);camera.Angle=135;camera.Pitch=27;players[0].camera=camera;
+            for(int index=0;index<64;index++)
+            {
+                vector3 point=64==1?(0,0,0):((index%8)*140-490,(index/8)*140-490,0);
+                Bodies.Push(Actor.Spawn('CA458BenchBody',point,NO_REPLACE));
+            }
+            Console.Printf("CA458 BENCH bodies=%d",Bodies.Size());
+        }
+        if(Age==175)Console.Printf("CA458 BEGIN");
+        if(Age<175 || Age>875)return;
+        double now=MSTimeF();if(Previous>0)Tics.Push(now-Previous);Previous=now;
+        if(Age==875)
+        {
+            Console.Printf("CA458 END");
+            for(int index=0;index<Tics.Size();index++)Console.Printf("CA458 TIC %.6f",Tics[index]);
+            Console.Printf("CA458 COMPLETE bodies=%d samples=%d",Bodies.Size(),Tics.Size());
+        }
+    }
+}

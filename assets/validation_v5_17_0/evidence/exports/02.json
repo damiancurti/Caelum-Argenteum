@@ -1,0 +1,515 @@
+{
+  "schema_revision": 1,
+  "issue": 458,
+  "blender": "4.5.3 LTS",
+  "source": "assets/source/art/domingo_3d_pilot/domingo.blend",
+  "source_sha256": "3c84df6b241df2c48ddee48143d6aa4eba40d16c5c097d60f78eca85b130b9a4",
+  "config_sha256": "2389704b1fc922a0c332be46c4bde5bce16438ccffe667993c624e77a5b9a1ab",
+  "design_sha256": "c572dfb2f5e2bed266e84d229d01db0660a5adc82240d12c3bde70d34a9614fd",
+  "generator_sha256": "e71c9d9497f73bf272b2178c760e6c78e0037416de3305698a5e9b20cd28e42e",
+  "baseline_sha256": "bdc078573426bf82d94dc6b1d6a97f7236cdf31cdf271eabd9ef5512e1f81fa5",
+  "frames": 375,
+  "binary_vertex_checks": 4008375,
+  "triangle_checks": 17447,
+  "baseline_mismatches": [],
+  "modules": {
+    "clothing": {
+      "slot": 0,
+      "vertices": 1226,
+      "triangles": 1600,
+      "objects": [
+        {
+          "name": "Blue skirt L",
+          "vertices": 64,
+          "module_vertex_start": 0,
+          "baseline_vertex_start": 0
+        },
+        {
+          "name": "Blue skirt R",
+          "vertices": 64,
+          "module_vertex_start": 64,
+          "baseline_vertex_start": 64
+        },
+        {
+          "name": "Boot L",
+          "vertices": 124,
+          "module_vertex_start": 128,
+          "baseline_vertex_start": 128
+        },
+        {
+          "name": "Boot R",
+          "vertices": 124,
+          "module_vertex_start": 252,
+          "baseline_vertex_start": 252
+        },
+        {
+          "name": "Cross strap",
+          "vertices": 60,
+          "module_vertex_start": 376,
+          "baseline_vertex_start": 612
+        },
+        {
+          "name": "Leather belt",
+          "vertices": 116,
+          "module_vertex_start": 436,
+          "baseline_vertex_start": 3195
+        },
+        {
+          "name": "Reverse strap",
+          "vertices": 60,
+          "module_vertex_start": 552,
+          "baseline_vertex_start": 7825
+        },
+        {
+          "name": "Scarf collar",
+          "vertices": 116,
+          "module_vertex_start": 612,
+          "baseline_vertex_start": 7885
+        },
+        {
+          "name": "Scarf hanging end",
+          "vertices": 56,
+          "module_vertex_start": 728,
+          "baseline_vertex_start": 8001
+        },
+        {
+          "name": "Sun buckle",
+          "vertices": 70,
+          "module_vertex_start": 784,
+          "baseline_vertex_start": 9805
+        },
+        {
+          "name": "Trouser thigh L",
+          "vertices": 64,
+          "module_vertex_start": 854,
+          "baseline_vertex_start": 10317
+        },
+        {
+          "name": "Trouser thigh R",
+          "vertices": 64,
+          "module_vertex_start": 918,
+          "baseline_vertex_start": 10381
+        },
+        {
+          "name": "Upper sleeve L",
+          "vertices": 64,
+          "module_vertex_start": 982,
+          "baseline_vertex_start": 10445
+        },
+        {
+          "name": "Upper sleeve R",
+          "vertices": 64,
+          "module_vertex_start": 1046,
+          "baseline_vertex_start": 10509
+        },
+        {
+          "name": "Waistcoat",
+          "vertices": 116,
+          "module_vertex_start": 1110,
+          "baseline_vertex_start": 10573
+        }
+      ]
+    },
+    "armor": {
+      "slot": 1,
+      "vertices": 1664,
+      "triangles": 2272,
+      "objects": [
+        {
+          "name": "Bracer L",
+          "vertices": 60,
+          "module_vertex_start": 0,
+          "baseline_vertex_start": 376
+        },
+        {
+          "name": "Bracer R",
+          "vertices": 60,
+          "module_vertex_start": 60,
+          "baseline_vertex_start": 436
+        },
+        {
+          "name": "Breastplate",
+          "vertices": 116,
+          "module_vertex_start": 120,
+          "baseline_vertex_start": 496
+        },
+        {
+          "name": "Gauntlet L",
+          "vertices": 124,
+          "module_vertex_start": 236,
+          "baseline_vertex_start": 828
+        },
+        {
+          "name": "Gauntlet R",
+          "vertices": 124,
+          "module_vertex_start": 360,
+          "baseline_vertex_start": 952
+        },
+        {
+          "name": "Greave L",
+          "vertices": 60,
+          "module_vertex_start": 484,
+          "baseline_vertex_start": 1238
+        },
+        {
+          "name": "Greave R",
+          "vertices": 60,
+          "module_vertex_start": 544,
+          "baseline_vertex_start": 1298
+        },
+        {
+          "name": "Hip armor",
+          "vertices": 116,
+          "module_vertex_start": 604,
+          "baseline_vertex_start": 2847
+        },
+        {
+          "name": "Kneecap L",
+          "vertices": 116,
+          "module_vertex_start": 720,
+          "baseline_vertex_start": 2963
+        },
+        {
+          "name": "Kneecap R",
+          "vertices": 116,
+          "module_vertex_start": 836,
+          "baseline_vertex_start": 3079
+        },
+        {
+          "name": "Pauldron L",
+          "vertices": 116,
+          "module_vertex_start": 952,
+          "baseline_vertex_start": 7311
+        },
+        {
+          "name": "Pauldron R",
+          "vertices": 116,
+          "module_vertex_start": 1068,
+          "baseline_vertex_start": 7427
+        },
+        {
+          "name": "Pauldron trim L",
+          "vertices": 124,
+          "module_vertex_start": 1184,
+          "baseline_vertex_start": 7543
+        },
+        {
+          "name": "Pauldron trim R",
+          "vertices": 124,
+          "module_vertex_start": 1308,
+          "baseline_vertex_start": 7667
+        },
+        {
+          "name": "Thigh armor L",
+          "vertices": 116,
+          "module_vertex_start": 1432,
+          "baseline_vertex_start": 10085
+        },
+        {
+          "name": "Thigh armor R",
+          "vertices": 116,
+          "module_vertex_start": 1548,
+          "baseline_vertex_start": 10201
+        }
+      ]
+    },
+    "cape": {
+      "slot": 2,
+      "vertices": 162,
+      "triangles": 320,
+      "objects": [
+        {
+          "name": "Gold embroidered blue cape",
+          "vertices": 162,
+          "module_vertex_start": 0,
+          "baseline_vertex_start": 1076
+        }
+      ]
+    },
+    "face": {
+      "slot": 3,
+      "vertices": 1315,
+      "triangles": 2427,
+      "objects": [
+        {
+          "name": "Eye l-eye",
+          "vertices": 72,
+          "module_vertex_start": 0,
+          "baseline_vertex_start": 684
+        },
+        {
+          "name": "Eye r-eye",
+          "vertices": 72,
+          "module_vertex_start": 72,
+          "baseline_vertex_start": 756
+        },
+        {
+          "name": "Head",
+          "vertices": 1137,
+          "module_vertex_start": 144,
+          "baseline_vertex_start": 1710
+        },
+        {
+          "name": "Pupil -1",
+          "vertices": 17,
+          "module_vertex_start": 1281,
+          "baseline_vertex_start": 7791
+        },
+        {
+          "name": "Pupil 1",
+          "vertices": 17,
+          "module_vertex_start": 1298,
+          "baseline_vertex_start": 7808
+        }
+      ]
+    },
+    "hair": {
+      "slot": 4,
+      "vertices": 4352,
+      "triangles": 8440,
+      "objects": [
+        {
+          "name": "Hair crown",
+          "vertices": 352,
+          "module_vertex_start": 0,
+          "baseline_vertex_start": 1358
+        },
+        {
+          "name": "Long hair L",
+          "vertices": 2000,
+          "module_vertex_start": 352,
+          "baseline_vertex_start": 3311
+        },
+        {
+          "name": "Long hair R",
+          "vertices": 2000,
+          "module_vertex_start": 2352,
+          "baseline_vertex_start": 5311
+        }
+      ]
+    },
+    "weapon": {
+      "slot": 5,
+      "vertices": 222,
+      "triangles": 264,
+      "objects": [
+        {
+          "name": "Diamond sword blade",
+          "vertices": 12,
+          "module_vertex_start": 0,
+          "baseline_vertex_start": 672
+        },
+        {
+          "name": "Sword crossguard",
+          "vertices": 68,
+          "module_vertex_start": 12,
+          "baseline_vertex_start": 9875
+        },
+        {
+          "name": "Sword grip",
+          "vertices": 64,
+          "module_vertex_start": 80,
+          "baseline_vertex_start": 9943
+        },
+        {
+          "name": "Sword pommel",
+          "vertices": 78,
+          "module_vertex_start": 144,
+          "baseline_vertex_start": 10007
+        }
+      ]
+    },
+    "shield": {
+      "slot": 6,
+      "vertices": 1748,
+      "triangles": 2124,
+      "objects": [
+        {
+          "name": "Shield boss",
+          "vertices": 70,
+          "module_vertex_start": 0,
+          "baseline_vertex_start": 8057
+        },
+        {
+          "name": "Shield face",
+          "vertices": 50,
+          "module_vertex_start": 70,
+          "baseline_vertex_start": 8127
+        },
+        {
+          "name": "Shield grip",
+          "vertices": 20,
+          "module_vertex_start": 120,
+          "baseline_vertex_start": 8177
+        },
+        {
+          "name": "Shield grip mount front",
+          "vertices": 20,
+          "module_vertex_start": 140,
+          "baseline_vertex_start": 8197
+        },
+        {
+          "name": "Shield grip mount rear",
+          "vertices": 20,
+          "module_vertex_start": 160,
+          "baseline_vertex_start": 8217
+        },
+        {
+          "name": "Shield rim 00",
+          "vertices": 60,
+          "module_vertex_start": 180,
+          "baseline_vertex_start": 8237
+        },
+        {
+          "name": "Shield rim 01",
+          "vertices": 60,
+          "module_vertex_start": 240,
+          "baseline_vertex_start": 8297
+        },
+        {
+          "name": "Shield rim 02",
+          "vertices": 68,
+          "module_vertex_start": 300,
+          "baseline_vertex_start": 8357
+        },
+        {
+          "name": "Shield rim 03",
+          "vertices": 68,
+          "module_vertex_start": 368,
+          "baseline_vertex_start": 8425
+        },
+        {
+          "name": "Shield rim 04",
+          "vertices": 68,
+          "module_vertex_start": 436,
+          "baseline_vertex_start": 8493
+        },
+        {
+          "name": "Shield rim 05",
+          "vertices": 68,
+          "module_vertex_start": 504,
+          "baseline_vertex_start": 8561
+        },
+        {
+          "name": "Shield rim 06",
+          "vertices": 68,
+          "module_vertex_start": 572,
+          "baseline_vertex_start": 8629
+        },
+        {
+          "name": "Shield rim 07",
+          "vertices": 68,
+          "module_vertex_start": 640,
+          "baseline_vertex_start": 8697
+        },
+        {
+          "name": "Shield rim 08",
+          "vertices": 68,
+          "module_vertex_start": 708,
+          "baseline_vertex_start": 8765
+        },
+        {
+          "name": "Shield rim 09",
+          "vertices": 68,
+          "module_vertex_start": 776,
+          "baseline_vertex_start": 8833
+        },
+        {
+          "name": "Shield rim 10",
+          "vertices": 60,
+          "module_vertex_start": 844,
+          "baseline_vertex_start": 8901
+        },
+        {
+          "name": "Shield rim 11",
+          "vertices": 60,
+          "module_vertex_start": 904,
+          "baseline_vertex_start": 8961
+        },
+        {
+          "name": "Shield rim 12",
+          "vertices": 60,
+          "module_vertex_start": 964,
+          "baseline_vertex_start": 9021
+        },
+        {
+          "name": "Shield rim 13",
+          "vertices": 60,
+          "module_vertex_start": 1024,
+          "baseline_vertex_start": 9081
+        },
+        {
+          "name": "Shield rim 14",
+          "vertices": 68,
+          "module_vertex_start": 1084,
+          "baseline_vertex_start": 9141
+        },
+        {
+          "name": "Shield rim 15",
+          "vertices": 68,
+          "module_vertex_start": 1152,
+          "baseline_vertex_start": 9209
+        },
+        {
+          "name": "Shield rim 16",
+          "vertices": 68,
+          "module_vertex_start": 1220,
+          "baseline_vertex_start": 9277
+        },
+        {
+          "name": "Shield rim 17",
+          "vertices": 68,
+          "module_vertex_start": 1288,
+          "baseline_vertex_start": 9345
+        },
+        {
+          "name": "Shield rim 18",
+          "vertices": 68,
+          "module_vertex_start": 1356,
+          "baseline_vertex_start": 9413
+        },
+        {
+          "name": "Shield rim 19",
+          "vertices": 68,
+          "module_vertex_start": 1424,
+          "baseline_vertex_start": 9481
+        },
+        {
+          "name": "Shield rim 20",
+          "vertices": 68,
+          "module_vertex_start": 1492,
+          "baseline_vertex_start": 9549
+        },
+        {
+          "name": "Shield rim 21",
+          "vertices": 68,
+          "module_vertex_start": 1560,
+          "baseline_vertex_start": 9617
+        },
+        {
+          "name": "Shield rim 22",
+          "vertices": 60,
+          "module_vertex_start": 1628,
+          "baseline_vertex_start": 9685
+        },
+        {
+          "name": "Shield rim 23",
+          "vertices": 60,
+          "module_vertex_start": 1688,
+          "baseline_vertex_start": 9745
+        }
+      ]
+    }
+  },
+  "sha256": {
+    "models/caelum/characters/domingo/clothing.md3": "34a02f5a36ee3c35a1fec81973fcf2ec6145265bebc64dbc50771716e52335cd",
+    "models/caelum/characters/domingo/armor.md3": "8e23757a67815e460e7951f7daf6348513e706667f04beb7b0dd1af68020b18a",
+    "models/caelum/characters/domingo/cape.md3": "e6069dd3c740df5057a1a273fdf36cce4993585cb8164c640a53aa8a86bdba99",
+    "models/caelum/characters/domingo/face.md3": "2013e1cb0ba738106ec48a7ef8c1190e3881518bc346a20862642b01282b990e",
+    "models/caelum/characters/domingo/hair.md3": "a4b74837692a47802271f529ef4d463de8bc32af2726b3f6d0d6a2d948bcb81e",
+    "models/caelum/characters/domingo/weapon.md3": "65b1c258f0c521471d1cbbcc2ced7a3fd447dfda203d87d7bc16a9192464d92f",
+    "models/caelum/characters/domingo/shield.md3": "af4ca2334e6d3aabefd3164776920fea3c9af5bdb28f5c40f69d8c85a5be7a32",
+    "MODELDEF": "1655fc7817e585f99ed95ee11816e0700a99d2fa5abf059d3f239359c1dc9d85",
+    "models/caelum/characters/domingo/domingo_skin.png": "6cf9ea66f6671ba3235c2f2ad8af7cc139b20286013e2a9789670b8df60da597"
+  }
+}

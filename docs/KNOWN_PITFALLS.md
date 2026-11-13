@@ -4,6 +4,27 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-226 - Rebuild native model selections after loading
+
+Status/evidence: ENGINE-VERIFIED, 2026-11-13. Issue: #458.
+Environment: GZDoom4.14.2, Windows11, Vulkan; unpaused background, 5% audio.
+Evidence: assets/validation_v5_17_0/evidence/SUMMARY.json.
+
+A saved selection field does not establish that its rendered model override
+survives loading. The fixture's HiddenMask and frame checks passed while the
+hair and shield returned visually: the tested A_ChangeModel hide overrides reset
+on load. Reconstruct derived presentation once from its saved authority, guarded
+by a transient readiness flag; do not duplicate the character's equipment state
+or introduce recurring actor scans. Explicit model path/name restores a hidden
+slot; leaving the model argument None does not replace the hidden override.
+
+Keep screenshot requests separated from subsequent mutations: captures render
+after the console request, so same-tic changes can contaminate the comparison.
+The corrected fixed/modular frames are byte-identical PNGs, hiding equipment
+changes them, and the reconstructed reload matches the hidden pre-save capture.
+Test other skin/model replacements separately; this is evidence for these slots
+and the existing375-frame MD3 rig, not every native model format.
+
 ## CA-KP-225 - Reuse exact local measurements before changing perception rules
 
 Status/evidence: ENGINE-VERIFIED, 2026-11-13. Issue/PR: #454/#643.

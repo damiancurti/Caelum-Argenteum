@@ -1,0 +1,1524 @@
+{
+  "blender": "4.5.3 LTS",
+  "source_sha256": "3c84df6b241df2c48ddee48143d6aa4eba40d16c5c097d60f78eca85b130b9a4",
+  "mesh_count": 73,
+  "objects": [
+    {
+      "name": "Blue skirt L",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "thigh.L",
+        "Part.Blue skirt L"
+      ]
+    },
+    {
+      "name": "Blue skirt R",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "thigh.R",
+        "Part.Blue skirt R"
+      ]
+    },
+    {
+      "name": "Boot L",
+      "vertices": 84,
+      "faces": 74,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "foot.L",
+        "Part.Boot L"
+      ]
+    },
+    {
+      "name": "Boot R",
+      "vertices": 84,
+      "faces": 74,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "foot.R",
+        "Part.Boot R"
+      ]
+    },
+    {
+      "name": "Bracer L",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "forearm.L",
+        "Part.Bracer L"
+      ]
+    },
+    {
+      "name": "Bracer R",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "forearm.R",
+        "Part.Bracer R"
+      ]
+    },
+    {
+      "name": "Breastplate",
+      "vertices": 84,
+      "faces": 74,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "chest",
+        "Part.Breastplate"
+      ]
+    },
+    {
+      "name": "Cross strap",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "chest",
+        "Part.Cross strap"
+      ]
+    },
+    {
+      "name": "Diamond sword blade",
+      "vertices": 12,
+      "faces": 8,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "sword",
+        "Part.Diamond sword blade"
+      ]
+    },
+    {
+      "name": "Eye l-eye",
+      "vertices": 72,
+      "faces": 70,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "head"
+      ]
+    },
+    {
+      "name": "Eye r-eye",
+      "vertices": 72,
+      "faces": 70,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "head"
+      ]
+    },
+    {
+      "name": "Gauntlet L",
+      "vertices": 84,
+      "faces": 74,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "hand.L",
+        "Part.Gauntlet L"
+      ]
+    },
+    {
+      "name": "Gauntlet R",
+      "vertices": 84,
+      "faces": 74,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "hand.R",
+        "Part.Gauntlet R"
+      ]
+    },
+    {
+      "name": "Gold embroidered blue cape",
+      "vertices": 81,
+      "faces": 64,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        },
+        {
+          "type": "SOLIDIFY",
+          "name": "Cloth thickness"
+        }
+      ],
+      "vertex_groups": [
+        "cape.upper",
+        "Part.Gold embroidered blue cape",
+        "cape.lower"
+      ]
+    },
+    {
+      "name": "Greave L",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "shin.L",
+        "Part.Greave L"
+      ]
+    },
+    {
+      "name": "Greave R",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "shin.R",
+        "Part.Greave R"
+      ]
+    },
+    {
+      "name": "Hair crown",
+      "vertices": 352,
+      "faces": 320,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "head"
+      ]
+    },
+    {
+      "name": "Head",
+      "vertices": 1076,
+      "faces": 1745,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "head"
+      ]
+    },
+    {
+      "name": "Hip armor",
+      "vertices": 84,
+      "faces": 74,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "pelvis",
+        "Part.Hip armor"
+      ]
+    },
+    {
+      "name": "Kneecap L",
+      "vertices": 84,
+      "faces": 74,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "shin.L",
+        "Part.Kneecap L"
+      ]
+    },
+    {
+      "name": "Kneecap R",
+      "vertices": 84,
+      "faces": 74,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "shin.R",
+        "Part.Kneecap R"
+      ]
+    },
+    {
+      "name": "Leather belt",
+      "vertices": 84,
+      "faces": 74,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "pelvis",
+        "Part.Leather belt"
+      ]
+    },
+    {
+      "name": "Long hair L",
+      "vertices": 2000,
+      "faces": 1930,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "head"
+      ]
+    },
+    {
+      "name": "Long hair R",
+      "vertices": 2000,
+      "faces": 1930,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "head"
+      ]
+    },
+    {
+      "name": "Pauldron L",
+      "vertices": 84,
+      "faces": 74,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "upper_arm.L",
+        "Part.Pauldron L"
+      ]
+    },
+    {
+      "name": "Pauldron R",
+      "vertices": 84,
+      "faces": 74,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "upper_arm.R",
+        "Part.Pauldron R"
+      ]
+    },
+    {
+      "name": "Pauldron trim L",
+      "vertices": 84,
+      "faces": 74,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "upper_arm.L",
+        "Part.Pauldron trim L"
+      ]
+    },
+    {
+      "name": "Pauldron trim R",
+      "vertices": 84,
+      "faces": 74,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "upper_arm.R",
+        "Part.Pauldron trim R"
+      ]
+    },
+    {
+      "name": "Pupil -1",
+      "vertices": 17,
+      "faces": 16,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "head"
+      ]
+    },
+    {
+      "name": "Pupil 1",
+      "vertices": 17,
+      "faces": 16,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "head"
+      ]
+    },
+    {
+      "name": "Reverse strap",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "chest",
+        "Part.Reverse strap"
+      ]
+    },
+    {
+      "name": "Scarf collar",
+      "vertices": 84,
+      "faces": 74,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "neck",
+        "Part.Scarf collar"
+      ]
+    },
+    {
+      "name": "Scarf hanging end",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "chest",
+        "Part.Scarf hanging end"
+      ]
+    },
+    {
+      "name": "Shield boss",
+      "vertices": 50,
+      "faces": 42,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "shield",
+        "Part.Shield boss"
+      ]
+    },
+    {
+      "name": "Shield face",
+      "vertices": 25,
+      "faces": 24,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        },
+        {
+          "type": "SOLIDIFY",
+          "name": "Solid shield"
+        }
+      ],
+      "vertex_groups": [
+        "shield",
+        "Part.Shield face"
+      ]
+    },
+    {
+      "name": "Shield grip",
+      "vertices": 20,
+      "faces": 12,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "shield",
+        "Part.Shield grip"
+      ]
+    },
+    {
+      "name": "Shield grip mount front",
+      "vertices": 20,
+      "faces": 12,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "shield",
+        "Part.Shield grip mount front"
+      ]
+    },
+    {
+      "name": "Shield grip mount rear",
+      "vertices": 20,
+      "faces": 12,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "shield",
+        "Part.Shield grip mount rear"
+      ]
+    },
+    {
+      "name": "Shield rim 00",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "shield",
+        "Part.Shield rim 00"
+      ]
+    },
+    {
+      "name": "Shield rim 01",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "shield",
+        "Part.Shield rim 01"
+      ]
+    },
+    {
+      "name": "Shield rim 02",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "shield",
+        "Part.Shield rim 02"
+      ]
+    },
+    {
+      "name": "Shield rim 03",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "shield",
+        "Part.Shield rim 03"
+      ]
+    },
+    {
+      "name": "Shield rim 04",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "shield",
+        "Part.Shield rim 04"
+      ]
+    },
+    {
+      "name": "Shield rim 05",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "shield",
+        "Part.Shield rim 05"
+      ]
+    },
+    {
+      "name": "Shield rim 06",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "shield",
+        "Part.Shield rim 06"
+      ]
+    },
+    {
+      "name": "Shield rim 07",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "shield",
+        "Part.Shield rim 07"
+      ]
+    },
+    {
+      "name": "Shield rim 08",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "shield",
+        "Part.Shield rim 08"
+      ]
+    },
+    {
+      "name": "Shield rim 09",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "shield",
+        "Part.Shield rim 09"
+      ]
+    },
+    {
+      "name": "Shield rim 10",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "shield",
+        "Part.Shield rim 10"
+      ]
+    },
+    {
+      "name": "Shield rim 11",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "shield",
+        "Part.Shield rim 11"
+      ]
+    },
+    {
+      "name": "Shield rim 12",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "shield",
+        "Part.Shield rim 12"
+      ]
+    },
+    {
+      "name": "Shield rim 13",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "shield",
+        "Part.Shield rim 13"
+      ]
+    },
+    {
+      "name": "Shield rim 14",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "shield",
+        "Part.Shield rim 14"
+      ]
+    },
+    {
+      "name": "Shield rim 15",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "shield",
+        "Part.Shield rim 15"
+      ]
+    },
+    {
+      "name": "Shield rim 16",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "shield",
+        "Part.Shield rim 16"
+      ]
+    },
+    {
+      "name": "Shield rim 17",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "shield",
+        "Part.Shield rim 17"
+      ]
+    },
+    {
+      "name": "Shield rim 18",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "shield",
+        "Part.Shield rim 18"
+      ]
+    },
+    {
+      "name": "Shield rim 19",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "shield",
+        "Part.Shield rim 19"
+      ]
+    },
+    {
+      "name": "Shield rim 20",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "shield",
+        "Part.Shield rim 20"
+      ]
+    },
+    {
+      "name": "Shield rim 21",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "shield",
+        "Part.Shield rim 21"
+      ]
+    },
+    {
+      "name": "Shield rim 22",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "shield",
+        "Part.Shield rim 22"
+      ]
+    },
+    {
+      "name": "Shield rim 23",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "shield",
+        "Part.Shield rim 23"
+      ]
+    },
+    {
+      "name": "Sun buckle",
+      "vertices": 50,
+      "faces": 42,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "pelvis",
+        "Part.Sun buckle"
+      ]
+    },
+    {
+      "name": "Sword crossguard",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "sword",
+        "Part.Sword crossguard"
+      ]
+    },
+    {
+      "name": "Sword grip",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "sword",
+        "Part.Sword grip"
+      ]
+    },
+    {
+      "name": "Sword pommel",
+      "vertices": 50,
+      "faces": 42,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "sword",
+        "Part.Sword pommel"
+      ]
+    },
+    {
+      "name": "Thigh armor L",
+      "vertices": 84,
+      "faces": 74,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "thigh.L",
+        "Part.Thigh armor L"
+      ]
+    },
+    {
+      "name": "Thigh armor R",
+      "vertices": 84,
+      "faces": 74,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "thigh.R",
+        "Part.Thigh armor R"
+      ]
+    },
+    {
+      "name": "Trouser thigh L",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "thigh.L",
+        "Part.Trouser thigh L"
+      ]
+    },
+    {
+      "name": "Trouser thigh R",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "thigh.R",
+        "Part.Trouser thigh R"
+      ]
+    },
+    {
+      "name": "Upper sleeve L",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "upper_arm.L",
+        "Part.Upper sleeve L"
+      ]
+    },
+    {
+      "name": "Upper sleeve R",
+      "vertices": 40,
+      "faces": 32,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "upper_arm.R",
+        "Part.Upper sleeve R"
+      ]
+    },
+    {
+      "name": "Waistcoat",
+      "vertices": 84,
+      "faces": 74,
+      "materials": [
+        "Original Domingo reference colors"
+      ],
+      "parent": "Domingo_Rig",
+      "parent_bone": "",
+      "modifiers": [
+        {
+          "type": "ARMATURE",
+          "name": "Reusable rig"
+        }
+      ],
+      "vertex_groups": [
+        "spine",
+        "Part.Waistcoat"
+      ]
+    }
+  ],
+  "armatures": {
+    "Domingo_Rig": [
+      "root",
+      "pelvis",
+      "spine",
+      "chest",
+      "neck",
+      "head",
+      "upper_arm.L",
+      "forearm.L",
+      "hand.L",
+      "shield",
+      "upper_arm.R",
+      "forearm.R",
+      "hand.R",
+      "sword",
+      "cape.upper",
+      "cape.lower",
+      "thigh.L",
+      "shin.L",
+      "foot.L",
+      "thigh.R",
+      "shin.R",
+      "foot.R",
+      "foot_ik.L",
+      "knee_pole.L",
+      "foot_ik.R",
+      "knee_pole.R"
+    ]
+  },
+  "actions": [
+    "Crouch",
+    "Death",
+    "GetUp",
+    "GuardIdleBreathing",
+    "GuardJumpAir",
+    "GuardJumpPrepare",
+    "GuardLanding",
+    "GuardRun",
+    "GuardWalk",
+    "IdleBreathing",
+    "JumpAir",
+    "JumpPrepare",
+    "Landing",
+    "LieDown",
+    "Melee",
+    "Missile",
+    "Pain",
+    "Raise",
+    "Run",
+    "Seated",
+    "SitDown",
+    "Sleeping",
+    "StandUp",
+    "Walk"
+  ]
+}

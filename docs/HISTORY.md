@@ -1,6 +1,35 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.16.5** - 2026-11-13.
+Documentation version: **5.17.0** - 2026-11-13.
+
+## 5.17.0 - Modular Domingo export (#458, 2026-11-13, in progress)
+
+The author expanded the active batch to actual3D characters, modular designs,
+inventory drops and regional inspection maps, with weapon visual simplification
+permitted and all questions deferred. #458 owns this first modular pipeline;
+#459/#461/#462/#463 and #647 retain their separate art scopes. V5.16 remains open.
+
+Seven native modules reuse the accepted #283 source without changing its geometry,
+rig, actions, skin or gameplay. The source and fixed model remain intact. Binary
+equivalence passes for all 375 poses; a native fixture exposed lost graphical
+overrides on reload despite intact saved selection data. Reapplying presentation
+once per load restores matching captures. Early failed/timing-ambiguous runs are
+retained separately; production continuity and performance evidence follow in
+validation_v5_17_0. No author confirmation or pending-test removal is claimed.
+
+Final complete-runtime checks pass108 assertions across12 real-player fixture
+runs, including old/current save loading, hub continuation and rollback. All five
+rendered fixed/modular/hide/restore/save comparisons pass. The first production
+helper failed native compilation because its action needed a play qualifier;
+the corrected generated helper and final package are tested. Repeated Blender
+generation reproduces all installed bytes and preserves the original source.
+
+Frame-presentation evidence records one/64 visual figures and the current mansion,
+sewer, city-ground and approved siege references with one additional modular
+figure. ASSETS gives the intervals and qualifications. The siege remains severely
+limited at1.54 presents/s in this run; no optimization or all-character conversion
+is claimed. Evidence/SUMMARY.json pins the final package/source entries and retained
+failed attempts. CA458-MODULES-01 is outstanding author review.
 
 2026-11-13 #457 dependency refresh includes #456 commit3860858bb, enforcing
 the approved World-after-other-77 capture prerequisite while retaining old
