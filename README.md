@@ -24,6 +24,8 @@ old saves and use `run_dev.bat --legacy-map02-revision5` (or build with
 including stored hub maps. [Map specifications and validation](docs/MAP01.txt)
 distinguish this slice from the remaining campaign and author test terminal. The basic finale
 and its all-78-essence/Respected reputation requirements are author-approved;
+the checkpoint is before Selene on the Moon, after obtaining the World last.
+The seven named Majors per chapter are also approved as an allocation base;
 the recovered bestiary and map references proceed through separate issues.
 Barracas also has an [isolated architectural preview](assets/barracas_redesign/LAYOUT.json)
 with 288 retained building identities; it is not activated in MAP03. City services,

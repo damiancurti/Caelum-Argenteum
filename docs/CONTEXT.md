@@ -2,7 +2,7 @@
 
 Documentation version: **5.16.2** - 2026-11-12.
 
-**V5.16:** #452 design and #453 catalogue approved; #454 MAP02 rebuilt/tested.
+**V5.16:** #452 regions/Majors/finale, #453 catalogue approved; #454 MAP02 rebuilt/tested.
 MAP01/ASSETS/TASKS; assets/campaign/PROGRESSION.json.
 City staged; siege/scripts/models pending. Revision-5: LegacyMap02Revision5.
 

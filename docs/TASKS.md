@@ -82,6 +82,11 @@ open. CA454-MAP02-01 now tracks the outstanding author sewer review.
 The author selected all 78 acquired essences and Respected (+250) with any one
 of four resistance factions for the finale. This matches the existing deity
 power. One eligible participant admits the consenting group; scripts and encounter statistics remain pending.
+The author has now approved the seven named Majors per chapter and the lunar
+ordering: travel first, obtain the World after the other77, then check78/+250
+before Selene combat. Use the canonical IDs in MAP01/PROGRESSION, retaining
+Justice8/Strength11 and opening0/36/60. Author exact maps, ability gates and
+scripts; allocation approval does not implement the remaining75 acquisitions.
 
 ## V5.15 accepted and integrated ? 2026-11-10 (#447?451)
 

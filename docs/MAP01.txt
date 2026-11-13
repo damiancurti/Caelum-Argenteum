@@ -244,6 +244,19 @@ ends with the infernal prince's banishment; Chapter III culminates with Selene.
 The World remains the final card. The 56 Minor essences belong to secondary
 missions across the three chapters. One formal Tarot mission grants one essence.
 
+The author also approved these Major assignments as a chapter allocation base:
+
+| Chapter | Major essences and approved anchors |
+| --- | --- |
+| Prologue | Fool (0), retaining MAP01 |
+| I | Strength (11, Rulo), Hermit (9, Ronnie), Emperor (4, Argento), High Priestess (2, Caella), Magician (1), Hierophant (5), Chariot (7) |
+| II | Empress (3), Lovers (6), Wheel of Fortune (10), Justice (8), Hanged Man (12), Death (13, definitive Zupay encounter), Devil (15, prince's banishment) |
+| III | Temperance (14), Tower (16), Star (17), Moon (18), Sun (19), Judgement (20), World (21) |
+
+IDs retain the existing deck: Justice is8 and Strength is11. This table is not a
+mandatory acquisition order within each chapter, nor an authored map/encounter
+or reintegration script. Opening acquisitions0/36/60 remain unchanged.
+
 The machine-readable planning graph is [PROGRESSION.json](../assets/campaign/PROGRESSION.json).
 It records each chapter's systems, narrative endpoint, information boundaries,
 the implemented opening route and separately staged issues #452-457. Its schema
@@ -277,7 +290,7 @@ circular-lock audit are pending, not established by the opening-route audit.
 
 Finale base approved by the author on 2026-11-12: after the Chapter II banishment,
 the protagonist gains lunar travel in Chapter III, obtains the World as the last
-card and defeats Selene with the unified Tarot. Entry requires all 78 acquired
+card and defeats Selene with the unified Tarot. Entry to Selene's combat requires all 78 acquired
 essences AND at least +250 reputation (existing Respected rank) with any one of
 Unitarians, Federals, Free Peoples or Sun Warriors. Faction membership is not
 required; physical deck possession alone does not satisfy acquisition. This
@@ -289,6 +302,11 @@ For cooperative entry, the author approved one participant meeting both
 requirements for the entire consenting group. This neither combines incomplete
 requirements from different players nor copies their personal essences or
 reputation. Encounter statistics, lunar transport and exact scripts remain unauthored. This is approved design, not implemented finale behavior.
+The author placed that eligibility check on the Moon immediately before Selene's
+combat, not at lunar departure. The World is obtained there after the other77
+essences and is not granted automatically. Requiring it for lunar travel would
+create a circular lock; the separate means/requirements for that travel remain
+unauthored. This ordering preserves the existing deity-damage requirement.
 
 #454 includes reference-backed redesign of MAP02 and existing cities as well as
 new regional slices. The author supplied approved sewer-v2 and Barracas-v1 boards

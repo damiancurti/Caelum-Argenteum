@@ -52,6 +52,10 @@ the basic finale and its all-78/+250 reputation conditions. One eligible
 participant admits the consenting cooperative group; MAP01 owns the full contract. The 58-image bestiary source and approved sewer/city plans are now
 recovered and verified; import and implementation stay in #453/#454. No campaign
 expansion is claimed implemented.
+The named Major allocation is now approved, including the four resident anchors,
+Death/Zupay and Devil/banishment. All-78/+250 eligibility is checked before Selene
+on the Moon; the World is acquired there after the other77. Exact maps, travel
+means and encounter scripts remain unauthored.
 
 Static authoring audit passes for the opening graph and 22/56 counts. Its explicit
 completion mode rejects unresolved authoring. Gameplay remains the accepted V5.15
@@ -59,6 +63,9 @@ code and maps; only two diagnostic release labels advance. There is no new
 save-compatibility or author-playtest claim. The official build and isolated
 MAP02 startup/new-save reload pass; evidence: assets/validation_v5_16_0.
 Each subsequent issue retains its own branch, commits, evidence and linked PR.
+The added Major/finale audit validates all22 assigned identities and77 World
+prerequisites, with three rejected invalid controls. It is authoring evidence;
+the complete campaign graph and runtime gates remain unfinished.
 
 ## 5.15.4 / #451 - Persistent siege outcomes
 
