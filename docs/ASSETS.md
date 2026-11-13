@@ -35,6 +35,12 @@ isolated native run also confirms one subject before/after load and explicit
 CurState advancement during swimming; evidence is in native-release. No gameplay
 or encounter-scale performance acceptance is inferred from this visual test.
 
+The author subsequently approved provisional Mandinga statistics and the current
+Mandinga attacks, hostility and available-potion loot for new folklore creatures.
+BEHAVIOR.json records this decision without activating new actors; species and
+protected Rulo/Mandinga/Zupay profiles remain distinct. The shared template still
+needs implementation and does not supply encounter rosters or visual acceptance.
+
 ## 5.16.2 - Approved map references and preserved sewer sources (#454)
 
 The reference branch's ancestry and original PDF/PNGs are preserved under

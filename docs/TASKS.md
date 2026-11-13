@@ -6,11 +6,11 @@ Documentation version: **5.16.3** - 2026-11-12.
 
 The first actual3D folklore pilot has40 idle/swim frames, editable geometry/motion
 controls and a neutral OBJ. Binary checks, repeatable generation and native
-single-instance fresh/reload pass. CA455-VIS-01 remains pending. The author still
-needs to approve final appearance and per-creature stats, attacks, abilities,
-allegiance, drops and encounters. A question asks whether another source contains
-those rules or whether proposals should reuse existing templates. Do not promote
-this preview into combat or infer gameplay dimensions from its visual scale.
+single-instance fresh/reload pass. CA455-VIS-01 remains pending. The author approved provisional Mandinga statistics and current melee/fire
+projectile/breath, hostility and available-potion loot for new creatures on
+2026-11-12. assets/bestiary/BEHAVIOR.json records that shared template while
+protecting Rulo, existing Mandingas and Zupay. Implementation, final appearance
+and encounters remain open; do not infer collision from visual scale.
 Remaining 57 models, action coverage required by approved behavior, aquatic AI,
 regional placement and campaign unique-instance persistence remain unfinished.
 
@@ -56,7 +56,7 @@ There is no new actionable gameplay test for pending_test.txt in this delivery.
 | #452 | Regional chapter allocation approved 2026-11-12; opening graph audited. Basic finale and all-78/+250 requirements approved; one eligible participant admits the consenting group. Geographic/ability gates and exact revelations remain open. |
 | #453 | Catalogue complete for review: 58 verified references, all regional assignments approved; source/size qualifications retained. Actual 3D production belongs to the separate creature/art delivery. |
 | #454 | Approved sewer v2/Barracas v1 references recovered; four city gates and siege adaptation explicitly selected. Implement separately with ordinary routes, services and active/hub-save compatibility. |
-| #455 | Approve per-creature behavior/stats/encounters after #453/#454; unique and repeatable populations remain distinct. |
+| #455 | Mandinga statistics/attacks/hostility/potion loot approved provisionally for new creatures; implement the shared template while preserving races/protected profiles. Nahuelito visual pilot awaits review; encounters and campaign uniqueness remain open. |
 | #456 | Assign the remaining 75 essences; preserve IDs 0/36/60, personal acquisition, interruption recovery and ability-gate reachability. |
 | #457 | Author memories, revelations, chapter ends and Selene encounter; retain Zupay's Chapter I retreat/Chapter II death boundary. |
 

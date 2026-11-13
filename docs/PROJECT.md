@@ -12,6 +12,12 @@ The other 57 references and per-creature design remain outstanding. Catalogue
 acceptance is distinct from CA455-VIS-01 visual review and creature integration.
 The V5.16 batch and final author terminal are not ready.
 
+The author subsequently approved provisional Mandinga statistics and the current
+Mandinga attacks, hostility and available-potion loot for new folklore creatures.
+BEHAVIOR.json records this decision without activating new actors; species and
+protected Rulo/Mandinga/Zupay profiles remain distinct. The shared template still
+needs implementation and does not supply encounter rosters or visual acceptance.
+
 ## 5.16.2 - Sewer geometry slice (#454, in progress)
 
 MAP02 revision 6 implements the approved sewer board with twelve main circuits,
