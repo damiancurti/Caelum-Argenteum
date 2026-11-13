@@ -1,0 +1,10 @@
+Model CaelumFoodRation { Path "models/caelum/inventory/food" Model 0 "ration.md3" Skin 0 "materials.png" Scale 1 1 1 CorrectPixelStretch FrameIndex CFOO A 0 0 }
+Model CaelumMazeFood { Path "models/caelum/inventory/food" Model 0 "ration.md3" Skin 0 "materials.png" Scale 1 1 1 CorrectPixelStretch FrameIndex CFOO A 0 0 }
+Model CaelumBread { Path "models/caelum/inventory/food" Model 0 "bread.md3" Skin 0 "materials.png" Scale 1 1 1 CorrectPixelStretch FrameIndex FBRD A 0 0 }
+Model CaelumDiningBread { Path "models/caelum/inventory/food" Model 0 "bread.md3" Skin 0 "materials.png" Scale 1 1 1 CorrectPixelStretch FrameIndex FBRD A 0 0 }
+Model CaelumRoastBeef { Path "models/caelum/inventory/food" Model 0 "roast_beef.md3" Skin 0 "materials.png" Scale 1 1 1 CorrectPixelStretch FrameIndex FRBF A 0 0 }
+Model CaelumDiningRoastBeef { Path "models/caelum/inventory/food" Model 0 "roast_beef.md3" Skin 0 "materials.png" Scale 1 1 1 CorrectPixelStretch FrameIndex FRBF A 0 0 }
+Model CaelumRoastFish { Path "models/caelum/inventory/food" Model 0 "roast_fish.md3" Skin 0 "materials.png" Scale 1 1 1 CorrectPixelStretch FrameIndex FRFS A 0 0 }
+Model CaelumDiningRoastFish { Path "models/caelum/inventory/food" Model 0 "roast_fish.md3" Skin 0 "materials.png" Scale 1 1 1 CorrectPixelStretch FrameIndex FRFS A 0 0 }
+Model CaelumPuchero { Path "models/caelum/inventory/food" Model 0 "puchero.md3" Skin 0 "materials.png" Scale 1 1 1 CorrectPixelStretch FrameIndex FPCH A 0 0 }
+Model CaelumDiningPuchero { Path "models/caelum/inventory/food" Model 0 "puchero.md3" Skin 0 "materials.png" Scale 1 1 1 CorrectPixelStretch FrameIndex FPCH A 0 0 }

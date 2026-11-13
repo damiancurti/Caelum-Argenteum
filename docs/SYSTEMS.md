@@ -1,6 +1,21 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.0** - 2026-11-13.
+Documentation version: **5.17.1** - 2026-11-13.
+
+## 5.17.1 / #647 - Inventory presentation boundary
+
+The nine medikit/Anima/energy classes also receive explicit presentation models.
+Their existing pickup/toss, quantity, healing/regeneration effects, fullbright
+states, icons, carried weight and saved ownership are unchanged. No new charge,
+consumption, quality, durability or collision policy is introduced.
+
+Coin drops use explicit 3D bindings for all 15 nominal classes. Their existing
+native stack, denomination, metal, face value, 1g unit weight, pickup/toss methods,
+collision and sprite/icon identities are unchanged. One world stack still uses
+one display object. Mesh thickness and bevel coordinates are presentation art,
+not new physics or balance. No extra actor, owner, polling loop or save field is
+introduced. Furniture drop paths that restore an existing physical body must
+keep that authority; a generic token model is not a replacement for it.
 
 ## 5.17.0 / #458 - Modular presentation boundary
 

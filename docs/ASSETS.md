@@ -1,6 +1,169 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.0** - 2026-11-13.
+Documentation version: **5.17.1** - 2026-11-13.
+
+## 5.17.1 - Inventory drops in 3D (#647, conversion in progress)
+
+Five closed food meshes now cover ration/maze ration, bread, roast beef, roast
+hake and puchero, with explicit bindings for six inventory classes and four
+prepared dining displays. The accepted #410 paintings remain unchanged. Owned
+built-in ImageGen atlas, exact prompt, reference hashes and editable controls
+are in assets/source/art/inventory_models_647/food. New models contain 296-960
+triangles and 3-9 closed components. Food footprint width follows the opaque
+reference silhouette; its perspective image height is not treated as object
+height. Plates/bowl remain presentation, not additional container inventory.
+
+`python assets/generators/generate_inventory_food_models.py --output build/food --install`
+uses the shared deterministic exporter; repeat with `--check --install`.
+Nineteen prior consumable/water runtime outputs remain byte-identical after
+adding width-based art scaling and explicit additional-class bindings. Native
+table RefreshDisplays already copies item scale: table MODELDEF applies no
+second .25 factor. No portions, recipes, food clocks, contamination or ownership
+rules changed. Raised bread-cut tubes looked like spikes in the first native
+view; the final model uses the painted crust scoring, with box UVs for slice sides.
+
+The full 18,167-entry package passed 608 assertions in five native fresh/old-save/
+reload/rollback runs. Six item classes split/recombine native quantities and
+preserve lot units, chronology and contamination; four table displays retain
+their real portions, native serving scale and table-surface position. Native
+front/side/rear/close/table captures were inspected. Evidence:
+assets/validation_v5_17_1/food-evidence/SUMMARY.json. No normal-menu, eating,
+cooking, table placement-menu or author acceptance is inferred. For the author
+room add `--kind food` below; F9 inspects the prepared meals on the table.
+
+One sequential 700-tic pair for six visible food drops observed 1,166.08/1,149.78
+presents/s (sprites/models), p95/p99 1.0599/1.2741ms and 1.0794/1.2929ms; mean
+simulation spacing was 28.571ms. The recorded environment and queue-present
+limits below apply; this is not a full dining-room or all-inventory budget.
+
+Six bottle/canteen classes now have explicit production models. Small glass stays
+green, normal glass amber with a leather sleeve, and the large demijohn green
+inside a wicker basket with a solid handle. Small/normal canteens retain round/
+oval leather bodies and straps. Five new MD3 meshes contain 640-1,112 triangles
+and 5-6 closed outward components each. The large canteen reuses the existing
+dining OBJ topology, UVs and owned texture in a separate normalized drop copy;
+the dining source/binding remain unchanged. All six follow their original opaque
+icon heights, with native scale, collision, capacity, contents and mass retained.
+
+Sources are assets/source/art/inventory_models_647/water: DESIGN.json, EXPORT.json,
+PROMPT.txt, PROVENANCE.json and materials-v1.png. The built-in ImageGen edit used
+the selected consumable atlas and owned bottle references, requesting green/amber
+glass and wicker cells; original output bytes are retained. No pixel-equality
+claim is made for unrequested cells. No original icon/sprite was altered.
+`python assets/generators/generate_inventory_water_models.py --output build/water --install`
+exports native bindings, five MD3s, the normalized canteen OBJ, atlas and editable
+new-mesh OBJ/MTL files. Repeat with `--check --install`. Read-only project checks
+verify hashes, explicit class coverage, MD3 structure and reused topology/UVs.
+Shared-exporter parameterization leaves all eleven previous consumable runtime
+outputs byte-identical.
+
+The final complete package passed 473 assertions in five native fresh/old-save/
+reload/rollback runs, with all 18,160 source entries matching. Exact content,
+quality, thermal and immersion fields are compared at native pickup/toss/repickup
+boundaries. Saved contents/quality persist, with native cooling over elapsed time.
+Front/side/rear/close captures were inspected. Evidence:
+assets/validation_v5_17_1/water-evidence/SUMMARY.json. One sequential 700-tic pair
+for six visible containers observed 1,141.79/1,130.29 presents/s (sprites/models),
+p95/p99 1.0919/1.3261ms and 1.1038/1.3150ms; mean simulation spacing was 28.571ms.
+The environment and queue-present qualifications below apply. No crowd budget,
+normal-menu, drinking/boiling or author acceptance is inferred. Legacy water
+rations, maze water and cooking vessels remain. For the six-container author
+room, add `--kind water` to the inspection command below; F1-F4 and F6-F8 inspect
+the objects, F5 restores player control/HUD.
+
+The same issue now includes small/medium/large medikits, Anima flasks and energy
+vials. The medikit remains the accepted leather bag identity, with handle, straps,
+medical patch, fittings and bandage; it is not changed into a health bottle.
+Anima keeps its blue rounded body, cork, ribbons and star/filigree; energy keeps
+the yellow-green vial, leather sling and leaves. Small hardware is warm bronze,
+medium silver, and large silver plus gold. Each real class is bound explicitly.
+The nine meshes contain 1,324-3,888 triangles and 11-22 closed components each;
+outward winding, paired oriented edges and reproducible exports are checked.
+
+Owned editable controls, references and hashes live in
+assets/source/art/inventory_models_647/consumables/DESIGN.json and EXPORT.json.
+The built-in ImageGen tool generated materials-v1.png from the five owned
+references and edited only the requested leather/cork materials into the selected
+materials-v2.png. Exact prompts are PROMPT.txt and PROMPT-v2.txt; PROVENANCE.json
+retains both original generated outputs and reference hashes. No raster pixels
+are edited by the geometry exporter. Native bodies/caps/straps/ornaments are real
+geometry, not object silhouettes on planes. Their height follows the existing
+opaque reference silhouette; native scale, physics, item effects and icons stay.
+
+`python assets/generators/generate_inventory_consumable_models.py --output build/consumables --install`
+exports nine static MD3 files, one shared atlas, explicit bindings and editable
+OBJ/MTL geometry with named components. The OBJ files remain in the export folder;
+JSON controls and the deterministic generator are maintained sources. Repeat with
+`--check --install` to verify installed bytes. Project validation also checks
+native containers, nine-class coverage and source/dependency hashes without art tools.
+The first native candidate passed 473 assertions in five fresh/old/reload/rollback
+runs. Later visual revisions fix an amplified quadrant seam, handle-frame twisting,
+floating Anima ornaments and stretched leather UVs. The final complete package
+passed all 473 assertions without a model overlay, with 18,152 source entries
+matching exactly. Native front/side/rear/close views were inspected. Evidence is
+assets/validation_v5_17_1/consumables-evidence/SUMMARY.json; no manual acceptance
+or ordinary-menu/healing-use test is inferred. CA-KP-227 records the art checks.
+
+A single 700-tic presentation pair for nine visible consumables observed 1,135.71
+presents/s with sprites versus 1,108.42 with models; p95/p99 were
+1.0866/1.3089ms versus 1.1201/1.3445ms. Both averaged 28.571ms per simulation tic.
+The recorded Win11/Ryzen5950X/RTX3070Ti Vulkan1280x720 environment and qualifications
+below also apply: queue-present timing, no repeatability or campaign budget claim.
+
+For the nine-item author room, add `--kind consumables` to run_coin_drops.py's
+inspection command below. F1-F4 inspect the room/medikit; F5 restores player
+control and the normal HUD; F6/F7 inspect Anima/energy; F8 shows the rear. The
+fixture suppresses its HUD only during inspection, not in ordinary gameplay.
+
+The inventory audit also found a pre-existing duplicate CAMDA0 registration for
+medium armor and medium Anima in TEXTURES. This slice does not rename saved states
+or change that shared sprite registration. New per-class 3D bindings use their
+own intended resources; medium armor still needs explicit model coverage.
+
+COINS.json and COINS_EXPORT.json in assets/source/art/inventory_models_647 record
+owned source hashes, art geometry and deterministic outputs. Copper, silver and
+gold each use a closed bevelled disk (290 vertices, 384 triangles), with outward
+winding and 576 paired geometric edges. Both faces reuse the existing 64x64 sun
+image unchanged; the edge samples its metal color. Original icons/sprites remain.
+The 23-art-pixel radius comes from the opaque silhouette; the 3-pixel thickness
+is display geometry. Actor Scale .25, Radius 12, Height 8 and unit mass do not change.
+
+`python assets/generators/generate_inventory_coin_models.py --output build/coins --install`
+exports OBJ/MTL/unchanged PNG and explicit MODELDEF bindings for all 15 classes.
+Repeat with `--check --install` to verify byte-identical output. Ordinary project
+validation checks sources, hashes and binding completeness without Pillow/Blender.
+Runtime files live under src/models/caelum/inventory/coins and
+src/caelum/data/inventory_coins.modeldef. Existing provenance is in
+assets/manifests/sprites_v4.json; no new raster image or external resource is used.
+
+The native read-only catalogue observation inspected 595 Inventory-derived types;
+87 have visible spawn states and no native undroppable/untossable flag. That is a
+candidate count, not a complete drop catalogue: custom policy and dynamic item
+variants still matter. Furniture and camps can restore existing physical bodies.
+Legacy rejected mate meshes and inactive support-implement bindings do not count
+as current 3D coverage. The rest of #647 remains open.
+
+The candidate-overlay fixture passed 785 assertions in five native runs: original
+save, loading that save with the models, fresh candidate, candidate reload, and
+rollback to the original runtime. Every denomination uses native pickup, splitting
+37 into 30 held plus 7 dropped, then recombining. Captures show volume and retained
+faces from above and near the floor. This is not ordinary menu or author acceptance.
+The final complete package repeats all 785 assertions without an overlay.
+Evidence: assets/validation_v5_17_1/evidence/SUMMARY.json.
+
+One sequential 700-tic comparison at Vulkan 1280x720, uncapped/vsync off, on
+Win11 Pro 26200 / Ryzen 9 5950X / 32GB / RTX 3070 Ti observed 950.75 presents/s
+for 15 sprites versus 942.38 for 15 models. Presentation p95/p99 were
+1.2991/1.5097ms versus 1.2992/1.5176ms; both averaged 28.571ms per simulation tic.
+All 15 models are visible in the inspected capture. These queue-present intervals
+are not GPU timing/display scanout; this single pair establishes no repeatability
+or all-inventory/campaign budget. Tests ran unpaused in the background at 5% audio.
+The severe existing siege rendering limitation remains unresolved.
+
+For author inspection after building the current package:
+`python assets/validation_v5_17_1/run_coin_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/coins-author-01 --interactive`.
+F1/F2/F3/F4 select top/low/side/close views; F5 returns player control. Use a fresh
+output directory, inspect actual drops, and save/reload. No automatic acceptance.
 
 ## 5.17.0 - Independent Domingo modules (#458, in progress)
 

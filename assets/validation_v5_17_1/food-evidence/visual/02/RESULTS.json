@@ -1,0 +1,29 @@
+{
+  "issue": 647,
+  "kind": "food",
+  "scope": "Native pickup/toss, quantity and saved ownership for food; no normal menu or author acceptance.",
+  "baseline_sha256": "39fd816fccfac0c8c6ea48a30414138ed514dd7c4f73141034d69fdd4b99dca9",
+  "runtime_sha256": "39fd816fccfac0c8c6ea48a30414138ed514dd7c4f73141034d69fdd4b99dca9",
+  "model_sha256": "277c2affeedf03c81d880b2eeec63d9fec8edd03d3c2a502ca9a946cd45cbb2c",
+  "fixture_sha256": "186050ef5cba482564050df85638d584ec2434978dddf1afa6a2afc9929e4bd1",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "visual",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 118
+    }
+  ],
+  "captures": {
+    "candidate-0.png": "aaf083befcb13a0f69dfabe44e7273d74ee1e08ffc0f2b3db42b511a65630f19",
+    "candidate-1.png": "cda70a79921bdfa16162b7b483b3bd45156c164a0673e2b43e004826214bd2fb",
+    "candidate-2.png": "5503ee1bdbb17e640510247ccf6b88bbc21f6216e7e0c283f5fdfa9bc7b54300",
+    "candidate-3.png": "0f60b1d4b5f2f7dc12bbaad68e1938d0896cdafc49ef6c2e72b636f063195e0d",
+    "candidate-5.png": "283424980bbf7dfab2e74c1b056a4879e8d0705177919bd7e75c3c2813c0a13e",
+    "candidate-6.png": "55639703e0f6ec5af668a6facf4c9eeedfe1964c514f68a352889d59381084ee",
+    "candidate-7.png": "7ad16370cf6835029b78f1716785aaa1aef41b36d7b6186aa2357613ff2224eb",
+    "candidate-8.png": "7d7c9027023453a603a896f0039f92fc34724e098bd39660bf522e9c51d95fcc"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "issue": 647,
+  "kind": "consumables",
+  "scope": "Native pickup/toss, quantity and saved ownership for consumables; no normal menu or author acceptance.",
+  "baseline_sha256": "193675cd5f64d8e51589656bebcf51148d0a45365065ecdc747ce20d60f8b0f3",
+  "runtime_sha256": "193675cd5f64d8e51589656bebcf51148d0a45365065ecdc747ce20d60f8b0f3",
+  "model_sha256": "aed1ef4714a70c02fdc269a097f0877b49df739fe71f0724fb8135c6ef6febec",
+  "fixture_sha256": "655bc581f9f4b84766ca29a8942ec810afc042ccd8841bec2337f1ad9c52688d",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "baseline",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 100
+    },
+    {
+      "phase": "old-save-load",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 91
+    },
+    {
+      "phase": "candidate-fresh",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 100
+    },
+    {
+      "phase": "candidate-reload",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 91
+    },
+    {
+      "phase": "rollback-load",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 91
+    }
+  ],
+  "captures": {
+    "baseline.png": "b159ef67ad9f76233a45c3abc69c5b8dc533bb76382aec7247e8b58ba3affc47",
+    "candidate-0.png": "4f8a741588bc3fe5dd7b44f9059329de802e46a7e9b69be6659c9bf02fcef50b",
+    "candidate-1.png": "d0035736b55731aa9cc3e10f09eeba17641903a4e2be255100925b4dfbeabbfd",
+    "candidate-2.png": "90ae08463bf8dd04729f346ae34d5ce4e2bbad9528562b281685b7341b91fe5c",
+    "candidate-3.png": "755e138a8cfeaf8031a4343270aafa18f8a5482ee451cc0855ec9f43be6404f0",
+    "candidate-5.png": "de7ab853c3fab00c0b586af052c449467e61d87426d21a21911eb4963ab6f490",
+    "candidate-6.png": "0b473d451f169863ead5b3ed48221c0047c8d35c58675e72eb6c4e9ecccbdea7",
+    "candidate-7.png": "9ade247ec78c849b078d8c2ebd79338d1f3c9f8c24e62459d96f915af88a0fe6"
+  }
+}

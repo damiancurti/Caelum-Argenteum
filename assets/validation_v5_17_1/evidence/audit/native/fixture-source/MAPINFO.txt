@@ -1,0 +1,2 @@
+gameinfo { AddEventHandlers="CA647InventoryDefaults" }
+map CA455V "Inventory default audit" { sky1="CABASKY",0 nointermission }

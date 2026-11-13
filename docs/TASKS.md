@@ -1,6 +1,25 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.0** - 2026-11-13.
+Documentation version: **5.17.1** - 2026-11-13.
+
+## 5.17.1 - Dropped inventory models (#647, in progress)
+
+Implemented 15 denomination bindings using three closed coin meshes, nine
+medikit/Anima/energy models, six bottle/canteen models, and five food meshes for
+six inventory classes plus four prepared dining displays. Native food lots,
+table ownership/scale and bidirectional saves pass; CA647-FOOD-01 remains pending.
+Raw ingredients and other material variants still require explicit coverage. Water-container
+pickup/toss/content/quality and bidirectional-save checks pass in the complete
+package; CA647-WATER-01 author review remains pending. Legacy water rations,
+maze water and cooking vessels still need separate coverage. Consumable checks pass;
+CA647-CONSUMABLES-01 author review remains pending. Existing CAMDA0 collision
+between medium armor and medium Anima needs the intended armor resource in its
+future model binding; no sprite-state rename is authorized by this discovery. Complete
+package native/save checks pass; CA647-COINS-01 author review remains pending.
+Continue class-plus-variant coverage for equipment, clothing, ammunition,
+remaining consumables/containers, tools, materials and retained physical bodies.
+Respect existing custom drop policy and rejected legacy art; source files alone
+do not prove runtime coverage. No remaining category is marked complete.
 
 ## 5.17.0 - Modular 3D expansion (#458 and related art issues)
 

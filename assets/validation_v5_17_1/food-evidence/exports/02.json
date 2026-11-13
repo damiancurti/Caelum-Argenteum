@@ -1,0 +1,257 @@
+{
+  "schema_revision": 1,
+  "issue": 647,
+  "status": "runtime_art_candidate_pending_author_acceptance",
+  "variants": {
+    "ration": {
+      "class": "CaelumFoodRation",
+      "family": "ration",
+      "tier": "existing",
+      "parts": [
+        "ration_loaf_crust",
+        "ration_loaf_score_0",
+        "ration_loaf_score_1",
+        "ration_loaf_score_2",
+        "ration_beef_crust",
+        "ration_beef_cut",
+        "ration_nut_0",
+        "ration_nut_1",
+        "ration_nut_2",
+        "ration_nut_3",
+        "ration_nut_4"
+      ],
+      "closed_outward_components": 11,
+      "vertices": 1789,
+      "triangles": 828,
+      "surfaces": [
+        {
+          "material": "atlas",
+          "vertices": 1789,
+          "triangles": 828
+        }
+      ],
+      "source_opaque_bounds": [
+        8,
+        23,
+        119,
+        104
+      ],
+      "model_height_art_pixels": 38.1670438472267,
+      "native_bounds": [
+        {
+          "min": [
+            -56.52050919377652,
+            -46.41976343575471,
+            0.0
+          ],
+          "max": [
+            54.47949080622349,
+            40.42786421499293,
+            38.1670438472267
+          ]
+        }
+      ]
+    },
+    "bread": {
+      "class": "CaelumBread",
+      "family": "bread",
+      "tier": "existing",
+      "parts": [
+        "bread_crust",
+        "bread_score_0",
+        "bread_score_1",
+        "bread_score_2",
+        "cut_slice_crust",
+        "cut_slice_crumb"
+      ],
+      "closed_outward_components": 6,
+      "vertices": 893,
+      "triangles": 536,
+      "surfaces": [
+        {
+          "material": "atlas",
+          "vertices": 893,
+          "triangles": 536
+        }
+      ],
+      "source_opaque_bounds": [
+        6,
+        49,
+        122,
+        122
+      ],
+      "model_height_art_pixels": 49.85464480872335,
+      "native_bounds": [
+        {
+          "min": [
+            -61.80327868852459,
+            -30.188524590163937,
+            0.0
+          ],
+          "max": [
+            54.196721311475414,
+            37.240437158469945,
+            49.85464480872335
+          ]
+        }
+      ]
+    },
+    "roast_beef": {
+      "class": "CaelumRoastBeef",
+      "family": "roast_beef",
+      "tier": "existing",
+      "parts": [
+        "earthenware_plate",
+        "beef_crust",
+        "beef_slice_0",
+        "beef_slice_1"
+      ],
+      "closed_outward_components": 4,
+      "vertices": 1904,
+      "triangles": 680,
+      "surfaces": [
+        {
+          "material": "atlas",
+          "vertices": 1904,
+          "triangles": 680
+        }
+      ],
+      "source_opaque_bounds": [
+        6,
+        40,
+        122,
+        122
+      ],
+      "model_height_art_pixels": 35.55952380952381,
+      "native_bounds": [
+        {
+          "min": [
+            -58.0,
+            -44.19047619047619,
+            0.0
+          ],
+          "max": [
+            58.0,
+            44.19047619047619,
+            35.55952380952381
+          ]
+        }
+      ]
+    },
+    "roast_fish": {
+      "class": "CaelumRoastFish",
+      "family": "roast_fish",
+      "tier": "existing",
+      "parts": [
+        "earthenware_plate",
+        "hake_fillet",
+        "grilled_top"
+      ],
+      "closed_outward_components": 3,
+      "vertices": 2160,
+      "triangles": 720,
+      "surfaces": [
+        {
+          "material": "atlas",
+          "vertices": 2160,
+          "triangles": 720
+        }
+      ],
+      "source_opaque_bounds": [
+        6,
+        49,
+        122,
+        122
+      ],
+      "model_height_art_pixels": 19.333333333333332,
+      "native_bounds": [
+        {
+          "min": [
+            -58.0,
+            -44.19047619047619,
+            0.0
+          ],
+          "max": [
+            58.0,
+            44.19047619047619,
+            19.333333333333332
+          ]
+        }
+      ]
+    },
+    "puchero": {
+      "class": "CaelumPuchero",
+      "family": "puchero",
+      "tier": "existing",
+      "parts": [
+        "earthenware_bowl",
+        "broth",
+        "stew_chunk_0",
+        "stew_chunk_1",
+        "stew_chunk_2",
+        "stew_chunk_3",
+        "stew_chunk_4",
+        "stew_chunk_5",
+        "corn_piece"
+      ],
+      "closed_outward_components": 9,
+      "vertices": 2880,
+      "triangles": 960,
+      "surfaces": [
+        {
+          "material": "atlas",
+          "vertices": 2880,
+          "triangles": 960
+        }
+      ],
+      "source_opaque_bounds": [
+        6,
+        29,
+        122,
+        122
+      ],
+      "model_height_art_pixels": 35.69230769230769,
+      "native_bounds": [
+        {
+          "min": [
+            -58.0,
+            -49.07692307692308,
+            0.0
+          ],
+          "max": [
+            58.0,
+            49.07692307692308,
+            35.69230769230769
+          ]
+        }
+      ]
+    }
+  },
+  "generator_sha256": "1e0f81ac23de88c55271cccba6fd7f56c64c3b38d76ddda50da1348bd1d269a7",
+  "shared_generator_sha256": {
+    "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+    "generate_inventory_food_models.py": "f90018a554ebea66026be89fcd6fc3fe7d6d557cc63d42dea2a446f46ec6652c"
+  },
+  "source_sha256": {
+    "DESIGN.json": "f3eefb9c5f1f45fa2a58d1df61160064ba858eadc2f30c836d1d72a1b870468a",
+    "PROVENANCE.json": "47afdd5216c509fd05c08576381779b67455e819f5784c86679541869946ed7d",
+    "materials-v1.png": "134ab37377600dc1f1e74ef2fd81c74535b47d0c37414cc25f49ace0c769aaf1",
+    "PROMPT.txt": "9a20e848a21fa165359a5a9ae72f0f9212063f613bdfe2e9644e9ed9050b2d14"
+  },
+  "sha256": {
+    "models/caelum/inventory/food/materials.png": "134ab37377600dc1f1e74ef2fd81c74535b47d0c37414cc25f49ace0c769aaf1",
+    "models/caelum/inventory/food/ration.md3": "54ff54b65bc731b80a1ab8922f2e1054a6db4037eb0a1d74eb427e53ab6c44bf",
+    "editable/ration.obj": "c80e508414f681a20e29ed20af2cd1cbaf1bcffa32f660bd6b2c60cf68713ec9",
+    "models/caelum/inventory/food/bread.md3": "3ce5ed6b97a5abb9299e98bf41f268e7cf572f97a7769d088e55ca5167a457cf",
+    "editable/bread.obj": "e6a8e05c7c2a444ddbb738c225fe56bcb579df8fb4f1c1052e4b6206feb098ff",
+    "models/caelum/inventory/food/roast_beef.md3": "afec49b1115424629bf6639ba9ff4b16136c49b8aa2a64232cec724c3f836d71",
+    "editable/roast_beef.obj": "2d48b1148fbcd4a79a869cdc9bb09734f8d02250ad0eee25361b5d982ac48947",
+    "models/caelum/inventory/food/roast_fish.md3": "4f08a6895865e084d8aa844f9d2fd2813c5a954a669888b168cc85e4c693a446",
+    "editable/roast_fish.obj": "d9634a9c0ca5081d791829ee805421d3ad200ba0bd4bd823ec77dbdc55953b96",
+    "models/caelum/inventory/food/puchero.md3": "3190c2f34c38b47d0c6a4a5d8a8bebdc4c4cdeeda31f99590a2e7e7ae26baa43",
+    "editable/puchero.obj": "653a4bc65e0ca116380c5f51530032445127dda6c6bdce355744b808d5e9d6cf",
+    "editable/materials.mtl": "13d6eb8639fca1bdfb8573b840b36260f34f03236883e9833463d1cc54f6824d",
+    "caelum/data/inventory_food.modeldef": "3b86b5eba5ba449a1756350b949f5673e4f55821c79e7518bd442ab59397b1f3"
+  }
+}

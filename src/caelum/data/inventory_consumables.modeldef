@@ -1,0 +1,9 @@
+Model CaelumLifePotion { Path "models/caelum/inventory/consumables" Model 0 "medikit_small.md3" Skin 0 "materials.png" Scale 1 1 1 CorrectPixelStretch FrameIndex CMED A 0 0 }
+Model CaelumLifePotionMedium { Path "models/caelum/inventory/consumables" Model 0 "medikit_medium.md3" Skin 0 "materials.png" Scale 1 1 1 CorrectPixelStretch FrameIndex CMMD A 0 0 }
+Model CaelumLifePotionLarge { Path "models/caelum/inventory/consumables" Model 0 "medikit_large.md3" Skin 0 "materials.png" Scale 1 1 1 CorrectPixelStretch FrameIndex CMLG A 0 0 }
+Model CaelumAnimaPotion { Path "models/caelum/inventory/consumables" Model 0 "anima_small.md3" Skin 0 "materials.png" Scale 1 1 1 CorrectPixelStretch FrameIndex CANI A 0 0 }
+Model CaelumAnimaPotionMedium { Path "models/caelum/inventory/consumables" Model 0 "anima_medium.md3" Skin 0 "materials.png" Scale 1 1 1 CorrectPixelStretch FrameIndex CAMD A 0 0 }
+Model CaelumAnimaPotionLarge { Path "models/caelum/inventory/consumables" Model 0 "anima_large.md3" Skin 0 "materials.png" Scale 1 1 1 CorrectPixelStretch FrameIndex CALG A 0 0 }
+Model CaelumEnergyDrink { Path "models/caelum/inventory/consumables" Model 0 "energy_small.md3" Skin 0 "materials.png" Scale 1 1 1 CorrectPixelStretch FrameIndex CENE A 0 0 }
+Model CaelumEnergyDrinkMedium { Path "models/caelum/inventory/consumables" Model 0 "energy_medium.md3" Skin 0 "materials.png" Scale 1 1 1 CorrectPixelStretch FrameIndex CEMD A 0 0 }
+Model CaelumEnergyDrinkLarge { Path "models/caelum/inventory/consumables" Model 0 "energy_large.md3" Skin 0 "materials.png" Scale 1 1 1 CorrectPixelStretch FrameIndex CELG A 0 0 }

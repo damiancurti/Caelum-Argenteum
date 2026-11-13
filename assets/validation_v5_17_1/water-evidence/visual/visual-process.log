@@ -1,0 +1,177 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-13 14:26:14
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-647/build/issue647-consumables01.pk3, 18152 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-647/build/issue647-water01/preview.pk3, 8 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-647/build/issue647-water-visual01/fixture.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1520 x 825
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2499.71 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+CA455V - Inventory drop inspection
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA647 PASS water 0 native pickup
+CA647 PASS water 0 held instance
+CA647 PASS water 0 pickup exact contents/quality
+CA647 PASS water 0 pickup exact thermal state
+CA647 PASS water 0 pickup immersion state
+CA647 PASS water 0 native toss
+CA647 PASS water 0 toss exact contents/quality
+CA647 PASS water 0 toss exact thermal state
+CA647 PASS water 0 toss immersion state
+CA647 PASS water 1 native pickup
+CA647 PASS water 1 held instance
+CA647 PASS water 1 pickup exact contents/quality
+CA647 PASS water 1 pickup exact thermal state
+CA647 PASS water 1 pickup immersion state
+CA647 PASS water 1 native toss
+CA647 PASS water 1 toss exact contents/quality
+CA647 PASS water 1 toss exact thermal state
+CA647 PASS water 1 toss immersion state
+CA647 PASS water 2 native pickup
+CA647 PASS water 2 held instance
+CA647 PASS water 2 pickup exact contents/quality
+CA647 PASS water 2 pickup exact thermal state
+CA647 PASS water 2 pickup immersion state
+CA647 PASS water 2 native toss
+CA647 PASS water 2 toss exact contents/quality
+CA647 PASS water 2 toss exact thermal state
+CA647 PASS water 2 toss immersion state
+CA647 PASS water 3 native pickup
+CA647 PASS water 3 held instance
+CA647 PASS water 3 pickup exact contents/quality
+CA647 PASS water 3 pickup exact thermal state
+CA647 PASS water 3 pickup immersion state
+CA647 PASS water 3 native toss
+CA647 PASS water 3 toss exact contents/quality
+CA647 PASS water 3 toss exact thermal state
+CA647 PASS water 3 toss immersion state
+CA647 PASS water 4 native pickup
+CA647 PASS water 4 held instance
+CA647 PASS water 4 pickup exact contents/quality
+CA647 PASS water 4 pickup exact thermal state
+CA647 PASS water 4 pickup immersion state
+CA647 PASS water 4 native toss
+CA647 PASS water 4 toss exact contents/quality
+CA647 PASS water 4 toss exact thermal state
+CA647 PASS water 4 toss immersion state
+CA647 PASS water 5 native pickup
+CA647 PASS water 5 held instance
+CA647 PASS water 5 pickup exact contents/quality
+CA647 PASS water 5 pickup exact thermal state
+CA647 PASS water 5 pickup immersion state
+CA647 PASS water 5 native toss
+CA647 PASS water 5 toss exact contents/quality
+CA647 PASS water 5 toss exact thermal state
+CA647 PASS water 5 toss immersion state
+Game saved.
+CA647 PASS six water container references retained
+CA647 PASS water 0 saved reference
+CA647 PASS water 0 individual world ownership
+CA647 PASS water 0 no duplicate held container
+CA647 PASS water 0 saved content/quality
+CA647 PASS water 0 valid native thermal state
+CA647 PASS water 0 tare plus contents weight
+CA647 PASS water 0 native collision and scale
+CA647 PASS water 0 original icon and state
+CA647 PASS water 0 rests on floor
+CA647 PASS water 1 saved reference
+CA647 PASS water 1 individual world ownership
+CA647 PASS water 1 no duplicate held container
+CA647 PASS water 1 saved content/quality
+CA647 PASS water 1 valid native thermal state
+CA647 PASS water 1 tare plus contents weight
+CA647 PASS water 1 native collision and scale
+CA647 PASS water 1 original icon and state
+CA647 PASS water 1 rests on floor
+CA647 PASS water 2 saved reference
+CA647 PASS water 2 individual world ownership
+CA647 PASS water 2 no duplicate held container
+CA647 PASS water 2 saved content/quality
+CA647 PASS water 2 valid native thermal state
+CA647 PASS water 2 tare plus contents weight
+CA647 PASS water 2 native collision and scale
+CA647 PASS water 2 original icon and state
+CA647 PASS water 2 rests on floor
+CA647 PASS water 3 saved reference
+CA647 PASS water 3 individual world ownership
+CA647 PASS water 3 no duplicate held container
+CA647 PASS water 3 saved content/quality
+CA647 PASS water 3 valid native thermal state
+CA647 PASS water 3 tare plus contents weight
+CA647 PASS water 3 native collision and scale
+CA647 PASS water 3 original icon and state
+CA647 PASS water 3 rests on floor
+CA647 PASS water 4 saved reference
+CA647 PASS water 4 individual world ownership
+CA647 PASS water 4 no duplicate held container
+CA647 PASS water 4 saved content/quality
+CA647 PASS water 4 valid native thermal state
+CA647 PASS water 4 tare plus contents weight
+CA647 PASS water 4 native collision and scale
+CA647 PASS water 4 original icon and state
+CA647 PASS water 4 rests on floor
+CA647 PASS water 5 saved reference
+CA647 PASS water 5 individual world ownership
+CA647 PASS water 5 no duplicate held container
+CA647 PASS water 5 saved content/quality
+CA647 PASS water 5 valid native thermal state
+CA647 PASS water 5 tare plus contents weight
+CA647 PASS water 5 native collision and scale
+CA647 PASS water 5 original icon and state
+CA647 PASS water 5 rests on floor
+CA647 COMPLETE failures=0
+Captured candidate-0.png
+Captured candidate-1.png
+Captured candidate-2.png
+Captured candidate-3.png
+Captured candidate-5.png
+Captured candidate-6.png
+Captured candidate-7.png

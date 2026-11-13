@@ -1,0 +1,57 @@
+{
+  "issue": 647,
+  "kind": "consumables",
+  "scope": "Native pickup/toss, quantity and saved ownership for consumables; no normal menu or author acceptance.",
+  "baseline_sha256": "193675cd5f64d8e51589656bebcf51148d0a45365065ecdc747ce20d60f8b0f3",
+  "runtime_sha256": "193675cd5f64d8e51589656bebcf51148d0a45365065ecdc747ce20d60f8b0f3",
+  "model_sha256": "aed1ef4714a70c02fdc269a097f0877b49df739fe71f0724fb8135c6ef6febec",
+  "fixture_sha256": "a9bb532c4fbd11bb81ff1d7edd30b0c1752ef19cd2fe0501ff09b89c6cafa727",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "baseline",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 100
+    },
+    {
+      "phase": "old-save-load",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 91
+    },
+    {
+      "phase": "candidate-fresh",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 100
+    },
+    {
+      "phase": "candidate-reload",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 91
+    },
+    {
+      "phase": "rollback-load",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 91
+    }
+  ],
+  "captures": {
+    "baseline.png": "068f922e0b8345cb450ef982232f25896843c8c29991882e8bfb7ace864553aa",
+    "candidate-0.png": "b356d014d6f942e798f74b2ef80eaca68023d354644b3b767c1d6dd5c8619dcd",
+    "candidate-1.png": "2c39fea5d05b55d03e82d42601976f6238f62f914b1c2341f86e60542bd4e95a",
+    "candidate-2.png": "31ccb038d7d7a65ae234be1b6ab83d560f2b95221cb3e4b1cb4059e17c3abffa",
+    "candidate-3.png": "2ba12d1733f50114fe12964d4f595fda51974bbbd633e29809a60a3dd6d3dc0d",
+    "candidate-5.png": "080b79720479195cc1b4c7ca58c27e2f2df06f37562229de256d31da6267668c",
+    "candidate-6.png": "3bf61d0d58262ca67ac8010eea0f8acc6950a2fc2d522ee86a8378e70b2767df",
+    "candidate-7.png": "b1e594ca712a715a1232d48a00ff3daffafcec08744f1e89bb5f13fb0d870134"
+  }
+}

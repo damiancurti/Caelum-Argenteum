@@ -1,6 +1,19 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.0** - 2026-11-13.
+Documentation version: **5.17.1** - 2026-11-13.
+
+## 5.17.1 - Physical coin drop models (#647, in progress)
+
+The inventory-model slice now also covers nine medikit/Anima/energy variants
+with owned textured geometry; remaining equipment, materials and item variants
+are still open. Consumable final-package checks pass; author art review remains
+pending, with the ordinary item rules unchanged.
+
+The first inventory-model slice binds all 15 coin denominations to three closed,
+bevelled meshes using their unchanged owned face images. Native ownership,
+stacking, weight, collision and save schemas remain authoritative. This does not
+complete the inventory or character conversion. Other drops, appearance variants
+and regional inspection rooms retain their issue scopes; questions stay deferred.
 
 ## 5.17.0 - Modular character pipeline (#458, in progress)
 

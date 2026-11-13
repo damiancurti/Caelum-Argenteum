@@ -1,0 +1,28 @@
+{
+  "issue": 647,
+  "kind": "water",
+  "scope": "Native pickup/toss, quantity and saved ownership for water; no normal menu or author acceptance.",
+  "baseline_sha256": "29f22e72d912c63fb70b792e1c9f3eea1d22c7549570015d25e88e92ab3a35dc",
+  "runtime_sha256": "29f22e72d912c63fb70b792e1c9f3eea1d22c7549570015d25e88e92ab3a35dc",
+  "model_sha256": "8d3cf1c39c53d35f1721dcd834739917d20f252552a2d17a73c84588b59a3477",
+  "fixture_sha256": "a74824c479cdcef7030926bb670daeff83b10245b27b0df2869b353e8f6c7cd3",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "visual",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 109
+    }
+  ],
+  "captures": {
+    "candidate-0.png": "fd529ee1a25b4e52dcd1f9af1495a6da1307a3015c62b987b90c740b5adfac94",
+    "candidate-1.png": "61ff7b067e6f2daad5e3d45a18afb6b1d56da975f7796f35b61f10a6ec2f4a1a",
+    "candidate-2.png": "ea95d5249701a5e86ee2ed1311215e058790270131ba451e984c609a6b3d96a2",
+    "candidate-3.png": "0d5b07b4df684e0c77e90fc51fc351007cb6dcb4fbbe9d8b709a1bfc07bd36d5",
+    "candidate-5.png": "d7f9d6424a5f72c835bf68d1b6dd62c312bd27713277582757051430727da797",
+    "candidate-6.png": "47aa735c15471e38f0ba50cdb7482e185ce0a43157aa934675848d62c42cad43",
+    "candidate-7.png": "f6d990351b9f50f05b12127874b8a1b14422ce059e01f4aba090f79f8f5372b5"
+  }
+}

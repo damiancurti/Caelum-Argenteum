@@ -1,0 +1,28 @@
+{
+  "issue": 647,
+  "kind": "consumables",
+  "scope": "Native pickup/toss, quantity and saved ownership for consumables; no normal menu or author acceptance.",
+  "baseline_sha256": "193675cd5f64d8e51589656bebcf51148d0a45365065ecdc747ce20d60f8b0f3",
+  "runtime_sha256": "193675cd5f64d8e51589656bebcf51148d0a45365065ecdc747ce20d60f8b0f3",
+  "model_sha256": "c640f264468417a1b11938c3e2ce84d58675b63718c96590fce68979ca35b9a6",
+  "fixture_sha256": "a9bb532c4fbd11bb81ff1d7edd30b0c1752ef19cd2fe0501ff09b89c6cafa727",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "visual",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 100
+    }
+  ],
+  "captures": {
+    "candidate-0.png": "27f5d6243362011d723088d74cd738a3a9f645b4170fd21cf2580a9a97a0a83e",
+    "candidate-1.png": "033b370a1694667856d4abc521633721a8353e29540f4d1ca12319dcec0dce1e",
+    "candidate-2.png": "c34dd4419ffab7d32d36852c0c0cd08ade0fbc2e80fe04cf1f64a9fe213924b1",
+    "candidate-3.png": "ba70b2593f4e24f7affce8e450151bde566b2e6af80c32e60f3532e01b1c3b49",
+    "candidate-5.png": "cf46f428cdaac6579461e7e7a0f9eaec85ddceef87fb32b946af2f13e3293771",
+    "candidate-6.png": "4530c9e3bb074304c7dc55ced1f18e2e35459dc8823d5702538f084052508fc3",
+    "candidate-7.png": "8de03a89efa798cf1e268ff96796f7242afd38a83717ccec5db0f75581b14775"
+  }
+}
