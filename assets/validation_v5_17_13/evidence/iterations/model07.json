@@ -1,0 +1,173 @@
+{
+  "schema_revision": 1,
+  "issue": 670,
+  "parent_issue": 647,
+  "status": "native_candidate_pending_author_review",
+  "variants": {
+    "gourd": {
+      "class": "CaelumMateGourd",
+      "parts": {
+        "closed_porongo_shell": 85052855.12021148,
+        "fixed_bronze_bombilla": 375452.12564412295,
+        "recessed_bombilla_mouth": 196.39925834763199
+      },
+      "closed_outward_components": 3,
+      "vertices": 1394,
+      "triangles": 2720,
+      "surfaces": [
+        {
+          "material": "gourd",
+          "vertices": 1394,
+          "triangles": 2720
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -5.749005005310175,
+            -4.597312884180604,
+            0.0
+          ],
+          "max": [
+            6.595913241043152,
+            4.597312884180604,
+            20.62500128906258
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        33,
+        9,
+        103,
+        119
+      ],
+      "reference_sprite_scale": [
+        5.333333,
+        5.333333
+      ],
+      "uniform_fit": 0.01891120067536242
+    },
+    "silver": {
+      "class": "CaelumMateSilver",
+      "parts": {
+        "closed_porongo_shell": 116969686.38705216,
+        "fixed_bronze_bombilla": 546450.9313885962,
+        "recessed_bombilla_mouth": 272.776752633883
+      },
+      "closed_outward_components": 3,
+      "vertices": 1459,
+      "triangles": 2848,
+      "surfaces": [
+        {
+          "material": "silver",
+          "vertices": 1459,
+          "triangles": 2848
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -5.9418247479340645,
+            -4.566836288658618,
+            0.0
+          ],
+          "max": [
+            7.158100979003182,
+            4.566836288658618,
+            19.312501207031328
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        35,
+        12,
+        107,
+        115
+      ],
+      "reference_sprite_scale": [
+        5.333333,
+        5.333333
+      ],
+      "uniform_fit": 0.016737534501222718
+    },
+    "gold": {
+      "class": "CaelumMateGold",
+      "parts": {
+        "closed_porongo_shell": 98413632.67834474,
+        "fixed_bronze_bombilla": 521461.31414122705,
+        "recessed_bombilla_mouth": 272.7767538520352
+      },
+      "closed_outward_components": 3,
+      "vertices": 1459,
+      "triangles": 2848,
+      "surfaces": [
+        {
+          "material": "gold",
+          "vertices": 1459,
+          "triangles": 2848
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -5.244967075587314,
+            -4.297433679309081,
+            0.0
+          ],
+          "max": [
+            7.677808699183986,
+            4.297433679309081,
+            19.50000121875008
+          ]
+        }
+      ],
+      "reference_opaque_bounds": [
+        38,
+        8,
+        108,
+        112
+      ],
+      "reference_sprite_scale": [
+        5.333333,
+        5.333333
+      ],
+      "uniform_fit": 0.017196613362581357
+    }
+  },
+  "source_sha256": {
+    "DESIGN.json": "ea59001a91d39060500261b8eb20f2051f1bc10aca62865c95833cc20c467075",
+    "PROVENANCE.json": "9c50e484266c8f7a60233a52051f596ee7b8f9c9cc85ca787640bbb7e52cf6a0"
+  },
+  "external_source_sha256": {
+    "assets/art_source/mate_sprites/gourd-source.png": "f0f6b9ded14507b0c4639ee683a56b11251c868f646726aaf145e2c3393fce0d",
+    "src/graphics/caelum/icons/mate/gourd.png": "1add7dffcab6b7bcc92337820a624d1d16bd3eda7804863e446253a88f438ef0",
+    "src/models/caelum/inventory/mates/gourd.png": "f0f6b9ded14507b0c4639ee683a56b11251c868f646726aaf145e2c3393fce0d",
+    "assets/art_source/mate_sprites/silver-source.png": "29fd3284307167144ec5afcbc2c3426c9177b6e6586540db06d29a3590082534",
+    "src/graphics/caelum/icons/mate/silver.png": "e1e39bfe6a5c67786d81c3134120dc726499972c9f452143df1c8e2fa617c8fa",
+    "src/models/caelum/inventory/mates/silver.png": "29fd3284307167144ec5afcbc2c3426c9177b6e6586540db06d29a3590082534",
+    "assets/art_source/mate_sprites/gold-source.png": "67e7035fdcad010e5bebd7c401b4fa6aeac1279aaafb39d552d60b4bd7a0f5a8",
+    "src/graphics/caelum/icons/mate/gold.png": "09b56c5e4a3d8b3a34087b0596ba828d7c662a007323c4930a1a76c911483307",
+    "src/models/caelum/inventory/mates/gold.png": "67e7035fdcad010e5bebd7c401b4fa6aeac1279aaafb39d552d60b4bd7a0f5a8",
+    "assets/art_source/mate_sprites/MANIFEST.json": "ea94cebc7253f20d98bf1f939f833140cf662fd2a50cbae7627bc9abcc0b0aae",
+    "assets/art_source/mate_sprites/PROMPTS.json": "cd66d53ac09a1fb6ea9d45515cab3ef053a3d05e479d27b07b3e7518e8d005cf",
+    "src/caelum/equipment/CaelumMate.zs": "0585f2cc8ee684830a474091b86e42ea5e3f2dec41646b4f445403caabdabb64",
+    "src/caelum/data/CaelumMateData.zs": "aa43c919034f7949ca847146e175911f069f2646ea3b2970a362b140e3fa54c5",
+    "src/caelum/data/mate.textures": "d08156201f322e880d7c9d880c7154c834379a032b968c751469436323feb735"
+  },
+  "generator_sha256": {
+    "generate_inventory_mate_models.py": "2c536390da6aee2e549c2f0cb4ff104e103937504cb9c528577ee644018cf4b3",
+    "generate_inventory_consumable_models.py": "1e0f81ac23de88c55271cccba6fd7f56c64c3b38d76ddda50da1348bd1d269a7",
+    "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2"
+  },
+  "sha256": {
+    "models/caelum/inventory/mates/gourd.md3": "0608c435f7196a31727f217a4045a4a5f4488f3b895109a9dd91b15b5cd8de35",
+    "editable/gourd.obj": "f69059144ae5b4d66530f57a2e769ff98e7dcff7f5acf119b40b75299eda28dc",
+    "models/caelum/inventory/mates/silver.md3": "d7003aa5dd2a139cf4653f56130b01f73dd716b9192b9a208fc7ef6c9ba4e0ee",
+    "editable/silver.obj": "f55feecaaebead25577211620cdb57a6a9b34abe32be402bdc2d87704a7b61ed",
+    "models/caelum/inventory/mates/gold.md3": "f483800c340593cd277348493105484d142ee7fa81d2119be1b10b07944e20bb",
+    "editable/gold.obj": "8006b03cc8f28845061507b1713dc54f9aa93841d85e109e3f472f94aeeb1406",
+    "editable/mates.mtl": "2901748ee92674b86931c916f1f30fc29447ce82126ff6f3e502bca96e815e12",
+    "caelum/data/inventory_mates.modeldef": "66474385fa03da419b0368b9a0045672cbce63c05e5b9537682d68cbc63bda80"
+  }
+}

@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.12** - 2026-11-13.
+Documentation version: **5.17.13** - 2026-11-13.
+
+## 5.17.13 - Closed mate inventory models (#670)
+
+Three original closed-vessel models preserve accepted #472 designs and unchanged
+painted sources. Full-package continuity/rollback and cold-drink recovery pass
+617 native checks; ten exports repeat exactly and all 18,222 package entries
+match src. Bounded three-object presentation and all final views are recorded.
+Retain CA670-MATES-01 for author visual/menu review and every earlier outstanding
+check. This does not complete the remaining inventory/character work.
 
 ## 5.17.12 - Water-ration inventory model (#668)
 

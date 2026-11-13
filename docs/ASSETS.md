@@ -1,6 +1,67 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.12** - 2026-11-13.
+Documentation version: **5.17.13** - 2026-11-13.
+
+## 5.17.13 - Closed mate drop models (#670, parent #647)
+
+CaelumMateGourd, CaelumMateSilver and CaelumMateGold receive new 3D drop models
+derived from the corrected, author-accepted #472 painted designs. Each contains
+a closed porongo shell with a narrow rim, recessed interior walls/floor, a fixed
+bronze bombilla and its recessed mouthpiece. The silver rosette and leafy scrolls,
+gold floral panel/borders and plain dried-gourd surface reuse the exact accepted
+paint. No rejected hemispherical mesh or old implement binding is reactivated.
+
+Three original high-resolution PNGs from assets/art_source/mate_sprites are
+copied byte-for-byte into src/models/caelum/inventory/mates. No raster editing or
+new image generation is performed. The existing front motif repeats around the
+rear; this does not invent separate reverse-side ornament. Closed, consistently
+wound components are exported as MD3, with editable OBJ/MTL and portable original
+textures under assets/source/art/inventory_models_647/mates. DESIGN, PROVENANCE
+and EXPORT preserve source hashes, art coordinates, fitting and output hashes.
+Geometry/export operations reuse the established owned mesh/MD3 functions.
+The three meshes contain 2,720 / 2,848 / 2,848 triangles respectively.
+
+A uniform fit keeps each complete vessel and bombilla inside both original
+sprite dimensions, including the existing 5.333333 TEXTURES scaling. Native
+Actor.Scale, collision, mass/capacity, icons, item classes, water/yerba/thermal
+fields, uses, crafting and drinking logic stay unchanged. The approved physical
+open-hemisphere approximation remains a gameplay calculation, independent of
+the corrected visual shell. No save schema or migration is introduced.
+
+The first candidate passed 133 native checks but exposed transparent pixels at
+the gold foot and lateral texture compression. The second improves the wrap,
+foot and mouthpiece; bilinear-margin validation also found the gold bombilla
+crossing the source alpha edge. The final curve stays inside original painted
+pixels. The readonly validator samples triangle edges/interiors with a bilinear
+texel margin (alpha >=250), alongside source/portable hashes, bounds, MD3 frames,
+shaders, indices and exact class/sprite bindings. Earlier candidates remain local
+recovery evidence; no source PNG is repainted to conceal an invalid mapping.
+
+The final complete package passes 617 native checks, with exact phase counts
+133/117/133/117/117 across baseline, previous-save/new-model, fresh/new-model,
+reload and rollback. Six independent filled/empty mates retain unique identity,
+water, yerba, remaining uses, temperature/stamp, mass, contamination and provenance.
+Duplicate-class pickup remains blocked; direct Box flags block drinking and mass.
+Load phases exercise native cold drinking, retain the vessel and hot-use count,
+and observe delayed thirst recovery after 40 tics. Setup and direct methods do
+not establish ordinary menu, pouring/loading or hot-mate recovery acceptance.
+Native front/side/oblique/rear views of all three final models were inspected.
+
+Ten exported files repeat byte-for-byte, including the preview package; the
+three original portable PNG copies also match exactly. The complete runtime's
+18,222 entries match src. Only three new MD3s, three unchanged source PNG copies,
+their model definitions, root MODELDEF include and two version diagnostics differ
+from #668. Existing gameplay, rejected legacy art and all other native bytes are
+unchanged. Project and focused validation pass.
+
+One isolated 700-tic three-object pair records 1172.84/1194.33 queue presents/s
+for sprites/models, p95 1.0619/1.0414 ms and p99 1.3183/1.2891 ms. Both floor-level
+cohorts were visually checked. Environment: Windows 11 Pro 26200, Ryzen 9 5950X,
+32 GB, RTX 3070 Ti, GZDoom 4.14.2, Vulkan 1280x720, uncapped, vsync off,
+unpaused background and 5% audio. Queue-present intervals do not measure GPU or
+display timing, repeatability, campaign performance or crowds. Evidence and
+earlier candidates: assets/validation_v5_17_13/evidence/SUMMARY.json.
+Author visual/menu acceptance remains separately pending as CA670-MATES-01.
 
 ## 5.17.12 - Water-ration waterskin model (#668, parent #647)
 

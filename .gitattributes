@@ -675,3 +675,11 @@
 /assets/validation_v5_17_12/*.py text eol=lf
 /assets/validation_v5_17_12/*.zs text eol=lf
 /assets/validation_v5_17_12/evidence/** -text -whitespace
+
+/assets/generators/*inventory_mate_models.py text eol=lf
+/assets/source/art/inventory_models_647/mates/** text eol=lf
+/assets/source/art/inventory_models_647/mates/**/*.png -text
+/src/caelum/data/inventory_mates.modeldef text eol=lf
+/assets/validation_v5_17_13/*.py text eol=lf
+/assets/validation_v5_17_13/*.zs text eol=lf
+/assets/validation_v5_17_13/evidence/** -text -whitespace

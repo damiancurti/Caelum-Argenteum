@@ -1,0 +1,8 @@
+{
+  "issue": 670,
+  "author": "Original Caelum Argenteum derivative geometry",
+  "owned_art": "Accepted #472 original built-in image_gen sources; exact earlier prompts and museum-reference roles remain in assets/art_source/mate_sprites.",
+  "raster_changes": "None. Three source PNGs are copied byte-for-byte. No new image generation.",
+  "legacy": "Rejected hemispherical meshes and previous model definitions remain preserved and unbound.",
+  "dimensions": "Visual reconstruction only; approved open-hemisphere thermal/mass approximation remains unchanged."
+}
