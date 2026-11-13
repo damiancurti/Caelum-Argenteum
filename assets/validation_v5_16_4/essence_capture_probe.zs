@@ -1,0 +1,159 @@
+// #456: el cuarto y los tres arcanos iniciales son preparación del fixture.
+// Las 75 transacciones usan fuente, Use, diálogo, Caja y duración nativos.
+class CA456CaptureLedger : Inventory
+{
+    int Captured,Before,Current,Failures;
+    bool Interrupted,Retried,ReloadChecked;
+    CaelumRewardEssence Source;
+    Default { Inventory.MaxAmount 1; Inventory.InterHubAmount 1; +INVENTORY.UNDROPPABLE +INVENTORY.UNCLEARABLE -INVENTORY.INVBAR }
+    States { Spawn:TNT1 A -1;Stop; }
+}
+
+class CA456CaptureProbe : EventHandler
+{
+    void Check(CA456CaptureLedger ledger,bool okay,String label)
+    {
+        if(!okay)ledger.Failures++;
+        Console.Printf("CA456 CAPTURE %s card=%d %s",okay?"PASS":"FAIL",ledger.Current,label);
+    }
+    void Aim(CaelumPlayer user)
+    {
+        user.SetOrigin((-64,0,0),false);user.Angle=0;user.Pitch=0;
+        user.Vel=(0,0,0);user.ClearInterpolation();
+    }
+    void Gate(CaelumPlayer user,CA456CaptureLedger ledger)
+    {
+        let record=user.GetPersistentCharacterState(false);
+        ledger.Current=21;
+        let source=CaelumArcanaSources.PlaceReward(user,21,(0,0,0));
+        Check(ledger,source!=null && !source.IsAvailable(user)
+            && !CaelumTarotService.CanCaptureArcana(record,21),"World blocked with only opening essences despite physical deck");
+        for(int card=0;card<CaelumConstants.TAROT_CARD_COUNT;card++)record.TarotOwned[card]=card!=21;
+        for(int missing=0;missing<CaelumConstants.TAROT_CARD_COUNT;missing++)if(missing!=21)
+        {
+            record.TarotOwned[missing]=false;
+            Check(ledger,!CaelumTarotService.CanCaptureArcana(record,21) && !source.IsAvailable(user),
+                String.Format("World blocked while canonical identity%d is missing",missing));
+            record.TarotOwned[missing]=true;
+        }
+        Check(ledger,source.IsAvailable(user) && !record.HasTarotCard(21),"all77 enable capture without automatic acquisition");
+        record.ArcanaAvailable[21]=false;
+        Check(ledger,!source.IsAvailable(user),"all77 do not replace authored reward entitlement");
+        record.ArcanaAvailable[21]=true;record.TarotOwned[21]=true;
+        Check(ledger,!source.IsAvailable(user),"owned World cannot be captured twice");
+        for(int card=0;card<CaelumConstants.TAROT_CARD_COUNT;card++)
+            record.TarotOwned[card]=!CaelumArcanaSources.AdditionalCard(card);
+        CaelumArcanaProgress.UpdateEssence(source);user.PersistCharacterState();
+    }
+    override void NetworkProcess(ConsoleEvent e)
+    {
+        if(e.Name.Left(6)!="ca456_")return;
+        let user=CaelumPlayer(players[0].mo);if(user==null)return;
+        let record=user.GetPersistentCharacterState(true);
+        let ledger=CA456CaptureLedger(user.FindInventory('CA456CaptureLedger'));
+        if(e.Name=="ca456_prepare")
+        {
+            if(ledger!=null)return;
+            user.GiveInventoryType('CA456CaptureLedger');ledger=CA456CaptureLedger(user.FindInventory('CA456CaptureLedger'));
+            user.bInvulnerable=true;user.bNoTarget=true;
+            record.MagicBoxOwned=true;user.MagicBoxOwned=true;
+            CaelumMagicBox.EnsureOwned(user);CaelumTarotDeckRules.Grant(user,false);
+            for(int card=0;card<CaelumConstants.TAROT_CARD_COUNT;card++)
+            {
+                record.TarotOwned[card]=!CaelumArcanaSources.AdditionalCard(card);
+                record.ArcanaAvailable[card]=false;record.ArcanaRevealed[card]=false;
+            }
+            Check(ledger,CaelumPlayerAuthority.OwnsRecord(user,record) && user.CharacterCreationComplete,"admitted native character");
+            Check(ledger,CaelumTarotDeckRules.InOwnedBox(user) && record.CountTarotCards()==3,"fixture opening collection and owned Box/deck");
+            Check(ledger,CaelumArcanaSources.PlaceReward(user,-1,(0,0,0))==null
+                && CaelumArcanaSources.PlaceReward(user,78,(0,0,0))==null,"invalid IDs rejected");
+            Check(ledger,CaelumArcanaSources.PlaceReward(user,0,(0,0,0))==null
+                && CaelumArcanaSources.PlaceReward(user,36,(0,0,0))==null
+                && CaelumArcanaSources.PlaceReward(user,60,(0,0,0))==null,"opening sources excluded from generic reward");
+            user.PersistCharacterState();return;
+        }
+        if(ledger==null){Console.Printf("CA456 CAPTURE FAIL missing ledger");return;}
+        if(e.Name=="ca456_gate"){Gate(user,ledger);return;}
+        if(e.Name=="ca456_gate_result")
+        {Console.Printf("CA456 GATE COMPLETE failures=%d",ledger.Failures);return;}
+        if(e.Name=="ca456_place")
+        {
+            ledger.Current=e.Args[0];ledger.Before=record.CountTarotCards();
+            Aim(user);
+            ledger.Source=CaelumArcanaSources.PlaceReward(user,ledger.Current,(0,0,0));
+            Check(ledger,ledger.Source!=null && ledger.Source.CardId()==ledger.Current,"native reward source identity");
+            if(ledger.Source==null)return;
+            Check(ledger,record.CountTarotCards()==ledger.Before && !record.HasTarotCard(ledger.Current),"availability grants no essence");
+            Check(ledger,CaelumArcanaSources.PlaceReward(user,ledger.Current,(512,512,0))==ledger.Source
+                && ledger.Source.Pos.X==0 && ledger.Source.Pos.Y==0,"repeat offer preserves one source and location");
+            Check(ledger,!CaelumTarotService.CommitCapture(user,ledger.Source),"premature commit rejected");
+            if(ledger.Current==21 && e.Args[1]==0)Check(ledger,ledger.Before==77,"World exercised after other77 fixture acquisitions");
+            return;
+        }
+        if(e.Name=="ca456_begin")
+        {
+            Check(ledger,user.player.ConversationNPC==ledger.Source && ledger.Source!=null && ledger.Source.bInConversation,"native Use opens matching dialogue");
+            Check(ledger,ledger.Source!=null && ledger.Source.IsRevealedFor(record),"personal reveal precedes capture");
+            Check(ledger,CaelumMainM00FoolCapture.BeginCapture(user),"native capture transaction starts");
+            if(user.player.ConversationNPC!=null){user.player.ConversationNPC.bInConversation=false;user.player.ConversationNPC=null;}
+            return;
+        }
+        if(e.Name=="ca456_leave")
+        {
+            Check(ledger,ledger.Source!=null && ledger.Source.CaptureTics>0
+                && ledger.Source.CaptureTics<CaelumConstants.MAIN_M00_FOOL_CAPTURE_TICS,"real animation underway before interruption");
+            user.SetOrigin((-400,0,0),false);return;
+        }
+        if(e.Name=="ca456_retry")
+        {
+            Check(ledger,ledger.Source!=null && ledger.Source.CaptureUser==null
+                && ledger.Source.IsAvailable(user) && !record.HasTarotCard(ledger.Current),"interruption preserves same available essence");
+            ledger.Interrupted=true;
+            // Simular la retirada de una fuente, no una ruta narrativa aprobada.
+            ledger.Source.Destroy();
+            Check(ledger,CaelumArcanaSources.Find(ledger.Current)==null,"destroy event clears typed registry");
+            ledger.Source=CaelumArcanaSources.PlaceReward(user,ledger.Current,(0,0,0));
+            Check(ledger,ledger.Source!=null && record.ArcanaRevealed[ledger.Current]
+                && !record.HasTarotCard(ledger.Current),"explicit reoffer restores same identity without granting");
+            ledger.Retried=true;Aim(user);return;
+        }
+        if(e.Name=="ca456_midload")
+        {
+            Check(ledger,ledger.Source!=null && CaelumArcanaSources.Find(ledger.Current)==ledger.Source
+                && ledger.Source.CaptureUser==user && ledger.Source.CaptureImage!=null
+                && !record.HasTarotCard(ledger.Current),"mid-capture load retains single native transaction");
+            Check(ledger,ledger.Interrupted && ledger.Retried,"load retains interrupted/reoffered fixture history");
+            ledger.ReloadChecked=true;return;
+        }
+        if(e.Name=="ca456_check")
+        {
+            Check(ledger,ledger.Source!=null && record.HasTarotCard(ledger.Current)
+                && record.CountTarotCards()==ledger.Before+1,"full timed capture grants exactly one essence");
+            Check(ledger,ledger.Source!=null && ledger.Source.CaptureUser==null
+                && !ledger.Source.IsAvailable(user) && !CaelumTarotService.CommitCapture(user,ledger.Source)
+                && CaelumArcanaSources.PlaceReward(user,ledger.Current,(0,0,0))==null,"completed capture and offer cannot replay");
+            ledger.Captured++;return;
+        }
+        if(e.Name=="ca456_legacy_result")
+        {
+            Check(ledger,ledger.Captured==1 && record.CountTarotCards()==4 && record.HasTarotCard(21)
+                && record.HasTarotCard(0) && record.HasTarotCard(36) && record.HasTarotCard(60),"prior-runtime early World acquisition remains owned");
+            Check(ledger,ledger.Source!=null && !ledger.Source.IsAvailable(user)
+                && !CaelumTarotService.CommitCapture(user,ledger.Source),"retained early World cannot duplicate");
+            Console.Printf("CA456 LEGACY COMPLETE failures=%d",ledger.Failures);return;
+        }
+        if(e.Name=="ca456_result")
+        {
+            Check(ledger,ledger.Captured==75 && record.CountTarotCards()==78,"all75 native acquisitions plus3 prepared opening IDs");
+            Check(ledger,ledger.Interrupted && ledger.Retried,"interruption and explicit reoffer completed");
+            int found=0;
+            for(int card=0;card<CaelumConstants.TAROT_CARD_COUNT;card++)if(CaelumArcanaSources.AdditionalCard(card))
+            {
+                let source=CaelumArcanaSources.Find(card);
+                if(source!=null && source.CardId()==card && !source.IsAvailable(user))found++;
+            }
+            Check(ledger,found==75,"all75 registry identities remain unavailable to completed owner");
+            Console.Printf("CA456 CAPTURE COMPLETE captured=%d failures=%d reload=%d",ledger.Captured,ledger.Failures,ledger.ReloadChecked);
+        }
+    }
+}

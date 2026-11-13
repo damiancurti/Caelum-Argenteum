@@ -1,0 +1,13 @@
+{
+  "schema_revision": 1,
+  "issue": 456,
+  "runtime_enabled": false,
+  "authority": "Author conversation, 2026-11-12: approved recovery policy for all new cards; exact card-to-quest/location assignments remain unauthored.",
+  "permanent_loss_allowed": false,
+  "interrupted_capture": "The same essence remains available on return.",
+  "closed_quest_or_dead_npc": "Provide an authored alternative route to recover the same essence.",
+  "automatic_grant": false,
+  "duplicate_ownership": false,
+  "existing_acquisitions": "Preserve Fool, Ace of Cups and Knight of Wands sources and gates, including approved map relocations.",
+  "placement_assignments": []
+}

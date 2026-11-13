@@ -267,6 +267,10 @@ class CaelumTarotService : Object play
         if (card == CaelumConstants.TAROT_WANDS_KNIGHT)
             return level.MapName == "MAP03" && record.ArcanaAvailable[card]
                 && CaelumDemoNarrative.PortCardReady(record);
+        // #456: El Mundo se captura después de las otras 77 esencias personales.
+        // La disponibilidad de la misión sigue siendo un requisito independiente.
+        if (card == CaelumEssenceAcquisitionData.FINAL_CARD
+            && CountTarotCards(record) != CaelumEssenceAcquisitionData.FINAL_PREREQUISITE_COUNT)return false;
         return CaelumArcanaSources.AdditionalCard(card) && record.ArcanaAvailable[card];
     }
 

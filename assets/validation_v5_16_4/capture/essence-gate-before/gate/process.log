@@ -1,0 +1,145 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-13 11:50:41
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v516/work-456/build/issue456-capture01.pk3, 18118 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v516/work-456/build/essence-gate-before/capture-probe.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on G27F (NVIDIA High Definition Audio)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1520 x 825
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2682.41 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+CA455V - Essence transaction diagnostic
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA456 CAPTURE PASS card=0 admitted native character
+CA456 CAPTURE PASS card=0 fixture opening collection and owned Box/deck
+CA456 CAPTURE PASS card=0 invalid IDs rejected
+CA456 CAPTURE PASS card=0 opening sources excluded from generic reward
+Game saved.
+CA456 CAPTURE FAIL card=21 World blocked with only opening essences despite physical deck
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity0 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity1 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity2 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity3 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity4 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity5 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity6 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity7 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity8 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity9 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity10 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity11 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity12 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity13 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity14 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity15 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity16 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity17 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity18 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity19 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity20 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity22 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity23 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity24 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity25 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity26 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity27 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity28 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity29 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity30 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity31 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity32 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity33 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity34 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity35 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity36 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity37 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity38 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity39 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity40 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity41 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity42 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity43 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity44 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity45 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity46 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity47 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity48 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity49 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity50 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity51 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity52 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity53 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity54 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity55 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity56 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity57 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity58 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity59 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity60 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity61 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity62 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity63 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity64 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity65 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity66 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity67 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity68 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity69 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity70 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity71 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity72 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity73 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity74 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity75 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity76 is missing
+CA456 CAPTURE FAIL card=21 World blocked while canonical identity77 is missing
+CA456 CAPTURE PASS card=21 all77 enable capture without automatic acquisition
+CA456 CAPTURE PASS card=21 all77 do not replace authored reward entitlement
+CA456 CAPTURE PASS card=21 owned World cannot be captured twice
+CA456 GATE COMPLETE failures=78

@@ -1,0 +1,41 @@
+{
+  "positive": "78 IDs; 22/56 split; 3 preserved; 75 pending; 54 unassigned chapters",
+  "determinism": true,
+  "negative_cases": [
+    {
+      "case": "Duplicate and missing canonical identity",
+      "rejected": true,
+      "errors": [
+        "Catalogue must cover each ID 0..77 exactly once."
+      ]
+    },
+    {
+      "case": "World locked behind itself",
+      "rejected": true,
+      "errors": [
+        "World requires the other 77 identities, never itself."
+      ]
+    },
+    {
+      "case": "Protected opening source moved",
+      "rejected": true,
+      "errors": [
+        "Protected opening sources changed."
+      ]
+    },
+    {
+      "case": "Required essence permanently lost",
+      "rejected": true,
+      "errors": [
+        "Approved recovery contract changed: permanent_loss_allowed."
+      ]
+    },
+    {
+      "case": "Coverage ledger activates gameplay",
+      "rejected": true,
+      "errors": [
+        "This coverage ledger cannot activate gameplay."
+      ]
+    }
+  ]
+}

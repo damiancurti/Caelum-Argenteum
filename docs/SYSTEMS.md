@@ -1,6 +1,34 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.16.3** - 2026-11-12.
+Documentation version: **5.16.4** - 2026-11-13.
+
+## 5.16.4 / #456 - Approved new-essence recovery policy
+
+The author approved no permanent loss for all new campaign essences. Interrupted
+captures leave the same essence available on return. A closed quest or dead NPC
+must retain an authored alternative to that same essence, without duplication or
+automatic granting. ESSENCE_POLICY.json records this contract; exact alternate
+routes remain unauthored and are not implemented by the coverage ledger. Existing
+opening captures remain unchanged. The #441 shared capture service now enforces
+the approved World prerequisite: the same character must own the other 77
+identities, and still have authored reward availability. An available source or
+physical deck alone does not grant or admit capture. Existing World acquisitions
+remain owned on load; no saved field or migration rewrite is introduced.
+
+CaelumEssenceAcquisitionData.zs is generated from the approved progression graph
+through build_essence_coverage.py. Only the final-card ID and prerequisite count
+are exported; this does not activate the unauthored campaign graph or place a
+lunar source. The generator and project validator reject stale native data.
+
+Native evidence in validation_v5_16_4/capture/SUMMARY.json covers all 75 generic
+IDs through actual Use, personal reveal and the complete 35-tic capture. The
+fixture accepts the dialogue response programmatically and prepares the three
+opening acquisitions. It verifies interrupted capture, explicit source removal
+and reoffer, old-runtime mid-capture continuation, completed-save reload, and
+all 77 missing-identity World boundaries. A separate old-runtime early World
+capture remains owned after loading under the new gate. These checks do not
+establish authored dead-NPC alternatives, geography, new cooperative campaign
+coverage or author acceptance. Existing #441 two-peer evidence remains separate.
 
 ## 5.16.3 / #455 - Provisional folklore combat templates
 

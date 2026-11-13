@@ -1,6 +1,17 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.16.3** - 2026-11-12.
+Documentation version: **5.16.4** - 2026-11-13.
+
+## 5.16.4 - Essence coverage sources (#456)
+
+assets/campaign/ESSENCE_POLICY.json retains the approved recovery decision.
+ESSENCE_COVERAGE.json joins that contract with PROGRESSION.json and the existing
+tarot_78_v4369 manifest, preserving original rank/suit labels as source metadata.
+No art, map or gameplay behavior is changed; two diagnostic release labels advance
+with the documentation version. Regenerate with
+`python assets/generators/build_essence_coverage.py`; `--check` rejects stale
+outputs, and `--require-complete` rejects outstanding exact acquisitions. Project
+validation checks freshness and approved contracts without claiming completion.
 
 ## 5.16.3 - Animated folklore model pilots (#455, unintegrated)
 
