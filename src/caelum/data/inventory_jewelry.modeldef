@@ -1,0 +1,14 @@
+Model CaelumAmuletPickup { Path "models/caelum/inventory/jewelry" Model 0 "amulet_ruby.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex AMRB A 0 0 }
+Model CaelumAmuletPickup { Path "models/caelum/inventory/jewelry" Model 0 "amulet_sapphire.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex AMSA A 0 0 }
+Model CaelumAmuletPickup { Path "models/caelum/inventory/jewelry" Model 0 "amulet_emerald.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex AMEM A 0 0 }
+Model CaelumAmuletPickup { Path "models/caelum/inventory/jewelry" Model 0 "amulet_topaz.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex AMTO A 0 0 }
+Model CaelumSealPickup { Path "models/caelum/inventory/jewelry" Model 0 "seal_fire.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex SLFI A 0 0 }
+Model CA_LimboMagicSeal { Path "models/caelum/inventory/jewelry" Model 0 "seal_fire.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex SLFI A 0 0 }
+Model CaelumSealPickup { Path "models/caelum/inventory/jewelry" Model 0 "seal_water.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex SLWA A 0 0 }
+Model CA_LimboMagicSeal { Path "models/caelum/inventory/jewelry" Model 0 "seal_water.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex SLWA A 0 0 }
+Model CaelumSealPickup { Path "models/caelum/inventory/jewelry" Model 0 "seal_earth.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex SLEA A 0 0 }
+Model CA_LimboMagicSeal { Path "models/caelum/inventory/jewelry" Model 0 "seal_earth.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex SLEA A 0 0 }
+Model CaelumSealPickup { Path "models/caelum/inventory/jewelry" Model 0 "seal_air.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex SLAI A 0 0 }
+Model CA_LimboMagicSeal { Path "models/caelum/inventory/jewelry" Model 0 "seal_air.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex SLAI A 0 0 }
+Model CaelumSealPickup { Path "models/caelum/inventory/jewelry" Model 0 "seal_quintessence.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex SLQU A 0 0 }
+Model CA_LimboMagicSeal { Path "models/caelum/inventory/jewelry" Model 0 "seal_quintessence.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex SLQU A 0 0 }

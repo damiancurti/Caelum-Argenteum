@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.14** - 2026-11-13.
+Documentation version: **5.17.15** - 2026-11-13.
+
+## #674 - Jewelry drop models (5.17.15)
+
+Nine models/fourteen bindings cover all four amulet and five seal world states
+and the legacy seal subclass. Final compatibility/equip/drop checks pass 3,326
+assertions; 22 exports repeat and all 18,233 package entries match src. Nine-object
+presentation and final native views are recorded in ASSETS and the issue evidence.
+Retain CA674-JEWELRY-01 and every earlier pending author check. The #647 audit
+records remaining dynamic inventory states; broader 3D conversion is unfinished.
 
 ## 5.17.14 - Existing key model for lock inventory (#672)
 

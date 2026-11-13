@@ -1,0 +1,689 @@
+Log started: 2026-11-13 20:49:36
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-674/build/issue674-jewelry01.pk3, 18233 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-674/build/issue674-native01/fixture.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Vulkan extensions: VK_KHR_16bit_storage VK_KHR_8bit_storage VK_KHR_acceleration_structure VK_KHR_bind_memory2 VK_KHR_buffer_device_address VK_KHR_calibrated_timestamps VK_KHR_compute_shader_derivatives VK_KHR_cooperative_matrix VK_KHR_copy_commands2 VK_KHR_copy_memory_indirect VK_KHR_create_renderpass2 VK_KHR_dedicated_allocation VK_KHR_deferred_host_operations VK_KHR_depth_clamp_zero_one VK_KHR_depth_stencil_resolve VK_KHR_descriptor_update_template VK_KHR_device_group VK_KHR_draw_indirect_count VK_KHR_driver_properties VK_KHR_dynamic_rendering VK_KHR_dynamic_rendering_local_read VK_KHR_external_fence VK_KHR_external_fence_win32 VK_KHR_external_memory VK_KHR_external_memory_win32 VK_KHR_external_semaphore VK_KHR_external_semaphore_win32 VK_KHR_format_feature_flags2 VK_KHR_fragment_shader_barycentric VK_KHR_fragment_shading_rate VK_KHR_get_memory_requirements2 VK_KHR_global_priority VK_KHR_image_format_list VK_KHR_imageless_framebuffer VK_KHR_index_type_uint8 VK_KHR_internally_synchronized_queues VK_KHR_line_rasterization VK_KHR_load_store_op_none VK_KHR_maintenance1 VK_KHR_maintenance10 VK_KHR_maintenance2 VK_KHR_maintenance3 VK_KHR_maintenance4 VK_KHR_maintenance5 VK_KHR_maintenance6 VK_KHR_maintenance7 VK_KHR_maintenance8 VK_KHR_maintenance9 VK_KHR_map_memory2 VK_KHR_multiview VK_KHR_pipeline_binary VK_KHR_pipeline_executable_properties VK_KHR_pipeline_library VK_KHR_present_id VK_KHR_present_id2 VK_KHR_present_mode_fifo_latest_ready VK_KHR_present_wait VK_KHR_present_wait2 VK_KHR_push_descriptor VK_KHR_ray_query VK_KHR_ray_tracing_maintenance1 VK_KHR_ray_tracing_pipeline VK_KHR_ray_tracing_position_fetch VK_KHR_relaxed_block_layout VK_KHR_robustness2 VK_KHR_sampler_mirror_clamp_to_edge VK_KHR_sampler_ycbcr_conversion VK_KHR_separate_depth_stencil_layouts VK_KHR_shader_atomic_int64 VK_KHR_shader_bfloat16 VK_KHR_shader_clock VK_KHR_shader_draw_parameters VK_KHR_shader_expect_assume VK_KHR_shader_float16_int8 VK_KHR_shader_float_controls VK_KHR_shader_float_controls2 VK_KHR_shader_fma VK_KHR_shader_integer_dot_product VK_KHR_shader_maximal_reconvergence VK_KHR_shader_non_semantic_info VK_KHR_shader_quad_control VK_KHR_shader_relaxed_extended_instruction VK_KHR_shader_subgroup_extended_types VK_KHR_shader_subgroup_rotate VK_KHR_shader_subgroup_uniform_control_flow VK_KHR_shader_terminate_invocation VK_KHR_shader_untyped_pointers VK_KHR_spirv_1_4 VK_KHR_storage_buffer_storage_class VK_KHR_swapchain VK_KHR_swapchain_maintenance1 VK_KHR_swapchain_mutable_format VK_KHR_synchronization2 VK_KHR_timeline_semaphore VK_KHR_unified_image_layouts VK_KHR_uniform_buffer_standard_layout VK_KHR_variable_pointers VK_KHR_vertex_attribute_divisor VK_KHR_video_decode_av1 VK_KHR_video_decode_h264 VK_KHR_video_decode_h265 VK_KHR_video_decode_queue VK_KHR_video_decode_vp9 VK_KHR_video_encode_h264 VK_KHR_video_encode_h265 VK_KHR_video_encode_intra_refresh VK_KHR_video_encode_quantization_map VK_KHR_video_encode_queue VK_KHR_video_maintenance1 VK_KHR_video_maintenance2 VK_KHR_video_queue VK_KHR_vulkan_memory_model VK_KHR_win32_keyed_mutex VK_KHR_workgroup_memory_explicit_layout VK_KHR_zero_initialize_workgroup_memory VK_EXT_4444_formats VK_EXT_attachment_feedback_loop_dynamic_state VK_EXT_attachment_feedback_loop_layout VK_EXT_blend_operation_advanced VK_EXT_border_color_swizzle VK_EXT_buffer_device_address VK_EXT_calibrated_timestamps VK_EXT_color_write_enable VK_EXT_conditional_rendering VK_EXT_conservative_rasterization VK_EXT_custom_border_color VK_EXT_custom_resolve VK_EXT_depth_bias_control VK_EXT_depth_clamp_control VK_EXT_depth_clamp_zero_one VK_EXT_depth_clip_control VK_EXT_depth_clip_enable VK_EXT_depth_range_unrestricted VK_EXT_descriptor_buffer VK_EXT_descriptor_heap VK_EXT_descriptor_indexing VK_EXT_device_address_binding_report VK_EXT_device_fault VK_EXT_device_generated_commands VK_EXT_discard_rectangles VK_EXT_dynamic_rendering_unused_attachments VK_EXT_extended_dynamic_state VK_EXT_extended_dynamic_state2 VK_EXT_extended_dynamic_state3 VK_EXT_external_memory_host VK_EXT_fragment_shader_interlock VK_EXT_full_screen_exclusive VK_EXT_global_priority VK_EXT_global_priority_query VK_EXT_graphics_pipeline_library VK_EXT_hdr_metadata VK_EXT_host_image_copy VK_EXT_host_query_reset VK_EXT_image_2d_view_of_3d VK_EXT_image_robustness VK_EXT_image_sliced_view_of_3d VK_EXT_image_view_min_lod VK_EXT_index_type_uint8 VK_EXT_inline_uniform_block VK_EXT_legacy_vertex_attributes VK_EXT_line_rasterization VK_EXT_load_store_op_none VK_EXT_memory_budget VK_EXT_memory_decompression VK_EXT_memory_priority VK_EXT_mesh_shader VK_EXT_multi_draw VK_EXT_mutable_descriptor_type VK_EXT_nested_command_buffer VK_EXT_non_seamless_cube_map VK_EXT_opacity_micromap VK_EXT_pageable_device_local_memory VK_EXT_pci_bus_info VK_EXT_pipeline_creation_cache_control VK_EXT_pipeline_creation_feedback VK_EXT_pipeline_library_group_handles VK_EXT_pipeline_robustness VK_EXT_post_depth_coverage VK_EXT_present_mode_fifo_latest_ready VK_EXT_present_timing VK_EXT_primitive_topology_list_restart VK_EXT_primitives_generated_query VK_EXT_private_data VK_EXT_provoking_vertex VK_EXT_queue_family_foreign VK_EXT_ray_tracing_invocation_reorder VK_EXT_robustness2 VK_EXT_sample_locations VK_EXT_sampler_filter_minmax VK_EXT_scalar_block_layout VK_EXT_separate_stencil_usage VK_EXT_shader_64bit_indexing VK_EXT_shader_atomic_float VK_EXT_shader_demote_to_helper_invocation VK_EXT_shader_image_atomic_int64 VK_EXT_shader_long_vector VK_EXT_shader_module_identifier VK_EXT_shader_object VK_EXT_shader_replicated_composites VK_EXT_shader_subgroup_ballot VK_EXT_shader_subgroup_partitioned VK_EXT_shader_subgroup_vote VK_EXT_shader_uniform_buffer_unsized_array VK_EXT_shader_viewport_index_layer VK_EXT_subgroup_size_control VK_EXT_swapchain_maintenance1 VK_EXT_texel_buffer_alignment VK_EXT_tooling_info VK_EXT_transform_feedback VK_EXT_vertex_attribute_divisor VK_EXT_vertex_attribute_robustness VK_EXT_vertex_input_dynamic_state VK_EXT_ycbcr_2plane_444_formats VK_EXT_ycbcr_image_arrays VK_EXT_zero_initialize_device_memory VK_NV_acquire_winrt_display VK_NV_clip_space_w_scaling VK_NV_cluster_acceleration_structure VK_NV_compute_occupancy_priority VK_NV_compute_shader_derivatives VK_NV_cooperative_matrix VK_NV_cooperative_matrix2 VK_NV_cooperative_vector VK_NV_copy_memory_indirect VK_NV_corner_sampled_image VK_NV_coverage_reduction_mode VK_NV_cuda_kernel_launch VK_NV_dedicated_allocation VK_NV_dedicated_allocation_image_aliasing VK_NV_descriptor_pool_overallocation VK_NV_device_diagnostic_checkpoints VK_NV_device_diagnostics_config VK_NV_device_generated_commands VK_NV_device_generated_commands_compute VK_NV_disk_cache_utils VK_NV_external_compute_queue VK_NV_external_memory VK_NV_external_memory_win32 VK_NV_fill_rectangle VK_NV_fragment_coverage_to_color VK_NV_fragment_shader_barycentric VK_NV_fragment_shading_rate_enums VK_NV_framebuffer_mixed_samples VK_NV_geometry_shader_passthrough VK_NV_inherited_viewport_scissor VK_NV_internal_nvpresent VK_NV_linear_color_attachment VK_NV_low_latency VK_NV_low_latency2 VK_NV_memory_decompression VK_NV_mesh_shader VK_NV_optical_flow VK_NV_partitioned_acceleration_structure VK_NV_present_metering VK_NV_push_constant_bank VK_NV_raw_access_chains VK_NV_ray_tracing VK_NV_ray_tracing_invocation_reorder VK_NV_ray_tracing_motion_blur VK_NV_representative_fragment_test VK_NV_sample_mask_override_coverage VK_NV_scissor_exclusive VK_NV_shader_atomic_float16_vector VK_NV_shader_image_footprint VK_NV_shader_sm_builtins VK_NV_shader_subgroup_partitioned VK_NV_shading_rate_image VK_NV_viewport_array2 VK_NV_viewport_swizzle VK_NV_win32_keyed_mutex VK_NVX_binary_import VK_NVX_image_view_handle VK_NVX_multiview_per_view_attributes VK_AMD_buffer_marker VK_GOOGLE_hlsl_functionality1 VK_GOOGLE_user_type
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2475.34 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+CA455V - Inventory drop inspection
+
+CA674 PASS all 27 catalogue qualities and 15 legacy seal variants retained
+CA674 PASS jewelry 0 saved reference
+CA674 PASS jewelry 0 independent world instance
+CA674 PASS jewelry 0 native type, quality and kind
+CA674 PASS jewelry 0 persistent identity
+CA674 PASS jewelry 0 original size, essence and durability
+CA674 PASS jewelry 0 original collision, scale and floor contact
+CA674 PASS jewelry 0 original tier icon and dynamic world state
+CA674 PASS jewelry 0 original native weight
+CA674 PASS jewelry 0 copied provenance
+CA674 PASS jewelry 0 unequipped world flags
+CA674 PASS jewelry 1 saved reference
+CA674 PASS jewelry 1 independent world instance
+CA674 PASS jewelry 1 native type, quality and kind
+CA674 PASS jewelry 1 persistent identity
+CA674 PASS jewelry 1 original size, essence and durability
+CA674 PASS jewelry 1 original collision, scale and floor contact
+CA674 PASS jewelry 1 original tier icon and dynamic world state
+CA674 PASS jewelry 1 original native weight
+CA674 PASS jewelry 1 copied provenance
+CA674 PASS jewelry 1 unequipped world flags
+CA674 PASS jewelry 2 saved reference
+CA674 PASS jewelry 2 independent world instance
+CA674 PASS jewelry 2 native type, quality and kind
+CA674 PASS jewelry 2 persistent identity
+CA674 PASS jewelry 2 original size, essence and durability
+CA674 PASS jewelry 2 original collision, scale and floor contact
+CA674 PASS jewelry 2 original tier icon and dynamic world state
+CA674 PASS jewelry 2 original native weight
+CA674 PASS jewelry 2 copied provenance
+CA674 PASS jewelry 2 unequipped world flags
+CA674 PASS jewelry 3 saved reference
+CA674 PASS jewelry 3 independent world instance
+CA674 PASS jewelry 3 native type, quality and kind
+CA674 PASS jewelry 3 persistent identity
+CA674 PASS jewelry 3 original size, essence and durability
+CA674 PASS jewelry 3 original collision, scale and floor contact
+CA674 PASS jewelry 3 original tier icon and dynamic world state
+CA674 PASS jewelry 3 original native weight
+CA674 PASS jewelry 3 copied provenance
+CA674 PASS jewelry 3 unequipped world flags
+CA674 PASS jewelry 4 saved reference
+CA674 PASS jewelry 4 independent world instance
+CA674 PASS jewelry 4 native type, quality and kind
+CA674 PASS jewelry 4 persistent identity
+CA674 PASS jewelry 4 original size, essence and durability
+CA674 PASS jewelry 4 original collision, scale and floor contact
+CA674 PASS jewelry 4 original tier icon and dynamic world state
+CA674 PASS jewelry 4 original native weight
+CA674 PASS jewelry 4 copied provenance
+CA674 PASS jewelry 4 unequipped world flags
+CA674 PASS jewelry 5 saved reference
+CA674 PASS jewelry 5 independent world instance
+CA674 PASS jewelry 5 native type, quality and kind
+CA674 PASS jewelry 5 persistent identity
+CA674 PASS jewelry 5 original size, essence and durability
+CA674 PASS jewelry 5 original collision, scale and floor contact
+CA674 PASS jewelry 5 original tier icon and dynamic world state
+CA674 PASS jewelry 5 original native weight
+CA674 PASS jewelry 5 copied provenance
+CA674 PASS jewelry 5 unequipped world flags
+CA674 PASS jewelry 6 saved reference
+CA674 PASS jewelry 6 independent world instance
+CA674 PASS jewelry 6 native type, quality and kind
+CA674 PASS jewelry 6 persistent identity
+CA674 PASS jewelry 6 original size, essence and durability
+CA674 PASS jewelry 6 original collision, scale and floor contact
+CA674 PASS jewelry 6 original tier icon and dynamic world state
+CA674 PASS jewelry 6 original native weight
+CA674 PASS jewelry 6 copied provenance
+CA674 PASS jewelry 6 unequipped world flags
+CA674 PASS jewelry 7 saved reference
+CA674 PASS jewelry 7 independent world instance
+CA674 PASS jewelry 7 native type, quality and kind
+CA674 PASS jewelry 7 persistent identity
+CA674 PASS jewelry 7 original size, essence and durability
+CA674 PASS jewelry 7 original collision, scale and floor contact
+CA674 PASS jewelry 7 original tier icon and dynamic world state
+CA674 PASS jewelry 7 original native weight
+CA674 PASS jewelry 7 copied provenance
+CA674 PASS jewelry 7 unequipped world flags
+CA674 PASS jewelry 8 saved reference
+CA674 PASS jewelry 8 independent world instance
+CA674 PASS jewelry 8 native type, quality and kind
+CA674 PASS jewelry 8 persistent identity
+CA674 PASS jewelry 8 original size, essence and durability
+CA674 PASS jewelry 8 original collision, scale and floor contact
+CA674 PASS jewelry 8 original tier icon and dynamic world state
+CA674 PASS jewelry 8 original native weight
+CA674 PASS jewelry 8 copied provenance
+CA674 PASS jewelry 8 unequipped world flags
+CA674 PASS jewelry 9 saved reference
+CA674 PASS jewelry 9 independent world instance
+CA674 PASS jewelry 9 native type, quality and kind
+CA674 PASS jewelry 9 persistent identity
+CA674 PASS jewelry 9 original size, essence and durability
+CA674 PASS jewelry 9 original collision, scale and floor contact
+CA674 PASS jewelry 9 original tier icon and dynamic world state
+CA674 PASS jewelry 9 original native weight
+CA674 PASS jewelry 9 copied provenance
+CA674 PASS jewelry 9 unequipped world flags
+CA674 PASS jewelry 10 saved reference
+CA674 PASS jewelry 10 independent world instance
+CA674 PASS jewelry 10 native type, quality and kind
+CA674 PASS jewelry 10 persistent identity
+CA674 PASS jewelry 10 original size, essence and durability
+CA674 PASS jewelry 10 original collision, scale and floor contact
+CA674 PASS jewelry 10 original tier icon and dynamic world state
+CA674 PASS jewelry 10 original native weight
+CA674 PASS jewelry 10 copied provenance
+CA674 PASS jewelry 10 unequipped world flags
+CA674 PASS jewelry 11 saved reference
+CA674 PASS jewelry 11 independent world instance
+CA674 PASS jewelry 11 native type, quality and kind
+CA674 PASS jewelry 11 persistent identity
+CA674 PASS jewelry 11 original size, essence and durability
+CA674 PASS jewelry 11 original collision, scale and floor contact
+CA674 PASS jewelry 11 original tier icon and dynamic world state
+CA674 PASS jewelry 11 original native weight
+CA674 PASS jewelry 11 copied provenance
+CA674 PASS jewelry 11 unequipped world flags
+CA674 PASS jewelry 12 saved reference
+CA674 PASS jewelry 12 independent world instance
+CA674 PASS jewelry 12 native type, quality and kind
+CA674 PASS jewelry 12 persistent identity
+CA674 PASS jewelry 12 original size, essence and durability
+CA674 PASS jewelry 12 original collision, scale and floor contact
+CA674 PASS jewelry 12 original tier icon and dynamic world state
+CA674 PASS jewelry 12 original native weight
+CA674 PASS jewelry 12 copied provenance
+CA674 PASS jewelry 12 unequipped world flags
+CA674 PASS jewelry 13 saved reference
+CA674 PASS jewelry 13 independent world instance
+CA674 PASS jewelry 13 native type, quality and kind
+CA674 PASS jewelry 13 persistent identity
+CA674 PASS jewelry 13 original size, essence and durability
+CA674 PASS jewelry 13 original collision, scale and floor contact
+CA674 PASS jewelry 13 original tier icon and dynamic world state
+CA674 PASS jewelry 13 original native weight
+CA674 PASS jewelry 13 copied provenance
+CA674 PASS jewelry 13 unequipped world flags
+CA674 PASS jewelry 14 saved reference
+CA674 PASS jewelry 14 independent world instance
+CA674 PASS jewelry 14 native type, quality and kind
+CA674 PASS jewelry 14 persistent identity
+CA674 PASS jewelry 14 original size, essence and durability
+CA674 PASS jewelry 14 original collision, scale and floor contact
+CA674 PASS jewelry 14 original tier icon and dynamic world state
+CA674 PASS jewelry 14 original native weight
+CA674 PASS jewelry 14 copied provenance
+CA674 PASS jewelry 14 unequipped world flags
+CA674 PASS jewelry 15 saved reference
+CA674 PASS jewelry 15 independent world instance
+CA674 PASS jewelry 15 native type, quality and kind
+CA674 PASS jewelry 15 persistent identity
+CA674 PASS jewelry 15 original size, essence and durability
+CA674 PASS jewelry 15 original collision, scale and floor contact
+CA674 PASS jewelry 15 original tier icon and dynamic world state
+CA674 PASS jewelry 15 original native weight
+CA674 PASS jewelry 15 copied provenance
+CA674 PASS jewelry 15 unequipped world flags
+CA674 PASS jewelry 16 saved reference
+CA674 PASS jewelry 16 independent world instance
+CA674 PASS jewelry 16 native type, quality and kind
+CA674 PASS jewelry 16 persistent identity
+CA674 PASS jewelry 16 original size, essence and durability
+CA674 PASS jewelry 16 original collision, scale and floor contact
+CA674 PASS jewelry 16 original tier icon and dynamic world state
+CA674 PASS jewelry 16 original native weight
+CA674 PASS jewelry 16 copied provenance
+CA674 PASS jewelry 16 unequipped world flags
+CA674 PASS jewelry 17 saved reference
+CA674 PASS jewelry 17 independent world instance
+CA674 PASS jewelry 17 native type, quality and kind
+CA674 PASS jewelry 17 persistent identity
+CA674 PASS jewelry 17 original size, essence and durability
+CA674 PASS jewelry 17 original collision, scale and floor contact
+CA674 PASS jewelry 17 original tier icon and dynamic world state
+CA674 PASS jewelry 17 original native weight
+CA674 PASS jewelry 17 copied provenance
+CA674 PASS jewelry 17 unequipped world flags
+CA674 PASS jewelry 18 saved reference
+CA674 PASS jewelry 18 independent world instance
+CA674 PASS jewelry 18 native type, quality and kind
+CA674 PASS jewelry 18 persistent identity
+CA674 PASS jewelry 18 original size, essence and durability
+CA674 PASS jewelry 18 original collision, scale and floor contact
+CA674 PASS jewelry 18 original tier icon and dynamic world state
+CA674 PASS jewelry 18 original native weight
+CA674 PASS jewelry 18 copied provenance
+CA674 PASS jewelry 18 unequipped world flags
+CA674 PASS jewelry 19 saved reference
+CA674 PASS jewelry 19 independent world instance
+CA674 PASS jewelry 19 native type, quality and kind
+CA674 PASS jewelry 19 persistent identity
+CA674 PASS jewelry 19 original size, essence and durability
+CA674 PASS jewelry 19 original collision, scale and floor contact
+CA674 PASS jewelry 19 original tier icon and dynamic world state
+CA674 PASS jewelry 19 original native weight
+CA674 PASS jewelry 19 copied provenance
+CA674 PASS jewelry 19 unequipped world flags
+CA674 PASS jewelry 20 saved reference
+CA674 PASS jewelry 20 independent world instance
+CA674 PASS jewelry 20 native type, quality and kind
+CA674 PASS jewelry 20 persistent identity
+CA674 PASS jewelry 20 original size, essence and durability
+CA674 PASS jewelry 20 original collision, scale and floor contact
+CA674 PASS jewelry 20 original tier icon and dynamic world state
+CA674 PASS jewelry 20 original native weight
+CA674 PASS jewelry 20 copied provenance
+CA674 PASS jewelry 20 unequipped world flags
+CA674 PASS jewelry 21 saved reference
+CA674 PASS jewelry 21 independent world instance
+CA674 PASS jewelry 21 native type, quality and kind
+CA674 PASS jewelry 21 persistent identity
+CA674 PASS jewelry 21 original size, essence and durability
+CA674 PASS jewelry 21 original collision, scale and floor contact
+CA674 PASS jewelry 21 original tier icon and dynamic world state
+CA674 PASS jewelry 21 original native weight
+CA674 PASS jewelry 21 copied provenance
+CA674 PASS jewelry 21 unequipped world flags
+CA674 PASS jewelry 22 saved reference
+CA674 PASS jewelry 22 independent world instance
+CA674 PASS jewelry 22 native type, quality and kind
+CA674 PASS jewelry 22 persistent identity
+CA674 PASS jewelry 22 original size, essence and durability
+CA674 PASS jewelry 22 original collision, scale and floor contact
+CA674 PASS jewelry 22 original tier icon and dynamic world state
+CA674 PASS jewelry 22 original native weight
+CA674 PASS jewelry 22 copied provenance
+CA674 PASS jewelry 22 unequipped world flags
+CA674 PASS jewelry 23 saved reference
+CA674 PASS jewelry 23 independent world instance
+CA674 PASS jewelry 23 native type, quality and kind
+CA674 PASS jewelry 23 persistent identity
+CA674 PASS jewelry 23 original size, essence and durability
+CA674 PASS jewelry 23 original collision, scale and floor contact
+CA674 PASS jewelry 23 original tier icon and dynamic world state
+CA674 PASS jewelry 23 original native weight
+CA674 PASS jewelry 23 copied provenance
+CA674 PASS jewelry 23 unequipped world flags
+CA674 PASS jewelry 24 saved reference
+CA674 PASS jewelry 24 independent world instance
+CA674 PASS jewelry 24 native type, quality and kind
+CA674 PASS jewelry 24 persistent identity
+CA674 PASS jewelry 24 original size, essence and durability
+CA674 PASS jewelry 24 original collision, scale and floor contact
+CA674 PASS jewelry 24 original tier icon and dynamic world state
+CA674 PASS jewelry 24 original native weight
+CA674 PASS jewelry 24 copied provenance
+CA674 PASS jewelry 24 unequipped world flags
+CA674 PASS jewelry 25 saved reference
+CA674 PASS jewelry 25 independent world instance
+CA674 PASS jewelry 25 native type, quality and kind
+CA674 PASS jewelry 25 persistent identity
+CA674 PASS jewelry 25 original size, essence and durability
+CA674 PASS jewelry 25 original collision, scale and floor contact
+CA674 PASS jewelry 25 original tier icon and dynamic world state
+CA674 PASS jewelry 25 original native weight
+CA674 PASS jewelry 25 copied provenance
+CA674 PASS jewelry 25 unequipped world flags
+CA674 PASS jewelry 26 saved reference
+CA674 PASS jewelry 26 independent world instance
+CA674 PASS jewelry 26 native type, quality and kind
+CA674 PASS jewelry 26 persistent identity
+CA674 PASS jewelry 26 original size, essence and durability
+CA674 PASS jewelry 26 original collision, scale and floor contact
+CA674 PASS jewelry 26 original tier icon and dynamic world state
+CA674 PASS jewelry 26 original native weight
+CA674 PASS jewelry 26 copied provenance
+CA674 PASS jewelry 26 unequipped world flags
+CA674 PASS jewelry 27 saved reference
+CA674 PASS jewelry 27 independent world instance
+CA674 PASS jewelry 27 native type, quality and kind
+CA674 PASS jewelry 27 persistent identity
+CA674 PASS jewelry 27 original size, essence and durability
+CA674 PASS jewelry 27 original collision, scale and floor contact
+CA674 PASS jewelry 27 original tier icon and dynamic world state
+CA674 PASS jewelry 27 original native weight
+CA674 PASS jewelry 27 copied provenance
+CA674 PASS jewelry 27 unequipped world flags
+CA674 PASS jewelry 28 saved reference
+CA674 PASS jewelry 28 independent world instance
+CA674 PASS jewelry 28 native type, quality and kind
+CA674 PASS jewelry 28 persistent identity
+CA674 PASS jewelry 28 original size, essence and durability
+CA674 PASS jewelry 28 original collision, scale and floor contact
+CA674 PASS jewelry 28 original tier icon and dynamic world state
+CA674 PASS jewelry 28 original native weight
+CA674 PASS jewelry 28 copied provenance
+CA674 PASS jewelry 28 unequipped world flags
+CA674 PASS jewelry 29 saved reference
+CA674 PASS jewelry 29 independent world instance
+CA674 PASS jewelry 29 native type, quality and kind
+CA674 PASS jewelry 29 persistent identity
+CA674 PASS jewelry 29 original size, essence and durability
+CA674 PASS jewelry 29 original collision, scale and floor contact
+CA674 PASS jewelry 29 original tier icon and dynamic world state
+CA674 PASS jewelry 29 original native weight
+CA674 PASS jewelry 29 copied provenance
+CA674 PASS jewelry 29 unequipped world flags
+CA674 PASS jewelry 30 saved reference
+CA674 PASS jewelry 30 independent world instance
+CA674 PASS jewelry 30 native type, quality and kind
+CA674 PASS jewelry 30 persistent identity
+CA674 PASS jewelry 30 original size, essence and durability
+CA674 PASS jewelry 30 original collision, scale and floor contact
+CA674 PASS jewelry 30 original tier icon and dynamic world state
+CA674 PASS jewelry 30 original native weight
+CA674 PASS jewelry 30 copied provenance
+CA674 PASS jewelry 30 unequipped world flags
+CA674 PASS jewelry 31 saved reference
+CA674 PASS jewelry 31 independent world instance
+CA674 PASS jewelry 31 native type, quality and kind
+CA674 PASS jewelry 31 persistent identity
+CA674 PASS jewelry 31 original size, essence and durability
+CA674 PASS jewelry 31 original collision, scale and floor contact
+CA674 PASS jewelry 31 original tier icon and dynamic world state
+CA674 PASS jewelry 31 original native weight
+CA674 PASS jewelry 31 copied provenance
+CA674 PASS jewelry 31 unequipped world flags
+CA674 PASS jewelry 32 saved reference
+CA674 PASS jewelry 32 independent world instance
+CA674 PASS jewelry 32 native type, quality and kind
+CA674 PASS jewelry 32 persistent identity
+CA674 PASS jewelry 32 original size, essence and durability
+CA674 PASS jewelry 32 original collision, scale and floor contact
+CA674 PASS jewelry 32 original tier icon and dynamic world state
+CA674 PASS jewelry 32 original native weight
+CA674 PASS jewelry 32 copied provenance
+CA674 PASS jewelry 32 unequipped world flags
+CA674 PASS jewelry 33 saved reference
+CA674 PASS jewelry 33 independent world instance
+CA674 PASS jewelry 33 native type, quality and kind
+CA674 PASS jewelry 33 persistent identity
+CA674 PASS jewelry 33 original size, essence and durability
+CA674 PASS jewelry 33 original collision, scale and floor contact
+CA674 PASS jewelry 33 original tier icon and dynamic world state
+CA674 PASS jewelry 33 original native weight
+CA674 PASS jewelry 33 copied provenance
+CA674 PASS jewelry 33 unequipped world flags
+CA674 PASS jewelry 34 saved reference
+CA674 PASS jewelry 34 independent world instance
+CA674 PASS jewelry 34 native type, quality and kind
+CA674 PASS jewelry 34 persistent identity
+CA674 PASS jewelry 34 original size, essence and durability
+CA674 PASS jewelry 34 original collision, scale and floor contact
+CA674 PASS jewelry 34 original tier icon and dynamic world state
+CA674 PASS jewelry 34 original native weight
+CA674 PASS jewelry 34 copied provenance
+CA674 PASS jewelry 34 unequipped world flags
+CA674 PASS jewelry 35 saved reference
+CA674 PASS jewelry 35 independent world instance
+CA674 PASS jewelry 35 native type, quality and kind
+CA674 PASS jewelry 35 persistent identity
+CA674 PASS jewelry 35 original size, essence and durability
+CA674 PASS jewelry 35 original collision, scale and floor contact
+CA674 PASS jewelry 35 original tier icon and dynamic world state
+CA674 PASS jewelry 35 original native weight
+CA674 PASS jewelry 35 copied provenance
+CA674 PASS jewelry 35 unequipped world flags
+CA674 PASS jewelry 36 saved reference
+CA674 PASS jewelry 36 independent world instance
+CA674 PASS jewelry 36 native type, quality and kind
+CA674 PASS jewelry 36 persistent identity
+CA674 PASS jewelry 36 original size, essence and durability
+CA674 PASS jewelry 36 original collision, scale and floor contact
+CA674 PASS jewelry 36 original tier icon and dynamic world state
+CA674 PASS jewelry 36 original native weight
+CA674 PASS jewelry 36 copied provenance
+CA674 PASS jewelry 36 unequipped world flags
+CA674 PASS jewelry 37 saved reference
+CA674 PASS jewelry 37 independent world instance
+CA674 PASS jewelry 37 native type, quality and kind
+CA674 PASS jewelry 37 persistent identity
+CA674 PASS jewelry 37 original size, essence and durability
+CA674 PASS jewelry 37 original collision, scale and floor contact
+CA674 PASS jewelry 37 original tier icon and dynamic world state
+CA674 PASS jewelry 37 original native weight
+CA674 PASS jewelry 37 copied provenance
+CA674 PASS jewelry 37 unequipped world flags
+CA674 PASS jewelry 38 saved reference
+CA674 PASS jewelry 38 independent world instance
+CA674 PASS jewelry 38 native type, quality and kind
+CA674 PASS jewelry 38 persistent identity
+CA674 PASS jewelry 38 original size, essence and durability
+CA674 PASS jewelry 38 original collision, scale and floor contact
+CA674 PASS jewelry 38 original tier icon and dynamic world state
+CA674 PASS jewelry 38 original native weight
+CA674 PASS jewelry 38 copied provenance
+CA674 PASS jewelry 38 unequipped world flags
+CA674 PASS jewelry 39 saved reference
+CA674 PASS jewelry 39 independent world instance
+CA674 PASS jewelry 39 native type, quality and kind
+CA674 PASS jewelry 39 persistent identity
+CA674 PASS jewelry 39 original size, essence and durability
+CA674 PASS jewelry 39 original collision, scale and floor contact
+CA674 PASS jewelry 39 original tier icon and dynamic world state
+CA674 PASS jewelry 39 original native weight
+CA674 PASS jewelry 39 copied provenance
+CA674 PASS jewelry 39 unequipped world flags
+CA674 PASS jewelry 40 saved reference
+CA674 PASS jewelry 40 independent world instance
+CA674 PASS jewelry 40 native type, quality and kind
+CA674 PASS jewelry 40 persistent identity
+CA674 PASS jewelry 40 original size, essence and durability
+CA674 PASS jewelry 40 original collision, scale and floor contact
+CA674 PASS jewelry 40 original tier icon and dynamic world state
+CA674 PASS jewelry 40 original native weight
+CA674 PASS jewelry 40 copied provenance
+CA674 PASS jewelry 40 unequipped world flags
+CA674 PASS jewelry 41 saved reference
+CA674 PASS jewelry 41 independent world instance
+CA674 PASS jewelry 41 native type, quality and kind
+CA674 PASS jewelry 41 persistent identity
+CA674 PASS jewelry 41 original size, essence and durability
+CA674 PASS jewelry 41 original collision, scale and floor contact
+CA674 PASS jewelry 41 original tier icon and dynamic world state
+CA674 PASS jewelry 41 original native weight
+CA674 PASS jewelry 41 copied provenance
+CA674 PASS jewelry 41 unequipped world flags
+CA674 COMPLETE failures=0
+CA674 PASS jewelry 0 native repickup
+CA674 PASS jewelry 0 recovered exact metadata
+CA674 PASS jewelry 0 exact native equip
+CA674 PASS jewelry 0 native unequip
+CA674 PASS jewelry 0 second native toss
+CA674 PASS jewelry 1 native repickup
+CA674 PASS jewelry 1 recovered exact metadata
+CA674 PASS jewelry 1 exact native equip
+CA674 PASS jewelry 1 native unequip
+CA674 PASS jewelry 1 second native toss
+CA674 PASS jewelry 2 native repickup
+CA674 PASS jewelry 2 recovered exact metadata
+CA674 PASS jewelry 2 exact native equip
+CA674 PASS jewelry 2 native unequip
+CA674 PASS jewelry 2 second native toss
+CA674 PASS jewelry 3 native repickup
+CA674 PASS jewelry 3 recovered exact metadata
+CA674 PASS jewelry 3 exact native equip
+CA674 PASS jewelry 3 native unequip
+CA674 PASS jewelry 3 second native toss
+CA674 PASS jewelry 4 native repickup
+CA674 PASS jewelry 4 recovered exact metadata
+CA674 PASS jewelry 4 exact native equip
+CA674 PASS jewelry 4 native unequip
+CA674 PASS jewelry 4 second native toss
+CA674 PASS jewelry 5 native repickup
+CA674 PASS jewelry 5 recovered exact metadata
+CA674 PASS jewelry 5 exact native equip
+CA674 PASS jewelry 5 native unequip
+CA674 PASS jewelry 5 second native toss
+CA674 PASS jewelry 6 native repickup
+CA674 PASS jewelry 6 recovered exact metadata
+CA674 PASS jewelry 6 exact native equip
+CA674 PASS jewelry 6 native unequip
+CA674 PASS jewelry 6 second native toss
+CA674 PASS jewelry 7 native repickup
+CA674 PASS jewelry 7 recovered exact metadata
+CA674 PASS jewelry 7 exact native equip
+CA674 PASS jewelry 7 native unequip
+CA674 PASS jewelry 7 second native toss
+CA674 PASS jewelry 8 native repickup
+CA674 PASS jewelry 8 recovered exact metadata
+CA674 PASS jewelry 8 exact native equip
+CA674 PASS jewelry 8 native unequip
+CA674 PASS jewelry 8 second native toss
+CA674 PASS jewelry 9 native repickup
+CA674 PASS jewelry 9 recovered exact metadata
+CA674 PASS jewelry 9 exact native equip
+CA674 PASS jewelry 9 native unequip
+CA674 PASS jewelry 9 second native toss
+CA674 PASS jewelry 10 native repickup
+CA674 PASS jewelry 10 recovered exact metadata
+CA674 PASS jewelry 10 exact native equip
+CA674 PASS jewelry 10 native unequip
+CA674 PASS jewelry 10 second native toss
+CA674 PASS jewelry 11 native repickup
+CA674 PASS jewelry 11 recovered exact metadata
+CA674 PASS jewelry 11 exact native equip
+CA674 PASS jewelry 11 native unequip
+CA674 PASS jewelry 11 second native toss
+CA674 PASS jewelry 12 native repickup
+CA674 PASS jewelry 12 recovered exact metadata
+CA674 PASS jewelry 12 exact native equip
+CA674 PASS jewelry 12 native unequip
+CA674 PASS jewelry 12 second native toss
+CA674 PASS jewelry 13 native repickup
+CA674 PASS jewelry 13 recovered exact metadata
+CA674 PASS jewelry 13 exact native equip
+CA674 PASS jewelry 13 native unequip
+CA674 PASS jewelry 13 second native toss
+CA674 PASS jewelry 14 native repickup
+CA674 PASS jewelry 14 recovered exact metadata
+CA674 PASS jewelry 14 exact native equip
+CA674 PASS jewelry 14 native unequip
+CA674 PASS jewelry 14 second native toss
+CA674 PASS jewelry 15 native repickup
+CA674 PASS jewelry 15 recovered exact metadata
+CA674 PASS jewelry 15 exact native equip
+CA674 PASS jewelry 15 native unequip
+CA674 PASS jewelry 15 second native toss
+CA674 PASS jewelry 16 native repickup
+CA674 PASS jewelry 16 recovered exact metadata
+CA674 PASS jewelry 16 exact native equip
+CA674 PASS jewelry 16 native unequip
+CA674 PASS jewelry 16 second native toss
+CA674 PASS jewelry 17 native repickup
+CA674 PASS jewelry 17 recovered exact metadata
+CA674 PASS jewelry 17 exact native equip
+CA674 PASS jewelry 17 native unequip
+CA674 PASS jewelry 17 second native toss
+CA674 PASS jewelry 18 native repickup
+CA674 PASS jewelry 18 recovered exact metadata
+CA674 PASS jewelry 18 exact native equip
+CA674 PASS jewelry 18 native unequip
+CA674 PASS jewelry 18 second native toss
+CA674 PASS jewelry 19 native repickup
+CA674 PASS jewelry 19 recovered exact metadata
+CA674 PASS jewelry 19 exact native equip
+CA674 PASS jewelry 19 native unequip
+CA674 PASS jewelry 19 second native toss
+CA674 PASS jewelry 20 native repickup
+CA674 PASS jewelry 20 recovered exact metadata
+CA674 PASS jewelry 20 exact native equip
+CA674 PASS jewelry 20 native unequip
+CA674 PASS jewelry 20 second native toss
+CA674 PASS jewelry 21 native repickup
+CA674 PASS jewelry 21 recovered exact metadata
+CA674 PASS jewelry 21 exact native equip
+CA674 PASS jewelry 21 native unequip
+CA674 PASS jewelry 21 second native toss
+CA674 PASS jewelry 22 native repickup
+CA674 PASS jewelry 22 recovered exact metadata
+CA674 PASS jewelry 22 exact native equip
+CA674 PASS jewelry 22 native unequip
+CA674 PASS jewelry 22 second native toss
+CA674 PASS jewelry 23 native repickup
+CA674 PASS jewelry 23 recovered exact metadata
+CA674 PASS jewelry 23 exact native equip
+CA674 PASS jewelry 23 native unequip
+CA674 PASS jewelry 23 second native toss
+CA674 PASS jewelry 24 native repickup
+CA674 PASS jewelry 24 recovered exact metadata
+CA674 PASS jewelry 24 exact native equip
+CA674 PASS jewelry 24 native unequip
+CA674 PASS jewelry 24 second native toss
+CA674 PASS jewelry 25 native repickup
+CA674 PASS jewelry 25 recovered exact metadata
+CA674 PASS jewelry 25 exact native equip
+CA674 PASS jewelry 25 native unequip
+CA674 PASS jewelry 25 second native toss
+CA674 PASS jewelry 26 native repickup
+CA674 PASS jewelry 26 recovered exact metadata
+CA674 PASS jewelry 26 exact native equip
+CA674 PASS jewelry 26 native unequip
+CA674 PASS jewelry 26 second native toss
+CA674 PASS jewelry 27 native repickup
+CA674 PASS jewelry 27 recovered exact metadata
+CA674 PASS jewelry 27 exact native equip
+CA674 PASS jewelry 27 native unequip
+CA674 PASS jewelry 27 second native toss
+CA674 PASS jewelry 28 native repickup
+CA674 PASS jewelry 28 recovered exact metadata
+CA674 PASS jewelry 28 exact native equip
+CA674 PASS jewelry 28 native unequip
+CA674 PASS jewelry 28 second native toss
+CA674 PASS jewelry 29 native repickup
+CA674 PASS jewelry 29 recovered exact metadata
+CA674 PASS jewelry 29 exact native equip
+CA674 PASS jewelry 29 native unequip
+CA674 PASS jewelry 29 second native toss
+CA674 PASS jewelry 30 native repickup
+CA674 PASS jewelry 30 recovered exact metadata
+CA674 PASS jewelry 30 exact native equip
+CA674 PASS jewelry 30 native unequip
+CA674 PASS jewelry 30 second native toss
+CA674 PASS jewelry 31 native repickup
+CA674 PASS jewelry 31 recovered exact metadata
+CA674 PASS jewelry 31 exact native equip
+CA674 PASS jewelry 31 native unequip
+CA674 PASS jewelry 31 second native toss
+CA674 PASS jewelry 32 native repickup
+CA674 PASS jewelry 32 recovered exact metadata
+CA674 PASS jewelry 32 exact native equip
+CA674 PASS jewelry 32 native unequip
+CA674 PASS jewelry 32 second native toss
+CA674 PASS jewelry 33 native repickup
+CA674 PASS jewelry 33 recovered exact metadata
+CA674 PASS jewelry 33 exact native equip
+CA674 PASS jewelry 33 native unequip
+CA674 PASS jewelry 33 second native toss
+CA674 PASS jewelry 34 native repickup
+CA674 PASS jewelry 34 recovered exact metadata
+CA674 PASS jewelry 34 exact native equip
+CA674 PASS jewelry 34 native unequip
+CA674 PASS jewelry 34 second native toss
+CA674 PASS jewelry 35 native repickup
+CA674 PASS jewelry 35 recovered exact metadata
+CA674 PASS jewelry 35 exact native equip
+CA674 PASS jewelry 35 native unequip
+CA674 PASS jewelry 35 second native toss
+CA674 PASS jewelry 36 native repickup
+CA674 PASS jewelry 36 recovered exact metadata
+CA674 PASS jewelry 36 exact native equip
+CA674 PASS jewelry 36 native unequip
+CA674 PASS jewelry 36 second native toss
+CA674 PASS jewelry 37 native repickup
+CA674 PASS jewelry 37 recovered exact metadata
+CA674 PASS jewelry 37 exact native equip
+CA674 PASS jewelry 37 native unequip
+CA674 PASS jewelry 37 second native toss
+CA674 PASS jewelry 38 native repickup
+CA674 PASS jewelry 38 recovered exact metadata
+CA674 PASS jewelry 38 exact native equip
+CA674 PASS jewelry 38 native unequip
+CA674 PASS jewelry 38 second native toss
+CA674 PASS jewelry 39 native repickup
+CA674 PASS jewelry 39 recovered exact metadata
+CA674 PASS jewelry 39 exact native equip
+CA674 PASS jewelry 39 native unequip
+CA674 PASS jewelry 39 second native toss
+CA674 PASS jewelry 40 native repickup
+CA674 PASS jewelry 40 recovered exact metadata
+CA674 PASS jewelry 40 exact native equip
+CA674 PASS jewelry 40 native unequip
+CA674 PASS jewelry 40 second native toss
+CA674 PASS jewelry 41 native repickup
+CA674 PASS jewelry 41 recovered exact metadata
+CA674 PASS jewelry 41 exact native equip
+CA674 PASS jewelry 41 native unequip
+CA674 PASS jewelry 41 second native toss
+CA674 PASS all variants retain separate identity after equip and drop
+CA674 COMPLETE failures=0

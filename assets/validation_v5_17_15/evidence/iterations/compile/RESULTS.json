@@ -1,0 +1,23 @@
+{
+  "issue": 674,
+  "kind": "jewelry",
+  "scope": "Native pickup/toss, quantity and saved ownership for jewelry; no normal menu or author acceptance.",
+  "baseline_sha256": "4bef58513f71b4b77e759a063f435e38ccdf024655478da29aa557cf55363c65",
+  "runtime_sha256": "4bef58513f71b4b77e759a063f435e38ccdf024655478da29aa557cf55363c65",
+  "model_sha256": "fe4c9efe322107f116bb0fc8502f32d33ff5f939b4c452e3b4c6bd9b846a0e8d",
+  "fixture_sha256": "50f2d38447bef58898c055a1019f4c18c1155cd821351d6307d2f0f5d6a6baae",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "visual",
+      "exit_code": 1,
+      "passed": false,
+      "errors": [
+        "Script error, \"fixture.pk3:zscript\" line 86:",
+        "Expected 715 native assertions, observed 0"
+      ],
+      "assertions": 0
+    }
+  ],
+  "captures": {}
+}

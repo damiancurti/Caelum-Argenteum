@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.14** - 2026-11-13.
+Documentation version: **5.17.15** - 2026-11-13.
+
+## 5.17.15 - Jewelry drop models (#674)
+
+Nine owned models cover four amulet and five seal designs, including legacy
+seal drops, with independent editable bodies, reliefs, gems and links. Rules
+and icons are unchanged. Static and native visual checks are separate from
+author acceptance; all five native phases pass 3,326 checks and the isolated
+presentation comparison is recorded in ASSETS. Author review remains pending.
+This is another focused #647 slice. Remaining characters, garments, armor,
+weapons, materials and campaign authoring are still unfinished.
 
 ## 5.17.12 - Consumable water-ration model (#668)
 

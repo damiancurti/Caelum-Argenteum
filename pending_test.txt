@@ -102,3 +102,8 @@ CA672-LOCKS-01 | Origin: 5.17.14 / #672
 Prerequisites: current package. Run python assets/validation_v5_17_14/run_lock_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/locks-author-01 --interactive in an isolated configuration; do not use a campaign save.
 Steps: F9 selects an item and F10 rotates it; F5 restores player control. Inspect the sixteen instances, collect them and confirm the ordinary inventory shows two distinct copies of all eight lock/key/tool types. Move eligible tools through the Box and drop/recover individual items using normal menus.
 Expected: actual 3D volume using the existing shared gold-key/blue-ribbon representation, original icons and distinct native type/pair identities. No separate padlock/picks art is introduced here. Report appearance and ordinary-menu results separately; #382 acceptance and earlier pending author checks remain unchanged.
+
+CA674-JEWELRY-01 | Origin: 5.17.15 / #674
+Prerequisites: current package. Run python assets/validation_v5_17_15/run_jewelry_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/jewelry-author-01 --interactive in an isolated configuration; do not use a campaign save.
+Steps: F9 selects one of the nine designs and F10 rotates it; F5 restores player control. Inspect fronts, edges, backs and independent links, then collect several types/qualities and use the ordinary equip, unequip, Box and drop menus. Repeat after saving/loading.
+Expected: volumetric gems/medallions and chains, original quality icons and equipment behavior, preserved type/quality/ownership. World quality presentation remains one image per type, as before. Report appearance separately from normal-menu results; worn models and channeling effects are outside this patch.
