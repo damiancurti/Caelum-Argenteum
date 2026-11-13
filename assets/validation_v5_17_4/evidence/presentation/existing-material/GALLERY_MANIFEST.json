@@ -1,0 +1,234 @@
+{
+  "issue": 463,
+  "scope": "isolated_visual_inspection_not_campaign",
+  "baseline_materials": true,
+  "geometry": {
+    "sectors": 4,
+    "vertices": 12,
+    "linedefs": 15
+  },
+  "subjects": [
+    {
+      "region": "Litoral",
+      "catalogue_id": "CA-FOLK-006",
+      "kind": "pombero",
+      "class": "CA455PomberoPreview",
+      "position": [
+        -768,
+        0,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Selva",
+      "catalogue_id": "CA-FOLK-006",
+      "kind": "pombero",
+      "class": "CA455PomberoPreview",
+      "position": [
+        -256,
+        0,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Patagonia",
+      "catalogue_id": "CA-FOLK-053",
+      "kind": "cuero",
+      "class": "CA455CueroPreview",
+      "position": [
+        256,
+        0,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Patagonia",
+      "catalogue_id": "CA-FOLK-055",
+      "kind": "nahuelito",
+      "class": "CA455NahuelitoPreview",
+      "position": [
+        704,
+        0,
+        0
+      ],
+      "angle": 180
+    }
+  ],
+  "views": [
+    {
+      "id": "overview",
+      "position": [
+        0,
+        -160,
+        1400
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "litoral",
+      "position": [
+        -768,
+        -110,
+        60
+      ],
+      "target": [
+        -768,
+        0,
+        16
+      ]
+    },
+    {
+      "id": "selva",
+      "position": [
+        -256,
+        -110,
+        60
+      ],
+      "target": [
+        -256,
+        0,
+        16
+      ]
+    },
+    {
+      "id": "patagonia",
+      "position": [
+        512,
+        -480,
+        240
+      ],
+      "target": [
+        640,
+        0,
+        80
+      ]
+    },
+    {
+      "id": "player",
+      "control": true
+    },
+    {
+      "id": "cuero",
+      "position": [
+        256,
+        -155,
+        85
+      ],
+      "target": [
+        256,
+        0,
+        12
+      ]
+    },
+    {
+      "id": "nahuelito",
+      "position": [
+        960,
+        -300,
+        260
+      ],
+      "target": [
+        704,
+        0,
+        120
+      ]
+    },
+    {
+      "id": "litoral-tiles",
+      "position": [
+        -768,
+        -280,
+        200
+      ],
+      "target": [
+        -768,
+        -280,
+        0
+      ]
+    },
+    {
+      "id": "selva-tiles",
+      "position": [
+        -256,
+        -280,
+        70
+      ],
+      "target": [
+        -256,
+        -280,
+        0
+      ]
+    },
+    {
+      "id": "patagonia-tiles",
+      "position": [
+        384,
+        -280,
+        120
+      ],
+      "target": [
+        384,
+        -280,
+        0
+      ]
+    }
+  ],
+  "source_sha256": {
+    "assets/source/art/regional_gallery_463/GALLERY.json": "c4414a14c9d1b30414a6c3e97ecd3494e56301dd4c21fda43a09f0583251bc37",
+    "assets/bestiary/REGION_PROPOSAL.json": "34218ccf0194132336c7ff04ae5c1c9d2a8c1bad488defca907fb9149a52d004",
+    "assets/validation_v5_17_4/build_gallery.py": "66647d29c9ea84dc413ddc0413513d31192a97dcbed1374913fe4a2e4de54368",
+    "assets/validation_v5_17_4/gallery.zs": "20e430edd4d518ff9462cbb28e70a70bb9595faa0dbc7153a3a2e852065c1c0d",
+    "assets/bestiary/models/cuero/models/caelum/folklore/cuero/cuero.md3": "1cdc87de0d854542a75bfd6508bd759f2eeef048e5075cc88b05f0dc5c5c0a8c",
+    "assets/bestiary/models/cuero/models/caelum/folklore/cuero/materials.png": "9cbf0cc1e59a6bd09e6bcae65a714b08c8f6ea45f63271fc73678913dea4afd4",
+    "assets/bestiary/models/cuero/ZSCRIPT": "ebb5e3abd925e51d379215d07a609ced0cc47c853b2baddb4ba421760761923f",
+    "assets/bestiary/models/cuero/MODELDEF": "77fdbf3b8a59831a00ed217a6cb84b48b5ded8fbe69f28ec3956eaa45518541f",
+    "assets/bestiary/models/cuero/TEXTURES": "b4cf54eaf44dc10ad48481d31099663e484c3b75debb3ee2142891b6a3076d75",
+    "assets/bestiary/models/nahuelito/models/caelum/folklore/nahuelito/nahuelito.md3": "f6f9d0fecb8e75b1551e97ce3e5b2dc22dba736e714ddc96df806307640a5e51",
+    "assets/bestiary/models/nahuelito/models/caelum/folklore/nahuelito/skin.png": "602ef95f83053451576bf9b976ee45bdd3376763c990f06f27f905d89e7776e5",
+    "assets/bestiary/models/nahuelito/models/caelum/props/stations/ca_station_brass.png": "8b231a9556f30af1b2c3d11ee5e4e4d6b63f7336a5301d225bb7f4f43c5639cc",
+    "assets/bestiary/models/nahuelito/models/caelum/props/stash/ca_stash_inside.png": "6573658a5e61c4c8f75046435e8e8d1f1e85e6348007c69fc911483fe579fac4",
+    "assets/bestiary/models/nahuelito/MODELDEF": "7e1bf76f911dbf921bc1b074d29454024c830a45f9ff65f0c88df3d6aecd1320",
+    "assets/bestiary/models/nahuelito/TEXTURES": "507732cfd3b0b4fffe830f1212eeef24ccbbd3ddb182bb57695ef2341b499b00",
+    "assets/bestiary/models/nahuelito/ZSCRIPT": "52e3f0f852b23ad26310a3eb38c0fcf2c12a52d9cb9b9131e7c668816aad0d05",
+    "assets/bestiary/models/pombero/models/caelum/folklore/pombero/pombero.md3": "3150d7235c4093a899fa9d477006bfe6dcf3a1e9d91ab0c8ad9127383534ef5f",
+    "assets/bestiary/models/pombero/models/caelum/folklore/pombero/materials.png": "6d72eeb0a43b98a279fb3119f28b06bffd5d353e9e39da0ab8036559e06f62cc",
+    "assets/bestiary/models/pombero/models/caelum/folklore/pombero/dark.png": "6573658a5e61c4c8f75046435e8e8d1f1e85e6348007c69fc911483fe579fac4",
+    "assets/bestiary/models/pombero/ZSCRIPT": "08c00ac5339210125902599a2f72a6a132dd6e072258d1046645af362cb1576a",
+    "assets/bestiary/models/pombero/MODELDEF": "e2554c35f8eb833de28978e9459fa65cd90cd3c170470918f698e7bb7985ec29",
+    "assets/bestiary/models/pombero/TEXTURES": "a2f6e9c5da6439ca24cb83cb15511faaa4576aa42bb952d9520c8e7ec8ceeba6",
+    "assets/bestiary/models/pombero/models/caelum/folklore/pombero/face.png": "d342e4b31ec8da9f7933f216a14ca9fd92299ec8315ca72dd68cb857ff9b3a0c"
+  },
+  "fixture_sha256": "82c235744eff662d9235b4e5b0e7131eae95a36b90c4f5e6b7e8f07e29a095d2",
+  "sha256": {
+    "models/caelum/folklore/cuero/cuero.md3": "1cdc87de0d854542a75bfd6508bd759f2eeef048e5075cc88b05f0dc5c5c0a8c",
+    "models/caelum/folklore/cuero/materials.png": "9cbf0cc1e59a6bd09e6bcae65a714b08c8f6ea45f63271fc73678913dea4afd4",
+    "ca463/cuero/zscript.txt": "f49e7da4a35f02624d614963b62d6e05b957862b48062e4cbb9e888e10ec36af",
+    "ca463/cuero/modeldef.txt": "77fdbf3b8a59831a00ed217a6cb84b48b5ded8fbe69f28ec3956eaa45518541f",
+    "ca463/cuero/textures.txt": "b4cf54eaf44dc10ad48481d31099663e484c3b75debb3ee2142891b6a3076d75",
+    "models/caelum/folklore/nahuelito/nahuelito.md3": "f6f9d0fecb8e75b1551e97ce3e5b2dc22dba736e714ddc96df806307640a5e51",
+    "models/caelum/folklore/nahuelito/skin.png": "602ef95f83053451576bf9b976ee45bdd3376763c990f06f27f905d89e7776e5",
+    "ca463/nahuelito/modeldef.txt": "7e1bf76f911dbf921bc1b074d29454024c830a45f9ff65f0c88df3d6aecd1320",
+    "ca463/nahuelito/textures.txt": "507732cfd3b0b4fffe830f1212eeef24ccbbd3ddb182bb57695ef2341b499b00",
+    "ca463/nahuelito/zscript.txt": "1d9ac30b2e9e2253148f99f878c4c54f9c9e8da02c2a94a62040e1941dde2259",
+    "models/caelum/folklore/pombero/pombero.md3": "3150d7235c4093a899fa9d477006bfe6dcf3a1e9d91ab0c8ad9127383534ef5f",
+    "models/caelum/folklore/pombero/materials.png": "6d72eeb0a43b98a279fb3119f28b06bffd5d353e9e39da0ab8036559e06f62cc",
+    "models/caelum/folklore/pombero/dark.png": "6573658a5e61c4c8f75046435e8e8d1f1e85e6348007c69fc911483fe579fac4",
+    "ca463/pombero/zscript.txt": "e20fddfb4d73f730738bfd4f9bc75efeaa7663fa76ddbdc6c8b93fe9c493d6bd",
+    "ca463/pombero/modeldef.txt": "e2554c35f8eb833de28978e9459fa65cd90cd3c170470918f698e7bb7985ec29",
+    "ca463/pombero/textures.txt": "a2f6e9c5da6439ca24cb83cb15511faaa4576aa42bb952d9520c8e7ec8ceeba6",
+    "models/caelum/folklore/pombero/face.png": "d342e4b31ec8da9f7933f216a14ca9fd92299ec8315ca72dd68cb857ff9b3a0c",
+    "ca463/gallery.zs": "4a4b75020a13029b28fc0f41261ba9594ae10fe52818cb31f890f2f76f835bf4",
+    "ZSCRIPT": "09ebec171331f87d58a18fca3667a278e7f9b578ea04a64c1b5191aafb0200a6",
+    "MODELDEF": "8914e1ec32501b46c788f26a90954717a25c0007d7312d71e9bcdca66d0a9f98",
+    "TEXTURES": "d19a23a46d527a3f0f6b91a1caa3531121ab317a2101a330115c4a68236951b2",
+    "MAPINFO": "9c1cdabc5fed29c76c700212a2dd30e1dcb09e66e88356dd3fcdaec90a404f8a",
+    "maps/CA463G.wad": "5e1c34862b6ce54f50a485d70b2befeeb9055781fea4f00b0a85af29f37db6f2"
+  }
+}

@@ -1,0 +1,368 @@
+{
+  "issue": 463,
+  "version": "5.17.4",
+  "date": "2026-11-13",
+  "author_accepted": false,
+  "scope": "First regional materials/inspection slice. Three new original ground images; four displays of three preserved visual-pilot identities, not production encounters.",
+  "runtime": {
+    "local_path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-463\\build\\issue463-regions01.pk3",
+    "sha256": "5e301d8bbe651d1f3d834b031ba3b505e0ea8c1fed963c215e4686f24613aa9f",
+    "source_entries": 18179,
+    "source_mismatches": []
+  },
+  "baseline": {
+    "sha256": "462016cb0055538e1289d07debb3e01e891419bd4961eccdc8c9cd789fa3a24a",
+    "new_resources": [
+      "caelum/data/regional_materials.textures",
+      "graphics/caelum/textures/regions_463/litoral_ground-v1.png",
+      "graphics/caelum/textures/regions_463/patagonia_ground-v1.png",
+      "graphics/caelum/textures/regions_463/selva_ground-v1.png"
+    ],
+    "changed_resources": [
+      "TEXTURES",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "all_other_runtime_bytes_identical": true
+  },
+  "static": {
+    "material_export_repeat_check_passed": true,
+    "gallery_export_repeat_byte_check_passed": true,
+    "ammunition_resources_byte_identical": 8,
+    "gallery_geometry": {
+      "sectors": 4,
+      "vertices": 12,
+      "linedefs": 15
+    },
+    "pilot_source_hashes": {
+      "assets/source/art/regional_gallery_463/GALLERY.json": "c4414a14c9d1b30414a6c3e97ecd3494e56301dd4c21fda43a09f0583251bc37",
+      "assets/bestiary/REGION_PROPOSAL.json": "34218ccf0194132336c7ff04ae5c1c9d2a8c1bad488defca907fb9149a52d004",
+      "assets/validation_v5_17_4/build_gallery.py": "66647d29c9ea84dc413ddc0413513d31192a97dcbed1374913fe4a2e4de54368",
+      "assets/validation_v5_17_4/gallery.zs": "20e430edd4d518ff9462cbb28e70a70bb9595faa0dbc7153a3a2e852065c1c0d",
+      "assets/bestiary/models/cuero/models/caelum/folklore/cuero/cuero.md3": "1cdc87de0d854542a75bfd6508bd759f2eeef048e5075cc88b05f0dc5c5c0a8c",
+      "assets/bestiary/models/cuero/models/caelum/folklore/cuero/materials.png": "9cbf0cc1e59a6bd09e6bcae65a714b08c8f6ea45f63271fc73678913dea4afd4",
+      "assets/bestiary/models/cuero/ZSCRIPT": "ebb5e3abd925e51d379215d07a609ced0cc47c853b2baddb4ba421760761923f",
+      "assets/bestiary/models/cuero/MODELDEF": "77fdbf3b8a59831a00ed217a6cb84b48b5ded8fbe69f28ec3956eaa45518541f",
+      "assets/bestiary/models/cuero/TEXTURES": "b4cf54eaf44dc10ad48481d31099663e484c3b75debb3ee2142891b6a3076d75",
+      "assets/bestiary/models/nahuelito/models/caelum/folklore/nahuelito/nahuelito.md3": "f6f9d0fecb8e75b1551e97ce3e5b2dc22dba736e714ddc96df806307640a5e51",
+      "assets/bestiary/models/nahuelito/models/caelum/folklore/nahuelito/skin.png": "602ef95f83053451576bf9b976ee45bdd3376763c990f06f27f905d89e7776e5",
+      "assets/bestiary/models/nahuelito/models/caelum/props/stations/ca_station_brass.png": "8b231a9556f30af1b2c3d11ee5e4e4d6b63f7336a5301d225bb7f4f43c5639cc",
+      "assets/bestiary/models/nahuelito/models/caelum/props/stash/ca_stash_inside.png": "6573658a5e61c4c8f75046435e8e8d1f1e85e6348007c69fc911483fe579fac4",
+      "assets/bestiary/models/nahuelito/MODELDEF": "7e1bf76f911dbf921bc1b074d29454024c830a45f9ff65f0c88df3d6aecd1320",
+      "assets/bestiary/models/nahuelito/TEXTURES": "507732cfd3b0b4fffe830f1212eeef24ccbbd3ddb182bb57695ef2341b499b00",
+      "assets/bestiary/models/nahuelito/ZSCRIPT": "52e3f0f852b23ad26310a3eb38c0fcf2c12a52d9cb9b9131e7c668816aad0d05",
+      "assets/bestiary/models/pombero/models/caelum/folklore/pombero/pombero.md3": "3150d7235c4093a899fa9d477006bfe6dcf3a1e9d91ab0c8ad9127383534ef5f",
+      "assets/bestiary/models/pombero/models/caelum/folklore/pombero/materials.png": "6d72eeb0a43b98a279fb3119f28b06bffd5d353e9e39da0ab8036559e06f62cc",
+      "assets/bestiary/models/pombero/models/caelum/folklore/pombero/dark.png": "6573658a5e61c4c8f75046435e8e8d1f1e85e6348007c69fc911483fe579fac4",
+      "assets/bestiary/models/pombero/ZSCRIPT": "08c00ac5339210125902599a2f72a6a132dd6e072258d1046645af362cb1576a",
+      "assets/bestiary/models/pombero/MODELDEF": "e2554c35f8eb833de28978e9459fa65cd90cd3c170470918f698e7bb7985ec29",
+      "assets/bestiary/models/pombero/TEXTURES": "a2f6e9c5da6439ca24cb83cb15511faaa4576aa42bb952d9520c8e7ec8ceeba6",
+      "assets/bestiary/models/pombero/models/caelum/folklore/pombero/face.png": "d342e4b31ec8da9f7933f216a14ca9fd92299ec8315ca72dd68cb857ff9b3a0c"
+    },
+    "project_validation_passed": true
+  },
+  "native": {
+    "runs": [
+      {
+        "phase": "fresh",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 16,
+        "expected_assertions": 16
+      },
+      {
+        "phase": "reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 20,
+        "expected_assertions": 20
+      }
+    ],
+    "assertions": 36,
+    "scope": "Class/position/camera references, native idle advancement, save/reload, real +forward and +moveright crossing the two plot boundaries. Original models and preview classes unchanged; no combat or campaign identity test."
+  },
+  "presentation": [
+    {
+      "kind": "existing-material",
+      "pid": 47164,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 211039574.5204,
+        "END": 211059599.5979
+      },
+      "fixture_sha256": "82c235744eff662d9235b4e5b0e7131eae95a36b90c4f5e6b7e8f07e29a095d2",
+      "bench_sha256": "85e4f93c6a855f6319a109175a013478769bf3c7f1b6d81360bf2008209e147c",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.571104428571427,
+        "p50_ms": 28.5672,
+        "p95_ms": 28.9661,
+        "p99_ms": 29.0514,
+        "max_ms": 29.3648
+      },
+      "presentation": {
+        "pid": 47164,
+        "trace_sha256": "854d0994d3f2406279ef416482b47024dfb8f3625cfd4457b4615f6195993398",
+        "rows": 44901,
+        "scene_presents": 32408,
+        "mean_present_fps": 1849.268496960293,
+        "present_intervals": {
+          "samples": 32407,
+          "mean_ms": 0.5407543586254429,
+          "p50_ms": 0.5180000066757202,
+          "p95_ms": 0.7010000050067902,
+          "p99_ms": 0.8260000050067902,
+          "max_ms": 1.411899983882904
+        },
+        "native_call_duration": {
+          "samples": 32408,
+          "mean_ms": 0.07384801905954423,
+          "p50_ms": 0.07179999351501465,
+          "p95_ms": 0.09630000591278076,
+          "p99_ms": 0.11919999122619629,
+          "max_ms": 0.41940000653266907
+        }
+      }
+    },
+    {
+      "kind": "regional-materials",
+      "pid": 11752,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 211073565.3106,
+        "END": 211093588.7697
+      },
+      "fixture_sha256": "0f1fcd08b6627e93aade63e2e6bbd8b00affae52ca061d7b198cda1fbbc94e2b",
+      "bench_sha256": "85e4f93c6a855f6319a109175a013478769bf3c7f1b6d81360bf2008209e147c",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.57109442857143,
+        "p50_ms": 28.5797,
+        "p95_ms": 28.9498,
+        "p99_ms": 29.0464,
+        "max_ms": 29.2853
+      },
+      "presentation": {
+        "pid": 11752,
+        "trace_sha256": "0483a6a2e4894df9021548ad4c6d5b63c07450f3b3ae327193d0d90aff71bcdc",
+        "rows": 45115,
+        "scene_presents": 32598,
+        "mean_present_fps": 1860.2423444330325,
+        "present_intervals": {
+          "samples": 32597,
+          "mean_ms": 0.5375643678860463,
+          "p50_ms": 0.5130000114440918,
+          "p95_ms": 0.7081999778747559,
+          "p99_ms": 0.8316999971866608,
+          "max_ms": 1.209500014781952
+        },
+        "native_call_duration": {
+          "samples": 32598,
+          "mean_ms": 0.07435686552248101,
+          "p50_ms": 0.07209998369216919,
+          "p95_ms": 0.0964999794960022,
+          "p99_ms": 0.12150001525878906,
+          "max_ms": 0.5760999917984009
+        }
+      }
+    }
+  ],
+  "art": {
+    "mode": "Built-in image_gen, three independent generations, original pixels unchanged",
+    "source": "assets/source/art/regional_gallery_463",
+    "provenance": {
+      "issue": 463,
+      "method": "Built-in image_gen; three independent original opaque ground materials, no raster edits.",
+      "date": "2026-11-13",
+      "images": {
+        "litoral_ground": {
+          "original_path": "C:\\Users\\dcc70\\.codex\\generated_images\\01a1d17b-9a43-7901-bffe-eb3e4a27f8d4\\exec-a8979305-1626-4bcc-9a2a-91721cd5183e.png",
+          "source": "litoral_ground-v1.png",
+          "sha256": "709d370daae729387bbc10507c486d6e79f8ea397de29c447f789d4f8035bb62",
+          "prompt": "litoral_ground-v1.prompt.txt",
+          "prompt_sha256": "3254af425e38762c26733dc22c6070dffb828e6a291d652663601b4650fe45c7",
+          "native_world_tile_map_units": [
+            128,
+            128
+          ],
+          "original_pixels_unchanged": true
+        },
+        "selva_ground": {
+          "original_path": "C:\\Users\\dcc70\\.codex\\generated_images\\01a1d17b-9a43-7901-bffe-eb3e4a27f8d4\\exec-59bd558b-9058-4c20-9df1-e298350cf5c9.png",
+          "source": "selva_ground-v1.png",
+          "sha256": "b059820b642a1fd7a928cebca685f0b4d19b98879cc9c6a7a64d77ef3e12b16b",
+          "prompt": "selva_ground-v1.prompt.txt",
+          "prompt_sha256": "fdbce2c9eb9a457a4b31bd2efeb0fe44b0f8a999a649b59c2cd33ff4269f2bef",
+          "native_world_tile_map_units": [
+            32,
+            32
+          ],
+          "original_pixels_unchanged": true
+        },
+        "patagonia_ground": {
+          "original_path": "C:\\Users\\dcc70\\.codex\\generated_images\\01a1d17b-9a43-7901-bffe-eb3e4a27f8d4\\exec-7658c88b-801e-48ba-88db-c1de5b47d5df.png",
+          "source": "patagonia_ground-v1.png",
+          "sha256": "b59111904cd86f10df351acbe4d150dab9a671274069bd50b76a4c88cb51a5ec",
+          "prompt": "patagonia_ground-v1.prompt.txt",
+          "prompt_sha256": "87072b131ff5c6593b2d06e219eeaf44595cd84d025f29370d177a4800c2228c",
+          "native_world_tile_map_units": [
+            64,
+            64
+          ],
+          "original_pixels_unchanged": true
+        }
+      }
+    },
+    "native_model_and_repeated_floor_views_inspected": true,
+    "author_art_review_pending": "CA463-REGIONS-01"
+  },
+  "environment": {
+    "os": "Windows 11 Pro 26200",
+    "cpu": "Ryzen 9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX 3070 Ti",
+    "engine": "GZDoom 4.14.2",
+    "backend": "Vulkan",
+    "resolution": [
+      1280,
+      720
+    ],
+    "uncapped_presentation": true,
+    "vsync": false,
+    "background_unpaused": true,
+    "audio": 0.05
+  },
+  "iterations": {
+    "visual01": "11 class/position checks and images only. Final queued animation netevent was followed immediately by quit, so it did not execute; no animation evidence despite the old runner passed flag.",
+    "native02": "Added event barrier and exact assertion counts; 34 fresh/reload/motion/walk checks pass, before the cross-region route extension.",
+    "visual03": "Lower-ceiling diagnostic changes overview framing and crops Nahuelito. Restore the earlier 2048-MU gallery ceiling; no production map altered.",
+    "native_final01": "New crossing test fails: its 210-tic duration is too short. Other 35 checks across fresh/reload pass. Keep the failure.",
+    "cross_debug01": "Absolute -loadgame path is incorrectly prefixed by this engine with -savedir; fatal startup. Only the owned failed process was stopped. Runner now copies the preserved checkpoint into the new isolated save directory and detects the fatal log.",
+    "cross_debug02": "Native trace shows x=-768 to -163.186 in210tics: first regional boundary is traversable, second has not been reached. Double diagnostic duration to420 without changing game speed.",
+    "native_final02": "All36 required checks pass; x=-768 to631.462 crosses both boundaries at native speed."
+  },
+  "qualifications": [
+    "One sequential 700-tic pair with the same four pilot displays and same geometry. Baseline uses existing CMST01 ground, candidate uses the three new materials. No repeatability, campaign, city or siege budget claim.",
+    "Queue-present intervals are not GPU timing or display scanout; tic intervals are not CPU cost.",
+    "Pombero is shown twice in its two approved regions. Displays are original preview actors, not duplicate campaign identities or authored population counts.",
+    "Original pilot animation, render scale and materials stay unchanged; no body/collision, swimming, wrapping, combat or new physics approval is inferred.",
+    "New textures are installed under distinct names. Existing map geometry and pixels remain unchanged; no city/siege rerun is claimed for this isolated slice.",
+    "The #652 TEXTURES dependency hash was refreshed for the new include; all eight ammunition runtime resources remain byte-identical.",
+    "Other regional creatures/materials and the broader #463 urban/sewer finish remain unfinished. No PK3, WAD, executable, DLL or save distributed."
+  ],
+  "files": {
+    "ammunition-source-refresh.json": "a78b785e850ac53d2a68adcd32266cf8e565ea95364e6f050ecf4d3ee379e2dc",
+    "build.log": "3723ea6401a183b27066ef8b122f28e25268c318d70148983fb31900c5619a8e",
+    "iterations/cross-debug01/gallery.zs": "4a4b75020a13029b28fc0f41261ba9594ae10fe52818cb31f890f2f76f835bf4",
+    "iterations/cross-debug01/GALLERY_MANIFEST.json": "3d12b2108caef94a7ff1f1764303c3817c9fb2d93c0ad1dd32a175035e7efc6f",
+    "iterations/cross-debug01/reload-process.log": "b309c92c8ad8acc7d68b79450b4e0cc006680fa457110aaff04afa97d4b3f7d4",
+    "iterations/cross-debug01/reload.cfg": "8d8ee7d6411af69969254d49091aacc5be242c904d5ed956ee98f0c26d4208a6",
+    "iterations/cross-debug01/reload.log": "f2bb3373b3671a770862fb32f042926e2ac16b0282aecf99483f66feef24267a",
+    "iterations/cross-debug01/RESULTS.json": "5b734e881831721362e72884a4dd9cddc7ff54a9bb6249dd255b7e905e44e024",
+    "iterations/cross-debug01/session.ini": "4f019451a370c73cd9466c86fe2b4e729120394c721d1940f3d60e9962203bcd",
+    "iterations/cross-debug01/TEXTMAP.txt": "41a51e63d40aaa44367e0fdeff103b786dcf6941ff5b802806bb2175aa9ec449",
+    "iterations/cross-debug02/gallery.zs": "4a4b75020a13029b28fc0f41261ba9594ae10fe52818cb31f890f2f76f835bf4",
+    "iterations/cross-debug02/GALLERY_MANIFEST.json": "3d12b2108caef94a7ff1f1764303c3817c9fb2d93c0ad1dd32a175035e7efc6f",
+    "iterations/cross-debug02/reload-process.log": "a570294137343e36046e7cb097ed16ba260a0b7b4c17f52f70b66fb8d1f36df2",
+    "iterations/cross-debug02/reload.cfg": "8d8ee7d6411af69969254d49091aacc5be242c904d5ed956ee98f0c26d4208a6",
+    "iterations/cross-debug02/reload.log": "a826267c7d6251ba014ed29415519f60a0fff041a6fbc3ef0db9f161fcfa19d9",
+    "iterations/cross-debug02/RESULTS.json": "f0454d5f4fda4831f97d974171cadf70c027e12c05e992dd6b9df03c26bab1a8",
+    "iterations/cross-debug02/session.ini": "298f31a7f46fd6709e89f932e392705df1758d8903228b0ea89032ad62478b5a",
+    "iterations/cross-debug02/TEXTMAP.txt": "41a51e63d40aaa44367e0fdeff103b786dcf6941ff5b802806bb2175aa9ec449",
+    "iterations/material-export01.json": "fcb59164cd3de2d905b248e4c7e548e5cc2ec8d5c22e5602d1f8b9d90005b84e",
+    "iterations/native-final01/fresh-process.log": "cb9dbe99baa391935e13cc4812b83057c90bbd19c4809f070e2ec48f680e7c0b",
+    "iterations/native-final01/fresh.cfg": "9a14f90871948fdb1ba439713bcf51061bf526e057c203be096cd7b3850c77a9",
+    "iterations/native-final01/fresh.log": "407771b9720b8424e825e61026d4c6ef434c99da050871a3bfc64de1a5470f7c",
+    "iterations/native-final01/gallery.zs": "3d5f33cd5a6cd563aceeb3a6fd4fb8dde71158170e06217bdb85e7953061e500",
+    "iterations/native-final01/GALLERY_MANIFEST.json": "53621847b09b17e57c6f95ccdb2778d75ca62487c608c9409007d07ff9dd8dc8",
+    "iterations/native-final01/reload-process.log": "c84471044b4b3cf984a7e107f82a241cc4001bc5d751228197bc9b7ce1bf12e7",
+    "iterations/native-final01/reload.cfg": "8d8ee7d6411af69969254d49091aacc5be242c904d5ed956ee98f0c26d4208a6",
+    "iterations/native-final01/reload.log": "5dbe72750d39fd67454d78d4ed030acb43fd028651d7c0f7cc94d51a1d1a1666",
+    "iterations/native-final01/RESULTS.json": "04fc9f2421fa76abbc813b762ef194ba5e2a4a4303555f2859a5f63c95f25754",
+    "iterations/native-final01/session.ini": "c05b7db348a8d146243cef61f155ba2094c4e6c55023011fb8f49d0ee78d984c",
+    "iterations/native-final01/TEXTMAP.txt": "41a51e63d40aaa44367e0fdeff103b786dcf6941ff5b802806bb2175aa9ec449",
+    "iterations/native02/fresh-process.log": "d31cefe508b6c00888964bd72bbde64426a004b69b459f67625073cdee785706",
+    "iterations/native02/fresh.cfg": "9a14f90871948fdb1ba439713bcf51061bf526e057c203be096cd7b3850c77a9",
+    "iterations/native02/fresh.log": "a58312f2f8665a31c31a4534728e111fc88c56b71b44336295f06b220932626f",
+    "iterations/native02/gallery.zs": "bf4dcc383c9f802ff24e68a8afeeb9d8d5497d590cf2476f594268813aeab9e5",
+    "iterations/native02/GALLERY_MANIFEST.json": "f7cc5550f61e67c7523dbf337e746a16e00a962bd20bf97182659e40f5ba1962",
+    "iterations/native02/overview.png": "8782c1dea71f3b69da2cb5c08d030afc26bf6e764dc61e16ea56e2257fc000bf",
+    "iterations/native02/reload-process.log": "68488e91441cc1646ba152e7f9d68b72c860e5795d693e2dc2b21c57ccff8fea",
+    "iterations/native02/reload.cfg": "97159a9b6db09c257f898a42395cbfedc2f0dec39d8d5bf34e73658c27165ae8",
+    "iterations/native02/reload.log": "ec0aa38d6f13ac9394c349b3e0fbc092e7504b77a7c8ffc63471e100974cf2ad",
+    "iterations/native02/RESULTS.json": "818a2603a3e9db355c220d7047ed41cb211ad99f3fe1b0f816803fc8bd8a30cf",
+    "iterations/native02/session.ini": "1110cca020ff9a2cf8530a979174fbc803fb4b2af718e52905a3bb2dfb39ae9b",
+    "iterations/native02/TEXTMAP.txt": "41a51e63d40aaa44367e0fdeff103b786dcf6941ff5b802806bb2175aa9ec449",
+    "iterations/visual01/gallery.zs": "bf4dcc383c9f802ff24e68a8afeeb9d8d5497d590cf2476f594268813aeab9e5",
+    "iterations/visual01/GALLERY_MANIFEST.json": "f05b239170e801fdbf7cad8423d10b371b0f115bbf18cb7a58017d799adaf9cc",
+    "iterations/visual01/overview.png": "024e7beaae18245cab3b994d51c0482a19c1578cd299beb29cb6f75f4b32e947",
+    "iterations/visual01/RESULTS.json": "4d7901059b64467b15af1611fee02c87269bc781cba2178b7a61463406c0165b",
+    "iterations/visual01/session.ini": "459cd70732471922a93c81e0fbe4edf0d55e2d7f5e5fc13ce742c8b533d39e99",
+    "iterations/visual01/TEXTMAP.txt": "aaed39699def3104817c3ab5755c914b50c293110ca457300c8cfa726b04e922",
+    "iterations/visual01/visual-process.log": "33f1224006772914ddecf7049b679ecc6e406af781a69fab2b3a0d1e36113964",
+    "iterations/visual01/visual.cfg": "60ee3e68bb211188f2528d4a269ad8548c89d68ea3482f117089e1fab6982707",
+    "iterations/visual01/visual.log": "d30fc939a9cf537021ffd6d5350aae7925e96f178447a7c77bef4926584217e1",
+    "iterations/visual03/gallery.zs": "bf4dcc383c9f802ff24e68a8afeeb9d8d5497d590cf2476f594268813aeab9e5",
+    "iterations/visual03/GALLERY_MANIFEST.json": "87c1a1f86abb0fb79b3ea8fef76526d9c77c830ef76b3003109ffa0890693de9",
+    "iterations/visual03/overview.png": "c9b522c238149937549ecc9716327e6d09323f01d5fa791f91aba33131af409e",
+    "iterations/visual03/RESULTS.json": "8df98d4e278ed7d4068e34d3435cabc6ad9892a61ffbe24c7bd6428fab37e0e7",
+    "iterations/visual03/session.ini": "e9290b7af639e67304790f5367f26da3d3954ad4e153fe86792e74cb8931dd2b",
+    "iterations/visual03/TEXTMAP.txt": "6834afd453da9171788f21fa9dba3b364bb6d3bcd534b2b55416460dfb24fc4d",
+    "iterations/visual03/visual-process.log": "c7de33e7cb3b0bc73ad1c9dd7925d3ae39139b16bfdf3ac08514c88ab4dce4ef",
+    "iterations/visual03/visual.cfg": "dea24f4347bf4fb9b3be115b96fcf2150a2b1896046c4bd2ec4604e41baea829",
+    "iterations/visual03/visual.log": "8a1c5a848291937a560a2d5f26c45fe7b86b032aa9ab2ceb3913159681d5e554",
+    "material-export.json": "0845b75e6b96ad1e105ed250b6ddb048a1171bf32b26fc884596f5af9bfd01db",
+    "native/cuero.png": "1d600e845d58228e0764d7dfdb5b28f755b1b92d73357cac451ba041d14f5c3d",
+    "native/fresh-process.log": "954f5989367b7801ae787031451fe33e9bcacccb344656ec1f1d55da1c432830",
+    "native/fresh.cfg": "9a14f90871948fdb1ba439713bcf51061bf526e057c203be096cd7b3850c77a9",
+    "native/fresh.log": "8e659da3a20f93aa090f5e9f5d12962a7364aa1970b9bdca4354ee8a03db848d",
+    "native/gallery.zs": "4a4b75020a13029b28fc0f41261ba9594ae10fe52818cb31f890f2f76f835bf4",
+    "native/GALLERY_MANIFEST.json": "4c3d9d2c98b1b35f39847685a109174e12dca97d8c1743d04d5efd68b050a789",
+    "native/litoral-tiles.png": "f7f280254aa79b7a41c259d958c8a2b23971b08a7452f85d43b59d49f91df04b",
+    "native/litoral.png": "3bd6602afcd7aba279fd6fd09c82056d468b816088b4020a596d0292a647c4a5",
+    "native/nahuelito.png": "ff670da4de35202c521bd98ef11c104c9adf9dae65af40098c9a9139b852f360",
+    "native/overview.png": "ce5427db166e0a063e33c0a47d33fd84d8cf95fbe445ff1210c4581469a68eea",
+    "native/patagonia-tiles.png": "bcb0580b6d883f78b6198ac0a8fc4af17d8221861fe1ef339cd52883ef8cb294",
+    "native/patagonia.png": "0c7072f30d674a1ea3f34e223bd340fc05c1a0221fb9950b9be9ae3f54cb10a3",
+    "native/reload-process.log": "637160a77a488ad6ee309fbc0f85a9feb4dcfbbb72b8c785addc9c7ffb78d121",
+    "native/reload.cfg": "281f98b924b7ae0861e26eb4093c84254cc539604d9973b23ff5a3b2d86e370c",
+    "native/reload.log": "adac2568adc72bb2498bcc911062877675c7e961bf1b2b797603215afdf36dab",
+    "native/reload.png": "bfce4a4fe5954a1f86a0089288b63d9e71855cb3db207f0d182d27227e2b7ff6",
+    "native/RESULTS.json": "f35c7471d41d50c4d4f3b3f90cbdd79845b887bc75ff93dad91f0ce5635ada58",
+    "native/selva-tiles.png": "e8c3bcfe31e3c73f69552af8367d8f0c17cbd7b305097ce3443cce412b84aacc",
+    "native/selva.png": "6a2f836d768311dcc324384696cb60b8873604bad072498ec57e2a2ba1a0fae9",
+    "native/session.ini": "2c02fc15f667113d4cc1060b731f69106c80233156f23b96fc047d4f3e6c6571",
+    "native/TEXTMAP.txt": "41a51e63d40aaa44367e0fdeff103b786dcf6941ff5b802806bb2175aa9ec449",
+    "presentation/existing-material/bench-source/MAPINFO.txt": "b35d905b017c0b05cb609430cfd088d5e1ef0e7fce90af3f5f4fa818b5fc11ab",
+    "presentation/existing-material/bench-source/ZSCRIPT.txt": "b42974b17e8045a6475467dfa4dd19b7bdc7412574fa689fc2c59e2a652fc5c2",
+    "presentation/existing-material/commands.cfg": "84d6cb986f5ea60320b53674c471d9127a9af6833553e6c33fb6c3d30a57d675",
+    "presentation/existing-material/engine.log": "f273940199f47889d89636a3707100255b48aa5bcfc70a77331f26f40c60b428",
+    "presentation/existing-material/gallery.zs": "4a4b75020a13029b28fc0f41261ba9594ae10fe52818cb31f890f2f76f835bf4",
+    "presentation/existing-material/GALLERY_MANIFEST.json": "6eb5440a282010d16b068cc832dc3db602467ae86b04bb9ab1d8c82cf52ba52f",
+    "presentation/existing-material/presents.csv": "854d0994d3f2406279ef416482b47024dfb8f3625cfd4457b4615f6195993398",
+    "presentation/existing-material/process.log": "25a2a155b813be9902ba2cb07ed82806105f915c5db42ecf535663075617e323",
+    "presentation/existing-material/scene.png": "9cc4940ff783179453f45426a36816702109ddd472eb4fe0dc87e429d1d27dfd",
+    "presentation/existing-material/session.ini": "1543e5e4285ea4983c6bf3eede8f2dfbca76f8dd4ab0aee790546eca7f889966",
+    "presentation/existing-material/TEXTMAP.txt": "cad8d9422dc021a661b0c2e3d227a5f0f8b7ae0588b4d7ae19ddee4b5d4c7ed3",
+    "presentation/regional-materials/bench-source/MAPINFO.txt": "b35d905b017c0b05cb609430cfd088d5e1ef0e7fce90af3f5f4fa818b5fc11ab",
+    "presentation/regional-materials/bench-source/ZSCRIPT.txt": "b42974b17e8045a6475467dfa4dd19b7bdc7412574fa689fc2c59e2a652fc5c2",
+    "presentation/regional-materials/commands.cfg": "84d6cb986f5ea60320b53674c471d9127a9af6833553e6c33fb6c3d30a57d675",
+    "presentation/regional-materials/engine.log": "3d6d9d1b77f13b46c906b6ace6ca72c5e270e8459299889680c152b298c5d888",
+    "presentation/regional-materials/gallery.zs": "4a4b75020a13029b28fc0f41261ba9594ae10fe52818cb31f890f2f76f835bf4",
+    "presentation/regional-materials/GALLERY_MANIFEST.json": "4c3d9d2c98b1b35f39847685a109174e12dca97d8c1743d04d5efd68b050a789",
+    "presentation/regional-materials/presents.csv": "0483a6a2e4894df9021548ad4c6d5b63c07450f3b3ae327193d0d90aff71bcdc",
+    "presentation/regional-materials/process.log": "2671feb89d64a76cf1ecdd6e546064e15eb3d8ab52369552a6e429f9dcb4ff30",
+    "presentation/regional-materials/scene.png": "98d6521388c2bc0d5fe6fb60becd90df45f0d9ad8183d3bf01e9da16d8b478d9",
+    "presentation/regional-materials/session.ini": "b0d931f32f7b93fbe1e3751df9558d67bbb8f44844caf1b6f2297ce98c48e89b",
+    "presentation/regional-materials/TEXTMAP.txt": "41a51e63d40aaa44367e0fdeff103b786dcf6941ff5b802806bb2175aa9ec449",
+    "presentation/RESULTS.json": "21cada01f770820954a566b5dbe37b7100d888452f4457ebe5c83ecf375ca703",
+    "validation.log": "389dc8c5570c17dd624885ce428989d4611810b4cc34cf5678a8ce9c13281fed"
+  },
+  "presentation_views_inspected": true
+}

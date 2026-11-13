@@ -1,0 +1,23 @@
+{
+  "issue": 463,
+  "scope": "Isolated visual gallery, native movement/animation and saved references; no combat or campaign acceptance.",
+  "runtime_sha256": "5e301d8bbe651d1f3d834b031ba3b505e0ea8c1fed963c215e4686f24613aa9f",
+  "materials_sha256": null,
+  "fixture_sha256": "0f1fcd08b6627e93aade63e2e6bbd8b00affae52ca061d7b198cda1fbbc94e2b",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "reload",
+      "exit_code": 0,
+      "passed": false,
+      "errors": [
+        "CA463 FAIL native movement crosses both regional boundaries"
+      ],
+      "assertions": 19,
+      "expected_assertions": 20
+    }
+  ],
+  "captures": {
+    "reload.png": "d20874c87bc45aedf1f583451fd5577ff21ea358c6422139affc7cd45effc5a7"
+  }
+}

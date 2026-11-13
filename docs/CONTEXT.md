@@ -1,8 +1,8 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.17.3** - 2026-11-13.
+Documentation version: **5.17.4** - 2026-11-13.
 
-**V5.17:** #652:ammo3D;#650:stacks; #647:coins/consumables/water/food; #458:modules; other3D pending. ASSETS/TASKS.
+**V5.17:** #463:gallery;#652:ammo3D;#650:stacks; #647:coins/consumables/water/food; #458:modules; other3D pending. ASSETS/TASKS.
 **V5.16:** #452/453 approved; #454:MAP02/MAP03 rebuilt/tested; siege~1.35FPS.
 #456:World-gate,75assignments pending; #455:56classes/3pilots; #457:eligibility-only. LegacyMap02Revision5.
 

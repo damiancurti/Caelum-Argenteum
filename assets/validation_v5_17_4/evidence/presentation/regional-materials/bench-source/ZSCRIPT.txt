@@ -1,0 +1,20 @@
+version "4.14.2"
+class CA463Bench : EventHandler
+{
+    int Age; double Previous; Array<double> Tics;
+    override bool InputProcess(InputEvent e) { return true; }
+    override void WorldTick()
+    {
+        Age++;
+        if(Age==175) Console.Printf("CA463 BEGIN");
+        if(Age<175 || Age>875) return;
+        double now=MSTimeF(); if(Previous>0) Tics.Push(now-Previous); Previous=now;
+        if(Age==875)
+        {
+            Console.Printf("CA463 END");
+            for(int i=0;i<Tics.Size();i++) Console.Printf("CA463 TIC %.6f",Tics[i]);
+            let gallery=CA463GalleryEvents(EventHandler.Find('CA463GalleryEvents'));
+            Console.Printf("CA463 COMPLETE subjects=%d samples=%d", gallery==null ? 0 : gallery.Subjects.Size(),Tics.Size());
+        }
+    }
+}
