@@ -486,6 +486,9 @@
 /assets/validation_v5_16_3/*.py text eol=lf whitespace=blank-at-eol,blank-at-eof,space-before-tab
 /assets/validation_v5_16_3/*.json text eol=lf whitespace=blank-at-eol,blank-at-eof,space-before-tab
 /assets/generators/generate_nahuelito_model.py text eol=lf
+/assets/generators/generate_pombero_model.py text eol=lf
+/assets/source/art/pombero_455/*.json text eol=lf
+/assets/bestiary/models/pombero/** -text
 /assets/generators/generate_bestiary_actors.py text eol=lf
 /src/caelum/actors/CaelumBestiaryCombat.zs text eol=lf
 /assets/generators/generate_barracas_fronts.py text eol=lf

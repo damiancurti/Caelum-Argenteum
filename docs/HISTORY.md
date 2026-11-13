@@ -2,6 +2,13 @@
 
 Documentation version: **5.16.4** - 2026-11-13.
 
+2026-11-13 #456 dependency refresh includes #455 commit2822c4315 and its Pombero
+technical pilot, preserving5.16.4 and the unchanged essence ledger/runtime.
+The combined project audit passes; validation_v5_16_4/dependency-pombero.log
+records this checkout's result. The first log writer lacked its local build
+directory; that tooling attempt did not retain a validator result. The repeated
+recorded audit supplies the evidence. No native behavior changed in this merge.
+
 ## 5.16.4 - Essence coverage contract (#456, 2026-11-13, in progress)
 
 Created an explicit 78-ID coverage ledger with the 22/56 split, approved Major
@@ -22,6 +29,17 @@ their original issue/build scope. No author acceptance or full completion is
 claimed, and outstanding manual checks remain untouched.
 
 ## 5.16.3 - Folklore combat classes and model pilot (#455, 2026-11-12)
+
+2026-11-13 visual follow-up: CA-FOLK-006 Pombero received an unintegrated technical
+mesh/OBJ/MD3 with 40 idle/walk frames. Built-in image_gen material originals and
+both exact prompts are retained with the editable geometry/pose data. Native
+fresh/reload/state advancement, binary coverage and deterministic regeneration
+pass. Earlier camera and detached-face iterations are retained in
+assets/validation_v5_16_3/pombero. The final technical prototype still needs face,
+hair and clothing refinement against the source; no production appearance,
+combat animation set, encounters or author acceptance is claimed. The reused
+Nahuelito binary validator passes its original model unchanged. No author check
+was removed or final V5.16 terminal opened. #455 remains unfinished.
 
 2026-11-13 combat follow-up: 56 generated unplaced classes inherit the approved
 Mandinga template, preserving source species/population metadata and bilingual

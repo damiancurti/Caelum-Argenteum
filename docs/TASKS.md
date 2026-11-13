@@ -12,7 +12,14 @@ are no new runtime placements. Next: author exact quests/locations and alternate
 recovery routes, then implement and test acquisition, interruption, dead-NPC
 recovery, cooperative ownership and full geographic/ability reachability.
 
-## 5.16.3 - Folklore combat classes and Nahuelito pilot (#455)
+## 5.16.3 - Folklore combat classes and model pilots (#455)
+
+Pombero has a second unintegrated technical mesh with 40 idle/walk frames,
+editable data, OBJ/MTL and native MD3. Binary checks, byte-identical regeneration
+and native fresh/reload/state advancement pass (validation_v5_16_3/pombero).
+Its face, hair and clothing still need production art refinement. Studio captures
+do not establish ordinary lighting or crowded-scene performance. Author review
+and combat/hurt/death animations remain outstanding; it is not a finished model.
 
 The first actual3D folklore pilot has40 idle/swim frames, editable geometry/motion
 controls and a neutral OBJ. Binary checks, repeatable generation and native
@@ -22,7 +29,7 @@ projectile/breath, hostility and available-potion loot for new creatures on
 protecting Rulo, existing Mandingas and Zupay. Its 56 unplaced classes now inherit
 that template without copied balance or new saved fields. Final appearance and
 encounters remain open; do not infer collision from visual scale.
-Remaining 57 models, action coverage required by approved behavior, aquatic AI,
+Remaining 56 models, action coverage required by approved behavior, aquatic AI,
 regional placement and campaign unique-instance persistence remain unfinished.
 All 56 profiles and finite inventories pass native fresh/reload checks; 18 forced
 action checks and 56 native death drops pass with the limits in combat/SUMMARY.json.
