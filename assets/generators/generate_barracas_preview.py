@@ -37,16 +37,15 @@ class Placement:
         self.port.room(min(p[0] for p in points),min(p[1] for p in points),
                        max(p[0] for p in points),max(p[1] for p in points),**kwargs)
 
-def main():
-    parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--output',type=Path,required=True)
-    args=parser.parse_args();out=args.output.resolve()
-    if not out.is_relative_to(ROOT/'build'):parser.error('The isolated preview must be written under build/.')
+def generate(out,map_name=None,configure=None):
+    """Reuse the approved shell; a candidate caller can add existing services."""
+    out=Path(out).resolve()
+    if not out.is_relative_to(ROOT/'build'):raise ValueError('The isolated preview must be written under build/.')
     out.mkdir(parents=True,exist_ok=True)
     data=json.loads((ROOT/'assets/barracas_redesign/LAYOUT.json').read_text())
     city=json.loads((ROOT/'assets/map06_port/CITY.json').read_text())
     interior=json.loads((ROOT/'assets/map06_port/INTERIORS.json').read_text())
-    port=CoastalMap(data['preview_map']);port.compact=True;port.optimize_open_geometry=True;port.add_default_things=False
+    port=CoastalMap(map_name or data['preview_map']);port.compact=True;port.optimize_open_geometry=True;port.add_default_things=False
     port.control_origin=city['control_origin'];port.control_columns=city['control_columns']
     x1,y1,x2,y2=data['bounds'];cell=data['grid'];belt=city['walk_width']
     river=data['river'];port.volume(100,river['floor'],river['surface'],'CVPL06','CVPL06',water=True)
@@ -133,6 +132,7 @@ def main():
         port.room(a,oy+896,c,oy+old_end,flat='CVPO01',wall='CVPO06')
     start=data['plazas'][0]['polygon'];centre=[sum(p[i] for p in start)/len(start) for i in (0,1)]
     port.prop(1,*centre,angle=180);port.prop(30950,*centre,args=(1,0))
+    if configure is not None:configure(port,data,city,interior)
     port.write(out)
     body=json.loads((ROOT/'assets/map02_maze/LAYOUT.json').read_text())
     max_height=body['largest_supported_height'];max_radius=body['largest_player_radius']
@@ -179,5 +179,13 @@ def main():
     (out/'RESULTS.json').write_text(json.dumps({'issue':454,'scope':__doc__,'buildings':len(data['buildings']),'cells':len(port.cells),'geometry_reduction':port.geometry_reduction,'runtime_enabled':False,'static_route_failures':len(audit['failures'])},indent=2)+'\n')
     print(json.dumps({'route_targets':len(targets),'unreachable':audit['failures']}))
     if audit['failures']:raise SystemExit(1)
+    return port,data,facades,classes,bindings,editors,audit
+
+
+def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--output',type=Path,required=True)
+    args=parser.parse_args()
+    generate(args.output)
 
 if __name__=='__main__':main()

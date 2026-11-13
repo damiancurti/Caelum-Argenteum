@@ -47,8 +47,18 @@ the models floated because height zero was relative to the shell's roof floor.
 Subtracting that 184-MU base floor restored their intended world height. Logs and
 failed/corrected views are retained; the runner now rejects Unknown type warnings.
 This preview neither activates MAP03 nor completes services, siege or city save
-compatibility. The author has been asked to choose the siege disposition while
-independent architecture work proceeds.
+compatibility. The author approved the south/east/west fronts, one active and
+one reserve ram per front, and the northern bridge gate. The 36 installed
+defensive guns retain 12 active: four towers, four south, two east and two west.
+
+The next isolated services slice preserves private CAH coordinates while adding
+revision-4 exterior dispatch and rotated portal leaves. Native GZDoom passed
+224 maximum-body endpoints, 160 portals and 320 leaf placements, plus the retained
+private chest offset. The source generator now preserves the existing ChestPosition
+method, previously omitted from generation. The initial runner failed before
+launch due to Windows default text decoding, then a shell quoting edit; explicit
+UTF-8 and the corrected source passed. Production MAP03/CAH geometry is unchanged;
+ordinary travel, integrated services, siege and city save continuation remain open.
 
 The author requested prevention of system sleep while away for several hours.
 A temporary system-only execution-state request is active during work, with a

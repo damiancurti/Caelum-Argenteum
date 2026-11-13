@@ -29,6 +29,10 @@ and cornices using existing CVCI01/CVCI05 textures. No raster is edited and no
 bestiary model completion is implied. Preview evidence is under
 validation_v5_16_2/barracas-preview. legacy_5162 preserves original MAP03 bytes and
 a deterministic ZIP of relevant data/generator/helper sources before redesign.
+RUNTIME.json/CaelumBarracasData are deterministic exterior-coordinate outputs of
+generate_barracas_data.py. Private CAH coordinates retain their original source.
+The isolated native service/rotated-leaf fixture and results live under
+validation_v5_16_2/run_barracas_services.py and barracas-services/.
 
 ## 5.16.1 - Recovered folklore reference catalogue (#453, catalogue approved)
 

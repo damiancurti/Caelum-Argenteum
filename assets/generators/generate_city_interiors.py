@@ -160,11 +160,13 @@ def runtime(city, port=None, south=None):
         code+=f'        case {i}:return HouseOrigin(house)+({(x1+x2)//2},{(y1+y2)//2},0);\n'
     code+='        }return HouseOrigin(house);}\n'
     code+=f'    static vector3 InteriorDoorLeafPosition(int house,int door,int side){{return InteriorDoorCenter(house,door)+(InteriorDoorAxis(door)==0?side*{DATA["leaf_half_width"]}:0,InteriorDoorAxis(door)==1?side*{DATA["leaf_half_width"]}:0,0);}}\n'
-    code+='    static int HouseAt(vector3 point){for(int i=0;i<HOUSE_COUNT;i++){vector3 p=point-HouseOrigin(i);\n'
+    code+='    static int HouseAt(vector3 point){if(CaelumBarracasData.IsCurrent())return CaelumBarracasData.HouseAt(point);for(int i=0;i<HOUSE_COUNT;i++){vector3 p=point-HouseOrigin(i);\n'
     code+=f'        if(p.X>=0 && p.Y>=0 && p.X<{DATA["house_size"][0]} && p.Y<{DATA["house_size"][1]} && Abs(p.Z)<=16)return i;\n'
     code+='        }return -1;}\n'
-    for name,key in [('TablePosition','table'),('BedPosition','bed'),('DoorInside','door_inside'),('DoorOutside','door_outside'),('HouseRoad','house_road')]:
+    for name,key in [('TablePosition','table'),('ChestPosition','chest'),('BedPosition','bed'),('DoorInside','door_inside'),('DoorOutside','door_outside'),('HouseRoad','house_road')]:
         code+=f'    static vector3 {name}(int i){{'
+        if key in ('door_outside','house_road'):
+            code+=f'if(CaelumBarracasData.IsCurrent())return CaelumBarracasData.{name}(i);'
         if key=='house_road':
             for identity,point in DATA.get('house_road_overrides',{}).items():
                 code+=f'if(i=={identity})return HouseOrigin(i)+({",".join(map(str,point))});'
@@ -173,7 +175,7 @@ def runtime(city, port=None, south=None):
     for i,p in enumerate(DATA['occupancy']):
         code+=f'        case {i}:return HouseOrigin(house)+({",".join(map(str,p))});\n'
     code+='        }return HouseOrigin(house);}\n'
-    code+='    static vector3 ShopPosition(int i){switch(i){\n'
+    code+='    static vector3 ShopPosition(int i){if(CaelumBarracasData.IsCurrent())return CaelumBarracasData.ShopPosition(i);switch(i){\n'
     for i,b in enumerate(shops):
         dx,dy=DATA['vendor_offset']
         code+=f'        case {i}:return ({b["bounds"][0]+dx},{b["bounds"][1]+dy},0);\n'

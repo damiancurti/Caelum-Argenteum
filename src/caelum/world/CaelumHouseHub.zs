@@ -182,8 +182,9 @@ class CaelumHousePortal : Actor
         Super.PostBeginPlay();
         for(int side=-1;side<=1;side+=2)
         {
-            let leaf=Spawn("CaelumHouseDoorVisual",Pos+(0,side*CaelumMansionDoorData.HALF_WIDTH,0),NO_REPLACE);
-            leaf.Angle=side<0?90:270;
+            vector3 offset=(cos(Angle+90),sin(Angle+90),0);
+            let leaf=Spawn("CaelumHouseDoorVisual",Pos+offset*side*CaelumMansionDoorData.HALF_WIDTH,NO_REPLACE);
+            leaf.Angle=Angle+(side<0?90:270);
         }
     }
     override bool Used(Actor activator)

@@ -469,3 +469,10 @@
 /assets/map06_port/legacy_5162/* -text -whitespace
 /assets/generators/generate_barracas_preview.py text eol=lf
 /assets/generators/generate_barracas_facades.py text eol=lf
+
+# Current Barracas helper inputs/outputs; immutable archives keep original bytes.
+/assets/map06_port/*.json text eol=lf
+/assets/generators/generate_barracas_data.py text eol=lf
+/assets/generators/generate_city_interiors.py text eol=lf
+/src/caelum/world/CaelumBarracasData.zs text eol=lf
+/src/caelum/world/CaelumCityData.zs text eol=lf

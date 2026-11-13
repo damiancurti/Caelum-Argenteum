@@ -28,6 +28,8 @@ the recovered bestiary and map references proceed through separate issues.
 Barracas also has an [isolated architectural preview](assets/barracas_redesign/LAYOUT.json)
 with 288 retained building identities; it is not activated in MAP03. City services,
 four-gate siege integration and old-city save continuation remain unfinished.
+The rotated-door/coordinate slice passes 224 native service endpoint checks and
+160 portals/320 leaf placements; private interior coordinates are retained.
 
 V5.15 includes the [battle director](assets/validation_v5_15_0/RESULTS.md)
 (#447, PR635), [Unitarian command](assets/validation_v5_15_1/RESULTS.md)

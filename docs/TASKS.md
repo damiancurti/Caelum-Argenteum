@@ -18,12 +18,14 @@ map slice: four perimeter gates, siege adaptation and independent save support.
 
 Barracas architectural source/preview is now in assets/barracas_redesign. Its
 288 identities and 424 static/native endpoint checks pass; source geometry and
-private house interiors remain unmodified in src. Integrate rotated portals,
+private house interiors remain unmodified in src. Rotated portal leaves and
+exterior coordinate helpers pass the isolated 224-endpoint/320-leaf native probe.
+Integrate ordinary house travel,
 services/travel, native gates and coordinate-sensitive helpers, complete visual
 architecture, retain the accepted residential sky policy, then verify old
-active/hub saves with exact original MAP03. The author is reviewing three siege
-fronts with active/reserve ram pairs versus a concentrated southern assault;
-do not silently choose that pending tactic. No city author test is added for
+active/hub saves with exact original MAP03. Three siege fronts with active/reserve
+ram pairs are approved. The 12 active defensive guns are four towers plus four
+south-wall, two east-wall and two west-wall guns; retain 36 installed guns. No city author test is added for
 the unintegrated preview. Existing MAP02 acceptance remains pending.
 
 ## 5.16.1 - Bestiary source import (#453)

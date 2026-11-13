@@ -88,10 +88,22 @@ assets/validation_v5_16_2/barracas-preview/SUMMARY.json. This does not test ordi
 walking, native house travel, merchants, guards, dynamic gate collision or siege
 deployment. Services, transport, landscaping and architectural completion remain.
 
-The author is reviewing a proposed southern army arrival splitting toward south,
-east and west gates, one active and one reserve ram on each front; the northern
-gate serves the bridge. Until answered, this is a proposal, not a changed battle
-rule. Preserve the existing 1,000-living-participant admission cap per side,
+The exterior coordinate source now supplies 160 rotated portal/return points and
+64 shop positions, selected only by a loaded revision-4 MAP03 controller. Private
+HouseOrigin, furniture, chest and inner-door coordinates remain unchanged even
+when a travelling household calculates a CAH destination from MAP03. The interior
+generator previously omitted the existing ChestPosition method; its accepted
+(864,832,0) local coordinate is now in INTERIORS.json and regenerated unchanged.
+The isolated native services fixture passes all 224 maximum-body endpoints and
+160 map-spawned portals/320 rotated leaves, plus the retained private chest offset.
+This fixture has no ordinary house travel or live city services; production MAP03
+and all 160 CAH WADs remain byte-identical. See barracas-services/SUMMARY.json.
+
+The author approved southern army arrival splitting toward south, east and west
+gates, one active and one reserve ram on each front; the northern gate serves
+the bridge. All 36 defensive guns remain installed; the approved 12 active guns
+are the four towers plus four south-wall, two east-wall and two west-wall guns.
+Preserve the existing 1,000-living-participant admission cap per side,
 6,600 cumulative Mandingas, six rams and 600 defenders. Never interpret that
 cumulative ledger as permission for a retired 6,000-simultaneous-attacker test.
 

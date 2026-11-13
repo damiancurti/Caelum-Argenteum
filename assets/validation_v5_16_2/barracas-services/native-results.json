@@ -1,0 +1,10 @@
+{
+  "issue": 454,
+  "scope": "Isolated native endpoint clearance, map-spawned rotated leaves and private-interior coordinate retention. No ordinary travel/siege/author acceptance.",
+  "runtime_sha256": "add11628460e36803cd945fe103cc32f7b714bfa35ffa072f8fd211e41cd96c0",
+  "exit_code": 0,
+  "passed": true,
+  "diagnostics": [
+    "CA454 SERVICES total=224 portals=160 leaves=320 failures=0"
+  ]
+}
