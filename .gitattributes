@@ -509,3 +509,8 @@
 /assets/validation_v5_16_3/combat/** -text -whitespace
 /assets/validation_v5_16_3/bestiary_combat_probe.zs text eol=lf
 /assets/validation_v5_16_3/run_bestiary_combat.py text eol=lf
+
+/assets/campaign/ESSENCE_*.json text eol=lf
+/assets/generators/build_essence_coverage.py text eol=lf
+/assets/validation_v5_16_4/check_essence_coverage.py text eol=lf
+/assets/validation_v5_16_4/evidence/** -text -whitespace

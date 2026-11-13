@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.16.3** - 2026-11-12.
+Documentation version: **5.16.4** - 2026-11-13.
+
+## 5.16.4 - Complete identity audit, pending acquisition authoring (#456)
+
+ESSENCE_COVERAGE.json preserves all 78 IDs and the three opening sources. Its
+normal static check permits explicitly pending authoring; --require-complete
+must fail while 75 exact assignments remain open. It records approved Major
+chapters, story anchors, World-after-77 and the no-permanent-loss policy. There
+are no new runtime placements. Next: author exact quests/locations and alternate
+recovery routes, then implement and test acquisition, interruption, dead-NPC
+recovery, cooperative ownership and full geographic/ability reachability.
 
 ## 5.16.3 - Folklore combat classes and Nahuelito pilot (#455)
 

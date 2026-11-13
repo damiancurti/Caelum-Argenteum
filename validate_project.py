@@ -13,6 +13,7 @@ from assets.generators.generate_tarot_justice import validate as justice_geometr
 from assets.generators.generate_tarot_examples import render as tarot_example_data
 from assets.generators.build_bestiary_catalogue import assemble as bestiary_catalogue
 from assets.generators.generate_bestiary_actors import render as bestiary_actor_data, render_names as bestiary_names
+from assets.generators.build_essence_coverage import build as essence_coverage, encoded as essence_coverage_bytes
 from assets.generators.validate_map02_redesign import audit as sewer_redesign_audit
 from assets.generators.install_barracas_map import validate as barracas_installation_problems
 
@@ -250,6 +251,15 @@ def validate(root):
     count = re.search(AUDIO_INVENTORY_RE, assets)
     inventory = int(count.group(1) or count.group(2)) if count else None
     check(inventory == audio_count, 'ASSETS.md: update the runtime audio inventory count')
+
+    # Pending authoring is reported explicitly, never treated as completed content.
+    try:
+        coverage = essence_coverage(root)
+        check(not coverage['audit']['errors'], 'Essence coverage violates the approved acquisition contract.')
+        check((root/'assets/campaign/ESSENCE_COVERAGE.json').read_bytes() == essence_coverage_bytes(coverage),
+              'Essence coverage is stale; run python assets/generators/build_essence_coverage.py')
+    except (OSError, KeyError, ValueError) as exc:
+        check(False, f'Essence coverage validation failed: {exc}')
 
     # Verify the authoring catalogue without interpreting missing regions as runtime content.
     try:

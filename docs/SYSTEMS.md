@@ -1,6 +1,15 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.16.3** - 2026-11-12.
+Documentation version: **5.16.4** - 2026-11-13.
+
+## 5.16.4 / #456 - Approved new-essence recovery policy
+
+The author approved no permanent loss for all new campaign essences. Interrupted
+captures leave the same essence available on return. A closed quest or dead NPC
+must retain an authored alternative to that same essence, without duplication or
+automatic granting. ESSENCE_POLICY.json records this contract; exact alternate
+routes remain unauthored and are not implemented by the coverage ledger. Existing
+opening captures and the #441 shared source/ownership service remain unchanged.
 
 ## 5.16.3 / #455 - Provisional folklore combat templates
 

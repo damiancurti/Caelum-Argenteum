@@ -6,8 +6,13 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.16.3.** Obtain and update the complete repository,
+**Current release: 5.16.4.** Obtain and update the complete repository,
 validate it, then rebuild with `run_dev.bat` as described below.
+
+#456 now audits [all 78 essence identities](assets/campaign/ESSENCE_COVERAGE.json),
+their approved chapter allocations and recovery policy. The three opening sources
+remain in place; 75 exact acquisitions still require authored quests/locations.
+This coverage ledger adds no runtime placements or completed campaign routes.
 
 The [58-reference folklore catalogue](assets/bestiary/CATALOGUE.json) is imported
 under #453 with original images, verified provenance and all 58 regional

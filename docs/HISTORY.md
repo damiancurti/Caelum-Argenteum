@@ -1,6 +1,25 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.16.3** - 2026-11-12.
+Documentation version: **5.16.4** - 2026-11-13.
+
+## 5.16.4 - Essence coverage contract (#456, 2026-11-13, in progress)
+
+Created an explicit 78-ID coverage ledger with the 22/56 split, approved Major
+allocation/story anchors, preserved opening sources 0/36/60 and World-after-77.
+Recorded the author's no-permanent-loss recovery policy. Exact assignments for
+75 acquisitions and the remaining 54 Minor chapter allocations are still open;
+no map, reward, capture rule or save schema changed. The author requested that
+questions be postponed while away; missing destinations were left unauthored.
+
+Static contract/freshness checks and deterministic generation pass; negative
+cases reject duplicate IDs, a circular World prerequisite, changed opening
+sources, permanent loss and accidental activation. The completion gate fails
+as expected on the pending assignments. Evidence is in assets/validation_v5_16_4.
+The first project check caught the two stale diagnostic release labels; those
+strings were advanced to 5.16.4. No native test was needed for this authoring patch;
+previous native results keep
+their original issue/build scope. No author acceptance or full completion is
+claimed, and outstanding manual checks remain untouched.
 
 ## 5.16.3 - Folklore combat classes and model pilot (#455, 2026-11-12)
 
