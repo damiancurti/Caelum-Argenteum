@@ -24,6 +24,9 @@ architecture remain to integrate. See MAP01/TASKS.
 The 600 exterior deployment routes are also generated and pass native continuous
 collision sampling in fresh/reloaded saves. This verifies geometry and dispatch,
 not 600-body AI/crowds; the production city remains unchanged.
+Both existing ram sizes now pass isolated corner approaches and impacts against
+all four gates, with mid-turn reload and fixed-heading regression controls. Crew
+movement, reserve activation and full three-front behavior are still unfinished.
 
 ## 5.16.1 - Folklore reference recovery (#453, catalogue approved)
 

@@ -53,6 +53,10 @@ DEPLOYMENT.json/CaelumBarracasDeployment: 600 routes and 9453 waypoints, with st
 resident identities and original private coordinates. Generated siege/route
 helpers dispatch by loaded geometry. Native continuous traversal evidence is in
 validation_v5_16_2/barracas-deployment; no fixture PK3 or save is distributed.
+The candidate also opens exterior gate forecourts and fills missing ground for
+the approved side fronts using existing walkway/artillery dimensions. Inner
+gate throats/blockers retain their original dimensions. Physical ram-turn/contact
+and gate evidence lives in validation_v5_16_2/barracas-rams; no new art is claimed.
 
 ## 5.16.1 - Recovered folklore reference catalogue (#453, catalogue approved)
 

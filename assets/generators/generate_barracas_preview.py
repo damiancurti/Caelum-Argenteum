@@ -140,6 +140,16 @@ def generate(out,map_name=None,configure=None,compile_map=True):
         else:
             jambs=[(x-a,y-b-cell,x+a,y-b),(x-a,y+b,x+a,y+b+cell)]
         for rect in jambs:port.room(*rect,floor=city['wall_height'],flat='CMST01',wall='CMST01')
+        # The large original ram is wider/taller than the gate tunnel. Its frame
+        # stops outside the gate plane: open only the exterior forecourt, using
+        # the existing walk width/depth. Keep the inner128-MU throat and96-MU
+        # blocker unchanged; widening both halves would permit a closed bypass.
+        outward=gate['outward_angle'];half=belt//2
+        if outward==90:forecourt=(x-half,y,x+half,y+belt)
+        elif outward==270:forecourt=(x-half,y-belt,x+half,y)
+        elif outward==0:forecourt=(x,y-half,x+belt,y+half)
+        else:forecourt=(x-belt,y-half,x,y+half)
+        port.room(*forecourt,flat='CMST01',wall='CMST01')
     bridge=data['bridge'];x=bridge['centre_x'];width=bridge['width']//2
     # The wide bridge begins outside the narrow gate passage, never through the
     # wall itself; otherwise its deck silently creates an unguarded extra gap.

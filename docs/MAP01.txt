@@ -168,6 +168,19 @@ assets/validation_v5_16_2/barracas-deployment/SUMMARY.json.
 Original active/stored-hub continuation also passes with this runtime; all 238
 packaged maps, including 160 private CAH interiors, remain byte-identical.
 
+The ram-access candidate keeps the 128-MU inner gate throat and 96-MU native
+blocker, but opens the exterior half as a 256-MU-wide/deep unroofed forecourt.
+This accommodates the existing large frame without widening the closed passage
+or changing gate height/resistance. Missing east/west exterior ground is filled
+using the original hostile-artillery standoff plus two walkway widths, preserving
+existing wall/water cells. Both sizes can physically turn and strike each gate.
+Routes opt into per-segment heading; earlier routes retain fixed-heading motion
+and zero-default saved fields. A fresh and reloaded native fixture each passes
+eight gate/size cases plus two legacy-route controls. It repeats the production
+physical step32 times per diagnostic tic without changing speed/turn constants;
+this is collision/contact evidence, not real-time combat or crew AI. The gate
+closure checks remain a separate control. Evidence: barracas-rams/SUMMARY.json.
+
 The exterior coordinate source now supplies 160 rotated portal/return points and
 64 shop positions, selected only by a loaded revision-4 MAP03 controller. Private
 HouseOrigin, furniture, chest and inner-door coordinates remain unchanged even

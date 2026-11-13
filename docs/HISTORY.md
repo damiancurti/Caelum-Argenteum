@@ -126,6 +126,20 @@ door/chest offsets. All 238 packaged maps, including 160 private interiors, rema
 byte-identical to the preceding runtime. This does not replace old-save testing
 against the eventual integrated city/controller.
 
+The next #454 slice adds opt-in segment turns for rams without changing their
+movement/rotation rates or the fixed-heading behavior of earlier saved routes.
+The large frame exceeded the new tunnel's width/headroom, so only the exterior
+half was opened as a forecourt; the inner throat and native blocker remain.
+The first compiled native attempt passed eight cases but found both western
+turns unsupported at the old exterior-ground edge. Filling missing side-front
+ground corrected this. Fresh and mid-turn-reloaded runs each pass ten cases:
+both sizes against four gates plus two fixed-heading controls, with native
+impacts on the intended blocker. A prior fixture compilation error used an
+actor-only angle helper from an event handler; its log is retained separately.
+This fixture repeats the physical step32 times per tic and has no live crew:
+it does not establish battle timing, crowd navigation, reserve activation,
+performance or author acceptance. See barracas-rams/SUMMARY.json.
+
 The author requested prevention of system sleep while away for several hours.
 A temporary system-only execution-state request is active during work, with a
 12-hour failsafe; it does not change the power plan or require the display on.

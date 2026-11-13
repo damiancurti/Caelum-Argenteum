@@ -45,6 +45,11 @@ TryMove samples pass in both fresh and reloaded candidates. Runtime helpers
 dispatch by revision, retaining old route bodies and private house coordinates.
 Validate actual resident materialization, AI and crowd movement with the full
 siege controller; continuous geometric sampling is not that acceptance.
+Opt-in ram turns and widened exterior forecourts now pass physical route/contact
+tests for both sizes at all four gates, including saved in-progress turns and
+legacy fixed-heading routes. Integrate rotating crew stations, south-to-side
+approaches/retreats and one active/one reserve ram per front. These isolated
+geometry checks do not exercise actual crew AI or activate the production city.
 
 ## 5.16.1 - Bestiary source import (#453)
 

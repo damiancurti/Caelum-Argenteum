@@ -21,6 +21,10 @@ without changing the original data tables for earlier geometry. All 600 resident
 identities and the existing central-house relocation are retained. Isolated
 fresh/reloaded geometric traversal passes; real crowd/AI deployment, machine
 ownership and battle outcomes remain part of the unfinished siege integration.
+Ram routes now support opt-in physical turns before each segment, using the
+existing approach/rotation rates. Legacy routes retain fixed-heading translation;
+saved zero defaults preserve that behavior. This is geometry support only, not
+completed crew/reserve handling or a change to machine statistics.
 
 ## 5.15.4 / #451 - Occupation, recovery and persistent consequences
 

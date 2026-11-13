@@ -4,6 +4,28 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-219 - Machine approaches need swept body clearance and ground support
+
+Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED for isolated ram access.
+First recorded / last checked: 2026-11-13 / 2026-11-13.
+Issue / PR: #454 / #643. Baseline: 14732ca89 plus the ram-access candidate;
+exact runtime/map hashes are in barracas-rams/SUMMARY.json.
+Environment: Windows11, GZDoom4.14.2, Vulkan, unpaused background at5% audio.
+Scope: physical frame/face/head movement and gate contact; no crew AI.
+
+A character-clear128-MU tunnel did not accommodate the original large ram's
+frame. Open only the exterior forecourt if the frame must stop before the gate;
+widening the inner throat can permit bypass beside the unchanged96-MU blocker.
+The western turning point also needed ground beyond the previous map edge,
+even though its centre was on valid ground. Test every physical component
+through translation and rotation, retaining floor support and native collision.
+
+Regression evidence: fresh and mid-turn-reloaded runs each complete eight
+gate/size cases and two legacy fixed-heading controls, with physical blocker
+impacts. The fixture repeats normal steps32 times per diagnostic tic; those
+results do not establish elapsed approach time, crew navigation or performance.
+Check closed/open character passages separately after editing gate forecourts.
+
 ## CA-KP-218 - Relocated stairs require a complete structure and support audit
 
 Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED for the isolated city candidate.

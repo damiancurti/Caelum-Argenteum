@@ -63,6 +63,23 @@ def add_fortifications(port, layout, city):
         for y in range(b,d,port.CELL):
             if (x,y) not in port.cells:
                 port.room(x,y,x+port.CELL,y+port.CELL,flat='CMGR03',wall='CMST01')
+    # The approved east/west assault fronts need ground beyond the former
+    # rectangular south-only battlefield. Preserve existing cells, including
+    # walls and water. Reuse the original hostile artillery standoff plus two
+    # walkway widths for the turn/staging margin; do not change machine sizes.
+    standoff=abs(south['gate_y']-south['attacking_gun_y'])
+    margin=city['walk_width']*2
+    for gate in layout['gates']:
+        if gate['outward_angle'] not in (0,180):continue
+        x,y,_=gate['position'];sign=1 if gate['outward_angle']==0 else -1
+        outer=x+sign*(standoff+margin)
+        left=math.floor(min(x,outer)/port.CELL)*port.CELL
+        right=math.ceil(max(x,outer)/port.CELL)*port.CELL
+        top=math.ceil((y+margin)/port.CELL)*port.CELL
+        for px in range(left,right,port.CELL):
+            for py in range(b,top,port.CELL):
+                if (px,py) not in port.cells:
+                    port.room(px,py,px+port.CELL,py+port.CELL,flat='CMGR03',wall='CMST01')
     port.room(*south['field_boundary'],floor=read('assets/map06_port/LAYOUT.json')['wall_height'],flat='CMST01')
     for gun in siege['defending_guns']:
         if gun['side']=='tower': continue

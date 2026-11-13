@@ -39,6 +39,8 @@ class CaelumBatteringRam : CaelumHostileMachine
     int LastDamage;
     Array<CaelumRamPoint> Route;
     int RouteIndex;
+    int RouteRevision;
+    bool FollowRouteHeading;
     CaelumBreakableGate TargetGate;
     CaelumRamFrameVisual FrameVisual;
     CaelumRamHead Head;
@@ -177,11 +179,14 @@ class CaelumBatteringRam : CaelumHostileMachine
         return clear;
     }
 
-    bool SetRoute(CaelumBreakableGate gate, double facing)
+    bool SetRoute(CaelumBreakableGate gate, double facing, bool followHeading=false)
     {
         InitializeRam();
         if (!Operational() || Phase == STRIKE || Phase == CONTACT || Phase == RECOVERY) return false;
         TargetGate = gate; FinalAngle = facing; Route.Clear(); RouteIndex = 0;
+        // Optativo para las rutas con esquinas de #454. Los saves anteriores
+        // conservan sus campos cero y la traslacion con rumbo fijo.
+        RouteRevision=1;FollowRouteHeading=followHeading;
         return true;
     }
 
@@ -197,6 +202,30 @@ class CaelumBatteringRam : CaelumHostileMachine
     void AddRoutePoint(vector3 position)
     {
         let point = new("CaelumRamPoint"); point.Position=position; Route.Push(point);
+    }
+
+    bool TurnToward(double facing)
+    {
+        double turn=DeltaAngle(Angle,facing);
+        if(Abs(turn)<=0.001)return false;
+        Phase=APPROACH;
+        double step=VectorAngle(-CaelumRamData.FRAME_REAR*SizeFactor,
+            Min(ApproachSpeed,CaelumRamData.SWEEP_STEP));
+        MoveFrame(Pos,Angle+Clamp(turn,-step,step));
+        return true;
+    }
+
+    bool AdvanceRoute()
+    {
+        if(RouteIndex>=Route.Size())return TurnToward(FinalAngle);
+        Phase=APPROACH;
+        vector2 offset=Route[RouteIndex].Position.XY-Pos.XY;
+        if(offset.Length()<0.001){RouteIndex++;return true;}
+        double direction=VectorAngle(offset.X,offset.Y);
+        if(FollowRouteHeading && TurnToward(direction))return true;
+        double distance=Min(Min(ApproachSpeed,CaelumRamData.SWEEP_STEP),offset.Length());
+        MoveFrame(Pos+(Cos(direction)*distance,Sin(direction)*distance,0),Angle);
+        return true;
     }
 
     void ApplyContact(Actor hit)
@@ -320,25 +349,7 @@ class CaelumBatteringRam : CaelumHostileMachine
             { Phase=RECOVERY; RecoveryLeft=CaelumRamData.RECOVERY_TICS; }
             return;
         }
-        if (RouteIndex < Route.Size())
-        {
-            Phase=APPROACH;
-            vector2 offset=Route[RouteIndex].Position.XY-Pos.XY;
-            if (offset.Length()<0.001) { RouteIndex++; return; }
-            double direction=VectorAngle(offset.X,offset.Y);
-            double distance=Min(Min(ApproachSpeed,CaelumRamData.SWEEP_STEP),offset.Length());
-            MoveFrame(Pos+(Cos(direction)*distance,Sin(direction)*distance,0),Angle);
-            return;
-        }
-        double turn=DeltaAngle(Angle,FinalAngle);
-        if (Abs(turn)>0.001)
-        {
-            Phase=APPROACH;
-            double step=VectorAngle(-CaelumRamData.FRAME_REAR*SizeFactor,
-                Min(ApproachSpeed,CaelumRamData.SWEEP_STEP));
-            MoveFrame(Pos,Angle+Clamp(turn,-step,step));
-            return;
-        }
+        if(AdvanceRoute())return;
         Phase=READY;
         if (TargetGate==null || TargetGate.Broken || TargetGate.Opened) return;
         // La ruta tiene que terminar frente al portón; no golpear a distancia.
