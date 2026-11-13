@@ -1,6 +1,13 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.9** - 2026-11-13.
+Documentation version: **5.17.10** - 2026-11-13.
+
+## 5.17.10 - Camp inventory world models (#664)
+
+Dropped tents and iron pots reuse owned camp geometry, preserving native item
+identity, containers and deployment rules. Original sprites remain inventory
+icons. ASSETS records display fitting and evidence; broader drop coverage and
+CA664-CAMP-01 author review remain outstanding.
 
 ## 5.17.9 - Nahuelito native combat presentation (#662)
 

@@ -1,6 +1,64 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.9** - 2026-11-13.
+Documentation version: **5.17.10** - 2026-11-13.
+
+## 5.17.10 - Native camp inventory drop models (#664, parent #647)
+
+CaelumCampTent and CaelumCampPot receive class-specific world model bindings.
+The tent directly reuses the accepted enlarged deployed tent OBJ. The pot OBJ
+contains only unchanged iron faces from the original mounted pot: bowl, two
+handles and integral trivet. Wood and fire faces are excluded; the original
+campfire and tent resources remain untouched. The sleeping bag already has a
+world model and requires no replacement. Original painted icons remain intact.
+
+Uniform fitting uses the smaller of the original opaque sprite width divided
+by maximum horizontal mesh extent and sprite height divided by total mesh
+height. The trivet makes width-only pot fitting too tall, so both dimensions
+constrain the drop presentation. Native Actor.Scale, collision and ownership
+stay unchanged. These inventory display dimensions do not replace the physical
+dimensions of deployed camp structures. The pitched tent icon remains the
+reference; no packed-tent design or deployment mechanic is invented.
+
+The tent contains 1,705 selected vertices and 669 triangles; the pot/trivet has
+3,188 vertices and 1,288 triangles. Original OBJ polygons/UVs and owned material
+pixels are retained, including the existing canvas seams, iron texture and thin
+trivet legs. Native bindings retain the original backface policy and rotation.
+Portable OBJ/MTL sources and adjacent unchanged textures are available under
+assets/source/art/inventory_models_647/camp/editable. Source hashes and decisions
+live in DESIGN.json, PROVENANCE.json and EXPORT.json in the parent directory.
+No new bitmap generation or editing occurs. Rebuild with
+`python assets/generators/generate_inventory_camp_models.py --output build/camp-models --install`;
+--check verifies the same outputs.
+
+The final package passes 448 native checks across baseline, old-save/model,
+fresh/model, reload and rollback (110/76/110/76/76). Two tents and two pots retain
+separate identities, water/thermal state, provenance, surface contamination,
+weight, Box weight treatment, quest/active-boiling guards and floor contact.
+This invokes native pickup/toss and weight rules, not ordinary menu acceptance.
+The earlier visual-only run passes 110 checks with the same fixture/model bytes.
+Both models were inspected in front/oblique/rear detail and overview captures.
+
+Twelve exports repeat byte-for-byte. The readonly validator confirms original
+selected pot geometry/UV identity, bindings, fitting and owned pixel hashes.
+All 18,208 package entries match src; only the extracted pot OBJ, two-binding
+MODELDEF file, root include and two release diagnostic strings differ from #662.
+All other runtime bytes, including deployed camp resources, remain identical.
+
+The first presentation run had valid actor/timing counts but invisible baseline
+sprites below the floor: the original camp PNGs contain no grAb offset chunk.
+That comparison was rejected after capture inspection. The final diagnostic
+raises both cohorts and the camera by 64 MU, with fixture-only no-gravity flags;
+both sprites and models are visibly framed. Native floor contact is covered
+separately by the unchanged continuity fixture. See CA-KP-233.
+
+The final isolated 700-tic pair with two objects records 1194.11/1158.65 queue presents/s
+for sprites/models, p95 1.0344/1.0690 ms and p99 1.2473/1.2862 ms. Environment:
+Windows 11 Pro 26200, Ryzen 9 5950X, 32 GB, RTX 3070 Ti, GZDoom 4.14.2,
+Vulkan 1280x720, uncapped, vsync off, unpaused background, 5% audio. These are
+queue-present intervals, not GPU/display timing, repeatability or campaign/crowd
+acceptance. Evidence: assets/validation_v5_17_10/evidence/SUMMARY.json.
+CA664-CAMP-01 remains the author visual check; broader inventory coverage and
+earlier deployed-pot/trivet visual acceptance remain separate.
 
 ## 5.17.9 - Nahuelito inherited combat model (#662, parent #461)
 
