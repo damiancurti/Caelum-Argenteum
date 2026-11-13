@@ -52,6 +52,15 @@ its native setup: Dining.RefreshDisplays already copies the item's actor scale,
 so applying another .25 in MODELDEF would shrink it twice. Native table captures
 and ownership/scale checks verify the actual path; ordinary author review stays pending.
 
+Ammunition follow-up (#652): resolve TEXTURES cropping and XScale/YScale before
+matching a model to a reference. The shotgun icon and world sprite use the same
+source-sheet rectangle with different scales; the full sheet is not the prop's
+extent. Preserve the native actor scale, then inspect the small object with a
+closer camera rather than changing gameplay size for the screenshot. Seven-type
+native drop/save checks and 21 front/oblique/rear captures are recorded in
+assets/validation_v5_17_3/evidence/SUMMARY.json. The full package and final overlay
+produce identical pixels in those 21 detail views; this is not author acceptance.
+
 ## CA-KP-226 - Rebuild native model selections after loading
 
 Status/evidence: ENGINE-VERIFIED, 2026-11-13. Issue: #458.
