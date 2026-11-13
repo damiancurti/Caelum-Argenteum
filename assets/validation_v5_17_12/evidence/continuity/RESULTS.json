@@ -1,0 +1,65 @@
+{
+  "issue": 668,
+  "kind": "waterskin",
+  "scope": "Native pickup/toss, quantity and saved ownership for waterskin; no normal menu or author acceptance.",
+  "baseline_sha256": "6682219d28990d8de422e5591e5a85d68f84b00501d4997266b54123f5f9fb35",
+  "runtime_sha256": "b3a7c9e69915231b25b94977187a797121b3d61e446e2a30ccb1b1c9561f3255",
+  "model_sha256": null,
+  "fixture_sha256": "2aa65ee0f38d2d208f98a2eb38c12d3eefeae9ef11d5e47fcbad1f2eb205fdb2",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "baseline",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 47
+    },
+    {
+      "phase": "old-save-load",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 42
+    },
+    {
+      "phase": "candidate-fresh",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 47
+    },
+    {
+      "phase": "candidate-reload",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 42
+    },
+    {
+      "phase": "rollback-load",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 42
+    }
+  ],
+  "captures": {
+    "baseline.png": "1b020de2197925f4893fbcf0e466265979f91bfccd08718a8b9ebca6583e2ca0",
+    "candidate-0.png": "2fb4a5ba32fa221050cb61ebf041cb1869342020faa3c3de896ac5eb15ce0f32",
+    "candidate-1.png": "2445543fd40d4f4c80d80d52fa2744c978e3d465967cea27c5f137524f38eb56",
+    "candidate-2.png": "36d4523e5682d6b989eb5980deda7978c88303ec37588c012950dda3f33a7887",
+    "candidate-3.png": "23434c3fd15b963aba805a9c5e3fbb9af8c7b37d0d7c51acf82546f474e63a4d",
+    "candidate-5.png": "49379c7c0b61d7056d64c2d1b67c9c2cdf6dde07af62c88cf8f535057920bd74",
+    "candidate-6.png": "6ba656de3a73936d799f192bc99554e3632f3b7a106bfcd349a7727b01c81e05",
+    "candidate-7.png": "241f2fc8ecbda0a3bbae4344e62d6605677d31baa35ca7be5547cf3968a0f15e",
+    "detail-0-0.png": "7f00f26e1da4de3e1706964b4f8c3460ff1e8c3d626d30eb1b03e5ebc8434379",
+    "detail-0-160.png": "4ff9b57a085f24d9b7ba7cf6123f3aa34a9a79463f0a44efe4fbfaaef00942f4",
+    "detail-0-270.png": "f6b86e4c9df5c07ee824124c6db4dc79944d418457a502e81582fee63db5579c",
+    "detail-0-90.png": "1db00242d75cda610da705576c083e318d2adddbebb5d58bb152bc8510c06c4f",
+    "detail-1-0.png": "0fe76b4cbd07c4682f38ab75185b40ec4ead312d5c43a3d3cef9c8f89ee378c5",
+    "detail-1-160.png": "127eb55bd07a1fab9ec6c5c74fe296cf12210d54569a7167d353acfd76f4caf6",
+    "detail-1-270.png": "4d1624f509e12279146b813230fa321ba177459dd1dc966f5bb0dd5efd1c5a8c",
+    "detail-1-90.png": "958421589056f4b1d5122cf05cc494b1ae52b828abc5c9aa01127e2ced0f5531"
+  }
+}

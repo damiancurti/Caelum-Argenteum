@@ -1,0 +1,2 @@
+Model CaelumWaterRation { Path "models/caelum/inventory/waterskin" Model 0 "waterskin.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CWAT A 0 0 }
+Model CaelumMazeWater { Path "models/caelum/inventory/waterskin" Model 0 "waterskin.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CWAT A 0 0 }

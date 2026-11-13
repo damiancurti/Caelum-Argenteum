@@ -1,0 +1,399 @@
+{
+  "issue": 668,
+  "parent_issue": 647,
+  "version": "5.17.12",
+  "date": "2026-11-13",
+  "author_accepted": false,
+  "scope": "One original closed leather waterskin, strap/loop, pendant and hollow cup; explicit CaelumWaterRation and CaelumMazeWater bindings. Consumable behavior unchanged.",
+  "runtime": {
+    "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-668\\build\\issue668-waterskin02.pk3",
+    "sha256": "b3a7c9e69915231b25b94977187a797121b3d61e446e2a30ccb1b1c9561f3255",
+    "source_entries": 18215,
+    "mismatches": []
+  },
+  "baseline": {
+    "sha256": "6682219d28990d8de422e5591e5a85d68f84b00501d4997266b54123f5f9fb35",
+    "new_resources": [
+      "caelum/data/inventory_waterskin.modeldef",
+      "models/caelum/inventory/waterskin/waterskin.md3"
+    ],
+    "changed_resources": [
+      "MODELDEF",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "all_other_runtime_bytes_identical": true
+  },
+  "static": {
+    "repeated_export_files": 6,
+    "repeat_byte_identical": true,
+    "installed_export_check_passed": true,
+    "vertices": 1461,
+    "triangles": 2680,
+    "closed_components": 16,
+    "earlier_families_native_resources_unchanged": 22,
+    "earlier_generator_compatibility": [
+      {
+        "family": "ammunition",
+        "unchanged_native_resources": [
+          "models/caelum/inventory/ammunition/carbine.md3",
+          "models/caelum/inventory/ammunition/arrow.md3",
+          "models/caelum/inventory/ammunition/bolt.md3",
+          "models/caelum/inventory/ammunition/javelin_one.md3",
+          "models/caelum/inventory/ammunition/javelin_two.md3",
+          "models/caelum/inventory/ammunition/javelin_three.md3",
+          "models/caelum/inventory/ammunition/shotgun.md3",
+          "caelum/data/inventory_ammunition.modeldef"
+        ],
+        "unchanged_non_generator_metadata": true
+      },
+      {
+        "family": "documents",
+        "unchanged_native_resources": [
+          "models/caelum/inventory/documents/book.md3",
+          "models/caelum/inventory/documents/letter.md3",
+          "models/caelum/inventory/documents/key.md3",
+          "models/caelum/inventory/documents/cloth.md3",
+          "models/caelum/inventory/documents/ingot.md3",
+          "caelum/data/inventory_documents.modeldef"
+        ],
+        "unchanged_non_generator_metadata": true
+      },
+      {
+        "family": "ingots",
+        "unchanged_native_resources": [
+          "models/caelum/inventory/ingots/iron.md3",
+          "models/caelum/inventory/ingots/copper.md3",
+          "models/caelum/inventory/ingots/tin.md3",
+          "models/caelum/inventory/ingots/bronze.md3",
+          "models/caelum/inventory/ingots/steel.md3",
+          "models/caelum/inventory/ingots/silver.md3",
+          "models/caelum/inventory/ingots/gold.md3",
+          "caelum/data/inventory_ingots.modeldef"
+        ],
+        "unchanged_non_generator_metadata": true
+      }
+    ],
+    "portable_original_textures": [
+      "graphics/caelum/icons/ca_water_ration.png",
+      "models/caelum/inventory/consumables/materials.png",
+      "models/caelum/inventory/water/materials.png",
+      "models/caelum/props/stations/ca_station_iron.png"
+    ],
+    "checks": [
+      "Closed outward components",
+      "Native MD3 bounds, UVs, shaders and triangles",
+      "Both exact class/CWAT/A bindings",
+      "Original opaque sprite envelope in both dimensions",
+      "Unchanged owned pixels and portable OBJ/MTL",
+      "Inset opaque icon interior UVs",
+      "Earlier optional-feature compatibility",
+      "Project validation"
+    ],
+    "project_validation_passed": true
+  },
+  "continuity": {
+    "issue": 668,
+    "kind": "waterskin",
+    "scope": "Native pickup/toss, quantity and saved ownership for waterskin; no normal menu or author acceptance.",
+    "baseline_sha256": "6682219d28990d8de422e5591e5a85d68f84b00501d4997266b54123f5f9fb35",
+    "runtime_sha256": "b3a7c9e69915231b25b94977187a797121b3d61e446e2a30ccb1b1c9561f3255",
+    "model_sha256": null,
+    "fixture_sha256": "2aa65ee0f38d2d208f98a2eb38c12d3eefeae9ef11d5e47fcbad1f2eb205fdb2",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "baseline",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 47
+      },
+      {
+        "phase": "old-save-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 42
+      },
+      {
+        "phase": "candidate-fresh",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 47
+      },
+      {
+        "phase": "candidate-reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 42
+      },
+      {
+        "phase": "rollback-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 42
+      }
+    ],
+    "captures": {
+      "baseline.png": "1b020de2197925f4893fbcf0e466265979f91bfccd08718a8b9ebca6583e2ca0",
+      "candidate-0.png": "2fb4a5ba32fa221050cb61ebf041cb1869342020faa3c3de896ac5eb15ce0f32",
+      "candidate-1.png": "2445543fd40d4f4c80d80d52fa2744c978e3d465967cea27c5f137524f38eb56",
+      "candidate-2.png": "36d4523e5682d6b989eb5980deda7978c88303ec37588c012950dda3f33a7887",
+      "candidate-3.png": "23434c3fd15b963aba805a9c5e3fbb9af8c7b37d0d7c51acf82546f474e63a4d",
+      "candidate-5.png": "49379c7c0b61d7056d64c2d1b67c9c2cdf6dde07af62c88cf8f535057920bd74",
+      "candidate-6.png": "6ba656de3a73936d799f192bc99554e3632f3b7a106bfcd349a7727b01c81e05",
+      "candidate-7.png": "241f2fc8ecbda0a3bbae4344e62d6605677d31baa35ca7be5547cf3968a0f15e",
+      "detail-0-0.png": "7f00f26e1da4de3e1706964b4f8c3460ff1e8c3d626d30eb1b03e5ebc8434379",
+      "detail-0-160.png": "4ff9b57a085f24d9b7ba7cf6123f3aa34a9a79463f0a44efe4fbfaaef00942f4",
+      "detail-0-270.png": "f6b86e4c9df5c07ee824124c6db4dc79944d418457a502e81582fee63db5579c",
+      "detail-0-90.png": "1db00242d75cda610da705576c083e318d2adddbebb5d58bb152bc8510c06c4f",
+      "detail-1-0.png": "0fe76b4cbd07c4682f38ab75185b40ec4ead312d5c43a3d3cef9c8f89ee378c5",
+      "detail-1-160.png": "127eb55bd07a1fab9ec6c5c74fe296cf12210d54569a7167d353acfd76f4caf6",
+      "detail-1-270.png": "4d1624f509e12279146b813230fa321ba177459dd1dc966f5bb0dd5efd1c5a8c",
+      "detail-1-90.png": "958421589056f4b1d5122cf05cc494b1ae52b828abc5c9aa01127e2ced0f5531"
+    }
+  },
+  "presentation": {
+    "issue": 668,
+    "kind": "waterskin",
+    "scope": "Measure actual inventory drop classes before/after model installation.\n\nA single sequential baseline/candidate pair in an isolated room; this is not a\ncrowd budget, campaign performance acceptance or repeatability estimate.",
+    "baseline_sha256": "6682219d28990d8de422e5591e5a85d68f84b00501d4997266b54123f5f9fb35",
+    "runtime_sha256": "b3a7c9e69915231b25b94977187a797121b3d61e446e2a30ccb1b1c9561f3255",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+    "runs": [
+      {
+        "kind": "sprites",
+        "bodies": 2,
+        "pid": 26984,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 223095938.7113,
+          "END": 223115882.3493
+        },
+        "fixture_sha256": "97d060ed92e0fe69908ad69baa599c85ffa292df0e2eece105dfeef8180423f6",
+        "passed": true,
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.57185642857143,
+          "p50_ms": 28.5626,
+          "p95_ms": 29.2756,
+          "p99_ms": 29.6103,
+          "max_ms": 30.0006
+        },
+        "presentation": {
+          "pid": 26984,
+          "trace_sha256": "2e3d060ff7d7f7c763cc5e4baaf55953bf5e8a9682bebbc000e6d9d4af89ad00",
+          "rows": 25510,
+          "scene_presents": 17316,
+          "mean_present_fps": 992.7234033874648,
+          "present_intervals": {
+            "samples": 17315,
+            "mean_ms": 1.007329933582411,
+            "p50_ms": 0.9589000046253204,
+            "p95_ms": 1.2888000011444092,
+            "p99_ms": 1.5651000142097473,
+            "max_ms": 2.3855000138282776
+          },
+          "native_call_duration": {
+            "samples": 17316,
+            "mean_ms": 0.10897413368078047,
+            "p50_ms": 0.09710001945495605,
+            "p95_ms": 0.17080000042915344,
+            "p99_ms": 0.2183000147342682,
+            "max_ms": 1.670500010251999
+          }
+        }
+      },
+      {
+        "kind": "models",
+        "bodies": 2,
+        "pid": 49060,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 223130578.4194,
+          "END": 223150526.5147
+        },
+        "fixture_sha256": "97d060ed92e0fe69908ad69baa599c85ffa292df0e2eece105dfeef8180423f6",
+        "passed": true,
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.57194,
+          "p50_ms": 28.5893,
+          "p95_ms": 29.3621,
+          "p99_ms": 29.8723,
+          "max_ms": 32.7626
+        },
+        "presentation": {
+          "pid": 49060,
+          "trace_sha256": "88e385b7e3074ed5231f66ce651f63b9f011ece8f38c729ab2bccf2fa7ffa0db",
+          "rows": 24792,
+          "scene_presents": 17144,
+          "mean_present_fps": 982.5842825230412,
+          "present_intervals": {
+            "samples": 17143,
+            "mean_ms": 1.017724400630793,
+            "p50_ms": 0.965499997138977,
+            "p95_ms": 1.3370000123977661,
+            "p99_ms": 1.744599997997284,
+            "max_ms": 5.766600012779236
+          },
+          "native_call_duration": {
+            "samples": 17144,
+            "mean_ms": 0.11526448902471066,
+            "p50_ms": 0.10100001096725464,
+            "p95_ms": 0.18549999594688416,
+            "p99_ms": 0.25360000133514404,
+            "max_ms": 1.4935999810695648
+          }
+        }
+      }
+    ]
+  },
+  "art": {
+    "source": "assets/source/art/inventory_models_647/waterskin",
+    "original_pixels_preserved": true,
+    "new_image_generation": false,
+    "reviewed_views": "Native front/oblique/rear, hollow cup opening and both ration identities; visible sprite/model presentation pair.",
+    "author_check": "CA668-WATERSKIN-01"
+  },
+  "environment": {
+    "os": "Windows 11 Pro 26200",
+    "cpu": "Ryzen 9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX 3070 Ti",
+    "engine": "GZDoom 4.14.2",
+    "backend": "Vulkan",
+    "resolution": [
+      1280,
+      720
+    ],
+    "background_unpaused": true,
+    "audio": 0.05,
+    "presentation_uncapped": true,
+    "vsync": false
+  },
+  "iterations": {
+    "model01": "Closed geometry after splitting a capped rim loop into two closed halves; folded cup UVs exceed the authored material rectangle. Superseded by optional UV normalization.",
+    "model02_visual01": "47 native checks; original borrowed metallic neck bands and mottled cup surface revised to follow the approved leather bindings.",
+    "model03_visual02": "47 checks; width limits fitting inside both original sprite dimensions. Original station iron cup; interior contrast insufficient.",
+    "model04_05_visual03": "47 checks; warm brown inner lining looks like brown contents. Rejected visual choice; earlier package01 retained locally.",
+    "model06_07_visual04": "47 checks; final lining/mouth sample the original icon dark cup interior with an opaque inset. Four unchanged source textures; six repeated outputs identical.",
+    "continuity": "220 checks across baseline/new/reload/rollback, with actual one-unit consumption and delayed native thirst pulse in load phases."
+  },
+  "qualifications": [
+    "One sequential700-tic two-object presentation pair; queue-present intervals, not GPU/display timing, repeatability or campaign/crowd acceptance.",
+    "Native fixture covers split/merged quantities, metadata, power identity, Box rules, pickup/toss, use and the first thirst pulse after40tics. Ordinary inventory-menu and art acceptance remain author checks.",
+    "Inventory display fitting preserves the existing silhouette envelope; it does not assign physical vessel capacity. The object remains a consumable ration, not a refillable water container.",
+    "Only exporter hash metadata changes for the three earlier families; every earlier native resource is unchanged. Rejected historical mate meshes remain unbound.",
+    "No PK3, WAD, executable, DLL, development IWAD or save is committed."
+  ],
+  "files": {
+    "build.log": "0adb0c75a049adc9b9e97880559b5407e5d218b60783d426e6a2cb9dc4b0365f",
+    "continuity/baseline-process.log": "d5ad95b20924d463384d82ecc7e9ecaf47f3f9688ff9e33ee00609fbf22a422c",
+    "continuity/baseline.cfg": "b306b97a4cfa11e10b2fa19e96837b5afbee136bf51c0e1cd0d2d29de6b0d343",
+    "continuity/baseline.log": "992b83c488f3f2cb00cec1f2b8fd49fc2605346b32e69cb486dca68bb4623a49",
+    "continuity/baseline.png": "1b020de2197925f4893fbcf0e466265979f91bfccd08718a8b9ebca6583e2ca0",
+    "continuity/candidate-0.png": "2fb4a5ba32fa221050cb61ebf041cb1869342020faa3c3de896ac5eb15ce0f32",
+    "continuity/candidate-1.png": "2445543fd40d4f4c80d80d52fa2744c978e3d465967cea27c5f137524f38eb56",
+    "continuity/candidate-2.png": "36d4523e5682d6b989eb5980deda7978c88303ec37588c012950dda3f33a7887",
+    "continuity/candidate-3.png": "23434c3fd15b963aba805a9c5e3fbb9af8c7b37d0d7c51acf82546f474e63a4d",
+    "continuity/candidate-5.png": "49379c7c0b61d7056d64c2d1b67c9c2cdf6dde07af62c88cf8f535057920bd74",
+    "continuity/candidate-6.png": "6ba656de3a73936d799f192bc99554e3632f3b7a106bfcd349a7727b01c81e05",
+    "continuity/candidate-7.png": "241f2fc8ecbda0a3bbae4344e62d6605677d31baa35ca7be5547cf3968a0f15e",
+    "continuity/candidate-fresh-process.log": "a24e7536260e1e17b73e940267d2ecc3ecd09ac172ac0e6ac4d54a3abcf0fee8",
+    "continuity/candidate-fresh.cfg": "08755468fb4f668a90217ecc7b631004ec67ec98fb2f5298cc2e35bd155b868c",
+    "continuity/candidate-fresh.log": "ad1a7a37058ab1fb5ed9edc0ffae38190eaa3e7f4fd08d1d57b7e1a7193455a7",
+    "continuity/candidate-reload-process.log": "5d0a3a76a5998d6ec079873e84a0829542d078dd17ee48e44f647325c6108ad6",
+    "continuity/candidate-reload.cfg": "fb64da42b5ffc86f5158582c59f7a9fb19ee2daa91111f214242b35ca84b83a1",
+    "continuity/candidate-reload.log": "223015d0cf614050155a0420bc72824b2234bd274aa4d1af00b6463c8b85d513",
+    "continuity/detail-0-0.png": "7f00f26e1da4de3e1706964b4f8c3460ff1e8c3d626d30eb1b03e5ebc8434379",
+    "continuity/detail-0-160.png": "4ff9b57a085f24d9b7ba7cf6123f3aa34a9a79463f0a44efe4fbfaaef00942f4",
+    "continuity/detail-0-270.png": "f6b86e4c9df5c07ee824124c6db4dc79944d418457a502e81582fee63db5579c",
+    "continuity/detail-0-90.png": "1db00242d75cda610da705576c083e318d2adddbebb5d58bb152bc8510c06c4f",
+    "continuity/detail-1-0.png": "0fe76b4cbd07c4682f38ab75185b40ec4ead312d5c43a3d3cef9c8f89ee378c5",
+    "continuity/detail-1-160.png": "127eb55bd07a1fab9ec6c5c74fe296cf12210d54569a7167d353acfd76f4caf6",
+    "continuity/detail-1-270.png": "4d1624f509e12279146b813230fa321ba177459dd1dc966f5bb0dd5efd1c5a8c",
+    "continuity/detail-1-90.png": "958421589056f4b1d5122cf05cc494b1ae52b828abc5c9aa01127e2ced0f5531",
+    "continuity/fixture-source/MAPINFO.txt": "3ec77d8b450afd5661b322dcb018607941eac7dad391b7794bcee88d617697e0",
+    "continuity/fixture-source/ZSCRIPT.txt": "cdd9ce6a8e1b0caf2f99b4fc41c5e57dcf28727643fadc5e9ff7389d9c850e24",
+    "continuity/fixture.zs": "24f53a9820ce2f4cbaf9b6232e6807fc7b914484e2a7520f090fa6b88fe69c3c",
+    "continuity/old-save-load-process.log": "22a31e5d6096fd8698f766e31088b3384c6c8d67630c6d9d6d8fa3bec12aae13",
+    "continuity/old-save-load.cfg": "d9f735f6298174451d55c64d726322e91a0aafa6a2d988185d9f9b41dd8cacc4",
+    "continuity/old-save-load.log": "a70c6457b8b8654a06423bd2662671e6bb3e7285b90e8a4eefa96956f27af531",
+    "continuity/RESULTS.json": "e442482b0557a950ee9e880cab14181a365889a62301c5155825725647b8c3f3",
+    "continuity/rollback-load-process.log": "3b52b8f4e2d0a0fe75389eebfde01b9827da0339078cd71a6b723964f6af3627",
+    "continuity/rollback-load.cfg": "fb64da42b5ffc86f5158582c59f7a9fb19ee2daa91111f214242b35ca84b83a1",
+    "continuity/rollback-load.log": "d8f4b9ed4c0a043a4d428a56d9d68d8398cc4c0bdaf8cfc697e9eef68d387d74",
+    "continuity/session.ini": "1bafe5dd1aad368f7e996b00315bc25143a1e5728d969bfa11be3d3b114f628c",
+    "generator-compatibility.json": "623e57274b8785d3cd61ffda3e27d621d6c18af4ba13c6d488d2e462e273eb72",
+    "iterations/build01.log": "442f0236136af7a0c800de695765101c0926d860df70e02f1409e5ce744862a4",
+    "iterations/model01.json": "b84e4eb34c08524317c9a7cfe8604aaf122f00bfff5e109f93c9deca583130f4",
+    "iterations/model02.json": "5179a84ac187086042bf7e5152d36bfbc798a8b2de2a9b92340dbb8a7326b647",
+    "iterations/model03.json": "ded32b440cb30ec883aafab8dd0fc4e4cb137d4f7508a9296cd5d639aca5a3ad",
+    "iterations/model04.json": "a284ceaeede7052f0e2429280a3717f5d59851f41b0835caa4be8d9c16a42501",
+    "iterations/model05.json": "a284ceaeede7052f0e2429280a3717f5d59851f41b0835caa4be8d9c16a42501",
+    "iterations/model06.json": "815f0736a7805c645af9c04f9ff098999bed6c7c8a89c76362c497740b58f83b",
+    "iterations/model07.json": "815f0736a7805c645af9c04f9ff098999bed6c7c8a89c76362c497740b58f83b",
+    "iterations/visual01/detail-0-90.png": "29ecb97c25d56178e92950aed3e563549e399bcb4bb88562912e4ab211f4e0c3",
+    "iterations/visual01/fixture-source/MAPINFO.txt": "3ec77d8b450afd5661b322dcb018607941eac7dad391b7794bcee88d617697e0",
+    "iterations/visual01/fixture-source/ZSCRIPT.txt": "af4fe8c2160732176a0f36f832fdfd5a77b783919a6b86a3f43bdf659a167d76",
+    "iterations/visual01/fixture.zs": "567f3a9b54d508f96add8d7831f7276478b0cf2c6f4154e4360609959b40023e",
+    "iterations/visual01/RESULTS.json": "935e1f9bad52dfba8bbe029a414b61b127e4eb80b46ac53c36532f111c3b5b69",
+    "iterations/visual01/session.ini": "a8ccae4b4a9efb850751588692d5f3079cd7a667a0adcfdf0de5c1c19ee5f996",
+    "iterations/visual01/visual-process.log": "f930e102ee18590b04aef9ca64534e704c3763e29cfa11e4e290b15a792e88f9",
+    "iterations/visual01/visual.cfg": "b0004d90392432ea2f68eef2c04d8dafac3d9d68bc35f2c4df8e30aba36d4700",
+    "iterations/visual01/visual.log": "37d331d7a46bd249677ed636feb473abeaa955e6bc921562812427a2d659f1ef",
+    "iterations/visual02/detail-0-90.png": "e25468d642f120dd99495d9640e9635302c41b9548e0a84e764aba2cb3a9afa5",
+    "iterations/visual02/fixture-source/MAPINFO.txt": "3ec77d8b450afd5661b322dcb018607941eac7dad391b7794bcee88d617697e0",
+    "iterations/visual02/fixture-source/ZSCRIPT.txt": "cdd9ce6a8e1b0caf2f99b4fc41c5e57dcf28727643fadc5e9ff7389d9c850e24",
+    "iterations/visual02/fixture.zs": "24f53a9820ce2f4cbaf9b6232e6807fc7b914484e2a7520f090fa6b88fe69c3c",
+    "iterations/visual02/RESULTS.json": "6c6cc273ce176a68ab3264a72337fee23e09efff08ce34eb34c75f3e64408a96",
+    "iterations/visual02/session.ini": "429be6647abdef998eec87581ec72089a6869d5a78de8c6b3d1bb22157f5f9e5",
+    "iterations/visual02/visual-process.log": "40477b363f447b24fff764eab24e13a01d45d0ce6319fabffaeb8a6d03ee9a3c",
+    "iterations/visual02/visual.cfg": "b0004d90392432ea2f68eef2c04d8dafac3d9d68bc35f2c4df8e30aba36d4700",
+    "iterations/visual02/visual.log": "1541fbc54d6971173e2efd16ba31e31b911aabfc47ef2a147a508f04d6d2d340",
+    "iterations/visual03/detail-0-90.png": "656c442f20e1413a8c206777da5e65ca0b38256a7ae8123aa7f7c0795612784f",
+    "iterations/visual03/fixture-source/MAPINFO.txt": "3ec77d8b450afd5661b322dcb018607941eac7dad391b7794bcee88d617697e0",
+    "iterations/visual03/fixture-source/ZSCRIPT.txt": "cdd9ce6a8e1b0caf2f99b4fc41c5e57dcf28727643fadc5e9ff7389d9c850e24",
+    "iterations/visual03/fixture.zs": "24f53a9820ce2f4cbaf9b6232e6807fc7b914484e2a7520f090fa6b88fe69c3c",
+    "iterations/visual03/RESULTS.json": "b1d4a7661819a181dfc2dcaf9497a1299083a911df043537426f7f6cb8474f0b",
+    "iterations/visual03/session.ini": "8bdc9ddd6be3a6b0b7212d71e861cbead4e3fa13e09d3e0dfaa5c93557faba9b",
+    "iterations/visual03/visual-process.log": "d3cd83a0540cc754551942da8c61cfb586e8a8beaddeae33cc7b6332b4966c5f",
+    "iterations/visual03/visual.cfg": "b0004d90392432ea2f68eef2c04d8dafac3d9d68bc35f2c4df8e30aba36d4700",
+    "iterations/visual03/visual.log": "722f209df651bdc0041a5469c8617e3d7e1e2c859cb2145571bf2966c91be162",
+    "iterations/visual04/fixture-source/MAPINFO.txt": "3ec77d8b450afd5661b322dcb018607941eac7dad391b7794bcee88d617697e0",
+    "iterations/visual04/fixture-source/ZSCRIPT.txt": "cdd9ce6a8e1b0caf2f99b4fc41c5e57dcf28727643fadc5e9ff7389d9c850e24",
+    "iterations/visual04/fixture.zs": "24f53a9820ce2f4cbaf9b6232e6807fc7b914484e2a7520f090fa6b88fe69c3c",
+    "iterations/visual04/RESULTS.json": "84fc0b3d7055cb94b673db2370619a7a39a549808487e867dfcf2bf932584bc1",
+    "iterations/visual04/session.ini": "e6cd548363c903801ae826277942b0ece3229c39144fc9bc293a56c42b7a4467",
+    "iterations/visual04/visual-process.log": "554e606a34c232d2e741a099a6ca3732329f2b08312b75ca6cc6569af389fb01",
+    "iterations/visual04/visual.cfg": "b0004d90392432ea2f68eef2c04d8dafac3d9d68bc35f2c4df8e30aba36d4700",
+    "iterations/visual04/visual.log": "d274faa2e06a25ac010f5a5a318f000fd0579eecff62f6c254a52da9bede18ce",
+    "presentation/models-2/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/models-2/engine.log": "19616d3c8802a95d5133439266ba44186ec68eb41e45a4f17a51c5437090ce2a",
+    "presentation/models-2/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/models-2/fixture-source/ZSCRIPT.txt": "f6c57e0b99bcc1cc9118f9db00be28a0a404fcf5b33ea6e0d0623dddf6e130f4",
+    "presentation/models-2/presents.csv": "88e385b7e3074ed5231f66ce651f63b9f011ece8f38c729ab2bccf2fa7ffa0db",
+    "presentation/models-2/process.log": "ccc143f930313bc326e3bcf538c65ab9b0ef3a7b5d4496de89dfdcaf7b804099",
+    "presentation/models-2/scene.png": "869cb978065b484fc57f633f2bb14e0f03961fffdac9233eec44addd478474df",
+    "presentation/models-2/session.ini": "96b90a81d4abee52f823f3e8049f91b36963ed2484a33ba670f5dd5f023a87b5",
+    "presentation/RESULTS.json": "7138c4bb369402c9629b495eb128bdacbbf470ea91cf5824bccf0908790d93dc",
+    "presentation/sprites-2/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/sprites-2/engine.log": "0251041080371b8888876c17afcb3d168629afe5c648350a17de859b5dc55d02",
+    "presentation/sprites-2/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/sprites-2/fixture-source/ZSCRIPT.txt": "f6c57e0b99bcc1cc9118f9db00be28a0a404fcf5b33ea6e0d0623dddf6e130f4",
+    "presentation/sprites-2/presents.csv": "2e3d060ff7d7f7c763cc5e4baaf55953bf5e8a9682bebbc000e6d9d4af89ad00",
+    "presentation/sprites-2/process.log": "2eb71b58e5d864005b8b527213016bd6e30f58d2b78cf2c06c6a52755701c13b",
+    "presentation/sprites-2/scene.png": "59176a02837965fb34e8a8b46b6ae19ec06af24d7e50c40384ea71b87ad15ee8",
+    "presentation/sprites-2/session.ini": "34bec2e344bbdfe113b8fbfdddda024680225bbb949ac0ad3f9440969c53bd95",
+    "validation-initial.json": "d20be794721d776bf1139ea8b8e5ac375c1892fd4a5d26ea777e86c9edced056",
+    "validation-final.json": "d20be794721d776bf1139ea8b8e5ac375c1892fd4a5d26ea777e86c9edced056"
+  }
+}

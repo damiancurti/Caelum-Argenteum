@@ -1,0 +1,50 @@
+{
+  "issue": 668,
+  "change": "Optional per-part UV normalization for folded hollow profiles; absent for every earlier item.",
+  "previous_families": [
+    {
+      "family": "ammunition",
+      "unchanged_native_resources": [
+        "models/caelum/inventory/ammunition/carbine.md3",
+        "models/caelum/inventory/ammunition/arrow.md3",
+        "models/caelum/inventory/ammunition/bolt.md3",
+        "models/caelum/inventory/ammunition/javelin_one.md3",
+        "models/caelum/inventory/ammunition/javelin_two.md3",
+        "models/caelum/inventory/ammunition/javelin_three.md3",
+        "models/caelum/inventory/ammunition/shotgun.md3",
+        "caelum/data/inventory_ammunition.modeldef"
+      ],
+      "unchanged_non_generator_metadata": true
+    },
+    {
+      "family": "documents",
+      "unchanged_native_resources": [
+        "models/caelum/inventory/documents/book.md3",
+        "models/caelum/inventory/documents/letter.md3",
+        "models/caelum/inventory/documents/key.md3",
+        "models/caelum/inventory/documents/cloth.md3",
+        "models/caelum/inventory/documents/ingot.md3",
+        "caelum/data/inventory_documents.modeldef"
+      ],
+      "unchanged_non_generator_metadata": true
+    },
+    {
+      "family": "ingots",
+      "unchanged_native_resources": [
+        "models/caelum/inventory/ingots/iron.md3",
+        "models/caelum/inventory/ingots/copper.md3",
+        "models/caelum/inventory/ingots/tin.md3",
+        "models/caelum/inventory/ingots/bronze.md3",
+        "models/caelum/inventory/ingots/steel.md3",
+        "models/caelum/inventory/ingots/silver.md3",
+        "models/caelum/inventory/ingots/gold.md3",
+        "caelum/data/inventory_ingots.modeldef"
+      ],
+      "unchanged_non_generator_metadata": true
+    }
+  ],
+  "new_portable_original_textures": [
+    "models/caelum/inventory/consumables/materials.png",
+    "models/caelum/inventory/water/materials.png"
+  ]
+}

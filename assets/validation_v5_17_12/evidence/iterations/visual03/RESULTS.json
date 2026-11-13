@@ -1,0 +1,36 @@
+{
+  "issue": 668,
+  "kind": "waterskin",
+  "scope": "Native pickup/toss, quantity and saved ownership for waterskin; no normal menu or author acceptance.",
+  "baseline_sha256": "6682219d28990d8de422e5591e5a85d68f84b00501d4997266b54123f5f9fb35",
+  "runtime_sha256": "6682219d28990d8de422e5591e5a85d68f84b00501d4997266b54123f5f9fb35",
+  "model_sha256": "0cf04ad1326c83d65367197324fa3386b969a71f3df561291da03e8caede5e96",
+  "fixture_sha256": "2aa65ee0f38d2d208f98a2eb38c12d3eefeae9ef11d5e47fcbad1f2eb205fdb2",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "visual",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 47
+    }
+  ],
+  "captures": {
+    "candidate-0.png": "784e045a9ee3405461f3bbe24ec6d574217a09769f367dc940de7bad003a1bb1",
+    "candidate-1.png": "eb8c342fc4d9ac79e9f8fe6e963dc68e0033d7edbe52a9cbc0e955bc172510bf",
+    "candidate-2.png": "a4bdb797bee91fd89f0cf9e210a0ecaba69ae2f3ef286a293f55e7c04b074640",
+    "candidate-3.png": "5a542ee0166b2aae43e02c053e9dd0767bc4b8e8df519b394631b58d4f50ebc2",
+    "candidate-5.png": "0e99151e6c9e5671793131220c1b107246d4b5bf0bbd2776d6d3c5d1ab623f3d",
+    "candidate-6.png": "ff310a6dc5770c2ec9731ca8119639504f509c61783b3b80451c1b7f5b87251d",
+    "candidate-7.png": "212b24b869f80db9d4bb757ecf95ddc33e56b259facaabe1fb39c3fe1f43d745",
+    "detail-0-0.png": "3f0f0efb29ed35c8acd286d22cacafc1beda822375207a1c72990de505b6ec0d",
+    "detail-0-160.png": "5541bb63d6b2a8c7c45f93ff84ab87ac0d3486a95df3b679fc4a6d673a97f97a",
+    "detail-0-270.png": "80cfcbddefa8b491a164386fcc3ed81845a4b1793e13e184c73fbc359d9c0183",
+    "detail-0-90.png": "656c442f20e1413a8c206777da5e65ca0b38256a7ae8123aa7f7c0795612784f",
+    "detail-1-0.png": "48e5956489a68b26eaacf06aac08945ccb4e334b9af51615fa31e2c0fcc72597",
+    "detail-1-160.png": "3c446930d457a85acb287f0d8b11572744431a9ad92539ea7ba96d5d64390776",
+    "detail-1-270.png": "89743814ae10a9c0627591c21b9cedeb7d82475b69414ab993391aabef95aa69",
+    "detail-1-90.png": "7d1e98b009f4dc85686e557d5af0d3ab89bfa24ae9849f43f94869b096358d8a"
+  }
+}

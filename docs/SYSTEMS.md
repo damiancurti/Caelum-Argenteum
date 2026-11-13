@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.11** - 2026-11-13.
+Documentation version: **5.17.12** - 2026-11-13.
 
 ## 5.17.2 - Native ammunition class lookup (#650)
 
