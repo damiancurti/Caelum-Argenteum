@@ -1857,11 +1857,29 @@
       },
       "source_notes": "Gran criatura lacustre.",
       "protected_existing_identity": null,
-      "production_status": "concept_reference_only",
+      "production_status": "unintegrated_model_pilot",
       "engine_id": null,
-      "mesh": null,
-      "rig": null,
-      "animations": []
+      "mesh": "assets/bestiary/models/nahuelito/models/caelum/folklore/nahuelito/nahuelito.md3",
+      "rig": "Procedural articulated mesh controls in DESIGN.json and generate_nahuelito_model.py; no skeleton/armature delivered",
+      "animations": [
+        "idle:16 samples",
+        "swim:24 samples"
+      ],
+      "visual_pilot": {
+        "issue": 455,
+        "source": "assets/source/art/nahuelito_455/DESIGN.json",
+        "mesh": "assets/bestiary/models/nahuelito/models/caelum/folklore/nahuelito/nahuelito.md3",
+        "manifest": "assets/bestiary/models/nahuelito/manifest.json",
+        "rig": "Procedural articulated mesh controls in DESIGN.json and generate_nahuelito_model.py; no skeleton/armature delivered",
+        "animations": [
+          "idle:16 samples",
+          "swim:24 samples"
+        ],
+        "runtime_enabled": false,
+        "author_accepted": false,
+        "limits": "Visual pilot only. No statistics, collision, aquatic AI, encounter or campaign unique-instance authority.",
+        "generator": "assets/generators/generate_nahuelito_model.py"
+      }
     },
     {
       "id": "CA-FOLK-056",

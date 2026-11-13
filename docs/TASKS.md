@@ -1,6 +1,18 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.16.2** - 2026-11-12.
+Documentation version: **5.16.3** - 2026-11-12.
+
+## 5.16.3 - Nahuelito model pilot (#455)
+
+The first actual3D folklore pilot has40 idle/swim frames, editable geometry/motion
+controls and a neutral OBJ. Binary checks, repeatable generation and native
+single-instance fresh/reload pass. CA455-VIS-01 remains pending. The author still
+needs to approve final appearance and per-creature stats, attacks, abilities,
+allegiance, drops and encounters. A question asks whether another source contains
+those rules or whether proposals should reuse existing templates. Do not promote
+this preview into combat or infer gameplay dimensions from its visual scale.
+Remaining 57 models, action coverage required by approved behavior, aquatic AI,
+regional placement and campaign unique-instance persistence remain unfinished.
 
 ## 5.16.2 - Sewer redesign validation (#454)
 

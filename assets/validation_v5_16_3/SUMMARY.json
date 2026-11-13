@@ -1,0 +1,49 @@
+{
+  "issue": 455,
+  "version": "5.16.3",
+  "baseline_commit": "9185f247cd0e591c2c76086ba2e3f4582cdb9818",
+  "status": "Unintegrated Nahuelito visual pilot. CA455-VIS-01 pending. Other57 models and creature behavior unfinished.",
+  "approved_reference": "CA-FOLK-055",
+  "native": {
+    "final_model_run": "native-04",
+    "runtime": "5.16.2 MAP02 package (exact hash in native-04/RESULTS.json); 5.16.3 diagnostic-label-only package smoke still pending",
+    "facts": [
+      "One native subject before save and after reload",
+      "Native MODELDEF angle0/90 and front/side/rear/close captures",
+      "40 MD3 frames; captured alternating swim poses and live animation"
+    ],
+    "limits": [
+      "No ordinary encounter or aquatic behavior",
+      "No campaign uniqueness/rewards/coop test",
+      "No frame-presentation performance acceptance",
+      "Visual acceptance requires author"
+    ]
+  },
+  "failed_attempts": {
+    "native-01": "Dynamic String to StateLabel compile error; fixed explicit labels.",
+    "native-02": "TID0 lookup did not recover untagged controller, spawning duplicates and causing null-subject VM abort; fixed nonzero driver TID and exact-subject-count assertion."
+  },
+  "earlier_pass": "native-03, before final eye socket/lip/head scute refinements",
+  "visual_review": {
+    "native-03": [
+      "three-quarter",
+      "head",
+      "swim-down",
+      "swim-up"
+    ],
+    "native-04": [
+      "head",
+      "rotated",
+      "front"
+    ]
+  },
+  "static": "static-results.json",
+  "determinism": {
+    "passed": true,
+    "preview_package_sha256": "eadff6add4d3f82cd1325e075f0e427988a7e7e116be544be763d996e0577cf2",
+    "scope": "All exported artifacts pass --check; two independently generated preview packages match byte-for-byte."
+  },
+  "source": "assets/source/art/nahuelito_455",
+  "export": "assets/bestiary/models/nahuelito",
+  "production_runtime_enabled": false
+}

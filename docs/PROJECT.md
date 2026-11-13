@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.16.2** - 2026-11-12.
+Documentation version: **5.16.3** - 2026-11-12.
+
+## 5.16.3 - First folklore model pilot (#455, in progress)
+
+Nahuelito (CA-FOLK-055) has an editable real 3D visual pilot, a native 40-frame
+idle/swim export and reproducible native fresh/reload evidence. ASSETS records
+sources, generation and limits. It is unintegrated: no new statistics, encounters,
+aquatic behavior, collision or campaign unique-instance persistence is activated.
+The other 57 references and per-creature design remain outstanding. Catalogue
+acceptance is distinct from CA455-VIS-01 visual review and creature integration.
+The V5.16 batch and final author terminal are not ready.
 
 ## 5.16.2 - Sewer geometry slice (#454, in progress)
 

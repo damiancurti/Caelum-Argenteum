@@ -469,3 +469,11 @@
 /assets/map06_port/legacy_5162/* -text -whitespace
 /assets/generators/generate_barracas_preview.py text eol=lf
 /assets/generators/generate_barracas_facades.py text eol=lf
+
+# #455 editable model data, deterministic exports and native evidence.
+/assets/source/art/nahuelito_455/*.json text eol=lf
+/assets/bestiary/models/nahuelito/** -text
+/assets/validation_v5_16_3/** -text -whitespace
+/assets/validation_v5_16_3/*.py text eol=lf whitespace=blank-at-eol,blank-at-eof,space-before-tab
+/assets/validation_v5_16_3/*.json text eol=lf whitespace=blank-at-eol,blank-at-eof,space-before-tab
+/assets/generators/generate_nahuelito_model.py text eol=lf

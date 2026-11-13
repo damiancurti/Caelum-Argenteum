@@ -6,12 +6,14 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.16.2.** Obtain and update the complete repository,
+**Current release: 5.16.3.** Obtain and update the complete repository,
 validate it, then rebuild with `run_dev.bat` as described below.
 
 The [58-reference folklore catalogue](assets/bestiary/CATALOGUE.json) is imported
 under #453 with original images, verified provenance and all 58 regional
-assignments approved. No new creatures or 3D models are yet implemented.
+assignments approved. #455 adds an unintegrated Nahuelito model pilot with 40
+idle/swim frames and native save/reload evidence. The other 57 models and creature
+behavior remain unfinished; [ASSETS](docs/ASSETS.md) records sources and limits.
 
 V5.16 is in campaign authoring, beginning with #452. The author approved the
 regional chapter allocation; [the planning graph](assets/campaign/PROGRESSION.json)
@@ -40,7 +42,7 @@ Construction requires learned recipes, the existing workshops/materials
 and a current faction. Guard dialogue receives pre-battle prisoner intelligence
 and reports of intact captured machines. Route markers appear only after visiting. On2026-11-10 the author confirmed all five checks passed and requested integration.
 Issues#447-451 are closed and PR635-639 merged, preserving each focused commit.
-HISTORY records CA447-01/CA448-01/CA449-01/CA450-01/CA451-01; pending_test.txt is empty.
+HISTORY records CA447-01/CA448-01/CA449-01/CA450-01/CA451-01; the author queue was empty at that acceptance.
 Occupation closes civilian services; liberation reopens survivors after24 world
 hours. Start the isolated manual scenes with
 `powershell -NoProfile -ExecutionPolicy Bypass -File assets/validation_v5_15_4/author_terminal.ps1`.

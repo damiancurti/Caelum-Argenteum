@@ -1,6 +1,34 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.16.2** - 2026-11-12.
+Documentation version: **5.16.3** - 2026-11-12.
+
+## 5.16.3 - Nahuelito animated model pilot (#455, unintegrated)
+
+CA-FOLK-055 now has a reference-led real 3D visual pilot: continuous neck/body/tail,
+four swept flippers, jaw, eyes, nostrils and dorsal scutes. The editable anatomy
+and motion controls are in assets/source/art/nahuelito_455/DESIGN.json;
+generate_nahuelito_model.py exports a neutral OBJ/MTL and native MD3. The export
+has 5,174 vertices, 9,272 triangles, three material surfaces and 40 frames
+(16 idle, 24 swim). It uses procedural articulation; no skeletal armature is
+claimed. The source's 12m lower bound sets only the preview's nose-to-tail length.
+No collision radius, combat statistics, aquatic AI or encounters are inferred.
+
+The skin is an unchanged built-in image_gen output. PROMPT.json retains the exact
+prompt; PROVENANCE.json identifies the approved reference and original owned
+brass/dark materials reused for iris and mouth detail. Original concept pixels
+are untouched. Exported artifacts live in assets/bestiary/models/nahuelito;
+AUTHORING/CATALOGUE identify this as an unintegrated visual pilot, with no engine
+campaign identity and no author acceptance. No production actor/model is replaced.
+
+Rebuild with `python assets/generators/generate_nahuelito_model.py --output build/nahuelito`;
+`--check` compares all generated files read-only. The visual fixture and binary
+validator live in assets/validation_v5_16_3. SUMMARY.json retains native captures,
+failed fixture attempts and exact hashes. Native single-instance animation and
+save/reload pass; binary/material/frame coverage and deterministic regeneration
+pass. These checks do not establish ordinary aquatic gameplay, encounter-scale
+performance, uniqueness across campaign maps, or final visual acceptance.
+CA455-VIS-01 requests that separate author review. The other 57 references remain
+without new models; #455 is unfinished.
 
 ## 5.16.2 - Approved map references and preserved sewer sources (#454)
 

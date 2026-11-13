@@ -1,6 +1,30 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.16.2** - 2026-11-12.
+Documentation version: **5.16.3** - 2026-11-12.
+
+## 5.16.3 - Nahuelito visual model pilot (#455, 2026-11-12)
+
+The author requested actual3D models where feasible from the approved bestiary.
+CA-FOLK-055 received the first isolated reference-led mesh, editable anatomy/motion
+controls, a neutral OBJ/MTL, an original image_gen skin and native MD3 bindings.
+There are 40 idle/swim frames and three material surfaces; no gameplay actor,
+statistics, collision, encounter or unique-campaign authority was added.
+Provenance and exact image prompt are retained with the source.
+
+Binary bounds/material/frame checks and byte-identical regeneration pass. Native
+view rotation, differing swim poses, continuous animation and single-instance
+save/reload pass. The first fixture failed on a dynamic String-to-StateLabel;
+explicit state labels fixed the compilation. The second used an untagged TID0
+lookup for its controller, repeatedly created actors and aborted animation on a
+null subject. A dedicated driver TID plus an explicit fixture-only typed census
+resolved it; subsequent fresh/reload checks require exactly one subject. Raw failed
+logs are retained, not reported as successful game tests. CA-KP-216 records the
+lookup lesson. The eye socket/lip/scutes were refined after the initial views.
+
+SUMMARY.json in assets/validation_v5_16_3 owns qualified evidence and exact hashes.
+Visual acceptance remains pending as CA455-VIS-01. No existing author check was
+removed; no final V5.16 terminal was opened. The remaining creature/campaign work
+is still in progress.
 
 ## 5.16.2 - Sewer redesign slice (#454, in progress, 2026-11-12)
 
