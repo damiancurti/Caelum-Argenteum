@@ -4,6 +4,11 @@ Documentation version: **5.16.5** - 2026-11-13.
 
 ## 5.16.5 - Approved finale eligibility query (#457, 2026-11-13, in progress)
 
+Dependency refresh through #456 commit5bc9a0b9c includes #454's tested perception
+change. Eligibility source and generated data remain unchanged. Combined project
+validation passes in validation_v5_16_5/dependency-perception.log; native evidence
+retains its originating build hashes. Scene/travel integration remains pending.
+
 Dependency refresh retains #455's Pombero technical pilot and #456 ancestry,
 without changing the #457 runtime. Combined project validation passes in
 validation_v5_16_5/dependency-pombero.log; existing native eligibility evidence
@@ -29,6 +34,11 @@ acceptance or full campaign completion is claimed.
 The final package also verifies an actual guest disconnect after both fresh and
 reloaded checks: the host's eligible roster becomes empty immediately on query.
 Static validation, generated-data freshness and repeatable generation pass.
+
+2026-11-13 #456 dependency refresh includes #454's tested perception change
+through #455 commit1d22cca3d. The essence ledger and policy remain unchanged.
+The project audit passes in validation_v5_16_4/dependency-perception.log; native
+evidence retains its #454 runtime hash and does not imply new placement coverage.
 
 2026-11-13 #456 dependency refresh includes #455 commit2822c4315 and its Pombero
 technical pilot, preserving5.16.4 and the unchanged essence ledger/runtime.
@@ -57,6 +67,15 @@ their original issue/build scope. No author acceptance or full completion is
 claimed, and outstanding manual checks remain untouched.
 
 ## 5.16.3 - Folklore combat classes and model pilot (#455, 2026-11-12)
+
+2026-11-13 dependency update: merge #454's native-distance reuse and its retained
+visibility/save/performance evidence. #455 combat and visual assets are unchanged;
+project validation is recorded in validation_v5_16_3/dependency-perception.log.
+The inherited siege presentation problem remains unresolved.
+An initial local conflict resolver truncated two documents; the unexpectedly
+short context count exposed it before staging or committing. Both were restored
+from the unchanged merge stages, resolved with bounded marker matching, and
+validated again; the rejected intermediate validation log is retained separately.
 
 2026-11-13 visual follow-up: CA-FOLK-006 Pombero received an unintegrated technical
 mesh/OBJ/MD3 with 40 idle/walk frames. Built-in image_gen material originals and
@@ -142,6 +161,30 @@ actors. The combat follow-up above implements the shared template; encounter
 rosters and visual acceptance remain outstanding.
 
 ## 5.16.2 - Sewer redesign slice (#454, in progress, 2026-11-12)
+
+2026-11-13 perception follow-up: reuse the native 3D distance already calculated
+inside each candidate-selection iteration. Original contact, field, range and
+occlusion order remains intact; other callers keep the ordinary calculation.
+The native comparison records 18,886,906 visibility queries and 16,687,214 supplied
+distances with zero result or distance differences. These are supplied-value
+checks, not a claim that every query would have reached the distance predicate.
+Seventeen direct boundary/state cases pass on both old and candidate runtimes;
+old-to-current and current-to-old fixture saves also pass. The final package's
+fresh, old-save and reload checks pass. No new saved field or author-test removal
+is involved. The first upgrade launcher passed an absolute filename that GZDoom
+prefixed with savedir; copying the retained save into its isolated directory and
+loading its basename fixed the fixture. Raw failure evidence remains preserved.
+Expanded timing, rejection counts, an unadopted predicate-order trial, matched
+windows and native snapshots are in barracas-perception/SUMMARY.json. Presentation
+is still severely limited: the final package records 1.3516 queue presents/s,
+p95 866.20 ms and p99 875.52 ms. The prototype records 1.5261/s, while two
+unchanged baselines record 1.4454/s and 1.2449/s; this variance does not establish
+a reproducible general speedup. No fluent siege or author acceptance is claimed.
+Only the perception source differs in the packaged runtime.
+Final peaceful reference windows also pass: mansion 59.79/s (p95/p99 19.46/21.61 ms),
+sewer 176.33/s (7.32/8.73 ms), and city ground-facing 72.37/s (16.08/17.93 ms).
+These are stationary native queue-present measurements on the recorded machine,
+not campaign-wide frame guarantees or author acceptance.
 
 2026-11-13 city installation: the approved Barracas revision4 is packaged as
 MAP03 with its tested geometric facade model and bindings. The installed WAD

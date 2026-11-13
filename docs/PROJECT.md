@@ -47,6 +47,14 @@ Encounter rosters, campaign uniqueness and visual acceptance remain pending.
 
 ## 5.16.2 - Approved map redesign slices (#454, in progress)
 
+The perception follow-up reuses each candidate's already-computed native 3D
+distance in the same synchronous iteration. It introduces no saved state, delayed
+observations or changed contact/angle/range/occlusion rules. The native comparison
+covers 18,886,906 queries and 16,687,214 supplied distances, with zero differences.
+Visibility boundaries and original/current save continuation pass. Siege frame
+presentation remains severely limited; barracas-perception/SUMMARY.json separates
+instrumented costs, uninstrumented windows and single-tic/renderer snapshots.
+
 MAP02 revision6 implements the approved sewer board with twelve main circuits,
 four shortcuts, maintenance/recovery branches and retained gameplay content.
 Static and native fresh/reload/hub, old-save compatibility, cleared escorts,

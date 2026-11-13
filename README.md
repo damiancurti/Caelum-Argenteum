@@ -48,6 +48,10 @@ crowded aftermaths and early-checkpoint replay complete all 1,000 physical exits
 Native presentation measures about 76–100/s in peaceful views but only 1.50/s
 in the full-cap siege; siege fluency remains unresolved. The existing Knight
 essence follows the relocated quay; original-city sources remain compatible.
+The perception follow-up reuses distances already calculated during candidate
+selection. Native equivalence, visibility boundaries and reversible save checks
+pass; [qualified measurements](assets/validation_v5_16_2/barracas-perception/SUMMARY.json)
+retain the severe siege presentation limit. No visual or combat rule was removed.
 For visited original Barracas saves,
 `run_dev.bat --legacy-map03-revision3` retains exact geometry and private-house
 identities. Active/stored-hub continuation passed with current code; repeat

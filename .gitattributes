@@ -524,3 +524,6 @@
 /assets/validation_v5_16_5/*.py text eol=lf
 /assets/validation_v5_16_5/*.zs text eol=lf
 /assets/validation_v5_16_5/evidence/** -text -whitespace
+
+# Preserve the native-tested #454 perception source bytes on checkout.
+/src/caelum/actors/CaelumVisualPerception.zs -text whitespace=cr-at-eol
