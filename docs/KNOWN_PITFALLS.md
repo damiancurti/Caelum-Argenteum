@@ -292,6 +292,15 @@ long single-line64-shop console sequence lost/reordered its first requests;
 bounded chained command files retained all64 in order. Keep the failed logs and
 do not present these harness corrections as changes to production balance.
 
+#666 reproduces the console-line limit with a 4512-character inventory inspection
+sequence: its initial prepare/verify events are lost, the log reports unknown
+command "hot", and zero assertions execute. Splitting at command boundaries into
+files below 1800 characters, explicitly chained with exec, preserves all requests.
+Require exact assertion counts as well as completion markers. See
+assets/validation_v5_17_11/evidence/iterations/visual02 and continuity/RESULTS.json;
+the final five-phase native suite passes 743/478/743/478/478 checks. This extends
+the existing isolated-fixture lesson without changing production gameplay.
+
 ## CA-KP-220 - Rotating crew posts need box clearance and live AI evidence
 
 Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED for isolated ram crews.

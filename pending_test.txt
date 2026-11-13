@@ -82,3 +82,8 @@ CA664-CAMP-01 | Origin: 5.17.10 / #664
 Prerequisites: current package. Run python assets/validation_v5_17_10/run_camp_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/camp-author-01 --interactive in an isolated configuration; do not use a campaign save.
 Steps: inspect F1-F4/F6-F8 overview angles, F9 next item, F10 rotation and F5 player control. Review the miniature pitched tent, pot interior/handles and integral trivet from multiple directions. Check ordinary pickup/drop and each pot's separate contents in the normal inventory UI.
 Expected: actual 3D drops with recognizable original camp art; unchanged icons and native item/container behavior. Inventory display fitting is separate from deployed physical scale. This does not accept earlier pending deployed-pot/trivet visuals or complete the inventory roster.
+
+CA666-FURNITURE-01 | Origin: 5.17.11 / #666
+Prerequisites: current package. Run python assets/validation_v5_17_11/run_furniture_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/furniture-author-01 --interactive in an isolated configuration; do not use a campaign save.
+Steps: inspect F1-F4/F6-F8 overview angles, F9 next isolated item, F10 rotation and F5 player control. Review all seventeen designs, especially the complete 2/6/12/6-chair dining sets and front/back of both paintings. Check ordinary pickup/drop and original icons through the inventory UI.
+Expected: real 3D drops with original furniture identity, separate copies and unchanged item behavior. Inventory fitting is separate from placed physical scale. This does not approve earlier placement, cargo, locked storage or furniture visual checks, or complete the inventory roster.

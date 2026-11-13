@@ -1,6 +1,20 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.10** - 2026-11-13.
+Documentation version: **5.17.11** - 2026-11-13.
+
+## 5.17.11 - Unplaced furniture models (#666)
+
+The author's all-dropped-inventory request is implemented for seventeen furniture
+classes using existing owned geometry, UVs and pixels. Complete table/chair sets
+retain native seat placement. Drop-only bindings preserve physical ownership,
+contents, locks, mass, collision, Actor.Scale and original icons. The package
+passes 2,920 native assertions across five continuity/rollback phases, with exact
+counts enforced; the earlier visual run passes 743. Thirty-six exports repeat
+exactly and all 18,213 package entries match src. One visible seventeen-object
+pair records 1107.14/1079.71 queue presents/s, p95 1.1157/1.1655 ms and
+p99 1.3254/1.3817 ms. ASSETS records environment, rejected fixture attempts
+and scope limitations. Evidence: assets/validation_v5_17_11/evidence/SUMMARY.json.
+CA666-FURNITURE-01 and all earlier author checks remain pending.
 
 ## 5.17.10 - Camp inventory drop models (#664, 2026-11-13)
 
