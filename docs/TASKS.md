@@ -27,6 +27,13 @@ Normal encounters, breath contact damage and visual acceptance remain separate.
 
 ## 5.16.2 - Approved sewer and Barracas redesign (#454)
 
+Candidate selection now supplies its existing native distance to visibility
+checks, without storing it across tics or changing filters. Native old/new query
+equivalence and boundary/save checks pass; see barracas-perception/SUMMARY.json.
+This modest reduction of repeated work does not resolve severe siege frame gaps.
+Do not interpret diagnostic renderer/thinker snapshots as whole-window costs or
+remove perception, contamination, collision or offscreen behavior on that basis.
+
 MAP02 revision6 is packaged. Static routes, retained supply identities,
 deterministic generation and rollback hashes pass. Native fresh/reload/hub,
 old active/stored-hub compatibility, four cleared escorts, maximum-body passage,

@@ -79,6 +79,12 @@ assets/validation_v5_16_3/combat; neither constitutes author visual acceptance.
 
 ## 5.16.2 - Approved map references and preserved sewer sources (#454)
 
+The perception follow-up changes only CaelumVisualPerception.zs in the packaged
+runtime; all geometry, models and other packaged entries match the preceding
+integrated build. barracas-perception retains owned diagnostic overlays, raw
+native logs, Vulkan queue-present traces and the isolated visibility fixtures.
+Development packages, saves, engine binaries and the private IWAD stay local.
+
 The existing Knight source reuses the quay's authored quarter-turn/translation:
 CaelumArcanaPlacement resolves the original(0,640,14) to(-896,15488,14) only in
 revision4 Barracas. It introduces no card art, new reward or new coordinate

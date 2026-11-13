@@ -512,3 +512,6 @@
 /assets/validation_v5_16_3/combat/** -text -whitespace
 /assets/validation_v5_16_3/bestiary_combat_probe.zs text eol=lf
 /assets/validation_v5_16_3/run_bestiary_combat.py text eol=lf
+
+# Preserve the native-tested #454 perception source bytes on checkout.
+/src/caelum/actors/CaelumVisualPerception.zs -text whitespace=cr-at-eol

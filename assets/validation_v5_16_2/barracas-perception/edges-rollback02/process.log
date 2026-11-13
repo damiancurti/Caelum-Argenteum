@@ -1,0 +1,76 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-13 10:17:22
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v516/issue454-integrated02.pk3, 18117 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v516/vision-edge-rollback02/checks.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on G27F (NVIDIA High Definition Audio)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1520 x 825
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2496.69 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+CA425A - Visibility edges
+
+CA454 EDGE PASS saved probes retained
+CA454 EDGE PASS front visible
+CA454 EDGE PASS behind
+CA454 EDGE PASS inclusive field edge
+CA454 EDGE PASS inclusive range edge
+CA454 EDGE PASS outside range edge
+CA454 EDGE PASS insight changes immediately
+CA454 EDGE PASS darkness changes immediately
+CA454 EDGE PASS height changes immediately
+CA454 EDGE PASS full stealth
+CA454 EDGE PASS contact behind despite stealth
+CA454 EDGE PASS solid pillar
+CA454 EDGE PASS dormant
+CA454 EDGE PASS sleeping
+CA454 EDGE PASS stunned
+CA454 EDGE PASS dead observer
+CA454 EDGE PASS dead subject
+CA454 EDGE PASS conditions restored
+CA454 EDGE_RESULT checks=35 failures=0 result=PASS
+Game saved.

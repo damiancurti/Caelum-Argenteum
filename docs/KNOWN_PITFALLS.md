@@ -4,6 +4,32 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-225 - Reuse exact local measurements before changing perception rules
+
+Status/evidence: ENGINE-VERIFIED, 2026-11-13. Issue/PR: #454/#643.
+Environment: GZDoom 4.14.2, Windows 11, Vulkan 1280x720, unpaused background at 5% audio.
+Evidence: assets/validation_v5_16_2/barracas-perception/SUMMARY.json.
+
+A shared spatial candidate list can still cause millions of per-recipient checks.
+The 700-tic siege diagnostic records 18,886,906 CanSee calls, including 12,406,655
+range rejections. Measuring only the list refresh or navigation misses this work.
+Inclusive timing wrappers also add measurable overhead and overlap their children;
+do not sum them or present instrumented frame intervals as an optimized baseline.
+
+Candidate already calculates native Distance3D before its visibility test. Passing
+that exact value within the same synchronous iteration avoids repeating it when
+the range predicate is reached. Preserve native distance/portal semantics and
+all other filters; do not cache positions across tics or discard offscreen NPCs.
+The full-window comparator verifies 16,687,214 supplied values and every visibility
+result against the original expressions, with zero differences. Not every supplied
+value reaches the range predicate because earlier filters can reject it.
+Boundary tests cover light, height, Insight, stealth, contact behind the observer,
+field/range edges, walls and observer state; original/current saves are reversible.
+
+Renderer bench and profilethinkers are later snapshots, not window averages or
+GPU timings. The modest query change leaves the severe siege frame-presentation
+problem unresolved. Author acceptance and ordinary campaign review remain pending.
+
 ## CA-KP-224 - Profile isolation is not an attack or spawn-event fixture
 
 Status/evidence: ENGINE-VERIFIED, 2026-11-13. Issue/PR: #455/#644.

@@ -1,0 +1,7 @@
+{
+  "issue": 454,
+  "scope": "Diagnostic reordering of identical range/angle predicates after unchanged touching exception. No production change yet.",
+  "runtime_sha256": "0d534413b6c837388f85c1c74a9c0606bf0f541a65776e476d252dc8ef099fe2",
+  "original_source_sha256": "7426b15d3b6c52686f46aeb305f1a3d1fa54d4f7045177872b30e3602146aa4e",
+  "candidate_source_sha256": "00f1959eba933a028604bc12529bc807a1fd56410dc485906d7e0def268f8b18"
+}
