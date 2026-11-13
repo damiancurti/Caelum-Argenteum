@@ -12,6 +12,13 @@ Moon, but its exact acquisition is not placed. The ledger does not prove regiona
 reachability or implement new recovery routes. Questions remain postponed while
 the author is away; no pending design was inferred.
 
+The shared capture service now enforces the approved World-after-other-77 rule,
+using generated canonical data and preserving prior acquisitions. Native tests
+cover all 75 generic transactions, every missing-identity boundary, interruption,
+explicit source reoffer and old-save continuation. The three opening IDs and flat
+room are fixture preparation; no quest location or alternate route is added.
+See validation_v5_16_4/capture/SUMMARY.json for exact builds and qualifications.
+
 ## 5.16.3 - Folklore combat classes and model pilot (#455, in progress)
 
 Cuero (CA-FOLK-053) adds a third unintegrated editable OBJ/MD3 pilot with

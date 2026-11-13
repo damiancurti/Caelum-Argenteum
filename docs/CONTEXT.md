@@ -3,7 +3,7 @@
 Documentation version: **5.16.4** - 2026-11-13.
 
 **V5.16:** #452 regions/Majors/finale, #453 approved; #454 MAP02/MAP03 rebuilt/tested.
-MAP01/ASSETS/TASKS; #456:coverage/policy,75assignments pending.
+MAP01/ASSETS/TASKS; #456:World-gate/capture-tests,75assignments pending.
 #455 3pilots/56classes. Vision-tested; siege~1.35FPS. Scripts/art-pending. LegacyMap02Revision5.
 
 **V5.15 accepted2026-11-10:** CA447-01..451-01;#447-451 closed;PR635-639 merged.

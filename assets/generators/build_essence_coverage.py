@@ -2,7 +2,8 @@
 
 Chapter allocation and World prerequisites come from #452's approved graph.
 Existing card identities come from the canonical Tarot manifest. This authoring
-audit does not activate gameplay or establish full geographic reachability.
+audit does not place content or establish full geographic reachability. Only the
+approved final-card acquisition prerequisite is exported for the capture service.
 """
 from pathlib import Path
 import argparse
@@ -11,6 +12,7 @@ import json
 
 ROOT = Path(__file__).resolve().parents[2]
 OUTPUT = 'assets/campaign/ESSENCE_COVERAGE.json'
+NATIVE_OUTPUT = 'src/caelum/data/CaelumEssenceAcquisitionData.zs'
 INPUTS = ('assets/manifests/tarot_78_v4369.json',
           'assets/campaign/PROGRESSION.json', 'assets/campaign/ESSENCE_POLICY.json')
 
@@ -91,14 +93,32 @@ def encoded(data):
     return (json.dumps(data, ensure_ascii=False, indent=2) + '\n').encode('utf-8')
 
 
+def native_data(data):
+    if data['audit']['errors']:
+        raise ValueError('Cannot export an invalid essence contract.')
+    final = [row for row in data['entries'] if row['requires_acquired_essence_ids'] is not None]
+    if len(final) != 1:
+        raise ValueError('Expected exactly one approved final-card prerequisite.')
+    row = final[0]
+    return ('''// #456: generado desde PROGRESSION.json y el catálogo; no coloca esencias.
+class CaelumEssenceAcquisitionData : Object
+{
+    const FINAL_CARD = %d;
+    const FINAL_PREREQUISITE_COUNT = %d;
+}
+''' % (row['card_id'], len(row['requires_acquired_essence_ids']))).encode('utf-8')
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--check', action='store_true')
     parser.add_argument('--require-complete', action='store_true')
-    args = parser.parse_args(); data = build(); target = ROOT / OUTPUT
-    if args.check:
-        if target.read_bytes() != encoded(data): raise SystemExit('Stale essence coverage; regenerate.')
-    else: target.write_bytes(encoded(data))
+    args = parser.parse_args(); data = build()
+    for name, blob in ((OUTPUT, encoded(data)), (NATIVE_OUTPUT, native_data(data))):
+        target = ROOT / name
+        if args.check:
+            if not target.is_file() or target.read_bytes() != blob: raise SystemExit('Stale essence output: ' + name)
+        else: target.write_bytes(blob)
     print(json.dumps(data['audit'], indent=2))
     return int(bool(data['audit']['errors'] or (args.require_complete and not data['audit']['complete'])))
 

@@ -1,0 +1,2 @@
+gameinfo { AddEventHandlers="CA456CaptureProbe" }
+map CA455V "Essence transaction diagnostic" { sky1="CABASKY",0 nointermission }

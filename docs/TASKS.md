@@ -12,6 +12,13 @@ are no new runtime placements. Next: author exact quests/locations and alternate
 recovery routes, then implement and test acquisition, interruption, dead-NPC
 recovery, cooperative ownership and full geographic/ability reachability.
 
+The approved World prerequisite is now enforced in the existing capture service
+without new saved state. All 75 generic IDs pass actual Use/full-duration capture,
+interruption/reoffer and old-save continuation checks in an owned fixture room;
+all 77 missing-identity cases block World. Existing early World ownership survives
+the stricter gate. These tests support the shared transaction, not the pending
+campaign placements, dead-NPC routes or full cooperative journey.
+
 ## 5.16.3 - Folklore combat classes and model pilots (#455)
 
 Cuero (CA-FOLK-053) adds a third unintegrated editable OBJ/MD3 pilot with
