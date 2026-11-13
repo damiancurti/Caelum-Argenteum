@@ -36,8 +36,8 @@ the unintegrated preview. Existing MAP02 acceptance remains pending.
 SIEGE.json now derives 36 artillery posts/four towers from the retained profiles.
 All 72 isolated native operator paths,698 route points,528 ground posts and648
 cannon-component clearances pass. The complete candidate still passes 424 static
-routes and closed-perimeter isolation. Connect 600 house deployments, three-front
-approaches/retreats and active/reserve ram handling before activating the city.
+routes and closed-perimeter isolation. Complete real 600-body deployment and three-front
+infantry approaches/retreats before activating the city.
 These geometry checks do not establish crowded movement, firing coverage or
 performance. Evidence: validation_v5_16_2/barracas-forts/SUMMARY.json.
 The 600 ground paths are now generated/tested: 9453 waypoints and 866538 native
@@ -48,10 +48,17 @@ siege controller; continuous geometric sampling is not that acceptance.
 Opt-in ram turns and widened exterior forecourts now pass physical route/contact
 tests for both sizes at all four gates, including saved in-progress turns and
 legacy fixed-heading routes. Rotating crew stations and two isolated6/32-Mandinga
-AI approaches now pass at normal cadence, including mid-turn reload. Connect
-those helpers to south-to-side approaches/retreats and one active/one reserve
-ram per front; verify production capture/refill, real600-body deployment and
-crowds. These tests do not activate the production city or establish FPS.
+AI approaches now pass at normal cadence, including mid-turn reload. All six full ram approaches and four-gate machine deployment now pass
+isolated native tests, including persistent reserve activation. Complete southern
+infantry/gun-crew arrival, front-specific march and withdrawal, capture/refill,
+real600-body deployment and crowds. These tests do not activate the production city or establish FPS.
+
+The current machine slice retains12 hostile objectives,42 guns and74 queued
+operators; fresh/reload native checks confirm four cardinal gate bindings,
+three initially active rams and release of a reserve after permanent destruction.
+A repairable sabotage does not release it. Full physical routes pass six cases
+and2,005,906 maximum-body crew-post samples per run; no real-time battle/FPS
+claim follows from accelerated diagnostic stepping. See barracas-fronts/SUMMARY.json.
 
 ## 5.16.1 - Bestiary source import (#453)
 

@@ -28,8 +28,8 @@ the checkpoint is before Selene on the Moon, after obtaining the World last.
 The seven named Majors per chapter are also approved as an allocation base;
 the recovered bestiary and map references proceed through separate issues.
 Barracas also has an [isolated architectural preview](assets/barracas_redesign/LAYOUT.json)
-with 288 retained building identities; it is not activated in MAP03. City services,
-four-gate siege integration remain unfinished. For visited original Barracas saves,
+with 288 retained building identities; it is not activated in MAP03. Ordinary services and complete
+three-front siege integration remain unfinished. For visited original Barracas saves,
 `run_dev.bat --legacy-map03-revision3` retains exact geometry and private-house
 identities. Active/stored-hub continuation passed with current code; repeat
 verification after the redesigned city is integrated.
@@ -39,7 +39,10 @@ The four-gate prototype also passes 160 native closed/open samples and four
 Used-handler checks; the closed-perimeter grid audit finds no exterior bypass.
 A separate candidate also passes service placement and private-house hub return:64
 merchants,96 factory stations,four vehicles and four relocated household objects.
-Its siege is suppressed by a disposable test controller; it is not the production city.
+The service fixture suppresses siege deployment; it is not the production city.
+A separate fixture now exercises real four-gate/machine deployment and persistent
+active/reserve handling. Six full ram routes pass fresh/reload clearance; infantry
+approaches, retreat, capture/refill and full-battle performance remain pending.
 The artillery candidate passes 72 isolated operator walks,528 guard posts and648
 cannon-component clearances. Real deployment, crowd movement and siege remain pending.
 The 600 exterior deployment paths also pass continuous native collision sampling

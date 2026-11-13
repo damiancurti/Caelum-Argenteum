@@ -39,7 +39,7 @@ class CaelumAuthoredCartography : Object play
                     // Las revisiones antiguas conservan sus seis accesos reales,
                     // sin aplicarles coordenadas ni nombres de otra orientación.
                     id=String.Format("port-r%d-gate-%d",port.args[0],i);
-                    nameKey=CaelumCityData.Enabled()?String.Format("CA_POI_PORT_GATE_%d",i):"CA_POI_PORT_GATE_LEGACY";
+                    nameKey=CaelumBarracasData.IsCurrent()?CaelumBarracasFrontData.GateName(i):CaelumCityData.Enabled()?String.Format("CA_POI_PORT_GATE_%d",i):"CA_POI_PORT_GATE_LEGACY";
                     break;
                 }
             let vendor=CaelumCityMerchant(subject);

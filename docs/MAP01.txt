@@ -226,6 +226,27 @@ Preserve the existing 1,000-living-participant admission cap per side,
 6,600 cumulative Mandingas, six rams and 600 defenders. Never interpret that
 cumulative ledger as permission for a retired 6,000-simultaneous-attacker test.
 
+The generated FRONTS.json stages six ram slots as south/south/east/east/west/west.
+Both side pairs begin on the southern field and follow exterior corridors;
+artillery positions reuse the existing standoff and lateral separation. Five
+small rams and one large remain. Four actual gates carry the approved materials
+and cardinal cartography labels, with stable revision-qualified IDs. Six lane
+references share those gate identities, rather than creating duplicate gates.
+
+A production-helper fixture now calls peaceful and hostile Deploy, retaining
+600 defender identities,36 installed defensive guns, six attacking guns,12 hostile
+objectives and74 crew slots. Three rams initially activate. Permanent destruction
+releases its paired reserve; temporary sabotage does not. Fresh/reload tests
+preserve this state. All six complete physical approaches produce native gate
+impacts and pass2,005,906 maximum-body crew-post samples per run. These tests
+isolate geometry/deployment: infantry arrival and retreat, real crew movement
+over the complete side routes, capture/refill, crowded battle and presentation
+still need verification before production MAP03 activation. Evidence is
+assets/validation_v5_16_2/barracas-fronts/SUMMARY.json.
+The final full-route runs also retain all six attacking cannons and waiting ram
+frames as physical obstacles. Fresh/reload pass; old active/stored-hub
+continuation retains the original eight gates and private interiors.
+
 ## 5.16.0 / #452 - Regional campaign allocation (in progress)
 
 On 2026-11-12 the author approved this regional allocation as the base for V5.16:

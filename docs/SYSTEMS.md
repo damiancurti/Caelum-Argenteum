@@ -13,8 +13,8 @@ Of 36 installed defensive cannons, 12 are active: four towers, four south-wall,
 two east-wall and two west-wall guns. There are 72 operators and 528 guards;
 guard identities retain 14 per first 12 posts and15 per last 24. No combat statistic,
 resource, ownership, offscreen-census or occupation rule changes are authorized
-by this map revision. Artillery geometry/isolated access is tested; production
-three-front deployment and reserve activation remain unfinished. MAP01/TASKS
+by this map revision. Artillery geometry/isolated access is tested; full
+three-front battle integration remains unfinished. MAP01/TASKS
 and barracas-forts/SUMMARY.json distinguish these stages from acceptance.
 Revision4 now selects generated ground routes and artillery/formation coordinates
 without changing the original data tables for earlier geometry. All 600 resident
@@ -24,13 +24,24 @@ ownership and battle outcomes remain part of the unfinished siege integration.
 Ram routes now support opt-in physical turns before each segment, using the
 existing approach/rotation rates. Legacy routes retain fixed-heading translation;
 saved zero defaults preserve that behavior. This is geometry support only, not
-completed reserve handling or a change to machine statistics.
+a change to machine statistics.
 Opt-in crew layouts retain6/32 operators and their original guard radii, with
 local rotating posts derived from native collision boxes. The new crews keep
 their assigned station ahead of remembered search movement, while visible
 enemies retain normal combat handling. Two isolated live crews pass; production
-front deployment, capture/refill and active/reserve handling still require
+infantry routes, capture/refill and full battle handling still require
 integration. Earlier machine/crew layouts retain their original behavior.
+
+The revision-4 controller now owns four gate instances shared by six machine
+slots: south/south/east/east/west/west, with slot5 retaining the large ram.
+One ram per pair activates initially; its reserve activates after permanent
+Tarot destruction or capture of the principal machine. Temporary sabotage or
+crew absence leaves the reserve waiting. Saved reserve-release flags persist
+idempotently; existing ownership and restoration mechanics remain authoritative.
+Twelve hostile objectives and the original reinforcement/defender counts remain.
+Native isolated deployment/reload verifies these identities and reserve behavior;
+production MAP03 still uses revision3 while infantry approaches/retreats,
+capture/refill and integrated battle verification remain pending.
 
 ## 5.15.4 / #451 - Occupation, recovery and persistent consequences
 

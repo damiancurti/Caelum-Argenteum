@@ -478,3 +478,5 @@
 /src/caelum/world/CaelumCityData.zs text eol=lf
 
 /assets/generators/generate_barracas_map.py text eol=lf
+/assets/generators/generate_barracas_fronts.py text eol=lf
+/src/caelum/world/CaelumBarracasFrontData.zs text eol=lf

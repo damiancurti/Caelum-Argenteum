@@ -4,6 +4,12 @@ Documentation version: **5.16.2** - 2026-11-12.
 
 ## 5.16.2 - Approved map references and preserved sewer sources (#454)
 
+FRONTS.json and CaelumBarracasFrontData derive six machine slots/three fronts
+from the approved layout and original SOUTH/CITY/LAYOUT distances. The generator
+records source hashes, gate materials, initial/reserve positions and complete
+side approaches. No external art, machine profile or combat value is introduced.
+Native deployment and physical-route evidence: barracas-fronts/SUMMARY.json.
+
 The reference branch's ancestry and original PDF/PNGs are preserved under
 assets/references/issue_454_maps_20261112. MAP01 owns their implementation
 interpretation. Revision 6 reuses existing owned sewer/stone/water/bar textures;

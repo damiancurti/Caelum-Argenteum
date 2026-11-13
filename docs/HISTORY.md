@@ -4,6 +4,21 @@ Documentation version: **5.16.2** - 2026-11-12.
 
 ## 5.16.2 - Sewer redesign slice (#454, in progress, 2026-11-12)
 
+2026-11-13 machine-front slice: generated four gate identities and six paired
+ram routes; new-controller dispatch retains12 hostile objectives,42 guns,74
+operators and600 defender identities. Three active rams and one reserve per
+front preserve the five-small/one-large roster. Tarot destruction releases the
+paired reserve; temporary sabotage does not, and release survives reload.
+Six complete routes pass fresh/reload native impacts and2,005,906 crew-post
+clearance samples per run. The first controller run emitted two harmless empty
+switch warnings; the generator now omits those empty cases. Full infantry
+approach/withdrawal, ordinary capture/refill and performance remain unfinished.
+Production MAP03/CAH geometry remains unchanged.
+The final full-route runs also retain all six attacking cannons and waiting ram
+frames as physical obstacles. Fresh/reload pass; old active/stored-hub
+continuation retains the original eight gates and private interiors. Evidence and exact tested
+runtimes: assets/validation_v5_16_2/barracas-fronts/SUMMARY.json.
+
 The author supplied approved sewer-v2/Barracas-v1 boards and selected four city
 gates with siege adaptation. Their source commit is preserved by merge ancestry.
 This slice implements MAP02 only. It replaces the random cardinal grid with

@@ -4,6 +4,12 @@ Documentation version: **5.16.2** - 2026-11-12.
 
 ## 5.16.2 - Sewer geometry slice (#454, in progress)
 
+The city candidate now has native four-gate machine deployment, six full ram
+approaches and persistent active/reserve handling. Fresh/reload checks retain
+force/objective counts. Infantry/gun-crew southern arrival, withdrawal, real
+crowds and frame-presentation measurements remain unfinished; production
+MAP03 is unchanged. See barracas-fronts/SUMMARY.json for qualified evidence.
+
 MAP02 revision 6 implements the approved sewer board with twelve main circuits,
 four internal shortcuts, human-scale headroom and retained gameplay content.
 MAP01 owns the map specification and explicit old-active/stored-hub compatibility

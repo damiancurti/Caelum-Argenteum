@@ -45,6 +45,8 @@ class CaelumPortSiege : CaelumSiegeEncounter
     Array<CaelumCannon> Guns;
     Array<CaelumBreakableGate> Gates;
     Array<CaelumSiegeRouteNode> Exits;
+    int RamReserveRevision;
+    bool RamReserveReleased[3];
     Actor AttackingTarget[6];
     Actor DefendingTarget[6];
     int SetupRevision, SetupTick, Groups;
@@ -195,9 +197,16 @@ class CaelumPortSiege : CaelumSiegeEncounter
         bool peaceful=city && !attackOnly;
         bool separateHomes=CaelumHouseHub.IsCity(self);
         EnsureReinforcements(true);
+        bool revised=CaelumBarracasData.IsCurrent();
+        if(revised && !attackOnly)CaelumBarracasAssault.PrepareGates(self);
         // La revisión se confirma una vez, antes del sellado y activación.
         for(int lane=0;lane<6;lane++)
         {
+            if(revised)
+            {
+                if(!peaceful)CaelumBarracasAssault.AddRam(self,lane);
+                continue;
+            }
             double x=CaelumPortData.GateX(lane);
             if(!attackOnly)
             {
@@ -220,7 +229,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
             ram.SetRoute(gate,CaelumPortData.AttackAngle());
             ram.AddRoutePoint((x,CaelumPortData.GateY()+CaelumPortData.OutsideSign()*CaelumRamData.TRIAL_CONTACT_DISTANCE*ram.SizeFactor,0));
         }
-        if(!attackOnly && CaelumPortData.IsSouth())for(int extra=0;extra<2;extra++)
+        if(!revised && !attackOnly && CaelumPortData.IsSouth())for(int extra=0;extra<2;extra++)
         {
             let gate=CaelumBreakableGate(Spawn("CaelumBreakableGate",CaelumPortData.ExtraGate(extra)));
             gate.Angle=CaelumPortData.ExtraGateAngle(extra);gate.args[1]=1;gate.args[2]=1;
@@ -233,7 +242,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
             if(peaceful && !defending){Guns.Push(null);continue;}
             int lane=defending ? (gunIndex-6)/2 : gunIndex;
             vector3 spot=CaelumPortData.GunPosition(gunIndex);
-            if(CaelumPortData.IsSouth())lane=NearestLane(spot.X);
+            if(CaelumPortData.IsSouth())lane=revised && !defending?gunIndex:NearestLaneAt(spot);
             let gun=CaelumCannon(Spawn("CaelumCannon",spot));
             gun.Angle=CaelumPortData.GunAngle(gunIndex);gun.InitializeCannon(defending);gun.UnlimitedAmmunition=true;
             if(!defending)RegisterMachine(gun);
@@ -263,7 +272,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
             && hostileSlots>0)
         {
             vector3 spot=CaelumPortData.FormationPosition(infantry);
-            if(AddDemon(spot,NearestLane(spot.X))!=null)hostileSlots--;
+            if(AddDemon(spot,NearestLaneAt(spot))!=null)hostileSlots--;
             infantry++;
         }
         int guard=0;
@@ -288,7 +297,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
         if(Director!=null)Director.ObserveStart(civil>=0?civil:CaelumBattleDirector.CivilNow(self));
         if(separateHomes)CaelumHouseResidents.Get(true).BeginDeployment(self,civil);
         let commander=CaelumPortCommander(Spawn("CaelumPortCommander",CaelumPortData.BossPosition()));
-        Boss=RegisterAttacker(commander);Boss.Lane=NearestLane(commander.Pos.X);Boss.ExitNode=Exits[Boss.Lane];
+        Boss=RegisterAttacker(commander);Boss.Lane=NearestLaneAt(commander.Pos);Boss.ExitNode=Exits[Boss.Lane];
         if(Reinforcements.Enabled)Reinforcements.Tick(self);
         else { Reinforcements.Successful=Attackers.Size()-1;Reinforcements.RefreshLiving(self); }
         Console.Printf("PORT16 deployed Mandingas=%d commander=1 defenders=%d hostileMachines=%d guns=%d",Attackers.Size()-1,Defenders.Size(),Machines.Size(),Guns.Size());
@@ -300,6 +309,12 @@ class CaelumPortSiege : CaelumSiegeEncounter
         for(int lane=1;lane<6;lane++)if(Abs(x-CaelumPortData.GateX(lane))<Abs(x-CaelumPortData.GateX(result)))result=lane;
         return result;
     }
+
+    static int NearestLaneAt(vector3 point)
+    {return CaelumBarracasData.IsCurrent()?CaelumBarracasAssault.NearestLane(point):NearestLane(point.X);}
+
+    static vector3 LaneGate(int lane)
+    {return CaelumBarracasData.IsCurrent()?CaelumBarracasAssault.GateForLane(lane):(CaelumPortData.GateX(lane),CaelumPortData.GateY(),0);}
 
     bool ActiveEntry(CaelumSiegeCombatant entry)
     {
@@ -381,7 +396,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
         for(int lane=0;lane<6;lane++)
         {
             AttackingTarget[lane]=null;DefendingTarget[lane]=null;
-            vector3 gate=(CaelumPortData.GateX(lane),CaelumPortData.GateY(),0);
+            vector3 gate=LaneGate(lane);
             double best=1e30;
             for(int i=0;i<Defenders.Size();i++)
             {
@@ -527,7 +542,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
                 vector3 station=ram.CrewLayoutRevision>0?ram.CrewPosition(slot):ram.Pos+offset;
                 let replacement=NearestReserve(station);
                 if(replacement!=null && ram.AssignCrew(replacement))
-                {replacement.CrewOffset=offset;replacement.Lane=NearestLane(ram.Pos.X);}
+                {replacement.CrewOffset=offset;replacement.Lane=CaelumBarracasData.IsCurrent()?ram.RegistryIndex:NearestLaneAt(ram.Pos);}
             }
         }
         for(int i=0;i<Guns.Size();i++)
@@ -541,7 +556,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
                 {
                     let replacement=NearestReserve(gun.Pos+offset);
                     if(replacement!=null && gun.AssignOperator(replacement.Body))
-                    {replacement.CrewOffset=offset;replacement.Lane=NearestLane(gun.Pos.X);}
+                    {replacement.CrewOffset=offset;replacement.Lane=CaelumBarracasData.IsCurrent() && i<6?i:NearestLaneAt(gun.Pos);}
                 }
                 else
                 {
@@ -556,7 +571,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
                         if(distance<best){chosen=soldier;best=distance;}
                     }
                     if(chosen!=null && gun.AssignOperator(chosen))
-                    {chosen.Gun=gun;chosen.Station=gun.Pos+offset;chosen.Lane=NearestLane(gun.Pos.X);chosen.BeginCrewRoute(i-6);}
+                    {chosen.Gun=gun;chosen.Station=gun.Pos+offset;chosen.Lane=NearestLaneAt(gun.Pos);chosen.BeginCrewRoute(i-6);}
                 }
             }
         }
@@ -813,7 +828,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
         {
             // La puerta es un destino de marcha conocido. El defensor mas
             // cercano, aun oculto, nunca puede sustituirlo como coordenada viva.
-            vector3 gate=(CaelumPortData.GateX(entry.Lane),CaelumPortData.GateY(),0);
+            vector3 gate=LaneGate(entry.Lane);
             let formation=body.Formation!=null ? body.Formation.Group : null;
             if(formation!=null)
             {
@@ -946,7 +961,8 @@ class CaelumPortSiege : CaelumSiegeEncounter
         }
         if(!Victory)
         {
-            if(CommandDirty || level.time%CaelumPortData.COMMAND_UPDATE_TICS==0){RefillCrews();ElectCommands();RefreshTargets();}
+            if(CommandDirty || level.time%CaelumPortData.COMMAND_UPDATE_TICS==0)
+            {RefillCrews();ElectCommands();RefreshTargets();if(CaelumBarracasData.IsCurrent())CaelumBarracasAssault.UpdateReserves(self);}
             OrderGuns();
         }
         for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i] && players[i].mo!=null)Calendar(CaelumPlayer(players[i].mo));
@@ -957,7 +973,8 @@ class CaelumPortSiege : CaelumSiegeEncounter
         if(RosterSealed)return true;
         if(!summarized && level.time<=SetupTick)return false;
         SealRoster();
-        for(int i=0;i<Machines.Size();i++)if(Machines[i] is "CaelumBatteringRam")CaelumBatteringRam(Machines[i]).ActivateRam();
+        if(CaelumBarracasData.IsCurrent())CaelumBarracasAssault.UpdateReserves(self);
+        else for(int i=0;i<Machines.Size();i++)if(Machines[i] is "CaelumBatteringRam")CaelumBatteringRam(Machines[i]).ActivateRam();
         for(int i=0;i<Guns.Size();i++)if(CaelumPortData.ActiveGun(i))Guns[i].ActivateCannon(0);
         CommandDirty=true;
         let zone=Spawn("CaelumTimeAdvanceZone",CaelumPortData.BedPosition());

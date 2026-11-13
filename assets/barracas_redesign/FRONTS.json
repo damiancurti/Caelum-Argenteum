@@ -1,0 +1,287 @@
+{
+  "schema_revision": 1,
+  "issue": 454,
+  "geometry_revision": 4,
+  "authority": "Author approved three assault fronts, six rams (one active/one reserve per front), existing force counts and four gate materials on 2026-11-12.",
+  "status": "Candidate geometry; production MAP03 remains revision3 pending integrated native validation.",
+  "source_sha256": {
+    "assets/barracas_redesign/LAYOUT.json": "6698de7680e7bcdd2dd923de5fa04380312c703609e9d52194e10508a5ade29b",
+    "assets/map06_port/SOUTH.json": "81955e52444ca97baa9f47f385005d1f764e84ba5d6f42e12d3aa20bf3c935fa",
+    "assets/map06_port/CITY.json": "d251e8aff3fb4f7c30c94e176b10eb95cd1a00e888c1a53f3846160d7e0e6d35",
+    "assets/map06_port/LAYOUT.json": "56bc2e815b46e78d4f141f97d21e15d038a6d991e4be376a2fa8022f818c7a86"
+  },
+  "gates": [
+    {
+      "id": "north",
+      "position": [
+        -16832,
+        15232,
+        0
+      ],
+      "outward_angle": 90,
+      "geometry_note": "Align the approved northern bridge gate to the actual rasterized irregular perimeter; previous preview y15552 missed the wall band.",
+      "material": 1
+    },
+    {
+      "id": "west",
+      "position": [
+        -29760,
+        -320,
+        0
+      ],
+      "outward_angle": 180,
+      "material": 2
+    },
+    {
+      "id": "east",
+      "position": [
+        384,
+        -1472,
+        0
+      ],
+      "outward_angle": 0,
+      "material": 1
+    },
+    {
+      "id": "south",
+      "position": [
+        -4352,
+        -14208,
+        0
+      ],
+      "outward_angle": 270,
+      "material": 0
+    }
+  ],
+  "fronts": [
+    {
+      "id": "south",
+      "gate_index": 3,
+      "rams": [
+        {
+          "slot": 0,
+          "reserve": false,
+          "large": false,
+          "start": [
+            -4352,
+            -14752,
+            0
+          ],
+          "start_angle": 90,
+          "waypoints": []
+        },
+        {
+          "slot": 1,
+          "reserve": true,
+          "large": false,
+          "start": [
+            -4352,
+            -15264,
+            0
+          ],
+          "start_angle": 90,
+          "waypoints": []
+        }
+      ],
+      "guns": [
+        {
+          "slot": 0,
+          "position": [
+            -4608,
+            -15392,
+            0
+          ],
+          "angle": 90
+        },
+        {
+          "slot": 1,
+          "position": [
+            -4096,
+            -15392,
+            0
+          ],
+          "angle": 90
+        }
+      ],
+      "exit": [
+        -4352,
+        -22528,
+        0
+      ]
+    },
+    {
+      "id": "east",
+      "gate_index": 2,
+      "rams": [
+        {
+          "slot": 2,
+          "reserve": false,
+          "large": false,
+          "start": [
+            1568,
+            -16640,
+            0
+          ],
+          "start_angle": 90,
+          "waypoints": [
+            [
+              1568,
+              -2496,
+              0
+            ],
+            [
+              928,
+              -2496,
+              0
+            ],
+            [
+              928,
+              -1472,
+              0
+            ]
+          ]
+        },
+        {
+          "slot": 3,
+          "reserve": true,
+          "large": false,
+          "start": [
+            1568,
+            -17152,
+            0
+          ],
+          "start_angle": 90,
+          "waypoints": [
+            [
+              1568,
+              -2496,
+              0
+            ],
+            [
+              928,
+              -2496,
+              0
+            ],
+            [
+              928,
+              -1472,
+              0
+            ]
+          ]
+        }
+      ],
+      "guns": [
+        {
+          "slot": 2,
+          "position": [
+            1568,
+            -1728,
+            0
+          ],
+          "angle": 180
+        },
+        {
+          "slot": 3,
+          "position": [
+            1568,
+            -1216,
+            0
+          ],
+          "angle": 180
+        }
+      ],
+      "exit": [
+        1568,
+        -22528,
+        0
+      ]
+    },
+    {
+      "id": "west",
+      "gate_index": 1,
+      "rams": [
+        {
+          "slot": 4,
+          "reserve": false,
+          "large": false,
+          "start": [
+            -30944,
+            -16640,
+            0
+          ],
+          "start_angle": 90,
+          "waypoints": [
+            [
+              -30944,
+              -1344,
+              0
+            ],
+            [
+              -30304,
+              -1344,
+              0
+            ],
+            [
+              -30304,
+              -320,
+              0
+            ]
+          ]
+        },
+        {
+          "slot": 5,
+          "reserve": true,
+          "large": true,
+          "start": [
+            -30944,
+            -17152,
+            0
+          ],
+          "start_angle": 90,
+          "waypoints": [
+            [
+              -30944,
+              -1344,
+              0
+            ],
+            [
+              -30304,
+              -1344,
+              0
+            ],
+            [
+              -30304,
+              -320,
+              0
+            ]
+          ]
+        }
+      ],
+      "guns": [
+        {
+          "slot": 4,
+          "position": [
+            -30944,
+            -64,
+            0
+          ],
+          "angle": 0
+        },
+        {
+          "slot": 5,
+          "position": [
+            -30944,
+            -576,
+            0
+          ],
+          "angle": 0
+        }
+      ],
+      "exit": [
+        -30944,
+        -22528,
+        0
+      ]
+    }
+  ]
+}
