@@ -1,6 +1,14 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.11** - 2026-11-13.
+Documentation version: **5.17.12** - 2026-11-13.
+
+## 5.17.12 - Consumable water-ration model (#668)
+
+The ordinary and legacy maze water rations share a new owned 3D waterskin/cup
+assembly matching the approved icon's identity. Native ration behavior remains
+distinct from refillable bottles/canteens. Art, deterministic export and native
+test scope are recorded in ASSETS. CA668-WATERSKIN-01 is pending; inventory and
+character coverage is still incomplete.
 
 ## 5.17.11 - Unplaced furniture inventory models (#666)
 

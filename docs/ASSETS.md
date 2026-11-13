@@ -1,6 +1,71 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.11** - 2026-11-13.
+Documentation version: **5.17.12** - 2026-11-13.
+
+## 5.17.12 - Water-ration waterskin model (#668, parent #647)
+
+CaelumWaterRation and legacy CaelumMazeWater receive explicit CWAT/A bindings
+to one original 3D assembly based on the approved ca_water_ration.png icon:
+closed leather body, angled neck, carrying strap/loop, blue pendant and separate
+drinking cup. The cup has an outer wall, lip, recessed inner wall and floor,
+with a dark inner lining. These components remain one native consumable ration;
+they do not introduce refillable containers, capacities, recipes or mechanics.
+Original icons, item classes, collision, Actor.Scale, weight, stacking,
+contamination, companion provenance and thirst-regeneration behavior are intact.
+
+Six material roles reuse unchanged owned water/consumable atlases and original
+station iron pixels. The final dark lining samples the approved icon's opaque
+cup interior with a one-pixel UV inset. No bitmap is generated or edited. The earliest material
+candidate used bright metallic neck bands; the revised candidate uses leather
+bindings and cord, a dark pendant setting and an opaque iron cup with dark
+interior. Width is the limiting fitting axis: the complete assembly fits inside
+both original opaque CWATA0 dimensions without redefining physical capacity.
+Sixteen closed components contain 2,680 triangles. Editable geometry/materials,
+four original texture copies and exact source hashes live under
+assets/source/art/inventory_models_647/waterskin, with DESIGN.json,
+PROVENANCE.json and EXPORT.json. The model remains pending author visual review.
+
+Rebuild with `python assets/generators/generate_inventory_waterskin_models.py
+--output build/waterskin-models --install`; --check verifies the same generated
+outputs. Preserve the adjacent portable OBJ/MTL and unchanged texture copies.
+The shared exporter gains optional per-component UV normalization for folded
+hollow profiles. Earlier parts do not enable it: all 22 native resources from
+ammunition, documents and ingots remain byte-identical, with only their exporter
+hash metadata refreshed. The readonly validator checks native quantized geometry,
+UV rectangles, exact bindings, original material hashes, portable files and both
+sprite envelope dimensions. A closed tube whose endpoints coincide is represented
+by two closed semicircular parts, avoiding duplicate coincident end caps.
+
+The native fixture checks both classes, split/merged quantities, ownership,
+saved metadata, Box weight/use rules, exact original power identity, floor
+contact and actual consumption/thirst restoration. The final package passes
+220 assertions across baseline, old-save/model, fresh/model, reload and rollback
+(47/42/47/42/42). Load phases consume exactly one ration per class and confirm
+the first native thirst pulse after 40 tics. The final visual-only run passes
+47 assertions with the same fixture and native art. Both identities were
+inspected in front, oblique and rear close-ups, including the hollow cup.
+
+Six exports repeat byte-for-byte. The mesh contains 1,461 vertices and 2,680
+triangles in sixteen closed components. Native art bounds are 86 by 40.45 by
+87.37 units before unchanged Actor.Scale, inside the original 86-by-112 opaque
+sprite envelope. All 18,215 package entries match src. Only the new MD3, its
+two-binding MODELDEF, root include and two release diagnostic strings differ
+from #666. Earlier native resources, including all 22 exports using the shared
+exporter, remain unchanged. Original material pixels and portable copies match.
+
+One isolated 700-tic two-object pair records 992.72/982.58 queue presents/s
+for sprites/models, p95 1.2888/1.3370 ms and p99 1.5651/1.7446 ms. Both floor-level
+presentation subjects were inspected and visible; the original sprite has an
+explicit bottom offset. Environment: Windows 11 Pro 26200, Ryzen 9 5950X,
+32 GB, RTX 3070 Ti, GZDoom 4.14.2, Vulkan 1280x720, uncapped, vsync off,
+unpaused background, 5% audio. These queue intervals are not GPU/display timing,
+repeatability or campaign/crowd acceptance. Evidence and rejected art iterations:
+assets/validation_v5_17_12/evidence/SUMMARY.json. The brown lining candidate was
+rejected because it resembled brown contents; the final lining uses the approved
+icon's dark cup interior. CA668-WATERSKIN-01 and all other author tests remain
+outstanding. Ordinary inventory-menu acceptance is separate.
+The earlier rejected hemispherical mate meshes remain unbound; their approved
+corrected sprites are a separate future modeling task.
 
 ## 5.17.11 - Native unplaced furniture models (#666, parent #647)
 

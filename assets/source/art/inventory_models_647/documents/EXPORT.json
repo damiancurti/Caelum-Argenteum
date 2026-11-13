@@ -316,7 +316,7 @@
     "src/models/caelum/props/stations/ca_station_cloth.png": "0e1d06ccc24a99753bcce3653856ba6477b7ee2bf5342d2680272e901bcd523e"
   },
   "generator_sha256": {
-    "generate_inventory_ammunition_models.py": "447863f9bff1c357bd459c37324ed7bfec6443581184425c15d71f7cb2fe3796",
+    "generate_inventory_ammunition_models.py": "7840c4851fe1af39a29071c3bbe87b13c13187688804d9c0a33d178b5a9e3feb",
     "generate_inventory_consumable_models.py": "1e0f81ac23de88c55271cccba6fd7f56c64c3b38d76ddda50da1348bd1d269a7",
     "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
     "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
