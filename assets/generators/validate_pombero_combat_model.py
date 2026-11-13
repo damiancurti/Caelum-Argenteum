@@ -9,28 +9,31 @@ import struct
 ROOT=Path(__file__).resolve().parents[2]
 
 
-def validate(root=ROOT):
+def validate(root=ROOT, kind='pombero', issue=461, original_textures=None):
     errors=[]
     try:
-        source=root/'assets/source/art/pombero_461'
+        source=root/'assets/source/art'/f'{kind}_{issue}'
+        model_path=root/'src/models/caelum/folklore'/f'{kind}{issue}'
         report=json.loads((source/'EXPORT.json').read_text())
         config=json.loads((source/'ANIMATION.json').read_text())
         for name,want in report['source_sha256'].items():
             if hashlib.sha256((root/name).read_bytes()).hexdigest()!=want:errors.append('Stale source: '+name)
         for name,want in report['sha256'].items():
-            path=(source/name if name in ['pombero.obj','pombero.mtl'] else root/'src'/name)
+            path=(source/name if '/' not in name else root/'src'/name)
             if hashlib.sha256(path.read_bytes()).hexdigest()!=want:errors.append('Stale export: '+name)
         design_path=root/config['source_design'];design=json.loads(design_path.read_text())
-        original={'materials.png':design['atlas']['source_file'],'dark.png':'dark.png'}
-        original.update({Path(row['path']).name:row['source_file'] for row in design['materials'].values() if 'source_file' in row})
+        original=original_textures
+        if original is None:
+            original={'materials.png':design['atlas']['source_file'],'dark.png':'dark.png'}
+            original.update({Path(row['path']).name:row['source_file'] for row in design['materials'].values() if 'source_file' in row})
         for name,original_name in original.items():
-            if (root/'src/models/caelum/folklore/pombero461'/name).read_bytes()!=(design_path.parent/original_name).read_bytes():errors.append('Original texture changed: '+name)
-        modeldef=(root/'src/caelum/data/pombero_combat.modeldef').read_text()
-        if (root/'src/MODELDEF').read_text().count('#include "caelum/data/pombero_combat.modeldef"')!=1:errors.append('Expected one native model include')
-        if re.findall(r'\bModel\s+(\w+)\s*\{',modeldef)!=[config['actor']]:errors.append('Binding must be specific to Pombero')
+            if (model_path/name).read_bytes()!=(design_path.parent/original_name).read_bytes():errors.append('Original texture changed: '+name)
+        modeldef=(root/'src/caelum/data'/(kind+'_combat.modeldef')).read_text()
+        if (root/'src/MODELDEF').read_text().count('#include "caelum/data/'+kind+'_combat.modeldef"')!=1:errors.append('Expected one native model include')
+        if re.findall(r'\bModel\s+(\w+)\s*\{',modeldef)!=[config['actor']]:errors.append('Binding must be specific to '+kind)
         for index,row in enumerate(config['frames']):
             if f'FrameIndex {row["sprite"]} {row["letter"]} 0 {index}' not in modeldef:errors.append('Missing inherited frame binding')
-        blob=(root/'src/models/caelum/folklore/pombero461/pombero.md3').read_bytes()
+        blob=(model_path/(kind+'.md3')).read_bytes()
         magic,version,_,flags,frames,tags,surfaces,skins,fo,to,so,end=struct.unpack_from('<4sI64s9I',blob)
         assert magic==b'IDP3' and version==15 and frames==len(config['frames']) and tags==0
         assert fo==108 and to==so==fo+frames*56 and end==len(blob)
@@ -55,7 +58,7 @@ def validate(root=ROOT):
             offset+=size;vertices+=nv;triangles+=nt
         assert offset==end and surfaces==len(report['surfaces']) and triangles==report['triangles']
     except (OSError,KeyError,ValueError,AssertionError,struct.error) as exc:errors.append(str(exc) or 'Invalid native binary structure or bounds')
-    return ['Pombero combat art: '+error for error in errors]
+    return [kind.title()+' combat art: '+error for error in errors]
 
 
 if __name__=='__main__':

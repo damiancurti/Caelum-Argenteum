@@ -1,6 +1,21 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.7** - 2026-11-13.
+Documentation version: **5.17.8** - 2026-11-13.
+
+## 5.17.8 - Cuero Uñudo inherited combat model (#660, 2026-11-13)
+
+Reused original anatomy, topology, UVs and PNG bytes for 23 inherited native
+frames. The continuous sheet rig adds presentation poses; native behavior,
+body, saved state and the original 96-MU preview are unchanged. Native continuity
+and rollback pass 115 checks, exact keyframes 51 and real actions/loot 80.
+Eight repeated exports are identical; 219,328 native vertex/frame bounds pass;
+the package matches all 18,201 source entries. The portable OBJ material link
+was corrected without altering tested native bytes. One isolated pair records
+1644.82/1702.87 queue presents/s, p95 0.8262/0.7859 ms and p99 1.0152/0.9752 ms;
+ASSETS records the environment and partial sprite clipping in the flat-model
+camera. Evidence: assets/validation_v5_17_8/evidence/SUMMARY.json. This does not
+establish a performance improvement or campaign budget. CA660-CUERO-01 remains
+pending; provisional diameter fitting is not final species-size approval.
 
 ## 5.17.7 - Seven metal-ingot model variants (#658, 2026-11-13)
 

@@ -1,0 +1,20 @@
+version "4.14.2"
+class CA660Bench : EventHandler
+{
+    int Age; double Previous; Array<double> Tics;
+    override bool InputProcess(InputEvent e) { return true; }
+    override void WorldTick()
+    {
+        Age++;
+        if(Age==175) Console.Printf("CA660 BEGIN");
+        if(Age<175 || Age>875) return;
+        double now=MSTimeF(); if(Previous>0) Tics.Push(now-Previous); Previous=now;
+        if(Age==875)
+        {
+            Console.Printf("CA660 END");
+            for(int i=0;i<Tics.Size();i++) Console.Printf("CA660 TIC %.6f",Tics[i]);
+            let gallery=CA660Events(EventHandler.Find('CA660Events'));
+            Console.Printf("CA660 COMPLETE subjects=%d samples=%d", gallery==null ? 0 : (gallery.Subject==null ? 0 : 1),Tics.Size());
+        }
+    }
+}
