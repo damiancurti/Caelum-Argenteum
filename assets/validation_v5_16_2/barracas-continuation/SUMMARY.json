@@ -1,0 +1,128 @@
+{
+  "issue": 454,
+  "version": "5.16.2",
+  "status": "Unactivated city; qualified isolated navigation, resident deployment and service-access checks pass. Full aftermath probe running; no author acceptance.",
+  "runtime": "build\\v516\\issue454-commander01.pk3",
+  "runtime_sha256": "6efffa2932be0333debccfa727ae471826a84e3916f077fd0fb47802273a6d73",
+  "candidate": "build\\v516\\barracas-justice01\\preview.pk3",
+  "candidate_sha256": "7b4d8aa16035607bba6feb4bed7dc7df46143b230560b08acbc2669c51204b63",
+  "changed_package_entries_from_justice01": [
+    "caelum/actors/CaelumFolkloreCharacters.zs",
+    "caelum/world/CaelumPortSiege.zs"
+  ],
+  "production_maps_unchanged": 238,
+  "native": {
+    "march": {
+      "source": "barracas-march-native04",
+      "phases": [
+        "fresh",
+        "reload"
+      ],
+      "passed": true
+    },
+    "withdrawal": {
+      "source": "barracas-retreat-full02",
+      "phases": [
+        "fresh",
+        "reload"
+      ],
+      "passed": true
+    },
+    "commander": {
+      "source": "barracas-commander-native02",
+      "phases": [
+        "fresh",
+        "reload"
+      ],
+      "passed": true
+    },
+    "legacy": {
+      "source": "barracas-legacy-09",
+      "phases": [
+        "active_continue",
+        "hub_continue"
+      ],
+      "passed": true
+    },
+    "sewer-regression": {
+      "source": "sewer-boss-regression02",
+      "phases": [
+        "retreat"
+      ],
+      "passed": true
+    },
+    "capture": {
+      "source": "barracas-capture01",
+      "phases": [
+        "fresh",
+        "reload"
+      ],
+      "passed": true
+    },
+    "refill": {
+      "source": "barracas-refill01",
+      "phases": [
+        "fresh",
+        "reload"
+      ],
+      "passed": true
+    },
+    "shops": {
+      "source": "barracas-shop-use04",
+      "phases": [
+        "fresh",
+        "reload"
+      ],
+      "passed": true
+    },
+    "stations": {
+      "source": "barracas-station-use02",
+      "phases": [
+        "fresh",
+        "reload"
+      ],
+      "passed": true
+    },
+    "vehicles": {
+      "source": "barracas-vehicle-use02",
+      "phases": [
+        "fresh",
+        "reload"
+      ],
+      "passed": true
+    },
+    "crowd-reload": {
+      "source": "barracas-crowd-native03",
+      "phases": [
+        "reload"
+      ],
+      "passed": true
+    }
+  },
+  "house_use": "../barracas-house-use/results.json: four orientations,8 Used requests and4 rendered-capture ACK round trips in each fresh/reload run; exact exterior positions. No fabricated ACK or direct ChangeMap.",
+  "crowd": "crowd/fresh-save-audit.json confirms600 unique living retained residents and72 completed operator routes by52347tics. crowd-reload/results.json replays the original35-tic checkpoint with corrected native-completion recording:600 completions at45093tics, no deaths/identity errors, native collision/speed/AI and automatic high-density mode retained.",
+  "qualifications": [
+    "March15 completes43607tics fresh/reload; gates held open.",
+    "Six full withdrawals complete60732tics fresh/reload; normal victory gate requests, fixture thermal exposure neutralized.",
+    "Commander5 origins complete30667tics fresh/reload; native wounded half-health6899/13798 and flee speed16.011, original radius26.667/height93.333; fixture gates open/thermal exposure neutralized. No new permission to open hostile gates.",
+    "Legacy09 old active/stored hub passes; MAP02 native retreat still passes254tics, card reach and exit guard retained.",
+    "Capture4 rams: three primaries release enemy reserve; previously captured western reserve stays captured and inactive. No timed capture work or enemy-crew combat.",
+    "Refill full inherited controller: native living cap1000 includes987 Mandingas,commander and12 machines; five fixture deaths use native Die. Successful992+remaining5608=6600 at4235tics, repeated after early reload; native extra subcaptain makes defender array601 alongside600 residents. Thermal exposure neutralized, no frozen actors or accelerated waves. Not full battle completion/FPS.",
+    "64 shops open through native +use; one purchase per run decrements3-to2 stock and transfers116485 copper at current native price. Fixture Box/currency and positioning; not complete catalogue/author acceptance.",
+    "Crowd movement preserves real collision, speed, resources, identity and high-density census. Automatic battle controller and thermal damage are isolated in this fixture; guard searches continue after reaching posts.",
+    "96 factory stations open through native +use and their existing crafting networks, fresh/reload; no recipe completion claim.",
+    "Four parked vehicles open valid source-specific transport sessions through native +use at reachable physical parts, fresh/reload; no fare purchase, actual journey or multiplayer claim."
+  ],
+  "fixture_corrections": [
+    "Commander first attempt wounded the actor before deferred PostBeginPlay; corrected fixture waits for initialized native profile.",
+    "Crowd01 incorrectly required simultaneous station occupation. Crowd02 sampled arrival distance after native actions had already begun permitted searches; its raw framework run was stopped. Independent saved native completion/identity audit passes all600. Crowd03 now records native completion flags, replaying the same early checkpoint.",
+    "Shop01 overlong console script lost/reordered commands. Bounded chained scripts retain order. Shop02/03 exposed temporary Box state being restored from persistence; seed the prerequisite in the native persistent record. No production shop change.",
+    "Station fixture initially closed the crafting session but left the journal open; closing both restores normal input.",
+    "Vehicle fixture conditional mixed Actor and CaelumVehiclePart; explicit assignment resolves native type checking."
+  ],
+  "remaining": [
+    "Combined native aftermath and survivor withdrawal (running)",
+    "Final art and isolated rendering/frame-time measurements",
+    "Production candidate activation and author acceptance"
+  ]
+}

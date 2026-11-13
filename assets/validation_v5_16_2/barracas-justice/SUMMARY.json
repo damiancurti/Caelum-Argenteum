@@ -1,0 +1,30 @@
+{
+  "issue": 454,
+  "version": "5.16.2",
+  "status": "Justice annex complete for the isolated candidate; production city remains unactivated.",
+  "runtime": "build\\v516\\issue454-justice01.pk3",
+  "runtime_sha256": "a84dc05d9d3bd636ff0d58063b17923c020a2e70948fb904cbc43a4067c78d4f",
+  "candidate": "build/v516/barracas-justice01/preview.pk3",
+  "deterministic_package_sha256": "7b4d8aa16035607bba6feb4bed7dc7df46143b230560b08acbc2669c51204b63",
+  "candidate_textmap_md5": "f552012c9d4d7a2ba59d0809894ad272",
+  "sector": 391,
+  "centre": [
+    2560,
+    20672,
+    0
+  ],
+  "existing_city_textmap_prefix_unchanged": true,
+  "packaged_maps": {
+    "count": 238,
+    "changed": []
+  },
+  "static": "Two independent outputs byte-identical. Existing index refactor initially byte-identical; all237 manifest maps validate through generate_tarot_justice.py --check. Candidate dispatch is checksum-qualified.",
+  "native": "Fresh duel placement, active save, reference/timer continuity and exact survivor return pass. Direct Start API isolates arena integration; no new card/payment/selection claim.",
+  "legacy": "Original active/stored-house-hub continuation passes current runtime; old Justice767/checksum03f80198bfae8ba82cc435775001ba91 and eight gates remain.",
+  "qualifications": [
+    "Battle controller Tick suppressed",
+    "No frame-rate or presentation claim",
+    "No city activation or author acceptance",
+    "Earlier pedestrian tests use identical existing city geometry before this independent appended room"
+  ]
+}

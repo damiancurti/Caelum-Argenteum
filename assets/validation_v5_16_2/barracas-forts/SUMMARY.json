@@ -1,0 +1,41 @@
+{
+  "issue": 454,
+  "release": "5.16.2",
+  "scope": "Unactivated Barracas artillery structures and isolated physical access; production MAP03/controller unchanged.",
+  "candidate_sha256": "c0e52e25200f6b288d8dcb2b1a52d523d66f79d25a743186040de846243fb5a9",
+  "map_sha256": "4828d4b3ea7bd459180d6b06af5f86f9d7bff0f2f1dfef292e52eab17af82cb5",
+  "runtime_sha256": "e0afb3b55f6611d42d09cc475c88821fb8938ccf0fa0795b11f575015f1a4629",
+  "siege_sha256": "acbc8a8d2d2d12393f31694b15ce80e3b2e8491cbdf999f7e3f76c46986d0479",
+  "static": {
+    "repeated_map_and_package_identical": true,
+    "route_targets": 424,
+    "unreachable": 0,
+    "closed_gate_bypass_cells": 0,
+    "installed_guns": 36,
+    "active_distribution": "4 towers +4 south +2 east +2 west",
+    "guards": 528,
+    "operators": 72,
+    "minimum_guard_separation": 40,
+    "native05_walk_data_unchanged_in_native07": true
+  },
+  "native": {
+    "run-05": "72 isolated native gravity/TryMove paths,698 authored points,528 guards,72 operator posts,648 actual cannon components pass. THRUACTORS avoids test-walker interference; no crowd/real deployment claim.",
+    "run-06": "Same geometry, corrected exterior viewpoints and static queries pass; both views inspected. No changed walking behavior, so reuse run-05.",
+    "run-07": "Final rigid40-MU guard formations pass all528 native posts;698 route points,72 operator posts and648 cannon components also pass. Geometry and walking route bytes are unchanged from run-05."
+  },
+  "intermediate_failures": {
+    "run-01": "33/36 routes; double grid rounding and overlaps between stairs/guard posts.",
+    "run-02": "35/36 routes; tower/approach overlaps and unsupported operator posts on oblique wall.",
+    "run-03": "36/36 routes; one guard touched a rasterized wall cell.",
+    "run-04": "36/36 routes and all posts pass after raster margin.",
+    "run-05_views": "Northwest camera was inside a building; replaced by exterior viewpoint in run-06, not a gameplay geometry change."
+  },
+  "remaining": [
+    "production siege controller and four-gate ownership",
+    "600 resident deployment paths and crowded movement",
+    "three-front approaches and active/reserve rams",
+    "Justice annex and ordinary service/travel interactions",
+    "final art, representative presentation/performance and author acceptance"
+  ],
+  "author_acceptance": "PENDING; no final city terminal yet"
+}

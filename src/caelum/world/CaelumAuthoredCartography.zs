@@ -24,7 +24,7 @@ class CaelumAuthoredCartography : Object play
         else if(level.MapName=="MAP02")
         {
             if(category==CaelumPoiData.GRATE && subject is "CaelumMazeBarredGate"
-                && subject.args[0]>=44700 && subject.args[0]<=44723)
+                && subject.args[0]>=44700 && subject.args[0]<=44727)
             {id=String.Format("maze-grate-%d",subject.args[0]);nameKey="CA_POI_MAZE_GRATE";}
             else if(category==CaelumPoiData.GRATE && subject is "CaelumMazeReturnGrate"
                 && CaelumMazeLayout.IsReturnGrate(subject.args[0]))
@@ -39,7 +39,7 @@ class CaelumAuthoredCartography : Object play
                     // Las revisiones antiguas conservan sus seis accesos reales,
                     // sin aplicarles coordenadas ni nombres de otra orientación.
                     id=String.Format("port-r%d-gate-%d",port.args[0],i);
-                    nameKey=CaelumCityData.Enabled()?String.Format("CA_POI_PORT_GATE_%d",i):"CA_POI_PORT_GATE_LEGACY";
+                    nameKey=CaelumBarracasData.IsCurrent()?CaelumBarracasFrontData.GateName(i):CaelumCityData.Enabled()?String.Format("CA_POI_PORT_GATE_%d",i):"CA_POI_PORT_GATE_LEGACY";
                     break;
                 }
             let vendor=CaelumCityMerchant(subject);
@@ -56,7 +56,7 @@ class CaelumAuthoredCartography : Object play
                 && CaelumCartographyCatalogueData.MatchesCityGeometry(level.GetChecksum()))
             {
                 // El origen identifica la instancia del mapa aunque después se mueva.
-                id=CaelumCartographyCatalogueData.CityStationId(station.SpawnPoint);
+                id=CaelumCartographyCatalogueData.CityStationId(station.SpawnPoint,CaelumBarracasData.IsCurrent());
                 nameKey=CaelumCartographyServiceData.StationName(station.GetCraftingStationType());
             }
             else if(category==CaelumPoiData.TRANSPORT && subject is "CaelumCoveredCart")
@@ -100,18 +100,19 @@ class CaelumAuthoredCartography : Object play
         else if(level.MapName=="MAP03" && CaelumCityData.Enabled()
             && CaelumCartographyCatalogueData.MatchesCityGeometry(record.CartographyChecksum))
         {
+            bool revised=CaelumBarracasData.IsCurrent();
             // Registra solamente el punto pisado; nunca el extremo aún oculto.
             for(int i=0;i<CaelumBattleRouteData.COUNT;i++)
-                if(CaelumBattleRouteData.Contains(i,user.Pos)
+                if(CaelumBattleRouteData.Contains(i,user.Pos,revised)
                     && CaelumPoiKnowledge.Find(record,level.MapName,CaelumBattleRouteData.Id(i))==null)
                     CaelumPoiKnowledge.Record(user,CaelumBattleRouteData.Id(i),CaelumPoiData.TACTICAL_ROUTE,
                         CaelumBattleRouteData.NameKey(i),user.Pos);
-            for(int i=0;i<4;i++)if(CaelumCartographyCatalogueData.TowerContains(i,user.Pos))
+            for(int i=0;i<4;i++)if(CaelumCartographyCatalogueData.TowerContains(i,user.Pos,revised))
                 CaelumPoiKnowledge.Record(user,String.Format("city-tower-%d",i),CaelumPoiData.TOWER,
-                    String.Format("CA_POI_TOWER_%d",i),CaelumCartographyCatalogueData.TowerPosition(i));
-            if(!first && CaelumCartographyCatalogueData.CrossesEast(record.CartographyPreviousPosition,user.Pos))
+                    String.Format("CA_POI_TOWER_%d",i),CaelumCartographyCatalogueData.TowerPosition(i,revised));
+            if(!first && CaelumCartographyCatalogueData.CrossesEast(record.CartographyPreviousPosition,user.Pos,revised))
                 CaelumPoiKnowledge.Record(user,"city-east-exit",CaelumPoiData.EXIT,"CA_POI_EAST_EXIT",
-                    CaelumCartographyCatalogueData.EastPosition());
+                    CaelumCartographyCatalogueData.EastPosition(revised));
         }
         record.CartographyPreviousPosition=user.Pos;
     }

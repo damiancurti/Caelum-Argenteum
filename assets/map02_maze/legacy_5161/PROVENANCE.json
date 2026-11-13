@@ -1,0 +1,29 @@
+{
+  "issue": 454,
+  "layout_revision": 5,
+  "last_release": "5.16.1",
+  "source_commit": "0b41bb891",
+  "purpose": "Exact active-map and visited-hub rollback geometry, including the existing Justice arena. Never regenerate this preserved WAD.",
+  "files": {
+    "MAP02.wad": {
+      "source": "src/maps/MAP02.wad",
+      "sha256": "96c3cf7055231de6e7f89a5cfdb119f28be42d7129e691d6470b00f4e37e1d6f"
+    },
+    "LAYOUT.json": {
+      "source": "assets/map02_maze/LAYOUT.json",
+      "sha256": "6c5ce52a2a30d6005c1aee0b6151094a2d283a27c4f380bc2ed650655d699730"
+    },
+    "MAP02_MANIFEST.json": {
+      "source": "assets/map02_maze/MAP02_MANIFEST.json",
+      "sha256": "64803c853c1481a745861f003ae6ae6234b7fcb4e2893c51add96f02270ed57f"
+    },
+    "CaelumMazeLayout.zs": {
+      "source": "src/caelum/world/CaelumMazeLayout.zs",
+      "sha256": "6c6ee621f923c1b255e02ee261c25893fa4c36b3b8088e58d2951c6fff86b1df"
+    },
+    "generate_map02_maze.py": {
+      "source": "assets/generators/generate_map02_maze.py",
+      "sha256": "956e79d788115bf93df90e85e6c9db6dd3e47d53c5547f129af288684e3863a9"
+    }
+  }
+}

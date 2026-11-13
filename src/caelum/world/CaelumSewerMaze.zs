@@ -339,7 +339,7 @@ class CaelumSewerMaze : Object play
         while((enemy=Actor(enemies.Next()))!=null)if(enemy.health>0)mandingas++;
         let ratIt=ThinkerIterator.Create("CaelumGiantRat");Actor rat;
         while((rat=Actor(ratIt.Next()))!=null)if(rat.health>0)rats++;
-        Console.Printf("[Caelum 5.16.1] Laberinto MAP02: cofres=%d objetos heredados restantes=%d Mandingas vivos=%d ratas vivas=%d Zupay vivo=%d",chests,objects,mandingas,rats,BossAlive());
+        Console.Printf("[Caelum 5.16.2] Laberinto MAP02: cofres=%d objetos heredados restantes=%d Mandingas vivos=%d ratas vivas=%d Zupay vivo=%d",chests,objects,mandingas,rats,BossAlive());
         if(CaelumMazeLayout.IsCardinal())Console.Printf("Contenido inicial: 39 cofres de materiales equivalentes a 65 piezas T1, 96 Mandingas, 192 ratas, 45 trampas; drops: 96 comida, 96 agua, 360 flechas, 240 virotes. Carta: índice %d.",CUPS_ACE);
         for(int i=0;i<MAXPLAYERS;i++)if(playeringame[i])
         {
@@ -377,9 +377,17 @@ class CaelumCupsAceEssence : CaelumM00FoolEssence
 
 class CaelumWandsKnightEssence : CaelumM00FoolEssence
 {
+    int PlacementRevision;
     override int CardId() { return CaelumConstants.TAROT_WANDS_KNIGHT; }
     override void Tick()
     {
+        // #454: migrar solo el punto antiguo conocido del candidato. La ciudad
+        // original conserva su geometria; una captura activa termina primero.
+        if(PlacementRevision<1 && CaelumBarracasData.IsCurrent() && CaptureUser==null)
+        {
+            if(Pos==CaelumArcanaPlacement.LegacyPortSpot())SetOrigin(CaelumArcanaPlacement.PortSpot(),false);
+            PlacementRevision=1;
+        }
         CaelumArcanaProgress.UpdateEssence(self);
         Super.Tick();
     }

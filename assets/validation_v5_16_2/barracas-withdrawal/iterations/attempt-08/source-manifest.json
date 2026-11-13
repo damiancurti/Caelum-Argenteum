@@ -1,0 +1,23 @@
+{
+  "base_commit": "7bc1094b5ad8647b224b0f999b13746026634d8c",
+  "runtime_sha256": "fd95d6be6a83492df11bd139fe765a485b29ee1c95e45ed674560f31a122e170",
+  "changed_sources": {
+    "caelum/world/CaelumBarracasRetreat.zs": {
+      "sha256": "7a18d8704045dcd287776d593dd7f56d11633fb1d37353bbdc8d9f1b0473d029",
+      "source": "../runtime-sources/7a18d8704045dcd287776d593dd7f56d11633fb1d37353bbdc8d9f1b0473d029.zs"
+    },
+    "caelum/world/CaelumBarracasRetreatData.zs": {
+      "sha256": "7fb46db37a96ff3ccd9a30f6cb4dcb0db8f7180f8afb3d51f9686d514525b712",
+      "source": "../runtime-sources/7fb46db37a96ff3ccd9a30f6cb4dcb0db8f7180f8afb3d51f9686d514525b712.zs"
+    },
+    "caelum/world/CaelumCityNavigation.zs": {
+      "sha256": "5fc9e390782166b43d914b6d46632abb4ac4c95671bc2b771df4aac9147398a7",
+      "source": "../runtime-sources/5fc9e390782166b43d914b6d46632abb4ac4c95671bc2b771df4aac9147398a7.zs"
+    },
+    "caelum/world/CaelumSiegeEncounter.zs": {
+      "sha256": "467fbe06aa5ad3f739fb17813d3f0e5e5113305b30fcee8218227a40dfa50709",
+      "source": "../runtime-sources/467fbe06aa5ad3f739fb17813d3f0e5e5113305b30fcee8218227a40dfa50709.zs"
+    }
+  },
+  "scope": "Exact owned source differences for the daemon-interrupted nearest-only run."
+}

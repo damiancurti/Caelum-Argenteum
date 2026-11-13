@@ -69,7 +69,7 @@ class CaelumMazeGateEvents : StaticEventHandler
             if(grate!=null)grate.UseReturn(CaelumPlayer(e.Thing));
             return;
         }
-        if(barrier.special!=13 || barrier.args[0]<44700 || barrier.args[0]>44723)return;
+        if(barrier.special!=13 || barrier.args[0]<44700 || barrier.args[0]>44727)return;
         e.ShouldActivate=false;
         let gate=CaelumMazeBarredGate(ActorIterator.Create(barrier.args[0],"CaelumMazeBarredGate").Next());
         if(gate!=null)gate.Open(CaelumPlayer(e.Thing));

@@ -6,7 +6,7 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.16.1.** Obtain and update the complete repository,
+**Current release: 5.16.2.** Obtain and update the complete repository,
 validate it, then rebuild with `run_dev.bat` as described below.
 
 The [58-reference folklore catalogue](assets/bestiary/CATALOGUE.json) is imported
@@ -18,12 +18,67 @@ regional chapter allocation; [the planning graph](assets/campaign/PROGRESSION.js
 and [canonical narrative](docs/MAP01.txt) distinguish existing routes from pending
 geography, creatures, essence placements and revelations. #453 is ready for
 review; #452 and #454-457 remain in progress.
-This planning increment preserves the accepted V5.15 runtime and maps; the new
-campaign and its author test terminal are not yet implemented. The basic finale
+MAP02 now implements the approved sewer redesign for fresh campaigns. Preserve
+old saves and use `run_dev.bat --legacy-map02-revision5` (or build with
+`build_dev.ps1 -LegacyMap02Revision5`) to retain their exact sewer,
+including stored hub maps. [Map specifications and validation](docs/MAP01.txt)
+distinguish this slice from the remaining campaign and author test terminal. The basic finale
 and its all-78-essence/Respected reputation requirements are author-approved;
 the checkpoint is before Selene on the Moon, after obtaining the World last.
 The seven named Majors per chapter are also approved as an allocation base;
 the recovered bestiary and map references proceed through separate issues.
+Barracas revision4 is now packaged in MAP03 from the [approved layout](assets/barracas_redesign/LAYOUT.json),
+retaining288 building identities and160 private interiors. Fresh and saved
+crowded aftermaths and early-checkpoint replay complete all 1,000 physical exits.
+Native presentation measures about 76–100/s in peaceful views but only 1.50/s
+in the full-cap siege; siege fluency remains unresolved. The existing Knight
+essence follows the relocated quay; original-city sources remain compatible.
+The perception follow-up reuses distances already calculated during candidate
+selection. Native equivalence, visibility boundaries and reversible save checks
+pass; [qualified measurements](assets/validation_v5_16_2/barracas-perception/SUMMARY.json)
+retain the severe siege presentation limit. No visual or combat rule was removed.
+For visited original Barracas saves,
+`run_dev.bat --legacy-map03-revision3` retains exact geometry and private-house
+identities. Active/stored-hub continuation passed with current code; repeat
+verification is recorded with the integrated runtime.
+Known-only map discovery also follows the relocated stations, towers and stairs,
+retaining their IDs and original-city compatibility.
+The rotated-door/coordinate slice passes 224 native service endpoint checks and
+160 portals/320 leaf placements; private interior coordinates are retained.
+The four-gate prototype also passes 160 native closed/open samples and four
+Used-handler checks; the closed-perimeter grid audit finds no exterior bypass.
+A separate candidate also passes service placement and private-house hub return:64
+merchants,96 factory stations,four vehicles and four relocated household objects.
+The service fixture suppresses siege deployment; it is not the production city.
+A separate fixture now exercises real four-gate/machine deployment and persistent
+active/reserve handling. Six full ram routes pass fresh/reload clearance; infantry
+approaches and withdrawal now have staged routes. Six final exits and36 stair descents pass
+fresh/reloaded native checks. Full15-body approaches, six city withdrawals and five
+wounded-commander escape routes now pass fresh/reload. Four native ram captures
+preserve reserve ownership; the full controller reaches its1000 living cap and
+refills five fixture casualties without resetting the finite6600 ledger.
+See [continuation evidence](assets/validation_v5_16_2/barracas-continuation/SUMMARY.json)
+for runtime hashes, thermal/gate isolation and remaining battle/performance work.
+The artillery candidate passes 72 isolated operator walks,528 guard posts and648
+cannon-component clearances. A native save now confirms all600 retained residents
+completed deployment, including72 operators; replay from the early checkpoint
+also completes all600 at45,093tics with collision and native AI retained.
+The 600 exterior deployment paths also pass continuous native collision sampling
+in fresh/reloaded saves; old geometry retains its original route tables.
+Both ram sizes pass isolated corner movement and contact with all four gates.
+Two live crews (6+32 Mandingas) also reach their gates at normal cadence after
+fresh start and mid-turn reload. All three fronts are integrated in revision4.
+The separate city candidate now retains the existing Justice arena. Native duel
+placement, active-save recovery and exact survivor return pass, as does original
+city/hub continuation. [Justice evidence](assets/validation_v5_16_2/barracas-justice/SUMMARY.json)
+records the unchanged candidate geometry prefix; the installed map matches that tested candidate.
+Four house orientations also pass normal Used/capture/renderer-ACK round trips;
+all64 shopkeepers open with native Use, and a purchase preserves stock and money
+accounting, in fresh/reloaded runs. All96 factory stations and four vehicle
+boarding sessions also pass native Use checks. Recipe completion and ticket/journey
+transactions are outside these access checks. Fresh/saved crowded withdrawal passes;
+[actual presentation measurements](assets/validation_v5_16_2/barracas-presentation/SUMMARY.json)
+retain the severe siege limitation. Author checks remain pending.
 
 V5.15 includes the [battle director](assets/validation_v5_15_0/RESULTS.md)
 (#447, PR635), [Unitarian command](assets/validation_v5_15_1/RESULTS.md)
@@ -612,7 +667,7 @@ ready. Remaining furniture/acquisition and other V5.8 issues stay open.
 
 The mansion garden now contains an iron drinking fountain and a cistern.
 The fountain holds200 L of potable water and replenishes1 L/world-minute;
-the1000-L cistern starts empty and accepts manual transfers, preserving water
+the 1000-L cistern starts empty and accepts manual transfers, preserving water
 quality and temperature. Both support ordinary container filling and the
 existing soap bath when potable. The kitchen/bathroom reserve remains separate.
 

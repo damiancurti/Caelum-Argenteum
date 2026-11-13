@@ -4847,8 +4847,27 @@
     {
       "file": "MAP02.wad",
       "legacy_sha256": "617c4c5718bd2fc0f375390842cb4284a263f515dc326edf6a90310fb4e7f527",
-      "sha256": "96c3cf7055231de6e7f89a5cfdb119f28be42d7129e691d6470b00f4e37e1d6f",
+      "sha256": "1f7052ef2c1bf5bbe612579c6675e2f4541f6c1e256f374d5fd9afabf6eb9fad",
       "geometry": {
+        "sector": 104,
+        "origin": [
+          8576,
+          9600,
+          0
+        ],
+        "center": [
+          8960.0,
+          9984.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 32001,
+        "original_sectors": 104
+      },
+      "source_override": "assets/map02_maze/BASE_MAP02.wad",
+      "source_sha256": "2eec9ae642b83b29467b46447e515684195856ac4813fabafcd49760ee9aac91",
+      "compatibility_geometry": {
+        "checksum": "860e3e47c2b89449073b0d27f0b4940b",
         "sector": 85,
         "origin": [
           6720,
@@ -4868,8 +4887,25 @@
     {
       "file": "MAP03.wad",
       "legacy_sha256": "6231f69a398d0ec4dbe3878a46bca0756480e3034100994c62f6949465f4fed6",
-      "sha256": "85f0a1c00d80354c9899bf4289e1cf47fd2bae45313816ad939dccbe75c12151",
+      "sha256": "45bfdbba591b642fd9a2c8c991cd9e9913d9e4158f3e317913efbae0d3df98da",
       "geometry": {
+        "sector": 391,
+        "origin": [
+          2176,
+          20288,
+          0
+        ],
+        "center": [
+          2560.0,
+          20672.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 37173,
+        "original_sectors": 391
+      },
+      "compatibility_geometry": {
+        "checksum": "03f80198bfae8ba82cc435775001ba91",
         "sector": 767,
         "origin": [
           2368,
@@ -4884,7 +4920,27 @@
         "width_mu": 768,
         "original_vertices": 40293,
         "original_sectors": 767
-      }
+      },
+      "candidate_geometry": {
+        "sector": 391,
+        "origin": [
+          2176,
+          20288,
+          0
+        ],
+        "center": [
+          2560.0,
+          20672.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 37173,
+        "original_sectors": 391,
+        "checksum": "f552012c9d4d7a2ba59d0809894ad272",
+        "settings_sha256": "885f1ddb374b3204bfef51c92224700cf75dc1bff7af0e40a7344c33bf03a3d5"
+      },
+      "source_override": "assets/barracas_redesign/BASE_MAP03.wad",
+      "source_sha256": "1fef4bd06015e3dfa11405eeb6b19d90f0c2a6bf3f1db35ca2c162a6c50ca04f"
     },
     {
       "file": "TACTORS.wad",
@@ -5014,6 +5070,6 @@
     }
   ],
   "settings_sha256": "885f1ddb374b3204bfef51c92224700cf75dc1bff7af0e40a7344c33bf03a3d5",
-  "index_sha256": "3bddbea2b95fc429907a72d021c0cb152f16c4d25c41fe508f33380cb204c143",
+  "index_sha256": "00b667c649ac45f3deefdabe9bbad5e55585161968726e6d2afeac762aa52065",
   "examples_settings_sha256": "ad6d759a8d9a32f08c6da1eaf7f23849d38e14521e6ed1e2e74942cc8ed0d450"
 }

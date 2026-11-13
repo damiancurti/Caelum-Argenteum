@@ -1,0 +1,40 @@
+{
+  "issue": 454,
+  "release": "5.16.2",
+  "date": "2026-11-13",
+  "scope": "Revision4 exterior deployment and artillery data dispatch; production MAP03 unchanged. No full siege controller or crowded/AI movement claim.",
+  "runtime_sha256": "7d5391270ce383b2db33846c73040901258743200c426ce0ec63734a38f1502c",
+  "candidate_sha256": "c0e52e25200f6b288d8dcb2b1a52d523d66f79d25a743186040de846243fb5a9",
+  "data_sha256": {
+    "DEPLOYMENT.json": "fada38e4cf08868e71d20847e0ec6e9bab4119491b162f8b158183eb6e774de8",
+    "SIEGE.json": "67ffca19204b1fd0ad4cf736b2003c488e7166e5fcc598d0e2ac55e33f39206e"
+  },
+  "static": {
+    "routes": 600,
+    "waypoints": 9453,
+    "max_grid_steps": 726,
+    "regeneration_identical": true,
+    "all_runtime_maps_unchanged": 238,
+    "private_house_maps_unchanged": 160
+  },
+  "native": {
+    "fresh": "600 routes,9453 points,866538 continuous16-MU TryMove samples;zero failures.",
+    "reload": "Same600 routes and866538 samples pass after save/load.",
+    "legacy": "Verified original active/stored-hub seeds continue with the new runtime; original8 gates/Justice/160door+chest coordinates persist."
+  },
+  "qualifications": [
+    "Passive controller suppresses obsolete six-lane siege.",
+    "Probe uses defender body and native geometry collision, but THRUACTORS ignores people/machines; no crowd/door-use/AI/performance claim.",
+    "512 sampling operations per diagnostic tic, not a production actor scan.",
+    "Final source preserves600identities,72crew/528guards andResidentHouse69->70.",
+    "No map activation, ordinary interactions, final terminal or author acceptance."
+  ],
+  "intermediate_authoring_failure": "Whole conceptual lot exclusion disconnected genuine service passages; routing excludes indoor footprints while retaining native-clear forecourts and alleys.",
+  "remaining": [
+    "four-gate production controller and three-front approaches/retreats",
+    "600-body resident deployment and crowd/AI verification",
+    "six original rams with active/reserve pairs",
+    "Justice annex, ordinary services and transport",
+    "representative frame presentation/performance and author acceptance"
+  ]
+}

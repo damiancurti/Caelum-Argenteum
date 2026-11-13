@@ -40,12 +40,13 @@ def runtime():
     code += '    static int MandingaCount(){return IsSouth()?CaelumReinforcementData.TOTAL:MANDINGAS;}\n'
     code += f'    static int DefenderCount(){{return IsSouth()?{S["defenders"]}:DEFENDERS;}}\n'
     code += f'    static int GunCount(){{return IsSouth()?{len(S["defending_guns"])+6}:18;}}\n'
-    code += '    static bool ActiveGun(int i){return !IsSouth() || i<6'
+    code += '    static bool ActiveGun(int i){if(CaelumBarracasData.IsCurrent())return i<6 || CaelumBarracasSiegeData.ActiveGun(i-6);return !IsSouth() || i<6'
     code += ''.join(f' || i=={i+6}' for i in S['active_defending_guns'])+';}\n'
     code += '    static vector3 OperatorOffset(int i,int slot){double side=(slot==0?-1:1)*OPERATOR_SIDE;\n'
+    code += '        if(CaelumBarracasData.IsCurrent() && i<6){double a=GunAngle(i);return (-Sin(a)*side,Cos(a)*side,0);}'+'\n'
     code += '        if(IsSouth() && ('+' || '.join(f'i=={i+6}' for i,a in enumerate(S['operator_axes']) if a=='y')+'))return (0,side,0);\n'
     code += '        return (side,0,0);}\n'
-    code += '    static double GunAngle(int i){if(IsSouth()){\n'
+    code += '    static double GunAngle(int i){if(CaelumBarracasData.IsCurrent())return i<6?CaelumBarracasFrontData.GunAngle(i):CaelumBarracasSiegeData.GunAngle(i-6);if(IsSouth()){\n'
     code += ''.join(f'        if(i=={i+6})return {a};\n' for i,a in enumerate(S['defending_angles']))
     code += '        }return i<6?AttackAngle():DefendAngle();}\n'
     for name,key,old in [('GateY','gate_y','GATE_Y'),('ExitY','exit_y','EXIT_Y'),('RamY','ram_start_y','RAM_START_Y'),('OutsideSign','outside_sign','1'),('AttackAngle','attack_angle','270'),('DefendAngle','defend_angle','90'),('LayoutRevision','revision','REVISION')]:
@@ -57,9 +58,12 @@ def runtime():
     for name, key in [('BossPosition','boss_position'), ('BedPosition','resource_bed'),
                       ('WorkbenchPosition','resource_workbench'), ('CompletionPosition','completion_position')]:
         south=f'if(IsSouth())return ({",".join(map(str,S[key]))});' if key in S else ''
-        code += f'    static vector3 {name}(){{{south}return ({",".join(map(str,D[key]))});}}\n'
+        point=f'({",".join(map(str,D[key]))})'
+        if name!='BossPosition':point=f'CaelumBarracasData.CurrentPortPoint({point})'
+        code += f'    static vector3 {name}(){{{south}return {point};}}\n'
     code += '''    static vector3 GunPosition(int i)
     {
+        if(CaelumBarracasData.IsCurrent())return i<6?CaelumBarracasFrontData.GunPoint(i):CaelumBarracasSiegeData.GunPosition(i-6);
         if(IsSouth())
         {
 '''
@@ -75,6 +79,7 @@ def runtime():
     code += '        return (FORMATION_X+(i%FORMATION_COLUMNS)*FORMATION_SPACING,FORMATION_Y+(i/FORMATION_COLUMNS)*FORMATION_SPACING,0);\n    }\n'
     code += '''    static vector3 GuardPosition(int i)
     {
+        if(CaelumBarracasData.IsCurrent())return CaelumBarracasSiegeData.GuardPosition(i);
         if(IsSouth()){
 '''
     code += ''.join(f'            if(i=={i})return ({",".join(map(str,p))});\n' for i,p in enumerate(S['guard_positions']))
@@ -86,8 +91,8 @@ def runtime():
     extra=[g for g in city['gates'] if 'actor' in g]
     code += '    static vector3 ExtraGate(int i){\n'+''.join(f'        if(i=={i})return ({",".join(map(str,g["actor"]))});\n' for i,g in enumerate(extra))+'        return (0,0,0);}\n'
     code += '    static double ExtraGateAngle(int i){\n'+''.join(f'        if(i=={i})return {g["angle"]};\n' for i,g in enumerate(extra))+'        return 0;}\n'
-    code += '    static int CrewRouteCount(int i){\n'+''.join(f'        if(i=={i})return {len(r)};\n' for i,r in enumerate(S['crew_routes']))+'        return 0;}\n'
-    code += '    static vector3 CrewRoutePoint(int i,int p){switch(i){\n'+''.join(f'        case {i}:return CrewRoute{i}(p);\n' for i in range(len(S['crew_routes'])))+'        }return (0,0,0);}\n'
+    code += '    static int CrewRouteCount(int i){if(CaelumBarracasData.IsCurrent())return CaelumBarracasSiegeData.CrewRouteCount(i);\n'+''.join(f'        if(i=={i})return {len(r)};\n' for i,r in enumerate(S['crew_routes']))+'        return 0;}\n'
+    code += '    static vector3 CrewRoutePoint(int i,int p){if(CaelumBarracasData.IsCurrent())return CaelumBarracasSiegeData.CrewRoutePoint(i,p);switch(i){\n'+''.join(f'        case {i}:return CrewRoute{i}(p);\n' for i in range(len(S['crew_routes'])))+'        }return (0,0,0);}\n'
     for i,r in enumerate(S['crew_routes']):
         code += f'    static vector3 CrewRoute{i}(int p){{\n'+''.join(f'        if(p=={n})return ({",".join(map(str,v))});\n' for n,v in enumerate(r))+'        return (0,0,0);}\n'
     code += '    static bool IsCurrent(){return level.MapName=="PORT_MAP_NAME" && ActorIterator.Create(46000,"CaelumPortSiege").Next()!=null;}\n}\n'

@@ -1,0 +1,362 @@
+{
+  "issue": 454,
+  "date": "2026-11-13",
+  "environment": "environment.json",
+  "runs": [
+    {
+      "label": "original-peace",
+      "native_passed": true,
+      "runtime_sha256": "1cb2039081bd7ff9016954f59e01f4b8a0d7555275ee5d6303900ad55537a261",
+      "mean_present_fps": 106.94683688914056,
+      "present_intervals": {
+        "samples": 1852,
+        "mean_ms": 9.350440172780282,
+        "p50_ms": 9.042100012302399,
+        "p95_ms": 11.658899992704391,
+        "p99_ms": 12.64300000667572,
+        "max_ms": 14.0658999979496
+      },
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.583581142857142,
+        "p95_ms": 35.7738,
+        "p99_ms": 38.2049,
+        "max_ms": 39.9928
+      },
+      "census": [
+        "CA510 CENSUS start registered_defenders=0 registered_attackers=0 parked=0",
+        "CA510 CENSUS end registered_defenders=0 registered_attackers=0 parked=0"
+      ]
+    },
+    {
+      "label": "candidate-peace",
+      "native_passed": true,
+      "runtime_sha256": "1cb2039081bd7ff9016954f59e01f4b8a0d7555275ee5d6303900ad55537a261",
+      "mean_present_fps": 100.07442280936756,
+      "present_intervals": {
+        "samples": 1758,
+        "mean_ms": 9.992563253698767,
+        "p50_ms": 9.796000003814697,
+        "p95_ms": 11.609699994325638,
+        "p99_ms": 12.40650001168251,
+        "max_ms": 15.116200000047684
+      },
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.566393142857144,
+        "p95_ms": 32.3096,
+        "p99_ms": 37.6585,
+        "max_ms": 38.9977
+      },
+      "census": [
+        "CA510 CENSUS start registered_defenders=0 registered_attackers=0 parked=0",
+        "CA510 CENSUS end registered_defenders=0 registered_attackers=0 parked=0"
+      ]
+    },
+    {
+      "label": "original-ground",
+      "native_passed": true,
+      "runtime_sha256": "1cb2039081bd7ff9016954f59e01f4b8a0d7555275ee5d6303900ad55537a261",
+      "mean_present_fps": 76.67875627478675,
+      "present_intervals": {
+        "samples": 1347,
+        "mean_ms": 13.041421752022034,
+        "p50_ms": 12.720200002193451,
+        "p95_ms": 15.81130000948906,
+        "p99_ms": 16.814300000667572,
+        "max_ms": 17.852600008249283
+      },
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.558499714285713,
+        "p95_ms": 39.5462,
+        "p99_ms": 41.2124,
+        "max_ms": 42.8152
+      },
+      "census": [
+        "CA510 CENSUS start registered_defenders=0 registered_attackers=0 parked=0",
+        "CA510 CENSUS end registered_defenders=0 registered_attackers=0 parked=0"
+      ]
+    },
+    {
+      "label": "candidate-ground",
+      "native_passed": true,
+      "runtime_sha256": "1cb2039081bd7ff9016954f59e01f4b8a0d7555275ee5d6303900ad55537a261",
+      "mean_present_fps": 75.62510422276999,
+      "present_intervals": {
+        "samples": 1329,
+        "mean_ms": 13.223122272390993,
+        "p50_ms": 12.96900001168251,
+        "p95_ms": 15.100799977779388,
+        "p99_ms": 16.399699985980988,
+        "max_ms": 19.257699996232986
+      },
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.562336428571427,
+        "p95_ms": 38.16,
+        "p99_ms": 40.3736,
+        "max_ms": 41.5331
+      },
+      "census": [
+        "CA510 CENSUS start registered_defenders=0 registered_attackers=0 parked=0",
+        "CA510 CENSUS end registered_defenders=0 registered_attackers=0 parked=0"
+      ]
+    },
+    {
+      "label": "original-siege",
+      "native_passed": true,
+      "runtime_sha256": "1cb2039081bd7ff9016954f59e01f4b8a0d7555275ee5d6303900ad55537a261",
+      "mean_present_fps": 1.463415735807984,
+      "present_intervals": {
+        "samples": 37,
+        "mean_ms": 683.3328189189369,
+        "p50_ms": 678.1171000003815,
+        "p95_ms": 746.2657999992371,
+        "p99_ms": 750.1242000162601,
+        "max_ms": 750.1242000162601
+      },
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 40.01551257142857,
+        "p95_ms": 71.3283,
+        "p99_ms": 77.1377,
+        "max_ms": 87.2973
+      },
+      "census": [
+        "CA510 CENSUS start registered_defenders=601 registered_attackers=797 parked=0",
+        "CA510 CENSUS end registered_defenders=601 registered_attackers=898 parked=0"
+      ]
+    },
+    {
+      "label": "candidate-siege",
+      "native_passed": true,
+      "runtime_sha256": "1cb2039081bd7ff9016954f59e01f4b8a0d7555275ee5d6303900ad55537a261",
+      "mean_present_fps": 1.4995986628145561,
+      "present_intervals": {
+        "samples": 37,
+        "mean_ms": 666.8450864867584,
+        "p50_ms": 659.735799998045,
+        "p95_ms": 788.7845999896526,
+        "p99_ms": 791.2759000062943,
+        "max_ms": 791.2759000062943
+      },
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 39.11280014285715,
+        "p95_ms": 117.3565,
+        "p99_ms": 126.8727,
+        "max_ms": 212.4374
+      },
+      "census": [
+        "CA510 CENSUS start registered_defenders=601 registered_attackers=988 parked=0",
+        "CA510 CENSUS end registered_defenders=601 registered_attackers=988 parked=0"
+      ]
+    },
+    {
+      "label": "original-settled-siege",
+      "native_passed": true,
+      "runtime_sha256": "1cb2039081bd7ff9016954f59e01f4b8a0d7555275ee5d6303900ad55537a261",
+      "mean_present_fps": 1.2804354576882848,
+      "present_intervals": {
+        "samples": 37,
+        "mean_ms": 780.9843081082847,
+        "p50_ms": 786.4042000174522,
+        "p95_ms": 840.7117999792099,
+        "p99_ms": 853.4899999797344,
+        "max_ms": 853.4899999797344
+      },
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 45.894823714285714,
+        "p95_ms": 85.6924,
+        "p99_ms": 91.2483,
+        "max_ms": 100.0496
+      },
+      "census": [
+        "CA510 CENSUS start registered_defenders=601 registered_attackers=988 parked=0",
+        "CA510 CENSUS end registered_defenders=601 registered_attackers=988 parked=0"
+      ]
+    },
+    {
+      "label": "candidate-cost-probe",
+      "native_passed": true,
+      "runtime_sha256": "1cb2039081bd7ff9016954f59e01f4b8a0d7555275ee5d6303900ad55537a261",
+      "mean_present_fps": 1.5142853650056545,
+      "present_intervals": {
+        "samples": 37,
+        "mean_ms": 660.377510811026,
+        "p50_ms": 658.239100009203,
+        "p95_ms": 784.4081000089645,
+        "p99_ms": 786.3603999912739,
+        "max_ms": 786.3603999912739
+      },
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 38.70499057142857,
+        "p95_ms": 113.3883,
+        "p99_ms": 118.7587,
+        "max_ms": 212.6173
+      },
+      "census": [
+        "CA510 CENSUS start registered_defenders=601 registered_attackers=988 parked=0",
+        "CA510 CENSUS end registered_defenders=601 registered_attackers=988 parked=0"
+      ]
+    }
+  ],
+  "performance_accepted": false,
+  "author_accepted": false,
+  "qualifications": [
+    "Sequential native vkQueuePresentKHR measurements at actual1280x720 on one Windows machine; not compositor/scanout or Internet evidence.",
+    "Both geometries use the same current runtime; this is not a paired accepted-main runtime regression test.",
+    "Corresponding quay/front views differ in visible geometry. No general speedup or equivalent visible-workload claim.",
+    "The initial original-city siege was still refilling (797 to898 registered attackers); use the additional full-cap sample to compare population.",
+    "Settled original and candidate siege each have988 registered attacker NPCs and601 defenders including the existing subcaptain. Configured machines contribute to the1000-side cap but are not included in this NPC census.",
+    "The profiling overlay adds timing overhead; Acquire includes Candidate and their inclusive totals cannot be summed.",
+    "Navigation represents about0.4% of the diagnostic700-tic window. This does not explain the severe frame gaps or justify speculative pathfinding changes."
+  ],
+  "source_review": {
+    "accepted_main": "5f13ae28c844ab05f8938ca40dc3f1146e6223125",
+    "unchanged_files": [
+      "src/caelum/actors/CaelumVisualPerception.zs",
+      "src/caelum/actors/CaelumCommunication.zs",
+      "src/caelum/actors/CaelumNoise.zs"
+    ],
+    "note": "Byte equality alone does not prove identical caller frequency or inherited performance."
+  },
+  "inclusive_timing_probe": {
+    "Navigation": {
+      "milliseconds": 112.4962,
+      "calls": 375
+    },
+    "Candidate": {
+      "milliseconds": 6847.4644,
+      "calls": 181503
+    },
+    "Acquire": {
+      "milliseconds": 6897.8878,
+      "calls": 182897
+    },
+    "Noise": {
+      "milliseconds": 370.8622,
+      "calls": 53693
+    },
+    "Communication": {
+      "milliseconds": 1433.5609,
+      "calls": 1112300
+    }
+  },
+  "files_sha256": {
+    "candidate-cost-probe/observer/census.zs": "7a1617ec4a356b5deee4b6edea1bee99f62e979b68202efebef6b294df9cd471",
+    "candidate-cost-probe/observer/MAPINFO": "e84a473c50d6885e6937fd51c81702d01e1fe4ba56fafaa3b222047cad673b90",
+    "candidate-cost-probe/observer/native_sync.zs": "4386ef0e0f67e81072826595cb59a0b99ec8f6692d9dfe0ab5c98c0e612b549d",
+    "candidate-cost-probe/observer/observer.zs": "686e039598caee9e8672487a13adb3bfcc88295143f2c47f4849d61e0acd2f0d",
+    "candidate-cost-probe/observer/ZSCRIPT": "be2e260bd655850da4405d04eea8dcf91c06889b0ae195835aba16ca1800a2db",
+    "candidate-cost-probe/peer0/engine.log": "dda2dc57fe817ceff72995bf8e0c8d0ce05d94660c109287a0fb96c539fc74b6",
+    "candidate-cost-probe/peer0/presents.csv": "ada152bd18437496c80d2843db5dd33b7634cf4b7eb118741951584cdb2dfb0e",
+    "candidate-cost-probe/peer0/process.log": "8eaccf8674551e7153799c07bbeced4d38cbddbc946bb1f0e243a8808c104ebb",
+    "candidate-cost-probe/peer0/scene.png": "0754a875a919cfa17b92e2e326358367224fdfb77b2c1a721d70d5d7b463a70e",
+    "candidate-cost-probe/peer0/session.ini": "eb7262e1c877717c0d314462c6a7c62d068c711aeaa8bea34438d158c2a39e24",
+    "candidate-cost-probe/peer0/start.cfg": "9944e01e547717c9fd1e4f154d6814c4b3038958b95f1cca2e6ce24d8eec02f7",
+    "candidate-cost-probe/presentation.json": "0a552c1cfd57da5e1c066785817bb0055e0536dbe4d046a22d54edc5a2d2013f",
+    "candidate-cost-probe/results.json": "66c77671f2b7a980951a117ff958d8ab2e2e10866cc0cbdff48fbc1ee2fab1c1",
+    "candidate-ground/observer/census.zs": "7a1617ec4a356b5deee4b6edea1bee99f62e979b68202efebef6b294df9cd471",
+    "candidate-ground/observer/MAPINFO": "e84a473c50d6885e6937fd51c81702d01e1fe4ba56fafaa3b222047cad673b90",
+    "candidate-ground/observer/native_sync.zs": "4386ef0e0f67e81072826595cb59a0b99ec8f6692d9dfe0ab5c98c0e612b549d",
+    "candidate-ground/observer/observer.zs": "cf796346047d90dc04241b0ee77c29fe10fe09f3431f52d1996a4dceed7e6940",
+    "candidate-ground/observer/ZSCRIPT": "be2e260bd655850da4405d04eea8dcf91c06889b0ae195835aba16ca1800a2db",
+    "candidate-ground/peer0/engine.log": "e1efa949aff0b3a06ee6f3ac4e6e799885f1675c40a57cb022f1d45eb7859836",
+    "candidate-ground/peer0/presents.csv": "12465fe5e0fd0fe6c5029c0bfb68d43a9dd3c894fab33ace2ed70c3532129ea7",
+    "candidate-ground/peer0/process.log": "b71b5260087291d453dab8267e2ffeaa2382ba33919bde3cfe5b5838bb747b0c",
+    "candidate-ground/peer0/scene.png": "f21d1a9d0b034212fa810167b008c9bfe517fb1bc283fed72bb963e69578fa76",
+    "candidate-ground/peer0/session.ini": "cc10d6fde826fbd9b86caf8755380b8e50833f2a27b0c7793c7961c474d68c06",
+    "candidate-ground/peer0/start.cfg": "04b295ec831e842896fbe228622b272ae1cdfb2662215894f29fb25b8c61485d",
+    "candidate-ground/presentation.json": "ecb9c6385e963fcbd4405e58d4078284942834c2fd22662e1897fb1d27ef2c71",
+    "candidate-ground/results.json": "8219d7976d22ae2b1e8d807c7807b8a8180a737d8942c0697516239826279b85",
+    "candidate-peace/observer/census.zs": "7a1617ec4a356b5deee4b6edea1bee99f62e979b68202efebef6b294df9cd471",
+    "candidate-peace/observer/MAPINFO": "e84a473c50d6885e6937fd51c81702d01e1fe4ba56fafaa3b222047cad673b90",
+    "candidate-peace/observer/native_sync.zs": "4386ef0e0f67e81072826595cb59a0b99ec8f6692d9dfe0ab5c98c0e612b549d",
+    "candidate-peace/observer/observer.zs": "71eaebf95eb624e6944d827427f1c2b8e7202050432343833cd2ee70919c0844",
+    "candidate-peace/observer/ZSCRIPT": "be2e260bd655850da4405d04eea8dcf91c06889b0ae195835aba16ca1800a2db",
+    "candidate-peace/peer0/engine.log": "2675d87bf83a99fb06603525abe76d3637ef5e37477389d7df82d0892f3f7fed",
+    "candidate-peace/peer0/presents.csv": "a76f8989a8ef644df9539f740902ca4f2158fc580176f890285591b9ca60c635",
+    "candidate-peace/peer0/process.log": "df1b200d1f97498fba835791bae12f66944f999416c43e400b5e5e57ef8dd8d5",
+    "candidate-peace/peer0/scene.png": "1a277d83888fc85e57c43cd773a98ad046da482eace71e6d333900cda81c3c95",
+    "candidate-peace/peer0/session.ini": "5167e88c5b450bdc9f59a0a4e92217496d1d545bd4fa52eb59c23d971711f649",
+    "candidate-peace/peer0/start.cfg": "04b295ec831e842896fbe228622b272ae1cdfb2662215894f29fb25b8c61485d",
+    "candidate-peace/presentation.json": "28eadbdc0a2759b0d49fc7ae8b6e1c21a0e94e958c17fc6a3bbb3cd8bca483b4",
+    "candidate-peace/results.json": "2a6c90bf5038392e298717a2f8b0a820ccf4e4388df7ba9461d2612abbc73ee7",
+    "candidate-siege/observer/census.zs": "7a1617ec4a356b5deee4b6edea1bee99f62e979b68202efebef6b294df9cd471",
+    "candidate-siege/observer/MAPINFO": "e84a473c50d6885e6937fd51c81702d01e1fe4ba56fafaa3b222047cad673b90",
+    "candidate-siege/observer/native_sync.zs": "4386ef0e0f67e81072826595cb59a0b99ec8f6692d9dfe0ab5c98c0e612b549d",
+    "candidate-siege/observer/observer.zs": "686e039598caee9e8672487a13adb3bfcc88295143f2c47f4849d61e0acd2f0d",
+    "candidate-siege/observer/ZSCRIPT": "be2e260bd655850da4405d04eea8dcf91c06889b0ae195835aba16ca1800a2db",
+    "candidate-siege/peer0/engine.log": "8db32d23b0438699bf3ece96fdab4133ea529784f7075e6960cc1e99973b7f4e",
+    "candidate-siege/peer0/presents.csv": "93d2896d9ec48fa816341955ee26543e177b67934828e16a7451fc7a196a8efd",
+    "candidate-siege/peer0/process.log": "49661fe1418325499c956f626c4cb71b87fda2967ddfeabf3be10afc776687d7",
+    "candidate-siege/peer0/scene.png": "bbceff8cd935e0b8481d96b87f43ab01e621d8c018fd9d6ecdb2fdc9f3537fc9",
+    "candidate-siege/peer0/session.ini": "2f3c939c742184c45a45ffe896b6ef2051e00db118ff45b241856021b852aefe",
+    "candidate-siege/peer0/start.cfg": "9944e01e547717c9fd1e4f154d6814c4b3038958b95f1cca2e6ce24d8eec02f7",
+    "candidate-siege/presentation.json": "6a057838e8f4359e6265044966ca5a9de2ee0a2ccd39dc70e73491adceec81db",
+    "candidate-siege/results.json": "e1bbbf4c2e9875c91b0c2d455697f174d753fb62d83af37bf41f904ff5d7d481",
+    "environment.json": "cb787a7c105df1e7366bbe63f860e79a9d72137ef581854d3ec1421b5e1c69ff",
+    "original-ground/observer/census.zs": "7a1617ec4a356b5deee4b6edea1bee99f62e979b68202efebef6b294df9cd471",
+    "original-ground/observer/MAPINFO": "e84a473c50d6885e6937fd51c81702d01e1fe4ba56fafaa3b222047cad673b90",
+    "original-ground/observer/native_sync.zs": "4386ef0e0f67e81072826595cb59a0b99ec8f6692d9dfe0ab5c98c0e612b549d",
+    "original-ground/observer/observer.zs": "cf796346047d90dc04241b0ee77c29fe10fe09f3431f52d1996a4dceed7e6940",
+    "original-ground/observer/ZSCRIPT": "be2e260bd655850da4405d04eea8dcf91c06889b0ae195835aba16ca1800a2db",
+    "original-ground/peer0/engine.log": "5bf126793525d61fefd6a15b7fb78bec3666f0a7656a6ae29e1c6b84c2de40fa",
+    "original-ground/peer0/presents.csv": "7c2825fd71d65ecbcdb7afa95574289e39ebeb147b3aa1b5dc9f1f5b7140b9fc",
+    "original-ground/peer0/process.log": "99af2a142ab8e14f1e0e8d36b20135931c8da43048eff6d1a71582df1c6bc34f",
+    "original-ground/peer0/scene.png": "8cb9d9b3b6e4a69f5500a8b2b2617bcc3dba5d9aac4f43c79cf9f3906962a4b9",
+    "original-ground/peer0/session.ini": "8cd7fa56ef078f8d67d773e7f543dbd72563c3e4069c5c5c27e93440c206ebad",
+    "original-ground/peer0/start.cfg": "04b295ec831e842896fbe228622b272ae1cdfb2662215894f29fb25b8c61485d",
+    "original-ground/presentation.json": "1ac061be7e42c4a00bbd38dce208e4635a9b4e3d78167c6d76900b5db3886305",
+    "original-ground/results.json": "52569d008d83b4c34f9b0b39caf6159d84a1db6896412e74c6bb1e58dc701b95",
+    "original-peace/observer/census.zs": "7a1617ec4a356b5deee4b6edea1bee99f62e979b68202efebef6b294df9cd471",
+    "original-peace/observer/MAPINFO": "e84a473c50d6885e6937fd51c81702d01e1fe4ba56fafaa3b222047cad673b90",
+    "original-peace/observer/native_sync.zs": "4386ef0e0f67e81072826595cb59a0b99ec8f6692d9dfe0ab5c98c0e612b549d",
+    "original-peace/observer/observer.zs": "71eaebf95eb624e6944d827427f1c2b8e7202050432343833cd2ee70919c0844",
+    "original-peace/observer/ZSCRIPT": "be2e260bd655850da4405d04eea8dcf91c06889b0ae195835aba16ca1800a2db",
+    "original-peace/peer0/engine.log": "debc44f347c949d9b47bc0c9e39113485f0e0544862345f0d863c79883e9e210",
+    "original-peace/peer0/presents.csv": "c80162062cf251deaf015f80c2301a671689eae114e39bf5492cc1ba1740c83b",
+    "original-peace/peer0/process.log": "3fe7d55f19dc04a8bf464e935e5a4105a1b5afbbc5c3977105d12cae675b6692",
+    "original-peace/peer0/scene.png": "6e5d8987f288c4debed084f873c3439b32329e01f435ddd3bb33a090146611da",
+    "original-peace/peer0/session.ini": "14c99cbb1c75b262cf1898ae421901d8af7519d12deaf3000fd942577a6167f3",
+    "original-peace/peer0/start.cfg": "04b295ec831e842896fbe228622b272ae1cdfb2662215894f29fb25b8c61485d",
+    "original-peace/presentation.json": "4743fb0e90522949500052d24c63edf329f08050b49eb463bce52183f031f3c8",
+    "original-peace/results.json": "aca48547562e0f5b6c06cfe065fb3a113af4c2393051de27a197904dafd246fc",
+    "original-settled-siege/observer/census.zs": "7a1617ec4a356b5deee4b6edea1bee99f62e979b68202efebef6b294df9cd471",
+    "original-settled-siege/observer/MAPINFO": "e84a473c50d6885e6937fd51c81702d01e1fe4ba56fafaa3b222047cad673b90",
+    "original-settled-siege/observer/native_sync.zs": "4386ef0e0f67e81072826595cb59a0b99ec8f6692d9dfe0ab5c98c0e612b549d",
+    "original-settled-siege/observer/observer.zs": "25b7ed7c62f4ddb90e67570167663a789909af66039973b7ed8195e2e09adf18",
+    "original-settled-siege/observer/ZSCRIPT": "be2e260bd655850da4405d04eea8dcf91c06889b0ae195835aba16ca1800a2db",
+    "original-settled-siege/peer0/engine.log": "be92638fad79c8193eff8c1ac10d39d5cf5d97d1e4e688b3c32b8258c1fd166a",
+    "original-settled-siege/peer0/presents.csv": "ac7e45a14dd76333b2aa365df1441cb292a8ba46c1536e8f0d12b033db2bf43f",
+    "original-settled-siege/peer0/process.log": "2bc7ae3268309bf3e79ed1f443b539e3116733f699d2e0721d71bab97450a8cd",
+    "original-settled-siege/peer0/scene.png": "179d27ad516555b96896d168fde471b4cf00fe82e67f82a0910a32ef932ee55d",
+    "original-settled-siege/peer0/session.ini": "9625a6f41f8540d76ca0c96b36676a10f002e8f91323a5a2d94e7469e6dd68a7",
+    "original-settled-siege/peer0/start.cfg": "4d6c949f5acd8b0d041ee8b65e16e51c2f9e5d6ab7f41a2eba555b969bf2acee",
+    "original-settled-siege/presentation.json": "e4afaef0bfcc400968030d163787747a19c28d8ea8007e970bf8f41463c43c02",
+    "original-settled-siege/results.json": "5bc57f530909401cd7c134762c38b64ce695e1d93ff0006eac4d789060b74600",
+    "original-siege/observer/census.zs": "7a1617ec4a356b5deee4b6edea1bee99f62e979b68202efebef6b294df9cd471",
+    "original-siege/observer/MAPINFO": "e84a473c50d6885e6937fd51c81702d01e1fe4ba56fafaa3b222047cad673b90",
+    "original-siege/observer/native_sync.zs": "4386ef0e0f67e81072826595cb59a0b99ec8f6692d9dfe0ab5c98c0e612b549d",
+    "original-siege/observer/observer.zs": "686e039598caee9e8672487a13adb3bfcc88295143f2c47f4849d61e0acd2f0d",
+    "original-siege/observer/ZSCRIPT": "be2e260bd655850da4405d04eea8dcf91c06889b0ae195835aba16ca1800a2db",
+    "original-siege/peer0/engine.log": "a61e42b7e210b70a2cc6cd646b70c508c947d2ff527d06c52b15ba677025aa45",
+    "original-siege/peer0/presents.csv": "0507a7952292779520828eaefa07d9d563529e8eefbf715dd52d15c7cecfb15a",
+    "original-siege/peer0/process.log": "c77adf92e4adff9be218fe6b8cc943c68a88311b18453987625ab66b7d6b2f7b",
+    "original-siege/peer0/scene.png": "ce0c908ed656930b7d042173706024b5b1fe5e81ce360de64c0677abc40a7baf",
+    "original-siege/peer0/session.ini": "91cca0346b5cd238d946385b13bb8ffa89290444b50a836df13800b67742de1e",
+    "original-siege/peer0/start.cfg": "9944e01e547717c9fd1e4f154d6814c4b3038958b95f1cca2e6ce24d8eec02f7",
+    "original-siege/presentation.json": "e027bb227bf96ad5ba30469e28f22746d13bb323636d2844cac8fad0d2d59495",
+    "original-siege/results.json": "52d12139412d9eb94606bcea6916b5015f4628827598ac191ea31607ce0c6878",
+    "profiling-overlay/caelum/actors/CaelumCommunication.zs": "e60524571670d53e275a631cf3788850720857cb5b823c2745b8e7e040390139",
+    "profiling-overlay/caelum/actors/CaelumNoise.zs": "29d0a0bacdd3c280e7f74940b77b7886e95338bf1eed501b6b1f46a65a4ee8cb",
+    "profiling-overlay/caelum/actors/CaelumVisualPerception.zs": "e0e91b86e0318f1c7f64a557efce7e59dbf0eb176de61a8e1e97fd04a191e30d",
+    "profiling-overlay/caelum/world/CaelumCityNavigation.zs": "bc0768ec23b15054bedd4b0d8e533c68d95451a9435902ad7a9c8744e1b3e62a",
+    "profiling-overlay/manifest.json": "81e03ce5f5ca2cb2679b9370413b264497bb9f9d84df8bb2714d07995cd087a8",
+    "profiling-overlay/MAPINFO": "6482719af66082daceb1bd3320b8b452215ed7599b7156912bc6cbc638a8fa48"
+  }
+}

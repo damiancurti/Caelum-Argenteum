@@ -34,6 +34,8 @@ def render(root=ROOT):
     mansion = json.loads((root / 'assets/map01_mansion/CARTOGRAPHY.json').read_text(encoding='utf-8'))
     city = json.loads((root / 'assets/map06_port/CITY.json').read_text(encoding='utf-8'))
     interiors = json.loads((root / 'assets/map06_port/INTERIORS.json').read_text(encoding='utf-8'))
+    revised = json.loads((root / 'assets/barracas_redesign/LAYOUT.json').read_text(encoding='utf-8'))
+    siege = json.loads((root / 'assets/barracas_redesign/SIEGE.json').read_text(encoding='utf-8'))
     if map_checksum('MAP01', root) != mansion['map_checksum']:
         raise ValueError('MAP01 geometry changed: review CARTOGRAPHY.json room bounds before regeneration.')
     rooms = mansion['rooms']
@@ -51,15 +53,16 @@ def render(root=ROOT):
               '    static bool MatchesMansionGeometry(String checksum)', '    {',
               '        return checksum==MAP01_CHECKSUM || checksum==MAP01_LEGACY_CHECKSUM || checksum==MAP01_PREJUSTICE_CHECKSUM || checksum==MAP01_PREEXAMPLES_CHECKSUM;',
               '    }']
-    # Both layouts share exactly the same authored POI coordinates and IDs.
+    # Original layouts share coordinates; revision4 keeps IDs at relocated sites.
     furnished = wad_checksum(root/'assets/map06_port/legacy_5427/MAP06.wad')
     with zipfile.ZipFile(root/'assets/tarot_justice/legacy_5133.zip') as legacy:
         prejustice_city=blob_checksum(legacy.read(map_name('port',root)+'.wad'))
         assert blob_checksum(legacy.read('MAP01.wad'))==mansion['pre_justice_checksum']
     lines += [f'    const MAP06_FURNISHED_CHECKSUM = "{furnished}";',
               f'    const MAP06_PREJUSTICE_CHECKSUM = "{prejustice_city}";',
+              f'    const MAP06_REVISION3_CHECKSUM = "{wad_checksum(root / "assets/map06_port/legacy_5162/MAP03.wad")}";',
               '    static bool MatchesCityGeometry(String checksum)', '    {',
-              '        return checksum==MAP06_CHECKSUM || checksum==MAP06_FURNISHED_CHECKSUM || checksum==MAP06_PREJUSTICE_CHECKSUM;',
+              '        return checksum==MAP06_CHECKSUM || checksum==MAP06_FURNISHED_CHECKSUM || checksum==MAP06_PREJUSTICE_CHECKSUM || checksum==MAP06_REVISION3_CHECKSUM;',
               '    }']
     lines += [f'    const MANSION_ROOMS = {len(rooms)};',
               '    static bool MansionContains(int index,Vector3 point)', '    {',
@@ -78,21 +81,41 @@ def render(root=ROOT):
         x0, y0, x1, y1 = room['bounds']
         lines.append(f'        case {i}: return ({(x0+x1)/2:g},{(y0+y1)/2:g},{room["floor"]});')
     lines += ['        }', '        return (0,0,0);', '    }',
-              '    static bool TowerContains(int index,Vector3 point)', '    {', '        switch(index)', '        {']
+              '    static bool TowerContains(int index,Vector3 point,bool revised=false)', '    {',
+              '        if(revised)', '        {', '            switch(index)', '            {']
+    for i, tower in enumerate(siege['towers']):
+        x, y = tower['origin']; width = city['tower_size']
+        lines.append(f'            case {i}: return point.X>{x} && point.X<{x+width} && point.Y>{y} && point.Y<{y+width} && point.Z>={city["walk_height"]} && point.Z<={city["tower_deck_height"]+city["tower_parapet"]};')
+    lines += ['            }', '            return false;', '        }', '        switch(index)', '        {']
     towers = city['towers']
     for i, tower in enumerate(towers):
         x, y = tower['origin']; width = city['tower_size']
         lines.append(f'        case {i}: return point.X>{x} && point.X<{x+width} && point.Y>{y} && point.Y<{y+width} && point.Z>={city["walk_height"]} && point.Z<={city["tower_deck_height"]+city["tower_parapet"]};')
     lines += ['        }', '        return false;', '    }',
-              '    static Vector3 TowerPosition(int index)', '    {', '        switch(index)', '        {']
+              '    static Vector3 TowerPosition(int index,bool revised=false)', '    {',
+              '        if(revised)', '        {', '            switch(index)', '            {']
+    for i, tower in enumerate(siege['towers']):
+        x, y = tower['origin']; half = city['tower_size']/2
+        lines.append(f'            case {i}: return ({x+half:g},{y+half:g},{city["tower_deck_height"]});')
+    lines += ['            }', '            return (0,0,0);', '        }', '        switch(index)', '        {']
     for i, tower in enumerate(towers):
         x, y = tower['origin']; half = city['tower_size']/2
         lines.append(f'        case {i}: return ({x+half:g},{y+half:g},{city["tower_deck_height"]});')
     lines += ['        }', '        return (0,0,0);', '    }']
     # Use the existing interior generator's factory ordering and station slots.
     # IDs use authored building IDs and station kinds, never mutable actor positions.
-    lines += ['    static String CityStationId(Vector3 spawnPoint)', '    {']
+    lines += ['    static String CityStationId(Vector3 spawnPoint,bool revised=false)', '    {', '        if(revised)', '        {']
     factories = [building for building in city['buildings'] if building['kind'] == 'factory']
+    by_id = {b['id']: b for b in revised['buildings']}
+    for i, building in enumerate(factories):
+        current = by_id[building['id']]
+        a, b, c, d = current['bounds']; angle = current['angle']
+        profile = interiors['factory_profiles'][i % len(interiors['factory_profiles'])]
+        for j, kind in enumerate(profile['stations']):
+            dx, dy = interiors['station_positions'][j]
+            x, y = {0: (a+dx, b+dy), 90: (c-dy, b+dx), 180: (c-dx, d-dy), 270: (a+dy, d-dx)}[angle]
+            lines.append(f'            if(spawnPoint==({x},{y},0))return "city-factory-{building["id"]}-{kind}";')
+    lines += ['            return "";', '        }']
     for i, building in enumerate(factories):
         profile = interiors['factory_profiles'][i % len(interiors['factory_profiles'])]
         for j, kind in enumerate(profile['stations']):
@@ -102,8 +125,16 @@ def render(root=ROOT):
     lines += ['        return "";', '    }']
     east = next(gate for gate in city['gates'] if gate['name'] == 'east')
     x0, y0, x1, y1 = east['bounds']; mid = (x0+x1)/2
-    lines += [f'    static Vector3 EastPosition() {{ return ({mid:g},{(y0+y1)/2:g},0); }}',
-              '    static bool CrossesEast(Vector3 before,Vector3 after)', '    {',
+    new_east = next(g for g in revised['gates'] if g['id'] == 'east')['position']
+    north = next(g for g in city['gates'] if g['name'] == 'north')['bounds']
+    half = (north[2]-north[0])/2
+    lines += [f'    static Vector3 EastPosition(bool revised=false) {{ return revised?({new_east[0]},{new_east[1]},0):({mid:g},{(y0+y1)/2:g},0); }}',
+              '    static bool CrossesEast(Vector3 before,Vector3 after,bool revised=false)', '    {',
+              '        if(revised)', '        {',
+              f'            if((before.X<{new_east[0]})==(after.X<{new_east[0]}) || before.X==after.X)return false;',
+              f'            Vector3 crossing=before+(after-before)*(({new_east[0]}-before.X)/(after.X-before.X));',
+              f'            return crossing.Y>{new_east[1]-half:g} && crossing.Y<{new_east[1]+half:g} && crossing.Z>=0 && crossing.Z<{city["gate_headroom"]};',
+              '        }',
               f'        if((before.X<{mid:g})==(after.X<{mid:g}) || before.X==after.X)return false;',
               f'        Vector3 crossing=before+(after-before)*(({mid:g}-before.X)/(after.X-before.X));',
               f'        return crossing.Y>{y0} && crossing.Y<{y1} && crossing.Z>=0 && crossing.Z<{city["gate_headroom"]};',

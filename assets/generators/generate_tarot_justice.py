@@ -68,6 +68,11 @@ def validate(root):
     if digest((root/'assets/tarot_examples'/baseline['baseline_file']).read_bytes())!=baseline['baseline_sha256']:
         problems.append('Pre-example mansion baseline checksum mismatch')
     for row in manifest['maps']:
+        candidate = row.get('candidate_geometry')
+        if candidate and candidate.get('settings_sha256') != manifest['settings_sha256']:
+            problems.append(f'Stale candidate Justice arena settings: {row["file"]}')
+        if row.get('source_override') and digest((root/row['source_override']).read_bytes())!=row['source_sha256']:
+            problems.append(f'Stale current map source: {row["file"]}')
         if digest((root/'src/maps'/row['file']).read_bytes())!=row['sha256']:
             problems.append(f'Stale Justice arena geometry: {row["file"]}')
     return problems
@@ -106,6 +111,37 @@ def append_arena(blob, data):
                           'width_mu':width,'original_vertices':vi,'original_sectors':sector}
 
 
+def runtime_index(manifest, data):
+    """Render checksum-qualified current, candidate and compatibility arenas."""
+    native=['// #440: generado desde assets/tarot_justice; sin buscar sectores por tic.',
+            'class CaelumJusticeGeometry : Object', '{',
+            f'    const REVISION={data["revision"]};',
+            f'    const WIDTH={data["width_m"]*data["units_per_metre"]};',
+            '    static clearscope int SectorIndex(String map) {',
+            '        if(map==CaelumHuntData.Map())return CaelumHuntData.JUSTICE_SECTOR;']
+    for row in manifest['maps']:
+        for previous in (row.get('candidate_geometry'), row.get('compatibility_geometry')):
+            if previous is None: continue
+            native.append(f'        if(map=="{Path(row["file"]).stem}" && level.GetChecksum()=="{previous["checksum"]}")return {previous["sector"]};')
+        native.append(f'        if(map=="{Path(row["file"]).stem}")return {row["geometry"]["sector"]};')
+    native+=['        return -1; }', '    static clearscope vector3 Center(String map) {',
+             '        if(map==CaelumHuntData.Map())return CaelumHuntData.JusticeCenter();']
+    for row in manifest['maps']:
+        for previous in (row.get('candidate_geometry'), row.get('compatibility_geometry')):
+            if previous is None: continue
+            xyz=','.join(f'{v:g}' for v in previous['center'])
+            native.append(f'        if(map=="{Path(row["file"]).stem}" && level.GetChecksum()=="{previous["checksum"]}")return ({xyz});')
+        xyz=','.join(f'{v:g}' for v in row['geometry']['center'])
+        native.append(f'        if(map=="{Path(row["file"]).stem}")return ({xyz});')
+    native+=['        return (0,0,0); }',
+             '    static clearscope Sector Get()', '    {',
+             '        int index=SectorIndex(level.MapName);',
+             '        if(index<0 || index>=level.Sectors.Size())return null;',
+             '        let sector=level.Sectors[index];',
+             '        return sector.GetUDMFInt("user_ca_tarot_justice")!=0?sector:null;',
+             '    }', '}']
+    return ('\n'.join(native)+'\n').encode('utf-8')
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--capture-baseline', action='store_true')
@@ -138,6 +174,9 @@ def main():
     with zipfile.ZipFile(archive) as baseline:
         for row in manifest['maps']:
             old=baseline.read(row['file']);assert digest(old)==row['legacy_sha256']
+            if row.get('source_override'):
+                old=(ROOT/row['source_override']).read_bytes()
+                assert digest(old)==row['source_sha256'], f"Current source mismatch: {row['file']}"
             new,geometry=append_arena(old,data)
             new,examples=append_examples(new)
             if examples is not None:geometry['examples']=examples
@@ -153,27 +192,7 @@ def main():
                 example_path=ROOT/'assets/tarot_examples/GEOMETRY.json'
                 if args.check:assert example_path.read_bytes()==example_report,'Stale Tarot example geometry report'
                 else:example_path.write_bytes(example_report)
-    native=['// #440: generado desde assets/tarot_justice; sin buscar sectores por tic.',
-            'class CaelumJusticeGeometry : Object', '{',
-            f'    const REVISION={data["revision"]};',
-            f'    const WIDTH={data["width_m"]*data["units_per_metre"]};',
-            '    static clearscope int SectorIndex(String map) {',
-            '        if(map==CaelumHuntData.Map())return CaelumHuntData.JUSTICE_SECTOR;']
-    for row in manifest['maps']:
-        native.append(f'        if(map=="{Path(row["file"]).stem}")return {row["geometry"]["sector"]};')
-    native+=['        return -1; }', '    static clearscope vector3 Center(String map) {',
-             '        if(map==CaelumHuntData.Map())return CaelumHuntData.JusticeCenter();']
-    for row in manifest['maps']:
-        xyz=','.join(f'{v:g}' for v in row['geometry']['center'])
-        native.append(f'        if(map=="{Path(row["file"]).stem}")return ({xyz});')
-    native+=['        return (0,0,0); }',
-             '    static clearscope Sector Get()', '    {',
-             '        int index=SectorIndex(level.MapName);',
-             '        if(index<0 || index>=level.Sectors.Size())return null;',
-             '        let sector=level.Sectors[index];',
-             '        return sector.GetUDMFInt("user_ca_tarot_justice")!=0?sector:null;',
-             '    }', '}']
-    output=('\n'.join(native)+'\n').encode('utf-8')
+    output=runtime_index(manifest,data)
     target=ROOT/'src/caelum/data/CaelumJusticeGeometry.zs'
     if args.check:assert target.read_bytes()==output, 'Stale Justice geometry index'
     else:target.write_bytes(output)

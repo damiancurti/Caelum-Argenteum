@@ -4,6 +4,242 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-225 - Reuse exact local measurements before changing perception rules
+
+Status/evidence: ENGINE-VERIFIED, 2026-11-13. Issue/PR: #454/#643.
+Environment: GZDoom 4.14.2, Windows 11, Vulkan 1280x720, unpaused background at 5% audio.
+Evidence: assets/validation_v5_16_2/barracas-perception/SUMMARY.json.
+
+A shared spatial candidate list can still cause millions of per-recipient checks.
+The 700-tic siege diagnostic records 18,886,906 CanSee calls, including 12,406,655
+range rejections. Measuring only the list refresh or navigation misses this work.
+Inclusive timing wrappers also add measurable overhead and overlap their children;
+do not sum them or present instrumented frame intervals as an optimized baseline.
+
+Candidate already calculates native Distance3D before its visibility test. Passing
+that exact value within the same synchronous iteration avoids repeating it when
+the range predicate is reached. Preserve native distance/portal semantics and
+all other filters; do not cache positions across tics or discard offscreen NPCs.
+The full-window comparator verifies 16,687,214 supplied values and every visibility
+result against the original expressions, with zero differences. Not every supplied
+value reaches the range predicate because earlier filters can reject it.
+Boundary tests cover light, height, Insight, stealth, contact behind the observer,
+field/range edges, walls and observer state; original/current saves are reversible.
+
+Renderer bench and profilethinkers are later snapshots, not window averages or
+GPU timings. The modest query change leaves the severe siege frame-presentation
+problem unresolved. Author acceptance and ordinary campaign review remain pending.
+
+## CA-KP-223 - Map installation must migrate geometry-dependent catalogues
+
+Status/evidence: ENGINE-VERIFIED,2026-11-13. Issue/PR: #454/#643.
+Environment: GZDoom4.14.2 on Windows11, unpaused background at5% audio.
+Evidence: assets/validation_v5_16_2/barracas-integration/SUMMARY.json.
+
+A tested overlay can compile and preserve services while production cartography
+still uses the original checksum and coordinates. Replacing the checksum alone
+would recognize the new map with old station/tower/stair/exit positions and drop
+the original Justice-era map from the compatibility whitelist. Keep exact legacy
+checksums and select relocated coordinates by the loaded geometry revision;
+preserve IDs and private maps. Installation regenerates the dependent catalogues.
+Verify native bindings without granting knowledge, then use/visit and reload.
+The revised and original layouts each pass96 bindings and retain42 observed
+facts without revealing the other95 stations. Fixture positioning/API calls
+are not walking or normal UI acceptance. Check the final packaged assets as
+well as the isolated overlay; preserve the earlier evidence with its own hash.
+
+## CA-KP-222 - Individual routes do not prove crowded withdrawal
+
+Status/evidence: ENGINE-VERIFIED for fresh/saved/early-replayed crowd recovery;
+separate frame evidence retains severe siege stalls. Recorded / checked: 2026-11-13.
+Issue / PR: #454 / #643. Baseline: d2bf6f1c6 plus the unactivated city candidate.
+Environment: Windows11, GZDoom4.14.2, Vulkan, background unpaused at5% audio.
+Evidence: assets/validation_v5_16_2/barracas-withdrawal/SUMMARY.json and raw logs.
+
+Six isolated city routes passed while the combined army developed severe
+congestion. Forcing every survivor back to its assault front created opposing
+streams across the southern approach. Choose an existing legal exit by offline
+ground distance while preserving the saved assault assignment. Advancing only
+at an exact cell centre also sent physically progressed detours backwards.
+Recognize equal-or-better ground cost, and retain a valid local detour while its
+shared-budget replacement is queued. Neither observation authorizes teleporting
+survivors, removing collision, ignoring offscreen bodies or changing speed.
+
+Even nearest-exit streams repeatedly requested side detours around allies moving
+in their own direction. A local next-step volume query can wait behind an eligible
+body strictly ahead on that same straight flow; corners, immobilized bodies and
+unrelated obstacles retain avoidance. Do not trust an old BlockingMobj when a
+failed CheckPosition bypassed TryMove. The saved native search queue fell from
+489 entries before this correction to1 in the subsequent snapshot; this is
+state evidence, not a paired frame-time benchmark. The recovered run physically
+exits all1000 survivors; supplied objective destruction/wound and neutralized
+thermal exposure limit its meaning. Keep incomplete iterations and precise
+runtime/seed hashes; do not infer60FPS from these movement results. A separate fresh run completes
+all1000 exits at30,205tics, matched by early-checkpoint replay. Six full-route
+and five commander-origin replays also pass. Independent presentation evidence
+still measures only1.50 requests/s in the revised full-cap siege. An inclusive
+timing overlay measures375 local navigation builds totaling112.50ms (about0.4%
+of its700-tic window); the route builder does not explain the frame gaps.
+Measure before changing it. See barracas-presentation/SUMMARY.json; overlapping
+perception scopes and observer overhead are explicitly qualified there.
+
+## CA-KP-221 - Long navigation probes must preserve their isolation conditions
+
+Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED for the stated fixture causes.
+First recorded / last checked: 2026-11-13 / 2026-11-13.
+Issue / PR: #454 / #643. Baseline: b477d5ed0 plus the navigation candidate;
+exact packages, logs and qualifications: barracas-navigation/SUMMARY.json.
+Environment: Windows11, GZDoom4.14.2, Vulkan, unpaused background at5% audio.
+Scope: isolated pedestrian approach/withdrawal; full integrated behavior pending.
+
+Opening a normal auto-closing gate once does not hold it open for a20-minute
+approach. The saved fixture showed closed blockers at the final destination;
+restoring a diagnostic hold completed all15 bodies. Production withdrawal now
+requests normal gate use nearby after victory instead of changing gate timers.
+Likewise, three exposed city walkers died from728 thermal damage at2628tics.
+A controlled movement fixture may neutralize exposure, but must retain that
+qualification and cannot stand in for survival or combined-battle validation.
+Save inspection separated those causes from formation membership and collisions.
+
+The generated ground field also exceeded the native return-register limit when
+one String-return switch held hundreds of rows. Splitting it into64-row functions
+compiled successfully; deterministic checks and native descent/exit tests pass.
+No frame-rate, crowd or author-acceptance conclusion follows from these results.
+
+The continuation suite in barracas-continuation/SUMMARY.json adds a600-resident
+native-save audit. Do not impose simultaneous stationary posts on guards whose
+accepted behavior includes investigating sounds after arrival. AdvanceDeployment
+confirms its final point within1 MU, but later native actions can move the guard
+before a fixture samples position; a speed-only distance tolerance can miss that
+completion. Audit the saved native completion/identity flags separately from the
+current position, and qualify an early-reload replay independently.
+The same suite found two other fixture prerequisites: wait for deferred native
+PostBeginPlay before setting a percentage-health wound, and seed persistent Box
+ownership before testing commerce rather than a temporary actor-only flag. A
+long single-line64-shop console sequence lost/reordered its first requests;
+bounded chained command files retained all64 in order. Keep the failed logs and
+do not present these harness corrections as changes to production balance.
+
+## CA-KP-220 - Rotating crew posts need box clearance and live AI evidence
+
+Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED for isolated ram crews.
+First recorded / last checked: 2026-11-13 / 2026-11-13.
+Issue / PR: #454 / #643. Baseline: afccdb299 plus the opt-in crew layout;
+exact runtime/map hashes and attempts are in barracas-ram-crews/SUMMARY.json.
+Environment: Windows11, GZDoom4.14.2, Vulkan, unpaused background at5% audio.
+Scope:6/32 real Mandingas and two rams, plus separate physical clearance probes.
+
+Empty-space sampling of desired posts did not prove live movement. Remembered
+search goals could outrank the assigned station; cached chase direction and
+idle cadence also differed from deliberate walking. Euclidean post separation
+did not account for axis-aligned actor boxes during turns or the arrival radius
+that allowed adjacent occupants to obstruct one another. Derive row spacing
+and arrival tolerance from the worst rotated box clearance. Keep the native
+body, movement speed and cadence; re-evaluate the moving post at each step.
+
+The combined correction passes fresh/reloaded hostile crew approaches in2176
+and2544 simulation tics, with all38 bodies and real gate impacts. Individual
+fix contributions were not isolated as performance ablations. This is not a
+full battle/capture/refill/FPS or author-acceptance result. Preserve original
+saved crew behavior behind explicit layout revisioning; do not apply the new
+station policy to unrelated AI merely because it shares a navigation helper.
+
+## CA-KP-219 - Machine approaches need swept body clearance and ground support
+
+Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED for isolated ram access.
+First recorded / last checked: 2026-11-13 / 2026-11-13.
+Issue / PR: #454 / #643. Baseline: 14732ca89 plus the ram-access candidate;
+exact runtime/map hashes are in barracas-rams/SUMMARY.json.
+Environment: Windows11, GZDoom4.14.2, Vulkan, unpaused background at5% audio.
+Scope: physical frame/face/head movement and gate contact; no crew AI.
+
+A character-clear128-MU tunnel did not accommodate the original large ram's
+frame. Open only the exterior forecourt if the frame must stop before the gate;
+widening the inner throat can permit bypass beside the unchanged96-MU blocker.
+The western turning point also needed ground beyond the previous map edge,
+even though its centre was on valid ground. Test every physical component
+through translation and rotation, retaining floor support and native collision.
+
+Regression evidence: fresh and mid-turn-reloaded runs each complete eight
+gate/size cases and two legacy fixed-heading controls, with physical blocker
+impacts. The fixture repeats normal steps32 times per diagnostic tic; those
+results do not establish elapsed approach time, crew navigation or performance.
+Check closed/open character passages separately after editing gate forecourts.
+
+## CA-KP-218 - Relocated stairs require a complete structure and support audit
+
+Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED for the isolated city candidate.
+First recorded / last checked: 2026-11-12 / 2026-11-12.
+Issue / PR: #454 / #643. Baseline: 33acaa333 with the candidate fortifications;
+exact runtime/map hashes are in barracas-forts/SUMMARY.json.
+Environment: Windows 11, GZDoom 4.14.2, Vulkan, unpaused background at 5% audio.
+Scope: authored geometry, ground posts and isolated native crew movement.
+
+Checking each translated flight only against buildings missed intersections
+with other flights, tower footprints and their landing/approach points. The
+first native attempt completed 33 of 36 routes. Cardinal operator offsets on
+oblique walls also left some posts unsupported. Rounded wall cells reached a
+guard whose continuous polygon distance appeared clear. A complete placement
+audit, level firing platforms and a raster-aware ground margin corrected these
+cases. Quantize flight geometry consistently inward; preserve guard formations
+as rigid grids instead of independently snapping their rows.
+
+Regression evidence: 698 authored points, 528 guard posts, 72 operator posts,
+648 actual cannon parts and 72 completed gravity/TryMove paths. Validate support
+height as well as empty headroom. Distinguish geometric path traversal from AI,
+crowd movement and firing coverage: these walkers intentionally ignore one
+another and the production siege is suppressed. No performance or author
+acceptance follows from these isolated results.
+
+## CA-KP-217 - Physical collision probes must participate in actor collision
+
+Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED for the isolated gate probe.
+First recorded / last checked: 2026-11-12 / 2026-11-12.
+Issue / PR: #454 / #643. Baseline: edfdba4d4 with the uncommitted gate fixture;
+exact runtime/source hashes and all logs are in barracas-gates/SUMMARY.json.
+Environment: Windows11, GZDoom4.14.2, Vulkan, disposable CABAPRV, unpaused
+background at5% audio. Scope: diagnostic CheckPosition actor-versus-gate tests.
+
+The earlier NOINTERACTION probe was sufficient to query static floor/ceiling
+clearance but ignored solid native gate blockers. It reported12 passable samples
+through four closed gates. Removing NOINTERACTION and using SOLID/NOGRAVITY
+produced the expected blocked results; all160 closed/open geometry samples then
+passed. Each gate's real Used handler also opened it in a later check. Preserve
+both a known blocked and known passable control in a physical probe. Do not infer
+actor collision from a static clearance test or from process exit zero.
+
+Evidence: assets/validation_v5_16_2/barracas-gates/run-02 (bad instrument), run-03
+(corrected physical probe), run-05 (final runtime, four Used calls and views).
+Regression: require blocked closed-gate samples and clear opened-gate samples
+with the largest supported body. This fixture does not establish ordinary user
+interaction, integrated siege behavior, performance or author acceptance.
+
+## CA-KP-215 - Out-of-range editor numbers can silently omit map actors
+
+Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED for the isolated preview.
+First recorded / last checked: 2026-11-12 / 2026-11-12.
+Issue / PR: #454 / #643. Baseline: 0842fb00b plus uncommitted Barracas preview
+generators; exact runtime/engine hashes are in the evidence summary.
+Environment: Windows 11, GZDoom 4.14.2, Vulkan, disposable fresh CABAPRV,
+local development Doom II IWAD, unpaused background at 5% audio.
+Scope: procedural UDMF thing/editor registration and native smoke-test parsing.
+
+The facade fixture registered 56000 but native map loading reported type -9536
+and omitted all 160 instances. The engine still exited successfully and camera
+captures completed. That observed value is the signed-16-bit wrap of 56000;
+successful compilation/exit alone did not establish actor presence. Choosing an
+unused positive editor number within 32767 (31800 for this disposable fixture)
+restored the models. Do not confuse an editor number with unrestricted project
+IDs, line IDs or thing TIDs. Check the editor registry before assigning a number.
+
+Evidence: assets/validation_v5_16_2/barracas-preview/SUMMARY.json and run-02's
+native log. The original startup-only report missed the warning; the current
+runner rejects `Unknown type`, and run-05 has no such warning. Rendering was
+separately checked after the floor-relative height correction in CA-KP-029.
+Regression check: require expected native actors/markers and reject unknown map
+types, not just process exit zero. Author city acceptance remains PENDING;
+this is neither a production city nor gameplay/performance acceptance.
+
 ## CA-KP-214 - Idempotent initialization still needs a cheap hot-path guard
 
 Status/evidence: RESOLVED-VERIFIED for the measured MAP03 view; not a general
@@ -5009,6 +5245,15 @@ not individually inspect every upper actor's rendering; that position comparison
 is static. The author accepted CA-MAP02-PIT-RETURN-01 on 2026-10-02
 without reported exceptions; see HISTORY for the separate acceptance record.
 
+Rechecked for #454 / 5.16.2: a static house-facade model placed at the centre
+of an opaque shell had height=0 and therefore spawned on its 184-MU roof floor.
+Its cornices/windows floated above the building. The model's intended world
+base is zero, so thing height=-184 restores alignment without moving the house
+or altering collision. ENGINE-VERIFIED in the isolated CABAPRV run-03 failure
+and corrected run-04 view; run-05 repeats identical map/model/package bytes.
+Evidence: assets/validation_v5_16_2/barracas-preview/SUMMARY.json. This rendering
+check does not establish portal, siege or author acceptance for the city.
+
 ## CA-KP-028 â€” Temporal forecasts must preserve within-tic ordering
 
 Status/evidence: CODE-VERIFIED / ENGINE-VERIFIED, issue #64, 4.37.4.
@@ -5650,6 +5895,15 @@ both old and new checksums because this exterior-only edit preserves all room
 IDs and bounds. Do not enable an old catalogue without that coordinate audit.
 Native room-discovery/compatibility evidence: assets/validation_582/RESULTS.md.
 Author acceptance CA414-01 passed all terminal checks on 2026-10-24.
+
+Rechecked for #454 / 5.16.2 on 2026-11-12: LegacyMap02Revision5 preserves the
+exact pre-redesign sewer WAD while revision-sensitive travel/drop/furniture
+helpers and checksum-sensitive Justice sector lookup keep current code usable.
+Native old active-map and stored-hub saves both pass, alongside fresh/reload/hub
+revision-6 saves. These are isolated fresh baseline saves, not the earlier
+49/48-check inventory fixtures. See assets/validation_v5_16_2/RESULTS.json.
+The mode continues old geometry; it does not transplant a visited save into the
+redesigned sewer. Author acceptance remains separate under CA454-MAP02-01.
 
 ## CA-KP-009 â€” MODELDEF slots overlay state meshes
 

@@ -1,0 +1,48 @@
+{
+  "issue": 454,
+  "release": "5.16.2",
+  "scope": "Unactivated candidate MAP03 port/services slice. A passive fixture controller suppresses obsolete six-lane siege deployment. No ordinary door Use/ACK, live siege, performance or author acceptance.",
+  "runtime_sha256": "e0afb3b55f6611d42d09cc475c88821fb8938ccf0fa0795b11f575015f1a4629",
+  "candidate_sha256": "2a85c7e50c078010b5db12584fe596fd9b1e52754b29282f8e197680d5548a42",
+  "counts": {
+    "buildings": 288,
+    "private_house_portals": 160,
+    "merchants": 64,
+    "vehicles": 4,
+    "factory_stations": 96,
+    "arrival_household_items": 4
+  },
+  "checks": [
+    "64 merchants at revision4 vendor coordinates with native collision clearance.",
+    "All160 exterior door helper results select revision4; all160 private chest offsets stay original.",
+    "Four distinct arrival-household objects survive parking, transfer into original CAH069 positions and re-parking on return.",
+    "Native ChangeMap to CAH069 and back via start70 places player exactly at the new house69 doorstep.",
+    "All96 existing factory station identities/classes/positions and native collision clearance pass.",
+    "Four current vehicles become Ready; full boarding transactions are not tested.",
+    "Fresh/new-save reload and stored-hub return pass.",
+    "Old active/stored-hub continuation passes with the same runtime, using original baseline saves."
+  ],
+  "fixture_qualifications": {
+    "run01": "Compiled;64merchants/4vehicles passed, but the probe incorrectly expected arrival objects to remain at the quay after their existing automatic relocation.",
+    "run02": "Correct registry/placement checks passed fresh,reload,house trip and exact return. Final screenshot was queued immediately before quit and absent.",
+    "run03": "Wait after final screenshot; fresh/hub assertions and both captures passed.",
+    "run04": "Added native96factory checks; fresh/hub assertions and captures passed. Reuse unchanged reload evidence from02."
+  },
+  "source_sha256": {
+    "assets/generators/generate_barracas_map.py": "5789198de9257c99a10a5f066a8d1266af06e0f65246a112ef165fdda3efae60",
+    "assets/generators/generate_barracas_data.py": "defe2c9bc7494e10cf93f4dbc28f54ce04ad9eee6d6b817f88cfc3fa4e8340d8",
+    "assets/validation_v5_16_2/run_barracas_candidate.py": "e55810c406ff0f66e6144f3818080a49f3b4285f1e38ca1654e285a0a5c3330d",
+    "assets/validation_v5_16_2/barracas_candidate_probe.zs": "1c157c73bbf9123febb7017e5bc95b5fac268ea9dcd7081b987ade80731b1f00"
+  },
+  "render_review": "Quay and exact house-return views inspected. Candidate remains architectural blockout; not final art acceptance.",
+  "limitations": [
+    "No candidate Justice annex/index update yet.",
+    "No three-front siege, new artillery/stairs/defender paths yet.",
+    "Private-house travel fixture directly invokes native ChangeMap rather than the interactive door acknowledgement.",
+    "Production MAP03 and original CAH geometry remain unchanged."
+  ],
+  "determinism": {
+    "MAP03.wad": "60ae4ec6292563c890c0b8180c38760b093d1da2ec15d774c18372648876aa18",
+    "preview.pk3": "2a85c7e50c078010b5db12584fe596fd9b1e52754b29282f8e197680d5548a42"
+  }
+}

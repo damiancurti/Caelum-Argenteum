@@ -1,0 +1,65 @@
+{
+  "issue": 454,
+  "release": "5.16.2",
+  "date": "2026-11-12",
+  "scope": "Intermediate architectural source/isolated preview. MAP03 and all CAH interiors remain unchanged in production.",
+  "baseline_commit": "0842fb00b97bd7185ef476dc65dca8270aa04652",
+  "layout_sha256": "14c98ef09bb955fcc2b60c52912f0c719d6471e25622c37aee0a21066b1029c7",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runtime_sha256": "2b98fa4a15e931a83786831aaaa0dab67d8ffb5ed7030cb90c7946bf709afc95",
+  "determinism": {
+    "preview.pk3": {
+      "run_04": "d74879fb86a74eb4ac7df09630eb88f721cf7cc167280d5e45afa65db7484093",
+      "run_05": "d74879fb86a74eb4ac7df09630eb88f721cf7cc167280d5e45afa65db7484093"
+    },
+    "CABAPRV.wad": {
+      "run_04": "038425091d078c95bb08a704e29bc888062fb5a5255c950a0ad872428745886e",
+      "run_05": "038425091d078c95bb08a704e29bc888062fb5a5255c950a0ad872428745886e"
+    },
+    "models/house-960-1216.obj": {
+      "run_04": "a5c2aefec5ead511571bee96562c07e8797aa989eba8e811d252c2ec0e377b8d",
+      "run_05": "a5c2aefec5ead511571bee96562c07e8797aa989eba8e811d252c2ec0e377b8d"
+    }
+  },
+  "static_route_targets": 424,
+  "static_route_failures": 0,
+  "native_clearance_targets": 424,
+  "native_clearance_failures": 0,
+  "counts": {
+    "house": 160,
+    "shop": 64,
+    "factory": 24,
+    "construction": 40
+  },
+  "scope_qualifications": [
+    "Static cell-centre reachability from Plaza Alsina and native maximum-body CheckPosition queries at exterior/interior approaches and both sides of four gate openings. These are not ordinary walks, interactive doors, AI deployment or dynamic gate tests.",
+    "Private house portals, current services, transport, save compatibility, landscaping, full architectural treatment and siege adaptation remain unfinished. No facade or map is activated in src.",
+    "One existing shop is placed as the municipal public counter; no extra construction, merchant, story, reward or administrative gameplay is added by this proposal.",
+    "House IDs69/70 stay near central commerce and each other; IDs158/159 stay in the northeastern port neighbourhood. All other identity/profile counts are retained."
+  ],
+  "visual_review": "Agent reviewed run01 plaza/municipality/centre and run04 centre. Corrected facade alignment is visible in alignment-corrected.png; run05 map/model/package hashes match run04. Unfinished preview, not author acceptance.",
+  "intermediate_failures": {
+    "run02": "Native map thing type56000 wrapped to-9536; 160 Unknown type lines and missing facades. Original startup-only report missed that warning; runner now rejects Unknown type.",
+    "run03": "With editor31800, facade models loaded but floated above roofs. UDMF height is relative to shell floor184; corrected thing height=-184 places the model base at world0.",
+    "run04": "Visual offset fixed; deterministic bytes match run05 which adds the route audit."
+  },
+  "author_acceptance": "PENDING; no new author terminal or manual test entry for an unintegrated preview.",
+  "pending_author_question": "Three siege fronts S/E/W with one active and one reserve ram each versus concentrated southern assault; original reinforcement budget and cap retained.",
+  "evidence_sha256": {
+    "alignment-corrected.png": "308d60dcf6c5b8140237d4e2d566e581dcc4a6901c3ff5e4bcb928abc6297642",
+    "run-02/centre.png": "eeeca4ed755ea982664b582695c38556527f6dd5b6a413987280d5613e6cddb7",
+    "run-02/engine.log": "a2f1f008c4c1736337f85de268af701e6b75dda8a30a73fd5aad06db36adf1e5",
+    "run-02/native-results.json": "3cba0f75b23ecebeee709d2e55f930e345870a9bd4c04c750bec5c512bffb714",
+    "run-03/centre.png": "f02bf6f04f4c8b7f110017670eab93411410de01001db2562b431eb915a3e17b",
+    "run-03/engine.log": "4fdb930e5b2f74f6bb50beb8949bf5e7b6dc69966f267109705cbc676120432b",
+    "run-03/native-results.json": "3cba0f75b23ecebeee709d2e55f930e345870a9bd4c04c750bec5c512bffb714",
+    "run-05/centre.png": "14cbb8206f46b66a67f3189ff4908f0bc679485b52329f0d8d08da832fe4fa01",
+    "run-05/engine.log": "890d7d8288a848010fa4f183b21185b3fe647a175e9945d34aeabf0b21323fa5",
+    "run-05/municipality.png": "5f865f9448a7d3a4644d88831724d8b7b1f20bee123ac28c394dd00396347b4c",
+    "run-05/native-results.json": "3cba0f75b23ecebeee709d2e55f930e345870a9bd4c04c750bec5c512bffb714",
+    "run-05/plaza.png": "f00d9f49ea033ae9f723cabf251ba0db8d7b5f286e88b65df1ce130219721c59",
+    "run-05/rail.png": "b36b5c6665a2d30fcfabd38e8a27740d4ff414de10d0a3c327975000a574d7dc",
+    "run-05/RESULTS.json": "84ccab0658342a8dcaf2d4c5c18f5256b378ae1f89d5b10941882ff5de02057b",
+    "run-05/routes.json": "01588fa6f5e134c84227553c8c04c7a3f5ecbb5300268aff27078ad957307226"
+  }
+}

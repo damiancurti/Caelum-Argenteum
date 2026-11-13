@@ -1,0 +1,16 @@
+{
+  "issue": 454,
+  "scope": "Sweep both existing ram sizes through four forecourts and right-angle turns.\n\nCalls the production physical route step32 times per diagnostic tic without\nchanging movement/rotation constants. No crew AI, combat timing or FPS claim.\nAlso retains fixed-heading legacy routes and reloads an in-progress turn.",
+  "runtime_sha256": "930410d36090d2098a3a5c8d6695ec3752b2e9790dfa404529f47c52df973385",
+  "candidate_sha256": "5c4e1972c15ffa70d07de23629ba4e5a68fd48c30a075b1092972f53845d1f73",
+  "fixture_sha256": "e0f0c95858089d67b0ee57964e0cbfb23ce43875cad71bf79b62dc3e7bc6504f",
+  "runs": [
+    {
+      "phase": "fresh",
+      "passed": false,
+      "exit_code": 1,
+      "timeout": false,
+      "checks": []
+    }
+  ]
+}

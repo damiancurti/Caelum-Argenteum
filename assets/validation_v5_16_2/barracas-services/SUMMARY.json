@@ -1,0 +1,22 @@
+{
+  "issue": 454,
+  "scope": "Isolated native endpoint clearance, map-spawned rotated leaves and private-interior coordinate retention. No ordinary travel/siege/author acceptance.",
+  "runtime_sha256": "add11628460e36803cd945fe103cc32f7b714bfa35ffa072f8fd211e41cd96c0",
+  "exit_code": 0,
+  "passed": true,
+  "diagnostics": [
+    "CA454 SERVICES total=224 portals=160 leaves=320 failures=0"
+  ],
+  "release": "5.16.2",
+  "author_acceptance": false,
+  "source_sha256": {
+    "assets/generators/generate_barracas_data.py": "c5d70e3783443c9b4b68dd6866d8a12e3c7ead44b1198454304ada2ecdd2ad1b",
+    "assets/validation_v5_16_2/run_barracas_services.py": "d2a9dd91886ccf21be0763442802ce71a1efdbe0223f52cd69c42222df828b21",
+    "src/caelum/world/CaelumHouseHub.zs": "924920bc901a4291798a0ebde4a1012bc7ab73ac96237ccede8c79b0920cc566"
+  },
+  "prelaunch_failures": [
+    "Windows cp1252 decoding of UTF-8 source; explicit UTF-8 fixed.",
+    "Shell quoting damaged the encoding replacement; repaired before launch."
+  ],
+  "qualification": "The new loaded-layout dispatch itself, ordinary house travel, services, siege and active/stored-hub city saves remain to be verified with the integrated MAP03. Native probe uses new helpers directly in CABAPRV."
+}

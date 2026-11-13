@@ -1,0 +1,245 @@
+{
+  "issue": 454,
+  "version": "5.16.2",
+  "date": "2026-11-13",
+  "status": "Candidate machine-front slice; production city remains revision3. Infantry/gun-crew arrival and retreat, full real crew approaches, capture/refill, crowd and frame-presentation evidence remain pending. No author acceptance.",
+  "sources": {
+    "assets/barracas_redesign/FRONTS.json": "dcee964c5afb814ffcbe557e54faf943e7870edb69951bf48e2cba1edd231ca3",
+    "assets/generators/generate_barracas_fronts.py": "e09c58c24a2d5f2bba1451111accf26013579091985f7e63f9db5957442ddd0f",
+    "src/caelum/world/CaelumBarracasFrontData.zs": "d7a922b7df1ed047e2daa3a4015f1f44c8cae64e1bff48661270566661984167",
+    "src/caelum/world/CaelumBarracasAssault.zs": "127ae0c2a8a3eeb4dd2d644726e4eb840ffa4f39fc3321b3f564e875509b4a71",
+    "src/caelum/world/CaelumPortSiege.zs": "209dff2f0791d7d1b54e92fbc1335707be6fe2907f2733cb442eedeae314c0df",
+    "src/caelum/world/CaelumPortData.zs": "e894d1aa133632eec29424edb7a21af642e09a07e950d4cc4abfe11330d89db6",
+    "src/caelum/world/CaelumAuthoredCartography.zs": "52e659b185c315e6abb22abd1a8b9cf7079752804a9779aa7b05ec84f28cfbd7",
+    "assets/validation_v5_16_2/barracas_ram_probe.zs": "d3f8bf80a2378fffd1629660c25676a117b56f415c1755e72dee0fe10a6f291a",
+    "assets/validation_v5_16_2/barracas_front_probe.zs": "39099d657ce126d1e5e43179902abcfb82f68730c5b31522b384a28bd48cd6d5",
+    "assets/validation_v5_16_2/run_barracas_fronts.py": "c215c06e30e97ec9b95d37dfcbce5b27ccc9b81d08248724257bfbb891ce82c6",
+    "assets/validation_v5_16_2/run_barracas_rams.py": "3aedc6a2f87eaa2f66df4858438503ae51d7e6bfb6964e5c4b5bef0d213e6e49"
+  },
+  "native": {
+    "full-routes": {
+      "issue": 454,
+      "scope": "Sweep both existing ram sizes through four forecourts and right-angle turns.\n\nCalls the production physical route step32 times per diagnostic tic without\nchanging movement/rotation constants. No crew AI, combat timing or FPS claim.\nAlso retains fixed-heading legacy routes and reloads an in-progress turn.",
+      "live_crews": false,
+      "crew_clearance": true,
+      "runtime_sha256": "09865ce982e8af8c5264bb65acf225ee1d40cf5abf6736ab54d0f8c24326823b",
+      "candidate_sha256": "1d2bb60078bbf390fed026f1985b14c54bcd2622f0e996d08c1254538f4b3d2b",
+      "fixture_sha256": "9f8375ea169cea5725b22447e81d82e32b2f59466ca8ca9e5f3a5403606d468a",
+      "runs": [
+        {
+          "phase": "fresh",
+          "passed": true,
+          "exit_code": 0,
+          "timeout": false,
+          "checks": [
+            "CA454 RAM START case=0 large=0 legacy=0",
+            "CA454 RAM CASE PASS case=0 steps=1057 impacts=1 damage=5500 position=(-4352.000,-14270.000) angle=90.000",
+            "CA454 RAM START case=1 large=0 legacy=0",
+            "CA454 RAM CASE PASS case=1 steps=2177 impacts=1 damage=5500 position=(-4352.000,-14270.000) angle=90.000",
+            "CA454 RAM START case=2 large=0 legacy=0",
+            "CA454 RAM CASE PASS case=2 steps=36579 impacts=1 damage=6500 position=(446.000,-1472.000) angle=180.000",
+            "CA454 RAM START case=3 large=0 legacy=0",
+            "CA454 RAM CASE PASS case=3 steps=37699 impacts=1 damage=6500 position=(446.000,-1472.000) angle=180.000",
+            "CA454 RAM START case=4 large=0 legacy=0",
+            "CA454 RAM CASE PASS case=4 steps=39099 impacts=1 damage=11000 position=(-29822.000,-320.000) angle=0.000",
+            "CA454 RAM START case=5 large=1 legacy=0",
+            "CA454 RAM CASE PASS case=5 steps=40820 impacts=1 damage=11000 position=(-29868.324,-320.000) angle=-0.000",
+            "CA454 RAM COMPLETE passed=6 failures=0",
+            "CA454 RAM CREW samples=2005906 failures=0"
+          ]
+        },
+        {
+          "phase": "reload",
+          "passed": true,
+          "exit_code": 0,
+          "timeout": false,
+          "checks": [
+            "CA454 RAM RESUME case=0 steps=224 revision=1 heading=1",
+            "CA454 RAM CASE PASS case=0 steps=1057 impacts=1 damage=5500 position=(-4352.000,-14270.000) angle=90.000",
+            "CA454 RAM START case=1 large=0 legacy=0",
+            "CA454 RAM CASE PASS case=1 steps=2177 impacts=1 damage=5500 position=(-4352.000,-14270.000) angle=90.000",
+            "CA454 RAM START case=2 large=0 legacy=0",
+            "CA454 RAM CASE PASS case=2 steps=36579 impacts=1 damage=6500 position=(446.000,-1472.000) angle=180.000",
+            "CA454 RAM START case=3 large=0 legacy=0",
+            "CA454 RAM CASE PASS case=3 steps=37699 impacts=1 damage=6500 position=(446.000,-1472.000) angle=180.000",
+            "CA454 RAM START case=4 large=0 legacy=0",
+            "CA454 RAM CASE PASS case=4 steps=39099 impacts=1 damage=11000 position=(-29822.000,-320.000) angle=0.000",
+            "CA454 RAM START case=5 large=1 legacy=0",
+            "CA454 RAM CASE PASS case=5 steps=40820 impacts=1 damage=11000 position=(-29868.324,-320.000) angle=-0.000",
+            "CA454 RAM COMPLETE passed=6 failures=0",
+            "CA454 RAM CREW samples=2005906 failures=0"
+          ]
+        }
+      ],
+      "front_routes": true
+    },
+    "controller-01": {
+      "issue": 454,
+      "scope": "Run production gate/machine deployment and reserve policy in isolation.\n\nSuppress automatic battle-controller Tick. This checks object ownership,\ncounts, gate labels and persistent reserve activation, not crowd traversal,\ncapture transactions, firing coverage or full battle performance.",
+      "runtime_sha256": "305d88ff929ee93c0d428c8b8723b0880b3d3e98bb21839886e38828d2c752dd",
+      "candidate_sha256": "1d2bb60078bbf390fed026f1985b14c54bcd2622f0e996d08c1254538f4b3d2b",
+      "fixture_sha256": "2ecf5fb87e3ca6a8bbe756d2fffc4f1bc5806b84067b6dd1993569e45adba129",
+      "runs": [
+        {
+          "phase": "fresh",
+          "passed": true,
+          "exit_code": 0,
+          "timeout": false,
+          "checks": [
+            "CA454 FRONT DEPLOY PASS failures=0 gates=4 machines=12 active_rams=3 large=1 queued=74 living=113",
+            "CA454 FRONT POLICY PASS failures=0"
+          ]
+        },
+        {
+          "phase": "reload",
+          "passed": true,
+          "exit_code": 0,
+          "timeout": false,
+          "checks": [
+            "CA454 FRONT RESUME PASS failures=0 gates=4 machines=12 active_rams=3 large=1 queued=74 living=112",
+            "CA454 FRONT CONTINUATION PASS failures=0"
+          ]
+        }
+      ]
+    },
+    "controller-02": {
+      "issue": 454,
+      "scope": "Run production gate/machine deployment and reserve policy in isolation.\n\nSuppress automatic battle-controller Tick. This checks object ownership,\ncounts, gate labels and persistent reserve activation, not crowd traversal,\ncapture transactions, firing coverage or full battle performance.",
+      "runtime_sha256": "07db2045ff0539cf326c042b500b617f1deadd3beaf7733880f16dc24da922aa",
+      "candidate_sha256": "1d2bb60078bbf390fed026f1985b14c54bcd2622f0e996d08c1254538f4b3d2b",
+      "fixture_sha256": "2ecf5fb87e3ca6a8bbe756d2fffc4f1bc5806b84067b6dd1993569e45adba129",
+      "runs": [
+        {
+          "phase": "fresh",
+          "passed": true,
+          "exit_code": 0,
+          "timeout": false,
+          "checks": [
+            "CA454 FRONT DEPLOY PASS failures=0 gates=4 machines=12 active_rams=3 large=1 queued=74 living=113",
+            "CA454 FRONT POLICY PASS failures=0"
+          ]
+        },
+        {
+          "phase": "reload",
+          "passed": true,
+          "exit_code": 0,
+          "timeout": false,
+          "checks": [
+            "CA454 FRONT RESUME PASS failures=0 gates=4 machines=12 active_rams=3 large=1 queued=74 living=112",
+            "CA454 FRONT CONTINUATION PASS failures=0"
+          ]
+        }
+      ]
+    },
+    "legacy-continuation": {
+      "issue": 454,
+      "scope": "Create old-city saves and test exact-geometry continuation with current code.\n\nNative changemap exercises stored hub persistence; it does not represent ordinary\ndoor use, existing author saves, siege performance or author acceptance.",
+      "baseline_sha256": "2b98fa4a15e931a83786831aaaa0dab67d8ffb5ed7030cb90c7946bf709afc95",
+      "runtime_sha256": "07db2045ff0539cf326c042b500b617f1deadd3beaf7733880f16dc24da922aa",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "fixture_sha256": "a3c43eede99136ec08c19feaa0db7504fd7f4fb4632313fe2b91046365f3a244",
+      "runs": [
+        {
+          "phase": "active_continue",
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "checks": [
+            "CA454 LEGACY CITY checksum=03f80198bfae8ba82cc435775001ba91 justice=767 gates=8",
+            "CA454 LEGACY PASS map=MAP03 stamp=3",
+            "CA454 LEGACY PASS map=CAH069 stamp=69",
+            "CA454 LEGACY CITY checksum=03f80198bfae8ba82cc435775001ba91 justice=767 gates=8",
+            "CA454 LEGACY PASS map=MAP03 stamp=3"
+          ]
+        },
+        {
+          "phase": "hub_continue",
+          "passed": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "checks": [
+            "CA454 LEGACY PASS map=CAH069 stamp=69",
+            "CA454 LEGACY CITY checksum=03f80198bfae8ba82cc435775001ba91 justice=767 gates=8",
+            "CA454 LEGACY PASS map=MAP03 stamp=3"
+          ]
+        }
+      ],
+      "seed_directory": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\barracas-legacy-02"
+    },
+    "full-routes-with-machines": {
+      "issue": 454,
+      "scope": "Sweep both existing ram sizes through four forecourts and right-angle turns.\n\nCalls the production physical route step32 times per diagnostic tic without\nchanging movement/rotation constants. No crew AI, combat timing or FPS claim.\nAlso retains fixed-heading legacy routes and reloads an in-progress turn.",
+      "live_crews": false,
+      "crew_clearance": true,
+      "runtime_sha256": "07db2045ff0539cf326c042b500b617f1deadd3beaf7733880f16dc24da922aa",
+      "candidate_sha256": "1d2bb60078bbf390fed026f1985b14c54bcd2622f0e996d08c1254538f4b3d2b",
+      "fixture_sha256": "c9b16c138e89107dfede3230d5f4ca4ea146ce6d9c774d38ebd446846a87621c",
+      "runs": [
+        {
+          "phase": "fresh",
+          "passed": true,
+          "exit_code": 0,
+          "timeout": false,
+          "checks": [
+            "CA454 RAM START case=0 large=0 legacy=0",
+            "CA454 RAM CASE PASS case=0 steps=1057 impacts=1 damage=5500 position=(-4352.000,-14270.000) angle=90.000",
+            "CA454 RAM START case=1 large=0 legacy=0",
+            "CA454 RAM CASE PASS case=1 steps=2177 impacts=1 damage=5500 position=(-4352.000,-14270.000) angle=90.000",
+            "CA454 RAM START case=2 large=0 legacy=0",
+            "CA454 RAM CASE PASS case=2 steps=36579 impacts=1 damage=6500 position=(446.000,-1472.000) angle=180.000",
+            "CA454 RAM START case=3 large=0 legacy=0",
+            "CA454 RAM CASE PASS case=3 steps=37699 impacts=1 damage=6500 position=(446.000,-1472.000) angle=180.000",
+            "CA454 RAM START case=4 large=0 legacy=0",
+            "CA454 RAM CASE PASS case=4 steps=39099 impacts=1 damage=11000 position=(-29822.000,-320.000) angle=0.000",
+            "CA454 RAM START case=5 large=1 legacy=0",
+            "CA454 RAM CASE PASS case=5 steps=40820 impacts=1 damage=11000 position=(-29868.324,-320.000) angle=-0.000",
+            "CA454 RAM COMPLETE passed=6 failures=0",
+            "CA454 RAM CREW samples=2005906 failures=0"
+          ]
+        },
+        {
+          "phase": "reload",
+          "passed": true,
+          "exit_code": 0,
+          "timeout": false,
+          "checks": [
+            "CA454 RAM RESUME case=0 steps=224 revision=1 heading=1",
+            "CA454 RAM CASE PASS case=0 steps=1057 impacts=1 damage=5500 position=(-4352.000,-14270.000) angle=90.000",
+            "CA454 RAM START case=1 large=0 legacy=0",
+            "CA454 RAM CASE PASS case=1 steps=2177 impacts=1 damage=5500 position=(-4352.000,-14270.000) angle=90.000",
+            "CA454 RAM START case=2 large=0 legacy=0",
+            "CA454 RAM CASE PASS case=2 steps=36579 impacts=1 damage=6500 position=(446.000,-1472.000) angle=180.000",
+            "CA454 RAM START case=3 large=0 legacy=0",
+            "CA454 RAM CASE PASS case=3 steps=37699 impacts=1 damage=6500 position=(446.000,-1472.000) angle=180.000",
+            "CA454 RAM START case=4 large=0 legacy=0",
+            "CA454 RAM CASE PASS case=4 steps=39099 impacts=1 damage=11000 position=(-29822.000,-320.000) angle=0.000",
+            "CA454 RAM START case=5 large=1 legacy=0",
+            "CA454 RAM CASE PASS case=5 steps=40820 impacts=1 damage=11000 position=(-29868.324,-320.000) angle=-0.000",
+            "CA454 RAM COMPLETE passed=6 failures=0",
+            "CA454 RAM CREW samples=2005906 failures=0"
+          ]
+        }
+      ],
+      "front_routes": true
+    }
+  },
+  "final_runtime": {
+    "path": "build/v516/issue454-front-controller02.pk3",
+    "sha256": "07db2045ff0539cf326c042b500b617f1deadd3beaf7733880f16dc24da922aa"
+  },
+  "map_comparison": {
+    "packaged_maps": 238,
+    "changed": []
+  },
+  "evidence_reuse": "The final runtime also repeats all six full route sweeps with the six physical attacking cannons and the waiting active/reserve ram frames present. Fresh/reload both pass; no physical route evidence depends only on the earlier runtime.",
+  "limitations": [
+    "Physical route probe repeats32 normal steps per diagnostic tic and fits individual maximum-body crew posts; no crowd or real-time performance claim.",
+    "Controller fixture calls real peaceful/hostile Deploy and disables automatic controller Tick. It tests first-wave counts, gates, machine identity and permanent-destruction reserve handling. Capture transaction is not tested.",
+    "74 hostile crew slots are62 ram operators plus12 cannon operators, separate from72 defenders staffing36 defensive guns."
+  ],
+  "project_validation": {
+    "file": "project-validation.json",
+    "version": "5.16.2",
+    "errors": []
+  }
+}

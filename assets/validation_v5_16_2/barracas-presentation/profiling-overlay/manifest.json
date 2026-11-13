@@ -1,0 +1,14 @@
+{
+  "issue": 454,
+  "scope": "Create an isolated inclusive-timing overlay from the exact tested runtime.\n\nReuses the #428 profiling method and the normal 3600..4300 siege window.\nNo source or gameplay rule is changed. Inclusive Acquire/Candidate scopes overlap.",
+  "runtime_sha256": "1cb2039081bd7ff9016954f59e01f4b8a0d7555275ee5d6303900ad55537a261",
+  "overlay_sha256": "7237c020c57edd5730d3ea2aa9bc2afd88393df28ce735a35d130d8be9e102f4",
+  "instrumented_functions": [
+    "CaelumCityNavigation.BuildFor",
+    "CaelumVisualPerception.Candidate",
+    "CaelumVisualPerception.Acquire",
+    "CaelumNoise.Emit",
+    "CaelumCommunication.Pulse"
+  ],
+  "qualification": "Timing wrappers add diagnostic overhead. Overlapping inclusive scopes must not be summed as independent costs."
+}

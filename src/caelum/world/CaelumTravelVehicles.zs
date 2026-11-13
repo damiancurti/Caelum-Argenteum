@@ -103,6 +103,7 @@ class CaelumVehicleStructure : Actor
     CaelumVehiclePart Parts[64];
     bool Part(int slot,vector3 offset,double radius,double tall)
     {
+        offset=(Cos(Angle)*offset.X-Sin(Angle)*offset.Y,Sin(Angle)*offset.X+Cos(Angle)*offset.Y,offset.Z);
         if(Parts[slot]==null)Parts[slot]=CaelumVehiclePart(Spawn("CaelumVehiclePart",Pos+offset,NO_REPLACE));
         if(Parts[slot]==null)return false;
         Parts[slot].Structure=self;Parts[slot].A_SetSize(radius,tall,false);
@@ -129,8 +130,12 @@ class CaelumVehicleRanch : CaelumVehicleStructure
         Ready=ok;return ok;
     }
     bool Covers(Actor user)
-    {return Ready && Abs(user.Pos.X-Pos.X)<128 && Abs(user.Pos.Y-Pos.Y)<94
-        && user.Pos.Z>=Pos.Z-1 && user.Pos.Z+user.Height<Pos.Z+123;}
+    {
+        vector3 delta=user.Pos-Pos;
+        return Ready && Abs(delta.X*Cos(Angle)+delta.Y*Sin(Angle))<128
+            && Abs(-delta.X*Sin(Angle)+delta.Y*Cos(Angle))<94
+            && user.Pos.Z>=Pos.Z-1 && user.Pos.Z+user.Height<Pos.Z+123;
+    }
 }
 
 class CaelumVehicleDock : CaelumVehicleStructure
@@ -147,6 +152,12 @@ class CaelumVehicleDock : CaelumVehicleStructure
 class CaelumVehicleWorld : StaticEventHandler
 {
     bool Prepared;
+    static Actor SpawnPortAware(class<Actor> kind,vector3 point)
+    {
+        let body=Actor.Spawn(kind,CaelumBarracasData.CurrentPortPoint(point),NO_REPLACE);
+        if(body!=null)body.Angle=CaelumBarracasData.CurrentPortAngle(body.Angle);
+        return body;
+    }
     override void WorldLoaded(WorldEvent event){Prepared=false;}
     static Actor Find(class<Actor> kind)
     {let it=ThinkerIterator.Create(kind);return Actor(it.Next());}
@@ -167,9 +178,9 @@ class CaelumVehicleWorld : StaticEventHandler
         if(node>=0)
         {
             let horse=CaelumRidingHorse(Find('CaelumRidingHorse'));
-            if(horse==null)horse=CaelumRidingHorse(Actor.Spawn('CaelumRidingHorse',CaelumTransportVehicleData.Position(level.MapName,5),NO_REPLACE));
+            if(horse==null)horse=CaelumRidingHorse(SpawnPortAware('CaelumRidingHorse',CaelumTransportVehicleData.Position(level.MapName,5)));
             let train=CaelumSteamTrain(Find('CaelumSteamTrain'));
-            if(train==null)train=CaelumSteamTrain(Actor.Spawn('CaelumSteamTrain',CaelumTransportVehicleData.Position(level.MapName,6),NO_REPLACE));
+            if(train==null)train=CaelumSteamTrain(SpawnPortAware('CaelumSteamTrain',CaelumTransportVehicleData.Position(level.MapName,6)));
             if(horse==null || !horse.Prepare() || train==null || !train.Prepare())return false;
         }
         if(CaelumBuenosAiresData.IsMap(level.MapName))
@@ -184,11 +195,11 @@ class CaelumVehicleWorld : StaticEventHandler
         bool port=level.MapName=="MAP03";
         vector3 ranchPos=port?(-640,192,0):(-512,384,0);
         let ranch=CaelumVehicleRanch(Find("CaelumVehicleRanch"));
-        if(ranch==null)ranch=CaelumVehicleRanch(Actor.Spawn("CaelumVehicleRanch",ranchPos,NO_REPLACE));
+        if(ranch==null)ranch=CaelumVehicleRanch(SpawnPortAware("CaelumVehicleRanch",ranchPos));
         let cart=CaelumCoveredCart(Find("CaelumCoveredCart"));
-        if(cart==null)cart=CaelumCoveredCart(Actor.Spawn("CaelumCoveredCart",ranchPos,NO_REPLACE));
+        if(cart==null)cart=CaelumCoveredCart(SpawnPortAware("CaelumCoveredCart",ranchPos));
         let ship=CaelumMerchantShip(Find("CaelumMerchantShip"));
-        if(ship==null)ship=CaelumMerchantShip(Actor.Spawn("CaelumMerchantShip",port?(1536,768,-24):(1280,1440,-24),NO_REPLACE));
+        if(ship==null)ship=CaelumMerchantShip(SpawnPortAware("CaelumMerchantShip",port?(1536,768,-24):(1280,1440,-24)));
         bool dockReady=true;
         if(!port)
         {

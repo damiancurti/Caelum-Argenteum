@@ -1,0 +1,112 @@
+{
+  "issue": 454,
+  "save_sha256": "485322dff9e1a0cecdeac6ed025eb47baf709590b36589165dfe13b747d45fce",
+  "elapsed": 31386,
+  "passed": 12,
+  "remaining": 3,
+  "subjects": [
+    {
+      "lane": 0,
+      "command_group": 0,
+      "self_is_command_leader": true,
+      "march_cursor": 1,
+      "body_position": [
+        -4361.104062942468,
+        -15371.641033880633,
+        0.0
+      ],
+      "target_class": "CaelumSearchPoint",
+      "target_position": [
+        -4372.039221228182,
+        -15371.641033880633,
+        0.0
+      ],
+      "evidence": {
+        "NoiseKind": 0,
+        "NoiseTic": 0,
+        "NoisePosition": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.0
+        },
+        "HasHeardNoise": 0,
+        "HasVisualPoint": 1,
+        "ObservedPosition": {
+          "X": -4372.039221228182,
+          "Y": -15371.641033880633,
+          "Z": 0.0
+        },
+        "LastVisualTic": 30917
+      }
+    },
+    {
+      "lane": 2,
+      "command_group": 1,
+      "self_is_command_leader": true,
+      "march_cursor": 0,
+      "body_position": [
+        1478.3011482631152,
+        -22664.767195425717,
+        -0.0
+      ],
+      "target_class": "CaelumSearchPoint",
+      "target_position": [
+        1509.0828434285902,
+        -22653.306002282858,
+        -0.0
+      ],
+      "evidence": {
+        "NoiseKind": 0,
+        "NoiseTic": 31509,
+        "NoisePosition": {
+          "X": 1509.0828434285902,
+          "Y": -22653.306002282858,
+          "Z": -0.0
+        },
+        "HasHeardNoise": 1,
+        "HasVisualPoint": 0,
+        "ObservedPosition": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.0
+        },
+        "LastVisualTic": 0
+      }
+    },
+    {
+      "lane": 4,
+      "command_group": 2,
+      "self_is_command_leader": true,
+      "march_cursor": 0,
+      "body_position": [
+        1509.0828434285902,
+        -22668.587593139993,
+        -0.0
+      ],
+      "target_class": "CaelumSearchPoint",
+      "target_position": [
+        1478.3011482631152,
+        -22649.48560456858,
+        -0.0
+      ],
+      "evidence": {
+        "NoiseKind": 0,
+        "NoiseTic": 31509,
+        "NoisePosition": {
+          "X": 1478.3011482631152,
+          "Y": -22649.48560456858,
+          "Z": -0.0
+        },
+        "HasHeardNoise": 1,
+        "HasVisualPoint": 0,
+        "ObservedPosition": {
+          "X": 0.0,
+          "Y": 0.0,
+          "Z": 0.0
+        },
+        "LastVisualTic": 0
+      }
+    }
+  ],
+  "result": "Failed: two infantry investigate anonymous footsteps and leave their assigned approach; South investigates stale navigation-marker visual evidence. Command groups remain separate. Test stopped after preserving state; no success or FPS claim."
+}

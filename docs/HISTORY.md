@@ -1,6 +1,360 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.16.1** - 2026-11-12.
+Documentation version: **5.16.2** - 2026-11-12.
+
+## 5.16.2 - Sewer redesign slice (#454, in progress, 2026-11-12)
+
+2026-11-13 perception follow-up: reuse the native 3D distance already calculated
+inside each candidate-selection iteration. Original contact, field, range and
+occlusion order remains intact; other callers keep the ordinary calculation.
+The native comparison records 18,886,906 visibility queries and 16,687,214 supplied
+distances with zero result or distance differences. These are supplied-value
+checks, not a claim that every query would have reached the distance predicate.
+Seventeen direct boundary/state cases pass on both old and candidate runtimes;
+old-to-current and current-to-old fixture saves also pass. The final package's
+fresh, old-save and reload checks pass. No new saved field or author-test removal
+is involved. The first upgrade launcher passed an absolute filename that GZDoom
+prefixed with savedir; copying the retained save into its isolated directory and
+loading its basename fixed the fixture. Raw failure evidence remains preserved.
+Expanded timing, rejection counts, an unadopted predicate-order trial, matched
+windows and native snapshots are in barracas-perception/SUMMARY.json. Presentation
+is still severely limited: the final package records 1.3516 queue presents/s,
+p95 866.20 ms and p99 875.52 ms. The prototype records 1.5261/s, while two
+unchanged baselines record 1.4454/s and 1.2449/s; this variance does not establish
+a reproducible general speedup. No fluent siege or author acceptance is claimed.
+Only the perception source differs in the packaged runtime.
+Final peaceful reference windows also pass: mansion 59.79/s (p95/p99 19.46/21.61 ms),
+sewer 176.33/s (7.32/8.73 ms), and city ground-facing 72.37/s (16.08/17.93 ms).
+These are stationary native queue-present measurements on the recorded machine,
+not campaign-wide frame guarantees or author acceptance.
+
+2026-11-13 city installation: the approved Barracas revision4 is packaged as
+MAP03 with its tested geometric facade model and bindings. The installed WAD
+matches the earlier native-tested Justice candidate exactly; all237 other WADs
+and seven generated route/coordinate code files retain their bytes. The owned
+pre-Justice source and INSTALLATION.json preserve provenance and deterministic
+regeneration; project validation rejects stale inputs/assets/bindings read-only.
+The independent LegacyMap03Revision3 package retains original active/stored-hub
+geometry. Native installed/legacy results are in barracas-integration/SUMMARY.json;
+CA454-MAP03-01 remains an author check. This installation does not resolve the
+measured severe siege presentation stalls or complete the other regional slices.
+
+The installation validator caught an additional cartography dependency: changing
+only the city checksum would still use old station/tower/stair/east coordinates
+and omit the exact original Justice-era checksum. Generated revision selectors
+now retain old IDs/coordinates for legacy saves and use approved relocated data
+for revision4. Native discovery evidence covers96 bindings without automatic
+revelation and42 used/visited facts across fresh/reloaded new and legacy layouts.
+An initial test-runner failure concatenated an integer building ID before launch;
+the fixture now formats the preserved ID explicitly. The production map did not
+cause that tooling failure. Later package changes are limited to the three
+cartography source/data entries; earlier unaffected integration checks are reused
+with exact entry comparisons, not claimed to have run on a different hash.
+
+2026-11-13 presentation follow-up: eight sequential native runs preserve actual
+vkQueuePresentKHR traces,1280x720 captures, exact runtime hashes and observers.
+Original/revised peaceful quay106.95/100.07 requests/s; ground76.68/75.63;
+full-cap siege1.28/1.50, with revised p95/p99788.78/791.28ms. The first original
+siege sample was still refilling and is retained separately. The full-cap pair
+records988 attacker NPCs and601 defenders each; machines are outside this census.
+Both layouts use current code, so this is neither an accepted-main runtime
+comparison nor proof of an inherited cause. Severe siege stalls remain unresolved.
+An isolated timing overlay records navigation112.50ms/375 calls (~0.4% of its
+700-tic window), Acquire6897.89ms and Candidate6847.46ms (overlapping), Noise370.86ms
+and Communication1433.56ms. Instrumentation overhead and differing visible geometry
+limit interpretation. No navigation optimization or performance acceptance follows.
+See assets/validation_v5_16_2/barracas-presentation/SUMMARY.json.
+
+
+2026-11-13 quay essence correction: the Knight source still used the original
+absolute location after the quay rotated/moved. Reuse CurrentPortPoint on that
+authored location, leaving original MAP03 unchanged. PlacementRevision1 relocates
+only the exact known preceding candidate source and defers while capture is
+active. Eight isolated phases pass: original/candidate capture and mid-capture
+reload, old inactive-source seed/migration, and old active-capture seed/migration.
+Native Use opens the source; interrupted capture keeps it available, completion
+adds exactly one essence and repeat commit is rejected. Saved-source inspection
+finds one source in each case. Original active/stored-hub compatibility also passes.
+All238 production WADs remain identical; the city is still unactivated.
+
+Fixtures supply narrative victory, owned Box/deck and automated capture response.
+An undelivered native narrative initially consumed Use; the fixture now marks
+that narrative delivered. A direct nested startup exec was lost around loading;
+an initial wait preserves it. Quitting immediately after save omitted the native
+checkpoint; the fixture waits and verifies its presence. These harness corrections
+do not alter gameplay or establish UI-response/author acceptance. Exact artifacts,
+failed iterations and source migration evidence: barracas-arcana/SUMMARY.json.
+
+2026-11-13 crowd withdrawal: revision4 keeps assault Lane separate from the
+nearest legal exit, caches offline shortest-path costs and recognizes physical
+progress through an equally near cell. Queued requests retain their valid local
+detour. Same-direction ground bodies wait behind an eligible ally physically
+ahead, using only the next-step spatial volume. A saved congested aftermath
+completes all1000 surviving exits at48,300tics (15,118 additional), with five
+fixture casualties,1004 admitted/5596 remaining and exactly one victory. The
+existing essence is not granted automatically. All238 production WADs remain
+identical. Independent static/native-save audits verify costs, exit choices,
+1005 stable identities and idempotent revision4 migration with882 living bodies.
+
+Earlier iterations are retained: changing equal-length BFS ordering, exact-cell
+arrival, distance progress or queued-detour retention alone did not establish
+fresh army completion. Nearest-only run08 was interrupted by daemon restart at
+52,500tics with462 still pending; six full individual routes and five commander
+origins had completed their fresh phases, but not reload. The final fresh run completes all1000 exits at30,205tics with the same ledger;
+early-checkpoint replay matches30,205tics. Six full-route replays finish41,340tics
+and five commander origins26,335tics. Objective destruction,
+commander wound and neutralized thermal exposure are fixture conditions, not a
+fully won battle or survival/FPS evidence. See barracas-withdrawal/SUMMARY.json.
+
+2026-11-13 deployment/access follow-up: the corrected observer replays the
+original35-tic checkpoint and records600 resident completions at45,093tics,
+including all72 operator ascents, with no death/identity error. This complements
+the fresh native-save audit; it does not require guards to stop their existing
+search behavior. Native Use also opens all96 retained factory crafting networks
+and all four source-specific transport sessions, fresh/reloaded. Recipe execution,
+ticket payment and journeys are outside these access tests. The station fixture
+needed to close both its prior session and journal; an explicit Actor assignment
+fixed the vehicle fixture's mixed-type conditional. No production service changes
+were necessary. Combined aftermath and presentation checks remain pending;
+barracas-continuation/SUMMARY.json records exact artifacts and qualifications.
+
+2026-11-13 continuation: full15-body approaches complete43607tics and six complete
+city withdrawals60732tics, fresh/reloaded. The commander now uses revision-4
+withdrawal streets through an escape-step hook, retaining half-health trigger,
+speed, body and final-exit rules. Five origins complete30667tics per run. Original
+active/stored-house-hub saves pass, and the MAP02 boss still retreats, exposes the
+card and retains the departure guard (254tics). All238 production maps are unchanged.
+
+Four native ram captures preserve enemy/captured reserve handling after reload.
+The full inherited controller reaches1000 living attackers (987 Mandingas,
+commander and12 machines), then replaces five fixture deaths. At4235tics it retains
+992 admitted plus5608 remaining,1000 living and the original600 residents plus
+the existing subcaptain. Fresh/early-reloaded results match; this is not full
+battle completion or a rendering measurement. Movement tests neutralize thermal
+exposure; commander/approach fixtures hold gates open and do not grant permissions.
+
+Four house orientations pass8 normal Used/capture/renderer-ACK requests and4 exact
+returns per fresh/reloaded run. Native Use opens all64 merchants; one purchase
+transfers116485 copper and decrements native stock3-to2. The shop fixture seeds
+the Box in persistent state; an actor-only flag was correctly restored by gameplay.
+Bounded console scripts fix an earlier overlong script's lost/reordered events.
+The first commander fixture wounded before deferred PostBeginPlay; it now waits
+for the native profile. No production balance or shop change was needed.
+
+A native save at52347tics confirms600 unique living residents,72 operators, all
+deployment/crew-route completion flags and the automatic601-combatant high-density
+census. The initial arrival recorder incorrectly demanded simultaneous positions,
+then sampled distance after guards could already begin their permitted searches.
+The independent saved-state audit passes; an early-checkpoint replay with native
+completion recording is running. Battle, climate, remaining services, performance,
+production activation and author acceptance remain open. Exact evidence and
+qualifications: assets/validation_v5_16_2/barracas-continuation/SUMMARY.json.
+
+2026-11-13 Justice preservation: append the existing768-MU/160-MU arena to the
+isolated city candidate, retaining every previous TEXTMAP byte as a prefix.
+Two generated candidates are identical; checksum-qualified lookup selects
+sector391 at(2560,20672,0). Native direct duel placement, exact pair references,
+active-save/timer continuation and exact survivor return pass. Original active
+and stored-house-hub continuation still selects Justice767 and its original
+eight gates. All238 packaged maps remain unchanged. No card dispatch/payment,
+performance, city activation or author acceptance is claimed by this isolation.
+Evidence: assets/validation_v5_16_2/barracas-justice/SUMMARY.json.
+
+2026-11-13 pedestrian candidate: generated southern approaches and static ground
+withdrawal fields, revisioned cursors, front-preserving formations and a shared
+local-navigation queue. Six final exits and36 actual stair descents pass fresh
+and reloaded native checks at normal speed. A41893-tic approach checkpoint
+completes all15 pedestrians by43607tics after correcting the diagnostic gate hold.
+Those long fresh/early-reloaded runs were active at this intermediate stage;
+the continuation entry above records their completion.
+All238 packaged maps remain byte-identical; no battle/performance or author
+acceptance is claimed.
+
+Preserved failures distinguish causes: anonymous footsteps displaced approach
+orders; an opened-once fixture gate closed before arrival; large generated string
+switches exceeded native registers. Three city walkers in the unmodified-weather
+withdrawal fixture died at2628tics with728 thermal damage and nearly100% wetness.
+Movement isolation now neutralizes thermal exposure each fixture tick without
+changing health, speed or collision; this does not validate climate survival.
+Old active/stored-hub continuation passes runtime02; runtime03 adds a gate request
+only for the new geometry after victory. Evidence: barracas-navigation/SUMMARY.json.
+
+2026-11-13 machine-front slice: generated four gate identities and six paired
+ram routes; new-controller dispatch retains12 hostile objectives,42 guns,74
+operators and600 defender identities. Three active rams and one reserve per
+front preserve the five-small/one-large roster. Tarot destruction releases the
+paired reserve; temporary sabotage does not, and release survives reload.
+Six complete routes pass fresh/reload native impacts and2,005,906 crew-post
+clearance samples per run. The first controller run emitted two harmless empty
+switch warnings; the generator now omits those empty cases. Full infantry
+approach/withdrawal, ordinary capture/refill and performance remain unfinished.
+Production MAP03/CAH geometry remains unchanged.
+The final full-route runs also retain all six attacking cannons and waiting ram
+frames as physical obstacles. Fresh/reload pass; old active/stored-hub
+continuation retains the original eight gates and private interiors. Evidence and exact tested
+runtimes: assets/validation_v5_16_2/barracas-fronts/SUMMARY.json.
+
+The author supplied approved sewer-v2/Barracas-v1 boards and selected four city
+gates with siege adaptation. Their source commit is preserved by merge ancestry.
+This slice implements MAP02 only. It replaces the random cardinal grid with
+twelve authored main circuits and four internal shortcuts, reduces normal
+headroom to three metres, retains all accepted content/supply identities and
+keeps extraction before P4. The boss retreats toward the cistern drain; departure
+still requires the existing boss and Ace of Cups flags.
+
+Exact prior geometry/source bytes were preserved before editing. A dedicated
+revision-5 build and loaded-map coordinate/Justice dispatch preserve old active
+and stored-hub saves. Native new/fresh/reload/hub and legacy active/hub checks
+pass for the candidate. Static route/content checks and 547 supply checks pass.
+The first reload attempt exposed an absolute-save-path mistake in the test
+harness; it was corrected to a local copied save name. The first escort fixture
+left hazards active and lost a follower; the separate cleared-corridor fixture
+tests escort transit without claiming hazard or combat acceptance. Ordinary
+combat/hazard and author review remain open. Final isolated checks now
+pass for all four native escorts, two maximum-size bodies passing, P4 and the
+250-tic surviving retreat, six lower branches, four independent keyless grates,
+lift transport and fresh/reload/stored-hub saves. Before/after views were inspected.
+Repeated generation is byte-identical. Additional fixture corrections moved the
+leader past the extraction marker, fixed temporary-vector syntax, opened lower
+grates before querying routes and waited the full native lift travel duration.
+Those attempts are retained as qualified evidence, not hidden production fixes.
+
+Actual Vulkan presentation calls in the final southern combat sample average
+162.23/s, p95 7.66 ms, p99 8.59 ms, maximum 11.48 ms; original chamber 156.82/s,
+p95 7.57 ms, p99 9.28 ms, maximum 165.87 ms. Shared Windows 11/RTX 3070 Ti/Ryzen
+5950X, 1280x720, uncapped and unpaused background at 5% audio. These single samples
+are descriptive, not monitor scanout or general performance acceptance. Raw
+reports/traces and earlier entry samples live in assets/validation_v5_16_2.
+CA454-MAP02-01 remains pending; no author acceptance is inferred.
+
+The same issue's next map received an unactivated Barracas authoring source and
+isolated native preview, keeping all 288 construction identities and all original
+CAH interior WADs. The preceding MAP03/source snapshot is preserved. All 424 static
+route targets and 424 maximum-body endpoint queries pass; repeated WAD/model/PK3
+bytes match. House facades reuse owned textures. The first model probe used an
+out-of-range editor number (56000 became -9536); the corrected 31800 loaded but
+the models floated because height zero was relative to the shell's roof floor.
+Subtracting that 184-MU base floor restored their intended world height. Logs and
+failed/corrected views are retained; the runner now rejects Unknown type warnings.
+This preview neither activates MAP03 nor completes services, siege or city save
+compatibility. The author approved the south/east/west fronts, one active and
+one reserve ram per front, and the northern bridge gate. The 36 installed
+defensive guns retain 12 active: four towers, four south, two east and two west.
+
+The next isolated services slice preserves private CAH coordinates while adding
+revision-4 exterior dispatch and rotated portal leaves. Native GZDoom passed
+224 maximum-body endpoints, 160 portals and 320 leaf placements, plus the retained
+private chest offset. The source generator now preserves the existing ChestPosition
+method, previously omitted from generation. The initial runner failed before
+launch due to Windows default text decoding, then a shell quoting edit; explicit
+UTF-8 and the corrected source passed. Production MAP03/CAH geometry is unchanged;
+ordinary travel, integrated services and siege remain open.
+
+The city compatibility mode preserves revision-3 MAP03 independently of the sewer
+mode. Native baseline saves with active MAP03 and stored MAP03 while in CAH069
+load under current code and return through the hub with original gates, all160
+doorway/chest offsets, Justice sector767 and persistent diagnostic stamps. All160
+private CAH WADs match baseline bytes. The first fixture used different package
+basenames and GZDoom correctly refused its save; keeping the established
+caelum_argenteum_dev.pk3 basename passed without rewriting save metadata. Final
+checksum-dispatch runtime was checked with the verified old saves. Repeat after
+new-city integration; ordinary house use and author acceptance remain pending.
+
+The four-gate prototype was then made physically closed: its southern perimeter
+was no longer clipped to the old rectangular envelope, the northern gate was
+aligned to the wall, and full-depth jambs isolated its narrow opening from the
+wide bridge. The new closed-grid audit first exposed an exterior bypass, then
+passed with none. Native tests pass224 service endpoints,320 door leaves,160 gate
+collision/open samples and four direct Used-handler calls. All four closed/open
+views were inspected. The first gate probe had NOINTERACTION and ignored actor
+blockers; the corrected solid probe passed. The author approved north/east
+reinforced, south wooden and west armored gates using existing statistics.
+Production MAP03 remains unchanged; siege, full services and travel are unfinished.
+
+The subsequent unactivated city candidate connected original port content and
+services to the revised layout, retaining private CAH coordinates and low
+residential sky. Current helpers select positions/facing by loaded revision;
+existing old-city actors are not repositioned. Native fresh/reload and native
+MAP03/CAH069/return pass with64 merchants,96 factory stations,four ready vehicles
+and all four original household objects, with exact new doorstep return. Old
+active/stored-hub continuation also passes with that runtime. The first fixture
+looked for already-relocated objects at the quay; checking their actual registry
+and private placement corrected the assertion. The later runner waits for its
+queued screenshot before quitting and requires captures. No new siege, complete
+boarding interaction, ordinary door acknowledgement, final art or performance
+acceptance is claimed; a passive fixture suppresses obsolete siege deployment.
+
+The artillery geometry candidate then retained 36 guns/four towers and adapted
+their access flights to the irregular perimeter without moving accepted lots.
+The first native run walked 33/36 routes and exposed wall rounding, crossing
+flights and guard obstructions. Subsequent tests exposed overlapping approach
+points/towers and unsupported operator posts on oblique wall sections. Global
+placement exclusions, level slabs and a raster-aware guard margin corrected
+these failures. Final checks pass 72 isolated walks through 698 authored route
+points to both operator posts,528 guards and648 actual cannon components. The
+final map/package repeat identically;424 static targets and closed-perimeter
+isolation remain valid. The initial northwest camera was inside a building;
+exterior views were corrected and inspected without repeating unchanged walks.
+All attempts are retained in barracas-forts/SUMMARY.json. The fixture suppresses
+siege AI and ignores other test walkers; real deployment/crowds/firing coverage,
+performance, production activation and author acceptance remain unfinished.
+
+On 2026-11-13, the same candidate assembly supplied 600 exterior deployment routes
+with 9453 waypoints. The first authoring attempt excluded entire conceptual lots
+and disconnected a valid service network; excluding indoor footprints instead
+retained native-clear forecourts/alleys. The original 600 identities, private
+coordinates and resident 69->70 relocation remain. Revision4 data dispatch was
+added to artillery, guard/formation, CityRoutes and PropertyRoutes helpers;
+original geometry retains its unchanged route bodies. Both fresh and reloaded
+native probes pass 866538 continuous movement samples without geometry failures.
+These bounded actor-ignoring probes establish physical routes and loaded-map
+dispatch, not real 600-body AI/crowds or completed siege behavior. Evidence is in
+barracas-deployment/SUMMARY.json; production activation remains pending.
+The new runtime also passes continuation from the verified original active and
+stored-hub seeds, retaining eight original gates, Justice and all 160 original
+door/chest offsets. All 238 packaged maps, including 160 private interiors, remain
+byte-identical to the preceding runtime. This does not replace old-save testing
+against the eventual integrated city/controller.
+
+The next #454 slice adds opt-in segment turns for rams without changing their
+movement/rotation rates or the fixed-heading behavior of earlier saved routes.
+The large frame exceeded the new tunnel's width/headroom, so only the exterior
+half was opened as a forecourt; the inner throat and native blocker remain.
+The first compiled native attempt passed eight cases but found both western
+turns unsupported at the old exterior-ground edge. Filling missing side-front
+ground corrected this. Fresh and mid-turn-reloaded runs each pass ten cases:
+both sizes against four gates plus two fixed-heading controls, with native
+impacts on the intended blocker. A prior fixture compilation error used an
+actor-only angle helper from an event handler; its log is retained separately.
+This fixture repeats the physical step32 times per tic and has no live crew:
+it does not establish battle timing, crowd navigation, reserve activation,
+performance or author acceptance. See barracas-rams/SUMMARY.json.
+
+The following crew slice retains6/32 members, deriving rotating posts from
+accepted body bounds and the original machine/guard dimensions. Initial43/49-MU
+rows passed377424 isolated point samples but not live AI. Search movement
+overrode assigned posts; later native collision/arrival overlap still caused
+drift. The final layout uses61-MU rows for axis-aligned boxes at45 degrees and
+a clearance-derived arrival tolerance, with direct native steps, an explicit
+walking-state transition and station priority over remembered search points.
+No combat statistics, physical collisions or visible-target rules were removed.
+The wider outer forecourt initially opened a diagonal-wall bypass; inner
+shoulders plus full outer flanks restored closed-perimeter isolation.
+
+Final live tests pass with38 real Mandingas at normal cadence, without fixture
+teleports: small south-gate contact at2176 simulation tics and large west-gate
+contact at2544, identically after mid-turn reload. Earlier failures and the
+diagnostic Name/string compile correction are retained. Fresh exterior views
+were inspected. The common helper also supplies captured crew coordinates, but
+these live cases exercise hostile crews only. Production three-front/reserve,
+capture/refill, full crowd/performance and author acceptance remain pending.
+Evidence: barracas-ram-crews/SUMMARY.json.
+
+The author requested prevention of system sleep while away for several hours.
+A temporary system-only execution-state request is active during work, with a
+12-hour failsafe; it does not change the power plan or require the display on.
+Release the request when the work ends. This operational request is not gameplay
+acceptance and adds no production dependency.
 
 ## 5.16.1 - Verified folklore reference catalogue (#453, 2026-11-12)
 
