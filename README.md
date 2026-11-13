@@ -21,6 +21,8 @@ review; #452 and #454-457 remain in progress.
 This planning increment preserves the accepted V5.15 runtime and maps; the new
 campaign and its author test terminal are not yet implemented. The basic finale
 and its all-78-essence/Respected reputation requirements are author-approved;
+the checkpoint is before Selene on the Moon, after obtaining the World last.
+The seven named Majors per chapter are also approved as an allocation base;
 the recovered bestiary and map references proceed through separate issues.
 
 V5.15 includes the [battle director](assets/validation_v5_15_0/RESULTS.md)
