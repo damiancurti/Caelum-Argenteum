@@ -1,6 +1,21 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.5** - 2026-11-13.
+Documentation version: **5.17.6** - 2026-11-13.
+
+## 5.17.6 - Document and supply models (#656, 2026-11-13)
+
+Added five closed meshes and six explicit native bindings, reusing original
+owned textures and preserving icons/gameplay. Generalized the ammunition export
+and observer without changing its prior eight runtime resources. Corrected the
+test ordering around manual sheet delivery; no production rule was changed.
+Final-package native continuity passes 472 checks, including old/new/rollback
+saves and original inventory metadata. Fourteen repeated exports are identical;
+all 18,190 packaged entries match src. One six-object sprite/model pair records
+1178.42/1144.28 queue presents/s, p95 1.0509/1.0821 ms and p99
+1.2602/1.3074 ms. ASSETS records environment and scope limits. Failed fixture
+iterations and final evidence are in assets/validation_v5_17_6/evidence/SUMMARY.json.
+CA656-DOCUMENTS-01 remains pending; ordinary menus and author art acceptance
+are not inferred from agent-only tests.
 
 ## 5.17.5 - Pombero inherited combat model (#461, 2026-11-13)
 

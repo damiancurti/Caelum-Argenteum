@@ -1,0 +1,339 @@
+{
+  "schema_revision": 1,
+  "issue": 656,
+  "parent_issue": 647,
+  "status": "native_candidate_pending_author_review",
+  "variants": {
+    "book": {
+      "class": "CaelumProcessingManual",
+      "parts": [
+        "lower cover",
+        "page block",
+        "upper cover",
+        "bound spine",
+        "spine band 0",
+        "spine band 1",
+        "spine band 2",
+        "spine band 3",
+        "page edge 0",
+        "page edge 1",
+        "page edge 2",
+        "corner -1 -1 horizontal",
+        "corner -1 -1 vertical",
+        "corner -1 1 horizontal",
+        "corner -1 1 vertical",
+        "corner 1 -1 horizontal",
+        "corner 1 -1 vertical",
+        "corner 1 1 horizontal",
+        "corner 1 1 vertical",
+        "cover border x-1",
+        "cover border x1",
+        "cover border y-1",
+        "cover border y1",
+        "sun rays",
+        "sun center",
+        "sun eye",
+        "closure strap",
+        "closure clasp"
+      ],
+      "closed_outward_components": 28,
+      "vertices": 14096,
+      "triangles": 5120,
+      "surfaces": [
+        {
+          "material": "gold",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "gold",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "gold",
+          "vertices": 1737,
+          "triangles": 790
+        },
+        {
+          "material": "leather",
+          "vertices": 576,
+          "triangles": 192
+        },
+        {
+          "material": "blue",
+          "vertices": 1289,
+          "triangles": 640
+        },
+        {
+          "material": "paper",
+          "vertices": 2304,
+          "triangles": 768
+        }
+      ],
+      "reference_opaque_bounds": [
+        24,
+        14,
+        108,
+        113
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 84.0,
+      "native_bounds": [
+        {
+          "min": [
+            -42.49122807017543,
+            -54.03508771929824,
+            0.0
+          ],
+          "max": [
+            41.508771929824555,
+            54.03508771929824,
+            16.014035087719297
+          ]
+        }
+      ]
+    },
+    "letter": {
+      "class": "CaelumSealedLetter",
+      "parts": [
+        "folded paper",
+        "lower flap",
+        "upper flap",
+        "wax seal rim",
+        "wax seal impression",
+        "wax spiral"
+      ],
+      "closed_outward_components": 6,
+      "vertices": 1048,
+      "triangles": 1048,
+      "surfaces": [
+        {
+          "material": "red",
+          "vertices": 456,
+          "triangles": 832
+        },
+        {
+          "material": "paper",
+          "vertices": 592,
+          "triangles": 216
+        }
+      ],
+      "reference_opaque_bounds": [
+        20,
+        31,
+        113,
+        104
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 93.0,
+      "native_bounds": [
+        {
+          "min": [
+            -46.5,
+            -29.837500000000002,
+            0.0
+          ],
+          "max": [
+            46.5,
+            29.837500000000002,
+            4.2625
+          ]
+        }
+      ]
+    },
+    "key": {
+      "class": "CaelumSilverKey",
+      "parts": [
+        "key shaft",
+        "bit crosspiece",
+        "outer tooth",
+        "inner tooth",
+        "open bow joined at collar",
+        "bow collar",
+        "bow scroll -1",
+        "bow scroll 1",
+        "blue ribbon tail",
+        "second ribbon tail"
+      ],
+      "closed_outward_components": 10,
+      "vertices": 2974,
+      "triangles": 2840,
+      "surfaces": [
+        {
+          "material": "gold",
+          "vertices": 2853,
+          "triangles": 2624
+        },
+        {
+          "material": "blue",
+          "vertices": 121,
+          "triangles": 216
+        }
+      ],
+      "reference_opaque_bounds": [
+        20,
+        8,
+        107,
+        120
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 87.0,
+      "native_bounds": [
+        {
+          "min": [
+            -41.8446088794926,
+            -15.71847543533141,
+            0.0
+          ],
+          "max": [
+            45.155391120507396,
+            28.675800718538756,
+            4.88640402171436
+          ]
+        }
+      ]
+    },
+    "cloth": {
+      "class": "CaelumCleaningCloth",
+      "parts": [
+        "folded cloth layer 0",
+        "folded cloth layer 1",
+        "folded cloth layer 2"
+      ],
+      "closed_outward_components": 3,
+      "vertices": 870,
+      "triangles": 1728,
+      "surfaces": [
+        {
+          "material": "linen",
+          "vertices": 870,
+          "triangles": 1728
+        }
+      ],
+      "reference_opaque_bounds": [
+        14,
+        25,
+        116,
+        102
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 102.0,
+      "native_bounds": [
+        {
+          "min": [
+            -50.811808118081174,
+            -46.29520295202952,
+            0.0
+          ],
+          "max": [
+            51.18819188191881,
+            49.68265682656826,
+            11.96195079560495
+          ]
+        }
+      ]
+    },
+    "ingot": {
+      "class": "CaelumIronIngot",
+      "parts": [
+        "tapered iron ingot"
+      ],
+      "closed_outward_components": 1,
+      "vertices": 768,
+      "triangles": 256,
+      "surfaces": [
+        {
+          "material": "iron",
+          "vertices": 768,
+          "triangles": 256
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        9,
+        120,
+        118
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -56.0,
+            -18.836363636363636,
+            0.0
+          ],
+          "max": [
+            56.0,
+            18.836363636363636,
+            25.454545454545453
+          ]
+        }
+      ]
+    }
+  },
+  "source_sha256": {
+    "DESIGN.json": "33e580db7c01373d75dfd0b5b5ac526d73519841cf2a0f174a28fab2c6db55b5",
+    "PROVENANCE.json": "a394355d8dc359d1d82cf281b2d008a0ca3df7de64090c3c1e864c0deac7d071"
+  },
+  "external_source_sha256": {
+    "assets/source/art/inventory_models_647/ammunition/DESIGN.json": "ac7def61b94c52c20b30004b607e0a21c09e6caed46e1ed6398641b4a58c50a4",
+    "assets/source/art/pombero_455/DESIGN.json": "f66b4b190744155748aca7e92afaf8183c1acf6db8b64b295f3cf77b44eea025",
+    "src/caelum/crafting/CaelumRecipeLearning.zs": "a02fa0c0bafdf03b93d3e9695343f5580277ac99f8fb7f60dc33b8b023f2c6ff",
+    "src/caelum/data/hygiene_resources.textures": "554791a8da7242257380c50b64dcc801c23dc647a7caed4d43ec78b09e17ae99",
+    "src/caelum/equipment/CaelumHygieneSupplies.zs": "54094eb1fcdd350c402747785da37cf8b0a64a8b3923ca737afc79d989494b48",
+    "src/caelum/equipment/CaelumSpecialItems.zs": "17e80ee4c5f210dd7336c6ff874c96e38a34974c6be00e03135446444a8b3d04",
+    "src/graphics/caelum/icons/ca_book.png": "02457fa302004e61899e38293c0fe3148deac32b2f541f1506f9a6b4fea42acd",
+    "src/graphics/caelum/icons/ca_key.png": "fdb427311193fc58482ce8c0dbf06c955783759d08b21a7b08dcfe2662fa03c8",
+    "src/graphics/caelum/icons/ca_sealed_letter.png": "4d1ad062fb402dfd25636364671c912416d1104fce579aa0a46375c6cb1e99dc",
+    "src/graphics/caelum/icons/hygiene/cloth.png": "450287d2ab991f2724ffacd249ebb9ab4d7aa677c9add258aea8bd104d502923",
+    "src/graphics/caelum/icons/materials/ca_material_iron_ingot.png": "82dd215ceb46deee151ab1674847f80d9798f168e72b3f2ec71b961f30dd6c74",
+    "src/models/caelum/actors/training/ca_training_dummy.png": "4ae89bf07aaab273bb9bcafad283ab2e56fb3d87d6dd2f86e6a1329855dd8cff",
+    "src/models/caelum/equipment/support_implements/paper_0.png": "bd21c6ec26062a3346df51e76b4d2769725487f53cc71742347b863d67cb6df2",
+    "src/models/caelum/folklore/pombero461/materials.png": "6d72eeb0a43b98a279fb3119f28b06bffd5d353e9e39da0ab8036559e06f62cc",
+    "src/models/caelum/inventory/consumables/materials.png": "eb8f019510c63601c9e25c8ed05142fbe7b97fe06eb444c32685def6e664416e",
+    "src/models/caelum/props/stations/ca_station_cloth.png": "0e1d06ccc24a99753bcce3653856ba6477b7ee2bf5342d2680272e901bcd523e"
+  },
+  "generator_sha256": {
+    "generate_inventory_ammunition_models.py": "447863f9bff1c357bd459c37324ed7bfec6443581184425c15d71f7cb2fe3796",
+    "generate_inventory_consumable_models.py": "1e0f81ac23de88c55271cccba6fd7f56c64c3b38d76ddda50da1348bd1d269a7",
+    "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+    "generate_inventory_document_models.py": "f62ccbf2f7812fc91efda5a0cf8fffb89e7fb239aaef72b659a564b80bea8541"
+  },
+  "sha256": {
+    "models/caelum/inventory/documents/book.md3": "b61151ce14971ca16900341189f3a87a7880cb4fc8c2aa296dd84a2260bf57d8",
+    "editable/book.obj": "a18024950a608b38e86d70cb6055042fd95125dcae98cb6264e09cab7ef1e1ec",
+    "models/caelum/inventory/documents/letter.md3": "2744f96f12cfd7404b78d7821c7c8016ba5438bc542f811bce5ee9ecbd27c291",
+    "editable/letter.obj": "4a356b226b29c012460cb39990fc9cfa26f6ab388842abfd6516d6aa93637ecc",
+    "models/caelum/inventory/documents/key.md3": "32c974458449cd3ac4fcbc873b8b622fba1f001f20d405ad590217461e361904",
+    "editable/key.obj": "1f74e81271d7a1327334c806ddc1981b84c65243e26d1711fd7839bce5df8c57",
+    "models/caelum/inventory/documents/cloth.md3": "bb9a28cdfa8bee5fb914da1e26aef5e384c4d558bfab9a48c2fb82677ae41c44",
+    "editable/cloth.obj": "2763fb65d916f36fb5da66570918f29934e4a283844456bc8f04f5d59752b7be",
+    "models/caelum/inventory/documents/ingot.md3": "400280e6ed358c7bf2d928b32905fbbe81cf57cdf336d8532e40146e9f8b6bf9",
+    "editable/ingot.obj": "6e6c9fd3bd89415fb24b68bf3d80cfb53e4c4f5a1344453680832f19e23cff82",
+    "editable/documents.mtl": "f86f4e15a3ba2e3e3ff0b2e1828cf33f7d960f12ca31c73d9cd3e9e34a981c1d",
+    "caelum/data/inventory_documents.modeldef": "c5597613e35aa5ac6c83ae4f0d1ee692056219b173bd559092fdb2ce79154f9f"
+  }
+}

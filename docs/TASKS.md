@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.5** - 2026-11-13.
+Documentation version: **5.17.6** - 2026-11-13.
+
+## 5.17.6 - Native document/supply models (#656)
+
+Six classes now have explicit 3D world bindings: manual, recipe book, sealed
+letter, native key, cleaning cloth and legacy iron ingot. The complete package
+passes 472 native assertions, deterministic/static checks and a bounded
+presentation comparison recorded in ASSETS. Author review is
+CA656-DOCUMENTS-01; dynamic inventories and the remaining characters stay open.
 
 ## 5.17.5 - Pombero native combat art (#461, first slice)
 
