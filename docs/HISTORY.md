@@ -4,6 +4,10 @@ Documentation version: **5.16.3** - 2026-11-12.
 
 ## 5.16.3 - Nahuelito visual model pilot (#455, 2026-11-12)
 
+2026-11-13 dependency follow-up preserves the approved campaign decisions and
+city validation ancestry. Restored the two Spanish approval quotes in
+BEHAVIOR.json as UTF-8 and kept CONTEXT below2500 words; no combat rule changed.
+
 The author requested actual3D models where feasible from the approved bestiary.
 CA-FOLK-055 received the first isolated reference-led mesh, editable anatomy/motion
 controls, a neutral OBJ/MTL, an original image_gen skin and native MD3 bindings.
