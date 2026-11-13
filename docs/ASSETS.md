@@ -1,6 +1,70 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.10** - 2026-11-13.
+Documentation version: **5.17.11** - 2026-11-13.
+
+## 5.17.11 - Native unplaced furniture models (#666, parent #647)
+
+Seventeen existing inventory classes receive world models: wardrobe, cupboard,
+basic/luxury chair and bed, two/three-seat sofa, desk, bookcase, four complete
+dining sets, small/large landscape painting and ornamental statue. Thirteen
+reuse original placed OBJs directly. Four assembled OBJs reuse the original
+table and every chair at the native 2/6/12/6-seat transforms. No new furniture
+design, balance, physical body, material pixels or inventory icon is introduced.
+Original body bindings, geometry, UVs and owned textures remain authoritative.
+
+Uniform fitting preserves native Actor.Scale and fits both the original opaque
+sprite width and height. Wardrobe/cupboard TEXTURES scaling is included; the
+other fifteen use their raw sprite scale. These small inventory presentations
+do not redefine the dimensions of placed furniture. Original MODELDEF rotation,
+pixel-stretch and backface policy are retained. GZDoom 4.14.2's OBJ reader
+negates OBJ Z before yaw; dining assembly transforms account for that reflection.
+Native SeatPosition/SeatAngle and chair-class checks verify the source layout.
+
+Portable OBJ/MTL sources and eleven unchanged textures live under
+assets/source/art/inventory_models_647/furniture/editable. DESIGN.json records
+source hashes and exact original body blocks; PROVENANCE.json records ownership
+and scope; EXPORT.json records every part, transform, bound and output hash.
+Rebuild with `python assets/generators/generate_inventory_furniture_models.py
+--output build/furniture-models --install`; --check verifies installed outputs.
+The project validator independently regenerates and compares every export.
+
+The native fixture covers two independent copies of all seventeen classes,
+pickup/toss, metadata, contamination, original mass, Box weight rules, quest
+guards, body-link guards, icons, collision, floor contact and saved identities.
+Sofas, desks, decor and dining sets have distinct native body references; the
+bookcase instead becomes storage cargo when placed. This patch does not change
+those paths, cargo contents, locks or existing placed-body rules. The fixture
+does not certify ordinary menus or placement/cargo workflows. The exact final
+package passes 2,920 assertions across baseline, old-save/model, fresh/model,
+reload and rollback (743/478/743/478/478). The preceding visual run passes 743;
+the final fixture also exposes angle 0 for front views. All seventeen designs
+were inspected in isolated close-ups. Original details, including painted
+canvas visible from both sides under the existing backface policy, are retained.
+
+Thirty-six exports repeat byte-for-byte. There are 64,168 selected vertices and
+30,464 triangles across the seventeen presentations, including repeated chair
+parts. All 18,213 package entries match src. Only four assembled dining OBJs,
+the seventeen-binding MODELDEF, root include and two release diagnostic strings
+differ from #664; all other native bytes remain identical.
+
+One isolated 700-tic pair with seventeen objects records 1107.14/1079.71 queue
+presents/s for sprites/models, p95 1.1157/1.1655 ms and p99 1.3254/1.3817 ms.
+Both cohorts and camera are raised 64 MU to show the original offsetless sprites;
+floor contact is checked separately in the native continuity fixture. Both
+presentation scenes were visually inspected. Environment: Windows 11 Pro 26200,
+Ryzen 9 5950X, 32 GB, RTX 3070 Ti, GZDoom 4.14.2, Vulkan 1280x720, uncapped,
+vsync off, unpaused background, 5% audio. Queue-present intervals do not measure
+GPU/display time or establish repeatability, campaign or crowd performance.
+Evidence: assets/validation_v5_17_11/evidence/SUMMARY.json.
+
+Rejected fixture attempts are retained: an incompatible pointer ternary;
+a 4512-character command line that lost its initial events and ran zero checks;
+and incorrect sofa/desk/bookcase body-reference assumptions. Bounded chained
+command files, native subclass dispatch and exact expected assertion counts
+resolve these harness errors. No production gameplay change follows from them.
+
+CA666-FURNITURE-01 remains an author check. Earlier furniture/placement author
+checks and all remaining inventory classes remain separate and outstanding.
 
 ## 5.17.10 - Native camp inventory drop models (#664, parent #647)
 
