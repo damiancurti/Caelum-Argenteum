@@ -30,6 +30,11 @@ performance, uniqueness across campaign maps, or final visual acceptance.
 CA455-VIS-01 requests that separate author review. The other 57 references remain
 without new models; #455 is unfinished.
 
+The complete 5.16.3 project audit and package build pass. The final package's
+isolated native run also confirms one subject before/after load and explicit
+CurState advancement during swimming; evidence is in native-release. No gameplay
+or encounter-scale performance acceptance is inferred from this visual test.
+
 ## 5.16.2 - Approved map references and preserved sewer sources (#454)
 
 The reference branch's ancestry and original PDF/PNGs are preserved under

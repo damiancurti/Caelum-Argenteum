@@ -44,7 +44,7 @@ def main():
     source='''class CA455Camera : Actor { Default { +NOINTERACTION +NOGRAVITY } States { Spawn: TNT1 A -1; Stop; } }
 class CA455VisualDriver : Actor
 {
-    Actor Subject; Actor View; int Sample; int ViewIndex;
+    Actor Subject; Actor View; int Sample; int ViewIndex; State MotionSnapshot;
     Default { +NOINTERACTION +NOGRAVITY }
     States { Spawn: TNT1 A -1; Stop; }
     override void Tick()
@@ -82,6 +82,8 @@ class CA455VisualEvents : EventHandler
 '''
     for i in range(len(views)):source+=f'if(e.Name=="ca455view{i}")driver.Configure({i});\n'
     source+='''if(e.Name=="ca455animate") { driver.Sample=-1;driver.Subject.SetStateLabel("Swim");Console.Printf("CA455 ANIMATION running"); }
+        if(e.Name=="ca455motion_a")driver.MotionSnapshot=driver.Subject.CurState;
+        if(e.Name=="ca455motion_b")Console.Printf("CA455 MOTION result=%s",driver.Subject.CurState!=driver.MotionSnapshot?"PASS":"FAIL");
         if(e.Name=="ca455verify")
         {
             int subjects=0;let it=ThinkerIterator.Create("CA455NahuelitoPreview");
@@ -98,7 +100,7 @@ class CA455VisualEvents : EventHandler
             info=zipfile.ZipInfo(name,(2026,11,12,0,0,0));package.writestr(info,value)
     config=out/'isolated.ini';config.write_text('[GlobalSettings]\nvid_fullscreen=false\nvid_preferbackend=1\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nsnd_mastervolume=0.05\nvid_maxfps=60\nlanguage=en\n')
     commands='wait 140; '+ '; '.join(f'netevent ca455view{i}; wait 10; screenshot {name}.png' for i,(name,_,_,_) in enumerate(views))
-    commands+='; netevent ca455view0; netevent ca455animate; wait 2; screenshot animate-a.png; wait 30; screenshot animate-b.png; netevent ca455verify; save pilot.zds; wait 35; quit\n'
+    commands+='; netevent ca455view0; netevent ca455animate; wait 2; netevent ca455motion_a; screenshot animate-a.png; wait 30; netevent ca455motion_b; screenshot animate-b.png; netevent ca455verify; save pilot.zds; wait 35; quit\n'
     (out/'commands.cfg').write_text(commands)
     engine=Path('C:/Program Files (x86)/GZDoom/gzdoom.exe');iwad=Path('C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD')
     common=[str(engine),'-noautoload','-iwad',str(iwad),'-file',str(args.runtime.resolve()),str(args.model.resolve()/'preview.pk3'),str(fixture),'-config',str(config),'-savedir',str(out),'-window','-width','1280','-height','720']
@@ -120,9 +122,12 @@ class CA455VisualEvents : EventHandler
             except subprocess.TimeoutExpired:proc.terminate();proc.wait(timeout=10);raise
         text=(out/(label+'.log')).read_text(errors='replace')
         errors=[key for key in ['Script error','Execution could not continue','VM execution aborted','Unknown type','Unable to load model','result=FAIL'] if key in text]
-        return {'exit_code':code,'errors':errors,'verify_pass':'result=PASS' in text}
+        return {'exit_code':code,'errors':errors,'verify_pass':'CA455 VERIFY subjects=1' in text and 'result=PASS' in text,
+                'native_state_advanced':'CA455 MOTION result=PASS' in text}
     result=run('fresh',['+map','CA455V','+exec',str(out/'commands.cfg')])
-    if result['exit_code']!=0 or result['errors'] or not result['verify_pass']:raise SystemExit(json.dumps(result))
+    if result['exit_code']!=0 or result['errors'] or not result['verify_pass'] or not result['native_state_advanced']:
+        (out/'RESULTS.json').write_text(json.dumps({'fresh':result,'scope':__doc__},indent=2)+'\n')
+        raise SystemExit(json.dumps(result))
     (out/'reload.cfg').write_text('wait 140; netevent ca455verify; screenshot reload.png; wait 10; quit\n')
     reload=run('reload',['-loadgame','pilot.zds','+exec',str(out/'reload.cfg')])
     captures=[name for name,_,_,_ in views]+['animate-a','animate-b','reload']

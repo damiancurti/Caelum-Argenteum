@@ -26,6 +26,11 @@ Visual acceptance remains pending as CA455-VIS-01. No existing author check was
 removed; no final V5.16 terminal was opened. The remaining creature/campaign work
 is still in progress.
 
+The complete 5.16.3 project audit and package build pass. The final package's
+isolated native run also confirms one subject before/after load and explicit
+CurState advancement during swimming; evidence is in native-release. No gameplay
+or encounter-scale performance acceptance is inferred from this visual test.
+
 ## 5.16.2 - Sewer redesign slice (#454, in progress, 2026-11-12)
 
 The author supplied approved sewer-v2/Barracas-v1 boards and selected four city

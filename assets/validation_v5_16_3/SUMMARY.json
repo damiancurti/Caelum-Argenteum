@@ -5,18 +5,27 @@
   "status": "Unintegrated Nahuelito visual pilot. CA455-VIS-01 pending. Other57 models and creature behavior unfinished.",
   "approved_reference": "CA-FOLK-055",
   "native": {
-    "final_model_run": "native-04",
-    "runtime": "5.16.2 MAP02 package (exact hash in native-04/RESULTS.json); 5.16.3 diagnostic-label-only package smoke still pending",
+    "final_model_run": "native-release",
+    "runtime": "5.16.3 package; exact runtime/engine/model hashes are in native-release/RESULTS.json",
     "facts": [
       "One native subject before save and after reload",
       "Native MODELDEF angle0/90 and front/side/rear/close captures",
-      "40 MD3 frames; captured alternating swim poses and live animation"
+      "40 MD3 frames; captured alternating swim poses and live animation",
+      "Explicit native CurState comparison advances during unpaused Swim playback; reload only checks preserved pointers/single instance, so its native_state_advanced=false means the motion comparison was not repeated there."
     ],
     "limits": [
       "No ordinary encounter or aquatic behavior",
       "No campaign uniqueness/rewards/coop test",
       "No frame-presentation performance acceptance",
       "Visual acceptance requires author"
+    ],
+    "requested_resolution": [
+      1280,
+      720
+    ],
+    "captured_resolution": [
+      1520,
+      825
     ]
   },
   "failed_attempts": {
@@ -45,5 +54,15 @@
   },
   "source": "assets/source/art/nahuelito_455",
   "export": "assets/bestiary/models/nahuelito",
-  "production_runtime_enabled": false
+  "production_runtime_enabled": false,
+  "project_validation": {
+    "version": "5.16.3",
+    "errors": [],
+    "context_words": 2498,
+    "source": "project-validation.json"
+  },
+  "build": {
+    "files_included": 18103,
+    "sha256": "88a787cfc7d9b9335f00b4209f00eb000cf03b2551218c52efea1463057e936f"
+  }
 }
