@@ -4,6 +4,11 @@ Documentation version: **5.16.5** - 2026-11-13.
 
 ## 5.16.5 - Approved finale eligibility query (#457, 2026-11-13, in progress)
 
+Dependency refresh through #456 commit1e16f67f0 includes #455's Pombero facial
+and material refinement. Eligibility source and generated data remain unchanged.
+Combined project validation passes in validation_v5_16_5/dependency-pombero-face.log;
+the unintegrated visual evidence retains its own #455 runtime/model hashes.
+
 Dependency refresh through #456 commit5bc9a0b9c includes #454's tested perception
 change. Eligibility source and generated data remain unchanged. Combined project
 validation passes in validation_v5_16_5/dependency-perception.log; native evidence
@@ -34,6 +39,11 @@ acceptance or full campaign completion is claimed.
 The final package also verifies an actual guest disconnect after both fresh and
 reloaded checks: the host's eligible roster becomes empty immediately on query.
 Static validation, generated-data freshness and repeatable generation pass.
+
+2026-11-13 #456 dependency refresh includes #455 commit17da9f10c and its Pombero
+facial/material refinement. The essence ledger and runtime remain unchanged.
+Combined project validation passes in validation_v5_16_4/dependency-pombero-face.log;
+visual evidence retains its original #455 build/model hashes and qualifications.
 
 2026-11-13 #456 dependency refresh includes #454's tested perception change
 through #455 commit1d22cca3d. The essence ledger and policy remain unchanged.
@@ -67,6 +77,19 @@ their original issue/build scope. No author acceptance or full completion is
 claimed, and outstanding manual checks remain untouched.
 
 ## 5.16.3 - Folklore combat classes and model pilot (#455, 2026-11-12)
+
+2026-11-13 facial/material follow-up: Pombero gains a reference-led diffuse face
+plate on its continuous sculpted head, finer cloth/straw materials, curved ear
+rims and hair positioned behind the ears. Built-in image_gen originals and exact
+prompts remain preserved. The native model now has 13,115 vertices, 22,815
+triangles and four surfaces across 40 frames. Binary checks, deterministic
+generation and native fresh/reload/state advancement pass; evidence and limits
+are in validation_v5_16_3/pombero-face/SUMMARY.json. Hair/clothing geometry,
+production combat animation coverage and author review remain outstanding.
+The first launcher call supplied preview.pk3 where a directory was required,
+so the model class was absent; that failed run remains preserved. Explicit input
+validation now rejects that argument before launching the engine or creating a
+fixture directory. No production model binding or author acceptance is inferred.
 
 2026-11-13 dependency update: merge #454's native-distance reuse and its retained
 visibility/save/performance evidence. #455 combat and visual assets are unchanged;

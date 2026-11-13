@@ -35,11 +35,16 @@ def wad(ambient=224):
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',type=Path,required=True)
-    parser.add_argument('--model',type=Path,required=True)
+    parser.add_argument('--model',type=Path,required=True,help='Generated model directory containing preview.pk3')
     parser.add_argument('--runtime',type=Path,required=True)
     parser.add_argument('--kind',choices=('nahuelito','pombero'),default='nahuelito')
     parser.add_argument('--interactive',action='store_true',help='Leave the visual scene open for author review, without reporting an automatic pass.')
-    args=parser.parse_args();out=args.output.resolve();out.mkdir(parents=True,exist_ok=True)
+    args=parser.parse_args()
+    if not args.runtime.is_file():parser.error('Runtime package does not exist: '+str(args.runtime))
+    if not (args.model/'preview.pk3').is_file():parser.error('Model must be a directory containing preview.pk3: '+str(args.model))
+    inventory=subprocess.check_output(['tasklist','/FI','IMAGENAME eq gzdoom.exe','/FO','CSV','/NH']).decode(errors='replace')
+    if '"gzdoom.exe"' in inventory.lower():parser.error('Another native engine is running; preserve it before starting this test.')
+    out=args.output.resolve();out.mkdir(parents=True,exist_ok=True)
     views=[('three-quarter',(300,-330,190),8,0),('front',(400,0,160),4,0),
            ('side',(0,-400,160),4,0),('rear',(-440,0,160),4,0),
            ('rotated',(300,-330,190),8,90),('swim-down',(300,-330,190),8,0),

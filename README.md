@@ -24,7 +24,8 @@ under #453 with original images, verified provenance and all 58 regional
 assignments approved. #455 adds unintegrated Nahuelito and Pombero technical model
 pilots, each with 40 frames and native save/reload evidence. It also adds 56 unplaced combat
 classes inheriting the approved provisional Mandinga profile, with bilingual names
-and source species identities. Pombero still needs facial/hair/clothing refinement.
+and source species identities. Pombero's facial surface and material scale are
+refined; hair/clothing geometry and combat animations remain provisional.
 The other 56 models, encounters and campaign
 uniqueness remain unfinished; [ASSETS](docs/ASSETS.md) records sources and limits.
 

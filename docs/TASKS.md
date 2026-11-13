@@ -27,7 +27,8 @@ recovery, cooperative ownership and full geographic/ability reachability.
 Pombero has a second unintegrated technical mesh with 40 idle/walk frames,
 editable data, OBJ/MTL and native MD3. Binary checks, byte-identical regeneration
 and native fresh/reload/state advancement pass (validation_v5_16_3/pombero).
-Its face, hair and clothing still need production art refinement. Studio captures
+The facial/material follow-up passes in validation_v5_16_3/pombero-face;
+hair/clothing geometry and seams still need production art review. Studio captures
 do not establish ordinary lighting or crowded-scene performance. Author review
 and combat/hurt/death animations remain outstanding; it is not a finished model.
 

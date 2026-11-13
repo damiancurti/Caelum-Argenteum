@@ -68,14 +68,14 @@ def loft(mesh,shape):
 
 def ear(mesh,shape):
     outline=shape['outline'];center=shape['center'];rings=[]
-    for scale,depth in ((1,0),(.72,.65),(.25,-.15)):
+    for scale,depth in shape.get('rim_rings',((1,0),(.72,.65),(.25,-.15))):
         rings.append([mesh.vertex(add(center,add(mul(sub(p,center),scale),(depth,0,0))),
                                   (i/len(outline),scale),shape['part']) for i,p in enumerate(outline)])
-    for i in range(2):
+    for i in range(len(rings)-1):
         for j in range(len(outline)):
             k=(j+1)%len(outline);a,b,c,d=rings[i][j],rings[i][k],rings[i+1][k],rings[i+1][j]
             mesh.faces.extend((shape['material'],orient(mesh,tri,(1,0,0))) for tri in ((a,b,c),(a,c,d)))
-    for ring,position,outward in ((rings[-1],add(center,(-.4,0,0)),(1,0,0)),(rings[0],add(center,(-1.3,0,0)),(-1,0,0))):
+    for ring,position,outward in ((rings[-1],add(center,(shape.get('concha_depth',-.4),0,0)),(1,0,0)),(rings[0],add(center,(shape.get('rear_depth',-1.3),0,0)),(-1,0,0))):
         mid=mesh.vertex(position,(.5,.5),shape['part'])
         for j in range(len(ring)):mesh.faces.append((shape['material'],orient(mesh,(mid,ring[j],ring[(j+1)%len(ring)]),outward)))
 
@@ -91,6 +91,7 @@ def geometry(design):
     mesh=Mesh()
     for shape in design['shapes']:
         begin=len(mesh.vertices)
+        face_begin=len(mesh.faces)
         if shape['kind']=='ellipsoid':
             mesh.ellipsoid(shape['center'],shape['radii'],shape['part'],shape['material'],shape.get('rings',10),shape.get('segments',20))
             for i in range(begin,len(mesh.vertices)):
@@ -111,6 +112,30 @@ def geometry(design):
                 column,row=material['tile'];margin=design['atlas']['inset']
                 mesh.uv[i]=((column+margin+(1-2*margin)*u)/design['atlas']['columns'],
                             (row+margin+(1-2*margin)*v)/design['atlas']['rows'])
+            elif 'uv_rect' in material:
+                left,top,right,bottom=material['uv_rect']
+                mesh.uv[i]=(left+(right-left)*u,top+(bottom-top)*v)
+        # A frontal material follows actual head geometry, not a camera-facing plane.
+        projection=shape.get('front_projection')
+        if projection:
+            duplicates={}
+            left,right=projection['y_bounds'];bottom,top=projection['z_bounds']
+            for face_index in range(face_begin,len(mesh.faces)):
+                _,tri=mesh.faces[face_index]
+                if sum(mesh.vertices[index][0] for index in tri)/3<projection['minimum_x']:continue
+                mapped=[]
+                for index in tri:
+                    if index not in duplicates:
+                        x,y,z=mesh.vertices[index]
+                        uv=((y-left)/(right-left),(top-z)/(top-bottom))
+                        duplicates[index]=mesh.vertex((x,y,z),uv,mesh.parts[index])
+                    mapped.append(duplicates[index])
+                mesh.faces[face_index]=(projection['material'],tuple(mapped))
+    used=sorted({index for _,tri in mesh.faces for index in tri})
+    remap={old:new for new,old in enumerate(used)}
+    mesh.vertices=[mesh.vertices[i] for i in used]
+    mesh.uv=[mesh.uv[i] for i in used];mesh.parts=[mesh.parts[i] for i in used]
+    mesh.faces=[(material,tuple(remap[i] for i in tri)) for material,tri in mesh.faces]
     return mesh
 
 
@@ -154,8 +179,11 @@ def output_files():
     materials={name:entry['path'] for name,entry in design['materials'].items()}
     # Material labels stay editable in OBJ; native batches share the same atlas.
     native=Mesh();native.vertices=mesh.vertices;native.uv=mesh.uv;native.parts=mesh.parts
-    native.faces=[('dark' if name=='dark' else 'atlas',tri) for name,tri in mesh.faces]
-    binary,stats,bounds=md3(native,frames,{'atlas':f'{MODEL_PATH}/materials.png','dark':f'{MODEL_PATH}/dark.png'})
+    batches={'atlas':f'{MODEL_PATH}/materials.png','dark':f'{MODEL_PATH}/dark.png'}
+    for name,entry in design['materials'].items():
+        if 'source_file' in entry:batches[entry.get('native_batch',name)]=entry['path']
+    native.faces=[(design['materials'][name].get('native_batch','dark' if name=='dark' else 'atlas'),tri) for name,tri in mesh.faces]
+    binary,stats,bounds=md3(native,frames,batches)
     # The shared writer's format is unchanged; only the owned model header name differs.
     binary=binary[:8]+fixed('CA-FOLK-006 Pombero visual pilot',64)+binary[72:]
     model=['Model CA455PomberoPreview','{',f'    Path "{MODEL_PATH}"','    Model 0 "pombero.md3"','    Scale 1 1 1']
@@ -174,6 +202,8 @@ def output_files():
             f'{MODEL_PATH}/dark.png':(SOURCE/'dark.png').read_bytes(),
             'ZSCRIPT':('version "4.14.2"\n'+'\n'.join(states)+'\n').encode(),
             'MODELDEF':('\n'.join(model)+'\n').encode(),'TEXTURES':('\n'.join(textures)+'\n').encode()}
+    for entry in design['materials'].values():
+        if 'source_file' in entry:output[entry['path']]=(SOURCE/entry['source_file']).read_bytes()
     obj=['# CA-FOLK-006 editable neutral pose; OBJ Y up, X forward.','mtllib pombero.mtl']
     obj.extend(f'v {x:.6f} {z:.6f} {-y:.6f}' for x,y,z in frames[0]);obj.extend(f'vt {u:.6f} {1-v:.6f}' for u,v in mesh.uv)
     previous=None
@@ -183,6 +213,8 @@ def output_files():
     output['pombero.obj']=('\n'.join(obj)+'\n').encode()
     output['pombero.mtl']=('\n'.join(f'newmtl {name}\nKd 1 1 1\nmap_Kd {path}' for name,path in materials.items())+'\n').encode()
     sources=['DESIGN.json',design['atlas']['source_file'],'dark.png','PROMPT.json','PROMPT-v2.json']
+    sources+=design.get('additional_sources',[])
+    sources+=sorted({entry['source_file'] for entry in design['materials'].values() if 'source_file' in entry})
     manifest={'schema_revision':1,'issue':455,'catalogue_id':'CA-FOLK-006','status':'unintegrated_visual_pilot',
               'generator_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
               'shared_writer_sha256':hashlib.sha256(Path(__file__).with_name('generate_nahuelito_model.py').read_bytes()).hexdigest(),
