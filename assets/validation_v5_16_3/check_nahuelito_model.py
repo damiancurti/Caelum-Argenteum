@@ -11,7 +11,7 @@ import zipfile
 def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--model',type=Path,required=True)
     parser.add_argument('--runtime',type=Path,required=True)
-    parser.add_argument('--kind',choices=('nahuelito','pombero'),default='nahuelito')
+    parser.add_argument('--kind',choices=('nahuelito','pombero','cuero'),default='nahuelito')
     parser.add_argument('--report-output',type=Path)
     args=parser.parse_args()
     root=args.model;manifest=json.loads((root/'manifest.json').read_text(encoding='utf-8'))
@@ -49,7 +49,7 @@ def main():
     assert min(distinct)>1 and max(distinct)==frames
     definition=(root/'MODELDEF').read_text(encoding='utf-8');states=(root/'ZSCRIPT').read_text(encoding='utf-8')
     for index,frame in enumerate(manifest['frames']):
-        sprite=('PBMI' if frame['action']=='idle' else 'PBMW') if args.kind=='pombero' else ('NHAI' if frame['action']=='idle' else 'NHAS')
+        sprite=frame.get('sprite') or (('PBMI' if frame['action']=='idle' else 'PBMW') if args.kind=='pombero' else ('NHAI' if frame['action']=='idle' else 'NHAS'))
         letter=chr(65+frame['sample'])
         assert f'FrameIndex {sprite} {letter} 0 {index}' in definition
         assert f'{sprite} {letter} {frame["tics"]};' in states

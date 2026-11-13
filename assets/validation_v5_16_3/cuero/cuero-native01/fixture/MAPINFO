@@ -1,0 +1,2 @@
+map CA455V "Cuero visual pilot" { sky1="CABASKY",0 nointermission }
+gameinfo { AddEventHandlers="CA455VisualEvents" }

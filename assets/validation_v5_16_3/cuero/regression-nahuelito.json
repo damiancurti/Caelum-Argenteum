@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "subject": "nahuelito",
+  "frames": 40,
+  "surfaces": 3,
+  "vertices": 5174,
+  "triangles": 9272,
+  "distinct_frames_per_surface": [
+    40,
+    40,
+    40
+  ],
+  "binary_coordinate_checks": 206960,
+  "scope": "Binary structure/materials/bounds and non-static animation only; not gameplay behavior or visual acceptance."
+}

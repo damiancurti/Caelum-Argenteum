@@ -2,6 +2,11 @@
 
 Documentation version: **5.16.4** - 2026-11-13.
 
+2026-11-13 #456 dependency refresh includes #455's Cuero visual pilot
+and its native/binary evidence, preserving this issue's runtime and authored data.
+Combined project validation passes in validation_v5_16_4/dependency-cuero.log;
+visual evidence retains its original #455 model/runtime hashes and qualifications.
+
 2026-11-13 #456 dependency refresh includes #455 commit17da9f10c and its Pombero
 facial/material refinement. The essence ledger and runtime remain unchanged.
 Combined project validation passes in validation_v5_16_4/dependency-pombero-face.log;
@@ -39,6 +44,18 @@ their original issue/build scope. No author acceptance or full completion is
 claimed, and outstanding manual checks remain untouched.
 
 ## 5.16.3 - Folklore combat classes and model pilot (#455, 2026-11-12)
+
+2026-11-13 Cuero visual follow-up: CA-FOLK-053 gains an editable closed membrane,
+curved marginal claws, dorsal relief and paired eyes. The built-in image_gen
+atlas, exact prompt and provenance remain preserved. Its OBJ/MD3 pilot has
+9,536 native vertices, 16,032 triangles, three surfaces and 40 idle/swim frames.
+Four native iterations retain fresh/reload/state evidence and visual corrections;
+the final nine-view run includes the underside. Binary validation and independent
+byte-identical regeneration pass. The shared validator also passes the unchanged
+Nahuelito and Pombero exports. validation_v5_16_3/cuero/SUMMARY.json records exact
+model/runtime hashes and limitations. This changes no production actor or save
+schema. Art review, physical body, behavior, combat animation and encounters remain
+outstanding; no author check is removed and no final terminal is opened.
 
 2026-11-13 facial/material follow-up: Pombero gains a reference-led diffuse face
 plate on its continuous sculpted head, finer cloth/straw materials, curved ear

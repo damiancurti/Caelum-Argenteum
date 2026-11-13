@@ -1,0 +1,18 @@
+{
+  "issue": 455,
+  "catalogue_id": "CA-FOLK-053",
+  "reference": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/53_cuero.png",
+  "reference_sha256": "b29fb54921994e886bce33af145e8c48c4265706e10208ddf190eed8b9cce10d",
+  "geometry": "Original reference-led polar membrane with closed underside, curved marginal claws, paired eyes and dorsal relief. Explicit editable geometry/motion data retained. The owned Nahuelito MD3 writer and Pombero tube construction are reused.",
+  "material_atlas": {
+    "file": "materials.png",
+    "sha256": "9cbf0cc1e59a6bd09e6bcae65a714b08c8f6ea45f63271fc73678913dea4afd4",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "tool": "Built-in image_gen; original output bytes retained. Exact prompt in PROMPT.json.",
+    "layout": "2x2 dorsal hide / underside / claw keratin / iris"
+  },
+  "approval": "Concept and preference for actual3D approved. Derived mesh, approximate presentation diameter and animation remain subject to author review; no collision, wrapping damage, swimming behavior, encounters or populations are inferred."
+}

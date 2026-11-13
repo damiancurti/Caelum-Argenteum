@@ -37,7 +37,7 @@ def main():
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--model',type=Path,required=True,help='Generated model directory containing preview.pk3')
     parser.add_argument('--runtime',type=Path,required=True)
-    parser.add_argument('--kind',choices=('nahuelito','pombero'),default='nahuelito')
+    parser.add_argument('--kind',choices=('nahuelito','pombero','cuero'),default='nahuelito')
     parser.add_argument('--interactive',action='store_true',help='Leave the visual scene open for author review, without reporting an automatic pass.')
     args=parser.parse_args()
     if not args.runtime.is_file():parser.error('Runtime package does not exist: '+str(args.runtime))
@@ -49,9 +49,10 @@ def main():
            ('side',(0,-400,160),4,0),('rear',(-440,0,160),4,0),
            ('rotated',(300,-330,190),8,90),('swim-down',(300,-330,190),8,0),
            ('swim-up',(300,-330,190),8,0),('head',(200,-125,190),0,0)]
-    head_target=(110,0,229);body_target=(0,0,120);lighting={'ambient':224,'lights':[]}
-    if args.kind=='pombero':
-        preview=json.loads((ROOT/'assets/source/art/pombero_455/DESIGN.json').read_text(encoding='utf-8'))['preview']
+    head_target=(110,0,229);body_target=(0,0,120);lighting={'ambient':224,'lights':[]};preview={}
+    if args.kind!='nahuelito':
+        design=json.loads((ROOT/f'assets/source/art/{args.kind}_455/DESIGN.json').read_text(encoding='utf-8'))
+        preview=design['preview']
         views=preview['views'];head_target=preview['head_target'];body_target=preview['body_target']
         lighting=preview['lighting']
     source='''class CA455Camera : Actor { Default { +NOINTERACTION +NOGRAVITY } States { Spawn: TNT1 A -1; Stop; } }
@@ -72,12 +73,14 @@ class CA455VisualDriver : Actor
         ViewIndex=index;
         if(Subject==null)Subject=Actor.Spawn("CA455NahuelitoPreview",(0,0,0),NO_REPLACE);
         if(View==null)View=Actor.Spawn("CA455Camera",(0,0,160),NO_REPLACE);
-        Sample=0; Subject.Angle=0;
+        Sample=0; Subject.Angle=0; Subject.Pitch=0; Subject.SetOrigin((0,0,0),false);
 '''
     for i,(name,p,pitch,angle) in enumerate(views):
-        target=head_target if name=='head' else body_target
+        target=preview.get('view_targets',{}).get(name,head_target if name=='head' else body_target)
+        subject_pitch=preview.get('view_subject_pitches',{}).get(name,0)
+        sx,sy,sz=preview.get('view_subject_offsets',{}).get(name,(0,0,0))
         camera_angle=math.degrees(math.atan2(target[1]-p[1],target[0]-p[0]));sample=22 if name.endswith('-down') else 34 if name.endswith('-up') else 0
-        source+=f'if(index=={i}){{View.SetOrigin(({p[0]},{p[1]},{p[2]}),false);View.Angle={camera_angle};View.Pitch={pitch};Subject.Angle={angle};Sample={sample};}}\n'
+        source+=f'if(index=={i}){{View.SetOrigin(({p[0]},{p[1]},{p[2]}),false);View.Angle={camera_angle};View.Pitch={pitch};Subject.Angle={angle};Subject.Pitch={subject_pitch};Subject.SetOrigin(({sx},{sy},{sz}),false);Sample={sample};}}\n'
     source+='''View.ClearInterpolation(); Subject.ClearInterpolation(); players[0].camera=View;
         Console.Printf("CA455 VIEW index=%d sample=%d angle=%.1f",ViewIndex,Sample,Subject.Angle);
     }
@@ -107,8 +110,9 @@ class CA455VisualEvents : EventHandler
     }
 }'''
     fixture=out/'fixture.pk3'
-    if args.kind=='pombero':
-        source=source.replace('CA455NahuelitoPreview','CA455PomberoPreview').replace('"Swim"','"Walk"')
+    if args.kind!='nahuelito':
+        source=source.replace('CA455NahuelitoPreview',design.get('native',{}).get('class','CA455PomberoPreview'))
+        if args.kind=='pombero':source=source.replace('"Swim"','"Walk"')
         source=source.replace('class CA455Camera : Actor { Default {','class CA455Camera : Actor { Default { CameraHeight 0; Height 0; Radius 0;')
         # Preview-only studio lights persist with the driver; never respawn on load.
         source=source.replace('Actor Subject; Actor View;','Actor Subject; Actor View; bool LightingReady;')
@@ -123,7 +127,7 @@ class CA455VisualEvents : EventHandler
             info=zipfile.ZipInfo(name,(2026,11,12,0,0,0));package.writestr(info,value)
     config=out/'isolated.ini';config.write_text('[GlobalSettings]\nvid_fullscreen=false\nvid_preferbackend=1\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nsnd_mastervolume=0.05\nvid_maxfps=60\nlanguage=en\n')
     commands='wait 140; '+ '; '.join(f'netevent ca455view{i}; wait 10; screenshot {name}.png' for i,(name,_,_,_) in enumerate(views))
-    if args.kind=='pombero':commands='screenblocks 12; crosshair 0; con_notifytime 0; '+commands
+    if args.kind!='nahuelito':commands='screenblocks 12; crosshair 0; con_notifytime 0; '+commands
     commands+='; netevent ca455view0; wait 10; netevent ca455animate; wait 2; netevent ca455motion_a; screenshot animate-a.png; wait 30; netevent ca455motion_b; screenshot animate-b.png; netevent ca455verify; save pilot.zds; wait 35; quit\n'
     (out/'commands.cfg').write_text(commands)
     engine=Path('C:/Program Files (x86)/GZDoom/gzdoom.exe');iwad=Path('C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD')
@@ -132,9 +136,9 @@ class CA455VisualEvents : EventHandler
     if args.interactive:
         script='wait 140; netevent ca455view0; netevent ca455animate; '
         script+='; '.join(f'bind F{i+1} "netevent ca455view{i}"' for i in range(len(views)))
-        script+='; bind F9 "netevent ca455animate"; echo "F1-F8: viewpoints and poses. F9: animation. Close the game to finish review."\n'
+        script+=f'; bind F{len(views)+1} "netevent ca455animate"; echo "F1-F{len(views)}: viewpoints and poses. F{len(views)+1}: animation. Close the game to finish review."\n'
         (out/'interactive.cfg').write_text(script)
-        print(args.kind.title()+' visual review: F1-F8 viewpoints/poses, F9 animation. Close the game to finish. No automatic acceptance.')
+        print(args.kind.title()+f' visual review: F1-F{len(views)} viewpoints/poses, F{len(views)+1} animation. Close the game to finish. No automatic acceptance.')
         startup.wShowWindow=1
         subprocess.run(common+['+logfile',str(out/'interactive.log'),'+map','CA455V','+exec',str(out/'interactive.cfg')],cwd=out,startupinfo=startup,check=True)
         return

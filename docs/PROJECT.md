@@ -14,6 +14,13 @@ the author is away; no pending design was inferred.
 
 ## 5.16.3 - Folklore combat classes and model pilot (#455, in progress)
 
+Cuero (CA-FOLK-053) adds a third unintegrated editable OBJ/MD3 pilot with
+40 idle/swim frames, a closed underside and curved marginal claws. Deterministic
+generation, binary bounds/material coverage and native fresh/reload/state
+advancement pass; evidence and qualifications are in validation_v5_16_3/cuero.
+It supplies no production body, collision, aquatic/wrapping behavior or encounters.
+Art review and combat animations remain pending.
+
 Pombero also has an unintegrated 40-frame technical mesh/OBJ/MD3. Native playback,
 save/reload and deterministic binary checks pass. The facial surface, cloth/straw
 scale and ear rims are refined; hair/clothing geometry, production animation
@@ -24,7 +31,8 @@ Nahuelito (CA-FOLK-055) has an editable real 3D visual pilot, a native 40-frame
 idle/swim export and reproducible native fresh/reload evidence. ASSETS records
 sources, generation and limits. It is unintegrated: no new statistics, encounters,
 aquatic behavior, collision or campaign unique-instance persistence is activated.
-The other 57 references and per-creature design remain outstanding. Catalogue
+Together with Pombero and Cuero, three references now have visual pilots;
+the other 55 models and per-creature design remain outstanding. Catalogue
 acceptance is distinct from CA455-VIS-01 visual review and creature integration.
 The V5.16 batch and final author terminal are not ready.
 

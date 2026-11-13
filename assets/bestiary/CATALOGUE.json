@@ -2011,9 +2011,27 @@
       "protected_existing_identity": null,
       "production_status": "provisional_combat_unplaced",
       "engine_id": null,
-      "mesh": null,
-      "rig": null,
-      "animations": [],
+      "mesh": "assets/bestiary/models/cuero/models/caelum/folklore/cuero/cuero.md3",
+      "rig": "Procedural membrane deformation and articulated claws/eyes in DESIGN.json; no skeleton/armature delivered",
+      "animations": [
+        "idle:16 samples",
+        "swim:24 samples"
+      ],
+      "visual_pilot": {
+        "issue": 455,
+        "source": "assets/source/art/cuero_455/DESIGN.json",
+        "mesh": "assets/bestiary/models/cuero/models/caelum/folklore/cuero/cuero.md3",
+        "manifest": "assets/bestiary/models/cuero/manifest.json",
+        "rig": "Procedural membrane deformation and articulated claws/eyes in DESIGN.json; no skeleton/armature delivered",
+        "animations": [
+          "idle:16 samples",
+          "swim:24 samples"
+        ],
+        "runtime_enabled": false,
+        "author_accepted": false,
+        "limits": "Technical visual pilot only. No actual swimming, wrapping behavior, collision, combat animation set, encounters or campaign ownership.",
+        "generator": "assets/generators/generate_cuero_model.py"
+      },
       "actor_class": "CaelumBestiary053",
       "combat_template": "CaelumMandinga",
       "combat_art": "inherited_Mandinga_placeholder",

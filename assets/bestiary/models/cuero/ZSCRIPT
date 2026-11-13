@@ -1,0 +1,95 @@
+version "4.14.2"
+// Piloto visual: sin física, captura, combate ni población autorizados.
+class CA455CueroPreview : Actor
+{
+    Default { RenderRadius 80; +NOINTERACTION +NOGRAVITY }
+    States
+    {
+    Spawn:
+        Goto Idle;
+    Idle:
+    Frame0:
+        CUEI A 4;
+    Frame1:
+        CUEI B 4;
+    Frame2:
+        CUEI C 4;
+    Frame3:
+        CUEI D 4;
+    Frame4:
+        CUEI E 4;
+    Frame5:
+        CUEI F 4;
+    Frame6:
+        CUEI G 4;
+    Frame7:
+        CUEI H 4;
+    Frame8:
+        CUEI I 4;
+    Frame9:
+        CUEI J 4;
+    Frame10:
+        CUEI K 4;
+    Frame11:
+        CUEI L 4;
+    Frame12:
+        CUEI M 4;
+    Frame13:
+        CUEI N 4;
+    Frame14:
+        CUEI O 4;
+    Frame15:
+        CUEI P 4;
+        Goto Idle;
+    Swim:
+    Frame16:
+        CUES A 3;
+    Frame17:
+        CUES B 3;
+    Frame18:
+        CUES C 3;
+    Frame19:
+        CUES D 3;
+    Frame20:
+        CUES E 3;
+    Frame21:
+        CUES F 3;
+    Frame22:
+        CUES G 3;
+    Frame23:
+        CUES H 3;
+    Frame24:
+        CUES I 3;
+    Frame25:
+        CUES J 3;
+    Frame26:
+        CUES K 3;
+    Frame27:
+        CUES L 3;
+    Frame28:
+        CUES M 3;
+    Frame29:
+        CUES N 3;
+    Frame30:
+        CUES O 3;
+    Frame31:
+        CUES P 3;
+    Frame32:
+        CUES Q 3;
+    Frame33:
+        CUES R 3;
+    Frame34:
+        CUES S 3;
+    Frame35:
+        CUES T 3;
+    Frame36:
+        CUES U 3;
+    Frame37:
+        CUES V 3;
+    Frame38:
+        CUES W 3;
+    Frame39:
+        CUES X 3;
+        Goto Swim;
+    }
+}
