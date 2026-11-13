@@ -58,7 +58,17 @@ private chest offset. The source generator now preserves the existing ChestPosit
 method, previously omitted from generation. The initial runner failed before
 launch due to Windows default text decoding, then a shell quoting edit; explicit
 UTF-8 and the corrected source passed. Production MAP03/CAH geometry is unchanged;
-ordinary travel, integrated services, siege and city save continuation remain open.
+ordinary travel, integrated services and siege remain open.
+
+The city compatibility mode preserves revision-3 MAP03 independently of the sewer
+mode. Native baseline saves with active MAP03 and stored MAP03 while in CAH069
+load under current code and return through the hub with original gates, all160
+doorway/chest offsets, Justice sector767 and persistent diagnostic stamps. All160
+private CAH WADs match baseline bytes. The first fixture used different package
+basenames and GZDoom correctly refused its save; keeping the established
+caelum_argenteum_dev.pk3 basename passed without rewriting save metadata. Final
+checksum-dispatch runtime was checked with the verified old saves. Repeat after
+new-city integration; ordinary house use and author acceptance remain pending.
 
 The author requested prevention of system sleep while away for several hours.
 A temporary system-only execution-state request is active during work, with a

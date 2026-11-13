@@ -76,9 +76,13 @@ merchant/reward. No administrative gameplay is introduced.
 The source is not runtime enabled. CABAPRV is a disposable geometry/model preview
 under build/, with no production MAP03 replacement or private CAH map change.
 Exact preceding MAP03 and relevant sources are preserved in
-assets/map06_port/legacy_5162. City save continuation still needs implementation
-and native active/hub tests; the existing MAP02 compatibility flag does not
-provide that city mode.
+assets/map06_port/legacy_5162. `-LegacyMap03Revision3` /
+`--legacy-map03-revision3` retains those bytes independently of the sewer flag.
+Current-code active/stored-hub continuation passes, including MAP03/CAH069 travel,
+original gate/coordinate identities and Justice lookup by loaded-map checksum.
+This retains the old city; it does not convert it. Repeat with the integrated
+new-city runtime before activating MAP03. Evidence is in
+assets/validation_v5_16_2/barracas-legacy/SUMMARY.json.
 
 The preview passes 424 static route targets and 424 native maximum-body endpoint
 clearance queries, including building approaches/interiors and both sides of

@@ -5,7 +5,6 @@ setlocal EnableDelayedExpansion
 
 REM Select compatibility explicitly; never modify or restart a saved campaign.
 set "BUILD_MAP_OPTION="
-if not "%~4"=="" goto invalid_arguments
 :parse_arguments
 if "%~1"=="" goto arguments_ready
 if /I "%~1"=="--legacy-map01" (
@@ -14,6 +13,8 @@ if /I "%~1"=="--legacy-map01" (
     set "BUILD_MAP_OPTION=!BUILD_MAP_OPTION! -LegacyMap02"
 ) else if /I "%~1"=="--legacy-map02-revision5" (
     set "BUILD_MAP_OPTION=!BUILD_MAP_OPTION! -LegacyMap02Revision5"
+) else if /I "%~1"=="--legacy-map03-revision3" (
+    set "BUILD_MAP_OPTION=!BUILD_MAP_OPTION! -LegacyMap03Revision3"
 ) else if /I "%~1"=="--legacy-map06" (
     set "BUILD_MAP_OPTION=!BUILD_MAP_OPTION! -LegacyMap06"
 ) else if /I "%~1"=="--legacy-map06-siege" (
@@ -77,10 +78,11 @@ endlocal
 exit /b
 
 :invalid_arguments
-echo Usage: run_dev.bat [--legacy-map01] [--legacy-map02 ^| --legacy-map02-revision5] [--legacy-map06 ^| --legacy-map06-siege ^| --legacy-map06-north-city ^| --legacy-map06-furnished]
+echo Usage: run_dev.bat [--legacy-map01] [--legacy-map02 ^| --legacy-map02-revision5] [--legacy-map03-revision3] [--legacy-map06 ^| --legacy-map06-siege ^| --legacy-map06-north-city ^| --legacy-map06-furnished]
 echo --legacy-map01 continues saves that already visited the pre-5.8.2 mansion, without the new connected deposits.
 echo --legacy-map02 continues saves that already visited the original 4.36.4 maze.
 echo --legacy-map02-revision5 continues pre-redesign sewer saves, including MAP02 stored in a hub.
+echo --legacy-map03-revision3 continues pre-redesign Barracas saves, including MAP03 stored in a hub.
 echo MAP06 options below require the complete pre-5.4.29 checkout b9fd71ce.
 echo --legacy-map06 continues saves that already visited the pre-siege 4.36.26 port.
 echo --legacy-map06-siege continues saves that already visited the 4.36.27-4.37.8 siege port.

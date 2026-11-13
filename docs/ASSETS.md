@@ -31,6 +31,9 @@ validation_v5_16_2/barracas-preview. legacy_5162 preserves original MAP03 bytes 
 a deterministic ZIP of relevant data/generator/helper sources before redesign.
 RUNTIME.json/CaelumBarracasData are deterministic exterior-coordinate outputs of
 generate_barracas_data.py. Private CAH coordinates retain their original source.
+The city compatibility mode packages legacy_5162/MAP03.wad after verifying its
+provenance checksum. barracas-legacy/ holds native continuation logs; all 160 CAH
+map bytes match baseline. Loaded-map checksum selects the original Justice arena.
 The isolated native service/rotated-leaf fixture and results live under
 validation_v5_16_2/run_barracas_services.py and barracas-services/.
 

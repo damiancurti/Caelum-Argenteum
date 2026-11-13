@@ -27,7 +27,10 @@ and its all-78-essence/Respected reputation requirements are author-approved;
 the recovered bestiary and map references proceed through separate issues.
 Barracas also has an [isolated architectural preview](assets/barracas_redesign/LAYOUT.json)
 with 288 retained building identities; it is not activated in MAP03. City services,
-four-gate siege integration and old-city save continuation remain unfinished.
+four-gate siege integration remain unfinished. For visited original Barracas saves,
+`run_dev.bat --legacy-map03-revision3` retains exact geometry and private-house
+identities. Active/stored-hub continuation passed with current code; repeat
+verification after the redesigned city is integrated.
 The rotated-door/coordinate slice passes 224 native service endpoint checks and
 160 portals/320 leaf placements; private interior coordinates are retained.
 
