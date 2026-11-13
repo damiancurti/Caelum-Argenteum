@@ -85,8 +85,118 @@ the models floated because height zero was relative to the shell's roof floor.
 Subtracting that 184-MU base floor restored their intended world height. Logs and
 failed/corrected views are retained; the runner now rejects Unknown type warnings.
 This preview neither activates MAP03 nor completes services, siege or city save
-compatibility. The author has been asked to choose the siege disposition while
-independent architecture work proceeds.
+compatibility. The author approved the south/east/west fronts, one active and
+one reserve ram per front, and the northern bridge gate. The 36 installed
+defensive guns retain 12 active: four towers, four south, two east and two west.
+
+The next isolated services slice preserves private CAH coordinates while adding
+revision-4 exterior dispatch and rotated portal leaves. Native GZDoom passed
+224 maximum-body endpoints, 160 portals and 320 leaf placements, plus the retained
+private chest offset. The source generator now preserves the existing ChestPosition
+method, previously omitted from generation. The initial runner failed before
+launch due to Windows default text decoding, then a shell quoting edit; explicit
+UTF-8 and the corrected source passed. Production MAP03/CAH geometry is unchanged;
+ordinary travel, integrated services and siege remain open.
+
+The city compatibility mode preserves revision-3 MAP03 independently of the sewer
+mode. Native baseline saves with active MAP03 and stored MAP03 while in CAH069
+load under current code and return through the hub with original gates, all160
+doorway/chest offsets, Justice sector767 and persistent diagnostic stamps. All160
+private CAH WADs match baseline bytes. The first fixture used different package
+basenames and GZDoom correctly refused its save; keeping the established
+caelum_argenteum_dev.pk3 basename passed without rewriting save metadata. Final
+checksum-dispatch runtime was checked with the verified old saves. Repeat after
+new-city integration; ordinary house use and author acceptance remain pending.
+
+The four-gate prototype was then made physically closed: its southern perimeter
+was no longer clipped to the old rectangular envelope, the northern gate was
+aligned to the wall, and full-depth jambs isolated its narrow opening from the
+wide bridge. The new closed-grid audit first exposed an exterior bypass, then
+passed with none. Native tests pass224 service endpoints,320 door leaves,160 gate
+collision/open samples and four direct Used-handler calls. All four closed/open
+views were inspected. The first gate probe had NOINTERACTION and ignored actor
+blockers; the corrected solid probe passed. The author approved north/east
+reinforced, south wooden and west armored gates using existing statistics.
+Production MAP03 remains unchanged; siege, full services and travel are unfinished.
+
+The subsequent unactivated city candidate connected original port content and
+services to the revised layout, retaining private CAH coordinates and low
+residential sky. Current helpers select positions/facing by loaded revision;
+existing old-city actors are not repositioned. Native fresh/reload and native
+MAP03/CAH069/return pass with64 merchants,96 factory stations,four ready vehicles
+and all four original household objects, with exact new doorstep return. Old
+active/stored-hub continuation also passes with that runtime. The first fixture
+looked for already-relocated objects at the quay; checking their actual registry
+and private placement corrected the assertion. The later runner waits for its
+queued screenshot before quitting and requires captures. No new siege, complete
+boarding interaction, ordinary door acknowledgement, final art or performance
+acceptance is claimed; a passive fixture suppresses obsolete siege deployment.
+
+The artillery geometry candidate then retained 36 guns/four towers and adapted
+their access flights to the irregular perimeter without moving accepted lots.
+The first native run walked 33/36 routes and exposed wall rounding, crossing
+flights and guard obstructions. Subsequent tests exposed overlapping approach
+points/towers and unsupported operator posts on oblique wall sections. Global
+placement exclusions, level slabs and a raster-aware guard margin corrected
+these failures. Final checks pass 72 isolated walks through 698 authored route
+points to both operator posts,528 guards and648 actual cannon components. The
+final map/package repeat identically;424 static targets and closed-perimeter
+isolation remain valid. The initial northwest camera was inside a building;
+exterior views were corrected and inspected without repeating unchanged walks.
+All attempts are retained in barracas-forts/SUMMARY.json. The fixture suppresses
+siege AI and ignores other test walkers; real deployment/crowds/firing coverage,
+performance, production activation and author acceptance remain unfinished.
+
+On 2026-11-13, the same candidate assembly supplied 600 exterior deployment routes
+with 9453 waypoints. The first authoring attempt excluded entire conceptual lots
+and disconnected a valid service network; excluding indoor footprints instead
+retained native-clear forecourts/alleys. The original 600 identities, private
+coordinates and resident 69->70 relocation remain. Revision4 data dispatch was
+added to artillery, guard/formation, CityRoutes and PropertyRoutes helpers;
+original geometry retains its unchanged route bodies. Both fresh and reloaded
+native probes pass 866538 continuous movement samples without geometry failures.
+These bounded actor-ignoring probes establish physical routes and loaded-map
+dispatch, not real 600-body AI/crowds or completed siege behavior. Evidence is in
+barracas-deployment/SUMMARY.json; production activation remains pending.
+The new runtime also passes continuation from the verified original active and
+stored-hub seeds, retaining eight original gates, Justice and all 160 original
+door/chest offsets. All 238 packaged maps, including 160 private interiors, remain
+byte-identical to the preceding runtime. This does not replace old-save testing
+against the eventual integrated city/controller.
+
+The next #454 slice adds opt-in segment turns for rams without changing their
+movement/rotation rates or the fixed-heading behavior of earlier saved routes.
+The large frame exceeded the new tunnel's width/headroom, so only the exterior
+half was opened as a forecourt; the inner throat and native blocker remain.
+The first compiled native attempt passed eight cases but found both western
+turns unsupported at the old exterior-ground edge. Filling missing side-front
+ground corrected this. Fresh and mid-turn-reloaded runs each pass ten cases:
+both sizes against four gates plus two fixed-heading controls, with native
+impacts on the intended blocker. A prior fixture compilation error used an
+actor-only angle helper from an event handler; its log is retained separately.
+This fixture repeats the physical step32 times per tic and has no live crew:
+it does not establish battle timing, crowd navigation, reserve activation,
+performance or author acceptance. See barracas-rams/SUMMARY.json.
+
+The following crew slice retains6/32 members, deriving rotating posts from
+accepted body bounds and the original machine/guard dimensions. Initial43/49-MU
+rows passed377424 isolated point samples but not live AI. Search movement
+overrode assigned posts; later native collision/arrival overlap still caused
+drift. The final layout uses61-MU rows for axis-aligned boxes at45 degrees and
+a clearance-derived arrival tolerance, with direct native steps, an explicit
+walking-state transition and station priority over remembered search points.
+No combat statistics, physical collisions or visible-target rules were removed.
+The wider outer forecourt initially opened a diagonal-wall bypass; inner
+shoulders plus full outer flanks restored closed-perimeter isolation.
+
+Final live tests pass with38 real Mandingas at normal cadence, without fixture
+teleports: small south-gate contact at2176 simulation tics and large west-gate
+contact at2544, identically after mid-turn reload. Earlier failures and the
+diagnostic Name/string compile correction are retained. Fresh exterior views
+were inspected. The common helper also supplies captured crew coordinates, but
+these live cases exercise hostile crews only. Production three-front/reserve,
+capture/refill, full crowd/performance and author acceptance remain pending.
+Evidence: barracas-ram-crews/SUMMARY.json.
 
 The author requested prevention of system sleep while away for several hours.
 A temporary system-only execution-state request is active during work, with a
@@ -118,6 +228,20 @@ native creature validation remain future work under the creature/art issues.
 The #453 region-completeness gate now passes with zero missing rows. No manual acceptance entry is added or removed for reference import.
 
 ## 5.16.0 - Regional campaign planning (#452, in progress, 2026-11-12)
+
+Recorded on2026-11-13: the author approved the proposed named Major allocation
+as a base, preserving Fool in the prologue and seven per chapter. The four
+resident anchors belong to ChapterI, Death to Zupay's definitive ChapterII
+encounter, Devil to the prince's banishment, and World remains last in ChapterIII.
+Existing canonical IDs, including Justice8/Strength11, are retained. The author
+also approved checking78/+250 immediately before Selene combat on the Moon;
+the lunar World acquisition requires the other77 essences. This resolves the
+circular final-card/travel gate without inventing lunar transport. Authoring
+schema2 records these decisions; runtime and save schemas remain unchanged.
+The bounded audit passes all22 Major identities and the77 prerequisites; negative
+controls reject a duplicated Major, World requiring itself and moving the finale
+requirement before lunar travel. Remaining geography/scripts still fail the
+completion gate. Evidence: validation_v5_16_0/approved-major-finale-audit.json.
 
 Later on the same date the author explicitly approved cooperative finale entry
 when one participant satisfies both requirements. Group travel still requires

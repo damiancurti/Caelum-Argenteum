@@ -1,5 +1,5 @@
 {
-  "schema_revision": 1,
+  "schema_revision": 2,
   "issue": 452,
   "status": "partially_authored",
   "runtime_enabled": false,
@@ -31,6 +31,18 @@
       "date": "2026-11-12",
       "decision": "Basta con un participante elegible",
       "scope": "One participant satisfying both finale requirements admits the consenting group; personal acquisition remains personal."
+    },
+    {
+      "source": "author conversation",
+      "recorded_on": "2026-11-13",
+      "decision": "Aprobar el requisito ante Selene",
+      "scope": "Require78 acquired essences and+250 at the entrance to Selene combat on the Moon, after lunar travel; obtain the World there after the other77."
+    },
+    {
+      "source": "author conversation",
+      "recorded_on": "2026-11-13",
+      "decision": "Aprobar esta asignación",
+      "scope": "Seven named Majors per chapter, Fool in prologue, four resident anchors, Death for definitive Zupay and Devil for prince banishment. Preserve opening acquisitions0/36/60."
     }
   ],
   "targets": {
@@ -65,7 +77,11 @@
         "Implanted prisoner souls",
         "Full Tarot plan"
       ],
-      "unresolved": []
+      "unresolved": [],
+      "major_essence_ids": [
+        0
+      ],
+      "major_story_anchors": {}
     },
     {
       "id": "chapter_1",
@@ -93,11 +109,25 @@
         "Their implanted souls differ from the authentic residents in Limbo"
       ],
       "unresolved": [
-        "Major assignments",
         "Resident-body confrontations and reintegration timing",
         "Regional order and individual gates",
         "Chapter exit condition"
-      ]
+      ],
+      "major_essence_ids": [
+        11,
+        9,
+        4,
+        2,
+        1,
+        5,
+        7
+      ],
+      "major_story_anchors": {
+        "11": "Rulo",
+        "9": "Ronnie",
+        "4": "Argento",
+        "2": "Caella"
+      }
     },
     {
       "id": "chapter_2",
@@ -121,12 +151,24 @@
       "player_knowledge": [],
       "concealed_information": [],
       "unresolved": [
-        "Major assignments",
         "Regional order and individual gates",
         "Zupay death encounter",
         "Exact revelation scenes",
         "Chapter entry and exit conditions"
-      ]
+      ],
+      "major_essence_ids": [
+        3,
+        6,
+        10,
+        8,
+        12,
+        13,
+        15
+      ],
+      "major_story_anchors": {
+        "13": "Definitive Zupay encounter",
+        "15": "Infernal prince banishment"
+      }
     },
     {
       "id": "chapter_3",
@@ -153,12 +195,21 @@
       "player_knowledge": [],
       "concealed_information": [],
       "unresolved": [
-        "Major assignments",
         "Regional order and individual gates",
         "Means of lunar travel",
         "Chapter entry condition",
         "Final encounter statistics and scripts"
-      ]
+      ],
+      "major_essence_ids": [
+        14,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "major_story_anchors": {}
     }
   ],
   "chapter_order": [
@@ -323,7 +374,7 @@
       "required_acquired_essences": 78,
       "source": "docs/SYSTEMS.md, 5.13.1 - Capture sources and unified Tarot"
     },
-    "unresolved_interaction": "The author selected all 78 acquired essences for entry, matching the existing deity-damage power. Encounter statistics, scripts, lunar travel remain to be authored.",
+    "unresolved_interaction": "Finale checkpoint and World dependencies are approved. Lunar transport means, encounter statistics and exact scripts remain unauthored.",
     "reputation_track_operator": "ANY",
     "faction_membership_required": false,
     "story_sequence": [
@@ -337,6 +388,91 @@
       "essences_consumed": false,
       "epilogue": "Reflect existing city and faction outcomes",
       "continued_exploration": true
+    },
+    "requirement_checkpoint": "before_selene_combat_on_moon",
+    "lunar_travel_requires_finale_eligibility": false,
+    "world_acquisition": {
+      "region": "Moon",
+      "requires_acquired_essence_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77
+      ],
+      "grant_automatically": false
     }
   },
   "delivery_stages": [
@@ -370,5 +506,6 @@
       "scope": "Approve and integrate memories, revelations and chapter transitions",
       "status": "awaiting_scripts"
     }
-  ]
+  ],
+  "major_allocation_note": "Approved chapter allocation, not a mandatory within-chapter acquisition order. Exact maps, confrontations and reintegration scripts remain unauthored."
 }

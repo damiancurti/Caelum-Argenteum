@@ -4903,6 +4903,23 @@
         "width_mu": 768,
         "original_vertices": 40293,
         "original_sectors": 767
+      },
+      "compatibility_geometry": {
+        "checksum": "03f80198bfae8ba82cc435775001ba91",
+        "sector": 767,
+        "origin": [
+          2368,
+          16704,
+          0
+        ],
+        "center": [
+          2752.0,
+          17088.0,
+          0
+        ],
+        "width_mu": 768,
+        "original_vertices": 40293,
+        "original_sectors": 767
       }
     },
     {
@@ -5033,6 +5050,6 @@
     }
   ],
   "settings_sha256": "885f1ddb374b3204bfef51c92224700cf75dc1bff7af0e40a7344c33bf03a3d5",
-  "index_sha256": "e74c332c571634afebe9683d92509dd9ffb013d65699438b6317299ae8ca678d",
+  "index_sha256": "c5e9e7d5076d9704ffc4642600eeaeb349d150a94247c69a5369ceccf1fa71f8",
   "examples_settings_sha256": "ad6d759a8d9a32f08c6da1eaf7f23849d38e14521e6ed1e2e74942cc8ed0d450"
 }

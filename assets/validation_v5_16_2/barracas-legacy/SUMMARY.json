@@ -1,0 +1,26 @@
+{
+  "issue": 454,
+  "release": "5.16.2",
+  "scope": "Exact revision-3 MAP03 continuation with current code. Production replacement has not yet occurred; repeat against the integrated new-city runtime.",
+  "baseline_sha256": "2b98fa4a15e931a83786831aaaa0dab67d8ffb5ed7030cb90c7946bf709afc95",
+  "runtime_sha256": "63cd5de73099dcb050335d4667dcfc1efa9608be9c7c84849913ce2b71f58524",
+  "map03_sha256": "85f0a1c00d80354c9899bf4289e1cf47fd2bae45313816ad939dccbe75c12151",
+  "native_map_checksum": "03f80198bfae8ba82cc435775001ba91",
+  "justice_sector": 767,
+  "unchanged_private_interiors": 160,
+  "runs": {
+    "01": "Seed passed; continuation refused because fixture package basenames differed.",
+    "02": "Stable caelum_argenteum_dev.pk3 basename: old seed, active continuation and stored-hub continuation passed.",
+    "03": "Final checksum-dispatch runtime: active and stored-hub continuations passed with verified run02 seeds.",
+    "04": "Port-services dispatch runtime: old active and stored-hub continuation passed with run02 original seeds; production MAP03 still byte-identical.",
+    "05": "Revision4 artillery/deployment dispatch runtime: old active and stored-hub seeds pass with original8 gates,Justice and160door/chest coordinates. All238runtime maps unchanged."
+  },
+  "checks": [
+    "Revision3 controller, eight original gates, Justice sector and all160 original doorstep/chest offsets retained.",
+    "Native stamp persisted across save/reload and MAP03 -> CAH069 -> MAP03 hub travel.",
+    "All160 private CAH WADs byte-identical; CAHUNT is separately named and is not a house."
+  ],
+  "qualification": "Native changemap bypasses ordinary door use. No author saves, siege/performance or author acceptance. Fixture packages, executable, IWAD and saves remain untracked.",
+  "services_runtime_sha256": "e0afb3b55f6611d42d09cc475c88821fb8938ccf0fa0795b11f575015f1a4629",
+  "deployment_runtime_sha256": "7d5391270ce383b2db33846c73040901258743200c426ce0ec63734a38f1502c"
+}

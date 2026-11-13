@@ -36,11 +36,11 @@ class CaelumPortData : Object play
     static int MandingaCount(){return IsSouth()?CaelumReinforcementData.TOTAL:MANDINGAS;}
     static int DefenderCount(){return IsSouth()?600:DEFENDERS;}
     static int GunCount(){return IsSouth()?42:18;}
-    static bool ActiveGun(int i){return !IsSouth() || i<6 || i==6 || i==7 || i==8 || i==9 || i==10 || i==11 || i==12 || i==13 || i==14 || i==15 || i==16 || i==17;}
+    static bool ActiveGun(int i){if(CaelumBarracasData.IsCurrent())return i<6 || CaelumBarracasSiegeData.ActiveGun(i-6);return !IsSouth() || i<6 || i==6 || i==7 || i==8 || i==9 || i==10 || i==11 || i==12 || i==13 || i==14 || i==15 || i==16 || i==17;}
     static vector3 OperatorOffset(int i,int slot){double side=(slot==0?-1:1)*OPERATOR_SIDE;
         if(IsSouth() && (i==26 || i==27 || i==28 || i==29 || i==30 || i==31 || i==32 || i==33 || i==34 || i==35 || i==36 || i==37 || i==38 || i==39 || i==40 || i==41))return (0,side,0);
         return (side,0,0);}
-    static double GunAngle(int i){if(IsSouth()){
+    static double GunAngle(int i){if(CaelumBarracasData.IsCurrent() && i>=6)return CaelumBarracasSiegeData.GunAngle(i-6);if(IsSouth()){
         if(i==6)return 270;
         if(i==7)return 270;
         if(i==8)return 270;
@@ -104,11 +104,12 @@ class CaelumPortData : Object play
         return 0;
     }
     static vector3 BossPosition(){if(IsSouth())return (-14464,-21248,0);return (0,9216,0);}
-    static vector3 BedPosition(){return (-768,1664,0);}
-    static vector3 WorkbenchPosition(){return (-768,1472,0);}
-    static vector3 CompletionPosition(){return (128,1856,0);}
+    static vector3 BedPosition(){return CaelumBarracasData.CurrentPortPoint((-768,1664,0));}
+    static vector3 WorkbenchPosition(){return CaelumBarracasData.CurrentPortPoint((-768,1472,0));}
+    static vector3 CompletionPosition(){return CaelumBarracasData.CurrentPortPoint((128,1856,0));}
     static vector3 GunPosition(int i)
     {
+        if(CaelumBarracasData.IsCurrent() && i>=6)return CaelumBarracasSiegeData.GunPosition(i-6);
         if(IsSouth())
         {
             if(i==0)return (-30464,-15744,0);
@@ -163,6 +164,7 @@ class CaelumPortData : Object play
     }
     static vector3 GuardPosition(int i)
     {
+        if(CaelumBarracasData.IsCurrent())return CaelumBarracasSiegeData.GuardPosition(i);
         if(IsSouth()){
             if(i==0)return (-28016,-13352,0);
             if(i==1)return (-28056,-13352,0);
@@ -703,7 +705,7 @@ class CaelumPortData : Object play
         if(i==0)return 0;
         if(i==1)return 90;
         return 0;}
-    static int CrewRouteCount(int i){
+    static int CrewRouteCount(int i){if(CaelumBarracasData.IsCurrent())return CaelumBarracasSiegeData.CrewRouteCount(i);
         if(i==0)return 18;
         if(i==1)return 18;
         if(i==2)return 18;
@@ -741,7 +743,7 @@ class CaelumPortData : Object play
         if(i==34)return 18;
         if(i==35)return 18;
         return 0;}
-    static vector3 CrewRoutePoint(int i,int p){switch(i){
+    static vector3 CrewRoutePoint(int i,int p){if(CaelumBarracasData.IsCurrent())return CaelumBarracasSiegeData.CrewRoutePoint(i,p);switch(i){
         case 0:return CrewRoute0(p);
         case 1:return CrewRoute1(p);
         case 2:return CrewRoute2(p);

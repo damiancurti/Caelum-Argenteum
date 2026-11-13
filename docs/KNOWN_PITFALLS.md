@@ -4,6 +4,100 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-220 - Rotating crew posts need box clearance and live AI evidence
+
+Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED for isolated ram crews.
+First recorded / last checked: 2026-11-13 / 2026-11-13.
+Issue / PR: #454 / #643. Baseline: afccdb299 plus the opt-in crew layout;
+exact runtime/map hashes and attempts are in barracas-ram-crews/SUMMARY.json.
+Environment: Windows11, GZDoom4.14.2, Vulkan, unpaused background at5% audio.
+Scope:6/32 real Mandingas and two rams, plus separate physical clearance probes.
+
+Empty-space sampling of desired posts did not prove live movement. Remembered
+search goals could outrank the assigned station; cached chase direction and
+idle cadence also differed from deliberate walking. Euclidean post separation
+did not account for axis-aligned actor boxes during turns or the arrival radius
+that allowed adjacent occupants to obstruct one another. Derive row spacing
+and arrival tolerance from the worst rotated box clearance. Keep the native
+body, movement speed and cadence; re-evaluate the moving post at each step.
+
+The combined correction passes fresh/reloaded hostile crew approaches in2176
+and2544 simulation tics, with all38 bodies and real gate impacts. Individual
+fix contributions were not isolated as performance ablations. This is not a
+full battle/capture/refill/FPS or author-acceptance result. Preserve original
+saved crew behavior behind explicit layout revisioning; do not apply the new
+station policy to unrelated AI merely because it shares a navigation helper.
+
+## CA-KP-219 - Machine approaches need swept body clearance and ground support
+
+Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED for isolated ram access.
+First recorded / last checked: 2026-11-13 / 2026-11-13.
+Issue / PR: #454 / #643. Baseline: 14732ca89 plus the ram-access candidate;
+exact runtime/map hashes are in barracas-rams/SUMMARY.json.
+Environment: Windows11, GZDoom4.14.2, Vulkan, unpaused background at5% audio.
+Scope: physical frame/face/head movement and gate contact; no crew AI.
+
+A character-clear128-MU tunnel did not accommodate the original large ram's
+frame. Open only the exterior forecourt if the frame must stop before the gate;
+widening the inner throat can permit bypass beside the unchanged96-MU blocker.
+The western turning point also needed ground beyond the previous map edge,
+even though its centre was on valid ground. Test every physical component
+through translation and rotation, retaining floor support and native collision.
+
+Regression evidence: fresh and mid-turn-reloaded runs each complete eight
+gate/size cases and two legacy fixed-heading controls, with physical blocker
+impacts. The fixture repeats normal steps32 times per diagnostic tic; those
+results do not establish elapsed approach time, crew navigation or performance.
+Check closed/open character passages separately after editing gate forecourts.
+
+## CA-KP-218 - Relocated stairs require a complete structure and support audit
+
+Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED for the isolated city candidate.
+First recorded / last checked: 2026-11-12 / 2026-11-12.
+Issue / PR: #454 / #643. Baseline: 33acaa333 with the candidate fortifications;
+exact runtime/map hashes are in barracas-forts/SUMMARY.json.
+Environment: Windows 11, GZDoom 4.14.2, Vulkan, unpaused background at 5% audio.
+Scope: authored geometry, ground posts and isolated native crew movement.
+
+Checking each translated flight only against buildings missed intersections
+with other flights, tower footprints and their landing/approach points. The
+first native attempt completed 33 of 36 routes. Cardinal operator offsets on
+oblique walls also left some posts unsupported. Rounded wall cells reached a
+guard whose continuous polygon distance appeared clear. A complete placement
+audit, level firing platforms and a raster-aware ground margin corrected these
+cases. Quantize flight geometry consistently inward; preserve guard formations
+as rigid grids instead of independently snapping their rows.
+
+Regression evidence: 698 authored points, 528 guard posts, 72 operator posts,
+648 actual cannon parts and 72 completed gravity/TryMove paths. Validate support
+height as well as empty headroom. Distinguish geometric path traversal from AI,
+crowd movement and firing coverage: these walkers intentionally ignore one
+another and the production siege is suppressed. No performance or author
+acceptance follows from these isolated results.
+
+## CA-KP-217 - Physical collision probes must participate in actor collision
+
+Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED for the isolated gate probe.
+First recorded / last checked: 2026-11-12 / 2026-11-12.
+Issue / PR: #454 / #643. Baseline: edfdba4d4 with the uncommitted gate fixture;
+exact runtime/source hashes and all logs are in barracas-gates/SUMMARY.json.
+Environment: Windows11, GZDoom4.14.2, Vulkan, disposable CABAPRV, unpaused
+background at5% audio. Scope: diagnostic CheckPosition actor-versus-gate tests.
+
+The earlier NOINTERACTION probe was sufficient to query static floor/ceiling
+clearance but ignored solid native gate blockers. It reported12 passable samples
+through four closed gates. Removing NOINTERACTION and using SOLID/NOGRAVITY
+produced the expected blocked results; all160 closed/open geometry samples then
+passed. Each gate's real Used handler also opened it in a later check. Preserve
+both a known blocked and known passable control in a physical probe. Do not infer
+actor collision from a static clearance test or from process exit zero.
+
+Evidence: assets/validation_v5_16_2/barracas-gates/run-02 (bad instrument), run-03
+(corrected physical probe), run-05 (final runtime, four Used calls and views).
+Regression: require blocked closed-gate samples and clear opened-gate samples
+with the largest supported body. This fixture does not establish ordinary user
+interaction, integrated siege behavior, performance or author acceptance.
+
 ## CA-KP-216 - TID zero is not an untagged actor census
 
 Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED in the isolated #455 fixture.

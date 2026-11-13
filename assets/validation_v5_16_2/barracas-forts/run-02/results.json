@@ -1,0 +1,33 @@
+{
+  "issue": 454,
+  "scope": "Test all36 artillery access paths and528 guard posts in the native engine.\n\nThe isolated walking body retains defender dimensions/step height. It ignores\nother test walkers, not geometry. No live deployment or combat acceptance.",
+  "runtime_sha256": "e0afb3b55f6611d42d09cc475c88821fb8938ccf0fa0795b11f575015f1a4629",
+  "candidate_sha256": "61d96daf5a7598060a6f61cef4c73e5f314edb153924dbbeee772af827ba60f0",
+  "siege_sha256": "93ae705b63f2e8fc878c3d410bf084797caff03d6124c8a17dda58fd85be6ab1",
+  "fixture_sha256": "8a772068b7b43ce612fef5245376165a6af62e310c04af08b7b5f0fa08f2fbf9",
+  "passed": false,
+  "exit_code": 0,
+  "timeout": false,
+  "checks": [
+    "CA454 FORT FIT FAIL gun=10 step=17 z=256.0 floor=224.0 ceiling=1024.0",
+    "CA454 FORT FIT FAIL gun=10 step=19 z=272.0 floor=256.0 ceiling=1024.0",
+    "CA454 FORT FIT FAIL gun=28 step=17 z=256.0 floor=176.0 ceiling=1024.0",
+    "CA454 FORT FIT FAIL gun=35 step=17 z=256.0 floor=240.0 ceiling=1024.0",
+    "CA454 FORT OPERATOR FAIL gun=0 slot=0 floor=0.0 ceiling=1024.0",
+    "CA454 FORT OPERATOR FAIL gun=1 slot=0 floor=0.0 ceiling=1024.0",
+    "CA454 FORT OPERATOR FAIL gun=2 slot=0 floor=0.0 ceiling=1024.0",
+    "CA454 FORT OPERATOR FAIL gun=3 slot=0 floor=0.0 ceiling=1024.0",
+    "CA454 FORT OPERATOR FAIL gun=7 slot=1 floor=0.0 ceiling=1024.0",
+    "CA454 FORT OPERATOR FAIL gun=12 slot=0 floor=-0.0 ceiling=1024.0",
+    "CA454 FORT OPERATOR FAIL gun=13 slot=0 floor=-0.0 ceiling=1024.0",
+    "CA454 FORT OPERATOR FAIL gun=15 slot=0 floor=-0.0 ceiling=1024.0",
+    "CA454 FORT OPERATOR FAIL gun=16 slot=0 floor=-0.0 ceiling=1024.0",
+    "CA454 FORT OPERATOR FAIL gun=16 slot=1 floor=-0.0 ceiling=1024.0",
+    "CA454 FORT OPERATOR FAIL gun=29 slot=0 floor=-0.0 ceiling=1024.0",
+    "CA454 FORT OPERATOR FAIL gun=31 slot=0 floor=-0.0 ceiling=1024.0",
+    "CA454 FORT OPERATOR FAIL gun=33 slot=0 floor=-0.0 ceiling=1024.0",
+    "CA454 FORT OPERATOR FAIL gun=33 slot=1 floor=-0.0 ceiling=1024.0",
+    "CA454 FORT FIT points=698 guards=528 operators=72 failures=18",
+    "CA454 FORT FAIL walked=35 failed=1 fit_failures=18"
+  ]
+}

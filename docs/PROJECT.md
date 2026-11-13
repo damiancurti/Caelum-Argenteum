@@ -32,8 +32,19 @@ models, campaign essence placements or memory scripts are claimed.
 Barracas now has an unactivated architectural source/preview with 288 retained
 construction identities, the approved street/plaza/perimeter structure, rotated
 house facades and 424 static/native clearance targets passing. MAP03 and CAH maps
-are unchanged. The proposed siege disposition still awaits the author; services,
-transport and city save continuation remain to integrate. See MAP01/TASKS.
+are unchanged. The author approved three siege fronts, four gate materials and
+the 12-active-gun distribution. Service placement/private-house return and exact
+old-city continuation pass; the artillery candidate also passes 72 isolated crew
+walks and all 528 guard posts. Ordinary transport, deployment, siege and final
+architecture remain to integrate. See MAP01/TASKS.
+The 600 exterior deployment routes are also generated and pass native continuous
+collision sampling in fresh/reloaded saves. This verifies geometry and dispatch,
+not 600-body AI/crowds; the production city remains unchanged.
+Both existing ram sizes now pass isolated corner approaches and impacts against
+all four gates, with mid-turn reload and fixed-heading regression controls. Crew
+movement with6/32 real Mandingas also passes in two isolated normal-cadence
+fresh/reload cases. Production integration, reserve activation and full
+three-front behavior are still unfinished.
 
 ## 5.16.1 - Folklore reference recovery (#453, catalogue approved)
 
@@ -57,6 +68,10 @@ the basic finale and its all-78/+250 reputation conditions. One eligible
 participant admits the consenting cooperative group; MAP01 owns the full contract. The 58-image bestiary source and approved sewer/city plans are now
 recovered and verified; import and implementation stay in #453/#454. No campaign
 expansion is claimed implemented.
+The named Major allocation is now approved, including the four resident anchors,
+Death/Zupay and Devil/banishment. All-78/+250 eligibility is checked before Selene
+on the Moon; the World is acquired there after the other77. Exact maps, travel
+means and encounter scripts remain unauthored.
 
 Static authoring audit passes for the opening graph and 22/56 counts. Its explicit
 completion mode rejects unresolved authoring. Gameplay remains the accepted V5.15
@@ -64,6 +79,9 @@ code and maps; only two diagnostic release labels advance. There is no new
 save-compatibility or author-playtest claim. The official build and isolated
 MAP02 startup/new-save reload pass; evidence: assets/validation_v5_16_0.
 Each subsequent issue retains its own branch, commits, evidence and linked PR.
+The added Major/finale audit validates all22 assigned identities and77 World
+prerequisites, with three rejected invalid controls. It is authoring evidence;
+the complete campaign graph and runtime gates remain unfinished.
 
 ## 5.15.4 / #451 - Persistent siege outcomes
 

@@ -22,10 +22,10 @@ def main():
     routes=interiors.deployment_routes(captured[0],city,port_source.S,{source:target},ids)
     lines=['// Rutas derivadas de la geometria existente; conserva los destinos de cada defensor.',
            'class CaelumPropertyRoutes : Object play','{',
-           '    static int Count(int identity){switch(identity){']
+           '    static int Count(int identity){if(CaelumBarracasData.IsCurrent())return CaelumBarracasDeployment.Count(identity);switch(identity){']
     lines += [f'        case {i}:return {len(r)};' for i,r in zip(ids,routes)]
     lines += ['        }return CaelumCityRoutes.Count(identity);}',
-              '    static vector3 Point(int identity,int step){switch(identity){']
+              '    static vector3 Point(int identity,int step){if(CaelumBarracasData.IsCurrent())return CaelumBarracasDeployment.Point(identity,step);switch(identity){']
     lines += [f'        case {i}:return Route{i}(step);' for i in ids]
     lines += ['        }return CaelumCityRoutes.Point(identity,step);}']
     for i,route in zip(ids,routes):

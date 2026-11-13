@@ -2,6 +2,36 @@
 
 Documentation version: **5.16.3** - 2026-11-12.
 
+## 5.16.2 / #454 - Approved Barracas siege adaptation (candidate)
+
+The author approved four gates: north reinforced, south wooden, east reinforced
+and west armored, retaining existing resistance profiles. Attackers arrive from
+the south and divide into south/east/west fronts; north serves the bridge.
+Six original rams remain, one active and one reserve per assault front. Retain
+the 1000-living-attacker cap, 6600 cumulative reinforcement ledger and 600 defenders.
+Of 36 installed defensive cannons, 12 are active: four towers, four south-wall,
+two east-wall and two west-wall guns. There are 72 operators and 528 guards;
+guard identities retain 14 per first 12 posts and15 per last 24. No combat statistic,
+resource, ownership, offscreen-census or occupation rule changes are authorized
+by this map revision. Artillery geometry/isolated access is tested; production
+three-front deployment and reserve activation remain unfinished. MAP01/TASKS
+and barracas-forts/SUMMARY.json distinguish these stages from acceptance.
+Revision4 now selects generated ground routes and artillery/formation coordinates
+without changing the original data tables for earlier geometry. All 600 resident
+identities and the existing central-house relocation are retained. Isolated
+fresh/reloaded geometric traversal passes; real crowd/AI deployment, machine
+ownership and battle outcomes remain part of the unfinished siege integration.
+Ram routes now support opt-in physical turns before each segment, using the
+existing approach/rotation rates. Legacy routes retain fixed-heading translation;
+saved zero defaults preserve that behavior. This is geometry support only, not
+completed reserve handling or a change to machine statistics.
+Opt-in crew layouts retain6/32 operators and their original guard radii, with
+local rotating posts derived from native collision boxes. The new crews keep
+their assigned station ahead of remembered search movement, while visible
+enemies retain normal combat handling. Two isolated live crews pass; production
+front deployment, capture/refill and active/reserve handling still require
+integration. Earlier machine/crew layouts retain their original behavior.
+
 ## 5.15.4 / #451 - Occupation, recovery and persistent consequences
 
 The author approved the following Barracas outcome cycle. Losing the #447 battle

@@ -73,12 +73,27 @@ house 70 remain near central commerce and each other; original port households
 within the municipal building, rather than adding a 289th construction or new
 merchant/reward. No administrative gameplay is introduced.
 
+The author also approved existing gate materials: north reinforced, south wood,
+east reinforced and west armored, with unchanged resistance/statistics. The
+northern gate/bridge start is aligned at (-16832,15232); the original preview
+y15552 missed the irregular wall. The complete southern perimeter is retained
+beyond the nominal lot envelope. Original 128-MU masonry openings surround the
+96-MU native gates, with full-depth jambs and the wide bridge starting outside
+the wall. Closing four gate rows now isolates all exterior ground in the static
+cell audit; 160 native maximum-body closed/open samples and four Used-handler
+calls pass, with closed/open views inspected. This is isolated collision/use
+evidence, not ordinary siege travel; see barracas-gates/SUMMARY.json.
+
 The source is not runtime enabled. CABAPRV is a disposable geometry/model preview
 under build/, with no production MAP03 replacement or private CAH map change.
 Exact preceding MAP03 and relevant sources are preserved in
-assets/map06_port/legacy_5162. City save continuation still needs implementation
-and native active/hub tests; the existing MAP02 compatibility flag does not
-provide that city mode.
+assets/map06_port/legacy_5162. `-LegacyMap03Revision3` /
+`--legacy-map03-revision3` retains those bytes independently of the sewer flag.
+Current-code active/stored-hub continuation passes, including MAP03/CAH069 travel,
+original gate/coordinate identities and Justice lookup by loaded-map checksum.
+This retains the old city; it does not convert it. Repeat with the integrated
+new-city runtime before activating MAP03. Evidence is in
+assets/validation_v5_16_2/barracas-legacy/SUMMARY.json.
 
 The preview passes 424 static route targets and 424 native maximum-body endpoint
 clearance queries, including building approaches/interiors and both sides of
@@ -86,12 +101,128 @@ four open gate arches. Generated WAD, model and preview package bytes repeat
 exactly. Evidence and intermediate rendering failures are qualified in
 assets/validation_v5_16_2/barracas-preview/SUMMARY.json. This does not test ordinary
 walking, native house travel, merchants, guards, dynamic gate collision or siege
-deployment. Services, transport, landscaping and architectural completion remain.
+deployment. Integrated siege, ordinary service/travel interactions, landscaping and final
+architecture remain. The subsequent MAP03 candidate reuses the original quay
+through the approved quarter-turn/offset, retains its cargo/water/prisoner props
+and adds160 private-house portals/return starts,64 shop signs and96 factory
+stations. Residential house/shop lots keep the accepted184-MU sky policy; the
+irregular wall-walk belt and taller volumes retain exterior sky.
 
-The author is reviewing a proposed southern army arrival splitting toward south,
-east and west gates, one active and one reserve ram on each front; the northern
-gate serves the bridge. Until answered, this is a proposal, not a changed battle
-rule. Preserve the existing 1,000-living-participant admission cap per side,
+Loaded revision4 selects new initial positions/facing for alchemy, fermentation,
+vehicles, sewer access, merchants and the rental agent. Arrival-household capture
+queries the transformed source locations but still places the same four objects
+at the original private CAH069 coordinates. Vehicle structure collision and
+ranch roof queries honor their rotation; existing Angle0 behavior is retained.
+Existing actor instances are not moved or respawned when loading old geometry.
+
+The passive-controller candidate passes fresh/reload,64 merchant placements,
+96 factory identities/clearances,four ready vehicles and four unique household
+items through parking/CAH069 placement/return. Native start70 returns exactly
+to the new doorstep. The same runtime passes old active/stored-hub saves. The
+probe deliberately suppresses the obsolete six-lane siege, directly calls native
+ChangeMap and has no candidate Justice annex yet. It does not establish full
+boarding transactions, interactive door acknowledgement or final city acceptance.
+Evidence: assets/validation_v5_16_2/barracas-candidate/SUMMARY.json.
+
+The next candidate adds 36 defensive artillery posts, four 640-MU towers and the
+retained southern battlefield without overwriting the irregular southern wall.
+SIEGE.json derives their placement from the approved layout and original CITY/
+SOUTH profiles:256-MU walks,384-MU tower decks,64-MU treads and16-MU rises.
+Flights that would cross buildings instead follow the wall belt. Placements
+avoid other flights, tower footprints and approach points; original guard
+identities/formations retain 14 guards at each first 12 posts and15 at each last 24.
+Ground formations move clear of the complete structures and rasterized wall.
+Level gun platforms retain existing slab/notch dimensions on oblique segments.
+The 12 active posts are four towers, four south-wall, two east and two west;
+all 36 installed guns and 72 operators remain. No resistance or combat value changes.
+
+The final candidate repeats byte-identically and retains424 reachable static
+targets with no exterior bypass when four gate rows close. Native checks pass
+698 route points,528 ground posts,72 operator posts and648 actual cannon parts.
+All 72 isolated gravity/TryMove walks reach their exact operation positions with
+the defender's body/step height. Test walkers ignore each other; this is neither
+real defender AI nor crowded deployment/firing coverage. Corrected exterior
+views were inspected after a fixture camera initially landed inside a building.
+Evidence: assets/validation_v5_16_2/barracas-forts/SUMMARY.json. The production
+map/controller and private house maps remain unchanged;600 deployment routes,
+three-front siege, Justice annex, ordinary interaction and performance remain.
+
+DEPLOYMENT.json now derives all 600 ground paths from the same assembled candidate
+cells, starting at each actual ResidentHouse doorway, including 69->70 relocation.
+The 9453 waypoints stay inside the perimeter and outside indoor footprints; shared
+forecourts/service passages remain usable even when conceptual lot envelopes
+include them. Excluding whole lots incorrectly disconnected the first route.
+Crew destinations are the 36 lower-flight approaches; 528 guard destinations retain
+their final formations. CaelumPortData/CityData/CityRoutes/PropertyRoutes select
+the generated artillery/ground metadata only in loaded revision4. This also
+covers direct CityRoutes consumers and formation passage direction. Original
+route bodies, private coordinates and old geometry remain unchanged.
+
+Fresh and reloaded native candidates each pass 600 routes/9453 points with 866538
+continuous TryMove samples using the defender body and exact zero-floor support.
+The probe is bounded per tic and ignores actors; it verifies geometry/runtime
+dispatch rather than real AI, moving crowds, scheduling or doors used normally.
+Source regeneration repeats exactly. Actual 600-body deployment and the three
+assault fronts still require integration before production activation. Evidence:
+assets/validation_v5_16_2/barracas-deployment/SUMMARY.json.
+Original active/stored-hub continuation also passes with this runtime; all 238
+packaged maps, including 160 private CAH interiors, remain byte-identical.
+
+The ram-access candidate keeps the 128-MU inner gate throat and 96-MU native
+blocker, but opens the exterior half as a512-MU-wide/256-MU-deep unroofed forecourt.
+This accommodates the existing large frame without widening the closed passage
+or changing gate height/resistance. Missing east/west exterior ground is filled
+using the original hostile-artillery standoff plus two walkway widths, preserving
+existing wall/water cells. Both sizes can physically turn and strike each gate.
+Routes opt into per-segment heading; earlier routes retain fixed-heading motion
+and zero-default saved fields. A fresh and reloaded native fixture each passes
+eight gate/size cases plus two legacy-route controls. It repeats the production
+physical step32 times per diagnostic tic without changing speed/turn constants;
+this is collision/contact evidence, not real-time combat or crew AI. The gate
+closure checks remain a separate control. Evidence: barracas-rams/SUMMARY.json.
+
+RAM_CREWS.json derives local posts for the original6/32 crew counts from the
+accepted maximum human body and existing frame/guard dimensions. Native actors
+use axis-aligned collision boxes:61-MU row spacing covers a45-degree turn, with
+arrival tolerance derived from the remaining clearance. Two columns fit the
+small crew; four fit the large crew inside its unchanged guard radius. The
+forecourt needs inner shoulders and outer flanks through the oblique wall;
+omitting those flanks reopened a closed-gate bypass during authoring.
+
+CrewLayoutRevision opts new machines into rotating posts; earlier saves retain
+zero/default layouts. Machine assignment preserves each saved crew slot, and
+hostile/captured post helpers share the same geometry. New crews use the existing
+native movement speed/cadence and collision, selecting the walking state when
+needed. A remembered search point does not override their assigned station;
+visible-enemy combat and memory ownership remain unchanged. The earlier probe
+passed empty geometry but live crews drifted away or obstructed each other.
+Combined post priority, direct collision-tested steps, box-safe spacing and
+arrival tolerance correct the observed failures. No production actor is moved
+by teleport, and no physical component is ignored.
+
+Two isolated live crews now pass fresh and mid-turn reload:6 Mandingas reach the
+wooden south gate in2176 simulation tics;32 reach the armored west gate in2544,
+with real native impacts and FullCrewPresent. The physical clearance probe also
+checks both sizes at all four gates. These are crew/machine checks, not the full
+three-front controller, reserve/ownership transactions, crowded battle, FPS or
+author acceptance. Evidence: barracas-ram-crews/SUMMARY.json.
+
+The exterior coordinate source now supplies 160 rotated portal/return points and
+64 shop positions, selected only by a loaded revision-4 MAP03 controller. Private
+HouseOrigin, furniture, chest and inner-door coordinates remain unchanged even
+when a travelling household calculates a CAH destination from MAP03. The interior
+generator previously omitted the existing ChestPosition method; its accepted
+(864,832,0) local coordinate is now in INTERIORS.json and regenerated unchanged.
+The isolated native services fixture passes all 224 maximum-body endpoints and
+160 map-spawned portals/320 rotated leaves, plus the retained private chest offset.
+This fixture has no ordinary house travel or live city services; production MAP03
+and all 160 CAH WADs remain byte-identical. See barracas-services/SUMMARY.json.
+
+The author approved southern army arrival splitting toward south, east and west
+gates, one active and one reserve ram on each front; the northern gate serves
+the bridge. All 36 defensive guns remain installed; the approved 12 active guns
+are the four towers plus four south-wall, two east-wall and two west-wall guns.
+Preserve the existing 1,000-living-participant admission cap per side,
 6,600 cumulative Mandingas, six rams and 600 defenders. Never interpret that
 cumulative ledger as permission for a retired 6,000-simultaneous-attacker test.
 
@@ -112,6 +243,19 @@ The existing three-chapter story in section 9 remains authoritative: Chapter II
 ends with the infernal prince's banishment; Chapter III culminates with Selene.
 The World remains the final card. The 56 Minor essences belong to secondary
 missions across the three chapters. One formal Tarot mission grants one essence.
+
+The author also approved these Major assignments as a chapter allocation base:
+
+| Chapter | Major essences and approved anchors |
+| --- | --- |
+| Prologue | Fool (0), retaining MAP01 |
+| I | Strength (11, Rulo), Hermit (9, Ronnie), Emperor (4, Argento), High Priestess (2, Caella), Magician (1), Hierophant (5), Chariot (7) |
+| II | Empress (3), Lovers (6), Wheel of Fortune (10), Justice (8), Hanged Man (12), Death (13, definitive Zupay encounter), Devil (15, prince's banishment) |
+| III | Temperance (14), Tower (16), Star (17), Moon (18), Sun (19), Judgement (20), World (21) |
+
+IDs retain the existing deck: Justice is8 and Strength is11. This table is not a
+mandatory acquisition order within each chapter, nor an authored map/encounter
+or reintegration script. Opening acquisitions0/36/60 remain unchanged.
 
 The machine-readable planning graph is [PROGRESSION.json](../assets/campaign/PROGRESSION.json).
 It records each chapter's systems, narrative endpoint, information boundaries,
@@ -146,7 +290,7 @@ circular-lock audit are pending, not established by the opening-route audit.
 
 Finale base approved by the author on 2026-11-12: after the Chapter II banishment,
 the protagonist gains lunar travel in Chapter III, obtains the World as the last
-card and defeats Selene with the unified Tarot. Entry requires all 78 acquired
+card and defeats Selene with the unified Tarot. Entry to Selene's combat requires all 78 acquired
 essences AND at least +250 reputation (existing Respected rank) with any one of
 Unitarians, Federals, Free Peoples or Sun Warriors. Faction membership is not
 required; physical deck possession alone does not satisfy acquisition. This
@@ -158,6 +302,11 @@ For cooperative entry, the author approved one participant meeting both
 requirements for the entire consenting group. This neither combines incomplete
 requirements from different players nor copies their personal essences or
 reputation. Encounter statistics, lunar transport and exact scripts remain unauthored. This is approved design, not implemented finale behavior.
+The author placed that eligibility check on the Moon immediately before Selene's
+combat, not at lunar departure. The World is obtained there after the other77
+essences and is not granted automatically. Requiring it for lunar travel would
+create a circular lock; the separate means/requirements for that travel remain
+unauthored. This ordering preserves the existing deity-damage requirement.
 
 #454 includes reference-backed redesign of MAP02 and existing cities as well as
 new regional slices. The author supplied approved sewer-v2 and Barracas-v1 boards

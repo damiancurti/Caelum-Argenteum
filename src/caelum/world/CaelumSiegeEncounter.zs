@@ -26,7 +26,15 @@ class CaelumSiegeCombatant : Object play
     transient Actor SharedTargetSubscription;
     Actor NavigationTarget;
     vector3 CrewOffset;
+    int CrewSlot;
     int Lane;
+
+    vector3 CrewPost()
+    {
+        let ram=CaelumBatteringRam(CrewMachine);
+        if(ram!=null && ram.CrewLayoutRevision>0)return ram.CrewPosition(CrewSlot);
+        return CrewMachine!=null?CrewMachine.Pos+CrewOffset:Body!=null?Body.Pos:(0,0,0);
+    }
 
     static void ConfirmDeath(CaelumCombatActor body)
     {
@@ -333,6 +341,7 @@ class CaelumHostileMachine : Actor
             if(Crew[vacancy]!=null && Crew[vacancy].CrewMachine==self)Crew[vacancy].CrewMachine=null;
             Crew[vacancy]=entry;
         }
+        entry.CrewSlot=vacancy<0?Crew.Size()-1:vacancy;
         return true;
     }
 

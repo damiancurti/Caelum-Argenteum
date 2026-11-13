@@ -8,6 +8,7 @@ param(
     [switch]$LegacyMap02,
     [switch]$LegacyMap02Revision4,
     [switch]$LegacyMap02Revision5,
+    [switch]$LegacyMap03Revision3,
     [switch]$LegacyMap06,
     [switch]$LegacyMap06Siege,
     [switch]$LegacyMap06NorthCity,
@@ -138,6 +139,17 @@ if ($LegacyMap02 -or $LegacyMap02Revision4 -or $LegacyMap02Revision5) {
     }
 }
 
+$LegacyMap03Bytes = $null
+if ($LegacyMap03Revision3) {
+    $LegacyCityRoot = Join-Path $ProjectRoot 'assets/map06_port/legacy_5162'
+    $LegacyCityManifest = Get-Content -LiteralPath (Join-Path $LegacyCityRoot 'PROVENANCE.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+    $LegacyCityPath = Join-Path $LegacyCityRoot 'MAP03.wad'
+    if ((Get-FileHash -LiteralPath $LegacyCityPath -Algorithm SHA256).Hash -ine $LegacyCityManifest.files.'MAP03.wad'.sha256) {
+        throw 'Legacy MAP03 checksum mismatch; existing output was not changed.'
+    }
+    $LegacyMap03Bytes = [IO.File]::ReadAllBytes($LegacyCityPath)
+}
+
 $LegacyMap06Bytes = $null
 if ($LegacyMap06) {
     $LegacyPortPath = Join-Path $ProjectRoot 'assets/map06_port/legacy_43626/MAP06.wad'
@@ -239,6 +251,7 @@ try {
             $LegacyReplacementCount = 0
             $LegacyMansionReplacementCount = 0
             $LegacyPortReplacementCount = 0
+            $LegacyCityReplacementCount = 0
             $LegacyTarotReplacementCount = 0
             $LegacyHuntReplacementCount = 0
             foreach ($File in $Files) {
@@ -265,6 +278,10 @@ try {
                     elseif (($LegacyMap02 -or $LegacyMap02Revision4 -or $LegacyMap02Revision5) -and $EntryName -ieq "maps/MAP02.wad") {
                         $EntryStream.Write($LegacyMap02Bytes, 0, $LegacyMap02Bytes.Length)
                         $LegacyReplacementCount++
+                    }
+                    elseif ($LegacyMap03Revision3 -and $EntryName -ieq 'maps/MAP03.wad') {
+                        $EntryStream.Write($LegacyMap03Bytes, 0, $LegacyMap03Bytes.Length)
+                        $LegacyCityReplacementCount++
                     }
                     elseif (($LegacyMap06 -or $LegacyMap06Siege -or $LegacyMap06NorthCity -or $LegacyMap06SouthCity -or $LegacyMap06Furnished) -and $EntryName -ieq 'maps/MAP06.wad') {
                         $EntryStream.Write($LegacyMap06Bytes, 0, $LegacyMap06Bytes.Length)
@@ -296,6 +313,9 @@ try {
             }
             if ($LegacyTarotMaps -and $LegacyTarotReplacementCount -ne $LegacyTarotBytes.Count) {
                 throw 'Pre-Justice compatibility requires every preserved map in the package.'
+            }
+            if ($LegacyMap03Revision3 -and $LegacyCityReplacementCount -ne 1) {
+                throw 'Legacy compatibility requires exactly one maps/MAP03.wad entry in the source.'
             }
             if (($LegacyMap01 -or $LegacyTarotExamples) -and $LegacyMansionReplacementCount -ne 1) {
                 throw 'Legacy compatibility requires exactly one maps/MAP01.wad entry in the source.'
@@ -372,10 +392,11 @@ try {
         Write-Host "New four-section MAP02 is not active in this build. Rebuild without -LegacyMap02 to restore it."
     }
     else {
-        Write-Host "MAP02 layout: follows the Justice mode above. Older visited-map saves additionally need -LegacyMap02Revision4 (pre-5.4.33) or -LegacyMap02 (original 4.36.4)."
+        Write-Host "MAP02 layout: follows the Justice mode above. Visited pre-redesign sewer saves need -LegacyMap02Revision5; older layouts need -LegacyMap02Revision4 (pre-5.4.33) or -LegacyMap02 (original 4.36.4)."
     }
     Write-Host "Files included: $($Files.Count)"
-    if ($LegacyMap06) { Write-Host 'MAP06 layout: byte-identical 4.36.26 compatibility port; no new siege geometry.' }
+    if ($LegacyMap03Revision3) { Write-Host 'MAP03 compatibility: exact pre-redesign revision 3, including Justice arena and original CAH identities, for active maps and stored hubs. Preserve original saves.' }
+    elseif ($LegacyMap06) { Write-Host 'MAP06 layout: byte-identical 4.36.26 compatibility port; no new siege geometry.' }
     elseif ($LegacyMap06Siege) { Write-Host 'MAP06 layout: byte-identical 4.37.8 siege port for existing campaigns; expanded city inactive.' }
     elseif ($LegacyMap06NorthCity) { Write-Host 'MAP06 layout: byte-identical first 4.37.9 city with the northern siege.' }
     elseif ($LegacyMap06SouthCity) { Write-Host 'MAP06 layout: exact 5.1.2 southern city compatibility geometry.' }

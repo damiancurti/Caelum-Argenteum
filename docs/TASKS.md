@@ -30,13 +30,40 @@ map slice: four perimeter gates, siege adaptation and independent save support.
 
 Barracas architectural source/preview is now in assets/barracas_redesign. Its
 288 identities and 424 static/native endpoint checks pass; source geometry and
-private house interiors remain unmodified in src. Integrate rotated portals,
-services/travel, native gates and coordinate-sensitive helpers, complete visual
-architecture, retain the accepted residential sky policy, then verify old
-active/hub saves with exact original MAP03. The author is reviewing three siege
-fronts with active/reserve ram pairs versus a concentrated southern assault;
-do not silently choose that pending tactic. No city author test is added for
+private house interiors remain unmodified in src. Rotated portal leaves and
+exterior coordinate helpers pass the isolated 224-endpoint/320-leaf native probe.
+The service candidate also passes64 merchants,96 factory stations,four vehicles
+and the four existing arrival-household identities through CAH069 placement and
+exact new doorstep return. Old saves pass with the new dispatch code. Integrate
+ordinary interactive house/service/transport flows, the Justice annex and the
+real siege controller; its passive test controller is disposable. Complete visual
+architecture and retain the accepted residential sky policy. Exact original
+MAP03 active/stored-hub continuation passes through -LegacyMap03Revision3 with
+current code; repeat against the eventual integrated new-city runtime. Three siege fronts with active/reserve
+ram pairs are approved. The four-gate shell now passes a closed-perimeter grid
+audit,160 physical native closed/open samples and four direct Used-handler checks. The 12 active defensive guns are four towers plus four
+south-wall, two east-wall and two west-wall guns; retain 36 installed guns. No city author test is added for
 the unintegrated preview. Existing MAP02 acceptance remains pending.
+
+SIEGE.json now derives 36 artillery posts/four towers from the retained profiles.
+All 72 isolated native operator paths,698 route points,528 ground posts and648
+cannon-component clearances pass. The complete candidate still passes 424 static
+routes and closed-perimeter isolation. Connect 600 house deployments, three-front
+approaches/retreats and active/reserve ram handling before activating the city.
+These geometry checks do not establish crowded movement, firing coverage or
+performance. Evidence: validation_v5_16_2/barracas-forts/SUMMARY.json.
+The 600 ground paths are now generated/tested: 9453 waypoints and 866538 native
+TryMove samples pass in both fresh and reloaded candidates. Runtime helpers
+dispatch by revision, retaining old route bodies and private house coordinates.
+Validate actual resident materialization, AI and crowd movement with the full
+siege controller; continuous geometric sampling is not that acceptance.
+Opt-in ram turns and widened exterior forecourts now pass physical route/contact
+tests for both sizes at all four gates, including saved in-progress turns and
+legacy fixed-heading routes. Rotating crew stations and two isolated6/32-Mandinga
+AI approaches now pass at normal cadence, including mid-turn reload. Connect
+those helpers to south-to-side approaches/retreats and one active/one reserve
+ram per front; verify production capture/refill, real600-body deployment and
+crowds. These tests do not activate the production city or establish FPS.
 
 ## 5.16.1 - Bestiary source import (#453)
 
@@ -67,6 +94,11 @@ open. CA454-MAP02-01 now tracks the outstanding author sewer review.
 The author selected all 78 acquired essences and Respected (+250) with any one
 of four resistance factions for the finale. This matches the existing deity
 power. One eligible participant admits the consenting group; scripts and encounter statistics remain pending.
+The author has now approved the seven named Majors per chapter and the lunar
+ordering: travel first, obtain the World after the other77, then check78/+250
+before Selene combat. Use the canonical IDs in MAP01/PROGRESSION, retaining
+Justice8/Strength11 and opening0/36/60. Author exact maps, ability gates and
+scripts; allocation approval does not implement the remaining75 acquisitions.
 
 ## V5.15 accepted and integrated ? 2026-11-10 (#447?451)
 

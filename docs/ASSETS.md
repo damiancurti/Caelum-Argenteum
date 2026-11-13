@@ -68,6 +68,38 @@ and cornices using existing CVCI01/CVCI05 textures. No raster is edited and no
 bestiary model completion is implied. Preview evidence is under
 validation_v5_16_2/barracas-preview. legacy_5162 preserves original MAP03 bytes and
 a deterministic ZIP of relevant data/generator/helper sources before redesign.
+RUNTIME.json/CaelumBarracasData are deterministic exterior-coordinate outputs of
+generate_barracas_data.py. Private CAH coordinates retain their original source.
+The city compatibility mode packages legacy_5162/MAP03.wad after verifying its
+provenance checksum. barracas-legacy/ holds native continuation logs; all 160 CAH
+map bytes match baseline. Loaded-map checksum selects the original Justice arena.
+The isolated native service/rotated-leaf fixture and results live under
+validation_v5_16_2/run_barracas_services.py and barracas-services/. Its subsequent
+barracas-gates/ evidence adds full-perimeter closure and physical native gate
+checks, preserving failed fixtures and final closed/open views. Existing gate
+materials and dimensions are reused; no new raster, mass or resistance is added.
+generate_barracas_map.py assembles a candidate only under build/, using the
+reviewed shell, original transformed quay, existing workshops and low residential
+sky policy. barracas-candidate/ preserves its native service/private-house proof
+and qualified fixtures; no preview package or save is distributed.
+generate_barracas_siege.py derives SIEGE.json from the approved layout and
+retained city/siege profiles; it supplies 36 posts, existing tower geometry,
+access flights and 528 guard positions. The candidate generator reuses owned
+stone materials. Native geometry/crew evidence and failed iterations are in
+validation_v5_16_2/barracas-forts; this does not activate the production siege.
+generate_barracas_routes.py reuses the same in-memory candidate geometry to emit
+DEPLOYMENT.json/CaelumBarracasDeployment: 600 routes and 9453 waypoints, with stable
+resident identities and original private coordinates. Generated siege/route
+helpers dispatch by loaded geometry. Native continuous traversal evidence is in
+validation_v5_16_2/barracas-deployment; no fixture PK3 or save is distributed.
+The candidate also opens exterior gate forecourts and fills missing ground for
+the approved side fronts using existing walkway/artillery dimensions. Inner
+gate throats/blockers retain their original dimensions. Physical ram-turn/contact
+and gate evidence lives in validation_v5_16_2/barracas-rams; no new art is claimed.
+generate_barracas_ram_crews.py derives RAM_CREWS.json and the shared runtime
+post table from retained machine constants and accepted body bounds. It changes
+positions, not combat profiles, counts or models. Native physical/live-crew
+evidence and failed iterations are in validation_v5_16_2/barracas-ram-crews.
 
 ## 5.16.1 - Recovered folklore reference catalogue (#453, catalogue approved)
 

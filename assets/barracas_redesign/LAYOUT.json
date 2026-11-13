@@ -3,7 +3,7 @@
   "issue": 454,
   "geometry_revision": 4,
   "runtime_enabled": false,
-  "status": "approved_reference_geometry_in_development_siege_disposition_pending",
+  "status": "approved_reference_and_three_front_siege_in_development",
   "reference": {
     "path": "assets/references/issue_454_maps_20261112/Barracas_al_Sud_Propuesta_v1.png",
     "sha256": "44a0afdcae469e552a3f98bebf4271623e7928caf2951e9bfbf8b06901ee89b6",
@@ -387,10 +387,12 @@
       "id": "north",
       "position": [
         -16832,
-        15552,
+        15232,
         0
       ],
-      "outward_angle": 90
+      "outward_angle": 90,
+      "geometry_note": "Align the approved northern bridge gate to the actual rasterized irregular perimeter; previous preview y15552 missed the wall band.",
+      "material": 1
     },
     {
       "id": "west",
@@ -399,7 +401,8 @@
         -320,
         0
       ],
-      "outward_angle": 180
+      "outward_angle": 180,
+      "material": 2
     },
     {
       "id": "east",
@@ -408,7 +411,8 @@
         -1472,
         0
       ],
-      "outward_angle": 0
+      "outward_angle": 0,
+      "material": 1
     },
     {
       "id": "south",
@@ -417,7 +421,8 @@
         -14208,
         0
       ],
-      "outward_angle": 270
+      "outward_angle": 270,
+      "material": 0
     }
   ],
   "railway": {
@@ -9395,7 +9400,7 @@
   ],
   "compatibility": "Keep all 160 existing CAH interior WADs and identity order. Move only city shells/portals; preserve original MAP03 for visited saves and dispatch coordinate helpers by loaded layout.",
   "siege_proposal": {
-    "status": "awaiting_author",
+    "status": "author_approved",
     "entry_side": "south",
     "active_fronts": [
       "south",
@@ -9407,7 +9412,31 @@
       "active": 1,
       "reserve": 1
     },
-    "retained_population": "Existing reinforcement policy: 1000 living participants per side, 6600 cumulative Mandingas; 600 defenders. No historical 6000-attacker test."
+    "retained_population": "Existing reinforcement policy: 1000 living participants per side, 6600 cumulative Mandingas; 600 defenders. No historical 6000-attacker test.",
+    "authority": {
+      "date": "2026-11-12",
+      "decision": "Aprobar los tres frentes",
+      "qualification": "1000 remains the living admission cap; preserve6600 cumulative Mandingas and600 defenders, as clarified before approval."
+    },
+    "defensive_artillery": {
+      "installed": 36,
+      "active": 12,
+      "active_distribution": {
+        "towers": 4,
+        "south_wall": 4,
+        "east_wall": 2,
+        "west_wall": 2,
+        "north_wall": 0
+      },
+      "authority": "Author approved: Aprobar 4 torres + 4 sur + 2 este + 2 oeste, 2026-11-12."
+    },
+    "gate_materials": {
+      "north": "reinforced",
+      "south": "wood",
+      "east": "reinforced",
+      "west": "armored",
+      "authority": "Author approved this assignment on 2026-11-12; existing gate statistics unchanged."
+    }
   },
   "identity_anchors": {
     "69": "Existing purchasable central house remains near the central commerce/plaza.",
@@ -9456,7 +9485,7 @@
   "bridge": {
     "width": 512,
     "centre_x": -16832,
-    "south_y": 15552,
+    "south_y": 15232,
     "north_y": 20224
   },
   "river": {

@@ -26,10 +26,29 @@ old saves and use `run_dev.bat --legacy-map02-revision5` (or build with
 including stored hub maps. [Map specifications and validation](docs/MAP01.txt)
 distinguish this slice from the remaining campaign and author test terminal. The basic finale
 and its all-78-essence/Respected reputation requirements are author-approved;
+the checkpoint is before Selene on the Moon, after obtaining the World last.
+The seven named Majors per chapter are also approved as an allocation base;
 the recovered bestiary and map references proceed through separate issues.
 Barracas also has an [isolated architectural preview](assets/barracas_redesign/LAYOUT.json)
 with 288 retained building identities; it is not activated in MAP03. City services,
-four-gate siege integration and old-city save continuation remain unfinished.
+four-gate siege integration remain unfinished. For visited original Barracas saves,
+`run_dev.bat --legacy-map03-revision3` retains exact geometry and private-house
+identities. Active/stored-hub continuation passed with current code; repeat
+verification after the redesigned city is integrated.
+The rotated-door/coordinate slice passes 224 native service endpoint checks and
+160 portals/320 leaf placements; private interior coordinates are retained.
+The four-gate prototype also passes 160 native closed/open samples and four
+Used-handler checks; the closed-perimeter grid audit finds no exterior bypass.
+A separate candidate also passes service placement and private-house hub return:64
+merchants,96 factory stations,four vehicles and four relocated household objects.
+Its siege is suppressed by a disposable test controller; it is not the production city.
+The artillery candidate passes 72 isolated operator walks,528 guard posts and648
+cannon-component clearances. Real deployment, crowd movement and siege remain pending.
+The 600 exterior deployment paths also pass continuous native collision sampling
+in fresh/reloaded saves; old geometry retains its original route tables.
+Both ram sizes pass isolated corner movement and contact with all four gates.
+Two live crews (6+32 Mandingas) also reach their gates at normal cadence after
+fresh start and mid-turn reload. Full three-front integration remains pending.
 
 V5.15 includes the [battle director](assets/validation_v5_15_0/RESULTS.md)
 (#447, PR635), [Unitarian command](assets/validation_v5_15_1/RESULTS.md)
@@ -618,7 +637,7 @@ ready. Remaining furniture/acquisition and other V5.8 issues stay open.
 
 The mansion garden now contains an iron drinking fountain and a cistern.
 The fountain holds200 L of potable water and replenishes1 L/world-minute;
-the1000-L cistern starts empty and accepts manual transfers, preserving water
+the 1000-L cistern starts empty and accepts manual transfers, preserving water
 quality and temperature. Both support ordinary container filling and the
 existing soap bath when potable. The kitchen/bathroom reserve remains separate.
 

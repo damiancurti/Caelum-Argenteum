@@ -524,7 +524,8 @@ class CaelumPortSiege : CaelumSiegeEncounter
                 if(old!=null && !old.ConfirmedDead && old.Body!=null && old.Body.health>0)continue;
                 vector3 offset=((slot%2==0 ? -1 : 1)*CaelumRamData.TRIAL_CREW_SIDE*ram.SizeFactor,
                     ((slot/2)-(ram.RequiredCrew/2-1)/2.0)*CaelumRamData.TRIAL_CREW_STEP,0);
-                let replacement=NearestReserve(ram.Pos+offset);
+                vector3 station=ram.CrewLayoutRevision>0?ram.CrewPosition(slot):ram.Pos+offset;
+                let replacement=NearestReserve(station);
                 if(replacement!=null && ram.AssignCrew(replacement))
                 {replacement.CrewOffset=offset;replacement.Lane=NearestLane(ram.Pos.X);}
             }
@@ -631,9 +632,24 @@ class CaelumPortSiege : CaelumSiegeEncounter
         }
     }
 
+    static CaelumBatteringRam CrewRam(CaelumCombatActor body)
+    {
+        let movingRam=body.SiegeCombatant!=null?CaelumBatteringRam(body.SiegeCombatant.CrewMachine):null;
+        if(movingRam==null && body is 'CaelumPortDefender')
+        {
+            let bond=CaelumMachineOperator.Find(body);
+            if(bond!=null)movingRam=CaelumBatteringRam(bond.Machine);
+        }
+        return movingRam;
+    }
+
     static void WalkTo(CaelumCombatActor body, Actor goal, vector3 point)
     {
         let soldier=CaelumPortDefender(body);
+        let movingRam=CrewRam(body);
+        bool ramCrew=movingRam!=null && movingRam.CrewLayoutRevision>0;
+        if(ramCrew && !body.InStateSequence(body.CurState,body.SeeState))
+        {body.SetState(body.SeeState);return;}
         vector3 originalPoint=point;
         vector3 groundApproach=body.Pos;
         if(soldier!=null && soldier.HomeRevision>0)
@@ -649,8 +665,10 @@ class CaelumPortSiege : CaelumSiegeEncounter
             vector2 next=soldier.CityNavigation.Next(soldier,point);point.X=next.X;point.Y=next.Y;
         }
         goal.SetOrigin(point,false);body.target=goal;body.LastEnemy=null;
-        if(soldier!=null && (soldier.MilitaryMoving || soldier.FollowingCrewRoute || soldier.ReturningFromYield || (soldier.HomeRevision>0 && !soldier.DeploymentComplete)))
+        if(ramCrew || (soldier!=null && (soldier.MilitaryMoving || soldier.FollowingCrewRoute || soldier.ReturningFromYield || (soldier.HomeRevision>0 && !soldier.DeploymentComplete))))
         {
+            // La dotacion nueva apunta cada paso al puesto movil: A_Chase solo
+            // conserva un desvio cuando la colision impide el avance directo.
             // Los relevos siguen cada escalón con colisión nativa, a la misma
             // velocidad y cadencia del estado See. No se modifica Z ni se salta
             // un obstáculo; A_Chase conserva el desvío cuando el paso se bloquea.
@@ -680,7 +698,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
             // hace alejarse al último ocupante cuando otro cruza su waypoint.
             // La ruta de escaleras aceptada conserva su cadencia original.
             int flags=CHF_DONTLOOKALLAROUND;
-            if(soldier.HomeRevision==0 || soldier.DeploymentComplete)flags|=CHF_NORANDOMTURN|CHF_NOPOSTATTACKTURN;
+            if(ramCrew || soldier.HomeRevision==0 || soldier.DeploymentComplete)flags|=CHF_NORANDOMTURN|CHF_NOPOSTATTACKTURN;
             body.ThermalChase(null,null,flags);
             return;
         }
@@ -754,7 +772,7 @@ class CaelumPortSiege : CaelumSiegeEncounter
         {
             victim=port.AttackerTarget(entry);
             if(entry.CrewMachine!=null && !entry.CrewMachine.Neutralized)
-            {hasPost=true;post=entry.CrewMachine.Pos+entry.CrewOffset;}
+            {hasPost=true;post=entry.CrewPost();}
             if(entry.NavigationTarget==null)entry.NavigationTarget=Actor.Spawn("CaelumSewerEscapeTarget",body.Pos);
             goal=entry.NavigationTarget;
         }
@@ -765,10 +783,19 @@ class CaelumPortSiege : CaelumSiegeEncounter
             if(search!=null && (search.Pos-post).Length()<=CaelumPortData.COMMAND_LINK_RADIUS)
             {CaelumVisualPerception.SearchPulse(body);return true;}
         }
-        if(victim is "CaelumSearchPoint"){CaelumVisualPerception.SearchPulse(body);return true;}
+        if(victim is "CaelumSearchPoint")
+        {
+            let ram=hasPost?CrewRam(body):null;
+            // La memoria persiste, pero no sustituye el puesto de la dotacion
+            // movil. Un enemigo visible sigue las reglas normales de combate.
+            if(ram!=null && ram.CrewLayoutRevision>0)victim=null;
+            else {CaelumVisualPerception.SearchPulse(body);return true;}
+        }
         bool nearEnemy=victim!=null && victim.health>0 && body.Distance2D(victim)<=body.MeleeRange+victim.Radius;
         if(soldier!=null && soldier.Carbine!=null)soldier.Carbine.Select(!nearEnemy);
-        if(hasPost && !nearEnemy && (body.Pos-post).Length()>body.Radius)
+        let postRam=hasPost?CrewRam(body):null;
+        double postReach=postRam!=null && postRam.CrewLayoutRevision>0?postRam.CrewPostReach():body.Radius;
+        if(hasPost && !nearEnemy && (body.Pos-post).Length()>postReach)
         {
             if(soldier!=null && !playerCrew && military!=null && soldier.MilitaryOrderKind!=CaelumMilitaryData.NONE && soldier.Gun==null)
             {
