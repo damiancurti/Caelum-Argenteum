@@ -1,6 +1,29 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.16.4** - 2026-11-13.
+Documentation version: **5.16.5** - 2026-11-13.
+
+## 5.16.5 - Approved finale eligibility query (#457, 2026-11-13, in progress)
+
+Added generated condition data and a shared personal/connected-roster query for
+the approved 78-essence AND any approved-faction +250 rule. Both conditions belong
+to the same admitted character; no membership, physical-deck proxy or shared
+progress is introduced. The query has no new saved fields and does not mutate
+records. Existing narrative, rewards, travel and consent controllers are unchanged;
+the query is not yet bound to the unimplemented pre-Selene scene. Remaining
+scripts and revelations were left unauthored while questions are postponed.
+
+The isolated two-peer fresh/reload test passes the 77/78 collection boundary,
+249/250 reputation boundary for all four approved factions, no-membership rule,
+physical-deck insufficiency, rejected Caelith/Cult tracks, host/guest eligibility
+and rejection of requirements split between players. Departed and unadmitted
+profiles are excluded. Repeated queries and reload retain distinct personal
+collections/reputations without grants or consumption. The fixture prepares
+records directly; it does not test campaign acquisitions, consent, scenes or
+restoration of control. Evidence stays in assets/validation_v5_16_5. No author
+acceptance or full campaign completion is claimed.
+The final package also verifies an actual guest disconnect after both fresh and
+reloaded checks: the host's eligible roster becomes empty immediately on query.
+Static validation, generated-data freshness and repeatable generation pass.
 
 ## 5.16.4 - Essence coverage contract (#456, 2026-11-13, in progress)
 

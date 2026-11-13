@@ -514,3 +514,10 @@
 /assets/generators/build_essence_coverage.py text eol=lf
 /assets/validation_v5_16_4/check_essence_coverage.py text eol=lf
 /assets/validation_v5_16_4/evidence/** -text -whitespace
+
+/assets/generators/generate_campaign_finale_data.py text eol=lf
+/src/caelum/data/CaelumCampaignFinaleData.zs text eol=lf
+/src/caelum/quests/CaelumCampaignEligibility.zs text eol=lf
+/assets/validation_v5_16_5/*.py text eol=lf
+/assets/validation_v5_16_5/*.zs text eol=lf
+/assets/validation_v5_16_5/evidence/** -text -whitespace

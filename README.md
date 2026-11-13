@@ -6,8 +6,13 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.16.4.** Obtain and update the complete repository,
+**Current release: 5.16.5.** Obtain and update the complete repository,
 validate it, then rebuild with `run_dev.bat` as described below.
+
+#457 adds the approved finale eligibility query: one admitted participant must
+personally own all 78 essences and have at least +250 with an approved resistance
+faction. The query grants nothing and is not yet connected to a Selene scene;
+chapter scripts, final admission and group consent integration remain pending.
 
 #456 now audits [all 78 essence identities](assets/campaign/ESSENCE_COVERAGE.json),
 their approved chapter allocations and recovery policy. The three opening sources
