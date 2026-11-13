@@ -21,6 +21,7 @@ from assets.generators.validate_inventory_consumable_models import validate as i
 from assets.generators.validate_inventory_water_models import validate as inventory_water_problems
 from assets.generators.validate_inventory_food_models import validate as inventory_food_problems
 from assets.generators.validate_inventory_ammunition_models import validate as inventory_ammunition_problems
+from assets.generators.validate_regional_materials import validate as regional_material_problems
 from assets.generators.validate_map02_redesign import audit as sewer_redesign_audit
 from assets.generators.install_barracas_map import validate as barracas_installation_problems
 
@@ -86,6 +87,7 @@ def validate(root):
     errors.extend(inventory_water_problems(root))
     errors.extend(inventory_food_problems(root))
     errors.extend(inventory_ammunition_problems(root))
+    errors.extend(regional_material_problems(root))
     errors.extend(barracas_installation_problems(root))
     try:
         errors.extend(justice_geometry_problems(root))

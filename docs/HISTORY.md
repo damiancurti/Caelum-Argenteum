@@ -1,6 +1,23 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.3** - 2026-11-13.
+Documentation version: **5.17.4** - 2026-11-13.
+
+## 5.17.4 - Regional ground material gallery (#463, 2026-11-13)
+
+Recorded an explicit reuse/gap inventory, generated three separate owned ground
+images with built-in image_gen and preserved original PNGs/prompts/provenance.
+Added material IDs without replacing existing art/maps and an isolated CA463G
+fixture reusing Pombero in Litoral/Selva and Cuero/Nahuelito in Patagonia. Pilot
+resources remain byte-identical; no campaign body, encounter or combat changes.
+Final-package native fresh/reload pass 36 checks, including native input across
+both plot boundaries. The package matches 18,179 source entries. Evidence retains
+the incomplete queued-event test, the too-short crossing and its measured fix,
+the failed absolute-save-path diagnostic and the lower-ceiling framing experiment.
+No game-speed change or save deletion was needed. One sequential 700-tic old/new
+material pair measures 1849.27/1860.24 queue presents/s, p95 0.7010/0.7082 ms and
+p99 0.8260/0.8317 ms. See assets/validation_v5_17_4/evidence/SUMMARY.json and ASSETS
+for environment, sources and limits. CA463-REGIONS-01 remains pending; no author,
+combat, campaign or siege performance acceptance is claimed by this art fixture.
 
 ## 5.17.3 - Ammunition drop models (#652, 2026-11-13)
 

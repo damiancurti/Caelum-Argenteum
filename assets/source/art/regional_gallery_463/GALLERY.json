@@ -1,0 +1,44 @@
+{
+  "schema_revision": 1,
+  "issue": 463,
+  "status": "isolated_visual_inspection_not_campaign",
+  "map": "CA463G",
+  "title": "Regional material gallery",
+  "ambient": 208,
+  "ceiling_height": 2048,
+  "outer_wall": "CACVROCK",
+  "walkway_flat": "CMST01",
+  "walkway_y": [-640, -512],
+  "plot_y": [-512, 512],
+  "player_start": [-768, -576, 90],
+  "crossing_test": {"start": [-768, -256, 0], "angle": 90, "destination_plot": "Patagonia", "input_tics": 420, "duration_basis": "The recorded 210-tic attempt advances604.814MU, short of the768MU boundary. Double that diagnostic duration; preserve native player speed."},
+  "plots": [
+    {"region": "Litoral", "x": [-1024, -512], "floor": "CRLITGR"},
+    {"region": "Selva", "x": [-512, 0], "floor": "CRSELVG"},
+    {"region": "Patagonia", "x": [0, 1024], "floor": "CRPATGR"}
+  ],
+  "subjects": [
+    {"region": "Litoral", "catalogue_id": "CA-FOLK-006", "kind": "pombero", "class": "CA455PomberoPreview", "position": [-768, 0, 0], "angle": 270},
+    {"region": "Selva", "catalogue_id": "CA-FOLK-006", "kind": "pombero", "class": "CA455PomberoPreview", "position": [-256, 0, 0], "angle": 270},
+    {"region": "Patagonia", "catalogue_id": "CA-FOLK-053", "kind": "cuero", "class": "CA455CueroPreview", "position": [256, 0, 0], "angle": 270},
+    {"region": "Patagonia", "catalogue_id": "CA-FOLK-055", "kind": "nahuelito", "class": "CA455NahuelitoPreview", "position": [704, 0, 0], "angle": 180}
+  ],
+  "views": [
+    {"id": "overview", "position": [0, -160, 1400], "target": [0, 0, 0]},
+    {"id": "litoral", "position": [-768, -110, 60], "target": [-768, 0, 16]},
+    {"id": "selva", "position": [-256, -110, 60], "target": [-256, 0, 16]},
+    {"id": "patagonia", "position": [512, -480, 240], "target": [640, 0, 80]},
+    {"id": "player", "control": true},
+    {"id": "cuero", "position": [256, -155, 85], "target": [256, 0, 12]},
+    {"id": "nahuelito", "position": [960, -300, 260], "target": [704, 0, 120]},
+    {"id": "litoral-tiles", "position": [-768, -280, 200], "target": [-768, -280, 0]},
+    {"id": "selva-tiles", "position": [-256, -280, 70], "target": [-256, -280, 0]},
+    {"id": "patagonia-tiles", "position": [384, -280, 120], "target": [384, -280, 0]}
+  ],
+  "notes": [
+    "These are editing/test coordinates, not campaign map coordinates or approved encounter placements.",
+    "Two Pombero displays illustrate its two approved regions. They are preview actors, not duplicate campaign identities.",
+    "The original three pilot models, their scales, native frame sequences and source bytes remain unchanged.",
+    "This first slice displays three existing pilot identities; it does not claim complete regional creature coverage or combat art."
+  ]
+}

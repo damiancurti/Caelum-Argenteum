@@ -1,0 +1,553 @@
+{
+  "schema_revision": 1,
+  "issue": 652,
+  "parent_issue": 647,
+  "status": "runtime_art_candidate_pending_author_acceptance",
+  "variants": {
+    "carbine": {
+      "class": "CaelumCarbineAmmo",
+      "parts": [
+        "0_case",
+        "0_projectile",
+        "1_case",
+        "1_projectile",
+        "2_case",
+        "2_projectile",
+        "lying_case",
+        "lying_projectile",
+        "leather_pouch",
+        "pouch_strap"
+      ],
+      "closed_outward_components": 10,
+      "vertices": 4472,
+      "triangles": 1568,
+      "surfaces": [
+        {
+          "material": "leather",
+          "vertices": 576,
+          "triangles": 192
+        },
+        {
+          "material": "strap",
+          "vertices": 56,
+          "triangles": 96
+        },
+        {
+          "material": "bronze",
+          "vertices": 3840,
+          "triangles": 1280
+        }
+      ],
+      "reference_opaque_bounds": [
+        6,
+        16,
+        122,
+        111
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 95.0,
+      "native_bounds": [
+        {
+          "min": [
+            -54.52719123096814,
+            -34.4375,
+            0.0
+          ],
+          "max": [
+            54.52720405905356,
+            52.25,
+            95.0
+          ]
+        }
+      ]
+    },
+    "arrow": {
+      "class": "CaelumArrowAmmo",
+      "parts": [
+        "0_shaft",
+        "0_metal_head",
+        "0_vertical_fletching",
+        "0_horizontal_fletching",
+        "1_shaft",
+        "1_metal_head",
+        "1_vertical_fletching",
+        "1_horizontal_fletching",
+        "2_shaft",
+        "2_metal_head",
+        "2_vertical_fletching",
+        "2_horizontal_fletching",
+        "leather_binding",
+        "binding_rim"
+      ],
+      "closed_outward_components": 14,
+      "vertices": 518,
+      "triangles": 480,
+      "surfaces": [
+        {
+          "material": "wood",
+          "vertices": 60,
+          "triangles": 96
+        },
+        {
+          "material": "leather",
+          "vertices": 28,
+          "triangles": 48
+        },
+        {
+          "material": "strap",
+          "vertices": 28,
+          "triangles": 48
+        },
+        {
+          "material": "iron",
+          "vertices": 144,
+          "triangles": 48
+        },
+        {
+          "material": "red",
+          "vertices": 258,
+          "triangles": 240
+        }
+      ],
+      "reference_opaque_bounds": [
+        17,
+        8,
+        110,
+        120
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 93.0,
+      "native_bounds": [
+        {
+          "min": [
+            -46.5,
+            -12.51923076923077,
+            0.0
+          ],
+          "max": [
+            46.5,
+            12.51923076923077,
+            16.453846153846158
+          ]
+        }
+      ]
+    },
+    "bolt": {
+      "class": "CaelumBoltAmmo",
+      "parts": [
+        "0_shaft",
+        "0_metal_head",
+        "0_vertical_fletching",
+        "0_horizontal_fletching",
+        "1_shaft",
+        "1_metal_head",
+        "1_vertical_fletching",
+        "1_horizontal_fletching",
+        "2_shaft",
+        "2_metal_head",
+        "2_vertical_fletching",
+        "2_horizontal_fletching",
+        "leather_binding",
+        "binding_rim"
+      ],
+      "closed_outward_components": 14,
+      "vertices": 518,
+      "triangles": 480,
+      "surfaces": [
+        {
+          "material": "wood",
+          "vertices": 60,
+          "triangles": 96
+        },
+        {
+          "material": "leather",
+          "vertices": 28,
+          "triangles": 48
+        },
+        {
+          "material": "strap",
+          "vertices": 28,
+          "triangles": 48
+        },
+        {
+          "material": "iron",
+          "vertices": 144,
+          "triangles": 48
+        },
+        {
+          "material": "blue",
+          "vertices": 258,
+          "triangles": 240
+        }
+      ],
+      "reference_opaque_bounds": [
+        19,
+        8,
+        109,
+        120
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 90.0,
+      "native_bounds": [
+        {
+          "min": [
+            -45.0,
+            -15.75,
+            0.0
+          ],
+          "max": [
+            45.0,
+            15.75,
+            20.700000000000003
+          ]
+        }
+      ]
+    },
+    "javelin_one": {
+      "class": "CaelumJavelinTierOneAmmo",
+      "parts": [
+        "shaft",
+        "spear_head",
+        "grip",
+        "head_socket",
+        "butt_cap",
+        "tassel_knot",
+        "red_tassel_0",
+        "red_tassel_1",
+        "red_tassel_2"
+      ],
+      "closed_outward_components": 9,
+      "vertices": 271,
+      "triangles": 392,
+      "surfaces": [
+        {
+          "material": "wood",
+          "vertices": 28,
+          "triangles": 48
+        },
+        {
+          "material": "leather",
+          "vertices": 28,
+          "triangles": 48
+        },
+        {
+          "material": "bronze",
+          "vertices": 56,
+          "triangles": 96
+        },
+        {
+          "material": "silver",
+          "vertices": 48,
+          "triangles": 16
+        },
+        {
+          "material": "red",
+          "vertices": 111,
+          "triangles": 184
+        }
+      ],
+      "reference_opaque_bounds": [
+        9,
+        8,
+        119,
+        120
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 110.0,
+      "native_bounds": [
+        {
+          "min": [
+            -55.0,
+            -7.185168115338481,
+            0.0
+          ],
+          "max": [
+            55.0,
+            7.361135912065751,
+            6.416666666666666
+          ]
+        }
+      ]
+    },
+    "javelin_two": {
+      "class": "CaelumJavelinTierTwoAmmo",
+      "parts": [
+        "shaft",
+        "spear_head",
+        "grip",
+        "head_socket",
+        "butt_cap",
+        "tassel_knot",
+        "red_tassel_0",
+        "red_tassel_1",
+        "red_tassel_2"
+      ],
+      "closed_outward_components": 9,
+      "vertices": 271,
+      "triangles": 392,
+      "surfaces": [
+        {
+          "material": "leather",
+          "vertices": 28,
+          "triangles": 48
+        },
+        {
+          "material": "silver",
+          "vertices": 104,
+          "triangles": 112
+        },
+        {
+          "material": "dark",
+          "vertices": 28,
+          "triangles": 48
+        },
+        {
+          "material": "red",
+          "vertices": 111,
+          "triangles": 184
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        9,
+        119,
+        119
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 111.0,
+      "native_bounds": [
+        {
+          "min": [
+            -55.5,
+            -7.250487825477922,
+            0.0
+          ],
+          "max": [
+            55.5,
+            7.428055329448167,
+            6.475
+          ]
+        }
+      ]
+    },
+    "javelin_three": {
+      "class": "CaelumJavelinTierThreeAmmo",
+      "parts": [
+        "shaft",
+        "spear_head",
+        "grip",
+        "head_socket",
+        "butt_cap",
+        "tassel_knot",
+        "red_tassel_0",
+        "red_tassel_1",
+        "red_tassel_2"
+      ],
+      "closed_outward_components": 9,
+      "vertices": 271,
+      "triangles": 392,
+      "surfaces": [
+        {
+          "material": "leather",
+          "vertices": 28,
+          "triangles": 48
+        },
+        {
+          "material": "silver",
+          "vertices": 48,
+          "triangles": 16
+        },
+        {
+          "material": "gold",
+          "vertices": 56,
+          "triangles": 96
+        },
+        {
+          "material": "dark",
+          "vertices": 28,
+          "triangles": 48
+        },
+        {
+          "material": "red",
+          "vertices": 111,
+          "triangles": 184
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        8,
+        119,
+        120
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 111.0,
+      "native_bounds": [
+        {
+          "min": [
+            -55.5,
+            -7.250487825477922,
+            0.0
+          ],
+          "max": [
+            55.5,
+            7.428055329448167,
+            6.475
+          ]
+        }
+      ]
+    },
+    "shotgun": {
+      "class": "CaelumShotgunAmmo",
+      "parts": [
+        "0_brass_base",
+        "0_paper_body",
+        "0_crimp_0",
+        "0_crimp_1",
+        "0_crimp_2",
+        "0_crimp_3",
+        "0_crimp_4",
+        "0_crimp_5",
+        "0_crimp_6",
+        "0_crimp_7",
+        "1_brass_base",
+        "1_paper_body",
+        "1_crimp_0",
+        "1_crimp_1",
+        "1_crimp_2",
+        "1_crimp_3",
+        "1_crimp_4",
+        "1_crimp_5",
+        "1_crimp_6",
+        "1_crimp_7",
+        "2_brass_base",
+        "2_paper_body",
+        "2_crimp_0",
+        "2_crimp_1",
+        "2_crimp_2",
+        "2_crimp_3",
+        "2_crimp_4",
+        "2_crimp_5",
+        "2_crimp_6",
+        "2_crimp_7",
+        "lying_brass_base",
+        "lying_paper_body",
+        "lying_crimp_0",
+        "lying_crimp_1",
+        "lying_crimp_2",
+        "lying_crimp_3",
+        "lying_crimp_4",
+        "lying_crimp_5",
+        "lying_crimp_6",
+        "lying_crimp_7"
+      ],
+      "closed_outward_components": 40,
+      "vertices": 4512,
+      "triangles": 1504,
+      "surfaces": [
+        {
+          "material": "bronze",
+          "vertices": 1920,
+          "triangles": 640
+        },
+        {
+          "material": "paper",
+          "vertices": 2592,
+          "triangles": 864
+        }
+      ],
+      "reference_opaque_bounds": [
+        0,
+        0,
+        345,
+        365
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        19.010416667,
+        19.010416667
+      ],
+      "target_art_extent": 19.19999999966334,
+      "native_bounds": [
+        {
+          "min": [
+            -10.741258741070402,
+            -10.741258741070402,
+            0.0
+          ],
+          "max": [
+            10.741258741070402,
+            8.951048950892002,
+            19.19999999966334
+          ]
+        }
+      ]
+    }
+  },
+  "source_sha256": {
+    "DESIGN.json": "ac7def61b94c52c20b30004b607e0a21c09e6caed46e1ed6398641b4a58c50a4",
+    "PROMPT.txt": "5235b6fdf9d877915e3522da4a3d0f44b6eaf15dd01c780d8d553bf7f45a1c74",
+    "GENERATION_STATUS.json": "7919ddedc4e06608d9aecb30c4463b13b49b541a0ba4d1f1dc62940fdec7eb63"
+  },
+  "external_source_sha256": {
+    "assets/source/art/elemental_518/MODELS.json": "08da944ff765fcb75c57b09e03540b97478589eb93f8d51b06254dc6ff03aa61",
+    "src/TEXTURES": "e93b59094575efbdc7361e0093fe84f798095571a2e34728a1e15530f1146640",
+    "src/graphics/caelum/icons/ca_arrow_ammo.png": "a921b29fd2eab24993ae16ac6962c0caaa9f1183b43eb1df9497587d03fd2a4b",
+    "src/graphics/caelum/icons/ca_bolt_ammo.png": "9a493e3fd535c9f9f41ddf6b8a8d5fd0709ef7851368b9ddc247751ccfa647bc",
+    "src/graphics/caelum/icons/ca_carbine_ammo.png": "8d7ef010bc87f32ac331b05c764eb07be8c152883e553ba977151d1032ece0d0",
+    "src/graphics/caelum/icons/ca_javelin.png": "a23d7bb4b2009ed4f50c53ff8134024f4b23ef521d4510d6664b88758acf64ee",
+    "src/graphics/caelum/icons/ca_javelin_t2.png": "051c8c2cc5ff1359da6e842cdbc060617a360018fdb5bde60597d810e2bce47b",
+    "src/graphics/caelum/icons/ca_javelin_t3.png": "785c9864652113684afb46402a9d408c1142ecfc2324249484b5a5ad8bdd14ae",
+    "src/graphics/caelum/shotgun.textures": "7b6208f1712678234bfffecb405d5d12ffaaec7cd2a6b272c5422f6b1393d04e",
+    "src/graphics/caelum/shotgun/icons.png": "68b20fb01e0c15394ae832ad082d22d121a33f05e8a623685afa8389aa59e9dc",
+    "src/models/caelum/actors/training/ca_training_dummy.png": "4ae89bf07aaab273bb9bcafad283ab2e56fb3d87d6dd2f86e6a1329855dd8cff",
+    "src/models/caelum/inventory/consumables/materials.png": "eb8f019510c63601c9e25c8ed05142fbe7b97fe06eb444c32685def6e664416e"
+  },
+  "generator_sha256": {
+    "generate_inventory_ammunition_models.py": "b3ac2d0a41b85193c81cb61b27770c5ac0e557f350b9f96875feeef75606fae1",
+    "generate_inventory_consumable_models.py": "1e0f81ac23de88c55271cccba6fd7f56c64c3b38d76ddda50da1348bd1d269a7",
+    "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2"
+  },
+  "sha256": {
+    "models/caelum/inventory/ammunition/carbine.md3": "450b6087f2011f61109fb16be3b38b49e89d2f044328589f02f290e1c55e1c20",
+    "editable/carbine.obj": "46bbaf2f95f1c1bf3cc061fc625c4031f170d32f518b56114b33a8e251558d40",
+    "models/caelum/inventory/ammunition/arrow.md3": "b9540fc0266061c26a8e46da24eec14346370e6c499997c1a1ddee405a0947c0",
+    "editable/arrow.obj": "6798a61091e8e40722e2ea91d63c494a397e4fd4f2fd3a67b500569ed565f0e9",
+    "models/caelum/inventory/ammunition/bolt.md3": "195c0454cbf8652bab2b7f681345a74ee0a52fbeda06042085bdb41543988d9c",
+    "editable/bolt.obj": "3cb7d453df679d5e0e284ed17af4a4baffe3e80f2c6a037cb69dd97837cea4cb",
+    "models/caelum/inventory/ammunition/javelin_one.md3": "280b8fde45d823c9d34fc3edb29a63078f42326e6f7c625e8ead621a5b9b50a2",
+    "editable/javelin_one.obj": "e8fe0dda92c73524951a66939cb76afc3b4ab460ae681b013d058560dc79e292",
+    "models/caelum/inventory/ammunition/javelin_two.md3": "1c19fb66cb364a42fde19867a1e92c67a3e592bc013d253b0345dbceeb45e622",
+    "editable/javelin_two.obj": "dc7c630ea06d69e3d14a5b63961bce90031565516002b383decbeb131682a293",
+    "models/caelum/inventory/ammunition/javelin_three.md3": "a20672458f166d6377ec28e67d687b7acc177689a9cb26d64edf6510a4285957",
+    "editable/javelin_three.obj": "e3f7b21beb86f29bc0cbfad808009eff68ac94b579101732ff0f86f71e175628",
+    "models/caelum/inventory/ammunition/shotgun.md3": "1f995d2c494f4a00b01d2033f3e59ea6aec7e264a213610f4bafb525d5ca8231",
+    "editable/shotgun.obj": "9c1aeeb48330475d89872290a6cbc4b822f43bb942a76ca2ff208ae2093756ea",
+    "editable/ammunition.mtl": "2547f715fae3d7c1c4f2fcc52bb1a8cdfeac37e23ac5702c2eff949d1efd67e3",
+    "caelum/data/inventory_ammunition.modeldef": "3934c48be0b5730936f64d64b5ee0e96b28493d3652b16621e598bd23f67c9d0"
+  }
+}

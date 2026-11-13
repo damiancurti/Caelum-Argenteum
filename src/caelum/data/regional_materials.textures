@@ -1,0 +1,47 @@
+Texture "CRLITGR", 1254, 1254
+{
+    XScale 9.796875
+    YScale 9.796875
+    WorldPanning
+    Patch "graphics/caelum/textures/regions_463/litoral_ground-v1.png", 0, 0
+}
+
+Flat "CRLITGR", 1254, 1254
+{
+    XScale 9.796875
+    YScale 9.796875
+    WorldPanning
+    Patch "graphics/caelum/textures/regions_463/litoral_ground-v1.png", 0, 0
+}
+
+Texture "CRSELVG", 1254, 1254
+{
+    XScale 39.1875
+    YScale 39.1875
+    WorldPanning
+    Patch "graphics/caelum/textures/regions_463/selva_ground-v1.png", 0, 0
+}
+
+Flat "CRSELVG", 1254, 1254
+{
+    XScale 39.1875
+    YScale 39.1875
+    WorldPanning
+    Patch "graphics/caelum/textures/regions_463/selva_ground-v1.png", 0, 0
+}
+
+Texture "CRPATGR", 1254, 1254
+{
+    XScale 19.59375
+    YScale 19.59375
+    WorldPanning
+    Patch "graphics/caelum/textures/regions_463/patagonia_ground-v1.png", 0, 0
+}
+
+Flat "CRPATGR", 1254, 1254
+{
+    XScale 19.59375
+    YScale 19.59375
+    WorldPanning
+    Patch "graphics/caelum/textures/regions_463/patagonia_ground-v1.png", 0, 0
+}

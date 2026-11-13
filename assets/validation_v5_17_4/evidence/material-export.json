@@ -1,0 +1,19 @@
+{
+  "schema_revision": 1,
+  "issue": 463,
+  "status": "regional_art_candidate",
+  "source_sha256": {
+    "INVENTORY.json": "1dd6460200ef58d80534b10a44bc8b27010abf036b64f83a8eed15f4cf280d7f",
+    "PROVENANCE.json": "37e1a51158fb1182e8779be5d9eaf781c1bf5357a10dd99a851139936f36b178",
+    "litoral_ground-v1.prompt.txt": "3254af425e38762c26733dc22c6070dffb828e6a291d652663601b4650fe45c7",
+    "selva_ground-v1.prompt.txt": "fdbce2c9eb9a457a4b31bd2efeb0fe44b0f8a999a649b59c2cd33ff4269f2bef",
+    "patagonia_ground-v1.prompt.txt": "87072b131ff5c6593b2d06e219eeaf44595cd84d025f29370d177a4800c2228c"
+  },
+  "generator_sha256": "1c103f56912d84dd592a7cf62521c00ad9a2ce3b8143554832bfa1b7c2a6b4ee",
+  "sha256": {
+    "graphics/caelum/textures/regions_463/litoral_ground-v1.png": "709d370daae729387bbc10507c486d6e79f8ea397de29c447f789d4f8035bb62",
+    "graphics/caelum/textures/regions_463/selva_ground-v1.png": "b059820b642a1fd7a928cebca685f0b4d19b98879cc9c6a7a64d77ef3e12b16b",
+    "graphics/caelum/textures/regions_463/patagonia_ground-v1.png": "b59111904cd86f10df351acbe4d150dab9a671274069bd50b76a4c88cb51a5ec",
+    "caelum/data/regional_materials.textures": "897e7831f72e01521a1dbaf5e81d5d2eb55f1b7ada63e22c60539910a6ed8521"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "schema_revision": 1,
+  "issue": 463,
+  "status": "first_slice_native_tested_pending_author_acceptance",
+  "authority": "Author 2026-11-13: create needed regional textures and a small inspection map with the regional monsters; defer questions.",
+  "scope": "First inspection slice: Litoral, Selva and Patagonia, using the three existing unintegrated 3D visual pilots in their approved regions. No new campaign routes, encounters or combat/body rules.",
+  "reuse": [
+    "Existing city/port/beach materials retain their original bytes and bindings.",
+    "Existing owned rock, bark and foliage materials remain available; no duplicate replacement atlases.",
+    "Pombero in Litoral/Selva, Cuero and Nahuelito in Patagonia use the existing preserved #455 visual pilots, not new physical gameplay identities."
+  ],
+  "gaps": [
+    {
+      "key": "litoral_ground",
+      "purpose": "Primary request: damp riverbank soil of the Argentine Litoral floodplain, with dark umber fine silt, subtle shallow compressed irregularities, scattered short muted olive-green grass shoots and tiny reed fragments. Mostly readable brown soil, sparse plant coverage, slightly damp matte texture. No large reeds, footprints, standing water, shore boundary or isolated puddle.",
+      "prompt": "litoral_ground-v1.prompt.txt",
+      "world_tile_map_units": [
+        128,
+        128
+      ],
+      "status": "native_tested_pending_author_acceptance",
+      "image": "litoral_ground-v1.png",
+      "sha256": "709d370daae729387bbc10507c486d6e79f8ea397de29c447f789d4f8035bb62",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "texture": "CRLITGR"
+    },
+    {
+      "key": "selva_ground",
+      "purpose": "Primary request: forest-floor material for the humid Argentine Selva, subdued reddish-brown earth beneath a dispersed layer of small decaying broad leaves, fine roots and short twigs. Fallen leaves are roughly five to fifteen centimetres long, mainly muted ochre, brown and faded olive. Keep enough exposed red earth to read the substrate. No giant leaves, standing vegetation, mushrooms, creatures or spotlighted glade.",
+      "prompt": "selva_ground-v1.prompt.txt",
+      "world_tile_map_units": [
+        32,
+        32
+      ],
+      "status": "native_tested_pending_author_acceptance",
+      "image": "selva_ground-v1.png",
+      "sha256": "b059820b642a1fd7a928cebca685f0b4d19b98879cc9c6a7a64d77ef3e12b16b",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "texture": "CRSELVG"
+    },
+    {
+      "key": "patagonia_ground",
+      "purpose": "Primary request: windswept ground beside a Patagonian glacial lake, compact cool gray-brown gravel with small weathered angular pebbles, subdued mineral variation and sparse dry straw-colored grass fragments. Stones are mostly a few centimetres across, irregularly dispersed, with no single dominant boulder. Dry matte material, restrained blue-gray and earth palette, no snow, water, horizon or shoreline boundary.",
+      "prompt": "patagonia_ground-v1.prompt.txt",
+      "world_tile_map_units": [
+        64,
+        64
+      ],
+      "status": "native_tested_pending_author_acceptance",
+      "image": "patagonia_ground-v1.png",
+      "sha256": "b59111904cd86f10df351acbe4d150dab9a671274069bd50b76a4c88cb51a5ec",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "texture": "CRPATGR"
+    }
+  ],
+  "source_sha256": {
+    "assets/bestiary/REGION_PROPOSAL.json": "34218ccf0194132336c7ff04ae5c1c9d2a8c1bad488defca907fb9149a52d004",
+    "assets/coastal_textures/integration.json": "685802f32df0f18ffb946200c85b3dfd5d2432964b1ce4f4c617d82783c595bd"
+  },
+  "exclusions": [
+    "The three pilots do not supply production combat animation sets or authored encounters.",
+    "Other regional materials and all remaining creature models remain unfinished.",
+    "No promised crowd/render budget before native measurement; no changes to earlier peaceful or siege maps."
+  ],
+  "material_scale_note": "The prompt requests an approximate four-metre patch, not measured output. Native display sizes follow the visible generated features: Litoral 128MU, Selva 32MU (leaves would be oversized at128), Patagonia64MU (small gravel). These are editable presentation scales, not gameplay/body data; confirm in native repeated-floor views."
+}
