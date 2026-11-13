@@ -1,0 +1,113 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-13 18:06:31
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-662/build/issue662-nahuelito01.pk3, 18206 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-662/build/issue662-actions01/fixture.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1520 x 825
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2492.05 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+CA455V - Nahuelito action and loot diagnostic
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA662 ACTIONCHECK PASS native class spawn
+CA662 ACTIONCHECK PASS fixture exists
+CA662 ACTIONCHECK PASS one Nahuelito class
+CA662 ACTIONCHECK PASS protected Mandinga/Zupay excluded
+CA662 ACTIONCHECK PASS twelve current attributes
+CA662 ACTIONCHECK PASS derived maxima/speed
+CA662 ACTIONCHECK PASS temporary body inherited
+CA662 ACTIONCHECK PASS provisional defense adapter
+CA662 ACTIONCHECK PASS catalogue identity/taxonomy/population
+CA662 ACTIONCHECK PASS stable class/initialization
+CA662 ACTIONCHECK PASS shared action states
+CA662 ACTIONCHECK PASS shared hostility/alliance
+CA662 ACTIONCHECK PASS native resource service
+CA662 ACTIONCHECK PASS finite inventory persists
+CA662 ACTIONCHECK PASS finite inventory persists
+CA662 ACTIONCHECK PASS finite inventory persists
+CA455 PROFILE index=54 reference=CA-FOLK-055 taxonomy=magical_beast maximum_health=728 radius=14.755556 height=51.644444
+CA455 COMBAT PASS bodies=1 depleted=0 failures=0
+CA662 ACTIONCHECK PASS previous action completed
+CA662 ACTIONCHECK PASS representative class found
+CA455 SIGHT index=-1 mode=0 live=1/1 health=728/728 visible=1 sight=1 order=1 dormant=0 sleep=0 stun=0.00 distance=26.00 angle=0.00
+CA662 ACTIONCHECK PASS native identification before attack
+CA662 ACTIONCHECK PASS native action execution
+CA455 ACTION PASS index=-1 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1
+CA662 ACTIONCHECK PASS previous action completed
+CA662 ACTIONCHECK PASS representative class found
+CA455 SIGHT index=-1 mode=1 live=1/1 health=728/728 visible=1 sight=1 order=1 dormant=0 sleep=0 stun=0.00 distance=208.00 angle=0.00
+CA662 ACTIONCHECK PASS native identification before attack
+CA662 ACTIONCHECK PASS native action execution
+CA455 ACTION PASS index=-1 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=0
+CA662 ACTIONCHECK PASS previous action completed
+CA662 ACTIONCHECK PASS representative class found
+CA455 SIGHT index=-1 mode=2 live=1/1 health=728/728 visible=1 sight=1 order=1 dormant=0 sleep=0 stun=0.00 distance=26.00 angle=0.00
+CA662 ACTIONCHECK PASS native identification before attack
+CA662 ACTIONCHECK PASS native action execution
+CA455 ACTION PASS index=-1 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1
+CA662 ACTIONCHECK PASS previous action completed
+CA662 ACTIONCHECK PASS representative class found
+CA455 SIGHT index=54 mode=0 live=1/1 health=728/728 visible=1 sight=1 order=1 dormant=0 sleep=0 stun=0.00 distance=26.00 angle=0.00
+CA662 ACTIONCHECK PASS native identification before attack
+CA662 ACTIONCHECK PASS native action execution
+CA455 ACTION PASS index=54 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1
+CA662 ACTIONCHECK PASS previous action completed
+CA662 ACTIONCHECK PASS representative class found
+CA455 SIGHT index=54 mode=1 live=1/1 health=728/728 visible=1 sight=1 order=1 dormant=0 sleep=0 stun=0.00 distance=208.00 angle=0.00
+CA662 ACTIONCHECK PASS native identification before attack
+CA662 ACTIONCHECK PASS native action execution
+CA455 ACTION PASS index=54 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=0
+CA662 ACTIONCHECK PASS previous action completed
+CA662 ACTIONCHECK PASS representative class found
+CA455 SIGHT index=54 mode=2 live=1/1 health=728/728 visible=1 sight=1 order=1 dormant=0 sleep=0 stun=0.00 distance=26.00 angle=0.00
+CA662 ACTIONCHECK PASS native identification before attack
+CA662 ACTIONCHECK PASS native action execution
+CA455 ACTION PASS index=54 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1
+CA455 ACTIONS PASS completed=6 failures=0

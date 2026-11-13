@@ -1,6 +1,54 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.8** - 2026-11-13.
+Documentation version: **5.17.9** - 2026-11-13.
+
+## 5.17.9 - Nahuelito inherited combat model (#662, parent #461)
+
+CaelumBestiary055 gains an explicit model for all 23 inherited idle, locomotion,
+stun, preparation/release, pain, death, breath and lying-rest frame pairs. The
+original #455 anatomy, topology, UVs and three owned textures remain unchanged.
+Editable neck/tail bends, flipper pivots, jaw opening and body roll add combat
+presentation; original wave cycles supply movement. No aquatic AI, new attack,
+faction, loot, encounter or campaign population is introduced. Native state
+identities, durations, action calls, physics and serialization remain intact.
+
+Uniform fitting uses the smaller of Radius/all-pose radial extent and
+Height/all-pose vertical extent, divided by unchanged Actor.Scale, with
+CorrectPixelStretch. Every authored pose stays inside the provisional Mandinga
+body envelope. This deliberately small combat presentation does not approve
+final species dimensions or mesh/hitbox matching: empty collision space remains
+above the model. The original 384-MU/12m preview and regional gallery retain
+their original scale. Final size and body correspondence remain author decisions.
+
+Editable controls, grouped neutral OBJ/MTL, adjacent owned texture copies and
+export hashes live in assets/source/art/nahuelito_662. Rebuild with
+`python assets/generators/generate_nahuelito_combat_model.py --output build/nahuelito-combat --install`;
+--check verifies installed exports. Geometry has 5,174 vertices, 9,272 triangles
+and three material surfaces. No raster generation or editing occurs.
+
+The final package passes 115 continuity/state/body/inventory checks across
+baseline, old-save/model, fresh/model, reload and rollback. Separate exact
+keyframe inspection passes 51 checks with all 23 poses visible, using the
+established CA-KP-230 fixture. Representative poses and front/side/rear captures
+were inspected at closer framing after the initial distant review. Six actual
+attacks (Mandinga control and Nahuelito melee/projectile/breath), finite stock,
+death guards and loot reload pass 80 checks with ordinary gameplay actions.
+
+Binary checks cover 119,002 native vertex/frame bounds and the fitted body
+envelope. Twelve exported files repeat byte-for-byte. All 18,206 package entries
+match src; only five new Nahuelito resources, the MODELDEF include and two release
+diagnostic strings differ from the #660 baseline. Other creatures, original
+Nahuelito preview/gallery and gameplay code retain identical runtime bytes.
+
+One 700-tic sprite/model pair records 1727.77/1708.91 queue presents/s,
+p95 0.7864/0.7870 ms and p99 0.9820/0.9680 ms. Environment: Windows 11 Pro 26200,
+Ryzen 9 5950X, 32 GB, RTX 3070 Ti, GZDoom 4.14.2, Vulkan 1280x720, uncapped,
+vsync off, unpaused background, 5% audio. A separate wide camera fully frames
+both subjects, with an offscreen Mandinga control. The model is deliberately
+smaller under temporary body fitting, so this is not an equal-silhouette cost
+comparison. A single pair is not GPU/display timing, repeatable improvement or
+campaign/crowd acceptance. Evidence: assets/validation_v5_17_9/evidence/SUMMARY.json.
+CA662-NAHUELITO-01 remains pending; this creature does not complete the wider roster.
 
 ## 5.17.8 - Cuero Uñudo inherited combat model (#660, parent #461)
 
