@@ -9,7 +9,7 @@ import struct
 ROOT = Path(__file__).resolve().parents[2]
 
 
-def validate(root=ROOT, family='ammunition', expected_count=7):
+def validate(root=ROOT, family='ammunition', expected_count=7, distinct_classes=True):
     errors = []
     try:
         directory = root / 'assets/source/art/inventory_models_647' / family
@@ -29,8 +29,14 @@ def validate(root=ROOT, family='ammunition', expected_count=7):
         expected = [binding['class'] for item in config['variants'].values()
                     for binding in [item, *item.get('additional_bindings', [])]]
         definition = (root / 'src/caelum/data' / ('inventory_' + family + '.modeldef')).read_text()
-        if len(expected) != expected_count or len(set(expected)) != expected_count or re.findall(r'\bModel\s+(\w+)\s*\{', definition) != expected:
+        if len(expected) != expected_count or (distinct_classes and len(set(expected)) != expected_count) or re.findall(r'\bModel\s+(\w+)\s*\{', definition) != expected:
             errors.append(f'Expected {expected_count} distinct explicit production bindings')
+        expected_pairs = [(binding['class'], binding['sprite']) for item in config['variants'].values()
+                          for binding in [item, *item.get('additional_bindings', [])]]
+        actual_pairs = [(kind, sprite) for kind, body in re.findall(r'\bModel\s+(\w+)\s*\{([^}]+)\}', definition)
+                        for sprite in re.findall(r'\bFrameIndex\s+(\w+)\s+A\s+0\s+0\b', body)]
+        if actual_pairs != expected_pairs or len(set(expected_pairs)) != expected_count:
+            errors.append('Expected unique exact class/sprite/A bindings')
         include = '#include "caelum/data/inventory_' + family + '.modeldef"'
         if (root / 'src/MODELDEF').read_text(encoding='utf-8').count(include) != 1:
             errors.append('Expected one production include')

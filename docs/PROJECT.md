@@ -1,6 +1,12 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.6** - 2026-11-13.
+Documentation version: **5.17.7** - 2026-11-13.
+
+## 5.17.7 - Seven native metal-ingot variants in 3D (#658)
+
+Existing material drops use owned closed meshes and original metal pixels;
+all three quality tiers retain their original identity and gameplay. ASSETS
+records verification; broader inventory and character coverage remains open.
 
 ## 5.17.6 - Documents and small supplies in 3D (#656)
 
