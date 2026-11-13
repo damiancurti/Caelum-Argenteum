@@ -4,6 +4,32 @@ Documentation version: **5.16.3** - 2026-11-12.
 
 ## 5.16.3 - Animated folklore model pilots (#455, unintegrated)
 
+Cuero / Cuero Uñudo (CA-FOLK-053) adds a third unintegrated technical pilot.
+Its editable DESIGN.json in assets/source/art/cuero_455 describes a closed,
+folded aquatic hide, pale underside, 24 curved marginal claws, dorsal relief and
+paired raised eyes. The source's 3m lower diameter sets only the 96-MU preview
+width; it does not authorize runtime body size or collision. The owned generator
+reuses the Nahuelito MD3 writer and Pombero tube construction. OBJ/MTL and MD3
+exports contain 9,536 native vertices, 16,032 triangles, three surfaces and
+40 distinct frames (16 idle, 24 swim); motion is geometric deformation only.
+
+Built-in image_gen produced the four-panel material atlas. Original PNG bytes,
+the exact PROMPT.json and provenance hashes remain beside the editable design.
+Rebuild with `python assets/generators/generate_cuero_model.py --output build/cuero`;
+`--check` verifies generated files read-only. The shared binary validator and
+native runner accept `--kind cuero`. Nine views include an inverted underside;
+F1-F9 select views and F10 animates in optional interactive mode.
+
+Binary bounds/material coverage, all 381,440 coordinate checks, byte-identical
+independent generation and native fresh/reload/state advancement pass. Evidence
+in assets/validation_v5_16_3/cuero/SUMMARY.json retains four visual iterations,
+including early angular claws/rim seams and the subsequent curved claws, tighter
+eyelids and underside strip. Studio captures establish technical presentation,
+not ordinary lighting, encounter-scale performance or author acceptance. Membrane
+folds and silhouette still require art review. No production appearance, actual
+swimming/wrapping behavior, combat animation set, encounter or physical body is
+activated. The catalogue and provisional Mandinga combat template stay distinct.
+
 Pombero (CA-FOLK-006) adds a second technical visual pilot. Its editable DESIGN.json
 in assets/source/art/pombero_455 describes 15 hierarchical parts, sculpted face,
 pointed ears, straw hat, shirt/waistcoat, rope belt and bare hands/feet. The owned
@@ -57,7 +83,7 @@ failed fixture attempts and exact hashes. Native single-instance animation and
 save/reload pass; binary/material/frame coverage and deterministic regeneration
 pass. These checks do not establish ordinary aquatic gameplay, encounter-scale
 performance, uniqueness across campaign maps, or final visual acceptance.
-CA455-VIS-01 requests that separate Nahuelito author review. The other 56 references remain
+CA455-VIS-01 requests that separate Nahuelito author review. The other 55 references remain
 without new models; #455 is unfinished.
 
 The complete 5.16.3 project audit and package build pass. The final package's

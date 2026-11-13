@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "subject": "cuero",
+  "frames": 40,
+  "surfaces": 3,
+  "vertices": 9536,
+  "triangles": 16032,
+  "distinct_frames_per_surface": [
+    40,
+    40,
+    40
+  ],
+  "binary_coordinate_checks": 381440,
+  "scope": "Binary structure/materials/bounds and non-static animation only; not gameplay behavior or visual acceptance."
+}

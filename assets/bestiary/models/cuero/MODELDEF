@@ -1,0 +1,48 @@
+Model CA455CueroPreview
+{
+    Path "models/caelum/folklore/cuero"
+    Model 0 "cuero.md3"
+    Scale 1 1 1
+    CorrectPixelStretch
+    UseActorPitch
+    FrameIndex CUEI A 0 0
+    FrameIndex CUEI B 0 1
+    FrameIndex CUEI C 0 2
+    FrameIndex CUEI D 0 3
+    FrameIndex CUEI E 0 4
+    FrameIndex CUEI F 0 5
+    FrameIndex CUEI G 0 6
+    FrameIndex CUEI H 0 7
+    FrameIndex CUEI I 0 8
+    FrameIndex CUEI J 0 9
+    FrameIndex CUEI K 0 10
+    FrameIndex CUEI L 0 11
+    FrameIndex CUEI M 0 12
+    FrameIndex CUEI N 0 13
+    FrameIndex CUEI O 0 14
+    FrameIndex CUEI P 0 15
+    FrameIndex CUES A 0 16
+    FrameIndex CUES B 0 17
+    FrameIndex CUES C 0 18
+    FrameIndex CUES D 0 19
+    FrameIndex CUES E 0 20
+    FrameIndex CUES F 0 21
+    FrameIndex CUES G 0 22
+    FrameIndex CUES H 0 23
+    FrameIndex CUES I 0 24
+    FrameIndex CUES J 0 25
+    FrameIndex CUES K 0 26
+    FrameIndex CUES L 0 27
+    FrameIndex CUES M 0 28
+    FrameIndex CUES N 0 29
+    FrameIndex CUES O 0 30
+    FrameIndex CUES P 0 31
+    FrameIndex CUES Q 0 32
+    FrameIndex CUES R 0 33
+    FrameIndex CUES S 0 34
+    FrameIndex CUES T 0 35
+    FrameIndex CUES U 0 36
+    FrameIndex CUES V 0 37
+    FrameIndex CUES W 0 38
+    FrameIndex CUES X 0 39
+}
