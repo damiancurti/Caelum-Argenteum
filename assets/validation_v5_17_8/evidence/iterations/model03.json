@@ -1,0 +1,570 @@
+{
+  "schema_revision": 1,
+  "issue": 660,
+  "parent_issue": 461,
+  "status": "native_candidate_pending_author_review",
+  "source_sha256": {
+    "assets/source/art/cuero_455/DESIGN.json": "4c25ba5afa43d13c6c8b79ef39a7caddc8c8234a0d993f717067cda824069bdd",
+    "assets/source/art/cuero_455/PROVENANCE.json": "8e193a881fcd9818c91a55271f3495cf54d8a868bbfbdf535397776506304be2",
+    "assets/source/art/cuero_455/PROMPT.json": "07f3ec9a41e3d9c49a43815daa416d8a8497cccea73fc4e2f3d98f0da14bc0ca",
+    "assets/source/art/cuero_455/materials.png": "9cbf0cc1e59a6bd09e6bcae65a714b08c8f6ea45f63271fc73678913dea4afd4",
+    "assets/generators/generate_cuero_model.py": "4d02f514cccfeacf51f53b500ff01772acba1e61daabde38cec794fa0352f819",
+    "assets/generators/generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "assets/generators/generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+    "src/caelum/actors/CaelumFolkloreCharacters.zs": "80c5a00ef221395a6688125d8871c3f84ccf21e2aeb63b5c0bd4adb99dd2e420",
+    "assets/bestiary/BEHAVIOR.json": "a017c151836f6df1934be6762e708e0759101c0daa8e2b77bb61bbfcb77e7576",
+    "assets/source/art/cuero_660/ANIMATION.json": "de0d3c0fbe32d42f3eb3c69d0c30f91010621dfa36fd2c3326e0116e601e12ee",
+    "assets/generators/generate_cuero_combat_model.py": "1c717408c792a6291bc81ce407a76ca667e41feb3a3d076f40624f0487abcdcb"
+  },
+  "inherited_defaults": {
+    "Height": 51.644444,
+    "Radius": 14.755556,
+    "Scale": 0.3125
+  },
+  "modeldef_scale": 0.9837037333333334,
+  "neutral_diameter": 96,
+  "frames": [
+    {
+      "sprite": "MIID",
+      "letter": "A",
+      "action": "idle",
+      "cycle": "idle",
+      "sample": 0
+    },
+    {
+      "sprite": "MIID",
+      "letter": "B",
+      "action": "idle",
+      "cycle": "idle",
+      "sample": 8
+    },
+    {
+      "sprite": "MIRN",
+      "letter": "A",
+      "action": "run",
+      "cycle": "swim",
+      "sample": 0
+    },
+    {
+      "sprite": "MIRN",
+      "letter": "B",
+      "action": "run",
+      "cycle": "swim",
+      "sample": 6
+    },
+    {
+      "sprite": "MIRN",
+      "letter": "C",
+      "action": "run",
+      "cycle": "swim",
+      "sample": 12
+    },
+    {
+      "sprite": "MIRN",
+      "letter": "D",
+      "action": "run",
+      "cycle": "swim",
+      "sample": 18
+    },
+    {
+      "sprite": "MIWK",
+      "letter": "A",
+      "action": "walk",
+      "cycle": "swim",
+      "sample": 0
+    },
+    {
+      "sprite": "MIWK",
+      "letter": "B",
+      "action": "walk",
+      "cycle": "swim",
+      "sample": 12
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "A",
+      "action": "stun",
+      "deformation": {
+        "radial_scale": 0.97,
+        "vertical_scale": 0.85,
+        "front_curl": 8,
+        "side_curl": 0.0,
+        "roll": 0.0
+      }
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "D",
+      "action": "attack_prepare",
+      "deformation": {
+        "radial_scale": 0.9,
+        "vertical_scale": 1.0,
+        "front_curl": 46,
+        "side_curl": 12,
+        "roll": 0.0
+      }
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "E",
+      "action": "attack_release",
+      "deformation": {
+        "radial_scale": 1.03,
+        "vertical_scale": 1.0,
+        "front_curl": -8,
+        "side_curl": -4,
+        "roll": 0.0
+      }
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "F",
+      "action": "pain",
+      "deformation": {
+        "radial_scale": 0.89,
+        "vertical_scale": 1.0,
+        "front_curl": 18,
+        "side_curl": 22,
+        "roll": 8
+      }
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "G",
+      "action": "death",
+      "deformation": {
+        "radial_scale": 0.92,
+        "vertical_scale": 0.92,
+        "front_curl": 22,
+        "side_curl": 18,
+        "roll": 10
+      }
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "H",
+      "action": "death",
+      "deformation": {
+        "radial_scale": 0.96,
+        "vertical_scale": 0.8,
+        "front_curl": 12,
+        "side_curl": 12,
+        "roll": -5
+      }
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "I",
+      "action": "death",
+      "deformation": {
+        "radial_scale": 1.0,
+        "vertical_scale": 0.65,
+        "front_curl": 5,
+        "side_curl": 7,
+        "roll": 3
+      }
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "J",
+      "action": "death",
+      "deformation": {
+        "radial_scale": 1.02,
+        "vertical_scale": 0.5,
+        "front_curl": 0,
+        "side_curl": 3,
+        "roll": 0
+      }
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "K",
+      "action": "death",
+      "deformation": {
+        "radial_scale": 1.03,
+        "vertical_scale": 0.4,
+        "front_curl": 0,
+        "side_curl": 0,
+        "roll": 0
+      }
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "L",
+      "action": "death",
+      "deformation": {
+        "radial_scale": 1.03,
+        "vertical_scale": 0.4,
+        "front_curl": 0,
+        "side_curl": 0,
+        "roll": 0
+      }
+    },
+    {
+      "sprite": "MDBR",
+      "letter": "A",
+      "action": "breath",
+      "deformation": {
+        "radial_scale": 1.0,
+        "vertical_scale": 1.05,
+        "front_curl": 34,
+        "side_curl": 8,
+        "roll": 0.0
+      }
+    },
+    {
+      "sprite": "MDBR",
+      "letter": "B",
+      "action": "breath",
+      "deformation": {
+        "radial_scale": 1.0,
+        "vertical_scale": 1.15,
+        "front_curl": 42,
+        "side_curl": 11,
+        "roll": 0.0
+      }
+    },
+    {
+      "sprite": "MDBR",
+      "letter": "C",
+      "action": "breath",
+      "deformation": {
+        "radial_scale": 1.0,
+        "vertical_scale": 1.08,
+        "front_curl": 37,
+        "side_curl": 9,
+        "roll": 0.0
+      }
+    },
+    {
+      "sprite": "MDBR",
+      "letter": "D",
+      "action": "breath",
+      "deformation": {
+        "radial_scale": 1.0,
+        "vertical_scale": 1.02,
+        "front_curl": 29,
+        "side_curl": 5,
+        "roll": 0.0
+      }
+    },
+    {
+      "sprite": "SLMD",
+      "letter": "A",
+      "action": "rest",
+      "deformation": {
+        "radial_scale": 0.98,
+        "vertical_scale": 0.65,
+        "front_curl": 0.0,
+        "side_curl": 4,
+        "roll": 0.0
+      }
+    }
+  ],
+  "source_topology_sha256": "f431083615e2ba188b06ab33c95cf62caf9e6a4d11446f1b2e60ee36618a2059",
+  "source_uv_sha256": "6f34126a3b56632cbb26eadde95d6169551fde688074bd0e2b8ac799bf298af1",
+  "vertices": 9523,
+  "triangles": 16032,
+  "surfaces": [
+    {
+      "material": "atlas",
+      "vertices": 4096,
+      "triangles": 7101
+    },
+    {
+      "material": "atlas",
+      "vertices": 4096,
+      "triangles": 6722
+    },
+    {
+      "material": "atlas",
+      "vertices": 1344,
+      "triangles": 2209
+    }
+  ],
+  "bounds": [
+    {
+      "min": [
+        -48.00018671072821,
+        -41.50644773154799,
+        0.0
+      ],
+      "max": [
+        48.00018671072821,
+        41.50644773154799,
+        22.527301332193804
+      ]
+    },
+    {
+      "min": [
+        -48.00018671072821,
+        -41.50644773154799,
+        0.0
+      ],
+      "max": [
+        48.00018671072821,
+        41.50644773154799,
+        21.87794191031787
+      ]
+    },
+    {
+      "min": [
+        -48.00242723670867,
+        -41.50644773154799,
+        0.0
+      ],
+      "max": [
+        48.00242723670867,
+        41.50644773154799,
+        22.894559917756393
+      ]
+    },
+    {
+      "min": [
+        -47.19494977868778,
+        -41.50644773154799,
+        0.0
+      ],
+      "max": [
+        48.80505022131222,
+        41.50644773154799,
+        21.839842794449968
+      ]
+    },
+    {
+      "min": [
+        -48.00242723670867,
+        -41.50644773154799,
+        0.0
+      ],
+      "max": [
+        48.00242723670867,
+        41.50644773154799,
+        24.736353026390663
+      ]
+    },
+    {
+      "min": [
+        -48.80505022131222,
+        -41.50644773154799,
+        0.0
+      ],
+      "max": [
+        47.19494977868778,
+        41.50644773154799,
+        25.125437877312528
+      ]
+    },
+    {
+      "min": [
+        -48.00242723670867,
+        -41.50644773154799,
+        0.0
+      ],
+      "max": [
+        48.00242723670867,
+        41.50644773154799,
+        22.894559917756393
+      ]
+    },
+    {
+      "min": [
+        -48.00242723670867,
+        -41.50644773154799,
+        0.0
+      ],
+      "max": [
+        48.00242723670867,
+        41.50644773154799,
+        24.736353026390663
+      ]
+    },
+    {
+      "min": [
+        -46.56,
+        -40.26125429960155,
+        0.0
+      ],
+      "max": [
+        44.82757502498813,
+        40.26125429960155,
+        23.451976090340615
+      ]
+    },
+    {
+      "min": [
+        -43.2,
+        -35.8440936990145,
+        0.0
+      ],
+      "max": [
+        28.280349820184437,
+        35.8440936990145,
+        49.89262624649866
+      ]
+    },
+    {
+      "min": [
+        -49.440000000000005,
+        -42.55824675593725,
+        0.0
+      ],
+      "max": [
+        50.09860340557482,
+        42.55824675593725,
+        21.188912434629728
+      ]
+    },
+    {
+      "min": [
+        -42.72,
+        -36.86835408058747,
+        0.0
+      ],
+      "max": [
+        37.78035637385856,
+        27.269489277152335,
+        40.888708856551894
+      ]
+    },
+    {
+      "min": [
+        -44.160000000000004,
+        -39.57780090939866,
+        0.0
+      ],
+      "max": [
+        37.71033700144996,
+        29.535566743772755,
+        36.75551991260828
+      ]
+    },
+    {
+      "min": [
+        -46.08,
+        -36.21837482855171,
+        0.0
+      ],
+      "max": [
+        43.08649953315402,
+        39.8480941215028,
+        27.4752773366193
+      ]
+    },
+    {
+      "min": [
+        -48.0,
+        -41.624934464667064,
+        0.0
+      ],
+      "max": [
+        46.98262817899533,
+        40.18116152497718,
+        17.995593854741863
+      ]
+    },
+    {
+      "min": [
+        -48.96,
+        -42.22881291955641,
+        0.0
+      ],
+      "max": [
+        48.96,
+        42.22881291955641,
+        11.744136852055323
+      ]
+    },
+    {
+      "min": [
+        -49.440000000000005,
+        -42.75164116349443,
+        0.0
+      ],
+      "max": [
+        49.440000000000005,
+        42.75164116349443,
+        8.757575301680665
+      ]
+    },
+    {
+      "min": [
+        -49.440000000000005,
+        -42.75164116349443,
+        0.0
+      ],
+      "max": [
+        49.440000000000005,
+        42.75164116349443,
+        8.757575301680665
+      ]
+    },
+    {
+      "min": [
+        -48.0,
+        -40.757100232085456,
+        0.0
+      ],
+      "max": [
+        35.859200803969486,
+        40.757100232085456,
+        46.74941743510823
+      ]
+    },
+    {
+      "min": [
+        -48.0,
+        -40.09351894373049,
+        0.0
+      ],
+      "max": [
+        32.8144744102495,
+        40.09351894373049,
+        55.7034250375843
+      ]
+    },
+    {
+      "min": [
+        -48.0,
+        -40.55881531754204,
+        0.0
+      ],
+      "max": [
+        34.43251258584211,
+        40.55881531754204,
+        49.83428853959998
+      ]
+    },
+    {
+      "min": [
+        -48.0,
+        -41.21319480415824,
+        0.0
+      ],
+      "max": [
+        38.233770451489974,
+        41.21319480415824,
+        42.45755389802999
+      ]
+    },
+    {
+      "min": [
+        -47.040000000000006,
+        -40.49231244739661,
+        0.0
+      ],
+      "max": [
+        47.040000000000006,
+        40.49231244739661,
+        15.749530737777244
+      ]
+    }
+  ],
+  "sha256": {
+    "models/caelum/folklore/cuero660/cuero.md3": "346fb31087bcf47e37dbe61d87abc40e619f41704c24a7a37629f8d43586ccaf",
+    "models/caelum/folklore/cuero660/materials.png": "9cbf0cc1e59a6bd09e6bcae65a714b08c8f6ea45f63271fc73678913dea4afd4",
+    "caelum/data/cuero_combat.modeldef": "dde24f34ece2b1777eec341428efe0560db6be70a74918d793e08b6019bd85b4",
+    "cuero.obj": "8d912632a0fcb5f987901da9ed56c10021082b7988d1ef72a445151a3cb7e56a",
+    "cuero.mtl": "36cae03f99b2d74a4c8f0166c8939a91c841b589f70b1e831c110d66f90cef94"
+  }
+}

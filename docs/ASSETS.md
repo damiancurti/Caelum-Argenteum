@@ -1,6 +1,58 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.7** - 2026-11-13.
+Documentation version: **5.17.8** - 2026-11-13.
+
+## 5.17.8 - Cuero Uñudo inherited combat model (#660, parent #461)
+
+CaelumBestiary053 receives an explicit 3D model for all 23 inherited frame pairs:
+idle, locomotion, stun, shared melee/magic preparation and release, pain, death,
+breath and lying rest. Its original #455 sheet, rim, claws, eyes and owned skin
+are preserved. Editable continuous deformation controls fold the same anatomy;
+locomotion reuses the original wave cycles. This introduces no aquatic AI,
+wrapped-victim mechanic, attack, faction, loot, encounter or campaign population.
+Native class/state identities, durations, action calls and persistence stay intact.
+
+The native body still uses the approved provisional Mandinga Radius, Height,
+Scale and mass. Because this creature is flat, the neutral maximum horizontal
+extent fits the existing body diameter: 2*Radius/(96*Actor.Scale), with
+CorrectPixelStretch. That fitting is temporary combat presentation, not a final
+species-size decision or acceptance of mesh/hitbox correspondence. In particular,
+the inherited tall collision column remains above the flat visible creature.
+The original 96-MU/3m preview and regional gallery remain unchanged and retain
+their own presentation role. Author body-scale review remains outstanding.
+
+ANIMATION.json in assets/source/art/cuero_660 owns the poses and inspection
+views; the original geometry/UV source remains in assets/source/art/cuero_455.
+Rebuild with `python assets/generators/generate_cuero_combat_model.py --output build/cuero-combat --install`;
+--check verifies deterministic outputs. Neutral grouped OBJ/MTL and export hashes
+are retained. No raster generation or editing occurs. The native model has 9,536
+surface vertices (9,523 source vertices), 16,032 triangles and three surfaces.
+The generalized readonly native validator retains its original Pombero defaults.
+
+The final package passes 115 continuity/state/body/inventory checks across
+baseline, old-save/model, fresh/model, model reload and rollback. Separate exact
+keyframe inspection passes 51 checks with all 23 poses visible; representative
+poses and front/side/rear views were inspected. The fixture reuses CA-KP-230's
+post-Tick, nofunction and local still-interpolation rules. Six real attacks
+(Mandinga control and Cuero melee/projectile/breath), finite stock debiting,
+death guards and loot reload pass 80 checks with ordinary gameplay actions.
+
+Binary checks cover 219,328 native vertex/frame bounds. Eight exported files
+repeat byte-for-byte. The editable OBJ/MTL has an adjacent byte-identical source
+skin, correcting material resolution without changing runtime bytes. All 18,201
+package entries match src; only three new Cuero resources, the MODELDEF include
+and two release diagnostic strings differ from the #658 baseline. Original
+Cuero preview/gallery, Pombero and gameplay code retain identical bytes.
+
+One 700-tic sprite/model pair records 1644.82/1702.87 queue presents/s,
+p95 0.8262/0.7859 ms and p99 1.0152/0.9752 ms. Environment: Windows 11 Pro 26200,
+Ryzen 9 5950X, 32 GB, RTX 3070 Ti, GZDoom 4.14.2, Vulkan 1280x720, uncapped,
+vsync off, unpaused background, 5% audio. The camera frames the flat model;
+the inherited tall sprite is partially clipped in that same view. This bounded
+diagnostic is not an equal-silhouette comparison, GPU/display timing, repeatable
+performance improvement or campaign/crowd budget. Evidence and source manifests:
+assets/validation_v5_17_8/evidence/SUMMARY.json. CA660-CUERO-01 remains pending;
+wider creature coverage, final species dimensions and author review are unfinished.
 
 ## 5.17.7 - Native metal-ingot material models (#658, parent #647)
 

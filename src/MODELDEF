@@ -4741,3 +4741,4 @@ Model CaelumBarricadeVisual
 #include "caelum/data/pombero_combat.modeldef"
 #include "caelum/data/inventory_documents.modeldef"
 #include "caelum/data/inventory_ingots.modeldef"
+#include "caelum/data/cuero_combat.modeldef"
