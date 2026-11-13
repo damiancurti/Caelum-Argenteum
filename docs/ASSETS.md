@@ -22,6 +22,14 @@ audits, original/new chamber captures, full native logs and Vulkan presentation
 traces. RESULTS.json separates agent evidence from CA454-MAP02-01 acceptance;
 no engine, IWAD, disposable fixture package or save is distributed.
 
+The intermediate Barracas source uses the same reference board and owned city
+materials. generate_barracas_preview.py writes only an isolated build/ map/package;
+generate_barracas_facades.py creates real geometric window frames, closed shutters
+and cornices using existing CVCI01/CVCI05 textures. No raster is edited and no
+bestiary model completion is implied. Preview evidence is under
+validation_v5_16_2/barracas-preview. legacy_5162 preserves original MAP03 bytes and
+a deterministic ZIP of relevant data/generator/helper sources before redesign.
+
 ## 5.16.1 - Recovered folklore reference catalogue (#453, catalogue approved)
 
 The author supplied six ZIP attachments in issue #453 on 2026-11-12. All 58 PNGs

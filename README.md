@@ -25,6 +25,9 @@ including stored hub maps. [Map specifications and validation](docs/MAP01.txt)
 distinguish this slice from the remaining campaign and author test terminal. The basic finale
 and its all-78-essence/Respected reputation requirements are author-approved;
 the recovered bestiary and map references proceed through separate issues.
+Barracas also has an [isolated architectural preview](assets/barracas_redesign/LAYOUT.json)
+with 288 retained building identities; it is not activated in MAP03. City services,
+four-gate siege integration and old-city save continuation remain unfinished.
 
 V5.15 includes the [battle director](assets/validation_v5_15_0/RESULTS.md)
 (#447, PR635), [Unitarian command](assets/validation_v5_15_1/RESULTS.md)

@@ -1,0 +1,54 @@
+{
+  "issue": 454,
+  "scope": "Isolated architectural preview only, no production map or author acceptance.",
+  "views": [
+    {
+      "name": "plaza",
+      "point": [
+        -12048.0,
+        -1456.0,
+        0
+      ],
+      "angle": 180,
+      "pitch": 0
+    },
+    {
+      "name": "municipality",
+      "point": [
+        -15808,
+        -1440.0,
+        0
+      ],
+      "angle": 180,
+      "pitch": 0
+    },
+    {
+      "name": "centre",
+      "point": [
+        -13632,
+        6848,
+        0
+      ],
+      "angle": 270,
+      "pitch": 0
+    },
+    {
+      "name": "rail",
+      "point": [
+        -22400,
+        15680,
+        0
+      ],
+      "angle": 270,
+      "pitch": 0
+    }
+  ],
+  "exit_code": 0,
+  "errors": [],
+  "captures": [
+    "plaza",
+    "municipality",
+    "centre",
+    "rail"
+  ]
+}

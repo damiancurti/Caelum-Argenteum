@@ -2,9 +2,9 @@
 
 Documentation version: **5.16.2** - 2026-11-12.
 
-**V5.16:** #452 design and #453 catalogue approved; #454 MAP02 redesigned,
-checks passed. MAP01/ASSETS/TASKS; assets/campaign/PROGRESSION.json.
-City/routes/scripts/models pending. Revision-5: LegacyMap02Revision5.
+**V5.16:** #452 design and #453 catalogue approved; #454 MAP02 rebuilt/tested.
+MAP01/ASSETS/TASKS; assets/campaign/PROGRESSION.json.
+City prototype; routes/scripts/models pending. Revision-5: LegacyMap02Revision5.
 
 **V5.15 accepted2026-11-10:** CA447-01..451-01;#447-451 closed;PR635-639 merged.
 HISTORY/validation_v5_15_0..4. Single-player/attributes100 terminal:

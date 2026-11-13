@@ -13,6 +13,12 @@ are recorded; ordinary combat/hazard traversal and author acceptance remain in
 TASKS. Barracas and regional slices remain separate #454 work. No new folklore
 models, campaign essence placements or memory scripts are claimed.
 
+Barracas now has an unactivated architectural source/preview with 288 retained
+construction identities, the approved street/plaza/perimeter structure, rotated
+house facades and 424 static/native clearance targets passing. MAP03 and CAH maps
+are unchanged. The proposed siege disposition still awaits the author; services,
+transport and city save continuation remain to integrate. See MAP01/TASKS.
+
 ## 5.16.1 - Folklore reference recovery (#453, catalogue approved)
 
 All 58 author-supplied concept PNGs and their source documents are verified and

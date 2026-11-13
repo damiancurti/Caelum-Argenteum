@@ -4,6 +4,32 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-215 - Out-of-range editor numbers can silently omit map actors
+
+Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED for the isolated preview.
+First recorded / last checked: 2026-11-12 / 2026-11-12.
+Issue / PR: #454 / #643. Baseline: 0842fb00b plus uncommitted Barracas preview
+generators; exact runtime/engine hashes are in the evidence summary.
+Environment: Windows 11, GZDoom 4.14.2, Vulkan, disposable fresh CABAPRV,
+local development Doom II IWAD, unpaused background at 5% audio.
+Scope: procedural UDMF thing/editor registration and native smoke-test parsing.
+
+The facade fixture registered 56000 but native map loading reported type -9536
+and omitted all 160 instances. The engine still exited successfully and camera
+captures completed. That observed value is the signed-16-bit wrap of 56000;
+successful compilation/exit alone did not establish actor presence. Choosing an
+unused positive editor number within 32767 (31800 for this disposable fixture)
+restored the models. Do not confuse an editor number with unrestricted project
+IDs, line IDs or thing TIDs. Check the editor registry before assigning a number.
+
+Evidence: assets/validation_v5_16_2/barracas-preview/SUMMARY.json and run-02's
+native log. The original startup-only report missed the warning; the current
+runner rejects `Unknown type`, and run-05 has no such warning. Rendering was
+separately checked after the floor-relative height correction in CA-KP-029.
+Regression check: require expected native actors/markers and reject unknown map
+types, not just process exit zero. Author city acceptance remains PENDING;
+this is neither a production city nor gameplay/performance acceptance.
+
 ## CA-KP-214 - Idempotent initialization still needs a cheap hot-path guard
 
 Status/evidence: RESOLVED-VERIFIED for the measured MAP03 view; not a general
@@ -5008,6 +5034,15 @@ Evidence: [static checks](../assets/validation_4377/STATIC.json) and
 not individually inspect every upper actor's rendering; that position comparison
 is static. The author accepted CA-MAP02-PIT-RETURN-01 on 2026-10-02
 without reported exceptions; see HISTORY for the separate acceptance record.
+
+Rechecked for #454 / 5.16.2: a static house-facade model placed at the centre
+of an opaque shell had height=0 and therefore spawned on its 184-MU roof floor.
+Its cornices/windows floated above the building. The model's intended world
+base is zero, so thing height=-184 restores alignment without moving the house
+or altering collision. ENGINE-VERIFIED in the isolated CABAPRV run-03 failure
+and corrected run-04 view; run-05 repeats identical map/model/package bytes.
+Evidence: assets/validation_v5_16_2/barracas-preview/SUMMARY.json. This rendering
+check does not establish portal, siege or author acceptance for the city.
 
 ## CA-KP-028 â€” Temporal forecasts must preserve within-tic ordering
 

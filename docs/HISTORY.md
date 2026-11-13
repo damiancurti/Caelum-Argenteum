@@ -37,6 +37,19 @@ are descriptive, not monitor scanout or general performance acceptance. Raw
 reports/traces and earlier entry samples live in assets/validation_v5_16_2.
 CA454-MAP02-01 remains pending; no author acceptance is inferred.
 
+The same issue's next map received an unactivated Barracas authoring source and
+isolated native preview, keeping all 288 construction identities and all original
+CAH interior WADs. The preceding MAP03/source snapshot is preserved. All 424 static
+route targets and 424 maximum-body endpoint queries pass; repeated WAD/model/PK3
+bytes match. House facades reuse owned textures. The first model probe used an
+out-of-range editor number (56000 became -9536); the corrected 31800 loaded but
+the models floated because height zero was relative to the shell's roof floor.
+Subtracting that 184-MU base floor restored their intended world height. Logs and
+failed/corrected views are retained; the runner now rejects Unknown type warnings.
+This preview neither activates MAP03 nor completes services, siege or city save
+compatibility. The author has been asked to choose the siege disposition while
+independent architecture work proceeds.
+
 The author requested prevention of system sleep while away for several hours.
 A temporary system-only execution-state request is active during work, with a
 12-hour failsafe; it does not change the power plan or require the display on.

@@ -16,6 +16,16 @@ Ordinary combat/hazard navigation and author review remain outstanding. Agent ch
 not close the author's CA454-MAP02-01 test. Barracas remains the next approved
 map slice: four perimeter gates, siege adaptation and independent save support.
 
+Barracas architectural source/preview is now in assets/barracas_redesign. Its
+288 identities and 424 static/native endpoint checks pass; source geometry and
+private house interiors remain unmodified in src. Integrate rotated portals,
+services/travel, native gates and coordinate-sensitive helpers, complete visual
+architecture, retain the accepted residential sky policy, then verify old
+active/hub saves with exact original MAP03. The author is reviewing three siege
+fronts with active/reserve ram pairs versus a concentrated southern assault;
+do not silently choose that pending tactic. No city author test is added for
+the unintegrated preview. Existing MAP02 acceptance remains pending.
+
 ## 5.16.1 - Bestiary source import (#453)
 
 58 images, source metadata/checksums and deterministic catalogue generation are

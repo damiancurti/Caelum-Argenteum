@@ -60,6 +60,41 @@ progression, combat/hazards, route readability and author acceptance remain
 pending under CA454-MAP02-01.
 This slice does not complete Barracas, other regional maps or the V5.16 campaign.
 
+### Barracas architectural source (intermediate, not activated)
+
+assets/barracas_redesign/LAYOUT.json traces the approved irregular perimeter,
+Mitre/Camino al Sud and Pavon axes, four plazas, western railway corridor and
+four gate positions into the existing 960-metre envelope. The board is conceptual:
+its illustrated gaps are not cadastral street widths. Placement preserves 160
+house, 64 shop, 24 factory and 40 construction identities, using existing physical
+profiles and rotated facades. The central purchasable house 69 and relocation
+house 70 remain near central commerce and each other; original port households
+158/159 remain northeastern. One retained shop is proposed as the public counter
+within the municipal building, rather than adding a 289th construction or new
+merchant/reward. No administrative gameplay is introduced.
+
+The source is not runtime enabled. CABAPRV is a disposable geometry/model preview
+under build/, with no production MAP03 replacement or private CAH map change.
+Exact preceding MAP03 and relevant sources are preserved in
+assets/map06_port/legacy_5162. City save continuation still needs implementation
+and native active/hub tests; the existing MAP02 compatibility flag does not
+provide that city mode.
+
+The preview passes 424 static route targets and 424 native maximum-body endpoint
+clearance queries, including building approaches/interiors and both sides of
+four open gate arches. Generated WAD, model and preview package bytes repeat
+exactly. Evidence and intermediate rendering failures are qualified in
+assets/validation_v5_16_2/barracas-preview/SUMMARY.json. This does not test ordinary
+walking, native house travel, merchants, guards, dynamic gate collision or siege
+deployment. Services, transport, landscaping and architectural completion remain.
+
+The author is reviewing a proposed southern army arrival splitting toward south,
+east and west gates, one active and one reserve ram on each front; the northern
+gate serves the bridge. Until answered, this is a proposal, not a changed battle
+rule. Preserve the existing 1,000-living-participant admission cap per side,
+6,600 cumulative Mandingas, six rams and 600 defenders. Never interpret that
+cumulative ledger as permission for a retired 6,000-simultaneous-attacker test.
+
 ## 5.16.0 / #452 - Regional campaign allocation (in progress)
 
 On 2026-11-12 the author approved this regional allocation as the base for V5.16:

@@ -463,3 +463,9 @@
 /assets/validation_v5_16_2/*.zs text eol=lf whitespace=blank-at-eol,blank-at-eof,space-before-tab
 /assets/validation_v5_16_2/*.json text eol=lf whitespace=blank-at-eol,blank-at-eof,space-before-tab
 /assets/validation_v5_16_2/*.txt text eol=lf whitespace=blank-at-eol,blank-at-eof,space-before-tab
+
+# Barracas source/isolated preview; exact preceding map is rollback evidence.
+/assets/barracas_redesign/*.json text eol=lf
+/assets/map06_port/legacy_5162/* -text -whitespace
+/assets/generators/generate_barracas_preview.py text eol=lf
+/assets/generators/generate_barracas_facades.py text eol=lf

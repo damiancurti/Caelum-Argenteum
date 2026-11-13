@@ -1,0 +1,3828 @@
+{
+  "issue": 454,
+  "scope": "Static cell-centre routes from Plaza Alsina; opaque house shells end at external portal approaches. Not native collision/AI or siege evidence.",
+  "clearance_source": "assets/map02_maze/LAYOUT.json accepted largest player radius/height",
+  "height": 74.7,
+  "radius": 21.333333,
+  "walkable": 196552,
+  "reachable": 196552,
+  "targets": [
+    {
+      "id": 0,
+      "kind": "factory",
+      "point": [
+        -3552,
+        10304
+      ],
+      "reachable": true
+    },
+    {
+      "id": 0,
+      "kind": "interior_factory",
+      "point": [
+        -3744.0,
+        10304
+      ],
+      "reachable": true
+    },
+    {
+      "id": 1,
+      "kind": "factory",
+      "point": [
+        -27488,
+        10432
+      ],
+      "reachable": true
+    },
+    {
+      "id": 1,
+      "kind": "interior_factory",
+      "point": [
+        -27296.0,
+        10432
+      ],
+      "reachable": true
+    },
+    {
+      "id": 2,
+      "kind": "factory",
+      "point": [
+        -20448,
+        10688
+      ],
+      "reachable": true
+    },
+    {
+      "id": 2,
+      "kind": "interior_factory",
+      "point": [
+        -20640.0,
+        10688
+      ],
+      "reachable": true
+    },
+    {
+      "id": 3,
+      "kind": "factory",
+      "point": [
+        -25952,
+        10432
+      ],
+      "reachable": true
+    },
+    {
+      "id": 3,
+      "kind": "interior_factory",
+      "point": [
+        -25760.0,
+        10432
+      ],
+      "reachable": true
+    },
+    {
+      "id": 18,
+      "kind": "factory",
+      "point": [
+        -5088,
+        10304
+      ],
+      "reachable": true
+    },
+    {
+      "id": 18,
+      "kind": "interior_factory",
+      "point": [
+        -5280.0,
+        10304
+      ],
+      "reachable": true
+    },
+    {
+      "id": 19,
+      "kind": "factory",
+      "point": [
+        -3488,
+        10304
+      ],
+      "reachable": true
+    },
+    {
+      "id": 19,
+      "kind": "interior_factory",
+      "point": [
+        -3296.0,
+        10304
+      ],
+      "reachable": true
+    },
+    {
+      "id": 20,
+      "kind": "factory",
+      "point": [
+        -27552,
+        10432
+      ],
+      "reachable": true
+    },
+    {
+      "id": 20,
+      "kind": "interior_factory",
+      "point": [
+        -27744.0,
+        10432
+      ],
+      "reachable": true
+    },
+    {
+      "id": 21,
+      "kind": "factory",
+      "point": [
+        -21184,
+        11552
+      ],
+      "reachable": true
+    },
+    {
+      "id": 21,
+      "kind": "interior_factory",
+      "point": [
+        -21184,
+        11744.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 36,
+      "kind": "factory",
+      "point": [
+        -26752,
+        12768
+      ],
+      "reachable": true
+    },
+    {
+      "id": 36,
+      "kind": "interior_factory",
+      "point": [
+        -26752,
+        12576.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 37,
+      "kind": "factory",
+      "point": [
+        -4288,
+        7968
+      ],
+      "reachable": true
+    },
+    {
+      "id": 37,
+      "kind": "interior_factory",
+      "point": [
+        -4288,
+        8160.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 38,
+      "kind": "factory",
+      "point": [
+        -4288,
+        12640
+      ],
+      "reachable": true
+    },
+    {
+      "id": 38,
+      "kind": "interior_factory",
+      "point": [
+        -4288,
+        12448.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 39,
+      "kind": "factory",
+      "point": [
+        -26752,
+        8096
+      ],
+      "reachable": true
+    },
+    {
+      "id": 39,
+      "kind": "interior_factory",
+      "point": [
+        -26752,
+        8288.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 54,
+      "kind": "factory",
+      "point": [
+        -21184,
+        9824
+      ],
+      "reachable": true
+    },
+    {
+      "id": 54,
+      "kind": "interior_factory",
+      "point": [
+        -21184,
+        9632.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 55,
+      "kind": "factory",
+      "point": [
+        -25888,
+        12096
+      ],
+      "reachable": true
+    },
+    {
+      "id": 55,
+      "kind": "interior_factory",
+      "point": [
+        -25696.0,
+        12096
+      ],
+      "reachable": true
+    },
+    {
+      "id": 56,
+      "kind": "factory",
+      "point": [
+        -25088,
+        9568
+      ],
+      "reachable": true
+    },
+    {
+      "id": 56,
+      "kind": "interior_factory",
+      "point": [
+        -25088,
+        9376.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 57,
+      "kind": "factory",
+      "point": [
+        -29088,
+        12096
+      ],
+      "reachable": true
+    },
+    {
+      "id": 57,
+      "kind": "interior_factory",
+      "point": [
+        -28896.0,
+        12096
+      ],
+      "reachable": true
+    },
+    {
+      "id": 72,
+      "kind": "factory",
+      "point": [
+        -5152,
+        8640
+      ],
+      "reachable": true
+    },
+    {
+      "id": 72,
+      "kind": "interior_factory",
+      "point": [
+        -5344.0,
+        8640
+      ],
+      "reachable": true
+    },
+    {
+      "id": 73,
+      "kind": "factory",
+      "point": [
+        -3424,
+        8640
+      ],
+      "reachable": true
+    },
+    {
+      "id": 73,
+      "kind": "interior_factory",
+      "point": [
+        -3232.0,
+        8640
+      ],
+      "reachable": true
+    },
+    {
+      "id": 74,
+      "kind": "factory",
+      "point": [
+        -5952,
+        12640
+      ],
+      "reachable": true
+    },
+    {
+      "id": 74,
+      "kind": "interior_factory",
+      "point": [
+        -5952,
+        12448.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 75,
+      "kind": "factory",
+      "point": [
+        -29088,
+        8768
+      ],
+      "reachable": true
+    },
+    {
+      "id": 75,
+      "kind": "interior_factory",
+      "point": [
+        -28896.0,
+        8768
+      ],
+      "reachable": true
+    },
+    {
+      "id": 90,
+      "kind": "factory",
+      "point": [
+        -18848,
+        12800
+      ],
+      "reachable": true
+    },
+    {
+      "id": 90,
+      "kind": "interior_factory",
+      "point": [
+        -19040.0,
+        12800
+      ],
+      "reachable": true
+    },
+    {
+      "id": 91,
+      "kind": "factory",
+      "point": [
+        -8096,
+        10304
+      ],
+      "reachable": true
+    },
+    {
+      "id": 91,
+      "kind": "interior_factory",
+      "point": [
+        -7904.0,
+        10304
+      ],
+      "reachable": true
+    },
+    {
+      "id": 92,
+      "kind": "factory",
+      "point": [
+        -3392,
+        7776
+      ],
+      "reachable": true
+    },
+    {
+      "id": 92,
+      "kind": "interior_factory",
+      "point": [
+        -3392,
+        7584.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 93,
+      "kind": "factory",
+      "point": [
+        -1888,
+        8896
+      ],
+      "reachable": true
+    },
+    {
+      "id": 93,
+      "kind": "interior_factory",
+      "point": [
+        -1696.0,
+        8896
+      ],
+      "reachable": true
+    },
+    {
+      "id": 4,
+      "kind": "house",
+      "point": [
+        -1568,
+        -4352.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 5,
+      "kind": "house",
+      "point": [
+        -23136,
+        -2752.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 6,
+      "kind": "house",
+      "point": [
+        -17504,
+        -9920.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 10,
+      "kind": "house",
+      "point": [
+        -27488,
+        -3520.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 11,
+      "kind": "house",
+      "point": [
+        -7520,
+        -10688.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 12,
+      "kind": "house",
+      "point": [
+        -27424,
+        3264.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 13,
+      "kind": "house",
+      "point": [
+        -12064,
+        -10496.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 14,
+      "kind": "house",
+      "point": [
+        -17120,
+        10880.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 15,
+      "kind": "house",
+      "point": [
+        -10848,
+        -10496.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 16,
+      "kind": "house",
+      "point": [
+        -19872,
+        -9472.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 17,
+      "kind": "house",
+      "point": [
+        -25120,
+        -3968.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 22,
+      "kind": "house",
+      "point": [
+        -26208,
+        3264.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 23,
+      "kind": "house",
+      "point": [
+        -2784,
+        -4352.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 24,
+      "kind": "house",
+      "point": [
+        -1504,
+        -3904.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 28,
+      "kind": "house",
+      "point": [
+        -16288,
+        -9920.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 29,
+      "kind": "house",
+      "point": [
+        -28704,
+        -3520.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 30,
+      "kind": "house",
+      "point": [
+        -27488,
+        2816.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 31,
+      "kind": "house",
+      "point": [
+        -9888,
+        -10240.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 32,
+      "kind": "house",
+      "point": [
+        -13280,
+        -10496.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 33,
+      "kind": "house",
+      "point": [
+        -27072.0,
+        3808
+      ],
+      "reachable": true
+    },
+    {
+      "id": 34,
+      "kind": "house",
+      "point": [
+        -12416.0,
+        -8352
+      ],
+      "reachable": true
+    },
+    {
+      "id": 35,
+      "kind": "house",
+      "point": [
+        -2368.0,
+        -3360
+      ],
+      "reachable": true
+    },
+    {
+      "id": 40,
+      "kind": "house",
+      "point": [
+        -22336.0,
+        -1056
+      ],
+      "reachable": true
+    },
+    {
+      "id": 41,
+      "kind": "house",
+      "point": [
+        -18304.0,
+        -11616
+      ],
+      "reachable": true
+    },
+    {
+      "id": 42,
+      "kind": "house",
+      "point": [
+        -26688.0,
+        -1824
+      ],
+      "reachable": true
+    },
+    {
+      "id": 46,
+      "kind": "house",
+      "point": [
+        -2368.0,
+        -6048
+      ],
+      "reachable": true
+    },
+    {
+      "id": 47,
+      "kind": "house",
+      "point": [
+        -22336.0,
+        -3744
+      ],
+      "reachable": true
+    },
+    {
+      "id": 48,
+      "kind": "house",
+      "point": [
+        -18304.0,
+        -8928
+      ],
+      "reachable": true
+    },
+    {
+      "id": 49,
+      "kind": "house",
+      "point": [
+        -26688.0,
+        -4512
+      ],
+      "reachable": true
+    },
+    {
+      "id": 50,
+      "kind": "house",
+      "point": [
+        -8320.0,
+        -12384
+      ],
+      "reachable": true
+    },
+    {
+      "id": 51,
+      "kind": "house",
+      "point": [
+        -26624.0,
+        2272
+      ],
+      "reachable": true
+    },
+    {
+      "id": 52,
+      "kind": "house",
+      "point": [
+        -12864.0,
+        -12192
+      ],
+      "reachable": true
+    },
+    {
+      "id": 53,
+      "kind": "house",
+      "point": [
+        -16064.0,
+        9888
+      ],
+      "reachable": true
+    },
+    {
+      "id": 58,
+      "kind": "house",
+      "point": [
+        -8896.0,
+        -9696
+      ],
+      "reachable": true
+    },
+    {
+      "id": 59,
+      "kind": "house",
+      "point": [
+        -16832.0,
+        12576
+      ],
+      "reachable": true
+    },
+    {
+      "id": 60,
+      "kind": "house",
+      "point": [
+        -18336,
+        10880.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 64,
+      "kind": "house",
+      "point": [
+        -10720,
+        -9024.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 65,
+      "kind": "house",
+      "point": [
+        -26080,
+        4736.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 66,
+      "kind": "house",
+      "point": [
+        -18848,
+        -11392.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 67,
+      "kind": "house",
+      "point": [
+        -26144,
+        -2048.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 68,
+      "kind": "house",
+      "point": [
+        -27616,
+        4288.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 69,
+      "kind": "house",
+      "point": [
+        -4064,
+        -2432.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 70,
+      "kind": "house",
+      "point": [
+        -224,
+        -2880.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 71,
+      "kind": "house",
+      "point": [
+        -11392.0,
+        -12192
+      ],
+      "reachable": true
+    },
+    {
+      "id": 76,
+      "kind": "house",
+      "point": [
+        -13408,
+        -9024.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 77,
+      "kind": "house",
+      "point": [
+        -17312,
+        -10944.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 78,
+      "kind": "house",
+      "point": [
+        -19328.0,
+        -7776
+      ],
+      "reachable": true
+    },
+    {
+      "id": 82,
+      "kind": "house",
+      "point": [
+        -28832,
+        -2048.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 83,
+      "kind": "house",
+      "point": [
+        -25152.0,
+        2272
+      ],
+      "reachable": true
+    },
+    {
+      "id": 84,
+      "kind": "house",
+      "point": [
+        -3840.0,
+        -6048
+      ],
+      "reachable": true
+    },
+    {
+      "id": 85,
+      "kind": "house",
+      "point": [
+        -448.0,
+        -4896
+      ],
+      "reachable": true
+    },
+    {
+      "id": 86,
+      "kind": "house",
+      "point": [
+        -17312,
+        -8000.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 87,
+      "kind": "house",
+      "point": [
+        -8864,
+        -12160.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 88,
+      "kind": "house",
+      "point": [
+        -28544.0,
+        1120
+      ],
+      "reachable": true
+    },
+    {
+      "id": 89,
+      "kind": "house",
+      "point": [
+        -13408,
+        -11968.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 94,
+      "kind": "house",
+      "point": [
+        -17984.0,
+        8736
+      ],
+      "reachable": true
+    },
+    {
+      "id": 95,
+      "kind": "house",
+      "point": [
+        -13728,
+        11392.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 96,
+      "kind": "house",
+      "point": [
+        -24480,
+        -4544.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 100,
+      "kind": "house",
+      "point": [
+        -4000,
+        -4352.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 101,
+      "kind": "house",
+      "point": [
+        -10592,
+        -8768.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 102,
+      "kind": "house",
+      "point": [
+        -15072,
+        -9920.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 103,
+      "kind": "house",
+      "point": [
+        -12864.0,
+        -8288
+      ],
+      "reachable": true
+    },
+    {
+      "id": 104,
+      "kind": "house",
+      "point": [
+        -22336.0,
+        160
+      ],
+      "reachable": true
+    },
+    {
+      "id": 105,
+      "kind": "house",
+      "point": [
+        -18304.0,
+        -12832
+      ],
+      "reachable": true
+    },
+    {
+      "id": 106,
+      "kind": "house",
+      "point": [
+        -26688.0,
+        -608
+      ],
+      "reachable": true
+    },
+    {
+      "id": 107,
+      "kind": "house",
+      "point": [
+        -2368.0,
+        -7264
+      ],
+      "reachable": true
+    },
+    {
+      "id": 148,
+      "kind": "house",
+      "point": [
+        -17856.0,
+        -6560
+      ],
+      "reachable": true
+    },
+    {
+      "id": 149,
+      "kind": "house",
+      "point": [
+        -8320.0,
+        -13600
+      ],
+      "reachable": true
+    },
+    {
+      "id": 150,
+      "kind": "house",
+      "point": [
+        -12416.0,
+        -12256
+      ],
+      "reachable": true
+    },
+    {
+      "id": 152,
+      "kind": "house",
+      "point": [
+        -15744.0,
+        3040
+      ],
+      "reachable": true
+    },
+    {
+      "id": 153,
+      "kind": "house",
+      "point": [
+        -15744.0,
+        4256
+      ],
+      "reachable": true
+    },
+    {
+      "id": 154,
+      "kind": "house",
+      "point": [
+        -15776,
+        -10944.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 155,
+      "kind": "house",
+      "point": [
+        -20640,
+        -768.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 156,
+      "kind": "house",
+      "point": [
+        -14848.0,
+        12384
+      ],
+      "reachable": true
+    },
+    {
+      "id": 157,
+      "kind": "house",
+      "point": [
+        -4128,
+        -2880.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 158,
+      "kind": "house",
+      "point": [
+        -19776.0,
+        -7712
+      ],
+      "reachable": true
+    },
+    {
+      "id": 159,
+      "kind": "house",
+      "point": [
+        -10944.0,
+        -12256
+      ],
+      "reachable": true
+    },
+    {
+      "id": 160,
+      "kind": "house",
+      "point": [
+        -896.0,
+        -7264
+      ],
+      "reachable": true
+    },
+    {
+      "id": 161,
+      "kind": "house",
+      "point": [
+        -14944,
+        -8448.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 162,
+      "kind": "house",
+      "point": [
+        -9408.0,
+        -8224
+      ],
+      "reachable": true
+    },
+    {
+      "id": 163,
+      "kind": "house",
+      "point": [
+        -17536.0,
+        8672
+      ],
+      "reachable": true
+    },
+    {
+      "id": 164,
+      "kind": "house",
+      "point": [
+        -11392.0,
+        -8032
+      ],
+      "reachable": true
+    },
+    {
+      "id": 165,
+      "kind": "house",
+      "point": [
+        -19328.0,
+        -11936
+      ],
+      "reachable": true
+    },
+    {
+      "id": 166,
+      "kind": "house",
+      "point": [
+        -14336.0,
+        -8032
+      ],
+      "reachable": true
+    },
+    {
+      "id": 167,
+      "kind": "house",
+      "point": [
+        -16384.0,
+        -11936
+      ],
+      "reachable": true
+    },
+    {
+      "id": 169,
+      "kind": "house",
+      "point": [
+        -25536.0,
+        5280
+      ],
+      "reachable": true
+    },
+    {
+      "id": 170,
+      "kind": "house",
+      "point": [
+        -4384,
+        -5824.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 171,
+      "kind": "house",
+      "point": [
+        -16832.0,
+        -7456
+      ],
+      "reachable": true
+    },
+    {
+      "id": 172,
+      "kind": "house",
+      "point": [
+        -9344.0,
+        -12704
+      ],
+      "reachable": true
+    },
+    {
+      "id": 173,
+      "kind": "house",
+      "point": [
+        -14336.0,
+        -13664
+      ],
+      "reachable": true
+    },
+    {
+      "id": 174,
+      "kind": "house",
+      "point": [
+        -24800,
+        -1024.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 175,
+      "kind": "house",
+      "point": [
+        -13664,
+        11840.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 176,
+      "kind": "house",
+      "point": [
+        -28672.0,
+        1056
+      ],
+      "reachable": true
+    },
+    {
+      "id": 177,
+      "kind": "house",
+      "point": [
+        -20192,
+        11264.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 178,
+      "kind": "house",
+      "point": [
+        -12928.0,
+        9632
+      ],
+      "reachable": true
+    },
+    {
+      "id": 179,
+      "kind": "house",
+      "point": [
+        -26752.0,
+        -7904
+      ],
+      "reachable": true
+    },
+    {
+      "id": 180,
+      "kind": "house",
+      "point": [
+        -5216,
+        -4352.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 181,
+      "kind": "house",
+      "point": [
+        -15232.0,
+        13600
+      ],
+      "reachable": true
+    },
+    {
+      "id": 182,
+      "kind": "house",
+      "point": [
+        -12704,
+        12864.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 183,
+      "kind": "house",
+      "point": [
+        -1408.0,
+        -928
+      ],
+      "reachable": true
+    },
+    {
+      "id": 184,
+      "kind": "house",
+      "point": [
+        -5344,
+        -2880.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 185,
+      "kind": "house",
+      "point": [
+        -4800.0,
+        -13152
+      ],
+      "reachable": true
+    },
+    {
+      "id": 187,
+      "kind": "house",
+      "point": [
+        -11968.0,
+        10848
+      ],
+      "reachable": true
+    },
+    {
+      "id": 188,
+      "kind": "house",
+      "point": [
+        -2880.0,
+        -544
+      ],
+      "reachable": true
+    },
+    {
+      "id": 189,
+      "kind": "house",
+      "point": [
+        -18432.0,
+        -4000
+      ],
+      "reachable": true
+    },
+    {
+      "id": 190,
+      "kind": "house",
+      "point": [
+        -6752,
+        -5376.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 191,
+      "kind": "house",
+      "point": [
+        -27776.0,
+        7840
+      ],
+      "reachable": true
+    },
+    {
+      "id": 192,
+      "kind": "house",
+      "point": [
+        -12448,
+        11840.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 193,
+      "kind": "house",
+      "point": [
+        -13312.0,
+        15008
+      ],
+      "reachable": true
+    },
+    {
+      "id": 194,
+      "kind": "house",
+      "point": [
+        -17216.0,
+        5600
+      ],
+      "reachable": true
+    },
+    {
+      "id": 195,
+      "kind": "house",
+      "point": [
+        -12416.0,
+        8416
+      ],
+      "reachable": true
+    },
+    {
+      "id": 196,
+      "kind": "house",
+      "point": [
+        -15744.0,
+        5472
+      ],
+      "reachable": true
+    },
+    {
+      "id": 197,
+      "kind": "house",
+      "point": [
+        -26688.0,
+        -7968
+      ],
+      "reachable": true
+    },
+    {
+      "id": 198,
+      "kind": "house",
+      "point": [
+        -12640,
+        13312.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 199,
+      "kind": "house",
+      "point": [
+        -5888.0,
+        -736
+      ],
+      "reachable": true
+    },
+    {
+      "id": 200,
+      "kind": "house",
+      "point": [
+        -7584,
+        -3904.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 201,
+      "kind": "house",
+      "point": [
+        -1920.0,
+        -8416
+      ],
+      "reachable": true
+    },
+    {
+      "id": 202,
+      "kind": "house",
+      "point": [
+        -4352.0,
+        -224
+      ],
+      "reachable": true
+    },
+    {
+      "id": 203,
+      "kind": "house",
+      "point": [
+        -11456.0,
+        9632
+      ],
+      "reachable": true
+    },
+    {
+      "id": 205,
+      "kind": "house",
+      "point": [
+        -12480.0,
+        -5920
+      ],
+      "reachable": true
+    },
+    {
+      "id": 206,
+      "kind": "house",
+      "point": [
+        -16960.0,
+        -4192
+      ],
+      "reachable": true
+    },
+    {
+      "id": 207,
+      "kind": "house",
+      "point": [
+        -18912,
+        6336.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 208,
+      "kind": "house",
+      "point": [
+        -960.0,
+        1440
+      ],
+      "reachable": true
+    },
+    {
+      "id": 209,
+      "kind": "house",
+      "point": [
+        -3808,
+        -11904.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 210,
+      "kind": "house",
+      "point": [
+        -10496.0,
+        -4896
+      ],
+      "reachable": true
+    },
+    {
+      "id": 211,
+      "kind": "house",
+      "point": [
+        -13952.0,
+        -5792
+      ],
+      "reachable": true
+    },
+    {
+      "id": 212,
+      "kind": "house",
+      "point": [
+        -6560,
+        -2880.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 213,
+      "kind": "house",
+      "point": [
+        -15936.0,
+        -5536
+      ],
+      "reachable": true
+    },
+    {
+      "id": 214,
+      "kind": "house",
+      "point": [
+        -2432.0,
+        1824
+      ],
+      "reachable": true
+    },
+    {
+      "id": 215,
+      "kind": "house",
+      "point": [
+        -10944.0,
+        9696
+      ],
+      "reachable": true
+    },
+    {
+      "id": 216,
+      "kind": "house",
+      "point": [
+        -11840.0,
+        15008
+      ],
+      "reachable": true
+    },
+    {
+      "id": 217,
+      "kind": "house",
+      "point": [
+        -11232,
+        11840.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 218,
+      "kind": "house",
+      "point": [
+        -16768.0,
+        5536
+      ],
+      "reachable": true
+    },
+    {
+      "id": 219,
+      "kind": "house",
+      "point": [
+        -11872,
+        7936.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 220,
+      "kind": "house",
+      "point": [
+        -1632,
+        -10688.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 221,
+      "kind": "house",
+      "point": [
+        -6048,
+        960.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 223,
+      "kind": "house",
+      "point": [
+        -10272,
+        12864.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 224,
+      "kind": "house",
+      "point": [
+        -13440.0,
+        10848
+      ],
+      "reachable": true
+    },
+    {
+      "id": 225,
+      "kind": "house",
+      "point": [
+        -3904.0,
+        2144
+      ],
+      "reachable": true
+    },
+    {
+      "id": 226,
+      "kind": "house",
+      "point": [
+        -27136.0,
+        -10336
+      ],
+      "reachable": true
+    },
+    {
+      "id": 227,
+      "kind": "house",
+      "point": [
+        -6880,
+        -1408.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 228,
+      "kind": "house",
+      "point": [
+        -14752,
+        5248.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 229,
+      "kind": "house",
+      "point": [
+        -10560.0,
+        -3680
+      ],
+      "reachable": true
+    },
+    {
+      "id": 230,
+      "kind": "house",
+      "point": [
+        -1408.0,
+        1504
+      ],
+      "reachable": true
+    },
+    {
+      "id": 231,
+      "kind": "house",
+      "point": [
+        -9984.0,
+        9632
+      ],
+      "reachable": true
+    },
+    {
+      "id": 236,
+      "kind": "house",
+      "point": [
+        -8928,
+        -2496.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 237,
+      "kind": "house",
+      "point": [
+        -17760,
+        4416.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 238,
+      "kind": "house",
+      "point": [
+        -2880.0,
+        1888
+      ],
+      "reachable": true
+    },
+    {
+      "id": 239,
+      "kind": "house",
+      "point": [
+        -11456.0,
+        6368
+      ],
+      "reachable": true
+    },
+    {
+      "id": 241,
+      "kind": "house",
+      "point": [
+        -10816.0,
+        13856
+      ],
+      "reachable": true
+    },
+    {
+      "id": 242,
+      "kind": "house",
+      "point": [
+        -6112,
+        768.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 243,
+      "kind": "house",
+      "point": [
+        -18944.0,
+        2144
+      ],
+      "reachable": true
+    },
+    {
+      "id": 244,
+      "kind": "house",
+      "point": [
+        -4896,
+        1984.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 245,
+      "kind": "house",
+      "point": [
+        -10656,
+        7936.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 246,
+      "kind": "house",
+      "point": [
+        -16768.0,
+        4320
+      ],
+      "reachable": true
+    },
+    {
+      "id": 247,
+      "kind": "house",
+      "point": [
+        -9472.0,
+        9696
+      ],
+      "reachable": true
+    },
+    {
+      "id": 248,
+      "kind": "house",
+      "point": [
+        -16512.0,
+        7520
+      ],
+      "reachable": true
+    },
+    {
+      "id": 249,
+      "kind": "house",
+      "point": [
+        -9248,
+        -1024.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 300,
+      "kind": "house",
+      "point": [
+        -8864,
+        11392.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 301,
+      "kind": "house",
+      "point": [
+        -9056,
+        12864.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 232,
+      "kind": "construction",
+      "point": [
+        -2112.0,
+        4064
+      ],
+      "reachable": true
+    },
+    {
+      "id": 232,
+      "kind": "interior_construction",
+      "point": [
+        -2112.0,
+        3872.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 233,
+      "kind": "construction",
+      "point": [
+        -1824,
+        3584.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 233,
+      "kind": "interior_construction",
+      "point": [
+        -1632.0,
+        3584.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 234,
+      "kind": "construction",
+      "point": [
+        -3040,
+        3328.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 234,
+      "kind": "interior_construction",
+      "point": [
+        -3232.0,
+        3328.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 235,
+      "kind": "construction",
+      "point": [
+        -26816.0,
+        -11360
+      ],
+      "reachable": true
+    },
+    {
+      "id": 235,
+      "kind": "interior_construction",
+      "point": [
+        -26816.0,
+        -11168.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 250,
+      "kind": "construction",
+      "point": [
+        -24160,
+        -10240.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 250,
+      "kind": "interior_construction",
+      "point": [
+        -24352.0,
+        -10240.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 251,
+      "kind": "construction",
+      "point": [
+        -2752.0,
+        4128
+      ],
+      "reachable": true
+    },
+    {
+      "id": 251,
+      "kind": "interior_construction",
+      "point": [
+        -2752.0,
+        4320.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 252,
+      "kind": "construction",
+      "point": [
+        -960.0,
+        4832
+      ],
+      "reachable": true
+    },
+    {
+      "id": 252,
+      "kind": "interior_construction",
+      "point": [
+        -960.0,
+        4640.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 253,
+      "kind": "construction",
+      "point": [
+        -800,
+        3584.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 253,
+      "kind": "interior_construction",
+      "point": [
+        -608.0,
+        3584.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 254,
+      "kind": "construction",
+      "point": [
+        -4064,
+        3200.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 254,
+      "kind": "interior_construction",
+      "point": [
+        -4256.0,
+        3200.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 255,
+      "kind": "construction",
+      "point": [
+        -3904.0,
+        4256
+      ],
+      "reachable": true
+    },
+    {
+      "id": 255,
+      "kind": "interior_construction",
+      "point": [
+        -3904.0,
+        4448.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 256,
+      "kind": "construction",
+      "point": [
+        -24384.0,
+        -10528
+      ],
+      "reachable": true
+    },
+    {
+      "id": 256,
+      "kind": "interior_construction",
+      "point": [
+        -24384.0,
+        -10720.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 257,
+      "kind": "construction",
+      "point": [
+        -28160.0,
+        -7904
+      ],
+      "reachable": true
+    },
+    {
+      "id": 257,
+      "kind": "interior_construction",
+      "point": [
+        -28160.0,
+        -7712.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 258,
+      "kind": "construction",
+      "point": [
+        544,
+        1792.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 258,
+      "kind": "interior_construction",
+      "point": [
+        352.0,
+        1792.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 259,
+      "kind": "construction",
+      "point": [
+        -5152,
+        4992.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 259,
+      "kind": "interior_construction",
+      "point": [
+        -4960.0,
+        4992.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 260,
+      "kind": "construction",
+      "point": [
+        -23872.0,
+        -6560
+      ],
+      "reachable": true
+    },
+    {
+      "id": 260,
+      "kind": "interior_construction",
+      "point": [
+        -23872.0,
+        -6752.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 261,
+      "kind": "construction",
+      "point": [
+        -6048,
+        3840.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 261,
+      "kind": "interior_construction",
+      "point": [
+        -5856.0,
+        3840.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 262,
+      "kind": "construction",
+      "point": [
+        -1408.0,
+        6880
+      ],
+      "reachable": true
+    },
+    {
+      "id": 262,
+      "kind": "interior_construction",
+      "point": [
+        -1408.0,
+        6688.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 263,
+      "kind": "construction",
+      "point": [
+        -6176,
+        4992.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 263,
+      "kind": "interior_construction",
+      "point": [
+        -5984.0,
+        4992.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 264,
+      "kind": "construction",
+      "point": [
+        -192.0,
+        6624
+      ],
+      "reachable": true
+    },
+    {
+      "id": 264,
+      "kind": "interior_construction",
+      "point": [
+        -192.0,
+        6432.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 265,
+      "kind": "construction",
+      "point": [
+        -28640,
+        -5312.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 265,
+      "kind": "interior_construction",
+      "point": [
+        -28448.0,
+        -5312.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 266,
+      "kind": "construction",
+      "point": [
+        -6112,
+        2432.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 266,
+      "kind": "interior_construction",
+      "point": [
+        -6304.0,
+        2432.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 267,
+      "kind": "construction",
+      "point": [
+        -23584,
+        -6464.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 267,
+      "kind": "interior_construction",
+      "point": [
+        -23392.0,
+        -6464.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 268,
+      "kind": "construction",
+      "point": [
+        -6240,
+        3584.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 268,
+      "kind": "interior_construction",
+      "point": [
+        -6432.0,
+        3584.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 269,
+      "kind": "construction",
+      "point": [
+        -896.0,
+        6688
+      ],
+      "reachable": true
+    },
+    {
+      "id": 269,
+      "kind": "interior_construction",
+      "point": [
+        -896.0,
+        6880.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 270,
+      "kind": "construction",
+      "point": [
+        -6240,
+        4736.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 270,
+      "kind": "interior_construction",
+      "point": [
+        -6432.0,
+        4736.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 271,
+      "kind": "construction",
+      "point": [
+        -5120.0,
+        6560
+      ],
+      "reachable": true
+    },
+    {
+      "id": 271,
+      "kind": "interior_construction",
+      "point": [
+        -5120.0,
+        6752.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 272,
+      "kind": "construction",
+      "point": [
+        -22272.0,
+        -12128
+      ],
+      "reachable": true
+    },
+    {
+      "id": 272,
+      "kind": "interior_construction",
+      "point": [
+        -22272.0,
+        -12320.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 273,
+      "kind": "construction",
+      "point": [
+        -22560,
+        -6336.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 273,
+      "kind": "interior_construction",
+      "point": [
+        -22368.0,
+        -6336.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 274,
+      "kind": "construction",
+      "point": [
+        -7136,
+        2432.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 274,
+      "kind": "interior_construction",
+      "point": [
+        -7328.0,
+        2432.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 275,
+      "kind": "construction",
+      "point": [
+        -8224,
+        4224.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 275,
+      "kind": "interior_construction",
+      "point": [
+        -8032.0,
+        4224.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 276,
+      "kind": "construction",
+      "point": [
+        -7328,
+        1280.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 276,
+      "kind": "interior_construction",
+      "point": [
+        -7520.0,
+        1280.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 277,
+      "kind": "construction",
+      "point": [
+        -6272.0,
+        6816
+      ],
+      "reachable": true
+    },
+    {
+      "id": 277,
+      "kind": "interior_construction",
+      "point": [
+        -6272.0,
+        7008.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 278,
+      "kind": "construction",
+      "point": [
+        -7264,
+        4736.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 278,
+      "kind": "interior_construction",
+      "point": [
+        -7456.0,
+        4736.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 279,
+      "kind": "construction",
+      "point": [
+        -9120,
+        3072.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 279,
+      "kind": "interior_construction",
+      "point": [
+        -8928.0,
+        3072.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 280,
+      "kind": "construction",
+      "point": [
+        -23328,
+        -3776.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 280,
+      "kind": "interior_construction",
+      "point": [
+        -23520.0,
+        -3776.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 281,
+      "kind": "construction",
+      "point": [
+        -9248,
+        4224.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 281,
+      "kind": "interior_construction",
+      "point": [
+        -9056.0,
+        4224.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 282,
+      "kind": "construction",
+      "point": [
+        -8352,
+        1280.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 282,
+      "kind": "interior_construction",
+      "point": [
+        -8544.0,
+        1280.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 283,
+      "kind": "construction",
+      "point": [
+        -7648,
+        7744.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 283,
+      "kind": "interior_construction",
+      "point": [
+        -7456.0,
+        7744.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 284,
+      "kind": "construction",
+      "point": [
+        -8288,
+        4736.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 284,
+      "kind": "interior_construction",
+      "point": [
+        -8480.0,
+        4736.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 285,
+      "kind": "construction",
+      "point": [
+        -10144,
+        3072.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 285,
+      "kind": "interior_construction",
+      "point": [
+        -9952.0,
+        3072.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 7,
+      "kind": "shop",
+      "point": [
+        -15968,
+        -1472
+      ],
+      "reachable": true
+    },
+    {
+      "id": 7,
+      "kind": "interior_shop",
+      "point": [
+        -16160.0,
+        -1472
+      ],
+      "reachable": true
+    },
+    {
+      "id": 8,
+      "kind": "shop",
+      "point": [
+        -9728,
+        3552
+      ],
+      "reachable": true
+    },
+    {
+      "id": 8,
+      "kind": "interior_shop",
+      "point": [
+        -9728,
+        3744.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 9,
+      "kind": "shop",
+      "point": [
+        -8064,
+        -3488
+      ],
+      "reachable": true
+    },
+    {
+      "id": 9,
+      "kind": "interior_shop",
+      "point": [
+        -8064,
+        -3680.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 25,
+      "kind": "shop",
+      "point": [
+        -14336,
+        3296
+      ],
+      "reachable": true
+    },
+    {
+      "id": 25,
+      "kind": "interior_shop",
+      "point": [
+        -14336,
+        3488.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 26,
+      "kind": "shop",
+      "point": [
+        -9728,
+        5536
+      ],
+      "reachable": true
+    },
+    {
+      "id": 26,
+      "kind": "interior_shop",
+      "point": [
+        -9728,
+        5344.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 27,
+      "kind": "shop",
+      "point": [
+        -17632,
+        2688
+      ],
+      "reachable": true
+    },
+    {
+      "id": 27,
+      "kind": "interior_shop",
+      "point": [
+        -17440.0,
+        2688
+      ],
+      "reachable": true
+    },
+    {
+      "id": 43,
+      "kind": "shop",
+      "point": [
+        -4384,
+        -1472
+      ],
+      "reachable": true
+    },
+    {
+      "id": 43,
+      "kind": "interior_shop",
+      "point": [
+        -4576.0,
+        -1472
+      ],
+      "reachable": true
+    },
+    {
+      "id": 44,
+      "kind": "shop",
+      "point": [
+        -14336,
+        2272
+      ],
+      "reachable": true
+    },
+    {
+      "id": 44,
+      "kind": "interior_shop",
+      "point": [
+        -14336,
+        2464.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 45,
+      "kind": "shop",
+      "point": [
+        -8384,
+        12128
+      ],
+      "reachable": true
+    },
+    {
+      "id": 45,
+      "kind": "interior_shop",
+      "point": [
+        -8384,
+        11936.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 61,
+      "kind": "shop",
+      "point": [
+        -7776,
+        -5312
+      ],
+      "reachable": true
+    },
+    {
+      "id": 61,
+      "kind": "interior_shop",
+      "point": [
+        -7584.0,
+        -5312
+      ],
+      "reachable": true
+    },
+    {
+      "id": 62,
+      "kind": "shop",
+      "point": [
+        -10624,
+        4512
+      ],
+      "reachable": true
+    },
+    {
+      "id": 62,
+      "kind": "interior_shop",
+      "point": [
+        -10624,
+        4320.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 63,
+      "kind": "shop",
+      "point": [
+        -8576,
+        12384
+      ],
+      "reachable": true
+    },
+    {
+      "id": 63,
+      "kind": "interior_shop",
+      "point": [
+        -8576,
+        12576.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 79,
+      "kind": "shop",
+      "point": [
+        -13440,
+        4256
+      ],
+      "reachable": true
+    },
+    {
+      "id": 79,
+      "kind": "interior_shop",
+      "point": [
+        -13440,
+        4064.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 80,
+      "kind": "shop",
+      "point": [
+        -10624,
+        2528
+      ],
+      "reachable": true
+    },
+    {
+      "id": 80,
+      "kind": "interior_shop",
+      "point": [
+        -10624,
+        2720.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 81,
+      "kind": "shop",
+      "point": [
+        -8480,
+        9216
+      ],
+      "reachable": true
+    },
+    {
+      "id": 81,
+      "kind": "interior_shop",
+      "point": [
+        -8672.0,
+        9216
+      ],
+      "reachable": true
+    },
+    {
+      "id": 97,
+      "kind": "shop",
+      "point": [
+        -10336,
+        1728
+      ],
+      "reachable": true
+    },
+    {
+      "id": 97,
+      "kind": "interior_shop",
+      "point": [
+        -10144.0,
+        1728
+      ],
+      "reachable": true
+    },
+    {
+      "id": 98,
+      "kind": "shop",
+      "point": [
+        -13440,
+        3232
+      ],
+      "reachable": true
+    },
+    {
+      "id": 98,
+      "kind": "interior_shop",
+      "point": [
+        -13440,
+        3040.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 99,
+      "kind": "shop",
+      "point": [
+        -9824,
+        14272
+      ],
+      "reachable": true
+    },
+    {
+      "id": 99,
+      "kind": "interior_shop",
+      "point": [
+        -9632.0,
+        14272
+      ],
+      "reachable": true
+    },
+    {
+      "id": 108,
+      "kind": "shop",
+      "point": [
+        -7488,
+        12128
+      ],
+      "reachable": true
+    },
+    {
+      "id": 108,
+      "kind": "interior_shop",
+      "point": [
+        -7488,
+        11936.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 109,
+      "kind": "shop",
+      "point": [
+        -15840,
+        1216
+      ],
+      "reachable": true
+    },
+    {
+      "id": 109,
+      "kind": "interior_shop",
+      "point": [
+        -15648.0,
+        1216
+      ],
+      "reachable": true
+    },
+    {
+      "id": 110,
+      "kind": "shop",
+      "point": [
+        -8128,
+        7840
+      ],
+      "reachable": true
+    },
+    {
+      "id": 110,
+      "kind": "interior_shop",
+      "point": [
+        -8128,
+        7648.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 111,
+      "kind": "shop",
+      "point": [
+        -7680,
+        12192
+      ],
+      "reachable": true
+    },
+    {
+      "id": 111,
+      "kind": "interior_shop",
+      "point": [
+        -7680,
+        12384.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 112,
+      "kind": "shop",
+      "point": [
+        -7840,
+        13824
+      ],
+      "reachable": true
+    },
+    {
+      "id": 112,
+      "kind": "interior_shop",
+      "point": [
+        -8032.0,
+        13824
+      ],
+      "reachable": true
+    },
+    {
+      "id": 113,
+      "kind": "shop",
+      "point": [
+        -9440,
+        8320
+      ],
+      "reachable": true
+    },
+    {
+      "id": 113,
+      "kind": "interior_shop",
+      "point": [
+        -9248.0,
+        8320
+      ],
+      "reachable": true
+    },
+    {
+      "id": 114,
+      "kind": "shop",
+      "point": [
+        -11520,
+        5152
+      ],
+      "reachable": true
+    },
+    {
+      "id": 114,
+      "kind": "interior_shop",
+      "point": [
+        -11520,
+        4960.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 115,
+      "kind": "shop",
+      "point": [
+        -8000,
+        8480
+      ],
+      "reachable": true
+    },
+    {
+      "id": 115,
+      "kind": "interior_shop",
+      "point": [
+        -8000,
+        8672.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 116,
+      "kind": "shop",
+      "point": [
+        -7360,
+        14176
+      ],
+      "reachable": true
+    },
+    {
+      "id": 116,
+      "kind": "interior_shop",
+      "point": [
+        -7360,
+        13984.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 117,
+      "kind": "shop",
+      "point": [
+        -15648,
+        320
+      ],
+      "reachable": true
+    },
+    {
+      "id": 117,
+      "kind": "interior_shop",
+      "point": [
+        -15456.0,
+        320
+      ],
+      "reachable": true
+    },
+    {
+      "id": 118,
+      "kind": "shop",
+      "point": [
+        -7104,
+        9440
+      ],
+      "reachable": true
+    },
+    {
+      "id": 118,
+      "kind": "interior_shop",
+      "point": [
+        -7104,
+        9248.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 119,
+      "kind": "shop",
+      "point": [
+        -4320,
+        -6528
+      ],
+      "reachable": true
+    },
+    {
+      "id": 119,
+      "kind": "interior_shop",
+      "point": [
+        -4128.0,
+        -6528
+      ],
+      "reachable": true
+    },
+    {
+      "id": 120,
+      "kind": "shop",
+      "point": [
+        -6464,
+        13664
+      ],
+      "reachable": true
+    },
+    {
+      "id": 120,
+      "kind": "interior_shop",
+      "point": [
+        -6464,
+        13472.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 121,
+      "kind": "shop",
+      "point": [
+        -15392,
+        -576
+      ],
+      "reachable": true
+    },
+    {
+      "id": 121,
+      "kind": "interior_shop",
+      "point": [
+        -15200.0,
+        -576
+      ],
+      "reachable": true
+    },
+    {
+      "id": 122,
+      "kind": "shop",
+      "point": [
+        -19840,
+        8544
+      ],
+      "reachable": true
+    },
+    {
+      "id": 122,
+      "kind": "interior_shop",
+      "point": [
+        -19840,
+        8352.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 123,
+      "kind": "shop",
+      "point": [
+        -5568,
+        12704
+      ],
+      "reachable": true
+    },
+    {
+      "id": 123,
+      "kind": "interior_shop",
+      "point": [
+        -5568,
+        12896.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 124,
+      "kind": "shop",
+      "point": [
+        -11968,
+        -3744
+      ],
+      "reachable": true
+    },
+    {
+      "id": 124,
+      "kind": "interior_shop",
+      "point": [
+        -11968,
+        -3936.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 125,
+      "kind": "shop",
+      "point": [
+        -21792,
+        6528
+      ],
+      "reachable": true
+    },
+    {
+      "id": 125,
+      "kind": "interior_shop",
+      "point": [
+        -21600.0,
+        6528
+      ],
+      "reachable": true
+    },
+    {
+      "id": 126,
+      "kind": "shop",
+      "point": [
+        -19296,
+        9024
+      ],
+      "reachable": true
+    },
+    {
+      "id": 126,
+      "kind": "interior_shop",
+      "point": [
+        -19488.0,
+        9024
+      ],
+      "reachable": true
+    },
+    {
+      "id": 127,
+      "kind": "shop",
+      "point": [
+        -14720,
+        -2016
+      ],
+      "reachable": true
+    },
+    {
+      "id": 127,
+      "kind": "interior_shop",
+      "point": [
+        -14720,
+        -1824.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 128,
+      "kind": "shop",
+      "point": [
+        -16608,
+        13056
+      ],
+      "reachable": true
+    },
+    {
+      "id": 128,
+      "kind": "interior_shop",
+      "point": [
+        -16800.0,
+        13056
+      ],
+      "reachable": true
+    },
+    {
+      "id": 129,
+      "kind": "shop",
+      "point": [
+        -22272,
+        6048
+      ],
+      "reachable": true
+    },
+    {
+      "id": 129,
+      "kind": "interior_shop",
+      "point": [
+        -22272,
+        6240.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 130,
+      "kind": "shop",
+      "point": [
+        -1568,
+        7360
+      ],
+      "reachable": true
+    },
+    {
+      "id": 130,
+      "kind": "interior_shop",
+      "point": [
+        -1760.0,
+        7360
+      ],
+      "reachable": true
+    },
+    {
+      "id": 131,
+      "kind": "shop",
+      "point": [
+        0,
+        -1248
+      ],
+      "reachable": true
+    },
+    {
+      "id": 131,
+      "kind": "interior_shop",
+      "point": [
+        0,
+        -1056.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 132,
+      "kind": "shop",
+      "point": [
+        0,
+        736
+      ],
+      "reachable": true
+    },
+    {
+      "id": 132,
+      "kind": "interior_shop",
+      "point": [
+        0,
+        544.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 133,
+      "kind": "shop",
+      "point": [
+        -22464,
+        7648
+      ],
+      "reachable": true
+    },
+    {
+      "id": 133,
+      "kind": "interior_shop",
+      "point": [
+        -22464,
+        7840.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 134,
+      "kind": "shop",
+      "point": [
+        -3008,
+        12128
+      ],
+      "reachable": true
+    },
+    {
+      "id": 134,
+      "kind": "interior_shop",
+      "point": [
+        -3008,
+        11936.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 135,
+      "kind": "shop",
+      "point": [
+        -14272,
+        -4576
+      ],
+      "reachable": true
+    },
+    {
+      "id": 135,
+      "kind": "interior_shop",
+      "point": [
+        -14272,
+        -4384.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 136,
+      "kind": "shop",
+      "point": [
+        288,
+        4288
+      ],
+      "reachable": true
+    },
+    {
+      "id": 136,
+      "kind": "interior_shop",
+      "point": [
+        96.0,
+        4288
+      ],
+      "reachable": true
+    },
+    {
+      "id": 137,
+      "kind": "shop",
+      "point": [
+        -21728,
+        -1728
+      ],
+      "reachable": true
+    },
+    {
+      "id": 137,
+      "kind": "interior_shop",
+      "point": [
+        -21536.0,
+        -1728
+      ],
+      "reachable": true
+    },
+    {
+      "id": 138,
+      "kind": "shop",
+      "point": [
+        -10368,
+        -9760
+      ],
+      "reachable": true
+    },
+    {
+      "id": 138,
+      "kind": "interior_shop",
+      "point": [
+        -10368,
+        -9952.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 139,
+      "kind": "shop",
+      "point": [
+        -15776,
+        -3840
+      ],
+      "reachable": true
+    },
+    {
+      "id": 139,
+      "kind": "interior_shop",
+      "point": [
+        -15584.0,
+        -3840
+      ],
+      "reachable": true
+    },
+    {
+      "id": 140,
+      "kind": "shop",
+      "point": [
+        -2112,
+        12128
+      ],
+      "reachable": true
+    },
+    {
+      "id": 140,
+      "kind": "interior_shop",
+      "point": [
+        -2112,
+        11936.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 141,
+      "kind": "shop",
+      "point": [
+        -21312,
+        -3168
+      ],
+      "reachable": true
+    },
+    {
+      "id": 141,
+      "kind": "interior_shop",
+      "point": [
+        -21312,
+        -2976.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 142,
+      "kind": "shop",
+      "point": [
+        -1536,
+        10720
+      ],
+      "reachable": true
+    },
+    {
+      "id": 142,
+      "kind": "interior_shop",
+      "point": [
+        -1536,
+        10528.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 143,
+      "kind": "shop",
+      "point": [
+        -15296,
+        -7328
+      ],
+      "reachable": true
+    },
+    {
+      "id": 143,
+      "kind": "interior_shop",
+      "point": [
+        -15296,
+        -7136.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 144,
+      "kind": "shop",
+      "point": [
+        -23872,
+        10592
+      ],
+      "reachable": true
+    },
+    {
+      "id": 144,
+      "kind": "interior_shop",
+      "point": [
+        -23872,
+        10400.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 145,
+      "kind": "shop",
+      "point": [
+        -21376,
+        -4192
+      ],
+      "reachable": true
+    },
+    {
+      "id": 145,
+      "kind": "interior_shop",
+      "point": [
+        -21376,
+        -4000.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 146,
+      "kind": "shop",
+      "point": [
+        -19840,
+        -4064
+      ],
+      "reachable": true
+    },
+    {
+      "id": 146,
+      "kind": "interior_shop",
+      "point": [
+        -19840,
+        -4256.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 147,
+      "kind": "shop",
+      "point": [
+        -6912,
+        -13344
+      ],
+      "reachable": true
+    },
+    {
+      "id": 147,
+      "kind": "interior_shop",
+      "point": [
+        -6912,
+        -13152.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 151,
+      "kind": "shop",
+      "point": [
+        -23744,
+        -1440
+      ],
+      "reachable": true
+    },
+    {
+      "id": 151,
+      "kind": "interior_shop",
+      "point": [
+        -23744,
+        -1632.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 168,
+      "kind": "shop",
+      "point": [
+        -23744,
+        10656
+      ],
+      "reachable": true
+    },
+    {
+      "id": 168,
+      "kind": "interior_shop",
+      "point": [
+        -23744,
+        10848.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 186,
+      "kind": "shop",
+      "point": [
+        -20384,
+        13504
+      ],
+      "reachable": true
+    },
+    {
+      "id": 186,
+      "kind": "interior_shop",
+      "point": [
+        -20576.0,
+        13504
+      ],
+      "reachable": true
+    },
+    {
+      "id": 204,
+      "kind": "shop",
+      "point": [
+        -26400,
+        7616
+      ],
+      "reachable": true
+    },
+    {
+      "id": 204,
+      "kind": "interior_shop",
+      "point": [
+        -26208.0,
+        7616
+      ],
+      "reachable": true
+    },
+    {
+      "id": 222,
+      "kind": "shop",
+      "point": [
+        -26560,
+        5984
+      ],
+      "reachable": true
+    },
+    {
+      "id": 222,
+      "kind": "interior_shop",
+      "point": [
+        -26560,
+        5792.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": 240,
+      "kind": "shop",
+      "point": [
+        -21824,
+        13088
+      ],
+      "reachable": true
+    },
+    {
+      "id": 240,
+      "kind": "interior_shop",
+      "point": [
+        -21824,
+        13280.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": "north",
+      "kind": "gate_-1",
+      "point": [
+        -16832.0,
+        15040.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": "north",
+      "kind": "gate_1",
+      "point": [
+        -16832.0,
+        16064.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": "west",
+      "kind": "gate_-1",
+      "point": [
+        -29248.0,
+        -320.00000000000006
+      ],
+      "reachable": true
+    },
+    {
+      "id": "west",
+      "kind": "gate_1",
+      "point": [
+        -30272.0,
+        -319.99999999999994
+      ],
+      "reachable": true
+    },
+    {
+      "id": "east",
+      "kind": "gate_-1",
+      "point": [
+        -128.0,
+        -1472.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": "east",
+      "kind": "gate_1",
+      "point": [
+        896.0,
+        -1472.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": "south",
+      "kind": "gate_-1",
+      "point": [
+        -4352.0,
+        -13696.0
+      ],
+      "reachable": true
+    },
+    {
+      "id": "south",
+      "kind": "gate_1",
+      "point": [
+        -4352.0,
+        -14720.0
+      ],
+      "reachable": true
+    }
+  ],
+  "failures": []
+}
