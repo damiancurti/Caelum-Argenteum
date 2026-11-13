@@ -1,0 +1,31 @@
+{
+  "issue": 455,
+  "scope": "Capture native orientation/animation and save continuation of the #455 pilot.\n\nOnly the generated visual actor and a temporary flat viewing map are loaded.\nThis is not an encounter, aquatic AI, collision or author-acceptance test.\n",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runtime_sha256": "2b98fa4a15e931a83786831aaaa0dab67d8ffb5ed7030cb90c7946bf709afc95",
+  "model_sha256": "c1d31ac03f69fa73e29c86e24f4a6381502b2b69b2927a0e69b04f83139e2950",
+  "fresh": {
+    "exit_code": 0,
+    "errors": [],
+    "verify_pass": true
+  },
+  "reload": {
+    "exit_code": 0,
+    "errors": [],
+    "verify_pass": true
+  },
+  "captures": {
+    "three-quarter": "53b2546197a886341e50bc076b6f2681ebb5138470e6bb5560d9de7c98daaee1",
+    "front": "019aebdb61a34a33cafb4a6ca7bd73e736dab459c1c12e52910b2abe06810914",
+    "side": "fc951740815c6cf2a715c2cdfc196a9196ef41e6572a990e9c87f793e6fbb7d6",
+    "rear": "e0c1eeec86a6a2e14721cbaacdc20b9c38592efadc524230b34764de46f50044",
+    "rotated": "6e2f0b25491025507de7039453eb07021aace8d067f7948bb82fc0ab563c01ab",
+    "swim-down": "11376f7e19c893dbbaedbb559a5654aa3420db9237b64dddbc6d4c65b8bc9d30",
+    "swim-up": "002ae5d00f147fdd2f59da2d9e503c16f335a8a997237727850758ce27fad668",
+    "head": "71a2a62595b71b9949599a6c0dc41c24ab2d40e1004e91d8f26bad66239fad89",
+    "animate-a": "9889ee0a641332ba201e519fa53ca67a8b4cd444f7c777d35afb4988d5c071ab",
+    "animate-b": "cf7684daa26ee0031001eef93a478a42ca44a576593b18b290bc3a9de8db06f8",
+    "reload": "17680aaebb4ef4dfc9db124e500147f6aaace6aa622561e88c37fb933d8bdc42"
+  },
+  "animation_capture_changed": true
+}

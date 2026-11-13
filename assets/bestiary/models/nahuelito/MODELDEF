@@ -1,0 +1,47 @@
+Model CA455NahuelitoPreview
+{
+    Path "models/caelum/folklore/nahuelito"
+    Model 0 "nahuelito.md3"
+    Scale 1 1 1
+    CorrectPixelStretch
+    FrameIndex NHAI A 0 0
+    FrameIndex NHAI B 0 1
+    FrameIndex NHAI C 0 2
+    FrameIndex NHAI D 0 3
+    FrameIndex NHAI E 0 4
+    FrameIndex NHAI F 0 5
+    FrameIndex NHAI G 0 6
+    FrameIndex NHAI H 0 7
+    FrameIndex NHAI I 0 8
+    FrameIndex NHAI J 0 9
+    FrameIndex NHAI K 0 10
+    FrameIndex NHAI L 0 11
+    FrameIndex NHAI M 0 12
+    FrameIndex NHAI N 0 13
+    FrameIndex NHAI O 0 14
+    FrameIndex NHAI P 0 15
+    FrameIndex NHAS A 0 16
+    FrameIndex NHAS B 0 17
+    FrameIndex NHAS C 0 18
+    FrameIndex NHAS D 0 19
+    FrameIndex NHAS E 0 20
+    FrameIndex NHAS F 0 21
+    FrameIndex NHAS G 0 22
+    FrameIndex NHAS H 0 23
+    FrameIndex NHAS I 0 24
+    FrameIndex NHAS J 0 25
+    FrameIndex NHAS K 0 26
+    FrameIndex NHAS L 0 27
+    FrameIndex NHAS M 0 28
+    FrameIndex NHAS N 0 29
+    FrameIndex NHAS O 0 30
+    FrameIndex NHAS P 0 31
+    FrameIndex NHAS Q 0 32
+    FrameIndex NHAS R 0 33
+    FrameIndex NHAS S 0 34
+    FrameIndex NHAS T 0 35
+    FrameIndex NHAS U 0 36
+    FrameIndex NHAS V 0 37
+    FrameIndex NHAS W 0 38
+    FrameIndex NHAS X 0 39
+}

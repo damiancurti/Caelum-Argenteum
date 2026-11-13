@@ -12,6 +12,7 @@ from assets.generators.generate_siege_reinforcements import render as reinforcem
 from assets.generators.generate_tarot_justice import validate as justice_geometry_problems
 from assets.generators.generate_tarot_examples import render as tarot_example_data
 from assets.generators.build_bestiary_catalogue import assemble as bestiary_catalogue
+from assets.generators.generate_bestiary_actors import render as bestiary_actor_data, render_names as bestiary_names
 from assets.generators.validate_map02_redesign import audit as sewer_redesign_audit
 from assets.generators.install_barracas_map import validate as barracas_installation_problems
 
@@ -256,6 +257,10 @@ def validate(root):
         expected = (json.dumps(catalogue, ensure_ascii=False, indent=2) + '\n').encode('utf-8')
         check((root/'assets/bestiary/CATALOGUE.json').read_bytes() == expected,
               'Bestiary catalogue is stale; run python assets/generators/build_bestiary_catalogue.py')
+        check((root/'src/caelum/actors/CaelumBestiaryCombat.zs').read_bytes() == bestiary_actor_data(root),
+              'Bestiary combat classes are stale; run python assets/generators/generate_bestiary_actors.py')
+        check(bestiary_names(root) in (root/'src/LANGUAGE').read_text(encoding='utf-8'),
+              'Bestiary bilingual names are stale; run python assets/generators/generate_bestiary_actors.py')
     except (OSError, KeyError, ValueError) as exc:
         check(False, f'Bestiary source/catalogue validation failed: {exc}')
 

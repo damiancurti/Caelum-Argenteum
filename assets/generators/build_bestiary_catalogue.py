@@ -24,6 +24,9 @@ PRESENCE = {'Múltiples': ('repeatable', False), 'Único': ('unique', False),
 def assemble(root=ROOT):
     root = Path(root).resolve()
     decisions = json.loads((root / 'assets/bestiary/AUTHORING.json').read_text(encoding='utf-8'))
+    behavior_path = root / 'assets/bestiary/BEHAVIOR.json'
+    behavior = json.loads(behavior_path.read_text(encoding='utf-8')) if behavior_path.is_file() else {}
+    combat_ids = set(behavior.get('new_creature_reference_ids', [])) if behavior.get('runtime_enabled') else set()
     source = root / decisions['source_catalogue']
     original = json.loads(source.read_text(encoding='utf-8-sig'))
     source_root = source.parent.resolve()
@@ -39,6 +42,11 @@ def assemble(root=ROOT):
         raise ValueError('Source must preserve all 58 ordered package IDs')
     if set(decisions['campaign_regions']) - set(ids):
         raise ValueError('Region assignments contain unknown package IDs')
+    if combat_ids - set(ids) or combat_ids & {'CA-FOLK-018', 'CA-FOLK-019'}:
+        raise ValueError('Provisional actors contain unknown or protected reference IDs')
+    pilots=decisions.get('model_pilots',{})
+    if set(pilots)-set(ids):
+        raise ValueError('Model pilots contain unknown package IDs')
     rows = []
     for entry in entries:
         relative = PurePosixPath(entry['imagen'])
@@ -72,6 +80,34 @@ def assemble(root=ROOT):
             'production_status': 'concept_reference_only', 'engine_id': None,
             'mesh': None, 'rig': None, 'animations': [],
         })
+        if entry['id'] in pilots:
+            pilot=pilots[entry['id']]
+            for key in ('mesh','source','manifest','generator'):
+                target=(root/pilot[key]).resolve()
+                if not target.is_relative_to(root) or not target.is_file():
+                    raise ValueError(f"Missing/unsafe model pilot {key}: {entry['id']}")
+            manifest=json.loads((root/pilot['manifest']).read_text(encoding='utf-8'))
+            if manifest['catalogue_id']!=entry['id']:
+                raise ValueError(f"Model pilot identity mismatch: {entry['id']}")
+            if hashlib.sha256((root/pilot['generator']).read_bytes()).hexdigest()!=manifest['generator_sha256']:
+                raise ValueError(f"Stale model pilot generator: {entry['id']}")
+            source_folder=(root/pilot['source']).parent.resolve()
+            for name,expected_hash in manifest['source_sha256'].items():
+                target=(source_folder/name).resolve()
+                if not target.is_relative_to(source_folder) or hashlib.sha256(target.read_bytes()).hexdigest()!=expected_hash:
+                    raise ValueError(f'Model pilot source checksum mismatch: {name}')
+            folder=(root/pilot['manifest']).parent.resolve()
+            for name,expected_hash in manifest['sha256'].items():
+                target=(folder/name).resolve()
+                if not target.is_relative_to(folder) or hashlib.sha256(target.read_bytes()).hexdigest()!=expected_hash:
+                    raise ValueError(f'Model pilot output checksum mismatch: {name}')
+            rows[-1].update(production_status='unintegrated_model_pilot',mesh=pilot['mesh'],
+                            rig=pilot['rig'],animations=pilot['animations'],visual_pilot=pilot)
+        if entry['id'] in combat_ids:
+            rows[-1].update(production_status='provisional_combat_unplaced',
+                            actor_class=behavior['class_prefix']+entry['id'].rsplit('-',1)[1],
+                            combat_template=behavior['template']['class'],
+                            combat_art='inherited_Mandinga_placeholder',campaign_spawning=False)
     result = {'schema_revision': 1, 'issue': 453, 'source_status': original['catalog_status'],
               'source_catalogue': decisions['source_catalogue'], 'source_sha256': hashlib.sha256(source.read_bytes()).hexdigest(),
               'missing_original_material': original['missing_original_material'],
@@ -81,7 +117,8 @@ def assemble(root=ROOT):
              'population_counts': dict(sorted(Counter(row['population'] for row in rows).items())),
              'rare_repeatable_references': sum(row['rare_reference'] for row in rows),
              'unassigned_regions': sum(row['campaign_regions'] is None for row in rows),
-             'runtime_actors_added': 0, 'meshes_delivered': 0}
+             'runtime_actors_added': len(combat_ids), 'meshes_delivered': len(pilots),
+             'unintegrated_visual_pilots': len(pilots)}
     return result, audit
 
 

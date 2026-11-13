@@ -1,10 +1,10 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.16.2** - 2026-11-12.
+Documentation version: **5.16.3** - 2026-11-12.
 
 **V5.16:** #452 regions/Majors/finale, #453 catalogue approved; #454 MAP02/MAP03 rebuilt/tested.
 MAP01/ASSETS/TASKS; assets/campaign/PROGRESSION.json.
-MAP03/vision tested; siege~1.35FPS; scripts/models pending. LegacyMap02Revision5.
+#455 3pilots/56classes. Vision-tested; siege~1.35FPS. Scripts/art-pending. LegacyMap02Revision5.
 
 **V5.15 accepted2026-11-10:** CA447-01..451-01;#447-451 closed;PR635-639 merged.
 HISTORY/validation_v5_15_0..4. Single-player/attributes100 terminal:

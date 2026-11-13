@@ -1,0 +1,1 @@
+Fixture compile failure: class/name ternary. Engine stopped after error.

@@ -1,0 +1,23 @@
+{
+  "issue": 455,
+  "catalogue_id": "CA-FOLK-055",
+  "reference": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/55_nahuelito.png",
+  "reference_sha256": "ad3ae00225ff1fd7cbf4ee858f1ad72ed312c4f6783088491f17c9335bc452c6",
+  "mesh": "Original reference-led lofted mesh, four swept flippers, continuous body/neck/tail, separate jaw, eyes and dorsal scutes. Deterministic source code and explicit geometry data retained.",
+  "skin": {
+    "file": "skin.png",
+    "source": "Built-in image_gen output; original bytes retained. Prompt in PROMPT.json.",
+    "sha256": "602ef95f83053451576bf9b976ee45bdd3376763c990f06f27f905d89e7776e5"
+  },
+  "reused_owned_materials": {
+    "iris.png": {
+      "source": "src/models/caelum/props/stations/ca_station_brass.png",
+      "sha256": "8b231a9556f30af1b2c3d11ee5e4e4d6b63f7336a5301d225bb7f4f43c5639cc"
+    },
+    "dark.png": {
+      "source": "src/models/caelum/props/stash/ca_stash_inside.png",
+      "sha256": "6573658a5e61c4c8f75046435e8e8d1f1e85e6348007c69fc911483fe579fac4"
+    }
+  },
+  "approval": "Reference and preference for actual3D approved. This derived mesh and its approximate presentation scale remain subject to author visual review. No combat rules inferred."
+}

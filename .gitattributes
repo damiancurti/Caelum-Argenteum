@@ -478,6 +478,19 @@
 /src/caelum/world/CaelumCityData.zs text eol=lf
 
 /assets/generators/generate_barracas_map.py text eol=lf
+
+# #455 editable model data, deterministic exports and native evidence.
+/assets/source/art/nahuelito_455/*.json text eol=lf
+/assets/bestiary/models/nahuelito/** -text
+/assets/validation_v5_16_3/** -text -whitespace
+/assets/validation_v5_16_3/*.py text eol=lf whitespace=blank-at-eol,blank-at-eof,space-before-tab
+/assets/validation_v5_16_3/*.json text eol=lf whitespace=blank-at-eol,blank-at-eof,space-before-tab
+/assets/generators/generate_nahuelito_model.py text eol=lf
+/assets/generators/generate_pombero_model.py text eol=lf
+/assets/source/art/pombero_455/*.json text eol=lf
+/assets/bestiary/models/pombero/** -text
+/assets/generators/generate_bestiary_actors.py text eol=lf
+/src/caelum/actors/CaelumBestiaryCombat.zs text eol=lf
 /assets/generators/generate_barracas_fronts.py text eol=lf
 /src/caelum/world/CaelumBarracasFrontData.zs text eol=lf
 /assets/generators/generate_barracas_retreat.py text eol=lf
@@ -496,5 +509,13 @@
 /src/caelum/world/CaelumBarracasRamCrewData.zs text eol=lf
 /src/caelum/world/CaelumBarracasMarchData.zs text eol=lf
 
+/assets/validation_v5_16_3/combat/** -text -whitespace
+/assets/validation_v5_16_3/bestiary_combat_probe.zs text eol=lf
+/assets/validation_v5_16_3/run_bestiary_combat.py text eol=lf
+
 # Preserve the native-tested #454 perception source bytes on checkout.
 /src/caelum/actors/CaelumVisualPerception.zs -text whitespace=cr-at-eol
+
+/assets/generators/generate_cuero_model.py text eol=lf
+/assets/source/art/cuero_455/*.json text eol=lf
+/assets/bestiary/models/cuero/** -text

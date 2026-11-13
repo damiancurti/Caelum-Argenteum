@@ -1,6 +1,37 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.16.2** - 2026-11-12.
+Documentation version: **5.16.3** - 2026-11-12.
+
+## 5.16.3 - Folklore combat classes and model pilots (#455)
+
+Cuero (CA-FOLK-053) adds a third unintegrated editable OBJ/MD3 pilot with
+40 idle/swim frames, a closed underside and curved marginal claws. Deterministic
+generation, binary bounds/material coverage and native fresh/reload/state
+advancement pass; evidence and qualifications are in validation_v5_16_3/cuero.
+It supplies no production body, collision, aquatic/wrapping behavior or encounters.
+Art review and combat animations remain pending.
+
+Pombero has a second unintegrated technical mesh with 40 idle/walk frames,
+editable data, OBJ/MTL and native MD3. Binary checks, byte-identical regeneration
+and native fresh/reload/state advancement pass (validation_v5_16_3/pombero).
+The facial/material follow-up passes in validation_v5_16_3/pombero-face;
+hair/clothing geometry and seams still need production art review. Studio captures
+do not establish ordinary lighting or crowded-scene performance. Author review
+and combat/hurt/death animations remain outstanding; it is not a finished model.
+
+The first actual3D folklore pilot has40 idle/swim frames, editable geometry/motion
+controls and a neutral OBJ. Binary checks, repeatable generation and native
+single-instance fresh/reload pass. CA455-VIS-01 remains pending. The author approved provisional Mandinga statistics and current melee/fire
+projectile/breath, hostility and available-potion loot for new creatures on
+2026-11-12. assets/bestiary/BEHAVIOR.json records that shared template while
+protecting Rulo, existing Mandingas and Zupay. Its 56 unplaced classes now inherit
+that template without copied balance or new saved fields. Final appearance and
+encounters remain open; do not infer collision from visual scale.
+Remaining 55 models, action coverage required by approved behavior, aquatic AI,
+regional placement and campaign unique-instance persistence remain unfinished.
+All 56 profiles and finite inventories pass native fresh/reload checks; 18 forced
+action checks and 56 native death drops pass with the limits in combat/SUMMARY.json.
+Normal encounters, breath contact damage and visual acceptance remain separate.
 
 ## 5.16.2 - Approved sewer and Barracas redesign (#454)
 
@@ -81,7 +112,7 @@ There is no new actionable gameplay test for pending_test.txt in this delivery.
 | #452 | Regional chapter allocation approved 2026-11-12; opening graph audited. Basic finale and all-78/+250 requirements approved; one eligible participant admits the consenting group. Geographic/ability gates and exact revelations remain open. |
 | #453 | Catalogue complete for review: 58 verified references, all regional assignments approved; source/size qualifications retained. Actual 3D production belongs to the separate creature/art delivery. |
 | #454 | Approved sewer v2/Barracas v1 references recovered; four city gates and siege adaptation explicitly selected. Implement separately with ordinary routes, services and active/hub-save compatibility. |
-| #455 | Approve per-creature behavior/stats/encounters after #453/#454; unique and repeatable populations remain distinct. |
+| #455 | 56 unplaced classes inherit the approved Mandinga combat template, preserving taxonomy/protected profiles. Three visual pilots remain unintegrated; 55 models, encounters and campaign uniqueness remain open. |
 | #456 | Assign the remaining 75 essences; preserve IDs 0/36/60, personal acquisition, interruption recovery and ability-gate reachability. |
 | #457 | Author memories, revelations, chapter ends and Selene encounter; retain Zupay's Chapter I retreat/Chapter II death boundary. |
 

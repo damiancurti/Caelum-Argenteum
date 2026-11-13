@@ -232,5 +232,52 @@
     "model_handoff": "Produce actual editable meshes, UV/material sources, animations where needed, native bindings and engine/visual evidence in focused deliveries. A PNG on a plane is not a completed 3D creature.",
     "native_format_basis": "The existing project has OBJ and MD3 models. Select and validate the appropriate native format per model; no new runtime/export dependency is assumed.",
     "balance_scope": "No stats, attacks, allegiance, drops, spawn rates or population limit are inferred from concept art or folklore."
+  },
+  "model_pilots": {
+    "CA-FOLK-055": {
+      "issue": 455,
+      "source": "assets/source/art/nahuelito_455/DESIGN.json",
+      "mesh": "assets/bestiary/models/nahuelito/models/caelum/folklore/nahuelito/nahuelito.md3",
+      "manifest": "assets/bestiary/models/nahuelito/manifest.json",
+      "rig": "Procedural articulated mesh controls in DESIGN.json and generate_nahuelito_model.py; no skeleton/armature delivered",
+      "animations": [
+        "idle:16 samples",
+        "swim:24 samples"
+      ],
+      "runtime_enabled": false,
+      "author_accepted": false,
+      "limits": "Visual pilot only. No statistics, collision, aquatic AI, encounter or campaign unique-instance authority.",
+      "generator": "assets/generators/generate_nahuelito_model.py"
+    },
+    "CA-FOLK-006": {
+      "issue": 455,
+      "source": "assets/source/art/pombero_455/DESIGN.json",
+      "mesh": "assets/bestiary/models/pombero/models/caelum/folklore/pombero/pombero.md3",
+      "manifest": "assets/bestiary/models/pombero/manifest.json",
+      "rig": "15 hierarchical procedural mesh parts in DESIGN.json; no skeleton/armature delivered",
+      "animations": [
+        "idle:16 samples",
+        "walk:24 samples"
+      ],
+      "runtime_enabled": false,
+      "author_accepted": false,
+      "limits": "Technical visual pilot. Face, hair and clothing fidelity require further art review. No combat animation set, collision, encounters, population or campaign ownership.",
+      "generator": "assets/generators/generate_pombero_model.py"
+    },
+    "CA-FOLK-053": {
+      "issue": 455,
+      "source": "assets/source/art/cuero_455/DESIGN.json",
+      "mesh": "assets/bestiary/models/cuero/models/caelum/folklore/cuero/cuero.md3",
+      "manifest": "assets/bestiary/models/cuero/manifest.json",
+      "rig": "Procedural membrane deformation and articulated claws/eyes in DESIGN.json; no skeleton/armature delivered",
+      "animations": [
+        "idle:16 samples",
+        "swim:24 samples"
+      ],
+      "runtime_enabled": false,
+      "author_accepted": false,
+      "limits": "Technical visual pilot only. No actual swimming, wrapping behavior, collision, combat animation set, encounters or campaign ownership.",
+      "generator": "assets/generators/generate_cuero_model.py"
+    }
   }
 }

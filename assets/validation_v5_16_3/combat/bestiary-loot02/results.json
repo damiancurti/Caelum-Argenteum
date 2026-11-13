@@ -1,0 +1,78 @@
+{
+  "issue": 455,
+  "scope": "Compare all approved provisional actors with the live Mandinga template.\n\nReuse the owned visual-pilot room, without a model overlay or campaign placement.\nPassive AI isolates profile/state/inventory equivalence; actual action execution\nand campaign population/visual acceptance require separate evidence.",
+  "runtime_sha256": "d38d43816e045a869eb60f5d08fcabffd40b4a607e8db29ff9646ef8ceeafc1c",
+  "fixture_sha256": "2cc918c09cf33df6d67a61747a70509892ff325bea2aa574005c65c85b797bad",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "fresh",
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\work-455\\build\\issue455-combat02.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\work-455\\build\\bestiary-loot02\\profile-probe.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\work-455\\build\\bestiary-loot02\\fresh\\session.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\work-455\\build\\bestiary-loot02\\fresh",
+        "-window",
+        "-width",
+        "960",
+        "-height",
+        "720",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\work-455\\build\\bestiary-loot02\\fresh\\engine.log",
+        "+map",
+        "CA455V",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\work-455\\build\\bestiary-loot02\\fresh\\commands.cfg"
+      ],
+      "exit_code": 0,
+      "errors": [],
+      "passed": true,
+      "checks": [
+        "CA455 COMBAT PASS bodies=56 depleted=0 failures=0",
+        "CA455 LOOT PASS bodies=56 drops=56 failures=0",
+        "CA455 LOOT PASS bodies=56 drops=56 failures=0"
+      ]
+    },
+    {
+      "phase": "reload",
+      "command": [
+        "C:\\Program Files (x86)\\GZDoom\\gzdoom.exe",
+        "-noautoload",
+        "-iwad",
+        "C:\\Program Files (x86)\\Steam\\steamapps\\common\\ultimate doom\\base\\doom2\\DOOM2.WAD",
+        "-file",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\work-455\\build\\issue455-combat02.pk3",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\work-455\\build\\bestiary-loot02\\profile-probe.pk3",
+        "-config",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\work-455\\build\\bestiary-loot02\\reload\\session.ini",
+        "-savedir",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\work-455\\build\\bestiary-loot02\\reload",
+        "-window",
+        "-width",
+        "960",
+        "-height",
+        "720",
+        "+logfile",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\work-455\\build\\bestiary-loot02\\reload\\engine.log",
+        "-loadgame",
+        "input.zds",
+        "+exec",
+        "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\work-455\\build\\bestiary-loot02\\reload\\commands.cfg"
+      ],
+      "exit_code": 0,
+      "errors": [],
+      "passed": true,
+      "checks": [
+        "CA455 LOOT PASS bodies=56 drops=56 failures=0",
+        "CA455 LOOT PASS bodies=56 drops=56 failures=0"
+      ]
+    }
+  ]
+}

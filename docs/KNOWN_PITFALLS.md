@@ -30,6 +30,26 @@ Renderer bench and profilethinkers are later snapshots, not window averages or
 GPU timings. The modest query change leaves the severe siege frame-presentation
 problem unresolved. Author acceptance and ordinary campaign review remain pending.
 
+## CA-KP-224 - Profile isolation is not an attack or spawn-event fixture
+
+Status/evidence: ENGINE-VERIFIED, 2026-11-13. Issue/PR: #455/#644.
+Environment: GZDoom 4.14.2 on Windows 11, unpaused background at 5% audio.
+Evidence: assets/validation_v5_16_3/combat/SUMMARY.json and retained failed runs.
+
+CaelumDiagnosticPassiveAI does not freeze native state actions and deliberately
+blocks demon breath. A crowded profile comparison therefore cannot count every
+spawned projectile as one selected actor's attack. Use a fresh isolated attacker,
+its own projectile counter and an unchanged native Mandinga control. Wait for
+native initialization before reading derived maxima, and for actual perception
+before forcing a ranged state. Look can discard an inert fixture target; that
+does not prove an attack-service failure. Report forced-state evidence separately
+from ordinary encounter AI and breath contact damage.
+
+WorldThingSpawned notifications can arrive after the synchronous death call. A
+collection flag scoped only to that call misses valid drops. Retain the observer
+through subsequent ticks, then verify world identity, finite stock and replay/load
+guards. The fixture observes 56 owned deaths; no production scan or rule changes.
+
 ## CA-KP-223 - Map installation must migrate geometry-dependent catalogues
 
 Status/evidence: ENGINE-VERIFIED,2026-11-13. Issue/PR: #454/#643.
@@ -214,6 +234,29 @@ Regression: require blocked closed-gate samples and clear opened-gate samples
 with the largest supported body. This fixture does not establish ordinary user
 interaction, integrated siege behavior, performance or author acceptance.
 
+## CA-KP-216 - TID zero is not an untagged actor census
+
+Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED in the isolated #455 fixture.
+First recorded / last checked: 2026-11-12 / 2026-11-12.
+Issue: #455. Baseline: 9185f247c plus the visual pilot; exact engine/package hashes
+are in assets/validation_v5_16_3/SUMMARY.json. Environment: Windows 11, native
+GZDoom 4.14.2 Vulkan, disposable CA455V, background/unpaused at 5% audio.
+Scope: fixture actor lookup, not a production registry or permission for scans.
+
+`ActorIterator.Create(0, "CA455VisualDriver")` did not recover the untagged
+controller. Repeated view commands created new controllers/subjects; a following
+animation command obtained a fresh driver with a null Subject and aborted.
+Assigning the driver TID 455001 and looking up that TID fixed the sequence.
+An on-demand typed ThinkerIterator checks all matching visual subjects once
+before save and once after load, requiring exactly one in this bounded three-actor
+fixture. This diagnostic census is not used per tic or in gameplay.
+
+Evidence: retained attempt02 error log; corrected native fresh/reload logs require
+`CA455 VERIFY subjects=1 ... result=PASS`. Prevention: use a real nonzero TID or
+an existing owned registry for targeted actor recovery. Check the expected actor
+count and state, not merely successful screenshots or process exit. Author model
+acceptance, aquatic gameplay and campaign uniqueness remain PENDING.
+
 ## CA-KP-215 - Out-of-range editor numbers can silently omit map actors
 
 Status/evidence: ENGINE-VERIFIED / RESOLVED-VERIFIED for the isolated preview.
@@ -247,7 +290,7 @@ performance acceptance. First recorded / last checked: 2026-11-09 / 2026-11-09.
 Issue: [#447](https://github.com/damiancurti/Caelum-Argenteum/issues/447).
 Affected baseline: c3dd9c918ea83400d6dd0c277c2581a2ef208a1c plus the uncommitted
 5.15.0 director patch; exact runtime hashes are in validation_v5_15_0/results.json.
-Environment: Windows, GZDoom4.14.2, Vulkan, local development Doom II IWAD,
+Environment: Windows, GZDoom 4.14.2, Vulkan, local development Doom II IWAD,
 1280x720, one unpaused native peer, fixed ground-facing city reference.
 Scope: CaelumPortSiege.EnsureDirector and its normal preparing/active callers.
 
