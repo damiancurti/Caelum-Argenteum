@@ -20,6 +20,9 @@ null subject. A dedicated driver TID plus an explicit fixture-only typed census
 resolved it; subsequent fresh/reload checks require exactly one subject. Raw failed
 logs are retained, not reported as successful game tests. CA-KP-216 records the
 lookup lesson. The eye socket/lip/scutes were refined after the initial views.
+A later capture review found camera interpolation in the animation pair; clearing
+interpolation and settling the view fixed the fixture. The corrected pair in
+camera-settled confirms unchanged framing and native state advancement.
 
 SUMMARY.json in assets/validation_v5_16_3 owns qualified evidence and exact hashes.
 Visual acceptance remains pending as CA455-VIS-01. No existing author check was

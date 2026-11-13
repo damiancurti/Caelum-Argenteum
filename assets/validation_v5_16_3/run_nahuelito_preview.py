@@ -65,7 +65,7 @@ class CA455VisualDriver : Actor
         target=(110,0,229) if name=='head' else (0,0,120)
         camera_angle=math.degrees(math.atan2(target[1]-p[1],target[0]-p[0]));sample=22 if name=='swim-down' else 34 if name=='swim-up' else 0
         source+=f'if(index=={i}){{View.SetOrigin(({p[0]},{p[1]},{p[2]}),false);View.Angle={camera_angle};View.Pitch={pitch};Subject.Angle={angle};Sample={sample};}}\n'
-    source+='''players[0].camera=View;
+    source+='''View.ClearInterpolation(); Subject.ClearInterpolation(); players[0].camera=View;
         Console.Printf("CA455 VIEW index=%d sample=%d angle=%.1f",ViewIndex,Sample,Subject.Angle);
     }
 }
@@ -100,7 +100,7 @@ class CA455VisualEvents : EventHandler
             info=zipfile.ZipInfo(name,(2026,11,12,0,0,0));package.writestr(info,value)
     config=out/'isolated.ini';config.write_text('[GlobalSettings]\nvid_fullscreen=false\nvid_preferbackend=1\nvid_activeinbackground=true\ni_pauseinbackground=false\nvid_lowerinbackground=false\ni_soundinbackground=true\nsnd_mastervolume=0.05\nvid_maxfps=60\nlanguage=en\n')
     commands='wait 140; '+ '; '.join(f'netevent ca455view{i}; wait 10; screenshot {name}.png' for i,(name,_,_,_) in enumerate(views))
-    commands+='; netevent ca455view0; netevent ca455animate; wait 2; netevent ca455motion_a; screenshot animate-a.png; wait 30; netevent ca455motion_b; screenshot animate-b.png; netevent ca455verify; save pilot.zds; wait 35; quit\n'
+    commands+='; netevent ca455view0; wait 10; netevent ca455animate; wait 2; netevent ca455motion_a; screenshot animate-a.png; wait 30; netevent ca455motion_b; screenshot animate-b.png; netevent ca455verify; save pilot.zds; wait 35; quit\n'
     (out/'commands.cfg').write_text(commands)
     engine=Path('C:/Program Files (x86)/GZDoom/gzdoom.exe');iwad=Path('C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD')
     common=[str(engine),'-noautoload','-iwad',str(iwad),'-file',str(args.runtime.resolve()),str(args.model.resolve()/'preview.pk3'),str(fixture),'-config',str(config),'-savedir',str(out),'-window','-width','1280','-height','720']

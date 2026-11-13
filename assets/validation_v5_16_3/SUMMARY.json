@@ -5,7 +5,7 @@
   "status": "Unintegrated Nahuelito visual pilot. CA455-VIS-01 pending. Other57 models and creature behavior unfinished.",
   "approved_reference": "CA-FOLK-055",
   "native": {
-    "final_model_run": "native-release",
+    "final_model_run": "camera-settled",
     "runtime": "5.16.3 package; exact runtime/engine/model hashes are in native-release/RESULTS.json",
     "facts": [
       "One native subject before save and after reload",
@@ -26,7 +26,8 @@
     "captured_resolution": [
       1520,
       825
-    ]
+    ],
+    "camera_qualification": "The native-release animation pair initially included camera interpolation after the close-head view. ClearInterpolation plus ten settling tics fixes the comparison; camera-settled preserves the corrected same-view live animation pair. Mesh, package and playback are unchanged."
   },
   "failed_attempts": {
     "native-01": "Dynamic String to StateLabel compile error; fixed explicit labels.",
@@ -44,6 +45,10 @@
       "head",
       "rotated",
       "front"
+    ],
+    "camera-settled": [
+      "animate-a",
+      "animate-b"
     ]
   },
   "static": "static-results.json",
