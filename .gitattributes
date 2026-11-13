@@ -495,3 +495,6 @@
 /src/caelum/world/CaelumBarracasDeployment.zs text eol=lf
 /src/caelum/world/CaelumBarracasRamCrewData.zs text eol=lf
 /src/caelum/world/CaelumBarracasMarchData.zs text eol=lf
+
+# Preserve the native-tested #454 perception source bytes on checkout.
+/src/caelum/actors/CaelumVisualPerception.zs -text whitespace=cr-at-eol

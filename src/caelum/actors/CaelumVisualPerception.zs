@@ -55,13 +55,15 @@ class CaelumVisualPerception : Object play
             && observer.CheckSight(candidate,SF_IGNOREVISIBILITY);
     }
 
-    static bool CanSee(CaelumCombatActor observer,Actor candidate)
+    // #454: Candidate ya calcula esta distancia nativa en la misma iteración.
+    // Reutilizarla no conserva posiciones entre tics ni cambia los filtros.
+    static bool CanSee(CaelumCombatActor observer,Actor candidate,double knownDistance=-1)
     {
         if(!Living(observer) || !Living(candidate) || observer==candidate || observer.bDormant
             || observer.ForcedSleepTics>0 || observer.CombatLucidityPhysicalStunRemaining>0)return false;
         if(Touching(observer,candidate))return true;
         if(Abs(observer.DeltaAngle(observer.Angle,observer.AngleTo(candidate)))>CaelumPerceptionData.VISUAL_FIELD_DEGREES/2)return false;
-        if(observer.Distance3D(candidate)>Range(observer,candidate))return false;
+        if((knownDistance>=0 ? knownDistance : observer.Distance3D(candidate))>Range(observer,candidate))return false;
         return observer.CheckSight(candidate);
     }
 
@@ -127,14 +129,14 @@ class CaelumVisualPerception : Object play
                 let candidate=group.Candidates[i];
                 if(!Opponent(observer,candidate))continue;
                 double distance=observer.Distance3D(candidate);
-                if(distance<best && CanSee(observer,candidate)){nearest=candidate;best=distance;}
+                if(distance<best && CanSee(observer,candidate,distance)){nearest=candidate;best=distance;}
             }
             for(int i=0;i<group.Members.Size();i++)
             {
                 let entry=group.Members[i];let friend=entry!=null ? entry.Body : null;
                 if(friend==observer || !Living(friend))continue;
                 double distance=observer.Distance3D(friend);
-                if(distance<allyDistance && CanSee(observer,friend)){ally=friend;allyDistance=distance;}
+                if(distance<allyDistance && CanSee(observer,friend,distance)){ally=friend;allyDistance=distance;}
             }
             if(ally!=null)CaelumCommunication.ObserveAlly(observer,ally);
             evidence.CandidateCache=nearest;evidence.CandidateCacheTic=level.time;evidence.CandidateCacheReady=true;
@@ -150,12 +152,12 @@ class CaelumVisualPerception : Object play
                 if(friend!=null && CaelumCommunication.Eligible(observer,friend))
                 {
                     double distance=observer.Distance3D(friend);
-                    if(distance<allyDistance && CanSee(observer,friend)){ally=friend;allyDistance=distance;}
+                    if(distance<allyDistance && CanSee(observer,friend,distance)){ally=friend;allyDistance=distance;}
                 }
                 continue;
             }
             double distance=observer.Distance3D(candidate);
-            if(distance>=best || !CanSee(observer,candidate))continue;
+            if(distance>=best || !CanSee(observer,candidate,distance))continue;
             nearest=candidate;best=distance;
         }
         // Los guardias estacionados carecen de blockmap. Reutilizar la lista
@@ -167,7 +169,7 @@ class CaelumVisualPerception : Object play
             let candidate=entry!=null ? entry.Body : null;
             if(!Opponent(observer,candidate))continue;
             double distance=observer.Distance3D(candidate);
-            if(distance>=best || !CanSee(observer,candidate))continue;
+            if(distance>=best || !CanSee(observer,candidate,distance))continue;
             nearest=candidate;best=distance;
         }
         if(ally!=null)CaelumCommunication.ObserveAlly(observer,ally);
