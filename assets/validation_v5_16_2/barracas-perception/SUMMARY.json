@@ -1,0 +1,681 @@
+{
+  "issue": 454,
+  "date": "2026-11-13",
+  "scope": "Reuse the exact native distance already calculated within candidate selection; preserve every visibility predicate and its order.",
+  "author_accepted": false,
+  "performance_accepted": false,
+  "environment": "Windows 11 Pro 26200; Ryzen 9 5950X; 32 GB RAM; RTX 3070 Ti driver 32.0.16.1088; GZDoom 4.14.2; Vulkan 1280x720, uncapped, vsync off; unpaused background with 5% audio.",
+  "native_runs": [
+    {
+      "label": "deep-profile",
+      "evidence": "deep-profile/results.json",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 43.20868985714286,
+        "p95_ms": 138.2618,
+        "p99_ms": 143.5918,
+        "max_ms": 214.1538
+      },
+      "presentation": {
+        "pid": 30816,
+        "trace_sha256": "1ed1e941dbf6cc114c12a06a5efda43b9485dcd112b47949e3c3d28f1645214b",
+        "rows": 1541,
+        "scene_presents": 37,
+        "mean_present_fps": 1.3580369816868176,
+        "present_intervals": {
+          "samples": 36,
+          "mean_ms": 736.356972221699,
+          "p50_ms": 740.494999974966,
+          "p95_ms": 862.8666999936104,
+          "p99_ms": 950.7700999975204,
+          "max_ms": 950.7700999975204
+        },
+        "native_call_duration": {
+          "samples": 37,
+          "mean_ms": 0.2323837795773068,
+          "p50_ms": 0.2224000096321106,
+          "p95_ms": 0.30329999327659607,
+          "p99_ms": 0.3206000030040741,
+          "max_ms": 0.3206000030040741
+        }
+      }
+    },
+    {
+      "label": "vision-reasons",
+      "evidence": "vision-reasons/results.json",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 39.92213671428571,
+        "p95_ms": 117.1369,
+        "p99_ms": 124.4683,
+        "max_ms": 217.8854
+      },
+      "presentation": {
+        "pid": 9500,
+        "trace_sha256": "392ee49f2e10252979161450d878ee3121074e97773acb7e716f7888a92fe6f5",
+        "rows": 1579,
+        "scene_presents": 37,
+        "mean_present_fps": 1.468278527607685,
+        "present_intervals": {
+          "samples": 36,
+          "mean_ms": 681.0696888888875,
+          "p50_ms": 674.2520000040531,
+          "p95_ms": 747.8702999949455,
+          "p99_ms": 896.6024000048637,
+          "max_ms": 896.6024000048637
+        },
+        "native_call_duration": {
+          "samples": 37,
+          "mean_ms": 0.22385135293006897,
+          "p50_ms": 0.22040000557899475,
+          "p95_ms": 0.25689998269081116,
+          "p99_ms": 0.25940001010894775,
+          "max_ms": 0.25940001010894775
+        }
+      }
+    },
+    {
+      "label": "range-order-unadopted",
+      "evidence": "range-order-unadopted/results.json",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 39.12502414285714,
+        "p95_ms": 112.332,
+        "p99_ms": 116.6609,
+        "max_ms": 299.7419
+      },
+      "presentation": {
+        "pid": 14796,
+        "trace_sha256": "c09d3bc65e863a24e8838d6070807dfc955d1f20e3f1a962ff73651a5982d2f8",
+        "rows": 1587,
+        "scene_presents": 38,
+        "mean_present_fps": 1.501585867446994,
+        "present_intervals": {
+          "samples": 37,
+          "mean_ms": 665.9625810811649,
+          "p50_ms": 653.9853000044823,
+          "p95_ms": 816.840499997139,
+          "p99_ms": 880.9944999814034,
+          "max_ms": 880.9944999814034
+        },
+        "native_call_duration": {
+          "samples": 38,
+          "mean_ms": 0.2237657904624939,
+          "p50_ms": 0.2215999960899353,
+          "p95_ms": 0.2475999891757965,
+          "p99_ms": 0.29680001735687256,
+          "max_ms": 0.29680001735687256
+        }
+      }
+    },
+    {
+      "label": "baseline01",
+      "evidence": "baseline01/results.json",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 40.557818857142856,
+        "p95_ms": 120.4351,
+        "p99_ms": 125.1672,
+        "max_ms": 218.1761
+      },
+      "presentation": {
+        "pid": 6944,
+        "trace_sha256": "81bf3690b9dd5df14b93e912ee6c611075d5e92a887096b798c208c76094fd4e",
+        "rows": 1544,
+        "scene_presents": 38,
+        "mean_present_fps": 1.4453797609732841,
+        "present_intervals": {
+          "samples": 37,
+          "mean_ms": 691.859694594467,
+          "p50_ms": 686.7748000025749,
+          "p95_ms": 819.7238000035286,
+          "p99_ms": 823.0088999867439,
+          "max_ms": 823.0088999867439
+        },
+        "native_call_duration": {
+          "samples": 38,
+          "mean_ms": 0.22906315954107986,
+          "p50_ms": 0.22540000081062317,
+          "p95_ms": 0.2694000005722046,
+          "p99_ms": 0.29520002007484436,
+          "max_ms": 0.29520002007484436
+        }
+      }
+    },
+    {
+      "label": "baseline02-snapshots",
+      "evidence": "baseline02-snapshots/results.json",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 46.62084757142857,
+        "p95_ms": 122.6443,
+        "p99_ms": 155.5463,
+        "max_ms": 259.1948
+      },
+      "presentation": {
+        "pid": 42344,
+        "trace_sha256": "8f1c7e1e6844c1746b59b1c06eafc7dce315afaf3415cc7a632468a504c2deba",
+        "rows": 1621,
+        "scene_presents": 37,
+        "mean_present_fps": 1.2449006750286917,
+        "present_intervals": {
+          "samples": 36,
+          "mean_ms": 803.2769361113509,
+          "p50_ms": 708.6351000070572,
+          "p95_ms": 1118.15419998765,
+          "p99_ms": 1118.8461000025272,
+          "max_ms": 1118.8461000025272
+        },
+        "native_call_duration": {
+          "samples": 37,
+          "mean_ms": 0.2801648636122008,
+          "p50_ms": 0.2629999816417694,
+          "p95_ms": 0.4482000172138214,
+          "p99_ms": 0.4514999985694885,
+          "max_ms": 0.4514999985694885
+        }
+      }
+    },
+    {
+      "label": "distance-prototype",
+      "evidence": "distance-prototype/results.json",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 38.47660185714285,
+        "p95_ms": 99.2617,
+        "p99_ms": 110.5213,
+        "max_ms": 216.0525
+      },
+      "presentation": {
+        "pid": 29236,
+        "trace_sha256": "9e39e115b68630f6933977c828be9bc743a6abdce1e1e45073c684e8f00a4274",
+        "rows": 1625,
+        "scene_presents": 38,
+        "mean_present_fps": 1.526127062262778,
+        "present_intervals": {
+          "samples": 37,
+          "mean_ms": 655.2534351348877,
+          "p50_ms": 657.2933000028133,
+          "p95_ms": 764.1119999885559,
+          "p99_ms": 793.8258000016212,
+          "max_ms": 793.8258000016212
+        },
+        "native_call_duration": {
+          "samples": 38,
+          "mean_ms": 0.23374999824323153,
+          "p50_ms": 0.22450000047683716,
+          "p95_ms": 0.2789999842643738,
+          "p99_ms": 0.2854999899864197,
+          "max_ms": 0.2854999899864197
+        }
+      }
+    },
+    {
+      "label": "query-equivalence",
+      "evidence": "query-equivalence/results.json",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 44.99839942857143,
+        "p95_ms": 159.2663,
+        "p99_ms": 165.5428,
+        "max_ms": 215.1787
+      }
+    },
+    {
+      "label": "final-siege",
+      "evidence": "final-siege/results.json",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 43.01907514285714,
+        "p95_ms": 115.9267,
+        "p99_ms": 126.978,
+        "max_ms": 221.6875
+      },
+      "presentation": {
+        "pid": 12800,
+        "trace_sha256": "81e5466812419829fbc71f736340d7719cff37dd9ebde3993425543c740c616b",
+        "rows": 1636,
+        "scene_presents": 38,
+        "mean_present_fps": 1.3515651336112633,
+        "present_intervals": {
+          "samples": 37,
+          "mean_ms": 739.8829513514364,
+          "p50_ms": 743.2919999957085,
+          "p95_ms": 866.1956999897957,
+          "p99_ms": 875.515900015831,
+          "max_ms": 875.515900015831
+        },
+        "native_call_duration": {
+          "samples": 38,
+          "mean_ms": 0.29197105608488383,
+          "p50_ms": 0.2695000171661377,
+          "p95_ms": 0.5311000049114227,
+          "p99_ms": 0.5958999991416931,
+          "max_ms": 0.5958999991416931
+        }
+      }
+    },
+    {
+      "label": "final-map01",
+      "evidence": "final-map01/results.json",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.556378857142857,
+        "p95_ms": 36.3664,
+        "p99_ms": 40.3274,
+        "max_ms": 49.2086
+      },
+      "presentation": {
+        "pid": 21644,
+        "trace_sha256": "1a0002908e1d06e4461d6098dfe62813c18535527a5a1b7acd8025e922092ecf",
+        "rows": 1916,
+        "scene_presents": 1052,
+        "mean_present_fps": 59.79197467457317,
+        "present_intervals": {
+          "samples": 1051,
+          "mean_ms": 16.724652521390215,
+          "p50_ms": 16.345300018787384,
+          "p95_ms": 19.45939999818802,
+          "p99_ms": 21.6075000166893,
+          "max_ms": 28.59679999947548
+        },
+        "native_call_duration": {
+          "samples": 1052,
+          "mean_ms": 0.2190454377307638,
+          "p50_ms": 0.20440000295639038,
+          "p95_ms": 0.3114999830722809,
+          "p99_ms": 0.3813999891281128,
+          "max_ms": 0.7337000072002411
+        }
+      }
+    },
+    {
+      "label": "final-map02",
+      "evidence": "final-map02/results.json",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.572117714285714,
+        "p95_ms": 32.9503,
+        "p99_ms": 33.6433,
+        "max_ms": 44.9228
+      },
+      "presentation": {
+        "pid": 34616,
+        "trace_sha256": "a4cbede47c8dc05f844aab984d13810dc57408cebb8cab716047b41183e32138",
+        "rows": 5653,
+        "scene_presents": 3099,
+        "mean_present_fps": 176.32768399828515,
+        "present_intervals": {
+          "samples": 3098,
+          "mean_ms": 5.671259199489771,
+          "p50_ms": 5.40149998664856,
+          "p95_ms": 7.317800015211105,
+          "p99_ms": 8.72580000758171,
+          "max_ms": 38.907399982213974
+        },
+        "native_call_duration": {
+          "samples": 3099,
+          "mean_ms": 0.09686718285372273,
+          "p50_ms": 0.09270000457763672,
+          "p95_ms": 0.11800000071525574,
+          "p99_ms": 0.17059999704360962,
+          "max_ms": 0.2651999890804291
+        }
+      }
+    },
+    {
+      "label": "final-map03-ground",
+      "evidence": "final-map03-ground/results.json",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.577494285714284,
+        "p95_ms": 39.5424,
+        "p99_ms": 41.139,
+        "max_ms": 42.0227
+      },
+      "presentation": {
+        "pid": 22956,
+        "trace_sha256": "be180ef0f96bc58cd7570e643e2c4488ce5ef2aba19dc26d8aa85335cf1d852b",
+        "rows": 2541,
+        "scene_presents": 1273,
+        "mean_present_fps": 72.37454180419137,
+        "present_intervals": {
+          "samples": 1272,
+          "mean_ms": 13.817013207565314,
+          "p50_ms": 13.469500005245209,
+          "p95_ms": 16.078600019216537,
+          "p99_ms": 17.930599987506866,
+          "max_ms": 22.557700008153915
+        },
+        "native_call_duration": {
+          "samples": 1273,
+          "mean_ms": 0.18346928515400554,
+          "p50_ms": 0.17640000581741333,
+          "p95_ms": 0.2354000210762024,
+          "p99_ms": 0.3151000142097473,
+          "max_ms": 0.48730000853538513
+        }
+      }
+    }
+  ],
+  "edge_runs": [
+    {
+      "label": "base01",
+      "evidence": "edges-base01",
+      "passed": true,
+      "result": "CA454 EDGE_RESULT checks=17 failures=0 result=PASS"
+    },
+    {
+      "label": "current01",
+      "evidence": "edges-current01",
+      "passed": true,
+      "result": "CA454 EDGE_RESULT checks=17 failures=0 result=PASS"
+    },
+    {
+      "label": "upgrade01",
+      "evidence": "edges-upgrade01",
+      "passed": false,
+      "result": "Initial absolute-path launch failure; no completed result."
+    },
+    {
+      "label": "upgrade02",
+      "evidence": "edges-upgrade02",
+      "passed": true,
+      "result": "CA454 EDGE_RESULT checks=35 failures=0 result=PASS"
+    },
+    {
+      "label": "rollback02",
+      "evidence": "edges-rollback02",
+      "passed": true,
+      "result": "CA454 EDGE_RESULT checks=35 failures=0 result=PASS"
+    },
+    {
+      "label": "final01",
+      "evidence": "edges-final01",
+      "passed": true,
+      "result": "CA454 EDGE_RESULT checks=17 failures=0 result=PASS"
+    },
+    {
+      "label": "final-upgrade01",
+      "evidence": "edges-final-upgrade01",
+      "passed": true,
+      "result": "CA454 EDGE_RESULT checks=35 failures=0 result=PASS"
+    },
+    {
+      "label": "final-reload01",
+      "evidence": "edges-final-reload01",
+      "passed": true,
+      "result": "CA454 EDGE_RESULT checks=35 failures=0 result=PASS"
+    }
+  ],
+  "qualifications": [
+    "Native queue-present calls are not display scanout or GPU timings. One machine and one peer provide no Internet or author acceptance evidence.",
+    "The uninstrumented baselines and distance-reuse runs vary substantially. No reproducible general speedup is established; severe siege presentation gaps remain unresolved.",
+    "Inclusive scope timers overlap and instrumented runs add overhead. Do not sum them or compare their wall time as production optimization evidence.",
+    "Query equivalence covers 18,886,906 calls and 16,687,214 supplied native distances with zero result/distance mismatches. Supplied values are not a count of avoided distance calls: earlier filters can reject them.",
+    "The range-before-angle trial was not adopted. Production preserves contact, angle, range and occlusion order.",
+    "The later bench/profilethinkers outputs are snapshots, not whole-window averages. They do not justify removing contamination, collision, offscreen gameplay or perception.",
+    "The full siege window retains 988 attacker NPCs, 601 defenders including the subcaptain, and the player: 1,590 living combatants. Siege machines also occupy attacker-cap slots.",
+    "Seventeen direct visibility cases use frozen fixture probes and native visibility; they are not ordinary combat acceptance. Reload adds one saved-object check and reruns those seventeen cases.",
+    "The first upgrade launch failed because an absolute save path was prefixed by savedir. Its engine/process logs are retained; the corrected runner copies the save into the isolated directory and loads its basename.",
+    "Owned diagnostic helpers are archived exactly as executed from build/v516; their relative-root and fixed-run assumptions remain provenance, not a promise they can run directly from this archive.",
+    "The analyzer was invoked once before the final mansion run completed and rejected its missing results.json; the completed run was analyzed afterward. No partial results were used."
+  ],
+  "runtime": {
+    "sha256": "93bef18c46314654fb1ccb6ea026842c3f3a110f1b178d3d7515b41f01769ad7",
+    "baseline_sha256": "0d534413b6c837388f85c1c74a9c0606bf0f541a65776e476d252dc8ef099fe2",
+    "entries": 18117,
+    "changed_entries": [
+      "caelum/actors/CaelumVisualPerception.zs"
+    ],
+    "source_mismatches": []
+  },
+  "static_validation": {
+    "evidence": "project-validation.log",
+    "exit_code": 0,
+    "context_words": 2498,
+    "document_index_regenerated": true
+  },
+  "owned_evidence_sha256": {
+    "baseline01/observer-source/census.zs": "7a1617ec4a356b5deee4b6edea1bee99f62e979b68202efebef6b294df9cd471",
+    "baseline01/observer-source/MAPINFO": "e84a473c50d6885e6937fd51c81702d01e1fe4ba56fafaa3b222047cad673b90",
+    "baseline01/observer-source/native_sync.zs": "4386ef0e0f67e81072826595cb59a0b99ec8f6692d9dfe0ab5c98c0e612b549d",
+    "baseline01/observer-source/observer.zs": "686e039598caee9e8672487a13adb3bfcc88295143f2c47f4849d61e0acd2f0d",
+    "baseline01/observer-source/ZSCRIPT": "be2e260bd655850da4405d04eea8dcf91c06889b0ae195835aba16ca1800a2db",
+    "baseline01/peer0/engine.log": "157f755d34b08d153bafcdaab5f1f8e18788b1cf8d8323d396b592f342900c1f",
+    "baseline01/peer0/presents.csv": "81bf3690b9dd5df14b93e912ee6c611075d5e92a887096b798c208c76094fd4e",
+    "baseline01/peer0/process.log": "0ccf49bf8a78f16958efeccf5c175a386777463b2eabde166f895da1f698d4b6",
+    "baseline01/peer0/scene.png": "d1cbc9c803ef448d46da263d065ebb3fc62ca56cad6415091cac011feaf9cdf3",
+    "baseline01/peer0/session.ini": "a43d21a4970396a2ff92d91a77b74f8a9a94e65b6395cf118e2a5c0ff182e606",
+    "baseline01/peer0/start.cfg": "9944e01e547717c9fd1e4f154d6814c4b3038958b95f1cca2e6ce24d8eec02f7",
+    "baseline01/presentation.json": "dfc75eb1cc39f5c1446421a11ea53583167234dd7aa334661c8a6a86b00d4dd2",
+    "baseline01/results.json": "2c38d9eeb26c152ab648843eec3a9318070647e2f549a895f784b19060444c0e",
+    "baseline02-snapshots/observer-source/census.zs": "7a1617ec4a356b5deee4b6edea1bee99f62e979b68202efebef6b294df9cd471",
+    "baseline02-snapshots/observer-source/MAPINFO": "e84a473c50d6885e6937fd51c81702d01e1fe4ba56fafaa3b222047cad673b90",
+    "baseline02-snapshots/observer-source/native_sync.zs": "4386ef0e0f67e81072826595cb59a0b99ec8f6692d9dfe0ab5c98c0e612b549d",
+    "baseline02-snapshots/observer-source/observer.zs": "686e039598caee9e8672487a13adb3bfcc88295143f2c47f4849d61e0acd2f0d",
+    "baseline02-snapshots/observer-source/ZSCRIPT": "be2e260bd655850da4405d04eea8dcf91c06889b0ae195835aba16ca1800a2db",
+    "baseline02-snapshots/peer0/benchmarks.txt": "e02e31d59682b99ce621079cc0241b254a957a034c1d69520948427c187d35db",
+    "baseline02-snapshots/peer0/engine.log": "6f36a172f058a8933b46f1bce754f958daad0a8dd899bc1ff4adbf06092e008b",
+    "baseline02-snapshots/peer0/presents.csv": "8f1c7e1e6844c1746b59b1c06eafc7dce315afaf3415cc7a632468a504c2deba",
+    "baseline02-snapshots/peer0/process.log": "2354c63d88df44d102134a8d6b01354db2878cb36cfdda3e8987d6dd3202dfa1",
+    "baseline02-snapshots/peer0/scene.png": "c0843ae34a7f70b25b3ede894b44ec2b7bc6cbcd499d9f30a3df25f08aa6451f",
+    "baseline02-snapshots/peer0/session.ini": "0faf350685e5e74f4a4705901f71b11479a0ad53d9586ace1c1ed6d580b41209",
+    "baseline02-snapshots/peer0/start.cfg": "2f7aea093442cb8c22cc59c849f4346e6d6627a22401d92e8435dc5af5720d12",
+    "baseline02-snapshots/presentation.json": "c63de927b1f671c63c29fffc97d3daab7efef61267baf89f3db7eaf23e9a56a8",
+    "baseline02-snapshots/results.json": "eeb450dfa51ed76002a6c5b962e8fc5a4619da96b0255d71011d226be224e8f5",
+    "deep-profile/diagnostic-manifest.json": "ff0dd034c2c9bea4080f29b6a70590f8d1be33f3dd73c9c185c64c162f369cca",
+    "deep-profile/diagnostic-source/caelum/actors/CaelumCombatActor.zs": "ddc8e56f2173f0ba793f49a54f9bd0e8f1cb9c314cf6a48c86c215193fd4a881",
+    "deep-profile/diagnostic-source/caelum/actors/CaelumCommunication.zs": "09520fea37488fbaa4699e7cf693eb854bdab60c0ea0e02e007d7805b50b75af",
+    "deep-profile/diagnostic-source/caelum/actors/CaelumNoise.zs": "29d0a0bacdd3c280e7f74940b77b7886e95338bf1eed501b6b1f46a65a4ee8cb",
+    "deep-profile/diagnostic-source/caelum/actors/CaelumVisualPerception.zs": "6b6ee75c3a07c723531adaf29b7e1a496b4a2f06cfacebb2a98f797b3722b65a",
+    "deep-profile/diagnostic-source/caelum/world/CaelumCityNavigation.zs": "0c6275d0d06e52a03a46f9292502ab2084734bb5431fa38e2f7d430d261da526",
+    "deep-profile/diagnostic-source/MAPINFO": "6482719af66082daceb1bd3320b8b452215ed7599b7156912bc6cbc638a8fa48",
+    "deep-profile/observer-source/census.zs": "7a1617ec4a356b5deee4b6edea1bee99f62e979b68202efebef6b294df9cd471",
+    "deep-profile/observer-source/MAPINFO": "e84a473c50d6885e6937fd51c81702d01e1fe4ba56fafaa3b222047cad673b90",
+    "deep-profile/observer-source/native_sync.zs": "4386ef0e0f67e81072826595cb59a0b99ec8f6692d9dfe0ab5c98c0e612b549d",
+    "deep-profile/observer-source/observer.zs": "686e039598caee9e8672487a13adb3bfcc88295143f2c47f4849d61e0acd2f0d",
+    "deep-profile/observer-source/ZSCRIPT": "be2e260bd655850da4405d04eea8dcf91c06889b0ae195835aba16ca1800a2db",
+    "deep-profile/peer0/engine.log": "2d7f4174bbc726c5903bc17014c17d2e40334823a375810f8e98cf1c74c09a75",
+    "deep-profile/peer0/presents.csv": "1ed1e941dbf6cc114c12a06a5efda43b9485dcd112b47949e3c3d28f1645214b",
+    "deep-profile/peer0/process.log": "2cee03c62789d39f2f23de82e857542f7aaf94d69240506dcad52f5606e0915d",
+    "deep-profile/peer0/scene.png": "542892df5065af4c6b722eac185a52cb38bcfb064b8bbde5f6ca85578df24570",
+    "deep-profile/peer0/session.ini": "305cdc344520890fe4394cd024179778a192c1e7248c9c53569dc7de63daf044",
+    "deep-profile/peer0/start.cfg": "9944e01e547717c9fd1e4f154d6814c4b3038958b95f1cca2e6ce24d8eec02f7",
+    "deep-profile/presentation.json": "1929d26748edc1bf6893a26e4d9335d1d63afd528bd39951e704ae0b40d2f0f1",
+    "deep-profile/results.json": "40fa15a1f6236da82c7e2a232b9a2879c2695274dddccafbaeead8ddbc8b08b3",
+    "distance-prototype/diagnostic-manifest.json": "f836db8812f79a8ad0a025bdd2642fdb59d3a6c569ff6352c5ed2d9a9108be94",
+    "distance-prototype/diagnostic-source/caelum/actors/CaelumVisualPerception.zs": "a5e298bbfb08b796a7e8cff564efea1390f14780a0439c15bd21b76ffc715e18",
+    "distance-prototype/observer-source/census.zs": "7a1617ec4a356b5deee4b6edea1bee99f62e979b68202efebef6b294df9cd471",
+    "distance-prototype/observer-source/MAPINFO": "e84a473c50d6885e6937fd51c81702d01e1fe4ba56fafaa3b222047cad673b90",
+    "distance-prototype/observer-source/native_sync.zs": "4386ef0e0f67e81072826595cb59a0b99ec8f6692d9dfe0ab5c98c0e612b549d",
+    "distance-prototype/observer-source/observer.zs": "686e039598caee9e8672487a13adb3bfcc88295143f2c47f4849d61e0acd2f0d",
+    "distance-prototype/observer-source/ZSCRIPT": "be2e260bd655850da4405d04eea8dcf91c06889b0ae195835aba16ca1800a2db",
+    "distance-prototype/peer0/engine.log": "506806a6b8ae0a864a9ef285e4c3c87dd1ec187d7773e0e7361fed1849db4524",
+    "distance-prototype/peer0/presents.csv": "9e39e115b68630f6933977c828be9bc743a6abdce1e1e45073c684e8f00a4274",
+    "distance-prototype/peer0/process.log": "e3e51c5fc3c97aa21ce8de0853dba064f939f5e10c41eb3d129b0b319d925515",
+    "distance-prototype/peer0/scene.png": "02a81dd31b63a576aede155a966c24e665918281bd3aa6fc9138a7eb2a6a301d",
+    "distance-prototype/peer0/session.ini": "e3ca3090559a66d435770c8307aa315d4c23d6292f00d1d3a5ca75bc3821e155",
+    "distance-prototype/peer0/start.cfg": "9944e01e547717c9fd1e4f154d6814c4b3038958b95f1cca2e6ce24d8eec02f7",
+    "distance-prototype/presentation.json": "279500c573df9707b6f13f519721a535843be2d5ba5c13cf27736eefa0623799",
+    "distance-prototype/results.json": "a8597012d9daf7c03ba6dd3097621054a70a62532cf49e22a7ab0c408c5b4b9e",
+    "edges-base01/commands.cfg": "e86d3b996f52a36d266e199ead7c0859d57149940a6bcc2308bab57c430a662b",
+    "edges-base01/engine.log": "7b5597cb755e3e331677596ac67e58f94a26affb06ed343d3af18c699a10bfa2",
+    "edges-base01/fixture-source/MAPINFO": "53819388e556b0afb3a0bec79572f1424b25b93c27df36c7e3e543c6b7eb43b1",
+    "edges-base01/fixture-source/maps/CA425A.wad": "385afc443d483ea943b6e35d66bc0f86a4436f35246976fc181a3d0176284138",
+    "edges-base01/fixture-source/ZSCRIPT": "d40f524423e3dd85bfd4f46f446b88a8e5d2e373f4dc0080e71726dc165ee3c7",
+    "edges-base01/process.log": "07952a55707772922c2ed81d579d43048f66488689fc9e3601e25fc651ff6348",
+    "edges-base01/RESULTS.json": "6ac17afeac805101aec385327ac456cdc077f314f64335497926b8724935fad0",
+    "edges-base01/session.ini": "29b24a9353df83e3f57c2efe1b922a4d24c6e8c5746558253c07e49cff4e50fb",
+    "edges-current01/commands.cfg": "e86d3b996f52a36d266e199ead7c0859d57149940a6bcc2308bab57c430a662b",
+    "edges-current01/engine.log": "d623ff1a34039375c2a78ead97af426266aa6db3fbfba7f0bf14e4867e3a4182",
+    "edges-current01/fixture-source/MAPINFO": "53819388e556b0afb3a0bec79572f1424b25b93c27df36c7e3e543c6b7eb43b1",
+    "edges-current01/fixture-source/maps/CA425A.wad": "385afc443d483ea943b6e35d66bc0f86a4436f35246976fc181a3d0176284138",
+    "edges-current01/fixture-source/ZSCRIPT": "c09c080a6f16137e88fd87a9a1a2b575083e10b4db034f6c26dcadf7fab583f2",
+    "edges-current01/process.log": "1c57985b5ba857df5c93d717f3a22afdd059d744e493a8b13bc9c99dd6d8ec3e",
+    "edges-current01/RESULTS.json": "ef4faabe6c6b19d4eef59c56771a4ac1e4a4c3c222407f9a0e06c818672dd839",
+    "edges-current01/session.ini": "ede7778ad093c49184c409ae7e5b7ecf453009dde21eeedd498112eefef730ae",
+    "edges-final-reload01/commands.cfg": "604b1bc570bfc68151654a70731ced469dce60c517a8f529e2e6e07f7c2afbcc",
+    "edges-final-reload01/engine.log": "ab74d71fe70dabb8f10c6cad1cc2903679be9b3139913d2e6b73dd179284a007",
+    "edges-final-reload01/fixture-source/MAPINFO": "53819388e556b0afb3a0bec79572f1424b25b93c27df36c7e3e543c6b7eb43b1",
+    "edges-final-reload01/fixture-source/maps/CA425A.wad": "385afc443d483ea943b6e35d66bc0f86a4436f35246976fc181a3d0176284138",
+    "edges-final-reload01/fixture-source/ZSCRIPT": "c09c080a6f16137e88fd87a9a1a2b575083e10b4db034f6c26dcadf7fab583f2",
+    "edges-final-reload01/process.log": "5754ffbd9d01c34824e0e8f6006dad7303a48be36b0e687402de79d639459473",
+    "edges-final-reload01/RESULTS.json": "4a976173a0851f62cfa4c315832e9f916ab3ba4a20934e899b171d9eb5527c58",
+    "edges-final-reload01/session.ini": "902a7abee132870d8261faff5bfc9a5a8b767c0d8c9a965d8fddf36f5005bbd4",
+    "edges-final-upgrade01/commands.cfg": "604b1bc570bfc68151654a70731ced469dce60c517a8f529e2e6e07f7c2afbcc",
+    "edges-final-upgrade01/engine.log": "cd4bf69f0a7b179067f7b6cca34777ad95d0e2cc08cd90ea08b9c431b650a645",
+    "edges-final-upgrade01/fixture-source/MAPINFO": "53819388e556b0afb3a0bec79572f1424b25b93c27df36c7e3e543c6b7eb43b1",
+    "edges-final-upgrade01/fixture-source/maps/CA425A.wad": "385afc443d483ea943b6e35d66bc0f86a4436f35246976fc181a3d0176284138",
+    "edges-final-upgrade01/fixture-source/ZSCRIPT": "c09c080a6f16137e88fd87a9a1a2b575083e10b4db034f6c26dcadf7fab583f2",
+    "edges-final-upgrade01/process.log": "dd673fa0c744332b3c2716e23fa8ec55fe4e0486cc2e33805511f6e9ec2ca2e1",
+    "edges-final-upgrade01/RESULTS.json": "fb14a15a7d158a5a35283744cc5a35ef7507c1fcef0528ab3acd26197aa790eb",
+    "edges-final-upgrade01/session.ini": "3c50cb3728f8768c70aa4a1b52971c8973259b6a217db1e0c03545fc6ac745fc",
+    "edges-final01/commands.cfg": "e86d3b996f52a36d266e199ead7c0859d57149940a6bcc2308bab57c430a662b",
+    "edges-final01/engine.log": "78ecaead9749a84409c45e4e549131639aa7a122adfc546e9dc9b5fd23112aad",
+    "edges-final01/fixture-source/MAPINFO": "53819388e556b0afb3a0bec79572f1424b25b93c27df36c7e3e543c6b7eb43b1",
+    "edges-final01/fixture-source/maps/CA425A.wad": "385afc443d483ea943b6e35d66bc0f86a4436f35246976fc181a3d0176284138",
+    "edges-final01/fixture-source/ZSCRIPT": "c09c080a6f16137e88fd87a9a1a2b575083e10b4db034f6c26dcadf7fab583f2",
+    "edges-final01/process.log": "ce2399f65adc90b090a0f3d2523ba406f527dd071f7cca5a5f2bf0d86057a531",
+    "edges-final01/RESULTS.json": "544c1b7b99e0f819123cfd36ecd319b6ac0783b4cf9c299ec5b9ee8a64fd48d7",
+    "edges-final01/session.ini": "411b19fa1c74a88e8b43980ac7f5a3a3c6b4faccea60e54fea9762a62511f8c4",
+    "edges-rollback02/commands.cfg": "604b1bc570bfc68151654a70731ced469dce60c517a8f529e2e6e07f7c2afbcc",
+    "edges-rollback02/engine.log": "164519586b7dbd4aa301963e2be29382d17299bef856cd31d5565c2d0f7b1224",
+    "edges-rollback02/fixture-source/MAPINFO": "53819388e556b0afb3a0bec79572f1424b25b93c27df36c7e3e543c6b7eb43b1",
+    "edges-rollback02/fixture-source/maps/CA425A.wad": "385afc443d483ea943b6e35d66bc0f86a4436f35246976fc181a3d0176284138",
+    "edges-rollback02/fixture-source/ZSCRIPT": "d40f524423e3dd85bfd4f46f446b88a8e5d2e373f4dc0080e71726dc165ee3c7",
+    "edges-rollback02/process.log": "f31a292e7ced7e5984f0e91c091e9b9135c80d068bcc3097e7e0fb3d2aa4323d",
+    "edges-rollback02/RESULTS.json": "3e0ceb09983eab1a06240d7983e641ca044d8d714f35dd6824e77da254461791",
+    "edges-rollback02/session.ini": "8b9e6c8178b04eaf74472f038ce726910c9f1715c16f8165f140e84106feeaf3",
+    "edges-upgrade01/commands.cfg": "604b1bc570bfc68151654a70731ced469dce60c517a8f529e2e6e07f7c2afbcc",
+    "edges-upgrade01/engine.log": "f2d146395917ae2249fab73c05c37baea36289d9f39b27ba67620ce69f12347c",
+    "edges-upgrade01/fixture-source/MAPINFO": "53819388e556b0afb3a0bec79572f1424b25b93c27df36c7e3e543c6b7eb43b1",
+    "edges-upgrade01/fixture-source/maps/CA425A.wad": "385afc443d483ea943b6e35d66bc0f86a4436f35246976fc181a3d0176284138",
+    "edges-upgrade01/fixture-source/ZSCRIPT": "c09c080a6f16137e88fd87a9a1a2b575083e10b4db034f6c26dcadf7fab583f2",
+    "edges-upgrade01/process.log": "3af5db7af0fb045a5d5a807452715d3802264b4a668c023df3350c0f2d73b57b",
+    "edges-upgrade01/session.ini": "020968854d3fd343aff98f56b68062d1723115bff8c5d61cee36b886a5ad0db4",
+    "edges-upgrade02/commands.cfg": "604b1bc570bfc68151654a70731ced469dce60c517a8f529e2e6e07f7c2afbcc",
+    "edges-upgrade02/engine.log": "28b8a1985a3ea7da0b0d6a6f5efab348a2eefc95f73fe819b8c86e68a69b6845",
+    "edges-upgrade02/fixture-source/MAPINFO": "53819388e556b0afb3a0bec79572f1424b25b93c27df36c7e3e543c6b7eb43b1",
+    "edges-upgrade02/fixture-source/maps/CA425A.wad": "385afc443d483ea943b6e35d66bc0f86a4436f35246976fc181a3d0176284138",
+    "edges-upgrade02/fixture-source/ZSCRIPT": "c09c080a6f16137e88fd87a9a1a2b575083e10b4db034f6c26dcadf7fab583f2",
+    "edges-upgrade02/process.log": "66641815b4b3e1e2ac849086f830ba0586ae5ad38461e8d49214570527620248",
+    "edges-upgrade02/RESULTS.json": "387ed26446a364c2c4d874e5cfc9bd57b2dd7ec60528effb861e4a4d906fb3d5",
+    "edges-upgrade02/session.ini": "cc66ad2af3bc7cc30f572f30fc4a1d40347cc806d45019b98bae0ed1c436d40d",
+    "executed-helpers/prepare_deep_cost.py": "a154d113d9d8bb3390d6942747be51327035cdc9f7eb6268b462cf0228e9071e",
+    "executed-helpers/prepare_distance_reuse.py": "88e0bbe99115b18aadad8d203f7bbc5e564156c67442ad014dcc01d04cdb4425",
+    "executed-helpers/prepare_range_first.py": "dbe4fc1b52139c17f726896ed80ad95e591b36fc69674784ce2d2fe6ba3ed4a3",
+    "executed-helpers/prepare_vision_equivalence.py": "516cf0f56813d6f367e26fc319a7d83575028d7e45727267cfe9a7fc25416a8c",
+    "executed-helpers/prepare_vision_reasons.py": "01ba4547e772fd3f33cec49f95840e7b036cb2ac53b99f0538d5e34c42a5f5bb",
+    "executed-helpers/run_barracas_native_counters.py": "d20eb3d58a083dcf73b5f369b73f4987baae0d67f287e09435e21c4f3b5e5121",
+    "final-map01/observer-source/census.zs": "7a1617ec4a356b5deee4b6edea1bee99f62e979b68202efebef6b294df9cd471",
+    "final-map01/observer-source/MAPINFO": "e84a473c50d6885e6937fd51c81702d01e1fe4ba56fafaa3b222047cad673b90",
+    "final-map01/observer-source/native_sync.zs": "4386ef0e0f67e81072826595cb59a0b99ec8f6692d9dfe0ab5c98c0e612b549d",
+    "final-map01/observer-source/observer.zs": "71eaebf95eb624e6944d827427f1c2b8e7202050432343833cd2ee70919c0844",
+    "final-map01/observer-source/ZSCRIPT": "be2e260bd655850da4405d04eea8dcf91c06889b0ae195835aba16ca1800a2db",
+    "final-map01/peer0/engine.log": "ca5ced17516bae7bed149df78c197215616627261aeb9ea784daec1f8cbb98a4",
+    "final-map01/peer0/presents.csv": "1a0002908e1d06e4461d6098dfe62813c18535527a5a1b7acd8025e922092ecf",
+    "final-map01/peer0/process.log": "5991318bc4f30d8b503ac4fcaf5b63c4ad4d2b12ce1c66c6f26293f812bda032",
+    "final-map01/peer0/scene.png": "d6de9e53be9845f88d516112061f4487b28288987bdc64d80e4eb411a9cbdce4",
+    "final-map01/peer0/session.ini": "653c168fc795c937870d3c421f4b201679834e18d0e2bfbc13653734ea4e0ed3",
+    "final-map01/peer0/start.cfg": "04b295ec831e842896fbe228622b272ae1cdfb2662215894f29fb25b8c61485d",
+    "final-map01/presentation.json": "bea5d0d108722045ad4b2f19e72b8b486d9778c46e207247c2a53791cc9875cd",
+    "final-map01/results.json": "7122312c64acf31872e3d6e0fe3c84314820560233415f9413dc88acb3dadf91",
+    "final-map02/observer-source/census.zs": "7a1617ec4a356b5deee4b6edea1bee99f62e979b68202efebef6b294df9cd471",
+    "final-map02/observer-source/MAPINFO": "e84a473c50d6885e6937fd51c81702d01e1fe4ba56fafaa3b222047cad673b90",
+    "final-map02/observer-source/native_sync.zs": "4386ef0e0f67e81072826595cb59a0b99ec8f6692d9dfe0ab5c98c0e612b549d",
+    "final-map02/observer-source/observer.zs": "71eaebf95eb624e6944d827427f1c2b8e7202050432343833cd2ee70919c0844",
+    "final-map02/observer-source/ZSCRIPT": "be2e260bd655850da4405d04eea8dcf91c06889b0ae195835aba16ca1800a2db",
+    "final-map02/peer0/engine.log": "4a3528f6924b5b529450828f7a82f7ca16cf97d37451b0863f88c059b59524bb",
+    "final-map02/peer0/presents.csv": "a4cbede47c8dc05f844aab984d13810dc57408cebb8cab716047b41183e32138",
+    "final-map02/peer0/process.log": "14249a06b857c0de5d08a73b6463d1418962479b682d3790e0dec66e20a23e54",
+    "final-map02/peer0/scene.png": "c236960f015a2a4d7f45508ac73fe63717ff7283e332ad802e648134c2d36a6e",
+    "final-map02/peer0/session.ini": "f1da6e335e5de304c2a9a091800b24f846a94590a534b03657fb062e04d6d8ff",
+    "final-map02/peer0/start.cfg": "04b295ec831e842896fbe228622b272ae1cdfb2662215894f29fb25b8c61485d",
+    "final-map02/presentation.json": "cb5b73919a92fa1ed621ba51d79f20298d856be33130317e320ce0450721495f",
+    "final-map02/results.json": "d426c412dd42027bceac795c368ba213530c2f241777f25d1bb6e045043d4ec4",
+    "final-map03-ground/observer-source/census.zs": "7a1617ec4a356b5deee4b6edea1bee99f62e979b68202efebef6b294df9cd471",
+    "final-map03-ground/observer-source/MAPINFO": "e84a473c50d6885e6937fd51c81702d01e1fe4ba56fafaa3b222047cad673b90",
+    "final-map03-ground/observer-source/native_sync.zs": "4386ef0e0f67e81072826595cb59a0b99ec8f6692d9dfe0ab5c98c0e612b549d",
+    "final-map03-ground/observer-source/observer.zs": "cf796346047d90dc04241b0ee77c29fe10fe09f3431f52d1996a4dceed7e6940",
+    "final-map03-ground/observer-source/ZSCRIPT": "be2e260bd655850da4405d04eea8dcf91c06889b0ae195835aba16ca1800a2db",
+    "final-map03-ground/peer0/engine.log": "040e64e2208cc943d7df7ff8957f0e1997d8215602a22878b316ae692100e325",
+    "final-map03-ground/peer0/presents.csv": "be180ef0f96bc58cd7570e643e2c4488ce5ef2aba19dc26d8aa85335cf1d852b",
+    "final-map03-ground/peer0/process.log": "204b3bd4cd105b07f9f23f010e94893f9602ad3c5bbba9c5d0145738d43c69cb",
+    "final-map03-ground/peer0/scene.png": "3793e39f91d65572d2a046ad8409b2f7e0ed7f96d165cb78a3691202e7c61479",
+    "final-map03-ground/peer0/session.ini": "d300f10493ee8bd29368ddd49c50f4ca2732fcd5f315304c9faff7545e69b192",
+    "final-map03-ground/peer0/start.cfg": "04b295ec831e842896fbe228622b272ae1cdfb2662215894f29fb25b8c61485d",
+    "final-map03-ground/presentation.json": "6f368bd6ddf8d212a1e3cc70a6355e176e8d9fa7af860b6f303399693e9a601b",
+    "final-map03-ground/results.json": "a4a8d436c447d337ddad6e3fb22d97ab72ca8c7b485122b2ddc9f575584b7f80",
+    "final-siege/observer-source/census.zs": "7a1617ec4a356b5deee4b6edea1bee99f62e979b68202efebef6b294df9cd471",
+    "final-siege/observer-source/MAPINFO": "e84a473c50d6885e6937fd51c81702d01e1fe4ba56fafaa3b222047cad673b90",
+    "final-siege/observer-source/native_sync.zs": "4386ef0e0f67e81072826595cb59a0b99ec8f6692d9dfe0ab5c98c0e612b549d",
+    "final-siege/observer-source/observer.zs": "686e039598caee9e8672487a13adb3bfcc88295143f2c47f4849d61e0acd2f0d",
+    "final-siege/observer-source/ZSCRIPT": "be2e260bd655850da4405d04eea8dcf91c06889b0ae195835aba16ca1800a2db",
+    "final-siege/peer0/engine.log": "396de354184a03bcab555c213f322e81024fe6bd95da0a670b032cb903a07fe8",
+    "final-siege/peer0/presents.csv": "81e5466812419829fbc71f736340d7719cff37dd9ebde3993425543c740c616b",
+    "final-siege/peer0/process.log": "f61bad71ab500e4d0f89b87ceb5534f6b1d20ba619c3436d3fe862725aba04c7",
+    "final-siege/peer0/scene.png": "f6cd6bcb80d257ba682775349d2d53520287e28fa0f0ba2ab175ce4b20481f2b",
+    "final-siege/peer0/session.ini": "6126f53f7e893f66d1e13a07e3e9774c32d5950d319167916679d1704e4f8531",
+    "final-siege/peer0/start.cfg": "9944e01e547717c9fd1e4f154d6814c4b3038958b95f1cca2e6ce24d8eec02f7",
+    "final-siege/presentation.json": "ab07f74242dd1b9af59b3040685289d726effa72fdf33eea855ee4f2c03409b2",
+    "final-siege/results.json": "a195ab82a2d0ae7c05a7db6df79855105feaeaf6ab089e7c6830304a2810e0e1",
+    "project-validation.log": "1ea29870002b2294578bb22ff342e25f558b3ac35df9aaa49a228c67999d3a7e",
+    "query-equivalence/diagnostic-manifest.json": "84bd0517d338b972b09480466b02cb92ba299641b74faef34948f83a42fc5137",
+    "query-equivalence/diagnostic-source/caelum/actors/CaelumVisualPerception.zs": "0f935bbaae347db5290eae073fce9b46fcdf717645b9b7674f171b1aba8f7ddd",
+    "query-equivalence/diagnostic-source/MAPINFO": "e74142a8a6bf981051bcca5165e3835efc3c97e95e025610de67b7112ea1bd3a",
+    "query-equivalence/observer-source/census.zs": "7a1617ec4a356b5deee4b6edea1bee99f62e979b68202efebef6b294df9cd471",
+    "query-equivalence/observer-source/MAPINFO": "e84a473c50d6885e6937fd51c81702d01e1fe4ba56fafaa3b222047cad673b90",
+    "query-equivalence/observer-source/native_sync.zs": "4386ef0e0f67e81072826595cb59a0b99ec8f6692d9dfe0ab5c98c0e612b549d",
+    "query-equivalence/observer-source/observer.zs": "686e039598caee9e8672487a13adb3bfcc88295143f2c47f4849d61e0acd2f0d",
+    "query-equivalence/observer-source/ZSCRIPT": "be2e260bd655850da4405d04eea8dcf91c06889b0ae195835aba16ca1800a2db",
+    "query-equivalence/peer0/engine.log": "e6ae520be3d64a3d91178cf0dae0d92c531383faff6c7005b6d77d99021018c7",
+    "query-equivalence/peer0/process.log": "c05e54f471cada96a9eb1afb4a1a22b064dc24a68c69f5b7e1fcaddd9cd67aa3",
+    "query-equivalence/peer0/scene.png": "ee59d5035ac778f47bcff849e1d6c442bbb98d29392a5aad07912cddf05ae244",
+    "query-equivalence/peer0/session.ini": "a1f6a11135bf716bc2c216c01d393a205c1ea52fa54fc78df8fcc711fd3a58fb",
+    "query-equivalence/peer0/start.cfg": "9944e01e547717c9fd1e4f154d6814c4b3038958b95f1cca2e6ce24d8eec02f7",
+    "query-equivalence/results.json": "1ee5f9e702e7a652b5cf56d5efcfb9e0cde533ad039e0954d42979a13cc9261a",
+    "range-order-unadopted/diagnostic-manifest.json": "ebfdc279a2ae003a27da4c6f4c542598429647dad24b440a8cf04f574b3af6aa",
+    "range-order-unadopted/diagnostic-source/caelum/actors/CaelumVisualPerception.zs": "00f1959eba933a028604bc12529bc807a1fd56410dc485906d7e0def268f8b18",
+    "range-order-unadopted/observer-source/census.zs": "7a1617ec4a356b5deee4b6edea1bee99f62e979b68202efebef6b294df9cd471",
+    "range-order-unadopted/observer-source/MAPINFO": "e84a473c50d6885e6937fd51c81702d01e1fe4ba56fafaa3b222047cad673b90",
+    "range-order-unadopted/observer-source/native_sync.zs": "4386ef0e0f67e81072826595cb59a0b99ec8f6692d9dfe0ab5c98c0e612b549d",
+    "range-order-unadopted/observer-source/observer.zs": "686e039598caee9e8672487a13adb3bfcc88295143f2c47f4849d61e0acd2f0d",
+    "range-order-unadopted/observer-source/ZSCRIPT": "be2e260bd655850da4405d04eea8dcf91c06889b0ae195835aba16ca1800a2db",
+    "range-order-unadopted/peer0/engine.log": "8ee38e5d7ad41082931460369b3c42a8d7bf4ab66403b79fdd88e559f2c9f172",
+    "range-order-unadopted/peer0/presents.csv": "c09d3bc65e863a24e8838d6070807dfc955d1f20e3f1a962ff73651a5982d2f8",
+    "range-order-unadopted/peer0/process.log": "20d65872ac0c16433d22f9e14cfa9668fd818c668245a2b497b0556d5cdd3d3c",
+    "range-order-unadopted/peer0/scene.png": "000d4b7bcf0089a1c87b7f6b6336dc9fbcd2aeaf227ef3beadd1ced5e09e891e",
+    "range-order-unadopted/peer0/session.ini": "e29fc3b32823c77c146689a0b4cec58b356f89d8744b28a6652abbe0bed9acd5",
+    "range-order-unadopted/peer0/start.cfg": "9944e01e547717c9fd1e4f154d6814c4b3038958b95f1cca2e6ce24d8eec02f7",
+    "range-order-unadopted/presentation.json": "fdbae27d9b97aa7538e6316cc26e2f1e2a82be7d6587edcf1a36b7babd9392cc",
+    "range-order-unadopted/results.json": "5f91c4196195ba5e5e9a667366f6833baf6234b45b6fc4d22fff70dbbab503fd",
+    "vision-reasons/diagnostic-manifest.json": "5e4b6e88a8aef6c52986e8fae9772dcfc74daf57337834bdf6442f893d10f9ac",
+    "vision-reasons/diagnostic-source/caelum/actors/CaelumVisualPerception.zs": "a097ef65c3ccaca49297d56f2fcf636f06593d861a247b8a2fcbbbcdde7da910",
+    "vision-reasons/diagnostic-source/MAPINFO": "4cebebc32352fea71616a7aca78df4bf239ec7c296e89ad48f0eab2731baf329",
+    "vision-reasons/observer-source/census.zs": "7a1617ec4a356b5deee4b6edea1bee99f62e979b68202efebef6b294df9cd471",
+    "vision-reasons/observer-source/MAPINFO": "e84a473c50d6885e6937fd51c81702d01e1fe4ba56fafaa3b222047cad673b90",
+    "vision-reasons/observer-source/native_sync.zs": "4386ef0e0f67e81072826595cb59a0b99ec8f6692d9dfe0ab5c98c0e612b549d",
+    "vision-reasons/observer-source/observer.zs": "686e039598caee9e8672487a13adb3bfcc88295143f2c47f4849d61e0acd2f0d",
+    "vision-reasons/observer-source/ZSCRIPT": "be2e260bd655850da4405d04eea8dcf91c06889b0ae195835aba16ca1800a2db",
+    "vision-reasons/peer0/engine.log": "bd2bc0a41d8cb4c9c1daa78dabf9318b494d9604df56f506b9240e00e60b70b9",
+    "vision-reasons/peer0/presents.csv": "392ee49f2e10252979161450d878ee3121074e97773acb7e716f7888a92fe6f5",
+    "vision-reasons/peer0/process.log": "7cfd6a4ab0f651f026c2f53e13e0333d677768ff86ae759154411d99d637dd2e",
+    "vision-reasons/peer0/scene.png": "172af3aa5ff7196c3a99bdc06b36693f97ee01ab66f4d07ae4653b80dd116b75",
+    "vision-reasons/peer0/session.ini": "4d2990c0952cc8be06c5224595458136f2d1b59100c8a1628973337a3cd8b01f",
+    "vision-reasons/peer0/start.cfg": "9944e01e547717c9fd1e4f154d6814c4b3038958b95f1cca2e6ce24d8eec02f7",
+    "vision-reasons/presentation.json": "c77413b257ed555d11463e05fbdd69977812ff91f656f21d743a000b513084a0",
+    "vision-reasons/results.json": "1f286ebd8562ce87a70424c066d0ac8e721fc03cebc8edc5cbcab387ddffe7f3"
+  }
+}
