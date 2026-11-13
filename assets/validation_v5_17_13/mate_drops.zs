@@ -1,0 +1,119 @@
+// #670: conserva identidad, contenido y temperatura de los mates nativos.
+class CA670MateCamera : Actor
+{Default {CameraHeight 0;Height 0;Radius 0;+NOINTERACTION +NOGRAVITY} States {Spawn:TNT1 A -1;Stop;}}
+class CA670MateEvents : EventHandler
+{
+    Array<CaelumMateItem> Drops;
+    Array<double> SavedTemperatures,SavedStamps;
+    CA670MateCamera Camera;
+    int Failures,DetailIndex,DetailAngle;
+    void Check(bool okay,String label)
+    {if(!okay)Failures++;Console.Printf("CA670 %s %s",okay?"PASS":"FAIL",label);}
+    void Metadata(CaelumMateItem item,int index,String label)
+    {
+        let h=item.CompanionHistory;
+        Check(h!=null && h.Records.Size()==1 && h.Records[0].Loan && h.Records[0].RefusedStage==index+10,label.." copied provenance");
+        Check(CaelumContaminationStack.Value(item)>0,label.." retained contamination");
+    }
+    void Verify()
+    {
+        Check(Drops.Size()==6,"six separate filled and empty mates retained");
+        for(int i=0;i<Drops.Size();i++)
+        {
+            let item=Drops[i];String label=String.Format("mate %d",i);bool filled=i<3;
+            Check(item!=null,label.." saved reference");if(item==null)continue;
+            Check(item.Owner==null && item.Amount==1,label.." separate native world identity");
+            Check(item.Variant()==i%3 && item.GetConsumableType()==CaelumMateData.FIRST_CONSUMABLE+i%3,label.." native variant");
+            Check(item.YerbaLoaded==filled && item.UsesRemaining==(filled?17:0),label.." saved yerba and remaining uses");
+            Check(abs(item.WaterLiters-(filled?CaelumMateData.WaterCapacity(i%3):0))<.000001,label.." saved water quantity");
+            Check(item.TemperatureC==SavedTemperatures[i] && item.TemperatureStamp==SavedStamps[i] && item.TemperatureReady && item.MateRevision==CaelumMateData.REVISION,label.." saved thermal metadata");
+            double mass=CaelumMateData.EmptyMass(i%3)+item.WaterLiters+(filled?CaelumMateData.YerbaGrams(i%3)*CaelumConstants.MATERIAL_UNIT_WEIGHT:0);
+            Check(abs(item.GetUnitWeight()-mass)<.000001,label.." original loaded mass");
+            let defaults=GetDefaultByType(item.GetClass());
+            Check(item.Radius==defaults.Radius && item.Height==defaults.Height && item.Scale==defaults.Scale,label.." original collision and scale");
+            Check(item.Icon==defaults.Icon && item.sprite==defaults.SpawnState.sprite && item.frame==defaults.SpawnState.frame,label.." original icon and spawn");
+            Check(abs(item.Pos.Z-item.floorz)<.01,label.." native floor contact");
+            Metadata(item,i,label);
+        }
+        Console.Printf("CA670 COMPLETE failures=%d",Failures);
+    }
+    override void NetworkProcess(ConsoleEvent e)
+    {
+        if(e.Name=="ca670_prepare")
+        {
+            static const class<CaelumMateItem> kinds[]={ITEM_CLASSES};
+            let user=CaelumPlayer(players[0].mo);user.CharacterCreationComplete=true;user.CreationWizardOpen=false;
+            for(int i=0;i<6;i++)
+            {
+                String label=String.Format("mate %d",i);let kind=kinds[i%3];
+                let item=CaelumMateItem(Actor.Spawn(kind,(0,0,0),NO_REPLACE));
+                let history=new('CaelumCompanionHistory');history.Revision=1;let record=new('CaelumCompanionItemRecord');record.Loan=true;record.RefusedStage=i+10;history.Records.Push(record);item.CompanionHistory=history;
+                CaelumContaminationStack.Set(item,25+i);
+                Check(item.CallTryPickup(user),label.." native pickup");
+                let owned=CaelumMateItem(user.FindInventory(kind));Check(owned!=null && owned.Amount==1,label.." exact owned vessel");if(owned==null)continue;
+                owned.YerbaLoaded=i<3;owned.UsesRemaining=i<3?17:0;owned.WaterLiters=i<3?CaelumMateData.WaterCapacity(i%3):0;
+                owned.TemperatureC=37;owned.TemperatureReady=true;owned.MateRevision=CaelumMateData.REVISION;
+                let clock=CaelumWorldClock.Get(user);if(clock!=null)owned.TemperatureStamp=CaelumThermalRuntime.Stamp(clock);
+                Metadata(owned,i,label.." pickup");
+                let duplicate=CaelumMateItem(Actor.Spawn(kind,(0,0,0),NO_REPLACE));Check(!duplicate.CallTryPickup(user),label.." duplicate vessel pickup remains blocked");duplicate.Destroy();
+                double mass=owned.GetCarriedWeight();owned.InMagicBox=true;
+                Check(owned.GetCarriedWeight()==0 && !owned.Accessible(user) && !owned.Drink(user),label.." Box blocks use and carried mass");
+                owned.InMagicBox=false;Check(owned.GetCarriedWeight()==mass,label.." restored carried mass");
+                let drop=CaelumMateItem(owned.CreateTossable(1));Check(drop!=null,label.." native toss");if(drop==null)continue;
+                Check(drop.TemperatureC==owned.TemperatureC && drop.TemperatureStamp==owned.TemperatureStamp,label.." native thermal copy");
+                Check(user.FindInventory(kind)==null,label.." entire unique vessel leaves inventory");
+                drop.SetOrigin(((i%3-1)*20,(i/3)*20,0),false);Drops.Push(drop);SavedTemperatures.Push(drop.TemperatureC);SavedStamps.Push(drop.TemperatureStamp);
+            }
+            Camera=CA670MateCamera(Actor.Spawn('CA670MateCamera',(0,-60,35),NO_REPLACE));Camera.Angle=90;Camera.Pitch=26;players[0].camera=Camera;user.bInvisible=true;
+            let hud=CaelumHUDOverlay(EventHandler.Find('CaelumHUDOverlay'));if(hud!=null)hud.HUDFont=null;
+        }
+        if(e.Name=="ca670_view")
+        {
+            for(int i=0;i<Drops.Size();i++)if(Drops[i]!=null)Drops[i].bInvisible=false;
+            if(e.Args[0]==4)players[0].camera=players[0].mo;else players[0].camera=Camera;players[0].mo.bInvisible=e.Args[0]!=4;
+            let hud=CaelumHUDOverlay(EventHandler.Find('CaelumHUDOverlay'));if(hud!=null){if(e.Args[0]==4)hud.HUDFont=Font.GetFont("CaelumMono");else hud.HUDFont=null;}
+            if(e.Args[0]==0){Camera.SetOrigin((0,-180,180),false);Camera.Angle=90;Camera.Pitch=43;}
+            if(e.Args[0]==1){Camera.SetOrigin((0,-180,50),false);Camera.Angle=90;Camera.Pitch=10;}
+            if(e.Args[0]==2){Camera.SetOrigin((180,0,60),false);Camera.Angle=180;Camera.Pitch=14;}
+            if(e.Args[0]==3){Camera.SetOrigin((0,-108,35),false);Camera.Angle=90;Camera.Pitch=25;}
+            if(e.Args[0]==5){Camera.SetOrigin((0,-53,35),false);Camera.Angle=90;Camera.Pitch=22;}
+            if(e.Args[0]==6){Camera.SetOrigin((-55,38,35),false);Camera.Angle=270;Camera.Pitch=22;}
+            if(e.Args[0]==7){Camera.SetOrigin((0,180,60),false);Camera.Angle=270;Camera.Pitch=14;}Camera.ClearInterpolation();
+        }
+        if(e.Name=="ca670_detail" || e.Name=="ca670_next" || e.Name=="ca670_rotate")
+        {
+            if(Drops.Size()==0)return;
+            if(e.Name=="ca670_detail"){DetailIndex=e.Args[0];DetailAngle=e.Args[1];}
+            if(e.Name=="ca670_next")DetailIndex=(DetailIndex+1)%Drops.Size();
+            if(e.Name=="ca670_rotate")DetailAngle=DetailAngle==0?90:DetailAngle==90?160:DetailAngle==160?270:0;
+            if(DetailIndex<0 || DetailIndex>=Drops.Size())return;
+            for(int i=0;i<Drops.Size();i++)if(Drops[i]!=null)Drops[i].bInvisible=i!=DetailIndex;
+            static const double extents[]={DETAIL_EXTENTS};static const double heights[]={DETAIL_HEIGHTS};
+            let item=Drops[DetailIndex];double distance=max(9.,extents[DetailIndex%3]*item.Scale.X*1.4);double angle=DetailAngle;
+            vector3 center=item.Pos+(0,0,heights[DetailIndex%3]*item.Scale.Y);
+            Camera.SetOrigin(center+(-cos(angle)*distance,-sin(angle)*distance,distance*.5),false);Camera.Angle=angle;Camera.Pitch=26.565051;
+            players[0].camera=Camera;Camera.ClearInterpolation();
+        }
+
+
+        if(e.Name=="ca670_verify")Verify();
+        if(e.Name=="ca670_pickup")
+        {
+            let user=CaelumPlayer(players[0].mo);user.CurrentThirst=25;
+            for(int i=0;i<Drops.Size();i++)
+            {
+                let item=Drops[i];String label=String.Format("mate %d",i);let kind=item.GetClass();
+                Check(item.CallTryPickup(user),label.." native repickup");let owned=CaelumMateItem(user.FindInventory(kind));
+                Check(owned!=null && owned.Amount==1,label.." retained vessel identity");if(owned==null)continue;
+                Metadata(owned,i,label.." recovered");
+                Check(owned.Drink(user)==(i<3),label.." only loaded vessel can drink");
+                Check(owned.WaterLiters==0 && owned.Amount==1 && owned.UsesRemaining==(i<3?17:0),label.." cold drink retains vessel and hot-use counter");
+                let drop=CaelumMateItem(owned.CreateTossable(1));Check(drop!=null,label.." native second toss");Drops[i]=drop;
+            }
+            Check(user.FindInventory('CaelumMateRecovery')!=null,"native mate recovery active");
+            Console.Printf("CA670 COMPLETE failures=%d",Failures);
+        }
+        if(e.Name=="ca670_effect")
+        {Check(CaelumPlayer(players[0].mo).CurrentThirst>25,"native mate restores thirst over time");Console.Printf("CA670 COMPLETE failures=%d",Failures);}
+    }
+}

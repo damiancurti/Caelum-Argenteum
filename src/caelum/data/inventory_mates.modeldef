@@ -1,0 +1,3 @@
+Model CaelumMateGourd { Path "models/caelum/inventory/mates" Model 0 "gourd.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CMA0 A 0 0 }
+Model CaelumMateSilver { Path "models/caelum/inventory/mates" Model 0 "silver.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CMA1 A 0 0 }
+Model CaelumMateGold { Path "models/caelum/inventory/mates" Model 0 "gold.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CMA2 A 0 0 }

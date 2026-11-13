@@ -1,0 +1,34 @@
+{
+  "scope": "Focused observer guard verification only. Native fixture and measured runtime unchanged; actual 617 phase assertions independently match exact expectations.",
+  "observer_sha256": "fb725a76ec03043fca1ce7da8e9089882b03f3f2007b3c4be3ab63bd5dc9d496",
+  "cases": [
+    {
+      "phase": "baseline",
+      "assertions": 133,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "phase": "baseline",
+      "assertions": 132,
+      "passed": false,
+      "errors": [
+        "Expected 133 native assertions, observed 132"
+      ]
+    },
+    {
+      "phase": "candidate-reload",
+      "assertions": 117,
+      "passed": true,
+      "errors": []
+    },
+    {
+      "phase": "candidate-reload",
+      "assertions": 116,
+      "passed": false,
+      "errors": [
+        "Expected 117 native assertions, observed 116"
+      ]
+    }
+  ]
+}

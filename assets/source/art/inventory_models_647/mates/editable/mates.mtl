@@ -1,0 +1,9 @@
+newmtl gourd
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/mates/gourd.png
+newmtl silver
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/mates/silver.png
+newmtl gold
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/mates/gold.png
