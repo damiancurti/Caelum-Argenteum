@@ -1,6 +1,72 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.14** - 2026-11-13.
+Documentation version: **5.17.15** - 2026-11-13.
+
+## 5.17.15 - Volumetric amulet and seal drops (#674, parent #647)
+
+Four amulets and five elemental seals now have nine native MD3 models and
+fourteen explicit class/sprite/A bindings, including all five CA_LimboMagicSeal
+states. Existing world art uses the same tier-one image across the three
+qualities; this patch preserves that behavior and all 27 original tier icons.
+The isolated fixture covers 27 ordinary type/quality combinations plus the 15
+legacy seal combinations. Channeling marks, worn character fitting and combat
+effects are separate and unchanged.
+
+Closed editable parts reproduce the painted pendants: backs, reliefs, raised
+gem/emblem crowns, suspension rings and individual alternating chain links.
+There are 145 closed components and 26,912 triangles across the nine models.
+Each amulet has 5,244 triangles; Fire/Water/Earth/Air have 1,272 each and
+Quintessence 848. Original 128-pixel jewelry PNGs project over the raised front
+surfaces. The unchanged owned #647 bronze/silver/gold atlas supplies backs and
+links. Separate opaque gem/emblem undercoats sample their own source images,
+preventing semitransparent highlights from exposing a contrasting metal center.
+The initial constant-color sides and incomplete facet mapping were rejected
+during native review; original PNG bytes remain unchanged throughout.
+
+Authoring controls, provenance, editable OBJ groups/materials and export hashes:
+assets/source/art/inventory_models_647/jewelry/. Rebuild with
+python assets/generators/generate_inventory_jewelry_models.py --output
+build/jewelry-export --install. The validator independently checks component
+closure/winding, real depth, all fourteen bindings, native surfaces/UVs/hashes,
+portable materials and opaque metal tiles. Uniform fitting preserves the old
+opaque width/height envelope; Actor.Scale 0.275, radius, height, mass, ownership,
+equipment identity, quality, quest/Box rules and saved fields are unchanged.
+No bitmap generation, image edit or third-party mesh is introduced. Reverse
+engraving and character wearables remain unauthored.
+
+Final complete-package checks pass 3,326 native assertions: exact phase counts
+715/632/715/632/632 for baseline, previous-save/new-model, fresh/new-model,
+reload and rollback. All 42 combinations retain native type, quality, identity,
+icons, mass, collision, floor contact, metadata and quest/Box guards; direct
+native equip/unequip and second drop also pass. No ordinary-menu, hub journey,
+crafting or complete character-effect acceptance is implied. Initial art
+iterations passed 715 fixture checks each while still needing visual correction;
+successful gameplay checks alone did not qualify their appearance.
+
+Twenty-two exported files repeat byte-for-byte. All 18,233 package entries
+match src; nine new meshes and one model definition are added, with only the
+root MODELDEF include and two release diagnostics changing existing resources.
+All original PNG, model, gameplay and inventory bytes remain unchanged. Project
+and focused static validation pass; all nine fronts and representative
+side/oblique/rear views were inspected. No native errors remain in the final suite.
+
+One isolated 700-tic nine-object pair records 1026.06/1007.60 queue presents/s for
+sprites/models, p95 1.1880/1.2388 ms and p99 1.4289/1.4931 ms. Both cohorts were
+visually checked. Environment: Windows 11 Pro 26200, Ryzen 9 5950X, 32 GB,
+RTX 3070 Ti, GZDoom 4.14.2, Vulkan 1280x720, uncapped, vsync off, background
+unpaused and 5% audio. These are queue intervals, not GPU/display timing,
+repeatability or campaign/crowd acceptance. Evidence:
+assets/validation_v5_17_15/evidence/SUMMARY.json. Author appearance and ordinary
+menu acceptance remains pending as CA674-JEWELRY-01.
+
+The read-only #647 native discovery resolved 856 default/catalogue rows before
+this slice. It found 25 garment states, 16 armor states, four shields, nine
+jewelry states, 35 weapon states and 86 material states without exact bindings.
+These are presentation states, not unique item counts; weapon essences and
+qualities can share art. A same-named sprite on another class is only a reuse
+candidate: unrelated legacy classes also share sprite identifiers. The audit
+does not establish complete gameplay coverage or authorize restoring rejected
+#479 support-implement meshes. Broader inventory/character conversion continues.
 
 ## 5.17.14 - Native lock inventory model binding (#672, parent #647)
 

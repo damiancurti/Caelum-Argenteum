@@ -1,0 +1,2 @@
+gameinfo { AddEventHandlers="CA647DynamicAudit" }
+map CA455V "Read-only inventory audit" { sky1="CABASKY",0 nointermission }

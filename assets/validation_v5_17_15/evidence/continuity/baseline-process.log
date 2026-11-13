@@ -1,0 +1,777 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-13 20:48:27
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-672/build/issue672-locks01.pk3, 18223 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-674/build/issue674-native01/fixture.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2467.94 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+CA455V - Inventory drop inspection
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA674 PASS jewelry 0 native pickup
+CA674 PASS jewelry 0 exact native owned item
+CA674 PASS jewelry 0 assigned persistent identity
+CA674 PASS jewelry 0 Box excludes carried mass
+CA674 PASS jewelry 0 temporary quest guard
+CA674 PASS jewelry 0 native toss
+CA674 PASS jewelry 0 exact item leaves inventory
+CA674 PASS jewelry 1 native pickup
+CA674 PASS jewelry 1 exact native owned item
+CA674 PASS jewelry 1 assigned persistent identity
+CA674 PASS jewelry 1 Box excludes carried mass
+CA674 PASS jewelry 1 temporary quest guard
+CA674 PASS jewelry 1 native toss
+CA674 PASS jewelry 1 exact item leaves inventory
+CA674 PASS jewelry 2 native pickup
+CA674 PASS jewelry 2 exact native owned item
+CA674 PASS jewelry 2 assigned persistent identity
+CA674 PASS jewelry 2 Box excludes carried mass
+CA674 PASS jewelry 2 temporary quest guard
+CA674 PASS jewelry 2 native toss
+CA674 PASS jewelry 2 exact item leaves inventory
+CA674 PASS jewelry 3 native pickup
+CA674 PASS jewelry 3 exact native owned item
+CA674 PASS jewelry 3 assigned persistent identity
+CA674 PASS jewelry 3 Box excludes carried mass
+CA674 PASS jewelry 3 temporary quest guard
+CA674 PASS jewelry 3 native toss
+CA674 PASS jewelry 3 exact item leaves inventory
+CA674 PASS jewelry 4 native pickup
+CA674 PASS jewelry 4 exact native owned item
+CA674 PASS jewelry 4 assigned persistent identity
+CA674 PASS jewelry 4 Box excludes carried mass
+CA674 PASS jewelry 4 temporary quest guard
+CA674 PASS jewelry 4 native toss
+CA674 PASS jewelry 4 exact item leaves inventory
+CA674 PASS jewelry 5 native pickup
+CA674 PASS jewelry 5 exact native owned item
+CA674 PASS jewelry 5 assigned persistent identity
+CA674 PASS jewelry 5 Box excludes carried mass
+CA674 PASS jewelry 5 temporary quest guard
+CA674 PASS jewelry 5 native toss
+CA674 PASS jewelry 5 exact item leaves inventory
+CA674 PASS jewelry 6 native pickup
+CA674 PASS jewelry 6 exact native owned item
+CA674 PASS jewelry 6 assigned persistent identity
+CA674 PASS jewelry 6 Box excludes carried mass
+CA674 PASS jewelry 6 temporary quest guard
+CA674 PASS jewelry 6 native toss
+CA674 PASS jewelry 6 exact item leaves inventory
+CA674 PASS jewelry 7 native pickup
+CA674 PASS jewelry 7 exact native owned item
+CA674 PASS jewelry 7 assigned persistent identity
+CA674 PASS jewelry 7 Box excludes carried mass
+CA674 PASS jewelry 7 temporary quest guard
+CA674 PASS jewelry 7 native toss
+CA674 PASS jewelry 7 exact item leaves inventory
+CA674 PASS jewelry 8 native pickup
+CA674 PASS jewelry 8 exact native owned item
+CA674 PASS jewelry 8 assigned persistent identity
+CA674 PASS jewelry 8 Box excludes carried mass
+CA674 PASS jewelry 8 temporary quest guard
+CA674 PASS jewelry 8 native toss
+CA674 PASS jewelry 8 exact item leaves inventory
+CA674 PASS jewelry 9 native pickup
+CA674 PASS jewelry 9 exact native owned item
+CA674 PASS jewelry 9 assigned persistent identity
+CA674 PASS jewelry 9 Box excludes carried mass
+CA674 PASS jewelry 9 temporary quest guard
+CA674 PASS jewelry 9 native toss
+CA674 PASS jewelry 9 exact item leaves inventory
+CA674 PASS jewelry 10 native pickup
+CA674 PASS jewelry 10 exact native owned item
+CA674 PASS jewelry 10 assigned persistent identity
+CA674 PASS jewelry 10 Box excludes carried mass
+CA674 PASS jewelry 10 temporary quest guard
+CA674 PASS jewelry 10 native toss
+CA674 PASS jewelry 10 exact item leaves inventory
+CA674 PASS jewelry 11 native pickup
+CA674 PASS jewelry 11 exact native owned item
+CA674 PASS jewelry 11 assigned persistent identity
+CA674 PASS jewelry 11 Box excludes carried mass
+CA674 PASS jewelry 11 temporary quest guard
+CA674 PASS jewelry 11 native toss
+CA674 PASS jewelry 11 exact item leaves inventory
+CA674 PASS jewelry 12 native pickup
+CA674 PASS jewelry 12 exact native owned item
+CA674 PASS jewelry 12 assigned persistent identity
+CA674 PASS jewelry 12 Box excludes carried mass
+CA674 PASS jewelry 12 temporary quest guard
+CA674 PASS jewelry 12 native toss
+CA674 PASS jewelry 12 exact item leaves inventory
+CA674 PASS jewelry 13 native pickup
+CA674 PASS jewelry 13 exact native owned item
+CA674 PASS jewelry 13 assigned persistent identity
+CA674 PASS jewelry 13 Box excludes carried mass
+CA674 PASS jewelry 13 temporary quest guard
+CA674 PASS jewelry 13 native toss
+CA674 PASS jewelry 13 exact item leaves inventory
+CA674 PASS jewelry 14 native pickup
+CA674 PASS jewelry 14 exact native owned item
+CA674 PASS jewelry 14 assigned persistent identity
+CA674 PASS jewelry 14 Box excludes carried mass
+CA674 PASS jewelry 14 temporary quest guard
+CA674 PASS jewelry 14 native toss
+CA674 PASS jewelry 14 exact item leaves inventory
+CA674 PASS jewelry 15 native pickup
+CA674 PASS jewelry 15 exact native owned item
+CA674 PASS jewelry 15 assigned persistent identity
+CA674 PASS jewelry 15 Box excludes carried mass
+CA674 PASS jewelry 15 temporary quest guard
+CA674 PASS jewelry 15 native toss
+CA674 PASS jewelry 15 exact item leaves inventory
+CA674 PASS jewelry 16 native pickup
+CA674 PASS jewelry 16 exact native owned item
+CA674 PASS jewelry 16 assigned persistent identity
+CA674 PASS jewelry 16 Box excludes carried mass
+CA674 PASS jewelry 16 temporary quest guard
+CA674 PASS jewelry 16 native toss
+CA674 PASS jewelry 16 exact item leaves inventory
+CA674 PASS jewelry 17 native pickup
+CA674 PASS jewelry 17 exact native owned item
+CA674 PASS jewelry 17 assigned persistent identity
+CA674 PASS jewelry 17 Box excludes carried mass
+CA674 PASS jewelry 17 temporary quest guard
+CA674 PASS jewelry 17 native toss
+CA674 PASS jewelry 17 exact item leaves inventory
+CA674 PASS jewelry 18 native pickup
+CA674 PASS jewelry 18 exact native owned item
+CA674 PASS jewelry 18 assigned persistent identity
+CA674 PASS jewelry 18 Box excludes carried mass
+CA674 PASS jewelry 18 temporary quest guard
+CA674 PASS jewelry 18 native toss
+CA674 PASS jewelry 18 exact item leaves inventory
+CA674 PASS jewelry 19 native pickup
+CA674 PASS jewelry 19 exact native owned item
+CA674 PASS jewelry 19 assigned persistent identity
+CA674 PASS jewelry 19 Box excludes carried mass
+CA674 PASS jewelry 19 temporary quest guard
+CA674 PASS jewelry 19 native toss
+CA674 PASS jewelry 19 exact item leaves inventory
+CA674 PASS jewelry 20 native pickup
+CA674 PASS jewelry 20 exact native owned item
+CA674 PASS jewelry 20 assigned persistent identity
+CA674 PASS jewelry 20 Box excludes carried mass
+CA674 PASS jewelry 20 temporary quest guard
+CA674 PASS jewelry 20 native toss
+CA674 PASS jewelry 20 exact item leaves inventory
+CA674 PASS jewelry 21 native pickup
+CA674 PASS jewelry 21 exact native owned item
+CA674 PASS jewelry 21 assigned persistent identity
+CA674 PASS jewelry 21 Box excludes carried mass
+CA674 PASS jewelry 21 temporary quest guard
+CA674 PASS jewelry 21 native toss
+CA674 PASS jewelry 21 exact item leaves inventory
+CA674 PASS jewelry 22 native pickup
+CA674 PASS jewelry 22 exact native owned item
+CA674 PASS jewelry 22 assigned persistent identity
+CA674 PASS jewelry 22 Box excludes carried mass
+CA674 PASS jewelry 22 temporary quest guard
+CA674 PASS jewelry 22 native toss
+CA674 PASS jewelry 22 exact item leaves inventory
+CA674 PASS jewelry 23 native pickup
+CA674 PASS jewelry 23 exact native owned item
+CA674 PASS jewelry 23 assigned persistent identity
+CA674 PASS jewelry 23 Box excludes carried mass
+CA674 PASS jewelry 23 temporary quest guard
+CA674 PASS jewelry 23 native toss
+CA674 PASS jewelry 23 exact item leaves inventory
+CA674 PASS jewelry 24 native pickup
+CA674 PASS jewelry 24 exact native owned item
+CA674 PASS jewelry 24 assigned persistent identity
+CA674 PASS jewelry 24 Box excludes carried mass
+CA674 PASS jewelry 24 temporary quest guard
+CA674 PASS jewelry 24 native toss
+CA674 PASS jewelry 24 exact item leaves inventory
+CA674 PASS jewelry 25 native pickup
+CA674 PASS jewelry 25 exact native owned item
+CA674 PASS jewelry 25 assigned persistent identity
+CA674 PASS jewelry 25 Box excludes carried mass
+CA674 PASS jewelry 25 temporary quest guard
+CA674 PASS jewelry 25 native toss
+CA674 PASS jewelry 25 exact item leaves inventory
+CA674 PASS jewelry 26 native pickup
+CA674 PASS jewelry 26 exact native owned item
+CA674 PASS jewelry 26 assigned persistent identity
+CA674 PASS jewelry 26 Box excludes carried mass
+CA674 PASS jewelry 26 temporary quest guard
+CA674 PASS jewelry 26 native toss
+CA674 PASS jewelry 26 exact item leaves inventory
+CA674 PASS jewelry 27 native pickup
+CA674 PASS jewelry 27 exact native owned item
+CA674 PASS jewelry 27 assigned persistent identity
+CA674 PASS jewelry 27 Box excludes carried mass
+CA674 PASS jewelry 27 temporary quest guard
+CA674 PASS jewelry 27 native toss
+CA674 PASS jewelry 27 exact item leaves inventory
+CA674 PASS jewelry 28 native pickup
+CA674 PASS jewelry 28 exact native owned item
+CA674 PASS jewelry 28 assigned persistent identity
+CA674 PASS jewelry 28 Box excludes carried mass
+CA674 PASS jewelry 28 temporary quest guard
+CA674 PASS jewelry 28 native toss
+CA674 PASS jewelry 28 exact item leaves inventory
+CA674 PASS jewelry 29 native pickup
+CA674 PASS jewelry 29 exact native owned item
+CA674 PASS jewelry 29 assigned persistent identity
+CA674 PASS jewelry 29 Box excludes carried mass
+CA674 PASS jewelry 29 temporary quest guard
+CA674 PASS jewelry 29 native toss
+CA674 PASS jewelry 29 exact item leaves inventory
+CA674 PASS jewelry 30 native pickup
+CA674 PASS jewelry 30 exact native owned item
+CA674 PASS jewelry 30 assigned persistent identity
+CA674 PASS jewelry 30 Box excludes carried mass
+CA674 PASS jewelry 30 temporary quest guard
+CA674 PASS jewelry 30 native toss
+CA674 PASS jewelry 30 exact item leaves inventory
+CA674 PASS jewelry 31 native pickup
+CA674 PASS jewelry 31 exact native owned item
+CA674 PASS jewelry 31 assigned persistent identity
+CA674 PASS jewelry 31 Box excludes carried mass
+CA674 PASS jewelry 31 temporary quest guard
+CA674 PASS jewelry 31 native toss
+CA674 PASS jewelry 31 exact item leaves inventory
+CA674 PASS jewelry 32 native pickup
+CA674 PASS jewelry 32 exact native owned item
+CA674 PASS jewelry 32 assigned persistent identity
+CA674 PASS jewelry 32 Box excludes carried mass
+CA674 PASS jewelry 32 temporary quest guard
+CA674 PASS jewelry 32 native toss
+CA674 PASS jewelry 32 exact item leaves inventory
+CA674 PASS jewelry 33 native pickup
+CA674 PASS jewelry 33 exact native owned item
+CA674 PASS jewelry 33 assigned persistent identity
+CA674 PASS jewelry 33 Box excludes carried mass
+CA674 PASS jewelry 33 temporary quest guard
+CA674 PASS jewelry 33 native toss
+CA674 PASS jewelry 33 exact item leaves inventory
+CA674 PASS jewelry 34 native pickup
+CA674 PASS jewelry 34 exact native owned item
+CA674 PASS jewelry 34 assigned persistent identity
+CA674 PASS jewelry 34 Box excludes carried mass
+CA674 PASS jewelry 34 temporary quest guard
+CA674 PASS jewelry 34 native toss
+CA674 PASS jewelry 34 exact item leaves inventory
+CA674 PASS jewelry 35 native pickup
+CA674 PASS jewelry 35 exact native owned item
+CA674 PASS jewelry 35 assigned persistent identity
+CA674 PASS jewelry 35 Box excludes carried mass
+CA674 PASS jewelry 35 temporary quest guard
+CA674 PASS jewelry 35 native toss
+CA674 PASS jewelry 35 exact item leaves inventory
+CA674 PASS jewelry 36 native pickup
+CA674 PASS jewelry 36 exact native owned item
+CA674 PASS jewelry 36 assigned persistent identity
+CA674 PASS jewelry 36 Box excludes carried mass
+CA674 PASS jewelry 36 temporary quest guard
+CA674 PASS jewelry 36 native toss
+CA674 PASS jewelry 36 exact item leaves inventory
+CA674 PASS jewelry 37 native pickup
+CA674 PASS jewelry 37 exact native owned item
+CA674 PASS jewelry 37 assigned persistent identity
+CA674 PASS jewelry 37 Box excludes carried mass
+CA674 PASS jewelry 37 temporary quest guard
+CA674 PASS jewelry 37 native toss
+CA674 PASS jewelry 37 exact item leaves inventory
+CA674 PASS jewelry 38 native pickup
+CA674 PASS jewelry 38 exact native owned item
+CA674 PASS jewelry 38 assigned persistent identity
+CA674 PASS jewelry 38 Box excludes carried mass
+CA674 PASS jewelry 38 temporary quest guard
+CA674 PASS jewelry 38 native toss
+CA674 PASS jewelry 38 exact item leaves inventory
+CA674 PASS jewelry 39 native pickup
+CA674 PASS jewelry 39 exact native owned item
+CA674 PASS jewelry 39 assigned persistent identity
+CA674 PASS jewelry 39 Box excludes carried mass
+CA674 PASS jewelry 39 temporary quest guard
+CA674 PASS jewelry 39 native toss
+CA674 PASS jewelry 39 exact item leaves inventory
+CA674 PASS jewelry 40 native pickup
+CA674 PASS jewelry 40 exact native owned item
+CA674 PASS jewelry 40 assigned persistent identity
+CA674 PASS jewelry 40 Box excludes carried mass
+CA674 PASS jewelry 40 temporary quest guard
+CA674 PASS jewelry 40 native toss
+CA674 PASS jewelry 40 exact item leaves inventory
+CA674 PASS jewelry 41 native pickup
+CA674 PASS jewelry 41 exact native owned item
+CA674 PASS jewelry 41 assigned persistent identity
+CA674 PASS jewelry 41 Box excludes carried mass
+CA674 PASS jewelry 41 temporary quest guard
+CA674 PASS jewelry 41 native toss
+CA674 PASS jewelry 41 exact item leaves inventory
+Game saved.
+Captured baseline.png
+CA674 PASS all 27 catalogue qualities and 15 legacy seal variants retained
+CA674 PASS jewelry 0 saved reference
+CA674 PASS jewelry 0 independent world instance
+CA674 PASS jewelry 0 native type, quality and kind
+CA674 PASS jewelry 0 persistent identity
+CA674 PASS jewelry 0 original size, essence and durability
+CA674 PASS jewelry 0 original collision, scale and floor contact
+CA674 PASS jewelry 0 original tier icon and dynamic world state
+CA674 PASS jewelry 0 original native weight
+CA674 PASS jewelry 0 copied provenance
+CA674 PASS jewelry 0 unequipped world flags
+CA674 PASS jewelry 1 saved reference
+CA674 PASS jewelry 1 independent world instance
+CA674 PASS jewelry 1 native type, quality and kind
+CA674 PASS jewelry 1 persistent identity
+CA674 PASS jewelry 1 original size, essence and durability
+CA674 PASS jewelry 1 original collision, scale and floor contact
+CA674 PASS jewelry 1 original tier icon and dynamic world state
+CA674 PASS jewelry 1 original native weight
+CA674 PASS jewelry 1 copied provenance
+CA674 PASS jewelry 1 unequipped world flags
+CA674 PASS jewelry 2 saved reference
+CA674 PASS jewelry 2 independent world instance
+CA674 PASS jewelry 2 native type, quality and kind
+CA674 PASS jewelry 2 persistent identity
+CA674 PASS jewelry 2 original size, essence and durability
+CA674 PASS jewelry 2 original collision, scale and floor contact
+CA674 PASS jewelry 2 original tier icon and dynamic world state
+CA674 PASS jewelry 2 original native weight
+CA674 PASS jewelry 2 copied provenance
+CA674 PASS jewelry 2 unequipped world flags
+CA674 PASS jewelry 3 saved reference
+CA674 PASS jewelry 3 independent world instance
+CA674 PASS jewelry 3 native type, quality and kind
+CA674 PASS jewelry 3 persistent identity
+CA674 PASS jewelry 3 original size, essence and durability
+CA674 PASS jewelry 3 original collision, scale and floor contact
+CA674 PASS jewelry 3 original tier icon and dynamic world state
+CA674 PASS jewelry 3 original native weight
+CA674 PASS jewelry 3 copied provenance
+CA674 PASS jewelry 3 unequipped world flags
+CA674 PASS jewelry 4 saved reference
+CA674 PASS jewelry 4 independent world instance
+CA674 PASS jewelry 4 native type, quality and kind
+CA674 PASS jewelry 4 persistent identity
+CA674 PASS jewelry 4 original size, essence and durability
+CA674 PASS jewelry 4 original collision, scale and floor contact
+CA674 PASS jewelry 4 original tier icon and dynamic world state
+CA674 PASS jewelry 4 original native weight
+CA674 PASS jewelry 4 copied provenance
+CA674 PASS jewelry 4 unequipped world flags
+CA674 PASS jewelry 5 saved reference
+CA674 PASS jewelry 5 independent world instance
+CA674 PASS jewelry 5 native type, quality and kind
+CA674 PASS jewelry 5 persistent identity
+CA674 PASS jewelry 5 original size, essence and durability
+CA674 PASS jewelry 5 original collision, scale and floor contact
+CA674 PASS jewelry 5 original tier icon and dynamic world state
+CA674 PASS jewelry 5 original native weight
+CA674 PASS jewelry 5 copied provenance
+CA674 PASS jewelry 5 unequipped world flags
+CA674 PASS jewelry 6 saved reference
+CA674 PASS jewelry 6 independent world instance
+CA674 PASS jewelry 6 native type, quality and kind
+CA674 PASS jewelry 6 persistent identity
+CA674 PASS jewelry 6 original size, essence and durability
+CA674 PASS jewelry 6 original collision, scale and floor contact
+CA674 PASS jewelry 6 original tier icon and dynamic world state
+CA674 PASS jewelry 6 original native weight
+CA674 PASS jewelry 6 copied provenance
+CA674 PASS jewelry 6 unequipped world flags
+CA674 PASS jewelry 7 saved reference
+CA674 PASS jewelry 7 independent world instance
+CA674 PASS jewelry 7 native type, quality and kind
+CA674 PASS jewelry 7 persistent identity
+CA674 PASS jewelry 7 original size, essence and durability
+CA674 PASS jewelry 7 original collision, scale and floor contact
+CA674 PASS jewelry 7 original tier icon and dynamic world state
+CA674 PASS jewelry 7 original native weight
+CA674 PASS jewelry 7 copied provenance
+CA674 PASS jewelry 7 unequipped world flags
+CA674 PASS jewelry 8 saved reference
+CA674 PASS jewelry 8 independent world instance
+CA674 PASS jewelry 8 native type, quality and kind
+CA674 PASS jewelry 8 persistent identity
+CA674 PASS jewelry 8 original size, essence and durability
+CA674 PASS jewelry 8 original collision, scale and floor contact
+CA674 PASS jewelry 8 original tier icon and dynamic world state
+CA674 PASS jewelry 8 original native weight
+CA674 PASS jewelry 8 copied provenance
+CA674 PASS jewelry 8 unequipped world flags
+CA674 PASS jewelry 9 saved reference
+CA674 PASS jewelry 9 independent world instance
+CA674 PASS jewelry 9 native type, quality and kind
+CA674 PASS jewelry 9 persistent identity
+CA674 PASS jewelry 9 original size, essence and durability
+CA674 PASS jewelry 9 original collision, scale and floor contact
+CA674 PASS jewelry 9 original tier icon and dynamic world state
+CA674 PASS jewelry 9 original native weight
+CA674 PASS jewelry 9 copied provenance
+CA674 PASS jewelry 9 unequipped world flags
+CA674 PASS jewelry 10 saved reference
+CA674 PASS jewelry 10 independent world instance
+CA674 PASS jewelry 10 native type, quality and kind
+CA674 PASS jewelry 10 persistent identity
+CA674 PASS jewelry 10 original size, essence and durability
+CA674 PASS jewelry 10 original collision, scale and floor contact
+CA674 PASS jewelry 10 original tier icon and dynamic world state
+CA674 PASS jewelry 10 original native weight
+CA674 PASS jewelry 10 copied provenance
+CA674 PASS jewelry 10 unequipped world flags
+CA674 PASS jewelry 11 saved reference
+CA674 PASS jewelry 11 independent world instance
+CA674 PASS jewelry 11 native type, quality and kind
+CA674 PASS jewelry 11 persistent identity
+CA674 PASS jewelry 11 original size, essence and durability
+CA674 PASS jewelry 11 original collision, scale and floor contact
+CA674 PASS jewelry 11 original tier icon and dynamic world state
+CA674 PASS jewelry 11 original native weight
+CA674 PASS jewelry 11 copied provenance
+CA674 PASS jewelry 11 unequipped world flags
+CA674 PASS jewelry 12 saved reference
+CA674 PASS jewelry 12 independent world instance
+CA674 PASS jewelry 12 native type, quality and kind
+CA674 PASS jewelry 12 persistent identity
+CA674 PASS jewelry 12 original size, essence and durability
+CA674 PASS jewelry 12 original collision, scale and floor contact
+CA674 PASS jewelry 12 original tier icon and dynamic world state
+CA674 PASS jewelry 12 original native weight
+CA674 PASS jewelry 12 copied provenance
+CA674 PASS jewelry 12 unequipped world flags
+CA674 PASS jewelry 13 saved reference
+CA674 PASS jewelry 13 independent world instance
+CA674 PASS jewelry 13 native type, quality and kind
+CA674 PASS jewelry 13 persistent identity
+CA674 PASS jewelry 13 original size, essence and durability
+CA674 PASS jewelry 13 original collision, scale and floor contact
+CA674 PASS jewelry 13 original tier icon and dynamic world state
+CA674 PASS jewelry 13 original native weight
+CA674 PASS jewelry 13 copied provenance
+CA674 PASS jewelry 13 unequipped world flags
+CA674 PASS jewelry 14 saved reference
+CA674 PASS jewelry 14 independent world instance
+CA674 PASS jewelry 14 native type, quality and kind
+CA674 PASS jewelry 14 persistent identity
+CA674 PASS jewelry 14 original size, essence and durability
+CA674 PASS jewelry 14 original collision, scale and floor contact
+CA674 PASS jewelry 14 original tier icon and dynamic world state
+CA674 PASS jewelry 14 original native weight
+CA674 PASS jewelry 14 copied provenance
+CA674 PASS jewelry 14 unequipped world flags
+CA674 PASS jewelry 15 saved reference
+CA674 PASS jewelry 15 independent world instance
+CA674 PASS jewelry 15 native type, quality and kind
+CA674 PASS jewelry 15 persistent identity
+CA674 PASS jewelry 15 original size, essence and durability
+CA674 PASS jewelry 15 original collision, scale and floor contact
+CA674 PASS jewelry 15 original tier icon and dynamic world state
+CA674 PASS jewelry 15 original native weight
+CA674 PASS jewelry 15 copied provenance
+CA674 PASS jewelry 15 unequipped world flags
+CA674 PASS jewelry 16 saved reference
+CA674 PASS jewelry 16 independent world instance
+CA674 PASS jewelry 16 native type, quality and kind
+CA674 PASS jewelry 16 persistent identity
+CA674 PASS jewelry 16 original size, essence and durability
+CA674 PASS jewelry 16 original collision, scale and floor contact
+CA674 PASS jewelry 16 original tier icon and dynamic world state
+CA674 PASS jewelry 16 original native weight
+CA674 PASS jewelry 16 copied provenance
+CA674 PASS jewelry 16 unequipped world flags
+CA674 PASS jewelry 17 saved reference
+CA674 PASS jewelry 17 independent world instance
+CA674 PASS jewelry 17 native type, quality and kind
+CA674 PASS jewelry 17 persistent identity
+CA674 PASS jewelry 17 original size, essence and durability
+CA674 PASS jewelry 17 original collision, scale and floor contact
+CA674 PASS jewelry 17 original tier icon and dynamic world state
+CA674 PASS jewelry 17 original native weight
+CA674 PASS jewelry 17 copied provenance
+CA674 PASS jewelry 17 unequipped world flags
+CA674 PASS jewelry 18 saved reference
+CA674 PASS jewelry 18 independent world instance
+CA674 PASS jewelry 18 native type, quality and kind
+CA674 PASS jewelry 18 persistent identity
+CA674 PASS jewelry 18 original size, essence and durability
+CA674 PASS jewelry 18 original collision, scale and floor contact
+CA674 PASS jewelry 18 original tier icon and dynamic world state
+CA674 PASS jewelry 18 original native weight
+CA674 PASS jewelry 18 copied provenance
+CA674 PASS jewelry 18 unequipped world flags
+CA674 PASS jewelry 19 saved reference
+CA674 PASS jewelry 19 independent world instance
+CA674 PASS jewelry 19 native type, quality and kind
+CA674 PASS jewelry 19 persistent identity
+CA674 PASS jewelry 19 original size, essence and durability
+CA674 PASS jewelry 19 original collision, scale and floor contact
+CA674 PASS jewelry 19 original tier icon and dynamic world state
+CA674 PASS jewelry 19 original native weight
+CA674 PASS jewelry 19 copied provenance
+CA674 PASS jewelry 19 unequipped world flags
+CA674 PASS jewelry 20 saved reference
+CA674 PASS jewelry 20 independent world instance
+CA674 PASS jewelry 20 native type, quality and kind
+CA674 PASS jewelry 20 persistent identity
+CA674 PASS jewelry 20 original size, essence and durability
+CA674 PASS jewelry 20 original collision, scale and floor contact
+CA674 PASS jewelry 20 original tier icon and dynamic world state
+CA674 PASS jewelry 20 original native weight
+CA674 PASS jewelry 20 copied provenance
+CA674 PASS jewelry 20 unequipped world flags
+CA674 PASS jewelry 21 saved reference
+CA674 PASS jewelry 21 independent world instance
+CA674 PASS jewelry 21 native type, quality and kind
+CA674 PASS jewelry 21 persistent identity
+CA674 PASS jewelry 21 original size, essence and durability
+CA674 PASS jewelry 21 original collision, scale and floor contact
+CA674 PASS jewelry 21 original tier icon and dynamic world state
+CA674 PASS jewelry 21 original native weight
+CA674 PASS jewelry 21 copied provenance
+CA674 PASS jewelry 21 unequipped world flags
+CA674 PASS jewelry 22 saved reference
+CA674 PASS jewelry 22 independent world instance
+CA674 PASS jewelry 22 native type, quality and kind
+CA674 PASS jewelry 22 persistent identity
+CA674 PASS jewelry 22 original size, essence and durability
+CA674 PASS jewelry 22 original collision, scale and floor contact
+CA674 PASS jewelry 22 original tier icon and dynamic world state
+CA674 PASS jewelry 22 original native weight
+CA674 PASS jewelry 22 copied provenance
+CA674 PASS jewelry 22 unequipped world flags
+CA674 PASS jewelry 23 saved reference
+CA674 PASS jewelry 23 independent world instance
+CA674 PASS jewelry 23 native type, quality and kind
+CA674 PASS jewelry 23 persistent identity
+CA674 PASS jewelry 23 original size, essence and durability
+CA674 PASS jewelry 23 original collision, scale and floor contact
+CA674 PASS jewelry 23 original tier icon and dynamic world state
+CA674 PASS jewelry 23 original native weight
+CA674 PASS jewelry 23 copied provenance
+CA674 PASS jewelry 23 unequipped world flags
+CA674 PASS jewelry 24 saved reference
+CA674 PASS jewelry 24 independent world instance
+CA674 PASS jewelry 24 native type, quality and kind
+CA674 PASS jewelry 24 persistent identity
+CA674 PASS jewelry 24 original size, essence and durability
+CA674 PASS jewelry 24 original collision, scale and floor contact
+CA674 PASS jewelry 24 original tier icon and dynamic world state
+CA674 PASS jewelry 24 original native weight
+CA674 PASS jewelry 24 copied provenance
+CA674 PASS jewelry 24 unequipped world flags
+CA674 PASS jewelry 25 saved reference
+CA674 PASS jewelry 25 independent world instance
+CA674 PASS jewelry 25 native type, quality and kind
+CA674 PASS jewelry 25 persistent identity
+CA674 PASS jewelry 25 original size, essence and durability
+CA674 PASS jewelry 25 original collision, scale and floor contact
+CA674 PASS jewelry 25 original tier icon and dynamic world state
+CA674 PASS jewelry 25 original native weight
+CA674 PASS jewelry 25 copied provenance
+CA674 PASS jewelry 25 unequipped world flags
+CA674 PASS jewelry 26 saved reference
+CA674 PASS jewelry 26 independent world instance
+CA674 PASS jewelry 26 native type, quality and kind
+CA674 PASS jewelry 26 persistent identity
+CA674 PASS jewelry 26 original size, essence and durability
+CA674 PASS jewelry 26 original collision, scale and floor contact
+CA674 PASS jewelry 26 original tier icon and dynamic world state
+CA674 PASS jewelry 26 original native weight
+CA674 PASS jewelry 26 copied provenance
+CA674 PASS jewelry 26 unequipped world flags
+CA674 PASS jewelry 27 saved reference
+CA674 PASS jewelry 27 independent world instance
+CA674 PASS jewelry 27 native type, quality and kind
+CA674 PASS jewelry 27 persistent identity
+CA674 PASS jewelry 27 original size, essence and durability
+CA674 PASS jewelry 27 original collision, scale and floor contact
+CA674 PASS jewelry 27 original tier icon and dynamic world state
+CA674 PASS jewelry 27 original native weight
+CA674 PASS jewelry 27 copied provenance
+CA674 PASS jewelry 27 unequipped world flags
+CA674 PASS jewelry 28 saved reference
+CA674 PASS jewelry 28 independent world instance
+CA674 PASS jewelry 28 native type, quality and kind
+CA674 PASS jewelry 28 persistent identity
+CA674 PASS jewelry 28 original size, essence and durability
+CA674 PASS jewelry 28 original collision, scale and floor contact
+CA674 PASS jewelry 28 original tier icon and dynamic world state
+CA674 PASS jewelry 28 original native weight
+CA674 PASS jewelry 28 copied provenance
+CA674 PASS jewelry 28 unequipped world flags
+CA674 PASS jewelry 29 saved reference
+CA674 PASS jewelry 29 independent world instance
+CA674 PASS jewelry 29 native type, quality and kind
+CA674 PASS jewelry 29 persistent identity
+CA674 PASS jewelry 29 original size, essence and durability
+CA674 PASS jewelry 29 original collision, scale and floor contact
+CA674 PASS jewelry 29 original tier icon and dynamic world state
+CA674 PASS jewelry 29 original native weight
+CA674 PASS jewelry 29 copied provenance
+CA674 PASS jewelry 29 unequipped world flags
+CA674 PASS jewelry 30 saved reference
+CA674 PASS jewelry 30 independent world instance
+CA674 PASS jewelry 30 native type, quality and kind
+CA674 PASS jewelry 30 persistent identity
+CA674 PASS jewelry 30 original size, essence and durability
+CA674 PASS jewelry 30 original collision, scale and floor contact
+CA674 PASS jewelry 30 original tier icon and dynamic world state
+CA674 PASS jewelry 30 original native weight
+CA674 PASS jewelry 30 copied provenance
+CA674 PASS jewelry 30 unequipped world flags
+CA674 PASS jewelry 31 saved reference
+CA674 PASS jewelry 31 independent world instance
+CA674 PASS jewelry 31 native type, quality and kind
+CA674 PASS jewelry 31 persistent identity
+CA674 PASS jewelry 31 original size, essence and durability
+CA674 PASS jewelry 31 original collision, scale and floor contact
+CA674 PASS jewelry 31 original tier icon and dynamic world state
+CA674 PASS jewelry 31 original native weight
+CA674 PASS jewelry 31 copied provenance
+CA674 PASS jewelry 31 unequipped world flags
+CA674 PASS jewelry 32 saved reference
+CA674 PASS jewelry 32 independent world instance
+CA674 PASS jewelry 32 native type, quality and kind
+CA674 PASS jewelry 32 persistent identity
+CA674 PASS jewelry 32 original size, essence and durability
+CA674 PASS jewelry 32 original collision, scale and floor contact
+CA674 PASS jewelry 32 original tier icon and dynamic world state
+CA674 PASS jewelry 32 original native weight
+CA674 PASS jewelry 32 copied provenance
+CA674 PASS jewelry 32 unequipped world flags
+CA674 PASS jewelry 33 saved reference
+CA674 PASS jewelry 33 independent world instance
+CA674 PASS jewelry 33 native type, quality and kind
+CA674 PASS jewelry 33 persistent identity
+CA674 PASS jewelry 33 original size, essence and durability
+CA674 PASS jewelry 33 original collision, scale and floor contact
+CA674 PASS jewelry 33 original tier icon and dynamic world state
+CA674 PASS jewelry 33 original native weight
+CA674 PASS jewelry 33 copied provenance
+CA674 PASS jewelry 33 unequipped world flags
+CA674 PASS jewelry 34 saved reference
+CA674 PASS jewelry 34 independent world instance
+CA674 PASS jewelry 34 native type, quality and kind
+CA674 PASS jewelry 34 persistent identity
+CA674 PASS jewelry 34 original size, essence and durability
+CA674 PASS jewelry 34 original collision, scale and floor contact
+CA674 PASS jewelry 34 original tier icon and dynamic world state
+CA674 PASS jewelry 34 original native weight
+CA674 PASS jewelry 34 copied provenance
+CA674 PASS jewelry 34 unequipped world flags
+CA674 PASS jewelry 35 saved reference
+CA674 PASS jewelry 35 independent world instance
+CA674 PASS jewelry 35 native type, quality and kind
+CA674 PASS jewelry 35 persistent identity
+CA674 PASS jewelry 35 original size, essence and durability
+CA674 PASS jewelry 35 original collision, scale and floor contact
+CA674 PASS jewelry 35 original tier icon and dynamic world state
+CA674 PASS jewelry 35 original native weight
+CA674 PASS jewelry 35 copied provenance
+CA674 PASS jewelry 35 unequipped world flags
+CA674 PASS jewelry 36 saved reference
+CA674 PASS jewelry 36 independent world instance
+CA674 PASS jewelry 36 native type, quality and kind
+CA674 PASS jewelry 36 persistent identity
+CA674 PASS jewelry 36 original size, essence and durability
+CA674 PASS jewelry 36 original collision, scale and floor contact
+CA674 PASS jewelry 36 original tier icon and dynamic world state
+CA674 PASS jewelry 36 original native weight
+CA674 PASS jewelry 36 copied provenance
+CA674 PASS jewelry 36 unequipped world flags
+CA674 PASS jewelry 37 saved reference
+CA674 PASS jewelry 37 independent world instance
+CA674 PASS jewelry 37 native type, quality and kind
+CA674 PASS jewelry 37 persistent identity
+CA674 PASS jewelry 37 original size, essence and durability
+CA674 PASS jewelry 37 original collision, scale and floor contact
+CA674 PASS jewelry 37 original tier icon and dynamic world state
+CA674 PASS jewelry 37 original native weight
+CA674 PASS jewelry 37 copied provenance
+CA674 PASS jewelry 37 unequipped world flags
+CA674 PASS jewelry 38 saved reference
+CA674 PASS jewelry 38 independent world instance
+CA674 PASS jewelry 38 native type, quality and kind
+CA674 PASS jewelry 38 persistent identity
+CA674 PASS jewelry 38 original size, essence and durability
+CA674 PASS jewelry 38 original collision, scale and floor contact
+CA674 PASS jewelry 38 original tier icon and dynamic world state
+CA674 PASS jewelry 38 original native weight
+CA674 PASS jewelry 38 copied provenance
+CA674 PASS jewelry 38 unequipped world flags
+CA674 PASS jewelry 39 saved reference
+CA674 PASS jewelry 39 independent world instance
+CA674 PASS jewelry 39 native type, quality and kind
+CA674 PASS jewelry 39 persistent identity
+CA674 PASS jewelry 39 original size, essence and durability
+CA674 PASS jewelry 39 original collision, scale and floor contact
+CA674 PASS jewelry 39 original tier icon and dynamic world state
+CA674 PASS jewelry 39 original native weight
+CA674 PASS jewelry 39 copied provenance
+CA674 PASS jewelry 39 unequipped world flags
+CA674 PASS jewelry 40 saved reference
+CA674 PASS jewelry 40 independent world instance
+CA674 PASS jewelry 40 native type, quality and kind
+CA674 PASS jewelry 40 persistent identity
+CA674 PASS jewelry 40 original size, essence and durability
+CA674 PASS jewelry 40 original collision, scale and floor contact
+CA674 PASS jewelry 40 original tier icon and dynamic world state
+CA674 PASS jewelry 40 original native weight
+CA674 PASS jewelry 40 copied provenance
+CA674 PASS jewelry 40 unequipped world flags
+CA674 PASS jewelry 41 saved reference
+CA674 PASS jewelry 41 independent world instance
+CA674 PASS jewelry 41 native type, quality and kind
+CA674 PASS jewelry 41 persistent identity
+CA674 PASS jewelry 41 original size, essence and durability
+CA674 PASS jewelry 41 original collision, scale and floor contact
+CA674 PASS jewelry 41 original tier icon and dynamic world state
+CA674 PASS jewelry 41 original native weight
+CA674 PASS jewelry 41 copied provenance
+CA674 PASS jewelry 41 unequipped world flags
+CA674 COMPLETE failures=0
+Game saved.
