@@ -48,6 +48,11 @@ retained city/siege profiles; it supplies 36 posts, existing tower geometry,
 access flights and 528 guard positions. The candidate generator reuses owned
 stone materials. Native geometry/crew evidence and failed iterations are in
 validation_v5_16_2/barracas-forts; this does not activate the production siege.
+generate_barracas_routes.py reuses the same in-memory candidate geometry to emit
+DEPLOYMENT.json/CaelumBarracasDeployment: 600 routes and 9453 waypoints, with stable
+resident identities and original private coordinates. Generated siege/route
+helpers dispatch by loaded geometry. Native continuous traversal evidence is in
+validation_v5_16_2/barracas-deployment; no fixture PK3 or save is distributed.
 
 ## 5.16.1 - Recovered folklore reference catalogue (#453, catalogue approved)
 

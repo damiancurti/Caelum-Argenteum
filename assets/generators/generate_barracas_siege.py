@@ -207,6 +207,13 @@ def outputs():
         if chosen is None:conflicts.append({'gun':gun['identity'],'reasons':['no clear ground formation']})
         else:gun['guards']=chosen;occupied.extend(chosen)
     active=list(range(8,12))
+    for gun in guns:
+        centre=[sum(p[a] for p in gun['guards'])/len(gun['guards']) for a in (0,1)]
+        a,b=min(edges,key=lambda edge:distance2(centre,*edge))
+        normal=[b[1]-a[1],a[0]-b[0]]
+        axis=max((0,1),key=lambda i:abs(normal[i]));direction=[0,0]
+        direction[axis]=1 if normal[axis]>0 else -1
+        gun['formation_inward']=direction
     for side,count in [('south',4),('east',2),('west',2)]:
         gate=next(g for g in layout['gates'] if g['id']==side)
         candidates=[g for g in guns if g['side']==side]
@@ -225,11 +232,41 @@ def outputs():
     return result
 
 
+def runtime(result):
+    def vector(point):return '('+','.join(f'{v:g}' for v in point)+')'
+    guns=result['defending_guns']
+    lines=['// Coordenadas derivadas del plano aprobado; solo para MAP03 revision4.',
+           'class CaelumBarracasSiegeData : Object play','{']
+    for name,kind,values in [('GunPosition','vector3',[vector(r['position']) for r in guns]),
+                             ('GunAngle','double',[str(r['angle']) for r in guns]),
+                             ('GuardPosition','vector3',[vector(p) for p in result['guards']]),
+                             ('CrewRouteCount','int',[str(len(r['crew_route'])) for r in guns])]:
+        lines.append(f'    static {kind} {name}(int i){{switch(i){{')
+        lines.extend(f'        case {i}:return {p};' for i,p in enumerate(values))
+        lines.append('        }return '+('(0,0,0)' if kind=='vector3' else '0')+';}')
+    lines.append('    static bool ActiveGun(int i){return '+' || '.join(f'i=={i}' for i in result['active_defending_guns'])+';}')
+    lines.append('    static vector2 FormationInward(int i){');end=0
+    for row in guns:
+        end+=len(row['guards']);lines.append(f'        if(i<{end})return {vector(row["formation_inward"])};')
+    lines.extend(['        return (0,0);}', '    static vector3 CrewRoutePoint(int i,int step){switch(i){'])
+    lines.extend(f'        case {i}:return Route{i}(step);' for i in range(len(guns)))
+    lines.append('        }return (0,0,0);}')
+    for row in guns:
+        lines.append(f'    static vector3 Route{row["identity"]}(int step){{switch(step){{')
+        lines.extend(f'        case {i}:return {vector(p)};' for i,p in enumerate(row['crew_route']))
+        lines.append('        }return (0,0,0);}')
+    lines.append('}');return ('\n'.join(lines)+'\n').encode()
+
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--check',action='store_true');args=parser.parse_args()
-    result=outputs();blob=(json.dumps(result,indent=2)+'\n').encode();path=ROOT/'assets/barracas_redesign/SIEGE.json'
-    if args.check:assert path.read_bytes()==blob,'Stale Barracas siege geometry'
-    else:path.write_bytes(blob)
+    result=outputs()
+    files={'assets/barracas_redesign/SIEGE.json':(json.dumps(result,indent=2)+'\n').encode(),
+           'src/caelum/world/CaelumBarracasSiegeData.zs':runtime(result)}
+    for name,blob in files.items():
+        path=ROOT/name
+        if args.check:assert path.read_bytes()==blob,'Stale Barracas siege geometry: '+name
+        else:path.write_bytes(blob)
     print(json.dumps({'guns':len(result['defending_guns']),'active':result['active_defending_guns'],'guards':len(result['guards']),'conflicts':result['placement_conflicts']}))
     if result['placement_conflicts']:raise SystemExit(1)
 

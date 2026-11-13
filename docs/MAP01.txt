@@ -147,6 +147,27 @@ Evidence: assets/validation_v5_16_2/barracas-forts/SUMMARY.json. The production
 map/controller and private house maps remain unchanged;600 deployment routes,
 three-front siege, Justice annex, ordinary interaction and performance remain.
 
+DEPLOYMENT.json now derives all 600 ground paths from the same assembled candidate
+cells, starting at each actual ResidentHouse doorway, including 69->70 relocation.
+The 9453 waypoints stay inside the perimeter and outside indoor footprints; shared
+forecourts/service passages remain usable even when conceptual lot envelopes
+include them. Excluding whole lots incorrectly disconnected the first route.
+Crew destinations are the 36 lower-flight approaches; 528 guard destinations retain
+their final formations. CaelumPortData/CityData/CityRoutes/PropertyRoutes select
+the generated artillery/ground metadata only in loaded revision4. This also
+covers direct CityRoutes consumers and formation passage direction. Original
+route bodies, private coordinates and old geometry remain unchanged.
+
+Fresh and reloaded native candidates each pass 600 routes/9453 points with 866538
+continuous TryMove samples using the defender body and exact zero-floor support.
+The probe is bounded per tic and ignores actors; it verifies geometry/runtime
+dispatch rather than real AI, moving crowds, scheduling or doors used normally.
+Source regeneration repeats exactly. Actual 600-body deployment and the three
+assault fronts still require integration before production activation. Evidence:
+assets/validation_v5_16_2/barracas-deployment/SUMMARY.json.
+Original active/stored-hub continuation also passes with this runtime; all 238
+packaged maps, including 160 private CAH interiors, remain byte-identical.
+
 The exterior coordinate source now supplies 160 rotated portal/return points and
 64 shop positions, selected only by a loaded revision-4 MAP03 controller. Private
 HouseOrigin, furniture, chest and inner-door coordinates remain unchanged even

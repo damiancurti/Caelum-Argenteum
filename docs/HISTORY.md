@@ -109,6 +109,23 @@ All attempts are retained in barracas-forts/SUMMARY.json. The fixture suppresses
 siege AI and ignores other test walkers; real deployment/crowds/firing coverage,
 performance, production activation and author acceptance remain unfinished.
 
+On 2026-11-13, the same candidate assembly supplied 600 exterior deployment routes
+with 9453 waypoints. The first authoring attempt excluded entire conceptual lots
+and disconnected a valid service network; excluding indoor footprints instead
+retained native-clear forecourts/alleys. The original 600 identities, private
+coordinates and resident 69->70 relocation remain. Revision4 data dispatch was
+added to artillery, guard/formation, CityRoutes and PropertyRoutes helpers;
+original geometry retains its unchanged route bodies. Both fresh and reloaded
+native probes pass 866538 continuous movement samples without geometry failures.
+These bounded actor-ignoring probes establish physical routes and loaded-map
+dispatch, not real 600-body AI/crowds or completed siege behavior. Evidence is in
+barracas-deployment/SUMMARY.json; production activation remains pending.
+The new runtime also passes continuation from the verified original active and
+stored-hub seeds, retaining eight original gates, Justice and all 160 original
+door/chest offsets. All 238 packaged maps, including 160 private interiors, remain
+byte-identical to the preceding runtime. This does not replace old-save testing
+against the eventual integrated city/controller.
+
 The author requested prevention of system sleep while away for several hours.
 A temporary system-only execution-state request is active during work, with a
 12-hour failsafe; it does not change the power plan or require the display on.

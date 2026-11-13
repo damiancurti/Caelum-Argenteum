@@ -21,7 +21,7 @@ class CaelumCityData : Object play
     const SHOP_COUNT = 64;
     static bool Enabled(){let p=CaelumPortSiege.Get();return p!=null && p.args[0]>=LAYOUT_REVISION;}
     const CREW_COUNT = 72;
-    static vector2 FormationInward(int guard){switch(guard){
+    static vector2 FormationInward(int guard){if(CaelumBarracasData.IsCurrent())return CaelumBarracasSiegeData.FormationInward(guard);switch(guard){
         case 0:return (0,1);
         case 1:return (0,1);
         case 2:return (0,1);
@@ -551,7 +551,7 @@ class CaelumCityData : Object play
         case 526:return (-1,0);
         case 527:return (-1,0);
         }return (0,0);}
-    static vector3 GuardStation(int i){switch(i){
+    static vector3 GuardStation(int i){if(CaelumBarracasData.IsCurrent())return CaelumBarracasSiegeData.GuardPosition(i);switch(i){
         case 140:return (-29456,-12840,0);
         case 141:return (-29496,-12840,0);
         case 142:return (-29536,-12840,0);

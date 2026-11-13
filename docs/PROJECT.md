@@ -21,6 +21,9 @@ the 12-active-gun distribution. Service placement/private-house return and exact
 old-city continuation pass; the artillery candidate also passes 72 isolated crew
 walks and all 528 guard posts. Ordinary transport, deployment, siege and final
 architecture remain to integrate. See MAP01/TASKS.
+The 600 exterior deployment routes are also generated and pass native continuous
+collision sampling in fresh/reloaded saves. This verifies geometry and dispatch,
+not 600-body AI/crowds; the production city remains unchanged.
 
 ## 5.16.1 - Folklore reference recovery (#453, catalogue approved)
 

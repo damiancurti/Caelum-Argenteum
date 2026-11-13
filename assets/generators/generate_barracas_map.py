@@ -176,12 +176,16 @@ def configure(port, layout, city, interior, out):
     apply_sky(port, layout, city, interior, exclusions)
 
 
+def assemble(out,compile_map=True):
+    return shell.generate(out,map_name='MAP03',configure=lambda p,d,c,i:configure(p,d,c,i,out),compile_map=compile_map)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args();out = args.output.resolve()
     out.relative_to(ROOT / 'build')
-    shell.generate(out, map_name='MAP03', configure=lambda p, d, c, i: configure(p, d, c, i, out))
+    assemble(out)
 
 
 if __name__ == '__main__':

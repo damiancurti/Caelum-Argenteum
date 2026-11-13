@@ -37,7 +37,7 @@ class Placement:
         self.port.room(min(p[0] for p in points),min(p[1] for p in points),
                        max(p[0] for p in points),max(p[1] for p in points),**kwargs)
 
-def generate(out,map_name=None,configure=None):
+def generate(out,map_name=None,configure=None,compile_map=True):
     """Reuse the approved shell; a candidate caller can add existing services."""
     out=Path(out).resolve()
     if not out.is_relative_to(ROOT/'build'):raise ValueError('The isolated preview must be written under build/.')
@@ -151,6 +151,7 @@ def generate(out,map_name=None,configure=None):
     start=data['plazas'][0]['polygon'];centre=[sum(p[i] for p in start)/len(start) for i in (0,1)]
     port.prop(1,*centre,angle=180);port.prop(30950,*centre,args=(1,0))
     if configure is not None:configure(port,data,city,interior)
+    if not compile_map:return port,data,facades,classes,bindings,editors,None
     port.write(out)
     body=json.loads((ROOT/'assets/map02_maze/LAYOUT.json').read_text())
     max_height=body['largest_supported_height'];max_radius=body['largest_player_radius']

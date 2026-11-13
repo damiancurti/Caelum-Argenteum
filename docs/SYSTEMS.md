@@ -16,6 +16,11 @@ resource, ownership, offscreen-census or occupation rule changes are authorized
 by this map revision. Artillery geometry/isolated access is tested; production
 three-front deployment and reserve activation remain unfinished. MAP01/TASKS
 and barracas-forts/SUMMARY.json distinguish these stages from acceptance.
+Revision4 now selects generated ground routes and artillery/formation coordinates
+without changing the original data tables for earlier geometry. All 600 resident
+identities and the existing central-house relocation are retained. Isolated
+fresh/reloaded geometric traversal passes; real crowd/AI deployment, machine
+ownership and battle outcomes remain part of the unfinished siege integration.
 
 ## 5.15.4 / #451 - Occupation, recovery and persistent consequences
 

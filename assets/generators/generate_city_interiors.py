@@ -138,8 +138,8 @@ def runtime(city, port=None, south=None):
         cx=sum(points[i][0] for i in group)/len(group);cy=sum(points[i][1] for i in group)/len(group)
         direction=min([(cx-x1,(1,0)),(x2-cx,(-1,0)),(cy-y1,(0,1)),(y2-cy,(0,-1))])[1]
         for i in group:inward[i]=direction
-    code+='    static vector2 FormationInward(int guard){switch(guard){\n'+''.join(f'        case {i}:return ({d[0]},{d[1]});\n' for i,d in sorted(inward.items()))+'        }return (0,0);}\n'
-    code+='    static vector3 GuardStation(int i){switch(i){\n'+''.join(f'        case {i}:return ({",".join(map(str,p))});\n' for i,p in DATA['guard_station_corrections'].items())+'        }return CaelumPortData.GuardPosition(i);}\n'
+    code+='    static vector2 FormationInward(int guard){if(CaelumBarracasData.IsCurrent())return CaelumBarracasSiegeData.FormationInward(guard);switch(guard){\n'+''.join(f'        case {i}:return ({d[0]},{d[1]});\n' for i,d in sorted(inward.items()))+'        }return (0,0);}\n'
+    code+='    static vector3 GuardStation(int i){if(CaelumBarracasData.IsCurrent())return CaelumBarracasSiegeData.GuardPosition(i);switch(i){\n'+''.join(f'        case {i}:return ({",".join(map(str,p))});\n' for i,p in DATA['guard_station_corrections'].items())+'        }return CaelumPortData.GuardPosition(i);}\n'
     code+='    static vector3 HouseOrigin(int i){switch(i){\n'
     for i,b in enumerate(homes):
         code+=f'        case {i}:return ({b["bounds"][0]},{b["bounds"][1]},0);\n'
@@ -183,8 +183,8 @@ def runtime(city, port=None, south=None):
     if port is not None:
         routes=deployment_routes(port,city,south)
         route_code='// Rutas de suelo calculadas desde la geometría autoral; escaleras en CaelumPortData.\nclass CaelumCityRoutes : Object play\n{\n'
-        route_code+='    static int Count(int soldier){switch(soldier){\n'+''.join(f'        case {i}:return {len(r)};\n' for i,r in enumerate(routes))+'        }return 0;}\n'
-        route_code+='    static vector3 Point(int soldier,int step){switch(soldier){\n'+''.join(f'        case {i}:return Route{i}(step);\n' for i in range(len(routes)))+'        }return (0,0,0);}\n'
+        route_code+='    static int Count(int soldier){if(CaelumBarracasData.IsCurrent())return CaelumBarracasDeployment.Count(soldier);switch(soldier){\n'+''.join(f'        case {i}:return {len(r)};\n' for i,r in enumerate(routes))+'        }return 0;}\n'
+        route_code+='    static vector3 Point(int soldier,int step){if(CaelumBarracasData.IsCurrent())return CaelumBarracasDeployment.Point(soldier,step);switch(soldier){\n'+''.join(f'        case {i}:return Route{i}(step);\n' for i in range(len(routes)))+'        }return (0,0,0);}\n'
         for i,r in enumerate(routes):
             route_code+=f'    static vector3 Route{i}(int step){{switch(step){{\n'+''.join(f'        case {j}:return ({",".join(map(str,p))});\n' for j,p in enumerate(r))+'        }return (0,0,0);}\n'
         route_code+='}\n'

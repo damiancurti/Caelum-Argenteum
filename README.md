@@ -40,6 +40,8 @@ merchants,96 factory stations,four vehicles and four relocated household objects
 Its siege is suppressed by a disposable test controller; it is not the production city.
 The artillery candidate passes 72 isolated operator walks,528 guard posts and648
 cannon-component clearances. Real deployment, crowd movement and siege remain pending.
+The 600 exterior deployment paths also pass continuous native collision sampling
+in fresh/reloaded saves; old geometry retains its original route tables.
 
 V5.15 includes the [battle director](assets/validation_v5_15_0/RESULTS.md)
 (#447, PR635), [Unitarian command](assets/validation_v5_15_1/RESULTS.md)

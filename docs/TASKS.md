@@ -40,6 +40,11 @@ routes and closed-perimeter isolation. Connect 600 house deployments, three-fron
 approaches/retreats and active/reserve ram handling before activating the city.
 These geometry checks do not establish crowded movement, firing coverage or
 performance. Evidence: validation_v5_16_2/barracas-forts/SUMMARY.json.
+The 600 ground paths are now generated/tested: 9453 waypoints and 866538 native
+TryMove samples pass in both fresh and reloaded candidates. Runtime helpers
+dispatch by revision, retaining old route bodies and private house coordinates.
+Validate actual resident materialization, AI and crowd movement with the full
+siege controller; continuous geometric sampling is not that acceptance.
 
 ## 5.16.1 - Bestiary source import (#453)
 
