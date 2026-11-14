@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.34** - 2026-11-14.
+Documentation version: **5.17.35** - 2026-11-14.
+
+## #713 - Three birds in the regional inspection room (5.17.35)
+
+Eight displays across four approved regional grounds, four repeatable fixture
+files and115 native fresh/reload/walking checks pass. CA713-AVIAN-GALLERY-01
+retains author review of the added figures, framing, seams and third boundary.
+CA709-NATIVE-GALLERY-01 and individual model checks remain pending. No art,
+campaign encounter or broader character/modular-equipment acceptance is inferred.
 
 ## #711 - Cachiru, Kakuy and Kelenken models (5.17.34)
 

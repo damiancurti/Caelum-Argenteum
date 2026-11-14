@@ -1,0 +1,200 @@
+{
+  "issue": 713,
+  "parent_issue": 463,
+  "version": "5.17.35",
+  "date": "2026-11-14",
+  "author_accepted": false,
+  "scope": "Optional CA709G expanded with Cachiru/Kakuy in NOA and Kelenken in Patagonia. Eight displays,seven species,four unchanged grounds,fifteen controls. Original five positions/three plots and other galleries retained.",
+  "runtime": {
+    "sha256": "d43efb39a7b94ed3d7cab822968673e69585b418281b6ce72152ac11d07b4a2b",
+    "source_entries": 18394,
+    "exact_source_bytes": true
+  },
+  "baseline": {
+    "sha256": "6f80f3359e65261d9c4d739eee71352ceec0fbec031a48508a3f0deef7b3e702",
+    "changed_resources": [
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "all_other_runtime_bytes_identical": true
+  },
+  "iterations": "First expanded fixture passes37/78 native assertions. The original five-display layout remains local archived evidence. All model and texture bytes are unchanged.",
+  "static": {
+    "repeated_gallery_files": 4,
+    "repeat_byte_identical": true,
+    "approved_allocations_complete": true,
+    "nonoverlapping_native_bodies": true,
+    "exact_model_and_material_reuse": true,
+    "project_validation_passed": true
+  },
+  "native": {
+    "issue": 713,
+    "scope": "Isolated visual gallery, native movement/animation and saved references; no combat or campaign acceptance.",
+    "runtime_sha256": "d43efb39a7b94ed3d7cab822968673e69585b418281b6ce72152ac11d07b4a2b",
+    "materials_sha256": null,
+    "fixture_sha256": "d8dad59f1e0bee0e4f47fcbce3b7e26a6d301c184a53b900cb09e0b20bd9ee6c",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "fresh",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 37,
+        "expected_assertions": 37
+      },
+      {
+        "phase": "reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 78,
+        "expected_assertions": 78
+      }
+    ],
+    "captures": {
+      "cachiru.png": "17f28e9e24be8ba4fe3bd73281f50fb0749c07c45c55443af4e92519f140dcfc",
+      "cuero.png": "bef4c6210186d9cfe3c0cd4e40b99fdf4cd93e2e66a96007eedc8cc51e8907ab",
+      "kakuy.png": "6e5d2c8655e21a994bc1fe5ec0585c8ea46551ba35cb80359069a7db8f1a0595",
+      "kelenken.png": "88f156effa2430860bde3ada4df61f23aac96f55116f755f4645458bd9caff12",
+      "litoral-tiles.png": "8f4c447278acf37ca33fe800d2557650784a87f265d06c12b65f59495c0ea142",
+      "litoral.png": "e49890c6bc4738581927fcfa502ceeeb5cd1a6c61814ca26ba52cdd0b623280d",
+      "nahuelito.png": "580b28a2fca694477e8879a24137ab807f1c66bccf03df00ccfec5169489f777",
+      "noa-tiles.png": "1e0956a422d07c8bf8faaca30bbac9a7cafab1e66bb59a8d7e4999ba110658ca",
+      "overview.png": "5e9acec57e307e14eb3d7853f577d70090587faaf451166989171e687c5a01d1",
+      "patagonia-tiles.png": "bcb0580b6d883f78b6198ac0a8fc4af17d8221861fe1ef339cd52883ef8cb294",
+      "patagonia.png": "c6cace6b392eed1df6f294d0b2c4a89298b2d31439afdca7794e0ecb9fb23e00",
+      "peuchen.png": "77461fb058f43758b3ebf119b74653e716362d24c0b2a0260dab0a875bd4526a",
+      "reload.png": "5f55ede63a93b4a59b402cb8c52337eaa8ef0ed720e70108552d088df293db3f",
+      "selva-tiles.png": "e8c3bcfe31e3c73f69552af8367d8f0c17cbd7b305097ce3443cce412b84aacc",
+      "selva.png": "22a8e8feed1d56166096cdb00385e31da6ab6b45e9d9ee9f7a3f5a6374f3bf95"
+    }
+  },
+  "presentation": {
+    "issue": 713,
+    "scope": "One isolated regional gallery cohort; no comparison, repeatability or campaign acceptance.",
+    "baseline_sha256": "d43efb39a7b94ed3d7cab822968673e69585b418281b6ce72152ac11d07b4a2b",
+    "runtime_sha256": "d43efb39a7b94ed3d7cab822968673e69585b418281b6ce72152ac11d07b4a2b",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+    "runs": [
+      {
+        "kind": "regional-materials",
+        "pid": 36252,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 271334986.80289996,
+          "END": 271355009.92440003
+        },
+        "fixture_sha256": "d8dad59f1e0bee0e4f47fcbce3b7e26a6d301c184a53b900cb09e0b20bd9ee6c",
+        "bench_sha256": "62b9bc34be8a4307f762df4450645a843dc05b582a83004934dfc7749d0e5cfe",
+        "passed": true,
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.571201714285714,
+          "p50_ms": 28.5697,
+          "p95_ms": 29.0262,
+          "p99_ms": 29.1357,
+          "max_ms": 29.3407
+        },
+        "presentation": {
+          "pid": 36252,
+          "trace_sha256": "3467efb2a26b1ea92b67c26d55c6faafb06fd16a54b83ad6de56c9fe2aa55372",
+          "rows": 37997,
+          "scene_presents": 27235,
+          "mean_present_fps": 1554.2427376869011,
+          "present_intervals": {
+            "samples": 27234,
+            "mean_ms": 0.6434001432030161,
+            "p50_ms": 0.6131999492645264,
+            "p95_ms": 0.8552999496459961,
+            "p99_ms": 1.0706999897956848,
+            "max_ms": 1.7369000315666199
+          },
+          "native_call_duration": {
+            "samples": 27235,
+            "mean_ms": 0.07564913538238949,
+            "p50_ms": 0.07489997148513794,
+            "p95_ms": 0.09869998693466187,
+            "p99_ms": 0.13329994678497314,
+            "max_ms": 0.513700008392334
+          }
+        }
+      }
+    ]
+  },
+  "reviewed": "Expanded overview, all three avian closeups, NOA tiling, Patagonia view, reloaded overview and presentation cohort; unchanged prior closeups/material bytes reuse #709 evidence.",
+  "reused_evidence": "Model/combat continuity from #461/#660/#662/#708/#711 applies to identical native resources. Regional texture bytes and original source/provenance remain unchanged from #463/#682.",
+  "environment": {
+    "os": "Windows 11 Pro 26200",
+    "cpu": "Ryzen 9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX 3070 Ti",
+    "engine": "GZDoom 4.14.2",
+    "backend": "Vulkan",
+    "resolution": [
+      1280,
+      720
+    ],
+    "background_unpaused": true,
+    "audio": 0.05,
+    "presentation_uncapped": true,
+    "vsync": false
+  },
+  "qualifications": [
+    "Optional isolated fixture, no campaign destination, encounters, flight, balance or production AI changes.",
+    "Friendly/passive displays advance native idle states. Only the observer movement-noise timer is suppressed; native speed is unchanged. No actor scans or forced position resets.",
+    "Save/load coverage is for this new isolated fixture, not migration of older optional gallery saves.",
+    "One700-tic distant-overview measurement is queue timing, not GPU/display, repeatability, comparative cost, close-up budget or campaign/crowd acceptance.",
+    "No new image or model generation. Seven candidate species retain their pending author art and ordinary-play checks.",
+    "CA709-NATIVE-GALLERY-01 and CA713-AVIAN-GALLERY-01 remain pending. No PK3/WAD, executable, DLL, IWAD or save committed."
+  ],
+  "files": {
+    "GALLERY_MANIFEST.json": "13e02d812c00c556c6cde26b95be5ac934919faca622ca90c03001b2148e75f5",
+    "issue713-build01.log": "bf4620193c25df6192e8c4bcd705de407b75305c67b48af7da86df166bafd268",
+    "issue713-previous-gallery.json": "75b556a23bb67e692fd87fae03ec5239f9c9ef80349ed8ab627e030c1bd4ce88",
+    "issue713-repeat-final.json": "51c4607b58415693a19c262821ed55a887325b0de374ad83d7abdf20e875ee23",
+    "native/cachiru.png": "17f28e9e24be8ba4fe3bd73281f50fb0749c07c45c55443af4e92519f140dcfc",
+    "native/cuero.png": "bef4c6210186d9cfe3c0cd4e40b99fdf4cd93e2e66a96007eedc8cc51e8907ab",
+    "native/fixture-source/MAPINFO.txt": "0489fac688b933b7ad5c3dfe0c895465551f814ba0f5f2b850ba4d9679c275fe",
+    "native/fixture-source/ZSCRIPT.txt": "5a68a378a7f11a39809db2ca358835f60fb7c9ff0d2da07b94db2dd707ad6ad4",
+    "native/fresh-process.log": "23d6c92a3bbba38b974699eec6dcebffc0807975b0f93c1669c152cac3fd490f",
+    "native/fresh.cfg": "ca5aacd02ee1601c961b52e743346a002c6470525ddbff00d5f3ae65cf4ef592",
+    "native/fresh.log": "9f94e948d3a890befbadcc60e91537d3dafc344458bebf553952ab952eaec95f",
+    "native/gallery.zs": "90ca357563c3328544b15b24d3b37b7f433d9fbc4a82b717eadc42ce2f163b7c",
+    "native/GALLERY_MANIFEST.json": "13e02d812c00c556c6cde26b95be5ac934919faca622ca90c03001b2148e75f5",
+    "native/kakuy.png": "6e5d2c8655e21a994bc1fe5ec0585c8ea46551ba35cb80359069a7db8f1a0595",
+    "native/kelenken.png": "88f156effa2430860bde3ada4df61f23aac96f55116f755f4645458bd9caff12",
+    "native/litoral-tiles.png": "8f4c447278acf37ca33fe800d2557650784a87f265d06c12b65f59495c0ea142",
+    "native/litoral.png": "e49890c6bc4738581927fcfa502ceeeb5cd1a6c61814ca26ba52cdd0b623280d",
+    "native/nahuelito.png": "580b28a2fca694477e8879a24137ab807f1c66bccf03df00ccfec5169489f777",
+    "native/noa-tiles.png": "1e0956a422d07c8bf8faaca30bbac9a7cafab1e66bb59a8d7e4999ba110658ca",
+    "native/overview.png": "5e9acec57e307e14eb3d7853f577d70090587faaf451166989171e687c5a01d1",
+    "native/patagonia-tiles.png": "bcb0580b6d883f78b6198ac0a8fc4af17d8221861fe1ef339cd52883ef8cb294",
+    "native/patagonia.png": "c6cace6b392eed1df6f294d0b2c4a89298b2d31439afdca7794e0ecb9fb23e00",
+    "native/peuchen.png": "77461fb058f43758b3ebf119b74653e716362d24c0b2a0260dab0a875bd4526a",
+    "native/reload-process.log": "74ba679586342db741de03774eb45dec14d03c520ae4a74812ed6eb0569767b3",
+    "native/reload.cfg": "9026063511562a2a658304b5ad7a6c65ae3eb8e721c0180d36193a29b1dae6ca",
+    "native/reload.log": "b3f9e761876e5360a4c01bee1c91ba8b72606556635f29787332c629f8287d68",
+    "native/reload.png": "5f55ede63a93b4a59b402cb8c52337eaa8ef0ed720e70108552d088df293db3f",
+    "native/RESULTS.json": "98463abd958ac4d709472239949f11938766df471855a3f057a0f34730b6af44",
+    "native/selva-tiles.png": "e8c3bcfe31e3c73f69552af8367d8f0c17cbd7b305097ce3443cce412b84aacc",
+    "native/selva.png": "22a8e8feed1d56166096cdb00385e31da6ab6b45e9d9ee9f7a3f5a6374f3bf95",
+    "native/session.ini": "ef218d1adf037c259b7126b408a72795b75affaa5bd4d5db8b6246c21822d1f6",
+    "native/TEXTMAP.txt": "7f60a1560176b49442b641b138992f73d7a821b28a6622a847c3a2abbe67d575",
+    "presentation/regional-materials/commands.cfg": "d86613b4f3d261374895782c85184adae127c75258cfceee5705e524812c1859",
+    "presentation/regional-materials/engine.log": "e67eda3688b9faff2357f3cb11943346ca45ffb662e47310597d14e1b6eb2ab1",
+    "presentation/regional-materials/fixture-source/MAPINFO.txt": "0489fac688b933b7ad5c3dfe0c895465551f814ba0f5f2b850ba4d9679c275fe",
+    "presentation/regional-materials/fixture-source/ZSCRIPT.txt": "5a68a378a7f11a39809db2ca358835f60fb7c9ff0d2da07b94db2dd707ad6ad4",
+    "presentation/regional-materials/gallery.zs": "90ca357563c3328544b15b24d3b37b7f433d9fbc4a82b717eadc42ce2f163b7c",
+    "presentation/regional-materials/GALLERY_MANIFEST.json": "13e02d812c00c556c6cde26b95be5ac934919faca622ca90c03001b2148e75f5",
+    "presentation/regional-materials/presents.csv": "3467efb2a26b1ea92b67c26d55c6faafb06fd16a54b83ad6de56c9fe2aa55372",
+    "presentation/regional-materials/process.log": "7e388334f7c3448833f491ecf644dc4f46655c90737485ae2e9ba05f08abb4b1",
+    "presentation/regional-materials/scene.png": "5e9acec57e307e14eb3d7853f577d70090587faaf451166989171e687c5a01d1",
+    "presentation/regional-materials/session.ini": "bd07aabc2b7b82ed7dff76bac2293f0c3c2b3ad84329675d56e038bc92780ebf",
+    "presentation/regional-materials/TEXTMAP.txt": "7f60a1560176b49442b641b138992f73d7a821b28a6622a847c3a2abbe67d575",
+    "presentation/RESULTS.json": "583fda2290e0c8492df85433bc9564f3655fff066df8b5ed640ed338e526a4e6",
+    "validation-final.json": "8f91e47fa7c4da1f245bcb016ff22509e33b68439c62cf1674baf00e4859325c"
+  }
+}

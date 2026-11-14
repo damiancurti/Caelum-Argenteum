@@ -1,6 +1,15 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.34** - 2026-11-14.
+Documentation version: **5.17.35** - 2026-11-14.
+
+## 5.17.35 - Extended native gallery controls (#713)
+
+Current CA709G: F1 overview; F2/F3 Litoral/Selva; F4 Patagonia; F5 walk;
+F6 Cuero; F7 Nahuelito; F8 Cachiru; F9 Kakuy; F11 Peuchen; F12 Kelenken.
+Number keys1/2/3/4 inspect Litoral/Selva/Patagonia/NOA ground tiling, replacing
+the older F8-F10 material bindings. Eight Friendly/passive native figures
+retain idle animation. Only this diagnostic observer's footsteps are silent;
+production movement, perception, hostility and regional population are unchanged.
 
 ## 5.17.33 - Optional native regional gallery controls (#709)
 
