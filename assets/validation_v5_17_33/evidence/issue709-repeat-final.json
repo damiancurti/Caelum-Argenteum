@@ -1,0 +1,10 @@
+{
+  "issue": 709,
+  "files": {
+    "gallery.pk3": "76b0e85be98b5cb12b9ef7773fc6be8b8c4c71f1f513754e3be817f6c1e049f3",
+    "gallery.zs": "f1fa75a858e8c155f3b75fe68cdb08d9a373f5de83f365913ba8ccad87929366",
+    "GALLERY_MANIFEST.json": "4c19a6f0a74541e4344d82d3f941e9cba25f01b8ef6c2b067133f23930d10a6f",
+    "TEXTMAP.txt": "41a51e63d40aaa44367e0fdeff103b786dcf6941ff5b802806bb2175aa9ec449"
+  },
+  "byte_identical": true
+}

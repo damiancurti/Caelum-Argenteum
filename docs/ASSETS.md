@@ -1,6 +1,45 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.32** - 2026-11-14.
+Documentation version: **5.17.33** - 2026-11-14.
+
+## 5.17.33 - Native Litoral, Selva and Patagonia gallery (#709, parent #463)
+
+Optional CA709G shows the current native Pombero in Litoral and Selva, with
+Cuero, Nahuelito and Peuchen in Patagonia. Five displays use the existing three
+regional ground materials. The original CA463G pilot and CA682G extended
+galleries remain intact. No model or raster bytes change. GALLERY.json under
+assets/source/art/regional_gallery_709 owns positions, views and exact export
+bindings; PROVENANCE.json fingerprints reused sources. The fixture reuses the
+existing map/event geometry and silent-observer pattern (CA-KP-236).
+
+Run python assets/validation_v5_17_33/run_gallery.py --runtime
+build/caelum_argenteum_dev.pk3 --output build/native-regions-author-01 --interactive.
+F1 overview, F2 Litoral, F3 Selva, F4 Patagonia, F5 walk, F6 Cuero, F7 Nahuelito,
+F8-F10 regional ground tiling and F11 Peuchen. Friendly/passive diagnostic
+figures retain native idle animation. The observer movement-noise timer alone
+is muted; native speed, collision and production perception remain unchanged.
+
+Four fixture files repeat byte-for-byte. Static validation checks approved
+allocations, exact native model/material hashes, bound actor classes, plot
+containment and nonoverlapping collision bodies. Native fresh/reload phases
+pass 25/54 assertions, including saved identities/positions, idle advancement,
+walking, silent-step serial and the 420-tic crossing of both boundaries.
+The first room passes the same functional checks but its overview shows
+a gray void because the camera is outside the map. The overview was moved
+inside and the Cuero/Nahuelito views brought closer; final fresh/reload checks pass
+again. Earlier captures/layout and timing remain evidence. Overview, regional
+closeups, tiled grounds, reload and final presentation were inspected. Existing model/combat checks remain applicable to identical bytes.
+
+One 700-tic five-display overview records 1723.07 queue presents/s, p95 0.8020 ms, p99 0.9610 ms; mean simulation 28.5709 ms/tic.
+Windows 11 Pro 26200, Ryzen 9 5950X, 32 GB, RTX 3070 Ti; GZDoom 4.14.2,
+Vulkan 1280x720,
+uncapped/vsync off, background unpaused and audio 5%. Small projected figures
+and one queue sample establish no comparative cost, close-up budget,
+repeatability, GPU/display or city/siege acceptance. All
+18,386 runtime entries match src; only two release
+diagnostics differ from #708. Evidence: assets/validation_v5_17_33/evidence/SUMMARY.json.
+CA709-NATIVE-GALLERY-01 and prior art checks remain pending. This fixture is
+not a campaign destination or completion of the broader character/equipment batch.
 
 ## 5.17.32 - Reference-led Peuchen combat model (#708, parent #461)
 

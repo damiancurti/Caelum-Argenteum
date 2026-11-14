@@ -1,6 +1,13 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.32** - 2026-11-14.
+Documentation version: **5.17.33** - 2026-11-14.
+
+## #709 - Current native models in regional gallery (5.17.33)
+
+The separate CA709G inspection room reuses four species and three existing
+ground materials. Four deterministic exports and 79 native fresh/reload/walking
+checks pass. CA709-NATIVE-GALLERY-01 retains author review. Earlier art checks,
+remaining models, regions, modular equipment and campaign content stay pending.
 
 ## #708 - Reference-led Peuchen model (5.17.32)
 

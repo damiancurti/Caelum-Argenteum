@@ -1,6 +1,14 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.32** - 2026-11-14.
+Documentation version: **5.17.33** - 2026-11-14.
+
+## 5.17.33 - Native regional inspection room (#709)
+
+CA709G places five current native displays across Litoral, Selva and Patagonia:
+Pombero, Cuero, Nahuelito and Peuchen. Existing materials/models and both earlier
+galleries remain unchanged. Four repeatable fixture files and 79 native
+fresh/reload/movement/idle assertions pass; one qualified presentation sample
+is recorded. CA709-NATIVE-GALLERY-01 and broader campaign/3D work remain pending.
 
 ## 5.17.32 - Peuchen native combat presentation (#708)
 
