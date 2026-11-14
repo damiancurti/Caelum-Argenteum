@@ -1,6 +1,20 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.40** - 2026-11-14.
+Documentation version: **5.17.41** - 2026-11-14.
+
+## 5.17.41 - Weapon assembly components (#725, 2026-11-14)
+
+Added nine native crafting drops for materials25/26/27/30/31/32/33/34/35 and
+all27 tiers, preserving gameplay and icons. New image_gen leather/fiber pixels
+and exact prompt/provenance complement unchanged #723 metals. Initial native
+review prompted twisted strands, buckle clearance, a diamond point and open
+mechanical supports; prior sources/previews remain retained.83 closed solids,
+75 contacts,75 opening rays,23 repeated exports and3,893 native assertions pass.
+One qualified nine-object pair records 1006.19/998.93 queue presents/s, p95
+1.1873/1.2344 ms and p99 1.4033/1.3956 ms; small-scene queue-only limits apply.
+Evidence: assets/validation_v5_17_41/evidence/SUMMARY.json.
+CA725-ASSEMBLY-COMPONENTS-01 originates here and remains pending; broader
+delivery and author acceptance are not complete.
 
 ## 5.17.40 - Metal weapon components (#723, 2026-11-14)
 

@@ -12,8 +12,8 @@ except ImportError:
     from validate_inventory_gloves_models import inside,ray_hits
 
 
-def inspect_geometry(root=ROOT,kind='blade'):
-    source=root/'assets/source/art/inventory_models_647/weapon_components'
+def inspect_geometry(root=ROOT,kind='blade',source_kind='weapon_components'):
+    source=root/'assets/source/art/inventory_models_647'/source_kind
     config=json.loads((source/'DESIGN.json').read_text());report=json.loads((source/'EXPORT.json').read_text())
     family=config['families'][kind];record=report['variants'][kind]
     points=[];groups=defaultdict(list);group=None;errors=[];expected_native=Counter();solids={}

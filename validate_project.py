@@ -33,6 +33,7 @@ from assets.generators.validate_inventory_chainmail_models import validate as in
 from assets.generators.validate_inventory_chains_models import validate as inventory_chains_problems
 from assets.generators.validate_inventory_wood_components_models import validate as inventory_wood_components_problems
 from assets.generators.validate_inventory_weapon_components_models import validate as weapon_component_problems
+from assets.generators.validate_inventory_assembly_components_models import validate as assembly_component_problems
 from assets.generators.validate_inventory_gems_models import validate as inventory_gem_problems
 from assets.generators.validate_inventory_book_bindings import validate as inventory_book_problems
 from assets.generators.validate_inventory_jewelry_models import validate as inventory_jewelry_problems
@@ -140,6 +141,7 @@ def validate(root):
     errors.extend(inventory_chains_problems(root))
     errors.extend(inventory_wood_components_problems(root))
     errors.extend(weapon_component_problems(root))
+    errors.extend(assembly_component_problems(root))
     errors.extend(inventory_ingot_problems(root))
     errors.extend(regional_material_problems(root))
     errors.extend(beast_regional_material_problems(root))

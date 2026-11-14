@@ -1,6 +1,14 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.40** - 2026-11-14.
+Documentation version: **5.17.41** - 2026-11-14.
+
+## 5.17.41 - Weapon assembly drops (#725)
+
+Nine native crafting models cover27 existing type/tier cases. Geometry,
+23 deterministic exports and3,893 native continuity assertions pass; ASSETS
+records qualified presentation evidence. CA725-ASSEMBLY-COMPONENTS-01 keeps
+art and ordinary inventory/crafting acceptance pending. Other dropped items,
+characters, equipped/first-person models and the campaign remain incomplete.
 
 ## 5.17.40 - Metal crafting drops (#723)
 
