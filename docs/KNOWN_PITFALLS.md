@@ -4,6 +4,30 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-241 - Verify linked assemblies without intersecting their volumes
+
+Status/evidence: STATIC-VERIFIED serialized geometry and ENGINE-OBSERVED
+candidate views, #706, 2026-11-14. Independent closed components are insufficient
+to establish a connected chain. Positive-volume attachment witnesses used for
+solid mounted patches are unsuitable for freely interlaced rings: intersecting
+wire surfaces would be a defect.
+
+Recover polygon centerlines from the final editable vertex rings. Count signed
+crossings through each loop's oriented polygon disk, check both directions,
+compare the complete link graph and require connectivity. Separately bound
+each triangulated wire inside segment capsules; exact segment distances must
+leave positive clearance after native quantization. The 55 chainmail rings
+have 90 links and minimum checked clearance 0.574569
+model units against a 0.027065 allowance. Compare actual
+native triangles against the independently checked quantized mesh. This proves
+the current static pose; it does not certify future animation or cloth physics.
+
+Both 82-assertion previews passed inventory checks, yet the first looked flat.
+Mapping the unchanged iron gradient around wire thickness improved the second
+candidate. Topology, visual inspection and author art acceptance remain
+separate. See validate_inventory_chainmail_models.py and
+assets/validation_v5_17_31/evidence. Earlier model families are unchanged.
+
 ## CA-KP-240 - Separate painted alpha from a prop's solid silhouette
 
 Status/evidence: STATIC-VERIFIED geometry and ENGINE-OBSERVED visual correction,

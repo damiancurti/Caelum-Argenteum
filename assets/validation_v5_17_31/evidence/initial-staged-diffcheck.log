@@ -1,0 +1,59 @@
+assets/validation_v5_17_31/evidence/continuity/baseline-process.log:2: trailing whitespace.
++    
+assets/validation_v5_17_31/evidence/continuity/baseline-process.log:33: trailing whitespace.
++  Name: AMD Ryzen 9 5950X 16-Core Processor 
+assets/validation_v5_17_31/evidence/continuity/baseline.log:32: trailing whitespace.
++  Name: AMD Ryzen 9 5950X 16-Core Processor 
+assets/validation_v5_17_31/evidence/continuity/candidate-fresh-process.log:2: trailing whitespace.
++    
+assets/validation_v5_17_31/evidence/continuity/candidate-fresh-process.log:33: trailing whitespace.
++  Name: AMD Ryzen 9 5950X 16-Core Processor 
+assets/validation_v5_17_31/evidence/continuity/candidate-fresh.log:32: trailing whitespace.
++  Name: AMD Ryzen 9 5950X 16-Core Processor 
+assets/validation_v5_17_31/evidence/continuity/candidate-reload-process.log:2: trailing whitespace.
++    
+assets/validation_v5_17_31/evidence/continuity/candidate-reload-process.log:33: trailing whitespace.
++  Name: AMD Ryzen 9 5950X 16-Core Processor 
+assets/validation_v5_17_31/evidence/continuity/candidate-reload.log:32: trailing whitespace.
++  Name: AMD Ryzen 9 5950X 16-Core Processor 
+assets/validation_v5_17_31/evidence/continuity/old-save-load-process.log:2: trailing whitespace.
++    
+assets/validation_v5_17_31/evidence/continuity/old-save-load-process.log:33: trailing whitespace.
++  Name: AMD Ryzen 9 5950X 16-Core Processor 
+assets/validation_v5_17_31/evidence/continuity/old-save-load.log:32: trailing whitespace.
++  Name: AMD Ryzen 9 5950X 16-Core Processor 
+assets/validation_v5_17_31/evidence/continuity/rollback-load-process.log:2: trailing whitespace.
++    
+assets/validation_v5_17_31/evidence/continuity/rollback-load-process.log:33: trailing whitespace.
++  Name: AMD Ryzen 9 5950X 16-Core Processor 
+assets/validation_v5_17_31/evidence/continuity/rollback-load.log:32: trailing whitespace.
++  Name: AMD Ryzen 9 5950X 16-Core Processor 
+assets/validation_v5_17_31/evidence/continuity/session.ini:976: new blank line at EOF.
+assets/validation_v5_17_31/evidence/iterations/visual01/session.ini:976: new blank line at EOF.
+assets/validation_v5_17_31/evidence/iterations/visual01/visual-process.log:2: trailing whitespace.
++    
+assets/validation_v5_17_31/evidence/iterations/visual01/visual-process.log:34: trailing whitespace.
++  Name: AMD Ryzen 9 5950X 16-Core Processor 
+assets/validation_v5_17_31/evidence/iterations/visual01/visual.log:33: trailing whitespace.
++  Name: AMD Ryzen 9 5950X 16-Core Processor 
+assets/validation_v5_17_31/evidence/iterations/visual02/session.ini:976: new blank line at EOF.
+assets/validation_v5_17_31/evidence/iterations/visual02/visual-process.log:2: trailing whitespace.
++    
+assets/validation_v5_17_31/evidence/iterations/visual02/visual-process.log:34: trailing whitespace.
++  Name: AMD Ryzen 9 5950X 16-Core Processor 
+assets/validation_v5_17_31/evidence/iterations/visual02/visual.log:33: trailing whitespace.
++  Name: AMD Ryzen 9 5950X 16-Core Processor 
+assets/validation_v5_17_31/evidence/presentation/models-1/engine.log:32: trailing whitespace.
++  Name: AMD Ryzen 9 5950X 16-Core Processor 
+assets/validation_v5_17_31/evidence/presentation/models-1/process.log:2: trailing whitespace.
++    
+assets/validation_v5_17_31/evidence/presentation/models-1/process.log:33: trailing whitespace.
++  Name: AMD Ryzen 9 5950X 16-Core Processor 
+assets/validation_v5_17_31/evidence/presentation/models-1/session.ini:976: new blank line at EOF.
+assets/validation_v5_17_31/evidence/presentation/sprites-1/engine.log:32: trailing whitespace.
++  Name: AMD Ryzen 9 5950X 16-Core Processor 
+assets/validation_v5_17_31/evidence/presentation/sprites-1/process.log:2: trailing whitespace.
++    
+assets/validation_v5_17_31/evidence/presentation/sprites-1/process.log:33: trailing whitespace.
++  Name: AMD Ryzen 9 5950X 16-Core Processor 
+assets/validation_v5_17_31/evidence/presentation/sprites-1/session.ini:976: new blank line at EOF.

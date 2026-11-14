@@ -1,0 +1,139 @@
+{
+  "schema_revision": 1,
+  "issue": 706,
+  "parent_issue": 647,
+  "status": "candidate_pending_author_review",
+  "variants": {
+    "chainmail": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "ring_00_00",
+        "ring_00_01",
+        "ring_00_02",
+        "ring_00_03",
+        "ring_00_04",
+        "ring_01_00",
+        "ring_01_01",
+        "ring_01_02",
+        "ring_01_03",
+        "ring_01_04",
+        "ring_02_00",
+        "ring_02_01",
+        "ring_02_02",
+        "ring_02_03",
+        "ring_02_04",
+        "ring_03_00",
+        "ring_03_01",
+        "ring_03_02",
+        "ring_03_03",
+        "ring_03_04",
+        "ring_04_00",
+        "ring_04_01",
+        "ring_04_02",
+        "ring_04_03",
+        "ring_04_04",
+        "ring_05_00",
+        "ring_05_01",
+        "ring_05_02",
+        "ring_05_03",
+        "ring_05_04",
+        "ring_06_00",
+        "ring_06_01",
+        "ring_06_02",
+        "ring_06_03",
+        "ring_06_04",
+        "ring_07_00",
+        "ring_07_01",
+        "ring_07_02",
+        "ring_07_03",
+        "ring_07_04",
+        "ring_08_00",
+        "ring_08_01",
+        "ring_08_02",
+        "ring_08_03",
+        "ring_08_04",
+        "ring_09_00",
+        "ring_09_01",
+        "ring_09_02",
+        "ring_09_03",
+        "ring_09_04",
+        "ring_10_00",
+        "ring_10_01",
+        "ring_10_02",
+        "ring_10_03",
+        "ring_10_04"
+      ],
+      "closed_outward_components": 55,
+      "vertices": 10560,
+      "triangles": 21120,
+      "surfaces": [
+        {
+          "material": "iron",
+          "vertices": 4096,
+          "triangles": 8176
+        },
+        {
+          "material": "iron",
+          "vertices": 4096,
+          "triangles": 8160
+        },
+        {
+          "material": "iron",
+          "vertices": 2400,
+          "triangles": 4784
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        16,
+        120,
+        111
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -56.8294866902392,
+            -4.840079206799926,
+            0.0
+          ],
+          "max": [
+            55.17051330976081,
+            4.840079206799925,
+            99.60733696559448
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 7.619416801930976,
+        "floor": -6.681567902092921
+      }
+    }
+  },
+  "source_sha256": {
+    "DESIGN.json": "47dade6702b41f7f728bd6cb4efad563ff5f0c52c7039276f08745f1872ebdff",
+    "PROVENANCE.json": "caacc71835c862563c45d304494ba0b85d684bc27ccabb5fc91ea34a790710ce"
+  },
+  "external_source_sha256": {
+    "src/graphics/caelum/icons/materials/ca_material_chainmail.png": "10e6683466c6e15d77bc4bdee46b9b5fde978411a6444b3777ee0a033fd7d89d",
+    "src/models/caelum/actors/training/ca_training_dummy.png": "4ae89bf07aaab273bb9bcafad283ab2e56fb3d87d6dd2f86e6a1329855dd8cff"
+  },
+  "generator_sha256": {
+    "generate_inventory_ammunition_models.py": "aa7ffdc02cc126b116b87782ae962bdbb54e9bf060301344058aa4475f946b86",
+    "generate_inventory_consumable_models.py": "f4bb817e68f15fd5fcce27b5f7f3de205917b993899fbeb934629f2146a14fc7",
+    "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+    "generate_inventory_chainmail_models.py": "875723c6549ae7b3de3ff1f76c1610173aaeb91401700a804fbce92ab94c9995"
+  },
+  "sha256": {
+    "models/caelum/inventory/chainmail/chainmail.md3": "2b55f18a0f4f2e9f128a5d45711e585e0d6439067601a599c4a63f9537cc92a1",
+    "editable/chainmail.obj": "949d62672659fc5fcec1c79e7f1fa5333f414c84709775a12760ed4c44824299",
+    "editable/chainmail.mtl": "e682e104faa232b9f7b24f278cd024930a54d8e71222e0c53c8a039c102ac07d",
+    "caelum/data/inventory_chainmail.modeldef": "0e3beae41a0b0c22b10958debfbcf268e83e16a3bb9c3ed58714337ae089df37"
+  }
+}

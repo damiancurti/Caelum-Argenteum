@@ -1,6 +1,53 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.30** - 2026-11-14.
+Documentation version: **5.17.31** - 2026-11-14.
+
+## 5.17.31 - Linked-ring chainmail material world prop (#706, parent #647)
+
+Material ID 17 gains a candidate native model through the exact
+CaelumMaterialPickup M017/A binding. All three tiers retain their original
+shared appearance, icon, Scale 0.25, collision, quantities, stacking, recipes,
+mass, provenance and contamination. This is a static crafting-material panel;
+worn armor, spiked chain and silver chain are separate work.
+
+The panel has 55 closed torus links, 10,560 source vertices, 21,120 triangles
+and three native surfaces. An alternating interlaced layout connects all links
+through 90 linked pairs. The original owned icon supplies the silhouette
+reference; the unchanged training-dummy iron supplies opaque surface pixels.
+DESIGN/PROVENANCE/EXPORT and portable OBJ/MTL plus its texture live in
+assets/source/art/inventory_models_647/chainmail. Regenerate using python
+assets/generators/generate_inventory_chainmail_models.py --output
+build/chainmail-model --install. All six export files repeat byte-for-byte.
+
+Independent serialized-OBJ checks verify closed edges, opposite winding,
+positive volume, genus-one topology, open centers, the full link graph and
+nonintersecting wire capsules. The minimum checked capsule gap is
+0.574569 native model units, above the
+0.027065 quantization allowance. Native MD3 triangles
+match the checked quantized OBJ triangle multiset exactly. Both sprite
+envelopes and unchanged original texture bytes are checked separately.
+
+The first width-fitted candidate exceeded the original height; height fitting
+corrected it. The first native preview showed flat texture bands despite 82
+passing inventory assertions. Reorienting the iron UVs around wire thickness
+improved the roundness cues; the second preview also passes 82. Geometry is
+unchanged by that UV correction. Final front, edge, rear-oblique, rear,
+raised underside and floor views were reviewed. The regular rigid weave and
+uniform reused iron remain simplified candidate art, not a cloth simulation.
+
+The packaged native fixture passes 437 checks across [82, 91, 82, 91, 91]: original
+sprites, old-save/model, fresh model, reload and reverse load, covering all
+three tiers, split/merge, ownership, contamination lots, provenance, Box weight,
+quest guard and unchanged sprite/icon/collision. It calls native APIs;
+ordinary menus/crafting and author acceptance remain separate. One qualified
+700-tic single-object sprite/model comparison records 1185.57/1175.95 queue presents/s,
+p95 1.0131/1.0381 ms and p99 1.2718/1.2694 ms on the recorded Windows 11/Ryzen 9 5950X/RTX
+3070 Ti Vulkan environment at 1280x720, background unpaused, audio 5%.
+Different footprints and queue-only timing prevent equal-pixel, GPU/display,
+campaign or crowd conclusions. All 18,380 package entries
+match src; only two new resources, MODELDEF and two release diagnostics differ
+from #704. Evidence: assets/validation_v5_17_31/evidence/SUMMARY.json.
+CA706-CHAINMAIL-01 retains author art and ordinary-use acceptance.
 
 ## 5.17.30 - Six metal plate crafting world props (#704, parent #647)
 

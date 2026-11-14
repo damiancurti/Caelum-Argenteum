@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.30** - 2026-11-14.
+Documentation version: **5.17.31** - 2026-11-14.
+
+## #706 - Chainmail material model (5.17.31)
+
+The exact M017/A binding, serialized linked-ring geometry, repeatable export
+and 437 native assertions pass for all three material tiers. Keep
+CA706-CHAINMAIL-01 pending for the rigid weave, metal appearance, recognizable
+reference and ordinary inventory workflow. This does not supply worn chainmail,
+the spiked chain or silver chain, and does not complete #647 or the campaign.
 
 ## #704 - Metal plate material world props (5.17.30)
 
