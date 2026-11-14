@@ -1,0 +1,2 @@
+map CA709G "Native Litoral, Selva and Patagonia inspection" { sky1="CABASKY",0 nointermission }
+gameinfo { AddEventHandlers="CA709GalleryEvents" }

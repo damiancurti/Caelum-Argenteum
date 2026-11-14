@@ -853,3 +853,8 @@ assets/validation_v5_17_31/evidence/** -text -diff
 /assets/validation_v5_17_32/*.zs text eol=lf
 /assets/validation_v5_17_32/*.json text eol=lf
 /assets/validation_v5_17_32/evidence/** -text -diff
+
+/assets/source/art/regional_gallery_709/** text eol=lf
+/assets/generators/validate_native_regional_gallery.py text eol=lf
+/assets/validation_v5_17_33/*.py text eol=lf
+/assets/validation_v5_17_33/evidence/** -text -diff

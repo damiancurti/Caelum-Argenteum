@@ -1,0 +1,17 @@
+{
+  "issue": 709,
+  "parent_issue": 463,
+  "status": "candidate_author_review_pending",
+  "ownership": "Reuse existing owned regional materials and native folklore models; no image or geometry generation.",
+  "reused_source_sha256": {
+    "assets/source/art/pombero_461/EXPORT.json": "bcb1c825a968a0142207400df393e39a507c77eaf56e54c8303d53ab944027f2",
+    "assets/source/art/cuero_660/EXPORT.json": "b11b3f9d02eb46b0dd6c37673d9f3e724c0e5c4117b7a02511c7fce487d8d036",
+    "assets/source/art/nahuelito_662/EXPORT.json": "58550c363754ae08aa3386a007fe4b7f57aa8a13b03fb1b185c7e0fc670ea3e7",
+    "assets/source/art/peuchen_708/EXPORT.json": "9e336cc9abc73ec9064eac13a6d60aeeb8c9ce9a04e0dae35c5fc48af36f910e",
+    "assets/source/art/regional_gallery_463/GALLERY.json": "c4414a14c9d1b30414a6c3e97ecd3494e56301dd4c21fda43a09f0583251bc37",
+    "assets/source/art/regional_gallery_463/EXPORT.json": "94eb9cbd972314d6a7fa8407c7131faee15cc1c87cfafed02f7a4fce6a615b38",
+    "assets/source/art/regional_gallery_682/GALLERY.json": "e77384f9890453e9f6d8fe2f90d8632d2d6f56ad19865c83a77b8ff76e558771",
+    "assets/bestiary/REGION_PROPOSAL.json": "34218ccf0194132336c7ff04ae5c1c9d2a8c1bad488defca907fb9149a52d004"
+  },
+  "scope": "Isolated diagnostic gallery; five native figures, four species, three existing regional grounds."
+}

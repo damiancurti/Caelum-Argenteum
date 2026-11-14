@@ -1,6 +1,17 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.32** - 2026-11-14.
+Documentation version: **5.17.33** - 2026-11-14.
+
+## 5.17.33 - Native regional gallery (#709, 2026-11-14)
+
+Added isolated CA709G with actual native Pombero in Litoral/Selva and Cuero,
+Nahuelito and Peuchen in Patagonia. Preserved original galleries, model/texture
+bytes and production behavior. Reused geometry/event tools and the established
+silent observer. Four fixture files repeat; 25/54 native assertions cover
+fresh/load identities, positions, idle advancement and post-walk invariants.
+One 700-tic overview sample records 1723.07 queue presents/s, p95 0.8020 ms, p99 0.9610 ms; mean simulation 28.5709 ms/tic; queue-only and small-footprint
+limits apply. Evidence: assets/validation_v5_17_33/evidence/SUMMARY.json.
+CA709-NATIVE-GALLERY-01 originates here and remains pending author acceptance.
 
 ## 5.17.32 - Peuchen combat model (#708, 2026-11-14)
 

@@ -1,0 +1,256 @@
+{
+  "issue": 709,
+  "scope": "isolated_visual_inspection_not_campaign",
+  "baseline_materials": false,
+  "geometry": {
+    "sectors": 4,
+    "vertices": 12,
+    "linedefs": 15
+  },
+  "subjects": [
+    {
+      "region": "Litoral",
+      "catalogue_id": "CA-FOLK-006",
+      "kind": "pombero",
+      "class": "CaelumBestiary006",
+      "position": [
+        -768,
+        0,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Selva",
+      "catalogue_id": "CA-FOLK-006",
+      "kind": "pombero",
+      "class": "CaelumBestiary006",
+      "position": [
+        -256,
+        0,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Patagonia",
+      "catalogue_id": "CA-FOLK-053",
+      "kind": "cuero",
+      "class": "CaelumBestiary053",
+      "position": [
+        256,
+        0,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Patagonia",
+      "catalogue_id": "CA-FOLK-055",
+      "kind": "nahuelito",
+      "class": "CaelumBestiary055",
+      "position": [
+        704,
+        0,
+        0
+      ],
+      "angle": 180
+    },
+    {
+      "region": "Patagonia",
+      "catalogue_id": "CA-FOLK-054",
+      "kind": "peuchen",
+      "class": "CaelumBestiary054",
+      "position": [
+        480,
+        180,
+        0
+      ],
+      "angle": 270
+    }
+  ],
+  "views": [
+    {
+      "id": "overview",
+      "position": [
+        0,
+        -400,
+        1600
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ],
+      "key": "F1"
+    },
+    {
+      "id": "litoral",
+      "position": [
+        -768,
+        -110,
+        60
+      ],
+      "target": [
+        -768,
+        0,
+        26
+      ],
+      "key": "F2"
+    },
+    {
+      "id": "selva",
+      "position": [
+        -256,
+        -110,
+        60
+      ],
+      "target": [
+        -256,
+        0,
+        26
+      ],
+      "key": "F3"
+    },
+    {
+      "id": "patagonia",
+      "position": [
+        512,
+        -360,
+        200
+      ],
+      "target": [
+        480,
+        60,
+        20
+      ],
+      "key": "F4"
+    },
+    {
+      "id": "player",
+      "control": true,
+      "key": "F5"
+    },
+    {
+      "id": "cuero",
+      "position": [
+        256,
+        -45,
+        25
+      ],
+      "target": [
+        256,
+        0,
+        5
+      ],
+      "key": "F6"
+    },
+    {
+      "id": "nahuelito",
+      "position": [
+        704,
+        -50,
+        25
+      ],
+      "target": [
+        704,
+        0,
+        8
+      ],
+      "key": "F7"
+    },
+    {
+      "id": "litoral-tiles",
+      "position": [
+        -768,
+        -280,
+        200
+      ],
+      "target": [
+        -768,
+        -280,
+        0
+      ],
+      "key": "F8"
+    },
+    {
+      "id": "selva-tiles",
+      "position": [
+        -256,
+        -280,
+        70
+      ],
+      "target": [
+        -256,
+        -280,
+        0
+      ],
+      "key": "F9"
+    },
+    {
+      "id": "patagonia-tiles",
+      "position": [
+        384,
+        -280,
+        120
+      ],
+      "target": [
+        384,
+        -280,
+        0
+      ],
+      "key": "F10"
+    },
+    {
+      "id": "peuchen",
+      "position": [
+        480,
+        70,
+        60
+      ],
+      "target": [
+        480,
+        180,
+        26
+      ],
+      "key": "F11"
+    }
+  ],
+  "source_sha256": {
+    "assets/source/art/regional_gallery_709/GALLERY.json": "75b556a23bb67e692fd87fae03ec5239f9c9ef80349ed8ab627e030c1bd4ce88",
+    "assets/bestiary/REGION_PROPOSAL.json": "34218ccf0194132336c7ff04ae5c1c9d2a8c1bad488defca907fb9149a52d004",
+    "assets/validation_v5_17_33/build_gallery.py": "a86b0b7b850f3d77c0742e5dabae817475e3f72a577c3c42b87efc41a569a930",
+    "assets/validation_v5_17_4/build_gallery.py": "66647d29c9ea84dc413ddc0413513d31192a97dcbed1374913fe4a2e4de54368",
+    "assets/validation_v5_17_4/gallery.zs": "20e430edd4d518ff9462cbb28e70a70bb9595faa0dbc7153a3a2e852065c1c0d",
+    "src/MODELDEF": "a321627e34f2435d897fc208a2e424108eda6252396a653526e45c56306a097b",
+    "assets/source/art/pombero_461/EXPORT.json": "bcb1c825a968a0142207400df393e39a507c77eaf56e54c8303d53ab944027f2",
+    "assets/source/art/cuero_660/EXPORT.json": "b11b3f9d02eb46b0dd6c37673d9f3e724c0e5c4117b7a02511c7fce487d8d036",
+    "assets/source/art/nahuelito_662/EXPORT.json": "58550c363754ae08aa3386a007fe4b7f57aa8a13b03fb1b185c7e0fc670ea3e7",
+    "assets/source/art/peuchen_708/EXPORT.json": "9e336cc9abc73ec9064eac13a6d60aeeb8c9ce9a04e0dae35c5fc48af36f910e",
+    "src/models/caelum/folklore/pombero461/materials.png": "6d72eeb0a43b98a279fb3119f28b06bffd5d353e9e39da0ab8036559e06f62cc",
+    "src/models/caelum/folklore/pombero461/dark.png": "6573658a5e61c4c8f75046435e8e8d1f1e85e6348007c69fc911483fe579fac4",
+    "src/models/caelum/folklore/pombero461/face.png": "d342e4b31ec8da9f7933f216a14ca9fd92299ec8315ca72dd68cb857ff9b3a0c",
+    "src/models/caelum/folklore/pombero461/pombero.md3": "5ad5da0a1dad91e20ad5045bd9eeb435f687034bfa31cdea2bc08de601ed0bda",
+    "src/caelum/data/pombero_combat.modeldef": "b043c430efc30ad807f1c0450007251ea1f2c3f4b1d32702785be742d05237a8",
+    "src/models/caelum/folklore/cuero660/cuero.md3": "346fb31087bcf47e37dbe61d87abc40e619f41704c24a7a37629f8d43586ccaf",
+    "src/models/caelum/folklore/cuero660/materials.png": "9cbf0cc1e59a6bd09e6bcae65a714b08c8f6ea45f63271fc73678913dea4afd4",
+    "src/caelum/data/cuero_combat.modeldef": "dde24f34ece2b1777eec341428efe0560db6be70a74918d793e08b6019bd85b4",
+    "src/models/caelum/folklore/nahuelito662/nahuelito.md3": "23fd321f686f6d2557cf3c9ef1309545a564109a88de3c6f8aa0ff104dc74be4",
+    "src/caelum/data/nahuelito_combat.modeldef": "0d0aae0652fd4a80b1e05ebf55e59869cb104c7c6f354cd3de862da28a761177",
+    "src/models/caelum/folklore/nahuelito662/skin.png": "602ef95f83053451576bf9b976ee45bdd3376763c990f06f27f905d89e7776e5",
+    "src/models/caelum/folklore/nahuelito662/iris.png": "8b231a9556f30af1b2c3d11ee5e4e4d6b63f7336a5301d225bb7f4f43c5639cc",
+    "src/models/caelum/folklore/nahuelito662/dark.png": "6573658a5e61c4c8f75046435e8e8d1f1e85e6348007c69fc911483fe579fac4",
+    "src/models/caelum/folklore/peuchen/materials.png": "c7184bba8e9daf91d224d10756e5094e7e3a366362294a11a22db67fc811e539",
+    "src/models/caelum/folklore/peuchen/iris.png": "8b231a9556f30af1b2c3d11ee5e4e4d6b63f7336a5301d225bb7f4f43c5639cc",
+    "src/models/caelum/folklore/peuchen/dark.png": "6573658a5e61c4c8f75046435e8e8d1f1e85e6348007c69fc911483fe579fac4",
+    "src/models/caelum/folklore/peuchen/scales.png": "45f493ce1dd4ad2ebc4dea596c6352570de6631ed18e007079363b291635a3a4",
+    "src/models/caelum/folklore/peuchen/peuchen.md3": "a1fb5fee9e279a9ba0acd363e11afd8271b3265dd34f6b252249c00501b4953f",
+    "src/caelum/data/peuchen_combat.modeldef": "4c62e44b3267b778563405eb5ae499836411a42d640552a25c41db96534fd7e0"
+  },
+  "fixture_sha256": "76b0e85be98b5cb12b9ef7773fc6be8b8c4c71f1f513754e3be817f6c1e049f3",
+  "sha256": {
+    "ZSCRIPT": "2ce3f1e915149d70acb6b145c136aaaca95cb3e036e27c40b223dcbc5ba563a6",
+    "MAPINFO": "5b50c9f4501402cc598f7d631c536f615a93114f9f904e318a2a14c128434213",
+    "maps/CA709G.wad": "7bcd6042eacde16a88fa464ff5c80e20817500e9b16abb379dfb053beb6d0e33"
+  }
+}
