@@ -1,6 +1,44 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.42** - 2026-11-14.
+Documentation version: **5.17.43** - 2026-11-14.
+
+## 5.17.43 - Hybrid serpents in the regional gallery (#729, parent #463)
+
+Optional CA709G adds Mbói Tu’ĩ in Litoral and Mbói Yaguá in both Litoral and
+Selva, following the approved allocation. Fourteen displays cover eleven
+native species on four existing regional grounds. The eleven earlier figure
+positions, eighteen controls, all plots and the crossing route remain intact.
+New diagnostic positions occupy the western/eastern Litoral columns and the
+foreground Selva row. CA463G and CA682G remain unchanged. Data and provenance
+live in assets/source/art/regional_gallery_709; the earlier layout is retained
+in this issue's evidence. All production model and texture bytes are reused.
+
+Run python assets/validation_v5_17_43/run_gallery.py --runtime
+build/caelum_argenteum_dev.pk3 --output build/hybrid-regions-author-01 --interactive.
+Keys 8, 9 and 0 inspect Tu’ĩ/Litoral, Yaguá/Litoral and Yaguá/Selva respectively.
+F1 remains overview and F5 walking; all prior figure/ground controls remain.
+Passive displays advance native idle animation. Only diagnostic observer
+footsteps are silent; repeated appearances do not define campaign populations.
+
+Four fixture files repeat byte-for-byte. Independent validation checks exact
+model/texture reuse, complete approved associations, native-body separation,
+camera bounds and unique controls. Native fresh/reload checks pass 61/126
+assertions (187 total), including identity, position, idle advancement, silent
+steps and the retained 630-tic crossing through three boundaries. Expanded
+overview, three new closeups, affected Litoral/Selva ground views, reload and
+presentation views were inspected. Unchanged earlier closeups reuse prior
+gallery evidence; #727 combat/save evidence applies to identical model bytes.
+
+One 700-tic distant-overview measurement records 1457.72 queue presents/s, p95 0.8706 ms, p99 1.0173 ms; mean simulation 28.5714 ms/tic.
+Environment: Windows 11, Ryzen 9 5950X, RTX 3070 Ti, GZDoom 4.14.2 Vulkan,
+1280x720, background unpaused/audio 5%, uncapped/vsync off. This measures queue
+presentation for small distant figures, not GPU/display timing, comparative
+cost, closeup performance, repeatability or campaign/crowd acceptance.
+All 18,439 package entries match src; only two release diagnostics differ
+from #727. Evidence: assets/validation_v5_17_43/evidence/SUMMARY.json.
+CA729-HYBRID-GALLERY-01 and earlier model/gallery author checks remain pending.
+Other characters, inventory, modular/worn and first-person equipment, and
+the original V5.16 campaign remain unfinished.
 
 ## 5.17.42 - Mbói Tu’ĩ and Mbói Yaguá native models (#727, parent #461)
 
