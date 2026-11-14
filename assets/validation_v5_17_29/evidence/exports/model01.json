@@ -1,0 +1,283 @@
+{
+  "schema_revision": 1,
+  "issue": 702,
+  "parent_issue": 647,
+  "status": "candidate_pending_author_review",
+  "variants": {
+    "buckler": {
+      "class": "CaelumShieldPickup",
+      "parts": [
+        "board",
+        "painted_front",
+        "metal_rim",
+        "rear_grip_0"
+      ],
+      "closed_outward_components": 4,
+      "vertices": 3432,
+      "triangles": 6852,
+      "surfaces": [
+        {
+          "material": "buckler_front",
+          "vertices": 1538,
+          "triangles": 3072
+        },
+        {
+          "material": "buckler_back",
+          "vertices": 1638,
+          "triangles": 3268
+        },
+        {
+          "material": "buckler_metal",
+          "vertices": 256,
+          "triangles": 512
+        }
+      ],
+      "reference_opaque_bounds": [
+        9,
+        13,
+        120,
+        115
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 102.0,
+      "native_bounds": [
+        {
+          "min": [
+            -53.11875570182721,
+            -13.55633269142721,
+            0.0
+          ],
+          "max": [
+            53.92447549463939,
+            21.543009315833938,
+            101.99999999999999
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.0508785032114116,
+        "floor": 14.514711949999999
+      }
+    },
+    "kite": {
+      "class": "CaelumShieldPickup",
+      "parts": [
+        "board",
+        "painted_front",
+        "metal_rim",
+        "rear_grip_0",
+        "rear_grip_1"
+      ],
+      "closed_outward_components": 5,
+      "vertices": 3532,
+      "triangles": 7048,
+      "surfaces": [
+        {
+          "material": "kite_front",
+          "vertices": 1538,
+          "triangles": 3072
+        },
+        {
+          "material": "kite_back",
+          "vertices": 1738,
+          "triangles": 3464
+        },
+        {
+          "material": "kite_metal",
+          "vertices": 256,
+          "triangles": 512
+        }
+      ],
+      "reference_opaque_bounds": [
+        29,
+        8,
+        99,
+        120
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -35.03452471211419,
+            -7.075606200632382,
+            0.0
+          ],
+          "max": [
+            34.909579723321755,
+            18.32030283800826,
+            112.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.0468744478861862,
+        "floor": 9.49819625
+      }
+    },
+    "tower": {
+      "class": "CaelumShieldPickup",
+      "parts": [
+        "board",
+        "painted_front",
+        "metal_rim",
+        "rear_grip_0",
+        "rear_grip_1"
+      ],
+      "closed_outward_components": 5,
+      "vertices": 3532,
+      "triangles": 7048,
+      "surfaces": [
+        {
+          "material": "tower_front",
+          "vertices": 1538,
+          "triangles": 3072
+        },
+        {
+          "material": "tower_back",
+          "vertices": 1738,
+          "triangles": 3464
+        },
+        {
+          "material": "tower_metal",
+          "vertices": 256,
+          "triangles": 512
+        }
+      ],
+      "reference_opaque_bounds": [
+        30,
+        8,
+        98,
+        120
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -32.804911083824855,
+            -9.015705877101754,
+            0.0
+          ],
+          "max": [
+            29.974528113935907,
+            17.78622374963395,
+            112.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.0163556428362257,
+        "floor": 9.351090650000003
+      }
+    },
+    "magic": {
+      "class": "CaelumShieldPickup",
+      "parts": [
+        "board",
+        "painted_front",
+        "metal_rim",
+        "rear_grip_0",
+        "rear_grip_1"
+      ],
+      "closed_outward_components": 5,
+      "vertices": 3532,
+      "triangles": 7048,
+      "surfaces": [
+        {
+          "material": "magic_front",
+          "vertices": 1538,
+          "triangles": 3072
+        },
+        {
+          "material": "magic_back",
+          "vertices": 1738,
+          "triangles": 3464
+        },
+        {
+          "material": "magic_metal",
+          "vertices": 256,
+          "triangles": 512
+        }
+      ],
+      "reference_opaque_bounds": [
+        6,
+        7,
+        122,
+        121
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 114.0,
+      "native_bounds": [
+        {
+          "min": [
+            -60.29157010651215,
+            -17.996910948776492,
+            0.0
+          ],
+          "max": [
+            59.14919930527889,
+            18.635854532756724,
+            113.99999999999999
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.0649059733003843,
+        "floor": 10.501530550000005
+      }
+    }
+  },
+  "source_sha256": {
+    "DESIGN.json": "dbb7266a4eb19a0c79a1679f24c47aee89333e71b5caad6b391467680e2c8743",
+    "PROVENANCE.json": "3a3b761cf8e8c3f32da98b071415a84fd43eb865ee85d38ccc0aaef1f62f2ef0"
+  },
+  "external_source_sha256": {
+    "src/graphics/caelum/icons/ca_shield_buckler.png": "37ae1b4346499b3bdda54b794aa53a857d4259c2bd02ca4ea37aa7e340724d9d",
+    "src/graphics/caelum/icons/ca_shield_kite.png": "045ee7c9ca599708a0da2e3418bd525e9bf6c81d2c00f0632fe69057e1409964",
+    "src/graphics/caelum/icons/ca_shield_tower.png": "08261880167ba8a0ff4d39606f5246271bead7874714d77db5de0083a121520e",
+    "src/graphics/caelum/icons/ca_shield_magic.png": "ec129df38708d9be7ed9806c5e47652b1bbe3326bd27d29fa8e67151677a2488",
+    "src/caelum/equipment/CaelumEquipmentPickups.zs": "e3e5d91e622c3b2440907cab1bc2cf2e4ab72d5c24eeb8e037dbe400c1dc7e44",
+    "src/caelum/equipment/CaelumShieldModel.zs": "42ed5838d4141c6f28985c148a0aa01f00254e784084d482981c3c469d764085",
+    "assets/first_person_shields/COMPOSITION.json": "493af12a5859729e423975071c40464b1a427835f9b33075ca2b182fd8d8d793"
+  },
+  "generator_sha256": {
+    "generate_inventory_ammunition_models.py": "aa7ffdc02cc126b116b87782ae962bdbb54e9bf060301344058aa4475f946b86",
+    "generate_inventory_consumable_models.py": "f4bb817e68f15fd5fcce27b5f7f3de205917b993899fbeb934629f2146a14fc7",
+    "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+    "generate_inventory_shield_models.py": "e0796d8f6a088fd7e5c694b23ab340cbad0d3dc4cc513ee74ee18ef482326910"
+  },
+  "sha256": {
+    "models/caelum/inventory/shields/buckler.md3": "271cac886164a6ae9826ef3e1e0bfdc49f6cb1ea591feea6e0f5bb4193c2822d",
+    "editable/buckler.obj": "567626a57f4911a69386ae5e198d1ec4ac8beaddfb95ee1573bea619dc0aa358",
+    "models/caelum/inventory/shields/kite.md3": "12288a0ba775f2952752cc0ab1124063dbd09c8822d88dd1c6eecf98c50ea56d",
+    "editable/kite.obj": "5526102d60ab47a2f7660b9a914698e9336581f1335a0188e0d65fdf2081d586",
+    "models/caelum/inventory/shields/tower.md3": "a6bcb87d100f95522ddc1d1c159920f1e51a74e829362606dbb3fb96424350e0",
+    "editable/tower.obj": "17e94f7c03729f2d9af6a986d2cc474683e8cb6566f96e1336acc383bddbfa7e",
+    "models/caelum/inventory/shields/magic.md3": "6562831ed346e33297e0d2ee9631704867a9af1bc36304e98f459193c42f59de",
+    "editable/magic.obj": "ec565a13967b081b355e984c699bec34a4c3d7c0db515cbdf25f737763ee331f",
+    "editable/shields.mtl": "ef1225859b5ce5acabe2e103bc86ecc9beefc8dc57b64fd2c1f447659b3ad27d",
+    "caelum/data/inventory_shields.modeldef": "2a79eab5c138f25317fef109a7fcd8442eb08baa6c580a982b42c90a6eb5c1ab",
+    "models/caelum/inventory/shields/buckler.png": "37ae1b4346499b3bdda54b794aa53a857d4259c2bd02ca4ea37aa7e340724d9d",
+    "models/caelum/inventory/shields/kite.png": "045ee7c9ca599708a0da2e3418bd525e9bf6c81d2c00f0632fe69057e1409964",
+    "models/caelum/inventory/shields/tower.png": "08261880167ba8a0ff4d39606f5246271bead7874714d77db5de0083a121520e",
+    "models/caelum/inventory/shields/magic.png": "ec129df38708d9be7ed9806c5e47652b1bbe3326bd27d29fa8e67151677a2488"
+  }
+}

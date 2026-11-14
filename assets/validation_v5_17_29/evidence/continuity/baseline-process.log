@@ -1,0 +1,1203 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-14 05:56:00
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-700/build/issue700-cuyo01.pk3, 18356 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-702/build/issue702-native01/fixture.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2463.91 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+CA455V - Inventory drop inspection
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA702 PASS shield 0 native pickup
+CA702 PASS shield 0 exact acquired instance
+CA702 PASS shield 0 assigned persistent identity
+CA702 PASS shield 0 Box excludes wet carried mass
+CA702 PASS shield 0 temporary quest drop guard
+CA702 PASS shield 0 native toss
+CA702 PASS shield 0 exact instance leaves inventory
+CA702 PASS shield 1 native pickup
+CA702 PASS shield 1 exact acquired instance
+CA702 PASS shield 1 assigned persistent identity
+CA702 PASS shield 1 Box excludes wet carried mass
+CA702 PASS shield 1 temporary quest drop guard
+CA702 PASS shield 1 native toss
+CA702 PASS shield 1 exact instance leaves inventory
+CA702 PASS shield 2 native pickup
+CA702 PASS shield 2 exact acquired instance
+CA702 PASS shield 2 assigned persistent identity
+CA702 PASS shield 2 Box excludes wet carried mass
+CA702 PASS shield 2 temporary quest drop guard
+CA702 PASS shield 2 native toss
+CA702 PASS shield 2 exact instance leaves inventory
+CA702 PASS shield 3 native pickup
+CA702 PASS shield 3 exact acquired instance
+CA702 PASS shield 3 assigned persistent identity
+CA702 PASS shield 3 Box excludes wet carried mass
+CA702 PASS shield 3 temporary quest drop guard
+CA702 PASS shield 3 native toss
+CA702 PASS shield 3 exact instance leaves inventory
+CA702 PASS shield 4 native pickup
+CA702 PASS shield 4 exact acquired instance
+CA702 PASS shield 4 assigned persistent identity
+CA702 PASS shield 4 Box excludes wet carried mass
+CA702 PASS shield 4 temporary quest drop guard
+CA702 PASS shield 4 native toss
+CA702 PASS shield 4 exact instance leaves inventory
+CA702 PASS shield 5 native pickup
+CA702 PASS shield 5 exact acquired instance
+CA702 PASS shield 5 assigned persistent identity
+CA702 PASS shield 5 Box excludes wet carried mass
+CA702 PASS shield 5 temporary quest drop guard
+CA702 PASS shield 5 native toss
+CA702 PASS shield 5 exact instance leaves inventory
+CA702 PASS shield 6 native pickup
+CA702 PASS shield 6 exact acquired instance
+CA702 PASS shield 6 assigned persistent identity
+CA702 PASS shield 6 Box excludes wet carried mass
+CA702 PASS shield 6 temporary quest drop guard
+CA702 PASS shield 6 native toss
+CA702 PASS shield 6 exact instance leaves inventory
+CA702 PASS shield 7 native pickup
+CA702 PASS shield 7 exact acquired instance
+CA702 PASS shield 7 assigned persistent identity
+CA702 PASS shield 7 Box excludes wet carried mass
+CA702 PASS shield 7 temporary quest drop guard
+CA702 PASS shield 7 native toss
+CA702 PASS shield 7 exact instance leaves inventory
+CA702 PASS shield 8 native pickup
+CA702 PASS shield 8 exact acquired instance
+CA702 PASS shield 8 assigned persistent identity
+CA702 PASS shield 8 Box excludes wet carried mass
+CA702 PASS shield 8 temporary quest drop guard
+CA702 PASS shield 8 native toss
+CA702 PASS shield 8 exact instance leaves inventory
+CA702 PASS shield 9 native pickup
+CA702 PASS shield 9 exact acquired instance
+CA702 PASS shield 9 assigned persistent identity
+CA702 PASS shield 9 Box excludes wet carried mass
+CA702 PASS shield 9 temporary quest drop guard
+CA702 PASS shield 9 native toss
+CA702 PASS shield 9 exact instance leaves inventory
+CA702 PASS shield 10 native pickup
+CA702 PASS shield 10 exact acquired instance
+CA702 PASS shield 10 assigned persistent identity
+CA702 PASS shield 10 Box excludes wet carried mass
+CA702 PASS shield 10 temporary quest drop guard
+CA702 PASS shield 10 native toss
+CA702 PASS shield 10 exact instance leaves inventory
+CA702 PASS shield 11 native pickup
+CA702 PASS shield 11 exact acquired instance
+CA702 PASS shield 11 assigned persistent identity
+CA702 PASS shield 11 Box excludes wet carried mass
+CA702 PASS shield 11 temporary quest drop guard
+CA702 PASS shield 11 native toss
+CA702 PASS shield 11 exact instance leaves inventory
+CA702 PASS shield 12 native pickup
+CA702 PASS shield 12 exact acquired instance
+CA702 PASS shield 12 assigned persistent identity
+CA702 PASS shield 12 Box excludes wet carried mass
+CA702 PASS shield 12 temporary quest drop guard
+CA702 PASS shield 12 native toss
+CA702 PASS shield 12 exact instance leaves inventory
+CA702 PASS shield 13 native pickup
+CA702 PASS shield 13 exact acquired instance
+CA702 PASS shield 13 assigned persistent identity
+CA702 PASS shield 13 Box excludes wet carried mass
+CA702 PASS shield 13 temporary quest drop guard
+CA702 PASS shield 13 native toss
+CA702 PASS shield 13 exact instance leaves inventory
+CA702 PASS shield 14 native pickup
+CA702 PASS shield 14 exact acquired instance
+CA702 PASS shield 14 assigned persistent identity
+CA702 PASS shield 14 Box excludes wet carried mass
+CA702 PASS shield 14 temporary quest drop guard
+CA702 PASS shield 14 native toss
+CA702 PASS shield 14 exact instance leaves inventory
+CA702 PASS shield 15 native pickup
+CA702 PASS shield 15 exact acquired instance
+CA702 PASS shield 15 assigned persistent identity
+CA702 PASS shield 15 Box excludes wet carried mass
+CA702 PASS shield 15 temporary quest drop guard
+CA702 PASS shield 15 native toss
+CA702 PASS shield 15 exact instance leaves inventory
+CA702 PASS shield 16 native pickup
+CA702 PASS shield 16 exact acquired instance
+CA702 PASS shield 16 assigned persistent identity
+CA702 PASS shield 16 Box excludes wet carried mass
+CA702 PASS shield 16 temporary quest drop guard
+CA702 PASS shield 16 native toss
+CA702 PASS shield 16 exact instance leaves inventory
+CA702 PASS shield 17 native pickup
+CA702 PASS shield 17 exact acquired instance
+CA702 PASS shield 17 assigned persistent identity
+CA702 PASS shield 17 Box excludes wet carried mass
+CA702 PASS shield 17 temporary quest drop guard
+CA702 PASS shield 17 native toss
+CA702 PASS shield 17 exact instance leaves inventory
+CA702 PASS shield 18 native pickup
+CA702 PASS shield 18 exact acquired instance
+CA702 PASS shield 18 assigned persistent identity
+CA702 PASS shield 18 Box excludes wet carried mass
+CA702 PASS shield 18 temporary quest drop guard
+CA702 PASS shield 18 native toss
+CA702 PASS shield 18 exact instance leaves inventory
+CA702 PASS shield 19 native pickup
+CA702 PASS shield 19 exact acquired instance
+CA702 PASS shield 19 assigned persistent identity
+CA702 PASS shield 19 Box excludes wet carried mass
+CA702 PASS shield 19 temporary quest drop guard
+CA702 PASS shield 19 native toss
+CA702 PASS shield 19 exact instance leaves inventory
+CA702 PASS shield 20 native pickup
+CA702 PASS shield 20 exact acquired instance
+CA702 PASS shield 20 assigned persistent identity
+CA702 PASS shield 20 Box excludes wet carried mass
+CA702 PASS shield 20 temporary quest drop guard
+CA702 PASS shield 20 native toss
+CA702 PASS shield 20 exact instance leaves inventory
+CA702 PASS shield 21 native pickup
+CA702 PASS shield 21 exact acquired instance
+CA702 PASS shield 21 assigned persistent identity
+CA702 PASS shield 21 Box excludes wet carried mass
+CA702 PASS shield 21 temporary quest drop guard
+CA702 PASS shield 21 native toss
+CA702 PASS shield 21 exact instance leaves inventory
+CA702 PASS shield 22 native pickup
+CA702 PASS shield 22 exact acquired instance
+CA702 PASS shield 22 assigned persistent identity
+CA702 PASS shield 22 Box excludes wet carried mass
+CA702 PASS shield 22 temporary quest drop guard
+CA702 PASS shield 22 native toss
+CA702 PASS shield 22 exact instance leaves inventory
+CA702 PASS shield 23 native pickup
+CA702 PASS shield 23 exact acquired instance
+CA702 PASS shield 23 assigned persistent identity
+CA702 PASS shield 23 Box excludes wet carried mass
+CA702 PASS shield 23 temporary quest drop guard
+CA702 PASS shield 23 native toss
+CA702 PASS shield 23 exact instance leaves inventory
+CA702 PASS shield 24 native pickup
+CA702 PASS shield 24 exact acquired instance
+CA702 PASS shield 24 assigned persistent identity
+CA702 PASS shield 24 Box excludes wet carried mass
+CA702 PASS shield 24 temporary quest drop guard
+CA702 PASS shield 24 native toss
+CA702 PASS shield 24 exact instance leaves inventory
+CA702 PASS shield 25 native pickup
+CA702 PASS shield 25 exact acquired instance
+CA702 PASS shield 25 assigned persistent identity
+CA702 PASS shield 25 Box excludes wet carried mass
+CA702 PASS shield 25 temporary quest drop guard
+CA702 PASS shield 25 native toss
+CA702 PASS shield 25 exact instance leaves inventory
+CA702 PASS shield 26 native pickup
+CA702 PASS shield 26 exact acquired instance
+CA702 PASS shield 26 assigned persistent identity
+CA702 PASS shield 26 Box excludes wet carried mass
+CA702 PASS shield 26 temporary quest drop guard
+CA702 PASS shield 26 native toss
+CA702 PASS shield 26 exact instance leaves inventory
+CA702 PASS shield 27 native pickup
+CA702 PASS shield 27 exact acquired instance
+CA702 PASS shield 27 assigned persistent identity
+CA702 PASS shield 27 Box excludes wet carried mass
+CA702 PASS shield 27 temporary quest drop guard
+CA702 PASS shield 27 native toss
+CA702 PASS shield 27 exact instance leaves inventory
+CA702 PASS shield 28 native pickup
+CA702 PASS shield 28 exact acquired instance
+CA702 PASS shield 28 assigned persistent identity
+CA702 PASS shield 28 Box excludes wet carried mass
+CA702 PASS shield 28 temporary quest drop guard
+CA702 PASS shield 28 native toss
+CA702 PASS shield 28 exact instance leaves inventory
+CA702 PASS shield 29 native pickup
+CA702 PASS shield 29 exact acquired instance
+CA702 PASS shield 29 assigned persistent identity
+CA702 PASS shield 29 Box excludes wet carried mass
+CA702 PASS shield 29 temporary quest drop guard
+CA702 PASS shield 29 native toss
+CA702 PASS shield 29 exact instance leaves inventory
+CA702 PASS shield 30 native pickup
+CA702 PASS shield 30 exact acquired instance
+CA702 PASS shield 30 assigned persistent identity
+CA702 PASS shield 30 Box excludes wet carried mass
+CA702 PASS shield 30 temporary quest drop guard
+CA702 PASS shield 30 native toss
+CA702 PASS shield 30 exact instance leaves inventory
+CA702 PASS shield 31 native pickup
+CA702 PASS shield 31 exact acquired instance
+CA702 PASS shield 31 assigned persistent identity
+CA702 PASS shield 31 Box excludes wet carried mass
+CA702 PASS shield 31 temporary quest drop guard
+CA702 PASS shield 31 native toss
+CA702 PASS shield 31 exact instance leaves inventory
+CA702 PASS shield 32 native pickup
+CA702 PASS shield 32 exact acquired instance
+CA702 PASS shield 32 assigned persistent identity
+CA702 PASS shield 32 Box excludes wet carried mass
+CA702 PASS shield 32 temporary quest drop guard
+CA702 PASS shield 32 native toss
+CA702 PASS shield 32 exact instance leaves inventory
+CA702 PASS shield 33 native pickup
+CA702 PASS shield 33 exact acquired instance
+CA702 PASS shield 33 assigned persistent identity
+CA702 PASS shield 33 Box excludes wet carried mass
+CA702 PASS shield 33 temporary quest drop guard
+CA702 PASS shield 33 native toss
+CA702 PASS shield 33 exact instance leaves inventory
+CA702 PASS shield 34 native pickup
+CA702 PASS shield 34 exact acquired instance
+CA702 PASS shield 34 assigned persistent identity
+CA702 PASS shield 34 Box excludes wet carried mass
+CA702 PASS shield 34 temporary quest drop guard
+CA702 PASS shield 34 native toss
+CA702 PASS shield 34 exact instance leaves inventory
+CA702 PASS shield 35 native pickup
+CA702 PASS shield 35 exact acquired instance
+CA702 PASS shield 35 assigned persistent identity
+CA702 PASS shield 35 Box excludes wet carried mass
+CA702 PASS shield 35 temporary quest drop guard
+CA702 PASS shield 35 native toss
+CA702 PASS shield 35 exact instance leaves inventory
+CA702 PASS shield 36 native pickup
+CA702 PASS shield 36 exact acquired instance
+CA702 PASS shield 36 assigned persistent identity
+CA702 PASS shield 36 Box excludes wet carried mass
+CA702 PASS shield 36 temporary quest drop guard
+CA702 PASS shield 36 native toss
+CA702 PASS shield 36 exact instance leaves inventory
+CA702 PASS shield 37 native pickup
+CA702 PASS shield 37 exact acquired instance
+CA702 PASS shield 37 assigned persistent identity
+CA702 PASS shield 37 Box excludes wet carried mass
+CA702 PASS shield 37 temporary quest drop guard
+CA702 PASS shield 37 native toss
+CA702 PASS shield 37 exact instance leaves inventory
+CA702 PASS shield 38 native pickup
+CA702 PASS shield 38 exact acquired instance
+CA702 PASS shield 38 assigned persistent identity
+CA702 PASS shield 38 Box excludes wet carried mass
+CA702 PASS shield 38 temporary quest drop guard
+CA702 PASS shield 38 native toss
+CA702 PASS shield 38 exact instance leaves inventory
+CA702 PASS shield 39 native pickup
+CA702 PASS shield 39 exact acquired instance
+CA702 PASS shield 39 assigned persistent identity
+CA702 PASS shield 39 Box excludes wet carried mass
+CA702 PASS shield 39 temporary quest drop guard
+CA702 PASS shield 39 native toss
+CA702 PASS shield 39 exact instance leaves inventory
+CA702 PASS shield 40 native pickup
+CA702 PASS shield 40 exact acquired instance
+CA702 PASS shield 40 assigned persistent identity
+CA702 PASS shield 40 Box excludes wet carried mass
+CA702 PASS shield 40 temporary quest drop guard
+CA702 PASS shield 40 native toss
+CA702 PASS shield 40 exact instance leaves inventory
+CA702 PASS shield 41 native pickup
+CA702 PASS shield 41 exact acquired instance
+CA702 PASS shield 41 assigned persistent identity
+CA702 PASS shield 41 Box excludes wet carried mass
+CA702 PASS shield 41 temporary quest drop guard
+CA702 PASS shield 41 native toss
+CA702 PASS shield 41 exact instance leaves inventory
+CA702 PASS shield 42 native pickup
+CA702 PASS shield 42 exact acquired instance
+CA702 PASS shield 42 assigned persistent identity
+CA702 PASS shield 42 Box excludes wet carried mass
+CA702 PASS shield 42 temporary quest drop guard
+CA702 PASS shield 42 native toss
+CA702 PASS shield 42 exact instance leaves inventory
+CA702 PASS shield 43 native pickup
+CA702 PASS shield 43 exact acquired instance
+CA702 PASS shield 43 assigned persistent identity
+CA702 PASS shield 43 Box excludes wet carried mass
+CA702 PASS shield 43 temporary quest drop guard
+CA702 PASS shield 43 native toss
+CA702 PASS shield 43 exact instance leaves inventory
+CA702 PASS shield 44 native pickup
+CA702 PASS shield 44 exact acquired instance
+CA702 PASS shield 44 assigned persistent identity
+CA702 PASS shield 44 Box excludes wet carried mass
+CA702 PASS shield 44 temporary quest drop guard
+CA702 PASS shield 44 native toss
+CA702 PASS shield 44 exact instance leaves inventory
+CA702 PASS shield 45 native pickup
+CA702 PASS shield 45 exact acquired instance
+CA702 PASS shield 45 assigned persistent identity
+CA702 PASS shield 45 Box excludes wet carried mass
+CA702 PASS shield 45 temporary quest drop guard
+CA702 PASS shield 45 native toss
+CA702 PASS shield 45 exact instance leaves inventory
+CA702 PASS shield 46 native pickup
+CA702 PASS shield 46 exact acquired instance
+CA702 PASS shield 46 assigned persistent identity
+CA702 PASS shield 46 Box excludes wet carried mass
+CA702 PASS shield 46 temporary quest drop guard
+CA702 PASS shield 46 native toss
+CA702 PASS shield 46 exact instance leaves inventory
+CA702 PASS shield 47 native pickup
+CA702 PASS shield 47 exact acquired instance
+CA702 PASS shield 47 assigned persistent identity
+CA702 PASS shield 47 Box excludes wet carried mass
+CA702 PASS shield 47 temporary quest drop guard
+CA702 PASS shield 47 native toss
+CA702 PASS shield 47 exact instance leaves inventory
+CA702 PASS shield 48 native pickup
+CA702 PASS shield 48 exact acquired instance
+CA702 PASS shield 48 assigned persistent identity
+CA702 PASS shield 48 Box excludes wet carried mass
+CA702 PASS shield 48 temporary quest drop guard
+CA702 PASS shield 48 native toss
+CA702 PASS shield 48 exact instance leaves inventory
+CA702 PASS shield 49 native pickup
+CA702 PASS shield 49 exact acquired instance
+CA702 PASS shield 49 assigned persistent identity
+CA702 PASS shield 49 Box excludes wet carried mass
+CA702 PASS shield 49 temporary quest drop guard
+CA702 PASS shield 49 native toss
+CA702 PASS shield 49 exact instance leaves inventory
+CA702 PASS shield 50 native pickup
+CA702 PASS shield 50 exact acquired instance
+CA702 PASS shield 50 assigned persistent identity
+CA702 PASS shield 50 Box excludes wet carried mass
+CA702 PASS shield 50 temporary quest drop guard
+CA702 PASS shield 50 native toss
+CA702 PASS shield 50 exact instance leaves inventory
+CA702 PASS shield 51 native pickup
+CA702 PASS shield 51 exact acquired instance
+CA702 PASS shield 51 assigned persistent identity
+CA702 PASS shield 51 Box excludes wet carried mass
+CA702 PASS shield 51 temporary quest drop guard
+CA702 PASS shield 51 native toss
+CA702 PASS shield 51 exact instance leaves inventory
+CA702 PASS shield 52 native pickup
+CA702 PASS shield 52 exact acquired instance
+CA702 PASS shield 52 assigned persistent identity
+CA702 PASS shield 52 Box excludes wet carried mass
+CA702 PASS shield 52 temporary quest drop guard
+CA702 PASS shield 52 native toss
+CA702 PASS shield 52 exact instance leaves inventory
+CA702 PASS shield 53 native pickup
+CA702 PASS shield 53 exact acquired instance
+CA702 PASS shield 53 assigned persistent identity
+CA702 PASS shield 53 Box excludes wet carried mass
+CA702 PASS shield 53 temporary quest drop guard
+CA702 PASS shield 53 native toss
+CA702 PASS shield 53 exact instance leaves inventory
+CA702 PASS shield 54 native pickup
+CA702 PASS shield 54 exact acquired instance
+CA702 PASS shield 54 assigned persistent identity
+CA702 PASS shield 54 Box excludes wet carried mass
+CA702 PASS shield 54 temporary quest drop guard
+CA702 PASS shield 54 native toss
+CA702 PASS shield 54 exact instance leaves inventory
+CA702 PASS shield 55 native pickup
+CA702 PASS shield 55 exact acquired instance
+CA702 PASS shield 55 assigned persistent identity
+CA702 PASS shield 55 Box excludes wet carried mass
+CA702 PASS shield 55 temporary quest drop guard
+CA702 PASS shield 55 native toss
+CA702 PASS shield 55 exact instance leaves inventory
+CA702 PASS shield 56 native pickup
+CA702 PASS shield 56 exact acquired instance
+CA702 PASS shield 56 assigned persistent identity
+CA702 PASS shield 56 Box excludes wet carried mass
+CA702 PASS shield 56 temporary quest drop guard
+CA702 PASS shield 56 native toss
+CA702 PASS shield 56 exact instance leaves inventory
+CA702 PASS shield 57 native pickup
+CA702 PASS shield 57 exact acquired instance
+CA702 PASS shield 57 assigned persistent identity
+CA702 PASS shield 57 Box excludes wet carried mass
+CA702 PASS shield 57 temporary quest drop guard
+CA702 PASS shield 57 native toss
+CA702 PASS shield 57 exact instance leaves inventory
+CA702 PASS shield 58 native pickup
+CA702 PASS shield 58 exact acquired instance
+CA702 PASS shield 58 assigned persistent identity
+CA702 PASS shield 58 Box excludes wet carried mass
+CA702 PASS shield 58 temporary quest drop guard
+CA702 PASS shield 58 native toss
+CA702 PASS shield 58 exact instance leaves inventory
+CA702 PASS shield 59 native pickup
+CA702 PASS shield 59 exact acquired instance
+CA702 PASS shield 59 assigned persistent identity
+CA702 PASS shield 59 Box excludes wet carried mass
+CA702 PASS shield 59 temporary quest drop guard
+CA702 PASS shield 59 native toss
+CA702 PASS shield 59 exact instance leaves inventory
+Game saved.
+Captured baseline.png
+CA702 PASS four shield types and three tiers in all native sizes
+CA702 PASS shield 0 saved native class
+CA702 PASS shield 0 independent world instance
+CA702 PASS shield 0 original type, slot and kind
+CA702 PASS shield 0 original native size
+CA702 PASS shield 0 persistent unique identity
+CA702 PASS shield 0 existing wear and water retained
+CA702 PASS shield 0 unchanged collision, scale and floor contact
+CA702 PASS shield 0 original icon and dynamic sprite
+CA702 PASS shield 0 native dry and wet mass
+CA702 PASS shield 0 provenance survives copy and save
+CA702 PASS shield 0 unequipped world flags
+CA702 PASS shield 0 fixed acquired size retained
+CA702 PASS shield 1 saved native class
+CA702 PASS shield 1 independent world instance
+CA702 PASS shield 1 original type, slot and kind
+CA702 PASS shield 1 original native size
+CA702 PASS shield 1 persistent unique identity
+CA702 PASS shield 1 existing wear and water retained
+CA702 PASS shield 1 unchanged collision, scale and floor contact
+CA702 PASS shield 1 original icon and dynamic sprite
+CA702 PASS shield 1 native dry and wet mass
+CA702 PASS shield 1 provenance survives copy and save
+CA702 PASS shield 1 unequipped world flags
+CA702 PASS shield 1 fixed acquired size retained
+CA702 PASS shield 2 saved native class
+CA702 PASS shield 2 independent world instance
+CA702 PASS shield 2 original type, slot and kind
+CA702 PASS shield 2 original native size
+CA702 PASS shield 2 persistent unique identity
+CA702 PASS shield 2 existing wear and water retained
+CA702 PASS shield 2 unchanged collision, scale and floor contact
+CA702 PASS shield 2 original icon and dynamic sprite
+CA702 PASS shield 2 native dry and wet mass
+CA702 PASS shield 2 provenance survives copy and save
+CA702 PASS shield 2 unequipped world flags
+CA702 PASS shield 2 fixed acquired size retained
+CA702 PASS shield 3 saved native class
+CA702 PASS shield 3 independent world instance
+CA702 PASS shield 3 original type, slot and kind
+CA702 PASS shield 3 original native size
+CA702 PASS shield 3 persistent unique identity
+CA702 PASS shield 3 existing wear and water retained
+CA702 PASS shield 3 unchanged collision, scale and floor contact
+CA702 PASS shield 3 original icon and dynamic sprite
+CA702 PASS shield 3 native dry and wet mass
+CA702 PASS shield 3 provenance survives copy and save
+CA702 PASS shield 3 unequipped world flags
+CA702 PASS shield 3 fixed acquired size retained
+CA702 PASS shield 4 saved native class
+CA702 PASS shield 4 independent world instance
+CA702 PASS shield 4 original type, slot and kind
+CA702 PASS shield 4 original native size
+CA702 PASS shield 4 persistent unique identity
+CA702 PASS shield 4 existing wear and water retained
+CA702 PASS shield 4 unchanged collision, scale and floor contact
+CA702 PASS shield 4 original icon and dynamic sprite
+CA702 PASS shield 4 native dry and wet mass
+CA702 PASS shield 4 provenance survives copy and save
+CA702 PASS shield 4 unequipped world flags
+CA702 PASS shield 4 fixed acquired size retained
+CA702 PASS shield 5 saved native class
+CA702 PASS shield 5 independent world instance
+CA702 PASS shield 5 original type, slot and kind
+CA702 PASS shield 5 original native size
+CA702 PASS shield 5 persistent unique identity
+CA702 PASS shield 5 existing wear and water retained
+CA702 PASS shield 5 unchanged collision, scale and floor contact
+CA702 PASS shield 5 original icon and dynamic sprite
+CA702 PASS shield 5 native dry and wet mass
+CA702 PASS shield 5 provenance survives copy and save
+CA702 PASS shield 5 unequipped world flags
+CA702 PASS shield 5 fixed acquired size retained
+CA702 PASS shield 6 saved native class
+CA702 PASS shield 6 independent world instance
+CA702 PASS shield 6 original type, slot and kind
+CA702 PASS shield 6 original native size
+CA702 PASS shield 6 persistent unique identity
+CA702 PASS shield 6 existing wear and water retained
+CA702 PASS shield 6 unchanged collision, scale and floor contact
+CA702 PASS shield 6 original icon and dynamic sprite
+CA702 PASS shield 6 native dry and wet mass
+CA702 PASS shield 6 provenance survives copy and save
+CA702 PASS shield 6 unequipped world flags
+CA702 PASS shield 6 fixed acquired size retained
+CA702 PASS shield 7 saved native class
+CA702 PASS shield 7 independent world instance
+CA702 PASS shield 7 original type, slot and kind
+CA702 PASS shield 7 original native size
+CA702 PASS shield 7 persistent unique identity
+CA702 PASS shield 7 existing wear and water retained
+CA702 PASS shield 7 unchanged collision, scale and floor contact
+CA702 PASS shield 7 original icon and dynamic sprite
+CA702 PASS shield 7 native dry and wet mass
+CA702 PASS shield 7 provenance survives copy and save
+CA702 PASS shield 7 unequipped world flags
+CA702 PASS shield 7 fixed acquired size retained
+CA702 PASS shield 8 saved native class
+CA702 PASS shield 8 independent world instance
+CA702 PASS shield 8 original type, slot and kind
+CA702 PASS shield 8 original native size
+CA702 PASS shield 8 persistent unique identity
+CA702 PASS shield 8 existing wear and water retained
+CA702 PASS shield 8 unchanged collision, scale and floor contact
+CA702 PASS shield 8 original icon and dynamic sprite
+CA702 PASS shield 8 native dry and wet mass
+CA702 PASS shield 8 provenance survives copy and save
+CA702 PASS shield 8 unequipped world flags
+CA702 PASS shield 8 fixed acquired size retained
+CA702 PASS shield 9 saved native class
+CA702 PASS shield 9 independent world instance
+CA702 PASS shield 9 original type, slot and kind
+CA702 PASS shield 9 original native size
+CA702 PASS shield 9 persistent unique identity
+CA702 PASS shield 9 existing wear and water retained
+CA702 PASS shield 9 unchanged collision, scale and floor contact
+CA702 PASS shield 9 original icon and dynamic sprite
+CA702 PASS shield 9 native dry and wet mass
+CA702 PASS shield 9 provenance survives copy and save
+CA702 PASS shield 9 unequipped world flags
+CA702 PASS shield 9 fixed acquired size retained
+CA702 PASS shield 10 saved native class
+CA702 PASS shield 10 independent world instance
+CA702 PASS shield 10 original type, slot and kind
+CA702 PASS shield 10 original native size
+CA702 PASS shield 10 persistent unique identity
+CA702 PASS shield 10 existing wear and water retained
+CA702 PASS shield 10 unchanged collision, scale and floor contact
+CA702 PASS shield 10 original icon and dynamic sprite
+CA702 PASS shield 10 native dry and wet mass
+CA702 PASS shield 10 provenance survives copy and save
+CA702 PASS shield 10 unequipped world flags
+CA702 PASS shield 10 fixed acquired size retained
+CA702 PASS shield 11 saved native class
+CA702 PASS shield 11 independent world instance
+CA702 PASS shield 11 original type, slot and kind
+CA702 PASS shield 11 original native size
+CA702 PASS shield 11 persistent unique identity
+CA702 PASS shield 11 existing wear and water retained
+CA702 PASS shield 11 unchanged collision, scale and floor contact
+CA702 PASS shield 11 original icon and dynamic sprite
+CA702 PASS shield 11 native dry and wet mass
+CA702 PASS shield 11 provenance survives copy and save
+CA702 PASS shield 11 unequipped world flags
+CA702 PASS shield 11 fixed acquired size retained
+CA702 PASS shield 12 saved native class
+CA702 PASS shield 12 independent world instance
+CA702 PASS shield 12 original type, slot and kind
+CA702 PASS shield 12 original native size
+CA702 PASS shield 12 persistent unique identity
+CA702 PASS shield 12 existing wear and water retained
+CA702 PASS shield 12 unchanged collision, scale and floor contact
+CA702 PASS shield 12 original icon and dynamic sprite
+CA702 PASS shield 12 native dry and wet mass
+CA702 PASS shield 12 provenance survives copy and save
+CA702 PASS shield 12 unequipped world flags
+CA702 PASS shield 12 fixed acquired size retained
+CA702 PASS shield 13 saved native class
+CA702 PASS shield 13 independent world instance
+CA702 PASS shield 13 original type, slot and kind
+CA702 PASS shield 13 original native size
+CA702 PASS shield 13 persistent unique identity
+CA702 PASS shield 13 existing wear and water retained
+CA702 PASS shield 13 unchanged collision, scale and floor contact
+CA702 PASS shield 13 original icon and dynamic sprite
+CA702 PASS shield 13 native dry and wet mass
+CA702 PASS shield 13 provenance survives copy and save
+CA702 PASS shield 13 unequipped world flags
+CA702 PASS shield 13 fixed acquired size retained
+CA702 PASS shield 14 saved native class
+CA702 PASS shield 14 independent world instance
+CA702 PASS shield 14 original type, slot and kind
+CA702 PASS shield 14 original native size
+CA702 PASS shield 14 persistent unique identity
+CA702 PASS shield 14 existing wear and water retained
+CA702 PASS shield 14 unchanged collision, scale and floor contact
+CA702 PASS shield 14 original icon and dynamic sprite
+CA702 PASS shield 14 native dry and wet mass
+CA702 PASS shield 14 provenance survives copy and save
+CA702 PASS shield 14 unequipped world flags
+CA702 PASS shield 14 fixed acquired size retained
+CA702 PASS shield 15 saved native class
+CA702 PASS shield 15 independent world instance
+CA702 PASS shield 15 original type, slot and kind
+CA702 PASS shield 15 original native size
+CA702 PASS shield 15 persistent unique identity
+CA702 PASS shield 15 existing wear and water retained
+CA702 PASS shield 15 unchanged collision, scale and floor contact
+CA702 PASS shield 15 original icon and dynamic sprite
+CA702 PASS shield 15 native dry and wet mass
+CA702 PASS shield 15 provenance survives copy and save
+CA702 PASS shield 15 unequipped world flags
+CA702 PASS shield 15 fixed acquired size retained
+CA702 PASS shield 16 saved native class
+CA702 PASS shield 16 independent world instance
+CA702 PASS shield 16 original type, slot and kind
+CA702 PASS shield 16 original native size
+CA702 PASS shield 16 persistent unique identity
+CA702 PASS shield 16 existing wear and water retained
+CA702 PASS shield 16 unchanged collision, scale and floor contact
+CA702 PASS shield 16 original icon and dynamic sprite
+CA702 PASS shield 16 native dry and wet mass
+CA702 PASS shield 16 provenance survives copy and save
+CA702 PASS shield 16 unequipped world flags
+CA702 PASS shield 16 fixed acquired size retained
+CA702 PASS shield 17 saved native class
+CA702 PASS shield 17 independent world instance
+CA702 PASS shield 17 original type, slot and kind
+CA702 PASS shield 17 original native size
+CA702 PASS shield 17 persistent unique identity
+CA702 PASS shield 17 existing wear and water retained
+CA702 PASS shield 17 unchanged collision, scale and floor contact
+CA702 PASS shield 17 original icon and dynamic sprite
+CA702 PASS shield 17 native dry and wet mass
+CA702 PASS shield 17 provenance survives copy and save
+CA702 PASS shield 17 unequipped world flags
+CA702 PASS shield 17 fixed acquired size retained
+CA702 PASS shield 18 saved native class
+CA702 PASS shield 18 independent world instance
+CA702 PASS shield 18 original type, slot and kind
+CA702 PASS shield 18 original native size
+CA702 PASS shield 18 persistent unique identity
+CA702 PASS shield 18 existing wear and water retained
+CA702 PASS shield 18 unchanged collision, scale and floor contact
+CA702 PASS shield 18 original icon and dynamic sprite
+CA702 PASS shield 18 native dry and wet mass
+CA702 PASS shield 18 provenance survives copy and save
+CA702 PASS shield 18 unequipped world flags
+CA702 PASS shield 18 fixed acquired size retained
+CA702 PASS shield 19 saved native class
+CA702 PASS shield 19 independent world instance
+CA702 PASS shield 19 original type, slot and kind
+CA702 PASS shield 19 original native size
+CA702 PASS shield 19 persistent unique identity
+CA702 PASS shield 19 existing wear and water retained
+CA702 PASS shield 19 unchanged collision, scale and floor contact
+CA702 PASS shield 19 original icon and dynamic sprite
+CA702 PASS shield 19 native dry and wet mass
+CA702 PASS shield 19 provenance survives copy and save
+CA702 PASS shield 19 unequipped world flags
+CA702 PASS shield 19 fixed acquired size retained
+CA702 PASS shield 20 saved native class
+CA702 PASS shield 20 independent world instance
+CA702 PASS shield 20 original type, slot and kind
+CA702 PASS shield 20 original native size
+CA702 PASS shield 20 persistent unique identity
+CA702 PASS shield 20 existing wear and water retained
+CA702 PASS shield 20 unchanged collision, scale and floor contact
+CA702 PASS shield 20 original icon and dynamic sprite
+CA702 PASS shield 20 native dry and wet mass
+CA702 PASS shield 20 provenance survives copy and save
+CA702 PASS shield 20 unequipped world flags
+CA702 PASS shield 20 fixed acquired size retained
+CA702 PASS shield 21 saved native class
+CA702 PASS shield 21 independent world instance
+CA702 PASS shield 21 original type, slot and kind
+CA702 PASS shield 21 original native size
+CA702 PASS shield 21 persistent unique identity
+CA702 PASS shield 21 existing wear and water retained
+CA702 PASS shield 21 unchanged collision, scale and floor contact
+CA702 PASS shield 21 original icon and dynamic sprite
+CA702 PASS shield 21 native dry and wet mass
+CA702 PASS shield 21 provenance survives copy and save
+CA702 PASS shield 21 unequipped world flags
+CA702 PASS shield 21 fixed acquired size retained
+CA702 PASS shield 22 saved native class
+CA702 PASS shield 22 independent world instance
+CA702 PASS shield 22 original type, slot and kind
+CA702 PASS shield 22 original native size
+CA702 PASS shield 22 persistent unique identity
+CA702 PASS shield 22 existing wear and water retained
+CA702 PASS shield 22 unchanged collision, scale and floor contact
+CA702 PASS shield 22 original icon and dynamic sprite
+CA702 PASS shield 22 native dry and wet mass
+CA702 PASS shield 22 provenance survives copy and save
+CA702 PASS shield 22 unequipped world flags
+CA702 PASS shield 22 fixed acquired size retained
+CA702 PASS shield 23 saved native class
+CA702 PASS shield 23 independent world instance
+CA702 PASS shield 23 original type, slot and kind
+CA702 PASS shield 23 original native size
+CA702 PASS shield 23 persistent unique identity
+CA702 PASS shield 23 existing wear and water retained
+CA702 PASS shield 23 unchanged collision, scale and floor contact
+CA702 PASS shield 23 original icon and dynamic sprite
+CA702 PASS shield 23 native dry and wet mass
+CA702 PASS shield 23 provenance survives copy and save
+CA702 PASS shield 23 unequipped world flags
+CA702 PASS shield 23 fixed acquired size retained
+CA702 PASS shield 24 saved native class
+CA702 PASS shield 24 independent world instance
+CA702 PASS shield 24 original type, slot and kind
+CA702 PASS shield 24 original native size
+CA702 PASS shield 24 persistent unique identity
+CA702 PASS shield 24 existing wear and water retained
+CA702 PASS shield 24 unchanged collision, scale and floor contact
+CA702 PASS shield 24 original icon and dynamic sprite
+CA702 PASS shield 24 native dry and wet mass
+CA702 PASS shield 24 provenance survives copy and save
+CA702 PASS shield 24 unequipped world flags
+CA702 PASS shield 24 fixed acquired size retained
+CA702 PASS shield 25 saved native class
+CA702 PASS shield 25 independent world instance
+CA702 PASS shield 25 original type, slot and kind
+CA702 PASS shield 25 original native size
+CA702 PASS shield 25 persistent unique identity
+CA702 PASS shield 25 existing wear and water retained
+CA702 PASS shield 25 unchanged collision, scale and floor contact
+CA702 PASS shield 25 original icon and dynamic sprite
+CA702 PASS shield 25 native dry and wet mass
+CA702 PASS shield 25 provenance survives copy and save
+CA702 PASS shield 25 unequipped world flags
+CA702 PASS shield 25 fixed acquired size retained
+CA702 PASS shield 26 saved native class
+CA702 PASS shield 26 independent world instance
+CA702 PASS shield 26 original type, slot and kind
+CA702 PASS shield 26 original native size
+CA702 PASS shield 26 persistent unique identity
+CA702 PASS shield 26 existing wear and water retained
+CA702 PASS shield 26 unchanged collision, scale and floor contact
+CA702 PASS shield 26 original icon and dynamic sprite
+CA702 PASS shield 26 native dry and wet mass
+CA702 PASS shield 26 provenance survives copy and save
+CA702 PASS shield 26 unequipped world flags
+CA702 PASS shield 26 fixed acquired size retained
+CA702 PASS shield 27 saved native class
+CA702 PASS shield 27 independent world instance
+CA702 PASS shield 27 original type, slot and kind
+CA702 PASS shield 27 original native size
+CA702 PASS shield 27 persistent unique identity
+CA702 PASS shield 27 existing wear and water retained
+CA702 PASS shield 27 unchanged collision, scale and floor contact
+CA702 PASS shield 27 original icon and dynamic sprite
+CA702 PASS shield 27 native dry and wet mass
+CA702 PASS shield 27 provenance survives copy and save
+CA702 PASS shield 27 unequipped world flags
+CA702 PASS shield 27 fixed acquired size retained
+CA702 PASS shield 28 saved native class
+CA702 PASS shield 28 independent world instance
+CA702 PASS shield 28 original type, slot and kind
+CA702 PASS shield 28 original native size
+CA702 PASS shield 28 persistent unique identity
+CA702 PASS shield 28 existing wear and water retained
+CA702 PASS shield 28 unchanged collision, scale and floor contact
+CA702 PASS shield 28 original icon and dynamic sprite
+CA702 PASS shield 28 native dry and wet mass
+CA702 PASS shield 28 provenance survives copy and save
+CA702 PASS shield 28 unequipped world flags
+CA702 PASS shield 28 fixed acquired size retained
+CA702 PASS shield 29 saved native class
+CA702 PASS shield 29 independent world instance
+CA702 PASS shield 29 original type, slot and kind
+CA702 PASS shield 29 original native size
+CA702 PASS shield 29 persistent unique identity
+CA702 PASS shield 29 existing wear and water retained
+CA702 PASS shield 29 unchanged collision, scale and floor contact
+CA702 PASS shield 29 original icon and dynamic sprite
+CA702 PASS shield 29 native dry and wet mass
+CA702 PASS shield 29 provenance survives copy and save
+CA702 PASS shield 29 unequipped world flags
+CA702 PASS shield 29 fixed acquired size retained
+CA702 PASS shield 30 saved native class
+CA702 PASS shield 30 independent world instance
+CA702 PASS shield 30 original type, slot and kind
+CA702 PASS shield 30 original native size
+CA702 PASS shield 30 persistent unique identity
+CA702 PASS shield 30 existing wear and water retained
+CA702 PASS shield 30 unchanged collision, scale and floor contact
+CA702 PASS shield 30 original icon and dynamic sprite
+CA702 PASS shield 30 native dry and wet mass
+CA702 PASS shield 30 provenance survives copy and save
+CA702 PASS shield 30 unequipped world flags
+CA702 PASS shield 30 fixed acquired size retained
+CA702 PASS shield 31 saved native class
+CA702 PASS shield 31 independent world instance
+CA702 PASS shield 31 original type, slot and kind
+CA702 PASS shield 31 original native size
+CA702 PASS shield 31 persistent unique identity
+CA702 PASS shield 31 existing wear and water retained
+CA702 PASS shield 31 unchanged collision, scale and floor contact
+CA702 PASS shield 31 original icon and dynamic sprite
+CA702 PASS shield 31 native dry and wet mass
+CA702 PASS shield 31 provenance survives copy and save
+CA702 PASS shield 31 unequipped world flags
+CA702 PASS shield 31 fixed acquired size retained
+CA702 PASS shield 32 saved native class
+CA702 PASS shield 32 independent world instance
+CA702 PASS shield 32 original type, slot and kind
+CA702 PASS shield 32 original native size
+CA702 PASS shield 32 persistent unique identity
+CA702 PASS shield 32 existing wear and water retained
+CA702 PASS shield 32 unchanged collision, scale and floor contact
+CA702 PASS shield 32 original icon and dynamic sprite
+CA702 PASS shield 32 native dry and wet mass
+CA702 PASS shield 32 provenance survives copy and save
+CA702 PASS shield 32 unequipped world flags
+CA702 PASS shield 32 fixed acquired size retained
+CA702 PASS shield 33 saved native class
+CA702 PASS shield 33 independent world instance
+CA702 PASS shield 33 original type, slot and kind
+CA702 PASS shield 33 original native size
+CA702 PASS shield 33 persistent unique identity
+CA702 PASS shield 33 existing wear and water retained
+CA702 PASS shield 33 unchanged collision, scale and floor contact
+CA702 PASS shield 33 original icon and dynamic sprite
+CA702 PASS shield 33 native dry and wet mass
+CA702 PASS shield 33 provenance survives copy and save
+CA702 PASS shield 33 unequipped world flags
+CA702 PASS shield 33 fixed acquired size retained
+CA702 PASS shield 34 saved native class
+CA702 PASS shield 34 independent world instance
+CA702 PASS shield 34 original type, slot and kind
+CA702 PASS shield 34 original native size
+CA702 PASS shield 34 persistent unique identity
+CA702 PASS shield 34 existing wear and water retained
+CA702 PASS shield 34 unchanged collision, scale and floor contact
+CA702 PASS shield 34 original icon and dynamic sprite
+CA702 PASS shield 34 native dry and wet mass
+CA702 PASS shield 34 provenance survives copy and save
+CA702 PASS shield 34 unequipped world flags
+CA702 PASS shield 34 fixed acquired size retained
+CA702 PASS shield 35 saved native class
+CA702 PASS shield 35 independent world instance
+CA702 PASS shield 35 original type, slot and kind
+CA702 PASS shield 35 original native size
+CA702 PASS shield 35 persistent unique identity
+CA702 PASS shield 35 existing wear and water retained
+CA702 PASS shield 35 unchanged collision, scale and floor contact
+CA702 PASS shield 35 original icon and dynamic sprite
+CA702 PASS shield 35 native dry and wet mass
+CA702 PASS shield 35 provenance survives copy and save
+CA702 PASS shield 35 unequipped world flags
+CA702 PASS shield 35 fixed acquired size retained
+CA702 PASS shield 36 saved native class
+CA702 PASS shield 36 independent world instance
+CA702 PASS shield 36 original type, slot and kind
+CA702 PASS shield 36 original native size
+CA702 PASS shield 36 persistent unique identity
+CA702 PASS shield 36 existing wear and water retained
+CA702 PASS shield 36 unchanged collision, scale and floor contact
+CA702 PASS shield 36 original icon and dynamic sprite
+CA702 PASS shield 36 native dry and wet mass
+CA702 PASS shield 36 provenance survives copy and save
+CA702 PASS shield 36 unequipped world flags
+CA702 PASS shield 36 fixed acquired size retained
+CA702 PASS shield 37 saved native class
+CA702 PASS shield 37 independent world instance
+CA702 PASS shield 37 original type, slot and kind
+CA702 PASS shield 37 original native size
+CA702 PASS shield 37 persistent unique identity
+CA702 PASS shield 37 existing wear and water retained
+CA702 PASS shield 37 unchanged collision, scale and floor contact
+CA702 PASS shield 37 original icon and dynamic sprite
+CA702 PASS shield 37 native dry and wet mass
+CA702 PASS shield 37 provenance survives copy and save
+CA702 PASS shield 37 unequipped world flags
+CA702 PASS shield 37 fixed acquired size retained
+CA702 PASS shield 38 saved native class
+CA702 PASS shield 38 independent world instance
+CA702 PASS shield 38 original type, slot and kind
+CA702 PASS shield 38 original native size
+CA702 PASS shield 38 persistent unique identity
+CA702 PASS shield 38 existing wear and water retained
+CA702 PASS shield 38 unchanged collision, scale and floor contact
+CA702 PASS shield 38 original icon and dynamic sprite
+CA702 PASS shield 38 native dry and wet mass
+CA702 PASS shield 38 provenance survives copy and save
+CA702 PASS shield 38 unequipped world flags
+CA702 PASS shield 38 fixed acquired size retained
+CA702 PASS shield 39 saved native class
+CA702 PASS shield 39 independent world instance
+CA702 PASS shield 39 original type, slot and kind
+CA702 PASS shield 39 original native size
+CA702 PASS shield 39 persistent unique identity
+CA702 PASS shield 39 existing wear and water retained
+CA702 PASS shield 39 unchanged collision, scale and floor contact
+CA702 PASS shield 39 original icon and dynamic sprite
+CA702 PASS shield 39 native dry and wet mass
+CA702 PASS shield 39 provenance survives copy and save
+CA702 PASS shield 39 unequipped world flags
+CA702 PASS shield 39 fixed acquired size retained
+CA702 PASS shield 40 saved native class
+CA702 PASS shield 40 independent world instance
+CA702 PASS shield 40 original type, slot and kind
+CA702 PASS shield 40 original native size
+CA702 PASS shield 40 persistent unique identity
+CA702 PASS shield 40 existing wear and water retained
+CA702 PASS shield 40 unchanged collision, scale and floor contact
+CA702 PASS shield 40 original icon and dynamic sprite
+CA702 PASS shield 40 native dry and wet mass
+CA702 PASS shield 40 provenance survives copy and save
+CA702 PASS shield 40 unequipped world flags
+CA702 PASS shield 40 fixed acquired size retained
+CA702 PASS shield 41 saved native class
+CA702 PASS shield 41 independent world instance
+CA702 PASS shield 41 original type, slot and kind
+CA702 PASS shield 41 original native size
+CA702 PASS shield 41 persistent unique identity
+CA702 PASS shield 41 existing wear and water retained
+CA702 PASS shield 41 unchanged collision, scale and floor contact
+CA702 PASS shield 41 original icon and dynamic sprite
+CA702 PASS shield 41 native dry and wet mass
+CA702 PASS shield 41 provenance survives copy and save
+CA702 PASS shield 41 unequipped world flags
+CA702 PASS shield 41 fixed acquired size retained
+CA702 PASS shield 42 saved native class
+CA702 PASS shield 42 independent world instance
+CA702 PASS shield 42 original type, slot and kind
+CA702 PASS shield 42 original native size
+CA702 PASS shield 42 persistent unique identity
+CA702 PASS shield 42 existing wear and water retained
+CA702 PASS shield 42 unchanged collision, scale and floor contact
+CA702 PASS shield 42 original icon and dynamic sprite
+CA702 PASS shield 42 native dry and wet mass
+CA702 PASS shield 42 provenance survives copy and save
+CA702 PASS shield 42 unequipped world flags
+CA702 PASS shield 42 fixed acquired size retained
+CA702 PASS shield 43 saved native class
+CA702 PASS shield 43 independent world instance
+CA702 PASS shield 43 original type, slot and kind
+CA702 PASS shield 43 original native size
+CA702 PASS shield 43 persistent unique identity
+CA702 PASS shield 43 existing wear and water retained
+CA702 PASS shield 43 unchanged collision, scale and floor contact
+CA702 PASS shield 43 original icon and dynamic sprite
+CA702 PASS shield 43 native dry and wet mass
+CA702 PASS shield 43 provenance survives copy and save
+CA702 PASS shield 43 unequipped world flags
+CA702 PASS shield 43 fixed acquired size retained
+CA702 PASS shield 44 saved native class
+CA702 PASS shield 44 independent world instance
+CA702 PASS shield 44 original type, slot and kind
+CA702 PASS shield 44 original native size
+CA702 PASS shield 44 persistent unique identity
+CA702 PASS shield 44 existing wear and water retained
+CA702 PASS shield 44 unchanged collision, scale and floor contact
+CA702 PASS shield 44 original icon and dynamic sprite
+CA702 PASS shield 44 native dry and wet mass
+CA702 PASS shield 44 provenance survives copy and save
+CA702 PASS shield 44 unequipped world flags
+CA702 PASS shield 44 fixed acquired size retained
+CA702 PASS shield 45 saved native class
+CA702 PASS shield 45 independent world instance
+CA702 PASS shield 45 original type, slot and kind
+CA702 PASS shield 45 original native size
+CA702 PASS shield 45 persistent unique identity
+CA702 PASS shield 45 existing wear and water retained
+CA702 PASS shield 45 unchanged collision, scale and floor contact
+CA702 PASS shield 45 original icon and dynamic sprite
+CA702 PASS shield 45 native dry and wet mass
+CA702 PASS shield 45 provenance survives copy and save
+CA702 PASS shield 45 unequipped world flags
+CA702 PASS shield 45 fixed acquired size retained
+CA702 PASS shield 46 saved native class
+CA702 PASS shield 46 independent world instance
+CA702 PASS shield 46 original type, slot and kind
+CA702 PASS shield 46 original native size
+CA702 PASS shield 46 persistent unique identity
+CA702 PASS shield 46 existing wear and water retained
+CA702 PASS shield 46 unchanged collision, scale and floor contact
+CA702 PASS shield 46 original icon and dynamic sprite
+CA702 PASS shield 46 native dry and wet mass
+CA702 PASS shield 46 provenance survives copy and save
+CA702 PASS shield 46 unequipped world flags
+CA702 PASS shield 46 fixed acquired size retained
+CA702 PASS shield 47 saved native class
+CA702 PASS shield 47 independent world instance
+CA702 PASS shield 47 original type, slot and kind
+CA702 PASS shield 47 original native size
+CA702 PASS shield 47 persistent unique identity
+CA702 PASS shield 47 existing wear and water retained
+CA702 PASS shield 47 unchanged collision, scale and floor contact
+CA702 PASS shield 47 original icon and dynamic sprite
+CA702 PASS shield 47 native dry and wet mass
+CA702 PASS shield 47 provenance survives copy and save
+CA702 PASS shield 47 unequipped world flags
+CA702 PASS shield 47 fixed acquired size retained
+CA702 PASS shield 48 saved native class
+CA702 PASS shield 48 independent world instance
+CA702 PASS shield 48 original type, slot and kind
+CA702 PASS shield 48 original native size
+CA702 PASS shield 48 persistent unique identity
+CA702 PASS shield 48 existing wear and water retained
+CA702 PASS shield 48 unchanged collision, scale and floor contact
+CA702 PASS shield 48 original icon and dynamic sprite
+CA702 PASS shield 48 native dry and wet mass
+CA702 PASS shield 48 provenance survives copy and save
+CA702 PASS shield 48 unequipped world flags
+CA702 PASS shield 48 fixed acquired size retained
+CA702 PASS shield 49 saved native class
+CA702 PASS shield 49 independent world instance
+CA702 PASS shield 49 original type, slot and kind
+CA702 PASS shield 49 original native size
+CA702 PASS shield 49 persistent unique identity
+CA702 PASS shield 49 existing wear and water retained
+CA702 PASS shield 49 unchanged collision, scale and floor contact
+CA702 PASS shield 49 original icon and dynamic sprite
+CA702 PASS shield 49 native dry and wet mass
+CA702 PASS shield 49 provenance survives copy and save
+CA702 PASS shield 49 unequipped world flags
+CA702 PASS shield 49 fixed acquired size retained
+CA702 PASS shield 50 saved native class
+CA702 PASS shield 50 independent world instance
+CA702 PASS shield 50 original type, slot and kind
+CA702 PASS shield 50 original native size
+CA702 PASS shield 50 persistent unique identity
+CA702 PASS shield 50 existing wear and water retained
+CA702 PASS shield 50 unchanged collision, scale and floor contact
+CA702 PASS shield 50 original icon and dynamic sprite
+CA702 PASS shield 50 native dry and wet mass
+CA702 PASS shield 50 provenance survives copy and save
+CA702 PASS shield 50 unequipped world flags
+CA702 PASS shield 50 fixed acquired size retained
+CA702 PASS shield 51 saved native class
+CA702 PASS shield 51 independent world instance
+CA702 PASS shield 51 original type, slot and kind
+CA702 PASS shield 51 original native size
+CA702 PASS shield 51 persistent unique identity
+CA702 PASS shield 51 existing wear and water retained
+CA702 PASS shield 51 unchanged collision, scale and floor contact
+CA702 PASS shield 51 original icon and dynamic sprite
+CA702 PASS shield 51 native dry and wet mass
+CA702 PASS shield 51 provenance survives copy and save
+CA702 PASS shield 51 unequipped world flags
+CA702 PASS shield 51 fixed acquired size retained
+CA702 PASS shield 52 saved native class
+CA702 PASS shield 52 independent world instance
+CA702 PASS shield 52 original type, slot and kind
+CA702 PASS shield 52 original native size
+CA702 PASS shield 52 persistent unique identity
+CA702 PASS shield 52 existing wear and water retained
+CA702 PASS shield 52 unchanged collision, scale and floor contact
+CA702 PASS shield 52 original icon and dynamic sprite
+CA702 PASS shield 52 native dry and wet mass
+CA702 PASS shield 52 provenance survives copy and save
+CA702 PASS shield 52 unequipped world flags
+CA702 PASS shield 52 fixed acquired size retained
+CA702 PASS shield 53 saved native class
+CA702 PASS shield 53 independent world instance
+CA702 PASS shield 53 original type, slot and kind
+CA702 PASS shield 53 original native size
+CA702 PASS shield 53 persistent unique identity
+CA702 PASS shield 53 existing wear and water retained
+CA702 PASS shield 53 unchanged collision, scale and floor contact
+CA702 PASS shield 53 original icon and dynamic sprite
+CA702 PASS shield 53 native dry and wet mass
+CA702 PASS shield 53 provenance survives copy and save
+CA702 PASS shield 53 unequipped world flags
+CA702 PASS shield 53 fixed acquired size retained
+CA702 PASS shield 54 saved native class
+CA702 PASS shield 54 independent world instance
+CA702 PASS shield 54 original type, slot and kind
+CA702 PASS shield 54 original native size
+CA702 PASS shield 54 persistent unique identity
+CA702 PASS shield 54 existing wear and water retained
+CA702 PASS shield 54 unchanged collision, scale and floor contact
+CA702 PASS shield 54 original icon and dynamic sprite
+CA702 PASS shield 54 native dry and wet mass
+CA702 PASS shield 54 provenance survives copy and save
+CA702 PASS shield 54 unequipped world flags
+CA702 PASS shield 54 fixed acquired size retained
+CA702 PASS shield 55 saved native class
+CA702 PASS shield 55 independent world instance
+CA702 PASS shield 55 original type, slot and kind
+CA702 PASS shield 55 original native size
+CA702 PASS shield 55 persistent unique identity
+CA702 PASS shield 55 existing wear and water retained
+CA702 PASS shield 55 unchanged collision, scale and floor contact
+CA702 PASS shield 55 original icon and dynamic sprite
+CA702 PASS shield 55 native dry and wet mass
+CA702 PASS shield 55 provenance survives copy and save
+CA702 PASS shield 55 unequipped world flags
+CA702 PASS shield 55 fixed acquired size retained
+CA702 PASS shield 56 saved native class
+CA702 PASS shield 56 independent world instance
+CA702 PASS shield 56 original type, slot and kind
+CA702 PASS shield 56 original native size
+CA702 PASS shield 56 persistent unique identity
+CA702 PASS shield 56 existing wear and water retained
+CA702 PASS shield 56 unchanged collision, scale and floor contact
+CA702 PASS shield 56 original icon and dynamic sprite
+CA702 PASS shield 56 native dry and wet mass
+CA702 PASS shield 56 provenance survives copy and save
+CA702 PASS shield 56 unequipped world flags
+CA702 PASS shield 56 fixed acquired size retained
+CA702 PASS shield 57 saved native class
+CA702 PASS shield 57 independent world instance
+CA702 PASS shield 57 original type, slot and kind
+CA702 PASS shield 57 original native size
+CA702 PASS shield 57 persistent unique identity
+CA702 PASS shield 57 existing wear and water retained
+CA702 PASS shield 57 unchanged collision, scale and floor contact
+CA702 PASS shield 57 original icon and dynamic sprite
+CA702 PASS shield 57 native dry and wet mass
+CA702 PASS shield 57 provenance survives copy and save
+CA702 PASS shield 57 unequipped world flags
+CA702 PASS shield 57 fixed acquired size retained
+CA702 PASS shield 58 saved native class
+CA702 PASS shield 58 independent world instance
+CA702 PASS shield 58 original type, slot and kind
+CA702 PASS shield 58 original native size
+CA702 PASS shield 58 persistent unique identity
+CA702 PASS shield 58 existing wear and water retained
+CA702 PASS shield 58 unchanged collision, scale and floor contact
+CA702 PASS shield 58 original icon and dynamic sprite
+CA702 PASS shield 58 native dry and wet mass
+CA702 PASS shield 58 provenance survives copy and save
+CA702 PASS shield 58 unequipped world flags
+CA702 PASS shield 58 fixed acquired size retained
+CA702 PASS shield 59 saved native class
+CA702 PASS shield 59 independent world instance
+CA702 PASS shield 59 original type, slot and kind
+CA702 PASS shield 59 original native size
+CA702 PASS shield 59 persistent unique identity
+CA702 PASS shield 59 existing wear and water retained
+CA702 PASS shield 59 unchanged collision, scale and floor contact
+CA702 PASS shield 59 original icon and dynamic sprite
+CA702 PASS shield 59 native dry and wet mass
+CA702 PASS shield 59 provenance survives copy and save
+CA702 PASS shield 59 unequipped world flags
+CA702 PASS shield 59 fixed acquired size retained
+CA702 COMPLETE failures=0
+Game saved.

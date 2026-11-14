@@ -1,6 +1,25 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.28** - 2026-11-14.
+Documentation version: **5.17.29** - 2026-11-14.
+
+## 5.17.29 - Four shield world props (#702, 2026-11-14)
+
+Implemented the author's all-world-drops 3D request for the four existing shield
+types. Original PNGs and native gameplay remain unchanged. Nineteen closed
+parts include curved painted fronts, solid backs, rims and rear grips using
+owned materials. Twenty-two assembly witnesses and seven clearances pass.
+Native preview exposed silhouette/UV defects despite functional success;
+smooth outer hulls and planar backing corrected the candidate. Original alpha
+cutouts remain visible over solid backing. No author art acceptance is claimed.
+
+Static/repeated export and native tests: 5,888 assertions across [1141, 1202, 1141, 1202, 1202],
+60 type/tier/size cases, old/fresh/reloaded/reverse-loaded saves. Both previews
+pass 1,141 each. One 700-tic four-object sprite/model sample records 1164.76/1216.96
+queue presents/s, p95 1.0510/1.0164 ms, p99 1.3199/1.2224 ms; different footprints and queue-only
+timing limit the comparison. All 18,365 runtime entries match src.
+Evidence: assets/validation_v5_17_29/evidence/SUMMARY.json. CA702-SHIELDS-01
+originates here and stays pending. Worn/first-person fitting and the wider
+campaign/art batch remain incomplete.
 
 ## 5.17.28 - Cuyo material and guardian gallery (#700, 2026-11-14)
 

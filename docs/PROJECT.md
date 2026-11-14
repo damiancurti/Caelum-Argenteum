@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.28** - 2026-11-14.
+Documentation version: **5.17.29** - 2026-11-14.
+
+## 5.17.29 - Native shield world props (#702)
+
+Four shield types gain candidate 3D world models preserving their existing
+shared tier/size appearance and original icon pixels. Closed backs, raised
+front relief, rims and rear grips accompany 5,888 native assertions across
+60 type/tier/size cases and both save directions. The qualified peaceful
+presentation comparison is 1164.76/1216.96 queue presents/s, p95 1.0510/1.0164 ms,
+p99 1.3199/1.2224 ms. This does not certify campaign/siege rendering. Worn/first-person
+fit and author visual acceptance remain separate; CA702-SHIELDS-01 is pending.
+The broader V5.16/V5.17 batch remains unfinished. ASSETS records sources/tests.
 
 ## 5.17.28 - Cuyo study and regional guardian displays (#700)
 
