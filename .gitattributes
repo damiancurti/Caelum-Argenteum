@@ -868,3 +868,6 @@ assets/validation_v5_17_31/evidence/** -text -diff
 /assets/validation_v5_17_34/*.zs text eol=lf
 /assets/validation_v5_17_34/*.json text eol=lf
 /assets/validation_v5_17_34/evidence/** -text -diff
+
+/assets/validation_v5_17_35/*.py text eol=lf
+/assets/validation_v5_17_35/evidence/** -text -diff

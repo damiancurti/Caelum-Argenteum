@@ -1,0 +1,10 @@
+{
+  "files": [
+    "gallery.pk3",
+    "gallery.zs",
+    "GALLERY_MANIFEST.json",
+    "TEXTMAP.txt"
+  ],
+  "byte_identical": true,
+  "static_validation_passed": true
+}
