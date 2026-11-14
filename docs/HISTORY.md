@@ -1,6 +1,27 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.33** - 2026-11-14.
+Documentation version: **5.17.34** - 2026-11-14.
+
+## 5.17.34 - Native avian family (#711, 2026-11-14)
+
+Implemented reference-led Cachiru, Kakuy and Kelenken with editable anatomy,
+curved closed feather solids and all 23 inherited combat identities. Preserved
+the existing provisional rules, collision, saves and protected characters.
+Built-in image_gen materials and all three exact prompt records are retained;
+original concepts and owned eye sources remain intact. Native review led to
+denser feathers, shorter owl tufts/brows and a smaller Kakuy beak. Prior art,
+the copied-validator-path failure and all previews remain evidence.
+
+Sixteen final files repeat; 313 closed components and 310 neutral attachment
+witnesses pass independent checks, with no collapsed triangle in 23 native
+poses. Final native checks: 345 continuity and 188 action/loot assertions.
+Three qualified 700-tic sprite/model presentation pairs and their tails are
+recorded in ASSETS and assets/validation_v5_17_34/evidence/SUMMARY.json;
+queue-only measurements do not imply GPU/display or campaign acceptance.
+All 18,394 runtime entries match src. CA711-AVIAN-01 originates here
+and remains unconfirmed. Native folklore coverage reaches fourteen of 56;
+regional placement, other characters, worn equipment and original campaign
+work remain unfinished. No author acceptance is inferred.
 
 ## 5.17.33 - Native regional gallery (#709, 2026-11-14)
 

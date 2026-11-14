@@ -1,6 +1,18 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.33** - 2026-11-14.
+Documentation version: **5.17.34** - 2026-11-14.
+
+## 5.17.34 - Three native avian combat models (#711)
+
+Cachiru, Kakuy and Kelenken bring native art to fourteen of 56 new folklore
+combat classes. Their owned concepts, editable anatomy, 23 state identities
+and approved provisional Mandinga rules are preserved. Sixteen exports
+repeat; 313 closed solids/310 neutral attachments, 345 continuity assertions
+and 188 action/loot assertions pass. Three qualified presentation pairs
+are recorded in ASSETS; they do not establish crowd or campaign performance.
+CA711-AVIAN-01 retains author art and ordinary-play acceptance. Flight,
+runtime size changes, new population, regional-gallery placement, remaining
+characters, worn equipment and the original campaign are not completed here.
 
 ## 5.17.33 - Native regional inspection room (#709)
 

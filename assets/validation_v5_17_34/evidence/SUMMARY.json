@@ -1,0 +1,2272 @@
+{
+  "issue": 711,
+  "parent_issue": 461,
+  "version": "5.17.34",
+  "date": "2026-11-14",
+  "author_accepted": false,
+  "scope": "CA-FOLK-045 Cachiru,046 Kakuy,058 Kelenken native models on existing combat classes, all23 inherited frame/action identities. Existing provisional Mandinga rules, collision, unique/repeatable identities and saves unchanged.",
+  "runtime": {
+    "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-711\\build\\issue711-avian01.pk3",
+    "sha256": "6f80f3359e65261d9c4d739eee71352ceec0fbec031a48508a3f0deef7b3e702",
+    "source_entries": 18394,
+    "exact_source_bytes": true
+  },
+  "baseline": {
+    "sha256": "e0dc2dffa0c3dcc070c18a16f6b9cc8ceee2c67bdc80aa1eb0cd92bcf1b183b4",
+    "new_resources": [
+      "caelum/data/avian_combat.modeldef",
+      "models/caelum/folklore/avian/cachiru.md3",
+      "models/caelum/folklore/avian/coverts-v2.png",
+      "models/caelum/folklore/avian/dark.png",
+      "models/caelum/folklore/avian/flight.png",
+      "models/caelum/folklore/avian/iris.png",
+      "models/caelum/folklore/avian/kakuy.md3",
+      "models/caelum/folklore/avian/kelenken.md3"
+    ],
+    "changed_resources": [
+      "MODELDEF",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "all_other_runtime_bytes_identical": true
+  },
+  "static": {
+    "errors": [],
+    "repeat_files": 16,
+    "byte_identical": true,
+    "changed_from_visual02": [
+      "manifest.json"
+    ],
+    "species": {
+      "cachiru": {
+        "closed_components": 108,
+        "attachment_witnesses": 107,
+        "rooted_components": 108,
+        "combat_frames": 23,
+        "collapsed_native_triangles": 0
+      },
+      "kakuy": {
+        "closed_components": 100,
+        "attachment_witnesses": 99,
+        "rooted_components": 100,
+        "combat_frames": 23,
+        "collapsed_native_triangles": 0
+      },
+      "kelenken": {
+        "closed_components": 105,
+        "attachment_witnesses": 104,
+        "rooted_components": 105,
+        "combat_frames": 23,
+        "collapsed_native_triangles": 0
+      }
+    },
+    "installed_export_check_passed": true,
+    "exports": {
+      "cachiru": {
+        "actor": "CaelumBestiary045",
+        "catalogue_id": "CA-FOLK-045",
+        "vertices": 10229,
+        "triangles": 18496,
+        "hierarchical_parts": 121,
+        "surfaces": [
+          {
+            "material": "coverts",
+            "vertices": 4096,
+            "triangles": 7528
+          },
+          {
+            "material": "coverts",
+            "vertices": 863,
+            "triangles": 1496
+          },
+          {
+            "material": "flight",
+            "vertices": 3781,
+            "triangles": 6592
+          },
+          {
+            "material": "iris",
+            "vertices": 508,
+            "triangles": 960
+          },
+          {
+            "material": "dark",
+            "vertices": 1016,
+            "triangles": 1920
+          }
+        ],
+        "native_bounds": [
+          {
+            "min": [
+              -49.058308616178714,
+              -81.29662570681045,
+              0.0
+            ],
+            "max": [
+              22.035055092133746,
+              81.29662570681045,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -49.058308616178714,
+              -80.20581892720062,
+              0.0
+            ],
+            "max": [
+              21.665351177869958,
+              80.20581892720062,
+              99.90363713904671
+            ]
+          },
+          {
+            "min": [
+              -49.058308616178714,
+              -81.50290413340208,
+              0.0
+            ],
+            "max": [
+              22.537228357104322,
+              81.50290413340208,
+              100.1071706246336
+            ]
+          },
+          {
+            "min": [
+              -49.00644338509693,
+              -82.28036191776724,
+              0.0
+            ],
+            "max": [
+              30.918691226488374,
+              82.28036191776724,
+              107.31325035172468
+            ]
+          },
+          {
+            "min": [
+              -49.058308616178714,
+              -81.0868757064402,
+              0.0
+            ],
+            "max": [
+              21.513872097829427,
+              81.0868757064402,
+              99.86018036036917
+            ]
+          },
+          {
+            "min": [
+              -49.00644338509693,
+              -80.22841311826484,
+              0.0
+            ],
+            "max": [
+              30.918691226488374,
+              80.22841311826484,
+              107.15464632316748
+            ]
+          },
+          {
+            "min": [
+              -49.00644338509693,
+              -82.28036191776724,
+              0.0
+            ],
+            "max": [
+              30.918691226488374,
+              82.28036191776724,
+              107.31325035172468
+            ]
+          },
+          {
+            "min": [
+              -49.00644338509693,
+              -80.22841311826484,
+              0.0
+            ],
+            "max": [
+              30.918691226488374,
+              80.22841311826484,
+              107.15464632316748
+            ]
+          },
+          {
+            "min": [
+              -49.058308616178714,
+              -79.12353066220858,
+              0.0
+            ],
+            "max": [
+              19.47477267548021,
+              83.07365176287695,
+              99.10632761354414
+            ]
+          },
+          {
+            "min": [
+              -49.058308616178714,
+              -84.7687063349965,
+              0.0
+            ],
+            "max": [
+              18.888729889460166,
+              84.7687063349965,
+              98.77693314039284
+            ]
+          },
+          {
+            "min": [
+              -49.058308616178714,
+              -73.48274621845886,
+              0.0
+            ],
+            "max": [
+              25.25166989125826,
+              73.48274621845886,
+              100.04726458584612
+            ]
+          },
+          {
+            "min": [
+              -49.058308616178714,
+              -83.07365176287695,
+              0.0
+            ],
+            "max": [
+              19.47477267548021,
+              79.12353066220858,
+              99.10632761354414
+            ]
+          },
+          {
+            "min": [
+              -49.058308616178714,
+              -77.69666091207662,
+              0.0
+            ],
+            "max": [
+              22.38642851406343,
+              77.54959523524715,
+              103.09742218966372
+            ]
+          },
+          {
+            "min": [
+              -58.70860123557402,
+              -64.43146131234244,
+              0.0
+            ],
+            "max": [
+              23.101886792419496,
+              57.11284254507273,
+              102.81247664699904
+            ]
+          },
+          {
+            "min": [
+              -73.04609716280929,
+              -55.667667410741636,
+              0.0
+            ],
+            "max": [
+              23.77379723433013,
+              34.5873541273588,
+              90.25502153810045
+            ]
+          },
+          {
+            "min": [
+              -78.57315572663072,
+              -65.21712083145879,
+              0.0
+            ],
+            "max": [
+              24.43635996786656,
+              39.81570975899464,
+              71.40967191601645
+            ]
+          },
+          {
+            "min": [
+              -76.49254012937232,
+              -67.16686903348335,
+              0.0
+            ],
+            "max": [
+              24.9819927900336,
+              40.86973047045741,
+              53.77315065834554
+            ]
+          },
+          {
+            "min": [
+              -72.18579696380583,
+              -65.92556472757182,
+              0.0
+            ],
+            "max": [
+              25.25166989125826,
+              39.803651841868984,
+              50.55644606594774
+            ]
+          },
+          {
+            "min": [
+              -49.058308616178714,
+              -81.29662570681045,
+              0.0
+            ],
+            "max": [
+              20.44499065161215,
+              81.29662570681045,
+              99.51589737733421
+            ]
+          },
+          {
+            "min": [
+              -49.058308616178714,
+              -81.29662570681045,
+              0.0
+            ],
+            "max": [
+              22.035055092133746,
+              81.29662570681045,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -49.058308616178714,
+              -81.29662570681045,
+              0.0
+            ],
+            "max": [
+              22.916684891047638,
+              81.29662570681045,
+              100.16820735404015
+            ]
+          },
+          {
+            "min": [
+              -49.058308616178714,
+              -81.29662570681045,
+              0.0
+            ],
+            "max": [
+              22.035055092133746,
+              81.29662570681045,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -72.18579696380583,
+              -65.92556472757182,
+              0.0
+            ],
+            "max": [
+              25.25166989125826,
+              39.803651841868984,
+              50.55644606594774
+            ]
+          }
+        ],
+        "modeldef_scale": 1.652622208,
+        "native_profile": {
+          "Height": 51.644444,
+          "Radius": 14.755556,
+          "Scale": 0.3125
+        },
+        "maximum_authored_radius": 90.29950324902552,
+        "maximum_authored_height": 107.31325035172468,
+        "source_sha256": "a4ffc47561bbf59ae27f9475df049c637f4d42b8cc472718adc3ab4c5a000932"
+      },
+      "kakuy": {
+        "actor": "CaelumBestiary046",
+        "catalogue_id": "CA-FOLK-046",
+        "vertices": 9651,
+        "triangles": 17472,
+        "hierarchical_parts": 113,
+        "surfaces": [
+          {
+            "material": "coverts",
+            "vertices": 4096,
+            "triangles": 7528
+          },
+          {
+            "material": "coverts",
+            "vertices": 621,
+            "triangles": 1048
+          },
+          {
+            "material": "flight",
+            "vertices": 3445,
+            "triangles": 6016
+          },
+          {
+            "material": "iris",
+            "vertices": 508,
+            "triangles": 960
+          },
+          {
+            "material": "dark",
+            "vertices": 1016,
+            "triangles": 1920
+          }
+        ],
+        "native_bounds": [
+          {
+            "min": [
+              -50.11191101441806,
+              -83.04259539532136,
+              0.0
+            ],
+            "max": [
+              20.757517086666972,
+              83.04259539532136,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -50.11191101441806,
+              -81.92836186759423,
+              0.0
+            ],
+            "max": [
+              20.279172860877978,
+              81.92836186759423,
+              100.1419162562342
+            ]
+          },
+          {
+            "min": [
+              -50.11191101441806,
+              -83.25330396740908,
+              0.0
+            ],
+            "max": [
+              21.429712276764658,
+              83.25330396740908,
+              99.77400566077608
+            ]
+          },
+          {
+            "min": [
+              -50.05893189797426,
+              -84.04745884976322,
+              0.0
+            ],
+            "max": [
+              31.58271752795583,
+              84.04745884976322,
+              107.25468184481636
+            ]
+          },
+          {
+            "min": [
+              -50.11191101441806,
+              -82.82834069208519,
+              0.0
+            ],
+            "max": [
+              20.084140229310464,
+              82.82834069208519,
+              100.19449692560552
+            ]
+          },
+          {
+            "min": [
+              -50.05893189797426,
+              -81.95144130355504,
+              0.0
+            ],
+            "max": [
+              31.58271752795583,
+              81.95144130355504,
+              107.52469900024425
+            ]
+          },
+          {
+            "min": [
+              -50.05893189797426,
+              -84.04745884976322,
+              0.0
+            ],
+            "max": [
+              31.58271752795583,
+              84.04745884976322,
+              107.25468184481636
+            ]
+          },
+          {
+            "min": [
+              -50.05893189797426,
+              -81.95144130355504,
+              0.0
+            ],
+            "max": [
+              31.58271752795583,
+              81.95144130355504,
+              107.52469900024425
+            ]
+          },
+          {
+            "min": [
+              -50.11191101441806,
+              -80.82282980264766,
+              0.0
+            ],
+            "max": [
+              18.963441052709864,
+              84.85778581064154,
+              100.6410047310693
+            ]
+          },
+          {
+            "min": [
+              -50.11191101441806,
+              -86.5892442787108,
+              0.0
+            ],
+            "max": [
+              18.963441052709864,
+              86.5892442787108,
+              100.76398499075768
+            ]
+          },
+          {
+            "min": [
+              -50.11191101441806,
+              -75.06090086399934,
+              0.0
+            ],
+            "max": [
+              25.295994936803854,
+              75.06090086399934,
+              97.89199565949312
+            ]
+          },
+          {
+            "min": [
+              -50.11191101441806,
+              -84.85778581064154,
+              0.0
+            ],
+            "max": [
+              18.963441052709864,
+              80.82282980264766,
+              100.6410047310693
+            ]
+          },
+          {
+            "min": [
+              -50.11191101441806,
+              -79.3653158368238,
+              0.0
+            ],
+            "max": [
+              21.227057651870844,
+              79.2150916990898,
+              101.18068434631255
+            ]
+          },
+          {
+            "min": [
+              -59.96945846453032,
+              -65.8152257362623,
+              0.0
+            ],
+            "max": [
+              22.20572121913829,
+              58.339428409386656,
+              98.0837418305518
+            ]
+          },
+          {
+            "min": [
+              -74.61487410036925,
+              -50.89670677853592,
+              0.0
+            ],
+            "max": [
+              23.1621516039473,
+              35.330170589753536,
+              86.22687736828946
+            ]
+          },
+          {
+            "min": [
+              -80.26063472144283,
+              -58.90372720045383,
+              0.0
+            ],
+            "max": [
+              24.14399237024085,
+              40.67081317517406,
+              66.89525559859328
+            ]
+          },
+          {
+            "min": [
+              -78.13533471404227,
+              -62.48091609021723,
+              0.0
+            ],
+            "max": [
+              24.988822176856033,
+              41.7474705975369,
+              51.48648390696854
+            ]
+          },
+          {
+            "min": [
+              -73.73609763550085,
+              -63.03747997823661,
+              0.0
+            ],
+            "max": [
+              25.295994936803854,
+              40.658496295789824,
+              51.642223263002876
+            ]
+          },
+          {
+            "min": [
+              -50.11191101441806,
+              -83.04259539532136,
+              0.0
+            ],
+            "max": [
+              18.963441052709864,
+              83.04259539532136,
+              100.4850024252654
+            ]
+          },
+          {
+            "min": [
+              -50.11191101441806,
+              -83.04259539532136,
+              0.0
+            ],
+            "max": [
+              20.757517086666972,
+              83.04259539532136,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -50.11191101441806,
+              -83.04259539532136,
+              0.0
+            ],
+            "max": [
+              21.947093887643966,
+              83.04259539532136,
+              99.57529919893152
+            ]
+          },
+          {
+            "min": [
+              -50.11191101441806,
+              -83.04259539532136,
+              0.0
+            ],
+            "max": [
+              20.757517086666972,
+              83.04259539532136,
+              100.0
+            ]
+          },
+          {
+            "min": [
+              -73.73609763550085,
+              -63.03747997823661,
+              0.0
+            ],
+            "max": [
+              25.295994936803854,
+              40.658496295789824,
+              51.642223263002876
+            ]
+          }
+        ],
+        "modeldef_scale": 1.652622208,
+        "native_profile": {
+          "Height": 51.644444,
+          "Radius": 14.755556,
+          "Scale": 0.3125
+        },
+        "maximum_authored_radius": 92.23882353679465,
+        "maximum_authored_height": 107.52469900024425,
+        "source_sha256": "fbda2ce6d5b436375b731acd720aba64b97b8b3361c202260549e6109dd89c10"
+      },
+      "kelenken": {
+        "actor": "CaelumBestiary058",
+        "catalogue_id": "CA-FOLK-058",
+        "vertices": 9535,
+        "triangles": 17184,
+        "hierarchical_parts": 118,
+        "surfaces": [
+          {
+            "material": "coverts",
+            "vertices": 4096,
+            "triangles": 7468
+          },
+          {
+            "material": "coverts",
+            "vertices": 97,
+            "triangles": 148
+          },
+          {
+            "material": "flight",
+            "vertices": 3837,
+            "triangles": 6688
+          },
+          {
+            "material": "iris",
+            "vertices": 508,
+            "triangles": 960
+          },
+          {
+            "material": "dark",
+            "vertices": 1016,
+            "triangles": 1920
+          }
+        ],
+        "native_bounds": [
+          {
+            "min": [
+              -46.938213659343525,
+              -77.78332549262642,
+              0.0
+            ],
+            "max": [
+              35.6653784273697,
+              77.78332549262642,
+              99.99999999999999
+            ]
+          },
+          {
+            "min": [
+              -46.938213659343525,
+              -76.73965882072854,
+              0.0
+            ],
+            "max": [
+              35.120133339284635,
+              76.73965882072854,
+              99.91871546458724
+            ]
+          },
+          {
+            "min": [
+              -46.938213659343525,
+              -77.98068942819182,
+              0.0
+            ],
+            "max": [
+              36.40365070080535,
+              77.98068942819182,
+              100.08660656364745
+            ]
+          },
+          {
+            "min": [
+              -46.888589826670156,
+              -78.72454873812362,
+              0.0
+            ],
+            "max": [
+              36.142993702563025,
+              78.72454873812362,
+              106.98739964863738
+            ]
+          },
+          {
+            "min": [
+              -46.938213659343525,
+              -77.58264001018443,
+              0.0
+            ],
+            "max": [
+              34.896337490653885,
+              77.58264001018443,
+              99.90712468701257
+            ]
+          },
+          {
+            "min": [
+              -46.888589826670156,
+              -76.76127658533453,
+              0.0
+            ],
+            "max": [
+              35.17507722156535,
+              76.76127658533453,
+              106.85371787369053
+            ]
+          },
+          {
+            "min": [
+              -46.888589826670156,
+              -78.72454873812362,
+              0.0
+            ],
+            "max": [
+              36.142993702563025,
+              78.72454873812362,
+              106.98739964863738
+            ]
+          },
+          {
+            "min": [
+              -46.888589826670156,
+              -76.76127658533453,
+              0.0
+            ],
+            "max": [
+              35.17507722156535,
+              76.76127658533453,
+              106.85371787369053
+            ]
+          },
+          {
+            "min": [
+              -46.938213659343525,
+              -75.70414252886756,
+              0.0
+            ],
+            "max": [
+              31.66296656770983,
+              79.48355591333771,
+              101.42385631715912
+            ]
+          },
+          {
+            "min": [
+              -46.938213659343525,
+              -81.1053573148674,
+              0.0
+            ],
+            "max": [
+              30.667392415283217,
+              81.1053573148674,
+              101.86147640966597
+            ]
+          },
+          {
+            "min": [
+              -46.938213659343525,
+              -70.3071292013492,
+              0.0
+            ],
+            "max": [
+              40.22142126322567,
+              70.3071292013492,
+              99.93782606920475
+            ]
+          },
+          {
+            "min": [
+              -46.938213659343525,
+              -79.48355591333771,
+              0.0
+            ],
+            "max": [
+              31.66296656770983,
+              75.70414252886756,
+              101.42385631715912
+            ]
+          },
+          {
+            "min": [
+              -46.938213659343525,
+              -74.33893612275718,
+              0.0
+            ],
+            "max": [
+              36.18225036379855,
+              74.19822600951244,
+              101.2311265560478
+            ]
+          },
+          {
+            "min": [
+              -56.17146098526093,
+              -61.647002980145274,
+              0.0
+            ],
+            "max": [
+              37.230185945894696,
+              54.644664312560266,
+              97.30608963910419
+            ]
+          },
+          {
+            "min": [
+              -69.88935029199905,
+              -49.449360662954255,
+              0.0
+            ],
+            "max": [
+              38.207941370717414,
+              33.092633311983946,
+              82.54199397493821
+            ]
+          },
+          {
+            "min": [
+              -75.17755249656503,
+              -61.26149961074824,
+              0.0
+            ],
+            "max": [
+              39.16467177825463,
+              38.09504127604128,
+              62.837949188004515
+            ]
+          },
+          {
+            "min": [
+              -73.18685240514625,
+              -66.31079713443319,
+              0.0
+            ],
+            "max": [
+              39.94567510689147,
+              39.1035116198333,
+              48.225731832464334
+            ]
+          },
+          {
+            "min": [
+              -69.0662286701769,
+              -67.29072339596904,
+              0.0
+            ],
+            "max": [
+              40.22142126322567,
+              38.083504451672574,
+              48.37160787312471
+            ]
+          },
+          {
+            "min": [
+              -46.938213659343525,
+              -77.78332549262642,
+              0.0
+            ],
+            "max": [
+              33.29307562553598,
+              77.78332549262642,
+              100.68400436828172
+            ]
+          },
+          {
+            "min": [
+              -46.938213659343525,
+              -77.78332549262642,
+              0.0
+            ],
+            "max": [
+              35.6653784273697,
+              77.78332549262642,
+              99.99999999999999
+            ]
+          },
+          {
+            "min": [
+              -46.938213659343525,
+              -77.78332549262642,
+              0.0
+            ],
+            "max": [
+              36.95954233155504,
+              77.78332549262642,
+              100.12994505576957
+            ]
+          },
+          {
+            "min": [
+              -46.938213659343525,
+              -77.78332549262642,
+              0.0
+            ],
+            "max": [
+              35.6653784273697,
+              77.78332549262642,
+              99.99999999999999
+            ]
+          },
+          {
+            "min": [
+              -69.0662286701769,
+              -67.29072339596904,
+              0.0
+            ],
+            "max": [
+              40.22142126322567,
+              38.083504451672574,
+              48.37160787312471
+            ]
+          }
+        ],
+        "modeldef_scale": 1.6526222080000004,
+        "native_profile": {
+          "Height": 51.644444,
+          "Radius": 14.755556,
+          "Scale": 0.3125
+        },
+        "maximum_authored_radius": 86.39713631377724,
+        "maximum_authored_height": 106.98739964863738,
+        "source_sha256": "98a879aa33fc48c044abf7fe00bf5d33ca9311aa774e032d8db881413fe59da2"
+      }
+    },
+    "project_validation_passed": true
+  },
+  "continuity": {
+    "cachiru": {
+      "issue": 711,
+      "species": "cachiru",
+      "studio": false,
+      "runtime_sha256": "6f80f3359e65261d9c4d739eee71352ceec0fbec031a48508a3f0deef7b3e702",
+      "baseline_sha256": "e0dc2dffa0c3dcc070c18a16f6b9cc8ceee2c67bdc80aa1eb0cd92bcf1b183b4",
+      "fixture_sha256": "be5e65c3bff445ada1f48d3659e6a55c788c07eddda64c66b0b3bd3ac7d131bb",
+      "model_overlay_sha256": null,
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runs": [
+        {
+          "phase": "baseline",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "old-save-model",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "fresh-model",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 51,
+          "expected_assertions": 51,
+          "errors": [],
+          "captures": {
+            "empty-view-0.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+            "empty-view-6.png": "5a2ba58ed5f6efbf157b5e78e666b179a2b4729e99130938b9182d383bdc1bcf",
+            "empty.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+            "pose-00-idle.png": "a37b10ba89b5f4df8350624c1d3f434e3f99d38bb73be4d5fcb931c66e9378cf",
+            "pose-01-idle.png": "36a186fc315d4c6027668bdf1189ffc0183c9f905541cf491eed0099804e59ba",
+            "pose-02-run.png": "503be0e1053a6169568e4bb4fbf382dd489c3c9636b00b557cdc4f3eefb7057a",
+            "pose-03-run.png": "9070595a1745e96e332e0273f25e73dc943244837afb359365c874bd50c91653",
+            "pose-04-run.png": "7aff3de493fe71346d46da07402ef8f9ab66bbea97f96ec8ee5fb36cfceecc51",
+            "pose-05-run.png": "f8a6b11ff91956c6d22b8357bd50ca98908e14a6f50dadd4bd23896b648073f4",
+            "pose-06-walk.png": "9070595a1745e96e332e0273f25e73dc943244837afb359365c874bd50c91653",
+            "pose-07-walk.png": "f8a6b11ff91956c6d22b8357bd50ca98908e14a6f50dadd4bd23896b648073f4",
+            "pose-08-stun.png": "878413f33c41c45cbceec5a8abd16bdb57203565516aba840b0d2168d36fea7e",
+            "pose-09-attack_prepare.png": "8162e9bb7e14efad6e1f7f979c65566c9be3cf0fcd90616c941dae8995060bcf",
+            "pose-10-attack_release.png": "4df665079210ad2f3561d4753db26640776e995d2d90d879e39501806941c725",
+            "pose-11-pain.png": "44690ceb50df13b8cebb51b47f872ff2eb2354f2196cef4b8737a85c011af46f",
+            "pose-12-death.png": "773aacc93cc5ec5ecdac7d320f70a66891034c8af784482cdab35cd7fb8673ad",
+            "pose-13-death.png": "cea23e949fc48d50dc9f92b406f9e7f87c6a3f6f919628a2d7a04f29ebeb95c5",
+            "pose-14-death.png": "9842c48d59d76a57baa43526ad7d2bf5155a84ec2cfafe04b227878fae6e2a1c",
+            "pose-15-death.png": "55f5e3fb69133f529eba9202781b9df61f2c6153cb99119c29f1fb6797bf7730",
+            "pose-16-death.png": "76ea58a6435ca09dfd91180a5b9375d0c9e54e548bf2dfab35949d0e2fd6a7cc",
+            "pose-17-death.png": "c17c32b6dacc44e76cb0a619469b284bafe9a053e3a7ea7aebd1eb23ccfa1f3e",
+            "pose-18-breath.png": "8d4d9f179b31b89e830a5dbe2573ca1b1feed0c1105d821439bf8dc855a8507d",
+            "pose-19-breath.png": "dfad1d7e93a1455e8e98cb7c49c9290cdb32eb42ddc9f86bcf033772d9026b8c",
+            "pose-20-breath.png": "5570e4da4438a30fe2e4974f7083795a694a9c399c24835390bd9ca11eb28dad",
+            "pose-21-breath.png": "174c49d54c7d6bf9a4132fd0e848c8e603faeea61665608d25fd1677057eaaab",
+            "pose-22-rest.png": "c17c32b6dacc44e76cb0a619469b284bafe9a053e3a7ea7aebd1eb23ccfa1f3e",
+            "view-front.png": "cc643e5188d24d67fca5142a3c12860ffd5fa213e2321b0da061112ed899905a",
+            "view-head-front.png": "a2b2232d63130a5b2a72c932019fb67f5384d6094f3f1eef8c693c86546ed614",
+            "view-head-oblique.png": "28f8721a214fd3f42235bd4212d234279b54dfabdaa8c68a233779a7a48bea29",
+            "view-lying-oblique.png": "c17c32b6dacc44e76cb0a619469b284bafe9a053e3a7ea7aebd1eb23ccfa1f3e",
+            "view-rear.png": "e3697cde68545678e521599aa3b2312e938dd5f3ca70cdcf5b491c78e47d778c",
+            "view-side.png": "f2089f624734e266ac623dae46519e9b53593831f18bf833a3ab14d2cfaae84c"
+          },
+          "visible_pose_pixels": {
+            "pose-00-idle.png": 24820,
+            "pose-01-idle.png": 24853,
+            "pose-02-run.png": 24720,
+            "pose-03-run.png": 25021,
+            "pose-04-run.png": 24996,
+            "pose-05-run.png": 24524,
+            "pose-06-walk.png": 25021,
+            "pose-07-walk.png": 24524,
+            "pose-08-stun.png": 25075,
+            "pose-09-attack_prepare.png": 25397,
+            "pose-10-attack_release.png": 23779,
+            "pose-11-pain.png": 24550,
+            "pose-12-death.png": 32060,
+            "pose-13-death.png": 29848,
+            "pose-14-death.png": 22545,
+            "pose-15-death.png": 15081,
+            "pose-16-death.png": 17092,
+            "pose-17-death.png": 18787,
+            "pose-18-breath.png": 24755,
+            "pose-19-breath.png": 24813,
+            "pose-20-breath.png": 24793,
+            "pose-21-breath.png": 24814,
+            "pose-22-rest.png": 18787
+          },
+          "distinct_pose_captures": 20
+        },
+        {
+          "phase": "model-reload",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "rollback",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        }
+      ]
+    },
+    "kakuy": {
+      "issue": 711,
+      "species": "kakuy",
+      "studio": false,
+      "runtime_sha256": "6f80f3359e65261d9c4d739eee71352ceec0fbec031a48508a3f0deef7b3e702",
+      "baseline_sha256": "e0dc2dffa0c3dcc070c18a16f6b9cc8ceee2c67bdc80aa1eb0cd92bcf1b183b4",
+      "fixture_sha256": "98a0c2cd95acacff89873103c06126f1ba9c8eba30fd921bced22d9412ec28e4",
+      "model_overlay_sha256": null,
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runs": [
+        {
+          "phase": "baseline",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "old-save-model",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "fresh-model",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 51,
+          "expected_assertions": 51,
+          "errors": [],
+          "captures": {
+            "empty-view-0.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+            "empty-view-6.png": "5a2ba58ed5f6efbf157b5e78e666b179a2b4729e99130938b9182d383bdc1bcf",
+            "empty.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+            "pose-00-idle.png": "e4740c215200538546c3285c1e43882d7ab76a90371d44be7d3c3bf7b17e4b7c",
+            "pose-01-idle.png": "1f10ada2be9173dbb19f4cbe94f9046cabe956608d45c42a2932f7b8d38163d3",
+            "pose-02-run.png": "01144c4782d194ea723b71856f6228d04d9de4ec4af1ad1910c158d7ac3d2890",
+            "pose-03-run.png": "9eea8fe83dcea0268c8c3294ed088b475da54a8e560c0830d5196e4e09a0dac8",
+            "pose-04-run.png": "98c6f1f16b33a958465900120c2121ecaf9d6cc87ea08caff179fa86899af824",
+            "pose-05-run.png": "d128067bd525a6e867bded65bee5f9b905756ed3b223bd4b4bef91436489ae92",
+            "pose-06-walk.png": "9eea8fe83dcea0268c8c3294ed088b475da54a8e560c0830d5196e4e09a0dac8",
+            "pose-07-walk.png": "d128067bd525a6e867bded65bee5f9b905756ed3b223bd4b4bef91436489ae92",
+            "pose-08-stun.png": "10a462778eece5653d592f8168dce76d4d25dbff32e7727bb54db2384b912909",
+            "pose-09-attack_prepare.png": "b917f93ae23c7692cdc184eef5ec13a4f6c9c1f9fdb00221ab588c174770f367",
+            "pose-10-attack_release.png": "d12da88d6bc19422671a25f4c1c977e2a5971e70ae6208fdbe0b091dcf6e2b98",
+            "pose-11-pain.png": "5a194231fe00411ad3e0ca76aca2e207fc73ec8a6c88154d534a03b631cb805d",
+            "pose-12-death.png": "b8fad4a763241dcc5a125f0cbaf97aca181c9f64ca102fe4f921ed2fff50136f",
+            "pose-13-death.png": "21b06b8529c8e6a5223422f1d3df242a8456fcab7551c0804b5568b2859f8205",
+            "pose-14-death.png": "fc38109826d016cf012385dd7027925c53f68ebd3095a224867497c32cc0ff81",
+            "pose-15-death.png": "bea990dd2aae3953b528ad96136082674fe534ccef6efa1e895ee8d1ed1fcba3",
+            "pose-16-death.png": "61466b615e265f25ce9dbaf7feaf79e59e336f47aaf723b8b505b1e580c73a22",
+            "pose-17-death.png": "90e4666325183364ed91ac4feead71a8b0feb37db8540c827e7dc7b70b4cb935",
+            "pose-18-breath.png": "3e7cfcaf6ee5c41c31638b6f22bbc9d11d9fd5f624134b61f2073b492460eed1",
+            "pose-19-breath.png": "e4740c215200538546c3285c1e43882d7ab76a90371d44be7d3c3bf7b17e4b7c",
+            "pose-20-breath.png": "f9f44d984bb6e3b487941725a528a5aae383ed600971b0204b11e0fc1d63e4be",
+            "pose-21-breath.png": "e4740c215200538546c3285c1e43882d7ab76a90371d44be7d3c3bf7b17e4b7c",
+            "pose-22-rest.png": "90e4666325183364ed91ac4feead71a8b0feb37db8540c827e7dc7b70b4cb935",
+            "view-front.png": "e522112daf2171f482ad102fe4220638f7bc2143ee01830d69a76a153205be71",
+            "view-head-front.png": "a0080457b2f1879037eea591cc4fbd25bb4a3aae8ec3ccff7bcf5cd4fa23594d",
+            "view-head-oblique.png": "677df477d1913202a12103989bf5332dc8ba7562bb235d885794a7f709dae92c",
+            "view-lying-oblique.png": "90e4666325183364ed91ac4feead71a8b0feb37db8540c827e7dc7b70b4cb935",
+            "view-rear.png": "41126215c3293f1aede1ba68d1629a1aaa520c0508d84afb83b814402efcbf7f",
+            "view-side.png": "e5c8ba80665fbace837aa0e322047ad3920256e064d39cd9d189831c2745a49f"
+          },
+          "visible_pose_pixels": {
+            "pose-00-idle.png": 37019,
+            "pose-01-idle.png": 36802,
+            "pose-02-run.png": 36935,
+            "pose-03-run.png": 38638,
+            "pose-04-run.png": 37054,
+            "pose-05-run.png": 38282,
+            "pose-06-walk.png": 38638,
+            "pose-07-walk.png": 38282,
+            "pose-08-stun.png": 38116,
+            "pose-09-attack_prepare.png": 39082,
+            "pose-10-attack_release.png": 34341,
+            "pose-11-pain.png": 36341,
+            "pose-12-death.png": 45478,
+            "pose-13-death.png": 41193,
+            "pose-14-death.png": 31531,
+            "pose-15-death.png": 20808,
+            "pose-16-death.png": 23104,
+            "pose-17-death.png": 25449,
+            "pose-18-breath.png": 37127,
+            "pose-19-breath.png": 37019,
+            "pose-20-breath.png": 36886,
+            "pose-21-breath.png": 37019,
+            "pose-22-rest.png": 25449
+          },
+          "distinct_pose_captures": 18
+        },
+        {
+          "phase": "model-reload",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "rollback",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        }
+      ]
+    },
+    "kelenken": {
+      "issue": 711,
+      "species": "kelenken",
+      "studio": false,
+      "runtime_sha256": "6f80f3359e65261d9c4d739eee71352ceec0fbec031a48508a3f0deef7b3e702",
+      "baseline_sha256": "e0dc2dffa0c3dcc070c18a16f6b9cc8ceee2c67bdc80aa1eb0cd92bcf1b183b4",
+      "fixture_sha256": "b2c17b2f5294e5c8de2fb02fd708d722d73799765c356cfca806cf4127cb406b",
+      "model_overlay_sha256": null,
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runs": [
+        {
+          "phase": "baseline",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "old-save-model",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "fresh-model",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 51,
+          "expected_assertions": 51,
+          "errors": [],
+          "captures": {
+            "empty-view-0.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+            "empty-view-6.png": "5a2ba58ed5f6efbf157b5e78e666b179a2b4729e99130938b9182d383bdc1bcf",
+            "empty.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+            "pose-00-idle.png": "94bcc4b0fbb16d1003f82b32f9da95cfcc37470184f8bf26c5a2107b10be9bb1",
+            "pose-01-idle.png": "4416d94b50e590c6ef8a2aa9644601c63ee1b5f1a08242d0897b4d39a8f1f150",
+            "pose-02-run.png": "c754e811f5a104c90663a2dcf5a657581ba2688094f5ceabca4352c16a0aac6e",
+            "pose-03-run.png": "4339ae9bba7dc62b3a81c96b794a5595366696ce935c6132ddaecd8dac871e59",
+            "pose-04-run.png": "226b26ae25d1ba18dc858bb95f5d5a1fc43c9dcbecec7a941a080f406eb88911",
+            "pose-05-run.png": "910d281596d664e67b4fc04ce416c63e58cde1ea602e5acb1908d7f125e4fee1",
+            "pose-06-walk.png": "4339ae9bba7dc62b3a81c96b794a5595366696ce935c6132ddaecd8dac871e59",
+            "pose-07-walk.png": "910d281596d664e67b4fc04ce416c63e58cde1ea602e5acb1908d7f125e4fee1",
+            "pose-08-stun.png": "3cecf4015a1c2e1a192e681e59de5a3d79e0d0eb334f9da4ea747b163d931e89",
+            "pose-09-attack_prepare.png": "1aba531fc71cdf2480ef860477a24b42015f2b65ad90976d080efafaef7ecb95",
+            "pose-10-attack_release.png": "e090f1bd17f574ba4ca09540a80cb9c531540e07c960c8940576f7f74e06988f",
+            "pose-11-pain.png": "793c3232ba08366eeec1e938757903f04babbe5bbd6e4ba7e0dfb5c8b14c89db",
+            "pose-12-death.png": "4466e84930c582a2a386411066cf91913fcbe1b3967b4678ca232ff35c801ca7",
+            "pose-13-death.png": "f696035ab5cf70703db6dea2b5155d1298c46066e9ec05c453b24b215b9fc857",
+            "pose-14-death.png": "9af624ab949cd2ce6e1f0d9d32eb0bc6e8a8f1a859f62753c4e1cd1abdc46ebc",
+            "pose-15-death.png": "e164757a819645b30503dce594ef9a71b0d0c9ec8bdfc57ea6048f0d9f38115e",
+            "pose-16-death.png": "8aded1c48d59783d14805c9754e399dcb5a806bf04836e052b94372086b47ba6",
+            "pose-17-death.png": "c6525846c21ea964370aa7af6656d528a45e825f783cb5fd4d229a8ba251e67e",
+            "pose-18-breath.png": "ccba06f6fed545e03af6b5c85a3abc88faa4f62bd06fe9a4c1dadf2695490d6c",
+            "pose-19-breath.png": "2ef169ec0ea320587e9e46afd70a7941c29b8d32a86af414fb21abccd6d36903",
+            "pose-20-breath.png": "7b00efa17d18021e1cdb0ef704e8c494a5492e4c27daf3e0e66c3f5f4ee028d2",
+            "pose-21-breath.png": "efdfc153f2c07b54353ad40d43740df10fa4ac56afdbdc48013dd6fb7153b89a",
+            "pose-22-rest.png": "c6525846c21ea964370aa7af6656d528a45e825f783cb5fd4d229a8ba251e67e",
+            "view-front.png": "9e62323e91fcc95fa959587ccc6742a3283cd73d0f9dfa6015ccc5802e7fd704",
+            "view-head-front.png": "d8ad34a082de721ab3ce2859409f3553a832e5fac8446977ccabb6b99a3a4778",
+            "view-head-oblique.png": "07179daa1eb528e74c6c581756e7f38e7c9138c7623ff7313fafd7ae7c302247",
+            "view-lying-oblique.png": "c6525846c21ea964370aa7af6656d528a45e825f783cb5fd4d229a8ba251e67e",
+            "view-rear.png": "145661be4d234b2505f3651bb1b1f5028146d863c757661dd08feb0a0e425280",
+            "view-side.png": "c1781340cce3caa9c02939105b2faf030f964e79fe78d0b0359ab903d383f715"
+          },
+          "visible_pose_pixels": {
+            "pose-00-idle.png": 24667,
+            "pose-01-idle.png": 24570,
+            "pose-02-run.png": 24600,
+            "pose-03-run.png": 24033,
+            "pose-04-run.png": 24604,
+            "pose-05-run.png": 23864,
+            "pose-06-walk.png": 24033,
+            "pose-07-walk.png": 23864,
+            "pose-08-stun.png": 25053,
+            "pose-09-attack_prepare.png": 25204,
+            "pose-10-attack_release.png": 22511,
+            "pose-11-pain.png": 24153,
+            "pose-12-death.png": 31098,
+            "pose-13-death.png": 28387,
+            "pose-14-death.png": 20951,
+            "pose-15-death.png": 14864,
+            "pose-16-death.png": 16802,
+            "pose-17-death.png": 18888,
+            "pose-18-breath.png": 24734,
+            "pose-19-breath.png": 24641,
+            "pose-20-breath.png": 24533,
+            "pose-21-breath.png": 24647,
+            "pose-22-rest.png": 18888
+          },
+          "distinct_pose_captures": 20
+        },
+        {
+          "phase": "model-reload",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "rollback",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        }
+      ]
+    }
+  },
+  "actions": {
+    "issue": 711,
+    "runtime_sha256": "6f80f3359e65261d9c4d739eee71352ceec0fbec031a48508a3f0deef7b3e702",
+    "source_probe_sha256": "bf298e7c4b3ca7f0285f81c089b18f686ba0a114f65697252662af8b0121b65a",
+    "fixture_sha256": "0844c39f8607fb315390a02e3a46bff97f222c0de31e4ba8f22670a16cf6c07e",
+    "runs": [
+      {
+        "phase": "actions",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 90,
+        "actions": [
+          "CA455 ACTION PASS index=-1 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=-1 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=1",
+          "CA455 ACTION PASS index=-1 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=44 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=44 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=1",
+          "CA455 ACTION PASS index=44 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=45 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=45 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=1",
+          "CA455 ACTION PASS index=45 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=57 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=57 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=1",
+          "CA455 ACTION PASS index=57 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1"
+        ],
+        "loot_audits": 0
+      },
+      {
+        "phase": "loot",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 70,
+        "actions": [],
+        "loot_audits": 2
+      },
+      {
+        "phase": "loot-reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 28,
+        "actions": [],
+        "loot_audits": 2
+      }
+    ]
+  },
+  "presentation": {
+    "cachiru": {
+      "issue": 711,
+      "species": "cachiru",
+      "scope": "Measure one 700-tic sprite/model pair for a real avian; no campaign or crowd budget.",
+      "baseline_sha256": "e0dc2dffa0c3dcc070c18a16f6b9cc8ceee2c67bdc80aa1eb0cd92bcf1b183b4",
+      "runtime_sha256": "6f80f3359e65261d9c4d739eee71352ceec0fbec031a48508a3f0deef7b3e702",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+      "runs": [
+        {
+          "kind": "sprite",
+          "pid": 4560,
+          "exit_code": 0,
+          "errors": [],
+          "markers_qpc_ms": {
+            "BEGIN": 270396297.53819996,
+            "END": 270416320.7106
+          },
+          "fixture_sha256": "be5e65c3bff445ada1f48d3659e6a55c788c07eddda64c66b0b3bd3ac7d131bb",
+          "bench_sha256": "5f51f8968c6d06a4e9bc483498013813459a5bf89658f7ac832e7e57ff6659e1",
+          "passed": true,
+          "simulation": {
+            "samples": 700,
+            "mean_ms": 28.571893857142857,
+            "p50_ms": 28.5676,
+            "p95_ms": 28.9608,
+            "p99_ms": 29.104,
+            "max_ms": 29.2546
+          },
+          "presentation": {
+            "pid": 4560,
+            "trace_sha256": "4cf58d59f50193f800450cac23006fe96ef94d376c71f5beb84f1205133feb5f",
+            "rows": 45422,
+            "scene_presents": 32350,
+            "mean_present_fps": 1846.1515387774,
+            "present_intervals": {
+              "samples": 32349,
+              "mean_ms": 0.5416673436581715,
+              "p50_ms": 0.521399974822998,
+              "p95_ms": 0.6958000063896179,
+              "p99_ms": 0.8340000510215759,
+              "max_ms": 1.30349999666214
+            },
+            "native_call_duration": {
+              "samples": 32350,
+              "mean_ms": 0.07379945907194795,
+              "p50_ms": 0.07179999351501465,
+              "p95_ms": 0.0974000096321106,
+              "p99_ms": 0.12040001153945923,
+              "max_ms": 0.4527999758720398
+            }
+          }
+        },
+        {
+          "kind": "model",
+          "pid": 45932,
+          "exit_code": 0,
+          "errors": [],
+          "markers_qpc_ms": {
+            "BEGIN": 270430833.8891,
+            "END": 270450853.6992
+          },
+          "fixture_sha256": "be5e65c3bff445ada1f48d3659e6a55c788c07eddda64c66b0b3bd3ac7d131bb",
+          "bench_sha256": "5f51f8968c6d06a4e9bc483498013813459a5bf89658f7ac832e7e57ff6659e1",
+          "passed": true,
+          "simulation": {
+            "samples": 700,
+            "mean_ms": 28.570847142857144,
+            "p50_ms": 28.5624,
+            "p95_ms": 28.9673,
+            "p99_ms": 29.0711,
+            "max_ms": 29.2797
+          },
+          "presentation": {
+            "pid": 45932,
+            "trace_sha256": "ac2c686c16397b1e4113ca50736c0981d7769608c52ef797da5f225b26467286",
+            "rows": 45334,
+            "scene_presents": 32347,
+            "mean_present_fps": 1846.303704379773,
+            "present_intervals": {
+              "samples": 32346,
+              "mean_ms": 0.5416227014157072,
+              "p50_ms": 0.5225000381469727,
+              "p95_ms": 0.6916000247001648,
+              "p99_ms": 0.7882999777793884,
+              "max_ms": 2.7897000312805176
+            },
+            "native_call_duration": {
+              "samples": 32347,
+              "mean_ms": 0.07495745203242728,
+              "p50_ms": 0.07400000095367432,
+              "p95_ms": 0.09719997644424438,
+              "p99_ms": 0.11900001764297485,
+              "max_ms": 1.2099000215530396
+            }
+          }
+        }
+      ]
+    },
+    "kakuy": {
+      "issue": 711,
+      "species": "kakuy",
+      "scope": "Measure one 700-tic sprite/model pair for a real avian; no campaign or crowd budget.",
+      "baseline_sha256": "e0dc2dffa0c3dcc070c18a16f6b9cc8ceee2c67bdc80aa1eb0cd92bcf1b183b4",
+      "runtime_sha256": "6f80f3359e65261d9c4d739eee71352ceec0fbec031a48508a3f0deef7b3e702",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+      "runs": [
+        {
+          "kind": "sprite",
+          "pid": 33012,
+          "exit_code": 0,
+          "errors": [],
+          "markers_qpc_ms": {
+            "BEGIN": 270466967.006,
+            "END": 270486986.8796
+          },
+          "fixture_sha256": "98a0c2cd95acacff89873103c06126f1ba9c8eba30fd921bced22d9412ec28e4",
+          "bench_sha256": "5f51f8968c6d06a4e9bc483498013813459a5bf89658f7ac832e7e57ff6659e1",
+          "passed": true,
+          "simulation": {
+            "samples": 700,
+            "mean_ms": 28.571097714285717,
+            "p50_ms": 28.5727,
+            "p95_ms": 28.9501,
+            "p99_ms": 29.0692,
+            "max_ms": 29.396
+          },
+          "presentation": {
+            "pid": 33012,
+            "trace_sha256": "030cd724d57658002ddcbe4fb867af481f80fa2551a20b202f470f78db45b515",
+            "rows": 44749,
+            "scene_presents": 31559,
+            "mean_present_fps": 1801.3504534466006,
+            "present_intervals": {
+              "samples": 31558,
+              "mean_ms": 0.5551390614117633,
+              "p50_ms": 0.5307000279426575,
+              "p95_ms": 0.7425999641418457,
+              "p99_ms": 0.899399995803833,
+              "max_ms": 1.5134999752044678
+            },
+            "native_call_duration": {
+              "samples": 31559,
+              "mean_ms": 0.07451210727127767,
+              "p50_ms": 0.07289999723434448,
+              "p95_ms": 0.09810000658035278,
+              "p99_ms": 0.12430000305175781,
+              "max_ms": 0.477400004863739
+            }
+          }
+        },
+        {
+          "kind": "model",
+          "pid": 44060,
+          "exit_code": 0,
+          "errors": [],
+          "markers_qpc_ms": {
+            "BEGIN": 270501400.1205,
+            "END": 270521421.6393
+          },
+          "fixture_sha256": "98a0c2cd95acacff89873103c06126f1ba9c8eba30fd921bced22d9412ec28e4",
+          "bench_sha256": "5f51f8968c6d06a4e9bc483498013813459a5bf89658f7ac832e7e57ff6659e1",
+          "passed": true,
+          "simulation": {
+            "samples": 700,
+            "mean_ms": 28.57182357142857,
+            "p50_ms": 28.5717,
+            "p95_ms": 28.9699,
+            "p99_ms": 29.0809,
+            "max_ms": 29.4717
+          },
+          "presentation": {
+            "pid": 44060,
+            "trace_sha256": "98dc95fc426bf5ca0f17e05819181de2a71e8fd8d26952df18300ceb73994528",
+            "rows": 44680,
+            "scene_presents": 31724,
+            "mean_present_fps": 1810.5328586583016,
+            "present_intervals": {
+              "samples": 31723,
+              "mean_ms": 0.5523235854117841,
+              "p50_ms": 0.5286000370979309,
+              "p95_ms": 0.7291000485420227,
+              "p99_ms": 0.8541000485420227,
+              "max_ms": 1.47680002450943
+            },
+            "native_call_duration": {
+              "samples": 31724,
+              "mean_ms": 0.073925356274369,
+              "p50_ms": 0.07119995355606079,
+              "p95_ms": 0.09650003910064697,
+              "p99_ms": 0.12110000848770142,
+              "max_ms": 0.47870004177093506
+            }
+          }
+        }
+      ]
+    },
+    "kelenken": {
+      "issue": 711,
+      "species": "kelenken",
+      "scope": "Measure one 700-tic sprite/model pair for a real avian; no campaign or crowd budget.",
+      "baseline_sha256": "e0dc2dffa0c3dcc070c18a16f6b9cc8ceee2c67bdc80aa1eb0cd92bcf1b183b4",
+      "runtime_sha256": "6f80f3359e65261d9c4d739eee71352ceec0fbec031a48508a3f0deef7b3e702",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+      "runs": [
+        {
+          "kind": "sprite",
+          "pid": 22928,
+          "exit_code": 0,
+          "errors": [],
+          "markers_qpc_ms": {
+            "BEGIN": 270537551.38989997,
+            "END": 270557575.5572
+          },
+          "fixture_sha256": "b2c17b2f5294e5c8de2fb02fd708d722d73799765c356cfca806cf4127cb406b",
+          "bench_sha256": "5f51f8968c6d06a4e9bc483498013813459a5bf89658f7ac832e7e57ff6659e1",
+          "passed": true,
+          "simulation": {
+            "samples": 700,
+            "mean_ms": 28.571625571428573,
+            "p50_ms": 28.5809,
+            "p95_ms": 28.9687,
+            "p99_ms": 29.1407,
+            "max_ms": 29.2793
+          },
+          "presentation": {
+            "pid": 22928,
+            "trace_sha256": "283ad72c51d597f5e223be4195485de6001581bd5fc9185e177109ede084598f",
+            "rows": 44121,
+            "scene_presents": 31045,
+            "mean_present_fps": 1771.5553269666154,
+            "present_intervals": {
+              "samples": 31044,
+              "mean_ms": 0.5644757376628321,
+              "p50_ms": 0.5383000373840332,
+              "p95_ms": 0.762499988079071,
+              "p99_ms": 0.9271000027656555,
+              "max_ms": 1.4891999959945679
+            },
+            "native_call_duration": {
+              "samples": 31045,
+              "mean_ms": 0.07522767278802128,
+              "p50_ms": 0.07380002737045288,
+              "p95_ms": 0.09880000352859497,
+              "p99_ms": 0.12460005283355713,
+              "max_ms": 0.48190003633499146
+            }
+          }
+        },
+        {
+          "kind": "model",
+          "pid": 29700,
+          "exit_code": 0,
+          "errors": [],
+          "markers_qpc_ms": {
+            "BEGIN": 270571986.2823,
+            "END": 270592004.10690004
+          },
+          "fixture_sha256": "b2c17b2f5294e5c8de2fb02fd708d722d73799765c356cfca806cf4127cb406b",
+          "bench_sha256": "5f51f8968c6d06a4e9bc483498013813459a5bf89658f7ac832e7e57ff6659e1",
+          "passed": true,
+          "simulation": {
+            "samples": 700,
+            "mean_ms": 28.57129014285714,
+            "p50_ms": 28.5721,
+            "p95_ms": 28.9491,
+            "p99_ms": 29.0714,
+            "max_ms": 29.2799
+          },
+          "presentation": {
+            "pid": 29700,
+            "trace_sha256": "b4f3b9f3f0bdf81a7da55f70e9b8b8dec322c34a746918a4573f8eb3db0f0567",
+            "rows": 45087,
+            "scene_presents": 32039,
+            "mean_present_fps": 1828.9630566106764,
+            "present_intervals": {
+              "samples": 32038,
+              "mean_ms": 0.5467578999945135,
+              "p50_ms": 0.5281999707221985,
+              "p95_ms": 0.6922000050544739,
+              "p99_ms": 0.8069000244140625,
+              "max_ms": 1.34579998254776
+            },
+            "native_call_duration": {
+              "samples": 32039,
+              "mean_ms": 0.07476051352161672,
+              "p50_ms": 0.07319998741149902,
+              "p95_ms": 0.09729999303817749,
+              "p99_ms": 0.12040001153945923,
+              "max_ms": 0.711899995803833
+            }
+          }
+        }
+      ]
+    }
+  },
+  "iterations": "Model01 passes independent geometry after correcting a copied validator OBJ path. Its ordinary native previews pass51 assertions each but show coarse body feathers, oversized Cachiru tufts and a large Kakuy beak. Model02 uses the generated denser coverts-v2 atlas, shorter swept tufts with brow volumes and a smaller Kakuy beak; independent anatomy and all23 quantized pose checks pass. Final previews pass51 assertions each. Model03/04 refresh contact-status provenance; only manifest.json changes from model02, all15 art/container files remain identical. The inactive original native coverts.png is moved into local recovery evidence, never deleted; original source and portable copy remain. Six initial/final previews, prior design/contact/animation data and first copied-path failure are retained.",
+  "art": {
+    "source": "assets/source/art/avian_711",
+    "mode": "built-in image_gen",
+    "selected_textures": [
+      "coverts-v2.png",
+      "flight.png"
+    ],
+    "preserved_initial_texture": "coverts.png",
+    "prompts": [
+      "COVERTS_PROMPT.json",
+      "FLIGHT_PROMPT.json",
+      "COVERTS_V2_PROMPT.json"
+    ],
+    "reused_textures": [
+      "Owned Peuchen iris.png and dark.png byte-identical"
+    ],
+    "original_concepts_preserved": true,
+    "reviewed_views": "Owned concepts, original/refined generated atlases and eye patch; final ordinary front/side/rear, head details, selected action/death and lying views for the three species; both presentation cohorts for each species.",
+    "author_check": "CA711-AVIAN-01"
+  },
+  "environment": {
+    "os": "Windows 11 Pro 26200",
+    "cpu": "Ryzen 9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX 3070 Ti",
+    "engine": "GZDoom 4.14.2",
+    "backend": "Vulkan",
+    "resolution": [
+      1280,
+      720
+    ],
+    "background_unpaused": true,
+    "audio": 0.05,
+    "presentation_uncapped": true,
+    "vsync": false
+  },
+  "qualifications": [
+    "One sequential700-tic sprite/model comparison per species, with a visible subject and Mandinga control. Queue intervals are not GPU/display timing, repeatability or campaign/crowd acceptance. Different projected footprints preclude equal-pixel-workload claims.",
+    "Fixed-creature editable anatomy is not runtime interchangeable inventory equipment. Other characters, playable/worn equipment, first-person work and original campaign remain unfinished.",
+    "Neutral Height fits the unchanged Mandinga profile. Catalogue metre ranges do not authorize runtime dimensions. Wings/art may extend beyond collision Radius. No flight or campaign placement added.",
+    "Simplified facial disks, beaks, feather layering, talons and rigid articulation require author review. Neutral contact witnesses do not establish all-pose surface clearance.",
+    "No production logic, stats, save schema, scans, population or approved regional distribution changed. No executable, IWAD, DLL, compiled fixture, package or save is committed."
+  ],
+  "files": {
+    "actions01/actions/commands.cfg": "631c28124b6961d1ac212ed74b6bedfc8c25161f63ced5dba03e9ceee559b602",
+    "actions01/actions/engine.log": "9891179e62bff336fb8847b170f30065cbba2637ccf4122757b398ef94e00fbb",
+    "actions01/actions/process.log": "81ec70e1a2d1f2497ab7001ac5a9a9c86981cfd5a4baf38eaf66af42e9677a31",
+    "actions01/actions/session.ini": "81455e30472dfa06c4ae9ab75987f7ac83199a7235e2f3db02fd35ec92e6fdd4",
+    "actions01/fixture-source/MAPINFO.txt": "cda08079326cc4eca12dea999f40985e2f777baafed5e2ab77b7527e7116eefc",
+    "actions01/fixture-source/ZSCRIPT.txt": "307a830d67a3f51f39b79f629daad8fc060b24a1dae03c4696abfad90923cd4e",
+    "actions01/fixture.zs": "706dcdd867ccc5da0bb8bc729054913c3cf0155ccf609fc7428b71183c07b6ac",
+    "actions01/loot/commands.cfg": "c7131f87f9df9188e2301d6730516e731540216e6417b470aab866467fbd8ad7",
+    "actions01/loot/engine.log": "29a0c82ba69a9a73c2b377d4ae499525f84310a4e2cdc682d6e16598fd68da9e",
+    "actions01/loot/process.log": "14416bb2fa860d0f039d3e978683c9cf441eb1d666a109738acfabadc1162f8f",
+    "actions01/loot/session.ini": "cf1dedfb10a4a1d500e7b47d2a995fbf80766c4552d981ea3650dc26f3d546bf",
+    "actions01/loot-reload/commands.cfg": "ad82c3110081fb6cd15b9a00885b6cc0747127803c4e52c0e06a730955dcf399",
+    "actions01/loot-reload/engine.log": "a4db87d238046d6343189d801ea4514a45e5432632b552afb8c0e73ff0171156",
+    "actions01/loot-reload/process.log": "de867d70d6ab75dae96615a189735f7bdfa2e1d86b20da2c0e9040864ff106b9",
+    "actions01/loot-reload/session.ini": "c25a92ffe6520d5cf37322bc5ea3299a4f03a48af90d1e46b1bb0abdf5ba9c38",
+    "actions01/RESULTS.json": "37e00d287e31a0d4f57cf13def29c296f1f7e61eb4b83ca39d751de088773696",
+    "issue711-build01.log": "07d43e173a0d74248528cbbd3e5baf0ca86a63e3aa769450f05b1ce067c9ba90",
+    "issue711-final-static.json": "21cc037267149c8763f68aa49d2fa4b69f451e43158a51a9fbeacd4c21c636b1",
+    "issue711-installed-check.log": "86ebda725a0f71e6ae00361d03897a651b5f7fc51d5c5b5e23de8c0a02815ff7",
+    "iterations/issue711-animation01.json": "4e813d888d7b1f7f4b945a644c4cd7a21f191f5fab31adbd9ef35978fe130a41",
+    "iterations/issue711-contacts01.json": "2c42bcfb250171880927b95ebdbc6f1f1baf55f7b1395545a26fed5713921d2f",
+    "iterations/issue711-design01-cachiru.json": "bb4793599799675e92979f3d8ddb8be1354c23e845d9951a66dd36eec82d508a",
+    "iterations/issue711-design01-kakuy.json": "ce59ab38316d5aa849950fa5d7ad7a5a7bc62362e9aa8f1a7f52d6d76b9742c6",
+    "iterations/issue711-design01-kelenken.json": "aaae6225c0892b27dc16d0b5ac7c8e082ecafdd5b488249d48faca250d5a62dc",
+    "iterations/issue711-geometry01.log": "b84f89468a62d6c7a7e0501de2da1085f5395ca97419d287509363eb7dc31f7c",
+    "iterations/issue711-geometry02.log": "3c791eff3bd215e7a796bf130c6d4b9772910c4b0eecbf252ca9955c06b8fea9",
+    "iterations/issue711-geometry03.log": "252a4c61b213152a4854389e94fb43b4639d332a2331a3fa989d196854807e68",
+    "iterations/issue711-native-retirement.json": "072ce70ae841648d89a5fc08b6842f1cbb5a515930aca428d4b0a5468a43b3e1",
+    "iterations/model01.json": "b4f243597f85c35975b10e939ae9e7d341c9e88bfdc8ed9de545ff5ae5fa553b",
+    "iterations/model02.json": "849161498832176be7921562d2ad67ffda9cbb5084287c8a913f50b5e780b823",
+    "iterations/model03.json": "7278f91fcb6a88025256d4d3c4c48fa9aca420c97f24abf00255ece7f73419f4",
+    "iterations/model04.json": "7278f91fcb6a88025256d4d3c4c48fa9aca420c97f24abf00255ece7f73419f4",
+    "iterations/visual01/cachiru/fixture-source/MAPINFO.txt": "336735ce8f8a435b8371ff15faab98454190b347deefbae4689ab29e854fe4da",
+    "iterations/visual01/cachiru/fixture-source/ZSCRIPT.txt": "b16ac3d408b2e74b400e842ee0d95a23735a27139ee8a66b2e07293f7fd6ba3e",
+    "iterations/visual01/cachiru/fixture.zs": "cc9274ca51735e77b3125caac66596c211cf0fd20f1e0140f301a284ad1d7cc5",
+    "iterations/visual01/cachiru/RESULTS.json": "712a5b4d1fa6a1213df6f94ada3cc03744da373ead5e53e769cb21e9004027f5",
+    "iterations/visual01/cachiru/visual/commands.cfg": "aafd26cabf8581fdb838a88f97bb47a9aa94a7e3c3aa9305abc965f20239d9f6",
+    "iterations/visual01/cachiru/visual/empty-view-0.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "iterations/visual01/cachiru/visual/empty-view-6.png": "5a2ba58ed5f6efbf157b5e78e666b179a2b4729e99130938b9182d383bdc1bcf",
+    "iterations/visual01/cachiru/visual/empty.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "iterations/visual01/cachiru/visual/engine.log": "fd4392a43767809420331a6d04cfe2c89274075c16bd9cf9f830ab212ae9f78a",
+    "iterations/visual01/cachiru/visual/pose-00-idle.png": "5d107852cf69d55780be1145a6e1b61379d06f2a5ac12feae033fcbd905b76a5",
+    "iterations/visual01/cachiru/visual/pose-01-idle.png": "2535ff0cef4e615e52f2f4f185eb944176a040881e9f0f1c3575bd5d2b19e62a",
+    "iterations/visual01/cachiru/visual/pose-02-run.png": "5ca8af3597d1042f9db38c5104d9eea1a7f9464174fbbed5652aca115c034814",
+    "iterations/visual01/cachiru/visual/pose-03-run.png": "3cc59defda0b0a2d93d6b848a95ccb012b0ab6f5baa75ee692862ab12d53bff5",
+    "iterations/visual01/cachiru/visual/pose-04-run.png": "d9b2602d77d8a9cdc22064441e977af2c09731317b095ebdf7a4f789fc29dc7c",
+    "iterations/visual01/cachiru/visual/pose-05-run.png": "95bbb1527769184689c793523186536c5b3d4515a8d3ac1629ba4058b93058e6",
+    "iterations/visual01/cachiru/visual/pose-06-walk.png": "3cc59defda0b0a2d93d6b848a95ccb012b0ab6f5baa75ee692862ab12d53bff5",
+    "iterations/visual01/cachiru/visual/pose-07-walk.png": "95bbb1527769184689c793523186536c5b3d4515a8d3ac1629ba4058b93058e6",
+    "iterations/visual01/cachiru/visual/pose-08-stun.png": "2f03d979da0e43302041bfe5bbc186f43f67dfec1d5b99be0606bc5c28d06aad",
+    "iterations/visual01/cachiru/visual/pose-09-attack_prepare.png": "15218a929a344f9b13274f1c2d7e465f0fb895d6c35d7163770d31e91e1daa2a",
+    "iterations/visual01/cachiru/visual/pose-10-attack_release.png": "db1228ab98288c614b02c49144ab7518f5628020c29a324ebbe8bd8d807c23f4",
+    "iterations/visual01/cachiru/visual/pose-11-pain.png": "aa973dc4e265eaac71883a4c9fe1a0f8151c3f13d9de51452df32f75ac645621",
+    "iterations/visual01/cachiru/visual/pose-12-death.png": "4fbfd69521fbc5c00952579da443bd73480c06c64a7f41be809320e7b9673579",
+    "iterations/visual01/cachiru/visual/pose-13-death.png": "cb4c2538ff594973fa64decd9a293a0d360d987420fbecabab742c1f942b0016",
+    "iterations/visual01/cachiru/visual/pose-14-death.png": "9ede8f92aee34e3e8fdf955f8d4e342ed5cadee9922c503a094c8de3b80d3f65",
+    "iterations/visual01/cachiru/visual/pose-15-death.png": "4501cc371e6b0eba8f4941119b99f06918d47d5849eb99e85d05997a819d2a25",
+    "iterations/visual01/cachiru/visual/pose-16-death.png": "418f70a291522db1d1331a93789bcc6d6fd9d2c7958d0fb2e0c68cb7bdd096c5",
+    "iterations/visual01/cachiru/visual/pose-17-death.png": "4ce0cdcb4801ce4a8717f3ae9514663f507b514bcba0c0f5129a73e240597092",
+    "iterations/visual01/cachiru/visual/pose-18-breath.png": "d286ea6ca3cf87b01df97cf1bebc4466dec10fd6c982c3f95f9a5f6af1242598",
+    "iterations/visual01/cachiru/visual/pose-19-breath.png": "24d2c4ed4968753965f52d9f4f77ad908190806d524230a639fb9392629848b8",
+    "iterations/visual01/cachiru/visual/pose-20-breath.png": "0e00f11fd7c85649c601cd023d51ff5e6b7772ddfd555dfd49ce00407a017496",
+    "iterations/visual01/cachiru/visual/pose-21-breath.png": "a455ff8a8b17feccde7b99a920ae1c692afdf8345681522cb1f9cac7dfb2f9b0",
+    "iterations/visual01/cachiru/visual/pose-22-rest.png": "4ce0cdcb4801ce4a8717f3ae9514663f507b514bcba0c0f5129a73e240597092",
+    "iterations/visual01/cachiru/visual/process.log": "40a25025ba0ced038b5a708405294fdedb366c4a8c238d8879a8da8eff9c891e",
+    "iterations/visual01/cachiru/visual/session.ini": "0fea270201a2c8d2de4a62efb1502aaa019483ce82e2f6e49f4a8b3c665f456f",
+    "iterations/visual01/cachiru/visual/view-front.png": "ed8223ceb76d28d89e0270b3540aa69eaf66ef31fd2126f31805985ec2105a46",
+    "iterations/visual01/cachiru/visual/view-head-front.png": "bff052edd379e23c5814642f673400b52df04a7d693b94a2365c004e6a98d3f2",
+    "iterations/visual01/cachiru/visual/view-head-oblique.png": "6ef0f03f3b617bd6eb35d0d51146b0475fb069261d63131303b8ab1efca7c58b",
+    "iterations/visual01/cachiru/visual/view-lying-oblique.png": "4ce0cdcb4801ce4a8717f3ae9514663f507b514bcba0c0f5129a73e240597092",
+    "iterations/visual01/cachiru/visual/view-rear.png": "d6e07ad42fbd6ca0908277f7e0f906c8588399caf790c4f05bf707ba033687e4",
+    "iterations/visual01/cachiru/visual/view-side.png": "1bee03339962f225c348dc482538d8925ca150004e617e035e133363c078961b",
+    "iterations/visual01/kakuy/fixture-source/MAPINFO.txt": "336735ce8f8a435b8371ff15faab98454190b347deefbae4689ab29e854fe4da",
+    "iterations/visual01/kakuy/fixture-source/ZSCRIPT.txt": "f37c4877e98d7539906561b4ac1369712b0db7a5598e630733e21b8be3bd5918",
+    "iterations/visual01/kakuy/fixture.zs": "46a37f2702db968c325cfaf0adb9ddf55f5ac3ec7842d6e7d94905f6104047b1",
+    "iterations/visual01/kakuy/RESULTS.json": "e3a6a0ea6ac7a582c1d5be62f8c228e8f4ed94f8aa2c211e4581a206c9d3a2a5",
+    "iterations/visual01/kakuy/visual/commands.cfg": "aafd26cabf8581fdb838a88f97bb47a9aa94a7e3c3aa9305abc965f20239d9f6",
+    "iterations/visual01/kakuy/visual/empty-view-0.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "iterations/visual01/kakuy/visual/empty-view-6.png": "5a2ba58ed5f6efbf157b5e78e666b179a2b4729e99130938b9182d383bdc1bcf",
+    "iterations/visual01/kakuy/visual/empty.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "iterations/visual01/kakuy/visual/engine.log": "907060d4218c3c1b16535ffb908447aebadf1ee76b1ba31a895991d17811072d",
+    "iterations/visual01/kakuy/visual/pose-00-idle.png": "81a1c44bcbade5fdc9cd516c038c38a3ebffbe87345cd309126a8026f4f6eaad",
+    "iterations/visual01/kakuy/visual/pose-01-idle.png": "9e07891b32928af5bf7bf5751862e0d1d9bf0465507951133598c825ae21d934",
+    "iterations/visual01/kakuy/visual/pose-02-run.png": "c619d931b1537aaec1d4c3ce51166ecf1a09b04aae3501457341c3f9ee68078b",
+    "iterations/visual01/kakuy/visual/pose-03-run.png": "3256f9161df1e3a6e0d67bea89777f7d9cacd8486dfffa021fcdbb9cf67b5fdf",
+    "iterations/visual01/kakuy/visual/pose-04-run.png": "d60c12f8e7b4d7224910d124ac97fcb23e16cbc92f22da8c12cbcd0ac291ae53",
+    "iterations/visual01/kakuy/visual/pose-05-run.png": "fa6d28ffa39720dd49c5087c0ae4c837ac6935f902e9b2be096a59ff8146b937",
+    "iterations/visual01/kakuy/visual/pose-06-walk.png": "3256f9161df1e3a6e0d67bea89777f7d9cacd8486dfffa021fcdbb9cf67b5fdf",
+    "iterations/visual01/kakuy/visual/pose-07-walk.png": "fa6d28ffa39720dd49c5087c0ae4c837ac6935f902e9b2be096a59ff8146b937",
+    "iterations/visual01/kakuy/visual/pose-08-stun.png": "dc2f5e41c5c6c2cd0ed895aaeb4ab207b2c9977390154222a5489407f08c73d5",
+    "iterations/visual01/kakuy/visual/pose-09-attack_prepare.png": "ae15f2a6a8779ca19b282947dc74b17630190da3e32dab0163955918a0b10531",
+    "iterations/visual01/kakuy/visual/pose-10-attack_release.png": "b62ae81ba98a28d4425818c916a0db0abcccd57369d86bc95d3afd4fb5603bf0",
+    "iterations/visual01/kakuy/visual/pose-11-pain.png": "9eba76531b6ef65044d40e6262218ee44f85b76553b0adb39c7ac39f613061d7",
+    "iterations/visual01/kakuy/visual/pose-12-death.png": "2cb0aad23a5cbd35da9f96ddf907b874c2b44773091e65183625c625785f8deb",
+    "iterations/visual01/kakuy/visual/pose-13-death.png": "1be3500621573cac15270926af3ece230545856288fec0d5e0c39e55f2b0d390",
+    "iterations/visual01/kakuy/visual/pose-14-death.png": "def12954080eb84e6098363636ee01bfb13674e32b582cb50bd2dd6534b5c008",
+    "iterations/visual01/kakuy/visual/pose-15-death.png": "64c74b01c928433d3492b8825c5cdd84d783b89354ea60245afb93b1f1d617ef",
+    "iterations/visual01/kakuy/visual/pose-16-death.png": "14a41ca704c0bb0383e5373d6ec1a7a4e39d786a6f9a994cbd4ff2f57fd51a18",
+    "iterations/visual01/kakuy/visual/pose-17-death.png": "8eb7f26c5024970e89adc76e391d005e2e38165358494ce1f258b94d4256a96e",
+    "iterations/visual01/kakuy/visual/pose-18-breath.png": "3b75cbf7ffcae8d8b48f271b46e99378ad105bfc3e30a6a1444675d291f48369",
+    "iterations/visual01/kakuy/visual/pose-19-breath.png": "2f45e965557f8a3f0d2fa43fea9fc67fff928ff8e5c9d9e5ad5308669ee788a4",
+    "iterations/visual01/kakuy/visual/pose-20-breath.png": "98db026aeeac080e6dc4ecd631d6e35382a8639816b7788fe64029d7f285ad24",
+    "iterations/visual01/kakuy/visual/pose-21-breath.png": "4881da28c1f67684f66935f2960915464eb9eb2e18de462f8326e6a7e978af59",
+    "iterations/visual01/kakuy/visual/pose-22-rest.png": "8eb7f26c5024970e89adc76e391d005e2e38165358494ce1f258b94d4256a96e",
+    "iterations/visual01/kakuy/visual/process.log": "8aaaeaff61a04718c0dbb96a3537af30833baac4ca3dbc98f12ef3d48eda8af8",
+    "iterations/visual01/kakuy/visual/session.ini": "f5f4bfe425ff25191d4a2d59c459fe6c8026e435e9fb3f6b93382b73eb6d5227",
+    "iterations/visual01/kakuy/visual/view-front.png": "6ab8c83bbb521cf51d6a3f7cbb0ac2967ac63af481ddcd19bb55337256699259",
+    "iterations/visual01/kakuy/visual/view-head-front.png": "c3a0e215e406ce658e03217352df9933e5c3a7f5ebd90577f996737463770363",
+    "iterations/visual01/kakuy/visual/view-head-oblique.png": "dcb8ad8c2685cd32aa7b8117b3112a75cbca8ebde6b59a0eb37535aeedd227a7",
+    "iterations/visual01/kakuy/visual/view-lying-oblique.png": "8eb7f26c5024970e89adc76e391d005e2e38165358494ce1f258b94d4256a96e",
+    "iterations/visual01/kakuy/visual/view-rear.png": "0c4c999b27e99605c80c856e096f074e79d107cc0ce265d83dae51684272a9e3",
+    "iterations/visual01/kakuy/visual/view-side.png": "20be4d803682f36f1427af870be1b2866121c57dba7554ea893fefaf89d7619c",
+    "iterations/visual01/kelenken/fixture-source/MAPINFO.txt": "336735ce8f8a435b8371ff15faab98454190b347deefbae4689ab29e854fe4da",
+    "iterations/visual01/kelenken/fixture-source/ZSCRIPT.txt": "b4c84dce439666d422b3b94bbd6e24b256999413ddd67d9d9beeb577ad2f13ee",
+    "iterations/visual01/kelenken/fixture.zs": "33fb63db4246163e6b17f71d874d24be3660c28d29077a957740ac22ef01d926",
+    "iterations/visual01/kelenken/RESULTS.json": "cc097b6527d2d22245170d1af8915a360ec37c03825cf681db033e0088a8d2b0",
+    "iterations/visual01/kelenken/visual/commands.cfg": "aafd26cabf8581fdb838a88f97bb47a9aa94a7e3c3aa9305abc965f20239d9f6",
+    "iterations/visual01/kelenken/visual/empty-view-0.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "iterations/visual01/kelenken/visual/empty-view-6.png": "5a2ba58ed5f6efbf157b5e78e666b179a2b4729e99130938b9182d383bdc1bcf",
+    "iterations/visual01/kelenken/visual/empty.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "iterations/visual01/kelenken/visual/engine.log": "7f6f34946b781e1c05d76444e234f5c8b772b203f678a5d005ad92ccca51ca5a",
+    "iterations/visual01/kelenken/visual/pose-00-idle.png": "5cb0f9ae3161535a48c6f1462188ad20da718eaefe8a5928249c71640daf8ce1",
+    "iterations/visual01/kelenken/visual/pose-01-idle.png": "8f9b06422bb514556b170396e3867c770f5a5e0de59d493c85e94b4d20748044",
+    "iterations/visual01/kelenken/visual/pose-02-run.png": "6f644e5d12adb8a2621ab2fcab5b9683a23278317d85e7bbe953734e29822ec6",
+    "iterations/visual01/kelenken/visual/pose-03-run.png": "e46a270da37b18729ef5177830706d3e164a7a38ee736dcbb59fdf1ade7b4e86",
+    "iterations/visual01/kelenken/visual/pose-04-run.png": "7b70fbd15a4ea71836e53fb7167de42f4aa1bc6d491d68dc1fe7067d437c216e",
+    "iterations/visual01/kelenken/visual/pose-05-run.png": "864f2140f810ee96c74f774485b390c8a33a4abefdcabe1906467f218ea8083c",
+    "iterations/visual01/kelenken/visual/pose-06-walk.png": "e46a270da37b18729ef5177830706d3e164a7a38ee736dcbb59fdf1ade7b4e86",
+    "iterations/visual01/kelenken/visual/pose-07-walk.png": "864f2140f810ee96c74f774485b390c8a33a4abefdcabe1906467f218ea8083c",
+    "iterations/visual01/kelenken/visual/pose-08-stun.png": "85076396053924d26b44e2bebb3f7e9c121fb07a784d3e472ca189c0921c316c",
+    "iterations/visual01/kelenken/visual/pose-09-attack_prepare.png": "9691984d6ac254f8a721e7b7596c19203f52bc2507935bbb02df19e415c4cd04",
+    "iterations/visual01/kelenken/visual/pose-10-attack_release.png": "4d0bd1cb83ccd70bbb7885af99bc83d00e676eebc445b7ab4cecd3f8c1d61277",
+    "iterations/visual01/kelenken/visual/pose-11-pain.png": "c95f739c229aad8fc8d045b394cb73298540cc782bd6ce2ffee969b43c67a4d4",
+    "iterations/visual01/kelenken/visual/pose-12-death.png": "a04593d0682d3aecd9b9fd58ba7f90526467154ae7e00e2ef7553d291f2af21e",
+    "iterations/visual01/kelenken/visual/pose-13-death.png": "3daacd96fb63ce59be95109f8033db94fced808f5995e4ebaf76ddeb469ab2e1",
+    "iterations/visual01/kelenken/visual/pose-14-death.png": "3976899650569318e743a86a5b5d56dea20045eff5c0cf2784da3ca22e184ab6",
+    "iterations/visual01/kelenken/visual/pose-15-death.png": "7c0da732a899c344941970fb7baaf405aa503e01cbc36da06c50052cca9212d1",
+    "iterations/visual01/kelenken/visual/pose-16-death.png": "1c37d0cd1a5835c30790180c7ed3368e72ac3cae09b66962a16d50ddadb77137",
+    "iterations/visual01/kelenken/visual/pose-17-death.png": "763529f5a7d230f7db106a3fe636e46d42cc9300233974cb645483e55b9b2097",
+    "iterations/visual01/kelenken/visual/pose-18-breath.png": "9756c3066e5f3c59b90a7e4e4d9e51664bfd40ea10c4ccc2cc36443449ab3841",
+    "iterations/visual01/kelenken/visual/pose-19-breath.png": "e24303b69514566f25f4b1ec6ecbed4817aead851b866e54cabba7c3fae63946",
+    "iterations/visual01/kelenken/visual/pose-20-breath.png": "cc40092fe1c36b2bdded86f91c012a68d5057a3670b9e88f4f46f627d25f60b6",
+    "iterations/visual01/kelenken/visual/pose-21-breath.png": "9d16548e5f25d57f7486f2e8d690e6a2642b990e8b52e4d343d09c2a9f0a515c",
+    "iterations/visual01/kelenken/visual/pose-22-rest.png": "763529f5a7d230f7db106a3fe636e46d42cc9300233974cb645483e55b9b2097",
+    "iterations/visual01/kelenken/visual/process.log": "d9c33a637726399023c11f48d0601296670772f060194c5fcc7a19eceece1d96",
+    "iterations/visual01/kelenken/visual/session.ini": "667aeea9dd2b4914dd0416295ec374b42d7912920039c35c22b6e20eac30b256",
+    "iterations/visual01/kelenken/visual/view-front.png": "115e069cb88bf09eb650112a571b27f5d5b0d20b600cd48dd9d5bbe2ee0850ed",
+    "iterations/visual01/kelenken/visual/view-head-front.png": "2ed3f64bbe34fb4f686ef73983170a69ee26c9833b704f282d96f3d850f12b3d",
+    "iterations/visual01/kelenken/visual/view-head-oblique.png": "920c8b1411459c24ab70f7850665f4e58221d7af85da73e53faec7503f65cbc9",
+    "iterations/visual01/kelenken/visual/view-lying-oblique.png": "763529f5a7d230f7db106a3fe636e46d42cc9300233974cb645483e55b9b2097",
+    "iterations/visual01/kelenken/visual/view-rear.png": "0e3fcb282729646f5eeabaaf311f1128ee4a3c74776defa9c872966c2a7bf2d0",
+    "iterations/visual01/kelenken/visual/view-side.png": "65cd57875ea4a8b6d327a090675cb53750be608d5e78c5729c1e3d7ec1c5a0a3",
+    "iterations/visual02/cachiru/fixture-source/MAPINFO.txt": "336735ce8f8a435b8371ff15faab98454190b347deefbae4689ab29e854fe4da",
+    "iterations/visual02/cachiru/fixture-source/ZSCRIPT.txt": "b16ac3d408b2e74b400e842ee0d95a23735a27139ee8a66b2e07293f7fd6ba3e",
+    "iterations/visual02/cachiru/fixture.zs": "cc9274ca51735e77b3125caac66596c211cf0fd20f1e0140f301a284ad1d7cc5",
+    "iterations/visual02/cachiru/RESULTS.json": "1e7da0472113022abbf21720f3395f02c2f880d4e0a76ff40d7ce41c5b12b159",
+    "iterations/visual02/cachiru/visual/commands.cfg": "aafd26cabf8581fdb838a88f97bb47a9aa94a7e3c3aa9305abc965f20239d9f6",
+    "iterations/visual02/cachiru/visual/empty-view-0.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "iterations/visual02/cachiru/visual/empty-view-6.png": "5a2ba58ed5f6efbf157b5e78e666b179a2b4729e99130938b9182d383bdc1bcf",
+    "iterations/visual02/cachiru/visual/empty.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "iterations/visual02/cachiru/visual/engine.log": "22211106e6b438195be5e7351bd1f6560c65258718b7bdc7b8ce15e1ea105ccb",
+    "iterations/visual02/cachiru/visual/pose-00-idle.png": "a37b10ba89b5f4df8350624c1d3f434e3f99d38bb73be4d5fcb931c66e9378cf",
+    "iterations/visual02/cachiru/visual/pose-01-idle.png": "36a186fc315d4c6027668bdf1189ffc0183c9f905541cf491eed0099804e59ba",
+    "iterations/visual02/cachiru/visual/pose-02-run.png": "503be0e1053a6169568e4bb4fbf382dd489c3c9636b00b557cdc4f3eefb7057a",
+    "iterations/visual02/cachiru/visual/pose-03-run.png": "9070595a1745e96e332e0273f25e73dc943244837afb359365c874bd50c91653",
+    "iterations/visual02/cachiru/visual/pose-04-run.png": "7aff3de493fe71346d46da07402ef8f9ab66bbea97f96ec8ee5fb36cfceecc51",
+    "iterations/visual02/cachiru/visual/pose-05-run.png": "f8a6b11ff91956c6d22b8357bd50ca98908e14a6f50dadd4bd23896b648073f4",
+    "iterations/visual02/cachiru/visual/pose-06-walk.png": "9070595a1745e96e332e0273f25e73dc943244837afb359365c874bd50c91653",
+    "iterations/visual02/cachiru/visual/pose-07-walk.png": "f8a6b11ff91956c6d22b8357bd50ca98908e14a6f50dadd4bd23896b648073f4",
+    "iterations/visual02/cachiru/visual/pose-08-stun.png": "878413f33c41c45cbceec5a8abd16bdb57203565516aba840b0d2168d36fea7e",
+    "iterations/visual02/cachiru/visual/pose-09-attack_prepare.png": "8162e9bb7e14efad6e1f7f979c65566c9be3cf0fcd90616c941dae8995060bcf",
+    "iterations/visual02/cachiru/visual/pose-10-attack_release.png": "4df665079210ad2f3561d4753db26640776e995d2d90d879e39501806941c725",
+    "iterations/visual02/cachiru/visual/pose-11-pain.png": "44690ceb50df13b8cebb51b47f872ff2eb2354f2196cef4b8737a85c011af46f",
+    "iterations/visual02/cachiru/visual/pose-12-death.png": "773aacc93cc5ec5ecdac7d320f70a66891034c8af784482cdab35cd7fb8673ad",
+    "iterations/visual02/cachiru/visual/pose-13-death.png": "cea23e949fc48d50dc9f92b406f9e7f87c6a3f6f919628a2d7a04f29ebeb95c5",
+    "iterations/visual02/cachiru/visual/pose-14-death.png": "9842c48d59d76a57baa43526ad7d2bf5155a84ec2cfafe04b227878fae6e2a1c",
+    "iterations/visual02/cachiru/visual/pose-15-death.png": "55f5e3fb69133f529eba9202781b9df61f2c6153cb99119c29f1fb6797bf7730",
+    "iterations/visual02/cachiru/visual/pose-16-death.png": "76ea58a6435ca09dfd91180a5b9375d0c9e54e548bf2dfab35949d0e2fd6a7cc",
+    "iterations/visual02/cachiru/visual/pose-17-death.png": "c17c32b6dacc44e76cb0a619469b284bafe9a053e3a7ea7aebd1eb23ccfa1f3e",
+    "iterations/visual02/cachiru/visual/pose-18-breath.png": "8d4d9f179b31b89e830a5dbe2573ca1b1feed0c1105d821439bf8dc855a8507d",
+    "iterations/visual02/cachiru/visual/pose-19-breath.png": "dfad1d7e93a1455e8e98cb7c49c9290cdb32eb42ddc9f86bcf033772d9026b8c",
+    "iterations/visual02/cachiru/visual/pose-20-breath.png": "5570e4da4438a30fe2e4974f7083795a694a9c399c24835390bd9ca11eb28dad",
+    "iterations/visual02/cachiru/visual/pose-21-breath.png": "174c49d54c7d6bf9a4132fd0e848c8e603faeea61665608d25fd1677057eaaab",
+    "iterations/visual02/cachiru/visual/pose-22-rest.png": "c17c32b6dacc44e76cb0a619469b284bafe9a053e3a7ea7aebd1eb23ccfa1f3e",
+    "iterations/visual02/cachiru/visual/process.log": "a20984ed5c941bdf24a05dcb5b09fcef9be2890dec1d90b87908f5b2f70a85f6",
+    "iterations/visual02/cachiru/visual/session.ini": "aa81896325473add0e84c1ae0cdbaa40e55086204425e5a452047e09268cde3e",
+    "iterations/visual02/cachiru/visual/view-front.png": "cc643e5188d24d67fca5142a3c12860ffd5fa213e2321b0da061112ed899905a",
+    "iterations/visual02/cachiru/visual/view-head-front.png": "a2b2232d63130a5b2a72c932019fb67f5384d6094f3f1eef8c693c86546ed614",
+    "iterations/visual02/cachiru/visual/view-head-oblique.png": "28f8721a214fd3f42235bd4212d234279b54dfabdaa8c68a233779a7a48bea29",
+    "iterations/visual02/cachiru/visual/view-lying-oblique.png": "c17c32b6dacc44e76cb0a619469b284bafe9a053e3a7ea7aebd1eb23ccfa1f3e",
+    "iterations/visual02/cachiru/visual/view-rear.png": "e3697cde68545678e521599aa3b2312e938dd5f3ca70cdcf5b491c78e47d778c",
+    "iterations/visual02/cachiru/visual/view-side.png": "f2089f624734e266ac623dae46519e9b53593831f18bf833a3ab14d2cfaae84c",
+    "iterations/visual02/kakuy/fixture-source/MAPINFO.txt": "336735ce8f8a435b8371ff15faab98454190b347deefbae4689ab29e854fe4da",
+    "iterations/visual02/kakuy/fixture-source/ZSCRIPT.txt": "f37c4877e98d7539906561b4ac1369712b0db7a5598e630733e21b8be3bd5918",
+    "iterations/visual02/kakuy/fixture.zs": "46a37f2702db968c325cfaf0adb9ddf55f5ac3ec7842d6e7d94905f6104047b1",
+    "iterations/visual02/kakuy/RESULTS.json": "00b77f94a1332454b2d2361e98ea6bba789cdbd59c2c83c9315aa69fde15f4e8",
+    "iterations/visual02/kakuy/visual/commands.cfg": "aafd26cabf8581fdb838a88f97bb47a9aa94a7e3c3aa9305abc965f20239d9f6",
+    "iterations/visual02/kakuy/visual/empty-view-0.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "iterations/visual02/kakuy/visual/empty-view-6.png": "5a2ba58ed5f6efbf157b5e78e666b179a2b4729e99130938b9182d383bdc1bcf",
+    "iterations/visual02/kakuy/visual/empty.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "iterations/visual02/kakuy/visual/engine.log": "58d3f80bcee3dfcbfaaf90178fb349e6e149822de60b1b7d990e69c6b4517a80",
+    "iterations/visual02/kakuy/visual/pose-00-idle.png": "e4740c215200538546c3285c1e43882d7ab76a90371d44be7d3c3bf7b17e4b7c",
+    "iterations/visual02/kakuy/visual/pose-01-idle.png": "1f10ada2be9173dbb19f4cbe94f9046cabe956608d45c42a2932f7b8d38163d3",
+    "iterations/visual02/kakuy/visual/pose-02-run.png": "01144c4782d194ea723b71856f6228d04d9de4ec4af1ad1910c158d7ac3d2890",
+    "iterations/visual02/kakuy/visual/pose-03-run.png": "9eea8fe83dcea0268c8c3294ed088b475da54a8e560c0830d5196e4e09a0dac8",
+    "iterations/visual02/kakuy/visual/pose-04-run.png": "98c6f1f16b33a958465900120c2121ecaf9d6cc87ea08caff179fa86899af824",
+    "iterations/visual02/kakuy/visual/pose-05-run.png": "d128067bd525a6e867bded65bee5f9b905756ed3b223bd4b4bef91436489ae92",
+    "iterations/visual02/kakuy/visual/pose-06-walk.png": "9eea8fe83dcea0268c8c3294ed088b475da54a8e560c0830d5196e4e09a0dac8",
+    "iterations/visual02/kakuy/visual/pose-07-walk.png": "d128067bd525a6e867bded65bee5f9b905756ed3b223bd4b4bef91436489ae92",
+    "iterations/visual02/kakuy/visual/pose-08-stun.png": "10a462778eece5653d592f8168dce76d4d25dbff32e7727bb54db2384b912909",
+    "iterations/visual02/kakuy/visual/pose-09-attack_prepare.png": "b917f93ae23c7692cdc184eef5ec13a4f6c9c1f9fdb00221ab588c174770f367",
+    "iterations/visual02/kakuy/visual/pose-10-attack_release.png": "d12da88d6bc19422671a25f4c1c977e2a5971e70ae6208fdbe0b091dcf6e2b98",
+    "iterations/visual02/kakuy/visual/pose-11-pain.png": "5a194231fe00411ad3e0ca76aca2e207fc73ec8a6c88154d534a03b631cb805d",
+    "iterations/visual02/kakuy/visual/pose-12-death.png": "b8fad4a763241dcc5a125f0cbaf97aca181c9f64ca102fe4f921ed2fff50136f",
+    "iterations/visual02/kakuy/visual/pose-13-death.png": "21b06b8529c8e6a5223422f1d3df242a8456fcab7551c0804b5568b2859f8205",
+    "iterations/visual02/kakuy/visual/pose-14-death.png": "fc38109826d016cf012385dd7027925c53f68ebd3095a224867497c32cc0ff81",
+    "iterations/visual02/kakuy/visual/pose-15-death.png": "bea990dd2aae3953b528ad96136082674fe534ccef6efa1e895ee8d1ed1fcba3",
+    "iterations/visual02/kakuy/visual/pose-16-death.png": "61466b615e265f25ce9dbaf7feaf79e59e336f47aaf723b8b505b1e580c73a22",
+    "iterations/visual02/kakuy/visual/pose-17-death.png": "90e4666325183364ed91ac4feead71a8b0feb37db8540c827e7dc7b70b4cb935",
+    "iterations/visual02/kakuy/visual/pose-18-breath.png": "3e7cfcaf6ee5c41c31638b6f22bbc9d11d9fd5f624134b61f2073b492460eed1",
+    "iterations/visual02/kakuy/visual/pose-19-breath.png": "e4740c215200538546c3285c1e43882d7ab76a90371d44be7d3c3bf7b17e4b7c",
+    "iterations/visual02/kakuy/visual/pose-20-breath.png": "f9f44d984bb6e3b487941725a528a5aae383ed600971b0204b11e0fc1d63e4be",
+    "iterations/visual02/kakuy/visual/pose-21-breath.png": "e4740c215200538546c3285c1e43882d7ab76a90371d44be7d3c3bf7b17e4b7c",
+    "iterations/visual02/kakuy/visual/pose-22-rest.png": "90e4666325183364ed91ac4feead71a8b0feb37db8540c827e7dc7b70b4cb935",
+    "iterations/visual02/kakuy/visual/process.log": "b9989e55fc4144400302ca75da088e92a9d77d830426b340d6a9087aaa6015fd",
+    "iterations/visual02/kakuy/visual/session.ini": "729df1a26d34cd5deeed06fccffb7ae98eaaa82b0350ac4810d7fef6e38d9a76",
+    "iterations/visual02/kakuy/visual/view-front.png": "e522112daf2171f482ad102fe4220638f7bc2143ee01830d69a76a153205be71",
+    "iterations/visual02/kakuy/visual/view-head-front.png": "a0080457b2f1879037eea591cc4fbd25bb4a3aae8ec3ccff7bcf5cd4fa23594d",
+    "iterations/visual02/kakuy/visual/view-head-oblique.png": "677df477d1913202a12103989bf5332dc8ba7562bb235d885794a7f709dae92c",
+    "iterations/visual02/kakuy/visual/view-lying-oblique.png": "90e4666325183364ed91ac4feead71a8b0feb37db8540c827e7dc7b70b4cb935",
+    "iterations/visual02/kakuy/visual/view-rear.png": "41126215c3293f1aede1ba68d1629a1aaa520c0508d84afb83b814402efcbf7f",
+    "iterations/visual02/kakuy/visual/view-side.png": "e5c8ba80665fbace837aa0e322047ad3920256e064d39cd9d189831c2745a49f",
+    "iterations/visual02/kelenken/fixture-source/MAPINFO.txt": "336735ce8f8a435b8371ff15faab98454190b347deefbae4689ab29e854fe4da",
+    "iterations/visual02/kelenken/fixture-source/ZSCRIPT.txt": "b4c84dce439666d422b3b94bbd6e24b256999413ddd67d9d9beeb577ad2f13ee",
+    "iterations/visual02/kelenken/fixture.zs": "33fb63db4246163e6b17f71d874d24be3660c28d29077a957740ac22ef01d926",
+    "iterations/visual02/kelenken/RESULTS.json": "dab0b23cf774221264c8dcb1fd8cd048db68a95182d9306ce3a44180db065e43",
+    "iterations/visual02/kelenken/visual/commands.cfg": "aafd26cabf8581fdb838a88f97bb47a9aa94a7e3c3aa9305abc965f20239d9f6",
+    "iterations/visual02/kelenken/visual/empty-view-0.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "iterations/visual02/kelenken/visual/empty-view-6.png": "5a2ba58ed5f6efbf157b5e78e666b179a2b4729e99130938b9182d383bdc1bcf",
+    "iterations/visual02/kelenken/visual/empty.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "iterations/visual02/kelenken/visual/engine.log": "9a97de9a57c86868d673753567d3670ce35099e8d60a1c26115ea487665a35ef",
+    "iterations/visual02/kelenken/visual/pose-00-idle.png": "94bcc4b0fbb16d1003f82b32f9da95cfcc37470184f8bf26c5a2107b10be9bb1",
+    "iterations/visual02/kelenken/visual/pose-01-idle.png": "4416d94b50e590c6ef8a2aa9644601c63ee1b5f1a08242d0897b4d39a8f1f150",
+    "iterations/visual02/kelenken/visual/pose-02-run.png": "c754e811f5a104c90663a2dcf5a657581ba2688094f5ceabca4352c16a0aac6e",
+    "iterations/visual02/kelenken/visual/pose-03-run.png": "4339ae9bba7dc62b3a81c96b794a5595366696ce935c6132ddaecd8dac871e59",
+    "iterations/visual02/kelenken/visual/pose-04-run.png": "226b26ae25d1ba18dc858bb95f5d5a1fc43c9dcbecec7a941a080f406eb88911",
+    "iterations/visual02/kelenken/visual/pose-05-run.png": "910d281596d664e67b4fc04ce416c63e58cde1ea602e5acb1908d7f125e4fee1",
+    "iterations/visual02/kelenken/visual/pose-06-walk.png": "4339ae9bba7dc62b3a81c96b794a5595366696ce935c6132ddaecd8dac871e59",
+    "iterations/visual02/kelenken/visual/pose-07-walk.png": "910d281596d664e67b4fc04ce416c63e58cde1ea602e5acb1908d7f125e4fee1",
+    "iterations/visual02/kelenken/visual/pose-08-stun.png": "3cecf4015a1c2e1a192e681e59de5a3d79e0d0eb334f9da4ea747b163d931e89",
+    "iterations/visual02/kelenken/visual/pose-09-attack_prepare.png": "1aba531fc71cdf2480ef860477a24b42015f2b65ad90976d080efafaef7ecb95",
+    "iterations/visual02/kelenken/visual/pose-10-attack_release.png": "e090f1bd17f574ba4ca09540a80cb9c531540e07c960c8940576f7f74e06988f",
+    "iterations/visual02/kelenken/visual/pose-11-pain.png": "793c3232ba08366eeec1e938757903f04babbe5bbd6e4ba7e0dfb5c8b14c89db",
+    "iterations/visual02/kelenken/visual/pose-12-death.png": "4466e84930c582a2a386411066cf91913fcbe1b3967b4678ca232ff35c801ca7",
+    "iterations/visual02/kelenken/visual/pose-13-death.png": "f696035ab5cf70703db6dea2b5155d1298c46066e9ec05c453b24b215b9fc857",
+    "iterations/visual02/kelenken/visual/pose-14-death.png": "9af624ab949cd2ce6e1f0d9d32eb0bc6e8a8f1a859f62753c4e1cd1abdc46ebc",
+    "iterations/visual02/kelenken/visual/pose-15-death.png": "e164757a819645b30503dce594ef9a71b0d0c9ec8bdfc57ea6048f0d9f38115e",
+    "iterations/visual02/kelenken/visual/pose-16-death.png": "8aded1c48d59783d14805c9754e399dcb5a806bf04836e052b94372086b47ba6",
+    "iterations/visual02/kelenken/visual/pose-17-death.png": "c6525846c21ea964370aa7af6656d528a45e825f783cb5fd4d229a8ba251e67e",
+    "iterations/visual02/kelenken/visual/pose-18-breath.png": "ccba06f6fed545e03af6b5c85a3abc88faa4f62bd06fe9a4c1dadf2695490d6c",
+    "iterations/visual02/kelenken/visual/pose-19-breath.png": "2ef169ec0ea320587e9e46afd70a7941c29b8d32a86af414fb21abccd6d36903",
+    "iterations/visual02/kelenken/visual/pose-20-breath.png": "7b00efa17d18021e1cdb0ef704e8c494a5492e4c27daf3e0e66c3f5f4ee028d2",
+    "iterations/visual02/kelenken/visual/pose-21-breath.png": "efdfc153f2c07b54353ad40d43740df10fa4ac56afdbdc48013dd6fb7153b89a",
+    "iterations/visual02/kelenken/visual/pose-22-rest.png": "c6525846c21ea964370aa7af6656d528a45e825f783cb5fd4d229a8ba251e67e",
+    "iterations/visual02/kelenken/visual/process.log": "af7be000ebe9e74c162729f8dc74ce9c1e83f3c15d5bbf001a4631a741672a32",
+    "iterations/visual02/kelenken/visual/session.ini": "896f789da0d19ebd35c82e9bf95e6073fea7625067fb3f770e6d5d3ed944775a",
+    "iterations/visual02/kelenken/visual/view-front.png": "9e62323e91fcc95fa959587ccc6742a3283cd73d0f9dfa6015ccc5802e7fd704",
+    "iterations/visual02/kelenken/visual/view-head-front.png": "d8ad34a082de721ab3ce2859409f3553a832e5fac8446977ccabb6b99a3a4778",
+    "iterations/visual02/kelenken/visual/view-head-oblique.png": "07179daa1eb528e74c6c581756e7f38e7c9138c7623ff7313fafd7ae7c302247",
+    "iterations/visual02/kelenken/visual/view-lying-oblique.png": "c6525846c21ea964370aa7af6656d528a45e825f783cb5fd4d229a8ba251e67e",
+    "iterations/visual02/kelenken/visual/view-rear.png": "145661be4d234b2505f3651bb1b1f5028146d863c757661dd08feb0a0e425280",
+    "iterations/visual02/kelenken/visual/view-side.png": "c1781340cce3caa9c02939105b2faf030f964e79fe78d0b0359ab903d383f715",
+    "native01/cachiru/baseline/commands.cfg": "5432c00c9961d4c90d0cf83e7bc6f361802b1da65745397cf4ce1962e1384c3b",
+    "native01/cachiru/baseline/engine.log": "a4104fc732caf41f7498e421ce96f9375eae3d7954f1f901aee856f8a75baebb",
+    "native01/cachiru/baseline/process.log": "713250e8089122540e68536bab1bef7aa7df52d4bbc80ccb77cc25c141c88cca",
+    "native01/cachiru/baseline/session.ini": "a4d23b6e5b48413093b5d79e6542f09132dcd7167368fb7d1b502c20f163c4a6",
+    "native01/cachiru/fixture-source/MAPINFO.txt": "336735ce8f8a435b8371ff15faab98454190b347deefbae4689ab29e854fe4da",
+    "native01/cachiru/fixture-source/ZSCRIPT.txt": "b16ac3d408b2e74b400e842ee0d95a23735a27139ee8a66b2e07293f7fd6ba3e",
+    "native01/cachiru/fixture.zs": "cc9274ca51735e77b3125caac66596c211cf0fd20f1e0140f301a284ad1d7cc5",
+    "native01/cachiru/fresh-model/commands.cfg": "aafd26cabf8581fdb838a88f97bb47a9aa94a7e3c3aa9305abc965f20239d9f6",
+    "native01/cachiru/fresh-model/empty-view-0.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "native01/cachiru/fresh-model/empty-view-6.png": "5a2ba58ed5f6efbf157b5e78e666b179a2b4729e99130938b9182d383bdc1bcf",
+    "native01/cachiru/fresh-model/empty.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "native01/cachiru/fresh-model/engine.log": "3dfbbef6a02452351fb6a9ab6d77ffa05d9edc0736ab7f9ac00e9449add20291",
+    "native01/cachiru/fresh-model/pose-00-idle.png": "a37b10ba89b5f4df8350624c1d3f434e3f99d38bb73be4d5fcb931c66e9378cf",
+    "native01/cachiru/fresh-model/pose-01-idle.png": "36a186fc315d4c6027668bdf1189ffc0183c9f905541cf491eed0099804e59ba",
+    "native01/cachiru/fresh-model/pose-02-run.png": "503be0e1053a6169568e4bb4fbf382dd489c3c9636b00b557cdc4f3eefb7057a",
+    "native01/cachiru/fresh-model/pose-03-run.png": "9070595a1745e96e332e0273f25e73dc943244837afb359365c874bd50c91653",
+    "native01/cachiru/fresh-model/pose-04-run.png": "7aff3de493fe71346d46da07402ef8f9ab66bbea97f96ec8ee5fb36cfceecc51",
+    "native01/cachiru/fresh-model/pose-05-run.png": "f8a6b11ff91956c6d22b8357bd50ca98908e14a6f50dadd4bd23896b648073f4",
+    "native01/cachiru/fresh-model/pose-06-walk.png": "9070595a1745e96e332e0273f25e73dc943244837afb359365c874bd50c91653",
+    "native01/cachiru/fresh-model/pose-07-walk.png": "f8a6b11ff91956c6d22b8357bd50ca98908e14a6f50dadd4bd23896b648073f4",
+    "native01/cachiru/fresh-model/pose-08-stun.png": "878413f33c41c45cbceec5a8abd16bdb57203565516aba840b0d2168d36fea7e",
+    "native01/cachiru/fresh-model/pose-09-attack_prepare.png": "8162e9bb7e14efad6e1f7f979c65566c9be3cf0fcd90616c941dae8995060bcf",
+    "native01/cachiru/fresh-model/pose-10-attack_release.png": "4df665079210ad2f3561d4753db26640776e995d2d90d879e39501806941c725",
+    "native01/cachiru/fresh-model/pose-11-pain.png": "44690ceb50df13b8cebb51b47f872ff2eb2354f2196cef4b8737a85c011af46f",
+    "native01/cachiru/fresh-model/pose-12-death.png": "773aacc93cc5ec5ecdac7d320f70a66891034c8af784482cdab35cd7fb8673ad",
+    "native01/cachiru/fresh-model/pose-13-death.png": "cea23e949fc48d50dc9f92b406f9e7f87c6a3f6f919628a2d7a04f29ebeb95c5",
+    "native01/cachiru/fresh-model/pose-14-death.png": "9842c48d59d76a57baa43526ad7d2bf5155a84ec2cfafe04b227878fae6e2a1c",
+    "native01/cachiru/fresh-model/pose-15-death.png": "55f5e3fb69133f529eba9202781b9df61f2c6153cb99119c29f1fb6797bf7730",
+    "native01/cachiru/fresh-model/pose-16-death.png": "76ea58a6435ca09dfd91180a5b9375d0c9e54e548bf2dfab35949d0e2fd6a7cc",
+    "native01/cachiru/fresh-model/pose-17-death.png": "c17c32b6dacc44e76cb0a619469b284bafe9a053e3a7ea7aebd1eb23ccfa1f3e",
+    "native01/cachiru/fresh-model/pose-18-breath.png": "8d4d9f179b31b89e830a5dbe2573ca1b1feed0c1105d821439bf8dc855a8507d",
+    "native01/cachiru/fresh-model/pose-19-breath.png": "dfad1d7e93a1455e8e98cb7c49c9290cdb32eb42ddc9f86bcf033772d9026b8c",
+    "native01/cachiru/fresh-model/pose-20-breath.png": "5570e4da4438a30fe2e4974f7083795a694a9c399c24835390bd9ca11eb28dad",
+    "native01/cachiru/fresh-model/pose-21-breath.png": "174c49d54c7d6bf9a4132fd0e848c8e603faeea61665608d25fd1677057eaaab",
+    "native01/cachiru/fresh-model/pose-22-rest.png": "c17c32b6dacc44e76cb0a619469b284bafe9a053e3a7ea7aebd1eb23ccfa1f3e",
+    "native01/cachiru/fresh-model/process.log": "f5f46a3bf0ada6ad87be6dfc2f8829a2c98d1c115c57097b4151547f5c41357e",
+    "native01/cachiru/fresh-model/session.ini": "668f7b5ce225f83adc7c13b0a5f6b30a114a9fd32bd50822fb9bdfc7e26d40de",
+    "native01/cachiru/fresh-model/view-front.png": "cc643e5188d24d67fca5142a3c12860ffd5fa213e2321b0da061112ed899905a",
+    "native01/cachiru/fresh-model/view-head-front.png": "a2b2232d63130a5b2a72c932019fb67f5384d6094f3f1eef8c693c86546ed614",
+    "native01/cachiru/fresh-model/view-head-oblique.png": "28f8721a214fd3f42235bd4212d234279b54dfabdaa8c68a233779a7a48bea29",
+    "native01/cachiru/fresh-model/view-lying-oblique.png": "c17c32b6dacc44e76cb0a619469b284bafe9a053e3a7ea7aebd1eb23ccfa1f3e",
+    "native01/cachiru/fresh-model/view-rear.png": "e3697cde68545678e521599aa3b2312e938dd5f3ca70cdcf5b491c78e47d778c",
+    "native01/cachiru/fresh-model/view-side.png": "f2089f624734e266ac623dae46519e9b53593831f18bf833a3ab14d2cfaae84c",
+    "native01/cachiru/model-reload/commands.cfg": "64591a4b7dfb6d732a66f687ef4b6038b73c78370d8b4cbf00144791a3721220",
+    "native01/cachiru/model-reload/engine.log": "2ada05399314737e24d0a8057490111eaea26d76f43d168aa0ff02a0e590e30a",
+    "native01/cachiru/model-reload/process.log": "413fb47277d5cbebaa4becc612e280f366f9a702b964328bd1ef0442a0800dc3",
+    "native01/cachiru/model-reload/session.ini": "58d7ddb73dbc560c9a23e672b6b1a6886c709da3f4b125094794ca4cfde07826",
+    "native01/cachiru/old-save-model/commands.cfg": "64591a4b7dfb6d732a66f687ef4b6038b73c78370d8b4cbf00144791a3721220",
+    "native01/cachiru/old-save-model/engine.log": "d761470d1f3f1ebf7fb72983b546a96df189ca8f743e9abd7e19d55a87db6a26",
+    "native01/cachiru/old-save-model/process.log": "622e84e2fd8fa1290420713d48122c46d70d7666aa0610de0519d03f019440d9",
+    "native01/cachiru/old-save-model/session.ini": "7b78decc7e0ac57ac6ddde28a21bdbfe7ec2cd0ac665c022866b7819a4bea735",
+    "native01/cachiru/RESULTS.json": "080d3a3c2fbb3d980c46953a836da2d6fd419609d17ef8de341afa9fed005efe",
+    "native01/cachiru/rollback/commands.cfg": "64591a4b7dfb6d732a66f687ef4b6038b73c78370d8b4cbf00144791a3721220",
+    "native01/cachiru/rollback/engine.log": "d45a9bbf2edc9c3dbd98e72005d9f75726e8fb0964dc4cb0b5f9c761965c9646",
+    "native01/cachiru/rollback/process.log": "8551be320ff3be68ecfd447b55becca913938fd5bfb23cad707bce96393933a6",
+    "native01/cachiru/rollback/session.ini": "5e63387c2502b4a4ea5ba766db11a1dd2672ae6245cd3df0125d7e3db4b82bdf",
+    "native01/kakuy/baseline/commands.cfg": "5432c00c9961d4c90d0cf83e7bc6f361802b1da65745397cf4ce1962e1384c3b",
+    "native01/kakuy/baseline/engine.log": "10854936485e4712b0f659c7eb68e3aae7b49741524a013a6890585b7109dd11",
+    "native01/kakuy/baseline/process.log": "2930465a9721d81fb8133aaa1f40cf82a8d493e59d3362dd95950ab0af025507",
+    "native01/kakuy/baseline/session.ini": "3ff698be6faf933a2fd4d69d0bc12b8ac164a884bbab50658a0236c2837ba5bb",
+    "native01/kakuy/fixture-source/MAPINFO.txt": "336735ce8f8a435b8371ff15faab98454190b347deefbae4689ab29e854fe4da",
+    "native01/kakuy/fixture-source/ZSCRIPT.txt": "f37c4877e98d7539906561b4ac1369712b0db7a5598e630733e21b8be3bd5918",
+    "native01/kakuy/fixture.zs": "46a37f2702db968c325cfaf0adb9ddf55f5ac3ec7842d6e7d94905f6104047b1",
+    "native01/kakuy/fresh-model/commands.cfg": "aafd26cabf8581fdb838a88f97bb47a9aa94a7e3c3aa9305abc965f20239d9f6",
+    "native01/kakuy/fresh-model/empty-view-0.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "native01/kakuy/fresh-model/empty-view-6.png": "5a2ba58ed5f6efbf157b5e78e666b179a2b4729e99130938b9182d383bdc1bcf",
+    "native01/kakuy/fresh-model/empty.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "native01/kakuy/fresh-model/engine.log": "4330f070edbcb334e67c0099e6daf14296c4361f9c098590848b3a242eedb676",
+    "native01/kakuy/fresh-model/pose-00-idle.png": "e4740c215200538546c3285c1e43882d7ab76a90371d44be7d3c3bf7b17e4b7c",
+    "native01/kakuy/fresh-model/pose-01-idle.png": "1f10ada2be9173dbb19f4cbe94f9046cabe956608d45c42a2932f7b8d38163d3",
+    "native01/kakuy/fresh-model/pose-02-run.png": "01144c4782d194ea723b71856f6228d04d9de4ec4af1ad1910c158d7ac3d2890",
+    "native01/kakuy/fresh-model/pose-03-run.png": "9eea8fe83dcea0268c8c3294ed088b475da54a8e560c0830d5196e4e09a0dac8",
+    "native01/kakuy/fresh-model/pose-04-run.png": "98c6f1f16b33a958465900120c2121ecaf9d6cc87ea08caff179fa86899af824",
+    "native01/kakuy/fresh-model/pose-05-run.png": "d128067bd525a6e867bded65bee5f9b905756ed3b223bd4b4bef91436489ae92",
+    "native01/kakuy/fresh-model/pose-06-walk.png": "9eea8fe83dcea0268c8c3294ed088b475da54a8e560c0830d5196e4e09a0dac8",
+    "native01/kakuy/fresh-model/pose-07-walk.png": "d128067bd525a6e867bded65bee5f9b905756ed3b223bd4b4bef91436489ae92",
+    "native01/kakuy/fresh-model/pose-08-stun.png": "10a462778eece5653d592f8168dce76d4d25dbff32e7727bb54db2384b912909",
+    "native01/kakuy/fresh-model/pose-09-attack_prepare.png": "b917f93ae23c7692cdc184eef5ec13a4f6c9c1f9fdb00221ab588c174770f367",
+    "native01/kakuy/fresh-model/pose-10-attack_release.png": "d12da88d6bc19422671a25f4c1c977e2a5971e70ae6208fdbe0b091dcf6e2b98",
+    "native01/kakuy/fresh-model/pose-11-pain.png": "5a194231fe00411ad3e0ca76aca2e207fc73ec8a6c88154d534a03b631cb805d",
+    "native01/kakuy/fresh-model/pose-12-death.png": "b8fad4a763241dcc5a125f0cbaf97aca181c9f64ca102fe4f921ed2fff50136f",
+    "native01/kakuy/fresh-model/pose-13-death.png": "21b06b8529c8e6a5223422f1d3df242a8456fcab7551c0804b5568b2859f8205",
+    "native01/kakuy/fresh-model/pose-14-death.png": "fc38109826d016cf012385dd7027925c53f68ebd3095a224867497c32cc0ff81",
+    "native01/kakuy/fresh-model/pose-15-death.png": "bea990dd2aae3953b528ad96136082674fe534ccef6efa1e895ee8d1ed1fcba3",
+    "native01/kakuy/fresh-model/pose-16-death.png": "61466b615e265f25ce9dbaf7feaf79e59e336f47aaf723b8b505b1e580c73a22",
+    "native01/kakuy/fresh-model/pose-17-death.png": "90e4666325183364ed91ac4feead71a8b0feb37db8540c827e7dc7b70b4cb935",
+    "native01/kakuy/fresh-model/pose-18-breath.png": "3e7cfcaf6ee5c41c31638b6f22bbc9d11d9fd5f624134b61f2073b492460eed1",
+    "native01/kakuy/fresh-model/pose-19-breath.png": "e4740c215200538546c3285c1e43882d7ab76a90371d44be7d3c3bf7b17e4b7c",
+    "native01/kakuy/fresh-model/pose-20-breath.png": "f9f44d984bb6e3b487941725a528a5aae383ed600971b0204b11e0fc1d63e4be",
+    "native01/kakuy/fresh-model/pose-21-breath.png": "e4740c215200538546c3285c1e43882d7ab76a90371d44be7d3c3bf7b17e4b7c",
+    "native01/kakuy/fresh-model/pose-22-rest.png": "90e4666325183364ed91ac4feead71a8b0feb37db8540c827e7dc7b70b4cb935",
+    "native01/kakuy/fresh-model/process.log": "aad053545694b5bf5dae983fa5fd5121ddd75d789b890461181274022960884a",
+    "native01/kakuy/fresh-model/session.ini": "2b9cdc0c84e922bfd8f8c5e5f9f7a4630c8865d85462a4bd54cdbae204710e05",
+    "native01/kakuy/fresh-model/view-front.png": "e522112daf2171f482ad102fe4220638f7bc2143ee01830d69a76a153205be71",
+    "native01/kakuy/fresh-model/view-head-front.png": "a0080457b2f1879037eea591cc4fbd25bb4a3aae8ec3ccff7bcf5cd4fa23594d",
+    "native01/kakuy/fresh-model/view-head-oblique.png": "677df477d1913202a12103989bf5332dc8ba7562bb235d885794a7f709dae92c",
+    "native01/kakuy/fresh-model/view-lying-oblique.png": "90e4666325183364ed91ac4feead71a8b0feb37db8540c827e7dc7b70b4cb935",
+    "native01/kakuy/fresh-model/view-rear.png": "41126215c3293f1aede1ba68d1629a1aaa520c0508d84afb83b814402efcbf7f",
+    "native01/kakuy/fresh-model/view-side.png": "e5c8ba80665fbace837aa0e322047ad3920256e064d39cd9d189831c2745a49f",
+    "native01/kakuy/model-reload/commands.cfg": "64591a4b7dfb6d732a66f687ef4b6038b73c78370d8b4cbf00144791a3721220",
+    "native01/kakuy/model-reload/engine.log": "e7346954378b3a4ab59e31594da26f89499e93da5280b57e91907404c7f4243b",
+    "native01/kakuy/model-reload/process.log": "31ba0665ec3b3eba70c4e1adda0008cab9a0480d36b8410dd971c7da51a4eaa1",
+    "native01/kakuy/model-reload/session.ini": "34b1a868c3fdca4e50594b757ec7276c909e57ffbc94047507f42325de7028fd",
+    "native01/kakuy/old-save-model/commands.cfg": "64591a4b7dfb6d732a66f687ef4b6038b73c78370d8b4cbf00144791a3721220",
+    "native01/kakuy/old-save-model/engine.log": "af9a049d7b38ee1589f7c092ab5bca2f6e212524b6cd11a9e88ad986e28d38e9",
+    "native01/kakuy/old-save-model/process.log": "f0c5d057bcf368c5c4872c435cb8de6a33c96b67b7eed3b3fe2c712cca64bf4a",
+    "native01/kakuy/old-save-model/session.ini": "dfe1996a8b848ab96f96a30403fb221230cde5342e15d71ea731464eb74749fe",
+    "native01/kakuy/RESULTS.json": "9f4300420e665fd8ae60b4ee74ca65742e8bc28d7abc7599cd5e7680a9d88373",
+    "native01/kakuy/rollback/commands.cfg": "64591a4b7dfb6d732a66f687ef4b6038b73c78370d8b4cbf00144791a3721220",
+    "native01/kakuy/rollback/engine.log": "df5f7c3d0d6b89045dcdc467224b169dfcd52cc8d2d9c80bdea159c138a3a1a6",
+    "native01/kakuy/rollback/process.log": "796b9bcc7582e53991ea5f9ca3e22f9f369b587245b183954a6b06b927ba2c4d",
+    "native01/kakuy/rollback/session.ini": "4dc87ee3fe0679d7a0830ab6ab1da9004af1daee2f517b3e234efa1c1b5b67f2",
+    "native01/kelenken/baseline/commands.cfg": "5432c00c9961d4c90d0cf83e7bc6f361802b1da65745397cf4ce1962e1384c3b",
+    "native01/kelenken/baseline/engine.log": "169219e242ab76a42363329143bfcb7e99b53a1ed5908e0aa203858fb77249e2",
+    "native01/kelenken/baseline/process.log": "4a437f7796165a6a93ac90232cf3c2b1ebf1f648c92bdd16baf6a5d584181d7f",
+    "native01/kelenken/baseline/session.ini": "99fbf47bb56c7315b8cac84e084ea4dc60a41664254d7cd0f1ffbd2846033946",
+    "native01/kelenken/fixture-source/MAPINFO.txt": "336735ce8f8a435b8371ff15faab98454190b347deefbae4689ab29e854fe4da",
+    "native01/kelenken/fixture-source/ZSCRIPT.txt": "b4c84dce439666d422b3b94bbd6e24b256999413ddd67d9d9beeb577ad2f13ee",
+    "native01/kelenken/fixture.zs": "33fb63db4246163e6b17f71d874d24be3660c28d29077a957740ac22ef01d926",
+    "native01/kelenken/fresh-model/commands.cfg": "aafd26cabf8581fdb838a88f97bb47a9aa94a7e3c3aa9305abc965f20239d9f6",
+    "native01/kelenken/fresh-model/empty-view-0.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "native01/kelenken/fresh-model/empty-view-6.png": "5a2ba58ed5f6efbf157b5e78e666b179a2b4729e99130938b9182d383bdc1bcf",
+    "native01/kelenken/fresh-model/empty.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "native01/kelenken/fresh-model/engine.log": "71b9fdfdfb1fa0aff372cd4e7d5c7dfb63f1d30579cf94ec6ddc99163068320b",
+    "native01/kelenken/fresh-model/pose-00-idle.png": "94bcc4b0fbb16d1003f82b32f9da95cfcc37470184f8bf26c5a2107b10be9bb1",
+    "native01/kelenken/fresh-model/pose-01-idle.png": "4416d94b50e590c6ef8a2aa9644601c63ee1b5f1a08242d0897b4d39a8f1f150",
+    "native01/kelenken/fresh-model/pose-02-run.png": "c754e811f5a104c90663a2dcf5a657581ba2688094f5ceabca4352c16a0aac6e",
+    "native01/kelenken/fresh-model/pose-03-run.png": "4339ae9bba7dc62b3a81c96b794a5595366696ce935c6132ddaecd8dac871e59",
+    "native01/kelenken/fresh-model/pose-04-run.png": "226b26ae25d1ba18dc858bb95f5d5a1fc43c9dcbecec7a941a080f406eb88911",
+    "native01/kelenken/fresh-model/pose-05-run.png": "910d281596d664e67b4fc04ce416c63e58cde1ea602e5acb1908d7f125e4fee1",
+    "native01/kelenken/fresh-model/pose-06-walk.png": "4339ae9bba7dc62b3a81c96b794a5595366696ce935c6132ddaecd8dac871e59",
+    "native01/kelenken/fresh-model/pose-07-walk.png": "910d281596d664e67b4fc04ce416c63e58cde1ea602e5acb1908d7f125e4fee1",
+    "native01/kelenken/fresh-model/pose-08-stun.png": "3cecf4015a1c2e1a192e681e59de5a3d79e0d0eb334f9da4ea747b163d931e89",
+    "native01/kelenken/fresh-model/pose-09-attack_prepare.png": "1aba531fc71cdf2480ef860477a24b42015f2b65ad90976d080efafaef7ecb95",
+    "native01/kelenken/fresh-model/pose-10-attack_release.png": "e090f1bd17f574ba4ca09540a80cb9c531540e07c960c8940576f7f74e06988f",
+    "native01/kelenken/fresh-model/pose-11-pain.png": "793c3232ba08366eeec1e938757903f04babbe5bbd6e4ba7e0dfb5c8b14c89db",
+    "native01/kelenken/fresh-model/pose-12-death.png": "4466e84930c582a2a386411066cf91913fcbe1b3967b4678ca232ff35c801ca7",
+    "native01/kelenken/fresh-model/pose-13-death.png": "f696035ab5cf70703db6dea2b5155d1298c46066e9ec05c453b24b215b9fc857",
+    "native01/kelenken/fresh-model/pose-14-death.png": "9af624ab949cd2ce6e1f0d9d32eb0bc6e8a8f1a859f62753c4e1cd1abdc46ebc",
+    "native01/kelenken/fresh-model/pose-15-death.png": "e164757a819645b30503dce594ef9a71b0d0c9ec8bdfc57ea6048f0d9f38115e",
+    "native01/kelenken/fresh-model/pose-16-death.png": "8aded1c48d59783d14805c9754e399dcb5a806bf04836e052b94372086b47ba6",
+    "native01/kelenken/fresh-model/pose-17-death.png": "c6525846c21ea964370aa7af6656d528a45e825f783cb5fd4d229a8ba251e67e",
+    "native01/kelenken/fresh-model/pose-18-breath.png": "ccba06f6fed545e03af6b5c85a3abc88faa4f62bd06fe9a4c1dadf2695490d6c",
+    "native01/kelenken/fresh-model/pose-19-breath.png": "2ef169ec0ea320587e9e46afd70a7941c29b8d32a86af414fb21abccd6d36903",
+    "native01/kelenken/fresh-model/pose-20-breath.png": "7b00efa17d18021e1cdb0ef704e8c494a5492e4c27daf3e0e66c3f5f4ee028d2",
+    "native01/kelenken/fresh-model/pose-21-breath.png": "efdfc153f2c07b54353ad40d43740df10fa4ac56afdbdc48013dd6fb7153b89a",
+    "native01/kelenken/fresh-model/pose-22-rest.png": "c6525846c21ea964370aa7af6656d528a45e825f783cb5fd4d229a8ba251e67e",
+    "native01/kelenken/fresh-model/process.log": "e095b3f7017e206a7a88daf941cb9dac32d29de730f6d0f7c0bae3e6b61d895c",
+    "native01/kelenken/fresh-model/session.ini": "544ff2fdf1f0e20d5f566272ce230e192016691af9c3fba32814a6ab524a5d04",
+    "native01/kelenken/fresh-model/view-front.png": "9e62323e91fcc95fa959587ccc6742a3283cd73d0f9dfa6015ccc5802e7fd704",
+    "native01/kelenken/fresh-model/view-head-front.png": "d8ad34a082de721ab3ce2859409f3553a832e5fac8446977ccabb6b99a3a4778",
+    "native01/kelenken/fresh-model/view-head-oblique.png": "07179daa1eb528e74c6c581756e7f38e7c9138c7623ff7313fafd7ae7c302247",
+    "native01/kelenken/fresh-model/view-lying-oblique.png": "c6525846c21ea964370aa7af6656d528a45e825f783cb5fd4d229a8ba251e67e",
+    "native01/kelenken/fresh-model/view-rear.png": "145661be4d234b2505f3651bb1b1f5028146d863c757661dd08feb0a0e425280",
+    "native01/kelenken/fresh-model/view-side.png": "c1781340cce3caa9c02939105b2faf030f964e79fe78d0b0359ab903d383f715",
+    "native01/kelenken/model-reload/commands.cfg": "64591a4b7dfb6d732a66f687ef4b6038b73c78370d8b4cbf00144791a3721220",
+    "native01/kelenken/model-reload/engine.log": "42e89c974a8568c94ee890d1dd29227d16fc56e8b2c1e9cc6bb7a12383b852d9",
+    "native01/kelenken/model-reload/process.log": "0e4c088b276378a3b9a7a2e08367aaa43c4240726d90094c81ba17669b7545b8",
+    "native01/kelenken/model-reload/session.ini": "d43f8b68f6a0933f8dcdb63a4ddf9ce1b38ab852e4d1c03f41ad5558115c230e",
+    "native01/kelenken/old-save-model/commands.cfg": "64591a4b7dfb6d732a66f687ef4b6038b73c78370d8b4cbf00144791a3721220",
+    "native01/kelenken/old-save-model/engine.log": "2cff369d28b0912b9fd444cb62c4b0e5ba5077b8bfe7ad6f7d952fa2dc00ffe6",
+    "native01/kelenken/old-save-model/process.log": "4bf2936b60af535fd8d00c3299ab17f4711a37ba62074e16c0b4575c7945ccb9",
+    "native01/kelenken/old-save-model/session.ini": "f0279155b2f29d91aed74804fc8ea173b4d46a8a1a5db7b8487d515e9621fc1e",
+    "native01/kelenken/RESULTS.json": "15727215f3a52987fb10c70fefb5649ee331d7455bc24fcf9108bb4910d52a69",
+    "native01/kelenken/rollback/commands.cfg": "64591a4b7dfb6d732a66f687ef4b6038b73c78370d8b4cbf00144791a3721220",
+    "native01/kelenken/rollback/engine.log": "b08a599231197d11792425cd991dc7e48a3c692a72670564b155c91b5ee4f91b",
+    "native01/kelenken/rollback/process.log": "e6423c898bd8f396103b1c33f1e2860b5736f080013b98e345cd4601859293d1",
+    "native01/kelenken/rollback/session.ini": "840661f351a19315680a7bce6fdf402d40d4ca2803898ab43309cda739cfc460",
+    "presentation01/cachiru/model/commands.cfg": "c0fdf07a021369848eaa7ce1812bf912b0e27a62d233ad3692e6f926450d27b2",
+    "presentation01/cachiru/model/engine.log": "2f4bbf393a7ac7efdd8924b05b807720948b94e94673b3bcba32376395ef775b",
+    "presentation01/cachiru/model/fixture-source/MAPINFO.txt": "336735ce8f8a435b8371ff15faab98454190b347deefbae4689ab29e854fe4da",
+    "presentation01/cachiru/model/fixture-source/ZSCRIPT.txt": "b16ac3d408b2e74b400e842ee0d95a23735a27139ee8a66b2e07293f7fd6ba3e",
+    "presentation01/cachiru/model/fixture.zs": "cc9274ca51735e77b3125caac66596c211cf0fd20f1e0140f301a284ad1d7cc5",
+    "presentation01/cachiru/model/presents.csv": "ac2c686c16397b1e4113ca50736c0981d7769608c52ef797da5f225b26467286",
+    "presentation01/cachiru/model/process.log": "bca213349367441e02534802ff5f2f21404894a6fdf63bdd029687cce7263fac",
+    "presentation01/cachiru/model/scene.png": "a37b10ba89b5f4df8350624c1d3f434e3f99d38bb73be4d5fcb931c66e9378cf",
+    "presentation01/cachiru/model/session.ini": "e9d508343eca05967847983e217566122665b213bd5aa559a5e62e1e96de821a",
+    "presentation01/cachiru/RESULTS.json": "5e052e7c7ecadb00443f2a6e6a7d4950f94ca10a92e493700f48a688b6be2bf1",
+    "presentation01/cachiru/sprite/commands.cfg": "c0fdf07a021369848eaa7ce1812bf912b0e27a62d233ad3692e6f926450d27b2",
+    "presentation01/cachiru/sprite/engine.log": "a4de77c47cf4df3668458ca28543e1459d9875cb1c857b7d4f44f48618bd85f5",
+    "presentation01/cachiru/sprite/fixture-source/MAPINFO.txt": "336735ce8f8a435b8371ff15faab98454190b347deefbae4689ab29e854fe4da",
+    "presentation01/cachiru/sprite/fixture-source/ZSCRIPT.txt": "b16ac3d408b2e74b400e842ee0d95a23735a27139ee8a66b2e07293f7fd6ba3e",
+    "presentation01/cachiru/sprite/fixture.zs": "cc9274ca51735e77b3125caac66596c211cf0fd20f1e0140f301a284ad1d7cc5",
+    "presentation01/cachiru/sprite/presents.csv": "4cf58d59f50193f800450cac23006fe96ef94d376c71f5beb84f1205133feb5f",
+    "presentation01/cachiru/sprite/process.log": "5325435b87873123b44660be2c74c21c3dc14581250ad243c08242753781c98d",
+    "presentation01/cachiru/sprite/scene.png": "0605f2270fd9d84c44e66ad2f90d5b98c47cc6f531e4f7bfe38bf03b59f89921",
+    "presentation01/cachiru/sprite/session.ini": "1c1c94681d77eb4824c1ca5c828c66313dfb2e740f87a2e0c08366b88058e130",
+    "presentation01/kakuy/model/commands.cfg": "c0fdf07a021369848eaa7ce1812bf912b0e27a62d233ad3692e6f926450d27b2",
+    "presentation01/kakuy/model/engine.log": "bfde7cad7c0e5292226a24f94b95eb5305050b9670f70eab4a65af38bffa29f3",
+    "presentation01/kakuy/model/fixture-source/MAPINFO.txt": "336735ce8f8a435b8371ff15faab98454190b347deefbae4689ab29e854fe4da",
+    "presentation01/kakuy/model/fixture-source/ZSCRIPT.txt": "f37c4877e98d7539906561b4ac1369712b0db7a5598e630733e21b8be3bd5918",
+    "presentation01/kakuy/model/fixture.zs": "46a37f2702db968c325cfaf0adb9ddf55f5ac3ec7842d6e7d94905f6104047b1",
+    "presentation01/kakuy/model/presents.csv": "98dc95fc426bf5ca0f17e05819181de2a71e8fd8d26952df18300ceb73994528",
+    "presentation01/kakuy/model/process.log": "8041fd44ea11a4b51165cb4f18896e0f75b97174877f87411cd22a8e1b9d8a3f",
+    "presentation01/kakuy/model/scene.png": "e4740c215200538546c3285c1e43882d7ab76a90371d44be7d3c3bf7b17e4b7c",
+    "presentation01/kakuy/model/session.ini": "86644fe1f034420968e0cd12dd1c5e68a7dba8233be7435d4b6517af2c2743c8",
+    "presentation01/kakuy/RESULTS.json": "9a05d23c78786cb6aa1e6900e04acdbaf61e1301c9822370752736722205b713",
+    "presentation01/kakuy/sprite/commands.cfg": "c0fdf07a021369848eaa7ce1812bf912b0e27a62d233ad3692e6f926450d27b2",
+    "presentation01/kakuy/sprite/engine.log": "3629d54480f6b173f0eb9c1403e26eaccc1a7eeda04bff691f011ea59e944834",
+    "presentation01/kakuy/sprite/fixture-source/MAPINFO.txt": "336735ce8f8a435b8371ff15faab98454190b347deefbae4689ab29e854fe4da",
+    "presentation01/kakuy/sprite/fixture-source/ZSCRIPT.txt": "f37c4877e98d7539906561b4ac1369712b0db7a5598e630733e21b8be3bd5918",
+    "presentation01/kakuy/sprite/fixture.zs": "46a37f2702db968c325cfaf0adb9ddf55f5ac3ec7842d6e7d94905f6104047b1",
+    "presentation01/kakuy/sprite/presents.csv": "030cd724d57658002ddcbe4fb867af481f80fa2551a20b202f470f78db45b515",
+    "presentation01/kakuy/sprite/process.log": "cec449ff689a56aeeb45933be40c6e951b0b747b2a95b1008431173c9f81d3a3",
+    "presentation01/kakuy/sprite/scene.png": "0605f2270fd9d84c44e66ad2f90d5b98c47cc6f531e4f7bfe38bf03b59f89921",
+    "presentation01/kakuy/sprite/session.ini": "037cf9b35c137de7282a212ad4a536400d5e220c72312bcabf232dcd73959010",
+    "presentation01/kelenken/model/commands.cfg": "c0fdf07a021369848eaa7ce1812bf912b0e27a62d233ad3692e6f926450d27b2",
+    "presentation01/kelenken/model/engine.log": "9667193342749fafd6972f06850f87a2bea61afbdbd2998aab61c74710f87fc5",
+    "presentation01/kelenken/model/fixture-source/MAPINFO.txt": "336735ce8f8a435b8371ff15faab98454190b347deefbae4689ab29e854fe4da",
+    "presentation01/kelenken/model/fixture-source/ZSCRIPT.txt": "b4c84dce439666d422b3b94bbd6e24b256999413ddd67d9d9beeb577ad2f13ee",
+    "presentation01/kelenken/model/fixture.zs": "33fb63db4246163e6b17f71d874d24be3660c28d29077a957740ac22ef01d926",
+    "presentation01/kelenken/model/presents.csv": "b4f3b9f3f0bdf81a7da55f70e9b8b8dec322c34a746918a4573f8eb3db0f0567",
+    "presentation01/kelenken/model/process.log": "e34cb3f4bb6b88e801ea5f69fb9498072b104449951f2731d9f67797faff797f",
+    "presentation01/kelenken/model/scene.png": "94bcc4b0fbb16d1003f82b32f9da95cfcc37470184f8bf26c5a2107b10be9bb1",
+    "presentation01/kelenken/model/session.ini": "6d456eaa6a1da7f2a9a5e7b1ff9fbad45d43755cac6c627088925025c398b869",
+    "presentation01/kelenken/RESULTS.json": "7b0b1caa59d135e3d3cc21ca7fdc43e7b56e1683461171460635ba62aeaba38c",
+    "presentation01/kelenken/sprite/commands.cfg": "c0fdf07a021369848eaa7ce1812bf912b0e27a62d233ad3692e6f926450d27b2",
+    "presentation01/kelenken/sprite/engine.log": "963e094eede24e5b6e946c0703bc09094c641e8e2c8ae3b363e4114047eb17a5",
+    "presentation01/kelenken/sprite/fixture-source/MAPINFO.txt": "336735ce8f8a435b8371ff15faab98454190b347deefbae4689ab29e854fe4da",
+    "presentation01/kelenken/sprite/fixture-source/ZSCRIPT.txt": "b4c84dce439666d422b3b94bbd6e24b256999413ddd67d9d9beeb577ad2f13ee",
+    "presentation01/kelenken/sprite/fixture.zs": "33fb63db4246163e6b17f71d874d24be3660c28d29077a957740ac22ef01d926",
+    "presentation01/kelenken/sprite/presents.csv": "283ad72c51d597f5e223be4195485de6001581bd5fc9185e177109ede084598f",
+    "presentation01/kelenken/sprite/process.log": "943e1b4e5256c2696789dfb22fb21747e38250341a1f0d2700b853e0e21c1097",
+    "presentation01/kelenken/sprite/scene.png": "0605f2270fd9d84c44e66ad2f90d5b98c47cc6f531e4f7bfe38bf03b59f89921",
+    "presentation01/kelenken/sprite/session.ini": "7e3c3420bb94a352d3a08b5cae53592fb739a3e679514cffc9dc81a3b99272fa",
+    "validation-final.json": "f1f91bbf307f843b4880e9cb38a1f91aa3e73e6a9979e874732521c1f29d5474"
+  }
+}

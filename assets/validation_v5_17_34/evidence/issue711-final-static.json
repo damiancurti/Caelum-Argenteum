@@ -1,0 +1,31 @@
+{
+  "errors": [],
+  "repeat_files": 16,
+  "byte_identical": true,
+  "changed_from_visual02": [
+    "manifest.json"
+  ],
+  "species": {
+    "cachiru": {
+      "closed_components": 108,
+      "attachment_witnesses": 107,
+      "rooted_components": 108,
+      "combat_frames": 23,
+      "collapsed_native_triangles": 0
+    },
+    "kakuy": {
+      "closed_components": 100,
+      "attachment_witnesses": 99,
+      "rooted_components": 100,
+      "combat_frames": 23,
+      "collapsed_native_triangles": 0
+    },
+    "kelenken": {
+      "closed_components": 105,
+      "attachment_witnesses": 104,
+      "rooted_components": 105,
+      "combat_frames": 23,
+      "collapsed_native_triangles": 0
+    }
+  }
+}

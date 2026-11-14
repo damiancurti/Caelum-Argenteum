@@ -1,0 +1,42 @@
+{
+  "issue": 711,
+  "parent_issue": 461,
+  "ownership": "Owned original bestiary concepts preserved; two original diffuse atlases generated for this project with built-in image_gen. Owned iris/dark texture sources reused unchanged.",
+  "references": {
+    "assets/source/bestiary_453/imagenes/05_Bestias_magicas/45_cachiru.png": "a4ffc47561bbf59ae27f9475df049c637f4d42b8cc472718adc3ab4c5a000932",
+    "assets/source/bestiary_453/imagenes/05_Bestias_magicas/46_kakuy.png": "fbda2ce6d5b436375b731acd720aba64b97b8b3361c202260549e6109dd89c10",
+    "assets/source/bestiary_453/imagenes/05_Bestias_magicas/58_kelenken.png": "98a879aa33fc48c044abf7fe00bf5d33ca9311aa774e032d8db881413fe59da2"
+  },
+  "images": {
+    "coverts": {
+      "sha256": "a1f5b107aec9edd64eba38993b6a69669f60e6483f28631dab3ca71128d05508",
+      "prompt": "COVERTS_PROMPT.json",
+      "mode": "built-in image_gen",
+      "editing": "Original generated output copied unchanged; no raster postprocessing.",
+      "status": "Initial coarse body texture retained as original source; active material is coverts-v2.png"
+    },
+    "flight": {
+      "sha256": "2b766f3d1b8ffb1d002e039eee10faa02f9347a91324e2a797af2afc0c83b42a",
+      "prompt": "FLIGHT_PROMPT.json",
+      "mode": "built-in image_gen",
+      "editing": "Original generated output copied unchanged; no raster postprocessing."
+    },
+    "coverts-v2": {
+      "sha256": "df14c045b10e9dcde48fdf6cfdd0bf289c8c83c66861b6fccd8c9931a088c116",
+      "prompt": "COVERTS_V2_PROMPT.json",
+      "mode": "built-in image_gen",
+      "editing": "Refined diffuse atlas generated from the original; both source PNGs preserved unchanged."
+    }
+  },
+  "reused": {
+    "iris.png": {
+      "source": "assets/source/art/peuchen_708/iris.png",
+      "sha256": "8b231a9556f30af1b2c3d11ee5e4e4d6b63f7336a5301d225bb7f4f43c5639cc"
+    },
+    "dark.png": {
+      "source": "assets/source/art/peuchen_708/dark.png",
+      "sha256": "6573658a5e61c4c8f75046435e8e8d1f1e85e6348007c69fc911483fe579fac4"
+    }
+  },
+  "limits": "Candidate native art pending independent tests and author review. No runtime-scale or flight authorization."
+}

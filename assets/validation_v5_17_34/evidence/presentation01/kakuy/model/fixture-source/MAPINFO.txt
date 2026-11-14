@@ -1,0 +1,2 @@
+gameinfo { AddEventHandlers="CA711Events" }
+map CA455V "Avian inherited combat model" { sky1="CABASKY",0 nointermission }
