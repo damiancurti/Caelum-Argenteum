@@ -1,6 +1,59 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.21** - 2026-11-14.
+Documentation version: **5.17.22** - 2026-11-14.
+
+## 5.17.22 - Four native glove-pair props (#688, parent #647)
+
+The accepted #387 formal cotton/silk-trim GF, thin work cotton GC, winter wool
+GW and patched wool GP designs now have candidate world-drop models. Exact
+CaelumClothingPickup WC16..WC19/A bindings preserve the original icons and
+native sizes, IDs, weight, wetness, durability and equipment rules. One native
+item remains one pair. The author's later all-dropped-inventory-3D instruction
+supersedes #459's original billboard drop scope for these four props. Eleven
+body garments, five footwear designs and actual worn/first-person fitting
+remain separate; no body, species, wardrobe or balance decision is introduced.
+
+Four original owned high-resolution PNGs remain byte-identical in short native
+aliases and portable editable sources. Separate left/right palms and hollow
+cuffs, four fingers and a thumb per hand retain the silk trim/buttons, folded
+wool cuffs and sewn patches of their references. There are
+58 closed outward OBJ groups,
+78,028 source vertices, 26,912 triangles
+and 27 MD3 surfaces. Source DESIGN/PROVENANCE/EXPORT files
+are under assets/source/art/inventory_models_647/gloves. Regenerate with python
+assets/generators/generate_inventory_gloves_models.py --output
+build/glove-models --install. Sixteen final export files repeat byte-for-byte.
+The shared geometry/export backend and all earlier runtime art remain unchanged.
+
+The pair fits the original icon width and remains within its height envelope;
+native Scale 0.25 and collision remain unchanged. Eight wrist rays reach inner
+roofs rather than closing disks. Fifty attachment witnesses lie strictly inside
+both adjoining components, checked against the serialized triangles. Every
+patch/button vertex is also compared with the actual palm surface, extending
+CA-KP-238. Proper rotations preserve winding; left/right finger ordering is
+authored separately. No bitmap editing, image generation or external mesh is
+involved. Fixed source crops and box-projected UVs retain visible close-up seams
+and varying knit scale. Sampling margins retain source alpha >=250/255.
+
+Final complete-package native continuity passes 1,968 checks: 381 each for
+original sprites and fresh models, then 402 each for old-save/model loading,
+model reload and reverse loading. Twenty type/size combinations retain IDs,
+provenance, original icons/states, wet/dry weight, wear and water. Native
+selection/equip accepts compatible sizes and refuses incompatible ones; direct
+Box-weight and temporary quest-drop guards pass. The fixture invokes native
+APIs. Ordinary menus, crafting and author art acceptance remain pending.
+All five native sizes share each design's world prop; these are not worn modules.
+
+One sequential four-visible-pair, 700-tic sprite/model comparison records
+1222.62/1198.22 queue presents/s, p95 0.9638/0.9980 ms and p99 1.1720/1.2321 ms.
+Simulation means are 28.5719/28.5716 ms/tic. Environment: Windows 11 Pro 26200,
+Ryzen 9 5950X, 32 GB, RTX 3070 Ti, GZDoom 4.14.2, Vulkan 1280x720, uncapped,
+vsync off, background unpaused at 5% audio. This is isolated queue timing, not
+GPU/display timing, repeatability or campaign/crowd acceptance. All
+18,307 package entries match src. Only four models,
+four aliases, their binding/include and two release diagnostics differ from
+#686. Evidence, earlier attempts and limits are in
+assets/validation_v5_17_22/evidence/SUMMARY.json. CA688-GLOVES-01 remains pending.
 
 ## 5.17.21 - Five native headwear props (#686, parent #647)
 

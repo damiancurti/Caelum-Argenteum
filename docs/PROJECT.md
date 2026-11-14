@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.21** - 2026-11-14.
+Documentation version: **5.17.22** - 2026-11-14.
+
+## 5.17.22 - Four glove-pair world-drop models (#688)
+
+Four accepted clothing designs gain separate left/right 3D glove props with
+original textures, closed fingers and open cuffs. Twenty native type/size
+combinations pass 1,968 pickup/equip/save/rollback checks. Deterministic exports,
+geometry/contact checks and one four-pair presentation comparison pass.
+CA688-GLOVES-01 retains author art and ordinary-menu review. Other sixteen
+garments, worn modules, broader inventory and the full character roster remain
+unfinished; no new design decision is inferred while questions are deferred.
 
 ## 5.17.21 - Five headwear world-drop models (#686)
 

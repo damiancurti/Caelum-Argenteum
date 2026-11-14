@@ -1,0 +1,384 @@
+{
+  "schema_revision": 1,
+  "issue": 688,
+  "parent_issue": 647,
+  "status": "candidate_native_inspection_pending",
+  "variants": {
+    "GF": {
+      "class": "CaelumClothingPickup",
+      "parts": [
+        "left_palm_cuff",
+        "left_finger_0",
+        "left_finger_1",
+        "left_finger_2",
+        "left_finger_3",
+        "left_thumb",
+        "left_silk_trim",
+        "left_cuff_button",
+        "right_palm_cuff",
+        "right_finger_0",
+        "right_finger_1",
+        "right_finger_2",
+        "right_finger_3",
+        "right_thumb",
+        "right_silk_trim",
+        "right_cuff_button"
+      ],
+      "closed_outward_components": 16,
+      "vertices": 20644,
+      "triangles": 7040,
+      "surfaces": [
+        {
+          "material": "GF_cloth",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "GF_cloth",
+          "vertices": 3393,
+          "triangles": 1131
+        },
+        {
+          "material": "GF_trim",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "GF_trim",
+          "vertices": 609,
+          "triangles": 203
+        },
+        {
+          "material": "GF_button",
+          "vertices": 100,
+          "triangles": 192
+        },
+        {
+          "material": "GF_finger",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "GF_finger",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "GF_finger",
+          "vertices": 162,
+          "triangles": 54
+        }
+      ],
+      "reference_opaque_bounds": [
+        23,
+        20,
+        104,
+        107
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 81.0,
+      "native_bounds": [
+        {
+          "min": [
+            -40.5,
+            -27.910498452120272,
+            0.0
+          ],
+          "max": [
+            40.5,
+            43.79214382932121,
+            10.551014125438714
+          ]
+        }
+      ]
+    },
+    "GC": {
+      "class": "CaelumClothingPickup",
+      "parts": [
+        "left_palm_cuff",
+        "left_finger_0",
+        "left_finger_1",
+        "left_finger_2",
+        "left_finger_3",
+        "left_thumb",
+        "right_palm_cuff",
+        "right_finger_0",
+        "right_finger_1",
+        "right_finger_2",
+        "right_finger_3",
+        "right_thumb"
+      ],
+      "closed_outward_components": 12,
+      "vertices": 15840,
+      "triangles": 5280,
+      "surfaces": [
+        {
+          "material": "GC_cloth",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "GC_cloth",
+          "vertices": 3393,
+          "triangles": 1131
+        },
+        {
+          "material": "GC_finger",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "GC_finger",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "GC_finger",
+          "vertices": 162,
+          "triangles": 54
+        }
+      ],
+      "reference_opaque_bounds": [
+        27,
+        20,
+        108,
+        106
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 81.0,
+      "native_bounds": [
+        {
+          "min": [
+            -40.5,
+            -27.910498452120272,
+            0.0
+          ],
+          "max": [
+            40.5,
+            43.79214382932121,
+            9.841763057844892
+          ]
+        }
+      ]
+    },
+    "GW": {
+      "class": "CaelumClothingPickup",
+      "parts": [
+        "left_palm_cuff",
+        "left_finger_0",
+        "left_finger_1",
+        "left_finger_2",
+        "left_finger_3",
+        "left_thumb",
+        "left_folded_cuff",
+        "right_palm_cuff",
+        "right_finger_0",
+        "right_finger_1",
+        "right_finger_2",
+        "right_finger_3",
+        "right_thumb",
+        "right_folded_cuff"
+      ],
+      "closed_outward_components": 14,
+      "vertices": 25248,
+      "triangles": 8416,
+      "surfaces": [
+        {
+          "material": "GW_cloth",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "GW_cloth",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "GW_cloth",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "GW_cloth",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "GW_cloth",
+          "vertices": 516,
+          "triangles": 172
+        },
+        {
+          "material": "GW_finger",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "GW_finger",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "GW_finger",
+          "vertices": 162,
+          "triangles": 54
+        }
+      ],
+      "reference_opaque_bounds": [
+        14,
+        22,
+        117,
+        105
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 103.0,
+      "native_bounds": [
+        {
+          "min": [
+            -51.5,
+            -35.49112766133812,
+            0.0
+          ],
+          "max": [
+            51.5,
+            56.32665686948943,
+            14.824019719717649
+          ]
+        }
+      ]
+    },
+    "GP": {
+      "class": "CaelumClothingPickup",
+      "parts": [
+        "left_palm_cuff",
+        "left_finger_0",
+        "left_finger_1",
+        "left_finger_2",
+        "left_finger_3",
+        "left_thumb",
+        "left_palm_patch",
+        "left_cuff_patch",
+        "right_palm_cuff",
+        "right_finger_0",
+        "right_finger_1",
+        "right_finger_2",
+        "right_finger_3",
+        "right_thumb",
+        "right_palm_patch",
+        "right_cuff_patch"
+      ],
+      "closed_outward_components": 16,
+      "vertices": 16296,
+      "triangles": 6176,
+      "surfaces": [
+        {
+          "material": "GP_cloth",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "GP_cloth",
+          "vertices": 3393,
+          "triangles": 1131
+        },
+        {
+          "material": "GP_patch",
+          "vertices": 456,
+          "triangles": 896
+        },
+        {
+          "material": "GP_finger",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "GP_finger",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "GP_finger",
+          "vertices": 162,
+          "triangles": 54
+        }
+      ],
+      "reference_opaque_bounds": [
+        14,
+        21,
+        119,
+        109
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 105.0,
+      "native_bounds": [
+        {
+          "min": [
+            -52.5,
+            -36.18027577126702,
+            0.0
+          ],
+          "max": [
+            52.5,
+            56.7675938528238,
+            12.863338532263723
+          ]
+        }
+      ]
+    }
+  },
+  "source_sha256": {
+    "DESIGN.json": "4a10a3dab0c80a6b4c8335511350f51f42e23ea69a757c125f6c768f2de84c33",
+    "PROVENANCE.json": "21ea23b168b79fe9064aa05d9b3261321ad251d2b55b16a70115432096925771"
+  },
+  "external_source_sha256": {
+    "assets/art_source/clothing/GF-v1.png": "ff3b56b8c0d2338ab7c063e6817161f8cfb6836c0d33cf32876a4595e282467d",
+    "assets/art_source/clothing/GC-v1.png": "e88859d46c83b95544d75a59990c698e18e3d47314cf69c669ddde176047b5bd",
+    "assets/art_source/clothing/GW-v1.png": "cb5a2ab7ffefa637bc688bae6bdb67633e7258e41554bce1b14baaeb785c268a",
+    "assets/art_source/clothing/GP-v1.png": "c859729b2a9ece615ed0e8a22bf2ec69f7ac5b86d42e164cd25768928a7855c6",
+    "assets/art_source/clothing/manifest.json": "685855aee029d06cbff3139744526ca6b5321fad01a96806ed12a375db05b526",
+    "assets/art_source/clothing/exports.json": "f6a526f4556682785d7b129c623a55472bd1b089d065dd506e9c52269ce9d40c",
+    "src/graphics/caelum/icons/clothing/ca_clothing_16.png": "0625b5a45b74837ced424768568fe4f4d8e4d7bb4845e034eadedd1324ed637a",
+    "src/graphics/caelum/icons/clothing/ca_clothing_17.png": "c9fbbfcc5faa31db3323399222a4e0d51b5e076257b614ff1cd92922ef259c2e",
+    "src/graphics/caelum/icons/clothing/ca_clothing_18.png": "c04d81f0e5ff5bc2e53a831dcd5c28f2a8ea5fcfc7128f1ffd0b31c5e0c6887d",
+    "src/graphics/caelum/icons/clothing/ca_clothing_19.png": "82b40c02881e868e1b891f95ff6fc2240219d9af42fdd05b8b89faca7c7a06c9"
+  },
+  "generator_sha256": {
+    "generate_inventory_ammunition_models.py": "7840c4851fe1af39a29071c3bbe87b13c13187688804d9c0a33d178b5a9e3feb",
+    "generate_inventory_consumable_models.py": "f4bb817e68f15fd5fcce27b5f7f3de205917b993899fbeb934629f2146a14fc7",
+    "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+    "generate_inventory_gloves_models.py": "878145d926739818b8521d860e1bc21c6fd24033f08e5ba16275b49b7b9ab47f"
+  },
+  "sha256": {
+    "models/caelum/inventory/gloves/GF.md3": "4667cf65b59c429cedc0ade434246486159374b9d3b5c53b393aff3bbb04ec52",
+    "editable/GF.obj": "4ffe4cdee5983f36c528b1154833a793baeb24567a65569a6e1d5282abd62fc8",
+    "models/caelum/inventory/gloves/GC.md3": "09051a2c50ae21928bd7470a8035f3d1a5637b28a707519c2280a80c5a0dae49",
+    "editable/GC.obj": "e67504f93040145865491b56daa5d8a47efeca85449e5b61351c6d4d1dda6e56",
+    "models/caelum/inventory/gloves/GW.md3": "58de99d8ed7618d5be096112a3504b73c48423fc0d549d2f484f38107794f116",
+    "editable/GW.obj": "034c54cab2655d06759ce7950a8584ea5298270b386e17f283762d7f7d826d49",
+    "models/caelum/inventory/gloves/GP.md3": "32fdb4c0e54779b4fb627d042b133dafdab8587eb857772e0c4d062f113230a8",
+    "editable/GP.obj": "f3edbb485e8f000568537e304f2806f93ca942860de80f92fd0398d4b3b4c5ba",
+    "editable/gloves.mtl": "faa813a3dc7826145f887e2240198572b97803d5c9fa21e097f87d272ffea825",
+    "caelum/data/inventory_gloves.modeldef": "5da11b1be61e8c49d1f1e34046654ab874eb313cdb51e76511fb19e974ef743e",
+    "models/caelum/inventory/gloves/gf.png": "ff3b56b8c0d2338ab7c063e6817161f8cfb6836c0d33cf32876a4595e282467d",
+    "models/caelum/inventory/gloves/gc.png": "e88859d46c83b95544d75a59990c698e18e3d47314cf69c669ddde176047b5bd",
+    "models/caelum/inventory/gloves/gw.png": "cb5a2ab7ffefa637bc688bae6bdb67633e7258e41554bce1b14baaeb785c268a",
+    "models/caelum/inventory/gloves/gp.png": "c859729b2a9ece615ed0e8a22bf2ec69f7ac5b86d42e164cd25768928a7855c6"
+  }
+}

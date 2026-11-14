@@ -1,0 +1,372 @@
+{
+  "issue": 688,
+  "parent_issue": 647,
+  "related_issue": 459,
+  "version": "5.17.22",
+  "date": "2026-11-14",
+  "author_accepted": false,
+  "scope": "Four glove-pair world-drop models WC16..19/A on native CaelumClothingPickup; twenty native type/size cases. One item remains one pair. Actual worn fitting and other sixteen garments remain separate.",
+  "runtime": {
+    "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-688\\build\\issue688-gloves01.pk3",
+    "sha256": "f15f8437e40faa6aa8e7dc7ac9dc18ab6aa7e95c1829313d70f3b9c32f61b852",
+    "source_entries": 18307,
+    "mismatches": []
+  },
+  "baseline": {
+    "sha256": "901618565f5e91a7fa3a8de175d721c582cb58f0bf9024cbfbd2150e179dd2d4",
+    "new_resources": [
+      "caelum/data/inventory_gloves.modeldef",
+      "models/caelum/inventory/gloves/GC.md3",
+      "models/caelum/inventory/gloves/GF.md3",
+      "models/caelum/inventory/gloves/GP.md3",
+      "models/caelum/inventory/gloves/GW.md3",
+      "models/caelum/inventory/gloves/gc.png",
+      "models/caelum/inventory/gloves/gf.png",
+      "models/caelum/inventory/gloves/gp.png",
+      "models/caelum/inventory/gloves/gw.png"
+    ],
+    "changed_resources": [
+      "MODELDEF",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "all_other_runtime_bytes_identical": true
+  },
+  "static": {
+    "repeated_export_files": 16,
+    "repeat_byte_identical": true,
+    "installed_export_check_passed": true,
+    "vertices": 78028,
+    "triangles": 26912,
+    "closed_components": 58,
+    "surfaces": 27,
+    "attachment_witnesses": 50,
+    "cuff_opening_rays": 8,
+    "checks": [
+      "Four unique exact class/sprite/A bindings",
+      "Original texture/source hashes and portable aliases",
+      "Original sprite width/height envelopes",
+      "Independent editable closure, winding and positive volume",
+      "Complete left/right pairs with four fingers and a thumb each",
+      "Positive-volume attachment witnesses independently inside both serialized components",
+      "Every patch/button vertex follows and intersects the actual triangulated palm",
+      "Eight opening rays reach inner roofs without sealed wrists",
+      "Native MD3 structure, UV ranges, shaders and bounds",
+      "Source UV crop margins retain alpha >=250/255"
+    ],
+    "project_validation_passed": true
+  },
+  "continuity": {
+    "issue": 688,
+    "kind": "gloves",
+    "scope": "Native pickup/toss, quantity and saved ownership for gloves; no normal menu or author acceptance.",
+    "baseline_sha256": "901618565f5e91a7fa3a8de175d721c582cb58f0bf9024cbfbd2150e179dd2d4",
+    "runtime_sha256": "f15f8437e40faa6aa8e7dc7ac9dc18ab6aa7e95c1829313d70f3b9c32f61b852",
+    "model_sha256": null,
+    "fixture_sha256": "4ba034e4e0b0663c4dbc0dd1a2e6e5f109e91f6a2996181b8730b41bfd053037",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "baseline",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 381
+      },
+      {
+        "phase": "old-save-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 402
+      },
+      {
+        "phase": "candidate-fresh",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 381
+      },
+      {
+        "phase": "candidate-reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 402
+      },
+      {
+        "phase": "rollback-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 402
+      }
+    ],
+    "captures": {
+      "baseline.png": "be42626e538e733d574bad1e0c7392227d98882daae482bffa738f3172a8d39a",
+      "candidate-0.png": "bc96c743d16870b137d563e0c43b834081b6816303cfb090ec7ba9498676dec8",
+      "candidate-1.png": "bc96c743d16870b137d563e0c43b834081b6816303cfb090ec7ba9498676dec8",
+      "candidate-2.png": "6a6abc295f6bdcab1ef5edf94cc8ee84341967bef693f7893ac5fc3303404104",
+      "candidate-3.png": "bc96c743d16870b137d563e0c43b834081b6816303cfb090ec7ba9498676dec8",
+      "candidate-5.png": "bc96c743d16870b137d563e0c43b834081b6816303cfb090ec7ba9498676dec8",
+      "candidate-6.png": "bc96c743d16870b137d563e0c43b834081b6816303cfb090ec7ba9498676dec8",
+      "candidate-7.png": "a72fda1cbea7c05182122a79c0aa89d740d58c5e8eded0c8912b78976878a0e8",
+      "detail-0-0.png": "c7d914b4f009f8758409555884ccc6a5fccf8a2ed45628cdbf6bed8e54392bd8",
+      "detail-0-160.png": "abd6ba8ebce93373adff84bcc1a24b59ff583852daa4b263e90edb1511984f1e",
+      "detail-0-270.png": "97584856cd3c59f88b998b53a88b495b09fc02dab583f72d1adc5bff36b26682",
+      "detail-0-90.png": "a4086dea03688b68f623c6c9a2c314cbe135e72b6fd190d0d51ae469c3ec9add",
+      "detail-1-0.png": "5ffcda1e2e2cf9e52e388e3e4643355026ebf2a9577f3d99e19b11a3f4edda52",
+      "detail-1-160.png": "a4abef55e7c4c2591d22f394974d7fc6307c0fd0bb159fc4340783786841e898",
+      "detail-1-270.png": "774e8334cffda833495c99fa8f11ed8e5cdd5c9e7012e8e085510db86e88b5ce",
+      "detail-1-90.png": "3585545d3ff3c7f178652dc3a0d750cf66a33125b4214fde24d88b66522be6a4",
+      "detail-2-0.png": "b90aeab612851ba00155048b2e61c3b5dacfbb856ce6a76c592c30ce4bb7b452",
+      "detail-2-160.png": "f2c52660964258e8ba599a6c85f7d59160bc2959fe473cbe14295bf9a1bc0714",
+      "detail-2-270.png": "7000faed98b35e3853b66147de2e4251d7e58371807d8c2739bd81f853104911",
+      "detail-2-90.png": "a51fb5ee31b2f483edf9abaf3b32be22cbf5e34c3fd9b4a9fa55a3011624b892",
+      "detail-3-0.png": "6b74f15c328d65d0d0edc966d9d27e2900f270661e87351112b3a9adbe97b52b",
+      "detail-3-160.png": "089efa04b1368deea3f6c6a152fd9b22b05bee8f7b5f09974eede65a48d35ef9",
+      "detail-3-270.png": "8053ae0142603ae3ecc3f5eb033409709c46830905a1da276c0642013c5a81aa",
+      "detail-3-90.png": "622ed74a82f650541318f4808c642cf8a5628c11813cae30bcc26a128d3f5b1f"
+    }
+  },
+  "presentation": {
+    "issue": 688,
+    "kind": "gloves",
+    "scope": "Measure actual inventory drop classes before/after model installation.\n\nA single sequential baseline/candidate pair in an isolated room; this is not a\ncrowd budget, campaign performance acceptance or repeatability estimate.",
+    "baseline_sha256": "901618565f5e91a7fa3a8de175d721c582cb58f0bf9024cbfbd2150e179dd2d4",
+    "runtime_sha256": "f15f8437e40faa6aa8e7dc7ac9dc18ab6aa7e95c1829313d70f3b9c32f61b852",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+    "runs": [
+      {
+        "kind": "sprites",
+        "bodies": 4,
+        "pid": 4832,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 243737376.1926,
+          "END": 243757395.1122
+        },
+        "fixture_sha256": "fd3f8f39f5d86f5831b98dacf992d7e7532a104c245059a709dc44c77e26207e",
+        "passed": true,
+        "observed_completion_counts": [
+          [
+            4,
+            700
+          ]
+        ],
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.571939142857143,
+          "p50_ms": 28.5799,
+          "p95_ms": 29.143,
+          "p99_ms": 29.304,
+          "max_ms": 29.6049
+        },
+        "presentation": {
+          "pid": 4832,
+          "trace_sha256": "1c0a24de9ca9b8cb6f3ab16a90774eb8951ae3ad3ab5f23c2d79e44e277a6b09",
+          "rows": 31833,
+          "scene_presents": 21419,
+          "mean_present_fps": 1222.6175804003249,
+          "present_intervals": {
+            "samples": 21418,
+            "mean_ms": 0.8179172425056798,
+            "p50_ms": 0.7947999835014343,
+            "p95_ms": 0.9637999832630157,
+            "p99_ms": 1.171999990940094,
+            "max_ms": 1.742000013589859
+          },
+          "native_call_duration": {
+            "samples": 21419,
+            "mean_ms": 0.07426515721663679,
+            "p50_ms": 0.07119998335838318,
+            "p95_ms": 0.09850001335144043,
+            "p99_ms": 0.13199999928474426,
+            "max_ms": 0.4553999900817871
+          }
+        }
+      },
+      {
+        "kind": "models",
+        "bodies": 4,
+        "pid": 13668,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 243771562.9902,
+          "END": 243791489.43710002
+        },
+        "fixture_sha256": "fd3f8f39f5d86f5831b98dacf992d7e7532a104c245059a709dc44c77e26207e",
+        "passed": true,
+        "observed_completion_counts": [
+          [
+            4,
+            700
+          ]
+        ],
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.57160371428571,
+          "p50_ms": 28.5789,
+          "p95_ms": 29.1344,
+          "p99_ms": 29.2607,
+          "max_ms": 29.3266
+        },
+        "presentation": {
+          "pid": 13668,
+          "trace_sha256": "64c65d7e6464fec32a381e396785322001d1c101a2f7fb0a520842be518bdc1b",
+          "rows": 30927,
+          "scene_presents": 20881,
+          "mean_present_fps": 1198.2168604955034,
+          "present_intervals": {
+            "samples": 20880,
+            "mean_ms": 0.8345734674326533,
+            "p50_ms": 0.8080999851226807,
+            "p95_ms": 0.9979999959468842,
+            "p99_ms": 1.232100009918213,
+            "max_ms": 1.9191000163555145
+          },
+          "native_call_duration": {
+            "samples": 20881,
+            "mean_ms": 0.07458660038350717,
+            "p50_ms": 0.07289999723434448,
+            "p95_ms": 0.09869998693466187,
+            "p99_ms": 0.12929999828338623,
+            "max_ms": 0.3636000156402588
+          }
+        }
+      }
+    ]
+  },
+  "iterations": "Initial source export rejected a touching inner-roof ellipse and a repeated folded-cuff end ring. The retained failure description records the correction; no native files were emitted by that failed export. Model01/visual01 pass 381 native assertions. Model02 corrects finger order, selects the original dark silk trim, aligns finger material scale, and adds attachment/opening witnesses. Visual02 passes 381. Model03/04 only finalize candidate status and repeat sixteen files byte-for-byte; all model02 native/editable art bytes stay unchanged. Final full-package continuity and presentation use gloves01.",
+  "art": {
+    "source": "assets/source/art/inventory_models_647/gloves",
+    "new_image_generation": false,
+    "original_pixels_preserved": true,
+    "reviewed_views": "Four medium-size designs in representative front/oblique/rear views and raised undersides, all-size floor overview and both four-pair presentation cohorts.",
+    "author_check": "CA688-GLOVES-01"
+  },
+  "environment": {
+    "os": "Windows 11 Pro 26200",
+    "cpu": "Ryzen 9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX 3070 Ti",
+    "engine": "GZDoom 4.14.2",
+    "backend": "Vulkan",
+    "resolution": [
+      1280,
+      720
+    ],
+    "background_unpaused": true,
+    "audio": 0.05,
+    "presentation_uncapped": true,
+    "vsync": false
+  },
+  "qualifications": [
+    "One sequential 700-tic four-pair comparison; queue-present intervals, not GPU/display timing, repeatability or campaign/crowd acceptance.",
+    "Native fixture invokes pickup/toss and selection/equip APIs directly and prepares Box/quest flags. Ordinary menus, crafting and author acceptance remain separate.",
+    "All five native sizes retain individual IDs and original weight. Geometry shares one pair per design; it does not implement worn body-size fitting or first-person modules.",
+    "Fixed original source crops and box-projected UVs retain visible close-up material seams and varying knit scale. Candidate silhouettes and simplified fingers require author art acceptance.",
+    "Original PNG fractional alpha remains unchanged; source rectangles and sampling margins retain >=250/255, not full opacity.",
+    "Native equip can reconcile worn water; save/pickup/toss preserve seeded water and durability before equip, then preserve the actual post-equip state.",
+    "No PK3, WAD, executable, DLL, development IWAD or save is committed."
+  ],
+  "files": {
+    "build.log": "d456c396448ec8478d2676e904027ec3157c176dc9e39459e940a2283d6d7351",
+    "continuity/baseline-process.log": "57d08f6b08e59a628c043b9c14ccc56231b9eb8a65a06c41f3f896dbc6386d15",
+    "continuity/baseline.cfg": "b760d17ab17d9351eba1a5f0ce72552b6b857a2c3b455be7286202ce9d9039fb",
+    "continuity/baseline.log": "cf8dfbe26273b2e577b32597ad4e4f02fc10a0fc35f3a7bbaf8188034645f704",
+    "continuity/baseline.png": "be42626e538e733d574bad1e0c7392227d98882daae482bffa738f3172a8d39a",
+    "continuity/candidate-0.png": "bc96c743d16870b137d563e0c43b834081b6816303cfb090ec7ba9498676dec8",
+    "continuity/candidate-1.png": "bc96c743d16870b137d563e0c43b834081b6816303cfb090ec7ba9498676dec8",
+    "continuity/candidate-2.png": "6a6abc295f6bdcab1ef5edf94cc8ee84341967bef693f7893ac5fc3303404104",
+    "continuity/candidate-3.png": "bc96c743d16870b137d563e0c43b834081b6816303cfb090ec7ba9498676dec8",
+    "continuity/candidate-5.png": "bc96c743d16870b137d563e0c43b834081b6816303cfb090ec7ba9498676dec8",
+    "continuity/candidate-6.png": "bc96c743d16870b137d563e0c43b834081b6816303cfb090ec7ba9498676dec8",
+    "continuity/candidate-7.png": "a72fda1cbea7c05182122a79c0aa89d740d58c5e8eded0c8912b78976878a0e8",
+    "continuity/candidate-fresh-process.log": "2c6c1b4677e6bdee9e533437f3103c1525f92991ab10664284e03fce35aa474c",
+    "continuity/candidate-fresh.cfg": "866a7c14d6c38eabba560cfa63c4dc4d4ffca5ff1f75fa1bf3185d453f430b7c",
+    "continuity/candidate-fresh.log": "532a903037a1dfe5a5fff6c6cdeb6f6efc75968bc7f55f901154304fad3dabef",
+    "continuity/candidate-reload-process.log": "2259a5f370e9b949eea647a89c267895924f5ea066db5ef2a33a77f72176f949",
+    "continuity/candidate-reload.cfg": "2cb888f302efe9f32fcf0829473b6085af8d540d399676c763fb3c424b0433ff",
+    "continuity/candidate-reload.log": "442041dba9be55965f1a9020aa89a4bc634c279bcda3fbcf8fdb68a81b4b3de7",
+    "continuity/detail-0-0.png": "c7d914b4f009f8758409555884ccc6a5fccf8a2ed45628cdbf6bed8e54392bd8",
+    "continuity/detail-0-160.png": "abd6ba8ebce93373adff84bcc1a24b59ff583852daa4b263e90edb1511984f1e",
+    "continuity/detail-0-270.png": "97584856cd3c59f88b998b53a88b495b09fc02dab583f72d1adc5bff36b26682",
+    "continuity/detail-0-90.png": "a4086dea03688b68f623c6c9a2c314cbe135e72b6fd190d0d51ae469c3ec9add",
+    "continuity/detail-1-0.png": "5ffcda1e2e2cf9e52e388e3e4643355026ebf2a9577f3d99e19b11a3f4edda52",
+    "continuity/detail-1-160.png": "a4abef55e7c4c2591d22f394974d7fc6307c0fd0bb159fc4340783786841e898",
+    "continuity/detail-1-270.png": "774e8334cffda833495c99fa8f11ed8e5cdd5c9e7012e8e085510db86e88b5ce",
+    "continuity/detail-1-90.png": "3585545d3ff3c7f178652dc3a0d750cf66a33125b4214fde24d88b66522be6a4",
+    "continuity/detail-2-0.png": "b90aeab612851ba00155048b2e61c3b5dacfbb856ce6a76c592c30ce4bb7b452",
+    "continuity/detail-2-160.png": "f2c52660964258e8ba599a6c85f7d59160bc2959fe473cbe14295bf9a1bc0714",
+    "continuity/detail-2-270.png": "7000faed98b35e3853b66147de2e4251d7e58371807d8c2739bd81f853104911",
+    "continuity/detail-2-90.png": "a51fb5ee31b2f483edf9abaf3b32be22cbf5e34c3fd9b4a9fa55a3011624b892",
+    "continuity/detail-3-0.png": "6b74f15c328d65d0d0edc966d9d27e2900f270661e87351112b3a9adbe97b52b",
+    "continuity/detail-3-160.png": "089efa04b1368deea3f6c6a152fd9b22b05bee8f7b5f09974eede65a48d35ef9",
+    "continuity/detail-3-270.png": "8053ae0142603ae3ecc3f5eb033409709c46830905a1da276c0642013c5a81aa",
+    "continuity/detail-3-90.png": "622ed74a82f650541318f4808c642cf8a5628c11813cae30bcc26a128d3f5b1f",
+    "continuity/fixture-source/MAPINFO.txt": "28ab59e1bca1a4f24ac348916674360c1a962ae5b73730ca4d6560e80d89110c",
+    "continuity/fixture-source/ZSCRIPT.txt": "3ab3d5e83ef83955b2567bfa45842ef84c16e11e27b38674e4515d86b078ad73",
+    "continuity/fixture.zs": "b97a49400e44d44aecca5b1d82ac5907970b7f3c3c401dabc8a957e7b6b10b31",
+    "continuity/old-save-load-part-1.cfg": "2e0de13fd7a967a1c7e58c130d2ff526d0fa4af4e83241ac98757c440b9381f9",
+    "continuity/old-save-load-process.log": "ec66cbc448424317a3c75fd9c3a07a5db9acdca7d2c10140f6471f4d296f6207",
+    "continuity/old-save-load.cfg": "695e3ef4acec0bc63e3223e7b8c38453d00c1ccca720e25cd829ae0efbc1f6cc",
+    "continuity/old-save-load.log": "ea310773896439ab3ddcd008594e71d3fa8abfffc4c5dacab10200a24b91f038",
+    "continuity/RESULTS.json": "3bc70265d0905ac9075a182d74d846b9cc936da272f6d7e4f69a854254cfbbc0",
+    "continuity/rollback-load-process.log": "e9461464b8752898aec65858294cd04f352205f78ffdc9bba70df87818c15448",
+    "continuity/rollback-load.cfg": "2cb888f302efe9f32fcf0829473b6085af8d540d399676c763fb3c424b0433ff",
+    "continuity/rollback-load.log": "ebc316407f58a03724943649c51a0627adf2d5f3cc39eae6f51b1e725838634d",
+    "continuity/session.ini": "c88dcade4b0d4b136faa62d3a729f34c9a28f66c1286839536e8e6933b30149d",
+    "exports/model01.json": "b2ab2e396401f731981ee8ed2361dd219ea2eddb7da19975d2623ddf03d7bc8e",
+    "exports/model02.json": "635ce948b7e33cf42ae9147ee4b3f8f3a45871ab069a9c27aff48455537a1d33",
+    "exports/model03.json": "e45ac403999e18bb834a55f12f4894ca8f58e319c28b36346a7f01ea02c8633e",
+    "exports/model04.json": "e45ac403999e18bb834a55f12f4894ca8f58e319c28b36346a7f01ea02c8633e",
+    "iterations/issue688-initial-design.json": "461bcca12e7e4be03be2ac47f3b854475bd56e38ae4d73e6671afdc11d3684d1",
+    "iterations/issue688-initial-export-failure.json": "cc62b36d08b74ae48c6859f0f894d195f2e51e8649eb62e0e69356faee9068ab",
+    "iterations/visual01/detail-0-160.png": "0336665b5fa60528a0b886c95e0ea3e68dc58aa40f87d301804f8adfbb857855",
+    "iterations/visual01/detail-2-160.png": "9e6f9e393f2e1d95bf5a551dcdc2ce6b63737799a0df753d2eb3dde174532e92",
+    "iterations/visual01/detail-3-270.png": "5be97ccea1c66bef437b1aeb009294f45074f8d7ddb20c5a4d65448c1dc3d95e",
+    "iterations/visual01/fixture-source/MAPINFO.txt": "28ab59e1bca1a4f24ac348916674360c1a962ae5b73730ca4d6560e80d89110c",
+    "iterations/visual01/fixture-source/ZSCRIPT.txt": "c702c1110381a9efbee828571360bd5215d80dd59bfc244215e4a563c78591b5",
+    "iterations/visual01/fixture.zs": "8edc62f313d0e2346d91219d5448310788ebc8d1942cefc2795f225d3d0a017a",
+    "iterations/visual01/RESULTS.json": "bd58aea25a77eb405cb09438b6e42c65b139365eb8344b0f005f9e32368b7aad",
+    "iterations/visual01/session.ini": "f831ac5093fca3b1f0620984539c93cbc0f39dd2f47318b242dafa07b4a7647c",
+    "iterations/visual01/visual-part-1.cfg": "ca9a755ad8267bb3c1588948fc40694dafddda12fa803ace7be2a5f0b8c69ff7",
+    "iterations/visual01/visual-process.log": "ca922f759deb3201e81502cd5c5fd25c8afbddb964b94b06aaf459633f738706",
+    "iterations/visual01/visual.cfg": "f9915f915b3b490563570c02b4da47afe9e1da104efb1470eb648b71fe06bd7a",
+    "iterations/visual01/visual.log": "7ef8a7b92c413a67c7fe012351dd9385006d680a12d848348d94850c9b0b2ebb",
+    "iterations/visual02/detail-0-160.png": "abd6ba8ebce93373adff84bcc1a24b59ff583852daa4b263e90edb1511984f1e",
+    "iterations/visual02/detail-2-160.png": "f2c52660964258e8ba599a6c85f7d59160bc2959fe473cbe14295bf9a1bc0714",
+    "iterations/visual02/detail-3-270.png": "8053ae0142603ae3ecc3f5eb033409709c46830905a1da276c0642013c5a81aa",
+    "iterations/visual02/fixture-source/MAPINFO.txt": "28ab59e1bca1a4f24ac348916674360c1a962ae5b73730ca4d6560e80d89110c",
+    "iterations/visual02/fixture-source/ZSCRIPT.txt": "3ab3d5e83ef83955b2567bfa45842ef84c16e11e27b38674e4515d86b078ad73",
+    "iterations/visual02/fixture.zs": "b97a49400e44d44aecca5b1d82ac5907970b7f3c3c401dabc8a957e7b6b10b31",
+    "iterations/visual02/RESULTS.json": "ed81ca65dcab08480d2df40e9ef3d84698713bf1d6e49058c243674331b49011",
+    "iterations/visual02/session.ini": "59d3dcca741e8a05d43fd80f079b5d16f0793e48fa3a0a16d686fd48eea06b97",
+    "iterations/visual02/visual-part-1.cfg": "ca9a755ad8267bb3c1588948fc40694dafddda12fa803ace7be2a5f0b8c69ff7",
+    "iterations/visual02/visual-process.log": "02de4d9efdb90f12ff771563d5a55731fff4475cbaa1d2e424897258ee515930",
+    "iterations/visual02/visual.cfg": "4af0c048d844022ae5bc8788a0f6050a87b7aca5cc7e11d3d306e403b617f224",
+    "iterations/visual02/visual.log": "00123ed7ec07bf48e4a75253cf5c3c0737df71f21c6d8b7334593fadec787d13",
+    "presentation/models-4/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/models-4/engine.log": "d335d6c50122a445b6b136c7c49a4a618437f77538c9690ccb676ad2e82253d1",
+    "presentation/models-4/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/models-4/fixture-source/ZSCRIPT.txt": "7a65233c263501697b2847d1aef26d61667d460cd9719305e0b406c7372f06f5",
+    "presentation/models-4/presents.csv": "64c65d7e6464fec32a381e396785322001d1c101a2f7fb0a520842be518bdc1b",
+    "presentation/models-4/process.log": "d6afd44f9ea3570cebecbe5087ae8bfe0db4d224936f5789428b901b8f39d892",
+    "presentation/models-4/scene.png": "138ed0ec85ff7315f1363943616fa44e9fdfdc9f8b71fa4ac377b375296efd6d",
+    "presentation/models-4/session.ini": "91f6b0a97fbf903e6f2f66891d286f000932d2cdbc8d62dc542e478282a93e5a",
+    "presentation/RESULTS.json": "64993d5ae045b0d6fe150e923c8215e68e26c9285df920fbb747e1ec42d1ace5",
+    "presentation/sprites-4/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/sprites-4/engine.log": "9e3cb384a89382be0467ed77a8c9d4917f880742157be838e35d0da6b869bb63",
+    "presentation/sprites-4/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/sprites-4/fixture-source/ZSCRIPT.txt": "7a65233c263501697b2847d1aef26d61667d460cd9719305e0b406c7372f06f5",
+    "presentation/sprites-4/presents.csv": "1c0a24de9ca9b8cb6f3ab16a90774eb8951ae3ad3ab5f23c2d79e44e277a6b09",
+    "presentation/sprites-4/process.log": "1c25304c1826b92192e0d2393393e921f617b85bac3c2eb1aaf8c2ef71af9ca0",
+    "presentation/sprites-4/scene.png": "23bf4bc20a3e01ea2ea0fdb228a2064f3ca0e75b560b2a46c526fb4f13fd4c46",
+    "presentation/sprites-4/session.ini": "031fea2707324526b8bbc148b57207e4276b199eb200e7f984da72153a05af86",
+    "validation-final.json": "3cc600945e206f6a792009e4a362690192b219b758ab884b1c88fc7cae3a894c"
+  }
+}
