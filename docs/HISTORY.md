@@ -1,6 +1,17 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.38** - 2026-11-14.
+Documentation version: **5.17.39** - 2026-11-14.
+
+## 5.17.39 - Serpent regional inspection (#721, 2026-11-14)
+
+Extended optional CA709G with Moñái/Selva and Mbói Tatá/Litoral/Selva, keeping
+all earlier displays/plots/controls and native model/material bytes. Four
+fixture files repeat; 49/102 native checks cover fresh/reload identity,
+position, idle, silent steps and three crossed boundaries. One 700-tic
+distant overview records 1491.67 queue presents/s, p95 0.8887 ms, p99 1.0917 ms; mean simulation 28.5718 ms/tic; queue-only/small-footprint qualifications
+apply. Evidence: assets/validation_v5_17_39/evidence/SUMMARY.json.
+CA721-SERPENT-GALLERY-01 originates here and remains unconfirmed. Updated
+earlier pending gallery runner paths without retiring their checks.
 
 ## 5.17.38 - Native serpent family (#720, 2026-11-14)
 

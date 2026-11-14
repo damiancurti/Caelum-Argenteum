@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.38** - 2026-11-14.
+Documentation version: **5.17.39** - 2026-11-14.
+
+## 5.17.39 - Eleven-figure native regional gallery (#721)
+
+CA709G adds Moñái/Selva and Mbói Tatá/Litoral/Selva with unchanged native art.
+Eleven figures, nine species and four grounds pass 151 fresh/reload/idle/walk
+checks; four fixture files repeat. Qualified presentation evidence is in
+ASSETS. CA721-SERPENT-GALLERY-01 and earlier art/gallery acceptance remain
+pending. Other characters, modular equipment and original campaign remain
+unfinished; this optional room does not add production encounters.
 
 ## 5.17.38 - Two native serpent combat models (#720)
 
