@@ -1,0 +1,599 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-14 09:34:09
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue717-wood01.pk3, 18404 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/build/issue717-native01/fixture.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2484.93 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+CA455V - Inventory drop inspection
+
+CA717 PASS all six materials and three tiers
+CA717 PASS wood component 0 saved references
+CA717 PASS wood component 0 world and held ownership
+CA717 PASS wood component 0 split quantities
+CA717 PASS wood component 0 material and tier identity
+CA717 PASS wood component 0 distinct native stack
+CA717 PASS wood component 0 original sprite and icon
+CA717 PASS wood component 0 native collision and scale
+CA717 PASS wood component 0 unit weight
+CA717 PASS wood component 0 floor contact
+CA717 PASS wood component 0 native class, sprite and icon
+CA717 PASS wood component 0 dropped provenance record
+CA717 PASS wood component 0 dropped provenance marker
+CA717 PASS wood component 0 dropped surface ledger units
+CA717 PASS wood component 0 dropped original lot boundaries
+CA717 PASS wood component 0 dropped contamination retained
+CA717 PASS wood component 0 dropped location and quest flags
+CA717 PASS wood component 0 held provenance record
+CA717 PASS wood component 0 held provenance marker
+CA717 PASS wood component 0 held surface ledger units
+CA717 PASS wood component 0 held original lot boundaries
+CA717 PASS wood component 0 held contamination retained
+CA717 PASS wood component 0 held location and quest flags
+CA717 PASS wood component 1 saved references
+CA717 PASS wood component 1 world and held ownership
+CA717 PASS wood component 1 split quantities
+CA717 PASS wood component 1 material and tier identity
+CA717 PASS wood component 1 distinct native stack
+CA717 PASS wood component 1 original sprite and icon
+CA717 PASS wood component 1 native collision and scale
+CA717 PASS wood component 1 unit weight
+CA717 PASS wood component 1 floor contact
+CA717 PASS wood component 1 native class, sprite and icon
+CA717 PASS wood component 1 dropped provenance record
+CA717 PASS wood component 1 dropped provenance marker
+CA717 PASS wood component 1 dropped surface ledger units
+CA717 PASS wood component 1 dropped original lot boundaries
+CA717 PASS wood component 1 dropped contamination retained
+CA717 PASS wood component 1 dropped location and quest flags
+CA717 PASS wood component 1 held provenance record
+CA717 PASS wood component 1 held provenance marker
+CA717 PASS wood component 1 held surface ledger units
+CA717 PASS wood component 1 held original lot boundaries
+CA717 PASS wood component 1 held contamination retained
+CA717 PASS wood component 1 held location and quest flags
+CA717 PASS wood component 2 saved references
+CA717 PASS wood component 2 world and held ownership
+CA717 PASS wood component 2 split quantities
+CA717 PASS wood component 2 material and tier identity
+CA717 PASS wood component 2 distinct native stack
+CA717 PASS wood component 2 original sprite and icon
+CA717 PASS wood component 2 native collision and scale
+CA717 PASS wood component 2 unit weight
+CA717 PASS wood component 2 floor contact
+CA717 PASS wood component 2 native class, sprite and icon
+CA717 PASS wood component 2 dropped provenance record
+CA717 PASS wood component 2 dropped provenance marker
+CA717 PASS wood component 2 dropped surface ledger units
+CA717 PASS wood component 2 dropped original lot boundaries
+CA717 PASS wood component 2 dropped contamination retained
+CA717 PASS wood component 2 dropped location and quest flags
+CA717 PASS wood component 2 held provenance record
+CA717 PASS wood component 2 held provenance marker
+CA717 PASS wood component 2 held surface ledger units
+CA717 PASS wood component 2 held original lot boundaries
+CA717 PASS wood component 2 held contamination retained
+CA717 PASS wood component 2 held location and quest flags
+CA717 PASS wood component 3 saved references
+CA717 PASS wood component 3 world and held ownership
+CA717 PASS wood component 3 split quantities
+CA717 PASS wood component 3 material and tier identity
+CA717 PASS wood component 3 distinct native stack
+CA717 PASS wood component 3 original sprite and icon
+CA717 PASS wood component 3 native collision and scale
+CA717 PASS wood component 3 unit weight
+CA717 PASS wood component 3 floor contact
+CA717 PASS wood component 3 native class, sprite and icon
+CA717 PASS wood component 3 dropped provenance record
+CA717 PASS wood component 3 dropped provenance marker
+CA717 PASS wood component 3 dropped surface ledger units
+CA717 PASS wood component 3 dropped original lot boundaries
+CA717 PASS wood component 3 dropped contamination retained
+CA717 PASS wood component 3 dropped location and quest flags
+CA717 PASS wood component 3 held provenance record
+CA717 PASS wood component 3 held provenance marker
+CA717 PASS wood component 3 held surface ledger units
+CA717 PASS wood component 3 held original lot boundaries
+CA717 PASS wood component 3 held contamination retained
+CA717 PASS wood component 3 held location and quest flags
+CA717 PASS wood component 4 saved references
+CA717 PASS wood component 4 world and held ownership
+CA717 PASS wood component 4 split quantities
+CA717 PASS wood component 4 material and tier identity
+CA717 PASS wood component 4 distinct native stack
+CA717 PASS wood component 4 original sprite and icon
+CA717 PASS wood component 4 native collision and scale
+CA717 PASS wood component 4 unit weight
+CA717 PASS wood component 4 floor contact
+CA717 PASS wood component 4 native class, sprite and icon
+CA717 PASS wood component 4 dropped provenance record
+CA717 PASS wood component 4 dropped provenance marker
+CA717 PASS wood component 4 dropped surface ledger units
+CA717 PASS wood component 4 dropped original lot boundaries
+CA717 PASS wood component 4 dropped contamination retained
+CA717 PASS wood component 4 dropped location and quest flags
+CA717 PASS wood component 4 held provenance record
+CA717 PASS wood component 4 held provenance marker
+CA717 PASS wood component 4 held surface ledger units
+CA717 PASS wood component 4 held original lot boundaries
+CA717 PASS wood component 4 held contamination retained
+CA717 PASS wood component 4 held location and quest flags
+CA717 PASS wood component 5 saved references
+CA717 PASS wood component 5 world and held ownership
+CA717 PASS wood component 5 split quantities
+CA717 PASS wood component 5 material and tier identity
+CA717 PASS wood component 5 distinct native stack
+CA717 PASS wood component 5 original sprite and icon
+CA717 PASS wood component 5 native collision and scale
+CA717 PASS wood component 5 unit weight
+CA717 PASS wood component 5 floor contact
+CA717 PASS wood component 5 native class, sprite and icon
+CA717 PASS wood component 5 dropped provenance record
+CA717 PASS wood component 5 dropped provenance marker
+CA717 PASS wood component 5 dropped surface ledger units
+CA717 PASS wood component 5 dropped original lot boundaries
+CA717 PASS wood component 5 dropped contamination retained
+CA717 PASS wood component 5 dropped location and quest flags
+CA717 PASS wood component 5 held provenance record
+CA717 PASS wood component 5 held provenance marker
+CA717 PASS wood component 5 held surface ledger units
+CA717 PASS wood component 5 held original lot boundaries
+CA717 PASS wood component 5 held contamination retained
+CA717 PASS wood component 5 held location and quest flags
+CA717 PASS wood component 6 saved references
+CA717 PASS wood component 6 world and held ownership
+CA717 PASS wood component 6 split quantities
+CA717 PASS wood component 6 material and tier identity
+CA717 PASS wood component 6 distinct native stack
+CA717 PASS wood component 6 original sprite and icon
+CA717 PASS wood component 6 native collision and scale
+CA717 PASS wood component 6 unit weight
+CA717 PASS wood component 6 floor contact
+CA717 PASS wood component 6 native class, sprite and icon
+CA717 PASS wood component 6 dropped provenance record
+CA717 PASS wood component 6 dropped provenance marker
+CA717 PASS wood component 6 dropped surface ledger units
+CA717 PASS wood component 6 dropped original lot boundaries
+CA717 PASS wood component 6 dropped contamination retained
+CA717 PASS wood component 6 dropped location and quest flags
+CA717 PASS wood component 6 held provenance record
+CA717 PASS wood component 6 held provenance marker
+CA717 PASS wood component 6 held surface ledger units
+CA717 PASS wood component 6 held original lot boundaries
+CA717 PASS wood component 6 held contamination retained
+CA717 PASS wood component 6 held location and quest flags
+CA717 PASS wood component 7 saved references
+CA717 PASS wood component 7 world and held ownership
+CA717 PASS wood component 7 split quantities
+CA717 PASS wood component 7 material and tier identity
+CA717 PASS wood component 7 distinct native stack
+CA717 PASS wood component 7 original sprite and icon
+CA717 PASS wood component 7 native collision and scale
+CA717 PASS wood component 7 unit weight
+CA717 PASS wood component 7 floor contact
+CA717 PASS wood component 7 native class, sprite and icon
+CA717 PASS wood component 7 dropped provenance record
+CA717 PASS wood component 7 dropped provenance marker
+CA717 PASS wood component 7 dropped surface ledger units
+CA717 PASS wood component 7 dropped original lot boundaries
+CA717 PASS wood component 7 dropped contamination retained
+CA717 PASS wood component 7 dropped location and quest flags
+CA717 PASS wood component 7 held provenance record
+CA717 PASS wood component 7 held provenance marker
+CA717 PASS wood component 7 held surface ledger units
+CA717 PASS wood component 7 held original lot boundaries
+CA717 PASS wood component 7 held contamination retained
+CA717 PASS wood component 7 held location and quest flags
+CA717 PASS wood component 8 saved references
+CA717 PASS wood component 8 world and held ownership
+CA717 PASS wood component 8 split quantities
+CA717 PASS wood component 8 material and tier identity
+CA717 PASS wood component 8 distinct native stack
+CA717 PASS wood component 8 original sprite and icon
+CA717 PASS wood component 8 native collision and scale
+CA717 PASS wood component 8 unit weight
+CA717 PASS wood component 8 floor contact
+CA717 PASS wood component 8 native class, sprite and icon
+CA717 PASS wood component 8 dropped provenance record
+CA717 PASS wood component 8 dropped provenance marker
+CA717 PASS wood component 8 dropped surface ledger units
+CA717 PASS wood component 8 dropped original lot boundaries
+CA717 PASS wood component 8 dropped contamination retained
+CA717 PASS wood component 8 dropped location and quest flags
+CA717 PASS wood component 8 held provenance record
+CA717 PASS wood component 8 held provenance marker
+CA717 PASS wood component 8 held surface ledger units
+CA717 PASS wood component 8 held original lot boundaries
+CA717 PASS wood component 8 held contamination retained
+CA717 PASS wood component 8 held location and quest flags
+CA717 PASS wood component 9 saved references
+CA717 PASS wood component 9 world and held ownership
+CA717 PASS wood component 9 split quantities
+CA717 PASS wood component 9 material and tier identity
+CA717 PASS wood component 9 distinct native stack
+CA717 PASS wood component 9 original sprite and icon
+CA717 PASS wood component 9 native collision and scale
+CA717 PASS wood component 9 unit weight
+CA717 PASS wood component 9 floor contact
+CA717 PASS wood component 9 native class, sprite and icon
+CA717 PASS wood component 9 dropped provenance record
+CA717 PASS wood component 9 dropped provenance marker
+CA717 PASS wood component 9 dropped surface ledger units
+CA717 PASS wood component 9 dropped original lot boundaries
+CA717 PASS wood component 9 dropped contamination retained
+CA717 PASS wood component 9 dropped location and quest flags
+CA717 PASS wood component 9 held provenance record
+CA717 PASS wood component 9 held provenance marker
+CA717 PASS wood component 9 held surface ledger units
+CA717 PASS wood component 9 held original lot boundaries
+CA717 PASS wood component 9 held contamination retained
+CA717 PASS wood component 9 held location and quest flags
+CA717 PASS wood component 10 saved references
+CA717 PASS wood component 10 world and held ownership
+CA717 PASS wood component 10 split quantities
+CA717 PASS wood component 10 material and tier identity
+CA717 PASS wood component 10 distinct native stack
+CA717 PASS wood component 10 original sprite and icon
+CA717 PASS wood component 10 native collision and scale
+CA717 PASS wood component 10 unit weight
+CA717 PASS wood component 10 floor contact
+CA717 PASS wood component 10 native class, sprite and icon
+CA717 PASS wood component 10 dropped provenance record
+CA717 PASS wood component 10 dropped provenance marker
+CA717 PASS wood component 10 dropped surface ledger units
+CA717 PASS wood component 10 dropped original lot boundaries
+CA717 PASS wood component 10 dropped contamination retained
+CA717 PASS wood component 10 dropped location and quest flags
+CA717 PASS wood component 10 held provenance record
+CA717 PASS wood component 10 held provenance marker
+CA717 PASS wood component 10 held surface ledger units
+CA717 PASS wood component 10 held original lot boundaries
+CA717 PASS wood component 10 held contamination retained
+CA717 PASS wood component 10 held location and quest flags
+CA717 PASS wood component 11 saved references
+CA717 PASS wood component 11 world and held ownership
+CA717 PASS wood component 11 split quantities
+CA717 PASS wood component 11 material and tier identity
+CA717 PASS wood component 11 distinct native stack
+CA717 PASS wood component 11 original sprite and icon
+CA717 PASS wood component 11 native collision and scale
+CA717 PASS wood component 11 unit weight
+CA717 PASS wood component 11 floor contact
+CA717 PASS wood component 11 native class, sprite and icon
+CA717 PASS wood component 11 dropped provenance record
+CA717 PASS wood component 11 dropped provenance marker
+CA717 PASS wood component 11 dropped surface ledger units
+CA717 PASS wood component 11 dropped original lot boundaries
+CA717 PASS wood component 11 dropped contamination retained
+CA717 PASS wood component 11 dropped location and quest flags
+CA717 PASS wood component 11 held provenance record
+CA717 PASS wood component 11 held provenance marker
+CA717 PASS wood component 11 held surface ledger units
+CA717 PASS wood component 11 held original lot boundaries
+CA717 PASS wood component 11 held contamination retained
+CA717 PASS wood component 11 held location and quest flags
+CA717 PASS wood component 12 saved references
+CA717 PASS wood component 12 world and held ownership
+CA717 PASS wood component 12 split quantities
+CA717 PASS wood component 12 material and tier identity
+CA717 PASS wood component 12 distinct native stack
+CA717 PASS wood component 12 original sprite and icon
+CA717 PASS wood component 12 native collision and scale
+CA717 PASS wood component 12 unit weight
+CA717 PASS wood component 12 floor contact
+CA717 PASS wood component 12 native class, sprite and icon
+CA717 PASS wood component 12 dropped provenance record
+CA717 PASS wood component 12 dropped provenance marker
+CA717 PASS wood component 12 dropped surface ledger units
+CA717 PASS wood component 12 dropped original lot boundaries
+CA717 PASS wood component 12 dropped contamination retained
+CA717 PASS wood component 12 dropped location and quest flags
+CA717 PASS wood component 12 held provenance record
+CA717 PASS wood component 12 held provenance marker
+CA717 PASS wood component 12 held surface ledger units
+CA717 PASS wood component 12 held original lot boundaries
+CA717 PASS wood component 12 held contamination retained
+CA717 PASS wood component 12 held location and quest flags
+CA717 PASS wood component 13 saved references
+CA717 PASS wood component 13 world and held ownership
+CA717 PASS wood component 13 split quantities
+CA717 PASS wood component 13 material and tier identity
+CA717 PASS wood component 13 distinct native stack
+CA717 PASS wood component 13 original sprite and icon
+CA717 PASS wood component 13 native collision and scale
+CA717 PASS wood component 13 unit weight
+CA717 PASS wood component 13 floor contact
+CA717 PASS wood component 13 native class, sprite and icon
+CA717 PASS wood component 13 dropped provenance record
+CA717 PASS wood component 13 dropped provenance marker
+CA717 PASS wood component 13 dropped surface ledger units
+CA717 PASS wood component 13 dropped original lot boundaries
+CA717 PASS wood component 13 dropped contamination retained
+CA717 PASS wood component 13 dropped location and quest flags
+CA717 PASS wood component 13 held provenance record
+CA717 PASS wood component 13 held provenance marker
+CA717 PASS wood component 13 held surface ledger units
+CA717 PASS wood component 13 held original lot boundaries
+CA717 PASS wood component 13 held contamination retained
+CA717 PASS wood component 13 held location and quest flags
+CA717 PASS wood component 14 saved references
+CA717 PASS wood component 14 world and held ownership
+CA717 PASS wood component 14 split quantities
+CA717 PASS wood component 14 material and tier identity
+CA717 PASS wood component 14 distinct native stack
+CA717 PASS wood component 14 original sprite and icon
+CA717 PASS wood component 14 native collision and scale
+CA717 PASS wood component 14 unit weight
+CA717 PASS wood component 14 floor contact
+CA717 PASS wood component 14 native class, sprite and icon
+CA717 PASS wood component 14 dropped provenance record
+CA717 PASS wood component 14 dropped provenance marker
+CA717 PASS wood component 14 dropped surface ledger units
+CA717 PASS wood component 14 dropped original lot boundaries
+CA717 PASS wood component 14 dropped contamination retained
+CA717 PASS wood component 14 dropped location and quest flags
+CA717 PASS wood component 14 held provenance record
+CA717 PASS wood component 14 held provenance marker
+CA717 PASS wood component 14 held surface ledger units
+CA717 PASS wood component 14 held original lot boundaries
+CA717 PASS wood component 14 held contamination retained
+CA717 PASS wood component 14 held location and quest flags
+CA717 PASS wood component 15 saved references
+CA717 PASS wood component 15 world and held ownership
+CA717 PASS wood component 15 split quantities
+CA717 PASS wood component 15 material and tier identity
+CA717 PASS wood component 15 distinct native stack
+CA717 PASS wood component 15 original sprite and icon
+CA717 PASS wood component 15 native collision and scale
+CA717 PASS wood component 15 unit weight
+CA717 PASS wood component 15 floor contact
+CA717 PASS wood component 15 native class, sprite and icon
+CA717 PASS wood component 15 dropped provenance record
+CA717 PASS wood component 15 dropped provenance marker
+CA717 PASS wood component 15 dropped surface ledger units
+CA717 PASS wood component 15 dropped original lot boundaries
+CA717 PASS wood component 15 dropped contamination retained
+CA717 PASS wood component 15 dropped location and quest flags
+CA717 PASS wood component 15 held provenance record
+CA717 PASS wood component 15 held provenance marker
+CA717 PASS wood component 15 held surface ledger units
+CA717 PASS wood component 15 held original lot boundaries
+CA717 PASS wood component 15 held contamination retained
+CA717 PASS wood component 15 held location and quest flags
+CA717 PASS wood component 16 saved references
+CA717 PASS wood component 16 world and held ownership
+CA717 PASS wood component 16 split quantities
+CA717 PASS wood component 16 material and tier identity
+CA717 PASS wood component 16 distinct native stack
+CA717 PASS wood component 16 original sprite and icon
+CA717 PASS wood component 16 native collision and scale
+CA717 PASS wood component 16 unit weight
+CA717 PASS wood component 16 floor contact
+CA717 PASS wood component 16 native class, sprite and icon
+CA717 PASS wood component 16 dropped provenance record
+CA717 PASS wood component 16 dropped provenance marker
+CA717 PASS wood component 16 dropped surface ledger units
+CA717 PASS wood component 16 dropped original lot boundaries
+CA717 PASS wood component 16 dropped contamination retained
+CA717 PASS wood component 16 dropped location and quest flags
+CA717 PASS wood component 16 held provenance record
+CA717 PASS wood component 16 held provenance marker
+CA717 PASS wood component 16 held surface ledger units
+CA717 PASS wood component 16 held original lot boundaries
+CA717 PASS wood component 16 held contamination retained
+CA717 PASS wood component 16 held location and quest flags
+CA717 PASS wood component 17 saved references
+CA717 PASS wood component 17 world and held ownership
+CA717 PASS wood component 17 split quantities
+CA717 PASS wood component 17 material and tier identity
+CA717 PASS wood component 17 distinct native stack
+CA717 PASS wood component 17 original sprite and icon
+CA717 PASS wood component 17 native collision and scale
+CA717 PASS wood component 17 unit weight
+CA717 PASS wood component 17 floor contact
+CA717 PASS wood component 17 native class, sprite and icon
+CA717 PASS wood component 17 dropped provenance record
+CA717 PASS wood component 17 dropped provenance marker
+CA717 PASS wood component 17 dropped surface ledger units
+CA717 PASS wood component 17 dropped original lot boundaries
+CA717 PASS wood component 17 dropped contamination retained
+CA717 PASS wood component 17 dropped location and quest flags
+CA717 PASS wood component 17 held provenance record
+CA717 PASS wood component 17 held provenance marker
+CA717 PASS wood component 17 held surface ledger units
+CA717 PASS wood component 17 held original lot boundaries
+CA717 PASS wood component 17 held contamination retained
+CA717 PASS wood component 17 held location and quest flags
+CA717 COMPLETE failures=0
+CA717 PASS wood component 0 repickup
+CA717 PASS wood component 0 identical merged stack
+CA717 PASS wood component 0 recovered provenance record
+CA717 PASS wood component 0 recovered provenance marker
+CA717 PASS wood component 0 recovered surface ledger units
+CA717 PASS wood component 0 recovered original lot boundaries
+CA717 PASS wood component 0 recovered contamination retained
+CA717 PASS wood component 0 recovered location and quest flags
+CA717 PASS wood component 1 repickup
+CA717 PASS wood component 1 identical merged stack
+CA717 PASS wood component 1 recovered provenance record
+CA717 PASS wood component 1 recovered provenance marker
+CA717 PASS wood component 1 recovered surface ledger units
+CA717 PASS wood component 1 recovered original lot boundaries
+CA717 PASS wood component 1 recovered contamination retained
+CA717 PASS wood component 1 recovered location and quest flags
+CA717 PASS wood component 2 repickup
+CA717 PASS wood component 2 identical merged stack
+CA717 PASS wood component 2 recovered provenance record
+CA717 PASS wood component 2 recovered provenance marker
+CA717 PASS wood component 2 recovered surface ledger units
+CA717 PASS wood component 2 recovered original lot boundaries
+CA717 PASS wood component 2 recovered contamination retained
+CA717 PASS wood component 2 recovered location and quest flags
+CA717 PASS wood component 3 repickup
+CA717 PASS wood component 3 identical merged stack
+CA717 PASS wood component 3 recovered provenance record
+CA717 PASS wood component 3 recovered provenance marker
+CA717 PASS wood component 3 recovered surface ledger units
+CA717 PASS wood component 3 recovered original lot boundaries
+CA717 PASS wood component 3 recovered contamination retained
+CA717 PASS wood component 3 recovered location and quest flags
+CA717 PASS wood component 4 repickup
+CA717 PASS wood component 4 identical merged stack
+CA717 PASS wood component 4 recovered provenance record
+CA717 PASS wood component 4 recovered provenance marker
+CA717 PASS wood component 4 recovered surface ledger units
+CA717 PASS wood component 4 recovered original lot boundaries
+CA717 PASS wood component 4 recovered contamination retained
+CA717 PASS wood component 4 recovered location and quest flags
+CA717 PASS wood component 5 repickup
+CA717 PASS wood component 5 identical merged stack
+CA717 PASS wood component 5 recovered provenance record
+CA717 PASS wood component 5 recovered provenance marker
+CA717 PASS wood component 5 recovered surface ledger units
+CA717 PASS wood component 5 recovered original lot boundaries
+CA717 PASS wood component 5 recovered contamination retained
+CA717 PASS wood component 5 recovered location and quest flags
+CA717 PASS wood component 6 repickup
+CA717 PASS wood component 6 identical merged stack
+CA717 PASS wood component 6 recovered provenance record
+CA717 PASS wood component 6 recovered provenance marker
+CA717 PASS wood component 6 recovered surface ledger units
+CA717 PASS wood component 6 recovered original lot boundaries
+CA717 PASS wood component 6 recovered contamination retained
+CA717 PASS wood component 6 recovered location and quest flags
+CA717 PASS wood component 7 repickup
+CA717 PASS wood component 7 identical merged stack
+CA717 PASS wood component 7 recovered provenance record
+CA717 PASS wood component 7 recovered provenance marker
+CA717 PASS wood component 7 recovered surface ledger units
+CA717 PASS wood component 7 recovered original lot boundaries
+CA717 PASS wood component 7 recovered contamination retained
+CA717 PASS wood component 7 recovered location and quest flags
+CA717 PASS wood component 8 repickup
+CA717 PASS wood component 8 identical merged stack
+CA717 PASS wood component 8 recovered provenance record
+CA717 PASS wood component 8 recovered provenance marker
+CA717 PASS wood component 8 recovered surface ledger units
+CA717 PASS wood component 8 recovered original lot boundaries
+CA717 PASS wood component 8 recovered contamination retained
+CA717 PASS wood component 8 recovered location and quest flags
+CA717 PASS wood component 9 repickup
+CA717 PASS wood component 9 identical merged stack
+CA717 PASS wood component 9 recovered provenance record
+CA717 PASS wood component 9 recovered provenance marker
+CA717 PASS wood component 9 recovered surface ledger units
+CA717 PASS wood component 9 recovered original lot boundaries
+CA717 PASS wood component 9 recovered contamination retained
+CA717 PASS wood component 9 recovered location and quest flags
+CA717 PASS wood component 10 repickup
+CA717 PASS wood component 10 identical merged stack
+CA717 PASS wood component 10 recovered provenance record
+CA717 PASS wood component 10 recovered provenance marker
+CA717 PASS wood component 10 recovered surface ledger units
+CA717 PASS wood component 10 recovered original lot boundaries
+CA717 PASS wood component 10 recovered contamination retained
+CA717 PASS wood component 10 recovered location and quest flags
+CA717 PASS wood component 11 repickup
+CA717 PASS wood component 11 identical merged stack
+CA717 PASS wood component 11 recovered provenance record
+CA717 PASS wood component 11 recovered provenance marker
+CA717 PASS wood component 11 recovered surface ledger units
+CA717 PASS wood component 11 recovered original lot boundaries
+CA717 PASS wood component 11 recovered contamination retained
+CA717 PASS wood component 11 recovered location and quest flags
+CA717 PASS wood component 12 repickup
+CA717 PASS wood component 12 identical merged stack
+CA717 PASS wood component 12 recovered provenance record
+CA717 PASS wood component 12 recovered provenance marker
+CA717 PASS wood component 12 recovered surface ledger units
+CA717 PASS wood component 12 recovered original lot boundaries
+CA717 PASS wood component 12 recovered contamination retained
+CA717 PASS wood component 12 recovered location and quest flags
+CA717 PASS wood component 13 repickup
+CA717 PASS wood component 13 identical merged stack
+CA717 PASS wood component 13 recovered provenance record
+CA717 PASS wood component 13 recovered provenance marker
+CA717 PASS wood component 13 recovered surface ledger units
+CA717 PASS wood component 13 recovered original lot boundaries
+CA717 PASS wood component 13 recovered contamination retained
+CA717 PASS wood component 13 recovered location and quest flags
+CA717 PASS wood component 14 repickup
+CA717 PASS wood component 14 identical merged stack
+CA717 PASS wood component 14 recovered provenance record
+CA717 PASS wood component 14 recovered provenance marker
+CA717 PASS wood component 14 recovered surface ledger units
+CA717 PASS wood component 14 recovered original lot boundaries
+CA717 PASS wood component 14 recovered contamination retained
+CA717 PASS wood component 14 recovered location and quest flags
+CA717 PASS wood component 15 repickup
+CA717 PASS wood component 15 identical merged stack
+CA717 PASS wood component 15 recovered provenance record
+CA717 PASS wood component 15 recovered provenance marker
+CA717 PASS wood component 15 recovered surface ledger units
+CA717 PASS wood component 15 recovered original lot boundaries
+CA717 PASS wood component 15 recovered contamination retained
+CA717 PASS wood component 15 recovered location and quest flags
+CA717 PASS wood component 16 repickup
+CA717 PASS wood component 16 identical merged stack
+CA717 PASS wood component 16 recovered provenance record
+CA717 PASS wood component 16 recovered provenance marker
+CA717 PASS wood component 16 recovered surface ledger units
+CA717 PASS wood component 16 recovered original lot boundaries
+CA717 PASS wood component 16 recovered contamination retained
+CA717 PASS wood component 16 recovered location and quest flags
+CA717 PASS wood component 17 repickup
+CA717 PASS wood component 17 identical merged stack
+CA717 PASS wood component 17 recovered provenance record
+CA717 PASS wood component 17 recovered provenance marker
+CA717 PASS wood component 17 recovered surface ledger units
+CA717 PASS wood component 17 recovered original lot boundaries
+CA717 PASS wood component 17 recovered contamination retained
+CA717 PASS wood component 17 recovered location and quest flags
+CA717 COMPLETE failures=0

@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.36** - 2026-11-14.
+Documentation version: **5.17.37** - 2026-11-14.
 
 ## 5.17.35 - Extended native gallery controls (#713)
 

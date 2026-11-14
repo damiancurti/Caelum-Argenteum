@@ -1,0 +1,333 @@
+{
+  "schema_revision": 1,
+  "issue": 717,
+  "parent_issue": 647,
+  "status": "candidate_pending_author_review",
+  "variants": {
+    "shaft": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "shaft"
+      ],
+      "closed_outward_components": 1,
+      "vertices": 200,
+      "triangles": 384,
+      "surfaces": [
+        {
+          "material": "wood",
+          "vertices": 200,
+          "triangles": 384
+        }
+      ],
+      "reference_opaque_bounds": [
+        9,
+        8,
+        119,
+        119
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 110.0,
+      "native_bounds": [
+        {
+          "min": [
+            -55.0,
+            -3.7125000000000004,
+            0.0
+          ],
+          "max": [
+            55.0,
+            3.7125000000000004,
+            7.425000000000001
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 6.875,
+        "floor": -0.54
+      }
+    },
+    "frame": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "bow",
+        "string"
+      ],
+      "closed_outward_components": 2,
+      "vertices": 2094,
+      "triangles": 4008,
+      "surfaces": [
+        {
+          "material": "wood",
+          "vertices": 2027,
+          "triangles": 3888
+        },
+        {
+          "material": "strap",
+          "vertices": 67,
+          "triangles": 120
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        12,
+        120,
+        115
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -56.000000000000014,
+            -0.5247343965677953,
+            0.0
+          ],
+          "max": [
+            55.999999999999986,
+            23.791012673029993,
+            4.921780048977159
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 7.887468027206984,
+        "floor": 0.11799999999999994
+      }
+    },
+    "long_frame": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "bow",
+        "string"
+      ],
+      "closed_outward_components": 2,
+      "vertices": 2094,
+      "triangles": 4008,
+      "surfaces": [
+        {
+          "material": "wood",
+          "vertices": 2027,
+          "triangles": 3888
+        },
+        {
+          "material": "strap",
+          "vertices": 67,
+          "triangles": 120
+        }
+      ],
+      "reference_opaque_bounds": [
+        13,
+        13,
+        117,
+        114
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 104.0,
+      "native_bounds": [
+        {
+          "min": [
+            -51.99999999999999,
+            -0.460276201847184,
+            0.0
+          ],
+          "max": [
+            52.000000000000014,
+            18.978111223283417,
+            3.570015169966301
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 5.721178156997277,
+        "floor": 0.11799999999999994
+      }
+    },
+    "handle": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "handle"
+      ],
+      "closed_outward_components": 1,
+      "vertices": 431,
+      "triangles": 832,
+      "surfaces": [
+        {
+          "material": "wood",
+          "vertices": 431,
+          "triangles": 832
+        }
+      ],
+      "reference_opaque_bounds": [
+        10,
+        9,
+        118,
+        120
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 108.0,
+      "native_bounds": [
+        {
+          "min": [
+            -54.0,
+            -15.12,
+            0.0
+          ],
+          "max": [
+            54.0,
+            15.12,
+            30.24
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 18.0,
+        "floor": -0.84
+      }
+    },
+    "long_handle": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "long_handle"
+      ],
+      "closed_outward_components": 1,
+      "vertices": 200,
+      "triangles": 384,
+      "surfaces": [
+        {
+          "material": "wood",
+          "vertices": 200,
+          "triangles": 384
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        11,
+        120,
+        118
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -56.0,
+            -3.36,
+            0.0
+          ],
+          "max": [
+            56.0,
+            3.36,
+            6.72
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 8.0,
+        "floor": -0.42
+      }
+    },
+    "wood": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "timber"
+      ],
+      "closed_outward_components": 1,
+      "vertices": 200,
+      "triangles": 384,
+      "surfaces": [
+        {
+          "material": "wood",
+          "vertices": 200,
+          "triangles": 384
+        }
+      ],
+      "reference_opaque_bounds": [
+        9,
+        17,
+        120,
+        112
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 111.0,
+      "native_bounds": [
+        {
+          "min": [
+            -55.5,
+            -14.8,
+            0.0
+          ],
+          "max": [
+            55.5,
+            14.8,
+            10.175
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 9.25,
+        "floor": -0.55
+      }
+    }
+  },
+  "source_sha256": {
+    "DESIGN.json": "9dbd3f3d72f609e3bb2ffea7fe90b8fd3ce1fbbfeed0a042572fc56f51192251",
+    "PROVENANCE.json": "4467c72cfaa901bd4e5dc1d3e5bd9de99752840d2fd85ea1adc605ef446bd3dc"
+  },
+  "external_source_sha256": {
+    "src/graphics/caelum/icons/materials/ca_material_shaft.png": "5996d73caca0e1df5e90656a1a3a05da2fac6ea3e9237b82bda55ff6a3a085cd",
+    "src/graphics/caelum/icons/materials/ca_material_frame.png": "c19c86ab239ea915e5dd50415ec263e1adb903190a9e58ee377b1a34704c22aa",
+    "src/graphics/caelum/icons/materials/ca_material_long_frame.png": "ebd7f60897c25b333e2104c3e7bcb1b18db2bfcced525129bfaf917da8270e3b",
+    "src/graphics/caelum/icons/materials/ca_material_handle.png": "886d2bd6f4ae8385717afa1a148391eece061752d1bd9077c5cd1514e0b48b43",
+    "src/graphics/caelum/icons/materials/ca_material_long_handle.png": "6ecbcd72ad9572a36cab0d47af5fc0b01fb143537d8728a9180cf593466da7c9",
+    "src/graphics/caelum/icons/materials/ca_material_wood.png": "bcc8ea868d2851b7b3221f9d1acf9d872777aeb6e9f22ee6ae1f32f7a98a539a",
+    "src/models/caelum/actors/training/ca_training_dummy.png": "4ae89bf07aaab273bb9bcafad283ab2e56fb3d87d6dd2f86e6a1329855dd8cff",
+    "src/models/caelum/inventory/consumables/materials.png": "eb8f019510c63601c9e25c8ed05142fbe7b97fe06eb444c32685def6e664416e"
+  },
+  "generator_sha256": {
+    "generate_inventory_ammunition_models.py": "aa7ffdc02cc126b116b87782ae962bdbb54e9bf060301344058aa4475f946b86",
+    "generate_inventory_consumable_models.py": "f4bb817e68f15fd5fcce27b5f7f3de205917b993899fbeb934629f2146a14fc7",
+    "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+    "generate_inventory_wood_components_models.py": "93af53093962978669d3c036445d1e6e7503853b0449c54318edd48a21d1e6d3"
+  },
+  "sha256": {
+    "models/caelum/inventory/wood_components/shaft.md3": "a89db56633c65a888fc8565cb0804ed175c8d1c935861323a465f7e38e6c8cf9",
+    "editable/shaft.obj": "61e3b8f5d3f771a91a69ba406010dda70a43c72ff7d1303a0ded85308080da89",
+    "models/caelum/inventory/wood_components/frame.md3": "fd63f74f506357b186c1d61dc9817befb2dcb6b61048a6096a966834bb0c9c0b",
+    "editable/frame.obj": "12ae0ded2be7ebf660082517f4cad776706f107c1b8871ee53c38bc952769c67",
+    "models/caelum/inventory/wood_components/long_frame.md3": "6c649d680237cd5caee7b322cbaf4ed17e6b41d60cdc065bfc1f7077979415bc",
+    "editable/long_frame.obj": "617738efadf84983b594bd51a66ab52595243e7420f70c38cde6b5dc3a8d9a07",
+    "models/caelum/inventory/wood_components/handle.md3": "8cf1d2090dbc7c9aef7b589e02540d89ea62f2b08b3d27ed0345577c4f7ca7f7",
+    "editable/handle.obj": "809a7fe2e7a4190f06c1bd294a8ed41b6755b9f7b19f1226bb769a525abc2c00",
+    "models/caelum/inventory/wood_components/long_handle.md3": "f2a7144f6eecfefb8014bf7b652237c56ebbd4cee8cbf7c8e9806c1241a8e807",
+    "editable/long_handle.obj": "f072bcefbcab5ae74948beefd405dfbf2d595cc537767e2102185d51366b9afb",
+    "models/caelum/inventory/wood_components/wood.md3": "a8c642a524aa69fb74eb45c32224ede15e9aa53f9d0fe710cad1ce095460b51c",
+    "editable/wood.obj": "ed63c973cea3224aaaedc2687a737d0060ea5d484874f85eb53156e10ffb3021",
+    "editable/wood_components.mtl": "1ebaa5ad8aafdc4375fda65169dc57549e6c635148e3b75ba23b8d26e78ce3bd",
+    "caelum/data/inventory_wood_components.modeldef": "444ac2c13a37254a45d6290f9fd2ddedf7dbeee7199f99ff6bb9d9438a268015"
+  }
+}

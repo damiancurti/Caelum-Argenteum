@@ -1,0 +1,15 @@
+{
+  "issue": 717,
+  "owner": "Dami\u00e1n Curti / Caelum Argenteum",
+  "references": [
+    "src/graphics/caelum/icons/materials/ca_material_shaft.png",
+    "src/graphics/caelum/icons/materials/ca_material_frame.png",
+    "src/graphics/caelum/icons/materials/ca_material_long_frame.png",
+    "src/graphics/caelum/icons/materials/ca_material_handle.png",
+    "src/graphics/caelum/icons/materials/ca_material_long_handle.png",
+    "src/graphics/caelum/icons/materials/ca_material_wood.png"
+  ],
+  "materials": "Owned training-dummy wood and existing painted strap material reused byte-for-byte; no new image generation or raster editing.",
+  "method": "Closed continuous lathed profiles, rounded cut timber and smooth bent bow limbs with volumetric closed strings. JSON/OBJ/MTL and native MD3 through the existing inventory geometry/writer.",
+  "limits": "Six static crafting drops/eighteen existing type-tier cases. Original icons, recipes, identity, quantity, weight, collision, save schema and equipped/first-person weapons unchanged. Candidate art pending author review."
+}

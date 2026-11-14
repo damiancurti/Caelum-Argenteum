@@ -1,0 +1,23 @@
+{
+  "files": 16,
+  "all_byte_identical": true,
+  "visual01_nonmanifest_files_identical": 15,
+  "sha256": {
+    "manifest.json": "fa3cc0866d551440732d4f8c90cb443dac4d5adb0d0532ea999a03506a0022b4",
+    "preview.pk3": "309f945ef88bff4b83fba3d3d6cbba635f205ed4236a362216d9b7fca708b755",
+    "editable/frame.obj": "12ae0ded2be7ebf660082517f4cad776706f107c1b8871ee53c38bc952769c67",
+    "editable/handle.obj": "809a7fe2e7a4190f06c1bd294a8ed41b6755b9f7b19f1226bb769a525abc2c00",
+    "editable/long_frame.obj": "617738efadf84983b594bd51a66ab52595243e7420f70c38cde6b5dc3a8d9a07",
+    "editable/long_handle.obj": "f072bcefbcab5ae74948beefd405dfbf2d595cc537767e2102185d51366b9afb",
+    "editable/shaft.obj": "61e3b8f5d3f771a91a69ba406010dda70a43c72ff7d1303a0ded85308080da89",
+    "editable/wood.obj": "ed63c973cea3224aaaedc2687a737d0060ea5d484874f85eb53156e10ffb3021",
+    "editable/wood_components.mtl": "1ebaa5ad8aafdc4375fda65169dc57549e6c635148e3b75ba23b8d26e78ce3bd",
+    "caelum/data/inventory_wood_components.modeldef": "444ac2c13a37254a45d6290f9fd2ddedf7dbeee7199f99ff6bb9d9438a268015",
+    "models/caelum/inventory/wood_components/frame.md3": "fd63f74f506357b186c1d61dc9817befb2dcb6b61048a6096a966834bb0c9c0b",
+    "models/caelum/inventory/wood_components/handle.md3": "8cf1d2090dbc7c9aef7b589e02540d89ea62f2b08b3d27ed0345577c4f7ca7f7",
+    "models/caelum/inventory/wood_components/long_frame.md3": "6c649d680237cd5caee7b322cbaf4ed17e6b41d60cdc065bfc1f7077979415bc",
+    "models/caelum/inventory/wood_components/long_handle.md3": "f2a7144f6eecfefb8014bf7b652237c56ebbd4cee8cbf7c8e9806c1241a8e807",
+    "models/caelum/inventory/wood_components/shaft.md3": "a89db56633c65a888fc8565cb0804ed175c8d1c935861323a465f7e38e6c8cf9",
+    "models/caelum/inventory/wood_components/wood.md3": "a8c642a524aa69fb74eb45c32224ede15e9aa53f9d0fe710cad1ce095460b51c"
+  }
+}
