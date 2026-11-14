@@ -1,0 +1,2 @@
+map CA682G "Regional bestiary inspection gallery" { sky1="CABASKY",0 nointermission }
+gameinfo { AddEventHandlers="CA682GalleryEvents" }

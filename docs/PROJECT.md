@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.27** - 2026-11-14.
+Documentation version: **5.17.28** - 2026-11-14.
+
+## 5.17.28 - Cuyo study and regional guardian displays (#700)
+
+CA682G gains a fifth regional plot with one owned Cuyo gravel texture and three
+approved displays of the two #698 figures. Ten diagnostic figures retain native
+idle animation and saved references; 139 fresh/reload/movement assertions pass.
+Four-file material and gallery exports repeat. One peaceful presentation sample
+is qualified in ASSETS. CA700-CUYO-GALLERY-01 remains pending author review;
+campaign geography, unique-character population and other artwork are unchanged.
 
 ## 5.17.27 - Two unique folklore combat models (#698)
 

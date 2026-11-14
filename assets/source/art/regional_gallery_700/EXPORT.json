@@ -1,0 +1,15 @@
+{
+  "schema_revision": 1,
+  "issue": 700,
+  "status": "regional_art_candidate",
+  "source_sha256": {
+    "INVENTORY.json": "b36b6551d8fef6660b11c226ec9ceebe9621c2427c845d407406acc2075da825",
+    "PROVENANCE.json": "0afccfc7bf3210f32d67d3fbb7c4cb66cee99b95aa3df240dbe2bab74aadf1c6",
+    "cuyo_ground-v1.prompt.txt": "80515688b722735270f56950cd2b9395d68b866df426070728be5a872787c9f4"
+  },
+  "generator_sha256": "02b5634f81abbc5073583e39ffc4bac48e09801c9349d883d2a69e6ebfdbcdbe",
+  "sha256": {
+    "graphics/caelum/textures/regions_700/cuyo_ground-v1.png": "12888f6754085f2b4954ea542939eb9c09ebf2280426ce35412945b9e13f878f",
+    "caelum/data/regional_materials_700.textures": "0e7068d75e66cd369f081fa8bfb5709be34a8923fc3a2c0c2924a0ed724f1f12"
+  }
+}

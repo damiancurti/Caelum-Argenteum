@@ -1,6 +1,7 @@
 """Validate the new regional studies and their approved creature associations."""
 from pathlib import Path
 import json,math
+import re
 try:
     from .validate_regional_materials import validate as shared_validate
 except ImportError:
@@ -35,7 +36,8 @@ def validate(root=ROOT):
             assert left['x'][1]==right['x'][0],'Noncontiguous plot boundary'
         assert gallery['walkway_y'][1]==gallery['plot_y'][0],'Walkway is disconnected'
         assert sum(bool(row.get('control')) for row in gallery['views'])==1,'Expected one player-control view'
-        assert len(gallery['views'])<=12,'Gallery views exceed function-key bindings'
+        keys=[row.get('key','F'+str(index+1)) for index,row in enumerate(gallery['views'])]
+        assert len(keys)==len(set(keys)) and all(re.fullmatch(r'(?:F(?:[1-9]|1[0-2])|[0-9])',key) for key in keys),'Invalid or duplicate gallery key'
     except (OSError,KeyError,ValueError,AssertionError) as exc:
         errors.append('Beast regional gallery: '+(str(exc) or 'Invalid display layout'))
     return errors

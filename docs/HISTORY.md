@@ -1,6 +1,18 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.27** - 2026-11-14.
+Documentation version: **5.17.28** - 2026-11-14.
+
+## 5.17.28 - Cuyo material and guardian gallery (#700, 2026-11-14)
+
+The author's regional inspection request adds one original Cuyo ground study
+and Yasí/Litoral plus Yastay/Cuyo/NOA displays to CA682G. Five plots retain the
+seven earlier positions and F1-F12 functions; number keys expose four new views.
+Four material files and four gallery files repeat; 139 native fresh/reload,
+animation and walking assertions pass, including the four-boundary crossing.
+ASSETS records one peaceful presentation sample and source/package evidence.
+All existing runtime models, textures and gameplay remain intact apart from the
+new texture include and release diagnostics. CA700-CUYO-GALLERY-01 remains
+pending; this is not author art acceptance or completion of the broader batch.
 
 ## 5.17.27 - Yasí Yateré and Yastay models (#698, 2026-11-14)
 
