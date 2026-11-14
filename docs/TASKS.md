@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.35** - 2026-11-14.
+Documentation version: **5.17.36** - 2026-11-14.
+
+## #716 - Chain material world drops (5.17.36)
+
+Two exact sprite bindings/four native type-tier cases,49 closed components,
+38 interlaced pairs/nine fixed attachments, eight deterministic exports and
+586 native continuity assertions pass. CA716-CHAINS-01 retains review of
+uniform metals, simplified spikes, regular coil, floor contact and ordinary
+pickup/drop. This is static drop art; chain physics, equipped weapons and
+first-person models are outside this issue. Broader #647 work remains open.
 
 ## #713 - Three birds in the regional inspection room (5.17.35)
 

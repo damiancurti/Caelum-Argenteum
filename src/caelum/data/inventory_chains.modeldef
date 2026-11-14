@@ -1,0 +1,2 @@
+Model CaelumMaterialPickup { Path "models/caelum/inventory/chains" Model 0 "chain.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M041 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/chains" Model 0 "silver_chain.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M043 A 0 0 }

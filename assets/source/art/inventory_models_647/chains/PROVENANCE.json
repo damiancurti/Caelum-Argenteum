@@ -1,0 +1,11 @@
+{
+  "issue": 716,
+  "owner": "Dami\u00e1n Curti / Caelum Argenteum",
+  "references": [
+    "src/graphics/caelum/icons/materials/ca_material_chain.png",
+    "src/graphics/caelum/icons/materials/ca_material_silver_chain.png"
+  ],
+  "materials": "Owned training-dummy iron and existing painted silver atlas reused byte-for-byte. No new image generation.",
+  "method": "Original closed oval linked rings, true-pole head and closed conical spikes; editable JSON/OBJ/MTL and native MD3 through the existing inventory writer. #706 supplies the independent ring-clearance/linking method.",
+  "limits": "Candidate static world-drop art. No chain physics, new weapon, icon/recipe/tier/weight/collision/save or equipped/first-person change."
+}

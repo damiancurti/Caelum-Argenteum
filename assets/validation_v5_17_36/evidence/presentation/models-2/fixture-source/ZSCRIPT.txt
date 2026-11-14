@@ -1,0 +1,30 @@
+version "4.14.2"
+class CA647BenchCamera : Actor
+{Default {+NOINTERACTION +NOGRAVITY CameraHeight 0;} States {Spawn:TNT1 A -1;Stop;}}
+class CA647Bench : EventHandler
+{
+    int Age;double Previous;Array<double> Tics;Array<Actor> Bodies;
+    override bool InputProcess(InputEvent e){return true;}
+    override void WorldTick()
+    {
+        Age++;
+        if(Age==5)
+        {
+            let user=CaelumPlayer(players[0].mo);user.CharacterCreationComplete=true;user.CreationWizardOpen=false;user.bInvisible=true;
+            let camera=Actor.Spawn('CA647BenchCamera',(0,-180,180),NO_REPLACE);camera.Angle=90;camera.Pitch=43;players[0].camera=camera;
+            static const int materialIds[]={41,43};
+            for(int index=0;index<materialIds.Size();index++)
+                {let item=CaelumMaterialPickup(Actor.Spawn('CaelumMaterialPickup',((index%3-1)*55,(index/3-1)*55,0),NO_REPLACE));item.args[0]=materialIds[index];item.args[1]=2;item.UpdateMaterialVisuals();Bodies.Push(item);}
+            Console.Printf("CA647 BENCH bodies=%d",Bodies.Size());
+        }
+        if(Age==175)Console.Printf("CA647 BEGIN");
+        if(Age<175 || Age>875)return;
+        double now=MSTimeF();if(Previous>0)Tics.Push(now-Previous);Previous=now;
+        if(Age==875)
+        {
+            Console.Printf("CA647 END");
+            for(int index=0;index<Tics.Size();index++)Console.Printf("CA647 TIC %.6f",Tics[index]);
+            Console.Printf("CA647 COMPLETE bodies=%d samples=%d",Bodies.Size(),Tics.Size());
+        }
+    }
+}

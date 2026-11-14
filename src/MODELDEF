@@ -4775,3 +4775,5 @@ Model CaelumBarricadeVisual
 #include "caelum/data/peuchen_combat.modeldef"
 
 #include "caelum/data/avian_combat.modeldef"
+
+#include "caelum/data/inventory_chains.modeldef"

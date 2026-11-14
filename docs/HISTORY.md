@@ -1,6 +1,20 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.35** - 2026-11-14.
+Documentation version: **5.17.36** - 2026-11-14.
+
+## 5.17.36 - Chain material world props (#716, 2026-11-14)
+
+Implemented existing material41/M041 and43/M043 as editable closed native
+models following owned icons. Preserved three iron tiers and untiered silver,
+all gameplay and original pixels. Reused opaque iron and painted silver.
+Independent clearance caught two intersecting link pairs despite a connected
+graph; eye-plane, tangent and opening adjustments corrected them. Final49
+components/38 link pairs/nine fixed witnesses and quantized triangles pass.
+Eight exports repeat; native checks pass 586 assertions. One qualified
+two-object sprite/model pair records 1123.54/1167.32 queue presents/s,p95 1.0844/1.0432 ms,p99
+1.3922/1.2610 ms; queue-only qualifications apply. Evidence:
+assets/validation_v5_17_36/evidence/SUMMARY.json. CA716-CHAINS-01 originates
+here and remains pending. No broader inventory/character/campaign acceptance.
 
 ## 5.17.35 - Avian regional inspection (#713, 2026-11-14)
 
