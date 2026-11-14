@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.44** - 2026-11-14.
+Documentation version: **5.17.45** - 2026-11-14.
+
+## 5.17.45 - Textile crafting drops (#733)
+
+Six native models cover eight existing fabric/raw fiber/rope cases.
+Independent geometry/contact/opening checks, 17 repeated exports and 1,157
+native continuity assertions pass; ASSETS records qualified presentation
+evidence. CA733-TEXTILE-DROPS-01 retains art and ordinary inventory/crafting
+acceptance. Other inventory, characters, modular equipment and campaign
+work remain incomplete.
 
 ## 5.17.44 - Leather and hide drops (#731)
 

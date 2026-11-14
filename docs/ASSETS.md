@@ -1,6 +1,54 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.44** - 2026-11-14.
+Documentation version: **5.17.45** - 2026-11-14.
+
+## 5.17.45 - Fabric, fibers and rope world models (#733, parent #647)
+
+Six existing CaelumMaterialPickup designs gain native models: fabric18,
+wool71, cotton72, raw silk73, plant fiber74 and rope75. Exact M018/071..075 A
+bindings preserve three fabric tiers and five untiered materials, eight cases.
+Owned icons guide folded cream cloth, fleece, cotton bolls/husks/stems, silk
+cocoons, bound dry fibers and a coiled rope hank. Cloth has actual open folds;
+fibers, bolls and coils have closed volumes and joined components. Rope reuses
+the authored #725 strand construction with a new material and central binding.
+Existing icons, recipes, tiers, amounts, weight, collision, Actor.Scale0.25,
+provenance, quest behavior and save schema are unchanged.
+
+The six models contain 48,666 vertices, 73,184 triangles, 114 closed solids
+and 108 independently verified contact witnesses. Serialized topology,
+noncollapsed quantized MD3 triangles, floor/original sprite envelopes and
+five opening probes/50 rays pass. Seventeen exports repeat byte-for-byte.
+Initial cotton witnesses on root caps prompted deeper branch/husk roots.
+Native review then prompted arc-length cloth UV tiling, shallow oriented
+fleece locks, finer silk threads and centered tapered plant fibers. Cloth
+UV seam vertices retain exact shared positions. The triangulator explicitly
+handles the opposite winding of the folded sheet's two end caps. Initial
+sources, manifests and previews remain retained.
+
+All 30 final detail/underside views, eight-case floor overview and both
+presentation cohorts were inspected. Regular cloth folds, shallow fleece
+locks, the upright cotton branch, silk winding and fiber/binding shapes remain
+candidate art requiring author review. Editable OBJ/MTL and portable texture:
+assets/source/art/inventory_models_647/textiles. Built-in image_gen produced
+materials.png; MATERIALS_PROMPT.json preserves the exact prompt and
+PROVENANCE.json its original path/hash. Pixels are unchanged copies.
+Regenerate with python assets/generators/generate_inventory_textile_models.py
+--output build/textile-models --install.
+
+The installed package passes 1,157 native assertions (217/241/217/241/241)
+across baseline, old-save adoption, fresh models, reload and rollback. All
+eight cases retain pickup/split/merge, provenance, lots, Box weight and quest
+guards. API checks do not establish ordinary menus/crafting acceptance.
+One 700-tic six-object sprite/model pair records 876.74/852.02 queue presents/s,
+p95 1.3865/1.3934 ms and p99 1.6478/1.6308 ms on Windows 11/Ryzen 9 5950X/RTX 3070 Ti,
+GZDoom 4.14.2 Vulkan 1280x720, uncapped/vsync off, background unpaused/audio 5%.
+These queue measurements and different projected footprints do not establish
+GPU/display timing, repeatability or campaign/crowd acceptance. All 18,453
+package entries match src; six models, one atlas, one definition, MODELDEF
+and two release diagnostics are the only runtime changes from #731.
+Evidence: assets/validation_v5_17_45/evidence/SUMMARY.json.
+CA733-TEXTILE-DROPS-01 retains art and ordinary inventory/crafting acceptance.
+Other inventory, characters, worn/first-person art and V5.16 remain unfinished.
 
 ## 5.17.44 - Leather and hide world models (#731, parent #647)
 

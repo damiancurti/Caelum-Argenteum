@@ -1,0 +1,22 @@
+{
+  "byte_identical": true,
+  "files": {
+    "caelum/data/inventory_textiles.modeldef": "04acf6e04b422a7f42d8baacc5e428835148df0cd616f9886c3a17f8dd39c09b",
+    "editable/cotton.obj": "3c957f9db6653eac8eb8f8daafccb2314dbec983e038f55ec83be6ca7943d8a3",
+    "editable/fabric.obj": "3216413073b4a5d54a7508a3eeadca9166e4065545b29c6005821a54915c6a32",
+    "editable/plant_fiber.obj": "c83fb7c818913cdabcc6a0a1a1e2c8949dee77284b9bf42faad7e212e17fabe0",
+    "editable/raw_silk.obj": "2175479c06f960a9f08ba0567543f07b203b5ba47b591c5b4437c165c02644a4",
+    "editable/rope.obj": "64117394c28dd141a82550fc090e7a080153e06ec6ac1efad0c5e049768ac014",
+    "editable/textiles.mtl": "269f262f8b147451cc0c7e5ab94b87c9c2a64963cfa6c7e9a21539c3d77efbbf",
+    "editable/wool.obj": "3085f3fa499720e9ff94521196dfb264057b02017fc14b46b5e1fd77ef5e19f2",
+    "manifest.json": "b57d7cf82866e01f2518c34b87faf1d00521fcd558a29dd3108a9ed6cb21413b",
+    "models/caelum/inventory/textiles/cotton.md3": "d32df7265ab07cdb1476a726d85b633446c5a11ac49c6e4422a9efccdc70a06c",
+    "models/caelum/inventory/textiles/fabric.md3": "cabf7ca482f4b58a03e710a7ebf77df65711de158a01ddd7e748b1f676fbb908",
+    "models/caelum/inventory/textiles/materials.png": "c7218f6bbc76e6c8ccb20db5829d5d9c91e07552bad034d596d2bdb5d95f1d1f",
+    "models/caelum/inventory/textiles/plant_fiber.md3": "aa9e227bc5c9803092e0aef327df2a39f0246dc6685cb21ad5cd5865d1f9d495",
+    "models/caelum/inventory/textiles/raw_silk.md3": "263c0ca24ea7ad2a7508886c6cb149d8f868cd91d5bc7e6a98058e175752c36a",
+    "models/caelum/inventory/textiles/rope.md3": "2e8eef19d2f69e1368e69a835d9bf3707e305c81676e33df3d8fc85d777699b7",
+    "models/caelum/inventory/textiles/wool.md3": "dfa61ba24cb6d7a2c1407eee7bb8262ca4c099f92ff7db1f6bd8cb257a9139c1",
+    "preview.pk3": "0e791557d1bedf1e549a134a38af101a81aa0ed90b8950dea989c12ea47c775b"
+  }
+}
