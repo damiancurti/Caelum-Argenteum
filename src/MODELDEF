@@ -4751,3 +4751,5 @@ Model CaelumBarricadeVisual
 
 #include "caelum/data/inventory_jewelry.modeldef"
 #include "caelum/data/inventory_books.modeldef"
+
+#include "caelum/data/inventory_gems.modeldef"

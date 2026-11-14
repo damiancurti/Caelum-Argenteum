@@ -1,0 +1,78 @@
+newmtl bronze
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/consumables/materials.png
+newmtl silver
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/consumables/materials.png
+newmtl gold
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/consumables/materials.png
+newmtl ruby_pendant
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/gems/ruby_pendant.png
+newmtl sapphire_pendant
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/gems/sapphire_pendant.png
+newmtl emerald_pendant
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/gems/emerald_pendant.png
+newmtl topaz_pendant
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/gems/topaz_pendant.png
+newmtl ruby_gem
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/gems/ruby_gem.png
+newmtl ruby_gem_matrix
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/gems/ruby_gem.png
+newmtl sapphire_gem
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/gems/sapphire_gem.png
+newmtl sapphire_gem_matrix
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/gems/sapphire_gem.png
+newmtl emerald_gem
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/gems/emerald_gem.png
+newmtl emerald_gem_matrix
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/gems/emerald_gem.png
+newmtl topaz_gem
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/gems/topaz_gem.png
+newmtl topaz_gem_matrix
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/gems/topaz_gem.png
+newmtl opal_brooch
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/gems/opal_brooch.png
+newmtl raw_ruby
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/gems/raw_ruby.png
+newmtl raw_ruby_matrix
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/gems/raw_ruby.png
+newmtl raw_sapphire
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/gems/raw_sapphire.png
+newmtl raw_sapphire_matrix
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/gems/raw_sapphire.png
+newmtl raw_emerald
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/gems/raw_emerald.png
+newmtl raw_emerald_matrix
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/gems/raw_emerald.png
+newmtl raw_topaz
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/gems/raw_topaz.png
+newmtl raw_topaz_matrix
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/gems/raw_topaz.png
+newmtl raw_opal
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/gems/raw_opal.png
+newmtl raw_opal_matrix
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/gems/raw_opal.png

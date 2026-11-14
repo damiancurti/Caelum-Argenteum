@@ -1,0 +1,1154 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-13 21:32:10
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-678/build/issue678-gems01.pk3, 18263 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-678/build/issue678-native01/fixture.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2538.57 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+CA455V - Inventory drop inspection
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA678 PASS gem 0 native pickup
+CA678 PASS gem 0 native distinct ownership
+CA678 PASS gem 0 existing boxed weight
+CA678 PASS gem 0 quest drop guard
+CA678 PASS gem 0 native split
+CA678 PASS gem 1 native pickup
+CA678 PASS gem 1 native distinct ownership
+CA678 PASS gem 1 existing boxed weight
+CA678 PASS gem 1 quest drop guard
+CA678 PASS gem 1 native split
+CA678 PASS gem 2 native pickup
+CA678 PASS gem 2 native distinct ownership
+CA678 PASS gem 2 existing boxed weight
+CA678 PASS gem 2 quest drop guard
+CA678 PASS gem 2 native split
+CA678 PASS gem 3 native pickup
+CA678 PASS gem 3 native distinct ownership
+CA678 PASS gem 3 existing boxed weight
+CA678 PASS gem 3 quest drop guard
+CA678 PASS gem 3 native split
+CA678 PASS gem 4 native pickup
+CA678 PASS gem 4 native distinct ownership
+CA678 PASS gem 4 existing boxed weight
+CA678 PASS gem 4 quest drop guard
+CA678 PASS gem 4 native split
+CA678 PASS gem 5 native pickup
+CA678 PASS gem 5 native distinct ownership
+CA678 PASS gem 5 existing boxed weight
+CA678 PASS gem 5 quest drop guard
+CA678 PASS gem 5 native split
+CA678 PASS gem 6 native pickup
+CA678 PASS gem 6 native distinct ownership
+CA678 PASS gem 6 existing boxed weight
+CA678 PASS gem 6 quest drop guard
+CA678 PASS gem 6 native split
+CA678 PASS gem 7 native pickup
+CA678 PASS gem 7 native distinct ownership
+CA678 PASS gem 7 existing boxed weight
+CA678 PASS gem 7 quest drop guard
+CA678 PASS gem 7 native split
+CA678 PASS gem 8 native pickup
+CA678 PASS gem 8 native distinct ownership
+CA678 PASS gem 8 existing boxed weight
+CA678 PASS gem 8 quest drop guard
+CA678 PASS gem 8 native split
+CA678 PASS gem 9 native pickup
+CA678 PASS gem 9 native distinct ownership
+CA678 PASS gem 9 existing boxed weight
+CA678 PASS gem 9 quest drop guard
+CA678 PASS gem 9 native split
+CA678 PASS gem 10 native pickup
+CA678 PASS gem 10 native distinct ownership
+CA678 PASS gem 10 existing boxed weight
+CA678 PASS gem 10 quest drop guard
+CA678 PASS gem 10 native split
+CA678 PASS gem 11 native pickup
+CA678 PASS gem 11 native distinct ownership
+CA678 PASS gem 11 existing boxed weight
+CA678 PASS gem 11 quest drop guard
+CA678 PASS gem 11 native split
+CA678 PASS gem 12 native pickup
+CA678 PASS gem 12 native distinct ownership
+CA678 PASS gem 12 existing boxed weight
+CA678 PASS gem 12 quest drop guard
+CA678 PASS gem 12 native split
+CA678 PASS gem 13 native pickup
+CA678 PASS gem 13 native distinct ownership
+CA678 PASS gem 13 existing boxed weight
+CA678 PASS gem 13 quest drop guard
+CA678 PASS gem 13 native split
+CA678 PASS gem 14 native pickup
+CA678 PASS gem 14 native distinct ownership
+CA678 PASS gem 14 existing boxed weight
+CA678 PASS gem 14 quest drop guard
+CA678 PASS gem 14 native split
+CA678 PASS gem 15 native pickup
+CA678 PASS gem 15 native distinct ownership
+CA678 PASS gem 15 existing boxed weight
+CA678 PASS gem 15 quest drop guard
+CA678 PASS gem 15 native split
+CA678 PASS gem 16 native pickup
+CA678 PASS gem 16 native distinct ownership
+CA678 PASS gem 16 existing boxed weight
+CA678 PASS gem 16 quest drop guard
+CA678 PASS gem 16 native split
+CA678 PASS gem 17 native pickup
+CA678 PASS gem 17 native distinct ownership
+CA678 PASS gem 17 existing boxed weight
+CA678 PASS gem 17 quest drop guard
+CA678 PASS gem 17 native split
+CA678 PASS gem 18 native pickup
+CA678 PASS gem 18 native distinct ownership
+CA678 PASS gem 18 existing boxed weight
+CA678 PASS gem 18 quest drop guard
+CA678 PASS gem 18 native split
+CA678 PASS gem 19 native pickup
+CA678 PASS gem 19 native distinct ownership
+CA678 PASS gem 19 existing boxed weight
+CA678 PASS gem 19 quest drop guard
+CA678 PASS gem 19 native split
+CA678 PASS gem 20 native pickup
+CA678 PASS gem 20 native distinct ownership
+CA678 PASS gem 20 existing boxed weight
+CA678 PASS gem 20 quest drop guard
+CA678 PASS gem 20 native split
+CA678 PASS gem 21 native pickup
+CA678 PASS gem 21 native distinct ownership
+CA678 PASS gem 21 existing boxed weight
+CA678 PASS gem 21 quest drop guard
+CA678 PASS gem 21 native split
+CA678 PASS gem 22 native pickup
+CA678 PASS gem 22 native distinct ownership
+CA678 PASS gem 22 existing boxed weight
+CA678 PASS gem 22 quest drop guard
+CA678 PASS gem 22 native split
+CA678 PASS gem 23 native pickup
+CA678 PASS gem 23 native distinct ownership
+CA678 PASS gem 23 existing boxed weight
+CA678 PASS gem 23 quest drop guard
+CA678 PASS gem 23 native split
+CA678 PASS gem 24 native pickup
+CA678 PASS gem 24 native distinct ownership
+CA678 PASS gem 24 existing boxed weight
+CA678 PASS gem 24 quest drop guard
+CA678 PASS gem 24 native split
+CA678 PASS gem 25 native pickup
+CA678 PASS gem 25 native distinct ownership
+CA678 PASS gem 25 existing boxed weight
+CA678 PASS gem 25 quest drop guard
+CA678 PASS gem 25 native split
+CA678 PASS gem 26 native pickup
+CA678 PASS gem 26 native distinct ownership
+CA678 PASS gem 26 existing boxed weight
+CA678 PASS gem 26 quest drop guard
+CA678 PASS gem 26 native split
+CA678 PASS gem 27 native pickup
+CA678 PASS gem 27 native distinct ownership
+CA678 PASS gem 27 existing boxed weight
+CA678 PASS gem 27 quest drop guard
+CA678 PASS gem 27 native split
+CA678 PASS gem 28 native pickup
+CA678 PASS gem 28 native distinct ownership
+CA678 PASS gem 28 existing boxed weight
+CA678 PASS gem 28 quest drop guard
+CA678 PASS gem 28 native split
+CA678 PASS gem 29 native pickup
+CA678 PASS gem 29 native distinct ownership
+CA678 PASS gem 29 existing boxed weight
+CA678 PASS gem 29 quest drop guard
+CA678 PASS gem 29 native split
+CA678 PASS gem 30 native pickup
+CA678 PASS gem 30 native distinct ownership
+CA678 PASS gem 30 existing boxed weight
+CA678 PASS gem 30 quest drop guard
+CA678 PASS gem 30 native split
+CA678 PASS gem 31 native pickup
+CA678 PASS gem 31 native distinct ownership
+CA678 PASS gem 31 existing boxed weight
+CA678 PASS gem 31 quest drop guard
+CA678 PASS gem 31 native split
+CA678 PASS gem 32 native pickup
+CA678 PASS gem 32 native distinct ownership
+CA678 PASS gem 32 existing boxed weight
+CA678 PASS gem 32 quest drop guard
+CA678 PASS gem 32 native split
+CA678 PASS gem 33 native pickup
+CA678 PASS gem 33 native distinct ownership
+CA678 PASS gem 33 existing boxed weight
+CA678 PASS gem 33 quest drop guard
+CA678 PASS gem 33 native split
+CA678 PASS gem 34 native pickup
+CA678 PASS gem 34 native distinct ownership
+CA678 PASS gem 34 existing boxed weight
+CA678 PASS gem 34 quest drop guard
+CA678 PASS gem 34 native split
+CA678 PASS gem 35 native pickup
+CA678 PASS gem 35 native distinct ownership
+CA678 PASS gem 35 existing boxed weight
+CA678 PASS gem 35 quest drop guard
+CA678 PASS gem 35 native split
+CA678 PASS gem 36 native pickup
+CA678 PASS gem 36 native distinct ownership
+CA678 PASS gem 36 existing boxed weight
+CA678 PASS gem 36 quest drop guard
+CA678 PASS gem 36 native split
+CA678 PASS gem 37 native pickup
+CA678 PASS gem 37 native distinct ownership
+CA678 PASS gem 37 existing boxed weight
+CA678 PASS gem 37 quest drop guard
+CA678 PASS gem 37 native split
+CA678 PASS gem 38 native pickup
+CA678 PASS gem 38 native distinct ownership
+CA678 PASS gem 38 existing boxed weight
+CA678 PASS gem 38 quest drop guard
+CA678 PASS gem 38 native split
+CA678 PASS gem 39 native pickup
+CA678 PASS gem 39 native distinct ownership
+CA678 PASS gem 39 existing boxed weight
+CA678 PASS gem 39 quest drop guard
+CA678 PASS gem 39 native split
+CA678 PASS gem 40 native pickup
+CA678 PASS gem 40 native distinct ownership
+CA678 PASS gem 40 existing boxed weight
+CA678 PASS gem 40 quest drop guard
+CA678 PASS gem 40 native split
+CA678 PASS gem 41 native pickup
+CA678 PASS gem 41 native distinct ownership
+CA678 PASS gem 41 existing boxed weight
+CA678 PASS gem 41 quest drop guard
+CA678 PASS gem 41 native split
+Game saved.
+CA678 PASS all fourteen materials and three tiers
+CA678 PASS gem 0 saved references
+CA678 PASS gem 0 world and held ownership
+CA678 PASS gem 0 split quantities
+CA678 PASS gem 0 material and tier identity
+CA678 PASS gem 0 distinct native stack
+CA678 PASS gem 0 original sprite and icon
+CA678 PASS gem 0 native collision and scale
+CA678 PASS gem 0 unit weight
+CA678 PASS gem 0 floor contact
+CA678 PASS gem 0 dropped provenance record
+CA678 PASS gem 0 dropped provenance marker
+CA678 PASS gem 0 dropped surface ledger units
+CA678 PASS gem 0 dropped original lot boundaries
+CA678 PASS gem 0 dropped contamination retained
+CA678 PASS gem 0 dropped location and quest flags
+CA678 PASS gem 0 held provenance record
+CA678 PASS gem 0 held provenance marker
+CA678 PASS gem 0 held surface ledger units
+CA678 PASS gem 0 held original lot boundaries
+CA678 PASS gem 0 held contamination retained
+CA678 PASS gem 0 held location and quest flags
+CA678 PASS gem 1 saved references
+CA678 PASS gem 1 world and held ownership
+CA678 PASS gem 1 split quantities
+CA678 PASS gem 1 material and tier identity
+CA678 PASS gem 1 distinct native stack
+CA678 PASS gem 1 original sprite and icon
+CA678 PASS gem 1 native collision and scale
+CA678 PASS gem 1 unit weight
+CA678 PASS gem 1 floor contact
+CA678 PASS gem 1 dropped provenance record
+CA678 PASS gem 1 dropped provenance marker
+CA678 PASS gem 1 dropped surface ledger units
+CA678 PASS gem 1 dropped original lot boundaries
+CA678 PASS gem 1 dropped contamination retained
+CA678 PASS gem 1 dropped location and quest flags
+CA678 PASS gem 1 held provenance record
+CA678 PASS gem 1 held provenance marker
+CA678 PASS gem 1 held surface ledger units
+CA678 PASS gem 1 held original lot boundaries
+CA678 PASS gem 1 held contamination retained
+CA678 PASS gem 1 held location and quest flags
+CA678 PASS gem 2 saved references
+CA678 PASS gem 2 world and held ownership
+CA678 PASS gem 2 split quantities
+CA678 PASS gem 2 material and tier identity
+CA678 PASS gem 2 distinct native stack
+CA678 PASS gem 2 original sprite and icon
+CA678 PASS gem 2 native collision and scale
+CA678 PASS gem 2 unit weight
+CA678 PASS gem 2 floor contact
+CA678 PASS gem 2 dropped provenance record
+CA678 PASS gem 2 dropped provenance marker
+CA678 PASS gem 2 dropped surface ledger units
+CA678 PASS gem 2 dropped original lot boundaries
+CA678 PASS gem 2 dropped contamination retained
+CA678 PASS gem 2 dropped location and quest flags
+CA678 PASS gem 2 held provenance record
+CA678 PASS gem 2 held provenance marker
+CA678 PASS gem 2 held surface ledger units
+CA678 PASS gem 2 held original lot boundaries
+CA678 PASS gem 2 held contamination retained
+CA678 PASS gem 2 held location and quest flags
+CA678 PASS gem 3 saved references
+CA678 PASS gem 3 world and held ownership
+CA678 PASS gem 3 split quantities
+CA678 PASS gem 3 material and tier identity
+CA678 PASS gem 3 distinct native stack
+CA678 PASS gem 3 original sprite and icon
+CA678 PASS gem 3 native collision and scale
+CA678 PASS gem 3 unit weight
+CA678 PASS gem 3 floor contact
+CA678 PASS gem 3 dropped provenance record
+CA678 PASS gem 3 dropped provenance marker
+CA678 PASS gem 3 dropped surface ledger units
+CA678 PASS gem 3 dropped original lot boundaries
+CA678 PASS gem 3 dropped contamination retained
+CA678 PASS gem 3 dropped location and quest flags
+CA678 PASS gem 3 held provenance record
+CA678 PASS gem 3 held provenance marker
+CA678 PASS gem 3 held surface ledger units
+CA678 PASS gem 3 held original lot boundaries
+CA678 PASS gem 3 held contamination retained
+CA678 PASS gem 3 held location and quest flags
+CA678 PASS gem 4 saved references
+CA678 PASS gem 4 world and held ownership
+CA678 PASS gem 4 split quantities
+CA678 PASS gem 4 material and tier identity
+CA678 PASS gem 4 distinct native stack
+CA678 PASS gem 4 original sprite and icon
+CA678 PASS gem 4 native collision and scale
+CA678 PASS gem 4 unit weight
+CA678 PASS gem 4 floor contact
+CA678 PASS gem 4 dropped provenance record
+CA678 PASS gem 4 dropped provenance marker
+CA678 PASS gem 4 dropped surface ledger units
+CA678 PASS gem 4 dropped original lot boundaries
+CA678 PASS gem 4 dropped contamination retained
+CA678 PASS gem 4 dropped location and quest flags
+CA678 PASS gem 4 held provenance record
+CA678 PASS gem 4 held provenance marker
+CA678 PASS gem 4 held surface ledger units
+CA678 PASS gem 4 held original lot boundaries
+CA678 PASS gem 4 held contamination retained
+CA678 PASS gem 4 held location and quest flags
+CA678 PASS gem 5 saved references
+CA678 PASS gem 5 world and held ownership
+CA678 PASS gem 5 split quantities
+CA678 PASS gem 5 material and tier identity
+CA678 PASS gem 5 distinct native stack
+CA678 PASS gem 5 original sprite and icon
+CA678 PASS gem 5 native collision and scale
+CA678 PASS gem 5 unit weight
+CA678 PASS gem 5 floor contact
+CA678 PASS gem 5 dropped provenance record
+CA678 PASS gem 5 dropped provenance marker
+CA678 PASS gem 5 dropped surface ledger units
+CA678 PASS gem 5 dropped original lot boundaries
+CA678 PASS gem 5 dropped contamination retained
+CA678 PASS gem 5 dropped location and quest flags
+CA678 PASS gem 5 held provenance record
+CA678 PASS gem 5 held provenance marker
+CA678 PASS gem 5 held surface ledger units
+CA678 PASS gem 5 held original lot boundaries
+CA678 PASS gem 5 held contamination retained
+CA678 PASS gem 5 held location and quest flags
+CA678 PASS gem 6 saved references
+CA678 PASS gem 6 world and held ownership
+CA678 PASS gem 6 split quantities
+CA678 PASS gem 6 material and tier identity
+CA678 PASS gem 6 distinct native stack
+CA678 PASS gem 6 original sprite and icon
+CA678 PASS gem 6 native collision and scale
+CA678 PASS gem 6 unit weight
+CA678 PASS gem 6 floor contact
+CA678 PASS gem 6 dropped provenance record
+CA678 PASS gem 6 dropped provenance marker
+CA678 PASS gem 6 dropped surface ledger units
+CA678 PASS gem 6 dropped original lot boundaries
+CA678 PASS gem 6 dropped contamination retained
+CA678 PASS gem 6 dropped location and quest flags
+CA678 PASS gem 6 held provenance record
+CA678 PASS gem 6 held provenance marker
+CA678 PASS gem 6 held surface ledger units
+CA678 PASS gem 6 held original lot boundaries
+CA678 PASS gem 6 held contamination retained
+CA678 PASS gem 6 held location and quest flags
+CA678 PASS gem 7 saved references
+CA678 PASS gem 7 world and held ownership
+CA678 PASS gem 7 split quantities
+CA678 PASS gem 7 material and tier identity
+CA678 PASS gem 7 distinct native stack
+CA678 PASS gem 7 original sprite and icon
+CA678 PASS gem 7 native collision and scale
+CA678 PASS gem 7 unit weight
+CA678 PASS gem 7 floor contact
+CA678 PASS gem 7 dropped provenance record
+CA678 PASS gem 7 dropped provenance marker
+CA678 PASS gem 7 dropped surface ledger units
+CA678 PASS gem 7 dropped original lot boundaries
+CA678 PASS gem 7 dropped contamination retained
+CA678 PASS gem 7 dropped location and quest flags
+CA678 PASS gem 7 held provenance record
+CA678 PASS gem 7 held provenance marker
+CA678 PASS gem 7 held surface ledger units
+CA678 PASS gem 7 held original lot boundaries
+CA678 PASS gem 7 held contamination retained
+CA678 PASS gem 7 held location and quest flags
+CA678 PASS gem 8 saved references
+CA678 PASS gem 8 world and held ownership
+CA678 PASS gem 8 split quantities
+CA678 PASS gem 8 material and tier identity
+CA678 PASS gem 8 distinct native stack
+CA678 PASS gem 8 original sprite and icon
+CA678 PASS gem 8 native collision and scale
+CA678 PASS gem 8 unit weight
+CA678 PASS gem 8 floor contact
+CA678 PASS gem 8 dropped provenance record
+CA678 PASS gem 8 dropped provenance marker
+CA678 PASS gem 8 dropped surface ledger units
+CA678 PASS gem 8 dropped original lot boundaries
+CA678 PASS gem 8 dropped contamination retained
+CA678 PASS gem 8 dropped location and quest flags
+CA678 PASS gem 8 held provenance record
+CA678 PASS gem 8 held provenance marker
+CA678 PASS gem 8 held surface ledger units
+CA678 PASS gem 8 held original lot boundaries
+CA678 PASS gem 8 held contamination retained
+CA678 PASS gem 8 held location and quest flags
+CA678 PASS gem 9 saved references
+CA678 PASS gem 9 world and held ownership
+CA678 PASS gem 9 split quantities
+CA678 PASS gem 9 material and tier identity
+CA678 PASS gem 9 distinct native stack
+CA678 PASS gem 9 original sprite and icon
+CA678 PASS gem 9 native collision and scale
+CA678 PASS gem 9 unit weight
+CA678 PASS gem 9 floor contact
+CA678 PASS gem 9 dropped provenance record
+CA678 PASS gem 9 dropped provenance marker
+CA678 PASS gem 9 dropped surface ledger units
+CA678 PASS gem 9 dropped original lot boundaries
+CA678 PASS gem 9 dropped contamination retained
+CA678 PASS gem 9 dropped location and quest flags
+CA678 PASS gem 9 held provenance record
+CA678 PASS gem 9 held provenance marker
+CA678 PASS gem 9 held surface ledger units
+CA678 PASS gem 9 held original lot boundaries
+CA678 PASS gem 9 held contamination retained
+CA678 PASS gem 9 held location and quest flags
+CA678 PASS gem 10 saved references
+CA678 PASS gem 10 world and held ownership
+CA678 PASS gem 10 split quantities
+CA678 PASS gem 10 material and tier identity
+CA678 PASS gem 10 distinct native stack
+CA678 PASS gem 10 original sprite and icon
+CA678 PASS gem 10 native collision and scale
+CA678 PASS gem 10 unit weight
+CA678 PASS gem 10 floor contact
+CA678 PASS gem 10 dropped provenance record
+CA678 PASS gem 10 dropped provenance marker
+CA678 PASS gem 10 dropped surface ledger units
+CA678 PASS gem 10 dropped original lot boundaries
+CA678 PASS gem 10 dropped contamination retained
+CA678 PASS gem 10 dropped location and quest flags
+CA678 PASS gem 10 held provenance record
+CA678 PASS gem 10 held provenance marker
+CA678 PASS gem 10 held surface ledger units
+CA678 PASS gem 10 held original lot boundaries
+CA678 PASS gem 10 held contamination retained
+CA678 PASS gem 10 held location and quest flags
+CA678 PASS gem 11 saved references
+CA678 PASS gem 11 world and held ownership
+CA678 PASS gem 11 split quantities
+CA678 PASS gem 11 material and tier identity
+CA678 PASS gem 11 distinct native stack
+CA678 PASS gem 11 original sprite and icon
+CA678 PASS gem 11 native collision and scale
+CA678 PASS gem 11 unit weight
+CA678 PASS gem 11 floor contact
+CA678 PASS gem 11 dropped provenance record
+CA678 PASS gem 11 dropped provenance marker
+CA678 PASS gem 11 dropped surface ledger units
+CA678 PASS gem 11 dropped original lot boundaries
+CA678 PASS gem 11 dropped contamination retained
+CA678 PASS gem 11 dropped location and quest flags
+CA678 PASS gem 11 held provenance record
+CA678 PASS gem 11 held provenance marker
+CA678 PASS gem 11 held surface ledger units
+CA678 PASS gem 11 held original lot boundaries
+CA678 PASS gem 11 held contamination retained
+CA678 PASS gem 11 held location and quest flags
+CA678 PASS gem 12 saved references
+CA678 PASS gem 12 world and held ownership
+CA678 PASS gem 12 split quantities
+CA678 PASS gem 12 material and tier identity
+CA678 PASS gem 12 distinct native stack
+CA678 PASS gem 12 original sprite and icon
+CA678 PASS gem 12 native collision and scale
+CA678 PASS gem 12 unit weight
+CA678 PASS gem 12 floor contact
+CA678 PASS gem 12 dropped provenance record
+CA678 PASS gem 12 dropped provenance marker
+CA678 PASS gem 12 dropped surface ledger units
+CA678 PASS gem 12 dropped original lot boundaries
+CA678 PASS gem 12 dropped contamination retained
+CA678 PASS gem 12 dropped location and quest flags
+CA678 PASS gem 12 held provenance record
+CA678 PASS gem 12 held provenance marker
+CA678 PASS gem 12 held surface ledger units
+CA678 PASS gem 12 held original lot boundaries
+CA678 PASS gem 12 held contamination retained
+CA678 PASS gem 12 held location and quest flags
+CA678 PASS gem 13 saved references
+CA678 PASS gem 13 world and held ownership
+CA678 PASS gem 13 split quantities
+CA678 PASS gem 13 material and tier identity
+CA678 PASS gem 13 distinct native stack
+CA678 PASS gem 13 original sprite and icon
+CA678 PASS gem 13 native collision and scale
+CA678 PASS gem 13 unit weight
+CA678 PASS gem 13 floor contact
+CA678 PASS gem 13 dropped provenance record
+CA678 PASS gem 13 dropped provenance marker
+CA678 PASS gem 13 dropped surface ledger units
+CA678 PASS gem 13 dropped original lot boundaries
+CA678 PASS gem 13 dropped contamination retained
+CA678 PASS gem 13 dropped location and quest flags
+CA678 PASS gem 13 held provenance record
+CA678 PASS gem 13 held provenance marker
+CA678 PASS gem 13 held surface ledger units
+CA678 PASS gem 13 held original lot boundaries
+CA678 PASS gem 13 held contamination retained
+CA678 PASS gem 13 held location and quest flags
+CA678 PASS gem 14 saved references
+CA678 PASS gem 14 world and held ownership
+CA678 PASS gem 14 split quantities
+CA678 PASS gem 14 material and tier identity
+CA678 PASS gem 14 distinct native stack
+CA678 PASS gem 14 original sprite and icon
+CA678 PASS gem 14 native collision and scale
+CA678 PASS gem 14 unit weight
+CA678 PASS gem 14 floor contact
+CA678 PASS gem 14 dropped provenance record
+CA678 PASS gem 14 dropped provenance marker
+CA678 PASS gem 14 dropped surface ledger units
+CA678 PASS gem 14 dropped original lot boundaries
+CA678 PASS gem 14 dropped contamination retained
+CA678 PASS gem 14 dropped location and quest flags
+CA678 PASS gem 14 held provenance record
+CA678 PASS gem 14 held provenance marker
+CA678 PASS gem 14 held surface ledger units
+CA678 PASS gem 14 held original lot boundaries
+CA678 PASS gem 14 held contamination retained
+CA678 PASS gem 14 held location and quest flags
+CA678 PASS gem 15 saved references
+CA678 PASS gem 15 world and held ownership
+CA678 PASS gem 15 split quantities
+CA678 PASS gem 15 material and tier identity
+CA678 PASS gem 15 distinct native stack
+CA678 PASS gem 15 original sprite and icon
+CA678 PASS gem 15 native collision and scale
+CA678 PASS gem 15 unit weight
+CA678 PASS gem 15 floor contact
+CA678 PASS gem 15 dropped provenance record
+CA678 PASS gem 15 dropped provenance marker
+CA678 PASS gem 15 dropped surface ledger units
+CA678 PASS gem 15 dropped original lot boundaries
+CA678 PASS gem 15 dropped contamination retained
+CA678 PASS gem 15 dropped location and quest flags
+CA678 PASS gem 15 held provenance record
+CA678 PASS gem 15 held provenance marker
+CA678 PASS gem 15 held surface ledger units
+CA678 PASS gem 15 held original lot boundaries
+CA678 PASS gem 15 held contamination retained
+CA678 PASS gem 15 held location and quest flags
+CA678 PASS gem 16 saved references
+CA678 PASS gem 16 world and held ownership
+CA678 PASS gem 16 split quantities
+CA678 PASS gem 16 material and tier identity
+CA678 PASS gem 16 distinct native stack
+CA678 PASS gem 16 original sprite and icon
+CA678 PASS gem 16 native collision and scale
+CA678 PASS gem 16 unit weight
+CA678 PASS gem 16 floor contact
+CA678 PASS gem 16 dropped provenance record
+CA678 PASS gem 16 dropped provenance marker
+CA678 PASS gem 16 dropped surface ledger units
+CA678 PASS gem 16 dropped original lot boundaries
+CA678 PASS gem 16 dropped contamination retained
+CA678 PASS gem 16 dropped location and quest flags
+CA678 PASS gem 16 held provenance record
+CA678 PASS gem 16 held provenance marker
+CA678 PASS gem 16 held surface ledger units
+CA678 PASS gem 16 held original lot boundaries
+CA678 PASS gem 16 held contamination retained
+CA678 PASS gem 16 held location and quest flags
+CA678 PASS gem 17 saved references
+CA678 PASS gem 17 world and held ownership
+CA678 PASS gem 17 split quantities
+CA678 PASS gem 17 material and tier identity
+CA678 PASS gem 17 distinct native stack
+CA678 PASS gem 17 original sprite and icon
+CA678 PASS gem 17 native collision and scale
+CA678 PASS gem 17 unit weight
+CA678 PASS gem 17 floor contact
+CA678 PASS gem 17 dropped provenance record
+CA678 PASS gem 17 dropped provenance marker
+CA678 PASS gem 17 dropped surface ledger units
+CA678 PASS gem 17 dropped original lot boundaries
+CA678 PASS gem 17 dropped contamination retained
+CA678 PASS gem 17 dropped location and quest flags
+CA678 PASS gem 17 held provenance record
+CA678 PASS gem 17 held provenance marker
+CA678 PASS gem 17 held surface ledger units
+CA678 PASS gem 17 held original lot boundaries
+CA678 PASS gem 17 held contamination retained
+CA678 PASS gem 17 held location and quest flags
+CA678 PASS gem 18 saved references
+CA678 PASS gem 18 world and held ownership
+CA678 PASS gem 18 split quantities
+CA678 PASS gem 18 material and tier identity
+CA678 PASS gem 18 distinct native stack
+CA678 PASS gem 18 original sprite and icon
+CA678 PASS gem 18 native collision and scale
+CA678 PASS gem 18 unit weight
+CA678 PASS gem 18 floor contact
+CA678 PASS gem 18 dropped provenance record
+CA678 PASS gem 18 dropped provenance marker
+CA678 PASS gem 18 dropped surface ledger units
+CA678 PASS gem 18 dropped original lot boundaries
+CA678 PASS gem 18 dropped contamination retained
+CA678 PASS gem 18 dropped location and quest flags
+CA678 PASS gem 18 held provenance record
+CA678 PASS gem 18 held provenance marker
+CA678 PASS gem 18 held surface ledger units
+CA678 PASS gem 18 held original lot boundaries
+CA678 PASS gem 18 held contamination retained
+CA678 PASS gem 18 held location and quest flags
+CA678 PASS gem 19 saved references
+CA678 PASS gem 19 world and held ownership
+CA678 PASS gem 19 split quantities
+CA678 PASS gem 19 material and tier identity
+CA678 PASS gem 19 distinct native stack
+CA678 PASS gem 19 original sprite and icon
+CA678 PASS gem 19 native collision and scale
+CA678 PASS gem 19 unit weight
+CA678 PASS gem 19 floor contact
+CA678 PASS gem 19 dropped provenance record
+CA678 PASS gem 19 dropped provenance marker
+CA678 PASS gem 19 dropped surface ledger units
+CA678 PASS gem 19 dropped original lot boundaries
+CA678 PASS gem 19 dropped contamination retained
+CA678 PASS gem 19 dropped location and quest flags
+CA678 PASS gem 19 held provenance record
+CA678 PASS gem 19 held provenance marker
+CA678 PASS gem 19 held surface ledger units
+CA678 PASS gem 19 held original lot boundaries
+CA678 PASS gem 19 held contamination retained
+CA678 PASS gem 19 held location and quest flags
+CA678 PASS gem 20 saved references
+CA678 PASS gem 20 world and held ownership
+CA678 PASS gem 20 split quantities
+CA678 PASS gem 20 material and tier identity
+CA678 PASS gem 20 distinct native stack
+CA678 PASS gem 20 original sprite and icon
+CA678 PASS gem 20 native collision and scale
+CA678 PASS gem 20 unit weight
+CA678 PASS gem 20 floor contact
+CA678 PASS gem 20 dropped provenance record
+CA678 PASS gem 20 dropped provenance marker
+CA678 PASS gem 20 dropped surface ledger units
+CA678 PASS gem 20 dropped original lot boundaries
+CA678 PASS gem 20 dropped contamination retained
+CA678 PASS gem 20 dropped location and quest flags
+CA678 PASS gem 20 held provenance record
+CA678 PASS gem 20 held provenance marker
+CA678 PASS gem 20 held surface ledger units
+CA678 PASS gem 20 held original lot boundaries
+CA678 PASS gem 20 held contamination retained
+CA678 PASS gem 20 held location and quest flags
+CA678 PASS gem 21 saved references
+CA678 PASS gem 21 world and held ownership
+CA678 PASS gem 21 split quantities
+CA678 PASS gem 21 material and tier identity
+CA678 PASS gem 21 distinct native stack
+CA678 PASS gem 21 original sprite and icon
+CA678 PASS gem 21 native collision and scale
+CA678 PASS gem 21 unit weight
+CA678 PASS gem 21 floor contact
+CA678 PASS gem 21 dropped provenance record
+CA678 PASS gem 21 dropped provenance marker
+CA678 PASS gem 21 dropped surface ledger units
+CA678 PASS gem 21 dropped original lot boundaries
+CA678 PASS gem 21 dropped contamination retained
+CA678 PASS gem 21 dropped location and quest flags
+CA678 PASS gem 21 held provenance record
+CA678 PASS gem 21 held provenance marker
+CA678 PASS gem 21 held surface ledger units
+CA678 PASS gem 21 held original lot boundaries
+CA678 PASS gem 21 held contamination retained
+CA678 PASS gem 21 held location and quest flags
+CA678 PASS gem 22 saved references
+CA678 PASS gem 22 world and held ownership
+CA678 PASS gem 22 split quantities
+CA678 PASS gem 22 material and tier identity
+CA678 PASS gem 22 distinct native stack
+CA678 PASS gem 22 original sprite and icon
+CA678 PASS gem 22 native collision and scale
+CA678 PASS gem 22 unit weight
+CA678 PASS gem 22 floor contact
+CA678 PASS gem 22 dropped provenance record
+CA678 PASS gem 22 dropped provenance marker
+CA678 PASS gem 22 dropped surface ledger units
+CA678 PASS gem 22 dropped original lot boundaries
+CA678 PASS gem 22 dropped contamination retained
+CA678 PASS gem 22 dropped location and quest flags
+CA678 PASS gem 22 held provenance record
+CA678 PASS gem 22 held provenance marker
+CA678 PASS gem 22 held surface ledger units
+CA678 PASS gem 22 held original lot boundaries
+CA678 PASS gem 22 held contamination retained
+CA678 PASS gem 22 held location and quest flags
+CA678 PASS gem 23 saved references
+CA678 PASS gem 23 world and held ownership
+CA678 PASS gem 23 split quantities
+CA678 PASS gem 23 material and tier identity
+CA678 PASS gem 23 distinct native stack
+CA678 PASS gem 23 original sprite and icon
+CA678 PASS gem 23 native collision and scale
+CA678 PASS gem 23 unit weight
+CA678 PASS gem 23 floor contact
+CA678 PASS gem 23 dropped provenance record
+CA678 PASS gem 23 dropped provenance marker
+CA678 PASS gem 23 dropped surface ledger units
+CA678 PASS gem 23 dropped original lot boundaries
+CA678 PASS gem 23 dropped contamination retained
+CA678 PASS gem 23 dropped location and quest flags
+CA678 PASS gem 23 held provenance record
+CA678 PASS gem 23 held provenance marker
+CA678 PASS gem 23 held surface ledger units
+CA678 PASS gem 23 held original lot boundaries
+CA678 PASS gem 23 held contamination retained
+CA678 PASS gem 23 held location and quest flags
+CA678 PASS gem 24 saved references
+CA678 PASS gem 24 world and held ownership
+CA678 PASS gem 24 split quantities
+CA678 PASS gem 24 material and tier identity
+CA678 PASS gem 24 distinct native stack
+CA678 PASS gem 24 original sprite and icon
+CA678 PASS gem 24 native collision and scale
+CA678 PASS gem 24 unit weight
+CA678 PASS gem 24 floor contact
+CA678 PASS gem 24 dropped provenance record
+CA678 PASS gem 24 dropped provenance marker
+CA678 PASS gem 24 dropped surface ledger units
+CA678 PASS gem 24 dropped original lot boundaries
+CA678 PASS gem 24 dropped contamination retained
+CA678 PASS gem 24 dropped location and quest flags
+CA678 PASS gem 24 held provenance record
+CA678 PASS gem 24 held provenance marker
+CA678 PASS gem 24 held surface ledger units
+CA678 PASS gem 24 held original lot boundaries
+CA678 PASS gem 24 held contamination retained
+CA678 PASS gem 24 held location and quest flags
+CA678 PASS gem 25 saved references
+CA678 PASS gem 25 world and held ownership
+CA678 PASS gem 25 split quantities
+CA678 PASS gem 25 material and tier identity
+CA678 PASS gem 25 distinct native stack
+CA678 PASS gem 25 original sprite and icon
+CA678 PASS gem 25 native collision and scale
+CA678 PASS gem 25 unit weight
+CA678 PASS gem 25 floor contact
+CA678 PASS gem 25 dropped provenance record
+CA678 PASS gem 25 dropped provenance marker
+CA678 PASS gem 25 dropped surface ledger units
+CA678 PASS gem 25 dropped original lot boundaries
+CA678 PASS gem 25 dropped contamination retained
+CA678 PASS gem 25 dropped location and quest flags
+CA678 PASS gem 25 held provenance record
+CA678 PASS gem 25 held provenance marker
+CA678 PASS gem 25 held surface ledger units
+CA678 PASS gem 25 held original lot boundaries
+CA678 PASS gem 25 held contamination retained
+CA678 PASS gem 25 held location and quest flags
+CA678 PASS gem 26 saved references
+CA678 PASS gem 26 world and held ownership
+CA678 PASS gem 26 split quantities
+CA678 PASS gem 26 material and tier identity
+CA678 PASS gem 26 distinct native stack
+CA678 PASS gem 26 original sprite and icon
+CA678 PASS gem 26 native collision and scale
+CA678 PASS gem 26 unit weight
+CA678 PASS gem 26 floor contact
+CA678 PASS gem 26 dropped provenance record
+CA678 PASS gem 26 dropped provenance marker
+CA678 PASS gem 26 dropped surface ledger units
+CA678 PASS gem 26 dropped original lot boundaries
+CA678 PASS gem 26 dropped contamination retained
+CA678 PASS gem 26 dropped location and quest flags
+CA678 PASS gem 26 held provenance record
+CA678 PASS gem 26 held provenance marker
+CA678 PASS gem 26 held surface ledger units
+CA678 PASS gem 26 held original lot boundaries
+CA678 PASS gem 26 held contamination retained
+CA678 PASS gem 26 held location and quest flags
+CA678 PASS gem 27 saved references
+CA678 PASS gem 27 world and held ownership
+CA678 PASS gem 27 split quantities
+CA678 PASS gem 27 material and tier identity
+CA678 PASS gem 27 distinct native stack
+CA678 PASS gem 27 original sprite and icon
+CA678 PASS gem 27 native collision and scale
+CA678 PASS gem 27 unit weight
+CA678 PASS gem 27 floor contact
+CA678 PASS gem 27 dropped provenance record
+CA678 PASS gem 27 dropped provenance marker
+CA678 PASS gem 27 dropped surface ledger units
+CA678 PASS gem 27 dropped original lot boundaries
+CA678 PASS gem 27 dropped contamination retained
+CA678 PASS gem 27 dropped location and quest flags
+CA678 PASS gem 27 held provenance record
+CA678 PASS gem 27 held provenance marker
+CA678 PASS gem 27 held surface ledger units
+CA678 PASS gem 27 held original lot boundaries
+CA678 PASS gem 27 held contamination retained
+CA678 PASS gem 27 held location and quest flags
+CA678 PASS gem 28 saved references
+CA678 PASS gem 28 world and held ownership
+CA678 PASS gem 28 split quantities
+CA678 PASS gem 28 material and tier identity
+CA678 PASS gem 28 distinct native stack
+CA678 PASS gem 28 original sprite and icon
+CA678 PASS gem 28 native collision and scale
+CA678 PASS gem 28 unit weight
+CA678 PASS gem 28 floor contact
+CA678 PASS gem 28 dropped provenance record
+CA678 PASS gem 28 dropped provenance marker
+CA678 PASS gem 28 dropped surface ledger units
+CA678 PASS gem 28 dropped original lot boundaries
+CA678 PASS gem 28 dropped contamination retained
+CA678 PASS gem 28 dropped location and quest flags
+CA678 PASS gem 28 held provenance record
+CA678 PASS gem 28 held provenance marker
+CA678 PASS gem 28 held surface ledger units
+CA678 PASS gem 28 held original lot boundaries
+CA678 PASS gem 28 held contamination retained
+CA678 PASS gem 28 held location and quest flags
+CA678 PASS gem 29 saved references
+CA678 PASS gem 29 world and held ownership
+CA678 PASS gem 29 split quantities
+CA678 PASS gem 29 material and tier identity
+CA678 PASS gem 29 distinct native stack
+CA678 PASS gem 29 original sprite and icon
+CA678 PASS gem 29 native collision and scale
+CA678 PASS gem 29 unit weight
+CA678 PASS gem 29 floor contact
+CA678 PASS gem 29 dropped provenance record
+CA678 PASS gem 29 dropped provenance marker
+CA678 PASS gem 29 dropped surface ledger units
+CA678 PASS gem 29 dropped original lot boundaries
+CA678 PASS gem 29 dropped contamination retained
+CA678 PASS gem 29 dropped location and quest flags
+CA678 PASS gem 29 held provenance record
+CA678 PASS gem 29 held provenance marker
+CA678 PASS gem 29 held surface ledger units
+CA678 PASS gem 29 held original lot boundaries
+CA678 PASS gem 29 held contamination retained
+CA678 PASS gem 29 held location and quest flags
+CA678 PASS gem 30 saved references
+CA678 PASS gem 30 world and held ownership
+CA678 PASS gem 30 split quantities
+CA678 PASS gem 30 material and tier identity
+CA678 PASS gem 30 distinct native stack
+CA678 PASS gem 30 original sprite and icon
+CA678 PASS gem 30 native collision and scale
+CA678 PASS gem 30 unit weight
+CA678 PASS gem 30 floor contact
+CA678 PASS gem 30 dropped provenance record
+CA678 PASS gem 30 dropped provenance marker
+CA678 PASS gem 30 dropped surface ledger units
+CA678 PASS gem 30 dropped original lot boundaries
+CA678 PASS gem 30 dropped contamination retained
+CA678 PASS gem 30 dropped location and quest flags
+CA678 PASS gem 30 held provenance record
+CA678 PASS gem 30 held provenance marker
+CA678 PASS gem 30 held surface ledger units
+CA678 PASS gem 30 held original lot boundaries
+CA678 PASS gem 30 held contamination retained
+CA678 PASS gem 30 held location and quest flags
+CA678 PASS gem 31 saved references
+CA678 PASS gem 31 world and held ownership
+CA678 PASS gem 31 split quantities
+CA678 PASS gem 31 material and tier identity
+CA678 PASS gem 31 distinct native stack
+CA678 PASS gem 31 original sprite and icon
+CA678 PASS gem 31 native collision and scale
+CA678 PASS gem 31 unit weight
+CA678 PASS gem 31 floor contact
+CA678 PASS gem 31 dropped provenance record
+CA678 PASS gem 31 dropped provenance marker
+CA678 PASS gem 31 dropped surface ledger units
+CA678 PASS gem 31 dropped original lot boundaries
+CA678 PASS gem 31 dropped contamination retained
+CA678 PASS gem 31 dropped location and quest flags
+CA678 PASS gem 31 held provenance record
+CA678 PASS gem 31 held provenance marker
+CA678 PASS gem 31 held surface ledger units
+CA678 PASS gem 31 held original lot boundaries
+CA678 PASS gem 31 held contamination retained
+CA678 PASS gem 31 held location and quest flags
+CA678 PASS gem 32 saved references
+CA678 PASS gem 32 world and held ownership
+CA678 PASS gem 32 split quantities
+CA678 PASS gem 32 material and tier identity
+CA678 PASS gem 32 distinct native stack
+CA678 PASS gem 32 original sprite and icon
+CA678 PASS gem 32 native collision and scale
+CA678 PASS gem 32 unit weight
+CA678 PASS gem 32 floor contact
+CA678 PASS gem 32 dropped provenance record
+CA678 PASS gem 32 dropped provenance marker
+CA678 PASS gem 32 dropped surface ledger units
+CA678 PASS gem 32 dropped original lot boundaries
+CA678 PASS gem 32 dropped contamination retained
+CA678 PASS gem 32 dropped location and quest flags
+CA678 PASS gem 32 held provenance record
+CA678 PASS gem 32 held provenance marker
+CA678 PASS gem 32 held surface ledger units
+CA678 PASS gem 32 held original lot boundaries
+CA678 PASS gem 32 held contamination retained
+CA678 PASS gem 32 held location and quest flags
+CA678 PASS gem 33 saved references
+CA678 PASS gem 33 world and held ownership
+CA678 PASS gem 33 split quantities
+CA678 PASS gem 33 material and tier identity
+CA678 PASS gem 33 distinct native stack
+CA678 PASS gem 33 original sprite and icon
+CA678 PASS gem 33 native collision and scale
+CA678 PASS gem 33 unit weight
+CA678 PASS gem 33 floor contact
+CA678 PASS gem 33 dropped provenance record
+CA678 PASS gem 33 dropped provenance marker
+CA678 PASS gem 33 dropped surface ledger units
+CA678 PASS gem 33 dropped original lot boundaries
+CA678 PASS gem 33 dropped contamination retained
+CA678 PASS gem 33 dropped location and quest flags
+CA678 PASS gem 33 held provenance record
+CA678 PASS gem 33 held provenance marker
+CA678 PASS gem 33 held surface ledger units
+CA678 PASS gem 33 held original lot boundaries
+CA678 PASS gem 33 held contamination retained
+CA678 PASS gem 33 held location and quest flags
+CA678 PASS gem 34 saved references
+CA678 PASS gem 34 world and held ownership
+CA678 PASS gem 34 split quantities
+CA678 PASS gem 34 material and tier identity
+CA678 PASS gem 34 distinct native stack
+CA678 PASS gem 34 original sprite and icon
+CA678 PASS gem 34 native collision and scale
+CA678 PASS gem 34 unit weight
+CA678 PASS gem 34 floor contact
+CA678 PASS gem 34 dropped provenance record
+CA678 PASS gem 34 dropped provenance marker
+CA678 PASS gem 34 dropped surface ledger units
+CA678 PASS gem 34 dropped original lot boundaries
+CA678 PASS gem 34 dropped contamination retained
+CA678 PASS gem 34 dropped location and quest flags
+CA678 PASS gem 34 held provenance record
+CA678 PASS gem 34 held provenance marker
+CA678 PASS gem 34 held surface ledger units
+CA678 PASS gem 34 held original lot boundaries
+CA678 PASS gem 34 held contamination retained
+CA678 PASS gem 34 held location and quest flags
+CA678 PASS gem 35 saved references
+CA678 PASS gem 35 world and held ownership
+CA678 PASS gem 35 split quantities
+CA678 PASS gem 35 material and tier identity
+CA678 PASS gem 35 distinct native stack
+CA678 PASS gem 35 original sprite and icon
+CA678 PASS gem 35 native collision and scale
+CA678 PASS gem 35 unit weight
+CA678 PASS gem 35 floor contact
+CA678 PASS gem 35 dropped provenance record
+CA678 PASS gem 35 dropped provenance marker
+CA678 PASS gem 35 dropped surface ledger units
+CA678 PASS gem 35 dropped original lot boundaries
+CA678 PASS gem 35 dropped contamination retained
+CA678 PASS gem 35 dropped location and quest flags
+CA678 PASS gem 35 held provenance record
+CA678 PASS gem 35 held provenance marker
+CA678 PASS gem 35 held surface ledger units
+CA678 PASS gem 35 held original lot boundaries
+CA678 PASS gem 35 held contamination retained
+CA678 PASS gem 35 held location and quest flags
+CA678 PASS gem 36 saved references
+CA678 PASS gem 36 world and held ownership
+CA678 PASS gem 36 split quantities
+CA678 PASS gem 36 material and tier identity
+CA678 PASS gem 36 distinct native stack
+CA678 PASS gem 36 original sprite and icon
+CA678 PASS gem 36 native collision and scale
+CA678 PASS gem 36 unit weight
+CA678 PASS gem 36 floor contact
+CA678 PASS gem 36 dropped provenance record
+CA678 PASS gem 36 dropped provenance marker
+CA678 PASS gem 36 dropped surface ledger units
+CA678 PASS gem 36 dropped original lot boundaries
+CA678 PASS gem 36 dropped contamination retained
+CA678 PASS gem 36 dropped location and quest flags
+CA678 PASS gem 36 held provenance record
+CA678 PASS gem 36 held provenance marker
+CA678 PASS gem 36 held surface ledger units
+CA678 PASS gem 36 held original lot boundaries
+CA678 PASS gem 36 held contamination retained
+CA678 PASS gem 36 held location and quest flags
+CA678 PASS gem 37 saved references
+CA678 PASS gem 37 world and held ownership
+CA678 PASS gem 37 split quantities
+CA678 PASS gem 37 material and tier identity
+CA678 PASS gem 37 distinct native stack
+CA678 PASS gem 37 original sprite and icon
+CA678 PASS gem 37 native collision and scale
+CA678 PASS gem 37 unit weight
+CA678 PASS gem 37 floor contact
+CA678 PASS gem 37 dropped provenance record
+CA678 PASS gem 37 dropped provenance marker
+CA678 PASS gem 37 dropped surface ledger units
+CA678 PASS gem 37 dropped original lot boundaries
+CA678 PASS gem 37 dropped contamination retained
+CA678 PASS gem 37 dropped location and quest flags
+CA678 PASS gem 37 held provenance record
+CA678 PASS gem 37 held provenance marker
+CA678 PASS gem 37 held surface ledger units
+CA678 PASS gem 37 held original lot boundaries
+CA678 PASS gem 37 held contamination retained
+CA678 PASS gem 37 held location and quest flags
+CA678 PASS gem 38 saved references
+CA678 PASS gem 38 world and held ownership
+CA678 PASS gem 38 split quantities
+CA678 PASS gem 38 material and tier identity
+CA678 PASS gem 38 distinct native stack
+CA678 PASS gem 38 original sprite and icon
+CA678 PASS gem 38 native collision and scale
+CA678 PASS gem 38 unit weight
+CA678 PASS gem 38 floor contact
+CA678 PASS gem 38 dropped provenance record
+CA678 PASS gem 38 dropped provenance marker
+CA678 PASS gem 38 dropped surface ledger units
+CA678 PASS gem 38 dropped original lot boundaries
+CA678 PASS gem 38 dropped contamination retained
+CA678 PASS gem 38 dropped location and quest flags
+CA678 PASS gem 38 held provenance record
+CA678 PASS gem 38 held provenance marker
+CA678 PASS gem 38 held surface ledger units
+CA678 PASS gem 38 held original lot boundaries
+CA678 PASS gem 38 held contamination retained
+CA678 PASS gem 38 held location and quest flags
+CA678 PASS gem 39 saved references
+CA678 PASS gem 39 world and held ownership
+CA678 PASS gem 39 split quantities
+CA678 PASS gem 39 material and tier identity
+CA678 PASS gem 39 distinct native stack
+CA678 PASS gem 39 original sprite and icon
+CA678 PASS gem 39 native collision and scale
+CA678 PASS gem 39 unit weight
+CA678 PASS gem 39 floor contact
+CA678 PASS gem 39 dropped provenance record
+CA678 PASS gem 39 dropped provenance marker
+CA678 PASS gem 39 dropped surface ledger units
+CA678 PASS gem 39 dropped original lot boundaries
+CA678 PASS gem 39 dropped contamination retained
+CA678 PASS gem 39 dropped location and quest flags
+CA678 PASS gem 39 held provenance record
+CA678 PASS gem 39 held provenance marker
+CA678 PASS gem 39 held surface ledger units
+CA678 PASS gem 39 held original lot boundaries
+CA678 PASS gem 39 held contamination retained
+CA678 PASS gem 39 held location and quest flags
+CA678 PASS gem 40 saved references
+CA678 PASS gem 40 world and held ownership
+CA678 PASS gem 40 split quantities
+CA678 PASS gem 40 material and tier identity
+CA678 PASS gem 40 distinct native stack
+CA678 PASS gem 40 original sprite and icon
+CA678 PASS gem 40 native collision and scale
+CA678 PASS gem 40 unit weight
+CA678 PASS gem 40 floor contact
+CA678 PASS gem 40 dropped provenance record
+CA678 PASS gem 40 dropped provenance marker
+CA678 PASS gem 40 dropped surface ledger units
+CA678 PASS gem 40 dropped original lot boundaries
+CA678 PASS gem 40 dropped contamination retained
+CA678 PASS gem 40 dropped location and quest flags
+CA678 PASS gem 40 held provenance record
+CA678 PASS gem 40 held provenance marker
+CA678 PASS gem 40 held surface ledger units
+CA678 PASS gem 40 held original lot boundaries
+CA678 PASS gem 40 held contamination retained
+CA678 PASS gem 40 held location and quest flags
+CA678 PASS gem 41 saved references
+CA678 PASS gem 41 world and held ownership
+CA678 PASS gem 41 split quantities
+CA678 PASS gem 41 material and tier identity
+CA678 PASS gem 41 distinct native stack
+CA678 PASS gem 41 original sprite and icon
+CA678 PASS gem 41 native collision and scale
+CA678 PASS gem 41 unit weight
+CA678 PASS gem 41 floor contact
+CA678 PASS gem 41 dropped provenance record
+CA678 PASS gem 41 dropped provenance marker
+CA678 PASS gem 41 dropped surface ledger units
+CA678 PASS gem 41 dropped original lot boundaries
+CA678 PASS gem 41 dropped contamination retained
+CA678 PASS gem 41 dropped location and quest flags
+CA678 PASS gem 41 held provenance record
+CA678 PASS gem 41 held provenance marker
+CA678 PASS gem 41 held surface ledger units
+CA678 PASS gem 41 held original lot boundaries
+CA678 PASS gem 41 held contamination retained
+CA678 PASS gem 41 held location and quest flags
+CA678 COMPLETE failures=0
+Game saved.

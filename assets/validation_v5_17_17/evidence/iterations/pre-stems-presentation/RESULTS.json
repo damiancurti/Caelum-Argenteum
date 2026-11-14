@@ -1,0 +1,111 @@
+{
+  "issue": 678,
+  "kind": "gems",
+  "scope": "Measure actual inventory drop classes before/after model installation.\n\nA single sequential baseline/candidate pair in an isolated room; this is not a\ncrowd budget, campaign performance acceptance or repeatability estimate.",
+  "baseline_sha256": "b5c69300c222b1a7527f0d0cd8617d0b40ee3b58fa420f4fd796f6d61beb5797",
+  "runtime_sha256": "ffd14f26e8d773bd944f81248c00e3a5813ae097dc5e87e42a25b934c315833b",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+  "runs": [
+    {
+      "kind": "sprites",
+      "bodies": 14,
+      "pid": 18256,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 230734605.4867,
+        "END": 230754625.9062
+      },
+      "fixture_sha256": "f05b1c1d361e53a1a0c360fc7f9b30a2a691c54577bf6bc7028086dfd0029049",
+      "passed": true,
+      "observed_completion_counts": [
+        [
+          14,
+          700
+        ]
+      ],
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.572339428571425,
+        "p50_ms": 28.5858,
+        "p95_ms": 29.31,
+        "p99_ms": 29.5765,
+        "max_ms": 29.8793
+      },
+      "presentation": {
+        "pid": 18256,
+        "trace_sha256": "005e96cad2d58a7650bd2725989f96843da6965e7885a31781fcac3daa94d77b",
+        "rows": 25599,
+        "scene_presents": 17060,
+        "mean_present_fps": 973.6748825073017,
+        "present_intervals": {
+          "samples": 17059,
+          "mean_ms": 1.0270368661712919,
+          "p50_ms": 0.9940000176429749,
+          "p95_ms": 1.263299971818924,
+          "p99_ms": 1.5352999866008759,
+          "max_ms": 2.3944000005722046
+        },
+        "native_call_duration": {
+          "samples": 17060,
+          "mean_ms": 0.0753491326677422,
+          "p50_ms": 0.0755000114440918,
+          "p95_ms": 0.09850001335144043,
+          "p99_ms": 0.12210002541542053,
+          "max_ms": 0.3325999975204468
+        }
+      }
+    },
+    {
+      "kind": "models",
+      "bodies": 14,
+      "pid": 35404,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 230768670.2085,
+        "END": 230788592.2978
+      },
+      "fixture_sha256": "f05b1c1d361e53a1a0c360fc7f9b30a2a691c54577bf6bc7028086dfd0029049",
+      "passed": true,
+      "observed_completion_counts": [
+        [
+          14,
+          700
+        ]
+      ],
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.571516142857146,
+        "p50_ms": 28.5984,
+        "p95_ms": 29.2726,
+        "p99_ms": 29.4557,
+        "max_ms": 29.8731
+      },
+      "presentation": {
+        "pid": 35404,
+        "trace_sha256": "88bcde5cdd4e76c5424ef117afea540f636ee177e6f52b205dee1972173d3037",
+        "rows": 24977,
+        "scene_presents": 16586,
+        "mean_present_fps": 952.0104532060684,
+        "present_intervals": {
+          "samples": 16585,
+          "mean_ms": 1.0504086343089176,
+          "p50_ms": 1.0199999809265137,
+          "p95_ms": 1.3005000054836273,
+          "p99_ms": 1.5374999940395355,
+          "max_ms": 2.076999992132187
+        },
+        "native_call_duration": {
+          "samples": 16586,
+          "mean_ms": 0.07586122645869497,
+          "p50_ms": 0.07400000095367432,
+          "p95_ms": 0.09929999709129333,
+          "p99_ms": 0.12800002098083496,
+          "max_ms": 0.314300000667572
+        }
+      }
+    }
+  ]
+}

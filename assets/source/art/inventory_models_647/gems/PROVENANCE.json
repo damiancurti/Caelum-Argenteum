@@ -1,0 +1,7 @@
+{
+  "issue": 678,
+  "ownership": "Original Caelum Argenteum material PNGs and the previously generated owned #647 consumable metal atlas; originals remain byte-identical.",
+  "creation": "New closed deterministic geometry traced from existing ornament/crystal silhouettes; no external mesh, bitmap generation or raster editing.",
+  "editable_sources": "DESIGN.json and separate OBJ groups with unchanged portable source textures.",
+  "limits": "Painted front detail is inherited from 128-pixel icons; reverse engraving and worn fitting are not authored. Raw and gem component images remain separate even where silhouettes match."
+}
