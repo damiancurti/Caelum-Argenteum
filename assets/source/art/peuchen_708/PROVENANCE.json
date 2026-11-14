@@ -1,0 +1,21 @@
+{
+  "issue": 708,
+  "owner": "Dami\u00e1n Curti / Caelum Argenteum",
+  "reference": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/54_peuchen.png",
+  "new_texture": {
+    "file": "materials.png",
+    "tool": "built-in image_gen",
+    "prompt": "MATERIALS_PROMPT.json"
+  },
+  "reused": [
+    "Owned Nahuelito iris.png and dark.png copied byte-for-byte."
+  ],
+  "method": "Original editable anatomy and thick wing membrane geometry. Existing combat frame mapping; new quadruped poses are presentation data only.",
+  "status": "Candidate pending native validation and author review.",
+  "additional_texture": {
+    "file": "scales.png",
+    "tool": "built-in image_gen",
+    "prompt": "SCALES_PROMPT.json",
+    "reason": "First native view showed oversized scales from the atlas; denser separate material preserves earlier atlas pixels."
+  }
+}

@@ -13,7 +13,7 @@ except ImportError:
 ROOT=Path(__file__).resolve().parents[2]
 
 
-def validate(root=ROOT, source_relative='assets/source/art/beast_men_680', model_relative='models/caelum/folklore/beastmen', definition='caelum/data/beast_men_combat.modeldef', mesh_builder=geometry):
+def validate(root=ROOT, source_relative='assets/source/art/beast_men_680', model_relative='models/caelum/folklore/beastmen', definition='caelum/data/beast_men_combat.modeldef', mesh_builder=geometry, frame_mapping_only=False):
     errors=[]
     try:
         source=root/source_relative
@@ -29,7 +29,11 @@ def validate(root=ROOT, source_relative='assets/source/art/beast_men_680', model
         blocks=re.findall(r'\bModel\s+(\w+)\s*\{([^}]+)\}',modeldef)
         assert [name for name,_ in blocks]==[v['actor'] for v in config['species'].values()],'Only the configured specific creature classes may be bound'
         inherited=json.loads((root/'assets/source/art/pombero_461/ANIMATION.json').read_text())
-        assert config['frames']==inherited['frames'],'Inherited combat-state mapping changed'
+        if frame_mapping_only:
+            fields=('sprite','letter','action')
+            assert [tuple(r[k] for k in fields) for r in config['frames']]==[tuple(r[k] for k in fields) for r in inherited['frames']],'Inherited combat-state mapping changed'
+        else:
+            assert config['frames']==inherited['frames'],'Inherited combat-state mapping changed'
         for (species,item),(actor,block) in zip(config['species'].items(),blocks):
             info=report['species'][species]
             design=json.loads((root/item['design']).read_text(encoding='utf-8'))

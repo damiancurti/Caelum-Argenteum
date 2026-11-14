@@ -1,0 +1,2 @@
+gameinfo { AddEventHandlers="CA708Events" }
+map CA455V "Peuchen inherited combat model" { sky1="CABASKY",0 nointermission }
