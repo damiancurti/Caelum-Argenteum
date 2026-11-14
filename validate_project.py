@@ -33,6 +33,7 @@ from assets.generators.validate_inventory_camp_models import validate as invento
 from assets.generators.validate_inventory_document_models import validate as inventory_document_problems
 from assets.generators.validate_nahuelito_combat_model import validate as nahuelito_combat_problems
 from assets.generators.validate_cuero_combat_model import validate as cuero_combat_problems
+from assets.generators.validate_beast_men_models import validate as beast_men_problems
 from assets.generators.validate_pombero_combat_model import validate as pombero_combat_problems
 from assets.generators.validate_regional_materials import validate as regional_material_problems
 from assets.generators.validate_map02_redesign import audit as sewer_redesign_audit
@@ -112,6 +113,7 @@ def validate(root):
     errors.extend(inventory_ingot_problems(root))
     errors.extend(regional_material_problems(root))
     errors.extend(pombero_combat_problems(root))
+    errors.extend(beast_men_problems(root))
     errors.extend(cuero_combat_problems(root))
     errors.extend(nahuelito_combat_problems(root))
     errors.extend(barracas_installation_problems(root))
