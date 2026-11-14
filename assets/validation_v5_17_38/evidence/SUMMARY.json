@@ -1,0 +1,1776 @@
+{
+  "issue": 720,
+  "parent_issue": 461,
+  "version": "5.17.38",
+  "date": "2026-11-14",
+  "author_accepted": false,
+  "scope": "CA-FOLK-049 unique Monai and051 repeatable Mboi Tata native models on existing combat classes, all23 inherited frame/action identities. Provisional Mandinga rules, collision, actor scale, protected identities and saves unchanged.",
+  "runtime": {
+    "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\build\\issue720-serpents01.pk3",
+    "sha256": "2ba4cff4b6d3e01be3efaf0fafbb15b8fc4e41dc0c84d8c474ae747f500ee24d",
+    "source_entries": 18412,
+    "exact_source_bytes": true
+  },
+  "baseline": {
+    "sha256": "30b680f409d4cffebca0fced256c674610c340654229cdbc3a09a713f49675d4",
+    "new_resources": [
+      "caelum/data/serpent_combat.modeldef",
+      "models/caelum/folklore/serpents/dark.png",
+      "models/caelum/folklore/serpents/iris.png",
+      "models/caelum/folklore/serpents/materials.png",
+      "models/caelum/folklore/serpents/mboi_tata.md3",
+      "models/caelum/folklore/serpents/mboi_tata_scales.png",
+      "models/caelum/folklore/serpents/monai.md3",
+      "models/caelum/folklore/serpents/monai_scales.png"
+    ],
+    "changed_resources": [
+      "MODELDEF",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "all_other_runtime_bytes_identical": true
+  },
+  "static": {
+    "errors": [],
+    "geometry": {
+      "monai": {
+        "closed_components": 13,
+        "attachment_witnesses": 12,
+        "rooted_components": 13,
+        "combat_frames": 23,
+        "collapsed_native_triangles": 0,
+        "native_pose_floor_values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "independent_posed_attachment_checks": 96,
+        "attachment_frames": [
+          0,
+          10,
+          17,
+          22
+        ]
+      },
+      "mboi_tata": {
+        "closed_components": 33,
+        "attachment_witnesses": 32,
+        "rooted_components": 33,
+        "combat_frames": 23,
+        "collapsed_native_triangles": 0,
+        "native_pose_floor_values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "independent_posed_attachment_checks": 256,
+        "attachment_frames": [
+          0,
+          10,
+          17,
+          22
+        ]
+      }
+    },
+    "installed_export_check_passed": true,
+    "exports": {
+      "monai": {
+        "actor": "CaelumBestiary049",
+        "catalogue_id": "CA-FOLK-049",
+        "vertices": 11379,
+        "triangles": 20576,
+        "hierarchical_parts": 13,
+        "surfaces": [
+          {
+            "material": "scales",
+            "vertices": 4096,
+            "triangles": 7322
+          },
+          {
+            "material": "scales",
+            "vertices": 2345,
+            "triangles": 4262
+          },
+          {
+            "material": "atlas",
+            "vertices": 3173,
+            "triangles": 5568
+          },
+          {
+            "material": "iris",
+            "vertices": 816,
+            "triangles": 1568
+          },
+          {
+            "material": "dark",
+            "vertices": 976,
+            "triangles": 1856
+          }
+        ],
+        "native_bounds": [
+          {
+            "min": [
+              -54.57365553718107,
+              -32.66146948461675,
+              0.0
+            ],
+            "max": [
+              37.722527717747845,
+              37.438495376763264,
+              101.71870475918095
+            ]
+          },
+          {
+            "min": [
+              -54.573418327181635,
+              -32.87181192074849,
+              0.0
+            ],
+            "max": [
+              37.72252812096693,
+              37.39886096149949,
+              102.21542383378033
+            ]
+          },
+          {
+            "min": [
+              -54.57216304065894,
+              -31.92248935294097,
+              0.0
+            ],
+            "max": [
+              37.722515526623916,
+              35.43437021380865,
+              101.71698270318464
+            ]
+          },
+          {
+            "min": [
+              -54.57325887390824,
+              -34.303602470284595,
+              0.0
+            ],
+            "max": [
+              37.722536734838414,
+              38.512595938466255,
+              101.71956461834807
+            ]
+          },
+          {
+            "min": [
+              -54.574955246383965,
+              -33.47792367588396,
+              0.0
+            ],
+            "max": [
+              37.72253839066327,
+              39.493738084239546,
+              101.71844511091774
+            ]
+          },
+          {
+            "min": [
+              -54.57403715377116,
+              -31.072462793291006,
+              0.0
+            ],
+            "max": [
+              37.722517640325194,
+              36.466839362015335,
+              101.71972247550403
+            ]
+          },
+          {
+            "min": [
+              -54.572837988242696,
+              -32.231557843796494,
+              0.0
+            ],
+            "max": [
+              37.7225210314557,
+              36.30666077576465,
+              101.71733601606654
+            ]
+          },
+          {
+            "min": [
+              -54.57343323512037,
+              -33.5867227985016,
+              0.0
+            ],
+            "max": [
+              37.72253293483959,
+              38.04076570854665,
+              101.71959933479401
+            ]
+          },
+          {
+            "min": [
+              -54.57365553718107,
+              -32.66146948461675,
+              0.0
+            ],
+            "max": [
+              37.722527717747845,
+              37.438495376763264,
+              100.7219287361714
+            ]
+          },
+          {
+            "min": [
+              -54.57365553718107,
+              -32.66146948461675,
+              0.0
+            ],
+            "max": [
+              37.722527717747845,
+              37.438495376763264,
+              102.70282145982688
+            ]
+          },
+          {
+            "min": [
+              -54.57365553718107,
+              -32.66146948461675,
+              0.0
+            ],
+            "max": [
+              40.93951632247894,
+              37.438495376763264,
+              100.7465209571734
+            ]
+          },
+          {
+            "min": [
+              -54.5737528033297,
+              -33.44638279276354,
+              0.0
+            ],
+            "max": [
+              37.722533350065916,
+              38.22314575818116,
+              99.72525655048257
+            ]
+          },
+          {
+            "min": [
+              -54.573418327181635,
+              -32.87181192074849,
+              0.0
+            ],
+            "max": [
+              40.629779670400616,
+              37.39886096149949,
+              89.91314503478466
+            ]
+          },
+          {
+            "min": [
+              -54.573418327181635,
+              -32.87181192074849,
+              0.0
+            ],
+            "max": [
+              47.20899074373699,
+              37.39886096149949,
+              77.99191597126554
+            ]
+          },
+          {
+            "min": [
+              -54.573418327181635,
+              -32.87181192074849,
+              0.0
+            ],
+            "max": [
+              53.659876272369324,
+              37.39886096149949,
+              65.93486973899269
+            ]
+          },
+          {
+            "min": [
+              -54.573418327181635,
+              -32.87181192074849,
+              0.0
+            ],
+            "max": [
+              59.977453446375684,
+              37.39886096149949,
+              53.728691552295565
+            ]
+          },
+          {
+            "min": [
+              -54.573418327181635,
+              -32.87181192074849,
+              0.0
+            ],
+            "max": [
+              66.16524883275638,
+              37.39886096149949,
+              41.369181774169434
+            ]
+          },
+          {
+            "min": [
+              -54.573418327181635,
+              -32.87181192074849,
+              0.0
+            ],
+            "max": [
+              72.31804978823783,
+              37.39886096149949,
+              39.70604376488238
+            ]
+          },
+          {
+            "min": [
+              -54.57365553718107,
+              -32.66146948461675,
+              0.0
+            ],
+            "max": [
+              37.722527717747845,
+              37.438495376763264,
+              101.72494398778099
+            ]
+          },
+          {
+            "min": [
+              -54.57365553718107,
+              -32.66146948461675,
+              0.0
+            ],
+            "max": [
+              37.9360565617479,
+              37.438495376763264,
+              102.2279860403287
+            ]
+          },
+          {
+            "min": [
+              -54.57365553718107,
+              -32.66146948461675,
+              0.0
+            ],
+            "max": [
+              37.722527717747845,
+              37.438495376763264,
+              102.72173422924476
+            ]
+          },
+          {
+            "min": [
+              -54.57365553718107,
+              -32.66146948461675,
+              0.0
+            ],
+            "max": [
+              37.722527717747845,
+              37.438495376763264,
+              103.21230468642918
+            ]
+          },
+          {
+            "min": [
+              -54.57365553718107,
+              -32.66146948461675,
+              0.0
+            ],
+            "max": [
+              70.84593981700965,
+              37.438495376763264,
+              35.8547480586506
+            ]
+          }
+        ],
+        "modeldef_scale": 1.6246984386132162,
+        "native_profile": {
+          "Height": 51.644444,
+          "Radius": 14.755556,
+          "Scale": 0.3125
+        },
+        "source_sha256": "7aed494d3c1c5032df15ba4846ed6160fca76a0993621e1a7b237a558deaf167",
+        "pose_floors": [
+          1.281295240819043,
+          1.2813961584096836,
+          1.2820766880948105,
+          1.281374757681303,
+          1.2806142803617013,
+          1.2812169005253442,
+          1.2817233752076738,
+          1.2813400390756722,
+          1.281295240819043,
+          1.281295240819043,
+          1.281295240819043,
+          1.2811956404493272,
+          1.2813961584096836,
+          1.2813961584096836,
+          1.2813961584096836,
+          1.2813961584096836,
+          1.2813961584096836,
+          -3.695613462403191,
+          1.281295240819043,
+          1.281295240819043,
+          1.281295240819043,
+          1.281295240819043,
+          0.8224417818347458
+        ]
+      },
+      "mboi_tata": {
+        "actor": "CaelumBestiary051",
+        "catalogue_id": "CA-FOLK-051",
+        "vertices": 13641,
+        "triangles": 23784,
+        "hierarchical_parts": 33,
+        "surfaces": [
+          {
+            "material": "scales",
+            "vertices": 4096,
+            "triangles": 7322
+          },
+          {
+            "material": "scales",
+            "vertices": 2345,
+            "triangles": 4262
+          },
+          {
+            "material": "atlas",
+            "vertices": 4096,
+            "triangles": 6690
+          },
+          {
+            "material": "atlas",
+            "vertices": 1351,
+            "triangles": 2086
+          },
+          {
+            "material": "iris",
+            "vertices": 816,
+            "triangles": 1568
+          },
+          {
+            "material": "dark",
+            "vertices": 976,
+            "triangles": 1856
+          }
+        ],
+        "native_bounds": [
+          {
+            "min": [
+              -54.57365553718107,
+              -32.66146948461675,
+              0.0
+            ],
+            "max": [
+              37.722527717747845,
+              37.438495376763264,
+              101.71870475918095
+            ]
+          },
+          {
+            "min": [
+              -54.573418327181635,
+              -32.87181192074849,
+              0.0
+            ],
+            "max": [
+              37.72252812096693,
+              37.39886096149949,
+              102.21340231532318
+            ]
+          },
+          {
+            "min": [
+              -54.57216304065894,
+              -31.92248935294097,
+              0.0
+            ],
+            "max": [
+              37.722515526623916,
+              35.43437021380865,
+              101.71638432000529
+            ]
+          },
+          {
+            "min": [
+              -54.57325887390824,
+              -34.303602470284595,
+              0.0
+            ],
+            "max": [
+              37.722536734838414,
+              38.512595938466255,
+              101.72016258884402
+            ]
+          },
+          {
+            "min": [
+              -54.574955246383965,
+              -33.47792367588396,
+              0.0
+            ],
+            "max": [
+              37.72253839066327,
+              39.493738084239546,
+              101.71784672773839
+            ]
+          },
+          {
+            "min": [
+              -54.57403715377116,
+              -31.072462793291006,
+              0.0
+            ],
+            "max": [
+              37.722517640325194,
+              36.466839362015335,
+              101.72032044599997
+            ]
+          },
+          {
+            "min": [
+              -54.572837988242696,
+              -32.231557843796494,
+              0.0
+            ],
+            "max": [
+              37.7225210314557,
+              36.30666077576465,
+              101.71673763288386
+            ]
+          },
+          {
+            "min": [
+              -54.57343323512037,
+              -33.5867227985016,
+              0.0
+            ],
+            "max": [
+              37.72253293483959,
+              38.04076570854665,
+              101.72019730391476
+            ]
+          },
+          {
+            "min": [
+              -54.57365553718107,
+              -32.66146948461675,
+              0.0
+            ],
+            "max": [
+              37.722527717747845,
+              37.438495376763264,
+              100.72398254913833
+            ]
+          },
+          {
+            "min": [
+              -54.57365553718107,
+              -32.66146948461675,
+              0.0
+            ],
+            "max": [
+              37.722527717747845,
+              37.438495376763264,
+              102.6927664271937
+            ]
+          },
+          {
+            "min": [
+              -54.57365553718107,
+              -32.66146948461675,
+              0.0
+            ],
+            "max": [
+              40.93951632247894,
+              37.438495376763264,
+              100.76438800973855
+            ]
+          },
+          {
+            "min": [
+              -54.5737528033297,
+              -33.44638279276354,
+              0.0
+            ],
+            "max": [
+              37.722533350065916,
+              38.22314575818116,
+              99.72937128551729
+            ]
+          },
+          {
+            "min": [
+              -54.573418327181635,
+              -32.87181192074849,
+              0.0
+            ],
+            "max": [
+              40.629779670400616,
+              37.39886096149949,
+              90.18597371028693
+            ]
+          },
+          {
+            "min": [
+              -54.573418327181635,
+              -32.87181192074849,
+              0.0
+            ],
+            "max": [
+              47.20899074373699,
+              37.39886096149949,
+              78.54827338988622
+            ]
+          },
+          {
+            "min": [
+              -54.573418327181635,
+              -32.87181192074849,
+              0.0
+            ],
+            "max": [
+              53.659876272369324,
+              37.39886096149949,
+              66.78011647402127
+            ]
+          },
+          {
+            "min": [
+              -54.573418327181635,
+              -32.87181192074849,
+              0.0
+            ],
+            "max": [
+              59.977453446375684,
+              37.39886096149949,
+              54.912464666526006
+            ]
+          },
+          {
+            "min": [
+              -54.573418327181635,
+              -32.87181192074849,
+              0.0
+            ],
+            "max": [
+              66.16524883275638,
+              37.39886096149949,
+              43.37746158322621
+            ]
+          },
+          {
+            "min": [
+              -54.573418327181635,
+              -32.87181192074849,
+              0.0
+            ],
+            "max": [
+              72.31804978823783,
+              37.39886096149949,
+              45.3443811149758
+            ]
+          },
+          {
+            "min": [
+              -54.57365553718107,
+              -32.66146948461675,
+              0.0
+            ],
+            "max": [
+              37.722527717747845,
+              37.438495376763264,
+              101.72892262914581
+            ]
+          },
+          {
+            "min": [
+              -54.57365553718107,
+              -32.66146948461675,
+              0.0
+            ],
+            "max": [
+              37.9360565617479,
+              37.438495376763264,
+              102.2339105437949
+            ]
+          },
+          {
+            "min": [
+              -54.57365553718107,
+              -32.66146948461675,
+              0.0
+            ],
+            "max": [
+              37.722527717747845,
+              37.438495376763264,
+              102.72366400840114
+            ]
+          },
+          {
+            "min": [
+              -54.57365553718107,
+              -32.66146948461675,
+              0.0
+            ],
+            "max": [
+              37.722527717747845,
+              37.438495376763264,
+              103.20824049346767
+            ]
+          },
+          {
+            "min": [
+              -54.57365553718107,
+              -32.66146948461675,
+              0.0
+            ],
+            "max": [
+              70.84593981700965,
+              37.438495376763264,
+              41.3316205850403
+            ]
+          }
+        ],
+        "modeldef_scale": 1.6246984386132162,
+        "native_profile": {
+          "Height": 51.644444,
+          "Radius": 14.755556,
+          "Scale": 0.3125
+        },
+        "source_sha256": "283f5938090cf58dddac3d9695d1a394186a85b6c82742a42c9a3c76ff123d62",
+        "pose_floors": [
+          1.281295240819043,
+          1.2813961584096836,
+          1.2820766880948105,
+          1.281374757681303,
+          1.2806142803617013,
+          1.2812169005253442,
+          1.2817233752076738,
+          1.2813400390756722,
+          1.281295240819043,
+          1.281295240819043,
+          1.281295240819043,
+          1.2811956404493272,
+          1.2813961584096836,
+          1.2813961584096836,
+          1.2813961584096836,
+          1.2813961584096836,
+          1.2813961584096836,
+          -3.695613462403191,
+          1.281295240819043,
+          1.281295240819043,
+          1.281295240819043,
+          1.281295240819043,
+          0.8224417818347458
+        ]
+      }
+    },
+    "project_validation_passed": true
+  },
+  "continuity": {
+    "monai": {
+      "issue": 720,
+      "species": "monai",
+      "studio": false,
+      "runtime_sha256": "2ba4cff4b6d3e01be3efaf0fafbb15b8fc4e41dc0c84d8c474ae747f500ee24d",
+      "baseline_sha256": "30b680f409d4cffebca0fced256c674610c340654229cdbc3a09a713f49675d4",
+      "fixture_sha256": "860f1c43f7f6befca58fbb45551929749c5880de17d00b7684d7eb6cc76ff2fa",
+      "model_overlay_sha256": null,
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runs": [
+        {
+          "phase": "baseline",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "old-save-model",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "fresh-model",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 51,
+          "expected_assertions": 51,
+          "errors": [],
+          "captures": {
+            "empty-view-0.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+            "empty-view-6.png": "5a2ba58ed5f6efbf157b5e78e666b179a2b4729e99130938b9182d383bdc1bcf",
+            "empty.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+            "pose-00-idle.png": "e89f5c488248ded1a60c14e2c46bfcc6e26beaf6ff3330a0b5ae1c250864da05",
+            "pose-01-idle.png": "e4887da30c459535415ae08dfde78bcec44f1e02121cb0f4fd9c3d92b3aabda3",
+            "pose-02-run.png": "6e2657af85c733a7a39f1b0a54b9a9980eaf5a1ba4521fbed7941c8cb88bd330",
+            "pose-03-run.png": "74b382c1f672cb38b9b0a2e56f0d84e84cbdea50e1ea7d77bcead1d5e8030aed",
+            "pose-04-run.png": "65aa9a82d8c83b4ad9d234ad301126d1094efc955a8ac395f7730289f27e3cb6",
+            "pose-05-run.png": "74ffeb737bb3ad099f78350fe3ef4ed2cc0ae96213d57ecb715179dee1f88467",
+            "pose-06-walk.png": "21d18f18e3c8e562b011ffa4f4f7535b8eae41016a95e178a95f2eaa1755a6e2",
+            "pose-07-walk.png": "a6916b5cc584e48c10889921be4c7268505d57f2f1af9f51d871dca8cee1f8df",
+            "pose-08-stun.png": "1dc0d109287c5bc05cef25fad7e817e263a197280f80c910200ed265d2b1b1dc",
+            "pose-09-attack_prepare.png": "d1c3f6795e80d54a3aaf3b13926c93106b4f4f11d5e4f16ce9e88c1759f91d83",
+            "pose-10-attack_release.png": "1a31bdf6ffec3c3264260e1d96663f323687f5868663c1a9c67a62fcf788cd13",
+            "pose-11-pain.png": "859027b6beddef715b16c6e932156291863db8a0665843ca34ce9d945969b8ff",
+            "pose-12-death.png": "db7353ed0646b4d4acd311d801f22a0b8dd4538d3af95925edcfa3aaf636eb26",
+            "pose-13-death.png": "92103d454203d2298f7b968e44885beca93a9fcaf840c568296f45141c43b372",
+            "pose-14-death.png": "6f673084a5288c5d28e51331cded2f243c77d5f018bf32e0fb11aa118af0aafe",
+            "pose-15-death.png": "9379bca5a851f3709a9262eb8fc99165356f7875940f4527470f4936a23f7a7d",
+            "pose-16-death.png": "9c15a81b683da366773144f882653e79066ff2e35f827b9a070c9a306acaf762",
+            "pose-17-death.png": "8bf949c9889878a53c76e79de2235e5740264fbcc16f5346ce8de038903a5a06",
+            "pose-18-breath.png": "123a973d4ade598a1d5ee4dbbae29652bcc96b9182be969948badfe75c3bb434",
+            "pose-19-breath.png": "99546f476ff95f33d02abed97922c740a7a05f19a8b1e207186575dbc0017482",
+            "pose-20-breath.png": "340ea6c049e97ec9132cff0d78323b58b88050ea2cdd8f17c2d583faed038b73",
+            "pose-21-breath.png": "70b28d3102e61e28c72d33065547474de2baddf6f89bfb2c9072d985b459838a",
+            "pose-22-rest.png": "63a687fbe2842227bf69e45e7997fdc6d2e355109b71c78722c14fa6b12645c8",
+            "view-front.png": "35ccc4ae78895ec6967bcb65ccae48b15bed9b8d887824bf556406a6ef2af6c8",
+            "view-head-front.png": "7ac9f8661b1b491c57113e680ab21688ed88f9db79907a2bbafcc25fa46bcac0",
+            "view-head-oblique.png": "2f09bbe27063f87707d5f3373cbc9882d9047cb99511af8ee2f531d4da4bc9d7",
+            "view-lying-oblique.png": "63a687fbe2842227bf69e45e7997fdc6d2e355109b71c78722c14fa6b12645c8",
+            "view-rear.png": "fb6b5c082520a49dc21f500f20470ddc5a841f7098c67a6fa604355a469f8aee",
+            "view-side.png": "bbe1a6fc69cc0656b982b88b79833299fbcb2369d9ea8b06994bcc756473c7ed"
+          },
+          "visible_pose_pixels": {
+            "pose-00-idle.png": 15302,
+            "pose-01-idle.png": 15362,
+            "pose-02-run.png": 14906,
+            "pose-03-run.png": 15445,
+            "pose-04-run.png": 15631,
+            "pose-05-run.png": 15276,
+            "pose-06-walk.png": 15008,
+            "pose-07-walk.png": 15351,
+            "pose-08-stun.png": 15084,
+            "pose-09-attack_prepare.png": 15405,
+            "pose-10-attack_release.png": 16121,
+            "pose-11-pain.png": 15256,
+            "pose-12-death.png": 19610,
+            "pose-13-death.png": 19440,
+            "pose-14-death.png": 19045,
+            "pose-15-death.png": 19302,
+            "pose-16-death.png": 18508,
+            "pose-17-death.png": 19523,
+            "pose-18-breath.png": 15720,
+            "pose-19-breath.png": 16057,
+            "pose-20-breath.png": 15965,
+            "pose-21-breath.png": 15673,
+            "pose-22-rest.png": 18176
+          },
+          "distinct_pose_captures": 23
+        },
+        {
+          "phase": "model-reload",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "rollback",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        }
+      ]
+    },
+    "mboi_tata": {
+      "issue": 720,
+      "species": "mboi_tata",
+      "studio": false,
+      "runtime_sha256": "2ba4cff4b6d3e01be3efaf0fafbb15b8fc4e41dc0c84d8c474ae747f500ee24d",
+      "baseline_sha256": "30b680f409d4cffebca0fced256c674610c340654229cdbc3a09a713f49675d4",
+      "fixture_sha256": "779a8d1addd99086254b742a09f1aa107023f08167d64ca23e34fb8cda30b9ea",
+      "model_overlay_sha256": null,
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runs": [
+        {
+          "phase": "baseline",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "old-save-model",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "fresh-model",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 51,
+          "expected_assertions": 51,
+          "errors": [],
+          "captures": {
+            "empty-view-0.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+            "empty-view-6.png": "5a2ba58ed5f6efbf157b5e78e666b179a2b4729e99130938b9182d383bdc1bcf",
+            "empty.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+            "pose-00-idle.png": "f1956af5f772377e7fa64c96ecad412d743a0136d72572f66340894aa3784e37",
+            "pose-01-idle.png": "e6783cadccbec2285cb985fc9561bce7b15bcd6d3fde9f42abc4a4230170f31b",
+            "pose-02-run.png": "e6c0e82760a6ad54175d81c3327e76f1b4567bb7a70cb2a54c17afc4a9db2c51",
+            "pose-03-run.png": "61220efb6546f733d162215e5f9230809cf3df5539cfd8d74bf03265df667367",
+            "pose-04-run.png": "8a6d23afce83441321cf7fee7a284832535aaad93c219ca2dbed1903b78793d2",
+            "pose-05-run.png": "95ac563728ec5c9debeeea38594497fbec2ac0babf5943dc68846190fb2ea294",
+            "pose-06-walk.png": "2e2e1cc43596beac5393bb2c683f4f077e0825e8f6f3f66e4f758395de2104aa",
+            "pose-07-walk.png": "573bad52b80a6d688961b440abc7d27ff5f258f3ac62f3cb93b0c10b7c09a845",
+            "pose-08-stun.png": "16b01564eace4d909eb98759129fd22deb8996f72b3721c1a3b0a2213e79d89e",
+            "pose-09-attack_prepare.png": "eb1019fc41d6b12809f317b4302c23ea2c77a529eaf3599454bd301d2370ad1e",
+            "pose-10-attack_release.png": "6ba3499ab252027a8c20534b0d89817dad3bf8732f9f5c6821d0f080b51fa926",
+            "pose-11-pain.png": "915aafc160bf26843e8ecd88098ffa6c7d98b308f018088e0f6fbb9a1988dc2a",
+            "pose-12-death.png": "a89e0fbac27d98a3e9cb1648a26444791251c5aa18e3cabb5311fe1e9b8392db",
+            "pose-13-death.png": "00ee7c5c94323d4228adb1155fd14dadc1f422ef3863575add317765a1a69e09",
+            "pose-14-death.png": "66490837c2d8c10a1f0cccad708334a46468c552bc9a96d43e8da80b74e9f9e1",
+            "pose-15-death.png": "7742a2d1bcbbda6c3d0206d8006c63bc02161b5fd0517bd030a74e0c8c845804",
+            "pose-16-death.png": "55aafa963503c3d1c3e1fa52b475d9be6d663d930170dfd61f5efd35fb3655a9",
+            "pose-17-death.png": "a4da0bc435e772b6fc95547389117316428f434d4d485563534fc77e995082c9",
+            "pose-18-breath.png": "9700381e9f6c32e5fe74c32133774d9e73253d7bb3796244435fdc5aa1f964dc",
+            "pose-19-breath.png": "872e023720cb6961d2408ee4bb920a33f1115ac52703f6e5576f356503ff07df",
+            "pose-20-breath.png": "3eb1060dfac4c9815ce58ee1ec49422eb60153c77886a69edf34932b97560e4a",
+            "pose-21-breath.png": "a0ead7febabe572e15bf4f4bb59d7582008de166bc92047286304651024c780c",
+            "pose-22-rest.png": "8a733d738a9394c0e29e4434ee51b52c6bbba14bad32d8e07668e5122013915f",
+            "view-front.png": "2f97fa33f1d01fc2825edc29341e4e9d7fb9f2f5e0faf1c901c79cf8a0308a5e",
+            "view-head-front.png": "f0568b365d8e5197ce9a7a7026c85e5f9de1c65ce6ee5d2607b9d4a4ff80c1e8",
+            "view-head-oblique.png": "aadd6339b7918e66b3cb9c16b754f35c11b4c13014704bf1fc4ed7bfb44e1cef",
+            "view-lying-oblique.png": "8a733d738a9394c0e29e4434ee51b52c6bbba14bad32d8e07668e5122013915f",
+            "view-rear.png": "351cb5f519ec357391b61d4a1286974bc9a41b4362e4212db45038a7490d31e3",
+            "view-side.png": "2cbf56af89854cda5b063892b784d69b390ceed1b1fc40329b39b9dd6c0afa36"
+          },
+          "visible_pose_pixels": {
+            "pose-00-idle.png": 22754,
+            "pose-01-idle.png": 22808,
+            "pose-02-run.png": 22336,
+            "pose-03-run.png": 22862,
+            "pose-04-run.png": 23155,
+            "pose-05-run.png": 22720,
+            "pose-06-walk.png": 22544,
+            "pose-07-walk.png": 22815,
+            "pose-08-stun.png": 22546,
+            "pose-09-attack_prepare.png": 22876,
+            "pose-10-attack_release.png": 23744,
+            "pose-11-pain.png": 22708,
+            "pose-12-death.png": 28101,
+            "pose-13-death.png": 27727,
+            "pose-14-death.png": 27413,
+            "pose-15-death.png": 27414,
+            "pose-16-death.png": 27322,
+            "pose-17-death.png": 27631,
+            "pose-18-breath.png": 23271,
+            "pose-19-breath.png": 23601,
+            "pose-20-breath.png": 23559,
+            "pose-21-breath.png": 23246,
+            "pose-22-rest.png": 26815
+          },
+          "distinct_pose_captures": 23
+        },
+        {
+          "phase": "model-reload",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "rollback",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        }
+      ]
+    }
+  },
+  "actions": {
+    "issue": 720,
+    "runtime_sha256": "2ba4cff4b6d3e01be3efaf0fafbb15b8fc4e41dc0c84d8c474ae747f500ee24d",
+    "source_probe_sha256": "bf298e7c4b3ca7f0285f81c089b18f686ba0a114f65697252662af8b0121b65a",
+    "fixture_sha256": "c226ff0ab129193e77e98fe6647d7b21317fb176a42174ec0afacfa8f1579841",
+    "runs": [
+      {
+        "phase": "actions",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 66,
+        "expected_assertions": 66,
+        "actions": [
+          "CA455 ACTION PASS index=-1 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=-1 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=0",
+          "CA455 ACTION PASS index=-1 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=48 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=48 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=0",
+          "CA455 ACTION PASS index=48 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=50 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=50 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=1",
+          "CA455 ACTION PASS index=50 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1"
+        ],
+        "loot_audits": 0
+      },
+      {
+        "phase": "loot",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 50,
+        "expected_assertions": 50,
+        "actions": [],
+        "loot_audits": 2
+      },
+      {
+        "phase": "loot-reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 20,
+        "expected_assertions": 20,
+        "actions": [],
+        "loot_audits": 2
+      }
+    ]
+  },
+  "presentation": {
+    "monai": {
+      "issue": 720,
+      "species": "monai",
+      "scope": "Measure one 700-tic sprite/model pair for a real serpent; no campaign or crowd budget.",
+      "baseline_sha256": "30b680f409d4cffebca0fced256c674610c340654229cdbc3a09a713f49675d4",
+      "runtime_sha256": "2ba4cff4b6d3e01be3efaf0fafbb15b8fc4e41dc0c84d8c474ae747f500ee24d",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+      "runs": [
+        {
+          "kind": "sprite",
+          "pid": 24300,
+          "exit_code": 0,
+          "errors": [],
+          "markers_qpc_ms": {
+            "BEGIN": 276990550.1245,
+            "END": 277010569.6963
+          },
+          "fixture_sha256": "860f1c43f7f6befca58fbb45551929749c5880de17d00b7684d7eb6cc76ff2fa",
+          "bench_sha256": "5b219dd23f8eb6c7a1e17d3d672d5ec3de273e7a54a74bd38543655de57563a7",
+          "passed": true,
+          "simulation": {
+            "samples": 700,
+            "mean_ms": 28.57129942857143,
+            "p50_ms": 28.5656,
+            "p95_ms": 28.9565,
+            "p99_ms": 29.0929,
+            "max_ms": 29.4439
+          },
+          "presentation": {
+            "pid": 24300,
+            "trace_sha256": "0bca018002dc1b904beeaccff5187800fb1f822df8ef4e20aaead56c0f4336cc",
+            "rows": 44286,
+            "scene_presents": 31562,
+            "mean_present_fps": 1801.5028567126133,
+            "present_intervals": {
+              "samples": 31561,
+              "mean_ms": 0.5550920978414668,
+              "p50_ms": 0.5309999585151672,
+              "p95_ms": 0.7418000102043152,
+              "p99_ms": 0.8871999979019165,
+              "max_ms": 1.498199999332428
+            },
+            "native_call_duration": {
+              "samples": 31562,
+              "mean_ms": 0.0735854954783299,
+              "p50_ms": 0.06959998607635498,
+              "p95_ms": 0.09769999980926514,
+              "p99_ms": 0.11920005083084106,
+              "max_ms": 0.46330004930496216
+            }
+          }
+        },
+        {
+          "kind": "model",
+          "pid": 36936,
+          "exit_code": 0,
+          "errors": [],
+          "markers_qpc_ms": {
+            "BEGIN": 277025087.3296,
+            "END": 277045009.2199
+          },
+          "fixture_sha256": "860f1c43f7f6befca58fbb45551929749c5880de17d00b7684d7eb6cc76ff2fa",
+          "bench_sha256": "5b219dd23f8eb6c7a1e17d3d672d5ec3de273e7a54a74bd38543655de57563a7",
+          "passed": true,
+          "simulation": {
+            "samples": 700,
+            "mean_ms": 28.571653857142856,
+            "p50_ms": 28.5662,
+            "p95_ms": 28.949,
+            "p99_ms": 29.083,
+            "max_ms": 29.5133
+          },
+          "presentation": {
+            "pid": 36936,
+            "trace_sha256": "67fabe91edfa0addafc3e8aeb5a6155519f4bb9617f0033b1e7c921fc782d6f0",
+            "rows": 44573,
+            "scene_presents": 31566,
+            "mean_present_fps": 1811.8538475823175,
+            "present_intervals": {
+              "samples": 31565,
+              "mean_ms": 0.5519208965636878,
+              "p50_ms": 0.5273000001907349,
+              "p95_ms": 0.7348000407218933,
+              "p99_ms": 0.8626999855041504,
+              "max_ms": 1.8122999668121338
+            },
+            "native_call_duration": {
+              "samples": 31566,
+              "mean_ms": 0.07510714064394877,
+              "p50_ms": 0.07400000095367432,
+              "p95_ms": 0.09789997339248657,
+              "p99_ms": 0.12529999017715454,
+              "max_ms": 0.5406000018119812
+            }
+          }
+        }
+      ]
+    },
+    "mboi_tata": {
+      "issue": 720,
+      "species": "mboi_tata",
+      "scope": "Measure one 700-tic sprite/model pair for a real serpent; no campaign or crowd budget.",
+      "baseline_sha256": "30b680f409d4cffebca0fced256c674610c340654229cdbc3a09a713f49675d4",
+      "runtime_sha256": "2ba4cff4b6d3e01be3efaf0fafbb15b8fc4e41dc0c84d8c474ae747f500ee24d",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+      "runs": [
+        {
+          "kind": "sprite",
+          "pid": 49036,
+          "exit_code": 0,
+          "errors": [],
+          "markers_qpc_ms": {
+            "BEGIN": 277088448.97999996,
+            "END": 277108472.5967
+          },
+          "fixture_sha256": "779a8d1addd99086254b742a09f1aa107023f08167d64ca23e34fb8cda30b9ea",
+          "bench_sha256": "5b219dd23f8eb6c7a1e17d3d672d5ec3de273e7a54a74bd38543655de57563a7",
+          "passed": true,
+          "simulation": {
+            "samples": 700,
+            "mean_ms": 28.571285,
+            "p50_ms": 28.5535,
+            "p95_ms": 28.9752,
+            "p99_ms": 29.0835,
+            "max_ms": 29.2473
+          },
+          "presentation": {
+            "pid": 49036,
+            "trace_sha256": "4b853b045ce3b300b6526060ca27f77584eb595a96efdc09efd5baa726ad58d1",
+            "rows": 44682,
+            "scene_presents": 31799,
+            "mean_present_fps": 1814.655634397261,
+            "present_intervals": {
+              "samples": 31798,
+              "mean_ms": 0.5510687433167729,
+              "p50_ms": 0.5250000357627869,
+              "p95_ms": 0.7370999455451965,
+              "p99_ms": 0.9065999984741211,
+              "max_ms": 1.5629000067710876
+            },
+            "native_call_duration": {
+              "samples": 31799,
+              "mean_ms": 0.07395564648875569,
+              "p50_ms": 0.0712999701499939,
+              "p95_ms": 0.09749996662139893,
+              "p99_ms": 0.1216999888420105,
+              "max_ms": 0.48979997634887695
+            }
+          }
+        },
+        {
+          "kind": "model",
+          "pid": 17452,
+          "exit_code": 0,
+          "errors": [],
+          "markers_qpc_ms": {
+            "BEGIN": 277122881.2991,
+            "END": 277142904.1659
+          },
+          "fixture_sha256": "779a8d1addd99086254b742a09f1aa107023f08167d64ca23e34fb8cda30b9ea",
+          "bench_sha256": "5b219dd23f8eb6c7a1e17d3d672d5ec3de273e7a54a74bd38543655de57563a7",
+          "passed": true,
+          "simulation": {
+            "samples": 700,
+            "mean_ms": 28.57179671428571,
+            "p50_ms": 28.5681,
+            "p95_ms": 28.9864,
+            "p99_ms": 29.176,
+            "max_ms": 29.4724
+          },
+          "presentation": {
+            "pid": 17452,
+            "trace_sha256": "e192bcca0d9c805b6e0c8402dea7bafbaaa0f151dac81a1e59cccb8549ec7fb4",
+            "rows": 44516,
+            "scene_presents": 31809,
+            "mean_present_fps": 1815.2648743870564,
+            "present_intervals": {
+              "samples": 31808,
+              "mean_ms": 0.5508837933845113,
+              "p50_ms": 0.5297999978065491,
+              "p95_ms": 0.7090999484062195,
+              "p99_ms": 0.8223999738693237,
+              "max_ms": 1.4172999858856201
+            },
+            "native_call_duration": {
+              "samples": 31809,
+              "mean_ms": 0.07453284591830828,
+              "p50_ms": 0.07260000705718994,
+              "p95_ms": 0.09719997644424438,
+              "p99_ms": 0.12029999494552612,
+              "max_ms": 0.4667999744415283
+            }
+          }
+        }
+      ]
+    }
+  },
+  "iterations": "Model01/02 establish metadata and expose detached head/crest witnesses and collapsed tail/pupil triangles. Model03 widens the tail and reduces pupil tessellation but has remaining collapse. Model04 coarsens crest tips and extends the falling neck to remove collapse/pinch; visual01 passes51 each but exposes accumulated belly/crest roll. Model05 uses world-up anatomical frames and reoriented crest data; visual02 passes51 each, but independent posed witnesses find the jaw detached in attack frame10. Model06 encloses the existing jaw pivot and adds three crown flames; all static/posed checks and visual03 pass. Model07/08 add exact image origin provenance only; thirteen nonmanifest files match06 and all fourteen repeat. Prior designs, animation, generator, failures and previews retained.",
+  "art": {
+    "source": "assets/source/art/serpents_720",
+    "mode": "built-in image_gen",
+    "selected_textures": [
+      "monai_scales.png",
+      "mboi_tata_scales.png",
+      "materials.png"
+    ],
+    "prompts": [
+      "MONAI_SCALES_PROMPT.json",
+      "TATA_SCALES_PROMPT.json",
+      "MATERIALS_PROMPT.json"
+    ],
+    "reused_textures": [
+      "Owned Peuchen iris.png and dark.png byte-identical"
+    ],
+    "original_concepts_preserved": true,
+    "reviewed_views": "Both owned concepts and all three generated materials; final ordinary front/side/rear, head-front/head-oblique, attack-release, selected run/pain/death and lying views; both presentation cohorts per species.",
+    "author_check": "CA720-SERPENTS-01"
+  },
+  "environment": {
+    "os": "Windows 11 Pro 26200",
+    "cpu": "Ryzen 9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX 3070 Ti",
+    "engine": "GZDoom 4.14.2",
+    "backend": "Vulkan",
+    "resolution": [
+      1280,
+      720
+    ],
+    "background_unpaused": true,
+    "audio": 0.05,
+    "presentation_uncapped": true,
+    "vsync": false
+  },
+  "qualifications": [
+    "One sequential700-tic sprite/model pair per species, visible subject and Mandinga control. Queue intervals are not GPU/display timing, repeatability or crowd/campaign acceptance. Unequal projected footprints preclude equal-pixel-workload claims.",
+    "Fixed-creature editable anatomy is not interchangeable inventory equipment. Simplified heads, regular coil, belly UV transitions, rigid jaw and crest require author review.",
+    "Neutral Height fits the unchanged Mandinga profile; body footprint can extend beyond collision Radius. Catalogue metres do not authorize runtime resizing. No new fire effect, attack or campaign placement.",
+    "352 independent attachment checks cover frames0,10,17,22; they do not prove full-surface clearance or every interpolation. All23 serialized poses each have no collapsed triangles and a grounded lowest vertex.",
+    "Other characters, worn/first-person equipment and original campaign remain unfinished. No production logic, stats, save schema, scans or approved regional distribution changed. No executable, IWAD, DLL, compiled fixture, package or save committed."
+  ],
+  "files": {
+    "actions01/actions/commands.cfg": "9b8811126c172a03d208a0b424299ca9ecbb8feafd0664c91b714173ec2234a1",
+    "actions01/actions/engine.log": "4da1f48f33918dbcf8fe263c99d6a3278bb42663116b26dd5edf276bf594c232",
+    "actions01/actions/process.log": "629d4eaaa3b738af6195136d619227f1929572d6b8ba52843f42827c4abfc69f",
+    "actions01/actions/session.ini": "00fcd1d07dd275fc6860918a8c73ee8158775e2345ff814d9fd2e5317a694022",
+    "actions01/fixture-source/MAPINFO.txt": "84a2a2cfd3f2be232b6fb78ca406204bda0732dd7beeb3c11bb55231684a80ad",
+    "actions01/fixture-source/ZSCRIPT.txt": "56074c586939b8aff2e4694f11370bcc1ed13462f7bfe684f23304be6fe3b41e",
+    "actions01/fixture.zs": "7e0f19a559711ab15b31ab4390f35d46f20ae1346552a346766d19e6d38e3eb0",
+    "actions01/loot/commands.cfg": "c7131f87f9df9188e2301d6730516e731540216e6417b470aab866467fbd8ad7",
+    "actions01/loot/engine.log": "65168e7955a6869d7f3586da37414c45c72c2fbf6ac9bf622dcb8601eda1ae68",
+    "actions01/loot/process.log": "f7581dd8df3630d6db46c241be15350a612725ab940400596f31efb06997aff4",
+    "actions01/loot/session.ini": "163d68ce3379bb7b4922298b40d7e2a099c118d24fe7ab1fc8889c5e1a6fc59b",
+    "actions01/loot-reload/commands.cfg": "ad82c3110081fb6cd15b9a00885b6cc0747127803c4e52c0e06a730955dcf399",
+    "actions01/loot-reload/engine.log": "851149643381a55800f77d8696e41523e1295ffdccef8569927d3412221e22d1",
+    "actions01/loot-reload/process.log": "073f5c32fbc857da7ec29f5a27dc2d443725a046b4b05322d45cfd1e63ae5336",
+    "actions01/loot-reload/session.ini": "73a9900380b30268715d9b2e25823b9f53ca65d7a745c003913d717ffc6f73de",
+    "actions01/RESULTS.json": "a8e8526de6a2bfc9c3ffd284b43b39db406682685a4df1076caa491883e8d896",
+    "issue720-build01.log": "5c597b1cf6abe99389803ea44e4e6eb9890a445a7d0c951458e0fec397762533",
+    "issue720-final-static.json": "e361afcc1c4672511449b6d9033603622700f22349e574d87b96ce612386f379",
+    "issue720-installed-check.log": "7391ac56e8bceca158c31d6a47a77d31c5d777e42c7f4ca8b1df4929169a850a",
+    "issue720-repeat-final.json": "73255c67bf11328dd8fee8b2227b5eca63c9a1344741c0753faf02548223848f",
+    "iterations/issue720-animation03.json": "154763213fe2decd70b1a8ded99e45068aed49e4a7292001a43d70a2b2c2595b",
+    "iterations/issue720-design02-mboi_tata.json": "53f73ed6c30ca5443711e438b226a58723a7bf1a99726ab17f6aebf1f839640c",
+    "iterations/issue720-design02-monai.json": "4fc0e88fa193ca02f7b2b4f177ea78c491dda0f27a0000e2a85106f9d8c0db9a",
+    "iterations/issue720-design03-mboi_tata.json": "0c6cfa83be0eb4072dfe850f98652fef28a2bec4c6294c48c1f9464e30eada64",
+    "iterations/issue720-design03-monai.json": "9c7db81e12e3d7b225e9ef5049ec576229fe8ae59d5188623caa38f817d220a8",
+    "iterations/issue720-design04-mboi_tata.json": "0a567c9bd5e1a07be89c74277e6f80dca4911b9ba06adbb894a39b8d58d4efb0",
+    "iterations/issue720-design04-monai.json": "9c7db81e12e3d7b225e9ef5049ec576229fe8ae59d5188623caa38f817d220a8",
+    "iterations/issue720-design05-mboi_tata.json": "bb79674f6ea7f5c071a00cc746c424628be28a9be2554cecfcc80a8d457426ab",
+    "iterations/issue720-design05-monai.json": "9c7db81e12e3d7b225e9ef5049ec576229fe8ae59d5188623caa38f817d220a8",
+    "iterations/issue720-generator04.py": "543ea4a65efe7c141413185f81dee2779de942c5d7ac08387aa1bcd59187fac3",
+    "iterations/issue720-geometry02.log": "f7937677b1e12066c899e86f810afcb689cbf9155b427207157ed2647e99e8e2",
+    "iterations/issue720-geometry03.log": "206ad04014c06694d358a870b5530cb487edab0dd3adf104716af5ca2403a331",
+    "iterations/issue720-geometry04.log": "e3667b68437b8f287e6664892de55baf9844b9bd628ef3d1528baff71e2569c0",
+    "iterations/issue720-geometry05.log": "e3667b68437b8f287e6664892de55baf9844b9bd628ef3d1528baff71e2569c0",
+    "iterations/issue720-geometry06.log": "e361afcc1c4672511449b6d9033603622700f22349e574d87b96ce612386f379",
+    "iterations/issue720-posed-geometry05.log": "abad594e566c88b7fba545676cab2d973f56195a1b2255b184908f8f140b457b",
+    "iterations/model01.json": "7ca82c9dcf05abeab00ae4c44c28c5616ff3e180cc0514114136c70429871c83",
+    "iterations/model02.json": "59eaddd5245930e827e737287c274f395263e680dd7e3732e364a5f01f741788",
+    "iterations/model03.json": "ba447db7aa7aa20f09fb15c373b4d09e174ff78fe7993323adf8be764d581776",
+    "iterations/model04.json": "753a0894eb0a1cda9e9892c315c6d51c98bab23a1acc186cccc6b1a31e9108be",
+    "iterations/model05.json": "5877ee9c4b35a52c9a46c968f0f97720b6e7421ced93a4c054dc4105ab355df7",
+    "iterations/model06.json": "e8c2dbc5eed47003b36c1628427ee7ebc573453d529530615837c1aaa84e5fec",
+    "iterations/model07.json": "733d78855eab137c4d8ac5abc8346ba064c8cbf988200490dfd20df144e57b17",
+    "iterations/model08.json": "733d78855eab137c4d8ac5abc8346ba064c8cbf988200490dfd20df144e57b17",
+    "iterations/visual01/mboi_tata/fixture-source/MAPINFO.txt": "81f2ebbd68f3ef79670c8f314f654b0a28dce2044db9424453c1725c3e013915",
+    "iterations/visual01/mboi_tata/fixture-source/ZSCRIPT.txt": "89485beade0c6fc40f62d05638511c74dc6719c5bc03e0bffbd388dfb0567080",
+    "iterations/visual01/mboi_tata/fixture.zs": "1a4579b52c1c97fb52c1d2d3b412ff4aaed322bd85596c5655e42e40c33ea134",
+    "iterations/visual01/mboi_tata/RESULTS.json": "0e16ee3455021e12e14c7ff4107774760ac3c29092fdea2358689c2edaef2e96",
+    "iterations/visual01/mboi_tata/visual/commands.cfg": "690e1c7635526d8a5c47b260dbffd453573b3a11fab289b94ce04d7440411f33",
+    "iterations/visual01/mboi_tata/visual/empty-view-0.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "iterations/visual01/mboi_tata/visual/empty-view-6.png": "5a2ba58ed5f6efbf157b5e78e666b179a2b4729e99130938b9182d383bdc1bcf",
+    "iterations/visual01/mboi_tata/visual/empty.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "iterations/visual01/mboi_tata/visual/engine.log": "cbc5ce9675a32d7914d718485851b6458dc47e1bfab97751c393184ebaa26591",
+    "iterations/visual01/mboi_tata/visual/pose-00-idle.png": "88320dbcb21c113e1cb10f6aa5aacec19063bf1f4887d9ba026f5dc094dfc450",
+    "iterations/visual01/mboi_tata/visual/pose-01-idle.png": "5102ce22d00e7759d4d22e4af1df77d48f53b4bde1083445ff7221b219bf744a",
+    "iterations/visual01/mboi_tata/visual/pose-02-run.png": "3fc8ccd958f61241026a48497bf2ffa4fb3bd31b3ba0f4cca966fade92d19ef4",
+    "iterations/visual01/mboi_tata/visual/pose-03-run.png": "8de83f72a99e9b00d3d4a6d194e643acb72a75757d69764ff3aa7e3771c58765",
+    "iterations/visual01/mboi_tata/visual/pose-04-run.png": "1cd04a786d67e5e379fc7bbda533d549204494beb6d7c6b1023e40aa1514340c",
+    "iterations/visual01/mboi_tata/visual/pose-05-run.png": "5661f82f9bba524ce9b1c4d8123ff3933258cedcc1b8674d52cfa370b4ad0957",
+    "iterations/visual01/mboi_tata/visual/pose-06-walk.png": "b452a61d163a1e24eb3f6c4e6ae74c18de901017e93e92073fcc12573aaecd8b",
+    "iterations/visual01/mboi_tata/visual/pose-07-walk.png": "434845569f64344e075cfc93adcae8f0de7577e0f6d8a601bd2847ab0da413ae",
+    "iterations/visual01/mboi_tata/visual/pose-08-stun.png": "b4eee280ba26667dd2bb674953e7e0450e1cff0d0bc784deed2f71d432468969",
+    "iterations/visual01/mboi_tata/visual/pose-09-attack_prepare.png": "7e91e648d9e92a6feb71c4212567eb6794f2e727cadf3f97ecf172b8a09af8fc",
+    "iterations/visual01/mboi_tata/visual/pose-10-attack_release.png": "e3f722612c605266648c72e6a02c36a8a1cee61e631b982c808c0f29bacc899c",
+    "iterations/visual01/mboi_tata/visual/pose-11-pain.png": "e97b84f14d93ab5dbe84845986318a645f60c927ada4f67d42afe529e865097e",
+    "iterations/visual01/mboi_tata/visual/pose-12-death.png": "c1c1f654afdb102529b596c5f820b5f18b2b2af1955fef84a21b3b44726d8fef",
+    "iterations/visual01/mboi_tata/visual/pose-13-death.png": "9cec36940008afb5b5ff90ef11a02d1c6c33f0ef9b5305596f918ff214f4838a",
+    "iterations/visual01/mboi_tata/visual/pose-14-death.png": "3ec8db0201d096cc7d8b5bee4c2b54c6810e1fcbdbc50a18e4d2db29dfe2cffd",
+    "iterations/visual01/mboi_tata/visual/pose-15-death.png": "5f19b0b593dbce93e6d4f2ef89a84785b501c25d6711b9661f47caf1c3a75666",
+    "iterations/visual01/mboi_tata/visual/pose-16-death.png": "b287f1eed36bf747d7220f5464575a488915a003d4da095afd09391c68fb5f9a",
+    "iterations/visual01/mboi_tata/visual/pose-17-death.png": "85d4b849bd64806573abfd39caf336bf76d24ec5e8b7d20948fa090772766ba0",
+    "iterations/visual01/mboi_tata/visual/pose-18-breath.png": "68cde510804ade3c6466081da4b7c8ddc56b524c7304c89751cd317d0dd0fef0",
+    "iterations/visual01/mboi_tata/visual/pose-19-breath.png": "e0406ce331bb5a59bb83321162a98acb010eba686fdf5e9ed7f2b18db8dc5c44",
+    "iterations/visual01/mboi_tata/visual/pose-20-breath.png": "023983df699eeb722cab32a32d5a51b56ed4c5a5934969849ddf1eb2737bbd22",
+    "iterations/visual01/mboi_tata/visual/pose-21-breath.png": "f1541b5ed0f57a171a0f8413927899874bff6a8b7af5d04c8befe5a5d7393b2d",
+    "iterations/visual01/mboi_tata/visual/pose-22-rest.png": "285d38176b13c24aa73a5880bd14ea6077bc220d79b806d1cbfb75af7dfd9f3a",
+    "iterations/visual01/mboi_tata/visual/process.log": "29ac78be05c35a1a79352bacd7759eca60ba4582a15506744290c3f7cbf451b4",
+    "iterations/visual01/mboi_tata/visual/session.ini": "de399c7cafc708a054658a49a94bb043d97b3dbc4043d0bebd6ff33034d9c800",
+    "iterations/visual01/mboi_tata/visual/view-front.png": "85034428e08e29329198e60524056cfcf1a4e0ec78d604035712415fdf4b1c34",
+    "iterations/visual01/mboi_tata/visual/view-head-front.png": "1b9e42efbbb82bbbbb0860a32d8f18656a8dabdf67fca63577585418b2cf651d",
+    "iterations/visual01/mboi_tata/visual/view-head-oblique.png": "4c6667cac8a4909dd2f76ad0e0e43ee91a33867096e328a7f5f81ad412fdbb12",
+    "iterations/visual01/mboi_tata/visual/view-lying-oblique.png": "285d38176b13c24aa73a5880bd14ea6077bc220d79b806d1cbfb75af7dfd9f3a",
+    "iterations/visual01/mboi_tata/visual/view-rear.png": "cc6f0783f11f33b1d8d11f6e7b92c7fa060b8ad21bbde975db42678fbf283624",
+    "iterations/visual01/mboi_tata/visual/view-side.png": "fe99ec633d7b38e470d721b37d1c9067e02bc09ecd8f9733b082a53c1d92ef69",
+    "iterations/visual01/monai/fixture-source/MAPINFO.txt": "81f2ebbd68f3ef79670c8f314f654b0a28dce2044db9424453c1725c3e013915",
+    "iterations/visual01/monai/fixture-source/ZSCRIPT.txt": "92e14690917af642022b8c8a9a815d689b9bb80a957e68691263696ff7578964",
+    "iterations/visual01/monai/fixture.zs": "7b3267e2063e29920481fc64b9b9140d62a178b8a1547263b73160b6a38d400e",
+    "iterations/visual01/monai/RESULTS.json": "351a6c7843e754399198e9c02bb01ddc991cbb5719c701201cb36d4a9f19ae2c",
+    "iterations/visual01/monai/visual/commands.cfg": "690e1c7635526d8a5c47b260dbffd453573b3a11fab289b94ce04d7440411f33",
+    "iterations/visual01/monai/visual/empty-view-0.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "iterations/visual01/monai/visual/empty-view-6.png": "5a2ba58ed5f6efbf157b5e78e666b179a2b4729e99130938b9182d383bdc1bcf",
+    "iterations/visual01/monai/visual/empty.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "iterations/visual01/monai/visual/engine.log": "426e7f2b06d38671853e0fd84dc42973a919c9aca7a7d2b62efb449897e74e2e",
+    "iterations/visual01/monai/visual/pose-00-idle.png": "9a1a88e7486a43dfc15933d9900cbb4bed2d138f7bc888b9be11f777ab8628a5",
+    "iterations/visual01/monai/visual/pose-01-idle.png": "ae3baee3d7f637bbacffd51579eceab2035f52f1b1b63ffea51e8c3554c605a1",
+    "iterations/visual01/monai/visual/pose-02-run.png": "773eb2ebebcdedeceec43f2ff492d6eedf51b2ff740d04a050dd92a4bd9a7165",
+    "iterations/visual01/monai/visual/pose-03-run.png": "962d46265cde94668cfbc96c0d30410b51a7768be706b20373d76e16228f12d8",
+    "iterations/visual01/monai/visual/pose-04-run.png": "652b40646469db2ddb1494d37d80e424d08d284b3d9611e00d0941d094264488",
+    "iterations/visual01/monai/visual/pose-05-run.png": "d29d5c0edb961ef5619047568c463bf125011320b047178eeae8f9cdde69321e",
+    "iterations/visual01/monai/visual/pose-06-walk.png": "a507471a48625704b4f97987346a993cf7694851862c092eca1ee52873fd04c2",
+    "iterations/visual01/monai/visual/pose-07-walk.png": "cdd6173e089fe2ca3c8f261cc956e4b491490988d1947bb6ab574a9d4daf864e",
+    "iterations/visual01/monai/visual/pose-08-stun.png": "9032e3c3bfac4068a9e11d9917f15c3b7401d4ce3057cc60faa97532d244ed7a",
+    "iterations/visual01/monai/visual/pose-09-attack_prepare.png": "248c612d749e4323ecf6ca1965d06304b0e73cffb3f8382698e9b02758e58775",
+    "iterations/visual01/monai/visual/pose-10-attack_release.png": "6f04622842e0cece8e092d4ce4a6f149932f1b390676a488360a4db936eb1dee",
+    "iterations/visual01/monai/visual/pose-11-pain.png": "00d617539e9a5a421a487b5bbf0d11c37a76def093c6818da89af7e7aff5826f",
+    "iterations/visual01/monai/visual/pose-12-death.png": "b6f374b8f41506cb3525450732a2299513f720b3bab2b4e3b2fa1534ca9bd06a",
+    "iterations/visual01/monai/visual/pose-13-death.png": "c7b0235d78515acb50eae5f0be2d0b423388fe34311f21097464d9e29f10be22",
+    "iterations/visual01/monai/visual/pose-14-death.png": "e6d0612afed1ccdf23f5075c2bc827c8848024b7e88d58602f177d3d0b4fdf33",
+    "iterations/visual01/monai/visual/pose-15-death.png": "b704dcedc2db4ad8508df74d508e00b04c23728a8c2535a617b6ca6a059b8edf",
+    "iterations/visual01/monai/visual/pose-16-death.png": "2ddc184bc8e2c8be2035e40aa029f7b23242697453ff400e46561cc81da8ccb1",
+    "iterations/visual01/monai/visual/pose-17-death.png": "1fb7249ded12d1d87a0bd0054b6908ceb72b51b365ae8e19ae9bf7e11411909d",
+    "iterations/visual01/monai/visual/pose-18-breath.png": "34b79d825f1fdba0b1bfbab9ba4e7b2c73f235fe24431d9dcdb53e545a6eeffc",
+    "iterations/visual01/monai/visual/pose-19-breath.png": "9e358c40efb975584508998355947e81a18a98afe324cd109fa15cc41c2a59b6",
+    "iterations/visual01/monai/visual/pose-20-breath.png": "9ced3cd2f15d9619446de2beb83683cd8a991b0e4b6dd9d115ecd38730c8c679",
+    "iterations/visual01/monai/visual/pose-21-breath.png": "6c065cb271645a10fcf8a76f61b1e68c7e65829348ac090880bdea4fd03da3ba",
+    "iterations/visual01/monai/visual/pose-22-rest.png": "6a3efd74a42fa52e0050d4a1464b0cb9a12815f7ab2ba9124b2bc72a7695aa99",
+    "iterations/visual01/monai/visual/process.log": "34268ea648b54f22d0b582ef4b7438ecb64e8eb2d94ea7354a4497ecb8a115af",
+    "iterations/visual01/monai/visual/session.ini": "cd848247364309fa9e0a99076b95a5cbd063cd493815c9d0f67ab7241bcbfa35",
+    "iterations/visual01/monai/visual/view-front.png": "97714737c4095dc8e0f14a6f22ce8827f217171108b5a29c0fe0388259b957b4",
+    "iterations/visual01/monai/visual/view-head-front.png": "b978a4517b4cb73583b2a9cca1162ba05cb8ecd349f634367ef6722e3bd132db",
+    "iterations/visual01/monai/visual/view-head-oblique.png": "08c0e1e1cb1b0b978fa09e904cd6c66eaa8ebeb7e4121f15553fb2c3e3569aa1",
+    "iterations/visual01/monai/visual/view-lying-oblique.png": "6a3efd74a42fa52e0050d4a1464b0cb9a12815f7ab2ba9124b2bc72a7695aa99",
+    "iterations/visual01/monai/visual/view-rear.png": "57d7b9b24543626c7f82547931d2cd0c0bd175d99d0fc0308f9ef332e2a59416",
+    "iterations/visual01/monai/visual/view-side.png": "1511c1b8526c610d9f50a1e74e03b351a5cb8bd665c61e7b252ce02a1b5196e2",
+    "iterations/visual02/mboi_tata/fixture-source/MAPINFO.txt": "81f2ebbd68f3ef79670c8f314f654b0a28dce2044db9424453c1725c3e013915",
+    "iterations/visual02/mboi_tata/fixture-source/ZSCRIPT.txt": "89485beade0c6fc40f62d05638511c74dc6719c5bc03e0bffbd388dfb0567080",
+    "iterations/visual02/mboi_tata/fixture.zs": "1a4579b52c1c97fb52c1d2d3b412ff4aaed322bd85596c5655e42e40c33ea134",
+    "iterations/visual02/mboi_tata/RESULTS.json": "c4d817419a267e3e18aea5d5ccd6bb7fb24c6eb16d1ceb51378aef7a0f08a395",
+    "iterations/visual02/mboi_tata/visual/commands.cfg": "690e1c7635526d8a5c47b260dbffd453573b3a11fab289b94ce04d7440411f33",
+    "iterations/visual02/mboi_tata/visual/empty-view-0.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "iterations/visual02/mboi_tata/visual/empty-view-6.png": "5a2ba58ed5f6efbf157b5e78e666b179a2b4729e99130938b9182d383bdc1bcf",
+    "iterations/visual02/mboi_tata/visual/empty.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "iterations/visual02/mboi_tata/visual/engine.log": "4872e1456379c4c323e9ff1842c6d275611855ecea3eb8c4c78ec98c4328873a",
+    "iterations/visual02/mboi_tata/visual/pose-00-idle.png": "53293a404c5d2057a9dc0f61e17e8591a755545130bf723e25e7a09a85bc0513",
+    "iterations/visual02/mboi_tata/visual/pose-01-idle.png": "4bb2164cfff10f93725eb0a12eb37737f463501034ff7ef043487e0f7906d9ea",
+    "iterations/visual02/mboi_tata/visual/pose-02-run.png": "ea50d1b896565bf65cc1048713ac6dd154056aef01be475c7f80a697c2304b99",
+    "iterations/visual02/mboi_tata/visual/pose-03-run.png": "05e58a9823ce1687a2f1fe3267c1d92960bfe9cab1d9f6047cc1806d36991f8f",
+    "iterations/visual02/mboi_tata/visual/pose-04-run.png": "30b83c863fe83eeb5f2895ee517cf8e9289580b807de28fe1f222ce6aa0b7ff1",
+    "iterations/visual02/mboi_tata/visual/pose-05-run.png": "a884baaad4a3db33066d5cb24d0185ef8f7249a6e3385942a3069f6745efe8ea",
+    "iterations/visual02/mboi_tata/visual/pose-06-walk.png": "fb115151635506899389dd129eee44c888f84155578db1154b91aaaa9e47c53d",
+    "iterations/visual02/mboi_tata/visual/pose-07-walk.png": "fac3479a87381b6c4523dd0aa8ae1219bf93305a4a261720f4bec775dda6e858",
+    "iterations/visual02/mboi_tata/visual/pose-08-stun.png": "9700a6bd7e3cc1b05db8cc87ccb91d8bfa4b12d11367368d5f122434284cbf67",
+    "iterations/visual02/mboi_tata/visual/pose-09-attack_prepare.png": "8f9f61622534832c39e861b8152bebedc6224ac488ec18aedadd169a385427b2",
+    "iterations/visual02/mboi_tata/visual/pose-10-attack_release.png": "ec056b662cb53efce01e104b4114f1bdfd2fd25d4a2c88fbb15bda274626de57",
+    "iterations/visual02/mboi_tata/visual/pose-11-pain.png": "8499536e09f112450d2231159dc63f2c4f9dd83e9de4a1e612c242c244802ad4",
+    "iterations/visual02/mboi_tata/visual/pose-12-death.png": "8960722284c2b44eba77b765765f30f0f95a111f0e4dafb9f80f623267539cea",
+    "iterations/visual02/mboi_tata/visual/pose-13-death.png": "0bc607fd2aaa536dcd0f11be1de92fa1d3434b5e9e7bc1f6bf059d6dd93bf3eb",
+    "iterations/visual02/mboi_tata/visual/pose-14-death.png": "236604f4f6851464c56559875e00176aa335a0bb2e2eced00773428a73ca1763",
+    "iterations/visual02/mboi_tata/visual/pose-15-death.png": "8965240ab1aa0b7ebdb58b759ff5bf2a615d38e25368c5f122fc32fe86b78ce0",
+    "iterations/visual02/mboi_tata/visual/pose-16-death.png": "e072f7f8f45558513799d8926ec005c9ce14c0fa01b7d35c5d4a4c33563a85eb",
+    "iterations/visual02/mboi_tata/visual/pose-17-death.png": "be4b0207f3ea8f880fdcbf0c93088f3f676513909700640814d0f709a4150c4b",
+    "iterations/visual02/mboi_tata/visual/pose-18-breath.png": "9a4f579450308d2682d8a7ef0a2a4111ea9fe7d47c36f3e4142670f7546dbb74",
+    "iterations/visual02/mboi_tata/visual/pose-19-breath.png": "8b697484d135957f8d1bf8a4d3504080f5b62a62fd2bc00a545fe548b94a68de",
+    "iterations/visual02/mboi_tata/visual/pose-20-breath.png": "85ab29d20c91513b6deee54e039c6d83f12f57889b3fedfa8e98fbfefbe9f505",
+    "iterations/visual02/mboi_tata/visual/pose-21-breath.png": "20d8e29c45937b92a402aea9175ad7048f98a280f4f8ce9c6e9402141cd2577e",
+    "iterations/visual02/mboi_tata/visual/pose-22-rest.png": "049905ffc4f0b6b02733da7742508a16fd13234d5691bf22d3d2f789c011138b",
+    "iterations/visual02/mboi_tata/visual/process.log": "fb17fb3c22d6b80edd6957e8479a744ed9ddde2043bc704ae012239aa1d435ed",
+    "iterations/visual02/mboi_tata/visual/session.ini": "2b1a25625b18e7473bb052a7d4a40440b6fcd91b690cfbc0a40d9e9332f8ff53",
+    "iterations/visual02/mboi_tata/visual/view-front.png": "76559d0f1087b598f7e384fb817b7b18fd8dc677ae17455249cb8d8aab506f96",
+    "iterations/visual02/mboi_tata/visual/view-head-front.png": "e75741906abd9246c26f9b18598fe5f3c7f49b3595471a48c46f7c0aaf1cfb38",
+    "iterations/visual02/mboi_tata/visual/view-head-oblique.png": "1715bd9755c94261664673cc850c85552107cfe1ea8a4ae174e515bf85e625f2",
+    "iterations/visual02/mboi_tata/visual/view-lying-oblique.png": "049905ffc4f0b6b02733da7742508a16fd13234d5691bf22d3d2f789c011138b",
+    "iterations/visual02/mboi_tata/visual/view-rear.png": "444853d121cb12f08381a01959a17a7f7546a6e9d2d62892d6ea6d5a6adc6f6a",
+    "iterations/visual02/mboi_tata/visual/view-side.png": "e85d02215907a32aac116393d9e5fb8977a25b506e11d4bf0445ba6b291a27ae",
+    "iterations/visual02/monai/fixture-source/MAPINFO.txt": "81f2ebbd68f3ef79670c8f314f654b0a28dce2044db9424453c1725c3e013915",
+    "iterations/visual02/monai/fixture-source/ZSCRIPT.txt": "92e14690917af642022b8c8a9a815d689b9bb80a957e68691263696ff7578964",
+    "iterations/visual02/monai/fixture.zs": "7b3267e2063e29920481fc64b9b9140d62a178b8a1547263b73160b6a38d400e",
+    "iterations/visual02/monai/RESULTS.json": "8db7e0f2b9115af5c5f3ba9fb0f1d3d696c612d093c57de57ec4857edc6c1c7b",
+    "iterations/visual02/monai/visual/commands.cfg": "690e1c7635526d8a5c47b260dbffd453573b3a11fab289b94ce04d7440411f33",
+    "iterations/visual02/monai/visual/empty-view-0.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "iterations/visual02/monai/visual/empty-view-6.png": "5a2ba58ed5f6efbf157b5e78e666b179a2b4729e99130938b9182d383bdc1bcf",
+    "iterations/visual02/monai/visual/empty.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "iterations/visual02/monai/visual/engine.log": "27d326caff072a23baf56f492c030242c910d67a65d71cd20a4bfd45f9a38af0",
+    "iterations/visual02/monai/visual/pose-00-idle.png": "4ccfe6da2ddcefd7e268dc149ac44da7c838d09d14a2b6269fec312b95f8a30a",
+    "iterations/visual02/monai/visual/pose-01-idle.png": "68abd05a8202b74bd483e5ccf04d3baabc75a4f91cdf1f3478ca88d50c6c3b06",
+    "iterations/visual02/monai/visual/pose-02-run.png": "bf46d4e9f76ab5001ca532f9ca38ab54be4b09deb91a594b424042bae1c5f1ba",
+    "iterations/visual02/monai/visual/pose-03-run.png": "0516f902f51a19546736b94ac3b5a08779554ab26a344ecaf96cebd63737fbbb",
+    "iterations/visual02/monai/visual/pose-04-run.png": "acb07adbf71056da92efb0effe882c9c2d3314f9aec341fa31fda3c801ad6f03",
+    "iterations/visual02/monai/visual/pose-05-run.png": "50933acc3d70fdf9d7389fa3556d6bd7f5a8b52e2714c4fd128dac4e5473514d",
+    "iterations/visual02/monai/visual/pose-06-walk.png": "f4a051981bcae6a4ea11f954145e15346e7fb3ee503a5d070788fc6221152552",
+    "iterations/visual02/monai/visual/pose-07-walk.png": "9efc2da949a5cda4ff4d0c7018c2c0b9059fe1892d262c9cd9bd9c6cbac60d2a",
+    "iterations/visual02/monai/visual/pose-08-stun.png": "79f94b40d7733257493e3fd8866cc04ee34cb61a066f717eea255c120de640cb",
+    "iterations/visual02/monai/visual/pose-09-attack_prepare.png": "8b00c2fb2949180c6e53bff41de22ca9b5dcec3af2166b7dbed144412df17d3a",
+    "iterations/visual02/monai/visual/pose-10-attack_release.png": "126896f5429b83d891ea9f894bfbc6090ddb97eeeab47713e36645c0eb85280e",
+    "iterations/visual02/monai/visual/pose-11-pain.png": "4f72dcb922577773320325bb3afb1e7345892d477c1d0240aa4c0df0b30930c7",
+    "iterations/visual02/monai/visual/pose-12-death.png": "559c556877593b006af1ffe32fea0b2a1dc41f04429db3da20bc53fb3fec5ab6",
+    "iterations/visual02/monai/visual/pose-13-death.png": "bd60e67a2cfbea6ad595fc8d687066901683e6237af90131e7cddd5afa335ad2",
+    "iterations/visual02/monai/visual/pose-14-death.png": "89fb5c5ca2f0da6d333a6ea44152686e3ee6f8587ca4517660dfffd3cc17f769",
+    "iterations/visual02/monai/visual/pose-15-death.png": "1fe4ed46c78af405cb6f8b94121cd7aabaa2b2d1891846c27a80399f209b504e",
+    "iterations/visual02/monai/visual/pose-16-death.png": "dd97307712d4739905486db7c76bc20a8c07a6b3d6d7996ce1a93ebeb1e6f059",
+    "iterations/visual02/monai/visual/pose-17-death.png": "b71f38c6b7df072d5fdfab5d0e473ce77741f76063baf0d9d8042e76efe826ad",
+    "iterations/visual02/monai/visual/pose-18-breath.png": "cdbd66949c13090cd4267a2c6539627f40e1f53fbcc2dac49ed218521fdc07e8",
+    "iterations/visual02/monai/visual/pose-19-breath.png": "79ca5740ef66904f84f8578c2d1603d8489a7b5b18ce90d7982d862a65c4d70b",
+    "iterations/visual02/monai/visual/pose-20-breath.png": "fcb86fb2a08ace5e665110017cf079305a45e156181a79cdb803102b8a1d01d8",
+    "iterations/visual02/monai/visual/pose-21-breath.png": "8e5cd56327dcae7d3924281366db2bc4edec5b3f9bd49987a24bfb45da3ef703",
+    "iterations/visual02/monai/visual/pose-22-rest.png": "42dddbccdd9ef584390f7ffda2c16c65ae95e5352d38b6aaf393adf8ba26d120",
+    "iterations/visual02/monai/visual/process.log": "f6919d37587f9736e3ec2364467cdad95e76d50388e4845e28ef371c863f7ae9",
+    "iterations/visual02/monai/visual/session.ini": "1e3854904eb26c515666dfeea67bd3dcad0987832aabcc79ad057b2cd4aa5b1d",
+    "iterations/visual02/monai/visual/view-front.png": "db451e23cea952e3e6c499cd2c019bcf2fbb92b604ff6325f51de05ce6d6ef5e",
+    "iterations/visual02/monai/visual/view-head-front.png": "49c5315e9ad9325303db40ea238ba9af0e6907804634b4ccdd255e5bbb38abf0",
+    "iterations/visual02/monai/visual/view-head-oblique.png": "05c438dbab9f025b60a7c7d255742734df85180874ce7aa56830937b76b4cde9",
+    "iterations/visual02/monai/visual/view-lying-oblique.png": "42dddbccdd9ef584390f7ffda2c16c65ae95e5352d38b6aaf393adf8ba26d120",
+    "iterations/visual02/monai/visual/view-rear.png": "63bf8212348a19c313619ba480a1ca97b32639b3d5abde8fb68e0359832ea00e",
+    "iterations/visual02/monai/visual/view-side.png": "4859efc8cefa2fd6e106d969f510c75ce064c4baf38f95a28bf61116a7e71345",
+    "iterations/visual03/mboi_tata/fixture-source/MAPINFO.txt": "81f2ebbd68f3ef79670c8f314f654b0a28dce2044db9424453c1725c3e013915",
+    "iterations/visual03/mboi_tata/fixture-source/ZSCRIPT.txt": "89485beade0c6fc40f62d05638511c74dc6719c5bc03e0bffbd388dfb0567080",
+    "iterations/visual03/mboi_tata/fixture.zs": "1a4579b52c1c97fb52c1d2d3b412ff4aaed322bd85596c5655e42e40c33ea134",
+    "iterations/visual03/mboi_tata/RESULTS.json": "503a5248fa147d2d070025a4ab8093dc0d84b7693936990ca83f4f022788f6a5",
+    "iterations/visual03/mboi_tata/visual/commands.cfg": "690e1c7635526d8a5c47b260dbffd453573b3a11fab289b94ce04d7440411f33",
+    "iterations/visual03/mboi_tata/visual/empty-view-0.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "iterations/visual03/mboi_tata/visual/empty-view-6.png": "5a2ba58ed5f6efbf157b5e78e666b179a2b4729e99130938b9182d383bdc1bcf",
+    "iterations/visual03/mboi_tata/visual/empty.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "iterations/visual03/mboi_tata/visual/engine.log": "c138e7c242f0941a6854f58b6cbcd92cb49054bf1a31f43d224a5181b3cdbca5",
+    "iterations/visual03/mboi_tata/visual/pose-00-idle.png": "f1956af5f772377e7fa64c96ecad412d743a0136d72572f66340894aa3784e37",
+    "iterations/visual03/mboi_tata/visual/pose-01-idle.png": "e6783cadccbec2285cb985fc9561bce7b15bcd6d3fde9f42abc4a4230170f31b",
+    "iterations/visual03/mboi_tata/visual/pose-02-run.png": "e6c0e82760a6ad54175d81c3327e76f1b4567bb7a70cb2a54c17afc4a9db2c51",
+    "iterations/visual03/mboi_tata/visual/pose-03-run.png": "61220efb6546f733d162215e5f9230809cf3df5539cfd8d74bf03265df667367",
+    "iterations/visual03/mboi_tata/visual/pose-04-run.png": "8a6d23afce83441321cf7fee7a284832535aaad93c219ca2dbed1903b78793d2",
+    "iterations/visual03/mboi_tata/visual/pose-05-run.png": "95ac563728ec5c9debeeea38594497fbec2ac0babf5943dc68846190fb2ea294",
+    "iterations/visual03/mboi_tata/visual/pose-06-walk.png": "2e2e1cc43596beac5393bb2c683f4f077e0825e8f6f3f66e4f758395de2104aa",
+    "iterations/visual03/mboi_tata/visual/pose-07-walk.png": "573bad52b80a6d688961b440abc7d27ff5f258f3ac62f3cb93b0c10b7c09a845",
+    "iterations/visual03/mboi_tata/visual/pose-08-stun.png": "16b01564eace4d909eb98759129fd22deb8996f72b3721c1a3b0a2213e79d89e",
+    "iterations/visual03/mboi_tata/visual/pose-09-attack_prepare.png": "eb1019fc41d6b12809f317b4302c23ea2c77a529eaf3599454bd301d2370ad1e",
+    "iterations/visual03/mboi_tata/visual/pose-10-attack_release.png": "6ba3499ab252027a8c20534b0d89817dad3bf8732f9f5c6821d0f080b51fa926",
+    "iterations/visual03/mboi_tata/visual/pose-11-pain.png": "915aafc160bf26843e8ecd88098ffa6c7d98b308f018088e0f6fbb9a1988dc2a",
+    "iterations/visual03/mboi_tata/visual/pose-12-death.png": "a89e0fbac27d98a3e9cb1648a26444791251c5aa18e3cabb5311fe1e9b8392db",
+    "iterations/visual03/mboi_tata/visual/pose-13-death.png": "00ee7c5c94323d4228adb1155fd14dadc1f422ef3863575add317765a1a69e09",
+    "iterations/visual03/mboi_tata/visual/pose-14-death.png": "66490837c2d8c10a1f0cccad708334a46468c552bc9a96d43e8da80b74e9f9e1",
+    "iterations/visual03/mboi_tata/visual/pose-15-death.png": "7742a2d1bcbbda6c3d0206d8006c63bc02161b5fd0517bd030a74e0c8c845804",
+    "iterations/visual03/mboi_tata/visual/pose-16-death.png": "55aafa963503c3d1c3e1fa52b475d9be6d663d930170dfd61f5efd35fb3655a9",
+    "iterations/visual03/mboi_tata/visual/pose-17-death.png": "a4da0bc435e772b6fc95547389117316428f434d4d485563534fc77e995082c9",
+    "iterations/visual03/mboi_tata/visual/pose-18-breath.png": "9700381e9f6c32e5fe74c32133774d9e73253d7bb3796244435fdc5aa1f964dc",
+    "iterations/visual03/mboi_tata/visual/pose-19-breath.png": "872e023720cb6961d2408ee4bb920a33f1115ac52703f6e5576f356503ff07df",
+    "iterations/visual03/mboi_tata/visual/pose-20-breath.png": "3eb1060dfac4c9815ce58ee1ec49422eb60153c77886a69edf34932b97560e4a",
+    "iterations/visual03/mboi_tata/visual/pose-21-breath.png": "a0ead7febabe572e15bf4f4bb59d7582008de166bc92047286304651024c780c",
+    "iterations/visual03/mboi_tata/visual/pose-22-rest.png": "8a733d738a9394c0e29e4434ee51b52c6bbba14bad32d8e07668e5122013915f",
+    "iterations/visual03/mboi_tata/visual/process.log": "a07312a8d9f21f1fa0ec91d89b913d2623f5ef3bc2e7a732d96f8cc77c080a1b",
+    "iterations/visual03/mboi_tata/visual/session.ini": "d745dc10e75191e8f7be44de7642149deeb5b946261acfe9d618e2f1fd3625b7",
+    "iterations/visual03/mboi_tata/visual/view-front.png": "2f97fa33f1d01fc2825edc29341e4e9d7fb9f2f5e0faf1c901c79cf8a0308a5e",
+    "iterations/visual03/mboi_tata/visual/view-head-front.png": "f0568b365d8e5197ce9a7a7026c85e5f9de1c65ce6ee5d2607b9d4a4ff80c1e8",
+    "iterations/visual03/mboi_tata/visual/view-head-oblique.png": "aadd6339b7918e66b3cb9c16b754f35c11b4c13014704bf1fc4ed7bfb44e1cef",
+    "iterations/visual03/mboi_tata/visual/view-lying-oblique.png": "8a733d738a9394c0e29e4434ee51b52c6bbba14bad32d8e07668e5122013915f",
+    "iterations/visual03/mboi_tata/visual/view-rear.png": "351cb5f519ec357391b61d4a1286974bc9a41b4362e4212db45038a7490d31e3",
+    "iterations/visual03/mboi_tata/visual/view-side.png": "2cbf56af89854cda5b063892b784d69b390ceed1b1fc40329b39b9dd6c0afa36",
+    "iterations/visual03/monai/fixture-source/MAPINFO.txt": "81f2ebbd68f3ef79670c8f314f654b0a28dce2044db9424453c1725c3e013915",
+    "iterations/visual03/monai/fixture-source/ZSCRIPT.txt": "92e14690917af642022b8c8a9a815d689b9bb80a957e68691263696ff7578964",
+    "iterations/visual03/monai/fixture.zs": "7b3267e2063e29920481fc64b9b9140d62a178b8a1547263b73160b6a38d400e",
+    "iterations/visual03/monai/RESULTS.json": "71e66d516b8b310183d4a1143563411d8391ff8aff24b70e03d2c7a1e3c02a5c",
+    "iterations/visual03/monai/visual/commands.cfg": "690e1c7635526d8a5c47b260dbffd453573b3a11fab289b94ce04d7440411f33",
+    "iterations/visual03/monai/visual/empty-view-0.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "iterations/visual03/monai/visual/empty-view-6.png": "5a2ba58ed5f6efbf157b5e78e666b179a2b4729e99130938b9182d383bdc1bcf",
+    "iterations/visual03/monai/visual/empty.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "iterations/visual03/monai/visual/engine.log": "fd772cc1cad7b718fd08b1b412287fceca9ca58571fcb66c0591eda259234a82",
+    "iterations/visual03/monai/visual/pose-00-idle.png": "e89f5c488248ded1a60c14e2c46bfcc6e26beaf6ff3330a0b5ae1c250864da05",
+    "iterations/visual03/monai/visual/pose-01-idle.png": "e4887da30c459535415ae08dfde78bcec44f1e02121cb0f4fd9c3d92b3aabda3",
+    "iterations/visual03/monai/visual/pose-02-run.png": "6e2657af85c733a7a39f1b0a54b9a9980eaf5a1ba4521fbed7941c8cb88bd330",
+    "iterations/visual03/monai/visual/pose-03-run.png": "74b382c1f672cb38b9b0a2e56f0d84e84cbdea50e1ea7d77bcead1d5e8030aed",
+    "iterations/visual03/monai/visual/pose-04-run.png": "65aa9a82d8c83b4ad9d234ad301126d1094efc955a8ac395f7730289f27e3cb6",
+    "iterations/visual03/monai/visual/pose-05-run.png": "74ffeb737bb3ad099f78350fe3ef4ed2cc0ae96213d57ecb715179dee1f88467",
+    "iterations/visual03/monai/visual/pose-06-walk.png": "21d18f18e3c8e562b011ffa4f4f7535b8eae41016a95e178a95f2eaa1755a6e2",
+    "iterations/visual03/monai/visual/pose-07-walk.png": "a6916b5cc584e48c10889921be4c7268505d57f2f1af9f51d871dca8cee1f8df",
+    "iterations/visual03/monai/visual/pose-08-stun.png": "1dc0d109287c5bc05cef25fad7e817e263a197280f80c910200ed265d2b1b1dc",
+    "iterations/visual03/monai/visual/pose-09-attack_prepare.png": "d1c3f6795e80d54a3aaf3b13926c93106b4f4f11d5e4f16ce9e88c1759f91d83",
+    "iterations/visual03/monai/visual/pose-10-attack_release.png": "1a31bdf6ffec3c3264260e1d96663f323687f5868663c1a9c67a62fcf788cd13",
+    "iterations/visual03/monai/visual/pose-11-pain.png": "859027b6beddef715b16c6e932156291863db8a0665843ca34ce9d945969b8ff",
+    "iterations/visual03/monai/visual/pose-12-death.png": "db7353ed0646b4d4acd311d801f22a0b8dd4538d3af95925edcfa3aaf636eb26",
+    "iterations/visual03/monai/visual/pose-13-death.png": "92103d454203d2298f7b968e44885beca93a9fcaf840c568296f45141c43b372",
+    "iterations/visual03/monai/visual/pose-14-death.png": "6f673084a5288c5d28e51331cded2f243c77d5f018bf32e0fb11aa118af0aafe",
+    "iterations/visual03/monai/visual/pose-15-death.png": "9379bca5a851f3709a9262eb8fc99165356f7875940f4527470f4936a23f7a7d",
+    "iterations/visual03/monai/visual/pose-16-death.png": "9c15a81b683da366773144f882653e79066ff2e35f827b9a070c9a306acaf762",
+    "iterations/visual03/monai/visual/pose-17-death.png": "8bf949c9889878a53c76e79de2235e5740264fbcc16f5346ce8de038903a5a06",
+    "iterations/visual03/monai/visual/pose-18-breath.png": "123a973d4ade598a1d5ee4dbbae29652bcc96b9182be969948badfe75c3bb434",
+    "iterations/visual03/monai/visual/pose-19-breath.png": "99546f476ff95f33d02abed97922c740a7a05f19a8b1e207186575dbc0017482",
+    "iterations/visual03/monai/visual/pose-20-breath.png": "340ea6c049e97ec9132cff0d78323b58b88050ea2cdd8f17c2d583faed038b73",
+    "iterations/visual03/monai/visual/pose-21-breath.png": "70b28d3102e61e28c72d33065547474de2baddf6f89bfb2c9072d985b459838a",
+    "iterations/visual03/monai/visual/pose-22-rest.png": "63a687fbe2842227bf69e45e7997fdc6d2e355109b71c78722c14fa6b12645c8",
+    "iterations/visual03/monai/visual/process.log": "de91a00d330ab17bbb59209ec126e7fb5e2a92f14debfa4bb976912770ad062e",
+    "iterations/visual03/monai/visual/session.ini": "e8a388f439da1d65f521bcbba15daad781842d298880c001899c37710597033d",
+    "iterations/visual03/monai/visual/view-front.png": "35ccc4ae78895ec6967bcb65ccae48b15bed9b8d887824bf556406a6ef2af6c8",
+    "iterations/visual03/monai/visual/view-head-front.png": "7ac9f8661b1b491c57113e680ab21688ed88f9db79907a2bbafcc25fa46bcac0",
+    "iterations/visual03/monai/visual/view-head-oblique.png": "2f09bbe27063f87707d5f3373cbc9882d9047cb99511af8ee2f531d4da4bc9d7",
+    "iterations/visual03/monai/visual/view-lying-oblique.png": "63a687fbe2842227bf69e45e7997fdc6d2e355109b71c78722c14fa6b12645c8",
+    "iterations/visual03/monai/visual/view-rear.png": "fb6b5c082520a49dc21f500f20470ddc5a841f7098c67a6fa604355a469f8aee",
+    "iterations/visual03/monai/visual/view-side.png": "bbe1a6fc69cc0656b982b88b79833299fbcb2369d9ea8b06994bcc756473c7ed",
+    "native01/mboi_tata/baseline/commands.cfg": "03ec6fcd75fa5a2cbbff543a7b9b40a1acfec139de5134467d5d487af83b9c31",
+    "native01/mboi_tata/baseline/engine.log": "db29846375151a64e315915ed4aaaee588415da506b8040b67071f435bd8e298",
+    "native01/mboi_tata/baseline/process.log": "6c69fb2fbd2d24850d0e75d1a792cab943864273df4b3695e2b7d80c4e4be5de",
+    "native01/mboi_tata/baseline/session.ini": "55c0f1621c15087560536e29459ef5dd48f0edc340ec59f180a6b9b6791356f6",
+    "native01/mboi_tata/fixture-source/MAPINFO.txt": "81f2ebbd68f3ef79670c8f314f654b0a28dce2044db9424453c1725c3e013915",
+    "native01/mboi_tata/fixture-source/ZSCRIPT.txt": "89485beade0c6fc40f62d05638511c74dc6719c5bc03e0bffbd388dfb0567080",
+    "native01/mboi_tata/fixture.zs": "1a4579b52c1c97fb52c1d2d3b412ff4aaed322bd85596c5655e42e40c33ea134",
+    "native01/mboi_tata/fresh-model/commands.cfg": "690e1c7635526d8a5c47b260dbffd453573b3a11fab289b94ce04d7440411f33",
+    "native01/mboi_tata/fresh-model/empty-view-0.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "native01/mboi_tata/fresh-model/empty-view-6.png": "5a2ba58ed5f6efbf157b5e78e666b179a2b4729e99130938b9182d383bdc1bcf",
+    "native01/mboi_tata/fresh-model/empty.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "native01/mboi_tata/fresh-model/engine.log": "3cbe33a2cf220428e7b25b9d1ebe1f5d68762a1b562b047af264e530289402bb",
+    "native01/mboi_tata/fresh-model/pose-00-idle.png": "f1956af5f772377e7fa64c96ecad412d743a0136d72572f66340894aa3784e37",
+    "native01/mboi_tata/fresh-model/pose-01-idle.png": "e6783cadccbec2285cb985fc9561bce7b15bcd6d3fde9f42abc4a4230170f31b",
+    "native01/mboi_tata/fresh-model/pose-02-run.png": "e6c0e82760a6ad54175d81c3327e76f1b4567bb7a70cb2a54c17afc4a9db2c51",
+    "native01/mboi_tata/fresh-model/pose-03-run.png": "61220efb6546f733d162215e5f9230809cf3df5539cfd8d74bf03265df667367",
+    "native01/mboi_tata/fresh-model/pose-04-run.png": "8a6d23afce83441321cf7fee7a284832535aaad93c219ca2dbed1903b78793d2",
+    "native01/mboi_tata/fresh-model/pose-05-run.png": "95ac563728ec5c9debeeea38594497fbec2ac0babf5943dc68846190fb2ea294",
+    "native01/mboi_tata/fresh-model/pose-06-walk.png": "2e2e1cc43596beac5393bb2c683f4f077e0825e8f6f3f66e4f758395de2104aa",
+    "native01/mboi_tata/fresh-model/pose-07-walk.png": "573bad52b80a6d688961b440abc7d27ff5f258f3ac62f3cb93b0c10b7c09a845",
+    "native01/mboi_tata/fresh-model/pose-08-stun.png": "16b01564eace4d909eb98759129fd22deb8996f72b3721c1a3b0a2213e79d89e",
+    "native01/mboi_tata/fresh-model/pose-09-attack_prepare.png": "eb1019fc41d6b12809f317b4302c23ea2c77a529eaf3599454bd301d2370ad1e",
+    "native01/mboi_tata/fresh-model/pose-10-attack_release.png": "6ba3499ab252027a8c20534b0d89817dad3bf8732f9f5c6821d0f080b51fa926",
+    "native01/mboi_tata/fresh-model/pose-11-pain.png": "915aafc160bf26843e8ecd88098ffa6c7d98b308f018088e0f6fbb9a1988dc2a",
+    "native01/mboi_tata/fresh-model/pose-12-death.png": "a89e0fbac27d98a3e9cb1648a26444791251c5aa18e3cabb5311fe1e9b8392db",
+    "native01/mboi_tata/fresh-model/pose-13-death.png": "00ee7c5c94323d4228adb1155fd14dadc1f422ef3863575add317765a1a69e09",
+    "native01/mboi_tata/fresh-model/pose-14-death.png": "66490837c2d8c10a1f0cccad708334a46468c552bc9a96d43e8da80b74e9f9e1",
+    "native01/mboi_tata/fresh-model/pose-15-death.png": "7742a2d1bcbbda6c3d0206d8006c63bc02161b5fd0517bd030a74e0c8c845804",
+    "native01/mboi_tata/fresh-model/pose-16-death.png": "55aafa963503c3d1c3e1fa52b475d9be6d663d930170dfd61f5efd35fb3655a9",
+    "native01/mboi_tata/fresh-model/pose-17-death.png": "a4da0bc435e772b6fc95547389117316428f434d4d485563534fc77e995082c9",
+    "native01/mboi_tata/fresh-model/pose-18-breath.png": "9700381e9f6c32e5fe74c32133774d9e73253d7bb3796244435fdc5aa1f964dc",
+    "native01/mboi_tata/fresh-model/pose-19-breath.png": "872e023720cb6961d2408ee4bb920a33f1115ac52703f6e5576f356503ff07df",
+    "native01/mboi_tata/fresh-model/pose-20-breath.png": "3eb1060dfac4c9815ce58ee1ec49422eb60153c77886a69edf34932b97560e4a",
+    "native01/mboi_tata/fresh-model/pose-21-breath.png": "a0ead7febabe572e15bf4f4bb59d7582008de166bc92047286304651024c780c",
+    "native01/mboi_tata/fresh-model/pose-22-rest.png": "8a733d738a9394c0e29e4434ee51b52c6bbba14bad32d8e07668e5122013915f",
+    "native01/mboi_tata/fresh-model/process.log": "871bda3ea55d45a42dbbe89f1b63471a2c68f03ca2f24b91f21a75dd6df8224e",
+    "native01/mboi_tata/fresh-model/session.ini": "bcea449642a85caf5bc09a726b80a64c52301904b97576210dc0c6d73aac741f",
+    "native01/mboi_tata/fresh-model/view-front.png": "2f97fa33f1d01fc2825edc29341e4e9d7fb9f2f5e0faf1c901c79cf8a0308a5e",
+    "native01/mboi_tata/fresh-model/view-head-front.png": "f0568b365d8e5197ce9a7a7026c85e5f9de1c65ce6ee5d2607b9d4a4ff80c1e8",
+    "native01/mboi_tata/fresh-model/view-head-oblique.png": "aadd6339b7918e66b3cb9c16b754f35c11b4c13014704bf1fc4ed7bfb44e1cef",
+    "native01/mboi_tata/fresh-model/view-lying-oblique.png": "8a733d738a9394c0e29e4434ee51b52c6bbba14bad32d8e07668e5122013915f",
+    "native01/mboi_tata/fresh-model/view-rear.png": "351cb5f519ec357391b61d4a1286974bc9a41b4362e4212db45038a7490d31e3",
+    "native01/mboi_tata/fresh-model/view-side.png": "2cbf56af89854cda5b063892b784d69b390ceed1b1fc40329b39b9dd6c0afa36",
+    "native01/mboi_tata/model-reload/commands.cfg": "2cd34f9ad91b48460bd6ac532a40d269f04193179ec0676bbc250403469992b6",
+    "native01/mboi_tata/model-reload/engine.log": "f0f40db7192b0c5c748ae9971e1a6b1bb0b1db25d71d8be30cf39fa4833b4bc9",
+    "native01/mboi_tata/model-reload/process.log": "10919fa75c6e633bc0bcde92aff21340e3ace37e8feb64d132b3d18f60b1a7cb",
+    "native01/mboi_tata/model-reload/session.ini": "46b4f595ebd0567ad52c0f84e8b67fbfcff219fa705a184f26dbe7d9c5b98f6a",
+    "native01/mboi_tata/old-save-model/commands.cfg": "2cd34f9ad91b48460bd6ac532a40d269f04193179ec0676bbc250403469992b6",
+    "native01/mboi_tata/old-save-model/engine.log": "2913cecc1a75b6c22bdb1c99a36199426b81b2603fbc936bc1be042b973c6f77",
+    "native01/mboi_tata/old-save-model/process.log": "7830efa25926704482a8f455b23be4eea75de9fe776a96426e9b49fe5c57d60d",
+    "native01/mboi_tata/old-save-model/session.ini": "cbf0769c37407452d34e695681fc6bffae5773c1d1f67112b40ef217fbf9a143",
+    "native01/mboi_tata/RESULTS.json": "93ea9ccb7515a7e0332dec3db964d5e8e23b2cc6b1cb506313fdd9388a5a6a9a",
+    "native01/mboi_tata/rollback/commands.cfg": "2cd34f9ad91b48460bd6ac532a40d269f04193179ec0676bbc250403469992b6",
+    "native01/mboi_tata/rollback/engine.log": "fc74f445466bb03efbdcc997d10714e86e69ed16f06a91f58abb4921e94a48e3",
+    "native01/mboi_tata/rollback/process.log": "46e7a634ab013b2386f97678fa905b783edc8a462c6da04e131895b3780f0ef2",
+    "native01/mboi_tata/rollback/session.ini": "7dd0c0b4df82b248ddf5d6241161b43bdf535573898ee743901a249b4893c2eb",
+    "native01/monai/baseline/commands.cfg": "03ec6fcd75fa5a2cbbff543a7b9b40a1acfec139de5134467d5d487af83b9c31",
+    "native01/monai/baseline/engine.log": "5934bb7daf007751b3ec25f4a842516f80798c5fca896ddd0a78a1c83054040d",
+    "native01/monai/baseline/process.log": "2e29afdda95a2a31955b33f15ce4a0380c43a3cb44d1e558269b8d1dee27a7e3",
+    "native01/monai/baseline/session.ini": "e92f47360d8ab3026c965d185383be4014bd3b0a40cc123d1c79fb0c2da9e618",
+    "native01/monai/fixture-source/MAPINFO.txt": "81f2ebbd68f3ef79670c8f314f654b0a28dce2044db9424453c1725c3e013915",
+    "native01/monai/fixture-source/ZSCRIPT.txt": "92e14690917af642022b8c8a9a815d689b9bb80a957e68691263696ff7578964",
+    "native01/monai/fixture.zs": "7b3267e2063e29920481fc64b9b9140d62a178b8a1547263b73160b6a38d400e",
+    "native01/monai/fresh-model/commands.cfg": "690e1c7635526d8a5c47b260dbffd453573b3a11fab289b94ce04d7440411f33",
+    "native01/monai/fresh-model/empty-view-0.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "native01/monai/fresh-model/empty-view-6.png": "5a2ba58ed5f6efbf157b5e78e666b179a2b4729e99130938b9182d383bdc1bcf",
+    "native01/monai/fresh-model/empty.png": "44c4eed34c7c4cc3554b15eb55d93b4864d2507b0a72e868db8ab2733cf90a26",
+    "native01/monai/fresh-model/engine.log": "b1fd50be816c59c1c7c6adbb8fc1d7dd46416347193abbc83e6fc9e6d23ae979",
+    "native01/monai/fresh-model/pose-00-idle.png": "e89f5c488248ded1a60c14e2c46bfcc6e26beaf6ff3330a0b5ae1c250864da05",
+    "native01/monai/fresh-model/pose-01-idle.png": "e4887da30c459535415ae08dfde78bcec44f1e02121cb0f4fd9c3d92b3aabda3",
+    "native01/monai/fresh-model/pose-02-run.png": "6e2657af85c733a7a39f1b0a54b9a9980eaf5a1ba4521fbed7941c8cb88bd330",
+    "native01/monai/fresh-model/pose-03-run.png": "74b382c1f672cb38b9b0a2e56f0d84e84cbdea50e1ea7d77bcead1d5e8030aed",
+    "native01/monai/fresh-model/pose-04-run.png": "65aa9a82d8c83b4ad9d234ad301126d1094efc955a8ac395f7730289f27e3cb6",
+    "native01/monai/fresh-model/pose-05-run.png": "74ffeb737bb3ad099f78350fe3ef4ed2cc0ae96213d57ecb715179dee1f88467",
+    "native01/monai/fresh-model/pose-06-walk.png": "21d18f18e3c8e562b011ffa4f4f7535b8eae41016a95e178a95f2eaa1755a6e2",
+    "native01/monai/fresh-model/pose-07-walk.png": "a6916b5cc584e48c10889921be4c7268505d57f2f1af9f51d871dca8cee1f8df",
+    "native01/monai/fresh-model/pose-08-stun.png": "1dc0d109287c5bc05cef25fad7e817e263a197280f80c910200ed265d2b1b1dc",
+    "native01/monai/fresh-model/pose-09-attack_prepare.png": "d1c3f6795e80d54a3aaf3b13926c93106b4f4f11d5e4f16ce9e88c1759f91d83",
+    "native01/monai/fresh-model/pose-10-attack_release.png": "1a31bdf6ffec3c3264260e1d96663f323687f5868663c1a9c67a62fcf788cd13",
+    "native01/monai/fresh-model/pose-11-pain.png": "859027b6beddef715b16c6e932156291863db8a0665843ca34ce9d945969b8ff",
+    "native01/monai/fresh-model/pose-12-death.png": "db7353ed0646b4d4acd311d801f22a0b8dd4538d3af95925edcfa3aaf636eb26",
+    "native01/monai/fresh-model/pose-13-death.png": "92103d454203d2298f7b968e44885beca93a9fcaf840c568296f45141c43b372",
+    "native01/monai/fresh-model/pose-14-death.png": "6f673084a5288c5d28e51331cded2f243c77d5f018bf32e0fb11aa118af0aafe",
+    "native01/monai/fresh-model/pose-15-death.png": "9379bca5a851f3709a9262eb8fc99165356f7875940f4527470f4936a23f7a7d",
+    "native01/monai/fresh-model/pose-16-death.png": "9c15a81b683da366773144f882653e79066ff2e35f827b9a070c9a306acaf762",
+    "native01/monai/fresh-model/pose-17-death.png": "8bf949c9889878a53c76e79de2235e5740264fbcc16f5346ce8de038903a5a06",
+    "native01/monai/fresh-model/pose-18-breath.png": "123a973d4ade598a1d5ee4dbbae29652bcc96b9182be969948badfe75c3bb434",
+    "native01/monai/fresh-model/pose-19-breath.png": "99546f476ff95f33d02abed97922c740a7a05f19a8b1e207186575dbc0017482",
+    "native01/monai/fresh-model/pose-20-breath.png": "340ea6c049e97ec9132cff0d78323b58b88050ea2cdd8f17c2d583faed038b73",
+    "native01/monai/fresh-model/pose-21-breath.png": "70b28d3102e61e28c72d33065547474de2baddf6f89bfb2c9072d985b459838a",
+    "native01/monai/fresh-model/pose-22-rest.png": "63a687fbe2842227bf69e45e7997fdc6d2e355109b71c78722c14fa6b12645c8",
+    "native01/monai/fresh-model/process.log": "cf99fcd91c0538de13cae3c12aa32fdf587da4343f8554c61082758befbaefb3",
+    "native01/monai/fresh-model/session.ini": "0b00d4f2df3ade4dd6b1d5376f5f24c713b897944bca797ba9ec87aea1b7ef50",
+    "native01/monai/fresh-model/view-front.png": "35ccc4ae78895ec6967bcb65ccae48b15bed9b8d887824bf556406a6ef2af6c8",
+    "native01/monai/fresh-model/view-head-front.png": "7ac9f8661b1b491c57113e680ab21688ed88f9db79907a2bbafcc25fa46bcac0",
+    "native01/monai/fresh-model/view-head-oblique.png": "2f09bbe27063f87707d5f3373cbc9882d9047cb99511af8ee2f531d4da4bc9d7",
+    "native01/monai/fresh-model/view-lying-oblique.png": "63a687fbe2842227bf69e45e7997fdc6d2e355109b71c78722c14fa6b12645c8",
+    "native01/monai/fresh-model/view-rear.png": "fb6b5c082520a49dc21f500f20470ddc5a841f7098c67a6fa604355a469f8aee",
+    "native01/monai/fresh-model/view-side.png": "bbe1a6fc69cc0656b982b88b79833299fbcb2369d9ea8b06994bcc756473c7ed",
+    "native01/monai/model-reload/commands.cfg": "2cd34f9ad91b48460bd6ac532a40d269f04193179ec0676bbc250403469992b6",
+    "native01/monai/model-reload/engine.log": "c2d4225f06bbd7049693e78150a185e8ac90318960ef2053744f875d92848811",
+    "native01/monai/model-reload/process.log": "388469d69a84be880523309df5e344161d91a4484b6aa36ad722f5879fab6865",
+    "native01/monai/model-reload/session.ini": "1cffda5f1986a466ea26bb7d6621ba6d8026874ede308c846c31f110052aa735",
+    "native01/monai/old-save-model/commands.cfg": "2cd34f9ad91b48460bd6ac532a40d269f04193179ec0676bbc250403469992b6",
+    "native01/monai/old-save-model/engine.log": "5479fb1ef157535930de64b97ed1e140ab38ed8a7661bf9ad8a97c095afdd8ae",
+    "native01/monai/old-save-model/process.log": "5edeffa2a78044ccfa4e088fd2e1c88f37169c0f9c49c224020cbfaffc131fc3",
+    "native01/monai/old-save-model/session.ini": "0d1a33c1c5894a99c4a4faab6546512b6f27c38d596781872fdca478bf55911b",
+    "native01/monai/RESULTS.json": "890e344a92f0b799078fe59f39ab4678e8df1402a844ac9cc417b8a815cf2698",
+    "native01/monai/rollback/commands.cfg": "2cd34f9ad91b48460bd6ac532a40d269f04193179ec0676bbc250403469992b6",
+    "native01/monai/rollback/engine.log": "779712d111e4b77d8c34c08531271f43676e3514d652c769d842ad13d51aee62",
+    "native01/monai/rollback/process.log": "6d79c1674dc9fea44195c0aab8ca0ca1171e2d48a2d2bd2255927b20458a41eb",
+    "native01/monai/rollback/session.ini": "dd21cc0211d841625d1c7bf56de8b3d4491bb0680aebb7b2a863c6c91d0851f9",
+    "presentation01/mboi_tata/model/commands.cfg": "06bf3d3d9ac42098a4c6c09950f4de0cfefe1d0fc4675b458604897e55d5ddab",
+    "presentation01/mboi_tata/model/engine.log": "dbfeebd3bd8c8095dabc6a570efe2fa5659f5f87e95d4a7f31f93f1612264a14",
+    "presentation01/mboi_tata/model/fixture-source/MAPINFO.txt": "81f2ebbd68f3ef79670c8f314f654b0a28dce2044db9424453c1725c3e013915",
+    "presentation01/mboi_tata/model/fixture-source/ZSCRIPT.txt": "89485beade0c6fc40f62d05638511c74dc6719c5bc03e0bffbd388dfb0567080",
+    "presentation01/mboi_tata/model/fixture.zs": "1a4579b52c1c97fb52c1d2d3b412ff4aaed322bd85596c5655e42e40c33ea134",
+    "presentation01/mboi_tata/model/presents.csv": "e192bcca0d9c805b6e0c8402dea7bafbaaa0f151dac81a1e59cccb8549ec7fb4",
+    "presentation01/mboi_tata/model/process.log": "78b34848bab3a831fe2d4d9986bf5bec7ee705602488faa8d5ad8c0a6f3eb7d5",
+    "presentation01/mboi_tata/model/scene.png": "f1956af5f772377e7fa64c96ecad412d743a0136d72572f66340894aa3784e37",
+    "presentation01/mboi_tata/model/session.ini": "4f85bfbb1132a5a172a7614aa85985cb4cc4fd7860c33884c83cc1a3de7daa48",
+    "presentation01/mboi_tata/RESULTS.json": "dfba7124497c13816d79e71e2427581b6626293e849cd14802bfb82469ef498e",
+    "presentation01/mboi_tata/sprite/commands.cfg": "06bf3d3d9ac42098a4c6c09950f4de0cfefe1d0fc4675b458604897e55d5ddab",
+    "presentation01/mboi_tata/sprite/engine.log": "3ba9b05a0ed2a8baf181a43d15a38b47daee00594acb5e1303d3266af27d6312",
+    "presentation01/mboi_tata/sprite/fixture-source/MAPINFO.txt": "81f2ebbd68f3ef79670c8f314f654b0a28dce2044db9424453c1725c3e013915",
+    "presentation01/mboi_tata/sprite/fixture-source/ZSCRIPT.txt": "89485beade0c6fc40f62d05638511c74dc6719c5bc03e0bffbd388dfb0567080",
+    "presentation01/mboi_tata/sprite/fixture.zs": "1a4579b52c1c97fb52c1d2d3b412ff4aaed322bd85596c5655e42e40c33ea134",
+    "presentation01/mboi_tata/sprite/presents.csv": "4b853b045ce3b300b6526060ca27f77584eb595a96efdc09efd5baa726ad58d1",
+    "presentation01/mboi_tata/sprite/process.log": "9c59ea91e22c1fa24bb9a60ea874f0b4f656fa4c4afb1b02e7c29f54759642b7",
+    "presentation01/mboi_tata/sprite/scene.png": "0605f2270fd9d84c44e66ad2f90d5b98c47cc6f531e4f7bfe38bf03b59f89921",
+    "presentation01/mboi_tata/sprite/session.ini": "1c1ff33160fd30b75c51320b4fbf7fad5d9f7dfd13600f39848197eff56e94f0",
+    "presentation01/monai/model/commands.cfg": "06bf3d3d9ac42098a4c6c09950f4de0cfefe1d0fc4675b458604897e55d5ddab",
+    "presentation01/monai/model/engine.log": "18726f7f97247a900b0787ec7b998b0946a6b7b668ec8335269f9f21c4ba289f",
+    "presentation01/monai/model/fixture-source/MAPINFO.txt": "81f2ebbd68f3ef79670c8f314f654b0a28dce2044db9424453c1725c3e013915",
+    "presentation01/monai/model/fixture-source/ZSCRIPT.txt": "92e14690917af642022b8c8a9a815d689b9bb80a957e68691263696ff7578964",
+    "presentation01/monai/model/fixture.zs": "7b3267e2063e29920481fc64b9b9140d62a178b8a1547263b73160b6a38d400e",
+    "presentation01/monai/model/presents.csv": "67fabe91edfa0addafc3e8aeb5a6155519f4bb9617f0033b1e7c921fc782d6f0",
+    "presentation01/monai/model/process.log": "fca0122e4cd2a8ad696fa7e4773d9da73d2dac9710f4d0c6affd864ce4187e92",
+    "presentation01/monai/model/scene.png": "e89f5c488248ded1a60c14e2c46bfcc6e26beaf6ff3330a0b5ae1c250864da05",
+    "presentation01/monai/model/session.ini": "1da5416fc63296dfd6dd632d83d7836179b49fff2d5d015534434f1af60deb88",
+    "presentation01/monai/RESULTS.json": "0bf86f355a03b6e7664e2f8fc3d896c951a34a80ad23240823d4ffa29adf443e",
+    "presentation01/monai/sprite/commands.cfg": "06bf3d3d9ac42098a4c6c09950f4de0cfefe1d0fc4675b458604897e55d5ddab",
+    "presentation01/monai/sprite/engine.log": "8f261c8e7e7c3c32e34afb94b56a3956e7fdf60057d39ff4a0179f5035c86d41",
+    "presentation01/monai/sprite/fixture-source/MAPINFO.txt": "81f2ebbd68f3ef79670c8f314f654b0a28dce2044db9424453c1725c3e013915",
+    "presentation01/monai/sprite/fixture-source/ZSCRIPT.txt": "92e14690917af642022b8c8a9a815d689b9bb80a957e68691263696ff7578964",
+    "presentation01/monai/sprite/fixture.zs": "7b3267e2063e29920481fc64b9b9140d62a178b8a1547263b73160b6a38d400e",
+    "presentation01/monai/sprite/presents.csv": "0bca018002dc1b904beeaccff5187800fb1f822df8ef4e20aaead56c0f4336cc",
+    "presentation01/monai/sprite/process.log": "17d202790d28c78d3877fd15b68025a3c1e1bbec8fe2c842f0a2b202eb78a1b3",
+    "presentation01/monai/sprite/scene.png": "0605f2270fd9d84c44e66ad2f90d5b98c47cc6f531e4f7bfe38bf03b59f89921",
+    "presentation01/monai/sprite/session.ini": "361eb0bb6a4a488ed51bd084b70dee6acf16fb6b22e9f1fd2548fe416aac6853",
+    "validation-final.json": "c5fd0adb9bf35c7f3d2ab3dc24c7a5ca6f011d363e5669ef1547198506df03c4"
+  }
+}

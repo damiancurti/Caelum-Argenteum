@@ -1,0 +1,21 @@
+{
+  "files": 14,
+  "all_byte_identical": true,
+  "visual03_nonmanifest_files_identical": 13,
+  "sha256": {
+    "manifest.json": "733d78855eab137c4d8ac5abc8346ba064c8cbf988200490dfd20df144e57b17",
+    "preview.pk3": "2d3d3a9821d4be682a00a74ca2d15bf8baf809420b4495614d17a040ebb4ef74",
+    "editable/mboi_tata.mtl": "d6f194096fbddf33748543f6152fa7ed5e897527906ec35ab3472701309928f0",
+    "editable/mboi_tata.obj": "4e53fdb23f62a3251a342b996a8bcc81419196876da0b531567f4750243e766b",
+    "editable/monai.mtl": "9001f818c74a3fca9f00971733fd6b28f6390649327c0a259ef81a64c41db3d6",
+    "editable/monai.obj": "05f3deddba511c7396b5c932975ea453ba0bd1c5aaebea1abad4f47524de23b4",
+    "caelum/data/serpent_combat.modeldef": "04d39dab351bc165a295df0f76f48d44b0eb346cc432df2c043db835f9b25617",
+    "models/caelum/folklore/serpents/dark.png": "6573658a5e61c4c8f75046435e8e8d1f1e85e6348007c69fc911483fe579fac4",
+    "models/caelum/folklore/serpents/iris.png": "8b231a9556f30af1b2c3d11ee5e4e4d6b63f7336a5301d225bb7f4f43c5639cc",
+    "models/caelum/folklore/serpents/materials.png": "d71e0f9b909d3da45cf8fdef5f5e983d306c2e4240abbd324be54cac8762e3f9",
+    "models/caelum/folklore/serpents/mboi_tata.md3": "15fc59251587a69f71f302e98e924638718ad175b6b1801a7d6a718e757ad2a6",
+    "models/caelum/folklore/serpents/mboi_tata_scales.png": "21b1bd5ab5b3a5262696e2b900a11751250eebc008ac7377907edb7dfcee4b17",
+    "models/caelum/folklore/serpents/monai.md3": "e6c26b34840b82384e7f086d12524c46af33d752b81dd57379165e276f07ef0c",
+    "models/caelum/folklore/serpents/monai_scales.png": "e81050399fe4297a3dc3f541e7ae7a69b546b50a3b4280b125bf34faee30fb9e"
+  }
+}

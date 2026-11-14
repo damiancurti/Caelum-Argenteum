@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.37** - 2026-11-14.
+Documentation version: **5.17.38** - 2026-11-14.
+
+## #720 - Native Moñái and Mbói Tatá (5.17.38)
+
+Two native class bindings and 23 inherited states each are implemented.
+Fourteen exports repeat; independent serialized geometry/critical-pose
+attachments, 230 live continuity assertions and 136 combat/loot assertions
+pass. Review simplified heads, regular coils, belly UV transitions, jaws,
+crests and lying bodies under CA720-SERPENTS-01. Gallery placement remains a
+separate issue. Sixteen of 56 new folklore classes have native candidate art;
+the broader all-character/modular-equipment/campaign request is unfinished.
+Pending design questions remain deferred until the author returns.
 
 ## #717 - Wooden crafting world drops (5.17.37)
 
