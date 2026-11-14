@@ -1,0 +1,21 @@
+{
+  "issue": 731,
+  "owner": "Dami\u00e1n Curti / Caelum Argenteum",
+  "references": {
+    "leather": "src/graphics/caelum/icons/materials/ca_material_leather.png",
+    "cow_hide": "src/graphics/caelum/icons/materials/ca_material_cow_hide.png",
+    "predator_hide": "src/graphics/caelum/icons/materials/ca_material_predator_hide.png",
+    "monster_hide": "src/graphics/caelum/icons/materials/ca_material_monster_hide.png"
+  },
+  "method": "Original closed, subdivided nonplanar hide sheets. Owned icons guide irregular outlines/material identity; independent underside and rim geometry provide real volume. No raster edits.",
+  "generated_images": {
+    "materials.png": {
+      "tool": "built-in image_gen",
+      "prompt": "MATERIALS_PROMPT.json",
+      "original_output": "C:/Users/dcc70/.codex/generated_images/01a1d17b-9a43-7901-bffe-eb3e4a27f8d4/exec-2e73090f-b5db-4176-9535-9d1b627b1c20.png",
+      "sha256": "cea34a9774411ba52d742358d854791940f578403ba1787e65f9515729cec7f6",
+      "copied_without_raster_edits": true
+    }
+  },
+  "limits": "Candidate world crafting art only. Existing six cases, tiers, icon pixels, recipes, weight, collision, Actor.Scale, provenance, quest guards and saves remain unchanged. No whole-animal model or worn equipment."
+}

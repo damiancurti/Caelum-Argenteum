@@ -1,6 +1,50 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.43** - 2026-11-14.
+Documentation version: **5.17.44** - 2026-11-14.
+
+## 5.17.44 - Leather and hide world models (#731, parent #647)
+
+Four existing CaelumMaterialPickup designs gain native world models: leather19,
+cow hide76, predator hide77 and monster hide78. Exact M019/076/077/078 A
+bindings cover three leather tiers and three untiered hides, six cases total.
+Owned icons guide russet leather, brown/cream cow hair, tawny predator fur and
+dark plum/teal scales. Subdivided irregular sheets have geometric folds,
+thickness, closed rims and leather reverse faces. Separate UV vertices share
+exact positions along the material seams; no billboard cutouts are used.
+Existing icons, recipes, tiers, amounts, weight, collision, Actor.Scale0.25,
+provenance, quest behavior and save schema are unchanged.
+
+Four closed solids contain 4,416 vertices and 4,784 triangles. Independent
+serialized checks verify outward topology, exact noncollapsed quantized MD3
+triangles, original sprite envelopes, floor contact and the intended atlas
+region for every top, reverse and rim triangle. Thirteen exports repeat
+byte-for-byte. The first model used its outer material on the reverse; native
+review prompted separate leather reverse/rim UVs. Initial sources, manifests
+and previews remain retained. All 20 final detail views, the six-case floor
+overview and both presentation cohorts were inspected. Polygonal outlines,
+folds, contrasting russet rims and large painted scales remain candidate art.
+
+Editable OBJ/MTL and portable textures are in
+assets/source/art/inventory_models_647/hides. Built-in image_gen generated
+materials.png; MATERIALS_PROMPT.json retains the exact prompt and
+PROVENANCE.json the original path/hash. Pixels were copied without raster
+edits. Regenerate with python assets/generators/generate_inventory_hide_models.py
+--output build/hide-models --install.
+
+The final package passes 869 native assertions (163/181/163/181/181) across
+baseline, old-save adoption, fresh models, reload and rollback. All six cases
+retain pickup/split/merge, lots, provenance, Box weight and quest guards.
+API probes do not establish ordinary menu/crafting acceptance.
+One 700-tic four-object sprite/model pair records 1152.26/1132.35 queue presents/s,
+p95 1.0432/1.0793 ms and p99 1.2830/1.3327 ms on Windows 11/Ryzen 9 5950X/RTX 3070 Ti,
+GZDoom 4.14.2 Vulkan 1280x720, uncapped/vsync off, background unpaused/audio 5%.
+Queue-only timing and different projected footprints establish no GPU/display,
+repeatability or campaign/crowd acceptance. All 18,445 package entries match
+src; four models, one atlas, one definition, MODELDEF and two release
+diagnostics are the only runtime changes from #729.
+Evidence: assets/validation_v5_17_44/evidence/SUMMARY.json.
+CA731-HIDE-DROPS-01 retains author art and ordinary inventory/crafting review.
+Other inventory, characters, worn/first-person art and V5.16 remain unfinished.
 
 ## 5.17.43 - Hybrid serpents in the regional gallery (#729, parent #463)
 
