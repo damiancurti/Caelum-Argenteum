@@ -4,6 +4,34 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-242 - Check quantized anatomy and camera-matched pose visibility
+
+Status/evidence: STATIC-VERIFIED export defects and ENGINE-OBSERVED corrections,
+#708, 2026-11-14. A closed ellipsoid with tiny clipped pole rings can collapse
+triangles after MD3 coordinate quantization. Adding a pole cap alone preserves
+that narrow ring. Use true pole fans and appropriate tessellation for small
+features. The Peuchen wrapper changes only its own anatomy; all 23 emitted
+poses now have nonzero native triangle area. This does not certify older models.
+
+Separate anatomy groups from material suffixes when reading the OBJ: a material
+boundary is not an open solid. Attachment search results also need independent
+strict checks; a point on a capped tube's boundary can look inside to a ray
+filter that ignores zero-distance hits. The final 85 witnesses must lie inside
+both serialized solids with two independent directions and clearance above
+native quantization. Two wing roots needed actual geometry changes.
+
+Native functional assertions do not establish distinct or grounded art.
+Peuchen's first 51-assertion preview repeats idle endpoints, attack poses and
+all death stages. A death-letter offset assumed A but the actual sequence
+starts later. Explicit ordered pose data corrects it. Compare captures against
+an empty image from the same camera: a front empty image inflates the apparent
+coverage of a different lying camera. Keep interpolation disabled only for
+documented capture and restore it before saved continuity checks. Lastly,
+minimum-vertex floor normalization can rest a wide creature on a wing tip;
+inspect the lying body and fold its wings appropriately. Native views confirm
+the revised candidate, not all-pose surface clearance or author acceptance.
+See validate_peuchen_model.py and assets/validation_v5_17_32/evidence.
+
 ## CA-KP-241 - Verify linked assemblies without intersecting their volumes
 
 Status/evidence: STATIC-VERIFIED serialized geometry and ENGINE-OBSERVED

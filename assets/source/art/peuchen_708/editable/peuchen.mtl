@@ -1,0 +1,12 @@
+newmtl atlas
+Kd 1 1 1
+map_Kd src/models/caelum/folklore/peuchen/materials.png
+newmtl iris
+Kd 1 1 1
+map_Kd src/models/caelum/folklore/peuchen/iris.png
+newmtl dark
+Kd 1 1 1
+map_Kd src/models/caelum/folklore/peuchen/dark.png
+newmtl scales
+Kd 1 1 1
+map_Kd src/models/caelum/folklore/peuchen/scales.png

@@ -1,0 +1,9 @@
+{
+  "issue": 708,
+  "tool": "built-in image_gen",
+  "date": "2026-11-14",
+  "intent": "denser scale field after native inspection; earlier atlas retained",
+  "prompt": "Use case: stylized-concept. Asset type: one flat opaque square seamless-style albedo material for the actual 3D Peuchén model in Caelum Argenteum. Fill the entire image edge to edge with a dense uniform field of SMALL overlapping reptile scales, approximately 35 to 45 scales across the image width and similarly dense vertically. Restrained painted dark-fantasy game texture: dark charcoal/slate-blue scale surfaces, thin warmer umber worn ridges, soft muted local highlights that describe each scale. Match a dark slate-scaled Argentine folklore dragon. Every scale is small and reasonably consistent in size; no huge central scales. No creature, eye, body silhouette, wings, text, symbols, border, grid or separate swatches. Uniform soft ambient lighting across the whole image, no global gradient, cast shadow or glossy plastic glare. A reusable flat surface texture, not a render of an object. Fully opaque. Keep contrast readable without outlining the scales in bright white.",
+  "output_hint": "Generated images are saved to C:\\Users\\dcc70\\.codex\\generated_images\\01a1d17b-9a43-7901-bffe-eb3e4a27f8d4 as C:\\Users\\dcc70\\.codex\\generated_images\\01a1d17b-9a43-7901-bffe-eb3e4a27f8d4\\exec-46032d0c-82c8-4f15-bccb-1a658d8a9d3a.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "selected": true
+}

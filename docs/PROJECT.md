@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.31** - 2026-11-14.
+Documentation version: **5.17.32** - 2026-11-14.
+
+## 5.17.32 - Peuchen native combat presentation (#708)
+
+The eleventh new folklore class with native 3D art is CA-FOLK-054 Peuchen:
+four legs, long neck/tail, horns and thick batlike wing membranes. All 23 native
+frame/action identities and approved provisional Mandinga rules remain.
+Ten exports repeat; 115 continuity and 80 action/loot checks pass. One qualified
+sprite/model comparison records 1760.26/1725.56 queue presents/s, p95 0.7686/0.7804 ms and p99
+0.9615/0.9241 ms, without campaign/crowd acceptance. CA708-PEUCHEN-01 keeps art and
+ordinary-play review pending. Flight, regional placement, other characters,
+interchangeable worn equipment and original campaign work remain unfinished.
 
 ## 5.17.31 - Chainmail material world model (#706)
 

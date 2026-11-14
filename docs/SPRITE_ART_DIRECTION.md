@@ -1,6 +1,6 @@
 # Caelum Argenteum - Sprite art direction
 
-Documentation version: **5.17.31** - 2026-11-14.
+Documentation version: **5.17.32** - 2026-11-14.
 
 ## Folklore model reference handoff for #453 (2026-11-12)
 
