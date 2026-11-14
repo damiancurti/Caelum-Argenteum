@@ -1,6 +1,19 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.22** - 2026-11-14.
+Documentation version: **5.17.23** - 2026-11-14.
+
+## 5.17.23 - Mikilo and Coquena models (#690, 2026-11-14)
+
+The all-characters-3D request adds two native folklore candidates from the
+verified references, using three owned generated diffuse textures and editable
+body/clothing groups. Their original 23 frame pairs, temporary body rules,
+combat, loot and catalogue identities remain intact. Native review corrected
+camera framing, hidden bags, cloth mapping, collars and nail sampling. Twelve
+exports repeat; all eight earlier beast-men native outputs remain unchanged.
+The full package passes 230 continuity and 136 action/loot checks plus one
+presentation pair per creature. ASSETS/evidence preserve timings, source/output
+hashes, earlier candidates and qualifications. CA690-DUENDES-01 remains pending;
+this does not establish author art acceptance or complete the broad 3D batch.
 
 ## 5.17.22 - Glove-pair world-drop models (#688, 2026-11-14)
 

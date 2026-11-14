@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.22** - 2026-11-14.
+Documentation version: **5.17.23** - 2026-11-14.
+
+## #690 - Mikilo and Coquena native combat models (5.17.23)
+
+Two fixed-reference candidates pass 230 continuity and 136 action/loot checks,
+twelve-file deterministic export and two isolated presentation comparisons.
+Unique Coquena identity, existing provisional rules and all earlier native art
+remain intact. Retain CA690-DUENDES-01 for visual/ordinary-play review, including
+material seams, hands/feet and costume articulation. Their NOA gallery placement,
+the other 48 new bestiary classes and modular playable equipment remain separate.
 
 ## #688 - Four glove-pair world-drop models (5.17.22)
 

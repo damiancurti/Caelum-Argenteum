@@ -1,0 +1,13 @@
+{
+  "unchanged_resources": [
+    "models/caelum/folklore/beastmen/lobizon.png",
+    "models/caelum/folklore/beastmen/materials.png",
+    "models/caelum/folklore/beastmen/lobizon.md3",
+    "models/caelum/folklore/beastmen/uturunco.png",
+    "models/caelum/folklore/beastmen/uturunco.md3",
+    "models/caelum/folklore/beastmen/ucumar.png",
+    "models/caelum/folklore/beastmen/ucumar.md3",
+    "caelum/data/beast_men_combat.modeldef"
+  ],
+  "unchanged_all_editable": true
+}

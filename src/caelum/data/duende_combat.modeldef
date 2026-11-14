@@ -1,0 +1,61 @@
+Model CaelumBestiary009
+{
+    Path "models/caelum/folklore/duendes"
+    Model 0 "mikilo.md3"
+    Scale 1.65199151302 1.65199151302 1.65199151302
+    CorrectPixelStretch
+    FrameIndex MIID A 0 0
+    FrameIndex MIID B 0 1
+    FrameIndex MIRN A 0 2
+    FrameIndex MIRN B 0 3
+    FrameIndex MIRN C 0 4
+    FrameIndex MIRN D 0 5
+    FrameIndex MIWK A 0 6
+    FrameIndex MIWK B 0 7
+    FrameIndex MNDG A 0 8
+    FrameIndex MNDG D 0 9
+    FrameIndex MNDG E 0 10
+    FrameIndex MNDG F 0 11
+    FrameIndex MNDG G 0 12
+    FrameIndex MNDG H 0 13
+    FrameIndex MNDG I 0 14
+    FrameIndex MNDG J 0 15
+    FrameIndex MNDG K 0 16
+    FrameIndex MNDG L 0 17
+    FrameIndex MDBR A 0 18
+    FrameIndex MDBR B 0 19
+    FrameIndex MDBR C 0 20
+    FrameIndex MDBR D 0 21
+    FrameIndex SLMD A 0 22
+}
+
+Model CaelumBestiary010
+{
+    Path "models/caelum/folklore/duendes"
+    Model 0 "coquena.md3"
+    Scale 1.65246858168 1.65246858168 1.65246858168
+    CorrectPixelStretch
+    FrameIndex MIID A 0 0
+    FrameIndex MIID B 0 1
+    FrameIndex MIRN A 0 2
+    FrameIndex MIRN B 0 3
+    FrameIndex MIRN C 0 4
+    FrameIndex MIRN D 0 5
+    FrameIndex MIWK A 0 6
+    FrameIndex MIWK B 0 7
+    FrameIndex MNDG A 0 8
+    FrameIndex MNDG D 0 9
+    FrameIndex MNDG E 0 10
+    FrameIndex MNDG F 0 11
+    FrameIndex MNDG G 0 12
+    FrameIndex MNDG H 0 13
+    FrameIndex MNDG I 0 14
+    FrameIndex MNDG J 0 15
+    FrameIndex MNDG K 0 16
+    FrameIndex MNDG L 0 17
+    FrameIndex MDBR A 0 18
+    FrameIndex MDBR B 0 19
+    FrameIndex MDBR C 0 20
+    FrameIndex MDBR D 0 21
+    FrameIndex SLMD A 0 22
+}
