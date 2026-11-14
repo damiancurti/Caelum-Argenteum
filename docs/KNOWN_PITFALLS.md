@@ -103,6 +103,19 @@ unchanged runtime. This isolates direct access-method testing; ordinary Box
 menus and actual storage transitions remain separate. Evidence:
 assets/validation_v5_17_14/evidence/SUMMARY.json (including the rejected order).
 
+
+Related ENGINE-VERIFIED fixture ordering, #676 (2026-11-13): native compatible
+weapon pickup calls OnNativeEquipmentPickedUp and automatically equips the new
+item. A direct CreateTossable fixture that expected an unequipped world flag
+without calling native unequip produced six false failures (142 passes). Assert
+the automatic equip and call UnequipSelectedNativeEquipment before direct toss;
+DropSelectedNativeInventoryItem already performs that sequence in production.
+Do not suppress automatic equip or clear flags manually to make the probe pass.
+The corrected isolated visual run passes 160 assertions; the final five native
+compatibility/equip/stack phases pass 713. Ordinary-menu/author acceptance
+remains separate. Evidence:
+assets/validation_v5_17_16/evidence/SUMMARY.json.
+
 ## CA-KP-230 - Freeze native model poses without invoking gameplay actions
 
 Status/evidence: ENGINE-VERIFIED fixture correction, #461, 2026-11-13.
