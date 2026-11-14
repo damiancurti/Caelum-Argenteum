@@ -1,0 +1,36 @@
+{
+  "issue": 692,
+  "scope": "Isolated visual gallery, native movement/animation and saved references; no combat or campaign acceptance.",
+  "runtime_sha256": "50ed2a0e72b48c559b4c186863a755f907b3bf11c7d352bc00ffd3b233e3c6ef",
+  "materials_sha256": null,
+  "fixture_sha256": "5368f348b64677dab5860c1ace745d65dd38ddc91e0cf66c296b3ac4366ed44d",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "reload",
+      "exit_code": 0,
+      "passed": false,
+      "errors": [
+        "CA682 FAIL subject 0 saved position",
+        "CA682 FAIL subject 1 saved position",
+        "CA682 FAIL subject 2 saved position",
+        "CA682 FAIL subject 3 saved position",
+        "CA682 FAIL subject 4 saved position",
+        "CA682 FAIL subject 5 saved position",
+        "CA682 FAIL subject 6 saved position",
+        "CA682 FAIL subject 0 native idle advancement",
+        "CA682 FAIL subject 1 native idle advancement",
+        "CA682 FAIL subject 2 native idle advancement",
+        "CA682 FAIL subject 3 native idle advancement",
+        "CA682 FAIL subject 4 native idle advancement",
+        "CA682 FAIL subject 5 native idle advancement",
+        "CA682 FAIL subject 6 native idle advancement"
+      ],
+      "assertions": 54,
+      "expected_assertions": 68
+    }
+  ],
+  "captures": {
+    "reload.png": "8e45c5f8a130fd9b8701e804e1919a463c38821c0fe6fa1ba6221438a1fcf2da"
+  }
+}

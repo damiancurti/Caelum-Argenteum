@@ -1,6 +1,15 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.23** - 2026-11-14.
+Documentation version: **5.17.24** - 2026-11-14.
+
+## 5.17.24 - Expanded isolated regional inspection controls (#692)
+
+CA682G retains F1-F10; F3 now frames Ucumar, Mikilo and Coquena together.
+F11/F12 inspect the two duendes closely; F5 returns ordinary player movement.
+Seven Friendly/passive diagnostic figures use unchanged native identities and
+idle states. The isolated observer footsteps are muted to prevent anonymous
+noise investigation while inspecting the art. Native walking speed remains.
+This optional fixture changes no campaign, combat or population rule.
 
 ## 5.17.20 - Six raw-material drop models (#684)
 

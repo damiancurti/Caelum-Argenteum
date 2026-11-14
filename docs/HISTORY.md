@@ -1,6 +1,17 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.23** - 2026-11-14.
+Documentation version: **5.17.24** - 2026-11-14.
+
+## 5.17.24 - NOA gallery extension (#692, 2026-11-14)
+
+The author's regional small-map request adds Mikilo and Coquena diagnostic
+displays beside retained Ucumar. All previous plots/displays and original art
+bytes remain. Data owns model sources, positions and group/closeup cameras;
+shared builders/runners avoid duplicating engine logic. Four fixture files
+repeat; native fresh/reload checks pass 33/70 including post-walk positions, silent-step serial, idle membership and
+three-boundary walking. ASSETS/evidence record one seven-display presentation
+sample and its limits. CA692-NOA-GALLERY-01 remains pending author acceptance;
+prior art checks and the broad batch remain unfinished.
 
 ## 5.17.23 - Mikilo and Coquena models (#690, 2026-11-14)
 

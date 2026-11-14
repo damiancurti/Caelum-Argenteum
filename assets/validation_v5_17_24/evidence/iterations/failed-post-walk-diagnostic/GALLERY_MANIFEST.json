@@ -1,0 +1,275 @@
+{
+  "issue": 692,
+  "scope": "isolated_visual_inspection_not_campaign",
+  "baseline_materials": false,
+  "geometry": {
+    "sectors": 5,
+    "vertices": 15,
+    "linedefs": 19
+  },
+  "subjects": [
+    {
+      "region": "Pampa",
+      "catalogue_id": "CA-FOLK-003",
+      "kind": "lobizon",
+      "class": "CaelumBestiary003",
+      "position": [
+        -768,
+        0,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Northwest Argentina",
+      "catalogue_id": "CA-FOLK-005",
+      "kind": "ucumar",
+      "class": "CaelumBestiary005",
+      "position": [
+        -256,
+        0,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Litoral",
+      "catalogue_id": "CA-FOLK-003",
+      "kind": "lobizon",
+      "class": "CaelumBestiary003",
+      "position": [
+        128,
+        0,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Litoral",
+      "catalogue_id": "CA-FOLK-004",
+      "kind": "uturunco",
+      "class": "CaelumBestiary004",
+      "position": [
+        384,
+        0,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Selva",
+      "catalogue_id": "CA-FOLK-004",
+      "kind": "uturunco",
+      "class": "CaelumBestiary004",
+      "position": [
+        768,
+        0,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Northwest Argentina",
+      "catalogue_id": "CA-FOLK-009",
+      "kind": "mikilo",
+      "class": "CaelumBestiary009",
+      "position": [
+        -384,
+        0,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Northwest Argentina",
+      "catalogue_id": "CA-FOLK-010",
+      "kind": "coquena",
+      "class": "CaelumBestiary010",
+      "position": [
+        -128,
+        0,
+        0
+      ],
+      "angle": 270
+    }
+  ],
+  "views": [
+    {
+      "id": "overview",
+      "position": [
+        0,
+        -800,
+        1200
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "pampa",
+      "position": [
+        -768,
+        -110,
+        60
+      ],
+      "target": [
+        -768,
+        0,
+        26
+      ]
+    },
+    {
+      "id": "noa",
+      "position": [
+        -256,
+        -280,
+        120
+      ],
+      "target": [
+        -256,
+        0,
+        26
+      ]
+    },
+    {
+      "id": "litoral",
+      "position": [
+        256,
+        -250,
+        120
+      ],
+      "target": [
+        256,
+        0,
+        26
+      ]
+    },
+    {
+      "id": "player",
+      "control": true
+    },
+    {
+      "id": "selva",
+      "position": [
+        768,
+        -110,
+        60
+      ],
+      "target": [
+        768,
+        0,
+        26
+      ]
+    },
+    {
+      "id": "pampa-tiles",
+      "position": [
+        -768,
+        -280,
+        150
+      ],
+      "target": [
+        -768,
+        -280,
+        0
+      ]
+    },
+    {
+      "id": "noa-tiles",
+      "position": [
+        -256,
+        -280,
+        150
+      ],
+      "target": [
+        -256,
+        -280,
+        0
+      ]
+    },
+    {
+      "id": "litoral-tiles",
+      "position": [
+        256,
+        -280,
+        150
+      ],
+      "target": [
+        256,
+        -280,
+        0
+      ]
+    },
+    {
+      "id": "selva-tiles",
+      "position": [
+        768,
+        -280,
+        80
+      ],
+      "target": [
+        768,
+        -280,
+        0
+      ]
+    },
+    {
+      "id": "mikilo",
+      "position": [
+        -384,
+        -65,
+        40
+      ],
+      "target": [
+        -384,
+        0,
+        26
+      ]
+    },
+    {
+      "id": "coquena",
+      "position": [
+        -128,
+        -65,
+        40
+      ],
+      "target": [
+        -128,
+        0,
+        26
+      ]
+    }
+  ],
+  "source_sha256": {
+    "assets/source/art/regional_gallery_682/GALLERY.json": "96019fe2a9e1c059286a168d2711ad73b1abae173360fea1b17db332b7b1806f",
+    "assets/bestiary/REGION_PROPOSAL.json": "34218ccf0194132336c7ff04ae5c1c9d2a8c1bad488defca907fb9149a52d004",
+    "assets/validation_v5_17_19/build_gallery.py": "ba09676effec6726bed2d5b2a83f62195763d9ec0696cfde77108d8d1db70a48",
+    "assets/validation_v5_17_4/build_gallery.py": "66647d29c9ea84dc413ddc0413513d31192a97dcbed1374913fe4a2e4de54368",
+    "assets/validation_v5_17_4/gallery.zs": "20e430edd4d518ff9462cbb28e70a70bb9595faa0dbc7153a3a2e852065c1c0d",
+    "src/MODELDEF": "21a5dae93e305a71f9ad1acfb9fd180ccc5c7792ffd299dfd56bba0c3b4f2b7d",
+    "assets/source/art/beast_men_680/EXPORT.json": "50a127b8ab72c6b914829e36e77e6a21e178e7ad5e68176ad98e74bb09492790",
+    "assets/source/art/duendes_690/EXPORT.json": "fcf8b02c9c21e821e333ec187ad86c7a1bc612b2a073b963bbab43e7e08205a6",
+    "src/models/caelum/folklore/beastmen/lobizon.png": "b3800911466d406a2257ffde20695640984754299e5bd5f6814677d1b48af863",
+    "src/models/caelum/folklore/beastmen/materials.png": "e12bed48a33b010f773a45af498fc77ab9e03bd242f7851e41b2d0be73a537b2",
+    "src/models/caelum/folklore/beastmen/lobizon.md3": "aba8bd1341c6c7c937f6c5f60030a35e2ba1ef501d68a1e44b32a4b58bfb8247",
+    "src/models/caelum/folklore/beastmen/uturunco.png": "91e144d2f2d8e59a49ef73b74d75e623caaee958ee6df6c8a43386533236b393",
+    "src/models/caelum/folklore/beastmen/uturunco.md3": "c28a60a1ba97c29497636b88d59b9325370fa4bc2b4bcbc0270a1dd912fc4cbf",
+    "src/models/caelum/folklore/beastmen/ucumar.png": "61b8e8eaea6206c44c7c52a42e912439b692f06fa219d8d521ea837a78ca61d0",
+    "src/models/caelum/folklore/beastmen/ucumar.md3": "09559d0c7565f3b727eaa5dbbc54bbbec29a7b828f0a4541fd2994689d8321da",
+    "src/caelum/data/beast_men_combat.modeldef": "959827f693ab0a58ee5ca615d03667b9ed8577fa063e77e20a63c0e67f217bd5",
+    "src/models/caelum/folklore/duendes/mikilo-face.png": "fefdb6a3b0b9148c063cc3ab79da88808f509fe2bab9c4a4c8dcc3ac1e7f0c7f",
+    "src/models/caelum/folklore/duendes/materials.png": "44ad4a610ed8d0045a51fcef84b34ee44bf9b2dee7adc107e6fb56ea1f2cd9c4",
+    "src/models/caelum/folklore/duendes/mikilo.md3": "e2e2fd42a8d32cf24cc7b56cc281d0603b4f13c892804507a89995737a641eb8",
+    "src/models/caelum/folklore/duendes/coquena-face.png": "57bc82b6743df393dd1d48baf66734cd1f1479ad719809c4f6e439c85c02f913",
+    "src/models/caelum/folklore/duendes/coquena.md3": "6137f385c6aee2d0be3e79f3162ce14aa4fb8205ad691ac0d9c3e145eee620d3",
+    "src/caelum/data/duende_combat.modeldef": "cf9b0f71efb0d5c9d4503b941e8f51d25041bf2028c7f9b7bc50de36d9f01008"
+  },
+  "fixture_sha256": "5368f348b64677dab5860c1ace745d65dd38ddc91e0cf66c296b3ac4366ed44d",
+  "sha256": {
+    "ZSCRIPT": "539ef4ccae6f22b9e80724da0838abd6991f278afb5639ab21074eebe4c56342",
+    "MAPINFO": "015398f03aa8d078a9d9248228ff4770d2332e5d09bf0de87ae56c6d3cb6c34b",
+    "maps/CA682G.wad": "9ab7ff7866cb290b59b897b52684539ee9aaa68081c7915bac6e54038c83f6c7"
+  }
+}
