@@ -1,0 +1,19 @@
+{
+  "file_count": 12,
+  "files": [
+    "manifest.json",
+    "preview.pk3",
+    "editable/mboi_tui.mtl",
+    "editable/mboi_tui.obj",
+    "editable/mboi_yagua.mtl",
+    "editable/mboi_yagua.obj",
+    "caelum/data/hybrid_serpent_combat.modeldef",
+    "models/caelum/folklore/hybrid_serpents/dark.png",
+    "models/caelum/folklore/hybrid_serpents/iris.png",
+    "models/caelum/folklore/hybrid_serpents/materials.png",
+    "models/caelum/folklore/hybrid_serpents/mboi_tui.md3",
+    "models/caelum/folklore/hybrid_serpents/mboi_yagua.md3"
+  ],
+  "byte_identical": true,
+  "installed_check_passed": true
+}

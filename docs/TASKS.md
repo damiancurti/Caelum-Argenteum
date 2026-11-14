@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.41** - 2026-11-14.
+Documentation version: **5.17.42** - 2026-11-14.
+
+## #727 - Hybrid serpent native art (5.17.42)
+
+Candidate models for 048 Mbói Tu’ĩ and 052 Mbói Yaguá pass independent geometry,
+672 posed attachment checks, 230 native continuity and 136 combat/loot checks.
+Twelve exports repeat. CA727-HYBRID-SERPENTS-01 retains visual, ordinary combat
+and save acceptance. Add approved regional gallery entries in a separate
+focused issue; campaign placement and the broader 3D conversion are pending.
 
 ## #725 - Weapon assembly world drops (5.17.41)
 

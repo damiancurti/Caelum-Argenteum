@@ -919,3 +919,11 @@ assets/validation_v5_17_31/evidence/** -text -diff
 /assets/validation_v5_17_41/*.py text eol=lf
 /assets/validation_v5_17_41/*.zs text eol=lf
 /assets/validation_v5_17_41/evidence/** -text -diff
+assets/validation_v5_17_42/evidence/** -text -diff
+
+/assets/source/art/hybrid_serpents_727/** text eol=lf
+/assets/source/art/hybrid_serpents_727/**/*.png binary
+/src/models/caelum/folklore/hybrid_serpents/** -text -diff
+/src/caelum/data/hybrid_serpent_combat.modeldef text eol=lf
+/assets/validation_v5_17_42/*.py text eol=lf
+/assets/validation_v5_17_42/*.json text eol=lf

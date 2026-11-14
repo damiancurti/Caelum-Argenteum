@@ -1,6 +1,76 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.41** - 2026-11-14.
+Documentation version: **5.17.42** - 2026-11-14.
+
+## 5.17.42 - Mbói Tu’ĩ and Mbói Yaguá native models (#727, parent #461)
+
+Two supplied concepts gain native models on their existing classes: unique
+CA-FOLK-048 Mbói Tu’ĩ (Litoral) and repeatable 052 Mbói Yaguá (Litoral/Selva).
+Both have continuous serpent bodies, ivory ventral scutes and attached dorsal
+tufts. Tu’ĩ has a hooked parrot beak, red head and red/yellow/green plumage;
+Yaguá has a canine muzzle, pointed ears, gray-brown fur and cream cheeks.
+Editable spine, section radii, anatomy, materials and pose data accompany
+portable OBJ/MTL sources. Native art now covers eighteen of 56 new folklore
+classes; this does not certify author acceptance or campaign encounters.
+
+| Model | Vertices | Triangles | Closed components | Neutral contacts | Independent posed checks |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Mbói Tu’ĩ | 10,444 | 17,064 | 43 | 42 | 336 |
+| Mbói Yaguá | 10,574 | 17,472 | 43 | 42 | 336 |
+
+All 23 inherited frame/action identities and provisional Mandinga rules stay
+unchanged, including attacks, hostility, loot, actor Scale, collision and
+saves. The neutral model fits the existing Height; its visual footprint can
+extend beyond collision Radius. Catalogue metre ranges do not authorize
+runtime resizing. No population, regional assignment or named actor changes.
+Fixed-species anatomy is separate from modular humanoid/worn-equipment work.
+
+Source: assets/source/art/hybrid_serpents_727. Built-in image_gen produced
+materials.png; MATERIALS_PROMPT.json contains the exact final prompt, while
+PROVENANCE.json retains its original output path and SHA-256. The owned
+references and #720 iris/dark pixels remain unchanged. No raster editing.
+Regenerate with python assets/generators/generate_hybrid_serpent_models.py
+--output build/hybrid-serpents --install. Twelve exports repeat byte-for-byte.
+The shared #720 independent inspector accepts optional source/model paths;
+its original defaults and all prior native model bytes remain unchanged.
+
+Independent serialized inspection verifies 86 closed outward solids, 84
+rooted neutral witnesses and exact quantized OBJ/native triangle equivalence.
+Every pose has zero collapsed triangles and a grounded lowest vertex, with
+six distinct death stages. In frames 0, 10, 17 and 22, 672 checks transport
+contact witnesses from actual serialized child vertices and test containment
+in both child and parent. This does not prove every interpolation or complete
+surface clearance. Model01 exposes 362 contact failures, primarily witnesses
+on cap planes, plus shallow crown/mane/eye joins. Model02 deepens physical
+roots, fixes those contacts, refines head/beak/ear proportions and adds a
+canine muzzle bridge. Both iterations pass 51 native preview assertions per
+species; the final geometry passes all independent checks. Model03 repeats
+all bytes. Failed data and original candidates remain in the evidence.
+
+Final front/side/rear and head views, selected movement/attack/pain/death and
+lying poses, and both presentation cohorts per species were inspected.
+Simplified facial surfaces, sparse regular dorsal tufts, belly UV transitions
+and rigid jaw/crest animation remain candidate art for author review.
+
+Native continuity passes 230 assertions (115 each: 16/16/51/16/16) covering
+baseline, old-save adoption, fresh models, reload and rollback. Nine inherited
+combat scenarios with a Mandinga control, finite loot and loot reload pass
+136 assertions (66/50/20). One 700-tic sprite/model pair per species records:
+
+| Species | Queue presents/s, sprite / model | p95 ms, sprite / model | p99 ms, sprite / model |
+| --- | ---: | ---: | ---: |
+| mboi_tui | 1805.01 / 1836.32 | 0.7514 / 0.6999 | 0.9147 / 0.8482 |
+| mboi_yagua | 1824.34 / 1833.71 | 0.7401 / 0.6861 | 0.9362 / 0.8162 |
+
+Environment: Windows 11, Ryzen 9 5950X, RTX 3070 Ti, GZDoom 4.14.2 Vulkan,
+1280x720, background unpaused, audio 5%, uncapped presentation without vsync.
+Queue intervals are not GPU/display timing. Unequal footprints and one pair
+do not establish repeatability or campaign/crowd performance. All 18,439
+package entries match src. Only six new native resources, MODELDEF and two
+release diagnostics differ from #725. Full evidence:
+assets/validation_v5_17_42/evidence/SUMMARY.json. CA727-HYBRID-SERPENTS-01 remains
+pending. Regional-gallery placement is a separate issue. Other characters,
+inventory, worn/first-person equipment and the V5.16 campaign are unfinished.
 
 ## 5.17.41 - Weapon assembly component world models (#725, parent #647)
 

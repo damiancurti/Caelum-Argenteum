@@ -13,8 +13,8 @@ except ImportError:
     from validate_inventory_gloves_models import inside
 
 
-def inspect(root=ROOT,kind='monai'):
-    source=root/'assets/source/art/serpents_720';design=json.loads((source/(kind+'.json')).read_text());report=json.loads((source/'EXPORT.json').read_text())
+def inspect(root=ROOT,kind='monai',source_relative='assets/source/art/serpents_720',model_relative='models/caelum/folklore/serpents'):
+    source=root/source_relative;design=json.loads((source/(kind+'.json')).read_text());report=json.loads((source/'EXPORT.json').read_text())
     record=report['species'][kind];points=[];groups=defaultdict(list);group=None;errors=[];expected=Counter();owners=defaultdict(list)
     for line in (source/('editable/'+kind+'.obj')).read_text().splitlines():
         row=line.split()
@@ -45,7 +45,7 @@ def inspect(root=ROOT,kind='monai'):
         if more<=reached:break
         reached|=more
     if len(design['contacts'])!=len(groups)-1 or reached!=set(groups):errors.append('Incomplete anatomical attachment tree')
-    path=root/'src/models/caelum/folklore/serpents'/(kind+'.md3');blob=path.read_bytes();header=struct.unpack_from('<4sI64s9I',blob);offset=header[10]
+    path=root/'src'/model_relative/(kind+'.md3');blob=path.read_bytes();header=struct.unpack_from('<4sI64s9I',blob);offset=header[10]
     collapsed=defaultdict(int);actual=Counter();floor_values=[float('inf')]*header[4];pose_points=[[] for _ in floor_values]
     critical={i:defaultdict(list) for i in [0,10,17,22]}
     for _ in range(header[6]):
