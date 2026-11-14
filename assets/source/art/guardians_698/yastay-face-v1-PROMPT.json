@@ -1,0 +1,11 @@
+{
+  "issue": 698,
+  "mode": "Built-in image_gen; reference-led diffuse generation",
+  "output": "yastay-face-v1.png",
+  "transparent_background": false,
+  "references": [
+    "assets/source/bestiary_453/imagenes/03_Duendes_demonios/11_yastay.png"
+  ],
+  "prompt": "Use case: stylized-concept. Asset type: opaque diffuse texture for a sculpted volumetric game head in Caelum Argenteum. The supplied author-owned image is an identity/anatomy/color reference only; do not replace the original painting. Create ONE square frontal facial albedo plate for the same Argentine folklore guardian Yastay in the reference. Preserve his camelid-human facial anatomy: tawny short fur, long tapered nose bridge, broad soft camelid muzzle, dark nostrils, divided upper lip, calm dark amber eyes and serious closed mouth. Keep the original warm tawny palette and animal proportions; do not turn him into a green goblin, lion or wolf. Flat orthographic frontal orientation, both eyes looking straight ahead. Fill the entire square with facial/fur surface and matching tawny bleed. No background, transparency, head outline, ears, neck, shoulders, text or border; long tawny hair and pointed ears will be separate geometry. Exact UV registration: pupils x=29.5% and70.5%, y=36.7%; muzzle/nose center x=50%, y=54.3%; mouth center x=50%, y=70.4%; chin y=91%. Uniform softly lit painted game-material realism, no glossy portrait light, specular highlight or dramatic cast shadow. This plate will be projected over a fully sculpted muzzle, not shown as a billboard.",
+  "review": "Rejected candidate: muzzle and triangular nose read as feline instead of the reference camelid."
+}

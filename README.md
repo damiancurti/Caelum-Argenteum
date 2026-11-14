@@ -6,8 +6,10 @@ An independent dark fantasy FPS-RPG inspired by nineteenth-century Argentina.
 Author and game designer: **Damian Curti**. Development target: **GZDoom 4.14.2**
 on Windows 11. The final game is intended to be independent of Doom assets.
 
-**Current release: 5.17.26.** Obtain and update the complete repository,
+**Current release: 5.17.27.** Obtain and update the complete repository,
 validate it, then rebuild with `run_dev.bat` as described below.
+
+#698 adds candidate 3D Yasí Yateré and Yastay with reference clothing, hair and accessories; author review remains pending.
 
 #696 adds eleven complete 3D clothing-ensemble drops from original textures. All 25 clothing world designs now have candidate models; worn fitting and author review remain pending.
 

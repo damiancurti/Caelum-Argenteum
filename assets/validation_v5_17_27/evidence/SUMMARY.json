@@ -1,0 +1,1529 @@
+{
+  "issue": 698,
+  "parent_issue": 461,
+  "version": "5.17.27",
+  "date": "2026-11-14",
+  "author_accepted": false,
+  "scope": "Unique Yasi Yatere007 and Yastay011, fixed reference clothing/hair/staff and all 23 inherited combat frame pairs. Native rules and campaign placement remain unchanged.",
+  "runtime": {
+    "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-698\\build\\issue698-guardians01.pk3",
+    "sha256": "f94bec359a27181d7e1615a398f69d193d2b916b1f7b63cfdac9195599e11320",
+    "source_entries": 18354,
+    "exact_source_bytes": true
+  },
+  "baseline": {
+    "sha256": "860c226df3c99157023384bc11c1e673e8f5e7c793087bd6cbf83c6071dd3e58",
+    "new_resources": [
+      "caelum/data/guardian_combat.modeldef",
+      "models/caelum/folklore/guardians/body.png",
+      "models/caelum/folklore/guardians/materials.png",
+      "models/caelum/folklore/guardians/yasi-face.png",
+      "models/caelum/folklore/guardians/yasi.md3",
+      "models/caelum/folklore/guardians/yastay-face.png",
+      "models/caelum/folklore/guardians/yastay.md3"
+    ],
+    "changed_resources": [
+      "MODELDEF",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "all_other_runtime_bytes_identical": true
+  },
+  "static": {
+    "repeated_export_files": 13,
+    "repeat_byte_identical": true,
+    "installed_export_check_passed": true,
+    "closed_source_components": 143,
+    "serialized_neutral_attachment_witnesses": 86,
+    "species": {
+      "yasi": {
+        "actor": "CaelumBestiary007",
+        "catalogue_id": "CA-FOLK-007",
+        "vertices": 16961,
+        "triangles": 28128,
+        "hierarchical_parts": 20,
+        "surfaces": [
+          {
+            "material": "face",
+            "vertices": 1864,
+            "triangles": 3528
+          },
+          {
+            "material": "atlas",
+            "vertices": 4096,
+            "triangles": 5284
+          },
+          {
+            "material": "atlas",
+            "vertices": 4096,
+            "triangles": 6242
+          },
+          {
+            "material": "atlas",
+            "vertices": 73,
+            "triangles": 106
+          },
+          {
+            "material": "body",
+            "vertices": 4096,
+            "triangles": 7544
+          },
+          {
+            "material": "body",
+            "vertices": 2838,
+            "triangles": 5424
+          }
+        ],
+        "native_bounds": [
+          {
+            "min": [
+              -9.581433297215735,
+              -18.917864476386033,
+              0.0
+            ],
+            "max": [
+              8.327457940422837,
+              20.78944536656194,
+              100.0075139836108
+            ]
+          },
+          {
+            "min": [
+              -9.603378280449961,
+              -18.917864476386033,
+              0.0
+            ],
+            "max": [
+              8.228870078146324,
+              20.78944536656194,
+              99.99634584522673
+            ]
+          },
+          {
+            "min": [
+              -9.663734698354743,
+              -18.917864476386033,
+              0.0
+            ],
+            "max": [
+              8.848873384950524,
+              20.78944536656194,
+              100.0236987884825
+            ]
+          },
+          {
+            "min": [
+              -31.04977579758486,
+              -18.343134805679508,
+              0.0
+            ],
+            "max": [
+              23.73807572246968,
+              20.775129076559757,
+              96.7530164074339
+            ]
+          },
+          {
+            "min": [
+              -9.74264752971934,
+              -18.917864476386033,
+              0.0
+            ],
+            "max": [
+              8.84887338495052,
+              20.78944536656194,
+              99.98449712294106
+            ]
+          },
+          {
+            "min": [
+              -31.04977579758486,
+              -18.713017388780795,
+              0.0
+            ],
+            "max": [
+              28.9025263792539,
+              20.948330894816134,
+              96.42534091232454
+            ]
+          },
+          {
+            "min": [
+              -31.04977579758486,
+              -18.343134805679508,
+              0.0
+            ],
+            "max": [
+              23.73807572246968,
+              20.775129076559757,
+              96.7530164074339
+            ]
+          },
+          {
+            "min": [
+              -31.04977579758486,
+              -18.713017388780795,
+              0.0
+            ],
+            "max": [
+              28.9025263792539,
+              20.948330894816134,
+              96.42534091232454
+            ]
+          },
+          {
+            "min": [
+              -8.914642502015834,
+              -18.917864476386033,
+              0.0
+            ],
+            "max": [
+              13.252422774675855,
+              20.78944536656194,
+              99.50725264311131
+            ]
+          },
+          {
+            "min": [
+              -9.625201783260056,
+              -22.263572986984883,
+              0.0
+            ],
+            "max": [
+              49.64904756642426,
+              22.29084927026002,
+              109.53910064682547
+            ]
+          },
+          {
+            "min": [
+              -19.376072253833488,
+              -13.22554700250951,
+              0.0
+            ],
+            "max": [
+              68.30585533430059,
+              31.004025414547705,
+              99.57889202079942
+            ]
+          },
+          {
+            "min": [
+              -26.902047578789908,
+              -18.917864476386033,
+              0.0
+            ],
+            "max": [
+              59.959992536708455,
+              20.78944536656194,
+              94.05198241853564
+            ]
+          },
+          {
+            "min": [
+              -27.975280289231833,
+              -18.917864476386033,
+              0.0
+            ],
+            "max": [
+              66.26662228630326,
+              20.78944536656194,
+              92.41314212828489
+            ]
+          },
+          {
+            "min": [
+              -36.586761279881706,
+              -18.917864476386033,
+              0.0
+            ],
+            "max": [
+              52.51051230545488,
+              20.78944536656194,
+              95.8235643758861
+            ]
+          },
+          {
+            "min": [
+              -45.23711477205008,
+              -18.917864476386033,
+              0.0
+            ],
+            "max": [
+              39.561405055865144,
+              20.78944536656194,
+              101.9484086066871
+            ]
+          },
+          {
+            "min": [
+              -47.485636640115814,
+              -18.917864476386033,
+              0.0
+            ],
+            "max": [
+              47.25147953897245,
+              20.78944536656194,
+              90.96186953343127
+            ]
+          },
+          {
+            "min": [
+              -48.254829277387564,
+              -18.917864476386033,
+              0.0
+            ],
+            "max": [
+              51.53269359467222,
+              20.78944536656194,
+              19.98855599432764
+            ]
+          },
+          {
+            "min": [
+              -48.254829277387564,
+              -18.917864476386033,
+              0.0
+            ],
+            "max": [
+              51.53269359467222,
+              20.78944536656194,
+              19.98855599432764
+            ]
+          },
+          {
+            "min": [
+              -9.034915099035,
+              -18.917864476386033,
+              0.0
+            ],
+            "max": [
+              23.255140683584692,
+              20.78944536656194,
+              99.73618318625924
+            ]
+          },
+          {
+            "min": [
+              -9.228510916599346,
+              -18.917864476386033,
+              0.0
+            ],
+            "max": [
+              22.36192406693371,
+              20.78944536656194,
+              99.70927292986465
+            ]
+          },
+          {
+            "min": [
+              -9.034915099035,
+              -18.917864476386033,
+              0.0
+            ],
+            "max": [
+              23.255140683584692,
+              20.78944536656194,
+              99.73618318625924
+            ]
+          },
+          {
+            "min": [
+              -8.838567158808305,
+              -18.917864476386033,
+              0.0
+            ],
+            "max": [
+              24.141273559105855,
+              20.78944536656194,
+              99.73099446478481
+            ]
+          },
+          {
+            "min": [
+              -48.19226130285201,
+              -18.917864476386033,
+              0.0
+            ],
+            "max": [
+              49.112355793356535,
+              20.78944536656194,
+              36.02592846489106
+            ]
+          }
+        ],
+        "modeldef_scale": 1.652498039568138,
+        "native_profile": {
+          "Height": 51.644444,
+          "Radius": 14.755556,
+          "Scale": 0.3125
+        },
+        "maximum_authored_radius": 74.78429204287664,
+        "maximum_authored_height": 109.53910064682547,
+        "source_sha256": "55aae2de72a91d55d946661ef249883a25fd05e548305a1ae80b50b1ec957845"
+      },
+      "yastay": {
+        "actor": "CaelumBestiary011",
+        "catalogue_id": "CA-FOLK-011",
+        "vertices": 15392,
+        "triangles": 28732,
+        "hierarchical_parts": 19,
+        "surfaces": [
+          {
+            "material": "face",
+            "vertices": 1864,
+            "triangles": 3528
+          },
+          {
+            "material": "atlas",
+            "vertices": 4096,
+            "triangles": 7324
+          },
+          {
+            "material": "atlas",
+            "vertices": 2596,
+            "triangles": 4912
+          },
+          {
+            "material": "body",
+            "vertices": 4096,
+            "triangles": 7522
+          },
+          {
+            "material": "body",
+            "vertices": 2850,
+            "triangles": 5446
+          }
+        ],
+        "native_bounds": [
+          {
+            "min": [
+              -9.4921875,
+              -22.763671875000004,
+              0.0
+            ],
+            "max": [
+              8.421188781476268,
+              22.763671875000004,
+              100.00714708987982
+            ]
+          },
+          {
+            "min": [
+              -9.4921875,
+              -22.763671875000004,
+              0.0
+            ],
+            "max": [
+              8.327968299193877,
+              22.763671875000004,
+              99.99652427075277
+            ]
+          },
+          {
+            "min": [
+              -9.4921875,
+              -22.763671875000004,
+              0.0
+            ],
+            "max": [
+              8.53678429389697,
+              22.763671875000004,
+              100.02254162107614
+            ]
+          },
+          {
+            "min": [
+              -29.931434704421378,
+              -22.153092891010335,
+              0.0
+            ],
+            "max": [
+              23.90425581911992,
+              22.520138958214655,
+              96.99527866483866
+            ]
+          },
+          {
+            "min": [
+              -9.4921875,
+              -22.763671875000004,
+              0.0
+            ],
+            "max": [
+              8.209567882139698,
+              22.763671875000004,
+              99.98525409935996
+            ]
+          },
+          {
+            "min": [
+              -29.931434704421378,
+              -22.520138958214655,
+              0.0
+            ],
+            "max": [
+              23.90425581911992,
+              22.153092891010335,
+              96.9713357675824
+            ]
+          },
+          {
+            "min": [
+              -29.931434704421378,
+              -22.153092891010335,
+              0.0
+            ],
+            "max": [
+              23.90425581911992,
+              22.520138958214655,
+              96.99527866483866
+            ]
+          },
+          {
+            "min": [
+              -29.931434704421378,
+              -22.520138958214655,
+              0.0
+            ],
+            "max": [
+              23.90425581911992,
+              22.153092891010335,
+              96.9713357675824
+            ]
+          },
+          {
+            "min": [
+              -12.400467048575749,
+              -22.763671875000004,
+              0.0
+            ],
+            "max": [
+              13.547309663558146,
+              22.763671875000004,
+              99.5045640148748
+            ]
+          },
+          {
+            "min": [
+              -9.72044407345131,
+              -26.41083801692173,
+              0.0
+            ],
+            "max": [
+              31.369168029174062,
+              17.362566701716617,
+              111.91419990244717
+            ]
+          },
+          {
+            "min": [
+              -14.226764722747484,
+              -16.288371528121814,
+              0.0
+            ],
+            "max": [
+              47.829995900070024,
+              29.16476282781554,
+              99.52527304035125
+            ]
+          },
+          {
+            "min": [
+              -27.49633787518334,
+              -22.763671875000004,
+              0.0
+            ],
+            "max": [
+              29.10255589868551,
+              22.763671875000004,
+              93.99488793194342
+            ]
+          },
+          {
+            "min": [
+              -26.2990651430022,
+              -22.763671875000004,
+              0.0
+            ],
+            "max": [
+              32.23946563250017,
+              22.763671875000004,
+              92.70713777045292
+            ]
+          },
+          {
+            "min": [
+              -37.938909702185036,
+              -22.763671875000004,
+              0.0
+            ],
+            "max": [
+              24.97633000571478,
+              22.763671875000004,
+              81.55960368458929
+            ]
+          },
+          {
+            "min": [
+              -47.45360226871095,
+              -22.763671875000004,
+              0.0
+            ],
+            "max": [
+              38.23461422413838,
+              22.763671875000004,
+              76.37180583123839
+            ]
+          },
+          {
+            "min": [
+              -50.046840061101825,
+              -22.763671875000004,
+              0.0
+            ],
+            "max": [
+              44.94440087784733,
+              22.763671875000004,
+              59.1327645887291
+            ]
+          },
+          {
+            "min": [
+              -50.78144894157763,
+              -22.763671875000004,
+              0.0
+            ],
+            "max": [
+              49.016571278483624,
+              22.763671875000004,
+              19.29296141478195
+            ]
+          },
+          {
+            "min": [
+              -50.78144894157763,
+              -22.763671875000004,
+              0.0
+            ],
+            "max": [
+              49.016571278483624,
+              22.763671875000004,
+              19.29296141478195
+            ]
+          },
+          {
+            "min": [
+              -13.34123589454098,
+              -22.763671875000004,
+              0.0
+            ],
+            "max": [
+              16.901851612094788,
+              22.763671875000004,
+              99.7015456710199
+            ]
+          },
+          {
+            "min": [
+              -13.805595856202572,
+              -22.763671875000004,
+              0.0
+            ],
+            "max": [
+              16.6761291140783,
+              22.763671875000004,
+              99.6633530631483
+            ]
+          },
+          {
+            "min": [
+              -13.34123589454098,
+              -22.763671875000004,
+              0.0
+            ],
+            "max": [
+              16.901851612094788,
+              22.763671875000004,
+              99.7015456710199
+            ]
+          },
+          {
+            "min": [
+              -12.872812063186453,
+              -22.763671875000004,
+              0.0
+            ],
+            "max": [
+              17.122425642378317,
+              22.763671875000004,
+              99.70773375674516
+            ]
+          },
+          {
+            "min": [
+              -50.72193604392369,
+              -22.763671875000004,
+              0.0
+            ],
+            "max": [
+              46.85939038813961,
+              22.763671875000004,
+              27.452518696596563
+            ]
+          }
+        ],
+        "modeldef_scale": 1.652504102046559,
+        "native_profile": {
+          "Height": 51.644444,
+          "Radius": 14.755556,
+          "Scale": 0.3125
+        },
+        "maximum_authored_radius": 50.78144894157763,
+        "maximum_authored_height": 111.91419990244717,
+        "source_sha256": "0be77caebce561fff1b6a11ab22d19b28195330cfe7672b77c23a6d8bd04bb45"
+      }
+    },
+    "checks": [
+      "Original reference, generated texture and exact prompt hashes",
+      "Two exact unique actor identities and 23 frame mappings each",
+      "MD3 surface bounds, finite UVs and all quantized posed coordinates",
+      "Neutral-height fit without changing native collision/Scale",
+      "Every new component has welded closed edges, consistent winding and positive volume",
+      "Emitted OBJ attachment witnesses inside both solids with two independent rays and quantization clearance",
+      "Occupied acyclic hierarchy and portable outputs"
+    ],
+    "project_validation_passed": true
+  },
+  "continuity": {
+    "yasi": {
+      "issue": 698,
+      "species": "yasi",
+      "studio": false,
+      "runtime_sha256": "f94bec359a27181d7e1615a398f69d193d2b916b1f7b63cfdac9195599e11320",
+      "baseline_sha256": "860c226df3c99157023384bc11c1e673e8f5e7c793087bd6cbf83c6071dd3e58",
+      "fixture_sha256": "c8609504f360cdc70942a602c659712f6132c67d0b934469d5ef975fdb85f8b6",
+      "model_overlay_sha256": null,
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runs": [
+        {
+          "phase": "baseline",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "old-save-model",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "fresh-model",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 51,
+          "expected_assertions": 51,
+          "errors": [],
+          "captures": {
+            "empty.png": "e9d2d20151922c597e0bfc06a181a66eb0ff3e0f0fcdbde1af35e01ecd79c195",
+            "pose-00-idle.png": "673b5114b45549db3815edaa61e9531d7443cd24ed967b197febe419ad470432",
+            "pose-01-idle.png": "9dfcc7d85c4a4b73b4714d23e0507968546e2e6ce36cf648987572df39e85216",
+            "pose-02-run.png": "6b68242c17f737a32c5157244eceb65540323f1f2a42493cf917e3e84142dac8",
+            "pose-03-run.png": "c89e0e03479a7614f2766d38e3055f35e950eff5e0d888432919c95d2461f311",
+            "pose-04-run.png": "dfe339c5064569f7e158bee052c39eee5da5da37fd12b1bb4d3729ad3a1f6223",
+            "pose-05-run.png": "43b3805916591dd13c7026def98ee0fdef4d0eab502f5a27f8d5e1b4afd6ac57",
+            "pose-06-walk.png": "c89e0e03479a7614f2766d38e3055f35e950eff5e0d888432919c95d2461f311",
+            "pose-07-walk.png": "43b3805916591dd13c7026def98ee0fdef4d0eab502f5a27f8d5e1b4afd6ac57",
+            "pose-08-stun.png": "edb28575c5dccadc9b603dd54a8aa1f8620c58902420c66657452e39ba42f9da",
+            "pose-09-attack_prepare.png": "ea43ea2e5096e26f51272fe71ea9ccd7e98bed66d25583d96cb0455f83a823f1",
+            "pose-10-attack_release.png": "43abe5862cdec54a8071c931115e7bc55b6bad2f535b4090fe1b742281769472",
+            "pose-11-pain.png": "e8f3b40fd1327d459628a2dc506628edbd26b564e373802caf3e677a31de3c17",
+            "pose-12-death.png": "84a65de5a8ea4876e65221390875a8b05cfc6843154a6a635d90168b08ce2da9",
+            "pose-13-death.png": "6a4555f31b80a3062cb735bee01a3d24c0cd0b64ac3b739b19afc4571501d1c3",
+            "pose-14-death.png": "dd0bd300c2e3afb7aa5526c635aec638e76812163938ab2e0198923c34f055b9",
+            "pose-15-death.png": "29ec465307cbf3f103f7f876ee50837af41239738538253ea831e17574db958c",
+            "pose-16-death.png": "4dccf242a55596d1012f7b3058bd9af9e554a77c95179d7e79e2d8622677ceba",
+            "pose-17-death.png": "4dccf242a55596d1012f7b3058bd9af9e554a77c95179d7e79e2d8622677ceba",
+            "pose-18-breath.png": "5bfaf62bf876318cda78debbb975dec36f0980ff8ac9dd7f36ffb16fe09b284c",
+            "pose-19-breath.png": "4fa7f8afb7cfcbcec3123eab860efaac2aa78f2f54367490a9a62427a1dc824d",
+            "pose-20-breath.png": "5bfaf62bf876318cda78debbb975dec36f0980ff8ac9dd7f36ffb16fe09b284c",
+            "pose-21-breath.png": "771aafcfa1811d5d3a1df497258be72e622f3f2383806f6e3006b00b59b765e4",
+            "pose-22-rest.png": "6d22329d700cff490525ea45f9bdedfdca86781f6afc3d4b295d09bcd88a3598",
+            "view-front.png": "4c66cc153764fdab13b6cd51536841779cabb79de141a12bf5fb7c119b2f0fbf",
+            "view-head-front.png": "8adf060da102b21721d8b63c3fd3ebb746296d386cdc0b1e68e83ca5b585219d",
+            "view-head-oblique.png": "1fc4fc7a9147ca2dba70785daf4684a08918f9cea3bf6a2c22b0fe7dfaaac47d",
+            "view-rear.png": "dea55c8d0623aa3a97a6ab001b63a96d0087bf80ab747e3e796c74f568c9557c",
+            "view-side.png": "63ad9b0baf0f84dfd94cb4e584886e8fde27b39f9bf4e85a29cc5f4b78088de8"
+          },
+          "visible_pose_pixels": {
+            "pose-00-idle.png": 41791,
+            "pose-01-idle.png": 41738,
+            "pose-02-run.png": 41889,
+            "pose-03-run.png": 35957,
+            "pose-04-run.png": 41759,
+            "pose-05-run.png": 41163,
+            "pose-06-walk.png": 35957,
+            "pose-07-walk.png": 41163,
+            "pose-08-stun.png": 42845,
+            "pose-09-attack_prepare.png": 45192,
+            "pose-10-attack_release.png": 40202,
+            "pose-11-pain.png": 35913,
+            "pose-12-death.png": 33982,
+            "pose-13-death.png": 32477,
+            "pose-14-death.png": 31022,
+            "pose-15-death.png": 26580,
+            "pose-16-death.png": 28036,
+            "pose-17-death.png": 28036,
+            "pose-18-breath.png": 41954,
+            "pose-19-breath.png": 42137,
+            "pose-20-breath.png": 41954,
+            "pose-21-breath.png": 41718,
+            "pose-22-rest.png": 28287
+          },
+          "distinct_pose_captures": 19
+        },
+        {
+          "phase": "model-reload",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "rollback",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        }
+      ]
+    },
+    "yastay": {
+      "issue": 698,
+      "species": "yastay",
+      "studio": false,
+      "runtime_sha256": "f94bec359a27181d7e1615a398f69d193d2b916b1f7b63cfdac9195599e11320",
+      "baseline_sha256": "860c226df3c99157023384bc11c1e673e8f5e7c793087bd6cbf83c6071dd3e58",
+      "fixture_sha256": "9ab1ba5782d3268c496d0e264a1077c4db074805f1a84a88b6130c3e10c9ffc9",
+      "model_overlay_sha256": null,
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "runs": [
+        {
+          "phase": "baseline",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "old-save-model",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "fresh-model",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 51,
+          "expected_assertions": 51,
+          "errors": [],
+          "captures": {
+            "empty.png": "e9d2d20151922c597e0bfc06a181a66eb0ff3e0f0fcdbde1af35e01ecd79c195",
+            "pose-00-idle.png": "4631a1bb843d04bc1f9f20a73ba17e8af2a4abe302e3c35d47509faf82b7a866",
+            "pose-01-idle.png": "ef5e2fd144d79f093c6d66444b055c1afcca5a5ed769367e88623b1ffd5991e4",
+            "pose-02-run.png": "a7672176d9abd42f2a0af0dcaabb70c807f9fa39251a828304c92552a9decd28",
+            "pose-03-run.png": "03abc5e38b246480e0285c5631ffe6b054b03d0a263211c30f7f125c2582d7be",
+            "pose-04-run.png": "02fdee8eefe62c750d888dd097498fd90127bb7acee4b1f062d98b64832d778b",
+            "pose-05-run.png": "c1a6bf087ffb4026e5738846f1acaaca7273979beb65d8fff9647f371e0a88ec",
+            "pose-06-walk.png": "03abc5e38b246480e0285c5631ffe6b054b03d0a263211c30f7f125c2582d7be",
+            "pose-07-walk.png": "c1a6bf087ffb4026e5738846f1acaaca7273979beb65d8fff9647f371e0a88ec",
+            "pose-08-stun.png": "d445c98993641197b81884e32b617bc330236a1383b4dc748bc5ceb6c1b3ea51",
+            "pose-09-attack_prepare.png": "cc21d4ac9baac79ea7632b9a67f4ab0fcbd0a7463c8a88b8443287da5b97733b",
+            "pose-10-attack_release.png": "1a37271d1796414c6a83d8c1f0339293d73ac314cadf34cec204d5572d49e417",
+            "pose-11-pain.png": "bec097a4077a0874afaba9a12985a881b0ea6dfa1ebaabb94b274c1c826fa683",
+            "pose-12-death.png": "4b12c1f291d2babfca545b4ea174e7d35d3dfd51acf91c5820a7dedb1ed1e407",
+            "pose-13-death.png": "0ca67e658b6b19953b19d3946548d8cebe612b0e5d0a9dff1e8b9b602eddd19d",
+            "pose-14-death.png": "ac14b43f8b53101147ba9b4fa154164d1131eafd64bd255d6db9ecbc4a3f9495",
+            "pose-15-death.png": "2b223d97aee78ec9136d6d6eaacf8d31c178349dcc7ddaa7dd129cd94d01002d",
+            "pose-16-death.png": "e76201f1ccf1ef39c20099bfa2dc20bbd2a0d1d52e8311aab50dde618735a8e3",
+            "pose-17-death.png": "e76201f1ccf1ef39c20099bfa2dc20bbd2a0d1d52e8311aab50dde618735a8e3",
+            "pose-18-breath.png": "aea017db4ffb27c82a53e61a64ea82619930aa92b6a9c50390f1c7f910cfda3b",
+            "pose-19-breath.png": "d700fce46f0419f2ea1e3f321f311a7b2860df0680220d829ab49ef0a6eceab0",
+            "pose-20-breath.png": "aea017db4ffb27c82a53e61a64ea82619930aa92b6a9c50390f1c7f910cfda3b",
+            "pose-21-breath.png": "932bb3f09d25dd986f03c9e5a19bb70b3d7183fbbad6650cd3ebf3c7d38b39e1",
+            "pose-22-rest.png": "e102c1958490f5d3771975d9ad51853dc796eefeaa702859e4dac7dac343623a",
+            "view-front.png": "c2a837f47108c3a02773197234d517c81d8f2827710e40e45317a1bb47adb5c2",
+            "view-head-front.png": "7dcffae7f7e46ea04d35a10922ab00db13bf307d03f20a886ec474ac46bd48a9",
+            "view-head-oblique.png": "6429e3a5b2d152d0b5d835748798aae187a21e6855c022689b2508247eaac14f",
+            "view-rear.png": "d19090da980560f146b73b0fec3af94777be30d2c7bce9d7535cbf83392d2f3d",
+            "view-side.png": "69dcbe5747af8ccce498227d1893723a825aaf339776a7d686665886d13ab0f9"
+          },
+          "visible_pose_pixels": {
+            "pose-00-idle.png": 51485,
+            "pose-01-idle.png": 51464,
+            "pose-02-run.png": 51451,
+            "pose-03-run.png": 44293,
+            "pose-04-run.png": 51376,
+            "pose-05-run.png": 51556,
+            "pose-06-walk.png": 44293,
+            "pose-07-walk.png": 51556,
+            "pose-08-stun.png": 52224,
+            "pose-09-attack_prepare.png": 57471,
+            "pose-10-attack_release.png": 47822,
+            "pose-11-pain.png": 45804,
+            "pose-12-death.png": 43907,
+            "pose-13-death.png": 42971,
+            "pose-14-death.png": 42447,
+            "pose-15-death.png": 37747,
+            "pose-16-death.png": 37332,
+            "pose-17-death.png": 37332,
+            "pose-18-breath.png": 49635,
+            "pose-19-breath.png": 49802,
+            "pose-20-breath.png": 49635,
+            "pose-21-breath.png": 49434,
+            "pose-22-rest.png": 37297
+          },
+          "distinct_pose_captures": 19
+        },
+        {
+          "phase": "model-reload",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        },
+        {
+          "phase": "rollback",
+          "exit_code": 0,
+          "passed": true,
+          "assertions": 16,
+          "expected_assertions": 16,
+          "errors": [],
+          "captures": {}
+        }
+      ]
+    }
+  },
+  "actions": {
+    "issue": 698,
+    "runtime_sha256": "f94bec359a27181d7e1615a398f69d193d2b916b1f7b63cfdac9195599e11320",
+    "source_probe_sha256": "bf298e7c4b3ca7f0285f81c089b18f686ba0a114f65697252662af8b0121b65a",
+    "fixture_sha256": "71ae1df680daffef17952b5872df7354f04844e77ebed590e2017a10bc93588b",
+    "runs": [
+      {
+        "phase": "actions",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 66,
+        "expected_assertions": 66,
+        "actions": [
+          "CA455 ACTION PASS index=-1 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=-1 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=1",
+          "CA455 ACTION PASS index=-1 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=6 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=6 mode=1 damage=1 air=0 anima=1 projectiles=2 breath=0",
+          "CA455 ACTION PASS index=6 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=10 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+          "CA455 ACTION PASS index=10 mode=1 damage=1 air=0 anima=1 projectiles=2 breath=0",
+          "CA455 ACTION PASS index=10 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1"
+        ],
+        "loot_audits": 0
+      },
+      {
+        "phase": "loot",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 50,
+        "expected_assertions": 50,
+        "actions": [],
+        "loot_audits": 2
+      },
+      {
+        "phase": "loot-reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 20,
+        "expected_assertions": 20,
+        "actions": [],
+        "loot_audits": 2
+      }
+    ]
+  },
+  "presentation": {
+    "yasi": {
+      "issue": 698,
+      "species": "yasi",
+      "scope": "Measure one 700-tic sprite/model pair for a real guardian; no campaign or crowd budget.",
+      "baseline_sha256": "860c226df3c99157023384bc11c1e673e8f5e7c793087bd6cbf83c6071dd3e58",
+      "runtime_sha256": "f94bec359a27181d7e1615a398f69d193d2b916b1f7b63cfdac9195599e11320",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+      "runs": [
+        {
+          "kind": "sprite",
+          "pid": 23060,
+          "exit_code": 0,
+          "errors": [],
+          "markers_qpc_ms": {
+            "BEGIN": 257334850.27679998,
+            "END": 257354872.3167
+          },
+          "fixture_sha256": "47c0cf1b63b8144a6561fe600f09a6859157b9db517f82b0a0f18bac71675020",
+          "bench_sha256": "84a68372042bc289c7bf3580a5ff5c76df6036ca1870d4fbfcb2b0b6ca49f247",
+          "passed": true,
+          "simulation": {
+            "samples": 700,
+            "mean_ms": 28.571588142857145,
+            "p50_ms": 28.5764,
+            "p95_ms": 29.0009,
+            "p99_ms": 29.1677,
+            "max_ms": 29.4816
+          },
+          "presentation": {
+            "pid": 23060,
+            "trace_sha256": "bd61213d03db9a2b93e75d1edd8ef54fa197f691f2a51b7f65aa7afcece6b231",
+            "rows": 43784,
+            "scene_presents": 31427,
+            "mean_present_fps": 1793.598222972152,
+            "present_intervals": {
+              "samples": 31426,
+              "mean_ms": 0.5575384649650862,
+              "p50_ms": 0.5295000076293945,
+              "p95_ms": 0.7494999766349792,
+              "p99_ms": 0.9083999991416931,
+              "max_ms": 2.3837000131607056
+            },
+            "native_call_duration": {
+              "samples": 31427,
+              "mean_ms": 0.07333683446782255,
+              "p50_ms": 0.07069998979568481,
+              "p95_ms": 0.09689998626708984,
+              "p99_ms": 0.12229999899864197,
+              "max_ms": 0.51460000872612
+            }
+          }
+        },
+        {
+          "kind": "model",
+          "pid": 29592,
+          "exit_code": 0,
+          "errors": [],
+          "markers_qpc_ms": {
+            "BEGIN": 257369183.9077,
+            "END": 257389209.1114
+          },
+          "fixture_sha256": "47c0cf1b63b8144a6561fe600f09a6859157b9db517f82b0a0f18bac71675020",
+          "bench_sha256": "84a68372042bc289c7bf3580a5ff5c76df6036ca1870d4fbfcb2b0b6ca49f247",
+          "passed": true,
+          "simulation": {
+            "samples": 700,
+            "mean_ms": 28.571551285714282,
+            "p50_ms": 28.5736,
+            "p95_ms": 28.9659,
+            "p99_ms": 29.1061,
+            "max_ms": 29.3146
+          },
+          "presentation": {
+            "pid": 29592,
+            "trace_sha256": "9eae45107df35d08a788a44a7f62731b9c6a1be576f22b2ef105c8b979908c48",
+            "rows": 42952,
+            "scene_presents": 30462,
+            "mean_present_fps": 1738.2031721132466,
+            "present_intervals": {
+              "samples": 30461,
+              "mean_ms": 0.5753067397663502,
+              "p50_ms": 0.5449000000953674,
+              "p95_ms": 0.7656999826431274,
+              "p99_ms": 0.912200003862381,
+              "max_ms": 1.7372000217437744
+            },
+            "native_call_duration": {
+              "samples": 30462,
+              "mean_ms": 0.07468766659668447,
+              "p50_ms": 0.07249999046325684,
+              "p95_ms": 0.09749999642372131,
+              "p99_ms": 0.12559998035430908,
+              "max_ms": 0.4410000145435333
+            }
+          }
+        }
+      ]
+    },
+    "yastay": {
+      "issue": 698,
+      "species": "yastay",
+      "scope": "Measure one 700-tic sprite/model pair for a real guardian; no campaign or crowd budget.",
+      "baseline_sha256": "860c226df3c99157023384bc11c1e673e8f5e7c793087bd6cbf83c6071dd3e58",
+      "runtime_sha256": "f94bec359a27181d7e1615a398f69d193d2b916b1f7b63cfdac9195599e11320",
+      "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+      "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+      "runs": [
+        {
+          "kind": "sprite",
+          "pid": 49620,
+          "exit_code": 0,
+          "errors": [],
+          "markers_qpc_ms": {
+            "BEGIN": 257405302.18219998,
+            "END": 257425322.2152
+          },
+          "fixture_sha256": "d65757bc074c8de2a3f8734ea0e0e809ef87020ce2fcc65e6cae4c6984d002cf",
+          "bench_sha256": "84a68372042bc289c7bf3580a5ff5c76df6036ca1870d4fbfcb2b0b6ca49f247",
+          "passed": true,
+          "simulation": {
+            "samples": 700,
+            "mean_ms": 28.571259,
+            "p50_ms": 28.5729,
+            "p95_ms": 28.9405,
+            "p99_ms": 29.0736,
+            "max_ms": 29.5233
+          },
+          "presentation": {
+            "pid": 49620,
+            "trace_sha256": "b27a41ba2b40fcd3e242bbaf03b8a6bb03672cd9934d4a7ddae0db0604114bcc",
+            "rows": 44804,
+            "scene_presents": 32274,
+            "mean_present_fps": 1842.1448376652913,
+            "present_intervals": {
+              "samples": 32273,
+              "mean_ms": 0.5428454807426467,
+              "p50_ms": 0.5238000154495239,
+              "p95_ms": 0.6800999939441681,
+              "p99_ms": 0.8481000065803528,
+              "max_ms": 1.221100002527237
+            },
+            "native_call_duration": {
+              "samples": 32274,
+              "mean_ms": 0.07368469354077595,
+              "p50_ms": 0.07129999995231628,
+              "p95_ms": 0.09710001945495605,
+              "p99_ms": 0.12029999494552612,
+              "max_ms": 0.3765999972820282
+            }
+          }
+        },
+        {
+          "kind": "model",
+          "pid": 21532,
+          "exit_code": 0,
+          "errors": [],
+          "markers_qpc_ms": {
+            "BEGIN": 257439754.2523,
+            "END": 257459777.5615
+          },
+          "fixture_sha256": "d65757bc074c8de2a3f8734ea0e0e809ef87020ce2fcc65e6cae4c6984d002cf",
+          "bench_sha256": "84a68372042bc289c7bf3580a5ff5c76df6036ca1870d4fbfcb2b0b6ca49f247",
+          "passed": true,
+          "simulation": {
+            "samples": 700,
+            "mean_ms": 28.57130628571429,
+            "p50_ms": 28.5735,
+            "p95_ms": 28.9717,
+            "p99_ms": 29.0616,
+            "max_ms": 29.3116
+          },
+          "presentation": {
+            "pid": 21532,
+            "trace_sha256": "6a55864149aa94879e6ed84a1cda97fae6dbdc50817120e37028ac4027d8343f",
+            "rows": 44114,
+            "scene_presents": 31802,
+            "mean_present_fps": 1814.8479466911567,
+            "present_intervals": {
+              "samples": 31801,
+              "mean_ms": 0.5510103487309815,
+              "p50_ms": 0.5340999960899353,
+              "p95_ms": 0.67330002784729,
+              "p99_ms": 0.7991999983787537,
+              "max_ms": 1.4318000078201294
+            },
+            "native_call_duration": {
+              "samples": 31802,
+              "mean_ms": 0.07329508212686867,
+              "p50_ms": 0.07120001316070557,
+              "p95_ms": 0.09529998898506165,
+              "p99_ms": 0.12160000205039978,
+              "max_ms": 0.5688999891281128
+            }
+          }
+        }
+      ]
+    }
+  },
+  "iterations": "Model01/02 reveal clipped ellipsoid pole loops and inconsistent winding on sharp tubes. Local sealed poles and transported tube rings fix the new shapes without changing earlier exporters. Model03 checks all then-current source components. Model04 adds original skin/fur/torso atlas, softer muzzle and rounded shoulders. Model05 repeats04 after a temporary helper path error. The first wrap-fit helper stopped before writing on a thigh-level band outside the calf range. Model06 fits all eight leg bands to actual limb triangles, maps tunic UV continuously and adds flowers. Model07 assigns upper bands to thigh articulation and narrows the collar opening. Contact probes distinguish collar/scalp support from inappropriate torso/crown targets; model08 moves floating flower hearts onto the crown. Model09/10 finalize metadata and repeat identical model08 art. Earlier failures/previews are preserved.",
+  "art": {
+    "source": "assets/source/art/guardians_698",
+    "new_image_generation": true,
+    "mode": "built-in image_gen",
+    "selected_textures": [
+      "yasi-face.png",
+      "yastay-face.png",
+      "materials.png",
+      "body.png"
+    ],
+    "rejected_iteration": "yastay-face-v1.png feline nose",
+    "original_pixels_preserved": true,
+    "reviewed_views": "Final ordinary-ambient front/side/rear, face details and inherited combat-state captures; both presentation cohorts per creature.",
+    "author_check": "CA698-GUARDIANS-01"
+  },
+  "environment": {
+    "os": "Windows 11 Pro 26200",
+    "cpu": "Ryzen 9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX 3070 Ti",
+    "engine": "GZDoom 4.14.2",
+    "backend": "Vulkan",
+    "resolution": [
+      1280,
+      720
+    ],
+    "background_unpaused": true,
+    "audio": 0.05,
+    "presentation_uncapped": true,
+    "vsync": false
+  },
+  "qualifications": [
+    "Two sequential 700-tic sprite/model pairs with one visible creature and a Mandinga control. Queue intervals do not establish GPU/display timing, repeatability or campaign/crowd acceptance.",
+    "Billboard and height-fitted mesh occupy different screen areas; this is not an equal-pixel-cost comparison.",
+    "Candidate faces, anatomy, material seams, simplified hands/feet and rigid costume articulation require author review. No final-art acceptance claim.",
+    "Editable fixed-creature components are not runtime interchangeable inventory modules. Playable body/worn/first-person integration remains unfinished.",
+    "Catalogue meter ranges do not authorize runtime dimensions. Neutral art fits unchanged provisional Height; motion/lying art can exceed collision Radius.",
+    "No saved fields, actor states, scans, statistics, loot or campaign spawns changed. Both unique catalogue identities remain intact.",
+    "Closure checks cover reconstructed new source components; attachment witnesses use serialized neutral OBJ. They do not prove all-pose cloth clearance or repair older meshes.",
+    "Four selected generated textures plus rejected Yastay v1 and exact prompts retain original pixels. No development IWAD, executable, DLL, package, save or fixture WAD is committed."
+  ],
+  "files": {
+    "actions/actions/commands.cfg": "b3caf7cd45c963b7213ebfa09f50bf4a8a29dc98c70a0885c590f919ba54e7c0",
+    "actions/actions/engine.log": "0eee18c54bd9cccbb19f87b3049a8a65e7c6dd77651c76908a96ac47f0a4b9d9",
+    "actions/actions/process.log": "2d3853f9d8fd45a0529ce68883195d6b5aaa4313b766697c73147c48c446a959",
+    "actions/actions/session.ini": "791d6a1ed3f5f7785777fb68d998d93565eb33ff617195206255fa05fed91942",
+    "actions/fixture-source/MAPINFO.txt": "60eefbb464ce3e5b821931ea26fd1e88dc163c1e2fa154e4300fadf448409fa6",
+    "actions/fixture-source/ZSCRIPT.txt": "7fd3334721a1bc7f70eda05539479d985b16e5eba2a90336c9e18645dc010a16",
+    "actions/fixture.zs": "a97ee5174518bc19ecdfd561c6266376878dbb69ac7c87e8d8f183d5bc749fdf",
+    "actions/loot/commands.cfg": "c7131f87f9df9188e2301d6730516e731540216e6417b470aab866467fbd8ad7",
+    "actions/loot/engine.log": "7b4959123ced78e288a9e0d2ce859d9d6bc755a54fdcb9c0d516ca6694ad34fe",
+    "actions/loot/process.log": "c6fc35055ccdbf575c6a3c59d96bacb3e0049df2b94ca83c06c4c9d72f6f1d3f",
+    "actions/loot/session.ini": "fcb170a6c3667e3a470c093afbef0d9048e5701149dc70c05d273e5f828b3a8b",
+    "actions/loot-reload/commands.cfg": "ad82c3110081fb6cd15b9a00885b6cc0747127803c4e52c0e06a730955dcf399",
+    "actions/loot-reload/engine.log": "97277c1a5867daaa771384033428ee6553d7101e1fb9d633253111035e6aaada",
+    "actions/loot-reload/process.log": "ae1a7ae6180b9b2fe34fd17ea18b2da9c1e853a1f2e4fb6afc4cae0d2605642f",
+    "actions/loot-reload/session.ini": "00293aa2edff59f3a41e1a58eb33371f24e4f83d7cfd5bf3f5062d477218e117",
+    "actions/RESULTS.json": "a92af03d3810c23d2cfa97d559ffee67ae1ac71f3a1e211819a7956e5ac0c05f",
+    "build.log": "1740aab8c9e0d4adc3e1f1319031ef9a4a3ea3b8526b45898e765601a4f38ae5",
+    "continuity/yasi/baseline/commands.cfg": "0b47a857cd5d9aecd0fa04f0bd963a7c3e7254e5e087b915cd1fde6968c4885b",
+    "continuity/yasi/baseline/engine.log": "eabbdc78a11bfb1c93a43cf1b88054e9e24341492e2d15f9983a778bff423d1a",
+    "continuity/yasi/baseline/process.log": "f5efdf285b2822db9912b961333da6dcc1e0dc0d18f12d67ff2804b3a50b6618",
+    "continuity/yasi/baseline/session.ini": "ca02ae0edba48d0fe6c6d0aa6ca0390cd33fd2c8e9e0a14b4695382b7e214e07",
+    "continuity/yasi/fixture-source/MAPINFO.txt": "54d8a6e579a43fa92b8260ed4b09f197d610021bfa1e11d79b448c0daf69b3d5",
+    "continuity/yasi/fixture-source/ZSCRIPT.txt": "02a504f89a9a3720041442b5f47e11fbcf2d8cb83df808b186bca7eba5f46ca5",
+    "continuity/yasi/fixture.zs": "b648036d5fe45dab0e5c01cc819334fb8fd2b97d5936118bb7f089042761260f",
+    "continuity/yasi/fresh-model/commands.cfg": "acdd7f1f57d62b33e680e4e2ed14daf6ac064abf04db059add2a429a968ee0a8",
+    "continuity/yasi/fresh-model/empty.png": "e9d2d20151922c597e0bfc06a181a66eb0ff3e0f0fcdbde1af35e01ecd79c195",
+    "continuity/yasi/fresh-model/engine.log": "f31773e5f4b7736202937b0e4014f21b285e8aa60e209e4ebb020b335541bdbe",
+    "continuity/yasi/fresh-model/pose-00-idle.png": "673b5114b45549db3815edaa61e9531d7443cd24ed967b197febe419ad470432",
+    "continuity/yasi/fresh-model/pose-01-idle.png": "9dfcc7d85c4a4b73b4714d23e0507968546e2e6ce36cf648987572df39e85216",
+    "continuity/yasi/fresh-model/pose-02-run.png": "6b68242c17f737a32c5157244eceb65540323f1f2a42493cf917e3e84142dac8",
+    "continuity/yasi/fresh-model/pose-03-run.png": "c89e0e03479a7614f2766d38e3055f35e950eff5e0d888432919c95d2461f311",
+    "continuity/yasi/fresh-model/pose-04-run.png": "dfe339c5064569f7e158bee052c39eee5da5da37fd12b1bb4d3729ad3a1f6223",
+    "continuity/yasi/fresh-model/pose-05-run.png": "43b3805916591dd13c7026def98ee0fdef4d0eab502f5a27f8d5e1b4afd6ac57",
+    "continuity/yasi/fresh-model/pose-06-walk.png": "c89e0e03479a7614f2766d38e3055f35e950eff5e0d888432919c95d2461f311",
+    "continuity/yasi/fresh-model/pose-07-walk.png": "43b3805916591dd13c7026def98ee0fdef4d0eab502f5a27f8d5e1b4afd6ac57",
+    "continuity/yasi/fresh-model/pose-08-stun.png": "edb28575c5dccadc9b603dd54a8aa1f8620c58902420c66657452e39ba42f9da",
+    "continuity/yasi/fresh-model/pose-09-attack_prepare.png": "ea43ea2e5096e26f51272fe71ea9ccd7e98bed66d25583d96cb0455f83a823f1",
+    "continuity/yasi/fresh-model/pose-10-attack_release.png": "43abe5862cdec54a8071c931115e7bc55b6bad2f535b4090fe1b742281769472",
+    "continuity/yasi/fresh-model/pose-11-pain.png": "e8f3b40fd1327d459628a2dc506628edbd26b564e373802caf3e677a31de3c17",
+    "continuity/yasi/fresh-model/pose-12-death.png": "84a65de5a8ea4876e65221390875a8b05cfc6843154a6a635d90168b08ce2da9",
+    "continuity/yasi/fresh-model/pose-13-death.png": "6a4555f31b80a3062cb735bee01a3d24c0cd0b64ac3b739b19afc4571501d1c3",
+    "continuity/yasi/fresh-model/pose-14-death.png": "dd0bd300c2e3afb7aa5526c635aec638e76812163938ab2e0198923c34f055b9",
+    "continuity/yasi/fresh-model/pose-15-death.png": "29ec465307cbf3f103f7f876ee50837af41239738538253ea831e17574db958c",
+    "continuity/yasi/fresh-model/pose-16-death.png": "4dccf242a55596d1012f7b3058bd9af9e554a77c95179d7e79e2d8622677ceba",
+    "continuity/yasi/fresh-model/pose-17-death.png": "4dccf242a55596d1012f7b3058bd9af9e554a77c95179d7e79e2d8622677ceba",
+    "continuity/yasi/fresh-model/pose-18-breath.png": "5bfaf62bf876318cda78debbb975dec36f0980ff8ac9dd7f36ffb16fe09b284c",
+    "continuity/yasi/fresh-model/pose-19-breath.png": "4fa7f8afb7cfcbcec3123eab860efaac2aa78f2f54367490a9a62427a1dc824d",
+    "continuity/yasi/fresh-model/pose-20-breath.png": "5bfaf62bf876318cda78debbb975dec36f0980ff8ac9dd7f36ffb16fe09b284c",
+    "continuity/yasi/fresh-model/pose-21-breath.png": "771aafcfa1811d5d3a1df497258be72e622f3f2383806f6e3006b00b59b765e4",
+    "continuity/yasi/fresh-model/pose-22-rest.png": "6d22329d700cff490525ea45f9bdedfdca86781f6afc3d4b295d09bcd88a3598",
+    "continuity/yasi/fresh-model/process.log": "a785cfd197c948d1e291a69c8a635931918b55e0823a2cf46b528c21a8cdb6f9",
+    "continuity/yasi/fresh-model/session.ini": "f773269628be8d57e050bbb5539afb4ffdacc4e0388ff7db867eb246b26b2031",
+    "continuity/yasi/fresh-model/view-front.png": "4c66cc153764fdab13b6cd51536841779cabb79de141a12bf5fb7c119b2f0fbf",
+    "continuity/yasi/fresh-model/view-head-front.png": "8adf060da102b21721d8b63c3fd3ebb746296d386cdc0b1e68e83ca5b585219d",
+    "continuity/yasi/fresh-model/view-head-oblique.png": "1fc4fc7a9147ca2dba70785daf4684a08918f9cea3bf6a2c22b0fe7dfaaac47d",
+    "continuity/yasi/fresh-model/view-rear.png": "dea55c8d0623aa3a97a6ab001b63a96d0087bf80ab747e3e796c74f568c9557c",
+    "continuity/yasi/fresh-model/view-side.png": "63ad9b0baf0f84dfd94cb4e584886e8fde27b39f9bf4e85a29cc5f4b78088de8",
+    "continuity/yasi/model-reload/commands.cfg": "aa6f915fcf565c625686a62f02a339e56349fb77d5f3a76aeca51e66cd0409ef",
+    "continuity/yasi/model-reload/engine.log": "7a2ad98e2fe664376b9f1b82627619cdbc6d2f2a9b4c4886e80caaa196939720",
+    "continuity/yasi/model-reload/process.log": "e43b16e041c6e3859322ccbe37e1386181783171b27e0a9a4b10f7d937773936",
+    "continuity/yasi/model-reload/session.ini": "3e7b550420e4883361c20e3c93cc82320a23081798dbda5aeb001492309701f0",
+    "continuity/yasi/old-save-model/commands.cfg": "aa6f915fcf565c625686a62f02a339e56349fb77d5f3a76aeca51e66cd0409ef",
+    "continuity/yasi/old-save-model/engine.log": "cda0bedca096bce5f4f2f799b910831caaa819722a6deba75c9991557374fa0d",
+    "continuity/yasi/old-save-model/process.log": "34ba9c4af8d7d5e94f3d532e812b5ff258cc4e3f3143987ae4f5259864b6c76f",
+    "continuity/yasi/old-save-model/session.ini": "309b0f1186ce2c0df778df271543e891fb7c166c83fb6ccc68d688a3144c9111",
+    "continuity/yasi/RESULTS.json": "d3ee0356b7e88fb5cf325987b70d486c56d551b1f022a7530d172c9ef8b9debd",
+    "continuity/yasi/rollback/commands.cfg": "aa6f915fcf565c625686a62f02a339e56349fb77d5f3a76aeca51e66cd0409ef",
+    "continuity/yasi/rollback/engine.log": "8e8f83076a1137061a532acc0ce48cea860ad3bdff3279f2f305aa0caeaeaaf8",
+    "continuity/yasi/rollback/process.log": "d805a9ad018599966b45f2e1b9d12431050903f3f6513d9fbc402f98f4551845",
+    "continuity/yasi/rollback/session.ini": "639f9eff282493aedc8891d82c6026a07b02d02a4e4c49e19d45efa936c9e37c",
+    "continuity/yastay/baseline/commands.cfg": "0b47a857cd5d9aecd0fa04f0bd963a7c3e7254e5e087b915cd1fde6968c4885b",
+    "continuity/yastay/baseline/engine.log": "b5b561bda6269fbd0c354d2c3ed0f46d3b91fb857e0efaf2dc9ef62c872b3a79",
+    "continuity/yastay/baseline/process.log": "f01c6970815278403cb161bdc136e968748e6e4202da611bebef34295bf155ba",
+    "continuity/yastay/baseline/session.ini": "24e2a11a512c364ce6b50cbab5f4303da12f5965e99aa385a75b48001838124b",
+    "continuity/yastay/fixture-source/MAPINFO.txt": "54d8a6e579a43fa92b8260ed4b09f197d610021bfa1e11d79b448c0daf69b3d5",
+    "continuity/yastay/fixture-source/ZSCRIPT.txt": "fda580286af71836293dc60dccf82cb6715b47856fd30291a59b4f146e0257af",
+    "continuity/yastay/fixture.zs": "31da74ad1f2a112d06aa191f5485dbc4d8ea64b45b58f6ecd5c2e0685fbfaefb",
+    "continuity/yastay/fresh-model/commands.cfg": "acdd7f1f57d62b33e680e4e2ed14daf6ac064abf04db059add2a429a968ee0a8",
+    "continuity/yastay/fresh-model/empty.png": "e9d2d20151922c597e0bfc06a181a66eb0ff3e0f0fcdbde1af35e01ecd79c195",
+    "continuity/yastay/fresh-model/engine.log": "4c7ff4395baf8f5dc0171dd982747a925cfb1f0174107f8e697e6cbf6b7b08f8",
+    "continuity/yastay/fresh-model/pose-00-idle.png": "4631a1bb843d04bc1f9f20a73ba17e8af2a4abe302e3c35d47509faf82b7a866",
+    "continuity/yastay/fresh-model/pose-01-idle.png": "ef5e2fd144d79f093c6d66444b055c1afcca5a5ed769367e88623b1ffd5991e4",
+    "continuity/yastay/fresh-model/pose-02-run.png": "a7672176d9abd42f2a0af0dcaabb70c807f9fa39251a828304c92552a9decd28",
+    "continuity/yastay/fresh-model/pose-03-run.png": "03abc5e38b246480e0285c5631ffe6b054b03d0a263211c30f7f125c2582d7be",
+    "continuity/yastay/fresh-model/pose-04-run.png": "02fdee8eefe62c750d888dd097498fd90127bb7acee4b1f062d98b64832d778b",
+    "continuity/yastay/fresh-model/pose-05-run.png": "c1a6bf087ffb4026e5738846f1acaaca7273979beb65d8fff9647f371e0a88ec",
+    "continuity/yastay/fresh-model/pose-06-walk.png": "03abc5e38b246480e0285c5631ffe6b054b03d0a263211c30f7f125c2582d7be",
+    "continuity/yastay/fresh-model/pose-07-walk.png": "c1a6bf087ffb4026e5738846f1acaaca7273979beb65d8fff9647f371e0a88ec",
+    "continuity/yastay/fresh-model/pose-08-stun.png": "d445c98993641197b81884e32b617bc330236a1383b4dc748bc5ceb6c1b3ea51",
+    "continuity/yastay/fresh-model/pose-09-attack_prepare.png": "cc21d4ac9baac79ea7632b9a67f4ab0fcbd0a7463c8a88b8443287da5b97733b",
+    "continuity/yastay/fresh-model/pose-10-attack_release.png": "1a37271d1796414c6a83d8c1f0339293d73ac314cadf34cec204d5572d49e417",
+    "continuity/yastay/fresh-model/pose-11-pain.png": "bec097a4077a0874afaba9a12985a881b0ea6dfa1ebaabb94b274c1c826fa683",
+    "continuity/yastay/fresh-model/pose-12-death.png": "4b12c1f291d2babfca545b4ea174e7d35d3dfd51acf91c5820a7dedb1ed1e407",
+    "continuity/yastay/fresh-model/pose-13-death.png": "0ca67e658b6b19953b19d3946548d8cebe612b0e5d0a9dff1e8b9b602eddd19d",
+    "continuity/yastay/fresh-model/pose-14-death.png": "ac14b43f8b53101147ba9b4fa154164d1131eafd64bd255d6db9ecbc4a3f9495",
+    "continuity/yastay/fresh-model/pose-15-death.png": "2b223d97aee78ec9136d6d6eaacf8d31c178349dcc7ddaa7dd129cd94d01002d",
+    "continuity/yastay/fresh-model/pose-16-death.png": "e76201f1ccf1ef39c20099bfa2dc20bbd2a0d1d52e8311aab50dde618735a8e3",
+    "continuity/yastay/fresh-model/pose-17-death.png": "e76201f1ccf1ef39c20099bfa2dc20bbd2a0d1d52e8311aab50dde618735a8e3",
+    "continuity/yastay/fresh-model/pose-18-breath.png": "aea017db4ffb27c82a53e61a64ea82619930aa92b6a9c50390f1c7f910cfda3b",
+    "continuity/yastay/fresh-model/pose-19-breath.png": "d700fce46f0419f2ea1e3f321f311a7b2860df0680220d829ab49ef0a6eceab0",
+    "continuity/yastay/fresh-model/pose-20-breath.png": "aea017db4ffb27c82a53e61a64ea82619930aa92b6a9c50390f1c7f910cfda3b",
+    "continuity/yastay/fresh-model/pose-21-breath.png": "932bb3f09d25dd986f03c9e5a19bb70b3d7183fbbad6650cd3ebf3c7d38b39e1",
+    "continuity/yastay/fresh-model/pose-22-rest.png": "e102c1958490f5d3771975d9ad51853dc796eefeaa702859e4dac7dac343623a",
+    "continuity/yastay/fresh-model/process.log": "c9639c936fe1b050cd31b465fdec02c10363adc0155ce6d657f132303d9a1965",
+    "continuity/yastay/fresh-model/session.ini": "12809704b77ba67ed6c2423192ac61298bc344576d6eb684f78476bb1f479bb4",
+    "continuity/yastay/fresh-model/view-front.png": "c2a837f47108c3a02773197234d517c81d8f2827710e40e45317a1bb47adb5c2",
+    "continuity/yastay/fresh-model/view-head-front.png": "7dcffae7f7e46ea04d35a10922ab00db13bf307d03f20a886ec474ac46bd48a9",
+    "continuity/yastay/fresh-model/view-head-oblique.png": "6429e3a5b2d152d0b5d835748798aae187a21e6855c022689b2508247eaac14f",
+    "continuity/yastay/fresh-model/view-rear.png": "d19090da980560f146b73b0fec3af94777be30d2c7bce9d7535cbf83392d2f3d",
+    "continuity/yastay/fresh-model/view-side.png": "69dcbe5747af8ccce498227d1893723a825aaf339776a7d686665886d13ab0f9",
+    "continuity/yastay/model-reload/commands.cfg": "aa6f915fcf565c625686a62f02a339e56349fb77d5f3a76aeca51e66cd0409ef",
+    "continuity/yastay/model-reload/engine.log": "2665002e2075ccc51f5d7977339f526c2a3f74a254b07d68c1924cec0d6a7633",
+    "continuity/yastay/model-reload/process.log": "2fb30319f1e439df5916e19da721ab4f7001b1a0902a4532ecc5670d825dd615",
+    "continuity/yastay/model-reload/session.ini": "accc0457ca366d600c9890331216b9df3c52025d2af3ac3093878bba3394232e",
+    "continuity/yastay/old-save-model/commands.cfg": "aa6f915fcf565c625686a62f02a339e56349fb77d5f3a76aeca51e66cd0409ef",
+    "continuity/yastay/old-save-model/engine.log": "3d426279a8ba250f4e06f9b1e4915bb160f060b80faf4632758117db0effea19",
+    "continuity/yastay/old-save-model/process.log": "5e20bd94943212e71d2273258a1c7477dff146ebac3326d5b76a7b5bfb1a7dbf",
+    "continuity/yastay/old-save-model/session.ini": "99d5ee825c84f9d56b0977a1777fdda3ba97fcb0e9fc61e25aa27dcb3e4cc66c",
+    "continuity/yastay/RESULTS.json": "e2e7c5b37079220be4ab415e853f65f136168f748a055257b7a46481b10c7bfc",
+    "continuity/yastay/rollback/commands.cfg": "aa6f915fcf565c625686a62f02a339e56349fb77d5f3a76aeca51e66cd0409ef",
+    "continuity/yastay/rollback/engine.log": "4c035dd513a941cc8b5faa1879bc0b52a4c66599cf05c5843d47bf5005bcedb3",
+    "continuity/yastay/rollback/process.log": "1bb4d1793432f2fd465bb7e5ebf618690ac2c63c137ed7889fda893d2d475e4c",
+    "continuity/yastay/rollback/session.ini": "157805b51501f54713861f71bcb89e3244b02efb421b2659b8f2bf8618b9b351",
+    "final-views/yasi/fixture-source/MAPINFO.txt": "54d8a6e579a43fa92b8260ed4b09f197d610021bfa1e11d79b448c0daf69b3d5",
+    "final-views/yasi/fixture-source/ZSCRIPT.txt": "f5b222a0fed7423ba0b53c850f791c2d5734c17e465b2eb5faba5e26752ffd89",
+    "final-views/yasi/fixture.zs": "74273833740f328c09972a6d0b0678d2510f5c775e6505eae97c1438e7cebd7e",
+    "final-views/yasi/RESULTS.json": "a6884e689e5244e84c8a65a6ae7c8e966f62206b6e94d408ff735ee34f752c67",
+    "final-views/yasi/visual/commands.cfg": "e2af743eb6ef392241860f11b3cb04fb83003c0eec5e7a540903a1acc0e6cadc",
+    "final-views/yasi/visual/empty.png": "e9d2d20151922c597e0bfc06a181a66eb0ff3e0f0fcdbde1af35e01ecd79c195",
+    "final-views/yasi/visual/engine.log": "6e7f4effdbe3be8a6710ae3bb37d5e4ad0d8acca7aea9d239f163d2a607be41d",
+    "final-views/yasi/visual/pose-00-idle.png": "673b5114b45549db3815edaa61e9531d7443cd24ed967b197febe419ad470432",
+    "final-views/yasi/visual/pose-01-idle.png": "9dfcc7d85c4a4b73b4714d23e0507968546e2e6ce36cf648987572df39e85216",
+    "final-views/yasi/visual/pose-02-run.png": "6b68242c17f737a32c5157244eceb65540323f1f2a42493cf917e3e84142dac8",
+    "final-views/yasi/visual/pose-03-run.png": "c89e0e03479a7614f2766d38e3055f35e950eff5e0d888432919c95d2461f311",
+    "final-views/yasi/visual/pose-04-run.png": "dfe339c5064569f7e158bee052c39eee5da5da37fd12b1bb4d3729ad3a1f6223",
+    "final-views/yasi/visual/pose-05-run.png": "43b3805916591dd13c7026def98ee0fdef4d0eab502f5a27f8d5e1b4afd6ac57",
+    "final-views/yasi/visual/pose-06-walk.png": "c89e0e03479a7614f2766d38e3055f35e950eff5e0d888432919c95d2461f311",
+    "final-views/yasi/visual/pose-07-walk.png": "43b3805916591dd13c7026def98ee0fdef4d0eab502f5a27f8d5e1b4afd6ac57",
+    "final-views/yasi/visual/pose-08-stun.png": "edb28575c5dccadc9b603dd54a8aa1f8620c58902420c66657452e39ba42f9da",
+    "final-views/yasi/visual/pose-09-attack_prepare.png": "ea43ea2e5096e26f51272fe71ea9ccd7e98bed66d25583d96cb0455f83a823f1",
+    "final-views/yasi/visual/pose-10-attack_release.png": "43abe5862cdec54a8071c931115e7bc55b6bad2f535b4090fe1b742281769472",
+    "final-views/yasi/visual/pose-11-pain.png": "e8f3b40fd1327d459628a2dc506628edbd26b564e373802caf3e677a31de3c17",
+    "final-views/yasi/visual/pose-12-death.png": "1db7d65fbab7355d5267cb63cbdacc762b2bc520dca898b874485ac508651285",
+    "final-views/yasi/visual/pose-13-death.png": "f7599a779a0d13db9770771aa6a94afdb14e75eaea6f43175940522161ef0d52",
+    "final-views/yasi/visual/pose-14-death.png": "19765d088d409799c55ee520f99a7bb30d615b918b8936a1f41b34ba0a9b3034",
+    "final-views/yasi/visual/pose-15-death.png": "9367f797fb9393fda1c255d436d91ec113f326b37045bf5bdba1e6a797a124c8",
+    "final-views/yasi/visual/pose-16-death.png": "e83414a2ea0844c6c7194c4a84be76168e465edeec1d662c02177a8a3da99dd4",
+    "final-views/yasi/visual/pose-17-death.png": "e83414a2ea0844c6c7194c4a84be76168e465edeec1d662c02177a8a3da99dd4",
+    "final-views/yasi/visual/pose-18-breath.png": "5bfaf62bf876318cda78debbb975dec36f0980ff8ac9dd7f36ffb16fe09b284c",
+    "final-views/yasi/visual/pose-19-breath.png": "4fa7f8afb7cfcbcec3123eab860efaac2aa78f2f54367490a9a62427a1dc824d",
+    "final-views/yasi/visual/pose-20-breath.png": "5bfaf62bf876318cda78debbb975dec36f0980ff8ac9dd7f36ffb16fe09b284c",
+    "final-views/yasi/visual/pose-21-breath.png": "771aafcfa1811d5d3a1df497258be72e622f3f2383806f6e3006b00b59b765e4",
+    "final-views/yasi/visual/pose-22-rest.png": "a7c2f513cdb3f2a93929c4d154e4410c7f63e1ac2d1fa2cce762f34ce88d3f8f",
+    "final-views/yasi/visual/process.log": "fd4c09af3982ff8b25666eda44e1941f863cc834b67fd379d7148ba5c1fbcca0",
+    "final-views/yasi/visual/session.ini": "ca291af7cc2f5fa2b5012c8f3e0ceb66f6b2dad1ba9a8387e437cdc4a91fcaf1",
+    "final-views/yasi/visual/view-front.png": "4c66cc153764fdab13b6cd51536841779cabb79de141a12bf5fb7c119b2f0fbf",
+    "final-views/yasi/visual/view-head-front.png": "8adf060da102b21721d8b63c3fd3ebb746296d386cdc0b1e68e83ca5b585219d",
+    "final-views/yasi/visual/view-head-oblique.png": "1fc4fc7a9147ca2dba70785daf4684a08918f9cea3bf6a2c22b0fe7dfaaac47d",
+    "final-views/yasi/visual/view-lying-oblique.png": "a7c2f513cdb3f2a93929c4d154e4410c7f63e1ac2d1fa2cce762f34ce88d3f8f",
+    "final-views/yasi/visual/view-rear.png": "dea55c8d0623aa3a97a6ab001b63a96d0087bf80ab747e3e796c74f568c9557c",
+    "final-views/yasi/visual/view-side.png": "63ad9b0baf0f84dfd94cb4e584886e8fde27b39f9bf4e85a29cc5f4b78088de8",
+    "final-views/yastay/fixture-source/MAPINFO.txt": "54d8a6e579a43fa92b8260ed4b09f197d610021bfa1e11d79b448c0daf69b3d5",
+    "final-views/yastay/fixture-source/ZSCRIPT.txt": "93ccea48bea7ea88515a88b7f469b2d0cd960fef5331358cab8e25e0acd7fe9f",
+    "final-views/yastay/fixture.zs": "5650c5db9bc642a4afe1efd403e791eb78ddf2bd037ea69818e5d2461ef785f2",
+    "final-views/yastay/RESULTS.json": "c225591fb126b9f26e9f6773216874bbe24202a525722666f6ce5550f05fedd5",
+    "final-views/yastay/visual/commands.cfg": "e2af743eb6ef392241860f11b3cb04fb83003c0eec5e7a540903a1acc0e6cadc",
+    "final-views/yastay/visual/empty.png": "e9d2d20151922c597e0bfc06a181a66eb0ff3e0f0fcdbde1af35e01ecd79c195",
+    "final-views/yastay/visual/engine.log": "ab119ddb22707203fa27ee33e31ffa1885fb73e5f62a332749f32405ac188d38",
+    "final-views/yastay/visual/pose-00-idle.png": "4631a1bb843d04bc1f9f20a73ba17e8af2a4abe302e3c35d47509faf82b7a866",
+    "final-views/yastay/visual/pose-01-idle.png": "ef5e2fd144d79f093c6d66444b055c1afcca5a5ed769367e88623b1ffd5991e4",
+    "final-views/yastay/visual/pose-02-run.png": "a7672176d9abd42f2a0af0dcaabb70c807f9fa39251a828304c92552a9decd28",
+    "final-views/yastay/visual/pose-03-run.png": "03abc5e38b246480e0285c5631ffe6b054b03d0a263211c30f7f125c2582d7be",
+    "final-views/yastay/visual/pose-04-run.png": "02fdee8eefe62c750d888dd097498fd90127bb7acee4b1f062d98b64832d778b",
+    "final-views/yastay/visual/pose-05-run.png": "c1a6bf087ffb4026e5738846f1acaaca7273979beb65d8fff9647f371e0a88ec",
+    "final-views/yastay/visual/pose-06-walk.png": "03abc5e38b246480e0285c5631ffe6b054b03d0a263211c30f7f125c2582d7be",
+    "final-views/yastay/visual/pose-07-walk.png": "c1a6bf087ffb4026e5738846f1acaaca7273979beb65d8fff9647f371e0a88ec",
+    "final-views/yastay/visual/pose-08-stun.png": "d445c98993641197b81884e32b617bc330236a1383b4dc748bc5ceb6c1b3ea51",
+    "final-views/yastay/visual/pose-09-attack_prepare.png": "cc21d4ac9baac79ea7632b9a67f4ab0fcbd0a7463c8a88b8443287da5b97733b",
+    "final-views/yastay/visual/pose-10-attack_release.png": "1a37271d1796414c6a83d8c1f0339293d73ac314cadf34cec204d5572d49e417",
+    "final-views/yastay/visual/pose-11-pain.png": "bec097a4077a0874afaba9a12985a881b0ea6dfa1ebaabb94b274c1c826fa683",
+    "final-views/yastay/visual/pose-12-death.png": "4f5da7ce4f25b4dfc05af8760fc1e0a05ef666a6200953dc50bfbda2ccb54486",
+    "final-views/yastay/visual/pose-13-death.png": "283ec834de66b51b265ce8792d436e2e225551989610914135d94e2f624fafba",
+    "final-views/yastay/visual/pose-14-death.png": "8ec1a55404f2fc40fdfc9d3bb39f88b56391495893fe1e9fa98cef2061f01ca1",
+    "final-views/yastay/visual/pose-15-death.png": "883b471425a09a01d784e823de2bd3dc784d50cc2f8e8a8a9e320ec5b418c829",
+    "final-views/yastay/visual/pose-16-death.png": "0510cd55ce4062977ad63b3d50a2678a7de07e1a9874c406626573947323cf98",
+    "final-views/yastay/visual/pose-17-death.png": "0510cd55ce4062977ad63b3d50a2678a7de07e1a9874c406626573947323cf98",
+    "final-views/yastay/visual/pose-18-breath.png": "aea017db4ffb27c82a53e61a64ea82619930aa92b6a9c50390f1c7f910cfda3b",
+    "final-views/yastay/visual/pose-19-breath.png": "d700fce46f0419f2ea1e3f321f311a7b2860df0680220d829ab49ef0a6eceab0",
+    "final-views/yastay/visual/pose-20-breath.png": "aea017db4ffb27c82a53e61a64ea82619930aa92b6a9c50390f1c7f910cfda3b",
+    "final-views/yastay/visual/pose-21-breath.png": "932bb3f09d25dd986f03c9e5a19bb70b3d7183fbbad6650cd3ebf3c7d38b39e1",
+    "final-views/yastay/visual/pose-22-rest.png": "3b1d6ea7332fdef327c27a313d62eddf14cf4cb234ec2d378910f29a8cfee878",
+    "final-views/yastay/visual/process.log": "98797957b88bb453837c85a2e5b08b0d44327772dc679147ebd4bf568e024ce0",
+    "final-views/yastay/visual/session.ini": "ec67f1d84284fc76c6596e470919fcd7d44cce43dac69468b3e49e23aff5cc67",
+    "final-views/yastay/visual/view-front.png": "c2a837f47108c3a02773197234d517c81d8f2827710e40e45317a1bb47adb5c2",
+    "final-views/yastay/visual/view-head-front.png": "7dcffae7f7e46ea04d35a10922ab00db13bf307d03f20a886ec474ac46bd48a9",
+    "final-views/yastay/visual/view-head-oblique.png": "6429e3a5b2d152d0b5d835748798aae187a21e6855c022689b2508247eaac14f",
+    "final-views/yastay/visual/view-lying-oblique.png": "3b1d6ea7332fdef327c27a313d62eddf14cf4cb234ec2d378910f29a8cfee878",
+    "final-views/yastay/visual/view-rear.png": "d19090da980560f146b73b0fec3af94777be30d2c7bce9d7535cbf83392d2f3d",
+    "final-views/yastay/visual/view-side.png": "69dcbe5747af8ccce498227d1893723a825aaf339776a7d686665886d13ab0f9",
+    "installed-check.log": "3e6f4efb0d42ff8319969cf460c410c0c4f31cce49fb105d5cbb593083981c48",
+    "iterations/issue698-contact-probe.json": "e810ef907a4981e54c20272b731046dcec865ddfb26f17586d3997b435333ba8",
+    "iterations/issue698-contact-probe01.json": "e37528c426bbe4b3bf1d5a0fb81f48c4b627a622c3bc7ebd6a8e933bf95f3dc8",
+    "iterations/issue698-contact-probe03.json": "e37528c426bbe4b3bf1d5a0fb81f48c4b627a622c3bc7ebd6a8e933bf95f3dc8",
+    "iterations/issue698-contacts01.log": "843e61e009c24e7164340f973fece0b70a78b9f85122767a767244e445dc9a8e",
+    "iterations/issue698-contacts02.log": "b0d216a1ad76d585668311028f033b1a6fbce8daaa0287fd1b4f5544aae226e2",
+    "iterations/issue698-contacts03.log": "843e61e009c24e7164340f973fece0b70a78b9f85122767a767244e445dc9a8e",
+    "iterations/issue698-contacts04.log": "485cc70c4863100c0aedefa0f1295a115bedd867a4c3eeaf774105df672cc137",
+    "iterations/issue698-contacts05.log": "0de3b2808e61245b28fbfac711318bf38b615617e12a3e3585e442c2f86bfd69",
+    "iterations/issue698-contacts06.log": "f3bed4077960b7e533db254f767a509ea09a8144b4f43fc949d3efbd90d16cf6",
+    "iterations/issue698-contacts07.log": "4527d27df9b344c3b7f9312cbd6f01c2acff48b651ea688228c256d9554a1e5c",
+    "iterations/issue698-geometry-final.log": "b3d4142f9a2beb577b3b5e5f3f99f18f9c5c3e6ee44f18414d7efa9b7e8e030d",
+    "iterations/issue698-geometry01.log": "2821e01081c41773aed236d2792f5feacf00d40c30e344013126a44bbe7f315a",
+    "iterations/issue698-geometry02.log": "b3d4142f9a2beb577b3b5e5f3f99f18f9c5c3e6ee44f18414d7efa9b7e8e030d",
+    "iterations/issue698-geometry03.log": "b3d4142f9a2beb577b3b5e5f3f99f18f9c5c3e6ee44f18414d7efa9b7e8e030d",
+    "iterations/issue698-geometry04.log": "b3d4142f9a2beb577b3b5e5f3f99f18f9c5c3e6ee44f18414d7efa9b7e8e030d",
+    "iterations/issue698-geometry05.log": "b3d4142f9a2beb577b3b5e5f3f99f18f9c5c3e6ee44f18414d7efa9b7e8e030d",
+    "iterations/issue698-yasi-design01.json": "9f8825a38d176eaf0a7e88a7dab229764f1186449469b4afc5af3f78506eb6e8",
+    "iterations/issue698-yasi-design03.json": "0086fbfe95d4ff21c5b2286024d3b022c0f243d538fb7a8ddfdb06f28c163355",
+    "iterations/issue698-yasi-visual01/fixture.zs": "b648036d5fe45dab0e5c01cc819334fb8fd2b97d5936118bb7f089042761260f",
+    "iterations/issue698-yasi-visual01/RESULTS.json": "6d4e88845feab940047461fb943a49629bf8f01df4a6575811eaffa60ca72ebf",
+    "iterations/issue698-yasi-visual01/visual/engine.log": "f7058c90b6e6483a3a6cffd3de4e688193608ef55be9c446517a2825a40c9da5",
+    "iterations/issue698-yasi-visual01/visual/process.log": "e3e53c6fd9f0872f27c27313e76bf76836d39485f9fde76928992673a7220765",
+    "iterations/issue698-yasi-visual01/visual/view-front.png": "9a099d09ad97a6e8d0aa5faa0c527d7f1d9e358f19f4ddd79ec9b10b469cd4d8",
+    "iterations/issue698-yasi-visual01/visual/view-head-oblique.png": "dd8feefcbc0aa9d42523af9c79d3085425174bd464ede4e307f214aff59e5cc1",
+    "iterations/issue698-yasi-visual01/visual/view-side.png": "778d85a1c1845e2bd431ae2e81888cab44898a7ccc27851d663d8e0ce71d7568",
+    "iterations/issue698-yasi-visual02/fixture.zs": "b648036d5fe45dab0e5c01cc819334fb8fd2b97d5936118bb7f089042761260f",
+    "iterations/issue698-yasi-visual02/RESULTS.json": "d29e92cec72a2c481295cae8841c6c37057b63941e899e1c3e89b5a5ab85ea3a",
+    "iterations/issue698-yasi-visual02/visual/engine.log": "0493d378862aec4540bbe224b48b217e127075192618b08bbf615e67e88ad794",
+    "iterations/issue698-yasi-visual02/visual/process.log": "0ae6e8c6d8ee4900f0c54dd58dd2514ce7f4d860ddf3f4a91070d1299edda88a",
+    "iterations/issue698-yasi-visual02/visual/view-front.png": "298729ee978d544d4b5a88189d1e40fc44db973027a94c7fb355f5e3e8cd589d",
+    "iterations/issue698-yasi-visual02/visual/view-head-oblique.png": "56408a529e8e09bb264e9ca066b231f02690d3bdca796c01fec0dd5a1fc5565f",
+    "iterations/issue698-yasi-visual02/visual/view-side.png": "1eb7d13784847a59a9591973b56b170f430e29885d1b7b228f81fe3f94915f08",
+    "iterations/issue698-yasi-visual03/fixture.zs": "74273833740f328c09972a6d0b0678d2510f5c775e6505eae97c1438e7cebd7e",
+    "iterations/issue698-yasi-visual03/RESULTS.json": "a6884e689e5244e84c8a65a6ae7c8e966f62206b6e94d408ff735ee34f752c67",
+    "iterations/issue698-yasi-visual03/visual/engine.log": "6e7f4effdbe3be8a6710ae3bb37d5e4ad0d8acca7aea9d239f163d2a607be41d",
+    "iterations/issue698-yasi-visual03/visual/process.log": "fd4c09af3982ff8b25666eda44e1941f863cc834b67fd379d7148ba5c1fbcca0",
+    "iterations/issue698-yasi-visual03/visual/view-front.png": "4c66cc153764fdab13b6cd51536841779cabb79de141a12bf5fb7c119b2f0fbf",
+    "iterations/issue698-yasi-visual03/visual/view-head-oblique.png": "1fc4fc7a9147ca2dba70785daf4684a08918f9cea3bf6a2c22b0fe7dfaaac47d",
+    "iterations/issue698-yasi-visual03/visual/view-side.png": "63ad9b0baf0f84dfd94cb4e584886e8fde27b39f9bf4e85a29cc5f4b78088de8",
+    "iterations/issue698-yastay-design01.json": "84e836f1032e4ce38d78d469351fda1f44f1590e53a10a5f57d4ced0bfae1161",
+    "iterations/issue698-yastay-design03.json": "99f7b94e0ea9d13ad69b26eda306dbbdb2d590581830003ec1ed5cb5173dcc4e",
+    "iterations/issue698-yastay-visual01/fixture.zs": "31da74ad1f2a112d06aa191f5485dbc4d8ea64b45b58f6ecd5c2e0685fbfaefb",
+    "iterations/issue698-yastay-visual01/RESULTS.json": "e95936d95b0e9eafbccd0ffb5a21221b7f95f43a6b76965038f0cfc204e80130",
+    "iterations/issue698-yastay-visual01/visual/engine.log": "59f86002b595065b1655c320938687c6522845363924cce743dca762b61d99c2",
+    "iterations/issue698-yastay-visual01/visual/process.log": "ed095ce830d9a072146f435f7251cb9fcbf1ea9e9bc45859fc4dd821bcc59c69",
+    "iterations/issue698-yastay-visual01/visual/view-front.png": "09c8773f732f8d9ad47752c70289dd6cf65dcf3e024c6d5924b1530338de0204",
+    "iterations/issue698-yastay-visual01/visual/view-head-oblique.png": "a00a715bb65f0ec9d45f439f632830be5122441bd79b3b4ad14f43726be2854a",
+    "iterations/issue698-yastay-visual01/visual/view-side.png": "712de63f5bb50624c3bcd823564f71eb7006f548c585ba04800bca7819aaedcf",
+    "iterations/issue698-yastay-visual02/fixture.zs": "31da74ad1f2a112d06aa191f5485dbc4d8ea64b45b58f6ecd5c2e0685fbfaefb",
+    "iterations/issue698-yastay-visual02/RESULTS.json": "5d480f0dd53d3f1961c4d9ad2837487ecc19c3bd7215ebe541937e59cc85cb18",
+    "iterations/issue698-yastay-visual02/visual/engine.log": "db476c7941b056c8c9fe580542f7e34eca09cef1093684fc14a4beff9d234fdc",
+    "iterations/issue698-yastay-visual02/visual/process.log": "0b74a7484e8d93322a6c8cc95dbeae0a3464d2612be551c0b7be368bac8e413a",
+    "iterations/issue698-yastay-visual02/visual/view-front.png": "055ce00b507d02f348d879169bcc9509492b73bf4e20e630c9f99717059cade4",
+    "iterations/issue698-yastay-visual02/visual/view-head-oblique.png": "6429e3a5b2d152d0b5d835748798aae187a21e6855c022689b2508247eaac14f",
+    "iterations/issue698-yastay-visual02/visual/view-side.png": "f09da49e28b0da42fdfafcab3799254f9749fa792cdd85b7f747dae68ed096ce",
+    "iterations/issue698-yastay-visual03/fixture.zs": "5650c5db9bc642a4afe1efd403e791eb78ddf2bd037ea69818e5d2461ef785f2",
+    "iterations/issue698-yastay-visual03/RESULTS.json": "c225591fb126b9f26e9f6773216874bbe24202a525722666f6ce5550f05fedd5",
+    "iterations/issue698-yastay-visual03/visual/engine.log": "ab119ddb22707203fa27ee33e31ffa1885fb73e5f62a332749f32405ac188d38",
+    "iterations/issue698-yastay-visual03/visual/process.log": "98797957b88bb453837c85a2e5b08b0d44327772dc679147ebd4bf568e024ce0",
+    "iterations/issue698-yastay-visual03/visual/view-front.png": "c2a837f47108c3a02773197234d517c81d8f2827710e40e45317a1bb47adb5c2",
+    "iterations/issue698-yastay-visual03/visual/view-head-oblique.png": "6429e3a5b2d152d0b5d835748798aae187a21e6855c022689b2508247eaac14f",
+    "iterations/issue698-yastay-visual03/visual/view-side.png": "69dcbe5747af8ccce498227d1893723a825aaf339776a7d686665886d13ab0f9",
+    "iterations/model01.json": "74b4704251c2b89b6891b091e6033563d380ac0ae7580d1fcdfa50f3f12bb0fa",
+    "iterations/model02.json": "fdebe408972386efddd94f886b1925ebf81ed4565f4c3494762942b5917080a4",
+    "iterations/model03.json": "86e2ab8deac5099c631a78fe3a1d6fb22e3688ea2847d8ba719827c5a5c2c7ac",
+    "iterations/model04.json": "ba9b473e59ccfb7c05776e73988e4ac45f008add5a4662ded82a97c1ded68b21",
+    "iterations/model05.json": "ba9b473e59ccfb7c05776e73988e4ac45f008add5a4662ded82a97c1ded68b21",
+    "iterations/model06.json": "5d9c0bdbe127bea232d069b332ab55ef1016f9949b7766dad1f016d863f80947",
+    "iterations/model07.json": "ef3e6c55232190d166b4ab5ea070e03fda8bbd05f4f2cf15a4d61af68558b735",
+    "iterations/model08.json": "cd78653ef6e432d814cf5657aecfb46f9e680aef443fa3a5cce5e912d186c4a3",
+    "iterations/model09.json": "1975566e73f64f735f5907c2bcd2b95a40b9bdb7ec1b77acb64d28a52a354e23",
+    "iterations/model10.json": "1975566e73f64f735f5907c2bcd2b95a40b9bdb7ec1b77acb64d28a52a354e23",
+    "presentation/yasi/model/commands.cfg": "daadc71ff58502ea7e8ef94650602eaa90f1ceb960c3ca4e9a619510a7f849f7",
+    "presentation/yasi/model/engine.log": "8ff9fbffdc397145165428c9a670e2c27ac2d8c6fbe8b7e6f4a487671e35f2fa",
+    "presentation/yasi/model/fixture-source/MAPINFO.txt": "54d8a6e579a43fa92b8260ed4b09f197d610021bfa1e11d79b448c0daf69b3d5",
+    "presentation/yasi/model/fixture-source/ZSCRIPT.txt": "f5b222a0fed7423ba0b53c850f791c2d5734c17e465b2eb5faba5e26752ffd89",
+    "presentation/yasi/model/fixture.zs": "74273833740f328c09972a6d0b0678d2510f5c775e6505eae97c1438e7cebd7e",
+    "presentation/yasi/model/presents.csv": "9eae45107df35d08a788a44a7f62731b9c6a1be576f22b2ef105c8b979908c48",
+    "presentation/yasi/model/process.log": "2b8ce25609c8738a444889bb9ad483dc2b9e6b94c408c6a36fc3479a8972fb96",
+    "presentation/yasi/model/scene.png": "673b5114b45549db3815edaa61e9531d7443cd24ed967b197febe419ad470432",
+    "presentation/yasi/model/session.ini": "eccf2c8ce9093506aca791589dca83d02d42d13f7c8b62ee393b856f94051e4d",
+    "presentation/yasi/RESULTS.json": "c940744a1f39884bf1a9e1d61cb544acfb9cd03a764dfab2f9cc50c7d98811ff",
+    "presentation/yasi/sprite/commands.cfg": "daadc71ff58502ea7e8ef94650602eaa90f1ceb960c3ca4e9a619510a7f849f7",
+    "presentation/yasi/sprite/engine.log": "b51a265e6bd21f8b39aa450028abdb3a286eb178a328f786817bea7a2c7a8bf6",
+    "presentation/yasi/sprite/fixture-source/MAPINFO.txt": "54d8a6e579a43fa92b8260ed4b09f197d610021bfa1e11d79b448c0daf69b3d5",
+    "presentation/yasi/sprite/fixture-source/ZSCRIPT.txt": "f5b222a0fed7423ba0b53c850f791c2d5734c17e465b2eb5faba5e26752ffd89",
+    "presentation/yasi/sprite/fixture.zs": "74273833740f328c09972a6d0b0678d2510f5c775e6505eae97c1438e7cebd7e",
+    "presentation/yasi/sprite/presents.csv": "bd61213d03db9a2b93e75d1edd8ef54fa197f691f2a51b7f65aa7afcece6b231",
+    "presentation/yasi/sprite/process.log": "fe8f05cb73431cbd05ed31269a00c6febd11d267e4503010aae4498295eefea1",
+    "presentation/yasi/sprite/scene.png": "7d5d805cb1b8c4b9b09bdf67a9d42f9dd90d91b22c687f2c8c569a9459415e53",
+    "presentation/yasi/sprite/session.ini": "0546ead64dd8d2f9c004b86f8ad06b85a612d7cee90a7240967e0f58e3ad7f55",
+    "presentation/yastay/model/commands.cfg": "daadc71ff58502ea7e8ef94650602eaa90f1ceb960c3ca4e9a619510a7f849f7",
+    "presentation/yastay/model/engine.log": "840734c42d8b700b3820dab806b0aab672f6d59368e734e21e6264718d147a96",
+    "presentation/yastay/model/fixture-source/MAPINFO.txt": "54d8a6e579a43fa92b8260ed4b09f197d610021bfa1e11d79b448c0daf69b3d5",
+    "presentation/yastay/model/fixture-source/ZSCRIPT.txt": "93ccea48bea7ea88515a88b7f469b2d0cd960fef5331358cab8e25e0acd7fe9f",
+    "presentation/yastay/model/fixture.zs": "5650c5db9bc642a4afe1efd403e791eb78ddf2bd037ea69818e5d2461ef785f2",
+    "presentation/yastay/model/presents.csv": "6a55864149aa94879e6ed84a1cda97fae6dbdc50817120e37028ac4027d8343f",
+    "presentation/yastay/model/process.log": "5b4537bcd052e7291248501e515e588becc453873aaac30a6f9da50d92cf1fa7",
+    "presentation/yastay/model/scene.png": "4631a1bb843d04bc1f9f20a73ba17e8af2a4abe302e3c35d47509faf82b7a866",
+    "presentation/yastay/model/session.ini": "8d49d28dc7a21836c31ec2ec9f6cfd3e2422c6e2d91c5f49d34fd5ff8dcb7378",
+    "presentation/yastay/RESULTS.json": "59865da7b46aa5d95d9f12022b2150d12d6ee82c719b627c227e4f694bd77d72",
+    "presentation/yastay/sprite/commands.cfg": "daadc71ff58502ea7e8ef94650602eaa90f1ceb960c3ca4e9a619510a7f849f7",
+    "presentation/yastay/sprite/engine.log": "134eb2ad3c47216dfa1686da463302d61ab879dcd1d780ac110e4da129abbbc6",
+    "presentation/yastay/sprite/fixture-source/MAPINFO.txt": "54d8a6e579a43fa92b8260ed4b09f197d610021bfa1e11d79b448c0daf69b3d5",
+    "presentation/yastay/sprite/fixture-source/ZSCRIPT.txt": "93ccea48bea7ea88515a88b7f469b2d0cd960fef5331358cab8e25e0acd7fe9f",
+    "presentation/yastay/sprite/fixture.zs": "5650c5db9bc642a4afe1efd403e791eb78ddf2bd037ea69818e5d2461ef785f2",
+    "presentation/yastay/sprite/presents.csv": "b27a41ba2b40fcd3e242bbaf03b8a6bb03672cd9934d4a7ddae0db0604114bcc",
+    "presentation/yastay/sprite/process.log": "dbe4962f4bad5b855b5809783989ba22e15d84a29ad4410e8f93c7abb222c03a",
+    "presentation/yastay/sprite/scene.png": "7d5d805cb1b8c4b9b09bdf67a9d42f9dd90d91b22c687f2c8c569a9459415e53",
+    "presentation/yastay/sprite/session.ini": "ef1e3cd3b0eb24c88985af5cef77787febfc6ab82acf00e20cd8ccbfd3617e05",
+    "validation-final.json": "7cc7418ddc44d9cd8000dbd4d8619228b73ef441ee4b54c78f22df5d2e088446"
+  }
+}
