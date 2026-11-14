@@ -1,0 +1,23 @@
+{
+  "issue": 682,
+  "scope": "Isolated visual gallery, native movement/animation and saved references; no combat or campaign acceptance.",
+  "runtime_sha256": "e8dd8b81a4e53301b8b7082089cae428c12b5705c81d75fad8b8b63e1f69a68c",
+  "materials_sha256": null,
+  "fixture_sha256": "2c690f79bce29f38f3a0dad9715a3ff0f9e42171c6046c0649a8b224d137d853",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "reload",
+      "exit_code": 0,
+      "passed": false,
+      "errors": [
+        "CA682 FAIL subject 0 saved position"
+      ],
+      "assertions": 27,
+      "expected_assertions": 28
+    }
+  ],
+  "captures": {
+    "reload.png": "b59ffc6d16085d76c5403c3dcffb7359fddee629f5d5f9d3ea14905b4f93eaab"
+  }
+}

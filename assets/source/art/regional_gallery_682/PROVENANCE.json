@@ -1,0 +1,33 @@
+{
+  "issue": 682,
+  "parent_issue": 463,
+  "ownership": "New companion material artwork generated for the author; retained originals and exact prompts. Existing regional textures and beast models are reused unchanged.",
+  "images": {
+    "pampa_ground": {
+      "mode": "built-in image_gen",
+      "original_generated_path": "C:/Users/dcc70/.codex/generated_images/01a1d17b-9a43-7901-bffe-eb3e4a27f8d4/exec-c396ca46-4d5e-4713-9300-17cbd2d06740.png",
+      "source_file": "pampa_ground-v1.png",
+      "sha256": "8201410a2cfc0b622e60998bebc766959d40508677d542d37334f973702bc3d7",
+      "prompt": "pampa_ground-v1.prompt.txt",
+      "prompt_sha256": "0bf0309b18a918ead6576cb4d10eedba44e08814866c486536895ed12e8e017c",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "editing": "Original output copied unchanged; no raster postprocessing."
+    },
+    "noa_foothill_ground": {
+      "mode": "built-in image_gen",
+      "original_generated_path": "C:/Users/dcc70/.codex/generated_images/01a1d17b-9a43-7901-bffe-eb3e4a27f8d4/exec-2bf5fbea-81ea-4395-baf6-a2d89c418da4.png",
+      "source_file": "noa_foothill_ground-v1.png",
+      "sha256": "d80c2f85f9006a12e133814f95120e6a800176d6f6c51715983c57e06577c3d8",
+      "prompt": "noa_foothill_ground-v1.prompt.txt",
+      "prompt_sha256": "c611a3219e56dc359121baff24b192732c5f755c5edb9d55d30338096ab51185",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "editing": "Original output copied unchanged; no raster postprocessing."
+    }
+  }
+}

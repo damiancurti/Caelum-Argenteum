@@ -1,0 +1,37 @@
+{
+  "unchanged_native_resources": {
+    "graphics/caelum/textures/regions_463/litoral_ground-v1.png": "709d370daae729387bbc10507c486d6e79f8ea397de29c447f789d4f8035bb62",
+    "graphics/caelum/textures/regions_463/selva_ground-v1.png": "b059820b642a1fd7a928cebca685f0b4d19b98879cc9c6a7a64d77ef3e12b16b",
+    "graphics/caelum/textures/regions_463/patagonia_ground-v1.png": "b59111904cd86f10df351acbe4d150dab9a671274069bd50b76a4c88cb51a5ec",
+    "caelum/data/regional_materials.textures": "897e7831f72e01521a1dbaf5e81d5d2eb55f1b7ada63e22c60539910a6ed8521",
+    "models/caelum/inventory/ammunition/carbine.md3": "450b6087f2011f61109fb16be3b38b49e89d2f044328589f02f290e1c55e1c20",
+    "models/caelum/inventory/ammunition/arrow.md3": "b9540fc0266061c26a8e46da24eec14346370e6c499997c1a1ddee405a0947c0",
+    "models/caelum/inventory/ammunition/bolt.md3": "195c0454cbf8652bab2b7f681345a74ee0a52fbeda06042085bdb41543988d9c",
+    "models/caelum/inventory/ammunition/javelin_one.md3": "280b8fde45d823c9d34fc3edb29a63078f42326e6f7c625e8ead621a5b9b50a2",
+    "models/caelum/inventory/ammunition/javelin_two.md3": "1c19fb66cb364a42fde19867a1e92c67a3e592bc013d253b0345dbceeb45e622",
+    "models/caelum/inventory/ammunition/javelin_three.md3": "a20672458f166d6377ec28e67d687b7acc177689a9cb26d64edf6510a4285957",
+    "models/caelum/inventory/ammunition/shotgun.md3": "1f995d2c494f4a00b01d2033f3e59ea6aec7e264a213610f4bafb525d5ca8231",
+    "caelum/data/inventory_ammunition.modeldef": "3934c48be0b5730936f64d64b5ee0e96b28493d3652b16621e598bd23f67c9d0",
+    "models/caelum/inventory/ingots/iron.md3": "e0ba864e60c31a3b5fd63f4804216cf3f9ed5db321fdafccb52a84cdf92b8f4a",
+    "models/caelum/inventory/ingots/copper.md3": "c01b8d7cf2cb65ba9f100270b6f8943b4041b79214c97b7ed96baaf281c9aec5",
+    "models/caelum/inventory/ingots/tin.md3": "242e4104c0930deeafcdf668559afd2a3443c11188295624cc00b8dadf153e44",
+    "models/caelum/inventory/ingots/bronze.md3": "eeaf8ddd4b8eb5b3388e4e9bf32bd75da5424d563cd0b2fc2809c30dfbca4b3c",
+    "models/caelum/inventory/ingots/steel.md3": "8195eea3c2b26309b4585f9f547949cefd3d88e325047d51e0ba4e5c0b5380ba",
+    "models/caelum/inventory/ingots/silver.md3": "aa5d66478862fc74d944c75052a28ec815380684623c71a2538cc7086a8867ee",
+    "models/caelum/inventory/ingots/gold.md3": "9635b2587ad23b7e229ef50d9aa0b206a421bd00df41e54eb1706ee3aeb39508",
+    "caelum/data/inventory_ingots.modeldef": "2a2597ff3829ea3232a772c9e96db0ea9cd9ee69fe02a5682f2935a82fe9e43c",
+    "models/caelum/inventory/documents/book.md3": "b61151ce14971ca16900341189f3a87a7880cb4fc8c2aa296dd84a2260bf57d8",
+    "models/caelum/inventory/documents/letter.md3": "2744f96f12cfd7404b78d7821c7c8016ba5438bc542f811bce5ee9ecbd27c291",
+    "models/caelum/inventory/documents/key.md3": "32c974458449cd3ac4fcbc873b8b622fba1f001f20d405ad590217461e361904",
+    "models/caelum/inventory/documents/cloth.md3": "bb9a28cdfa8bee5fb914da1e26aef5e384c4d558bfab9a48c2fb82677ae41c44",
+    "models/caelum/inventory/documents/ingot.md3": "400280e6ed358c7bf2d928b32905fbbe81cf57cdf336d8532e40146e9f8b6bf9",
+    "caelum/data/inventory_documents.modeldef": "c5597613e35aa5ac6c83ae4f0d1ee692056219b173bd559092fdb2ce79154f9f",
+    "caelum/data/inventory_books.modeldef": "c97425033e8d332f66d4ebb7ab8c97c2d86c74ec2cf60ed6ad52fa64dd09431a",
+    "caelum/data/inventory_locks.modeldef": "a892cfcf0343550082d21e56268581b55f4fc16ea3d65117b12ff67ee45ee461"
+  },
+  "counts": {
+    "material_repeat_files": 5,
+    "gallery_repeat_files": 4
+  },
+  "scope": "Shared exporter defaults and28 prior native regional/material/ammunition/ingot/document/book/lock outputs are unchanged. Root TEXTURES metadata refresh propagates ammunition -> documents -> ingots/books/locks; no native model byte changes."
+}

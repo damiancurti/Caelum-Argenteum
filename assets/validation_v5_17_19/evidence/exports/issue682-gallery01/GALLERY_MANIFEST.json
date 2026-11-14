@@ -1,0 +1,218 @@
+{
+  "issue": 682,
+  "scope": "isolated_visual_inspection_not_campaign",
+  "baseline_materials": false,
+  "geometry": {
+    "sectors": 5,
+    "vertices": 15,
+    "linedefs": 19
+  },
+  "subjects": [
+    {
+      "region": "Pampa",
+      "catalogue_id": "CA-FOLK-003",
+      "kind": "lobizon",
+      "class": "CaelumBestiary003",
+      "position": [
+        -768,
+        0,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Northwest Argentina",
+      "catalogue_id": "CA-FOLK-005",
+      "kind": "ucumar",
+      "class": "CaelumBestiary005",
+      "position": [
+        -256,
+        0,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Litoral",
+      "catalogue_id": "CA-FOLK-003",
+      "kind": "lobizon",
+      "class": "CaelumBestiary003",
+      "position": [
+        128,
+        0,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Litoral",
+      "catalogue_id": "CA-FOLK-004",
+      "kind": "uturunco",
+      "class": "CaelumBestiary004",
+      "position": [
+        384,
+        0,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Selva",
+      "catalogue_id": "CA-FOLK-004",
+      "kind": "uturunco",
+      "class": "CaelumBestiary004",
+      "position": [
+        768,
+        0,
+        0
+      ],
+      "angle": 270
+    }
+  ],
+  "views": [
+    {
+      "id": "overview",
+      "position": [
+        0,
+        -800,
+        1200
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "pampa",
+      "position": [
+        -768,
+        -110,
+        60
+      ],
+      "target": [
+        -768,
+        0,
+        26
+      ]
+    },
+    {
+      "id": "noa",
+      "position": [
+        -256,
+        -110,
+        60
+      ],
+      "target": [
+        -256,
+        0,
+        26
+      ]
+    },
+    {
+      "id": "litoral",
+      "position": [
+        256,
+        -250,
+        120
+      ],
+      "target": [
+        256,
+        0,
+        26
+      ]
+    },
+    {
+      "id": "player",
+      "control": true
+    },
+    {
+      "id": "selva",
+      "position": [
+        768,
+        -110,
+        60
+      ],
+      "target": [
+        768,
+        0,
+        26
+      ]
+    },
+    {
+      "id": "pampa-tiles",
+      "position": [
+        -768,
+        -280,
+        150
+      ],
+      "target": [
+        -768,
+        -280,
+        0
+      ]
+    },
+    {
+      "id": "noa-tiles",
+      "position": [
+        -256,
+        -280,
+        150
+      ],
+      "target": [
+        -256,
+        -280,
+        0
+      ]
+    },
+    {
+      "id": "litoral-tiles",
+      "position": [
+        256,
+        -280,
+        150
+      ],
+      "target": [
+        256,
+        -280,
+        0
+      ]
+    },
+    {
+      "id": "selva-tiles",
+      "position": [
+        768,
+        -280,
+        80
+      ],
+      "target": [
+        768,
+        -280,
+        0
+      ]
+    }
+  ],
+  "source_sha256": {
+    "assets/source/art/regional_gallery_682/GALLERY.json": "9a00ccd063957a6237ef7560e987a070827d9ae459ddbfec58f60400a0313006",
+    "assets/bestiary/REGION_PROPOSAL.json": "34218ccf0194132336c7ff04ae5c1c9d2a8c1bad488defca907fb9149a52d004",
+    "assets/validation_v5_17_19/build_gallery.py": "7b42274a8e79db4cbf568bb58bd98d4ba09fff34aa10702e91bbff9f3c046f3c",
+    "assets/validation_v5_17_4/build_gallery.py": "66647d29c9ea84dc413ddc0413513d31192a97dcbed1374913fe4a2e4de54368",
+    "assets/validation_v5_17_4/gallery.zs": "20e430edd4d518ff9462cbb28e70a70bb9595faa0dbc7153a3a2e852065c1c0d",
+    "assets/source/art/beast_men_680/EXPORT.json": "9fd7daadbf1c856a79d95de8819898aef50baf37bf1fd92fdc99a2c041b416c7",
+    "src/MODELDEF": "72a7afee594d0645d72d83d18203430d945981b28d1b1101fccd0d9365d468db",
+    "src/models/caelum/folklore/beastmen/lobizon.png": "b3800911466d406a2257ffde20695640984754299e5bd5f6814677d1b48af863",
+    "src/models/caelum/folklore/beastmen/materials.png": "e12bed48a33b010f773a45af498fc77ab9e03bd242f7851e41b2d0be73a537b2",
+    "src/models/caelum/folklore/beastmen/lobizon.md3": "aba8bd1341c6c7c937f6c5f60030a35e2ba1ef501d68a1e44b32a4b58bfb8247",
+    "src/models/caelum/folklore/beastmen/uturunco.png": "91e144d2f2d8e59a49ef73b74d75e623caaee958ee6df6c8a43386533236b393",
+    "src/models/caelum/folklore/beastmen/uturunco.md3": "c28a60a1ba97c29497636b88d59b9325370fa4bc2b4bcbc0270a1dd912fc4cbf",
+    "src/models/caelum/folklore/beastmen/ucumar.png": "61b8e8eaea6206c44c7c52a42e912439b692f06fa219d8d521ea837a78ca61d0",
+    "src/models/caelum/folklore/beastmen/ucumar.md3": "09559d0c7565f3b727eaa5dbbc54bbbec29a7b828f0a4541fd2994689d8321da",
+    "src/caelum/data/beast_men_combat.modeldef": "959827f693ab0a58ee5ca615d03667b9ed8577fa063e77e20a63c0e67f217bd5"
+  },
+  "fixture_sha256": "2ef77f32b4d466d776027daa2429486b3d581d8e8ac339799542578d518562b8",
+  "sha256": {
+    "ZSCRIPT": "9205d2aac37c941c9b0aa05d2cedf32396daae5e28dcc88b20a6dff36e642f55",
+    "MAPINFO": "1beb2d36092550e1611c1add99617fe913f2337713f9e234f7b6e2e058493da4",
+    "maps/CA682G.wad": "9ab7ff7866cb290b59b897b52684539ee9aaa68081c7915bac6e54038c83f6c7"
+  }
+}

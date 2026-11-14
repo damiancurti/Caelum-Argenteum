@@ -35,6 +35,7 @@ from assets.generators.validate_nahuelito_combat_model import validate as nahuel
 from assets.generators.validate_cuero_combat_model import validate as cuero_combat_problems
 from assets.generators.validate_beast_men_models import validate as beast_men_problems
 from assets.generators.validate_pombero_combat_model import validate as pombero_combat_problems
+from assets.generators.validate_beast_regional_materials import validate as beast_regional_material_problems
 from assets.generators.validate_regional_materials import validate as regional_material_problems
 from assets.generators.validate_map02_redesign import audit as sewer_redesign_audit
 from assets.generators.install_barracas_map import validate as barracas_installation_problems
@@ -112,6 +113,7 @@ def validate(root):
     errors.extend(inventory_gem_problems(root))
     errors.extend(inventory_ingot_problems(root))
     errors.extend(regional_material_problems(root))
+    errors.extend(beast_regional_material_problems(root))
     errors.extend(pombero_combat_problems(root))
     errors.extend(beast_men_problems(root))
     errors.extend(cuero_combat_problems(root))
