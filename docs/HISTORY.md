@@ -1,6 +1,21 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.20** - 2026-11-13.
+Documentation version: **5.17.21** - 2026-11-14.
+
+## 5.17.21 - Headwear world-drop models (#686, 2026-11-14)
+
+The author's all-dropped-inventory-3D request adds five closed, hollow headwear
+props based on the accepted #387 designs, with original images and native rules
+unchanged. Separate editable parts retain bands, bow, visors, seams, buttons and
+patches. Initial native art review exposed radial UV stretch; an underside view
+later exposed raised patches. Corrected UVs and elliptical patch fitting pass
+independent closure/opening/contact checks (CA-KP-238). The shared prism option
+leaves 54 prior native resources unchanged. Final exports repeat 19 files and
+the complete-package five-phase test passes 2,458 assertions. One five-body
+presentation pair records 1199.43/1192.72 queue presents/s, p95 1.0005/1.0258 ms,
+p99 1.2821/1.2845 ms. ASSETS and SUMMARY retain the environment, source/package
+proof, earlier evidence and limits. CA686-HEADWEAR-01 remains pending; no author
+acceptance, worn-body fitting or completion of the broader batch is claimed.
 
 ## 5.17.20 - Raw-material world-drop models (#684, 2026-11-13)
 

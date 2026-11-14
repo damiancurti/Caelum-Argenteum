@@ -1,6 +1,14 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.20** - 2026-11-13.
+Documentation version: **5.17.21** - 2026-11-14.
+
+## 5.17.21 - Five headwear world-drop models (#686)
+
+Five approved hat/cap designs gain hollow 3D props with original source textures
+and separate editable components. Final native continuity passes 2,458 checks;
+deterministic exports, geometry/contact checks and one five-body presentation
+pair pass. Author art and ordinary-menu acceptance remain CA686-HEADWEAR-01.
+This does not complete #459 worn clothing, #647 inventory or the full 3D roster.
 
 ## 5.17.20 - Coal and five raw-metal models (#684)
 

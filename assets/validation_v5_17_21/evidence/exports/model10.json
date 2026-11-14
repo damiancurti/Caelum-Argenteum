@@ -1,0 +1,343 @@
+{
+  "schema_revision": 1,
+  "issue": 686,
+  "parent_issue": 647,
+  "status": "Five native world-drop candidates; original pixels preserved; worn fitting and author acceptance pending.",
+  "variants": {
+    "HF": {
+      "class": "CaelumClothingPickup",
+      "parts": [
+        "hollow_crown_and_rim",
+        "silk_band",
+        "silk_bow"
+      ],
+      "closed_outward_components": 3,
+      "vertices": 7766,
+      "triangles": 2648,
+      "surfaces": [
+        {
+          "material": "HF_cloth",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "HF_cloth",
+          "vertices": 1665,
+          "triangles": 555
+        },
+        {
+          "material": "HF_band",
+          "vertices": 2006,
+          "triangles": 728
+        }
+      ],
+      "reference_opaque_bounds": [
+        13,
+        17,
+        123,
+        106
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 110.0,
+      "native_bounds": [
+        {
+          "min": [
+            -55.0,
+            -48.52941176470588,
+            0.0
+          ],
+          "max": [
+            55.0,
+            48.52941176470588,
+            84.11764705882352
+          ]
+        }
+      ]
+    },
+    "HC": {
+      "class": "CaelumClothingPickup",
+      "parts": [
+        "hollow_crown_and_rim",
+        "curved_visor",
+        "panel_seam_0",
+        "panel_seam_1",
+        "panel_seam_2",
+        "panel_seam_3",
+        "panel_seam_4",
+        "panel_seam_5",
+        "crown_button"
+      ],
+      "closed_outward_components": 9,
+      "vertices": 6242,
+      "triangles": 2704,
+      "surfaces": [
+        {
+          "material": "HC_cloth",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "HC_cloth",
+          "vertices": 1713,
+          "triangles": 571
+        },
+        {
+          "material": "HC_visor",
+          "vertices": 170,
+          "triangles": 336
+        },
+        {
+          "material": "HC_seam",
+          "vertices": 264,
+          "triangles": 432
+        }
+      ],
+      "reference_opaque_bounds": [
+        17,
+        37,
+        115,
+        92
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 98.0,
+      "native_bounds": [
+        {
+          "min": [
+            -49.0,
+            -60.43114270151215,
+            0.0
+          ],
+          "max": [
+            49.0,
+            40.28742846767477,
+            47.20013720540285
+          ]
+        }
+      ]
+    },
+    "HR": {
+      "class": "CaelumClothingPickup",
+      "parts": [
+        "hollow_crown_and_rim",
+        "leather_band"
+      ],
+      "closed_outward_components": 2,
+      "vertices": 7728,
+      "triangles": 2576,
+      "surfaces": [
+        {
+          "material": "HR_cloth",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "HR_cloth",
+          "vertices": 1665,
+          "triangles": 555
+        },
+        {
+          "material": "HR_band",
+          "vertices": 1968,
+          "triangles": 656
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        37,
+        121,
+        91
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 54.0,
+      "native_bounds": [
+        {
+          "min": [
+            -54.0,
+            -48.10909090909091,
+            0.0
+          ],
+          "max": [
+            54.0,
+            48.10909090909091,
+            54.0
+          ]
+        }
+      ]
+    },
+    "HW": {
+      "class": "CaelumClothingPickup",
+      "parts": [
+        "hollow_crown_and_rim"
+      ],
+      "closed_outward_components": 1,
+      "vertices": 5760,
+      "triangles": 1920,
+      "surfaces": [
+        {
+          "material": "HW_cloth",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "HW_cloth",
+          "vertices": 1665,
+          "triangles": 555
+        }
+      ],
+      "reference_opaque_bounds": [
+        17,
+        25,
+        114,
+        108
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 83.0,
+      "native_bounds": [
+        {
+          "min": [
+            -46.480000000000004,
+            -40.946666666666665,
+            0.0
+          ],
+          "max": [
+            46.480000000000004,
+            40.946666666666665,
+            83.0
+          ]
+        }
+      ]
+    },
+    "HP": {
+      "class": "CaelumClothingPickup",
+      "parts": [
+        "hollow_crown_and_rim",
+        "curved_visor",
+        "panel_seam_0",
+        "panel_seam_1",
+        "panel_seam_2",
+        "panel_seam_3",
+        "panel_seam_4",
+        "panel_seam_5",
+        "sewn_patch_0",
+        "sewn_patch_1",
+        "crown_button"
+      ],
+      "closed_outward_components": 11,
+      "vertices": 6438,
+      "triangles": 3088,
+      "surfaces": [
+        {
+          "material": "HP_cloth",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "HP_cloth",
+          "vertices": 1713,
+          "triangles": 571
+        },
+        {
+          "material": "HP_visor",
+          "vertices": 170,
+          "triangles": 336
+        },
+        {
+          "material": "HP_seam",
+          "vertices": 264,
+          "triangles": 432
+        },
+        {
+          "material": "HP_patch",
+          "vertices": 196,
+          "triangles": 384
+        }
+      ],
+      "reference_opaque_bounds": [
+        19,
+        33,
+        120,
+        92
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 101.0,
+      "native_bounds": [
+        {
+          "min": [
+            -50.5,
+            -62.28107564135436,
+            0.0
+          ],
+          "max": [
+            50.5,
+            41.52071709423624,
+            48.645039364751916
+          ]
+        }
+      ]
+    }
+  },
+  "source_sha256": {
+    "DESIGN.json": "04516d95147d45635daff376eda83a246ddf70da01328eda4aa87fd843e4dcd0",
+    "PROVENANCE.json": "df2f505e70b1e0de6e9a5c190cffed544e104139c44df73939c18d30dc26af34"
+  },
+  "external_source_sha256": {
+    "assets/art_source/clothing/HF-v1.png": "7060691afa5f33a25d6da692e917cda29d8e81faa4f5634a51fe72dc08ac3e7a",
+    "src/graphics/caelum/icons/clothing/ca_clothing_11.png": "bebc7216a857c0dd35b13d246facf48e066f3d018f2fb1caad79399549d6962e",
+    "assets/art_source/clothing/HC-v1.png": "1979a1aff413195c553f6da1da24e8e7b3bda38ce08859356781a25ff3a422e3",
+    "src/graphics/caelum/icons/clothing/ca_clothing_12.png": "aff2464a78aa8e4804edbbbe88ce26b87202bb727655899b0302c0c81c0c7c92",
+    "assets/art_source/clothing/HR-v1.png": "f8bfeb5d819307da495e30badcf59dd4752311d606b60c946795fe52f1ed8482",
+    "src/graphics/caelum/icons/clothing/ca_clothing_13.png": "4d4b5064668469385b34995040f937a46ef29a22ec5d5cf09975c055197acc6f",
+    "assets/art_source/clothing/HW-v1.png": "12fba97a60a8849c1de7276837bf698b4e3b5ae39a5ca0daadcbbf233d18c53c",
+    "src/graphics/caelum/icons/clothing/ca_clothing_14.png": "f012683c5ca65afbc8b068faae362e030b0007fb62af14815aeac14d48d447da",
+    "assets/art_source/clothing/HP-v1.png": "4eb429c66aee43166f5ddd9ba98726c245d6a15f033e3642b18ba83e9d18910d",
+    "src/graphics/caelum/icons/clothing/ca_clothing_15.png": "621c83c675348f3e02577870edc43083ec24f0b177bacda1751e5f2d7ad5b5bd",
+    "assets/art_source/clothing/manifest.json": "685855aee029d06cbff3139744526ca6b5321fad01a96806ed12a375db05b526",
+    "assets/art_source/clothing/exports.json": "f6a526f4556682785d7b129c623a55472bd1b089d065dd506e9c52269ce9d40c"
+  },
+  "generator_sha256": {
+    "generate_inventory_ammunition_models.py": "7840c4851fe1af39a29071c3bbe87b13c13187688804d9c0a33d178b5a9e3feb",
+    "generate_inventory_consumable_models.py": "1e0f81ac23de88c55271cccba6fd7f56c64c3b38d76ddda50da1348bd1d269a7",
+    "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+    "generate_inventory_headwear_models.py": "a87596c8213403e474f1ba1861aa10bd85cbb0f03e39c92eefc45d41a02e6146"
+  },
+  "sha256": {
+    "models/caelum/inventory/headwear/HF.md3": "16a3b5b3770723a7066bb84b7ed154b5ee2c0c644064e4a8ff7d1481d92802ea",
+    "editable/HF.obj": "00f3f8d241309aa7dc384a9b0c5ed2f970ab995660c7f06b2f8a83aba8425560",
+    "models/caelum/inventory/headwear/HC.md3": "dfcaaeebcdbf0c534dfbde0dd091c1ae69d95d0dd2e6855fa4754b11074e16bd",
+    "editable/HC.obj": "390c5d8d00bce6605c06c9d6e2be2090a664e23c2db7268c6e20b5959d951584",
+    "models/caelum/inventory/headwear/HR.md3": "bd049f8da1c7fc5b128fbbda2e2e73e7f84f2bbcf575a1c2eda8b8a4779e04bf",
+    "editable/HR.obj": "7f8c29d5b1b4af97b1548c17d0377a45ebdff627858fdb5bf3ee88423b7c9b16",
+    "models/caelum/inventory/headwear/HW.md3": "591b78d7e802ec40fda63af9bda2e162da7c93bdb3008baf6e8856131e995f19",
+    "editable/HW.obj": "6f02024625a4d1fb102176226464d7d07ecfb045b988c994e1063a0dde9d7546",
+    "models/caelum/inventory/headwear/HP.md3": "8b9a3ff99b305c0e2ed4cfe134621e3b90252b89c2b5fba22db6e867eb845c0e",
+    "editable/HP.obj": "bb46d02ec7d29b83310af422e67daf0f6a128017af5ac3337be6b8f75c2c5c42",
+    "editable/headwear.mtl": "264f3ec761587811920ed0928e2dba197b6c19b0fd9748883dd5d42b125075c2",
+    "caelum/data/inventory_headwear.modeldef": "beb7590d29a3ccc30467b2143cc24c8198f5598151351ab123b013db392e9ff3",
+    "models/caelum/inventory/headwear/hf.png": "7060691afa5f33a25d6da692e917cda29d8e81faa4f5634a51fe72dc08ac3e7a",
+    "models/caelum/inventory/headwear/hc.png": "1979a1aff413195c553f6da1da24e8e7b3bda38ce08859356781a25ff3a422e3",
+    "models/caelum/inventory/headwear/hr.png": "f8bfeb5d819307da495e30badcf59dd4752311d606b60c946795fe52f1ed8482",
+    "models/caelum/inventory/headwear/hw.png": "12fba97a60a8849c1de7276837bf698b4e3b5ae39a5ca0daadcbbf233d18c53c",
+    "models/caelum/inventory/headwear/hp.png": "4eb429c66aee43166f5ddd9ba98726c245d6a15f033e3642b18ba83e9d18910d"
+  }
+}
