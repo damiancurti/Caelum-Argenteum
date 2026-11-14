@@ -1,6 +1,88 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.17** - 2026-11-13.
+Documentation version: **5.17.18** - 2026-11-13.
+
+## 5.17.18 - Lobizon, Uturunco and Ucumar combat art (#680, parent #461)
+
+Three specific repeatable actors, CaelumBestiary003/004/005, receive distinct
+articulated 3D models derived from the author's recovered reference images.
+Lobizon retains gray wolf anatomy and torn rural trousers; Uturunco retains
+jaguar markings, pale underside, tail and russet wraps; Ucumar retains brown
+bear anatomy and a hide loincloth. Named Rulo and the existing Mandinga/Zupay
+profiles remain unchanged. These creatures are still unplaced in the campaign.
+
+Editable shape controls, hierarchy, fixed clothing and all 23 inherited frame
+bindings live in assets/source/art/beast_men_680. OBJ groups distinguish body
+parts and material regions, including cloth/wraps, with portable MTL/textures.
+There are 15 articulated parts per wolf/bear and 16 for the jaguar including its
+tail. These fixed reference outfits do not implement the separate player/NPC
+interchangeable equipment catalogue. Existing modular-character requirements
+remain owned by #458/#459; this patch does not complete those requirements.
+
+Rebuild with python assets/generators/generate_beast_men_models.py --output
+build/beast-men --install; --check verifies installed deterministic outputs.
+The shared Pombero shape/pose and Nahuelito MD3 helpers remain unchanged.
+Neutral art height fits the existing provisional Mandinga Height, dividing
+out Actor.Scale. Posed bounds are reported; moving limbs and lying corpses may
+extend beyond Radius. Collision, scale, state timing, native actions, finite
+loot and save schema are unchanged. Catalogue metric sizes remain unapproved.
+
+Original concepts are retained byte-for-byte and supply eye/pupil samples.
+New companion diffuse atlases were made with built-in image_gen: materials-v1.png
+and the finer final materials-v2.png, both 1448x1086 RGB, with exact prompts in
+ATLAS-PROMPT.txt and ATLAS-V2-PROMPT.txt and hashes in PROVENANCE/ANIMATION.
+No Python raster editing was used. Both generated originals remain preserved.
+Early candidates exposed floating brows, rounded muzzles, disconnected shoulder
+volumes and overly coarse fur. Later meshes replace them with sloped skulls,
+inset eye sockets, tapered snouts, curved limb surfaces and coat regions on the
+continuous torso. This is a simplified candidate interpretation, not an exact
+sculpt of the reference or author art acceptance. Close-up anatomy, seams,
+clothing fit and animated articulation still require CA680-BEAST-MEN-01 review.
+
+The final models contain 30,620 native vertices, 55,482 triangles and twelve
+MD3 surfaces; 704,260 quantized coordinate/bounds checks pass. Six descending
+garment lofts had inward faces; the local adapter normalizes their row order.
+All twelve closed body/skull/garment lofts now have positive signed volume
+(CA-KP-235). The final jaguar tail follows a smooth version of its existing
+curve with a tapered tip. Two final exports reproduce all sixteen files.
+
+Five-phase native continuity passes 115 checks per species (345 total): baseline,
+old-save/model, fresh model, reload and rollback. It covers solid-body/wall
+collision, free movement, frame advancement, body/state identity and finite
+inventory ownership. Final action/loot tests pass 190 checks, including twelve
+actual melee/projectile/breath actions across Mandinga and all three species,
+finite death drops, duplicate-death guards and loot reload. Exact keyframe
+inspection covers all 23 frame pairs with ordinary ambient and separate studio
+views. Body, face, side/rear and representative movement/attack/death views were
+inspected; candidate art acceptance remains pending.
+
+Only Uturunco's MD3 changed after the first complete-package suite. Binary
+comparison proves all Lobizon/Ucumar and gameplay bytes identical. Their native
+continuity/presentation evidence is reused; the final package reruns Uturunco's
+five phases, all-species action/loot and its presentation pair. The final PK3
+matches 18,271 src files exactly, adding eight art resources and one MODELDEF
+include; two diagnostic strings carry the version, with all other bytes intact.
+
+Three separate 700-tic sprite/model pairs use one visible species each and an
+offscreen Mandinga control:
+
+| Species | Sprite/model queue presents/s | Sprite/model p95 ms | Sprite/model p99 ms |
+| --- | --- | --- | --- |
+| Lobizon | 1373.62/1292.34 | 0.9496/0.9709 | 1.1453/1.1521 |
+| Uturunco | 1318.83/1298.66 | 0.9900/0.9789 | 1.1687/1.1342 |
+| Ucumar | 1344.64/1327.95 | 0.9620/0.9444 | 1.1426/1.1144 |
+
+Environment: Windows 11 Pro 26200, Ryzen 9 5950X, 32 GB, RTX 3070 Ti, GZDoom
+4.14.2, Vulkan 1280x720, uncapped/vsync off, unpaused background, 5% audio.
+These are queue-present intervals, not GPU/display timing. Screen footprints
+differ: the new models fit native standing Height while the inherited sprite
+art is taller. This is not an equal-pixel-cost comparison. One pair per species
+does not establish repeatability or campaign/crowd performance; siege rendering
+remains unresolved. See assets/validation_v5_17_18/evidence/SUMMARY.json.
+The older #453/#455 CATALOGUE/AUTHORING combat-art fields remain their original
+snapshot; the explicit native MODELDEF and this delivery record current coverage.
+The full #461 roster, named-character conversion and regional encounter maps
+remain unfinished; this focused patch adds only these three species.
 
 ## 5.17.17 - Pendant, gem and opal-component drops (#678, parent #647)
 

@@ -1,0 +1,99 @@
+{
+  "issue": 680,
+  "species": "lobizon",
+  "scope": "Measure one 700-tic sprite/model pair for a real beast-man; no campaign or crowd budget.",
+  "baseline_sha256": "bfc644b9b05ae9887fb4d3761928d9800cf7b2351cfaf1ed3c9e032fb35787c7",
+  "runtime_sha256": "ef28e82834438d46b006f5d1908e75addce1714c1c0397f89df59abeb5825fe7",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+  "runs": [
+    {
+      "kind": "sprite",
+      "pid": 13944,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 234453924.2075,
+        "END": 234473958.9585
+      },
+      "fixture_sha256": "1dbb81af95da228577a0c86a35d51a199a9d62e9148a4a6cc31827fbe69f0156",
+      "bench_sha256": "3da96aa8c9c4b8d0b8df49aa2aa08364b6943de9f484ae7f9cd3ebae37741000",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.571578714285714,
+        "p50_ms": 28.5718,
+        "p95_ms": 29.1096,
+        "p99_ms": 29.2632,
+        "max_ms": 29.4911
+      },
+      "presentation": {
+        "pid": 13944,
+        "trace_sha256": "c881467423728df92d2e12ac6f3fd9223429d118740217459db970a030af6fc0",
+        "rows": 34267,
+        "scene_presents": 24087,
+        "mean_present_fps": 1373.6243603413238,
+        "present_intervals": {
+          "samples": 24086,
+          "mean_ms": 0.7280010670104277,
+          "p50_ms": 0.7190999984741211,
+          "p95_ms": 0.9495999813079834,
+          "p99_ms": 1.1453000009059906,
+          "max_ms": 1.6562000215053558
+        },
+        "native_call_duration": {
+          "samples": 24087,
+          "mean_ms": 0.09333892565080008,
+          "p50_ms": 0.08739998936653137,
+          "p95_ms": 0.11950001120567322,
+          "p99_ms": 0.1834999918937683,
+          "max_ms": 0.7139999866485596
+        }
+      }
+    },
+    {
+      "kind": "model",
+      "pid": 50776,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 234487958.4386,
+        "END": 234507990.6872
+      },
+      "fixture_sha256": "1dbb81af95da228577a0c86a35d51a199a9d62e9148a4a6cc31827fbe69f0156",
+      "bench_sha256": "3da96aa8c9c4b8d0b8df49aa2aa08364b6943de9f484ae7f9cd3ebae37741000",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.571161714285715,
+        "p50_ms": 28.5664,
+        "p95_ms": 29.1594,
+        "p99_ms": 29.3375,
+        "max_ms": 29.7071
+      },
+      "presentation": {
+        "pid": 50776,
+        "trace_sha256": "2c83ddae48e836aaac76a72553028889bcef53b6f310d6a77df88b22c1dc961a",
+        "rows": 32407,
+        "scene_presents": 22658,
+        "mean_present_fps": 1292.338104579326,
+        "present_intervals": {
+          "samples": 22657,
+          "mean_ms": 0.7737913139421931,
+          "p50_ms": 0.7488000094890594,
+          "p95_ms": 0.9708999991416931,
+          "p99_ms": 1.152099996805191,
+          "max_ms": 1.779799997806549
+        },
+        "native_call_duration": {
+          "samples": 22658,
+          "mean_ms": 0.09345115654144864,
+          "p50_ms": 0.0877000093460083,
+          "p95_ms": 0.11899998784065247,
+          "p99_ms": 0.17629998922348022,
+          "max_ms": 0.41179999709129333
+        }
+      }
+    }
+  ]
+}

@@ -1,6 +1,13 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.17** - 2026-11-13.
+Documentation version: **5.17.18** - 2026-11-13.
+
+## 5.17.18 - Three reference-based beast-men models (#680)
+
+Lobizon, Uturunco and repeatable Ucumar gain articulated native combat models
+with unchanged rules and source-image provenance. They remain unplaced and
+subject to author visual review. Full bestiary, modular characters, equipment
+and regional-map conversion is unfinished. See ASSETS and CA680-BEAST-MEN-01.
 
 ## 5.17.17 - Material pendant and gem models (#678)
 
