@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.30** - 2026-11-14.
+Documentation version: **5.17.31** - 2026-11-14.
+
+## 5.17.31 - Chainmail material world model (#706)
+
+The chainmail crafting material now has a candidate 55-ring native model with
+90 verified links and existing three-tier inventory behavior. Six exports
+repeat and 437 native checks cover split/merge and both save directions.
+A qualified single-object comparison records 1185.57/1175.95 queue presents/s, p95
+1.0131/1.0381 ms and p99 1.2718/1.2694 ms; it does not establish campaign/crowd performance.
+CA706-CHAINMAIL-01 keeps regular weave, metal appearance and ordinary use
+pending author review. Worn gear, remaining drops, characters and campaign
+work remain unfinished.
 
 ## 5.17.30 - Six crafting plate world models (#704)
 

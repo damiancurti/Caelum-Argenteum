@@ -1,0 +1,1 @@
+Model CaelumMaterialPickup { Path "models/caelum/inventory/chainmail" Model 0 "chainmail.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M017 A 0 0 }

@@ -830,3 +830,16 @@ assets/generators/validate_inventory_gloves_models.py text eol=lf
 /assets/validation_v5_17_30/*.py text eol=lf
 /assets/validation_v5_17_30/*.zs text eol=lf
 /assets/validation_v5_17_30/evidence/** -text -diff
+
+# #706 deterministic chainmail source and evidence.
+assets/generators/*inventory_chainmail_models.py text eol=lf
+assets/source/art/inventory_models_647/chainmail/**/*.json text eol=lf
+assets/source/art/inventory_models_647/chainmail/*.json text eol=lf
+assets/source/art/inventory_models_647/chainmail/**/*.obj text eol=lf
+assets/source/art/inventory_models_647/chainmail/**/*.mtl text eol=lf
+assets/source/art/inventory_models_647/chainmail/**/*.png binary
+assets/validation_v5_17_31/*.py text eol=lf
+assets/validation_v5_17_31/*.zs text eol=lf
+src/models/caelum/inventory/chainmail/** -text -diff
+src/caelum/data/inventory_chainmail.modeldef text eol=lf
+assets/validation_v5_17_31/evidence/** -text -diff

@@ -1,0 +1,12 @@
+{
+  "files": 6,
+  "byte_identical": true,
+  "sha256": {
+    "manifest.json": "a58d82ce1e755e4ce86153869ec41c69aef4d407257d9c5c34abf07433a45d99",
+    "preview.pk3": "982ab298fecd034f85b26d4394c3509c896eac0341226acea87830f73b94be79",
+    "editable/chainmail.mtl": "e682e104faa232b9f7b24f278cd024930a54d8e71222e0c53c8a039c102ac07d",
+    "editable/chainmail.obj": "80233d41008da0a230c7ca143591670a89c42d39dd3d2783ab773caa4a1a580e",
+    "caelum/data/inventory_chainmail.modeldef": "0e3beae41a0b0c22b10958debfbcf268e83e16a3bb9c3ed58714337ae089df37",
+    "models/caelum/inventory/chainmail/chainmail.md3": "f8e8d5a500a612a3fed041a5b70284b889c812f2430c895e9c323f3d59cc2f84"
+  }
+}
