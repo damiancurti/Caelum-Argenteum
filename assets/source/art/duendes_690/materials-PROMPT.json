@@ -1,0 +1,11 @@
+{
+  "issue": 690,
+  "mode": "Built-in image_gen; reference-led diffuse generation",
+  "output": "materials.png",
+  "transparent_background": false,
+  "references": [
+    "assets/source/bestiary_453/imagenes/03_Duendes_demonios/09_mikilo.png",
+    "assets/source/bestiary_453/imagenes/03_Duendes_demonios/10_coquena.png"
+  ],
+  "prompt": "Use case: stylized-concept. Derive ONE opaque diffuse material atlas for real 3D Mikilo and Coquena models, using the two supplied folklore images as material and palette references. One landscape image divided into an EXACT 4-column by 3-row grid of equal rectangular texture cells with no gutters, labels, outlines, borders or perspective. Each cell is a flat close-up of ONLY its specified surface, completely filling the cell, with evenly distributed soft albedo detail. Row 1 left-to-right: warm tan weathered skin with subtle fine pores but NO anatomical features; wispy gray hair strands flowing vertically; battered dark brown felt; coarse ivory linen. Row 2: rough brown patched-sackcloth weave without a literal patch shape; muted burgundy and ochre woven belt threads; worn medium-brown leather; almost-black natural leather crevice material. Row 3: mustard-ochre poncho wool; a horizontal burgundy-and-cream Andean geometric woven border on ochre, matching Coquena's reference motifs; charcoal/cream/burgundy chullo wool pattern with small repeated geometric motifs; braided natural ochre rope with muted red threads running vertically. Preserve the reference costumes' restrained nineteenth-century colors and clear woven texture, suitable for a painted dark-fantasy game. No people, body silhouettes, faces, clothing silhouettes, objects, text, metal fittings, cast shadows, glare, lighting gradients or transparency. Texture cells must remain flat and usable to UV-map onto actual geometry."
+}

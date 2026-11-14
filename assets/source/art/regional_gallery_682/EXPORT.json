@@ -3,7 +3,7 @@
   "issue": 682,
   "status": "regional_art_candidate",
   "source_sha256": {
-    "INVENTORY.json": "4ad55b423d2584781fa14163c332cce01223b0d42a8b2623142d7bd91d5accda",
+    "INVENTORY.json": "0f154e1c062f3607e8ebbacbfd1c016af99e3115141c31c376e6b6bee47da950",
     "PROVENANCE.json": "67e9c7538a4d1d0574c50401b3622abe1c7f1969bb8d30c5efc54ae36be2e68d",
     "pampa_ground-v1.prompt.txt": "0bf0309b18a918ead6576cb4d10eedba44e08814866c486536895ed12e8e017c",
     "noa_foothill_ground-v1.prompt.txt": "c611a3219e56dc359121baff24b192732c5f755c5edb9d55d30338096ab51185"

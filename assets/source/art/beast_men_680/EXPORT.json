@@ -1776,7 +1776,7 @@
     "assets/source/art/beast_men_680/lobizon.json": "6f3ae59ce2832a8c7ac479c0c0f8b68f856a43f64925b51d5e7d7dccab2cb7a7",
     "assets/source/art/beast_men_680/uturunco.json": "fc7b1c03aeee5b566e96e5d352d2247f8fb065f81799196ecc68410fa69a0b46",
     "assets/source/art/beast_men_680/ucumar.json": "cab0f2746be930c81a7b736d0fd57cb3f1fbe9bc1ae1895ac48ce8d82679fd94",
-    "assets/generators/generate_beast_men_models.py": "6e6b682ebee2a85e5d0128e9f8de376de04b5c0226f3730ba4fbf2ada9ad3a2b"
+    "assets/generators/generate_beast_men_models.py": "326327fa90dd2bca5648a6725aa064400d2eae6f71a35ade88ea2a2ba1f13eb7"
   },
   "sha256": {
     "models/caelum/folklore/beastmen/lobizon.png": "b3800911466d406a2257ffde20695640984754299e5bd5f6814677d1b48af863",

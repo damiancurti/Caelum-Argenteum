@@ -1,0 +1,48 @@
+{
+  "issue": 690,
+  "runtime_sha256": "53e631b4547c7bc5b2c258ff089ff3bcbbdd58914216d176e95f7ef624559cb9",
+  "source_probe_sha256": "bf298e7c4b3ca7f0285f81c089b18f686ba0a114f65697252662af8b0121b65a",
+  "fixture_sha256": "5104eea1bbfdef34b10a052c22110a43d0e1cd4747ee8b4c2db712add398d0e9",
+  "runs": [
+    {
+      "phase": "actions",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 66,
+      "expected_assertions": 66,
+      "actions": [
+        "CA455 ACTION PASS index=-1 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+        "CA455 ACTION PASS index=-1 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=1",
+        "CA455 ACTION PASS index=-1 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1",
+        "CA455 ACTION PASS index=8 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+        "CA455 ACTION PASS index=8 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=1",
+        "CA455 ACTION PASS index=8 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1",
+        "CA455 ACTION PASS index=9 mode=0 damage=1 air=1 anima=1 projectiles=0 breath=1",
+        "CA455 ACTION PASS index=9 mode=1 damage=1 air=0 anima=1 projectiles=1 breath=1",
+        "CA455 ACTION PASS index=9 mode=2 damage=0 air=0 anima=1 projectiles=0 breath=1"
+      ],
+      "loot_audits": 0
+    },
+    {
+      "phase": "loot",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 50,
+      "expected_assertions": 50,
+      "actions": [],
+      "loot_audits": 2
+    },
+    {
+      "phase": "loot-reload",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 20,
+      "expected_assertions": 20,
+      "actions": [],
+      "loot_audits": 2
+    }
+  ]
+}
