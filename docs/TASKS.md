@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.29** - 2026-11-14.
+Documentation version: **5.17.30** - 2026-11-14.
+
+## #704 - Metal plate material world props (5.17.30)
+
+Six exact bindings, deterministic exports and 2,597 native checks pass for
+18 type/tier cases. Keep CA704-PLATES-01 pending for author review of reference
+identity, curved solid backs, edges, paint gaps, four overlapping large-plate
+bands and ordinary split/merge/drop behavior. Chainmail, remaining materials,
+weapons, armor, characters and original campaign scope remain separate work.
+Worn-body/first-person fitting and author acceptance are not implied by this PR.
 
 ## #702 - Shield world models (5.17.29)
 

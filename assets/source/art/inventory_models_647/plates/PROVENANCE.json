@@ -1,0 +1,7 @@
+{
+  "issue": 704,
+  "owner": "Damián Curti / Caelum Argenteum",
+  "source": "Six existing owned material icons IDs11..16 plus unchanged training-dummy iron and #647 bronze materials.",
+  "method": "Closed curved backing, original painted front pixels and narrow edge; four overlapping closed bands for large plate. Geometry uses the #702 shield primitives without modifying the earlier exporter. Internal original alpha exposes solid backing.",
+  "limits": "Candidate world props only; three material tiers retain their existing shared appearance. No balance/recipe/worn armor changes; author art acceptance pending."
+}
