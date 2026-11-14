@@ -1,0 +1,9 @@
+Model CaelumMaterialPickup { Path "models/caelum/inventory/assembly_components" Model 0 "hilt.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M025 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/assembly_components" Model 0 "long_hilt.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M026 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/assembly_components" Model 0 "point.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M027 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/assembly_components" Model 0 "bowstring.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M030 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/assembly_components" Model 0 "reinforced_bowstring.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M031 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/assembly_components" Model 0 "strap.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M032 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/assembly_components" Model 0 "reinforced_strap.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M033 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/assembly_components" Model 0 "barrel.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M034 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/assembly_components" Model 0 "mechanism.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M035 A 0 0 }

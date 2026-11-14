@@ -4783,3 +4783,5 @@ Model CaelumBarricadeVisual
 #include "caelum/data/serpent_combat.modeldef"
 
 #include "caelum/data/inventory_weapon_components.modeldef"
+
+#include "caelum/data/inventory_assembly_components.modeldef"

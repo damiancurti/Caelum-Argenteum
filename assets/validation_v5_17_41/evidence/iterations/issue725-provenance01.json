@@ -1,0 +1,23 @@
+{
+  "issue": 725,
+  "owner": "Dami\u00e1n Curti / Caelum Argenteum",
+  "references": [
+    "src/graphics/caelum/icons/materials/ca_material_hilt.png",
+    "src/graphics/caelum/icons/materials/ca_material_long_hilt.png",
+    "src/graphics/caelum/icons/materials/ca_material_point.png",
+    "src/graphics/caelum/icons/materials/ca_material_bowstring.png",
+    "src/graphics/caelum/icons/materials/ca_material_reinforced_bowstring.png",
+    "src/graphics/caelum/icons/materials/ca_material_strap.png",
+    "src/graphics/caelum/icons/materials/ca_material_reinforced_strap.png",
+    "src/graphics/caelum/icons/materials/ca_material_barrel.png",
+    "src/graphics/caelum/icons/materials/ca_material_mechanism.png"
+  ],
+  "materials": "Original leather/fiber atlas from built-in image_gen; exact prompt retained in FIBERS_PROMPT.json. Existing owned #723 metal atlas reused byte-for-byte. Original icons preserved. No raster edits.",
+  "method": "Closed wrapped grips, beveled point and socket, continuous coiled cords with ferrules, actual annular leather loops and connected buckles/reinforcement, hollow tube and joined decorative mechanical assembly. Editable JSON/OBJ/MTL with deterministic MD3 exports.",
+  "limits": "Nine static world crafting designs/all27 existing type-tier cases. Original icons, recipes, scale, collision and saves unchanged. Not equipped/first-person weapons; author visual and ordinary inventory/crafting acceptance pending.",
+  "generated_image": {
+    "path": "C:\\Users\\dcc70\\.codex\\generated_images\\01a1d17b-9a43-7901-bffe-eb3e4a27f8d4\\exec-b776de12-93aa-4fde-9a0a-c1c45255f7c7.png",
+    "sha256": "d53ee33e337ee7264be88dac540e46ebb022df8540ab222dae73e533fcf0ee62",
+    "date": "2026-11-14"
+  }
+}
