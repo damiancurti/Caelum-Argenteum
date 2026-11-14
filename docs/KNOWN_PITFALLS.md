@@ -78,6 +78,18 @@ This is geometry/material composition, not a general rule to remove artistic
 transparency. Link holes remain open modeled rings. Original failed views and
 final native front/side/rear evidence: assets/validation_v5_17_15/evidence/SUMMARY.json.
 
+Additional STATIC-VERIFIED / NATIVE-VISUAL evidence, #678 (2026-11-13):
+material-gem PNG interiors usually have alpha 250-253, so demanding a fully
+255-opaque 3x3 patch can find no valid sample. Preserve original pixels and
+record the actual >=250 margin; do not silently claim complete opacity.
+For freestanding crystal volumes, translating an entire undercoat backward
+exposes its flat color on the reverse. Shrink the inner volume around its
+center, paint crystal/rock backs, and inspect both sides. A connected matrix
+core joins the original cluster silhouettes. MD3 shader paths must fit 63
+ASCII bytes plus terminator; byte-identical short texture aliases preserve
+long original icon paths. Guard against writing those aliases twice into a
+preview archive. Evidence: assets/validation_v5_17_17/evidence/SUMMARY.json.
+
 ## CA-KP-231 - Isolate deferred recipe-sheet delivery in inventory fixtures
 
 Status/evidence: ENGINE-VERIFIED fixture correction, #656, 2026-11-13.

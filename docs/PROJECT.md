@@ -1,6 +1,13 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.16** - 2026-11-13.
+Documentation version: **5.17.17** - 2026-11-13.
+
+## 5.17.17 - Material pendant and gem models (#678)
+
+Fourteen existing material states now have closed volumetric world props
+derived from their own original images. Three qualities and gameplay remain
+unchanged; broader character/equipment/material conversion is unfinished.
+ASSETS records validation and pending CA678-GEMS-01 author review.
 
 ## 5.17.16 - Support-book and component model reuse (#676)
 

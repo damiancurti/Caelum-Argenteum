@@ -1,6 +1,15 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.16** - 2026-11-13.
+Documentation version: **5.17.17** - 2026-11-13.
+
+## 5.17.17 - Material jewelry and gem world models (#678)
+
+Material IDs 45..58 gain fourteen native world-model bindings. Pendant, gem,
+brooch and raw-gem identities, all three qualities, crafting inputs, stack
+split/merge rules, contamination/history, native scale and saved ownership
+remain unchanged. Source icons remain authoritative for inventory presentation.
+No worn jewelry, recipe, balance or ability change is included. ASSETS/HISTORY
+separate static/native evidence from pending author check CA678-GEMS-01.
 
 ## 5.17.16 - Support-book world model reuse (#676)
 

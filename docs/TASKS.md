@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.16** - 2026-11-13.
+Documentation version: **5.17.17** - 2026-11-13.
+
+## #678 - Pendant, gem and opal-component models (5.17.17)
+
+Fourteen models cover material IDs 45..58, with 42 material/quality cases.
+Static geometry/source validation, 46-file repeat export, 5,843 complete-package
+native checks and a fourteen-object presentation pair pass. Final visual checks
+pass 1,093. CA678-GEMS-01 and earlier author checks remain unconfirmed; other
+#647 categories remain pending. Evidence and qualifications: ASSETS/HISTORY.
 
 ## #676 - Support-book model reuse (5.17.16)
 
