@@ -1,0 +1,1105 @@
+{
+  "issue": 723,
+  "parent_issue": 647,
+  "version": "5.17.40",
+  "date": "2026-11-14",
+  "author_accepted": false,
+  "scope": "Eight existing metal weapon crafting designs1/2/3/4/5/9/10/40 on CaelumMaterialPickup, all tiers1/2/3. Twenty-four existing cases; unchanged gameplay and original icon pixels.",
+  "runtime": {
+    "sha256": "fb09061230a3aff16a765a842d05f56ff422a5bdaa8148c3e6f1ca4ac06d9463",
+    "source_entries": 18422,
+    "exact_source_bytes": true
+  },
+  "baseline": {
+    "sha256": "57588a90345f8a2b748da90469dc2c054f8fce68e91e247670abb1d8528a94f2",
+    "new_resources": [
+      "caelum/data/inventory_weapon_components.modeldef",
+      "models/caelum/inventory/weapon_components/blade.md3",
+      "models/caelum/inventory/weapon_components/broad_blade.md3",
+      "models/caelum/inventory/weapon_components/curved_blade.md3",
+      "models/caelum/inventory/weapon_components/long_blade.md3",
+      "models/caelum/inventory/weapon_components/metals.png",
+      "models/caelum/inventory/weapon_components/round_head.md3",
+      "models/caelum/inventory/weapon_components/small_blade.md3",
+      "models/caelum/inventory/weapon_components/small_weapon_head.md3",
+      "models/caelum/inventory/weapon_components/weapon_head.md3"
+    ],
+    "changed_resources": [
+      "MODELDEF",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "all_other_runtime_bytes_identical": true
+  },
+  "static": {
+    "repeated_export_files": 21,
+    "repeat_byte_identical": true,
+    "installed_export_check_passed": true,
+    "geometry": {
+      "blade": {
+        "closed_components": 2,
+        "fixed_attachment_witnesses": 1,
+        "connected_components": 2,
+        "opening_probes": 0,
+        "opening_rays": 0,
+        "native_triangles": 208
+      },
+      "small_blade": {
+        "closed_components": 3,
+        "fixed_attachment_witnesses": 2,
+        "connected_components": 3,
+        "opening_probes": 1,
+        "opening_rays": 5,
+        "native_triangles": 848
+      },
+      "curved_blade": {
+        "closed_components": 3,
+        "fixed_attachment_witnesses": 2,
+        "connected_components": 3,
+        "opening_probes": 1,
+        "opening_rays": 5,
+        "native_triangles": 1104
+      },
+      "long_blade": {
+        "closed_components": 2,
+        "fixed_attachment_witnesses": 1,
+        "connected_components": 2,
+        "opening_probes": 0,
+        "opening_rays": 0,
+        "native_triangles": 224
+      },
+      "broad_blade": {
+        "closed_components": 4,
+        "fixed_attachment_witnesses": 3,
+        "connected_components": 4,
+        "opening_probes": 0,
+        "opening_rays": 0,
+        "native_triangles": 552
+      },
+      "weapon_head": {
+        "closed_components": 21,
+        "fixed_attachment_witnesses": 20,
+        "connected_components": 21,
+        "opening_probes": 1,
+        "opening_rays": 5,
+        "native_triangles": 2336
+      },
+      "round_head": {
+        "closed_components": 20,
+        "fixed_attachment_witnesses": 19,
+        "connected_components": 20,
+        "opening_probes": 0,
+        "opening_rays": 0,
+        "native_triangles": 1760
+      },
+      "small_weapon_head": {
+        "closed_components": 2,
+        "fixed_attachment_witnesses": 1,
+        "connected_components": 2,
+        "opening_probes": 1,
+        "opening_rays": 5,
+        "native_triangles": 640
+      }
+    },
+    "variants": {
+      "blade": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "blade",
+          "tang"
+        ],
+        "closed_outward_components": 2,
+        "vertices": 111,
+        "triangles": 208,
+        "surfaces": [
+          {
+            "material": "iron",
+            "vertices": 77,
+            "triangles": 144
+          },
+          {
+            "material": "steel",
+            "vertices": 34,
+            "triangles": 64
+          }
+        ],
+        "reference_opaque_bounds": [
+          10,
+          8,
+          118,
+          120
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 112.0,
+        "native_bounds": [
+          {
+            "min": [
+              -8.166666666666668,
+              -1.75,
+              0.0
+            ],
+            "max": [
+              8.166666666666668,
+              1.75,
+              112.0
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.1666666666666667,
+          "floor": -12.0
+        }
+      },
+      "small_blade": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "blade",
+          "guard",
+          "socket"
+        ],
+        "closed_outward_components": 3,
+        "vertices": 514,
+        "triangles": 848,
+        "surfaces": [
+          {
+            "material": "steel",
+            "vertices": 42,
+            "triangles": 80
+          },
+          {
+            "material": "bronze",
+            "vertices": 102,
+            "triangles": 192
+          },
+          {
+            "material": "socket_atlas",
+            "vertices": 370,
+            "triangles": 576
+          }
+        ],
+        "reference_opaque_bounds": [
+          9,
+          10,
+          120,
+          118
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 108.0,
+        "native_bounds": [
+          {
+            "min": [
+              -16.434782608695652,
+              -3.991304347826087,
+              0.0
+            ],
+            "max": [
+              16.434782608695652,
+              3.991304347826087,
+              108.00000000000001
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.173913043478261,
+          "floor": -14.0
+        }
+      },
+      "curved_blade": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "blade",
+          "guard",
+          "socket"
+        ],
+        "closed_outward_components": 3,
+        "vertices": 642,
+        "triangles": 1104,
+        "surfaces": [
+          {
+            "material": "steel",
+            "vertices": 170,
+            "triangles": 336
+          },
+          {
+            "material": "bronze",
+            "vertices": 102,
+            "triangles": 192
+          },
+          {
+            "material": "socket_atlas",
+            "vertices": 370,
+            "triangles": 576
+          }
+        ],
+        "reference_opaque_bounds": [
+          14,
+          8,
+          114,
+          120
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 112.0,
+        "native_bounds": [
+          {
+            "min": [
+              -8.65979381443299,
+              -3.4639175257731956,
+              0.0
+            ],
+            "max": [
+              56.923711340206175,
+              3.4639175257731956,
+              111.99999999999999
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.1546391752577319,
+          "floor": -10.0
+        }
+      },
+      "long_blade": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "blade",
+          "tang"
+        ],
+        "closed_outward_components": 2,
+        "vertices": 119,
+        "triangles": 224,
+        "surfaces": [
+          {
+            "material": "iron",
+            "vertices": 77,
+            "triangles": 144
+          },
+          {
+            "material": "steel",
+            "vertices": 42,
+            "triangles": 80
+          }
+        ],
+        "reference_opaque_bounds": [
+          10,
+          8,
+          118,
+          120
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 112.0,
+        "native_bounds": [
+          {
+            "min": [
+              -9.43157894736842,
+              -1.9452631578947366,
+              0.0
+            ],
+            "max": [
+              9.43157894736842,
+              1.9452631578947366,
+              111.99999999999999
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.1789473684210525,
+          "floor": -10.0
+        }
+      },
+      "broad_blade": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "hub",
+          "wood_stub",
+          "wing_left",
+          "wing_right"
+        ],
+        "closed_outward_components": 4,
+        "vertices": 292,
+        "triangles": 552,
+        "surfaces": [
+          {
+            "material": "iron",
+            "vertices": 190,
+            "triangles": 360
+          },
+          {
+            "material": "wood",
+            "vertices": 102,
+            "triangles": 192
+          }
+        ],
+        "reference_opaque_bounds": [
+          13,
+          8,
+          114,
+          120
+        ],
+        "reference_axis": "width",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 101.0,
+        "native_bounds": [
+          {
+            "min": [
+              -50.5,
+              -6.06,
+              0.0
+            ],
+            "max": [
+              50.5,
+              6.06,
+              97.21249999999999
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.2625,
+          "floor": -25.0
+        }
+      },
+      "weapon_head": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "head",
+          "spike_00",
+          "spike_01",
+          "spike_02",
+          "spike_03",
+          "spike_04",
+          "spike_05",
+          "spike_06",
+          "spike_07",
+          "spike_08",
+          "spike_09",
+          "spike_10",
+          "spike_11",
+          "spike_12",
+          "spike_13",
+          "spike_14",
+          "spike_15",
+          "spike_16",
+          "spike_17",
+          "spike_18",
+          "socket"
+        ],
+        "closed_outward_components": 21,
+        "vertices": 1308,
+        "triangles": 2336,
+        "surfaces": [
+          {
+            "material": "iron",
+            "vertices": 596,
+            "triangles": 1152
+          },
+          {
+            "material": "steel",
+            "vertices": 342,
+            "triangles": 608
+          },
+          {
+            "material": "socket_atlas",
+            "vertices": 370,
+            "triangles": 576
+          }
+        ],
+        "reference_opaque_bounds": [
+          13,
+          8,
+          114,
+          120
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 112.0,
+        "native_bounds": [
+          {
+            "min": [
+              -47.24709784411277,
+              -45.18076285240465,
+              0.0
+            ],
+            "max": [
+              47.24709784411277,
+              45.18076285240465,
+              112.00000000000001
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 2.3217247097844114,
+          "floor": 0.0
+        }
+      },
+      "round_head": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "head",
+          "spike_00",
+          "spike_01",
+          "spike_02",
+          "spike_03",
+          "spike_04",
+          "spike_05",
+          "spike_06",
+          "spike_07",
+          "spike_08",
+          "spike_09",
+          "spike_10",
+          "spike_11",
+          "spike_12",
+          "spike_13",
+          "spike_14",
+          "spike_15",
+          "spike_16",
+          "spike_17",
+          "spike_18"
+        ],
+        "closed_outward_components": 20,
+        "vertices": 938,
+        "triangles": 1760,
+        "surfaces": [
+          {
+            "material": "iron",
+            "vertices": 596,
+            "triangles": 1152
+          },
+          {
+            "material": "steel",
+            "vertices": 342,
+            "triangles": 608
+          }
+        ],
+        "reference_opaque_bounds": [
+          8,
+          10,
+          120,
+          117
+        ],
+        "reference_axis": "width",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 112.0,
+        "native_bounds": [
+          {
+            "min": [
+              -56.0,
+              -56.0,
+              0.0
+            ],
+            "max": [
+              56.0,
+              56.0,
+              98.47020585048755
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 3.0335861321776814,
+          "floor": 4
+        }
+      },
+      "small_weapon_head": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "blade",
+          "socket"
+        ],
+        "closed_outward_components": 2,
+        "vertices": 404,
+        "triangles": 640,
+        "surfaces": [
+          {
+            "material": "steel",
+            "vertices": 34,
+            "triangles": 64
+          },
+          {
+            "material": "socket_atlas",
+            "vertices": 370,
+            "triangles": 576
+          }
+        ],
+        "reference_opaque_bounds": [
+          16,
+          8,
+          113,
+          119
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 111.0,
+        "native_bounds": [
+          {
+            "min": [
+              -17.224137931034484,
+              -9.186206896551724,
+              0.0
+            ],
+            "max": [
+              17.224137931034484,
+              9.186206896551724,
+              111.0
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.9137931034482758,
+          "floor": 0.0
+        }
+      }
+    },
+    "project_validation_passed": true
+  },
+  "continuity": {
+    "issue": 723,
+    "kind": "weapon_components",
+    "scope": "Native pickup/toss, quantity and saved ownership for weapon_components; no normal menu or author acceptance.",
+    "baseline_sha256": "57588a90345f8a2b748da90469dc2c054f8fce68e91e247670abb1d8528a94f2",
+    "runtime_sha256": "fb09061230a3aff16a765a842d05f56ff422a5bdaa8148c3e6f1ca4ac06d9463",
+    "model_sha256": null,
+    "fixture_sha256": "b9f606115d095ac084377201d0f0bbd61105bcc7773cd3eae15aac5134a0bdff",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "baseline",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 649
+      },
+      {
+        "phase": "old-save-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 721
+      },
+      {
+        "phase": "candidate-fresh",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 649
+      },
+      {
+        "phase": "candidate-reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 721
+      },
+      {
+        "phase": "rollback-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 721
+      }
+    ],
+    "captures": {
+      "baseline.png": "0394332127c640e980b7c9f621dc4be35a6ec5669e60bb22e0fb0dc66ad7a4a8",
+      "candidate-0.png": "5c81e19457d8a2bafbeb69894f1794f0392e46d4ff0f2cbd0c2827aa7e2e4f18",
+      "candidate-1.png": "b7838861d3fb8f993764b6cfbf3a518ae770bdf695958afe977886b95a4135f6",
+      "candidate-2.png": "d22ea314a8dee19b22cae04d42506c21988ed87034b5abc5f52f4330f6b1e172",
+      "candidate-3.png": "63fbc0d88bd91a9b5f5b593e4fb95edff74c28e6ad80b671c5e99998e573ff41",
+      "candidate-5.png": "459cd17372c2f82f7586d6dab4b296e875cfa683202abdbea79df1da9051769a",
+      "candidate-6.png": "240fc15cfe7c22cd9dc7c627ac0071ac8da4be4d36e2c696b48b3cfbe28e8222",
+      "candidate-7.png": "3972d6d6ffe07adaeeb59328e87cf446a84b70a3109b4c3e9c77cbc7d5160acb",
+      "detail-0-0.png": "015b19347cffc7fc3b3c76b3f29ab4048b3a46ecf9d69a2166764e3cda494935",
+      "detail-0-160.png": "c1a5899aec1f69a1f3e19f1b291ee61c83c126117e16fa56919cad33b3a20b48",
+      "detail-0-225.png": "4f98aeac3ec494d0fc797fd63473cca6c9d6231be6f3543237d6cdd5729ea5ab",
+      "detail-0-270.png": "87d1949e695724f1eabb167befa5630bfd7397ae575493d95f0710863ffe4d41",
+      "detail-0-90.png": "55680a35dbcd33462c9ffcf858ad129e9cc590511aea2cedfb7195e894b18228",
+      "detail-1-0.png": "b6a2ed2648f657a6e800002056db647392a0f71826b1cce3a98f2f4b093f78c8",
+      "detail-1-160.png": "f468a658cd8be85194993868cb28b4557cf3900d5589631c421a13f41438742b",
+      "detail-1-225.png": "af5bd7e2b9f5ce041c72ff68dc514d6ad2d9255e6a5e341cd37d15416c24c9a6",
+      "detail-1-270.png": "ca26ba7fd2e31866b9094ef45e06aeef12f41281945ebe2a9ee91e7b3735498d",
+      "detail-1-90.png": "6a4db9c2ccffc02b4fa4dc899320e68d91883e04d02446e06ec216b7917a05f0",
+      "detail-2-0.png": "7804298a22be58f64ce24b91bc8293c47745c9a88e499d6906ec3d2b0e152cda",
+      "detail-2-160.png": "341a13904e7bce53743682f5405a2bf13f9f69ed1a5c32d47f528a576e790083",
+      "detail-2-225.png": "f2532b80478dee12a0c7809ae6dd8f836c9da6501e1306d7b1a898b92095def0",
+      "detail-2-270.png": "c24de26f0ffbafc6d684eb31edee6997d3e9ff68c04585f7f84c5a1e930a9bc9",
+      "detail-2-90.png": "872a266f331e3d4e29f3e89ffe5e6f71127d05e5d941ce22099a08a6b3cfabd1",
+      "detail-3-0.png": "ebfc404bf29ee0e04f3381690dd5def3f188f77d6b71aaaf3127a367cf96a815",
+      "detail-3-160.png": "a0df31fb7832c0c6c6398ee3a4038a36b98f87a558aaa229d33e4136c5f83ecd",
+      "detail-3-225.png": "0d87ea263d680469f5012241ff96dc95dd7845021e6a1d9eca9af173721a73c0",
+      "detail-3-270.png": "fac6f4455574fedbbf0c34ef054888f5486831804cb1c8686b1a093ce262f4f2",
+      "detail-3-90.png": "b298231b99528a9ab43c5943598e6eb8fdc8d2a730ac0a63435d467b8a4d3d80",
+      "detail-4-0.png": "ca649817ee999ce4e80a1def0fcc24a0ae9a9f6561791e858220a50c224ff497",
+      "detail-4-160.png": "0a2373607506f92f89d3a94f685ba32bf080c0c5cf2b4c46d0d1dcdc652d6015",
+      "detail-4-225.png": "be4052cde9157d60893fa8051469866fb9a3eed2a03bc42a49b32a8acd52bd90",
+      "detail-4-270.png": "461c92f2a6ab2e9fa1b27a82d092749792b25228dbcfe357d0397418a42620e5",
+      "detail-4-90.png": "c260115c19799edf0bf9aada868f887128b375f8e1b1df4df61b98f48922c79c",
+      "detail-5-0.png": "fa843f0b263a9cdca4cd292cff4df4500d3bc96d19705161aa0fb50b4b6ef49a",
+      "detail-5-160.png": "a4cb8359105d3935ca4387710451c7a2dccb2ac97d19e2e3a9e8fe81e5eead3a",
+      "detail-5-225.png": "5c8182821519b05b0524336e82c959a39830c0e7381a02eca82be2aa9fa03c81",
+      "detail-5-270.png": "a362f1584b2486fc90c6b3496b5262714a0a01fcf15f518be6be717220e1800f",
+      "detail-5-90.png": "7c3c1aadefa3d37baf07b3961ecdee428d1ef74f6552fe0ae8755767f79bc106",
+      "detail-6-0.png": "f2f6e3403ae3340151602ca8e61c391ffa7781aa4304059e9f49fd75208e963f",
+      "detail-6-160.png": "53b5209184eac4fa759c782a515361f6374d58d98cac4fb51bcd0377a87be36e",
+      "detail-6-225.png": "e8d96e1b7e5c13985324d074b50a4544ecd49439b7a8cd53a0bd573d837c89da",
+      "detail-6-270.png": "20617e2f03d9707728c738664f70e4b8436a4baa73d1f51324528e315a8e3f5f",
+      "detail-6-90.png": "33e559202e83388ec80ccdfad60557318ab30441c965fb2332b885fb7a8b2818",
+      "detail-7-0.png": "8eaea81846807d8916ed089dffecfd8608ae30aae647e088d83977d0c2fb3a18",
+      "detail-7-160.png": "dabd115fc22a8105047cebcacef5397ce5b6600183c8bdf1a1e98b6f60839d3a",
+      "detail-7-225.png": "75b2e2d088779c5c6ebcd2b6d32dbf8f375a03c55dcda01bf0316fbde09f3858",
+      "detail-7-270.png": "aba2acb0b39e3e8b459473279328d9a8a490a857c21ff7282c2e351524da0607",
+      "detail-7-90.png": "ccde55c56f8fdd8c75008729c27737415161996c18d152bf528edbbb49d9a7ca"
+    }
+  },
+  "presentation": {
+    "issue": 723,
+    "kind": "weapon_components",
+    "scope": "Measure actual inventory drop classes before/after model installation.\n\nA single sequential baseline/candidate pair in an isolated room; this is not a\ncrowd budget, campaign performance acceptance or repeatability estimate.",
+    "baseline_sha256": "57588a90345f8a2b748da90469dc2c054f8fce68e91e247670abb1d8528a94f2",
+    "runtime_sha256": "fb09061230a3aff16a765a842d05f56ff422a5bdaa8148c3e6f1ca4ac06d9463",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+    "runs": [
+      {
+        "kind": "sprites",
+        "bodies": 8,
+        "pid": 15980,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 279818184.22370005,
+          "END": 279838204.3726
+        },
+        "fixture_sha256": "b89e8c43027b28571da4db0e2caf7deb3144ecd41552d649b4e83e1adf8528e2",
+        "passed": true,
+        "observed_completion_counts": [
+          [
+            8,
+            700
+          ]
+        ],
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.569655285714283,
+          "p50_ms": 28.582,
+          "p95_ms": 29.2267,
+          "p99_ms": 29.4625,
+          "max_ms": 30.1459
+        },
+        "presentation": {
+          "pid": 15980,
+          "trace_sha256": "94168b5e229a3b8f37313bd71130351187191fb1f1af6673852bfcd4c9f3d4d2",
+          "rows": 26144,
+          "scene_presents": 17871,
+          "mean_present_fps": 1020.0293930582563,
+          "present_intervals": {
+            "samples": 17870,
+            "mean_ms": 0.9803639059868616,
+            "p50_ms": 0.9472000002861023,
+            "p95_ms": 1.2268999814987183,
+            "p99_ms": 1.4538999795913696,
+            "max_ms": 2.2439000010490417
+          },
+          "native_call_duration": {
+            "samples": 17871,
+            "mean_ms": 0.07606399166024357,
+            "p50_ms": 0.07530003786087036,
+            "p95_ms": 0.09959995746612549,
+            "p99_ms": 0.13030004501342773,
+            "max_ms": 0.5737000107765198
+          }
+        }
+      },
+      {
+        "kind": "models",
+        "bodies": 8,
+        "pid": 30764,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 279852673.5613,
+          "END": 279872696.251
+        },
+        "fixture_sha256": "b89e8c43027b28571da4db0e2caf7deb3144ecd41552d649b4e83e1adf8528e2",
+        "passed": true,
+        "observed_completion_counts": [
+          [
+            8,
+            700
+          ]
+        ],
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.570652142857142,
+          "p50_ms": 28.5813,
+          "p95_ms": 29.2843,
+          "p99_ms": 29.4737,
+          "max_ms": 30.0247
+        },
+        "presentation": {
+          "pid": 30764,
+          "trace_sha256": "54d64662376fb5a5bf8955a5be063758ba85b302586128556a10eef98287b048",
+          "rows": 26123,
+          "scene_presents": 17322,
+          "mean_present_fps": 988.5165661013637,
+          "present_intervals": {
+            "samples": 17321,
+            "mean_ms": 1.0116168350561145,
+            "p50_ms": 0.9787999987602234,
+            "p95_ms": 1.2361000180244446,
+            "p99_ms": 1.4848999977111816,
+            "max_ms": 2.72599995136261
+          },
+          "native_call_duration": {
+            "samples": 17322,
+            "mean_ms": 0.0762829409193709,
+            "p50_ms": 0.0756000280380249,
+            "p95_ms": 0.10049998760223389,
+            "p99_ms": 0.13060003519058228,
+            "max_ms": 0.4212999939918518
+          }
+        }
+      }
+    ]
+  },
+  "iterations": "Model01 geometry/contacts/openings pass, but three ingot material crops fail strict opacity with alpha251..254. Model02 uses existing opaque materials and passes649 preview checks; visual review finds bland metal and an S-shaped curved blade. Model03 adds an original image_gen aged-metal atlas and a smoother crescent following the reference; geometry and649 preview checks pass. Model04 maps socket interiors to the darker atlas region without changing socket geometry; geometry and649 preview checks pass. Model04/05 repeat all21 exports. Prior designs, generators, materials, manifests, previews and failure logs retained.",
+  "art": {
+    "source": "assets/source/art/inventory_models_647/weapon_components",
+    "new_image_generation": true,
+    "mode": "built-in image_gen",
+    "image": "metals.png",
+    "prompt": "METALS_PROMPT.json",
+    "original_pixels_preserved": true,
+    "reused_materials": [
+      "Owned training-dummy wood"
+    ],
+    "retained_initial_portable_images": "Earlier owned ingot/consumable material copies remain under editable/src as provenance; final OBJ/MTL uses the new atlas and owned wood.",
+    "reviewed_views": "All eight original icons, the generated metal atlas, all40 final front/edge/rear-oblique/rear/raised underside details, ordinary floor overview and both presentation cohorts.",
+    "author_check": "CA723-WEAPON-COMPONENTS-01"
+  },
+  "environment": {
+    "os": "Windows 11 Pro 26200",
+    "cpu": "Ryzen 9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX 3070 Ti",
+    "engine": "GZDoom 4.14.2",
+    "backend": "Vulkan",
+    "resolution": [
+      1280,
+      720
+    ],
+    "background_unpaused": true,
+    "audio": 0.05,
+    "presentation_uncapped": true,
+    "vsync": false
+  },
+  "qualifications": [
+    "Static world crafting components, not equipped or first-person weapons. Simplified blade outlines, uniform wear, regular spike arrangement and separate axe hub require author review.",
+    "One sequential700-tic eight-object sprite/model pair: queue intervals, not GPU/display timing, repeatability or campaign/crowd acceptance. Different projected footprints preclude equal-pixel claims.",
+    "Native fixtures call pickup/toss APIs and prepare Box/quest states; ordinary menus/crafting and author acceptance remain separate.",
+    "No recipe, tier resolution, weight, quantity, identity, collision, save schema, production scan or original icon/texture changes.",
+    "No executable, IWAD, compiled fixture, PK3/WAD, DLL or save is committed."
+  ],
+  "files": {
+    "continuity/baseline-process.log": "f8dc830068a8a3fe0dc7a434436721a3ebe8fe9ea8291d4d9523413d81f724aa",
+    "continuity/baseline.cfg": "dd97d6fe560e1fb2ba6488ecad7b3266f3b43b0dc8adcc809f282545479a5429",
+    "continuity/baseline.log": "376f6158b2fb7fa37ce52afebaa46e0295edb90ff6a9b51efa7366f742649b33",
+    "continuity/baseline.png": "0394332127c640e980b7c9f621dc4be35a6ec5669e60bb22e0fb0dc66ad7a4a8",
+    "continuity/candidate-0.png": "5c81e19457d8a2bafbeb69894f1794f0392e46d4ff0f2cbd0c2827aa7e2e4f18",
+    "continuity/candidate-1.png": "b7838861d3fb8f993764b6cfbf3a518ae770bdf695958afe977886b95a4135f6",
+    "continuity/candidate-2.png": "d22ea314a8dee19b22cae04d42506c21988ed87034b5abc5f52f4330f6b1e172",
+    "continuity/candidate-3.png": "63fbc0d88bd91a9b5f5b593e4fb95edff74c28e6ad80b671c5e99998e573ff41",
+    "continuity/candidate-5.png": "459cd17372c2f82f7586d6dab4b296e875cfa683202abdbea79df1da9051769a",
+    "continuity/candidate-6.png": "240fc15cfe7c22cd9dc7c627ac0071ac8da4be4d36e2c696b48b3cfbe28e8222",
+    "continuity/candidate-7.png": "3972d6d6ffe07adaeeb59328e87cf446a84b70a3109b4c3e9c77cbc7d5160acb",
+    "continuity/candidate-fresh-process.log": "73118a04980871f1f0403860f04077d2e430302dc6b714441fcc6b11c9f9022f",
+    "continuity/candidate-fresh.cfg": "5a2387509a38b51b5e6844529c11e4cf56c4b9fa7bd24ba500dfd00b48ddc4d3",
+    "continuity/candidate-fresh.log": "8e50b6c5948bd12cfa2180bb5904ede525b363529a9ce070f03893a16ecd1755",
+    "continuity/candidate-reload-process.log": "9cfec583e32c13068bb53d58345617d6189740954a6709032fb8a252f630b181",
+    "continuity/candidate-reload.cfg": "770d7c4f42cf5502be8d73fe6d5f32ab333dfe37c5369c76cc669809f6291076",
+    "continuity/candidate-reload.log": "91746ba027c282fe95551cca3ab6d1c424b5bbcf17c957aa1ea1217e0f4bb71f",
+    "continuity/detail-0-0.png": "015b19347cffc7fc3b3c76b3f29ab4048b3a46ecf9d69a2166764e3cda494935",
+    "continuity/detail-0-160.png": "c1a5899aec1f69a1f3e19f1b291ee61c83c126117e16fa56919cad33b3a20b48",
+    "continuity/detail-0-225.png": "4f98aeac3ec494d0fc797fd63473cca6c9d6231be6f3543237d6cdd5729ea5ab",
+    "continuity/detail-0-270.png": "87d1949e695724f1eabb167befa5630bfd7397ae575493d95f0710863ffe4d41",
+    "continuity/detail-0-90.png": "55680a35dbcd33462c9ffcf858ad129e9cc590511aea2cedfb7195e894b18228",
+    "continuity/detail-1-0.png": "b6a2ed2648f657a6e800002056db647392a0f71826b1cce3a98f2f4b093f78c8",
+    "continuity/detail-1-160.png": "f468a658cd8be85194993868cb28b4557cf3900d5589631c421a13f41438742b",
+    "continuity/detail-1-225.png": "af5bd7e2b9f5ce041c72ff68dc514d6ad2d9255e6a5e341cd37d15416c24c9a6",
+    "continuity/detail-1-270.png": "ca26ba7fd2e31866b9094ef45e06aeef12f41281945ebe2a9ee91e7b3735498d",
+    "continuity/detail-1-90.png": "6a4db9c2ccffc02b4fa4dc899320e68d91883e04d02446e06ec216b7917a05f0",
+    "continuity/detail-2-0.png": "7804298a22be58f64ce24b91bc8293c47745c9a88e499d6906ec3d2b0e152cda",
+    "continuity/detail-2-160.png": "341a13904e7bce53743682f5405a2bf13f9f69ed1a5c32d47f528a576e790083",
+    "continuity/detail-2-225.png": "f2532b80478dee12a0c7809ae6dd8f836c9da6501e1306d7b1a898b92095def0",
+    "continuity/detail-2-270.png": "c24de26f0ffbafc6d684eb31edee6997d3e9ff68c04585f7f84c5a1e930a9bc9",
+    "continuity/detail-2-90.png": "872a266f331e3d4e29f3e89ffe5e6f71127d05e5d941ce22099a08a6b3cfabd1",
+    "continuity/detail-3-0.png": "ebfc404bf29ee0e04f3381690dd5def3f188f77d6b71aaaf3127a367cf96a815",
+    "continuity/detail-3-160.png": "a0df31fb7832c0c6c6398ee3a4038a36b98f87a558aaa229d33e4136c5f83ecd",
+    "continuity/detail-3-225.png": "0d87ea263d680469f5012241ff96dc95dd7845021e6a1d9eca9af173721a73c0",
+    "continuity/detail-3-270.png": "fac6f4455574fedbbf0c34ef054888f5486831804cb1c8686b1a093ce262f4f2",
+    "continuity/detail-3-90.png": "b298231b99528a9ab43c5943598e6eb8fdc8d2a730ac0a63435d467b8a4d3d80",
+    "continuity/detail-4-0.png": "ca649817ee999ce4e80a1def0fcc24a0ae9a9f6561791e858220a50c224ff497",
+    "continuity/detail-4-160.png": "0a2373607506f92f89d3a94f685ba32bf080c0c5cf2b4c46d0d1dcdc652d6015",
+    "continuity/detail-4-225.png": "be4052cde9157d60893fa8051469866fb9a3eed2a03bc42a49b32a8acd52bd90",
+    "continuity/detail-4-270.png": "461c92f2a6ab2e9fa1b27a82d092749792b25228dbcfe357d0397418a42620e5",
+    "continuity/detail-4-90.png": "c260115c19799edf0bf9aada868f887128b375f8e1b1df4df61b98f48922c79c",
+    "continuity/detail-5-0.png": "fa843f0b263a9cdca4cd292cff4df4500d3bc96d19705161aa0fb50b4b6ef49a",
+    "continuity/detail-5-160.png": "a4cb8359105d3935ca4387710451c7a2dccb2ac97d19e2e3a9e8fe81e5eead3a",
+    "continuity/detail-5-225.png": "5c8182821519b05b0524336e82c959a39830c0e7381a02eca82be2aa9fa03c81",
+    "continuity/detail-5-270.png": "a362f1584b2486fc90c6b3496b5262714a0a01fcf15f518be6be717220e1800f",
+    "continuity/detail-5-90.png": "7c3c1aadefa3d37baf07b3961ecdee428d1ef74f6552fe0ae8755767f79bc106",
+    "continuity/detail-6-0.png": "f2f6e3403ae3340151602ca8e61c391ffa7781aa4304059e9f49fd75208e963f",
+    "continuity/detail-6-160.png": "53b5209184eac4fa759c782a515361f6374d58d98cac4fb51bcd0377a87be36e",
+    "continuity/detail-6-225.png": "e8d96e1b7e5c13985324d074b50a4544ecd49439b7a8cd53a0bd573d837c89da",
+    "continuity/detail-6-270.png": "20617e2f03d9707728c738664f70e4b8436a4baa73d1f51324528e315a8e3f5f",
+    "continuity/detail-6-90.png": "33e559202e83388ec80ccdfad60557318ab30441c965fb2332b885fb7a8b2818",
+    "continuity/detail-7-0.png": "8eaea81846807d8916ed089dffecfd8608ae30aae647e088d83977d0c2fb3a18",
+    "continuity/detail-7-160.png": "dabd115fc22a8105047cebcacef5397ce5b6600183c8bdf1a1e98b6f60839d3a",
+    "continuity/detail-7-225.png": "75b2e2d088779c5c6ebcd2b6d32dbf8f375a03c55dcda01bf0316fbde09f3858",
+    "continuity/detail-7-270.png": "aba2acb0b39e3e8b459473279328d9a8a490a857c21ff7282c2e351524da0607",
+    "continuity/detail-7-90.png": "ccde55c56f8fdd8c75008729c27737415161996c18d152bf528edbbb49d9a7ca",
+    "continuity/fixture-source/MAPINFO.txt": "4762e597a0bd66e8e53fb59ea4e0eb3a80fb62fa7d26cd72fbb4e80264f3b749",
+    "continuity/fixture-source/ZSCRIPT.txt": "b634c353fc4b7e1afb9ced78e4dc5808b6107b29d784b6fed6ac7f796d5b2144",
+    "continuity/fixture.zs": "6e201aac196b161950f05cd12d76b4c5c6aece0e7f945e089962507f3168fa8e",
+    "continuity/old-save-load-part-1.cfg": "f371298f6212125ce9c2679b948bc7e8aa117aae57eeb2d07b71fb7a2769fbee",
+    "continuity/old-save-load-part-2.cfg": "1434385b72fb0d69d98ba10872f5a35fa20c346b9b191b205f7b0b26dbcb7675",
+    "continuity/old-save-load-process.log": "38088ffe1a9b13a2799e9a596bb432860c2d8e97edf63146bcc4507450bc46ed",
+    "continuity/old-save-load.cfg": "14cfddbbc37d205ed7c640279b4ed3008f59444cccdd04b31df74e4a2bd982df",
+    "continuity/old-save-load.log": "1ebc447ffbde3abd7bf950df679c12f3fb08dea97252b6f627e6884e55803b63",
+    "continuity/RESULTS.json": "2b517d74510206ee97b7429511951da57667cfcf5e1147b300515d76d01ea5cb",
+    "continuity/rollback-load-process.log": "7332fa53194a6d9fe6c12097822354a7839f1971e61f730eb24ba04c8705cde2",
+    "continuity/rollback-load.cfg": "770d7c4f42cf5502be8d73fe6d5f32ab333dfe37c5369c76cc669809f6291076",
+    "continuity/rollback-load.log": "fcb5fadf8ac9df402c64f2fb3aeaf23bb55a7faaf076232bcb75dc43559622c6",
+    "continuity/session.ini": "b55fb74f9fc1fd99111259bbdc4b330c3dd72c5326436dd56acafc0d05618a6e",
+    "exports/model01.json": "4153c87b9b45673c67b85bc0d253347f2e46e3c131a539135a118a60f889743b",
+    "exports/model02.json": "8429d9121a7ecb2d1d74783a542c71b02009b1bf68b889157c0a2012e195e6ea",
+    "exports/model03.json": "a193e270505531ceacb568bbb2e561206572b45be4331e55da80701b10d9de0e",
+    "exports/model04.json": "ed1b81d8014812944e8d8cc63331a03c6542e6d74da6da5b7f7392519e1772ee",
+    "exports/model05.json": "ed1b81d8014812944e8d8cc63331a03c6542e6d74da6da5b7f7392519e1772ee",
+    "issue723-build01.log": "8c51219d727d13faedb8a9a45818825636ce006d56910195be849ed1bd07546f",
+    "issue723-installed-check.log": "d45093f22209cd624653a1e677babdd35dec9d3c551007989273161af0d73ac1",
+    "issue723-repeat-final.json": "bbe19e6d4ee80ad0e0d85376ed804be40797a92a304d3ea1b6d4b26a24854d8b",
+    "iterations/issue723-design01.json": "8a156e69abe9c6c9c5be65ef3b15dc40fb3dd1efbc0ebba6c550f73fdbd1608b",
+    "iterations/issue723-design02.json": "a7cccb18ad43acf0dc24a7c6978791c58b7f53089c7477ec73c15e0aa56294d4",
+    "iterations/issue723-design03.json": "a8e21ad71bc83b7ce6d4033470ea1e138dafa3db49fa216dd463855b8d05f063",
+    "iterations/issue723-generator02.py": "4878df952be87196f4d3b2f053a04754f6bebe08d00edc21b5d730c4d9b5038e",
+    "iterations/issue723-generator03.py": "09b8d5557d7202e5edcbf1a36a6734011f67760c0c4b2619da72e9bce6ad6a7c",
+    "iterations/issue723-geometry01.log": "e655fea4b7478187919d10fbd3e0a898c5c02db97e9f6c74b164ea58c5e44514",
+    "iterations/issue723-geometry02.log": "9aaeab8a6eb6477f1ab72942775303a6357d64dcfd05a0d4162aafb146261542",
+    "iterations/issue723-geometry03.log": "025f14de93cafabc7afb9784666b1287aad2cd3b6ec02eb17dcf7b81f0777cf3",
+    "iterations/issue723-geometry04.log": "025f14de93cafabc7afb9784666b1287aad2cd3b6ec02eb17dcf7b81f0777cf3",
+    "iterations/issue723-provenance02.json": "5088b4075139bfc5216e848cc74b1d730ef7a54fbe493faab20abc72d3c110e0",
+    "iterations/visual01/candidate-0.png": "6083a19f40f401525a0e78ca2e8e3a8d3a5433741250cb246fdd41cdfdfb5406",
+    "iterations/visual01/candidate-1.png": "85456ad6acb8e2aa8f5feaeac330209e3542dc0c480e7e8f91695e68d57177fc",
+    "iterations/visual01/candidate-2.png": "c4d5b2f0a58cea8790d8cc3b89a11c04188ac5af51545490702bf35c0789b7d5",
+    "iterations/visual01/candidate-3.png": "c3ede1341d708b26a28e9a2b8da2254809ab0d932e745b06af7ad47e5337406c",
+    "iterations/visual01/candidate-5.png": "efad3d1e15e7c4e86cf87b826439dca28a09353f76bafda366f41e787d63079a",
+    "iterations/visual01/candidate-6.png": "9128b61c4daebdf6f156f55fe9c0c432b1cb8ba1fec8222bb9541d8678d1bac9",
+    "iterations/visual01/candidate-7.png": "97abb0f122fb3b24948a0788d822abb8356f672ce15ad50843adeffd2a45b3f0",
+    "iterations/visual01/detail-0-0.png": "7dd0da6f7c36a5e3cc35231c425afc74dd755f75f2bb45bec089594a9051064a",
+    "iterations/visual01/detail-0-160.png": "4f62019a8ae26dfc1829b48274b8ce42787be3f630e803049d0a332367390c53",
+    "iterations/visual01/detail-0-225.png": "33d5a0ad288cdf5a6c3df6b99430fa75ca2d778c78efed1faa1e8c2c3318241c",
+    "iterations/visual01/detail-0-270.png": "08cb2c3786f02d1c50555b48097eefd08ea4b6ec0043627c401027fe2c19a4ee",
+    "iterations/visual01/detail-0-90.png": "400f2032ff72c5789034692f65552162e0ee3bc6688c3e54b803904757038ac0",
+    "iterations/visual01/detail-1-0.png": "2b0359e35d186b85b3e21c8f285ee00708f5b1c60ab0df6e0f244d510d5349ad",
+    "iterations/visual01/detail-1-160.png": "2f6cc23a348e219513312b183147407399aa54d8e73a6fca1ed95c56191c55fe",
+    "iterations/visual01/detail-1-225.png": "75bf75c386b922dad37367429d990254c04c1580dd74f7ed7b0e1e2e7cd2fc23",
+    "iterations/visual01/detail-1-270.png": "38ba799b2f0c7fe7864fd54d6c8d22639ebaf3ee6878e1c0fc463f9c71d30fef",
+    "iterations/visual01/detail-1-90.png": "67f4302933f7d5834cc844e77499a8fd130eada5ffc60ee00fae62026f5dd8ba",
+    "iterations/visual01/detail-2-0.png": "77f37ba13fe85ee83315fca0a00a355316fb89312e9f3221bc66134de3c87456",
+    "iterations/visual01/detail-2-160.png": "efd5a28383d694cdbf03f91f45e97ee16ed26fc426278fb5a636d0f83d57c2e1",
+    "iterations/visual01/detail-2-225.png": "a53cffaa1e69c6ec54e0273ca7af0fe59d4d830d2f7a32e4d4064b1d0f37d633",
+    "iterations/visual01/detail-2-270.png": "02584b9fd34c1d58c3bec13abc0455ca87e1c8812eef60e668326215657f9041",
+    "iterations/visual01/detail-2-90.png": "f4fd27da8f3baae097b88c3397ad3ad78ba3cbb0d99e8c0096f1c622dd52bbe3",
+    "iterations/visual01/detail-3-0.png": "15c7e9afb37d5fb23205459990bd6874adfc0264136c43ee3b472a7de9232d23",
+    "iterations/visual01/detail-3-160.png": "09aae95d26653e658c58e6e9ff0ca73b4cf915c75666211d07265387ad2fff5c",
+    "iterations/visual01/detail-3-225.png": "ff4dab4f90d2c21a395ab264accdb49b28192934c86f6f997510012654609381",
+    "iterations/visual01/detail-3-270.png": "df1005ba9c5c5a329b68c51fd385726c613091fe7a69e62bba85dbd182d8bcd4",
+    "iterations/visual01/detail-3-90.png": "3ff7c409631473a537d736be3bf9c455d0a73d96f585b5c7f44349483a8ca619",
+    "iterations/visual01/detail-4-0.png": "8c60ba940571e0f972a92e6998350f2b89f90ae117131f956cacc9775d757e41",
+    "iterations/visual01/detail-4-160.png": "d688bbe4d8025ffbcbd688ec76adcf4e9bb3dfc0163281ba9605ff4d64cf4bb1",
+    "iterations/visual01/detail-4-225.png": "bce85387815987c35359ef166a08627281969e3be266b603814b89ba985eba40",
+    "iterations/visual01/detail-4-270.png": "8e24efddf4fb4d60e3b9c39ec3116b0ed8c9f487d99fec2924ca934d75868c61",
+    "iterations/visual01/detail-4-90.png": "5fa997b6255882c54765044ad5c8b5f6d0addf413617545678495ee0f7bb07d8",
+    "iterations/visual01/detail-5-0.png": "af56d32c56b67f4c4cb75be903a1a77edf263b1ecc4400f749870322b3d36e62",
+    "iterations/visual01/detail-5-160.png": "6bc182cea8fb8698b9df531540cea6f0a552bd55359cbf2ce99134bd5a3832c4",
+    "iterations/visual01/detail-5-225.png": "531ceb25a971572342b4f4dc2ff9eed4361c65a66374881c54bf234051a979c9",
+    "iterations/visual01/detail-5-270.png": "2dc872eb1244121f0d60e0d8a614cda27efb860275b51380aba855f65f0bd750",
+    "iterations/visual01/detail-5-90.png": "b22ab29e79fc4f6b7b1f272a957f80999f7bf1b015c5ad5e907fd4594d5cd475",
+    "iterations/visual01/detail-6-0.png": "c7eab51e3960824c354bd363752b1175172c0a2f49e49958c2c81f79b6b0f760",
+    "iterations/visual01/detail-6-160.png": "3a01d428e1bc052212c5305ad3058dd22e6f01e5faa10479118305d73020028b",
+    "iterations/visual01/detail-6-225.png": "c121891da7dd7fd66479ee12c91003e3ac6e2868eb23f1cfbf99f5138702485a",
+    "iterations/visual01/detail-6-270.png": "4fc3f6e7ecca7a63be156df30b114d23e220ca66ff6102468355537825e58d11",
+    "iterations/visual01/detail-6-90.png": "59814588ca6d10cf471b9b437f2655786ef19e7da33a18984671060238f75fd6",
+    "iterations/visual01/detail-7-0.png": "b077d2c46ac75efd88db0e37452e0a8aa25e4097f882280ec6a9cb8b7e67dd3a",
+    "iterations/visual01/detail-7-160.png": "ea9a74bd2e517323bf2a0fee40b3c5bfbdd5b12ea8915a74a4a97623de2762f7",
+    "iterations/visual01/detail-7-225.png": "e854d73c0c69e11f3bdaff303ef533792dc370673bb5fe742f7809969c0df012",
+    "iterations/visual01/detail-7-270.png": "14811b360be0e6481fef1b9e718e2688a61d06f941203fbaf77831cfcdd5e67e",
+    "iterations/visual01/detail-7-90.png": "c253e53cd595b41e8fe66c48b664eac450bb545768a0122c4f53ebc0f45557aa",
+    "iterations/visual01/fixture-source/MAPINFO.txt": "4762e597a0bd66e8e53fb59ea4e0eb3a80fb62fa7d26cd72fbb4e80264f3b749",
+    "iterations/visual01/fixture-source/ZSCRIPT.txt": "b634c353fc4b7e1afb9ced78e4dc5808b6107b29d784b6fed6ac7f796d5b2144",
+    "iterations/visual01/fixture.zs": "6e201aac196b161950f05cd12d76b4c5c6aece0e7f945e089962507f3168fa8e",
+    "iterations/visual01/RESULTS.json": "5b657a7d87b2186c152df1dbc024b03f9aed9557b667f32f652722772227fe64",
+    "iterations/visual01/session.ini": "8e0de072dccebc6335b69a3d6870d4440be7af7a4413ed59f9fce6c4493d9170",
+    "iterations/visual01/visual-part-1.cfg": "20bb03cba5792fefea1eaea7215e4fd2b27b9c7355287114277d71ed097641c8",
+    "iterations/visual01/visual-part-2.cfg": "072aacc8b486aafade110d360c2caccd2fc1a7d6cc77467db67976a47f4b9ea0",
+    "iterations/visual01/visual-process.log": "70eebea0622b56323ac82cf0c662f98934405905cfdbe4bc24247d54b98c0b39",
+    "iterations/visual01/visual.cfg": "1b7567ec5a94757b31fec17e858e3e89a96bdcb95fdbb20573208457647ed744",
+    "iterations/visual01/visual.log": "ba498697dfc3a0180b1dcceb9558df2e341bb0401d14fe7f801a08a294dec85e",
+    "iterations/visual02/candidate-0.png": "6678b2b56c546abff7f3c0cccd46143db5af37032641726e21253cdc4e37fe99",
+    "iterations/visual02/candidate-1.png": "8a4620a162f947afaeb003eba8d28864a4cfb6415f312c12262c9257aa02e2e7",
+    "iterations/visual02/candidate-2.png": "1f63a7619ee6a7ab7cf8836e3e970094c35aeda2419acdd63744c1487fb2fc6b",
+    "iterations/visual02/candidate-3.png": "3b686dd773bad7e1fc825fc557842324d8a2dac60a61d3f12e9a5a2eb610bdb1",
+    "iterations/visual02/candidate-5.png": "017816c336f7420e769f5c976fdca598094c502651359cfd30e389dd81619492",
+    "iterations/visual02/candidate-6.png": "4fefff53dc094c49aa520c375c23fbc6fe4f457bef5b9897ce110ca4618c396f",
+    "iterations/visual02/candidate-7.png": "056b030c27316b6ec7e37975d93975a20d23b741f36adbdf49acab36cca942aa",
+    "iterations/visual02/detail-0-0.png": "015b19347cffc7fc3b3c76b3f29ab4048b3a46ecf9d69a2166764e3cda494935",
+    "iterations/visual02/detail-0-160.png": "c1a5899aec1f69a1f3e19f1b291ee61c83c126117e16fa56919cad33b3a20b48",
+    "iterations/visual02/detail-0-225.png": "4f98aeac3ec494d0fc797fd63473cca6c9d6231be6f3543237d6cdd5729ea5ab",
+    "iterations/visual02/detail-0-270.png": "87d1949e695724f1eabb167befa5630bfd7397ae575493d95f0710863ffe4d41",
+    "iterations/visual02/detail-0-90.png": "55680a35dbcd33462c9ffcf858ad129e9cc590511aea2cedfb7195e894b18228",
+    "iterations/visual02/detail-1-0.png": "64c26ca21cb1a60f16b3a17f58cd1c9ad6fffc1d143c30e7d273674abd99c4d7",
+    "iterations/visual02/detail-1-160.png": "4429b1936fa74e01d2ac1c454f90f7ce1520c015ca0b2b38a28430206882e174",
+    "iterations/visual02/detail-1-225.png": "1ca344ca77171a3ad62f0316e0177325c654be35a1e797f8988a51d829131736",
+    "iterations/visual02/detail-1-270.png": "0c4883a9d27d3734d23be49e83e3768e0550e5679335dab85a027b2bdb5dcdaa",
+    "iterations/visual02/detail-1-90.png": "3bc35aa956e6fba1fbf4d3893cb58f27ee7def4100c8f63b7fd383279b90fcbc",
+    "iterations/visual02/detail-2-0.png": "62102a09fc28c0d858e257d23aa251e396f31b8210d03b101546e515aeb0bf25",
+    "iterations/visual02/detail-2-160.png": "f05d0cfaf17a8b8a945a7d90505deffca51b461765cda31105ec3f2551ce3c69",
+    "iterations/visual02/detail-2-225.png": "8de45ac2ce8bbe5b07c2971ec2a889b93acb27ff5a1a1d891f7c48230c23d3e4",
+    "iterations/visual02/detail-2-270.png": "f02252a69e9a482ee2ad07e2e49b5404e9264444fcc511541a7cdf9705dd192a",
+    "iterations/visual02/detail-2-90.png": "f66423d115b7dcf69869754850ad5e6829e4bd2fa0fba0255b245f131fd2f9f2",
+    "iterations/visual02/detail-3-0.png": "ebfc404bf29ee0e04f3381690dd5def3f188f77d6b71aaaf3127a367cf96a815",
+    "iterations/visual02/detail-3-160.png": "a0df31fb7832c0c6c6398ee3a4038a36b98f87a558aaa229d33e4136c5f83ecd",
+    "iterations/visual02/detail-3-225.png": "0d87ea263d680469f5012241ff96dc95dd7845021e6a1d9eca9af173721a73c0",
+    "iterations/visual02/detail-3-270.png": "fac6f4455574fedbbf0c34ef054888f5486831804cb1c8686b1a093ce262f4f2",
+    "iterations/visual02/detail-3-90.png": "b298231b99528a9ab43c5943598e6eb8fdc8d2a730ac0a63435d467b8a4d3d80",
+    "iterations/visual02/detail-4-0.png": "ca649817ee999ce4e80a1def0fcc24a0ae9a9f6561791e858220a50c224ff497",
+    "iterations/visual02/detail-4-160.png": "0a2373607506f92f89d3a94f685ba32bf080c0c5cf2b4c46d0d1dcdc652d6015",
+    "iterations/visual02/detail-4-225.png": "be4052cde9157d60893fa8051469866fb9a3eed2a03bc42a49b32a8acd52bd90",
+    "iterations/visual02/detail-4-270.png": "461c92f2a6ab2e9fa1b27a82d092749792b25228dbcfe357d0397418a42620e5",
+    "iterations/visual02/detail-4-90.png": "c260115c19799edf0bf9aada868f887128b375f8e1b1df4df61b98f48922c79c",
+    "iterations/visual02/detail-5-0.png": "b04437f920a2a1a7f50242fc35820523b5f44678445ccf8eee989a2ea2ec0232",
+    "iterations/visual02/detail-5-160.png": "57628631522dca9da54a3eb7fa08782bac325f0015d02548dfd1cc3db3050056",
+    "iterations/visual02/detail-5-225.png": "8068282eeea26cddb7ba2a2468a14d7ab6b9472e3d1c9308d2341865f534e587",
+    "iterations/visual02/detail-5-270.png": "cb3c2c936af293922d0dd1a80144df0b9fe82f5fe238934fc6f7182404999379",
+    "iterations/visual02/detail-5-90.png": "37addcbdf2a2b9600bec0e414cf3c5b7fe1f69960e041df091fea98f81918e40",
+    "iterations/visual02/detail-6-0.png": "f2f6e3403ae3340151602ca8e61c391ffa7781aa4304059e9f49fd75208e963f",
+    "iterations/visual02/detail-6-160.png": "53b5209184eac4fa759c782a515361f6374d58d98cac4fb51bcd0377a87be36e",
+    "iterations/visual02/detail-6-225.png": "e8d96e1b7e5c13985324d074b50a4544ecd49439b7a8cd53a0bd573d837c89da",
+    "iterations/visual02/detail-6-270.png": "20617e2f03d9707728c738664f70e4b8436a4baa73d1f51324528e315a8e3f5f",
+    "iterations/visual02/detail-6-90.png": "33e559202e83388ec80ccdfad60557318ab30441c965fb2332b885fb7a8b2818",
+    "iterations/visual02/detail-7-0.png": "a3a60121f8c1a5ff1d2061480b6d754c72e293db3b72b2b4a35c4468c53472b7",
+    "iterations/visual02/detail-7-160.png": "bb7bcc76dfeb69e5948351ad33f5a7c0419ec28ddc36b27f23011eda290d0c79",
+    "iterations/visual02/detail-7-225.png": "976b7ae4e2139e84bb6c1c8343c6e5c0bd7a5a4cf014a4679c3f28396b44e6c4",
+    "iterations/visual02/detail-7-270.png": "64bf817dbf84f1f31a07be8145e8677c6087883a340ad98984c7bc569c40ce25",
+    "iterations/visual02/detail-7-90.png": "9801e85184e82df5cb5316507ae770aa19a76618a85700b8c801f44ab8b3a1e5",
+    "iterations/visual02/fixture-source/MAPINFO.txt": "4762e597a0bd66e8e53fb59ea4e0eb3a80fb62fa7d26cd72fbb4e80264f3b749",
+    "iterations/visual02/fixture-source/ZSCRIPT.txt": "b634c353fc4b7e1afb9ced78e4dc5808b6107b29d784b6fed6ac7f796d5b2144",
+    "iterations/visual02/fixture.zs": "6e201aac196b161950f05cd12d76b4c5c6aece0e7f945e089962507f3168fa8e",
+    "iterations/visual02/RESULTS.json": "d01eb0e16caa8f7114d19c283e7811978d03c8f00a7eba69ebf50a927d427f83",
+    "iterations/visual02/session.ini": "81438d3866b427bc62c2b8fd6175c0bd07b514d0e1a64e3344374d37d87ff511",
+    "iterations/visual02/visual-part-1.cfg": "c53f5794b85c202e7254646fc432f616af87daee81399d2baca92dd279b4773c",
+    "iterations/visual02/visual-part-2.cfg": "072aacc8b486aafade110d360c2caccd2fc1a7d6cc77467db67976a47f4b9ea0",
+    "iterations/visual02/visual-process.log": "4d533d6372b17e01d2a9bc3055a2d98479aa9fee0cd53f83e77e5f62f3657f68",
+    "iterations/visual02/visual.cfg": "52b0d955b26f68e8550985245c909eebefdeb54a1e6bd7ae1da4d4b3cdbc0644",
+    "iterations/visual02/visual.log": "f205a1cf984142fda18ae81e31124dc1b2e9f3b794df0f2621b1a906b9faab0f",
+    "iterations/visual03/candidate-0.png": "5c81e19457d8a2bafbeb69894f1794f0392e46d4ff0f2cbd0c2827aa7e2e4f18",
+    "iterations/visual03/candidate-1.png": "b7838861d3fb8f993764b6cfbf3a518ae770bdf695958afe977886b95a4135f6",
+    "iterations/visual03/candidate-2.png": "d22ea314a8dee19b22cae04d42506c21988ed87034b5abc5f52f4330f6b1e172",
+    "iterations/visual03/candidate-3.png": "63fbc0d88bd91a9b5f5b593e4fb95edff74c28e6ad80b671c5e99998e573ff41",
+    "iterations/visual03/candidate-5.png": "459cd17372c2f82f7586d6dab4b296e875cfa683202abdbea79df1da9051769a",
+    "iterations/visual03/candidate-6.png": "240fc15cfe7c22cd9dc7c627ac0071ac8da4be4d36e2c696b48b3cfbe28e8222",
+    "iterations/visual03/candidate-7.png": "3972d6d6ffe07adaeeb59328e87cf446a84b70a3109b4c3e9c77cbc7d5160acb",
+    "iterations/visual03/detail-0-0.png": "015b19347cffc7fc3b3c76b3f29ab4048b3a46ecf9d69a2166764e3cda494935",
+    "iterations/visual03/detail-0-160.png": "c1a5899aec1f69a1f3e19f1b291ee61c83c126117e16fa56919cad33b3a20b48",
+    "iterations/visual03/detail-0-225.png": "4f98aeac3ec494d0fc797fd63473cca6c9d6231be6f3543237d6cdd5729ea5ab",
+    "iterations/visual03/detail-0-270.png": "87d1949e695724f1eabb167befa5630bfd7397ae575493d95f0710863ffe4d41",
+    "iterations/visual03/detail-0-90.png": "55680a35dbcd33462c9ffcf858ad129e9cc590511aea2cedfb7195e894b18228",
+    "iterations/visual03/detail-1-0.png": "b6a2ed2648f657a6e800002056db647392a0f71826b1cce3a98f2f4b093f78c8",
+    "iterations/visual03/detail-1-160.png": "f468a658cd8be85194993868cb28b4557cf3900d5589631c421a13f41438742b",
+    "iterations/visual03/detail-1-225.png": "af5bd7e2b9f5ce041c72ff68dc514d6ad2d9255e6a5e341cd37d15416c24c9a6",
+    "iterations/visual03/detail-1-270.png": "ca26ba7fd2e31866b9094ef45e06aeef12f41281945ebe2a9ee91e7b3735498d",
+    "iterations/visual03/detail-1-90.png": "6a4db9c2ccffc02b4fa4dc899320e68d91883e04d02446e06ec216b7917a05f0",
+    "iterations/visual03/detail-2-0.png": "7804298a22be58f64ce24b91bc8293c47745c9a88e499d6906ec3d2b0e152cda",
+    "iterations/visual03/detail-2-160.png": "341a13904e7bce53743682f5405a2bf13f9f69ed1a5c32d47f528a576e790083",
+    "iterations/visual03/detail-2-225.png": "f2532b80478dee12a0c7809ae6dd8f836c9da6501e1306d7b1a898b92095def0",
+    "iterations/visual03/detail-2-270.png": "c24de26f0ffbafc6d684eb31edee6997d3e9ff68c04585f7f84c5a1e930a9bc9",
+    "iterations/visual03/detail-2-90.png": "872a266f331e3d4e29f3e89ffe5e6f71127d05e5d941ce22099a08a6b3cfabd1",
+    "iterations/visual03/detail-3-0.png": "ebfc404bf29ee0e04f3381690dd5def3f188f77d6b71aaaf3127a367cf96a815",
+    "iterations/visual03/detail-3-160.png": "a0df31fb7832c0c6c6398ee3a4038a36b98f87a558aaa229d33e4136c5f83ecd",
+    "iterations/visual03/detail-3-225.png": "0d87ea263d680469f5012241ff96dc95dd7845021e6a1d9eca9af173721a73c0",
+    "iterations/visual03/detail-3-270.png": "fac6f4455574fedbbf0c34ef054888f5486831804cb1c8686b1a093ce262f4f2",
+    "iterations/visual03/detail-3-90.png": "b298231b99528a9ab43c5943598e6eb8fdc8d2a730ac0a63435d467b8a4d3d80",
+    "iterations/visual03/detail-4-0.png": "ca649817ee999ce4e80a1def0fcc24a0ae9a9f6561791e858220a50c224ff497",
+    "iterations/visual03/detail-4-160.png": "0a2373607506f92f89d3a94f685ba32bf080c0c5cf2b4c46d0d1dcdc652d6015",
+    "iterations/visual03/detail-4-225.png": "be4052cde9157d60893fa8051469866fb9a3eed2a03bc42a49b32a8acd52bd90",
+    "iterations/visual03/detail-4-270.png": "461c92f2a6ab2e9fa1b27a82d092749792b25228dbcfe357d0397418a42620e5",
+    "iterations/visual03/detail-4-90.png": "c260115c19799edf0bf9aada868f887128b375f8e1b1df4df61b98f48922c79c",
+    "iterations/visual03/detail-5-0.png": "fa843f0b263a9cdca4cd292cff4df4500d3bc96d19705161aa0fb50b4b6ef49a",
+    "iterations/visual03/detail-5-160.png": "a4cb8359105d3935ca4387710451c7a2dccb2ac97d19e2e3a9e8fe81e5eead3a",
+    "iterations/visual03/detail-5-225.png": "5c8182821519b05b0524336e82c959a39830c0e7381a02eca82be2aa9fa03c81",
+    "iterations/visual03/detail-5-270.png": "a362f1584b2486fc90c6b3496b5262714a0a01fcf15f518be6be717220e1800f",
+    "iterations/visual03/detail-5-90.png": "7c3c1aadefa3d37baf07b3961ecdee428d1ef74f6552fe0ae8755767f79bc106",
+    "iterations/visual03/detail-6-0.png": "f2f6e3403ae3340151602ca8e61c391ffa7781aa4304059e9f49fd75208e963f",
+    "iterations/visual03/detail-6-160.png": "53b5209184eac4fa759c782a515361f6374d58d98cac4fb51bcd0377a87be36e",
+    "iterations/visual03/detail-6-225.png": "e8d96e1b7e5c13985324d074b50a4544ecd49439b7a8cd53a0bd573d837c89da",
+    "iterations/visual03/detail-6-270.png": "20617e2f03d9707728c738664f70e4b8436a4baa73d1f51324528e315a8e3f5f",
+    "iterations/visual03/detail-6-90.png": "33e559202e83388ec80ccdfad60557318ab30441c965fb2332b885fb7a8b2818",
+    "iterations/visual03/detail-7-0.png": "8eaea81846807d8916ed089dffecfd8608ae30aae647e088d83977d0c2fb3a18",
+    "iterations/visual03/detail-7-160.png": "dabd115fc22a8105047cebcacef5397ce5b6600183c8bdf1a1e98b6f60839d3a",
+    "iterations/visual03/detail-7-225.png": "75b2e2d088779c5c6ebcd2b6d32dbf8f375a03c55dcda01bf0316fbde09f3858",
+    "iterations/visual03/detail-7-270.png": "aba2acb0b39e3e8b459473279328d9a8a490a857c21ff7282c2e351524da0607",
+    "iterations/visual03/detail-7-90.png": "ccde55c56f8fdd8c75008729c27737415161996c18d152bf528edbbb49d9a7ca",
+    "iterations/visual03/fixture-source/MAPINFO.txt": "4762e597a0bd66e8e53fb59ea4e0eb3a80fb62fa7d26cd72fbb4e80264f3b749",
+    "iterations/visual03/fixture-source/ZSCRIPT.txt": "b634c353fc4b7e1afb9ced78e4dc5808b6107b29d784b6fed6ac7f796d5b2144",
+    "iterations/visual03/fixture.zs": "6e201aac196b161950f05cd12d76b4c5c6aece0e7f945e089962507f3168fa8e",
+    "iterations/visual03/RESULTS.json": "c16785363a7de1c690d84ed2f78daa96eea6da583e286637e851e052852e16d5",
+    "iterations/visual03/session.ini": "b1c56ab97f7a70f6e6f8bc443c3a3a28b6c0317ca009695acb505d49e9dffde5",
+    "iterations/visual03/visual-part-1.cfg": "4311d30eeb6b3445e909c34432d8db6f4a39016022f7baf85726fc465964f3c0",
+    "iterations/visual03/visual-part-2.cfg": "072aacc8b486aafade110d360c2caccd2fc1a7d6cc77467db67976a47f4b9ea0",
+    "iterations/visual03/visual-process.log": "e661e75741a4704ae84da4495bab96417391f9c828e5bce2bb4349c1d31670f1",
+    "iterations/visual03/visual.cfg": "d9a6e91ba25538bc587fb0ff072c6abe693a60fbb716422a8107dc896b25266b",
+    "iterations/visual03/visual.log": "69b076ce54d7e9e5759c9df1d5b68371feba8f2d65006d5ccc05224eb885542c",
+    "presentation/models-8/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/models-8/engine.log": "df63f6798c6171835fcb1461dcd646a43eb763c634f09e1b079da7bbfe4db3a4",
+    "presentation/models-8/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/models-8/fixture-source/ZSCRIPT.txt": "f91ea39f72d6cc81aa83227fbf150eeed8a5ae632c089b6555d7e3613eb3c3a8",
+    "presentation/models-8/presents.csv": "54d64662376fb5a5bf8955a5be063758ba85b302586128556a10eef98287b048",
+    "presentation/models-8/process.log": "5d62cf6a3c8b81570800ad59cbe3ad2a4f5a865b5ce3460b09def3f331a2ad24",
+    "presentation/models-8/scene.png": "1d731ff52bdc8b336f24555960c075664240a1f4f343d6b4d9439811d63b7c4d",
+    "presentation/models-8/session.ini": "c5be04fdf9bffbe0c52887dc709aa1d4962c9143cc4408e54e616ad074a715a4",
+    "presentation/RESULTS.json": "5a688d4435189c5a95835e3ca0ed511620992993f83844e2d3ffebc70230304c",
+    "presentation/sprites-8/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/sprites-8/engine.log": "80902f98429dcb1353eeba586bfa9aac8aca9fde42fb5853b2d3084e9cdf272c",
+    "presentation/sprites-8/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/sprites-8/fixture-source/ZSCRIPT.txt": "f91ea39f72d6cc81aa83227fbf150eeed8a5ae632c089b6555d7e3613eb3c3a8",
+    "presentation/sprites-8/presents.csv": "94168b5e229a3b8f37313bd71130351187191fb1f1af6673852bfcd4c9f3d4d2",
+    "presentation/sprites-8/process.log": "3c8a28901422bfa200a214049169bc569dbf2e5806b55850771349eb3577b23a",
+    "presentation/sprites-8/scene.png": "a4bf00ac32c6ba5d6cd8049d965489a20777d10281ea83aaded9ab78848f6208",
+    "presentation/sprites-8/session.ini": "59066c566e9afca4e97d4c1ede6914eb645693ab225190846791a7e6bd2808db",
+    "validation-final.json": "b86870a2ec866ddc683a66980560a42409540cc53d170c29108af95e1fbcb9f7"
+  }
+}
