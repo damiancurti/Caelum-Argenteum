@@ -1,0 +1,36 @@
+newmtl coal
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/ores/coal.png
+newmtl raw_copper
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/ores/raw_copper.png
+newmtl raw_tin
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/ores/raw_tin.png
+newmtl raw_iron
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/ores/raw_iron.png
+newmtl raw_silver
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/ores/raw_silver.png
+newmtl raw_gold
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/ores/raw_gold.png
+newmtl coal_matrix
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/ores/coal.png
+newmtl raw_copper_matrix
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/ores/raw_copper.png
+newmtl raw_tin_matrix
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/ores/raw_tin.png
+newmtl raw_iron_matrix
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/ores/raw_iron.png
+newmtl raw_silver_matrix
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/ores/raw_silver.png
+newmtl raw_gold_matrix
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/ores/raw_gold.png

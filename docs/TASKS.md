@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.19** - 2026-11-13.
+Documentation version: **5.17.20** - 2026-11-13.
+
+## #684 - Coal and raw-metal drop models (5.17.20)
+
+Six candidate volumes pass native visual review and 875 five-phase
+pickup/save/rollback checks, including eighteen requested-tier normalization
+probes. The six-body presentation pair and 22-file deterministic export pass;
+29 earlier native gem resources remain byte-identical. Author art
+acceptance remains CA684-ORES-01; this does not close broader #647.
 
 ## #682 - Regional beast-men gallery and two materials (5.17.19)
 

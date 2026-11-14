@@ -1,6 +1,22 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.19** - 2026-11-13.
+Documentation version: **5.17.20** - 2026-11-13.
+
+## 5.17.20 - Raw-material world-drop models (#684, 2026-11-13)
+
+The author's all-dropped-inventory-3D request extends to coal and five raw-metal
+materials. Candidate closed rock clusters preserve six original icon images and
+all existing material rules. The shared gem exporter/validator retain unchanged
+default native output (29 prior resources). The inherited distinct-tier test
+failed because raw materials normalize to tier1; the corrected fixture verifies
+all eighteen requests and six canonical stacks without changing material rules
+(CA-KP-237). Ninety closed parts include a recessed core connecting all 42
+protrusions; two final exports repeat 22 files. Final native compatibility passes
+875 assertions across five phases. The six-visible-object sprite/model pair
+measures 916.75/902.12 queue presents/s, p95 1.2602/1.2812 ms,
+p99 1.5619/1.5864 ms. ASSETS and SUMMARY retain environment, exact
+package/source proof, failed iterations and qualifications. CA684-ORES-01
+remains pending; broader inventory/campaign work is unfinished.
 
 ## 5.17.19 - Regional beast-men inspection map (#682, 2026-11-13)
 

@@ -1,6 +1,12 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.19** - 2026-11-13.
+Documentation version: **5.17.20** - 2026-11-13.
+
+## 5.17.20 - Coal and five raw-metal models (#684)
+
+Six closed candidate world-drop models reuse the original material icons and
+rules. Final native compatibility passes 875 checks; deterministic exports and
+one six-body presentation pair pass. Author CA684-ORES-01 remains pending. Other 3D and campaign work remains unfinished.
 
 ## 5.17.19 - Pampa/NOA studies and beast-men gallery (#682)
 
