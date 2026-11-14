@@ -1,0 +1,9 @@
+newmtl atlas
+Kd 1 1 1
+map_Kd src/models/caelum/folklore/hybrid_serpents/materials.png
+newmtl iris
+Kd 1 1 1
+map_Kd src/models/caelum/folklore/hybrid_serpents/iris.png
+newmtl dark
+Kd 1 1 1
+map_Kd src/models/caelum/folklore/hybrid_serpents/dark.png

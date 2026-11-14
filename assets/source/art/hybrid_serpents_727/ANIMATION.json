@@ -1,0 +1,467 @@
+{
+  "schema_revision": 1,
+  "issue": 727,
+  "parent_issue": 461,
+  "status": "candidate_author_review_pending",
+  "species": {
+    "mboi_tui": {
+      "catalogue_id": "CA-FOLK-048",
+      "actor": "CaelumBestiary048",
+      "design": "assets/source/art/hybrid_serpents_727/mboi_tui.json",
+      "reference": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/48_mboi_tui.png",
+      "textures": {
+        "atlas": "assets/source/art/hybrid_serpents_727/materials.png",
+        "iris": "assets/source/art/hybrid_serpents_727/iris.png",
+        "dark": "assets/source/art/hybrid_serpents_727/dark.png"
+      }
+    },
+    "mboi_yagua": {
+      "catalogue_id": "CA-FOLK-052",
+      "actor": "CaelumBestiary052",
+      "design": "assets/source/art/hybrid_serpents_727/mboi_yagua.json",
+      "reference": "assets/source/bestiary_453/imagenes/05_Bestias_magicas/52_mboi_yagua.png",
+      "textures": {
+        "atlas": "assets/source/art/hybrid_serpents_727/materials.png",
+        "iris": "assets/source/art/hybrid_serpents_727/iris.png",
+        "dark": "assets/source/art/hybrid_serpents_727/dark.png"
+      }
+    }
+  },
+  "profile_source": "src/caelum/actors/CaelumFolkloreCharacters.zs",
+  "profile_class": "CaelumMandinga",
+  "frames": [
+    {
+      "sprite": "MIID",
+      "letter": "A",
+      "action": "idle",
+      "control": {
+        "sway": 0,
+        "phase": 0,
+        "reach": 0,
+        "lift": 0,
+        "fall": 0,
+        "jaw": 0
+      }
+    },
+    {
+      "sprite": "MIID",
+      "letter": "B",
+      "action": "idle",
+      "control": {
+        "sway": 0.5,
+        "phase": 1,
+        "reach": 0,
+        "lift": 0.5,
+        "fall": 0,
+        "jaw": 0
+      }
+    },
+    {
+      "sprite": "MIRN",
+      "letter": "A",
+      "action": "run",
+      "control": {
+        "sway": 2.3,
+        "phase": 0.0,
+        "reach": -0.3,
+        "lift": 0,
+        "fall": 0,
+        "jaw": 0
+      }
+    },
+    {
+      "sprite": "MIRN",
+      "letter": "B",
+      "action": "run",
+      "control": {
+        "sway": 2.3,
+        "phase": 1.5707963267948966,
+        "reach": 0.3,
+        "lift": 0,
+        "fall": 0,
+        "jaw": 0
+      }
+    },
+    {
+      "sprite": "MIRN",
+      "letter": "C",
+      "action": "run",
+      "control": {
+        "sway": 2.3,
+        "phase": 3.141592653589793,
+        "reach": -0.3,
+        "lift": 0,
+        "fall": 0,
+        "jaw": 0
+      }
+    },
+    {
+      "sprite": "MIRN",
+      "letter": "D",
+      "action": "run",
+      "control": {
+        "sway": 2.3,
+        "phase": 4.71238898038469,
+        "reach": 0.3,
+        "lift": 0,
+        "fall": 0,
+        "jaw": 0
+      }
+    },
+    {
+      "sprite": "MIWK",
+      "letter": "A",
+      "action": "walk",
+      "control": {
+        "sway": 1.3,
+        "phase": 6.283185307179586,
+        "reach": -0.3,
+        "lift": 0,
+        "fall": 0,
+        "jaw": 0
+      }
+    },
+    {
+      "sprite": "MIWK",
+      "letter": "B",
+      "action": "walk",
+      "control": {
+        "sway": 1.3,
+        "phase": 7.853981633974483,
+        "reach": 0.3,
+        "lift": 0,
+        "fall": 0,
+        "jaw": 0
+      }
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "A",
+      "action": "stun",
+      "control": {
+        "sway": 0,
+        "phase": 0,
+        "reach": -1,
+        "lift": -1,
+        "fall": 0,
+        "jaw": 0
+      }
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "D",
+      "action": "attack_prepare",
+      "control": {
+        "sway": 0,
+        "phase": 0,
+        "reach": -3,
+        "lift": 1,
+        "fall": 0,
+        "jaw": 12
+      }
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "E",
+      "action": "attack_release",
+      "control": {
+        "sway": 0,
+        "phase": 0,
+        "reach": 7,
+        "lift": -1,
+        "fall": 0,
+        "jaw": 36
+      }
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "F",
+      "action": "pain",
+      "control": {
+        "sway": 1,
+        "phase": 2,
+        "reach": -2,
+        "lift": -2,
+        "fall": 0,
+        "jaw": 9
+      }
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "G",
+      "action": "death",
+      "control": {
+        "sway": 0.5,
+        "phase": 1,
+        "reach": 6.666666666666666,
+        "lift": 0,
+        "fall": 0.16666666666666666,
+        "jaw": 20
+      }
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "H",
+      "action": "death",
+      "control": {
+        "sway": 0.5,
+        "phase": 1,
+        "reach": 13.333333333333332,
+        "lift": 0,
+        "fall": 0.3333333333333333,
+        "jaw": 17
+      }
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "I",
+      "action": "death",
+      "control": {
+        "sway": 0.5,
+        "phase": 1,
+        "reach": 20.0,
+        "lift": 0,
+        "fall": 0.5,
+        "jaw": 14
+      }
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "J",
+      "action": "death",
+      "control": {
+        "sway": 0.5,
+        "phase": 1,
+        "reach": 26.666666666666664,
+        "lift": 0,
+        "fall": 0.6666666666666666,
+        "jaw": 11
+      }
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "K",
+      "action": "death",
+      "control": {
+        "sway": 0.5,
+        "phase": 1,
+        "reach": 33.333333333333336,
+        "lift": 0,
+        "fall": 0.8333333333333334,
+        "jaw": 8
+      }
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "L",
+      "action": "death",
+      "control": {
+        "sway": 0.5,
+        "phase": 1,
+        "reach": 40.0,
+        "lift": 0,
+        "fall": 1.0,
+        "jaw": 5
+      }
+    },
+    {
+      "sprite": "MDBR",
+      "letter": "A",
+      "action": "breath",
+      "control": {
+        "sway": 0,
+        "phase": 0,
+        "reach": 2,
+        "lift": 0.0,
+        "fall": 0,
+        "jaw": 20
+      }
+    },
+    {
+      "sprite": "MDBR",
+      "letter": "B",
+      "action": "breath",
+      "control": {
+        "sway": 0,
+        "phase": 0,
+        "reach": 4,
+        "lift": 0.5,
+        "fall": 0,
+        "jaw": 32
+      }
+    },
+    {
+      "sprite": "MDBR",
+      "letter": "C",
+      "action": "breath",
+      "control": {
+        "sway": 0,
+        "phase": 0,
+        "reach": 3,
+        "lift": 1.0,
+        "fall": 0,
+        "jaw": 28
+      }
+    },
+    {
+      "sprite": "MDBR",
+      "letter": "D",
+      "action": "breath",
+      "control": {
+        "sway": 0,
+        "phase": 0,
+        "reach": 1,
+        "lift": 1.5,
+        "fall": 0,
+        "jaw": 16
+      }
+    },
+    {
+      "sprite": "SLMD",
+      "letter": "A",
+      "action": "rest",
+      "control": {
+        "sway": 0,
+        "phase": 0,
+        "reach": 38.4,
+        "lift": 0,
+        "fall": 0.96,
+        "jaw": 0
+      }
+    }
+  ],
+  "inspection": {
+    "views": [
+      {
+        "name": "front-oblique",
+        "position": [
+          55,
+          -65,
+          38
+        ],
+        "target": [
+          -4,
+          0,
+          25
+        ]
+      },
+      {
+        "name": "front",
+        "position": [
+          70,
+          0,
+          35
+        ],
+        "target": [
+          0,
+          0,
+          25
+        ]
+      },
+      {
+        "name": "side",
+        "position": [
+          0,
+          -90,
+          35
+        ],
+        "target": [
+          -5,
+          0,
+          25
+        ]
+      },
+      {
+        "name": "rear",
+        "position": [
+          -85,
+          0,
+          35
+        ],
+        "target": [
+          -8,
+          0,
+          25
+        ]
+      },
+      {
+        "name": "head-front",
+        "position": [
+          40,
+          0,
+          47
+        ],
+        "target": [
+          16,
+          0,
+          43
+        ]
+      },
+      {
+        "name": "head-oblique",
+        "position": [
+          35,
+          -18,
+          47
+        ],
+        "target": [
+          15,
+          0,
+          43
+        ]
+      }
+    ],
+    "keys": [
+      0,
+      3,
+      8,
+      9,
+      10,
+      11,
+      14,
+      17,
+      18,
+      22
+    ],
+    "studio": {
+      "ambient": 128,
+      "lighting_basis": "Scaled from the existing #455 Pombero preview studio; inspection-only, not new campaign lighting.",
+      "lights": [
+        {
+          "position": [
+            29,
+            -35.5,
+            51.6
+          ],
+          "color": [
+            220,
+            215,
+            210
+          ],
+          "radius": 58.1
+        },
+        {
+          "position": [
+            -35.5,
+            40.3,
+            40.3
+          ],
+          "color": [
+            190,
+            205,
+            235
+          ],
+          "radius": 51.6
+        }
+      ]
+    }
+  },
+  "source_sha256": {
+    "assets/source/art/hybrid_serpents_727/materials.png": "a2c88dc7380f27bcec9039489cb235430eb3ba9ac6bd80314e081445f853c0e0",
+    "assets/source/art/hybrid_serpents_727/iris.png": "8b231a9556f30af1b2c3d11ee5e4e4d6b63f7336a5301d225bb7f4f43c5639cc",
+    "assets/source/art/hybrid_serpents_727/dark.png": "6573658a5e61c4c8f75046435e8e8d1f1e85e6348007c69fc911483fe579fac4",
+    "src/caelum/actors/CaelumFolkloreCharacters.zs": "80c5a00ef221395a6688125d8871c3f84ccf21e2aeb63b5c0bd4adb99dd2e420",
+    "assets/source/bestiary_453/imagenes/05_Bestias_magicas/48_mboi_tui.png": "30068e43bef04cd9a08c184fea47f390c9bbd6e09a39b41abd7c80a69bc05df0",
+    "assets/source/bestiary_453/imagenes/05_Bestias_magicas/52_mboi_yagua.png": "ebec130cb9bea23848ba0a58f77a648c6632fc8fb71d2072745a32818ca77ad8"
+  }
+}

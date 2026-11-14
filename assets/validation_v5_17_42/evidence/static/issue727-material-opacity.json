@@ -1,0 +1,32 @@
+{
+  "materials.png": {
+    "size": [
+      1086,
+      1448
+    ],
+    "alpha_extrema": [
+      255,
+      255
+    ]
+  },
+  "iris.png": {
+    "size": [
+      128,
+      128
+    ],
+    "alpha_extrema": [
+      255,
+      255
+    ]
+  },
+  "dark.png": {
+    "size": [
+      128,
+      128
+    ],
+    "alpha_extrema": [
+      255,
+      255
+    ]
+  }
+}
