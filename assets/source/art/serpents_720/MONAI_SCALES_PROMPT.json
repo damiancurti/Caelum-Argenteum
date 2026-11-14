@@ -1,0 +1,7 @@
+{
+  "prompt": "Create an original game material texture derived from the olive, charcoal and muted brass scales of the supplied owned Mo??i creature concept. Output ONLY a square, flat, seamless reptile-scale albedo texture, filling the entire image; no creature, no scene, no sphere, no text, no frame, no transparent background. Dense small overlapping rounded diamond scales in orderly staggered rows, approximately 22 scales across and 32 rows tall, with subtle size and hue variation. Very dark olive and charcoal centers, restrained worn ochre edges, fine organic surface grain. The scales should point DOWN the image. Painted dark-fantasy game material with readable edges and subdued roughness; broad even neutral lighting, no cast shadows or glossy highlights, no directional gradient. Continuous pattern at all four edges so it can repeat on a long native 3D serpent. Preserve the concept's subdued olive palette; do not add horns, eyes, flame, metal ornaments, labels, grid lines or lighting effects.",
+  "referenced_image_paths": [
+    "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-713\\assets\\source\\bestiary_453\\imagenes\\05_Bestias_magicas\\49_monai.png"
+  ],
+  "transparent_background": false
+}

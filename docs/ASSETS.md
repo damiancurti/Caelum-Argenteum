@@ -1,6 +1,80 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.37** - 2026-11-14.
+Documentation version: **5.17.38** - 2026-11-14.
+
+## 5.17.38 - Moñái and Mbói Tatá native models (#720, parent #461)
+
+Two owned serpent concepts now have actual volumetric native models on the
+existing CA-FOLK-049 Moñái (unique, Selva) and 051 Mbói Tatá (repeatable,
+Litoral/Selva) classes. Moñái retains olive scales, pale ventral scutes, two
+horns and slit eyes. Mbói Tatá has bronze/charcoal scales with ember seams,
+brass scutes and closed flame-shaped dorsal/tail crests and a five-part crown.
+Each continuous limbless body has editable spine, section radii, anatomy,
+materials and pose data. Native art covers sixteen of 56 new folklore classes.
+
+| Model | Vertices | Triangles | Closed components | Neutral contacts | Independent posed checks |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Moñái | 11,379 | 20,576 | 13 | 12 | 96 |
+| Mbói Tatá | 13,641 | 23,784 | 33 | 32 | 256 |
+
+All 23 inherited sprite/frame/action identities and the approved provisional
+Mandinga rules remain unchanged, including attacks, hostility, loot, actor
+Scale, collision and saves. The neutral model fits the existing Height; its
+coiled footprint can extend beyond collision Radius. Catalogue metre ranges
+do not authorize gameplay resizing. No new fire effect, attack or population
+is added. Rulo, Mandinga, Zupay and other native art remain unchanged. Fixed
+creature anatomy is separate from modular humanoid/worn-equipment work.
+
+Source: assets/source/art/serpents_720. Built-in image_gen produced the two
+scale textures and a four-material belly/horn/crest atlas. Exact prompts,
+original output paths, image hashes and owned reference provenance are
+retained. Peuchen iris/dark textures are reused unchanged. Portable OBJ/MTL,
+JSON anatomy and the original materials remain editable. Regenerate with
+python assets/generators/generate_serpent_models.py --output build/serpents
+--install. Fourteen final exported files repeat byte-for-byte.
+
+Independent serialized checks verify 46 closed outward solids, 44 rooted
+neutral contacts, exact quantized OBJ/native equivalence and no collapsed
+triangle in any of the 23 poses per species. All poses have a grounded lowest
+vertex and six distinct death stages. Four critical native frames (idle,
+attack release, final death and rest) receive 352 attachment checks: witnesses
+are transported from four actual serialized child vertices, independently
+of generator deformation, then tested against both solids with two rays.
+This does not prove every interpolation or full-surface clearance.
+
+Initial geometry exposed collapsed tail/pupil/crest-tip triangles and invalid
+attachment witnesses. Revised sampling and radii fixed them; extending the
+falling neck removed a pinch. Native visual review then exposed accumulated
+body-frame roll, corrected with world-up anatomical frames and reoriented
+crest data. A later independent posed check found the jaw detached at attack
+frame 10 despite valid neutral contacts. Enlarging the jaw around its existing
+pivot fixed both species; Mbói Tatá also gained three crown flames. The final
+ordinary-light previews pass 51 checks each. Front/side/rear, head details,
+attack and selected run/pain/death/lying views were inspected. Simplified
+heads, regular coil, belly UV transitions and rigid jaw/crest remain subject
+to author review. All prior candidates and failure evidence are retained.
+Final provenance-only regeneration preserves all thirteen nonmanifest files.
+
+Final native continuity passes 230 assertions (115 each: 16/16/51/16/16),
+covering old sprite saves, model adoption, fresh models, reload and rollback.
+Nine inherited combat scenarios against a Mandinga control and finite loot
+reload pass 136 assertions (66/50/20). One sequential 700-tic sprite/model
+presentation comparison per species records:
+
+| Species | Queue presents/s, sprite / model | p95 ms, sprite / model | p99 ms, sprite / model |
+| --- | ---: | ---: | ---: |
+| monai | 1801.50 / 1811.85 | 0.7418 / 0.7348 | 0.8872 / 0.8627 |
+| mboi_tata | 1814.66 / 1815.26 | 0.7371 / 0.7091 | 0.9066 / 0.8224 |
+
+Environment: Windows 11, Ryzen 9 5950X, RTX 3070 Ti, GZDoom 4.14.2 Vulkan,
+1280x720, background unpaused, audio 5%, uncapped presentation without vsync.
+Queue intervals are not GPU/display timing. Unequal footprints and one pair
+do not establish repeatability or crowd/campaign performance. All 18,412
+runtime entries match src; only eight new serpent resources, MODELDEF and
+two release diagnostics differ from #717. Evidence is in
+assets/validation_v5_17_38/evidence/SUMMARY.json. CA720-SERPENTS-01 is pending.
+Regional-gallery placement is a separate issue. Other characters, worn and
+first-person equipment, and the original campaign remain unfinished.
 
 ## 5.17.37 - Wooden crafting component world models (#717, parent #647)
 

@@ -4,6 +4,28 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-243 - Validate animated joints independently of neutral anatomy
+
+Status/evidence: STATIC-VERIFIED posed-joint defect and ENGINE-OBSERVED
+candidate correction, #720, 2026-11-14. Closed neutral solids and valid
+attachment witnesses do not prove that a rotating jaw remains attached.
+Moñái and Mbói Tatá passed neutral checks while their lower jaws detached at
+attack release. Recover witness coordinates from four noncoplanar serialized
+child vertices and propagate them through matching native pose vertices;
+then independently test the moved witness inside both child and parent.
+This avoids duplicating the generator's pose equations in the check.
+
+The critical-frame check failed for both original jaws at frame 10. Increasing
+the jaw volume around the existing pivot corrected the actual geometry;
+352 checks now pass across frames 0, 10, 17 and 22. These witnesses do not
+certify every interpolation or full-surface clearance. Separately, unrestricted
+parallel transport around a coil accumulated anatomical roll: belly and
+dorsal crest drifted sideways despite closed geometry. A world-up anatomical
+frame and reoriented crest data corrected the reviewed native views. Keep
+topology, posed attachment, material orientation and author art acceptance
+as distinct evidence. See validate_serpent_models.py and
+assets/validation_v5_17_38/evidence, including the preserved failed iterations.
+
 ## CA-KP-242 - Check quantized anatomy and camera-matched pose visibility
 
 Status/evidence: STATIC-VERIFIED export defects and ENGINE-OBSERVED corrections,

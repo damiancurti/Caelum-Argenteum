@@ -1,6 +1,26 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.37** - 2026-11-14.
+Documentation version: **5.17.38** - 2026-11-14.
+
+## 5.17.38 - Native serpent family (#720, 2026-11-14)
+
+Implemented reference-led Moñái and Mbói Tatá with continuous volumetric
+bodies, closed attached anatomy and all 23 inherited combat identities.
+Preserved provisional combat, collision, saves and protected characters.
+Three original image_gen materials, exact prompts, source provenance and
+portable editable exports are retained. Native review corrected belly/crest
+roll; independent posed checks exposed and resolved an attack-jaw detachment
+that neutral contacts missed. Prior candidates and failures remain evidence.
+
+Fourteen final exports repeat; 46 closed solids, 44 neutral contacts and 352
+independent critical-pose attachment checks pass. Every serialized pose has
+noncollapsed triangles and a grounded lowest vertex. Native evidence passes
+230 continuity and 136 combat/loot assertions. Two qualified 700-tic
+sprite/model pairs, presentation tails and exact 18,412-entry packaging are
+recorded in ASSETS and assets/validation_v5_17_38/evidence/SUMMARY.json.
+CA720-SERPENTS-01 originates here and remains unconfirmed. Folklore native
+coverage reaches sixteen of 56; gallery integration, other characters,
+worn equipment and original campaign work remain unfinished.
 
 ## 5.17.37 - Wooden crafting components (#717, 2026-11-14)
 

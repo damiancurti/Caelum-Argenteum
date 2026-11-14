@@ -1,0 +1,12 @@
+newmtl scales
+Kd 1 1 1
+map_Kd src/models/caelum/folklore/serpents/monai_scales.png
+newmtl atlas
+Kd 1 1 1
+map_Kd src/models/caelum/folklore/serpents/materials.png
+newmtl iris
+Kd 1 1 1
+map_Kd src/models/caelum/folklore/serpents/iris.png
+newmtl dark
+Kd 1 1 1
+map_Kd src/models/caelum/folklore/serpents/dark.png
