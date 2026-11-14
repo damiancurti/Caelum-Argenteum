@@ -1,0 +1,1422 @@
+{
+  "contacts": {
+    "F": [
+      {
+        "part": "shirt_collar",
+        "target": "shirt_body",
+        "witness": [
+          2.9720079735202494,
+          -4.792814841121495,
+          97.58000007476636
+        ]
+      },
+      {
+        "part": "left_shirt_sleeve",
+        "target": "shirt_body",
+        "witness": [
+          -16.893595358273405,
+          0.26490262634443756,
+          73.68961219344196
+        ]
+      },
+      {
+        "part": "left_shirt_cuff",
+        "target": "left_shirt_sleeve",
+        "witness": [
+          -21.545736363748144,
+          0.3790327572245796,
+          50.648033790322316
+        ]
+      },
+      {
+        "part": "left_coat_sleeve",
+        "target": "outer_coat",
+        "witness": [
+          -17.57470350115076,
+          2.2415931763285757,
+          69.3554921676783
+        ]
+      },
+      {
+        "part": "left_coat_cuff",
+        "target": "left_coat_sleeve",
+        "witness": [
+          -20.61699499760972,
+          0.46616324139798554,
+          49.98687527722601
+        ]
+      },
+      {
+        "part": "right_shirt_sleeve",
+        "target": "shirt_body",
+        "witness": [
+          17.222824265697422,
+          1.977855196554784,
+          73.68882642905899
+        ]
+      },
+      {
+        "part": "right_shirt_cuff",
+        "target": "right_shirt_sleeve",
+        "witness": [
+          29.922873066153052,
+          0.3791544097465053,
+          50.673036608497014
+        ]
+      },
+      {
+        "part": "right_coat_sleeve",
+        "target": "outer_coat",
+        "witness": [
+          17.620275751986284,
+          4.592590251553741,
+          73.68567563619528
+        ]
+      },
+      {
+        "part": "right_coat_cuff",
+        "target": "right_coat_sleeve",
+        "witness": [
+          30.984042749260336,
+          0.46622873178590857,
+          50.002661751742515
+        ]
+      }
+    ],
+    "FW": [
+      {
+        "part": "shirt_collar",
+        "target": "shirt_body",
+        "witness": [
+          2.9720082478632475,
+          -4.792815042735042,
+          97.57999987179488
+        ]
+      },
+      {
+        "part": "left_shirt_sleeve",
+        "target": "shirt_body",
+        "witness": [
+          -16.893595591973153,
+          0.26490290996416416,
+          73.68961223050749
+        ]
+      },
+      {
+        "part": "left_shirt_cuff",
+        "target": "left_shirt_sleeve",
+        "witness": [
+          -21.54573583163289,
+          0.37903310872920637,
+          50.64803339338787
+        ]
+      },
+      {
+        "part": "left_coat_sleeve",
+        "target": "outer_coat",
+        "witness": [
+          -17.574703518299533,
+          2.2415935388773782,
+          69.35549217436181
+        ]
+      },
+      {
+        "part": "left_coat_cuff",
+        "target": "left_coat_sleeve",
+        "witness": [
+          -20.616994676829254,
+          0.4661635795810615,
+          49.98687477783032
+        ]
+      },
+      {
+        "part": "right_shirt_sleeve",
+        "target": "shirt_body",
+        "witness": [
+          17.222824277398804,
+          1.9778552990180507,
+          73.68882647439301
+        ]
+      },
+      {
+        "part": "right_shirt_cuff",
+        "target": "right_shirt_sleeve",
+        "witness": [
+          29.92287287509139,
+          0.37915463490708196,
+          50.67303621350038
+        ]
+      },
+      {
+        "part": "right_coat_sleeve",
+        "target": "outer_coat",
+        "witness": [
+          17.620275614647255,
+          4.592590443992872,
+          73.68567568251162
+        ]
+      },
+      {
+        "part": "right_coat_cuff",
+        "target": "right_coat_sleeve",
+        "witness": [
+          30.984043083773425,
+          0.46622907079959375,
+          50.002661237527064
+        ]
+      },
+      {
+        "part": "raised_coat_collar",
+        "target": "outer_coat",
+        "witness": [
+          4.733912735042735,
+          6.508668205128205,
+          94.07999987179487
+        ]
+      }
+    ],
+    "CS": [
+      {
+        "part": "shirt_collar",
+        "target": "shirt_body",
+        "witness": [
+          2.9720081636363638,
+          -4.792815381818182,
+          119.5799996409091
+        ]
+      },
+      {
+        "part": "left_shirt_sleeve",
+        "target": "shirt_body",
+        "witness": [
+          -16.973128443643514,
+          1.0211282665149735,
+          96.69537332022016
+        ]
+      },
+      {
+        "part": "left_shirt_cuff",
+        "target": "left_shirt_sleeve",
+        "witness": [
+          -20.79218864195581,
+          0.22569925596977675,
+          87.68530151237219
+        ]
+      },
+      {
+        "part": "left_trouser_leg",
+        "target": "trouser_hips",
+        "witness": [
+          -7.226777658320673,
+          7.2952173551283135,
+          60.68197662337709
+        ]
+      },
+      {
+        "part": "left_trouser_cuff",
+        "target": "left_trouser_leg",
+        "witness": [
+          -4.379753967516311,
+          0.4269169460244589,
+          2.1368474947662848
+        ]
+      },
+      {
+        "part": "right_shirt_sleeve",
+        "target": "shirt_body",
+        "witness": [
+          17.220964311325144,
+          1.978466281460769,
+          96.69474094143118
+        ]
+      },
+      {
+        "part": "right_shirt_cuff",
+        "target": "right_shirt_sleeve",
+        "witness": [
+          22.08753927862686,
+          3.4762090513521526,
+          87.68250627236009
+        ]
+      },
+      {
+        "part": "right_trouser_leg",
+        "target": "trouser_hips",
+        "witness": [
+          15.500567507674626,
+          0.7304505830423105,
+          60.69338213892024
+        ]
+      },
+      {
+        "part": "right_trouser_cuff",
+        "target": "right_trouser_leg",
+        "witness": [
+          13.62024626546075,
+          0.42691694581581013,
+          2.1368474673316453
+        ]
+      }
+    ],
+    "CE": [
+      {
+        "part": "shirt_collar",
+        "target": "shirt_body",
+        "witness": [
+          2.9720084322033897,
+          -4.792814953389831,
+          119.57999981355933
+        ]
+      },
+      {
+        "part": "left_shirt_sleeve",
+        "target": "shirt_body",
+        "witness": [
+          -16.89359549120408,
+          0.2649028289265466,
+          95.68961175046499
+        ]
+      },
+      {
+        "part": "left_shirt_cuff",
+        "target": "left_shirt_sleeve",
+        "witness": [
+          -21.545736411551164,
+          0.37903328962324156,
+          72.6480339587938
+        ]
+      },
+      {
+        "part": "left_trouser_leg",
+        "target": "trouser_hips",
+        "witness": [
+          -7.226778045229781,
+          7.2952174408635075,
+          60.68197659798049
+        ]
+      },
+      {
+        "part": "left_trouser_cuff",
+        "target": "left_trouser_leg",
+        "witness": [
+          -4.379753957208954,
+          0.4269169587108513,
+          2.136847749543188
+        ]
+      },
+      {
+        "part": "left_coat_sleeve",
+        "target": "outer_coat",
+        "witness": [
+          -17.574703342686057,
+          2.241593213589031,
+          91.35549195737018
+        ]
+      },
+      {
+        "part": "left_coat_cuff",
+        "target": "left_coat_sleeve",
+        "witness": [
+          -20.616994927671144,
+          0.46616326897037064,
+          71.98687526194048
+        ]
+      },
+      {
+        "part": "right_shirt_sleeve",
+        "target": "shirt_body",
+        "witness": [
+          17.222824177539962,
+          1.9778553378460748,
+          95.68882598426696
+        ]
+      },
+      {
+        "part": "right_shirt_cuff",
+        "target": "right_shirt_sleeve",
+        "witness": [
+          29.92287309273924,
+          0.37915481712088034,
+          72.67303676482715
+        ]
+      },
+      {
+        "part": "right_trouser_leg",
+        "target": "trouser_hips",
+        "witness": [
+          15.5005675073041,
+          0.730450634772587,
+          60.69338213460924
+        ]
+      },
+      {
+        "part": "right_trouser_cuff",
+        "target": "right_trouser_leg",
+        "witness": [
+          13.620246080926638,
+          0.4269169587108513,
+          2.136847749543188
+        ]
+      },
+      {
+        "part": "right_coat_sleeve",
+        "target": "outer_coat",
+        "witness": [
+          17.620275452418227,
+          4.59259030362524,
+          95.68567519739797
+        ]
+      },
+      {
+        "part": "right_coat_cuff",
+        "target": "right_coat_sleeve",
+        "witness": [
+          30.98404295611207,
+          0.4662287600485299,
+          72.00266174219531
+        ]
+      }
+    ],
+    "CW": [
+      {
+        "part": "shirt_collar",
+        "target": "shirt_body",
+        "witness": [
+          2.972007951890034,
+          -4.792815127147766,
+          97.58000030927836
+        ]
+      },
+      {
+        "part": "left_shirt_sleeve",
+        "target": "shirt_body",
+        "witness": [
+          -16.893595589881144,
+          0.26490259946875183,
+          73.68961208951455
+        ]
+      },
+      {
+        "part": "left_shirt_cuff",
+        "target": "left_shirt_sleeve",
+        "witness": [
+          -21.545736004635337,
+          0.37903319975855493,
+          50.64803373815629
+        ]
+      },
+      {
+        "part": "left_coat_sleeve",
+        "target": "outer_coat",
+        "witness": [
+          -17.574703248663997,
+          2.241593068319682,
+          69.3554920862925
+        ]
+      },
+      {
+        "part": "left_coat_cuff",
+        "target": "left_coat_sleeve",
+        "witness": [
+          -20.61699486203767,
+          0.46616370581210725,
+          49.98687531997044
+        ]
+      },
+      {
+        "part": "right_shirt_sleeve",
+        "target": "shirt_body",
+        "witness": [
+          17.222824192843266,
+          1.9778550539104445,
+          73.68882633498232
+        ]
+      },
+      {
+        "part": "right_shirt_cuff",
+        "target": "right_shirt_sleeve",
+        "witness": [
+          29.922872903548154,
+          0.379154727359876,
+          50.673036549923424
+        ]
+      },
+      {
+        "part": "right_coat_sleeve",
+        "target": "outer_coat",
+        "witness": [
+          17.620275431963186,
+          4.592590071289151,
+          73.68567553467415
+        ]
+      },
+      {
+        "part": "right_coat_cuff",
+        "target": "right_coat_sleeve",
+        "witness": [
+          30.984043138778876,
+          0.46622919696283044,
+          50.00266177309423
+        ]
+      },
+      {
+        "part": "raised_coat_collar",
+        "target": "outer_coat",
+        "witness": [
+          4.733913037800687,
+          6.508668378006873,
+          94.08000045360824
+        ]
+      }
+    ],
+    "RS": [
+      {
+        "part": "shirt_collar",
+        "target": "shirt_body",
+        "witness": [
+          2.972008412844037,
+          -4.792815201834862,
+          119.58000004587159
+        ]
+      },
+      {
+        "part": "left_shirt_sleeve",
+        "target": "shirt_body",
+        "witness": [
+          -16.97312810461463,
+          1.0211280349394714,
+          96.69537342544034
+        ]
+      },
+      {
+        "part": "left_shirt_cuff",
+        "target": "left_shirt_sleeve",
+        "witness": [
+          -20.792188494855562,
+          0.2256990189196397,
+          87.68530182267959
+        ]
+      },
+      {
+        "part": "left_trouser_leg",
+        "target": "trouser_hips",
+        "witness": [
+          -5.362042348162969,
+          7.7337359565684665,
+          60.6813478165049
+        ]
+      },
+      {
+        "part": "left_trouser_cuff",
+        "target": "left_trouser_leg",
+        "witness": [
+          -4.379754255849649,
+          0.42691713458917596,
+          2.136847068310849
+        ]
+      },
+      {
+        "part": "right_shirt_sleeve",
+        "target": "shirt_body",
+        "witness": [
+          17.22096432392159,
+          1.9784663572916963,
+          96.69474103964926
+        ]
+      },
+      {
+        "part": "right_shirt_cuff",
+        "target": "right_shirt_sleeve",
+        "witness": [
+          22.087539175264833,
+          3.476208913034554,
+          87.68250658988158
+        ]
+      },
+      {
+        "part": "right_trouser_leg",
+        "target": "trouser_hips",
+        "witness": [
+          16.21002150519272,
+          0.38231378371510916,
+          62.56005893829203
+        ]
+      },
+      {
+        "part": "right_trouser_cuff",
+        "target": "right_trouser_leg",
+        "witness": [
+          13.62024633530887,
+          0.4269172729607998,
+          2.136847095374902
+        ]
+      }
+    ],
+    "RE": [
+      {
+        "part": "shirt_collar",
+        "target": "shirt_body",
+        "witness": [
+          2.9720084322033897,
+          -4.792814953389831,
+          119.57999981355933
+        ]
+      },
+      {
+        "part": "left_shirt_sleeve",
+        "target": "shirt_body",
+        "witness": [
+          -16.89359549120408,
+          0.2649028289265466,
+          95.68961175046499
+        ]
+      },
+      {
+        "part": "left_shirt_cuff",
+        "target": "left_shirt_sleeve",
+        "witness": [
+          -21.545736411551164,
+          0.37903328962324156,
+          72.6480339587938
+        ]
+      },
+      {
+        "part": "left_trouser_leg",
+        "target": "trouser_hips",
+        "witness": [
+          -5.362042418194627,
+          7.733736419422989,
+          60.681347658718934
+        ]
+      },
+      {
+        "part": "left_trouser_cuff",
+        "target": "left_trouser_leg",
+        "witness": [
+          -4.379753957208954,
+          0.4269169587108513,
+          2.136847749543188
+        ]
+      },
+      {
+        "part": "left_coat_sleeve",
+        "target": "outer_coat",
+        "witness": [
+          -17.574703342686057,
+          2.241593213589031,
+          91.35549195737018
+        ]
+      },
+      {
+        "part": "left_coat_cuff",
+        "target": "left_coat_sleeve",
+        "witness": [
+          -20.616994927671144,
+          0.46616326897037064,
+          71.98687526194048
+        ]
+      },
+      {
+        "part": "right_shirt_sleeve",
+        "target": "shirt_body",
+        "witness": [
+          17.222824177539962,
+          1.9778553378460748,
+          95.68882598426696
+        ]
+      },
+      {
+        "part": "right_shirt_cuff",
+        "target": "right_shirt_sleeve",
+        "witness": [
+          29.92287309273924,
+          0.37915481712088034,
+          72.67303676482715
+        ]
+      },
+      {
+        "part": "right_trouser_leg",
+        "target": "trouser_hips",
+        "witness": [
+          16.210021828448767,
+          0.3823139603414978,
+          62.560059041986094
+        ]
+      },
+      {
+        "part": "right_trouser_cuff",
+        "target": "right_trouser_leg",
+        "witness": [
+          13.620246080926638,
+          0.4269169587108513,
+          2.136847749543188
+        ]
+      },
+      {
+        "part": "right_coat_sleeve",
+        "target": "outer_coat",
+        "witness": [
+          17.620275452418227,
+          4.59259030362524,
+          95.68567519739797
+        ]
+      },
+      {
+        "part": "right_coat_cuff",
+        "target": "right_coat_sleeve",
+        "witness": [
+          30.98404295611207,
+          0.4662287600485299,
+          72.00266174219531
+        ]
+      }
+    ],
+    "RW": [
+      {
+        "part": "shirt_collar",
+        "target": "shirt_body",
+        "witness": [
+          2.9720086666666665,
+          -4.792815402777777,
+          119.58000045833333
+        ]
+      },
+      {
+        "part": "left_shirt_sleeve",
+        "target": "shirt_body",
+        "witness": [
+          -16.89359539998004,
+          0.26490283925259633,
+          95.68961241573008
+        ]
+      },
+      {
+        "part": "left_shirt_cuff",
+        "target": "left_shirt_sleeve",
+        "witness": [
+          -21.545736056671178,
+          0.3790331970252096,
+          72.64803327882517
+        ]
+      },
+      {
+        "part": "left_trouser_leg",
+        "target": "trouser_hips",
+        "witness": [
+          -5.36204213226913,
+          7.7337358590355745,
+          60.68134797668343
+        ]
+      },
+      {
+        "part": "left_trouser_cuff",
+        "target": "left_trouser_leg",
+        "witness": [
+          -4.379753786008722,
+          0.42691708205265017,
+          2.1368474315320447
+        ]
+      },
+      {
+        "part": "right_shirt_sleeve",
+        "target": "shirt_body",
+        "witness": [
+          17.222824004611155,
+          1.9778552140191648,
+          95.68882665235171
+        ]
+      },
+      {
+        "part": "right_shirt_cuff",
+        "target": "right_shirt_sleeve",
+        "witness": [
+          29.9228728938384,
+          0.37915456602901293,
+          72.67303608489696
+        ]
+      },
+      {
+        "part": "right_trouser_leg",
+        "target": "trouser_hips",
+        "witness": [
+          16.21002155317256,
+          0.3823140165741089,
+          62.56005905827066
+        ]
+      },
+      {
+        "part": "right_trouser_cuff",
+        "target": "right_trouser_leg",
+        "witness": [
+          13.620246032845388,
+          0.42691694261232505,
+          2.13684743216012
+        ]
+      },
+      {
+        "part": "poncho_woven_band",
+        "target": "poncho",
+        "witness": [
+          33.00793328006465,
+          3.386408112559937,
+          65.98173115060584
+        ]
+      },
+      {
+        "part": "poncho_fringe_0",
+        "target": "poncho",
+        "witness": [
+          33.6865348776408,
+          -0.1991623425925926,
+          64.27438750127442
+        ]
+      },
+      {
+        "part": "poncho_fringe_1",
+        "target": "poncho",
+        "witness": [
+          33.45835423870546,
+          5.425798159653195,
+          60.66582669724196
+        ]
+      },
+      {
+        "part": "poncho_fringe_2",
+        "target": "poncho",
+        "witness": [
+          32.77174828574044,
+          7.9803666964833,
+          59.026951460002984
+        ]
+      },
+      {
+        "part": "poncho_fringe_3",
+        "target": "poncho",
+        "witness": [
+          31.619906459718067,
+          9.907664980381021,
+          57.79042827046391
+        ]
+      },
+      {
+        "part": "poncho_fringe_4",
+        "target": "poncho",
+        "witness": [
+          29.989184012842383,
+          11.450421981121329,
+          56.800535958081156
+        ]
+      },
+      {
+        "part": "poncho_fringe_5",
+        "target": "poncho",
+        "witness": [
+          27.854578579338842,
+          12.696922638576629,
+          56.00063293401929
+        ]
+      },
+      {
+        "part": "poncho_fringe_6",
+        "target": "poncho",
+        "witness": [
+          25.170268538952392,
+          13.688168969614065,
+          55.364410033292195
+        ]
+      },
+      {
+        "part": "poncho_fringe_7",
+        "target": "poncho",
+        "witness": [
+          21.84794742642949,
+          14.445439327934832,
+          54.87820458599293
+        ]
+      },
+      {
+        "part": "poncho_fringe_8",
+        "target": "poncho",
+        "witness": [
+          17.697488078183586,
+          14.980342220562067,
+          54.534545730083224
+        ]
+      },
+      {
+        "part": "poncho_fringe_9",
+        "target": "poncho",
+        "witness": [
+          12.196152018403804,
+          15.299215595615301,
+          54.329301223376
+        ]
+      },
+      {
+        "part": "poncho_fringe_10",
+        "target": "poncho",
+        "witness": [
+          0.08249573078698876,
+          15.405256003369793,
+          54.25977543559536
+        ]
+      },
+      {
+        "part": "poncho_fringe_11",
+        "target": "poncho",
+        "witness": [
+          -12.031189010372232,
+          15.299374679067897,
+          54.32622061458312
+        ]
+      },
+      {
+        "part": "poncho_fringe_12",
+        "target": "poncho",
+        "witness": [
+          -17.532557312432548,
+          14.980568549484405,
+          54.530065647053206
+        ]
+      },
+      {
+        "part": "poncho_fringe_13",
+        "target": "poncho",
+        "witness": [
+          -21.683049061442606,
+          14.445709462253472,
+          54.87266933014537
+        ]
+      },
+      {
+        "part": "poncho_fringe_14",
+        "target": "poncho",
+        "witness": [
+          -25.00540016114755,
+          13.688464081450874,
+          55.35802939259557
+        ]
+      },
+      {
+        "part": "poncho_fringe_15",
+        "target": "poncho",
+        "witness": [
+          -27.68973855287572,
+          12.697225819325668,
+          55.99356909154966
+        ]
+      },
+      {
+        "part": "poncho_fringe_16",
+        "target": "poncho",
+        "witness": [
+          -29.82436842901581,
+          11.450716707741991,
+          56.792927630709094
+        ]
+      },
+      {
+        "part": "poncho_fringe_17",
+        "target": "poncho",
+        "witness": [
+          -31.455110319906282,
+          9.907935114679722,
+          57.782403014662066
+        ]
+      },
+      {
+        "part": "poncho_fringe_18",
+        "target": "poncho",
+        "witness": [
+          -32.606966562842416,
+          7.9805934097336735,
+          59.01863069944894
+        ]
+      },
+      {
+        "part": "poncho_fringe_19",
+        "target": "poncho",
+        "witness": [
+          -33.29358215515096,
+          5.425957242785539,
+          60.65732804593898
+        ]
+      },
+      {
+        "part": "poncho_fringe_20",
+        "target": "poncho",
+        "witness": [
+          -33.521765647419706,
+          -0.1991623425925926,
+          64.2658281455797
+        ]
+      },
+      {
+        "part": "poncho_fringe_21",
+        "target": "poncho",
+        "witness": [
+          -33.29358181903388,
+          -5.824212256160301,
+          60.66478612149178
+        ]
+      },
+      {
+        "part": "poncho_fringe_22",
+        "target": "poncho",
+        "witness": [
+          -32.60696674295764,
+          -8.378770923374889,
+          59.02947373632172
+        ]
+      },
+      {
+        "part": "poncho_fringe_23",
+        "target": "poncho",
+        "witness": [
+          -31.45511035842969,
+          -10.306034248461863,
+          57.795797910354224
+        ]
+      },
+      {
+        "part": "poncho_fringe_24",
+        "target": "poncho",
+        "witness": [
+          -29.82436831428942,
+          -11.848742439428866,
+          56.80836408837597
+        ]
+      },
+      {
+        "part": "poncho_fringe_25",
+        "target": "poncho",
+        "witness": [
+          -27.689738673996562,
+          -13.095184305213943,
+          56.010654416184465
+        ]
+      },
+      {
+        "part": "poncho_fringe_26",
+        "target": "poncho",
+        "witness": [
+          -25.005400207202594,
+          -14.086364172219083,
+          55.37642542271722
+        ]
+      },
+      {
+        "part": "poncho_fringe_27",
+        "target": "poncho",
+        "witness": [
+          -21.68304910492627,
+          -14.84356190554656,
+          54.892066355377644
+        ]
+      },
+      {
+        "part": "poncho_fringe_28",
+        "target": "poncho",
+        "witness": [
+          -17.532557193109223,
+          -15.378385378904788,
+          54.5501693071324
+        ]
+      },
+      {
+        "part": "poncho_fringe_29",
+        "target": "poncho",
+        "witness": [
+          -12.031189241759362,
+          -15.697170346986518,
+          54.34674504446302
+        ]
+      },
+      {
+        "part": "poncho_fringe_30",
+        "target": "poncho",
+        "witness": [
+          0.0824959865862512,
+          -15.803044633237189,
+          54.280440129330685
+        ]
+      },
+      {
+        "part": "poncho_fringe_31",
+        "target": "poncho",
+        "witness": [
+          12.196152159024658,
+          -15.697011263621377,
+          54.349826035820215
+        ]
+      },
+      {
+        "part": "poncho_fringe_32",
+        "target": "poncho",
+        "witness": [
+          17.697487825622733,
+          -15.378159050165353,
+          54.55464900228391
+        ]
+      },
+      {
+        "part": "poncho_fringe_33",
+        "target": "poncho",
+        "witness": [
+          21.847947364820534,
+          -14.843292155659173,
+          54.8976016076975
+        ]
+      },
+      {
+        "part": "poncho_fringe_34",
+        "target": "poncho",
+        "witness": [
+          25.170268121219003,
+          -14.086069061212111,
+          55.38280566120545
+        ]
+      },
+      {
+        "part": "poncho_fringe_35",
+        "target": "poncho",
+        "witness": [
+          27.854578474172655,
+          -13.09488074062196,
+          56.01771824895708
+        ]
+      },
+      {
+        "part": "poncho_fringe_36",
+        "target": "poncho",
+        "witness": [
+          29.989184141978768,
+          -11.848447328112364,
+          56.815972427005384
+        ]
+      },
+      {
+        "part": "poncho_fringe_37",
+        "target": "poncho",
+        "witness": [
+          31.61990640869353,
+          -10.305764498569152,
+          57.803823161795265
+        ]
+      },
+      {
+        "part": "poncho_fringe_38",
+        "target": "poncho",
+        "witness": [
+          32.77174810562439,
+          -8.378544210619872,
+          59.037794478685655
+        ]
+      },
+      {
+        "part": "poncho_fringe_39",
+        "target": "poncho",
+        "witness": [
+          33.45835420324271,
+          -5.824053172737582,
+          60.6732844040425
+        ]
+      }
+    ],
+    "PS": [
+      {
+        "part": "shirt_collar",
+        "target": "shirt_body",
+        "witness": [
+          2.9720081769911504,
+          -4.792815168141592,
+          119.57999957079646
+        ]
+      },
+      {
+        "part": "left_shirt_sleeve",
+        "target": "shirt_body",
+        "witness": [
+          -16.973128633471568,
+          1.0211282756128144,
+          96.69537301622118
+        ]
+      },
+      {
+        "part": "left_shirt_cuff",
+        "target": "left_shirt_sleeve",
+        "witness": [
+          -20.792189046598846,
+          0.22569932089631678,
+          87.68530136987387
+        ]
+      },
+      {
+        "part": "left_trouser_leg",
+        "target": "trouser_hips",
+        "witness": [
+          -7.226777516308797,
+          7.295217472158657,
+          60.681977296887915
+        ]
+      },
+      {
+        "part": "left_trouser_cuff",
+        "target": "left_trouser_leg",
+        "witness": [
+          -4.379753874653136,
+          0.4269171344366291,
+          2.1368472030785832
+        ]
+      },
+      {
+        "part": "right_shirt_sleeve",
+        "target": "shirt_body",
+        "witness": [
+          17.220964628853583,
+          1.978465997818331,
+          96.6947406373973
+        ]
+      },
+      {
+        "part": "right_shirt_cuff",
+        "target": "right_shirt_sleeve",
+        "witness": [
+          22.087539155465482,
+          3.476209023884781,
+          87.68250610308836
+        ]
+      },
+      {
+        "part": "right_trouser_leg",
+        "target": "trouser_hips",
+        "witness": [
+          15.500567377940987,
+          0.7304503082574214,
+          60.69338282606887
+        ]
+      },
+      {
+        "part": "right_trouser_cuff",
+        "target": "right_trouser_leg",
+        "witness": [
+          13.620246057847071,
+          0.4269171346397392,
+          2.136847229784873
+        ]
+      }
+    ],
+    "PE": [
+      {
+        "part": "shirt_collar",
+        "target": "shirt_body",
+        "witness": [
+          2.972008302631579,
+          -4.792814978070176,
+          119.58000027631581
+        ]
+      },
+      {
+        "part": "left_shirt_sleeve",
+        "target": "shirt_body",
+        "witness": [
+          -16.89359523809314,
+          0.2649025898545528,
+          95.68961228900253
+        ]
+      },
+      {
+        "part": "left_shirt_cuff",
+        "target": "left_shirt_sleeve",
+        "witness": [
+          -21.545736271655386,
+          0.3790328750519614,
+          72.64803362787035
+        ]
+      },
+      {
+        "part": "left_trouser_leg",
+        "target": "trouser_hips",
+        "witness": [
+          -7.226778040673702,
+          7.29521739985383,
+          60.681977158162056
+        ]
+      },
+      {
+        "part": "left_trouser_cuff",
+        "target": "left_trouser_leg",
+        "witness": [
+          -4.379753599780586,
+          0.42691695248955724,
+          2.136847613388496
+        ]
+      },
+      {
+        "part": "left_coat_sleeve",
+        "target": "outer_coat",
+        "witness": [
+          -17.574703575612318,
+          2.2415931194594245,
+          91.35549262035717
+        ]
+      },
+      {
+        "part": "left_coat_cuff",
+        "target": "left_coat_sleeve",
+        "witness": [
+          -20.61699474644066,
+          0.466163398823404,
+          71.98687490497105
+        ]
+      },
+      {
+        "part": "right_shirt_sleeve",
+        "target": "shirt_body",
+        "witness": [
+          17.222824265352344,
+          1.977855025050357,
+          95.68882653064259
+        ]
+      },
+      {
+        "part": "right_shirt_cuff",
+        "target": "right_shirt_sleeve",
+        "witness": [
+          29.9228730927555,
+          0.37915440063430844,
+          72.67303642563472
+        ]
+      },
+      {
+        "part": "right_trouser_leg",
+        "target": "trouser_hips",
+        "witness": [
+          15.50056770333065,
+          0.7304507152550083,
+          60.69338269512242
+        ]
+      },
+      {
+        "part": "right_trouser_cuff",
+        "target": "right_trouser_leg",
+        "witness": [
+          13.62024599120646,
+          0.4269169526908857,
+          2.1368476398605165
+        ]
+      },
+      {
+        "part": "right_coat_sleeve",
+        "target": "outer_coat",
+        "witness": [
+          17.62027553841307,
+          4.592590246976041,
+          95.68567573860108
+        ]
+      },
+      {
+        "part": "right_coat_cuff",
+        "target": "right_coat_sleeve",
+        "witness": [
+          30.984042775383955,
+          0.4662288904459941,
+          72.00266139056508
+        ]
+      }
+    ],
+    "PW": [
+      {
+        "part": "shirt_collar",
+        "target": "shirt_body",
+        "witness": [
+          2.972008408408408,
+          -4.792815177177177,
+          97.58000023423422
+        ]
+      },
+      {
+        "part": "left_shirt_sleeve",
+        "target": "shirt_body",
+        "witness": [
+          -16.893595318394237,
+          0.26490255118638145,
+          73.68961240012729
+        ]
+      },
+      {
+        "part": "left_shirt_cuff",
+        "target": "left_shirt_sleeve",
+        "witness": [
+          -21.54573623476079,
+          0.37903293802459226,
+          50.64803350849039
+        ]
+      },
+      {
+        "part": "left_coat_sleeve",
+        "target": "outer_coat",
+        "witness": [
+          -17.574703529167703,
+          2.24159335992977,
+          69.35549246918539
+        ]
+      },
+      {
+        "part": "left_coat_cuff",
+        "target": "left_coat_sleeve",
+        "witness": [
+          -20.616994805098855,
+          0.4661636196911728,
+          49.98687499788202
+        ]
+      },
+      {
+        "part": "right_shirt_sleeve",
+        "target": "shirt_body",
+        "witness": [
+          17.22282433403068,
+          1.9778551653310845,
+          73.6888266452124
+        ]
+      },
+      {
+        "part": "right_shirt_cuff",
+        "target": "right_shirt_sleeve",
+        "witness": [
+          29.92287294858961,
+          0.37915446412712167,
+          50.67303632230107
+        ]
+      },
+      {
+        "part": "right_coat_sleeve",
+        "target": "outer_coat",
+        "witness": [
+          17.62027568574488,
+          4.59259020708904,
+          73.68567585763086
+        ]
+      },
+      {
+        "part": "right_coat_cuff",
+        "target": "right_coat_sleeve",
+        "witness": [
+          30.98404292989392,
+          0.4662291105545011,
+          50.002661471717914
+        ]
+      },
+      {
+        "part": "raised_coat_collar",
+        "target": "outer_coat",
+        "witness": [
+          4.733912765765766,
+          6.508668387387387,
+          94.07999991891892
+        ]
+      }
+    ]
+  },
+  "failures": []
+}

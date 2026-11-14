@@ -1,6 +1,26 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.25** - 2026-11-14.
+Documentation version: **5.17.26** - 2026-11-14.
+
+## 5.17.26 - Clothing-ensemble world props (#696, 2026-11-14)
+
+Eleven #387 body outfits gain candidate 3D world models without changing owned
+pixels or inventory rules. Three previews each pass 1,046 functional checks;
+visual review separately corrects material crops, sleeve-top rims, trouser
+proportions and poncho trim. Independent validation verifies 155 assembly
+witnesses, 47 deep openings and all fitted-detail vertices. Seven older families
+regenerate 55 native/41 editable files identically after adding the shared
+geometry callback; only export metadata changes. Final exports repeat 37 files,
+and the complete package passes 5,398 native assertions. One eleven-outfit
+comparison records 1174.66/1109.72 queue presents/s, p95 1.0227/1.0859 ms and p99 1.2329/1.3152 ms.
+ASSETS and SUMMARY retain sources, package proof, iterations and environment.
+CA696-CLOTHING-01 remains pending; no worn fitting or broader completion is
+claimed.
+
+The first project validation also detected stale document-export provenance
+pins in the existing book and lock reuse manifests. Both source pins were
+refreshed, and their two native bindings and reused variant records regenerate
+identically. The initial failure and metadata-only correction are preserved.
 
 ## 5.17.25 - Footwear-pair world props (#694, 2026-11-14)
 

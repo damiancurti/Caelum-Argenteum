@@ -315,7 +315,7 @@
     "assets/art_source/clothing/exports.json": "f6a526f4556682785d7b129c623a55472bd1b089d065dd506e9c52269ce9d40c"
   },
   "generator_sha256": {
-    "generate_inventory_ammunition_models.py": "7840c4851fe1af39a29071c3bbe87b13c13187688804d9c0a33d178b5a9e3feb",
+    "generate_inventory_ammunition_models.py": "aa7ffdc02cc126b116b87782ae962bdbb54e9bf060301344058aa4475f946b86",
     "generate_inventory_consumable_models.py": "f4bb817e68f15fd5fcce27b5f7f3de205917b993899fbeb934629f2146a14fc7",
     "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
     "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",

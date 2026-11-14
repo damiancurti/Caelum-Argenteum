@@ -15,8 +15,9 @@ except ImportError:
 SOURCE=ROOT/'assets/source/art/inventory_models_647/ammunition'
 
 
-def output_files(source=SOURCE, definition_name='inventory_ammunition.modeldef', metadata_files=None, wrapper_name=None):
+def output_files(source=SOURCE, definition_name='inventory_ammunition.modeldef', metadata_files=None, wrapper_name=None, geometry_builder=None):
     if metadata_files is None:metadata_files=('DESIGN.json','PROMPT.txt','GENERATION_STATUS.json')
+    if geometry_builder is None:geometry_builder=geometry
     config=json.loads((source/'DESIGN.json').read_text(encoding='utf-8'))
     for name,checksum in config['source_sha256'].items():
         if digest((ROOT/name).read_bytes())!=checksum:raise ValueError('Owned source changed: '+name)
@@ -26,7 +27,7 @@ def output_files(source=SOURCE, definition_name='inventory_ammunition.modeldef',
     for key,item in config['variants'].items():
         mesh=Mesh();parts=[]
         for part in config['families'][item['family']]['parts']:
-            component,volumes=geometry(neutral,{'parts':[part]},item['tier'])
+            component,volumes=geometry_builder(neutral,{'parts':[part], 'all_parts':config['families'][item['family']]['parts']},item['tier'])
             if part.get('normalize_uv',False):
                 # Folded hollow profiles can revisit Z and exceed the default UV range.
                 low_uv=[min(uv[axis] for uv in component.uv) for axis in (0,1)]
@@ -78,6 +79,8 @@ def output_files(source=SOURCE, definition_name='inventory_ammunition.modeldef',
                       'vertices':len(mesh.vertices),'triangles':len(mesh.faces),'surfaces':surfaces,
                       'reference_opaque_bounds':bounds,'reference_axis':item['reference_axis'],
                       'reference_sprite_scale':item['sprite_scale'],'target_art_extent':target,'native_bounds':native_bounds}
+        if geometry_builder is not geometry:
+            records[key]['source_to_native']={'factor':factor,'floor':low[2]}
     mtl=[]
     for key,settings in config['materials'].items():
         mtl += ['newmtl '+key,'Kd 1 1 1','map_Kd '+'src/'+settings['texture']]

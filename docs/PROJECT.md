@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.25** - 2026-11-14.
+Documentation version: **5.17.26** - 2026-11-14.
+
+## 5.17.26 - Eleven clothing-ensemble world props (#696)
+
+Eleven complete body outfits gain hollow 3D world models from original owned
+art. Together with headwear, gloves and footwear, this covers all 25 native
+clothing designs as candidate world props. Fifty-five new type/size cases pass
+5,398 native continuity checks; geometry, deterministic export and an isolated
+presentation comparison pass. CA696-CLOTHING-01 retains art and ordinary-menu
+review. Actual worn/first-person modules, other inventory and the full character
+roster remain unfinished. Questions remain deferred.
 
 ## 5.17.25 - Five footwear-pair world props (#694)
 
