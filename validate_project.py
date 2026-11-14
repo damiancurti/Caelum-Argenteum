@@ -22,6 +22,7 @@ from assets.generators.validate_inventory_water_models import validate as invent
 from assets.generators.validate_inventory_food_models import validate as inventory_food_problems
 from assets.generators.validate_inventory_ammunition_models import validate as inventory_ammunition_problems
 from assets.generators.validate_inventory_ingot_models import validate as inventory_ingot_problems
+from assets.generators.validate_inventory_ores_models import validate as inventory_ores_problems
 from assets.generators.validate_inventory_gems_models import validate as inventory_gem_problems
 from assets.generators.validate_inventory_book_bindings import validate as inventory_book_problems
 from assets.generators.validate_inventory_jewelry_models import validate as inventory_jewelry_problems
@@ -111,6 +112,7 @@ def validate(root):
     errors.extend(inventory_jewelry_problems(root))
     errors.extend(inventory_book_problems(root))
     errors.extend(inventory_gem_problems(root))
+    errors.extend(inventory_ores_problems(root))
     errors.extend(inventory_ingot_problems(root))
     errors.extend(regional_material_problems(root))
     errors.extend(beast_regional_material_problems(root))

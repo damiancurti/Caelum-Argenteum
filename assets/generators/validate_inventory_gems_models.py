@@ -11,15 +11,15 @@ except ImportError:
     from validate_inventory_ammunition_models import ROOT,validate as validate_family
 
 
-def validate(root=ROOT):
-    errors=validate_family(root,'gems',14,distinct_classes=False)
+def validate(root=ROOT, family='gems', kinds=tuple(range(45,59)), backing_materials=('silver','bronze','gold')):
+    errors=validate_family(root,family,len(kinds),distinct_classes=False)
     try:
-        source=root/'assets/source/art/inventory_models_647/gems'
+        source=root/'assets/source/art/inventory_models_647'/family
         config=json.loads((source/'DESIGN.json').read_text());report=json.loads((source/'EXPORT.json').read_text())
-        definition=(root/'src/caelum/data/inventory_gems.modeldef').read_text()
+        definition=(root/'src/caelum/data'/('inventory_'+family+'.modeldef')).read_text()
         states=re.findall(r'Model\s+CaelumMaterialPickup\s*\{[^}]*FrameIndex\s+(M\d{3})\s+A\s+0\s+0',definition)
-        if states!=['M%03d'%kind for kind in range(45,59)]:errors.append('Expected exactly the fourteen native material states M045..M058/A')
-        if [item['item_type'] for item in config['variants'].values()]!=list(range(45,59)):errors.append('Unexpected material ID allocation')
+        if states!=['M%03d'%kind for kind in kinds]:errors.append('Unexpected native material state allocation: '+family)
+        if [item['item_type'] for item in config['variants'].values()]!=list(kinds):errors.append('Unexpected material ID allocation')
         for name,checksum in report['sha256'].items():
             if name.startswith('editable/') and hashlib.sha256((source/name).read_bytes()).hexdigest()!=checksum:errors.append('Stale editable gems: '+name)
         for material in config['materials'].values():
@@ -52,7 +52,7 @@ def validate(root=ROOT):
                         edge=tuple(sorted((a,b)));edges[edge]+=1;winding[edge]+=1 if a<b else -1
                 if volume<=0 or any(v!=2 for v in edges.values()) or any(winding.values()):errors.append('Open/inward gems component: '+name+'/'+part)
         # The three reused metal tiles must stay opaque through their UV domain.
-        for name in ('silver','bronze','gold'):
+        for name in backing_materials:
             settings=config['materials'][name];alpha=Image.open(root/'src'/settings['texture']).convert('RGBA').getchannel('A')
             if alpha.crop(tuple(settings['rect_pixels'])).getextrema()!=(255,255):errors.append('Transparent gems backing tile: '+name)
     except (OSError,KeyError,ValueError) as exc:errors.append(str(exc))

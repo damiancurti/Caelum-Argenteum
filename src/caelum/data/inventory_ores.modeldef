@@ -1,0 +1,6 @@
+Model CaelumMaterialPickup { Path "models/caelum/inventory/ores" Model 0 "coal.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M061 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/ores" Model 0 "raw_copper.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M062 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/ores" Model 0 "raw_tin.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M063 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/ores" Model 0 "raw_iron.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M064 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/ores" Model 0 "raw_silver.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M065 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/ores" Model 0 "raw_gold.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M066 A 0 0 }
