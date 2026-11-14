@@ -1,0 +1,6 @@
+Model CaelumMaterialPickup { Path "models/caelum/inventory/plates" Model 0 "plate.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M011 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/plates" Model 0 "round_plate.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M012 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/plates" Model 0 "kite_plate.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M013 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/plates" Model 0 "tower_plate.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M014 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/plates" Model 0 "magic_plate.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M015 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/plates" Model 0 "large_plate.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M016 A 0 0 }
