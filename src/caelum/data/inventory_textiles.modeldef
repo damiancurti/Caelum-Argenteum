@@ -1,0 +1,6 @@
+Model CaelumMaterialPickup { Path "models/caelum/inventory/textiles" Model 0 "fabric.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M018 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/textiles" Model 0 "wool.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M071 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/textiles" Model 0 "cotton.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M072 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/textiles" Model 0 "raw_silk.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M073 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/textiles" Model 0 "plant_fiber.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M074 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/textiles" Model 0 "rope.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M075 A 0 0 }
