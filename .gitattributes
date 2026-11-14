@@ -738,3 +738,12 @@ assets/validation_v5_17_20/*.zs text eol=lf
 assets/validation_v5_17_20/evidence/** -text -diff
 assets/generators/generate_inventory_ores_models.py text eol=lf
 assets/generators/validate_inventory_ores_models.py text eol=lf
+
+assets/source/art/inventory_models_647/headwear/** text eol=lf
+assets/source/art/inventory_models_647/headwear/**/*.png binary
+src/caelum/data/inventory_headwear.modeldef text eol=lf
+assets/validation_v5_17_21/*.py text eol=lf
+assets/validation_v5_17_21/*.zs text eol=lf
+assets/validation_v5_17_21/evidence/** -text -diff
+assets/generators/generate_inventory_headwear_models.py text eol=lf
+assets/generators/validate_inventory_headwear_models.py text eol=lf

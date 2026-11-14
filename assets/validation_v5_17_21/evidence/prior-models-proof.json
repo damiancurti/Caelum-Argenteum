@@ -1,0 +1,118 @@
+{
+  "consumables": {
+    "native_count": 11,
+    "sha256": {
+      "models/caelum/inventory/consumables/materials.png": "eb8f019510c63601c9e25c8ed05142fbe7b97fe06eb444c32685def6e664416e",
+      "models/caelum/inventory/consumables/medikit_small.md3": "9866f70ff2695eb27e251372eb9d63490d946b1d2f95b59cecc03cc08c8ebc74",
+      "models/caelum/inventory/consumables/medikit_medium.md3": "0b65744b29d2e1f2df84778fc7581ea75f4b1265c47627b62676398be127be97",
+      "models/caelum/inventory/consumables/medikit_large.md3": "07874b527490894e781c49cf1efe73a39f540036356f93d1d968ebe393c65fbf",
+      "models/caelum/inventory/consumables/anima_small.md3": "997eedce2beea889e81e42e1d73d4331fa55baf1d2acec143f82cd15304a1e9a",
+      "models/caelum/inventory/consumables/anima_medium.md3": "71f62fcd940585ac3caedfaf651a4e16e0f6da7c281e7059c986d296f9970ee3",
+      "models/caelum/inventory/consumables/anima_large.md3": "8013aaa7b64ddfeb3a6feb4152fcd8a4e1f9728bf55d790f8bfd9ea00eca0c9c",
+      "models/caelum/inventory/consumables/energy_small.md3": "b0cceeed2137e43bf0b8596f9d844da4a219a599ac454084cd4693950429c154",
+      "models/caelum/inventory/consumables/energy_medium.md3": "edbdb31229b77145a7e35c350f325c2746d8e9f9cbebff25ca2993767a82965b",
+      "models/caelum/inventory/consumables/energy_large.md3": "d49c9969af8ac81553412147884ee734b0b3f375105c84d2560d77b649cdb205",
+      "caelum/data/inventory_consumables.modeldef": "154c2654f866e9304197009a4c1e9fd27c519a38221f87f5415081c1ffc4448a"
+    },
+    "manifest_matches": true
+  },
+  "food": {
+    "native_count": 7,
+    "sha256": {
+      "models/caelum/inventory/food/materials.png": "134ab37377600dc1f1e74ef2fd81c74535b47d0c37414cc25f49ace0c769aaf1",
+      "models/caelum/inventory/food/ration.md3": "ade3f8f782ec5f51a93e426b0b41e4238ca8d4c87332cd2ccbbe169346e55435",
+      "models/caelum/inventory/food/bread.md3": "9e43cd5a9e4969bcc38de3d6450ba1e9ff49834aec22a055cf35b21afa9ea2df",
+      "models/caelum/inventory/food/roast_beef.md3": "22b29825dd5803704082f0a2a3e4e9a774fbc3428abcd431eb1c7a0260fb1669",
+      "models/caelum/inventory/food/roast_fish.md3": "4f08a6895865e084d8aa844f9d2fd2813c5a954a669888b168cc85e4c693a446",
+      "models/caelum/inventory/food/puchero.md3": "3190c2f34c38b47d0c6a4a5d8a8bebdc4c4cdeeda31f99590a2e7e7ae26baa43",
+      "caelum/data/inventory_food.modeldef": "3b86b5eba5ba449a1756350b949f5673e4f55821c79e7518bd442ab59397b1f3"
+    },
+    "manifest_matches": true
+  },
+  "water": {
+    "native_count": 8,
+    "sha256": {
+      "models/caelum/inventory/water/materials.png": "0c15178f14cd0afc4e6ac7ff4633e6f5bda022d1b07a33cb6b7d885e560848ca",
+      "models/caelum/inventory/water/bottle_small.md3": "a05a084badfcb90562199e4ee3adb6423b2e9b4db323150caa03d27a291229c9",
+      "models/caelum/inventory/water/bottle_normal.md3": "612ffdcc70aa046f2ca3cfec4f2c16d253d2e5361388adb0b56d3ffde8d7743c",
+      "models/caelum/inventory/water/bottle_large.md3": "54c419b2bf487db6b185f9997f41b14e9e7ac0ca2ce7de3ed398f10c9905981b",
+      "models/caelum/inventory/water/canteen_small.md3": "04a8770983c1f2edd2a41fde753a1b72cafd69bf49a3c19040ca28f6b4a2b00d",
+      "models/caelum/inventory/water/canteen_normal.md3": "cf7c3d818e49250dcd0a488c09b0c88028a35792c5ba5aafdd13b12505edee3f",
+      "caelum/data/inventory_water.modeldef": "95045cde4780d6a9f45b58b3e5cdbff33ff068288665149c3bf1763cb60e2643",
+      "models/caelum/inventory/water/canteen_large.obj": "771d4412e5e37eb24750de6265ef94dee1594297f4096b8e2bae7ad2a7097250"
+    },
+    "manifest_matches": true
+  },
+  "mates": {
+    "native_count": 4,
+    "sha256": {
+      "models/caelum/inventory/mates/gourd.md3": "0608c435f7196a31727f217a4045a4a5f4488f3b895109a9dd91b15b5cd8de35",
+      "models/caelum/inventory/mates/silver.md3": "d7003aa5dd2a139cf4653f56130b01f73dd716b9192b9a208fc7ef6c9ba4e0ee",
+      "models/caelum/inventory/mates/gold.md3": "f483800c340593cd277348493105484d142ee7fa81d2119be1b10b07944e20bb",
+      "caelum/data/inventory_mates.modeldef": "66474385fa03da419b0368b9a0045672cbce63c05e5b9537682d68cbc63bda80"
+    },
+    "manifest_matches": true
+  },
+  "ammunition": {
+    "native_count": 8,
+    "sha256": {
+      "models/caelum/inventory/ammunition/carbine.md3": "450b6087f2011f61109fb16be3b38b49e89d2f044328589f02f290e1c55e1c20",
+      "models/caelum/inventory/ammunition/arrow.md3": "b9540fc0266061c26a8e46da24eec14346370e6c499997c1a1ddee405a0947c0",
+      "models/caelum/inventory/ammunition/bolt.md3": "195c0454cbf8652bab2b7f681345a74ee0a52fbeda06042085bdb41543988d9c",
+      "models/caelum/inventory/ammunition/javelin_one.md3": "280b8fde45d823c9d34fc3edb29a63078f42326e6f7c625e8ead621a5b9b50a2",
+      "models/caelum/inventory/ammunition/javelin_two.md3": "1c19fb66cb364a42fde19867a1e92c67a3e592bc013d253b0345dbceeb45e622",
+      "models/caelum/inventory/ammunition/javelin_three.md3": "a20672458f166d6377ec28e67d687b7acc177689a9cb26d64edf6510a4285957",
+      "models/caelum/inventory/ammunition/shotgun.md3": "1f995d2c494f4a00b01d2033f3e59ea6aec7e264a213610f4bafb525d5ca8231",
+      "caelum/data/inventory_ammunition.modeldef": "3934c48be0b5730936f64d64b5ee0e96b28493d3652b16621e598bd23f67c9d0"
+    },
+    "manifest_matches": true
+  },
+  "documents": {
+    "native_count": 6,
+    "sha256": {
+      "models/caelum/inventory/documents/book.md3": "b61151ce14971ca16900341189f3a87a7880cb4fc8c2aa296dd84a2260bf57d8",
+      "models/caelum/inventory/documents/letter.md3": "2744f96f12cfd7404b78d7821c7c8016ba5438bc542f811bce5ee9ecbd27c291",
+      "models/caelum/inventory/documents/key.md3": "32c974458449cd3ac4fcbc873b8b622fba1f001f20d405ad590217461e361904",
+      "models/caelum/inventory/documents/cloth.md3": "bb9a28cdfa8bee5fb914da1e26aef5e384c4d558bfab9a48c2fb82677ae41c44",
+      "models/caelum/inventory/documents/ingot.md3": "400280e6ed358c7bf2d928b32905fbbe81cf57cdf336d8532e40146e9f8b6bf9",
+      "caelum/data/inventory_documents.modeldef": "c5597613e35aa5ac6c83ae4f0d1ee692056219b173bd559092fdb2ce79154f9f"
+    },
+    "manifest_matches": true
+  },
+  "ingots": {
+    "native_count": 8,
+    "sha256": {
+      "models/caelum/inventory/ingots/iron.md3": "e0ba864e60c31a3b5fd63f4804216cf3f9ed5db321fdafccb52a84cdf92b8f4a",
+      "models/caelum/inventory/ingots/copper.md3": "c01b8d7cf2cb65ba9f100270b6f8943b4041b79214c97b7ed96baaf281c9aec5",
+      "models/caelum/inventory/ingots/tin.md3": "242e4104c0930deeafcdf668559afd2a3443c11188295624cc00b8dadf153e44",
+      "models/caelum/inventory/ingots/bronze.md3": "eeaf8ddd4b8eb5b3388e4e9bf32bd75da5424d563cd0b2fc2809c30dfbca4b3c",
+      "models/caelum/inventory/ingots/steel.md3": "8195eea3c2b26309b4585f9f547949cefd3d88e325047d51e0ba4e5c0b5380ba",
+      "models/caelum/inventory/ingots/silver.md3": "aa5d66478862fc74d944c75052a28ec815380684623c71a2538cc7086a8867ee",
+      "models/caelum/inventory/ingots/gold.md3": "9635b2587ad23b7e229ef50d9aa0b206a421bd00df41e54eb1706ee3aeb39508",
+      "caelum/data/inventory_ingots.modeldef": "2a2597ff3829ea3232a772c9e96db0ea9cd9ee69fe02a5682f2935a82fe9e43c"
+    },
+    "manifest_matches": true
+  },
+  "waterskin": {
+    "native_count": 2,
+    "sha256": {
+      "models/caelum/inventory/waterskin/waterskin.md3": "20f1913ed58cb42a62207990cfc829115d03a70efb79a18d3ef9b6c10a2323fa",
+      "caelum/data/inventory_waterskin.modeldef": "1767a9c38dc75d05f13839fcbbf6a3eee9407a262e5d6268c65c642b16389d88"
+    },
+    "manifest_matches": true
+  },
+  "locks": {
+    "native_count": 1,
+    "sha256": {
+      "caelum/data/inventory_locks.modeldef": "a892cfcf0343550082d21e56268581b55f4fc16ea3d65117b12ff67ee45ee461"
+    },
+    "manifest_matches": true
+  },
+  "books": {
+    "native_count": 1,
+    "sha256": {
+      "caelum/data/inventory_books.modeldef": "c97425033e8d332f66d4ebb7ab8c97c2d86c74ec2cf60ed6ad52fa64dd09431a"
+    },
+    "manifest_matches": true
+  }
+}

@@ -1,6 +1,6 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.20** - 2026-11-13.
+Documentation version: **5.17.21** - 2026-11-14.
 
 ## 5.17.20 - Six raw-material drop models (#684)
 

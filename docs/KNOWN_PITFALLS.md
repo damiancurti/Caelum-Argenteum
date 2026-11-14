@@ -4,6 +4,23 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-238 - Closed cloth patches still need surface contact checks
+
+Status/evidence: STATIC-VERIFIED geometry and ENGINE-OBSERVED art correction,
+#686, 2026-11-14. A closed, outward patch prism can float above its garment when
+its circular surface profile approximates an elliptical, shifting crown. The
+underside image in native01 shows the raised pieces even though all inventory
+and save assertions pass. Individual closure alone does not establish mounting.
+
+Use the actual crown's Z/X-radius/Y-radius/Y-center profile. Keep the old
+two-column circular path unchanged for existing callers; all eight older
+families regenerate 54 native resources byte-for-byte. Independently cast rays
+against the final triangulated crown at every patch vertex: the back must enter
+the crown, the front must remain outside, and separation must stay within the
+authored thickness. Opening rays separately reject a disk sealing the hat base.
+Final native views confirm the corrected mounting; projected texture seams and
+author visual acceptance remain separate. See validation_v5_17_21/evidence.
+
 ## CA-KP-237 - Derive inventory test cases from native tier normalization
 
 Status/evidence: ENGINE-VERIFIED isolated fixture correction, #684, 2026-11-13.
