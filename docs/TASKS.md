@@ -1,6 +1,17 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.33** - 2026-11-14.
+Documentation version: **5.17.34** - 2026-11-14.
+
+## #711 - Cachiru, Kakuy and Kelenken models (5.17.34)
+
+Three exact native bindings, 23 states each, independent closed/quantized
+geometry checks, sixteen repeatable exports, 345 native continuity assertions
+and 188 inherited action/loot assertions pass. Review facial disks/beaks,
+feather layering, talons, rigid joins and folded corpses under CA711-AVIAN-01.
+Regional-gallery integration remains separate. Native coverage is fourteen
+of 56 new folklore combat classes, not completion of #461 or the broader
+all-character/modular-equipment/campaign request. Pending design questions
+remain deferred until the author returns.
 
 ## #709 - Current native models in regional gallery (5.17.33)
 

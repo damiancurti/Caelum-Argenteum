@@ -1,0 +1,1636 @@
+{
+  "schema_revision": 1,
+  "issue": 711,
+  "parent_issue": 461,
+  "status": "candidate_author_review_pending",
+  "frames": [
+    {
+      "sprite": "MIID",
+      "letter": "A",
+      "action": "idle",
+      "cycle": "idle",
+      "sample": 0
+    },
+    {
+      "sprite": "MIID",
+      "letter": "B",
+      "action": "idle",
+      "cycle": "idle",
+      "sample": 8
+    },
+    {
+      "sprite": "MIRN",
+      "letter": "A",
+      "action": "run",
+      "cycle": "walk",
+      "sample": 0
+    },
+    {
+      "sprite": "MIRN",
+      "letter": "B",
+      "action": "run",
+      "cycle": "walk",
+      "sample": 6
+    },
+    {
+      "sprite": "MIRN",
+      "letter": "C",
+      "action": "run",
+      "cycle": "walk",
+      "sample": 12
+    },
+    {
+      "sprite": "MIRN",
+      "letter": "D",
+      "action": "run",
+      "cycle": "walk",
+      "sample": 18
+    },
+    {
+      "sprite": "MIWK",
+      "letter": "A",
+      "action": "walk",
+      "cycle": "walk",
+      "sample": 6
+    },
+    {
+      "sprite": "MIWK",
+      "letter": "B",
+      "action": "walk",
+      "cycle": "walk",
+      "sample": 18
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "A",
+      "action": "stun",
+      "transforms": [
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -8
+        },
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "z",
+          "angle": -4
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "D",
+      "action": "attack_prepare",
+      "transforms": [
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10
+        },
+        {
+          "part": "jaw",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 10
+        },
+        {
+          "part": "left_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": -8
+        },
+        {
+          "part": "right_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": 8
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "E",
+      "action": "attack_release",
+      "transforms": [
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 12
+        },
+        {
+          "part": "jaw",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 28
+        },
+        {
+          "part": "left_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": 12
+        },
+        {
+          "part": "right_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": -12
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "F",
+      "action": "pain",
+      "transforms": [
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -8
+        },
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "z",
+          "angle": 4
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "G",
+      "action": "death",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": 8
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 1.170731707317073
+        },
+        {
+          "part": "left_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 1.951219512195122
+        },
+        {
+          "part": "right_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 1.951219512195122
+        },
+        {
+          "part": "left_wing",
+          "kind": "rotate",
+          "axis": "z",
+          "angle": -8.0
+        },
+        {
+          "part": "left_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": -4.444444444444445
+        },
+        {
+          "part": "right_wing",
+          "kind": "rotate",
+          "axis": "z",
+          "angle": 8.0
+        },
+        {
+          "part": "right_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": 4.444444444444445
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "H",
+      "action": "death",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": 25
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 3.658536585365854
+        },
+        {
+          "part": "left_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 6.097560975609756
+        },
+        {
+          "part": "right_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 6.097560975609756
+        },
+        {
+          "part": "left_wing",
+          "kind": "rotate",
+          "axis": "z",
+          "angle": -25.0
+        },
+        {
+          "part": "left_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": -13.88888888888889
+        },
+        {
+          "part": "right_wing",
+          "kind": "rotate",
+          "axis": "z",
+          "angle": 25.0
+        },
+        {
+          "part": "right_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": 13.88888888888889
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "I",
+      "action": "death",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": 45
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 6.146341463414634
+        },
+        {
+          "part": "left_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 10.24390243902439
+        },
+        {
+          "part": "right_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 10.24390243902439
+        },
+        {
+          "part": "left_wing",
+          "kind": "rotate",
+          "axis": "z",
+          "angle": -45.0
+        },
+        {
+          "part": "left_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": -25.0
+        },
+        {
+          "part": "right_wing",
+          "kind": "rotate",
+          "axis": "z",
+          "angle": 45.0
+        },
+        {
+          "part": "right_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": 25.0
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "J",
+      "action": "death",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": 65
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 8.78048780487805
+        },
+        {
+          "part": "left_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 14.634146341463415
+        },
+        {
+          "part": "right_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 14.634146341463415
+        },
+        {
+          "part": "left_wing",
+          "kind": "rotate",
+          "axis": "z",
+          "angle": -65.0
+        },
+        {
+          "part": "left_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": -36.11111111111111
+        },
+        {
+          "part": "right_wing",
+          "kind": "rotate",
+          "axis": "z",
+          "angle": 65.0
+        },
+        {
+          "part": "right_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": 36.11111111111111
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "K",
+      "action": "death",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": 80
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 11.121951219512194
+        },
+        {
+          "part": "left_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 18.536585365853657
+        },
+        {
+          "part": "right_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 18.536585365853657
+        },
+        {
+          "part": "left_wing",
+          "kind": "rotate",
+          "axis": "z",
+          "angle": -80.0
+        },
+        {
+          "part": "left_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": -44.44444444444444
+        },
+        {
+          "part": "right_wing",
+          "kind": "rotate",
+          "axis": "z",
+          "angle": 80.0
+        },
+        {
+          "part": "right_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": 44.44444444444444
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "L",
+      "action": "death",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": 90
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 12.0
+        },
+        {
+          "part": "left_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 20.0
+        },
+        {
+          "part": "right_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 20.0
+        },
+        {
+          "part": "left_wing",
+          "kind": "rotate",
+          "axis": "z",
+          "angle": -90.0
+        },
+        {
+          "part": "left_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": -50.0
+        },
+        {
+          "part": "right_wing",
+          "kind": "rotate",
+          "axis": "z",
+          "angle": 90.0
+        },
+        {
+          "part": "right_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": 50.0
+        }
+      ]
+    },
+    {
+      "sprite": "MDBR",
+      "letter": "A",
+      "action": "breath",
+      "transforms": [
+        {
+          "part": "jaw",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 14
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -5
+        }
+      ]
+    },
+    {
+      "sprite": "MDBR",
+      "letter": "B",
+      "action": "breath",
+      "transforms": [
+        {
+          "part": "jaw",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 25
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 0
+        }
+      ]
+    },
+    {
+      "sprite": "MDBR",
+      "letter": "C",
+      "action": "breath",
+      "transforms": [
+        {
+          "part": "jaw",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 32
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 3
+        }
+      ]
+    },
+    {
+      "sprite": "MDBR",
+      "letter": "D",
+      "action": "breath",
+      "transforms": [
+        {
+          "part": "jaw",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 18
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 0
+        }
+      ]
+    },
+    {
+      "sprite": "SLMD",
+      "letter": "A",
+      "action": "rest",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": 90
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 12
+        },
+        {
+          "part": "left_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 20
+        },
+        {
+          "part": "right_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 20
+        },
+        {
+          "part": "left_wing",
+          "kind": "rotate",
+          "axis": "z",
+          "angle": -90.0
+        },
+        {
+          "part": "left_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": -50.0
+        },
+        {
+          "part": "right_wing",
+          "kind": "rotate",
+          "axis": "z",
+          "angle": 90.0
+        },
+        {
+          "part": "right_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": 50.0
+        }
+      ]
+    }
+  ],
+  "species": {
+    "cachiru": {
+      "actor": "CaelumBestiary045",
+      "catalogue_id": "CA-FOLK-045",
+      "vertices": 10229,
+      "triangles": 18496,
+      "hierarchical_parts": 121,
+      "surfaces": [
+        {
+          "material": "coverts",
+          "vertices": 4096,
+          "triangles": 7528
+        },
+        {
+          "material": "coverts",
+          "vertices": 863,
+          "triangles": 1496
+        },
+        {
+          "material": "flight",
+          "vertices": 3781,
+          "triangles": 6592
+        },
+        {
+          "material": "iris",
+          "vertices": 508,
+          "triangles": 960
+        },
+        {
+          "material": "dark",
+          "vertices": 1016,
+          "triangles": 1920
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -49.058308616178714,
+            -81.29662570681045,
+            0.0
+          ],
+          "max": [
+            22.035055092133746,
+            81.29662570681045,
+            100.0
+          ]
+        },
+        {
+          "min": [
+            -49.058308616178714,
+            -80.20581892720062,
+            0.0
+          ],
+          "max": [
+            21.665351177869958,
+            80.20581892720062,
+            99.90363713904671
+          ]
+        },
+        {
+          "min": [
+            -49.058308616178714,
+            -81.50290413340208,
+            0.0
+          ],
+          "max": [
+            22.537228357104322,
+            81.50290413340208,
+            100.1071706246336
+          ]
+        },
+        {
+          "min": [
+            -49.00644338509693,
+            -82.28036191776724,
+            0.0
+          ],
+          "max": [
+            30.918691226488374,
+            82.28036191776724,
+            107.31325035172468
+          ]
+        },
+        {
+          "min": [
+            -49.058308616178714,
+            -81.0868757064402,
+            0.0
+          ],
+          "max": [
+            21.513872097829427,
+            81.0868757064402,
+            99.86018036036917
+          ]
+        },
+        {
+          "min": [
+            -49.00644338509693,
+            -80.22841311826484,
+            0.0
+          ],
+          "max": [
+            30.918691226488374,
+            80.22841311826484,
+            107.15464632316748
+          ]
+        },
+        {
+          "min": [
+            -49.00644338509693,
+            -82.28036191776724,
+            0.0
+          ],
+          "max": [
+            30.918691226488374,
+            82.28036191776724,
+            107.31325035172468
+          ]
+        },
+        {
+          "min": [
+            -49.00644338509693,
+            -80.22841311826484,
+            0.0
+          ],
+          "max": [
+            30.918691226488374,
+            80.22841311826484,
+            107.15464632316748
+          ]
+        },
+        {
+          "min": [
+            -49.058308616178714,
+            -79.12353066220858,
+            0.0
+          ],
+          "max": [
+            19.47477267548021,
+            83.07365176287695,
+            99.10632761354414
+          ]
+        },
+        {
+          "min": [
+            -49.058308616178714,
+            -84.7687063349965,
+            0.0
+          ],
+          "max": [
+            18.888729889460166,
+            84.7687063349965,
+            98.77693314039284
+          ]
+        },
+        {
+          "min": [
+            -49.058308616178714,
+            -73.48274621845886,
+            0.0
+          ],
+          "max": [
+            25.25166989125826,
+            73.48274621845886,
+            100.04726458584612
+          ]
+        },
+        {
+          "min": [
+            -49.058308616178714,
+            -83.07365176287695,
+            0.0
+          ],
+          "max": [
+            19.47477267548021,
+            79.12353066220858,
+            99.10632761354414
+          ]
+        },
+        {
+          "min": [
+            -49.058308616178714,
+            -77.69666091207662,
+            0.0
+          ],
+          "max": [
+            22.38642851406343,
+            77.54959523524715,
+            103.09742218966372
+          ]
+        },
+        {
+          "min": [
+            -58.70860123557402,
+            -64.43146131234244,
+            0.0
+          ],
+          "max": [
+            23.101886792419496,
+            57.11284254507273,
+            102.81247664699904
+          ]
+        },
+        {
+          "min": [
+            -73.04609716280929,
+            -55.667667410741636,
+            0.0
+          ],
+          "max": [
+            23.77379723433013,
+            34.5873541273588,
+            90.25502153810045
+          ]
+        },
+        {
+          "min": [
+            -78.57315572663072,
+            -65.21712083145879,
+            0.0
+          ],
+          "max": [
+            24.43635996786656,
+            39.81570975899464,
+            71.40967191601645
+          ]
+        },
+        {
+          "min": [
+            -76.49254012937232,
+            -67.16686903348335,
+            0.0
+          ],
+          "max": [
+            24.9819927900336,
+            40.86973047045741,
+            53.77315065834554
+          ]
+        },
+        {
+          "min": [
+            -72.18579696380583,
+            -65.92556472757182,
+            0.0
+          ],
+          "max": [
+            25.25166989125826,
+            39.803651841868984,
+            50.55644606594774
+          ]
+        },
+        {
+          "min": [
+            -49.058308616178714,
+            -81.29662570681045,
+            0.0
+          ],
+          "max": [
+            20.44499065161215,
+            81.29662570681045,
+            99.51589737733421
+          ]
+        },
+        {
+          "min": [
+            -49.058308616178714,
+            -81.29662570681045,
+            0.0
+          ],
+          "max": [
+            22.035055092133746,
+            81.29662570681045,
+            100.0
+          ]
+        },
+        {
+          "min": [
+            -49.058308616178714,
+            -81.29662570681045,
+            0.0
+          ],
+          "max": [
+            22.916684891047638,
+            81.29662570681045,
+            100.16820735404015
+          ]
+        },
+        {
+          "min": [
+            -49.058308616178714,
+            -81.29662570681045,
+            0.0
+          ],
+          "max": [
+            22.035055092133746,
+            81.29662570681045,
+            100.0
+          ]
+        },
+        {
+          "min": [
+            -72.18579696380583,
+            -65.92556472757182,
+            0.0
+          ],
+          "max": [
+            25.25166989125826,
+            39.803651841868984,
+            50.55644606594774
+          ]
+        }
+      ],
+      "modeldef_scale": 1.652622208,
+      "native_profile": {
+        "Height": 51.644444,
+        "Radius": 14.755556,
+        "Scale": 0.3125
+      },
+      "maximum_authored_radius": 90.29950324902552,
+      "maximum_authored_height": 107.31325035172468,
+      "source_sha256": "a4ffc47561bbf59ae27f9475df049c637f4d42b8cc472718adc3ab4c5a000932"
+    },
+    "kakuy": {
+      "actor": "CaelumBestiary046",
+      "catalogue_id": "CA-FOLK-046",
+      "vertices": 9651,
+      "triangles": 17472,
+      "hierarchical_parts": 113,
+      "surfaces": [
+        {
+          "material": "coverts",
+          "vertices": 4096,
+          "triangles": 7528
+        },
+        {
+          "material": "coverts",
+          "vertices": 621,
+          "triangles": 1048
+        },
+        {
+          "material": "flight",
+          "vertices": 3445,
+          "triangles": 6016
+        },
+        {
+          "material": "iris",
+          "vertices": 508,
+          "triangles": 960
+        },
+        {
+          "material": "dark",
+          "vertices": 1016,
+          "triangles": 1920
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -50.11191101441806,
+            -83.04259539532136,
+            0.0
+          ],
+          "max": [
+            20.757517086666972,
+            83.04259539532136,
+            100.0
+          ]
+        },
+        {
+          "min": [
+            -50.11191101441806,
+            -81.92836186759423,
+            0.0
+          ],
+          "max": [
+            20.279172860877978,
+            81.92836186759423,
+            100.1419162562342
+          ]
+        },
+        {
+          "min": [
+            -50.11191101441806,
+            -83.25330396740908,
+            0.0
+          ],
+          "max": [
+            21.429712276764658,
+            83.25330396740908,
+            99.77400566077608
+          ]
+        },
+        {
+          "min": [
+            -50.05893189797426,
+            -84.04745884976322,
+            0.0
+          ],
+          "max": [
+            31.58271752795583,
+            84.04745884976322,
+            107.25468184481636
+          ]
+        },
+        {
+          "min": [
+            -50.11191101441806,
+            -82.82834069208519,
+            0.0
+          ],
+          "max": [
+            20.084140229310464,
+            82.82834069208519,
+            100.19449692560552
+          ]
+        },
+        {
+          "min": [
+            -50.05893189797426,
+            -81.95144130355504,
+            0.0
+          ],
+          "max": [
+            31.58271752795583,
+            81.95144130355504,
+            107.52469900024425
+          ]
+        },
+        {
+          "min": [
+            -50.05893189797426,
+            -84.04745884976322,
+            0.0
+          ],
+          "max": [
+            31.58271752795583,
+            84.04745884976322,
+            107.25468184481636
+          ]
+        },
+        {
+          "min": [
+            -50.05893189797426,
+            -81.95144130355504,
+            0.0
+          ],
+          "max": [
+            31.58271752795583,
+            81.95144130355504,
+            107.52469900024425
+          ]
+        },
+        {
+          "min": [
+            -50.11191101441806,
+            -80.82282980264766,
+            0.0
+          ],
+          "max": [
+            18.963441052709864,
+            84.85778581064154,
+            100.6410047310693
+          ]
+        },
+        {
+          "min": [
+            -50.11191101441806,
+            -86.5892442787108,
+            0.0
+          ],
+          "max": [
+            18.963441052709864,
+            86.5892442787108,
+            100.76398499075768
+          ]
+        },
+        {
+          "min": [
+            -50.11191101441806,
+            -75.06090086399934,
+            0.0
+          ],
+          "max": [
+            25.295994936803854,
+            75.06090086399934,
+            97.89199565949312
+          ]
+        },
+        {
+          "min": [
+            -50.11191101441806,
+            -84.85778581064154,
+            0.0
+          ],
+          "max": [
+            18.963441052709864,
+            80.82282980264766,
+            100.6410047310693
+          ]
+        },
+        {
+          "min": [
+            -50.11191101441806,
+            -79.3653158368238,
+            0.0
+          ],
+          "max": [
+            21.227057651870844,
+            79.2150916990898,
+            101.18068434631255
+          ]
+        },
+        {
+          "min": [
+            -59.96945846453032,
+            -65.8152257362623,
+            0.0
+          ],
+          "max": [
+            22.20572121913829,
+            58.339428409386656,
+            98.0837418305518
+          ]
+        },
+        {
+          "min": [
+            -74.61487410036925,
+            -50.89670677853592,
+            0.0
+          ],
+          "max": [
+            23.1621516039473,
+            35.330170589753536,
+            86.22687736828946
+          ]
+        },
+        {
+          "min": [
+            -80.26063472144283,
+            -58.90372720045383,
+            0.0
+          ],
+          "max": [
+            24.14399237024085,
+            40.67081317517406,
+            66.89525559859328
+          ]
+        },
+        {
+          "min": [
+            -78.13533471404227,
+            -62.48091609021723,
+            0.0
+          ],
+          "max": [
+            24.988822176856033,
+            41.7474705975369,
+            51.48648390696854
+          ]
+        },
+        {
+          "min": [
+            -73.73609763550085,
+            -63.03747997823661,
+            0.0
+          ],
+          "max": [
+            25.295994936803854,
+            40.658496295789824,
+            51.642223263002876
+          ]
+        },
+        {
+          "min": [
+            -50.11191101441806,
+            -83.04259539532136,
+            0.0
+          ],
+          "max": [
+            18.963441052709864,
+            83.04259539532136,
+            100.4850024252654
+          ]
+        },
+        {
+          "min": [
+            -50.11191101441806,
+            -83.04259539532136,
+            0.0
+          ],
+          "max": [
+            20.757517086666972,
+            83.04259539532136,
+            100.0
+          ]
+        },
+        {
+          "min": [
+            -50.11191101441806,
+            -83.04259539532136,
+            0.0
+          ],
+          "max": [
+            21.947093887643966,
+            83.04259539532136,
+            99.57529919893152
+          ]
+        },
+        {
+          "min": [
+            -50.11191101441806,
+            -83.04259539532136,
+            0.0
+          ],
+          "max": [
+            20.757517086666972,
+            83.04259539532136,
+            100.0
+          ]
+        },
+        {
+          "min": [
+            -73.73609763550085,
+            -63.03747997823661,
+            0.0
+          ],
+          "max": [
+            25.295994936803854,
+            40.658496295789824,
+            51.642223263002876
+          ]
+        }
+      ],
+      "modeldef_scale": 1.652622208,
+      "native_profile": {
+        "Height": 51.644444,
+        "Radius": 14.755556,
+        "Scale": 0.3125
+      },
+      "maximum_authored_radius": 92.23882353679465,
+      "maximum_authored_height": 107.52469900024425,
+      "source_sha256": "fbda2ce6d5b436375b731acd720aba64b97b8b3361c202260549e6109dd89c10"
+    },
+    "kelenken": {
+      "actor": "CaelumBestiary058",
+      "catalogue_id": "CA-FOLK-058",
+      "vertices": 9535,
+      "triangles": 17184,
+      "hierarchical_parts": 118,
+      "surfaces": [
+        {
+          "material": "coverts",
+          "vertices": 4096,
+          "triangles": 7468
+        },
+        {
+          "material": "coverts",
+          "vertices": 97,
+          "triangles": 148
+        },
+        {
+          "material": "flight",
+          "vertices": 3837,
+          "triangles": 6688
+        },
+        {
+          "material": "iris",
+          "vertices": 508,
+          "triangles": 960
+        },
+        {
+          "material": "dark",
+          "vertices": 1016,
+          "triangles": 1920
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -46.938213659343525,
+            -77.78332549262642,
+            0.0
+          ],
+          "max": [
+            35.6653784273697,
+            77.78332549262642,
+            99.99999999999999
+          ]
+        },
+        {
+          "min": [
+            -46.938213659343525,
+            -76.73965882072854,
+            0.0
+          ],
+          "max": [
+            35.120133339284635,
+            76.73965882072854,
+            99.91871546458724
+          ]
+        },
+        {
+          "min": [
+            -46.938213659343525,
+            -77.98068942819182,
+            0.0
+          ],
+          "max": [
+            36.40365070080535,
+            77.98068942819182,
+            100.08660656364745
+          ]
+        },
+        {
+          "min": [
+            -46.888589826670156,
+            -78.72454873812362,
+            0.0
+          ],
+          "max": [
+            36.142993702563025,
+            78.72454873812362,
+            106.98739964863738
+          ]
+        },
+        {
+          "min": [
+            -46.938213659343525,
+            -77.58264001018443,
+            0.0
+          ],
+          "max": [
+            34.896337490653885,
+            77.58264001018443,
+            99.90712468701257
+          ]
+        },
+        {
+          "min": [
+            -46.888589826670156,
+            -76.76127658533453,
+            0.0
+          ],
+          "max": [
+            35.17507722156535,
+            76.76127658533453,
+            106.85371787369053
+          ]
+        },
+        {
+          "min": [
+            -46.888589826670156,
+            -78.72454873812362,
+            0.0
+          ],
+          "max": [
+            36.142993702563025,
+            78.72454873812362,
+            106.98739964863738
+          ]
+        },
+        {
+          "min": [
+            -46.888589826670156,
+            -76.76127658533453,
+            0.0
+          ],
+          "max": [
+            35.17507722156535,
+            76.76127658533453,
+            106.85371787369053
+          ]
+        },
+        {
+          "min": [
+            -46.938213659343525,
+            -75.70414252886756,
+            0.0
+          ],
+          "max": [
+            31.66296656770983,
+            79.48355591333771,
+            101.42385631715912
+          ]
+        },
+        {
+          "min": [
+            -46.938213659343525,
+            -81.1053573148674,
+            0.0
+          ],
+          "max": [
+            30.667392415283217,
+            81.1053573148674,
+            101.86147640966597
+          ]
+        },
+        {
+          "min": [
+            -46.938213659343525,
+            -70.3071292013492,
+            0.0
+          ],
+          "max": [
+            40.22142126322567,
+            70.3071292013492,
+            99.93782606920475
+          ]
+        },
+        {
+          "min": [
+            -46.938213659343525,
+            -79.48355591333771,
+            0.0
+          ],
+          "max": [
+            31.66296656770983,
+            75.70414252886756,
+            101.42385631715912
+          ]
+        },
+        {
+          "min": [
+            -46.938213659343525,
+            -74.33893612275718,
+            0.0
+          ],
+          "max": [
+            36.18225036379855,
+            74.19822600951244,
+            101.2311265560478
+          ]
+        },
+        {
+          "min": [
+            -56.17146098526093,
+            -61.647002980145274,
+            0.0
+          ],
+          "max": [
+            37.230185945894696,
+            54.644664312560266,
+            97.30608963910419
+          ]
+        },
+        {
+          "min": [
+            -69.88935029199905,
+            -49.449360662954255,
+            0.0
+          ],
+          "max": [
+            38.207941370717414,
+            33.092633311983946,
+            82.54199397493821
+          ]
+        },
+        {
+          "min": [
+            -75.17755249656503,
+            -61.26149961074824,
+            0.0
+          ],
+          "max": [
+            39.16467177825463,
+            38.09504127604128,
+            62.837949188004515
+          ]
+        },
+        {
+          "min": [
+            -73.18685240514625,
+            -66.31079713443319,
+            0.0
+          ],
+          "max": [
+            39.94567510689147,
+            39.1035116198333,
+            48.225731832464334
+          ]
+        },
+        {
+          "min": [
+            -69.0662286701769,
+            -67.29072339596904,
+            0.0
+          ],
+          "max": [
+            40.22142126322567,
+            38.083504451672574,
+            48.37160787312471
+          ]
+        },
+        {
+          "min": [
+            -46.938213659343525,
+            -77.78332549262642,
+            0.0
+          ],
+          "max": [
+            33.29307562553598,
+            77.78332549262642,
+            100.68400436828172
+          ]
+        },
+        {
+          "min": [
+            -46.938213659343525,
+            -77.78332549262642,
+            0.0
+          ],
+          "max": [
+            35.6653784273697,
+            77.78332549262642,
+            99.99999999999999
+          ]
+        },
+        {
+          "min": [
+            -46.938213659343525,
+            -77.78332549262642,
+            0.0
+          ],
+          "max": [
+            36.95954233155504,
+            77.78332549262642,
+            100.12994505576957
+          ]
+        },
+        {
+          "min": [
+            -46.938213659343525,
+            -77.78332549262642,
+            0.0
+          ],
+          "max": [
+            35.6653784273697,
+            77.78332549262642,
+            99.99999999999999
+          ]
+        },
+        {
+          "min": [
+            -69.0662286701769,
+            -67.29072339596904,
+            0.0
+          ],
+          "max": [
+            40.22142126322567,
+            38.083504451672574,
+            48.37160787312471
+          ]
+        }
+      ],
+      "modeldef_scale": 1.6526222080000004,
+      "native_profile": {
+        "Height": 51.644444,
+        "Radius": 14.755556,
+        "Scale": 0.3125
+      },
+      "maximum_authored_radius": 86.39713631377724,
+      "maximum_authored_height": 106.98739964863738,
+      "source_sha256": "98a879aa33fc48c044abf7fe00bf5d33ca9311aa774e032d8db881413fe59da2"
+    }
+  },
+  "source_sha256": {
+    "src/caelum/actors/CaelumFolkloreCharacters.zs": "80c5a00ef221395a6688125d8871c3f84ccf21e2aeb63b5c0bd4adb99dd2e420",
+    "assets/source/bestiary_453/imagenes/05_Bestias_magicas/45_cachiru.png": "a4ffc47561bbf59ae27f9475df049c637f4d42b8cc472718adc3ab4c5a000932",
+    "assets/source/bestiary_453/imagenes/05_Bestias_magicas/46_kakuy.png": "fbda2ce6d5b436375b731acd720aba64b97b8b3361c202260549e6109dd89c10",
+    "assets/source/bestiary_453/imagenes/05_Bestias_magicas/58_kelenken.png": "98a879aa33fc48c044abf7fe00bf5d33ca9311aa774e032d8db881413fe59da2",
+    "assets/source/art/avian_711/CONTACTS.json": "a2179a2e85d0f145371476ac7934701f41838b436faa28951b8d2dff8463d618",
+    "assets/source/art/avian_711/coverts.png": "a1f5b107aec9edd64eba38993b6a69669f60e6483f28631dab3ca71128d05508",
+    "assets/source/art/avian_711/COVERTS_PROMPT.json": "a4260ef1d70e5b2d60f35c84092f4b0968a6e821e3663f0068f3fc3356f579b2",
+    "assets/source/art/avian_711/dark.png": "6573658a5e61c4c8f75046435e8e8d1f1e85e6348007c69fc911483fe579fac4",
+    "assets/source/art/avian_711/flight.png": "2b766f3d1b8ffb1d002e039eee10faa02f9347a91324e2a797af2afc0c83b42a",
+    "assets/source/art/avian_711/FLIGHT_PROMPT.json": "6d5872c722894b2aed3a1c27f44285697a57cb445fd694ceb6643456455a4407",
+    "assets/source/art/avian_711/iris.png": "8b231a9556f30af1b2c3d11ee5e4e4d6b63f7336a5301d225bb7f4f43c5639cc",
+    "assets/source/art/peuchen_708/iris.png": "8b231a9556f30af1b2c3d11ee5e4e4d6b63f7336a5301d225bb7f4f43c5639cc",
+    "assets/source/art/peuchen_708/dark.png": "6573658a5e61c4c8f75046435e8e8d1f1e85e6348007c69fc911483fe579fac4",
+    "assets/source/art/avian_711/coverts-v2.png": "df14c045b10e9dcde48fdf6cfdd0bf289c8c83c66861b6fccd8c9931a088c116",
+    "assets/source/art/avian_711/COVERTS_V2_PROMPT.json": "933815130d1719536375de422487e598a8c25fc8cc6ff43d2f4c4e206f6e63b3",
+    "assets/source/art/avian_711/ANIMATION.json": "178096829628466851f33d87e6b3d589b9df06a559aa5d9f370e1f1ace8cbfab",
+    "assets/source/art/avian_711/PROVENANCE.json": "3e787893c252065abfc5e442fc70265203ad974c486ecd17ea215401c1a41bb0",
+    "assets/source/art/avian_711/cachiru.json": "bb5914e8ede9d4c950d8e19b3436eeb6519117a3f54159a3af6f830cdae4bf09",
+    "assets/source/art/avian_711/kakuy.json": "7d3f846109573aadde017961ae4880d27e75b4e5814537a5a9b5089cad51e7f1",
+    "assets/source/art/avian_711/kelenken.json": "c546b70d077b108e1d031241d8006401342a46963ff064cd07bb9e19da7e1402",
+    "assets/generators/generate_beast_men_models.py": "326327fa90dd2bca5648a6725aa064400d2eae6f71a35ade88ea2a2ba1f13eb7",
+    "assets/generators/generate_avian_models.py": "5a450ac72d03eef12cafd06fbaefff515ae7e370bc13a46dd8036a050259e4e6",
+    "assets/generators/generate_peuchen_model.py": "0f1873c9fd1da0be0f965ea73ff2cc5c35dc25a35ac9da2df4692b50cef30812",
+    "assets/generators/generate_guardian_models.py": "2f105629523a71735d388b430ac87801bd8bb687177e9fa84ca0edd451051951",
+    "assets/generators/generate_duende_models.py": "243d46cee79b1723f6b7ac9bd0b8c0c4f87b37f463cf8540cd7d51be2800511f",
+    "assets/generators/generate_inventory_clothing_models.py": "105e9107d4b0ec4c82a6a168127fb3968f8d19ca72bf48320cb01c90062217d3",
+    "assets/generators/generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+    "assets/generators/generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281"
+  },
+  "sha256": {
+    "models/caelum/folklore/avian/coverts-v2.png": "df14c045b10e9dcde48fdf6cfdd0bf289c8c83c66861b6fccd8c9931a088c116",
+    "models/caelum/folklore/avian/flight.png": "2b766f3d1b8ffb1d002e039eee10faa02f9347a91324e2a797af2afc0c83b42a",
+    "models/caelum/folklore/avian/iris.png": "8b231a9556f30af1b2c3d11ee5e4e4d6b63f7336a5301d225bb7f4f43c5639cc",
+    "models/caelum/folklore/avian/dark.png": "6573658a5e61c4c8f75046435e8e8d1f1e85e6348007c69fc911483fe579fac4",
+    "models/caelum/folklore/avian/cachiru.md3": "932da92c6c4e5f67126d4fdc560e15af5b66bc4eb4ef46ed4c93248432478550",
+    "editable/cachiru.obj": "d57c966e8bb1b7aaced9cf4a1448475fc61cf375f92188d7a7930778c0042ac7",
+    "editable/cachiru.mtl": "a541e27a822b27759d627aa747e5017434c22022652514583a7b8bd6dbb72ff0",
+    "models/caelum/folklore/avian/kakuy.md3": "ca12494e7adb605d72a6a9f97ab7fb4f9367527a25364ceb4ef935bde5c680ff",
+    "editable/kakuy.obj": "22f51adaf1546f2ffcaede7492fd48562ed7e3208bcd39c8d7edfead157bc10e",
+    "editable/kakuy.mtl": "a541e27a822b27759d627aa747e5017434c22022652514583a7b8bd6dbb72ff0",
+    "models/caelum/folklore/avian/kelenken.md3": "4b4e1f07721c33880108985fc0ea2102d7596093ed39a60deb2b58851c2713bf",
+    "editable/kelenken.obj": "e4d2e40ac260f07705e2073c9094c4a8c370dd9550f6724d4e40a79ed91ccde3",
+    "editable/kelenken.mtl": "a541e27a822b27759d627aa747e5017434c22022652514583a7b8bd6dbb72ff0",
+    "caelum/data/avian_combat.modeldef": "1c38c44dad7f869d6121441af3327fe785fb5268b26424e9cd89645cfddb637c"
+  }
+}
