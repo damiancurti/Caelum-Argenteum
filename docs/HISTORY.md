@@ -1,6 +1,20 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.15** - 2026-11-13.
+Documentation version: **5.17.16** - 2026-11-13.
+
+## 5.17.16 - Support-book model reuse (#676, 2026-11-13)
+
+The author's all-dropped-inventory request is extended to current support-book
+and book-base material states through three bindings to the unchanged #656
+mesh. Native weapon/stack identity, qualities and rules remain authoritative.
+The first direct-toss fixture omitted native unequip after automatic weapon
+pickup/equip; six world-flag failures were corrected in the fixture. Production
+rules did not change. Revised visual checks pass 160 assertions; final package
+compatibility/equip/stack checks pass 713. Three exports repeat and all 18,234
+package entries match src. Nine-book presentation: 1172.29/1124.36 queue presents/s,
+p95 1.0380/1.0902 ms, p99 1.2525/1.3244 ms; ASSETS records scope/environment.
+Evidence: assets/validation_v5_17_16/evidence/SUMMARY.json. CA676-BOOKS-01 remains
+unconfirmed, and all earlier author checks are retained.
 
 ## 5.17.15 - Jewelry drop models (#674, 2026-11-13)
 

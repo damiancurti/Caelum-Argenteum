@@ -1,6 +1,15 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.15** - 2026-11-13.
+Documentation version: **5.17.16** - 2026-11-13.
+
+## 5.17.16 - Support-book world model reuse (#676)
+
+Current support books (type 23), their legacy quest subclass and book-base
+materials (38) gain matching CBOO/A bindings to the owned #656 book model.
+Three qualities, native automatic weapon equip, Quintessence restrictions,
+durability, stack splitting/merging, icons and saved identity remain unchanged.
+No first-person, ability, crafting or rejected #479 presentation is restored.
+Native evidence and the separate author check are recorded in ASSETS/HISTORY.
 
 ## 5.17.15 - Jewelry world presentation (#674)
 

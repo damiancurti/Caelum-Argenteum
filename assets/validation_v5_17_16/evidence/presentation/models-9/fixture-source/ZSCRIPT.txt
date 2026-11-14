@@ -1,0 +1,30 @@
+version "4.14.2"
+class CA647BenchCamera : Actor
+{Default {+NOINTERACTION +NOGRAVITY CameraHeight 0;} States {Spawn:TNT1 A -1;Stop;}}
+class CA647Bench : EventHandler
+{
+    int Age;double Previous;Array<double> Tics;Array<Actor> Bodies;
+    override bool InputProcess(InputEvent e){return true;}
+    override void WorldTick()
+    {
+        Age++;
+        if(Age==5)
+        {
+            let user=CaelumPlayer(players[0].mo);user.CharacterCreationComplete=true;user.CreationWizardOpen=false;user.bInvisible=true;
+            let camera=Actor.Spawn('CA647BenchCamera',(0,-180,180),NO_REPLACE);camera.Angle=90;camera.Pitch=43;players[0].camera=camera;
+            static const class<Inventory> kinds[]={'CaelumWeaponPickup','CA_LimboMagicImplement','CaelumMaterialPickup'};
+            for(int index=0;index<9;index++)
+                {let item=Actor.Spawn(kinds[index/3],((index%3-1)*40,(index/3-1)*48,0),NO_REPLACE);item.args[0]=index<6?CaelumConstants.WEAPON_TYPE_SUPPORT_BOOK:CaelumConstants.MATERIAL_BOOK_BASE;item.args[1]=index%3+1;item.args[4]=CaelumConstants.ESSENCE_QUINTESSENCE+1;if(index<6)CaelumEquipmentItem(item).UpdateWorldSprite();else CaelumMaterialPickup(item).UpdateMaterialVisuals();Bodies.Push(item);}
+            Console.Printf("CA647 BENCH bodies=%d",Bodies.Size());
+        }
+        if(Age==175)Console.Printf("CA647 BEGIN");
+        if(Age<175 || Age>875)return;
+        double now=MSTimeF();if(Previous>0)Tics.Push(now-Previous);Previous=now;
+        if(Age==875)
+        {
+            Console.Printf("CA647 END");
+            for(int index=0;index<Tics.Size();index++)Console.Printf("CA647 TIC %.6f",Tics[index]);
+            Console.Printf("CA647 COMPLETE bodies=%d samples=%d",Bodies.Size(),Tics.Size());
+        }
+    }
+}

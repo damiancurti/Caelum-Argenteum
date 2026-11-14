@@ -4750,3 +4750,4 @@ Model CaelumBarricadeVisual
 #include "caelum/data/inventory_locks.modeldef"
 
 #include "caelum/data/inventory_jewelry.modeldef"
+#include "caelum/data/inventory_books.modeldef"

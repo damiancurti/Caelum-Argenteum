@@ -1,0 +1,240 @@
+OS: Windows 11 (or higher) (NT 10.0) Build 26200
+    
+Log started: 2026-11-13 21:04:23
+GZDoom version g4.14.2
+W_Init: Init WADfiles.
+adding C:/Program Files (x86)/GZDoom/gzdoom.pk3, 692 lumps
+adding C:/Program Files (x86)/GZDoom/game_support.pk3, 3308 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/ultimate doom/base/doom2/DOOM2.WAD, 2919 lumps
+adding C:/Program Files (x86)/Steam/steamapps/common/Ultimate Doom/rerelease/id24res.wad, 530 lumps
+adding C:/Program Files (x86)/GZDoom/game_widescreen_gfx.pk3, 214 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-674/build/issue674-jewelry01.pk3, 18233 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-676/build/issue676-model02/preview.pk3, 1 lumps
+adding C:/GZDooMProjects/CaelumArgenteum/build/v517/work-676/build/issue676-visual02/fixture.pk3, 3 lumps
+S_Init: Setting up sound.
+I_InitSound: Initializing OpenAL
+  Opened device OpenAL Soft on Altavoces (Trust GXT 363 headset)
+  EFX enabled
+I_InitInput
+I_StartupMouse
+I_StartupKeyboard
+I_StartupXInput
+I_StartupRawPS2
+I_StartupDirectInputJoystick
+Vulkan device: NVIDIA GeForce RTX 3070 Ti
+Vulkan device type: discrete gpu
+Vulkan version: 1.4.341 (api) 610.352.0 (driver)
+Max. texture size: 32768
+Max. uniform buffer range: 65536
+Min. uniform buffer offset alignment: 64
+Resolution: 1280 x 720
+I_Init: Setting up machine state.
+CPU speed: 3400 MHz
+CPU Vendor ID: AuthenticAMD
+  Name: AMD Ryzen 9 5950X 16-Core Processor 
+  Family 25 (25), Model 33, Stepping 0
+  Features: SSE2 SSE3 SSSE3 SSE4.1 SSE4.2 AVX AVX2 F16C FMA3 BMI1 BMI2 HyperThreading
+V_Init: allocate screen.
+ST_Init: Init startup screen.
+Checking cmd-line parameters...
+S_InitData: Load sound definitions.
+G_ParseMapInfo: Load map definitions.
+Texman.Init: Init texture manager.
+ParseTeamInfo: Load team definitions.
+LoadActors: Load actor definitions.
+script parsing took 2474.46 ms
+R_Init: Init Doom refresh subsystem.
+DecalLibrary: Load decals.
+M_Init: Init menus.
+P_Init: Init Playloop state.
+ParseSBarInfo: Loading custom status bar definition.
+D_CheckNetGame: Checking network game status.
+player 1 of 1 (1 nodes)
+
+----------------------------------------
+
+CA455V - Inventory drop inspection
+
+[Caelum] Inicio por comando directo: perfil de prueba seguro aplicado.
+[Caelum] Character creation values loaded. Attribute total: 150.00
+CA676 PASS book 0 native pickup
+CA676 PASS book 0 exact native ownership
+CA676 PASS book 0 native automatic pickup equip
+CA676 PASS book 0 native unequip before toss
+CA676 PASS book 0 assigned persistent identity
+CA676 PASS book 0 Box excludes carried mass
+CA676 PASS book 0 temporary quest guard
+CA676 PASS book 0 native weapon toss
+CA676 PASS book 0 exact weapon leaves inventory
+CA676 PASS book 1 native pickup
+CA676 PASS book 1 exact native ownership
+CA676 PASS book 1 native automatic pickup equip
+CA676 PASS book 1 native unequip before toss
+CA676 PASS book 1 assigned persistent identity
+CA676 PASS book 1 Box excludes carried mass
+CA676 PASS book 1 temporary quest guard
+CA676 PASS book 1 native weapon toss
+CA676 PASS book 1 exact weapon leaves inventory
+CA676 PASS book 2 native pickup
+CA676 PASS book 2 exact native ownership
+CA676 PASS book 2 native automatic pickup equip
+CA676 PASS book 2 native unequip before toss
+CA676 PASS book 2 assigned persistent identity
+CA676 PASS book 2 Box excludes carried mass
+CA676 PASS book 2 temporary quest guard
+CA676 PASS book 2 native weapon toss
+CA676 PASS book 2 exact weapon leaves inventory
+CA676 PASS book 3 native pickup
+CA676 PASS book 3 exact native ownership
+CA676 PASS book 3 native automatic pickup equip
+CA676 PASS book 3 native unequip before toss
+CA676 PASS book 3 assigned persistent identity
+CA676 PASS book 3 Box excludes carried mass
+CA676 PASS book 3 temporary quest guard
+CA676 PASS book 3 native weapon toss
+CA676 PASS book 3 exact weapon leaves inventory
+CA676 PASS book 4 native pickup
+CA676 PASS book 4 exact native ownership
+CA676 PASS book 4 native automatic pickup equip
+CA676 PASS book 4 native unequip before toss
+CA676 PASS book 4 assigned persistent identity
+CA676 PASS book 4 Box excludes carried mass
+CA676 PASS book 4 temporary quest guard
+CA676 PASS book 4 native weapon toss
+CA676 PASS book 4 exact weapon leaves inventory
+CA676 PASS book 5 native pickup
+CA676 PASS book 5 exact native ownership
+CA676 PASS book 5 native automatic pickup equip
+CA676 PASS book 5 native unequip before toss
+CA676 PASS book 5 assigned persistent identity
+CA676 PASS book 5 Box excludes carried mass
+CA676 PASS book 5 temporary quest guard
+CA676 PASS book 5 native weapon toss
+CA676 PASS book 5 exact weapon leaves inventory
+CA676 PASS book 6 native pickup
+CA676 PASS book 6 exact native ownership
+CA676 PASS book 6 Box excludes carried mass
+CA676 PASS book 6 temporary quest guard
+CA676 PASS book 6 native component split
+CA676 PASS book 6 native split remainder
+CA676 PASS book 7 native pickup
+CA676 PASS book 7 exact native ownership
+CA676 PASS book 7 Box excludes carried mass
+CA676 PASS book 7 temporary quest guard
+CA676 PASS book 7 native component split
+CA676 PASS book 7 native split remainder
+CA676 PASS book 8 native pickup
+CA676 PASS book 8 exact native ownership
+CA676 PASS book 8 Box excludes carried mass
+CA676 PASS book 8 temporary quest guard
+CA676 PASS book 8 native component split
+CA676 PASS book 8 native split remainder
+Game saved.
+CA676 PASS three native book classes and all qualities retained
+CA676 PASS book 0 saved reference
+CA676 PASS book 0 original world quantity and ownership
+CA676 PASS book 0 unchanged icon and book state
+CA676 PASS book 0 original scale, collision and floor contact
+CA676 PASS book 0 copied provenance
+CA676 PASS book 0 native support-book identity
+CA676 PASS book 0 original weapon weight
+CA676 PASS book 0 independent saved item identity
+CA676 PASS book 0 original world flags
+CA676 PASS book 0 native durability and size
+CA676 PASS book 1 saved reference
+CA676 PASS book 1 original world quantity and ownership
+CA676 PASS book 1 unchanged icon and book state
+CA676 PASS book 1 original scale, collision and floor contact
+CA676 PASS book 1 copied provenance
+CA676 PASS book 1 native support-book identity
+CA676 PASS book 1 original weapon weight
+CA676 PASS book 1 independent saved item identity
+CA676 PASS book 1 original world flags
+CA676 PASS book 1 native durability and size
+CA676 PASS book 2 saved reference
+CA676 PASS book 2 original world quantity and ownership
+CA676 PASS book 2 unchanged icon and book state
+CA676 PASS book 2 original scale, collision and floor contact
+CA676 PASS book 2 copied provenance
+CA676 PASS book 2 native support-book identity
+CA676 PASS book 2 original weapon weight
+CA676 PASS book 2 independent saved item identity
+CA676 PASS book 2 original world flags
+CA676 PASS book 2 native durability and size
+CA676 PASS book 3 saved reference
+CA676 PASS book 3 original world quantity and ownership
+CA676 PASS book 3 unchanged icon and book state
+CA676 PASS book 3 original scale, collision and floor contact
+CA676 PASS book 3 copied provenance
+CA676 PASS book 3 native support-book identity
+CA676 PASS book 3 original weapon weight
+CA676 PASS book 3 independent saved item identity
+CA676 PASS book 3 original world flags
+CA676 PASS book 3 native durability and size
+CA676 PASS book 4 saved reference
+CA676 PASS book 4 original world quantity and ownership
+CA676 PASS book 4 unchanged icon and book state
+CA676 PASS book 4 original scale, collision and floor contact
+CA676 PASS book 4 copied provenance
+CA676 PASS book 4 native support-book identity
+CA676 PASS book 4 original weapon weight
+CA676 PASS book 4 independent saved item identity
+CA676 PASS book 4 original world flags
+CA676 PASS book 4 native durability and size
+CA676 PASS book 5 saved reference
+CA676 PASS book 5 original world quantity and ownership
+CA676 PASS book 5 unchanged icon and book state
+CA676 PASS book 5 original scale, collision and floor contact
+CA676 PASS book 5 copied provenance
+CA676 PASS book 5 native support-book identity
+CA676 PASS book 5 original weapon weight
+CA676 PASS book 5 independent saved item identity
+CA676 PASS book 5 original world flags
+CA676 PASS book 5 native durability and size
+CA676 PASS book 6 saved reference
+CA676 PASS book 6 original world quantity and ownership
+CA676 PASS book 6 unchanged icon and book state
+CA676 PASS book 6 original scale, collision and floor contact
+CA676 PASS book 6 copied provenance
+CA676 PASS book 6 native component identity
+CA676 PASS book 6 original component unit weight
+CA676 PASS book 6 distinct retained stack
+CA676 PASS book 6 original material flags and contamination
+CA676 PASS book 7 saved reference
+CA676 PASS book 7 original world quantity and ownership
+CA676 PASS book 7 unchanged icon and book state
+CA676 PASS book 7 original scale, collision and floor contact
+CA676 PASS book 7 copied provenance
+CA676 PASS book 7 native component identity
+CA676 PASS book 7 original component unit weight
+CA676 PASS book 7 distinct retained stack
+CA676 PASS book 7 original material flags and contamination
+CA676 PASS book 8 saved reference
+CA676 PASS book 8 original world quantity and ownership
+CA676 PASS book 8 unchanged icon and book state
+CA676 PASS book 8 original scale, collision and floor contact
+CA676 PASS book 8 copied provenance
+CA676 PASS book 8 native component identity
+CA676 PASS book 8 original component unit weight
+CA676 PASS book 8 distinct retained stack
+CA676 PASS book 8 original material flags and contamination
+CA676 COMPLETE failures=0
+Captured candidate-0.png
+Captured candidate-1.png
+Captured candidate-2.png
+Captured candidate-3.png
+Captured candidate-5.png
+Captured candidate-6.png
+Captured candidate-7.png
+Captured detail-0-0.png
+Captured detail-0-90.png
+Captured detail-0-160.png
+Captured detail-0-270.png
+Captured detail-1-0.png
+Captured detail-1-90.png
+Captured detail-1-160.png
+Captured detail-1-270.png
+Captured detail-2-0.png
+Captured detail-2-90.png
+Captured detail-2-160.png
+Captured detail-2-270.png

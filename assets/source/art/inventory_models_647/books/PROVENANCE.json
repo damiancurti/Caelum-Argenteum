@@ -1,0 +1,6 @@
+{
+  "issue": 676,
+  "ownership": "Original owned #656 book geometry and materials derived from ca_book.png, also used by current support books and book-base materials.",
+  "editable_sources": "Parametric controls remain in assets/source/art/inventory_models_647/documents/DESIGN.json. generate_inventory_document_models.py recreates editable/book.obj and documents.mtl in the selected output directory; those generated files are not claimed to exist as tracked original sources.",
+  "changes": "Only class/CBOO/A bindings; no mesh, PNG, recipe, ability, inventory or save modification."
+}
