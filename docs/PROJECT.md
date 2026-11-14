@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.24** - 2026-11-14.
+Documentation version: **5.17.25** - 2026-11-14.
+
+## 5.17.25 - Five footwear-pair world props (#694)
+
+Five existing footwear designs gain hollow 3D pairs with original textures.
+Twenty-five native type/size combinations pass 2,458 pickup/equip/save/rollback
+checks; deterministic export, geometry checks and one isolated presentation
+comparison pass. CA694-FOOTWEAR-01 retains author art and ordinary-menu review.
+Eleven body garments, actual worn modules, broader inventory and the complete
+character roster remain unfinished. Questions remain deferred.
 
 ## 5.17.24 - NOA inspection gallery extension (#692)
 

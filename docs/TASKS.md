@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.24** - 2026-11-14.
+Documentation version: **5.17.25** - 2026-11-14.
+
+## #694 - Five footwear-pair world props (5.17.25)
+
+BF/BC/BR/BS/BP have exact WC20..24/A bindings, separate closed parts and hollow
+openings. Static/export checks, 2,458 native assertions and one five-pair
+presentation comparison pass. Retain CA694-FOOTWEAR-01 for author art and
+ordinary-menu review. Eleven body garments and worn/first-person fitting remain
+separate; #647/#459 and the complete all-character-3D request remain open.
 
 ## #692 - Two duendes in the NOA gallery (5.17.24)
 

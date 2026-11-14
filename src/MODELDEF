@@ -4760,3 +4760,4 @@ Model CaelumBarricadeVisual
 #include "caelum/data/inventory_headwear.modeldef"
 #include "caelum/data/inventory_gloves.modeldef"
 #include "caelum/data/duende_combat.modeldef"
+#include "caelum/data/inventory_footwear.modeldef"
