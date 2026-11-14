@@ -45,9 +45,9 @@ def main():
         shutil.copyfile(checkpoint,out/'gallery-new.zds')
         runs=[('reload',['-loadgame','gallery-new.zds'],runs[1][2])]
     if args.interactive:
-        binds=''.join(f'bind F{index+1} "netevent ca682_view {index}"; ' for index in range(len(config['views'])))
+        binds=''.join(f'bind {item.get("key","F"+str(index+1))} "netevent ca682_view {index}"; ' for index,item in enumerate(config['views']))
         runs=[('interactive',['+map',config['map']],fresh+binds+'\n')]
-        print('; '.join(f'F{index+1} '+('walk' if item.get('control') else item['id']) for index,item in enumerate(config['views']))+'. Passive diagnostic displays; close the game after review.',flush=True)
+        print('; '.join(item.get('key','F'+str(index+1))+' '+('walk' if item.get('control') else item['id']) for index,item in enumerate(config['views']))+'. Passive diagnostic displays; close the game after review.',flush=True)
     report=dict(issue=config['issue'],scope='Isolated visual gallery, native movement/animation and saved references; no combat or campaign acceptance.',runtime_sha256=digest(runtime.read_bytes()),
                 materials_sha256=digest(materials.read_bytes()) if materials else None,fixture_sha256=manifest['fixture_sha256'],engine_sha256=digest(ENGINE.read_bytes()),runs=[])
     for label,entry,commands in runs:

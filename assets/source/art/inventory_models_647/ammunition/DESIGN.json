@@ -3841,7 +3841,7 @@
   },
   "source_sha256": {
     "assets/source/art/elemental_518/MODELS.json": "08da944ff765fcb75c57b09e03540b97478589eb93f8d51b06254dc6ff03aa61",
-    "src/TEXTURES": "9fee7e6372ca2dd03ddfa91012c5620313753d40a1e3c0ec36e1897183f5eeb1",
+    "src/TEXTURES": "b18f53438055b5d13e985e550629be4578c2d9852888756d3eca9a8f3f58218e",
     "src/graphics/caelum/icons/ca_arrow_ammo.png": "a921b29fd2eab24993ae16ac6962c0caaa9f1183b43eb1df9497587d03fd2a4b",
     "src/graphics/caelum/icons/ca_bolt_ammo.png": "9a493e3fd535c9f9f41ddf6b8a8d5fd0709ef7851368b9ddc247751ccfa647bc",
     "src/graphics/caelum/icons/ca_carbine_ammo.png": "8d7ef010bc87f32ac331b05c764eb07be8c152883e553ba977151d1032ece0d0",

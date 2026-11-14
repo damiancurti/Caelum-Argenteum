@@ -1,0 +1,46 @@
+{
+  "schema_revision": 1,
+  "issue": 700,
+  "parent_issue": 463,
+  "status": "native_verified_author_review_pending",
+  "authority": "Author explicitly requests needed regional textures and small creature inspection maps; questions deferred.",
+  "scope": "One Cuyo ground study and three additional approved regional displays; earlier model/material bytes unchanged.",
+  "definition": "caelum/data/regional_materials_700.textures",
+  "gallery_source": "assets/source/art/regional_gallery_682/GALLERY.json",
+  "gallery_map": "CA682G",
+  "reused_materials": [
+    "CRPAMGR",
+    "CRNOAGR",
+    "CRLITGR",
+    "CRSELVG"
+  ],
+  "gaps": [
+    {
+      "key": "cuyo_ground",
+      "purpose": "Isolated dry foothill mineral/gravel study; no campaign biome or population rule.",
+      "prompt": "cuyo_ground-v1.prompt.txt",
+      "world_tile_map_units": [
+        128,
+        128
+      ],
+      "status": "native_verified_author_review_pending",
+      "image": "cuyo_ground-v1.png",
+      "sha256": "12888f6754085f2b4954ea542939eb9c09ebf2280426ce35412945b9e13f878f",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "texture": "CRCUYGR"
+    }
+  ],
+  "source_sha256": {
+    "assets/bestiary/REGION_PROPOSAL.json": "34218ccf0194132336c7ff04ae5c1c9d2a8c1bad488defca907fb9149a52d004",
+    "assets/source/art/guardians_698/EXPORT.json": "1975566e73f64f735f5907c2bcd2b95a40b9bdb7ec1b77acb64d28a52a354e23",
+    "assets/source/art/regional_gallery_682/GALLERY.json": "e77384f9890453e9f6d8fe2f90d8632d2d6f56ad19865c83a77b8ff76e558771",
+    "assets/generators/generate_cuyo_regional_materials.py": "15a7571564ff5fd556adc6b72027baa3df2bcef5410a93cce0ac6b28af3bc56e"
+  },
+  "exclusions": [
+    "No campaign map, combat, inventory, collision or population changes.",
+    "Author art acceptance and remaining regions/creatures remain pending."
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "issue": 700,
+  "parent_issue": 463,
+  "version": "5.17.28",
+  "date": "2026-11-14",
+  "author_accepted": false,
+  "scope": "One original Cuyo ground study and three approved diagnostic displays: Yasi in Litoral, Yastay in Cuyo/NOA. Ten figures, seven species, five regional plots, sixteen data-bound views. Existing seven display positions and F1-F12 functions remain.",
+  "runtime": {
+    "path": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v517\\work-700\\build\\issue700-cuyo01.pk3",
+    "sha256": "714a36f281942f093dd09aee45888e9f093baf19fc2e4498759c7ed21c3a4eb2",
+    "source_entries": 18356,
+    "exact_source_bytes": true
+  },
+  "baseline": {
+    "sha256": "f94bec359a27181d7e1615a398f69d193d2b916b1f7b63cfdac9195599e11320",
+    "new_resources": [
+      "caelum/data/regional_materials_700.textures",
+      "graphics/caelum/textures/regions_700/cuyo_ground-v1.png"
+    ],
+    "changed_resources": [
+      "TEXTURES",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "all_other_runtime_bytes_identical": true
+  },
+  "static": {
+    "repeated_gallery_files": 4,
+    "repeated_material_files": 4,
+    "repeat_byte_identical": true,
+    "installed_material_check_passed": true,
+    "approved_assignments_complete": true,
+    "collision_displays_nonoverlapping": true,
+    "geometry": {
+      "sectors": 6,
+      "vertices": 18,
+      "linedefs": 23
+    },
+    "inventory_dependency_refresh": {
+      "ammunition": {
+        "unchanged_outputs": [
+          "models/caelum/inventory/ammunition/carbine.md3",
+          "editable/carbine.obj",
+          "models/caelum/inventory/ammunition/arrow.md3",
+          "editable/arrow.obj",
+          "models/caelum/inventory/ammunition/bolt.md3",
+          "editable/bolt.obj",
+          "models/caelum/inventory/ammunition/javelin_one.md3",
+          "editable/javelin_one.obj",
+          "models/caelum/inventory/ammunition/javelin_two.md3",
+          "editable/javelin_two.obj",
+          "models/caelum/inventory/ammunition/javelin_three.md3",
+          "editable/javelin_three.obj",
+          "models/caelum/inventory/ammunition/shotgun.md3",
+          "editable/shotgun.obj",
+          "editable/ammunition.mtl",
+          "caelum/data/inventory_ammunition.modeldef"
+        ],
+        "native_byte_comparisons": 8,
+        "portable_regeneration_hashes": 8,
+        "metadata_only": true
+      },
+      "documents": {
+        "unchanged_outputs": [
+          "models/caelum/inventory/documents/book.md3",
+          "editable/book.obj",
+          "models/caelum/inventory/documents/letter.md3",
+          "editable/letter.obj",
+          "models/caelum/inventory/documents/key.md3",
+          "editable/key.obj",
+          "models/caelum/inventory/documents/cloth.md3",
+          "editable/cloth.obj",
+          "models/caelum/inventory/documents/ingot.md3",
+          "editable/ingot.obj",
+          "editable/documents.mtl",
+          "caelum/data/inventory_documents.modeldef"
+        ],
+        "native_byte_comparisons": 6,
+        "portable_regeneration_hashes": 6,
+        "metadata_only": true
+      },
+      "ingots": {
+        "unchanged_outputs": [
+          "models/caelum/inventory/ingots/iron.md3",
+          "editable/iron.obj",
+          "models/caelum/inventory/ingots/copper.md3",
+          "editable/copper.obj",
+          "models/caelum/inventory/ingots/tin.md3",
+          "editable/tin.obj",
+          "models/caelum/inventory/ingots/bronze.md3",
+          "editable/bronze.obj",
+          "models/caelum/inventory/ingots/steel.md3",
+          "editable/steel.obj",
+          "models/caelum/inventory/ingots/silver.md3",
+          "editable/silver.obj",
+          "models/caelum/inventory/ingots/gold.md3",
+          "editable/gold.obj",
+          "editable/ingots.mtl",
+          "caelum/data/inventory_ingots.modeldef"
+        ],
+        "native_byte_comparisons": 8,
+        "portable_regeneration_hashes": 8,
+        "metadata_only": true
+      },
+      "books": {
+        "unchanged_outputs": [
+          "caelum/data/inventory_books.modeldef"
+        ],
+        "native_byte_comparisons": 1,
+        "portable_regeneration_hashes": 0,
+        "metadata_only": true
+      },
+      "locks": {
+        "unchanged_outputs": [
+          "caelum/data/inventory_locks.modeldef"
+        ],
+        "native_byte_comparisons": 1,
+        "portable_regeneration_hashes": 0,
+        "metadata_only": true
+      }
+    },
+    "project_validation_passed": true
+  },
+  "native": {
+    "issue": 700,
+    "scope": "Isolated visual gallery, native movement/animation and saved references; no combat or campaign acceptance.",
+    "runtime_sha256": "714a36f281942f093dd09aee45888e9f093baf19fc2e4498759c7ed21c3a4eb2",
+    "materials_sha256": null,
+    "fixture_sha256": "bd45d32fe11141640223e939f24f16e23697615ac4dc74cc6fcc47eab227093a",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "fresh",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 45,
+        "expected_assertions": 45
+      },
+      {
+        "phase": "reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 94,
+        "expected_assertions": 94
+      }
+    ],
+    "captures": {
+      "coquena.png": "7b97ac64254b39b1200713ff96d09597ec95ae6cba32d43668365758fa21637c",
+      "cuyo-tiles.png": "c4e1d5ce0c6913d74dc05b124cdb066b4867a48fd71f870806a49dc29aa69310",
+      "cuyo-yastay.png": "bc8f1c3385bab92a3ca02f54630c9d2ad323f899477a3b03bcebbaa6f855a92d",
+      "litoral-tiles.png": "c9ec25364ad03552e9a0ff39c2ff76eaf8b2bdf1cd9d766066b8540da5033727",
+      "litoral.png": "db5f18bb79b43e233ec9c7aa8584dab8ba6e050f3024d56d194e6942ef9fb851",
+      "mikilo.png": "b352b7efb944d6028b51165b625a5c298f855c97ce556c07255068dfc184653e",
+      "noa-tiles.png": "6dfe9052a5da67c85cb1e177af3e330d7d01f0f1756cc75f313b8f114b73f536",
+      "noa.png": "4a904a55a9e9ae29877aa4a55c444da04331ba9cf5ea4679e9be44be776f04df",
+      "overview.png": "8f2fc4e9f78f2ea42a3dac0fdd99fab9c1bf989e36bf42ce903aea407a9fb11c",
+      "pampa-tiles.png": "58f96a40c3408e670cf5746b16abbc6973f0bc197d34505e2fd8e3ce25b99d12",
+      "pampa.png": "7501c78c8e8a39e6c553c30f0df3af8978c126ab12bb66d3b0b44dea8b69f3e7",
+      "reload.png": "22d02e61aa6fe007bff629a71aa1fe2bd8ca4d634cd0d86dccba0839a54e52e8",
+      "selva-tiles.png": "a91556c9d7b3dfb011708f84f5ca4c285f81b836918a186ce6d9964a87ecf04c",
+      "selva.png": "10fe672597bb7631298fe6d8be627e7e830afa7141b0c123c43aa1d611cb4b2d",
+      "yasi-litoral.png": "4ad18658664782e49a4b851c663a119b3280d5bca04bf00158a13469750ed067",
+      "yastay-noa.png": "afc3d32c1acd6698f3363ffc3b95867bec5b474e9b44b7e7fdeecd35cc56849e"
+    }
+  },
+  "presentation": {
+    "issue": 700,
+    "scope": "One isolated regional gallery cohort; no comparison, repeatability or campaign acceptance.",
+    "baseline_sha256": "714a36f281942f093dd09aee45888e9f093baf19fc2e4498759c7ed21c3a4eb2",
+    "runtime_sha256": "714a36f281942f093dd09aee45888e9f093baf19fc2e4498759c7ed21c3a4eb2",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+    "runs": [
+      {
+        "kind": "regional-materials",
+        "pid": 12480,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 258498596.0916,
+          "END": 258518617.0338
+        },
+        "fixture_sha256": "bd45d32fe11141640223e939f24f16e23697615ac4dc74cc6fcc47eab227093a",
+        "bench_sha256": "db471b2cf7558fde31633a03401c5adad534018fb95ae26d014d269592132015",
+        "passed": true,
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.571141857142855,
+          "p50_ms": 28.5608,
+          "p95_ms": 29.017,
+          "p99_ms": 29.1866,
+          "max_ms": 29.5137
+        },
+        "presentation": {
+          "pid": 12480,
+          "trace_sha256": "835221df40a186c5cb6c6be31c1c0ef8409677738397f69246d0495a891cb6a8",
+          "rows": 37347,
+          "scene_presents": 26872,
+          "mean_present_fps": 1533.7496061388003,
+          "present_intervals": {
+            "samples": 26871,
+            "mean_ms": 0.6519969074466401,
+            "p50_ms": 0.6267000138759613,
+            "p95_ms": 0.8503000140190125,
+            "p99_ms": 1.0722000002861023,
+            "max_ms": 1.8993000090122223
+          },
+          "native_call_duration": {
+            "samples": 26872,
+            "mean_ms": 0.07572833060703664,
+            "p50_ms": 0.07440000772476196,
+            "p95_ms": 0.09920001029968262,
+            "p99_ms": 0.13359999656677246,
+            "max_ms": 0.6053999960422516
+          }
+        }
+      }
+    ]
+  },
+  "art": {
+    "source": "assets/source/art/regional_gallery_700",
+    "mode": "built-in image_gen",
+    "texture": "cuyo_ground-v1.png",
+    "prompt": "cuyo_ground-v1.prompt.txt",
+    "original_pixels_preserved": true,
+    "review": "New region/figure closeups, ground repeat and five-plot overview/reload/presentation scene; author final art pending.",
+    "author_check": "CA700-CUYO-GALLERY-01"
+  },
+  "environment": {
+    "os": "Windows 11 Pro 26200",
+    "cpu": "Ryzen 9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX 3070 Ti",
+    "engine": "GZDoom 4.14.2",
+    "backend": "Vulkan",
+    "resolution": [
+      1280,
+      720
+    ],
+    "background_unpaused": true,
+    "audio": 0.05,
+    "presentation_uncapped": true,
+    "vsync": false
+  },
+  "qualifications": [
+    "One 700-tic peaceful sample with ten distant native figures. Queue intervals do not establish GPU/display timing, repeatability, a comparison gain or campaign/siege acceptance.",
+    "Two diagnostic Yastay copies represent approved regional associations of one unique identity; no campaign duplication or population rules.",
+    "Cuyo dry gravel is a candidate material study, not fixed geography, a required habitat or final art approval.",
+    "The optional fixture is regenerated from the single CA682G source. Original CA463G and all existing runtime art/gameplay bytes remain unchanged except TEXTURES include and two release diagnostics.",
+    "Retained fixture-only observer noise suppression protects native idle behavior during walking. No forced subject repositioning or production scans.",
+    "No package, fixture WAD, save, executable, DLL or development IWAD is committed."
+  ],
+  "files": {
+    "build.log": "c93dbdbf85760dd0280751439f1b877ee75d8e233ba97aad988b47556221cfd8",
+    "deterministic-gallery.json": "c9db41513530280a167c2860cd867a72cd770d342e2aca05200e1576cbcb9c13",
+    "deterministic-materials.json": "1761b0867d708df22cee8abcd48a4b8054fbe5704946157bddb733cdd4139741",
+    "native/coquena.png": "7b97ac64254b39b1200713ff96d09597ec95ae6cba32d43668365758fa21637c",
+    "native/cuyo-tiles.png": "c4e1d5ce0c6913d74dc05b124cdb066b4867a48fd71f870806a49dc29aa69310",
+    "native/cuyo-yastay.png": "bc8f1c3385bab92a3ca02f54630c9d2ad323f899477a3b03bcebbaa6f855a92d",
+    "native/fixture-source/MAPINFO.txt": "015398f03aa8d078a9d9248228ff4770d2332e5d09bf0de87ae56c6d3cb6c34b",
+    "native/fixture-source/ZSCRIPT.txt": "cf781d3bee241eb85fea9bec30132ea3147c946ce859e8f5bcd9cf13ec760f15",
+    "native/fresh-process.log": "363a3e8416549ce732718bc1e1da7e39547b5c02b54d6ed5a70c14c5b2086a86",
+    "native/fresh.cfg": "a69f5d5e6323db8e7f912a2a54790e534c72c1e3c4e12cb1b3d3fa2d92cd6e38",
+    "native/fresh.log": "1343a6115e0eb7728e00c81b52cf36e2e4c140c0a13e05d20bce3dae04947282",
+    "native/gallery.zs": "aed6cff2ca5222bb3d921fc6f542c0cb6f96161c6dea6f9b6fe3972f17b5b709",
+    "native/GALLERY_MANIFEST.json": "c9db41513530280a167c2860cd867a72cd770d342e2aca05200e1576cbcb9c13",
+    "native/litoral-tiles.png": "c9ec25364ad03552e9a0ff39c2ff76eaf8b2bdf1cd9d766066b8540da5033727",
+    "native/litoral.png": "db5f18bb79b43e233ec9c7aa8584dab8ba6e050f3024d56d194e6942ef9fb851",
+    "native/mikilo.png": "b352b7efb944d6028b51165b625a5c298f855c97ce556c07255068dfc184653e",
+    "native/noa-tiles.png": "6dfe9052a5da67c85cb1e177af3e330d7d01f0f1756cc75f313b8f114b73f536",
+    "native/noa.png": "4a904a55a9e9ae29877aa4a55c444da04331ba9cf5ea4679e9be44be776f04df",
+    "native/overview.png": "8f2fc4e9f78f2ea42a3dac0fdd99fab9c1bf989e36bf42ce903aea407a9fb11c",
+    "native/pampa-tiles.png": "58f96a40c3408e670cf5746b16abbc6973f0bc197d34505e2fd8e3ce25b99d12",
+    "native/pampa.png": "7501c78c8e8a39e6c553c30f0df3af8978c126ab12bb66d3b0b44dea8b69f3e7",
+    "native/reload-process.log": "15f3dc641f38ff0c5d98888b9cd0089bb7b88b26eb5d746551de52d975eba484",
+    "native/reload.cfg": "3fb2f93afbd8fb7d1e92f88f08ba0fcbe62465c2409ac43b5716d79b719e5eff",
+    "native/reload.log": "76a28b19a56b31a0a3505c9467d3ef98f03a030d1ee2fd8f10681e2060dbc15d",
+    "native/reload.png": "22d02e61aa6fe007bff629a71aa1fe2bd8ca4d634cd0d86dccba0839a54e52e8",
+    "native/RESULTS.json": "21f889b37718b7480d14ad45aeecc8a99f6dcd1e99b7e72f36f569ad02f94f8f",
+    "native/selva-tiles.png": "a91556c9d7b3dfb011708f84f5ca4c285f81b836918a186ce6d9964a87ecf04c",
+    "native/selva.png": "10fe672597bb7631298fe6d8be627e7e830afa7141b0c123c43aa1d611cb4b2d",
+    "native/session.ini": "959e0b2946120467d139005eece126d51d49d6fb4eb8cb97cd8b96fbd5635b57",
+    "native/TEXTMAP.txt": "a02a2243b19412edc767aabcd06d9aa7e9ba997fbf063730d6d1457912f68411",
+    "native/yasi-litoral.png": "4ad18658664782e49a4b851c663a119b3280d5bca04bf00158a13469750ed067",
+    "native/yastay-noa.png": "afc3d32c1acd6698f3363ffc3b95867bec5b474e9b44b7e7fdeecd35cc56849e",
+    "presentation/regional-materials/commands.cfg": "91a227051d3d24fb6aad5465a0109d6900ac0d6829faa33a77d37b649d354c8a",
+    "presentation/regional-materials/engine.log": "e10c4269c6d8931e92bc78fdccc5e09c2171d2aaa59e44b83119454a00196dec",
+    "presentation/regional-materials/fixture-source/MAPINFO.txt": "015398f03aa8d078a9d9248228ff4770d2332e5d09bf0de87ae56c6d3cb6c34b",
+    "presentation/regional-materials/fixture-source/ZSCRIPT.txt": "cf781d3bee241eb85fea9bec30132ea3147c946ce859e8f5bcd9cf13ec760f15",
+    "presentation/regional-materials/gallery.zs": "aed6cff2ca5222bb3d921fc6f542c0cb6f96161c6dea6f9b6fe3972f17b5b709",
+    "presentation/regional-materials/GALLERY_MANIFEST.json": "c9db41513530280a167c2860cd867a72cd770d342e2aca05200e1576cbcb9c13",
+    "presentation/regional-materials/presents.csv": "835221df40a186c5cb6c6be31c1c0ef8409677738397f69246d0495a891cb6a8",
+    "presentation/regional-materials/process.log": "6f7ef920a7c4601200de60556b02d2e491724e2a2298b2a42e5aa48e206b4b9f",
+    "presentation/regional-materials/scene.png": "8f2fc4e9f78f2ea42a3dac0fdd99fab9c1bf989e36bf42ce903aea407a9fb11c",
+    "presentation/regional-materials/session.ini": "586f263ec45340b602180db170c9143c4ea2267c8990e095d56fce3d50d04437",
+    "presentation/regional-materials/TEXTMAP.txt": "a02a2243b19412edc767aabcd06d9aa7e9ba997fbf063730d6d1457912f68411",
+    "presentation/RESULTS.json": "61ceb1d591510f976c977d1839c43fa54e92859da70dd64792236f37e2d159be",
+    "validation-before-dependency-refresh.json": "42888732fb8d0cbf9428732e0d2a762472c5c9ac15e01526b0ba520bda8b5e08",
+    "issue700-inventory-dependency-proof.json": "0da0bd57648c4b8ff1209c343513c1a7e4726bfb2dc8e5c656a8773f28eedc9e",
+    "validation-before-transitive-refresh.json": "29a6f6f2ea117e5bd87b0e0eb6e4446001e7cb3b30c8ee9a1ecac8f009f9584c",
+    "validation-final.json": "49073436e70b425c15256fb072e4a000c1aeb8c9332f7209a4ee8d7cdde7bdc9"
+  },
+  "iterations": "First full validation reported stale src/TEXTURES pins in ammunition and ingot metadata. Temporary helpers assumed ammunition PROVENANCE instead of DESIGN/PROMPT/GENERATION_STATUS and installed editable files; both stopped before writing EXPORT, and prematurely started validation02 was cancelled. Validation03 then exposed the documents consumer of ammunition DESIGN. The complete dependency order is ammunition -> documents -> ingots/books/locks. Regenerate all five after metadata-only refresh, prove non-hash design data matches the parent commit, compare native bytes and all portable hashes. TEXTURES is explicitly LF to preserve tested bytes across checkouts."
+}
