@@ -36,6 +36,7 @@ def main():
           ('reload',['-loadgame','gallery-new.zds'],common+'wait 35; netevent ca682_verify; '+motion+
            'netevent ca682_walk_start; +forward; wait 70; -forward; wait 5; netevent ca682_walk_verify; wait 5; '
            f'netevent ca682_cross_start; wait 5; +moveright; wait {config["crossing_test"]["input_tics"]}; -moveright; wait 5; netevent ca682_cross_verify; wait 5; '
+           'netevent ca682_verify; '+motion+
            'netevent ca682_view 0; wait 20; screenshot reload.png; wait 5; quit\n')]
     if args.visual_only:runs=[('visual',['+map',config['map']],fresh+views+motion+'quit\n')]
     if args.reload_from:
@@ -46,8 +47,8 @@ def main():
     if args.interactive:
         binds=''.join(f'bind F{index+1} "netevent ca682_view {index}"; ' for index in range(len(config['views'])))
         runs=[('interactive',['+map',config['map']],fresh+binds+'\n')]
-        print('F1 overview; F2 Pampa; F3 NOA; F4 Litoral; F5 walk; F6 Selva; F7-F10 repeated ground materials. These are passive diagnostic displays, not campaign encounters. Close the game after review.',flush=True)
-    report=dict(issue=682,scope='Isolated visual gallery, native movement/animation and saved references; no combat or campaign acceptance.',runtime_sha256=digest(runtime.read_bytes()),
+        print('; '.join(f'F{index+1} '+('walk' if item.get('control') else item['id']) for index,item in enumerate(config['views']))+'. Passive diagnostic displays; close the game after review.',flush=True)
+    report=dict(issue=config['issue'],scope='Isolated visual gallery, native movement/animation and saved references; no combat or campaign acceptance.',runtime_sha256=digest(runtime.read_bytes()),
                 materials_sha256=digest(materials.read_bytes()) if materials else None,fixture_sha256=manifest['fixture_sha256'],engine_sha256=digest(ENGINE.read_bytes()),runs=[])
     for label,entry,commands in runs:
         cfg=out/(label+'.cfg');cfg.write_text(commands)
@@ -72,6 +73,8 @@ def main():
         errors=[line for line in log.splitlines() if any(token in line for token in ['Script error','Execution could not continue','VM execution aborted','Unknown command','Unknown texture','Unable to load model','FATAL ERROR','Cannot find savegame','CA682 FAIL'])]
         assertions=sum(line.startswith('CA682 PASS') for line in log.splitlines())
         expected=(8 if label=='reload' else 4)+4*len(config['subjects'])
+        if label=='reload':expected+=4+4*len(config['subjects'])
+        if config.get('silent_observer_steps'):expected+=2 if label=='reload' else 1
         result=dict(phase=label,exit_code=code,passed=code==0 and not errors and 'CA682 COMPLETE failures=0' in log and assertions==expected,errors=errors,
                     assertions=assertions,expected_assertions=expected)
         report['runs'].append(result);report['captures']={path.name:digest(path.read_bytes()) for path in sorted(out.glob('*.png'))}

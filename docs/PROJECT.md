@@ -1,6 +1,13 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.23** - 2026-11-14.
+Documentation version: **5.17.24** - 2026-11-14.
+
+## 5.17.24 - NOA inspection gallery extension (#692)
+
+The optional regional gallery adds Mikilo and Coquena beside Ucumar with group
+and closeup views. Seven native displays pass 103 fresh/reload/idle/walking checks
+and a single isolated presentation measurement. Existing art and production
+rules remain identical. CA692-NOA-GALLERY-01 and broader batch work remain pending.
 
 ## 5.17.23 - Two additional folklore combat models (#690)
 

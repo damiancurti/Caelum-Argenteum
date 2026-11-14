@@ -1,6 +1,14 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.23** - 2026-11-14.
+Documentation version: **5.17.24** - 2026-11-14.
+
+## #692 - Two duendes in the NOA gallery (5.17.24)
+
+The shared inspection map now shows seven native figures with twelve camera/
+walking controls. Four deterministic files and 103 native fresh/reload/movement
+checks pass; one seven-display presentation sample is recorded. Retain
+CA692-NOA-GALLERY-01 for author review. Existing art checks and all broader
+regional, character, inventory, modular-equipment and campaign work remain pending.
 
 ## #690 - Mikilo and Coquena native combat models (5.17.23)
 

@@ -8,7 +8,7 @@ import subprocess
 import sys
 import time
 import zipfile
-from build_gallery import ROOT, build, digest
+from build_gallery import ROOT, SOURCE, build, digest
 from run_gallery import ENGINE, IWAD
 
 sys.path.insert(0,str(ROOT/'assets/validation_v5_12_7'))
@@ -38,13 +38,18 @@ BENCH='''class CA682Bench : EventHandler
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    for name in ['baseline','runtime','presentation-layer','output']:parser.add_argument('--'+name,type=Path,required=True)
-    args=parser.parse_args();baseline=args.baseline.resolve(strict=True);runtime=args.runtime.resolve(strict=True);layer=args.presentation_layer.resolve(strict=True)
+    for name in ['runtime','presentation-layer','output']:parser.add_argument('--'+name,type=Path,required=True)
+    parser.add_argument('--baseline',type=Path)
+    parser.add_argument('--regional-only',action='store_true',help='Measure the current regional gallery without a material comparison.')
+    args=parser.parse_args()
+    if not args.regional_only and not args.baseline:parser.error('--baseline is required for a paired material comparison.')
+    runtime=args.runtime.resolve(strict=True);baseline=args.baseline.resolve(strict=True) if args.baseline else runtime;layer=args.presentation_layer.resolve(strict=True)
+    config=json.loads((SOURCE/'GALLERY.json').read_text())
     if b'"gzdoom.exe"' in subprocess.check_output(['tasklist','/FI','IMAGENAME eq gzdoom.exe','/FO','CSV','/NH']).lower():parser.error('Another native engine is running.')
     out=args.output.resolve();out.relative_to(ROOT/'build');out.mkdir(parents=True,exist_ok=False)
-    report=dict(issue=682,scope=__doc__,baseline_sha256=digest(baseline.read_bytes()),runtime_sha256=digest(runtime.read_bytes()),
+    report=dict(issue=config['issue'],scope='One isolated regional gallery cohort; no comparison, repeatability or campaign acceptance.' if args.regional_only else __doc__,baseline_sha256=digest(baseline.read_bytes()),runtime_sha256=digest(runtime.read_bytes()),
                 engine_sha256=digest(ENGINE.read_bytes()),layer_sha256=digest((layer/'ca_presentation.dll').read_bytes()),runs=[])
-    for kind in ['existing-material','regional-materials']:
+    for kind in (['regional-materials'] if args.regional_only else ['existing-material','regional-materials']):
         folder=out/kind;fixture,manifest=build(folder,baseline_materials=kind=='existing-material')
         bench=folder/'bench.pk3'
         with zipfile.ZipFile(bench,'w') as archive:
@@ -72,7 +77,7 @@ def main():
         errors=[line for line in log.splitlines() if any(token in line for token in ['Script error','Execution could not continue','VM execution aborted','Unknown texture','Unable to load model','Unknown command'])]
         samples=[float(value) for value in re.findall(r'CA682 TIC ([\d.]+)',log)]
         result=dict(kind=kind,pid=process.pid,exit_code=code,errors=errors,markers_qpc_ms=markers,fixture_sha256=manifest['fixture_sha256'],bench_sha256=digest(bench.read_bytes()),
-                    passed=code==0 and not errors and len(samples)==700 and set(markers)=={'BEGIN','END'} and 'CA682 COMPLETE subjects=5 samples=700' in log)
+                    passed=code==0 and not errors and len(samples)==700 and set(markers)=={'BEGIN','END'} and f'CA682 COMPLETE subjects={len(config["subjects"])} samples=700' in log)
         if result['passed']:
             result['simulation']=summarize(samples);result['presentation']=inspect(folder/'presents.csv',process.pid,markers['BEGIN'],markers['END'])
         report['runs'].append(result);(out/'RESULTS.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8',newline='\n')
