@@ -1,0 +1,181 @@
+version "4.14.2"
+// #709: sala aislada de arte; no añade encuentros ni reglas de campaña.
+class CA709Camera : Actor
+{
+    Default { CameraHeight 0; Height 0; Radius 0; +NOINTERACTION +NOGRAVITY }
+    States { Spawn: TNT1 A -1; Stop; }
+}
+
+class CA709GalleryEvents : EventHandler
+{
+    Array<Actor> Subjects;
+    Array<State> MotionSnapshot;
+    CA709Camera View;
+    int Failures;
+    int ObserverNoiseSerial;
+    vector3 WalkStart;
+
+    void Check(bool okay, String label)
+    {
+        if (!okay) Failures++;
+        Console.Printf("CA709 %s %s", okay ? "PASS" : "FAIL", label);
+    }
+
+    void ConfigureView(int index)
+    {
+        if (View == null) return;
+        if (index == 4) players[0].camera = players[0].mo;
+        else players[0].camera = View;
+        players[0].mo.bInvisible = index != 4;
+        let hud = CaelumHUDOverlay(EventHandler.Find('CaelumHUDOverlay'));
+        if (hud != null)
+        {
+            if (index == 4) hud.HUDFont = Font.GetFont("CaelumMono");
+            else hud.HUDFont = null;
+        }
+        if(index==0){View.SetOrigin((-256,-400,1800),false);View.Angle=90.00000000;View.Pitch=77.47119229;}
+if(index==1){View.SetOrigin((-768,-110,60),false);View.Angle=90.00000000;View.Pitch=17.17590362;}
+if(index==2){View.SetOrigin((-256,-110,60),false);View.Angle=90.00000000;View.Pitch=17.17590362;}
+if(index==3){View.SetOrigin((512,-360,200),false);View.Angle=94.35697501;View.Pitch=23.13861221;}
+if(index==5){View.SetOrigin((256,-45,25),false);View.Angle=90.00000000;View.Pitch=23.96248897;}
+if(index==6){View.SetOrigin((704,-50,25),false);View.Angle=90.00000000;View.Pitch=18.77803322;}
+if(index==7){View.SetOrigin((-768,-280,200),false);View.Angle=0.00000000;View.Pitch=90.00000000;}
+if(index==8){View.SetOrigin((-256,-280,70),false);View.Angle=0.00000000;View.Pitch=90.00000000;}
+if(index==9){View.SetOrigin((384,-280,120),false);View.Angle=0.00000000;View.Pitch=90.00000000;}
+if(index==10){View.SetOrigin((480,70,60),false);View.Angle=90.00000000;View.Pitch=17.17590362;}
+if(index==11){View.SetOrigin((-1280,-142,60),false);View.Angle=90.00000000;View.Pitch=17.17590362;}
+if(index==12){View.SetOrigin((-1280,146,60),false);View.Angle=90.00000000;View.Pitch=17.17590362;}
+if(index==13){View.SetOrigin((800,162,60),false);View.Angle=90.00000000;View.Pitch=17.17590362;}
+if(index==14){View.SetOrigin((-1280,-280,140),false);View.Angle=0.00000000;View.Pitch=90.00000000;}
+if(index==15){View.SetOrigin((-384,114,60),false);View.Angle=90.00000000;View.Pitch=17.17590362;}
+if(index==16){View.SetOrigin((-768,146,60),false);View.Angle=90.00000000;View.Pitch=17.17590362;}
+if(index==17){View.SetOrigin((-128,146,60),false);View.Angle=90.00000000;View.Pitch=17.17590362;}
+if(index==18){View.SetOrigin((-960,18,60),false);View.Angle=90.00000000;View.Pitch=17.17590362;}
+if(index==19){View.SetOrigin((-576,146,60),false);View.Angle=90.00000000;View.Pitch=17.17590362;}
+if(index==20){View.SetOrigin((-384,-270,60),false);View.Angle=90.00000000;View.Pitch=17.17590362;}
+        View.ClearInterpolation();
+    }
+
+    // #692: silenciar sólo los pasos del observador en esta sala aislada.
+    // La búsqueda por sonido es independiente de Friendly y NOTARGET.
+    override void WorldTick()
+    {
+        if(level.MapName!="CA709G" || Subjects.Size()==0)return;
+        let user=CaelumPlayer(players[0].mo);
+        if(user!=null)user.MovementNoiseTimer=-CaelumConstants.MOVEMENT_NOISE_INTERVAL_SECONDS;
+    }
+
+    bool IsIdleState(Actor body, State value)
+    {
+        return value==body.SpawnState || body.InStateSequence(value,body.FindState('IdleBreathing'));
+    }
+
+    void Verify()
+    {
+        Check(level.MapName == "CA709G", "isolated gallery map");
+        Check(Subjects.Size() == 14, "saved subject registry size");
+        Check(View != null, "saved camera reference");
+        Check(CaelumPlayer(players[0].mo).MovementNoiseEventSerial==ObserverNoiseSerial,"inspection observer footsteps remain silent");
+        Check(Subjects[0]!=null && Subjects[0].GetClass()=='CaelumBestiary006',"subject 0 native class");
+if(Subjects[0]!=null){Console.Printf("CA709 POSITION 0 xyz=(%.5f,%.5f,%.5f) velocity=(%.5f,%.5f,%.5f)",Subjects[0].Pos.X,Subjects[0].Pos.Y,Subjects[0].Pos.Z,Subjects[0].Vel.X,Subjects[0].Vel.Y,Subjects[0].Vel.Z);Check((Subjects[0].Pos-(-768,0,0)).Length()<0.01,"subject 0 saved position");let body=CaelumBestiaryCombatActor(Subjects[0]);Check(body!=null && body.CaelumDiagnosticPassiveAI && body.bFriendly && !CaelumVisualPerception.Opponent(body,players[0].mo) && body.MandingaBirthInitialized && body.BestiaryReference()=="CA-FOLK-006","subject 0 initialized inspection catalogue identity");}
+Check(Subjects[1]!=null && Subjects[1].GetClass()=='CaelumBestiary006',"subject 1 native class");
+if(Subjects[1]!=null){Console.Printf("CA709 POSITION 1 xyz=(%.5f,%.5f,%.5f) velocity=(%.5f,%.5f,%.5f)",Subjects[1].Pos.X,Subjects[1].Pos.Y,Subjects[1].Pos.Z,Subjects[1].Vel.X,Subjects[1].Vel.Y,Subjects[1].Vel.Z);Check((Subjects[1].Pos-(-256,0,0)).Length()<0.01,"subject 1 saved position");let body=CaelumBestiaryCombatActor(Subjects[1]);Check(body!=null && body.CaelumDiagnosticPassiveAI && body.bFriendly && !CaelumVisualPerception.Opponent(body,players[0].mo) && body.MandingaBirthInitialized && body.BestiaryReference()=="CA-FOLK-006","subject 1 initialized inspection catalogue identity");}
+Check(Subjects[2]!=null && Subjects[2].GetClass()=='CaelumBestiary053',"subject 2 native class");
+if(Subjects[2]!=null){Console.Printf("CA709 POSITION 2 xyz=(%.5f,%.5f,%.5f) velocity=(%.5f,%.5f,%.5f)",Subjects[2].Pos.X,Subjects[2].Pos.Y,Subjects[2].Pos.Z,Subjects[2].Vel.X,Subjects[2].Vel.Y,Subjects[2].Vel.Z);Check((Subjects[2].Pos-(256,0,0)).Length()<0.01,"subject 2 saved position");let body=CaelumBestiaryCombatActor(Subjects[2]);Check(body!=null && body.CaelumDiagnosticPassiveAI && body.bFriendly && !CaelumVisualPerception.Opponent(body,players[0].mo) && body.MandingaBirthInitialized && body.BestiaryReference()=="CA-FOLK-053","subject 2 initialized inspection catalogue identity");}
+Check(Subjects[3]!=null && Subjects[3].GetClass()=='CaelumBestiary055',"subject 3 native class");
+if(Subjects[3]!=null){Console.Printf("CA709 POSITION 3 xyz=(%.5f,%.5f,%.5f) velocity=(%.5f,%.5f,%.5f)",Subjects[3].Pos.X,Subjects[3].Pos.Y,Subjects[3].Pos.Z,Subjects[3].Vel.X,Subjects[3].Vel.Y,Subjects[3].Vel.Z);Check((Subjects[3].Pos-(704,0,0)).Length()<0.01,"subject 3 saved position");let body=CaelumBestiaryCombatActor(Subjects[3]);Check(body!=null && body.CaelumDiagnosticPassiveAI && body.bFriendly && !CaelumVisualPerception.Opponent(body,players[0].mo) && body.MandingaBirthInitialized && body.BestiaryReference()=="CA-FOLK-055","subject 3 initialized inspection catalogue identity");}
+Check(Subjects[4]!=null && Subjects[4].GetClass()=='CaelumBestiary054',"subject 4 native class");
+if(Subjects[4]!=null){Console.Printf("CA709 POSITION 4 xyz=(%.5f,%.5f,%.5f) velocity=(%.5f,%.5f,%.5f)",Subjects[4].Pos.X,Subjects[4].Pos.Y,Subjects[4].Pos.Z,Subjects[4].Vel.X,Subjects[4].Vel.Y,Subjects[4].Vel.Z);Check((Subjects[4].Pos-(480,180,0)).Length()<0.01,"subject 4 saved position");let body=CaelumBestiaryCombatActor(Subjects[4]);Check(body!=null && body.CaelumDiagnosticPassiveAI && body.bFriendly && !CaelumVisualPerception.Opponent(body,players[0].mo) && body.MandingaBirthInitialized && body.BestiaryReference()=="CA-FOLK-054","subject 4 initialized inspection catalogue identity");}
+Check(Subjects[5]!=null && Subjects[5].GetClass()=='CaelumBestiary045',"subject 5 native class");
+if(Subjects[5]!=null){Console.Printf("CA709 POSITION 5 xyz=(%.5f,%.5f,%.5f) velocity=(%.5f,%.5f,%.5f)",Subjects[5].Pos.X,Subjects[5].Pos.Y,Subjects[5].Pos.Z,Subjects[5].Vel.X,Subjects[5].Vel.Y,Subjects[5].Vel.Z);Check((Subjects[5].Pos-(-1280,-32,0)).Length()<0.01,"subject 5 saved position");let body=CaelumBestiaryCombatActor(Subjects[5]);Check(body!=null && body.CaelumDiagnosticPassiveAI && body.bFriendly && !CaelumVisualPerception.Opponent(body,players[0].mo) && body.MandingaBirthInitialized && body.BestiaryReference()=="CA-FOLK-045","subject 5 initialized inspection catalogue identity");}
+Check(Subjects[6]!=null && Subjects[6].GetClass()=='CaelumBestiary046',"subject 6 native class");
+if(Subjects[6]!=null){Console.Printf("CA709 POSITION 6 xyz=(%.5f,%.5f,%.5f) velocity=(%.5f,%.5f,%.5f)",Subjects[6].Pos.X,Subjects[6].Pos.Y,Subjects[6].Pos.Z,Subjects[6].Vel.X,Subjects[6].Vel.Y,Subjects[6].Vel.Z);Check((Subjects[6].Pos-(-1280,256,0)).Length()<0.01,"subject 6 saved position");let body=CaelumBestiaryCombatActor(Subjects[6]);Check(body!=null && body.CaelumDiagnosticPassiveAI && body.bFriendly && !CaelumVisualPerception.Opponent(body,players[0].mo) && body.MandingaBirthInitialized && body.BestiaryReference()=="CA-FOLK-046","subject 6 initialized inspection catalogue identity");}
+Check(Subjects[7]!=null && Subjects[7].GetClass()=='CaelumBestiary058',"subject 7 native class");
+if(Subjects[7]!=null){Console.Printf("CA709 POSITION 7 xyz=(%.5f,%.5f,%.5f) velocity=(%.5f,%.5f,%.5f)",Subjects[7].Pos.X,Subjects[7].Pos.Y,Subjects[7].Pos.Z,Subjects[7].Vel.X,Subjects[7].Vel.Y,Subjects[7].Vel.Z);Check((Subjects[7].Pos-(800,272,0)).Length()<0.01,"subject 7 saved position");let body=CaelumBestiaryCombatActor(Subjects[7]);Check(body!=null && body.CaelumDiagnosticPassiveAI && body.bFriendly && !CaelumVisualPerception.Opponent(body,players[0].mo) && body.MandingaBirthInitialized && body.BestiaryReference()=="CA-FOLK-058","subject 7 initialized inspection catalogue identity");}
+Check(Subjects[8]!=null && Subjects[8].GetClass()=='CaelumBestiary049',"subject 8 native class");
+if(Subjects[8]!=null){Console.Printf("CA709 POSITION 8 xyz=(%.5f,%.5f,%.5f) velocity=(%.5f,%.5f,%.5f)",Subjects[8].Pos.X,Subjects[8].Pos.Y,Subjects[8].Pos.Z,Subjects[8].Vel.X,Subjects[8].Vel.Y,Subjects[8].Vel.Z);Check((Subjects[8].Pos-(-384,224,0)).Length()<0.01,"subject 8 saved position");let body=CaelumBestiaryCombatActor(Subjects[8]);Check(body!=null && body.CaelumDiagnosticPassiveAI && body.bFriendly && !CaelumVisualPerception.Opponent(body,players[0].mo) && body.MandingaBirthInitialized && body.BestiaryReference()=="CA-FOLK-049","subject 8 initialized inspection catalogue identity");}
+Check(Subjects[9]!=null && Subjects[9].GetClass()=='CaelumBestiary051',"subject 9 native class");
+if(Subjects[9]!=null){Console.Printf("CA709 POSITION 9 xyz=(%.5f,%.5f,%.5f) velocity=(%.5f,%.5f,%.5f)",Subjects[9].Pos.X,Subjects[9].Pos.Y,Subjects[9].Pos.Z,Subjects[9].Vel.X,Subjects[9].Vel.Y,Subjects[9].Vel.Z);Check((Subjects[9].Pos-(-768,256,0)).Length()<0.01,"subject 9 saved position");let body=CaelumBestiaryCombatActor(Subjects[9]);Check(body!=null && body.CaelumDiagnosticPassiveAI && body.bFriendly && !CaelumVisualPerception.Opponent(body,players[0].mo) && body.MandingaBirthInitialized && body.BestiaryReference()=="CA-FOLK-051","subject 9 initialized inspection catalogue identity");}
+Check(Subjects[10]!=null && Subjects[10].GetClass()=='CaelumBestiary051',"subject 10 native class");
+if(Subjects[10]!=null){Console.Printf("CA709 POSITION 10 xyz=(%.5f,%.5f,%.5f) velocity=(%.5f,%.5f,%.5f)",Subjects[10].Pos.X,Subjects[10].Pos.Y,Subjects[10].Pos.Z,Subjects[10].Vel.X,Subjects[10].Vel.Y,Subjects[10].Vel.Z);Check((Subjects[10].Pos-(-128,256,0)).Length()<0.01,"subject 10 saved position");let body=CaelumBestiaryCombatActor(Subjects[10]);Check(body!=null && body.CaelumDiagnosticPassiveAI && body.bFriendly && !CaelumVisualPerception.Opponent(body,players[0].mo) && body.MandingaBirthInitialized && body.BestiaryReference()=="CA-FOLK-051","subject 10 initialized inspection catalogue identity");}
+Check(Subjects[11]!=null && Subjects[11].GetClass()=='CaelumBestiary048',"subject 11 native class");
+if(Subjects[11]!=null){Console.Printf("CA709 POSITION 11 xyz=(%.5f,%.5f,%.5f) velocity=(%.5f,%.5f,%.5f)",Subjects[11].Pos.X,Subjects[11].Pos.Y,Subjects[11].Pos.Z,Subjects[11].Vel.X,Subjects[11].Vel.Y,Subjects[11].Vel.Z);Check((Subjects[11].Pos-(-960,128,0)).Length()<0.01,"subject 11 saved position");let body=CaelumBestiaryCombatActor(Subjects[11]);Check(body!=null && body.CaelumDiagnosticPassiveAI && body.bFriendly && !CaelumVisualPerception.Opponent(body,players[0].mo) && body.MandingaBirthInitialized && body.BestiaryReference()=="CA-FOLK-048","subject 11 initialized inspection catalogue identity");}
+Check(Subjects[12]!=null && Subjects[12].GetClass()=='CaelumBestiary052',"subject 12 native class");
+if(Subjects[12]!=null){Console.Printf("CA709 POSITION 12 xyz=(%.5f,%.5f,%.5f) velocity=(%.5f,%.5f,%.5f)",Subjects[12].Pos.X,Subjects[12].Pos.Y,Subjects[12].Pos.Z,Subjects[12].Vel.X,Subjects[12].Vel.Y,Subjects[12].Vel.Z);Check((Subjects[12].Pos-(-576,256,0)).Length()<0.01,"subject 12 saved position");let body=CaelumBestiaryCombatActor(Subjects[12]);Check(body!=null && body.CaelumDiagnosticPassiveAI && body.bFriendly && !CaelumVisualPerception.Opponent(body,players[0].mo) && body.MandingaBirthInitialized && body.BestiaryReference()=="CA-FOLK-052","subject 12 initialized inspection catalogue identity");}
+Check(Subjects[13]!=null && Subjects[13].GetClass()=='CaelumBestiary052',"subject 13 native class");
+if(Subjects[13]!=null){Console.Printf("CA709 POSITION 13 xyz=(%.5f,%.5f,%.5f) velocity=(%.5f,%.5f,%.5f)",Subjects[13].Pos.X,Subjects[13].Pos.Y,Subjects[13].Pos.Z,Subjects[13].Vel.X,Subjects[13].Vel.Y,Subjects[13].Vel.Z);Check((Subjects[13].Pos-(-384,-160,0)).Length()<0.01,"subject 13 saved position");let body=CaelumBestiaryCombatActor(Subjects[13]);Check(body!=null && body.CaelumDiagnosticPassiveAI && body.bFriendly && !CaelumVisualPerception.Opponent(body,players[0].mo) && body.MandingaBirthInitialized && body.BestiaryReference()=="CA-FOLK-052","subject 13 initialized inspection catalogue identity");}
+        Console.Printf("CA709 COMPLETE failures=%d", Failures);
+    }
+
+    override void NetworkProcess(ConsoleEvent e)
+    {
+        if (level.MapName != "CA709G") return;
+        if (e.Name == "ca709_prepare")
+        {
+            if (Subjects.Size() != 0) return;
+            CaelumPlayer(players[0].mo).CharacterCreationComplete = true;
+            CaelumPlayer(players[0].mo).CreationWizardOpen = false;
+            players[0].mo.bNOTARGET=true;players[0].mo.bInvulnerable=true;
+            ObserverNoiseSerial=CaelumPlayer(players[0].mo).MovementNoiseEventSerial;
+            {let item=CaelumBestiaryCombatActor(Actor.Spawn('CaelumBestiary006',(-768,0,0),NO_REPLACE));if(item!=null){item.CaelumDiagnosticPassiveAI=true;item.bFriendly=true;item.Angle=270;}Subjects.Push(item);}
+{let item=CaelumBestiaryCombatActor(Actor.Spawn('CaelumBestiary006',(-256,0,0),NO_REPLACE));if(item!=null){item.CaelumDiagnosticPassiveAI=true;item.bFriendly=true;item.Angle=270;}Subjects.Push(item);}
+{let item=CaelumBestiaryCombatActor(Actor.Spawn('CaelumBestiary053',(256,0,0),NO_REPLACE));if(item!=null){item.CaelumDiagnosticPassiveAI=true;item.bFriendly=true;item.Angle=270;}Subjects.Push(item);}
+{let item=CaelumBestiaryCombatActor(Actor.Spawn('CaelumBestiary055',(704,0,0),NO_REPLACE));if(item!=null){item.CaelumDiagnosticPassiveAI=true;item.bFriendly=true;item.Angle=180;}Subjects.Push(item);}
+{let item=CaelumBestiaryCombatActor(Actor.Spawn('CaelumBestiary054',(480,180,0),NO_REPLACE));if(item!=null){item.CaelumDiagnosticPassiveAI=true;item.bFriendly=true;item.Angle=270;}Subjects.Push(item);}
+{let item=CaelumBestiaryCombatActor(Actor.Spawn('CaelumBestiary045',(-1280,-32,0),NO_REPLACE));if(item!=null){item.CaelumDiagnosticPassiveAI=true;item.bFriendly=true;item.Angle=270;}Subjects.Push(item);}
+{let item=CaelumBestiaryCombatActor(Actor.Spawn('CaelumBestiary046',(-1280,256,0),NO_REPLACE));if(item!=null){item.CaelumDiagnosticPassiveAI=true;item.bFriendly=true;item.Angle=270;}Subjects.Push(item);}
+{let item=CaelumBestiaryCombatActor(Actor.Spawn('CaelumBestiary058',(800,272,0),NO_REPLACE));if(item!=null){item.CaelumDiagnosticPassiveAI=true;item.bFriendly=true;item.Angle=270;}Subjects.Push(item);}
+{let item=CaelumBestiaryCombatActor(Actor.Spawn('CaelumBestiary049',(-384,224,0),NO_REPLACE));if(item!=null){item.CaelumDiagnosticPassiveAI=true;item.bFriendly=true;item.Angle=270;}Subjects.Push(item);}
+{let item=CaelumBestiaryCombatActor(Actor.Spawn('CaelumBestiary051',(-768,256,0),NO_REPLACE));if(item!=null){item.CaelumDiagnosticPassiveAI=true;item.bFriendly=true;item.Angle=270;}Subjects.Push(item);}
+{let item=CaelumBestiaryCombatActor(Actor.Spawn('CaelumBestiary051',(-128,256,0),NO_REPLACE));if(item!=null){item.CaelumDiagnosticPassiveAI=true;item.bFriendly=true;item.Angle=270;}Subjects.Push(item);}
+{let item=CaelumBestiaryCombatActor(Actor.Spawn('CaelumBestiary048',(-960,128,0),NO_REPLACE));if(item!=null){item.CaelumDiagnosticPassiveAI=true;item.bFriendly=true;item.Angle=270;}Subjects.Push(item);}
+{let item=CaelumBestiaryCombatActor(Actor.Spawn('CaelumBestiary052',(-576,256,0),NO_REPLACE));if(item!=null){item.CaelumDiagnosticPassiveAI=true;item.bFriendly=true;item.Angle=270;}Subjects.Push(item);}
+{let item=CaelumBestiaryCombatActor(Actor.Spawn('CaelumBestiary052',(-384,-160,0),NO_REPLACE));if(item!=null){item.CaelumDiagnosticPassiveAI=true;item.bFriendly=true;item.Angle=270;}Subjects.Push(item);}
+            View = CA709Camera(Actor.Spawn('CA709Camera', (0,0,0), NO_REPLACE));
+            ConfigureView(0);
+        }
+        if (e.Name == "ca709_view") ConfigureView(e.Args[0]);
+        if (e.Name == "ca709_verify") Verify();
+        if (e.Name == "ca709_motion_start")
+        {
+            MotionSnapshot.Clear();
+            for (int index=0; index<Subjects.Size(); index++) MotionSnapshot.Push(Subjects[index].CurState);
+        }
+        if (e.Name == "ca709_motion_verify")
+        {
+            Check(MotionSnapshot.Size() == Subjects.Size(), "animation snapshot registry");
+            for (int index=0; index<Subjects.Size(); index++)
+                Check(Subjects[index].CurState != MotionSnapshot[index] && IsIdleState(Subjects[index],MotionSnapshot[index]) && IsIdleState(Subjects[index],Subjects[index].CurState), String.Format("subject %d native idle advancement", index));
+            Console.Printf("CA709 COMPLETE failures=%d", Failures);
+        }
+        if (e.Name == "ca709_walk_start")
+        {
+            ConfigureView(4);
+            WalkStart = players[0].mo.Pos;
+        }
+        if (e.Name == "ca709_walk_verify")
+        {
+            let user=players[0].mo;
+            Console.Printf("CA709 WALK start=(%.3f,%.3f,%.3f) end=(%.3f,%.3f,%.3f) angle=%.3f",WalkStart.X,WalkStart.Y,WalkStart.Z,user.Pos.X,user.Pos.Y,user.Pos.Z,user.Angle);
+            Check((user.Pos-WalkStart).Length() > user.Radius, "native player movement in gallery");
+            Check(abs(user.Pos.Z-user.floorz)<0.01, "player remains on the walkable floor");
+            Console.Printf("CA709 COMPLETE failures=%d", Failures);
+        }
+        if (e.Name == "ca709_cross_start")
+        {
+            // Recorrido diagnóstico de las 3 uniones entre parcelas.
+            players[0].mo.SetOrigin((-1280,-256,0), false);
+            players[0].mo.Angle = 90;
+            players[0].mo.Vel = (0,0,0);
+            Console.Printf("CA709 CROSS START pos=(%.3f,%.3f,%.3f) angle=%.3f",players[0].mo.Pos.X,players[0].mo.Pos.Y,players[0].mo.Pos.Z,players[0].mo.Angle);
+        }
+        if (e.Name == "ca709_cross_verify")
+        {
+            let user=players[0].mo;
+            Console.Printf("CA709 CROSS END pos=(%.3f,%.3f,%.3f) angle=%.3f",user.Pos.X,user.Pos.Y,user.Pos.Z,user.Angle);
+            Check(user.Pos.X > 0, "native movement crosses all 3 regional boundaries");
+            Check(abs(user.Pos.Z-user.floorz)<0.01, "regional crossing stays on the floor");
+            Console.Printf("CA709 COMPLETE failures=%d", Failures);
+        }
+    }
+}

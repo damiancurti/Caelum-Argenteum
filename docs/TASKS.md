@@ -1,6 +1,13 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.42** - 2026-11-14.
+Documentation version: **5.17.43** - 2026-11-14.
+
+## #729 - Hybrid serpent regional display (5.17.43)
+
+Fourteen displays, four grounds, four repeatable fixture files and 187 native
+fresh/reload/idle/walking checks pass. CA729-HYBRID-GALLERY-01 retains author
+framing and regional-art review. Earlier model/gallery acceptance remains
+pending. The original V5.16 campaign and broader 3D conversion are unfinished.
 
 ## #727 - Hybrid serpent native art (5.17.42)
 

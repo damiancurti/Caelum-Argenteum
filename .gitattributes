@@ -927,3 +927,6 @@ assets/validation_v5_17_42/evidence/** -text -diff
 /src/caelum/data/hybrid_serpent_combat.modeldef text eol=lf
 /assets/validation_v5_17_42/*.py text eol=lf
 /assets/validation_v5_17_42/*.json text eol=lf
+
+/assets/validation_v5_17_43/*.py text eol=lf
+/assets/validation_v5_17_43/evidence/** -text -diff

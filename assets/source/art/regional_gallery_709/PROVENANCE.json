@@ -1,5 +1,5 @@
 {
-  "issue": 721,
+  "issue": 729,
   "parent_issue": 463,
   "status": "candidate_author_review_pending",
   "ownership": "Reuse existing owned regional materials and native folklore models; no image or geometry generation.",
@@ -14,9 +14,10 @@
     "assets/bestiary/REGION_PROPOSAL.json": "34218ccf0194132336c7ff04ae5c1c9d2a8c1bad488defca907fb9149a52d004",
     "assets/source/art/avian_711/EXPORT.json": "7278f91fcb6a88025256d4d3c4c48fa9aca420c97f24abf00255ece7f73419f4",
     "assets/source/art/regional_gallery_682/EXPORT.json": "c3a329355a8fabdee008fd8e9d9c81fefba5bede8dc0d6cfb7547179102f8621",
-    "assets/source/art/serpents_720/EXPORT.json": "733d78855eab137c4d8ac5abc8346ba064c8cbf988200490dfd20df144e57b17"
+    "assets/source/art/serpents_720/EXPORT.json": "733d78855eab137c4d8ac5abc8346ba064c8cbf988200490dfd20df144e57b17",
+    "assets/source/art/hybrid_serpents_727/EXPORT.json": "c88af1b4beee5a4441799e1802bd84d3b18df26eb17997bac98fc81ed07d8392"
   },
-  "scope": "Isolated diagnostic gallery; eleven native figures, nine species, four reused regional grounds.",
+  "scope": "Isolated diagnostic gallery; fourteen native figures, eleven species, four reused regional grounds.",
   "origin_issue": 709,
-  "previous_gallery_sha256": "857bb438c2dae477d8c070c2be22993bc6b4715f27458c56ea6c32d35cf0b6f4"
+  "previous_gallery_sha256": "8322ad13c3c5c18739dbbe6da82c6c7018ffabcdd9d27b274019ec668745d845"
 }

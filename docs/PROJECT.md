@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.42** - 2026-11-14.
+Documentation version: **5.17.43** - 2026-11-14.
+
+## 5.17.43 - Hybrid serpent regional inspection (#729)
+
+Optional CA709G now shows fourteen native figures from eleven species on four
+regional grounds. Mbói Tu’ĩ and Mbói Yaguá follow the approved Litoral/Selva
+allocation. The earlier layout and native model/material bytes remain intact.
+Four fixture exports repeat and 187 fresh/reload/idle/walking checks pass;
+ASSETS records the qualified distant-overview measurement. Author acceptance
+and the broader campaign/art conversion remain pending.
 
 ## 5.17.42 - Hybrid serpent models (#727)
 
