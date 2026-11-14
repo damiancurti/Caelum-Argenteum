@@ -1,0 +1,5 @@
+{
+  "status": "failed before any output file was generated",
+  "error": "Open/nonmanifold authored component: left_palm_cuff",
+  "cause": "Inner roof cap ellipse touched its preceding ring at identical Y extrema; folded cuff also repeated the end ring."
+}

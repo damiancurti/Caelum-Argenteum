@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.21** - 2026-11-14.
+Documentation version: **5.17.22** - 2026-11-14.
+
+## #688 - Four glove-pair world-drop models (5.17.22)
+
+GF/GC/GW/GP have candidate paired volumes and exact WC16..19/A bindings. Final
+native continuity passes 1,968 assertions across twenty type/size combinations;
+sixteen-file deterministic export and one four-pair presentation comparison
+pass. Fifty attachment witnesses, eight open cuffs and every patch/button
+vertex pass independent geometry checks. Retain CA688-GLOVES-01 for author
+art/ordinary-menu review. Eleven body garments, five footwear designs and
+actual worn/first-person fitting remain separate; broader #647/#459 is open.
 
 ## #686 - Five headwear world-drop models (5.17.21)
 
