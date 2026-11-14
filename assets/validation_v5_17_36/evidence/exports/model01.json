@@ -1,0 +1,179 @@
+{
+  "schema_revision": 1,
+  "issue": 716,
+  "parent_issue": 647,
+  "status": "candidate_pending_author_review",
+  "variants": {
+    "chain": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "head",
+        "spike_00",
+        "spike_01",
+        "spike_02",
+        "spike_03",
+        "spike_04",
+        "spike_05",
+        "spike_06",
+        "spike_07",
+        "eye",
+        "link_00",
+        "link_01",
+        "link_02",
+        "link_03",
+        "link_04",
+        "link_05",
+        "link_06",
+        "link_07"
+      ],
+      "closed_outward_components": 18,
+      "vertices": 2092,
+      "triangles": 4128,
+      "surfaces": [
+        {
+          "material": "iron",
+          "vertices": 2092,
+          "triangles": 4128
+        }
+      ],
+      "reference_opaque_bounds": [
+        17,
+        8,
+        111,
+        120
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 94.0,
+      "native_bounds": [
+        {
+          "min": [
+            -46.915783480015925,
+            -13.978126779370276,
+            0.0
+          ],
+          "max": [
+            47.08421651998408,
+            13.978126779370276,
+            23.542108259992045
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 7.356908831247513,
+        "floor": 0.050000000000000044
+      }
+    },
+    "silver_chain": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "link_00",
+        "link_01",
+        "link_02",
+        "link_03",
+        "link_04",
+        "link_05",
+        "link_06",
+        "link_07",
+        "link_08",
+        "link_09",
+        "link_10",
+        "link_11",
+        "link_12",
+        "link_13",
+        "link_14",
+        "link_15",
+        "link_16",
+        "link_17",
+        "link_18",
+        "link_19",
+        "link_20",
+        "link_21",
+        "link_22",
+        "link_23",
+        "link_24",
+        "link_25",
+        "link_26",
+        "link_27",
+        "link_28",
+        "link_29",
+        "link_30"
+      ],
+      "closed_outward_components": 31,
+      "vertices": 5952,
+      "triangles": 11904,
+      "surfaces": [
+        {
+          "material": "silver",
+          "vertices": 4096,
+          "triangles": 8176
+        },
+        {
+          "material": "silver",
+          "vertices": 1872,
+          "triangles": 3728
+        }
+      ],
+      "reference_opaque_bounds": [
+        12,
+        8,
+        116,
+        120
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 104.0,
+      "native_bounds": [
+        {
+          "min": [
+            -46.14653393868178,
+            -40.316312005997524,
+            0.0
+          ],
+          "max": [
+            57.853466061318215,
+            51.99476058658704,
+            8.069265271538843
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 14.665814641249803,
+        "floor": 0.22489542964620512
+      }
+    }
+  },
+  "source_sha256": {
+    "DESIGN.json": "abb3a538182b1b6b937831773c7448730de3de25976ff9dc03e1c47e384f202f",
+    "PROVENANCE.json": "1fdb86593d9c620df1a00e3fefa5e5647248d64ad62937502b7396f241676637"
+  },
+  "external_source_sha256": {
+    "src/graphics/caelum/icons/materials/ca_material_chain.png": "8d8dd2c0a225f67f2a16b1ba29d37824f877e074441ae7a22444939793fb8402",
+    "src/graphics/caelum/icons/materials/ca_material_silver_chain.png": "0d4c64e538d3973dcdf0b8ebb9af60fbb99a629d31bdeb233762c9dc4c8e7395",
+    "src/models/caelum/actors/training/ca_training_dummy.png": "4ae89bf07aaab273bb9bcafad283ab2e56fb3d87d6dd2f86e6a1329855dd8cff",
+    "src/models/caelum/inventory/consumables/materials.png": "eb8f019510c63601c9e25c8ed05142fbe7b97fe06eb444c32685def6e664416e",
+    "assets/generators/generate_peuchen_model.py": "0f1873c9fd1da0be0f965ea73ff2cc5c35dc25a35ac9da2df4692b50cef30812",
+    "assets/generators/generate_duende_models.py": "243d46cee79b1723f6b7ac9bd0b8c0c4f87b37f463cf8540cd7d51be2800511f"
+  },
+  "generator_sha256": {
+    "generate_inventory_ammunition_models.py": "aa7ffdc02cc126b116b87782ae962bdbb54e9bf060301344058aa4475f946b86",
+    "generate_inventory_consumable_models.py": "f4bb817e68f15fd5fcce27b5f7f3de205917b993899fbeb934629f2146a14fc7",
+    "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+    "generate_inventory_chains_models.py": "cd9296836666c78bd555c76e3de56d0ccc345c40ecb94a15d5e78f159719f94f"
+  },
+  "sha256": {
+    "models/caelum/inventory/chains/chain.md3": "af2289f7af6fea7403d84193935232e77c103e791ee598d10e2e8e66ab64ccd3",
+    "editable/chain.obj": "822381fa9478e601f14b7c7ea7d51ec90103e1a93e4f3b92b4d806c95cf85f4b",
+    "models/caelum/inventory/chains/silver_chain.md3": "bba2597ff4134009eec3bc593834bd8cbb60a503928ae9be08ce0a4972c55e0d",
+    "editable/silver_chain.obj": "2ee84dcc2e67389077fbd110d1d4b11b4d9a75bf0166039d432a0c6a29fcbb8b",
+    "editable/chains.mtl": "1f7ec8e6ae5cc24e536378acf9f9da1566abbb5fb7a99f7114ed5afcbd416abb",
+    "caelum/data/inventory_chains.modeldef": "837cbd1f9942c0a07b59e162bcc360c4dbbe00d9f541fb02c5b9eed0ba3a68ab"
+  }
+}

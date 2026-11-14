@@ -1,0 +1,38 @@
+{
+  "issue": 716,
+  "kind": "chains",
+  "scope": "Native pickup/toss, quantity and saved ownership for chains; no normal menu or author acceptance.",
+  "baseline_sha256": "d43efb39a7b94ed3d7cab822968673e69585b418281b6ce72152ac11d07b4a2b",
+  "runtime_sha256": "d43efb39a7b94ed3d7cab822968673e69585b418281b6ce72152ac11d07b4a2b",
+  "model_sha256": "a506a7d950bc9bedbf9a7b477c6e4d27fe0c41bf5b5427770a7020d4425dfb7e",
+  "fixture_sha256": "78efc9d71c86b5be2fab0599115752a3630f4e1b676f298eab35e159384a7512",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "visual",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 110
+    }
+  ],
+  "captures": {
+    "candidate-0.png": "7cd77015eca520b08c949b59e3b5f05d12dda180d546b45044e6b2f12d0cd806",
+    "candidate-1.png": "e0890a45feea6660801f2ae38ba2308665831de58dffe704d441d03a69dfdf6a",
+    "candidate-2.png": "37544e908fdc6d875c64d28aaa38bdbc620e5c58dcd4c6aac4431ebc84c7fc28",
+    "candidate-3.png": "a4d982e4d1bb6d814189161b34845741096751aea64df4cb3491e96e63e13cb9",
+    "candidate-5.png": "ca2f2ef9c72f4ff2d9a05791d8114fd5264b63c5e30c2e9ed068034cd62b5f0c",
+    "candidate-6.png": "52485241a575634f8308e784940f4ec2046620da20603d103e3a6513c4a2ffe9",
+    "candidate-7.png": "8f8cfa36d7aa6e1cc0a2f963817fe342a1dd65c4471362ee4a03c671061dd806",
+    "detail-0-0.png": "8241e12402054975fa8ef267a1a6895eb7a15a4b377f9ff6b7b94524a17c4f5c",
+    "detail-0-160.png": "8b5f914d3d11f5987b765546b9e954c757cb3742f36c5ad2741b5e5d382029f4",
+    "detail-0-225.png": "39dc5b65aaa74329e6579037c04e376f9f9c43840bd972dc70b953def96a0a22",
+    "detail-0-270.png": "12943d66e6da98ee35c9dd3af28b69b9889e57b2516d15dc72b2a7b056c5dfcc",
+    "detail-0-90.png": "05d1b95566b18913dc2b874b497191d91b83a8213864ffd2330dba6977af40c4",
+    "detail-1-0.png": "361585a19169fd85b3c2c9146b5dcbbed3ceaff7926220def59cbaa57528f53c",
+    "detail-1-160.png": "cdc457947ee21d52fb20ff3dc8bc3195e17d90544e53a7611ff487ce24b547a4",
+    "detail-1-225.png": "148284071cf07e419fc3a2feac0197250d6838a6de8a24ec3c8b90f4deb68d80",
+    "detail-1-270.png": "b3a69965cc35b0abff5304660052277ebb4e5b7d965abda6557d12eabfd6f581",
+    "detail-1-90.png": "984f6ef30c8fb82ca366596cf2ce1d0b41abd48a831397726ae7448f4ad99464"
+  }
+}

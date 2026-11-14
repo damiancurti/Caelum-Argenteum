@@ -1,0 +1,15 @@
+{
+  "files": [
+    "caelum/data/inventory_chains.modeldef",
+    "editable/chain.obj",
+    "editable/chains.mtl",
+    "editable/silver_chain.obj",
+    "manifest.json",
+    "models/caelum/inventory/chains/chain.md3",
+    "models/caelum/inventory/chains/silver_chain.md3",
+    "preview.pk3"
+  ],
+  "count": 8,
+  "byte_identical": true,
+  "installed_check_passed": true
+}
