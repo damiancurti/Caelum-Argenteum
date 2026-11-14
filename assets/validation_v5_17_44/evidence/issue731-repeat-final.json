@@ -1,0 +1,18 @@
+{
+  "byte_identical": true,
+  "files": {
+    "caelum/data/inventory_hides.modeldef": "0c8223575dd2a59744db39b20f4d20f77339c86705a4cf20cd483e5c3613c9ea",
+    "editable/cow_hide.obj": "b3b464435e2b0e120117d4ebec1e38c213292fed7f4ae42068fb2d417054006d",
+    "editable/hides.mtl": "7bf37a0f943166791921f62ec31075ebbb17d4bbcd997829a746e31da73761ce",
+    "editable/leather.obj": "5731c625a2cc5af4ca2afd225846e8fe56b60574d844acc21804f54349644886",
+    "editable/monster_hide.obj": "636f7bc74db707aa877eb691fba102beb230e117ad2b33b1f8dea0364ff567cc",
+    "editable/predator_hide.obj": "c2b8445ef32f91894f0e704138c86d5cc1fbf4f233b5d4ab0d785f069d05d4d9",
+    "manifest.json": "814ef2d574b0974765b5b4015a1c6bb744593fa2c4fb9cbeba4b025ddf256131",
+    "models/caelum/inventory/hides/cow_hide.md3": "ee08e4dc5e528014ed98d6621626f8e3a09108024b16e910253e8d932f568154",
+    "models/caelum/inventory/hides/leather.md3": "7d637246ea3fbb51babf88e82267d44f8ee2cda9d6cf61fa531db9493cba0595",
+    "models/caelum/inventory/hides/materials.png": "cea34a9774411ba52d742358d854791940f578403ba1787e65f9515729cec7f6",
+    "models/caelum/inventory/hides/monster_hide.md3": "7d95fa381b2f9d4793b25089f94f45af98bb2ac0a25099b905c17cc2d50788b9",
+    "models/caelum/inventory/hides/predator_hide.md3": "a774e9cb90e8acb38c23f062e89e55fd33843669e53224fdc0de01fb5356a4ad",
+    "preview.pk3": "82605ee45181fe59a6a524fd4e65ca1a826047b724f63c39ff32873e9e25aa2d"
+  }
+}

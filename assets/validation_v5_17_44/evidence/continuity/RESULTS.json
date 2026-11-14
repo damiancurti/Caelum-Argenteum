@@ -1,0 +1,77 @@
+{
+  "issue": 731,
+  "kind": "hides",
+  "scope": "Native pickup/toss, quantity and saved ownership for hides; no normal menu or author acceptance.",
+  "baseline_sha256": "b732ba27eb0c3465cdf5479369a4bb6f7b9dff86aab673d12356c44b393bbda9",
+  "runtime_sha256": "9f85623d5425f2e1f58fb1903b7a1b45b48966c6d1bcd364bb6b1c0a5e062ecc",
+  "model_sha256": null,
+  "fixture_sha256": "8c42033a6b37f81d1a3a61aa75f25a226d4af179b262bfd0d4c57b7e60e0746c",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "baseline",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 163
+    },
+    {
+      "phase": "old-save-load",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 181
+    },
+    {
+      "phase": "candidate-fresh",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 163
+    },
+    {
+      "phase": "candidate-reload",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 181
+    },
+    {
+      "phase": "rollback-load",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 181
+    }
+  ],
+  "captures": {
+    "baseline.png": "a347db48e9801a6da4b49e95e85d10d0375287b9edc4403eae3256799719b035",
+    "candidate-0.png": "3b39e22e2eb9cb4e1a107728e2bd9a793c13a0b54c1a2c231fe91345b31aee80",
+    "candidate-1.png": "222dae149cd2837f7168f5e86684fd753cdcf908071f8453432d9f0f4b6ed1d4",
+    "candidate-2.png": "3d1cb006af7d182dc95d841eda9ee33c5c30389b4fddeae302cc871647845ab8",
+    "candidate-3.png": "86d20c89af71d564428ca948f803c7b34bf92f7014fa3b8d3741bdc6e62e7b5c",
+    "candidate-5.png": "4d832614d7469d711155bfe1ac163573a7442f09e105415f4ed3a657e0433a22",
+    "candidate-6.png": "2ca2c9c5564da133aa6afb82e6904f5ee8210bfb688853f270318d200bd6d7cd",
+    "candidate-7.png": "6180e42d12db870516b524cfcd48c7e9afc85e7f3e0940f8f1b8d9785fbf41d0",
+    "detail-0-0.png": "777748238f95356771a0329db2f269cb35aa16557ecc98f0b78d7385b085b981",
+    "detail-0-160.png": "e7b0a0eff6240d1d383490eb68f501bb2761c572e9f0772552b8c6827822a1e7",
+    "detail-0-225.png": "5844e0e0844f716f01092cca77bcfe4dfa922879df9ad8f0731c6a306d0daff0",
+    "detail-0-270.png": "d98dfecaa8c321d718fac064e6882b07258810039983d1f0d8c3d9b50c9c6765",
+    "detail-0-90.png": "a176fdcb11c01ee0a40a86d7bb04000be506c7044a84c018543d01c8366a6714",
+    "detail-1-0.png": "47b99ed8a4d279181d9529517de33ee6d689714047f2aa408b029aceca959de2",
+    "detail-1-160.png": "494e1ebb2d68e8035efc0ac2290b254ee8f8938fa173604995548c3cc2811692",
+    "detail-1-225.png": "c910171ae6bc41d4ec77da58771cb0f8bb361b76620988d86e19a662441bb648",
+    "detail-1-270.png": "a0712b3bf8f49d09f40e7157649349079a45a139b9dd2fd1ff1baa43eaa6a58d",
+    "detail-1-90.png": "960502876010ba880e5191861f284007416fb70eb626bd002eb464e4fbf2fcf5",
+    "detail-2-0.png": "55dec398bc1ccc842f1c249848e37b042977743cc994b05deea2385671c8a304",
+    "detail-2-160.png": "f53780a6fdec37c5688767705fb5ba912a30201b9fc37d62218d08ef36f8955d",
+    "detail-2-225.png": "2e7449b490862a88ca709558bea424023d5c7f42f322d28c4843b70bdcd97805",
+    "detail-2-270.png": "edacb75c23ecb3e1f1ad64fa2b5c4a2b804cb88671eb6fb8c0d6996a5f34ae73",
+    "detail-2-90.png": "024e272a14316bc2ad48260ce106fe7c0f2e20a5ddfa1485ae4921bbd7a2ae30",
+    "detail-3-0.png": "0017c2d51a6acc7981eb8e5bfd223847989fe0a9e714b387b45d1fe859ce2283",
+    "detail-3-160.png": "030bf38c432e152cab29167f57a145060bd2ba558f270185c4a2b48eca2a27ac",
+    "detail-3-225.png": "e771a552fd907d7e4167f649aa541e01ff979f1b09cdd8a9db6734b673cbcaba",
+    "detail-3-270.png": "8e2a41f2cdb69448b100e2963d8bdb18e83f7eda31c33ffe07dced92a2eaa63c",
+    "detail-3-90.png": "189a9b2a54d1eb709aaeaf7ad084b86d0d4d1915baa8456be023077cb9250683"
+  }
+}

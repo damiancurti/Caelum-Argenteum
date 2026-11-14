@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.43** - 2026-11-14.
+Documentation version: **5.17.44** - 2026-11-14.
+
+## 5.17.44 - Leather and hide drops (#731)
+
+Four closed native crafting models cover all six existing type/tier cases.
+Geometry/surface UV checks, 13 repeated exports and 869 native continuity
+assertions pass; ASSETS records qualified presentation evidence.
+CA731-HIDE-DROPS-01 keeps art and ordinary inventory/crafting acceptance
+pending. Other dropped items, characters, modular equipment and campaign work
+remain incomplete.
 
 ## 5.17.43 - Hybrid serpent regional inspection (#729)
 

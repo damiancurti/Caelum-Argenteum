@@ -1,0 +1,654 @@
+{
+  "issue": 731,
+  "parent_issue": 647,
+  "version": "5.17.44",
+  "date": "2026-11-14",
+  "author_accepted": false,
+  "scope": "Four existing CaelumMaterialPickup designs19/76/77/78: three leather tiers and three untiered hides, six cases total. Closed curved sheets with separate exterior, leather underside and rim UVs. Gameplay and icons unchanged.",
+  "runtime": {
+    "sha256": "9f85623d5425f2e1f58fb1903b7a1b45b48966c6d1bcd364bb6b1c0a5e062ecc",
+    "source_entries": 18445,
+    "exact_source_bytes": true
+  },
+  "baseline": {
+    "sha256": "b732ba27eb0c3465cdf5479369a4bb6f7b9dff86aab673d12356c44b393bbda9",
+    "new_resources": [
+      "caelum/data/inventory_hides.modeldef",
+      "models/caelum/inventory/hides/cow_hide.md3",
+      "models/caelum/inventory/hides/leather.md3",
+      "models/caelum/inventory/hides/materials.png",
+      "models/caelum/inventory/hides/monster_hide.md3",
+      "models/caelum/inventory/hides/predator_hide.md3"
+    ],
+    "changed_resources": [
+      "MODELDEF",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "all_other_runtime_bytes_identical": true
+  },
+  "static": {
+    "repeated_export_files": 13,
+    "repeat_byte_identical": true,
+    "installed_export_check_passed": true,
+    "geometry": {
+      "leather": {
+        "closed_components": 1,
+        "fixed_attachment_witnesses": 0,
+        "connected_components": 1,
+        "opening_probes": 0,
+        "opening_rays": 0,
+        "native_triangles": 816
+      },
+      "cow_hide": {
+        "closed_components": 1,
+        "fixed_attachment_witnesses": 0,
+        "connected_components": 1,
+        "opening_probes": 0,
+        "opening_rays": 0,
+        "native_triangles": 1416
+      },
+      "predator_hide": {
+        "closed_components": 1,
+        "fixed_attachment_witnesses": 0,
+        "connected_components": 1,
+        "opening_probes": 0,
+        "opening_rays": 0,
+        "native_triangles": 1416
+      },
+      "monster_hide": {
+        "closed_components": 1,
+        "fixed_attachment_witnesses": 0,
+        "connected_components": 1,
+        "opening_probes": 0,
+        "opening_rays": 0,
+        "native_triangles": 1136
+      }
+    },
+    "surface_triangles": {
+      "leather": {
+        "top": 320,
+        "underside": 320,
+        "rim": 176
+      },
+      "cow_hide": {
+        "top": 560,
+        "underside": 560,
+        "rim": 296
+      },
+      "predator_hide": {
+        "top": 560,
+        "underside": 560,
+        "rim": 296
+      },
+      "monster_hide": {
+        "top": 448,
+        "underside": 448,
+        "rim": 240
+      }
+    },
+    "variants": {
+      "leather": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "sheet"
+        ],
+        "closed_outward_components": 1,
+        "vertices": 762,
+        "triangles": 816,
+        "surfaces": [
+          {
+            "material": "atlas",
+            "vertices": 762,
+            "triangles": 816
+          }
+        ],
+        "reference_opaque_bounds": [
+          8,
+          30,
+          120,
+          98
+        ],
+        "reference_axis": "width",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 112.0,
+        "native_bounds": [
+          {
+            "min": [
+              -56.0,
+              -38.857142857142854,
+              0.0
+            ],
+            "max": [
+              56.0,
+              33.14285714285714,
+              12.235173690627269
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.1428571428571428,
+          "floor": -5.344197933525973
+        }
+      },
+      "cow_hide": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "sheet"
+        ],
+        "closed_outward_components": 1,
+        "vertices": 1302,
+        "triangles": 1416,
+        "surfaces": [
+          {
+            "material": "atlas",
+            "vertices": 1302,
+            "triangles": 1416
+          }
+        ],
+        "reference_opaque_bounds": [
+          8,
+          14,
+          120,
+          113
+        ],
+        "reference_axis": "width",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 112.0,
+        "native_bounds": [
+          {
+            "min": [
+              -56.0,
+              -62.22222222222222,
+              0.0
+            ],
+            "max": [
+              56.0,
+              60.97777777777778,
+              13.422605954404721
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.2444444444444445,
+          "floor": -5.388726975843556
+        }
+      },
+      "predator_hide": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "sheet"
+        ],
+        "closed_outward_components": 1,
+        "vertices": 1302,
+        "triangles": 1416,
+        "surfaces": [
+          {
+            "material": "atlas",
+            "vertices": 1302,
+            "triangles": 1416
+          }
+        ],
+        "reference_opaque_bounds": [
+          8,
+          13,
+          120,
+          115
+        ],
+        "reference_axis": "width",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 112.0,
+        "native_bounds": [
+          {
+            "min": [
+              -56.0,
+              -63.46666666666667,
+              0.0
+            ],
+            "max": [
+              56.0,
+              60.97777777777778,
+              13.404746958147383
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.2444444444444445,
+          "floor": -5.384671558598971
+        }
+      },
+      "monster_hide": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "sheet"
+        ],
+        "closed_outward_components": 1,
+        "vertices": 1050,
+        "triangles": 1136,
+        "surfaces": [
+          {
+            "material": "atlas",
+            "vertices": 1050,
+            "triangles": 1136
+          }
+        ],
+        "reference_opaque_bounds": [
+          8,
+          17,
+          120,
+          111
+        ],
+        "reference_axis": "width",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 112.0,
+        "native_bounds": [
+          {
+            "min": [
+              -56.0,
+              -59.50000000000001,
+              0.0
+            ],
+            "max": [
+              56.0,
+              58.333333333333336,
+              13.13417749358845
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.1666666666666667,
+          "floor": -5.584056095923755
+        }
+      }
+    },
+    "project_validation_passed": true
+  },
+  "continuity": {
+    "issue": 731,
+    "kind": "hides",
+    "scope": "Native pickup/toss, quantity and saved ownership for hides; no normal menu or author acceptance.",
+    "baseline_sha256": "b732ba27eb0c3465cdf5479369a4bb6f7b9dff86aab673d12356c44b393bbda9",
+    "runtime_sha256": "9f85623d5425f2e1f58fb1903b7a1b45b48966c6d1bcd364bb6b1c0a5e062ecc",
+    "model_sha256": null,
+    "fixture_sha256": "8c42033a6b37f81d1a3a61aa75f25a226d4af179b262bfd0d4c57b7e60e0746c",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "baseline",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 163
+      },
+      {
+        "phase": "old-save-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 181
+      },
+      {
+        "phase": "candidate-fresh",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 163
+      },
+      {
+        "phase": "candidate-reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 181
+      },
+      {
+        "phase": "rollback-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 181
+      }
+    ],
+    "captures": {
+      "baseline.png": "a347db48e9801a6da4b49e95e85d10d0375287b9edc4403eae3256799719b035",
+      "candidate-0.png": "3b39e22e2eb9cb4e1a107728e2bd9a793c13a0b54c1a2c231fe91345b31aee80",
+      "candidate-1.png": "222dae149cd2837f7168f5e86684fd753cdcf908071f8453432d9f0f4b6ed1d4",
+      "candidate-2.png": "3d1cb006af7d182dc95d841eda9ee33c5c30389b4fddeae302cc871647845ab8",
+      "candidate-3.png": "86d20c89af71d564428ca948f803c7b34bf92f7014fa3b8d3741bdc6e62e7b5c",
+      "candidate-5.png": "4d832614d7469d711155bfe1ac163573a7442f09e105415f4ed3a657e0433a22",
+      "candidate-6.png": "2ca2c9c5564da133aa6afb82e6904f5ee8210bfb688853f270318d200bd6d7cd",
+      "candidate-7.png": "6180e42d12db870516b524cfcd48c7e9afc85e7f3e0940f8f1b8d9785fbf41d0",
+      "detail-0-0.png": "777748238f95356771a0329db2f269cb35aa16557ecc98f0b78d7385b085b981",
+      "detail-0-160.png": "e7b0a0eff6240d1d383490eb68f501bb2761c572e9f0772552b8c6827822a1e7",
+      "detail-0-225.png": "5844e0e0844f716f01092cca77bcfe4dfa922879df9ad8f0731c6a306d0daff0",
+      "detail-0-270.png": "d98dfecaa8c321d718fac064e6882b07258810039983d1f0d8c3d9b50c9c6765",
+      "detail-0-90.png": "a176fdcb11c01ee0a40a86d7bb04000be506c7044a84c018543d01c8366a6714",
+      "detail-1-0.png": "47b99ed8a4d279181d9529517de33ee6d689714047f2aa408b029aceca959de2",
+      "detail-1-160.png": "494e1ebb2d68e8035efc0ac2290b254ee8f8938fa173604995548c3cc2811692",
+      "detail-1-225.png": "c910171ae6bc41d4ec77da58771cb0f8bb361b76620988d86e19a662441bb648",
+      "detail-1-270.png": "a0712b3bf8f49d09f40e7157649349079a45a139b9dd2fd1ff1baa43eaa6a58d",
+      "detail-1-90.png": "960502876010ba880e5191861f284007416fb70eb626bd002eb464e4fbf2fcf5",
+      "detail-2-0.png": "55dec398bc1ccc842f1c249848e37b042977743cc994b05deea2385671c8a304",
+      "detail-2-160.png": "f53780a6fdec37c5688767705fb5ba912a30201b9fc37d62218d08ef36f8955d",
+      "detail-2-225.png": "2e7449b490862a88ca709558bea424023d5c7f42f322d28c4843b70bdcd97805",
+      "detail-2-270.png": "edacb75c23ecb3e1f1ad64fa2b5c4a2b804cb88671eb6fb8c0d6996a5f34ae73",
+      "detail-2-90.png": "024e272a14316bc2ad48260ce106fe7c0f2e20a5ddfa1485ae4921bbd7a2ae30",
+      "detail-3-0.png": "0017c2d51a6acc7981eb8e5bfd223847989fe0a9e714b387b45d1fe859ce2283",
+      "detail-3-160.png": "030bf38c432e152cab29167f57a145060bd2ba558f270185c4a2b48eca2a27ac",
+      "detail-3-225.png": "e771a552fd907d7e4167f649aa541e01ff979f1b09cdd8a9db6734b673cbcaba",
+      "detail-3-270.png": "8e2a41f2cdb69448b100e2963d8bdb18e83f7eda31c33ffe07dced92a2eaa63c",
+      "detail-3-90.png": "189a9b2a54d1eb709aaeaf7ad084b86d0d4d1915baa8456be023077cb9250683"
+    }
+  },
+  "presentation": {
+    "issue": 731,
+    "kind": "hides",
+    "scope": "Measure actual inventory drop classes before/after model installation.\n\nA single sequential baseline/candidate pair in an isolated room; this is not a\ncrowd budget, campaign performance acceptance or repeatability estimate.",
+    "baseline_sha256": "b732ba27eb0c3465cdf5479369a4bb6f7b9dff86aab673d12356c44b393bbda9",
+    "runtime_sha256": "9f85623d5425f2e1f58fb1903b7a1b45b48966c6d1bcd364bb6b1c0a5e062ecc",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+    "runs": [
+      {
+        "kind": "sprites",
+        "bodies": 4,
+        "pid": 35808,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 285385790.309,
+          "END": 285405811.4748
+        },
+        "fixture_sha256": "d50e0daaf111aa68a4884cddda805b2b04817b119b707e36afdc674f3a4760e9",
+        "passed": true,
+        "observed_completion_counts": [
+          [
+            4,
+            700
+          ]
+        ],
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.572513142857144,
+          "p50_ms": 28.5661,
+          "p95_ms": 29.1545,
+          "p99_ms": 29.3166,
+          "max_ms": 29.5069
+        },
+        "presentation": {
+          "pid": 35808,
+          "trace_sha256": "a1af5e2675bb5fd65a4111abb92f766dcd376470c41ee6b65de4a4e8b858ebcd",
+          "rows": 29955,
+          "scene_presents": 20188,
+          "mean_present_fps": 1152.2563925115312,
+          "present_intervals": {
+            "samples": 20187,
+            "mean_ms": 0.8678624015444484,
+            "p50_ms": 0.8431000113487244,
+            "p95_ms": 1.0432000160217285,
+            "p99_ms": 1.2829999923706055,
+            "max_ms": 1.7142000198364258
+          },
+          "native_call_duration": {
+            "samples": 20188,
+            "mean_ms": 0.07543470397405584,
+            "p50_ms": 0.07499998807907104,
+            "p95_ms": 0.09939998388290405,
+            "p99_ms": 0.12949997186660767,
+            "max_ms": 0.4025000333786011
+          }
+        }
+      },
+      {
+        "kind": "models",
+        "bodies": 4,
+        "pid": 18728,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 285420273.1468,
+          "END": 285440293.00589997
+        },
+        "fixture_sha256": "d50e0daaf111aa68a4884cddda805b2b04817b119b707e36afdc674f3a4760e9",
+        "passed": true,
+        "observed_completion_counts": [
+          [
+            4,
+            700
+          ]
+        ],
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.57238457142857,
+          "p50_ms": 28.5588,
+          "p95_ms": 29.21,
+          "p99_ms": 29.4586,
+          "max_ms": 29.7369
+        },
+        "presentation": {
+          "pid": 18728,
+          "trace_sha256": "2b39e8f74090ddac3024747e52d46b155264f0252595ef26845a6670f8796fe1",
+          "rows": 29303,
+          "scene_presents": 19838,
+          "mean_present_fps": 1132.3480293874563,
+          "present_intervals": {
+            "samples": 19837,
+            "mean_ms": 0.8831207138153011,
+            "p50_ms": 0.8562999963760376,
+            "p95_ms": 1.0792999863624573,
+            "p99_ms": 1.3327000141143799,
+            "max_ms": 2.288300037384033
+          },
+          "native_call_duration": {
+            "samples": 19838,
+            "mean_ms": 0.07526696743545952,
+            "p50_ms": 0.0746999979019165,
+            "p95_ms": 0.09860002994537354,
+            "p99_ms": 0.12770003080368042,
+            "max_ms": 0.5188999772071838
+          }
+        }
+      }
+    ]
+  },
+  "iterations": "Models01/02 repeat and pass geometry; visual02 passes163 checks but the reverse repeats the exterior material. Model03 maps the reverse and rims to leather with independent UV seam vertices sharing exact positions. Geometry and serialized surface UV checks pass; visual03 passes163 checks. Models03/04 repeat13 files. Initial data, generator, manifests and previews retained. Visual01 was a command-line preview path error and presentation01 a layer path error, both before engine launch; corrected commands use preview.pk3 and the layer directory.",
+  "art": {
+    "source": "assets/source/art/inventory_models_647/hides",
+    "new_image_generation": true,
+    "mode": "built-in image_gen",
+    "image": "materials.png",
+    "prompt": "MATERIALS_PROMPT.json",
+    "original_pixels_preserved": true,
+    "reviewed_views": "All four original icons, generated atlas, all20 final detail rotations/raised undersides, ordinary six-case floor overview and both presentation cohorts.",
+    "author_check": "CA731-HIDE-DROPS-01"
+  },
+  "environment": {
+    "os": "Windows 11 Pro 26200",
+    "cpu": "Ryzen 9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX 3070 Ti",
+    "engine": "GZDoom 4.14.2",
+    "backend": "Vulkan",
+    "resolution": [
+      1280,
+      720
+    ],
+    "background_unpaused": true,
+    "audio": 0.05,
+    "presentation_uncapped": true,
+    "vsync": false
+  },
+  "qualifications": [
+    "Static world crafting art. Irregular polygonal outlines, folds, russet reverse/rim contrast and large painted scales require author review; no whole-animal or worn models.",
+    "One sequential700-tic four-object sprite/model pair measures queue intervals, not GPU/display timing, repeatability or campaign/crowd acceptance. Different footprints preclude equal-pixel claims.",
+    "Native pickup/toss API probes and prepared Box/quest states do not establish ordinary menus/crafting or author acceptance.",
+    "No recipe, tier resolution, weight, amount, identity, collision, save schema, production scan or original icon changes.",
+    "No executable, IWAD, compiled fixture, PK3/WAD, DLL or save is committed."
+  ],
+  "files": {
+    "continuity/baseline-process.log": "4a1839c9fc769d81651585352140ca10b5a9a9b3fafa4db5be0ff7a687c9d321",
+    "continuity/baseline.cfg": "32f6790126d8381cdd321ac2020de41ec83a1c8a94782ba6ade23358f5a71558",
+    "continuity/baseline.log": "b9b19c6754efeb0528029dff3951568df1e7c956e90d1a7024eb7663d39507d4",
+    "continuity/baseline.png": "a347db48e9801a6da4b49e95e85d10d0375287b9edc4403eae3256799719b035",
+    "continuity/candidate-0.png": "3b39e22e2eb9cb4e1a107728e2bd9a793c13a0b54c1a2c231fe91345b31aee80",
+    "continuity/candidate-1.png": "222dae149cd2837f7168f5e86684fd753cdcf908071f8453432d9f0f4b6ed1d4",
+    "continuity/candidate-2.png": "3d1cb006af7d182dc95d841eda9ee33c5c30389b4fddeae302cc871647845ab8",
+    "continuity/candidate-3.png": "86d20c89af71d564428ca948f803c7b34bf92f7014fa3b8d3741bdc6e62e7b5c",
+    "continuity/candidate-5.png": "4d832614d7469d711155bfe1ac163573a7442f09e105415f4ed3a657e0433a22",
+    "continuity/candidate-6.png": "2ca2c9c5564da133aa6afb82e6904f5ee8210bfb688853f270318d200bd6d7cd",
+    "continuity/candidate-7.png": "6180e42d12db870516b524cfcd48c7e9afc85e7f3e0940f8f1b8d9785fbf41d0",
+    "continuity/candidate-fresh-process.log": "b48a498b3d4c3dd2b92f391cafdb3ca30acc0ccb080c4753e6c14968ac834e32",
+    "continuity/candidate-fresh.cfg": "9bd487f640a86db8d1d3ce5b810a632ce2f62306ffd4d3c08efa5fc24c18f48b",
+    "continuity/candidate-fresh.log": "0b4ab8ad1cce8156ce09debf2ab797a68c61d0789a35caec9bfa4c6d8b6cb8b1",
+    "continuity/candidate-reload-process.log": "8d926a110ce6ca83a5d9c3f473f0ec1fb189c27682a7205122ac407b1087bae9",
+    "continuity/candidate-reload.cfg": "85c4b739fb173f78ee81fad10ffd2ab99e55a5addc98589ffaa887d9f8ecebaa",
+    "continuity/candidate-reload.log": "cec963a415670c01b8b25289aa99533d1696974844975e10153ca91d2205b013",
+    "continuity/detail-0-0.png": "777748238f95356771a0329db2f269cb35aa16557ecc98f0b78d7385b085b981",
+    "continuity/detail-0-160.png": "e7b0a0eff6240d1d383490eb68f501bb2761c572e9f0772552b8c6827822a1e7",
+    "continuity/detail-0-225.png": "5844e0e0844f716f01092cca77bcfe4dfa922879df9ad8f0731c6a306d0daff0",
+    "continuity/detail-0-270.png": "d98dfecaa8c321d718fac064e6882b07258810039983d1f0d8c3d9b50c9c6765",
+    "continuity/detail-0-90.png": "a176fdcb11c01ee0a40a86d7bb04000be506c7044a84c018543d01c8366a6714",
+    "continuity/detail-1-0.png": "47b99ed8a4d279181d9529517de33ee6d689714047f2aa408b029aceca959de2",
+    "continuity/detail-1-160.png": "494e1ebb2d68e8035efc0ac2290b254ee8f8938fa173604995548c3cc2811692",
+    "continuity/detail-1-225.png": "c910171ae6bc41d4ec77da58771cb0f8bb361b76620988d86e19a662441bb648",
+    "continuity/detail-1-270.png": "a0712b3bf8f49d09f40e7157649349079a45a139b9dd2fd1ff1baa43eaa6a58d",
+    "continuity/detail-1-90.png": "960502876010ba880e5191861f284007416fb70eb626bd002eb464e4fbf2fcf5",
+    "continuity/detail-2-0.png": "55dec398bc1ccc842f1c249848e37b042977743cc994b05deea2385671c8a304",
+    "continuity/detail-2-160.png": "f53780a6fdec37c5688767705fb5ba912a30201b9fc37d62218d08ef36f8955d",
+    "continuity/detail-2-225.png": "2e7449b490862a88ca709558bea424023d5c7f42f322d28c4843b70bdcd97805",
+    "continuity/detail-2-270.png": "edacb75c23ecb3e1f1ad64fa2b5c4a2b804cb88671eb6fb8c0d6996a5f34ae73",
+    "continuity/detail-2-90.png": "024e272a14316bc2ad48260ce106fe7c0f2e20a5ddfa1485ae4921bbd7a2ae30",
+    "continuity/detail-3-0.png": "0017c2d51a6acc7981eb8e5bfd223847989fe0a9e714b387b45d1fe859ce2283",
+    "continuity/detail-3-160.png": "030bf38c432e152cab29167f57a145060bd2ba558f270185c4a2b48eca2a27ac",
+    "continuity/detail-3-225.png": "e771a552fd907d7e4167f649aa541e01ff979f1b09cdd8a9db6734b673cbcaba",
+    "continuity/detail-3-270.png": "8e2a41f2cdb69448b100e2963d8bdb18e83f7eda31c33ffe07dced92a2eaa63c",
+    "continuity/detail-3-90.png": "189a9b2a54d1eb709aaeaf7ad084b86d0d4d1915baa8456be023077cb9250683",
+    "continuity/fixture-source/MAPINFO.txt": "457f508ed86a95753f36be16a5ecc36f8b44b43f80ff7e2b5487632bc3a0dc77",
+    "continuity/fixture-source/ZSCRIPT.txt": "73db776037e9b6ee9fe5006425cadeea4365fae97fedd6ca9a5f0f3741d50835",
+    "continuity/fixture.zs": "c9e2816845212eb84970a86bdc3abf4cfdab0d1efa92e587bdf06a5deeee480e",
+    "continuity/old-save-load-part-1.cfg": "f2e05bd1cfba0758e9db78123da1ada385a7ad46bd25cc4bbb62412b565a319b",
+    "continuity/old-save-load-process.log": "319e429f43893a48f892aa57ee2e9762c0b308fdb4231bcd9ced1871683b5264",
+    "continuity/old-save-load.cfg": "003b9c17fb22bbeee5bb98e5e83daf66695c28420bf4f98df28f3cee183e4714",
+    "continuity/old-save-load.log": "6a99f007803d258d54decc5e68a57f746a1e38314c21482e8e38f71e82fc0d61",
+    "continuity/RESULTS.json": "9475459f5e88086cc370ad75994ebdb4a6e5fd612b657fb514c443835cda2b4b",
+    "continuity/rollback-load-process.log": "5eb3aa8cab3a9cbef85c6f1f517bc267212ad9e360cdecc015a2e4d6b6529b59",
+    "continuity/rollback-load.cfg": "85c4b739fb173f78ee81fad10ffd2ab99e55a5addc98589ffaa887d9f8ecebaa",
+    "continuity/rollback-load.log": "4f84162109a74da3ab717271f4d858b9e45913e80bfbceeed6ba2cc3ccacd80e",
+    "continuity/session.ini": "fc267c3fdfb7613db2cbb6289329f6c8ead6dea671949b0543d5e77c6ce5ecf2",
+    "exports/model01.json": "662c5d750b688090811ea70b0e3ab809f228a41e08db4ecd833f31c562298d19",
+    "exports/model02.json": "662c5d750b688090811ea70b0e3ab809f228a41e08db4ecd833f31c562298d19",
+    "exports/model03.json": "814ef2d574b0974765b5b4015a1c6bb744593fa2c4fb9cbeba4b025ddf256131",
+    "exports/model04.json": "814ef2d574b0974765b5b4015a1c6bb744593fa2c4fb9cbeba4b025ddf256131",
+    "issue731-build01.log": "5dc57717dd66d70328efce53506d04d73b0bbbca89f7592a1c77636cbd8a3eb3",
+    "issue731-build02.log": "887bbe764066fd81d91c74989826c44b2cdd371ef20dc19b310f64e688ffa393",
+    "issue731-installed-check.log": "f85a290754574a52893d1644e9201232908fedb461679b9bbfb4c968e6ccc693",
+    "issue731-repeat-final.json": "09a76ab39449ddfbd3f78447ab68ffc3cab2b072684531bd84e2ce00fae7e18d",
+    "iterations/issue731-design01.json": "ea5f08c0851afd58d102dcec822b5486b371b8d95116b71a8a7b2eaa62f11b2b",
+    "iterations/issue731-generator01.py": "b98f1a065547db46b8298207e558bc6ba5949ae75a018a0e302202a472b4c7d6",
+    "iterations/issue731-geometry01.log": "4f492bfefa09501c482e74fa9dab4a4081594ef8dfd8666d6b722dbb8e2bd10d",
+    "iterations/issue731-geometry02.log": "4f492bfefa09501c482e74fa9dab4a4081594ef8dfd8666d6b722dbb8e2bd10d",
+    "iterations/issue731-geometry03.log": "b7ed91e30fef4662caaf2ef726bd79c05021c88e6041f357b6d5b79d80a15679",
+    "iterations/visual02/candidate-0.png": "0d833aae3d75bfa97a88f4b00aafe77c6575a09ad922e1b2e79d9a0e3c5b50f8",
+    "iterations/visual02/candidate-1.png": "1f83a34c1bef511748efc8c26b6e3b2081964be3b70ccbd98466c8c79413ba23",
+    "iterations/visual02/candidate-2.png": "b2332f87ebf1cf5b0f50425500c20752e0aacd722edc7eafef41c6997e8b0b45",
+    "iterations/visual02/candidate-3.png": "0348ead4a1c81712207f33cf14ba313030b48ed4f0caec312af2b50c11907bb7",
+    "iterations/visual02/candidate-5.png": "83e95c93a20050a5475dabab838aba1a60a33a7da1a41cffd574da3b992ff845",
+    "iterations/visual02/candidate-6.png": "f39e23b254440222d5462e0408ced06f1d6410ea1650feaf80b04f2b95e2f521",
+    "iterations/visual02/candidate-7.png": "31c28c1f30e2bd57b99d8cd849ba8b4f2593227427b3a00bc4f18cc31cf2a7c8",
+    "iterations/visual02/detail-0-0.png": "0decc15c7d1e4b23cc921a46d335d7aa75ae83dcc310888920e4e21d832bbe35",
+    "iterations/visual02/detail-0-160.png": "e75401d0612b658a0a436e0c415667ce4d86c7f3353d3b3dda99215b23d48fd6",
+    "iterations/visual02/detail-0-225.png": "e2cfebc0200f1b9c2b4dc3615cf4a366cafc513baa4999b65cc6e9a625d3f887",
+    "iterations/visual02/detail-0-270.png": "7740e85e5972d1bbce87e28014612cf7c37153f72b68cd7e159edbdb014c2b35",
+    "iterations/visual02/detail-0-90.png": "3c6fa0bf15f935c98e148672efff1c26bc40ebc86b29e51b70ee72aa54563df4",
+    "iterations/visual02/detail-1-0.png": "abc2f3771969763516f2922d53b8f1f4b0cf926c48765ab36131a7f93ffc5a4f",
+    "iterations/visual02/detail-1-160.png": "dc08d397c2fe1d5cc25de6e51f12dc5a9457bc95551e54904f291fe9e6dbe099",
+    "iterations/visual02/detail-1-225.png": "754a8a69ec9130e6a0b76b68a15fdc4c003d25b7c7a34fca6115882ad3875f0b",
+    "iterations/visual02/detail-1-270.png": "eb5052af83a291af5c2014ea80ab1e8c468a75e2efb246082f723e5f48be31d8",
+    "iterations/visual02/detail-1-90.png": "770440906ec676002f5d1c5b24fb7fa33adacd0cd5e1a1025029799acc65ba3e",
+    "iterations/visual02/detail-2-0.png": "d5fae95a89670d8f30ad5198ef166406bc44a1a6dd5d3f7a7a376e7ba98b398b",
+    "iterations/visual02/detail-2-160.png": "067808e6aab890238e036f7e1d721401e52da800146c8b744ed2dcdc199da2bf",
+    "iterations/visual02/detail-2-225.png": "a1e239a1079df5e23abe8a8f10a3fad4eb820e45d2da3ee6815bbb61dbbcebde",
+    "iterations/visual02/detail-2-270.png": "774a7ed2708146b0e415aa9f9a1505a0d13137e475bcd29f499e2496205ae9bb",
+    "iterations/visual02/detail-2-90.png": "e01742191dbe2ea11d19d98aa240418ad6f60da61bc2f29afe795a639a530a2e",
+    "iterations/visual02/detail-3-0.png": "965f880b16e814df261e77bef1fd3e0da578cafe0b10e89f86dfc17aa91d296c",
+    "iterations/visual02/detail-3-160.png": "cb43d21b750e135388d147067ad3307a1a8fcd99125c13f376e9e5e3999e7a15",
+    "iterations/visual02/detail-3-225.png": "3cae9189affbb651930d1dd857bc2b525910147bb4552a072297e0d69c53ed92",
+    "iterations/visual02/detail-3-270.png": "94f2c8e965aa3b4eb024bc5190b4e7b7278a56609e0bd38d4cd6e59b5e8b7a57",
+    "iterations/visual02/detail-3-90.png": "bbaee83d0e33bd0457b9af369abe30b7f82624679e54859cacb4446ece6d2b7c",
+    "iterations/visual02/fixture-source/MAPINFO.txt": "457f508ed86a95753f36be16a5ecc36f8b44b43f80ff7e2b5487632bc3a0dc77",
+    "iterations/visual02/fixture-source/ZSCRIPT.txt": "73db776037e9b6ee9fe5006425cadeea4365fae97fedd6ca9a5f0f3741d50835",
+    "iterations/visual02/fixture.zs": "c9e2816845212eb84970a86bdc3abf4cfdab0d1efa92e587bdf06a5deeee480e",
+    "iterations/visual02/RESULTS.json": "b6ceaf3396fe1afeb8aab42dae5263e215a6ef71017b4363d7ab1aeca1c339bf",
+    "iterations/visual02/session.ini": "42f0bd22c8d75d946d76c304ae56a95e635b5c6d51b1b1dc1c029cddcbbab209",
+    "iterations/visual02/visual-part-1.cfg": "c9af68debe5f04c22bcfaf6c44ae4bf1f7b255ef5e9c8fe1ecf3e2d439c6670e",
+    "iterations/visual02/visual-process.log": "ad05deea8245602618b80ea6725cb393923e69c838a3a43daf01e61b80ca4dde",
+    "iterations/visual02/visual.cfg": "0cc0dd0c28803bc435201f9f60b328974103cb8fe0f59ff539376969c38ac7ff",
+    "iterations/visual02/visual.log": "adff20e7e63211db232df0a1f22cc4d4ce00497504258f1d86b9985b4c2bf7e3",
+    "iterations/visual03/candidate-0.png": "3b39e22e2eb9cb4e1a107728e2bd9a793c13a0b54c1a2c231fe91345b31aee80",
+    "iterations/visual03/candidate-1.png": "222dae149cd2837f7168f5e86684fd753cdcf908071f8453432d9f0f4b6ed1d4",
+    "iterations/visual03/candidate-2.png": "3d1cb006af7d182dc95d841eda9ee33c5c30389b4fddeae302cc871647845ab8",
+    "iterations/visual03/candidate-3.png": "86d20c89af71d564428ca948f803c7b34bf92f7014fa3b8d3741bdc6e62e7b5c",
+    "iterations/visual03/candidate-5.png": "4d832614d7469d711155bfe1ac163573a7442f09e105415f4ed3a657e0433a22",
+    "iterations/visual03/candidate-6.png": "2ca2c9c5564da133aa6afb82e6904f5ee8210bfb688853f270318d200bd6d7cd",
+    "iterations/visual03/candidate-7.png": "6180e42d12db870516b524cfcd48c7e9afc85e7f3e0940f8f1b8d9785fbf41d0",
+    "iterations/visual03/detail-0-0.png": "777748238f95356771a0329db2f269cb35aa16557ecc98f0b78d7385b085b981",
+    "iterations/visual03/detail-0-160.png": "e7b0a0eff6240d1d383490eb68f501bb2761c572e9f0772552b8c6827822a1e7",
+    "iterations/visual03/detail-0-225.png": "5844e0e0844f716f01092cca77bcfe4dfa922879df9ad8f0731c6a306d0daff0",
+    "iterations/visual03/detail-0-270.png": "d98dfecaa8c321d718fac064e6882b07258810039983d1f0d8c3d9b50c9c6765",
+    "iterations/visual03/detail-0-90.png": "a176fdcb11c01ee0a40a86d7bb04000be506c7044a84c018543d01c8366a6714",
+    "iterations/visual03/detail-1-0.png": "47b99ed8a4d279181d9529517de33ee6d689714047f2aa408b029aceca959de2",
+    "iterations/visual03/detail-1-160.png": "494e1ebb2d68e8035efc0ac2290b254ee8f8938fa173604995548c3cc2811692",
+    "iterations/visual03/detail-1-225.png": "c910171ae6bc41d4ec77da58771cb0f8bb361b76620988d86e19a662441bb648",
+    "iterations/visual03/detail-1-270.png": "a0712b3bf8f49d09f40e7157649349079a45a139b9dd2fd1ff1baa43eaa6a58d",
+    "iterations/visual03/detail-1-90.png": "960502876010ba880e5191861f284007416fb70eb626bd002eb464e4fbf2fcf5",
+    "iterations/visual03/detail-2-0.png": "55dec398bc1ccc842f1c249848e37b042977743cc994b05deea2385671c8a304",
+    "iterations/visual03/detail-2-160.png": "f53780a6fdec37c5688767705fb5ba912a30201b9fc37d62218d08ef36f8955d",
+    "iterations/visual03/detail-2-225.png": "2e7449b490862a88ca709558bea424023d5c7f42f322d28c4843b70bdcd97805",
+    "iterations/visual03/detail-2-270.png": "edacb75c23ecb3e1f1ad64fa2b5c4a2b804cb88671eb6fb8c0d6996a5f34ae73",
+    "iterations/visual03/detail-2-90.png": "024e272a14316bc2ad48260ce106fe7c0f2e20a5ddfa1485ae4921bbd7a2ae30",
+    "iterations/visual03/detail-3-0.png": "0017c2d51a6acc7981eb8e5bfd223847989fe0a9e714b387b45d1fe859ce2283",
+    "iterations/visual03/detail-3-160.png": "030bf38c432e152cab29167f57a145060bd2ba558f270185c4a2b48eca2a27ac",
+    "iterations/visual03/detail-3-225.png": "e771a552fd907d7e4167f649aa541e01ff979f1b09cdd8a9db6734b673cbcaba",
+    "iterations/visual03/detail-3-270.png": "8e2a41f2cdb69448b100e2963d8bdb18e83f7eda31c33ffe07dced92a2eaa63c",
+    "iterations/visual03/detail-3-90.png": "189a9b2a54d1eb709aaeaf7ad084b86d0d4d1915baa8456be023077cb9250683",
+    "iterations/visual03/fixture-source/MAPINFO.txt": "457f508ed86a95753f36be16a5ecc36f8b44b43f80ff7e2b5487632bc3a0dc77",
+    "iterations/visual03/fixture-source/ZSCRIPT.txt": "73db776037e9b6ee9fe5006425cadeea4365fae97fedd6ca9a5f0f3741d50835",
+    "iterations/visual03/fixture.zs": "c9e2816845212eb84970a86bdc3abf4cfdab0d1efa92e587bdf06a5deeee480e",
+    "iterations/visual03/RESULTS.json": "8c46eb2a538375c3e7d25e34aaa858bc833bbaf855eddc89e7ee2d004f792ac6",
+    "iterations/visual03/session.ini": "a8a0763dc494951abe9171153061d44ef5fd165135611439cf8f2d4130baa581",
+    "iterations/visual03/visual-part-1.cfg": "c9af68debe5f04c22bcfaf6c44ae4bf1f7b255ef5e9c8fe1ecf3e2d439c6670e",
+    "iterations/visual03/visual-process.log": "c9d12ba048fa6a8c3442128d6cd72f93ebd207f8a82adfd673c317b9f08ec874",
+    "iterations/visual03/visual.cfg": "baf171075042def2583caa99d8ff26e75e06d18320ccb5f912fd852febdb16e6",
+    "iterations/visual03/visual.log": "8579b3fc010895a9b3320355ce779399306f70770eab2f09a9a8728a9e019c59",
+    "presentation/models-4/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/models-4/engine.log": "81b5dfebece1b43cd048e5520a79b6289f2b945fe8a0bfa8021f8879d9b26ecf",
+    "presentation/models-4/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/models-4/fixture-source/ZSCRIPT.txt": "462a7856fa34b2e94d763a5dd9e2562befaed788105a4eb1e7889147f08b38fd",
+    "presentation/models-4/presents.csv": "2b39e8f74090ddac3024747e52d46b155264f0252595ef26845a6670f8796fe1",
+    "presentation/models-4/process.log": "e750fb116fbaf2fd2695c41c8a6d4508d84eb8f6a02fba06458c99633e0b9108",
+    "presentation/models-4/scene.png": "f33f7b050e3bbea6b44828a5b23a8403c7754874abf1bd56e3c915f90eb6e72e",
+    "presentation/models-4/session.ini": "3cde3722984d339e75507481076d09cdf792e8d0cd7278116737e5397ed41d1a",
+    "presentation/RESULTS.json": "4b7589e11e0f8bee9d5993a9b85a12840e7f1486c5e8a868ea50f98d95f80cb3",
+    "presentation/sprites-4/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/sprites-4/engine.log": "d1363aca744c623e64b152c2db0d54846bd97b652c5f9a55d0db39c74861726f",
+    "presentation/sprites-4/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/sprites-4/fixture-source/ZSCRIPT.txt": "462a7856fa34b2e94d763a5dd9e2562befaed788105a4eb1e7889147f08b38fd",
+    "presentation/sprites-4/presents.csv": "a1af5e2675bb5fd65a4111abb92f766dcd376470c41ee6b65de4a4e8b858ebcd",
+    "presentation/sprites-4/process.log": "0a5dfdac5cb1cbec896df13a1ff8c07278f29f66f4f911c330b2bc0c5ff14b45",
+    "presentation/sprites-4/scene.png": "c39b3195b50c5d2fc5fe61864b850cadca514c94daafa82adc0368b82fa4df0b",
+    "presentation/sprites-4/session.ini": "dadf49ef93250717b3c6098e53a3c094e249c769cccc3de98a62da2c923792c3",
+    "validation-final.json": "8a1a307197eb1374fc5b9272696742d6b7d08085f6851630aa609e821846295d"
+  }
+}
