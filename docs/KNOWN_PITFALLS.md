@@ -4,6 +4,24 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-236 - Diagnostic simplification is not an AI off switch
+
+Status/evidence: ENGINE-VERIFIED isolated gallery failure and correction, #682,
+2026-11-13. GZDoom 4.14.2, Windows 11, Vulkan 1280x720. The existing
+CaelumDiagnosticPassiveAI flag skips some RPG updates but does not bypass
+A_CaelumBudgetedLook or custom perception. NOTARGET on the observer does not
+make that custom relation filter return false. One gallery Lobizon moved
+137.53432 MU toward the observer before the reloaded position check.
+
+The isolated gallery now sets Friendly on all five inspection bodies at spawn.
+Production flags, AI and models remain unchanged. Both saved positions and
+membership in the original idle sequences are checked; changed CurState alone
+could otherwise count a chase transition as idle animation. Do not reset actors'
+positions before a persistence assertion. Final fresh/reload results are 24/28
+PASS; the original failure and position diagnostic remain under
+assets/validation_v5_17_19/evidence/iterations. This does not test campaign AI
+or imply acceptance of the art; CA682-REGIONS-01 remains pending.
+
 ## CA-KP-235 - Normalize closed loft row direction before building faces
 
 Status/evidence: STATIC-VERIFIED signed-volume comparison, #680, 2026-11-13.

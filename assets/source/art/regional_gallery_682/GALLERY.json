@@ -1,0 +1,264 @@
+{
+  "schema_revision": 1,
+  "issue": 682,
+  "status": "isolated_visual_inspection_not_campaign",
+  "map": "CA682G",
+  "title": "Beast-men regional material gallery",
+  "ambient": 208,
+  "ceiling_height": 2048,
+  "outer_wall": "CACVROCK",
+  "walkway_flat": "CMST01",
+  "walkway_y": [
+    -640,
+    -512
+  ],
+  "plot_y": [
+    -512,
+    512
+  ],
+  "player_start": [
+    -768,
+    -576,
+    90
+  ],
+  "crossing_test": {
+    "start": [
+      -768,
+      -256,
+      0
+    ],
+    "angle": 90,
+    "destination_plot": "Selva",
+    "input_tics": 420,
+    "duration_basis": "Reuse the verified 420-tic CA463G crossing: x-768 to x631 passes the final new boundary x512 without changing native speed."
+  },
+  "plots": [
+    {
+      "region": "Pampa",
+      "x": [
+        -1024,
+        -512
+      ],
+      "floor": "CRPAMGR"
+    },
+    {
+      "region": "Northwest Argentina",
+      "x": [
+        -512,
+        0
+      ],
+      "floor": "CRNOAGR"
+    },
+    {
+      "region": "Litoral",
+      "x": [
+        0,
+        512
+      ],
+      "floor": "CRLITGR"
+    },
+    {
+      "region": "Selva",
+      "x": [
+        512,
+        1024
+      ],
+      "floor": "CRSELVG"
+    }
+  ],
+  "subjects": [
+    {
+      "region": "Pampa",
+      "catalogue_id": "CA-FOLK-003",
+      "kind": "lobizon",
+      "class": "CaelumBestiary003",
+      "position": [
+        -768,
+        0,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Northwest Argentina",
+      "catalogue_id": "CA-FOLK-005",
+      "kind": "ucumar",
+      "class": "CaelumBestiary005",
+      "position": [
+        -256,
+        0,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Litoral",
+      "catalogue_id": "CA-FOLK-003",
+      "kind": "lobizon",
+      "class": "CaelumBestiary003",
+      "position": [
+        128,
+        0,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Litoral",
+      "catalogue_id": "CA-FOLK-004",
+      "kind": "uturunco",
+      "class": "CaelumBestiary004",
+      "position": [
+        384,
+        0,
+        0
+      ],
+      "angle": 270
+    },
+    {
+      "region": "Selva",
+      "catalogue_id": "CA-FOLK-004",
+      "kind": "uturunco",
+      "class": "CaelumBestiary004",
+      "position": [
+        768,
+        0,
+        0
+      ],
+      "angle": 270
+    }
+  ],
+  "views": [
+    {
+      "id": "overview",
+      "position": [
+        0,
+        -800,
+        1200
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "pampa",
+      "position": [
+        -768,
+        -110,
+        60
+      ],
+      "target": [
+        -768,
+        0,
+        26
+      ]
+    },
+    {
+      "id": "noa",
+      "position": [
+        -256,
+        -110,
+        60
+      ],
+      "target": [
+        -256,
+        0,
+        26
+      ]
+    },
+    {
+      "id": "litoral",
+      "position": [
+        256,
+        -250,
+        120
+      ],
+      "target": [
+        256,
+        0,
+        26
+      ]
+    },
+    {
+      "id": "player",
+      "control": true
+    },
+    {
+      "id": "selva",
+      "position": [
+        768,
+        -110,
+        60
+      ],
+      "target": [
+        768,
+        0,
+        26
+      ]
+    },
+    {
+      "id": "pampa-tiles",
+      "position": [
+        -768,
+        -280,
+        150
+      ],
+      "target": [
+        -768,
+        -280,
+        0
+      ]
+    },
+    {
+      "id": "noa-tiles",
+      "position": [
+        -256,
+        -280,
+        150
+      ],
+      "target": [
+        -256,
+        -280,
+        0
+      ]
+    },
+    {
+      "id": "litoral-tiles",
+      "position": [
+        256,
+        -280,
+        150
+      ],
+      "target": [
+        256,
+        -280,
+        0
+      ]
+    },
+    {
+      "id": "selva-tiles",
+      "position": [
+        768,
+        -280,
+        80
+      ],
+      "target": [
+        768,
+        -280,
+        0
+      ]
+    }
+  ],
+  "notes": [
+    "Inspection coordinates only; all campaign maps and encounters remain unchanged.",
+    "Existing native actors/models with the established diagnostic passive-AI flag and protected observer. No new production behavior.",
+    "Five displays follow all approved allocations of these three repeatable species; named Rulo remains unchanged.",
+    "Ground studies do not fix a campaign biome or mandatory creature habitat.",
+    "Original CA463G and its three visual pilots remain intact."
+  ],
+  "animation_sample_wait_tics": 11,
+  "animation_sample_basis": "Existing MIID native idle states last10 tics; wait11 to cross at least one boundary.",
+  "inspection_staging": "Native classes with fixture-only Friendly flag and existing diagnostic simplification; original idle states advance normally. Production hostility is unchanged; no forced position resets."
+}

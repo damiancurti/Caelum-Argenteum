@@ -1,0 +1,67 @@
+namespace="ZDoom";
+vertex { x=-1024; y=-640; }
+vertex { x=-1024; y=-512; }
+vertex { x=-512; y=-512; }
+vertex { x=-512; y=-640; }
+vertex { x=-1024; y=512; }
+vertex { x=-512; y=512; }
+vertex { x=0; y=-512; }
+vertex { x=0; y=-640; }
+vertex { x=0; y=512; }
+vertex { x=512; y=-512; }
+vertex { x=512; y=-640; }
+vertex { x=512; y=512; }
+vertex { x=1024; y=-512; }
+vertex { x=1024; y=-640; }
+vertex { x=1024; y=512; }
+sector { heightfloor=0; heightceiling=2048; texturefloor="CMST01"; textureceiling="F_SKY1"; lightlevel=208; }
+sector { heightfloor=0; heightceiling=2048; texturefloor="CMST01"; textureceiling="F_SKY1"; lightlevel=208; }
+sector { heightfloor=0; heightceiling=2048; texturefloor="CMST01"; textureceiling="F_SKY1"; lightlevel=208; }
+sector { heightfloor=0; heightceiling=2048; texturefloor="CMST01"; textureceiling="F_SKY1"; lightlevel=208; }
+sector { heightfloor=0; heightceiling=2048; texturefloor="CMST01"; textureceiling="F_SKY1"; lightlevel=208; }
+sidedef { sector=0; texturemiddle="CACVROCK"; }
+linedef { v1=0; v2=1; sidefront=0; blocking=true; }
+sidedef { sector=0; texturemiddle="-"; }
+sidedef { sector=1; texturemiddle="-"; }
+linedef { v1=1; v2=2; sidefront=1; sideback=2; twosided=true; }
+sidedef { sector=0; texturemiddle="CACVROCK"; }
+linedef { v1=3; v2=0; sidefront=3; blocking=true; }
+sidedef { sector=1; texturemiddle="CACVROCK"; }
+linedef { v1=1; v2=4; sidefront=4; blocking=true; }
+sidedef { sector=1; texturemiddle="CACVROCK"; }
+linedef { v1=4; v2=5; sidefront=5; blocking=true; }
+sidedef { sector=1; texturemiddle="-"; }
+sidedef { sector=2; texturemiddle="-"; }
+linedef { v1=5; v2=2; sidefront=6; sideback=7; twosided=true; }
+sidedef { sector=0; texturemiddle="-"; }
+sidedef { sector=2; texturemiddle="-"; }
+linedef { v1=2; v2=6; sidefront=8; sideback=9; twosided=true; }
+sidedef { sector=0; texturemiddle="CACVROCK"; }
+linedef { v1=7; v2=3; sidefront=10; blocking=true; }
+sidedef { sector=2; texturemiddle="CACVROCK"; }
+linedef { v1=5; v2=8; sidefront=11; blocking=true; }
+sidedef { sector=2; texturemiddle="-"; }
+sidedef { sector=3; texturemiddle="-"; }
+linedef { v1=8; v2=6; sidefront=12; sideback=13; twosided=true; }
+sidedef { sector=0; texturemiddle="-"; }
+sidedef { sector=3; texturemiddle="-"; }
+linedef { v1=6; v2=9; sidefront=14; sideback=15; twosided=true; }
+sidedef { sector=0; texturemiddle="CACVROCK"; }
+linedef { v1=10; v2=7; sidefront=16; blocking=true; }
+sidedef { sector=3; texturemiddle="CACVROCK"; }
+linedef { v1=8; v2=11; sidefront=17; blocking=true; }
+sidedef { sector=3; texturemiddle="-"; }
+sidedef { sector=4; texturemiddle="-"; }
+linedef { v1=11; v2=9; sidefront=18; sideback=19; twosided=true; }
+sidedef { sector=0; texturemiddle="-"; }
+sidedef { sector=4; texturemiddle="-"; }
+linedef { v1=9; v2=12; sidefront=20; sideback=21; twosided=true; }
+sidedef { sector=0; texturemiddle="CACVROCK"; }
+linedef { v1=12; v2=13; sidefront=22; blocking=true; }
+sidedef { sector=0; texturemiddle="CACVROCK"; }
+linedef { v1=13; v2=10; sidefront=23; blocking=true; }
+sidedef { sector=4; texturemiddle="CACVROCK"; }
+linedef { v1=11; v2=14; sidefront=24; blocking=true; }
+sidedef { sector=4; texturemiddle="CACVROCK"; }
+linedef { v1=14; v2=12; sidefront=25; blocking=true; }
+thing { type=1; x=-768; y=-576; angle=90; skill1=true; skill2=true; skill3=true; skill4=true; skill5=true; single=true; coop=true; }

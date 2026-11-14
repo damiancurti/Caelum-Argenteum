@@ -1,6 +1,16 @@
 # Caelum Argenteum — Current systems and rules
 
-Documentation version: **5.17.18** - 2026-11-13.
+Documentation version: **5.17.19** - 2026-11-13.
+
+## 5.17.19 - Isolated regional beast-men inspection (#682)
+
+Two new ground materials and an optional four-plot fixture do not change
+campaign terrain, encounters, navigation, inventory or combat rules. Five
+registered native bodies use fixture-only Friendly staging plus their existing
+diagnostic simplification flag; the observer is protected there. The flag alone
+does not disable perception. Production hostility and actor states are unchanged. Actual native
+movement and saved gallery references are tested separately from author art
+acceptance. Original CA463G and all production actor/model bytes are preserved.
 
 ## 5.17.18 - Three beast-men receive native models (#680)
 

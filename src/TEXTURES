@@ -5820,3 +5820,5 @@ Graphic "CA518_DOMIZ0_1", 142, 88 { Patch "graphics/caelum/death_repair/domingo-
 
 // #463: materiales regionales propios; sin sustituciones de mapas.
 #include "caelum/data/regional_materials.textures"
+
+#include "caelum/data/regional_materials_682.textures"

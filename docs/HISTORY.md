@@ -1,6 +1,22 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.18** - 2026-11-13.
+Documentation version: **5.17.19** - 2026-11-13.
+
+## 5.17.19 - Regional beast-men inspection map (#682, 2026-11-13)
+
+The author requested regional texture studies alongside their monsters while
+deferring questions. Two built-in image_gen ground studies and a new isolated
+map reuse existing native beast-men in all five approved regional associations.
+Original images/prompts/provenance are preserved; no campaign habitat or
+encounter is authored. The shared material exporter retains its old defaults;
+28 prior native resources remain byte-identical after transitive metadata refresh.
+Final native walking/reload passes 52 checks. An earlier one-position failure
+exposed active perception despite the diagnostic flag; only the inspection map
+now stages Friendly actors, and verifies actual idle states (CA-KP-236). The
+700-tic existing/regional pair measures 1199.77/1211.24 queue presents/s, p95
+1.1432/1.1416 ms and p99 1.5602/1.5217 ms. This is isolated five-body evidence;
+CA682-REGIONS-01 remains pending. ASSETS and the evidence SUMMARY retain the
+environment, package hash, failed run and measurement qualifications.
 
 ## 5.17.18 - Lobizon, Uturunco and Ucumar models (#680, 2026-11-13)
 
