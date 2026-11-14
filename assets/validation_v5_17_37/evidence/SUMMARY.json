@@ -1,0 +1,743 @@
+{
+  "issue": 717,
+  "parent_issue": 647,
+  "version": "5.17.37",
+  "date": "2026-11-14",
+  "author_accepted": false,
+  "scope": "Six existing wooden crafting designs6/7/8/28/29/42 on CaelumMaterialPickup, all tiers1/2/3. Eighteen existing cases; unchanged gameplay and original icon pixels.",
+  "runtime": {
+    "sha256": "30b680f409d4cffebca0fced256c674610c340654229cdbc3a09a713f49675d4",
+    "source_entries": 18404,
+    "exact_source_bytes": true
+  },
+  "baseline": {
+    "sha256": "0ebdab2cd33b14e8bb67ef0454989c8cc5bc92b47583b8966cc620a9031474c8",
+    "new_resources": [
+      "caelum/data/inventory_wood_components.modeldef",
+      "models/caelum/inventory/wood_components/frame.md3",
+      "models/caelum/inventory/wood_components/handle.md3",
+      "models/caelum/inventory/wood_components/long_frame.md3",
+      "models/caelum/inventory/wood_components/long_handle.md3",
+      "models/caelum/inventory/wood_components/shaft.md3",
+      "models/caelum/inventory/wood_components/wood.md3"
+    ],
+    "changed_resources": [
+      "MODELDEF",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "all_other_runtime_bytes_identical": true
+  },
+  "static": {
+    "repeated_export_files": 16,
+    "repeat_byte_identical": true,
+    "installed_export_check_passed": true,
+    "geometry": {
+      "shaft": {
+        "closed_components": 1,
+        "fixed_attachment_witnesses": 0,
+        "connected_components": 1,
+        "opening_probes": 0,
+        "opening_rays": 0,
+        "native_triangles": 384
+      },
+      "frame": {
+        "closed_components": 2,
+        "fixed_attachment_witnesses": 2,
+        "connected_components": 2,
+        "opening_probes": 2,
+        "opening_rays": 20,
+        "native_triangles": 4008
+      },
+      "long_frame": {
+        "closed_components": 2,
+        "fixed_attachment_witnesses": 2,
+        "connected_components": 2,
+        "opening_probes": 2,
+        "opening_rays": 20,
+        "native_triangles": 4008
+      },
+      "handle": {
+        "closed_components": 1,
+        "fixed_attachment_witnesses": 0,
+        "connected_components": 1,
+        "opening_probes": 0,
+        "opening_rays": 0,
+        "native_triangles": 832
+      },
+      "long_handle": {
+        "closed_components": 1,
+        "fixed_attachment_witnesses": 0,
+        "connected_components": 1,
+        "opening_probes": 0,
+        "opening_rays": 0,
+        "native_triangles": 384
+      },
+      "wood": {
+        "closed_components": 1,
+        "fixed_attachment_witnesses": 0,
+        "connected_components": 1,
+        "opening_probes": 0,
+        "opening_rays": 0,
+        "native_triangles": 384
+      }
+    },
+    "variants": {
+      "shaft": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "shaft"
+        ],
+        "closed_outward_components": 1,
+        "vertices": 200,
+        "triangles": 384,
+        "surfaces": [
+          {
+            "material": "wood",
+            "vertices": 200,
+            "triangles": 384
+          }
+        ],
+        "reference_opaque_bounds": [
+          9,
+          8,
+          119,
+          119
+        ],
+        "reference_axis": "width",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 110.0,
+        "native_bounds": [
+          {
+            "min": [
+              -55.0,
+              -3.7125000000000004,
+              0.0
+            ],
+            "max": [
+              55.0,
+              3.7125000000000004,
+              7.425000000000001
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 6.875,
+          "floor": -0.54
+        }
+      },
+      "frame": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "bow",
+          "string"
+        ],
+        "closed_outward_components": 2,
+        "vertices": 2094,
+        "triangles": 4008,
+        "surfaces": [
+          {
+            "material": "wood",
+            "vertices": 2027,
+            "triangles": 3888
+          },
+          {
+            "material": "strap",
+            "vertices": 67,
+            "triangles": 120
+          }
+        ],
+        "reference_opaque_bounds": [
+          8,
+          12,
+          120,
+          115
+        ],
+        "reference_axis": "width",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 112.0,
+        "native_bounds": [
+          {
+            "min": [
+              -56.000000000000014,
+              -0.5247343965677953,
+              0.0
+            ],
+            "max": [
+              55.999999999999986,
+              23.791012673029993,
+              4.921780048977159
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 7.887468027206984,
+          "floor": 0.11799999999999994
+        }
+      },
+      "long_frame": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "bow",
+          "string"
+        ],
+        "closed_outward_components": 2,
+        "vertices": 2094,
+        "triangles": 4008,
+        "surfaces": [
+          {
+            "material": "wood",
+            "vertices": 2027,
+            "triangles": 3888
+          },
+          {
+            "material": "strap",
+            "vertices": 67,
+            "triangles": 120
+          }
+        ],
+        "reference_opaque_bounds": [
+          13,
+          13,
+          117,
+          114
+        ],
+        "reference_axis": "width",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 104.0,
+        "native_bounds": [
+          {
+            "min": [
+              -51.99999999999999,
+              -0.460276201847184,
+              0.0
+            ],
+            "max": [
+              52.000000000000014,
+              18.978111223283417,
+              3.570015169966301
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 5.721178156997277,
+          "floor": 0.11799999999999994
+        }
+      },
+      "handle": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "handle"
+        ],
+        "closed_outward_components": 1,
+        "vertices": 431,
+        "triangles": 832,
+        "surfaces": [
+          {
+            "material": "wood",
+            "vertices": 431,
+            "triangles": 832
+          }
+        ],
+        "reference_opaque_bounds": [
+          10,
+          9,
+          118,
+          120
+        ],
+        "reference_axis": "width",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 108.0,
+        "native_bounds": [
+          {
+            "min": [
+              -54.0,
+              -15.12,
+              0.0
+            ],
+            "max": [
+              54.0,
+              15.12,
+              30.24
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 18.0,
+          "floor": -0.84
+        }
+      },
+      "long_handle": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "long_handle"
+        ],
+        "closed_outward_components": 1,
+        "vertices": 200,
+        "triangles": 384,
+        "surfaces": [
+          {
+            "material": "wood",
+            "vertices": 200,
+            "triangles": 384
+          }
+        ],
+        "reference_opaque_bounds": [
+          8,
+          11,
+          120,
+          118
+        ],
+        "reference_axis": "width",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 112.0,
+        "native_bounds": [
+          {
+            "min": [
+              -56.0,
+              -3.36,
+              0.0
+            ],
+            "max": [
+              56.0,
+              3.36,
+              6.72
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 8.0,
+          "floor": -0.42
+        }
+      },
+      "wood": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "timber"
+        ],
+        "closed_outward_components": 1,
+        "vertices": 200,
+        "triangles": 384,
+        "surfaces": [
+          {
+            "material": "wood",
+            "vertices": 200,
+            "triangles": 384
+          }
+        ],
+        "reference_opaque_bounds": [
+          9,
+          17,
+          120,
+          112
+        ],
+        "reference_axis": "width",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 111.0,
+        "native_bounds": [
+          {
+            "min": [
+              -55.5,
+              -14.8,
+              0.0
+            ],
+            "max": [
+              55.5,
+              14.8,
+              10.175
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 9.25,
+          "floor": -0.55
+        }
+      }
+    },
+    "project_validation_passed": true
+  },
+  "continuity": {
+    "issue": 717,
+    "kind": "wood_components",
+    "scope": "Native pickup/toss, quantity and saved ownership for wood_components; no normal menu or author acceptance.",
+    "baseline_sha256": "0ebdab2cd33b14e8bb67ef0454989c8cc5bc92b47583b8966cc620a9031474c8",
+    "runtime_sha256": "30b680f409d4cffebca0fced256c674610c340654229cdbc3a09a713f49675d4",
+    "model_sha256": null,
+    "fixture_sha256": "bac938e1312c2c40c1e2a27bdbfc961b7c3ee65f21ef1415102e647d7e2ad523",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "baseline",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 487
+      },
+      {
+        "phase": "old-save-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 541
+      },
+      {
+        "phase": "candidate-fresh",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 487
+      },
+      {
+        "phase": "candidate-reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 541
+      },
+      {
+        "phase": "rollback-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 541
+      }
+    ],
+    "captures": {
+      "baseline.png": "e5750e18bbd66770a502cfce439f21a23d294c812fe015ec7aefdf57cc8d3722",
+      "candidate-0.png": "3310d680918f3e19957a59da6d14290cf12c4236ec85cc0b33c514cd632cac29",
+      "candidate-1.png": "9a01c1a67ed0fc4a3e085518f33d91e7662ee7a8bae986424481ede40c546bea",
+      "candidate-2.png": "0c0ad14933e4463e3ab6c53c16c4953c893758aa07d40ee26f6c02b98ac36e80",
+      "candidate-3.png": "7e1f811a0892e5e71bb7ce76cf1dcb6b583994fe98c305f8e81f2e806e7a7b97",
+      "candidate-5.png": "dafbd83d7a1b9193fe9acc76cd0af5bbb799c1d47b28599423b15baa7808b549",
+      "candidate-6.png": "59d0bbdd5c31e027d6453fd31ae13b535b810b1e548b4d4a1784a8b34739801c",
+      "candidate-7.png": "2e8cc904085433660d4cfa904f03128ee906083a8ffca607ebbdd8f2a55f93b4",
+      "detail-0-0.png": "be4663161a33008027e41bd6a27c54bf53063a14306c2c09eb42d89c1053195b",
+      "detail-0-160.png": "6885b998f596dc3a6c1839c1d99e7361606ebd490874a9a58c80cab48f5cd4df",
+      "detail-0-225.png": "3579251c59cd76a2a1a0292ae6a69f47fe0cfadee46f26497aa967c2380319fa",
+      "detail-0-270.png": "434aac4b00045e1f9fdcca734f6c2691cd1018002b82963b25819337806128d5",
+      "detail-0-90.png": "76e26cb790ea0470d0ba794f3fefa86474db55c3bb966ad6d3cd443ea41abb24",
+      "detail-1-0.png": "b4d50916724ccd0536003aa4d8cc7303b9028409e76768ca5abb1ed98535e2a0",
+      "detail-1-160.png": "f281cfcfdc6faeee9725cb2643e5097f66db6bf54155d97f76db4c1ba3095a37",
+      "detail-1-225.png": "c65d862fabed9a7cca22034e5bab36db0a3c13a6961cf48f5b520c145e2e13f6",
+      "detail-1-270.png": "99e4ad24aa294b85f9063a5d962bcd9cf7e1d8029d61e322cf190ec1021af7d0",
+      "detail-1-90.png": "8fbc4e97ea22755b15705097bc7c8e747463be20fcd9b392959bf3a75db4ca04",
+      "detail-2-0.png": "5cc8d210f8b8ea419b9dea625faf7fd89a41551a6706cd215426fec86513b6ed",
+      "detail-2-160.png": "ea0aab7658125a070ef00ae2efe7a8ee91b37ff4b8f0f0240752bf7998f9f5eb",
+      "detail-2-225.png": "a08b0e015394cf90136be92776242587ca384b5585335052357a9a3f5bb6c9b5",
+      "detail-2-270.png": "b7c094adbf1499315e6589946a7628419d7799823897d4669736d47355abe0f8",
+      "detail-2-90.png": "7058a467479a96772054706c3b60601660c078e206af8d187dbbcd87ed292090",
+      "detail-3-0.png": "948b00cc041dcd48f5cf97929dffc2f0153bf956819434304fc992f6c81f87f1",
+      "detail-3-160.png": "0a1c1b2f0d2d3637004d8fb9141d37ad06fcb266b7e78f63ff6108e9d03f6c19",
+      "detail-3-225.png": "f61bcaaaea000d05fe99d30e4eaeb50c5b7e939bce584eb136a0b3ce2216c1e5",
+      "detail-3-270.png": "1de84e335f533461771c59bedda80171d451c264554aa1494f742117747d0ef8",
+      "detail-3-90.png": "33c267d386975f9debb2c309e9a2df8277342f7e72beaa01a8dae31157de2b23",
+      "detail-4-0.png": "2fe330d461e92682ac7b599188901d4e0ad21c6d9b0943ae845864bd2b959e1d",
+      "detail-4-160.png": "23af3be00c4f95aeb5928e40fa4415b6d252418b42ac212bd8a65b65552b96e0",
+      "detail-4-225.png": "12e7631282af2a8f29ac6ca5545ebf30bcf19f8bcc9520c2d945572104b6fff7",
+      "detail-4-270.png": "b8496566049491651c94d37e0a002bf1767f708f5ae41ad715e47601607de0af",
+      "detail-4-90.png": "ddda862121be59d3cb48025ee04144e99ac9fe01a26cf233a00c123cd632abbd",
+      "detail-5-0.png": "87125eea8b47e4fb30e82298967d52da90866c75bc617de94b8a4abcbce487b3",
+      "detail-5-160.png": "852d191f16f114fa8ef52c56e9b091f99a31ade3b283e2af8b708ab495e6baad",
+      "detail-5-225.png": "ca583ae7b84b31677c0c84cd295b72b292f85e426f84756f35e01aa73a2c14da",
+      "detail-5-270.png": "52d3fe3a4dcd1ff2df6a612040a084cff3b244af2ba8a2b565f6c6a429a62d6a",
+      "detail-5-90.png": "c4f768a6372cf850ce91f71110f20197e99ea40325188bdb2ecbfda742ad820c"
+    }
+  },
+  "presentation": {
+    "issue": 717,
+    "kind": "wood_components",
+    "scope": "Measure actual inventory drop classes before/after model installation.\n\nA single sequential baseline/candidate pair in an isolated room; this is not a\ncrowd budget, campaign performance acceptance or repeatability estimate.",
+    "baseline_sha256": "0ebdab2cd33b14e8bb67ef0454989c8cc5bc92b47583b8966cc620a9031474c8",
+    "runtime_sha256": "30b680f409d4cffebca0fced256c674610c340654229cdbc3a09a713f49675d4",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+    "runs": [
+      {
+        "kind": "sprites",
+        "bodies": 6,
+        "pid": 44664,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 274005792.4598,
+          "END": 274025813.4397
+        },
+        "fixture_sha256": "e5bc68e9b05a8582ab04129af5ccb9869c57b7016e00185bb16ae3900d80c5ea",
+        "passed": true,
+        "observed_completion_counts": [
+          [
+            6,
+            700
+          ]
+        ],
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.57167757142857,
+          "p50_ms": 28.5836,
+          "p95_ms": 29.2261,
+          "p99_ms": 29.4044,
+          "max_ms": 29.862
+        },
+        "presentation": {
+          "pid": 44664,
+          "trace_sha256": "79b1d36774076b3fcbd26db901dc22155b35f0bd7c2b85aa0bb8f76f554dd0c9",
+          "rows": 27538,
+          "scene_presents": 18159,
+          "mean_present_fps": 1036.4287644270055,
+          "present_intervals": {
+            "samples": 18158,
+            "mean_ms": 0.9648516466569265,
+            "p50_ms": 0.9247000217437744,
+            "p95_ms": 1.1953999996185303,
+            "p99_ms": 1.477400004863739,
+            "max_ms": 3.0725000500679016
+          },
+          "native_call_duration": {
+            "samples": 18159,
+            "mean_ms": 0.07729937770410128,
+            "p50_ms": 0.07739996910095215,
+            "p95_ms": 0.10120004415512085,
+            "p99_ms": 0.13420003652572632,
+            "max_ms": 0.546999990940094
+          }
+        }
+      },
+      {
+        "kind": "models",
+        "bodies": 6,
+        "pid": 20976,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 274040174.3169,
+          "END": 274060198.51750004
+        },
+        "fixture_sha256": "e5bc68e9b05a8582ab04129af5ccb9869c57b7016e00185bb16ae3900d80c5ea",
+        "passed": true,
+        "observed_completion_counts": [
+          [
+            6,
+            700
+          ]
+        ],
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.570997142857145,
+          "p50_ms": 28.5811,
+          "p95_ms": 29.2423,
+          "p99_ms": 29.4604,
+          "max_ms": 29.5489
+        },
+        "presentation": {
+          "pid": 20976,
+          "trace_sha256": "484e9bc8548821323c627064d78bf43c9d5598ded63fc62fe3d41cb568cccd98",
+          "rows": 27596,
+          "scene_presents": 18334,
+          "mean_present_fps": 1046.2419540307294,
+          "present_intervals": {
+            "samples": 18333,
+            "mean_ms": 0.955801854578113,
+            "p50_ms": 0.9218999743461609,
+            "p95_ms": 1.1952000260353088,
+            "p99_ms": 1.4470000267028809,
+            "max_ms": 2.4097999930381775
+          },
+          "native_call_duration": {
+            "samples": 18334,
+            "mean_ms": 0.07631666875267881,
+            "p50_ms": 0.07649999856948853,
+            "p95_ms": 0.10000002384185791,
+            "p99_ms": 0.1281999945640564,
+            "max_ms": 0.388200044631958
+          }
+        }
+      }
+    ]
+  },
+  "iterations": "Model01 passes serialized geometry and487 native preview checks. Model02 removes unused generator imports only; all15 nonmanifest exports, including native/editable art and preview, remain byte-identical. Model02/03 repeat all16 files. Geometry reporting renames bow_openings to opening_probes: each bow has one opening sampled in two areas, not two separate holes.",
+  "art": {
+    "source": "assets/source/art/inventory_models_647/wood_components",
+    "new_image_generation": false,
+    "original_pixels_preserved": true,
+    "reused_materials": [
+      "Owned training-dummy wood",
+      "Owned #647 painted strap"
+    ],
+    "reviewed_views": "All six original icons; all30 final front/edge/rear-oblique/rear/raised underside details, ordinary floor overview and both presentation cohorts.",
+    "author_check": "CA717-WOOD-COMPONENTS-01"
+  },
+  "environment": {
+    "os": "Windows 11 Pro 26200",
+    "cpu": "Ryzen 9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX 3070 Ti",
+    "engine": "GZDoom 4.14.2",
+    "backend": "Vulkan",
+    "resolution": [
+      1280,
+      720
+    ],
+    "background_unpaused": true,
+    "audio": 0.05,
+    "presentation_uncapped": true,
+    "vsync": false
+  },
+  "qualifications": [
+    "Static crafting components, not equipped bows or first-person art. Uniform reused brown materials and simplified decoration remain candidate art.",
+    "One sequential700-tic six-object sprite/model pair: queue intervals, not GPU/display timing, repeatability or campaign/crowd acceptance. Different projected footprints preclude equal-pixel claims.",
+    "Native fixtures call pickup/toss APIs and prepare Box/quest states; ordinary menus/crafting and author acceptance remain separate.",
+    "No recipe, tier resolution, weight, quantity, identity, collision, save schema, production scan or original icon/texture changes.",
+    "No executable, IWAD, compiled fixture, PK3/WAD, DLL or save is committed."
+  ],
+  "files": {
+    "continuity/baseline-process.log": "7a2e7da71db6f3adf276f8bb3347f7dac7df938fc0a392d2d4476460a3a78017",
+    "continuity/baseline.cfg": "8184a3e4c8a4a6bb2d6a16421e2a66a9742db34b7b1a29e4c8dda712f1221cb0",
+    "continuity/baseline.log": "e5eb5843acf70de6ef8d771aae381322f3915d0e76062b1873c7fb3cffa9b5ea",
+    "continuity/baseline.png": "e5750e18bbd66770a502cfce439f21a23d294c812fe015ec7aefdf57cc8d3722",
+    "continuity/candidate-0.png": "3310d680918f3e19957a59da6d14290cf12c4236ec85cc0b33c514cd632cac29",
+    "continuity/candidate-1.png": "9a01c1a67ed0fc4a3e085518f33d91e7662ee7a8bae986424481ede40c546bea",
+    "continuity/candidate-2.png": "0c0ad14933e4463e3ab6c53c16c4953c893758aa07d40ee26f6c02b98ac36e80",
+    "continuity/candidate-3.png": "7e1f811a0892e5e71bb7ce76cf1dcb6b583994fe98c305f8e81f2e806e7a7b97",
+    "continuity/candidate-5.png": "dafbd83d7a1b9193fe9acc76cd0af5bbb799c1d47b28599423b15baa7808b549",
+    "continuity/candidate-6.png": "59d0bbdd5c31e027d6453fd31ae13b535b810b1e548b4d4a1784a8b34739801c",
+    "continuity/candidate-7.png": "2e8cc904085433660d4cfa904f03128ee906083a8ffca607ebbdd8f2a55f93b4",
+    "continuity/candidate-fresh-process.log": "54e483fc4fe2dfa8643deaa3166e1f51ba699bea1202b22a2c9f4d1f936d218c",
+    "continuity/candidate-fresh.cfg": "e98c5637ead8687eb379dfaa1769a4f4b9e8c59e7e0c87fc6f4045bd7cdc2338",
+    "continuity/candidate-fresh.log": "30225cf13d756e89f245ed24901b4d508471c70be66f1b44aafae8c63aafda48",
+    "continuity/candidate-reload-process.log": "d5030e8fd9068566f87d811034d692107ae9d9baca04de937602a85c1b35b586",
+    "continuity/candidate-reload.cfg": "34fefaad6a13c8d0d0e17a9585f5427e033cca02f75598f121fa557144a7f8c1",
+    "continuity/candidate-reload.log": "4eb4d203648a7682aeeea8d8a61346c472cb2efc609155f7839f7ffd9aaa3a47",
+    "continuity/detail-0-0.png": "be4663161a33008027e41bd6a27c54bf53063a14306c2c09eb42d89c1053195b",
+    "continuity/detail-0-160.png": "6885b998f596dc3a6c1839c1d99e7361606ebd490874a9a58c80cab48f5cd4df",
+    "continuity/detail-0-225.png": "3579251c59cd76a2a1a0292ae6a69f47fe0cfadee46f26497aa967c2380319fa",
+    "continuity/detail-0-270.png": "434aac4b00045e1f9fdcca734f6c2691cd1018002b82963b25819337806128d5",
+    "continuity/detail-0-90.png": "76e26cb790ea0470d0ba794f3fefa86474db55c3bb966ad6d3cd443ea41abb24",
+    "continuity/detail-1-0.png": "b4d50916724ccd0536003aa4d8cc7303b9028409e76768ca5abb1ed98535e2a0",
+    "continuity/detail-1-160.png": "f281cfcfdc6faeee9725cb2643e5097f66db6bf54155d97f76db4c1ba3095a37",
+    "continuity/detail-1-225.png": "c65d862fabed9a7cca22034e5bab36db0a3c13a6961cf48f5b520c145e2e13f6",
+    "continuity/detail-1-270.png": "99e4ad24aa294b85f9063a5d962bcd9cf7e1d8029d61e322cf190ec1021af7d0",
+    "continuity/detail-1-90.png": "8fbc4e97ea22755b15705097bc7c8e747463be20fcd9b392959bf3a75db4ca04",
+    "continuity/detail-2-0.png": "5cc8d210f8b8ea419b9dea625faf7fd89a41551a6706cd215426fec86513b6ed",
+    "continuity/detail-2-160.png": "ea0aab7658125a070ef00ae2efe7a8ee91b37ff4b8f0f0240752bf7998f9f5eb",
+    "continuity/detail-2-225.png": "a08b0e015394cf90136be92776242587ca384b5585335052357a9a3f5bb6c9b5",
+    "continuity/detail-2-270.png": "b7c094adbf1499315e6589946a7628419d7799823897d4669736d47355abe0f8",
+    "continuity/detail-2-90.png": "7058a467479a96772054706c3b60601660c078e206af8d187dbbcd87ed292090",
+    "continuity/detail-3-0.png": "948b00cc041dcd48f5cf97929dffc2f0153bf956819434304fc992f6c81f87f1",
+    "continuity/detail-3-160.png": "0a1c1b2f0d2d3637004d8fb9141d37ad06fcb266b7e78f63ff6108e9d03f6c19",
+    "continuity/detail-3-225.png": "f61bcaaaea000d05fe99d30e4eaeb50c5b7e939bce584eb136a0b3ce2216c1e5",
+    "continuity/detail-3-270.png": "1de84e335f533461771c59bedda80171d451c264554aa1494f742117747d0ef8",
+    "continuity/detail-3-90.png": "33c267d386975f9debb2c309e9a2df8277342f7e72beaa01a8dae31157de2b23",
+    "continuity/detail-4-0.png": "2fe330d461e92682ac7b599188901d4e0ad21c6d9b0943ae845864bd2b959e1d",
+    "continuity/detail-4-160.png": "23af3be00c4f95aeb5928e40fa4415b6d252418b42ac212bd8a65b65552b96e0",
+    "continuity/detail-4-225.png": "12e7631282af2a8f29ac6ca5545ebf30bcf19f8bcc9520c2d945572104b6fff7",
+    "continuity/detail-4-270.png": "b8496566049491651c94d37e0a002bf1767f708f5ae41ad715e47601607de0af",
+    "continuity/detail-4-90.png": "ddda862121be59d3cb48025ee04144e99ac9fe01a26cf233a00c123cd632abbd",
+    "continuity/detail-5-0.png": "87125eea8b47e4fb30e82298967d52da90866c75bc617de94b8a4abcbce487b3",
+    "continuity/detail-5-160.png": "852d191f16f114fa8ef52c56e9b091f99a31ade3b283e2af8b708ab495e6baad",
+    "continuity/detail-5-225.png": "ca583ae7b84b31677c0c84cd295b72b292f85e426f84756f35e01aa73a2c14da",
+    "continuity/detail-5-270.png": "52d3fe3a4dcd1ff2df6a612040a084cff3b244af2ba8a2b565f6c6a429a62d6a",
+    "continuity/detail-5-90.png": "c4f768a6372cf850ce91f71110f20197e99ea40325188bdb2ecbfda742ad820c",
+    "continuity/fixture-source/MAPINFO.txt": "ae6487d23e420a8a00994f6708541d3258a0a9bcc3fd78e502b71723c15c7ac1",
+    "continuity/fixture-source/ZSCRIPT.txt": "7332187ef3495af19e4e31812aea2c0fa5f199e9ff10da543ad2d5a83ae76c77",
+    "continuity/fixture.zs": "dcd45408b1cde6cb5900fe863e644963b850097c37513f5a46c5503b46d452ce",
+    "continuity/old-save-load-part-1.cfg": "71f6e7373e50f7758addd15f61ff33baa8536cd040f88cde3638a23e45f781f2",
+    "continuity/old-save-load-process.log": "e3039b5e0a1d6d559e9630415b89d0e163e0abaea25aa2c804f038baac5bb642",
+    "continuity/old-save-load.cfg": "18e9c6248cfcb8d964879158ccebb951d4f0666eaf028c26a0e065d27dc27f0e",
+    "continuity/old-save-load.log": "7cef063d2aeb641b0c1f3ba7fdfa82ace0a8f34493a3a01f5eae42e381933533",
+    "continuity/RESULTS.json": "f7169324aba4772bd819f160346cd8adde8bc9b095f1c3a88789d3d00a10cbdb",
+    "continuity/rollback-load-process.log": "77b448493344b0e73dda149b1a51898364ee536dffb9474e76fece9d3a85f8c2",
+    "continuity/rollback-load.cfg": "34fefaad6a13c8d0d0e17a9585f5427e033cca02f75598f121fa557144a7f8c1",
+    "continuity/rollback-load.log": "b1cd033fb0b76ac2196cc193bc1cfe197feb0ecd2ac3b443ec0461b7667e8aa1",
+    "continuity/session.ini": "576998d5ad297aa5df2df589f7f422534d05efecd685d52b2f21f937149949e7",
+    "exports/model01.json": "a778a7513ac6c3e62d453ab57de59051b61f0367251a20fcf84cf35ea86e9e54",
+    "exports/model02.json": "fa3cc0866d551440732d4f8c90cb443dac4d5adb0d0532ea999a03506a0022b4",
+    "exports/model03.json": "fa3cc0866d551440732d4f8c90cb443dac4d5adb0d0532ea999a03506a0022b4",
+    "issue717-build01.log": "768ed1af18cce4bf51b71432599e7d887476c9928c34d0d512f5fbb720f3a66a",
+    "issue717-geometry-final.log": "f05a3d2224bae6bec2480af9060eeee1a3d9b21026bf770f2e36972aaecad2f9",
+    "issue717-geometry01.log": "f9ca27bef76a08493f2d550a02711d817791179e164f9d71a38e2ca47499ed17",
+    "issue717-installed-check.log": "7e483d223c88ce2376f5e826d75de806b48df0ba5e81a9400de5680d5bb62b0d",
+    "issue717-repeat-final.json": "d0ecaa856a9c5bb15d0fb41fbefdc103e029113d07d89cdfcff1e68b83d15606",
+    "iterations/visual01/candidate-0.png": "3310d680918f3e19957a59da6d14290cf12c4236ec85cc0b33c514cd632cac29",
+    "iterations/visual01/candidate-1.png": "9a01c1a67ed0fc4a3e085518f33d91e7662ee7a8bae986424481ede40c546bea",
+    "iterations/visual01/candidate-2.png": "0c0ad14933e4463e3ab6c53c16c4953c893758aa07d40ee26f6c02b98ac36e80",
+    "iterations/visual01/candidate-3.png": "7e1f811a0892e5e71bb7ce76cf1dcb6b583994fe98c305f8e81f2e806e7a7b97",
+    "iterations/visual01/candidate-5.png": "dafbd83d7a1b9193fe9acc76cd0af5bbb799c1d47b28599423b15baa7808b549",
+    "iterations/visual01/candidate-6.png": "59d0bbdd5c31e027d6453fd31ae13b535b810b1e548b4d4a1784a8b34739801c",
+    "iterations/visual01/candidate-7.png": "2e8cc904085433660d4cfa904f03128ee906083a8ffca607ebbdd8f2a55f93b4",
+    "iterations/visual01/detail-0-0.png": "be4663161a33008027e41bd6a27c54bf53063a14306c2c09eb42d89c1053195b",
+    "iterations/visual01/detail-0-160.png": "6885b998f596dc3a6c1839c1d99e7361606ebd490874a9a58c80cab48f5cd4df",
+    "iterations/visual01/detail-0-225.png": "3579251c59cd76a2a1a0292ae6a69f47fe0cfadee46f26497aa967c2380319fa",
+    "iterations/visual01/detail-0-270.png": "434aac4b00045e1f9fdcca734f6c2691cd1018002b82963b25819337806128d5",
+    "iterations/visual01/detail-0-90.png": "76e26cb790ea0470d0ba794f3fefa86474db55c3bb966ad6d3cd443ea41abb24",
+    "iterations/visual01/detail-1-0.png": "b4d50916724ccd0536003aa4d8cc7303b9028409e76768ca5abb1ed98535e2a0",
+    "iterations/visual01/detail-1-160.png": "f281cfcfdc6faeee9725cb2643e5097f66db6bf54155d97f76db4c1ba3095a37",
+    "iterations/visual01/detail-1-225.png": "c65d862fabed9a7cca22034e5bab36db0a3c13a6961cf48f5b520c145e2e13f6",
+    "iterations/visual01/detail-1-270.png": "99e4ad24aa294b85f9063a5d962bcd9cf7e1d8029d61e322cf190ec1021af7d0",
+    "iterations/visual01/detail-1-90.png": "8fbc4e97ea22755b15705097bc7c8e747463be20fcd9b392959bf3a75db4ca04",
+    "iterations/visual01/detail-2-0.png": "5cc8d210f8b8ea419b9dea625faf7fd89a41551a6706cd215426fec86513b6ed",
+    "iterations/visual01/detail-2-160.png": "ea0aab7658125a070ef00ae2efe7a8ee91b37ff4b8f0f0240752bf7998f9f5eb",
+    "iterations/visual01/detail-2-225.png": "a08b0e015394cf90136be92776242587ca384b5585335052357a9a3f5bb6c9b5",
+    "iterations/visual01/detail-2-270.png": "b7c094adbf1499315e6589946a7628419d7799823897d4669736d47355abe0f8",
+    "iterations/visual01/detail-2-90.png": "7058a467479a96772054706c3b60601660c078e206af8d187dbbcd87ed292090",
+    "iterations/visual01/detail-3-0.png": "948b00cc041dcd48f5cf97929dffc2f0153bf956819434304fc992f6c81f87f1",
+    "iterations/visual01/detail-3-160.png": "0a1c1b2f0d2d3637004d8fb9141d37ad06fcb266b7e78f63ff6108e9d03f6c19",
+    "iterations/visual01/detail-3-225.png": "f61bcaaaea000d05fe99d30e4eaeb50c5b7e939bce584eb136a0b3ce2216c1e5",
+    "iterations/visual01/detail-3-270.png": "1de84e335f533461771c59bedda80171d451c264554aa1494f742117747d0ef8",
+    "iterations/visual01/detail-3-90.png": "33c267d386975f9debb2c309e9a2df8277342f7e72beaa01a8dae31157de2b23",
+    "iterations/visual01/detail-4-0.png": "2fe330d461e92682ac7b599188901d4e0ad21c6d9b0943ae845864bd2b959e1d",
+    "iterations/visual01/detail-4-160.png": "23af3be00c4f95aeb5928e40fa4415b6d252418b42ac212bd8a65b65552b96e0",
+    "iterations/visual01/detail-4-225.png": "12e7631282af2a8f29ac6ca5545ebf30bcf19f8bcc9520c2d945572104b6fff7",
+    "iterations/visual01/detail-4-270.png": "b8496566049491651c94d37e0a002bf1767f708f5ae41ad715e47601607de0af",
+    "iterations/visual01/detail-4-90.png": "ddda862121be59d3cb48025ee04144e99ac9fe01a26cf233a00c123cd632abbd",
+    "iterations/visual01/detail-5-0.png": "87125eea8b47e4fb30e82298967d52da90866c75bc617de94b8a4abcbce487b3",
+    "iterations/visual01/detail-5-160.png": "852d191f16f114fa8ef52c56e9b091f99a31ade3b283e2af8b708ab495e6baad",
+    "iterations/visual01/detail-5-225.png": "ca583ae7b84b31677c0c84cd295b72b292f85e426f84756f35e01aa73a2c14da",
+    "iterations/visual01/detail-5-270.png": "52d3fe3a4dcd1ff2df6a612040a084cff3b244af2ba8a2b565f6c6a429a62d6a",
+    "iterations/visual01/detail-5-90.png": "c4f768a6372cf850ce91f71110f20197e99ea40325188bdb2ecbfda742ad820c",
+    "iterations/visual01/fixture-source/MAPINFO.txt": "ae6487d23e420a8a00994f6708541d3258a0a9bcc3fd78e502b71723c15c7ac1",
+    "iterations/visual01/fixture-source/ZSCRIPT.txt": "7332187ef3495af19e4e31812aea2c0fa5f199e9ff10da543ad2d5a83ae76c77",
+    "iterations/visual01/fixture.zs": "dcd45408b1cde6cb5900fe863e644963b850097c37513f5a46c5503b46d452ce",
+    "iterations/visual01/RESULTS.json": "4c353ced132ccfbaf19f764e84de82832471a771d480d30a371c54e74455551b",
+    "iterations/visual01/session.ini": "52745ec339c2c052208e21a8d4934cb89776a52f2a19c11e5fe59b18bc66fe9b",
+    "iterations/visual01/visual-part-1.cfg": "2dbd6a9e225b4d4488adc693394eaee5e97e5d07791bb317fd05ef98a58a1bab",
+    "iterations/visual01/visual-process.log": "fe116d4a75a5377a32458cc7344bee4b67828e2e04618a9fb19f0b3ae6b124d5",
+    "iterations/visual01/visual.cfg": "b611975ea50f3ebf5847200b5ba50e7a062a3a77807800876f934a903cd620a1",
+    "iterations/visual01/visual.log": "1ceff28cd719de492d8023f3607054362198fa62b1b9bc3169cd290fb11fc21e",
+    "presentation/models-6/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/models-6/engine.log": "d8946b57f702c0644890ee2510afce870f5be82b17145eb9cb3735fbac128bec",
+    "presentation/models-6/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/models-6/fixture-source/ZSCRIPT.txt": "f9ee2a0d20ff73f0e34d30db320d9bbd71f349aa16abe0339818d0b73cdde099",
+    "presentation/models-6/presents.csv": "484e9bc8548821323c627064d78bf43c9d5598ded63fc62fe3d41cb568cccd98",
+    "presentation/models-6/process.log": "430a05a6bc577d9966cecbbb50fb058f5f481619707179f5ac0cf25308717dba",
+    "presentation/models-6/scene.png": "1ee0fac1ae6fc98fb4b56436ca3b8bac6e4a5442a167226ac64a128b5763e0d9",
+    "presentation/models-6/session.ini": "95675a96130f7ffe9700f4539c4293717e68af55827a5f79400e3662da76ecd1",
+    "presentation/RESULTS.json": "fde778fbcaf87aed729df0482fb037617e7376511c4935822675d149233cdc30",
+    "presentation/sprites-6/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/sprites-6/engine.log": "8d8584ab6f83b1c14a15d89ede674b921ec336313f4cbc887bdfd1cbae5e3561",
+    "presentation/sprites-6/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/sprites-6/fixture-source/ZSCRIPT.txt": "f9ee2a0d20ff73f0e34d30db320d9bbd71f349aa16abe0339818d0b73cdde099",
+    "presentation/sprites-6/presents.csv": "79b1d36774076b3fcbd26db901dc22155b35f0bd7c2b85aa0bb8f76f554dd0c9",
+    "presentation/sprites-6/process.log": "a9647e699b89b7311c1e6918d9a533380cf89a5884e5103e2f3276c7ebd8e12a",
+    "presentation/sprites-6/scene.png": "53cd9cfb82c701bb580e5bde007e8d6af1474df535f0adfed862b11fa1a6f853",
+    "presentation/sprites-6/session.ini": "4ec856a8772f42e0775ace347f545b694c7df7639eb1949bcb7638f7dd2879a4",
+    "validation-final.json": "f2f1855e2138d60a64bb486649467ef85c01dedc747f29539901d82db911ec7b"
+  }
+}

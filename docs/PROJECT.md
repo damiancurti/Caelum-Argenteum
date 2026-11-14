@@ -1,6 +1,14 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.36** - 2026-11-14.
+Documentation version: **5.17.37** - 2026-11-14.
+
+## 5.17.37 - Wooden crafting drops (#717)
+
+Six existing wooden components/eighteen type-tier cases now use native models.
+Sixteen deterministic exports, closed geometry and2,597 native continuity
+checks pass. ASSETS records the qualified presentation results. Author art and
+ordinary-play acceptance remains CA717-WOOD-COMPONENTS-01. This patch does not
+complete other inventory, equipped/first-person art, characters or the campaign.
 
 ## 5.17.36 - Two chain-component world models (#716)
 
