@@ -1,0 +1,1502 @@
+{
+  "schema_revision": 1,
+  "issue": 698,
+  "parent_issue": 461,
+  "status": "candidate_native_inspection_pending",
+  "frames": [
+    {
+      "sprite": "MIID",
+      "letter": "A",
+      "action": "idle",
+      "cycle": "idle",
+      "sample": 0
+    },
+    {
+      "sprite": "MIID",
+      "letter": "B",
+      "action": "idle",
+      "cycle": "idle",
+      "sample": 8
+    },
+    {
+      "sprite": "MIRN",
+      "letter": "A",
+      "action": "run",
+      "cycle": "walk",
+      "sample": 0
+    },
+    {
+      "sprite": "MIRN",
+      "letter": "B",
+      "action": "run",
+      "cycle": "walk",
+      "sample": 6
+    },
+    {
+      "sprite": "MIRN",
+      "letter": "C",
+      "action": "run",
+      "cycle": "walk",
+      "sample": 12
+    },
+    {
+      "sprite": "MIRN",
+      "letter": "D",
+      "action": "run",
+      "cycle": "walk",
+      "sample": 18
+    },
+    {
+      "sprite": "MIWK",
+      "letter": "A",
+      "action": "walk",
+      "cycle": "walk",
+      "sample": 6
+    },
+    {
+      "sprite": "MIWK",
+      "letter": "B",
+      "action": "walk",
+      "cycle": "walk",
+      "sample": 18
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "A",
+      "action": "stun",
+      "transforms": [
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 6
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 12
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "D",
+      "action": "attack_prepare",
+      "transforms": [
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -125
+        },
+        {
+          "part": "right_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -30
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -35
+        },
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "z",
+          "angle": -12
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "E",
+      "action": "attack_release",
+      "transforms": [
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -75
+        },
+        {
+          "part": "right_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -55
+        },
+        {
+          "part": "left_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -25
+        },
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 10
+        },
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "z",
+          "angle": 10
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "F",
+      "action": "pain",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -8
+        },
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -15
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -12
+        },
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -35
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -40
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "G",
+      "action": "death",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10
+        },
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -15
+        },
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -50
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -55
+        },
+        {
+          "part": "right_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10
+        },
+        {
+          "part": "left_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -20
+        },
+        {
+          "part": "right_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 25
+        },
+        {
+          "part": "left_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 30
+        },
+        {
+          "part": "right_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -35
+        },
+        {
+          "part": "left_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -40
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "H",
+      "action": "death",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -30
+        },
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -15
+        },
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -50
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -55
+        },
+        {
+          "part": "right_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10
+        },
+        {
+          "part": "left_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -20
+        },
+        {
+          "part": "right_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 25
+        },
+        {
+          "part": "left_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 30
+        },
+        {
+          "part": "right_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -35
+        },
+        {
+          "part": "left_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -40
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "I",
+      "action": "death",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -55
+        },
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -15
+        },
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -50
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -55
+        },
+        {
+          "part": "right_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10
+        },
+        {
+          "part": "left_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -20
+        },
+        {
+          "part": "right_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 25
+        },
+        {
+          "part": "left_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 30
+        },
+        {
+          "part": "right_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -35
+        },
+        {
+          "part": "left_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -40
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "J",
+      "action": "death",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -78
+        },
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -15
+        },
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -50
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -55
+        },
+        {
+          "part": "right_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10
+        },
+        {
+          "part": "left_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -20
+        },
+        {
+          "part": "right_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 25
+        },
+        {
+          "part": "left_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 30
+        },
+        {
+          "part": "right_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -35
+        },
+        {
+          "part": "left_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -40
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "K",
+      "action": "death",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -90
+        },
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 0
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 8
+        },
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 5
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 8
+        },
+        {
+          "part": "right_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 0
+        },
+        {
+          "part": "left_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 0
+        },
+        {
+          "part": "right_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 6
+        },
+        {
+          "part": "left_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 10
+        },
+        {
+          "part": "right_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -8
+        },
+        {
+          "part": "left_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -14
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "L",
+      "action": "death",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -90
+        },
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 0
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 8
+        },
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 5
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 8
+        },
+        {
+          "part": "right_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 0
+        },
+        {
+          "part": "left_fore",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 0
+        },
+        {
+          "part": "right_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 6
+        },
+        {
+          "part": "left_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 10
+        },
+        {
+          "part": "right_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -8
+        },
+        {
+          "part": "left_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -14
+        }
+      ]
+    },
+    {
+      "sprite": "MDBR",
+      "letter": "A",
+      "action": "breath",
+      "transforms": [
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 8.0
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10.0
+        },
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -20
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -20
+        }
+      ]
+    },
+    {
+      "sprite": "MDBR",
+      "letter": "B",
+      "action": "breath",
+      "transforms": [
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 9.0
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -9.0
+        },
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -20
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -20
+        }
+      ]
+    },
+    {
+      "sprite": "MDBR",
+      "letter": "C",
+      "action": "breath",
+      "transforms": [
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 8.0
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10.0
+        },
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -20
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -20
+        }
+      ]
+    },
+    {
+      "sprite": "MDBR",
+      "letter": "D",
+      "action": "breath",
+      "transforms": [
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 7.0
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -11.0
+        },
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -20
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -20
+        }
+      ]
+    },
+    {
+      "sprite": "SLMD",
+      "letter": "A",
+      "action": "rest",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -90
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 10
+        },
+        {
+          "part": "right_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10
+        },
+        {
+          "part": "left_upper",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -15
+        },
+        {
+          "part": "right_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 20
+        },
+        {
+          "part": "left_thigh",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 25
+        },
+        {
+          "part": "right_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -35
+        },
+        {
+          "part": "left_shin",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -40
+        }
+      ]
+    }
+  ],
+  "species": {
+    "yasi": {
+      "actor": "CaelumBestiary007",
+      "catalogue_id": "CA-FOLK-007",
+      "vertices": 16961,
+      "triangles": 28128,
+      "hierarchical_parts": 20,
+      "surfaces": [
+        {
+          "material": "face",
+          "vertices": 1864,
+          "triangles": 3528
+        },
+        {
+          "material": "atlas",
+          "vertices": 4096,
+          "triangles": 5284
+        },
+        {
+          "material": "atlas",
+          "vertices": 4096,
+          "triangles": 6242
+        },
+        {
+          "material": "atlas",
+          "vertices": 73,
+          "triangles": 106
+        },
+        {
+          "material": "body",
+          "vertices": 4096,
+          "triangles": 7544
+        },
+        {
+          "material": "body",
+          "vertices": 2838,
+          "triangles": 5424
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -9.581433297215735,
+            -18.917864476386033,
+            0.0
+          ],
+          "max": [
+            8.327457940422837,
+            20.78944536656194,
+            100.0075139836108
+          ]
+        },
+        {
+          "min": [
+            -9.603378280449961,
+            -18.917864476386033,
+            0.0
+          ],
+          "max": [
+            8.228870078146324,
+            20.78944536656194,
+            99.99634584522673
+          ]
+        },
+        {
+          "min": [
+            -9.663734698354743,
+            -18.917864476386033,
+            0.0
+          ],
+          "max": [
+            8.848873384950524,
+            20.78944536656194,
+            100.0236987884825
+          ]
+        },
+        {
+          "min": [
+            -31.04977579758486,
+            -18.343134805679508,
+            0.0
+          ],
+          "max": [
+            23.73807572246968,
+            20.775129076559757,
+            96.7530164074339
+          ]
+        },
+        {
+          "min": [
+            -9.74264752971934,
+            -18.917864476386033,
+            0.0
+          ],
+          "max": [
+            8.84887338495052,
+            20.78944536656194,
+            99.98449712294106
+          ]
+        },
+        {
+          "min": [
+            -31.04977579758486,
+            -18.713017388780795,
+            0.0
+          ],
+          "max": [
+            28.9025263792539,
+            20.948330894816134,
+            96.42534091232454
+          ]
+        },
+        {
+          "min": [
+            -31.04977579758486,
+            -18.343134805679508,
+            0.0
+          ],
+          "max": [
+            23.73807572246968,
+            20.775129076559757,
+            96.7530164074339
+          ]
+        },
+        {
+          "min": [
+            -31.04977579758486,
+            -18.713017388780795,
+            0.0
+          ],
+          "max": [
+            28.9025263792539,
+            20.948330894816134,
+            96.42534091232454
+          ]
+        },
+        {
+          "min": [
+            -8.914642502015834,
+            -18.917864476386033,
+            0.0
+          ],
+          "max": [
+            13.252422774675855,
+            20.78944536656194,
+            99.50725264311131
+          ]
+        },
+        {
+          "min": [
+            -9.625201783260056,
+            -22.263572986984883,
+            0.0
+          ],
+          "max": [
+            49.64904756642426,
+            22.29084927026002,
+            109.53910064682547
+          ]
+        },
+        {
+          "min": [
+            -19.376072253833488,
+            -13.22554700250951,
+            0.0
+          ],
+          "max": [
+            68.30585533430059,
+            31.004025414547705,
+            99.57889202079942
+          ]
+        },
+        {
+          "min": [
+            -26.902047578789908,
+            -18.917864476386033,
+            0.0
+          ],
+          "max": [
+            59.959992536708455,
+            20.78944536656194,
+            94.05198241853564
+          ]
+        },
+        {
+          "min": [
+            -27.975280289231833,
+            -18.917864476386033,
+            0.0
+          ],
+          "max": [
+            66.26662228630326,
+            20.78944536656194,
+            92.41314212828489
+          ]
+        },
+        {
+          "min": [
+            -36.586761279881706,
+            -18.917864476386033,
+            0.0
+          ],
+          "max": [
+            52.51051230545488,
+            20.78944536656194,
+            95.8235643758861
+          ]
+        },
+        {
+          "min": [
+            -45.23711477205008,
+            -18.917864476386033,
+            0.0
+          ],
+          "max": [
+            39.561405055865144,
+            20.78944536656194,
+            101.9484086066871
+          ]
+        },
+        {
+          "min": [
+            -47.485636640115814,
+            -18.917864476386033,
+            0.0
+          ],
+          "max": [
+            47.25147953897245,
+            20.78944536656194,
+            90.96186953343127
+          ]
+        },
+        {
+          "min": [
+            -48.254829277387564,
+            -18.917864476386033,
+            0.0
+          ],
+          "max": [
+            51.53269359467222,
+            20.78944536656194,
+            19.98855599432764
+          ]
+        },
+        {
+          "min": [
+            -48.254829277387564,
+            -18.917864476386033,
+            0.0
+          ],
+          "max": [
+            51.53269359467222,
+            20.78944536656194,
+            19.98855599432764
+          ]
+        },
+        {
+          "min": [
+            -9.034915099035,
+            -18.917864476386033,
+            0.0
+          ],
+          "max": [
+            23.255140683584692,
+            20.78944536656194,
+            99.73618318625924
+          ]
+        },
+        {
+          "min": [
+            -9.228510916599346,
+            -18.917864476386033,
+            0.0
+          ],
+          "max": [
+            22.36192406693371,
+            20.78944536656194,
+            99.70927292986465
+          ]
+        },
+        {
+          "min": [
+            -9.034915099035,
+            -18.917864476386033,
+            0.0
+          ],
+          "max": [
+            23.255140683584692,
+            20.78944536656194,
+            99.73618318625924
+          ]
+        },
+        {
+          "min": [
+            -8.838567158808305,
+            -18.917864476386033,
+            0.0
+          ],
+          "max": [
+            24.141273559105855,
+            20.78944536656194,
+            99.73099446478481
+          ]
+        },
+        {
+          "min": [
+            -48.19226130285201,
+            -18.917864476386033,
+            0.0
+          ],
+          "max": [
+            49.112355793356535,
+            20.78944536656194,
+            36.02592846489106
+          ]
+        }
+      ],
+      "modeldef_scale": 1.652498039568138,
+      "native_profile": {
+        "Height": 51.644444,
+        "Radius": 14.755556,
+        "Scale": 0.3125
+      },
+      "maximum_authored_radius": 74.78429204287664,
+      "maximum_authored_height": 109.53910064682547,
+      "source_sha256": "55aae2de72a91d55d946661ef249883a25fd05e548305a1ae80b50b1ec957845"
+    },
+    "yastay": {
+      "actor": "CaelumBestiary011",
+      "catalogue_id": "CA-FOLK-011",
+      "vertices": 15392,
+      "triangles": 28732,
+      "hierarchical_parts": 19,
+      "surfaces": [
+        {
+          "material": "face",
+          "vertices": 1864,
+          "triangles": 3528
+        },
+        {
+          "material": "atlas",
+          "vertices": 4096,
+          "triangles": 7324
+        },
+        {
+          "material": "atlas",
+          "vertices": 2596,
+          "triangles": 4912
+        },
+        {
+          "material": "body",
+          "vertices": 4096,
+          "triangles": 7522
+        },
+        {
+          "material": "body",
+          "vertices": 2850,
+          "triangles": 5446
+        }
+      ],
+      "native_bounds": [
+        {
+          "min": [
+            -9.4921875,
+            -22.763671875000004,
+            0.0
+          ],
+          "max": [
+            8.421188781476268,
+            22.763671875000004,
+            100.00714708987982
+          ]
+        },
+        {
+          "min": [
+            -9.4921875,
+            -22.763671875000004,
+            0.0
+          ],
+          "max": [
+            8.327968299193877,
+            22.763671875000004,
+            99.99652427075277
+          ]
+        },
+        {
+          "min": [
+            -9.4921875,
+            -22.763671875000004,
+            0.0
+          ],
+          "max": [
+            8.53678429389697,
+            22.763671875000004,
+            100.02254162107614
+          ]
+        },
+        {
+          "min": [
+            -29.931434704421378,
+            -22.153092891010335,
+            0.0
+          ],
+          "max": [
+            23.90425581911992,
+            22.520138958214655,
+            96.99527866483866
+          ]
+        },
+        {
+          "min": [
+            -9.4921875,
+            -22.763671875000004,
+            0.0
+          ],
+          "max": [
+            8.209567882139698,
+            22.763671875000004,
+            99.98525409935996
+          ]
+        },
+        {
+          "min": [
+            -29.931434704421378,
+            -22.520138958214655,
+            0.0
+          ],
+          "max": [
+            23.90425581911992,
+            22.153092891010335,
+            96.9713357675824
+          ]
+        },
+        {
+          "min": [
+            -29.931434704421378,
+            -22.153092891010335,
+            0.0
+          ],
+          "max": [
+            23.90425581911992,
+            22.520138958214655,
+            96.99527866483866
+          ]
+        },
+        {
+          "min": [
+            -29.931434704421378,
+            -22.520138958214655,
+            0.0
+          ],
+          "max": [
+            23.90425581911992,
+            22.153092891010335,
+            96.9713357675824
+          ]
+        },
+        {
+          "min": [
+            -12.400467048575749,
+            -22.763671875000004,
+            0.0
+          ],
+          "max": [
+            13.547309663558146,
+            22.763671875000004,
+            99.5045640148748
+          ]
+        },
+        {
+          "min": [
+            -9.72044407345131,
+            -26.41083801692173,
+            0.0
+          ],
+          "max": [
+            31.369168029174062,
+            17.362566701716617,
+            111.91419990244717
+          ]
+        },
+        {
+          "min": [
+            -14.226764722747484,
+            -16.288371528121814,
+            0.0
+          ],
+          "max": [
+            47.829995900070024,
+            29.16476282781554,
+            99.52527304035125
+          ]
+        },
+        {
+          "min": [
+            -27.49633787518334,
+            -22.763671875000004,
+            0.0
+          ],
+          "max": [
+            29.10255589868551,
+            22.763671875000004,
+            93.99488793194342
+          ]
+        },
+        {
+          "min": [
+            -26.2990651430022,
+            -22.763671875000004,
+            0.0
+          ],
+          "max": [
+            32.23946563250017,
+            22.763671875000004,
+            92.70713777045292
+          ]
+        },
+        {
+          "min": [
+            -37.938909702185036,
+            -22.763671875000004,
+            0.0
+          ],
+          "max": [
+            24.97633000571478,
+            22.763671875000004,
+            81.55960368458929
+          ]
+        },
+        {
+          "min": [
+            -47.45360226871095,
+            -22.763671875000004,
+            0.0
+          ],
+          "max": [
+            38.23461422413838,
+            22.763671875000004,
+            76.37180583123839
+          ]
+        },
+        {
+          "min": [
+            -50.046840061101825,
+            -22.763671875000004,
+            0.0
+          ],
+          "max": [
+            44.94440087784733,
+            22.763671875000004,
+            59.1327645887291
+          ]
+        },
+        {
+          "min": [
+            -50.78144894157763,
+            -22.763671875000004,
+            0.0
+          ],
+          "max": [
+            49.016571278483624,
+            22.763671875000004,
+            19.29296141478195
+          ]
+        },
+        {
+          "min": [
+            -50.78144894157763,
+            -22.763671875000004,
+            0.0
+          ],
+          "max": [
+            49.016571278483624,
+            22.763671875000004,
+            19.29296141478195
+          ]
+        },
+        {
+          "min": [
+            -13.34123589454098,
+            -22.763671875000004,
+            0.0
+          ],
+          "max": [
+            16.901851612094788,
+            22.763671875000004,
+            99.7015456710199
+          ]
+        },
+        {
+          "min": [
+            -13.805595856202572,
+            -22.763671875000004,
+            0.0
+          ],
+          "max": [
+            16.6761291140783,
+            22.763671875000004,
+            99.6633530631483
+          ]
+        },
+        {
+          "min": [
+            -13.34123589454098,
+            -22.763671875000004,
+            0.0
+          ],
+          "max": [
+            16.901851612094788,
+            22.763671875000004,
+            99.7015456710199
+          ]
+        },
+        {
+          "min": [
+            -12.872812063186453,
+            -22.763671875000004,
+            0.0
+          ],
+          "max": [
+            17.122425642378317,
+            22.763671875000004,
+            99.70773375674516
+          ]
+        },
+        {
+          "min": [
+            -50.72193604392369,
+            -22.763671875000004,
+            0.0
+          ],
+          "max": [
+            46.85939038813961,
+            22.763671875000004,
+            29.319282017250096
+          ]
+        }
+      ],
+      "modeldef_scale": 1.652504102046559,
+      "native_profile": {
+        "Height": 51.644444,
+        "Radius": 14.755556,
+        "Scale": 0.3125
+      },
+      "maximum_authored_radius": 50.78144894157763,
+      "maximum_authored_height": 111.91419990244717,
+      "source_sha256": "0be77caebce561fff1b6a11ab22d19b28195330cfe7672b77c23a6d8bd04bb45"
+    }
+  },
+  "source_sha256": {
+    "assets/source/bestiary_453/imagenes/03_Duendes_demonios/07_yasi_yatere.png": "55aae2de72a91d55d946661ef249883a25fd05e548305a1ae80b50b1ec957845",
+    "assets/source/bestiary_453/imagenes/03_Duendes_demonios/11_yastay.png": "0be77caebce561fff1b6a11ab22d19b28195330cfe7672b77c23a6d8bd04bb45",
+    "src/caelum/actors/CaelumFolkloreCharacters.zs": "80c5a00ef221395a6688125d8871c3f84ccf21e2aeb63b5c0bd4adb99dd2e420",
+    "assets/bestiary/BEHAVIOR.json": "a017c151836f6df1934be6762e708e0759101c0daa8e2b77bb61bbfcb77e7576",
+    "assets/bestiary/CATALOGUE.json": "120c48b6d21fbcd2c9cb9e6395d16006ec4de7026908256e83e2dc47ea0f1677",
+    "assets/source/art/duendes_690/mikilo.json": "ae5a5c3b54c8774d1388d825c3b2c10eddeda87398d505a39a557a6feafbc890",
+    "assets/source/art/duendes_690/ANIMATION.json": "21eb331a6a4349e989877036b1970b9756be094f903c43d0a1d5165bc8242a54",
+    "assets/generators/generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+    "assets/generators/generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "assets/source/art/guardians_698/materials-PROMPT.json": "62a633f54a156e486d6a5a989d9d6ef14441384188b60342bc4d8d7c5296b8e1",
+    "assets/source/art/guardians_698/materials.png": "40fb9de4639f6edb2befe1458d41e64f625ec1f6a1a17ed7cb04f7da8ee027f5",
+    "assets/source/art/guardians_698/yasi-face-PROMPT.json": "acacb59186089a2a6f08eb72d69cc39dd7649675032c780f21a8d3910cbc93c9",
+    "assets/source/art/guardians_698/yasi-face.png": "2cb2c1da113029d64a932eea191bc0b34153809ac47da1373031785c436374da",
+    "assets/source/art/guardians_698/yastay-face-PROMPT.json": "e4dc7bc6c4d24da5d9352e72b75830f5bf82590b610148645f2e759b5d848f3a",
+    "assets/source/art/guardians_698/yastay-face-v1-PROMPT.json": "56f1b1b3f2a34e9ed9de8b510a9ad0c9f633b029a04fafee198e556aee3ebd29",
+    "assets/source/art/guardians_698/yastay-face-v1.png": "650248e723714e4055bcba332eaca678a44e857c410428c94f9748bd84714ef7",
+    "assets/source/art/guardians_698/yastay-face.png": "29079660655b56461d8ece742b5fa1eb95f380f9b1ae4343bb117fec02cb82be",
+    "assets/source/art/guardians_698/body.png": "a9deb5b9e24c655143eaf04d759de856090b7c7bf56ae19c8bcb3cde030cac0d",
+    "assets/source/art/guardians_698/body-PROMPT.json": "234e718edfb6965c9f6b6ae285e90f1a9ea17cf7b541ee550148f8a0d93594a9",
+    "assets/source/art/guardians_698/ANIMATION.json": "6b3da148f18226da39326f49a4dd996313f8138ee3a214171a99be04deb3cb57",
+    "assets/source/art/guardians_698/PROVENANCE.json": "602e496f1ec2008c40e25c4a89fa448397f751f8af64617bbfb5b55ba1f4ac52",
+    "assets/source/art/guardians_698/yasi.json": "f1136d6d8306427409c3f3e0c510b0bfd6a948fa2d8eddfa570102322199f885",
+    "assets/source/art/guardians_698/yastay.json": "f8b646b71b6db83dab0037e040450632b01ecfd397c2d64c31f52445a161856d",
+    "assets/generators/generate_beast_men_models.py": "326327fa90dd2bca5648a6725aa064400d2eae6f71a35ade88ea2a2ba1f13eb7",
+    "assets/generators/generate_guardian_models.py": "2f105629523a71735d388b430ac87801bd8bb687177e9fa84ca0edd451051951",
+    "assets/generators/generate_duende_models.py": "243d46cee79b1723f6b7ac9bd0b8c0c4f87b37f463cf8540cd7d51be2800511f",
+    "assets/generators/generate_inventory_clothing_models.py": "105e9107d4b0ec4c82a6a168127fb3968f8d19ca72bf48320cb01c90062217d3"
+  },
+  "sha256": {
+    "models/caelum/folklore/guardians/yasi-face.png": "2cb2c1da113029d64a932eea191bc0b34153809ac47da1373031785c436374da",
+    "models/caelum/folklore/guardians/materials.png": "40fb9de4639f6edb2befe1458d41e64f625ec1f6a1a17ed7cb04f7da8ee027f5",
+    "models/caelum/folklore/guardians/body.png": "a9deb5b9e24c655143eaf04d759de856090b7c7bf56ae19c8bcb3cde030cac0d",
+    "models/caelum/folklore/guardians/yasi.md3": "22933ccf6b7f85df046c03b9e7d4d231a5eb8f66d14bc5098c3a8ebfff21dee1",
+    "editable/yasi.obj": "9317d699e2da57e0fd15e6b94791d5f0a946768daf12e58440ec03e2fa6b5d8d",
+    "editable/yasi.mtl": "fc29b49b2eae5f477cb95efd2e0cedcb64c65697fe2f7c4aee149d5d7495f7c0",
+    "models/caelum/folklore/guardians/yastay-face.png": "29079660655b56461d8ece742b5fa1eb95f380f9b1ae4343bb117fec02cb82be",
+    "models/caelum/folklore/guardians/yastay.md3": "cec6de738aa678fe4a14165e1633600b3ff381a64f5ea680e091404e14ad6c59",
+    "editable/yastay.obj": "9df7ef5e9425d3dcb297676094c4cbcd902b0945e7cb81855d8a06cc82c7559d",
+    "editable/yastay.mtl": "9e294a65f42709700a74884e8b84a28c9e5dce8f0b14cf4857ddb3b879655c19",
+    "caelum/data/guardian_combat.modeldef": "41d493a94435aa9d848577fbf982df984d917e3febd60be5d4df3ef2b25230a6"
+  }
+}

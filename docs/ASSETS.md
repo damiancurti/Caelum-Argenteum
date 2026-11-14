@@ -1,6 +1,74 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.26** - 2026-11-14.
+Documentation version: **5.17.27** - 2026-11-14.
+
+## 5.17.27 - Yasí Yateré and Yastay combat models (#698, parent #461)
+
+Unique CaelumBestiary007 Yasí Yateré and CaelumBestiary011 Yastay now have native
+3D candidates based on the supplied #453 concepts. Yasí retains a youthful face,
+golden hair with small flowers, pointed ears, ivory embroidered tunic, short
+trousers, sash, bare feet and a gold-wrapped wooden staff. Yastay retains the
+camelid face, tawny hair/fur, ivory shoulder mantle and clasp, layered waist wrap,
+cropped trousers, leather leg bindings and bare feet. These additions bring
+candidate native coverage to ten of #455's 56 new classes; the other 46 and the
+protected named profiles remain outside this patch. Both catalogue identities
+remain unique and unplaced in the campaign.
+
+Sources are assets/source/art/guardians_698: JSON anatomy and pose hierarchy,
+portable OBJ/material groups, PROVENANCE/GENERATED_IMAGES records and exact
+*-PROMPT.json inputs. Four selected built-in image_gen outputs provide separate
+faces, a fabric/hair atlas and limb/adult-torso materials. The rejected first
+Yastay face has a feline nose and remains preserved alongside its corrected
+camelid replacement. All reference and generated pixels remain unchanged;
+material sampling and projection happen in UV data. New sources contain 143
+closed components, 32,353 source vertices, 56,860 triangles, 39 articulated
+groups and eleven MD3 surfaces. Fixed reference clothing is editable but does
+not establish interchangeable playable wardrobe modules under #458/#459.
+
+The wrapper uses sealed pole caps and consistently transported tube frames.
+This fixes small open pole loops and inconsistent curved-tube winding in these
+new models, without altering earlier shared generators or outputs (CA-KP-239).
+Each component passes closure/winding/positive-volume checks; 86 contact
+witnesses lie inside both serialized neutral OBJ solids with independent ray
+directions and quantization clearance. Native review also corrected floating
+leg bindings, shoulder forms, muzzle projection, repeated tunic embroidery and
+hair flower mounting. Eight leg bands now fit actual limb triangles; upper
+bands follow the thighs. Neutral contact checks do not prove all-pose cloth
+clearance. Close-up seams, enlarged weave, simple hands/feet and rigid costume
+motion remain explicit author-review concerns.
+
+Regenerate with python assets/generators/generate_guardian_models.py --output
+build/guardian-models --install. Thirteen final exports repeat byte-for-byte.
+Checks cover exact unique classes, all 23 inherited frame pairs, portable/source
+hashes, MD3 surface indices/UVs and every quantized pose bound. Neutral standing
+art fits the existing provisional Mandinga Height/Scale; catalogue meter ranges
+remain unauthorized for runtime scaling. Moving/lying poses may exceed Radius.
+No saved field, actor state, combat action, hostility, loot or spawn rule changes.
+
+The complete package passes 230 continuity checks (115 per creature: baseline,
+old-save/model, fresh model, reload and reverse-load). All 23 posed captures per
+figure are checked against their native state and visibility. A wider lying
+camera fixes the initial crop; supplementary previews pass another 51 checks
+per figure on the identical runtime. Separate native
+attacks/deaths/finite-loot tests pass 136 assertions. All 18,354
+packaged entries match src: two models, four textures and one binding are new;
+only MODELDEF and two release diagnostics differ among earlier entries. No
+earlier model, gameplay or shared exporter bytes change.
+
+One sequential 700-tic sprite/model pair per figure records:
+
+| Creature | Queue presents/s | p95 ms | p99 ms | Mean simulation ms/tic |
+| --- | --- | --- | --- | --- |
+| Yasi | 1793.60/1738.20 | 0.7495/0.7657 | 0.9084/0.9122 | 28.5716/28.5716 |
+| Yastay | 1842.14/1814.85 | 0.6801/0.6733 | 0.8481/0.7992 | 28.5713/28.5713 |
+
+Environment: Windows 11 Pro 26200, Ryzen 9 5950X, 32 GB, RTX 3070 Ti, GZDoom
+4.14.2, Vulkan 1280x720, uncapped/vsync off, background unpaused at 5% audio.
+Queue intervals do not establish GPU/display timing, repeatability or campaign/
+crowd acceptance. The original billboard and height-fitted model occupy
+different screen areas, so this is not an equal-pixel-cost comparison.
+Evidence: assets/validation_v5_17_27/evidence/SUMMARY.json. Author visual/play
+acceptance stays under CA698-GUARDIANS-01; regional gallery additions are separate.
 
 ## 5.17.26 - Eleven clothing-ensemble world props (#696, parent #647)
 

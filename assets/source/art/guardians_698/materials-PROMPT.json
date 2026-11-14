@@ -1,0 +1,11 @@
+{
+  "issue": 698,
+  "mode": "Built-in image_gen; reference-led diffuse generation",
+  "output": "materials.png",
+  "transparent_background": false,
+  "references": [
+    "assets/source/bestiary_453/imagenes/03_Duendes_demonios/07_yasi_yatere.png",
+    "assets/source/bestiary_453/imagenes/03_Duendes_demonios/11_yastay.png"
+  ],
+  "prompt": "Use case: stylized-concept. Asset type: original opaque material atlas for 3D characters in Caelum Argenteum. References show identity, costume and material palette for Yas? Yater? and Yastay. Create ONE rectangular 4-column by3-row atlas with exactly12 equal rectangular cells covering the full image edge to edge. No gutters, borders, labels, text, characters or objects. Each cell is a flat front-facing close-up diffuse material sample; even albedo lighting without cast shadows or perspective. Row1 left to right: fair warm skin with subtle freckles; long golden-blond wavy hair strands flowing vertically; ivory coarse linen with muted gold botanical embroidery; worn olive-brown shorts cloth. Row2 left to right: warm tawny short camelid fur; long tawny hair strands flowing vertically; coarse ivory handwoven wool with small irregular fleece knots; dark weathered brown leather. Row3 left to right: twisted natural brown cord fibers; aged warm gold metal with subtle patina; bark of a slim dry wooden staff; muted ochre/olive frayed sash cloth. Painted dark-fantasy game-material realism consistent with the supplied nineteenth-century Argentine folklore concept art. All12cells equally sized and in the exact specified order. No scenic lighting, glossy studio rendering, modern fabric, holes or transparent pixels. The atlas is only reusable textures for editable volumetric geometry."
+}

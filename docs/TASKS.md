@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.26** - 2026-11-14.
+Documentation version: **5.17.27** - 2026-11-14.
+
+## #698 - Yasí Yateré and Yastay combat models (5.17.27)
+
+Two unique reference-based candidates pass deterministic export, neutral
+attachment/geometry validation, 230 continuity and 136 action/finite-loot
+assertions, plus one isolated presentation pair each. Preserve
+CA698-GUARDIANS-01 for art and isolated-session author review. Fixed editable
+costumes do not complete interchangeable worn/first-person equipment. Cuyo
+materials and regional gallery placement, the other 46 new bestiary classes,
+named profiles and campaign implementation remain separate pending work.
 
 ## #696 - Eleven clothing-ensemble world props (5.17.26)
 

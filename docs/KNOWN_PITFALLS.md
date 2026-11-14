@@ -4,6 +4,29 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-239 - Audit primitive closure and winding separately from appearance
+
+Status/evidence: STATIC-VERIFIED and ENGINE-OBSERVED candidate correction,
+#698, 2026-11-14. The inherited ellipsoid deliberately avoids exact poles:
+its first/last latitude loops leave small holes, not degenerate triangles.
+An older curved-tube builder can also flip individual face winding around
+sharp fingers or a helical vine even when every welded edge has two owners.
+A plausible native image does not establish closed, consistently outward art.
+
+The guardian-only wrapper seals both pole loops with reversed boundary edges
+and uses a transported ring frame with consistent side/cap winding for tubes.
+Check all three properties: two owners per welded edge, opposite directed edge
+orientation and positive signed volume. All 143 new components pass. Keep
+earlier exporters unchanged; this evidence does not certify or repair them.
+
+Neutral attachment is a separate check: 86 witnesses are tested inside both
+serialized OBJ components along two oblique directions with positive clearance.
+Native views exposed floating leg bindings and flower roots despite component
+closure. Refitting actual surfaces and correcting hierarchy ownership fixed
+those candidates. Do not substitute a joint witness for full garment clearance
+through every pose or author art approval. See validate_guardian_models.py and
+assets/validation_v5_17_27/evidence/iterations.
+
 ## CA-KP-238 - Closed cloth patches still need surface contact checks
 
 Status/evidence: STATIC-VERIFIED geometry and ENGINE-OBSERVED art correction,

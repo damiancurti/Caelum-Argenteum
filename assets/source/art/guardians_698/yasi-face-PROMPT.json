@@ -1,0 +1,10 @@
+{
+  "issue": 698,
+  "mode": "Built-in image_gen; reference-led diffuse generation",
+  "output": "yasi-face.png",
+  "transparent_background": false,
+  "references": [
+    "assets/source/bestiary_453/imagenes/03_Duendes_demonios/07_yasi_yatere.png"
+  ],
+  "prompt": "Use case: stylized-concept. Asset type: opaque diffuse texture for a sculpted volumetric game head in Caelum Argenteum. The supplied author-owned image is an identity/anatomy/color reference only; do not replace the original painting. Create ONE square frontal facial albedo plate for the same fictional Argentine forest spirit Yas? Yater?. Preserve the youthful face, fair warm skin, subtle freckles, gentle amber-green eyes, small nose and relaxed closed mouth in the reference. Flat orthographic frontal orientation, both eyes looking straight ahead. Fill the whole square with facial surface and matching skin bleed: forehead at top, chin near bottom. No silhouette, background, transparency, ears, neck, shoulders, clothing, text, border or scene. The head and long golden hair will be separate 3D geometry; no need to depict the hair here. Exact UV registration: pupils x=29.5% and70.5%, y=36.7%; small nose tip x=50%, y=54.3%; mouth center x=50%, y=70.4%; chin y=91%. Soft uniformly lit painted game-material realism with restrained surface detail. No specular highlights or cast shadows. Preserve this particular young folklore character; no mature wrinkles, beard, angry expression or generic goblin redesign."
+}

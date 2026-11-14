@@ -1,6 +1,20 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.26** - 2026-11-14.
+Documentation version: **5.17.27** - 2026-11-14.
+
+## 5.17.27 - Yasí Yateré and Yastay models (#698, 2026-11-14)
+
+The all-characters-3D request adds two unique native candidates with original
+generated face/material sources and editable anatomical/costume groups. The
+author's provisional combat, statistics and loot remain intact. Local geometry
+corrections seal clipped poles and stabilize curved tube winding; reference
+review refines faces, clothing, shoulders and limb bindings. Earlier outputs
+and shared exporters remain unchanged. Thirteen exports repeat; 143 component
+closures, 86 serialized neutral contacts, 230 native continuity assertions and
+136 attack/death/loot assertions pass. ASSETS and validation_v5_17_27 retain
+presentation results, source/package hashes and unsuccessful iterations.
+CA698-GUARDIANS-01 remains pending. No author acceptance or completed broad-batch
+claim is recorded; gallery/campaign placement remains separate work.
 
 ## 5.17.26 - Clothing-ensemble world props (#696, 2026-11-14)
 
