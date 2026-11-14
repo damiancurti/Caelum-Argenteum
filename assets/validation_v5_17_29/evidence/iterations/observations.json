@@ -1,0 +1,12 @@
+{
+  "issue": 702,
+  "evidence_type": "Agent observations of tool outputs and native screenshots; not reconstructed engine logs",
+  "static_model01": "UVs on outer rim exceeded material rectangle; crop alpha, contacts and magic width failed.",
+  "static_model02": "Rim UV fixed; remaining crop/contact/paint-alpha failures.",
+  "static_model03": "Independent geometry validator passed, but native visual01 showed jagged outlines and polar backing UV seams.",
+  "native_visual01_assertions": 1141,
+  "static_model04": "Smooth hull, planar wood/metal backing and thinner rims. Shared source pixels remain unchanged.",
+  "native_visual02_assertions": 1141,
+  "original_alpha": "Some interior source pixels have alpha0; near-opaque252 pixels are also common. Internal painted alpha is preserved over closed backing; it cannot determine the exterior solid silhouette.",
+  "version_headers": "Initial helper also changed four #700 section versions within first1000 chars; corrected before documentation, final build and commit."
+}

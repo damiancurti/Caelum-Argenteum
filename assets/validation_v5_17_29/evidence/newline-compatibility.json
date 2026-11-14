@@ -1,0 +1,13 @@
+{
+  "issue": 702,
+  "cause": "Final staged-byte check found CRLF source JSON despite explicit LF attributes. Normalize new text and refresh provenance; native art remains unchanged.",
+  "normalized": [
+    "assets/source/art/inventory_models_647/shields/DESIGN.json",
+    "assets/source/art/inventory_models_647/shields/PROVENANCE.json",
+    "assets/validation_v5_17_29/run_shield_drops.py",
+    "assets/validation_v5_17_29/run_shield_presentation.py"
+  ],
+  "repeated_files": 18,
+  "unchanged_art_and_portable_files": 17,
+  "native_art_unchanged": true
+}

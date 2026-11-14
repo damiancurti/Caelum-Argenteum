@@ -4,6 +4,24 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-240 - Separate painted alpha from a prop's solid silhouette
+
+Status/evidence: STATIC-VERIFIED geometry and ENGINE-OBSERVED visual correction,
+#702, 2026-11-14. Original shield PNGs contain fractional alpha and internal
+transparent paint pixels. Stopping radial contour tracing at the first alpha
+gap produced deep outline notches; a polar UV map stretched a small backing
+crop into a visible radial seam. Both 1,141-assertion native previews passed
+functional checks, so those results could not establish visual quality.
+
+Use an appropriate authored outer silhouette independently from internal paint
+alpha, preserve source pixels and provide actual closed backing. The shield
+candidate uses a smooth convex silhouette suitable for these four references,
+planar backing UVs and existing opaque wood/metal materials. This is not a
+universal convex-hull rule for concave props. Inspect front, rear, edge and
+underside; validate actual component contacts and grip clearance separately.
+Evidence: assets/validation_v5_17_29/evidence/iterations and SUMMARY.json.
+Author art acceptance remains pending.
+
 ## CA-KP-239 - Audit primitive closure and winding separately from appearance
 
 Status/evidence: STATIC-VERIFIED and ENGINE-OBSERVED candidate correction,

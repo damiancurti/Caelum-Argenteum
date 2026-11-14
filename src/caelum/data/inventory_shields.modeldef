@@ -1,0 +1,4 @@
+Model CaelumShieldPickup { Path "models/caelum/inventory/shields" Model 0 "buckler.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CBUC A 0 0 }
+Model CaelumShieldPickup { Path "models/caelum/inventory/shields" Model 0 "kite.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CSHK A 0 0 }
+Model CaelumShieldPickup { Path "models/caelum/inventory/shields" Model 0 "tower.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CSHT A 0 0 }
+Model CaelumShieldPickup { Path "models/caelum/inventory/shields" Model 0 "magic.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CSHM A 0 0 }
