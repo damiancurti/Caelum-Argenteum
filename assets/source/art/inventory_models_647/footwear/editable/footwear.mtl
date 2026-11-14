@@ -1,0 +1,51 @@
+newmtl BF_leather
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/footwear/bf.png
+newmtl BF_lining
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/footwear/bf.png
+newmtl BF_sole
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/footwear/bf.png
+newmtl BC_leather
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/footwear/bc.png
+newmtl BC_lining
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/footwear/bc.png
+newmtl BC_sole
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/footwear/bc.png
+newmtl BR_leather
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/footwear/br.png
+newmtl BR_lining
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/footwear/br.png
+newmtl BR_sole
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/footwear/br.png
+newmtl BS_cloth
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/footwear/bs.png
+newmtl BS_lining
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/footwear/bs.png
+newmtl BS_rope
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/footwear/bs.png
+newmtl BP_cloth
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/footwear/bp.png
+newmtl BP_lining
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/footwear/bp.png
+newmtl BP_rope
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/footwear/bp.png
+newmtl BP_patch
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/footwear/bp.png
+newmtl BP_patch2
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/footwear/bp.png

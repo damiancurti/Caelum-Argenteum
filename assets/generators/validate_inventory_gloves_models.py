@@ -61,7 +61,8 @@ def normalization(config, family, item, record):
         mesh, _=geometry(neutral, {'parts':[part]}, item['tier'])
         matrix=part.get('rotation', ((1,0,0),(0,1,0),(0,0,1)));offset=part.get('offset', (0,0,0))
         points.extend(tuple(dot(row, point)+offset[axis] for axis,row in enumerate(matrix)) for point in mesh.vertices)
-    factor=record['target_art_extent']/(max(p[0] for p in points)-min(p[0] for p in points))
+    axis=0 if item['reference_axis']=='width' else 2
+    factor=record['target_art_extent']/(max(p[axis] for p in points)-min(p[axis] for p in points))
     floor=min(p[2] for p in points)
     return factor, lambda p:(p[0]*factor, (p[2]-floor)*factor, -p[1]*factor)
 

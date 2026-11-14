@@ -1,6 +1,56 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.24** - 2026-11-14.
+Documentation version: **5.17.25** - 2026-11-14.
+
+## 5.17.25 - Five paired footwear world props (#694, parent #647)
+
+The accepted #387 BF/BC/BR/BS/BP artwork now supplies candidate native 3D
+pairs: formal dark leather shoes, brown ankle lace-up boots, tall country
+boots, ivory cotton alpargatas and patched brown wool alpargatas. Exact
+CaelumClothingPickup WC20..24/A bindings preserve the original icons, five
+sizes, identity, condition, wetness, equipment eligibility and one-item/one-pair
+quantity. Native Scale 0.25, collision, prices, weights and recipes are unchanged.
+This implements the later all-dropped-inventory-3D request for these five items;
+eleven body garments and actual worn/first-person fitting remain separate.
+
+DESIGN/PROVENANCE/EXPORT and portable OBJ/MTL sources live under
+assets/source/art/inventory_models_647/footwear. Five original owned PNGs remain
+byte-identical. Regenerate using python
+assets/generators/generate_inventory_footwear_models.py --output
+build/footwear-models --install. All 19 final export files repeat exactly.
+There are 74 closed outward groups,
+44,804 source vertices, 54,064 triangles
+and 22 native surfaces. Upper/lining/sole pairs, modest
+heels, lace volumes, rope bands and patches are separate editable components.
+These fixed world props are not interchangeable worn modules.
+
+Independent serialized-geometry checks cover 64 attachment witnesses, ten
+foot-opening rays, ten lining-visibility rays, all patch vertices and every lining vertex against the
+faceted outer shell. Both original sprite envelopes are respected; BR uses
+height normalization. The shared glove diagnostic now supports that axis;
+shared exporters, previous meshes and original pixels remain unchanged.
+Initial witnesses and opening probes failed; the first native candidate exposed
+lining/UV problems. The lining now remains visible from the cavity and follows the outer profile; upper UVs run
+circumferentially, formal leather/cotton crops avoid unsuitable source areas, and planar sole/heel
+caps use box projection after underside review exposed radial fan distortion.
+Close-up crop stretching, seams and simplified shapes still need author review.
+
+The final full package passes 2,458 native checks: 476 original-sprite, 502
+old-save/model, 476 fresh-model, 502 model-reload and 502 reverse-load checks.
+All 25 type/size cases retain IDs, provenance, wear, water and icons; native
+selection/equip, size refusal, Box-weight exclusion and temporary-drop guards
+pass. The fixture calls native APIs; ordinary menus/crafting are not certified.
+All 18,324 package entries match src; only five models,
+five texture aliases, their binding/include and two release diagnostics differ
+from #692. Earlier attempts and hashes are retained in
+assets/validation_v5_17_25/evidence/SUMMARY.json.
+
+One sequential five-pair, 700-tic sprite/model comparison records 1195.42/1142.40
+queue presents/s, p95 1.0161/1.0697 ms, p99 1.2497/1.3196 ms and simulation means 28.5715/28.5722 ms/tic.
+Environment: Windows 11 Pro 26200, Ryzen 9 5950X, 32 GB, RTX 3070 Ti,
+GZDoom 4.14.2 Vulkan 1280x720, uncapped/vsync off, background unpaused at 5%
+audio. This is isolated queue timing, not GPU/display timing, repeatability,
+campaign/crowd performance or author acceptance. CA694-FOOTWEAR-01 is pending.
 
 ## 5.17.24 - NOA gallery with Mikilo and Coquena (#692, parent #463)
 

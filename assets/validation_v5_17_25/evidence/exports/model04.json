@@ -1,0 +1,548 @@
+{
+  "schema_revision": 1,
+  "issue": 694,
+  "parent_issue": 647,
+  "status": "native_art_candidate_unverified",
+  "variants": {
+    "BF": {
+      "class": "CaelumClothingPickup",
+      "parts": [
+        "left_upper",
+        "left_lining",
+        "left_sole",
+        "left_heel",
+        "left_lace_0",
+        "left_lace_1",
+        "left_lace_2",
+        "left_lace_loop_0",
+        "left_lace_loop_1",
+        "right_upper",
+        "right_lining",
+        "right_sole",
+        "right_heel",
+        "right_lace_0",
+        "right_lace_1",
+        "right_lace_2",
+        "right_lace_loop_0",
+        "right_lace_loop_1"
+      ],
+      "closed_outward_components": 18,
+      "vertices": 26622,
+      "triangles": 10480,
+      "surfaces": [
+        {
+          "material": "BF_leather",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "BF_leather",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "BF_leather",
+          "vertices": 1794,
+          "triangles": 598
+        },
+        {
+          "material": "BF_lining",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "BF_lining",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "BF_lining",
+          "vertices": 2562,
+          "triangles": 854
+        },
+        {
+          "material": "BF_sole",
+          "vertices": 4095,
+          "triangles": 2168
+        },
+        {
+          "material": "BF_sole",
+          "vertices": 1791,
+          "triangles": 1400
+        }
+      ],
+      "reference_opaque_bounds": [
+        19,
+        35,
+        111,
+        93
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 92.0,
+      "native_bounds": [
+        {
+          "min": [
+            -46.0,
+            -56.44858714501357,
+            0.0
+          ],
+          "max": [
+            46.0,
+            35.5634092490433,
+            36.37496510550641
+          ]
+        }
+      ]
+    },
+    "BC": {
+      "class": "CaelumClothingPickup",
+      "parts": [
+        "left_upper",
+        "left_lining",
+        "left_sole",
+        "left_heel",
+        "left_lace_0",
+        "left_lace_1",
+        "left_lace_2",
+        "left_lace_3",
+        "left_lace_4",
+        "left_lace_5",
+        "left_lace_loop_0",
+        "left_lace_loop_1",
+        "right_upper",
+        "right_lining",
+        "right_sole",
+        "right_heel",
+        "right_lace_0",
+        "right_lace_1",
+        "right_lace_2",
+        "right_lace_3",
+        "right_lace_4",
+        "right_lace_5",
+        "right_lace_loop_0",
+        "right_lace_loop_1"
+      ],
+      "closed_outward_components": 24,
+      "vertices": 33480,
+      "triangles": 13824,
+      "surfaces": [
+        {
+          "material": "BC_leather",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "BC_leather",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "BC_leather",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "BC_leather",
+          "vertices": 771,
+          "triangles": 257
+        },
+        {
+          "material": "BC_lining",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "BC_lining",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "BC_lining",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "BC_lining",
+          "vertices": 1539,
+          "triangles": 513
+        },
+        {
+          "material": "BC_sole",
+          "vertices": 4095,
+          "triangles": 2697
+        },
+        {
+          "material": "BC_sole",
+          "vertices": 2505,
+          "triangles": 2167
+        }
+      ],
+      "reference_opaque_bounds": [
+        9,
+        16,
+        122,
+        111
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 113.0,
+      "native_bounds": [
+        {
+          "min": [
+            -56.50000000000001,
+            -69.33359073246233,
+            0.0
+          ],
+          "max": [
+            56.50000000000001,
+            50.21114248941535,
+            83.30782963105811
+          ]
+        }
+      ]
+    },
+    "BR": {
+      "class": "CaelumClothingPickup",
+      "parts": [
+        "left_upper",
+        "left_lining",
+        "left_sole",
+        "left_heel",
+        "right_upper",
+        "right_lining",
+        "right_sole",
+        "right_heel"
+      ],
+      "closed_outward_components": 8,
+      "vertices": 31680,
+      "triangles": 10560,
+      "surfaces": [
+        {
+          "material": "BR_leather",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "BR_leather",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "BR_leather",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "BR_leather",
+          "vertices": 771,
+          "triangles": 257
+        },
+        {
+          "material": "BR_lining",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "BR_lining",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "BR_lining",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "BR_lining",
+          "vertices": 1539,
+          "triangles": 513
+        },
+        {
+          "material": "BR_sole",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "BR_sole",
+          "vertices": 705,
+          "triangles": 235
+        }
+      ],
+      "reference_opaque_bounds": [
+        19,
+        7,
+        118,
+        114
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 107.0,
+      "native_bounds": [
+        {
+          "min": [
+            -45.95986576079567,
+            -56.399336686334784,
+            0.0
+          ],
+          "max": [
+            45.95986576079567,
+            40.853336855666484,
+            107.0
+          ]
+        }
+      ]
+    },
+    "BS": {
+      "class": "CaelumClothingPickup",
+      "parts": [
+        "left_upper",
+        "left_lining",
+        "left_sole",
+        "left_rope_band_0",
+        "left_rope_band_1",
+        "right_upper",
+        "right_lining",
+        "right_sole",
+        "right_rope_band_0",
+        "right_rope_band_1"
+      ],
+      "closed_outward_components": 10,
+      "vertices": 26880,
+      "triangles": 8960,
+      "surfaces": [
+        {
+          "material": "BS_cloth",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "BS_cloth",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "BS_cloth",
+          "vertices": 258,
+          "triangles": 86
+        },
+        {
+          "material": "BS_lining",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "BS_lining",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "BS_lining",
+          "vertices": 1026,
+          "triangles": 342
+        },
+        {
+          "material": "BS_rope",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "BS_rope",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "BS_rope",
+          "vertices": 1026,
+          "triangles": 342
+        }
+      ],
+      "reference_opaque_bounds": [
+        11,
+        35,
+        117,
+        95
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 106.0,
+      "native_bounds": [
+        {
+          "min": [
+            -53.0,
+            -64.92275845520233,
+            0.0
+          ],
+          "max": [
+            52.99999999999999,
+            40.553565710508224,
+            28.5156067464373
+          ]
+        }
+      ]
+    },
+    "BP": {
+      "class": "CaelumClothingPickup",
+      "parts": [
+        "left_upper",
+        "left_lining",
+        "left_sole",
+        "left_rope_band_0",
+        "left_rope_band_1",
+        "left_patch_0",
+        "left_patch_1",
+        "right_upper",
+        "right_lining",
+        "right_sole",
+        "right_rope_band_0",
+        "right_rope_band_1",
+        "right_patch_0",
+        "right_patch_1"
+      ],
+      "closed_outward_components": 14,
+      "vertices": 27528,
+      "triangles": 10240,
+      "surfaces": [
+        {
+          "material": "BP_cloth",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "BP_cloth",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "BP_cloth",
+          "vertices": 258,
+          "triangles": 86
+        },
+        {
+          "material": "BP_lining",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "BP_lining",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "BP_lining",
+          "vertices": 1026,
+          "triangles": 342
+        },
+        {
+          "material": "BP_rope",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "BP_rope",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "BP_rope",
+          "vertices": 1026,
+          "triangles": 342
+        },
+        {
+          "material": "BP_patch",
+          "vertices": 324,
+          "triangles": 640
+        },
+        {
+          "material": "BP_patch2",
+          "vertices": 324,
+          "triangles": 640
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        33,
+        122,
+        92
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 114.0,
+      "native_bounds": [
+        {
+          "min": [
+            -57.00000000000001,
+            -69.82258928201006,
+            0.0
+          ],
+          "max": [
+            57.0,
+            43.61421217922583,
+            30.66772801031936
+          ]
+        }
+      ]
+    }
+  },
+  "source_sha256": {
+    "DESIGN.json": "ec3f2aca375f2ea03fc76ebb3cb0c00e74293df9b2dc8604e013270c7ae4b922",
+    "PROVENANCE.json": "8995672e88fe5dbd1d8e372d20033739ae6cdcd0ce2828b028fd7f8c91a20520"
+  },
+  "external_source_sha256": {
+    "assets/art_source/clothing/BF-v1.png": "a02abdf526fe36d30a952e9c5138e062af44949d1b0b900405994872a3892270",
+    "src/graphics/caelum/icons/clothing/ca_clothing_20.png": "be79b369a0f06de909ccdbd681fab0f6de6a32353c4b1041bdfe1f07ef10a681",
+    "assets/art_source/clothing/BC-v1.png": "ca1aaa283b521171b98d705cdb38bfc95db1eff7544ae958890f1f7e2e14f89d",
+    "src/graphics/caelum/icons/clothing/ca_clothing_21.png": "cc5add5c156d8e36cc2b8877cb14d20470aab697c1a5d59712c154248ec20178",
+    "assets/art_source/clothing/BR-v1.png": "a1f691a457aefc62b0a0d1bd5bb52a5793873fe8c4d345fe97c1e1e6fade1855",
+    "src/graphics/caelum/icons/clothing/ca_clothing_22.png": "53bfe1a381cfce4c6900fb707495ffcf406ab0ab82dac219092d4d320b54505a",
+    "assets/art_source/clothing/BS-v1.png": "b38dafaedd06fd0e878ff80d82fb10219a5f22cb1316a50d1820c19dc60eedd3",
+    "src/graphics/caelum/icons/clothing/ca_clothing_23.png": "cc44242cf40baca17c6f3e20e44b748083835c5b8dbcf8b1f99d50ded43d5e45",
+    "assets/art_source/clothing/BP-v1.png": "e3b57c6bfef1abe4a7c4fd6ca72be3c9392714344c2a8dbcaf9580fded968b31",
+    "src/graphics/caelum/icons/clothing/ca_clothing_24.png": "88fe56a4af313dca9bf791a3a3730134e9370c3aebcbd94ba9d6a7b3406654c3",
+    "assets/art_source/clothing/manifest.json": "685855aee029d06cbff3139744526ca6b5321fad01a96806ed12a375db05b526",
+    "assets/art_source/clothing/exports.json": "f6a526f4556682785d7b129c623a55472bd1b089d065dd506e9c52269ce9d40c",
+    "src/caelum/data/CaelumClothingData.zs": "1fbe4a774bebf0adaba0b2a3f327ef2d74a66c8cd9c12c4bd702114d9e0e0a41",
+    "src/caelum/equipment/CaelumClothing.zs": "af9d4d3a99d037f11b109ac371a7f18c497c857aa79a89012dd54fa9c8e34666"
+  },
+  "generator_sha256": {
+    "generate_inventory_ammunition_models.py": "7840c4851fe1af39a29071c3bbe87b13c13187688804d9c0a33d178b5a9e3feb",
+    "generate_inventory_consumable_models.py": "f4bb817e68f15fd5fcce27b5f7f3de205917b993899fbeb934629f2146a14fc7",
+    "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+    "generate_inventory_footwear_models.py": "eb425ec8a1b43fda79e2679951c1f11a11c58ce1fb15b908fea47a4984e8e0ad"
+  },
+  "sha256": {
+    "models/caelum/inventory/footwear/BF.md3": "3163346cb51ef8a8f611338a65d2c45b6c427f392596adf972634ab543af9892",
+    "editable/BF.obj": "eafda749c999f8342ed67823d08d6daf5dfc390e2a0702b258fd2392711539c6",
+    "models/caelum/inventory/footwear/BC.md3": "0afb6efedaeff6d746a2d973c835f83f1facab9d4cf4e96591b1a050b8637419",
+    "editable/BC.obj": "07def694588d4d6a4f33df7ca2fcf1616549a8e665ce2ddebed8c21532acc57a",
+    "models/caelum/inventory/footwear/BR.md3": "0057115652773c5202cc2c4c121e33c8195c37d1b2493ed8395fdeec420e1c75",
+    "editable/BR.obj": "027cbac53fa6c2d99f84ea7ed0c8eb49c5bc64236bd08ae6a64433c18e16c85f",
+    "models/caelum/inventory/footwear/BS.md3": "a5764f59495c687053fd4bba381cfaa70642a64eed38959caee084a5d689f05c",
+    "editable/BS.obj": "54154eb7eaaf0c4af6fd1913d84cf38ca774160263f22316275f5e5ab1583ba3",
+    "models/caelum/inventory/footwear/BP.md3": "226e8b1527f29cac8cb44aad9aa294e4eac58dd414d1ecc4cd800ff25075cd56",
+    "editable/BP.obj": "d397f8c1884eeefa4cd2e67a3950d72befeba5a8a250d08a45b58fd40bc0ee3e",
+    "editable/footwear.mtl": "c422d5c5d4e6ef62c814f5e1eb36c9f44b98f42cd025b67a8fc29381220dc323",
+    "caelum/data/inventory_footwear.modeldef": "7d45a0c3d89d89227cbd2feb9a1c821144d1f6944b4c2abed3843cf619375341",
+    "models/caelum/inventory/footwear/bf.png": "a02abdf526fe36d30a952e9c5138e062af44949d1b0b900405994872a3892270",
+    "models/caelum/inventory/footwear/bc.png": "ca1aaa283b521171b98d705cdb38bfc95db1eff7544ae958890f1f7e2e14f89d",
+    "models/caelum/inventory/footwear/br.png": "a1f691a457aefc62b0a0d1bd5bb52a5793873fe8c4d345fe97c1e1e6fade1855",
+    "models/caelum/inventory/footwear/bs.png": "b38dafaedd06fd0e878ff80d82fb10219a5f22cb1316a50d1820c19dc60eedd3",
+    "models/caelum/inventory/footwear/bp.png": "e3b57c6bfef1abe4a7c4fd6ca72be3c9392714344c2a8dbcaf9580fded968b31"
+  }
+}

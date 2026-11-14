@@ -1,0 +1,77 @@
+{
+  "issue": 694,
+  "kind": "footwear",
+  "scope": "Native pickup/toss, quantity and saved ownership for footwear; no normal menu or author acceptance.",
+  "baseline_sha256": "50ed2a0e72b48c559b4c186863a755f907b3bf11c7d352bc00ffd3b233e3c6ef",
+  "runtime_sha256": "514c289ee21440699e055bdcc28d1ccc64e72979bbbb717193a82bd02af8730c",
+  "model_sha256": null,
+  "fixture_sha256": "c1586991a3a1e347598378505265e6f713f72ef126e8b16ce19a56ae443a5eb5",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "runs": [
+    {
+      "phase": "baseline",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 476
+    },
+    {
+      "phase": "old-save-load",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 502
+    },
+    {
+      "phase": "candidate-fresh",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 476
+    },
+    {
+      "phase": "candidate-reload",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 502
+    },
+    {
+      "phase": "rollback-load",
+      "exit_code": 0,
+      "passed": true,
+      "errors": [],
+      "assertions": 502
+    }
+  ],
+  "captures": {
+    "baseline.png": "88d9b5faa5cf1b35262a1a1b1fd2d89fb259080eeebd020d10bf5adcefb36144",
+    "candidate-0.png": "52d75918d8b748153d34f1c8998af63dbe7badfa4e5ec233b968a298af322441",
+    "candidate-1.png": "52d75918d8b748153d34f1c8998af63dbe7badfa4e5ec233b968a298af322441",
+    "candidate-2.png": "11b4e8041b42facd46e657f81d36176c8a5633e99a3a61729dd70caf20986537",
+    "candidate-3.png": "52d75918d8b748153d34f1c8998af63dbe7badfa4e5ec233b968a298af322441",
+    "candidate-5.png": "52d75918d8b748153d34f1c8998af63dbe7badfa4e5ec233b968a298af322441",
+    "candidate-6.png": "52d75918d8b748153d34f1c8998af63dbe7badfa4e5ec233b968a298af322441",
+    "candidate-7.png": "7617a90eac679ba2dbc787464dd93dc25ab41947559f27a1f185b3af4ae43e25",
+    "detail-0-0.png": "f50d1d2def6c99dbd6d734f3c34c934f004df6e63f060d3c4621227e08153cdb",
+    "detail-0-160.png": "93a2d3454cd0815d43761f690a57513b02ce8d0303f4b43cbd581ae7b55944b4",
+    "detail-0-270.png": "ae0732647e257aaaee11b6e8bc595deb757f995c3e04e02d83afff4a050dbd41",
+    "detail-0-90.png": "28b87aa670b09a2556dc3b43fc440615460720bb3813193c05164e15d605b145",
+    "detail-1-0.png": "cc3b283e3b105e5863e5ec8c0c5c9e3c763caf187d44fe0d42bb1631609a7259",
+    "detail-1-160.png": "f0da01717376b4434b3cf866e17286a6acb9047e9b14d5d486d287c30ee6940e",
+    "detail-1-270.png": "80fd941c233f96b2dc85efa4f8e09c81036813a8eeadb54d5d72e0150952cdb0",
+    "detail-1-90.png": "824d4e82c71f513b9608790ba32ba234265d8c81f466b215da75504765b5a480",
+    "detail-2-0.png": "f6205b08b0823c514feef9ba52d2d044516be21a3a8a247f46742995e56f4fc9",
+    "detail-2-160.png": "a93b33ba0d44e58b95e2ae2f70c43d73839535caab71f45b183f189a1aaa0e4e",
+    "detail-2-270.png": "7abbb553f9f7cb006421b456cb46c57fe3c39e9ed11803b0c4e9e788c1cdeae9",
+    "detail-2-90.png": "1cd0b8ca4fa5fe5a4f0fd38e0254b20ef1880c9f4dc1328769987c03db5e9e33",
+    "detail-3-0.png": "3cd6303cf382be9888e9ad9ff237589133708de0c64eb9973530498973c958ec",
+    "detail-3-160.png": "58c3301051254e6f178ce5dc5a32e0dd627d987293466227e64ca70f9c165fb1",
+    "detail-3-270.png": "c666b542c5d797eedbceb2339ba4028c8b0798f1b76de00e485a3c7424bd4849",
+    "detail-3-90.png": "ece3a2a10b313046c1b89ec7bbf23caf4c49698e52d5cf75950a01ff230b2a34",
+    "detail-4-0.png": "815731d258b8263c207b0186e28532fe72eb5155f261d2619a61dd8fc620b363",
+    "detail-4-160.png": "2c75f8596e078706e5dffae0de911c9145ec05d1cc6e7bd362b724ff759acfd3",
+    "detail-4-270.png": "0f1d66d90fa734114d26f58e4ed8633f12c15a04fc481be5f548746bdbcb9717",
+    "detail-4-90.png": "6bd178cdb77daed97412b7c1a3359df4920930d9443d63ea9b387f876303f10a"
+  }
+}
