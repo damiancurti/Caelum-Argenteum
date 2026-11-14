@@ -1,6 +1,59 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.39** - 2026-11-14.
+Documentation version: **5.17.40** - 2026-11-14.
+
+## 5.17.40 - Metal weapon crafting component world models (#723, parent #647)
+
+Eight existing CaelumMaterialPickup designs now have native world models:
+blade1, small blade2, curved blade3, long blade4, broad blade5, weapon head9,
+round head10 and small weapon head40. The exact M001/002/003/004/005/009/010/
+040 A bindings cover all24 existing type/tier cases. Original owned icons
+guide the separate blanks, crescent, double axe, spiked heads and spear point.
+This delivery covers static crafting drops; equipped and first-person weapons
+remain separate. Actor.Scale0.25, Radius12/Height8, tiers, recipes, quantities,
+weight, provenance, contamination, quest behavior and save schema are unchanged.
+
+The eight models contain4,328 vertices and7,672 triangles in57 closed solids.
+Independent serialized OBJ checks verify outward closure, topology,49 rooted
+attachment witnesses, four actual socket mouths with20 clearance rays, sprite
+envelopes, floor contact and exact noncollapsed quantized MD3 triangle multisets.
+Socket probes establish an open exit from inside each mouth, not an unobstructed
+path through the complete assembled head. Beveled blade rings, genuine tips,
+triangulated concave axe wings and closed annular socket walls provide volume.
+Twenty-one final exports repeat byte-for-byte and installed output checks pass.
+
+Initial ingot material crops failed the strict opacity check (alpha251..254);
+opaque existing materials passed but native review found bland metal and an
+S-shaped curved blade. A new original aged-metal atlas from built-in image_gen
+and a reference-led crescent refine the candidate. A final UV adjustment maps
+the socket interiors to darker metal. Existing icons and training-dummy wood
+pixels are preserved. Earlier material copies, design snapshots, manifests,
+failure logs and previews remain as evidence. No raster postprocessing.
+Editable JSON/OBJ/MTL, portable materials, metals.png and the exact generation
+prompt METALS_PROMPT.json are retained in
+assets/source/art/inventory_models_647/weapon_components.
+Regenerate with python assets/generators/generate_inventory_weapon_components_models.py
+--output build/weapon-component-model --install.
+
+The final preview passes649 checks. All40 front/edge/rear-oblique/rear/raised
+underside detail views, ordinary floor overview and both presentation cohorts
+were inspected. Simplified blade outlines, uniform wear, regular spike spacing
+and the separate axe hub remain candidate art requiring author review.
+The final package passes3,461 native assertions (649/721/649/721/721) across
+baseline sprites, old-save adoption, fresh models, reload and rollback. All24
+cases retain pickup/split/merge, lot boundaries, provenance, Box weight and
+quest guards. API fixtures do not establish ordinary menu/crafting acceptance.
+
+One sequential700-tic eight-object sprite/model pair records 1020.03/988.52 queue
+presents/s, p95 1.2269/1.2361 ms and p99 1.4539/1.4849 ms on Windows11/Ryzen9
+5950X/RTX3070Ti, GZDoom4.14.2 Vulkan1280x720, uncapped/vsync off,
+background unpaused, audio5%. Different projected footprints and queue-only
+timing establish no GPU/display, repeatability or campaign/crowd acceptance.
+All18,422 package entries match src. Eight models, one atlas,
+one definition, MODELDEF and two release diagnostics are the only runtime
+changes from #721. Evidence: assets/validation_v5_17_40/evidence/SUMMARY.json.
+CA723-WEAPON-COMPONENTS-01 remains pending. The broader inventory, character,
+modular equipment and V5.16 campaign work remains unfinished.
 
 ## 5.17.39 - Serpent regional gallery extension (#721, parent #463)
 

@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.39** - 2026-11-14.
+Documentation version: **5.17.40** - 2026-11-14.
+
+## #723 - Metal weapon crafting world drops (5.17.40)
+
+Eight native models cover existing materials1/2/3/4/5/9/10/40 and all24 tiers.
+Static closure, rooted attachments, socket openings, native equivalence and
+21 repeated exports pass; continuity passes3,461 assertions.
+CA723-WEAPON-COMPONENTS-01 retains art, ordinary pickup/drop and crafting review.
+Simplified blade outlines, uniform wear, spike spacing and the axe hub need
+explicit author visual review. Other #647 items and worn weapons remain separate.
 
 ## #721 - Serpents in the regional inspection room (5.17.39)
 

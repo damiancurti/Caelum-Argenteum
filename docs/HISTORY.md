@@ -1,6 +1,22 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.39** - 2026-11-14.
+Documentation version: **5.17.40** - 2026-11-14.
+
+## 5.17.40 - Metal weapon components (#723, 2026-11-14)
+
+Added eight native world models for existing materials1/2/3/4/5/9/10/40,
+preserving their24 type/tier cases and gameplay. Closed beveled blades, a
+reference-led crescent, double axe, spiked heads and actual socket mouths use
+an original image_gen metal atlas and unchanged owned wood. Original icons
+are unchanged; exact prompt and provenance are retained. The first material
+opacity failure and subsequent shape/material previews remain in evidence.
+57 closed solids,49 contacts,20 socket rays and21 deterministic exports pass.
+Final native checks pass3,461 assertions. One eight-object sprite/model pair
+records 1020.03/988.52 queue presents/s, p95 1.2269/1.2361 ms and p99 1.4539/1.4849 ms;
+small-scene queue-only qualifications apply.
+Evidence: assets/validation_v5_17_40/evidence/SUMMARY.json.
+CA723-WEAPON-COMPONENTS-01 originates here and remains pending. Broader work and
+author acceptance are not complete.
 
 ## 5.17.39 - Serpent regional inspection (#721, 2026-11-14)
 

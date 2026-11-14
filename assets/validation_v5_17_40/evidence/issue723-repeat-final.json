@@ -1,0 +1,27 @@
+{
+  "files": 21,
+  "all_byte_identical": true,
+  "sha256": {
+    "manifest.json": "ed1b81d8014812944e8d8cc63331a03c6542e6d74da6da5b7f7392519e1772ee",
+    "preview.pk3": "eb31813c37c26b99e5ddd37d9eb9ed8c8d52c24499bd8a7a840a4d9889b53c74",
+    "editable/blade.obj": "a276285224ee84d5e5e29a882fd0096549ecdab61fced2f0c2caed3682315bcf",
+    "editable/broad_blade.obj": "6eb15b7ccc39e5c915ba6d2df95e2a5abd8bbc8e2c0de84d6c93b48565a2a07f",
+    "editable/curved_blade.obj": "c732f56c6b2aa3cc4a86dd7140bd93c0437f6fe54ad9169a0e50a15ac1d48906",
+    "editable/long_blade.obj": "22552d7e5efa2d134219dce8195bf458e4fba1469668f8995881a20eb9ac36b8",
+    "editable/round_head.obj": "ccab51a62221a36ff61949cbd2b12f135be8f8f16e123d9665adb5edad64b13b",
+    "editable/small_blade.obj": "60c1dc71a7707bb6450643fd48e0fad6f81456ade282fce226485e962edcdd73",
+    "editable/small_weapon_head.obj": "365cd9599b31eed8bd724210da9ee6d0a148a788c4a9b0417388790fa9e0b816",
+    "editable/weapon_components.mtl": "b48a4245e4eedffb74b8af02446ed2d690b1d07a706170cef79860b2a5f4da00",
+    "editable/weapon_head.obj": "b3d4e5f9c2328262b49c882dc19deeb3964225589722ffc98873955564e3d932",
+    "caelum/data/inventory_weapon_components.modeldef": "c978fbbb212ad66488fb07f5f663301fd22bf11eb47254b4ec2e79dc6e61f4bc",
+    "models/caelum/inventory/weapon_components/blade.md3": "dde6c0df366900c51c022641f49f2afcc65d3ededc93cdb07425c9a61884bd24",
+    "models/caelum/inventory/weapon_components/broad_blade.md3": "bc29f51abd4917fac146a80cebee3efcb824bc9c4a7a5e71a85fff7ce9882d9b",
+    "models/caelum/inventory/weapon_components/curved_blade.md3": "69d83312adaaed400f6a831a3b11a8fd78fba801b5029b4dd75bf01992fff2bc",
+    "models/caelum/inventory/weapon_components/long_blade.md3": "90966c775da79cafa3bee72e27b5f1b3fd5a3c950d021497f6f045db645039e0",
+    "models/caelum/inventory/weapon_components/metals.png": "563d339e5309b725608c5470cc53abf902a30075859e44bb3793acb2cb3f1291",
+    "models/caelum/inventory/weapon_components/round_head.md3": "c812120ad19a827829c9a06a4e17b81e41dc82fa2d63b9d9d86ba82ba0a02d58",
+    "models/caelum/inventory/weapon_components/small_blade.md3": "d32b3cb67c97ebcc3c2f6b7fe3b10b0484d52e09b91d989a3d26aa5eb90bc2a2",
+    "models/caelum/inventory/weapon_components/small_weapon_head.md3": "8e113e68e36ca0f98cee519afb4cc829c3565b84a117199b8cad53a8ba558313",
+    "models/caelum/inventory/weapon_components/weapon_head.md3": "6ae2e43b1367dac0a5a2a8651e4522ce10581f7d497d68bdb25a054195450e73"
+  }
+}

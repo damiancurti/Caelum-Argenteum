@@ -1,0 +1,524 @@
+{
+  "schema_revision": 1,
+  "issue": 723,
+  "parent_issue": 647,
+  "status": "candidate_pending_author_review",
+  "variants": {
+    "blade": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "blade",
+        "tang"
+      ],
+      "closed_outward_components": 2,
+      "vertices": 111,
+      "triangles": 208,
+      "surfaces": [
+        {
+          "material": "iron",
+          "vertices": 77,
+          "triangles": 144
+        },
+        {
+          "material": "steel",
+          "vertices": 34,
+          "triangles": 64
+        }
+      ],
+      "reference_opaque_bounds": [
+        10,
+        8,
+        118,
+        120
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -8.166666666666668,
+            -1.75,
+            0.0
+          ],
+          "max": [
+            8.166666666666668,
+            1.75,
+            112.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.1666666666666667,
+        "floor": -12.0
+      }
+    },
+    "small_blade": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "blade",
+        "guard",
+        "socket"
+      ],
+      "closed_outward_components": 3,
+      "vertices": 432,
+      "triangles": 848,
+      "surfaces": [
+        {
+          "material": "steel",
+          "vertices": 42,
+          "triangles": 80
+        },
+        {
+          "material": "bronze",
+          "vertices": 390,
+          "triangles": 768
+        }
+      ],
+      "reference_opaque_bounds": [
+        9,
+        10,
+        120,
+        118
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 108.0,
+      "native_bounds": [
+        {
+          "min": [
+            -16.434782608695652,
+            -3.991304347826087,
+            0.0
+          ],
+          "max": [
+            16.434782608695652,
+            3.991304347826087,
+            108.00000000000001
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.173913043478261,
+        "floor": -14.0
+      }
+    },
+    "curved_blade": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "blade",
+        "guard",
+        "socket"
+      ],
+      "closed_outward_components": 3,
+      "vertices": 560,
+      "triangles": 1104,
+      "surfaces": [
+        {
+          "material": "steel",
+          "vertices": 170,
+          "triangles": 336
+        },
+        {
+          "material": "bronze",
+          "vertices": 390,
+          "triangles": 768
+        }
+      ],
+      "reference_opaque_bounds": [
+        14,
+        8,
+        114,
+        120
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -8.65979381443299,
+            -3.4639175257731956,
+            0.0
+          ],
+          "max": [
+            56.923711340206175,
+            3.4639175257731956,
+            111.99999999999999
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.1546391752577319,
+        "floor": -10.0
+      }
+    },
+    "long_blade": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "blade",
+        "tang"
+      ],
+      "closed_outward_components": 2,
+      "vertices": 119,
+      "triangles": 224,
+      "surfaces": [
+        {
+          "material": "iron",
+          "vertices": 77,
+          "triangles": 144
+        },
+        {
+          "material": "steel",
+          "vertices": 42,
+          "triangles": 80
+        }
+      ],
+      "reference_opaque_bounds": [
+        10,
+        8,
+        118,
+        120
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -9.43157894736842,
+            -1.9452631578947366,
+            0.0
+          ],
+          "max": [
+            9.43157894736842,
+            1.9452631578947366,
+            111.99999999999999
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.1789473684210525,
+        "floor": -10.0
+      }
+    },
+    "broad_blade": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "hub",
+        "wood_stub",
+        "wing_left",
+        "wing_right"
+      ],
+      "closed_outward_components": 4,
+      "vertices": 292,
+      "triangles": 552,
+      "surfaces": [
+        {
+          "material": "iron",
+          "vertices": 190,
+          "triangles": 360
+        },
+        {
+          "material": "wood",
+          "vertices": 102,
+          "triangles": 192
+        }
+      ],
+      "reference_opaque_bounds": [
+        13,
+        8,
+        114,
+        120
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 101.0,
+      "native_bounds": [
+        {
+          "min": [
+            -50.5,
+            -6.06,
+            0.0
+          ],
+          "max": [
+            50.5,
+            6.06,
+            97.21249999999999
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.2625,
+        "floor": -25.0
+      }
+    },
+    "weapon_head": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "head",
+        "spike_00",
+        "spike_01",
+        "spike_02",
+        "spike_03",
+        "spike_04",
+        "spike_05",
+        "spike_06",
+        "spike_07",
+        "spike_08",
+        "spike_09",
+        "spike_10",
+        "spike_11",
+        "spike_12",
+        "spike_13",
+        "spike_14",
+        "spike_15",
+        "spike_16",
+        "spike_17",
+        "spike_18",
+        "socket"
+      ],
+      "closed_outward_components": 21,
+      "vertices": 1226,
+      "triangles": 2336,
+      "surfaces": [
+        {
+          "material": "iron",
+          "vertices": 596,
+          "triangles": 1152
+        },
+        {
+          "material": "steel",
+          "vertices": 342,
+          "triangles": 608
+        },
+        {
+          "material": "dark_iron",
+          "vertices": 288,
+          "triangles": 576
+        }
+      ],
+      "reference_opaque_bounds": [
+        13,
+        8,
+        114,
+        120
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -47.24709784411277,
+            -45.18076285240465,
+            0.0
+          ],
+          "max": [
+            47.24709784411277,
+            45.18076285240465,
+            112.00000000000001
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 2.3217247097844114,
+        "floor": 0.0
+      }
+    },
+    "round_head": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "head",
+        "spike_00",
+        "spike_01",
+        "spike_02",
+        "spike_03",
+        "spike_04",
+        "spike_05",
+        "spike_06",
+        "spike_07",
+        "spike_08",
+        "spike_09",
+        "spike_10",
+        "spike_11",
+        "spike_12",
+        "spike_13",
+        "spike_14",
+        "spike_15",
+        "spike_16",
+        "spike_17",
+        "spike_18"
+      ],
+      "closed_outward_components": 20,
+      "vertices": 938,
+      "triangles": 1760,
+      "surfaces": [
+        {
+          "material": "iron",
+          "vertices": 596,
+          "triangles": 1152
+        },
+        {
+          "material": "steel",
+          "vertices": 342,
+          "triangles": 608
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        10,
+        120,
+        117
+      ],
+      "reference_axis": "width",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -56.0,
+            -56.0,
+            0.0
+          ],
+          "max": [
+            56.0,
+            56.0,
+            98.47020585048755
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 3.0335861321776814,
+        "floor": 4
+      }
+    },
+    "small_weapon_head": {
+      "class": "CaelumMaterialPickup",
+      "parts": [
+        "blade",
+        "socket"
+      ],
+      "closed_outward_components": 2,
+      "vertices": 322,
+      "triangles": 640,
+      "surfaces": [
+        {
+          "material": "steel",
+          "vertices": 34,
+          "triangles": 64
+        },
+        {
+          "material": "bronze",
+          "vertices": 288,
+          "triangles": 576
+        }
+      ],
+      "reference_opaque_bounds": [
+        16,
+        8,
+        113,
+        119
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 111.0,
+      "native_bounds": [
+        {
+          "min": [
+            -17.224137931034484,
+            -9.186206896551724,
+            0.0
+          ],
+          "max": [
+            17.224137931034484,
+            9.186206896551724,
+            111.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.9137931034482758,
+        "floor": 0.0
+      }
+    }
+  },
+  "source_sha256": {
+    "DESIGN.json": "a8e21ad71bc83b7ce6d4033470ea1e138dafa3db49fa216dd463855b8d05f063",
+    "PROVENANCE.json": "45898ee185960bad1b569b37f0175a51bd6e4cde1c30c910fa352dc20c2fb230",
+    "METALS_PROMPT.json": "935c64507308577aed24cc1424b675ce701d3a22c4ad3edf4d37e33c1bb7dffb"
+  },
+  "external_source_sha256": {
+    "src/graphics/caelum/icons/materials/ca_material_blade.png": "9a7f23f902d4550458f76c8de057a7b10e7627ff4a6f8cab674c0c41b828140c",
+    "src/graphics/caelum/icons/materials/ca_material_small_blade.png": "4b2753403b51dd09d0fb0bacb8bb34ce4fa14f1e7f0f75bae5bf4ffe1ed853af",
+    "src/graphics/caelum/icons/materials/ca_material_curved_blade.png": "13eef9ca9e3d1eebc3fd4541614f357e8dd77c09d557399b4b9c25931c87d3a7",
+    "src/graphics/caelum/icons/materials/ca_material_long_blade.png": "3c79be40369bb18f2c338cc2d1e8878a275e2b0c6590cd3d973af1e501418842",
+    "src/graphics/caelum/icons/materials/ca_material_broad_blade.png": "78b2fd7d8e7bd96c67fff27bb418525877945c37b65d1d8cf00850787f7bbf57",
+    "src/graphics/caelum/icons/materials/ca_material_weapon_head.png": "754242ddfa3a4c3cfc5618755b831847d68302a569275b8157623d56b0a66bd3",
+    "src/graphics/caelum/icons/materials/ca_material_round_head.png": "72e27c576a57352fd139f74805fb122cb03b62aa690e2ca39e710d2771b1d8bb",
+    "src/graphics/caelum/icons/materials/ca_material_small_weapon_head.png": "905d40ee5146586e9a1c428f13591b183718cb8f06278d740844fc0d1cb4dccb",
+    "src/graphics/caelum/icons/materials/ca_material_iron_ingot.png": "82dd215ceb46deee151ab1674847f80d9798f168e72b3f2ec71b961f30dd6c74",
+    "src/graphics/caelum/icons/materials/ca_material_steel_ingot.png": "353901f4271eaa64e05628b638e2eb3bf799b9f4dcf0bf729e55e46634f9d99a",
+    "src/graphics/caelum/icons/materials/ca_material_bronze_ingot.png": "432cf7a1a10ea198e2282cf3c4e20b24098cab21758bf9d05c873fb834c75677",
+    "src/models/caelum/actors/training/ca_training_dummy.png": "4ae89bf07aaab273bb9bcafad283ab2e56fb3d87d6dd2f86e6a1329855dd8cff",
+    "assets/generators/generate_inventory_chains_models.py": "cd9296836666c78bd555c76e3de56d0ccc345c40ecb94a15d5e78f159719f94f",
+    "assets/generators/generate_peuchen_model.py": "0f1873c9fd1da0be0f965ea73ff2cc5c35dc25a35ac9da2df4692b50cef30812",
+    "assets/generators/generate_duende_models.py": "243d46cee79b1723f6b7ac9bd0b8c0c4f87b37f463cf8540cd7d51be2800511f",
+    "src/models/caelum/inventory/consumables/materials.png": "eb8f019510c63601c9e25c8ed05142fbe7b97fe06eb444c32685def6e664416e",
+    "src/models/caelum/inventory/weapon_components/metals.png": "563d339e5309b725608c5470cc53abf902a30075859e44bb3793acb2cb3f1291",
+    "assets/source/art/inventory_models_647/weapon_components/metals.png": "563d339e5309b725608c5470cc53abf902a30075859e44bb3793acb2cb3f1291",
+    "assets/source/art/inventory_models_647/weapon_components/METALS_PROMPT.json": "935c64507308577aed24cc1424b675ce701d3a22c4ad3edf4d37e33c1bb7dffb"
+  },
+  "generator_sha256": {
+    "generate_inventory_ammunition_models.py": "aa7ffdc02cc126b116b87782ae962bdbb54e9bf060301344058aa4475f946b86",
+    "generate_inventory_consumable_models.py": "f4bb817e68f15fd5fcce27b5f7f3de205917b993899fbeb934629f2146a14fc7",
+    "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+    "generate_inventory_weapon_components_models.py": "09b8d5557d7202e5edcbf1a36a6734011f67760c0c4b2619da72e9bce6ad6a7c"
+  },
+  "sha256": {
+    "models/caelum/inventory/weapon_components/blade.md3": "dde6c0df366900c51c022641f49f2afcc65d3ededc93cdb07425c9a61884bd24",
+    "editable/blade.obj": "a276285224ee84d5e5e29a882fd0096549ecdab61fced2f0c2caed3682315bcf",
+    "models/caelum/inventory/weapon_components/small_blade.md3": "62d9252a20ec8cb038fc7aff56587898f9d75e3a458f6d16121e9a754e96596a",
+    "editable/small_blade.obj": "08df44ca7f11c701f1a6cd07ba33749b6711f431eb76cb807e972c3ae2853e4f",
+    "models/caelum/inventory/weapon_components/curved_blade.md3": "b0eadf53443bb39c1b516bd6855953d05c49a79496e1b18085244133072af18d",
+    "editable/curved_blade.obj": "8a150e17ef67fcde44c8a291c6a0811becbddfa65ec14053132fc23ce821783d",
+    "models/caelum/inventory/weapon_components/long_blade.md3": "90966c775da79cafa3bee72e27b5f1b3fd5a3c950d021497f6f045db645039e0",
+    "editable/long_blade.obj": "22552d7e5efa2d134219dce8195bf458e4fba1469668f8995881a20eb9ac36b8",
+    "models/caelum/inventory/weapon_components/broad_blade.md3": "bc29f51abd4917fac146a80cebee3efcb824bc9c4a7a5e71a85fff7ce9882d9b",
+    "editable/broad_blade.obj": "6eb15b7ccc39e5c915ba6d2df95e2a5abd8bbc8e2c0de84d6c93b48565a2a07f",
+    "models/caelum/inventory/weapon_components/weapon_head.md3": "d85cb6ad21684955587f02d23268630abbbe78e902e301080ea3137bec05960c",
+    "editable/weapon_head.obj": "cea3d7df801308444e3aeae218170ff9bff47562dfdaf9d19ad6facbb2304575",
+    "models/caelum/inventory/weapon_components/round_head.md3": "c812120ad19a827829c9a06a4e17b81e41dc82fa2d63b9d9d86ba82ba0a02d58",
+    "editable/round_head.obj": "ccab51a62221a36ff61949cbd2b12f135be8f8f16e123d9665adb5edad64b13b",
+    "models/caelum/inventory/weapon_components/small_weapon_head.md3": "b45a669cee273a4e7cc0cdf6eade973c40c2e18c77ec113a2cf11240b12d18a1",
+    "editable/small_weapon_head.obj": "5ffcd45b56505d4351ace2e99c9f2bdbae1c84b217715046ab1e0e19c3735a42",
+    "editable/weapon_components.mtl": "d4b53c83a723e56a4c578bc03b2ed943d93fb84c45d5c2d1e435012a04412d1c",
+    "caelum/data/inventory_weapon_components.modeldef": "c978fbbb212ad66488fb07f5f663301fd22bf11eb47254b4ec2e79dc6e61f4bc",
+    "models/caelum/inventory/weapon_components/metals.png": "563d339e5309b725608c5470cc53abf902a30075859e44bb3793acb2cb3f1291"
+  }
+}
