@@ -1,0 +1,20 @@
+{
+  "sha256": "85c6ec686efbb73ccf05c49d32cc89bb58073ebe41586b4b5be8435698325d6e",
+  "source_entries": 18569,
+  "exact_source_bytes": true,
+  "baseline_sha256": "4c9aa95dead81c6f55729701dbef8803d3412eeb9fc12b0f6d508c20a5122e77",
+  "added": [
+    "caelum/data/teju_combat.modeldef",
+    "models/caelum/folklore/teju/dark.png",
+    "models/caelum/folklore/teju/iris.png",
+    "models/caelum/folklore/teju/materials.png",
+    "models/caelum/folklore/teju/teju_jagua.md3"
+  ],
+  "changed": [
+    "MODELDEF",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "removed": [],
+  "unrelated_runtime_bytes_identical": true
+}

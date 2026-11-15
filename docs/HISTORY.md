@@ -1,6 +1,17 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.73** - 2026-11-15.
+Documentation version: **5.17.74** - 2026-11-15.
+
+## 5.17.74 - Teju Jagua native candidate (#791, 2026-11-15)
+
+Added reference-led seven-headed Teju Jagua geometry, native combat-state bindings,
+editable source and an original diffuse atlas. Existing rules and saves remain.
+Nine exports repeat;210 components,209 attachments and1,672 posed contacts pass.
+Native continuity passes115 assertions and actions/loot80. ASSETS records the
+bounded sprite/model timing and candidate-art qualifications. Evidence remains
+in assets/validation_v5_17_74/evidence/SUMMARY.json. CA791-TEJU-01 originates here;
+the author requested consolidated testing before acceptance. No previous pending
+check was removed, and the full batch remains unfinished.
 
 ## 5.17.73 - Quadruped regional gallery (#790, 2026-11-15)
 

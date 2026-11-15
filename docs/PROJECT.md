@@ -1,6 +1,14 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.73** - 2026-11-15.
+Documentation version: **5.17.74** - 2026-11-15.
+
+## 5.17.74 - Teju Jagua model candidate (#791)
+
+Seven canine heads and a reptilian quadruped body replace only the visual states
+of CaelumBestiary047. Native save/rollback and combat/loot checks pass195 assertions;
+nine exports repeat. ASSETS owns geometry, art provenance and qualified timing.
+CA791-TEJU-01 remains pending for the consolidated author handoff. Models cover22
+of56 provisional catalogue classes;34 remain. The broader batch is unfinished.
 
 ## 5.17.73 - Quadruped regional display (#790)
 

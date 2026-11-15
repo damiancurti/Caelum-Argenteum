@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.73** - 2026-11-15.
+Documentation version: **5.17.74** - 2026-11-15.
+
+## 5.17.74 - Teju Jagua delivered; author review pending (#791)
+
+Seven-headed native Teju Jagua passes195 native assertions, independent geometry
+checks and deterministic export. Evidence: assets/validation_v5_17_74/evidence.
+CA791-TEJU-01 awaits the consolidated author test. Add its approved Selva display
+in a separate gallery issue, then continue remaining bestiary and modular/named
+characters. The author reiterated on2026-11-15 that acceptance comes after all
+worked issues are complete and the test terminal is ready; candidates are not
+accepted art. Campaign assignment/script gaps and siege performance remain open.
 
 ## #790 - Quadruped regional gallery (5.17.73)
 

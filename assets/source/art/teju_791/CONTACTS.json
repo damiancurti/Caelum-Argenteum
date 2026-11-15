@@ -1,0 +1,1888 @@
+{
+  "issue": 791,
+  "species": {
+    "teju_jagua": [
+      {
+        "part": "fore_left_upper",
+        "target": "trunk",
+        "witness": [
+          27.0,
+          -21.6,
+          31.85
+        ]
+      },
+      {
+        "part": "fore_left_lower",
+        "target": "fore_left_upper",
+        "witness": [
+          29.700000000000003,
+          -23.400000000000002,
+          18.85
+        ]
+      },
+      {
+        "part": "fore_left_foot",
+        "target": "fore_left_lower",
+        "witness": [
+          33.75,
+          -23.400000000000002,
+          6.5
+        ]
+      },
+      {
+        "part": "fore_left_toe_0",
+        "target": "fore_left_foot",
+        "witness": [
+          40.5,
+          -31.5,
+          3.25
+        ]
+      },
+      {
+        "part": "fore_left_toe_0_claw",
+        "target": "fore_left_toe_0",
+        "witness": [
+          47.925000000000004,
+          -31.5,
+          2.9250000000000003
+        ]
+      },
+      {
+        "part": "fore_left_toe_1",
+        "target": "fore_left_foot",
+        "witness": [
+          40.5,
+          -26.1,
+          3.25
+        ]
+      },
+      {
+        "part": "fore_left_toe_1_claw",
+        "target": "fore_left_toe_1",
+        "witness": [
+          47.925000000000004,
+          -26.1,
+          2.9250000000000003
+        ]
+      },
+      {
+        "part": "fore_left_toe_2",
+        "target": "fore_left_foot",
+        "witness": [
+          40.5,
+          -20.7,
+          3.25
+        ]
+      },
+      {
+        "part": "fore_left_toe_2_claw",
+        "target": "fore_left_toe_2",
+        "witness": [
+          47.925000000000004,
+          -20.7,
+          2.9250000000000003
+        ]
+      },
+      {
+        "part": "fore_left_toe_3",
+        "target": "fore_left_foot",
+        "witness": [
+          40.5,
+          -15.3,
+          3.25
+        ]
+      },
+      {
+        "part": "fore_left_toe_3_claw",
+        "target": "fore_left_toe_3",
+        "witness": [
+          47.925000000000004,
+          -15.3,
+          2.9250000000000003
+        ]
+      },
+      {
+        "part": "hind_left_upper",
+        "target": "trunk",
+        "witness": [
+          -29.700000000000003,
+          -21.6,
+          33.800000000000004
+        ]
+      },
+      {
+        "part": "hind_left_lower",
+        "target": "hind_left_upper",
+        "witness": [
+          -40.5,
+          -23.400000000000002,
+          19.5
+        ]
+      },
+      {
+        "part": "hind_left_foot",
+        "target": "hind_left_lower",
+        "witness": [
+          -39.150000000000006,
+          -23.400000000000002,
+          6.5
+        ]
+      },
+      {
+        "part": "hind_left_toe_0",
+        "target": "hind_left_foot",
+        "witness": [
+          -29.700000000000003,
+          -31.5,
+          3.25
+        ]
+      },
+      {
+        "part": "hind_left_toe_0_claw",
+        "target": "hind_left_toe_0",
+        "witness": [
+          -22.275000000000002,
+          -31.5,
+          2.9250000000000003
+        ]
+      },
+      {
+        "part": "hind_left_toe_1",
+        "target": "hind_left_foot",
+        "witness": [
+          -29.700000000000003,
+          -26.1,
+          3.25
+        ]
+      },
+      {
+        "part": "hind_left_toe_1_claw",
+        "target": "hind_left_toe_1",
+        "witness": [
+          -22.275000000000002,
+          -26.1,
+          2.9250000000000003
+        ]
+      },
+      {
+        "part": "hind_left_toe_2",
+        "target": "hind_left_foot",
+        "witness": [
+          -29.700000000000003,
+          -20.7,
+          3.25
+        ]
+      },
+      {
+        "part": "hind_left_toe_2_claw",
+        "target": "hind_left_toe_2",
+        "witness": [
+          -22.275000000000002,
+          -20.7,
+          2.9250000000000003
+        ]
+      },
+      {
+        "part": "hind_left_toe_3",
+        "target": "hind_left_foot",
+        "witness": [
+          -29.700000000000003,
+          -15.3,
+          3.25
+        ]
+      },
+      {
+        "part": "hind_left_toe_3_claw",
+        "target": "hind_left_toe_3",
+        "witness": [
+          -22.275000000000002,
+          -15.3,
+          2.9250000000000003
+        ]
+      },
+      {
+        "part": "fore_right_upper",
+        "target": "trunk",
+        "witness": [
+          27.0,
+          21.6,
+          31.85
+        ]
+      },
+      {
+        "part": "fore_right_lower",
+        "target": "fore_right_upper",
+        "witness": [
+          29.700000000000003,
+          23.400000000000002,
+          18.85
+        ]
+      },
+      {
+        "part": "fore_right_foot",
+        "target": "fore_right_lower",
+        "witness": [
+          33.75,
+          23.400000000000002,
+          6.5
+        ]
+      },
+      {
+        "part": "fore_right_toe_0",
+        "target": "fore_right_foot",
+        "witness": [
+          40.5,
+          15.3,
+          3.25
+        ]
+      },
+      {
+        "part": "fore_right_toe_0_claw",
+        "target": "fore_right_toe_0",
+        "witness": [
+          47.925000000000004,
+          15.3,
+          2.9250000000000003
+        ]
+      },
+      {
+        "part": "fore_right_toe_1",
+        "target": "fore_right_foot",
+        "witness": [
+          40.5,
+          20.7,
+          3.25
+        ]
+      },
+      {
+        "part": "fore_right_toe_1_claw",
+        "target": "fore_right_toe_1",
+        "witness": [
+          47.925000000000004,
+          20.7,
+          2.9250000000000003
+        ]
+      },
+      {
+        "part": "fore_right_toe_2",
+        "target": "fore_right_foot",
+        "witness": [
+          40.5,
+          26.1,
+          3.25
+        ]
+      },
+      {
+        "part": "fore_right_toe_2_claw",
+        "target": "fore_right_toe_2",
+        "witness": [
+          47.925000000000004,
+          26.1,
+          2.9250000000000003
+        ]
+      },
+      {
+        "part": "fore_right_toe_3",
+        "target": "fore_right_foot",
+        "witness": [
+          40.5,
+          31.5,
+          3.25
+        ]
+      },
+      {
+        "part": "fore_right_toe_3_claw",
+        "target": "fore_right_toe_3",
+        "witness": [
+          47.925000000000004,
+          31.5,
+          2.9250000000000003
+        ]
+      },
+      {
+        "part": "hind_right_upper",
+        "target": "trunk",
+        "witness": [
+          -29.700000000000003,
+          21.6,
+          33.800000000000004
+        ]
+      },
+      {
+        "part": "hind_right_lower",
+        "target": "hind_right_upper",
+        "witness": [
+          -40.5,
+          23.400000000000002,
+          19.5
+        ]
+      },
+      {
+        "part": "hind_right_foot",
+        "target": "hind_right_lower",
+        "witness": [
+          -39.150000000000006,
+          23.400000000000002,
+          6.5
+        ]
+      },
+      {
+        "part": "hind_right_toe_0",
+        "target": "hind_right_foot",
+        "witness": [
+          -29.700000000000003,
+          15.3,
+          3.25
+        ]
+      },
+      {
+        "part": "hind_right_toe_0_claw",
+        "target": "hind_right_toe_0",
+        "witness": [
+          -22.275000000000002,
+          15.3,
+          2.9250000000000003
+        ]
+      },
+      {
+        "part": "hind_right_toe_1",
+        "target": "hind_right_foot",
+        "witness": [
+          -29.700000000000003,
+          20.7,
+          3.25
+        ]
+      },
+      {
+        "part": "hind_right_toe_1_claw",
+        "target": "hind_right_toe_1",
+        "witness": [
+          -22.275000000000002,
+          20.7,
+          2.9250000000000003
+        ]
+      },
+      {
+        "part": "hind_right_toe_2",
+        "target": "hind_right_foot",
+        "witness": [
+          -29.700000000000003,
+          26.1,
+          3.25
+        ]
+      },
+      {
+        "part": "hind_right_toe_2_claw",
+        "target": "hind_right_toe_2",
+        "witness": [
+          -22.275000000000002,
+          26.1,
+          2.9250000000000003
+        ]
+      },
+      {
+        "part": "hind_right_toe_3",
+        "target": "hind_right_foot",
+        "witness": [
+          -29.700000000000003,
+          31.5,
+          3.25
+        ]
+      },
+      {
+        "part": "hind_right_toe_3_claw",
+        "target": "hind_right_toe_3",
+        "witness": [
+          -22.275000000000002,
+          31.5,
+          2.9250000000000003
+        ]
+      },
+      {
+        "part": "h0_neck",
+        "target": "trunk",
+        "witness": [
+          19,
+          -23,
+          32
+        ]
+      },
+      {
+        "part": "h0_mane",
+        "target": "h0_neck",
+        "witness": [
+          38,
+          -35,
+          57
+        ]
+      },
+      {
+        "part": "h0_cranium",
+        "target": "h0_mane",
+        "witness": [
+          39,
+          -35,
+          63
+        ]
+      },
+      {
+        "part": "h0_muzzle",
+        "target": "h0_cranium",
+        "witness": [
+          46.27357602630518,
+          -36.89,
+          63.38
+        ]
+      },
+      {
+        "part": "h0_lower_jaw",
+        "target": "h0_muzzle",
+        "witness": [
+          45.80592230826158,
+          -36.62,
+          60.14
+        ]
+      },
+      {
+        "part": "h0_nose",
+        "target": "h0_muzzle",
+        "witness": [
+          53.28838179695913,
+          -40.94,
+          63.38
+        ]
+      },
+      {
+        "part": "h0_left_nostril",
+        "target": "h0_nose",
+        "witness": [
+          54.3542927845466,
+          -43.73778801315259,
+          63.92
+        ]
+      },
+      {
+        "part": "h0_left_eye",
+        "target": "h0_cranium",
+        "witness": [
+          45.426364039457766,
+          -42.13741420600109,
+          67.7
+        ]
+      },
+      {
+        "part": "h0_left_iris",
+        "target": "h0_left_eye",
+        "witness": [
+          46.37420221915368,
+          -42.87171032141417,
+          67.7
+        ]
+      },
+      {
+        "part": "h0_left_pupil",
+        "target": "h0_left_iris",
+        "witness": [
+          46.748325193588556,
+          -43.08771032141417,
+          67.7
+        ]
+      },
+      {
+        "part": "h0_left_brow",
+        "target": "h0_cranium",
+        "witness": [
+          43.92457602630518,
+          -40.95858734697929,
+          68.78
+        ]
+      },
+      {
+        "part": "h0_left_ear",
+        "target": "h0_cranium",
+        "witness": [
+          36.684077691738416,
+          -39.45949833456676,
+          65.0
+        ]
+      },
+      {
+        "part": "h0_left_jowl",
+        "target": "h0_muzzle",
+        "witness": [
+          46.586844616523166,
+          -41.74740288532698,
+          61.76
+        ]
+      },
+      {
+        "part": "h0_right_nostril",
+        "target": "h0_nose",
+        "witness": [
+          56.2442927845466,
+          -40.46421198684741,
+          63.92
+        ]
+      },
+      {
+        "part": "h0_right_eye",
+        "target": "h0_cranium",
+        "witness": [
+          50.39436403945777,
+          -33.532585793998905,
+          67.7
+        ]
+      },
+      {
+        "part": "h0_right_iris",
+        "target": "h0_right_eye",
+        "witness": [
+          51.50420221915368,
+          -33.98628967858583,
+          67.7
+        ]
+      },
+      {
+        "part": "h0_right_pupil",
+        "target": "h0_right_iris",
+        "witness": [
+          51.87832519358856,
+          -34.20228967858583,
+          67.7
+        ]
+      },
+      {
+        "part": "h0_right_brow",
+        "target": "h0_cranium",
+        "witness": [
+          48.622576026305175,
+          -32.82141265302071,
+          68.78
+        ]
+      },
+      {
+        "part": "h0_right_ear",
+        "target": "h0_cranium",
+        "witness": [
+          43.70407769173842,
+          -27.300501665433238,
+          65.0
+        ]
+      },
+      {
+        "part": "h0_right_jowl",
+        "target": "h0_muzzle",
+        "witness": [
+          50.63684461652316,
+          -34.73259711467302,
+          61.76
+        ]
+      },
+      {
+        "part": "h0_left_canine",
+        "target": "h0_muzzle",
+        "witness": [
+          49.52776692478474,
+          -43.13357602630518,
+          60.14
+        ]
+      },
+      {
+        "part": "h0_right_canine",
+        "target": "h0_muzzle",
+        "witness": [
+          53.307766924784744,
+          -36.58642397369482,
+          60.14
+        ]
+      },
+      {
+        "part": "h1_neck",
+        "target": "trunk",
+        "witness": [
+          26,
+          -8,
+          32
+        ]
+      },
+      {
+        "part": "h1_mane",
+        "target": "h1_neck",
+        "witness": [
+          45,
+          -12,
+          64
+        ]
+      },
+      {
+        "part": "h1_cranium",
+        "target": "h1_mane",
+        "witness": [
+          46,
+          -12,
+          70
+        ]
+      },
+      {
+        "part": "h1_muzzle",
+        "target": "h1_cranium",
+        "witness": [
+          53.722573306386145,
+          -12.656390111580997,
+          70.38
+        ]
+      },
+      {
+        "part": "h1_lower_jaw",
+        "target": "h1_muzzle",
+        "witness": [
+          53.19077711975955,
+          -12.562620095640854,
+          67.14
+        ]
+      },
+      {
+        "part": "h1_nose",
+        "target": "h1_muzzle",
+        "witness": [
+          61.69951610578503,
+          -14.062940350683132,
+          70.38
+        ]
+      },
+      {
+        "part": "h1_left_nostril",
+        "target": "h1_nose",
+        "witness": [
+          63.65804465248888,
+          -16.32743807241882,
+          70.92
+        ]
+      },
+      {
+        "part": "h1_left_eye",
+        "target": "h1_cranium",
+        "witness": [
+          54.72117581292991,
+          -17.877110084336145,
+          74.7
+        ]
+      },
+      {
+        "part": "h1_left_iris",
+        "target": "h1_left_eye",
+        "witness": [
+          55.862996418726375,
+          -18.242942975392438,
+          74.7
+        ]
+      },
+      {
+        "part": "h1_left_pupil",
+        "target": "h1_left_iris",
+        "witness": [
+          56.28843336802765,
+          -18.31795898814455,
+          74.7
+        ]
+      },
+      {
+        "part": "h1_left_brow",
+        "target": "h1_cranium",
+        "witness": [
+          52.90677416770691,
+          -17.28301693523235,
+          75.78
+        ]
+      },
+      {
+        "part": "h1_left_ear",
+        "target": "h1_cranium",
+        "witness": [
+          45.5902126730186,
+          -18.350730330504845,
+          72.0
+        ]
+      },
+      {
+        "part": "h1_left_jowl",
+        "target": "h1_muzzle",
+        "witness": [
+          55.67827911996804,
+          -17.11371159098115,
+          68.76
+        ]
+      },
+      {
+        "part": "h1_right_nostril",
+        "target": "h1_nose",
+        "witness": [
+          64.31443476406987,
+          -12.604864766032671,
+          70.92
+        ]
+      },
+      {
+        "part": "h1_right_eye",
+        "target": "h1_cranium",
+        "witness": [
+          56.44654410622853,
+          -8.092060250406846,
+          74.7
+        ]
+      },
+      {
+        "part": "h1_right_iris",
+        "target": "h1_right_eye",
+        "witness": [
+          57.64462672158908,
+          -8.138815429487181,
+          74.7
+        ]
+      },
+      {
+        "part": "h1_right_pupil",
+        "target": "h1_right_iris",
+        "witness": [
+          58.07006367089035,
+          -8.213831442239295,
+          74.7
+        ]
+      },
+      {
+        "part": "h1_right_brow",
+        "target": "h1_cranium",
+        "witness": [
+          54.538372445065384,
+          -8.029763287929644,
+          75.78
+        ]
+      },
+      {
+        "part": "h1_right_ear",
+        "target": "h1_cranium",
+        "witness": [
+          48.0282330874623,
+          -4.524029478213445,
+          72.0
+        ]
+      },
+      {
+        "part": "h1_right_jowl",
+        "target": "h1_muzzle",
+        "witness": [
+          57.08482935907018,
+          -9.136768791582266,
+          68.76
+        ]
+      },
+      {
+        "part": "h1_left_canine",
+        "target": "h1_muzzle",
+        "witness": [
+          58.91594124769767,
+          -17.41043359330871,
+          67.14
+        ]
+      },
+      {
+        "part": "h1_right_canine",
+        "target": "h1_muzzle",
+        "witness": [
+          60.22872147085966,
+          -9.965286980536415,
+          67.14
+        ]
+      },
+      {
+        "part": "h2_neck",
+        "target": "trunk",
+        "witness": [
+          26,
+          8,
+          32
+        ]
+      },
+      {
+        "part": "h2_mane",
+        "target": "h2_neck",
+        "witness": [
+          45,
+          12,
+          64
+        ]
+      },
+      {
+        "part": "h2_cranium",
+        "target": "h2_mane",
+        "witness": [
+          46,
+          12,
+          70
+        ]
+      },
+      {
+        "part": "h2_muzzle",
+        "target": "h2_cranium",
+        "witness": [
+          53.722573306386145,
+          12.656390111580997,
+          70.38
+        ]
+      },
+      {
+        "part": "h2_lower_jaw",
+        "target": "h2_muzzle",
+        "witness": [
+          53.19077711975955,
+          12.562620095640854,
+          67.14
+        ]
+      },
+      {
+        "part": "h2_nose",
+        "target": "h2_muzzle",
+        "witness": [
+          61.69951610578503,
+          14.062940350683132,
+          70.38
+        ]
+      },
+      {
+        "part": "h2_left_nostril",
+        "target": "h2_nose",
+        "witness": [
+          64.31443476406987,
+          12.604864766032671,
+          70.92
+        ]
+      },
+      {
+        "part": "h2_left_eye",
+        "target": "h2_cranium",
+        "witness": [
+          56.44654410622853,
+          8.092060250406846,
+          74.7
+        ]
+      },
+      {
+        "part": "h2_left_iris",
+        "target": "h2_left_eye",
+        "witness": [
+          57.64462672158908,
+          8.138815429487181,
+          74.7
+        ]
+      },
+      {
+        "part": "h2_left_pupil",
+        "target": "h2_left_iris",
+        "witness": [
+          58.07006367089035,
+          8.213831442239295,
+          74.7
+        ]
+      },
+      {
+        "part": "h2_left_brow",
+        "target": "h2_cranium",
+        "witness": [
+          54.538372445065384,
+          8.029763287929644,
+          75.78
+        ]
+      },
+      {
+        "part": "h2_left_ear",
+        "target": "h2_cranium",
+        "witness": [
+          48.0282330874623,
+          4.524029478213445,
+          72.0
+        ]
+      },
+      {
+        "part": "h2_left_jowl",
+        "target": "h2_muzzle",
+        "witness": [
+          57.08482935907018,
+          9.136768791582266,
+          68.76
+        ]
+      },
+      {
+        "part": "h2_right_nostril",
+        "target": "h2_nose",
+        "witness": [
+          63.65804465248888,
+          16.32743807241882,
+          70.92
+        ]
+      },
+      {
+        "part": "h2_right_eye",
+        "target": "h2_cranium",
+        "witness": [
+          54.72117581292991,
+          17.877110084336145,
+          74.7
+        ]
+      },
+      {
+        "part": "h2_right_iris",
+        "target": "h2_right_eye",
+        "witness": [
+          55.862996418726375,
+          18.242942975392438,
+          74.7
+        ]
+      },
+      {
+        "part": "h2_right_pupil",
+        "target": "h2_right_iris",
+        "witness": [
+          56.28843336802765,
+          18.31795898814455,
+          74.7
+        ]
+      },
+      {
+        "part": "h2_right_brow",
+        "target": "h2_cranium",
+        "witness": [
+          52.90677416770691,
+          17.28301693523235,
+          75.78
+        ]
+      },
+      {
+        "part": "h2_right_ear",
+        "target": "h2_cranium",
+        "witness": [
+          45.5902126730186,
+          18.350730330504845,
+          72.0
+        ]
+      },
+      {
+        "part": "h2_right_jowl",
+        "target": "h2_muzzle",
+        "witness": [
+          55.67827911996804,
+          17.11371159098115,
+          68.76
+        ]
+      },
+      {
+        "part": "h2_left_canine",
+        "target": "h2_muzzle",
+        "witness": [
+          60.22872147085966,
+          9.965286980536415,
+          67.14
+        ]
+      },
+      {
+        "part": "h2_right_canine",
+        "target": "h2_muzzle",
+        "witness": [
+          58.91594124769767,
+          17.41043359330871,
+          67.14
+        ]
+      },
+      {
+        "part": "h3_neck",
+        "target": "trunk",
+        "witness": [
+          19,
+          23,
+          32
+        ]
+      },
+      {
+        "part": "h3_mane",
+        "target": "h3_neck",
+        "witness": [
+          38,
+          35,
+          57
+        ]
+      },
+      {
+        "part": "h3_cranium",
+        "target": "h3_mane",
+        "witness": [
+          39,
+          35,
+          63
+        ]
+      },
+      {
+        "part": "h3_muzzle",
+        "target": "h3_cranium",
+        "witness": [
+          46.27357602630518,
+          36.89,
+          63.38
+        ]
+      },
+      {
+        "part": "h3_lower_jaw",
+        "target": "h3_muzzle",
+        "witness": [
+          45.80592230826158,
+          36.62,
+          60.14
+        ]
+      },
+      {
+        "part": "h3_nose",
+        "target": "h3_muzzle",
+        "witness": [
+          53.28838179695913,
+          40.94,
+          63.38
+        ]
+      },
+      {
+        "part": "h3_left_nostril",
+        "target": "h3_nose",
+        "witness": [
+          56.2442927845466,
+          40.46421198684741,
+          63.92
+        ]
+      },
+      {
+        "part": "h3_left_eye",
+        "target": "h3_cranium",
+        "witness": [
+          50.39436403945777,
+          33.532585793998905,
+          67.7
+        ]
+      },
+      {
+        "part": "h3_left_iris",
+        "target": "h3_left_eye",
+        "witness": [
+          51.50420221915368,
+          33.98628967858583,
+          67.7
+        ]
+      },
+      {
+        "part": "h3_left_pupil",
+        "target": "h3_left_iris",
+        "witness": [
+          51.87832519358856,
+          34.20228967858583,
+          67.7
+        ]
+      },
+      {
+        "part": "h3_left_brow",
+        "target": "h3_cranium",
+        "witness": [
+          48.622576026305175,
+          32.82141265302071,
+          68.78
+        ]
+      },
+      {
+        "part": "h3_left_ear",
+        "target": "h3_cranium",
+        "witness": [
+          43.70407769173842,
+          27.300501665433238,
+          65.0
+        ]
+      },
+      {
+        "part": "h3_left_jowl",
+        "target": "h3_muzzle",
+        "witness": [
+          50.63684461652316,
+          34.73259711467302,
+          61.76
+        ]
+      },
+      {
+        "part": "h3_right_nostril",
+        "target": "h3_nose",
+        "witness": [
+          54.3542927845466,
+          43.73778801315259,
+          63.92
+        ]
+      },
+      {
+        "part": "h3_right_eye",
+        "target": "h3_cranium",
+        "witness": [
+          45.426364039457766,
+          42.13741420600109,
+          67.7
+        ]
+      },
+      {
+        "part": "h3_right_iris",
+        "target": "h3_right_eye",
+        "witness": [
+          46.37420221915368,
+          42.87171032141417,
+          67.7
+        ]
+      },
+      {
+        "part": "h3_right_pupil",
+        "target": "h3_right_iris",
+        "witness": [
+          46.748325193588556,
+          43.08771032141417,
+          67.7
+        ]
+      },
+      {
+        "part": "h3_right_brow",
+        "target": "h3_cranium",
+        "witness": [
+          43.92457602630518,
+          40.95858734697929,
+          68.78
+        ]
+      },
+      {
+        "part": "h3_right_ear",
+        "target": "h3_cranium",
+        "witness": [
+          36.684077691738416,
+          39.45949833456676,
+          65.0
+        ]
+      },
+      {
+        "part": "h3_right_jowl",
+        "target": "h3_muzzle",
+        "witness": [
+          46.586844616523166,
+          41.74740288532698,
+          61.76
+        ]
+      },
+      {
+        "part": "h3_left_canine",
+        "target": "h3_muzzle",
+        "witness": [
+          53.307766924784744,
+          36.58642397369482,
+          60.14
+        ]
+      },
+      {
+        "part": "h3_right_canine",
+        "target": "h3_muzzle",
+        "witness": [
+          49.52776692478474,
+          43.13357602630518,
+          60.14
+        ]
+      },
+      {
+        "part": "h4_neck",
+        "target": "trunk",
+        "witness": [
+          5,
+          -16,
+          32
+        ]
+      },
+      {
+        "part": "h4_mane",
+        "target": "h4_neck",
+        "witness": [
+          17,
+          -23,
+          86
+        ]
+      },
+      {
+        "part": "h4_cranium",
+        "target": "h4_mane",
+        "witness": [
+          18,
+          -23,
+          92
+        ]
+      },
+      {
+        "part": "h4_muzzle",
+        "target": "h4_cranium",
+        "witness": [
+          25.479508346050224,
+          -24.476963665689453,
+          92.38
+        ]
+      },
+      {
+        "part": "h4_lower_jaw",
+        "target": "h4_muzzle",
+        "witness": [
+          24.98243572518591,
+          -24.265968856305246,
+          89.14
+        ]
+      },
+      {
+        "part": "h4_nose",
+        "target": "h4_muzzle",
+        "witness": [
+          32.935597659014995,
+          -27.64188580645257,
+          92.38
+        ]
+      },
+      {
+        "part": "h4_left_nostril",
+        "target": "h4_nose",
+        "witness": [
+          34.33452809588683,
+          -30.288917659829778,
+          92.92
+        ]
+      },
+      {
+        "part": "h4_left_eye",
+        "target": "h4_cranium",
+        "witness": [
+          25.278110272740626,
+          -29.788513610485907,
+          96.7
+        ]
+      },
+      {
+        "part": "h4_left_iris",
+        "target": "h4_left_eye",
+        "witness": [
+          26.308371595826863,
+          -30.40182397739046,
+          96.7
+        ]
+      },
+      {
+        "part": "h4_left_pupil",
+        "target": "h4_left_iris",
+        "witness": [
+          26.706029692518317,
+          -30.570619824897825,
+          96.7
+        ]
+      },
+      {
+        "part": "h4_left_brow",
+        "target": "h4_cranium",
+        "witness": [
+          23.643853504407616,
+          -28.80149546720902,
+          97.78
+        ]
+      },
+      {
+        "part": "h4_left_ear",
+        "target": "h4_cranium",
+        "witness": [
+          16.274631752819392,
+          -28.195975214930883,
+          94.0
+        ]
+      },
+      {
+        "part": "h4_left_jowl",
+        "target": "h4_muzzle",
+        "witness": [
+          26.382410379990255,
+          -29.259982369092878,
+          90.76
+        ]
+      },
+      {
+        "part": "h4_right_nostril",
+        "target": "h4_nose",
+        "witness": [
+          35.811491761576285,
+          -26.809409313779554,
+          92.92
+        ]
+      },
+      {
+        "part": "h4_right_eye",
+        "target": "h4_cranium",
+        "witness": [
+          29.16041476541005,
+          -20.64237738658246,
+          96.7
+        ]
+      },
+      {
+        "part": "h4_right_iris",
+        "target": "h4_right_eye",
+        "witness": [
+          30.317272974126812,
+          -20.95744418096842,
+          96.7
+        ]
+      },
+      {
+        "part": "h4_right_pupil",
+        "target": "h4_right_iris",
+        "witness": [
+          30.714931070818267,
+          -21.126240028475788,
+          96.7
+        ]
+      },
+      {
+        "part": "h4_right_brow",
+        "target": "h4_cranium",
+        "witness": [
+          27.315163187692832,
+          -20.15243186416989,
+          97.78
+        ]
+      },
+      {
+        "part": "h4_right_ear",
+        "target": "h4_cranium",
+        "witness": [
+          21.760496796808795,
+          -15.272087072458621,
+          94.0
+        ]
+      },
+      {
+        "part": "h4_right_jowl",
+        "target": "h4_muzzle",
+        "witness": [
+          29.547332520753372,
+          -21.80389305612811,
+          90.76
+        ]
+      },
+      {
+        "part": "h4_left_canine",
+        "target": "h4_muzzle",
+        "witness": [
+          29.470343509868265,
+          -30.277414914965966,
+          89.14
+        ]
+      },
+      {
+        "part": "h4_right_canine",
+        "target": "h4_muzzle",
+        "witness": [
+          32.42427084124718,
+          -23.318398222865518,
+          89.14
+        ]
+      },
+      {
+        "part": "h5_neck",
+        "target": "trunk",
+        "witness": [
+          0,
+          0,
+          32
+        ]
+      },
+      {
+        "part": "h5_mane",
+        "target": "h5_neck",
+        "witness": [
+          8,
+          0,
+          107
+        ]
+      },
+      {
+        "part": "h5_cranium",
+        "target": "h5_mane",
+        "witness": [
+          9,
+          0,
+          113
+        ]
+      },
+      {
+        "part": "h5_muzzle",
+        "target": "h5_cranium",
+        "witness": [
+          16.78,
+          0.0,
+          113.38
+        ]
+      },
+      {
+        "part": "h5_lower_jaw",
+        "target": "h5_muzzle",
+        "witness": [
+          16.240000000000002,
+          0.0,
+          110.14
+        ]
+      },
+      {
+        "part": "h5_nose",
+        "target": "h5_muzzle",
+        "witness": [
+          24.880000000000003,
+          0.0,
+          113.38
+        ]
+      },
+      {
+        "part": "h5_left_nostril",
+        "target": "h5_nose",
+        "witness": [
+          27.201999999999998,
+          -1.8900000000000001,
+          113.92
+        ]
+      },
+      {
+        "part": "h5_left_eye",
+        "target": "h5_cranium",
+        "witness": [
+          18.67,
+          -4.968,
+          117.7
+        ]
+      },
+      {
+        "part": "h5_left_iris",
+        "target": "h5_left_eye",
+        "witness": [
+          19.858000000000004,
+          -5.130000000000001,
+          117.7
+        ]
+      },
+      {
+        "part": "h5_left_pupil",
+        "target": "h5_left_iris",
+        "witness": [
+          20.29,
+          -5.130000000000001,
+          117.7
+        ]
+      },
+      {
+        "part": "h5_left_brow",
+        "target": "h5_cranium",
+        "witness": [
+          16.78,
+          -4.6979999999999995,
+          118.78
+        ]
+      },
+      {
+        "part": "h5_left_ear",
+        "target": "h5_cranium",
+        "witness": [
+          9.76,
+          -7.0200000000000005,
+          115.0
+        ]
+      },
+      {
+        "part": "h5_left_jowl",
+        "target": "h5_muzzle",
+        "witness": [
+          19.48,
+          -4.050000000000001,
+          111.76
+        ]
+      },
+      {
+        "part": "h5_right_nostril",
+        "target": "h5_nose",
+        "witness": [
+          27.201999999999998,
+          1.8900000000000001,
+          113.92
+        ]
+      },
+      {
+        "part": "h5_right_eye",
+        "target": "h5_cranium",
+        "witness": [
+          18.67,
+          4.968,
+          117.7
+        ]
+      },
+      {
+        "part": "h5_right_iris",
+        "target": "h5_right_eye",
+        "witness": [
+          19.858000000000004,
+          5.130000000000001,
+          117.7
+        ]
+      },
+      {
+        "part": "h5_right_pupil",
+        "target": "h5_right_iris",
+        "witness": [
+          20.29,
+          5.130000000000001,
+          117.7
+        ]
+      },
+      {
+        "part": "h5_right_brow",
+        "target": "h5_cranium",
+        "witness": [
+          16.78,
+          4.6979999999999995,
+          118.78
+        ]
+      },
+      {
+        "part": "h5_right_ear",
+        "target": "h5_cranium",
+        "witness": [
+          9.76,
+          7.0200000000000005,
+          115.0
+        ]
+      },
+      {
+        "part": "h5_right_jowl",
+        "target": "h5_muzzle",
+        "witness": [
+          19.48,
+          4.050000000000001,
+          111.76
+        ]
+      },
+      {
+        "part": "h5_left_canine",
+        "target": "h5_muzzle",
+        "witness": [
+          22.72,
+          -3.7800000000000002,
+          110.14
+        ]
+      },
+      {
+        "part": "h5_right_canine",
+        "target": "h5_muzzle",
+        "witness": [
+          22.72,
+          3.7800000000000002,
+          110.14
+        ]
+      },
+      {
+        "part": "h6_neck",
+        "target": "trunk",
+        "witness": [
+          5,
+          16,
+          32
+        ]
+      },
+      {
+        "part": "h6_mane",
+        "target": "h6_neck",
+        "witness": [
+          17,
+          23,
+          86
+        ]
+      },
+      {
+        "part": "h6_cranium",
+        "target": "h6_mane",
+        "witness": [
+          18,
+          23,
+          92
+        ]
+      },
+      {
+        "part": "h6_muzzle",
+        "target": "h6_cranium",
+        "witness": [
+          25.479508346050224,
+          24.476963665689453,
+          92.38
+        ]
+      },
+      {
+        "part": "h6_lower_jaw",
+        "target": "h6_muzzle",
+        "witness": [
+          24.98243572518591,
+          24.265968856305246,
+          89.14
+        ]
+      },
+      {
+        "part": "h6_nose",
+        "target": "h6_muzzle",
+        "witness": [
+          32.935597659014995,
+          27.64188580645257,
+          92.38
+        ]
+      },
+      {
+        "part": "h6_left_nostril",
+        "target": "h6_nose",
+        "witness": [
+          35.811491761576285,
+          26.809409313779554,
+          92.92
+        ]
+      },
+      {
+        "part": "h6_left_eye",
+        "target": "h6_cranium",
+        "witness": [
+          29.16041476541005,
+          20.64237738658246,
+          96.7
+        ]
+      },
+      {
+        "part": "h6_left_iris",
+        "target": "h6_left_eye",
+        "witness": [
+          30.317272974126812,
+          20.95744418096842,
+          96.7
+        ]
+      },
+      {
+        "part": "h6_left_pupil",
+        "target": "h6_left_iris",
+        "witness": [
+          30.714931070818267,
+          21.126240028475788,
+          96.7
+        ]
+      },
+      {
+        "part": "h6_left_brow",
+        "target": "h6_cranium",
+        "witness": [
+          27.315163187692832,
+          20.15243186416989,
+          97.78
+        ]
+      },
+      {
+        "part": "h6_left_ear",
+        "target": "h6_cranium",
+        "witness": [
+          21.760496796808795,
+          15.272087072458621,
+          94.0
+        ]
+      },
+      {
+        "part": "h6_left_jowl",
+        "target": "h6_muzzle",
+        "witness": [
+          29.547332520753372,
+          21.80389305612811,
+          90.76
+        ]
+      },
+      {
+        "part": "h6_right_nostril",
+        "target": "h6_nose",
+        "witness": [
+          34.33452809588683,
+          30.288917659829778,
+          92.92
+        ]
+      },
+      {
+        "part": "h6_right_eye",
+        "target": "h6_cranium",
+        "witness": [
+          25.278110272740626,
+          29.788513610485907,
+          96.7
+        ]
+      },
+      {
+        "part": "h6_right_iris",
+        "target": "h6_right_eye",
+        "witness": [
+          26.308371595826863,
+          30.40182397739046,
+          96.7
+        ]
+      },
+      {
+        "part": "h6_right_pupil",
+        "target": "h6_right_iris",
+        "witness": [
+          26.706029692518317,
+          30.570619824897825,
+          96.7
+        ]
+      },
+      {
+        "part": "h6_right_brow",
+        "target": "h6_cranium",
+        "witness": [
+          23.643853504407616,
+          28.80149546720902,
+          97.78
+        ]
+      },
+      {
+        "part": "h6_right_ear",
+        "target": "h6_cranium",
+        "witness": [
+          16.274631752819392,
+          28.195975214930883,
+          94.0
+        ]
+      },
+      {
+        "part": "h6_right_jowl",
+        "target": "h6_muzzle",
+        "witness": [
+          26.382410379990255,
+          29.259982369092878,
+          90.76
+        ]
+      },
+      {
+        "part": "h6_left_canine",
+        "target": "h6_muzzle",
+        "witness": [
+          32.42427084124718,
+          23.318398222865518,
+          89.14
+        ]
+      },
+      {
+        "part": "h6_right_canine",
+        "target": "h6_muzzle",
+        "witness": [
+          29.470343509868265,
+          30.277414914965966,
+          89.14
+        ]
+      },
+      {
+        "part": "tail_skin",
+        "target": "trunk",
+        "witness": [
+          -39,
+          0,
+          35
+        ]
+      },
+      {
+        "part": "dorsal_spine_0",
+        "target": "trunk",
+        "witness": [
+          -39,
+          0,
+          42.63271888505691
+        ]
+      },
+      {
+        "part": "dorsal_spine_1",
+        "target": "trunk",
+        "witness": [
+          -31,
+          0,
+          45.113177427729454
+        ]
+      },
+      {
+        "part": "dorsal_spine_2",
+        "target": "trunk",
+        "witness": [
+          -23,
+          0,
+          46.69726490151197
+        ]
+      },
+      {
+        "part": "dorsal_spine_3",
+        "target": "trunk",
+        "witness": [
+          -15,
+          0,
+          47.70184948468606
+        ]
+      },
+      {
+        "part": "dorsal_spine_4",
+        "target": "trunk",
+        "witness": [
+          -7,
+          0,
+          48.250892419569034
+        ]
+      },
+      {
+        "part": "dorsal_spine_5",
+        "target": "trunk",
+        "witness": [
+          1,
+          0,
+          48.39697253258016
+        ]
+      },
+      {
+        "part": "dorsal_spine_6",
+        "target": "trunk",
+        "witness": [
+          9,
+          0,
+          48.15266207469103
+        ]
+      },
+      {
+        "part": "tail_spine_0",
+        "target": "tail_skin",
+        "witness": [
+          -57,
+          0,
+          37
+        ]
+      },
+      {
+        "part": "tail_spine_1",
+        "target": "tail_skin",
+        "witness": [
+          -78,
+          6,
+          25
+        ]
+      },
+      {
+        "part": "tail_spine_2",
+        "target": "tail_skin",
+        "witness": [
+          -99,
+          21,
+          14
+        ]
+      }
+    ]
+  }
+}

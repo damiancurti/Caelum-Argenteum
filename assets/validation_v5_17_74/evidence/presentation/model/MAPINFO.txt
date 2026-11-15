@@ -1,0 +1,2 @@
+gameinfo { AddEventHandlers="CA791Events" }
+map CA455V "Teju Jagua inherited combat model" { sky1="CABASKY",0 nointermission }

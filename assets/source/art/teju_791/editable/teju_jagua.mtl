@@ -1,0 +1,9 @@
+newmtl iris
+Kd 1 1 1
+map_Kd src/models/caelum/folklore/teju/iris.png
+newmtl dark
+Kd 1 1 1
+map_Kd src/models/caelum/folklore/teju/dark.png
+newmtl atlas
+Kd 1 1 1
+map_Kd src/models/caelum/folklore/teju/materials.png
