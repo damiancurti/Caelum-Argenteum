@@ -1,6 +1,56 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.66** - 2026-11-15.
+Documentation version: **5.17.67** - 2026-11-15.
+
+## 5.17.67 - Native armor helmet drops (#777)
+
+Four original hollow assemblies replace the head-slot states of CaelumArmorPickup:
+magic CHMG, light CHLT, medium CHMD and heavy CHEH. Their three existing qualities
+share each appearance, for twelve native cases. The effective references remain
+ca_helmet_magic.png, ca_helmet_light.png, ca_helmet_medium.png and ca_helmet.png
+through their original 128-pixel TEXTURES aliases. Icons, collision, actor scale,
+equipment size, protection, weight, durability, recipes and persistence are unchanged.
+These are world drops; worn modular fitting is not delivered by this patch.
+
+Editable DESIGN/OBJ/MTL sources and provenance are in inventory_models_647/
+armor_helmets. Independent serialized checks verify 46,746 vertices, 31,536
+triangles, 130 closed components, 126 fixed contacts and 100 clear visor/neck
+rays. Nineteen exports repeat byte-for-byte. Eighteen small medium-helmet mail
+reliefs are closed rings fixed to the curtain, not interlinked simulated mail.
+Original owned material pixels are reused; the purple and blue plume samples
+retain their source alpha. Existing sprite artwork is unchanged.
+
+One original opaque antique-gold material was generated with built-in image_gen
+and copied byte-for-byte to source/runtime gold.png. GOLD_PROMPT.json records
+the exact prompt and source. The 1254-square image has SHA-256
+4e6123410914b56260ca5f406e873315063659043072852e2ebe433973be17dc.
+Earlier engraved and cropped material trials produced stretched wood-like marks.
+The final uniform material replaces those trials; superseded evidence is retained.
+Visor slots were narrowed/lengthened, plumes smoothed/tapered and a rear liner added.
+
+All twenty final detail/underside views and the overview were inspected. The
+shared simplified visor shape, static ribbon-like plumes, fixed mail relief,
+rust-toned medium/heavy metal, flat matte gold shading, small repeated color
+samples, interpreted backs and omitted fine ornament require author review.
+The current candidate is not a final fitted character accessory.
+
+Isolated GZDoom 4.14.2 checks pass 1,011 continuity assertions across native
+pickup/equip/toss, old saves, reload and rollback, plus 236 visual/control
+assertions. An additional 157-assertion fresh regression and inspected capture
+preserve medium torso armor art and the separate Anima potion after introducing
+head-state MODELDEF bindings. Prepared transactions do not establish ordinary
+menus, crafting, normal gameplay or author acceptance.
+
+Both twelve-object, 700-tic presentation scenes were inspected. Sprite/model
+queue rates were 1238.87/1004.22 per second, p95 1.014/1.247 ms and p99
+1.217/1.434 ms. The model scene costs more in this single sequential pair.
+These are queue intervals, not GPU/display latency, repeatability or campaign
+performance; projected footprints differ. Evidence:
+assets/validation_v5_17_67/evidence/SUMMARY.json.
+
+CA777-ARMOR-HELMETS-01 remains pending. Twelve torso, hand and foot armor states,
+ancestor-only pickup bindings, other characters, modular equipment and V5.16
+still require work. No previous author check was accepted or removed.
 
 ## 5.17.66 - Separate medium armor and Anima potion aliases (#775)
 

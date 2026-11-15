@@ -1,0 +1,404 @@
+{
+  "schema_revision": 1,
+  "issue": 777,
+  "parent_issue": 647,
+  "status": "candidate_author_review_pending",
+  "variants": {
+    "magic": {
+      "class": "CaelumArmorPickup",
+      "parts": [
+        "hollow_crown",
+        "rear_shell",
+        "brow",
+        "visor_bar_0",
+        "visor_bar_1",
+        "visor_bar_2",
+        "visor_bar_3",
+        "visor_bar_4",
+        "visor_bar_5",
+        "visor_bar_6",
+        "lower_visor",
+        "left_cheek",
+        "right_cheek",
+        "brow_trim",
+        "jaw_trim",
+        "neck_curtain",
+        "crown_ridge",
+        "hinge_-1",
+        "hinge_1",
+        "plume_mount",
+        "plume_0",
+        "plume_1",
+        "plume_2",
+        "plume_3",
+        "plume_4",
+        "plume_5",
+        "plume_6"
+      ],
+      "closed_outward_components": 27,
+      "vertices": 9501,
+      "triangles": 5296,
+      "surfaces": [
+        {
+          "material": "leather",
+          "vertices": 744,
+          "triangles": 248
+        },
+        {
+          "material": "gold",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "gold",
+          "vertices": 3920,
+          "triangles": 2339
+        },
+        {
+          "material": "purple_plume",
+          "vertices": 742,
+          "triangles": 1344
+        }
+      ],
+      "reference_opaque_bounds": [
+        14,
+        9,
+        114,
+        120
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 111.0,
+      "native_bounds": [
+        {
+          "min": [
+            -40.15398923714604,
+            -37.27505412383686,
+            0.0
+          ],
+          "max": [
+            40.15398923714604,
+            49.653037730727036,
+            111.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.1758692152629924,
+        "floor": 5.0
+      }
+    },
+    "light": {
+      "class": "CaelumArmorPickup",
+      "parts": [
+        "hollow_crown",
+        "rear_shell",
+        "brow",
+        "visor_bar_0",
+        "visor_bar_1",
+        "visor_bar_2",
+        "visor_bar_3",
+        "visor_bar_4",
+        "visor_bar_5",
+        "visor_bar_6",
+        "lower_visor",
+        "left_cheek",
+        "right_cheek",
+        "brow_trim",
+        "jaw_trim",
+        "neck_curtain",
+        "crown_ridge",
+        "hinge_-1",
+        "hinge_1"
+      ],
+      "closed_outward_components": 19,
+      "vertices": 8457,
+      "triangles": 3376,
+      "surfaces": [
+        {
+          "material": "steel",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "steel",
+          "vertices": 1689,
+          "triangles": 563
+        },
+        {
+          "material": "bronze",
+          "vertices": 1929,
+          "triangles": 1200
+        },
+        {
+          "material": "leather",
+          "vertices": 744,
+          "triangles": 248
+        }
+      ],
+      "reference_opaque_bounds": [
+        18,
+        8,
+        108,
+        120
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -41.45923894143142,
+            -38.486720867208675,
+            0.0
+          ],
+          "max": [
+            41.45923894143142,
+            38.8509485094851,
+            112.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.5176151761517616,
+        "floor": 5.0
+      }
+    },
+    "medium": {
+      "class": "CaelumArmorPickup",
+      "parts": [
+        "hollow_crown",
+        "rear_shell",
+        "brow",
+        "visor_bar_0",
+        "visor_bar_1",
+        "visor_bar_2",
+        "visor_bar_3",
+        "visor_bar_4",
+        "visor_bar_5",
+        "visor_bar_6",
+        "lower_visor",
+        "left_cheek",
+        "right_cheek",
+        "brow_trim",
+        "jaw_trim",
+        "neck_curtain",
+        "crown_ridge",
+        "hinge_-1",
+        "hinge_1",
+        "mail_loop_0_0",
+        "mail_loop_0_1",
+        "mail_loop_0_2",
+        "mail_loop_0_3",
+        "mail_loop_0_4",
+        "mail_loop_0_5",
+        "mail_loop_0_6",
+        "mail_loop_0_7",
+        "mail_loop_0_8",
+        "mail_loop_1_0",
+        "mail_loop_1_1",
+        "mail_loop_1_2",
+        "mail_loop_1_3",
+        "mail_loop_1_4",
+        "mail_loop_1_5",
+        "mail_loop_1_6",
+        "mail_loop_1_7",
+        "mail_loop_1_8"
+      ],
+      "closed_outward_components": 37,
+      "vertices": 11337,
+      "triangles": 9136,
+      "surfaces": [
+        {
+          "material": "steel",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "steel",
+          "vertices": 4096,
+          "triangles": 4119
+        },
+        {
+          "material": "steel",
+          "vertices": 1235,
+          "triangles": 2452
+        },
+        {
+          "material": "bronze",
+          "vertices": 1929,
+          "triangles": 1200
+        }
+      ],
+      "reference_opaque_bounds": [
+        18,
+        8,
+        109,
+        120
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -41.45923894143142,
+            -38.486720867208675,
+            0.0
+          ],
+          "max": [
+            41.45923894143142,
+            38.8509485094851,
+            112.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.5176151761517616,
+        "floor": 5.0
+      }
+    },
+    "heavy": {
+      "class": "CaelumArmorPickup",
+      "parts": [
+        "hollow_crown",
+        "rear_shell",
+        "brow",
+        "visor_bar_0",
+        "visor_bar_1",
+        "visor_bar_2",
+        "visor_bar_3",
+        "visor_bar_4",
+        "visor_bar_5",
+        "visor_bar_6",
+        "lower_visor",
+        "left_cheek",
+        "right_cheek",
+        "brow_trim",
+        "jaw_trim",
+        "neck_curtain",
+        "crown_ridge",
+        "hinge_-1",
+        "hinge_1",
+        "plume_mount",
+        "plume_0",
+        "plume_1",
+        "plume_2",
+        "plume_3",
+        "plume_4",
+        "plume_5",
+        "plume_6"
+      ],
+      "closed_outward_components": 27,
+      "vertices": 9501,
+      "triangles": 5296,
+      "surfaces": [
+        {
+          "material": "steel",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "steel",
+          "vertices": 1689,
+          "triangles": 563
+        },
+        {
+          "material": "leather",
+          "vertices": 744,
+          "triangles": 248
+        },
+        {
+          "material": "gold",
+          "vertices": 2231,
+          "triangles": 1776
+        },
+        {
+          "material": "blue_plume",
+          "vertices": 742,
+          "triangles": 1344
+        }
+      ],
+      "reference_opaque_bounds": [
+        15,
+        8,
+        112,
+        120
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -40.51573688793114,
+            -37.6108654222498,
+            0.0
+          ],
+          "max": [
+            40.51573688793114,
+            50.10036239496782,
+            112.00000000000001
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.186462631616713,
+        "floor": 5.0
+      }
+    }
+  },
+  "source_sha256": {
+    "DESIGN.json": "de0f35ba7d7f79735b09645d152871811d65d96519a8fdd34f4dc9b0c0205434",
+    "PROVENANCE.json": "cdc009e9291e234e713bbafd85071e3ffc287a90834bd6ddbef74e9a64fa22e9"
+  },
+  "external_source_sha256": {
+    "src/TEXTURES": "fe101bef213d375ca30330deb1f01a3c595caf63d753ed9e5ba505318fc3c6ad",
+    "src/caelum/equipment/CaelumEquipmentPickups.zs": "9208b475941230f72c0e4a7ae89a8524b060a6bb6ce09439aa3bddb8c2b950a9",
+    "assets/generators/generate_inventory_articulated_weapons_models.py": "2dd9f7ddc4cf1ad708ee07b1e45d2d749934a1980125383b4e221f18a0a66efd",
+    "src/graphics/caelum/icons/ca_helmet_magic.png": "23e058005e90a57c5a1059a0f95a519ee1bb7cbcbf72d9b416cb78b0df800273",
+    "src/graphics/caelum/icons/ca_helmet_light.png": "a4b994a93bca51a86a303c6b2fb8e4fd93d3aadb158d97ad732952d144ac4b13",
+    "src/graphics/caelum/icons/ca_helmet_medium.png": "3fbefda66a592992e82ab6c842955cfe96fe756b0e230b3fc0dbbd1a1cf92201",
+    "src/graphics/caelum/icons/ca_helmet.png": "0d0e29dfb6635f2287b7de1bb7d206c514185849e94620e95a177b8bc8192d31",
+    "src/models/caelum/inventory/weapon_components/metals.png": "563d339e5309b725608c5470cc53abf902a30075859e44bb3793acb2cb3f1291",
+    "src/models/caelum/inventory/articulated_weapons/leather.png": "261976d27a229443bb17fb75ac73408523988d51777cf928179ec1aff31740df",
+    "src/models/caelum/inventory/magic_bases/materials.png": "10a848f89f7efd32cbf2b4ca9fe3c96a5ad4dd09079d19b80c878565f7d91041"
+  },
+  "generator_sha256": {
+    "generate_inventory_ammunition_models.py": "aa7ffdc02cc126b116b87782ae962bdbb54e9bf060301344058aa4475f946b86",
+    "generate_inventory_consumable_models.py": "f4bb817e68f15fd5fcce27b5f7f3de205917b993899fbeb934629f2146a14fc7",
+    "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+    "generate_inventory_armor_helmets_models.py": "0f239558e2ecf7196ace5835514a2333ec22a3830ca41bb5191b1ed7a6764681"
+  },
+  "sha256": {
+    "models/caelum/inventory/armor_helmets/magic.md3": "450316e2efdc9258e9714bee6eca1c072cb1ea87f3524e9aaabf13330d888da8",
+    "editable/magic.obj": "e00ac830f954eb8c9e7924bc34dce9b202d255be049594bb7422f72595adafe9",
+    "models/caelum/inventory/armor_helmets/light.md3": "86448948fe23be02dfd4924339f43c5c6655a74acdd735b90b53bc279a50d0b1",
+    "editable/light.obj": "1d7c25b288d1cd0b74b1687bfdb7f0215df505c722b9cedf8d62b14e0ecff0fe",
+    "models/caelum/inventory/armor_helmets/medium.md3": "d7f544dc93535b9f3cc3e74e0404244d61e9b6c3301b55eb26fc6357d15b7a7e",
+    "editable/medium.obj": "928816d5b8aad281687b84ae6511b453a21ff1e273407c911d505a51bd579d4c",
+    "models/caelum/inventory/armor_helmets/heavy.md3": "f9fb2aee06ab69e031a901302c173864590ea3cc355e5dcf21a10e85db971de3",
+    "editable/heavy.obj": "8907ade1671750646d7a0ba12f9595d049f65bed2c4c53465c7fc0e097e98056",
+    "editable/armor_helmets.mtl": "2ec962ffb9b573124d25f0be94eb709f1fe4da5c32b6c070cc453a344ecbbfc1",
+    "caelum/data/inventory_armor_helmets.modeldef": "5b5b3d348cfe63f86e96a2fa24a2221889208be7cba80b1be3474fef29da240a",
+    "editable/src/models/caelum/inventory/weapon_components/metals.png": "563d339e5309b725608c5470cc53abf902a30075859e44bb3793acb2cb3f1291",
+    "editable/src/models/caelum/inventory/articulated_weapons/leather.png": "261976d27a229443bb17fb75ac73408523988d51777cf928179ec1aff31740df",
+    "editable/src/models/caelum/inventory/magic_bases/materials.png": "10a848f89f7efd32cbf2b4ca9fe3c96a5ad4dd09079d19b80c878565f7d91041",
+    "editable/src/graphics/caelum/icons/ca_helmet_magic.png": "23e058005e90a57c5a1059a0f95a519ee1bb7cbcbf72d9b416cb78b0df800273",
+    "editable/src/graphics/caelum/icons/ca_helmet.png": "0d0e29dfb6635f2287b7de1bb7d206c514185849e94620e95a177b8bc8192d31"
+  },
+  "reuse_note": "All existing owned texture pixels remain unchanged; small original plumage color samples retain their source alpha."
+}

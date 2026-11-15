@@ -1115,3 +1115,13 @@ assets/validation_v5_17_42/evidence/** -text -diff
 /assets/validation_v5_17_66/*.zs text eol=lf
 /assets/validation_v5_17_66/*.json text eol=lf
 /assets/validation_v5_17_66/evidence/** -text -diff
+
+# #777 native armor helmet sources and raw evidence.
+/assets/generators/generate_inventory_armor_helmets_models.py text eol=lf
+/assets/generators/validate_inventory_armor_helmets_models.py text eol=lf
+/assets/source/art/inventory_models_647/armor_helmets/** text eol=lf
+/assets/source/art/inventory_models_647/armor_helmets/**/*.png binary
+/assets/validation_v5_17_67/*.py text eol=lf
+/assets/validation_v5_17_67/*.zs text eol=lf
+/assets/validation_v5_17_67/evidence/** -text -diff
+/src/caelum/data/inventory_armor_helmets.modeldef text eol=lf

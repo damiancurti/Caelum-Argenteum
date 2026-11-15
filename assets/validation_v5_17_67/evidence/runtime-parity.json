@@ -1,0 +1,18 @@
+{
+  "entries": 18541,
+  "exact_source": true,
+  "added": [
+    "caelum/data/inventory_armor_helmets.modeldef",
+    "models/caelum/inventory/armor_helmets/gold.png",
+    "models/caelum/inventory/armor_helmets/heavy.md3",
+    "models/caelum/inventory/armor_helmets/light.md3",
+    "models/caelum/inventory/armor_helmets/magic.md3",
+    "models/caelum/inventory/armor_helmets/medium.md3"
+  ],
+  "changed": [
+    "MODELDEF",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "sha256": "aeaca60139f3a21444bb51c8f865ccd26e1d98265bf329d9d17121635fa91aaf"
+}

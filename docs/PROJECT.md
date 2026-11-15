@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.66** - 2026-11-15.
+Documentation version: **5.17.67** - 2026-11-15.
+
+## 5.17.67 - Four armor helmet world models (#777)
+
+Four hollow native head-slot drops cover twelve existing type/tier cases with
+unchanged inventory identity and gameplay. Nineteen exports repeat; independent
+geometry checks, 1,011 continuity, 236 visual/control and 157 unaffected-armor/
+potion assertions pass. Twenty detail views were inspected. ASSETS records the
+original gold material, measured cost and visual limitations. Author check
+CA777-ARMOR-HELMETS-01 remains pending. Twelve other armor states, ancestor-only
+pickup bindings, remaining characters, modular equipment and V5.16 are unfinished.
 
 ## 5.17.66 - Correct medium-armor world identity (#775)
 
