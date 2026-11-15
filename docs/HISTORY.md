@@ -1,6 +1,20 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.79** - 2026-11-15.
+Documentation version: **5.17.80** - 2026-11-15.
+
+## 5.17.80 - Umita and Chonchon native candidates (#803, 2026-11-15)
+
+Added real closed head/hair/beard/ear-wing meshes, editable sources, unchanged
+generated atlas, provenance and inherited combat mappings for classes 028/035.
+Ten artifacts repeat; 65 components and 504 posed contacts pass. Native save/
+rollback checks pass 230 assertions and real actions/loot 134; final Chonchon
+wing-fold refinement adds 51 native checks. Binary pose comparison bounds reuse
+of earlier behavior and idle-presentation evidence. Source/PK3 parity
+and qualified presentation timings are recorded in ASSETS and
+assets/validation_v5_17_80/evidence/SUMMARY.json. Initial pole/UV/contact defects
+and visual hair-texture refinement retain diagnostic evidence. CA803-HEADS-01
+originates here and remains pending; no previous author test was removed.
+Metadata/history follow-ups #805/#806 and the wider batch remain unfinished.
 
 ## 5.17.79 - Apparition regional gallery (#801)
 

@@ -1,0 +1,21 @@
+{
+  "issue": 803,
+  "passed": true,
+  "before_sha256": "3480fc9a1730dc56c9abc2deba64a9d7714294748163f0a0fc2f68a04ccbc7c9",
+  "after_sha256": "88a1fe950851eac01569b21ed3e90ed30f86350be4a97217ac7d7738a58875b7",
+  "changed_members": [
+    "models/caelum/folklore/heads/chonchon.md3"
+  ],
+  "changed_frames": [
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    22
+  ],
+  "native_topology_uv_bindings_unchanged": true,
+  "other_runtime_and_art_bytes_identical": true,
+  "reuse": "Prior continuity, actions/loot, Umita captures and idle presentation measurements remain applicable to unchanged code, bindings and frames. Recheck final Chonchon death/rest captures in the engine; this audit is not author art acceptance."
+}

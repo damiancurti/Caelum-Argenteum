@@ -1,0 +1,629 @@
+{
+  "schema_revision": 1,
+  "issue": 803,
+  "parent_issue": 461,
+  "status": "candidate_author_review_pending",
+  "species": {
+    "umita": {
+      "catalogue_id": "CA-FOLK-028",
+      "actor": "CaelumBestiary028",
+      "design": "assets/source/art/heads_803/umita.json",
+      "reference": "assets/source/bestiary_453/imagenes/04_Apariciones/28_umita.png",
+      "textures": {
+        "atlas": "assets/source/art/heads_803/materials.png"
+      }
+    },
+    "chonchon": {
+      "catalogue_id": "CA-FOLK-035",
+      "actor": "CaelumBestiary035",
+      "design": "assets/source/art/heads_803/chonchon.json",
+      "reference": "assets/source/bestiary_453/imagenes/04_Apariciones/35_chonchon.png",
+      "textures": {
+        "atlas": "assets/source/art/heads_803/materials.png"
+      }
+    }
+  },
+  "profile_source": "src/caelum/actors/CaelumFolkloreCharacters.zs",
+  "profile_class": "CaelumMandinga",
+  "frames": [
+    {
+      "sprite": "MIID",
+      "letter": "A",
+      "action": "idle",
+      "cycle": "idle",
+      "sample": 0
+    },
+    {
+      "sprite": "MIID",
+      "letter": "B",
+      "action": "idle",
+      "cycle": "idle",
+      "sample": 8
+    },
+    {
+      "sprite": "MIRN",
+      "letter": "A",
+      "action": "run",
+      "cycle": "walk",
+      "sample": 0
+    },
+    {
+      "sprite": "MIRN",
+      "letter": "B",
+      "action": "run",
+      "cycle": "walk",
+      "sample": 6
+    },
+    {
+      "sprite": "MIRN",
+      "letter": "C",
+      "action": "run",
+      "cycle": "walk",
+      "sample": 12
+    },
+    {
+      "sprite": "MIRN",
+      "letter": "D",
+      "action": "run",
+      "cycle": "walk",
+      "sample": 18
+    },
+    {
+      "sprite": "MIWK",
+      "letter": "A",
+      "action": "walk",
+      "cycle": "walk",
+      "sample": 6
+    },
+    {
+      "sprite": "MIWK",
+      "letter": "B",
+      "action": "walk",
+      "cycle": "walk",
+      "sample": 18
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "A",
+      "action": "stun",
+      "transforms": [
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -8
+        },
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "z",
+          "angle": -4
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "D",
+      "action": "attack_prepare",
+      "transforms": [
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -10
+        },
+        {
+          "part": "left_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": 8
+        },
+        {
+          "part": "right_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": -8
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "E",
+      "action": "attack_release",
+      "transforms": [
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 12
+        },
+        {
+          "part": "left_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": -14
+        },
+        {
+          "part": "right_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": 14
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "F",
+      "action": "pain",
+      "transforms": [
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -8
+        },
+        {
+          "part": "torso",
+          "kind": "rotate",
+          "axis": "z",
+          "angle": 4
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "G",
+      "action": "death",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": 8
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 0.8
+        },
+        {
+          "part": "left_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": -15
+        },
+        {
+          "part": "right_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": 15
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "H",
+      "action": "death",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": 25
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 2.5
+        },
+        {
+          "part": "left_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": -35
+        },
+        {
+          "part": "right_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": 35
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "I",
+      "action": "death",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": 45
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 4.5
+        },
+        {
+          "part": "left_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": -60
+        },
+        {
+          "part": "right_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": 60
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "J",
+      "action": "death",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": 65
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 6.5
+        },
+        {
+          "part": "left_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": -85
+        },
+        {
+          "part": "right_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": 85
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "K",
+      "action": "death",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": 80
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 8.0
+        },
+        {
+          "part": "left_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": -100
+        },
+        {
+          "part": "right_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": 100
+        }
+      ]
+    },
+    {
+      "sprite": "MNDG",
+      "letter": "L",
+      "action": "death",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": 90
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 9.0
+        },
+        {
+          "part": "left_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": -110
+        },
+        {
+          "part": "right_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": 110
+        }
+      ]
+    },
+    {
+      "sprite": "MDBR",
+      "letter": "A",
+      "action": "breath",
+      "transforms": [
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": -5
+        },
+        {
+          "part": "left_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": 8
+        },
+        {
+          "part": "right_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": -8
+        }
+      ]
+    },
+    {
+      "sprite": "MDBR",
+      "letter": "B",
+      "action": "breath",
+      "transforms": [
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 0
+        },
+        {
+          "part": "left_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": 8
+        },
+        {
+          "part": "right_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": -8
+        }
+      ]
+    },
+    {
+      "sprite": "MDBR",
+      "letter": "C",
+      "action": "breath",
+      "transforms": [
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 3
+        },
+        {
+          "part": "left_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": 8
+        },
+        {
+          "part": "right_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": -8
+        }
+      ]
+    },
+    {
+      "sprite": "MDBR",
+      "letter": "D",
+      "action": "breath",
+      "transforms": [
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 0
+        },
+        {
+          "part": "left_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": 8
+        },
+        {
+          "part": "right_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": -8
+        }
+      ]
+    },
+    {
+      "sprite": "SLMD",
+      "letter": "A",
+      "action": "rest",
+      "transforms": [
+        {
+          "part": "pelvis",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": 90
+        },
+        {
+          "part": "head",
+          "kind": "rotate",
+          "axis": "y",
+          "angle": 9.0
+        },
+        {
+          "part": "left_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": -110
+        },
+        {
+          "part": "right_wing",
+          "kind": "rotate",
+          "axis": "x",
+          "angle": 110
+        }
+      ]
+    }
+  ],
+  "inspection": {
+    "views": [
+      {
+        "name": "front-oblique",
+        "position": [
+          125.99999999999999,
+          -140.0,
+          62
+        ],
+        "target": [
+          0,
+          0,
+          31
+        ]
+      },
+      {
+        "name": "front",
+        "position": [
+          161.0,
+          0.0,
+          55
+        ],
+        "target": [
+          0,
+          0,
+          31
+        ]
+      },
+      {
+        "name": "side",
+        "position": [
+          0.0,
+          -140.0,
+          45
+        ],
+        "target": [
+          0,
+          0,
+          31
+        ]
+      },
+      {
+        "name": "rear",
+        "position": [
+          -161.0,
+          0.0,
+          50
+        ],
+        "target": [
+          0,
+          0,
+          31
+        ]
+      },
+      {
+        "name": "head-front",
+        "position": [
+          82,
+          0,
+          52
+        ],
+        "target": [
+          0,
+          0,
+          35
+        ]
+      },
+      {
+        "name": "head-oblique",
+        "position": [
+          82,
+          -35,
+          52
+        ],
+        "target": [
+          0,
+          0,
+          35
+        ]
+      }
+    ],
+    "keys": [
+      0,
+      3,
+      8,
+      9,
+      10,
+      11,
+      14,
+      17,
+      18,
+      22
+    ],
+    "studio": {
+      "ambient": 128,
+      "lighting_basis": "Scaled from the existing #455 Pombero preview studio; inspection-only, not new campaign lighting.",
+      "lights": [
+        {
+          "position": [
+            29,
+            -35.5,
+            51.6
+          ],
+          "color": [
+            220,
+            215,
+            210
+          ],
+          "radius": 58.1
+        },
+        {
+          "position": [
+            -35.5,
+            40.3,
+            40.3
+          ],
+          "color": [
+            190,
+            205,
+            235
+          ],
+          "radius": 51.6
+        }
+      ]
+    }
+  },
+  "source_sha256": {
+    "assets/source/bestiary_453/imagenes/04_Apariciones/28_umita.png": "9222a320c0aa7934ab45f13fb9ab44fd868be2e901672840dc82b26c59e3ef3b",
+    "assets/source/bestiary_453/imagenes/04_Apariciones/35_chonchon.png": "f28cdc5af4c27783de753cac1bfe4ef438f57f51dd2fcbe101b98987681dbeb1",
+    "assets/source/art/heads_803/materials.png": "81fc522b7c804e56c00df8661cd3da66cdcd1bb27fa3c6de95e94355dbab5a30",
+    "assets/source/art/heads_803/MATERIALS_PROMPT.json": "3b44598313f9cec040902834b8375f716a7d43b389852e24cb8d9f07d6172ca6",
+    "src/caelum/actors/CaelumFolkloreCharacters.zs": "80c5a00ef221395a6688125d8871c3f84ccf21e2aeb63b5c0bd4adb99dd2e420",
+    "assets/source/art/heads_803/CONTACTS.json": "1a53fdd7ec48d65e489dcdd0d3e19f8ea3e30e22662ee0478886933ac1248c7d"
+  },
+  "scale_policy": "Match neutral standing art height to the unchanged provisional native Height, divide out Actor.Scale, and report every posed bound. Moving arms and nonblocking horizontal death poses may exceed native Radius, as original biped art does; no collision or gameplay reach changes. Catalogue reference heights remain unauthorised.",
+  "timing_policy": "Only existing inherited sprite/frame bindings; no action, AI, state timing, saved field, spawn or loot change.",
+  "identity_policy": "Only CaelumBestiary028 Umita and CaelumBestiary035 Chonchon are bound. Preserve documented Northwest Argentina/Patagonia associations and all protected named identities; no campaign placement.",
+  "art_policy": "Distinct full-volume human heads, source-led face textures, closed hair volumes and membrane ear-wings. Render offset and flaps do not add flight or other powers. Conceptual metre scales remain unauthorised."
+}

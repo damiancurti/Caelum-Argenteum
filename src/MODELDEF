@@ -4818,3 +4818,4 @@ Model CaelumBarricadeVisual
 #include "caelum/data/teju_combat.modeldef"
 #include "caelum/data/kasogonaga_combat.modeldef"
 #include "caelum/data/apparition_combat.modeldef"
+#include "caelum/data/head_apparition_combat.modeldef"

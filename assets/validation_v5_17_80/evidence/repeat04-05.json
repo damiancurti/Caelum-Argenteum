@@ -1,0 +1,17 @@
+{
+  "issue": 803,
+  "files": 10,
+  "all_byte_identical": true,
+  "sha256": {
+    "caelum/data/head_apparition_combat.modeldef": "ce63de76fa9a227abe9e3b26fa2ab1ab31ab3884c46949ab138ded3a445d9d62",
+    "editable/chonchon.mtl": "a343d185c1c0b4cee4c4330517ba2caeabd3ff641b3ee8d4422e93555323ab8c",
+    "editable/chonchon.obj": "6b8ae6d2d8502b4159881a6f7c31c34c6f8e42550abe6185b1a6676e918de94e",
+    "editable/umita.mtl": "a343d185c1c0b4cee4c4330517ba2caeabd3ff641b3ee8d4422e93555323ab8c",
+    "editable/umita.obj": "01049ce4c4d2aae18c00a7352b59f0d38a1d13d26173e79ed7e2a684c336b779",
+    "manifest.json": "8f6c74645fa118f33fdd75002811cc1eba366ab52fe8e1b8a2b020de19b0938d",
+    "models/caelum/folklore/heads/chonchon.md3": "e964cd276998aef8df40be3717b5ff2ccaf1bbf0d327f29e464566d56cc550c5",
+    "models/caelum/folklore/heads/materials.png": "81fc522b7c804e56c00df8661cd3da66cdcd1bb27fa3c6de95e94355dbab5a30",
+    "models/caelum/folklore/heads/umita.md3": "a943f0e14b9ebaf1141a1774db1ce367759d2eb54c6912ab1ded4691eda83ff9",
+    "preview.pk3": "909381fc1b5b3f2c13dba22251020eb11a3743420c8f96a4bc78f55497ac59d6"
+  }
+}

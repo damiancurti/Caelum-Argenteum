@@ -1,6 +1,73 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.79** - 2026-11-15.
+Documentation version: **5.17.80** - 2026-11-15.
+
+## 5.17.80 - Native Umita and Chonchon head candidates (#803)
+
+CaelumBestiary028/035 now use distinct closed head models based on their owned
+concepts. Umita has a pale deformed face, clouded eyes, long gray hair and beard;
+Chonchon has an aged face, hooked nose, short dark hair and membrane ear-wings.
+Face colors follow the actual deformed cranium. Hair/beard locks, wing bones
+and membranes have volume; these are not camera-facing pictures. Editable
+shape/hierarchy/material/pose/contact data and portable OBJ/MTL live in
+assets/source/art/heads_803. The original nine-cell built-in image_gen atlas is
+copied unchanged; MATERIALS_PROMPT.json preserves the exact prompt and source.
+Owned Peuchen wing topology and inherited animation mappings retain provenance.
+
+- umita: 17,114 vertices, 27,552 triangles, 29 closed components, 28 rooted witnesses and 224 independently checked posed contacts
+- chonchon: 14,466 vertices, 23,312 triangles, 36 closed components, 35 rooted witnesses and 280 independently checked posed contacts
+
+Ten artifacts repeat byte-for-byte. All 23 inherited frames have noncollapsed
+native triangles, and 28,414 native material UV vertices remain within their
+assigned atlas cells/face rectangles. The serialized OBJ and neutral MD3
+triangles agree. Sixty-three rooted joints pass 504 independent moved-witness
+checks across idle, attack, final death and rest. The mesh-local floor is zero;
+the authored MODELDEF offset is 16 model units and remains through fall/rest.
+It is a visual hover, not flight or a physics change.
+
+The initial clipped-pole facial primitive produced collapsed MD3 triangles.
+True pole fans correct it, following CA-KP-242. The first export also exposed
+material-cell overflow and wing witnesses unsuitable after transformation;
+new facial UV mapping, extended thumb roots and rechecked overlap correct those
+defects. One repeat per hair lock reduces the observed texture repetition.
+Original image pixels remain exact. Earlier diagnostics stay in the evidence.
+
+The 18,584-entry tested package matches src exactly. Four new
+model assets/bindings and their MODELDEF include are the only art/runtime additions;
+the two current-version diagnostics also advance. All unrelated runtime bytes
+match 5.17.79. Native baseline/old-save/fresh/reload/rollback tests pass 230 assertions;
+actual actions/loot/reload pass 134, including the unchanged Mandinga control:
+364 native assertions, plus 51 after the final Chonchon pose refinement. Both
+final 23-pose capture sets contain their model. Final
+frontal, side, rear, face/hair/wing details and selected run/attack/pain/lying
+captures were inspected. Existing provisional collision, scale policy, combat
+timing, statistics, rewards, identity and saved fields remain unchanged.
+
+A final visual correction folds Chonchon's wings progressively through death
+and rest. The earlier pose perched on a wing tip despite a zero mesh-local
+floor. A binary package/MD3 audit proves only frames 12-17/22 changed; all other
+runtime/art bytes, topology, UVs and bindings are exact. Earlier 364 functional
+assertions and idle presentation samples remain applicable to unchanged behavior
+and frames; 51 additional native assertions and final captures verify the changed
+model. Earlier Chonchon death/rest captures are superseded, not author-approved.
+
+One sequential 700-tic sprite/model pair per species on Windows 11 Pro 26200,
+Ryzen 9 5950X/32GB/RTX 3070 Ti, GZDoom 4.14.2 Vulkan 1280x720, uncapped/no VSync,
+background unpaused and 5% audio observes:
+
+- umita/sprite: 1818.41 queue presents/s, p95 0.7384ms, p99 0.8397ms, maximum 1.3782ms
+- umita/model: 1848.67 queue presents/s, p95 0.6541ms, p99 0.7735ms, maximum 1.0516ms
+- chonchon/sprite: 1849.85 queue presents/s, p95 0.6593ms, p99 0.7938ms, maximum 1.1076ms
+- chonchon/model: 1789.75 queue presents/s, p95 0.7113ms, p99 0.7946ms, maximum 1.2404ms
+
+These are queue intervals, not GPU/display latency or campaign/crowd budgets.
+One pair does not establish repeatability or an optimization. Simplified closed
+component anatomy, opaque hair, projected facial detail, broad wing silhouettes
+and rigid fall/rest poses remain candidates. Conceptual metre sizes, flight,
+apparition powers, new encounter rules and campaign placement are not implemented.
+CA803-HEADS-01 retains author review in the final consolidated handoff. Evidence:
+assets/validation_v5_17_80/evidence/SUMMARY.json. Native candidates cover 27 of 56
+provisional classes; 29 remain, alongside other character/modular/campaign work.
 
 ## 5.17.79 - Apparition regional inspection (#801)
 

@@ -1,0 +1,19 @@
+{
+  "issue": 803,
+  "mode": "built-in image_gen",
+  "intent": "generate",
+  "asset": "One original three-by-three material atlas for two native head-apparition candidates",
+  "reference_images": [
+    "C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/assets/source/bestiary_453/imagenes/04_Apariciones/28_umita.png",
+    "C:/GZDooMProjects/CaelumArgenteum/build/v517/work-713/assets/source/bestiary_453/imagenes/04_Apariciones/35_chonchon.png"
+  ],
+  "prompt": "Use case: stylized-concept. Asset type: production diffuse texture atlas for actual volumetric game meshes, not a concept sheet. Generate one square 1536x1536 image divided into exactly THREE equal columns and THREE equal rows (nine equal square cells), full bleed with NO borders, gaps, lettering, labels or cast shadows. Reference image 1 is the identity/anatomy reference for Umita: pale green-gray spectral older male face, clouded white eyes, long gray-black hair and gray beard. Reference image 2 is the identity/anatomy reference for Chonchon: weathered aged male face with dark swept hair, strong crooked nose, frown and brown eyes; the attached batlike ear-wings supply the membrane material reference. Preserve these distinct identities. They are reference inputs, not edit targets.\nTop row, left to right: (1) Umita's FACE ONLY, exactly straight-on, centered symmetric frontal projection, no head turn, from upper forehead/hairline to chin, facial oval filling the square with ears at the edges, no hanging hair outside the face, short gray beard/moustache retained, cloudy white eyes, closed mouth, pale green-gray skin. (2) Chonchon's FACE ONLY in the same exact straight-on framing, weathered warm pale tan skin, arched frowning brows, hooked nose, brown eyes, clean shaven, closed mouth; no wings or appendages in this face cell. (3) continuous warm brown leathery wing membrane, fine age lines and subtle vein grain, NO visible wing outline or bones.\nMiddle row, left to right: (1) seamless pale green-gray Umita skin with fine wrinkles and restrained pores, no facial features; (2) seamless weathered warm pale tan Chonchon skin, no facial features; (3) seamless matte near-black charcoal mouth/nostril material, subtle variation.\nBottom row, left to right: (1) continuous flowing gray-black hair strands for Umita, predominantly vertical strands, no locks silhouette or empty space; (2) continuous dark brown-black hair strands for Chonchon, predominantly vertical, no locks silhouette or empty space; (3) continuous cloudy ivory eye material with subtle mottling, no pupils or outlined eyeballs.\nAll nine cells must fill their exact equal grid squares. Face cells must be frontal, unforeshortened, eye lines horizontal, broad diffuse even illumination, no dramatic directional light. Match the supplied dark-fantasy painted realism and restrained colors. No bodies, necks, severing wounds, blood, jewelry, new fantasy decorations, grids, text or watermarks. This is a flat usable color map; do not render a 3D ball or a showcase scene. Keep the original concepts' recognizability.",
+  "generated_original": "C:/Users/dcc70/.codex/generated_images/01a1e0be-5f9b-77e2-b703-5f45441eeaad/exec-49f65b5b-6353-42ef-a355-4c3c24757ee3.png",
+  "staged_copy": "C:\\GZDooMProjects\\CaelumArgenteum\\build\\v516\\heads803-materials.png",
+  "sha256": "81fc522b7c804e56c00df8661cd3da66cdcd1bb27fa3c6de95e94355dbab5a30",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "copied_unchanged": true
+}

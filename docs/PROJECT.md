@@ -1,6 +1,17 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.79** - 2026-11-15.
+Documentation version: **5.17.80** - 2026-11-15.
+
+## 5.17.80 - Two native head-apparition candidates (#803)
+
+Umita and Chonchon now have distinct closed heads, hair and membrane ear-wings,
+covering 27 of 56 provisional classes. Ten exports repeat; geometry and 364 native
+save/combat/loot assertions plus 51 final-pose assertions pass. ASSETS records actual visual
+and timing limits.
+CA803-HEADS-01 remains pending consolidated author review. Regional inspection,
+remaining creatures, named/modular characters, fitting, 75 campaign assignments
+and siege rendering remain unfinished. #805/#806 retain narrow metadata/history
+corrections. This patch does not complete the batch or accept its art.
 
 ## 5.17.79 - Apparition regional displays (#801)
 

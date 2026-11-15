@@ -1,0 +1,99 @@
+{
+  "issue": 803,
+  "species": "umita",
+  "scope": "Measure one 700-tic sprite/model pair for a real Umita/Chonchon; no campaign or crowd budget.",
+  "baseline_sha256": "85e741fefa72cedb48265a83ecaab977f2804327480d59e856f5146af1fc8822",
+  "runtime_sha256": "3480fc9a1730dc56c9abc2deba64a9d7714294748163f0a0fc2f68a04ccbc7c9",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+  "runs": [
+    {
+      "kind": "sprite",
+      "pid": 50880,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 395058817.92310005,
+        "END": 395078833.206
+      },
+      "fixture_sha256": "8e426d4a7182108127ca829cbbc84352fb8eff91e11a8c4a0177c45012ddab97",
+      "bench_sha256": "a58bf819e2985ab4a66f0e7b33947b7e4b9f3ce88f824967f0528a0d3d661c8e",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.57087942857143,
+        "p50_ms": 28.5781,
+        "p95_ms": 28.9491,
+        "p99_ms": 29.0526,
+        "max_ms": 29.4463
+      },
+      "presentation": {
+        "pid": 50880,
+        "trace_sha256": "90638e60fcdc8285367eaea423aaa9cf44997ff4734b648887be2fcf41243933",
+        "rows": 45555,
+        "scene_presents": 31850,
+        "mean_present_fps": 1818.4055251557127,
+        "present_intervals": {
+          "samples": 31849,
+          "mean_ms": 0.5499323369655779,
+          "p50_ms": 0.5246999859809875,
+          "p95_ms": 0.7383999824523926,
+          "p99_ms": 0.8396999835968018,
+          "max_ms": 1.3781999945640564
+        },
+        "native_call_duration": {
+          "samples": 31850,
+          "mean_ms": 0.06433282878372695,
+          "p50_ms": 0.0591999888420105,
+          "p95_ms": 0.08809995651245117,
+          "p99_ms": 0.11289995908737183,
+          "max_ms": 0.5194999575614929
+        }
+      }
+    },
+    {
+      "kind": "model",
+      "pid": 39624,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 395093637.978,
+        "END": 395113548.9352
+      },
+      "fixture_sha256": "8e426d4a7182108127ca829cbbc84352fb8eff91e11a8c4a0177c45012ddab97",
+      "bench_sha256": "a58bf819e2985ab4a66f0e7b33947b7e4b9f3ce88f824967f0528a0d3d661c8e",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.57165828571429,
+        "p50_ms": 28.5646,
+        "p95_ms": 28.9374,
+        "p99_ms": 29.0631,
+        "max_ms": 29.1325
+      },
+      "presentation": {
+        "pid": 39624,
+        "trace_sha256": "f61ab061281db72c1d367289d530505ad3e0418ef870b00abcf9cf89e9eef4ca",
+        "rows": 45233,
+        "scene_presents": 32187,
+        "mean_present_fps": 1848.6687652183077,
+        "present_intervals": {
+          "samples": 32186,
+          "mean_ms": 0.5409297862410256,
+          "p50_ms": 0.5253999829292297,
+          "p95_ms": 0.6541000008583069,
+          "p99_ms": 0.7735000252723694,
+          "max_ms": 1.0515999794006348
+        },
+        "native_call_duration": {
+          "samples": 32187,
+          "mean_ms": 0.06395081532732225,
+          "p50_ms": 0.0591999888420105,
+          "p95_ms": 0.08810001611709595,
+          "p99_ms": 0.10479998588562012,
+          "max_ms": 0.5717999935150146
+        }
+      }
+    }
+  ]
+}

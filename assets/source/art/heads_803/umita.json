@@ -1,0 +1,1794 @@
+{
+  "schema_revision": 1,
+  "issue": 803,
+  "catalogue_id": "CA-FOLK-028",
+  "reference": "assets/source/bestiary_453/imagenes/04_Apariciones/28_umita.png",
+  "status": "candidate_author_review_pending",
+  "attachment_root": "cranium",
+  "atlas": {
+    "source_file": "materials.png",
+    "columns": 3,
+    "rows": 3,
+    "inset": 0.012
+  },
+  "preview": {
+    "height_map_units": 100,
+    "model_offset": [
+      0,
+      0,
+      16
+    ]
+  },
+  "parts": {
+    "pelvis": {
+      "parent": null,
+      "pivot": [
+        0,
+        0,
+        56
+      ]
+    },
+    "torso": {
+      "parent": "pelvis",
+      "pivot": [
+        0,
+        0,
+        56
+      ]
+    },
+    "head": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        56
+      ]
+    },
+    "cranium": {
+      "parent": "head",
+      "pivot": [
+        0,
+        0,
+        56
+      ]
+    },
+    "scalp": {
+      "parent": "head",
+      "pivot": [
+        -7,
+        0,
+        65
+      ]
+    },
+    "left_ear": {
+      "parent": "head",
+      "pivot": [
+        -0.5,
+        -17,
+        55
+      ]
+    },
+    "right_ear": {
+      "parent": "head",
+      "pivot": [
+        -0.5,
+        17,
+        55
+      ]
+    },
+    "hair_lock_00": {
+      "parent": "head",
+      "pivot": [
+        1.155942793236533,
+        12.892228270596345,
+        74.575
+      ]
+    },
+    "hair_lock_01": {
+      "parent": "head",
+      "pivot": [
+        -1.2774409965012261,
+        13.866269649895834,
+        74.575
+      ]
+    },
+    "hair_lock_02": {
+      "parent": "head",
+      "pivot": [
+        -3.8319025544420255,
+        14.223649652764772,
+        74.575
+      ]
+    },
+    "hair_lock_03": {
+      "parent": "head",
+      "pivot": [
+        -6.393839749650056,
+        13.94847485941238,
+        74.575
+      ]
+    },
+    "hair_lock_04": {
+      "parent": "head",
+      "pivot": [
+        -8.84931799430793,
+        13.052982855801732,
+        74.575
+      ]
+    },
+    "hair_lock_05": {
+      "parent": "head",
+      "pivot": [
+        -11.089137147903646,
+        11.576998003168523,
+        74.575
+      ]
+    },
+    "hair_lock_06": {
+      "parent": "head",
+      "pivot": [
+        -13.013687870860986,
+        9.586160367211482,
+        74.575
+      ]
+    },
+    "hair_lock_07": {
+      "parent": "head",
+      "pivot": [
+        -14.537381455633202,
+        7.169006570096199,
+        74.575
+      ]
+    },
+    "hair_lock_08": {
+      "parent": "head",
+      "pivot": [
+        -15.592456131609469,
+        4.4330323857552685,
+        74.575
+      ]
+    },
+    "hair_lock_09": {
+      "parent": "head",
+      "pivot": [
+        -16.131990569668705,
+        1.4999121829261037,
+        74.575
+      ]
+    },
+    "hair_lock_10": {
+      "parent": "head",
+      "pivot": [
+        -16.131990569668705,
+        -1.4999121829261004,
+        74.575
+      ]
+    },
+    "hair_lock_11": {
+      "parent": "head",
+      "pivot": [
+        -15.59245613160947,
+        -4.433032385755265,
+        74.575
+      ]
+    },
+    "hair_lock_12": {
+      "parent": "head",
+      "pivot": [
+        -14.537381455633199,
+        -7.169006570096207,
+        74.575
+      ]
+    },
+    "hair_lock_13": {
+      "parent": "head",
+      "pivot": [
+        -13.013687870860986,
+        -9.586160367211484,
+        74.575
+      ]
+    },
+    "hair_lock_14": {
+      "parent": "head",
+      "pivot": [
+        -11.089137147903644,
+        -11.576998003168525,
+        74.575
+      ]
+    },
+    "hair_lock_15": {
+      "parent": "head",
+      "pivot": [
+        -8.84931799430793,
+        -13.052982855801732,
+        74.575
+      ]
+    },
+    "hair_lock_16": {
+      "parent": "head",
+      "pivot": [
+        -6.3938397496500565,
+        -13.94847485941238,
+        74.575
+      ]
+    },
+    "hair_lock_17": {
+      "parent": "head",
+      "pivot": [
+        -3.8319025544420287,
+        -14.223649652764772,
+        74.575
+      ]
+    },
+    "hair_lock_18": {
+      "parent": "head",
+      "pivot": [
+        -1.2774409965012314,
+        -13.866269649895836,
+        74.575
+      ]
+    },
+    "hair_lock_19": {
+      "parent": "head",
+      "pivot": [
+        1.1559427932365347,
+        -12.892228270596343,
+        74.575
+      ]
+    },
+    "beard_lock_0": {
+      "parent": "head",
+      "pivot": [
+        10.175,
+        -7.0175,
+        36.8
+      ]
+    },
+    "beard_lock_1": {
+      "parent": "head",
+      "pivot": [
+        10.175,
+        -3.50875,
+        36.8
+      ]
+    },
+    "beard_lock_2": {
+      "parent": "head",
+      "pivot": [
+        10.175,
+        0.0,
+        36.8
+      ]
+    },
+    "beard_lock_3": {
+      "parent": "head",
+      "pivot": [
+        10.175,
+        3.50875,
+        36.8
+      ]
+    },
+    "beard_lock_4": {
+      "parent": "head",
+      "pivot": [
+        10.175,
+        7.0175,
+        36.8
+      ]
+    }
+  },
+  "shapes": [
+    {
+      "kind": "face",
+      "name": "cranium",
+      "material": "skin",
+      "center": [
+        0,
+        0,
+        56
+      ],
+      "radii": [
+        18,
+        20,
+        27
+      ],
+      "front_projection": {
+        "material": "face",
+        "minimum_x": 0,
+        "y_bounds": [
+          -23,
+          23
+        ],
+        "z_bounds": [
+          29,
+          83
+        ]
+      },
+      "front_deformation": [
+        {
+          "y": -9.5,
+          "z": 64.64,
+          "width_y": 4,
+          "width_z": 3,
+          "depth": -1.6
+        },
+        {
+          "y": -9.5,
+          "z": 68.64,
+          "width_y": 5,
+          "width_z": 2.2,
+          "depth": 1.5
+        },
+        {
+          "y": -11,
+          "z": 56.64,
+          "width_y": 4.8,
+          "width_z": 4.5,
+          "depth": 1.4
+        },
+        {
+          "y": 9.5,
+          "z": 64.64,
+          "width_y": 4,
+          "width_z": 3,
+          "depth": -1.6
+        },
+        {
+          "y": 9.5,
+          "z": 68.64,
+          "width_y": 5,
+          "width_z": 2.2,
+          "depth": 1.5
+        },
+        {
+          "y": 11,
+          "z": 56.64,
+          "width_y": 4.8,
+          "width_z": 4.5,
+          "depth": 1.4
+        },
+        {
+          "y": 0,
+          "z": 59.64,
+          "width_y": 2.5,
+          "width_z": 7,
+          "depth": 2.4
+        },
+        {
+          "y": 0,
+          "z": 52.64,
+          "width_y": 3.8,
+          "width_z": 4.2,
+          "depth": 3.8
+        },
+        {
+          "y": 0,
+          "z": 40.879999999999995,
+          "width_y": 7,
+          "width_z": 2.4,
+          "depth": 0.8
+        },
+        {
+          "y": 0,
+          "z": 36,
+          "width_y": 7,
+          "width_z": 5,
+          "depth": 2
+        }
+      ],
+      "part": "cranium",
+      "latitudes": 48,
+      "longitudes": 72
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "scalp",
+      "material": "hair",
+      "center": [
+        -4,
+        0,
+        59
+      ],
+      "radii": [
+        19,
+        21,
+        28
+      ],
+      "latitudes": 24,
+      "longitudes": 48,
+      "part": "scalp"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "left_ear",
+      "material": "skin",
+      "center": [
+        -0.5,
+        -19,
+        55
+      ],
+      "radii": [
+        3,
+        4.5,
+        6
+      ],
+      "latitudes": 16,
+      "longitudes": 24,
+      "part": "left_ear"
+    },
+    {
+      "kind": "ellipsoid",
+      "name": "right_ear",
+      "material": "skin",
+      "center": [
+        -0.5,
+        19,
+        55
+      ],
+      "radii": [
+        3,
+        4.5,
+        6
+      ],
+      "latitudes": 16,
+      "longitudes": 24,
+      "part": "right_ear"
+    },
+    {
+      "kind": "sweep",
+      "name": "hair_lock_00",
+      "material": "hair",
+      "controls": [
+        [
+          1.071419140888393,
+          12.688309018513099,
+          75,
+          3,
+          3
+        ],
+        [
+          4.452365234813989,
+          20.84507910184295,
+          58,
+          3.8,
+          4.2
+        ],
+        [
+          3.2976017582953876,
+          22.657694675916247,
+          33,
+          3.4,
+          3.2
+        ],
+        [
+          0.6071287113325896,
+          22.657694675916247,
+          15,
+          0.35,
+          0.55
+        ]
+      ],
+      "samples": 24,
+      "segments": 14,
+      "uv_repeats": 1,
+      "tip_pole": true,
+      "part": "hair_lock_00"
+    },
+    {
+      "kind": "sweep",
+      "name": "hair_lock_01",
+      "material": "hair",
+      "controls": [
+        [
+          -1.3220731113126813,
+          13.64694376791154,
+          75,
+          3,
+          3
+        ],
+        [
+          0.4632114811455308,
+          22.419979047283245,
+          58,
+          3.8,
+          4.2
+        ],
+        [
+          -1.0904673707399164,
+          24.36954244269918,
+          33,
+          3.4,
+          3.2
+        ],
+        [
+          -2.983109666969022,
+          24.36954244269918,
+          17,
+          0.35,
+          0.55
+        ]
+      ],
+      "samples": 24,
+      "segments": 14,
+      "uv_repeats": 1,
+      "tip_pole": true,
+      "part": "hair_lock_01"
+    },
+    {
+      "kind": "sweep",
+      "name": "hair_lock_02",
+      "material": "hair",
+      "controls": [
+        [
+          -3.8346582502708446,
+          13.998671011508387,
+          75,
+          3,
+          3
+        ],
+        [
+          -3.7244304171180747,
+          22.99781666176378,
+          58,
+          3.8,
+          4.2
+        ],
+        [
+          -5.696873458829882,
+          24.99762680626498,
+          33,
+          3.4,
+          3.2
+        ],
+        [
+          -6.751987375406268,
+          24.99762680626498,
+          19,
+          0.35,
+          0.55
+        ]
+      ],
+      "samples": 24,
+      "segments": 14,
+      "uv_repeats": 1,
+      "tip_pole": true,
+      "part": "hair_lock_02"
+    },
+    {
+      "kind": "sweep",
+      "name": "hair_lock_03",
+      "material": "hair",
+      "controls": [
+        [
+          -6.3545964750656285,
+          13.727848719281077,
+          75,
+          3,
+          3
+        ],
+        [
+          -7.924327458442715,
+          22.5528943245332,
+          58,
+          3.8,
+          4.2
+        ],
+        [
+          -10.316760204286986,
+          24.51401557014478,
+          33,
+          3.4,
+          3.2
+        ],
+        [
+          -10.531894712598444,
+          24.51401557014478,
+          21,
+          0.35,
+          0.55
+        ]
+      ],
+      "samples": 24,
+      "segments": 14,
+      "uv_repeats": 1,
+      "tip_pole": true,
+      "part": "hair_lock_03"
+    },
+    {
+      "kind": "sweep",
+      "name": "hair_lock_04",
+      "material": "hair",
+      "controls": [
+        [
+          -8.7698209780078,
+          12.846520912564095,
+          75,
+          3,
+          3
+        ],
+        [
+          -11.949701630013001,
+          21.104998642069585,
+          58,
+          3.8,
+          4.2
+        ],
+        [
+          -14.744671793014302,
+          22.940215915293027,
+          33,
+          3.4,
+          3.2
+        ],
+        [
+          -14.1547314670117,
+          22.940215915293027,
+          15,
+          0.35,
+          0.55
+        ]
+      ],
+      "samples": 24,
+      "segments": 14,
+      "uv_repeats": 1,
+      "tip_pole": true,
+      "part": "hair_lock_04"
+    },
+    {
+      "kind": "sweep",
+      "name": "hair_lock_05",
+      "material": "hair",
+      "controls": [
+        [
+          -10.972921784823258,
+          11.39388204178273,
+          75,
+          3,
+          3
+        ],
+        [
+          -15.621536308038765,
+          18.718520497214485,
+          58,
+          3.8,
+          4.2
+        ],
+        [
+          -18.78368993884264,
+          20.346217931754875,
+          33,
+          3.4,
+          3.2
+        ],
+        [
+          -17.45938267723489,
+          20.346217931754875,
+          17,
+          0.35,
+          0.55
+        ]
+      ],
+      "samples": 24,
+      "segments": 14,
+      "uv_repeats": 1,
+      "tip_pole": true,
+      "part": "hair_lock_05"
+    },
+    {
+      "kind": "sweep",
+      "name": "hair_lock_06",
+      "material": "hair",
+      "controls": [
+        [
+          -12.865922495928839,
+          9.434533929065783,
+          75,
+          3,
+          3
+        ],
+        [
+          -18.776537493214732,
+          15.499591454893785,
+          58,
+          3.8,
+          4.2
+        ],
+        [
+          -22.254191242536205,
+          16.8473820161889,
+          33,
+          3.4,
+          3.2
+        ],
+        [
+          -20.298883743893256,
+          16.8473820161889,
+          19,
+          0.35,
+          0.55
+        ]
+      ],
+      "samples": 24,
+      "segments": 14,
+      "uv_repeats": 1,
+      "tip_pole": true,
+      "part": "hair_lock_06"
+    },
+    {
+      "kind": "sweep",
+      "name": "hair_lock_07",
+      "material": "hair",
+      "controls": [
+        [
+          -14.364637497344134,
+          7.0556127930648005,
+          75,
+          3,
+          3
+        ],
+        [
+          -21.27439582890689,
+          11.591363874320743,
+          58,
+          3.8,
+          4.2
+        ],
+        [
+          -25.00183541179758,
+          12.599308559044287,
+          33,
+          3.4,
+          3.2
+        ],
+        [
+          -22.5469562460162,
+          12.599308559044287,
+          21,
+          0.35,
+          0.55
+        ]
+      ],
+      "samples": 24,
+      "segments": 14,
+      "uv_repeats": 1,
+      "tip_pole": true,
+      "part": "hair_lock_07"
+    },
+    {
+      "kind": "sweep",
+      "name": "hair_lock_08",
+      "material": "hair",
+      "controls": [
+        [
+          -15.402415867156854,
+          4.362914123063182,
+          75,
+          3,
+          3
+        ],
+        [
+          -23.004026445261424,
+          7.167644630746655,
+          58,
+          3.8,
+          4.2
+        ],
+        [
+          -26.904429089787566,
+          7.790918076898539,
+          33,
+          3.4,
+          3.2
+        ],
+        [
+          -24.10362380073528,
+          7.790918076898539,
+          15,
+          0.35,
+          0.55
+        ]
+      ],
+      "samples": 24,
+      "segments": 14,
+      "uv_repeats": 1,
+      "tip_pole": true,
+      "part": "hair_lock_08"
+    },
+    {
+      "kind": "sweep",
+      "name": "hair_lock_09",
+      "material": "hair",
+      "controls": [
+        [
+          -15.93310547836266,
+          1.4761877371504712,
+          75,
+          3,
+          3
+        ],
+        [
+          -23.888509130604433,
+          2.4251655681757742,
+          58,
+          3.8,
+          4.2
+        ],
+        [
+          -27.877360043664876,
+          2.6360495306258414,
+          33,
+          3.4,
+          3.2
+        ],
+        [
+          -24.89965821754399,
+          2.6360495306258414,
+          17,
+          0.35,
+          0.55
+        ]
+      ],
+      "samples": 24,
+      "segments": 14,
+      "uv_repeats": 1,
+      "tip_pole": true,
+      "part": "hair_lock_09"
+    },
+    {
+      "kind": "sweep",
+      "name": "hair_lock_10",
+      "material": "hair",
+      "controls": [
+        [
+          -15.93310547836266,
+          -1.476187737150468,
+          75,
+          3,
+          3
+        ],
+        [
+          -23.888509130604433,
+          -2.425165568175769,
+          58,
+          3.8,
+          4.2
+        ],
+        [
+          -27.877360043664876,
+          -2.6360495306258356,
+          33,
+          3.4,
+          3.2
+        ],
+        [
+          -24.89965821754399,
+          -2.6360495306258356,
+          19,
+          0.35,
+          0.55
+        ]
+      ],
+      "samples": 24,
+      "segments": 14,
+      "uv_repeats": 1,
+      "tip_pole": true,
+      "part": "hair_lock_10"
+    },
+    {
+      "kind": "sweep",
+      "name": "hair_lock_11",
+      "material": "hair",
+      "controls": [
+        [
+          -15.402415867156856,
+          -4.362914123063178,
+          75,
+          3,
+          3
+        ],
+        [
+          -23.004026445261427,
+          -7.167644630746651,
+          58,
+          3.8,
+          4.2
+        ],
+        [
+          -26.90442908978757,
+          -7.790918076898532,
+          33,
+          3.4,
+          3.2
+        ],
+        [
+          -24.103623800735285,
+          -7.790918076898532,
+          21,
+          0.35,
+          0.55
+        ]
+      ],
+      "samples": 24,
+      "segments": 14,
+      "uv_repeats": 1,
+      "tip_pole": true,
+      "part": "hair_lock_11"
+    },
+    {
+      "kind": "sweep",
+      "name": "hair_lock_12",
+      "material": "hair",
+      "controls": [
+        [
+          -14.36463749734413,
+          -7.0556127930648085,
+          75,
+          3,
+          3
+        ],
+        [
+          -21.274395828906883,
+          -11.591363874320756,
+          58,
+          3.8,
+          4.2
+        ],
+        [
+          -25.001835411797572,
+          -12.599308559044301,
+          33,
+          3.4,
+          3.2
+        ],
+        [
+          -22.546956246016194,
+          -12.599308559044301,
+          15,
+          0.35,
+          0.55
+        ]
+      ],
+      "samples": 24,
+      "segments": 14,
+      "uv_repeats": 1,
+      "tip_pole": true,
+      "part": "hair_lock_12"
+    },
+    {
+      "kind": "sweep",
+      "name": "hair_lock_13",
+      "material": "hair",
+      "controls": [
+        [
+          -12.865922495928839,
+          -9.434533929065784,
+          75,
+          3,
+          3
+        ],
+        [
+          -18.77653749321473,
+          -15.499591454893787,
+          58,
+          3.8,
+          4.2
+        ],
+        [
+          -22.2541912425362,
+          -16.8473820161889,
+          33,
+          3.4,
+          3.2
+        ],
+        [
+          -20.298883743893256,
+          -16.8473820161889,
+          17,
+          0.35,
+          0.55
+        ]
+      ],
+      "samples": 24,
+      "segments": 14,
+      "uv_repeats": 1,
+      "tip_pole": true,
+      "part": "hair_lock_13"
+    },
+    {
+      "kind": "sweep",
+      "name": "hair_lock_14",
+      "material": "hair",
+      "controls": [
+        [
+          -10.972921784823257,
+          -11.393882041782732,
+          75,
+          3,
+          3
+        ],
+        [
+          -15.62153630803876,
+          -18.718520497214488,
+          58,
+          3.8,
+          4.2
+        ],
+        [
+          -18.783689938842635,
+          -20.34621793175488,
+          33,
+          3.4,
+          3.2
+        ],
+        [
+          -17.459382677234885,
+          -20.34621793175488,
+          19,
+          0.35,
+          0.55
+        ]
+      ],
+      "samples": 24,
+      "segments": 14,
+      "uv_repeats": 1,
+      "tip_pole": true,
+      "part": "hair_lock_14"
+    },
+    {
+      "kind": "sweep",
+      "name": "hair_lock_15",
+      "material": "hair",
+      "controls": [
+        [
+          -8.7698209780078,
+          -12.846520912564095,
+          75,
+          3,
+          3
+        ],
+        [
+          -11.949701630013001,
+          -21.104998642069585,
+          58,
+          3.8,
+          4.2
+        ],
+        [
+          -14.744671793014302,
+          -22.940215915293027,
+          33,
+          3.4,
+          3.2
+        ],
+        [
+          -14.1547314670117,
+          -22.940215915293027,
+          21,
+          0.35,
+          0.55
+        ]
+      ],
+      "samples": 24,
+      "segments": 14,
+      "uv_repeats": 1,
+      "tip_pole": true,
+      "part": "hair_lock_15"
+    },
+    {
+      "kind": "sweep",
+      "name": "hair_lock_16",
+      "material": "hair",
+      "controls": [
+        [
+          -6.354596475065629,
+          -13.727848719281077,
+          75,
+          3,
+          3
+        ],
+        [
+          -7.924327458442716,
+          -22.5528943245332,
+          58,
+          3.8,
+          4.2
+        ],
+        [
+          -10.316760204286988,
+          -24.51401557014478,
+          33,
+          3.4,
+          3.2
+        ],
+        [
+          -10.531894712598444,
+          -24.51401557014478,
+          15,
+          0.35,
+          0.55
+        ]
+      ],
+      "samples": 24,
+      "segments": 14,
+      "uv_repeats": 1,
+      "tip_pole": true,
+      "part": "hair_lock_16"
+    },
+    {
+      "kind": "sweep",
+      "name": "hair_lock_17",
+      "material": "hair",
+      "controls": [
+        [
+          -3.8346582502708477,
+          -13.998671011508387,
+          75,
+          3,
+          3
+        ],
+        [
+          -3.7244304171180795,
+          -22.99781666176378,
+          58,
+          3.8,
+          4.2
+        ],
+        [
+          -5.696873458829888,
+          -24.99762680626498,
+          33,
+          3.4,
+          3.2
+        ],
+        [
+          -6.751987375406272,
+          -24.99762680626498,
+          17,
+          0.35,
+          0.55
+        ]
+      ],
+      "samples": 24,
+      "segments": 14,
+      "uv_repeats": 1,
+      "tip_pole": true,
+      "part": "hair_lock_17"
+    },
+    {
+      "kind": "sweep",
+      "name": "hair_lock_18",
+      "material": "hair",
+      "controls": [
+        [
+          -1.3220731113126867,
+          -13.646943767911543,
+          75,
+          3,
+          3
+        ],
+        [
+          0.4632114811455219,
+          -22.41997904728325,
+          58,
+          3.8,
+          4.2
+        ],
+        [
+          -1.0904673707399262,
+          -24.36954244269918,
+          33,
+          3.4,
+          3.2
+        ],
+        [
+          -2.98310966696903,
+          -24.36954244269918,
+          19,
+          0.35,
+          0.55
+        ]
+      ],
+      "samples": 24,
+      "segments": 14,
+      "uv_repeats": 1,
+      "tip_pole": true,
+      "part": "hair_lock_18"
+    },
+    {
+      "kind": "sweep",
+      "name": "hair_lock_19",
+      "material": "hair",
+      "controls": [
+        [
+          1.0714191408883948,
+          -12.688309018513097,
+          75,
+          3,
+          3
+        ],
+        [
+          4.452365234813993,
+          -20.845079101842945,
+          58,
+          3.8,
+          4.2
+        ],
+        [
+          3.297601758295391,
+          -22.657694675916247,
+          33,
+          3.4,
+          3.2
+        ],
+        [
+          0.6071287113325932,
+          -22.657694675916247,
+          21,
+          0.35,
+          0.55
+        ]
+      ],
+      "samples": 24,
+      "segments": 14,
+      "uv_repeats": 1,
+      "tip_pole": true,
+      "part": "hair_lock_19"
+    },
+    {
+      "kind": "sweep",
+      "name": "beard_lock_0",
+      "material": "hair",
+      "controls": [
+        [
+          10,
+          -7,
+          37,
+          2.8,
+          3.5
+        ],
+        [
+          17,
+          -7.700000000000001,
+          29,
+          3.1,
+          3.2
+        ],
+        [
+          16,
+          -6.3,
+          19,
+          2.4,
+          2.5
+        ],
+        [
+          17,
+          -4.2,
+          14.5,
+          0.35,
+          0.5
+        ]
+      ],
+      "samples": 24,
+      "segments": 14,
+      "uv_repeats": 1,
+      "tip_pole": true,
+      "part": "beard_lock_0"
+    },
+    {
+      "kind": "sweep",
+      "name": "beard_lock_1",
+      "material": "hair",
+      "controls": [
+        [
+          10,
+          -3.5,
+          37,
+          2.8,
+          3.5
+        ],
+        [
+          17,
+          -3.8500000000000005,
+          29,
+          3.1,
+          3.2
+        ],
+        [
+          16,
+          -3.15,
+          19,
+          2.4,
+          2.5
+        ],
+        [
+          17,
+          -2.1,
+          12.75,
+          0.35,
+          0.5
+        ]
+      ],
+      "samples": 24,
+      "segments": 14,
+      "uv_repeats": 1,
+      "tip_pole": true,
+      "part": "beard_lock_1"
+    },
+    {
+      "kind": "sweep",
+      "name": "beard_lock_2",
+      "material": "hair",
+      "controls": [
+        [
+          10,
+          0,
+          37,
+          2.8,
+          3.5
+        ],
+        [
+          17,
+          0.0,
+          29,
+          3.1,
+          3.2
+        ],
+        [
+          16,
+          0.0,
+          19,
+          2.4,
+          2.5
+        ],
+        [
+          17,
+          0.0,
+          11.0,
+          0.35,
+          0.5
+        ]
+      ],
+      "samples": 24,
+      "segments": 14,
+      "uv_repeats": 1,
+      "tip_pole": true,
+      "part": "beard_lock_2"
+    },
+    {
+      "kind": "sweep",
+      "name": "beard_lock_3",
+      "material": "hair",
+      "controls": [
+        [
+          10,
+          3.5,
+          37,
+          2.8,
+          3.5
+        ],
+        [
+          17,
+          3.8500000000000005,
+          29,
+          3.1,
+          3.2
+        ],
+        [
+          16,
+          3.15,
+          19,
+          2.4,
+          2.5
+        ],
+        [
+          17,
+          2.1,
+          12.75,
+          0.35,
+          0.5
+        ]
+      ],
+      "samples": 24,
+      "segments": 14,
+      "uv_repeats": 1,
+      "tip_pole": true,
+      "part": "beard_lock_3"
+    },
+    {
+      "kind": "sweep",
+      "name": "beard_lock_4",
+      "material": "hair",
+      "controls": [
+        [
+          10,
+          7,
+          37,
+          2.8,
+          3.5
+        ],
+        [
+          17,
+          7.700000000000001,
+          29,
+          3.1,
+          3.2
+        ],
+        [
+          16,
+          6.3,
+          19,
+          2.4,
+          2.5
+        ],
+        [
+          17,
+          4.2,
+          14.5,
+          0.35,
+          0.5
+        ]
+      ],
+      "samples": 24,
+      "segments": 14,
+      "uv_repeats": 1,
+      "tip_pole": true,
+      "part": "beard_lock_4"
+    }
+  ],
+  "motion": {
+    "idle": {
+      "frames": 16,
+      "tics": 6,
+      "transforms": {
+        "head": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 1.2
+          }
+        ],
+        "hair_lock_00": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 0.7
+          }
+        ],
+        "hair_lock_01": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 0.7
+          }
+        ],
+        "hair_lock_02": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 0.7
+          }
+        ],
+        "hair_lock_03": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 0.7
+          }
+        ],
+        "hair_lock_04": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 0.7
+          }
+        ],
+        "hair_lock_05": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 0.7
+          }
+        ],
+        "hair_lock_06": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 0.7
+          }
+        ],
+        "hair_lock_07": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 0.7
+          }
+        ],
+        "hair_lock_08": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 0.7
+          }
+        ],
+        "hair_lock_09": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 0.7
+          }
+        ],
+        "hair_lock_10": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 0.7
+          }
+        ],
+        "hair_lock_11": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 0.7
+          }
+        ],
+        "hair_lock_12": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 0.7
+          }
+        ],
+        "hair_lock_13": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 0.7
+          }
+        ],
+        "hair_lock_14": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 0.7
+          }
+        ],
+        "hair_lock_15": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 0.7
+          }
+        ],
+        "hair_lock_16": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 0.7
+          }
+        ],
+        "hair_lock_17": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 0.7
+          }
+        ],
+        "hair_lock_18": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 0.7
+          }
+        ],
+        "hair_lock_19": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 0.7
+          }
+        ]
+      }
+    },
+    "walk": {
+      "frames": 24,
+      "tics": 3,
+      "transforms": {
+        "head": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 3.5
+          }
+        ],
+        "hair_lock_00": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 1.6
+          }
+        ],
+        "hair_lock_01": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 1.6
+          }
+        ],
+        "hair_lock_02": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 1.6
+          }
+        ],
+        "hair_lock_03": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 1.6
+          }
+        ],
+        "hair_lock_04": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 1.6
+          }
+        ],
+        "hair_lock_05": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 1.6
+          }
+        ],
+        "hair_lock_06": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 1.6
+          }
+        ],
+        "hair_lock_07": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 1.6
+          }
+        ],
+        "hair_lock_08": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 1.6
+          }
+        ],
+        "hair_lock_09": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 1.6
+          }
+        ],
+        "hair_lock_10": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 1.6
+          }
+        ],
+        "hair_lock_11": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 1.6
+          }
+        ],
+        "hair_lock_12": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 1.6
+          }
+        ],
+        "hair_lock_13": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 1.6
+          }
+        ],
+        "hair_lock_14": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 1.6
+          }
+        ],
+        "hair_lock_15": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 1.6
+          }
+        ],
+        "hair_lock_16": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 1.6
+          }
+        ],
+        "hair_lock_17": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 1.6
+          }
+        ],
+        "hair_lock_18": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 1.6
+          }
+        ],
+        "hair_lock_19": [
+          {
+            "kind": "rotate",
+            "axis": "x",
+            "amplitude": 1.6
+          }
+        ]
+      }
+    }
+  },
+  "materials": {
+    "skin": {
+      "tile": [
+        0,
+        1
+      ],
+      "native_batch": "atlas"
+    },
+    "hair": {
+      "tile": [
+        0,
+        2
+      ],
+      "native_batch": "atlas"
+    },
+    "membrane": {
+      "tile": [
+        2,
+        0
+      ],
+      "native_batch": "atlas"
+    },
+    "dark": {
+      "tile": [
+        2,
+        1
+      ],
+      "native_batch": "atlas"
+    },
+    "cloudy_eye": {
+      "tile": [
+        2,
+        2
+      ],
+      "native_batch": "atlas"
+    },
+    "face": {
+      "uv_rect": [
+        0.004,
+        0.004,
+        0.3293333333333333,
+        0.3293333333333333
+      ],
+      "native_batch": "atlas"
+    }
+  },
+  "anatomy_basis": "Owned spectral long-haired male head with clouded eyes and beard.",
+  "limits": "Rendered model offset, hair motion and ear-wing flaps are visual only. No flight, new collision, metre-scale adoption, apparition powers or campaign placement."
+}
