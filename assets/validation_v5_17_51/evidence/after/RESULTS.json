@@ -1,0 +1,20 @@
+{
+  "issue": 745,
+  "passed": true,
+  "expect_broken": false,
+  "checks": 78,
+  "expected_faults": 0,
+  "observed_faults": [],
+  "errors": [],
+  "exit_code": 0,
+  "runtime_sha256": "3a3e6f95119d28e21635dd10b2978da22427ab4fcfc304edf70952065ba64d21",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "fixture_sha256": "32b656a8e6ea10cba3b489e793b7e41d56ac50ae37335c9b4b98f393ae23d30b",
+  "source_sha256": {
+    "assets/validation_v5_17_44/hide_drops.zs": "1e89a21a4cc62f497cf5a9df4441860a75ab76b52b2a0f5ae1e21d8e76833344",
+    "assets/validation_v5_17_45/textile_drops.zs": "0e760c6a2bc5db0e0b3200a00e7228797f31b1f43b6930518af983b238171715",
+    "assets/validation_v5_17_49/hygiene_drops.zs": "51f798bc70644c670e5356f37af276c32df907eff6850ae9c2ed3a1599b724d4"
+  },
+  "scope": "Actual fixture F9/F10 event chains, item index, angle, camera and raised/grounded state. No production change or author acceptance.",
+  "author_accepted": false
+}

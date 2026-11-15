@@ -111,7 +111,7 @@ class CA731HideEvents : EventHandler
             if(Drops.Size()==0)return;
             if(e.Name=="ca731_detail"){DetailIndex=e.Args[0];DetailAngle=e.Args[1];}
             if(e.Name=="ca731_next")DetailIndex=(DetailIndex+1)%4;
-            if(e.Name=="ca731_rotate")DetailAngle=DetailAngle==90?160:DetailAngle==160?225:DetailAngle==225?270:DetailAngle==60?0:90;
+            if(e.Name=="ca731_rotate")DetailAngle=DetailAngle==90?160:DetailAngle==160?225:DetailAngle==225?270:DetailAngle==270?0:90;
             if(DetailIndex<0 || DetailIndex>=4)return;
             static const double extents[]={DETAIL_EXTENTS};static const double heights[]={DETAIL_HEIGHTS};
             for(int i=0;i<Drops.Size();i++){Drops[i].bInvisible=i!=DetailIndex;Drops[i].bNOGRAVITY=false;Drops[i].Vel=(0,0,0);Drops[i].SetOrigin(((i%6-2.5)*44,(i/6)*50,0),false);}

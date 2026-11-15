@@ -250,11 +250,13 @@ Expected: three new appearances match approved regions, remain bound to their na
 
 CA731-HIDE-DROPS-01 | Origin: 5.17.44 / #731 | Pending author acceptance.
 Prerequisites: current package and a fresh isolated output directory, without a campaign save. Run python assets/validation_v5_17_44/run_hide_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/hides-author-01 --interactive.
+Controls correction (5.17.51/#745): F10 now cycles90,160,225,270,raised underside0,90; F9 selects the next design. Original test origin and pending acceptance are unchanged.
 Steps: inspect floor/front/rear views with F1-F8, cycle four designs with F9 and rotate details with F10. For a raised underside, open the console and run netevent ca731_detail 0 0 (replace the first 0 with design index 1, 2 or 3). Compare leather, cow hide, predator hide and monster hide with the original icons. Inspect folds, reverse surfaces and closed edges, then test ordinary pickup/drop, crafting and save/reload separately, preserving three leather tiers and the three untiered hides.
 Expected: actual closed thickness, stable floor contact and correct exterior versus leather reverse/rim materials. Review polygonal outlines, folds, russet edge contrast and painted scale size explicitly. Icons, amounts, tiers, rules and collision remain unchanged; API probes are not ordinary menu/crafting or author visual acceptance.
 
 CA733-TEXTILE-DROPS-01 | Origin: 5.17.45 / #733 | Pending author acceptance.
 Prerequisites: current package and a fresh isolated output directory, without a campaign save. Run python assets/validation_v5_17_45/run_textile_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/textiles-author-01 --interactive.
+Controls correction (5.17.51/#745): F10 now cycles90,160,225,270,raised underside0,90; F9 selects the next design. Original test origin and pending acceptance are unchanged.
 Steps: inspect floor/front/rear views with F1-F8, cycle six designs with F9 and rotate details/raised undersides with F10. Compare cloth, wool, cotton, raw silk, plant fiber and rope with their original icons. Inspect open folds, coils and connected fibers/husks, then test ordinary pickup/drop, crafting and save/reload separately, preserving three fabric tiers and the five untiered materials.
 Expected: actual closed volumes, visible fold/coil spaces, joined parts and stable floor contact. Review regular folds, shallow fleece locks, upright cotton posture and silk/fiber/binding details explicitly. Icons, tiers, amounts, rules and collision remain unchanged; API probes are not ordinary menu/crafting or author visual acceptance.
 
@@ -275,6 +277,7 @@ Expected: both appearances match approved regions, retain native model/identity/
 
 CA741-HYGIENE-DROPS-01 | Origin: 5.17.49 / #741 | Pending author acceptance.
 Prerequisites: current package and a fresh isolated output directory, without a campaign save. Run python assets/validation_v5_17_49/run_hygiene_drops.py --runtime build/caelum_argenteum_dev.pk3 --output build/hygiene-author-01 --interactive.
+Controls correction (5.17.51/#745): F10 now cycles90,160,225,270,raised underside0,90; F9 selects the next design. Original test origin and pending acceptance are unchanged.
 Steps: inspect floor/front/rear views with F1-F8; F9 cycles the three designs and F10 rotates details/raised undersides. Compare with the accepted fat, alkali and soap icons. Inspect fat lobes and seam, jar color/rim/interior/flakes/underside and soap bevels. Separately exercise ordinary pickup/drop, soap crafting, washing and save/reload in a disposable test session.
 Expected: solid grounded objects with a real open jar mouth and complete undersides. Review simplified fat relief/wrap seam, russet ceramic/underside UV swirl, flake shapes and regular soap bevels explicitly. Icons, normalized tier1, quantities, lot/provenance data and hygiene rules stay unchanged. The jar does not become a new item; the cloth remains unchanged. API probes do not establish ordinary menu/hygiene or author visual acceptance.
 
