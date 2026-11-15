@@ -1,0 +1,6 @@
+Model CaelumWeaponPickup { Path "models/caelum/inventory/magic_bases" Model 0 "staff.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CSTF A 0 0 }
+Model CA_LimboMagicImplement { Path "models/caelum/inventory/magic_bases" Model 0 "staff.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CSTF A 0 0 }
+Model CaelumWeaponPickup { Path "models/caelum/inventory/magic_bases" Model 0 "bell.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CBEL A 0 0 }
+Model CA_LimboMagicImplement { Path "models/caelum/inventory/magic_bases" Model 0 "bell.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CBEL A 0 0 }
+Model CaelumWeaponPickup { Path "models/caelum/inventory/magic_bases" Model 0 "statuette.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CSTA A 0 0 }
+Model CA_LimboMagicImplement { Path "models/caelum/inventory/magic_bases" Model 0 "statuette.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CSTA A 0 0 }

@@ -1029,3 +1029,11 @@ assets/validation_v5_17_42/evidence/** -text -diff
 /assets/validation_v5_17_56/evidence/** -text -diff
 /src/models/caelum/inventory/magic_bases/** -text -diff
 /src/caelum/data/inventory_magic_bases.modeldef text eol=lf
+
+# #757 exact magical weapon bindings and raw native evidence.
+/assets/generators/*inventory_magic_weapon_bindings.py text eol=lf
+/assets/source/art/inventory_models_647/magic_weapons/** text eol=lf
+/assets/validation_v5_17_57/*.py text eol=lf
+/assets/validation_v5_17_57/*.zs text eol=lf
+/assets/validation_v5_17_57/evidence/** -text -diff
+/src/caelum/data/inventory_magic_weapons.modeldef text eol=lf
