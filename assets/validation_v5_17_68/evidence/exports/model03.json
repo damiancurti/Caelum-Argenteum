@@ -1,0 +1,480 @@
+{
+  "schema_revision": 1,
+  "issue": 779,
+  "parent_issue": 647,
+  "status": "candidate_author_review_pending",
+  "variants": {
+    "magic": {
+      "class": "CaelumArmorPickup",
+      "parts": [
+        "left_palm_cuff",
+        "left_finger_0",
+        "left_finger_1",
+        "left_finger_2",
+        "left_finger_3",
+        "left_thumb",
+        "left_cuff_trim",
+        "left_cuff_patch",
+        "left_gold_mark0",
+        "left_gold_mark1",
+        "left_gold_mark2",
+        "left_gold_mark3",
+        "left_gold_mark4",
+        "left_gold_mark5",
+        "right_palm_cuff",
+        "right_finger_0",
+        "right_finger_1",
+        "right_finger_2",
+        "right_finger_3",
+        "right_thumb",
+        "right_cuff_trim",
+        "right_cuff_patch",
+        "right_gold_mark0",
+        "right_gold_mark1",
+        "right_gold_mark2",
+        "right_gold_mark3",
+        "right_gold_mark4",
+        "right_gold_mark5"
+      ],
+      "closed_outward_components": 28,
+      "vertices": 11168,
+      "triangles": 4576,
+      "surfaces": [
+        {
+          "material": "leather",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "leather",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "leather",
+          "vertices": 1314,
+          "triangles": 438
+        },
+        {
+          "material": "gold",
+          "vertices": 1664,
+          "triangles": 1408
+        }
+      ],
+      "reference_opaque_bounds": [
+        13,
+        8,
+        115,
+        120
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -45.92659325268485,
+            -7.874449677463721,
+            0.0
+          ],
+          "max": [
+            45.92659325268485,
+            11.611099673741728,
+            112.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.2455499987593364,
+        "floor": 1.8108183042157933
+      }
+    },
+    "light": {
+      "class": "CaelumArmorPickup",
+      "parts": [
+        "left_palm_cuff",
+        "left_finger_0",
+        "left_finger_1",
+        "left_finger_2",
+        "left_finger_3",
+        "left_thumb",
+        "left_cuff_trim",
+        "left_knuckle_strap",
+        "left_steel_rivet0",
+        "left_steel_rivet1",
+        "left_steel_rivet2",
+        "left_steel_rivet3",
+        "left_wrist_strap",
+        "left_wrist_buckle",
+        "right_palm_cuff",
+        "right_finger_0",
+        "right_finger_1",
+        "right_finger_2",
+        "right_finger_3",
+        "right_thumb",
+        "right_cuff_trim",
+        "right_knuckle_strap",
+        "right_steel_rivet0",
+        "right_steel_rivet1",
+        "right_steel_rivet2",
+        "right_steel_rivet3",
+        "right_wrist_strap",
+        "right_wrist_buckle"
+      ],
+      "closed_outward_components": 28,
+      "vertices": 11504,
+      "triangles": 6368,
+      "surfaces": [
+        {
+          "material": "steel",
+          "vertices": 1296,
+          "triangles": 2112
+        },
+        {
+          "material": "leather",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "leather",
+          "vertices": 4096,
+          "triangles": 1792
+        },
+        {
+          "material": "leather",
+          "vertices": 2017,
+          "triangles": 1099
+        }
+      ],
+      "reference_opaque_bounds": [
+        9,
+        17,
+        119,
+        112
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 95.0,
+      "native_bounds": [
+        {
+          "min": [
+            -45.63369406102232,
+            -6.679220708562977,
+            0.0
+          ],
+          "max": [
+            45.63369406102232,
+            9.848700616120215,
+            95.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.05649330251908,
+        "floor": 1.8108183042157933
+      }
+    },
+    "medium": {
+      "class": "CaelumArmorPickup",
+      "parts": [
+        "left_palm_cuff",
+        "left_finger_0",
+        "left_finger_1",
+        "left_finger_2",
+        "left_finger_3",
+        "left_thumb",
+        "left_cuff_trim",
+        "left_back_plate",
+        "left_knuckle0",
+        "left_knuckle1",
+        "left_knuckle2",
+        "left_knuckle3",
+        "left_finger_plate0_0",
+        "left_finger_plate0_1",
+        "left_finger_plate0_2",
+        "left_finger_plate1_0",
+        "left_finger_plate1_1",
+        "left_finger_plate1_2",
+        "left_finger_plate2_0",
+        "left_finger_plate2_1",
+        "left_finger_plate2_2",
+        "left_finger_plate3_0",
+        "left_finger_plate3_1",
+        "left_finger_plate3_2",
+        "left_trim_mark0",
+        "left_trim_mark1",
+        "left_trim_mark2",
+        "right_palm_cuff",
+        "right_finger_0",
+        "right_finger_1",
+        "right_finger_2",
+        "right_finger_3",
+        "right_thumb",
+        "right_cuff_trim",
+        "right_back_plate",
+        "right_knuckle0",
+        "right_knuckle1",
+        "right_knuckle2",
+        "right_knuckle3",
+        "right_finger_plate0_0",
+        "right_finger_plate0_1",
+        "right_finger_plate0_2",
+        "right_finger_plate1_0",
+        "right_finger_plate1_1",
+        "right_finger_plate1_2",
+        "right_finger_plate2_0",
+        "right_finger_plate2_1",
+        "right_finger_plate2_2",
+        "right_finger_plate3_0",
+        "right_finger_plate3_1",
+        "right_finger_plate3_2",
+        "right_trim_mark0",
+        "right_trim_mark1",
+        "right_trim_mark2"
+      ],
+      "closed_outward_components": 54,
+      "vertices": 21584,
+      "triangles": 9728,
+      "surfaces": [
+        {
+          "material": "steel",
+          "vertices": 4095,
+          "triangles": 2205
+        },
+        {
+          "material": "steel",
+          "vertices": 4095,
+          "triangles": 2205
+        },
+        {
+          "material": "steel",
+          "vertices": 3282,
+          "triangles": 1094
+        },
+        {
+          "material": "leather",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "leather",
+          "vertices": 4096,
+          "triangles": 1792
+        },
+        {
+          "material": "leather",
+          "vertices": 1921,
+          "triangles": 1067
+        }
+      ],
+      "reference_opaque_bounds": [
+        9,
+        19,
+        119,
+        108
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 89.0,
+      "native_bounds": [
+        {
+          "min": [
+            -42.75156601506302,
+            -6.347928560945474,
+            0.0
+          ],
+          "max": [
+            42.75156601506302,
+            9.226677419312624,
+            89.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 0.9897674097284013,
+        "floor": 1.8108183042157933
+      }
+    },
+    "heavy": {
+      "class": "CaelumArmorPickup",
+      "parts": [
+        "left_palm_cuff",
+        "left_finger_0",
+        "left_finger_1",
+        "left_finger_2",
+        "left_finger_3",
+        "left_thumb",
+        "left_cuff_trim",
+        "left_back_plate",
+        "left_knuckle0",
+        "left_knuckle1",
+        "left_knuckle2",
+        "left_knuckle3",
+        "left_finger_plate0_0",
+        "left_finger_plate0_1",
+        "left_finger_plate0_2",
+        "left_finger_plate1_0",
+        "left_finger_plate1_1",
+        "left_finger_plate1_2",
+        "left_finger_plate2_0",
+        "left_finger_plate2_1",
+        "left_finger_plate2_2",
+        "left_finger_plate3_0",
+        "left_finger_plate3_1",
+        "left_finger_plate3_2",
+        "left_trim_mark0",
+        "left_trim_mark1",
+        "left_trim_mark2",
+        "right_palm_cuff",
+        "right_finger_0",
+        "right_finger_1",
+        "right_finger_2",
+        "right_finger_3",
+        "right_thumb",
+        "right_cuff_trim",
+        "right_back_plate",
+        "right_knuckle0",
+        "right_knuckle1",
+        "right_knuckle2",
+        "right_knuckle3",
+        "right_finger_plate0_0",
+        "right_finger_plate0_1",
+        "right_finger_plate0_2",
+        "right_finger_plate1_0",
+        "right_finger_plate1_1",
+        "right_finger_plate1_2",
+        "right_finger_plate2_0",
+        "right_finger_plate2_1",
+        "right_finger_plate2_2",
+        "right_finger_plate3_0",
+        "right_finger_plate3_1",
+        "right_finger_plate3_2",
+        "right_trim_mark0",
+        "right_trim_mark1",
+        "right_trim_mark2"
+      ],
+      "closed_outward_components": 54,
+      "vertices": 21584,
+      "triangles": 9728,
+      "surfaces": [
+        {
+          "material": "steel",
+          "vertices": 4095,
+          "triangles": 2205
+        },
+        {
+          "material": "steel",
+          "vertices": 4095,
+          "triangles": 2205
+        },
+        {
+          "material": "steel",
+          "vertices": 2994,
+          "triangles": 998
+        },
+        {
+          "material": "dark_iron",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "dark_iron",
+          "vertices": 4095,
+          "triangles": 1365
+        },
+        {
+          "material": "dark_iron",
+          "vertices": 1122,
+          "triangles": 374
+        },
+        {
+          "material": "gold",
+          "vertices": 1088,
+          "triangles": 1216
+        }
+      ],
+      "reference_opaque_bounds": [
+        9,
+        14,
+        120,
+        114
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 100.0,
+      "native_bounds": [
+        {
+          "min": [
+            -48.035467432655075,
+            -7.13250400106233,
+            0.0
+          ],
+          "max": [
+            48.035467432655075,
+            10.367053280126543,
+            100.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.1120982131779789,
+        "floor": 1.8108183042157933
+      }
+    }
+  },
+  "source_sha256": {
+    "DESIGN.json": "7aecc2033ee5940b666d473cbf078f102810ac5d61d1c06d5c956f091ba61a00",
+    "PROVENANCE.json": "3cb700aded4431e12a470246f24b2b576cc61a92af782bf7a781312132e3a07f"
+  },
+  "external_source_sha256": {
+    "src/TEXTURES": "fe101bef213d375ca30330deb1f01a3c595caf63d753ed9e5ba505318fc3c6ad",
+    "src/caelum/equipment/CaelumEquipmentPickups.zs": "9208b475941230f72c0e4a7ae89a8524b060a6bb6ce09439aa3bddb8c2b950a9",
+    "assets/generators/generate_inventory_articulated_weapons_models.py": "2dd9f7ddc4cf1ad708ee07b1e45d2d749934a1980125383b4e221f18a0a66efd",
+    "assets/source/art/inventory_models_647/gloves/DESIGN.json": "4ce950958e5206041fc1e51d8557399ee412ca074d740ac47bc9a5e59ebe42ff",
+    "src/graphics/caelum/icons/ca_gloves.png": "a5d11d187e4c64e0556ec4ad3ca001eeb4288704fcb7113dae50fd4390a50d1f",
+    "src/graphics/caelum/icons/ca_gloves_light.png": "25d18c3c229de0cf7c07f06f86b12e191ac411f2293fa026ae00a9a48759b66f",
+    "src/graphics/caelum/icons/ca_gloves_medium.png": "3d94eaca732cacc2758ed30348c1a0fa9fd63a4e1e2efcc78aa4ce555e2f77f6",
+    "src/graphics/caelum/icons/ca_gloves_heavy.png": "bdeab4cc00391be3342da6804c377299d9074588de002d41e6094d67ae55ac39",
+    "src/models/caelum/inventory/weapon_components/metals.png": "563d339e5309b725608c5470cc53abf902a30075859e44bb3793acb2cb3f1291",
+    "src/models/caelum/inventory/articulated_weapons/leather.png": "261976d27a229443bb17fb75ac73408523988d51777cf928179ec1aff31740df",
+    "src/models/caelum/inventory/armor_helmets/gold.png": "4e6123410914b56260ca5f406e873315063659043072852e2ebe433973be17dc",
+    "src/models/caelum/inventory/magic_bases/materials.png": "10a848f89f7efd32cbf2b4ca9fe3c96a5ad4dd09079d19b80c878565f7d91041",
+    "assets/generators/generate_inventory_armor_helmets_models.py": "3492b7a039b9bd8e6820795865b2b2028440e8620fc0a968c7f907c873c9a02d"
+  },
+  "generator_sha256": {
+    "generate_inventory_ammunition_models.py": "aa7ffdc02cc126b116b87782ae962bdbb54e9bf060301344058aa4475f946b86",
+    "generate_inventory_consumable_models.py": "f4bb817e68f15fd5fcce27b5f7f3de205917b993899fbeb934629f2146a14fc7",
+    "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+    "generate_inventory_armor_hands_models.py": "f7b9b546f14ef04c79ccdfda4241b3a41b8ce44f31b3c0afea65b41a00f1884f"
+  },
+  "sha256": {
+    "models/caelum/inventory/armor_hands/magic.md3": "c5d393b68280ca75e9a39fbf823e16cdfdb6bc87388e5299ae31b07677e6e699",
+    "editable/magic.obj": "aff27b48dacfa48c24d1eca89fd287c1f4e0d579d4a800201e936dd19309139c",
+    "models/caelum/inventory/armor_hands/light.md3": "a7a47509057c800aa04d404bf794e928e2c19c4884f708ec1164921aa33ba6ab",
+    "editable/light.obj": "dab1b477f788a0043f13b55d5e75e8100748457247717138c8fd284e73130ff8",
+    "models/caelum/inventory/armor_hands/medium.md3": "9d8f3de3239caae4b21ec57a7a5e7bf039c97fb56e20eb1ee8aceac78d7741bf",
+    "editable/medium.obj": "8334632dddf164db06adfd726a8ead4931914cdb87cad38dbd1776e3c39e66f3",
+    "models/caelum/inventory/armor_hands/heavy.md3": "00e1fd36891d571f49e6981ea8d812d66ffb0aed1908c00fe9f99e5cb5a7c53c",
+    "editable/heavy.obj": "0f5ddc51718e7546b2dd18823c94828871781bad028dfed086e2b19015c4555f",
+    "editable/armor_hands.mtl": "e2f15fe8cb6eddb19227fe9877fe7eda01996356810490c6e450896fbf2f8826",
+    "caelum/data/inventory_armor_hands.modeldef": "8c32cddd85eb367b9f1753096880d9b6cf59e376b51220810c262712bd61778c",
+    "editable/src/models/caelum/inventory/weapon_components/metals.png": "563d339e5309b725608c5470cc53abf902a30075859e44bb3793acb2cb3f1291",
+    "editable/src/models/caelum/inventory/articulated_weapons/leather.png": "261976d27a229443bb17fb75ac73408523988d51777cf928179ec1aff31740df",
+    "editable/src/models/caelum/inventory/armor_helmets/gold.png": "4e6123410914b56260ca5f406e873315063659043072852e2ebe433973be17dc",
+    "editable/src/models/caelum/inventory/magic_bases/materials.png": "10a848f89f7efd32cbf2b4ca9fe3c96a5ad4dd09079d19b80c878565f7d91041"
+  },
+  "reuse_note": "All reused owned leather, steel and gold textures remain byte-identical; no new raster assets."
+}

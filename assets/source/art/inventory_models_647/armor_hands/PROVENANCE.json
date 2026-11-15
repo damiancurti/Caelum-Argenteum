@@ -1,0 +1,16 @@
+{
+  "issue": 779,
+  "parent_issue": 647,
+  "status": "candidate_author_review_pending",
+  "method": "Original closed glove anatomy is adapted from the owned clothing-glove source; separate fingers, thumbs, hollow cuffs and original armor plates/trim. Existing owned leather, steel and gold pixels are reused byte-for-byte. No image generation or raster edit.",
+  "references": [
+    "src/graphics/caelum/icons/ca_gloves.png",
+    "src/graphics/caelum/icons/ca_gloves_light.png",
+    "src/graphics/caelum/icons/ca_gloves_medium.png",
+    "src/graphics/caelum/icons/ca_gloves_heavy.png"
+  ],
+  "limitations": [
+    "Simplified plate, stitching, rune and back details; fixed paired pose; no worn modular fitting or author approval."
+  ],
+  "iterations": "Initial finger pads looked like round studs in native front views. Replaced them with closed curved plate segments that wrap the existing fingers; other geometry and raster pixels are unchanged."
+}

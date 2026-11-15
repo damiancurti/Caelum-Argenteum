@@ -1,0 +1,967 @@
+{
+  "issue": 779,
+  "parent_issue": 647,
+  "version": "5.17.68",
+  "date": "2026-11-15",
+  "author_accepted": false,
+  "scope": "Four paired hand armor world drops and twelve native type/tier cases. Existing owned materials and glove anatomy are reused; no raster generation or edits. Inventory art, identity, protection, scale/collision, size, durability, recipes and persistence are unchanged. Worn modular fitting is not delivered.",
+  "runtime": {
+    "sha256": "8fc5cd6b16c0ca5ed14fd30ce0a92cae79242dbe617cb69ff66193ab3063889b",
+    "source_entries": 18546,
+    "exact_source_bytes": true
+  },
+  "baseline": {
+    "sha256": "aeaca60139f3a21444bb51c8f865ccd26e1d98265bf329d9d17121635fa91aaf",
+    "new_resources": [
+      "caelum/data/inventory_armor_hands.modeldef",
+      "models/caelum/inventory/armor_hands/heavy.md3",
+      "models/caelum/inventory/armor_hands/light.md3",
+      "models/caelum/inventory/armor_hands/magic.md3",
+      "models/caelum/inventory/armor_hands/medium.md3"
+    ],
+    "changed_resources": [
+      "MODELDEF",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "all_other_runtime_bytes_identical": true
+  },
+  "static": {
+    "repeated_export_files": 16,
+    "repeat_byte_identical": true,
+    "installed_export_check_passed": true,
+    "geometry": {
+      "magic": {
+        "closed_components": 28,
+        "rings": 0,
+        "linked_pairs": 0,
+        "fixed_attachment_witnesses": 26,
+        "connected_components": 28,
+        "nearby_ring_pairs": 0,
+        "opening_rays": 10,
+        "cuff_depth_checks": 2,
+        "minimum_capsule_clearance": null,
+        "quantization_margin": 0.027065293868263705,
+        "native_triangles": 4576
+      },
+      "light": {
+        "closed_components": 28,
+        "rings": 0,
+        "linked_pairs": 0,
+        "fixed_attachment_witnesses": 26,
+        "connected_components": 28,
+        "nearby_ring_pairs": 0,
+        "opening_rays": 10,
+        "cuff_depth_checks": 2,
+        "minimum_capsule_clearance": null,
+        "quantization_margin": 0.027065293868263705,
+        "native_triangles": 6368
+      },
+      "medium": {
+        "closed_components": 54,
+        "rings": 0,
+        "linked_pairs": 0,
+        "fixed_attachment_witnesses": 52,
+        "connected_components": 54,
+        "nearby_ring_pairs": 0,
+        "opening_rays": 10,
+        "cuff_depth_checks": 2,
+        "minimum_capsule_clearance": null,
+        "quantization_margin": 0.027065293868263705,
+        "native_triangles": 9728
+      },
+      "heavy": {
+        "closed_components": 54,
+        "rings": 0,
+        "linked_pairs": 0,
+        "fixed_attachment_witnesses": 52,
+        "connected_components": 54,
+        "nearby_ring_pairs": 0,
+        "opening_rays": 10,
+        "cuff_depth_checks": 2,
+        "minimum_capsule_clearance": null,
+        "quantization_margin": 0.027065293868263705,
+        "native_triangles": 9728
+      }
+    },
+    "variants": {
+      "magic": {
+        "class": "CaelumArmorPickup",
+        "parts": [
+          "left_palm_cuff",
+          "left_finger_0",
+          "left_finger_1",
+          "left_finger_2",
+          "left_finger_3",
+          "left_thumb",
+          "left_cuff_trim",
+          "left_cuff_patch",
+          "left_gold_mark0",
+          "left_gold_mark1",
+          "left_gold_mark2",
+          "left_gold_mark3",
+          "left_gold_mark4",
+          "left_gold_mark5",
+          "right_palm_cuff",
+          "right_finger_0",
+          "right_finger_1",
+          "right_finger_2",
+          "right_finger_3",
+          "right_thumb",
+          "right_cuff_trim",
+          "right_cuff_patch",
+          "right_gold_mark0",
+          "right_gold_mark1",
+          "right_gold_mark2",
+          "right_gold_mark3",
+          "right_gold_mark4",
+          "right_gold_mark5"
+        ],
+        "closed_outward_components": 28,
+        "vertices": 11168,
+        "triangles": 4576,
+        "surfaces": [
+          {
+            "material": "leather",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "leather",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "leather",
+            "vertices": 1314,
+            "triangles": 438
+          },
+          {
+            "material": "gold",
+            "vertices": 1664,
+            "triangles": 1408
+          }
+        ],
+        "reference_opaque_bounds": [
+          13,
+          8,
+          115,
+          120
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 112.0,
+        "native_bounds": [
+          {
+            "min": [
+              -45.92659325268485,
+              -7.874449677463721,
+              0.0
+            ],
+            "max": [
+              45.92659325268485,
+              11.611099673741728,
+              112.0
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.2455499987593364,
+          "floor": 1.8108183042157933
+        }
+      },
+      "light": {
+        "class": "CaelumArmorPickup",
+        "parts": [
+          "left_palm_cuff",
+          "left_finger_0",
+          "left_finger_1",
+          "left_finger_2",
+          "left_finger_3",
+          "left_thumb",
+          "left_cuff_trim",
+          "left_knuckle_strap",
+          "left_steel_rivet0",
+          "left_steel_rivet1",
+          "left_steel_rivet2",
+          "left_steel_rivet3",
+          "left_wrist_strap",
+          "left_wrist_buckle",
+          "right_palm_cuff",
+          "right_finger_0",
+          "right_finger_1",
+          "right_finger_2",
+          "right_finger_3",
+          "right_thumb",
+          "right_cuff_trim",
+          "right_knuckle_strap",
+          "right_steel_rivet0",
+          "right_steel_rivet1",
+          "right_steel_rivet2",
+          "right_steel_rivet3",
+          "right_wrist_strap",
+          "right_wrist_buckle"
+        ],
+        "closed_outward_components": 28,
+        "vertices": 11504,
+        "triangles": 6368,
+        "surfaces": [
+          {
+            "material": "steel",
+            "vertices": 1296,
+            "triangles": 2112
+          },
+          {
+            "material": "leather",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "leather",
+            "vertices": 4096,
+            "triangles": 1792
+          },
+          {
+            "material": "leather",
+            "vertices": 2017,
+            "triangles": 1099
+          }
+        ],
+        "reference_opaque_bounds": [
+          9,
+          17,
+          119,
+          112
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 95.0,
+        "native_bounds": [
+          {
+            "min": [
+              -45.63369406102232,
+              -6.679220708562977,
+              0.0
+            ],
+            "max": [
+              45.63369406102232,
+              9.848700616120215,
+              95.0
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.05649330251908,
+          "floor": 1.8108183042157933
+        }
+      },
+      "medium": {
+        "class": "CaelumArmorPickup",
+        "parts": [
+          "left_palm_cuff",
+          "left_finger_0",
+          "left_finger_1",
+          "left_finger_2",
+          "left_finger_3",
+          "left_thumb",
+          "left_cuff_trim",
+          "left_back_plate",
+          "left_knuckle0",
+          "left_knuckle1",
+          "left_knuckle2",
+          "left_knuckle3",
+          "left_finger_plate0_0",
+          "left_finger_plate0_1",
+          "left_finger_plate0_2",
+          "left_finger_plate1_0",
+          "left_finger_plate1_1",
+          "left_finger_plate1_2",
+          "left_finger_plate2_0",
+          "left_finger_plate2_1",
+          "left_finger_plate2_2",
+          "left_finger_plate3_0",
+          "left_finger_plate3_1",
+          "left_finger_plate3_2",
+          "left_trim_mark0",
+          "left_trim_mark1",
+          "left_trim_mark2",
+          "right_palm_cuff",
+          "right_finger_0",
+          "right_finger_1",
+          "right_finger_2",
+          "right_finger_3",
+          "right_thumb",
+          "right_cuff_trim",
+          "right_back_plate",
+          "right_knuckle0",
+          "right_knuckle1",
+          "right_knuckle2",
+          "right_knuckle3",
+          "right_finger_plate0_0",
+          "right_finger_plate0_1",
+          "right_finger_plate0_2",
+          "right_finger_plate1_0",
+          "right_finger_plate1_1",
+          "right_finger_plate1_2",
+          "right_finger_plate2_0",
+          "right_finger_plate2_1",
+          "right_finger_plate2_2",
+          "right_finger_plate3_0",
+          "right_finger_plate3_1",
+          "right_finger_plate3_2",
+          "right_trim_mark0",
+          "right_trim_mark1",
+          "right_trim_mark2"
+        ],
+        "closed_outward_components": 54,
+        "vertices": 21584,
+        "triangles": 9728,
+        "surfaces": [
+          {
+            "material": "steel",
+            "vertices": 4095,
+            "triangles": 2205
+          },
+          {
+            "material": "steel",
+            "vertices": 4095,
+            "triangles": 2205
+          },
+          {
+            "material": "steel",
+            "vertices": 3282,
+            "triangles": 1094
+          },
+          {
+            "material": "leather",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "leather",
+            "vertices": 4096,
+            "triangles": 1792
+          },
+          {
+            "material": "leather",
+            "vertices": 1921,
+            "triangles": 1067
+          }
+        ],
+        "reference_opaque_bounds": [
+          9,
+          19,
+          119,
+          108
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 89.0,
+        "native_bounds": [
+          {
+            "min": [
+              -42.75156601506302,
+              -6.347928560945474,
+              0.0
+            ],
+            "max": [
+              42.75156601506302,
+              9.226677419312624,
+              89.0
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 0.9897674097284013,
+          "floor": 1.8108183042157933
+        }
+      },
+      "heavy": {
+        "class": "CaelumArmorPickup",
+        "parts": [
+          "left_palm_cuff",
+          "left_finger_0",
+          "left_finger_1",
+          "left_finger_2",
+          "left_finger_3",
+          "left_thumb",
+          "left_cuff_trim",
+          "left_back_plate",
+          "left_knuckle0",
+          "left_knuckle1",
+          "left_knuckle2",
+          "left_knuckle3",
+          "left_finger_plate0_0",
+          "left_finger_plate0_1",
+          "left_finger_plate0_2",
+          "left_finger_plate1_0",
+          "left_finger_plate1_1",
+          "left_finger_plate1_2",
+          "left_finger_plate2_0",
+          "left_finger_plate2_1",
+          "left_finger_plate2_2",
+          "left_finger_plate3_0",
+          "left_finger_plate3_1",
+          "left_finger_plate3_2",
+          "left_trim_mark0",
+          "left_trim_mark1",
+          "left_trim_mark2",
+          "right_palm_cuff",
+          "right_finger_0",
+          "right_finger_1",
+          "right_finger_2",
+          "right_finger_3",
+          "right_thumb",
+          "right_cuff_trim",
+          "right_back_plate",
+          "right_knuckle0",
+          "right_knuckle1",
+          "right_knuckle2",
+          "right_knuckle3",
+          "right_finger_plate0_0",
+          "right_finger_plate0_1",
+          "right_finger_plate0_2",
+          "right_finger_plate1_0",
+          "right_finger_plate1_1",
+          "right_finger_plate1_2",
+          "right_finger_plate2_0",
+          "right_finger_plate2_1",
+          "right_finger_plate2_2",
+          "right_finger_plate3_0",
+          "right_finger_plate3_1",
+          "right_finger_plate3_2",
+          "right_trim_mark0",
+          "right_trim_mark1",
+          "right_trim_mark2"
+        ],
+        "closed_outward_components": 54,
+        "vertices": 21584,
+        "triangles": 9728,
+        "surfaces": [
+          {
+            "material": "steel",
+            "vertices": 4095,
+            "triangles": 2205
+          },
+          {
+            "material": "steel",
+            "vertices": 4095,
+            "triangles": 2205
+          },
+          {
+            "material": "steel",
+            "vertices": 2994,
+            "triangles": 998
+          },
+          {
+            "material": "dark_iron",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "dark_iron",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "dark_iron",
+            "vertices": 1122,
+            "triangles": 374
+          },
+          {
+            "material": "gold",
+            "vertices": 1088,
+            "triangles": 1216
+          }
+        ],
+        "reference_opaque_bounds": [
+          9,
+          14,
+          120,
+          114
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 100.0,
+        "native_bounds": [
+          {
+            "min": [
+              -48.035467432655075,
+              -7.13250400106233,
+              0.0
+            ],
+            "max": [
+              48.035467432655075,
+              10.367053280126543,
+              100.0
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.1120982131779789,
+          "floor": 1.8108183042157933
+        }
+      }
+    },
+    "project_validation_passed": true
+  },
+  "continuity": {
+    "issue": 779,
+    "kind": "armor_hands",
+    "scope": "Native pickup/toss, quantity and saved ownership for armor_hands; no normal menu or author acceptance.",
+    "baseline_sha256": "aeaca60139f3a21444bb51c8f865ccd26e1d98265bf329d9d17121635fa91aaf",
+    "runtime_sha256": "8fc5cd6b16c0ca5ed14fd30ce0a92cae79242dbe617cb69ff66193ab3063889b",
+    "model_sha256": null,
+    "fixture_sha256": "9768ded38a5736956a507b3727e1ed67f664fb464967ad4917a62e452e866f78",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "baseline",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 229
+      },
+      {
+        "phase": "old-save-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 189
+      },
+      {
+        "phase": "candidate-fresh",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 229
+      },
+      {
+        "phase": "candidate-reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 182
+      },
+      {
+        "phase": "rollback-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 182
+      }
+    ],
+    "captures": {
+      "baseline.png": "a8522a8f6a791c8240cfa6da4aff27af4458427a0c7054696c20b276ebb78ef3",
+      "candidate-0.png": "2529e0987085ba576444649b569b343745573559e020018ae7ad81ae751311d8",
+      "candidate-1.png": "ddcf787aef4d6d171237891df8713b4dd832b8ddfb12f80e623b8fb1237f21bf",
+      "candidate-2.png": "29b5a20b2bf4e6092677b0af4d2dfc8f8150742d7a30cbca127551ba2a41d4ea",
+      "candidate-3.png": "2529e0987085ba576444649b569b343745573559e020018ae7ad81ae751311d8",
+      "candidate-5.png": "2529e0987085ba576444649b569b343745573559e020018ae7ad81ae751311d8",
+      "candidate-6.png": "2529e0987085ba576444649b569b343745573559e020018ae7ad81ae751311d8",
+      "candidate-7.png": "0dad2654b27fd9db4f2a1d7bd6065a1405f7ba244c8b5bc850ed8744ee4bd7ed",
+      "detail-0-0.png": "11545026ebbb44e4b1e1fe051bb77100541c0ccc0e626191f61829a4fd1e336d",
+      "detail-0-160.png": "fa4a0f4320e0b77df780965e3ae5afd02e00055aaa88e1229c39811619e2556e",
+      "detail-0-225.png": "d03bf9c7edaaea46a302645943903ec13829804e6aee42d4ac0c88b70213d2c4",
+      "detail-0-270.png": "c364c395571ccf513f9340b31e07c99e9ef242d62120de80070550445d21a75f",
+      "detail-0-90.png": "62b9cc08f872a75bc1f09dc8fe1370da1c87a69b0c25381fb99af57715970d30",
+      "detail-1-0.png": "8fa124f90b5803778252270f84addb95a72daf96ca2de4cd953e7ab46fdba24c",
+      "detail-1-160.png": "e05c06ce8d88090bf1ffae68442a5e79f689086035ee3b3fe43b5da5f03cb88a",
+      "detail-1-225.png": "bb4817ee1e6c61031f8eaa56ba2106fc07b9f2d1166e3e3e9e58dac5215c3f0d",
+      "detail-1-270.png": "4d79cfc8ad1f8d8214d8837888c6ea5f6d6ea100e556588d94602b533c7f4151",
+      "detail-1-90.png": "48c62c2ec0e80882b715c159939db7d514149c4c5c3038a82bd9c2389d110c19",
+      "detail-2-0.png": "295ad8260b1f75dd656a3c3780c6b9e6de1566cb9fe841e9447f191e49ae04b9",
+      "detail-2-160.png": "f68499f7433104d45fe5b9bc418d77162b8e5cae03407999e77b9e88e3b4105d",
+      "detail-2-225.png": "67557e6967fdf97499182f73ce702f76b5fb6703240959ba88861e5ccfa51191",
+      "detail-2-270.png": "000faf6db418069c93125a68c80378c8c9d4e7b877941ab542c3d076ec2a516d",
+      "detail-2-90.png": "860d60c64e4cf70bd2821d945439ac1242a8ff7eafdf721d0cb5d6eae48b99c4",
+      "detail-3-0.png": "27dbe2f07bc09d91725d7e747a8459738c0545f05a2818330f7a197303443952",
+      "detail-3-160.png": "04829d86c75c775156eab79bfa32fec35849530cfc2cc4bceac3209e0772d3b6",
+      "detail-3-225.png": "8c8d80e31e33580c9635b1e2370de3fcf8e35f33904fb2dc45fb94b66e206d10",
+      "detail-3-270.png": "de80273050f3db9733d0d72a34bd5b6448d3186f04291d2a774e19c65a0d807f",
+      "detail-3-90.png": "c6af6765a95d178dacafdc3f5ec9951de1d40df2358e0d7cc06c8bde2c7a2b0f"
+    }
+  },
+  "visual": {
+    "issue": 779,
+    "kind": "armor_hands",
+    "scope": "Native pickup/toss, quantity and saved ownership for armor_hands; no normal menu or author acceptance.",
+    "baseline_sha256": "aeaca60139f3a21444bb51c8f865ccd26e1d98265bf329d9d17121635fa91aaf",
+    "runtime_sha256": "aeaca60139f3a21444bb51c8f865ccd26e1d98265bf329d9d17121635fa91aaf",
+    "model_sha256": "6639af8850b82213680d9c5e4c7e3f0a758f83a011b9e6db64204d1a20efe76b",
+    "fixture_sha256": "9768ded38a5736956a507b3727e1ed67f664fb464967ad4917a62e452e866f78",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "visual",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 236
+      }
+    ],
+    "captures": {
+      "candidate-0.png": "2529e0987085ba576444649b569b343745573559e020018ae7ad81ae751311d8",
+      "candidate-1.png": "ddcf787aef4d6d171237891df8713b4dd832b8ddfb12f80e623b8fb1237f21bf",
+      "candidate-2.png": "29b5a20b2bf4e6092677b0af4d2dfc8f8150742d7a30cbca127551ba2a41d4ea",
+      "candidate-3.png": "2529e0987085ba576444649b569b343745573559e020018ae7ad81ae751311d8",
+      "candidate-5.png": "2529e0987085ba576444649b569b343745573559e020018ae7ad81ae751311d8",
+      "candidate-6.png": "2529e0987085ba576444649b569b343745573559e020018ae7ad81ae751311d8",
+      "candidate-7.png": "0dad2654b27fd9db4f2a1d7bd6065a1405f7ba244c8b5bc850ed8744ee4bd7ed",
+      "detail-0-0.png": "11545026ebbb44e4b1e1fe051bb77100541c0ccc0e626191f61829a4fd1e336d",
+      "detail-0-160.png": "fa4a0f4320e0b77df780965e3ae5afd02e00055aaa88e1229c39811619e2556e",
+      "detail-0-225.png": "d03bf9c7edaaea46a302645943903ec13829804e6aee42d4ac0c88b70213d2c4",
+      "detail-0-270.png": "c364c395571ccf513f9340b31e07c99e9ef242d62120de80070550445d21a75f",
+      "detail-0-90.png": "62b9cc08f872a75bc1f09dc8fe1370da1c87a69b0c25381fb99af57715970d30",
+      "detail-1-0.png": "8fa124f90b5803778252270f84addb95a72daf96ca2de4cd953e7ab46fdba24c",
+      "detail-1-160.png": "e05c06ce8d88090bf1ffae68442a5e79f689086035ee3b3fe43b5da5f03cb88a",
+      "detail-1-225.png": "bb4817ee1e6c61031f8eaa56ba2106fc07b9f2d1166e3e3e9e58dac5215c3f0d",
+      "detail-1-270.png": "4d79cfc8ad1f8d8214d8837888c6ea5f6d6ea100e556588d94602b533c7f4151",
+      "detail-1-90.png": "48c62c2ec0e80882b715c159939db7d514149c4c5c3038a82bd9c2389d110c19",
+      "detail-2-0.png": "295ad8260b1f75dd656a3c3780c6b9e6de1566cb9fe841e9447f191e49ae04b9",
+      "detail-2-160.png": "f68499f7433104d45fe5b9bc418d77162b8e5cae03407999e77b9e88e3b4105d",
+      "detail-2-225.png": "67557e6967fdf97499182f73ce702f76b5fb6703240959ba88861e5ccfa51191",
+      "detail-2-270.png": "000faf6db418069c93125a68c80378c8c9d4e7b877941ab542c3d076ec2a516d",
+      "detail-2-90.png": "860d60c64e4cf70bd2821d945439ac1242a8ff7eafdf721d0cb5d6eae48b99c4",
+      "detail-3-0.png": "27dbe2f07bc09d91725d7e747a8459738c0545f05a2818330f7a197303443952",
+      "detail-3-160.png": "04829d86c75c775156eab79bfa32fec35849530cfc2cc4bceac3209e0772d3b6",
+      "detail-3-225.png": "8c8d80e31e33580c9635b1e2370de3fcf8e35f33904fb2dc45fb94b66e206d10",
+      "detail-3-270.png": "de80273050f3db9733d0d72a34bd5b6448d3186f04291d2a774e19c65a0d807f",
+      "detail-3-90.png": "c6af6765a95d178dacafdc3f5ec9951de1d40df2358e0d7cc06c8bde2c7a2b0f"
+    }
+  },
+  "helmet_regression": {
+    "issue": 777,
+    "kind": "armor_helmets",
+    "scope": "Native pickup/toss, quantity and saved ownership for armor_helmets; no normal menu or author acceptance.",
+    "baseline_sha256": "8fc5cd6b16c0ca5ed14fd30ce0a92cae79242dbe617cb69ff66193ab3063889b",
+    "runtime_sha256": "8fc5cd6b16c0ca5ed14fd30ce0a92cae79242dbe617cb69ff66193ab3063889b",
+    "model_sha256": null,
+    "fixture_sha256": "f0a5022d5a6a69e15cb16f6a4edf1ab9b132fcc4648298e98ce8af1e37b6e83f",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "visual",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 236
+      }
+    ],
+    "captures": {
+      "candidate-0.png": "cc74d7e806cdafb4110587b1f549e4921a2e16cbe229e7c43f70ee2318ab9a3f",
+      "candidate-1.png": "dac1b59b4c7aa1afa1533b246e43a26ab977d25baf32d72924d68eaca8d5d152",
+      "candidate-2.png": "dfa77650418c165e52bc0fa128ef7a940db4d9b7d676fc8e3a701393b20df067",
+      "candidate-3.png": "cc74d7e806cdafb4110587b1f549e4921a2e16cbe229e7c43f70ee2318ab9a3f",
+      "candidate-5.png": "cc74d7e806cdafb4110587b1f549e4921a2e16cbe229e7c43f70ee2318ab9a3f",
+      "candidate-6.png": "cc74d7e806cdafb4110587b1f549e4921a2e16cbe229e7c43f70ee2318ab9a3f",
+      "candidate-7.png": "df7c924ec4d4d940a77f70394ae575e514e306ba6e24fd0239d4c770bad60b10",
+      "detail-0-0.png": "84908fc6ec3735ad16ef71513271354d6270b887f253dfcefb70f29e2818e2a0",
+      "detail-0-160.png": "fa671b8f3fc3fdb2437760909015dfe50d8de04c2d518acb0c36300d2c144a8c",
+      "detail-0-225.png": "b09588e5bd44072a74babf3fcea59d3be8cf5ec8c7c3e0e09d8cb41c209c0eed",
+      "detail-0-270.png": "c51b5ff75682263c7c9c538f4387da03aa168bbc6dbb7ea822404089ed4686d6",
+      "detail-0-90.png": "7d246e5f39b4b88e9f3cff27ddea309d1093faa762c9881c85f23ea00ba14e5d",
+      "detail-1-0.png": "a939a6800f22324c247f3cefb1d736a737a7b28257b802977d593ffa451d5f31",
+      "detail-1-160.png": "d2c4de0b32127671260f2dfeed435f77191ebb76085b8e65d28269ce4919c5ab",
+      "detail-1-225.png": "96fe5260d8f7d46c4b2e6b506952675f10524ade0f72e0f34ba7c75b59554367",
+      "detail-1-270.png": "e05fc356885f506a5da9a85292ea43438410167373c8aa0f103cb45422393139",
+      "detail-1-90.png": "f8116fbe6b25339d7f634cee35d8b41cbcd1060ac24d3e007bb0698ef1aa3274",
+      "detail-2-0.png": "798400e43a1be32f0ac6f0a6c7bfe0e9e18d9f7371d555b7e4a8d5e0002e8162",
+      "detail-2-160.png": "facf3866346f8a9126e5f21fd2f5dc4e6490b7ba71983af07fe71d26486e056e",
+      "detail-2-225.png": "cd999389bc197a150a9e38200f0ff27d28560e53cbdfa04fd13cd97ed99369fc",
+      "detail-2-270.png": "3f353ce2d72a0b1c9cb8ebee195eda5225890c13b38be2f09575af08c083e5a5",
+      "detail-2-90.png": "b90d6faa8f8841971216faea8a0f86509ce25b55a5aca0d36b3a703557c6efc9",
+      "detail-3-0.png": "2aad4ed92055008ff697918e62ed53356d80d296e03356a9f5ed93f29912f706",
+      "detail-3-160.png": "2ffef269a32ad304da70baa9657b4ec93f5f6cd5e4ef7866b704b327c5fd88a2",
+      "detail-3-225.png": "5dd80340b3018e4ed721e801691cf071f6834f9bcf28b6e837eb56d8c96d95c2",
+      "detail-3-270.png": "6cbf009cb4a23ff3ae5d13568eff64456020f2699c1e014c33c7dbae7f22d27a",
+      "detail-3-90.png": "877c64149686137b52dd1cce31b87a83317a770cfb10814961c7a6183623493d"
+    }
+  },
+  "presentation": {
+    "issue": 779,
+    "kind": "armor_hands",
+    "scope": "Measure actual inventory drop classes before/after model installation.\n\nA single sequential baseline/candidate pair in an isolated room; this is not a\ncrowd budget, campaign performance acceptance or repeatability estimate.",
+    "baseline_sha256": "aeaca60139f3a21444bb51c8f865ccd26e1d98265bf329d9d17121635fa91aaf",
+    "runtime_sha256": "8fc5cd6b16c0ca5ed14fd30ce0a92cae79242dbe617cb69ff66193ab3063889b",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+    "runs": [
+      {
+        "kind": "sprites",
+        "bodies": 12,
+        "pid": 23888,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 347362146.0441,
+          "END": 347382066.3938
+        },
+        "fixture_sha256": "83b78aa3357b55376ab8063ef2008f269c7be73be7837cf7cc1916a57ae7b5ac",
+        "passed": true,
+        "observed_completion_counts": [
+          [
+            12,
+            700
+          ]
+        ],
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.571419,
+          "p50_ms": 28.5774,
+          "p95_ms": 29.2106,
+          "p99_ms": 29.3931,
+          "max_ms": 29.8025
+        },
+        "presentation": {
+          "pid": 23888,
+          "trace_sha256": "a31d9b8e34de30536325bc302c2f97033b39887994fa280984db16b43b8d150e",
+          "rows": 29856,
+          "scene_presents": 19916,
+          "mean_present_fps": 1143.2866029845557,
+          "present_intervals": {
+            "samples": 19915,
+            "mean_ms": 0.8746713181012484,
+            "p50_ms": 0.850100040435791,
+            "p95_ms": 1.053700029850006,
+            "p99_ms": 1.2789000272750854,
+            "max_ms": 1.8356000185012817
+          },
+          "native_call_duration": {
+            "samples": 19916,
+            "mean_ms": 0.0763422024551705,
+            "p50_ms": 0.07639998197555542,
+            "p95_ms": 0.09999996423721313,
+            "p99_ms": 0.13499999046325684,
+            "max_ms": 0.45840001106262207
+          }
+        }
+      },
+      {
+        "kind": "models",
+        "bodies": 12,
+        "pid": 48024,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 347396727.1027,
+          "END": 347416747.0208
+        },
+        "fixture_sha256": "83b78aa3357b55376ab8063ef2008f269c7be73be7837cf7cc1916a57ae7b5ac",
+        "passed": true,
+        "observed_completion_counts": [
+          [
+            12,
+            700
+          ]
+        ],
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.57103257142857,
+          "p50_ms": 28.5811,
+          "p95_ms": 29.1856,
+          "p99_ms": 29.3595,
+          "max_ms": 29.4557
+        },
+        "presentation": {
+          "pid": 48024,
+          "trace_sha256": "c7a8788aff9facb993ba48b19553fc1f09a953e6052bc080b8f2e503a14208b5",
+          "rows": 28699,
+          "scene_presents": 19580,
+          "mean_present_fps": 1117.6075319208858,
+          "present_intervals": {
+            "samples": 19579,
+            "mean_ms": 0.8947684866450855,
+            "p50_ms": 0.8716999888420105,
+            "p95_ms": 1.0707999467849731,
+            "p99_ms": 1.2598000168800354,
+            "max_ms": 1.7589999437332153
+          },
+          "native_call_duration": {
+            "samples": 19580,
+            "mean_ms": 0.07541474989169221,
+            "p50_ms": 0.07300001382827759,
+            "p95_ms": 0.09930002689361572,
+            "p99_ms": 0.12559998035430908,
+            "max_ms": 0.49590003490448
+          }
+        }
+      }
+    ]
+  },
+  "art": {
+    "inspected_views": [
+      "visual/detail-0-0.png",
+      "visual/detail-0-90.png",
+      "visual/detail-0-160.png",
+      "visual/detail-0-225.png",
+      "visual/detail-0-270.png",
+      "visual/detail-1-0.png",
+      "visual/detail-1-90.png",
+      "visual/detail-1-160.png",
+      "visual/detail-1-225.png",
+      "visual/detail-1-270.png",
+      "visual/detail-2-0.png",
+      "visual/detail-2-90.png",
+      "visual/detail-2-160.png",
+      "visual/detail-2-225.png",
+      "visual/detail-2-270.png",
+      "visual/detail-3-0.png",
+      "visual/detail-3-90.png",
+      "visual/detail-3-160.png",
+      "visual/detail-3-225.png",
+      "visual/detail-3-270.png"
+    ],
+    "overview": "visual/candidate-0.png",
+    "author_check": "CA779-HAND-ARMOR-01"
+  },
+  "iterations": [
+    "Initial export dispatch did not support prism and initial ellipsoid keys used a different schema. Both attempts stopped before installation. Wrapper dispatch and new source keys were corrected without changing any shared generator.",
+    "Initial native front views made finger pads resemble round studs. Final closed curved plate segments wrap the medium/heavy fingers; unchanged magic/light models retain their earlier geometry."
+  ],
+  "environment": {
+    "os": "Windows11 Pro26200",
+    "cpu": "Ryzen9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX3070Ti",
+    "engine": "GZDoom4.14.2",
+    "backend": "Vulkan",
+    "resolution": [
+      1280,
+      720
+    ],
+    "background_unpaused": true,
+    "audio": 0.05,
+    "presentation_uncapped": true,
+    "vsync": false
+  },
+  "qualifications": [
+    "All twenty final detail/underside views, overview, helmet-regression overview and both presentation scenes were inspected. 164 closed components,156 attachments,40 opening rays and8 cuff-depth probes pass independent checks.",
+    "Shared simplified anatomy, upright paired pose, understated leather straps, matte shading, simplified plates/runes, repeated materials, interpreted palms and omitted fine stitching/ornament require author review.",
+    "One sequential700-tic twelve-object pair measures queue intervals only, not GPU/display latency, repeatability or campaign/crowd performance. Projected footprints differ.",
+    "Native APIs and prepared metadata do not establish normal menus, crafting, ordinary handling or author acceptance. Eight torso/foot armor states, ancestor-only pickup bindings, other characters, modular equipment and V5.16 remain unfinished.",
+    "No executable, IWAD, compiled test package, DLL or save is committed."
+  ],
+  "files": {
+    "build01.log": "a61561d11ea7eebfa754dfc262cb299b7c22b0d4489c351462b47ee06b6f0bc9",
+    "continuity/baseline-process.log": "e43f0026ebc3b6d107e45010908c19cd873d566898bc1bf34afb6260219d5d48",
+    "continuity/baseline.cfg": "2592f50d9e1e1422c5431b810418d05c133d07f4dd4fa8fbdd11e87b52082a90",
+    "continuity/baseline.log": "5903e30d5db9458656405e39aab455ef71cfe92d3513aa4a9db17871a1b5b767",
+    "continuity/candidate-fresh-process.log": "ea7ae9294621d12aaf97fcda86a66d9780e878b71ee37a8ed12c47cb5d5032cb",
+    "continuity/candidate-fresh.cfg": "5fd9ef18d72fe8db5b469604737f06c83e9093ede5518b1788b0eb108066d8d1",
+    "continuity/candidate-fresh.log": "78edbe3e51b49e4546110d646c254280fca53a9e8ad5cf4e42be4ffe64857118",
+    "continuity/candidate-reload-process.log": "62a3320c49e5cb7b28c5b6e6f4b54117cecdfb12a4e6515974dd925273a1847b",
+    "continuity/candidate-reload.cfg": "c3c07cfc1e0b15c46c34a469300bfe5921678672ab8cf918407cc94b5f199f89",
+    "continuity/candidate-reload.log": "5404b29f3882a3aade3783a32cb2f4968a114119f574e1b2b9132c68d771d4de",
+    "continuity/fixture-source/MAPINFO.txt": "4756f3aa6492fa3e7bb5ddb5870ce4d73592641bc3a6197956cc6cb063028b4d",
+    "continuity/fixture-source/ZSCRIPT.txt": "8c0c3428011127060c5e1dddb8847049f05f85b04f5107f924c29baad580a2f6",
+    "continuity/fixture.zs": "abb5e1f60ec7219494a7a2a8e5129cbd058359484ac9e3ff61b6750b61f10049",
+    "continuity/old-save-load-part-1.cfg": "ad75179a723a9382eae05b1d2ca3d7f42abc1c36598f49b6b6dcfbf75aefd409",
+    "continuity/old-save-load-process.log": "a20fb462b6a7af51f90268a187995fc0f9369982ad1cea4ada593e78e89ec67c",
+    "continuity/old-save-load.cfg": "713a5278871298666ff6e7de8e6d090b49d7c0f44c6e76a93f9ad5a83af22e5b",
+    "continuity/old-save-load.log": "cd2f4808aabbb1f4767342ea20bb43f0e71cbafe8e4f860d2f791779f181759e",
+    "continuity/RESULTS.json": "2262f1cb04908793451359eb90df4b3285e28e677b5f254734a82327b432bccd",
+    "continuity/rollback-load-process.log": "6b4fc5018ce5fa6eaf25e2fc3e8800f1c85f9ac937f2bd71d266e3db455c5dfb",
+    "continuity/rollback-load.cfg": "c3c07cfc1e0b15c46c34a469300bfe5921678672ab8cf918407cc94b5f199f89",
+    "continuity/rollback-load.log": "fc717ecb054d69449c29ef6b04920c1cb7591b857c833584e85da4eeced2fdea",
+    "continuity/session.ini": "63315d9834716314e1164d8417df3f59edff24cc1c065806ee450e7d05126aea",
+    "export-check.log": "0fb4075b4b2f9a63cc50a93c04eb41e607cbbaa8f4f8cd3fc6502ecaf00dfbb7",
+    "exports/model01.json": "8c8f71030e31a103abdb5a183f4e003414bd4e430820d4cb02449e0c1559fc5b",
+    "exports/model02.json": "17ce58ba184db843bcb9257bc8f21097154d0cadb9f92fc111f0bec74f765311",
+    "exports/model03.json": "17ce58ba184db843bcb9257bc8f21097154d0cadb9f92fc111f0bec74f765311",
+    "geometry01.log": "c5a557a803300a1ac4554b5850e84ffcc98f532676af117e6fb21242cdd3e515",
+    "geometry02.log": "cc0d99c31d2b70230e973160029e05b5df8da089cc4a97095a3cd2b40fb0deb9",
+    "helmet-regression/candidate-0.png": "cc74d7e806cdafb4110587b1f549e4921a2e16cbe229e7c43f70ee2318ab9a3f",
+    "helmet-regression/fixture-source/MAPINFO.txt": "dd65192dda1ff2c6aca59a683d7c48807202cce22bb43e5b189a75425124c179",
+    "helmet-regression/fixture-source/ZSCRIPT.txt": "e8bb9ac3d21ecbb7191c2a848ff66ece8b52d65f64901894a98029d362025804",
+    "helmet-regression/fixture.zs": "ba815305a1bfed6a8c0552ed79b6480dc31620e50c0b04851d3553619c1907c0",
+    "helmet-regression/RESULTS.json": "406639ce2fdeca4749b615a85f2ea0bcadab518d165b425cc875d97d3f209d04",
+    "helmet-regression/session.ini": "242dd308b7b180230bc6fc8895df84d4969abf4b9d780143d258744e8a3e1d33",
+    "helmet-regression/visual-part-1.cfg": "f0aa323897d52a83ce799bd8d7966344e6a0a088e141497f0bc9279a9d23ad60",
+    "helmet-regression/visual-process.log": "4f57b3470b7db68e62c7781f9af13ac3d69e717a77478d32d59951b0f1bbd873",
+    "helmet-regression/visual.cfg": "ae596b050f7f7309b5fa7f2b3d7dcfc00d494166521303a797c97cbb18d67efc",
+    "helmet-regression/visual.log": "305a3f1c815fce2806681b7c61ce37abb306a547d19ba767515205a907ea9480",
+    "initial-export.txt": "4c9adb4cfead4814ac1a3cc3325daa67a780b6c208362430f700693d70c2525b",
+    "presentation/models-12/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/models-12/engine.log": "608455c42dc69cd2acee83b3b9512345a2893b6a5728bb76d396657717db69cd",
+    "presentation/models-12/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/models-12/fixture-source/ZSCRIPT.txt": "fbd6e7d66192fc7e27440475c0d32b3f7ce6832374126223730024ff000f7887",
+    "presentation/models-12/presents.csv": "c7a8788aff9facb993ba48b19553fc1f09a953e6052bc080b8f2e503a14208b5",
+    "presentation/models-12/process.log": "26c1dd27b8d2dc39fd0eb463e778a1f855eb8cf143490b42f0e5eb05efdfdbff",
+    "presentation/models-12/scene.png": "72c4a42fcdb6840d36b263c1635d9bc8b39d49a4dbd5e528318b9da5bba17312",
+    "presentation/models-12/session.ini": "1efc6003f5089569e79aecee1510a907c27d6cc60acdaf8db58fdfcd20869144",
+    "presentation/RESULTS.json": "98af124eb766329cd7a6f4b23d5b479084eb8bf63595d62f798497bae4637f16",
+    "presentation/sprites-12/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/sprites-12/engine.log": "8e4bd634a481b2828e4b04c2c230044f314bca481ccaba46099287b16a29ff57",
+    "presentation/sprites-12/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/sprites-12/fixture-source/ZSCRIPT.txt": "fbd6e7d66192fc7e27440475c0d32b3f7ce6832374126223730024ff000f7887",
+    "presentation/sprites-12/presents.csv": "a31d9b8e34de30536325bc302c2f97033b39887994fa280984db16b43b8d150e",
+    "presentation/sprites-12/process.log": "f8709722ac517db3dea8c92ab77af1231bcf49cc0c7efd0afcaa70527cbc2596",
+    "presentation/sprites-12/scene.png": "6ba8864b878e8845358f9c7d4ef837aec9465f84c5c8cca4b5ee74c9e11647d4",
+    "presentation/sprites-12/session.ini": "a368928e2d6798425535abb41e21968e4b0dd24019e86d44ca52a4469a6ebd8c",
+    "repeat02-03.json": "9a38f84e639da10f0b7f3e458db81f2ca6c0102cfe3f655344495f7238d7ef4d",
+    "runtime-parity.json": "1111ff34db55057445b5ec9037f28c6453607b398e59d1e93ed5e51fafe8e120",
+    "superseded/visual01/detail-0-90.png": "62b9cc08f872a75bc1f09dc8fe1370da1c87a69b0c25381fb99af57715970d30",
+    "superseded/visual01/detail-1-90.png": "48c62c2ec0e80882b715c159939db7d514149c4c5c3038a82bd9c2389d110c19",
+    "superseded/visual01/detail-2-90.png": "910a17ec49aa6723932aa394fcda06504476e908252d71803274efbf7dc56e87",
+    "superseded/visual01/detail-3-90.png": "45daab3b9bf76b8a9b4caa5a38e75fc551270bf6289956d881d15ea2646918d0",
+    "superseded/visual01/fixture-source/MAPINFO.txt": "4756f3aa6492fa3e7bb5ddb5870ce4d73592641bc3a6197956cc6cb063028b4d",
+    "superseded/visual01/fixture-source/ZSCRIPT.txt": "7580685d9d82e6c12f4fefc167cdeab80a51242b987f4f666c65b938cb883fb1",
+    "superseded/visual01/fixture.zs": "61f16a2143a39174dee369941c5141e7b91f44e2f2edf01be920025fb518840c",
+    "superseded/visual01/RESULTS.json": "8f42ee9c0e54df63d76ceff1d274d5d603a1bbb4d649b69e95054d23b6727099",
+    "superseded/visual01/session.ini": "334ccd02193861156e627ab2b4330c2286bead07297707f4b9abee9a55078536",
+    "superseded/visual01/visual-part-1.cfg": "a45c9f78ad78fbbd9870ac8c205e52bd9c8174879699a4fc00a7b45321cdbbc7",
+    "superseded/visual01/visual-process.log": "66c417efdce0bc943c2a586f93a562355be8d8fd9f4c14d0fdcbae8e5bf19bf9",
+    "superseded/visual01/visual.cfg": "05af551ee1c484d5ca8e1c87346bf0afbd1cc2afea3adcc1e1eefdd4c5610690",
+    "superseded/visual01/visual.log": "0e11d7673d2327de0bd1ada7de2c2bb36a4843a020d4317c02cdea7c0610ef7a",
+    "visual/candidate-0.png": "2529e0987085ba576444649b569b343745573559e020018ae7ad81ae751311d8",
+    "visual/candidate-1.png": "ddcf787aef4d6d171237891df8713b4dd832b8ddfb12f80e623b8fb1237f21bf",
+    "visual/candidate-2.png": "29b5a20b2bf4e6092677b0af4d2dfc8f8150742d7a30cbca127551ba2a41d4ea",
+    "visual/candidate-3.png": "2529e0987085ba576444649b569b343745573559e020018ae7ad81ae751311d8",
+    "visual/candidate-5.png": "2529e0987085ba576444649b569b343745573559e020018ae7ad81ae751311d8",
+    "visual/candidate-6.png": "2529e0987085ba576444649b569b343745573559e020018ae7ad81ae751311d8",
+    "visual/candidate-7.png": "0dad2654b27fd9db4f2a1d7bd6065a1405f7ba244c8b5bc850ed8744ee4bd7ed",
+    "visual/detail-0-0.png": "11545026ebbb44e4b1e1fe051bb77100541c0ccc0e626191f61829a4fd1e336d",
+    "visual/detail-0-160.png": "fa4a0f4320e0b77df780965e3ae5afd02e00055aaa88e1229c39811619e2556e",
+    "visual/detail-0-225.png": "d03bf9c7edaaea46a302645943903ec13829804e6aee42d4ac0c88b70213d2c4",
+    "visual/detail-0-270.png": "c364c395571ccf513f9340b31e07c99e9ef242d62120de80070550445d21a75f",
+    "visual/detail-0-90.png": "62b9cc08f872a75bc1f09dc8fe1370da1c87a69b0c25381fb99af57715970d30",
+    "visual/detail-1-0.png": "8fa124f90b5803778252270f84addb95a72daf96ca2de4cd953e7ab46fdba24c",
+    "visual/detail-1-160.png": "e05c06ce8d88090bf1ffae68442a5e79f689086035ee3b3fe43b5da5f03cb88a",
+    "visual/detail-1-225.png": "bb4817ee1e6c61031f8eaa56ba2106fc07b9f2d1166e3e3e9e58dac5215c3f0d",
+    "visual/detail-1-270.png": "4d79cfc8ad1f8d8214d8837888c6ea5f6d6ea100e556588d94602b533c7f4151",
+    "visual/detail-1-90.png": "48c62c2ec0e80882b715c159939db7d514149c4c5c3038a82bd9c2389d110c19",
+    "visual/detail-2-0.png": "295ad8260b1f75dd656a3c3780c6b9e6de1566cb9fe841e9447f191e49ae04b9",
+    "visual/detail-2-160.png": "f68499f7433104d45fe5b9bc418d77162b8e5cae03407999e77b9e88e3b4105d",
+    "visual/detail-2-225.png": "67557e6967fdf97499182f73ce702f76b5fb6703240959ba88861e5ccfa51191",
+    "visual/detail-2-270.png": "000faf6db418069c93125a68c80378c8c9d4e7b877941ab542c3d076ec2a516d",
+    "visual/detail-2-90.png": "860d60c64e4cf70bd2821d945439ac1242a8ff7eafdf721d0cb5d6eae48b99c4",
+    "visual/detail-3-0.png": "27dbe2f07bc09d91725d7e747a8459738c0545f05a2818330f7a197303443952",
+    "visual/detail-3-160.png": "04829d86c75c775156eab79bfa32fec35849530cfc2cc4bceac3209e0772d3b6",
+    "visual/detail-3-225.png": "8c8d80e31e33580c9635b1e2370de3fcf8e35f33904fb2dc45fb94b66e206d10",
+    "visual/detail-3-270.png": "de80273050f3db9733d0d72a34bd5b6448d3186f04291d2a774e19c65a0d807f",
+    "visual/detail-3-90.png": "c6af6765a95d178dacafdc3f5ec9951de1d40df2358e0d7cc06c8bde2c7a2b0f",
+    "visual/fixture-source/MAPINFO.txt": "4756f3aa6492fa3e7bb5ddb5870ce4d73592641bc3a6197956cc6cb063028b4d",
+    "visual/fixture-source/ZSCRIPT.txt": "8c0c3428011127060c5e1dddb8847049f05f85b04f5107f924c29baad580a2f6",
+    "visual/fixture.zs": "abb5e1f60ec7219494a7a2a8e5129cbd058359484ac9e3ff61b6750b61f10049",
+    "visual/RESULTS.json": "afb7202ee1d61a4859c8a9cad20ec67ae70931bbbf65f3c28f40bc59faaca975",
+    "visual/session.ini": "99190ff679f241dbbc6f29cdee784ce230f60df97f9ea757de86843cf16465c3",
+    "visual/visual-part-1.cfg": "a45c9f78ad78fbbd9870ac8c205e52bd9c8174879699a4fc00a7b45321cdbbc7",
+    "visual/visual-process.log": "956bb1ec88b594a2d5645daba3353770af79485fc3cad7d9ff0d03f657405ad9",
+    "visual/visual.cfg": "1b9438820bc42bda3b278ca00ba6b489ccaa8b1679b1a40cf73e6d6c638949be",
+    "visual/visual.log": "eed9bc4d679867f14368d3d7ec5ec071b8bc295c6e8f57c20afa1246050297c0",
+    "validation-final.json": "6c1fc27e320c09b51e7bf0381658bd832fdc632433a15731c2a1bb0b4b5f46a5"
+  }
+}

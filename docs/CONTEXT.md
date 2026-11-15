@@ -1,9 +1,9 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.17.67** - 2026-11-15.
+Documentation version: **5.17.68** - 2026-11-15.
 
 **V5.17:** Native inventory/bestiary models and regional galleries are candidates.
-#777 adds helmets; twelve armor states still lack models.
+#779 adds hand armor; eight armor states lack models.
 #736 modular proposals await visual approval. Other weapons, characters and
 modular equipment remain unfinished. Issue-by-issue status/evidence: ASSETS/TASKS;
 author checks: pending_test.txt. Previous delivery details remain in HISTORY.

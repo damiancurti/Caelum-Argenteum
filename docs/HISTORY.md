@@ -1,6 +1,21 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.67** - 2026-11-15.
+Documentation version: **5.17.68** - 2026-11-15.
+
+## 5.17.68 - Magic, light, medium and heavy hand armor (#779), 2026-11-15
+
+Delivered four original paired world-drop assemblies using existing owned
+textures and hollow-glove geometry. All twelve native qualities retain identity
+and gameplay. Sixteen exports repeat; independent checks pass 164 closed
+components, 156 attachments, 40 clear rays and eight cuff-depth probes. Engine
+checks pass 1,011 continuity, 236 visual/control and 236 prior-helmet assertions.
+Twenty final detail views, the overview, helmet overview and both performance
+scenes were inspected. Initial schema/dispatch setup failures stopped before
+installation; round pads were replaced with curved finger plates after review.
+ASSETS records the remaining art qualifications and isolated measurements.
+Evidence: assets/validation_v5_17_68/evidence/SUMMARY.json.
+CA779-HAND-ARMOR-01 originates here and remains pending. No author check was
+accepted or removed. The broader V5.16/3D request remains unfinished.
 
 ## 5.17.67 - Magic, light, medium and heavy helmet drops (#777), 2026-11-15
 

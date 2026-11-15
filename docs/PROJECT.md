@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.67** - 2026-11-15.
+Documentation version: **5.17.68** - 2026-11-15.
+
+## 5.17.68 - Four hand armor world models (#779)
+
+Four paired native glove/gauntlet candidates cover twelve existing armor cases
+using owned geometry/materials. Sixteen exports repeat; independent topology,
+attachments and cuff checks pass. Native continuity: 1,011 assertions;
+visual/control: 236; earlier helmet regression: 236. Twenty final detail views
+were inspected. ASSETS records measured queue intervals and visual limits.
+CA779-HAND-ARMOR-01 awaits author review. Eight torso/foot armor states,
+ancestor-only bindings, other characters, modular equipment and V5.16 remain pending.
 
 ## 5.17.67 - Four armor helmet world models (#777)
 
