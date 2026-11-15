@@ -1,0 +1,22 @@
+{
+  "files": 16,
+  "byte_identical": true,
+  "sha256": {
+    "manifest.json": "17ce58ba184db843bcb9257bc8f21097154d0cadb9f92fc111f0bec74f765311",
+    "preview.pk3": "6639af8850b82213680d9c5e4c7e3f0a758f83a011b9e6db64204d1a20efe76b",
+    "editable/armor_hands.mtl": "e2f15fe8cb6eddb19227fe9877fe7eda01996356810490c6e450896fbf2f8826",
+    "editable/heavy.obj": "0f5ddc51718e7546b2dd18823c94828871781bad028dfed086e2b19015c4555f",
+    "editable/light.obj": "dab1b477f788a0043f13b55d5e75e8100748457247717138c8fd284e73130ff8",
+    "editable/magic.obj": "aff27b48dacfa48c24d1eca89fd287c1f4e0d579d4a800201e936dd19309139c",
+    "editable/medium.obj": "8334632dddf164db06adfd726a8ead4931914cdb87cad38dbd1776e3c39e66f3",
+    "caelum/data/inventory_armor_hands.modeldef": "8c32cddd85eb367b9f1753096880d9b6cf59e376b51220810c262712bd61778c",
+    "editable/src/models/caelum/inventory/armor_helmets/gold.png": "4e6123410914b56260ca5f406e873315063659043072852e2ebe433973be17dc",
+    "editable/src/models/caelum/inventory/articulated_weapons/leather.png": "261976d27a229443bb17fb75ac73408523988d51777cf928179ec1aff31740df",
+    "editable/src/models/caelum/inventory/magic_bases/materials.png": "10a848f89f7efd32cbf2b4ca9fe3c96a5ad4dd09079d19b80c878565f7d91041",
+    "editable/src/models/caelum/inventory/weapon_components/metals.png": "563d339e5309b725608c5470cc53abf902a30075859e44bb3793acb2cb3f1291",
+    "models/caelum/inventory/armor_hands/heavy.md3": "00e1fd36891d571f49e6981ea8d812d66ffb0aed1908c00fe9f99e5cb5a7c53c",
+    "models/caelum/inventory/armor_hands/light.md3": "a7a47509057c800aa04d404bf794e928e2c19c4884f708ec1164921aa33ba6ab",
+    "models/caelum/inventory/armor_hands/magic.md3": "c5d393b68280ca75e9a39fbf823e16cdfdb6bc87388e5299ae31b07677e6e699",
+    "models/caelum/inventory/armor_hands/medium.md3": "9d8f3de3239caae4b21ec57a7a5e7bf039c97fb56e20eb1ee8aceac78d7741bf"
+  }
+}

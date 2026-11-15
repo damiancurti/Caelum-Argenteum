@@ -1,0 +1,17 @@
+{
+  "entries": 18546,
+  "exact_source": true,
+  "added": [
+    "caelum/data/inventory_armor_hands.modeldef",
+    "models/caelum/inventory/armor_hands/heavy.md3",
+    "models/caelum/inventory/armor_hands/light.md3",
+    "models/caelum/inventory/armor_hands/magic.md3",
+    "models/caelum/inventory/armor_hands/medium.md3"
+  ],
+  "changed": [
+    "MODELDEF",
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "sha256": "8fc5cd6b16c0ca5ed14fd30ce0a92cae79242dbe617cb69ff66193ab3063889b"
+}

@@ -1,0 +1,2 @@
+Initial export stopped before installation: articulated weapon helper does not support prism. The wrapper now dispatches the existing prism backend from consumables; no shared generator changed.
+Second initial export stopped before installation: ellipsoid schema needs latitudes/longitudes. Corrected the new design keys; no shared geometry changed.

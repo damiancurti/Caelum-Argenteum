@@ -1,6 +1,16 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.67** - 2026-11-15.
+Documentation version: **5.17.68** - 2026-11-15.
+
+## 5.17.68 - #779 hand armor delivered; author review pending
+
+Four original paired hand-armor drops cover twelve type/tier cases. Sixteen
+exports repeat; 164 closed components, 156 attachments, 40 opening rays and eight
+cuff-depth checks pass. Native continuity: 1,011; visual/control: 236; prior
+helmet regression: 236. Twenty final detail views were inspected. Evidence:
+assets/validation_v5_17_68/evidence/SUMMARY.json. Author check: CA779-HAND-ARMOR-01.
+Next: eight torso/foot armor states and ancestor-only pickup bindings. Other
+characters, modular fitting and wider V5.16 remain unfinished.
 
 ## 5.17.67 - #777 helmet drops delivered; author review pending
 

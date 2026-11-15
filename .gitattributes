@@ -1125,3 +1125,12 @@ assets/validation_v5_17_42/evidence/** -text -diff
 /assets/validation_v5_17_67/*.zs text eol=lf
 /assets/validation_v5_17_67/evidence/** -text -diff
 /src/caelum/data/inventory_armor_helmets.modeldef text eol=lf
+
+# #779 owned hand armor source and native test evidence.
+assets/generators/*inventory_armor_hands_models.py text eol=lf
+assets/source/art/inventory_models_647/armor_hands/** text eol=lf
+assets/source/art/inventory_models_647/armor_hands/**/*.png binary
+assets/validation_v5_17_68/*.py text eol=lf
+assets/validation_v5_17_68/*.zs text eol=lf
+assets/validation_v5_17_68/evidence/** -text -diff
+src/caelum/data/inventory_armor_hands.modeldef text eol=lf
