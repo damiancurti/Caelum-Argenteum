@@ -1,0 +1,1118 @@
+{
+  "issue": 755,
+  "parent_issue": 647,
+  "version": "5.17.56",
+  "date": "2026-11-15",
+  "author_accepted": false,
+  "scope": "Six exact CaelumMaterialPickup A bindings: staff36/CSTF, bell37/CBEL, statuette39/CSTA, seal44/M044, censer89/M089 and scepter90/M090. Eighteen existing tier cases retain shared world appearance, original icons, scale/collision, recipes and all gameplay rules. Weapon/held replacements remain separate.",
+  "runtime": {
+    "sha256": "e387272850489d4d48e30b6cd557885a9746ce299786399b5a64256533407e2b",
+    "source_entries": 18498,
+    "exact_source_bytes": true
+  },
+  "baseline": {
+    "sha256": "80d4a83e2ce5721866389a7712d245e4383406895ce44d4bb6806a00345854c1",
+    "new_resources": [
+      "caelum/data/inventory_magic_bases.modeldef",
+      "models/caelum/inventory/magic_bases/bell.md3",
+      "models/caelum/inventory/magic_bases/censer.md3",
+      "models/caelum/inventory/magic_bases/materials.png",
+      "models/caelum/inventory/magic_bases/scepter.md3",
+      "models/caelum/inventory/magic_bases/seal.md3",
+      "models/caelum/inventory/magic_bases/staff.md3",
+      "models/caelum/inventory/magic_bases/statuette.md3"
+    ],
+    "changed_resources": [
+      "MODELDEF",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "all_other_runtime_bytes_identical": true
+  },
+  "static": {
+    "repeated_export_files": 17,
+    "repeat_byte_identical": true,
+    "installed_export_check_passed": true,
+    "geometry": {
+      "staff": {
+        "closed_components": 16,
+        "fixed_attachment_witnesses": 15,
+        "connected_components": 16,
+        "opening_probes": 0,
+        "opening_rays": 0,
+        "native_triangles": 8264
+      },
+      "bell": {
+        "closed_components": 7,
+        "fixed_attachment_witnesses": 6,
+        "connected_components": 7,
+        "opening_probes": 2,
+        "opening_rays": 10,
+        "native_triangles": 4392
+      },
+      "statuette": {
+        "closed_components": 19,
+        "fixed_attachment_witnesses": 18,
+        "connected_components": 19,
+        "opening_probes": 0,
+        "opening_rays": 0,
+        "native_triangles": 8592
+      },
+      "seal": {
+        "closed_components": 8,
+        "fixed_attachment_witnesses": 7,
+        "connected_components": 8,
+        "opening_probes": 0,
+        "opening_rays": 0,
+        "native_triangles": 4872
+      },
+      "censer": {
+        "closed_components": 6,
+        "fixed_attachment_witnesses": 5,
+        "connected_components": 6,
+        "opening_probes": 4,
+        "opening_rays": 20,
+        "native_triangles": 16512
+      },
+      "scepter": {
+        "closed_components": 16,
+        "fixed_attachment_witnesses": 15,
+        "connected_components": 16,
+        "opening_probes": 0,
+        "opening_rays": 0,
+        "native_triangles": 8264
+      }
+    },
+    "variants": {
+      "staff": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "shaft",
+          "ferrule",
+          "band0",
+          "band1",
+          "band2",
+          "band3",
+          "head",
+          "frame",
+          "cabochon",
+          "scroll-1",
+          "crest-1",
+          "scroll1",
+          "crest1",
+          "knot",
+          "ribbon0",
+          "ribbon1"
+        ],
+        "closed_outward_components": 16,
+        "vertices": 4598,
+        "triangles": 8264,
+        "surfaces": [
+          {
+            "material": "bronze",
+            "vertices": 1116,
+            "triangles": 1640
+          },
+          {
+            "material": "gold",
+            "vertices": 2838,
+            "triangles": 5424
+          },
+          {
+            "material": "wood",
+            "vertices": 67,
+            "triangles": 120
+          },
+          {
+            "material": "blue",
+            "vertices": 175,
+            "triangles": 312
+          },
+          {
+            "material": "gem",
+            "vertices": 402,
+            "triangles": 768
+          }
+        ],
+        "reference_opaque_bounds": [
+          27,
+          6,
+          101,
+          122
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 116.0,
+        "native_bounds": [
+          {
+            "min": [
+              -35.757202409354164,
+              -8.87029617468169,
+              0.0
+            ],
+            "max": [
+              35.73412262362183,
+              6.495858393297573,
+              115.99999999999999
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.0841121495327102,
+          "floor": 1
+        }
+      },
+      "bell": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "shell",
+          "handle",
+          "handle_loop",
+          "clapper_stem",
+          "clapper",
+          "tassel-1",
+          "tassel1"
+        ],
+        "closed_outward_components": 7,
+        "vertices": 2313,
+        "triangles": 4392,
+        "surfaces": [
+          {
+            "material": "bronze",
+            "vertices": 288,
+            "triangles": 552
+          },
+          {
+            "material": "gold",
+            "vertices": 978,
+            "triangles": 1920
+          },
+          {
+            "material": "red",
+            "vertices": 212,
+            "triangles": 384
+          },
+          {
+            "material": "bell_surface",
+            "vertices": 835,
+            "triangles": 1536
+          }
+        ],
+        "reference_opaque_bounds": [
+          24,
+          9,
+          109,
+          115
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 106.0,
+        "native_bounds": [
+          {
+            "min": [
+              -37.7604919417429,
+              -34.202881247964704,
+              0.0
+            ],
+            "max": [
+              37.7604919417429,
+              34.202881247964704,
+              106.0
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.0059670955283737,
+          "floor": 6.428760253510474
+        }
+      },
+      "statuette": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "robe",
+          "plinth",
+          "neck",
+          "head",
+          "hair_back",
+          "nose",
+          "hair-1",
+          "sleeve-1",
+          "hand-1",
+          "eye-1",
+          "robe_fold-1",
+          "hair1",
+          "sleeve1",
+          "hand1",
+          "eye1",
+          "robe_fold1",
+          "brow-1",
+          "brow1",
+          "lips"
+        ],
+        "closed_outward_components": 19,
+        "vertices": 4520,
+        "triangles": 8592,
+        "surfaces": [
+          {
+            "material": "bronze",
+            "vertices": 3008,
+            "triangles": 5712
+          },
+          {
+            "material": "gold",
+            "vertices": 216,
+            "triangles": 384
+          },
+          {
+            "material": "leaves",
+            "vertices": 492,
+            "triangles": 960
+          },
+          {
+            "material": "dark",
+            "vertices": 804,
+            "triangles": 1536
+          }
+        ],
+        "reference_opaque_bounds": [
+          33,
+          6,
+          95,
+          122
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 116.0,
+        "native_bounds": [
+          {
+            "min": [
+              -28.238966225723775,
+              -18.376237623762375,
+              0.0
+            ],
+            "max": [
+              28.238966225723775,
+              18.376237623762375,
+              115.99999999999999
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.1485148514851484,
+          "floor": 0.0
+        }
+      },
+      "seal": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "pedestal",
+          "blank_face",
+          "oval_frame",
+          "rear_neck",
+          "crown-1",
+          "foot_scroll-1",
+          "crown1",
+          "foot_scroll1"
+        ],
+        "closed_outward_components": 8,
+        "vertices": 2666,
+        "triangles": 4872,
+        "surfaces": [
+          {
+            "material": "gold",
+            "vertices": 2417,
+            "triangles": 4584
+          },
+          {
+            "material": "stone",
+            "vertices": 247,
+            "triangles": 288
+          }
+        ],
+        "reference_opaque_bounds": [
+          25,
+          8,
+          102,
+          120
+        ],
+        "reference_axis": "width",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 77.0,
+        "native_bounds": [
+          {
+            "min": [
+              -38.5,
+              -30.688405797101453,
+              0.0
+            ],
+            "max": [
+              38.5,
+              30.688405797101453,
+              77.93392752866632
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.1159420289855073,
+          "floor": 0.0
+        }
+      },
+      "censer": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "shell",
+          "foot",
+          "lid_knob",
+          "rim0",
+          "rim1",
+          "hinge"
+        ],
+        "closed_outward_components": 6,
+        "vertices": 12614,
+        "triangles": 16512,
+        "surfaces": [
+          {
+            "material": "bronze",
+            "vertices": 796,
+            "triangles": 1536
+          },
+          {
+            "material": "gold",
+            "vertices": 1152,
+            "triangles": 2304
+          },
+          {
+            "material": "leaves",
+            "vertices": 394,
+            "triangles": 768
+          },
+          {
+            "material": "censer_surface",
+            "vertices": 4096,
+            "triangles": 4790
+          },
+          {
+            "material": "censer_surface",
+            "vertices": 4096,
+            "triangles": 4708
+          },
+          {
+            "material": "censer_surface",
+            "vertices": 2124,
+            "triangles": 2406
+          }
+        ],
+        "reference_opaque_bounds": [
+          27,
+          8,
+          100,
+          120
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 112.0,
+        "native_bounds": [
+          {
+            "min": [
+              -34.3859649122807,
+              -34.3859649122807,
+              0.0
+            ],
+            "max": [
+              36.33411325421206,
+              34.3859649122807,
+              112.0
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 0.9824561403508771,
+          "floor": 0.0
+        }
+      },
+      "scepter": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "shaft",
+          "ferrule",
+          "band0",
+          "band1",
+          "band2",
+          "band3",
+          "head",
+          "frame",
+          "cabochon",
+          "scroll-1",
+          "crest-1",
+          "scroll1",
+          "crest1",
+          "knot",
+          "ribbon0",
+          "ribbon1"
+        ],
+        "closed_outward_components": 16,
+        "vertices": 4598,
+        "triangles": 8264,
+        "surfaces": [
+          {
+            "material": "bronze",
+            "vertices": 3378,
+            "triangles": 5912
+          },
+          {
+            "material": "gold",
+            "vertices": 576,
+            "triangles": 1152
+          },
+          {
+            "material": "wood",
+            "vertices": 67,
+            "triangles": 120
+          },
+          {
+            "material": "blue",
+            "vertices": 175,
+            "triangles": 312
+          },
+          {
+            "material": "gem",
+            "vertices": 402,
+            "triangles": 768
+          }
+        ],
+        "reference_opaque_bounds": [
+          26,
+          8,
+          101,
+          120
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 112.0,
+        "native_bounds": [
+          {
+            "min": [
+              -34.52419542972126,
+              -8.564423892796112,
+              0.0
+            ],
+            "max": [
+              34.50191149866936,
+              6.271863276287312,
+              111.99999999999999
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.0467289719626167,
+          "floor": 1
+        }
+      }
+    },
+    "project_validation_passed": true
+  },
+  "continuity": {
+    "issue": 647,
+    "kind": "magic_bases",
+    "scope": "Native pickup/toss, quantity and saved ownership for magic_bases; no normal menu or author acceptance.",
+    "baseline_sha256": "80d4a83e2ce5721866389a7712d245e4383406895ce44d4bb6806a00345854c1",
+    "runtime_sha256": "e387272850489d4d48e30b6cd557885a9746ce299786399b5a64256533407e2b",
+    "model_sha256": null,
+    "fixture_sha256": "13bdc1de33cdd63582540430a7bb5aa3106739bd0fdcd8b8b1385d7c5bdb62e6",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "baseline",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 487
+      },
+      {
+        "phase": "old-save-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 548
+      },
+      {
+        "phase": "candidate-fresh",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 487
+      },
+      {
+        "phase": "candidate-reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 541
+      },
+      {
+        "phase": "rollback-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 541
+      }
+    ],
+    "captures": {
+      "baseline.png": "0b678d25f58c65ffbf79fb603e1e203c81a2b93dbff5281ff8dd63e089756f32",
+      "candidate-0.png": "97cdf913bddcdd0b13ca9aa04be4a1970e5bab786434ad3f6368040c6fad7503",
+      "candidate-1.png": "5ba7c34b6a5d4c7d985428b4fdcdfa0f63febdc769e1f83de8c92dbaa06cc27a",
+      "candidate-2.png": "40a9c97c4b4e4c59674404f3a68dc7e1efd8229e86c0ed21adbdb2f2db819b4a",
+      "candidate-3.png": "401a2024aa2e2c1af10a95a1c715d31421391080a6279cbd6c77cbb6d9107f32",
+      "candidate-5.png": "16c35fd8be604c1169e9f6d172aa9c01b46fe4ddb1a0e77c597c58511e6ce9ea",
+      "candidate-6.png": "8a8d6e21d65d1574ab364999dcfdf2eeaddd85032315f7f304a641e1414a9180",
+      "candidate-7.png": "c6069c813837b848dd50229fad0d1bbeb461d11cf6145ae56abf7d81eab2bc66",
+      "detail-0-0.png": "39eedd6e5c07fdacb973ec713fea93d16affe06d71a21b795ee4f25729819b8f",
+      "detail-0-160.png": "27592a10ebd402f8fcb2eebc35e2e260ae13995bce5c274e0a8f199f147eb23a",
+      "detail-0-225.png": "99d7bf134a0c6f9917db9acd110970979c5cf8bf17b595cecde852d3a9b03c49",
+      "detail-0-270.png": "0398d4d99aeddd41e3313ac22190314d659b7e02945bd14612f382bd09aa0ff5",
+      "detail-0-90.png": "06ab4f309ad3dd093b700bdfdc76f2f380fd6f8ef4176200bf8d4a66f58e32c3",
+      "detail-1-0.png": "acb8d9a0cc303917553f0c20e4f5a647e037d657d5a50f90af8e1934179beea8",
+      "detail-1-160.png": "74a7918c42358e105961ff8b765a606b1675f816074be8a26eec1b1a82443bd7",
+      "detail-1-225.png": "8c68e4f954c89aacf777128eb604e7b518a8656a0ce89ffe834f5fee7f7a0f82",
+      "detail-1-270.png": "39d14639908505d22cd9e4a7532cf0435b06096b78632eb208db3fe55a9e008c",
+      "detail-1-90.png": "2f4152820809a445cc7d716ce538b52a37e4eccce28558c99f4d928192057961",
+      "detail-2-0.png": "dcbd71215bc1e19aed6842098cab45e35109b945992bf705a5143821adc5a3e8",
+      "detail-2-160.png": "b14f5a247c4da828e867fee4390ea296ab3a9fedd58f8d5ce471745f1c9d9b96",
+      "detail-2-225.png": "c43a4527c8ccf1bf7840cdcacc45a4e6cd3d70f4d7ad7a54d30b23254a47bd04",
+      "detail-2-270.png": "61036e2c7d2f962baa194a879c4d21da565f5a990270c61679f576d27cfb882b",
+      "detail-2-90.png": "0b2dcf10ab1ee89fbce7cdc590f8e27e7ccb1468895d17c882a1b49b93fa0a97",
+      "detail-3-0.png": "6a19541a4146f7915ecde65eafcc8854d9a5a144b881dbca458de7fae64184de",
+      "detail-3-160.png": "bdc266ad38943adcc6634bc9fa6cae9a3b4ae5904c4af7e00482bab1d2827732",
+      "detail-3-225.png": "2919234d843724984e647dcfaf1315f3ca79ec1e08637b4e8b805d0e18578c64",
+      "detail-3-270.png": "74c7339955620e62c0696fbb1d7e38c2220b7f9a6dc5faab36c8e408600f72f8",
+      "detail-3-90.png": "fde18351c4095bb556955c513f049761875bafc81839ea793eb57853d9163245",
+      "detail-4-0.png": "b24de0e2a7aa1e45fd4273f72489e98ce0c0eeac50fcd4928b46d55486dc0128",
+      "detail-4-160.png": "71f9369b405688c7479c057dea2d047fc34499e09614096db39c6e54ec0c922a",
+      "detail-4-225.png": "273f781e752a624329a23b03b9753c3725da6f68c922a40c3366f7805f825ce1",
+      "detail-4-270.png": "246f086860ba0bb5d313262247a0ebe3403c9e69ac13cad64ae0d412d6692828",
+      "detail-4-90.png": "362c7e490ef0a3af1e76e0e32d4851c66cc29b8aac7bb7e4f0cf086de66c355b",
+      "detail-5-0.png": "66e89603b8235dac6540f632b35ea5f6c95e3e700a070c22310158ebbd582c7b",
+      "detail-5-160.png": "1836c2771d510e6e7858802c04bf57293d455daa56491b211b8342eeb7b45ff2",
+      "detail-5-225.png": "4e5dca71efff708f2082609e3051701fd75de7c60381405d3cc99e5a5da66ef2",
+      "detail-5-270.png": "a72c37a43230d9813746ef9f0117ab6d4b82fb7bb9ba56fe04a69572a69dd550",
+      "detail-5-90.png": "ad069b38972dcf5b9f52841d89a52c6779ed816cc07897e3a3afbf3e314d416d"
+    }
+  },
+  "presentation": {
+    "issue": 755,
+    "kind": "magic_bases",
+    "scope": "Measure actual inventory drop classes before/after model installation.\n\nA single sequential baseline/candidate pair in an isolated room; this is not a\ncrowd budget, campaign performance acceptance or repeatability estimate.",
+    "baseline_sha256": "80d4a83e2ce5721866389a7712d245e4383406895ce44d4bb6806a00345854c1",
+    "runtime_sha256": "e387272850489d4d48e30b6cd557885a9746ce299786399b5a64256533407e2b",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+    "runs": [
+      {
+        "kind": "sprites",
+        "bodies": 6,
+        "pid": 4828,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 329965407.6328,
+          "END": 329985363.5451
+        },
+        "fixture_sha256": "5dffcc389867e8ee8388c44ab54cf4c4138f3fb4fed9532f5d5bcb78afd657be",
+        "passed": true,
+        "observed_completion_counts": [
+          [
+            6,
+            700
+          ]
+        ],
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.571528999999998,
+          "p50_ms": 28.5744,
+          "p95_ms": 30.87,
+          "p99_ms": 31.9613,
+          "max_ms": 34.9724
+        },
+        "presentation": {
+          "pid": 4828,
+          "trace_sha256": "ad2001bd919f44d78d83a34beddec3db7bf94d2a5f4eb97489a93886ce4504f2",
+          "rows": 17750,
+          "scene_presents": 11980,
+          "mean_present_fps": 686.2850973457722,
+          "present_intervals": {
+            "samples": 11979,
+            "mean_ms": 1.4571203773293773,
+            "p50_ms": 1.1611000299453735,
+            "p95_ms": 3.112999975681305,
+            "p99_ms": 5.297600030899048,
+            "max_ms": 23.06360000371933
+          },
+          "native_call_duration": {
+            "samples": 11980,
+            "mean_ms": 0.12344339725270694,
+            "p50_ms": 0.10559999942779541,
+            "p95_ms": 0.2200000286102295,
+            "p99_ms": 0.3174000382423401,
+            "max_ms": 0.9470999836921692
+          }
+        }
+      },
+      {
+        "kind": "models",
+        "bodies": 6,
+        "pid": 47744,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 330001881.4177,
+          "END": 330021935.20780003
+        },
+        "fixture_sha256": "5dffcc389867e8ee8388c44ab54cf4c4138f3fb4fed9532f5d5bcb78afd657be",
+        "passed": true,
+        "observed_completion_counts": [
+          [
+            6,
+            700
+          ]
+        ],
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.57189285714286,
+          "p50_ms": 28.5652,
+          "p95_ms": 31.1694,
+          "p99_ms": 32.9788,
+          "max_ms": 35.141
+        },
+        "presentation": {
+          "pid": 47744,
+          "trace_sha256": "b5a9ddb850f89bffc3cd920e80c5d91c26e30ef4ce8c18c1ced7db6278b188e1",
+          "rows": 16878,
+          "scene_presents": 11868,
+          "mean_present_fps": 676.1613385788712,
+          "present_intervals": {
+            "samples": 11867,
+            "mean_ms": 1.4789369680641011,
+            "p50_ms": 1.1687999963760376,
+            "p95_ms": 3.4595999717712402,
+            "p99_ms": 5.240500032901764,
+            "max_ms": 15.657899975776672
+          },
+          "native_call_duration": {
+            "samples": 11868,
+            "mean_ms": 0.12341745068197665,
+            "p50_ms": 0.10360002517700195,
+            "p95_ms": 0.22339999675750732,
+            "p99_ms": 0.30840003490448,
+            "max_ms": 0.7896000146865845
+          }
+        }
+      }
+    ]
+  },
+  "visual": {
+    "issue": 647,
+    "kind": "magic_bases",
+    "scope": "Native pickup/toss, quantity and saved ownership for magic_bases; no normal menu or author acceptance.",
+    "baseline_sha256": "80d4a83e2ce5721866389a7712d245e4383406895ce44d4bb6806a00345854c1",
+    "runtime_sha256": "80d4a83e2ce5721866389a7712d245e4383406895ce44d4bb6806a00345854c1",
+    "model_sha256": "26fb3e82a7e80170a47ae86174dd1c20e0d7198641281844721777d332ffdeef",
+    "fixture_sha256": "13bdc1de33cdd63582540430a7bb5aa3106739bd0fdcd8b8b1385d7c5bdb62e6",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "visual",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 494
+      }
+    ],
+    "captures": {
+      "candidate-0.png": "4f9583e060d0381609e91683530011eb9a662a6bfc0912031a6a569f9afe9a72",
+      "candidate-1.png": "71640585bd908dad5cb757f5ad01cc77631ff83a9957935878e48b1450910294",
+      "candidate-2.png": "785a03efb80a5b9b08a2ed635e0c4cc8afbeae2b53bf8d0a33f1e7fbde6bdb87",
+      "candidate-3.png": "b5ecfb313a57a6b448c677b2948f72a3280c157fc4236c5ff5cf5837b94ba335",
+      "candidate-5.png": "efcce1217cefbebe04052a1288a2ed71caab0b064958b9ec3f01b2b555ff0a11",
+      "candidate-6.png": "8a8d6e21d65d1574ab364999dcfdf2eeaddd85032315f7f304a641e1414a9180",
+      "candidate-7.png": "5be9ce85329f4cc944ac4623267cfd83f260ac4f293b15b19a3bbb1c8861f16c",
+      "detail-0-0.png": "39eedd6e5c07fdacb973ec713fea93d16affe06d71a21b795ee4f25729819b8f",
+      "detail-0-160.png": "27592a10ebd402f8fcb2eebc35e2e260ae13995bce5c274e0a8f199f147eb23a",
+      "detail-0-225.png": "99d7bf134a0c6f9917db9acd110970979c5cf8bf17b595cecde852d3a9b03c49",
+      "detail-0-270.png": "0398d4d99aeddd41e3313ac22190314d659b7e02945bd14612f382bd09aa0ff5",
+      "detail-0-90.png": "06ab4f309ad3dd093b700bdfdc76f2f380fd6f8ef4176200bf8d4a66f58e32c3",
+      "detail-1-0.png": "acb8d9a0cc303917553f0c20e4f5a647e037d657d5a50f90af8e1934179beea8",
+      "detail-1-160.png": "74a7918c42358e105961ff8b765a606b1675f816074be8a26eec1b1a82443bd7",
+      "detail-1-225.png": "8c68e4f954c89aacf777128eb604e7b518a8656a0ce89ffe834f5fee7f7a0f82",
+      "detail-1-270.png": "39d14639908505d22cd9e4a7532cf0435b06096b78632eb208db3fe55a9e008c",
+      "detail-1-90.png": "2f4152820809a445cc7d716ce538b52a37e4eccce28558c99f4d928192057961",
+      "detail-2-0.png": "dcbd71215bc1e19aed6842098cab45e35109b945992bf705a5143821adc5a3e8",
+      "detail-2-160.png": "b14f5a247c4da828e867fee4390ea296ab3a9fedd58f8d5ce471745f1c9d9b96",
+      "detail-2-225.png": "c43a4527c8ccf1bf7840cdcacc45a4e6cd3d70f4d7ad7a54d30b23254a47bd04",
+      "detail-2-270.png": "61036e2c7d2f962baa194a879c4d21da565f5a990270c61679f576d27cfb882b",
+      "detail-2-90.png": "0b2dcf10ab1ee89fbce7cdc590f8e27e7ccb1468895d17c882a1b49b93fa0a97",
+      "detail-3-0.png": "1aaebbb2d47b4fe0174a62e823603dde740f840e55e181193c9243b7ad95e69c",
+      "detail-3-160.png": "30eab92c04cef5e271de85d5ed92a05c1a6a727d539e185e6e30c2b46db07bf1",
+      "detail-3-225.png": "3aa13c7618fdbe304e57fc47b05728c9ce1bf7df860be5b7b85a45ab416a08eb",
+      "detail-3-270.png": "59c1ac90e9ab3413792a8dc5ac74ffa98fc662f2c226a704120ee95b3ba2b5ae",
+      "detail-3-90.png": "bf3e793626c38387d907c355b99df7d2cd78616f258f472bf40329a4a33544d8",
+      "detail-4-0.png": "b24de0e2a7aa1e45fd4273f72489e98ce0c0eeac50fcd4928b46d55486dc0128",
+      "detail-4-160.png": "71f9369b405688c7479c057dea2d047fc34499e09614096db39c6e54ec0c922a",
+      "detail-4-225.png": "273f781e752a624329a23b03b9753c3725da6f68c922a40c3366f7805f825ce1",
+      "detail-4-270.png": "246f086860ba0bb5d313262247a0ebe3403c9e69ac13cad64ae0d412d6692828",
+      "detail-4-90.png": "362c7e490ef0a3af1e76e0e32d4851c66cc29b8aac7bb7e4f0cf086de66c355b",
+      "detail-5-0.png": "66e89603b8235dac6540f632b35ea5f6c95e3e700a070c22310158ebbd582c7b",
+      "detail-5-160.png": "1836c2771d510e6e7858802c04bf57293d455daa56491b211b8342eeb7b45ff2",
+      "detail-5-225.png": "4e5dca71efff708f2082609e3051701fd75de7c60381405d3cc99e5a5da66ef2",
+      "detail-5-270.png": "a72c37a43230d9813746ef9f0117ab6d4b82fb7bb9ba56fe04a69572a69dd550",
+      "detail-5-90.png": "ad069b38972dcf5b9f52841d89a52c6779ed816cc07897e3a3afbf3e314d416d"
+    }
+  },
+  "art": {
+    "source": "assets/source/art/inventory_models_647/magic_bases",
+    "method": "New original volumetric geometry follows owned designs. The generated 3x3 material atlas is copied byte-exact with its prompt/provenance. Cavities and 48 censer holes are actual geometry; no image billboards or raster retouching.",
+    "inspected_final_byte_views": [
+      "visual03/detail-0-0.png",
+      "visual03/detail-0-90.png",
+      "visual03/detail-0-160.png",
+      "visual03/detail-0-225.png",
+      "visual03/detail-0-270.png",
+      "visual03/detail-1-0.png",
+      "visual03/detail-1-90.png",
+      "visual03/detail-1-160.png",
+      "visual03/detail-1-225.png",
+      "visual03/detail-1-270.png",
+      "visual03/detail-2-0.png",
+      "visual03/detail-2-90.png",
+      "visual03/detail-2-160.png",
+      "visual03/detail-2-225.png",
+      "visual03/detail-2-270.png",
+      "visual03/detail-4-0.png",
+      "visual03/detail-4-90.png",
+      "visual03/detail-4-160.png",
+      "visual03/detail-4-225.png",
+      "visual03/detail-4-270.png",
+      "visual03/detail-5-0.png",
+      "visual03/detail-5-90.png",
+      "visual03/detail-5-160.png",
+      "visual03/detail-5-225.png",
+      "visual03/detail-5-270.png",
+      "continuity/detail-3-0.png",
+      "continuity/detail-3-90.png",
+      "continuity/detail-3-160.png",
+      "continuity/detail-3-225.png",
+      "continuity/detail-3-270.png"
+    ],
+    "overview": "continuity/candidate-0.png",
+    "author_check": "CA755-MAGIC-BASE-DROPS-01"
+  },
+  "iterations": [
+    {
+      "candidate": "model01",
+      "result": "Independent geometry found inaccurate intersection witnesses, detached seal contacts and excessive seal width; corrected before native review."
+    },
+    {
+      "candidate": "model03 / visual01",
+      "result": "494 native fresh/visual checks pass. Refined pointed staff/scepter crests, statuette facial detail/folds and enlarged actual censer apertures."
+    },
+    {
+      "candidate": "model05 / visual02",
+      "result": "494 native fresh/visual checks pass. Raised underside inspection showed gold cavity textures flattening the bell; assigned existing dark atlas tile to real bell/censer interiors."
+    },
+    {
+      "candidate": "model07",
+      "result": "Static opacity check initially sampled outside the atlas. Bounds corrected; seam vertices also split so every lip/wall triangle remains within one material tile."
+    },
+    {
+      "candidate": "model08 / visual03",
+      "result": "Final geometry and separate dark cavity mappings; independent serialized triangle UV checks prohibit crossing atlas cells. Native outcome recorded in issue evidence."
+    },
+    {
+      "candidate": "model11",
+      "result": "Thirty visual03 detail/underside views inspected. Replaced the seal blank face radial cap UVs with planar UVs to remove the visible fan seam; geometry and five other runtime meshes are unchanged."
+    }
+  ],
+  "environment": {
+    "os": "Windows11 Pro26200",
+    "cpu": "Ryzen9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX3070Ti",
+    "engine": "GZDoom4.14.2",
+    "backend": "Vulkan",
+    "resolution": [
+      1280,
+      720
+    ],
+    "background_unpaused": true,
+    "audio": 0.05,
+    "presentation_uncapped": true,
+    "vsync": false
+  },
+  "qualifications": [
+    "Thirty visual03 detail/underside views were inspected. The seal cap UV seam was corrected afterward; its five installed continuity views and floor overview were inspected. Five other model bytes are identical to visual03.",
+    "Simplified sculpted face, static ribbons, strong painted ornament, subdued depth in ambient lighting and new hidden surfaces need author review. Existing 2D design acceptance does not accept these native models.",
+    "One sequential700-tic six-object pair measures queue intervals only, not GPU/display timing, repeatability, campaign or crowd performance; projected footprints differ. Both scenes were inspected.",
+    "Native pickup/toss/split/merge APIs and prepared Box/quest/provenance/contamination state do not prove ordinary menus, real crafting or author acceptance.",
+    "Other weapons, characters, modular equipment and V5.16 campaign remain unfinished. No executable, IWAD, PK3/WAD, DLL or save committed."
+  ],
+  "files": {
+    "build-final.log": "c98af60db0c8f935a69fe25648ad04e9b5af720eb0c02f32ff12e2667123114b",
+    "continuity/baseline-process.log": "3a9bfa34a24966c232a646b9678ad8d3e9d31375f0cf847b8db65eb7a490288b",
+    "continuity/baseline.cfg": "8a128af47a2a79805075f1a59a6eb5e515c697bd8a3faa2f2bfd52c269d6111e",
+    "continuity/baseline.log": "4c5486a25f68ec1e05145565404334439db732e3d324656985898079fc6adf20",
+    "continuity/baseline.png": "0b678d25f58c65ffbf79fb603e1e203c81a2b93dbff5281ff8dd63e089756f32",
+    "continuity/candidate-0.png": "97cdf913bddcdd0b13ca9aa04be4a1970e5bab786434ad3f6368040c6fad7503",
+    "continuity/candidate-1.png": "5ba7c34b6a5d4c7d985428b4fdcdfa0f63febdc769e1f83de8c92dbaa06cc27a",
+    "continuity/candidate-2.png": "40a9c97c4b4e4c59674404f3a68dc7e1efd8229e86c0ed21adbdb2f2db819b4a",
+    "continuity/candidate-3.png": "401a2024aa2e2c1af10a95a1c715d31421391080a6279cbd6c77cbb6d9107f32",
+    "continuity/candidate-5.png": "16c35fd8be604c1169e9f6d172aa9c01b46fe4ddb1a0e77c597c58511e6ce9ea",
+    "continuity/candidate-6.png": "8a8d6e21d65d1574ab364999dcfdf2eeaddd85032315f7f304a641e1414a9180",
+    "continuity/candidate-7.png": "c6069c813837b848dd50229fad0d1bbeb461d11cf6145ae56abf7d81eab2bc66",
+    "continuity/candidate-fresh-process.log": "aa1965b24eedc070e3a00ee0402949af0939cc0a97fe3f132d504437d8ea0da8",
+    "continuity/candidate-fresh.cfg": "135e6dde10af635bc742f82beeb697de6bd1f65dd5bb04e9cd9af5849c60590e",
+    "continuity/candidate-fresh.log": "22cd375f01477bf0bc49302e1d36cb83da08072b2ff0f35cfcd16698a49f72a8",
+    "continuity/candidate-reload-process.log": "5190be40bd58d47b6bd511c0abcc2a6faed8c4d1914930a8985794a490211f3c",
+    "continuity/candidate-reload.cfg": "0e4a611e6ae3ada01ca85e64a8b3304c41ae4cef11480cc6d9266222e3438340",
+    "continuity/candidate-reload.log": "49e9ba99289d0435d52f40fbd556663afd5f9335e2582295bbe0d3a7ad47f796",
+    "continuity/detail-0-0.png": "39eedd6e5c07fdacb973ec713fea93d16affe06d71a21b795ee4f25729819b8f",
+    "continuity/detail-0-160.png": "27592a10ebd402f8fcb2eebc35e2e260ae13995bce5c274e0a8f199f147eb23a",
+    "continuity/detail-0-225.png": "99d7bf134a0c6f9917db9acd110970979c5cf8bf17b595cecde852d3a9b03c49",
+    "continuity/detail-0-270.png": "0398d4d99aeddd41e3313ac22190314d659b7e02945bd14612f382bd09aa0ff5",
+    "continuity/detail-0-90.png": "06ab4f309ad3dd093b700bdfdc76f2f380fd6f8ef4176200bf8d4a66f58e32c3",
+    "continuity/detail-1-0.png": "acb8d9a0cc303917553f0c20e4f5a647e037d657d5a50f90af8e1934179beea8",
+    "continuity/detail-1-160.png": "74a7918c42358e105961ff8b765a606b1675f816074be8a26eec1b1a82443bd7",
+    "continuity/detail-1-225.png": "8c68e4f954c89aacf777128eb604e7b518a8656a0ce89ffe834f5fee7f7a0f82",
+    "continuity/detail-1-270.png": "39d14639908505d22cd9e4a7532cf0435b06096b78632eb208db3fe55a9e008c",
+    "continuity/detail-1-90.png": "2f4152820809a445cc7d716ce538b52a37e4eccce28558c99f4d928192057961",
+    "continuity/detail-2-0.png": "dcbd71215bc1e19aed6842098cab45e35109b945992bf705a5143821adc5a3e8",
+    "continuity/detail-2-160.png": "b14f5a247c4da828e867fee4390ea296ab3a9fedd58f8d5ce471745f1c9d9b96",
+    "continuity/detail-2-225.png": "c43a4527c8ccf1bf7840cdcacc45a4e6cd3d70f4d7ad7a54d30b23254a47bd04",
+    "continuity/detail-2-270.png": "61036e2c7d2f962baa194a879c4d21da565f5a990270c61679f576d27cfb882b",
+    "continuity/detail-2-90.png": "0b2dcf10ab1ee89fbce7cdc590f8e27e7ccb1468895d17c882a1b49b93fa0a97",
+    "continuity/detail-3-0.png": "6a19541a4146f7915ecde65eafcc8854d9a5a144b881dbca458de7fae64184de",
+    "continuity/detail-3-160.png": "bdc266ad38943adcc6634bc9fa6cae9a3b4ae5904c4af7e00482bab1d2827732",
+    "continuity/detail-3-225.png": "2919234d843724984e647dcfaf1315f3ca79ec1e08637b4e8b805d0e18578c64",
+    "continuity/detail-3-270.png": "74c7339955620e62c0696fbb1d7e38c2220b7f9a6dc5faab36c8e408600f72f8",
+    "continuity/detail-3-90.png": "fde18351c4095bb556955c513f049761875bafc81839ea793eb57853d9163245",
+    "continuity/detail-4-0.png": "b24de0e2a7aa1e45fd4273f72489e98ce0c0eeac50fcd4928b46d55486dc0128",
+    "continuity/detail-4-160.png": "71f9369b405688c7479c057dea2d047fc34499e09614096db39c6e54ec0c922a",
+    "continuity/detail-4-225.png": "273f781e752a624329a23b03b9753c3725da6f68c922a40c3366f7805f825ce1",
+    "continuity/detail-4-270.png": "246f086860ba0bb5d313262247a0ebe3403c9e69ac13cad64ae0d412d6692828",
+    "continuity/detail-4-90.png": "362c7e490ef0a3af1e76e0e32d4851c66cc29b8aac7bb7e4f0cf086de66c355b",
+    "continuity/detail-5-0.png": "66e89603b8235dac6540f632b35ea5f6c95e3e700a070c22310158ebbd582c7b",
+    "continuity/detail-5-160.png": "1836c2771d510e6e7858802c04bf57293d455daa56491b211b8342eeb7b45ff2",
+    "continuity/detail-5-225.png": "4e5dca71efff708f2082609e3051701fd75de7c60381405d3cc99e5a5da66ef2",
+    "continuity/detail-5-270.png": "a72c37a43230d9813746ef9f0117ab6d4b82fb7bb9ba56fe04a69572a69dd550",
+    "continuity/detail-5-90.png": "ad069b38972dcf5b9f52841d89a52c6779ed816cc07897e3a3afbf3e314d416d",
+    "continuity/fixture-source/MAPINFO.txt": "63dd45266271b081942225cd47b77d6954df3b1167ce62bdc78e829899bf0630",
+    "continuity/fixture-source/ZSCRIPT.txt": "0a48aaed5ca7035b1e664eb520b798b76fb837640013ae08f88dc6d1986c28b6",
+    "continuity/fixture.zs": "c176f6e0cce937040a58d9de96867a111d79571caaddcdcd238fa37e33d1bbe4",
+    "continuity/old-save-load-part-1.cfg": "aef3304e5752f0cc064ec39e8f1af4a0647b7735c1a4d051273495c66c11a26e",
+    "continuity/old-save-load-part-2.cfg": "bbdf798303bc7b2c70cd6c70f6321bcd8d0b03b607994228c556435187a5220d",
+    "continuity/old-save-load-process.log": "7d2db20f31e51e8d1a4ab5c200a129d6375bb190c3913ac00b57084ffbc5a19f",
+    "continuity/old-save-load.cfg": "63e2718ca650fdf30d2e46ca8b88d877900813057d8307c4d8c62e1dadf82938",
+    "continuity/old-save-load.log": "0c3c58a4f34081b5f5e766456fd97d11ee46154fe482809461f735b6ffe22b4c",
+    "continuity/RESULTS.json": "ff47f9629fa37401129073338a8708ac90de617ec143d0479fa6d4a0fed4092a",
+    "continuity/rollback-load-process.log": "c1db05184209a4753cda67e0cd286027b1991c5744d8e1052c9c87cd5b81594c",
+    "continuity/rollback-load.cfg": "0e4a611e6ae3ada01ca85e64a8b3304c41ae4cef11480cc6d9266222e3438340",
+    "continuity/rollback-load.log": "4db1fe9a717edefdb59d5a30b7a7e263cadf71c0ba7637792c34cf661924ad60",
+    "continuity/session.ini": "6c100d5d3da88a1169d668fb4ef7b6906e9fa9c75954f9aacf2a441871894522",
+    "exports/model01.json": "6fa539b4da02db8f13775fc175bf050e7af8c7d7988dc6fab404b9786e2aa23e",
+    "exports/model02.json": "263c6b58d991f29ae898aa838c604f7172e92f12a06653bd5cfef072ea964ffa",
+    "exports/model03.json": "f11c5d9c4b136112e94663471ccdaf52ae6f9b1578f5fb6e02a3bd2901d1e6c8",
+    "exports/model04.json": "5831d096878ea96b1472b3a3b8e22c49736724cad7e5914483c64c140b4c3bf7",
+    "exports/model05.json": "6cba0a5c038d704c31541571cfdea6871b1d2554f729f429d1467aefff72d8d6",
+    "exports/model06.json": "6cba0a5c038d704c31541571cfdea6871b1d2554f729f429d1467aefff72d8d6",
+    "exports/model07.json": "2cb92317a341fea4c15fc17a9f7d6b8fd2306f391df1d358d13a0517fda9ee0b",
+    "exports/model08.json": "eeab35992b7579059a3832025c72333029de6ee79c3940d3e7ba232cfe1b27c3",
+    "exports/model09.json": "52242653c0f01a621972eb87dc681c0d45e10566129077e3d2c249d5154e5fcc",
+    "exports/model10.json": "52242653c0f01a621972eb87dc681c0d45e10566129077e3d2c249d5154e5fcc",
+    "exports/model11.json": "8423962ef7ea28d93629d6e093bbc1153f7bfe4b2701075cd3205c7f8f430129",
+    "exports/model12.json": "8423962ef7ea28d93629d6e093bbc1153f7bfe4b2701075cd3205c7f8f430129",
+    "geometry-final.json": "01f6c215a617e4e7a859f511691cd98cc004a9be107ded57f0a6cc6320673f83",
+    "iterations/issue755-geometry01.json": "7a7f3b42c582d3cd02ad4ffd0b6526d0236dc981a59ce9f7e1ac13deca797f87",
+    "iterations/issue755-geometry02.json": "b27c31146a1c8564bcfe8186cce990cab9f5e35c0cb1cf5ec5651f55bc72b7e3",
+    "iterations/source01/DESIGN.json": "ad7b190672eac4640584508f73466b00f32ff9371bfab05f67620b3cbbbefcb8",
+    "iterations/source02/DESIGN.json": "44a110b5a80d752710d981b7e0eaa2ea5e1b30f99e565f8027af698052fbbeff",
+    "iterations/source03/DESIGN.json": "979af3ecaabc6a3799d3e49b84cf5515aa5a1c406b0dee05371855941f0da802",
+    "iterations/source04/DESIGN.json": "2cad2bf232153ae85a702d8ec773e59d1e8d1ebce835ba984e6a999bf779f926",
+    "iterations/source05/DESIGN.json": "3d49000cb4648aafd8c155d0aa09d8ca86cb7f427abf94c019c374a5d6456d72",
+    "presentation/models-6/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/models-6/engine.log": "18b14a61dfa8faefc2495543c8e16b7250017ed70f89de3cf364881e1c15b3b0",
+    "presentation/models-6/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/models-6/fixture-source/ZSCRIPT.txt": "77606b977dcfdc6db056001275e917247f469bdfac32ea8d1bec65cc0cfbe4ea",
+    "presentation/models-6/presents.csv": "b5a9ddb850f89bffc3cd920e80c5d91c26e30ef4ce8c18c1ced7db6278b188e1",
+    "presentation/models-6/process.log": "cd0f47992550caa082b8268f6084ee4294f86b969f6f3f67aed3748a78f3936d",
+    "presentation/models-6/scene.png": "3f67f8bb29f60e59a424af09d900781818a481c27bdbb9755ce5061e072e8b35",
+    "presentation/models-6/session.ini": "a88b349cb01c550a7a4d60e637abcd8e120018e5e5a8f21bb677628209e43cab",
+    "presentation/RESULTS.json": "2409aef4c7638b6f37ce4784fc281aa33b4740739c5e505d62a52512575a92e4",
+    "presentation/sprites-6/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/sprites-6/engine.log": "2de88d8acfe0eda47caba215539644ea6a1f686e6f8e4abd5e550f08671b6a10",
+    "presentation/sprites-6/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/sprites-6/fixture-source/ZSCRIPT.txt": "77606b977dcfdc6db056001275e917247f469bdfac32ea8d1bec65cc0cfbe4ea",
+    "presentation/sprites-6/presents.csv": "ad2001bd919f44d78d83a34beddec3db7bf94d2a5f4eb97489a93886ce4504f2",
+    "presentation/sprites-6/process.log": "8eb3ac0f3aa754127ff8b1c82059fe78881c4abd4fcf0e2dbc66320b7b63666b",
+    "presentation/sprites-6/scene.png": "5b1ad26f88d646fc684a867d6cc7fa59bfe21ec6a31b5e8f6b7e4488b9a1c94d",
+    "presentation/sprites-6/session.ini": "299045ea410e7f8fff8212ec8b60b618f87ba4557562943c35f2d52625907b71",
+    "repeat-final.json": "f59787952bad31e9515915fa0dc60b9f6439e6c7940f5cb8116ba6f3d8624969",
+    "visual01/candidate-0.png": "e1b0cbfe23523778fa1185c8d1a950cec44e972157ae8c62ac304cfea9b2901f",
+    "visual01/candidate-1.png": "c764a11dda449f9361442262bf3fd36bc61362203749f037ee43d5580b7f5b7b",
+    "visual01/candidate-2.png": "39f94669dc4cb2f460282a6eff04086b84c61249f2485eeb2716d5e88009ccb4",
+    "visual01/candidate-3.png": "dd96bd54b4faa73fee58d7bf4d8fcdee4d1a1a844a661c35e851165e349626a2",
+    "visual01/candidate-5.png": "5be741c6157a21d1d408e5251f17c2eec693b1fd121b8ed9265db8dbe1d53721",
+    "visual01/candidate-6.png": "2648c2591e6739441c7887a474bb6c25b92f5eced9104ab53bfebe0ea2c28433",
+    "visual01/candidate-7.png": "8be92708f39ad34a55b252b48f0ba848d53dac4076978301e9127946c585085a",
+    "visual01/detail-0-0.png": "e69ba37dc283a7fdb53bed4682a9ede49c6828dce31baee70b7dee29d7b76f40",
+    "visual01/detail-0-160.png": "fa01ae0d280ab6725bec80938d04cd4e863d3f393fda5a5226977b178222bfb6",
+    "visual01/detail-0-225.png": "4cedf286aec85c80b5b74a3f0c0c1ec12e54aeecd0589bc1ee836fc757f16d1c",
+    "visual01/detail-0-270.png": "2c336040496c2ea08f866324e8dab9d0df163f74ca428d74f128c1655c95549a",
+    "visual01/detail-0-90.png": "246d7423c71ae52a0dec688bbceaa61e50db4038f9e1c11c472fa0aa2bb9aa62",
+    "visual01/detail-1-0.png": "14f51e25191134b313fe8eaa3a08272f8cc25fc5bc7c032d44ac9ce330cc9ace",
+    "visual01/detail-1-160.png": "74a7918c42358e105961ff8b765a606b1675f816074be8a26eec1b1a82443bd7",
+    "visual01/detail-1-225.png": "8c68e4f954c89aacf777128eb604e7b518a8656a0ce89ffe834f5fee7f7a0f82",
+    "visual01/detail-1-270.png": "39d14639908505d22cd9e4a7532cf0435b06096b78632eb208db3fe55a9e008c",
+    "visual01/detail-1-90.png": "2f4152820809a445cc7d716ce538b52a37e4eccce28558c99f4d928192057961",
+    "visual01/detail-2-0.png": "f0a577df2e37a0454a658a4f58435bfba271848d2ef54dd8c8bf5c8c163835a3",
+    "visual01/detail-2-160.png": "e4c7fffcabc1b39447dc26405d8043a343ee5765d8b76fee6d0d5949a79932d7",
+    "visual01/detail-2-225.png": "312556d2771ba14d1a02928f224c03e30c9531836a447b706cfb260df847df11",
+    "visual01/detail-2-270.png": "0414cb585d691fdc3e32aeb277e9f45e8b2e582f6ca68811e886681e30085024",
+    "visual01/detail-2-90.png": "a28eee138994899db1b04a3ce56b15c4dda450945ce5df3c30248a6642d6a99d",
+    "visual01/detail-3-0.png": "1aaebbb2d47b4fe0174a62e823603dde740f840e55e181193c9243b7ad95e69c",
+    "visual01/detail-3-160.png": "30eab92c04cef5e271de85d5ed92a05c1a6a727d539e185e6e30c2b46db07bf1",
+    "visual01/detail-3-225.png": "3aa13c7618fdbe304e57fc47b05728c9ce1bf7df860be5b7b85a45ab416a08eb",
+    "visual01/detail-3-270.png": "59c1ac90e9ab3413792a8dc5ac74ffa98fc662f2c226a704120ee95b3ba2b5ae",
+    "visual01/detail-3-90.png": "bf3e793626c38387d907c355b99df7d2cd78616f258f472bf40329a4a33544d8",
+    "visual01/detail-4-0.png": "72bb1506123147cdca33bf911ab65970b18c75a4dac2ed5e4b0c2f2211916c10",
+    "visual01/detail-4-160.png": "18374dfbd2cc68d820ab9c098eec6ca18a9ddd4c1101fe1fa5d02fac6c6d94ce",
+    "visual01/detail-4-225.png": "380e34a96ac73561dd8d28ebeae259b6c1401e874b7245419a3b7c03638a1a96",
+    "visual01/detail-4-270.png": "813c98fe2d193985723969bd989feb6849a42c07bd2f6e2084b3457ce56849af",
+    "visual01/detail-4-90.png": "fd51beebfe955835f25eb3e6af632ad5bc163de48f262dfdb1ca800ca6f6b364",
+    "visual01/detail-5-0.png": "5bee047bf13cc64db631955d58d0984d6e87bb9276ac0d679e16a4e190f93aae",
+    "visual01/detail-5-160.png": "e99e6ac0a08da813d4c59493f07632833dd790d3384ccec114afaa8212ed2b3c",
+    "visual01/detail-5-225.png": "cfec2b3a5a4a65107efd85f72dda15c9f9ae0d8b95d002311c5a585b9a22add3",
+    "visual01/detail-5-270.png": "b75f4bb88516b057d64cd65f928aaf5690b5afdd71ac06659a2c4ae987d8b020",
+    "visual01/detail-5-90.png": "d773447e15607f1bfa1bed5fa17bf5601623e7d45af6e8a3dec7879f0334cc39",
+    "visual01/fixture-source/MAPINFO.txt": "63dd45266271b081942225cd47b77d6954df3b1167ce62bdc78e829899bf0630",
+    "visual01/fixture-source/ZSCRIPT.txt": "fdbb073758bc4018e69de3a68f539177ab14c522f4130253be0b5b755892b21d",
+    "visual01/fixture.zs": "9e3902c0bae5fb422b0b80e119b82c6426b041aae4fe820751060c7f5d4a5cdf",
+    "visual01/RESULTS.json": "b3a08729cd41f94c0f82999a8eaf03b841d33aa282f6f3f14ba521fd5b8195f5",
+    "visual01/session.ini": "7ac19cb3d548b0764be57befdaa2ce8b595e70dc2c9a429136531b6ad9a79213",
+    "visual01/visual-part-1.cfg": "fdfb7cdce9417e0c6b9dff6150b21fdebc3290296f1397f9d2f72de72ac39e15",
+    "visual01/visual-part-2.cfg": "4590496425c198d1e2a309961612cf5658f0372014ba38707b03283a1d71f512",
+    "visual01/visual-process.log": "4bc7b9210cff2bf3b53474636ce87372cb08e5d4ce9448dbbcf92ac9ad01742b",
+    "visual01/visual.cfg": "443a800ec86bae5f5de4d08b9fa6de1fd695f1f56936865c07ac9e8434379d64",
+    "visual01/visual.log": "ee0d0fede83da41547c7a20d4eeba220eef5a4c7d651988253a749437631c799",
+    "visual02/candidate-0.png": "6bb7e3d7171a1b1a05ec953c67d4cef76cb1541fe7cec938a797658ac47cf1af",
+    "visual02/candidate-1.png": "757f7d759a6812f1782346b371b1153455d644232689e2b5abdd18dceecceae3",
+    "visual02/candidate-2.png": "14d9e37bc13a57ea89a8264cc2544f8dab923a1455e2800c8f3be5e49a8eeacf",
+    "visual02/candidate-3.png": "fdeaf8e0cdf25e478ca8cc2ddd74546bc40bc1a34fa021980d2ba9b679d4b208",
+    "visual02/candidate-5.png": "57840e10b6f71c7361cda8d9b9c832fce66dca6af0f81c08a734a3066ff66150",
+    "visual02/candidate-6.png": "8a8d6e21d65d1574ab364999dcfdf2eeaddd85032315f7f304a641e1414a9180",
+    "visual02/candidate-7.png": "45b9bcf141ef64c02196f26fa3c25d49d8f8e4ef46288db74897d1e2b6e6431a",
+    "visual02/detail-0-0.png": "39eedd6e5c07fdacb973ec713fea93d16affe06d71a21b795ee4f25729819b8f",
+    "visual02/detail-0-160.png": "27592a10ebd402f8fcb2eebc35e2e260ae13995bce5c274e0a8f199f147eb23a",
+    "visual02/detail-0-225.png": "99d7bf134a0c6f9917db9acd110970979c5cf8bf17b595cecde852d3a9b03c49",
+    "visual02/detail-0-270.png": "0398d4d99aeddd41e3313ac22190314d659b7e02945bd14612f382bd09aa0ff5",
+    "visual02/detail-0-90.png": "06ab4f309ad3dd093b700bdfdc76f2f380fd6f8ef4176200bf8d4a66f58e32c3",
+    "visual02/detail-1-0.png": "14f51e25191134b313fe8eaa3a08272f8cc25fc5bc7c032d44ac9ce330cc9ace",
+    "visual02/detail-1-160.png": "74a7918c42358e105961ff8b765a606b1675f816074be8a26eec1b1a82443bd7",
+    "visual02/detail-1-225.png": "8c68e4f954c89aacf777128eb604e7b518a8656a0ce89ffe834f5fee7f7a0f82",
+    "visual02/detail-1-270.png": "39d14639908505d22cd9e4a7532cf0435b06096b78632eb208db3fe55a9e008c",
+    "visual02/detail-1-90.png": "2f4152820809a445cc7d716ce538b52a37e4eccce28558c99f4d928192057961",
+    "visual02/detail-2-0.png": "dcbd71215bc1e19aed6842098cab45e35109b945992bf705a5143821adc5a3e8",
+    "visual02/detail-2-160.png": "b14f5a247c4da828e867fee4390ea296ab3a9fedd58f8d5ce471745f1c9d9b96",
+    "visual02/detail-2-225.png": "c43a4527c8ccf1bf7840cdcacc45a4e6cd3d70f4d7ad7a54d30b23254a47bd04",
+    "visual02/detail-2-270.png": "61036e2c7d2f962baa194a879c4d21da565f5a990270c61679f576d27cfb882b",
+    "visual02/detail-2-90.png": "0b2dcf10ab1ee89fbce7cdc590f8e27e7ccb1468895d17c882a1b49b93fa0a97",
+    "visual02/detail-3-0.png": "1aaebbb2d47b4fe0174a62e823603dde740f840e55e181193c9243b7ad95e69c",
+    "visual02/detail-3-160.png": "30eab92c04cef5e271de85d5ed92a05c1a6a727d539e185e6e30c2b46db07bf1",
+    "visual02/detail-3-225.png": "3aa13c7618fdbe304e57fc47b05728c9ce1bf7df860be5b7b85a45ab416a08eb",
+    "visual02/detail-3-270.png": "59c1ac90e9ab3413792a8dc5ac74ffa98fc662f2c226a704120ee95b3ba2b5ae",
+    "visual02/detail-3-90.png": "bf3e793626c38387d907c355b99df7d2cd78616f258f472bf40329a4a33544d8",
+    "visual02/detail-4-0.png": "9e354f4755106fec252c072340af475ce115886f4fee628698cf80e8378c6c6c",
+    "visual02/detail-4-160.png": "8ef957d755815d97b3cfcea7a978630699996044bcef9fedc04ad1eb9a6823c9",
+    "visual02/detail-4-225.png": "2c4537ff015e66f86ab9e2fca9815a4dc0c18e8551f2470cc71634329c68af3c",
+    "visual02/detail-4-270.png": "410be25d1eb777ea9e8ed18526369a27d19eaf2abc8976214c7f3f347e78a12a",
+    "visual02/detail-4-90.png": "a17017f9dfef0d49aa49a066546bb77b004d22227484ec45e625766c6879df35",
+    "visual02/detail-5-0.png": "66e89603b8235dac6540f632b35ea5f6c95e3e700a070c22310158ebbd582c7b",
+    "visual02/detail-5-160.png": "1836c2771d510e6e7858802c04bf57293d455daa56491b211b8342eeb7b45ff2",
+    "visual02/detail-5-225.png": "4e5dca71efff708f2082609e3051701fd75de7c60381405d3cc99e5a5da66ef2",
+    "visual02/detail-5-270.png": "a72c37a43230d9813746ef9f0117ab6d4b82fb7bb9ba56fe04a69572a69dd550",
+    "visual02/detail-5-90.png": "ad069b38972dcf5b9f52841d89a52c6779ed816cc07897e3a3afbf3e314d416d",
+    "visual02/fixture-source/MAPINFO.txt": "63dd45266271b081942225cd47b77d6954df3b1167ce62bdc78e829899bf0630",
+    "visual02/fixture-source/ZSCRIPT.txt": "0a48aaed5ca7035b1e664eb520b798b76fb837640013ae08f88dc6d1986c28b6",
+    "visual02/fixture.zs": "c176f6e0cce937040a58d9de96867a111d79571caaddcdcd238fa37e33d1bbe4",
+    "visual02/RESULTS.json": "94d2c2ae6617c72eba932e19a27363809a1d53a59b6f36b04e48afe62b9ab843",
+    "visual02/session.ini": "77b24e2de30db468010e21360b03746c5116fecb2efe05073f75c9d6898f4a06",
+    "visual02/visual-part-1.cfg": "1cf7f78e65e421e80186fdd30002e41e931a84010e6af7dd56d0706ffe3577a8",
+    "visual02/visual-part-2.cfg": "4590496425c198d1e2a309961612cf5658f0372014ba38707b03283a1d71f512",
+    "visual02/visual-process.log": "1a4abddff66719d79bad0e331a21dbc5ddf1bb038e2c6e7fe4876070e5f90348",
+    "visual02/visual.cfg": "27e74ad5a6eca8d446ddc81729bba3cb845e87ab27814359da00481f02b3e4bd",
+    "visual02/visual.log": "1376c1a3f0c9d7cb7b80cc4f1589190c6e2d635b78bf27ee99990306a85d8664",
+    "visual03/candidate-0.png": "4f9583e060d0381609e91683530011eb9a662a6bfc0912031a6a569f9afe9a72",
+    "visual03/candidate-1.png": "71640585bd908dad5cb757f5ad01cc77631ff83a9957935878e48b1450910294",
+    "visual03/candidate-2.png": "785a03efb80a5b9b08a2ed635e0c4cc8afbeae2b53bf8d0a33f1e7fbde6bdb87",
+    "visual03/candidate-3.png": "b5ecfb313a57a6b448c677b2948f72a3280c157fc4236c5ff5cf5837b94ba335",
+    "visual03/candidate-5.png": "efcce1217cefbebe04052a1288a2ed71caab0b064958b9ec3f01b2b555ff0a11",
+    "visual03/candidate-6.png": "8a8d6e21d65d1574ab364999dcfdf2eeaddd85032315f7f304a641e1414a9180",
+    "visual03/candidate-7.png": "5be9ce85329f4cc944ac4623267cfd83f260ac4f293b15b19a3bbb1c8861f16c",
+    "visual03/detail-0-0.png": "39eedd6e5c07fdacb973ec713fea93d16affe06d71a21b795ee4f25729819b8f",
+    "visual03/detail-0-160.png": "27592a10ebd402f8fcb2eebc35e2e260ae13995bce5c274e0a8f199f147eb23a",
+    "visual03/detail-0-225.png": "99d7bf134a0c6f9917db9acd110970979c5cf8bf17b595cecde852d3a9b03c49",
+    "visual03/detail-0-270.png": "0398d4d99aeddd41e3313ac22190314d659b7e02945bd14612f382bd09aa0ff5",
+    "visual03/detail-0-90.png": "06ab4f309ad3dd093b700bdfdc76f2f380fd6f8ef4176200bf8d4a66f58e32c3",
+    "visual03/detail-1-0.png": "acb8d9a0cc303917553f0c20e4f5a647e037d657d5a50f90af8e1934179beea8",
+    "visual03/detail-1-160.png": "74a7918c42358e105961ff8b765a606b1675f816074be8a26eec1b1a82443bd7",
+    "visual03/detail-1-225.png": "8c68e4f954c89aacf777128eb604e7b518a8656a0ce89ffe834f5fee7f7a0f82",
+    "visual03/detail-1-270.png": "39d14639908505d22cd9e4a7532cf0435b06096b78632eb208db3fe55a9e008c",
+    "visual03/detail-1-90.png": "2f4152820809a445cc7d716ce538b52a37e4eccce28558c99f4d928192057961",
+    "visual03/detail-2-0.png": "dcbd71215bc1e19aed6842098cab45e35109b945992bf705a5143821adc5a3e8",
+    "visual03/detail-2-160.png": "b14f5a247c4da828e867fee4390ea296ab3a9fedd58f8d5ce471745f1c9d9b96",
+    "visual03/detail-2-225.png": "c43a4527c8ccf1bf7840cdcacc45a4e6cd3d70f4d7ad7a54d30b23254a47bd04",
+    "visual03/detail-2-270.png": "61036e2c7d2f962baa194a879c4d21da565f5a990270c61679f576d27cfb882b",
+    "visual03/detail-2-90.png": "0b2dcf10ab1ee89fbce7cdc590f8e27e7ccb1468895d17c882a1b49b93fa0a97",
+    "visual03/detail-3-0.png": "1aaebbb2d47b4fe0174a62e823603dde740f840e55e181193c9243b7ad95e69c",
+    "visual03/detail-3-160.png": "30eab92c04cef5e271de85d5ed92a05c1a6a727d539e185e6e30c2b46db07bf1",
+    "visual03/detail-3-225.png": "3aa13c7618fdbe304e57fc47b05728c9ce1bf7df860be5b7b85a45ab416a08eb",
+    "visual03/detail-3-270.png": "59c1ac90e9ab3413792a8dc5ac74ffa98fc662f2c226a704120ee95b3ba2b5ae",
+    "visual03/detail-3-90.png": "bf3e793626c38387d907c355b99df7d2cd78616f258f472bf40329a4a33544d8",
+    "visual03/detail-4-0.png": "b24de0e2a7aa1e45fd4273f72489e98ce0c0eeac50fcd4928b46d55486dc0128",
+    "visual03/detail-4-160.png": "71f9369b405688c7479c057dea2d047fc34499e09614096db39c6e54ec0c922a",
+    "visual03/detail-4-225.png": "273f781e752a624329a23b03b9753c3725da6f68c922a40c3366f7805f825ce1",
+    "visual03/detail-4-270.png": "246f086860ba0bb5d313262247a0ebe3403c9e69ac13cad64ae0d412d6692828",
+    "visual03/detail-4-90.png": "362c7e490ef0a3af1e76e0e32d4851c66cc29b8aac7bb7e4f0cf086de66c355b",
+    "visual03/detail-5-0.png": "66e89603b8235dac6540f632b35ea5f6c95e3e700a070c22310158ebbd582c7b",
+    "visual03/detail-5-160.png": "1836c2771d510e6e7858802c04bf57293d455daa56491b211b8342eeb7b45ff2",
+    "visual03/detail-5-225.png": "4e5dca71efff708f2082609e3051701fd75de7c60381405d3cc99e5a5da66ef2",
+    "visual03/detail-5-270.png": "a72c37a43230d9813746ef9f0117ab6d4b82fb7bb9ba56fe04a69572a69dd550",
+    "visual03/detail-5-90.png": "ad069b38972dcf5b9f52841d89a52c6779ed816cc07897e3a3afbf3e314d416d",
+    "visual03/fixture-source/MAPINFO.txt": "63dd45266271b081942225cd47b77d6954df3b1167ce62bdc78e829899bf0630",
+    "visual03/fixture-source/ZSCRIPT.txt": "0a48aaed5ca7035b1e664eb520b798b76fb837640013ae08f88dc6d1986c28b6",
+    "visual03/fixture.zs": "c176f6e0cce937040a58d9de96867a111d79571caaddcdcd238fa37e33d1bbe4",
+    "visual03/RESULTS.json": "b2f0dd7e3083035fcd06000525f4affa2e0b5df93410c47bc51375ae15aa209e",
+    "visual03/session.ini": "e3ef7f8500cba1fe2f9ff5ed5684ef5767f3105c150443e394e43bf4563c11a9",
+    "visual03/visual-part-1.cfg": "a316455fa9fec4b362d00098ecf70646b334d12cb5bf4712ce78db6236727940",
+    "visual03/visual-part-2.cfg": "4590496425c198d1e2a309961612cf5658f0372014ba38707b03283a1d71f512",
+    "visual03/visual-process.log": "dd3e921dd51ad272cee6fb06eefa6344be3765a66037c07a1f9324185e22631d",
+    "visual03/visual.cfg": "23fa67f6631188b24f2e3f154c4c304eb836c8775434b3f3b5f5278596748dde",
+    "visual03/visual.log": "703479b19add47307faba2d4ee53c082903c18318942b164ffd238e7758684cd",
+    "validation-final.json": "047965dc0c50a1c8c1f0d177ffdd7e1a11e892eb4884962770db80d039b1703b"
+  }
+}

@@ -1,0 +1,6 @@
+Model CaelumMaterialPickup { Path "models/caelum/inventory/magic_bases" Model 0 "staff.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CSTF A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/magic_bases" Model 0 "bell.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CBEL A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/magic_bases" Model 0 "statuette.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex CSTA A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/magic_bases" Model 0 "seal.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M044 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/magic_bases" Model 0 "censer.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M089 A 0 0 }
+Model CaelumMaterialPickup { Path "models/caelum/inventory/magic_bases" Model 0 "scepter.md3" Scale 1 1 1 CorrectPixelStretch FrameIndex M090 A 0 0 }
