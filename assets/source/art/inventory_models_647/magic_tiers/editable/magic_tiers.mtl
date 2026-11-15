@@ -1,0 +1,36 @@
+newmtl bronze
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/magic_bases/materials.png
+newmtl gold
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/magic_bases/materials.png
+newmtl wood
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/magic_bases/materials.png
+newmtl red
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/magic_bases/materials.png
+newmtl blue
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/magic_bases/materials.png
+newmtl gem
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/magic_bases/materials.png
+newmtl stone
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/magic_bases/materials.png
+newmtl leaves
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/magic_bases/materials.png
+newmtl dark
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/magic_bases/materials.png
+newmtl bell_surface
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/magic_bases/materials.png
+newmtl censer_surface
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/magic_bases/materials.png
+newmtl silver
+Kd 1 1 1
+map_Kd src/models/caelum/inventory/weapon_components/metals.png

@@ -4800,3 +4800,4 @@ Model CaelumBarricadeVisual
 #include "caelum/data/inventory_orbs.modeldef"
 #include "caelum/data/inventory_magic_bases.modeldef"
 #include "caelum/data/inventory_magic_weapons.modeldef"
+#include "caelum/data/inventory_magic_tiers.modeldef"

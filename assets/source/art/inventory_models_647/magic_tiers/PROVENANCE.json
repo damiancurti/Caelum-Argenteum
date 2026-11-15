@@ -1,0 +1,21 @@
+{
+  "issue": 759,
+  "parent_issue": 647,
+  "status": "candidate_author_review_pending",
+  "authority": "Author requests all inventory drops as native3D and continued work with separate issue deliveries.",
+  "source_issues": [
+    755,
+    723
+  ],
+  "method": "Reuse exact tier-one meshes and immutable owned atlases; derive silver-colored/gold trim variants from #755 closed geometry following owned three-quality references. No raster editing or new runtime texture.",
+  "trim_policy": "Scepter ferrule, shaft bands, scrolls and crest leaves change; bronze core, original cabochon ring, blue gem/cloth and wood remain. Censer equatorial rims change; perforated bronze shell, foot, knob and hinge remain. Higher-quality censer bases and knob collars receive three closed trim rings matching the visible owned reference bands, attached to the original foot and knob.",
+  "limitations": [
+    "The #755 shapes and hidden surfaces still need author approval.",
+    "Silver is represented by the existing neutral polished-metal tile; highlights and worn ornament differ from painted icons.",
+    "Static cloth, heavy ornament and subdued depth retain #755 review qualifications.",
+    "Only world-drop art changes; held art, casting, balance and recipes remain unchanged."
+  ],
+  "iterations": [
+    "Visual01: all236 native checks passed; inspected fronts showed tier1 and tier3 censer rims were too similar. Added the reference foot and knob trim bands to tier2/tier3; original tier1 meshes unchanged."
+  ]
+}

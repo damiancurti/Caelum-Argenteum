@@ -1,6 +1,62 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.57** - 2026-11-15.
+Documentation version: **5.17.58** - 2026-11-15.
+
+## 5.17.58 - Scepter and censer quality models (#759, parent #647)
+
+Twelve exact S479 ABC/JKL bindings cover scepter18 and support-censer24 in
+CaelumWeaponPickup and CA_LimboMagicImplement. The tier-one meshes remain
+byte-identical to #755; four new quality models follow the owned three-tier
+references. Existing #755 and #723 atlases are reused without raster edits
+or duplicate runtime textures. Scepter bands, ferrule, scrolls and crest
+leaves use neutral silver-colored or gold trim. Higher-quality censers change
+their equatorial rims and add the reference foot/knob bands. Original bronze
+structures, wood, blue gem/cloth and all 48 real censer apertures remain.
+Icons, held art, tier statistics, valid essences, weight, durability,
+scale/collision, recipes and persistence remain unchanged. Rejected #479
+procedural models stay inactive.
+
+Sources: assets/source/art/inventory_models_647/magic_tiers, including portable
+OBJ/MTL and original texture copies. Regenerate with python
+assets/generators/generate_inventory_magic_tiers_models.py --output
+build/magic-tiers --install. Sixteen outputs repeat byte-for-byte. The four
+new meshes total 37,880 vertices and 56,464 triangles; all six quality models
+total 55,092 vertices, 81,240 triangles, 72 closed components, 66 attachment
+witnesses and 60 cavity rays. Independent topology/winding, quantized native
+triangles, opaque material/UV regions, reference envelopes and floor contact
+checks pass. The exact tier-one hashes and original gameplay sources are
+verified separately.
+
+Visual01 passed 236 native checks but showed little distinction between
+censer tiers I and III. Closed reference bands were added to the higher-quality
+feet and knob collars. All thirty final detail/side/rear/underside views and
+the floor overview were inspected. Neutral silver is subdued; painted
+ornament is strong; cloth remains static; profiles are simplified; bronze and
+gold remain similar in warm distant views. These are author-review
+qualifications, alongside #755's original hidden-surface review.
+
+Twelve class/type/tier cases pass 1,011 installed continuity assertions:
+229 baseline, 189 old-save adoption, 229 fresh, 182 reload and 182 rollback.
+The final visual/control run adds 236 passing checks. Native pickup/equip/
+unequip/toss, repickup, saved identity, valid essence, durability, weight,
+provenance and prepared Box/quest guards pass. Ordinary menus, casting and
+crafting remain author checks. All 18,504 packaged source
+entries match src; only four new models, the binding definition, MODELDEF
+and two release diagnostic strings differ from #757.
+
+One sequential 700-tic twelve-object sprite/model pair records
+770.55/732.46 queue presents/s, p95
+2.5245/2.5745 ms and p99
+4.7903/4.7842 ms.
+Both scenes were inspected. Windows11, Ryzen9 5950X, RTX3070Ti, GZDoom4.14.2,
+Vulkan1280x720, uncapped/vsync off, background unpaused/audio5%. Queue timing
+and unequal projected footprints do not establish GPU/display timing,
+repeatability or campaign/crowd performance.
+
+Evidence: assets/validation_v5_17_58/evidence/SUMMARY.json.
+CA759-MAGIC-QUALITY-DROPS-01 retains author visual and ordinary gameplay review.
+Effigies, physical weapons, characters, modular equipment and V5.16 campaign
+remain incomplete.
 
 ## 5.17.57 - Magical weapon drop bindings (#757, parent #647)
 
