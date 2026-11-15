@@ -1,4 +1,4 @@
-// #765: cuatro armas de hoja y dos clases de espada de misi?n.
+// #765: tres hachas y el pico conservan sus datos al soltarse y recuperarse.
 class CA765AxeCamera : Actor
 {Default {CameraHeight 0;Height 0;Radius 0;+NOINTERACTION +NOGRAVITY} States {Spawn:TNT1 A -1;Stop;}}
 class CA765AxeEvents : EventHandler
