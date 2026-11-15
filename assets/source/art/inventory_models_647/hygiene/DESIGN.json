@@ -1,0 +1,1112 @@
+{
+  "schema_revision": 1,
+  "issue": 741,
+  "parent_issue": 647,
+  "status": "candidate_author_review_pending",
+  "model_path": "models/caelum/inventory/hygiene",
+  "editable_materials_name": "hygiene.mtl",
+  "tier_materials": {
+    "original": {}
+  },
+  "materials": {
+    "fat": {
+      "texture": "models/caelum/inventory/hygiene/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        12,
+        12,
+        615,
+        615
+      ]
+    },
+    "stoneware": {
+      "texture": "models/caelum/inventory/hygiene/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        639,
+        12,
+        1242,
+        615
+      ]
+    },
+    "alkali": {
+      "texture": "models/caelum/inventory/hygiene/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        12,
+        639,
+        615,
+        1242
+      ]
+    },
+    "soap": {
+      "texture": "models/caelum/inventory/hygiene/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        639,
+        639,
+        1242,
+        1242
+      ]
+    }
+  },
+  "source_sha256": {
+    "src/graphics/caelum/icons/hygiene/fat.png": "470a454f8142082bb9ce240fa5df4b85f203987436d6160eaeb9631c9d1f275f",
+    "assets/art_source/hygiene/fat-source-v1.png": "73b80641ef7efae239a87f7f6c089fae2bd6a25d7f2ed17f1fb1e82e6cd16d6b",
+    "src/graphics/caelum/icons/hygiene/soda.png": "645f8bbfee93dd5386b481c94765517a4f8ec71d854c2cc34aa5cc02b4ee8e65",
+    "assets/art_source/hygiene/soda-source-v1.png": "1e5846e5295775e6b917af44952a342654f9d319ab23830cf632697eed68ebc4",
+    "src/graphics/caelum/icons/hygiene/soap.png": "495b354bd5f4d1eed79460c80567defaad82de20b08bfc052cc5f45681c22ec7",
+    "assets/art_source/hygiene/soap-source-v1.png": "95dceae6c067a1337badfb60dc24623e241424e206b9b361b6046989ec28989e",
+    "src/caelum/data/CaelumHygieneData.zs": "2a23b6f7e766a7e106853b127d9caabc63e1bda92be9b509e1da6644cddb55b2",
+    "assets/art_source/hygiene/PROMPTS.json": "5f329a965390f1f9be6f291f66ae425180a277be527357398015839a874d311c",
+    "assets/art_source/hygiene/RUNTIME.json": "15c0e0c0b015e4fa2f078bbf1349910ddaabc0d44a9508a48859deacdc042053",
+    "assets/generators/generate_inventory_weapon_components_models.py": "49db0176aef05d21f21f7a356e58c4623c285eac15d2d1537bc8ddc8ec227958",
+    "assets/generators/generate_inventory_chains_models.py": "cd9296836666c78bd555c76e3de56d0ccc345c40ecb94a15d5e78f159719f94f",
+    "assets/generators/generate_peuchen_model.py": "0f1873c9fd1da0be0f965ea73ff2cc5c35dc25a35ac9da2df4692b50cef30812"
+  },
+  "variants": {
+    "fat": {
+      "class": "CaelumMaterialPickup",
+      "sprite": "M105",
+      "item_type": 105,
+      "family": "fat",
+      "tier": "original",
+      "reference": "src/graphics/caelum/icons/hygiene/fat.png",
+      "reference_axis": "width",
+      "sprite_scale": [
+        1,
+        1
+      ]
+    },
+    "soda": {
+      "class": "CaelumMaterialPickup",
+      "sprite": "M106",
+      "item_type": 106,
+      "family": "soda",
+      "tier": "original",
+      "reference": "src/graphics/caelum/icons/hygiene/soda.png",
+      "reference_axis": "width",
+      "sprite_scale": [
+        1,
+        1
+      ]
+    },
+    "soap": {
+      "class": "CaelumMaterialPickup",
+      "sprite": "M107",
+      "item_type": 107,
+      "family": "soap",
+      "tier": "original",
+      "reference": "src/graphics/caelum/icons/hygiene/soap.png",
+      "reference_axis": "width",
+      "sprite_scale": [
+        1,
+        1
+      ]
+    }
+  },
+  "families": {
+    "fat": {
+      "root": "fat",
+      "attachments": [],
+      "openings": [],
+      "parts": [
+        {
+          "part": "fat",
+          "kind": "organic",
+          "center": [
+            0,
+            0,
+            13
+          ],
+          "radii": [
+            30,
+            22,
+            13
+          ],
+          "material": "fat",
+          "latitudes": 32,
+          "longitudes": 48,
+          "axis_powers": [
+            0.9,
+            0.9,
+            1.0
+          ],
+          "bumps": [
+            {
+              "direction": [
+                -0.5,
+                -0.4,
+                0.75
+              ],
+              "amplitude": 0.22,
+              "width": 0.18
+            },
+            {
+              "direction": [
+                0.55,
+                -0.25,
+                0.8
+              ],
+              "amplitude": 0.18,
+              "width": 0.2
+            },
+            {
+              "direction": [
+                -0.35,
+                0.55,
+                0.76
+              ],
+              "amplitude": 0.26,
+              "width": 0.22
+            },
+            {
+              "direction": [
+                0.55,
+                0.5,
+                0.66
+              ],
+              "amplitude": 0.2,
+              "width": 0.18
+            },
+            {
+              "direction": [
+                0.8,
+                -0.6,
+                0
+              ],
+              "amplitude": -0.1,
+              "width": 0.13
+            }
+          ],
+          "waves": [
+            {
+              "axis": 0,
+              "frequency": 0.19,
+              "amplitude": 0.35,
+              "phase": 0.2
+            },
+            {
+              "axis": 1,
+              "frequency": 0.22,
+              "amplitude": 0.3,
+              "phase": 1.2
+            }
+          ],
+          "top_relief": [
+            {
+              "center": [
+                -14,
+                -7
+              ],
+              "radii": [
+                9,
+                8
+              ],
+              "amplitude": 9
+            },
+            {
+              "center": [
+                12,
+                -5
+              ],
+              "radii": [
+                10,
+                8
+              ],
+              "amplitude": 11
+            },
+            {
+              "center": [
+                -6,
+                11
+              ],
+              "radii": [
+                10,
+                8
+              ],
+              "amplitude": 8
+            },
+            {
+              "center": [
+                22,
+                8
+              ],
+              "radii": [
+                6,
+                7
+              ],
+              "amplitude": 5
+            },
+            {
+              "center": [
+                -2,
+                -2
+              ],
+              "radii": [
+                4,
+                14
+              ],
+              "amplitude": -6
+            }
+          ]
+        }
+      ]
+    },
+    "soda": {
+      "root": "jar",
+      "parts": [
+        {
+          "part": "jar",
+          "kind": "loft",
+          "material": "stoneware",
+          "rows": [
+            [
+              0,
+              0,
+              0,
+              15,
+              15
+            ],
+            [
+              1,
+              0,
+              0,
+              18,
+              18
+            ],
+            [
+              3,
+              0,
+              0,
+              20,
+              20
+            ],
+            [
+              8,
+              0,
+              0,
+              24,
+              24
+            ],
+            [
+              16,
+              0,
+              0,
+              26,
+              26
+            ],
+            [
+              25,
+              0,
+              0,
+              27,
+              27
+            ],
+            [
+              33,
+              0,
+              0,
+              25,
+              25
+            ],
+            [
+              39,
+              0,
+              0,
+              21,
+              21
+            ],
+            [
+              41,
+              0,
+              0,
+              21,
+              21
+            ],
+            [
+              42,
+              0,
+              0,
+              23,
+              23
+            ],
+            [
+              44,
+              0,
+              0,
+              24,
+              24
+            ],
+            [
+              46,
+              0,
+              0,
+              23.5,
+              23.5
+            ],
+            [
+              47,
+              0,
+              0,
+              22,
+              22
+            ],
+            [
+              47,
+              0,
+              0,
+              20.5,
+              20.5
+            ],
+            [
+              46,
+              0,
+              0,
+              19,
+              19
+            ],
+            [
+              43,
+              0,
+              0,
+              18.5,
+              18.5
+            ],
+            [
+              40,
+              0,
+              0,
+              18.5,
+              18.5
+            ],
+            [
+              36,
+              0,
+              0,
+              21,
+              21
+            ],
+            [
+              30,
+              0,
+              0,
+              23,
+              23
+            ],
+            [
+              12,
+              0,
+              0,
+              22,
+              22
+            ],
+            [
+              6,
+              0,
+              0,
+              16,
+              16
+            ]
+          ],
+          "segments": 64,
+          "normalize_uv": true
+        },
+        {
+          "part": "fill",
+          "kind": "ellipsoid",
+          "center": [
+            0,
+            0,
+            24
+          ],
+          "radii": [
+            23.5,
+            23.5,
+            14
+          ],
+          "material": "alkali",
+          "latitudes": 16,
+          "longitudes": 28
+        },
+        {
+          "part": "flake_0",
+          "kind": "loft",
+          "material": "alkali",
+          "rows": [
+            [
+              29.684287442473362,
+              -12,
+              -12,
+              2.64,
+              2.09
+            ],
+            [
+              31.684287442473362,
+              -12,
+              -12,
+              4.8,
+              3.8
+            ],
+            [
+              34.68428744247336,
+              -11.3,
+              -12.4,
+              4.08,
+              3.04
+            ],
+            [
+              35.68428744247336,
+              -11.6,
+              -12,
+              2.4,
+              1.71
+            ]
+          ],
+          "segments": 12,
+          "exponent": 0.3
+        },
+        {
+          "part": "flake_1",
+          "kind": "loft",
+          "material": "alkali",
+          "rows": [
+            [
+              31.24443426529686,
+              0,
+              -14,
+              2.9699999999999998,
+              2.365
+            ],
+            [
+              33.24443426529686,
+              0,
+              -14,
+              5.3999999999999995,
+              4.3
+            ],
+            [
+              36.24443426529686,
+              0.7,
+              -14.4,
+              4.59,
+              3.44
+            ],
+            [
+              37.24443426529686,
+              0.4,
+              -14,
+              2.6999999999999997,
+              1.935
+            ]
+          ],
+          "segments": 12,
+          "exponent": 0.3
+        },
+        {
+          "part": "flake_2",
+          "kind": "loft",
+          "material": "alkali",
+          "rows": [
+            [
+              29.684287442473362,
+              12,
+              -12,
+              3.3000000000000003,
+              2.09
+            ],
+            [
+              31.684287442473362,
+              12,
+              -12,
+              6.0,
+              3.8
+            ],
+            [
+              34.68428744247336,
+              12.7,
+              -12.4,
+              5.1,
+              3.04
+            ],
+            [
+              35.68428744247336,
+              12.4,
+              -12,
+              3.0,
+              1.71
+            ]
+          ],
+          "segments": 12,
+          "exponent": 0.3
+        },
+        {
+          "part": "flake_3",
+          "kind": "loft",
+          "material": "alkali",
+          "rows": [
+            [
+              29.665945972520483,
+              -17,
+              0,
+              2.64,
+              2.365
+            ],
+            [
+              31.665945972520483,
+              -17,
+              0,
+              4.8,
+              4.3
+            ],
+            [
+              34.66594597252048,
+              -16.3,
+              -0.4,
+              4.08,
+              3.44
+            ],
+            [
+              35.66594597252048,
+              -16.6,
+              0,
+              2.4,
+              1.935
+            ]
+          ],
+          "segments": 12,
+          "exponent": 0.3
+        },
+        {
+          "part": "flake_4",
+          "kind": "loft",
+          "material": "alkali",
+          "rows": [
+            [
+              33.562190138693694,
+              -5,
+              -3,
+              2.9699999999999998,
+              2.09
+            ],
+            [
+              35.562190138693694,
+              -5,
+              -3,
+              5.3999999999999995,
+              3.8
+            ],
+            [
+              38.562190138693694,
+              -4.3,
+              -3.4,
+              4.59,
+              3.04
+            ],
+            [
+              39.562190138693694,
+              -4.6,
+              -3,
+              2.6999999999999997,
+              1.71
+            ]
+          ],
+          "segments": 12,
+          "exponent": 0.3
+        },
+        {
+          "part": "flake_5",
+          "kind": "loft",
+          "material": "alkali",
+          "rows": [
+            [
+              33.10976745469427,
+              8,
+              -2,
+              3.3000000000000003,
+              2.365
+            ],
+            [
+              35.10976745469427,
+              8,
+              -2,
+              6.0,
+              4.3
+            ],
+            [
+              38.10976745469427,
+              8.7,
+              -2.4,
+              5.1,
+              3.44
+            ],
+            [
+              39.10976745469427,
+              8.4,
+              -2,
+              3.0,
+              1.935
+            ]
+          ],
+          "segments": 12,
+          "exponent": 0.3
+        },
+        {
+          "part": "flake_6",
+          "kind": "loft",
+          "material": "alkali",
+          "rows": [
+            [
+              29.647569632758426,
+              17,
+              1,
+              2.64,
+              2.09
+            ],
+            [
+              31.647569632758426,
+              17,
+              1,
+              4.8,
+              3.8
+            ],
+            [
+              34.647569632758426,
+              17.7,
+              0.6,
+              4.08,
+              3.04
+            ],
+            [
+              35.647569632758426,
+              17.4,
+              1,
+              2.4,
+              1.71
+            ]
+          ],
+          "segments": 12,
+          "exponent": 0.3
+        },
+        {
+          "part": "flake_7",
+          "kind": "loft",
+          "material": "alkali",
+          "rows": [
+            [
+              29.684287442473362,
+              -12,
+              12,
+              2.9699999999999998,
+              2.365
+            ],
+            [
+              31.684287442473362,
+              -12,
+              12,
+              5.3999999999999995,
+              4.3
+            ],
+            [
+              34.68428744247336,
+              -11.3,
+              11.6,
+              4.59,
+              3.44
+            ],
+            [
+              35.68428744247336,
+              -11.6,
+              12,
+              2.6999999999999997,
+              1.935
+            ]
+          ],
+          "segments": 12,
+          "exponent": 0.3
+        },
+        {
+          "part": "flake_8",
+          "kind": "loft",
+          "material": "alkali",
+          "rows": [
+            [
+              31.24443426529686,
+              0,
+              14,
+              3.3000000000000003,
+              2.09
+            ],
+            [
+              33.24443426529686,
+              0,
+              14,
+              6.0,
+              3.8
+            ],
+            [
+              36.24443426529686,
+              0.7,
+              13.6,
+              5.1,
+              3.04
+            ],
+            [
+              37.24443426529686,
+              0.4,
+              14,
+              3.0,
+              1.71
+            ]
+          ],
+          "segments": 12,
+          "exponent": 0.3
+        },
+        {
+          "part": "flake_9",
+          "kind": "loft",
+          "material": "alkali",
+          "rows": [
+            [
+              29.684287442473362,
+              12,
+              12,
+              2.64,
+              2.365
+            ],
+            [
+              31.684287442473362,
+              12,
+              12,
+              4.8,
+              4.3
+            ],
+            [
+              34.68428744247336,
+              12.7,
+              11.6,
+              4.08,
+              3.44
+            ],
+            [
+              35.68428744247336,
+              12.4,
+              12,
+              2.4,
+              1.935
+            ]
+          ],
+          "segments": 12,
+          "exponent": 0.3
+        },
+        {
+          "part": "flake_10",
+          "kind": "loft",
+          "material": "alkali",
+          "rows": [
+            [
+              33.79570267887079,
+              0,
+              4,
+              2.9699999999999998,
+              2.09
+            ],
+            [
+              35.79570267887079,
+              0,
+              4,
+              5.3999999999999995,
+              3.8
+            ],
+            [
+              38.79570267887079,
+              0.7,
+              3.6,
+              4.59,
+              3.04
+            ],
+            [
+              39.79570267887079,
+              0.4,
+              4,
+              2.6999999999999997,
+              1.71
+            ]
+          ],
+          "segments": 12,
+          "exponent": 0.3
+        }
+      ],
+      "attachments": [
+        {
+          "part": "fill",
+          "target": "jar",
+          "witness": [
+            23,
+            0,
+            24
+          ]
+        },
+        {
+          "part": "flake_0",
+          "target": "fill",
+          "witness": [
+            -12,
+            -12,
+            31.184287442473362
+          ]
+        },
+        {
+          "part": "flake_1",
+          "target": "fill",
+          "witness": [
+            0,
+            -14,
+            32.74443426529686
+          ]
+        },
+        {
+          "part": "flake_2",
+          "target": "fill",
+          "witness": [
+            12,
+            -12,
+            31.184287442473362
+          ]
+        },
+        {
+          "part": "flake_3",
+          "target": "fill",
+          "witness": [
+            -17,
+            0,
+            31.165945972520483
+          ]
+        },
+        {
+          "part": "flake_4",
+          "target": "fill",
+          "witness": [
+            -5,
+            -3,
+            35.062190138693694
+          ]
+        },
+        {
+          "part": "flake_5",
+          "target": "fill",
+          "witness": [
+            8,
+            -2,
+            34.60976745469427
+          ]
+        },
+        {
+          "part": "flake_6",
+          "target": "fill",
+          "witness": [
+            17,
+            1,
+            31.147569632758426
+          ]
+        },
+        {
+          "part": "flake_7",
+          "target": "fill",
+          "witness": [
+            -12,
+            12,
+            31.184287442473362
+          ]
+        },
+        {
+          "part": "flake_8",
+          "target": "fill",
+          "witness": [
+            0,
+            14,
+            32.74443426529686
+          ]
+        },
+        {
+          "part": "flake_9",
+          "target": "fill",
+          "witness": [
+            12,
+            12,
+            31.184287442473362
+          ]
+        },
+        {
+          "part": "flake_10",
+          "target": "fill",
+          "witness": [
+            0,
+            4,
+            35.29570267887079
+          ]
+        }
+      ],
+      "openings": [
+        {
+          "point": [
+            0,
+            0,
+            44
+          ],
+          "normal": [
+            0,
+            0,
+            1
+          ],
+          "axis_u": [
+            1,
+            0,
+            0
+          ],
+          "axis_v": [
+            0,
+            1,
+            0
+          ],
+          "clearance": 14,
+          "signs": [
+            1
+          ]
+        }
+      ]
+    },
+    "soap": {
+      "root": "bar",
+      "parts": [
+        {
+          "part": "bar",
+          "kind": "bevel",
+          "material": "soap",
+          "outline": [
+            [
+              -33,
+              -15
+            ],
+            [
+              -30,
+              -19
+            ],
+            [
+              -22,
+              -20
+            ],
+            [
+              22,
+              -20
+            ],
+            [
+              30,
+              -18
+            ],
+            [
+              33,
+              -13
+            ],
+            [
+              33,
+              12
+            ],
+            [
+              29,
+              17
+            ],
+            [
+              18,
+              19
+            ],
+            [
+              -20,
+              20
+            ],
+            [
+              -29,
+              18
+            ],
+            [
+              -33,
+              13
+            ]
+          ],
+          "bevel_center": [
+            0,
+            0
+          ],
+          "inner_scale": 0.92,
+          "depth": 19,
+          "edge_depth": 12,
+          "rotation": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "offset": [
+            0,
+            0,
+            10
+          ],
+          "surface_wave": [
+            {
+              "axis": 0,
+              "amplitude": 0.35,
+              "frequency": 0.13,
+              "phase": 0.4
+            },
+            {
+              "axis": 1,
+              "amplitude": 0.2,
+              "frequency": 0.17,
+              "phase": 0.8
+            }
+          ]
+        }
+      ],
+      "attachments": [],
+      "openings": []
+    }
+  },
+  "runtime_cases": [
+    {
+      "item_type": 105,
+      "tier": 1
+    },
+    {
+      "item_type": 106,
+      "tier": 1
+    },
+    {
+      "item_type": 107,
+      "tier": 1
+    }
+  ],
+  "scale_policy": "Match owned icon width. Retain native Actor.Scale0.25, collision, normalized tier1 and floor. Presentation dimensions do not change gameplay; the depicted jar is not a recoverable container."
+}
