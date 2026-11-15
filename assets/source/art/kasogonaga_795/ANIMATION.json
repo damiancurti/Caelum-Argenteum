@@ -664,6 +664,6 @@
   },
   "scale_policy": "Match neutral standing art height to the unchanged provisional native Height, divide out Actor.Scale, and report every posed bound. Moving arms and nonblocking horizontal death poses may exceed native Radius, as original biped art does; no collision or gameplay reach changes. Catalogue reference heights remain unauthorised.",
   "timing_policy": "Only existing inherited sprite/frame bindings; no action, AI, state timing, saved field, spawn or loot change.",
-  "identity_policy": "Only CaelumBestiary043 and050 are bound; approved Northwest Argentina/Selva allocations and named identities remain unchanged.",
+  "identity_policy": "Only CaelumBestiary057 (Kasogonaga) is bound. Preserve its documented Chaco association and protected named identities; no campaign placement.",
   "art_policy": "Owned anteater anatomy reference; candidate source and native model. Existing provisional combat and scale remain authoritative; no new weather ability or campaign placement."
 }

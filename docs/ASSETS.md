@@ -1,6 +1,30 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.80** - 2026-11-15.
+Documentation version: **5.17.81** - 2026-11-15.
+
+## 5.17.81 - Correct descriptive model identities (#805)
+
+Three ANIMATION.json identity_policy strings still described the earlier
+Familiar/Ao Ao classes 043/050. Their actual configured/native classes and tested
+art were already correct. The descriptions now name Teju Jagua (047)/Selva,
+Kasogonaga (057)/Chaco, Mulanima (029)/Northwest Argentina and Chancho de Lata (030)/Pampa/
+Litoral. REGION_PROPOSAL.json remains the regional authority. A shared text/class
+check is applied only by these three affected validators; it rejects all three
+original mismatches and accepts the corrected descriptions.
+
+The three regenerated export reports change only their own ANIMATION source
+hashes. All 27 outputs repeat across two generations; the 24 native/editable
+artifacts match their preceding hashes and installed bytes. The optional regional fixture,
+its ZScript and TEXTMAP also remain byte-identical. No dependent canonical pin
+requires an update. The later heads_803 provenance retains its original inherited
+animation snapshot rather than silently repinning historical evidence.
+
+The package matches src, with only the two required diagnostic release strings
+different from 5.17.80. All art, actor rules, bindings, state timing, collision,
+save identity, loot and regional layout remain unchanged. The prior applicable
+native evidence is reused; this metadata correction adds no engine or author
+acceptance. Evidence: assets/validation_v5_17_81/evidence/SUMMARY.json.
+Pending author tests are byte-identical. #806 and the wider batch remain pending.
 
 ## 5.17.80 - Native Umita and Chonchon head candidates (#803)
 

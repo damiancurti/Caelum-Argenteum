@@ -1,0 +1,45 @@
+{
+  "issue": 805,
+  "baseline_commit": "f52a98c22e07063c33bbde1b16c70189928ab75c",
+  "models": {
+    "teju_791": {
+      "old_policy": "Only CaelumBestiary043 and050 are bound; approved Northwest Argentina/Selva allocations and named identities remain unchanged.",
+      "new_policy": "Only CaelumBestiary047 (Teju Jagua) is bound. Preserve its documented Selva association and protected named identities; no campaign placement.",
+      "non_policy_data_unchanged": true,
+      "native_artifacts_unchanged": 5,
+      "editable_artifacts_unchanged": 2,
+      "repeated_artifacts": 8,
+      "all_byte_identical": true
+    },
+    "kasogonaga_795": {
+      "old_policy": "Only CaelumBestiary043 and050 are bound; approved Northwest Argentina/Selva allocations and named identities remain unchanged.",
+      "new_policy": "Only CaelumBestiary057 (Kasogonaga) is bound. Preserve its documented Chaco association and protected named identities; no campaign placement.",
+      "non_policy_data_unchanged": true,
+      "native_artifacts_unchanged": 5,
+      "editable_artifacts_unchanged": 2,
+      "repeated_artifacts": 8,
+      "all_byte_identical": true
+    },
+    "apparitions_797": {
+      "old_policy": "Only CaelumBestiary043 and050 are bound; approved Northwest Argentina/Selva allocations and named identities remain unchanged.",
+      "new_policy": "Only CaelumBestiary029 (Mulanima) and CaelumBestiary030 (Chancho de Lata) are bound. Preserve Northwest Argentina for Mulanima and Pampa/Litoral for Chancho de Lata, plus protected named identities; no campaign placement.",
+      "non_policy_data_unchanged": true,
+      "native_artifacts_unchanged": 6,
+      "editable_artifacts_unchanged": 4,
+      "repeated_artifacts": 11,
+      "all_byte_identical": true
+    }
+  },
+  "changed_source_files": [
+    "assets/source/art/teju_791/ANIMATION.json",
+    "assets/source/art/teju_791/EXPORT.json",
+    "assets/source/art/kasogonaga_795/ANIMATION.json",
+    "assets/source/art/kasogonaga_795/EXPORT.json",
+    "assets/source/art/apparitions_797/ANIMATION.json",
+    "assets/source/art/apparitions_797/EXPORT.json"
+  ],
+  "gallery_fixture_bytes_identical": true,
+  "gallery_fixture_sha256": "db2dde11793ed1d1d83985feb85ca0ec5e8568c6f7d5dd018a5acc5a574bf77a",
+  "historical_head_provenance_unchanged": true,
+  "author_accepted": false
+}

@@ -1,0 +1,39 @@
+{
+  "issue": 805,
+  "passed": true,
+  "baseline_commit": "f52a98c22e07063c33bbde1b16c70189928ab75c",
+  "models": {
+    "teju_791": {
+      "original_policy_rejected": true,
+      "current_policy_passes": true,
+      "other_metadata_unchanged": true,
+      "source_bytes_only_policy_changed": true,
+      "unchanged_artifacts": 7
+    },
+    "kasogonaga_795": {
+      "original_policy_rejected": true,
+      "current_policy_passes": true,
+      "other_metadata_unchanged": true,
+      "source_bytes_only_policy_changed": true,
+      "unchanged_artifacts": 7
+    },
+    "apparitions_797": {
+      "original_policy_rejected": true,
+      "current_policy_passes": true,
+      "other_metadata_unchanged": true,
+      "source_bytes_only_policy_changed": true,
+      "unchanged_artifacts": 10
+    }
+  },
+  "runtime_sha256": "a1025d627195d6bea7cbf15a70ad5bd48215ba3dc11cd821cc694e724518b317",
+  "baseline_runtime_sha256": "88a1fe950851eac01569b21ed3e90ed30f86350be4a97217ac7d7738a58875b7",
+  "source_entries": 18584,
+  "exact_source_bytes": true,
+  "changed_runtime_members": [
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "runtime_behavior_and_art_unchanged": true,
+  "pending_author_tests_unchanged": true,
+  "historical_provenance_unchanged": true
+}

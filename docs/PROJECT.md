@@ -1,6 +1,15 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.80** - 2026-11-15.
+Documentation version: **5.17.81** - 2026-11-15.
+
+## 5.17.81 - Model identity descriptions aligned (#805)
+
+Corrected three inherited identity-policy descriptions without changing their
+already-correct bindings, art or behavior. Regression checks reject the original
+mismatches; deterministic regeneration and byte comparisons pass. ASSETS records
+the limited metadata changes and evidence reuse. Creature coverage remains 27/56.
+Historical-heading correction #806 and the remaining character/modular/campaign
+work still precede the consolidated author terminal; acceptance remains pending.
 
 ## 5.17.80 - Two native head-apparition candidates (#803)
 

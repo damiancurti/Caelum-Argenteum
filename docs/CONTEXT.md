@@ -1,9 +1,9 @@
 # CONTEXT.md — Caelum Argenteum
 
-Documentation version: **5.17.80** - 2026-11-15.
+Documentation version: **5.17.81** - 2026-11-15.
 
 **V5.17:** Native inventory/bestiary models and regional galleries are candidates.
-#803 adds Umita/Chonchon;27/56 models. Author review pending.
+#805 fixes identity text;27/56 models. Author review pending.
 #736 modular proposals await visual approval. Other characters and
 modular equipment remain unfinished. Issue-by-issue status/evidence: ASSETS/TASKS;
 author checks: pending_test.txt. Previous delivery details remain in HISTORY.
