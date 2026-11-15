@@ -1,0 +1,17 @@
+{
+  "issue": 741,
+  "byte_identical": true,
+  "files": {
+    "caelum/data/inventory_hygiene.modeldef": "297fb0d8c225ae9bd4540c21e500e269427385f9941f43eed5cc262cf8ffd521",
+    "editable/fat.obj": "04502e2fd783aefbbbe68506871a4263344d2666b540d8f9e70e279efc72fffd",
+    "editable/hygiene.mtl": "fa67fcfc7d759f995ef19cfe29bdc078567a5404484f38110e095df66b53547a",
+    "editable/soap.obj": "8836b31e158a37efe0a8c6a9fd5d162ae5ff9780427066451b0801635b4e2ded",
+    "editable/soda.obj": "dcc26f79267a7dfe7e19af9c44282ed2ccbe6dcff2fd97ebc518cb3ad6c84f25",
+    "manifest.json": "972cd5f51490bfdb32465396efd5e4aef124f00f376346a585127cce0d0f3d40",
+    "models/caelum/inventory/hygiene/fat.md3": "579922d98ef01b2aed00b25d2782238c579ad068a3c605f5169c09dff995f6f3",
+    "models/caelum/inventory/hygiene/materials.png": "baad7dc08c7463a26b8b7abe79a2b9c17cfdb2413ab1d4881422c732e4297051",
+    "models/caelum/inventory/hygiene/soap.md3": "97c28e54703aba143a72cc8b6cfa76b5838ca04bac3602a54a714802ee745317",
+    "models/caelum/inventory/hygiene/soda.md3": "ca4280664692d3e9fd0bf376214e7cfcbafa4143734968726e245cfedca93a40",
+    "preview.pk3": "8dfbdb37172b2fadabee84ca067e76a40c69639df379a4d78baa4e145bd4bcf2"
+  }
+}

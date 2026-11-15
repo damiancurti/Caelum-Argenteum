@@ -1,0 +1,572 @@
+{
+  "issue": 741,
+  "parent_issue": 647,
+  "version": "5.17.49",
+  "date": "2026-11-14",
+  "author_accepted": false,
+  "scope": "Three existing untiered CaelumMaterialPickup designs105 fat,106 alkali and107 soap. Exact world states, original accepted icons, native scale/collision and all gameplay remain unchanged. Cloth was already modeled and is outside this patch.",
+  "runtime": {
+    "sha256": "1202ac5b7b23c6ac2631cec7bfa986ae5d9a598227c163e025932f2cf07e4bee",
+    "source_entries": 18463,
+    "exact_source_bytes": true
+  },
+  "baseline": {
+    "sha256": "57db296e64d80325ac81760d6d02d18fd7b4a5b694d477e1e13344ef56c8bd1d",
+    "new_resources": [
+      "caelum/data/inventory_hygiene.modeldef",
+      "models/caelum/inventory/hygiene/fat.md3",
+      "models/caelum/inventory/hygiene/materials.png",
+      "models/caelum/inventory/hygiene/soap.md3",
+      "models/caelum/inventory/hygiene/soda.md3"
+    ],
+    "changed_resources": [
+      "MODELDEF",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "all_other_runtime_bytes_identical": true
+  },
+  "static": {
+    "repeated_export_files": 11,
+    "repeat_byte_identical": true,
+    "installed_export_check_passed": true,
+    "geometry": {
+      "fat": {
+        "closed_components": 1,
+        "fixed_attachment_witnesses": 0,
+        "connected_components": 1,
+        "opening_probes": 0,
+        "opening_rays": 0,
+        "native_triangles": 3072
+      },
+      "soda": {
+        "closed_components": 13,
+        "fixed_attachment_witnesses": 12,
+        "connected_components": 13,
+        "opening_probes": 1,
+        "opening_rays": 5,
+        "native_triangles": 4640
+      },
+      "soap": {
+        "closed_components": 1,
+        "fixed_attachment_witnesses": 0,
+        "connected_components": 1,
+        "opening_probes": 0,
+        "opening_rays": 0,
+        "native_triangles": 92
+      }
+    },
+    "noncollapsed_soap_uv_triangles": 92,
+    "variants": {
+      "fat": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "fat"
+        ],
+        "closed_outward_components": 1,
+        "vertices": 1570,
+        "triangles": 3072,
+        "surfaces": [
+          {
+            "material": "fat",
+            "vertices": 1570,
+            "triangles": 3072
+          }
+        ],
+        "reference_opaque_bounds": [
+          27,
+          31,
+          104,
+          99
+        ],
+        "reference_axis": "width",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 77.0,
+        "native_bounds": [
+          {
+            "min": [
+              -38.540586329099064,
+              -28.206276249832765,
+              0.0
+            ],
+            "max": [
+              38.45941367090094,
+              28.394799384543465,
+              46.86521811413202
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.2828805459583135,
+          "floor": 0.11985313488358283
+        }
+      },
+      "soda": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "jar",
+          "fill",
+          "flake_0",
+          "flake_1",
+          "flake_2",
+          "flake_3",
+          "flake_4",
+          "flake_5",
+          "flake_6",
+          "flake_7",
+          "flake_8",
+          "flake_9",
+          "flake_10"
+        ],
+        "closed_outward_components": 13,
+        "vertices": 2427,
+        "triangles": 4640,
+        "surfaces": [
+          {
+            "material": "stoneware",
+            "vertices": 1367,
+            "triangles": 2688
+          },
+          {
+            "material": "alkali",
+            "vertices": 1060,
+            "triangles": 1952
+          }
+        ],
+        "reference_opaque_bounds": [
+          27,
+          15,
+          104,
+          113
+        ],
+        "reference_axis": "width",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 77.0,
+        "native_bounds": [
+          {
+            "min": [
+              -38.5,
+              -38.5,
+              0.0
+            ],
+            "max": [
+              38.5,
+              38.5,
+              67.01851851851852
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.4259259259259258,
+          "floor": 0.0
+        }
+      },
+      "soap": {
+        "class": "CaelumMaterialPickup",
+        "parts": [
+          "bar"
+        ],
+        "closed_outward_components": 1,
+        "vertices": 276,
+        "triangles": 92,
+        "surfaces": [
+          {
+            "material": "soap",
+            "vertices": 276,
+            "triangles": 92
+          }
+        ],
+        "reference_opaque_bounds": [
+          9,
+          19,
+          123,
+          113
+        ],
+        "reference_axis": "width",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 114.0,
+        "native_bounds": [
+          {
+            "min": [
+              -57.0,
+              -34.54545454545455,
+              0.0
+            ],
+            "max": [
+              57.0,
+              34.54545454545455,
+              33.92372356122173
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.7272727272727273,
+          "floor": -0.0029586856721569577
+        }
+      }
+    },
+    "project_validation_passed": true
+  },
+  "continuity": {
+    "issue": 741,
+    "kind": "hygiene",
+    "scope": "Native pickup/toss, quantity and saved ownership for hygiene; no normal menu or author acceptance.",
+    "baseline_sha256": "57db296e64d80325ac81760d6d02d18fd7b4a5b694d477e1e13344ef56c8bd1d",
+    "runtime_sha256": "1202ac5b7b23c6ac2631cec7bfa986ae5d9a598227c163e025932f2cf07e4bee",
+    "model_sha256": null,
+    "fixture_sha256": "f13d27350cbefe455726fd910531a80f69322526066b94a743aa2bc12bcea7e5",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "baseline",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 82
+      },
+      {
+        "phase": "old-save-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 91
+      },
+      {
+        "phase": "candidate-fresh",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 82
+      },
+      {
+        "phase": "candidate-reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 91
+      },
+      {
+        "phase": "rollback-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 91
+      }
+    ],
+    "captures": {
+      "baseline.png": "3411f2835cbd52699140f57d31731309fcaaf4aeefe9e829ac99dc48c71bcf8b",
+      "candidate-0.png": "39ce18376f884bdf96d13171bf966dbb70394449c5ed57b38e6d5a34666c506a",
+      "candidate-1.png": "02fa39a9cd1627025fbaab2b4c6cda7494bc423980f56c7a172b76b6bce81dc9",
+      "candidate-2.png": "e5bdb74fe8dc3e030e9950bca61f13cd51f9adc9e86021dc5e65235dc3ca93f3",
+      "candidate-3.png": "1a80f274b0d51eeff622b778b32234e59e43662493c450c786f73ebecb997146",
+      "candidate-5.png": "2e9994fe8efba6391f56a8a8712885370c53987d009c24e6688bb79f41e3bd49",
+      "candidate-6.png": "48c12301a34e1098125f26c2e5f6e8f5bb52afafa9cc00e349ba2f496c4fe43b",
+      "candidate-7.png": "e35c2146ae3c7e070f14947ebcd32acaadade39de7344ae10aa005f6438e0a5a",
+      "detail-0-0.png": "d0ae1eb4e16871c55d14f67aacf09b366460e7d0bbd012e6fa9e50571447325c",
+      "detail-0-160.png": "b1910e9e155527e01e2916ed2d439b73721dcf23ca1a307c09e4b5f3742205bb",
+      "detail-0-225.png": "68af0cfe7273497f723313c0f568b589a7cf42e58b79f9df065e333a95656d65",
+      "detail-0-270.png": "f5f3d4954fdb6c7ec35ae512736df6c21b14399fe10887c9f87a973a122706b1",
+      "detail-0-90.png": "8f05646298334b8fdd66ebcfaa761b952b07db6e2734e58489b66c7eeed5f25f",
+      "detail-1-0.png": "f1afd9a06ef1cc11f112fc87747dd54f67be4ae870303e5f51570025ecaf58a7",
+      "detail-1-160.png": "7e40449a67971fa20da8d002edce5dd076e2a56a4760e45893d6e76e99c95bf4",
+      "detail-1-225.png": "06d7bbf3f7fab8227ca895646cca19f6f57de855f2369d2fe8f78d2475ef19e9",
+      "detail-1-270.png": "22cdcb6ce9f8d51f01f32dbf38f20153ad0fddd601f5a274dc125b402425c6e9",
+      "detail-1-90.png": "95e0d338c34be457f6fdff9a40167774265a0d0b5ee7e3da8d72d75f16972472",
+      "detail-2-0.png": "3ad094d53754211d29267c6adca4f5fe9895de3cb9398e89947e84c1d240c569",
+      "detail-2-160.png": "5675ca9e7a02195ab4668418abe743893e5b005281d23024540b677baf59c747",
+      "detail-2-225.png": "0fd2e2f0f9d3391aebd69fcd4ce4864b9c6593e8d16ab458455a98c52f126f96",
+      "detail-2-270.png": "fc4b84a7e012990b57abcdb75dbfa1c1bb310622d045084954159519b9443150",
+      "detail-2-90.png": "54fea3ae3bb5f8c7da26b338b140472aa3947d707fafdf1e5dd354bf76341120"
+    }
+  },
+  "presentation": {
+    "issue": 741,
+    "kind": "hygiene",
+    "scope": "Measure actual inventory drop classes before/after model installation.\n\nA single sequential baseline/candidate pair in an isolated room; this is not a\ncrowd budget, campaign performance acceptance or repeatability estimate.",
+    "baseline_sha256": "57db296e64d80325ac81760d6d02d18fd7b4a5b694d477e1e13344ef56c8bd1d",
+    "runtime_sha256": "1202ac5b7b23c6ac2631cec7bfa986ae5d9a598227c163e025932f2cf07e4bee",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+    "runs": [
+      {
+        "kind": "sprites",
+        "bodies": 3,
+        "pid": 7804,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 319391299.28540003,
+          "END": 319411331.0169
+        },
+        "fixture_sha256": "43d1b648161cd3fca8572800765f86d28c3e54cb1c767b3c32874796f2f0db5e",
+        "passed": true,
+        "observed_completion_counts": [
+          [
+            3,
+            700
+          ]
+        ],
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.57194214285714,
+          "p50_ms": 28.5549,
+          "p95_ms": 29.3495,
+          "p99_ms": 29.5196,
+          "max_ms": 29.8452
+        },
+        "presentation": {
+          "pid": 7804,
+          "trace_sha256": "cf3ebc2d393bad3244f354efeb52734d119bcab75966071e3580d644f4794636",
+          "rows": 24706,
+          "scene_presents": 16609,
+          "mean_present_fps": 947.3393138558848,
+          "present_intervals": {
+            "samples": 16608,
+            "mean_ms": 1.0555879877187555,
+            "p50_ms": 1.0293999910354614,
+            "p95_ms": 1.2613999843597412,
+            "p99_ms": 1.5115000009536743,
+            "max_ms": 2.3879000544548035
+          },
+          "native_call_duration": {
+            "samples": 16609,
+            "mean_ms": 0.09334079108854615,
+            "p50_ms": 0.08849996328353882,
+            "p95_ms": 0.11260002851486206,
+            "p99_ms": 0.16049998998641968,
+            "max_ms": 0.6207000017166138
+          }
+        }
+      },
+      {
+        "kind": "models",
+        "bodies": 3,
+        "pid": 25060,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 319425895.72470003,
+          "END": 319445928.6934
+        },
+        "fixture_sha256": "43d1b648161cd3fca8572800765f86d28c3e54cb1c767b3c32874796f2f0db5e",
+        "passed": true,
+        "observed_completion_counts": [
+          [
+            3,
+            700
+          ]
+        ],
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.569975428571432,
+          "p50_ms": 28.5472,
+          "p95_ms": 29.3606,
+          "p99_ms": 29.5917,
+          "max_ms": 29.9243
+        },
+        "presentation": {
+          "pid": 25060,
+          "trace_sha256": "c4cc4ceca6cc1002f5fc5964fa101ff5456e6c3ba15878cb5dab6f6ee73f150f",
+          "rows": 24562,
+          "scene_presents": 16479,
+          "mean_present_fps": 939.8882165016549,
+          "present_intervals": {
+            "samples": 16478,
+            "mean_ms": 1.0639563114452975,
+            "p50_ms": 1.0374000072479248,
+            "p95_ms": 1.2732000350952148,
+            "p99_ms": 1.5214999914169312,
+            "max_ms": 2.816100001335144
+          },
+          "native_call_duration": {
+            "samples": 16479,
+            "mean_ms": 0.09427499242673562,
+            "p50_ms": 0.08880001306533813,
+            "p95_ms": 0.11460000276565552,
+            "p99_ms": 0.1762000322341919,
+            "max_ms": 0.5595999956130981
+          }
+        }
+      }
+    ]
+  },
+  "iterations": "Initial exporter adaptation still named metals.png; corrected before any export. Model01 geometry passes independent checks, but the initially cloned validator points at the old component source and reports wrong bindings until corrected (geometry02). Native visual01 passes82; overlapping fat lobes look bead-like and soap side UVs stretch. Model02 replaces fat with one closed deformed volume and gives soap each face a real two-dimensional projection;geometry04 includes92 noncollapsed soap UV triangles. Model03 repeats02. Visual02 passes82 but fat silhouette resembles soap. Model04 rounds the body and adds data-driven upper relief, giving distinct raised lobes;visual03 passes82. Model05 repeats04 exactly. Earlier data, generator, manifests, validator failure and selected inspected previews are retained.",
+  "art": {
+    "source": "assets/source/art/inventory_models_647/hygiene",
+    "mode": "built-in image_gen",
+    "image": "materials.png",
+    "prompt": "MATERIALS_PROMPT.json",
+    "original_pixels_preserved": true,
+    "reviewed_views": "Three original full-size references and atlas; all15 final detail/underside views, ordinary three-case floor overview, five selected earlier detail views and both presentation cohorts.",
+    "author_check": "CA741-HYGIENE-DROPS-01"
+  },
+  "environment": {
+    "os": "Windows 11 Pro 26200",
+    "cpu": "Ryzen 9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX 3070 Ti",
+    "engine": "GZDoom 4.14.2",
+    "backend": "Vulkan",
+    "resolution": [
+      1280,
+      720
+    ],
+    "background_unpaused": true,
+    "audio": 0.05,
+    "presentation_uncapped": true,
+    "vsync": false
+  },
+  "qualifications": [
+    "Candidate art: simplified raised fat lobes, visible wrap seam, russet jar coloration/underside UV swirl, alkali flake shapes and regular soap bevels require author review.",
+    "One sequential700-tic three-object sprite/model pair measures queue intervals, not GPU/display timing, repeatability or campaign/crowd acceptance. Projected footprints differ.",
+    "Native pickup/toss API probes and prepared Box/quest states do not establish ordinary menus/crafting, actual hygiene tasks or author acceptance.",
+    "No recipe, tier normalization, amount, weight, ownership, contamination lots, soap credit, collision, actor scale, save schema or routine actor scan changes. Jar is presentation only.",
+    "Other inventory, characters, modular equipment and the V5.16 campaign remain unfinished. No executable, IWAD, compiled fixture, PK3/WAD, DLL or save is committed."
+  ],
+  "files": {
+    "continuity/baseline-process.log": "59150e3e26ed023bff7501282fb3c987729f21b3468d0d1791f7c276ca703975",
+    "continuity/baseline.cfg": "334796a5966b4450f6dee4b769cf3895902b9c99920e92d93e3a658555ec4705",
+    "continuity/baseline.log": "2b9738a4b06a2d5960f52789482f43336b706fcdd90bb8175ac4d3e491f64796",
+    "continuity/baseline.png": "3411f2835cbd52699140f57d31731309fcaaf4aeefe9e829ac99dc48c71bcf8b",
+    "continuity/candidate-0.png": "39ce18376f884bdf96d13171bf966dbb70394449c5ed57b38e6d5a34666c506a",
+    "continuity/candidate-1.png": "02fa39a9cd1627025fbaab2b4c6cda7494bc423980f56c7a172b76b6bce81dc9",
+    "continuity/candidate-2.png": "e5bdb74fe8dc3e030e9950bca61f13cd51f9adc9e86021dc5e65235dc3ca93f3",
+    "continuity/candidate-3.png": "1a80f274b0d51eeff622b778b32234e59e43662493c450c786f73ebecb997146",
+    "continuity/candidate-5.png": "2e9994fe8efba6391f56a8a8712885370c53987d009c24e6688bb79f41e3bd49",
+    "continuity/candidate-6.png": "48c12301a34e1098125f26c2e5f6e8f5bb52afafa9cc00e349ba2f496c4fe43b",
+    "continuity/candidate-7.png": "e35c2146ae3c7e070f14947ebcd32acaadade39de7344ae10aa005f6438e0a5a",
+    "continuity/candidate-fresh-process.log": "c0c182451b4126b22281024a60f40ab5fb98d2d27d540300be0c9d450902e2db",
+    "continuity/candidate-fresh.cfg": "ba565d4ea2fbc5df9a4e15f4703ac5f544696b7d7141dc4b42f3c387a3be504c",
+    "continuity/candidate-fresh.log": "4da18e604d50bc2d6dd1700d877b8a0f172067c1292ce03f4e0a9ffb32ccaacd",
+    "continuity/candidate-reload-process.log": "52e28e23d562ffa1c218d5a60acdcb900918aa3aadf205a661b7df58912eb7bb",
+    "continuity/candidate-reload.cfg": "e817fa40c23d8ee33c47480cbba7919bc70b3007fa23387ab4346963e4539f1b",
+    "continuity/candidate-reload.log": "b2c203b08ab70adcf4c19af3a9ee9aa5f9ecaebbc29dbc5edb8619fe896d5745",
+    "continuity/detail-0-0.png": "d0ae1eb4e16871c55d14f67aacf09b366460e7d0bbd012e6fa9e50571447325c",
+    "continuity/detail-0-160.png": "b1910e9e155527e01e2916ed2d439b73721dcf23ca1a307c09e4b5f3742205bb",
+    "continuity/detail-0-225.png": "68af0cfe7273497f723313c0f568b589a7cf42e58b79f9df065e333a95656d65",
+    "continuity/detail-0-270.png": "f5f3d4954fdb6c7ec35ae512736df6c21b14399fe10887c9f87a973a122706b1",
+    "continuity/detail-0-90.png": "8f05646298334b8fdd66ebcfaa761b952b07db6e2734e58489b66c7eeed5f25f",
+    "continuity/detail-1-0.png": "f1afd9a06ef1cc11f112fc87747dd54f67be4ae870303e5f51570025ecaf58a7",
+    "continuity/detail-1-160.png": "7e40449a67971fa20da8d002edce5dd076e2a56a4760e45893d6e76e99c95bf4",
+    "continuity/detail-1-225.png": "06d7bbf3f7fab8227ca895646cca19f6f57de855f2369d2fe8f78d2475ef19e9",
+    "continuity/detail-1-270.png": "22cdcb6ce9f8d51f01f32dbf38f20153ad0fddd601f5a274dc125b402425c6e9",
+    "continuity/detail-1-90.png": "95e0d338c34be457f6fdff9a40167774265a0d0b5ee7e3da8d72d75f16972472",
+    "continuity/detail-2-0.png": "3ad094d53754211d29267c6adca4f5fe9895de3cb9398e89947e84c1d240c569",
+    "continuity/detail-2-160.png": "5675ca9e7a02195ab4668418abe743893e5b005281d23024540b677baf59c747",
+    "continuity/detail-2-225.png": "0fd2e2f0f9d3391aebd69fcd4ce4864b9c6593e8d16ab458455a98c52f126f96",
+    "continuity/detail-2-270.png": "fc4b84a7e012990b57abcdb75dbfa1c1bb310622d045084954159519b9443150",
+    "continuity/detail-2-90.png": "54fea3ae3bb5f8c7da26b338b140472aa3947d707fafdf1e5dd354bf76341120",
+    "continuity/fixture-source/MAPINFO.txt": "6b873733ac59680a4a0e6d851ce3a773a28caea9ef5104f4e6d903ecfdc63658",
+    "continuity/fixture-source/ZSCRIPT.txt": "e21b90c014d8eae33834b25c1f170faf0958225b221da3eb1eefdfb6d00982d3",
+    "continuity/fixture.zs": "3bd3d2bfde54b8d2e55d07cc3de572912e69113d2423600b04a5b0c0e7aac12a",
+    "continuity/old-save-load-process.log": "a36dd93d0b0bb88db04c7147c8288ea1a003446578ef4fb3e97302859387ce14",
+    "continuity/old-save-load.cfg": "37b0cd6f29a23a9664650d722f8ffd6b1f0f02647ab79cec58d4e42c3cb56b8d",
+    "continuity/old-save-load.log": "2f704f794c4889b5f1231a9b79baf9d58057f54836d1f2c8666991d2b762abfc",
+    "continuity/RESULTS.json": "f10cfdd6d8f2dea259908af991d9036344855ffc1c3a2b56fc9c6afbb980d694",
+    "continuity/rollback-load-process.log": "9a3dac963e486beebb33e2ab3905a0ebecb1624eaa83496c4b1a75f9c8e0ff34",
+    "continuity/rollback-load.cfg": "e817fa40c23d8ee33c47480cbba7919bc70b3007fa23387ab4346963e4539f1b",
+    "continuity/rollback-load.log": "19332bffd7a186473a3da9bf364c3ad78855e1c5fe84c4df6d4645ca4b3cad08",
+    "continuity/session.ini": "03fae206d7f674e06c576aea2810b0b773156fbf6235d1f7d2da39ee257f67e9",
+    "exports/model01.json": "51bf30f54b084824cd74ee0226324a6555e2cbdf9a034e1f83cb4ca450f621b4",
+    "exports/model02.json": "0a0c2d2e88fecf983a15d4f6f3254cccec773407c5a05aa35a863ef9b7654a2a",
+    "exports/model03.json": "0a0c2d2e88fecf983a15d4f6f3254cccec773407c5a05aa35a863ef9b7654a2a",
+    "exports/model04.json": "972cd5f51490bfdb32465396efd5e4aef124f00f376346a585127cce0d0f3d40",
+    "exports/model05.json": "972cd5f51490bfdb32465396efd5e4aef124f00f376346a585127cce0d0f3d40",
+    "issue741-build01.log": "e513844f7b85212e6a628762be692083c3eb8f1caf8153952c148e169dde723b",
+    "issue741-installed-check.log": "227b93b648408dc04722cdec20bd7f225dee714823b7c0817763866dfbf07984",
+    "issue741-repeat02-03.json": "38ea0c593366395748fc3f221e4ce4e97555cf60bdfb31da3ef97b09a6271394",
+    "issue741-repeat04-05.json": "deed31961857b6d9c8b2cc14239553ce4ce8b65146ce8e8a97abe30c77bdb664",
+    "iterations/issue741-geometry01.log": "d9305f51aac1a1482718a6b05a32103d8ab413d44bfb53dd04d79ad22a17fe18",
+    "iterations/issue741-geometry02.log": "0cc69f832364abb565dea68679d3e0c21dc69c8413431a8b05db93ead3bea8bd",
+    "iterations/issue741-geometry03.log": "604f93a2118facc666741aace32aad7ac0db3e3b9bb87ec652e803fab708d8b3",
+    "iterations/issue741-geometry04.log": "b9c902c9b056dd5748931456434095f8258175a1153e3f66a39655fd73326e62",
+    "iterations/issue741-geometry05.log": "b9c902c9b056dd5748931456434095f8258175a1153e3f66a39655fd73326e62",
+    "iterations/source01/DESIGN.json": "1425662dbcb07564126da83faa220263af72b79818fbae46cf64e590c61cbe84",
+    "iterations/source01/EXPORT.json": "51bf30f54b084824cd74ee0226324a6555e2cbdf9a034e1f83cb4ca450f621b4",
+    "iterations/source01/generate_inventory_hygiene_models.py": "348f73fbfe1498f649d4eb76b79eb09ac0a85f50776a28f0a4b2290910c4b142",
+    "iterations/source01/PROVENANCE.json": "e4cd55f6fec726ac09bb81f9797ddafc198c116b9fd81fe475e17b8ebb048d3e",
+    "iterations/source01/validate_inventory_hygiene_models.py": "4c4e081e193f59547acf4dcbee6f0245f4b433f6d67ceacf512d352b154b64d7",
+    "iterations/source02/DESIGN.json": "ba5fe069eaf9cdb2e78bb23a4440fc7e2e54f80d78c320e572e770fd4e23b992",
+    "iterations/source02/EXPORT.json": "0a0c2d2e88fecf983a15d4f6f3254cccec773407c5a05aa35a863ef9b7654a2a",
+    "iterations/source02/generate_inventory_hygiene_models.py": "cbd7e6fe4b6dcd1e7759fc622e3f5ddf89b36751e78441aba85907194b0bc2f2",
+    "iterations/source02/PROVENANCE.json": "9dc15178f6fc0354e381cdb2e50faafeadfa94eb6fa1eead5e36f3ca94dcd500",
+    "iterations/visual01/detail-0-90.png": "07bd361fe363f3b4d64056de1f40a3234176d94ca315b240834b16a8c1952613",
+    "iterations/visual01/detail-1-90.png": "95e0d338c34be457f6fdff9a40167774265a0d0b5ee7e3da8d72d75f16972472",
+    "iterations/visual01/detail-2-90.png": "2cd9833d2e95b978b723599472a9e0e8374e7c466322a5bc4f03a50ab969506d",
+    "iterations/visual01/fixture-source/MAPINFO.txt": "6b873733ac59680a4a0e6d851ce3a773a28caea9ef5104f4e6d903ecfdc63658",
+    "iterations/visual01/fixture-source/ZSCRIPT.txt": "d1db752f1f82e8777becb4d3d2881900a6534248338519228ab74025d48ca4e6",
+    "iterations/visual01/fixture.zs": "89fac3de6d89ab91014785dd792fa39fd8516b5934565d7b863b5a8e171aa7a9",
+    "iterations/visual01/RESULTS.json": "d4ae467a3311d1eb86852e1ee756d9727f9590c0edefcab83bc6fe18bd65db96",
+    "iterations/visual01/session.ini": "353dd4bb442b862ec25a316664af8f04eef755883ccabeb9b823379c0ecf8d57",
+    "iterations/visual01/visual-process.log": "f9a9ceb69e74403550db432225be6c955dd7761b44b9481c07b2f1081f630e74",
+    "iterations/visual01/visual.cfg": "627d01b095e2d12347789f752296dfb126ef1c4e6884bc0ebda60d92ec7ca577",
+    "iterations/visual01/visual.log": "9e6735b95231e5dfb8eb255611b078196d6f2fad7ace17c19a56c7da03ace8df",
+    "iterations/visual02/detail-0-90.png": "cef1271fec61c4e44e21d755e5693fbfe067f80b28ad4a44c4987c5ea2ce71cb",
+    "iterations/visual02/detail-2-90.png": "54fea3ae3bb5f8c7da26b338b140472aa3947d707fafdf1e5dd354bf76341120",
+    "iterations/visual02/fixture-source/MAPINFO.txt": "6b873733ac59680a4a0e6d851ce3a773a28caea9ef5104f4e6d903ecfdc63658",
+    "iterations/visual02/fixture-source/ZSCRIPT.txt": "8d97f8b92c89dd2bf17959c52d8f08ae432f16094db8326d4f560f629b3a5996",
+    "iterations/visual02/fixture.zs": "171e0cfa78d0007c5b579191630f31edae5127c438dcf1bbc1a42a499cffb0c2",
+    "iterations/visual02/RESULTS.json": "acc1f81e1fc950c15e21e26e3ed02880c1808127317f7bcd4f89a3e13450f827",
+    "iterations/visual02/session.ini": "ee40edc67178e7ef0dd282adbd9832b81fd7c4c945f9d31bc968bf67c6fccb91",
+    "iterations/visual02/visual-process.log": "8223379c0c6d167a931c2b790964b71a8c318525c73d09a0cd54265a1cdb014e",
+    "iterations/visual02/visual.cfg": "627d01b095e2d12347789f752296dfb126ef1c4e6884bc0ebda60d92ec7ca577",
+    "iterations/visual02/visual.log": "fc7401daf37a92389c4d7625cd37fffb3bfb1a5172120aaf94e8000786dea48a",
+    "presentation/models-3/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/models-3/engine.log": "b63423ec66be9fe96965719d522fb897c1d4e2101e7d39b2b57313cfb857d361",
+    "presentation/models-3/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/models-3/fixture-source/ZSCRIPT.txt": "f9c5dd5edc59a8c66504d6c490fddfb66be5d6162172815f27a39188b689d85e",
+    "presentation/models-3/presents.csv": "c4cc4ceca6cc1002f5fc5964fa101ff5456e6c3ba15878cb5dab6f6ee73f150f",
+    "presentation/models-3/process.log": "1aafed79ba3a69267d197b71b30e7737267bf22f7d3bc5844f51c9c70a7c9da9",
+    "presentation/models-3/scene.png": "1cda77b4a4276455159b4b380418c8fb64c2f26e4671ee8d665563062b9291bc",
+    "presentation/models-3/session.ini": "50cc0dca15c1e9a4c5964d7c413385cc8f7eaf3df08402ba40c056c405fb0eb9",
+    "presentation/RESULTS.json": "ab179df3833262c9a837dff9942621e173bc33af2acf63229d8e734aa47ae80a",
+    "presentation/sprites-3/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/sprites-3/engine.log": "ca04831b224a55745398ae748ea440cb6e630827feff68468fa6d7ff23746a3e",
+    "presentation/sprites-3/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/sprites-3/fixture-source/ZSCRIPT.txt": "f9c5dd5edc59a8c66504d6c490fddfb66be5d6162172815f27a39188b689d85e",
+    "presentation/sprites-3/presents.csv": "cf3ebc2d393bad3244f354efeb52734d119bcab75966071e3580d644f4794636",
+    "presentation/sprites-3/process.log": "1314f4af2a9afec6fa2a77f9b6e319b7c7e14faf379d5c926c2e18d3eff45c7b",
+    "presentation/sprites-3/scene.png": "daad5d82e49bd77cae82c7210aedb365b398f7a448f2262dcaccaabe79e9d07b",
+    "presentation/sprites-3/session.ini": "a5f2aade06728e148f132c8207d57bfac08499f6936bc42f85f601aa4cdd381e",
+    "visual03/candidate-0.png": "39ce18376f884bdf96d13171bf966dbb70394449c5ed57b38e6d5a34666c506a",
+    "visual03/candidate-1.png": "02fa39a9cd1627025fbaab2b4c6cda7494bc423980f56c7a172b76b6bce81dc9",
+    "visual03/candidate-2.png": "e5bdb74fe8dc3e030e9950bca61f13cd51f9adc9e86021dc5e65235dc3ca93f3",
+    "visual03/candidate-3.png": "1a80f274b0d51eeff622b778b32234e59e43662493c450c786f73ebecb997146",
+    "visual03/candidate-5.png": "2e9994fe8efba6391f56a8a8712885370c53987d009c24e6688bb79f41e3bd49",
+    "visual03/candidate-6.png": "48c12301a34e1098125f26c2e5f6e8f5bb52afafa9cc00e349ba2f496c4fe43b",
+    "visual03/candidate-7.png": "e35c2146ae3c7e070f14947ebcd32acaadade39de7344ae10aa005f6438e0a5a",
+    "visual03/detail-0-0.png": "d0ae1eb4e16871c55d14f67aacf09b366460e7d0bbd012e6fa9e50571447325c",
+    "visual03/detail-0-160.png": "b1910e9e155527e01e2916ed2d439b73721dcf23ca1a307c09e4b5f3742205bb",
+    "visual03/detail-0-225.png": "68af0cfe7273497f723313c0f568b589a7cf42e58b79f9df065e333a95656d65",
+    "visual03/detail-0-270.png": "f5f3d4954fdb6c7ec35ae512736df6c21b14399fe10887c9f87a973a122706b1",
+    "visual03/detail-0-90.png": "8f05646298334b8fdd66ebcfaa761b952b07db6e2734e58489b66c7eeed5f25f",
+    "visual03/detail-1-0.png": "f1afd9a06ef1cc11f112fc87747dd54f67be4ae870303e5f51570025ecaf58a7",
+    "visual03/detail-1-160.png": "7e40449a67971fa20da8d002edce5dd076e2a56a4760e45893d6e76e99c95bf4",
+    "visual03/detail-1-225.png": "06d7bbf3f7fab8227ca895646cca19f6f57de855f2369d2fe8f78d2475ef19e9",
+    "visual03/detail-1-270.png": "22cdcb6ce9f8d51f01f32dbf38f20153ad0fddd601f5a274dc125b402425c6e9",
+    "visual03/detail-1-90.png": "95e0d338c34be457f6fdff9a40167774265a0d0b5ee7e3da8d72d75f16972472",
+    "visual03/detail-2-0.png": "3ad094d53754211d29267c6adca4f5fe9895de3cb9398e89947e84c1d240c569",
+    "visual03/detail-2-160.png": "5675ca9e7a02195ab4668418abe743893e5b005281d23024540b677baf59c747",
+    "visual03/detail-2-225.png": "0fd2e2f0f9d3391aebd69fcd4ce4864b9c6593e8d16ab458455a98c52f126f96",
+    "visual03/detail-2-270.png": "fc4b84a7e012990b57abcdb75dbfa1c1bb310622d045084954159519b9443150",
+    "visual03/detail-2-90.png": "54fea3ae3bb5f8c7da26b338b140472aa3947d707fafdf1e5dd354bf76341120",
+    "visual03/fixture-source/MAPINFO.txt": "6b873733ac59680a4a0e6d851ce3a773a28caea9ef5104f4e6d903ecfdc63658",
+    "visual03/fixture-source/ZSCRIPT.txt": "e21b90c014d8eae33834b25c1f170faf0958225b221da3eb1eefdfb6d00982d3",
+    "visual03/fixture.zs": "3bd3d2bfde54b8d2e55d07cc3de572912e69113d2423600b04a5b0c0e7aac12a",
+    "visual03/RESULTS.json": "02f4a5d86c32870a087b5a22ac71e8660b6cc779e1078d58930e33cb4f065022",
+    "visual03/session.ini": "0281c3f7ee5ae17b32cbd5321d20f952c82fdb536e3fedb9d31cf3f9b51422db",
+    "visual03/visual-process.log": "d34be61615723657465cc73361afff63d2dc8476e558e963ca46416195d70a92",
+    "visual03/visual.cfg": "627d01b095e2d12347789f752296dfb126ef1c4e6884bc0ebda60d92ec7ca577",
+    "visual03/visual.log": "849ee0d4615bfbd19f6a9563559198bf48fad7bfad6e8545a06ece705350d321",
+    "validation-final.json": "3e15e0aa6155001136961d40a84404b47e284b736c3b71454ae6004d47f14e0b"
+  }
+}

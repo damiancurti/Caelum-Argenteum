@@ -1,6 +1,20 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.48** - 2026-11-14.
+Documentation version: **5.17.49** - 2026-11-14.
+
+## 5.17.49 - Hygiene drop models (#741, 2026-11-14)
+
+Added native fat, alkali and soap models, preserving accepted #502 icons and
+all three normalized type/tier cases. Retained the new image_gen atlas,
+exact prompt/provenance and editable sources. Native review replaced rounded
+overlapping fat lobes with one continuous organic volume, refined its upper
+relief and repaired stretched soap side UVs. Final fifteen closed solids,
+twelve contacts, five jar-mouth rays and 92 soap UV triangles pass. Eleven
+exports repeat; the installed package passes 437 native assertions. ASSETS
+records the qualified three-object presentation comparison and limits.
+Evidence: assets/validation_v5_17_49/evidence/SUMMARY.json.
+CA741-HYGIENE-DROPS-01 originates here and remains pending. No author test
+was removed or accepted; the broader campaign and 3D conversion continue.
 
 ## 5.17.48 - Basilisco regional gallery (#739, 2026-11-14)
 
