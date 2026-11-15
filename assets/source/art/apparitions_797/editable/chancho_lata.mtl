@@ -1,0 +1,9 @@
+newmtl iris
+Kd 1 1 1
+map_Kd src/models/caelum/folklore/apparitions/iris.png
+newmtl dark
+Kd 1 1 1
+map_Kd src/models/caelum/folklore/apparitions/dark.png
+newmtl atlas
+Kd 1 1 1
+map_Kd src/models/caelum/folklore/apparitions/materials.png

@@ -1189,3 +1189,10 @@ assets/validation_v5_17_76/*.py text eol=lf
 assets/validation_v5_17_76/*.json text eol=lf
 assets/validation_v5_17_76/evidence/** -text -diff
 src/caelum/data/kasogonaga_combat.modeldef text eol=lf
+
+assets/source/art/apparitions_797/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+assets/generators/*apparition*models.py text eol=lf
+assets/validation_v5_17_77/*.py text eol=lf
+assets/validation_v5_17_77/*.json text eol=lf
+assets/validation_v5_17_77/evidence/** -text -diff
+src/caelum/data/apparition_combat.modeldef text eol=lf

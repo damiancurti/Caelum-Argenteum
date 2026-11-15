@@ -1,0 +1,1874 @@
+{
+  "schema_revision": 1,
+  "issue": 797,
+  "catalogue_id": "CA-FOLK-029",
+  "species": "mulanima",
+  "reference": "assets/source/bestiary_453/imagenes/04_Apariciones/29_mulanima.png",
+  "reference_role": "Owned anatomy, materials and silhouette; conceptual metres do not authorize runtime scale.",
+  "preview": {
+    "height_map_units": 100
+  },
+  "atlas": {
+    "columns": 3,
+    "rows": 3,
+    "inset": 0.018,
+    "source_file": "materials.png"
+  },
+  "materials": {
+    "coat": {
+      "tile": [
+        0,
+        0
+      ],
+      "native_batch": "atlas"
+    },
+    "mane": {
+      "tile": [
+        1,
+        0
+      ],
+      "native_batch": "atlas"
+    },
+    "muzzle": {
+      "tile": [
+        2,
+        0
+      ],
+      "native_batch": "atlas"
+    },
+    "metal": {
+      "tile": [
+        0,
+        1
+      ],
+      "native_batch": "atlas"
+    },
+    "brass": {
+      "tile": [
+        1,
+        1
+      ],
+      "native_batch": "atlas"
+    },
+    "iron": {
+      "tile": [
+        2,
+        1
+      ],
+      "native_batch": "atlas"
+    },
+    "ivory": {
+      "tile": [
+        0,
+        2
+      ],
+      "native_batch": "atlas"
+    },
+    "hoof": {
+      "tile": [
+        1,
+        2
+      ],
+      "native_batch": "atlas"
+    },
+    "flame": {
+      "tile": [
+        2,
+        2
+      ],
+      "native_batch": "atlas"
+    },
+    "iris": {
+      "uv_rect": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "native_batch": "iris"
+    },
+    "dark": {
+      "uv_rect": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "native_batch": "dark"
+    }
+  },
+  "parts": {
+    "pelvis": {
+      "parent": null,
+      "pivot": [
+        -23,
+        0,
+        48
+      ]
+    },
+    "torso": {
+      "parent": "pelvis",
+      "pivot": [
+        0,
+        0,
+        54
+      ]
+    },
+    "head": {
+      "parent": "torso",
+      "pivot": [
+        20,
+        0,
+        68
+      ]
+    },
+    "jaw": {
+      "parent": "head",
+      "pivot": [
+        39,
+        0,
+        86
+      ]
+    },
+    "tail": {
+      "parent": "pelvis",
+      "pivot": [
+        -38,
+        0,
+        62
+      ]
+    },
+    "trunk": {
+      "parent": "torso",
+      "pivot": [
+        0,
+        0,
+        54
+      ]
+    },
+    "neck": {
+      "parent": "head",
+      "pivot": [
+        20,
+        0,
+        68
+      ]
+    },
+    "cranium": {
+      "parent": "head",
+      "pivot": [
+        20,
+        0,
+        68
+      ]
+    },
+    "long_muzzle": {
+      "parent": "head",
+      "pivot": [
+        20,
+        0,
+        68
+      ]
+    },
+    "lower_jaw": {
+      "parent": "jaw",
+      "pivot": [
+        39,
+        0,
+        86
+      ]
+    },
+    "nose": {
+      "parent": "head",
+      "pivot": [
+        20,
+        0,
+        68
+      ]
+    },
+    "left_nostril": {
+      "parent": "head",
+      "pivot": [
+        20,
+        0,
+        68
+      ]
+    },
+    "left_eye": {
+      "parent": "head",
+      "pivot": [
+        20,
+        0,
+        68
+      ]
+    },
+    "left_iris": {
+      "parent": "head",
+      "pivot": [
+        20,
+        0,
+        68
+      ]
+    },
+    "left_pupil": {
+      "parent": "head",
+      "pivot": [
+        20,
+        0,
+        68
+      ]
+    },
+    "left_ear": {
+      "parent": "head",
+      "pivot": [
+        20,
+        0,
+        68
+      ]
+    },
+    "left_ear_inner": {
+      "parent": "head",
+      "pivot": [
+        20,
+        0,
+        68
+      ]
+    },
+    "fore_left_thigh": {
+      "parent": "torso",
+      "pivot": [
+        20,
+        -11,
+        50
+      ]
+    },
+    "fore_left_shin": {
+      "parent": "fore_left_thigh",
+      "pivot": [
+        22,
+        -11,
+        30
+      ]
+    },
+    "fore_left_upper": {
+      "parent": "fore_left_thigh",
+      "pivot": [
+        20,
+        -11,
+        50
+      ]
+    },
+    "fore_left_lower": {
+      "parent": "fore_left_shin",
+      "pivot": [
+        22,
+        -11,
+        30
+      ]
+    },
+    "fore_left_cannon": {
+      "parent": "fore_left_shin",
+      "pivot": [
+        22,
+        -11,
+        30
+      ]
+    },
+    "fore_left_hoof": {
+      "parent": "fore_left_shin",
+      "pivot": [
+        22,
+        -11,
+        30
+      ]
+    },
+    "hind_left_thigh": {
+      "parent": "pelvis",
+      "pivot": [
+        -32,
+        -10,
+        48
+      ]
+    },
+    "hind_left_shin": {
+      "parent": "hind_left_thigh",
+      "pivot": [
+        -38,
+        -10,
+        30
+      ]
+    },
+    "hind_left_upper": {
+      "parent": "hind_left_thigh",
+      "pivot": [
+        -32,
+        -10,
+        48
+      ]
+    },
+    "hind_left_lower": {
+      "parent": "hind_left_shin",
+      "pivot": [
+        -38,
+        -10,
+        30
+      ]
+    },
+    "hind_left_cannon": {
+      "parent": "hind_left_shin",
+      "pivot": [
+        -38,
+        -10,
+        30
+      ]
+    },
+    "hind_left_hoof": {
+      "parent": "hind_left_shin",
+      "pivot": [
+        -38,
+        -10,
+        30
+      ]
+    },
+    "right_nostril": {
+      "parent": "head",
+      "pivot": [
+        20,
+        0,
+        68
+      ]
+    },
+    "right_eye": {
+      "parent": "head",
+      "pivot": [
+        20,
+        0,
+        68
+      ]
+    },
+    "right_iris": {
+      "parent": "head",
+      "pivot": [
+        20,
+        0,
+        68
+      ]
+    },
+    "right_pupil": {
+      "parent": "head",
+      "pivot": [
+        20,
+        0,
+        68
+      ]
+    },
+    "right_ear": {
+      "parent": "head",
+      "pivot": [
+        20,
+        0,
+        68
+      ]
+    },
+    "right_ear_inner": {
+      "parent": "head",
+      "pivot": [
+        20,
+        0,
+        68
+      ]
+    },
+    "fore_right_thigh": {
+      "parent": "torso",
+      "pivot": [
+        20,
+        11,
+        50
+      ]
+    },
+    "fore_right_shin": {
+      "parent": "fore_right_thigh",
+      "pivot": [
+        22,
+        11,
+        30
+      ]
+    },
+    "fore_right_upper": {
+      "parent": "fore_right_thigh",
+      "pivot": [
+        20,
+        11,
+        50
+      ]
+    },
+    "fore_right_lower": {
+      "parent": "fore_right_shin",
+      "pivot": [
+        22,
+        11,
+        30
+      ]
+    },
+    "fore_right_cannon": {
+      "parent": "fore_right_shin",
+      "pivot": [
+        22,
+        11,
+        30
+      ]
+    },
+    "fore_right_hoof": {
+      "parent": "fore_right_shin",
+      "pivot": [
+        22,
+        11,
+        30
+      ]
+    },
+    "hind_right_thigh": {
+      "parent": "pelvis",
+      "pivot": [
+        -32,
+        10,
+        48
+      ]
+    },
+    "hind_right_shin": {
+      "parent": "hind_right_thigh",
+      "pivot": [
+        -38,
+        10,
+        30
+      ]
+    },
+    "hind_right_upper": {
+      "parent": "hind_right_thigh",
+      "pivot": [
+        -32,
+        10,
+        48
+      ]
+    },
+    "hind_right_lower": {
+      "parent": "hind_right_shin",
+      "pivot": [
+        -38,
+        10,
+        30
+      ]
+    },
+    "hind_right_cannon": {
+      "parent": "hind_right_shin",
+      "pivot": [
+        -38,
+        10,
+        30
+      ]
+    },
+    "hind_right_hoof": {
+      "parent": "hind_right_shin",
+      "pivot": [
+        -38,
+        10,
+        30
+      ]
+    },
+    "mane_0": {
+      "parent": "head",
+      "pivot": [
+        20,
+        0,
+        68
+      ]
+    },
+    "mane_ember_0": {
+      "parent": "head",
+      "pivot": [
+        20,
+        0,
+        68
+      ]
+    },
+    "mane_1": {
+      "parent": "head",
+      "pivot": [
+        20,
+        0,
+        68
+      ]
+    },
+    "mane_ember_1": {
+      "parent": "head",
+      "pivot": [
+        20,
+        0,
+        68
+      ]
+    },
+    "mane_2": {
+      "parent": "head",
+      "pivot": [
+        20,
+        0,
+        68
+      ]
+    },
+    "mane_ember_2": {
+      "parent": "head",
+      "pivot": [
+        20,
+        0,
+        68
+      ]
+    },
+    "mane_3": {
+      "parent": "head",
+      "pivot": [
+        20,
+        0,
+        68
+      ]
+    },
+    "mane_ember_3": {
+      "parent": "head",
+      "pivot": [
+        20,
+        0,
+        68
+      ]
+    },
+    "mane_4": {
+      "parent": "head",
+      "pivot": [
+        20,
+        0,
+        68
+      ]
+    },
+    "mane_ember_4": {
+      "parent": "head",
+      "pivot": [
+        20,
+        0,
+        68
+      ]
+    },
+    "tail_hair": {
+      "parent": "tail",
+      "pivot": [
+        -38,
+        0,
+        62
+      ]
+    },
+    "tail_ember_0": {
+      "parent": "tail",
+      "pivot": [
+        -38,
+        0,
+        62
+      ]
+    },
+    "tail_ember_1": {
+      "parent": "tail",
+      "pivot": [
+        -38,
+        0,
+        62
+      ]
+    },
+    "tail_ember_2": {
+      "parent": "tail",
+      "pivot": [
+        -38,
+        0,
+        62
+      ]
+    }
+  },
+  "shapes": [
+    {
+      "name": "trunk",
+      "part": "trunk",
+      "kind": "ellipsoid",
+      "material": "coat",
+      "center": [
+        -4,
+        0,
+        52
+      ],
+      "radii": [
+        42,
+        16,
+        22
+      ],
+      "latitudes": 18,
+      "longitudes": 32
+    },
+    {
+      "name": "neck",
+      "part": "neck",
+      "kind": "ellipsoid",
+      "material": "coat",
+      "center": [
+        22,
+        0,
+        76
+      ],
+      "radii": [
+        15,
+        13,
+        28
+      ],
+      "latitudes": 18,
+      "longitudes": 32
+    },
+    {
+      "name": "cranium",
+      "part": "cranium",
+      "kind": "ellipsoid",
+      "material": "coat",
+      "center": [
+        33,
+        0,
+        98
+      ],
+      "radii": [
+        11,
+        9,
+        17
+      ],
+      "latitudes": 16,
+      "longitudes": 28
+    },
+    {
+      "name": "long_muzzle",
+      "part": "long_muzzle",
+      "kind": "sweep",
+      "material": "coat",
+      "controls": [
+        [
+          33,
+          0,
+          103,
+          8,
+          9
+        ],
+        [
+          42,
+          0,
+          91,
+          8,
+          10
+        ],
+        [
+          49,
+          0,
+          80,
+          7,
+          8
+        ],
+        [
+          51,
+          0,
+          75,
+          7,
+          6
+        ]
+      ],
+      "samples": 24,
+      "segments": 18,
+      "uv_repeats": 2,
+      "tip_pole": false
+    },
+    {
+      "name": "lower_jaw",
+      "part": "lower_jaw",
+      "kind": "ellipsoid",
+      "material": "coat",
+      "center": [
+        44,
+        0,
+        81
+      ],
+      "radii": [
+        13,
+        9,
+        6
+      ],
+      "latitudes": 12,
+      "longitudes": 24
+    },
+    {
+      "name": "nose",
+      "part": "nose",
+      "kind": "ellipsoid",
+      "material": "muzzle",
+      "center": [
+        51,
+        0,
+        76
+      ],
+      "radii": [
+        7,
+        8,
+        6
+      ],
+      "latitudes": 12,
+      "longitudes": 24
+    },
+    {
+      "name": "left_nostril",
+      "part": "left_nostril",
+      "kind": "ellipsoid",
+      "material": "dark",
+      "center": [
+        56.5,
+        -4,
+        76
+      ],
+      "radii": [
+        1.8,
+        2.0,
+        2.2
+      ],
+      "latitudes": 6,
+      "longitudes": 14
+    },
+    {
+      "name": "left_eye",
+      "part": "left_eye",
+      "kind": "ellipsoid",
+      "material": "dark",
+      "center": [
+        39,
+        -7.5,
+        100
+      ],
+      "radii": [
+        2.7,
+        1.7,
+        2.4
+      ],
+      "latitudes": 8,
+      "longitudes": 16
+    },
+    {
+      "name": "left_iris",
+      "part": "left_iris",
+      "kind": "ellipsoid",
+      "material": "iris",
+      "center": [
+        40,
+        -8.5,
+        100
+      ],
+      "radii": [
+        1.5,
+        1.0,
+        1.7
+      ],
+      "latitudes": 6,
+      "longitudes": 14
+    },
+    {
+      "name": "left_pupil",
+      "part": "left_pupil",
+      "kind": "ellipsoid",
+      "material": "dark",
+      "center": [
+        40.4,
+        -9.1,
+        100
+      ],
+      "radii": [
+        0.65,
+        0.5,
+        1.0
+      ],
+      "latitudes": 4,
+      "longitudes": 10
+    },
+    {
+      "name": "left_ear",
+      "part": "left_ear",
+      "kind": "ellipsoid",
+      "material": "coat",
+      "center": [
+        27,
+        -7.5,
+        118
+      ],
+      "radii": [
+        4.5,
+        3,
+        15
+      ],
+      "latitudes": 16,
+      "longitudes": 20
+    },
+    {
+      "name": "left_ear_inner",
+      "part": "left_ear_inner",
+      "kind": "ellipsoid",
+      "material": "muzzle",
+      "center": [
+        28,
+        -9,
+        119
+      ],
+      "radii": [
+        2.1,
+        1.2,
+        10
+      ],
+      "latitudes": 12,
+      "longitudes": 16
+    },
+    {
+      "name": "fore_left_upper",
+      "part": "fore_left_upper",
+      "kind": "ellipsoid",
+      "material": "coat",
+      "center": [
+        20,
+        -11,
+        44
+      ],
+      "radii": [
+        7,
+        6,
+        16
+      ],
+      "latitudes": 12,
+      "longitudes": 24
+    },
+    {
+      "name": "fore_left_lower",
+      "part": "fore_left_lower",
+      "kind": "ellipsoid",
+      "material": "coat",
+      "center": [
+        22,
+        -11,
+        23
+      ],
+      "radii": [
+        3.5,
+        3.5,
+        12
+      ],
+      "latitudes": 12,
+      "longitudes": 24
+    },
+    {
+      "name": "fore_left_cannon",
+      "part": "fore_left_cannon",
+      "kind": "ellipsoid",
+      "material": "coat",
+      "center": [
+        23,
+        -11,
+        10
+      ],
+      "radii": [
+        3,
+        3,
+        8
+      ],
+      "latitudes": 12,
+      "longitudes": 24
+    },
+    {
+      "name": "fore_left_hoof",
+      "part": "fore_left_hoof",
+      "kind": "tube",
+      "material": "hoof",
+      "rows": [
+        [
+          25,
+          -11,
+          0.8,
+          5.5,
+          6
+        ],
+        [
+          24,
+          -11,
+          6,
+          4,
+          5
+        ],
+        [
+          23,
+          -11,
+          9,
+          3.5,
+          4
+        ]
+      ],
+      "segments": 18
+    },
+    {
+      "name": "hind_left_upper",
+      "part": "hind_left_upper",
+      "kind": "ellipsoid",
+      "material": "coat",
+      "center": [
+        -34,
+        -10,
+        39
+      ],
+      "radii": [
+        8,
+        7,
+        17
+      ],
+      "latitudes": 12,
+      "longitudes": 24
+    },
+    {
+      "name": "hind_left_lower",
+      "part": "hind_left_lower",
+      "kind": "ellipsoid",
+      "material": "coat",
+      "center": [
+        -38,
+        -10,
+        22
+      ],
+      "radii": [
+        4,
+        3.5,
+        13
+      ],
+      "latitudes": 12,
+      "longitudes": 24
+    },
+    {
+      "name": "hind_left_cannon",
+      "part": "hind_left_cannon",
+      "kind": "ellipsoid",
+      "material": "coat",
+      "center": [
+        -36,
+        -10,
+        10
+      ],
+      "radii": [
+        3,
+        3,
+        8
+      ],
+      "latitudes": 12,
+      "longitudes": 24
+    },
+    {
+      "name": "hind_left_hoof",
+      "part": "hind_left_hoof",
+      "kind": "tube",
+      "material": "hoof",
+      "rows": [
+        [
+          -34,
+          -10,
+          0.8,
+          5.5,
+          6
+        ],
+        [
+          -35,
+          -10,
+          6,
+          4,
+          5
+        ],
+        [
+          -36,
+          -10,
+          9,
+          3.5,
+          4
+        ]
+      ],
+      "segments": 18
+    },
+    {
+      "name": "right_nostril",
+      "part": "right_nostril",
+      "kind": "ellipsoid",
+      "material": "dark",
+      "center": [
+        56.5,
+        4,
+        76
+      ],
+      "radii": [
+        1.8,
+        2.0,
+        2.2
+      ],
+      "latitudes": 6,
+      "longitudes": 14
+    },
+    {
+      "name": "right_eye",
+      "part": "right_eye",
+      "kind": "ellipsoid",
+      "material": "dark",
+      "center": [
+        39,
+        7.5,
+        100
+      ],
+      "radii": [
+        2.7,
+        1.7,
+        2.4
+      ],
+      "latitudes": 8,
+      "longitudes": 16
+    },
+    {
+      "name": "right_iris",
+      "part": "right_iris",
+      "kind": "ellipsoid",
+      "material": "iris",
+      "center": [
+        40,
+        8.5,
+        100
+      ],
+      "radii": [
+        1.5,
+        1.0,
+        1.7
+      ],
+      "latitudes": 6,
+      "longitudes": 14
+    },
+    {
+      "name": "right_pupil",
+      "part": "right_pupil",
+      "kind": "ellipsoid",
+      "material": "dark",
+      "center": [
+        40.4,
+        9.1,
+        100
+      ],
+      "radii": [
+        0.65,
+        0.5,
+        1.0
+      ],
+      "latitudes": 4,
+      "longitudes": 10
+    },
+    {
+      "name": "right_ear",
+      "part": "right_ear",
+      "kind": "ellipsoid",
+      "material": "coat",
+      "center": [
+        27,
+        7.5,
+        118
+      ],
+      "radii": [
+        4.5,
+        3,
+        15
+      ],
+      "latitudes": 16,
+      "longitudes": 20
+    },
+    {
+      "name": "right_ear_inner",
+      "part": "right_ear_inner",
+      "kind": "ellipsoid",
+      "material": "muzzle",
+      "center": [
+        28,
+        9,
+        119
+      ],
+      "radii": [
+        2.1,
+        1.2,
+        10
+      ],
+      "latitudes": 12,
+      "longitudes": 16
+    },
+    {
+      "name": "fore_right_upper",
+      "part": "fore_right_upper",
+      "kind": "ellipsoid",
+      "material": "coat",
+      "center": [
+        20,
+        11,
+        44
+      ],
+      "radii": [
+        7,
+        6,
+        16
+      ],
+      "latitudes": 12,
+      "longitudes": 24
+    },
+    {
+      "name": "fore_right_lower",
+      "part": "fore_right_lower",
+      "kind": "ellipsoid",
+      "material": "coat",
+      "center": [
+        22,
+        11,
+        23
+      ],
+      "radii": [
+        3.5,
+        3.5,
+        12
+      ],
+      "latitudes": 12,
+      "longitudes": 24
+    },
+    {
+      "name": "fore_right_cannon",
+      "part": "fore_right_cannon",
+      "kind": "ellipsoid",
+      "material": "coat",
+      "center": [
+        23,
+        11,
+        10
+      ],
+      "radii": [
+        3,
+        3,
+        8
+      ],
+      "latitudes": 12,
+      "longitudes": 24
+    },
+    {
+      "name": "fore_right_hoof",
+      "part": "fore_right_hoof",
+      "kind": "tube",
+      "material": "hoof",
+      "rows": [
+        [
+          25,
+          11,
+          0.8,
+          5.5,
+          6
+        ],
+        [
+          24,
+          11,
+          6,
+          4,
+          5
+        ],
+        [
+          23,
+          11,
+          9,
+          3.5,
+          4
+        ]
+      ],
+      "segments": 18
+    },
+    {
+      "name": "hind_right_upper",
+      "part": "hind_right_upper",
+      "kind": "ellipsoid",
+      "material": "coat",
+      "center": [
+        -34,
+        10,
+        39
+      ],
+      "radii": [
+        8,
+        7,
+        17
+      ],
+      "latitudes": 12,
+      "longitudes": 24
+    },
+    {
+      "name": "hind_right_lower",
+      "part": "hind_right_lower",
+      "kind": "ellipsoid",
+      "material": "coat",
+      "center": [
+        -38,
+        10,
+        22
+      ],
+      "radii": [
+        4,
+        3.5,
+        13
+      ],
+      "latitudes": 12,
+      "longitudes": 24
+    },
+    {
+      "name": "hind_right_cannon",
+      "part": "hind_right_cannon",
+      "kind": "ellipsoid",
+      "material": "coat",
+      "center": [
+        -36,
+        10,
+        10
+      ],
+      "radii": [
+        3,
+        3,
+        8
+      ],
+      "latitudes": 12,
+      "longitudes": 24
+    },
+    {
+      "name": "hind_right_hoof",
+      "part": "hind_right_hoof",
+      "kind": "tube",
+      "material": "hoof",
+      "rows": [
+        [
+          -34,
+          10,
+          0.8,
+          5.5,
+          6
+        ],
+        [
+          -35,
+          10,
+          6,
+          4,
+          5
+        ],
+        [
+          -36,
+          10,
+          9,
+          3.5,
+          4
+        ]
+      ],
+      "segments": 18
+    },
+    {
+      "name": "mane_0",
+      "part": "mane_0",
+      "kind": "sweep",
+      "material": "mane",
+      "controls": [
+        [
+          11.20600729687457,
+          0,
+          65,
+          4,
+          4
+        ],
+        [
+          5.206007296874571,
+          0,
+          71,
+          4,
+          3
+        ],
+        [
+          1.2060072968745708,
+          0,
+          76,
+          0,
+          0
+        ]
+      ],
+      "samples": 14,
+      "segments": 12,
+      "uv_repeats": 2,
+      "tip_pole": true
+    },
+    {
+      "name": "mane_ember_0",
+      "part": "mane_ember_0",
+      "kind": "sweep",
+      "material": "flame",
+      "controls": [
+        [
+          12.006007296874571,
+          0,
+          67,
+          2.4,
+          2.2
+        ],
+        [
+          5.206007296874571,
+          0,
+          75,
+          2,
+          2
+        ],
+        [
+          -2.7939927031254292,
+          0,
+          80,
+          0,
+          0
+        ]
+      ],
+      "samples": 14,
+      "segments": 12,
+      "uv_repeats": 2,
+      "tip_pole": true
+    },
+    {
+      "name": "mane_1",
+      "part": "mane_1",
+      "kind": "sweep",
+      "material": "mane",
+      "controls": [
+        [
+          10.153850220838194,
+          0,
+          72,
+          4,
+          4
+        ],
+        [
+          4.153850220838194,
+          0,
+          78,
+          4,
+          3
+        ],
+        [
+          0.15385022083819422,
+          0,
+          83,
+          0,
+          0
+        ]
+      ],
+      "samples": 14,
+      "segments": 12,
+      "uv_repeats": 2,
+      "tip_pole": true
+    },
+    {
+      "name": "mane_ember_1",
+      "part": "mane_ember_1",
+      "kind": "sweep",
+      "material": "flame",
+      "controls": [
+        [
+          10.953850220838195,
+          0,
+          74,
+          2.4,
+          2.2
+        ],
+        [
+          4.153850220838194,
+          0,
+          82,
+          2,
+          2
+        ],
+        [
+          -3.846149779161806,
+          0,
+          87,
+          0,
+          0
+        ]
+      ],
+      "samples": 14,
+      "segments": 12,
+      "uv_repeats": 2,
+      "tip_pole": true
+    },
+    {
+      "name": "mane_2",
+      "part": "mane_2",
+      "kind": "sweep",
+      "material": "mane",
+      "controls": [
+        [
+          10.086345456705299,
+          0,
+          79,
+          4,
+          4
+        ],
+        [
+          4.086345456705299,
+          0,
+          85,
+          4,
+          3
+        ],
+        [
+          0.08634545670529903,
+          0,
+          90,
+          0,
+          0
+        ]
+      ],
+      "samples": 14,
+      "segments": 12,
+      "uv_repeats": 2,
+      "tip_pole": true
+    },
+    {
+      "name": "mane_ember_2",
+      "part": "mane_ember_2",
+      "kind": "sweep",
+      "material": "flame",
+      "controls": [
+        [
+          10.8863454567053,
+          0,
+          81,
+          2.4,
+          2.2
+        ],
+        [
+          4.086345456705299,
+          0,
+          89,
+          2,
+          2
+        ],
+        [
+          -3.913654543294701,
+          0,
+          94,
+          0,
+          0
+        ]
+      ],
+      "samples": 14,
+      "segments": 12,
+      "uv_repeats": 2,
+      "tip_pole": true
+    },
+    {
+      "name": "mane_3",
+      "part": "mane_3",
+      "kind": "sweep",
+      "material": "mane",
+      "controls": [
+        [
+          10.989253395762121,
+          0,
+          86,
+          4,
+          4
+        ],
+        [
+          4.9892533957621215,
+          0,
+          92,
+          4,
+          3
+        ],
+        [
+          0.9892533957621215,
+          0,
+          97,
+          0,
+          0
+        ]
+      ],
+      "samples": 14,
+      "segments": 12,
+      "uv_repeats": 2,
+      "tip_pole": true
+    },
+    {
+      "name": "mane_ember_3",
+      "part": "mane_ember_3",
+      "kind": "sweep",
+      "material": "flame",
+      "controls": [
+        [
+          11.789253395762122,
+          0,
+          88,
+          2.4,
+          2.2
+        ],
+        [
+          4.9892533957621215,
+          0,
+          96,
+          2,
+          2
+        ],
+        [
+          -3.0107466042378785,
+          0,
+          101,
+          0,
+          0
+        ]
+      ],
+      "samples": 14,
+      "segments": 12,
+      "uv_repeats": 2,
+      "tip_pole": true
+    },
+    {
+      "name": "mane_4",
+      "part": "mane_4",
+      "kind": "sweep",
+      "material": "mane",
+      "controls": [
+        [
+          13.08110957431054,
+          0,
+          93,
+          4,
+          4
+        ],
+        [
+          7.08110957431054,
+          0,
+          99,
+          4,
+          3
+        ],
+        [
+          3.08110957431054,
+          0,
+          104,
+          0,
+          0
+        ]
+      ],
+      "samples": 14,
+      "segments": 12,
+      "uv_repeats": 2,
+      "tip_pole": true
+    },
+    {
+      "name": "mane_ember_4",
+      "part": "mane_ember_4",
+      "kind": "sweep",
+      "material": "flame",
+      "controls": [
+        [
+          13.88110957431054,
+          0,
+          95,
+          2.4,
+          2.2
+        ],
+        [
+          7.08110957431054,
+          0,
+          103,
+          2,
+          2
+        ],
+        [
+          -0.9188904256894599,
+          0,
+          108,
+          0,
+          0
+        ]
+      ],
+      "samples": 14,
+      "segments": 12,
+      "uv_repeats": 2,
+      "tip_pole": true
+    },
+    {
+      "name": "tail_hair",
+      "part": "tail_hair",
+      "kind": "sweep",
+      "material": "mane",
+      "controls": [
+        [
+          -34,
+          0,
+          60,
+          6,
+          6
+        ],
+        [
+          -49,
+          0,
+          56,
+          5,
+          5
+        ],
+        [
+          -62,
+          0,
+          39,
+          6,
+          5
+        ],
+        [
+          -69,
+          0,
+          24,
+          0,
+          0
+        ]
+      ],
+      "samples": 28,
+      "segments": 12,
+      "uv_repeats": 2,
+      "tip_pole": true
+    },
+    {
+      "name": "tail_ember_0",
+      "part": "tail_ember_0",
+      "kind": "sweep",
+      "material": "flame",
+      "controls": [
+        [
+          -57,
+          -3,
+          44,
+          2.4,
+          2.4
+        ],
+        [
+          -67,
+          -3,
+          34,
+          3,
+          2
+        ],
+        [
+          -77,
+          -3,
+          23,
+          0,
+          0
+        ]
+      ],
+      "samples": 16,
+      "segments": 12,
+      "uv_repeats": 2,
+      "tip_pole": true
+    },
+    {
+      "name": "tail_ember_1",
+      "part": "tail_ember_1",
+      "kind": "sweep",
+      "material": "flame",
+      "controls": [
+        [
+          -57,
+          0,
+          44,
+          2.4,
+          2.4
+        ],
+        [
+          -67,
+          0,
+          34,
+          3,
+          2
+        ],
+        [
+          -77,
+          0,
+          26,
+          0,
+          0
+        ]
+      ],
+      "samples": 16,
+      "segments": 12,
+      "uv_repeats": 2,
+      "tip_pole": true
+    },
+    {
+      "name": "tail_ember_2",
+      "part": "tail_ember_2",
+      "kind": "sweep",
+      "material": "flame",
+      "controls": [
+        [
+          -57,
+          3,
+          44,
+          2.4,
+          2.4
+        ],
+        [
+          -67,
+          3,
+          34,
+          3,
+          2
+        ],
+        [
+          -77,
+          3,
+          29,
+          0,
+          0
+        ]
+      ],
+      "samples": 16,
+      "segments": 12,
+      "uv_repeats": 2,
+      "tip_pole": true
+    }
+  ],
+  "motion": {
+    "idle": {
+      "frames": 16,
+      "tics": 6,
+      "transforms": {
+        "torso": [
+          {
+            "kind": "scale_xy",
+            "amplitude": 0.012,
+            "phase": 1.5707963267948966,
+            "offset": -0.012
+          }
+        ],
+        "head": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 0.6,
+            "phase": 1.5707963267948966,
+            "offset": -0.6
+          }
+        ],
+        "tail": [
+          {
+            "kind": "rotate",
+            "axis": "z",
+            "amplitude": 3,
+            "phase": 1.5707963267948966,
+            "offset": -3
+          }
+        ]
+      }
+    },
+    "walk": {
+      "frames": 24,
+      "tics": 3,
+      "transforms": {
+        "head": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 2,
+            "phase": 0
+          }
+        ],
+        "tail": [
+          {
+            "kind": "rotate",
+            "axis": "z",
+            "amplitude": 7,
+            "phase": 0
+          }
+        ],
+        "fore_left_thigh": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 12,
+            "phase": 0
+          }
+        ],
+        "fore_left_shin": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -9,
+            "phase": 0,
+            "positive_only": true
+          }
+        ],
+        "fore_right_thigh": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 12,
+            "phase": 3.141592653589793
+          }
+        ],
+        "fore_right_shin": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -9,
+            "phase": 3.141592653589793,
+            "positive_only": true
+          }
+        ],
+        "hind_left_thigh": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 12,
+            "phase": 3.141592653589793
+          }
+        ],
+        "hind_left_shin": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -9,
+            "phase": 3.141592653589793,
+            "positive_only": true
+          }
+        ],
+        "hind_right_thigh": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": 12,
+            "phase": 0
+          }
+        ],
+        "hind_right_shin": [
+          {
+            "kind": "rotate",
+            "axis": "y",
+            "amplitude": -9,
+            "phase": 0,
+            "positive_only": true
+          }
+        ]
+      }
+    }
+  },
+  "reference_features": [
+    "long upright mule ears",
+    "equine neck and muzzle",
+    "four undivided hooves",
+    "dark coat",
+    "mane and tail ember forms without gameplay fire"
+  ]
+}
