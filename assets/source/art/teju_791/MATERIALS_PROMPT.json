@@ -1,0 +1,7 @@
+{
+  "issue": 791,
+  "mode": "built-in image_gen",
+  "use_case": "stylized-concept",
+  "prompt": "Use case: stylized-concept. Asset type: diffuse texture atlas for an editable native game creature. Create one opaque 1536x1024 flat material atlas, exactly three equal columns and two equal rows, without gutters, border, labels, text, objects or perspective. Each cell is a uniform straight-on material closeup with soft even albedo lighting and no cast shadows. TOP LEFT: short mottled warm brown and gray canine fur with a subdued dark brown base. TOP MIDDLE: overlapping muted olive-gray and slate reptilian scales with weathered tan edges. TOP RIGHT: pale beige reptile belly plates with shallow natural creases. BOTTOM LEFT: short cream and tan canine muzzle fur. BOTTOM MIDDLE: dark charcoal animal nose and claw keratin, fine subtle grain, no highlights. BOTTOM RIGHT: aged ivory tooth and horn material with faint longitudinal grain. Dark-fantasy naturalistic hand-painted game texture, detailed but low contrast, matte, no dramatic baked lighting. Materials fill each cell completely to its exact boundary. This is only surface texture, not an illustration of a creature.",
+  "original_path": "C:\\Users\\dcc70\\.codex\\generated_images\\01a1e0be-5f9b-77e2-b703-5f45441eeaad\\exec-25d4c609-99e5-4fb8-80b0-c9e6387224ff.png"
+}

@@ -1,6 +1,49 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.73** - 2026-11-15.
+Documentation version: **5.17.74** - 2026-11-15.
+
+## 5.17.74 - Native seven-headed Teju Jagua (#791)
+
+CaelumBestiary047 now has an editable native candidate based on the supplied
+Teju Jagua reference: seven distinct canine heads with articulated jaws, a
+scaled quadruped body, four clawed feet, dorsal spines and a curved tapering
+tail. Source geometry, hierarchy, attachment witnesses, poses and OBJ/MTL live
+in assets/source/art/teju_791. The new built-in image_gen diffuse atlas remains
+unchanged; MATERIALS_PROMPT.json preserves its exact prompt and original path.
+Owned Familiar component topology and existing iris/dark pixels retain provenance.
+
+The model has36,400 vertices,54,164 triangles,210 closed components and209 rooted
+attachment witnesses. Independent native checks cover1,672 posed contacts,
+all23 inherited combat frames, floor support and zero collapsed triangles.
+Nine artifacts regenerate byte-identically. Only this class's MODELDEF and
+model/material resources are added; behavior, state timings, collision, scale
+policy, loot, identity and save fields remain unchanged. Seven heads do not
+multiply attacks. Reference metre sizes do not set runtime size.
+
+The18,569-entry package matches src exactly; all unrelated runtime bytes match
+5.17.73. Native baseline/old-save/fresh/reload/rollback passes115 assertions;
+attack/death/loot/reload passes80 more, including six actual action cases with
+the existing Mandinga control. All23 pose captures contain the model. Selected
+front, side, rear, head, tail, locomotion, attack, pain and lying captures were
+inspected. Initial donor-tail, cap-witness and tiny-pupil defects were corrected
+before final tests; superseded reports remain evidence.
+
+One sequential700-tic sprite/model pair on Windows11 Pro26200, Ryzen9 5950X,
+32GB/RTX3070Ti, GZDoom4.14.2 Vulkan1280x720, uncapped/no VSync, background unpaused
+and5% audio observed:
+
+- sprite: 1887.34 queue presents/s, p95 0.6788 ms, p99 0.7817 ms, maximum 1.1669 ms
+- model: 1843.51 queue presents/s, p95 0.7080 ms, p99 0.7821 ms, maximum 1.0602 ms
+
+These are queue intervals, not GPU/display latency, repeatability or a crowd
+budget. Sprite/model footprints differ; siege performance remains unresolved.
+Evidence: assets/validation_v5_17_74/evidence/SUMMARY.json. Candidate rounded
+anatomy, elongated neck fan, broad scales and rigid fall/rest poses await
+CA791-TEJU-01. Conceptual scale and species-specific behavior are not implemented.
+Twenty-two of56 provisional catalogue classes now have models;34 remain.
+Regional gallery placement is separate. Other characters, modular fitting and
+unauthored V5.16 progression remain unfinished. The author's2026-11-15 request
+retains one consolidated test handoff and defers acceptance until that review.
 
 ## 5.17.73 - Familiar and Ao Ao regional inspection (#790)
 

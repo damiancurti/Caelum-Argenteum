@@ -1,0 +1,99 @@
+{
+  "issue": 791,
+  "species": "teju_jagua",
+  "scope": "Measure one 700-tic sprite/model pair for a real Teju Jagua; no campaign or crowd budget.",
+  "baseline_sha256": "4c9aa95dead81c6f55729701dbef8803d3412eeb9fc12b0f6d508c20a5122e77",
+  "runtime_sha256": "85c6ec686efbb73ccf05c49d32cc89bb58073ebe41586b4b5be8435698325d6e",
+  "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+  "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+  "runs": [
+    {
+      "kind": "sprite",
+      "pid": 7748,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 387773808.3121,
+        "END": 387793825.8653
+      },
+      "fixture_sha256": "de0433c108d93e2e9b365fecd226bbbc9f86e3528bc3f06784d9215ea3eb8796",
+      "bench_sha256": "541cbcbff59852284c3216aa428877b540b6a39ccdd2503f772612ca37eb4692",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.571604,
+        "p50_ms": 28.5672,
+        "p95_ms": 28.9687,
+        "p99_ms": 29.0546,
+        "max_ms": 29.1915
+      },
+      "presentation": {
+        "pid": 7748,
+        "trace_sha256": "58faf638e88d078c8ed174be16189167aed5f76104110edacce5579b18833b2c",
+        "rows": 46624,
+        "scene_presents": 33062,
+        "mean_present_fps": 1887.3420250110048,
+        "present_intervals": {
+          "samples": 33061,
+          "mean_ms": 0.5298456701265735,
+          "p50_ms": 0.5099999904632568,
+          "p95_ms": 0.6787999868392944,
+          "p99_ms": 0.7817000150680542,
+          "max_ms": 1.1668999791145325
+        },
+        "native_call_duration": {
+          "samples": 33062,
+          "mean_ms": 0.06360124015965311,
+          "p50_ms": 0.05910003185272217,
+          "p95_ms": 0.08660000562667847,
+          "p99_ms": 0.10449999570846558,
+          "max_ms": 0.5164999961853027
+        }
+      }
+    },
+    {
+      "kind": "model",
+      "pid": 19296,
+      "exit_code": 0,
+      "errors": [],
+      "markers_qpc_ms": {
+        "BEGIN": 387808536.5271,
+        "END": 387828549.8149
+      },
+      "fixture_sha256": "de0433c108d93e2e9b365fecd226bbbc9f86e3528bc3f06784d9215ea3eb8796",
+      "bench_sha256": "541cbcbff59852284c3216aa428877b540b6a39ccdd2503f772612ca37eb4692",
+      "passed": true,
+      "simulation": {
+        "samples": 700,
+        "mean_ms": 28.571492142857142,
+        "p50_ms": 28.5734,
+        "p95_ms": 28.9594,
+        "p99_ms": 29.061,
+        "max_ms": 29.1518
+      },
+      "presentation": {
+        "pid": 19296,
+        "trace_sha256": "ad1c988c50f4135d6c2e424a453bc687dade059afdbc692e12a0ad24073a622a",
+        "rows": 45420,
+        "scene_presents": 32286,
+        "mean_present_fps": 1843.5121058878808,
+        "present_intervals": {
+          "samples": 32285,
+          "mean_ms": 0.5424428713031832,
+          "p50_ms": 0.5238999724388123,
+          "p95_ms": 0.7080000042915344,
+          "p99_ms": 0.7821000218391418,
+          "max_ms": 1.060200035572052
+        },
+        "native_call_duration": {
+          "samples": 32286,
+          "mean_ms": 0.06374690280943963,
+          "p50_ms": 0.059300005435943604,
+          "p95_ms": 0.08740001916885376,
+          "p99_ms": 0.10559999942779541,
+          "max_ms": 0.49730002880096436
+        }
+      }
+    }
+  ]
+}
