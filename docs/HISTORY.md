@@ -1,6 +1,18 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.56** - 2026-11-15.
+Documentation version: **5.17.57** - 2026-11-15.
+
+## 5.17.57 - Reused magical weapon drops (#757, 2026-11-15)
+
+Bound staff1, bell17 and support-statuette25 to exact #755 geometry/material
+bytes for both native weapon classes, preserving original shared tier art and
+gameplay. Three deterministic outputs, 1,509 native continuity checks and
+350 visual/control checks pass. Twelve native detail views and the overview
+were inspected; unchanged geometry retains #755's prior evidence and visual
+qualifications. ASSETS records the bounded presentation pair and its limits.
+Evidence: assets/validation_v5_17_57/evidence/SUMMARY.json.
+CA757-MAGIC-WEAPON-DROPS-01 originates here and remains pending. No author
+check was accepted or removed. Broader 3D and V5.16 work remains incomplete.
 
 ## 5.17.56 - Native magical crafting bases (#755, 2026-11-15)
 

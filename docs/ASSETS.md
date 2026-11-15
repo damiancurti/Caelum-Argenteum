@@ -1,6 +1,48 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.56** - 2026-11-15.
+Documentation version: **5.17.57** - 2026-11-15.
+
+## 5.17.57 - Magical weapon drop bindings (#757, parent #647)
+
+Six exact CSTF/CBEL/CSTA A bindings reuse the #755 staff, bell and statuette
+meshes and material atlas byte-for-byte for CaelumWeaponPickup and
+CA_LimboMagicImplement. Types1/17/25 retain all three qualities and their
+existing shared world appearance. There is no duplicated geometry/texture,
+broad actor replacement, saved-field change or activation of rejected #479
+models. Original icons, scale/collision, weight, identity, durability, essence
+rules, crafting and held art remain unchanged. Type19 remains an Orb.
+
+Source manifests: assets/source/art/inventory_models_647/magic_weapons.
+Regenerate with python assets/generators/generate_inventory_magic_weapon_bindings.py
+--output build/magic-weapons --install. Three outputs repeat byte-for-byte;
+static validation verifies all six bindings and their #755 source hashes.
+The previous closed-geometry checks apply to these identical bytes. Twelve
+native details/undersides and the floor overview were inspected here; the
+remaining generated views were not reinspected. The simplified statuette
+face, static ribbons, heavy painted ornament, subdued ambient depth and
+new hidden surfaces retain #755's pending visual review.
+
+All eighteen class/type/tier cases pass 1,509 installed native checks:
+343 baseline, 279 old-save adoption, 343 fresh, 272 reload and 272 rollback.
+Another 350 visual/control checks pass. Native pickup/equip/unequip/toss,
+repickup, exact identity, valid essence, weight, durability, provenance and
+prepared Box/quest guards pass. Ordinary menus, casting and crafting remain
+author checks. All 18,499 packaged source entries match
+src exactly; only the new binding definition, MODELDEF and two release
+diagnostic strings differ from #755.
+
+One sequential 700-tic six-object sprite/model pair records
+645.36/654.32 queue presents/s, p95
+4.0556/3.6831 ms and p99
+5.5548/5.5969 ms.
+Both scenes were inspected. Windows11, Ryzen9 5950X, RTX3070Ti, GZDoom4.14.2,
+Vulkan1280x720, uncapped/vsync off, background unpaused/audio5%. This measures
+queue intervals only, not GPU/display timing, repeatability or campaign/crowd
+performance. The projected sprite/model footprints differ.
+
+Evidence: assets/validation_v5_17_57/evidence/SUMMARY.json.
+CA757-MAGIC-WEAPON-DROPS-01 retains author visual and ordinary gameplay checks.
+Other weapons, characters, modular equipment and V5.16 campaign remain pending.
 
 ## 5.17.56 - Native magical crafting bases (#755, parent #647)
 

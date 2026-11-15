@@ -1,0 +1,323 @@
+{
+  "schema_revision": 1,
+  "issue": 757,
+  "parent_issue": 647,
+  "status": "candidate_author_review_pending",
+  "model_path": "models/caelum/inventory/magic_bases",
+  "materials": {
+    "bronze": {
+      "texture": "models/caelum/inventory/magic_bases/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        12,
+        12,
+        406,
+        406
+      ]
+    },
+    "gold": {
+      "texture": "models/caelum/inventory/magic_bases/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        430,
+        12,
+        824,
+        406
+      ]
+    },
+    "wood": {
+      "texture": "models/caelum/inventory/magic_bases/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        848,
+        12,
+        1242,
+        406
+      ]
+    },
+    "red": {
+      "texture": "models/caelum/inventory/magic_bases/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        12,
+        430,
+        406,
+        824
+      ]
+    },
+    "blue": {
+      "texture": "models/caelum/inventory/magic_bases/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        430,
+        430,
+        824,
+        824
+      ]
+    },
+    "gem": {
+      "texture": "models/caelum/inventory/magic_bases/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        848,
+        430,
+        1242,
+        824
+      ]
+    },
+    "stone": {
+      "texture": "models/caelum/inventory/magic_bases/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        12,
+        848,
+        406,
+        1242
+      ]
+    },
+    "leaves": {
+      "texture": "models/caelum/inventory/magic_bases/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        430,
+        848,
+        824,
+        1242
+      ]
+    },
+    "dark": {
+      "texture": "models/caelum/inventory/magic_bases/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        848,
+        848,
+        1242,
+        1242
+      ]
+    },
+    "bell_surface": {
+      "texture": "models/caelum/inventory/magic_bases/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        0,
+        0,
+        1254,
+        1254
+      ]
+    },
+    "censer_surface": {
+      "texture": "models/caelum/inventory/magic_bases/materials.png",
+      "image_size": [
+        1254,
+        1254
+      ],
+      "rect_pixels": [
+        0,
+        0,
+        1254,
+        1254
+      ]
+    }
+  },
+  "variants": {
+    "staff": {
+      "class": "CaelumWeaponPickup",
+      "sprite": "CSTF",
+      "item_type": 1,
+      "essence": 1,
+      "reference": "src/graphics/caelum/icons/ca_staff.png",
+      "additional_bindings": [
+        {
+          "class": "CA_LimboMagicImplement",
+          "sprite": "CSTF",
+          "inventory": true
+        }
+      ]
+    },
+    "bell": {
+      "class": "CaelumWeaponPickup",
+      "sprite": "CBEL",
+      "item_type": 17,
+      "essence": 1,
+      "reference": "src/graphics/caelum/icons/ca_bell.png",
+      "additional_bindings": [
+        {
+          "class": "CA_LimboMagicImplement",
+          "sprite": "CBEL",
+          "inventory": true
+        }
+      ]
+    },
+    "statuette": {
+      "class": "CaelumWeaponPickup",
+      "sprite": "CSTA",
+      "item_type": 25,
+      "essence": 4,
+      "reference": "src/graphics/caelum/icons/ca_statuette.png",
+      "additional_bindings": [
+        {
+          "class": "CA_LimboMagicImplement",
+          "sprite": "CSTA",
+          "inventory": true
+        }
+      ]
+    }
+  },
+  "source_export": "assets/source/art/inventory_models_647/magic_bases/EXPORT.json",
+  "source_sha256": {
+    "assets/source/art/inventory_models_647/magic_bases/EXPORT.json": "8423962ef7ea28d93629d6e093bbc1153f7bfe4b2701075cd3205c7f8f430129",
+    "assets/source/art/inventory_models_647/magic_bases/DESIGN.json": "5802c3563f1afc965e8100777bb452d0d35104b41dbd5275bef65ce76ac0a757",
+    "assets/source/art/inventory_models_647/magic_bases/PROVENANCE.json": "8f7978aa6fcd0af91b2fcde121c23ae6a36a49c0bbaf0b491f5bd7967210e34d",
+    "src/models/caelum/inventory/magic_bases/materials.png": "10a848f89f7efd32cbf2b4ca9fe3c96a5ad4dd09079d19b80c878565f7d91041",
+    "src/caelum/equipment/CaelumEquipmentPickups.zs": "e3e5d91e622c3b2440907cab1bc2cf2e4ab72d5c24eeb8e037dbe400c1dc7e44",
+    "src/caelum/equipment/CaelumSupportArt.zs": "5933f0ea55b94e5d30894501d7e1ac590a03ef35844a3677370328d79d474762",
+    "src/caelum/data/CaelumSupportImplementData.zs": "a4b0381a2bf2f7ada432c44d81d6c987307a89172c5ce7b240486e8bbe406ad6",
+    "src/graphics/caelum/icons/ca_staff.png": "e639347898daa83f4b76a63937ae84b99bb5f04e5d9b63d9db4c4848a80fc04c",
+    "src/graphics/caelum/icons/ca_bell.png": "7043ca39e00fa719939eed3b52413f412422512f9412bd5202bdc57a4c63676f",
+    "src/graphics/caelum/icons/ca_statuette.png": "6bbd38a2f05028482b42a48a7bd4f906d30e51ae5456f50f26966de6222b16e8",
+    "src/models/caelum/inventory/magic_bases/staff.md3": "9d5deaa289aedd594d454224a69c81c3010453b0a582b95b2f3cf0ca13878061",
+    "src/models/caelum/inventory/magic_bases/bell.md3": "882751e5245047f554f9aca7295b2969232ce97eb0acd06df93af053bc14d744",
+    "src/models/caelum/inventory/magic_bases/statuette.md3": "31374154be69444614ebdd76438c321f4325abab0f110a21b945b7386b083cd9"
+  },
+  "runtime_cases": [
+    {
+      "actor_class": "CaelumWeaponPickup",
+      "item_type": 1,
+      "tier": 1,
+      "essence": 1
+    },
+    {
+      "actor_class": "CaelumWeaponPickup",
+      "item_type": 1,
+      "tier": 2,
+      "essence": 1
+    },
+    {
+      "actor_class": "CaelumWeaponPickup",
+      "item_type": 1,
+      "tier": 3,
+      "essence": 1
+    },
+    {
+      "actor_class": "CA_LimboMagicImplement",
+      "item_type": 1,
+      "tier": 1,
+      "essence": 1
+    },
+    {
+      "actor_class": "CA_LimboMagicImplement",
+      "item_type": 1,
+      "tier": 2,
+      "essence": 1
+    },
+    {
+      "actor_class": "CA_LimboMagicImplement",
+      "item_type": 1,
+      "tier": 3,
+      "essence": 1
+    },
+    {
+      "actor_class": "CaelumWeaponPickup",
+      "item_type": 17,
+      "tier": 1,
+      "essence": 1
+    },
+    {
+      "actor_class": "CaelumWeaponPickup",
+      "item_type": 17,
+      "tier": 2,
+      "essence": 1
+    },
+    {
+      "actor_class": "CaelumWeaponPickup",
+      "item_type": 17,
+      "tier": 3,
+      "essence": 1
+    },
+    {
+      "actor_class": "CA_LimboMagicImplement",
+      "item_type": 17,
+      "tier": 1,
+      "essence": 1
+    },
+    {
+      "actor_class": "CA_LimboMagicImplement",
+      "item_type": 17,
+      "tier": 2,
+      "essence": 1
+    },
+    {
+      "actor_class": "CA_LimboMagicImplement",
+      "item_type": 17,
+      "tier": 3,
+      "essence": 1
+    },
+    {
+      "actor_class": "CaelumWeaponPickup",
+      "item_type": 25,
+      "tier": 1,
+      "essence": 4
+    },
+    {
+      "actor_class": "CaelumWeaponPickup",
+      "item_type": 25,
+      "tier": 2,
+      "essence": 4
+    },
+    {
+      "actor_class": "CaelumWeaponPickup",
+      "item_type": 25,
+      "tier": 3,
+      "essence": 4
+    },
+    {
+      "actor_class": "CA_LimboMagicImplement",
+      "item_type": 25,
+      "tier": 1,
+      "essence": 4
+    },
+    {
+      "actor_class": "CA_LimboMagicImplement",
+      "item_type": 25,
+      "tier": 2,
+      "essence": 4
+    },
+    {
+      "actor_class": "CA_LimboMagicImplement",
+      "item_type": 25,
+      "tier": 3,
+      "essence": 4
+    }
+  ],
+  "reuse_policy": "Exact #755 staff, bell and statuette mesh/material bytes. Existing shared tier appearances, weapon identities and valid essence rules remain authoritative. No duplicate mesh, saved field, held-state replacement or gameplay change."
+}

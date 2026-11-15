@@ -1,0 +1,13 @@
+{
+  "issue": 757,
+  "parent_issue": 647,
+  "source_issue": 755,
+  "status": "candidate_author_review_pending",
+  "authority": "Author requests every dropped inventory object in native3D; continue implementation and reuse existing exploration.",
+  "method": "Exact reuse of #755 original volumetric meshes/materials; only class/sprite/frame bindings are new.",
+  "source_art_review": "CA755-MAGIC-BASE-DROPS-01 remains pending. No approval inferred from previous 2D art or native tests.",
+  "limitations": [
+    "Simplified sculpted face, static ribbons, heavy painted ornament and subdued ambient depth remain #755 art qualifications.",
+    "Only native world drops are bound. Casting, recipes, first-person art, other magical implements and physical weapons remain separate."
+  ]
+}
