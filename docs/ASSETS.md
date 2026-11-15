@@ -1,8 +1,46 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.77** - 2026-11-15.
+Documentation version: **5.17.78** - 2026-11-15.
 
-## 5.17.77 - Native mule and plated-boar apparitions (#797)
+## 5.17.78 - Keep swept textures inside their material cells (#799)
+
+Ao Ao's two curled horns now use66 samples for3 repeats and its short tail21
+for3. Kasogonaga's six back locks use16 samples for2 repeats. This repairs the
+nonintegral period that let texture coordinates cross into adjacent atlas cells.
+Controls, original images, motion, actor rules, collision, state timing, rewards
+and saved fields remain unchanged. Editable sources and affected exports were
+regenerated; Familiar and all unrelated runtime resources remain byte-identical
+apart from current diagnostic version strings.
+
+The shared native model validator rejects nonpositive, noninteger or indivisible
+sweep sample/repeat counts with an identified shape. The bounded active-source
+audit checks186 sweeps in22 design files
+and rejects all nine recorded old grids. Serialized MD3 UV inspection originally
+found160 vertices outside their authored cells;
+the final nine sweeps have zero. Twenty-one artifacts regenerate byte-identically,
+and closed/posed geometry validation passes. Native continuity passes230 checks,
+actual action/loot/reload134, and the existing regional gallery199:563 total.
+The18,580-entry package matches src exactly.
+
+Affected fur, horns/tail, selected combat poses and Ao Ao's regional view were
+inspected. One sequential700-tic before/after native-model presentation pair per
+species on the recorded Windows11/Ryzen5950X/RTX3070Ti environment, GZDoom4.14.2
+Vulkan1280x720, uncapped/no VSync, background unpaused and5% audio observes:
+
+- ao_ao/before: 1819.84 queue presents/s, p95 0.7730ms, p99 0.8336ms, maximum 1.5019ms
+- ao_ao/after: 1814.62 queue presents/s, p95 0.6636ms, p99 0.7940ms, maximum 2.0635ms
+- kasogonaga/before: 1894.81 queue presents/s, p95 0.6528ms, p99 0.7954ms, maximum 1.4449ms
+- kasogonaga/after: 1826.18 queue presents/s, p95 0.6944ms, p99 0.8192ms, maximum 2.6078ms
+
+The reused runner's sprite/model labels mean pre/post repair here; both are
+native models. Queue and tic tails do not establish display latency, repeatability
+or campaign/crowd budgets. Source/art quality remains pending CA799-UV-01 alongside
+CA787-QUADRUPEDS-01 and CA795-KASOGONAGA-01. Evidence:
+assets/validation_v5_17_78/evidence/SUMMARY.json; reusable lesson CA-KP-249.
+No author test is removed. Remaining characters, modular fitting, progression
+and siege performance still precede the requested consolidated terminal.
+
+## 5.17.78 - Native mule and plated-boar apparitions (#797)
 
 CaelumBestiary029/030 now use distinct editable native candidates from the owned
 Mulanima and Chancho de Lata concepts. Mulanima has a dark equine torso/neck,

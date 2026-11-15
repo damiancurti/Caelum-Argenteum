@@ -1,0 +1,59 @@
+{
+  "only_samples_changed": true,
+  "changes": [
+    {
+      "source": "assets/source/art/quadrupeds_787/ao_ao.json",
+      "shape": "left_curled_horn",
+      "before": 64,
+      "after": 66
+    },
+    {
+      "source": "assets/source/art/quadrupeds_787/ao_ao.json",
+      "shape": "right_curled_horn",
+      "before": 64,
+      "after": 66
+    },
+    {
+      "source": "assets/source/art/quadrupeds_787/ao_ao.json",
+      "shape": "short_tail",
+      "before": 20,
+      "after": 21
+    },
+    {
+      "source": "assets/source/art/kasogonaga_795/kasogonaga.json",
+      "shape": "back_lock_0",
+      "before": 15,
+      "after": 16
+    },
+    {
+      "source": "assets/source/art/kasogonaga_795/kasogonaga.json",
+      "shape": "back_lock_1",
+      "before": 15,
+      "after": 16
+    },
+    {
+      "source": "assets/source/art/kasogonaga_795/kasogonaga.json",
+      "shape": "back_lock_2",
+      "before": 15,
+      "after": 16
+    },
+    {
+      "source": "assets/source/art/kasogonaga_795/kasogonaga.json",
+      "shape": "back_lock_3",
+      "before": 15,
+      "after": 16
+    },
+    {
+      "source": "assets/source/art/kasogonaga_795/kasogonaga.json",
+      "shape": "back_lock_4",
+      "before": 15,
+      "after": 16
+    },
+    {
+      "source": "assets/source/art/kasogonaga_795/kasogonaga.json",
+      "shape": "back_lock_5",
+      "before": 15,
+      "after": 16
+    }
+  ]
+}

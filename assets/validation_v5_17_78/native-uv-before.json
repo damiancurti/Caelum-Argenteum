@@ -1,0 +1,99 @@
+{
+  "issue": 799,
+  "source": "Serialized MD3 first-frame triangles and UVs matched to quantized editable OBJ group ownership",
+  "rows": [
+    {
+      "source": "assets/source/art/quadrupeds_787/ao_ao.json",
+      "shape": "left_curled_horn",
+      "samples": 64,
+      "uv_repeats": 3,
+      "native_vertices_checked": 1176,
+      "outside_material_cell": 34,
+      "maximum_local_v": 1.0312500158286193,
+      "native_sha256": "6e26d1d4b9765d2349030ead38b7e51978182589c22cd9e6465aacb6a061c178"
+    },
+    {
+      "source": "assets/source/art/quadrupeds_787/ao_ao.json",
+      "shape": "right_curled_horn",
+      "samples": 64,
+      "uv_repeats": 3,
+      "native_vertices_checked": 1158,
+      "outside_material_cell": 34,
+      "maximum_local_v": 1.0312500158286193,
+      "native_sha256": "6e26d1d4b9765d2349030ead38b7e51978182589c22cd9e6465aacb6a061c178"
+    },
+    {
+      "source": "assets/source/art/quadrupeds_787/ao_ao.json",
+      "shape": "short_tail",
+      "samples": 20,
+      "uv_repeats": 3,
+      "native_vertices_checked": 314,
+      "outside_material_cell": 26,
+      "maximum_local_v": 1.1000000164221926,
+      "native_sha256": "6e26d1d4b9765d2349030ead38b7e51978182589c22cd9e6465aacb6a061c178"
+    },
+    {
+      "source": "assets/source/art/kasogonaga_795/kasogonaga.json",
+      "shape": "back_lock_0",
+      "samples": 15,
+      "uv_repeats": 2,
+      "native_vertices_checked": 200,
+      "outside_material_cell": 11,
+      "maximum_local_v": 1.0666666753064546,
+      "native_sha256": "099a2b37772565b8276a5671f2c9e9c61e8fea03984832f19ac4701f13038a8c"
+    },
+    {
+      "source": "assets/source/art/kasogonaga_795/kasogonaga.json",
+      "shape": "back_lock_1",
+      "samples": 15,
+      "uv_repeats": 2,
+      "native_vertices_checked": 200,
+      "outside_material_cell": 11,
+      "maximum_local_v": 1.0666666753064546,
+      "native_sha256": "099a2b37772565b8276a5671f2c9e9c61e8fea03984832f19ac4701f13038a8c"
+    },
+    {
+      "source": "assets/source/art/kasogonaga_795/kasogonaga.json",
+      "shape": "back_lock_2",
+      "samples": 15,
+      "uv_repeats": 2,
+      "native_vertices_checked": 200,
+      "outside_material_cell": 11,
+      "maximum_local_v": 1.0666666753064546,
+      "native_sha256": "099a2b37772565b8276a5671f2c9e9c61e8fea03984832f19ac4701f13038a8c"
+    },
+    {
+      "source": "assets/source/art/kasogonaga_795/kasogonaga.json",
+      "shape": "back_lock_3",
+      "samples": 15,
+      "uv_repeats": 2,
+      "native_vertices_checked": 200,
+      "outside_material_cell": 11,
+      "maximum_local_v": 1.0666666753064546,
+      "native_sha256": "099a2b37772565b8276a5671f2c9e9c61e8fea03984832f19ac4701f13038a8c"
+    },
+    {
+      "source": "assets/source/art/kasogonaga_795/kasogonaga.json",
+      "shape": "back_lock_4",
+      "samples": 15,
+      "uv_repeats": 2,
+      "native_vertices_checked": 200,
+      "outside_material_cell": 11,
+      "maximum_local_v": 1.0666666753064546,
+      "native_sha256": "099a2b37772565b8276a5671f2c9e9c61e8fea03984832f19ac4701f13038a8c"
+    },
+    {
+      "source": "assets/source/art/kasogonaga_795/kasogonaga.json",
+      "shape": "back_lock_5",
+      "samples": 15,
+      "uv_repeats": 2,
+      "native_vertices_checked": 202,
+      "outside_material_cell": 11,
+      "maximum_local_v": 1.0666666753064546,
+      "native_sha256": "099a2b37772565b8276a5671f2c9e9c61e8fea03984832f19ac4701f13038a8c"
+    }
+  ],
+  "outside_material_cell": 160,
+  "expected_overflow": true,
+  "passed": true
+}

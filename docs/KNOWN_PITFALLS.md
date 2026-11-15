@@ -4,6 +4,33 @@ Status: integrated engineering register (issue #22, patch 4.36.1b).
 Prepared: 2026-09-23. Inherits the project's release after integration.
 Inspected baseline: `1dc390576fa330d37ff543526fc7e69a397fc28f` (PR #7).
 
+## CA-KP-249 - Integral swept UV grids must respect atlas-cell boundaries
+
+Status/evidence: CODE-VERIFIED and ENGINE-VERIFIED, #799, 2026-11-15.
+Affected baseline: 0e9593b7bbaf3056cbe1b9a5075ad44a85799bd9.
+Scope: generate_serpent_models.sweep, shared native creature validation, Ao Ao's
+horns/tail and Kasogonaga's six back locks. The generator uses period=samples /
+uv_repeats and advances integer vertex rows. A nonintegral period lets a row's
+local v exceed1 at a repeat boundary. Global UV in[0,1] can still sample the
+wrong atlas cell; checking only global UV is insufficient.
+
+Reproduction: the archived before audit matches MD3 triangles to editable OBJ
+shape ownership and reverses atlas coordinates. All nine curves exceed their
+cells (160 native vertices; maximum local v about1.1).
+Choose positive integral sampling divisible by the existing repeat count;
+preserve controls and images. The shared validator now rejects invalid grids
+with species/shape context, and the regression probe rejects all nine old cases.
+The same native audit reports zero cell overflow after regeneration.
+
+Evidence: assets/validation_v5_17_78/evidence/SUMMARY.json,21 repeated artifacts,
+closed/posed geometry,563 engine assertions and reviewed native/region captures.
+GZDoom4.14.2/Windows11/Vulkan; isolated fresh/save/reload/rollback and real action/
+loot checks, background unpaused at5% audio. Presentation reports preserve queue
+and tic tails but do not prove a performance improvement or campaign budget.
+Author acceptance remains PENDING: CA799-UV-01 and the earlier two art checks.
+This addresses integer swept grids only; other UV layouts need their own cell
+ownership and seam checks. Do not silently repin historical source provenance.
+
 ## CA-KP-248 - Verify exact native model states and typed diagnostic censuses
 
 Status/evidence: STATIC-VERIFIED and ENGINE-OBSERVED, #785, 2026-11-15.

@@ -13,6 +13,19 @@ except ImportError:
 ROOT=Path(__file__).resolve().parents[2]
 
 
+
+def validate_sweep_grid(shape, species):
+    """Reject repeat boundaries that could sample outside an authored atlas cell."""
+    if shape['kind'] != 'sweep':
+        return
+    samples, repeats = shape['samples'], shape['uv_repeats']
+    label = species + '/' + shape.get('name', shape['part'])
+    assert (type(samples) is int and type(repeats) is int
+            and samples > 0 and repeats > 0 and samples % repeats == 0), (
+        'Sweep samples must be positive integers divisible by positive integer '
+        'UV repeats to stay inside their material cell: ' + label
+        + f' (samples={samples}, uv_repeats={repeats})')
+
 def validate(root=ROOT, source_relative='assets/source/art/beast_men_680', model_relative='models/caelum/folklore/beastmen', definition='caelum/data/beast_men_combat.modeldef', mesh_builder=geometry, frame_mapping_only=False):
     errors=[]
     try:
@@ -38,6 +51,7 @@ def validate(root=ROOT, source_relative='assets/source/art/beast_men_680', model
             info=report['species'][species]
             design=json.loads((root/item['design']).read_text(encoding='utf-8'))
             for shape in design['shapes']:
+                validate_sweep_grid(shape, species)
                 if shape['kind']!='loft' or not shape.get('cap',True):continue
                 component=dict(design);component['shapes']=[shape]
                 mesh=mesh_builder(prepared_design(component));volume=0
