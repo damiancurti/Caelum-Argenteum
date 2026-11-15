@@ -1,6 +1,19 @@
 # Caelum Argenteum — Consolidated history
 
-Documentation version: **5.17.81** - 2026-11-15.
+Documentation version: **5.17.82** - 2026-11-15.
+
+## 5.17.82 - Restore four historical release headings (#806, 2026-11-15)
+
+The #799 header update accidentally relabeled the #797 ASSETS, HISTORY, PROJECT
+and TASKS headings as 5.17.78. Original commit 0e9593b7 and its recorded evidence
+prove 5.17.77. Restored those four labels; preserved all underlying historical
+content. A 40-heading comparison against ten original delivery commits found
+no other mismatch in that bounded scope. Current-version updates now target
+only the explicit marker line, retaining the existing AGENTS convention.
+
+Artwork and runtime behavior remain unchanged; only the two required diagnostic
+version strings advance. Static evidence: assets/validation_v5_17_82/evidence/SUMMARY.json. Earlier native checks remain applicable. No pending author test
+was added, removed or accepted; the broader batch remains unfinished.
 
 ## 5.17.81 - Descriptive identity-policy correction (#805, 2026-11-15)
 
@@ -45,7 +58,7 @@ and bounded presentation results. CA-KP-249 records prevention. CA799-UV-01
 originates here and remains pending alongside existing art checks. No author
 acceptance was inferred and no pending test was removed.
 
-## 5.17.78 - Native apparition quadrupeds (#797, 2026-11-15)
+## 5.17.77 - Native apparition quadrupeds (#797, 2026-11-15)
 
 Added distinct native Mulanima and Chancho de Lata, editable sources, inherited
 combat-state bindings, original atlas and retained provenance. Twelve exports

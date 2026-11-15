@@ -1213,3 +1213,6 @@ src/caelum/data/head_apparition_combat.modeldef text eol=lf
 
 /assets/validation_v5_17_81/*.py text eol=lf
 /assets/validation_v5_17_81/evidence/** -text -diff
+
+/assets/validation_v5_17_82/*.py text eol=lf
+/assets/validation_v5_17_82/evidence/** -text -diff

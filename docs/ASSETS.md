@@ -1,6 +1,21 @@
 # Caelum Argenteum — Audio and art
 
-Documentation version: **5.17.81** - 2026-11-15.
+Documentation version: **5.17.82** - 2026-11-15.
+
+## 5.17.82 - Restore the original apparition release label (#806)
+
+The #797 section heading again identifies its original 5.17.77 release. The
+#799 current-version update had also changed this historical heading to 5.17.78.
+The original commit 0e9593b7 and its 5.17.77 evidence establish the correct label;
+the recorded artwork, scope and test results are unchanged. Forty headings
+across four documents and ten adjacent deliveries were compared with their
+original commits; only the four #797 headings differed.
+
+This correction changes no model, texture, binding or gameplay behavior. Only
+the two required runtime release diagnostic strings advance. Existing native
+evidence remains applicable; no new engine or author acceptance is claimed.
+Evidence: assets/validation_v5_17_82/evidence/SUMMARY.json. All pending author
+tests are retained, and the full batch still precedes the consolidated terminal.
 
 ## 5.17.81 - Correct descriptive model identities (#805)
 
@@ -168,7 +183,7 @@ assets/validation_v5_17_78/evidence/SUMMARY.json; reusable lesson CA-KP-249.
 No author test is removed. Remaining characters, modular fitting, progression
 and siege performance still precede the requested consolidated terminal.
 
-## 5.17.78 - Native mule and plated-boar apparitions (#797)
+## 5.17.77 - Native mule and plated-boar apparitions (#797)
 
 CaelumBestiary029/030 now use distinct editable native candidates from the owned
 Mulanima and Chancho de Lata concepts. Mulanima has a dark equine torso/neck,

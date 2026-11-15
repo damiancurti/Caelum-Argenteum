@@ -1,0 +1,24 @@
+{
+  "issue": 806,
+  "passed": true,
+  "baseline_commit": "f399df2f059349685b6ebfa52a380edffb525adb",
+  "authenticated_headings": 40,
+  "restored_headings": 4,
+  "historical_content_preserved": [
+    "docs/ASSETS.md",
+    "docs/HISTORY.md",
+    "docs/PROJECT.md",
+    "docs/TASKS.md"
+  ],
+  "pending_author_tests_unchanged": true,
+  "art_sources_and_models_unchanged": true,
+  "runtime_sha256": "aae1e6116c92a4ab6e0289c8b2baceb3458a82c44fe26722b75b1443d26da34b",
+  "baseline_runtime_sha256": "a1025d627195d6bea7cbf15a70ad5bd48215ba3dc11cd821cc694e724518b317",
+  "source_entries": 18584,
+  "exact_source_bytes": true,
+  "changed_runtime_members": [
+    "caelum/world/CaelumPhysicalHazards.zs",
+    "caelum/world/CaelumSewerMaze.zs"
+  ],
+  "runtime_behavior_and_art_unchanged": true
+}

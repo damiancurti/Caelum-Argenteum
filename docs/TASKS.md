@@ -1,6 +1,15 @@
 # TASKS.md — Active tasks
 
-Documentation version: **5.17.81** - 2026-11-15.
+Documentation version: **5.17.82** - 2026-11-15.
+
+## 5.17.82 - Metadata/history follow-ups complete; batch remains (#806)
+
+#805 corrected copied model identity descriptions; #806 restores four verified
+historical release labels. Both preserve existing artwork, behavior and pending
+author tests. Continue regional Umita/Chonchon views, the remaining 29 creature
+candidates, named/modular characters, equipment fitting and V5.16 progression/
+performance work. Keep the consolidated terminal deferred until the requested
+batch is complete. These documentation corrections do not accept earlier art.
 
 ## 5.17.81 - Identity metadata corrected; history follow-up next (#805)
 
@@ -38,7 +47,7 @@ assertions passed. CA799-UV-01 remains for the final consolidated review. Contin
 remaining creature/character models, modular fitting, regional inspection and
 V5.16 progression/performance work; do not present this repair as batch completion.
 
-## 5.17.78 - Two apparition candidates; UV follow-up remains (#797/#799)
+## 5.17.77 - Two apparition candidates; UV follow-up remains (#797/#799)
 
 Mulanima and Chancho de Lata have distinct native models with closed anatomy,
 deterministic exports and364 native continuity/action/loot assertions. Evidence:

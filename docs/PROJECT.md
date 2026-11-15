@@ -1,6 +1,16 @@
 # Caelum Argenteum — Project, status and roadmap
 
-Documentation version: **5.17.81** - 2026-11-15.
+Documentation version: **5.17.82** - 2026-11-15.
+
+## 5.17.82 - Historical release headings restored (#806)
+
+Restored the four #797 section labels to their verified original 5.17.77 release.
+The bounded audit covers 40 headings across ten recent deliveries; other labels
+and historical content remain unchanged. Current markers advance to 5.17.82.
+Artwork and gameplay are unchanged, with prior native evidence retained.
+Creature coverage remains 27/56. Regional head inspection, remaining creatures,
+named/modular characters, equipment fitting, 75 campaign assignments and siege
+rendering still precede the consolidated author terminal.
 
 ## 5.17.81 - Model identity descriptions aligned (#805)
 
@@ -37,7 +47,7 @@ atlas cell. Native UV, deterministic geometry,563 engine assertions and bounded
 presentation evidence are recorded in ASSETS and validation_v5_17_78.
 CA799-UV-01 and all earlier checks remain pending; the full batch is incomplete.
 
-## 5.17.78 - Two apparition model candidates (#797)
+## 5.17.77 - Two apparition model candidates (#797)
 
 Native Mulanima and Chancho de Lata replace only CaelumBestiary029/030 visual
 states. Twelve exports repeat; geometry and364 native continuity/action/loot
