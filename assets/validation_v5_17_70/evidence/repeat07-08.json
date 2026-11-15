@@ -1,0 +1,27 @@
+{
+  "count": 21,
+  "byte_identical": true,
+  "files": {
+    "manifest.json": "ce667bbac903040239399155ce95dc096735bcd2866b8ce68d900d2974b92946",
+    "preview.pk3": "f8ef495f3cdb592c2cf1b86f34a794f425d7e177cf8c4042821c3827bb97cda2",
+    "editable/armor_torso.mtl": "fbe20e46848c052e9d86f3d53de44b9105c8eaecec94b2c86714b11981ce9b80",
+    "editable/heavy.obj": "cd556fbab9fd6caf0935a7c944df097587f9694a09ba7be1bc59c7f0d4b2c74b",
+    "editable/light.obj": "772785256ca97fb1580fac53716f1ddd35ba439acfd10c6b9a2baf95564748bc",
+    "editable/magic.obj": "4dc8fa25d481ece22836d065912baf385518c2879ac137d38512d898b2d4418e",
+    "editable/medium.obj": "39b13ead22ca32389b695715de2cdcff5368d91692ef8bed604679ae5195f3f0",
+    "caelum/data/inventory_armor_torso.modeldef": "b49056a00fed86cea62fc5e4682c9f2f0356ce6a975122c53719b20a16e1ca2c",
+    "editable/src/graphics/caelum/icons/ca_armor_light.png": "1197c7cb1108f4067bd788224dfb676e25a47a63843f6d201370933017ad9551",
+    "editable/src/graphics/caelum/icons/ca_armor_magic.png": "bf909bd223c8e1b7495b28986c2a52a5864c81225420083394c1cc7afb28bbf9",
+    "editable/src/graphics/caelum/icons/ca_boots.png": "07bd942c46642a40637dc2906a0cdfacc5304fecb465d44dae2d03988484b884",
+    "editable/src/models/caelum/inventory/armor_helmets/gold.png": "4e6123410914b56260ca5f406e873315063659043072852e2ebe433973be17dc",
+    "editable/src/models/caelum/inventory/armor_torso/fur.png": "e677512823f47e67853da3384d24be09fde84862066a35221da8632b2c1d2329",
+    "editable/src/models/caelum/inventory/articulated_weapons/leather.png": "261976d27a229443bb17fb75ac73408523988d51777cf928179ec1aff31740df",
+    "editable/src/models/caelum/inventory/magic_bases/materials.png": "10a848f89f7efd32cbf2b4ca9fe3c96a5ad4dd09079d19b80c878565f7d91041",
+    "editable/src/models/caelum/inventory/weapon_components/metals.png": "563d339e5309b725608c5470cc53abf902a30075859e44bb3793acb2cb3f1291",
+    "models/caelum/inventory/armor_torso/fur.png": "e677512823f47e67853da3384d24be09fde84862066a35221da8632b2c1d2329",
+    "models/caelum/inventory/armor_torso/heavy.md3": "244985ec58963caef2a96c89513ce0b7626b66e477e79152a6c959749f7506b4",
+    "models/caelum/inventory/armor_torso/light.md3": "ab5f6efd4f9289ccc0bf1492c355d2459707472734e347b651a1d49544438384",
+    "models/caelum/inventory/armor_torso/magic.md3": "bd627ebde8d5cef8f5f62ff76e0feaa933dc572d812b5e32b13c13d433aee4c8",
+    "models/caelum/inventory/armor_torso/medium.md3": "40000e3176edc177bb6f413359d2ceed29e32db1085dda255e9c3f9645a4ab5e"
+  }
+}

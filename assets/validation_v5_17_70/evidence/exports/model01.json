@@ -1,0 +1,433 @@
+{
+  "schema_revision": 1,
+  "issue": 783,
+  "parent_issue": 647,
+  "status": "candidate_author_review_pending",
+  "variants": {
+    "magic": {
+      "class": "CaelumArmorPickup",
+      "parts": [
+        "cuirass",
+        "left_pauldron",
+        "left_rim",
+        "right_pauldron",
+        "right_rim",
+        "belt",
+        "buckle",
+        "breastplate",
+        "skirt_-12",
+        "skirt_0",
+        "skirt_12",
+        "gold_mark_-10_36",
+        "gold_mark_10_36",
+        "gold_mark_-9_60",
+        "gold_mark_9_60",
+        "gold_mark_0_14",
+        "chest_emblem",
+        "collar",
+        "blue_gem",
+        "cape"
+      ],
+      "closed_outward_components": 20,
+      "vertices": 16348,
+      "triangles": 9480,
+      "surfaces": [
+        {
+          "material": "dark_iron",
+          "vertices": 4096,
+          "triangles": 2048
+        },
+        {
+          "material": "dark_iron",
+          "vertices": 4094,
+          "triangles": 2686
+        },
+        {
+          "material": "dark_iron",
+          "vertices": 426,
+          "triangles": 142
+        },
+        {
+          "material": "gold",
+          "vertices": 4094,
+          "triangles": 2530
+        },
+        {
+          "material": "gold",
+          "vertices": 2394,
+          "triangles": 798
+        },
+        {
+          "material": "blue",
+          "vertices": 1244,
+          "triangles": 1276
+        }
+      ],
+      "reference_opaque_bounds": [
+        15,
+        8,
+        112,
+        120
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 112.0,
+      "native_bounds": [
+        {
+          "min": [
+            -41.78730854217091,
+            -18.133333333333333,
+            0.0
+          ],
+          "max": [
+            41.78730854217091,
+            23.133333333333333,
+            112.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.3333333333333333,
+        "floor": 0.0
+      }
+    },
+    "light": {
+      "class": "CaelumArmorPickup",
+      "parts": [
+        "cuirass",
+        "left_pauldron",
+        "left_rim",
+        "right_pauldron",
+        "right_rim",
+        "belt",
+        "buckle",
+        "breastplate",
+        "skirt_-12",
+        "skirt_0",
+        "skirt_12",
+        "collar",
+        "scarf"
+      ],
+      "closed_outward_components": 13,
+      "vertices": 11160,
+      "triangles": 7208,
+      "surfaces": [
+        {
+          "material": "steel",
+          "vertices": 532,
+          "triangles": 1024
+        },
+        {
+          "material": "leather",
+          "vertices": 4096,
+          "triangles": 2048
+        },
+        {
+          "material": "leather",
+          "vertices": 4095,
+          "triangles": 3005
+        },
+        {
+          "material": "leather",
+          "vertices": 621,
+          "triangles": 207
+        },
+        {
+          "material": "gold",
+          "vertices": 720,
+          "triangles": 240
+        },
+        {
+          "material": "red",
+          "vertices": 1096,
+          "triangles": 684
+        }
+      ],
+      "reference_opaque_bounds": [
+        13,
+        8,
+        115,
+        119
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 111.0,
+      "native_bounds": [
+        {
+          "min": [
+            -41.414207573044386,
+            -17.55848214285714,
+            0.0
+          ],
+          "max": [
+            41.414207573044386,
+            16.517857142857142,
+            111.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.3214285714285714,
+        "floor": 0.0
+      }
+    },
+    "medium": {
+      "class": "CaelumArmorPickup",
+      "parts": [
+        "cuirass",
+        "left_pauldron",
+        "left_rim",
+        "left_fur_0_0",
+        "left_fur_0_1",
+        "left_fur_0_2",
+        "left_fur_0_3",
+        "left_fur_1_0",
+        "left_fur_1_1",
+        "left_fur_1_2",
+        "left_fur_1_3",
+        "left_fur_2_0",
+        "left_fur_2_1",
+        "left_fur_2_2",
+        "left_fur_2_3",
+        "right_pauldron",
+        "right_rim",
+        "belt",
+        "buckle",
+        "breastplate",
+        "skirt_-12",
+        "skirt_0",
+        "skirt_12",
+        "collar_trim",
+        "cape"
+      ],
+      "closed_outward_components": 25,
+      "vertices": 11860,
+      "triangles": 9864,
+      "surfaces": [
+        {
+          "material": "steel",
+          "vertices": 4096,
+          "triangles": 2048
+        },
+        {
+          "material": "steel",
+          "vertices": 4094,
+          "triangles": 2686
+        },
+        {
+          "material": "steel",
+          "vertices": 426,
+          "triangles": 142
+        },
+        {
+          "material": "leather",
+          "vertices": 196,
+          "triangles": 384
+        },
+        {
+          "material": "gold",
+          "vertices": 1448,
+          "triangles": 1648
+        },
+        {
+          "material": "blue",
+          "vertices": 328,
+          "triangles": 652
+        },
+        {
+          "material": "fur",
+          "vertices": 1272,
+          "triangles": 2304
+        }
+      ],
+      "reference_opaque_bounds": [
+        9,
+        8,
+        119,
+        119
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 111.0,
+      "native_bounds": [
+        {
+          "min": [
+            -42.42431019677718,
+            -17.98673780487805,
+            0.0
+          ],
+          "max": [
+            42.42431019677718,
+            23.4859756097561,
+            111.00000000000001
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.353658536585366,
+        "floor": 0.0
+      }
+    },
+    "heavy": {
+      "class": "CaelumArmorPickup",
+      "parts": [
+        "cuirass",
+        "left_pauldron",
+        "left_rim",
+        "right_pauldron",
+        "right_rim",
+        "right_fur_0_0",
+        "right_fur_0_1",
+        "right_fur_0_2",
+        "right_fur_0_3",
+        "right_fur_1_0",
+        "right_fur_1_1",
+        "right_fur_1_2",
+        "right_fur_1_3",
+        "right_fur_2_0",
+        "right_fur_2_1",
+        "right_fur_2_2",
+        "right_fur_2_3",
+        "belt",
+        "buckle",
+        "breastplate",
+        "skirt_-12",
+        "skirt_0",
+        "skirt_12",
+        "gold_mark_-10_36",
+        "gold_mark_10_36",
+        "gold_mark_-9_60",
+        "gold_mark_9_60",
+        "gold_mark_0_14",
+        "chest_emblem",
+        "collar_trim"
+      ],
+      "closed_outward_components": 30,
+      "vertices": 16572,
+      "triangles": 10892,
+      "surfaces": [
+        {
+          "material": "dark_iron",
+          "vertices": 4096,
+          "triangles": 2048
+        },
+        {
+          "material": "dark_iron",
+          "vertices": 4094,
+          "triangles": 2686
+        },
+        {
+          "material": "dark_iron",
+          "vertices": 426,
+          "triangles": 142
+        },
+        {
+          "material": "leather",
+          "vertices": 196,
+          "triangles": 384
+        },
+        {
+          "material": "gold",
+          "vertices": 4096,
+          "triangles": 2212
+        },
+        {
+          "material": "gold",
+          "vertices": 2392,
+          "triangles": 1116
+        },
+        {
+          "material": "fur",
+          "vertices": 1272,
+          "triangles": 2304
+        }
+      ],
+      "reference_opaque_bounds": [
+        8,
+        9,
+        120,
+        119
+      ],
+      "reference_axis": "height",
+      "reference_sprite_scale": [
+        1,
+        1
+      ],
+      "target_art_extent": 110.0,
+      "native_bounds": [
+        {
+          "min": [
+            -42.04210920401342,
+            -18.243902439024392,
+            0.0
+          ],
+          "max": [
+            42.04210920401342,
+            16.76829268292683,
+            110.0
+          ]
+        }
+      ],
+      "source_to_native": {
+        "factor": 1.3414634146341464,
+        "floor": 0.0
+      }
+    }
+  },
+  "source_sha256": {
+    "DESIGN.json": "e2b6ca51aa9b5917eef30447e166f03afb6f9aaed2051dc6862d8a4985227195",
+    "PROVENANCE.json": "e0cf944205401d68f62895435b8cf768b47e54fe01836a72403f4c2fe13eb058"
+  },
+  "external_source_sha256": {
+    "src/TEXTURES": "fe101bef213d375ca30330deb1f01a3c595caf63d753ed9e5ba505318fc3c6ad",
+    "src/caelum/equipment/CaelumEquipmentPickups.zs": "9208b475941230f72c0e4a7ae89a8524b060a6bb6ce09439aa3bddb8c2b950a9",
+    "assets/generators/generate_inventory_articulated_weapons_models.py": "2dd9f7ddc4cf1ad708ee07b1e45d2d749934a1980125383b4e221f18a0a66efd",
+    "assets/generators/generate_inventory_armor_helmets_models.py": "3492b7a039b9bd8e6820795865b2b2028440e8620fc0a968c7f907c873c9a02d",
+    "assets/generators/generate_inventory_clothing_models.py": "105e9107d4b0ec4c82a6a168127fb3968f8d19ca72bf48320cb01c90062217d3",
+    "src/graphics/caelum/icons/ca_armor_magic.png": "bf909bd223c8e1b7495b28986c2a52a5864c81225420083394c1cc7afb28bbf9",
+    "src/graphics/caelum/icons/ca_armor_light.png": "1197c7cb1108f4067bd788224dfb676e25a47a63843f6d201370933017ad9551",
+    "src/graphics/caelum/icons/ca_armor_medium.png": "f8c9f7ff4ee6c128029183dadf480fd6dc30103fb56da99c28cd7bac23598ff7",
+    "src/graphics/caelum/icons/ca_armor_heavy.png": "c7869d217320aa12820afba5033840f01c98d243dcce7a27207703e855a1f499",
+    "src/models/caelum/inventory/weapon_components/metals.png": "563d339e5309b725608c5470cc53abf902a30075859e44bb3793acb2cb3f1291",
+    "src/models/caelum/inventory/articulated_weapons/leather.png": "261976d27a229443bb17fb75ac73408523988d51777cf928179ec1aff31740df",
+    "src/models/caelum/inventory/armor_helmets/gold.png": "4e6123410914b56260ca5f406e873315063659043072852e2ebe433973be17dc",
+    "src/models/caelum/inventory/magic_bases/materials.png": "10a848f89f7efd32cbf2b4ca9fe3c96a5ad4dd09079d19b80c878565f7d91041",
+    "src/graphics/caelum/icons/ca_boots.png": "07bd942c46642a40637dc2906a0cdfacc5304fecb465d44dae2d03988484b884"
+  },
+  "generator_sha256": {
+    "generate_inventory_ammunition_models.py": "aa7ffdc02cc126b116b87782ae962bdbb54e9bf060301344058aa4475f946b86",
+    "generate_inventory_consumable_models.py": "f4bb817e68f15fd5fcce27b5f7f3de205917b993899fbeb934629f2146a14fc7",
+    "generate_nahuelito_model.py": "487e5e84f5739620a77ee83892b949e260df62e6298119dd1f748a4946342281",
+    "generate_pombero_model.py": "d5594c5a8dfc3e6e6144479ff635757bfebbd887043d7f4030fbb89c844d0be2",
+    "generate_inventory_armor_torso_models.py": "d87b76e78bd1729ac3509a08af7ed1c3be2a40cc5d146e06c582a19cf186e4cd"
+  },
+  "sha256": {
+    "models/caelum/inventory/armor_torso/magic.md3": "f801cadcfad9ef6fff623ed375a8103d297ddbf0370f5a1f18ad2f23e6029763",
+    "editable/magic.obj": "373be0ed0e4661a43b0b5a98ea1c8d38f83352562b68de5f9fb114ea33141a54",
+    "models/caelum/inventory/armor_torso/light.md3": "d1c715d2a400b7d9d71f6c506a13c303cb03a89034249ba8007dfdb8f4868249",
+    "editable/light.obj": "958078a0509c4815d275c3970cf74a4a3ed2fc437c664641a3b136ab6d392a2f",
+    "models/caelum/inventory/armor_torso/medium.md3": "c4470f1e8a0560c25068dad11faf53689062e6faf753aef228bdd07ee9b625ae",
+    "editable/medium.obj": "5fd48380d4ad68bf7e8c2070fbdadbc8e6d48596049eec373d33bad87ef6ce13",
+    "models/caelum/inventory/armor_torso/heavy.md3": "a4e9d15efbb641b56b758dba0dda927838db66cfe9a14e0ebbb2a0dbd51cd0f9",
+    "editable/heavy.obj": "f6813708a07ee4d783e6e1b8d922a850c8c359dd720c0bef512e4b044dd90f1c",
+    "editable/armor_torso.mtl": "4e5bd21983fd7166abccbde08cba83d3accd78f202513e873ee63d58e1f2fbe6",
+    "caelum/data/inventory_armor_torso.modeldef": "b49056a00fed86cea62fc5e4682c9f2f0356ce6a975122c53719b20a16e1ca2c",
+    "editable/src/models/caelum/inventory/weapon_components/metals.png": "563d339e5309b725608c5470cc53abf902a30075859e44bb3793acb2cb3f1291",
+    "editable/src/models/caelum/inventory/articulated_weapons/leather.png": "261976d27a229443bb17fb75ac73408523988d51777cf928179ec1aff31740df",
+    "editable/src/models/caelum/inventory/armor_helmets/gold.png": "4e6123410914b56260ca5f406e873315063659043072852e2ebe433973be17dc",
+    "editable/src/models/caelum/inventory/magic_bases/materials.png": "10a848f89f7efd32cbf2b4ca9fe3c96a5ad4dd09079d19b80c878565f7d91041",
+    "editable/src/graphics/caelum/icons/ca_boots.png": "07bd942c46642a40637dc2906a0cdfacc5304fecb465d44dae2d03988484b884",
+    "editable/src/graphics/caelum/icons/ca_armor_light.png": "1197c7cb1108f4067bd788224dfb676e25a47a63843f6d201370933017ad9551",
+    "editable/src/graphics/caelum/icons/ca_armor_medium.png": "f8c9f7ff4ee6c128029183dadf480fd6dc30103fb56da99c28cd7bac23598ff7"
+  },
+  "reuse_note": "All reused owned leather, steel and gold textures remain byte-identical; no new raster assets."
+}

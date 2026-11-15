@@ -1143,3 +1143,12 @@ assets/validation_v5_17_69/*.py text eol=lf
 assets/validation_v5_17_69/*.zs text eol=lf
 assets/validation_v5_17_69/evidence/** -text -diff
 src/caelum/data/inventory_armor_feet.modeldef text eol=lf
+
+# #783 owned torso armor source and native test evidence.
+assets/generators/*inventory_armor_torso_models.py text eol=lf
+assets/source/art/inventory_models_647/armor_torso/** text eol=lf
+assets/source/art/inventory_models_647/armor_torso/**/*.png binary
+assets/validation_v5_17_70/*.py text eol=lf
+assets/validation_v5_17_70/*.zs text eol=lf
+assets/validation_v5_17_70/evidence/** -text -diff
+src/caelum/data/inventory_armor_torso.modeldef text eol=lf

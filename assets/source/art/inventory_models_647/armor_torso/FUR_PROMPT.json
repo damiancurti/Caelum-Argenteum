@@ -1,0 +1,9 @@
+{
+  "issue": 783,
+  "mode": "built-in image_gen",
+  "use_case": "stylized-concept",
+  "prompt": "Use case: stylized-concept. Asset type: original opaque square albedo texture for the small fur mantle on a dark-fantasy 3D armor world pickup. Primary request: an edge-to-edge, seamless-looking field of short dense cream and warm beige fur with subtle brown underfur and individually readable overlapping fine hairs, all broadly brushed downward. Painted naturalistic game material, restrained contrast and soft even ambient illumination, no glossy finish. Flat orthographic macro surface only; no perspective, folds, garment, animal, anatomy, object silhouette, border, text, labels, watermark, shadows, background or transparency. Fill the entire square with the same fur material, maintaining similar brightness across all edges. Color stays muted cream/beige, not white, yellow gold or orange. No large repeated clumps or spikes.",
+  "output_source": "C:/Users/dcc70/.codex/generated_images/01a1d17b-9a43-7901-bffe-eb3e4a27f8d4/exec-a1d616b6-6394-46da-8aad-149059975835.png",
+  "processing": "Byte-for-byte copy; no raster edits",
+  "author_accepted": false
+}

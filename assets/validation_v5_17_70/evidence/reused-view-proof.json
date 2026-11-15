@@ -1,0 +1,14 @@
+{
+  "source_views": "issue783-visual02",
+  "unchanged_runtime_models": {
+    "magic": "bd627ebde8d5cef8f5f62ff76e0feaa933dc572d812b5e32b13c13d433aee4c8",
+    "light": "ab5f6efd4f9289ccc0bf1492c355d2459707472734e347b651a1d49544438384"
+  },
+  "views_each": [
+    0,
+    90,
+    160,
+    225,
+    270
+  ]
+}

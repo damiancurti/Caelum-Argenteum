@@ -1,0 +1,1074 @@
+{
+  "issue": 783,
+  "parent_issue": 647,
+  "version": "5.17.70",
+  "date": "2026-11-15",
+  "author_accepted": false,
+  "scope": "Four torso armor world models and twelve native type/tier cases. Original cuirasses, shoulder plates, trim, belts, rivets, scarf/cape and continuous fur mantle follow the effective owned references. One new generated fur texture; no previous pixels changed. Native gameplay and persistence remain unchanged; worn fitting is not delivered.",
+  "runtime": {
+    "sha256": "1c883a38c616428c38f2655d0ad7628afd1f0f0bc95e78f0ae28068108956963",
+    "source_entries": 18557,
+    "exact_source_bytes": true
+  },
+  "baseline": {
+    "sha256": "7679bbbf25ab7569967b6e027a02a6fd2395afc2729afe6d71c02c221e71eb64",
+    "new_resources": [
+      "caelum/data/inventory_armor_torso.modeldef",
+      "models/caelum/inventory/armor_torso/fur.png",
+      "models/caelum/inventory/armor_torso/heavy.md3",
+      "models/caelum/inventory/armor_torso/light.md3",
+      "models/caelum/inventory/armor_torso/magic.md3",
+      "models/caelum/inventory/armor_torso/medium.md3"
+    ],
+    "changed_resources": [
+      "MODELDEF",
+      "caelum/world/CaelumPhysicalHazards.zs",
+      "caelum/world/CaelumSewerMaze.zs"
+    ],
+    "all_other_runtime_bytes_identical": true
+  },
+  "static": {
+    "repeated_export_files": 21,
+    "repeat_byte_identical": true,
+    "installed_export_check_passed": true,
+    "geometry": {
+      "magic": {
+        "closed_components": 33,
+        "rings": 0,
+        "linked_pairs": 0,
+        "fixed_attachment_witnesses": 32,
+        "connected_components": 33,
+        "nearby_ring_pairs": 0,
+        "opening_rays": 20,
+        "minimum_capsule_clearance": null,
+        "quantization_margin": 0.027065293868263705,
+        "native_triangles": 14040
+      },
+      "light": {
+        "closed_components": 27,
+        "rings": 0,
+        "linked_pairs": 0,
+        "fixed_attachment_witnesses": 26,
+        "connected_components": 27,
+        "nearby_ring_pairs": 0,
+        "opening_rays": 20,
+        "minimum_capsule_clearance": null,
+        "quantization_margin": 0.027065293868263705,
+        "native_triangles": 12008
+      },
+      "medium": {
+        "closed_components": 27,
+        "rings": 0,
+        "linked_pairs": 0,
+        "fixed_attachment_witnesses": 26,
+        "connected_components": 27,
+        "nearby_ring_pairs": 0,
+        "opening_rays": 20,
+        "minimum_capsule_clearance": null,
+        "quantization_margin": 0.027065293868263705,
+        "native_triangles": 13272
+      },
+      "heavy": {
+        "closed_components": 32,
+        "rings": 0,
+        "linked_pairs": 0,
+        "fixed_attachment_witnesses": 31,
+        "connected_components": 32,
+        "nearby_ring_pairs": 0,
+        "opening_rays": 20,
+        "minimum_capsule_clearance": null,
+        "quantization_margin": 0.027065293868263705,
+        "native_triangles": 14300
+      }
+    },
+    "variants": {
+      "magic": {
+        "class": "CaelumArmorPickup",
+        "parts": [
+          "cuirass",
+          "left_pauldron",
+          "left_rim",
+          "right_pauldron",
+          "right_rim",
+          "belt",
+          "buckle",
+          "breastplate",
+          "skirt_-12",
+          "skirt_0",
+          "skirt_12",
+          "gold_mark_-10_36",
+          "gold_mark_10_36",
+          "gold_mark_-9_60",
+          "gold_mark_9_60",
+          "gold_mark_0_14",
+          "chest_emblem",
+          "collar",
+          "blue_gem",
+          "cape",
+          "breast_trim_0",
+          "breast_trim_1",
+          "breast_trim_2",
+          "breast_trim_3",
+          "breast_trim_4",
+          "breast_trim_5",
+          "breast_trim_6",
+          "rivet_-1_38",
+          "rivet_-1_46",
+          "rivet_-1_54",
+          "rivet_1_38",
+          "rivet_1_46",
+          "rivet_1_54"
+        ],
+        "closed_outward_components": 33,
+        "vertices": 35768,
+        "triangles": 14040,
+        "surfaces": [
+          {
+            "material": "gold",
+            "vertices": 4096,
+            "triangles": 2212
+          },
+          {
+            "material": "gold",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "gold",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "gold",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "gold",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "gold",
+            "vertices": 648,
+            "triangles": 216
+          },
+          {
+            "material": "blue",
+            "vertices": 3828,
+            "triangles": 1276
+          },
+          {
+            "material": "navy",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "navy",
+            "vertices": 4096,
+            "triangles": 2636
+          },
+          {
+            "material": "navy",
+            "vertices": 2625,
+            "triangles": 875
+          }
+        ],
+        "reference_opaque_bounds": [
+          15,
+          8,
+          112,
+          120
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 112.0,
+        "native_bounds": [
+          {
+            "min": [
+              -41.78730854217091,
+              -18.133333333333333,
+              0.0
+            ],
+            "max": [
+              41.78730854217091,
+              23.133333333333333,
+              112.0
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.3333333333333333,
+          "floor": 0.0
+        }
+      },
+      "light": {
+        "class": "CaelumArmorPickup",
+        "parts": [
+          "cuirass",
+          "left_pauldron",
+          "left_rim",
+          "right_pauldron",
+          "right_rim",
+          "belt",
+          "buckle",
+          "breastplate",
+          "skirt_-12",
+          "skirt_0",
+          "skirt_12",
+          "collar",
+          "scarf",
+          "breast_trim_0",
+          "breast_trim_1",
+          "breast_trim_2",
+          "breast_trim_3",
+          "breast_trim_4",
+          "breast_trim_5",
+          "breast_trim_6",
+          "rivet_-1_38",
+          "rivet_-1_46",
+          "rivet_-1_54",
+          "rivet_1_38",
+          "rivet_1_46",
+          "rivet_1_54",
+          "diagonal_strap"
+        ],
+        "closed_outward_components": 27,
+        "vertices": 29672,
+        "triangles": 12008,
+        "surfaces": [
+          {
+            "material": "steel",
+            "vertices": 4096,
+            "triangles": 2212
+          },
+          {
+            "material": "steel",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "steel",
+            "vertices": 981,
+            "triangles": 327
+          },
+          {
+            "material": "dark_iron",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "dark_iron",
+            "vertices": 2817,
+            "triangles": 939
+          },
+          {
+            "material": "leather",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "leather",
+            "vertices": 4096,
+            "triangles": 2636
+          },
+          {
+            "material": "leather",
+            "vertices": 2625,
+            "triangles": 875
+          },
+          {
+            "material": "gold",
+            "vertices": 720,
+            "triangles": 240
+          },
+          {
+            "material": "red",
+            "vertices": 2052,
+            "triangles": 684
+          }
+        ],
+        "reference_opaque_bounds": [
+          13,
+          8,
+          115,
+          119
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 111.0,
+        "native_bounds": [
+          {
+            "min": [
+              -41.414207573044386,
+              -19.101163258701263,
+              0.0
+            ],
+            "max": [
+              41.414207573044386,
+              16.517857142857142,
+              111.0
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.3214285714285714,
+          "floor": 0.0
+        }
+      },
+      "medium": {
+        "class": "CaelumArmorPickup",
+        "parts": [
+          "cuirass",
+          "left_pauldron",
+          "left_rim",
+          "right_pauldron",
+          "right_rim",
+          "belt",
+          "buckle",
+          "breastplate",
+          "skirt_-12",
+          "skirt_0",
+          "skirt_12",
+          "collar_trim",
+          "cape",
+          "breast_trim_0",
+          "breast_trim_1",
+          "breast_trim_2",
+          "breast_trim_3",
+          "breast_trim_4",
+          "breast_trim_5",
+          "breast_trim_6",
+          "rivet_-1_38",
+          "rivet_-1_46",
+          "rivet_-1_54",
+          "rivet_1_38",
+          "rivet_1_46",
+          "rivet_1_54",
+          "left_fur_mantle"
+        ],
+        "closed_outward_components": 27,
+        "vertices": 33464,
+        "triangles": 13272,
+        "surfaces": [
+          {
+            "material": "steel",
+            "vertices": 4096,
+            "triangles": 2636
+          },
+          {
+            "material": "steel",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "steel",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "steel",
+            "vertices": 570,
+            "triangles": 190
+          },
+          {
+            "material": "dark_iron",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "dark_iron",
+            "vertices": 945,
+            "triangles": 315
+          },
+          {
+            "material": "leather",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "leather",
+            "vertices": 3657,
+            "triangles": 1219
+          },
+          {
+            "material": "gold",
+            "vertices": 2404,
+            "triangles": 1648
+          },
+          {
+            "material": "blue",
+            "vertices": 1956,
+            "triangles": 652
+          },
+          {
+            "material": "fur",
+            "vertices": 3456,
+            "triangles": 1152
+          }
+        ],
+        "reference_opaque_bounds": [
+          9,
+          8,
+          119,
+          119
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 111.0,
+        "native_bounds": [
+          {
+            "min": [
+              -42.42431019677718,
+              -17.98673780487805,
+              0.0
+            ],
+            "max": [
+              42.42431019677718,
+              23.4859756097561,
+              111.00000000000001
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.353658536585366,
+          "floor": 0.0
+        }
+      },
+      "heavy": {
+        "class": "CaelumArmorPickup",
+        "parts": [
+          "cuirass",
+          "left_pauldron",
+          "left_rim",
+          "right_pauldron",
+          "right_rim",
+          "belt",
+          "buckle",
+          "breastplate",
+          "skirt_-12",
+          "skirt_0",
+          "skirt_12",
+          "gold_mark_-10_36",
+          "gold_mark_10_36",
+          "gold_mark_-9_60",
+          "gold_mark_9_60",
+          "gold_mark_0_14",
+          "chest_emblem",
+          "collar_trim",
+          "breast_trim_0",
+          "breast_trim_1",
+          "breast_trim_2",
+          "breast_trim_3",
+          "breast_trim_4",
+          "breast_trim_5",
+          "breast_trim_6",
+          "rivet_-1_38",
+          "rivet_-1_46",
+          "rivet_-1_54",
+          "rivet_1_38",
+          "rivet_1_46",
+          "rivet_1_54",
+          "right_fur_mantle"
+        ],
+        "closed_outward_components": 32,
+        "vertices": 36548,
+        "triangles": 14300,
+        "surfaces": [
+          {
+            "material": "steel",
+            "vertices": 4096,
+            "triangles": 2636
+          },
+          {
+            "material": "steel",
+            "vertices": 120,
+            "triangles": 40
+          },
+          {
+            "material": "dark_iron",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "dark_iron",
+            "vertices": 2505,
+            "triangles": 835
+          },
+          {
+            "material": "leather",
+            "vertices": 1152,
+            "triangles": 384
+          },
+          {
+            "material": "gold",
+            "vertices": 4096,
+            "triangles": 2212
+          },
+          {
+            "material": "gold",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "gold",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "gold",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "gold",
+            "vertices": 4095,
+            "triangles": 1365
+          },
+          {
+            "material": "gold",
+            "vertices": 648,
+            "triangles": 216
+          },
+          {
+            "material": "fur",
+            "vertices": 3456,
+            "triangles": 1152
+          }
+        ],
+        "reference_opaque_bounds": [
+          8,
+          9,
+          120,
+          119
+        ],
+        "reference_axis": "height",
+        "reference_sprite_scale": [
+          1,
+          1
+        ],
+        "target_art_extent": 110.0,
+        "native_bounds": [
+          {
+            "min": [
+              -42.04210920401342,
+              -18.243902439024392,
+              0.0
+            ],
+            "max": [
+              42.04210920401342,
+              16.76829268292683,
+              110.0
+            ]
+          }
+        ],
+        "source_to_native": {
+          "factor": 1.3414634146341464,
+          "floor": 0.0
+        }
+      }
+    },
+    "project_validation_passed": true
+  },
+  "continuity": {
+    "issue": 783,
+    "kind": "armor_torso",
+    "scope": "Native pickup/toss, quantity and saved ownership for armor_torso; no normal menu or author acceptance.",
+    "baseline_sha256": "7679bbbf25ab7569967b6e027a02a6fd2395afc2729afe6d71c02c221e71eb64",
+    "runtime_sha256": "1c883a38c616428c38f2655d0ad7628afd1f0f0bc95e78f0ae28068108956963",
+    "model_sha256": null,
+    "fixture_sha256": "5e05ac7aebb54db6efc475f443889e7282aba380b7298909b848b487edfe2c35",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "baseline",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 229
+      },
+      {
+        "phase": "old-save-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 189
+      },
+      {
+        "phase": "candidate-fresh",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 229
+      },
+      {
+        "phase": "candidate-reload",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 182
+      },
+      {
+        "phase": "rollback-load",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 182
+      }
+    ],
+    "captures": {
+      "baseline.png": "227e0fe4cf0f905c3293d8d71daee01cd70d519c2ce44b17d7d4672c8e900997",
+      "candidate-0.png": "3db6c507ac24d223b46055e960f92a5dc3712d9500dd1f72855a94654f4b835c",
+      "candidate-1.png": "a0b6c095691cd0125582388c96c64dfbf2f695c77416524327cbf080f1848c3a",
+      "candidate-2.png": "24b6bb813e694f51e8ee5d9509c9a99896fb711725bb7d82b8056dc4990e7811",
+      "candidate-3.png": "3db6c507ac24d223b46055e960f92a5dc3712d9500dd1f72855a94654f4b835c",
+      "candidate-5.png": "3db6c507ac24d223b46055e960f92a5dc3712d9500dd1f72855a94654f4b835c",
+      "candidate-6.png": "3db6c507ac24d223b46055e960f92a5dc3712d9500dd1f72855a94654f4b835c",
+      "candidate-7.png": "b5d15a9421948831f353a3f14888b8e5397fd535460ca97c92fe806ac7e9793b",
+      "detail-0-0.png": "6995fd405497fa3bde2b22a9e29f28fa648a761dbd7a6d58b36ede92cecf876e",
+      "detail-0-160.png": "926538fd6030b074147cb00f2301ba5ba7f1b05f1384d3ae3eae541f853fca9f",
+      "detail-0-225.png": "26e00de0a8bac681ea7f60411ce5fee64e6463d616dfe5f5e5afd4fdb0a5fbac",
+      "detail-0-270.png": "b7841d3c7041520c52699174a46a1b821d2f8e73161dd132fb65d96ebbe22e1b",
+      "detail-0-90.png": "d7765ee44b5e3d6e06f66886de17c78d651c713134ba2941c6187530b36ab748",
+      "detail-1-0.png": "e0c99d3f6579a6b30bf1c85ea7042de6febf6f25f60a78e9262378e95260f92d",
+      "detail-1-160.png": "076d17611b75ff7868c50da348309f8643727d91f9335dbb0a2d56f272dccce3",
+      "detail-1-225.png": "fc89add8a92dc40bd7202bd1e0a336d01733b41fb4422f4cb9a8a4d10d62ab55",
+      "detail-1-270.png": "723eb601656f14fe8e3b01b8cefc48479346e0d8cee57be7e238db630de16fbf",
+      "detail-1-90.png": "754cac86709c0c1f2b6f5bb2e04b6a90423889993ab352c6f7a0693c9b2fdde9",
+      "detail-2-0.png": "f7f5591ad087ae15dcb5a961c2a6cd32d905340e5f8ad1110ab9012f902bd35d",
+      "detail-2-160.png": "d56d28f3a8bcec43b249afef4755aac8e604efc864da87d0077a19770ceb2b80",
+      "detail-2-225.png": "a21e653e268ac72ba56114afb26d9431605214e0c2d0879ef84778aac6dbefb7",
+      "detail-2-270.png": "b88fe3bea117a9f15d41ad112a56daa26e224835f71b856eaf24f682ab967118",
+      "detail-2-90.png": "2b7d766f905a56b6cf549a4e9a35d05dabc1fee84dbf72ebd04d5f86e692770c",
+      "detail-3-0.png": "c131f406ed58302d30c6903c5be4489735c927b1d56795d38e80cff99845cc66",
+      "detail-3-160.png": "174338864449906268088711a972ee8d3fad2a5c2b28a7206c79fca80c7ea266",
+      "detail-3-225.png": "a3a6e819e7cbc9841f4ef4acfd3de4b434eba556fd1d256d34b020de42a5fa22",
+      "detail-3-270.png": "0a554d76b3a9824c40be413dc052f46329561b89d2326f79d7f3609cb62c997e",
+      "detail-3-90.png": "ce57cdb16f15044f30db569d70c906068b03641c6155db9d505cd32c0d229b53"
+    }
+  },
+  "visual": {
+    "issue": 783,
+    "kind": "armor_torso",
+    "scope": "Native pickup/toss, quantity and saved ownership for armor_torso; no normal menu or author acceptance.",
+    "baseline_sha256": "7679bbbf25ab7569967b6e027a02a6fd2395afc2729afe6d71c02c221e71eb64",
+    "runtime_sha256": "7679bbbf25ab7569967b6e027a02a6fd2395afc2729afe6d71c02c221e71eb64",
+    "model_sha256": "f8ef495f3cdb592c2cf1b86f34a794f425d7e177cf8c4042821c3827bb97cda2",
+    "fixture_sha256": "5e05ac7aebb54db6efc475f443889e7282aba380b7298909b848b487edfe2c35",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "runs": [
+      {
+        "phase": "visual",
+        "exit_code": 0,
+        "passed": true,
+        "errors": [],
+        "assertions": 236
+      }
+    ],
+    "captures": {
+      "candidate-0.png": "3db6c507ac24d223b46055e960f92a5dc3712d9500dd1f72855a94654f4b835c",
+      "candidate-1.png": "a0b6c095691cd0125582388c96c64dfbf2f695c77416524327cbf080f1848c3a",
+      "candidate-2.png": "24b6bb813e694f51e8ee5d9509c9a99896fb711725bb7d82b8056dc4990e7811",
+      "candidate-3.png": "3db6c507ac24d223b46055e960f92a5dc3712d9500dd1f72855a94654f4b835c",
+      "candidate-5.png": "3db6c507ac24d223b46055e960f92a5dc3712d9500dd1f72855a94654f4b835c",
+      "candidate-6.png": "3db6c507ac24d223b46055e960f92a5dc3712d9500dd1f72855a94654f4b835c",
+      "candidate-7.png": "b5d15a9421948831f353a3f14888b8e5397fd535460ca97c92fe806ac7e9793b",
+      "detail-0-0.png": "6995fd405497fa3bde2b22a9e29f28fa648a761dbd7a6d58b36ede92cecf876e",
+      "detail-0-160.png": "926538fd6030b074147cb00f2301ba5ba7f1b05f1384d3ae3eae541f853fca9f",
+      "detail-0-225.png": "26e00de0a8bac681ea7f60411ce5fee64e6463d616dfe5f5e5afd4fdb0a5fbac",
+      "detail-0-270.png": "b7841d3c7041520c52699174a46a1b821d2f8e73161dd132fb65d96ebbe22e1b",
+      "detail-0-90.png": "d7765ee44b5e3d6e06f66886de17c78d651c713134ba2941c6187530b36ab748",
+      "detail-1-0.png": "e0c99d3f6579a6b30bf1c85ea7042de6febf6f25f60a78e9262378e95260f92d",
+      "detail-1-160.png": "076d17611b75ff7868c50da348309f8643727d91f9335dbb0a2d56f272dccce3",
+      "detail-1-225.png": "fc89add8a92dc40bd7202bd1e0a336d01733b41fb4422f4cb9a8a4d10d62ab55",
+      "detail-1-270.png": "723eb601656f14fe8e3b01b8cefc48479346e0d8cee57be7e238db630de16fbf",
+      "detail-1-90.png": "754cac86709c0c1f2b6f5bb2e04b6a90423889993ab352c6f7a0693c9b2fdde9",
+      "detail-2-0.png": "f7f5591ad087ae15dcb5a961c2a6cd32d905340e5f8ad1110ab9012f902bd35d",
+      "detail-2-160.png": "d56d28f3a8bcec43b249afef4755aac8e604efc864da87d0077a19770ceb2b80",
+      "detail-2-225.png": "a21e653e268ac72ba56114afb26d9431605214e0c2d0879ef84778aac6dbefb7",
+      "detail-2-270.png": "b88fe3bea117a9f15d41ad112a56daa26e224835f71b856eaf24f682ab967118",
+      "detail-2-90.png": "2b7d766f905a56b6cf549a4e9a35d05dabc1fee84dbf72ebd04d5f86e692770c",
+      "detail-3-0.png": "c131f406ed58302d30c6903c5be4489735c927b1d56795d38e80cff99845cc66",
+      "detail-3-160.png": "174338864449906268088711a972ee8d3fad2a5c2b28a7206c79fca80c7ea266",
+      "detail-3-225.png": "a3a6e819e7cbc9841f4ef4acfd3de4b434eba556fd1d256d34b020de42a5fa22",
+      "detail-3-270.png": "0a554d76b3a9824c40be413dc052f46329561b89d2326f79d7f3609cb62c997e",
+      "detail-3-90.png": "ce57cdb16f15044f30db569d70c906068b03641c6155db9d505cd32c0d229b53"
+    }
+  },
+  "armor_regression": {
+    "issue": 783,
+    "scope": "Check all earlier medium armor slots and the separate Anima potion after torso MODELDEF additions for #783.",
+    "baseline_sha256": "7679bbbf25ab7569967b6e027a02a6fd2395afc2729afe6d71c02c221e71eb64",
+    "runtime_sha256": "1c883a38c616428c38f2655d0ad7628afd1f0f0bc95e78f0ae28068108956963",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "fixture_sha256": "c4df7ef654594506c332c034b4604f1c3a6340bc1a5bf07777fbc3307e11105b",
+    "runs": [
+      {
+        "phase": "candidate-fresh",
+        "exit_code": 0,
+        "errors": [],
+        "assertions": 157,
+        "expected_assertions": 157,
+        "completions": [
+          "0"
+        ],
+        "passed": true
+      }
+    ]
+  },
+  "presentation": {
+    "issue": 783,
+    "kind": "armor_torso",
+    "scope": "Measure actual inventory drop classes before/after model installation.\n\nA single sequential baseline/candidate pair in an isolated room; this is not a\ncrowd budget, campaign performance acceptance or repeatability estimate.",
+    "baseline_sha256": "7679bbbf25ab7569967b6e027a02a6fd2395afc2729afe6d71c02c221e71eb64",
+    "runtime_sha256": "1c883a38c616428c38f2655d0ad7628afd1f0f0bc95e78f0ae28068108956963",
+    "engine_sha256": "ec706c2ea1ef946eec13be7b1b461df8d52efcd47caa6c056ed0e0257f7f9ffa",
+    "layer_sha256": "960ffb73a124058a3e6906dee479c76e35a2f0004d1e978665f46571b731b6c2",
+    "runs": [
+      {
+        "kind": "sprites",
+        "bodies": 12,
+        "pid": 44564,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 350651631.4633,
+          "END": 350671552.434
+        },
+        "fixture_sha256": "0486018be321d87a90423607d6b1124f0bcbafc884d1681fa7125e3f71b255e7",
+        "passed": true,
+        "observed_completion_counts": [
+          [
+            12,
+            700
+          ]
+        ],
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.570867857142854,
+          "p50_ms": 28.5825,
+          "p95_ms": 29.1665,
+          "p99_ms": 29.3325,
+          "max_ms": 29.5886
+        },
+        "presentation": {
+          "pid": 44564,
+          "trace_sha256": "6d48d6531423f8027165f38cc5be628c76f445196eb66586c149b53ec7e36531",
+          "rows": 29734,
+          "scene_presents": 19671,
+          "mean_present_fps": 1129.205832464079,
+          "present_intervals": {
+            "samples": 19670,
+            "mean_ms": 0.8855781392997816,
+            "p50_ms": 0.8573000431060791,
+            "p95_ms": 1.0712000131607056,
+            "p99_ms": 1.3147000074386597,
+            "max_ms": 2.576200008392334
+          },
+          "native_call_duration": {
+            "samples": 19671,
+            "mean_ms": 0.07608335612719669,
+            "p50_ms": 0.07589995861053467,
+            "p95_ms": 0.0996999740600586,
+            "p99_ms": 0.13530004024505615,
+            "max_ms": 0.6406000256538391
+          }
+        }
+      },
+      {
+        "kind": "models",
+        "bodies": 12,
+        "pid": 17112,
+        "exit_code": 0,
+        "errors": [],
+        "markers_qpc_ms": {
+          "BEGIN": 350686327.40389997,
+          "END": 350706347.558
+        },
+        "fixture_sha256": "0486018be321d87a90423607d6b1124f0bcbafc884d1681fa7125e3f71b255e7",
+        "passed": true,
+        "observed_completion_counts": [
+          [
+            12,
+            700
+          ]
+        ],
+        "simulation": {
+          "samples": 700,
+          "mean_ms": 28.571534571428572,
+          "p50_ms": 28.5607,
+          "p95_ms": 29.2258,
+          "p99_ms": 29.4256,
+          "max_ms": 29.5754
+        },
+        "presentation": {
+          "pid": 17112,
+          "trace_sha256": "5d8440121e20cee84f8049105d4f6f674ef7d7a5aa8885b1057bebc89ace3935",
+          "rows": 27362,
+          "scene_presents": 18627,
+          "mean_present_fps": 1063.209044940815,
+          "present_intervals": {
+            "samples": 18626,
+            "mean_ms": 0.9405488081186014,
+            "p50_ms": 0.9164999723434448,
+            "p95_ms": 1.1076000332832336,
+            "p99_ms": 1.2312000393867493,
+            "max_ms": 2.508199989795685
+          },
+          "native_call_duration": {
+            "samples": 18627,
+            "mean_ms": 0.07699922155167878,
+            "p50_ms": 0.0764000415802002,
+            "p95_ms": 0.10100001096725464,
+            "p99_ms": 0.14100003242492676,
+            "max_ms": 0.7301999926567078
+          }
+        }
+      }
+    ]
+  },
+  "art": {
+    "inspected_views": [
+      "visual/detail-2-0.png",
+      "visual/detail-2-90.png",
+      "visual/detail-2-160.png",
+      "visual/detail-2-225.png",
+      "visual/detail-2-270.png",
+      "visual/detail-3-0.png",
+      "visual/detail-3-90.png",
+      "visual/detail-3-160.png",
+      "visual/detail-3-225.png",
+      "visual/detail-3-270.png",
+      "reused-views/detail-0-0.png",
+      "reused-views/detail-0-90.png",
+      "reused-views/detail-0-160.png",
+      "reused-views/detail-0-225.png",
+      "reused-views/detail-0-270.png",
+      "reused-views/detail-1-0.png",
+      "reused-views/detail-1-90.png",
+      "reused-views/detail-1-160.png",
+      "reused-views/detail-1-225.png",
+      "reused-views/detail-1-270.png"
+    ],
+    "reused_view_proof": {
+      "source_views": "issue783-visual02",
+      "unchanged_runtime_models": {
+        "magic": "bd627ebde8d5cef8f5f62ff76e0feaa933dc572d812b5e32b13c13d433aee4c8",
+        "light": "ab5f6efd4f9289ccc0bf1492c355d2459707472734e347b651a1d49544438384"
+      },
+      "views_each": [
+        0,
+        90,
+        160,
+        225,
+        270
+      ]
+    },
+    "overview": "visual/candidate-0.png",
+    "author_check": "CA783-TORSO-ARMOR-01",
+    "new_fur_sha256": "e677512823f47e67853da3384d24be09fde84862066a35221da8632b2c1d2329",
+    "prompt": "assets/source/art/inventory_models_647/armor_torso/FUR_PROMPT.json",
+    "generation_mode": "built-in image_gen"
+  },
+  "iterations": [
+    "Initial source sampling assertion stopped before any source/model write: owned icon interiors have original alpha252/253. Restricted opaque-enough red/fur samples were selected without altering pixels.",
+    "Initial geometry had collapsed shell-rim UVs and a cape attachment witness exactly on the boundary. Independent planar UVs and an interior witness corrected both.",
+    "First native review improved weak plate/material separation with trim, rivets, a diagonal strap and a navy material sample. Rounded fur clumps and then pointed tufts remained poor representations; final continuous curved mantles use a newly generated opaque fur material. Superseded native01 is retained and not the final build evidence."
+  ],
+  "environment": {
+    "os": "Windows11 Pro26200",
+    "cpu": "Ryzen9 5950X",
+    "ram_gb": 32,
+    "gpu": "RTX3070Ti",
+    "engine": "GZDoom4.14.2",
+    "backend": "Vulkan",
+    "resolution": [
+      1280,
+      720
+    ],
+    "background_unpaused": true,
+    "audio": 0.05,
+    "presentation_uncapped": true,
+    "vsync": false
+  },
+  "qualifications": [
+    "Twenty inspected views cover the final models. Ten medium/heavy views are new; ten magic/light views are reused only after final MD3 byte equality was verified. Final overview, regression overview and both presentation scenes were inspected.",
+    "Shared simplified outlines, disc-like shoulders, faceted trim, static cloth, repeated matte materials, simplified fur patches, interpreted backs and omitted ornament require author review.",
+    "One sequential700-tic twelve-object pair measures queue intervals only, not GPU/display latency, repeatability or campaign/crowd performance. Projected footprints differ.",
+    "Prepared native APIs do not establish ordinary menus, crafting, manual handling or author acceptance. Ancestor-only pickup bindings, other characters, modular fitting and wider V5.16 remain unfinished.",
+    "No executable, IWAD, compiled test package, DLL or save is committed."
+  ],
+  "files": {
+    "armor-regression/candidate-fresh-process.log": "b3183ff1f2ef6f23dcdbb48c1064bcad499e2d62dbaf2b6835aab7c96200ab01",
+    "armor-regression/candidate-fresh.cfg": "ced84578d7ab32e6d69192498eb265d52a610eecaf21137a0fc075636811fc78",
+    "armor-regression/candidate-fresh.log": "2ebd2a57253ec01d2a016a6b33d934c354f15ebbbb1ff4478e1275ef4434cf46",
+    "armor-regression/candidate-fresh.png": "7e54a7b85a1a3762d37407e3ec20d0a4a6fffbfc538b3329f7b21d95366329fa",
+    "armor-regression/fixture-source/MAPINFO.txt": "c8743364bd5ffe9a61d13c7cd61210e4a6adecca23b6f47f9dfe36f6fd9c1001",
+    "armor-regression/fixture-source/ZSCRIPT.txt": "4c27601e1198323b5c1459643dae4b4940915a0de62e5f6718b5ee8497784429",
+    "armor-regression/fixture.zs": "89c6d4c776ebd670035e3d500205f945da6989bcefedd0ee4be19717426c5268",
+    "armor-regression/RESULTS.json": "20e2bcea4311349e55febb0e2f4eda9431e332b1fef1363e18015c25be7d09cb",
+    "armor-regression/runner.py": "db1a08e6c7e9e4adb4db4251812fac8874d5d488c2cced4f49aff312f4735848",
+    "armor-regression/session.ini": "8a202f8b5fa39ce352b965d4b0cef6273b4291011ce879e77f908444801505fc",
+    "build02.log": "482ed187129c4c63c49cbb13cf83abea18e91af53f17df7c920a80e8e5698f3e",
+    "continuity/baseline-process.log": "c987b9d660ecf389bdfa89b44d5ff558ae83df744a6565bc5ff3d9db6b14bf22",
+    "continuity/baseline.cfg": "bf01fafb489e4de94bf5be6a7091d0c616dbd1b6d78f8d3f58999ffbf8325028",
+    "continuity/baseline.log": "04e34eb007c65e382a1d799454bac8910bd640dceb697473026e20a674d76031",
+    "continuity/candidate-fresh-process.log": "83e018a52298240a862799cdcc9fa63820677fedf789caefd5695eedbe5e542b",
+    "continuity/candidate-fresh.cfg": "56e0ce992de156de415ebf3cb89ff82b24791acb91b51ba702d6bc4badba7737",
+    "continuity/candidate-fresh.log": "44016e9ed5afa2bcf3db89af0543c47d84d6ecc135935811b3071a202babd9b7",
+    "continuity/candidate-reload-process.log": "9e575c5aadfe173021ac1980cb4173cdc4310892e304f9256d9f3e2b88e370ff",
+    "continuity/candidate-reload.cfg": "e448129c8c85c0a602b3b8f527cbfa4e3d53711f3d625ef8e90c9c83bb5c2846",
+    "continuity/candidate-reload.log": "cdc691cab4395ce642674b84169cca573a39c2e483b47435f4e4f8924a581f0b",
+    "continuity/fixture-source/MAPINFO.txt": "ca6a3ae5a3f7a546d7796d915ae8b6b379ec1845ac97a70f3098857e629a1ee2",
+    "continuity/fixture-source/ZSCRIPT.txt": "110464d146ad28296b6ab7812e45d43136caf9ba957e48dc21e0ab5c7ecdc167",
+    "continuity/fixture.zs": "f0d624926f76b3bc2f0ee3b54c1efb0d28925d4b3bbf98ebac610c8714491cae",
+    "continuity/old-save-load-part-1.cfg": "c6e53c1ef67d18dcf7b42df9fc95ca4b1443aa7cef4a4dc3ad4b2196cf0a283e",
+    "continuity/old-save-load-process.log": "f66c8edc722655c876606c7ffb248aaea24631a1411efdddb3ebab24d2fd74d4",
+    "continuity/old-save-load.cfg": "dd4a5f183a80aeb2248a816ba00ea0d448d3ab9cbe4b62aa0eac000117725ed0",
+    "continuity/old-save-load.log": "263eb9533616f98653e29fee90a4d20ff11239cd7a06f785ba24d43a529ed0fe",
+    "continuity/RESULTS.json": "5982af31c03904f892c9f15ef210b2dfb93236dc6438bc5c25b37bb37f5cd4e7",
+    "continuity/rollback-load-process.log": "75ddc0f8e389a76c2783465e88e083581c205341e0751a5ebecaa2413e2da164",
+    "continuity/rollback-load.cfg": "e448129c8c85c0a602b3b8f527cbfa4e3d53711f3d625ef8e90c9c83bb5c2846",
+    "continuity/rollback-load.log": "06ee08ca5a77bddaa2ae0e7b41fd8951fefeb07eaeec0eb4eb28f80b3a91f2f4",
+    "continuity/session.ini": "80c8f055528d6341726c23b40b1befa6b3c500a4ee24c40924a928c780afd88b",
+    "design01.json": "e2b6ca51aa9b5917eef30447e166f03afb6f9aaed2051dc6862d8a4985227195",
+    "design02.json": "523849094572a4ad04dc76aed98c18b0d0489dd4038a07243ab3bcd187e94872",
+    "design03.json": "7cf6c50d232418423da72edf74bd366bdd0ff22583d5eeb079d822aad3d499eb",
+    "export-check-final02.log": "750398c13939578d95acfc4ed5eca6b0c8951920228e1d4f0baa0321683341cf",
+    "exports/model01.json": "53b14b2aaf0ff55a35a0d7675506c0f1a2b64239f50cf9be93ad3e19804a623b",
+    "exports/model02.json": "d5042780232466b937509f2aefb452982dcf4b17609d26880f12f01bbff9b093",
+    "exports/model03.json": "d5042780232466b937509f2aefb452982dcf4b17609d26880f12f01bbff9b093",
+    "exports/model04.json": "67d4e4486b47930bc3ff50d8a0069c69aab386e0d90df8f4e2528d5d0402240a",
+    "exports/model05.json": "db42d52b5c46988787fe7c8b8d35a439e93ab3af929c0067d525bb6ed010e856",
+    "exports/model06.json": "db42d52b5c46988787fe7c8b8d35a439e93ab3af929c0067d525bb6ed010e856",
+    "exports/model07.json": "ce667bbac903040239399155ce95dc096735bcd2866b8ce68d900d2974b92946",
+    "exports/model08.json": "ce667bbac903040239399155ce95dc096735bcd2866b8ce68d900d2974b92946",
+    "geometry01.log": "03fc84a996fc39d1f9dcd61662dc804475d18bea3d93063e9f1eea1b93d8a7b5",
+    "geometry02.log": "dc76d531cdddd6bd4d44e9ad79747d3339df568631dd4c26b3e3540f76f81332",
+    "geometry03.log": "cb1b3308887a6ec08c7772cd156790f371eb692ebe821c3a7eb35f9d2d8a5942",
+    "geometry04.log": "5640a4029f7f4235f3f3a5a465c7a8a84cd358f099660521d0cd9ce4e516709e",
+    "presentation/models-12/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/models-12/engine.log": "b10d8c4def5f12fc12f1fa4e9cd19cc9a594199433fb4bb558b4dc1c25dd3577",
+    "presentation/models-12/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/models-12/fixture-source/ZSCRIPT.txt": "5dfa12ae8d3af88fa5759ed84ab376c15cd44ad6492d51ef9ac032437eb7c0b8",
+    "presentation/models-12/presents.csv": "5d8440121e20cee84f8049105d4f6f674ef7d7a5aa8885b1057bebc89ace3935",
+    "presentation/models-12/process.log": "f3bd91cadfcbfaccd586d20912982e9efa9e5902fd45966ae0b32399e9fd6c78",
+    "presentation/models-12/scene.png": "91f40801d8cb83f1edce1f958b9df9121a678a626643b117099cb81446f9140c",
+    "presentation/models-12/session.ini": "e3965688cd8b782f9d699441f57647c5070b1fb722acfdbbc8bde3a46bd7b2e2",
+    "presentation/RESULTS.json": "394430b14c0747f845ffbcedddcb3c5732fa56e16618d1c27eb172dca0c40dcd",
+    "presentation/sprites-12/commands.cfg": "516d431f08d37bfdcad1afd5038b6f4846b7698cc5506c2642d946b8f5596a25",
+    "presentation/sprites-12/engine.log": "57773917f472d7285725b43c745ddb1cc75404796746138ffdd2a043fd27d182",
+    "presentation/sprites-12/fixture-source/MAPINFO.txt": "2d5597023a75de14183efa27ead94f5c08e0ac10644ef4ec01a054a0ed14afe9",
+    "presentation/sprites-12/fixture-source/ZSCRIPT.txt": "5dfa12ae8d3af88fa5759ed84ab376c15cd44ad6492d51ef9ac032437eb7c0b8",
+    "presentation/sprites-12/presents.csv": "6d48d6531423f8027165f38cc5be628c76f445196eb66586c149b53ec7e36531",
+    "presentation/sprites-12/process.log": "60f539428cdf165d6f880e0ffe2c3f7a1d8f14024ba6a56b30323cdd22e68d12",
+    "presentation/sprites-12/scene.png": "a5a52178765b19066f28d9b06c92132462d38904a903e38d74e9c9876db67272",
+    "presentation/sprites-12/session.ini": "4f94db12b82028ad70c7f5fa052e3ba03be20baa5ec2129d8dc4f4ce9c0a4151",
+    "repeat07-08.json": "3f0081fa04447b06e398685b7074dc383f541e5f95d6b5ef2d88af3cc69e0e7f",
+    "reused-view-proof.json": "08f74e767e0e09b28bd7414694539bb5436fd579139603a9d11475a251694c44",
+    "reused-views/detail-0-0.png": "6995fd405497fa3bde2b22a9e29f28fa648a761dbd7a6d58b36ede92cecf876e",
+    "reused-views/detail-0-160.png": "926538fd6030b074147cb00f2301ba5ba7f1b05f1384d3ae3eae541f853fca9f",
+    "reused-views/detail-0-225.png": "26e00de0a8bac681ea7f60411ce5fee64e6463d616dfe5f5e5afd4fdb0a5fbac",
+    "reused-views/detail-0-270.png": "b7841d3c7041520c52699174a46a1b821d2f8e73161dd132fb65d96ebbe22e1b",
+    "reused-views/detail-0-90.png": "d7765ee44b5e3d6e06f66886de17c78d651c713134ba2941c6187530b36ab748",
+    "reused-views/detail-1-0.png": "e0c99d3f6579a6b30bf1c85ea7042de6febf6f25f60a78e9262378e95260f92d",
+    "reused-views/detail-1-160.png": "076d17611b75ff7868c50da348309f8643727d91f9335dbb0a2d56f272dccce3",
+    "reused-views/detail-1-225.png": "fc89add8a92dc40bd7202bd1e0a336d01733b41fb4422f4cb9a8a4d10d62ab55",
+    "reused-views/detail-1-270.png": "723eb601656f14fe8e3b01b8cefc48479346e0d8cee57be7e238db630de16fbf",
+    "reused-views/detail-1-90.png": "754cac86709c0c1f2b6f5bb2e04b6a90423889993ab352c6f7a0693c9b2fdde9",
+    "runtime-parity-final.json": "86c0f6b1c04faf3019dc52573e62c5f7553d2497e2fcb3e18eb0d6615afb745b",
+    "superseded/native01/baseline-process.log": "54b2a0be20bca6c065d7800770e66b1793f2e69f57e5509ae7127a002068020a",
+    "superseded/native01/baseline.cfg": "bf01fafb489e4de94bf5be6a7091d0c616dbd1b6d78f8d3f58999ffbf8325028",
+    "superseded/native01/baseline.log": "db22b4e49762d87d6cba1e343a55b253917694da2178eef0def1e2ea68cad9b3",
+    "superseded/native01/candidate-fresh-process.log": "3c72be7061d598d751ede2a9208d531c0a18cb5d8dc45ed103f1e111f34d01e2",
+    "superseded/native01/candidate-fresh.cfg": "56e0ce992de156de415ebf3cb89ff82b24791acb91b51ba702d6bc4badba7737",
+    "superseded/native01/candidate-fresh.log": "03e1cd2a11b478fad0999ac34819d029e372521166ee8625ade0476fbb813328",
+    "superseded/native01/candidate-reload-process.log": "a5bb9bbd3de7eb8de5e1c96273f4ada517d6e5dbe284aac308396ca564a6abc5",
+    "superseded/native01/candidate-reload.cfg": "e448129c8c85c0a602b3b8f527cbfa4e3d53711f3d625ef8e90c9c83bb5c2846",
+    "superseded/native01/candidate-reload.log": "8a8e0fd0b184e6bf8c868d58493efe9ff4b0882348a3712f21c3fe0882a5e7c7",
+    "superseded/native01/fixture-source/MAPINFO.txt": "ca6a3ae5a3f7a546d7796d915ae8b6b379ec1845ac97a70f3098857e629a1ee2",
+    "superseded/native01/fixture-source/ZSCRIPT.txt": "110464d146ad28296b6ab7812e45d43136caf9ba957e48dc21e0ab5c7ecdc167",
+    "superseded/native01/fixture.zs": "f0d624926f76b3bc2f0ee3b54c1efb0d28925d4b3bbf98ebac610c8714491cae",
+    "superseded/native01/old-save-load-part-1.cfg": "c6e53c1ef67d18dcf7b42df9fc95ca4b1443aa7cef4a4dc3ad4b2196cf0a283e",
+    "superseded/native01/old-save-load-process.log": "efef0b9910ce679ab86ca632b390b03699e1aea62baa5b20c305058bf2ea88c7",
+    "superseded/native01/old-save-load.cfg": "5e09855c8cfa69e74f8bf5924e72f43a777419cdffb158559b3f310c84feed50",
+    "superseded/native01/old-save-load.log": "12fd1267345de626147f54aee22e079d73f92c71a037d469927c0b60b0422c9d",
+    "superseded/native01/RESULTS.json": "9172f21584c2ab978bfdb12bbdec76957a337d29ddda2850a077cf3c9b325dfb",
+    "superseded/native01/rollback-load-process.log": "49d45e33decf460342aac6d48c39b564484fbcde0486ff2cfbbb3e07a0cb01ae",
+    "superseded/native01/rollback-load.cfg": "e448129c8c85c0a602b3b8f527cbfa4e3d53711f3d625ef8e90c9c83bb5c2846",
+    "superseded/native01/rollback-load.log": "a45b018be76211bb5f3abe20e624bc4166b898931720caf9015fafcbed666535",
+    "superseded/native01/session.ini": "bc7e6ad91900171b7fab1555f72038ca7c90daf4e840a7b52a06cd4958474ee7",
+    "superseded/visual01/detail-0-90.png": "03f4a37ad87a23f299eaed2b476176411999a0575653c92f79be3cf3ff8928d1",
+    "superseded/visual01/detail-1-90.png": "ad639312d38288fcffb74d10f01bd46986725f171491a1591b2dbb6ccbff0a68",
+    "superseded/visual01/detail-2-90.png": "f74a3c7a215813a2c8984f2a9d602ec92ca4bd86dbe4686452f42306060daf78",
+    "superseded/visual01/detail-3-90.png": "1c901ed87abeb50f506442bb120aa8b5e1c1809f38ffd3290593c2af0fc2145c",
+    "superseded/visual01/fixture-source/MAPINFO.txt": "ca6a3ae5a3f7a546d7796d915ae8b6b379ec1845ac97a70f3098857e629a1ee2",
+    "superseded/visual01/fixture-source/ZSCRIPT.txt": "110464d146ad28296b6ab7812e45d43136caf9ba957e48dc21e0ab5c7ecdc167",
+    "superseded/visual01/fixture.zs": "f0d624926f76b3bc2f0ee3b54c1efb0d28925d4b3bbf98ebac610c8714491cae",
+    "superseded/visual01/RESULTS.json": "b81734d74a33fe4c2c242417f3155cff69bca43dc91d5dc729ce0718ea617cec",
+    "superseded/visual01/session.ini": "831f6b4f77b5713cba04f119ab5728e268832ce8170eabc2eb11381f3c4bf30c",
+    "superseded/visual01/visual-part-1.cfg": "1192f2fa03151fb99ecd1a8fab1d554bf8f631a2808cec1f1704241844ade798",
+    "superseded/visual01/visual-process.log": "cf4887a098b9eca794a0821f36ac87622c9455e056e141841e7814f6118bcdf9",
+    "superseded/visual01/visual.cfg": "e72cb76b0ca88699d14ca6f46ca0515bfbf88009f98a09026fb5b2c0de9a9f6c",
+    "superseded/visual01/visual.log": "c8c6a8ce72dc7f4833af48fb21fd318e5a2917be393cefc77dd5013445dcb76b",
+    "superseded/visual02/detail-0-90.png": "d7765ee44b5e3d6e06f66886de17c78d651c713134ba2941c6187530b36ab748",
+    "superseded/visual02/detail-1-90.png": "754cac86709c0c1f2b6f5bb2e04b6a90423889993ab352c6f7a0693c9b2fdde9",
+    "superseded/visual02/detail-2-90.png": "ce28aef45a27b26d9991d17ac0b5779b3e4b2f8cb748e303c16542472cd0d560",
+    "superseded/visual02/detail-3-90.png": "9fde54dd7d18f01a025a7b368d7bbbde222aa61bc8d8b09b2bde40657b03cf57",
+    "superseded/visual02/fixture-source/MAPINFO.txt": "ca6a3ae5a3f7a546d7796d915ae8b6b379ec1845ac97a70f3098857e629a1ee2",
+    "superseded/visual02/fixture-source/ZSCRIPT.txt": "110464d146ad28296b6ab7812e45d43136caf9ba957e48dc21e0ab5c7ecdc167",
+    "superseded/visual02/fixture.zs": "f0d624926f76b3bc2f0ee3b54c1efb0d28925d4b3bbf98ebac610c8714491cae",
+    "superseded/visual02/RESULTS.json": "161b4bd1d658338b633e2c90260f9851df4fe83e8ca5eb2cee42b75671ac8eb6",
+    "superseded/visual02/session.ini": "8ad783c1afd9adcd9caabb0d2e59e9ff6c9f48293ed39c069db2a16c895d4aa0",
+    "superseded/visual02/visual-part-1.cfg": "1192f2fa03151fb99ecd1a8fab1d554bf8f631a2808cec1f1704241844ade798",
+    "superseded/visual02/visual-process.log": "5a3798a07d7bc58ca75dc8476d0935c13de07ef9d301bb77145abb1d3790140f",
+    "superseded/visual02/visual.cfg": "3e135e3a13fc4909f936668195c03fe4a114dafafebd1e62a3d7f0d3205dc17e",
+    "superseded/visual02/visual.log": "3e6584a5d2a89389d2aee012e93aa41ef6c8475ef507cb1d9e76ec5e3866d29e",
+    "visual/candidate-0.png": "3db6c507ac24d223b46055e960f92a5dc3712d9500dd1f72855a94654f4b835c",
+    "visual/candidate-1.png": "a0b6c095691cd0125582388c96c64dfbf2f695c77416524327cbf080f1848c3a",
+    "visual/candidate-2.png": "24b6bb813e694f51e8ee5d9509c9a99896fb711725bb7d82b8056dc4990e7811",
+    "visual/candidate-3.png": "3db6c507ac24d223b46055e960f92a5dc3712d9500dd1f72855a94654f4b835c",
+    "visual/candidate-5.png": "3db6c507ac24d223b46055e960f92a5dc3712d9500dd1f72855a94654f4b835c",
+    "visual/candidate-6.png": "3db6c507ac24d223b46055e960f92a5dc3712d9500dd1f72855a94654f4b835c",
+    "visual/candidate-7.png": "b5d15a9421948831f353a3f14888b8e5397fd535460ca97c92fe806ac7e9793b",
+    "visual/detail-0-0.png": "6995fd405497fa3bde2b22a9e29f28fa648a761dbd7a6d58b36ede92cecf876e",
+    "visual/detail-0-160.png": "926538fd6030b074147cb00f2301ba5ba7f1b05f1384d3ae3eae541f853fca9f",
+    "visual/detail-0-225.png": "26e00de0a8bac681ea7f60411ce5fee64e6463d616dfe5f5e5afd4fdb0a5fbac",
+    "visual/detail-0-270.png": "b7841d3c7041520c52699174a46a1b821d2f8e73161dd132fb65d96ebbe22e1b",
+    "visual/detail-0-90.png": "d7765ee44b5e3d6e06f66886de17c78d651c713134ba2941c6187530b36ab748",
+    "visual/detail-1-0.png": "e0c99d3f6579a6b30bf1c85ea7042de6febf6f25f60a78e9262378e95260f92d",
+    "visual/detail-1-160.png": "076d17611b75ff7868c50da348309f8643727d91f9335dbb0a2d56f272dccce3",
+    "visual/detail-1-225.png": "fc89add8a92dc40bd7202bd1e0a336d01733b41fb4422f4cb9a8a4d10d62ab55",
+    "visual/detail-1-270.png": "723eb601656f14fe8e3b01b8cefc48479346e0d8cee57be7e238db630de16fbf",
+    "visual/detail-1-90.png": "754cac86709c0c1f2b6f5bb2e04b6a90423889993ab352c6f7a0693c9b2fdde9",
+    "visual/detail-2-0.png": "f7f5591ad087ae15dcb5a961c2a6cd32d905340e5f8ad1110ab9012f902bd35d",
+    "visual/detail-2-160.png": "d56d28f3a8bcec43b249afef4755aac8e604efc864da87d0077a19770ceb2b80",
+    "visual/detail-2-225.png": "a21e653e268ac72ba56114afb26d9431605214e0c2d0879ef84778aac6dbefb7",
+    "visual/detail-2-270.png": "b88fe3bea117a9f15d41ad112a56daa26e224835f71b856eaf24f682ab967118",
+    "visual/detail-2-90.png": "2b7d766f905a56b6cf549a4e9a35d05dabc1fee84dbf72ebd04d5f86e692770c",
+    "visual/detail-3-0.png": "c131f406ed58302d30c6903c5be4489735c927b1d56795d38e80cff99845cc66",
+    "visual/detail-3-160.png": "174338864449906268088711a972ee8d3fad2a5c2b28a7206c79fca80c7ea266",
+    "visual/detail-3-225.png": "a3a6e819e7cbc9841f4ef4acfd3de4b434eba556fd1d256d34b020de42a5fa22",
+    "visual/detail-3-270.png": "0a554d76b3a9824c40be413dc052f46329561b89d2326f79d7f3609cb62c997e",
+    "visual/detail-3-90.png": "ce57cdb16f15044f30db569d70c906068b03641c6155db9d505cd32c0d229b53",
+    "visual/fixture-source/MAPINFO.txt": "ca6a3ae5a3f7a546d7796d915ae8b6b379ec1845ac97a70f3098857e629a1ee2",
+    "visual/fixture-source/ZSCRIPT.txt": "110464d146ad28296b6ab7812e45d43136caf9ba957e48dc21e0ab5c7ecdc167",
+    "visual/fixture.zs": "f0d624926f76b3bc2f0ee3b54c1efb0d28925d4b3bbf98ebac610c8714491cae",
+    "visual/RESULTS.json": "b2db61dbcc442a76b221a13db3b5f811149da6b8476ffe8393d2a2019b7f1483",
+    "visual/session.ini": "38862d4558d23816a3710a68e368ba748663b5eebf58309ca229acbb57c6ab0a",
+    "visual/visual-part-1.cfg": "1192f2fa03151fb99ecd1a8fab1d554bf8f631a2808cec1f1704241844ade798",
+    "visual/visual-process.log": "fa12e72a5a2d1cf62ab1c22e792e68e9e6688cbb8a0981938819b12d043c3599",
+    "visual/visual.cfg": "2e94f7dbff25ac36bc1be80ded49141cb92c868dcac6f87f594d6ee395cabf2e",
+    "visual/visual.log": "55bf1d04a639979c7b53e2b8e93e75f9ebf77cfbc23119d4c29a359f00f2a1dd",
+    "validation-final.json": "d42e21aa474682047b1a0bb06a674c1c76b73351e763b8157427ceadef20bd27"
+  }
+}
